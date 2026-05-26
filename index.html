@@ -3,228 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>武汉外国语学校乒乓球社团</title>
+    <title>武汉外国语学校乒乓球社团 | WFLS TT Club</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏓</text></svg>">
+    <!-- 引入 FontAwesome 图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+
     <!-- 导航栏 -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <span class="logo-icon">🏓</span>
-                <span class="logo-text">WFLS TT Club</span>
-            </a>
-            <ul class="nav-menu" id="navMenu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link active" data-page="index">首页</a>
-                </li>
-                <li class="nav-item">
-                    <a href="news.html" class="nav-link" data-page="news">近期动态</a>
-                </li>
-                <li class="nav-item">
-                    <a href="ranking.html" class="nav-link" data-page="ranking">Ranking<span class="beta-badge-nav">Beta</span></a>
-                </li>
-            </ul>
-            <button class="hamburger" id="hamburger" aria-label="菜单">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
+    <nav class="navbar">
+        <div class="logo">WFLS TT CLUB</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">首页</a></li>
+            <li><a href="news.html">近期动态</a></li>
+            <li><a href="ranking.html">Ranking (Beta)</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
         </div>
     </nav>
 
-    <!-- 主要内容 -->
-    <main>
-        <!-- Hero 区域 -->
-        <section class="hero" id="hero">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <div class="hero-badge">🏓 武汉外国语学校</div>
-                <h1 class="hero-title">乒乓球社团</h1>
-                <p class="hero-subtitle">以球会友 · 挥洒青春 · 追求卓越</p>
-                <p class="hero-description">我们是武汉外国语学校最具活力的体育社团之一，<br>致力于为每一位热爱乒乓球的同学提供训练、竞技与成长的平台。</p>
-                <div class="hero-buttons">
-                    <a href="news.html" class="btn btn-primary">查看近期动态</a>
-                    <a href="ranking.html" class="btn btn-outline">Ranking 排名</a>
-                </div>
-            </div>
-            <div class="hero-float-ball" aria-hidden="true">🏓</div>
-        </section>
+    <!-- Hero 区域 -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>武汉外国语学校<br>乒乓球社团</h1>
+            <p>爱乒才会赢 · 旋转的青春</p>
+            <a href="news.html" class="btn">查看最新动态</a>
+        </div>
+    </header>
 
-        <!-- 关于社团 -->
-        <section class="section about-section" id="about">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">关于我们</span>
-                    <h2 class="section-title">了解乒乓球社团</h2>
-                    <div class="section-divider"></div>
-                </div>
-                <div class="about-grid">
-                    <div class="about-card">
-                        <div class="about-icon">🎯</div>
-                        <h3>社团宗旨</h3>
-                        <p>推广乒乓球运动，丰富校园文化生活，培养团队合作精神与竞技能力，让每一位成员在运动中收获快乐与成长。</p>
-                    </div>
-                    <div class="about-card">
-                        <div class="about-icon">📅</div>
-                        <h3>成立时间</h3>
-                        <p>社团成立于2015年，至今已走过十余载，培养了数百名乒乓球爱好者，在市级、省级比赛中屡获佳绩。</p>
-                    </div>
-                    <div class="about-card">
-                        <div class="about-icon">👥</div>
-                        <h3>成员规模</h3>
-                        <p>现有正式成员60余人，涵盖初一至高三各年级，设有竞赛组、训练组和兴趣组，满足不同水平同学的需求。</p>
-                    </div>
-                    <div class="about-card">
-                        <div class="about-icon">🏆</div>
-                        <h3>主要成就</h3>
-                        <p>多次获得武汉市中学生乒乓球比赛团体前三名，多名社员荣获省级比赛奖项，连续五年被评为校级优秀社团。</p>
-                    </div>
-                </div>
+    <!-- 简介区域 -->
+    <section class="container section-padding">
+        <h2 class="section-title">关于我们</h2>
+        <div class="about-grid">
+            <div class="card">
+                <i class="fas fa-table-tennis"></i>
+                <h3>专业训练</h3>
+                <p>每周定期开展基础技术与战术训练，邀请校队高手指导。</p>
             </div>
-        </section>
-
-        <!-- 训练安排 -->
-        <section class="section schedule-section" id="schedule">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">训练安排</span>
-                    <h2 class="section-title">每周训练时间表</h2>
-                    <div class="section-divider"></div>
-                </div>
-                <div class="schedule-table-wrapper">
-                    <table class="schedule-table">
-                        <thead>
-                            <tr>
-                                <th>时间段</th>
-                                <th>周一</th>
-                                <th>周二</th>
-                                <th>周三</th>
-                                <th>周四</th>
-                                <th>周五</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="time-label">12:30 - 13:30</td>
-                                <td class="session-basic">基础训练</td>
-                                <td class="session-free">自由练习</td>
-                                <td class="session-basic">基础训练</td>
-                                <td class="session-free">自由练习</td>
-                                <td class="session-basic">基础训练</td>
-                            </tr>
-                            <tr>
-                                <td class="time-label">16:30 - 18:00</td>
-                                <td class="session-advanced">竞赛组特训</td>
-                                <td class="session-basic">全体训练</td>
-                                <td class="session-advanced">竞赛组特训</td>
-                                <td class="session-basic">全体训练</td>
-                                <td class="session-match">社团内部赛</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p class="schedule-note">📍 训练地点：学校体育馆二楼乒乓球室 | 📌 竞赛组成员需参加全部特训课程</p>
+            <div class="card">
+                <i class="fas fa-trophy"></i>
+                <h3>校内联赛</h3>
+                <p>每学期举办“外校杯”乒乓球联赛，以球会友，切磋技艺。</p>
             </div>
-        </section>
-
-        <!-- 社团亮点 -->
-        <section class="section highlights-section" id="highlights">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">社团亮点</span>
-                    <h2 class="section-title">为什么加入我们</h2>
-                    <div class="section-divider"></div>
-                </div>
-                <div class="highlights-grid">
-                    <div class="highlight-item">
-                        <div class="highlight-number">01</div>
-                        <h3>专业指导</h3>
-                        <p>由经验丰富的体育老师担任指导教练，定期邀请校外专业教练进行技术指导。</p>
-                    </div>
-                    <div class="highlight-item">
-                        <div class="highlight-number">02</div>
-                        <h3>完善的设备</h3>
-                        <p>学校配备8张标准乒乓球台，提供训练用球和球拍，环境优良。</p>
-                    </div>
-                    <div class="highlight-item">
-                        <div class="highlight-number">03</div>
-                        <h3>竞技机会</h3>
-                        <p>定期举办校内比赛，选拔优秀选手参加市级、省级赛事，积累实战经验。</p>
-                    </div>
-                    <div class="highlight-item">
-                        <div class="highlight-number">04</div>
-                        <h3>团队氛围</h3>
-                        <p>温暖的社团大家庭，定期组织团建活动，建立深厚的友谊。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 加入我们 -->
-        <section class="section join-section" id="join">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">加入我们</span>
-                    <h2 class="section-title">成为社团的一员</h2>
-                    <div class="section-divider"></div>
-                </div>
-                <div class="join-content">
-                    <div class="join-info">
-                        <h3>招新对象</h3>
-                        <p>面向全校初一至高三所有对乒乓球感兴趣的同学，无论基础如何，只要热爱乒乓球运动均可报名。</p>
-                        <h3>报名方式</h3>
-                        <p>每学期开学前两周为招新周，可前往体育馆二楼乒乓球室现场报名，或联系社团负责人。</p>
-                        <h3>联系方式</h3>
-                        <p>📧 社团邮箱：wfls-tt-club@example.com</p>
-                        <p>📍 活动地点：学校体育馆二楼乒乓球室</p>
-                    </div>
-                    <div class="join-cta">
-                        <div class="join-card-cta">
-                            <span class="cta-emoji">🏓</span>
-                            <h3>期待你的加入！</h3>
-                            <p>一起在球桌上挥洒汗水<br>创造属于我们的精彩</p>
-                            <a href="news.html" class="btn btn-primary">了解社团动态</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- 页脚 -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <span class="footer-logo">🏓</span>
-                    <h3>武汉外国语学校乒乓球社团</h3>
-                    <p>Wuhan Foreign Language School Table Tennis Club</p>
-                </div>
-                <div class="footer-links">
-                    <h4>快速链接</h4>
-                    <ul>
-                        <li><a href="index.html">首页</a></li>
-                        <li><a href="news.html">近期动态</a></li>
-                        <li><a href="ranking.html">Ranking (Beta)</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>联系我们</h4>
-                    <p>📍 学校体育馆二楼乒乓球室</p>
-                    <p>📧 wfls-tt-club@example.com</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 武汉外国语学校乒乓球社团. 部分版权保留.</p>
-                <p class="footer-sub">Made with ❤️ for table tennis</p>
+            <div class="card">
+                <i class="fas fa-users"></i>
+                <h3>社团氛围</h3>
+                <p>无论新手还是大神，这里都是你释放压力、结交挚友的最佳场所。</p>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- 返回顶部按钮 -->
-    <button class="back-to-top" id="backToTop" aria-label="返回顶部">↑</button>
+    <footer>
+        <p>&copy; 2026 武汉外国语学校乒乓球社团. All Rights Reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
