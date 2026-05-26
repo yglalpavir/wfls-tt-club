@@ -3,294 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>近期动态 - 武汉外国语学校乒乓球社团</title>
+    <title>近期动态 | WFLS TT Club</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏓</text></svg>">
-    <!-- SheetJS 库用于读取 Excel 文件 -->
-    <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js">
-    </script>
+    <!-- 引入 SheetJS 用于解析 Excel -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
+    <style>
+        /* 专门用于模拟 Excel 界面的样式 */
+        .excel-container {
+            background-color: #fff;
+            border: 1px solid #d4d4d4;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow-x: auto;
+            margin-top: 20px;
+            font-family: 'Calibri', sans-serif;
+        }
+        
+        .excel-table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .excel-table th, .excel-table td {
+            border: 1px solid #c0c0c0;
+            padding: 4px 8px;
+            min-width: 80px;
+            white-space: nowrap;
+        }
+
+        /* 表头样式模仿 Excel */
+        .excel-table thead tr {
+            background-color: #f3f3f3;
+            color: #333;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* 第一列（通常是序号或名字）加粗 */
+        .excel-table td:first-child {
+            font-weight: 600;
+            background-color: #fafafa;
+        }
+
+        /* 鼠标悬停效果 */
+        .excel-table tbody tr:hover {
+            background-color: #e8f0fe;
+            cursor: default;
+        }
+
+        .file-upload-note {
+            background: #fff3cd;
+            color: #856404;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            border: 1px solid #ffeeba;
+        }
+    </style>
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <span class="logo-icon">🏓</span>
-                <span class="logo-text">WFLS TT Club</span>
-            </a>
-            <ul class="nav-menu" id="navMenu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link" data-page="index">首页</a>
-                </li>
-                <li class="nav-item">
-                    <a href="news.html" class="nav-link active" data-page="news">近期动态</a>
-                </li>
-                <li class="nav-item">
-                    <a href="ranking.html" class="nav-link" data-page="ranking">Ranking<span class="beta-badge-nav">Beta</span></a>
-                </li>
-            </ul>
-            <button class="hamburger" id="hamburger" aria-label="菜单">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-        </div>
+
+    <nav class="navbar">
+        <div class="logo">WFLS TT CLUB</div>
+        <ul class="nav-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="news.html" class="active">近期动态</a></li>
+            <li><a href="ranking.html">Ranking (Beta)</a></li>
+        </ul>
     </nav>
 
-    <!-- 主要内容 -->
-    <main>
-        <!-- 页面标题区 -->
-        <section class="page-header news-header">
-            <div class="container">
-                <h1 class="page-title">📋 近期动态</h1>
-                <p class="page-subtitle">比赛记录与活动数据一览</p>
-                <div class="section-divider light-divider"></div>
-            </div>
-        </section>
-
-        <!-- 表格展示区 -->
-        <section class="section news-section">
-            <div class="container">
-                <div class="news-toolbar">
-                    <div class="news-info">
-                        <span class="info-badge">📊 数据表格</span>
-                        <span class="info-text">以下数据来源于 <code>matches.xlsx</code> 文件（只读）</span>
-                    </div>
-                    <div class="news-actions">
-                        <a href="matches.xlsx" download class="btn btn-download" id="downloadBtn">
-                            📥 下载 Excel 文件
-                        </a>
-                        <button class="btn btn-refresh" id="refreshBtn" title="重新加载数据">
-                            🔄 刷新数据
-                        </button>
-                    </div>
-                </div>
-
-                <!-- 表格容器 -->
-                <div class="table-container" id="tableContainer">
-                    <div class="table-loading" id="tableLoading">
-                        <div class="loading-spinner"></div>
-                        <p>正在读取数据...</p>
-                    </div>
-                    <div class="table-error" id="tableError" style="display:none;">
-                        <p>⚠️ 无法读取 Excel 文件，正在显示备用数据。</p>
-                        <p class="error-hint">请确保 <code>matches.xlsx</code> 文件存在于网站根目录。</p>
-                    </div>
-                    <div class="table-responsive" id="tableResponsive">
-                        <table class="data-table" id="dataTable">
-                            <thead id="tableHead"></thead>
-                            <tbody id="tableBody"></tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- 数据摘要 -->
-                <div class="data-summary" id="dataSummary" style="display:none;">
-                    <div class="summary-card">
-                        <span class="summary-icon">📝</span>
-                        <span class="summary-label">总记录数</span>
-                        <span class="summary-value" id="recordCount">0</span>
-                    </div>
-                    <div class="summary-card">
-                        <span class="summary-icon">📅</span>
-                        <span class="summary-label">数据范围</span>
-                        <span class="summary-value" id="dateRange">-</span>
-                    </div>
-                </div>
-
-                <p class="table-note">💡 提示：更新 <code>matches.xlsx</code> 文件后刷新页面即可看到最新数据。表格为只读模式。</p>
-            </div>
-        </section>
-    </main>
-
-    <!-- 页脚 -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <span class="footer-logo">🏓</span>
-                    <h3>武汉外国语学校乒乓球社团</h3>
-                    <p>Wuhan Foreign Language School Table Tennis Club</p>
-                </div>
-                <div class="footer-links">
-                    <h4>快速链接</h4>
-                    <ul>
-                        <li><a href="index.html">首页</a></li>
-                        <li><a href="news.html">近期动态</a></li>
-                        <li><a href="ranking.html">Ranking (Beta)</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>联系我们</h4>
-                    <p>📍 学校体育馆二楼乒乓球室</p>
-                    <p>📧 wfls-tt-club@example.com</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 武汉外国语学校乒乓球社团. 部分版权保留.</p>
-                <p class="footer-sub">Made with ❤️ for table tennis</p>
-            </div>
+    <section class="container section-padding">
+        <h2 class="section-title">近期赛事与活动记录</h2>
+        
+        <div class="file-upload-note">
+            <i class="fas fa-info-circle"></i> 
+            系统正在加载 <code>matches.xlsx</code> 文件数据... 如果未显示，请确保文件已上传至根目录。
         </div>
-    </footer>
 
-    <!-- 返回顶部按钮 -->
-    <button class="back-to-top" id="backToTop" aria-label="返回顶部">↑</button>
+        <!-- Excel 显示区域 -->
+        <div id="excel-wrapper" class="excel-container">
+            <table id="excel-data-table" class="excel-table">
+                <thead>
+                    <tr>
+                        <td>加载中...</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>请等待数据渲染</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 武汉外国语学校乒乓球社团. All Rights Reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
     <script>
-        // ============ Excel 数据读取与渲染 ============
-        (function() {
-            const tableHead = document.getElementById('tableHead');
-            const tableBody = document.getElementById('tableBody');
-            const tableLoading = document.getElementById('tableLoading');
-            const tableError = document.getElementById('tableError');
-            const tableResponsive = document.getElementById('tableResponsive');
-            const dataSummary = document.getElementById('dataSummary');
-            const recordCount = document.getElementById('recordCount');
-            const dateRange = document.getElementById('dateRange');
-            const refreshBtn = document.getElementById('refreshBtn');
-
-            // 备用数据（当 xlsx 文件无法读取时使用）
-            const fallbackData = [
-                ['日期', '赛事/活动', '对阵双方', '比分', '结果', '备注'],
-                ['2026-05-20', '校内友谊赛', '高一(3) vs 高二(1)', '3:2', '胜', '精彩对决'],
-                ['2026-05-15', '武汉市中学生联赛', 'WFLS vs 武汉二中', '3:1', '胜', '团体赛'],
-                ['2026-05-10', '训练赛', '竞赛组内部赛', '2:3', '负', '循环赛'],
-                ['2026-04-28', '校际交流赛', 'WFLS vs 华师一附中', '3:0', '胜', '友谊赛'],
-                ['2026-04-20', '社团内部赛', '高一 vs 高二', '4:1', '胜', '月度赛'],
-                ['2026-04-12', '湖北省青少年赛', 'WFLS代表', '2:3', '负', '八强赛'],
-                ['2026-04-05', '训练赛', '竞赛组 vs 训练组', '3:2', '胜', '教学赛'],
-                ['2026-03-28', '春季选拔赛', '全体社员', '-', '-', '选拔新队员'],
-                ['2026-03-15', '武汉市中学生联赛', 'WFLS vs 武汉外校', '3:2', '胜', '半决赛'],
-                ['2026-03-08', '热身赛', 'WFLS vs 武汉六中', '2:3', '负', '友谊赛'],
-                ['2026-02-25', '开学训练赛', '社团内部', '3:3', '平', '新学期首赛'],
-            ];
-
-            /**
-             * 将二维数组渲染为 HTML 表格
-             * @param {Array<Array>} data - 二维数组，第一行为表头
-             */
-            function renderTable(data) {
-                if (!data || data.length === 0) {
-                    throw new Error('数据为空');
-                }
-
-                const headers = data[0];
-                const rows = data.slice(1);
-
-                // 渲染表头
-                tableHead.innerHTML = '<tr>' + headers.map(h =>
-                    `<th>${escapeHtml(String(h))}</th>`
-                ).join('') + '</tr>';
-
-                // 渲染表体
-                tableBody.innerHTML = rows.map(row =>
-                    '<tr>' + row.map(cell =>
-                        `<td>${escapeHtml(String(cell ?? ''))}</td>`
-                    ).join('') + '</tr>'
-                ).join('');
-
-                // 更新摘要信息
-                recordCount.textContent = rows.length;
-                if (rows.length > 0 && headers.some(h => h.includes('日期'))) {
-                    const dateColIndex = headers.findIndex(h => h.includes('日期'));
-                    if (dateColIndex >= 0) {
-                        const dates = rows.map(r => r[dateColIndex]).filter(d => d);
-                        if (dates.length > 0) {
-                            dateRange.textContent = dates[dates.length - 1] + ' 至 ' + dates[0];
-                        } else {
-                            dateRange.textContent = '-';
-                        }
-                    } else {
-                        dateRange.textContent = '-';
-                    }
-                } else {
-                    dateRange.textContent = '-';
-                }
-            }
-
-            /**
-             * HTML 转义，防止 XSS
-             */
-            function escapeHtml(str) {
-                const div = document.createElement('div');
-                div.textContent = str;
-                return div.innerHTML;
-            }
-
-            /**
-             * 显示加载状态
-             */
-            function showLoading() {
-                tableLoading.style.display = 'flex';
-                tableError.style.display = 'none';
-                tableResponsive.style.display = 'none';
-                dataSummary.style.display = 'none';
-            }
-
-            /**
-             * 显示表格
-             */
-            function showTable() {
-                tableLoading.style.display = 'none';
-                tableError.style.display = 'none';
-                tableResponsive.style.display = 'block';
-                dataSummary.style.display = 'flex';
-            }
-
-            /**
-             * 显示错误并回退到备用数据
-             */
-            function showFallback(errorMsg) {
-                console.warn('Excel 读取失败，使用备用数据:', errorMsg);
-                tableLoading.style.display = 'none';
-                tableError.style.display = 'block';
-                tableResponsive.style.display = 'block';
-                dataSummary.style.display = 'flex';
-                renderTable(fallbackData);
-            }
-
-            /**
-             * 尝试从 xlsx 文件读取数据
-             */
-            async function loadExcelData() {
-                showLoading();
-
-                try {
-                    const response = await fetch('matches.xlsx', {
-                        cache: 'no-cache'
-                    });
-
-                    if (!response.ok) {
-                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-                    }
-
-                    const arrayBuffer = await response.arrayBuffer();
-                    const workbook = XLSX.read(arrayBuffer, { type: 'array' });
-                    const firstSheetName = workbook.SheetNames[0];
-                    const worksheet = workbook.Sheets[firstSheetName];
-                    const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, defval: '' });
-
-                    if (jsonData.length === 0) {
-                        throw new Error('Excel 文件为空');
-                    }
-
-                    renderTable(jsonData);
-                    showTable();
-                    tableError.style.display = 'none';
-                } catch (error) {
-                    showFallback(error.message);
-                }
-            }
-
-            // 初始加载
-            loadExcelData();
-
-            // 刷新按钮
-            refreshBtn.addEventListener('click', () => {
-                loadExcelData();
-            });
-        })();
+        // 页面加载完成后执行 Excel 解析
+        document.addEventListener('DOMContentLoaded', function() {
+            loadExcel('matches.xlsx');
+        });
     </script>
 </body>
 </html>
