@@ -3,182 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ranking (Beta) - 武汉外国语学校乒乓球社团</title>
+    <title>Ranking (Beta) | WFLS TT Club</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏓</text></svg>">
+    <style>
+        .ranking-container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .ranking-img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .beta-badge {
+            display: inline-block;
+            background-color: #ff4757;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+    </style>
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <span class="logo-icon">🏓</span>
-                <span class="logo-text">WFLS TT Club</span>
-            </a>
-            <ul class="nav-menu" id="navMenu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link" data-page="index">首页</a>
-                </li>
-                <li class="nav-item">
-                    <a href="news.html" class="nav-link" data-page="news">近期动态</a>
-                </li>
-                <li class="nav-item">
-                    <a href="ranking.html" class="nav-link active" data-page="ranking">Ranking<span class="beta-badge-nav">Beta</span></a>
-                </li>
-            </ul>
-            <button class="hamburger" id="hamburger" aria-label="菜单">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-        </div>
+
+    <nav class="navbar">
+        <div class="logo">WFLS TT CLUB</div>
+        <ul class="nav-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="news.html">近期动态</a></li>
+            <li><a href="ranking.html" class="active">Ranking (Beta)</a></li>
+        </ul>
     </nav>
 
-    <!-- 主要内容 -->
-    <main>
-        <!-- 页面标题区 -->
-        <section class="page-header ranking-header">
-            <div class="container">
-                <div class="beta-tag-large">
-                    <span class="beta-icon">🧪</span>
-                    <span>Beta 测试版</span>
-                </div>
-                <h1 class="page-title">🏆 Ranking 排名系统</h1>
-                <p class="page-subtitle">社团成员实力排名 · 持续更新中</p>
-                <div class="section-divider light-divider"></div>
-            </div>
-        </section>
-
-        <!-- 排名图片展示区 -->
-        <section class="section ranking-section">
-            <div class="container">
-                <div class="ranking-intro">
-                    <div class="intro-card">
-                        <h3>📊 关于 Ranking 系统</h3>
-                        <p>Ranking 排名系统基于社员在训练赛、校内赛及外部比赛中的表现进行综合评估。目前处于 <strong>Beta 测试阶段</strong>，排名算法和展示形式将持续优化。</p>
-                        <ul class="ranking-criteria">
-                            <li>🏅 比赛胜负记录</li>
-                            <li>📈 对手实力加权</li>
-                            <li>🔄 近期表现权重</li>
-                            <li>📅 赛季周期更新</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 图片展示 -->
-                <div class="ranking-image-wrapper" id="rankingImageWrapper">
-                    <div class="ranking-image-container">
-                        <img
-                        src="ranking.jpg"
-                        alt="社团排名表"
-                        class="ranking-image"
-                        id="rankingImage"
-                        loading="lazy"
-                        onerror="this.style.display='none'; document.getElementById('imageFallback').style.display='flex';"
-                        onload="this.style.display='block'; document.getElementById('imageFallback').style.display='none';"
-                        >
-                        <div class="image-fallback" id="imageFallback" style="display:none;">
-                            <div class="fallback-content">
-                                <span class="fallback-icon">🖼️</span>
-                                <h3>排名图片即将上线</h3>
-                                <p>请将 <code>ranking.jpg</code> 文件放置于网站根目录</p>
-                                <p class="fallback-hint">图片将在此处展示社团成员的实力排名</p>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="image-caption">▲ 社团排名表（点击图片可放大查看）</p>
-                </div>
-
-                <!-- 图片放大模态框 -->
-                <div class="image-modal" id="imageModal">
-                    <span class="modal-close" id="modalClose">&times;</span>
-                    <img src="" alt="排名表放大图" class="modal-image" id="modalImage">
-                </div>
-
-                <!-- Beta 说明 -->
-                <div class="beta-notice">
-                    <div class="notice-icon">⚠️</div>
-                    <div class="notice-content">
-                        <h4>Beta 版本说明</h4>
-                        <p>Ranking 系统目前处于测试阶段，排名数据和展示形式可能会有所调整。我们欢迎社员们提出反馈意见，帮助完善排名系统。如有建议，请联系社团负责人。</p>
-                        <p class="notice-update">最后更新：2026年5月</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- 页脚 -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <span class="footer-logo">🏓</span>
-                    <h3>武汉外国语学校乒乓球社团</h3>
-                    <p>Wuhan Foreign Language School Table Tennis Club</p>
-                </div>
-                <div class="footer-links">
-                    <h4>快速链接</h4>
-                    <ul>
-                        <li><a href="index.html">首页</a></li>
-                        <li><a href="news.html">近期动态</a></li>
-                        <li><a href="ranking.html">Ranking (Beta)</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>联系我们</h4>
-                    <p>📍 学校体育馆二楼乒乓球室</p>
-                    <p>📧 wfls-tt-club@example.com</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 武汉外国语学校乒乓球社团. 部分版权保留.</p>
-                <p class="footer-sub">Made with ❤️ for table tennis</p>
+    <section class="container section-padding">
+        <h2 class="section-title">社团成员积分排名 <span class="beta-badge">BETA</span></h2>
+        
+        <div class="ranking-container">
+            <p style="margin-bottom: 15px; color: #666;">最新一期社团内部排位赛榜单</p>
+            <!-- 这里引用你上传的图片 -->
+            <img src="ranking.jpg" alt="乒乓球社团排名榜" class="ranking-img" onerror="this.src='https://via.placeholder.com/800x600?text=Please+Upload+ranking.jpg'">
+            
+            <div style="margin-top: 20px; text-align: left; font-size: 0.9em; color: #888;">
+                <p>* 注：排名每两周更新一次。如有异议请联系社长。</p>
             </div>
         </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 武汉外国语学校乒乓球社团. All Rights Reserved.</p>
     </footer>
 
-    <!-- 返回顶部按钮 -->
-    <button class="back-to-top" id="backToTop" aria-label="返回顶部">↑</button>
-
     <script src="script.js"></script>
-    <script>
-        // ============ 图片放大模态框 ============
-        (function() {
-            const rankingImage = document.getElementById('rankingImage');
-            const imageModal = document.getElementById('imageModal');
-            const modalImage = document.getElementById('modalImage');
-            const modalClose = document.getElementById('modalClose');
-
-            // 点击图片放大
-            rankingImage.addEventListener('click', function() {
-                if (this.style.display !== 'none' && this.src) {
-                    modalImage.src = this.src;
-                    imageModal.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                }
-            });
-
-            // 关闭模态框
-            function closeModal() {
-                imageModal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-
-            modalClose.addEventListener('click', closeModal);
-            imageModal.addEventListener('click', function(e) {
-                if (e.target === imageModal) {
-                    closeModal();
-                }
-            });
-
-            // ESC 关闭
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && imageModal.classList.contains('active')) {
-                    closeModal();
-                }
-            });
-        })();
-    </script>
 </body>
 </html>
