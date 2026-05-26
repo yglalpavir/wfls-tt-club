@@ -1,135 +1,61 @@
-// ============================================
-// script.js - 武汉外国语学校乒乓球社团
-// 通用交互脚本
-// ============================================
-
-(function () {
-  'use strict';
-
-  // ---------- DOM 元素 ----------
-  const navbar = document.getElementById('navbar');
-  const hamburger = document.getElementById('hamburger');
-  const navMenu = document.getElementById('navMenu');
-  const backToTop = document.getElementById('backToTop');
-
-  // ---------- 移动端汉堡菜单 ----------
-  if (hamburger && navMenu) {
-    hamburger.addEventListener('click', function () {
-      hamburger.classList.toggle('active');
-      navMenu.classList.toggle('active');
-      // 菜单打开时禁止页面滚动
-      if (navMenu.classList.contains('active')) {
-        document.body.style.overflow = 'hidden';
-      } else {
-        document.body.style.overflow = '';
-      }
-    });
-
-    // 点击导航链接后关闭菜单
-    const navLinks = navMenu.querySelectorAll('.nav-link');
-    navLinks.forEach(function (link) {
-      link.addEventListener('click', function () {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        document.body.style.overflow = '';
-      });
-    });
-
-    // 点击页面其他区域关闭菜单
-    document.addEventListener('click', function (e) {
-      if (
-        navMenu.classList.contains('active') &&
-        !navMenu.contains(e.target) &&
-        !hamburger.contains(e.target)
-      ) {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
-  }
-
-  // ---------- 导航栏滚动阴影 ----------
-  if (navbar) {
-    function updateNavbarShadow() {
-      if (window.scrollY > 10) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
+// 简单的导航栏激活状态管理（可选，因为HTML里已经写了class="active"）
+const currentLocation = location.href;
+const menuItem = document.querySelectorAll('.nav-links a');
+const menuLength = menuItem.length;
+for (let i = 0; i < menuLength; i++) {
+    if (menuItem[i].href === currentLocation) {
+        menuItem[i].className = "active";
     }
-    window.addEventListener('scroll', updateNavbarShadow, { passive: true });
-    // 初始检查
-    updateNavbarShadow();
-  }
+}
 
-  // ---------- 自动设置当前页面的导航 active 状态 ----------
-  function setActiveNavLink() {
-    const navLinks = document.querySelectorAll('.nav-link[data-page]');
-    const currentPath = window.location.pathname;
-    // 获取当前页面文件名
-    const currentPage = currentPath.split('/').pop() || 'index.html';
+/**
+ * 核心功能：加载并解析 Excel 文件
+ * @param {string} filePath - Excel 文件的路径
+ */
+async function loadExcel(filePath) {
+    const tableElement = document.getElementById('excel-data-table');
+    
+    try {
+        // 获取 Excel 文件
+        const response = await fetch(filePath);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
 
-    navLinks.forEach(function (link) {
-      const pageName = link.getAttribute('data-page');
-      // 移除所有 active 类
-      link.classList.remove('active');
+        const arrayBuffer = await response.arrayBuffer();
+        
+        // 使用 SheetJS 解析数据
+        const workbook = XLSX.read(arrayBuffer, { type: 'array' });
+        
+        // 获取第一个工作表的名字
+        const firstSheetName = workbook.SheetNames[0];
+        const worksheet = workbook.Sheets[firstSheetName];
+        
+        // 将工作表转换为 HTML 表格字符串
+        // header: 1 表示生成二维数组，但我们要用 sheet_to_html 保持格式
+        const htmlString = XLSX.utils.sheet_to_html(worksheet, { id: "excel-data-table", editable: false });
+        
+        // 替换掉原有的空表格
+        // 注意：sheet_to_html 会生成完整的 <table> 标签，我们需要提取内容或者替换整个 innerHTML
+        // 为了保留我们 CSS 定义的 class，我们手动解析一下或者直接替换
+        
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = htmlString;
+        const newTable = tempDiv.querySelector('table');
+        
+        // 将生成的表格类名设置为我们定义的样式类
+        if(newTable) {
+            newTable.className = 'excel-table';
+            document.getElementById('excel-wrapper').innerHTML = '';
+            document.getElementById('excel-wrapper').appendChild(newTable);
+        }
 
-      if (pageName === 'index' && (currentPage === 'index.html' || currentPage === '')) {
-        link.classList.add('active');
-      } else if (pageName === 'news' && currentPage === 'news.html') {
-        link.classList.add('active');
-      } else if (pageName === 'ranking' && currentPage === 'ranking.html') {
-        link.classList.add('active');
-      }
-    });
-  }
-  setActiveNavLink();
-
-  // ---------- 返回顶部按钮 ----------
-  if (backToTop) {
-    function toggleBackToTop() {
-      if (window.scrollY > 500) {
-        backToTop.classList.add('visible');
-      } else {
-        backToTop.classList.remove('visible');
-      }
+    } catch (error) {
+        console.error('Excel 加载失败:', error);
+        tableElement.innerHTML = `
+            <thead><tr><td style="color:red">错误</td></tr></thead>
+            <tbody><tr><td>无法加载 ${filePath}。<br>请检查文件是否存在于根目录，<br>或者是否因浏览器安全策略(CORS)被拦截。<br>(建议在本地服务器或GitHub Pages上查看)</td></tr></tbody>
+        `;
     }
-
-    window.addEventListener('scroll', toggleBackToTop, { passive: true });
-
-    backToTop.addEventListener('click', function () {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      });
-    });
-
-    // 初始检查
-    toggleBackToTop();
-  }
-
-  // ---------- 键盘 ESC 关闭移动端菜单 ----------
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && navMenu && navMenu.classList.contains('active')) {
-      hamburger.classList.remove('active');
-      navMenu.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-  });
-
-  // ---------- 窗口大小改变时重置菜单状态 ----------
-  let resizeTimer;
-  window.addEventListener('resize', function () {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function () {
-      if (window.innerWidth > 768 && navMenu && navMenu.classList.contains('active')) {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    }, 200);
-  });
-
-  console.log('🏓 武汉外国语学校乒乓球社团 - 网站已就绪');
-})();
+}
