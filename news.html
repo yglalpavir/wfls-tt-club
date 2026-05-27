@@ -3,110 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>近期动态 | WFLS TT Club</title>
+    <title>近期动态 | WFLS Table Tennis Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <!-- 引入 SheetJS 用于解析 Excel -->
-    <script src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
-    <style>
-        /* 专门用于模拟 Excel 界面的样式 */
-        .excel-container {
-            background-color: #fff;
-            border: 1px solid #d4d4d4;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            overflow-x: auto;
-            margin-top: 20px;
-            font-family: 'Calibri', sans-serif;
-        }
-        
-        .excel-table {
-            border-collapse: collapse;
-            width: 100%;
-            font-size: 14px;
-        }
-
-        .excel-table th, .excel-table td {
-            border: 1px solid #c0c0c0;
-            padding: 4px 8px;
-            min-width: 80px;
-            white-space: nowrap;
-        }
-
-        /* 表头样式模仿 Excel */
-        .excel-table thead tr {
-            background-color: #f3f3f3;
-            color: #333;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        /* 第一列（通常是序号或名字）加粗 */
-        .excel-table td:first-child {
-            font-weight: 600;
-            background-color: #fafafa;
-        }
-
-        /* 鼠标悬停效果 */
-        .excel-table tbody tr:hover {
-            background-color: #e8f0fe;
-            cursor: default;
-        }
-
-        .file-upload-note {
-            background: #fff3cd;
-            color: #856404;
-            padding: 10px;
-            border-radius: 4px;
-            margin-bottom: 15px;
-            border: 1px solid #ffeeba;
-        }
-    </style>
 </head>
 <body>
-
-    <nav class="navbar">
-        <div class="logo">WFLS TT CLUB</div>
-        <ul class="nav-links">
-            <li><a href="index.html">首页</a></li>
-            <li><a href="news.html" class="active">近期动态</a></li>
-            <li><a href="ranking.html">Ranking (Beta)</a></li>
-        </ul>
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon"><i class="fa-solid fa-table-tennis-paddle-ball"></i></span>
+                <span class="logo-text">WFLS TT Club</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="news.html" class="nav-link active">News</a></li>
+                <li class="nav-item"><a href="ranking.html" class="nav-link">Ranking <span class="beta-tag">Beta</span></a></li>
+                <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <button class="hamburger" id="hamburger" aria-label="菜单">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
     </nav>
 
-    <section class="container section-padding">
-        <h2 class="section-title">近期赛事与活动记录</h2>
-        
-        <div class="file-upload-note">
-            <i class="fas fa-info-circle"></i> 
-            系统正在加载 <code>matches.xlsx</code> 文件数据... 如果未显示，请确保文件已上传至根目录。
-        </div>
-
-        <!-- Excel 显示区域 -->
-        <div id="excel-wrapper" class="excel-container">
-            <table id="excel-data-table" class="excel-table">
-                <thead>
-                    <tr>
-                        <td>加载中...</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>请等待数据渲染</td>
-                    </tr>
-                </tbody>
-            </table>
+    <!-- 页面头部 -->
+    <section class="page-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-content">
+            <span class="section-tag">News & Updates</span>
+            <h1>近期动态</h1>
+            <p>赛事通告 / 训练安排 / 社团活动</p>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 武汉外国语学校乒乓球社团. All Rights Reserved.</p>
+    <!-- PDF 嵌入区域 -->
+    <section class="section pdf-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Match Records</span>
+                <h2 class="section-title">比赛记录</h2>
+                <p class="section-desc">最新赛事对阵表与成绩记录</p>
+            </div>
+            <div class="pdf-container glass-card">
+                <div class="pdf-toolbar">
+                    <span class="pdf-filename"><i class="fa-solid fa-file-pdf"></i> matches.pdf</span>
+                    <div class="pdf-actions">
+                        <button class="btn btn-sm btn-secondary" id="pdfViewBtn">
+                            <i class="fa-solid fa-eye"></i> 在线预览
+                        </button>
+                        <a href="matches.pdf" download class="btn btn-sm btn-primary">
+                            <i class="fa-solid fa-download"></i> 下载PDF
+                        </a>
+                    </div>
+                </div>
+                <div id="pdfPreviewContainer" style="display:none;">
+                    <iframe src="about:blank" data-src="matches.pdf" class="pdf-viewer" id="pdfViewer" title="比赛记录PDF"></iframe>
+                </div>
+                <div id="pdfPlaceholder" class="pdf-placeholder">
+                    <div class="pdf-placeholder-content">
+                        <i class="fa-solid fa-file-pdf"></i>
+                        <p>比赛记录文件 (matches.pdf)</p>
+                        <p class="pdf-placeholder-hint">点击上方"在线预览"按钮查看，或直接下载</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 新闻列表 -->
+    <section class="section news-list-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">All News</span>
+                <h2 class="section-title">全部动态</h2>
+            </div>
+            <div class="news-full-grid" id="newsFullGrid">
+                <!-- JS动态渲染 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4>WFLS Table Tennis Club</h4>
+                    <p>武汉外国语学校乒乓球社团</p>
+                    <p class="footer-motto">挥拍逐梦，旋转青春</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速导航</h4>
+                    <a href="index.html">Home</a>
+                    <a href="news.html">News</a>
+                    <a href="ranking.html">Ranking</a>
+                </div>
+                <div class="footer-school">
+                    <h4>学校信息</h4>
+                    <p>武汉外国语学校</p>
+                    <p>Wuhan Foreign Languages School</p>
+                    <p>湖北省武汉市</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WFLS Table Tennis Club. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
+    <!-- 模态框 - 二维码 -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content glass-card">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h3>社团群二维码</h3>
+            <p>扫描下方二维码加入社团微信群</p>
+            <div class="qr-image-wrapper">
+                <img src="qr-code.jpg" alt="社团群二维码" class="qr-real-image">
+            </div>
+            <p class="modal-note">二维码定期更新，如有问题请联系社团管理员</p>
+        </div>
+    </div>
+
     <script src="script.js"></script>
-    <script>
-        // 页面加载完成后执行 Excel 解析
-        document.addEventListener('DOMContentLoaded', function() {
-            loadExcel('matches.xlsx');
-        });
-    </script>
 </body>
 </html>

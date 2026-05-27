@@ -3,62 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>武汉外国语学校乒乓球社团 | WFLS TT Club</title>
+    <title>武汉外国语学校乒乓球社团 | WFLS Table Tennis Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <!-- 引入 FontAwesome 图标 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
     <!-- 导航栏 -->
-    <nav class="navbar">
-        <div class="logo">WFLS TT CLUB</div>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">首页</a></li>
-            <li><a href="news.html">近期动态</a></li>
-            <li><a href="ranking.html">Ranking (Beta)</a></li>
-        </ul>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon"><i class="fa-solid fa-table-tennis-paddle-ball"></i></span>
+                <span class="logo-text">WFLS TT Club</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
+                <li class="nav-item"><a href="ranking.html" class="nav-link">Ranking <span class="beta-tag">Beta</span></a></li>
+                <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <button class="hamburger" id="hamburger" aria-label="菜单">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
     </nav>
 
     <!-- Hero 区域 -->
-    <header class="hero">
-        <div class="hero-content">
-            <h1>武汉外国语学校<br>乒乓球社团</h1>
-            <p>爱乒才会赢 · 旋转的青春</p>
-            <a href="news.html" class="btn">查看最新动态</a>
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-particles">
+            <div class="particle particle-1"></div>
+            <div class="particle particle-2"></div>
+            <div class="particle particle-3"></div>
+            <div class="particle particle-4"></div>
+            <div class="particle particle-5"></div>
+            <div class="particle particle-6"></div>
         </div>
-    </header>
+        <div class="hero-content">
+            <h1 class="hero-title">武汉外国语学校<br>乒乓球社团</h1>
+            <p class="hero-subtitle">WFLS Table Tennis Club</p>
+            <p class="hero-slogan">挥拍逐梦，旋转青春</p>
+            <div class="hero-cta">
+                <a href="#about" class="btn btn-primary">了解社团</a>
+                <a href="#contact" class="btn btn-outline">加入我们</a>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
 
-    <!-- 简介区域 -->
-    <section class="container section-padding">
-        <h2 class="section-title">关于我们</h2>
-        <div class="about-grid">
-            <div class="card">
-                <i class="fas fa-table-tennis"></i>
-                <h3>专业训练</h3>
-                <p>每周定期开展基础技术与战术训练，邀请校队高手指导。</p>
+    <!-- About 区域 -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">About Us</span>
+                <h2 class="section-title">社团简介</h2>
+                <p class="section-desc">以球会友，以技修身。武汉外国语学校乒乓球社团致力于为每一位热爱乒乓球的同学提供成长与竞技的平台。</p>
             </div>
-            <div class="card">
-                <i class="fas fa-trophy"></i>
-                <h3>校内联赛</h3>
-                <p>每学期举办“外校杯”乒乓球联赛，以球会友，切磋技艺。</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-users"></i>
-                <h3>社团氛围</h3>
-                <p>无论新手还是大神，这里都是你释放压力、结交挚友的最佳场所。</p>
+            <div class="about-grid">
+                <div class="about-card glass-card">
+                    <div class="about-card-icon"><i class="fa-solid fa-book-open"></i></div>
+                    <h3>社团历史</h3>
+                    <p>（这里还等待人来填写呢）</p>
+                </div>
+                <div class="about-card glass-card">
+                    <div class="about-card-icon"><i class="fa-solid fa-bullseye"></i></div>
+                    <h3>社团理念</h3>
+                    <p>（这里还等待人来填写呢）</p>
+                </div>
+                <div class="about-card glass-card">
+                    <div class="about-card-icon"><i class="fa-solid fa-clock"></i></div>
+                    <h3>社团活动</h3>
+                    <p>（这里还等待人来填写呢）</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 武汉外国语学校乒乓球社团. All Rights Reserved.</p>
+    <!-- News 预览区域 -->
+    <section class="section news-preview-section" id="news">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Latest News</span>
+                <h2 class="section-title">近期动态</h2>
+                <p class="section-desc">关注社团最新赛事、活动与公告</p>
+            </div>
+            <div class="news-preview-grid" id="newsPreviewGrid">
+                <!-- JS动态渲染 -->
+            </div>
+            <div class="section-footer-link">
+                <a href="news.html" class="btn btn-secondary">查看全部动态 <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact 区域 -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Contact</span>
+                <h2 class="section-title">加入我们</h2>
+                <p class="section-desc">扫描二维码加入社团群，获取最新训练安排与活动通知</p>
+            </div>
+            <div class="contact-simple">
+                <div class="contact-card glass-card">
+                    <p>扫码加入社团微信群，与我们一起挥拍逐梦</p>
+                    <button class="btn btn-primary qr-trigger" id="qrTrigger">扫描二维码加入社团群</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4>WFLS Table Tennis Club</h4>
+                    <p>武汉外国语学校乒乓球社团</p>
+                    <p class="footer-motto">挥拍逐梦，旋转青春</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速导航</h4>
+                    <a href="index.html">Home</a>
+                    <a href="news.html">News</a>
+                    <a href="ranking.html">Ranking</a>
+                </div>
+                <div class="footer-school">
+                    <h4>学校信息</h4>
+                    <p>武汉外国语学校</p>
+                    <p>Wuhan Foreign Languages School</p>
+                    <p>湖北省武汉市</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WFLS Table Tennis Club. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
+
+    <!-- 模态框 - 二维码 -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content glass-card">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h3>社团群二维码</h3>
+            <p>扫描下方二维码加入社团微信群</p>
+            <div class="qr-image-wrapper">
+                <img src="qr-code.jpg" alt="社团群二维码" class="qr-real-image">
+            </div>
+            <p class="modal-note">二维码定期更新，如有问题请联系社团管理员</p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
