@@ -59,14 +59,16 @@ const i18n = {
         comp_list_title: "全部赛事",
         members_page_title: "社团骨干 | WFLS Table Tennis Club",
         rank_page_title: "Ranking Beta | WFLS Table Tennis Club",
-        rank_hero_desc: "社团积分排名系统 · 数据源自 ranking.json",
+        rank_hero_desc: "社团积分排名系统 · 支持多时间节点对比",
         rank_tag: "Data Table",
         rank_title: "积分数据表",
-        rank_desc: "点击表头可按相应列排序 | 数据实时更新",
+        rank_desc: "点击表头可按相应列排序 | 切换时间节点自动对比排名变化",
         rank_sort_hint: "当前排序：",
+        rank_sidebar_title: "时间节点",
         rank_col_rank: "#",
         rank_col_name: "姓名",
         rank_col_points: "当前积分",
+        rank_col_change: "变化",
         rank_col_matches: "总场次",
         rank_col_winrate: "胜率",
         tag_match: "赛事",
@@ -135,14 +137,16 @@ const i18n = {
         comp_list_title: "All Competitions",
         members_page_title: "Core Members | WFLS Table Tennis Club",
         rank_page_title: "Ranking Beta | WFLS Table Tennis Club",
-        rank_hero_desc: "Club ranking system · Data from ranking.json",
+        rank_hero_desc: "Club ranking system · Multi-period comparison",
         rank_tag: "Data Table",
         rank_title: "Points Table",
-        rank_desc: "Click column header to sort | Data updates in real-time",
+        rank_desc: "Click column header to sort | Switch time period for auto comparison",
         rank_sort_hint: "Current sorting: ",
+        rank_sidebar_title: "Time Periods",
         rank_col_rank: "#",
         rank_col_name: "Name",
         rank_col_points: "Points",
+        rank_col_change: "Change",
         rank_col_matches: "Matches",
         rank_col_winrate: "Win Rate",
         tag_match: "Match",
@@ -162,9 +166,11 @@ let newsData = [];
 let competitionsData = [];
 let aboutData = null;
 let membersData = [];
-let rankingData = [];
-let currentSortKey = '序号';
-let currentSortDir = 'asc';
+let rankingTimeline = [];
+let currentTimeIndex = 0;
+let currentDisplayData = [];
+let currentSortKey = '当前积分';
+let currentSortDir = 'desc';
 let dataLoaded = false;
 
 // ---------- DOM ----------
@@ -298,6 +304,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modalOve
 
 // ---------- 辅助函数 ----------
 function formatExcerpt(text) { return text.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); }
+function parseWinRate(s) { return parseFloat((s || '0%').replace('%', '')) || 0; }
 
 function createNewsCard(item) {
     const tagText = i18n[currentLang]['tag_' + item.tag] || item.tag;
@@ -468,19 +475,27 @@ function updateDetailPage() {
     document.getElementById('detailContent').innerHTML = content.replace(/\n/g, '<br>');
     
     const mediaContainer = document.getElementById('detailMedia');
-    // 清空容器
     mediaContainer.innerHTML = '';
     
-    if (item.media && item.media.length > 0) {
-        item.media.forEach(m => {
+    if (item.media && Array.isArray(item.media) && item.media.length > 0) {
+        item.media.forEach((m, index) => {
+            if (!m || !m.type || !m.src) {
+                console.warn(`跳过无效媒体项 [${index}]:`, m);
+                return;
+            }
+            
             const mediaItem = document.createElement('div');
             mediaItem.className = 'media-item';
             
             if (m.type === 'image') {
                 const img = document.createElement('img');
                 img.src = m.src;
-                img.alt = '图片';
+                img.alt = m.alt || '图片';
                 img.loading = 'lazy';
+                img.onerror = () => {
+                    img.style.display = 'none';
+                    mediaItem.innerHTML = '<p style="padding:20px;text-align:center;color:var(--text-muted);">图片加载失败</p>';
+                };
                 mediaItem.appendChild(img);
             } else if (m.type === 'video') {
                 const video = document.createElement('video');
@@ -488,6 +503,11 @@ function updateDetailPage() {
                 video.controls = true;
                 video.playsInline = true;
                 video.preload = 'metadata';
+                video.style.width = '100%';
+                video.onerror = () => {
+                    video.style.display = 'none';
+                    mediaItem.innerHTML = '<p style="padding:20px;text-align:center;color:var(--text-muted);">视频加载失败</p>';
+                };
                 mediaItem.appendChild(video);
             } else if (m.type === 'file') {
                 const link = document.createElement('a');
@@ -496,9 +516,11 @@ function updateDetailPage() {
                 link.download = '';
                 link.innerHTML = `<i class="fa-solid fa-download"></i> ${m.name || '下载文件'}`;
                 mediaItem.appendChild(link);
+            } else {
+                console.warn(`未知媒体类型 [${index}]:`, m.type);
+                return;
             }
             
-            // 每个媒体项都添加到容器
             mediaContainer.appendChild(mediaItem);
         });
     }
@@ -527,50 +549,256 @@ function initPdfViewer() {
     });
 }
 
-// ---------- 排名 ----------
+// ==========================================
+// 排名系统（多时间节点 + 排名变化对比）
+// ==========================================
+
 async function loadRankingData() {
     const tbody = document.getElementById('rankingFullBody');
     if (!tbody) return;
-    try { rankingData = await (await fetch('ranking.json')).json(); }
-    catch(e) { tbody.innerHTML = '<tr><td colspan="5">加载失败</td></tr>'; return; }
-    renderRankingTable(rankingData);
-    setupSortListeners();
+
+    try {
+        const response = await fetch('ranking.json');
+        if (!response.ok) throw new Error('无法加载排名数据');
+        rankingTimeline = await response.json();
+        
+        // 按时间降序排列（最新在前）
+        rankingTimeline.sort((a, b) => b.time.localeCompare(a.time));
+        
+        // 默认显示最新时间节点
+        currentTimeIndex = 0;
+        currentSortKey = '当前积分';
+        currentSortDir = 'desc';
+        
+        // 渲染侧边栏
+        renderTimeNodeList();
+        
+        // 计算排名变化并渲染
+        updateRankingDisplay();
+        
+        // 设置排序监听
+        setupSortListeners();
+        
+    } catch (error) {
+        console.error('加载排名失败:', error);
+        tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:40px;color:var(--accent-red);">无法加载排名数据，请确保 ranking.json 文件存在</td></tr>';
+    }
+}
+
+function renderTimeNodeList() {
+    const list = document.getElementById('timeNodeList');
+    const label = document.getElementById('currentTimeLabel');
+    if (!list || !rankingTimeline.length) return;
+
+    list.innerHTML = '';
+    rankingTimeline.forEach((node, index) => {
+        const li = document.createElement('li');
+        li.className = 'time-node-item';
+        if (index === currentTimeIndex) li.classList.add('active');
+        
+        li.innerHTML = `
+            <span class="node-dot"></span>
+            ${node.label}
+            <span class="node-count">${node.data.length}人</span>
+        `;
+        
+        li.addEventListener('click', () => {
+            currentTimeIndex = index;
+            currentSortKey = '当前积分';
+            currentSortDir = 'desc';
+            updateRankingDisplay();
+            renderTimeNodeList();
+        });
+        
+        list.appendChild(li);
+    });
+    
+    if (label && rankingTimeline[currentTimeIndex]) {
+        label.textContent = rankingTimeline[currentTimeIndex].label;
+    }
+}
+
+function calculateRankChanges(currentData, previousData) {
+    if (!previousData) {
+        return currentData.map((player, index) => ({
+            ...player,
+            rank: index + 1,
+            change: 0,
+            changeType: 'new'
+        }));
+    }
+    
+    const prevRankMap = {};
+    previousData.forEach((player, index) => {
+        prevRankMap[player['姓名']] = index + 1;
+    });
+    
+    return currentData.map((player, index) => {
+        const currentRank = index + 1;
+        const prevRank = prevRankMap[player['姓名']];
+        
+        if (prevRank === undefined) {
+            return {
+                ...player,
+                rank: currentRank,
+                change: 0,
+                changeType: 'new'
+            };
+        }
+        
+        const change = prevRank - currentRank;
+        
+        if (change > 0) {
+            return { ...player, rank: currentRank, change, changeType: 'up' };
+        } else if (change < 0) {
+            return { ...player, rank: currentRank, change: Math.abs(change), changeType: 'down' };
+        } else {
+            return { ...player, rank: currentRank, change: 0, changeType: 'same' };
+        }
+    });
+}
+
+function updateRankingDisplay() {
+    if (!rankingTimeline.length || !rankingTimeline[currentTimeIndex]) return;
+    
+    const currentData = rankingTimeline[currentTimeIndex].data;
+    const previousData = currentTimeIndex < rankingTimeline.length - 1 
+        ? rankingTimeline[currentTimeIndex + 1].data 
+        : null;
+    
+    currentDisplayData = calculateRankChanges(currentData, previousData);
+    currentDisplayData = sortDisplayData(currentSortKey, currentSortDir);
+    
+    renderRankingTable(currentDisplayData);
+    
+    const indicator = document.getElementById('sortIndicator');
+    if (indicator) {
+        indicator.textContent = `${currentSortKey}${currentSortDir === 'desc' ? '降序' : '升序'}`;
+    }
+    
+    updateSortHeaderHighlight();
+    
+    const label = document.getElementById('currentTimeLabel');
+    if (label) {
+        label.textContent = rankingTimeline[currentTimeIndex].label;
+    }
+}
+
+function sortDisplayData(key, dir) {
+    return [...currentDisplayData].sort((a, b) => {
+        let valA, valB;
+        
+        if (key === '胜率') {
+            valA = parseWinRate(a['胜率']);
+            valB = parseWinRate(b['胜率']);
+        } else if (key === '姓名') {
+            valA = a['姓名'] || '';
+            valB = b['姓名'] || '';
+            return dir === 'asc' 
+                ? valA.localeCompare(valB, 'zh') 
+                : valB.localeCompare(valA, 'zh');
+        } else if (key === 'rank') {
+            valA = a.rank || 0;
+            valB = b.rank || 0;
+        } else if (key === '变化') {
+            valA = a.change || 0;
+            valB = b.change || 0;
+        } else {
+            valA = a[key] || 0;
+            valB = b[key] || 0;
+        }
+        
+        if (valA < valB) return dir === 'asc' ? -1 : 1;
+        if (valA > valB) return dir === 'asc' ? 1 : -1;
+        return 0;
+    });
 }
 
 function renderRankingTable(data) {
     const tbody = document.getElementById('rankingFullBody');
     if (!tbody) return;
+    
+    if (!data || data.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:40px;">暂无排名数据</td></tr>';
+        return;
+    }
+
     tbody.innerHTML = '';
-    data.forEach((p,i) => {
+    data.forEach((player, index) => {
         const tr = document.createElement('tr');
-        const wr = p['胜率'] || '0%';
-        tr.innerHTML = `<td>${i+1}</td><td>${p['姓名']}</td><td><strong>${p['当前积分']}</strong></td><td>${p['总场次']}</td><td>${wr}</td>`;
+        const winRateRaw = player['胜率'] || '0%';
+        let winRateDisplay = winRateRaw === '#DIV/0!' || winRateRaw === '-' ? '0%' : winRateRaw;
+        
+        let changeHtml = '';
+        if (player.changeType === 'up') {
+            changeHtml = `<span class="rank-change rank-up">▲${player.change}</span>`;
+        } else if (player.changeType === 'down') {
+            changeHtml = `<span class="rank-change rank-down">▼${player.change}</span>`;
+        } else if (player.changeType === 'new') {
+            changeHtml = `<span class="rank-new">NEW</span>`;
+        } else {
+            changeHtml = `<span class="rank-same">-</span>`;
+        }
+        
+        tr.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${player['姓名'] || '-'}</td>
+            <td><strong>${player['当前积分'] || 0}</strong></td>
+            <td>${changeHtml}</td>
+            <td>${player['总场次'] || 0}</td>
+            <td>${winRateDisplay}</td>
+        `;
         tbody.appendChild(tr);
     });
 }
-function parseWinRate(s) { return parseFloat((s||'0%').replace('%','')) || 0; }
-function sortRankingData(key, dir) {
-    return [...rankingData].sort((a,b) => {
-        let va, vb;
-        if (key === '胜率') { va = parseWinRate(a['胜率']); vb = parseWinRate(b['胜率']); }
-        else if (key === '姓名') { va = a['姓名']||''; vb = b['姓名']||''; return dir==='asc'?va.localeCompare(vb,'zh'):vb.localeCompare(va,'zh'); }
-        else { va = a[key]||0; vb = b[key]||0; }
-        if (va<vb) return dir==='asc'?-1:1;
-        if (va>vb) return dir==='asc'?1:-1;
-        return 0;
+
+function updateSortHeaderHighlight() {
+    document.querySelectorAll('.ranking-table-full th.sortable').forEach(th => {
+        th.classList.remove('active-sort');
+        const sortKey = th.getAttribute('data-sort');
+        if (sortKey === currentSortKey) {
+            th.classList.add('active-sort');
+        }
     });
 }
+
 function setupSortListeners() {
-    document.querySelectorAll('.ranking-table-full th.sortable').forEach(th => {
-        th.addEventListener('click', () => {
-            const key = th.dataset.sort;
-            currentSortDir = key===currentSortKey ? (currentSortDir==='desc'?'asc':'desc') : (key==='序号'?'asc':'desc');
-            currentSortKey = key;
-            document.querySelectorAll('.ranking-table-full th.sortable').forEach(h => h.classList.remove('active-sort'));
-            th.classList.add('active-sort');
-            renderRankingTable(sortRankingData(key, currentSortDir));
-            const colKey = key === '当前积分' ? 'points' : key === '总场次' ? 'matches' : key === '胜率' ? 'winrate' : 'rank';
-            document.getElementById('sortIndicator').textContent = `${i18n[currentLang]['rank_col_'+colKey] || key} ${currentSortDir==='desc'?'↓':'↑'}`;
+    const sortableHeaders = document.querySelectorAll('.ranking-table-full th.sortable');
+    const sortIndicator = document.getElementById('sortIndicator');
+
+    sortableHeaders.forEach(th => {
+        const newTh = th.cloneNode(true);
+        th.parentNode.replaceChild(newTh, th);
+        
+        newTh.addEventListener('click', () => {
+            const key = newTh.getAttribute('data-sort');
+            let dir = 'desc';
+
+            if (key === currentSortKey) {
+                currentSortDir = currentSortDir === 'desc' ? 'asc' : 'desc';
+                dir = currentSortDir;
+            } else {
+                currentSortKey = key;
+                currentSortDir = 'desc';
+                dir = 'desc';
+            }
+
+            currentDisplayData = sortDisplayData(key, dir);
+            renderRankingTable(currentDisplayData);
+            
+            updateSortHeaderHighlight();
+            const allHeaders = document.querySelectorAll('.ranking-table-full th.sortable');
+            allHeaders.forEach(h => {
+                const arrow = h.querySelector('.sort-arrow');
+                if (arrow) arrow.innerHTML = '';
+            });
+            const arrow = newTh.querySelector('.sort-arrow');
+            if (arrow) arrow.innerHTML = dir === 'desc' ? '&#9660;' : '&#9650;';
+            newTh.classList.add('active-sort');
+
+            if (sortIndicator) {
+                sortIndicator.textContent = `${key}${dir === 'desc' ? '降序' : '升序'}`;
+            }
         });
     });
 }
@@ -581,13 +809,11 @@ function highlightNavByPath() {
     const allNavLinks = document.querySelectorAll('.nav-link:not(.dropdown-toggle)');
     const dropdownLinks = document.querySelectorAll('.dropdown-link');
     
-    // 移除所有高亮
     allNavLinks.forEach(link => link.classList.remove('active'));
     dropdownLinks.forEach(link => link.classList.remove('active'));
-    const dropdownToggle = document.getElementById('moreDropdown');
-    if (dropdownToggle) dropdownToggle.classList.remove('active');
+    const dropdownToggleEl = document.getElementById('moreDropdown');
+    if (dropdownToggleEl) dropdownToggleEl.classList.remove('active');
     
-    // 根据当前路径高亮对应导航
     allNavLinks.forEach(link => {
         const href = link.getAttribute('href');
         if (!href) return;
@@ -599,9 +825,8 @@ function highlightNavByPath() {
         }
     });
     
-    // 高亮下拉菜单项
     if (currentPath === 'ranking.html' || currentPath === 'members.html') {
-        if (dropdownToggle) dropdownToggle.classList.add('active');
+        if (dropdownToggleEl) dropdownToggleEl.classList.add('active');
         dropdownLinks.forEach(link => {
             const href = link.getAttribute('href');
             if (href === currentPath) {
