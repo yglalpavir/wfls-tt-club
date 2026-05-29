@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ranking Beta | WFLS Table Tennis Club</title>
+    <title data-i18n="rank_page_title">Ranking Beta | WFLS Table Tennis Club</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- 导航栏 -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
@@ -19,53 +18,55 @@
                 <span class="logo-text">WFLS TT Club</span>
             </a>
             <ul class="nav-menu" id="navMenu">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
-                <li class="nav-item"><a href="ranking.html" class="nav-link active">Ranking <span class="beta-tag">Beta</span></a></li>
-                <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+                <li class="nav-item"><a href="news.html" class="nav-link" data-i18n="nav_news">News</a></li>
+                <li class="nav-item"><a href="competitions.html" class="nav-link" data-i18n="nav_competitions">Competitions</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active" id="moreDropdown" data-i18n="nav_more">More... <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu" id="dropdownMenu">
+                        <li><a href="ranking.html" class="dropdown-link active">Ranking <span class="beta-tag">Beta</span></a></li>
+                        <li><a href="members.html" class="dropdown-link" data-i18n="nav_members">社团骨干</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="index.html#contact" class="nav-link" data-i18n="nav_contact">Contact</a></li>
             </ul>
-            <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
-                <i class="fa-solid fa-moon"></i>
-            </button>
-            <button class="hamburger" id="hamburger" aria-label="菜单">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+                <button class="lang-toggle" id="langToggle"><span data-i18n="lang_btn">EN</span></button>
+            </div>
+            <button class="hamburger" id="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
         </div>
     </nav>
 
-    <!-- 页面头部 -->
     <section class="page-hero ranking-page-hero">
         <div class="page-hero-overlay"></div>
         <div class="page-hero-content">
             <span class="section-tag beta-tag-large">Beta Version</span>
             <h1>Ranking</h1>
-            <p>社团积分排名系统 · 数据源自 ranking.json</p>
+            <p data-i18n="rank_hero_desc">社团积分排名系统 · 数据源自 ranking.json</p>
         </div>
     </section>
 
-    <!-- 排名表格区域 -->
     <section class="section ranking-table-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Data Table</span>
-                <h2 class="section-title">积分数据表</h2>
-                <p class="section-desc">点击表头可按相应列排序 | 数据实时更新</p>
+                <span class="section-tag" data-i18n="rank_tag">Data Table</span>
+                <h2 class="section-title" data-i18n="rank_title">积分数据表</h2>
+                <p class="section-desc" data-i18n="rank_desc">点击表头可按相应列排序 | 数据实时更新</p>
             </div>
             <div class="ranking-controls">
-                <span class="sort-hint">当前排序：<strong id="sortIndicator">序号默认</strong></span>
+                <span class="sort-hint"><span data-i18n="rank_sort_hint">当前排序：</span><strong id="sortIndicator">序号默认</strong></span>
                 <span class="update-info" id="lastUpdated">加载中...</span>
             </div>
             <div class="ranking-full-table-wrapper glass-card">
                 <table class="ranking-table ranking-table-full" id="rankingFullTable">
                     <thead>
                         <tr>
-                            <th data-sort="序号" class="sortable active-sort"># <span class="sort-arrow">&#9660;</span></th>
-                            <th data-sort="姓名" class="sortable">姓名 <span class="sort-arrow"></span></th>
-                            <th data-sort="当前积分" class="sortable">当前积分 <span class="sort-arrow"></span></th>
-                            <th data-sort="总场次" class="sortable">总场次 <span class="sort-arrow"></span></th>
-                            <th data-sort="胜率" class="sortable">胜率 <span class="sort-arrow"></span></th>
+                            <th data-sort="序号" class="sortable active-sort" data-i18n="rank_col_rank"># <span class="sort-arrow">&#9660;</span></th>
+                            <th data-sort="姓名" class="sortable" data-i18n="rank_col_name">姓名 <span class="sort-arrow"></span></th>
+                            <th data-sort="当前积分" class="sortable" data-i18n="rank_col_points">当前积分 <span class="sort-arrow"></span></th>
+                            <th data-sort="总场次" class="sortable" data-i18n="rank_col_matches">总场次 <span class="sort-arrow"></span></th>
+                            <th data-sort="胜率" class="sortable" data-i18n="rank_col_winrate">胜率 <span class="sort-arrow"></span></th>
                         </tr>
                     </thead>
                     <tbody id="rankingFullBody">
@@ -76,44 +77,40 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <h4>WFLS Table Tennis Club</h4>
-                    <p>武汉外国语学校乒乓球社团</p>
-                    <p class="footer-motto">挥拍逐梦，旋转青春</p>
+                    <p data-i18n="footer_brand">武汉外国语学校乒乓球社团</p>
+                    <p class="footer-motto" data-i18n="footer_motto">挥拍逐梦，旋转青春</p>
                 </div>
                 <div class="footer-links">
-                    <h4>快速导航</h4>
-                    <a href="index.html">Home</a>
-                    <a href="news.html">News</a>
+                    <h4 data-i18n="footer_nav">快速导航</h4>
+                    <a href="index.html" data-i18n="nav_home">Home</a>
+                    <a href="news.html" data-i18n="nav_news">News</a>
+                    <a href="competitions.html" data-i18n="nav_competitions">Competitions</a>
+                    <a href="members.html" data-i18n="nav_members">社团骨干</a>
                     <a href="ranking.html">Ranking</a>
                 </div>
                 <div class="footer-school">
-                    <h4>学校信息</h4>
-                    <p>武汉外国语学校</p>
+                    <h4 data-i18n="footer_school">学校信息</h4>
+                    <p data-i18n="footer_school_name">武汉外国语学校</p>
                     <p>Wuhan Foreign Languages School</p>
-                    <p>湖北省武汉市</p>
+                    <p data-i18n="footer_location">湖北省武汉市</p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 WFLS Table Tennis Club. All rights reserved.</p>
-            </div>
+            <div class="footer-bottom"><p>&copy; 2026 WFLS Table Tennis Club. All rights reserved.</p></div>
         </div>
     </footer>
 
-    <!-- 二维码模态框 -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal-content glass-card">
             <button class="modal-close" id="modalClose">&times;</button>
-            <h3>社团群二维码</h3>
-            <p>扫描下方二维码加入社团微信群</p>
-            <div class="qr-image-wrapper">
-                <img src="qr-code.jpg" alt="社团群二维码" class="qr-real-image">
-            </div>
-            <p class="modal-note">二维码定期更新，如有问题请联系社团管理员</p>
+            <h3 data-i18n="modal_title">社团群二维码</h3>
+            <p data-i18n="modal_desc">扫描下方二维码加入社团微信群</p>
+            <div class="qr-image-wrapper"><img src="Assets/images/qr-code.jpg" alt="社团群二维码" class="qr-real-image"></div>
+            <p class="modal-note" data-i18n="modal_note">二维码定期更新，如有问题请联系社团管理员</p>
         </div>
     </div>
 

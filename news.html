@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>近期动态 | WFLS Table Tennis Club</title>
+    <title data-i18n="news_page_title">近期动态 | WFLS Table Tennis Club</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- 导航栏 -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
@@ -19,72 +18,42 @@
                 <span class="logo-text">WFLS TT Club</span>
             </a>
             <ul class="nav-menu" id="navMenu">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="news.html" class="nav-link active">News</a></li>
-                <li class="nav-item"><a href="ranking.html" class="nav-link">Ranking <span class="beta-tag">Beta</span></a></li>
-                <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+                <li class="nav-item"><a href="news.html" class="nav-link active" data-i18n="nav_news">News</a></li>
+                <li class="nav-item"><a href="competitions.html" class="nav-link" data-i18n="nav_competitions">Competitions</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="moreDropdown" data-i18n="nav_more">More... <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu" id="dropdownMenu">
+                        <li><a href="ranking.html" class="dropdown-link">Ranking <span class="beta-tag">Beta</span></a></li>
+                        <li><a href="members.html" class="dropdown-link" data-i18n="nav_members">社团骨干</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="index.html#contact" class="nav-link" data-i18n="nav_contact">Contact</a></li>
             </ul>
-            <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
-                <i class="fa-solid fa-moon"></i>
-            </button>
-            <button class="hamburger" id="hamburger" aria-label="菜单">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+                <button class="lang-toggle" id="langToggle"><span data-i18n="lang_btn">EN</span></button>
+            </div>
+            <button class="hamburger" id="hamburger">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
             </button>
         </div>
     </nav>
 
-    <!-- 页面头部 -->
     <section class="page-hero">
         <div class="page-hero-overlay"></div>
         <div class="page-hero-content">
-            <span class="section-tag">News & Updates</span>
-            <h1>近期动态</h1>
-            <p>赛事通告 / 训练安排 / 社团活动</p>
+            <span class="section-tag" data-i18n="news_hero_tag">News & Updates</span>
+            <h1 data-i18n="news_hero_title">近期动态</h1>
+            <p data-i18n="news_hero_desc">社团活动 / 训练安排 / 重要公告</p>
         </div>
     </section>
 
-    <!-- PDF 嵌入区域 -->
-    <section class="section pdf-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Match Records</span>
-                <h2 class="section-title">比赛记录</h2>
-                <p class="section-desc">最新赛事对阵表与成绩记录</p>
-            </div>
-            <div class="pdf-container glass-card">
-                <div class="pdf-toolbar">
-                    <span class="pdf-filename"><i class="fa-solid fa-file-pdf"></i> matches.pdf</span>
-                    <div class="pdf-actions">
-                        <button class="btn btn-sm btn-secondary" id="pdfViewBtn">
-                            <i class="fa-solid fa-eye"></i> 在线预览
-                        </button>
-                        <a href="matches.pdf" download class="btn btn-sm btn-primary">
-                            <i class="fa-solid fa-download"></i> 下载PDF
-                        </a>
-                    </div>
-                </div>
-                <div id="pdfPreviewContainer" style="display:none;">
-                    <iframe src="about:blank" data-src="matches.pdf" class="pdf-viewer" id="pdfViewer" title="比赛记录PDF"></iframe>
-                </div>
-                <div id="pdfPlaceholder" class="pdf-placeholder">
-                    <div class="pdf-placeholder-content">
-                        <i class="fa-solid fa-file-pdf"></i>
-                        <p>比赛记录文件 (matches.pdf)</p>
-                        <p class="pdf-placeholder-hint">点击上方"在线预览"按钮查看，或直接下载</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 新闻列表 -->
     <section class="section news-list-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">All News</span>
-                <h2 class="section-title">全部动态</h2>
+                <span class="section-tag" data-i18n="news_list_tag">All News</span>
+                <h2 class="section-title" data-i18n="news_list_title">全部动态</h2>
             </div>
             <div class="news-full-grid" id="newsFullGrid">
                 <!-- JS动态渲染 -->
@@ -92,44 +61,40 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <h4>WFLS Table Tennis Club</h4>
-                    <p>武汉外国语学校乒乓球社团</p>
-                    <p class="footer-motto">挥拍逐梦，旋转青春</p>
+                    <p data-i18n="footer_brand">武汉外国语学校乒乓球社团</p>
+                    <p class="footer-motto" data-i18n="footer_motto">挥拍逐梦，旋转青春</p>
                 </div>
                 <div class="footer-links">
-                    <h4>快速导航</h4>
-                    <a href="index.html">Home</a>
-                    <a href="news.html">News</a>
+                    <h4 data-i18n="footer_nav">快速导航</h4>
+                    <a href="index.html" data-i18n="nav_home">Home</a>
+                    <a href="news.html" data-i18n="nav_news">News</a>
+                    <a href="competitions.html" data-i18n="nav_competitions">Competitions</a>
+                    <a href="members.html" data-i18n="nav_members">社团骨干</a>
                     <a href="ranking.html">Ranking</a>
                 </div>
                 <div class="footer-school">
-                    <h4>学校信息</h4>
-                    <p>武汉外国语学校</p>
+                    <h4 data-i18n="footer_school">学校信息</h4>
+                    <p data-i18n="footer_school_name">武汉外国语学校</p>
                     <p>Wuhan Foreign Languages School</p>
-                    <p>湖北省武汉市</p>
+                    <p data-i18n="footer_location">湖北省武汉市</p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 WFLS Table Tennis Club. All rights reserved.</p>
-            </div>
+            <div class="footer-bottom"><p>&copy; 2026 WFLS Table Tennis Club. All rights reserved.</p></div>
         </div>
     </footer>
 
-    <!-- 模态框 - 二维码 -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal-content glass-card">
             <button class="modal-close" id="modalClose">&times;</button>
-            <h3>社团群二维码</h3>
-            <p>扫描下方二维码加入社团微信群</p>
-            <div class="qr-image-wrapper">
-                <img src="qr-code.jpg" alt="社团群二维码" class="qr-real-image">
-            </div>
-            <p class="modal-note">二维码定期更新，如有问题请联系社团管理员</p>
+            <h3 data-i18n="modal_title">社团群二维码</h3>
+            <p data-i18n="modal_desc">扫描下方二维码加入社团微信群</p>
+            <div class="qr-image-wrapper"><img src="Assets/images/qr-code.jpg" alt="社团群二维码" class="qr-real-image"></div>
+            <p class="modal-note" data-i18n="modal_note">二维码定期更新，如有问题请联系社团管理员</p>
         </div>
     </div>
 

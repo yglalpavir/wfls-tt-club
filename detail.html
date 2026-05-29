@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="detail_page_title">详情 | WFLS Table Tennis Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon"><i class="fa-solid fa-table-tennis-paddle-ball"></i></span>
+                <span class="logo-text">WFLS TT Club</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+                <li class="nav-item"><a href="news.html" class="nav-link" data-i18n="nav_news">News</a></li>
+                <li class="nav-item"><a href="competitions.html" class="nav-link" data-i18n="nav_competitions">Competitions</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="moreDropdown" data-i18n="nav_more">More... <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu" id="dropdownMenu">
+                        <li><a href="ranking.html" class="dropdown-link">Ranking <span class="beta-tag">Beta</span></a></li>
+                        <li><a href="members.html" class="dropdown-link" data-i18n="nav_members">社团骨干</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="index.html#contact" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+                <button class="lang-toggle" id="langToggle"><span data-i18n="lang_btn">EN</span></button>
+            </div>
+            <button class="hamburger" id="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+        </div>
+    </nav>
+
+    <section class="page-hero detail-page-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-content">
+            <span class="section-tag" id="detailTypeTag">News</span>
+            <h1 id="detailTitle">标题</h1>
+            <p id="detailDate">日期</p>
+        </div>
+    </section>
+
+    <section class="section detail-content-section">
+        <div class="container">
+            <div id="detailContent" class="detail-body glass-card">
+                <!-- 正文内容 -->
+            </div>
+            <div id="detailMedia" class="detail-media-grid">
+                <!-- 附件：图片/视频/文件 -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4>WFLS Table Tennis Club</h4>
+                    <p data-i18n="footer_brand">武汉外国语学校乒乓球社团</p>
+                    <p class="footer-motto" data-i18n="footer_motto">挥拍逐梦，旋转青春</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-i18n="footer_nav">快速导航</h4>
+                    <a href="index.html" data-i18n="nav_home">Home</a>
+                    <a href="news.html" data-i18n="nav_news">News</a>
+                    <a href="competitions.html" data-i18n="nav_competitions">Competitions</a>
+                    <a href="members.html" data-i18n="nav_members">社团骨干</a>
+                    <a href="ranking.html">Ranking</a>
+                </div>
+                <div class="footer-school">
+                    <h4 data-i18n="footer_school">学校信息</h4>
+                    <p data-i18n="footer_school_name">武汉外国语学校</p>
+                    <p>Wuhan Foreign Languages School</p>
+                    <p data-i18n="footer_location">湖北省武汉市</p>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 WFLS Table Tennis Club. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content glass-card">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h3 data-i18n="modal_title">社团群二维码</h3>
+            <p data-i18n="modal_desc">扫描下方二维码加入社团微信群</p>
+            <div class="qr-image-wrapper"><img src="Assets/images/qr-code.jpg" alt="社团群二维码" class="qr-real-image"></div>
+            <p class="modal-note" data-i18n="modal_note">二维码定期更新，如有问题请联系社团管理员</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
