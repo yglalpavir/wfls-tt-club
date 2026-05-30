@@ -31,19 +31,25 @@ const i18n = {
         comp_title: "赛事信息",
         comp_desc: "近期比赛安排与成绩",
         comp_all: "查看全部赛事",
+        contact_page_title: "联系我们 | WFLS Table Tennis Club",
         contact_tag: "Contact",
         contact_title: "加入我们",
-        contact_desc: "扫描二维码加入社团群，获取最新训练安排与活动通知",
-        contact_text: "扫码加入社团微信群，与我们一起挥拍逐梦",
+        contact_desc: "扫描二维码加入社团QQ群，获取最新训练安排与活动通知",
+        contact_text: "扫码加入社团QQ群，与我们一起挥拍逐梦",
         contact_btn: "扫描二维码加入社团群",
+        contact_qr_title: "社团QQ群二维码",
+        contact_qr_desc: "扫码加入社团QQ群，与我们一起挥拍逐梦",
+        contact_info_title: "联系方式",
+        contact_location: "校体育馆二楼乒乓球馆",
+        contact_schedule: "训练时间：周二、周四 16:30-18:30，周六 9:00-12:00",
         footer_brand: "武汉外国语学校乒乓球社团",
         footer_motto: "挥拍逐梦，旋转青春",
         footer_nav: "快速导航",
         footer_school: "学校信息",
         footer_school_name: "武汉外国语学校",
         footer_location: "湖北省武汉市",
-        modal_title: "社团群二维码",
-        modal_desc: "扫描下方二维码加入社团微信群",
+        modal_title: "社团QQ群二维码",
+        modal_desc: "扫描下方二维码加入社团QQ群",
         modal_note: "二维码定期更新，如有问题请联系社团管理员",
         news_page_title: "近期动态 | WFLS Table Tennis Club",
         news_hero_tag: "News & Updates",
@@ -57,6 +63,13 @@ const i18n = {
         comp_hero_desc: "比赛安排 / 成绩记录 / 赛事回顾",
         comp_list_tag: "All Competitions",
         comp_list_title: "全部赛事",
+        pdf_tag: "Match Records",
+        pdf_title: "比赛记录",
+        pdf_desc: "最新赛事对阵表与成绩记录",
+        pdf_preview_btn: "在线预览",
+        pdf_download_btn: "下载PDF",
+        pdf_placeholder_name: "比赛记录文件 (matches.pdf)",
+        pdf_placeholder_hint: "点击上方\"在线预览\"按钮查看，或直接下载",
         members_page_title: "社团骨干 | WFLS Table Tennis Club",
         rank_page_title: "Ranking Beta | WFLS Table Tennis Club",
         rank_hero_desc: "社团积分排名系统 · 支持多时间节点对比",
@@ -79,7 +92,13 @@ const i18n = {
         tag_result: "比赛结果",
         tag_live: "进行中",
         detail_page_title: "详情 | WFLS Table Tennis Club",
-        detail_back: "返回列表"
+        detail_back: "返回列表",
+        search_placeholder: "搜索新闻、赛事、成员、排名...",
+        search_no_results: "未找到相关结果",
+        search_type_news: "新闻",
+        search_type_competition: "赛事",
+        search_type_member: "成员",
+        search_type_ranking: "排名"
     },
     en: {
         site_title: "WFLS Table Tennis Club | Wuhan Foreign Languages School",
@@ -109,19 +128,25 @@ const i18n = {
         comp_title: "Competitions",
         comp_desc: "Upcoming matches and results",
         comp_all: "View All Competitions",
+        contact_page_title: "Contact | WFLS Table Tennis Club",
         contact_tag: "Contact",
         contact_title: "Join Us",
-        contact_desc: "Scan the QR code to join the club group and receive notifications",
-        contact_text: "Scan to join the club WeChat group and swing with us",
+        contact_desc: "Scan the QR code to join the club QQ group and receive notifications",
+        contact_text: "Scan to join the club QQ group and swing with us",
         contact_btn: "Scan QR Code to Join",
+        contact_qr_title: "Club QQ Group QR Code",
+        contact_qr_desc: "Scan to join the club QQ group and swing with us",
+        contact_info_title: "Contact Info",
+        contact_location: "Gymnasium 2nd Floor, Table Tennis Hall",
+        contact_schedule: "Training: Tue/Thu 16:30-18:30, Sat 9:00-12:00",
         footer_brand: "WFLS Table Tennis Club",
         footer_motto: "Swing for dreams, spin for youth",
         footer_nav: "Quick Links",
         footer_school: "School Info",
         footer_school_name: "Wuhan Foreign Languages School",
         footer_location: "Wuhan, Hubei, China",
-        modal_title: "Club Group QR Code",
-        modal_desc: "Scan the QR code below to join the club WeChat group",
+        modal_title: "Club QQ Group QR Code",
+        modal_desc: "Scan the QR code below to join the club QQ group",
         modal_note: "QR code updates periodically.",
         news_page_title: "News | WFLS Table Tennis Club",
         news_hero_tag: "News & Updates",
@@ -135,6 +160,13 @@ const i18n = {
         comp_hero_desc: "Schedule / Results / Review",
         comp_list_tag: "All Competitions",
         comp_list_title: "All Competitions",
+        pdf_tag: "Match Records",
+        pdf_title: "Match Records",
+        pdf_desc: "Latest match schedule and results",
+        pdf_preview_btn: "Preview Online",
+        pdf_download_btn: "Download PDF",
+        pdf_placeholder_name: "Match Records (matches.pdf)",
+        pdf_placeholder_hint: "Click \"Preview Online\" to view, or download directly",
         members_page_title: "Core Members | WFLS Table Tennis Club",
         rank_page_title: "Ranking Beta | WFLS Table Tennis Club",
         rank_hero_desc: "Club ranking system · Multi-period comparison",
@@ -157,7 +189,13 @@ const i18n = {
         tag_result: "Result",
         tag_live: "Live",
         detail_page_title: "Details | WFLS Table Tennis Club",
-        detail_back: "Back to List"
+        detail_back: "Back to List",
+        search_placeholder: "Search news, competitions, members, rankings...",
+        search_no_results: "No results found",
+        search_type_news: "News",
+        search_type_competition: "Competition",
+        search_type_member: "Member",
+        search_type_ranking: "Ranking"
     }
 };
 
@@ -179,6 +217,12 @@ const navMenu = document.getElementById('navMenu');
 const navbar = document.getElementById('navbar');
 const themeToggle = document.getElementById('themeToggle');
 const langToggle = document.getElementById('langToggle');
+const searchToggle = document.getElementById('searchToggle');
+const searchOverlay = document.getElementById('searchOverlay');
+const searchInput = document.getElementById('searchInput');
+const searchClear = document.getElementById('searchClear');
+const searchClose = document.getElementById('searchClose');
+const searchResults = document.getElementById('searchResults');
 const modalOverlay = document.getElementById('modalOverlay');
 const modalClose = document.getElementById('modalClose');
 const qrTrigger = document.getElementById('qrTrigger');
@@ -196,6 +240,9 @@ function setLanguage(lang) {
     });
     if (langToggle) {
         langToggle.querySelector('span').textContent = lang === 'zh' ? 'EN' : '中文';
+    }
+    if (searchInput) {
+        searchInput.placeholder = i18n[lang].search_placeholder;
     }
     renderAllNews();
     renderAllCompetitions();
@@ -228,6 +275,201 @@ if (langToggle) {
     langToggle.addEventListener('click', () => {
         setLanguage(currentLang === 'zh' ? 'en' : 'zh');
     });
+}
+
+// ---------- 搜索功能 ----------
+function initSearch() {
+    if (!searchToggle || !searchOverlay || !searchInput) return;
+
+    searchToggle.addEventListener('click', () => {
+        searchOverlay.classList.add('active');
+        body.style.overflow = 'hidden';
+        setTimeout(() => searchInput.focus(), 300);
+    });
+
+    function closeSearch() {
+        searchOverlay.classList.remove('active');
+        body.style.overflow = '';
+        searchInput.value = '';
+        searchClear.style.display = 'none';
+        showSearchPlaceholder();
+    }
+
+    searchClose.addEventListener('click', closeSearch);
+    searchOverlay.addEventListener('click', (e) => {
+        if (e.target === searchOverlay) closeSearch();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && searchOverlay && searchOverlay.classList.contains('active')) {
+            closeSearch();
+        }
+    });
+
+    let debounceTimer;
+    searchInput.addEventListener('input', () => {
+        const query = searchInput.value.trim();
+        
+        if (query.length > 0) {
+            searchClear.style.display = 'flex';
+        } else {
+            searchClear.style.display = 'none';
+            showSearchPlaceholder();
+            return;
+        }
+
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+            performSearch(query);
+        }, 200);
+    });
+
+    searchClear.addEventListener('click', () => {
+        searchInput.value = '';
+        searchClear.style.display = 'none';
+        showSearchPlaceholder();
+        searchInput.focus();
+    });
+}
+
+function showSearchPlaceholder() {
+    if (!searchResults) return;
+    searchResults.innerHTML = `
+        <div class="search-placeholder">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <p>输入关键词开始搜索</p>
+            <p class="search-hint">支持搜索标题、内容、姓名等</p>
+        </div>
+    `;
+}
+
+function performSearch(query) {
+    if (!searchResults) return;
+    
+    const results = [];
+
+    if (newsData && newsData.length > 0) {
+        newsData.forEach(item => {
+            const score = calculateScore(query, item.title, item.excerpt || '', item.content || '');
+            if (score > 0) {
+                results.push({
+                    type: 'news',
+                    typeLabel: i18n[currentLang].search_type_news,
+                    title: item.title,
+                    excerpt: item.excerpt || item.content || '',
+                    date: item.date,
+                    link: `detail.html?type=news&id=${item.id}`,
+                    score: score
+                });
+            }
+        });
+    }
+
+    if (competitionsData && competitionsData.length > 0) {
+        competitionsData.forEach(item => {
+            const score = calculateScore(query, item.title, item.excerpt || '', item.content || '');
+            if (score > 0) {
+                results.push({
+                    type: 'competition',
+                    typeLabel: i18n[currentLang].search_type_competition,
+                    title: item.title,
+                    excerpt: item.excerpt || item.content || '',
+                    date: item.date,
+                    link: `detail.html?type=competition&id=${item.id}`,
+                    score: score
+                });
+            }
+        });
+    }
+
+    if (membersData && membersData.length > 0) {
+        membersData.forEach(member => {
+            const text = `${member.name} ${member.role} ${member.description}`;
+            const score = calculateScore(query, member.name, member.role, member.description);
+            if (score > 0) {
+                results.push({
+                    type: 'member',
+                    typeLabel: i18n[currentLang].search_type_member,
+                    title: `${member.name} - ${member.role}`,
+                    excerpt: member.description || '',
+                    date: '',
+                    link: 'members.html',
+                    score: score
+                });
+            }
+        });
+    }
+
+    if (currentDisplayData && currentDisplayData.length > 0) {
+        currentDisplayData.forEach(player => {
+            const score = calculateScore(query, player['姓名'], String(player['当前积分'] || ''), '');
+            if (score > 0) {
+                results.push({
+                    type: 'ranking',
+                    typeLabel: i18n[currentLang].search_type_ranking,
+                    title: `${player['姓名']} - ${player['当前积分']}分`,
+                    excerpt: `排名：${player.rank || '-'} | 胜率：${player['胜率'] || '0%'}`,
+                    date: '',
+                    link: 'ranking.html',
+                    score: score
+                });
+            }
+        });
+    }
+
+    results.sort((a, b) => b.score - a.score);
+
+    if (results.length === 0) {
+        searchResults.innerHTML = `
+            <div class="search-no-results">
+                <i class="fa-solid fa-face-frown"></i>
+                <p>${i18n[currentLang].search_no_results}</p>
+            </div>
+        `;
+        return;
+    }
+
+    const html = results.map(r => `
+        <div class="search-result-item" onclick="window.location.href='${r.link}'">
+            <span class="search-result-type ${r.type}">${r.typeLabel}</span>
+            <div class="search-result-title">${highlightMatch(r.title, query)}</div>
+            <div class="search-result-excerpt">${highlightMatch(r.excerpt.substring(0, 100), query)}</div>
+            ${r.date ? `<div style="font-size:0.7rem;color:var(--text-muted);margin-top:4px;">${r.date}</div>` : ''}
+        </div>
+    `).join('');
+
+    searchResults.innerHTML = `<div class="search-result-list">${html}</div>`;
+}
+
+function calculateScore(query, ...texts) {
+    const q = query.toLowerCase();
+    let score = 0;
+    
+    texts.forEach((text, index) => {
+        if (!text) return;
+        const t = text.toLowerCase();
+        
+        if (t === q) score += 100;
+        
+        const weight = index === 0 ? 3 : 1;
+        
+        if (t.includes(q)) score += 20 * weight;
+        
+        const queryChars = q.split('');
+        let matchCount = 0;
+        queryChars.forEach(char => {
+            if (t.includes(char)) matchCount++;
+        });
+        score += (matchCount / queryChars.length) * 10 * weight;
+    });
+    
+    return Math.round(score);
+}
+
+function highlightMatch(text, query) {
+    if (!text || !query) return text || '';
+    const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    return text.replace(regex, '<strong style="color:var(--primary-blue);background:var(--primary-pale);padding:0 2px;border-radius:2px;">$1</strong>');
 }
 
 // ---------- 移动菜单 ----------
@@ -479,10 +721,7 @@ function updateDetailPage() {
     
     if (item.media && Array.isArray(item.media) && item.media.length > 0) {
         item.media.forEach((m, index) => {
-            if (!m || !m.type || !m.src) {
-                console.warn(`跳过无效媒体项 [${index}]:`, m);
-                return;
-            }
+            if (!m || !m.type || !m.src) return;
             
             const mediaItem = document.createElement('div');
             mediaItem.className = 'media-item';
@@ -516,9 +755,6 @@ function updateDetailPage() {
                 link.download = '';
                 link.innerHTML = `<i class="fa-solid fa-download"></i> ${m.name || '下载文件'}`;
                 mediaItem.appendChild(link);
-            } else {
-                console.warn(`未知媒体类型 [${index}]:`, m.type);
-                return;
             }
             
             mediaContainer.appendChild(mediaItem);
@@ -550,35 +786,22 @@ function initPdfViewer() {
 }
 
 // ==========================================
-// 排名系统（多时间节点 + 排名变化对比）
+// 排名系统
 // ==========================================
-
 async function loadRankingData() {
     const tbody = document.getElementById('rankingFullBody');
     if (!tbody) return;
-
     try {
         const response = await fetch('ranking.json');
         if (!response.ok) throw new Error('无法加载排名数据');
         rankingTimeline = await response.json();
-        
-        // 按时间降序排列（最新在前）
         rankingTimeline.sort((a, b) => b.time.localeCompare(a.time));
-        
-        // 默认显示最新时间节点
         currentTimeIndex = 0;
         currentSortKey = '当前积分';
         currentSortDir = 'desc';
-        
-        // 渲染侧边栏
         renderTimeNodeList();
-        
-        // 计算排名变化并渲染
         updateRankingDisplay();
-        
-        // 设置排序监听
         setupSortListeners();
-        
     } catch (error) {
         console.error('加载排名失败:', error);
         tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:40px;color:var(--accent-red);">无法加载排名数据，请确保 ranking.json 文件存在</td></tr>';
@@ -589,19 +812,12 @@ function renderTimeNodeList() {
     const list = document.getElementById('timeNodeList');
     const label = document.getElementById('currentTimeLabel');
     if (!list || !rankingTimeline.length) return;
-
     list.innerHTML = '';
     rankingTimeline.forEach((node, index) => {
         const li = document.createElement('li');
         li.className = 'time-node-item';
         if (index === currentTimeIndex) li.classList.add('active');
-        
-        li.innerHTML = `
-            <span class="node-dot"></span>
-            ${node.label}
-            <span class="node-count">${node.data.length}人</span>
-        `;
-        
+        li.innerHTML = `<span class="node-dot"></span>${node.label}<span class="node-count">${node.data.length}人</span>`;
         li.addEventListener('click', () => {
             currentTimeIndex = index;
             currentSortKey = '当前积分';
@@ -609,10 +825,8 @@ function renderTimeNodeList() {
             updateRankingDisplay();
             renderTimeNodeList();
         });
-        
         list.appendChild(li);
     });
-    
     if (label && rankingTimeline[currentTimeIndex]) {
         label.textContent = rankingTimeline[currentTimeIndex].label;
     }
@@ -620,94 +834,43 @@ function renderTimeNodeList() {
 
 function calculateRankChanges(currentData, previousData) {
     if (!previousData) {
-        return currentData.map((player, index) => ({
-            ...player,
-            rank: index + 1,
-            change: 0,
-            changeType: 'new'
-        }));
+        return currentData.map((player, index) => ({ ...player, rank: index + 1, change: 0, changeType: 'new' }));
     }
-    
     const prevRankMap = {};
-    previousData.forEach((player, index) => {
-        prevRankMap[player['姓名']] = index + 1;
-    });
-    
+    previousData.forEach((player, index) => { prevRankMap[player['姓名']] = index + 1; });
     return currentData.map((player, index) => {
         const currentRank = index + 1;
         const prevRank = prevRankMap[player['姓名']];
-        
-        if (prevRank === undefined) {
-            return {
-                ...player,
-                rank: currentRank,
-                change: 0,
-                changeType: 'new'
-            };
-        }
-        
+        if (prevRank === undefined) return { ...player, rank: currentRank, change: 0, changeType: 'new' };
         const change = prevRank - currentRank;
-        
-        if (change > 0) {
-            return { ...player, rank: currentRank, change, changeType: 'up' };
-        } else if (change < 0) {
-            return { ...player, rank: currentRank, change: Math.abs(change), changeType: 'down' };
-        } else {
-            return { ...player, rank: currentRank, change: 0, changeType: 'same' };
-        }
+        if (change > 0) return { ...player, rank: currentRank, change, changeType: 'up' };
+        if (change < 0) return { ...player, rank: currentRank, change: Math.abs(change), changeType: 'down' };
+        return { ...player, rank: currentRank, change: 0, changeType: 'same' };
     });
 }
 
 function updateRankingDisplay() {
     if (!rankingTimeline.length || !rankingTimeline[currentTimeIndex]) return;
-    
     const currentData = rankingTimeline[currentTimeIndex].data;
-    const previousData = currentTimeIndex < rankingTimeline.length - 1 
-        ? rankingTimeline[currentTimeIndex + 1].data 
-        : null;
-    
+    const previousData = currentTimeIndex < rankingTimeline.length - 1 ? rankingTimeline[currentTimeIndex + 1].data : null;
     currentDisplayData = calculateRankChanges(currentData, previousData);
     currentDisplayData = sortDisplayData(currentSortKey, currentSortDir);
-    
     renderRankingTable(currentDisplayData);
-    
     const indicator = document.getElementById('sortIndicator');
-    if (indicator) {
-        indicator.textContent = `${currentSortKey}${currentSortDir === 'desc' ? '降序' : '升序'}`;
-    }
-    
+    if (indicator) indicator.textContent = `${currentSortKey}${currentSortDir === 'desc' ? '降序' : '升序'}`;
     updateSortHeaderHighlight();
-    
     const label = document.getElementById('currentTimeLabel');
-    if (label) {
-        label.textContent = rankingTimeline[currentTimeIndex].label;
-    }
+    if (label) label.textContent = rankingTimeline[currentTimeIndex].label;
 }
 
 function sortDisplayData(key, dir) {
     return [...currentDisplayData].sort((a, b) => {
         let valA, valB;
-        
-        if (key === '胜率') {
-            valA = parseWinRate(a['胜率']);
-            valB = parseWinRate(b['胜率']);
-        } else if (key === '姓名') {
-            valA = a['姓名'] || '';
-            valB = b['姓名'] || '';
-            return dir === 'asc' 
-                ? valA.localeCompare(valB, 'zh') 
-                : valB.localeCompare(valA, 'zh');
-        } else if (key === 'rank') {
-            valA = a.rank || 0;
-            valB = b.rank || 0;
-        } else if (key === '变化') {
-            valA = a.change || 0;
-            valB = b.change || 0;
-        } else {
-            valA = a[key] || 0;
-            valB = b[key] || 0;
-        }
-        
+        if (key === '胜率') { valA = parseWinRate(a['胜率']); valB = parseWinRate(b['胜率']); }
+        else if (key === '姓名') { return dir === 'asc' ? (a['姓名']||'').localeCompare(b['姓名']||'', 'zh') : (b['姓名']||'').localeCompare(a['姓名']||'', 'zh'); }
+        else if (key === 'rank') { valA = a.rank || 0; valB = b.rank || 0; }
+        else if (key === '变化') { valA = a.change || 0; valB = b.change || 0; }
+        else { valA = a[key] || 0; valB = b[key] || 0; }
         if (valA < valB) return dir === 'asc' ? -1 : 1;
         if (valA > valB) return dir === 'asc' ? 1 : -1;
         return 0;
@@ -717,37 +880,18 @@ function sortDisplayData(key, dir) {
 function renderRankingTable(data) {
     const tbody = document.getElementById('rankingFullBody');
     if (!tbody) return;
-    
-    if (!data || data.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:40px;">暂无排名数据</td></tr>';
-        return;
-    }
-
+    if (!data || data.length === 0) { tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:40px;">暂无排名数据</td></tr>'; return; }
     tbody.innerHTML = '';
     data.forEach((player, index) => {
         const tr = document.createElement('tr');
         const winRateRaw = player['胜率'] || '0%';
         let winRateDisplay = winRateRaw === '#DIV/0!' || winRateRaw === '-' ? '0%' : winRateRaw;
-        
         let changeHtml = '';
-        if (player.changeType === 'up') {
-            changeHtml = `<span class="rank-change rank-up">▲${player.change}</span>`;
-        } else if (player.changeType === 'down') {
-            changeHtml = `<span class="rank-change rank-down">▼${player.change}</span>`;
-        } else if (player.changeType === 'new') {
-            changeHtml = `<span class="rank-new">NEW</span>`;
-        } else {
-            changeHtml = `<span class="rank-same">-</span>`;
-        }
-        
-        tr.innerHTML = `
-            <td>${index + 1}</td>
-            <td>${player['姓名'] || '-'}</td>
-            <td><strong>${player['当前积分'] || 0}</strong></td>
-            <td>${changeHtml}</td>
-            <td>${player['总场次'] || 0}</td>
-            <td>${winRateDisplay}</td>
-        `;
+        if (player.changeType === 'up') changeHtml = `<span class="rank-change rank-up">▲${player.change}</span>`;
+        else if (player.changeType === 'down') changeHtml = `<span class="rank-change rank-down">▼${player.change}</span>`;
+        else if (player.changeType === 'new') changeHtml = `<span class="rank-new">NEW</span>`;
+        else changeHtml = `<span class="rank-same">-</span>`;
+        tr.innerHTML = `<td>${index + 1}</td><td>${player['姓名'] || '-'}</td><td><strong>${player['当前积分'] || 0}</strong></td><td>${changeHtml}</td><td>${player['总场次'] || 0}</td><td>${winRateDisplay}</td>`;
         tbody.appendChild(tr);
     });
 }
@@ -755,83 +899,56 @@ function renderRankingTable(data) {
 function updateSortHeaderHighlight() {
     document.querySelectorAll('.ranking-table-full th.sortable').forEach(th => {
         th.classList.remove('active-sort');
-        const sortKey = th.getAttribute('data-sort');
-        if (sortKey === currentSortKey) {
-            th.classList.add('active-sort');
-        }
+        if (th.getAttribute('data-sort') === currentSortKey) th.classList.add('active-sort');
     });
 }
 
 function setupSortListeners() {
-    const sortableHeaders = document.querySelectorAll('.ranking-table-full th.sortable');
-    const sortIndicator = document.getElementById('sortIndicator');
-
-    sortableHeaders.forEach(th => {
+    document.querySelectorAll('.ranking-table-full th.sortable').forEach(th => {
         const newTh = th.cloneNode(true);
         th.parentNode.replaceChild(newTh, th);
-        
         newTh.addEventListener('click', () => {
             const key = newTh.getAttribute('data-sort');
-            let dir = 'desc';
-
-            if (key === currentSortKey) {
-                currentSortDir = currentSortDir === 'desc' ? 'asc' : 'desc';
-                dir = currentSortDir;
-            } else {
-                currentSortKey = key;
-                currentSortDir = 'desc';
-                dir = 'desc';
-            }
-
-            currentDisplayData = sortDisplayData(key, dir);
+            currentSortDir = key === currentSortKey ? (currentSortDir === 'desc' ? 'asc' : 'desc') : 'desc';
+            currentSortKey = key;
+            currentDisplayData = sortDisplayData(key, currentSortDir);
             renderRankingTable(currentDisplayData);
-            
             updateSortHeaderHighlight();
-            const allHeaders = document.querySelectorAll('.ranking-table-full th.sortable');
-            allHeaders.forEach(h => {
-                const arrow = h.querySelector('.sort-arrow');
-                if (arrow) arrow.innerHTML = '';
-            });
+            document.querySelectorAll('.ranking-table-full th.sortable').forEach(h => { const a = h.querySelector('.sort-arrow'); if (a) a.innerHTML = ''; });
             const arrow = newTh.querySelector('.sort-arrow');
-            if (arrow) arrow.innerHTML = dir === 'desc' ? '&#9660;' : '&#9650;';
+            if (arrow) arrow.innerHTML = currentSortDir === 'desc' ? '&#9660;' : '&#9650;';
             newTh.classList.add('active-sort');
-
-            if (sortIndicator) {
-                sortIndicator.textContent = `${key}${dir === 'desc' ? '降序' : '升序'}`;
-            }
+            document.getElementById('sortIndicator').textContent = `${key}${currentSortDir === 'desc' ? '降序' : '升序'}`;
         });
     });
 }
 
-// ---------- 导航高亮（基于当前页面路径）----------
+// ---------- 导航高亮 ----------
 function highlightNavByPath() {
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
     const allNavLinks = document.querySelectorAll('.nav-link:not(.dropdown-toggle)');
     const dropdownLinks = document.querySelectorAll('.dropdown-link');
     
-    allNavLinks.forEach(link => link.classList.remove('active'));
-    dropdownLinks.forEach(link => link.classList.remove('active'));
-    const dropdownToggleEl = document.getElementById('moreDropdown');
-    if (dropdownToggleEl) dropdownToggleEl.classList.remove('active');
+    allNavLinks.forEach(l => l.classList.remove('active'));
+    dropdownLinks.forEach(l => l.classList.remove('active'));
+    const dt = document.getElementById('moreDropdown');
+    if (dt) dt.classList.remove('active');
     
     allNavLinks.forEach(link => {
         const href = link.getAttribute('href');
         if (!href) return;
-        
         if (href === currentPath || 
             (currentPath === '' && href === 'index.html') ||
-            (currentPath === 'index.html' && href === 'index.html')) {
+            (currentPath === 'index.html' && href === 'index.html') ||
+            (currentPath === 'contact.html' && href === 'contact.html')) {
             link.classList.add('active');
         }
     });
     
     if (currentPath === 'ranking.html' || currentPath === 'members.html') {
-        if (dropdownToggleEl) dropdownToggleEl.classList.add('active');
-        dropdownLinks.forEach(link => {
-            const href = link.getAttribute('href');
-            if (href === currentPath) {
-                link.classList.add('active');
-            }
+        if (dt) dt.classList.add('active');
+        dropdownLinks.forEach(link => { 
+            if (link.getAttribute('href') === currentPath) link.classList.add('active'); 
         });
     }
 }
@@ -844,12 +961,10 @@ function initPage() {
     loadCompetitionsData();
     if (document.getElementById('rankingFullBody')) loadRankingData();
     initPdfViewer();
+    initSearch();
     highlightNavByPath();
-    
-    if (window.location.pathname.includes('detail.html')) {
-        if (newsData.length > 0 || competitionsData.length > 0) {
-            updateDetailPage();
-        }
+    if (window.location.pathname.includes('detail.html') && (newsData.length > 0 || competitionsData.length > 0)) {
+        updateDetailPage();
     }
 }
 
@@ -863,7 +978,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     });
 });
 
-// 页面加载完成后执行高亮
 window.addEventListener('DOMContentLoaded', highlightNavByPath);
 window.addEventListener('popstate', highlightNavByPath);
 

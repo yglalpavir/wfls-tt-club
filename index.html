@@ -19,7 +19,7 @@
                 <span class="logo-text">WFLS TT Club</span>
             </a>
             <ul class="nav-menu" id="navMenu">
-                <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link active" data-i18n="nav_home">Home</a></li>
                 <li class="nav-item"><a href="news.html" class="nav-link" data-i18n="nav_news">News</a></li>
                 <li class="nav-item"><a href="competitions.html" class="nav-link" data-i18n="nav_competitions">Competitions</a></li>
                 <li class="nav-item dropdown">
@@ -29,9 +29,12 @@
                         <li><a href="members.html" class="dropdown-link" data-i18n="nav_members">社团骨干</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
+                <button class="search-toggle" id="searchToggle" aria-label="搜索">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
                 <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
                     <i class="fa-solid fa-moon"></i>
                 </button>
@@ -46,6 +49,31 @@
             </button>
         </div>
     </nav>
+
+    <!-- 搜索遮罩层 -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-modal glass-card">
+            <div class="search-header">
+                <div class="search-input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-input-icon"></i>
+                    <input type="text" class="search-input" id="searchInput" placeholder="搜索新闻、赛事、成员、排名..." autocomplete="off">
+                    <button class="search-clear" id="searchClear" style="display:none;">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <button class="search-close-btn" id="searchClose">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="search-results" id="searchResults">
+                <div class="search-placeholder">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <p>输入关键词开始搜索</p>
+                    <p class="search-hint">支持搜索标题、内容、姓名等</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero 区域 -->
     <section class="hero" id="home">
@@ -64,7 +92,7 @@
             <p class="hero-slogan" data-i18n="hero_slogan">挥拍逐梦，旋转青春</p>
             <div class="hero-cta">
                 <a href="#about" class="btn btn-primary" data-i18n="hero_btn_about">了解社团</a>
-                <a href="#contact" class="btn btn-outline" data-i18n="hero_btn_join">加入我们</a>
+                <a href="contact.html" class="btn btn-outline" data-i18n="hero_btn_join">加入我们</a>
             </div>
         </div>
         <div class="hero-scroll-indicator">
@@ -135,23 +163,6 @@
         </div>
     </section>
 
-    <!-- 加入我们 -->
-    <section class="section contact-section" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag" data-i18n="contact_tag">Contact</span>
-                <h2 class="section-title" data-i18n="contact_title">加入我们</h2>
-                <p class="section-desc" data-i18n="contact_desc">扫描二维码加入社团群，获取最新训练安排与活动通知</p>
-            </div>
-            <div class="contact-simple">
-                <div class="contact-card glass-card">
-                    <p data-i18n="contact_text">扫码加入社团微信群，与我们一起挥拍逐梦</p>
-                    <button class="btn btn-primary qr-trigger" id="qrTrigger" data-i18n="contact_btn">扫描二维码加入社团群</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -168,6 +179,7 @@
                     <a href="competitions.html" data-i18n="nav_competitions">Competitions</a>
                     <a href="members.html" data-i18n="nav_members">社团骨干</a>
                     <a href="ranking.html">Ranking</a>
+                    <a href="contact.html" data-i18n="nav_contact">Contact</a>
                 </div>
                 <div class="footer-school">
                     <h4 data-i18n="footer_school">学校信息</h4>
@@ -186,10 +198,10 @@
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal-content glass-card">
             <button class="modal-close" id="modalClose">&times;</button>
-            <h3 data-i18n="modal_title">社团群二维码</h3>
-            <p data-i18n="modal_desc">扫描下方二维码加入社团微信群</p>
+            <h3 data-i18n="modal_title">社团QQ群二维码</h3>
+            <p data-i18n="modal_desc">扫描下方二维码加入社团QQ群</p>
             <div class="qr-image-wrapper">
-                <img src="Assets/images/qr-code.jpg" alt="社团群二维码" class="qr-real-image">
+                <img src="Assets/images/qr-code.jpg" alt="社团QQ群二维码" class="qr-real-image">
             </div>
             <p class="modal-note" data-i18n="modal_note">二维码定期更新，如有问题请联系社团管理员</p>
         </div>
