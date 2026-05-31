@@ -5,7 +5,6 @@
 
 ## 项目结构
 
-```
 wfls-tt-club/
 ├── index.html              # 主页（含全站搜索功能）
 ├── news.html               # 新闻列表页
@@ -25,7 +24,7 @@ wfls-tt-club/
 │   ├── videos/             # 视频资源
 │   └── files/              # PDF、Excel等文件资源
 └── README.md               # 项目说明文档
-```
+
 
 ## 技术栈
 

@@ -1,5 +1,19 @@
 [
   {
+    "id": "n9",
+    "date": "2026-05-31",
+    "title": "社团宣传海报（制作：任峻贤）",
+    "excerpt": "内附本次比赛期间张贴的宣传海报",
+    "content": "压缩包内共14张，其中团体赛10张，单打赛4张（显示的为其中三张）",
+    "tag": "notice",
+    "media": [
+      {"type":"file","src":"Assets/files/宣传海报.zip","name": "宣传海报.zip"},
+      {"type":"image","src":"Assets/images/2026-05-31-004.png"},
+      {"type":"image","src":"Assets/images/2026-05-31-007.png"},
+      {"type":"image","src":"Assets/images/2026-05-31-012.png"}
+    ]
+  },
+  {
     "id": "n8",
     "date": "2026-04-10",
     "title": "2026年武汉外国语学校乒乓球团体比赛结果",
