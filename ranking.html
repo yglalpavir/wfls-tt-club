@@ -32,7 +32,7 @@
             </ul>
             <div class="nav-actions">
                 <button class="theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
-                <button class="lang-toggle" id="langToggle"><span data-i18n="lang_btn">EN</span></button>
+                <button class="lang-toggle" id="lang-toggle"><span data-i18n="lang_btn">EN</span></button>
             </div>
             <button class="hamburger" id="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
         </div>
@@ -43,7 +43,7 @@
         <div class="page-hero-content">
             <span class="section-tag beta-tag-large">Beta Version</span>
             <h1>Ranking</h1>
-            <p data-i18n="rank_hero_desc">社团积分排名系统 · 支持多时间节点对比</p>
+            <p data-i18n="rank_hero_desc">社团积分排名系统 · 支持多时间节点对比 · 点击姓名查看积分明细</p>
         </div>
     </section>
 
@@ -61,7 +61,6 @@
                     <div class="section-header" style="text-align:left;margin-bottom:24px;">
                         <span class="section-tag" data-i18n="rank_tag">Data Table</span>
                         <h2 class="section-title" data-i18n="rank_title">积分数据表</h2>
-                        <p class="section-desc" data-i18n="rank_desc" style="text-align:left;">点击表头可按相应列排序 | 切换时间节点自动对比排名变化</p>
                     </div>
                     
                     <div class="ranking-controls">
@@ -90,6 +89,39 @@
             </div>
         </div>
     </section>
+
+    <!-- 积分明细模态框 -->
+    <div class="modal-overlay" id="scoreDetailModal">
+        <div class="modal-content score-detail-modal glass-card">
+            <button class="modal-close" id="scoreDetailClose">&times;</button>
+            <h3 id="scoreDetailTitle">积分明细</h3>
+            <div class="score-detail-filters" id="scoreDetailFilters">
+                <button class="filter-btn active" data-filter="all" data-i18n="score_filter_all">全部</button>
+                <button class="filter-btn" data-filter="普通" data-i18n="score_filter_normal">普通</button>
+                <button class="filter-btn" data-filter="校乒赛团体" data-i18n="score_filter_team">校乒赛团体</button>
+                <button class="filter-btn" data-filter="校乒赛单打" data-i18n="score_filter_single">校乒赛单打</button>
+                <button class="filter-btn" data-filter="校乒联赛" data-i18n="score_filter_league">校乒联赛</button>
+            </div>
+            <div class="score-detail-table-wrapper">
+                <table class="score-detail-table">
+                    <thead>
+                        <tr>
+                            <th data-i18n="score_col_date">日期</th>
+                            <th data-i18n="score_col_type">类型</th>
+                            <th data-i18n="score_col_opponent">对手</th>
+                            <th data-i18n="score_col_result">结果</th>
+                            <th data-i18n="score_col_score_before">赛前积分</th>
+                            <th data-i18n="score_col_change">积分变动</th>
+                            <th data-i18n="score_col_score_after">赛后积分</th>
+                        </tr>
+                    </thead>
+                    <tbody id="scoreDetailBody">
+                        <!-- JS动态渲染 -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="container">

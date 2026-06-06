@@ -75,6 +75,33 @@
         </div>
     </div>
 
+    <!-- 左侧定位条 -->
+    <nav class="side-nav" id="sideNav">
+        <ul class="side-nav-list">
+            <li class="side-nav-item">
+                <a href="#home" class="side-nav-link active" data-section="home" data-i18n="side_home">首页</a>
+            </li>
+            <li class="side-nav-item">
+                <a href="#history" class="side-nav-link" data-section="history" data-i18n="side_history">社团历史</a>
+            </li>
+            <li class="side-nav-item">
+                <a href="#philosophy" class="side-nav-link" data-section="philosophy" data-i18n="side_philosophy">社团理念</a>
+            </li>
+            <li class="side-nav-item">
+                <a href="#activities" class="side-nav-link" data-section="activities" data-i18n="side_activities">社团活动</a>
+            </li>
+            <li class="side-nav-item">
+                <a href="#core-members" class="side-nav-link" data-section="core-members" data-i18n="side_members">社团骨干</a>
+            </li>
+            <li class="side-nav-item">
+                <a href="#news" class="side-nav-link" data-section="news" data-i18n="side_news">最新动态</a>
+            </li>
+            <li class="side-nav-item">
+                <a href="#competitions" class="side-nav-link" data-section="competitions" data-i18n="side_competitions">赛事信息</a>
+            </li>
+        </ul>
+    </nav>
+
     <!-- Hero 区域 -->
     <section class="hero" id="home">
         <div class="hero-overlay"></div>
@@ -91,7 +118,7 @@
             <p class="hero-subtitle">WFLS Table Tennis Club</p>
             <p class="hero-slogan" data-i18n="hero_slogan">挥拍逐梦，旋转青春</p>
             <div class="hero-cta">
-                <a href="#about" class="btn btn-primary" data-i18n="hero_btn_about">了解社团</a>
+                <a href="#history" class="btn btn-primary" data-i18n="hero_btn_about">了解社团</a>
                 <a href="contact.html" class="btn btn-outline" data-i18n="hero_btn_join">加入我们</a>
             </div>
         </div>
@@ -101,16 +128,50 @@
         </div>
     </section>
 
-    <!-- 社团简介 -->
-    <section class="section about-section" id="about">
+    <!-- 社团历史 -->
+    <section class="section history-section" id="history">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag" data-i18n="about_tag">About Us</span>
-                <h2 class="section-title" data-i18n="about_title">社团简介</h2>
-                <p class="section-desc" data-i18n="about_desc">以球会友，以技修身。武汉外国语学校乒乓球社团致力于为每一位热爱乒乓球的同学提供成长与竞技的平台。</p>
+                <span class="section-tag" data-i18n="history_tag">Club History</span>
+                <h2 class="section-title" data-i18n="history_title">社团历史</h2>
+                <p class="section-desc" data-i18n="history_desc">武汉外国语学校乒乓球社团的发展历程</p>
             </div>
-            <div class="about-grid" id="aboutGrid">
-                <!-- JS动态渲染 -->
+            <div class="single-card-wrapper">
+                <div class="single-card glass-card" id="historyContent">
+                    <!-- JS动态渲染 -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 社团理念 -->
+    <section class="section philosophy-section" id="philosophy">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="philosophy_tag">Philosophy</span>
+                <h2 class="section-title" data-i18n="philosophy_title">社团理念</h2>
+                <p class="section-desc" data-i18n="philosophy_desc">我们的核心价值观与指导思想</p>
+            </div>
+            <div class="single-card-wrapper">
+                <div class="single-card glass-card" id="philosophyContent">
+                    <!-- JS动态渲染 -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 社团活动 -->
+    <section class="section activities-section" id="activities">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="activities_tag">Activities</span>
+                <h2 class="section-title" data-i18n="activities_title">社团活动</h2>
+                <p class="section-desc" data-i18n="activities_desc">全年性活动、社团课活动及年度大赛</p>
+            </div>
+            <div class="single-card-wrapper">
+                <div class="single-card glass-card" id="activitiesContent">
+                    <!-- JS动态渲染 -->
+                </div>
             </div>
         </div>
     </section>
