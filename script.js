@@ -90,15 +90,11 @@ const i18n = {
         rank_col_rank: "#",
         rank_col_name: "姓名",
         rank_col_points: "当前积分",
-        rank_col_change: "变化",
+        rank_col_points_change: "积分变化",
+        rank_col_change: "排名变化",
         rank_col_matches: "总场次",
         rank_col_winrate: "胜率",
         score_detail_title: "积分明细",
-        score_filter_all: "全部",
-        score_filter_normal: "普通",
-        score_filter_team: "校乒赛团体",
-        score_filter_single: "校乒赛单打",
-        score_filter_league: "校乒联赛",
         score_col_date: "日期",
         score_col_type: "类型",
         score_col_opponent: "对手",
@@ -122,7 +118,10 @@ const i18n = {
         search_type_news: "新闻",
         search_type_competition: "赛事",
         search_type_member: "成员",
-        search_type_ranking: "排名"
+        search_type_ranking: "排名",
+        pagination_prev: "上一页",
+        pagination_next: "下一页",
+        pagination_info: "第 {current} 页，共 {total} 页"
     },
     en: {
         site_title: "WFLS Table Tennis Club | Wuhan Foreign Languages School",
@@ -211,15 +210,11 @@ const i18n = {
         rank_col_rank: "#",
         rank_col_name: "Name",
         rank_col_points: "Points",
-        rank_col_change: "Change",
+        rank_col_points_change: "Score Δ",
+        rank_col_change: "Rank Δ",
         rank_col_matches: "Matches",
         rank_col_winrate: "Win Rate",
         score_detail_title: "Score Details",
-        score_filter_all: "All",
-        score_filter_normal: "Normal",
-        score_filter_team: "Team",
-        score_filter_single: "Single",
-        score_filter_league: "League",
         score_col_date: "Date",
         score_col_type: "Type",
         score_col_opponent: "Opponent",
@@ -243,7 +238,10 @@ const i18n = {
         search_type_news: "News",
         search_type_competition: "Competition",
         search_type_member: "Member",
-        search_type_ranking: "Ranking"
+        search_type_ranking: "Ranking",
+        pagination_prev: "Previous",
+        pagination_next: "Next",
+        pagination_info: "Page {current} of {total}"
     }
 };
 
@@ -259,6 +257,9 @@ let currentDisplayData = [];
 let currentSortKey = '当前积分';
 let currentSortDir = 'desc';
 let dataLoaded = false;
+let newsCurrentPage = 1;
+let competitionsCurrentPage = 1;
+const ITEMS_PER_PAGE = 10;
 
 // ---------- DOM ----------
 const hamburger = document.getElementById('hamburger');
@@ -279,7 +280,6 @@ const scoreDetailModal = document.getElementById('scoreDetailModal');
 const scoreDetailClose = document.getElementById('scoreDetailClose');
 const scoreDetailTitle = document.getElementById('scoreDetailTitle');
 const scoreDetailBody = document.getElementById('scoreDetailBody');
-const scoreDetailFilters = document.getElementById('scoreDetailFilters');
 const body = document.body;
 
 // ---------- 语言切换 ----------
@@ -464,7 +464,8 @@ function performSearch(query) {
                     excerpt: `排名：${player.rank || '-'} | 胜率：${player['胜率'] || '0%'}`,
                     date: '',
                     link: 'ranking.html',
-                    score: score                });
+                    score: score
+                });
             }
         });
     }
@@ -595,7 +596,6 @@ if (qrTrigger && modalOverlay) { qrTrigger.addEventListener('click', () => openM
 if (modalClose && modalOverlay) { modalClose.addEventListener('click', () => closeModal(modalOverlay)); }
 if (modalOverlay) { modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) closeModal(modalOverlay); }); }
 
-// 积分明细模态框
 if (scoreDetailClose && scoreDetailModal) {
     scoreDetailClose.addEventListener('click', () => closeModal(scoreDetailModal));
     scoreDetailModal.addEventListener('click', (e) => { if (e.target === scoreDetailModal) closeModal(scoreDetailModal); });
@@ -610,7 +610,6 @@ document.addEventListener('keydown', (e) => {
 
 // ---------- 积分明细功能 ----------
 let currentScorePlayer = '';
-let currentScoreFilter = 'all';
 
 async function loadScoreLogData() {
     try { scoreLogData = await (await fetch('score-log.json')).json(); }
@@ -619,19 +618,11 @@ async function loadScoreLogData() {
 
 function showScoreDetail(playerName) {
     if (!scoreDetailModal || !scoreDetailBody) return;
-    
-    // 屏幕宽度小于1200px不显示
     if (window.innerWidth < 1200) return;
     
     currentScorePlayer = playerName;
-    currentScoreFilter = 'all';
     
     scoreDetailTitle.textContent = `${playerName} - ${i18n[currentLang].score_detail_title}`;
-    
-    const filterBtns = scoreDetailFilters.querySelectorAll('.filter-btn');
-    filterBtns.forEach(btn => btn.classList.remove('active'));
-    const allBtn = scoreDetailFilters.querySelector('[data-filter="all"]');
-    if (allBtn) allBtn.classList.add('active');
     
     renderScoreDetail();
     adjustModalSize();
@@ -667,10 +658,6 @@ function renderScoreDetail() {
     let records = scoreLogData.filter(record => 
         (record['胜者'] === currentScorePlayer || record['负者'] === currentScorePlayer)
     );
-    
-    if (currentScoreFilter !== 'all') {
-        records = records.filter(record => record['类型'] === currentScoreFilter);
-    }
     
     records.sort((a, b) => b['日期'].localeCompare(a['日期']));
     
@@ -708,20 +695,6 @@ function renderScoreDetail() {
     setTimeout(adjustModalSize, 150);
 }
 
-if (scoreDetailFilters) {
-    scoreDetailFilters.addEventListener('click', (e) => {
-        if (e.target.classList.contains('filter-btn')) {
-            const filter = e.target.getAttribute('data-filter');
-            currentScoreFilter = filter;
-            
-            scoreDetailFilters.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            e.target.classList.add('active');
-            
-            renderScoreDetail();
-        }
-    });
-}
-
 window.addEventListener('resize', () => {
     if (scoreDetailModal && scoreDetailModal.classList.contains('active')) {
         adjustModalSize();
@@ -754,6 +727,94 @@ function createCompetitionCard(item) {
         <p>${formatExcerpt(item.excerpt)}</p>
         <span class="competitions-card-tag tag-${item.tag}">${tagText}</span>
     `;
+}
+
+// ==========================================
+// 分页功能
+// ==========================================
+function getPaginatedData(dataArray, page) {
+    const startIndex = (page - 1) * ITEMS_PER_PAGE;
+    const endIndex = startIndex + ITEMS_PER_PAGE;
+    return dataArray.slice(startIndex, endIndex);
+}
+
+function getTotalPages(dataArray) {
+    return Math.ceil(dataArray.length / ITEMS_PER_PAGE);
+}
+
+function renderPagination(containerId, dataArray, currentPage) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    
+    const existingPagination = container.parentElement.querySelector('.pagination');
+    if (existingPagination) {
+        existingPagination.remove();
+    }
+    
+    const totalPages = getTotalPages(dataArray);
+    if (totalPages <= 1) return;
+    
+    const paginationEl = document.createElement('div');
+    paginationEl.className = 'pagination';
+    
+    const prevBtn = document.createElement('button');
+    prevBtn.className = 'pagination-btn';
+    prevBtn.textContent = i18n[currentLang].pagination_prev;
+    prevBtn.disabled = currentPage <= 1;
+    prevBtn.addEventListener('click', () => {
+        if (containerId === 'newsFullGrid') {
+            newsCurrentPage = currentPage - 1;
+            renderAllNews();
+        } else if (containerId === 'competitionsFullGrid') {
+            competitionsCurrentPage = currentPage - 1;
+            renderAllCompetitions();
+        }
+        window.scrollTo({ top: container.offsetTop - 100, behavior: 'smooth' });
+    });
+    paginationEl.appendChild(prevBtn);
+    
+    for (let i = 1; i <= totalPages; i++) {
+        const pageBtn = document.createElement('button');
+        pageBtn.className = 'pagination-btn';
+        if (i === currentPage) pageBtn.classList.add('active');
+        pageBtn.textContent = i;
+        pageBtn.addEventListener('click', () => {
+            if (containerId === 'newsFullGrid') {
+                newsCurrentPage = i;
+                renderAllNews();
+            } else if (containerId === 'competitionsFullGrid') {
+                competitionsCurrentPage = i;
+                renderAllCompetitions();
+            }
+            window.scrollTo({ top: container.offsetTop - 100, behavior: 'smooth' });
+        });
+        paginationEl.appendChild(pageBtn);
+    }
+    
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'pagination-btn';
+    nextBtn.textContent = i18n[currentLang].pagination_next;
+    nextBtn.disabled = currentPage >= totalPages;
+    nextBtn.addEventListener('click', () => {
+        if (containerId === 'newsFullGrid') {
+            newsCurrentPage = currentPage + 1;
+            renderAllNews();
+        } else if (containerId === 'competitionsFullGrid') {
+            competitionsCurrentPage = currentPage + 1;
+            renderAllCompetitions();
+        }
+        window.scrollTo({ top: container.offsetTop - 100, behavior: 'smooth' });
+    });
+    paginationEl.appendChild(nextBtn);
+    
+    const infoEl = document.createElement('span');
+    infoEl.className = 'pagination-info';
+    infoEl.textContent = i18n[currentLang].pagination_info
+        .replace('{current}', currentPage)
+        .replace('{total}', totalPages);
+    paginationEl.appendChild(infoEl);
+    
+    container.parentElement.appendChild(paginationEl);
 }
 
 // ---------- 加载数据 ----------
@@ -841,22 +902,25 @@ function renderAllNews() {
     const previewGrid = document.getElementById('newsPreviewGrid');
     if (previewGrid) {
         previewGrid.innerHTML = '';
-        newsData.slice(0,3).forEach(item => {
+        newsData.slice(0, 3).forEach(item => {
             const card = document.createElement('div'); card.className = 'news-card';
             card.innerHTML = createNewsCard(item);
             card.addEventListener('click', () => window.location.href = `detail.html?type=news&id=${item.id}`);
             previewGrid.appendChild(card);
         });
     }
+    
     const fullGrid = document.getElementById('newsFullGrid');
     if (fullGrid) {
         fullGrid.innerHTML = '';
-        newsData.forEach(item => {
+        const paginatedData = getPaginatedData(newsData, newsCurrentPage);
+        paginatedData.forEach(item => {
             const card = document.createElement('div'); card.className = 'news-card';
             card.innerHTML = createNewsCard(item);
             card.addEventListener('click', () => window.location.href = `detail.html?type=news&id=${item.id}`);
             fullGrid.appendChild(card);
         });
+        renderPagination('newsFullGrid', newsData, newsCurrentPage);
     }
 }
 
@@ -864,22 +928,25 @@ function renderAllCompetitions() {
     const previewGrid = document.getElementById('competitionsPreviewGrid');
     if (previewGrid) {
         previewGrid.innerHTML = '';
-        competitionsData.slice(0,3).forEach(item => {
+        competitionsData.slice(0, 3).forEach(item => {
             const card = document.createElement('div'); card.className = 'competitions-card';
             card.innerHTML = createCompetitionCard(item);
             card.addEventListener('click', () => window.location.href = `detail.html?type=competition&id=${item.id}`);
             previewGrid.appendChild(card);
         });
     }
+    
     const fullGrid = document.getElementById('competitionsFullGrid');
     if (fullGrid) {
         fullGrid.innerHTML = '';
-        competitionsData.forEach(item => {
+        const paginatedData = getPaginatedData(competitionsData, competitionsCurrentPage);
+        paginatedData.forEach(item => {
             const card = document.createElement('div'); card.className = 'competitions-card';
             card.innerHTML = createCompetitionCard(item);
             card.addEventListener('click', () => window.location.href = `detail.html?type=competition&id=${item.id}`);
             fullGrid.appendChild(card);
         });
+        renderPagination('competitionsFullGrid', competitionsData, competitionsCurrentPage);
     }
 }
 
@@ -982,7 +1049,7 @@ function initPdfViewer() {
 }
 
 // ==========================================
-// 排名系统
+// 排名系统（含积分变化）
 // ==========================================
 async function loadRankingData() {
     const tbody = document.getElementById('rankingFullBody');
@@ -1000,7 +1067,7 @@ async function loadRankingData() {
         setupSortListeners();
     } catch (error) {
         console.error('加载排名失败:', error);
-        tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:40px;color:var(--accent-red);">无法加载排名数据，请确保 ranking.json 文件存在</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;color:var(--accent-red);">无法加载排名数据，请确保 ranking.json 文件存在</td></tr>';
     }
 }
 
@@ -1030,18 +1097,59 @@ function renderTimeNodeList() {
 
 function calculateRankChanges(currentData, previousData) {
     if (!previousData) {
-        return currentData.map((player, index) => ({ ...player, rank: index + 1, change: 0, changeType: 'new' }));
+        return currentData.map((player, index) => ({
+            ...player,
+            rank: index + 1,
+            change: 0,
+            changeType: 'new',
+            pointsChange: 0,
+            pointsChangeType: 'new'
+        }));
     }
     const prevRankMap = {};
-    previousData.forEach((player, index) => { prevRankMap[player['姓名']] = index + 1; });
+    const prevPointsMap = {};
+    previousData.forEach((player, index) => {
+        prevRankMap[player['姓名']] = index + 1;
+        prevPointsMap[player['姓名']] = player['当前积分'] || 0;
+    });
     return currentData.map((player, index) => {
         const currentRank = index + 1;
         const prevRank = prevRankMap[player['姓名']];
-        if (prevRank === undefined) return { ...player, rank: currentRank, change: 0, changeType: 'new' };
-        const change = prevRank - currentRank;
-        if (change > 0) return { ...player, rank: currentRank, change, changeType: 'up' };
-        if (change < 0) return { ...player, rank: currentRank, change: Math.abs(change), changeType: 'down' };
-        return { ...player, rank: currentRank, change: 0, changeType: 'same' };
+        const prevPoints = prevPointsMap[player['姓名']];
+        const currentPoints = player['当前积分'] || 0;
+        
+        // 排名变化
+        let change = 0;
+        let changeType = 'new';
+        if (prevRank === undefined) {
+            changeType = 'new';
+        } else {
+            change = prevRank - currentRank;
+            if (change > 0) changeType = 'up';
+            else if (change < 0) changeType = 'down';
+            else changeType = 'same';
+        }
+        
+        // 积分变化
+        let pointsChange = 0;
+        let pointsChangeType = 'new';
+        if (prevPoints === undefined) {
+            pointsChangeType = 'new';
+        } else {
+            pointsChange = currentPoints - prevPoints;
+            if (pointsChange > 0) pointsChangeType = 'up';
+            else if (pointsChange < 0) pointsChangeType = 'down';
+            else pointsChangeType = 'same';
+        }
+        
+        return {
+            ...player,
+            rank: currentRank,
+            change,
+            changeType,
+            pointsChange,
+            pointsChangeType
+        };
     });
 }
 
@@ -1066,6 +1174,7 @@ function sortDisplayData(key, dir) {
         else if (key === '姓名') { return dir === 'asc' ? (a['姓名']||'').localeCompare(b['姓名']||'', 'zh') : (b['姓名']||'').localeCompare(a['姓名']||'', 'zh'); }
         else if (key === 'rank') { valA = a.rank || 0; valB = b.rank || 0; }
         else if (key === '变化') { valA = a.change || 0; valB = b.change || 0; }
+        else if (key === '积分变化') { valA = a.pointsChange || 0; valB = b.pointsChange || 0; }
         else { valA = a[key] || 0; valB = b[key] || 0; }
         if (valA < valB) return dir === 'asc' ? -1 : 1;
         if (valA > valB) return dir === 'asc' ? 1 : -1;
@@ -1076,25 +1185,33 @@ function sortDisplayData(key, dir) {
 function renderRankingTable(data) {
     const tbody = document.getElementById('rankingFullBody');
     if (!tbody) return;
-    if (!data || data.length === 0) { tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:40px;">暂无排名数据</td></tr>'; return; }
+    if (!data || data.length === 0) { tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;">暂无排名数据</td></tr>'; return; }
     tbody.innerHTML = '';
     data.forEach((player, index) => {
         const tr = document.createElement('tr');
         const winRateRaw = player['胜率'] || '0%';
         let winRateDisplay = winRateRaw === '#DIV/0!' || winRateRaw === '-' ? '0%' : winRateRaw;
+        
+        // 排名变化
         let changeHtml = '';
         if (player.changeType === 'up') changeHtml = `<span class="rank-change rank-up">▲${player.change}</span>`;
         else if (player.changeType === 'down') changeHtml = `<span class="rank-change rank-down">▼${player.change}</span>`;
         else if (player.changeType === 'new') changeHtml = `<span class="rank-new">NEW</span>`;
         else changeHtml = `<span class="rank-same">-</span>`;
         
+        // 积分变化
+        let pointsChangeHtml = '';
+        if (player.pointsChangeType === 'up') pointsChangeHtml = `<span class="rank-change rank-up">▲${player.pointsChange.toFixed(1)}</span>`;
+        else if (player.pointsChangeType === 'down') pointsChangeHtml = `<span class="rank-change rank-down">▼${Math.abs(player.pointsChange).toFixed(1)}</span>`;
+        else if (player.pointsChangeType === 'new') pointsChangeHtml = `<span class="rank-new">NEW</span>`;
+        else pointsChangeHtml = `<span class="rank-same">-</span>`;
+        
         const playerName = player['姓名'] || '-';
-        // 仅在屏幕宽度 >= 1200px 且 scoreLogData 有数据时显示可点击链接
         const nameCell = (window.innerWidth >= 1200 && scoreLogData.length > 0)
             ? `<span class="player-name-link" onclick="showScoreDetail('${playerName}')" title="点击查看积分明细">${playerName}</span>`
             : playerName;
         
-        tr.innerHTML = `<td>${index + 1}</td><td>${nameCell}</td><td><strong>${player['当前积分'] || 0}</strong></td><td>${changeHtml}</td><td>${player['总场次'] || 0}</td><td>${winRateDisplay}</td>`;
+        tr.innerHTML = `<td>${index + 1}</td><td>${nameCell}</td><td><strong>${player['当前积分'] || 0}</strong></td><td>${pointsChangeHtml}</td><td>${changeHtml}</td><td>${player['总场次'] || 0}</td><td>${winRateDisplay}</td>`;
         tbody.appendChild(tr);
     });
 }

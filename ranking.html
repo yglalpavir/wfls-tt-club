@@ -32,7 +32,7 @@
             </ul>
             <div class="nav-actions">
                 <button class="theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
-                <button class="lang-toggle" id="lang-toggle"><span data-i18n="lang_btn">EN</span></button>
+                <button class="lang-toggle" id="langToggle"><span data-i18n="lang_btn">EN</span></button>
             </div>
             <button class="hamburger" id="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
         </div>
@@ -72,16 +72,17 @@
                         <table class="ranking-table ranking-table-full" id="rankingFullTable">
                             <thead>
                                 <tr>
-                                    <th data-sort="rank" class="sortable" style="width:60px;"># <span class="sort-arrow"></span></th>
+                                    <th data-sort="rank" class="sortable" style="width:50px;"># <span class="sort-arrow"></span></th>
                                     <th data-sort="姓名" class="sortable">姓名 <span class="sort-arrow"></span></th>
                                     <th data-sort="当前积分" class="sortable active-sort">当前积分 <span class="sort-arrow">&#9660;</span></th>
-                                    <th data-sort="变化" style="width:80px;">变化</th>
+                                    <th data-sort="积分变化" class="sortable" style="width:80px;">积分变化 <span class="sort-arrow"></span></th>
+                                    <th data-sort="变化" style="width:80px;">排名变化</th>
                                     <th data-sort="总场次" class="sortable">总场次 <span class="sort-arrow"></span></th>
                                     <th data-sort="胜率" class="sortable">胜率 <span class="sort-arrow"></span></th>
                                 </tr>
                             </thead>
                             <tbody id="rankingFullBody">
-                                <tr><td colspan="6" style="text-align:center;padding:40px;">加载排名数据中...</td></tr>
+                                <tr><td colspan="7" style="text-align:center;padding:40px;">加载排名数据中...</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -95,13 +96,6 @@
         <div class="modal-content score-detail-modal glass-card">
             <button class="modal-close" id="scoreDetailClose">&times;</button>
             <h3 id="scoreDetailTitle">积分明细</h3>
-            <div class="score-detail-filters" id="scoreDetailFilters">
-                <button class="filter-btn active" data-filter="all" data-i18n="score_filter_all">全部</button>
-                <button class="filter-btn" data-filter="普通" data-i18n="score_filter_normal">普通</button>
-                <button class="filter-btn" data-filter="校乒赛团体" data-i18n="score_filter_team">校乒赛团体</button>
-                <button class="filter-btn" data-filter="校乒赛单打" data-i18n="score_filter_single">校乒赛单打</button>
-                <button class="filter-btn" data-filter="校乒联赛" data-i18n="score_filter_league">校乒联赛</button>
-            </div>
             <div class="score-detail-table-wrapper">
                 <table class="score-detail-table">
                     <thead>
