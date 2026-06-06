@@ -1094,9 +1094,9 @@ body.dark-mode .detail-page-hero { background: linear-gradient(135deg, #0d1117 0
 .score-detail-modal {
     max-width: 60vw;
     width: 60vw;
-    max-height: 60vh;
+    max-height: 70vh;
     height: auto;
-    aspect-ratio: 4 / 3;
+    /* 移除 aspect-ratio 限制 */
     text-align: left;
     padding: 0;
     overflow: hidden;
@@ -1246,9 +1246,9 @@ body.dark-mode .score-detail-modal h3 {
     overflow-x: auto;
     overflow-y: auto;
     flex: 1;
-    min-height: 100px;
-    max-height: calc(60vh - 100px);
-    padding: 0 28px 20px;
+    min-height: 200px;
+    max-height: calc(70vh - 120px);
+    padding: 8px 28px 20px;
     position: relative;
     scrollbar-width: thin;
     scrollbar-color: var(--border-color) transparent;
