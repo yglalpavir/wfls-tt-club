@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- 导航栏 -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
@@ -32,74 +33,244 @@
                 <li class="nav-item"><a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <button class="search-toggle" id="searchToggle" aria-label="搜索"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <button class="theme-toggle" id="themeToggle" aria-label="切换主题"><i class="fa-solid fa-moon"></i></button>
-                <button class="lang-toggle" id="langToggle" aria-label="切换语言"><span data-i18n="lang_btn">EN</span></button>
+                <button class="search-toggle" id="searchToggle" aria-label="搜索">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button class="lang-toggle" id="langToggle" aria-label="切换语言">
+                    <span data-i18n="lang_btn">EN</span>
+                </button>
             </div>
-            <button class="hamburger" id="hamburger" aria-label="菜单"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+            <button class="hamburger" id="hamburger" aria-label="菜单">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
     </nav>
 
+    <!-- 搜索遮罩层 -->
     <div class="search-overlay" id="searchOverlay">
         <div class="search-modal glass-card">
             <div class="search-header">
                 <div class="search-input-wrapper">
                     <i class="fa-solid fa-magnifying-glass search-input-icon"></i>
                     <input type="text" class="search-input" id="searchInput" placeholder="搜索新闻、赛事、成员、排名..." autocomplete="off">
-                    <button class="search-clear" id="searchClear" style="display:none;"><i class="fa-solid fa-xmark"></i></button>
+                    <button class="search-clear" id="searchClear" style="display:none;">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
                 </div>
-                <button class="search-close-btn" id="searchClose"><i class="fa-solid fa-xmark"></i></button>
+                <button class="search-close-btn" id="searchClose">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
             </div>
-            <div class="search-results" id="searchResults"><div class="search-placeholder"><i class="fa-solid fa-magnifying-glass"></i><p>输入关键词开始搜索</p><p class="search-hint">支持搜索标题、内容、姓名等</p></div></div>
+            <div class="search-results" id="searchResults">
+                <div class="search-placeholder">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <p>输入关键词开始搜索</p>
+                    <p class="search-hint">支持搜索标题、内容、姓名等</p>
+                </div>
+            </div>
         </div>
     </div>
 
+    <!-- 左侧定位条 -->
     <nav class="side-nav" id="sideNav">
         <ul class="side-nav-list">
-            <li class="side-nav-item"><a href="#home" class="side-nav-link active" data-section="home" data-i18n="side_home">首页</a></li>
-            <li class="side-nav-item"><a href="#history" class="side-nav-link" data-section="history" data-i18n="side_history">社团历史</a></li>
-            <li class="side-nav-item"><a href="#philosophy" class="side-nav-link" data-section="philosophy" data-i18n="side_philosophy">社团理念</a></li>
-            <li class="side-nav-item"><a href="#activities" class="side-nav-link" data-section="activities" data-i18n="side_activities">社团活动</a></li>
-            <li class="side-nav-item"><a href="#core-members" class="side-nav-link" data-section="core-members" data-i18n="side_members">社团骨干</a></li>
-            <li class="side-nav-item"><a href="#news" class="side-nav-link" data-section="news" data-i18n="side_news">最新动态</a></li>
-            <li class="side-nav-item"><a href="#competitions" class="side-nav-link" data-section="competitions" data-i18n="side_competitions">赛事信息</a></li>
+            <li class="side-nav-item">
+                <a href="#home" class="side-nav-link active" data-section="home" data-i18n="side_home">首页</a>
+            </li>
+            <li class="side-nav-item">
+                <a href="#history" class="side-nav-link" data-section="history" data-i18n="side_history">社团历史</a>
+            </li>
+            <li class="side-nav-item">
+                <a href="#philosophy" class="side-nav-link" data-section="philosophy" data-i18n="side_philosophy">社团理念</a>
+            </li>
+            <li class="side-nav-item">
+                <a href="#activities" class="side-nav-link" data-section="activities" data-i18n="side_activities">社团活动</a>
+            </li>
+            <li class="side-nav-item">
+                <a href="#core-members" class="side-nav-link" data-section="core-members" data-i18n="side_members">社团骨干</a>
+            </li>
+            <li class="side-nav-item">
+                <a href="#news" class="side-nav-link" data-section="news" data-i18n="side_news">最新动态</a>
+            </li>
+            <li class="side-nav-item">
+                <a href="#competitions" class="side-nav-link" data-section="competitions" data-i18n="side_competitions">赛事信息</a>
+            </li>
         </ul>
     </nav>
 
+    <!-- Hero 区域 -->
     <section class="hero" id="home">
         <div class="hero-overlay"></div>
         <div class="hero-particles">
-            <div class="particle particle-1"></div><div class="particle particle-2"></div><div class="particle particle-3"></div>
-            <div class="particle particle-4"></div><div class="particle particle-5"></div><div class="particle particle-6"></div>
+            <div class="particle particle-1"></div>
+            <div class="particle particle-2"></div>
+            <div class="particle particle-3"></div>
+            <div class="particle particle-4"></div>
+            <div class="particle particle-5"></div>
+            <div class="particle particle-6"></div>
         </div>
         <div class="hero-content">
             <h1 class="hero-title" data-i18n="hero_title">武汉外国语学校<br>乒乓球社团</h1>
             <p class="hero-subtitle">WFLS Table Tennis Club</p>
             <p class="hero-slogan" data-i18n="hero_slogan">挥拍逐梦，旋转青春</p>
-            <div class="hero-cta"><a href="#history" class="btn btn-primary" data-i18n="hero_btn_about">了解社团</a><a href="contact.html" class="btn btn-outline" data-i18n="hero_btn_join">加入我们</a></div>
+            <div class="hero-cta">
+                <a href="#history" class="btn btn-primary" data-i18n="hero_btn_about">了解社团</a>
+                <a href="contact.html" class="btn btn-outline" data-i18n="hero_btn_join">加入我们</a>
+            </div>
         </div>
-        <div class="hero-scroll-indicator"><span data-i18n="scroll">Scroll</span><div class="scroll-line"></div></div>
+        <div class="hero-last-updated" id="heroLastUpdated">上次更新：加载中...</div>
+        <div class="hero-scroll-indicator">
+            <span data-i18n="scroll">Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
     </section>
 
-    <section class="section history-section" id="history"><div class="container"><div class="section-header"><span class="section-tag" data-i18n="history_tag">Club History</span><h2 class="section-title" data-i18n="history_title">社团历史</h2><p class="section-desc" data-i18n="history_desc">武汉外国语学校乒乓球社团的发展历程</p></div><div class="single-card-wrapper"><div class="single-card glass-card" id="historyContent"></div></div></div></section>
-    <section class="section philosophy-section" id="philosophy"><div class="container"><div class="section-header"><span class="section-tag" data-i18n="philosophy_tag">Philosophy</span><h2 class="section-title" data-i18n="philosophy_title">社团理念</h2><p class="section-desc" data-i18n="philosophy_desc">我们的核心价值观与指导思想</p></div><div class="single-card-wrapper"><div class="single-card glass-card" id="philosophyContent"></div></div></div></section>
-    <section class="section activities-section" id="activities"><div class="container"><div class="section-header"><span class="section-tag" data-i18n="activities_tag">Activities</span><h2 class="section-title" data-i18n="activities_title">社团活动</h2><p class="section-desc" data-i18n="activities_desc">全年性活动、社团课活动及年度大赛</p></div><div class="single-card-wrapper"><div class="single-card glass-card" id="activitiesContent"></div></div></div></section>
-    <section class="section core-members-section" id="core-members"><div class="container"><div class="section-header"><span class="section-tag" data-i18n="members_tag">Core Members</span><h2 class="section-title" data-i18n="members_title">社团骨干</h2><p class="section-desc" data-i18n="members_desc">引领社团发展的核心力量</p></div><div class="core-members-grid" id="coreMembersGrid"></div></div></section>
-    <section class="section news-preview-section" id="news"><div class="container"><div class="section-header"><span class="section-tag" data-i18n="news_tag">Latest News</span><h2 class="section-title" data-i18n="news_title">最新动态</h2><p class="section-desc" data-i18n="news_desc">关注社团最新活动与公告</p></div><div class="news-preview-grid" id="newsPreviewGrid"></div><div class="section-footer-link"><a href="news.html" class="btn btn-secondary" data-i18n="news_all">查看全部动态 <i class="fa-solid fa-arrow-right"></i></a></div></div></section>
-    <section class="section competitions-preview-section" id="competitions"><div class="container"><div class="section-header"><span class="section-tag" data-i18n="comp_tag">Competitions</span><h2 class="section-title" data-i18n="comp_title">赛事信息</h2><p class="section-desc" data-i18n="comp_desc">近期比赛安排与成绩</p></div><div class="competitions-preview-grid" id="competitionsPreviewGrid"></div><div class="section-footer-link"><a href="competitions.html" class="btn btn-secondary" data-i18n="comp_all">查看全部赛事 <i class="fa-solid fa-arrow-right"></i></a></div></div></section>
+    <!-- 社团历史 -->
+    <section class="section history-section" id="history">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="history_tag">Club History</span>
+                <h2 class="section-title" data-i18n="history_title">社团历史</h2>
+                <p class="section-desc" data-i18n="history_desc">武汉外国语学校乒乓球社团的发展历程</p>
+            </div>
+            <div class="single-card-wrapper">
+                <div class="single-card glass-card" id="historyContent">
+                    <!-- JS动态渲染 -->
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- 社团理念 -->
+    <section class="section philosophy-section" id="philosophy">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="philosophy_tag">Philosophy</span>
+                <h2 class="section-title" data-i18n="philosophy_title">社团理念</h2>
+                <p class="section-desc" data-i18n="philosophy_desc">我们的核心价值观与指导思想</p>
+            </div>
+            <div class="single-card-wrapper">
+                <div class="single-card glass-card" id="philosophyContent">
+                    <!-- JS动态渲染 -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 社团活动 -->
+    <section class="section activities-section" id="activities">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="activities_tag">Activities</span>
+                <h2 class="section-title" data-i18n="activities_title">社团活动</h2>
+                <p class="section-desc" data-i18n="activities_desc">全年性活动、社团课活动及年度大赛</p>
+            </div>
+            <div class="single-card-wrapper">
+                <div class="single-card glass-card" id="activitiesContent">
+                    <!-- JS动态渲染 -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 社团骨干 -->
+    <section class="section core-members-section" id="core-members">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="members_tag">Core Members</span>
+                <h2 class="section-title" data-i18n="members_title">社团骨干</h2>
+                <p class="section-desc" data-i18n="members_desc">引领社团发展的核心力量</p>
+            </div>
+            <div class="core-members-grid" id="coreMembersGrid">
+                <!-- JS动态渲染 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 最近新闻 -->
+    <section class="section news-preview-section" id="news">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="news_tag">Latest News</span>
+                <h2 class="section-title" data-i18n="news_title">最新动态</h2>
+                <p class="section-desc" data-i18n="news_desc">关注社团最新活动与公告</p>
+            </div>
+            <div class="news-preview-grid" id="newsPreviewGrid">
+                <!-- JS动态渲染 -->
+            </div>
+            <div class="section-footer-link">
+                <a href="news.html" class="btn btn-secondary" data-i18n="news_all">查看全部动态 <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 赛事信息 -->
+    <section class="section competitions-preview-section" id="competitions">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="comp_tag">Competitions</span>
+                <h2 class="section-title" data-i18n="comp_title">赛事信息</h2>
+                <p class="section-desc" data-i18n="comp_desc">近期比赛安排与成绩</p>
+            </div>
+            <div class="competitions-preview-grid" id="competitionsPreviewGrid">
+                <!-- JS动态渲染 -->
+            </div>
+            <div class="section-footer-link">
+                <a href="competitions.html" class="btn btn-secondary" data-i18n="comp_all">查看全部赛事 <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-brand"><h4>WFLS Table Tennis Club</h4><p data-i18n="footer_brand">武汉外国语学校乒乓球社团</p><p class="footer-motto" data-i18n="footer_motto">挥拍逐梦，旋转青春</p></div>
-                <div class="footer-links"><h4 data-i18n="footer_nav">快速导航</h4><a href="index.html" data-i18n="nav_home">Home</a><a href="news.html" data-i18n="nav_news">News</a><a href="competitions.html" data-i18n="nav_competitions">Competitions</a><a href="members.html" data-i18n="nav_members">社团骨干</a><a href="ranking.html">Ranking</a><a href="data_viz.html">Data Viz</a><a href="contact.html" data-i18n="nav_contact">Contact</a></div>
-                <div class="footer-school"><h4 data-i18n="footer_school">学校信息</h4><p data-i18n="footer_school_name">武汉外国语学校</p><p>Wuhan Foreign Languages School</p><p data-i18n="footer_location">湖北省武汉市</p></div>
+                <div class="footer-brand">
+                    <h4>WFLS Table Tennis Club</h4>
+                    <p data-i18n="footer_brand">武汉外国语学校乒乓球社团</p>
+                    <p class="footer-motto" data-i18n="footer_motto">挥拍逐梦，旋转青春</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-i18n="footer_nav">快速导航</h4>
+                    <a href="index.html" data-i18n="nav_home">Home</a>
+                    <a href="news.html" data-i18n="nav_news">News</a>
+                    <a href="competitions.html" data-i18n="nav_competitions">Competitions</a>
+                    <a href="members.html" data-i18n="nav_members">社团骨干</a>
+                    <a href="ranking.html">Ranking</a>
+                    <a href="data_viz.html">Data Viz</a>
+                    <a href="contact.html" data-i18n="nav_contact">Contact</a>
+                </div>
+                <div class="footer-school">
+                    <h4 data-i18n="footer_school">学校信息</h4>
+                    <p data-i18n="footer_school_name">武汉外国语学校</p>
+                    <p>Wuhan Foreign Languages School</p>
+                    <p data-i18n="footer_location">湖北省武汉市</p>
+                </div>
             </div>
-            <div class="footer-bottom"><p>&copy; 2026 WFLS Table Tennis Club. All rights reserved.</p></div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WFLS Table Tennis Club. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <div class="modal-overlay" id="modalOverlay"><div class="modal-content glass-card"><button class="modal-close" id="modalClose">&times;</button><h3 data-i18n="modal_title">社团QQ群二维码</h3><p data-i18n="modal_desc">扫描下方二维码加入社团QQ群</p><div class="qr-image-wrapper"><img src="Assets/images/qr-code.jpg" alt="社团QQ群二维码" class="qr-real-image"></div><p class="modal-note" data-i18n="modal_note">二维码定期更新，如有问题请联系社团管理员</p></div></div>
+    <!-- 模态框 - 二维码 -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content glass-card">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h3 data-i18n="modal_title">社团QQ群二维码</h3>
+            <p data-i18n="modal_desc">扫描下方二维码加入社团QQ群</p>
+            <div class="qr-image-wrapper">
+                <img src="Assets/images/qr-code.jpg" alt="社团QQ群二维码" class="qr-real-image">
+            </div>
+            <p class="modal-note" data-i18n="modal_note">二维码定期更新，如有问题请联系社团管理员</p>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

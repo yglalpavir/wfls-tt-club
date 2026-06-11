@@ -322,24 +322,36 @@ function setLanguage(lang) {
     if (searchInput) searchInput.placeholder = i18n[lang].search_placeholder;
     renderAllNews();
     renderAllCompetitions();
-    if (aboutData) renderAboutSections();
+    if (aboutData) { renderAboutSections(); updateHeroLastUpdated(); }
     if (membersData.length > 0) { renderCoreMembers(); renderAllMembersPage(); }
     updateRankingHeaders();
     updatePdfButtons();
     if (dataLoaded) updateDetailPage();
 }
+
+function updateHeroLastUpdated() {
+    const lastUpdatedEl = document.getElementById('heroLastUpdated');
+    if (lastUpdatedEl && aboutData && aboutData.lastUpdated) {
+        lastUpdatedEl.textContent = currentLang === 'zh' 
+            ? `上次更新：${aboutData.lastUpdated}` 
+            : `Last updated: ${aboutData.lastUpdated}`;
+    }
+}
+
 function updateRankingHeaders() {
     document.querySelectorAll('.ranking-table-full th[data-i18n]').forEach(th => {
         const key = th.getAttribute('data-i18n');
         if (i18n[currentLang] && i18n[currentLang][key]) th.innerHTML = i18n[currentLang][key] + ' <span class="sort-arrow"></span>';
     });
 }
+
 function updatePdfButtons() {
     const btn = document.getElementById('pdfViewBtn');
     if (btn) btn.innerHTML = `<i class="fa-solid fa-eye"></i> ${i18n[currentLang].pdf_preview_btn}`;
     const down = document.querySelector('.pdf-actions .btn-primary');
     if (down) down.innerHTML = `<i class="fa-solid fa-download"></i> ${i18n[currentLang].pdf_download_btn}`;
 }
+
 if (langToggle) {
     const savedLang = localStorage.getItem('wfls-lang') || 'zh';
     setLanguage(savedLang);
@@ -361,10 +373,12 @@ function initSearch() {
     });
     searchClear.addEventListener('click', () => { searchInput.value = ''; searchClear.style.display = 'none'; showSearchPlaceholder(); searchInput.focus(); });
 }
+
 function showSearchPlaceholder() {
     if (!searchResults) return;
     searchResults.innerHTML = `<div class="search-placeholder"><i class="fa-solid fa-magnifying-glass"></i><p>输入关键词开始搜索</p><p class="search-hint">支持搜索标题、内容、姓名等</p></div>`;
 }
+
 function performSearch(query) {
     if (!searchResults) return;
     const results = [];
@@ -376,11 +390,13 @@ function performSearch(query) {
     if (!results.length) { searchResults.innerHTML = `<div class="search-no-results"><i class="fa-solid fa-face-frown"></i><p>${i18n[currentLang].search_no_results}</p></div>`; return; }
     searchResults.innerHTML = `<div class="search-result-list">${results.map(r => `<div class="search-result-item" onclick="window.location.href='${r.link}'"><span class="search-result-type ${r.type}">${r.typeLabel}</span><div class="search-result-title">${highlightMatch(r.title, query)}</div><div class="search-result-excerpt">${highlightMatch(r.excerpt.substring(0, 100), query)}</div>${r.date ? `<div style="font-size:0.7rem;color:var(--text-muted);margin-top:4px;">${r.date}</div>` : ''}</div>`).join('')}</div>`;
 }
+
 function calculateScore(query, ...texts) {
     const q = query.toLowerCase(); let score = 0;
     texts.forEach((text, idx) => { if (!text) return; const t = text.toLowerCase(); if (t === q) score += 100; const w = idx === 0 ? 3 : 1; if (t.includes(q)) score += 20 * w; const chars = q.split(''); let mc = 0; chars.forEach(c => { if (t.includes(c)) mc++; }); score += (mc / chars.length) * 10 * w; });
     return Math.round(score);
 }
+
 function highlightMatch(text, query) {
     if (!text || !query) return text || '';
     return text.replace(new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi'), '<strong style="color:var(--primary-blue);background:var(--primary-pale);padding:0 2px;border-radius:2px;">$1</strong>');
@@ -443,13 +459,20 @@ function renderPagination(containerId, dataArray, currentPage) {
     container.parentElement.appendChild(pel);
 }
 
-async function loadAboutData() { try { aboutData = await (await fetch('about.json')).json(); } catch(e) { aboutData = null; } renderAboutSections(); }
+async function loadAboutData() { try { aboutData = await (await fetch('about.json')).json(); } catch(e) { aboutData = null; } renderAboutSections(); updateHeroLastUpdated(); }
 async function loadMembersData() { try { membersData = await (await fetch('members.json')).json(); } catch(e) { membersData = []; } renderCoreMembers(); renderAllMembersPage(); }
 async function loadNewsData() { try { newsData = await (await fetch('news.json')).json(); } catch(e) { newsData = []; } renderAllNews(); checkAllDataLoaded(); }
 async function loadCompetitionsData() { try { competitionsData = await (await fetch('competitions.json')).json(); } catch(e) { competitionsData = []; } renderAllCompetitions(); checkAllDataLoaded(); }
 function checkAllDataLoaded() { if (newsData && competitionsData) { dataLoaded = true; if (window.location.pathname.includes('detail.html')) updateDetailPage(); } }
 
-function renderAboutSections() { if (!aboutData) return; const hc = document.getElementById('historyContent'); if (hc && aboutData.history) hc.innerHTML = `<p>${formatExcerpt(aboutData.history.content)}</p>`; const pc = document.getElementById('philosophyContent'); if (pc && aboutData.philosophy) pc.innerHTML = `<p>${formatExcerpt(aboutData.philosophy.content)}</p>`; const ac = document.getElementById('activitiesContent'); if (ac && aboutData.activities) ac.innerHTML = `<p>${formatExcerpt(aboutData.activities.content)}</p>`; }
+function renderAboutSections() {
+    if (!aboutData) return;
+    const hc = document.getElementById('historyContent'); if (hc && aboutData.history) hc.innerHTML = `<p>${formatExcerpt(aboutData.history.content)}</p>`;
+    const pc = document.getElementById('philosophyContent'); if (pc && aboutData.philosophy) pc.innerHTML = `<p>${formatExcerpt(aboutData.philosophy.content)}</p>`;
+    const ac = document.getElementById('activitiesContent'); if (ac && aboutData.activities) ac.innerHTML = `<p>${formatExcerpt(aboutData.activities.content)}</p>`;
+    updateHeroLastUpdated();
+}
+
 function renderCoreMembers() { document.querySelectorAll('#coreMembersGrid').forEach(g => { if (!g) return; g.innerHTML = ''; membersData.forEach(m => { const el = document.createElement('div'); el.className = 'member-card glass-card'; el.innerHTML = `<div class="member-avatar">${m.name.charAt(0)}</div><h3>${m.name}</h3><span class="member-role">${m.role}</span><p class="member-desc">${formatExcerpt(m.description)}</p>`; g.appendChild(el); }); }); }
 function renderAllMembersPage() { const g = document.getElementById('allMembersGrid'); if (!g) return; g.innerHTML = ''; membersData.forEach(m => { const el = document.createElement('div'); el.className = 'member-card glass-card'; el.innerHTML = `<div class="member-avatar">${m.name.charAt(0)}</div><h3>${m.name}</h3><span class="member-role">${m.role}</span><p class="member-desc">${formatExcerpt(m.description)}</p>`; g.appendChild(el); }); }
 function renderAllNews() { const pg = document.getElementById('newsPreviewGrid'); if (pg) { pg.innerHTML = ''; newsData.slice(0, 3).forEach(item => { const c = document.createElement('div'); c.className = 'news-card'; c.innerHTML = createNewsCard(item); c.addEventListener('click', () => window.location.href = `detail.html?type=news&id=${item.id}`); pg.appendChild(c); }); } const fg = document.getElementById('newsFullGrid'); if (fg) { fg.innerHTML = ''; getPaginatedData(newsData, newsCurrentPage).forEach(item => { const c = document.createElement('div'); c.className = 'news-card'; c.innerHTML = createNewsCard(item); c.addEventListener('click', () => window.location.href = `detail.html?type=news&id=${item.id}`); fg.appendChild(c); }); renderPagination('newsFullGrid', newsData, newsCurrentPage); } }
@@ -482,23 +505,13 @@ function updateSortHeaderHighlight() { document.querySelectorAll('.ranking-table
 function setupSortListeners() { document.querySelectorAll('.ranking-table-full th.sortable').forEach(th => { const nt = th.cloneNode(true); th.parentNode.replaceChild(nt, th); nt.addEventListener('click', () => { const key = nt.getAttribute('data-sort'); currentSortDir = key === currentSortKey ? (currentSortDir === 'desc' ? 'asc' : 'desc') : 'desc'; currentSortKey = key; currentDisplayData = sortDisplayData(key, currentSortDir); renderRankingTable(currentDisplayData); updateSortHeaderHighlight(); document.querySelectorAll('.ranking-table-full th.sortable').forEach(h => { const a = h.querySelector('.sort-arrow'); if (a) a.innerHTML = ''; }); const ar = nt.querySelector('.sort-arrow'); if (ar) ar.innerHTML = currentSortDir === 'desc' ? '&#9660;' : '&#9650;'; nt.classList.add('active-sort'); document.getElementById('sortIndicator').textContent = `${key}${currentSortDir === 'desc' ? '降序' : '升序'}`; }); }); }
 
 function updateSideNavHighlight() { const links = document.querySelectorAll('.side-nav-link'); const pos = window.scrollY + 150; let cur = 'home'; [{ id: 'home', s: '#home' },{ id: 'history', s: '#history' },{ id: 'philosophy', s: '#philosophy' },{ id: 'activities', s: '#activities' },{ id: 'core-members', s: '#core-members' },{ id: 'news', s: '#news' },{ id: 'competitions', s: '#competitions' }].forEach(sec => { const el = document.querySelector(sec.s); if (el && pos >= el.offsetTop && pos < el.offsetTop + el.offsetHeight) cur = sec.id; }); links.forEach(l => { l.classList.remove('active'); if (l.getAttribute('data-section') === cur) l.classList.add('active'); }); }
-
 function highlightNavByPath() { const cp = window.location.pathname.split('/').pop() || 'index.html'; const anl = document.querySelectorAll('.nav-link:not(.dropdown-toggle)'); const dl = document.querySelectorAll('.dropdown-link'); anl.forEach(l => l.classList.remove('active')); dl.forEach(l => l.classList.remove('active')); const dt = document.getElementById('moreDropdown'); if (dt) dt.classList.remove('active'); anl.forEach(link => { const h = link.getAttribute('href'); if (!h) return; if (h === cp || (cp === '' && h === 'index.html') || (cp === 'index.html' && h === 'index.html') || (cp === 'contact.html' && h === 'contact.html')) link.classList.add('active'); }); if (cp === 'ranking.html' || cp === 'members.html' || cp === 'data_viz.html') { if (dt) dt.classList.add('active'); dl.forEach(link => { if (link.getAttribute('href') === cp) link.classList.add('active'); }); } }
 
-// ==========================================
-// 数据可视化系统
-// ==========================================
 function initDataViz() {
-    if (!document.getElementById('pointsTrendChart')) { console.log('DataViz: 非可视化页面，跳过'); return; }
+    if (!document.getElementById('pointsTrendChart')) return;
     console.log('DataViz: 开始初始化, rankingTimeline长度=', rankingTimeline.length, 'scoreLogData长度=', scoreLogData.length);
     const players = getAllPlayers();
-    console.log('DataViz: 球员列表=', players);
-    if (!players.length) {
-        console.warn('DataViz: 无球员数据');
-        const canvas = document.getElementById('pointsTrendChart');
-        if (canvas) { const ctx = canvas.getContext('2d'); ctx.font = '16px "Noto Sans SC"'; ctx.fillStyle = '#8899aa'; ctx.textAlign = 'center'; ctx.fillText('暂无数据，请确保 ranking.json 文件存在', canvas.width/2, canvas.height/2); }
-        return;
-    }
+    if (!players.length) { console.warn('DataViz: 无球员数据'); return; }
     renderPlayerCheckboxes(); renderCompareSelects();
     const defPlayers = players.slice(0, Math.min(5, players.length));
     renderPointsTrend(defPlayers); renderRankStream(Math.min(10, players.length));
@@ -508,53 +521,18 @@ function initDataViz() {
 }
 function getAllPlayers() { if (!rankingTimeline.length || !rankingTimeline[0]) return []; return rankingTimeline[0].data.map(p => p['姓名']); }
 function getSelectedPlayers() { return Array.from(document.querySelectorAll('#playerCheckboxList input[type="checkbox"]:checked')).map(cb => cb.value); }
-function renderPlayerCheckboxes() {
-    const container = document.getElementById('playerCheckboxList'); if (!container) return;
-    const players = getAllPlayers(); const cd = rankingTimeline[0]?.data || [];
-    container.innerHTML = players.map((name, i) => { const checked = i < 5 ? 'checked' : ''; const p = cd.find(x => x['姓名'] === name); const pts = p ? p['当前积分'] : '-'; return `<label class="player-checkbox-item ${i < 5 ? 'checked' : ''}"><input type="checkbox" value="${name}" ${checked}><span>${name}</span><span class="player-rank">${pts}</span></label>`; }).join('');
-    container.querySelectorAll('.player-checkbox-item').forEach(item => { item.addEventListener('click', e => { if (e.target.tagName === 'INPUT') return; const cb = item.querySelector('input'); cb.checked = !cb.checked; item.classList.toggle('checked', cb.checked); }); });
-}
+function renderPlayerCheckboxes() { const container = document.getElementById('playerCheckboxList'); if (!container) return; const players = getAllPlayers(); const cd = rankingTimeline[0]?.data || []; container.innerHTML = players.map((name, i) => { const checked = i < 5 ? 'checked' : ''; const p = cd.find(x => x['姓名'] === name); const pts = p ? p['当前积分'] : '-'; return `<label class="player-checkbox-item ${i < 5 ? 'checked' : ''}"><input type="checkbox" value="${name}" ${checked}><span>${name}</span><span class="player-rank">${pts}</span></label>`; }).join(''); container.querySelectorAll('.player-checkbox-item').forEach(item => { item.addEventListener('click', e => { if (e.target.tagName === 'INPUT') return; const cb = item.querySelector('input'); cb.checked = !cb.checked; item.classList.toggle('checked', cb.checked); }); }); }
 function renderCompareSelects() { const players = getAllPlayers(); const opts = players.map(p => `<option value="${p}">${p}</option>`).join(''); const sa = document.getElementById('playerASelect'); const sb = document.getElementById('playerBSelect'); if (sa) sa.innerHTML = '<option value="">-- 选择球员 --</option>' + opts; if (sb) sb.innerHTML = '<option value="">-- 选择球员 --</option>' + opts; }
-
-function renderPointsTrend(playerNames) {
-    const canvas = document.getElementById('pointsTrendChart'); if (!canvas || !rankingTimeline.length) return;
-    if (pointsTrendChart) { pointsTrendChart.destroy(); pointsTrendChart = null; }
-    const labels = rankingTimeline.map(t => t.label).reverse();
-    const datasets = playerNames.map((name, idx) => { const data = []; for (let i = rankingTimeline.length - 1; i >= 0; i--) { const p = rankingTimeline[i].data.find(x => x['姓名'] === name); data.push(p ? p['当前积分'] : null); } return { label: name, data, borderColor: CHART_COLORS[idx % CHART_COLORS.length], backgroundColor: CHART_COLORS[idx % CHART_COLORS.length] + '20', borderWidth: 2.5, pointRadius: 4, pointHoverRadius: 7, tension: 0.3, fill: false, spanGaps: true }; });
-    try {
-        pointsTrendChart = new Chart(canvas, { type: 'line', data: { labels, datasets }, options: { responsive: true, maintainAspectRatio: false, interaction: { intersect: false, mode: 'index' }, plugins: { legend: { position: 'bottom', labels: { usePointStyle: true, padding: 20, font: { size: 12, family: "'Poppins', sans-serif" } } }, tooltip: { backgroundColor: 'rgba(26,29,40,0.9)', titleFont: { size: 13 }, bodyFont: { size: 12 }, padding: 12, cornerRadius: 8 } }, scales: { x: { grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { font: { size: 11 } } }, y: { beginAtZero: false, grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { font: { size: 11 } }, title: { display: true, text: currentLang === 'zh' ? '积分' : 'Points', font: { size: 12 } } } } } });
-        console.log('DataViz: 积分趋势图渲染成功');
-    } catch(err) { console.error('DataViz: 积分趋势图失败', err); }
-}
-
-function renderRankStream(topN) {
-    const canvas = document.getElementById('rankStreamChart'); if (!canvas || !rankingTimeline.length) return;
-    if (rankStreamChart) { rankStreamChart.destroy(); rankStreamChart = null; }
-    const labels = rankingTimeline.map(t => t.label).reverse();
-    const topPlayers = (rankingTimeline[0]?.data || []).slice(0, topN).map(p => p['姓名']);
-    const datasets = topPlayers.map((name, idx) => { const data = []; for (let i = rankingTimeline.length - 1; i >= 0; i--) { const ri = rankingTimeline[i].data.findIndex(x => x['姓名'] === name); data.push(ri >= 0 ? ri + 1 : null); } return { label: name, data, borderColor: CHART_COLORS[idx % CHART_COLORS.length], backgroundColor: CHART_COLORS[idx % CHART_COLORS.length] + '40', borderWidth: 2, pointRadius: 3, pointHoverRadius: 6, tension: 0.3, fill: true, spanGaps: true }; });
-    try {
-        rankStreamChart = new Chart(canvas, { type: 'line', data: { labels, datasets }, options: { responsive: true, maintainAspectRatio: false, interaction: { intersect: false, mode: 'index' }, plugins: { legend: { position: 'bottom', labels: { usePointStyle: true, padding: 16, font: { size: 11, family: "'Poppins', sans-serif" } } }, tooltip: { backgroundColor: 'rgba(26,29,40,0.9)', titleFont: { size: 13 }, bodyFont: { size: 12 }, padding: 12, cornerRadius: 8, callbacks: { label: ctx => `${ctx.dataset.label}: 第${ctx.raw}名` } } }, scales: { x: { grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { font: { size: 11 } } }, y: { reverse: true, min: 1, max: topN, grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { font: { size: 11 }, stepSize: 1 }, title: { display: true, text: currentLang === 'zh' ? '排名' : 'Rank', font: { size: 12 } } } } } });
-        console.log('DataViz: 排名河流图渲染成功');
-    } catch(err) { console.error('DataViz: 排名河流图失败', err); }
-}
-
-function renderComparison(playerA, playerB) {
-    const container = document.getElementById('compareResult'); if (!container) return;
-    const cd = rankingTimeline[0]?.data || []; const ad = cd.find(p => p['姓名'] === playerA); const bd = cd.find(p => p['姓名'] === playerB);
-    const h2h = scoreLogData.filter(r => { const ps = [r['胜者'], r['负者']]; return ps.includes(playerA) && ps.includes(playerB); });
-    const aW = h2h.filter(r => r['胜者'] === playerA).length; const bW = h2h.filter(r => r['胜者'] === playerB).length; const total = h2h.length; const recent = h2h.length ? h2h[h2h.length - 1] : null;
-    let html = `<div class="compare-summary"><div class="compare-player-col"><div class="compare-player-name">${playerA}</div><div class="compare-player-stat">当前积分: <strong>${ad ? ad['当前积分'] : '-'}</strong></div><div class="compare-player-stat">胜率: <strong>${ad ? ad['胜率'] : '-'}</strong></div></div><div class="compare-divider">VS</div><div class="compare-player-col"><div class="compare-player-name">${playerB}</div><div class="compare-player-stat">当前积分: <strong>${bd ? bd['当前积分'] : '-'}</strong></div><div class="compare-player-stat">胜率: <strong>${bd ? bd['胜率'] : '-'}</strong></div></div></div>`;
-    if (total > 0) { html += `<div style="text-align:center;margin-bottom:16px;"><span style="font-weight:600;">总交手: ${total} 场</span> | <span style="color:#52c41a;">${playerA} ${aW} 胜</span> | <span style="color:#52c41a;">${playerB} ${bW} 胜</span>${recent ? ` | 最近: ${recent['日期']} (胜者: ${recent['胜者']})` : ''}</div><table class="compare-h2h-table"><thead><tr><th>日期</th><th>类型</th><th>胜者</th><th>${playerA} 积分变动</th><th>${playerB} 积分变动</th></tr></thead><tbody>`; h2h.sort((a, b) => b['日期'].localeCompare(a['日期'])).forEach(r => { const aC = r['胜者'] === playerA ? r['胜者积分变动'] : r['负者积分变动']; const bC = r['胜者'] === playerB ? r['胜者积分变动'] : r['负者积分变动']; html += `<tr><td>${r['日期']}</td><td>${r['类型']}</td><td>${r['胜者']}</td><td class="${r['胜者'] === playerA ? 'win-highlight' : 'loss-highlight'}">${aC > 0 ? '+' : ''}${aC.toFixed(1)}</td><td class="${r['胜者'] === playerB ? 'win-highlight' : 'loss-highlight'}">${bC > 0 ? '+' : ''}${bC.toFixed(1)}</td></tr>`; }); html += '</tbody></table>'; } else { html += '<div class="compare-placeholder"><i class="fa-solid fa-circle-info"></i><p>暂无交手记录</p></div>'; }
-    container.innerHTML = html;
-}
+function renderPointsTrend(playerNames) { const canvas = document.getElementById('pointsTrendChart'); if (!canvas || !rankingTimeline.length) return; if (pointsTrendChart) { pointsTrendChart.destroy(); pointsTrendChart = null; } const labels = rankingTimeline.map(t => t.label).reverse(); const datasets = playerNames.map((name, idx) => { const data = []; for (let i = rankingTimeline.length - 1; i >= 0; i--) { const p = rankingTimeline[i].data.find(x => x['姓名'] === name); data.push(p ? p['当前积分'] : null); } return { label: name, data, borderColor: CHART_COLORS[idx % CHART_COLORS.length], backgroundColor: CHART_COLORS[idx % CHART_COLORS.length] + '20', borderWidth: 2.5, pointRadius: 4, pointHoverRadius: 7, tension: 0.3, fill: false, spanGaps: true }; }); try { pointsTrendChart = new Chart(canvas, { type: 'line', data: { labels, datasets }, options: { responsive: true, maintainAspectRatio: false, interaction: { intersect: false, mode: 'index' }, plugins: { legend: { position: 'bottom', labels: { usePointStyle: true, padding: 20, font: { size: 12, family: "'Poppins', sans-serif" } } }, tooltip: { backgroundColor: 'rgba(26,29,40,0.9)', titleFont: { size: 13 }, bodyFont: { size: 12 }, padding: 12, cornerRadius: 8 } }, scales: { x: { grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { font: { size: 11 } } }, y: { beginAtZero: false, grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { font: { size: 11 } }, title: { display: true, text: currentLang === 'zh' ? '积分' : 'Points', font: { size: 12 } } } } } }); } catch(err) { console.error('DataViz: 积分趋势图失败', err); } }
+function renderRankStream(topN) { const canvas = document.getElementById('rankStreamChart'); if (!canvas || !rankingTimeline.length) return; if (rankStreamChart) { rankStreamChart.destroy(); rankStreamChart = null; } const labels = rankingTimeline.map(t => t.label).reverse(); const topPlayers = (rankingTimeline[0]?.data || []).slice(0, topN).map(p => p['姓名']); const datasets = topPlayers.map((name, idx) => { const data = []; for (let i = rankingTimeline.length - 1; i >= 0; i--) { const ri = rankingTimeline[i].data.findIndex(x => x['姓名'] === name); data.push(ri >= 0 ? ri + 1 : null); } return { label: name, data, borderColor: CHART_COLORS[idx % CHART_COLORS.length], backgroundColor: CHART_COLORS[idx % CHART_COLORS.length] + '40', borderWidth: 2, pointRadius: 3, pointHoverRadius: 6, tension: 0.3, fill: true, spanGaps: true }; }); try { rankStreamChart = new Chart(canvas, { type: 'line', data: { labels, datasets }, options: { responsive: true, maintainAspectRatio: false, interaction: { intersect: false, mode: 'index' }, plugins: { legend: { position: 'bottom', labels: { usePointStyle: true, padding: 16, font: { size: 11, family: "'Poppins', sans-serif" } } }, tooltip: { backgroundColor: 'rgba(26,29,40,0.9)', titleFont: { size: 13 }, bodyFont: { size: 12 }, padding: 12, cornerRadius: 8, callbacks: { label: ctx => `${ctx.dataset.label}: 第${ctx.raw}名` } } }, scales: { x: { grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { font: { size: 11 } } }, y: { reverse: true, min: 1, max: topN, grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { font: { size: 11 }, stepSize: 1 }, title: { display: true, text: currentLang === 'zh' ? '排名' : 'Rank', font: { size: 12 } } } } } }); } catch(err) { console.error('DataViz: 排名河流图失败', err); } }
+function renderComparison(playerA, playerB) { const container = document.getElementById('compareResult'); if (!container) return; const cd = rankingTimeline[0]?.data || []; const ad = cd.find(p => p['姓名'] === playerA); const bd = cd.find(p => p['姓名'] === playerB); const h2h = scoreLogData.filter(r => { const ps = [r['胜者'], r['负者']]; return ps.includes(playerA) && ps.includes(playerB); }); const aW = h2h.filter(r => r['胜者'] === playerA).length; const bW = h2h.filter(r => r['胜者'] === playerB).length; const total = h2h.length; const recent = h2h.length ? h2h[h2h.length - 1] : null; let html = `<div class="compare-summary"><div class="compare-player-col"><div class="compare-player-name">${playerA}</div><div class="compare-player-stat">当前积分: <strong>${ad ? ad['当前积分'] : '-'}</strong></div><div class="compare-player-stat">胜率: <strong>${ad ? ad['胜率'] : '-'}</strong></div></div><div class="compare-divider">VS</div><div class="compare-player-col"><div class="compare-player-name">${playerB}</div><div class="compare-player-stat">当前积分: <strong>${bd ? bd['当前积分'] : '-'}</strong></div><div class="compare-player-stat">胜率: <strong>${bd ? bd['胜率'] : '-'}</strong></div></div></div>`; if (total > 0) { html += `<div style="text-align:center;margin-bottom:16px;"><span style="font-weight:600;">总交手: ${total} 场</span> | <span style="color:#52c41a;">${playerA} ${aW} 胜</span> | <span style="color:#52c41a;">${playerB} ${bW} 胜</span>${recent ? ` | 最近: ${recent['日期']} (胜者: ${recent['胜者']})` : ''}</div><table class="compare-h2h-table"><thead><tr><th>日期</th><th>类型</th><th>胜者</th><th>${playerA} 积分变动</th><th>${playerB} 积分变动</th></tr></thead><tbody>`; h2h.sort((a, b) => b['日期'].localeCompare(a['日期'])).forEach(r => { const aC = r['胜者'] === playerA ? r['胜者积分变动'] : r['负者积分变动']; const bC = r['胜者'] === playerB ? r['胜者积分变动'] : r['负者积分变动']; html += `<tr><td>${r['日期']}</td><td>${r['类型']}</td><td>${r['胜者']}</td><td class="${r['胜者'] === playerA ? 'win-highlight' : 'loss-highlight'}">${aC > 0 ? '+' : ''}${aC.toFixed(1)}</td><td class="${r['胜者'] === playerB ? 'win-highlight' : 'loss-highlight'}">${bC > 0 ? '+' : ''}${bC.toFixed(1)}</td></tr>`; }); html += '</tbody></table>'; } else { html += '<div class="compare-placeholder"><i class="fa-solid fa-circle-info"></i><p>暂无交手记录</p></div>'; } container.innerHTML = html; }
 
 function initPage() {
     loadAboutData(); loadMembersData(); loadNewsData(); loadCompetitionsData();
     const isRanking = !!document.getElementById('rankingFullBody');
     const isDataViz = !!document.getElementById('pointsTrendChart');
     if (isRanking) { loadRankingData(); loadScoreLogData(); }
-    if (isDataViz) { Promise.all([loadRankingDataForViz(), loadScoreLogForViz()]).then(() => { console.log('DataViz: 数据就绪，初始化图表'); initDataViz(); }).catch(err => console.error('DataViz: 初始化失败', err)); }
+    if (isDataViz) { Promise.all([loadRankingDataForViz(), loadScoreLogForViz()]).then(() => initDataViz()).catch(err => console.error('DataViz: 初始化失败', err)); }
     initPdfViewer(); initSearch(); highlightNavByPath();
     window.addEventListener('scroll', updateSideNavHighlight); updateSideNavHighlight();
     if (window.location.pathname.includes('detail.html') && (newsData.length > 0 || competitionsData.length > 0)) updateDetailPage();
