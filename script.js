@@ -123,10 +123,18 @@ if (modalOverlay) modalOverlay.addEventListener('click', e => { if (e.target ===
 if (scoreDetailClose && scoreDetailModal) { scoreDetailClose.addEventListener('click', () => closeModal(scoreDetailModal)); scoreDetailModal.addEventListener('click', e => { if (e.target === scoreDetailModal) closeModal(scoreDetailModal); }); }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { if (modalOverlay && modalOverlay.classList.contains('active')) closeModal(modalOverlay); if (scoreDetailModal && scoreDetailModal.classList.contains('active')) closeModal(scoreDetailModal); } });
 
-let currentScorePlayer = '';
+let currentScoreContext = { player: '', snapshotDate: '' };
 async function loadScoreLogData() { try { scoreLogData = await (await fetch('score-log.json')).json(); } catch(e) { scoreLogData = []; } }
 async function loadScoreLogForViz() { try { scoreLogData = await (await fetch('score-log.json')).json(); return true; } catch(e) { scoreLogData = []; return true; } }
-function showScoreDetail(playerName) { if (!scoreDetailModal || !scoreDetailBody || window.innerWidth < 1200) return; currentScorePlayer = playerName; scoreDetailTitle.textContent = `${playerName} - ${i18n[currentLang].score_detail_title}`; renderScoreDetail(); adjustModalSize(); openModal(scoreDetailModal); }
+
+function showScoreDetail(playerName, snapshotDate) {
+    if (!scoreDetailModal || !scoreDetailBody || window.innerWidth < 1200) return;
+    currentScoreContext = { player: playerName, snapshotDate: snapshotDate || (rankingTimeline[currentTimeIndex]?.time || '') };
+    scoreDetailTitle.textContent = `${playerName} - ${i18n[currentLang].score_detail_title}（${rankingTimeline[currentTimeIndex]?.label || ''}）`;
+    renderScoreDetail();
+    adjustModalSize();
+    openModal(scoreDetailModal);
+}
 function adjustModalSize() { if (!scoreDetailModal) return; scoreDetailModal.classList.remove('content-fit'); setTimeout(() => { const tw = scoreDetailModal.querySelector('.score-detail-table-wrapper'), tb = scoreDetailModal.querySelector('.score-detail-table'); if (tw && tb && tb.scrollWidth <= tw.clientWidth + 2 && tb.scrollHeight <= tw.clientHeight + 2) scoreDetailModal.classList.add('content-fit'); }, 100); }
 
 async function loadInitialScores() { try { initialScoresData = await (await fetch('initial-scores.json')).json(); return true; } catch(e) { console.error('initial-scores.json 加载失败', e); return false; } }
@@ -137,80 +145,95 @@ function getBaseScore(gap) { const ag = Math.abs(gap); if (gap >= 0) { if (ag <=
 function getEventCoefficient(et) { if (!eventCoefficients) return 0.2; return eventCoefficients[et] || 0.2; }
 function getTimeWeight(matchDate, snapshotDate) { const mt = new Date(matchDate + 'T00:00:00').getTime(), st = new Date(snapshotDate + 'T00:00:00').getTime(); const dd = (st - mt) / 86400000; if (dd < 0) return 0; return Math.pow(2, -dd / HALF_LIFE_DAYS); }
 function calcMatchPoints(winner, loser, eventType, matchDate, snapshotDate, currentScores) { const wScore = currentScores[winner] || 1500, lScore = currentScores[loser] || 1500; return getBaseScore(wScore - lScore) * getEventCoefficient(eventType) * getTimeWeight(matchDate, snapshotDate); }
+function calcRawPoints(winner, loser, eventType, currentScores) { const wScore = currentScores[winner] || 1500, lScore = currentScores[loser] || 1500; return getBaseScore(wScore - lScore) * getEventCoefficient(eventType); }
 
 function isMatchRecord(record) { return record['胜者'] && record['负者']; }
 function isBonusRecord(record) { return record['类型'] === '比赛结果加分' && record['对象']; }
 
-function getActivePlayers(sortedLog, startDate, endDate) {
-    const activePlayers = new Set();
-    sortedLog.forEach(record => {
-        if (record['日期'] < startDate || record['日期'] > endDate) return;
-        if (isMatchRecord(record)) { activePlayers.add(record['胜者']); activePlayers.add(record['负者']); }
-        else if (isBonusRecord(record)) { activePlayers.add(record['对象']); }
-    });
-    return activePlayers;
-}
+function getActivePlayers(sortedLog, startDate, endDate) { const ap = new Set(); sortedLog.forEach(r => { if (r['日期'] < startDate || r['日期'] > endDate) return; if (isMatchRecord(r)) { ap.add(r['胜者']); ap.add(r['负者']); } else if (isBonusRecord(r)) { ap.add(r['对象']); } }); return ap; }
 
 function calculateAllRankingsWithSeasons(scoreLog, initialScores, seasons) {
     const sortedLog = [...scoreLog].sort((a, b) => a['日期'].localeCompare(b['日期']));
-    const allRankings = [];
-    let seasonStartScores = { ...initialScores };
-    let currentScores = { ...initialScores };
+    const allRankings = []; let seasonStartScores = { ...initialScores }; let currentScores = { ...initialScores };
     seasons.forEach((season, seasonIndex) => {
-        if (seasonIndex > 0) {
-            const prevSeason = seasons[seasonIndex - 1];
-            const prevEndScores = calculateEndScores(sortedLog, seasonStartScores, prevSeason.startDate, prevSeason.endDate);
-            const inheritedScores = {};
-            for (const name in seasonStartScores) { const ss = seasonStartScores[name]; const es = prevEndScores[name] || ss; inheritedScores[name] = ss + (es - ss) * 0.5; }
-            for (const name in initialScores) { if (!inheritedScores[name]) inheritedScores[name] = initialScores[name]; }
-            currentScores = inheritedScores; seasonStartScores = { ...inheritedScores };
-        }
-        const initialData = Object.entries(currentScores).sort((a, b) => b[1] - a[1]).map(([name, points]) => ({ '姓名': name, '当前积分': Math.round(points * 10) / 10, '总场次': 0, '胜率': '0%' }));
-        allRankings.push({ time: season.startDate, label: i18n[currentLang].season_initial_label.replace('{season}', season.label), season: season.label, isInitial: true, data: initialData });
-        season.snapshotDates.forEach(snapshotDate => {
-            if (snapshotDate <= season.startDate) return;
-            const scores = { ...currentScores };
-            sortedLog.forEach(record => {
-                if (record['日期'] < season.startDate || record['日期'] > snapshotDate) return;
-                if (isMatchRecord(record)) { const w = record['胜者'], l = record['负者']; if (!scores[w]) scores[w] = 1500; if (!scores[l]) scores[l] = 1500; const wg = calcMatchPoints(w, l, record['类型'], record['日期'], snapshotDate, scores); scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg); scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * 0.8); }
-                else if (isBonusRecord(record)) { const target = record['对象']; const bonus = parseFloat(record['分数']) || 0; if (!scores[target]) scores[target] = 1500; scores[target] = Math.max(SCORE_FLOOR, scores[target] + bonus); }
-            });
-            const snapshotActivePlayers = getActivePlayers(sortedLog, season.startDate, snapshotDate);
-            const sp = Object.entries(scores).filter(([name]) => snapshotActivePlayers.has(name)).sort((a, b) => b[1] - a[1]).map(([name, points]) => ({ '姓名': name, '当前积分': Math.round(points * 10) / 10, '总场次': sortedLog.filter(r => isMatchRecord(r) && r['日期'] >= season.startDate && r['日期'] <= snapshotDate && (r['胜者'] === name || r['负者'] === name)).length, '胜率': (() => { const ms = sortedLog.filter(r => isMatchRecord(r) && r['日期'] >= season.startDate && r['日期'] <= snapshotDate && (r['胜者'] === name || r['负者'] === name)); if (!ms.length) return '0%'; return Math.round((ms.filter(r => r['胜者'] === name).length / ms.length) * 100) + '%'; })() }));
-            allRankings.push({ time: snapshotDate, label: formatSnapshotLabel(snapshotDate), season: season.label, isInitial: false, data: sp });
-        });
+        if (seasonIndex > 0) { const ps = seasons[seasonIndex-1]; const pes = calculateEndScores(sortedLog, seasonStartScores, ps.startDate, ps.endDate); const is2 = {}; for (const n in seasonStartScores) { const ss = seasonStartScores[n]; const es = pes[n]||ss; is2[n] = ss+(es-ss)*0.5; } for (const n in initialScores) { if(!is2[n]) is2[n]=initialScores[n]; } currentScores=is2; seasonStartScores={...is2}; }
+        const id = Object.entries(currentScores).sort((a,b)=>b[1]-a[1]).map(([n,pt])=>({'姓名':n,'当前积分':Math.round(pt*10)/10,'总场次':0,'胜率':'0%'}));
+        allRankings.push({time:season.startDate,label:i18n[currentLang].season_initial_label.replace('{season}',season.label),season:season.label,isInitial:true,data:id});
+        season.snapshotDates.forEach(sd => { if(sd<=season.startDate)return; const sc={...currentScores}; sortedLog.forEach(r=>{ if(r['日期']<season.startDate||r['日期']>sd)return; if(isMatchRecord(r)){const w=r['胜者'],l=r['负者'];if(!sc[w])sc[w]=1500;if(!sc[l])sc[l]=1500;const wg=calcMatchPoints(w,l,r['类型'],r['日期'],sd,sc);sc[w]=Math.max(SCORE_FLOOR,sc[w]+wg);sc[l]=Math.max(SCORE_FLOOR,sc[l]-wg*0.8);}else if(isBonusRecord(r)){const t=r['对象'];const b=parseFloat(r['分数'])||0;if(!sc[t])sc[t]=1500;sc[t]=Math.max(SCORE_FLOOR,sc[t]+b);} });
+            const sap = getActivePlayers(sortedLog, season.startDate, sd);
+            const sp = Object.entries(sc).filter(([n])=>sap.has(n)).sort((a,b)=>b[1]-a[1]).map(([n,pt])=>({'姓名':n,'当前积分':Math.round(pt*10)/10,'总场次':sortedLog.filter(r=>isMatchRecord(r)&&r['日期']>=season.startDate&&r['日期']<=sd&&(r['胜者']===n||r['负者']===n)).length,'胜率':(()=>{const ms=sortedLog.filter(r=>isMatchRecord(r)&&r['日期']>=season.startDate&&r['日期']<=sd&&(r['胜者']===n||r['负者']===n));if(!ms.length)return'0%';return Math.round((ms.filter(r=>r['胜者']===n).length/ms.length)*100)+'%';})()}));
+            allRankings.push({time:sd,label:formatSnapshotLabel(sd),season:season.label,isInitial:false,data:sp}); });
         currentScores = calculateEndScores(sortedLog, currentScores, season.startDate, season.endDate);
-    });
-    return allRankings;
+    }); return allRankings;
 }
-
-function calculateEndScores(sortedLog, startScores, seasonStart, seasonEnd) {
-    const scores = { ...startScores };
-    sortedLog.forEach(record => {
-        if (record['日期'] < seasonStart || record['日期'] > seasonEnd) return;
-        if (isMatchRecord(record)) { const w = record['胜者'], l = record['负者']; if (!scores[w]) scores[w] = 1500; if (!scores[l]) scores[l] = 1500; const wg = calcMatchPoints(w, l, record['类型'], record['日期'], seasonEnd, scores); scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg); scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * 0.8); }
-        else if (isBonusRecord(record)) { const target = record['对象']; const bonus = parseFloat(record['分数']) || 0; if (!scores[target]) scores[target] = 1500; scores[target] = Math.max(SCORE_FLOOR, scores[target] + bonus); }
-    });
-    return scores;
-}
-
+function calculateEndScores(sl, ss, sst, sen) { const sc={...ss}; sl.forEach(r=>{ if(r['日期']<sst||r['日期']>sen)return; if(isMatchRecord(r)){const w=r['胜者'],l=r['负者'];if(!sc[w])sc[w]=1500;if(!sc[l])sc[l]=1500;const wg=calcMatchPoints(w,l,r['类型'],r['日期'],sen,sc);sc[w]=Math.max(SCORE_FLOOR,sc[w]+wg);sc[l]=Math.max(SCORE_FLOOR,sc[l]-wg*0.8);}else if(isBonusRecord(r)){const t=r['对象'];const b=parseFloat(r['分数'])||0;if(!sc[t])sc[t]=1500;sc[t]=Math.max(SCORE_FLOOR,sc[t]+b);} }); return sc; }
 function formatSnapshotLabel(ds) { const d = new Date(ds + 'T00:00:00'); return `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日`; }
 
+// ==========================================
+// 积分明细（按快照日期 + 双重积分显示）
+// ==========================================
 function renderScoreDetail() {
     if (!scoreDetailBody) return;
-    let records = scoreLogData.filter(r => (isMatchRecord(r) && (r['胜者'] === currentScorePlayer || r['负者'] === currentScorePlayer)) || (isBonusRecord(r) && r['对象'] === currentScorePlayer));
+    const player = currentScoreContext.player;
+    const snapshotDate = currentScoreContext.snapshotDate;
+    if (!player || !snapshotDate) return;
+
+    let records = scoreLogData.filter(r =>
+        r['日期'] <= snapshotDate &&
+        ((isMatchRecord(r) && (r['胜者'] === player || r['负者'] === player)) ||
+         (isBonusRecord(r) && r['对象'] === player))
+    );
     records.sort((a, b) => a['日期'].localeCompare(b['日期']));
     if (!records.length) { scoreDetailBody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:20px;">暂无记录</td></tr>'; setTimeout(() => { if (scoreDetailModal) scoreDetailModal.classList.add('content-fit'); }, 100); return; }
+
     const scores = {}; if (initialScoresData) Object.assign(scores, initialScoresData.initialScores);
     const allRecords = [...scoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
     const recordsWithScores = [];
+
     for (const record of allRecords) {
-        if (isMatchRecord(record)) { const w = record['胜者'], l = record['负者']; if (!scores[w]) scores[w] = 1500; if (!scores[l]) scores[l] = 1500; const wg = calcMatchPoints(w, l, record['类型'], record['日期'], record['日期'], scores); if (record['胜者'] === currentScorePlayer || record['负者'] === currentScorePlayer) { const isWinner = record['胜者'] === currentScorePlayer; recordsWithScores.push({ date: record['日期'], type: record['类型'], opponent: isWinner ? record['负者'] : record['胜者'], isWinner, isBonus: false, scoreBefore: scores[currentScorePlayer], scoreChange: isWinner ? wg : -(wg * 0.8), scoreAfter: scores[currentScorePlayer] + (isWinner ? wg : -(wg * 0.8)) }); } scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg); scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * 0.8); }
-        else if (isBonusRecord(record) && record['对象'] === currentScorePlayer) { const bonus = parseFloat(record['分数']) || 0; if (!scores[currentScorePlayer]) scores[currentScorePlayer] = 1500; recordsWithScores.push({ date: record['日期'], type: i18n[currentLang].score_type_bonus, opponent: '-', isWinner: true, isBonus: true, scoreBefore: scores[currentScorePlayer], scoreChange: bonus, scoreAfter: scores[currentScorePlayer] + bonus }); scores[currentScorePlayer] = Math.max(SCORE_FLOOR, scores[currentScorePlayer] + bonus); }
-        else if (isBonusRecord(record)) { const target = record['对象']; const bonus = parseFloat(record['分数']) || 0; if (!scores[target]) scores[target] = 1500; scores[target] = Math.max(SCORE_FLOOR, scores[target] + bonus); }
+        if (record['日期'] > snapshotDate) break;
+        if (isMatchRecord(record)) {
+            const w = record['胜者'], l = record['负者'];
+            if (!scores[w]) scores[w] = 1500; if (!scores[l]) scores[l] = 1500;
+            const decayedGain = calcMatchPoints(w, l, record['类型'], record['日期'], snapshotDate, scores);
+            const rawGain = calcRawPoints(w, l, record['类型'], scores);
+            if (record['胜者'] === player || record['负者'] === player) {
+                const isWinner = record['胜者'] === player;
+                const rawChange = isWinner ? rawGain : -(rawGain * 0.8);
+                const decayedChange = isWinner ? decayedGain : -(decayedGain * 0.8);
+                const scoreBefore = scores[player];
+                const scoreAfter = scoreBefore + decayedChange;
+                recordsWithScores.push({ date: record['日期'], type: record['类型'], opponent: isWinner ? record['负者'] : record['胜者'], isWinner, isBonus: false, scoreBefore, rawChange, decayedChange, scoreAfter });
+            }
+            scores[w] = Math.max(SCORE_FLOOR, scores[w] + decayedGain);
+            scores[l] = Math.max(SCORE_FLOOR, scores[l] - decayedGain * 0.8);
+        } else if (isBonusRecord(record) && record['对象'] === player) {
+            const bonus = parseFloat(record['分数']) || 0;
+            if (!scores[player]) scores[player] = 1500;
+            recordsWithScores.push({ date: record['日期'], type: i18n[currentLang].score_type_bonus, opponent: '-', isWinner: true, isBonus: true, scoreBefore: scores[player], rawChange: bonus, decayedChange: bonus, scoreAfter: scores[player] + bonus });
+            scores[player] = Math.max(SCORE_FLOOR, scores[player] + bonus);
+        } else if (isBonusRecord(record)) {
+            const target = record['对象']; const bonus = parseFloat(record['分数']) || 0;
+            if (!scores[target]) scores[target] = 1500;
+            scores[target] = Math.max(SCORE_FLOOR, scores[target] + bonus);
+        }
     }
+
     recordsWithScores.reverse();
-    scoreDetailBody.innerHTML = recordsWithScores.map(r => { if (r.isBonus) { const cc = r.scoreChange >= 0 ? 'score-change-positive' : 'score-change-negative'; const sign = r.scoreChange >= 0 ? '+' : ''; return `<tr><td>${r.date}</td><td>${r.type}</td><td>-</td><td class="result-win">加分</td><td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${sign}${r.scoreChange.toFixed(1)}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`; } const res = r.isWinner ? i18n[currentLang].score_result_win : i18n[currentLang].score_result_loss; const rc = r.isWinner ? 'result-win' : 'result-loss'; const cc = r.scoreChange >= 0 ? 'score-change-positive' : 'score-change-negative'; const sign = r.scoreChange >= 0 ? '+' : ''; return `<tr><td>${r.date}</td><td>${r.type}</td><td>${r.opponent}</td><td class="${rc}">${res}</td><td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${sign}${r.scoreChange.toFixed(1)}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`; }).join('');
+    scoreDetailBody.innerHTML = recordsWithScores.map(r => {
+        if (r.isBonus) {
+            const cc = r.decayedChange >= 0 ? 'score-change-positive' : 'score-change-negative';
+            const sign = r.decayedChange >= 0 ? '+' : '';
+            return `<tr><td>${r.date}</td><td>${r.type}</td><td>-</td><td class="result-win">加分</td><td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${sign}${r.decayedChange.toFixed(1)}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
+        }
+        const res = r.isWinner ? i18n[currentLang].score_result_win : i18n[currentLang].score_result_loss;
+        const rc = r.isWinner ? 'result-win' : 'result-loss';
+        const cc = r.decayedChange >= 0 ? 'score-change-positive' : 'score-change-negative';
+        const signRaw = r.rawChange >= 0 ? '+' : '';
+        const signDecayed = r.decayedChange >= 0 ? '+' : '';
+        const changeDisplay = `${signRaw}${r.rawChange.toFixed(1)}（${signDecayed}${r.decayedChange.toFixed(1)}）`;
+        return `<tr><td>${r.date}</td><td>${r.type}</td><td>${r.opponent}</td><td class="${rc}">${res}</td><td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${changeDisplay}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
+    }).join('');
     setTimeout(adjustModalSize, 150);
 }
 window.addEventListener('resize', () => { if (scoreDetailModal && scoreDetailModal.classList.contains('active')) adjustModalSize(); });
@@ -245,7 +268,7 @@ function renderTimeNodeList() { const list = document.getElementById('timeNodeLi
 function calculateRankChanges(cd, pd, isInitial) { if (!pd || isInitial) return cd.map((p, i) => ({ ...p, rank: i+1, change: 0, changeType: 'new', pointsChange: 0, pointsChangeType: 'new' })); const prm = {}, ppm = {}; pd.forEach((p, i) => { prm[p['姓名']] = i+1; ppm[p['姓名']] = p['当前积分'] || 0; }); return cd.map((p, i) => { const cr = i+1, pr = prm[p['姓名']], pp = ppm[p['姓名']], cp = p['当前积分'] || 0; let rc = 0, rct = 'new'; if (pr === undefined) rct = 'new'; else { rc = pr - cr; if (rc > 0) rct = 'up'; else if (rc < 0) rct = 'down'; else rct = 'same'; } let pc = 0, pct = 'new'; if (pp === undefined) pct = 'new'; else { pc = cp - pp; if (pc > 0.05) pct = 'up'; else if (pc < -0.05) pct = 'down'; else pct = 'same'; } return { ...p, rank: cr, change: rc, changeType: rct, pointsChange: pc, pointsChangeType: pct }; }); }
 function updateRankingDisplay() { if (!rankingTimeline.length || !rankingTimeline[currentTimeIndex]) return; const cn = rankingTimeline[currentTimeIndex], pn = currentTimeIndex > 0 ? rankingTimeline[currentTimeIndex-1] : null; currentDisplayData = calculateRankChanges(cn.data, pn ? pn.data : null, cn.isInitial); currentDisplayData = sortDisplayData(currentSortKey, currentSortDir); renderRankingTable(currentDisplayData); const ind = document.getElementById('sortIndicator'); if (ind) ind.textContent = `${currentSortKey}${currentSortDir==='desc'?'降序':'升序'}`; updateSortHeaderHighlight(); const lbl = document.getElementById('currentTimeLabel'); if (lbl) lbl.textContent = cn.label; }
 function sortDisplayData(key, dir) { return [...currentDisplayData].sort((a, b) => { let va, vb; if (key === '胜率') { va = parseWinRate(a['胜率']); vb = parseWinRate(b['胜率']); } else if (key === '姓名') return dir === 'asc' ? (a['姓名']||'').localeCompare(b['姓名']||'', 'zh') : (b['姓名']||'').localeCompare(a['姓名']||'', 'zh'); else if (key === 'rank') { va = a.rank || 0; vb = b.rank || 0; } else if (key === '变化') { va = a.change || 0; vb = b.change || 0; } else if (key === '积分变化') { va = a.pointsChange || 0; vb = b.pointsChange || 0; } else { va = a[key] || 0; vb = b[key] || 0; } return va < vb ? (dir === 'asc' ? -1 : 1) : va > vb ? (dir === 'asc' ? 1 : -1) : 0; }); }
-function renderRankingTable(data) { const tb = document.getElementById('rankingFullBody'); if (!tb) return; if (!data || !data.length) { tb.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;">暂无排名数据</td></tr>'; return; } tb.innerHTML = ''; data.forEach((p, i) => { const tr = document.createElement('tr'); const wr = p['胜率'] || '0%', wd = wr === '#DIV/0!' || wr === '-' ? '0%' : wr; let ch = '', pch = ''; if (p.changeType === 'up') ch = `<span class="rank-change rank-up">▲${Math.abs(p.change)}</span>`; else if (p.changeType === 'down') ch = `<span class="rank-change rank-down">▼${Math.abs(p.change)}</span>`; else if (p.changeType === 'new') ch = '<span class="rank-new">NEW</span>'; else ch = '<span class="rank-same">-</span>'; if (p.pointsChangeType === 'up') pch = `<span class="rank-change rank-up">▲${Math.abs(p.pointsChange).toFixed(1)}</span>`; else if (p.pointsChangeType === 'down') pch = `<span class="rank-change rank-down">▼${Math.abs(p.pointsChange).toFixed(1)}</span>`; else if (p.pointsChangeType === 'new') pch = '<span class="rank-new">NEW</span>'; else pch = '<span class="rank-same">-</span>'; const pn = p['姓名'] || '-', nc = (window.innerWidth >= 1200 && scoreLogData.length > 0) ? `<span class="player-name-link" onclick="showScoreDetail('${pn}')" title="点击查看积分明细">${pn}</span>` : pn; tr.innerHTML = `<td>${i+1}</td><td>${nc}</td><td><strong>${p['当前积分'] || 0}</strong></td><td>${pch}</td><td>${ch}</td><td>${p['总场次'] || 0}</td><td>${wd}</td>`; tb.appendChild(tr); }); }
+function renderRankingTable(data) { const tb = document.getElementById('rankingFullBody'); if (!tb) return; if (!data || !data.length) { tb.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;">暂无排名数据</td></tr>'; return; } tb.innerHTML = ''; const currentSnapshotDate = rankingTimeline[currentTimeIndex]?.time || ''; data.forEach((p, i) => { const tr = document.createElement('tr'); const wr = p['胜率'] || '0%', wd = wr === '#DIV/0!' || wr === '-' ? '0%' : wr; let ch = '', pch = ''; if (p.changeType === 'up') ch = `<span class="rank-change rank-up">▲${Math.abs(p.change)}</span>`; else if (p.changeType === 'down') ch = `<span class="rank-change rank-down">▼${Math.abs(p.change)}</span>`; else if (p.changeType === 'new') ch = '<span class="rank-new">NEW</span>'; else ch = '<span class="rank-same">-</span>'; if (p.pointsChangeType === 'up') pch = `<span class="rank-change rank-up">▲${Math.abs(p.pointsChange).toFixed(1)}</span>`; else if (p.pointsChangeType === 'down') pch = `<span class="rank-change rank-down">▼${Math.abs(p.pointsChange).toFixed(1)}</span>`; else if (p.pointsChangeType === 'new') pch = '<span class="rank-new">NEW</span>'; else pch = '<span class="rank-same">-</span>'; const pn = p['姓名'] || '-'; const nc = (window.innerWidth >= 1200 && scoreLogData.length > 0) ? `<span class="player-name-link" onclick="showScoreDetail('${pn}','${currentSnapshotDate}')" title="点击查看积分明细">${pn}</span>` : pn; tr.innerHTML = `<td>${i+1}</td><td>${nc}</td><td><strong>${p['当前积分'] || 0}</strong></td><td>${pch}</td><td>${ch}</td><td>${p['总场次'] || 0}</td><td>${wd}</td>`; tb.appendChild(tr); }); }
 function updateSortHeaderHighlight() { document.querySelectorAll('.ranking-table-full th.sortable').forEach(th => { th.classList.remove('active-sort'); if (th.getAttribute('data-sort') === currentSortKey) th.classList.add('active-sort'); }); }
 function setupSortListeners() { document.querySelectorAll('.ranking-table-full th.sortable').forEach(th => { const nt = th.cloneNode(true); th.parentNode.replaceChild(nt, th); nt.addEventListener('click', () => { const key = nt.getAttribute('data-sort'); currentSortDir = key === currentSortKey ? (currentSortDir === 'desc' ? 'asc' : 'desc') : 'desc'; currentSortKey = key; currentDisplayData = sortDisplayData(key, currentSortDir); renderRankingTable(currentDisplayData); updateSortHeaderHighlight(); document.querySelectorAll('.ranking-table-full th.sortable').forEach(h => { const a = h.querySelector('.sort-arrow'); if (a) a.innerHTML = ''; }); const ar = nt.querySelector('.sort-arrow'); if (ar) ar.innerHTML = currentSortDir === 'desc' ? '&#9660;' : '&#9650;'; nt.classList.add('active-sort'); document.getElementById('sortIndicator').textContent = `${key}${currentSortDir === 'desc' ? '降序' : '升序'}`; }); }); }
 
