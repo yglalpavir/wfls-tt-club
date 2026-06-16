@@ -9,6 +9,7 @@
     --accent-red: #ff4d4f;
     --accent-red-dark: #d9363e;
     --accent-gold: #f0a500;
+    --accent-green: #52c41a;
     --bg-white: #ffffff;
     --bg-light: #f8fafc;
     --bg-lighter: #f1f5f9;
@@ -48,6 +49,7 @@ body.dark-mode {
     --accent-red: #ff6b6b;
     --accent-red-dark: #e05555;
     --accent-gold: #f5c542;
+    --accent-green: #73d13d;
     --bg-white: #1a1d28;
     --bg-light: #151821;
     --bg-lighter: #1f2230;
@@ -594,6 +596,23 @@ body.dark-mode .viz-page-hero { background: linear-gradient(135deg, #0d1117 0%, 
 .initial-node.active { background: rgba(245, 197, 66, 0.12) !important; color: var(--accent-gold) !important; font-weight: 600; border-left-color: var(--accent-gold) !important; }
 .initial-node.active .node-dot { background: var(--accent-gold) !important; }
 
+/* 实时积分节点 */
+.realtime-group { margin-bottom: 6px; }
+.realtime-header {
+    display: flex; align-items: center; gap: 6px; padding: 9px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem; font-weight: 600; color: var(--accent-green);
+    background: rgba(82, 196, 26, 0.08);
+    font-family: var(--font-en);
+}
+.realtime-header i { font-size: 0.7rem; animation: pulse-dot 2s ease-in-out infinite; }
+.realtime-label { flex: 1; }
+@keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+.realtime-node { border-left: 3px solid var(--accent-green) !important; }
+.realtime-node .node-dot { background: var(--accent-green) !important; animation: pulse-dot 2s ease-in-out infinite; }
+.realtime-node.active { background: rgba(82, 196, 26, 0.12) !important; color: var(--accent-green) !important; font-weight: 600; border-left-color: var(--accent-green) !important; }
+.realtime-node.active .node-dot { background: var(--accent-green) !important; }
+
 .player-name-link { color: var(--primary-blue); cursor: pointer; font-weight: 600; transition: all var(--transition-fast); border-bottom: 1px dashed var(--primary-light); }
 .player-name-link:hover { color: var(--primary-dark); border-bottom-color: var(--primary-blue); }
 .ranking-content { min-width: 0; }
@@ -744,6 +763,8 @@ body.dark-mode .score-detail-table tbody tr:nth-child(even) td { background-colo
     .time-node-item .node-count { margin-left: 4px; }
     .initial-node { border-bottom: 3px solid var(--accent-gold) !important; border-left: none !important; }
     .initial-node.active { border-bottom-color: var(--accent-gold) !important; }
+    .realtime-node { border-bottom: 3px solid var(--accent-green) !important; border-left: none !important; }
+    .realtime-node.active { border-bottom-color: var(--accent-green) !important; }
 }
 @media (max-width: 768px) {
     .nav-menu { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: var(--glass-bg); backdrop-filter: var(--glass-blur); flex-direction: column; align-items: flex-start; padding: 80px 28px 28px; gap: 4px; transition: right var(--transition-base); box-shadow: var(--shadow-xl); z-index: 999; overflow-y: auto; }

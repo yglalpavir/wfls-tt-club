@@ -62,6 +62,69 @@ function getSeasonStartScores(seasonIndex) {
     return { ...currentScores };
 }
 
+// 计算实时积分（按当前日期快照）
+function calculateRealtimeRanking() {
+    if (!scoreLogData || !initialScoresData || !seasonsData || !seasonsData.length) return null;
+    const today = new Date().toISOString().split('T')[0];
+    const sortedLog = [...scoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
+
+    // 找到今天所在的赛季（若今天已超出所有赛季，使用最后一个赛季并延伸至今天）
+    let activeSeason = null, seasonIndex = -1;
+    for (let i = 0; i < seasonsData.length; i++) {
+        if (today >= seasonsData[i].startDate && today <= seasonsData[i].endDate) {
+            activeSeason = seasonsData[i]; seasonIndex = i; break;
+        }
+    }
+    if (!activeSeason) {
+        activeSeason = seasonsData[seasonsData.length - 1];
+        seasonIndex = seasonsData.length - 1;
+    }
+
+    // 计算赛季起始积分（含继承）
+    let currentScores = { ...initialScoresData.initialScores };
+    let seasonStartScores = { ...initialScoresData.initialScores };
+    for (let i = 0; i <= seasonIndex; i++) {
+        const season = seasonsData[i];
+        if (i > 0) {
+            const prevSeason = seasonsData[i - 1];
+            const prevEndScores = calculateEndScores(sortedLog, seasonStartScores, prevSeason.startDate, prevSeason.endDate);
+            const inherited = {};
+            for (const n in seasonStartScores) { const ss = seasonStartScores[n]; const es = prevEndScores[n] || ss; inherited[n] = ss + (es - ss) * 0.5; }
+            for (const n in initialScoresData.initialScores) { if (!inherited[n]) inherited[n] = initialScoresData.initialScores[n]; }
+            currentScores = inherited; seasonStartScores = { ...inherited };
+        }
+        if (i < seasonIndex) { currentScores = calculateEndScores(sortedLog, currentScores, season.startDate, season.endDate); }
+    }
+
+    // 从当前赛季初计算到今天的积分
+    const sc = { ...currentScores };
+    const effectiveEnd = today < activeSeason.startDate ? activeSeason.startDate : today;
+    sortedLog.forEach(r => {
+        if (r['日期'] < activeSeason.startDate || r['日期'] > effectiveEnd) return;
+        if (isMatchRecord(r)) {
+            const w = r['胜者'], l = r['负者'];
+            if (!sc[w]) sc[w] = 1500; if (!sc[l]) sc[l] = 1500;
+            const wg = calcMatchPoints(w, l, r['类型'], r['日期'], effectiveEnd, sc);
+            sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
+            sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * 0.8);
+        } else if (isBonusRecord(r)) {
+            const t = r['对象']; const b = parseFloat(r['分数']) || 0;
+            if (!sc[t]) sc[t] = 1500;
+            sc[t] = Math.max(SCORE_FLOOR, sc[t] + b);
+        }
+    });
+
+    const activeStart = activeSeason.startDate;
+    const sap = getActivePlayers(sortedLog, activeStart, effectiveEnd);
+    const sp = Object.entries(sc).filter(([n]) => sap.has(n)).sort((a, b) => b[1] - a[1]).map(([n, pt]) => ({
+        '姓名': n, '当前积分': Math.round(pt * 10) / 10,
+        '总场次': sortedLog.filter(r => isMatchRecord(r) && r['日期'] >= activeStart && r['日期'] <= effectiveEnd && (r['胜者'] === n || r['负者'] === n)).length,
+        '胜率': (() => { const ms = sortedLog.filter(r => isMatchRecord(r) && r['日期'] >= activeStart && r['日期'] <= effectiveEnd && (r['胜者'] === n || r['负者'] === n)); if (!ms.length) return '0%'; return Math.round((ms.filter(r => r['胜者'] === n).length / ms.length) * 100) + '%'; })()
+    }));
+
+    return { time: today, label: i18n[currentLang].rank_realtime_label, season: activeSeason.label, isInitial: false, isRealtime: true, data: sp };
+}
+
 async function loadInitialScores() { try { initialScoresData = await (await fetch('initial-scores.json')).json(); return true; } catch(e) { console.error('initial-scores.json 加载失败', e); return false; } }
 async function loadEventCoefficients() { try { eventCoefficients = await (await fetch('event-coefficient.json')).json(); return true; } catch(e) { console.error('event-coefficient.json 加载失败', e); return false; } }
 async function loadSeasons() { try { seasonsData = await (await fetch('seasons.json')).json(); return true; } catch(e) { console.error('seasons.json 加载失败', e); seasonsData = []; return false; } }

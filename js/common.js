@@ -28,7 +28,8 @@ const i18n = {
         pagination_prev: "上一页", pagination_next: "下一页", pagination_info: "第 {current} 页，共 {total} 页",
         data_viz_page_title: "数据可视化 | WFLS Table Tennis Club", data_viz_tag: "Data Visualization", data_viz_title: "数据可视化", data_viz_desc: "积分趋势 · 排名变化 · 球员对比",
         data_viz_points_trend: "积分趋势", data_viz_rank_stream: "排名变化河流图", data_viz_player_compare: "球员对比", data_viz_select_players: "选择球员（最多15人）", data_viz_select_player_a: "球员 A", data_viz_select_player_b: "球员 B", data_viz_apply: "应用", data_viz_top_n: "显示前", data_viz_head_to_head: "历史交手记录",
-        season_initial_label: "{season}初始积分", score_type_bonus: "比赛结果加分"
+        season_initial_label: "{season}初始积分", score_type_bonus: "比赛结果加分",
+        rank_realtime_header: "实时积分", rank_realtime_label: "实时积分"
     },
     en: {
         site_title: "WFLS Table Tennis Club | Wuhan Foreign Languages School", nav_home: "Home", nav_news: "News", nav_competitions: "Competitions", nav_contact: "Contact", nav_more: "More...", nav_members: "Core Members", lang_btn: "中文",
@@ -55,7 +56,8 @@ const i18n = {
         pagination_prev: "Previous", pagination_next: "Next", pagination_info: "Page {current} of {total}",
         data_viz_page_title: "Data Visualization | WFLS Table Tennis Club", data_viz_tag: "Data Visualization", data_viz_title: "Data Visualization", data_viz_desc: "Points Trend · Rank Flow · Player Compare",
         data_viz_points_trend: "Points Trend", data_viz_rank_stream: "Rank Flow", data_viz_player_compare: "Player Comparison", data_viz_select_players: "Select Players (max 15)", data_viz_select_player_a: "Player A", data_viz_select_player_b: "Player B", data_viz_apply: "Apply", data_viz_top_n: "Top", data_viz_head_to_head: "Head to Head",
-        season_initial_label: "{season} Initial Scores", score_type_bonus: "Bonus Points"
+        season_initial_label: "{season} Initial Scores", score_type_bonus: "Bonus Points",
+        rank_realtime_header: "Real-time", rank_realtime_label: "Live Ranking"
     }
 };
 
