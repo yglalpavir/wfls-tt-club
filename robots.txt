@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /Assets/
+
+Sitemap: https://yglalpavir.github.io/wfls-tt-club/sitemap.xml

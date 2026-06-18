@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WFLS Table Tennis Club - 页面未找�?>
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://yglalpavir.github.io/wfls-tt-club/404.html">
+    <title>404 - 页面未找�?| WFLS Table Tennis Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #007bff;
+            --primary-dark: #0056b3;
+            --primary-light: #4da3ff;
+            --primary-pale: #e6f2ff;
+            --accent-red: #ff4d4f;
+            --accent-gold: #f0a500;
+            --bg-white: #ffffff;
+            --bg-light: #f8fafc;
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a5568;
+            --text-muted: #8899aa;
+            --border-color: #e2e8f0;
+            --glass-bg: rgba(255, 255, 255, 0.72);
+            --glass-border: rgba(255, 255, 255, 0.55);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.07);
+            --glass-blur: blur(14px);
+            --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.1);
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-en: 'Poppins', sans-serif;
+            --font-cn: 'Noto Sans SC', sans-serif;
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: var(--font-cn);
+            color: #fff;
+            background: linear-gradient(135deg, #0a1628 0%, #0d2137 30%, #0f2b4a 60%, #0a1e3d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* 背景粒子 */
+        .particles {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.9), rgba(255,255,255,0.15));
+            animation: floatParticle 8s ease-in-out infinite;
+        }
+        .p1 { width: 18px; height: 18px; top: 12%; left: 18%; animation-delay: 0s; animation-duration: 7s; }
+        .p2 { width: 12px; height: 12px; top: 22%; right: 22%; animation-delay: 1.5s; animation-duration: 9s; }
+        .p3 { width: 22px; height: 22px; bottom: 28%; left: 12%; animation-delay: 3s; animation-duration: 8.5s; }
+        .p4 { width: 14px; height: 14px; bottom: 18%; right: 18%; animation-delay: 4.5s; animation-duration: 7.5s; }
+        .p5 { width: 16px; height: 16px; top: 38%; left: 62%; animation-delay: 2s; animation-duration: 10s; }
+        .p6 { width: 10px; height: 10px; top: 52%; right: 32%; animation-delay: 5s; animation-duration: 8s; }
+        .p7 { width: 20px; height: 20px; top: 65%; left: 45%; animation-delay: 1s; animation-duration: 9.5s; }
+        .p8 { width: 8px; height: 8px; bottom: 35%; left: 55%; animation-delay: 3.5s; animation-duration: 7.8s; }
+
+        @keyframes floatParticle {
+            0%, 100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.4; }
+            25% { transform: translateY(-40px) translateX(25px) scale(1.3); opacity: 0.9; }
+            50% { transform: translateY(-20px) translateX(-20px) scale(0.8); opacity: 0.3; }
+            75% { transform: translateY(-50px) translateX(10px) scale(1.1); opacity: 0.7; }
+        }
+
+        /* 光晕叠加 */
+        .bg-glow {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background:
+                radial-gradient(ellipse at 30% 50%, rgba(0,123,255,0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 30%, rgba(0,86,179,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(255,77,79,0.05) 0%, transparent 50%);
+        }
+
+        /* 主容�?*/
+        .wrapper {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 24px;
+        }
+
+        /* 玻璃拟态卡�?*/
+        .glass-card {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius-xl);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255,255,255,0.05) inset;
+            padding: 48px 44px;
+            max-width: 520px;
+            margin: 0 auto;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 404 大数�?*/
+        .error-code {
+            font-family: var(--font-en);
+            font-size: clamp(5rem, 12vw, 8rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-blue) 40%, #66b8ff 70%, var(--primary-light) 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s ease-in-out infinite;
+            line-height: 1;
+            margin-bottom: 8px;
+            letter-spacing: -2px;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* 乒乓球图�?*/
+        .pingpong-icon {
+            font-size: 2.4rem;
+            margin-bottom: 16px;
+            display: inline-block;
+            animation: bounce 1.6s ease-in-out infinite;
+            color: var(--primary-light);
+            opacity: 0.9;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-16px); }
+            50% { transform: translateY(0); }
+            70% { transform: translateY(-8px); }
+            85% { transform: translateY(0); }
+        }
+
+        /* 提示标题 */
+        .error-title {
+            font-family: var(--font-cn);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.92);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        /* 描述文字 */
+        .error-desc {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.55);
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+
+        /* 分隔�?*/
+        .divider {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            margin: 0 auto 24px;
+        }
+
+        /* 猜你想找标题 */
+        .guess-label {
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.45);
+            margin-bottom: 16px;
+            font-family: var(--font-cn);
+            letter-spacing: 0.5px;
+        }
+
+        /* 快捷链接�?*/
+        .quick-links {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .quick-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 10px 22px;
+            border-radius: 24px;
+            font-family: var(--font-en);
+            font-weight: 600;
+            font-size: 0.88rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            white-space: nowrap;
+            border: none;
+        }
+
+        .quick-link.primary {
+            background: var(--primary-blue);
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(0,123,255,0.4);
+        }
+        .quick-link.primary:hover {
+            background: var(--primary-dark);
+            box-shadow: 0 6px 24px rgba(0,123,255,0.5);
+            transform: translateY(-2px);
+        }
+
+        .quick-link.outline {
+            background: transparent;
+            color: rgba(255,255,255,0.85);
+            border: 1.5px solid rgba(255,255,255,0.3);
+        }
+        .quick-link.outline:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.6);
+            transform: translateY(-2px);
+        }
+
+        /* 倒计�?*/
+        .countdown {
+            margin-top: 24px;
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.35);
+            font-family: var(--font-en);
+            letter-spacing: 0.5px;
+        }
+
+        .countdown span {
+            color: var(--primary-light);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* 响应�?*/
+        @media (max-width: 600px) {
+            .glass-card {
+                padding: 36px 24px;
+                border-radius: var(--radius-lg);
+            }
+            .error-code {
+                font-size: 4.5rem;
+            }
+            .quick-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            .quick-link {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 背景光晕 -->
+    <div class="bg-glow"></div>
+
+    <!-- 浮动粒子 -->
+    <div class="particles">
+        <div class="particle p1"></div>
+        <div class="particle p2"></div>
+        <div class="particle p3"></div>
+        <div class="particle p4"></div>
+        <div class="particle p5"></div>
+        <div class="particle p6"></div>
+        <div class="particle p7"></div>
+        <div class="particle p8"></div>
+    </div>
+
+    <!-- 主内�?-->
+    <div class="wrapper">
+        <div class="glass-card">
+            <!-- 弹跳乒乓�?-->
+            <div class="pingpong-icon">
+                <i class="fa-solid fa-table-tennis-paddle-ball"></i>
+            </div>
+
+            <!-- 404 大数�?-->
+            <div class="error-code">404</div>
+
+            <!-- 提示文字 -->
+            <h1 class="error-title">这里不存在页面~</h1>
+            <p class="error-desc">你访问的页面可能已被移除、更�?br>或暂时不可用�?/p>
+
+            <!-- 分隔�?-->
+            <div class="divider"></div>
+
+            <!-- 猜你想找 -->
+            <p class="guess-label">猜你想找�?/p>
+            <div class="quick-links">
+                <a href="index.html" class="quick-link primary">
+                    <i class="fa-solid fa-house"></i> 返回首页
+                </a>
+                <a href="news.html" class="quick-link outline">
+                    <i class="fa-solid fa-newspaper"></i> 新闻�?
+                </a>
+                <a href="ranking.html" class="quick-link outline">
+                    <i class="fa-solid fa-trophy"></i> 排名�?
+                </a>
+            </div>
+
+            <!-- 倒计�?-->
+            <p class="countdown">
+                <span id="countdownNum">10</span> 秒后自动跳转回首�?
+            </p>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            var seconds = 10;
+            var countdownEl = document.getElementById('countdownNum');
+
+            var timer = setInterval(function() {
+                seconds--;
+                if (seconds <= 0) {
+                    clearInterval(timer);
+                    window.location.href = 'index.html';
+                    return;
+                }
+                countdownEl.textContent = seconds;
+            }, 1000);
+        })();
+    </script>
+</body>
+</html>
