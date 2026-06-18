@@ -109,7 +109,43 @@ function performSearch(query) { if (!searchResults) return; const results = []; 
 function calcScore(query, ...texts) { const q = query.toLowerCase(); let s = 0; texts.forEach((t, i) => { if (!t) return; const tl = t.toLowerCase(); if (tl === q) s += 100; const w = i === 0 ? 3 : 1; if (tl.includes(q)) s += 20 * w; const cs = q.split(''); let mc = 0; cs.forEach(c => { if (tl.includes(c)) mc++; }); s += (mc / cs.length) * 10 * w; }); return Math.round(s); }
 function hlMatch(text, query) { if (!text || !query) return text || ''; return text.replace(new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi'), '<strong style="color:var(--primary-blue);background:var(--primary-pale);padding:0 2px;border-radius:2px;">$1</strong>'); }
 
-if (hamburger && navMenu) { hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); navMenu.classList.toggle('active'); }); navMenu.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', e => { if (!l.classList.contains('dropdown-toggle')) { hamburger.classList.remove('active'); navMenu.classList.remove('active'); } })); document.addEventListener('click', e => { if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) { hamburger.classList.remove('active'); navMenu.classList.remove('active'); } }); }
+if (hamburger && navMenu) {
+    // 创建移动端导航遮罩
+    const navBackdrop = document.createElement('div');
+    navBackdrop.className = 'nav-backdrop';
+    navBackdrop.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        navBackdrop.classList.remove('active');
+        body.style.overflow = '';
+    });
+    navbar.appendChild(navBackdrop);
+
+    hamburger.addEventListener('click', () => {
+        const isActive = navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        navBackdrop.classList.toggle('active', isActive);
+        if (window.innerWidth <= 768) {
+            body.style.overflow = isActive ? 'hidden' : '';
+        }
+    });
+    navMenu.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', e => {
+        if (!l.classList.contains('dropdown-toggle')) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            navBackdrop.classList.remove('active');
+            body.style.overflow = '';
+        }
+    }));
+    document.addEventListener('click', e => {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            navBackdrop.classList.remove('active');
+            body.style.overflow = '';
+        }
+    });
+}
 const dtEl = document.getElementById('moreDropdown'), dmEl = document.getElementById('dropdownMenu');
 if (dtEl && dmEl) { dtEl.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); dtEl.classList.toggle('active'); dmEl.classList.toggle('active'); }); dmEl.querySelectorAll('.dropdown-link').forEach(l => l.addEventListener('click', () => { dtEl.classList.remove('active'); dmEl.classList.remove('active'); })); document.addEventListener('click', e => { if (!dtEl.contains(e.target) && !dmEl.contains(e.target)) { dtEl.classList.remove('active'); dmEl.classList.remove('active'); } }); }
 window.addEventListener('scroll', () => { if (window.scrollY > 60) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled'); });
