@@ -102,7 +102,7 @@
                 radial-gradient(ellipse at 50% 80%, rgba(255,77,79,0.05) 0%, transparent 50%);
         }
 
-        /* 主容�?*/
+        /* 主容器 */
         .wrapper {
             position: relative;
             z-index: 2;
@@ -110,7 +110,7 @@
             padding: 0 24px;
         }
 
-        /* 玻璃拟态卡�?*/
+        /* 玻璃拟态卡片 */
         .glass-card {
             background: rgba(255, 255, 255, 0.06);
             backdrop-filter: blur(24px);
@@ -135,7 +135,7 @@
             }
         }
 
-        /* 404 大数�?*/
+        /* 404 大数字 */
         .error-code {
             font-family: var(--font-en);
             font-size: clamp(5rem, 12vw, 8rem);
@@ -156,7 +156,7 @@
             50% { background-position: 100% 50%; }
         }
 
-        /* 乒乓球图�?*/
+        /* 乒乓球图标 */
         .pingpong-icon {
             font-size: 2.4rem;
             margin-bottom: 16px;
@@ -192,7 +192,7 @@
             line-height: 1.6;
         }
 
-        /* 分隔�?*/
+        /* 分隔线 */
         .divider {
             width: 60px;
             height: 2px;
@@ -209,7 +209,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* 快捷链接�?*/
+        /* 快捷链接区 */
         .quick-links {
             display: flex;
             gap: 10px;
@@ -255,7 +255,7 @@
             transform: translateY(-2px);
         }
 
-        /* 倒计�?*/
+        /* 倒计时 */
         .countdown {
             margin-top: 24px;
             font-size: 0.78rem;
@@ -270,7 +270,7 @@
             font-size: 0.9rem;
         }
 
-        /* 响应�?*/
+        /* 响应式设计 */
         @media (max-width: 600px) {
             .glass-card {
                 padding: 36px 24px;
@@ -306,41 +306,41 @@
         <div class="particle p8"></div>
     </div>
 
-    <!-- 主内�?-->
+    <!-- 主内容 -->
     <div class="wrapper">
         <div class="glass-card">
-            <!-- 弹跳乒乓�?-->
+            <!-- 弹跳乒乓球 -->
             <div class="pingpong-icon">
                 <i class="fa-solid fa-table-tennis-paddle-ball"></i>
             </div>
 
-            <!-- 404 大数�?-->
+            <!-- 404 大数字 -->
             <div class="error-code">404</div>
 
             <!-- 提示文字 -->
             <h1 class="error-title">这里不存在页面~</h1>
-            <p class="error-desc">你访问的页面可能已被移除、更�?br>或暂时不可用�?/p>
+            <p class="error-desc">你访问的页面可能已被移除、更名，<br>或暂时不可用。</p>
 
-            <!-- 分隔�?-->
+            <!-- 分隔线 -->
             <div class="divider"></div>
 
             <!-- 猜你想找 -->
-            <p class="guess-label">猜你想找�?/p>
+            <p class="guess-label">猜你想找</p>
             <div class="quick-links">
                 <a href="index.html" class="quick-link primary">
                     <i class="fa-solid fa-house"></i> 返回首页
                 </a>
                 <a href="news.html" class="quick-link outline">
-                    <i class="fa-solid fa-newspaper"></i> 新闻�?
+                    <i class="fa-solid fa-newspaper"></i> 新闻
                 </a>
                 <a href="ranking.html" class="quick-link outline">
-                    <i class="fa-solid fa-trophy"></i> 排名�?
+                    <i class="fa-solid fa-trophy"></i> 排名
                 </a>
             </div>
 
-            <!-- 倒计�?-->
+            <!-- 倒计时 -->
             <p class="countdown">
-                <span id="countdownNum">10</span> 秒后自动跳转回首�?
+                <span id="countdownNum">10</span> 秒后自动跳转回首页
             </p>
         </div>
     </div>
