@@ -44,22 +44,18 @@ function getSeasonStartScores(seasonIndex) {
     if (!initialScoresData || !seasonsData) return { ...initialScoresData.initialScores };
     if (seasonIndex <= 0) return { ...initialScoresData.initialScores };
     const sortedLog = [...scoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
-    let seasonStartScores = { ...initialScoresData.initialScores };
-    let currentScores = { ...initialScoresData.initialScores };
+    let startScores = { ...initialScoresData.initialScores };
     for (let i = 0; i < seasonIndex; i++) {
         const season = seasonsData[i];
-        if (i > 0) {
-            const prevSeason = seasonsData[i-1];
-            const prevEndScores = calculateEndScores(sortedLog, seasonStartScores, prevSeason.startDate, prevSeason.endDate);
-            const inherited = {};
-            for (const n in seasonStartScores) { const ss = seasonStartScores[n]; const es = prevEndScores[n]||ss; inherited[n] = ss+(es-ss)*0.5; }
-            for (const n in initialScoresData.initialScores) { if(!inherited[n]) inherited[n]=initialScoresData.initialScores[n]; }
-            currentScores = inherited; seasonStartScores = {...inherited};
-        }
-        if (i === seasonIndex - 1) return { ...currentScores };
-        currentScores = calculateEndScores(sortedLog, currentScores, season.startDate, season.endDate);
+        // 计算该赛季末积分
+        const endScores = calculateEndScores(sortedLog, startScores, season.startDate, season.endDate);
+        // 50% 继承规则：赛季初积分 + (赛季末 - 赛季初) * 0.5
+        const inherited = {};
+        for (const n in startScores) { const ss = startScores[n]; const es = endScores[n] || ss; inherited[n] = ss + (es - ss) * 0.5; }
+        for (const n in initialScoresData.initialScores) { if (!inherited[n]) inherited[n] = initialScoresData.initialScores[n]; }
+        startScores = inherited;
     }
-    return { ...currentScores };
+    return { ...startScores };
 }
 
 // 计算实时积分（按当前日期快照）
