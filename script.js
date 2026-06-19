@@ -4,7 +4,7 @@
 
 const i18n = {
     zh: {
-        site_title: "武汉外国语学校乒乓球社团 | WFLS Table Tennis Club", nav_home: "Home", nav_news: "News", nav_competitions: "Competitions", nav_contact: "Contact", nav_more: "More...", nav_members: "社团骨干", lang_btn: "EN",
+        site_title: "武汉外国语学校乒乓球社团官网 | WFLS Table Tennis Club", nav_home: "Home", nav_news: "News", nav_competitions: "Competitions", nav_contact: "Contact", nav_more: "More...", nav_members: "社团骨干", lang_btn: "EN",
         hero_title: "武汉外国语学校<br>乒乓球社团", hero_slogan: "挥拍逐梦，旋转青春", hero_btn_about: "了解社团", hero_btn_join: "加入我们", scroll: "Scroll",
         side_home: "首页", side_history: "社团历史", side_philosophy: "社团理念", side_activities: "社团活动", side_members: "社团骨干", side_news: "最新动态", side_competitions: "赛事信息",
         history_tag: "Club History", history_title: "社团历史", history_desc: "武汉外国语学校乒乓球社团的发展历程",
