@@ -1017,7 +1017,85 @@ body.dark-mode .score-detail-table tbody tr:nth-child(even) td { background-colo
     .hero-subtitle { font-size: 0.7rem; }
     .hero-slogan { font-size: 0.75rem; margin-bottom: 20px; }
     .hero-cta .btn { width: 90%; max-width: 240px; padding: 10px 16px; font-size: 0.8rem; }
+}
 
+/* ========================================
+   WTT 彩蛋页面样式
+   ======================================== */
+.wtt-ranking-hero {
+    background: linear-gradient(135deg, #0a1628 0%, #0d1f35 30%, #1a0a2e 60%, #0d2a45 100%);
+}
+body.dark-mode .wtt-ranking-hero {
+    background: linear-gradient(135deg, #0d1117 0%, #111d2b 30%, #1a1025 60%, #161b22 100%);
+}
+.wtt-easter-egg-tag {
+    background: linear-gradient(135deg, #f0a500, #ff6b6b) !important;
+    color: #fff !important;
+    font-size: 0.8rem;
+    padding: 5px 16px;
+    border-radius: 16px;
+    animation: wttTagGlow 2s ease-in-out infinite;
+}
+@keyframes wttTagGlow {
+    0%, 100% { box-shadow: 0 0 8px rgba(240, 165, 0, 0.4); }
+    50% { box-shadow: 0 0 20px rgba(240, 165, 0, 0.7), 0 0 40px rgba(255, 107, 107, 0.3); }
+}
+.wtt-ranking-main-section {
+    background: var(--bg-light);
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+.wtt-back-link {
+    text-align: center;
+    margin-top: 40px;
+    opacity: 0.75;
+    transition: opacity var(--transition-fast);
+}
+.wtt-back-link:hover { opacity: 1; }
+
+/* 彩蛋入口（ranking.html 底部） */
+.wtt-easter-egg-entry {
+    padding: 32px 0;
+    background: linear-gradient(135deg, rgba(240, 165, 0, 0.03) 0%, rgba(255, 107, 107, 0.03) 50%, rgba(240, 165, 0, 0.03) 100%);
+    border-top: 1px dashed var(--border-color);
+    border-bottom: 1px dashed var(--border-color);
+    text-align: center;
+    opacity: 0.6;
+    transition: opacity var(--transition-slow);
+}
+.wtt-easter-egg-entry:hover { opacity: 1; }
+body.dark-mode .wtt-easter-egg-entry {
+    background: linear-gradient(135deg, rgba(240, 165, 0, 0.05) 0%, rgba(255, 107, 107, 0.05) 50%, rgba(240, 165, 0, 0.05) 100%);
+}
+.wtt-easter-egg-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+.wtt-egg-icon {
+    font-size: 2rem;
+    animation: wttEggBounce 1.5s ease-in-out infinite;
+}
+@keyframes wttEggBounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    25% { transform: translateY(-6px) scale(1.1); }
+    50% { transform: translateY(0) scale(1); }
+    75% { transform: translateY(-3px) scale(1.05); }
+}
+.wtt-easter-egg-inner p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+@media (max-width: 480px) {
+    .wtt-easter-egg-entry { padding: 24px 0; }
+    .wtt-egg-icon { font-size: 1.5rem; }
+    .wtt-easter-egg-inner p { font-size: 0.8rem; }
+}
+
+/* 超小屏手机 (iPhone SE 等 320-375px) - 续 */
+@media (max-width: 380px) {
     .page-hero { min-height: 160px; padding: 60px 12px 24px; }
     .page-hero-content h1 { font-size: 1.3rem; }
     .page-hero-content p { font-size: 0.72rem; }

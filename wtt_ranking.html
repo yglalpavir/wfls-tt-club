@@ -4,19 +4,10 @@
     <link rel="icon" type="image/svg+xml" href="Assets/files/favicon_4DA3FF.svg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="WFLS 乒乓球社团积分排名系统。基于 ELO 变体算法自动计算，支持多时间节点对比。">
-    <meta name="keywords" content="武汉外国语学校,WFLS,乒乓球,积分排名,ELO,排名系统">
-    <meta name="author" content="WFLS Table Tennis Club">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Ranking Beta | WFLS Table Tennis Club">
-    <meta property="og:description" content="WFLS 乒乓球社团积分排名系统。基于 ELO 变体算法自动计算，支持多时间节点对比。">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yglalpavir.github.io/wfls-tt-club/ranking.html">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ranking Beta | WFLS Table Tennis Club">
-    <meta name="twitter:description" content="WFLS 乒乓球社团积分排名系统。基于 ELO 变体算法自动计算，支持多时间节点对比。">
-    <link rel="canonical" href="https://yglalpavir.github.io/wfls-tt-club/ranking.html">
-    <title data-i18n="rank_page_title">Ranking Beta | WFLS Table Tennis Club</title>
+    <meta name="description" content="WTT 国际乒联积分排名 · 基于ELO变体算法模拟 · 彩蛋页面">
+    <meta name="keywords" content="WTT,世界乒联,乒乓球,积分排名,国际乒联">
+    <meta name="robots" content="noindex, nofollow">
+    <title>WTT Ranking 🥚 | WFLS Table Tennis Club</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -31,41 +22,40 @@
                 <span class="logo-text">WFLS TT Club</span>
             </a>
             <ul class="nav-menu" id="navMenu">
-                <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
-                <li class="nav-item"><a href="news.html" class="nav-link" data-i18n="nav_news">News</a></li>
-                <li class="nav-item"><a href="competitions.html" class="nav-link" data-i18n="nav_competitions">Competitions</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
+                <li class="nav-item"><a href="competitions.html" class="nav-link">Competitions</a></li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" id="moreDropdown" data-i18n="nav_more">More... <i class="fa-solid fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link dropdown-toggle active" id="moreDropdown">More... <i class="fa-solid fa-chevron-down"></i></a>
                     <ul class="dropdown-menu" id="dropdownMenu">
-                        <li><a href="ranking.html" class="dropdown-link active">Ranking <span class="beta-tag">Beta</span></a></li>
-                        <li><a href="members.html" class="dropdown-link" data-i18n="nav_members">社团骨干</a></li>
+                        <li><a href="ranking.html" class="dropdown-link">Ranking <span class="beta-tag">Beta</span></a></li>
+                        <li><a href="members.html" class="dropdown-link">社团骨干</a></li>
                         <li><a href="data_viz.html" class="dropdown-link">Data Viz <span class="beta-tag">Beta</span></a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             <div class="nav-actions">
                 <button class="theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
-                <button class="lang-toggle" id="langToggle"><span data-i18n="lang_btn">EN</span></button>
             </div>
             <button class="hamburger" id="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
         </div>
     </nav>
 
-    <section class="page-hero ranking-page-hero">
+    <section class="page-hero wtt-ranking-hero">
         <div class="page-hero-overlay"></div>
         <div class="page-hero-content">
-            <span class="section-tag beta-tag-large">Beta Version</span>
-            <h1>Ranking</h1>
-            <p data-i18n="rank_hero_desc">社团积分排名系统 · 支持多时间节点对比 · 点击姓名查看积分明细</p>
+            <span class="section-tag wtt-easter-egg-tag">🥚 Easter Egg</span>
+            <h1>WTT World Ranking</h1>
+            <p>国际乒联积分排名模拟 · 数据仅供娱乐 · 点击姓名查看积分明细</p>
         </div>
     </section>
 
-    <section class="section ranking-main-section">
+    <section class="section wtt-ranking-main-section">
         <div class="container">
             <div class="ranking-layout">
                 <aside class="ranking-sidebar glass-card" id="rankingSidebar">
-                    <h3 class="sidebar-title" data-i18n="rank_sidebar_title">时间节点</h3>
+                    <h3 class="sidebar-title">时间节点</h3>
                     <ul class="time-node-list" id="timeNodeList">
                         <!-- JS动态渲染 -->
                     </ul>
@@ -73,12 +63,12 @@
                 
                 <div class="ranking-content">
                     <div class="section-header" style="text-align:left;margin-bottom:24px;">
-                        <span class="section-tag" data-i18n="rank_tag">Data Table</span>
-                        <h2 class="section-title" data-i18n="rank_title">积分数据表</h2>
+                        <span class="section-tag">Data Table</span>
+                        <h2 class="section-title">WTT 积分数据表</h2>
                     </div>
                     
                     <div class="ranking-controls">
-                        <span class="sort-hint"><span data-i18n="rank_sort_hint">当前排序：</span><strong id="sortIndicator">积分降序</strong></span>
+                        <span class="sort-hint">当前排序：<strong id="sortIndicator">积分降序</strong></span>
                         <span class="update-info" id="currentTimeLabel">加载中...</span>
                     </div>
                     
@@ -100,6 +90,12 @@
                             </tbody>
                         </table>
                     </div>
+
+                    <div class="wtt-back-link" style="text-align:center;margin-top:40px;">
+                        <a href="ranking.html" class="btn btn-secondary btn-sm">
+                            <i class="fa-solid fa-arrow-left"></i> 返回社团 Ranking
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -114,13 +110,13 @@
                 <table class="score-detail-table">
                     <thead>
                         <tr>
-                            <th data-i18n="score_col_date">日期</th>
-                            <th data-i18n="score_col_type">类型</th>
-                            <th data-i18n="score_col_opponent">对手</th>
-                            <th data-i18n="score_col_result">结果</th>
-                            <th data-i18n="score_col_score_before">赛前积分</th>
-                            <th data-i18n="score_col_change">积分变动</th>
-                            <th data-i18n="score_col_score_after">赛后积分</th>
+                            <th>日期</th>
+                            <th>类型</th>
+                            <th>对手</th>
+                            <th>结果</th>
+                            <th>赛前积分</th>
+                            <th>积分变动</th>
+                            <th>赛后积分</th>
                         </tr>
                     </thead>
                     <tbody id="scoreDetailBody">
@@ -131,61 +127,38 @@
         </div>
     </div>
 
-    <!-- 🥚 WTT 彩蛋入口：滚动到页面底部才可见 -->
-    <div class="wtt-easter-egg-entry" id="wttEasterEgg">
-        <div class="container">
-            <div class="wtt-easter-egg-inner">
-                <span class="wtt-egg-icon">🥚</span>
-                <p>你发现了一个彩蛋！</p>
-                <a href="wtt_ranking.html" class="btn btn-primary btn-sm">
-                    <i class="fa-solid fa-earth-americas"></i> WTT 国际排名
-                </a>
-            </div>
-        </div>
-    </div>
-
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <h4>WFLS Table Tennis Club</h4>
-                    <p data-i18n="footer_brand">武汉外国语学校乒乓球社团</p>
-                    <p class="footer-motto" data-i18n="footer_motto">挥拍逐梦，旋转青春</p>
+                    <p>武汉外国语学校乒乓球社团</p>
+                    <p class="footer-motto">挥拍逐梦，旋转青春</p>
                 </div>
                 <div class="footer-links">
-                    <h4 data-i18n="footer_nav">快速导航</h4>
-                    <a href="index.html" data-i18n="nav_home">Home</a>
-                    <a href="news.html" data-i18n="nav_news">News</a>
-                    <a href="competitions.html" data-i18n="nav_competitions">Competitions</a>
-                    <a href="members.html" data-i18n="nav_members">社团骨干</a>
+                    <h4>快速导航</h4>
+                    <a href="index.html">Home</a>
+                    <a href="news.html">News</a>
+                    <a href="competitions.html">Competitions</a>
+                    <a href="members.html">社团骨干</a>
                     <a href="ranking.html">Ranking</a>
                     <a href="data_viz.html">Data Viz</a>
-                    <a href="contact.html" data-i18n="nav_contact">Contact</a>
+                    <a href="contact.html">Contact</a>
                 </div>
                 <div class="footer-school">
-                    <h4 data-i18n="footer_school">学校信息</h4>
-                    <p data-i18n="footer_school_name">武汉外国语学校</p>
+                    <h4>学校信息</h4>
+                    <p>武汉外国语学校</p>
                     <p>Wuhan Foreign Languages School</p>
-                    <p data-i18n="footer_location">湖北省武汉市</p>
+                    <p>湖北省武汉市</p>
                 </div>
             </div>
             <div class="footer-bottom"><p>&copy; 2026 WFLS Table Tennis Club. All rights reserved.</p></div>
         </div>
     </footer>
 
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal-content glass-card">
-            <button class="modal-close" id="modalClose">&times;</button>
-            <h3 data-i18n="modal_title">社团QQ群二维码</h3>
-            <p data-i18n="modal_desc">扫描下方二维码加入社团QQ群</p>
-            <div class="qr-image-wrapper"><img src="Assets/images/qr-code.jpg" alt="社团QQ群二维码" class="qr-real-image"></div>
-            <p class="modal-note" data-i18n="modal_note">二维码定期更新，如有问题请联系社团管理员</p>
-        </div>
-    </div>
-
     <script src="js/common.js"></script>
     <script src="js/score-engine.js"></script>
-    <script src="js/ranking.js"></script>
+    <script src="js/wtt_ranking.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

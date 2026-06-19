@@ -124,8 +124,8 @@ if (scoreDetailClose && scoreDetailModal) { scoreDetailClose.addEventListener('c
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { if (modalOverlay && modalOverlay.classList.contains('active')) closeModal(modalOverlay); if (scoreDetailModal && scoreDetailModal.classList.contains('active')) closeModal(scoreDetailModal); } });
 
 let currentScoreContext = { player: '', snapshotDate: '' };
-async function loadScoreLogData() { try { scoreLogData = await (await fetch('score-log.json')).json(); } catch(e) { scoreLogData = []; } }
-async function loadScoreLogForViz() { try { scoreLogData = await (await fetch('score-log.json')).json(); return true; } catch(e) { scoreLogData = []; return true; } }
+async function loadScoreLogData() { try { scoreLogData = await (await fetch('data/score-log.json')).json(); } catch(e) { scoreLogData = []; } }
+async function loadScoreLogForViz() { try { scoreLogData = await (await fetch('data/score-log.json')).json(); return true; } catch(e) { scoreLogData = []; return true; } }
 
 function showScoreDetail(playerName, snapshotDate) {
     if (!scoreDetailModal || !scoreDetailBody || window.innerWidth < 1200) return;
@@ -137,9 +137,9 @@ function showScoreDetail(playerName, snapshotDate) {
 }
 function adjustModalSize() { if (!scoreDetailModal) return; scoreDetailModal.classList.remove('content-fit'); setTimeout(() => { const tw = scoreDetailModal.querySelector('.score-detail-table-wrapper'), tb = scoreDetailModal.querySelector('.score-detail-table'); if (tw && tb && tb.scrollWidth <= tw.clientWidth + 2 && tb.scrollHeight <= tw.clientHeight + 2) scoreDetailModal.classList.add('content-fit'); }, 100); }
 
-async function loadInitialScores() { try { initialScoresData = await (await fetch('initial-scores.json')).json(); return true; } catch(e) { console.error('initial-scores.json 加载失败', e); return false; } }
-async function loadEventCoefficients() { try { eventCoefficients = await (await fetch('event-coefficient.json')).json(); return true; } catch(e) { console.error('event-coefficient.json 加载失败', e); return false; } }
-async function loadSeasons() { try { seasonsData = await (await fetch('seasons.json')).json(); return true; } catch(e) { console.error('seasons.json 加载失败', e); seasonsData = []; return false; } }
+async function loadInitialScores() { try { initialScoresData = await (await fetch('data/initial-scores.json')).json(); return true; } catch(e) { console.error('initial-scores.json 加载失败', e); return false; } }
+async function loadEventCoefficients() { try { eventCoefficients = await (await fetch('data/event-coefficient.json')).json(); return true; } catch(e) { console.error('event-coefficient.json 加载失败', e); return false; } }
+async function loadSeasons() { try { seasonsData = await (await fetch('data/seasons.json')).json(); return true; } catch(e) { console.error('seasons.json 加载失败', e); seasonsData = []; return false; } }
 
 function getBaseScore(gap) { const ag = Math.abs(gap); if (gap >= 0) { if (ag <= 49) return 30; if (ag <= 99) return 24; if (ag <= 149) return 20; if (ag <= 199) return 16; if (ag <= 299) return 12; if (ag <= 399) return 8; return 4; } if (ag <= 49) return 30; if (ag <= 99) return 36; if (ag <= 149) return 42; if (ag <= 199) return 48; if (ag <= 299) return 54; if (ag <= 399) return 60; return 66; }
 function getEventCoefficient(et) { if (!eventCoefficients) return 0.2; return eventCoefficients[et] || 0.2; }
@@ -247,10 +247,10 @@ function getPaginatedData(d, p) { return d.slice((p-1)*ITEMS_PER_PAGE, p*ITEMS_P
 function getTotalPages(d) { return Math.ceil(d.length/ITEMS_PER_PAGE); }
 function renderPagination(cid, d, cp) { const c = document.getElementById(cid); if (!c) return; const ep = c.parentElement.querySelector('.pagination'); if (ep) ep.remove(); const tp = getTotalPages(d); if (tp <= 1) return; const pe = document.createElement('div'); pe.className = 'pagination'; const pb = document.createElement('button'); pb.className = 'pagination-btn'; pb.textContent = i18n[currentLang].pagination_prev; pb.disabled = cp <= 1; pb.addEventListener('click', () => { if (cid === 'newsFullGrid') { newsCurrentPage = cp-1; renderAllNews(); } else { competitionsCurrentPage = cp-1; renderAllCompetitions(); } window.scrollTo({ top: c.offsetTop-100, behavior:'smooth' }); }); pe.appendChild(pb); for (let i=1; i<=tp; i++) { const pg = document.createElement('button'); pg.className = 'pagination-btn'; if (i===cp) pg.classList.add('active'); pg.textContent = i; pg.addEventListener('click', () => { if (cid === 'newsFullGrid') { newsCurrentPage = i; renderAllNews(); } else { competitionsCurrentPage = i; renderAllCompetitions(); } window.scrollTo({ top: c.offsetTop-100, behavior:'smooth' }); }); pe.appendChild(pg); } const nb = document.createElement('button'); nb.className = 'pagination-btn'; nb.textContent = i18n[currentLang].pagination_next; nb.disabled = cp >= tp; nb.addEventListener('click', () => { if (cid === 'newsFullGrid') { newsCurrentPage = cp+1; renderAllNews(); } else { competitionsCurrentPage = cp+1; renderAllCompetitions(); } window.scrollTo({ top: c.offsetTop-100, behavior:'smooth' }); }); pe.appendChild(nb); const ie = document.createElement('span'); ie.className = 'pagination-info'; ie.textContent = i18n[currentLang].pagination_info.replace('{current}', cp).replace('{total}', tp); pe.appendChild(ie); c.parentElement.appendChild(pe); }
 
-async function loadAboutData() { try { aboutData = await (await fetch('about.json')).json(); } catch(e) { aboutData = null; } renderAboutSections(); updateHeroLastUpdated(); }
-async function loadMembersData() { try { membersData = await (await fetch('members.json')).json(); } catch(e) { membersData = []; } renderCoreMembers(); renderAllMembersPage(); }
-async function loadNewsData() { try { newsData = await (await fetch('news.json')).json(); } catch(e) { newsData = []; } renderAllNews(); checkAllDataLoaded(); }
-async function loadCompetitionsData() { try { competitionsData = await (await fetch('competitions.json')).json(); } catch(e) { competitionsData = []; } renderAllCompetitions(); checkAllDataLoaded(); }
+async function loadAboutData() { try { aboutData = await (await fetch('data/about.json')).json(); } catch(e) { aboutData = null; } renderAboutSections(); updateHeroLastUpdated(); }
+async function loadMembersData() { try { membersData = await (await fetch('data/members.json')).json(); } catch(e) { membersData = []; } renderCoreMembers(); renderAllMembersPage(); }
+async function loadNewsData() { try { newsData = await (await fetch('data/news.json')).json(); } catch(e) { newsData = []; } renderAllNews(); checkAllDataLoaded(); }
+async function loadCompetitionsData() { try { competitionsData = await (await fetch('data/competitions.json')).json(); } catch(e) { competitionsData = []; } renderAllCompetitions(); checkAllDataLoaded(); }
 function checkAllDataLoaded() { if (newsData && competitionsData) { dataLoaded = true; if (window.location.pathname.includes('detail.html')) updateDetailPage(); } }
 
 function renderAboutSections() { if (!aboutData) return; const hc = document.getElementById('historyContent'); if (hc && aboutData.history) hc.innerHTML = `<p>${formatExcerpt(aboutData.history.content)}</p>`; const pc = document.getElementById('philosophyContent'); if (pc && aboutData.philosophy) pc.innerHTML = `<p>${formatExcerpt(aboutData.philosophy.content)}</p>`; const ac = document.getElementById('activitiesContent'); if (ac && aboutData.activities) ac.innerHTML = `<p>${formatExcerpt(aboutData.activities.content)}</p>`; updateHeroLastUpdated(); }
