@@ -326,6 +326,16 @@ function wttRenderTimeNodeList() {
         });
     });
 
+    // 折叠非当前赛季的时间节点
+    const curSeason = wttRankingTimeline[wttCurrentTimeIndex]?.season;
+    if (curSeason) {
+        list.querySelectorAll('.season-group').forEach(sg => {
+            if (sg.querySelector('.season-label')?.textContent !== curSeason) {
+                sg.classList.add('collapsed');
+            }
+        });
+    }
+
     if (lbl && wttRankingTimeline[wttCurrentTimeIndex]) {
         lbl.textContent = wttRankingTimeline[wttCurrentTimeIndex].label;
     }

@@ -119,6 +119,15 @@ function renderTimeNodeList() { const list = document.getElementById('timeNodeLi
     const seasons = {};
     regularNodes.forEach((n, i) => { const s = n.season || '默认赛季'; if (!seasons[s]) seasons[s] = []; seasons[s].push({ ...n, index: n.index }); });
     Object.entries(seasons).forEach(([season, nodes]) => { const sli = document.createElement('li'); sli.className = 'season-group'; sli.innerHTML = `<div class="season-header"><i class="fa-solid fa-chevron-down season-arrow"></i><span class="season-label">${season}</span><span class="season-count">${nodes.length}个节点</span></div><ul class="season-node-list">${nodes.map(n => `<li class="time-node-item ${n.index===currentTimeIndex?'active':''} ${n.isInitial?'initial-node':''}" data-index="${n.index}"><span class="node-dot"></span>${n.label}<span class="node-count">${n.data.length}人</span></li>`).join('')}</ul>`; list.appendChild(sli); sli.querySelector('.season-header').addEventListener('click', () => sli.classList.toggle('collapsed')); sli.querySelectorAll('.time-node-item').forEach(item => { item.addEventListener('click', () => { currentTimeIndex = parseInt(item.getAttribute('data-index')); currentSortKey = '当前积分'; currentSortDir = 'desc'; updateRankingDisplay(); renderTimeNodeList(); }); }); });
+    // 折叠非当前赛季的时间节点
+    const curSeason = rankingTimeline[currentTimeIndex]?.season;
+    if (curSeason) {
+        list.querySelectorAll('.season-group').forEach(sg => {
+            if (sg.querySelector('.season-label')?.textContent !== curSeason) {
+                sg.classList.add('collapsed');
+            }
+        });
+    }
     if (lbl && rankingTimeline[currentTimeIndex]) lbl.textContent = rankingTimeline[currentTimeIndex].label;
 }
 function calculateRankChanges(cd, pd, isInitial) { if (!pd || isInitial) return cd.map((p, i) => ({ ...p, rank: i+1, change: 0, changeType: 'new', pointsChange: 0, pointsChangeType: 'new' })); const prm = {}, ppm = {}; pd.forEach((p, i) => { prm[p['姓名']] = i+1; ppm[p['姓名']] = p['当前积分'] || 0; }); return cd.map((p, i) => { const cr = i+1, pr = prm[p['姓名']], pp = ppm[p['姓名']], cp = p['当前积分'] || 0; let rc = 0, rct = 'new'; if (pr === undefined) rct = 'new'; else { rc = pr - cr; if (rc > 0) rct = 'up'; else if (rc < 0) rct = 'down'; else rct = 'same'; } let pc = 0, pct = 'new'; if (pp === undefined) pct = 'new'; else { pc = cp - pp; if (pc > 0.05) pct = 'up'; else if (pc < -0.05) pct = 'down'; else pct = 'same'; } return { ...p, rank: cr, change: rc, changeType: rct, pointsChange: pc, pointsChangeType: pct }; }); }
