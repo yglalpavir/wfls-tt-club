@@ -491,6 +491,28 @@ body.dark-mode .hero-last-updated { color: rgba(255,255,255,0.25); }
 .tag-result { background: rgba(255,107,107,0.12); color: var(--accent-red); }
 .tag-live { background: rgba(82,196,26,0.12); color: #52c41a; }
 
+/* ========================================
+   WTT 彩蛋入口
+   ======================================== */
+.wtt-easter-egg-section { background: var(--bg-white); padding: 48px 0; }
+.wtt-easter-egg-card { display: flex; align-items: center; gap: 24px; max-width: 700px; margin: 0 auto; padding: 28px 36px; cursor: default; flex-wrap: wrap; }
+.wtt-egg-visual { display: flex; flex-direction: column; align-items: center; gap: 8px; flex-shrink: 0; }
+.wtt-egg-icon-ring { width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, #fff7e6, #ffe7ba); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(245,197,66,0.3); animation: eggPulse 2.5s ease-in-out infinite; }
+.wtt-egg-icon { font-size: 2rem; }
+@keyframes eggPulse { 0%,100% { box-shadow: 0 4px 16px rgba(245,197,66,0.3); } 50% { box-shadow: 0 4px 28px rgba(245,197,66,0.55); } }
+.wtt-egg-badge { font-family: var(--font-en); font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; background: linear-gradient(135deg, #f5c542, #e0a800); color: #fff; padding: 4px 12px; border-radius: 12px; }
+.wtt-egg-body { flex: 1; min-width: 200px; }
+.wtt-egg-title { font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+.wtt-egg-desc { font-size: 0.9rem; color: var(--text-secondary); }
+.wtt-egg-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 24px; background: linear-gradient(135deg, #f5c542, #e0a800); color: #fff; font-family: var(--font-en); font-weight: 600; font-size: 0.9rem; transition: all var(--transition-base); white-space: nowrap; flex-shrink: 0; }
+.wtt-egg-btn:hover { background: linear-gradient(135deg, #e0a800, #c89200); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245,197,66,0.4); color: #fff; }
+
+/* 暗色模式 WTT 彩蛋 */
+body.dark-mode .wtt-easter-egg-section { background: var(--bg-light); }
+body.dark-mode .wtt-egg-icon-ring { background: linear-gradient(135deg, #3d3520, #4a3a1e); box-shadow: 0 4px 16px rgba(245,197,66,0.2); }
+body.dark-mode .wtt-egg-btn { background: linear-gradient(135deg, #c89200, #a07800); }
+body.dark-mode .wtt-egg-btn:hover { background: linear-gradient(135deg, #a07800, #805e00); }
+
 /* 新闻/赛事列表 */
 .news-list-section { background: var(--bg-light); }
 .news-full-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
@@ -1017,207 +1039,7 @@ body.dark-mode .score-detail-table tbody tr:nth-child(even) td { background-colo
     .hero-subtitle { font-size: 0.7rem; }
     .hero-slogan { font-size: 0.75rem; margin-bottom: 20px; }
     .hero-cta .btn { width: 90%; max-width: 240px; padding: 10px 16px; font-size: 0.8rem; }
-}
 
-/* ========================================
-   WTT 彩蛋页面样式
-   ======================================== */
-.wtt-ranking-hero {
-    background: linear-gradient(135deg, #0a1628 0%, #0d1f35 30%, #1a0a2e 60%, #0d2a45 100%);
-}
-body.dark-mode .wtt-ranking-hero {
-    background: linear-gradient(135deg, #0d1117 0%, #111d2b 30%, #1a1025 60%, #161b22 100%);
-}
-.wtt-easter-egg-tag {
-    background: linear-gradient(135deg, #f0a500, #ff6b6b) !important;
-    color: #fff !important;
-    font-size: 0.8rem;
-    padding: 5px 16px;
-    border-radius: 16px;
-    animation: wttTagGlow 2s ease-in-out infinite;
-}
-@keyframes wttTagGlow {
-    0%, 100% { box-shadow: 0 0 8px rgba(240, 165, 0, 0.4); }
-    50% { box-shadow: 0 0 20px rgba(240, 165, 0, 0.7), 0 0 40px rgba(255, 107, 107, 0.3); }
-}
-.wtt-ranking-main-section {
-    background: var(--bg-light);
-    padding-top: 40px;
-    padding-bottom: 80px;
-}
-.wtt-back-link {
-    text-align: center;
-    margin-top: 40px;
-    opacity: 0.75;
-    transition: opacity var(--transition-fast);
-}
-.wtt-back-link:hover { opacity: 1; }
-
-/* 彩蛋入口（ranking.html 底部） */
-.wtt-easter-egg-section {
-    padding: 48px 0;
-}
-.wtt-easter-egg-card {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 24px 32px;
-    border-radius: var(--radius-lg);
-    cursor: default;
-    transition: all var(--transition-base);
-    border: 1px solid var(--glass-border);
-    position: relative;
-    overflow: hidden;
-}
-.wtt-easter-egg-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: linear-gradient(135deg, rgba(240, 165, 0, 0.06) 0%, rgba(255, 107, 107, 0.04) 50%, rgba(240, 165, 0, 0.06) 100%);
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity var(--transition-slow);
-}
-.wtt-easter-egg-card:hover::before {
-    opacity: 1;
-}
-.wtt-easter-egg-card:hover {
-    border-color: rgba(240, 165, 0, 0.3);
-    box-shadow: var(--shadow-lg), 0 0 0 1px rgba(240, 165, 0, 0.15);
-    transform: translateY(-3px);
-}
-body.dark-mode .wtt-easter-egg-card::before {
-    background: linear-gradient(135deg, rgba(240, 165, 0, 0.09) 0%, rgba(255, 107, 107, 0.06) 50%, rgba(240, 165, 0, 0.09) 100%);
-}
-body.dark-mode .wtt-easter-egg-card:hover {
-    border-color: rgba(240, 165, 0, 0.35);
-    box-shadow: var(--shadow-lg), 0 0 0 1px rgba(240, 165, 0, 0.2);
-}
-
-/* 左侧图标区 */
-.wtt-egg-visual {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
-    min-width: 90px;
-}
-.wtt-egg-icon-ring {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, rgba(240, 165, 0, 0.15) 0%, rgba(255, 107, 107, 0.12) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid rgba(240, 165, 0, 0.25);
-    transition: all var(--transition-base);
-}
-.wtt-easter-egg-card:hover .wtt-egg-icon-ring {
-    border-color: rgba(240, 165, 0, 0.5);
-    box-shadow: 0 0 20px rgba(240, 165, 0, 0.15);
-    transform: scale(1.05);
-}
-.wtt-egg-icon-ring .wtt-egg-icon {
-    font-size: 1.6rem;
-    animation: wttEggFloat 2.5s ease-in-out infinite;
-}
-@keyframes wttEggFloat {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    25% { transform: translateY(-4px) rotate(-5deg); }
-    75% { transform: translateY(-2px) rotate(5deg); }
-}
-.wtt-egg-badge {
-    font-size: 0.65rem;
-    font-weight: 600;
-    font-family: var(--font-en);
-    color: var(--accent-gold);
-    background: rgba(240, 165, 0, 0.12);
-    padding: 3px 10px;
-    border-radius: 10px;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-}
-
-/* 中间文字区 */
-.wtt-egg-body {
-    flex: 1;
-    min-width: 0;
-}
-.wtt-egg-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 4px;
-    font-family: var(--font-en);
-}
-.wtt-egg-desc {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    line-height: 1.5;
-    margin: 0;
-}
-
-/* 右侧按钮 */
-.wtt-egg-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 22px;
-    border-radius: 24px;
-    font-family: var(--font-en);
-    font-size: 0.85rem;
-    font-weight: 600;
-    background: linear-gradient(135deg, #f0a500 0%, #e8920a 100%);
-    color: #fff;
-    white-space: nowrap;
-    flex-shrink: 0;
-    transition: all var(--transition-base);
-    box-shadow: 0 4px 14px rgba(240, 165, 0, 0.3);
-    cursor: pointer;
-    text-decoration: none;
-}
-.wtt-egg-btn:hover {
-    background: linear-gradient(135deg, #f8b820 0%, #f0a500 100%);
-    box-shadow: 0 6px 22px rgba(240, 165, 0, 0.45);
-    transform: translateY(-2px);
-    color: #fff;
-}
-.wtt-egg-btn i {
-    font-size: 0.75rem;
-    transition: transform var(--transition-fast);
-}
-.wtt-egg-btn:hover i {
-    transform: translateX(3px);
-}
-
-/* 响应式：小屏垂直堆叠 */
-@media (max-width: 640px) {
-    .wtt-easter-egg-section {
-        padding: 32px 0;
-    }
-    .wtt-easter-egg-card {
-        flex-direction: column;
-        text-align: center;
-        gap: 16px;
-        padding: 24px 20px;
-    }
-    .wtt-egg-visual {
-        min-width: auto;
-    }
-    .wtt-egg-body {
-        text-align: center;
-    }
-    .wtt-egg-btn {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-/* 超小屏手机 (iPhone SE 等 320-375px) - 续 */
-@media (max-width: 380px) {
     .page-hero { min-height: 160px; padding: 60px 12px 24px; }
     .page-hero-content h1 { font-size: 1.3rem; }
     .page-hero-content p { font-size: 0.72rem; }
@@ -1243,3 +1065,24 @@ body.dark-mode .wtt-easter-egg-card:hover {
     .footer { padding: 24px 0 12px; }
     .footer-brand h4 { font-size: 0.9rem; }
 }
+
+/* ========================================
+   KaTeX 公式渲染 - 适配亮色/暗色模式
+   ======================================== */
+/* 暗色模式下反转 KaTeX 文字颜色，确保公式可见 */
+body.dark-mode .katex { color: #e4e6ed; }
+body.dark-mode .katex .mord,
+body.dark-mode .katex .mbin,
+body.dark-mode .katex .mrel,
+body.dark-mode .katex .mopen,
+body.dark-mode .katex .mclose,
+body.dark-mode .katex .mpunct,
+body.dark-mode .katex .minner { color: #e4e6ed; }
+/* 确保 display math 在卡片和详情中居中且溢出时可滚动 */
+.katex-display { overflow-x: auto; overflow-y: hidden; padding: 0.5em 0; }
+.katex-display > .katex { max-width: 100%; }
+.detail-body .katex-display { margin: 1em 0; }
+.news-card .katex,
+.competitions-card .katex { font-size: 0.95em; }
+.news-card .katex-display,
+.competitions-card .katex-display { margin: 0.4em 0; }
