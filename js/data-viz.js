@@ -159,6 +159,64 @@ function renderRankStream(topN) {
     }
     
     const topPlayers = (lastNonEmptySnapshot.data || []).slice(0, topN).map(p => p['姓名']); const textColor = getComputedStyle(document.body).getPropertyValue('--text-primary').trim() || '#1a1a2e'; const datasets = topPlayers.map((name, idx) => { const data = rankingTimeline.map(t => { const ri = t.data.findIndex(x => x['姓名'] === name); return ri >= 0 ? ri + 1 : null; }); const color = STREAM_COLORS[idx%STREAM_COLORS.length]; return { label:name, data, borderColor:color, backgroundColor:color+'25', borderWidth:isMobile?1.5:2, pointRadius:isMobile?2:3, pointHoverRadius:isMobile?4:6, tension:0.4, fill:true, spanGaps:true }; }); try { rankStreamChart = new Chart(canvas, { type:'line', data:{labels,datasets}, options:{ responsive:true, maintainAspectRatio:false, interaction:{ intersect:false, mode:'index' }, plugins:{ legend:{ position:'bottom', labels:{ usePointStyle:true, padding:isMobile?8:16, font:{ size:isMobile?9:11, family:"'Poppins', sans-serif" }, color:textColor, boxWidth:isMobile?10:12 } }, tooltip:{ backgroundColor:'rgba(26,29,40,0.9)', titleFont:{ size:isMobile?11:13 }, bodyFont:{ size:isMobile?10:12 }, padding:isMobile?8:12, cornerRadius:8, callbacks:{ label:ctx => `${ctx.dataset.label}: 第${ctx.raw}名` } } }, scales:{ x:{ grid:{ color:'rgba(128,128,128,0.1)' }, ticks:{ font:{ size:isMobile?9:11 }, maxRotation:isMobile?45:0 } }, y:{ reverse:true, min:1, max:topN, grid:{ color:'rgba(128,128,128,0.1)' }, ticks:{ font:{ size:isMobile?9:11 }, stepSize:1 }, title:{ display:true, text:currentLang==='zh'?'排名':'Rank', font:{ size:isMobile?10:12 } } } } } }); } catch(err) { console.error('排名河流图失败', err); } }
+
+// 计算球员近期状态分（最近10场比赛的积分变化总和）
+function calcFormScore(playerName) {
+    if (!scoreLogData || !scoreLogData.length) return 0;
+    const playerMatches = scoreLogData
+        .filter(r => isMatchRecord(r) && (r['胜者'] === playerName || r['负者'] === playerName))
+        .sort((a, b) => a['日期'].localeCompare(b['日期']));
+    if (!playerMatches.length) return 0;
+    const recentMatches = playerMatches.slice(-10);
+    const scores = {};
+    if (initialScoresData) Object.assign(scores, initialScoresData.initialScores);
+    const sortedLog = [...scoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
+    const firstRecentDate = recentMatches[0]['日期'];
+    for (const m of sortedLog) {
+        if (m['日期'] >= firstRecentDate) break;
+        if (isMatchRecord(m)) {
+            const w = m['胜者'], l = m['负者'];
+            if (!scores[w]) scores[w] = 1300;
+            if (!scores[l]) scores[l] = 1300;
+            const wg = calcRawPoints(w, l, m['类型'], scores);
+            scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg);
+            scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * 0.8);
+        } else if (isBonusRecord(m)) {
+            const target = m['对象'];
+            const bonus = parseFloat(m['分数']) || 0;
+            if (!scores[target]) scores[target] = 1300;
+            scores[target] = Math.max(SCORE_FLOOR, scores[target] + bonus);
+        }
+    }
+    let totalChange = 0;
+    for (const m of recentMatches) {
+        const w = m['胜者'], l = m['负者'];
+        if (!scores[w]) scores[w] = 1300;
+        if (!scores[l]) scores[l] = 1300;
+        const rawPoints = calcRawPoints(w, l, m['类型'], scores);
+        if (w === playerName) {
+            totalChange += rawPoints;
+            scores[w] = Math.max(SCORE_FLOOR, scores[w] + rawPoints);
+            scores[l] = Math.max(SCORE_FLOOR, scores[l] - rawPoints * 0.8);
+        } else {
+            totalChange -= rawPoints * 0.8;
+            scores[w] = Math.max(SCORE_FLOOR, scores[w] + rawPoints);
+            scores[l] = Math.max(SCORE_FLOOR, scores[l] - rawPoints * 0.8);
+        }
+    }
+    return totalChange;
+}
+
+// 计算预测胜率（基于Elo + 交手 + 状态的三因子模型，无交手时退化为二因子）
+function calcPredictedWinRate(rA, rB, aWins, bWins, fA, fB) {
+    const pElo = 1 / (1 + Math.pow(10, (rB - rA) / 400));
+    const k = 0.02;
+    const pForm = 1 / (1 + Math.exp(-k * (fA - fB)));
+    if (aWins + bWins === 0) return 0.7 * pElo + 0.3 * pForm;
+    const pH2H = (aWins + 2) / (aWins + bWins + 4);
+    return 0.6 * pElo + 0.2 * pH2H + 0.2 * pForm;
+}
+
 function renderComparison(playerA, playerB) { 
     const container = document.getElementById('compareResult'); 
     if (!container) return; 
@@ -179,4 +237,10 @@ function renderComparison(playerA, playerB) {
     const aW = h2h.filter(r => r['胜者'] === playerA).length, 
           bW = h2h.filter(r => r['胜者'] === playerB).length, 
           total = h2h.length; 
-    const recent = h2h.length ? h2h[h2h.length-1] : null; const aWinRate = total > 0 ? ((aW/total)*100).toFixed(1)+'%' : '-', bWinRate = total > 0 ? ((bW/total)*100).toFixed(1)+'%' : '-'; let html = `<div class="compare-summary"><div class="compare-player-col"><div class="compare-player-name">${playerA}</div><div class="compare-player-stat">当前积分: <strong>${ad?ad['当前积分']:'-'}</strong></div><div class="compare-player-stat">交手胜率: <strong>${aWinRate}</strong></div></div><div class="compare-divider">VS</div><div class="compare-player-col"><div class="compare-player-name">${playerB}</div><div class="compare-player-stat">当前积分: <strong>${bd?bd['当前积分']:'-'}</strong></div><div class="compare-player-stat">交手胜率: <strong>${bWinRate}</strong></div></div></div>`; if (total > 0) { html += `<div style="text-align:center;margin-bottom:16px;"><span style="font-weight:600;">总交手: ${total} 场</span> | <span style="color:#52c41a;">${playerA} ${aW} 胜</span> | <span style="color:#52c41a;">${playerB} ${bW} 胜</span>${recent?` | 最近: ${recent['日期']} (胜者: ${recent['胜者']})`:''}</div><div class="compare-h2h-wrapper"><table class="compare-h2h-table"><thead><tr><th>日期</th><th>类型</th><th>胜者</th><th>${playerA} 积分变动</th><th>${playerB} 积分变动</th></tr></thead><tbody>`; const scores = {}; if (initialScoresData) Object.assign(scores, initialScoresData.initialScores); const sortedLog = [...scoreLogData].sort((a,b) => a['日期'].localeCompare(b['日期'])); for (const m of sortedLog) { if (isMatchRecord(m)) { const w = m['胜者'], l = m['负者']; if (!scores[w]) scores[w] = 1300; if (!scores[l]) scores[l] = 1300; const wg = calcMatchPoints(w, l, m['类型'], m['日期'], m['日期'], scores); if ((w === playerA && l === playerB) || (w === playerB && l === playerA)) { const aIsW = w === playerA; const aChange = aIsW ? wg : -(wg * 0.8); const bChange = aIsW ? -(wg * 0.8) : wg; html += `<tr><td>${m['日期']}</td><td>${m['类型']}</td><td>${w}</td><td class="${aIsW?'win-highlight':'loss-highlight'}">${aChange>0?'+':''}${aChange.toFixed(1)}</td><td class="${!aIsW?'win-highlight':'loss-highlight'}">${bChange>0?'+':''}${bChange.toFixed(1)}</td></tr>`; } scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg); scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * 0.8); } else if (isBonusRecord(m)) { const target = m['对象']; const bonus = parseFloat(m['分数']) || 0; if (!scores[target]) scores[target] = 1300; scores[target] = Math.max(SCORE_FLOOR, scores[target] + bonus); } } html += '</tbody></table></div>'; } else { html += '<div class="compare-placeholder"><i class="fa-solid fa-circle-info"></i><p>暂无交手记录</p></div>'; } container.innerHTML = html; }
+    const recent = h2h.length ? h2h[h2h.length-1] : null; const aWinRate = total > 0 ? ((aW/total)*100).toFixed(1)+'%' : '-', bWinRate = total > 0 ? ((bW/total)*100).toFixed(1)+'%' : '-';
+    // 计算预测胜率
+    const rA = ad ? ad['当前积分'] : 1300, rB = bd ? bd['当前积分'] : 1300;
+    const fA = calcFormScore(playerA), fB = calcFormScore(playerB);
+    const predA = (calcPredictedWinRate(rA, rB, aW, bW, fA, fB) * 100).toFixed(1);
+    const predB = (calcPredictedWinRate(rB, rA, bW, aW, fB, fA) * 100).toFixed(1);
+    let html = `<div class="compare-summary"><div class="compare-player-col"><div class="compare-player-name">${playerA}</div><div class="compare-player-stat">当前积分: <strong>${ad?ad['当前积分']:'-'}</strong></div><div class="compare-player-stat">交手胜率: <strong>${aWinRate}</strong></div><div class="compare-player-stat">预测胜率: <strong>${predA}%</strong></div></div><div class="compare-divider">VS</div><div class="compare-player-col"><div class="compare-player-name">${playerB}</div><div class="compare-player-stat">当前积分: <strong>${bd?bd['当前积分']:'-'}</strong></div><div class="compare-player-stat">交手胜率: <strong>${bWinRate}</strong></div><div class="compare-player-stat">预测胜率: <strong>${predB}%</strong></div></div></div>`; if (total > 0) { html += `<div style="text-align:center;margin-bottom:16px;"><span style="font-weight:600;">总交手: ${total} 场</span> | <span style="color:#52c41a;">${playerA} ${aW} 胜</span> | <span style="color:#52c41a;">${playerB} ${bW} 胜</span>${recent?` | 最近: ${recent['日期']} (胜者: ${recent['胜者']})`:''}</div><div class="compare-h2h-wrapper"><table class="compare-h2h-table"><thead><tr><th>日期</th><th>类型</th><th>胜者</th><th>${playerA} 积分变动</th><th>${playerB} 积分变动</th></tr></thead><tbody>`; const scores = {}; if (initialScoresData) Object.assign(scores, initialScoresData.initialScores); const sortedLog = [...scoreLogData].sort((a,b) => a['日期'].localeCompare(b['日期'])); for (const m of sortedLog) { if (isMatchRecord(m)) { const w = m['胜者'], l = m['负者']; if (!scores[w]) scores[w] = 1300; if (!scores[l]) scores[l] = 1300; const wg = calcMatchPoints(w, l, m['类型'], m['日期'], m['日期'], scores); if ((w === playerA && l === playerB) || (w === playerB && l === playerA)) { const aIsW = w === playerA; const aChange = aIsW ? wg : -(wg * 0.8); const bChange = aIsW ? -(wg * 0.8) : wg; html += `<tr><td>${m['日期']}</td><td>${m['类型']}</td><td>${w}</td><td class="${aIsW?'win-highlight':'loss-highlight'}">${aChange>0?'+':''}${aChange.toFixed(1)}</td><td class="${!aIsW?'win-highlight':'loss-highlight'}">${bChange>0?'+':''}${bChange.toFixed(1)}</td></tr>`; } scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg); scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * 0.8); } else if (isBonusRecord(m)) { const target = m['对象']; const bonus = parseFloat(m['分数']) || 0; if (!scores[target]) scores[target] = 1300; scores[target] = Math.max(SCORE_FLOOR, scores[target] + bonus); } } html += '</tbody></table></div>'; } else { html += '<div class="compare-placeholder"><i class="fa-solid fa-circle-info"></i><p>暂无交手记录</p></div>'; } container.innerHTML = html; }

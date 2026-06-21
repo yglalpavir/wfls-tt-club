@@ -491,6 +491,20 @@ body.dark-mode .hero-last-updated { color: rgba(255,255,255,0.25); }
 .tag-result { background: rgba(255,107,107,0.12); color: var(--accent-red); }
 .tag-live { background: rgba(82,196,26,0.12); color: #52c41a; }
 
+/* Q&A 卡片 */
+.qa-card { background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 24px; transition: all var(--transition-base); cursor: pointer; }
+.qa-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+.qa-card-date { font-family: var(--font-en); font-size: 0.75rem; color: var(--primary-blue); font-weight: 600; letter-spacing: 0.5px; margin-bottom: 8px; }
+.qa-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+.qa-card h3::before { content: "Q: "; color: var(--primary-blue); font-weight: 700; }
+.qa-card p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; }
+.qa-card-tag { display: inline-block; font-size: 0.7rem; padding: 3px 10px; border-radius: 10px; margin-top: 10px; font-weight: 500; }
+
+/* Q&A 列表 */
+.qa-list-section { background: var(--bg-light); }
+.qa-full-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.qa-full-grid .qa-card { padding: 28px; }
+
 /* ========================================
    WTT 彩蛋入口
    ======================================== */
@@ -832,6 +846,7 @@ body.dark-mode .score-detail-table tbody tr:nth-child(even) td { background-colo
     .competitions-preview-grid { grid-template-columns: repeat(2, 1fr); }
     .news-full-grid { grid-template-columns: 1fr 1fr; }
     .competitions-full-grid { grid-template-columns: 1fr 1fr; }
+    .qa-full-grid { grid-template-columns: 1fr 1fr; }
     .page-hero { min-height: 260px; padding: 90px 24px 50px; }
     .page-hero-content h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); }
 }
@@ -873,6 +888,7 @@ body.dark-mode .score-detail-table tbody tr:nth-child(even) td { background-colo
     .competitions-preview-grid { grid-template-columns: 1fr; }
     .news-full-grid { grid-template-columns: 1fr; }
     .competitions-full-grid { grid-template-columns: 1fr; }
+    .qa-full-grid { grid-template-columns: 1fr; }
 
     /* ---- Footer ---- */
     .footer-grid { grid-template-columns: 1fr; gap: 24px; }
