@@ -113,7 +113,7 @@ function wttShowScoreDetail(playerName, snapshotDate) {
     const modal = document.getElementById('scoreDetailModal');
     const body = document.getElementById('scoreDetailBody');
     const title = document.getElementById('scoreDetailTitle');
-    if (!modal || !body || window.innerWidth < 1200) return;
+    if (!modal || !body) return;
 
     wttCurrentScoreContext = {
         player: playerName,
@@ -416,7 +416,7 @@ function wttRenderRankingTable(data) {
         else pch = '<span class="rank-same">-</span>';
 
         const pn = p['姓名'] || '-';
-        const nc = (window.innerWidth >= 1200 && wttScoreLogData.length > 0)
+        const nc = (wttScoreLogData.length > 0)
             ? `<span class="player-name-link" onclick="wttShowScoreDetail('${pn}','${currentSnapshotDate}')" title="点击查看积分明细">${pn}</span>`
             : pn;
 
