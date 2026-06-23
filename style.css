@@ -10,6 +10,7 @@
     --accent-red-dark: #d9363e;
     --accent-gold: #f0a500;
     --accent-green: #52c41a;
+    --tag-daily: #0d9488;
     --bg-white: #ffffff;
     --bg-light: #f8fafc;
     --bg-lighter: #f1f5f9;
@@ -50,6 +51,7 @@ body.dark-mode {
     --accent-red-dark: #e05555;
     --accent-gold: #f5c542;
     --accent-green: #73d13d;
+    --tag-daily: #2dd4bf;
     --bg-white: #1a1d28;
     --bg-light: #151821;
     --bg-lighter: #1f2230;
@@ -477,6 +479,7 @@ body.dark-mode .hero-last-updated { color: rgba(255,255,255,0.25); }
 .tag-training { background: rgba(77,163,255,0.12); color: var(--primary-blue); }
 .tag-notice { background: rgba(245,197,66,0.12); color: #d4a80a; }
 .tag-event { background: rgba(91,140,255,0.12); color: #5b8cff; }
+.tag-daily { background: rgba(13,148,136,0.12); color: var(--tag-daily); }
 
 /* 赛事预览 */
 .competitions-preview-section { background: var(--bg-white); }
@@ -534,6 +537,14 @@ body.dark-mode .wtt-egg-btn:hover { background: linear-gradient(135deg, #a07800,
 .competitions-list-section { background: var(--bg-light); }
 .competitions-full-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 .competitions-full-grid .competitions-card { padding: 28px; }
+
+/* 标签筛选栏 */
+.tag-filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; justify-content: center; }
+.tag-filter-btn { padding: 6px 16px; border: 1px solid var(--border-color); border-radius: 20px; background: var(--glass-bg); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); color: var(--text-secondary); cursor: pointer; font-size: 0.8rem; font-weight: 500; transition: all var(--transition-fast); font-family: var(--font-cn); }
+.tag-filter-btn:hover { border-color: var(--primary-blue); color: var(--primary-blue); background: var(--primary-pale); }
+.tag-filter-btn.active { background: var(--primary-blue); color: #fff; border-color: var(--primary-blue); font-weight: 600; }
+.tag-filter-btn .count { font-family: var(--font-en); font-size: 0.7rem; opacity: 0.7; margin-left: 2px; }
+.tag-filter-btn.active .count { opacity: 1; }
 
 /* 分页 */
 .pagination { display: flex; justify-content: center; align-items: center; gap: 6px; margin-top: 36px; flex-wrap: wrap; }
