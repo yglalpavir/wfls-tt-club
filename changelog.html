@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="WFLS 乒乓球社团内容详情页。查看新闻、赛事、成员等详细内容。">
-    <meta name="keywords" content="武汉外国语学校,WFLS,乒乓球,详情">
+    <meta name="description" content="WFLS 乒乓球社团网站更新日志。记录网站版本更新历史和功能变更。">
+    <meta name="keywords" content="武汉外国语学校,WFLS,乒乓球,更新日志,Changelog,版本历史">
     <meta name="author" content="WFLS Table Tennis Club">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="详情 | WFLS Table Tennis Club">
-    <meta property="og:description" content="WFLS 乒乓球社团内容详情页。查看新闻、赛事、成员等详细内容。">
+    <meta property="og:title" content="更新日志 | WFLS Table Tennis Club">
+    <meta property="og:description" content="WFLS 乒乓球社团网站更新日志。记录网站版本更新历史和功能变更。">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yglalpavir.github.io/wfls-tt-club/detail.html">
+    <meta property="og:url" content="https://yglalpavir.github.io/wfls-tt-club/changelog.html">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="详情 | WFLS Table Tennis Club">
-    <meta name="twitter:description" content="WFLS 乒乓球社团内容详情页。查看新闻、赛事、成员等详细内容。">
-    <link rel="canonical" href="https://yglalpavir.github.io/wfls-tt-club/detail.html">
-    <title data-i18n="detail_page_title">详情 | WFLS Table Tennis Club</title>
+    <meta name="twitter:title" content="更新日志 | WFLS Table Tennis Club">
+    <meta name="twitter:description" content="WFLS 乒乓球社团网站更新日志。记录网站版本更新历史和功能变更。">
+    <link rel="canonical" href="https://yglalpavir.github.io/wfls-tt-club/changelog.html">
+    <title data-i18n="changelog_page_title">更新日志 | WFLS Table Tennis Club</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -33,12 +33,12 @@
                 <li class="nav-item"><a href="competitions.html" class="nav-link" data-i18n="nav_competitions">Competitions</a></li>
                 <li class="nav-item"><a href="ranking.html" class="nav-link">Ranking <span class="beta-tag">Beta</span></a></li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" id="moreDropdown" data-i18n="nav_more">More... <i class="fa-solid fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link dropdown-toggle active" id="moreDropdown" data-i18n="nav_more">More... <i class="fa-solid fa-chevron-down"></i></a>
                     <ul class="dropdown-menu" id="dropdownMenu">
                         <li><a href="members.html" class="dropdown-link" data-i18n="nav_members">社团骨干</a></li>
                         <li><a href="data_viz.html" class="dropdown-link">Data Viz <span class="beta-tag">Beta</span></a></li>
                         <li><a href="qa.html" class="dropdown-link" data-i18n="nav_qa">Q&A</a></li>
-                        <li><a href="changelog.html" class="dropdown-link" data-i18n="nav_changelog">更新日志</a></li>
+                        <li><a href="changelog.html" class="dropdown-link active" data-i18n="nav_changelog">更新日志</a></li>
                     </ul>
                 </li>
                 <li class="nav-item"><a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a></li>
@@ -48,8 +48,20 @@
         </div>
     </nav>
 
-    <section class="page-hero detail-page-hero"><div class="page-hero-overlay"></div><div class="page-hero-content"><span class="section-tag" id="detailTypeTag">News</span><h1 id="detailTitle">标题</h1><p id="detailDate">日期</p></div></section>
-    <section class="section detail-content-section"><div class="container"><div id="detailContent" class="detail-body glass-card"></div><div id="detailMedia" class="detail-media-grid"></div></div></section>
+    <section class="page-hero"><div class="page-hero-overlay"></div><div class="page-hero-content"><span class="section-tag" data-i18n="changelog_hero_tag">Changelog</span><h1 data-i18n="changelog_hero_title">更新日志</h1><p data-i18n="changelog_hero_desc">版本历史 · 功能更新 · 问题修复</p></div></section>
+
+    <!-- 更新日志时间线 -->
+    <section class="section changelog-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="changelog_list_tag">Version History</span>
+                <h2 class="section-title" data-i18n="changelog_list_title">版本历史</h2>
+            </div>
+            <div class="changelog-timeline" id="changelogTimeline">
+                <!-- 由 JS 动态渲染 -->
+            </div>
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="container">

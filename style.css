@@ -1314,3 +1314,228 @@ body.dark-mode .katex .minner { color: #e4e6ed; }
 .competitions-card .katex { font-size: 0.95em; }
 .news-card .katex-display,
 .competitions-card .katex-display { margin: 0.4em 0; }
+
+/* ========================================
+   更新日志页面 (Changelog)
+   ======================================== */
+.changelog-section {
+    background: var(--bg-light);
+    padding: 60px 0 80px;
+}
+
+.changelog-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 0;
+}
+
+.changelog-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-muted);
+}
+.changelog-empty i {
+    font-size: 3rem;
+    margin-bottom: 16px;
+    display: block;
+    opacity: 0.5;
+}
+.changelog-empty p {
+    font-size: 1.1rem;
+}
+
+/* 单条更新条目 */
+.changelog-entry {
+    display: flex;
+    gap: 0;
+    position: relative;
+}
+
+.changelog-entry:last-child {
+    margin-bottom: 0;
+}
+
+/* 左侧时间线标记 */
+.changelog-entry-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 48px;
+    flex-shrink: 0;
+    padding-top: 28px;
+}
+
+.changelog-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--primary-blue);
+    border: 3px solid var(--primary-pale);
+    box-shadow: 0 0 0 4px var(--bg-light);
+    z-index: 2;
+    flex-shrink: 0;
+    transition: all var(--transition-base);
+}
+
+.changelog-line {
+    width: 2px;
+    flex: 1;
+    min-height: 40px;
+    background: linear-gradient(to bottom, var(--primary-blue), var(--border-color));
+    margin-top: -2px;
+}
+
+.changelog-entry:last-child .changelog-line {
+    display: none;
+}
+
+/* 右侧内容卡片 */
+.changelog-entry-content {
+    flex: 1;
+    margin-left: 20px;
+    margin-bottom: 32px;
+    padding: 24px 28px;
+}
+
+.changelog-entry-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.changelog-version {
+    font-family: var(--font-en);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #fff;
+    background: var(--primary-blue);
+    padding: 3px 12px;
+    border-radius: 14px;
+    letter-spacing: 0.5px;
+}
+
+.changelog-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.changelog-date {
+    font-family: var(--font-en);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-left: auto;
+}
+
+.changelog-entry-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: var(--text-primary);
+}
+
+/* 更新内容列表 */
+.changelog-changes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.changelog-changes li {
+    position: relative;
+    padding: 6px 0 6px 22px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+.changelog-changes li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 14px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--primary-blue);
+    opacity: 0.5;
+}
+.changelog-changes li:first-child::before {
+    background: var(--accent-green);
+    opacity: 0.8;
+}
+.changelog-changes li strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* 更新日志内的 Markdown 样式 */
+.changelog-changes li p {
+    margin: 0;
+    display: inline;
+}
+.changelog-changes .katex {
+    font-size: 0.95em;
+}
+.changelog-changes .katex-display {
+    margin: 0.5em 0;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .changelog-entry-marker {
+        width: 36px;
+        padding-top: 24px;
+    }
+    .changelog-dot {
+        width: 13px;
+        height: 13px;
+        border-width: 2px;
+        box-shadow: 0 0 0 3px var(--bg-light);
+    }
+    .changelog-entry-content {
+        margin-left: 12px;
+        margin-bottom: 24px;
+        padding: 18px 16px;
+    }
+    .changelog-entry-title {
+        font-size: 1rem;
+    }
+    .changelog-changes li {
+        font-size: 0.85rem;
+        padding: 4px 0 4px 18px;
+    }
+    .changelog-changes li::before {
+        width: 6px;
+        height: 6px;
+        top: 12px;
+    }
+    .changelog-entry-header {
+        gap: 6px;
+    }
+    .changelog-date {
+        margin-left: 0;
+        width: 100%;
+        order: 3;
+    }
+}
+
+@media (max-width: 480px) {
+    .changelog-entry-marker {
+        width: 28px;
+        padding-top: 20px;
+    }
+    .changelog-dot {
+        width: 11px;
+        height: 11px;
+        box-shadow: 0 0 0 2px var(--bg-light);
+    }
+    .changelog-entry-content {
+        margin-left: 8px;
+        margin-bottom: 20px;
+        padding: 14px 12px;
+    }
+}
