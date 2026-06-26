@@ -823,6 +823,43 @@ body.dark-mode .score-detail-table tbody tr:nth-child(even) td { background-colo
 .compare-h2h-table .win-highlight { color: #52c41a; font-weight: 600; }
 .compare-h2h-table .loss-highlight { color: var(--accent-red); font-weight: 600; }
 
+/* 个人数据板块 */
+.viz-personal-grid { display: grid; grid-template-columns: 280px 1fr; gap: 24px; align-items: start; }
+.viz-personal-selector { padding: 24px; text-align: center; }
+.viz-personal-selector .compare-selector-group { margin-bottom: 0; }
+.viz-personal-selector .compare-selector-group select { width: 100%; padding: 10px 14px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); background: var(--bg-white); color: var(--text-primary); font-size: 0.9rem; cursor: pointer; outline: none; font-family: var(--font-cn); }
+.viz-personal-selector .compare-selector-group select:focus { border-color: var(--primary-blue); }
+.viz-personal-result { padding: 28px; min-height: 300px; }
+.personal-overview { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 20px; }
+.personal-overview-item { text-align: center; padding: 16px 12px; background: var(--bg-lighter); border-radius: var(--radius-md); transition: transform var(--transition-fast); }
+.personal-overview-item:hover { transform: translateY(-2px); }
+.personal-overview-num { display: block; font-size: 1.6rem; font-weight: 800; font-family: var(--font-en); color: var(--text-primary); }
+.personal-overview-label { display: block; font-size: 0.75rem; color: var(--text-muted); margin-top: 4px; }
+.personal-overview-item.win .personal-overview-num { color: #52c41a; }
+.personal-overview-item.loss .personal-overview-num { color: var(--accent-red); }
+.personal-summary-text { font-size: 0.9rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 24px; padding: 14px 18px; background: var(--bg-lighter); border-radius: var(--radius-sm); border-left: 3px solid var(--primary-blue); }
+.personal-summary-text strong { color: var(--text-primary); }
+.personal-cards-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.personal-card { background: var(--bg-lighter); border-radius: var(--radius-md); padding: 16px; border: 1px solid var(--border-color); }
+.personal-card-header { font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); display: flex; align-items: center; gap: 6px; }
+.victory-card .personal-card-header { color: #f5c542; }
+.pk-card .personal-card-header { color: var(--primary-blue); }
+.lucky-card .personal-card-header { color: #52c41a; }
+.nemesis-card .personal-card-header { color: var(--accent-red); }
+.personal-card-empty { text-align: center; padding: 20px; color: var(--text-muted); font-size: 0.85rem; }
+.personal-card-list { display: flex; flex-direction: column; gap: 8px; }
+.personal-card-item { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(128,128,128,0.1); }
+.personal-card-item:last-child { border-bottom: none; }
+.personal-card-rank { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; color: #fff; background: var(--primary-blue); flex-shrink: 0; }
+.victory-card .personal-card-rank { background: #f5c542; }
+.pk-card .personal-card-rank { background: var(--primary-blue); }
+.lucky-card .personal-card-rank { background: #52c41a; }
+.nemesis-card .personal-card-rank { background: var(--accent-red); }
+.personal-card-name { font-weight: 600; font-size: 0.9rem; color: var(--text-primary); }
+.personal-card-score { font-weight: 400; font-size: 0.8rem; color: var(--text-muted); margin-left: 6px; }
+.personal-card-date { margin-left: auto; font-size: 0.75rem; color: var(--text-muted); white-space: nowrap; }
+.personal-card-sub { margin-left: auto; font-size: 0.75rem; color: var(--text-secondary); white-space: nowrap; }
+
 /* ========================================
    响应式布局
    ======================================== */
@@ -838,6 +875,9 @@ body.dark-mode .score-detail-table tbody tr:nth-child(even) td { background-colo
     .viz-compare-selectors .compare-selector-group { flex: 1 1 140px; margin-bottom: 0; }
     .viz-compare-selectors .compare-vs { margin: 0 4px; font-size: 1.1rem; }
     .viz-compare-selectors .btn { margin-top: 0; width: auto; flex: 0 0 auto; }
+    .viz-personal-grid { grid-template-columns: 1fr; }
+    .personal-overview { grid-template-columns: repeat(2, 1fr); }
+    .personal-cards-grid { grid-template-columns: 1fr; }
 
     /* 积分明细模态框 - 平板适配 */
     .modal-content.score-detail-modal {
