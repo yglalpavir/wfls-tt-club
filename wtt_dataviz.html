@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <link rel="icon" type="image/svg+xml" href="Assets/files/favicon_4DA3FF.svg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WTT 国际乒联积分排名数据可视化。积分趋势图、排名变化河流图、球员对比分析。">
+    <meta name="keywords" content="WTT,世界乒联,乒乓球,数据可视化,积分趋势,排名变化">
+    <meta name="robots" content="noindex, nofollow">
+    <title>WTT 数据可视化 🥚 | WFLS Table Tennis Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon"><i class="fa-solid fa-table-tennis-paddle-ball"></i></span>
+                <span class="logo-text">WFLS TT Club</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
+                <li class="nav-item"><a href="competitions.html" class="nav-link">Competitions</a></li>
+                <li class="nav-item"><a href="ranking.html" class="nav-link">Ranking <span class="beta-tag">Beta</span></a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active" id="moreDropdown">More... <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu" id="dropdownMenu">
+                        <li><a href="members.html" class="dropdown-link">社团骨干</a></li>
+                        <li><a href="data_viz.html" class="dropdown-link">Data Viz <span class="beta-tag">Beta</span></a></li>
+                        <li><a href="qa.html" class="dropdown-link">Q&A</a></li>
+                        <li><a href="changelog.html" class="dropdown-link">更新日志</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+            </div>
+            <button class="hamburger" id="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+        </div>
+    </nav>
+
+    <section class="page-hero viz-page-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-content">
+            <span class="section-tag wtt-easter-egg-tag">🥚 WTT Data Visualization</span>
+            <h1>WTT 数据可视化</h1>
+            <p>积分趋势 · 排名变化 · 球员对比</p>
+        </div>
+    </section>
+
+    <section class="section viz-main-section">
+        <div class="container">
+            <div class="viz-section-header">
+                <span class="section-tag">Line Chart</span>
+                <h2 class="section-title">积分趋势</h2>
+                <div class="viz-topn-selector">
+                    <span>最近</span>
+                    <input type="number" id="wttPointsTrendDataCount" value="20" min="2" max="200" style="width:70px;text-align:center;" title="显示最近N个数据点">
+                    <span>个数据点</span>
+                </div>
+            </div>
+            <div class="viz-grid-2col">
+                <div class="viz-player-selector glass-card">
+                    <h4>选择球员（最多8人）</h4>
+                    <div class="player-checkbox-list" id="wttPlayerCheckboxList"></div>
+                    <button class="btn btn-sm btn-primary" id="wttApplyPointsTrend">应用</button>
+                </div>
+                <div class="viz-chart-container glass-card">
+                    <canvas id="wttPointsTrendChart"></canvas>
+                </div>
+            </div>
+
+            <div class="viz-section-header" style="margin-top:48px;">
+                <span class="section-tag">Stream Graph</span>
+                <h2 class="section-title">排名变化河流图</h2>
+                <div class="viz-topn-selector">
+                    <span>显示前</span>
+                    <input type="number" id="wttTopNSelect" value="10" min="1" max="20" style="width:60px;text-align:center;" title="填写1-20的任意正整数">
+                    <span>名球员</span>
+                </div>
+                <div class="viz-topn-selector" style="margin-left:16px;">
+                    <span>最近</span>
+                    <input type="number" id="wttStreamDataCount" value="20" min="2" max="200" style="width:70px;text-align:center;" title="显示最近N个数据点">
+                    <span>个数据点</span>
+                </div>
+            </div>
+            <div class="viz-chart-container glass-card" style="min-height:450px;">
+                <canvas id="wttRankStreamChart"></canvas>
+            </div>
+
+            <div class="viz-section-header" style="margin-top:48px;">
+                <span class="section-tag">Comparison</span>
+                <h2 class="section-title">球员对比</h2>
+            </div>
+            <div class="viz-compare-grid">
+                <div class="viz-compare-selectors glass-card">
+                    <div class="compare-selector-group">
+                        <label>球员 A</label>
+                        <select id="wttPlayerASelect"><option value="">-- 选择球员 --</option></select>
+                    </div>
+                    <div class="compare-vs">VS</div>
+                    <div class="compare-selector-group">
+                        <label>球员 B</label>
+                        <select id="wttPlayerBSelect"><option value="">-- 选择球员 --</option></select>
+                    </div>
+                    <button class="btn btn-sm btn-primary" id="wttApplyCompare">对比</button>
+                </div>
+                <div class="viz-compare-result glass-card" id="wttCompareResult">
+                    <div class="compare-placeholder">
+                        <i class="fa-solid fa-people-arrows"></i>
+                        <p>选择两名球员进行对比分析</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 个人数据板块 -->
+            <div class="viz-section-header" style="margin-top:48px;">
+                <span class="section-tag">Personal Stats</span>
+                <h2 class="section-title">个人数据</h2>
+            </div>
+            <div class="viz-personal-grid">
+                <div class="viz-personal-selector glass-card">
+                    <div class="compare-selector-group">
+                        <label>选择球员</label>
+                        <select id="wttPersonalPlayerSelect"><option value="">-- 选择球员 --</option></select>
+                    </div>
+                    <button class="btn btn-sm btn-primary" id="wttApplyPersonalStats" style="width:100%;margin-top:12px;justify-content:center;">查看数据</button>
+                </div>
+                <div class="viz-personal-result glass-card" id="wttPersonalResult">
+                    <div class="compare-placeholder">
+                        <i class="fa-solid fa-user-chart"></i>
+                        <p>选择一名球员查看个人数据</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wtt-back-link" style="text-align:center;margin-top:40px;">
+            <a href="wtt_ranking.html" class="btn btn-secondary btn-sm">
+                <i class="fa-solid fa-arrow-left"></i> 返回 WTT Ranking
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><h4>WFLS Table Tennis Club</h4><p>武汉外国语学校乒乓球社团</p><p class="footer-motto">挥拍逐梦，旋转青春</p></div>
+                <div class="footer-links"><h4>快速导航</h4><a href="index.html">Home</a><a href="news.html">News</a><a href="competitions.html">Competitions</a><a href="members.html">社团骨干</a><a href="ranking.html">Ranking</a><a href="data_viz.html">Data Viz</a><a href="qa.html">Q&A</a><a href="changelog.html">更新日志</a><a href="contact.html">Contact</a></div>
+                <div class="footer-school"><h4>学校信息</h4><p>武汉外国语学校</p><p>Wuhan Foreign Languages School</p><p>湖北省武汉市</p></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 WFLS Table Tennis Club. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/score-engine.js"></script>
+    <script src="js/wtt_dataviz.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

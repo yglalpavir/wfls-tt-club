@@ -1,5 +1,15 @@
 [
   {
+    "version": "v1.0.3",
+    "date": "2026-06-28",
+    "title": "新增更新wtt数据可视化",
+    "tag": "feature",
+    "changes": [
+      "新增更新wtt数据可视化（wtt_dataviz）页面，功能与样式同校数据可视化（data_viz）页面",
+      "新增了2023年的wtt比赛数据"
+    ]
+  },  
+  {
     "version": "v1.0.2",
     "date": "2026-06-27",
     "title": "新增更新日志页面",

@@ -32,17 +32,38 @@ function initDataViz() {
     renderCompareSelects();
     renderPersonalPlayerSelect();
     const dp = players.slice(0, Math.min(5, players.length));
-    renderPointsTrend(dp); 
-    renderRankStream(Math.min(10, players.length));
+    const defaultDataCount = parseInt(document.getElementById('pointsTrendDataCount')?.value) || 20;
+    renderPointsTrend(dp, defaultDataCount); 
+    const defaultStreamCount = parseInt(document.getElementById('streamDataCount')?.value) || 20;
+    renderRankStream(Math.min(10, players.length), defaultStreamCount);
     
     // 事件监听
     document.getElementById('applyPointsTrend')?.addEventListener('click', () => { 
         const sel = getSelectedPlayers(); 
         if (!sel.length) { alert('请至少选择一名球员'); return; } 
         if (sel.length > 15) { alert('最多选择15名球员'); return; } 
-        renderPointsTrend(sel); 
+        const dc = parseInt(document.getElementById('pointsTrendDataCount')?.value) || 20;
+        renderPointsTrend(sel, dc); 
     });
-    document.getElementById('topNSelect')?.addEventListener('change', e => renderRankStream(parseInt(e.target.value)));
+    document.getElementById('pointsTrendDataCount')?.addEventListener('change', () => {
+        const sel = getSelectedPlayers();
+        if (!sel.length) { sel.push(...players.slice(0, Math.min(5, players.length))); }
+        const dc = parseInt(document.getElementById('pointsTrendDataCount')?.value) || 20;
+        renderPointsTrend(sel, dc);
+    });
+    document.getElementById('topNSelect')?.addEventListener('change', e => {
+        let v = parseInt(e.target.value);
+        if (isNaN(v) || v < 1) v = 1;
+        if (v > 20) v = 20;
+        e.target.value = v;
+        const dc = parseInt(document.getElementById('streamDataCount')?.value) || 20;
+        renderRankStream(v, dc);
+    });
+    document.getElementById('streamDataCount')?.addEventListener('change', () => {
+        const topN = parseInt(document.getElementById('topNSelect')?.value) || 10;
+        const dc = parseInt(document.getElementById('streamDataCount')?.value) || 20;
+        renderRankStream(topN, dc);
+    });
     document.getElementById('applyCompare')?.addEventListener('click', () => { 
         const pa = document.getElementById('playerASelect')?.value, pb = document.getElementById('playerBSelect')?.value; 
         if (!pa || !pb) { alert('请选择两名球员'); return; } 
@@ -62,34 +83,52 @@ function initDataViz() {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
             const sel = getSelectedPlayers();
-            if (sel.length && pointsTrendChart) renderPointsTrend(sel);
-            const topN = parseInt(document.getElementById('topNSelect')?.value || '10');
-            if (rankStreamChart) renderRankStream(topN);
+            const dc = parseInt(document.getElementById('pointsTrendDataCount')?.value) || 20;
+            if (sel.length && pointsTrendChart) renderPointsTrend(sel, dc);
+            const topN = parseInt(document.getElementById('topNSelect')?.value) || 10;
+            const sdc = parseInt(document.getElementById('streamDataCount')?.value) || 20;
+            if (rankStreamChart) renderRankStream(topN, sdc);
         }, 300);
     });
 }
 function getAllPlayers() { 
-    if (!rankingTimeline || !rankingTimeline.length) {
-        console.warn('[DataViz] rankingTimeline 不存在或为空');
-        return []; 
-    }
+    const playerSet = new Set();
     
-    // 查找最后一个非空的快照，而不是最后一个快照
-    let lastNonEmptySnapshot = null;
-    for (let i = rankingTimeline.length - 1; i >= 0; i--) {
-        if (rankingTimeline[i].data && rankingTimeline[i].data.length > 0) {
-            lastNonEmptySnapshot = rankingTimeline[i];
-            console.log('[DataViz] 找到最后一个非空快照:', lastNonEmptySnapshot.label, '数据长度:', lastNonEmptySnapshot.data.length);
-            break;
+    // 1. 从 ranking timeline 的所有快照中收集球员
+    if (rankingTimeline && rankingTimeline.length) {
+        for (const t of rankingTimeline) {
+            if (t.data && t.data.length) {
+                for (const p of t.data) {
+                    if (p['姓名']) playerSet.add(p['姓名']);
+                }
+            }
         }
     }
     
-    if (!lastNonEmptySnapshot) {
-        console.error('[DataViz] 没有找到包含数据的快照');
-        return []; 
+    // 2. 从初始积分中收集球员（含无比赛记录的球员）
+    if (initialScoresData && initialScoresData.initialScores) {
+        for (const name of Object.keys(initialScoresData.initialScores)) {
+            if (name) playerSet.add(name);
+        }
     }
     
-    return lastNonEmptySnapshot.data.map(p => p['姓名']); 
+    // 3. 从 score log 中收集球员
+    if (scoreLogData && scoreLogData.length) {
+        for (const r of scoreLogData) {
+            if (isMatchRecord(r)) {
+                if (r['胜者']) playerSet.add(r['胜者']);
+                if (r['负者']) playerSet.add(r['负者']);
+            } else if (isBonusRecord(r)) {
+                if (r['对象']) playerSet.add(r['对象']);
+            }
+        }
+    }
+    
+    const players = Array.from(playerSet);
+    if (!players.length) {
+        console.warn('[DataViz] getAllPlayers: 未找到任何球员');
+    }
+    return players; 
 }
 function getSelectedPlayers() { return Array.from(document.querySelectorAll('#playerCheckboxList input[type="checkbox"]:checked')).map(cb => cb.value); }
 function renderPlayerCheckboxes() { 
@@ -141,20 +180,22 @@ function renderCompareSelects() {
     if (sb) sb.innerHTML = '<option value="">-- 选择球员 --</option>' + opts; 
     console.log('[DataViz] renderCompareSelects: 已加载', players.length, '名球员');
 }
-function renderPointsTrend(playerNames) { const canvas = document.getElementById('pointsTrendChart'); if (!canvas || !rankingTimeline.length) return; if (pointsTrendChart) { pointsTrendChart.destroy(); pointsTrendChart = null; } const isMobile = window.innerWidth <= 768; const labels = rankingTimeline.map(t => t.label); const datasets = playerNames.map((name, idx) => { const data = rankingTimeline.map(t => { const p = t.data.find(x => x['姓名'] === name); return p ? p['当前积分'] : null; }); return { label:name, data, borderColor:CHART_COLORS[idx%CHART_COLORS.length], backgroundColor:CHART_COLORS[idx%CHART_COLORS.length]+'20', borderWidth:isMobile?2:2.5, pointRadius:isMobile?2:4, pointHoverRadius:isMobile?5:7, tension:0.3, fill:false, spanGaps:true }; }); try { pointsTrendChart = new Chart(canvas, { type:'line', data:{labels,datasets}, options:{ responsive:true, maintainAspectRatio:false, interaction:{ intersect:false, mode:'index' }, plugins:{ legend:{ position:'bottom', labels:{ usePointStyle:true, padding:isMobile?10:20, font:{ size:isMobile?10:12, family:"'Poppins', sans-serif" }, boxWidth:isMobile?10:12 } }, tooltip:{ backgroundColor:'rgba(26,29,40,0.9)', titleFont:{ size:isMobile?11:13 }, bodyFont:{ size:isMobile?10:12 }, padding:isMobile?8:12, cornerRadius:8 } }, scales:{ x:{ grid:{ color:'rgba(128,128,128,0.1)' }, ticks:{ font:{ size:isMobile?9:11 }, maxRotation:isMobile?45:0 } }, y:{ beginAtZero:false, grid:{ color:'rgba(128,128,128,0.1)' }, ticks:{ font:{ size:isMobile?9:11 } }, title:{ display:true, text:currentLang==='zh'?'积分':'Points', font:{ size:isMobile?10:12 } } } } } }); } catch(err) { console.error('积分趋势图失败', err); } }
-function renderRankStream(topN) { 
+function renderPointsTrend(playerNames, dataCount) { const canvas = document.getElementById('pointsTrendChart'); if (!canvas || !rankingTimeline.length) return; if (pointsTrendChart) { pointsTrendChart.destroy(); pointsTrendChart = null; } dataCount = Math.max(2, Math.min(dataCount || 20, rankingTimeline.length)); const slicedTimeline = rankingTimeline.slice(-dataCount); const isMobile = window.innerWidth <= 768; const labels = slicedTimeline.map(t => t.label); const datasets = playerNames.map((name, idx) => { const data = slicedTimeline.map(t => { const p = t.data.find(x => x['姓名'] === name); return p ? p['当前积分'] : null; }); return { label:name, data, borderColor:CHART_COLORS[idx%CHART_COLORS.length], backgroundColor:CHART_COLORS[idx%CHART_COLORS.length]+'20', borderWidth:isMobile?2:2.5, pointRadius:isMobile?2:4, pointHoverRadius:isMobile?5:7, tension:0.3, fill:false, spanGaps:true }; }); try { pointsTrendChart = new Chart(canvas, { type:'line', data:{labels,datasets}, options:{ responsive:true, maintainAspectRatio:false, interaction:{ intersect:false, mode:'index' }, plugins:{ legend:{ position:'bottom', labels:{ usePointStyle:true, padding:isMobile?10:20, font:{ size:isMobile?10:12, family:"'Poppins', sans-serif" }, boxWidth:isMobile?10:12 } }, tooltip:{ backgroundColor:'rgba(26,29,40,0.9)', titleFont:{ size:isMobile?11:13 }, bodyFont:{ size:isMobile?10:12 }, padding:isMobile?8:12, cornerRadius:8 } }, scales:{ x:{ grid:{ color:'rgba(128,128,128,0.1)' }, ticks:{ font:{ size:isMobile?9:11 }, maxRotation:isMobile?45:0 } }, y:{ beginAtZero:false, grid:{ color:'rgba(128,128,128,0.1)' }, ticks:{ font:{ size:isMobile?9:11 } }, title:{ display:true, text:currentLang==='zh'?'积分':'Points', font:{ size:isMobile?10:12 } } } } } }); } catch(err) { console.error('积分趋势图失败', err); } }
+function renderRankStream(topN, dataCount) { 
     const canvas = document.getElementById('rankStreamChart'); 
     if (!canvas || !rankingTimeline.length) return; 
     if (rankStreamChart) { rankStreamChart.destroy(); rankStreamChart = null; } 
     
+    dataCount = Math.max(2, Math.min(dataCount || 20, rankingTimeline.length));
+    const slicedTimeline = rankingTimeline.slice(-dataCount);
     const isMobile = window.innerWidth <= 768;
-    const labels = rankingTimeline.map(t => t.label); 
+    const labels = slicedTimeline.map(t => t.label); 
     
     // 查找最后一个非空快照来获取顶级球员
     let lastNonEmptySnapshot = null;
-    for (let i = rankingTimeline.length - 1; i >= 0; i--) {
-        if (rankingTimeline[i].data && rankingTimeline[i].data.length > 0) {
-            lastNonEmptySnapshot = rankingTimeline[i];
+    for (let i = slicedTimeline.length - 1; i >= 0; i--) {
+        if (slicedTimeline[i].data && slicedTimeline[i].data.length > 0) {
+            lastNonEmptySnapshot = slicedTimeline[i];
             break;
         }
     }
@@ -164,7 +205,8 @@ function renderRankStream(topN) {
         return;
     }
     
-    const topPlayers = (lastNonEmptySnapshot.data || []).slice(0, topN).map(p => p['姓名']); const textColor = getComputedStyle(document.body).getPropertyValue('--text-primary').trim() || '#1a1a2e'; const datasets = topPlayers.map((name, idx) => { const data = rankingTimeline.map(t => { const ri = t.data.findIndex(x => x['姓名'] === name); return ri >= 0 ? ri + 1 : null; }); const color = STREAM_COLORS[idx%STREAM_COLORS.length]; return { label:name, data, borderColor:color, backgroundColor:color+'25', borderWidth:isMobile?1.5:2, pointRadius:isMobile?2:3, pointHoverRadius:isMobile?4:6, tension:0.4, fill:true, spanGaps:true }; }); try { rankStreamChart = new Chart(canvas, { type:'line', data:{labels,datasets}, options:{ responsive:true, maintainAspectRatio:false, interaction:{ intersect:false, mode:'index' }, plugins:{ legend:{ position:'bottom', labels:{ usePointStyle:true, padding:isMobile?8:16, font:{ size:isMobile?9:11, family:"'Poppins', sans-serif" }, color:textColor, boxWidth:isMobile?10:12 } }, tooltip:{ backgroundColor:'rgba(26,29,40,0.9)', titleFont:{ size:isMobile?11:13 }, bodyFont:{ size:isMobile?10:12 }, padding:isMobile?8:12, cornerRadius:8, callbacks:{ label:ctx => `${ctx.dataset.label}: 第${ctx.raw}名` } } }, scales:{ x:{ grid:{ color:'rgba(128,128,128,0.1)' }, ticks:{ font:{ size:isMobile?9:11 }, maxRotation:isMobile?45:0 } }, y:{ reverse:true, min:1, max:topN, grid:{ color:'rgba(128,128,128,0.1)' }, ticks:{ font:{ size:isMobile?9:11 }, stepSize:1 }, title:{ display:true, text:currentLang==='zh'?'排名':'Rank', font:{ size:isMobile?10:12 } } } } } }); } catch(err) { console.error('排名河流图失败', err); } }
+    topN = Math.max(1, Math.min(topN, 20, (lastNonEmptySnapshot.data || []).length));
+    const topPlayers = (lastNonEmptySnapshot.data || []).slice(0, topN).map(p => p['姓名']); const textColor = getComputedStyle(document.body).getPropertyValue('--text-primary').trim() || '#1a1a2e'; const datasets = topPlayers.map((name, idx) => { const data = slicedTimeline.map(t => { const ri = t.data.findIndex(x => x['姓名'] === name); return ri >= 0 ? ri + 1 : null; }); const color = STREAM_COLORS[idx%STREAM_COLORS.length]; return { label:name, data, borderColor:color, backgroundColor:color+'25', borderWidth:isMobile?1.5:2, pointRadius:isMobile?2:3, pointHoverRadius:isMobile?4:6, tension:0.4, fill:true, spanGaps:true }; }); try { rankStreamChart = new Chart(canvas, { type:'line', data:{labels,datasets}, options:{ responsive:true, maintainAspectRatio:false, interaction:{ intersect:false, mode:'index' }, plugins:{ legend:{ position:'bottom', labels:{ usePointStyle:true, padding:isMobile?8:16, font:{ size:isMobile?9:11, family:"'Poppins', sans-serif" }, color:textColor, boxWidth:isMobile?10:12 } }, tooltip:{ backgroundColor:'rgba(26,29,40,0.9)', titleFont:{ size:isMobile?11:13 }, bodyFont:{ size:isMobile?10:12 }, padding:isMobile?8:12, cornerRadius:8, callbacks:{ label:ctx => `${ctx.dataset.label}: 第${ctx.raw}名` } } }, scales:{ x:{ grid:{ color:'rgba(128,128,128,0.1)' }, ticks:{ font:{ size:isMobile?9:11 }, maxRotation:isMobile?45:0 } }, y:{ reverse:true, min:1, max:topN, grid:{ color:'rgba(128,128,128,0.1)' }, ticks:{ font:{ size:isMobile?9:11 }, stepSize:1 }, title:{ display:true, text:currentLang==='zh'?'排名':'Rank', font:{ size:isMobile?10:12 } } } } } }); } catch(err) { console.error('排名河流图失败', err); } }
 
 // 计算球员近期状态分（最近10场比赛的积分变化总和）
 function calcFormScore(playerName) {

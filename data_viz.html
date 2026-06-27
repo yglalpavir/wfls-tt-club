@@ -69,6 +69,11 @@
             <div class="viz-section-header">
                 <span class="section-tag">Line Chart</span>
                 <h2 class="section-title" data-i18n="data_viz_points_trend">积分趋势</h2>
+                <div class="viz-topn-selector">
+                    <span>最近</span>
+                    <input type="number" id="pointsTrendDataCount" value="20" min="2" max="200" style="width:70px;text-align:center;" title="显示最近N个数据点">
+                    <span>个数据点</span>
+                </div>
             </div>
             <div class="viz-grid-2col">
                 <div class="viz-player-selector glass-card">
@@ -86,10 +91,13 @@
                 <h2 class="section-title" data-i18n="data_viz_rank_stream">排名变化河流图</h2>
                 <div class="viz-topn-selector">
                     <span data-i18n="data_viz_top_n">显示前</span>
-                    <select id="topNSelect">
-                        <option value="5">5</option><option value="10" selected>10</option><option value="15">15</option><option value="20">20</option>
-                    </select>
+                    <input type="number" id="topNSelect" value="10" min="1" max="20" style="width:60px;text-align:center;" title="填写1-20的任意正整数">
                     <span>名球员</span>
+                </div>
+                <div class="viz-topn-selector" style="margin-left:16px;">
+                    <span>最近</span>
+                    <input type="number" id="streamDataCount" value="20" min="2" max="200" style="width:70px;text-align:center;" title="显示最近N个数据点">
+                    <span>个数据点</span>
                 </div>
             </div>
             <div class="viz-chart-container glass-card" style="min-height:450px;">
