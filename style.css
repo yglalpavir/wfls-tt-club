@@ -829,6 +829,16 @@ body.dark-mode .score-detail-table tbody tr:nth-child(even) td { background-colo
 .viz-personal-selector .compare-selector-group { margin-bottom: 0; }
 .viz-personal-selector .compare-selector-group select { width: 100%; padding: 10px 14px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); background: var(--bg-white); color: var(--text-primary); font-size: 0.9rem; cursor: pointer; outline: none; font-family: var(--font-cn); }
 .viz-personal-selector .compare-selector-group select:focus { border-color: var(--primary-blue); }
+.tag-filter-section { text-align: left; margin-bottom: 4px; }
+.tag-filter-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag-filter-badge { display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; font-size: 0.72rem; font-weight: 500; color: var(--text-muted); background: var(--bg-lighter); border: 1px solid var(--border-color); border-radius: 16px; cursor: pointer; transition: all var(--transition-fast); user-select: none; white-space: nowrap; }
+.tag-filter-badge:hover { color: var(--primary-blue); border-color: var(--primary-blue); background: var(--primary-pale); }
+.tag-filter-badge.active { color: #fff; background: var(--primary-blue); border-color: var(--primary-blue); font-weight: 600; }
+.tag-filter-badge.active:hover { background: var(--primary-dark); border-color: var(--primary-dark); }
+.tag-filter-badge.active .tag-filter-count { background: rgba(255,255,255,0.25); color: #fff; }
+.tag-filter-badge.merged { border-style: dashed; }
+.tag-filter-count { display: inline-block; font-size: 0.65rem; font-weight: 600; padding: 0 5px; border-radius: 10px; background: var(--border-color); color: var(--text-muted); min-width: 18px; text-align: center; line-height: 1.4; }
+.tag-match-count { display: inline-block; font-size: 0.65rem; font-weight: 700; padding: 1px 7px; border-radius: 10px; background: var(--primary-blue); color: #fff; margin-left: 4px; vertical-align: middle; }
 .viz-personal-result { padding: 28px; min-height: 300px; }
 .personal-overview { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 20px; }
 .personal-overview-item { text-align: center; padding: 16px 12px; background: var(--bg-lighter); border-radius: var(--radius-md); transition: transform var(--transition-fast); }
@@ -839,6 +849,17 @@ body.dark-mode .score-detail-table tbody tr:nth-child(even) td { background-colo
 .personal-overview-item.loss .personal-overview-num { color: var(--accent-red); }
 .personal-summary-text { font-size: 0.9rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 24px; padding: 14px 18px; background: var(--bg-lighter); border-radius: var(--radius-sm); border-left: 3px solid var(--primary-blue); }
 .personal-summary-text strong { color: var(--text-primary); }
+.personal-tags-honors { margin-bottom: 20px; display: flex; flex-direction: column; gap: 12px; }
+.personal-tags-section, .personal-honors-section { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 12px 16px; background: var(--bg-lighter); border-radius: var(--radius-sm); }
+.personal-tags-label, .personal-honors-label { font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); display: flex; align-items: center; gap: 4px; white-space: nowrap; }
+.personal-tags-label i { color: var(--primary-blue); }
+.personal-honors-label i { color: var(--accent-gold); }
+.personal-tag-badge { display: inline-block; padding: 3px 10px; font-size: 0.75rem; font-weight: 500; color: var(--primary-blue); background: var(--primary-pale); border: 1px solid rgba(77, 163, 255, 0.25); border-radius: 20px; white-space: nowrap; transition: all var(--transition-fast); }
+.personal-tag-badge:hover { background: var(--primary-blue); color: #fff; }
+.personal-honor-badge { display: inline-block; padding: 4px 12px; font-size: 0.75rem; font-weight: 600; color: #b8860b; background: linear-gradient(135deg, #fff8e1, #fff3cd); border: 1px solid rgba(240, 165, 0, 0.35); border-radius: 20px; white-space: nowrap; transition: all var(--transition-fast); }
+.personal-honor-badge i { color: var(--accent-gold); margin-right: 2px; }
+.personal-honor-badge:hover { transform: translateY(-1px); box-shadow: 0 2px 8px rgba(240, 165, 0, 0.25); }
+body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradient(135deg, rgba(245, 197, 66, 0.12), rgba(240, 165, 0, 0.08)); border-color: rgba(240, 165, 0, 0.25); }
 .personal-cards-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .personal-card { background: var(--bg-lighter); border-radius: var(--radius-md); padding: 16px; border: 1px solid var(--border-color); }
 .personal-card-header { font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); display: flex; align-items: center; gap: 6px; }

@@ -30,7 +30,6 @@ function initDataViz() {
     console.log('[DataViz] 成功获取球员列表:', players.length, '人');
     renderPlayerCheckboxes(); 
     renderCompareSelects();
-    renderPersonalPlayerSelect();
     const dp = players.slice(0, Math.min(5, players.length));
     const defaultDataCount = parseInt(document.getElementById('pointsTrendDataCount')?.value) || 20;
     renderPointsTrend(dp, defaultDataCount); 
@@ -69,11 +68,6 @@ function initDataViz() {
         if (!pa || !pb) { alert('请选择两名球员'); return; } 
         if (pa === pb) { alert('请选择不同的球员'); return; } 
         renderComparison(pa, pb); 
-    });
-    document.getElementById('applyPersonalStats')?.addEventListener('click', () => {
-        const p = document.getElementById('personalPlayerSelect')?.value;
-        if (!p) { alert('请选择一名球员'); return; }
-        renderPersonalStats(p);
     });
     console.log('[DataViz] 初始化完成');
 
@@ -468,6 +462,33 @@ function renderPersonalStats(playerName) {
     html += '<strong>' + playerName + '</strong>共进行了<strong>' + totalMatches + '</strong>盘单打比赛，其中获胜<strong>' + wins + '</strong>盘，失利<strong>' + losses + '</strong>盘。';
     html += '<strong>' + playerName + '</strong>的积分超过了本校<strong>' + percentile.toFixed(2) + '%</strong>的乒乓球选手。';
     html += '</div>';
+
+    // === 自定义标签和荣誉 ===
+    const playerTagInfo = (playerTagsData && playerTagsData.players && playerTagsData.players[playerName]) || null;
+    const playerTags = playerTagInfo ? (playerTagInfo.tags || []) : [];
+    const playerHonors = playerTagInfo ? (playerTagInfo.honors || []) : [];
+    if (playerTags.length > 0 || playerHonors.length > 0) {
+        html += '<div class="personal-tags-honors">';
+        if (playerTags.length > 0) {
+            html += '<div class="personal-tags-section">';
+            html += '<span class="personal-tags-label"><i class="fa-solid fa-tags"></i> 标签</span>';
+            playerTags.forEach(tag => {
+                html += '<span class="personal-tag-badge">' + tag + '</span>';
+            });
+            html += '</div>';
+        }
+        if (playerHonors.length > 0) {
+            html += '<div class="personal-honors-section">';
+            html += '<span class="personal-honors-label"><i class="fa-solid fa-medal"></i> 荣誉</span>';
+            playerHonors.forEach((honor, i) => {
+                html += '<span class="personal-honor-badge">';
+                if (i === 0) html += '<i class="fa-solid fa-crown"></i> ';
+                html += honor + '</span>';
+            });
+            html += '</div>';
+        }
+        html += '</div>';
+    }
 
     html += '<div class="personal-cards-grid">';
 
