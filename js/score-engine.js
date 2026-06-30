@@ -123,6 +123,6 @@ function calculateRealtimeRanking() {
 
 async function loadInitialScores() { try { initialScoresData = await (await fetch('data/initial-scores.json')).json(); return true; } catch(e) { console.error('initial-scores.json 加载失败', e); return false; } }
 async function loadEventCoefficients() { try { eventCoefficients = await (await fetch('data/event-coefficient.json')).json(); return true; } catch(e) { console.error('event-coefficient.json 加载失败', e); return false; } }
-async function loadSeasons() { try { seasonsData = await (await fetch('data/seasons.json')).json(); return true; } catch(e) { console.error('seasons.json 加载失败', e); seasonsData = []; return false; } }
+async function loadSeasons() { try { seasonsData = (await (await fetch('data/seasons.json')).json()).filter(s => s.visible !== false); return true; } catch(e) { console.error('seasons.json 加载失败', e); seasonsData = []; return false; } }
 async function loadScoreLogData() { try { scoreLogData = await (await fetch('data/score-log.json')).json(); } catch(e) { scoreLogData = []; } }
 async function loadScoreLogForViz() { try { scoreLogData = await (await fetch('data/score-log.json')).json(); return true; } catch(e) { scoreLogData = []; return true; } }

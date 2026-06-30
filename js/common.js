@@ -19,7 +19,7 @@ const i18n = {
         news_page_title: "近期动态 | WFLS Table Tennis Club", news_hero_tag: "News & Updates", news_hero_title: "近期动态", news_hero_desc: "社团活动 / 训练安排 / 重要公告", news_list_tag: "All News", news_list_title: "全部动态",
         comp_page_title: "赛事信息 | WFLS Table Tennis Club", comp_hero_tag: "Competitions", comp_hero_title: "赛事信息", comp_hero_desc: "比赛安排 / 成绩记录 / 赛事回顾", comp_list_tag: "All Competitions", comp_list_title: "全部赛事",
         members_page_title: "社团骨干 | WFLS Table Tennis Club",
-        rank_page_title: "Ranking Beta | WFLS Table Tennis Club", rank_hero_desc: "社团积分排名系统 · 自动计算 · 赛季积分继承", rank_tag: "Data Table", rank_title: "积分数据表", rank_sort_hint: "当前排序：", rank_sidebar_title: "时间节点",
+        rank_page_title: "Ranking Beta | WFLS Table Tennis Club", rank_hero_desc: "社团积分排名系统 · 支持多时间节点对比 · 点击姓名查看积分明细", rank_tag: "Data Table", rank_title: "积分数据表", rank_sort_hint: "当前排序：", rank_sidebar_title: "时间节点",
         rank_col_rank: "#", rank_col_name: "姓名", rank_col_points: "当前积分", rank_col_points_change: "积分变化", rank_col_change: "排名变化", rank_col_matches: "总场次", rank_col_winrate: "胜率",
         score_detail_title: "积分明细", score_col_date: "日期", score_col_type: "类型", score_col_opponent: "对手", score_col_result: "结果", score_col_score_before: "赛前积分", score_col_change: "积分变动", score_col_score_after: "赛后积分", score_result_win: "胜", score_result_loss: "负",
         tag_match: "赛事", tag_training: "训练", tag_notice: "公告", tag_event: "活动", tag_daily: "日常", tag_upcoming: "即将开始", tag_result: "比赛结果", tag_live: "进行中",
@@ -29,7 +29,7 @@ const i18n = {
         qa_page_title: "常见问题 | WFLS Table Tennis Club", qa_hero_tag: "Q&A", qa_hero_title: "常见问题", qa_hero_desc: "加入社团 / 活动安排 / 积分系统 / 比赛报名", qa_list_tag: "All Q&A", qa_list_title: "全部问答",
         pagination_prev: "上一页", pagination_next: "下一页", pagination_info: "第 {current} 页，共 {total} 页",
         data_viz_page_title: "数据可视化 | WFLS Table Tennis Club", data_viz_tag: "Data Visualization", data_viz_title: "数据可视化", data_viz_desc: "积分趋势 · 排名变化 · 球员对比",
-        data_viz_points_trend: "积分趋势", data_viz_rank_stream: "排名变化河流图", data_viz_player_compare: "球员对比", data_viz_select_players: "选择球员（最多15人）", data_viz_select_player_a: "球员 A", data_viz_select_player_b: "球员 B", data_viz_apply: "应用", data_viz_top_n: "显示前", data_viz_head_to_head: "历史交手记录",
+        data_viz_points_trend: "积分趋势", data_viz_rank_stream: "排名变化河流图", data_viz_player_compare: "球员对比", data_viz_select_players: "选择球员（最多8人）", data_viz_select_player_a: "球员 A", data_viz_select_player_b: "球员 B", data_viz_apply: "应用", data_viz_top_n: "显示前", data_viz_head_to_head: "历史交手记录",
         season_initial_label: "{season}初始积分", score_type_bonus: "比赛结果加分",
         personal_stats_page_title: "个人数据 | WFLS Table Tennis Club", personal_stats_tag: "Personal Stats", personal_stats_title: "个人数据", personal_stats_desc: "战绩概览 · 对手分析 · 福星苦主",
         rank_realtime_header: "实时积分", rank_realtime_label: "实时积分",
@@ -52,7 +52,7 @@ const i18n = {
         news_page_title: "News | WFLS Table Tennis Club", news_hero_tag: "News & Updates", news_hero_title: "News", news_hero_desc: "Activities / Training / Announcements", news_list_tag: "All News", news_list_title: "All News",
         comp_page_title: "Competitions | WFLS Table Tennis Club", comp_hero_tag: "Competitions", comp_hero_title: "Competitions", comp_hero_desc: "Schedule / Results / Review", comp_list_tag: "All Competitions", comp_list_title: "All Competitions",
         members_page_title: "Core Members | WFLS Table Tennis Club",
-        rank_page_title: "Ranking Beta | WFLS Table Tennis Club", rank_hero_desc: "Club ranking system · Auto-calculated · Season inheritance", rank_tag: "Data Table", rank_title: "Points Table", rank_sort_hint: "Current sorting: ", rank_sidebar_title: "Time Periods",
+        rank_page_title: "Ranking Beta | WFLS Table Tennis Club", rank_hero_desc: "Club ranking system 路 Auto-calculated 路 Season inheritance", rank_tag: "Data Table", rank_title: "Points Table", rank_sort_hint: "Current sorting: ", rank_sidebar_title: "Time Periods",
         rank_col_rank: "#", rank_col_name: "Name", rank_col_points: "Points", rank_col_points_change: "Score Δ", rank_col_change: "Rank Δ", rank_col_matches: "Matches", rank_col_winrate: "Win Rate",
         score_detail_title: "Score Details", score_col_date: "Date", score_col_type: "Type", score_col_opponent: "Opponent", score_col_result: "Result", score_col_score_before: "Before", score_col_change: "Change", score_col_score_after: "After", score_result_win: "Win", score_result_loss: "Loss",
         tag_match: "Match", tag_training: "Training", tag_notice: "Notice", tag_event: "Event", tag_daily: "Daily", tag_upcoming: "Upcoming", tag_result: "Result", tag_live: "Live",
@@ -61,12 +61,12 @@ const i18n = {
         search_placeholder: "Search news, competitions, members, rankings, changelog...", search_no_results: "No results found", search_type_news: "News", search_type_competition: "Competition", search_type_member: "Member", search_type_ranking: "Ranking", search_type_qa: "Q&A", search_type_changelog: "Changelog",
         qa_page_title: "Q&A | WFLS Table Tennis Club", qa_hero_tag: "Q&A", qa_hero_title: "Q&A", qa_hero_desc: "Join / Schedule / Ranking / Registration", qa_list_tag: "All Q&A", qa_list_title: "All Q&A",
         pagination_prev: "Previous", pagination_next: "Next", pagination_info: "Page {current} of {total}",
-        data_viz_page_title: "Data Visualization | WFLS Table Tennis Club", data_viz_tag: "Data Visualization", data_viz_title: "Data Visualization", data_viz_desc: "Points Trend · Rank Flow · Player Compare",
+        data_viz_page_title: "Data Visualization | WFLS Table Tennis Club", data_viz_tag: "Data Visualization", data_viz_title: "Data Visualization", data_viz_desc: "Points Trend 路 Rank Flow 路 Player Compare",
         data_viz_points_trend: "Points Trend", data_viz_rank_stream: "Rank Flow", data_viz_player_compare: "Player Comparison", data_viz_select_players: "Select Players (max 15)", data_viz_select_player_a: "Player A", data_viz_select_player_b: "Player B", data_viz_apply: "Apply", data_viz_top_n: "Top", data_viz_head_to_head: "Head to Head",
         season_initial_label: "{season} Initial Scores", score_type_bonus: "Bonus Points",
-        personal_stats_page_title: "Personal Stats | WFLS Table Tennis Club", personal_stats_tag: "Personal Stats", personal_stats_title: "Personal Stats", personal_stats_desc: "Overview · Opponents · Lucky Stars & Nemeses",
+        personal_stats_page_title: "Personal Stats | WFLS Table Tennis Club", personal_stats_tag: "Personal Stats", personal_stats_title: "Personal Stats", personal_stats_desc: "Overview 路 Opponents 路 Lucky Stars & Nemeses",
         rank_realtime_header: "Real-time", rank_realtime_label: "Live Ranking",
-        changelog_page_title: "Changelog | WFLS Table Tennis Club", changelog_hero_tag: "Changelog", changelog_hero_title: "Changelog", changelog_hero_desc: "Version History · Features · Bug Fixes", changelog_list_tag: "Version History", changelog_list_title: "Version History", changelog_empty: "No changelog entries yet",
+        changelog_page_title: "Changelog | WFLS Table Tennis Club", changelog_hero_tag: "Changelog", changelog_hero_title: "Changelog", changelog_hero_desc: "Version History 路 Features 路 Bug Fixes", changelog_list_tag: "Version History", changelog_list_title: "Version History", changelog_empty: "No changelog entries yet",
         tag_release: "Release", tag_feature: "Feature", tag_fix: "Fix"
     }
 };
@@ -227,8 +227,92 @@ function renderAllMembersPage() { const g = document.getElementById('allMembersG
 function renderAllNews() { const pg = document.getElementById('newsPreviewGrid'); if (pg) { pg.innerHTML = ''; newsData.slice(0,3).forEach(item => { const c = document.createElement('div'); c.className = 'news-card'; c.innerHTML = createNewsCard(item); c.addEventListener('click', () => window.location.href = `detail.html?type=news&id=${item.id}`); pg.appendChild(c); }); } const fg = document.getElementById('newsFullGrid'); if (fg) { const fd = getFilteredNewsData(); fg.innerHTML = ''; getPaginatedData(fd, newsCurrentPage).forEach(item => { const c = document.createElement('div'); c.className = 'news-card'; c.innerHTML = createNewsCard(item); c.addEventListener('click', () => window.location.href = `detail.html?type=news&id=${item.id}`); fg.appendChild(c); }); renderPagination('newsFullGrid', fd, newsCurrentPage); renderTagFilter('newsTagFilter', newsData, newsFilterTag, setNewsFilter); } }
 function renderAllCompetitions() { const pg = document.getElementById('competitionsPreviewGrid'); if (pg) { pg.innerHTML = ''; competitionsData.slice(0,3).forEach(item => { const c = document.createElement('div'); c.className = 'competitions-card'; c.innerHTML = createCompetitionCard(item); c.addEventListener('click', () => window.location.href = `detail.html?type=competition&id=${item.id}`); pg.appendChild(c); }); } const fg = document.getElementById('competitionsFullGrid'); if (fg) { const fd = getFilteredCompetitionsData(); fg.innerHTML = ''; getPaginatedData(fd, competitionsCurrentPage).forEach(item => { const c = document.createElement('div'); c.className = 'competitions-card'; c.innerHTML = createCompetitionCard(item); c.addEventListener('click', () => window.location.href = `detail.html?type=competition&id=${item.id}`); fg.appendChild(c); }); renderPagination('competitionsFullGrid', fd, competitionsCurrentPage); renderTagFilter('competitionsTagFilter', competitionsData, competitionsFilterTag, setCompetitionsFilter); } }
 function renderAllQa() { const fg = document.getElementById('qaFullGrid'); if (fg) { fg.innerHTML = ''; getPaginatedData(qaData, qaCurrentPage).forEach(item => { const c = document.createElement('div'); c.className = 'qa-card'; c.innerHTML = createQaCard(item); c.addEventListener('click', () => window.location.href = `detail.html?type=qa&id=${item.id}`); fg.appendChild(c); }); renderPagination('qaFullGrid', qaData, qaCurrentPage); } }
-function renderAllChangelog() { const tl = document.getElementById('changelogTimeline'); if (!tl) return; tl.innerHTML = ''; if (!changelogData || !changelogData.length) { tl.innerHTML = '<div class="changelog-empty"><i class="fa-solid fa-clock-rotate-left"></i><p data-i18n="changelog_empty">暂无更新日志</p></div>'; return; } changelogData.forEach((item, idx) => { const entry = document.createElement('div'); entry.className = 'changelog-entry'; const tagLabel = i18n[currentLang]['tag_' + item.tag] || item.tag; const changesHtml = item.changes && item.changes.length ? '<ul class="changelog-changes">' + item.changes.map(c => '<li>' + renderMarkdown(c) + '</li>').join('') + '</ul>' : ''; entry.innerHTML = `<div class="changelog-entry-marker"><div class="changelog-dot"></div>${idx < changelogData.length - 1 ? '<div class="changelog-line"></div>' : ''}</div><div class="changelog-entry-content glass-card"><div class="changelog-entry-header"><span class="changelog-version">${item.version}</span><span class="changelog-tag tag-${item.tag}">${tagLabel}</span><span class="changelog-date">${item.date}</span></div><h3 class="changelog-entry-title">${item.title}</h3>${changesHtml}</div>`; tl.appendChild(entry); }); }
-function updateDetailPage() { const params = new URLSearchParams(window.location.search); const type = params.get('type'), id = params.get('id'); if (!type || !id) return; const da = type === 'news' ? newsData : (type === 'competition' ? competitionsData : qaData); if (!da || !da.length) { setTimeout(() => updateDetailPage(), 200); return; } const item = da.find(d => d.id == id); if (!item) { document.getElementById('detailTitle').textContent = '未找到内容'; document.getElementById('detailDate').textContent = ''; document.getElementById('detailContent').innerHTML = '<p>请求的内容不存在或已被移除。</p>'; document.getElementById('detailMedia').innerHTML = ''; return; } document.getElementById('detailTypeTag').textContent = i18n[currentLang][type === 'news' ? 'news_hero_tag' : (type === 'competition' ? 'comp_hero_tag' : 'qa_hero_tag')]; document.getElementById('detailTitle').textContent = item.title; document.getElementById('detailDate').textContent = item.date; document.getElementById('detailContent').innerHTML = renderMarkdown(item.content || item.excerpt || ''); const mc = document.getElementById('detailMedia'); mc.innerHTML = ''; if (item.media && Array.isArray(item.media) && item.media.length) { item.media.forEach(m => { if (!m || !m.type || !m.src) return; const mi = document.createElement('div'); mi.className = 'media-item'; if (m.type === 'image') { const img = document.createElement('img'); img.src = m.src; img.alt = m.alt || '图片'; img.loading = 'lazy'; img.onerror = () => { img.style.display = 'none'; mi.innerHTML = '<p style="padding:20px;text-align:center;color:var(--text-muted);">图片加载失败</p>'; }; mi.appendChild(img); } else if (m.type === 'video') { const v = document.createElement('video'); v.src = m.src; v.controls = true; v.playsInline = true; v.preload = 'metadata'; v.style.width = '100%'; v.onerror = () => { v.style.display = 'none'; mi.innerHTML = '<p style="padding:20px;text-align:center;color:var(--text-muted);">视频加载失败</p>'; }; mi.appendChild(v); } else if (m.type === 'file') { const a = document.createElement('a'); a.href = m.src; a.className = 'file-link'; a.download = ''; a.innerHTML = `<i class="fa-solid fa-download"></i> ${m.name || '下载文件'}`; mi.appendChild(a); } mc.appendChild(mi); }); } }
+function renderAllChangelog() { const tl = document.getElementById('changelogTimeline'); if (!tl) return; tl.innerHTML = ''; if (!changelogData || !changelogData.length) { tl.innerHTML = '<div class="changelog-empty"><i class="fa-solid fa-clock-rotate-left"></i><p data-i18n="changelog_empty">鏆傛棤鏇存柊鏃ュ織</p></div>'; return; } changelogData.forEach((item, idx) => { const entry = document.createElement('div'); entry.className = 'changelog-entry'; const tagLabel = i18n[currentLang]['tag_' + item.tag] || item.tag; const changesHtml = item.changes && item.changes.length ? '<ul class="changelog-changes">' + item.changes.map(c => '<li>' + renderMarkdown(c) + '</li>').join('') + '</ul>' : ''; entry.innerHTML = `<div class="changelog-entry-marker"><div class="changelog-dot"></div>${idx < changelogData.length - 1 ? '<div class="changelog-line"></div>' : ''}</div><div class="changelog-entry-content glass-card"><div class="changelog-entry-header"><span class="changelog-version">${item.version}</span><span class="changelog-tag tag-${item.tag}">${tagLabel}</span><span class="changelog-date">${item.date}</span></div><h3 class="changelog-entry-title">${item.title}</h3>${changesHtml}</div>`; tl.appendChild(entry); }); }
+function updateDetailPage() {
+    const params = new URLSearchParams(window.location.search);
+    const type = params.get('type'), id = params.get('id');
+    if (!type || !id) return;
+    const da = type === 'news' ? newsData : (type === 'competition' ? competitionsData : qaData);
+    if (!da || !da.length) { setTimeout(() => updateDetailPage(), 200); return; }
+    const item = da.find(d => d.id == id);
+    if (!item) {
+        document.getElementById('detailTitle').textContent = '未找到内容';
+        document.getElementById('detailDate').textContent = '';
+        document.getElementById('detailContent').innerHTML = '<p>请求的内容不存在或已被移除。</p>';
+        document.getElementById('detailMedia').innerHTML = '';
+        return;
+    }
+    document.getElementById('detailTypeTag').textContent = i18n[currentLang][type === 'news' ? 'news_hero_tag' : (type === 'competition' ? 'comp_hero_tag' : 'qa_hero_tag')];
+    document.getElementById('detailTitle').textContent = item.title;
+    document.getElementById('detailDate').textContent = item.date;
+    document.getElementById('detailContent').innerHTML = renderMarkdown(item.content || item.excerpt || '');
+    const mc = document.getElementById('detailMedia');
+    mc.innerHTML = '';
+    if (item.media && Array.isArray(item.media) && item.media.length) {
+        item.media.forEach(m => {
+            if (!m || !m.type || !m.src) return;
+            const mi = document.createElement('div');
+            mi.className = 'media-item';
+            if (m.type === 'image') {
+                const img = document.createElement('img');
+                img.src = m.src;
+                img.alt = m.alt || '图片';
+                img.loading = 'lazy';
+                img.onerror = () => { img.style.display = 'none'; mi.innerHTML = '<div class="media-error"><i class="fa-solid fa-image"></i><p>图片加载失败</p><a href="' + m.src + '" download class="media-download-link"><i class="fa-solid fa-download"></i> 下载图片</a></div>'; };
+                mi.appendChild(img);
+            } else if (m.type === 'video') {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'video-wrapper';
+                const v = document.createElement('video');
+                v.controls = true;
+                v.playsInline = true;
+                v.preload = 'metadata';
+                v.style.width = '100%';
+                const source = document.createElement('source');
+                source.src = m.src;
+                const ext = (m.src || '').split('.').pop().toLowerCase();
+                const mimeMap = { mp4: 'video/mp4', webm: 'video/webm', ogg: 'video/ogg', ogv: 'video/ogg', mov: 'video/quicktime', mkv: 'video/x-matroska', avi: 'video/x-msvideo' };
+                source.type = mimeMap[ext] || 'video/mp4';
+                v.appendChild(source);
+                const loadingEl = document.createElement('div');
+                loadingEl.className = 'video-loading';
+                loadingEl.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i><p>视频加载中...</p>';
+                let videoLoaded = false, videoError = false;
+                const hideLoading = () => { if (!videoLoaded && !videoError) { videoLoaded = true; loadingEl.style.display = 'none'; } };
+                const showLoading = () => { if (videoLoaded && !videoError) { videoLoaded = false; loadingEl.style.display = 'flex'; } };
+                v.addEventListener('loadedmetadata', hideLoading);
+                v.addEventListener('canplay', hideLoading);
+                v.addEventListener('canplaythrough', hideLoading);
+                v.addEventListener('playing', hideLoading);
+                v.addEventListener('waiting', showLoading);
+                v.addEventListener('seeking', showLoading);
+                v.addEventListener('seeked', hideLoading);
+                const handleVideoError = () => {
+                    if (videoError) return;
+                    videoError = true;
+                    loadingEl.style.display = 'none';
+                    mi.innerHTML = '<div class="media-error"><i class="fa-solid fa-video"></i><p>视频加载失败</p><p class="media-error-hint">（文件较大，网络不稳定时可能加载较慢）</p><a href="' + m.src + '" download class="media-download-link"><i class="fa-solid fa-download"></i> 下载视频</a></div>';
+                };
+                v.onerror = handleVideoError;
+                source.onerror = handleVideoError;
+                const loadTimeout = setTimeout(() => { if (!videoLoaded && !videoError) handleVideoError(); }, 30000);
+                v.addEventListener('loadedmetadata', () => clearTimeout(loadTimeout));
+                v.addEventListener('error', () => clearTimeout(loadTimeout));
+                wrapper.appendChild(v);
+                wrapper.appendChild(loadingEl);
+                mi.appendChild(wrapper);
+            } else if (m.type === 'file') {
+                const a = document.createElement('a');
+                a.href = m.src;
+                a.className = 'file-link';
+                a.download = '';
+                a.innerHTML = '<i class="fa-solid fa-download"></i> ' + (m.name || '下载文件');
+                mi.appendChild(a);
+            }
+            mc.appendChild(mi);
+        });
+    }
+}
 function initPdfViewer() { const btn = document.getElementById('pdfViewBtn'), ctr = document.getElementById('pdfPreviewContainer'), ph = document.getElementById('pdfPlaceholder'), vw = document.getElementById('pdfViewer'); if (!btn) return; let loaded = false; btn.addEventListener('click', () => { if (!loaded) { btn.disabled = true; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Loading...'; vw.src = vw.getAttribute('data-src'); loaded = true; vw.onload = () => { btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> ${i18n[currentLang].pdf_preview_btn}`; btn.disabled = false; }; setTimeout(() => { if (btn.disabled) { btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> ${i18n[currentLang].pdf_preview_btn}`; btn.disabled = false; } }, 10000); } if (ctr.style.display === 'none' || !ctr.style.display) { ctr.style.display = 'block'; ph.style.display = 'none'; } else { ctr.style.display = 'none'; ph.style.display = 'flex'; } }); }
 
 function updateSideNavHighlight() { const links = document.querySelectorAll('.side-nav-link'); const pos = window.scrollY + 150; let cur = 'home'; [{ id:'home', s:'#home' },{ id:'history', s:'#history' },{ id:'philosophy', s:'#philosophy' },{ id:'activities', s:'#activities' },{ id:'core-members', s:'#core-members' },{ id:'news', s:'#news' },{ id:'competitions', s:'#competitions' }].forEach(sec => { const el = document.querySelector(sec.s); if (el && pos >= el.offsetTop && pos < el.offsetTop+el.offsetHeight) cur = sec.id; }); links.forEach(l => { l.classList.remove('active'); if (l.getAttribute('data-section') === cur) l.classList.add('active'); }); }

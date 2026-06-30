@@ -143,7 +143,7 @@ function adjustModalSize() { if (!scoreDetailModal) return; scoreDetailModal.cla
 
 async function loadInitialScores() { try { initialScoresData = await (await fetch('data/initial-scores.json')).json(); return true; } catch(e) { console.error('initial-scores.json 加载失败', e); return false; } }
 async function loadEventCoefficients() { try { eventCoefficients = await (await fetch('data/event-coefficient.json')).json(); return true; } catch(e) { console.error('event-coefficient.json 加载失败', e); return false; } }
-async function loadSeasons() { try { seasonsData = await (await fetch('data/seasons.json')).json(); return true; } catch(e) { console.error('seasons.json 加载失败', e); seasonsData = []; return false; } }
+async function loadSeasons() { try { seasonsData = (await (await fetch('data/seasons.json')).json()).filter(s => s.visible !== false); return true; } catch(e) { console.error('seasons.json 加载失败', e); seasonsData = []; return false; } }
 
 function getBaseScore(gap) { const ag = Math.abs(gap); if (gap >= 0) { if (ag <= 49) return 30; if (ag <= 99) return 24; if (ag <= 149) return 20; if (ag <= 199) return 16; if (ag <= 299) return 12; if (ag <= 399) return 8; return 4; } if (ag <= 49) return 30; if (ag <= 99) return 36; if (ag <= 149) return 42; if (ag <= 199) return 48; if (ag <= 299) return 54; if (ag <= 399) return 60; return 66; }
 function getEventCoefficient(et) { if (!eventCoefficients) return 0.2; return eventCoefficients[et] || 0.2; }
