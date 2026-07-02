@@ -266,7 +266,7 @@ function updateDetailPage() {
                 const v = document.createElement('video');
                 v.controls = true;
                 v.playsInline = true;
-                v.preload = 'metadata';
+                v.preload = 'auto';
                 v.style.width = '100%';
                 const source = document.createElement('source');
                 source.src = m.src;
@@ -295,11 +295,15 @@ function updateDetailPage() {
                 };
                 v.onerror = handleVideoError;
                 source.onerror = handleVideoError;
-                const loadTimeout = setTimeout(() => { if (!videoLoaded && !videoError) handleVideoError(); }, 30000);
-                v.addEventListener('loadedmetadata', () => clearTimeout(loadTimeout));
-                v.addEventListener('error', () => clearTimeout(loadTimeout));
+                const dlBtn = document.createElement('a');
+                dlBtn.href = m.src;
+                dlBtn.download = '';
+                dlBtn.className = 'video-dl-btn';
+                dlBtn.title = '下载视频';
+                dlBtn.innerHTML = '<i class="fa-solid fa-download"></i>';
                 wrapper.appendChild(v);
                 wrapper.appendChild(loadingEl);
+                wrapper.appendChild(dlBtn);
                 mi.appendChild(wrapper);
             } else if (m.type === 'file') {
                 const a = document.createElement('a');

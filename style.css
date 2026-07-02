@@ -636,8 +636,11 @@ body.dark-mode .viz-page-hero { background: linear-gradient(135deg, #0d1117 0%, 
 .media-error i { font-size: 2.5rem; opacity: 0.5; }
 .media-error p { margin: 0; font-size: 0.95rem; }
 .media-error-hint { font-size: 0.8rem !important; opacity: 0.7; }
-.media-download-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; padding: 8px 18px; background: var(--primary-blue); color: #fff !important; text-decoration: none !important; border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 500; transition: background var(--transition-fast); }
+.media-download-link { display: inline-flex; align-items: center; gap: 4px; margin-top: 8px; padding: 5px 12px; background: var(--primary-blue); color: #fff !important; text-decoration: none !important; border-radius: 6px; font-size: 0.78rem; font-weight: 500; transition: background var(--transition-fast); }
 .media-download-link:hover { background: var(--primary-dark); }
+.video-dl-btn { position: absolute; bottom: 8px; right: 8px; z-index: 3; display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: rgba(0,0,0,0.45); color: rgba(255,255,255,0.7); border-radius: 5px; font-size: 0.7rem; text-decoration: none !important; opacity: 0; transition: opacity 0.25s, background 0.2s, color 0.2s; pointer-events: none; }
+.video-wrapper:hover .video-dl-btn { opacity: 1; pointer-events: auto; }
+.video-dl-btn:hover { background: var(--primary-blue); color: #fff; }
 .media-item a.file-link { display: flex; align-items: center; gap: 12px; padding: 24px 28px; color: var(--primary-blue); font-weight: 500; font-size: 0.95rem; transition: all var(--transition-fast); background: var(--bg-lighter); }
 .media-item a.file-link:hover { background: var(--primary-pale); color: var(--primary-dark); }
 .media-item a.file-link i { font-size: 1.2rem; }
@@ -721,9 +724,9 @@ body.dark-mode .viz-page-hero { background: linear-gradient(135deg, #0d1117 0%, 
 .sort-hint strong { color: var(--primary-blue); }
 .update-info { font-weight: 500; color: var(--text-secondary); }
 .ranking-full-table-wrapper { padding: 8px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-.ranking-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.ranking-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
 .ranking-table th, .ranking-table td { padding: 14px 16px; text-align: center; border-bottom: 1px solid var(--border-color); }
-.ranking-table th { background: var(--primary-pale); color: var(--primary-blue); font-weight: 600; font-family: var(--font-en); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+.ranking-table th { background: var(--primary-pale); color: var(--primary-blue); font-weight: 600; font-family: var(--font-en); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
 .ranking-table tbody tr { transition: background var(--transition-fast); }
 .ranking-table tbody tr:hover { background: var(--bg-lighter); }
 .ranking-table tbody tr:nth-child(1) td:first-child { color: var(--accent-gold); font-weight: 700; font-size: 1.1rem; }
@@ -756,9 +759,9 @@ body.dark-mode .modal-content.score-detail-modal h3 { background: linear-gradien
 .score-detail-table-wrapper::-webkit-scrollbar-track { background: transparent; border-radius: 3px; }
 .score-detail-table-wrapper::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 3px; }
 .score-detail-table-wrapper::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
-.score-detail-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.88rem; }
+.score-detail-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.92rem; }
 .score-detail-table thead { position: static; }
-.score-detail-table thead th { padding: 14px 16px; text-align: center; background-color: #f8fafc; color: var(--primary-blue); font-weight: 600; font-family: var(--font-en); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; position: sticky; top: 0; z-index: 20; border-bottom: 2px solid rgba(77,163,255,0.3); border-right: 1px solid rgba(0,0,0,0.04); box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.score-detail-table thead th { padding: 14px 16px; text-align: center; background-color: #f8fafc; color: var(--primary-blue); font-weight: 600; font-family: var(--font-en); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; position: sticky; top: 0; z-index: 20; border-bottom: 2px solid rgba(77,163,255,0.3); border-right: 1px solid rgba(0,0,0,0.04); box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
 body.dark-mode .score-detail-table thead th { background-color: #1a1d28; border-bottom: 2px solid rgba(77,163,255,0.35); border-right: 1px solid rgba(255,255,255,0.04); box-shadow: 0 2px 10px rgba(0,0,0,0.4); }
 .score-detail-table thead th:last-child { border-right: none; }
 .score-detail-table tbody td { padding: 12px 16px; text-align: center; white-space: nowrap; border-bottom: 1px solid rgba(0,0,0,0.04); background-color: transparent; }
@@ -851,14 +854,15 @@ body.dark-mode .score-detail-table tbody tr:nth-child(even) td { background-colo
 .tag-filter-count { display: inline-block; font-size: 0.65rem; font-weight: 600; padding: 0 5px; border-radius: 10px; background: var(--border-color); color: var(--text-muted); min-width: 18px; text-align: center; line-height: 1.4; }
 .tag-match-count { display: inline-block; font-size: 0.65rem; font-weight: 700; padding: 1px 7px; border-radius: 10px; background: var(--primary-blue); color: #fff; margin-left: 4px; vertical-align: middle; }
 .viz-personal-result { padding: 28px; min-height: 300px; }
-.personal-overview { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 20px; }
-.personal-overview-item { text-align: center; padding: 16px 12px; background: var(--bg-lighter); border-radius: var(--radius-md); transition: transform var(--transition-fast); }
+.personal-overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-bottom: 20px; }
+.personal-overview-item { text-align: center; padding: 18px 14px; background: var(--bg-lighter); border-radius: var(--radius-md); transition: transform var(--transition-fast); }
 .personal-overview-item:hover { transform: translateY(-2px); }
-.personal-overview-num { display: block; font-size: 1.6rem; font-weight: 800; font-family: var(--font-en); color: var(--text-primary); }
-.personal-overview-label { display: block; font-size: 0.75rem; color: var(--text-muted); margin-top: 4px; }
+.personal-overview-num { display: block; font-size: 1.8rem; font-weight: 800; font-family: var(--font-en); color: var(--text-primary); line-height: 1.1; }
+.personal-overview-label { display: block; font-size: 0.78rem; color: var(--text-muted); margin-top: 6px; }
 .personal-overview-item.win .personal-overview-num { color: #52c41a; }
 .personal-overview-item.loss .personal-overview-num { color: var(--accent-red); }
-.personal-summary-text { font-size: 0.9rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 24px; padding: 14px 18px; background: var(--bg-lighter); border-radius: var(--radius-sm); border-left: 3px solid var(--primary-blue); }
+.personal-overview-item.best .personal-overview-num { color: var(--accent-gold); }
+.personal-summary-text { font-size: 0.9rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 20px; padding: 14px 18px; background: var(--bg-lighter); border-radius: var(--radius-sm); border-left: 3px solid var(--primary-blue); }
 .personal-summary-text strong { color: var(--text-primary); }
 .personal-tags-honors { margin-bottom: 20px; display: flex; flex-direction: column; gap: 12px; }
 .personal-tags-section, .personal-honors-section { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 12px 16px; background: var(--bg-lighter); border-radius: var(--radius-sm); }
@@ -892,6 +896,17 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
 .personal-card-date { margin-left: auto; font-size: 0.75rem; color: var(--text-muted); white-space: nowrap; }
 .personal-card-sub { margin-left: auto; font-size: 0.75rem; color: var(--text-secondary); white-space: nowrap; }
 
+/* 个人积分变化折线图 */
+.personal-chart-section { margin-bottom: 20px; background: var(--bg-lighter); border-radius: var(--radius-md); padding: 16px; border: 1px solid var(--border-color); }
+.personal-chart-header { font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.personal-chart-header > span { color: var(--primary-blue); display: flex; align-items: center; gap: 6px; }
+.personal-chart-granularity { display: flex; gap: 4px; background: var(--bg-white); border-radius: 8px; padding: 3px; border: 1px solid var(--border-color); }
+.granularity-btn { padding: 4px 12px; font-size: 0.72rem; font-weight: 600; border: none; border-radius: 6px; cursor: pointer; background: transparent; color: var(--text-muted); transition: all var(--transition-fast); font-family: var(--font-cn); white-space: nowrap; }
+.granularity-btn:hover { color: var(--text-primary); background: var(--bg-lighter); }
+.granularity-btn.active { background: var(--primary-blue); color: #fff; }
+.granularity-btn.active:hover { background: var(--primary-dark); color: #fff; }
+.personal-chart-wrapper { position: relative; width: 100%; height: 280px; }
+
 /* ========================================
    响应式布局
    ======================================== */
@@ -908,7 +923,7 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
     .viz-compare-selectors .compare-vs { margin: 0 4px; font-size: 1.1rem; }
     .viz-compare-selectors .btn { margin-top: 0; width: auto; flex: 0 0 auto; }
     .viz-personal-grid { grid-template-columns: 1fr; }
-    .personal-overview { grid-template-columns: repeat(2, 1fr); }
+    .personal-overview { grid-template-columns: repeat(3, 1fr); }
     .personal-cards-grid { grid-template-columns: 1fr; }
 
     /* 积分明细模态框 - 平板适配 */
@@ -944,8 +959,8 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
         font-size: 1rem;
     }
     .score-detail-table-wrapper { padding: 0 16px 14px; }
-    .score-detail-table { font-size: 0.82rem; }
-    .score-detail-table thead th { padding: 10px 10px; font-size: 0.7rem; letter-spacing: 0.4px; }
+    .score-detail-table { font-size: 0.88rem; }
+    .score-detail-table thead th { padding: 10px 10px; font-size: 0.76rem; letter-spacing: 0.4px; }
     .score-detail-table tbody td { padding: 8px 10px; }
     /* 保持姓名链接可点击 */
     .player-name-link { cursor: pointer; border-bottom: 1px dashed var(--primary-light); color: var(--primary-blue); font-weight: 600; }
@@ -955,7 +970,7 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
 /* 中屏笔记本：评分详情弹窗尺寸调整 */
 @media (min-width: 1201px) and (max-width: 1400px) {
     .modal-content.score-detail-modal { max-width: 85vw !important; width: 85vw !important; max-height: 80vh !important; height: 80vh !important; min-width: 700px; }
-    .score-detail-table { font-size: 0.85rem; }
+    .score-detail-table { font-size: 0.9rem; }
     .score-detail-table thead th, .score-detail-table tbody td { padding: 10px 14px; }
 }
 
@@ -995,8 +1010,8 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
         font-size: 0.95rem;
     }
     .score-detail-table-wrapper { padding: 0 12px 10px; }
-    .score-detail-table { font-size: 0.76rem; }
-    .score-detail-table thead th { padding: 8px 8px; font-size: 0.65rem; letter-spacing: 0.2px; }
+    .score-detail-table { font-size: 0.84rem; }
+    .score-detail-table thead th { padding: 8px 8px; font-size: 0.72rem; letter-spacing: 0.2px; }
     .score-detail-table tbody td { padding: 7px 8px; }
 }
 
@@ -1036,8 +1051,8 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
         font-size: 0.9rem;
     }
     .score-detail-table-wrapper { padding: 0 8px 8px; }
-    .score-detail-table { font-size: 0.72rem; }
-    .score-detail-table thead th { padding: 7px 6px; font-size: 0.62rem; letter-spacing: 0; }
+    .score-detail-table { font-size: 0.8rem; }
+    .score-detail-table thead th { padding: 7px 6px; font-size: 0.68rem; letter-spacing: 0; }
     .score-detail-table tbody td { padding: 6px 6px; }
     .score-detail-table-wrapper::-webkit-scrollbar { width: 4px; height: 4px; }
 }
@@ -1077,8 +1092,8 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
         font-size: 0.85rem;
     }
     .score-detail-table-wrapper { padding: 0 4px 6px; }
-    .score-detail-table { font-size: 0.68rem; }
-    .score-detail-table thead th { padding: 6px 4px; font-size: 0.6rem; letter-spacing: 0; }
+    .score-detail-table { font-size: 0.76rem; }
+    .score-detail-table thead th { padding: 6px 4px; font-size: 0.66rem; letter-spacing: 0; }
     .score-detail-table tbody td { padding: 5px 4px; }
     .score-detail-table-wrapper::-webkit-scrollbar { width: 3px; height: 3px; }
 }
@@ -1182,11 +1197,16 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
     .viz-section-header .section-title { font-size: 1.2rem; }
     .viz-topn-selector { font-size: 0.78rem; flex-wrap: wrap; justify-content: center; }
 
+    /* ---- 个人数据 ---- */
+    .personal-overview { grid-template-columns: repeat(2, 1fr); }
+    .personal-chart-wrapper { height: 240px; }
+}
+
     /* ---- 排名表格 ---- */
     .ranking-full-table-wrapper { padding: 4px; border-radius: var(--radius-md); overflow-x: auto; -webkit-overflow-scrolling: touch; }
-    .ranking-table { font-size: 0.78rem; min-width: 650px; }
+    .ranking-table { font-size: 0.85rem; min-width: 650px; }
     .ranking-table th, .ranking-table td { padding: 10px 8px; white-space: nowrap; }
-    .ranking-table th { font-size: 0.7rem; letter-spacing: 0; }
+    .ranking-table th { font-size: 0.78rem; letter-spacing: 0; }
     .ranking-table th:first-child, .ranking-table td:first-child { position: sticky; left: 0; background: var(--bg-white); z-index: 2; box-shadow: 2px 0 4px rgba(0,0,0,0.04); }
     .ranking-table thead th:first-child { background: var(--primary-pale); z-index: 3; }
     body.dark-mode .ranking-table td:first-child { background: var(--bg-white); }
@@ -1269,9 +1289,9 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
     .season-node-list { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 3px; }
     .time-node-item { padding: 8px 6px; font-size: 0.7rem; }
     .season-header { padding: 8px 10px; font-size: 0.75rem; }
-    .ranking-table { font-size: 0.72rem; min-width: 580px; }
+    .ranking-table { font-size: 0.8rem; min-width: 580px; }
     .ranking-table th, .ranking-table td { padding: 8px 6px; }
-    .ranking-table th { font-size: 0.65rem; }
+    .ranking-table th { font-size: 0.72rem; }
     .ranking-controls { font-size: 0.75rem; }
     .sort-hint strong { font-size: 0.78rem; }
 
@@ -1311,9 +1331,9 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
     .glass-card { padding: 14px 10px; }
     .single-card { padding: 14px 10px; font-size: 0.8rem; }
 
-    .ranking-table { font-size: 0.68rem; min-width: 520px; }
+    .ranking-table { font-size: 0.75rem; min-width: 520px; }
     .ranking-table th, .ranking-table td { padding: 6px 4px; }
-    .ranking-table th { font-size: 0.6rem; }
+    .ranking-table th { font-size: 0.68rem; }
     .season-node-list { grid-template-columns: repeat(auto-fill, minmax(85px, 1fr)); }
     .time-node-item { padding: 6px 4px; font-size: 0.65rem; }
 
