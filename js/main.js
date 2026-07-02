@@ -7,11 +7,12 @@ async function loadRankingDataForViz() { try { await Promise.all([loadInitialSco
 function initPage() {
     loadAboutData(); loadMembersData(); loadNewsData(); loadCompetitionsData(); loadQaData(); loadChangelogData();
     initCommon();
-    const isRanking = !!document.getElementById('rankingFullBody'), isDataViz = !!document.getElementById('pointsTrendChart'), isWttDataViz = !!document.getElementById('wttPointsTrendChart'), isPersonalStats = !!document.getElementById('personalPlayerSelect');
+    const isRanking = !!document.getElementById('rankingFullBody'), isDataViz = !!document.getElementById('pointsTrendChart'), isWttDataViz = !!document.getElementById('wttPointsTrendChart'), isPersonalStats = !!document.getElementById('personalPlayerSelect'), isWttPersonalStats = !!document.getElementById('wttPersonalPlayerSelect') && !document.getElementById('wttPointsTrendChart');
     if (isRanking) { loadRankingData(); }
     if (isDataViz) { loadRankingDataForViz().then(() => { if (rankingTimeline.length) initDataViz(); }).catch(err => console.error('DataViz: 初始化失败', err)); }
     if (isPersonalStats) { loadRankingDataForViz().then(() => { if (rankingTimeline.length) initPersonalStats(); }).catch(err => console.error('PersonalStats: 初始化失败', err)); }
     if (isWttDataViz) { wttLoadRankingDataForViz().then(() => { if (wttRankingTimeline.length) initWttDataViz(); }).catch(err => console.error('WttDataViz: 初始化失败', err)); }
+    if (isWttPersonalStats) { wttLoadRankingDataForPersonal().then(() => { if (wttRankingTimeline.length) initWttPersonalStats(); }).catch(err => console.error('WttPersonalStats: 初始化失败', err)); }
     initPdfViewer();
     if (window.location.pathname.includes('detail.html') && (newsData.length > 0 || competitionsData.length > 0)) updateDetailPage();
 }

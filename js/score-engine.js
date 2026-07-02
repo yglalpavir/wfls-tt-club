@@ -61,7 +61,8 @@ function getSeasonStartScores(seasonIndex) {
 // 计算实时积分（按当前日期快照）
 function calculateRealtimeRanking() {
     if (!scoreLogData || !initialScoresData || !seasonsData || !seasonsData.length) return null;
-    const today = new Date().toISOString().split('T')[0];
+    const d = new Date();
+    const today = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
     const sortedLog = [...scoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
 
     // 找到今天所在的赛季（若今天已超出所有赛季，使用最后一个赛季并延伸至今天）
@@ -112,7 +113,7 @@ function calculateRealtimeRanking() {
 
     const activeStart = activeSeason.startDate;
     const sap = getActivePlayers(sortedLog, activeStart, effectiveEnd);
-    const sp = Object.entries(sc).filter(([n]) => sap.has(n)).sort((a, b) => b[1] - a[1]).map(([n, pt]) => ({
+    const sp = Object.entries(sc).filter(([n]) => sap.size === 0 || sap.has(n)).sort((a, b) => b[1] - a[1]).map(([n, pt]) => ({
         '姓名': n, '当前积分': Math.round(pt * 10) / 10,
         '总场次': sortedLog.filter(r => isMatchRecord(r) && r['日期'] >= activeStart && r['日期'] <= effectiveEnd && (r['胜者'] === n || r['负者'] === n)).length,
         '胜率': (() => { const ms = sortedLog.filter(r => isMatchRecord(r) && r['日期'] >= activeStart && r['日期'] <= effectiveEnd && (r['胜者'] === n || r['负者'] === n)); if (!ms.length) return '0%'; return Math.round((ms.filter(r => r['胜者'] === n).length / ms.length) * 100) + '%'; })()

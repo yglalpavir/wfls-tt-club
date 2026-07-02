@@ -1,0 +1,48 @@
+{
+  "_description": "个人数据 - 积分变化趋势折线图设置。修改此文件即可调整折线图外观，无需改 JS 代码。",
+  "_guide": {
+    "tension": "折线平滑度，0=直线折线，1=极度平滑。建议 0~0.5",
+    "borderWidth": "折线粗细（像素）",
+    "borderWidthDense": "数据点超过 denseThreshold 时的折线粗细",
+    "denseThreshold": "触发「密集模式」的数据点数量阈值",
+    "pointRadius": "数据点半径（像素），0=隐藏",
+    "pointRadiusDense": "密集模式下的数据点半径",
+    "pointHoverExtra": "鼠标悬浮时数据点额外增大的像素",
+    "maxTicks": "X 轴最多显示的刻度数",
+    "maxTicksLarge": "数据点超过 largeThreshold 时的刻度数",
+    "largeThreshold": "触发「大量数据」刻度的数据点数量阈值"
+  },
+  "day": {
+    "tension": 0.3,
+    "borderWidth": 2.0,
+    "borderWidthDense": 2.4,
+    "denseThreshold": 180,
+    "pointRadius": 0,
+    "pointRadiusDense": 0,
+    "pointHoverExtra": 3,
+    "maxTicks": 20,
+    "maxTicksLarge": 30,
+    "largeThreshold": 365
+  },
+  "week": {
+    "tension": 0.2,
+    "borderWidth": 2.2,
+    "pointRadius": 3,
+    "pointHoverExtra": 3,
+    "maxTicks": 15
+  },
+  "snapshot": {
+    "tension": 0.35,
+    "borderWidth": 2.5,
+    "pointRadius": 4,
+    "pointHoverExtra": 3,
+    "maxTicks": 15
+  },
+  "colors": {
+    "line": "#4da3ff",
+    "fillLight": "rgba(0, 123, 255, 0.08)",
+    "fillDark": "rgba(77, 163, 255, 0.1)",
+    "pointBorder": "#4da3ff",
+    "pointBorderWidth": 0
+  }
+}

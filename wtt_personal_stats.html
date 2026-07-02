@@ -4,16 +4,15 @@
     <link rel="icon" type="image/svg+xml" href="Assets/files/favicon_4DA3FF.svg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="WTT 国际乒联积分排名数据可视化。积分趋势图、排名变化河流图、球员对比分析。">
-    <meta name="keywords" content="WTT,世界乒联,乒乓球,数据可视化,积分趋势,排名变化">
+    <meta name="description" content="WTT 国际乒联积分排名 · 个人数据 · 战绩概览 · 对手分析 · 福星苦主">
+    <meta name="keywords" content="WTT,世界乒联,乒乓球,个人数据,球员数据,战绩分析">
     <meta name="robots" content="noindex, nofollow">
-    <title>WTT 数据可视化 🥚 | WFLS Table Tennis Club</title>
+    <title>WTT 个人数据 🥚 | WFLS Table Tennis Club</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
     <nav class="navbar" id="navbar">
@@ -46,86 +45,42 @@
         </div>
     </nav>
 
-    <section class="page-hero viz-page-hero">
+    <section class="page-hero wtt-ranking-hero">
         <div class="page-hero-overlay"></div>
         <div class="page-hero-content">
-            <span class="section-tag wtt-easter-egg-tag">🥚 WTT Data Visualization</span>
-            <h1>WTT 数据可视化</h1>
-            <p>积分趋势 · 排名变化 · 球员对比</p>
+            <span class="section-tag wtt-easter-egg-tag">🥚 Easter Egg</span>
+            <h1>WTT 个人数据</h1>
+            <p>战绩概览 · 对手分析 · 福星苦主</p>
         </div>
     </section>
 
-    <section class="section viz-main-section">
+    <section class="section personal-stats-main-section">
         <div class="container">
             <div class="viz-section-header">
-                <span class="section-tag">Line Chart</span>
-                <h2 class="section-title">积分趋势</h2>
-                <div class="viz-topn-selector">
-                    <span>最近</span>
-                    <input type="number" id="wttPointsTrendDataCount" value="20" min="2" max="200" style="width:70px;text-align:center;" title="显示最近N个数据点">
-                    <span>个数据点</span>
-                </div>
+                <span class="section-tag">Personal Stats</span>
+                <h2 class="section-title">WTT 个人数据</h2>
             </div>
-            <div class="viz-grid-2col">
-                <div class="viz-player-selector glass-card">
-                    <h4>选择球员（最多8人）</h4>
-                    <div class="player-checkbox-list" id="wttPlayerCheckboxList"></div>
-                    <button class="btn btn-sm btn-primary" id="wttApplyPointsTrend">应用</button>
-                </div>
-                <div class="viz-chart-container glass-card">
-                    <canvas id="wttPointsTrendChart"></canvas>
-                </div>
-            </div>
-
-            <div class="viz-section-header" style="margin-top:48px;">
-                <span class="section-tag">Stream Graph</span>
-                <h2 class="section-title">排名变化河流图</h2>
-                <div class="viz-topn-selector">
-                    <span>显示前</span>
-                    <input type="number" id="wttTopNSelect" value="10" min="1" max="20" style="width:60px;text-align:center;" title="填写1-20的任意正整数">
-                    <span>名球员</span>
-                </div>
-                <div class="viz-topn-selector" style="margin-left:16px;">
-                    <span>最近</span>
-                    <input type="number" id="wttStreamDataCount" value="20" min="2" max="200" style="width:70px;text-align:center;" title="显示最近N个数据点">
-                    <span>个数据点</span>
-                </div>
-            </div>
-            <div class="viz-chart-container glass-card" style="min-height:450px;">
-                <canvas id="wttRankStreamChart"></canvas>
-            </div>
-
-            <div class="viz-section-header" style="margin-top:48px;">
-                <span class="section-tag">Comparison</span>
-                <h2 class="section-title">球员对比</h2>
-            </div>
-            <div class="viz-compare-grid">
-                <div class="viz-compare-selectors glass-card">
+            <div class="viz-personal-grid">
+                <div class="viz-personal-selector glass-card">
                     <div class="compare-selector-group">
-                        <label>球员 A</label>
-                        <select id="wttPlayerASelect"><option value="">-- 选择球员 --</option></select>
+                        <label>选择球员</label>
+                        <select id="wttPersonalPlayerSelect"><option value="">-- 选择球员 --</option></select>
                     </div>
-                    <div class="compare-vs">VS</div>
-                    <div class="compare-selector-group">
-                        <label>球员 B</label>
-                        <select id="wttPlayerBSelect"><option value="">-- 选择球员 --</option></select>
-                    </div>
-                    <button class="btn btn-sm btn-primary" id="wttApplyCompare">对比</button>
+                    <button class="btn btn-sm btn-primary" id="applyWttPersonalStats" style="width:100%;margin-top:12px;justify-content:center;">查看数据</button>
                 </div>
-                <div class="viz-compare-result glass-card" id="wttCompareResult">
+                <div class="viz-personal-result glass-card" id="wttPersonalResult">
                     <div class="compare-placeholder">
-                        <i class="fa-solid fa-people-arrows"></i>
-                        <p>选择两名球员进行对比分析</p>
+                        <i class="fa-solid fa-user-chart"></i>
+                        <p>选择一名球员查看个人数据</p>
                     </div>
                 </div>
             </div>
 
-        </div>
-
-        <div class="wtt-back-link" style="text-align:center;margin-top:40px;">
-            <a href="wtt_ranking.html" class="btn btn-secondary btn-sm">
-                <i class="fa-solid fa-arrow-left"></i> 返回 WTT Ranking
-            </a>
+            <div class="wtt-back-link" style="text-align:center;margin-top:40px;">
+                <a href="wtt_ranking.html" class="btn btn-secondary btn-sm">
+                    <i class="fa-solid fa-arrow-left"></i> 返回 WTT Ranking
+                </a>
+            </div>
         </div>
     </section>
 
@@ -144,7 +99,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <script src="js/common.js"></script>
     <script src="js/score-engine.js"></script>
-    <script src="js/wtt_dataviz.js"></script>
+    <script src="js/wtt_personal_stats.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

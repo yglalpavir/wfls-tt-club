@@ -22,7 +22,7 @@
     "label": "2026年暑假",
     "startDate": "2026-07-03",
     "endDate": "2026-08-31",
-    "visible": false,
+    "visible": true,
     "snapshotDates": 
     [
     ]
