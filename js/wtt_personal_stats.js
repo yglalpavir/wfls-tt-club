@@ -109,13 +109,82 @@ function wttRenderPersonalPlayerSelect() {
     const players = wttGetAllPlayersForPersonal();
     const sel = document.getElementById('wttPersonalPlayerSelect');
     if (!sel) return;
-    const opts = players.map(p => `<option value="${p}">${p}</option>`).join('');
+
+    // 切换到 WTT 全局数据以使用 getSeasonStartScores
+    const origScoreLog = scoreLogData;
+    const origInitial = initialScoresData;
+    const origEvent = eventCoefficients;
+    const origSeasons = seasonsData;
+    scoreLogData = wttScoreLogData;
+    initialScoresData = wttInitialScoresData;
+    eventCoefficients = wttEventCoefficients;
+    seasonsData = wttSeasonsData;
+
+    // 按当前赛季积分降序排列（不活跃球员使用赛季继承起始积分）
+    const scoreMap = {};
+    let cd = [];
+    for (let i = wttRankingTimeline.length - 1; i >= 0; i--) {
+        if (wttRankingTimeline[i].data && wttRankingTimeline[i].data.length > 0) {
+            cd = wttRankingTimeline[i].data;
+            break;
+        }
+    }
+    for (const p of cd) { scoreMap[p['姓名']] = p['当前积分']; }
+    if (seasonsData && seasonsData.length > 0) {
+        let currentSeasonIdx = seasonsData.length - 1;
+        for (let i = wttRankingTimeline.length - 1; i >= 0; i--) {
+            if (wttRankingTimeline[i].season) {
+                const s = seasonsData.find(s => s.label === wttRankingTimeline[i].season);
+                if (s) { currentSeasonIdx = seasonsData.indexOf(s); break; }
+            }
+        }
+        const startScores = getSeasonStartScores(currentSeasonIdx);
+        for (const [name, score] of Object.entries(startScores)) {
+            if (!(name in scoreMap)) scoreMap[name] = score;
+        }
+    }
+    if (initialScoresData && initialScoresData.initialScores) {
+        for (const [name, score] of Object.entries(initialScoresData.initialScores)) {
+            if (!(name in scoreMap)) scoreMap[name] = score;
+        }
+    }
+
+    // 恢复全局数据
+    scoreLogData = origScoreLog;
+    initialScoresData = origInitial;
+    eventCoefficients = origEvent;
+    seasonsData = origSeasons;
+
+    const sortedPlayers = [...players].sort((a, b) => (scoreMap[b] || 0) - (scoreMap[a] || 0));
+
+    const opts = sortedPlayers.map(p => `<option value="${p}">${p}</option>`).join('');
     sel.innerHTML = '<option value="">-- 选择球员 --</option>' + opts;
 }
 
 function wttGetApproxScoreAtDate(playerName, targetDate, sortedLog, startScores, beforeMatch) {
-    const sc = { ...startScores };
+    // 找到目标日期所在的赛季，使用赛季继承起始积分
+    let effectiveStartScores = { ...startScores };
+    let seasonStartDate = '';
+    if (seasonsData && seasonsData.length > 0) {
+        let seasonIdx = -1;
+        for (let si = 0; si < seasonsData.length; si++) {
+            if (targetDate >= seasonsData[si].startDate && targetDate <= seasonsData[si].endDate) {
+                seasonIdx = si; break;
+            }
+        }
+        if (seasonIdx === -1 && targetDate > seasonsData[seasonsData.length - 1].endDate) {
+            seasonIdx = seasonsData.length - 1;
+        }
+        if (seasonIdx >= 0) {
+            effectiveStartScores = getSeasonStartScores(seasonIdx);
+            seasonStartDate = seasonsData[seasonIdx].startDate;
+        }
+    }
+
+    const sc = { ...effectiveStartScores };
     for (const r of sortedLog) {
+        // 跳过赛季开始前的记录
+        if (seasonStartDate && r['日期'] < seasonStartDate) continue;
         if (beforeMatch ? (r['日期'] >= targetDate) : (r['日期'] > targetDate)) break;
         if (isMatchRecord(r)) {
             const w = r['胜者'], l = r['负者'];
@@ -228,6 +297,7 @@ function wttRenderPersonalStats(playerName) {
         }
     }
 
+    // 计算对手各项分数（已通过 wttGetApproxScoreAtDate 处理赛季继承）
     for (const opp in oppStats) {
         const s = oppStats[opp];
         if (s.lastWinDate) s.preWinScore = wttGetApproxScoreAtDate(opp, s.lastWinDate, sortedLog, startScores, false);
@@ -236,10 +306,47 @@ function wttRenderPersonalStats(playerName) {
         s.curScore = oppCur ? oppCur['当前积分'] : wttGetApproxScoreAtDate(opp, s.lastDate, sortedLog, startScores, false);
     }
 
-    const scores = { ...startScores };
+    // 使用赛季感知的积分状态来计算对手得分/失分
+    const scores = {};
+    let currentSeasonIdx = -1;
+    if (seasonsData && seasonsData.length > 0 && allMatches.length > 0) {
+        const firstMatchDate = allMatches[0]['日期'];
+        for (let si = 0; si < seasonsData.length; si++) {
+            if (firstMatchDate >= seasonsData[si].startDate && firstMatchDate <= seasonsData[si].endDate) {
+                currentSeasonIdx = si; break;
+            }
+        }
+        if (currentSeasonIdx === -1 && firstMatchDate > seasonsData[seasonsData.length - 1].endDate) {
+            currentSeasonIdx = seasonsData.length - 1;
+        }
+        if (currentSeasonIdx >= 0) {
+            const inheritedScores = getSeasonStartScores(currentSeasonIdx);
+            Object.assign(scores, inheritedScores);
+        }
+    }
+    if (Object.keys(scores).length === 0) {
+        Object.assign(scores, startScores);
+    }
+
     const oppPointsGained = {};
     const oppPointsLost = {};
     for (const r of sortedLog) {
+        // 检查是否跨越赛季边界，应用50%继承
+        if (seasonsData && seasonsData.length > 0 && currentSeasonIdx >= 0) {
+            const nextSeasonIdx = currentSeasonIdx + 1;
+            if (nextSeasonIdx < seasonsData.length && r['日期'] >= seasonsData[nextSeasonIdx].startDate) {
+                const seasonEnd = seasonsData[currentSeasonIdx].endDate;
+                const endScores = calculateEndScores(sortedLog, getSeasonStartScores(currentSeasonIdx), seasonsData[currentSeasonIdx].startDate, seasonEnd);
+                const inherited = {};
+                const ss = getSeasonStartScores(currentSeasonIdx);
+                for (const n in ss) { const es = endScores[n] || ss[n]; inherited[n] = ss[n] + (es - ss[n]) * 0.5; }
+                for (const n in initialScoresData.initialScores) { if (!inherited[n]) inherited[n] = initialScoresData.initialScores[n]; }
+                for (const n in scores) { scores[n] = inherited[n] || scores[n]; }
+                for (const n in inherited) { if (!(n in scores)) scores[n] = inherited[n]; }
+                currentSeasonIdx = nextSeasonIdx;
+            }
+        }
+
         if (!isMatchRecord(r)) {
             if (isBonusRecord(r)) {
                 const t = r['对象'];
@@ -473,12 +580,46 @@ function computeWttDailyScoreHistory(playerName, sortedLog, startScores) {
         cur.setDate(cur.getDate() + 1);
     }
 
+    // 预计算每个赛季的继承起始积分
+    const seasonStartScoresMap = [];
+    if (seasonsData && seasonsData.length > 0) {
+        for (let si = 0; si < seasonsData.length; si++) {
+            seasonStartScoresMap.push(getSeasonStartScores(si));
+        }
+    }
+
     for (const { str: dateStr, time: snapTime } of allDates) {
-        const sc = { ...startScores };
+        // 找到当前日期所属的赛季
+        let seasonIdx = -1;
+        if (seasonsData && seasonsData.length > 0) {
+            for (let si = 0; si < seasonsData.length; si++) {
+                const s = seasonsData[si];
+                if (dateStr >= s.startDate && dateStr <= s.endDate) {
+                    seasonIdx = si;
+                    break;
+                }
+            }
+            if (seasonIdx === -1 && dateStr > seasonsData[seasonsData.length - 1].endDate) {
+                seasonIdx = seasonsData.length - 1;
+            }
+        }
+
+        let sc;
+        let seasonStartDate;
+        if (seasonIdx >= 0 && seasonStartScoresMap[seasonIdx]) {
+            sc = { ...seasonStartScoresMap[seasonIdx] };
+            seasonStartDate = seasonsData[seasonIdx].startDate;
+        } else {
+            sc = { ...startScores };
+            seasonStartDate = startDate;
+        }
+
         let mi = 0, bi = 0;
 
         while (mi < matchRecs.length && matchRecs[mi].time <= snapTime) {
             const m = matchRecs[mi];
+            if (seasonIdx >= 0 && m.date < seasonStartDate) { mi++; continue; }
+
             const w = m.winner, l = m.loser;
             if (sc[w] === undefined) sc[w] = 1300;
             if (sc[l] === undefined) sc[l] = 1300;
@@ -496,6 +637,7 @@ function computeWttDailyScoreHistory(playerName, sortedLog, startScores) {
 
         while (bi < bonusRecs.length && bonusRecs[bi].time <= snapTime) {
             const b = bonusRecs[bi];
+            if (seasonIdx >= 0 && b.date < seasonStartDate) { bi++; continue; }
             if (sc[b.target] === undefined) sc[b.target] = 1300;
             sc[b.target] = Math.max(SCORE_FLOOR, sc[b.target] + b.amount);
             bi++;
