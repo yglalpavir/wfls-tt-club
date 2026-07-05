@@ -1,0 +1,231 @@
+[
+  {
+    "id": "d1",
+    "competitionId": "c5",
+    "title": "2026乒乓球单打淘汰赛",
+    "rounds": [
+      {
+        "name": "第一轮",
+        "matches": [
+          {
+            "player1": { "name": "祁子傲", "nameEn": "" },
+            "player2": { "name": "轮空", "nameEn": "" },
+            "score": "",
+            "winner": 1
+          },
+            {
+            "player1": { "name": "夏梓涵", "nameEn": "" },
+            "player2": { "name": "严嘉翔", "nameEn": "" },
+            "score": "1-3",
+            "winner": 2
+          },
+          {
+            "player1": { "name": "张宸瑞", "nameEn": "" },
+            "player2": { "name": "谷子易", "nameEn": "" },
+            "score": "2-3",
+            "winner": 2
+          },
+          {
+            "player1": { "name": "刘天齐", "nameEn": "" },
+            "player2": { "name": "杨苏旭", "nameEn": "" },
+            "score": "0-3",
+            "winner": 2
+          },
+          {
+            "player1": { "name": "付大卫", "nameEn": "" },
+            "player2": { "name": "叶泓鑫", "nameEn": "" },
+            "score": "3-1",
+            "winner": 1
+          },
+          {
+            "player1": { "name": "龚雨煊", "nameEn": "" },
+            "player2": { "name": "王子一", "nameEn": "" },
+            "score": "3-0",
+            "winner": 1
+          },
+          {
+            "player1": { "name": "王成悦", "nameEn": "" },
+            "player2": { "name": "邓以清", "nameEn": "" },
+            "score": "3-0",
+            "winner": 1
+          },
+          {
+            "player1": { "name": "任安喆", "nameEn": "" },
+            "player2": { "name": "曹高畅", "nameEn": "" },
+            "score": "3-0",
+            "winner": 1
+          },
+          {
+            "player1": { "name": "何齐烨", "nameEn": "" },
+            "player2": { "name": "王玥涵", "nameEn": "" },
+            "score": "3-0",
+            "winner": 1
+          },
+          {
+            "player1": { "name": "姜子润", "nameEn": "" },
+            "player2": { "name": "叶孟恒", "nameEn": "" },
+            "score": "3-2",
+            "winner": 1
+          },
+          {
+            "player1": { "name": "任峻贤", "nameEn": "" },
+            "player2": { "name": "丁胜怀", "nameEn": "" },
+            "score": "3-0",
+            "winner": 1
+          },
+          {
+            "player1": { "name": "胡朗诚", "nameEn": "" },
+            "player2": { "name": "刘冠羽", "nameEn": "" },
+            "score": "3-2",
+            "winner": 1
+          },
+          {
+            "player1": { "name": "吴慈航", "nameEn": "" },
+            "player2": { "name": "刘彧铭", "nameEn": "" },
+            "score": "3-1",
+            "winner": 1
+          },
+          {
+            "player1": { "name": "陶锦源", "nameEn": "" },
+            "player2": { "name": "吕曜而", "nameEn": "" },
+            "score": "3-0",
+            "winner": 1
+          },
+          {
+            "player1": { "name": "梅哲宇", "nameEn": "" },
+            "player2": { "name": "肖辰宇", "nameEn": "" },
+            "score": "3-0",
+            "winner": 1
+          },
+          {
+            "player1": { "name": "轮空", "nameEn": "" },
+            "player2": { "name": "陈瑜萱", "nameEn": "" },
+            "score": "",
+            "winner": 2
+          }
+        ]
+      },
+      {
+        "name": "第二轮",
+        "matches": [
+          {
+            "player1": { "name": "祁子傲", "nameEn": "" },
+            "player2": { "name": "严嘉翔", "nameEn": "" },
+            "score": "3-2",
+            "winner": 1
+          },
+          {
+            "player1": { "name": "谷子易", "nameEn": "" },
+            "player2": { "name": "杨苏旭", "nameEn": "" },
+            "score": "3-1",
+            "winner": 1
+          },
+          {
+            "player1": { "name": "付大卫", "nameEn": "" },
+            "player2": { "name": "龚雨煊", "nameEn": "" },
+            "score": "3-1",
+            "winner": 1
+          },
+          {
+            "player1": { "name": "王成悦", "nameEn": "" },
+            "player2": { "name": "任安喆", "nameEn": "" },
+            "score": "3-0",
+            "winner": 1
+          },
+          {
+            "player1": { "name": "何齐烨", "nameEn": "" },
+            "player2": { "name": "姜子润", "nameEn": "" },
+            "score": "0-3",
+            "winner": 2
+          },
+          {
+            "player1": { "name": "任峻贤", "nameEn": "" },
+            "player2": { "name": "胡朗诚", "nameEn": "" },
+            "score": "3-0",
+            "winner": 1
+          },
+          {
+            "player1": { "name": "吴慈航", "nameEn": "" },
+            "player2": { "name": "陶锦源", "nameEn": "" },
+            "score": "2-3",
+            "winner": 2
+          },
+          {
+            "player1": { "name": "梅哲宇", "nameEn": "" },
+            "player2": { "name": "陈瑜萱", "nameEn": "" },
+            "score": "3-0",
+            "winner": 1
+          }
+        ]
+      },
+      {
+        "name": "1/4决赛",
+        "matches": [
+          {
+            "player1": { "name": "祁子傲", "nameEn": "" },
+            "player2": { "name": "谷子易", "nameEn": "" },
+            "score": "1-3",
+            "winner": 2
+          },
+          {
+            "player1": { "name": "付大卫", "nameEn": "" },
+            "player2": { "name": "王成悦", "nameEn": "" },
+            "score": "3-1",
+            "winner": 1
+          },
+          {
+            "player1": { "name": "姜子润", "nameEn": "" },
+            "player2": { "name": "任峻贤", "nameEn": "" },
+            "score": "0-3",
+            "winner": 2
+          },
+          {
+            "player1": { "name": "陶锦源", "nameEn": "" },
+            "player2": { "name": "梅哲宇", "nameEn": "" },
+            "score": "0-3",
+            "winner": 2
+          }
+        ]
+      },
+      {
+        "name": "半决赛",
+        "matches": [
+          {
+            "player1": { "name": "谷子易", "nameEn": "" },
+            "player2": { "name": "付大卫", "nameEn": "" },
+            "score": "3-4",
+            "winner": 2
+          },
+          {
+            "player1": { "name": "任峻贤", "nameEn": "" },
+            "player2": { "name": "梅哲宇", "nameEn": "" },
+            "score": "4-0",
+            "winner": 1
+          }
+        ]
+      },
+      {
+        "name": "决赛",
+        "matches": [
+          {
+            "player1": { "name": "付大卫", "nameEn": "" },
+            "player2": { "name": "任峻贤", "nameEn": "" },
+            "score": "3-4",
+            "winner": 2
+          }
+        ]
+      },
+      {
+        "name": "冠军",
+        "matches": [
+          {
+            "player1": { "name": "任峻贤", "nameEn": "" },
+            "player2": null,
+            "score": null,
+            "winner": 1
+          }
+        ]
+      }
+    ]
+  }
+]

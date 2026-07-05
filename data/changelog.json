@@ -1,5 +1,14 @@
 [
   {
+    "version": "v1.0.6",
+    "date": "2026-07-05",
+    "title": "Competitions页面的draws支持",
+    "tag": "feature",
+    "changes": [
+      "在Competitions页增加了对draws的支持，用户可以查看比赛的签表信息"
+    ]
+  },
+  {
     "version": "v1.0.5",
     "date": "2026-07-03",
     "title": "个人积分趋势图更新，同步新增wtt个人数据页",

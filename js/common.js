@@ -34,7 +34,8 @@ const i18n = {
         personal_stats_page_title: "个人数据 | WFLS Table Tennis Club", personal_stats_tag: "Personal Stats", personal_stats_title: "个人数据", personal_stats_desc: "战绩概览 · 对手分析 · 福星苦主",
         rank_realtime_header: "实时积分", rank_realtime_label: "实时积分",
         changelog_page_title: "更新日志 | WFLS Table Tennis Club", changelog_hero_tag: "Changelog", changelog_hero_title: "更新日志", changelog_hero_desc: "版本历史 · 功能更新 · 问题修复", changelog_list_tag: "Version History", changelog_list_title: "版本历史", changelog_empty: "暂无更新日志",
-        tag_release: "正式发布", tag_feature: "新功能", tag_fix: "修复"
+        tag_release: "正式发布", tag_feature: "新功能", tag_fix: "修复",
+        draws_tab_content: "赛事详情", draws_tab_bracket: "对阵表"
     },
     en: {
         site_title: "WFLS Table Tennis Club | Wuhan Foreign Languages School", nav_home: "Home", nav_news: "News", nav_competitions: "Competitions", nav_contact: "Contact", nav_more: "More...", nav_members: "Core Members", nav_qa: "Q&A", lang_btn: "中文",
@@ -67,12 +68,13 @@ const i18n = {
         personal_stats_page_title: "Personal Stats | WFLS Table Tennis Club", personal_stats_tag: "Personal Stats", personal_stats_title: "Personal Stats", personal_stats_desc: "Overview 路 Opponents 路 Lucky Stars & Nemeses",
         rank_realtime_header: "Real-time", rank_realtime_label: "Live Ranking",
         changelog_page_title: "Changelog | WFLS Table Tennis Club", changelog_hero_tag: "Changelog", changelog_hero_title: "Changelog", changelog_hero_desc: "Version History 路 Features 路 Bug Fixes", changelog_list_tag: "Version History", changelog_list_title: "Version History", changelog_empty: "No changelog entries yet",
-        tag_release: "Release", tag_feature: "Feature", tag_fix: "Fix"
+        tag_release: "Release", tag_feature: "Feature", tag_fix: "Fix",
+        draws_tab_content: "Details", draws_tab_bracket: "Bracket"
     }
 };
 
 let currentLang = 'zh';
-let newsData = [], competitionsData = [], qaData = [], changelogData = [], aboutData = null, membersData = [], scoreLogData = [];
+let newsData = [], competitionsData = [], qaData = [], changelogData = [], aboutData = null, membersData = [], scoreLogData = [], drawsData = [];
 let rankingTimeline = [], currentTimeIndex = 0, currentDisplayData = [];
 let currentSortKey = '当前积分', currentSortDir = 'desc', dataLoaded = false;
 let newsCurrentPage = 1, competitionsCurrentPage = 1, qaCurrentPage = 1;
@@ -116,6 +118,19 @@ function initSearch() {
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && searchOverlay && searchOverlay.classList.contains('active')) cs(); });
     let dt; searchInput.addEventListener('input', () => { const q = searchInput.value.trim(); if (q.length > 0) searchClear.style.display = 'flex'; else { searchClear.style.display = 'none'; showSearchPlaceholder(); return; } clearTimeout(dt); dt = setTimeout(() => performSearch(q), 200); });
     searchClear.addEventListener('click', () => { searchInput.value = ''; searchClear.style.display = 'none'; showSearchPlaceholder(); searchInput.focus(); });
+    // 管理员密钥检测：在搜索框按回车时检查
+    searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            const q = searchInput.value.trim();
+            if (q && aboutData && aboutData.adminKey && q === aboutData.adminKey) {
+                searchOverlay.classList.remove('active');
+                body.style.overflow = '';
+                searchInput.value = '';
+                searchClear.style.display = 'none';
+                window.location.href = 'admin.html';
+            }
+        }
+    });
 }
 function showSearchPlaceholder() { if (!searchResults) return; searchResults.innerHTML = `<div class="search-placeholder"><i class="fa-solid fa-magnifying-glass"></i><p>输入关键词开始搜索</p><p class="search-hint">支持搜索标题、内容、姓名等</p></div>`; }
 function performSearch(query) { if (!searchResults) return; const results = []; if (newsData && newsData.length) newsData.forEach(item => { const s = calcScore(query, item.title, item.excerpt || '', item.content || ''); if (s > 0) results.push({ type: 'news', typeLabel: i18n[currentLang].search_type_news, title: item.title, excerpt: item.excerpt || item.content || '', date: item.date, link: `detail.html?type=news&id=${item.id}`, score: s }); }); if (competitionsData && competitionsData.length) competitionsData.forEach(item => { const s = calcScore(query, item.title, item.excerpt || '', item.content || ''); if (s > 0) results.push({ type: 'competition', typeLabel: i18n[currentLang].search_type_competition, title: item.title, excerpt: item.excerpt || item.content || '', date: item.date, link: `detail.html?type=competition&id=${item.id}`, score: s }); }); if (membersData && membersData.length) membersData.forEach(m => { const s = calcScore(query, m.name, m.role, m.description); if (s > 0) results.push({ type: 'member', typeLabel: i18n[currentLang].search_type_member, title: `${m.name} - ${m.role}`, excerpt: m.description || '', date: '', link: 'members.html', score: s }); }); if (currentDisplayData && currentDisplayData.length) currentDisplayData.forEach(p => { const s = calcScore(query, p['姓名'], String(p['当前积分'] || ''), ''); if (s > 0) results.push({ type: 'ranking', typeLabel: i18n[currentLang].search_type_ranking, title: `${p['姓名']} - ${(p['当前积分'] || 0).toFixed(1)}分`, excerpt: `排名：${p.rank || '-'} | 胜率：${p['胜率'] || '0%'}`, date: '', link: 'ranking.html', score: s }); }); if (qaData && qaData.length) qaData.forEach(item => { const s = calcScore(query, item.title, item.excerpt || '', item.content || ''); if (s > 0) results.push({ type: 'qa', typeLabel: i18n[currentLang].search_type_qa, title: item.title, excerpt: item.excerpt || item.content || '', date: item.date, link: `detail.html?type=qa&id=${item.id}`, score: s }); }); if (changelogData && changelogData.length) changelogData.forEach(item => { const changesText = item.changes ? item.changes.join(' ') : ''; const s = calcScore(query, item.title, item.version, changesText); if (s > 0) results.push({ type: 'changelog', typeLabel: i18n[currentLang].search_type_changelog, title: `${item.version} - ${item.title}`, excerpt: item.changes ? item.changes.slice(0, 3).join(' | ') : '', date: item.date, link: 'changelog.html', score: s }); }); results.sort((a, b) => b.score - a.score); if (!results.length) { searchResults.innerHTML = `<div class="search-no-results"><i class="fa-solid fa-face-frown"></i><p>${i18n[currentLang].search_no_results}</p></div>`; return; } searchResults.innerHTML = `<div class="search-result-list">${results.map(r => `<div class="search-result-item" onclick="window.location.href='${r.link}'"><span class="search-result-type ${r.type}">${r.typeLabel}</span><div class="search-result-title">${hlMatch(r.title, query)}</div><div class="search-result-excerpt">${hlMatch(r.excerpt.substring(0, 100), query)}</div>${r.date ? `<div style="font-size:0.7rem;color:var(--text-muted);margin-top:4px;">${r.date}</div>` : ''}</div>`).join('')}</div>`; }
@@ -216,6 +231,8 @@ async function loadAboutData() { try { aboutData = await (await fetch('data/abou
 async function loadMembersData() { try { membersData = await (await fetch('data/members.json')).json(); } catch(e) { membersData = []; } if (typeof renderCoreMembers === 'function') { renderCoreMembers(); if (typeof renderAllMembersPage === 'function') renderAllMembersPage(); } }
 async function loadNewsData() { try { newsData = await (await fetch('data/news.json')).json(); } catch(e) { newsData = []; } if (typeof renderAllNews === 'function') renderAllNews(); checkAllDataLoaded(); }
 async function loadCompetitionsData() { try { competitionsData = await (await fetch('data/competitions.json')).json(); } catch(e) { competitionsData = []; } if (typeof renderAllCompetitions === 'function') renderAllCompetitions(); checkAllDataLoaded(); }
+async function loadDrawsData() { try { drawsData = await (await fetch('data/draws.json')).json(); } catch(e) { drawsData = []; } checkAllDataLoaded(); }
+function getDrawsForCompetition(competitionId) { if (!drawsData || !drawsData.length) return null; return drawsData.find(d => d.competitionId === competitionId) || null; }
 async function loadQaData() { try { qaData = await (await fetch('data/qa.json')).json(); } catch(e) { qaData = []; } if (typeof renderAllQa === 'function') renderAllQa(); }
 async function loadChangelogData() { try { changelogData = await (await fetch('data/changelog.json')).json(); } catch(e) { changelogData = []; } if (typeof renderAllChangelog === 'function') renderAllChangelog(); }
 async function loadPlayerTagsData() { try { playerTagsData = await (await fetch('data/player-tags.json')).json(); } catch(e) { playerTagsData = null; } }
@@ -316,7 +333,318 @@ function updateDetailPage() {
             mc.appendChild(mi);
         });
     }
+
+    // Draws toggle for competitions
+    const drawsToggleContainer = document.getElementById('detailDrawsToggle');
+    const drawsContainer = document.getElementById('detailDraws');
+    if (drawsToggleContainer && drawsContainer) {
+        if (type === 'competition') {
+            const draws = getDrawsForCompetition(id);
+            if (draws) {
+                // Show toggle buttons
+                drawsToggleContainer.style.display = 'flex';
+                drawsToggleContainer.innerHTML = `
+                    <button class="draws-tab-btn active" data-tab="content" data-i18n="draws_tab_content">${i18n[currentLang].draws_tab_content}</button>
+                    <button class="draws-tab-btn" data-tab="draws" data-i18n="draws_tab_bracket">${i18n[currentLang].draws_tab_bracket}</button>
+                `;
+                // Bind toggle events
+                const contentSection = document.getElementById('detailContent');
+                const mediaSection = document.getElementById('detailMedia');
+                drawsToggleContainer.querySelectorAll('.draws-tab-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        drawsToggleContainer.querySelectorAll('.draws-tab-btn').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        const tab = btn.dataset.tab;
+                        if (tab === 'content') {
+                            contentSection.style.display = '';
+                            if (mediaSection) mediaSection.style.display = '';
+                            drawsContainer.style.display = 'none';
+                        } else {
+                            contentSection.style.display = 'none';
+                            if (mediaSection) mediaSection.style.display = 'none';
+                            drawsContainer.style.display = '';
+                        }
+                    });
+                });
+                // Render draws
+                drawsContainer.innerHTML = renderBracketHTML(draws);
+                drawsContainer.style.display = 'none';
+            } else {
+                drawsToggleContainer.style.display = 'none';
+                drawsContainer.innerHTML = '';
+                drawsContainer.style.display = 'none';
+            }
+        } else {
+            drawsToggleContainer.style.display = 'none';
+            drawsContainer.innerHTML = '';
+            drawsContainer.style.display = 'none';
+        }
+    }
 }
+
+function getPlayerName(p) {
+    if (!p) return '—';
+    if (typeof p === 'string') return p;
+    return p.name || '—';
+}
+function getPlayerNameEn(p) {
+    if (!p || typeof p === 'string') return '';
+    return p.nameEn || '';
+}
+
+function renderMatchCardHTML(m) {
+    const p1 = m.player1;
+    const p2 = m.player2;
+    const score = m.score;
+    const winner = m.winner;
+    const p1Name = getPlayerName(p1);
+    const p1En = getPlayerNameEn(p1);
+    const p2Name = getPlayerName(p2);
+    const p2En = getPlayerNameEn(p2);
+    const p1Won = winner === 1;
+    const p2Won = winner === 2;
+
+    let html = '<div class="bracket-match-card">';
+    // Player 1
+    html += `<div class="bracket-player ${p1Won ? 'bracket-winner' : (p2Won ? 'bracket-loser' : '')}">`;
+    html += `<span class="bracket-player-name">${escapeHtml(p1Name)}</span>`;
+    if (p1En) html += `<span class="bracket-player-name-en">${escapeHtml(p1En)}</span>`;
+    if (score && p1Won) html += `<span class="bracket-score-tag win">${escapeHtml(score)}</span>`;
+    else if (score && p2Won) html += `<span class="bracket-score-tag loss">${escapeHtml(score)}</span>`;
+    html += '</div>';
+
+    // VS divider / opponent
+    if (p2Name && p2Name !== '—') {
+        html += '<div class="bracket-vs"></div>';
+        html += `<div class="bracket-player ${p2Won ? 'bracket-winner' : (p1Won ? 'bracket-loser' : '')}">`;
+        html += `<span class="bracket-player-name">${escapeHtml(p2Name)}</span>`;
+        if (p2En) html += `<span class="bracket-player-name-en">${escapeHtml(p2En)}</span>`;
+        if (score && p2Won) html += `<span class="bracket-score-tag win">${escapeHtml(score)}</span>`;
+        else if (score && p1Won) html += `<span class="bracket-score-tag loss">${escapeHtml(score)}</span>`;
+        html += '</div>';
+    }
+    html += '</div>';
+    return html;
+}
+
+function gcd(a, b) { return b === 0 ? a : gcd(b, a % b); }
+function lcm(a, b) { return (a * b) / gcd(a, b); }
+
+function renderBracketHTML(draws) {
+    if (!draws || !draws.rounds || !draws.rounds.length) return '<p class="draws-empty">暂无对阵数据</p>';
+
+    const allRounds = draws.rounds;
+    // Separate real competition rounds from champion display rounds
+    const isChampionRound = (round) => {
+        const ms = round.matches || [];
+        return ms.length > 0 && ms.every(m => !m.player2 && !m.score);
+    };
+    const bracketRounds = [];
+    const championRounds = [];
+    for (const r of allRounds) {
+        if (isChampionRound(r)) {
+            championRounds.push(r);
+        } else {
+            bracketRounds.push(r);
+        }
+    }
+
+    const numRounds = bracketRounds.length;
+    if (numRounds === 0) return renderSimpleDrawsHTML(draws);
+
+    const isKO = bracketRounds[0].matches.length >= 2;
+    if (!isKO) return renderSimpleDrawsHTML(draws);
+
+    // Calculate totalLanes as LCM of all round match counts for integer grid spans
+    let totalLanes = 1;
+    for (const round of bracketRounds) {
+        totalLanes = lcm(totalLanes, (round.matches || []).length || 1);
+    }
+    const baseLaneHeight = 66;
+    const maxTotalHeight = 2400;
+    const laneHeight = Math.min(baseLaneHeight, Math.floor(maxTotalHeight / totalLanes));
+
+    // ---- Precompute slot positions for every round ----
+    const roundSlots = [];
+    for (let ri = 0; ri < numRounds; ri++) {
+        const matches = bracketRounds[ri].matches || [];
+        const span = totalLanes / matches.length;
+        const slots = [];
+        for (let mi = 0; mi < matches.length; mi++) {
+            const rowStart = mi * span + 1;
+            const rowEnd = (mi + 1) * span + 1;
+            // center of the match slot in px (top of the grid)
+            const centerPx = ((rowStart + rowEnd - 1) / 2 - 1) * laneHeight + laneHeight / 2;
+            slots.push({ rowStart, rowEnd, centerPx, matchIndex: mi });
+        }
+        roundSlots.push(slots);
+    }
+
+    let html = '';
+    if (draws.title) {
+        html += `<h3 class="draws-title">${escapeHtml(draws.title)}</h3>`;
+    }
+
+    html += '<div class="bracket-container"><div class="bracket-scroll"><div class="bracket-wrapper">';
+
+    for (let ri = 0; ri < numRounds; ri++) {
+        const round = bracketRounds[ri];
+        const matches = round.matches || [];
+        const spanPerMatch = totalLanes / matches.length;
+
+        // ---- Round column ----
+        html += '<div class="bracket-round">';
+        html += `<div class="bracket-round-label">${escapeHtml(round.name)}</div>`;
+        html += `<div class="bracket-round-matches" style="grid-template-rows:repeat(${totalLanes},${laneHeight}px);">`;
+
+        for (let mi = 0; mi < matches.length; mi++) {
+            const m = matches[mi];
+            const rowStart = mi * spanPerMatch + 1;
+            const rowEnd = (mi + 1) * spanPerMatch + 1;
+            html += `<div class="bracket-slot" style="grid-row:${rowStart}/${rowEnd};" data-round="${ri}" data-match="${mi}">`;
+            html += renderMatchCardHTML(m);
+            html += '</div>';
+        }
+
+        html += '</div></div>';
+
+        // ---- Connector column with smart SVG advancement lines ----
+        if (ri < numRounds - 1) {
+            const curSlots = roundSlots[ri];
+            const nextSlots = roundSlots[ri + 1];
+            const nextCount = nextSlots.length;
+            const curCount = curSlots.length;
+            const feedRatio = curCount / nextCount; // how many cur matches feed into 1 next match
+
+            html += '<div class="bracket-round bracket-connector-col">';
+            html += '<div class="bracket-round-label bracket-connector-spacer"></div>';
+            html += `<div class="bracket-connectors" style="grid-template-rows:repeat(${totalLanes},${laneHeight}px);">`;
+
+            for (let ni = 0; ni < nextCount; ni++) {
+                const ns = nextSlots[ni];
+                // Determine which current-round matches feed into this next match
+                const feedStartIdx = Math.round(ni * feedRatio);
+                const feedEndIdx = Math.round((ni + 1) * feedRatio);
+                const feeders = curSlots.filter(s => s.matchIndex >= feedStartIdx && s.matchIndex < feedEndIdx);
+
+                const groupHeight = (ns.rowEnd - ns.rowStart) * laneHeight;
+
+                html += `<div class="bracket-connector-group" style="grid-row:${ns.rowStart}/${ns.rowEnd};">`;
+
+                if (feeders.length >= 2) {
+                    // Multiple feeders: draw a vertical stem + horizontal line using SVG
+                    const feederTopPx = feeders[0].centerPx;
+                    const feederBotPx = feeders[feeders.length - 1].centerPx;
+                    const stemTop = feederTopPx - (ns.rowStart - 1) * laneHeight;
+                    const stemBot = feederBotPx - (ns.rowStart - 1) * laneHeight;
+                    const stemMid = (stemTop + stemBot) / 2;
+
+                    html += `<svg class="bracket-connector-svg" width="28" height="${groupHeight}" viewBox="0 0 28 ${groupHeight}" preserveAspectRatio="none">`;
+                    // Vertical stem connecting the centers of all feeding matches
+                    html += `<line x1="2" y1="${stemTop}" x2="2" y2="${stemBot}" class="bracket-connector-stem"/>`;
+                    // Horizontal line from stem midpoint to right edge
+                    html += `<line x1="2" y1="${stemMid}" x2="26" y2="${stemMid}" class="bracket-connector-line"/>`;
+                    // Small arrow at the right end
+                    html += `<polygon points="26,${stemMid - 3} 28,${stemMid} 26,${stemMid + 3}" class="bracket-connector-arrow"/>`;
+                    html += '</svg>';
+                } else if (feeders.length === 1) {
+                    // Single feeder (e.g., bye advancing): just a horizontal line
+                    const feederPx = feeders[0].centerPx;
+                    const midY = feederPx - (ns.rowStart - 1) * laneHeight;
+                    html += `<svg class="bracket-connector-svg" width="28" height="${groupHeight}" viewBox="0 0 28 ${groupHeight}" preserveAspectRatio="none">`;
+                    html += `<line x1="0" y1="${midY}" x2="26" y2="${midY}" class="bracket-connector-line"/>`;
+                    html += `<polygon points="26,${midY - 3} 28,${midY} 26,${midY + 3}" class="bracket-connector-arrow"/>`;
+                    html += '</svg>';
+                } else {
+                    // No feeders: empty
+                    html += '<div class="bracket-connector-line"></div>';
+                }
+
+                html += '</div>';
+            }
+            html += '</div></div>';
+        }
+    }
+
+    html += '</div></div></div>';
+
+    // Render champion display(s) after the bracket
+    for (const cr of championRounds) {
+        html += '<div class="bracket-champion-section">';
+        html += `<div class="bracket-champion-label">${escapeHtml(cr.name)}</div>`;
+        for (const m of (cr.matches || [])) {
+            const p1Name = getPlayerName(m.player1);
+            html += `<div class="bracket-champion-card">`;
+            html += `<span class="bracket-champion-crown"><i class="fa-solid fa-crown"></i></span>`;
+            html += `<span class="bracket-champion-name">${escapeHtml(p1Name)}</span>`;
+            html += `</div>`;
+        }
+        html += '</div>';
+    }
+
+    return html;
+}
+
+function renderSimpleDrawsHTML(draws) {
+    let html = '';
+    if (draws.title) {
+        html += `<h3 class="draws-title">${escapeHtml(draws.title)}</h3>`;
+    }
+    // Filter out champion display rounds (player2 is null, no score)
+    const isChampionRound = (round) => {
+        const ms = round.matches || [];
+        return ms.length > 0 && ms.every(m => !m.player2 && !m.score);
+    };
+    const realRounds = (draws.rounds || []).filter(r => !isChampionRound(r));
+    realRounds.forEach((round, ri) => {
+        html += `<div class="draws-round">`;
+        html += `<h4 class="draws-round-name">${escapeHtml(round.name || '第' + (ri + 1) + '轮')}</h4>`;
+        if (round.matches && round.matches.length) {
+            html += `<div class="draws-matches">`;
+            round.matches.forEach(m => {
+                const p1Name = getPlayerName(m.player1);
+                const p2Name = getPlayerName(m.player2);
+                const p1Won = m.winner === 1;
+                const p2Won = m.winner === 2;
+                html += `<div class="draws-match glass-card">`;
+                html += `<div class="draws-match-players">`;
+                html += `<span class="draws-player ${p1Won ? 'draws-winner' : ''}">${escapeHtml(p1Name)}</span>`;
+                html += `<span class="draws-vs">VS</span>`;
+                html += `<span class="draws-player ${p2Won ? 'draws-winner' : ''}">${escapeHtml(p2Name)}</span>`;
+                html += `</div>`;
+                if (m.score) {
+                    html += `<div class="draws-match-score">${escapeHtml(m.score)}</div>`;
+                }
+                html += `</div>`;
+            });
+            html += `</div>`;
+        }
+        html += `</div>`;
+    });
+    // Champion display for simple view
+    const championRounds = (draws.rounds || []).filter(r => isChampionRound(r));
+    for (const cr of championRounds) {
+        html += '<div class="bracket-champion-section">';
+        html += `<div class="bracket-champion-label">${escapeHtml(cr.name)}</div>`;
+        for (const m of (cr.matches || [])) {
+            const p1Name = getPlayerName(m.player1);
+            html += `<div class="bracket-champion-card">`;
+            html += `<span class="bracket-champion-crown"><i class="fa-solid fa-crown"></i></span>`;
+            html += `<span class="bracket-champion-name">${escapeHtml(p1Name)}</span>`;
+            html += `</div>`;
+        }
+        html += '</div>';
+    }
+    return html;
+}
+
+function escapeHtml(str) {
+    if (!str) return '';
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+}
+
 function initPdfViewer() { const btn = document.getElementById('pdfViewBtn'), ctr = document.getElementById('pdfPreviewContainer'), ph = document.getElementById('pdfPlaceholder'), vw = document.getElementById('pdfViewer'); if (!btn) return; let loaded = false; btn.addEventListener('click', () => { if (!loaded) { btn.disabled = true; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Loading...'; vw.src = vw.getAttribute('data-src'); loaded = true; vw.onload = () => { btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> ${i18n[currentLang].pdf_preview_btn}`; btn.disabled = false; }; setTimeout(() => { if (btn.disabled) { btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> ${i18n[currentLang].pdf_preview_btn}`; btn.disabled = false; } }, 10000); } if (ctr.style.display === 'none' || !ctr.style.display) { ctr.style.display = 'block'; ph.style.display = 'none'; } else { ctr.style.display = 'none'; ph.style.display = 'flex'; } }); }
 
 function updateSideNavHighlight() { const links = document.querySelectorAll('.side-nav-link'); const pos = window.scrollY + 150; let cur = 'home'; [{ id:'home', s:'#home' },{ id:'history', s:'#history' },{ id:'philosophy', s:'#philosophy' },{ id:'activities', s:'#activities' },{ id:'core-members', s:'#core-members' },{ id:'news', s:'#news' },{ id:'competitions', s:'#competitions' }].forEach(sec => { const el = document.querySelector(sec.s); if (el && pos >= el.offsetTop && pos < el.offsetTop+el.offsetHeight) cur = sec.id; }); links.forEach(l => { l.classList.remove('active'); if (l.getAttribute('data-section') === cur) l.classList.add('active'); }); }

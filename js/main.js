@@ -5,7 +5,7 @@
 async function loadRankingDataForViz() { try { await Promise.all([loadInitialScores(), loadEventCoefficients(), loadSeasons(), loadScoreLogForViz(), loadPlayerTagsData()]); if (!initialScoresData || !eventCoefficients || !seasonsData) throw new Error('数据加载失败'); rankingTimeline = calculateAllRankingsWithSeasons(scoreLogData, initialScoresData.initialScores, seasonsData); const rt = calculateRealtimeRanking(); if (rt) rankingTimeline.push(rt); return true; } catch(e) { console.error('DataViz: 排名计算失败', e); rankingTimeline = []; return false; } }
 
 function initPage() {
-    loadAboutData(); loadMembersData(); loadNewsData(); loadCompetitionsData(); loadQaData(); loadChangelogData();
+    loadAboutData(); loadMembersData(); loadNewsData(); loadCompetitionsData(); loadDrawsData(); loadQaData(); loadChangelogData();
     initCommon();
     const isRanking = !!document.getElementById('rankingFullBody'), isDataViz = !!document.getElementById('pointsTrendChart'), isWttDataViz = !!document.getElementById('wttPointsTrendChart'), isPersonalStats = !!document.getElementById('personalPlayerSelect'), isWttPersonalStats = !!document.getElementById('wttPersonalPlayerSelect') && !document.getElementById('wttPointsTrendChart');
     if (isRanking) { loadRankingData(); }

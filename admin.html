@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Admin Panel | WFLS Table Tennis Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ========================================
+           Admin Panel Styles
+           ======================================== */
+        :root {
+            --admin-sidebar-w: 260px;
+            --admin-topbar-h: 60px;
+            --admin-accent: #007bff;
+            --admin-bg: #f0f2f5;
+            --admin-card: #ffffff;
+            --admin-border: #e2e8f0;
+            --admin-text: #1a1a2e;
+            --admin-text-sec: #4a5568;
+            --admin-text-muted: #8899aa;
+            --admin-danger: #ff4d4f;
+            --admin-success: #52c41a;
+            --admin-warning: #f0a500;
+            --admin-radius: 12px;
+            --admin-radius-sm: 8px;
+            --admin-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+            --admin-shadow-lg: 0 4px 16px rgba(0,0,0,0.08);
+        }
+        body.dark-mode {
+            --admin-bg: #151821;
+            --admin-card: #1f2230;
+            --admin-border: #2a2e3d;
+            --admin-text: #e4e6ed;
+            --admin-text-sec: #aeb4c2;
+            --admin-text-muted: #6e7686;
+            --admin-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            --admin-shadow-lg: 0 4px 16px rgba(0,0,0,0.5);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans SC', sans-serif; background: var(--admin-bg); color: var(--admin-text); min-height: 100vh; }
+        body.admin-page { overflow: auto; }
+
+        /* Top Bar */
+        .admin-topbar {
+            position: fixed; top: 0; left: 0; right: 0; height: var(--admin-topbar-h);
+            background: var(--admin-card); border-bottom: 1px solid var(--admin-border);
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 24px; z-index: 100; box-shadow: var(--admin-shadow);
+            backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+        }
+        .admin-topbar-left { display: flex; align-items: center; gap: 16px; }
+        .admin-logo {
+            font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.1rem;
+            color: var(--primary-blue); white-space: nowrap;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .admin-logo i { font-size: 1.3rem; }
+        .admin-breadcrumb {
+            font-size: 0.82rem; color: var(--admin-text-muted);
+            padding-left: 16px; border-left: 1px solid var(--admin-border);
+        }
+        .admin-topbar-right { display: flex; align-items: center; gap: 10px; }
+        .admin-btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 8px 16px; border-radius: 20px; border: 1px solid var(--admin-border);
+            background: var(--admin-card); color: var(--admin-text-sec);
+            cursor: pointer; font-size: 0.82rem; font-weight: 500;
+            transition: all 0.2s; font-family: 'Noto Sans SC', sans-serif;
+            white-space: nowrap;
+        }
+        .admin-btn:hover { border-color: var(--primary-blue); color: var(--primary-blue); background: var(--primary-pale); }
+        .admin-btn.primary { background: var(--primary-blue); color: #fff; border-color: var(--primary-blue); }
+        .admin-btn.primary:hover { background: var(--primary-dark); }
+        .admin-btn.success { background: var(--admin-success); color: #fff; border-color: var(--admin-success); }
+        .admin-btn.success:hover { opacity: 0.85; }
+        .admin-btn.danger { color: var(--admin-danger); border-color: var(--admin-danger); }
+        .admin-btn.danger:hover { background: rgba(255,77,79,0.08); }
+        .admin-btn.sm { padding: 5px 12px; font-size: 0.75rem; border-radius: 14px; }
+
+        /* Sidebar */
+        .admin-sidebar {
+            position: fixed; top: var(--admin-topbar-h); left: 0; bottom: 0;
+            width: var(--admin-sidebar-w); background: var(--admin-card);
+            border-right: 1px solid var(--admin-border);
+            overflow-y: auto; z-index: 90;
+            display: flex; flex-direction: column;
+        }
+        .admin-sidebar-section {
+            padding: 12px 16px 4px;
+            font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 1.5px; color: var(--admin-text-muted);
+            font-family: 'Poppins', sans-serif;
+        }
+        .admin-file-list { list-style: none; padding: 4px 8px; }
+        .admin-file-item {
+            display: flex; align-items: center; gap: 10px;
+            padding: 10px 14px; border-radius: 8px; cursor: pointer;
+            font-size: 0.85rem; color: var(--admin-text-sec);
+            transition: all 0.15s; font-weight: 500; margin-bottom: 2px;
+        }
+        .admin-file-item:hover { background: var(--primary-pale); color: var(--primary-blue); }
+        .admin-file-item.active { background: var(--primary-pale); color: var(--primary-blue); font-weight: 600; }
+        .admin-file-item i { width: 18px; text-align: center; font-size: 0.85rem; opacity: 0.7; }
+        .admin-file-item.active i { opacity: 1; }
+        .admin-file-badge {
+            margin-left: auto; font-size: 0.65rem; background: var(--bg-lighter);
+            color: var(--admin-text-muted); padding: 2px 8px; border-radius: 10px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .admin-sidebar-footer {
+            margin-top: auto; padding: 16px; border-top: 1px solid var(--admin-border);
+            display: flex; flex-direction: column; gap: 8px;
+        }
+        .admin-sidebar-hint { font-size: 0.7rem; color: var(--admin-text-muted); text-align: center; line-height: 1.5; }
+
+        /* Main Content */
+        .admin-main {
+            margin-left: var(--admin-sidebar-w); margin-top: var(--admin-topbar-h);
+            padding: 28px 32px 40px; min-height: calc(100vh - var(--admin-topbar-h));
+        }
+        .admin-panel {
+            background: var(--admin-card); border-radius: var(--admin-radius);
+            box-shadow: var(--admin-shadow); overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .admin-panel-header {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 16px 24px; border-bottom: 1px solid var(--admin-border);
+            gap: 12px; flex-wrap: wrap;
+        }
+        .admin-panel-title {
+            font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.05rem;
+            color: var(--admin-text); display: flex; align-items: center; gap: 10px;
+        }
+        .admin-panel-title i { color: var(--primary-blue); }
+        .admin-panel-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+        .admin-panel-body {
+            padding: 20px 24px; max-height: calc(100vh - 380px); overflow-y: auto;
+        }
+
+        /* ---- v2 New Styles ---- */
+
+        /* Readonly note */
+        .admin-readonly-note {
+            padding: 16px 20px; border-radius: var(--admin-radius-sm);
+            background: rgba(240,165,0,0.08); border: 1px solid rgba(240,165,0,0.2);
+            color: var(--admin-warning); font-size: 0.85rem; margin-bottom: 16px;
+            display: flex; align-items: center; gap: 8px;
+        }
+
+        /* Data Table */
+        .admin-count-info {
+            font-size: 0.82rem; color: var(--admin-text-muted); margin-bottom: 12px;
+            font-weight: 500;
+        }
+        .admin-table-wrapper {
+            overflow-x: auto; border-radius: var(--admin-radius-sm);
+            border: 1px solid var(--admin-border); margin-bottom: 8px;
+        }
+        .admin-data-table {
+            width: 100%; border-collapse: collapse; font-size: 0.82rem;
+        }
+        .admin-data-table thead { background: var(--bg-lighter); }
+        .admin-data-table th {
+            padding: 10px 12px; text-align: left; font-weight: 600;
+            color: var(--admin-text-sec); font-size: 0.78rem; white-space: nowrap;
+            border-bottom: 1px solid var(--admin-border);
+        }
+        .admin-data-table td {
+            padding: 9px 12px; border-bottom: 1px solid var(--admin-border);
+            color: var(--admin-text); vertical-align: middle;
+        }
+        .admin-data-table tbody tr:hover { background: rgba(0,123,255,0.03); }
+        .admin-data-table .row-num { color: var(--admin-text-muted); font-size: 0.75rem; text-align: center; width: 40px; }
+        .admin-data-table code {
+            font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
+            background: var(--bg-lighter); padding: 2px 6px; border-radius: 3px;
+        }
+        .null-val { color: var(--admin-text-muted); font-style: italic; }
+        .obj-val { color: var(--admin-text-muted); font-size: 0.78rem; }
+
+        /* KV Section */
+        .admin-kv-section { margin-bottom: 16px; }
+        .admin-section-title {
+            font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.85rem;
+            color: var(--admin-text-sec); margin-bottom: 10px;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .admin-kv-row {
+            display: flex; align-items: flex-start; gap: 16px; padding: 8px 12px;
+            border-radius: 6px; transition: background 0.15s;
+        }
+        .admin-kv-row:hover { background: var(--bg-lighter); }
+        .admin-kv-key {
+            font-weight: 600; font-size: 0.82rem; color: var(--admin-text);
+            min-width: 140px; flex-shrink: 0;
+        }
+        .admin-kv-val {
+            font-size: 0.82rem; color: var(--admin-text-sec); word-break: break-all;
+            font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+        }
+        .admin-kv-table { margin-top: 8px; }
+
+        /* Readonly JSON Tree */
+        .json-tree-readonly {
+            background: var(--bg-lighter); border-radius: var(--admin-radius-sm);
+            padding: 16px; font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+            font-size: 0.8rem; line-height: 1.8; overflow-x: auto; max-height: 500px;
+            overflow-y: auto; border: 1px solid var(--admin-border);
+        }
+        .json-node-ro { display: inline; }
+        .json-child-ro { padding-left: 20px; border-left: 1px dashed var(--admin-border); margin-left: 4px; }
+        .json-line-ro { white-space: nowrap; }
+        .json-k-ro { color: #881391; font-weight: 500; }
+        body.dark-mode .json-k-ro { color: #c586c0; }
+        .json-v-ro { font-weight: 400; }
+        .json-str-ro { color: #0a6e2e; }
+        body.dark-mode .json-str-ro { color: #6a9955; }
+        .json-num-ro { color: #0550c2; }
+        body.dark-mode .json-num-ro { color: #79c0ff; }
+        .json-bool-ro { color: #a65e2e; }
+        body.dark-mode .json-bool-ro { color: #dcdcaa; }
+        .json-null-ro { color: var(--admin-text-muted); font-style: italic; }
+        .json-b-ro { color: var(--admin-text-muted); font-weight: 600; }
+        .json-comma-ro { color: var(--admin-text-muted); }
+        .json-more-ro { color: var(--admin-text-muted); font-style: italic; font-size: 0.78rem; }
+        .json-ro-toggle { color: var(--admin-text-muted); user-select: none; }
+
+        /* Add Form v2 */
+        .admin-add-form {
+            padding: 24px 28px !important; margin-top: 20px;
+            border: 2px dashed var(--admin-border);
+        }
+        .admin-add-title {
+            font-size: 1rem; font-weight: 700; margin-bottom: 20px;
+            display: flex; align-items: center; gap: 8px; color: var(--admin-text);
+        }
+        .admin-add-title i { color: var(--admin-success); }
+        .admin-form-fields {
+            display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 20px;
+        }
+        @media (min-width: 768px) {
+            .admin-form-fields { grid-template-columns: 1fr 1fr; }
+        }
+        .admin-form-field {
+            display: flex; flex-direction: column; gap: 6px;
+        }
+        .admin-form-label {
+            font-size: 0.82rem; font-weight: 600; color: var(--admin-text);
+        }
+        .required-star { color: var(--admin-danger); }
+        .optional-tag { color: var(--admin-text-muted); font-weight: 400; font-size: 0.7rem; }
+        .admin-form-note { font-size: 0.7rem; color: var(--admin-text-muted); font-weight: 400; }
+        .admin-form-input {
+            font-family: 'Noto Sans SC', 'JetBrains Mono', sans-serif; font-size: 0.85rem;
+            padding: 9px 14px; border: 1px solid var(--admin-border); border-radius: 8px;
+            background: var(--admin-card); color: var(--admin-text); outline: none;
+            transition: border-color 0.2s; width: 100%;
+        }
+        .admin-form-input:focus { border-color: var(--primary-blue); box-shadow: 0 0 0 3px rgba(0,123,255,0.1); }
+        .admin-form-textarea { resize: vertical; min-height: 80px; }
+        .admin-form-info {
+            padding: 10px 14px; background: rgba(240,165,0,0.06);
+            border-radius: 6px; font-size: 0.8rem; color: var(--admin-warning);
+            border: 1px solid rgba(240,165,0,0.15);
+        }
+        .admin-form-buttons {
+            display: flex; gap: 10px; justify-content: flex-end; padding-top: 8px;
+            border-top: 1px solid var(--admin-border);
+        }
+
+        /* Raw JSON Panel v2 - FIX SCROLLING */
+        .raw-json-panel {
+            background: var(--admin-card); border-radius: var(--admin-radius);
+            box-shadow: var(--admin-shadow); overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .raw-json-panel.collapsed .raw-json-body { display: none; }
+        .raw-json-panel.collapsed .raw-json-toggle i { transform: rotate(-90deg); }
+        .raw-json-header {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 12px 24px; border-bottom: 1px solid var(--admin-border);
+            cursor: pointer;
+        }
+        .raw-json-title {
+            font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.9rem;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .raw-json-toggle { transition: transform 0.2s; color: var(--admin-text-muted); }
+        .raw-json-body {
+            position: relative; overflow-y: auto; max-height: 400px;
+        }
+        .raw-json-body pre {
+            padding: 20px 24px; margin: 0; font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem; line-height: 1.7; color: var(--admin-text);
+            white-space: pre-wrap; word-break: break-all; min-height: 120px;
+        }
+        .raw-json-copy-btn {
+            position: absolute; top: 12px; right: 16px; z-index: 5;
+        }
+        .copy-toast {
+            position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%);
+            background: #1a1a2e; color: #fff; padding: 10px 24px; border-radius: 24px;
+            font-size: 0.85rem; font-weight: 500; z-index: 9999;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3); animation: toastIn 0.3s ease, toastOut 0.3s ease 1.7s forwards;
+        }
+        @keyframes toastIn { from { opacity: 0; transform: translateX(-50%) translateY(20px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
+        @keyframes toastOut { from { opacity: 1; } to { opacity: 0; } }
+
+        /* Empty state */
+        .admin-empty {
+            text-align: center; padding: 40px 20px; color: var(--admin-text-muted);
+        }
+        .admin-empty i { font-size: 3rem; margin-bottom: 12px; opacity: 0.3; }
+        .admin-empty p { font-size: 0.9rem; }
+
+        /* Confirm dialog */
+        .confirm-overlay {
+            position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.5);
+            display: flex; align-items: center; justify-content: center;
+            backdrop-filter: blur(4px);
+        }
+        .confirm-dialog {
+            background: var(--admin-card); border-radius: var(--admin-radius);
+            padding: 28px 32px; box-shadow: var(--admin-shadow-lg);
+            max-width: 400px; width: 90%; text-align: center;
+        }
+        .confirm-dialog h3 { margin-bottom: 8px; font-size: 1.05rem; }
+        .confirm-dialog p { font-size: 0.85rem; color: var(--admin-text-sec); margin-bottom: 20px; }
+        .confirm-dialog-actions { display: flex; gap: 10px; justify-content: center; }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .admin-sidebar {
+                transform: translateX(-100%); transition: transform 0.3s;
+            }
+            .admin-sidebar.open { transform: translateX(0); }
+            .admin-main { margin-left: 0; }
+            .admin-topbar-left { gap: 8px; }
+            .admin-breadcrumb { display: none; }
+            .admin-form-fields { grid-template-columns: 1fr !important; }
+        }
+    </style>
+</head>
+<body class="admin-page">
+    <!-- Top Bar -->
+    <div class="admin-topbar">
+        <div class="admin-topbar-left">
+            <button class="admin-btn sm" id="sidebarToggle" title="切换侧栏">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <a href="index.html" class="admin-logo">
+                <i class="fa-solid fa-table-tennis-paddle-ball"></i> WFLS Admin
+            </a>
+            <span class="admin-breadcrumb" id="breadcrumb">/ 数据管理</span>
+        </div>
+        <div class="admin-topbar-right">
+            <button class="admin-btn" id="themeToggle" title="切换主题">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <button class="admin-btn success" id="generateJsonBtn">
+                <i class="fa-solid fa-code"></i> 生成 JSON
+            </button>
+            <a href="index.html" class="admin-btn">
+                <i class="fa-solid fa-arrow-left"></i> 返回首页
+            </a>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="admin-sidebar" id="adminSidebar">
+        <div class="admin-sidebar-section">核心数据</div>
+        <ul class="admin-file-list" id="coreDataList"></ul>
+        <div class="admin-sidebar-section">WTT 数据</div>
+        <ul class="admin-file-list" id="wttDataList"></ul>
+        <div class="admin-sidebar-footer">
+            <p class="admin-sidebar-hint">
+                <i class="fa-solid fa-info-circle"></i> 编辑后请点击"生成 JSON"<br>复制内容手动替换对应文件
+            </p>
+            <button class="admin-btn danger sm" id="resetAllBtn" style="width:100%;justify-content:center;">
+                <i class="fa-solid fa-rotate-left"></i> 重置所有修改
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="admin-main" id="adminMain">
+        <!-- Editor Panel -->
+        <div class="admin-panel">
+            <div class="admin-panel-header">
+                <div class="admin-panel-title">
+                    <i class="fa-solid fa-file-code"></i>
+                    <span id="currentFileName">选择左侧文件开始编辑</span>
+                </div>
+                <div class="admin-panel-actions" id="editorActions">
+                    <button class="admin-btn sm" id="addRootItemBtn" style="display:none;">
+                        <i class="fa-solid fa-plus"></i> 添加项
+                    </button>
+                    <button class="admin-btn sm" id="expandAllBtn">
+                        <i class="fa-solid fa-arrows-to-dot"></i> 全部展开
+                    </button>
+                    <button class="admin-btn sm" id="collapseAllBtn">
+                        <i class="fa-solid fa-arrows-to-eye"></i> 全部折叠
+                    </button>
+                </div>
+            </div>
+            <div class="admin-panel-body" id="editorBody">
+                <div class="admin-empty">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <p>从左侧选择一个数据文件开始编辑</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Raw JSON Output -->
+        <div class="raw-json-panel collapsed" id="rawJsonPanel">
+            <div class="raw-json-header" id="rawJsonHeader">
+                <span class="raw-json-title">
+                    <i class="fa-solid fa-brackets-curly"></i> 生成的 JSON
+                    <span class="raw-json-toggle"><i class="fa-solid fa-chevron-down"></i></span>
+                </span>
+                <button class="admin-btn sm" id="copyJsonBtn" onclick="event.stopPropagation();">
+                    <i class="fa-solid fa-copy"></i> 复制
+                </button>
+            </div>
+            <div class="raw-json-body">
+                <button class="admin-btn sm raw-json-copy-btn" id="copyJsonBtn2">
+                    <i class="fa-solid fa-copy"></i> 复制
+                </button>
+                <pre id="rawJsonOutput">// 请先编辑数据，然后点击"生成 JSON"按钮</pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

@@ -597,6 +597,322 @@ body.dark-mode .viz-page-hero { background: linear-gradient(135deg, #0d1117 0%, 
 /* 详情页 */
 .detail-content-section { background: var(--bg-white); padding: 60px 0; }
 .detail-body { font-size: 1.05rem; line-height: 1.9; margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto; padding: 36px 40px; color: var(--text-primary); background: var(--glass-bg); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); box-shadow: var(--glass-shadow); }
+
+/* Draws 对阵表切换标签栏 */
+.draws-toggle-bar {
+    display: flex; justify-content: center; gap: 4px; margin-bottom: 24px;
+    background: var(--glass-bg); backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border); border-radius: 28px;
+    padding: 4px; width: fit-content; margin-left: auto; margin-right: auto;
+    box-shadow: var(--glass-shadow);
+}
+.draws-tab-btn {
+    padding: 9px 22px; border: none; border-radius: 24px;
+    background: transparent; color: var(--text-secondary);
+    cursor: pointer; font-size: 0.88rem; font-weight: 500;
+    font-family: var(--font-cn); transition: all 0.25s ease;
+    position: relative; white-space: nowrap;
+}
+.draws-tab-btn:hover { color: var(--primary-blue); }
+.draws-tab-btn.active {
+    background: var(--primary-blue); color: #fff; font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.3);
+}
+
+/* Draws 对阵表容器 */
+.detail-draws {
+    max-width: 1100px; margin: 0 auto 50px; padding: 32px 24px;
+    background: var(--glass-bg); backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border); border-radius: var(--radius-lg);
+    box-shadow: var(--glass-shadow); overflow: hidden;
+}
+.draws-empty { text-align: center; color: var(--text-muted); padding: 32px; }
+
+/* ========================================
+   Bracket 淘汰赛对阵树 — Slot Grid System
+   ======================================== */
+.bracket-container { width: 100%; }
+.bracket-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 8px; }
+.bracket-wrapper {
+    display: flex; align-items: stretch; min-width: max-content;
+    gap: 0; padding: 8px 4px;
+}
+
+/* Round column */
+.bracket-round {
+    display: flex; flex-direction: column; flex-shrink: 0;
+    width: 190px;
+}
+.bracket-round-label {
+    text-align: center; font-size: 0.8rem; font-weight: 700;
+    color: var(--primary-blue); margin-bottom: 10px; padding: 5px 14px;
+    background: var(--primary-pale); border-radius: 12px;
+    align-self: center; white-space: nowrap; letter-spacing: 0.5px;
+    border: 1px solid rgba(0,123,255,0.15);
+    flex-shrink: 0;
+}
+.bracket-round-matches {
+    display: grid; flex: 1;
+}
+
+/* Connector column — same flex structure as bracket-round for vertical alignment */
+.bracket-connector-col {
+    width: 30px; flex-shrink: 0;
+}
+.bracket-connector-spacer {
+    visibility: hidden;
+}
+.bracket-connectors {
+    display: grid; flex: 1;
+}
+
+/* Connector group — contains SVG advancement lines */
+.bracket-connector-group {
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: visible;
+}
+
+/* SVG connector lines */
+.bracket-connector-svg {
+    display: block; width: 100%; height: 100%;
+    overflow: visible;
+}
+.bracket-connector-stem {
+    stroke: var(--border-color);
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+.bracket-connector-line {
+    stroke: var(--border-color);
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+.bracket-connector-arrow {
+    fill: var(--border-color);
+}
+.bracket-slot {
+    display: flex; align-items: center; justify-content: center;
+    padding: 3px 4px;
+}
+
+/* Match card */
+.bracket-match-card {
+    width: 100%; max-width: 180px;
+    background: var(--glass-bg); backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border); border-radius: 10px;
+    overflow: hidden; box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+}
+.bracket-match-card:hover { box-shadow: var(--shadow-md); }
+
+/* Player row */
+.bracket-player {
+    display: flex; align-items: center; gap: 6px;
+    padding: 8px 12px; min-height: 40px;
+    transition: background 0.2s;
+}
+.bracket-player-name {
+    font-size: 0.88rem; font-weight: 500; color: var(--text-primary);
+    line-height: 1.3; flex: 1; min-width: 0;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.bracket-player-name-en {
+    font-family: var(--font-en); font-size: 0.65rem;
+    color: var(--text-muted); letter-spacing: 0.4px;
+    text-transform: uppercase; white-space: nowrap; flex-shrink: 0;
+}
+.bracket-score-tag {
+    font-family: var(--font-en); font-size: 0.75rem; font-weight: 700;
+    padding: 2px 7px; border-radius: 5px; white-space: nowrap; flex-shrink: 0;
+}
+.bracket-score-tag.win { background: rgba(82,196,26,0.13); color: #389e0d; }
+.bracket-score-tag.loss { background: rgba(255,77,79,0.1); color: #cf1322; }
+
+/* Winner / Loser highlight */
+.bracket-winner { background: rgba(0,123,255,0.05); }
+.bracket-winner .bracket-player-name { font-weight: 700; color: var(--primary-blue); }
+.bracket-loser { opacity: 0.55; }
+
+/* Hover: highlight advancement path */
+.bracket-slot:hover .bracket-match-card {
+    box-shadow: 0 0 0 2px var(--primary-blue), var(--shadow-md);
+    transform: translateY(-1px);
+}
+
+/* VS divider */
+.bracket-vs {
+    height: 1px; background: var(--border-color); margin: 0 12px;
+}
+
+/* ========================================
+   Bracket responsive
+   ======================================== */
+@media (max-width: 900px) {
+    .bracket-round { width: 150px; }
+    .bracket-connector-col { width: 24px; }
+    .bracket-player { padding: 6px 8px; min-height: 34px; }
+    .bracket-player-name { font-size: 0.78rem; }
+    .bracket-round-label { font-size: 0.7rem; padding: 4px 10px; }
+}
+@media (max-width: 640px) {
+    .bracket-round { width: 130px; }
+    .bracket-connector-col { width: 20px; }
+    .bracket-player { padding: 5px 6px; min-height: 30px; gap: 3px; }
+    .bracket-player-name { font-size: 0.7rem; }
+    .bracket-player-name-en { font-size: 0.55rem; }
+    .bracket-score-tag { font-size: 0.65rem; padding: 1px 5px; }
+    .bracket-round-label { font-size: 0.65rem; padding: 3px 8px; }
+    .bracket-match-card { border-radius: 6px; }
+    .bracket-slot { padding: 2px; }
+}
+
+/* Champion display section (after bracket) */
+.bracket-champion-section {
+    display: flex; flex-direction: column; align-items: center;
+    margin-top: 28px; padding-top: 20px;
+    border-top: 2px dashed var(--border-color);
+}
+.bracket-champion-label {
+    font-size: 0.9rem; font-weight: 700;
+    color: var(--primary-blue); margin-bottom: 12px;
+    padding: 5px 18px; background: var(--primary-pale);
+    border-radius: 12px; letter-spacing: 0.5px;
+    border: 1px solid rgba(0,123,255,0.15);
+}
+.bracket-champion-card {
+    display: flex; align-items: center; gap: 10px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, rgba(255,193,7,0.15), rgba(255,152,0,0.1));
+    border: 2px solid rgba(255,193,7,0.4);
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(255,193,7,0.15);
+}
+.bracket-champion-crown {
+    font-size: 1.6rem; color: #faad14;
+    filter: drop-shadow(0 2px 3px rgba(250,173,20,0.4));
+}
+.bracket-champion-name {
+    font-size: 1.15rem; font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 1px;
+}
+
+/* ========================================
+   Dark Mode — Bracket (全面重做)
+   ======================================== */
+body.dark-mode .draws-toggle-bar {
+    background: var(--glass-bg); border-color: var(--border-color);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+}
+body.dark-mode .draws-tab-btn {
+    color: var(--text-secondary);
+}
+body.dark-mode .draws-tab-btn:hover { color: var(--primary-light); }
+body.dark-mode .draws-tab-btn.active {
+    background: var(--primary-blue); color: #fff;
+    box-shadow: 0 2px 10px rgba(77,163,255,0.35);
+}
+body.dark-mode .detail-draws {
+    background: var(--glass-bg); border-color: var(--border-color);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+}
+body.dark-mode .bracket-container {
+    /* container inherits from parent */
+}
+body.dark-mode .bracket-match-card {
+    background: var(--bg-lighter); border-color: var(--border-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+}
+body.dark-mode .bracket-match-card:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.55);
+    border-color: rgba(77,163,255,0.3);
+}
+body.dark-mode .bracket-round-label {
+    background: rgba(77,163,255,0.12); color: var(--primary-light);
+    border-color: rgba(77,163,255,0.2);
+}
+body.dark-mode .bracket-connector-spacer {
+    background: transparent; border-color: transparent;
+}
+body.dark-mode .bracket-player-name { color: var(--text-primary); }
+body.dark-mode .bracket-player-name-en { color: var(--text-muted); }
+body.dark-mode .bracket-winner { background: rgba(77,163,255,0.1); }
+body.dark-mode .bracket-winner .bracket-player-name { color: var(--primary-light); }
+body.dark-mode .bracket-loser { opacity: 0.4; }
+body.dark-mode .bracket-slot:hover .bracket-match-card {
+    box-shadow: 0 0 0 2px var(--primary-light), 0 6px 20px rgba(0,0,0,0.55);
+}
+body.dark-mode .bracket-vs { background: var(--border-color); }
+body.dark-mode .bracket-score-tag.win { background: rgba(115,209,61,0.15); color: #73d13d; }
+body.dark-mode .bracket-score-tag.loss { background: rgba(255,77,79,0.15); color: #ff7875; }
+body.dark-mode .bracket-champion-section { border-top-color: var(--border-color); }
+body.dark-mode .bracket-champion-label {
+    background: rgba(77,163,255,0.12); color: var(--primary-light);
+    border-color: rgba(77,163,255,0.2);
+}
+body.dark-mode .bracket-champion-card {
+    background: linear-gradient(135deg, rgba(255,193,7,0.12), rgba(255,152,0,0.08));
+    border-color: rgba(255,193,7,0.3);
+    box-shadow: 0 2px 16px rgba(255,193,7,0.12);
+}
+body.dark-mode .bracket-champion-name { color: var(--text-primary); }
+body.dark-mode .bracket-champion-crown { color: #ffc107; }
+
+/* Dark mode — Simple draws list */
+body.dark-mode .draws-title { color: var(--text-primary); border-bottom-color: var(--border-color); }
+body.dark-mode .draws-round-name { background: rgba(77,163,255,0.12); color: var(--primary-light); }
+body.dark-mode .draws-player { color: var(--text-primary); }
+body.dark-mode .draws-player.draws-winner { color: var(--primary-light); }
+body.dark-mode .draws-vs { color: var(--text-muted); background: var(--bg-lighter); }
+body.dark-mode .draws-match-score { color: var(--accent-red); }
+body.dark-mode .draws-match { background: var(--glass-bg); border-color: var(--border-color); }
+body.dark-mode .draws-match:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.4); }
+.draws-title {
+    text-align: center; font-size: 1.3rem; font-weight: 700;
+    margin-bottom: 28px; color: var(--text-primary);
+    padding-bottom: 16px; border-bottom: 2px solid var(--border-color);
+}
+.draws-round { margin-bottom: 28px; }
+.draws-round-name {
+    font-size: 1rem; font-weight: 700; color: var(--primary-blue);
+    margin-bottom: 12px; padding: 6px 16px; display: inline-block;
+    background: var(--primary-pale); border-radius: 16px;
+}
+.draws-matches { display: flex; flex-direction: column; gap: 10px; }
+.draws-match {
+    padding: 16px 20px; transition: all var(--transition-base);
+}
+.draws-match:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+.draws-match-players {
+    display: flex; align-items: center; justify-content: center;
+    gap: 16px; font-size: 1rem; font-weight: 500;
+}
+.draws-player { color: var(--text-primary); min-width: 80px; text-align: center; }
+.draws-player.draws-winner { font-weight: 700; color: var(--primary-blue); }
+.draws-vs {
+    font-family: var(--font-en); font-size: 0.8rem; font-weight: 700;
+    color: var(--text-muted); background: var(--bg-lighter);
+    padding: 4px 12px; border-radius: 12px;
+}
+.draws-match-score {
+    text-align: center; font-family: var(--font-en); font-size: 1.1rem;
+    font-weight: 700; color: var(--accent-red); margin-top: 8px;
+}
+
+/* Dark mode bracket — SVG connector refinements */
+body.dark-mode .bracket-connector-svg .bracket-connector-stem {
+    stroke: rgba(77,163,255,0.3);
+}
+body.dark-mode .bracket-connector-svg .bracket-connector-line {
+    stroke: rgba(77,163,255,0.3);
+}
+body.dark-mode .bracket-connector-svg .bracket-connector-arrow {
+    fill: rgba(77,163,255,0.3);
+}
+
 /* Markdown 内容样式 */
 .detail-body h1, .markdown-body h1 { font-size: 1.8rem; font-weight: 800; margin: 1.5em 0 0.6em; padding-bottom: 0.3em; border-bottom: 2px solid var(--border-color); color: var(--text-primary); }
 .detail-body h2, .markdown-body h2 { font-size: 1.5rem; font-weight: 700; margin: 1.4em 0 0.5em; padding-bottom: 0.25em; border-bottom: 1px solid var(--border-color); color: var(--text-primary); }
