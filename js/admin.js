@@ -88,11 +88,12 @@ const SCHEMAS = {
         icon: 'fa-diagram-project',
         group: 'core',
         itemLabel: '对阵表',
+        customEditor: 'draws',
         fields: [
             { key: 'id', label: 'Draws ID', type: 'text', required: true, placeholder: '如 d1（唯一标识）' },
             { key: 'competitionId', label: '关联赛事ID', type: 'text', required: true, placeholder: '如 c5（对应 competitions.json 中的 id）' },
             { key: 'title', label: '对阵表标题', type: 'text', required: true, placeholder: '如 2026年单打比赛对阵表' },
-            { key: 'rounds', label: '轮次/对阵数据', type: 'info', value: [], note: '⚠ 添加对阵表后请手动在源文件中编辑 rounds 数组（含 name、matches 等）' }
+            { key: 'grid', label: '网格设置', type: 'info', value: { cols: 7, rows: 32, cellWidth: 180, cellHeight: 64 }, note: '⚠ 使用可视化编辑器设置网格和卡片位置' }
         ]
     },
     'qa': {
@@ -360,6 +361,72 @@ function bindEvents() {
     $('collapseAllBtn').addEventListener('click', () => {
         document.querySelectorAll('.json-node-ro .json-child-ro').forEach(el => el.style.display = 'none');
     });
+
+    // --- 编辑器面板底部拖拽调整大小 ---
+    initAdminResize();
+}
+
+/**
+ * 管理员编辑器面板底部拖拽调整大小
+ */
+function initAdminResize() {
+    const handle = $('adminResizeHandle');
+    const body = $('editorBody');
+    if (!handle || !body) return;
+
+    let resizing = false, startY = 0, startH = 0;
+    const MIN_H = 200;
+    const MAX_H = 5000;
+
+    function getCurrentH() {
+        return parseInt(getComputedStyle(body).maxHeight) || body.clientHeight;
+    }
+
+    handle.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        resizing = true;
+        startY = e.clientY;
+        startH = getCurrentH();
+        handle.classList.add('resizing');
+        document.body.style.cursor = 'ns-resize';
+        document.body.style.userSelect = 'none';
+    });
+
+    window.addEventListener('mousemove', (e) => {
+        if (!resizing) return;
+        const dy = e.clientY - startY;
+        const newH = Math.max(MIN_H, Math.min(MAX_H, startH + dy));
+        body.style.maxHeight = newH + 'px';
+    });
+
+    window.addEventListener('mouseup', () => {
+        if (!resizing) return;
+        resizing = false;
+        handle.classList.remove('resizing');
+        document.body.style.cursor = '';
+        document.body.style.userSelect = '';
+    });
+
+    // Touch support
+    handle.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        resizing = true;
+        startY = e.touches[0].clientY;
+        startH = getCurrentH();
+        handle.classList.add('resizing');
+    });
+
+    window.addEventListener('touchmove', (e) => {
+        if (!resizing) return;
+        const dy = e.touches[0].clientY - startY;
+        const newH = Math.max(MIN_H, Math.min(MAX_H, startH + dy));
+        body.style.maxHeight = newH + 'px';
+    });
+
+    window.addEventListener('touchend', () => {
+        resizing = false;
+        handle.classList.remove('resizing');
+    });
 }
 
 // ========================================
@@ -378,6 +445,25 @@ async function selectFile(key) {
     $('currentFileName').textContent = schema.label;
     $('breadcrumb').textContent = ` / ${schema.label}`;
 
+    // Custom editor: draws visual editor
+    if (schema.customEditor === 'draws') {
+        try {
+            const resp = await fetch(schema.path);
+            let data = [];
+            if (resp.ok) data = await resp.json();
+            currentData = data;
+            originalData = JSON.parse(JSON.stringify(data));
+
+            renderDrawsEditorUI(data);
+            $('adminSidebar').classList.remove('open');
+        } catch (err) {
+            $('editorBody').innerHTML = `<div class="admin-empty"><i class="fa-solid fa-triangle-exclamation"></i><p>加载失败：${err.message}</p></div>`;
+            currentData = null;
+            originalData = null;
+        }
+        return;
+    }
+
     try {
         const resp = await fetch(schema.path);
         if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
@@ -391,6 +477,147 @@ async function selectFile(key) {
         currentData = null;
         originalData = null;
     }
+}
+
+/**
+ * 渲染抽签表可视化编辑器
+ */
+function renderDrawsEditorUI(data) {
+    $('addRootItemBtn').style.display = 'none';
+
+    const body = $('editorBody');
+    body.innerHTML = '';
+
+    // Update raw JSON panel with placeholder
+    $('rawJsonOutput').textContent = '// 使用上方可视化编辑器编辑抽签表\n// 完成后点击「生成 JSON」按钮查看结果';
+
+    // Meta editor
+    const metaSection = document.createElement('div');
+    metaSection.className = 'de-meta-editor';
+    metaSection.innerHTML = `
+        <div class="admin-panel" style="margin-bottom:12px;">
+            <div class="admin-panel-header">
+                <span class="admin-panel-title"><i class="fa-solid fa-diagram-project"></i> 抽签表可视化编辑器</span>
+                <div class="admin-panel-actions">
+                    <button class="admin-btn" id="deSaveBtn"><i class="fa-solid fa-floppy-disk"></i> 暂存到编辑器</button>
+                    <button class="admin-btn success" id="deGenerateJsonBtn"><i class="fa-solid fa-code"></i> 生成 JSON</button>
+                </div>
+            </div>
+            <div class="admin-panel-body" style="padding:12px 20px;">
+                <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-end;">
+                    <div class="admin-form-field" style="flex:1;min-width:200px;">
+                        <label class="admin-form-label">Draws ID <span class="required-star">*</span></label>
+                        <input type="text" class="admin-form-input" id="deMetaId" placeholder="如 d1">
+                    </div>
+                    <div class="admin-form-field" style="flex:1;min-width:200px;">
+                        <label class="admin-form-label">关联赛事ID <span class="required-star">*</span></label>
+                        <input type="text" class="admin-form-input" id="deMetaCompId" placeholder="如 c5">
+                    </div>
+                    <div class="admin-form-field" style="flex:2;min-width:280px;">
+                        <label class="admin-form-label">标题 <span class="required-star">*</span></label>
+                        <input type="text" class="admin-form-input" id="deMetaTitle" placeholder="如 2026乒乓球单打淘汰赛">
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    body.appendChild(metaSection);
+
+    // Determine which draw to edit
+    let editDraws = null;
+    if (Array.isArray(data) && data.length > 0) {
+        editDraws = data[0];
+    }
+
+    // Editor container
+    const editorContainer = document.createElement('div');
+    editorContainer.id = 'drawsEditorContainer';
+    editorContainer.className = 'admin-panel';
+    editorContainer.style.cssText = 'overflow:visible;';
+    body.appendChild(editorContainer);
+
+    // Initialize the visual editor
+    if (typeof initDrawsEditor === 'function') {
+        initDrawsEditor('drawsEditorContainer', editDraws);
+    } else {
+        editorContainer.innerHTML = '<div class="admin-panel-body"><p class="admin-empty">抽签表编辑器加载失败（draws-editor.js 未加载）</p></div>';
+    }
+
+    // Fill meta fields
+    setTimeout(() => {
+        const metaId = $('deMetaId');
+        const metaCompId = $('deMetaCompId');
+        const metaTitle = $('deMetaTitle');
+        if (editDraws) {
+            if (metaId) metaId.value = editDraws.id || '';
+            if (metaCompId) metaCompId.value = editDraws.competitionId || '';
+            if (metaTitle) metaTitle.value = editDraws.title || '';
+        }
+        if (metaId && !metaId.value) metaId.value = 'd' + Date.now();
+    }, 200);
+
+    // Bind save/generate buttons
+    setTimeout(() => {
+        const saveBtn = $('deSaveBtn');
+        const genBtn = $('deGenerateJsonBtn');
+        const metaId = $('deMetaId');
+        const metaCompId = $('deMetaCompId');
+        const metaTitle = $('deMetaTitle');
+
+        if (saveBtn) {
+            saveBtn.addEventListener('click', () => {
+                if (typeof setEditorMeta === 'function') {
+                    setEditorMeta(
+                        metaTitle ? metaTitle.value : '',
+                        metaCompId ? metaCompId.value : ''
+                    );
+                }
+                showToast('元数据已暂存！请继续编辑卡片');
+            });
+        }
+
+        if (genBtn) {
+            genBtn.addEventListener('click', () => {
+                // Sync meta
+                if (typeof setEditorMeta === 'function') {
+                    setEditorMeta(
+                        metaTitle ? metaTitle.value : '',
+                        metaCompId ? metaCompId.value : ''
+                    );
+                }
+
+                if (typeof getEditorDrawsData !== 'function') {
+                    showToast('编辑器未就绪');
+                    return;
+                }
+
+                const drawsData = getEditorDrawsData();
+                if (!drawsData) {
+                    showToast('无法获取编辑数据');
+                    return;
+                }
+
+                // Override ID
+                if (metaId && metaId.value.trim()) {
+                    drawsData.id = metaId.value.trim();
+                }
+                if (metaCompId && metaCompId.value.trim()) {
+                    drawsData.competitionId = metaCompId.value.trim();
+                }
+                if (metaTitle && metaTitle.value.trim()) {
+                    drawsData.title = metaTitle.value.trim();
+                }
+
+                const jsonStr = JSON.stringify([drawsData], null, 2);
+                currentData = [drawsData];
+                $('rawJsonOutput').textContent = jsonStr;
+                $('rawJsonPanel').classList.remove('collapsed');
+                $('rawJsonPanel').scrollIntoView({ behavior: 'smooth' });
+                if (typeof markEditorClean === 'function') markEditorClean();
+                showToast('JSON 已生成！请复制替换 data/draws.json');
+            });
+        }
+    }, 500);
 }
 
 // ========================================

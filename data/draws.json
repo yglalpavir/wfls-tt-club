@@ -3,229 +3,80 @@
     "id": "d1",
     "competitionId": "c5",
     "title": "2026乒乓球单打淘汰赛",
-    "rounds": [
-      {
-        "name": "第一轮",
-        "matches": [
-          {
-            "player1": { "name": "祁子傲", "nameEn": "" },
-            "player2": { "name": "轮空", "nameEn": "" },
-            "score": "",
-            "winner": 1
-          },
-            {
-            "player1": { "name": "夏梓涵", "nameEn": "" },
-            "player2": { "name": "严嘉翔", "nameEn": "" },
-            "score": "1-3",
-            "winner": 2
-          },
-          {
-            "player1": { "name": "张宸瑞", "nameEn": "" },
-            "player2": { "name": "谷子易", "nameEn": "" },
-            "score": "2-3",
-            "winner": 2
-          },
-          {
-            "player1": { "name": "刘天齐", "nameEn": "" },
-            "player2": { "name": "杨苏旭", "nameEn": "" },
-            "score": "0-3",
-            "winner": 2
-          },
-          {
-            "player1": { "name": "付大卫", "nameEn": "" },
-            "player2": { "name": "叶泓鑫", "nameEn": "" },
-            "score": "3-1",
-            "winner": 1
-          },
-          {
-            "player1": { "name": "龚雨煊", "nameEn": "" },
-            "player2": { "name": "王子一", "nameEn": "" },
-            "score": "3-0",
-            "winner": 1
-          },
-          {
-            "player1": { "name": "王成悦", "nameEn": "" },
-            "player2": { "name": "邓以清", "nameEn": "" },
-            "score": "3-0",
-            "winner": 1
-          },
-          {
-            "player1": { "name": "任安喆", "nameEn": "" },
-            "player2": { "name": "曹高畅", "nameEn": "" },
-            "score": "3-0",
-            "winner": 1
-          },
-          {
-            "player1": { "name": "何齐烨", "nameEn": "" },
-            "player2": { "name": "王玥涵", "nameEn": "" },
-            "score": "3-0",
-            "winner": 1
-          },
-          {
-            "player1": { "name": "姜子润", "nameEn": "" },
-            "player2": { "name": "叶孟恒", "nameEn": "" },
-            "score": "3-2",
-            "winner": 1
-          },
-          {
-            "player1": { "name": "任峻贤", "nameEn": "" },
-            "player2": { "name": "丁胜怀", "nameEn": "" },
-            "score": "3-0",
-            "winner": 1
-          },
-          {
-            "player1": { "name": "胡朗诚", "nameEn": "" },
-            "player2": { "name": "刘冠羽", "nameEn": "" },
-            "score": "3-2",
-            "winner": 1
-          },
-          {
-            "player1": { "name": "吴慈航", "nameEn": "" },
-            "player2": { "name": "刘彧铭", "nameEn": "" },
-            "score": "3-1",
-            "winner": 1
-          },
-          {
-            "player1": { "name": "陶锦源", "nameEn": "" },
-            "player2": { "name": "吕曜而", "nameEn": "" },
-            "score": "3-0",
-            "winner": 1
-          },
-          {
-            "player1": { "name": "梅哲宇", "nameEn": "" },
-            "player2": { "name": "肖辰宇", "nameEn": "" },
-            "score": "3-0",
-            "winner": 1
-          },
-          {
-            "player1": { "name": "轮空", "nameEn": "" },
-            "player2": { "name": "陈瑜萱", "nameEn": "" },
-            "score": "",
-            "winner": 2
-          }
-        ]
-      },
-      {
-        "name": "第二轮",
-        "matches": [
-          {
-            "player1": { "name": "祁子傲", "nameEn": "" },
-            "player2": { "name": "严嘉翔", "nameEn": "" },
-            "score": "3-2",
-            "winner": 1
-          },
-          {
-            "player1": { "name": "谷子易", "nameEn": "" },
-            "player2": { "name": "杨苏旭", "nameEn": "" },
-            "score": "3-1",
-            "winner": 1
-          },
-          {
-            "player1": { "name": "付大卫", "nameEn": "" },
-            "player2": { "name": "龚雨煊", "nameEn": "" },
-            "score": "3-1",
-            "winner": 1
-          },
-          {
-            "player1": { "name": "王成悦", "nameEn": "" },
-            "player2": { "name": "任安喆", "nameEn": "" },
-            "score": "3-0",
-            "winner": 1
-          },
-          {
-            "player1": { "name": "何齐烨", "nameEn": "" },
-            "player2": { "name": "姜子润", "nameEn": "" },
-            "score": "0-3",
-            "winner": 2
-          },
-          {
-            "player1": { "name": "任峻贤", "nameEn": "" },
-            "player2": { "name": "胡朗诚", "nameEn": "" },
-            "score": "3-0",
-            "winner": 1
-          },
-          {
-            "player1": { "name": "吴慈航", "nameEn": "" },
-            "player2": { "name": "陶锦源", "nameEn": "" },
-            "score": "2-3",
-            "winner": 2
-          },
-          {
-            "player1": { "name": "梅哲宇", "nameEn": "" },
-            "player2": { "name": "陈瑜萱", "nameEn": "" },
-            "score": "3-0",
-            "winner": 1
-          }
-        ]
-      },
-      {
-        "name": "1/4决赛",
-        "matches": [
-          {
-            "player1": { "name": "祁子傲", "nameEn": "" },
-            "player2": { "name": "谷子易", "nameEn": "" },
-            "score": "1-3",
-            "winner": 2
-          },
-          {
-            "player1": { "name": "付大卫", "nameEn": "" },
-            "player2": { "name": "王成悦", "nameEn": "" },
-            "score": "3-1",
-            "winner": 1
-          },
-          {
-            "player1": { "name": "姜子润", "nameEn": "" },
-            "player2": { "name": "任峻贤", "nameEn": "" },
-            "score": "0-3",
-            "winner": 2
-          },
-          {
-            "player1": { "name": "陶锦源", "nameEn": "" },
-            "player2": { "name": "梅哲宇", "nameEn": "" },
-            "score": "0-3",
-            "winner": 2
-          }
-        ]
-      },
-      {
-        "name": "半决赛",
-        "matches": [
-          {
-            "player1": { "name": "谷子易", "nameEn": "" },
-            "player2": { "name": "付大卫", "nameEn": "" },
-            "score": "3-4",
-            "winner": 2
-          },
-          {
-            "player1": { "name": "任峻贤", "nameEn": "" },
-            "player2": { "name": "梅哲宇", "nameEn": "" },
-            "score": "4-0",
-            "winner": 1
-          }
-        ]
-      },
-      {
-        "name": "决赛",
-        "matches": [
-          {
-            "player1": { "name": "付大卫", "nameEn": "" },
-            "player2": { "name": "任峻贤", "nameEn": "" },
-            "score": "3-4",
-            "winner": 2
-          }
-        ]
-      },
-      {
-        "name": "冠军",
-        "matches": [
-          {
-            "player1": { "name": "任峻贤", "nameEn": "" },
-            "player2": null,
-            "score": null,
-            "winner": 1
-          }
-        ]
-      }
+    "version": 2,
+    "grid": {
+      "cols": 7,
+      "rows": 32,
+      "cellWidth": 180,
+      "cellHeight": 64
+    },
+    "cards": [
+      { "id": "m1", "col": 0, "row": 0, "player1": "祁子傲", "player2": "轮空", "score": "", "winner": 1 },
+      { "id": "m2", "col": 0, "row": 2, "player1": "夏梓涵", "player2": "严嘉翔", "score": "1-3", "winner": 2 },
+      { "id": "m3", "col": 0, "row": 4, "player1": "张宸瑞", "player2": "谷子易", "score": "2-3", "winner": 2 },
+      { "id": "m4", "col": 0, "row": 6, "player1": "刘天齐", "player2": "杨苏旭", "score": "0-3", "winner": 2 },
+      { "id": "m5", "col": 0, "row": 8, "player1": "付大卫", "player2": "叶泓鑫", "score": "3-1", "winner": 1 },
+      { "id": "m6", "col": 0, "row": 10, "player1": "龚雨煊", "player2": "王子一", "score": "3-0", "winner": 1 },
+      { "id": "m7", "col": 0, "row": 12, "player1": "王成悦", "player2": "邓以清", "score": "3-0", "winner": 1 },
+      { "id": "m8", "col": 0, "row": 14, "player1": "任安喆", "player2": "曹高畅", "score": "3-0", "winner": 1 },
+      { "id": "m9", "col": 0, "row": 16, "player1": "何齐烨", "player2": "王玥涵", "score": "3-0", "winner": 1 },
+      { "id": "m10", "col": 0, "row": 18, "player1": "姜子润", "player2": "叶孟恒", "score": "3-2", "winner": 1 },
+      { "id": "m11", "col": 0, "row": 20, "player1": "任峻贤", "player2": "丁胜怀", "score": "3-0", "winner": 1 },
+      { "id": "m12", "col": 0, "row": 22, "player1": "胡朗诚", "player2": "刘冠羽", "score": "3-2", "winner": 1 },
+      { "id": "m13", "col": 0, "row": 24, "player1": "吴慈航", "player2": "刘彧铭", "score": "3-1", "winner": 1 },
+      { "id": "m14", "col": 0, "row": 26, "player1": "陶锦源", "player2": "吕曜而", "score": "3-0", "winner": 1 },
+      { "id": "m15", "col": 0, "row": 28, "player1": "梅哲宇", "player2": "肖辰宇", "score": "3-0", "winner": 1 },
+      { "id": "m16", "col": 0, "row": 30, "player1": "轮空", "player2": "陈瑜萱", "score": "", "winner": 2 },
+      { "id": "m17", "col": 1, "row": 1, "player1": "祁子傲", "player2": "严嘉翔", "score": "3-2", "winner": 1 },
+      { "id": "m18", "col": 1, "row": 5, "player1": "谷子易", "player2": "杨苏旭", "score": "3-1", "winner": 1 },
+      { "id": "m19", "col": 1, "row": 9, "player1": "付大卫", "player2": "龚雨煊", "score": "3-1", "winner": 1 },
+      { "id": "m20", "col": 1, "row": 13, "player1": "王成悦", "player2": "任安喆", "score": "3-0", "winner": 1 },
+      { "id": "m21", "col": 1, "row": 17, "player1": "何齐烨", "player2": "姜子润", "score": "0-3", "winner": 2 },
+      { "id": "m22", "col": 1, "row": 21, "player1": "任峻贤", "player2": "胡朗诚", "score": "3-0", "winner": 1 },
+      { "id": "m23", "col": 1, "row": 25, "player1": "吴慈航", "player2": "陶锦源", "score": "2-3", "winner": 2 },
+      { "id": "m24", "col": 1, "row": 29, "player1": "梅哲宇", "player2": "陈瑜萱", "score": "3-0", "winner": 1 },
+      { "id": "m25", "col": 2, "row": 3, "player1": "祁子傲", "player2": "谷子易", "score": "1-3", "winner": 2 },
+      { "id": "m26", "col": 2, "row": 11, "player1": "付大卫", "player2": "王成悦", "score": "3-1", "winner": 1 },
+      { "id": "m27", "col": 2, "row": 19, "player1": "姜子润", "player2": "任峻贤", "score": "0-3", "winner": 2 },
+      { "id": "m28", "col": 2, "row": 27, "player1": "陶锦源", "player2": "梅哲宇", "score": "0-3", "winner": 2 },
+      { "id": "m29", "col": 3, "row": 7, "player1": "谷子易", "player2": "付大卫", "score": "3-4", "winner": 2 },
+      { "id": "m30", "col": 3, "row": 23, "player1": "任峻贤", "player2": "梅哲宇", "score": "4-0", "winner": 1 },
+      { "id": "m31", "col": 4, "row": 15, "player1": "付大卫", "player2": "任峻贤", "score": "3-4", "winner": 2 },
+      { "id": "champion", "col": 5, "row": 15, "player1": "任峻贤", "player2": "", "score": "", "winner": 1, "isChampion": true }
+    ],
+    "connections": [
+      { "from": "m1", "to": "m17", "fromSide": "right", "toSide": "left" },
+      { "from": "m2", "to": "m17", "fromSide": "right", "toSide": "left" },
+      { "from": "m3", "to": "m18", "fromSide": "right", "toSide": "left" },
+      { "from": "m4", "to": "m18", "fromSide": "right", "toSide": "left" },
+      { "from": "m5", "to": "m19", "fromSide": "right", "toSide": "left" },
+      { "from": "m6", "to": "m19", "fromSide": "right", "toSide": "left" },
+      { "from": "m7", "to": "m20", "fromSide": "right", "toSide": "left" },
+      { "from": "m8", "to": "m20", "fromSide": "right", "toSide": "left" },
+      { "from": "m9", "to": "m21", "fromSide": "right", "toSide": "left" },
+      { "from": "m10", "to": "m21", "fromSide": "right", "toSide": "left" },
+      { "from": "m11", "to": "m22", "fromSide": "right", "toSide": "left" },
+      { "from": "m12", "to": "m22", "fromSide": "right", "toSide": "left" },
+      { "from": "m13", "to": "m23", "fromSide": "right", "toSide": "left" },
+      { "from": "m14", "to": "m23", "fromSide": "right", "toSide": "left" },
+      { "from": "m15", "to": "m24", "fromSide": "right", "toSide": "left" },
+      { "from": "m16", "to": "m24", "fromSide": "right", "toSide": "left" },
+      { "from": "m17", "to": "m25", "fromSide": "right", "toSide": "left" },
+      { "from": "m18", "to": "m25", "fromSide": "right", "toSide": "left" },
+      { "from": "m19", "to": "m26", "fromSide": "right", "toSide": "left" },
+      { "from": "m20", "to": "m26", "fromSide": "right", "toSide": "left" },
+      { "from": "m21", "to": "m27", "fromSide": "right", "toSide": "left" },
+      { "from": "m22", "to": "m27", "fromSide": "right", "toSide": "left" },
+      { "from": "m23", "to": "m28", "fromSide": "right", "toSide": "left" },
+      { "from": "m24", "to": "m28", "fromSide": "right", "toSide": "left" },
+      { "from": "m25", "to": "m29", "fromSide": "right", "toSide": "left" },
+      { "from": "m26", "to": "m29", "fromSide": "right", "toSide": "left" },
+      { "from": "m27", "to": "m30", "fromSide": "right", "toSide": "left" },
+      { "from": "m28", "to": "m30", "fromSide": "right", "toSide": "left" },
+      { "from": "m29", "to": "m31", "fromSide": "right", "toSide": "left" },
+      { "from": "m30", "to": "m31", "fromSide": "right", "toSide": "left" },
+      { "from": "m31", "to": "champion", "fromSide": "right", "toSide": "left" }
     ]
   }
 ]
+

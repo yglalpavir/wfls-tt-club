@@ -366,9 +366,25 @@ function updateDetailPage() {
                         }
                     });
                 });
-                // Render draws
-                drawsContainer.innerHTML = renderBracketHTML(draws);
-                drawsContainer.style.display = 'none';
+                // Render draws based on version
+                if (draws.version === 2 && typeof initDrawsViewer === 'function') {
+                    drawsContainer.innerHTML = '';
+                    drawsContainer.style.display = 'none';
+                    // The viewer will be initialized when tab is clicked
+                    let viewerInitialized = false;
+                    const bracketTab = drawsToggleContainer.querySelector('[data-tab="draws"]');
+                    if (bracketTab) {
+                        bracketTab.addEventListener('click', function initOnce() {
+                            if (!viewerInitialized) {
+                                viewerInitialized = true;
+                                setTimeout(() => initDrawsViewer('detailDraws', draws), 100);
+                            }
+                        });
+                    }
+                } else {
+                    drawsContainer.innerHTML = typeof renderBracketHTML === 'function' ? renderBracketHTML(draws) : '';
+                    drawsContainer.style.display = 'none';
+                }
             } else {
                 drawsToggleContainer.style.display = 'none';
                 drawsContainer.innerHTML = '';

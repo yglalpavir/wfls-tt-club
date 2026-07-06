@@ -142,6 +142,26 @@
         .admin-panel-actions { display: flex; gap: 8px; flex-wrap: wrap; }
         .admin-panel-body {
             padding: 20px 24px; max-height: calc(100vh - 380px); overflow-y: auto;
+            min-height: 200px;
+        }
+
+        /* Admin resize handle — 拖动调整编辑面板高度 */
+        .admin-resize-handle {
+            height: 10px; background: var(--admin-border); cursor: ns-resize;
+            border-radius: 0 0 var(--admin-radius) var(--admin-radius);
+            margin-bottom: 10px; transition: background 0.15s;
+            position: relative;
+        }
+        .admin-resize-handle::after {
+            content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+            width: 48px; height: 4px; border-radius: 2px;
+            background: var(--admin-text-muted); opacity: 0.5;
+        }
+        .admin-resize-handle:hover, .admin-resize-handle.resizing {
+            background: var(--primary-pale);
+        }
+        .admin-resize-handle:hover::after, .admin-resize-handle.resizing::after {
+            background: var(--primary-blue); opacity: 1;
         }
 
         /* ---- v2 New Styles ---- */
@@ -418,6 +438,9 @@
             </div>
         </div>
 
+        <!-- Resize handle: 拖动此条调整编辑器面板高度 -->
+        <div class="admin-resize-handle" id="adminResizeHandle" title="拖动调整编辑区高度"></div>
+
         <!-- Raw JSON Output -->
         <div class="raw-json-panel collapsed" id="rawJsonPanel">
             <div class="raw-json-header" id="rawJsonHeader">
@@ -438,6 +461,7 @@
         </div>
     </div>
 
+    <script src="js/draws-editor.js"></script>
     <script src="js/admin.js"></script>
 </body>
 </html>

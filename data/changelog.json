@@ -1,5 +1,15 @@
 [
   {
+    "version": "v1.0.7",
+    "date": "2026-07-06",
+    "title": "Draws样式优化和wtt积分模型优化",
+    "tag": "feature",
+    "changes": [
+      "在Competitions页增加了对draws的优化，包括：优化页面尺寸，优化网格吸附，优化卡片和晋级线样式等",
+      "wtt积分模型优化：调低了各个比赛的比赛系数，避免了积分和名次因一场比赛大幅度波动"
+    ]
+  },
+  {
     "version": "v1.0.6",
     "date": "2026-07-05",
     "title": "Competitions页面的draws支持",
