@@ -1,5 +1,14 @@
 [
   {
+    "version": "v1.0.8",
+    "date": "2026-07-11",
+    "title": "Member页优化",
+    "tag": "feature",
+    "changes": [
+      "增加了对显示“核心成员”的qq头像的支持"
+    ]
+  },
+  {
     "version": "v1.0.7",
     "date": "2026-07-06",
     "title": "Draws样式优化和wtt积分模型优化",
