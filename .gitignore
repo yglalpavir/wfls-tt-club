@@ -1,0 +1,5 @@
+.venv/
+Assets/videos/
+node_modules/
+.git/
+.vnext/
