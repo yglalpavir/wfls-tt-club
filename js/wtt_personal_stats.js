@@ -761,6 +761,25 @@ function renderWttPersonalScoreChart(dailyHistory, snapshotHistory) {
     const ptBorderColor = colors.pointBorder || lineColor;
     const ptBorderWidth = colors.pointBorderWidth != null ? colors.pointBorderWidth : 0;
 
+    // === 构建赛季边界虚线标注 ===
+    const seasonBoundaries = [];
+    if (seasonsData && seasonsData.length > 1) {
+        for (let i = 0; i < seasonsData.length - 1; i++) {
+            const boundaryDate = seasonsData[i].endDate;
+            let idx = -1;
+            for (let j = 0; j < dataPoints.length; j++) {
+                if (dataPoints[j].time <= boundaryDate) idx = j;
+                else break;
+            }
+            if (idx >= 0 && idx < dataPoints.length - 1) {
+                seasonBoundaries.push({
+                    idx: idx,
+                    label: seasonsData[i + 1].label
+                });
+            }
+        }
+    }
+
     new Chart(canvas, {
         type: 'line',
         data: {
@@ -825,7 +844,41 @@ function renderWttPersonalScoreChart(dailyHistory, snapshotHistory) {
                     beginAtZero: false
                 }
             }
-        }
+        },
+        plugins: [{
+            id: 'seasonBoundaries',
+            afterDraw: function(chart) {
+                if (!seasonBoundaries.length) return;
+                const ctx = chart.ctx;
+                const meta = chart.getDatasetMeta(0);
+                const chartArea = chart.chartArea;
+                const topY = chartArea.top;
+                const bottomY = chartArea.bottom;
+
+                ctx.save();
+                for (const b of seasonBoundaries) {
+                    const point = meta.data[b.idx];
+                    if (!point) continue;
+                    const x = point.x;
+                    if (x < chartArea.left || x > chartArea.right) continue;
+
+                    ctx.beginPath();
+                    ctx.setLineDash([6, 4]);
+                    ctx.strokeStyle = isDark ? 'rgba(200,200,200,0.45)' : 'rgba(100,100,100,0.4)';
+                    ctx.lineWidth = 1;
+                    ctx.moveTo(x, topY);
+                    ctx.lineTo(x, bottomY);
+                    ctx.stroke();
+
+                    ctx.setLineDash([]);
+                    ctx.fillStyle = isDark ? 'rgba(200,200,200,0.7)' : 'rgba(80,80,80,0.7)';
+                    ctx.font = '10px "Poppins", "Microsoft YaHei", sans-serif';
+                    ctx.textAlign = 'center';
+                    ctx.fillText(b.label, x, topY + 12);
+                }
+                ctx.restore();
+            }
+        }]
     });
 }
 
