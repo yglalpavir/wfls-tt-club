@@ -1,5 +1,123 @@
 [
   {
+    "id": "d2",
+    "roundLabels": {
+      "0": "6进3",
+      "1": "复活赛",
+      "2": "半决赛",
+      "3": "决赛/铜牌赛"
+    },
+    "competitionId": "c4",
+    "title": "2026乒乓球团体淘汰赛",
+    "version": 2,
+    "grid": {
+      "cols": 5,
+      "rows": 40,
+      "cellWidth": 400,
+      "cellHeight": 80
+    },
+    "cards": [
+      {
+        "id": "m1",
+        "col": 0,
+        "row": 0,
+        "player1": "高一9班 梅哲宇、龚雨煊、王天森",
+        "player2": "高二6班、高二5班 祁子傲、李南熠、丁瑞、张书行(替补)",
+        "score": "3-0",
+        "winner": 1
+      },
+      {
+        "id": "m2",
+        "col": 0,
+        "row": 2,
+        "player1": "高二4班、高二10班 魏罗瑞、陈瑜萱、王成悦",
+        "player2": "高一6班 谷子易、彭一和、姜子润",
+        "score": "3-2",
+        "winner": 1
+      },
+      {
+        "id": "m3",
+        "col": 0,
+        "row": 4,
+        "player1": "高二12班、高二3班 张宸瑞、陈项诚、任峻贤、岳镇淳(替补)",
+        "player2": "高二4班、高二9班、高一5班 付大卫、孙钰鑫、叶泓鑫",
+        "score": "3-1",
+        "winner": 1
+      },
+      {
+        "id": "m4",
+        "col": 1,
+        "row": 8,
+        "player1": "高二6班、高二5班 祁子傲、李南熠、丁瑞、张书行(替补)",
+        "player2": "高一6班 谷子易、彭一和、姜子润",
+        "score": "8-5",
+        "winner": 1
+      },
+      {
+        "id": "m5",
+        "col": 1,
+        "row": 9,
+        "player1": "高二4班、高二9班、高一5班 付大卫、孙钰鑫、叶泓鑫",
+        "player2": "高一6班 谷子易、彭一和、姜子润",
+        "score": "8-5",
+        "winner": 1
+      },
+      {
+        "id": "m6",
+        "col": 1,
+        "row": 10,
+        "player1": "高二6班、高二5班 祁子傲、李南熠、丁瑞、张书行(替补)",
+        "player2": "高二4班、高二9班、高一5班 付大卫、孙钰鑫、叶泓鑫",
+        "score": "8-6",
+        "winner": 1
+      },
+      {
+        "id": "m7",
+        "col": 2,
+        "row": 1,
+        "player1": "高一9班 梅哲宇、龚雨煊、王天森",
+        "player2": "高二4班、高二10班 魏罗瑞、陈瑜萱、王成悦",
+        "score": "0-3",
+        "winner": 2
+      },
+      {
+        "id": "m8",
+        "col": 2,
+        "row": 7,
+        "player1": "高二12班、高二3班 张宸瑞、陈项诚、任峻贤、岳镇淳(替补)",
+        "player2": "高二6班、高二5班 祁子傲、李南熠、丁瑞、张书行(替补)",
+        "score": "2-3",
+        "winner": 2
+      },
+      {
+        "id": "m9",
+        "col": 3,
+        "row": 5,
+        "player1": "高二4班、高二10班 魏罗瑞、陈瑜萱、王成悦",
+        "player2": "高二6班、高二5班 祁子傲、李南熠、丁瑞、张书行(替补)",
+        "score": "2-2",
+        "winner": 0
+      },
+      {
+        "id": "m10",
+        "col": 3,
+        "row": 10,
+        "player1": "高一9班 梅哲宇、龚雨煊、王天森",
+        "player2": "高二12班、高二3班 张宸瑞、陈项诚、任峻贤、岳镇淳(替补)",
+        "score": "3-0",
+        "winner": 1
+      }
+    ],
+    "connections": [
+      { "from": "m1", "to": "m7", "fromSide": "right", "toSide": "left" },
+      { "from": "m2", "to": "m7", "fromSide": "right", "toSide": "left" },
+      { "from": "m3", "to": "m8", "fromSide": "right", "toSide": "left" },
+      { "from": "m6", "to": "m8", "fromSide": "right", "toSide": "left" },
+      { "from": "m7", "to": "m9", "fromSide": "right", "toSide": "left" },
+      { "from": "m8", "to": "m9", "fromSide": "right", "toSide": "left" }
+    ]
+  },
+  {
     "id": "d1",
     "competitionId": "c5",
     "title": "2026乒乓球单打淘汰赛",

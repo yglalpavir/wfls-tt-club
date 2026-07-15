@@ -254,11 +254,14 @@ function renderGridViewer(container, draws) {
         r.cards.push(card);
     });
 
-    const roundLabels = ['第一轮', '第二轮', '1/4决赛', '半决赛', '决赛', '冠军'];
+    const defaultRoundLabels = ['第一轮', '第二轮', '1/4决赛', '半决赛', '决赛', '冠军'];
+    const customLabels = draws.roundLabels || {};
     Object.values(roundsMap).forEach((r, i) => {
         const label = document.createElement('div');
         label.className = 'dv-round-label';
-        label.textContent = roundLabels[i] || `第${i + 1}轮`;
+        // 优先使用自定义表头（按列索引），否则使用默认表头
+        const colKey = String(r.col);
+        label.textContent = customLabels[colKey] || defaultRoundLabels[i] || `第${i + 1}轮`;
         label.style.position = 'absolute';
         label.style.left = (paddingX + r.col * grid.cellWidth + grid.cellWidth / 2) + 'px';
         label.style.top = (paddingY - 28) + 'px';

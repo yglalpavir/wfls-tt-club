@@ -11,6 +11,7 @@ let editorGrid = { cols: 7, rows: 32, cellWidth: 180, cellHeight: 64 };
 let editorCards = [];
 let editorConnections = [];
 let editorCardMap = {};
+let editorRoundLabels = {};          // 自定义表头 { "0": "第一轮", "1": "第二轮", ... }
 let editorSelectedCard = null;
 let editorSelectedCards = new Set();   // Ctrl+框选多选
 let editorConnectionMode = false;
@@ -55,6 +56,7 @@ function initDrawsEditor(containerId, drawsData) {
         editorGrid = editorDrawsData.grid || { cols: 7, rows: 32, cellWidth: 180, cellHeight: 64 };
         editorCards = editorDrawsData.cards || [];
         editorConnections = editorDrawsData.connections || [];
+        editorRoundLabels = editorDrawsData.roundLabels || {};
     } else {
         editorDrawsData = {
             id: 'd' + Date.now(),
@@ -63,10 +65,12 @@ function initDrawsEditor(containerId, drawsData) {
             version: 2,
             grid: editorGrid,
             cards: [],
-            connections: []
+            connections: [],
+            roundLabels: {}
         };
         editorCards = [];
         editorConnections = [];
+        editorRoundLabels = {};
     }
 
     buildCardMap();
@@ -128,6 +132,8 @@ function renderEditorUI(container) {
                 <span style="font-size:0.73rem;white-space:nowrap;">自动</span>
             </label>
             <button class="de-btn de-btn-sm" id="deApplyGrid">应用</button>
+            <span class="de-separator">|</span>
+            <button class="de-btn de-btn-sm" id="deEditLabels" title="自定义各列表头名称"><i class="fa-solid fa-tags"></i> 表头</button>
         </div>
     `;
     container.appendChild(toolbar);
@@ -401,6 +407,11 @@ function bindEditorEvents(padX, padY) {
     // Delete selected
     document.getElementById('deDeleteSelected').addEventListener('click', () => {
         deleteSelectedCards(padX, padY);
+    });
+
+    // Edit round labels
+    document.getElementById('deEditLabels')?.addEventListener('click', () => {
+        openRoundLabelsModal();
     });
 
     // Apply grid settings
@@ -949,6 +960,96 @@ function openCardEditModal(card, padX, padY) {
 }
 
 /**
+ * 表头标签编辑弹窗
+ */
+function openRoundLabelsModal() {
+    // 收集当前使用的列
+    const usedCols = new Set();
+    editorCards.forEach(c => usedCols.add(c.col));
+    const sortedCols = Array.from(usedCols).sort((a, b) => a - b);
+
+    const defaultLabels = ['第一轮', '第二轮', '1/4决赛', '半决赛', '决赛', '冠军'];
+
+    const overlay = document.createElement('div');
+    overlay.className = 'de-modal-overlay';
+    
+    let rowsHtml = sortedCols.map((col, i) => {
+        const currentVal = editorRoundLabels[String(col)] || '';
+        const placeholder = defaultLabels[i] || `第${i + 1}轮`;
+        return `
+            <div class="de-form-row">
+                <label class="de-form-label">第 ${col} 列表头</label>
+                <input type="text" class="de-form-input de-round-label-input" 
+                       data-col="${col}" 
+                       value="${escapeHtml(currentVal)}" 
+                       placeholder="${escapeHtml(placeholder)}">
+            </div>
+        `;
+    }).join('');
+
+    if (sortedCols.length === 0) {
+        rowsHtml = '<p style="text-align:center;color:var(--text-muted);padding:20px;">暂无卡片，请先添加卡片后再设置表头</p>';
+    }
+
+    overlay.innerHTML = `
+        <div class="de-modal glass-card" style="max-width:480px;">
+            <h3 class="de-modal-title">
+                <i class="fa-solid fa-tags"></i> 自定义表头
+            </h3>
+            <div class="de-modal-body">
+                <p style="font-size:0.8rem;color:var(--text-secondary);margin-bottom:12px;">
+                    为每列设置自定义表头名称。留空则使用默认名称。
+                </p>
+                ${rowsHtml}
+            </div>
+            <div class="de-modal-footer">
+                <button class="de-btn" id="deLabelsReset">
+                    <i class="fa-solid fa-undo"></i> 重置全部
+                </button>
+                <button class="de-btn" id="deLabelsCancel">取消</button>
+                <button class="de-btn de-btn-primary" id="deLabelsSave">
+                    <i class="fa-solid fa-check"></i> 保存
+                </button>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(overlay);
+
+    const closeModal = () => {
+        document.body.removeChild(overlay);
+    };
+
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeModal();
+    });
+
+    document.getElementById('deLabelsCancel').addEventListener('click', closeModal);
+
+    document.getElementById('deLabelsReset').addEventListener('click', () => {
+        editorRoundLabels = {};
+        editorDirty = true;
+        updateStatusBar();
+        closeModal();
+    });
+
+    document.getElementById('deLabelsSave').addEventListener('click', () => {
+        const inputs = overlay.querySelectorAll('.de-round-label-input');
+        const newLabels = {};
+        inputs.forEach(input => {
+            const col = input.dataset.col;
+            const val = input.value.trim();
+            if (val) {
+                newLabels[col] = val;
+            }
+        });
+        editorRoundLabels = newLabels;
+        editorDirty = true;
+        updateStatusBar();
+        closeModal();
+    });
+}
+
+/**
  * 绑定画布底部拖拽调整大小
  */
 function bindResizeHandle(canvasWrapper, handle) {
@@ -1103,7 +1204,8 @@ function getEditorDrawsData() {
         version: 2,
         grid: { ...editorGrid },
         cards: editorCards.map(c => ({ ...c })),
-        connections: editorConnections.map(c => ({ ...c }))
+        connections: editorConnections.map(c => ({ ...c })),
+        roundLabels: { ...editorRoundLabels }
     };
 }
 
