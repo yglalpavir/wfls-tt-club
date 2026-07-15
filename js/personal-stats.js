@@ -281,8 +281,13 @@ function renderPersonalStats(playerName) {
         }
 
         // 遍历所有快照，计算最高积分、最高排名和积分历史
+        // 注意：球员首次参赛前不纳入统计
+        const firstAppearance = getClubFirstAppearanceDate();
+        const playerFirstDate = firstAppearance[playerName] || '';
         for (const t of rankingTimeline) {
             if (!t.data || !t.data.length) continue;
+            // 跳过球员首次参赛前的快照
+            if (playerFirstDate && t.time && t.time < playerFirstDate) continue;
             const me = t.data.find(p => p['姓名'] === playerName);
             if (!me) continue;
             const score = Math.round(me['当前积分']);

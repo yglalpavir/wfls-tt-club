@@ -23,7 +23,7 @@ function loadRankingData() { return wttLoadRankingData(); }
 function wttLoadInitialScores() { return fetch('wtt_data/wtt_initial-scores.json').then(r => r.json()).then(d => { wttInitialScoresData = d; return true; }).catch(e => { console.error('WTT initial-scores 加载失败', e); return false; }); }
 function wttLoadEventCoefficients() { return fetch('wtt_data/wtt_event-coefficient.json').then(r => r.json()).then(d => { wttEventCoefficients = d; return true; }).catch(e => { console.error('WTT event-coefficient 加载失败', e); return false; }); }
 function wttLoadSeasons() { return fetch('wtt_data/wtt_seasons.json').then(r => r.json()).then(d => { wttSeasonsData = d.filter(s => s.visible !== false); return true; }).catch(e => { wttSeasonsData = []; return false; }); }
-function wttLoadScoreLog() { return fetch('wtt_data/wtt_score-log.json').then(r => r.json()).then(d => { wttScoreLogData = d; }).catch(e => { wttScoreLogData = []; }); }
+function wttLoadScoreLog() { return fetch('wtt_data/wtt_score-log.json').then(r => r.json()).then(d => { wttScoreLogData = d; clearFirstAppearanceCache(); }).catch(e => { wttScoreLogData = []; }); }
 
 // 桥接：让 score-engine.js 的函数使用 WTT 数据
 function getWttActiveData() {

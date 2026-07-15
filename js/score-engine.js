@@ -13,6 +13,46 @@ function calcRawPoints(winner, loser, eventType, currentScores) { const wScore =
 
 function getActivePlayers(sortedLog, startDate, endDate) { const ap = new Set(); sortedLog.forEach(r => { if (r['日期'] < startDate || r['日期'] > endDate) return; if (isMatchRecord(r)) { ap.add(r['胜者']); ap.add(r['负者']); } else if (isBonusRecord(r)) { ap.add(r['对象']); } }); return ap; }
 
+// 获取每位球员的首次参赛日期（基于 score log）
+// 返回 { playerName: 'YYYY-MM-DD', ... }
+function getPlayerFirstAppearanceDate(scoreLog) {
+    const firstDate = {};
+    for (const r of scoreLog) {
+        const date = r['日期'];
+        if (isMatchRecord(r)) {
+            if (!firstDate[r['胜者']] || date < firstDate[r['胜者']]) firstDate[r['胜者']] = date;
+            if (!firstDate[r['负者']] || date < firstDate[r['负者']]) firstDate[r['负者']] = date;
+        } else if (isBonusRecord(r)) {
+            if (!firstDate[r['对象']] || date < firstDate[r['对象']]) firstDate[r['对象']] = date;
+        }
+    }
+    return firstDate;
+}
+
+// 俱乐部数据的首次参赛日期缓存
+let _clubFirstAppearanceCache = null;
+function getClubFirstAppearanceDate() {
+    if (_clubFirstAppearanceCache) return _clubFirstAppearanceCache;
+    _clubFirstAppearanceCache = getPlayerFirstAppearanceDate(scoreLogData || []);
+    return _clubFirstAppearanceCache;
+}
+
+// WTT 数据的首次参赛日期缓存
+let _wttFirstAppearanceCache = null;
+function getWttFirstAppearanceDate() {
+    if (_wttFirstAppearanceCache) return _wttFirstAppearanceCache;
+    _wttFirstAppearanceCache = getPlayerFirstAppearanceDate(
+        (typeof wttScoreLogData !== 'undefined' && wttScoreLogData) ? wttScoreLogData : []
+    );
+    return _wttFirstAppearanceCache;
+}
+
+// 清除首次参赛日期缓存（数据重新加载时调用）
+function clearFirstAppearanceCache() {
+    _clubFirstAppearanceCache = null;
+    _wttFirstAppearanceCache = null;
+}
+
 function calculateAllRankingsWithSeasons(scoreLog, initialScores, seasons) {
     const sortedLog = [...scoreLog].sort((a, b) => a['日期'].localeCompare(b['日期']));
     const allRankings = []; let seasonStartScores = { ...initialScores }; let currentScores = { ...initialScores };
@@ -125,5 +165,5 @@ function calculateRealtimeRanking() {
 async function loadInitialScores() { try { initialScoresData = await (await fetch('data/initial-scores.json')).json(); return true; } catch(e) { console.error('initial-scores.json 加载失败', e); return false; } }
 async function loadEventCoefficients() { try { eventCoefficients = await (await fetch('data/event-coefficient.json')).json(); return true; } catch(e) { console.error('event-coefficient.json 加载失败', e); return false; } }
 async function loadSeasons() { try { seasonsData = (await (await fetch('data/seasons.json')).json()).filter(s => s.visible !== false); return true; } catch(e) { console.error('seasons.json 加载失败', e); seasonsData = []; return false; } }
-async function loadScoreLogData() { try { scoreLogData = await (await fetch('data/score-log.json')).json(); } catch(e) { scoreLogData = []; } }
-async function loadScoreLogForViz() { try { scoreLogData = await (await fetch('data/score-log.json')).json(); return true; } catch(e) { scoreLogData = []; return true; } }
+async function loadScoreLogData() { try { scoreLogData = await (await fetch('data/score-log.json')).json(); clearFirstAppearanceCache(); } catch(e) { scoreLogData = []; } }
+async function loadScoreLogForViz() { try { scoreLogData = await (await fetch('data/score-log.json')).json(); clearFirstAppearanceCache(); return true; } catch(e) { scoreLogData = []; return true; } }

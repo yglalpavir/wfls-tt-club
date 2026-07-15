@@ -59,7 +59,7 @@ function wttLoadSeasons() {
     return fetch('wtt_data/wtt_seasons.json').then(r => r.json()).then(d => { wttSeasonsData = d.filter(s => s.visible !== false); return true; }).catch(e => { wttSeasonsData = []; return false; });
 }
 function wttLoadScoreLog() {
-    return fetch('wtt_data/wtt_score-log.json').then(r => r.json()).then(d => { wttScoreLogData = d; }).catch(e => { wttScoreLogData = []; });
+    return fetch('wtt_data/wtt_score-log.json').then(r => r.json()).then(d => { wttScoreLogData = d; clearFirstAppearanceCache(); }).catch(e => { wttScoreLogData = []; });
 }
 
 // 桥接变量（如果 wtt_ranking.js 先加载了，则复用）
@@ -334,9 +334,17 @@ function wttRenderCompareSelects() {
 // ============ 积分趋势图 ============
 
 // 获取球员在某个WTT快照时点的积分（含无比赛记录的球员）
+// 注意：球员首次参赛前不纳入统计，返回 null
 function wttGetPlayerScoreAtSnapshot(playerName, timelineEntry) {
     const p = timelineEntry.data.find(x => x['姓名'] === playerName);
     if (p) return p['当前积分'];
+
+    // 检查快照日期是否在球员首次参赛之前
+    const firstAppearance = getWttFirstAppearanceDate();
+    const playerFirstDate = firstAppearance[playerName];
+    if (playerFirstDate && timelineEntry.time && timelineEntry.time < playerFirstDate) {
+        return null;
+    }
 
     // 切换到 WTT 全局数据，确保 getSeasonStartScores 使用正确的数据源
     const origScoreLog = scoreLogData;
@@ -373,7 +381,15 @@ function wttGetPlayerScoreAtSnapshot(playerName, timelineEntry) {
 }
 
 // 获取球员在某个WTT快照时点的排名（含无比赛记录的球员）
+// 注意：球员首次参赛前不纳入统计，返回 null
 function wttGetPlayerRankAtSnapshot(playerName, timelineEntry) {
+    // 检查快照日期是否在球员首次参赛之前
+    const firstAppearance = getWttFirstAppearanceDate();
+    const playerFirstDate = firstAppearance[playerName];
+    if (playerFirstDate && timelineEntry.time && timelineEntry.time < playerFirstDate) {
+        return null;
+    }
+
     const allScores = [];
     const seen = new Set();
     for (const p of timelineEntry.data) {

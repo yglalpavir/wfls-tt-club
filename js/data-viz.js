@@ -176,9 +176,18 @@ function renderCompareSelects() {
 }
 
 // 获取球员在某个快照时点的积分（含无比赛记录的球员，回退到赛季继承起始积分）
+// 注意：球员首次参赛前不纳入统计，返回 null
 function getPlayerScoreAtSnapshot(playerName, timelineEntry) {
     const p = timelineEntry.data.find(x => x['姓名'] === playerName);
     if (p) return p['当前积分'];
+
+    // 检查快照日期是否在球员首次参赛之前
+    const firstAppearance = getClubFirstAppearanceDate();
+    const playerFirstDate = firstAppearance[playerName];
+    if (playerFirstDate && timelineEntry.time && timelineEntry.time < playerFirstDate) {
+        return null;
+    }
+
     if (seasonsData && seasonsData.length > 0 && timelineEntry.season) {
         const season = seasonsData.find(s => s.label === timelineEntry.season);
         if (season) {
@@ -196,7 +205,15 @@ function getPlayerScoreAtSnapshot(playerName, timelineEntry) {
 }
 
 // 获取球员在某个快照时点的排名（含无比赛记录的球员）
+// 注意：球员首次参赛前不纳入统计，返回 null
 function getPlayerRankAtSnapshot(playerName, timelineEntry) {
+    // 检查快照日期是否在球员首次参赛之前
+    const firstAppearance = getClubFirstAppearanceDate();
+    const playerFirstDate = firstAppearance[playerName];
+    if (playerFirstDate && timelineEntry.time && timelineEntry.time < playerFirstDate) {
+        return null;
+    }
+
     const allScores = [];
     const seen = new Set();
     for (const p of timelineEntry.data) {
