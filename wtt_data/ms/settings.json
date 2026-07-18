@@ -1,0 +1,5 @@
+{
+  "_说明": "男子单打(MS)设置。scoreMode: 'initial' 使用 initial-scores.json 的初始分; 'flat1300' 所有球员统一从 baseScore 开始。baseScore: 默认初始分（仅 flat1300 模式生效，默认1300）。",
+  "scoreMode": "flat1300",
+  "baseScore": 1500
+}

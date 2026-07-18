@@ -356,23 +356,23 @@ function calcFormScore(playerName) {
         if (seasonStartDate && m['日期'] < seasonStartDate) continue;
         if (isMatchRecord(m)) {
             const w = m['胜者'], l = m['负者'];
-            if (!scores[w]) scores[w] = 1300;
-            if (!scores[l]) scores[l] = 1300;
+            if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
+            if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
             const wg = calcRawPoints(w, l, m['类型'], scores);
             scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg);
             scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * 0.8);
         } else if (isBonusRecord(m)) {
             const target = m['对象'];
             const bonus = parseFloat(m['分数']) || 0;
-            if (!scores[target]) scores[target] = 1300;
+            if (!scores[target]) scores[target] = DEFAULT_INITIAL_SCORE;
             scores[target] = Math.max(SCORE_FLOOR, scores[target] + bonus);
         }
     }
     let totalChange = 0;
     for (const m of recentMatches) {
         const w = m['胜者'], l = m['负者'];
-        if (!scores[w]) scores[w] = 1300;
-        if (!scores[l]) scores[l] = 1300;
+        if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
+        if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
         const rawPoints = calcRawPoints(w, l, m['类型'], scores);
         if (w === playerName) {
             totalChange += rawPoints;
@@ -419,7 +419,7 @@ function renderComparison(playerA, playerB) {
           total = h2h.length; 
     const recent = h2h.length ? h2h[h2h.length-1] : null; const aWinRate = total > 0 ? ((aW/total)*100).toFixed(1)+'%' : '-', bWinRate = total > 0 ? ((bW/total)*100).toFixed(1)+'%' : '-';
     // 计算预测胜率
-    const rA = ad ? ad['当前积分'] : 1300, rB = bd ? bd['当前积分'] : 1300;
+    const rA = ad ? ad['当前积分'] : DEFAULT_INITIAL_SCORE, rB = bd ? bd['当前积分'] : DEFAULT_INITIAL_SCORE;
     const fA = calcFormScore(playerA), fB = calcFormScore(playerB);
     const predA = (calcPredictedWinRate(rA, rB, aW, bW, fA, fB) * 100).toFixed(1);
     const predB = (calcPredictedWinRate(rB, rA, bW, aW, fB, fA) * 100).toFixed(1);
@@ -436,7 +436,7 @@ function renderComparison(playerA, playerB) {
         }
         if (Object.keys(scores).length === 0 && initialScoresData) Object.assign(scores, initialScoresData.initialScores);
         const h2hSeasonStart = (seasonsData && seasonsData.length > 0 && h2h.length > 0) ? (() => { const d = h2h[0]['日期']; for (const s of seasonsData) { if (d >= s.startDate && d <= s.endDate) return s.startDate; } return seasonsData[seasonsData.length - 1].startDate; })() : '';
-        const sortedLog = [...scoreLogData].sort((a,b) => a['日期'].localeCompare(b['日期'])); for (const m of sortedLog) { if (h2hSeasonStart && m['日期'] < h2hSeasonStart) continue; if (isMatchRecord(m)) { const w = m['胜者'], l = m['负者']; if (!scores[w]) scores[w] = 1300; if (!scores[l]) scores[l] = 1300; const wg = calcMatchPoints(w, l, m['类型'], m['日期'], m['日期'], scores); if ((w === playerA && l === playerB) || (w === playerB && l === playerA)) { const aIsW = w === playerA; const aChange = aIsW ? wg : -(wg * 0.8); const bChange = aIsW ? -(wg * 0.8) : wg; html += `<tr><td>${m['日期']}</td><td>${m['类型']}</td><td>${w}</td><td class="${aIsW?'win-highlight':'loss-highlight'}">${aChange>0?'+':''}${aChange.toFixed(1)}</td><td class="${!aIsW?'win-highlight':'loss-highlight'}">${bChange>0?'+':''}${bChange.toFixed(1)}</td></tr>`; } scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg); scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * 0.8); } else if (isBonusRecord(m)) { const target = m['对象']; const bonus = parseFloat(m['分数']) || 0; if (!scores[target]) scores[target] = 1300; scores[target] = Math.max(SCORE_FLOOR, scores[target] + bonus); } } html += '</tbody></table></div>'; } else { html += '<div class="compare-placeholder"><i class="fa-solid fa-circle-info"></i><p>暂无交手记录</p></div>'; } container.innerHTML = html; }
+        const sortedLog = [...scoreLogData].sort((a,b) => a['日期'].localeCompare(b['日期'])); for (const m of sortedLog) { if (h2hSeasonStart && m['日期'] < h2hSeasonStart) continue; if (isMatchRecord(m)) { const w = m['胜者'], l = m['负者']; if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE; if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE; const wg = calcMatchPoints(w, l, m['类型'], m['日期'], m['日期'], scores); if ((w === playerA && l === playerB) || (w === playerB && l === playerA)) { const aIsW = w === playerA; const aChange = aIsW ? wg : -(wg * 0.8); const bChange = aIsW ? -(wg * 0.8) : wg; html += `<tr><td>${m['日期']}</td><td>${m['类型']}</td><td>${w}</td><td class="${aIsW?'win-highlight':'loss-highlight'}">${aChange>0?'+':''}${aChange.toFixed(1)}</td><td class="${!aIsW?'win-highlight':'loss-highlight'}">${bChange>0?'+':''}${bChange.toFixed(1)}</td></tr>`; } scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg); scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * 0.8); } else if (isBonusRecord(m)) { const target = m['对象']; const bonus = parseFloat(m['分数']) || 0; if (!scores[target]) scores[target] = DEFAULT_INITIAL_SCORE; scores[target] = Math.max(SCORE_FLOOR, scores[target] + bonus); } } html += '</tbody></table></div>'; } else { html += '<div class="compare-placeholder"><i class="fa-solid fa-circle-info"></i><p>暂无交手记录</p></div>'; } container.innerHTML = html; }
 // ========================================
 // 个人数据板块
 // ========================================
@@ -481,19 +481,19 @@ function getApproxScoreAtDate(playerName, targetDate, sortedLog, startScores, be
         if (beforeMatch ? (r['日期'] >= targetDate) : (r['日期'] > targetDate)) break;
         if (isMatchRecord(r)) {
             const w = r['胜者'], l = r['负者'];
-            if (!sc[w]) sc[w] = 1300;
-            if (!sc[l]) sc[l] = 1300;
+            if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE;
+            if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
             const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], sc);
             sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
             sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * 0.8);
         } else if (isBonusRecord(r)) {
             const t = r['对象'];
             const b = parseFloat(r['分数']) || 0;
-            if (!sc[t]) sc[t] = 1300;
+            if (!sc[t]) sc[t] = DEFAULT_INITIAL_SCORE;
             sc[t] = Math.max(SCORE_FLOOR, sc[t] + b);
         }
     }
-    return Math.round(sc[playerName] || 1300);
+    return Math.round(sc[playerName] || DEFAULT_INITIAL_SCORE);
 }
 
 function renderPersonalStats(playerName) {
@@ -573,14 +573,14 @@ function renderPersonalStats(playerName) {
             if (isBonusRecord(r)) {
                 const t = r['对象'];
                 const b = parseFloat(r['分数']) || 0;
-                if (!scores[t]) scores[t] = 1300;
+                if (!scores[t]) scores[t] = DEFAULT_INITIAL_SCORE;
                 scores[t] = Math.max(SCORE_FLOOR, scores[t] + b);
             }
             continue;
         }
         const w = r['胜者'], l = r['负者'];
-        if (!scores[w]) scores[w] = 1300;
-        if (!scores[l]) scores[l] = 1300;
+        if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
+        if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
         const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], scores);
         if (w === playerName) {
             oppPointsGained[l] = (oppPointsGained[l] || 0) + wg;

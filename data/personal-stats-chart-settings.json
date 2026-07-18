@@ -27,8 +27,8 @@
   "week": {
     "tension": 0.2,
     "borderWidth": 2.2,
-    "pointRadius": 3,
-    "pointHoverExtra": 3,
+    "pointRadius": 0,
+    "pointHoverExtra": 0,
     "maxTicks": 15
   },
   "snapshot": {

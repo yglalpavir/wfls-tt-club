@@ -13,32 +13,18 @@ async function wttLoadRankingDataForViz() {
     try {
         await Promise.all([
             wttLoadInitialScores(),
+            wttLoadSettings(),
             wttLoadEventCoefficients(),
             wttLoadSeasons(),
             wttLoadScoreLog()
         ]);
-        if (!wttInitialScoresData || !wttEventCoefficients || !wttSeasonsData) throw new Error('WTT数据加载失败');
+        // flat1300 模式不需要 initialScoresData
+        const isFlat = wttSettings && wttSettings.scoreMode === 'flat1300';
+        if (!isFlat && !wttInitialScoresData) throw new Error('WTT initial-scores 加载失败');
+        if (!wttEventCoefficients || !wttSeasonsData) throw new Error('WTT数据加载失败');
 
-        // 计算 WTT 排名时间线（切换到 WTT 全局数据）
-        const origScoreLog = scoreLogData;
-        const origInitial = initialScoresData;
-        const origEvent = eventCoefficients;
-        const origSeasons = seasonsData;
-
-        scoreLogData = wttScoreLogData;
-        initialScoresData = wttInitialScoresData;
-        eventCoefficients = wttEventCoefficients;
-        seasonsData = wttSeasonsData;
-
-        wttRankingTimeline = calculateAllRankingsWithSeasons(scoreLogData, initialScoresData.initialScores, seasonsData);
-        const rt = calculateRealtimeRanking();
-        if (rt) wttRankingTimeline.push(rt);
-
-        // 恢复全局数据
-        scoreLogData = origScoreLog;
-        initialScoresData = origInitial;
-        eventCoefficients = origEvent;
-        seasonsData = origSeasons;
+        // 异步分块计算（不阻塞 UI）
+        wttRankingTimeline = await wttCalculateAllRankingsAsync();
 
         return true;
     } catch(e) {
@@ -48,26 +34,8 @@ async function wttLoadRankingDataForViz() {
     }
 }
 
-// 加载 WTT 数据文件（复用 wtt_ranking.js 中的函数签名）
-function wttLoadInitialScores() {
-    return fetch('wtt_data/wtt_initial-scores.json').then(r => r.json()).then(d => { wttInitialScoresData = d; return true; }).catch(e => { console.error('WTT initial-scores 加载失败', e); return false; });
-}
-function wttLoadEventCoefficients() {
-    return fetch('wtt_data/wtt_event-coefficient.json').then(r => r.json()).then(d => { wttEventCoefficients = d; return true; }).catch(e => { console.error('WTT event-coefficient 加载失败', e); return false; });
-}
-function wttLoadSeasons() {
-    return fetch('wtt_data/wtt_seasons.json').then(r => r.json()).then(d => { wttSeasonsData = d.filter(s => s.visible !== false); return true; }).catch(e => { wttSeasonsData = []; return false; });
-}
-function wttLoadScoreLog() {
-    return fetch('wtt_data/wtt_score-log.json').then(r => r.json()).then(d => { wttScoreLogData = d; clearFirstAppearanceCache(); }).catch(e => { wttScoreLogData = []; });
-}
-
-// 桥接变量（如果 wtt_ranking.js 先加载了，则复用）
-if (typeof wttScoreLogData === 'undefined') var wttScoreLogData = [];
-if (typeof wttInitialScoresData === 'undefined') var wttInitialScoresData = null;
-if (typeof wttEventCoefficients === 'undefined') var wttEventCoefficients = null;
-if (typeof wttSeasonsData === 'undefined') var wttSeasonsData = null;
-if (typeof wttRankingTimeline === 'undefined') var wttRankingTimeline = [];
+// 数据加载由 wtt_common.js 提供（分类目录：wtt_data/{category}/）
+// 共享变量（wttScoreLogData 等）由 wtt_common.js 声明
 
 // ============ 初始化 ============
 
@@ -215,7 +183,7 @@ function wttRenderPlayerCheckboxes() {
     const origEvent = eventCoefficients;
     const origSeasons = seasonsData;
     scoreLogData = wttScoreLogData;
-    initialScoresData = wttInitialScoresData;
+    initialScoresData = (typeof wttGetInitialScoresDataForEngine === 'function') ? wttGetInitialScoresDataForEngine() : wttInitialScoresData;
     eventCoefficients = wttEventCoefficients;
     seasonsData = wttSeasonsData;
 
@@ -284,7 +252,7 @@ function wttRenderCompareSelects() {
     const origEvent = eventCoefficients;
     const origSeasons = seasonsData;
     scoreLogData = wttScoreLogData;
-    initialScoresData = wttInitialScoresData;
+    initialScoresData = (typeof wttGetInitialScoresDataForEngine === 'function') ? wttGetInitialScoresDataForEngine() : wttInitialScoresData;
     eventCoefficients = wttEventCoefficients;
     seasonsData = wttSeasonsData;
 
@@ -352,7 +320,7 @@ function wttGetPlayerScoreAtSnapshot(playerName, timelineEntry) {
     const origEvent = eventCoefficients;
     const origSeasons = seasonsData;
     scoreLogData = wttScoreLogData;
-    initialScoresData = wttInitialScoresData;
+    initialScoresData = (typeof wttGetInitialScoresDataForEngine === 'function') ? wttGetInitialScoresDataForEngine() : wttInitialScoresData;
     eventCoefficients = wttEventCoefficients;
     seasonsData = wttSeasonsData;
 
@@ -403,7 +371,7 @@ function wttGetPlayerRankAtSnapshot(playerName, timelineEntry) {
     const origEvent = eventCoefficients;
     const origSeasons = seasonsData;
     scoreLogData = wttScoreLogData;
-    initialScoresData = wttInitialScoresData;
+    initialScoresData = (typeof wttGetInitialScoresDataForEngine === 'function') ? wttGetInitialScoresDataForEngine() : wttInitialScoresData;
     eventCoefficients = wttEventCoefficients;
     seasonsData = wttSeasonsData;
 
@@ -562,7 +530,7 @@ function wttCalcFormScore(playerName) {
     const origSeasons = seasonsData;
 
     scoreLogData = wttScoreLogData;
-    initialScoresData = wttInitialScoresData;
+    initialScoresData = (typeof wttGetInitialScoresDataForEngine === 'function') ? wttGetInitialScoresDataForEngine() : wttInitialScoresData;
     eventCoefficients = wttEventCoefficients;
     seasonsData = wttSeasonsData;
 
@@ -610,15 +578,15 @@ function wttCalcFormScore(playerName) {
         if (seasonStartDate && m['日期'] < seasonStartDate) continue;
         if (isMatchRecord(m)) {
             const w = m['胜者'], l = m['负者'];
-            if (!scores[w]) scores[w] = 1300;
-            if (!scores[l]) scores[l] = 1300;
+            if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
+            if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
             const wg = calcRawPoints(w, l, m['类型'], scores);
             scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg);
             scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * 0.8);
         } else if (isBonusRecord(m)) {
             const target = m['对象'];
             const bonus = parseFloat(m['分数']) || 0;
-            if (!scores[target]) scores[target] = 1300;
+            if (!scores[target]) scores[target] = DEFAULT_INITIAL_SCORE;
             scores[target] = Math.max(SCORE_FLOOR, scores[target] + bonus);
         }
     }
@@ -626,8 +594,8 @@ function wttCalcFormScore(playerName) {
     let totalChange = 0;
     for (const m of recentMatches) {
         const w = m['胜者'], l = m['负者'];
-        if (!scores[w]) scores[w] = 1300;
-        if (!scores[l]) scores[l] = 1300;
+        if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
+        if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
         const rawPoints = calcRawPoints(w, l, m['类型'], scores);
         if (w === playerName) {
             totalChange += rawPoints;
@@ -665,7 +633,7 @@ function wttRenderComparison(playerA, playerB) {
     const origSeasons = seasonsData;
 
     scoreLogData = wttScoreLogData;
-    initialScoresData = wttInitialScoresData;
+    initialScoresData = (typeof wttGetInitialScoresDataForEngine === 'function') ? wttGetInitialScoresDataForEngine() : wttInitialScoresData;
     eventCoefficients = wttEventCoefficients;
     seasonsData = wttSeasonsData;
 
@@ -688,7 +656,7 @@ function wttRenderComparison(playerA, playerB) {
     const aWinRate = total > 0 ? ((aW / total) * 100).toFixed(1) + '%' : '-',
           bWinRate = total > 0 ? ((bW / total) * 100).toFixed(1) + '%' : '-';
 
-    const rA = ad ? ad['当前积分'] : 1300, rB = bd ? bd['当前积分'] : 1300;
+    const rA = ad ? ad['当前积分'] : DEFAULT_INITIAL_SCORE, rB = bd ? bd['当前积分'] : DEFAULT_INITIAL_SCORE;
     const fA = wttCalcFormScore(playerA), fB = wttCalcFormScore(playerB);
     const predA = (wttCalcPredictedWinRate(rA, rB, aW, bW, fA, fB) * 100).toFixed(1);
     const predB = (wttCalcPredictedWinRate(rB, rA, bW, aW, fB, fA) * 100).toFixed(1);
@@ -743,8 +711,8 @@ function wttRenderComparison(playerA, playerB) {
             if (!isMatchRecord(m)) continue;
             const w = m['胜者'], l = m['负者'];
             if ((w !== playerA || l !== playerB) && (w !== playerB || l !== playerA)) continue;
-            if (!scores[w]) scores[w] = 1300;
-            if (!scores[l]) scores[l] = 1300;
+            if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
+            if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
             const wg = calcMatchPoints(w, l, m['类型'], m['日期'], m['日期'], scores);
             const aIsW = w === playerA;
             const aChange = aIsW ? wg : -(wg * 0.8);

@@ -55,7 +55,7 @@ function renderScoreDetail() {
 
         if (isMatchRecord(record)) {
             const w = record['胜者'], l = record['负者'];
-            if (!scores[w]) scores[w] = 1300; if (!scores[l]) scores[l] = 1300;
+            if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE; if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
             const decayedGain = calcMatchPoints(w, l, record['类型'], record['日期'], snapshotDate, scores);
             const rawGain = calcRawPoints(w, l, record['类型'], scores);
             if (record['胜者'] === player || record['负者'] === player) {
@@ -70,12 +70,12 @@ function renderScoreDetail() {
             scores[l] = Math.max(SCORE_FLOOR, scores[l] - decayedGain * 0.8);
         } else if (isBonusRecord(record) && record['对象'] === player) {
             const bonus = parseFloat(record['分数']) || 0;
-            if (!scores[player]) scores[player] = 1300;
+            if (!scores[player]) scores[player] = DEFAULT_INITIAL_SCORE;
             recordsWithScores.push({ date: record['日期'], type: i18n[currentLang].score_type_bonus, opponent: '-', isWinner: true, isBonus: true, scoreBefore: scores[player], rawChange: bonus, decayedChange: bonus, scoreAfter: scores[player] + bonus });
             scores[player] = Math.max(SCORE_FLOOR, scores[player] + bonus);
         } else if (isBonusRecord(record)) {
             const target = record['对象']; const bonus = parseFloat(record['分数']) || 0;
-            if (!scores[target]) scores[target] = 1300;
+            if (!scores[target]) scores[target] = DEFAULT_INITIAL_SCORE;
             scores[target] = Math.max(SCORE_FLOOR, scores[target] + bonus);
         }
     }

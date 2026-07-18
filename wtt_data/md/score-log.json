@@ -1,0 +1,17 @@
+[
+  {
+    "_comment": "=== 男子双打(MD) 比赛记录模板 ===",
+    "_comment_fields": "日期 / 类型 / 胜者(组合名'选手A/选手B') / 负者",
+    "_comment_bonus": "加分: {日期, 类型:'比赛结果加分', 对象, 分数}",
+    "_comment_placeholder": "填充真实数据后删除 _placeholder_ 前缀",
+    "日期": "_template_",
+    "类型": "_template_",
+    "胜者": "_template_",
+    "负者": "_template_"
+  },
+  { "日期": "2021-01-15", "类型": "常规挑战赛", "胜者": "_placeholder_FAN Zhendong/WANG Chuqin", "负者": "_placeholder_LIM Jonghoon/JANG Woojin" },
+  { "日期": "2021-03-15", "类型": "球星挑战赛", "胜者": "_placeholder_MA Long/LIN Gaoyuan", "负者": "_placeholder_LEBRUN Alexis/LEBRUN Felix" },
+  { "日期": "2021-06-01", "类型": "冠军赛", "胜者": "_placeholder_FAN Zhendong/WANG Chuqin", "负者": "_placeholder_TOGAMI Shunsuke/UDA Yukiya" },
+  { "日期": "2021-09-01", "类型": "世乒赛", "胜者": "_placeholder_FAN Zhendong/WANG Chuqin", "负者": "_placeholder_MA Long/LIN Gaoyuan" },
+  { "日期": "2021-09-15", "类型": "比赛结果加分", "对象": "_placeholder_FAN Zhendong/WANG Chuqin", "分数": 60 }
+]

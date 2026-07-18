@@ -5,59 +5,18 @@
 
 let wttPersonalChartSettings = null;  // 折线图设置
 
-// 桥接变量（如果 wtt_ranking.js 先加载了，则复用）
-if (typeof wttScoreLogData === 'undefined') var wttScoreLogData = [];
-if (typeof wttInitialScoresData === 'undefined') var wttInitialScoresData = null;
-if (typeof wttEventCoefficients === 'undefined') var wttEventCoefficients = null;
-if (typeof wttSeasonsData === 'undefined') var wttSeasonsData = null;
-if (typeof wttRankingTimeline === 'undefined') var wttRankingTimeline = [];
+// 注：wttScoreLogData 等共享变量已在 wtt_common.js 中声明（let），无需重复声明
 
 // ============ 数据加载 ============
 
-function wttLoadInitialScoresForPersonal() {
-    return fetch('wtt_data/wtt_initial-scores.json').then(r => r.json()).then(d => { wttInitialScoresData = d; return true; }).catch(e => { console.error('WTT initial-scores 加载失败', e); return false; });
-}
-function wttLoadEventCoefficientsForPersonal() {
-    return fetch('wtt_data/wtt_event-coefficient.json').then(r => r.json()).then(d => { wttEventCoefficients = d; return true; }).catch(e => { console.error('WTT event-coefficient 加载失败', e); return false; });
-}
-function wttLoadSeasonsForPersonal() {
-    return fetch('wtt_data/wtt_seasons.json').then(r => r.json()).then(d => { wttSeasonsData = d.filter(s => s.visible !== false); return true; }).catch(e => { wttSeasonsData = []; return false; });
-}
-function wttLoadScoreLogForPersonal() {
-    return fetch('wtt_data/wtt_score-log.json').then(r => r.json()).then(d => { wttScoreLogData = d; clearFirstAppearanceCache(); }).catch(e => { wttScoreLogData = []; });
-}
-
 async function wttLoadRankingDataForPersonal() {
+    // 使用 wtt_common.js 的统一数据加载（分类目录：wtt_data/{category}/）
+    const ok = await wttLoadAllData();
+    if (!ok) { wttRankingTimeline = []; return false; }
+
     try {
-        await Promise.all([
-            wttLoadInitialScoresForPersonal(),
-            wttLoadEventCoefficientsForPersonal(),
-            wttLoadSeasonsForPersonal(),
-            wttLoadScoreLogForPersonal()
-        ]);
-        if (!wttInitialScoresData || !wttEventCoefficients || !wttSeasonsData) throw new Error('WTT数据加载失败');
-
-        // 切换到 WTT 全局数据
-        const origScoreLog = scoreLogData;
-        const origInitial = initialScoresData;
-        const origEvent = eventCoefficients;
-        const origSeasons = seasonsData;
-
-        scoreLogData = wttScoreLogData;
-        initialScoresData = wttInitialScoresData;
-        eventCoefficients = wttEventCoefficients;
-        seasonsData = wttSeasonsData;
-
-        wttRankingTimeline = calculateAllRankingsWithSeasons(scoreLogData, initialScoresData.initialScores, seasonsData);
-        const rt = calculateRealtimeRanking();
-        if (rt) wttRankingTimeline.push(rt);
-
-        // 恢复全局数据
-        scoreLogData = origScoreLog;
-        initialScoresData = origInitial;
-        eventCoefficients = origEvent;
-        seasonsData = origSeasons;
-
+        // 异步分块计算（不阻塞 UI）
+        wttRankingTimeline = await wttCalculateAllRankingsAsync();
         return true;
     } catch(e) {
         console.error('WttPersonalStats: 排名计算失败', e);
@@ -116,7 +75,7 @@ function wttRenderPersonalPlayerSelect() {
     const origEvent = eventCoefficients;
     const origSeasons = seasonsData;
     scoreLogData = wttScoreLogData;
-    initialScoresData = wttInitialScoresData;
+    initialScoresData = (typeof wttGetInitialScoresDataForEngine === 'function') ? wttGetInitialScoresDataForEngine() : wttInitialScoresData;
     eventCoefficients = wttEventCoefficients;
     seasonsData = wttSeasonsData;
 
@@ -188,19 +147,19 @@ function wttGetApproxScoreAtDate(playerName, targetDate, sortedLog, startScores,
         if (beforeMatch ? (r['日期'] >= targetDate) : (r['日期'] > targetDate)) break;
         if (isMatchRecord(r)) {
             const w = r['胜者'], l = r['负者'];
-            if (!sc[w]) sc[w] = 1300;
-            if (!sc[l]) sc[l] = 1300;
+            if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE;
+            if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
             const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], sc);
             sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
             sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * 0.8);
         } else if (isBonusRecord(r)) {
             const t = r['对象'];
             const b = parseFloat(r['分数']) || 0;
-            if (!sc[t]) sc[t] = 1300;
+            if (!sc[t]) sc[t] = DEFAULT_INITIAL_SCORE;
             sc[t] = Math.max(SCORE_FLOOR, sc[t] + b);
         }
     }
-    return Math.round(sc[playerName] || 1300);
+    return Math.round(sc[playerName] || DEFAULT_INITIAL_SCORE);
 }
 
 // ============ 主渲染函数 ============
@@ -216,7 +175,7 @@ function wttRenderPersonalStats(playerName) {
     const origSeasons = seasonsData;
 
     scoreLogData = wttScoreLogData;
-    initialScoresData = wttInitialScoresData;
+    initialScoresData = (typeof wttGetInitialScoresDataForEngine === 'function') ? wttGetInitialScoresDataForEngine() : wttInitialScoresData;
     eventCoefficients = wttEventCoefficients;
     seasonsData = wttSeasonsData;
 
@@ -356,14 +315,14 @@ function wttRenderPersonalStats(playerName) {
             if (isBonusRecord(r)) {
                 const t = r['对象'];
                 const b = parseFloat(r['分数']) || 0;
-                if (!scores[t]) scores[t] = 1300;
+                if (!scores[t]) scores[t] = DEFAULT_INITIAL_SCORE;
                 scores[t] = Math.max(SCORE_FLOOR, scores[t] + b);
             }
             continue;
         }
         const w = r['胜者'], l = r['负者'];
-        if (!scores[w]) scores[w] = 1300;
-        if (!scores[l]) scores[l] = 1300;
+        if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
+        if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
         const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], scores);
         if (w === playerName) {
             oppPointsGained[l] = (oppPointsGained[l] || 0) + wg;
@@ -626,12 +585,12 @@ function computeWttDailyScoreHistory(playerName, sortedLog, startScores) {
             if (seasonIdx >= 0 && m.date < seasonStartDate) { mi++; continue; }
 
             const w = m.winner, l = m.loser;
-            if (sc[w] === undefined) sc[w] = 1300;
-            if (sc[l] === undefined) sc[l] = 1300;
+            if (sc[w] === undefined) sc[w] = DEFAULT_INITIAL_SCORE;
+            if (sc[l] === undefined) sc[l] = DEFAULT_INITIAL_SCORE;
 
             const dayDiff = Math.floor((snapTime - m.time) / 86400000);
             const tw = getDecay(dayDiff);
-            const base = getBaseScore((sc[w] || 1300) - (sc[l] || 1300));
+            const base = getBaseScore((sc[w] || DEFAULT_INITIAL_SCORE) - (sc[l] || DEFAULT_INITIAL_SCORE));
             const coeff = getEventCoefficient(m.type);
             const wg = base * coeff * tw;
 
@@ -643,7 +602,7 @@ function computeWttDailyScoreHistory(playerName, sortedLog, startScores) {
         while (bi < bonusRecs.length && bonusRecs[bi].time <= snapTime) {
             const b = bonusRecs[bi];
             if (seasonIdx >= 0 && b.date < seasonStartDate) { bi++; continue; }
-            if (sc[b.target] === undefined) sc[b.target] = 1300;
+            if (sc[b.target] === undefined) sc[b.target] = DEFAULT_INITIAL_SCORE;
             sc[b.target] = Math.max(SCORE_FLOOR, sc[b.target] + b.amount);
             bi++;
         }
@@ -651,7 +610,7 @@ function computeWttDailyScoreHistory(playerName, sortedLog, startScores) {
         history.push({
             time: dateStr,
             label: formatWttDateShort(dateStr),
-            score: Math.round((sc[playerName] || 1300) * 10) / 10
+            score: Math.round((sc[playerName] || DEFAULT_INITIAL_SCORE) * 10) / 10
         });
     }
 

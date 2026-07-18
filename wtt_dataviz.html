@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
 </head>
 <body>
     <nav class="navbar" id="navbar">
@@ -50,7 +50,7 @@
         <div class="page-hero-overlay"></div>
         <div class="page-hero-content">
             <span class="section-tag wtt-easter-egg-tag">🥚 WTT Data Visualization</span>
-            <h1>WTT 数据可视化</h1>
+            <h1>WTT <span id="wttCatName">数据可视化</span></h1>
             <p>积分趋势 · 排名变化 · 球员对比</p>
         </div>
     </section>
@@ -123,8 +123,8 @@
         </div>
 
         <div class="wtt-back-link" style="text-align:center;margin-top:40px;">
-            <a href="wtt_ranking.html" class="btn btn-secondary btn-sm">
-                <i class="fa-solid fa-arrow-left"></i> 返回 WTT Ranking
+            <a href="wtt_hub.html" class="btn btn-secondary btn-sm">
+                <i class="fa-solid fa-arrow-left"></i> 返回 WTT Hub
             </a>
         </div>
     </section>
@@ -144,6 +144,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <script src="js/common.js"></script>
     <script src="js/score-engine.js"></script>
+    <script src="js/wtt_common.js"></script>
     <script src="js/wtt_dataviz.js"></script>
     <script src="js/main.js"></script>
 </body>

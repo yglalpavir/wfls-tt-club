@@ -3,27 +3,11 @@
    复用 score-engine.js 核心计算逻辑
    ======================================== */
 
-// WTT 专用全局状态
-let wttScoreLogData = [];
-let wttInitialScoresData = null;
-let wttEventCoefficients = null;
-let wttSeasonsData = null;
-let wttRankingTimeline = [];
-let wttCurrentTimeIndex = 0;
-let wttCurrentDisplayData = [];
-let wttCurrentSortKey = '当前积分';
-let wttCurrentSortDir = 'desc';
-let wttCurrentScoreContext = { player: '', snapshotDate: '' };
-let wttInitialized = false;
+// 注意：wttScoreLogData、wttInitialScoresData 等共享变量由 wtt_common.js 声明
+// 本文件仅声明 wtt_ranking.js 独有的局部变量
 
-// 桥接：让 main.js 中的 initPage() 调用 WTT 版本的加载
+// 桥接：让 main.js 中的 initPage() 调用 WTT 版本的加载（覆盖 wtt_common.js 中的版本）
 function loadRankingData() { return wttLoadRankingData(); }
-
-// 覆盖全局变量以复用 score-engine.js 的函数
-function wttLoadInitialScores() { return fetch('wtt_data/wtt_initial-scores.json').then(r => r.json()).then(d => { wttInitialScoresData = d; return true; }).catch(e => { console.error('WTT initial-scores 加载失败', e); return false; }); }
-function wttLoadEventCoefficients() { return fetch('wtt_data/wtt_event-coefficient.json').then(r => r.json()).then(d => { wttEventCoefficients = d; return true; }).catch(e => { console.error('WTT event-coefficient 加载失败', e); return false; }); }
-function wttLoadSeasons() { return fetch('wtt_data/wtt_seasons.json').then(r => r.json()).then(d => { wttSeasonsData = d.filter(s => s.visible !== false); return true; }).catch(e => { wttSeasonsData = []; return false; }); }
-function wttLoadScoreLog() { return fetch('wtt_data/wtt_score-log.json').then(r => r.json()).then(d => { wttScoreLogData = d; clearFirstAppearanceCache(); }).catch(e => { wttScoreLogData = []; }); }
 
 // 桥接：让 score-engine.js 的函数使用 WTT 数据
 function getWttActiveData() {
@@ -35,77 +19,26 @@ function getWttActiveData() {
     };
 }
 
-// 封装计算：切换全局数据 → 计算 → 恢复
+// 封装计算：使用 wttWithDataContext 自动切换全局数据 → 计算 → 恢复
+// 覆盖 wtt_common.js 中的同名函数
 function wttCalculateAllRankings() {
-    const origScoreLog = scoreLogData;
-    const origInitial = initialScoresData;
-    const origEvent = eventCoefficients;
-    const origSeasons = seasonsData;
-
-    scoreLogData = wttScoreLogData;
-    initialScoresData = wttInitialScoresData;
-    eventCoefficients = wttEventCoefficients;
-    seasonsData = wttSeasonsData;
-
-    const sortedLog = [...scoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
-    const timeline = calculateAllRankingsWithSeasons(
-        scoreLogData,
-        initialScoresData.initialScores,
-        seasonsData
-    );
-    // 计算实时积分
-    const rt = wttCalculateRealtimeRanking();
-    if (rt) timeline.push(rt);
-
-    scoreLogData = origScoreLog;
-    initialScoresData = origInitial;
-    eventCoefficients = origEvent;
-    seasonsData = origSeasons;
-
-    return timeline;
+    return wttWithDataContext(() => {
+        const effScores = wttGetEffectiveInitialScores();
+        console.log(`[WTT Ranking] 计算模式: ${wttSettings?.scoreMode || 'initial'}, initialScores 键数: ${Object.keys(effScores).length}`);
+        const timeline = calculateAllRankingsWithSeasons(wttScoreLogData, effScores, wttSeasonsData);
+        const rt = calculateRealtimeRanking();
+        if (rt) timeline.push(rt);
+        return timeline;
+    });
 }
 
 function wttCalculateRealtimeRanking() {
-    const origScoreLog = scoreLogData;
-    const origInitial = initialScoresData;
-    const origEvent = eventCoefficients;
-    const origSeasons = seasonsData;
-
-    scoreLogData = wttScoreLogData;
-    initialScoresData = wttInitialScoresData;
-    eventCoefficients = wttEventCoefficients;
-    seasonsData = wttSeasonsData;
-
-    const result = calculateRealtimeRanking();
-
-    scoreLogData = origScoreLog;
-    initialScoresData = origInitial;
-    eventCoefficients = origEvent;
-    seasonsData = origSeasons;
-
-    return result;
+    return wttWithDataContext(() => calculateRealtimeRanking());
 }
 
 // 为 WTT 封装 getSeasonStartScores
 function wttGetSeasonStartScores(seasonIndex) {
-    const origScoreLog = scoreLogData;
-    const origInitial = initialScoresData;
-    const origEvent = eventCoefficients;
-    const origSeasons = seasonsData;
-
-    scoreLogData = wttScoreLogData;
-    initialScoresData = wttInitialScoresData;
-    eventCoefficients = wttEventCoefficients;
-    seasonsData = wttSeasonsData;
-
-    const result = getSeasonStartScores(seasonIndex);
-
-    scoreLogData = origScoreLog;
-    initialScoresData = origInitial;
-    eventCoefficients = origEvent;
-    seasonsData = origSeasons;
-
-    return result;
+    return wttWithDataContext(() => getSeasonStartScores(seasonIndex));
 }
 
 // 显示积分明细
@@ -153,7 +86,7 @@ function wttRenderScoreDetail() {
     const origSeasons = seasonsData;
 
     scoreLogData = wttScoreLogData;
-    initialScoresData = wttInitialScoresData;
+    initialScoresData = (typeof wttGetInitialScoresDataForEngine === 'function') ? wttGetInitialScoresDataForEngine() : wttInitialScoresData;
     eventCoefficients = wttEventCoefficients;
     seasonsData = wttSeasonsData;
 
@@ -195,7 +128,7 @@ function wttRenderScoreDetail() {
 
         if (isMatchRecord(record)) {
             const w = record['胜者'], l = record['负者'];
-            if (!scores[w]) scores[w] = 1300; if (!scores[l]) scores[l] = 1300;
+            if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE; if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
             const decayedGain = calcMatchPoints(w, l, record['类型'], record['日期'], snapshotDate, scores);
             const rawGain = calcRawPoints(w, l, record['类型'], scores);
             if (record['胜者'] === player || record['负者'] === player) {
@@ -215,7 +148,7 @@ function wttRenderScoreDetail() {
             scores[l] = Math.max(SCORE_FLOOR, scores[l] - decayedGain * 0.8);
         } else if (isBonusRecord(record) && record['对象'] === player) {
             const bonus = parseFloat(record['分数']) || 0;
-            if (!scores[player]) scores[player] = 1300;
+            if (!scores[player]) scores[player] = DEFAULT_INITIAL_SCORE;
             recordsWithScores.push({
                 date: record['日期'], type: '加分', opponent: '-',
                 isWinner: true, isBonus: true,
@@ -226,7 +159,7 @@ function wttRenderScoreDetail() {
         } else if (isBonusRecord(record)) {
             const target = record['对象'];
             const bonus = parseFloat(record['分数']) || 0;
-            if (!scores[target]) scores[target] = 1300;
+            if (!scores[target]) scores[target] = DEFAULT_INITIAL_SCORE;
             scores[target] = Math.max(SCORE_FLOOR, scores[target] + bonus);
         }
     }
@@ -253,18 +186,37 @@ function wttRenderScoreDetail() {
     setTimeout(wttAdjustModalSize, 150);
 }
 
-// 加载并渲染
+// 加载并渲染（异步分块计算，不阻塞 UI）
 async function wttLoadRankingData() {
     if (wttInitialized) return;
     wttInitialized = true;
     const tb = document.getElementById('rankingFullBody');
     if (!tb) return;
 
-    try {
-        await Promise.all([wttLoadInitialScores(), wttLoadEventCoefficients(), wttLoadSeasons(), wttLoadScoreLog()]);
-        if (!wttInitialScoresData || !wttEventCoefficients || !wttSeasonsData) throw new Error('WTT数据加载失败');
+    // 在 tbody 中显示加载状态（保留表格结构）
+    tb.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:40px;">
+        <div class="wtt-spinner" style="width:36px;height:36px;border:3px solid var(--border-color);border-top-color:var(--accent-blue);border-radius:50%;animation:wttSpin 0.8s linear infinite;margin:0 auto 12px;"></div>
+        <p style="color:var(--text-secondary);">正在加载 WTT 数据...</p>
+        <p class="wtt-progress-text" style="font-size:0.8rem;color:var(--text-tertiary);margin-top:4px;"></p>
+    </td></tr>`;
 
-        wttRankingTimeline = wttCalculateAllRankings();
+    try {
+        await Promise.all([wttLoadInitialScores(), wttLoadSettings(), wttLoadEventCoefficients(), wttLoadSeasons(), wttLoadScoreLog()]);
+        // flat1300 模式不需要 initialScoresData
+        const isFlat = wttSettings && wttSettings.scoreMode === 'flat1300';
+        if (!isFlat && !wttInitialScoresData) throw new Error('WTT initial-scores 加载失败');
+        if (!wttEventCoefficients || !wttSeasonsData) throw new Error('WTT数据加载失败');
+
+        // 更新加载文字
+        const progressEl = document.querySelector('#rankingFullBody .wtt-progress-text');
+        if (progressEl) progressEl.textContent = '正在计算排名积分...';
+
+        // 异步分块计算（每 2 个快照 yield 到浏览器，保持 UI 响应）
+        wttRankingTimeline = await wttCalculateAllRankingsAsync((current, total, label) => {
+            const pe = document.querySelector('#rankingFullBody .wtt-progress-text');
+            if (pe) pe.textContent = `${label || ''} · 快照 ${current}/${total}`;
+        });
+
         wttCurrentTimeIndex = wttRankingTimeline.length - 1;
         wttCurrentSortKey = '当前积分';
         wttCurrentSortDir = 'desc';
@@ -274,7 +226,7 @@ async function wttLoadRankingData() {
         wttSetupSortListeners();
     } catch (e) {
         console.error('WTT排名计算失败', e);
-        tb.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;color:var(--accent-red);">无法计算WTT排名数据</td></tr>';
+        if (tb) tb.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;color:var(--accent-red);">无法计算WTT排名数据</td></tr>';
     }
 }
 

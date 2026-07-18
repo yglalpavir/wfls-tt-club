@@ -231,19 +231,19 @@ function getApproxScoreAtDate(playerName, targetDate, sortedLog, startScores, be
         if (beforeMatch ? (r['日期'] >= targetDate) : (r['日期'] > targetDate)) break;
         if (isMatchRecord(r)) {
             const w = r['胜者'], l = r['负者'];
-            if (!sc[w]) sc[w] = 1300;
-            if (!sc[l]) sc[l] = 1300;
+            if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE;
+            if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
             const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], sc);
             sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
             sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * 0.8);
         } else if (isBonusRecord(r)) {
             const t = r['对象'];
             const b = parseFloat(r['分数']) || 0;
-            if (!sc[t]) sc[t] = 1300;
+            if (!sc[t]) sc[t] = DEFAULT_INITIAL_SCORE;
             sc[t] = Math.max(SCORE_FLOOR, sc[t] + b);
         }
     }
-    return Math.round(sc[playerName] || 1300);
+    return Math.round(sc[playerName] || DEFAULT_INITIAL_SCORE);
 }
 
 function renderPersonalStats(playerName) {
@@ -389,14 +389,14 @@ function renderPersonalStats(playerName) {
             if (isBonusRecord(r)) {
                 const t = r['对象'];
                 const b = parseFloat(r['分数']) || 0;
-                if (!scores[t]) scores[t] = 1300;
+                if (!scores[t]) scores[t] = DEFAULT_INITIAL_SCORE;
                 scores[t] = Math.max(SCORE_FLOOR, scores[t] + b);
             }
             continue;
         }
         const w = r['胜者'], l = r['负者'];
-        if (!scores[w]) scores[w] = 1300;
-        if (!scores[l]) scores[l] = 1300;
+        if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
+        if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
         const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], scores);
         if (w === playerName) {
             oppPointsGained[l] = (oppPointsGained[l] || 0) + wg;
@@ -702,12 +702,12 @@ function computeDailyScoreHistory(playerName, sortedLog, startScores) {
             if (seasonIdx >= 0 && m.date < seasonStartDate) { mi++; continue; }
 
             const w = m.winner, l = m.loser;
-            if (sc[w] === undefined) sc[w] = 1300;
-            if (sc[l] === undefined) sc[l] = 1300;
+            if (sc[w] === undefined) sc[w] = DEFAULT_INITIAL_SCORE;
+            if (sc[l] === undefined) sc[l] = DEFAULT_INITIAL_SCORE;
 
             const dayDiff = Math.floor((snapTime - m.time) / 86400000);
             const tw = getDecay(dayDiff);
-            const base = getBaseScore((sc[w] || 1300) - (sc[l] || 1300));
+            const base = getBaseScore((sc[w] || DEFAULT_INITIAL_SCORE) - (sc[l] || DEFAULT_INITIAL_SCORE));
             const coeff = getEventCoefficient(m.type);
             const wg = base * coeff * tw;
 
@@ -721,7 +721,7 @@ function computeDailyScoreHistory(playerName, sortedLog, startScores) {
             const b = bonusRecs[bi];
             // 跳过赛季开始前的记录
             if (seasonIdx >= 0 && b.date < seasonStartDate) { bi++; continue; }
-            if (sc[b.target] === undefined) sc[b.target] = 1300;
+            if (sc[b.target] === undefined) sc[b.target] = DEFAULT_INITIAL_SCORE;
             sc[b.target] = Math.max(SCORE_FLOOR, sc[b.target] + b.amount);
             bi++;
         }
@@ -729,7 +729,7 @@ function computeDailyScoreHistory(playerName, sortedLog, startScores) {
         history.push({
             time: dateStr,
             label: formatDateShort(dateStr),
-            score: Math.round((sc[playerName] || 1300) * 10) / 10
+            score: Math.round((sc[playerName] || DEFAULT_INITIAL_SCORE) * 10) / 10
         });
     }
 

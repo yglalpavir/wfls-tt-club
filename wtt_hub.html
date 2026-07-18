@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <link rel="icon" type="image/svg+xml" href="Assets/files/favicon_4DA3FF.svg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WTT 国际乒联积分排名中心 · 男子单打 / 女子单打 / 男子双打 / 女子双打 / 混合双打">
+    <meta name="keywords" content="WTT,世界乒联,乒乓球,积分排名,男子单打,女子单打,男子双打,女子双打,混合双打">
+    <meta name="robots" content="noindex, nofollow">
+    <title>WTT Ranking Hub | WFLS Table Tennis Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ============ WTT Hub 专属样式 ============ */
+        :root {
+            --hub-bg: #0a0e27;
+            --hub-card-bg: rgba(255,255,255,0.05);
+            --hub-card-hover: rgba(255,255,255,0.1);
+        }
+
+        .wtt-hub-page {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0e27 0%, #111640 30%, #0d1230 60%, #0a0e27 100%);
+            color: #e0e0e0;
+            font-family: var(--font-sc), var(--font-en), sans-serif;
+        }
+
+        /* 背景粒子动画 */
+        .hub-particles {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 0; overflow: hidden;
+        }
+        .hub-particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            animation: floatUp linear infinite;
+        }
+        @keyframes floatUp {
+            0%   { transform: translateY(100vh) scale(0); opacity: 0; }
+            10%  { opacity: 1; }
+            90%  { opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+        }
+        @keyframes floatUpDelayed {
+            0%   { transform: translateY(100vh) scale(0); opacity: 0; }
+            15%  { opacity: 1; }
+            85%  { opacity: 1; }
+            100% { transform: translateY(-10vh) scale(0.8); opacity: 0; }
+        }
+
+        /* 主容器 */
+        .hub-container {
+            position: relative; z-index: 1;
+            max-width: 1100px; margin: 0 auto; padding: 40px 20px 60px;
+        }
+
+        /* 头部 */
+        .hub-header {
+            text-align: center; padding: 60px 20px 40px;
+        }
+        .hub-egg-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: linear-gradient(135deg, rgba(245,197,66,0.2), rgba(224,168,0,0.2));
+            border: 1px solid rgba(245,197,66,0.3);
+            padding: 8px 20px; border-radius: 20px;
+            font-size: 0.85rem; color: #f5c542; margin-bottom: 16px;
+        }
+        .hub-title {
+            font-size: 2.8rem; font-weight: 800;
+            background: linear-gradient(135deg, #f5c542, #ff8c42, #f5c542);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+        }
+        .hub-subtitle {
+            font-size: 1.1rem; color: rgba(255,255,255,0.6);
+            max-width: 600px; margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* 分类卡片网格 */
+        .hub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px; padding: 20px 0;
+        }
+
+        /* 单个卡片 */
+        .hub-card {
+            position: relative;
+            display: flex; flex-direction: column; align-items: center;
+            padding: 36px 28px 28px;
+            border-radius: 20px;
+            background: var(--hub-card-bg);
+            border: 1px solid rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            text-decoration: none; color: inherit;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .hub-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 20px;
+            opacity: 0;
+            transition: opacity 0.35s;
+            z-index: 0;
+        }
+        .hub-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255,255,255,0.2);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+        }
+        .hub-card:hover::before { opacity: 1; }
+        .hub-card > * { position: relative; z-index: 1; }
+
+        /* 卡片配色 */
+        .hub-card[data-cat="ms"]::before { background: radial-gradient(circle at 50% 0%, rgba(77,163,255,0.15), transparent 70%); }
+        .hub-card[data-cat="ms"]:hover { border-color: rgba(77,163,255,0.4); }
+        .hub-card[data-cat="ws"]::before { background: radial-gradient(circle at 50% 0%, rgba(255,107,107,0.15), transparent 70%); }
+        .hub-card[data-cat="ws"]:hover { border-color: rgba(255,107,107,0.4); }
+        .hub-card[data-cat="md"]::before { background: radial-gradient(circle at 50% 0%, rgba(82,196,26,0.15), transparent 70%); }
+        .hub-card[data-cat="md"]:hover { border-color: rgba(82,196,26,0.4); }
+        .hub-card[data-cat="wd"]::before { background: radial-gradient(circle at 50% 0%, rgba(245,197,66,0.15), transparent 70%); }
+        .hub-card[data-cat="wd"]:hover { border-color: rgba(245,197,66,0.4); }
+        .hub-card[data-cat="xd"]::before { background: radial-gradient(circle at 50% 0%, rgba(165,94,234,0.15), transparent 70%); }
+        .hub-card[data-cat="xd"]:hover { border-color: rgba(165,94,234,0.4); }
+
+        /* 卡片图标 */
+        .hub-card-icon {
+            font-size: 2.4rem; margin-bottom: 16px;
+            transition: transform 0.35s;
+            width: 72px; height: 72px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.06);
+        }
+        .hub-card-icon i {
+            opacity: 0.85;
+        }
+        .hub-card:hover .hub-card-icon { transform: scale(1.15); }
+
+        /* 卡片标题 */
+        .hub-card-title {
+            font-size: 1.35rem; font-weight: 700; margin-bottom: 6px;
+            text-align: center;
+        }
+        .hub-card-title-en {
+            font-size: 0.8rem; color: rgba(255,255,255,0.45);
+            font-family: var(--font-en); text-transform: uppercase;
+            letter-spacing: 1.5px; margin-bottom: 12px;
+        }
+
+        /* 卡片状态标签 */
+        .hub-card-status {
+            display: inline-flex; align-items: center; gap: 5px;
+            padding: 4px 14px; border-radius: 12px;
+            font-size: 0.75rem; font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .hub-card-status.ready {
+            background: rgba(82,196,26,0.2); color: #52c41a; border: 1px solid rgba(82,196,26,0.3);
+        }
+        .hub-card-status.template {
+            background: rgba(245,197,66,0.15); color: #f5c542; border: 1px solid rgba(245,197,66,0.25);
+        }
+        .hub-card-status.empty {
+            background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.4); border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* 卡片快速链接 */
+        .hub-card-links {
+            display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 4px;
+        }
+        .hub-card-link {
+            display: inline-flex; align-items: center; gap: 4px;
+            padding: 6px 14px; border-radius: 8px;
+            font-size: 0.78rem; font-weight: 500;
+            background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.7);
+            border: 1px solid rgba(255,255,255,0.1);
+            text-decoration: none;
+            transition: all 0.25s;
+        }
+        .hub-card-link:hover {
+            background: rgba(255,255,255,0.14); color: #fff;
+            border-color: rgba(255,255,255,0.25);
+        }
+        .hub-card-link.disabled {
+            opacity: 0.35; pointer-events: none; cursor: not-allowed;
+        }
+
+        /* 底部返回链接 */
+        .hub-footer {
+            text-align: center; padding: 40px 20px;
+        }
+        .hub-back-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 24px; border-radius: 24px;
+            background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.65);
+            border: 1px solid rgba(255,255,255,0.12);
+            text-decoration: none; font-size: 0.9rem;
+            transition: all 0.25s;
+        }
+        .hub-back-btn:hover {
+            background: rgba(255,255,255,0.15); color: #fff;
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        /* 页脚区域 */
+        .hub-credit {
+            text-align: center; padding: 20px;
+            font-size: 0.75rem; color: rgba(255,255,255,0.25);
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hub-title { font-size: 2rem; }
+            .hub-grid { grid-template-columns: 1fr; }
+            .hub-card { padding: 28px 20px 24px; }
+        }
+    </style>
+</head>
+<body class="wtt-hub-page">
+
+    <!-- 背景粒子 -->
+    <div class="hub-particles" id="hubParticles"></div>
+
+    <!-- 主容器 -->
+    <div class="hub-container">
+
+        <!-- 头部 -->
+        <header class="hub-header">
+            <div class="hub-egg-badge">
+                <i class="fa-solid fa-egg"></i><span>Easter Egg</span><i class="fa-solid fa-egg"></i>
+            </div>
+            <h1 class="hub-title">WTT World Ranking</h1>
+            <p class="hub-subtitle">
+                基于武外乒乓球社积分规则的 WTT 国际乒联积分排名模拟系统。<br>
+                选择下方项目查看对应排名、数据可视化和个人数据。
+            </p>
+        </header>
+
+        <!-- 项目卡片网格 -->
+        <div class="hub-grid" id="hubGrid">
+            <!-- JS 动态渲染 -->
+        </div>
+
+        <!-- 返回链接 -->
+        <div class="hub-footer">
+            <a href="ranking.html" class="hub-back-btn">
+                <i class="fa-solid fa-arrow-left"></i> 返回社团 Ranking
+            </a>
+        </div>
+
+        <!-- 版权 -->
+        <div class="hub-credit">
+            <p>数据仅供娱乐 · 非官方 WTT 排名 · &copy; 2026 WFLS Table Tennis Club</p>
+        </div>
+    </div>
+
+    <script>
+        // ============ 背景粒子动画 ============
+        (function initParticles() {
+            const container = document.getElementById('hubParticles');
+            const colors = ['rgba(77,163,255,0.2)', 'rgba(255,107,107,0.2)', 'rgba(82,196,26,0.2)',
+                           'rgba(245,197,66,0.2)', 'rgba(165,94,234,0.2)', 'rgba(255,255,255,0.12)'];
+            for (let i = 0; i < 40; i++) {
+                const p = document.createElement('div');
+                p.classList.add('hub-particle');
+                const size = Math.random() * 6 + 3;
+                p.style.width = size + 'px';
+                p.style.height = size + 'px';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.background = colors[Math.floor(Math.random() * colors.length)];
+                p.style.animationDuration = (Math.random() * 12 + 8) + 's';
+                p.style.animationDelay = (Math.random() * 10) + 's';
+                if (Math.random() > 0.5) p.style.animationName = 'floatUpDelayed';
+                container.appendChild(p);
+            }
+        })();
+
+        // ============ 项目卡片渲染 ============
+        (function renderHubCards() {
+            const grid = document.getElementById('hubGrid');
+            const categories = [
+                { id: 'ms', faIcon: 'fa-user',          name: '男子单打', nameEn: "Men's Singles",    color: '#4da3ff' },
+                { id: 'ws', faIcon: 'fa-user-large',     name: '女子单打', nameEn: "Women's Singles",  color: '#ff6b6b' },
+                { id: 'md', faIcon: 'fa-user-group',     name: '男子双打', nameEn: "Men's Doubles",    color: '#52c41a' },
+                { id: 'wd', faIcon: 'fa-user-group',     name: '女子双打', nameEn: "Women's Doubles",  color: '#f5c542' },
+                { id: 'xd', faIcon: 'fa-people-arrows',  name: '混合双打', nameEn: 'Mixed Doubles',    color: '#a55eea' }
+            ];
+
+            // 先渲染静态卡片，异步检查数据状态
+            categories.forEach(cat => {
+                const card = document.createElement('a');
+                card.className = 'hub-card';
+                card.setAttribute('data-cat', cat.id);
+                card.href = `wtt_ranking.html?cat=${cat.id}`;
+
+                card.innerHTML = `
+                    <div class="hub-card-icon"><i class="fa-solid ${cat.faIcon}"></i></div>
+                    <div class="hub-card-title" style="color:${cat.color}">${cat.name}</div>
+                    <div class="hub-card-title-en">${cat.nameEn}</div>
+                    <div class="hub-card-status" id="status-${cat.id}" style="color:rgba(255,255,255,0.4)">
+                        <i class="fa-solid fa-spinner fa-pulse"></i> 检测中...
+                    </div>
+                    <div class="hub-card-links">
+                        <span class="hub-card-link" data-href="wtt_ranking.html?cat=${cat.id}">
+                            <i class="fa-solid fa-list-ol"></i> 排名
+                        </span>
+                        <span class="hub-card-link" data-href="wtt_dataviz.html?cat=${cat.id}">
+                            <i class="fa-solid fa-chart-line"></i> 数据可视化
+                        </span>
+                        <span class="hub-card-link" data-href="wtt_personal_stats.html?cat=${cat.id}">
+                            <i class="fa-solid fa-user-chart"></i> 个人数据
+                        </span>
+                    </div>
+                `;
+
+                // 让子链接可点击
+                card.addEventListener('click', function(e) {
+                    const linkEl = e.target.closest('.hub-card-link');
+                    if (linkEl) {
+                        e.preventDefault();
+                        const href = linkEl.getAttribute('data-href');
+                        if (href && !linkEl.classList.contains('disabled')) {
+                            window.location.href = href;
+                        }
+                    }
+                });
+
+                grid.appendChild(card);
+            });
+
+            // 异步检查每个项目的数据状态
+            categories.forEach(async cat => {
+                const statusEl = document.getElementById('status-' + cat.id);
+                try {
+                    const resp = await fetch(`wtt_data/${cat.id}/score-log.json`);
+                    if (!resp.ok) { updateStatus(statusEl, cat.id, 'empty'); return; }
+                    const data = await resp.json();
+                    const realRecords = data.filter(wttIsValidRecord);
+                    if (realRecords.length > 0) {
+                        updateStatus(statusEl, cat.id, 'ready');
+                    } else {
+                        updateStatus(statusEl, cat.id, 'template');
+                    }
+                } catch (e) {
+                    updateStatus(statusEl, cat.id, 'empty');
+                }
+            });
+
+            function updateStatus(el, catId, status) {
+                const allLinks = el.parentElement.querySelectorAll('.hub-card-link');
+                if (status === 'ready') {
+                    el.className = 'hub-card-status ready';
+                    el.innerHTML = '<i class="fa-solid fa-circle-check"></i> 数据已就绪';
+                    allLinks.forEach(l => l.classList.remove('disabled'));
+                } else if (status === 'template') {
+                    el.className = 'hub-card-status template';
+                    el.innerHTML = '<i class="fa-solid fa-file-pen"></i> 待填充数据';
+                    // 模板状态下链接仍然可用（会显示空数据页面）
+                    allLinks.forEach(l => l.classList.remove('disabled'));
+                } else {
+                    el.className = 'hub-card-status empty';
+                    el.innerHTML = '<i class="fa-solid fa-circle"></i> 暂无数据';
+                    allLinks.forEach(l => l.classList.add('disabled'));
+                }
+            }
+        })();
+    </script>
+    <script src="js/wtt_common.js"></script>
+</body>
+</html>

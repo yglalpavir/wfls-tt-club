@@ -1,0 +1,14 @@
+{
+  "_说明": "混合双打(XD)赛季初初始积分。组合命名格式：'男选手/女选手'。",
+  "_命名规范": "建议男子选手名在前、女子选手名在后，用 '/' 连接。",
+
+  "baseDate": "2020-12-31",
+  "_comment_initialScores": "请将下方 _placeholder_ 组合替换为真实组合数据",
+  "initialScores": {
+    "_placeholder_WANG Chuqin/SUN Yingsha": 2000,
+    "_placeholder_LIN Shidong/KUAI Man": 2000,
+    "_placeholder_TOMOKAZU Harimoto/Hina HAYATA": 1900,
+    "_placeholder_LIM Jonghoon/SHIN Yubin": 1900,
+    "_placeholder_WONG Chunting/DOO Hoi Kem": 1800
+  }
+}
