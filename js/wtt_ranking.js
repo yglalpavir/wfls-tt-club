@@ -193,28 +193,48 @@ async function wttLoadRankingData() {
     const tb = document.getElementById('rankingFullBody');
     if (!tb) return;
 
+    // 更新进度文字的工具函数
+    function updateProgress(msg) {
+        const pe = document.querySelector('#rankingFullBody .wtt-progress-text');
+        if (pe) pe.textContent = msg;
+    }
+
     // 在 tbody 中显示加载状态（保留表格结构）
     tb.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:40px;">
         <div class="wtt-spinner" style="width:36px;height:36px;border:3px solid var(--border-color);border-top-color:var(--accent-blue);border-radius:50%;animation:wttSpin 0.8s linear infinite;margin:0 auto 12px;"></div>
         <p style="color:var(--text-secondary);">正在加载 WTT 数据...</p>
-        <p class="wtt-progress-text" style="font-size:0.8rem;color:var(--text-tertiary);margin-top:4px;"></p>
+        <p class="wtt-progress-text" style="font-size:0.8rem;color:var(--text-tertiary);margin-top:4px;">准备下载数据文件...</p>
     </td></tr>`;
 
     try {
-        await Promise.all([wttLoadInitialScores(), wttLoadSettings(), wttLoadEventCoefficients(), wttLoadSeasons(), wttLoadScoreLog()]);
+        // 🔥 逐个加载数据文件，显示详细进度（而非一次性 Promise.all）
+        const dataFiles = [
+            { name: 'score-log.json',        loader: wttLoadScoreLog,          label: '比赛记录' },
+            { name: 'initial-scores.json',   loader: wttLoadInitialScores,     label: '初始积分' },
+            { name: 'settings.json',         loader: wttLoadSettings,          label: '项目设置' },
+            { name: 'event-coefficient.json',loader: wttLoadEventCoefficients, label: '赛事系数' },
+            { name: 'seasons.json',          loader: wttLoadSeasons,           label: '赛季配置' }
+        ];
+
+        for (let i = 0; i < dataFiles.length; i++) {
+            const f = dataFiles[i];
+            updateProgress(`正在下载 ${f.label} (${i + 1}/${dataFiles.length}): ${f.name}`);
+            // yield 到浏览器，确保 UI 更新
+            await new Promise(r => setTimeout(r, 0));
+            await f.loader();
+        }
+
         // flat1300 模式不需要 initialScoresData
         const isFlat = wttSettings && wttSettings.scoreMode === 'flat1300';
         if (!isFlat && !wttInitialScoresData) throw new Error('WTT initial-scores 加载失败');
         if (!wttEventCoefficients || !wttSeasonsData) throw new Error('WTT数据加载失败');
 
         // 更新加载文字
-        const progressEl = document.querySelector('#rankingFullBody .wtt-progress-text');
-        if (progressEl) progressEl.textContent = '正在计算排名积分...';
+        updateProgress('正在计算排名积分...');
 
         // 异步分块计算（每 2 个快照 yield 到浏览器，保持 UI 响应）
         wttRankingTimeline = await wttCalculateAllRankingsAsync((current, total, label) => {
-            const pe = document.querySelector('#rankingFullBody .wtt-progress-text');
-            if (pe) pe.textContent = `${label || ''} · 快照 ${current}/${total}`;
+            updateProgress(`${label || ''} · 快照 ${current}/${total}`);
         });
 
         wttCurrentTimeIndex = wttRankingTimeline.length - 1;
@@ -408,8 +428,9 @@ function wttSetupSortListeners() {
     });
 }
 
-// 初始化
-document.addEventListener('DOMContentLoaded', () => {
+// 初始化：绑定事件并启动数据加载
+// 使用 readyState 检查确保在 DOM 就绪后执行（兼容脚本在 DOMContentLoaded 之后运行的情况）
+function wttInitRankingPage() {
     // 绑定明细模态框事件
     const scoreDetailModal = document.getElementById('scoreDetailModal');
     const scoreDetailClose = document.getElementById('scoreDetailClose');
@@ -426,4 +447,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     wttLoadRankingData();
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', wttInitRankingPage);
+} else {
+    // DOM 已经就绪，立即执行
+    wttInitRankingPage();
+}

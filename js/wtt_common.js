@@ -381,20 +381,29 @@ async function wttCheckCategoryStatus() {
 // ============ 向后兼容的桥接函数 ============
 // 保留旧函数名以确保现有代码不报错
 
-// 注意：如果 wtt_ranking.js 已加载，它会覆盖 loadRankingData() 为异步版本
+// 注意：如果 wtt_ranking.js 已加载，它会覆盖 loadRankingData() 为异步版本（带进度条）
+// 此版本作为回退：如果 wtt_ranking.js 未加载，则使用异步分块计算避免 UI 冻结
 function loadRankingData() {
-    return wttLoadAllData().then(() => {
-        wttRankingTimeline = wttCalculateAllRankings();
+    return wttLoadAllData().then(async () => {
+        if (typeof wttCalculateAllRankingsAsync === 'function') {
+            // 使用异步分块计算（不阻塞 UI，但没有进度回调因为不知道容器）
+            wttRankingTimeline = await wttCalculateAllRankingsAsync(
+                wttScoreLogData,
+                wttGetEffectiveInitialScores(),
+                wttSeasonsData,
+                null,  // 无进度回调（回退路径无法确定 DOM 容器）
+                5      // 每 5 个快照 yield 一次
+            );
+        } else {
+            wttRankingTimeline = wttCalculateAllRankings();
+        }
         return wttRankingTimeline;
     });
 }
 
-// 供其他模块使用的旧函数名
-function wttLoadRankingData() {
-    return wttLoadAllData().then(() => {
-        wttRankingTimeline = wttCalculateAllRankings();
-        return wttRankingTimeline;
-    });
+// 供其他模块使用的旧函数名（回退版本，通常被 wtt_ranking.js 覆盖）
+function wttLoadRankingDataLegacy() {
+    return loadRankingData();
 }
 
 // ============ 初始化 ============
