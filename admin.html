@@ -1,467 +1,285 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Admin Panel | WFLS Table Tennis Club</title>
+    <title>Admin Dashboard | WFLS Table Tennis Club</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
     <style>
-        /* ========================================
-           Admin Panel Styles
-           ======================================== */
         :root {
-            --admin-sidebar-w: 260px;
-            --admin-topbar-h: 60px;
-            --admin-accent: #007bff;
-            --admin-bg: #f0f2f5;
-            --admin-card: #ffffff;
-            --admin-border: #e2e8f0;
-            --admin-text: #1a1a2e;
-            --admin-text-sec: #4a5568;
-            --admin-text-muted: #8899aa;
-            --admin-danger: #ff4d4f;
-            --admin-success: #52c41a;
-            --admin-warning: #f0a500;
-            --admin-radius: 12px;
-            --admin-radius-sm: 8px;
-            --admin-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-            --admin-shadow-lg: 0 4px 16px rgba(0,0,0,0.08);
+            --dash-bg: #f0f2f5;
+            --dash-card: #ffffff;
+            --dash-border: #e2e8f0;
+            --dash-text: #1a1a2e;
+            --dash-text-sec: #4a5568;
+            --dash-text-muted: #8899aa;
+            --dash-accent: #007bff;
+            --dash-accent2: #6f42c1;
+            --dash-success: #28a745;
+            --dash-warning: #f0a500;
+            --dash-danger: #ff4d4f;
+            --dash-info: #17a2b8;
+            --dash-radius: 16px;
+            --dash-radius-sm: 10px;
+            --dash-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            --dash-shadow-lg: 0 4px 20px rgba(0,0,0,0.08);
+            --dash-topbar-h: 60px;
         }
         body.dark-mode {
-            --admin-bg: #151821;
-            --admin-card: #1f2230;
-            --admin-border: #2a2e3d;
-            --admin-text: #e4e6ed;
-            --admin-text-sec: #aeb4c2;
-            --admin-text-muted: #6e7686;
-            --admin-shadow: 0 1px 3px rgba(0,0,0,0.3);
-            --admin-shadow-lg: 0 4px 16px rgba(0,0,0,0.5);
+            --dash-bg: #151821;
+            --dash-card: #1f2230;
+            --dash-border: #2a2e3d;
+            --dash-text: #e4e6ed;
+            --dash-text-sec: #aeb4c2;
+            --dash-text-muted: #6e7686;
+            --dash-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            --dash-shadow-lg: 0 4px 20px rgba(0,0,0,0.5);
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Noto Sans SC', sans-serif; background: var(--admin-bg); color: var(--admin-text); min-height: 100vh; }
-        body.admin-page { overflow: auto; }
-
-        /* Top Bar */
-        .admin-topbar {
-            position: fixed; top: 0; left: 0; right: 0; height: var(--admin-topbar-h);
-            background: var(--admin-card); border-bottom: 1px solid var(--admin-border);
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 0 24px; z-index: 100; box-shadow: var(--admin-shadow);
-            backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:"Noto Sans SC",sans-serif; background:var(--dash-bg); color:var(--dash-text); min-height:100vh; }
+        body.admin-page { overflow:auto; }
+        .dash-topbar {
+            position:fixed; top:0; left:0; right:0; height:var(--dash-topbar-h);
+            background:var(--dash-card); border-bottom:1px solid var(--dash-border);
+            display:flex; align-items:center; justify-content:space-between;
+            padding:0 28px; z-index:100; box-shadow:var(--dash-shadow);
+            backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
         }
-        .admin-topbar-left { display: flex; align-items: center; gap: 16px; }
-        .admin-logo {
-            font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.1rem;
-            color: var(--primary-blue); white-space: nowrap;
-            display: flex; align-items: center; gap: 8px;
+        .dash-topbar-left { display:flex; align-items:center; gap:14px; }
+        .dash-logo {
+            font-family:"Poppins",sans-serif; font-weight:700; font-size:1.1rem;
+            color:var(--primary-blue); white-space:nowrap;
+            display:flex; align-items:center; gap:8px; text-decoration:none;
         }
-        .admin-logo i { font-size: 1.3rem; }
-        .admin-breadcrumb {
-            font-size: 0.82rem; color: var(--admin-text-muted);
-            padding-left: 16px; border-left: 1px solid var(--admin-border);
+        .dash-logo i { font-size:1.3rem; }
+        .dash-logo:hover { opacity:0.8; }
+        .dash-breadcrumb {
+            font-size:0.82rem; color:var(--dash-text-muted);
+            padding-left:14px; border-left:1px solid var(--dash-border);
         }
-        .admin-topbar-right { display: flex; align-items: center; gap: 10px; }
-        .admin-btn {
-            display: inline-flex; align-items: center; gap: 6px;
-            padding: 8px 16px; border-radius: 20px; border: 1px solid var(--admin-border);
-            background: var(--admin-card); color: var(--admin-text-sec);
-            cursor: pointer; font-size: 0.82rem; font-weight: 500;
-            transition: all 0.2s; font-family: 'Noto Sans SC', sans-serif;
-            white-space: nowrap;
+        .dash-topbar-right { display:flex; align-items:center; gap:10px; }
+        .dash-btn {
+            display:inline-flex; align-items:center; gap:6px;
+            padding:8px 16px; border-radius:20px; border:1px solid var(--dash-border);
+            background:var(--dash-card); color:var(--dash-text-sec);
+            cursor:pointer; font-size:0.82rem; font-weight:500;
+            transition:all 0.2s; font-family:"Noto Sans SC",sans-serif;
+            white-space:nowrap; text-decoration:none;
         }
-        .admin-btn:hover { border-color: var(--primary-blue); color: var(--primary-blue); background: var(--primary-pale); }
-        .admin-btn.primary { background: var(--primary-blue); color: #fff; border-color: var(--primary-blue); }
-        .admin-btn.primary:hover { background: var(--primary-dark); }
-        .admin-btn.success { background: var(--admin-success); color: #fff; border-color: var(--admin-success); }
-        .admin-btn.success:hover { opacity: 0.85; }
-        .admin-btn.danger { color: var(--admin-danger); border-color: var(--admin-danger); }
-        .admin-btn.danger:hover { background: rgba(255,77,79,0.08); }
-        .admin-btn.sm { padding: 5px 12px; font-size: 0.75rem; border-radius: 14px; }
-
-        /* Sidebar */
-        .admin-sidebar {
-            position: fixed; top: var(--admin-topbar-h); left: 0; bottom: 0;
-            width: var(--admin-sidebar-w); background: var(--admin-card);
-            border-right: 1px solid var(--admin-border);
-            overflow-y: auto; z-index: 90;
-            display: flex; flex-direction: column;
+        .dash-btn:hover { border-color:var(--primary-blue); color:var(--primary-blue); background:var(--primary-pale); }
+        .dash-btn.primary { background:var(--primary-blue); color:#fff; border-color:var(--primary-blue); }
+        .dash-btn.primary:hover { background:var(--primary-dark); }
+        .dash-main {
+            margin-top:var(--dash-topbar-h); padding:24px 28px 40px;
+            max-width:1440px; margin-left:auto; margin-right:auto;
         }
-        .admin-sidebar-section {
-            padding: 12px 16px 4px;
-            font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 1.5px; color: var(--admin-text-muted);
-            font-family: 'Poppins', sans-serif;
+        .dash-section-title {
+            font-family:"Poppins",sans-serif; font-weight:700; font-size:1.15rem;
+            color:var(--dash-text); margin:28px 0 16px;
+            display:flex; align-items:center; gap:10px;
         }
-        .admin-file-list { list-style: none; padding: 4px 8px; }
-        .admin-file-item {
-            display: flex; align-items: center; gap: 10px;
-            padding: 10px 14px; border-radius: 8px; cursor: pointer;
-            font-size: 0.85rem; color: var(--admin-text-sec);
-            transition: all 0.15s; font-weight: 500; margin-bottom: 2px;
+        .dash-section-title:first-child { margin-top:0; }
+        .dash-section-title i { color:var(--primary-blue); }
+        .dash-section-title .badge {
+            font-size:0.7rem; font-weight:600; padding:3px 10px; border-radius:12px;
+            background:var(--primary-pale); color:var(--primary-blue);
+            font-family:"JetBrains Mono",monospace;
         }
-        .admin-file-item:hover { background: var(--primary-pale); color: var(--primary-blue); }
-        .admin-file-item.active { background: var(--primary-pale); color: var(--primary-blue); font-weight: 600; }
-        .admin-file-item i { width: 18px; text-align: center; font-size: 0.85rem; opacity: 0.7; }
-        .admin-file-item.active i { opacity: 1; }
-        .admin-file-badge {
-            margin-left: auto; font-size: 0.65rem; background: var(--bg-lighter);
-            color: var(--admin-text-muted); padding: 2px 8px; border-radius: 10px;
-            font-family: 'JetBrains Mono', monospace;
+        .dash-cards {
+            display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
+            gap:16px; margin-bottom:8px;
         }
-        .admin-sidebar-footer {
-            margin-top: auto; padding: 16px; border-top: 1px solid var(--admin-border);
-            display: flex; flex-direction: column; gap: 8px;
+        .dash-card {
+            background:var(--dash-card); border-radius:var(--dash-radius);
+            padding:20px 24px; box-shadow:var(--dash-shadow);
+            border:1px solid var(--dash-border);
+            transition:transform 0.2s, box-shadow 0.2s;
+            display:flex; flex-direction:column; gap:6px;
+            position:relative; overflow:hidden;
         }
-        .admin-sidebar-hint { font-size: 0.7rem; color: var(--admin-text-muted); text-align: center; line-height: 1.5; }
-
-        /* Main Content */
-        .admin-main {
-            margin-left: var(--admin-sidebar-w); margin-top: var(--admin-topbar-h);
-            padding: 28px 32px 40px; min-height: calc(100vh - var(--admin-topbar-h));
+        .dash-card:hover { transform:translateY(-2px); box-shadow:var(--dash-shadow-lg); }
+        .dash-card .card-icon {
+            font-size:2rem; line-height:1;
+            width:44px; height:44px; border-radius:12px;
+            display:flex; align-items:center; justify-content:center;
+            margin-bottom:4px;
         }
-        .admin-panel {
-            background: var(--admin-card); border-radius: var(--admin-radius);
-            box-shadow: var(--admin-shadow); overflow: hidden;
-            margin-bottom: 20px;
+        .dash-card .card-label {
+            font-size:0.78rem; color:var(--dash-text-muted);
+            font-weight:500; text-transform:uppercase; letter-spacing:0.5px;
         }
-        .admin-panel-header {
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 16px 24px; border-bottom: 1px solid var(--admin-border);
-            gap: 12px; flex-wrap: wrap;
+        .dash-card .card-value {
+            font-family:"Poppins",sans-serif; font-weight:800; font-size:2rem;
+            color:var(--dash-text); line-height:1.1;
         }
-        .admin-panel-title {
-            font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.05rem;
-            color: var(--admin-text); display: flex; align-items: center; gap: 10px;
+        .dash-card .card-sub {
+            font-size:0.75rem; color:var(--dash-text-muted);
+            margin-top:2px;
         }
-        .admin-panel-title i { color: var(--primary-blue); }
-        .admin-panel-actions { display: flex; gap: 8px; flex-wrap: wrap; }
-        .admin-panel-body {
-            padding: 20px 24px; max-height: calc(100vh - 380px); overflow-y: auto;
-            min-height: 200px;
+        .dash-card .card-accent-bar {
+            position:absolute; top:0; left:0; right:0; height:3px;
+            border-radius:var(--dash-radius) var(--dash-radius) 0 0;
         }
-
-        /* Admin resize handle — 拖动调整编辑面板高度 */
-        .admin-resize-handle {
-            height: 10px; background: var(--admin-border); cursor: ns-resize;
-            border-radius: 0 0 var(--admin-radius) var(--admin-radius);
-            margin-bottom: 10px; transition: background 0.15s;
-            position: relative;
+        .accent-blue .card-icon { background:rgba(0,123,255,0.1); color:var(--dash-accent); }
+        .accent-blue .card-accent-bar { background:var(--dash-accent); }
+        .accent-purple .card-icon { background:rgba(111,66,193,0.1); color:var(--dash-accent2); }
+        .accent-purple .card-accent-bar { background:var(--dash-accent2); }
+        .accent-green .card-icon { background:rgba(40,167,69,0.1); color:var(--dash-success); }
+        .accent-green .card-accent-bar { background:var(--dash-success); }
+        .accent-warning .card-icon { background:rgba(240,165,0,0.1); color:var(--dash-warning); }
+        .accent-warning .card-accent-bar { background:var(--dash-warning); }
+        .accent-danger .card-icon { background:rgba(255,77,79,0.1); color:var(--dash-danger); }
+        .accent-danger .card-accent-bar { background:var(--dash-danger); }
+        .accent-info .card-icon { background:rgba(23,162,184,0.1); color:var(--dash-info); }
+        .accent-info .card-accent-bar { background:var(--dash-info); }
+        .dash-discipline-grid {
+            display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr));
+            gap:14px; margin-bottom:8px;
         }
-        .admin-resize-handle::after {
-            content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-            width: 48px; height: 4px; border-radius: 2px;
-            background: var(--admin-text-muted); opacity: 0.5;
+        .dash-disc-card {
+            background:var(--dash-card); border-radius:var(--dash-radius);
+            padding:18px 20px; box-shadow:var(--dash-shadow);
+            border:1px solid var(--dash-border);
+            transition:transform 0.2s; cursor:default;
         }
-        .admin-resize-handle:hover, .admin-resize-handle.resizing {
-            background: var(--primary-pale);
+        .dash-disc-card:hover { transform:translateY(-2px); box-shadow:var(--dash-shadow-lg); }
+        .dash-disc-card .disc-header {
+            display:flex; align-items:center; gap:10px; margin-bottom:12px;
         }
-        .admin-resize-handle:hover::after, .admin-resize-handle.resizing::after {
-            background: var(--primary-blue); opacity: 1;
+        .dash-disc-card .disc-icon {
+            width:38px; height:38px; border-radius:10px;
+            display:flex; align-items:center; justify-content:center;
+            font-size:0.9rem; font-weight:700; color:#fff;
+            font-family:"Poppins",sans-serif;
         }
-
-        /* ---- v2 New Styles ---- */
-
-        /* Readonly note */
-        .admin-readonly-note {
-            padding: 16px 20px; border-radius: var(--admin-radius-sm);
-            background: rgba(240,165,0,0.08); border: 1px solid rgba(240,165,0,0.2);
-            color: var(--admin-warning); font-size: 0.85rem; margin-bottom: 16px;
-            display: flex; align-items: center; gap: 8px;
+        .dash-disc-card .disc-name {
+            font-family:"Poppins",sans-serif; font-weight:700; font-size:1rem;
+            color:var(--dash-text);
         }
-
-        /* Data Table */
-        .admin-count-info {
-            font-size: 0.82rem; color: var(--admin-text-muted); margin-bottom: 12px;
-            font-weight: 500;
+        .dash-disc-card .disc-name small {
+            font-weight:400; font-size:0.72rem; color:var(--dash-text-muted);
+            display:block;
         }
-        .admin-table-wrapper {
-            overflow-x: auto; border-radius: var(--admin-radius-sm);
-            border: 1px solid var(--admin-border); margin-bottom: 8px;
+        .dash-disc-card .disc-stats {
+            display:grid; grid-template-columns:1fr 1fr; gap:8px;
         }
-        .admin-data-table {
-            width: 100%; border-collapse: collapse; font-size: 0.82rem;
+        .dash-disc-card .disc-stat {
+            text-align:center; padding:8px 6px; border-radius:8px;
+            background:var(--dash-bg);
         }
-        .admin-data-table thead { background: var(--bg-lighter); }
-        .admin-data-table th {
-            padding: 10px 12px; text-align: left; font-weight: 600;
-            color: var(--admin-text-sec); font-size: 0.78rem; white-space: nowrap;
-            border-bottom: 1px solid var(--admin-border);
+        .dash-disc-card .disc-stat-val {
+            font-family:"Poppins",sans-serif; font-weight:700; font-size:1.1rem;
+            color:var(--dash-text);
         }
-        .admin-data-table td {
-            padding: 9px 12px; border-bottom: 1px solid var(--admin-border);
-            color: var(--admin-text); vertical-align: middle;
+        .dash-disc-card .disc-stat-label {
+            font-size:0.68rem; color:var(--dash-text-muted); margin-top:1px;
         }
-        .admin-data-table tbody tr:hover { background: rgba(0,123,255,0.03); }
-        .admin-data-table .row-num { color: var(--admin-text-muted); font-size: 0.75rem; text-align: center; width: 40px; }
-        .admin-data-table code {
-            font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
-            background: var(--bg-lighter); padding: 2px 6px; border-radius: 3px;
+        .dash-panel {
+            background:var(--dash-card); border-radius:var(--dash-radius);
+            box-shadow:var(--dash-shadow); border:1px solid var(--dash-border);
+            overflow:hidden; margin-bottom:20px;
         }
-        .null-val { color: var(--admin-text-muted); font-style: italic; }
-        .obj-val { color: var(--admin-text-muted); font-size: 0.78rem; }
-
-        /* KV Section */
-        .admin-kv-section { margin-bottom: 16px; }
-        .admin-section-title {
-            font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.85rem;
-            color: var(--admin-text-sec); margin-bottom: 10px;
-            display: flex; align-items: center; gap: 6px;
+        .dash-panel-header {
+            display:flex; align-items:center; justify-content:space-between;
+            padding:14px 22px; border-bottom:1px solid var(--dash-border);
+            gap:12px;
         }
-        .admin-kv-row {
-            display: flex; align-items: flex-start; gap: 16px; padding: 8px 12px;
-            border-radius: 6px; transition: background 0.15s;
+        .dash-panel-title {
+            font-family:"Poppins",sans-serif; font-weight:700; font-size:0.95rem;
+            color:var(--dash-text); display:flex; align-items:center; gap:8px;
         }
-        .admin-kv-row:hover { background: var(--bg-lighter); }
-        .admin-kv-key {
-            font-weight: 600; font-size: 0.82rem; color: var(--admin-text);
-            min-width: 140px; flex-shrink: 0;
+        .dash-panel-title i { color:var(--primary-blue); }
+        .dash-table-wrap { overflow-x:auto; }
+        .dash-table {
+            width:100%; border-collapse:collapse; font-size:0.82rem;
         }
-        .admin-kv-val {
-            font-size: 0.82rem; color: var(--admin-text-sec); word-break: break-all;
-            font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+        .dash-table thead { background:var(--dash-bg); }
+        .dash-table th {
+            padding:10px 14px; text-align:left; font-weight:600;
+            color:var(--dash-text-sec); font-size:0.76rem; white-space:nowrap;
+            border-bottom:1px solid var(--dash-border);
+            font-family:"Poppins",sans-serif;
         }
-        .admin-kv-table { margin-top: 8px; }
-
-        /* Readonly JSON Tree */
-        .json-tree-readonly {
-            background: var(--bg-lighter); border-radius: var(--admin-radius-sm);
-            padding: 16px; font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
-            font-size: 0.8rem; line-height: 1.8; overflow-x: auto; max-height: 500px;
-            overflow-y: auto; border: 1px solid var(--admin-border);
+        .dash-table td {
+            padding:9px 14px; border-bottom:1px solid var(--dash-border);
+            color:var(--dash-text); vertical-align:middle;
         }
-        .json-node-ro { display: inline; }
-        .json-child-ro { padding-left: 20px; border-left: 1px dashed var(--admin-border); margin-left: 4px; }
-        .json-line-ro { white-space: nowrap; }
-        .json-k-ro { color: #881391; font-weight: 500; }
-        body.dark-mode .json-k-ro { color: #c586c0; }
-        .json-v-ro { font-weight: 400; }
-        .json-str-ro { color: #0a6e2e; }
-        body.dark-mode .json-str-ro { color: #6a9955; }
-        .json-num-ro { color: #0550c2; }
-        body.dark-mode .json-num-ro { color: #79c0ff; }
-        .json-bool-ro { color: #a65e2e; }
-        body.dark-mode .json-bool-ro { color: #dcdcaa; }
-        .json-null-ro { color: var(--admin-text-muted); font-style: italic; }
-        .json-b-ro { color: var(--admin-text-muted); font-weight: 600; }
-        .json-comma-ro { color: var(--admin-text-muted); }
-        .json-more-ro { color: var(--admin-text-muted); font-style: italic; font-size: 0.78rem; }
-        .json-ro-toggle { color: var(--admin-text-muted); user-select: none; }
-
-        /* Add Form v2 */
-        .admin-add-form {
-            padding: 24px 28px !important; margin-top: 20px;
-            border: 2px dashed var(--admin-border);
+        .dash-table tbody tr:hover { background:rgba(0,123,255,0.02); }
+        .dash-table .num-cell {
+            font-family:"JetBrains Mono",monospace; font-weight:600;
+            text-align:right; color:var(--dash-accent);
         }
-        .admin-add-title {
-            font-size: 1rem; font-weight: 700; margin-bottom: 20px;
-            display: flex; align-items: center; gap: 8px; color: var(--admin-text);
+        .dash-table .mono { font-family:"JetBrains Mono",monospace; font-size:0.8rem; }
+        .dash-charts-row {
+            display:grid; grid-template-columns:1fr 1fr;
+            gap:20px; margin-bottom:20px;
         }
-        .admin-add-title i { color: var(--admin-success); }
-        .admin-form-fields {
-            display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 20px;
+        @media (max-width:900px) { .dash-charts-row { grid-template-columns:1fr; } }
+        .dash-chart-box {
+            background:var(--dash-card); border-radius:var(--dash-radius);
+            box-shadow:var(--dash-shadow); border:1px solid var(--dash-border);
+            padding:16px 20px;
         }
-        @media (min-width: 768px) {
-            .admin-form-fields { grid-template-columns: 1fr 1fr; }
+        .dash-chart-box canvas { max-height:300px; }
+        .dash-loading {
+            text-align:center; padding:60px 20px; color:var(--dash-text-muted);
         }
-        .admin-form-field {
-            display: flex; flex-direction: column; gap: 6px;
+        .dash-loading .spinner {
+            display:inline-block; width:40px; height:40px; border:3px solid var(--dash-border);
+            border-top-color:var(--primary-blue); border-radius:50%;
+            animation:spin 0.8s linear infinite; margin-bottom:16px;
         }
-        .admin-form-label {
-            font-size: 0.82rem; font-weight: 600; color: var(--admin-text);
+        @keyframes spin { to { transform:rotate(360deg); } }
+        .dash-empty {
+            text-align:center; padding:32px; color:var(--dash-text-muted);
+            font-size:0.85rem;
         }
-        .required-star { color: var(--admin-danger); }
-        .optional-tag { color: var(--admin-text-muted); font-weight: 400; font-size: 0.7rem; }
-        .admin-form-note { font-size: 0.7rem; color: var(--admin-text-muted); font-weight: 400; }
-        .admin-form-input {
-            font-family: 'Noto Sans SC', 'JetBrains Mono', sans-serif; font-size: 0.85rem;
-            padding: 9px 14px; border: 1px solid var(--admin-border); border-radius: 8px;
-            background: var(--admin-card); color: var(--admin-text); outline: none;
-            transition: border-color 0.2s; width: 100%;
+        .dash-updated {
+            text-align:right; font-size:0.72rem; color:var(--dash-text-muted);
+            margin-bottom:20px;
         }
-        .admin-form-input:focus { border-color: var(--primary-blue); box-shadow: 0 0 0 3px rgba(0,123,255,0.1); }
-        .admin-form-textarea { resize: vertical; min-height: 80px; }
-        .admin-form-info {
-            padding: 10px 14px; background: rgba(240,165,0,0.06);
-            border-radius: 6px; font-size: 0.8rem; color: var(--admin-warning);
-            border: 1px solid rgba(240,165,0,0.15);
-        }
-        .admin-form-buttons {
-            display: flex; gap: 10px; justify-content: flex-end; padding-top: 8px;
-            border-top: 1px solid var(--admin-border);
-        }
-
-        /* Raw JSON Panel v2 - FIX SCROLLING */
-        .raw-json-panel {
-            background: var(--admin-card); border-radius: var(--admin-radius);
-            box-shadow: var(--admin-shadow); overflow: hidden;
-            margin-bottom: 20px;
-        }
-        .raw-json-panel.collapsed .raw-json-body { display: none; }
-        .raw-json-panel.collapsed .raw-json-toggle i { transform: rotate(-90deg); }
-        .raw-json-header {
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 12px 24px; border-bottom: 1px solid var(--admin-border);
-            cursor: pointer;
-        }
-        .raw-json-title {
-            font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.9rem;
-            display: flex; align-items: center; gap: 8px;
-        }
-        .raw-json-toggle { transition: transform 0.2s; color: var(--admin-text-muted); }
-        .raw-json-body {
-            position: relative; overflow-y: auto; max-height: 400px;
-        }
-        .raw-json-body pre {
-            padding: 20px 24px; margin: 0; font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem; line-height: 1.7; color: var(--admin-text);
-            white-space: pre-wrap; word-break: break-all; min-height: 120px;
-        }
-        .raw-json-copy-btn {
-            position: absolute; top: 12px; right: 16px; z-index: 5;
-        }
-        .copy-toast {
-            position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%);
-            background: #1a1a2e; color: #fff; padding: 10px 24px; border-radius: 24px;
-            font-size: 0.85rem; font-weight: 500; z-index: 9999;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.3); animation: toastIn 0.3s ease, toastOut 0.3s ease 1.7s forwards;
-        }
-        @keyframes toastIn { from { opacity: 0; transform: translateX(-50%) translateY(20px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
-        @keyframes toastOut { from { opacity: 1; } to { opacity: 0; } }
-
-        /* Empty state */
-        .admin-empty {
-            text-align: center; padding: 40px 20px; color: var(--admin-text-muted);
-        }
-        .admin-empty i { font-size: 3rem; margin-bottom: 12px; opacity: 0.3; }
-        .admin-empty p { font-size: 0.9rem; }
-
-        /* Confirm dialog */
-        .confirm-overlay {
-            position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.5);
-            display: flex; align-items: center; justify-content: center;
-            backdrop-filter: blur(4px);
-        }
-        .confirm-dialog {
-            background: var(--admin-card); border-radius: var(--admin-radius);
-            padding: 28px 32px; box-shadow: var(--admin-shadow-lg);
-            max-width: 400px; width: 90%; text-align: center;
-        }
-        .confirm-dialog h3 { margin-bottom: 8px; font-size: 1.05rem; }
-        .confirm-dialog p { font-size: 0.85rem; color: var(--admin-text-sec); margin-bottom: 20px; }
-        .confirm-dialog-actions { display: flex; gap: 10px; justify-content: center; }
-
-        /* Responsive */
-        @media (max-width: 900px) {
-            .admin-sidebar {
-                transform: translateX(-100%); transition: transform 0.3s;
-            }
-            .admin-sidebar.open { transform: translateX(0); }
-            .admin-main { margin-left: 0; }
-            .admin-topbar-left { gap: 8px; }
-            .admin-breadcrumb { display: none; }
-            .admin-form-fields { grid-template-columns: 1fr !important; }
+        @media (max-width:768px) {
+            .dash-main { padding:16px 12px 24px; }
+            .dash-cards { grid-template-columns:repeat(2,1fr); }
+            .dash-discipline-grid { grid-template-columns:1fr; }
+            .dash-card .card-value { font-size:1.5rem; }
+            .dash-breadcrumb { display:none; }
         }
     </style>
 </head>
 <body class="admin-page">
-    <!-- Top Bar -->
-    <div class="admin-topbar">
-        <div class="admin-topbar-left">
-            <button class="admin-btn sm" id="sidebarToggle" title="切换侧栏">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            <a href="index.html" class="admin-logo">
+    <div class="dash-topbar">
+        <div class="dash-topbar-left">
+            <a href="index.html" class="dash-logo">
                 <i class="fa-solid fa-table-tennis-paddle-ball"></i> WFLS Admin
             </a>
-            <span class="admin-breadcrumb" id="breadcrumb">/ 数据管理</span>
+            <span class="dash-breadcrumb">/ 数据仪表盘</span>
         </div>
-        <div class="admin-topbar-right">
-            <button class="admin-btn" id="themeToggle" title="切换主题">
+        <div class="dash-topbar-right">
+            <button class="dash-btn" id="themeToggle" title="切换主题">
                 <i class="fa-solid fa-moon"></i>
             </button>
-            <button class="admin-btn success" id="generateJsonBtn">
-                <i class="fa-solid fa-code"></i> 生成 JSON
+            <button class="dash-btn primary" id="refreshBtn">
+                <i class="fa-solid fa-rotate"></i> 刷新数据
             </button>
-            <a href="index.html" class="admin-btn">
+            <a href="index.html" class="dash-btn">
                 <i class="fa-solid fa-arrow-left"></i> 返回首页
             </a>
         </div>
     </div>
-
-    <!-- Sidebar -->
-    <div class="admin-sidebar" id="adminSidebar">
-        <div class="admin-sidebar-section">核心数据</div>
-        <ul class="admin-file-list" id="coreDataList"></ul>
-        <div class="admin-sidebar-section">WTT 数据</div>
-        <ul class="admin-file-list" id="wttDataList"></ul>
-        <div class="admin-sidebar-footer">
-            <p class="admin-sidebar-hint">
-                <i class="fa-solid fa-info-circle"></i> 编辑后请点击"生成 JSON"<br>复制内容手动替换对应文件
-            </p>
-            <button class="admin-btn danger sm" id="resetAllBtn" style="width:100%;justify-content:center;">
-                <i class="fa-solid fa-rotate-left"></i> 重置所有修改
-            </button>
+    <div class="dash-main" id="dashMain">
+        <div class="dash-loading" id="loadingView">
+            <div class="spinner"></div>
+            <p>正在加载数据...</p>
         </div>
+        <div id="dashboardContent" style="display:none;"></div>
     </div>
-
-    <!-- Main Content -->
-    <div class="admin-main" id="adminMain">
-        <!-- Editor Panel -->
-        <div class="admin-panel">
-            <div class="admin-panel-header">
-                <div class="admin-panel-title">
-                    <i class="fa-solid fa-file-code"></i>
-                    <span id="currentFileName">选择左侧文件开始编辑</span>
-                </div>
-                <div class="admin-panel-actions" id="editorActions">
-                    <button class="admin-btn sm" id="addRootItemBtn" style="display:none;">
-                        <i class="fa-solid fa-plus"></i> 添加项
-                    </button>
-                    <button class="admin-btn sm" id="expandAllBtn">
-                        <i class="fa-solid fa-arrows-to-dot"></i> 全部展开
-                    </button>
-                    <button class="admin-btn sm" id="collapseAllBtn">
-                        <i class="fa-solid fa-arrows-to-eye"></i> 全部折叠
-                    </button>
-                </div>
-            </div>
-            <div class="admin-panel-body" id="editorBody">
-                <div class="admin-empty">
-                    <i class="fa-solid fa-folder-open"></i>
-                    <p>从左侧选择一个数据文件开始编辑</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Resize handle: 拖动此条调整编辑器面板高度 -->
-        <div class="admin-resize-handle" id="adminResizeHandle" title="拖动调整编辑区高度"></div>
-
-        <!-- Raw JSON Output -->
-        <div class="raw-json-panel collapsed" id="rawJsonPanel">
-            <div class="raw-json-header" id="rawJsonHeader">
-                <span class="raw-json-title">
-                    <i class="fa-solid fa-brackets-curly"></i> 生成的 JSON
-                    <span class="raw-json-toggle"><i class="fa-solid fa-chevron-down"></i></span>
-                </span>
-                <button class="admin-btn sm" id="copyJsonBtn" onclick="event.stopPropagation();">
-                    <i class="fa-solid fa-copy"></i> 复制
-                </button>
-            </div>
-            <div class="raw-json-body">
-                <button class="admin-btn sm raw-json-copy-btn" id="copyJsonBtn2">
-                    <i class="fa-solid fa-copy"></i> 复制
-                </button>
-                <pre id="rawJsonOutput">// 请先编辑数据，然后点击"生成 JSON"按钮</pre>
-            </div>
-        </div>
-    </div>
-
-    <script src="js/draws-editor.js"></script>
     <script src="js/admin.js"></script>
 </body>
 </html>
