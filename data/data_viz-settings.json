@@ -1,0 +1,24 @@
+{
+  "_description": "数据可视化 - 积分趋势折线图外观设置。修改此文件即可调整折线图外观，无需改 JS 代码。",
+  "_guide": {
+    "tiers": "不同数据量级别的参数档位。系统自动根据当前数据点数量匹配最合适的档位。maxPoints 为该档位适用的数据点上限。",
+    "tension": "折线平滑度，0=直线折线，1=极度平滑。数据越多越接近直线。",
+    "pointRadius": "数据点半径（像素），0=隐藏。数据越多点越小。",
+    "pointHoverExtra": "鼠标悬浮时数据点额外增大的像素",
+    "borderWidth": "折线粗细（像素），数据越多线越细",
+    "mobile": "移动端缩放系数，桌面端的值乘以该系数得到移动端的值"
+  },
+  "tiers": [
+    { "maxPoints": 12,  "tension": 0.35, "pointRadius": 5, "pointHoverExtra": 4, "borderWidth": 2.5 },
+    { "maxPoints": 24,  "tension": 0.30, "pointRadius": 4, "pointHoverExtra": 3, "borderWidth": 2.5 },
+    { "maxPoints": 48,  "tension": 0.20, "pointRadius": 3, "pointHoverExtra": 3, "borderWidth": 2.2 },
+    { "maxPoints": 96,  "tension": 0.12, "pointRadius": 2, "pointHoverExtra": 2, "borderWidth": 2.0 },
+    { "maxPoints": 200, "tension": 0.06, "pointRadius": 1, "pointHoverExtra": 2, "borderWidth": 1.8 },
+    { "maxPoints": 999, "tension": 0.03, "pointRadius": 0, "pointHoverExtra": 2, "borderWidth": 1.5 }
+  ],
+  "mobile": {
+    "pointRadiusScale": 0.5,
+    "borderWidthScale": 0.8,
+    "pointHoverExtraScale": 0.7
+  }
+}

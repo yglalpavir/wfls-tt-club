@@ -1,0 +1,12 @@
+[
+  {
+    "_comment": "=== 女子单打(WS) 比赛记录模板 ===",
+    "_comment_fields": "日期(YYYY-MM-DD) / 类型(赛事名) / 胜者 / 负者",
+    "_comment_bonus": "加分: {日期, 类型:'比赛结果加分', 对象, 分数}",
+    "_comment_placeholder": "以 _placeholder_ 开头的选手名为占位符，填充真实数据后请删除该前缀",
+    "日期": "_template_",
+    "类型": "_template_",
+    "胜者": "_template_",
+    "负者": "_template_"
+  }
+]

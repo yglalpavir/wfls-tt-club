@@ -2,6 +2,28 @@
    common.js - 语言包 + 全局变量 + UI + 通用函数
    ======================================== */
 
+// 注入加载动画（供 ranking.js、main.js 等使用 wtt-spinner）
+(function() {
+    if (document.getElementById('wtt-spinner-style')) return;
+    var style = document.createElement('style');
+    style.id = 'wtt-spinner-style';
+    style.textContent = '@keyframes wttSpin { to { transform: rotate(360deg); } }';
+    document.head.appendChild(style);
+})();
+
+// 通用内容区加载提示（用于 news/competitions/home 等页面）
+function showContentLoading(containerId, msg) {
+    var el = document.getElementById(containerId);
+    if (!el) return;
+    // 只在容器为空或显示默认占位内容时显示加载动画
+    if (el.children.length > 0 && !el.querySelector('.content-loading-placeholder')) {
+        var existing = el.querySelector('.content-loading-spinner');
+        if (existing) existing.remove();
+        return;
+    }
+    el.innerHTML = '<div class="content-loading-spinner" style="display:flex;align-items:center;justify-content:center;padding:40px 20px;color:var(--text-secondary);min-height:120px;"><div style="text-align:center;"><div class="wtt-spinner" style="width:28px;height:28px;border:3px solid var(--border-color);border-top-color:var(--accent-blue);border-radius:50%;animation:wttSpin 0.8s linear infinite;margin:0 auto 10px;"></div><p style="font-size:0.85rem;margin:0;">' + (msg || '加载中...') + '</p></div></div>';
+}
+
 const i18n = {
     zh: {
         site_title: "武汉外国语学校乒乓球社团 | WFLS Table Tennis Club", nav_home: "Home", nav_news: "News", nav_competitions: "Competitions", nav_contact: "Contact", nav_more: "More...", nav_members: "社团骨干", nav_qa: "Q&A", lang_btn: "EN",
@@ -228,10 +250,10 @@ function setNewsFilter(tag) { newsFilterTag = tag; newsCurrentPage = 1; renderAl
 function setCompetitionsFilter(tag) { competitionsFilterTag = tag; competitionsCurrentPage = 1; renderAllCompetitions(); }
 function renderPagination(cid, d, cp) { const c = document.getElementById(cid); if (!c) return; const ep = c.parentElement.querySelector('.pagination'); if (ep) ep.remove(); const tp = getTotalPages(d); if (tp <= 1) return; const pe = document.createElement('div'); pe.className = 'pagination'; const pb = document.createElement('button'); pb.className = 'pagination-btn'; pb.textContent = i18n[currentLang].pagination_prev; pb.disabled = cp <= 1; pb.addEventListener('click', () => { if (cid === 'newsFullGrid') { newsCurrentPage = cp-1; renderAllNews(); } else if (cid === 'competitionsFullGrid') { competitionsCurrentPage = cp-1; renderAllCompetitions(); } else { qaCurrentPage = cp-1; renderAllQa(); } window.scrollTo({ top: c.offsetTop-100, behavior:'smooth' }); }); pe.appendChild(pb); for (let i=1; i<=tp; i++) { const pg = document.createElement('button'); pg.className = 'pagination-btn'; if (i===cp) pg.classList.add('active'); pg.textContent = i; pg.addEventListener('click', () => { if (cid === 'newsFullGrid') { newsCurrentPage = i; renderAllNews(); } else if (cid === 'competitionsFullGrid') { competitionsCurrentPage = i; renderAllCompetitions(); } else { qaCurrentPage = i; renderAllQa(); } window.scrollTo({ top: c.offsetTop-100, behavior:'smooth' }); }); pe.appendChild(pg); } const nb = document.createElement('button'); nb.className = 'pagination-btn'; nb.textContent = i18n[currentLang].pagination_next; nb.disabled = cp >= tp; nb.addEventListener('click', () => { if (cid === 'newsFullGrid') { newsCurrentPage = cp+1; renderAllNews(); } else if (cid === 'competitionsFullGrid') { competitionsCurrentPage = cp+1; renderAllCompetitions(); } else { qaCurrentPage = cp+1; renderAllQa(); } window.scrollTo({ top: c.offsetTop-100, behavior:'smooth' }); }); pe.appendChild(nb); const ie = document.createElement('span'); ie.className = 'pagination-info'; ie.textContent = i18n[currentLang].pagination_info.replace('{current}', cp).replace('{total}', tp); pe.appendChild(ie); c.parentElement.appendChild(pe); }
 
-async function loadAboutData() { try { aboutData = await (await fetch('data/about.json')).json(); } catch(e) { aboutData = null; } if (typeof renderAboutSections === 'function') renderAboutSections(); updateHeroLastUpdated(); }
-async function loadMembersData() { try { membersData = await (await fetch('data/members.json')).json(); } catch(e) { membersData = []; } if (typeof renderCoreMembers === 'function') { renderCoreMembers(); if (typeof renderAllMembersPage === 'function') renderAllMembersPage(); } }
-async function loadNewsData() { try { newsData = await (await fetch('data/news.json')).json(); } catch(e) { newsData = []; } if (typeof renderAllNews === 'function') renderAllNews(); checkAllDataLoaded(); }
-async function loadCompetitionsData() { try { competitionsData = await (await fetch('data/competitions.json')).json(); } catch(e) { competitionsData = []; } if (typeof renderAllCompetitions === 'function') renderAllCompetitions(); checkAllDataLoaded(); }
+async function loadAboutData() { showContentLoading('coreMembersGrid', '加载社团信息...'); try { aboutData = await (await fetch('data/about.json')).json(); } catch(e) { aboutData = null; } if (typeof renderAboutSections === 'function') renderAboutSections(); updateHeroLastUpdated(); }
+async function loadMembersData() { showContentLoading('coreMembersGrid', '加载成员数据...'); try { membersData = await (await fetch('data/members.json')).json(); } catch(e) { membersData = []; } if (typeof renderCoreMembers === 'function') { renderCoreMembers(); if (typeof renderAllMembersPage === 'function') renderAllMembersPage(); } }
+async function loadNewsData() { showContentLoading('newsPreviewGrid', '加载动态...'); showContentLoading('newsFullGrid', '加载动态...'); try { newsData = await (await fetch('data/news.json')).json(); } catch(e) { newsData = []; } if (typeof renderAllNews === 'function') renderAllNews(); checkAllDataLoaded(); }
+async function loadCompetitionsData() { showContentLoading('competitionsPreviewGrid', '加载赛事...'); showContentLoading('competitionsFullGrid', '加载赛事...'); try { competitionsData = await (await fetch('data/competitions.json')).json(); } catch(e) { competitionsData = []; } if (typeof renderAllCompetitions === 'function') renderAllCompetitions(); checkAllDataLoaded(); }
 async function loadDrawsData() { try { drawsData = await (await fetch('data/draws.json')).json(); } catch(e) { drawsData = []; } checkAllDataLoaded(); }
 function getDrawsForCompetition(competitionId) { if (!drawsData || !drawsData.length) return null; return drawsData.find(d => d.competitionId === competitionId) || null; }
 async function loadQaData() { try { qaData = await (await fetch('data/qa.json')).json(); } catch(e) { qaData = []; } if (typeof renderAllQa === 'function') renderAllQa(); }

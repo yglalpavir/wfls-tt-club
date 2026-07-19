@@ -1,0 +1,32 @@
+[
+  {
+    "日期": "2021-01-15",
+    "类型": "常规挑战赛",
+    "胜者": "_placeholder_WANG Chuqin/SUN Yingsha",
+    "负者": "_placeholder_LIM Jonghoon/SHIN Yubin"
+  },
+  {
+    "日期": "2021-03-15",
+    "类型": "球星挑战赛",
+    "胜者": "_placeholder_LIN Shidong/KUAI Man",
+    "负者": "_placeholder_TOMOKAZU Harimoto/Hina HAYATA"
+  },
+  {
+    "日期": "2021-06-01",
+    "类型": "冠军赛",
+    "胜者": "_placeholder_WANG Chuqin/SUN Yingsha",
+    "负者": "_placeholder_WONG Chunting/DOO Hoi Kem"
+  },
+  {
+    "日期": "2021-09-01",
+    "类型": "世乒赛",
+    "胜者": "_placeholder_WANG Chuqin/SUN Yingsha",
+    "负者": "_placeholder_LIN Shidong/KUAI Man"
+  },
+  {
+    "日期": "2021-09-15",
+    "类型": "比赛结果加分",
+    "对象": "_placeholder_WANG Chuqin/SUN Yingsha",
+    "分数": 60
+  }
+]

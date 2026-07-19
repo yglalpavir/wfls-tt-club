@@ -101,13 +101,64 @@ function wttIsValidRecord(r) {
 }
 
 function wttLoadScoreLog() {
-    return fetch(wttGetDataPath('score-log.json'))
-        .then(r => r.json())
-        .then(d => {
-            wttScoreLogData = d.filter(wttIsValidRecord);
-            clearFirstAppearanceCache();
-        })
-        .catch(e => { console.error(`WTT[${wttCurrentCategory}] score-log 加载失败`, e); wttScoreLogData = []; });
+    // 🔥 优先尝试按赛季拆分的文件（每个赛季的 score-log 小很多，加载更快）
+    return wttLoadScoreLogFromSeasonFiles().catch(() => {
+        // 回退到原始的单文件
+        return fetch(wttGetDataPath('score-log.json'))
+            .then(r => r.json())
+            .then(d => {
+                wttScoreLogData = d.filter(wttIsValidRecord);
+                clearFirstAppearanceCache();
+            });
+    }).catch(e => {
+        console.error(`WTT[${wttCurrentCategory}] score-log 加载失败`, e);
+        wttScoreLogData = [];
+    });
+}
+
+/**
+ * 尝试从按赛季拆分的文件中加载 score log
+ * 文件名格式: score-log-{seasonId}.json（如 score-log-2021-wtt.json）
+ */
+async function wttLoadScoreLogFromSeasonFiles() {
+    // 根据当前 category 构建可能的赛季 ID 列表
+    // MS 使用 "wtt" 后缀（历史原因），其他项目使用对应字母
+    const years = ['2021', '2022', '2023', '2024', '2025', '2026'];
+    let seasonIds;
+    if (wttCurrentCategory === 'ms') {
+        // MS 的赛季 ID 后缀为 "wtt"（因为最初只有男子单打）
+        seasonIds = years.map(y => `${y}-wtt`);
+    } else {
+        // 其他项目的赛季 ID 后缀与 category 相同（如 ws → 2021-ws）
+        seasonIds = years.map(y => `${y}-${wttCurrentCategory}`);
+    }
+
+    const allRecords = [];
+    let foundAny = false;
+
+    // 逐个尝试加载每个赛季文件
+    for (const seasonId of seasonIds) {
+        try {
+            const resp = await fetch(wttGetDataPath(`score-log-${seasonId}.json`));
+            if (resp.ok) {
+                const data = await resp.json();
+                if (Array.isArray(data) && data.length > 0) {
+                    allRecords.push(...data);
+                    foundAny = true;
+                }
+            }
+        } catch (e) {
+            // 该赛季文件不存在，跳过
+        }
+    }
+
+    if (!foundAny) {
+        throw new Error('No season files found, fall back to single file');
+    }
+
+    console.log(`WTT[${wttCurrentCategory}] 从 ${seasonIds.filter(() => true).length} 个赛季文件中加载了 ${allRecords.length} 条记录`);
+    wttScoreLogData = allRecords.filter(wttIsValidRecord);
+    clearFirstAppearanceCache();
 }
 
 function wttLoadInitialScores() {
@@ -280,7 +331,7 @@ async function wttWithDataContextAsync(fn) {
 /**
  * 异步分块计算 WTT 排名时间线（🔥 性能优化版）
  * 使用 score-engine.js 的 calculateAllRankingsWithSeasonsAsync
- * 每 2 个快照 yield 到浏览器，保持 UI 流畅响应
+ * 每个快照 yield 到浏览器，保持 UI 流畅响应
  * @param {function} onProgress - 进度回调 (current, total, message)
  */
 async function wttCalculateAllRankingsAsync(onProgress) {
@@ -291,8 +342,14 @@ async function wttCalculateAllRankingsAsync(onProgress) {
             effScores,
             wttSeasonsData,
             onProgress,
-            2  // 🔥 每 2 个快照 yield 一次
+            1  // 🔥 每个快照后都 yield（之前是 2，导致 UI 长时间冻结）
         );
+        // 🔥 实时排名计算前先 yield 并报告进度
+        if (onProgress) {
+            const totalSnapshots = wttSeasonsData.reduce((sum, s) => sum + s.snapshotDates.filter(d => d > s.startDate).length, wttSeasonsData.length);
+            onProgress(totalSnapshots + 1, totalSnapshots + 1, '实时积分');
+        }
+        await new Promise(r => setTimeout(r, 0));
         // 实时排名
         const rt = calculateRealtimeRanking();
         if (rt) timeline.push(rt);

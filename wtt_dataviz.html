@@ -67,10 +67,10 @@
                 </div>
             </div>
             <div class="viz-grid-2col">
-                <div class="viz-player-selector glass-card">
+                <div class="viz-player-selector glass-card" style="display:flex;flex-direction:column;">
                     <h4>选择球员（最多8人）</h4>
-                    <div class="player-checkbox-list" id="wttPlayerCheckboxList"></div>
-                    <button class="btn btn-sm btn-primary" id="wttApplyPointsTrend">应用</button>
+                    <div class="player-checkbox-list" id="wttPlayerCheckboxList" style="flex:1;overflow-y:auto;min-height:0;margin-bottom:0;"></div>
+                    <button class="btn btn-sm btn-primary" id="wttApplyPointsTrend" style="margin-top:12px;flex-shrink:0;">应用</button>
                 </div>
                 <div class="viz-chart-container glass-card">
                     <canvas id="wttPointsTrendChart"></canvas>

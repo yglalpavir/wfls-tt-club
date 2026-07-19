@@ -94,7 +94,59 @@ function renderScoreDetail() {
     setTimeout(adjustModalSize, 150);
 }
 
-async function loadRankingData() { const tb = document.getElementById('rankingFullBody'); if (!tb) return; try { await Promise.all([loadInitialScores(), loadEventCoefficients(), loadSeasons(), loadScoreLogData()]); if (!initialScoresData || !eventCoefficients || !seasonsData) throw new Error('数据加载失败'); rankingTimeline = calculateAllRankingsWithSeasons(scoreLogData, initialScoresData.initialScores, seasonsData); const rt = calculateRealtimeRanking(); if (rt) rankingTimeline.push(rt); currentTimeIndex = rankingTimeline.length - 1; currentSortKey = '当前积分'; currentSortDir = 'desc'; renderTimeNodeList(); updateRankingDisplay(); setupSortListeners(); } catch(e) { console.error('排名计算失败', e); tb.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;color:var(--accent-red);">无法计算排名数据</td></tr>'; } }
+async function loadRankingData() {
+    const tb = document.getElementById('rankingFullBody');
+    if (!tb) return;
+
+    // 显示加载进度
+    function updateProgress(msg) {
+        if (tb) {
+            tb.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:40px;">
+                <div class="wtt-spinner" style="width:36px;height:36px;border:3px solid var(--border-color);border-top-color:var(--accent-blue);border-radius:50%;animation:wttSpin 0.8s linear infinite;margin:0 auto 12px;"></div>
+                <p style="color:var(--text-secondary);">正在加载排名数据...</p>
+                <p class="wtt-progress-text" style="font-size:0.8rem;color:var(--text-tertiary);margin-top:4px;">${msg}</p>
+            </td></tr>`;
+        }
+    }
+
+    updateProgress('准备下载数据文件...');
+
+    try {
+        // 逐个加载数据文件，显示详细进度
+        const dataFiles = [
+            { name: 'score-log.json',        loader: loadScoreLogData,      label: '比赛记录' },
+            { name: 'initial-scores.json',   loader: loadInitialScores,     label: '初始积分' },
+            { name: 'event-coefficient.json',loader: loadEventCoefficients, label: '赛事系数' },
+            { name: 'seasons.json',          loader: loadSeasons,           label: '赛季配置' }
+        ];
+
+        for (let i = 0; i < dataFiles.length; i++) {
+            const f = dataFiles[i];
+            updateProgress(`正在下载 ${f.label} (${i + 1}/${dataFiles.length}): ${f.name}`);
+            await new Promise(r => setTimeout(r, 0));
+            await f.loader();
+        }
+
+        if (!initialScoresData || !eventCoefficients || !seasonsData) throw new Error('数据加载失败');
+
+        updateProgress('正在计算排名积分（此过程可能较慢，请耐心等待）...');
+        await new Promise(r => setTimeout(r, 0));
+
+        // 同步计算（club数据量小，不需要分块异步）
+        rankingTimeline = calculateAllRankingsWithSeasons(scoreLogData, initialScoresData.initialScores, seasonsData);
+        const rt = calculateRealtimeRanking();
+        if (rt) rankingTimeline.push(rt);
+        currentTimeIndex = rankingTimeline.length - 1;
+        currentSortKey = '当前积分';
+        currentSortDir = 'desc';
+        renderTimeNodeList();
+        updateRankingDisplay();
+        setupSortListeners();
+    } catch(e) {
+        console.error('排名计算失败', e);
+        tb.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;color:var(--accent-red);">无法计算排名数据</td></tr>';
+    }
+}
 
 function renderTimeNodeList() { const list = document.getElementById('timeNodeList'), lbl = document.getElementById('currentTimeLabel'); if (!list || !rankingTimeline.length) return; list.innerHTML = '';
 

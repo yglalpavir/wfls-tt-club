@@ -3,8 +3,37 @@
    ======================================== */
 
 let pointsTrendChart = null, rankStreamChart = null;
+let dataVizSettings = null;  // 折线图设置（从 data/data_viz-settings.json 加载）
 const CHART_COLORS = ['#4da3ff','#ff6b6b','#52c41a','#f5c542','#ff9f43','#a55eea','#26de81','#fd79a8','#45b7d1','#f78fb3','#3dc1d3','#e66767','#778beb','#f5cd79','#cf6a87','#786fa6','#f8a5c2','#63cdda','#ea8685','#596275'];
 const STREAM_COLORS = ['#4da3ff','#52c41a','#ff9f43','#a55eea','#26de81','#ff6b6b','#45b7d1','#f5c542','#778beb','#fd79a8','#3dc1d3','#f78fb3','#63cdda','#e66767','#f5cd79','#cf6a87','#786fa6','#f8a5c2','#ea8685','#596275'];
+
+/**
+ * 根据数据点数量从 settings tiers 中匹配最佳参数档位
+ */
+function getDataVizTier(dataCount) {
+    const tiers = (dataVizSettings && dataVizSettings.tiers) ? dataVizSettings.tiers : [
+        { maxPoints: 12, tension: 0.35, pointRadius: 5, pointHoverExtra: 4, borderWidth: 2.5 },
+        { maxPoints: 24, tension: 0.30, pointRadius: 4, pointHoverExtra: 3, borderWidth: 2.5 },
+        { maxPoints: 48, tension: 0.20, pointRadius: 3, pointHoverExtra: 3, borderWidth: 2.2 },
+        { maxPoints: 96, tension: 0.12, pointRadius: 2, pointHoverExtra: 2, borderWidth: 2.0 },
+        { maxPoints: 200, tension: 0.06, pointRadius: 1, pointHoverExtra: 2, borderWidth: 1.8 },
+        { maxPoints: 999, tension: 0.03, pointRadius: 0, pointHoverExtra: 2, borderWidth: 1.5 }
+    ];
+    for (const t of tiers) {
+        if (dataCount <= t.maxPoints) return t;
+    }
+    return tiers[tiers.length - 1];
+}
+
+async function loadDataVizSettings() {
+    try {
+        dataVizSettings = await (await fetch('data/data_viz-settings.json')).json();
+        console.log('[DataViz] 折线图设置加载完成');
+    } catch (e) {
+        console.warn('[DataViz] 折线图设置加载失败，使用内置默认值', e);
+        dataVizSettings = null;
+    }
+}
 
 function initDataViz() {
     console.log('[DataViz] 开始初始化，rankingTimeline 长度:', rankingTimeline.length, 'scoreLogData 长度:', scoreLogData.length);
@@ -26,29 +55,41 @@ function initDataViz() {
         document.getElementById('playerCheckboxList').innerHTML = '<div style="padding:20px;color:var(--accent-red);">❌ 无法获取球员列表</div>';
         return;
     }
-    
+
+    // 🔥 按实时积分降序排列
+    const lastSnapshot = rankingTimeline[rankingTimeline.length - 1];
+    const scoreMap = {};
+    if (lastSnapshot && lastSnapshot.data) {
+        for (const p of lastSnapshot.data) {
+            scoreMap[p['姓名']] = p['当前积分'];
+        }
+    }
+    players.sort((a, b) => (scoreMap[b] || 0) - (scoreMap[a] || 0));
+
     console.log('[DataViz] 成功获取球员列表:', players.length, '人');
-    renderPlayerCheckboxes(); 
-    renderCompareSelects();
-    const dp = players.slice(0, Math.min(5, players.length));
-    const defaultDataCount = parseInt(document.getElementById('pointsTrendDataCount')?.value) || 20;
-    renderPointsTrend(dp, defaultDataCount); 
-    const defaultStreamCount = parseInt(document.getElementById('streamDataCount')?.value) || 20;
-    renderRankStream(Math.min(10, players.length), defaultStreamCount);
-    
-    // 事件监听
-    document.getElementById('applyPointsTrend')?.addEventListener('click', () => { 
-        const sel = getSelectedPlayers(); 
-        if (!sel.length) { alert('请至少选择一名球员'); return; } 
-        if (sel.length > 15) { alert('最多选择15名球员'); return; } 
-        const dc = parseInt(document.getElementById('pointsTrendDataCount')?.value) || 20;
-        renderPointsTrend(sel, dc); 
-    });
-    document.getElementById('pointsTrendDataCount')?.addEventListener('change', () => {
-        const sel = getSelectedPlayers();
-        if (!sel.length) { sel.push(...players.slice(0, Math.min(5, players.length))); }
-        const dc = parseInt(document.getElementById('pointsTrendDataCount')?.value) || 20;
-        renderPointsTrend(sel, dc);
+    loadDataVizSettings().then(() => {
+        renderPlayerCheckboxes(); 
+        renderCompareSelects();
+        const dp = players.slice(0, Math.min(8, players.length));
+        const defaultDataCount = parseInt(document.getElementById('pointsTrendDataCount')?.value) || 20;
+        renderPointsTrend(dp, defaultDataCount); 
+        const defaultStreamCount = parseInt(document.getElementById('streamDataCount')?.value) || 20;
+        renderRankStream(Math.min(10, players.length), defaultStreamCount);
+        
+        // 事件监听
+        document.getElementById('applyPointsTrend')?.addEventListener('click', () => { 
+            const sel = getSelectedPlayers(); 
+            if (!sel.length) { alert('请至少选择一名球员'); return; } 
+            if (sel.length > 15) { alert('最多选择15名球员'); return; } 
+            const dc = parseInt(document.getElementById('pointsTrendDataCount')?.value) || 20;
+            renderPointsTrend(sel, dc); 
+        });
+        document.getElementById('pointsTrendDataCount')?.addEventListener('change', () => {
+            const sel = getSelectedPlayers();
+            if (!sel.length) { sel.push(...players.slice(0, Math.min(8, players.length))); }
+            const dc = parseInt(document.getElementById('pointsTrendDataCount')?.value) || 20;
+            renderPointsTrend(sel, dc);
+        });
     });
     document.getElementById('topNSelect')?.addEventListener('change', e => {
         let v = parseInt(e.target.value);
@@ -142,7 +183,7 @@ function renderPlayerCheckboxes() {
     const sortedPlayers = [...players].sort((a, b) => (scoreMap[b] || 0) - (scoreMap[a] || 0));
     
     container.innerHTML = sortedPlayers.map((name, i) => { 
-        const checked = i < 5 ? 'checked' : ''; 
+        const checked = i < 8 ? 'checked' : ''; 
         const pts = scoreMap[name] !== undefined ? scoreMap[name].toFixed(1) : '-'; 
         return `<label class="player-checkbox-item ${i<5?'checked':''}"><input type="checkbox" value="${name}" ${checked}><span>${name}</span><span class="player-rank">${pts}</span></label>`; 
     }).join(''); 
@@ -275,7 +316,66 @@ function getCurrentSeasonFallbackScores() {
     return scores;
 }
 
-function renderPointsTrend(playerNames, dataCount) { const canvas = document.getElementById('pointsTrendChart'); if (!canvas || !rankingTimeline.length) return; if (pointsTrendChart) { pointsTrendChart.destroy(); pointsTrendChart = null; } dataCount = Math.max(2, Math.min(dataCount || 20, rankingTimeline.length)); const slicedTimeline = rankingTimeline.slice(-dataCount); const isMobile = window.innerWidth <= 768; const labels = slicedTimeline.map(t => t.label); const datasets = playerNames.map((name, idx) => { const data = slicedTimeline.map(t => getPlayerScoreAtSnapshot(name, t)); return { label:name, data, borderColor:CHART_COLORS[idx%CHART_COLORS.length], backgroundColor:CHART_COLORS[idx%CHART_COLORS.length]+'20', borderWidth:isMobile?2:2.5, pointRadius:isMobile?2:4, pointHoverRadius:isMobile?5:7, tension:0.3, fill:false, spanGaps:true }; }); try { pointsTrendChart = new Chart(canvas, { type:'line', data:{labels,datasets}, options:{ responsive:true, maintainAspectRatio:false, interaction:{ intersect:false, mode:'index' }, plugins:{ legend:{ position:'bottom', labels:{ usePointStyle:true, padding:isMobile?10:20, font:{ size:isMobile?10:12, family:"'Poppins', sans-serif" }, boxWidth:isMobile?10:12 } }, tooltip:{ backgroundColor:'rgba(26,29,40,0.9)', titleFont:{ size:isMobile?11:13 }, bodyFont:{ size:isMobile?10:12 }, padding:isMobile?8:12, cornerRadius:8, callbacks:{ label:ctx => `${ctx.dataset.label}: ${ctx.raw.toFixed(1)}` } } }, scales:{ x:{ grid:{ color:'rgba(128,128,128,0.1)' }, ticks:{ font:{ size:isMobile?9:11 }, maxRotation:isMobile?45:0 } }, y:{ beginAtZero:false, grid:{ color:'rgba(128,128,128,0.1)' }, ticks:{ font:{ size:isMobile?9:11 } }, title:{ display:true, text:currentLang==='zh'?'积分':'Points', font:{ size:isMobile?10:12 } } } } } }); } catch(err) { console.error('积分趋势图失败', err); } }
+function renderPointsTrend(playerNames, dataCount) {
+    const canvas = document.getElementById('pointsTrendChart');
+    if (!canvas || !rankingTimeline.length) return;
+    if (pointsTrendChart) { pointsTrendChart.destroy(); pointsTrendChart = null; }
+
+    dataCount = Math.max(2, Math.min(dataCount || 20, rankingTimeline.length));
+    const slicedTimeline = rankingTimeline.slice(-dataCount);
+
+    const isMobile = window.innerWidth <= 768;
+    const mobileScale = (dataVizSettings && dataVizSettings.mobile) ? dataVizSettings.mobile : { pointRadiusScale: 0.5, borderWidthScale: 0.8, pointHoverExtraScale: 0.7 };
+
+    // 🔥 根据数据点数量匹配最佳参数档位
+    const tier = getDataVizTier(dataCount);
+    const tension = tier.tension;
+    const pointRadius = isMobile
+        ? Math.round(tier.pointRadius * (mobileScale.pointRadiusScale || 0.5))
+        : tier.pointRadius;
+    const pointHoverRadius = pointRadius + (isMobile
+        ? Math.round(tier.pointHoverExtra * (mobileScale.pointHoverExtraScale || 0.7))
+        : tier.pointHoverExtra);
+    const borderWidth = isMobile
+        ? tier.borderWidth * (mobileScale.borderWidthScale || 0.8)
+        : tier.borderWidth;
+
+    const labels = slicedTimeline.map(t => t.label);
+    const datasets = playerNames.map((name, idx) => {
+        const data = slicedTimeline.map(t => getPlayerScoreAtSnapshot(name, t));
+        return {
+            label: name, data,
+            borderColor: CHART_COLORS[idx % CHART_COLORS.length],
+            backgroundColor: CHART_COLORS[idx % CHART_COLORS.length] + '20',
+            borderWidth: borderWidth,
+            pointRadius: pointRadius,
+            pointHoverRadius: pointHoverRadius,
+            tension: tension,
+            fill: false, spanGaps: true
+        };
+    });
+
+    try {
+        pointsTrendChart = new Chart(canvas, {
+            type: 'line', data: { labels, datasets },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                interaction: { intersect: false, mode: 'index' },
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { usePointStyle: true, padding: isMobile ? 10 : 20, font: { size: isMobile ? 10 : 12, family: "'Poppins', sans-serif" }, boxWidth: isMobile ? 10 : 12 }
+                    },
+                    tooltip: { backgroundColor: 'rgba(26,29,40,0.9)', titleFont: { size: isMobile ? 11 : 13 }, bodyFont: { size: isMobile ? 10 : 12 }, padding: isMobile ? 8 : 12, cornerRadius: 8, callbacks: { label: ctx => `${ctx.dataset.label}: ${ctx.raw.toFixed(1)}` } }
+                },
+                scales: {
+                    x: { grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 9 : 11 }, maxRotation: isMobile ? 45 : 0 } },
+                    y: { beginAtZero: false, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 9 : 11 } }, title: { display: true, text: currentLang === 'zh' ? '积分' : 'Points', font: { size: isMobile ? 10 : 12 } } }
+                }
+            }
+        });
+    } catch(err) { console.error('积分趋势图失败', err); }
+}
 function renderRankStream(topN, dataCount) { 
     const canvas = document.getElementById('rankStreamChart'); 
     if (!canvas || !rankingTimeline.length) return; 

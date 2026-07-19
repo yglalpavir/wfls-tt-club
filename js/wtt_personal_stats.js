@@ -9,18 +9,71 @@ let wttPersonalChartSettings = null;  // 折线图设置
 
 // ============ 数据加载 ============
 
+/**
+ * 在加载过程中显示进度提示
+ * @param {string} msg - 进度文字
+ */
+function wttPSShowProgress(msg) {
+    const el = document.getElementById('wttPersonalResult');
+    if (!el) return;
+    el.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;color:var(--text-secondary);">
+        <div class="wtt-spinner" style="width:32px;height:32px;border:3px solid var(--border-color);border-top-color:var(--accent-blue);border-radius:50%;animation:wttSpin 0.8s linear infinite;margin-bottom:12px;"></div>
+        <p style="font-size:0.9rem;margin:0;">${msg || '加载数据中...'}</p>
+    </div>`;
+}
+
 async function wttLoadRankingDataForPersonal() {
-    // 使用 wtt_common.js 的统一数据加载（分类目录：wtt_data/{category}/）
-    const ok = await wttLoadAllData();
-    if (!ok) { wttRankingTimeline = []; return false; }
+    // 显示加载进度
+    wttPSShowProgress('准备下载数据文件...');
 
     try {
-        // 异步分块计算（不阻塞 UI）
-        wttRankingTimeline = await wttCalculateAllRankingsAsync();
+        // 🔥 逐个加载数据文件，显示详细进度
+        const dataFiles = [
+            { name: 'score-log (按赛季)',   loader: wttLoadScoreLog,          label: '比赛记录' },
+            { name: 'initial-scores.json',   loader: wttLoadInitialScores,     label: '初始积分' },
+            { name: 'settings.json',         loader: wttLoadSettings,          label: '项目设置' },
+            { name: 'event-coefficient.json',loader: wttLoadEventCoefficients, label: '赛事系数' },
+            { name: 'seasons.json',          loader: wttLoadSeasons,           label: '赛季配置' }
+        ];
+
+        for (let i = 0; i < dataFiles.length; i++) {
+            const f = dataFiles[i];
+            wttPSShowProgress(`正在下载 ${f.label} (${i + 1}/${dataFiles.length}): ${f.name}`);
+            // yield 到浏览器，确保 UI 更新
+            await new Promise(r => setTimeout(r, 0));
+            await f.loader();
+        }
+
+        // flat1300 模式不需要 initialScoresData
+        const isFlat = wttSettings && wttSettings.scoreMode === 'flat1300';
+        if (!isFlat && !wttInitialScoresData) throw new Error('WTT initial-scores 加载失败');
+        if (!wttEventCoefficients || !wttSeasonsData) throw new Error('WTT数据加载失败');
+
+        // 更新进度为计算排名
+        wttPSShowProgress('正在计算排名积分...');
+
+        // 异步分块计算（带进度回调）
+        wttRankingTimeline = await wttCalculateAllRankingsAsync((current, total, label) => {
+            wttPSShowProgress(`${label || ''} · 快照 ${current}/${total}`);
+        });
+
+        // 加载完成，恢复占位文字
+        const el = document.getElementById('wttPersonalResult');
+        if (el) {
+            el.innerHTML = `<div class="compare-placeholder">
+                <i class="fa-solid fa-user-chart"></i>
+                <p>选择一名球员查看个人数据</p>
+            </div>`;
+        }
+
         return true;
     } catch(e) {
         console.error('WttPersonalStats: 排名计算失败', e);
         wttRankingTimeline = [];
+        const el = document.getElementById('wttPersonalResult');
+        if (el) {
+            el.innerHTML = '<div style="padding:20px;color:var(--accent-red);text-align:center;">❌ WTT排名数据加载失败，请刷新页面重试</div>';
+        }
         return false;
     }
 }

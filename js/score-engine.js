@@ -310,12 +310,14 @@ async function calculateAllRankingsWithSeasonsAsync(scoreLog, initialScores, sea
             processedSnapshots++;
             if (onProgress) onProgress(processedSnapshots, totalSnapshots, season.label);
 
-            // 🔥 每 chunkSize 个快照 yield 到浏览器
-            if ((i + 1) % chunkSize === 0 && i < validSnapshots.length - 1) {
+            // 🔥 每个快照后都 yield 到浏览器，保持 UI 响应
+            if (i < validSnapshots.length - 1) {
                 await new Promise(r => setTimeout(r, 0));
             }
         }
 
+        // 🔥 赛季末计算前先 yield，避免长时间冻结
+        await new Promise(r => setTimeout(r, 0));
         // 赛季末积分
         currentScores = calculateEndScores(sortedLog, currentScores, season.startDate, season.endDate);
 

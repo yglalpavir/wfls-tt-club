@@ -209,7 +209,7 @@ async function wttLoadRankingData() {
     try {
         // 🔥 逐个加载数据文件，显示详细进度（而非一次性 Promise.all）
         const dataFiles = [
-            { name: 'score-log.json',        loader: wttLoadScoreLog,          label: '比赛记录' },
+            { name: 'score-log (按赛季)',   loader: wttLoadScoreLog,          label: '比赛记录' },
             { name: 'initial-scores.json',   loader: wttLoadInitialScores,     label: '初始积分' },
             { name: 'settings.json',         loader: wttLoadSettings,          label: '项目设置' },
             { name: 'event-coefficient.json',loader: wttLoadEventCoefficients, label: '赛事系数' },

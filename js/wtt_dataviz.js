@@ -4,32 +4,132 @@
    ======================================== */
 
 let wttPointsTrendChart = null, wttRankStreamChart = null;
+let wttDataVizSettings = null;  // 折线图设置（从 data/data_viz-settings.json 加载）
 const WTT_CHART_COLORS = ['#4da3ff','#ff6b6b','#52c41a','#f5c542','#ff9f43','#a55eea','#26de81','#fd79a8','#45b7d1','#f78fb3','#3dc1d3','#e66767','#778beb','#f5cd79','#cf6a87','#786fa6','#f8a5c2','#63cdda','#ea8685','#596275'];
 const WTT_STREAM_COLORS = ['#4da3ff','#52c41a','#ff9f43','#a55eea','#26de81','#ff6b6b','#45b7d1','#f5c542','#778beb','#fd79a8','#3dc1d3','#f78fb3','#63cdda','#e66767','#f5cd79','#cf6a87','#786fa6','#f8a5c2','#ea8685','#596275'];
 
+/**
+ * 根据数据点数量从 settings tiers 中匹配最佳参数档位
+ */
+function wttGetDataVizTier(dataCount) {
+    const tiers = (wttDataVizSettings && wttDataVizSettings.tiers) ? wttDataVizSettings.tiers : [
+        { maxPoints: 12, tension: 0.35, pointRadius: 5, pointHoverExtra: 4, borderWidth: 2.5 },
+        { maxPoints: 24, tension: 0.30, pointRadius: 4, pointHoverExtra: 3, borderWidth: 2.5 },
+        { maxPoints: 48, tension: 0.20, pointRadius: 3, pointHoverExtra: 3, borderWidth: 2.2 },
+        { maxPoints: 96, tension: 0.12, pointRadius: 2, pointHoverExtra: 2, borderWidth: 2.0 },
+        { maxPoints: 200, tension: 0.06, pointRadius: 1, pointHoverExtra: 2, borderWidth: 1.8 },
+        { maxPoints: 999, tension: 0.03, pointRadius: 0, pointHoverExtra: 2, borderWidth: 1.5 }
+    ];
+    for (const t of tiers) {
+        if (dataCount <= t.maxPoints) return t;
+    }
+    return tiers[tiers.length - 1];
+}
+
+async function wttLoadDataVizSettings() {
+    try {
+        wttDataVizSettings = await (await fetch('data/data_viz-settings.json')).json();
+        console.log('[WttDataViz] 折线图设置加载完成');
+    } catch (e) {
+        console.warn('[WttDataViz] 折线图设置加载失败，使用内置默认值', e);
+        wttDataVizSettings = null;
+    }
+}
+
 // ============ WTT 数据加载 ============
 
+/**
+ * 在加载过程中显示进度提示
+ * @param {string} containerId - 显示加载进度的容器 ID
+ * @param {string} msg - 进度文字
+ */
+function wttVizShowProgress(containerId, msg) {
+    const el = document.getElementById(containerId);
+    if (!el) return;
+    el.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;color:var(--text-secondary);">
+        <div class="wtt-spinner" style="width:32px;height:32px;border:3px solid var(--border-color);border-top-color:var(--accent-blue);border-radius:50%;animation:wttSpin 0.8s linear infinite;margin-bottom:12px;"></div>
+        <p style="font-size:0.9rem;margin:0;">${msg || '加载数据中...'}</p>
+    </div>`;
+}
+
 async function wttLoadRankingDataForViz() {
+    // 🔥 同时在球员列表和图表区域显示加载进度
+    const progressContainer = document.getElementById('wttPlayerCheckboxList');
+    const chartContainer = document.querySelector('#wttPointsTrendChart')?.parentElement;
+
+    function showProgress(msg) {
+        // 球员列表区域
+        if (progressContainer) {
+            wttVizShowProgress('wttPlayerCheckboxList', msg);
+        }
+        // 图表区域也显示（双重保障）
+        if (chartContainer && !chartContainer.querySelector('.wtt-loading-overlay')) {
+            const overlay = document.createElement('div');
+            overlay.className = 'wtt-loading-overlay';
+            overlay.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;min-height:300px;color:var(--text-secondary);">
+                <div class="wtt-spinner" style="width:36px;height:36px;border:3px solid var(--border-color);border-top-color:var(--accent-blue);border-radius:50%;animation:wttSpin 0.8s linear infinite;margin-bottom:12px;"></div>
+                <p style="font-size:0.95rem;margin:0;" class="wtt-chart-progress-text">${msg || '加载数据中...'}</p>
+            </div>`;
+            overlay.style.cssText = 'position:absolute;top:0;left:0;right:0;bottom:0;z-index:10;display:flex;';
+            chartContainer.style.position = 'relative';
+            chartContainer.appendChild(overlay);
+        } else if (chartContainer) {
+            const textEl = chartContainer.querySelector('.wtt-chart-progress-text');
+            if (textEl) textEl.textContent = msg;
+        }
+    }
+
+    function hideChartOverlay() {
+        if (chartContainer) {
+            const overlay = chartContainer.querySelector('.wtt-loading-overlay');
+            if (overlay) overlay.remove();
+        }
+    }
+
+    showProgress('准备下载数据文件...');
+    console.log('[WttDataViz] 开始加载数据...');
+
     try {
-        await Promise.all([
-            wttLoadInitialScores(),
-            wttLoadSettings(),
-            wttLoadEventCoefficients(),
-            wttLoadSeasons(),
-            wttLoadScoreLog()
-        ]);
+        // 🔥 逐个加载数据文件，显示详细进度
+        const dataFiles = [
+            { name: 'score-log (按赛季)',   loader: wttLoadScoreLog,          label: '比赛记录' },
+            { name: 'initial-scores.json',   loader: wttLoadInitialScores,     label: '初始积分' },
+            { name: 'settings.json',         loader: wttLoadSettings,          label: '项目设置' },
+            { name: 'event-coefficient.json',loader: wttLoadEventCoefficients, label: '赛事系数' },
+            { name: 'seasons.json',          loader: wttLoadSeasons,           label: '赛季配置' }
+        ];
+
+        for (let i = 0; i < dataFiles.length; i++) {
+            const f = dataFiles[i];
+            showProgress(`正在下载 ${f.label} (${i + 1}/${dataFiles.length}): ${f.name}`);
+            // yield 到浏览器，确保 UI 更新
+            await new Promise(r => setTimeout(r, 0));
+            await f.loader();
+        }
+
         // flat1300 模式不需要 initialScoresData
         const isFlat = wttSettings && wttSettings.scoreMode === 'flat1300';
         if (!isFlat && !wttInitialScoresData) throw new Error('WTT initial-scores 加载失败');
         if (!wttEventCoefficients || !wttSeasonsData) throw new Error('WTT数据加载失败');
 
-        // 异步分块计算（不阻塞 UI）
-        wttRankingTimeline = await wttCalculateAllRankingsAsync();
+        // 更新进度为计算排名
+        showProgress('正在计算排名积分...');
 
+        // 异步分块计算（带进度回调）
+        wttRankingTimeline = await wttCalculateAllRankingsAsync((current, total, label) => {
+            showProgress(`${label || ''} · 快照 ${current}/${total}`);
+        });
+
+        // 加载完成，清理图表区的 loading overlay
+        hideChartOverlay();
         return true;
     } catch(e) {
         console.error('WttDataViz: 排名计算失败', e);
         wttRankingTimeline = [];
+        hideChartOverlay();
+        if (progressContainer) {
+            progressContainer.innerHTML = '<div style="padding:20px;color:var(--accent-red);">❌ WTT排名数据加载失败，请刷新页面重试</div>';
+        }
         return false;
     }
 }
@@ -60,16 +160,27 @@ function initWttDataViz() {
         return;
     }
 
-    console.log('[WttDataViz] 成功获取球员列表:', players.length, '人');
-    wttRenderPlayerCheckboxes();
-    wttRenderCompareSelects();
-    const dp = players.slice(0, Math.min(5, players.length));
-    const defaultDataCount = parseInt(document.getElementById('wttPointsTrendDataCount')?.value) || 20;
-    wttRenderPointsTrend(dp, defaultDataCount);
-    const defaultStreamCount = parseInt(document.getElementById('wttStreamDataCount')?.value) || 20;
-    wttRenderRankStream(Math.min(10, players.length), defaultStreamCount);
+    // 🔥 按实时积分降序排列
+    const wttLastSnapshot = wttRankingTimeline[wttRankingTimeline.length - 1];
+    const wttScoreMap = {};
+    if (wttLastSnapshot && wttLastSnapshot.data) {
+        for (const p of wttLastSnapshot.data) {
+            wttScoreMap[p['姓名']] = p['当前积分'];
+        }
+    }
+    players.sort((a, b) => (wttScoreMap[b] || 0) - (wttScoreMap[a] || 0));
 
-    // 事件监听
+    console.log('[WttDataViz] 成功获取球员列表:', players.length, '人');
+    wttLoadDataVizSettings().then(() => {
+        wttRenderPlayerCheckboxes();
+        wttRenderCompareSelects();
+        const dp = players.slice(0, Math.min(8, players.length));
+        const defaultDataCount = parseInt(document.getElementById('wttPointsTrendDataCount')?.value) || 20;
+        wttRenderPointsTrend(dp, defaultDataCount);
+        const defaultStreamCount = parseInt(document.getElementById('wttStreamDataCount')?.value) || 20;
+        wttRenderRankStream(Math.min(10, players.length), defaultStreamCount);
+
+        // 事件监听
     document.getElementById('wttApplyPointsTrend')?.addEventListener('click', () => {
         const sel = wttGetSelectedPlayers();
         if (!sel.length) { alert('请至少选择一名球员'); return; }
@@ -79,7 +190,7 @@ function initWttDataViz() {
     });
     document.getElementById('wttPointsTrendDataCount')?.addEventListener('change', () => {
         const sel = wttGetSelectedPlayers();
-        if (!sel.length) { sel.push(...players.slice(0, Math.min(5, players.length))); }
+        if (!sel.length) { sel.push(...players.slice(0, Math.min(8, players.length))); }
         const dc = parseInt(document.getElementById('wttPointsTrendDataCount')?.value) || 20;
         wttRenderPointsTrend(sel, dc);
     });
@@ -103,6 +214,7 @@ function initWttDataViz() {
         wttRenderComparison(pa, pb);
     });
     console.log('[WttDataViz] 初始化完成');
+    });  // ← 关闭 wttLoadDataVizSettings().then()
 
     // 响应窗口大小变化，重绘图表
     let resizeTimeout;
@@ -227,7 +339,7 @@ function wttRenderPlayerCheckboxes() {
     const sortedPlayers = [...players].sort((a, b) => (scoreMap[b] || 0) - (scoreMap[a] || 0));
 
     container.innerHTML = sortedPlayers.map((name, i) => {
-        const checked = i < 5 ? 'checked' : '';
+        const checked = i < 8 ? 'checked' : '';
         const pts = scoreMap[name] !== undefined ? scoreMap[name].toFixed(1) : '-';
         return `<label class="player-checkbox-item ${i<5?'checked':''}"><input type="checkbox" value="${name}" ${checked}><span>${name}</span><span class="player-rank">${pts}</span></label>`;
     }).join('');
@@ -404,11 +516,25 @@ function wttRenderPointsTrend(playerNames, dataCount) {
     if (!canvas || !wttRankingTimeline.length) return;
     if (wttPointsTrendChart) { wttPointsTrendChart.destroy(); wttPointsTrendChart = null; }
 
-    // 取最近 dataCount 个数据点
     dataCount = Math.max(2, Math.min(dataCount || 20, wttRankingTimeline.length));
     const slicedTimeline = wttRankingTimeline.slice(-dataCount);
 
     const isMobile = window.innerWidth <= 768;
+    const mobileScale = (wttDataVizSettings && wttDataVizSettings.mobile) ? wttDataVizSettings.mobile : { pointRadiusScale: 0.5, borderWidthScale: 0.8, pointHoverExtraScale: 0.7 };
+
+    // 🔥 根据数据点数量匹配最佳参数档位
+    const tier = wttGetDataVizTier(dataCount);
+    const tension = tier.tension;
+    const pointRadius = isMobile
+        ? Math.round(tier.pointRadius * (mobileScale.pointRadiusScale || 0.5))
+        : tier.pointRadius;
+    const pointHoverRadius = pointRadius + (isMobile
+        ? Math.round(tier.pointHoverExtra * (mobileScale.pointHoverExtraScale || 0.7))
+        : tier.pointHoverExtra);
+    const borderWidth = isMobile
+        ? tier.borderWidth * (mobileScale.borderWidthScale || 0.8)
+        : tier.borderWidth;
+
     const labels = slicedTimeline.map(t => t.label);
     const datasets = playerNames.map((name, idx) => {
         const data = slicedTimeline.map(t => wttGetPlayerScoreAtSnapshot(name, t));
@@ -416,10 +542,11 @@ function wttRenderPointsTrend(playerNames, dataCount) {
             label: name, data,
             borderColor: WTT_CHART_COLORS[idx % WTT_CHART_COLORS.length],
             backgroundColor: WTT_CHART_COLORS[idx % WTT_CHART_COLORS.length] + '20',
-            borderWidth: isMobile ? 2 : 2.5,
-            pointRadius: isMobile ? 2 : 4,
-            pointHoverRadius: isMobile ? 5 : 7,
-            tension: 0.3, fill: false, spanGaps: true
+            borderWidth: borderWidth,
+            pointRadius: pointRadius,
+            pointHoverRadius: pointHoverRadius,
+            tension: tension,
+            fill: false, spanGaps: true
         };
     });
 
