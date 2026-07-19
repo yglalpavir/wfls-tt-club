@@ -1,3770 +1,630 @@
 [
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "LIAO Cheng-Ting",
-    "负者": "Ahmed ALAWLAQI"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Jeremy HAZIN",
-    "负者": "Ahmad Khalil AL-MOHANNADI"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Andreas LEVENKO",
-    "负者": "Aleksandar KARAKASEVIC"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Ricardo WALTHER",
-    "负者": "Khalid ASSAR"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Mihai BOBOCICA",
-    "负者": "Daniel GONZALEZ"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Jordy PICCOLIN",
-    "负者": "Eric JOUTI"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "CHEW Clarence",
-    "负者": "Abdulaziz BU SHULAYBI"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Eugene WANG",
-    "负者": "Carlos CABALLERO"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Florent LAMBIET",
-    "负者": "Mohammed ABDULWAHHAB"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Pavel PLATONOV",
-    "负者": "Mohamed ELBEIALI"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Brian AFANADOR",
-    "负者": "Lubomir JANCARIK"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Masaki YOSHIDA",
-    "负者": "Zokhid KENJAEV"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Yuta TANAKA",
-    "负者": "Alexandre CASSIN"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Olajide OMOTAYO",
-    "负者": "Alan KURMANGALIYEV"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Anders LIND",
-    "负者": "Robin DEVOS"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Yaroslav ZHMUDENKO",
-    "负者": "Michael TAUBER"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Deni KOZUL",
-    "负者": "Gaston ALTO"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "CHO Daeseong",
-    "负者": "Nima ALAMIAN"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Alexander SHIBAEV",
-    "负者": "Larbi BOURIAH"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Aleksandr KHANIN",
-    "负者": "Filip ZELJKO"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Frane KOJIC",
-    "负者": "Maciej KOLODZIEJCZYK"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Joao GERALDO",
-    "负者": "Thiago MONTEIRO"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Niagol STOYANOV",
-    "负者": "Samuel WALKER"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Ievgen PRYSHCHEPA",
-    "负者": "Hunor SZOCS"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Benedek OLAH",
-    "负者": "Mudit DANI"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Vladimir SIDORENKO",
-    "负者": "Ali ALKHADRAWI"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Rares SIPOS",
-    "负者": "Martin ALLEGRO"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Harmeet DESAI",
-    "负者": "Amalraj ANTHONY"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Cedric NUYTINCK",
-    "负者": "Nandor ECSEKI"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Pavel SIRUCEK",
-    "负者": "Ricardo WALTHER"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Daniel HABESOHN",
-    "负者": "Pavel PLATONOV"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Vladimir SIDORENKO",
-    "负者": "Omar ASSAR"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Benedek OLAH",
-    "负者": "CHEN Chien-An"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Andreas LEVENKO",
-    "负者": "Paul DRINKHALL"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Ibrahima DIAW",
-    "负者": "Rares SIPOS"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Masataka MORIZONO",
-    "负者": "Ievgen PRYSHCHEPA"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Kirill SKACHKOV",
-    "负者": "LIAO Cheng-Ting"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Jon PERSSON",
-    "负者": "Jordy PICCOLIN"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Noshad ALAMIYAN",
-    "负者": "Adam SZUDI"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Vitor ISHIY",
-    "负者": "Eugene WANG"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Horacio CIFUENTES",
-    "负者": "Sadi ISMAILOV"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Dang QIU",
-    "负者": "Florent LAMBIET"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Kirill GERASSIMENKO",
-    "负者": "Aleksandr KHANIN"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Deni KOZUL",
-    "负者": "Bojan TOKIC"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Ovidiu IONESCU",
-    "负者": "Jeremy HAZIN"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Alberto MINO",
-    "负者": "Yuta TANAKA"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Lubomir PISTEJ",
-    "负者": "Niagol STOYANOV"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Tiago APOLONIA",
-    "负者": "CHEW Clarence"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "CHO Daeseong",
-    "负者": "Bence MAJOROS"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Marcelo AGUIRRE",
-    "负者": "Anders LIND"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Can AKKUZU",
-    "负者": "Jesus CANTERO"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Frane KOJIC",
-    "负者": "Ahmed SALEH"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Joao MONTEIRO",
-    "负者": "Yaroslav ZHMUDENKO"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Anton KALLBERG",
-    "负者": "Olajide OMOTAYO"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Masaki YOSHIDA",
-    "负者": "Lei KOU"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Alvaro ROBLES",
-    "负者": "Brian AFANADOR"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Alexander SHIBAEV",
-    "负者": "Andrej GACINA"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Mihai BOBOCICA",
-    "负者": "Marcos MADRID"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Joao GERALDO",
-    "负者": "Ruwen FILUS"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Andreas LEVENKO",
-    "负者": "Benedek OLAH"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Alexander SHIBAEV",
-    "负者": "Harmeet DESAI"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Mihai BOBOCICA",
-    "负者": "Jon PERSSON"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Pavel SIRUCEK",
-    "负者": "Alvaro ROBLES"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Noshad ALAMIYAN",
-    "负者": "Kirill GERASSIMENKO"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Dang QIU",
-    "负者": "Ovidiu IONESCU"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Anton KALLBERG",
-    "负者": "Deni KOZUL"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Vladimir SIDORENKO",
-    "负者": "Cedric NUYTINCK"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Vitor ISHIY",
-    "负者": "Lubomir PISTEJ"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Ibrahima DIAW",
-    "负者": "Kirill SKACHKOV"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Daniel HABESOHN",
-    "负者": "Alberto MINO"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "CHO Daeseong",
-    "负者": "Masaki YOSHIDA"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Masataka MORIZONO",
-    "负者": "Horacio CIFUENTES"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Joao MONTEIRO",
-    "负者": "Frane KOJIC"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Joao GERALDO",
-    "负者": "Can AKKUZU"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Tiago APOLONIA",
-    "负者": "Marcelo AGUIRRE"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Andreas LEVENKO",
-    "负者": "Vladimir SIDORENKO"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Pavel SIRUCEK",
-    "负者": "Alexander SHIBAEV"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Mihai BOBOCICA",
-    "负者": "Vitor ISHIY"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Joao GERALDO",
-    "负者": "Tiago APOLONIA"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Daniel HABESOHN",
-    "负者": "Anton KALLBERG"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Masataka MORIZONO",
-    "负者": "Ibrahima DIAW"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Noshad ALAMIYAN",
-    "负者": "Dang QIU"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "CHO Daeseong",
-    "负者": "Joao MONTEIRO"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "AN Jaehyun",
-    "负者": "Masataka MORIZONO"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Joao GERALDO",
-    "负者": "Yang WANG"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Tomislav PUCAR",
-    "负者": "Daniel HABESOHN"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "LIN Yun-Ju",
-    "负者": "Benedikt DUDA"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "CHO Daeseong",
-    "负者": "Yukiya UDA"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Emmanuel LEBESSON",
-    "负者": "Marcos FREITAS"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Simon GAUZY",
-    "负者": "Jonathan GROTH"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Tomokazu HARIMOTO",
-    "负者": "CHUANG Chih-Yuan"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Hugo CALDERANO",
-    "负者": "Gustavo TSUBOI"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Kristian KARLSSON",
-    "负者": "Darko JORGIC"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Mattias KARLSSON",
-    "负者": "Mihai BOBOCICA"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Andreas LEVENKO",
-    "负者": "Liam PITCHFORD"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Dimitrij OVTCHAROV",
-    "负者": "Noshad ALAMIYAN"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Sharath Kamal ACHANTA",
-    "负者": "Pavel SIRUCEK"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "LEE Sang Su",
-    "负者": "Robert GARDOS"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Quadri ARUNA",
-    "负者": "Sathiyan GNANASEKARAN"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Tomokazu HARIMOTO",
-    "负者": "LEE Sang Su"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Simon GAUZY",
-    "负者": "Tomislav PUCAR"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "LIN Yun-Ju",
-    "负者": "Sharath Kamal ACHANTA"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "CHO Daeseong",
-    "负者": "Andreas LEVENKO"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Mattias KARLSSON",
-    "负者": "Kristian KARLSSON"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Dimitrij OVTCHAROV",
-    "负者": "Emmanuel LEBESSON"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Quadri ARUNA",
-    "负者": "Joao GERALDO"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Hugo CALDERANO",
-    "负者": "AN Jaehyun"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Tomokazu HARIMOTO",
-    "负者": "CHO Daeseong"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "LIN Yun-Ju",
-    "负者": "Quadri ARUNA"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Simon GAUZY",
-    "负者": "Hugo CALDERANO"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Dimitrij OVTCHAROV",
-    "负者": "Mattias KARLSSON"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "LIN Yun-Ju",
-    "负者": "Simon GAUZY"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Dimitrij OVTCHAROV",
-    "负者": "Tomokazu HARIMOTO"
-  },
-  {
-    "日期": "2021-02-28",
-    "类型": "常规挑战赛",
-    "胜者": "Dimitrij OVTCHAROV",
-    "负者": "LIN Yun-Ju"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Daniel GONZALEZ",
-    "负者": "Frane KOJIC"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Horacio CIFUENTES",
-    "负者": "Lubomir PISTEJ"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Abdulaziz BU SHULAYBI",
-    "负者": "Ahmed ALAWLAQI"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Thiago MONTEIRO",
-    "负者": "Anders LIND"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Martin ALLEGRO",
-    "负者": "Gaston ALTO"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Aleksandar KARAKASEVIC",
-    "负者": "Ali ALKHADRAWI"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Mihai BOBOCICA",
-    "负者": "LIM Jonghoon"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "LIAO Cheng-Ting",
-    "负者": "Vitor ISHIY"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Mohamed ELBEIALI",
-    "负者": "Marcos MADRID"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Dang QIU",
-    "负者": "Nandor ECSEKI"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Cedric NUYTINCK",
-    "负者": "Ovidiu IONESCU"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Joao GERALDO",
-    "负者": "Olajide OMOTAYO"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Kirill SKACHKOV",
-    "负者": "Florent LAMBIET"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Anton KALLBERG",
-    "负者": "Marcelo AGUIRRE"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Bence MAJOROS",
-    "负者": "Lubomir JANCARIK"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Nima ALAMIAN",
-    "负者": "Niagol STOYANOV"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Joao MONTEIRO",
-    "负者": "Tiago APOLONIA"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Yuta TANAKA",
-    "负者": "Ricardo WALTHER"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Alberto MINO",
-    "负者": "Mohammed ABDULWAHHAB"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Brian AFANADOR",
-    "负者": "Khalid ASSAR"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Adam SZUDI",
-    "负者": "Zokhid KENJAEV"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Noshad ALAMIYAN",
-    "负者": "Benedek OLAH"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Lei KOU",
-    "负者": "Bojan TOKIC"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "CHEN Chien-An",
-    "负者": "Ibrahima DIAW"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Mizuki OIKAWA",
-    "负者": "Amalraj ANTHONY"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Paul DRINKHALL",
-    "负者": "Andreas LEVENKO"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Ievgen PRYSHCHEPA",
-    "负者": "Harmeet DESAI"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Cristian PLETEA",
-    "负者": "Can AKKUZU"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Hunor SZOCS",
-    "负者": "Robin DEVOS"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "CHO Daeseong",
-    "负者": "Alvaro ROBLES"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Alexandre CASSIN",
-    "负者": "Eric JOUTI"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Deni KOZUL",
-    "负者": "Tristan FLORE"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Kirill SKACHKOV",
-    "负者": "Daniel GONZALEZ"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Anton KALLBERG",
-    "负者": "Horacio CIFUENTES"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Mihai BOBOCICA",
-    "负者": "Abdulaziz BU SHULAYBI"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Dang QIU",
-    "负者": "Martin ALLEGRO"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Thiago MONTEIRO",
-    "负者": "Aleksandar KARAKASEVIC"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Cedric NUYTINCK",
-    "负者": "Mohamed ELBEIALI"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Noshad ALAMIYAN",
-    "负者": "CHEN Chien-An"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Hunor SZOCS",
-    "负者": "Yuta TANAKA"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Brian AFANADOR",
-    "负者": "Joao GERALDO"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Alexandre CASSIN",
-    "负者": "Deni KOZUL"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Alberto MINO",
-    "负者": "Adam SZUDI"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "CHO Daeseong",
-    "负者": "Lei KOU"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Paul DRINKHALL",
-    "负者": "Mizuki OIKAWA"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "LIAO Cheng-Ting",
-    "负者": "Cristian PLETEA"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Joao MONTEIRO",
-    "负者": "Ievgen PRYSHCHEPA"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Nima ALAMIAN",
-    "负者": "Bence MAJOROS"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Anton KALLBERG",
-    "负者": "Mihai BOBOCICA"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Cedric NUYTINCK",
-    "负者": "LIAO Cheng-Ting"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Dang QIU",
-    "负者": "Thiago MONTEIRO"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Brian AFANADOR",
-    "负者": "Kirill SKACHKOV"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "CHO Daeseong",
-    "负者": "Alexandre CASSIN"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Nima ALAMIAN",
-    "负者": "Alberto MINO"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Hunor SZOCS",
-    "负者": "Paul DRINKHALL"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Joao MONTEIRO",
-    "负者": "Noshad ALAMIYAN"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Sathiyan GNANASEKARAN",
-    "负者": "Emmanuel LEBESSON"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Masataka MORIZONO",
-    "负者": "Jon PERSSON"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Gustavo TSUBOI",
-    "负者": "Jonathan GROTH"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Ruwen FILUS",
-    "负者": "Cedric NUYTINCK"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Dang QIU",
-    "负者": "Andrej GACINA"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Pavel SIRUCEK",
-    "负者": "CHUANG Chih-Yuan"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Kristian KARLSSON",
-    "负者": "Tomislav PUCAR"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Kirill GERASSIMENKO",
-    "负者": "Omar ASSAR"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Joao MONTEIRO",
-    "负者": "Vladimir SAMSONOV"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "AN Jaehyun",
-    "负者": "Benedikt DUDA"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Darko JORGIC",
-    "负者": "Daniel HABESOHN"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Yang WANG",
-    "负者": "Ahmad Khalil AL-MOHANNADI"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Anton KALLBERG",
-    "负者": "Nima ALAMIAN"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Ahmed SALEH",
-    "负者": "Yukiya UDA"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Sharath Kamal ACHANTA",
-    "负者": "Brian AFANADOR"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "CHO Daeseong",
-    "负者": "Hunor SZOCS"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Tomokazu HARIMOTO",
-    "负者": "Sathiyan GNANASEKARAN"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Robert GARDOS",
-    "负者": "Pavel SIRUCEK"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "AN Jaehyun",
-    "负者": "Mattias KARLSSON"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Sharath Kamal ACHANTA",
-    "负者": "Patrick FRANZISKA"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Ruwen FILUS",
-    "负者": "JANG Woojin"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "JEOUNG Youngsik",
-    "负者": "Kirill GERASSIMENKO"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "LIN Yun-Ju",
-    "负者": "Joao MONTEIRO"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Anton KALLBERG",
-    "负者": "LEE Sang Su"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Simon GAUZY",
-    "负者": "Yang WANG"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Dimitrij OVTCHAROV",
-    "负者": "Ahmed SALEH"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Gustavo TSUBOI",
-    "负者": "Koki NIWA"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Darko JORGIC",
-    "负者": "Marcos FREITAS"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Jun MIZUTANI",
-    "负者": "Dang QIU"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Hugo CALDERANO",
-    "负者": "CHO Daeseong"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Quadri ARUNA",
-    "负者": "Masataka MORIZONO"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Kristian KARLSSON",
-    "负者": "Liam PITCHFORD"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "JEOUNG Youngsik",
-    "负者": "Gustavo TSUBOI"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Ruwen FILUS",
-    "负者": "Jun MIZUTANI"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Tomokazu HARIMOTO",
-    "负者": "Quadri ARUNA"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Kristian KARLSSON",
-    "负者": "Simon GAUZY"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "LIN Yun-Ju",
-    "负者": "Robert GARDOS"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Anton KALLBERG",
-    "负者": "AN Jaehyun"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Dimitrij OVTCHAROV",
-    "负者": "Sharath Kamal ACHANTA"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Darko JORGIC",
-    "负者": "Hugo CALDERANO"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Tomokazu HARIMOTO",
-    "负者": "JEOUNG Youngsik"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Dimitrij OVTCHAROV",
-    "负者": "Anton KALLBERG"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Ruwen FILUS",
-    "负者": "LIN Yun-Ju"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Darko JORGIC",
-    "负者": "Kristian KARLSSON"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Tomokazu HARIMOTO",
-    "负者": "Dimitrij OVTCHAROV"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Ruwen FILUS",
-    "负者": "Darko JORGIC"
-  },
-  {
-    "日期": "2021-03-05",
-    "类型": "球星挑战赛",
-    "胜者": "Tomokazu HARIMOTO",
-    "负者": "Ruwen FILUS"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Gergo KRAMARICS",
-    "负者": "David SZANTOSI"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Jeet CHANDRA",
-    "负者": "Oliver BOTH"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Tomas MARTINKO",
-    "负者": "Ondrej KVETON"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Simon BELIK",
-    "负者": "Levente KREBS"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Jiri MARTINKO",
-    "负者": "Akos KISHEGYI"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Benedek OLAH",
-    "负者": "Simon BELIK"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Nikhil KUMAR",
-    "负者": "Lkhagvasuren ENKHBAT"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "CHEW Clarence",
-    "负者": "Ibrahima DIAW"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Lubomir JANCARIK",
-    "负者": "Ali ALKHADRAWI"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Panagiotis GIONIS",
-    "负者": "Zsolt PETO"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Bojan TOKIC",
-    "负者": "Jeremy HAZIN"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Ovidiu IONESCU",
-    "负者": "Xin YAN"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Paul DRINKHALL",
-    "负者": "Nima ALAMIAN"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "LAM Siu Hang",
-    "负者": "Brian AFANADOR"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Andrej GACINA",
-    "负者": "Kokou FANNY"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Lei KOU",
-    "负者": "Adam HMAM"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Horacio CIFUENTES",
-    "负者": "Yoshua SHING"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "David POWELL",
-    "负者": "Pavel SIRUCEK"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Alvaro ROBLES",
-    "负者": "Gaston ALTO"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Kirill SKACHKOV",
-    "负者": "Dimitrije LEVAJAC"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Bence MAJOROS",
-    "负者": "Larbi BOURIAH"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Nikhil KUMAR",
-    "负者": "Alberto MINO"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Tiago APOLONIA",
-    "负者": "Olajide OMOTAYO"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Emmanuel LEBESSON",
-    "负者": "Andrej GACINA"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "LAM Siu Hang",
-    "负者": "Sathiyan GNANASEKARAN"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Daniel HABESOHN",
-    "负者": "CHEW Clarence"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Panagiotis GIONIS",
-    "负者": "Ahmed SALEH"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "CHUANG Chih-Yuan",
-    "负者": "Horacio CIFUENTES"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Kirill GERASSIMENKO",
-    "负者": "Lubomir JANCARIK"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Paul DRINKHALL",
-    "负者": "Robert GARDOS"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Gustavo TSUBOI",
-    "负者": "Ovidiu IONESCU"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Anton KALLBERG",
-    "负者": "Nikhil KUMAR"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Darko JORGIC",
-    "负者": "Alvaro ROBLES"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Sharath Kamal ACHANTA",
-    "负者": "Tiago APOLONIA"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Kirill SKACHKOV",
-    "负者": "Kanak JHA"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Bojan TOKIC",
-    "负者": "Tomislav PUCAR"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "WANG Yang",
-    "负者": "David POWELL"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Jonathan GROTH",
-    "负者": "Bence MAJOROS"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Omar ASSAR",
-    "负者": "Lei KOU"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Timo BOLL",
-    "负者": "Kirill GERASSIMENKO"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "JANG Woojin",
-    "负者": "Paul DRINKHALL"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "CHUANG Chih-Yuan",
-    "负者": "WONG Chun Ting"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Darko JORGIC",
-    "负者": "Liam PITCHFORD"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Marcos FREITAS",
-    "负者": "Daniel HABESOHN"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Tomokazu HARIMOTO",
-    "负者": "LAM Siu Hang"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "LIN Yun-Ju",
-    "负者": "Anton KALLBERG"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "JEOUNG Youngsik",
-    "负者": "Panagiotis GIONIS"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "FAN Zhendong",
-    "负者": "Emmanuel LEBESSON"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Gustavo TSUBOI",
-    "负者": "Quadri ARUNA"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Hugo CALDERANO",
-    "负者": "Bojan TOKIC"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "MA Long",
-    "负者": "Sharath Kamal ACHANTA"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Simon GAUZY",
-    "负者": "Jonathan GROTH"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Dimitrij OVTCHAROV",
-    "负者": "Kirill SKACHKOV"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Koki NIWA",
-    "负者": "WANG Yang"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Omar ASSAR",
-    "负者": "Mattias KARLSSON"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "JEOUNG Youngsik",
-    "负者": "Timo BOLL"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "LIN Yun-Ju",
-    "负者": "Gustavo TSUBOI"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "FAN Zhendong",
-    "负者": "Marcos FREITAS"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Darko JORGIC",
-    "负者": "Tomokazu HARIMOTO"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "MA Long",
-    "负者": "Simon GAUZY"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Hugo CALDERANO",
-    "负者": "JANG Woojin"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Dimitrij OVTCHAROV",
-    "负者": "Koki NIWA"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Omar ASSAR",
-    "负者": "CHUANG Chih-Yuan"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "FAN Zhendong",
-    "负者": "JEOUNG Youngsik"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "LIN Yun-Ju",
-    "负者": "Darko JORGIC"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "MA Long",
-    "负者": "Omar ASSAR"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Dimitrij OVTCHAROV",
-    "负者": "Hugo CALDERANO"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "FAN Zhendong",
-    "负者": "LIN Yun-Ju"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "MA Long",
-    "负者": "Dimitrij OVTCHAROV"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "Dimitrij OVTCHAROV",
-    "负者": "LIN Yun-Ju"
-  },
-  {
-    "日期": "2021-07-23",
-    "类型": "奥运会",
-    "胜者": "MA Long",
-    "负者": "FAN Zhendong"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Snehit SURAVAJJULA",
-    "负者": "Sanil SHETTY"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Kilian ORT",
-    "负者": "Manush SHAH"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Tobias HIPPLER",
-    "负者": "Martin GUMAN"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Fanbo MENG",
-    "负者": "Aidos KENZHIGULOV"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Samuel NOVOTA",
-    "负者": "Filip CIPIN"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Joe SEYFRIED",
-    "负者": "Filip ZELJKO"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Vladimir SIDORENKO",
-    "负者": "Gergo KRAMARICS"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Sadi ISMAILOV",
-    "负者": "Jeet CHANDRA"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Amir Hossein HODAEI",
-    "负者": "Tomas MARTINKO"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Alexander CHEN",
-    "负者": "Tarek AL SAMHOURY"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "David SERDAROGLU",
-    "负者": "Tomas KOLDAS"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Dimitrije LEVAJAC",
-    "负者": "Erik HUZSVAR"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Aleksandr TIUTRIUMOV",
-    "负者": "Jakub ZELINKA"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Bence BALOGH",
-    "负者": "Mudit DANI"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Benedek OLAH",
-    "负者": "Jiri MARTINKO"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Fanbo MENG",
-    "负者": "Tobias HIPPLER"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Kilian ORT",
-    "负者": "Snehit SURAVAJJULA"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Sadi ISMAILOV",
-    "负者": "Samuel NOVOTA"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Amir Hossein HODAEI",
-    "负者": "Dimitrije LEVAJAC"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Alexander CHEN",
-    "负者": "Aleksandr TIUTRIUMOV"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "David SERDAROGLU",
-    "负者": "Bence BALOGH"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Vladimir SIDORENKO",
-    "负者": "Joe SEYFRIED"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Aleksandr KHANIN",
-    "负者": "Amir Hossein HODAEI"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Alexandre ROBINOT",
-    "负者": "Alexander SHIBAEV"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Kilian ORT",
-    "负者": "Sadi ISMAILOV"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Liam PITCHFORD",
-    "负者": "Adam SZUDI"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Kirill SKACHKOV",
-    "负者": "Patrik JUHASZ"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Manav THAKKAR",
-    "负者": "Pavel PLATONOV"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Tomas POLANSKY",
-    "负者": "Ruwen FILUS"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Nandor ECSEKI",
-    "负者": "Alexander CHEN"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Niagol STOYANOV",
-    "负者": "Lubomir PISTEJ"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Dang QIU",
-    "负者": "David SERDAROGLU"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Sathiyan GNANASEKARAN",
-    "负者": "Can AKKUZU"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Harmeet DESAI",
-    "负者": "Csaba ANDRAS"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Fanbo MENG",
-    "负者": "Bence MAJOROS"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Truls MOREGARD",
-    "负者": "Vladimir SIDORENKO"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Quadri ARUNA",
-    "负者": "Andreas LEVENKO"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Benedek OLAH",
-    "负者": "Benedikt DUDA"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Kirill SKACHKOV",
-    "负者": "Manav THAKKAR"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Truls MOREGARD",
-    "负者": "Fanbo MENG"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Niagol STOYANOV",
-    "负者": "Sathiyan GNANASEKARAN"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Liam PITCHFORD",
-    "负者": "Aleksandr KHANIN"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Dang QIU",
-    "负者": "Harmeet DESAI"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Quadri ARUNA",
-    "负者": "Alexandre ROBINOT"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Kilian ORT",
-    "负者": "Benedek OLAH"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Tomas POLANSKY",
-    "负者": "Nandor ECSEKI"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Kilian ORT",
-    "负者": "Liam PITCHFORD"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Tomas POLANSKY",
-    "负者": "Kirill SKACHKOV"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Truls MOREGARD",
-    "负者": "Quadri ARUNA"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Dang QIU",
-    "负者": "Niagol STOYANOV"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Kilian ORT",
-    "负者": "Tomas POLANSKY"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Truls MOREGARD",
-    "负者": "Dang QIU"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Truls MOREGARD",
-    "负者": "Kilian ORT"
-  },
-  {
-    "日期": "2021-08-15",
-    "类型": "常规挑战赛",
-    "胜者": "Jakub ZELINKA",
-    "负者": "Balazs LEI"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Alexandre CASSIN",
-    "负者": "Youssef ABID"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Fanbo MENG",
-    "负者": "Daniel GONZALEZ"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Manav THAKKAR",
-    "负者": "Mehdi BOULOUSSA"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Tomas POLANSKY",
-    "负者": "Gaston ALTO"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Brian AFANADOR",
-    "负者": "Khalil STA"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Sadi ISMAILOV",
-    "负者": "David SERDAROGLU"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Abdel-Kader SALIFOU",
-    "负者": "Eric GLOD"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Filip ZELJKO",
-    "负者": "Can AKKUZU"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Martin ALLEGRO",
-    "负者": "Snehit SURAVAJJULA"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Samuel WALKER",
-    "负者": "Yaroslav ZHMUDENKO"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Kilian ORT",
-    "负者": "Adam SZUDI"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Maksim GREBNEV",
-    "负者": "Florent LAMBIET"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Joao GERALDO",
-    "负者": "Aleksandr KHANIN"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Tobias HIPPLER",
-    "负者": "Marcos MADRID"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Patrik JUHASZ",
-    "负者": "Santiago LORENZO"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Benedek OLAH",
-    "负者": "Jordy PICCOLIN"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Alexander SHIBAEV",
-    "负者": "Mishel LEVINSKI"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Nandor ECSEKI",
-    "负者": "Uladzislau RUKLIATSOU"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Daniele PINTO",
-    "负者": "Maciej KOLODZIEJCZYK"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Frane KOJIC",
-    "负者": "Dimitrije LEVAJAC"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Rares SIPOS",
-    "负者": "Carlos FRANCO"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Andreas LEVENKO",
-    "负者": "Alexander CHEN"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Alberto MINO",
-    "负者": "Alexandre ROBINOT"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Enzo ANGLES",
-    "负者": "Mudit DANI"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Jiri MARTINKO",
-    "负者": "Olajide OMOTAYO"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Niagol STOYANOV",
-    "负者": "Alex NAUMI"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Mahmoud HELMY",
-    "负者": "Abdelbasset CHAICHI"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Hunor SZOCS",
-    "负者": "Lev KATSMAN"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Marcelo AGUIRRE",
-    "负者": "Alexandre CASSIN"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Fanbo MENG",
-    "负者": "Tomas POLANSKY"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Manav THAKKAR",
-    "负者": "Brian AFANADOR"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Filip ZELJKO",
-    "负者": "Sadi ISMAILOV"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Abdel-Kader SALIFOU",
-    "负者": "Horacio CIFUENTES"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Maksim GREBNEV",
-    "负者": "Tobias HIPPLER"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Joao GERALDO",
-    "负者": "Kilian ORT"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Martin ALLEGRO",
-    "负者": "Samuel WALKER"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Benedek OLAH",
-    "负者": "Patrik JUHASZ"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Alexander SHIBAEV",
-    "负者": "Daniele PINTO"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Frane KOJIC",
-    "负者": "Nandor ECSEKI"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Rares SIPOS",
-    "负者": "Harmeet DESAI"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Jakub DYJAS",
-    "负者": "Mahmoud HELMY"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Enzo ANGLES",
-    "负者": "Alberto MINO"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Hunor SZOCS",
-    "负者": "Niagol STOYANOV"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Andreas LEVENKO",
-    "负者": "Jiri MARTINKO"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Fanbo MENG",
-    "负者": "Marcelo AGUIRRE"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Martin ALLEGRO",
-    "负者": "Abdel-Kader SALIFOU"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Maksim GREBNEV",
-    "负者": "Joao GERALDO"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Filip ZELJKO",
-    "负者": "Manav THAKKAR"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Alexander SHIBAEV",
-    "负者": "Benedek OLAH"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Enzo ANGLES",
-    "负者": "Andreas LEVENKO"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Jakub DYJAS",
-    "负者": "Hunor SZOCS"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Frane KOJIC",
-    "负者": "Rares SIPOS"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Anton KALLBERG",
-    "负者": "Robert GARDOS"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Patrick FRANZISKA",
-    "负者": "Tiago APOLONIA"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Vitor ISHIY",
-    "负者": "Sharath Kamal ACHANTA"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Kay STUMPER",
-    "负者": "Yang WANG"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Dang QIU",
-    "负者": "Kirill SKACHKOV"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Enzo ANGLES",
-    "负者": "Marcos FREITAS"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Sathiyan GNANASEKARAN",
-    "负者": "Alvaro ROBLES"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Ibrahima DIAW",
-    "负者": "Martin ALLEGRO"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Fanbo MENG",
-    "负者": "Bence MAJOROS"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Ovidiu IONESCU",
-    "负者": "Frane KOJIC"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Filip ZELJKO",
-    "负者": "Marcelo AGUIRRE"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Maksim GREBNEV",
-    "负者": "Truls MOREGARD"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Jakub DYJAS",
-    "负者": "Ruwen FILUS"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Joao MONTEIRO",
-    "负者": "Ahmed SALEH"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Emmanuel LEBESSON",
-    "负者": "Alexander SHIBAEV"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Quadri ARUNA",
-    "负者": "Jon PERSSON"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Filip ZELJKO",
-    "负者": "Vitor ISHIY"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Dang QIU",
-    "负者": "Enzo ANGLES"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Ovidiu IONESCU",
-    "负者": "Kay STUMPER"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Anton KALLBERG",
-    "负者": "Fanbo MENG"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Jakub DYJAS",
-    "负者": "Emmanuel LEBESSON"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Sathiyan GNANASEKARAN",
-    "负者": "Ibrahima DIAW"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Patrick FRANZISKA",
-    "负者": "Maksim GREBNEV"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Quadri ARUNA",
-    "负者": "Joao MONTEIRO"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Filip ZELJKO",
-    "负者": "Patrick FRANZISKA"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Anton KALLBERG",
-    "负者": "Ovidiu IONESCU"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Dang QIU",
-    "负者": "Sathiyan GNANASEKARAN"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Quadri ARUNA",
-    "负者": "Jakub DYJAS"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Dang QIU",
-    "负者": "Filip ZELJKO"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Anton KALLBERG",
-    "负者": "Quadri ARUNA"
-  },
-  {
-    "日期": "2021-10-24",
-    "类型": "常规挑战赛",
-    "胜者": "Anton KALLBERG",
-    "负者": "Dang QIU"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Sora MATSUSHIMA",
-    "负者": "Sushmit SRIRAM"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "CHOI Deokhwa",
-    "负者": "CHUA Josh"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Olav KOSOLOSKY",
-    "负者": "Carlo ROSSI"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Leo DE NODREST",
-    "负者": "Tilen CVETKO"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Irvin BERTRAND",
-    "负者": "Mahmoud HELMY"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Maksim GREBNEV",
-    "负者": "Adam KLAJBER"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Felix LEBRUN",
-    "负者": "Alfonso OLAVE"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Maciej KOLODZIEJCZYK",
-    "负者": "Vincent PICARD"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Miguel VILCHEZ",
-    "负者": "Mishel LEVINSKI"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Martin BENTANCOR",
-    "负者": "Cedric TSCHANZ"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Dimitrije LEVAJAC",
-    "负者": "Carlos FRANCO"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "David MCBEATH",
-    "负者": "Adrian DILLON"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Filip CIPIN",
-    "负者": "Jeet CHANDRA"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Soumyajit GHOSH",
-    "负者": "Alexis LEBRUN"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Amin AHMADIAN",
-    "负者": "Daniele PINTO"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Joao GERALDO",
-    "负者": "CHOI Deokhwa"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Manav THAKKAR",
-    "负者": "Yuma TANIGAKI"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Bastien REMBERT",
-    "负者": "Antoine HACHARD"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Ivor BAN",
-    "负者": "David SERDAROGLU"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Niagol STOYANOV",
-    "负者": "Sora MATSUSHIMA"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "John OYEBODE",
-    "负者": "Youssef ABDELAZIZ"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Olav KOSOLOSKY",
-    "负者": "ZHOU Qihao"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Kilian ORT",
-    "负者": "Cristian CHIRITA"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Maksim GREBNEV",
-    "负者": "Daniel GONZALEZ"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Hiroto SHINOZUKA",
-    "负者": "Lilian BARDET"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Yuto KIZUKURI",
-    "负者": "Xavier DIXON"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Carlos CABALLERO",
-    "负者": "Dillon CHAMBERS"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Felix LEBRUN",
-    "负者": "Khalid ASSAR"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Gaston ALTO",
-    "负者": "Irvin BERTRAND"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "CHEW Clarence",
-    "负者": "Jonas PROMBERGER"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Florent LAMBIET",
-    "负者": "Miguel VILCHEZ"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Robin DEVOS",
-    "负者": "Maciej KOLODZIEJCZYK"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Leo DE NODREST",
-    "负者": "Yuta TANAKA"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Laurens DEVOS",
-    "负者": "Eric THILLEN"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Taiwo MATI",
-    "负者": "Tom JARVIS"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "LIU Dingshuo",
-    "负者": "Filip ZELJKO"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Aleksandr KHANIN",
-    "负者": "Martin BENTANCOR"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Andrei PUTUNTICA",
-    "负者": "Aljaz GODEC"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Amalraj ANTHONY",
-    "负者": "Dimitrije LEVAJAC"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Snehit SURAVAJJULA",
-    "负者": "Lionel WEBER"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Pavel PLATONOV",
-    "负者": "Filip CIPIN"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "David MCBEATH",
-    "负者": "Brian AFANADOR"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Alexander CHEN",
-    "负者": "Aidos KENZHIGULOV"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Luka MLADENOVIC",
-    "负者": "Ziga ZIGON"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Steffen MENGEL",
-    "负者": "Pedro OSIRO"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Eric JOUTI",
-    "负者": "Soumyajit GHOSH"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Ivor BAN",
-    "负者": "Niagol STOYANOV"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Joao GERALDO",
-    "负者": "Bastien REMBERT"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Olav KOSOLOSKY",
-    "负者": "John OYEBODE"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Manav THAKKAR",
-    "负者": "Amin AHMADIAN"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Yuto KIZUKURI",
-    "负者": "Leo DE NODREST"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Hiroto SHINOZUKA",
-    "负者": "Gaston ALTO"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Kilian ORT",
-    "负者": "Maksim GREBNEV"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Carlos CABALLERO",
-    "负者": "Felix LEBRUN"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Robin DEVOS",
-    "负者": "CHEW Clarence"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Laurens DEVOS",
-    "负者": "David MCBEATH"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Aleksandr KHANIN",
-    "负者": "Taiwo MATI"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "LIU Dingshuo",
-    "负者": "Florent LAMBIET"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Pavel PLATONOV",
-    "负者": "Luka MLADENOVIC"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Steffen MENGEL",
-    "负者": "Snehit SURAVAJJULA"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Eric JOUTI",
-    "负者": "Alexander CHEN"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Amalraj ANTHONY",
-    "负者": "Andrei PUTUNTICA"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Steffen MENGEL",
-    "负者": "Eric JOUTI"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Joao GERALDO",
-    "负者": "Manav THAKKAR"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Laurens DEVOS",
-    "负者": "Aleksandr KHANIN"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Hiroto SHINOZUKA",
-    "负者": "Kilian ORT"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Yuto KIZUKURI",
-    "负者": "Carlos CABALLERO"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "LIU Dingshuo",
-    "负者": "Robin DEVOS"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Olav KOSOLOSKY",
-    "负者": "Ivor BAN"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Pavel PLATONOV",
-    "负者": "Amalraj ANTHONY"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "WANG Chuqin",
-    "负者": "Olajide OMOTAYO"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Sathiyan GNANASEKARAN",
-    "负者": "Alberto MINO"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Deni KOZUL",
-    "负者": "Takuya JIN"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Tiago APOLONIA",
-    "负者": "Can AKKUZU"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "LIN Gaoyuan",
-    "负者": "Bojan TOKIC"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "LIU Dingshuo",
-    "负者": "Pavel PLATONOV"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Jon PERSSON",
-    "负者": "Kirill SKACHKOV"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Joao GERALDO",
-    "负者": "Benedek OLAH"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Quadri ARUNA",
-    "负者": "Thiago MONTEIRO"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Benedikt DUDA",
-    "负者": "Vitor ISHIY"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Kirill GERASSIMENKO",
-    "负者": "Bence MAJOROS"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Hiroto SHINOZUKA",
-    "负者": "Kanak JHA"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Steffen MENGEL",
-    "负者": "Olav KOSOLOSKY"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "LIANG Jingkun",
-    "负者": "Laurens DEVOS"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Yuto KIZUKURI",
-    "负者": "Sharath Kamal ACHANTA"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Paul DRINKHALL",
-    "负者": "Peter HRIBAR"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Kirill GERASSIMENKO",
-    "负者": "Hiroto SHINOZUKA"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "LIU Dingshuo",
-    "负者": "Benedikt DUDA"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Paul DRINKHALL",
-    "负者": "LIN Gaoyuan"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "WANG Chuqin",
-    "负者": "Steffen MENGEL"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "LIANG Jingkun",
-    "负者": "Deni KOZUL"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Jon PERSSON",
-    "负者": "Sathiyan GNANASEKARAN"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Yuto KIZUKURI",
-    "负者": "Joao GERALDO"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Tiago APOLONIA",
-    "负者": "Quadri ARUNA"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Kirill GERASSIMENKO",
-    "负者": "Paul DRINKHALL"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "LIU Dingshuo",
-    "负者": "WANG Chuqin"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Jon PERSSON",
-    "负者": "Tiago APOLONIA"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "LIANG Jingkun",
-    "负者": "Yuto KIZUKURI"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "Kirill GERASSIMENKO",
-    "负者": "LIU Dingshuo"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "LIANG Jingkun",
-    "负者": "Jon PERSSON"
-  },
-  {
-    "日期": "2021-11-01",
-    "类型": "常规挑战赛",
-    "胜者": "LIANG Jingkun",
-    "负者": "Kirill GERASSIMENKO"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Nicholas LUM",
-    "负者": "Tobias RASMUSSEN"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Can AKKUZU",
-    "负者": "Jassem MOHAMMED"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Steffen MENGEL",
-    "负者": "Soumyajit GHOSH"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Amin AHMADIAN",
-    "负者": "Dillon CHAMBERS"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "CHEW Clarence",
-    "负者": "Taiwo MATI"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Snehit SURAVAJJULA",
-    "负者": "Manav THAKKAR"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Felix LEBRUN",
-    "负者": "Aidos KENZHIGULOV"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Hiroto SHINOZUKA",
-    "负者": "Khalid ASSAR"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Sushmit SRIRAM",
-    "负者": "Miha PODOBNIK"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Lubomir JANCARIK",
-    "负者": "Adrian DILLON"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Aleksandr KHANIN",
-    "负者": "Andrei PUTUNTICA"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "ZHOU Qihao",
-    "负者": "Abdulla ALBALOOSHI"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Cedric TSCHANZ",
-    "负者": "Peter HRIBAR"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Filip CIPIN",
-    "负者": "Ziga ZIGON"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Yuto KIZUKURI",
-    "负者": "Zubair SARHAN"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "LIU Dingshuo",
-    "负者": "Alfonso OLAVE"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Xavier DIXON",
-    "负者": "Amalraj ANTHONY"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Alexander CHEN",
-    "负者": "Tilen CVETKO"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Bastian STEGER",
-    "负者": "David SERDAROGLU"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Filip ZELJKO",
-    "负者": "CHUA Josh"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Martin ALLEGRO",
-    "负者": "Finn LUU"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Samuel WALKER",
-    "负者": "Eric GLOD"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Jiri MARTINKO",
-    "负者": "Tomas POLANSKY"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Jeet CHANDRA",
-    "负者": "Padasak TANVIRIYAVECHAKUL"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Alexis LEBRUN",
-    "负者": "Calum MORRISON"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Yuta TANAKA",
-    "负者": "Sora MATSUSHIMA"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "CHOI Deokhwa",
-    "负者": "Vincent PICARD"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Deni KOZUL",
-    "负者": "Aljaz GODEC"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Luka MLADENOVIC",
-    "负者": "Eric THILLEN"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Alexander SHIBAEV",
-    "负者": "Mishel LEVINSKI"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Kilian ORT",
-    "负者": "Esteban DORR"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Yuma TANIGAKI",
-    "负者": "Tobias HIPPLER"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Steffen MENGEL",
-    "负者": "Nicholas LUM"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Felix LEBRUN",
-    "负者": "Hiroto SHINOZUKA"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Can AKKUZU",
-    "负者": "Amin AHMADIAN"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "CHEW Clarence",
-    "负者": "Snehit SURAVAJJULA"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Aleksandr KHANIN",
-    "负者": "Cedric TSCHANZ"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Lubomir JANCARIK",
-    "负者": "Sushmit SRIRAM"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Filip CIPIN",
-    "负者": "Xavier DIXON"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "ZHOU Qihao",
-    "负者": "LIU Dingshuo"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Bastian STEGER",
-    "负者": "Alexander CHEN"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Yuto KIZUKURI",
-    "负者": "Martin ALLEGRO"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Samuel WALKER",
-    "负者": "Jeet CHANDRA"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Filip ZELJKO",
-    "负者": "Jiri MARTINKO"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Yuta TANAKA",
-    "负者": "CHOI Deokhwa"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Alexander SHIBAEV",
-    "负者": "Yuma TANIGAKI"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Deni KOZUL",
-    "负者": "Alexis LEBRUN"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Kilian ORT",
-    "负者": "Luka MLADENOVIC"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Felix LEBRUN",
-    "负者": "CHEW Clarence"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "ZHOU Qihao",
-    "负者": "Filip CIPIN"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Lubomir JANCARIK",
-    "负者": "Aleksandr KHANIN"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Can AKKUZU",
-    "负者": "Steffen MENGEL"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Alexander SHIBAEV",
-    "负者": "Kilian ORT"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Yuta TANAKA",
-    "负者": "Deni KOZUL"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Yuto KIZUKURI",
-    "负者": "Bastian STEGER"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Filip ZELJKO",
-    "负者": "Samuel WALKER"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "LIN Gaoyuan",
-    "负者": "Filip ZELJKO"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "LIANG Jingkun",
-    "负者": "Alexander SHIBAEV"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Kristian KARLSSON",
-    "负者": "Daniel HABESOHN"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Felix LEBRUN",
-    "负者": "CHUANG Chih-Yuan"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Sharath Kamal ACHANTA",
-    "负者": "Takuya JIN"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Bojan TOKIC",
-    "负者": "Ibrahima DIAW"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Darko JORGIC",
-    "负者": "Can AKKUZU"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Simon GAUZY",
-    "负者": "Lubomir JANCARIK"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Yuto KIZUKURI",
-    "负者": "Mattias KARLSSON"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Anton KALLBERG",
-    "负者": "Yuta TANAKA"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Truls MOREGARD",
-    "负者": "Tomislav PUCAR"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "WANG Chuqin",
-    "负者": "Alvaro ROBLES"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Sathiyan GNANASEKARAN",
-    "负者": "Harmeet DESAI"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "ZHOU Qihao",
-    "负者": "Kirill GERASSIMENKO"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Kirill SKACHKOV",
-    "负者": "Andrej GACINA"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Robert GARDOS",
-    "负者": "Tiago APOLONIA"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Kristian KARLSSON",
-    "负者": "Felix LEBRUN"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "LIANG Jingkun",
-    "负者": "Sharath Kamal ACHANTA"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "WANG Chuqin",
-    "负者": "Truls MOREGARD"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Simon GAUZY",
-    "负者": "Kirill SKACHKOV"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "LIN Gaoyuan",
-    "负者": "Bojan TOKIC"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Darko JORGIC",
-    "负者": "Sathiyan GNANASEKARAN"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Anton KALLBERG",
-    "负者": "Robert GARDOS"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "ZHOU Qihao",
-    "负者": "Yuto KIZUKURI"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "LIN Gaoyuan",
-    "负者": "Anton KALLBERG"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "Darko JORGIC",
-    "负者": "ZHOU Qihao"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "WANG Chuqin",
-    "负者": "Kristian KARLSSON"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "LIANG Jingkun",
-    "负者": "Simon GAUZY"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "WANG Chuqin",
-    "负者": "Darko JORGIC"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "LIANG Jingkun",
-    "负者": "LIN Gaoyuan"
-  },
-  {
-    "日期": "2021-11-08",
-    "类型": "常规挑战赛",
-    "胜者": "LIANG Jingkun",
-    "负者": "WANG Chuqin"
-  },
-  {
-    "日期": "2021-12-04",
-    "类型": "总决赛",
-    "胜者": "JEOUNG Youngsik",
-    "负者": "LEE Sang Su"
-  },
-  {
-    "日期": "2021-12-04",
-    "类型": "总决赛",
-    "胜者": "Liam PITCHFORD",
-    "负者": "JANG Woojin"
-  },
-  {
-    "日期": "2021-12-04",
-    "类型": "总决赛",
-    "胜者": "WANG Chuqin",
-    "负者": "LIN Yun-Ju"
-  },
-  {
-    "日期": "2021-12-04",
-    "类型": "总决赛",
-    "胜者": "FAN Zhendong",
-    "负者": "Patrick FRANZISKA"
-  },
-  {
-    "日期": "2021-12-04",
-    "类型": "总决赛",
-    "胜者": "Quadri ARUNA",
-    "负者": "LIANG Jingkun"
-  },
-  {
-    "日期": "2021-12-04",
-    "类型": "总决赛",
-    "胜者": "WONG Chun Ting",
-    "负者": "Simon GAUZY"
-  },
-  {
-    "日期": "2021-12-04",
-    "类型": "总决赛",
-    "胜者": "Tomokazu HARIMOTO",
-    "负者": "Mattias KARLSSON"
-  },
-  {
-    "日期": "2021-12-04",
-    "类型": "总决赛",
-    "胜者": "Hugo CALDERANO",
-    "负者": "LIN Gaoyuan"
-  },
-  {
-    "日期": "2021-12-04",
-    "类型": "总决赛",
-    "胜者": "FAN Zhendong",
-    "负者": "JEOUNG Youngsik"
-  },
-  {
-    "日期": "2021-12-04",
-    "类型": "总决赛",
-    "胜者": "WANG Chuqin",
-    "负者": "Liam PITCHFORD"
-  },
-  {
-    "日期": "2021-12-04",
-    "类型": "总决赛",
-    "胜者": "Tomokazu HARIMOTO",
-    "负者": "WONG Chun Ting"
-  },
-  {
-    "日期": "2021-12-04",
-    "类型": "总决赛",
-    "胜者": "Hugo CALDERANO",
-    "负者": "Quadri ARUNA"
-  },
-  {
-    "日期": "2021-12-04",
-    "类型": "总决赛",
-    "胜者": "FAN Zhendong",
-    "负者": "WANG Chuqin"
-  },
-  {
-    "日期": "2021-12-04",
-    "类型": "总决赛",
-    "胜者": "Tomokazu HARIMOTO",
-    "负者": "Hugo CALDERANO"
-  },
-  {
-    "日期": "2021-12-04",
-    "类型": "总决赛",
-    "胜者": "FAN Zhendong",
-    "负者": "Tomokazu HARIMOTO"
-  }
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "LIAO Cheng-Ting", "负者": "Ahmed ALAWLAQI"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Jeremy HAZIN", "负者": "Ahmad Khalil AL-MOHANNADI"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Andreas LEVENKO", "负者": "Aleksandar KARAKASEVIC"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Ricardo WALTHER", "负者": "Khalid ASSAR"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Mihai BOBOCICA", "负者": "Daniel GONZALEZ"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Jordy PICCOLIN", "负者": "Eric JOUTI"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "CHEW Clarence", "负者": "Abdulaziz BU SHULAYBI"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Eugene WANG", "负者": "Carlos CABALLERO"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Florent LAMBIET", "负者": "Mohammed ABDULWAHHAB"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Pavel PLATONOV", "负者": "Mohamed ELBEIALI"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Brian AFANADOR", "负者": "Lubomir JANCARIK"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Masaki YOSHIDA", "负者": "Zokhid KENJAEV"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Yuta TANAKA", "负者": "Alexandre CASSIN"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Olajide OMOTAYO", "负者": "Alan KURMANGALIYEV"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Anders LIND", "负者": "Robin DEVOS"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Yaroslav ZHMUDENKO", "负者": "Michael TAUBER"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Deni KOZUL", "负者": "Gaston ALTO"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "CHO Daeseong", "负者": "Nima ALAMIAN"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Alexander SHIBAEV", "负者": "Larbi BOURIAH"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Aleksandr KHANIN", "负者": "Filip ZELJKO"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Frane KOJIC", "负者": "Maciej KOLODZIEJCZYK"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Joao GERALDO", "负者": "Thiago MONTEIRO"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Niagol STOYANOV", "负者": "Samuel WALKER"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Ievgen PRYSHCHEPA", "负者": "Hunor SZOCS"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Benedek OLAH", "负者": "Mudit DANI"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Vladimir SIDORENKO", "负者": "Ali ALKHADRAWI"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Rares SIPOS", "负者": "Martin ALLEGRO"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Harmeet DESAI", "负者": "Amalraj ANTHONY"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Cedric NUYTINCK", "负者": "Nandor ECSEKI"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Pavel SIRUCEK", "负者": "Ricardo WALTHER"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Daniel HABESOHN", "负者": "Pavel PLATONOV"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Vladimir SIDORENKO", "负者": "Omar ASSAR"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Benedek OLAH", "负者": "CHEN Chien-An"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Andreas LEVENKO", "负者": "Paul DRINKHALL"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Ibrahima DIAW", "负者": "Rares SIPOS"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Masataka MORIZONO", "负者": "Ievgen PRYSHCHEPA"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Kirill SKACHKOV", "负者": "LIAO Cheng-Ting"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Jon PERSSON", "负者": "Jordy PICCOLIN"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Noshad ALAMIYAN", "负者": "Adam SZUDI"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Vitor ISHIY", "负者": "Eugene WANG"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Horacio CIFUENTES", "负者": "Sadi ISMAILOV"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Dang QIU", "负者": "Florent LAMBIET"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Kirill GERASSIMENKO", "负者": "Aleksandr KHANIN"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Deni KOZUL", "负者": "Bojan TOKIC"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Ovidiu IONESCU", "负者": "Jeremy HAZIN"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Alberto MINO", "负者": "Yuta TANAKA"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Lubomir PISTEJ", "负者": "Niagol STOYANOV"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Tiago APOLONIA", "负者": "CHEW Clarence"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "CHO Daeseong", "负者": "Bence MAJOROS"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Marcelo AGUIRRE", "负者": "Anders LIND"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Can AKKUZU", "负者": "Jesus CANTERO"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Frane KOJIC", "负者": "Ahmed SALEH"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Joao MONTEIRO", "负者": "Yaroslav ZHMUDENKO"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Anton KALLBERG", "负者": "Olajide OMOTAYO"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Masaki YOSHIDA", "负者": "Lei KOU"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Alvaro ROBLES", "负者": "Brian AFANADOR"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Alexander SHIBAEV", "负者": "Andrej GACINA"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Mihai BOBOCICA", "负者": "Marcos MADRID"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Joao GERALDO", "负者": "Ruwen FILUS"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Andreas LEVENKO", "负者": "Benedek OLAH"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Alexander SHIBAEV", "负者": "Harmeet DESAI"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Mihai BOBOCICA", "负者": "Jon PERSSON"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Pavel SIRUCEK", "负者": "Alvaro ROBLES"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Noshad ALAMIYAN", "负者": "Kirill GERASSIMENKO"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Dang QIU", "负者": "Ovidiu IONESCU"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Anton KALLBERG", "负者": "Deni KOZUL"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Vladimir SIDORENKO", "负者": "Cedric NUYTINCK"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Vitor ISHIY", "负者": "Lubomir PISTEJ"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Ibrahima DIAW", "负者": "Kirill SKACHKOV"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Daniel HABESOHN", "负者": "Alberto MINO"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "CHO Daeseong", "负者": "Masaki YOSHIDA"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Masataka MORIZONO", "负者": "Horacio CIFUENTES"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Joao MONTEIRO", "负者": "Frane KOJIC"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Joao GERALDO", "负者": "Can AKKUZU"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Tiago APOLONIA", "负者": "Marcelo AGUIRRE"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Andreas LEVENKO", "负者": "Vladimir SIDORENKO"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Pavel SIRUCEK", "负者": "Alexander SHIBAEV"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Mihai BOBOCICA", "负者": "Vitor ISHIY"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Joao GERALDO", "负者": "Tiago APOLONIA"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Daniel HABESOHN", "负者": "Anton KALLBERG"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Masataka MORIZONO", "负者": "Ibrahima DIAW"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Noshad ALAMIYAN", "负者": "Dang QIU"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "CHO Daeseong", "负者": "Joao MONTEIRO"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "AN Jaehyun", "负者": "Masataka MORIZONO"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Joao GERALDO", "负者": "Yang WANG"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Tomislav PUCAR", "负者": "Daniel HABESOHN"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "LIN Yun-Ju", "负者": "Benedikt DUDA"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "CHO Daeseong", "负者": "Yukiya UDA"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Emmanuel LEBESSON", "负者": "Marcos FREITAS"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Simon GAUZY", "负者": "Jonathan GROTH"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Tomokazu HARIMOTO", "负者": "CHUANG Chih-Yuan"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Hugo CALDERANO", "负者": "Gustavo TSUBOI"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Kristian KARLSSON", "负者": "Darko JORGIC"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Mattias KARLSSON", "负者": "Mihai BOBOCICA"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Andreas LEVENKO", "负者": "Liam PITCHFORD"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Dimitrij OVTCHAROV", "负者": "Noshad ALAMIYAN"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Sharath Kamal ACHANTA", "负者": "Pavel SIRUCEK"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "LEE Sang Su", "负者": "Robert GARDOS"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Quadri ARUNA", "负者": "Sathiyan GNANASEKARAN"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Tomokazu HARIMOTO", "负者": "LEE Sang Su"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Simon GAUZY", "负者": "Tomislav PUCAR"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "LIN Yun-Ju", "负者": "Sharath Kamal ACHANTA"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "CHO Daeseong", "负者": "Andreas LEVENKO"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Mattias KARLSSON", "负者": "Kristian KARLSSON"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Dimitrij OVTCHAROV", "负者": "Emmanuel LEBESSON"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Quadri ARUNA", "负者": "Joao GERALDO"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Hugo CALDERANO", "负者": "AN Jaehyun"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Tomokazu HARIMOTO", "负者": "CHO Daeseong"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "LIN Yun-Ju", "负者": "Quadri ARUNA"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Simon GAUZY", "负者": "Hugo CALDERANO"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Dimitrij OVTCHAROV", "负者": "Mattias KARLSSON"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "LIN Yun-Ju", "负者": "Simon GAUZY"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Dimitrij OVTCHAROV", "负者": "Tomokazu HARIMOTO"},
+{"日期": "2021-02-28", "类型": "常规挑战赛", "胜者": "Dimitrij OVTCHAROV", "负者": "LIN Yun-Ju"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Daniel GONZALEZ", "负者": "Frane KOJIC"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Horacio CIFUENTES", "负者": "Lubomir PISTEJ"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Abdulaziz BU SHULAYBI", "负者": "Ahmed ALAWLAQI"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Thiago MONTEIRO", "负者": "Anders LIND"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Martin ALLEGRO", "负者": "Gaston ALTO"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Aleksandar KARAKASEVIC", "负者": "Ali ALKHADRAWI"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Mihai BOBOCICA", "负者": "LIM Jonghoon"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "LIAO Cheng-Ting", "负者": "Vitor ISHIY"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Mohamed ELBEIALI", "负者": "Marcos MADRID"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Dang QIU", "负者": "Nandor ECSEKI"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Cedric NUYTINCK", "负者": "Ovidiu IONESCU"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Joao GERALDO", "负者": "Olajide OMOTAYO"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Kirill SKACHKOV", "负者": "Florent LAMBIET"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Anton KALLBERG", "负者": "Marcelo AGUIRRE"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Bence MAJOROS", "负者": "Lubomir JANCARIK"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Nima ALAMIAN", "负者": "Niagol STOYANOV"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Joao MONTEIRO", "负者": "Tiago APOLONIA"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Yuta TANAKA", "负者": "Ricardo WALTHER"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Alberto MINO", "负者": "Mohammed ABDULWAHHAB"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Brian AFANADOR", "负者": "Khalid ASSAR"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Adam SZUDI", "负者": "Zokhid KENJAEV"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Noshad ALAMIYAN", "负者": "Benedek OLAH"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Lei KOU", "负者": "Bojan TOKIC"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "CHEN Chien-An", "负者": "Ibrahima DIAW"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Mizuki OIKAWA", "负者": "Amalraj ANTHONY"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Paul DRINKHALL", "负者": "Andreas LEVENKO"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Ievgen PRYSHCHEPA", "负者": "Harmeet DESAI"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Cristian PLETEA", "负者": "Can AKKUZU"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Hunor SZOCS", "负者": "Robin DEVOS"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "CHO Daeseong", "负者": "Alvaro ROBLES"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Alexandre CASSIN", "负者": "Eric JOUTI"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Deni KOZUL", "负者": "Tristan FLORE"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Kirill SKACHKOV", "负者": "Daniel GONZALEZ"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Anton KALLBERG", "负者": "Horacio CIFUENTES"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Mihai BOBOCICA", "负者": "Abdulaziz BU SHULAYBI"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Dang QIU", "负者": "Martin ALLEGRO"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Thiago MONTEIRO", "负者": "Aleksandar KARAKASEVIC"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Cedric NUYTINCK", "负者": "Mohamed ELBEIALI"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Noshad ALAMIYAN", "负者": "CHEN Chien-An"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Hunor SZOCS", "负者": "Yuta TANAKA"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Brian AFANADOR", "负者": "Joao GERALDO"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Alexandre CASSIN", "负者": "Deni KOZUL"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Alberto MINO", "负者": "Adam SZUDI"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "CHO Daeseong", "负者": "Lei KOU"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Paul DRINKHALL", "负者": "Mizuki OIKAWA"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "LIAO Cheng-Ting", "负者": "Cristian PLETEA"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Joao MONTEIRO", "负者": "Ievgen PRYSHCHEPA"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Nima ALAMIAN", "负者": "Bence MAJOROS"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Anton KALLBERG", "负者": "Mihai BOBOCICA"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Cedric NUYTINCK", "负者": "LIAO Cheng-Ting"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Dang QIU", "负者": "Thiago MONTEIRO"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Brian AFANADOR", "负者": "Kirill SKACHKOV"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "CHO Daeseong", "负者": "Alexandre CASSIN"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Nima ALAMIAN", "负者": "Alberto MINO"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Hunor SZOCS", "负者": "Paul DRINKHALL"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Joao MONTEIRO", "负者": "Noshad ALAMIYAN"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Sathiyan GNANASEKARAN", "负者": "Emmanuel LEBESSON"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Masataka MORIZONO", "负者": "Jon PERSSON"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Gustavo TSUBOI", "负者": "Jonathan GROTH"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Ruwen FILUS", "负者": "Cedric NUYTINCK"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Dang QIU", "负者": "Andrej GACINA"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Pavel SIRUCEK", "负者": "CHUANG Chih-Yuan"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Kristian KARLSSON", "负者": "Tomislav PUCAR"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Kirill GERASSIMENKO", "负者": "Omar ASSAR"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Joao MONTEIRO", "负者": "Vladimir SAMSONOV"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "AN Jaehyun", "负者": "Benedikt DUDA"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Darko JORGIC", "负者": "Daniel HABESOHN"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Yang WANG", "负者": "Ahmad Khalil AL-MOHANNADI"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Anton KALLBERG", "负者": "Nima ALAMIAN"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Ahmed SALEH", "负者": "Yukiya UDA"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Sharath Kamal ACHANTA", "负者": "Brian AFANADOR"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "CHO Daeseong", "负者": "Hunor SZOCS"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Tomokazu HARIMOTO", "负者": "Sathiyan GNANASEKARAN"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Robert GARDOS", "负者": "Pavel SIRUCEK"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "AN Jaehyun", "负者": "Mattias KARLSSON"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Sharath Kamal ACHANTA", "负者": "Patrick FRANZISKA"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Ruwen FILUS", "负者": "JANG Woojin"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "JEOUNG Youngsik", "负者": "Kirill GERASSIMENKO"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "LIN Yun-Ju", "负者": "Joao MONTEIRO"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Anton KALLBERG", "负者": "LEE Sang Su"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Simon GAUZY", "负者": "Yang WANG"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Dimitrij OVTCHAROV", "负者": "Ahmed SALEH"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Gustavo TSUBOI", "负者": "Koki NIWA"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Darko JORGIC", "负者": "Marcos FREITAS"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Jun MIZUTANI", "负者": "Dang QIU"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Hugo CALDERANO", "负者": "CHO Daeseong"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Quadri ARUNA", "负者": "Masataka MORIZONO"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Kristian KARLSSON", "负者": "Liam PITCHFORD"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "JEOUNG Youngsik", "负者": "Gustavo TSUBOI"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Ruwen FILUS", "负者": "Jun MIZUTANI"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Tomokazu HARIMOTO", "负者": "Quadri ARUNA"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Kristian KARLSSON", "负者": "Simon GAUZY"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "LIN Yun-Ju", "负者": "Robert GARDOS"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Anton KALLBERG", "负者": "AN Jaehyun"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Dimitrij OVTCHAROV", "负者": "Sharath Kamal ACHANTA"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Darko JORGIC", "负者": "Hugo CALDERANO"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Tomokazu HARIMOTO", "负者": "JEOUNG Youngsik"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Dimitrij OVTCHAROV", "负者": "Anton KALLBERG"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Ruwen FILUS", "负者": "LIN Yun-Ju"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Darko JORGIC", "负者": "Kristian KARLSSON"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Tomokazu HARIMOTO", "负者": "Dimitrij OVTCHAROV"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Ruwen FILUS", "负者": "Darko JORGIC"},
+{"日期": "2021-03-05", "类型": "球星挑战赛", "胜者": "Tomokazu HARIMOTO", "负者": "Ruwen FILUS"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Gergo KRAMARICS", "负者": "David SZANTOSI"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Jeet CHANDRA", "负者": "Oliver BOTH"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Tomas MARTINKO", "负者": "Ondrej KVETON"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Simon BELIK", "负者": "Levente KREBS"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Jiri MARTINKO", "负者": "Akos KISHEGYI"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Benedek OLAH", "负者": "Simon BELIK"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Nikhil KUMAR", "负者": "Lkhagvasuren ENKHBAT"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "CHEW Clarence", "负者": "Ibrahima DIAW"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Lubomir JANCARIK", "负者": "Ali ALKHADRAWI"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Panagiotis GIONIS", "负者": "Zsolt PETO"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Bojan TOKIC", "负者": "Jeremy HAZIN"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Ovidiu IONESCU", "负者": "Xin YAN"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Paul DRINKHALL", "负者": "Nima ALAMIAN"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "LAM Siu Hang", "负者": "Brian AFANADOR"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Andrej GACINA", "负者": "Kokou FANNY"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Lei KOU", "负者": "Adam HMAM"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Horacio CIFUENTES", "负者": "Yoshua SHING"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "David POWELL", "负者": "Pavel SIRUCEK"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Alvaro ROBLES", "负者": "Gaston ALTO"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Kirill SKACHKOV", "负者": "Dimitrije LEVAJAC"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Bence MAJOROS", "负者": "Larbi BOURIAH"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Nikhil KUMAR", "负者": "Alberto MINO"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Tiago APOLONIA", "负者": "Olajide OMOTAYO"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Emmanuel LEBESSON", "负者": "Andrej GACINA"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "LAM Siu Hang", "负者": "Sathiyan GNANASEKARAN"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Daniel HABESOHN", "负者": "CHEW Clarence"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Panagiotis GIONIS", "负者": "Ahmed SALEH"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "CHUANG Chih-Yuan", "负者": "Horacio CIFUENTES"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Kirill GERASSIMENKO", "负者": "Lubomir JANCARIK"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Paul DRINKHALL", "负者": "Robert GARDOS"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Gustavo TSUBOI", "负者": "Ovidiu IONESCU"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Anton KALLBERG", "负者": "Nikhil KUMAR"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Darko JORGIC", "负者": "Alvaro ROBLES"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Sharath Kamal ACHANTA", "负者": "Tiago APOLONIA"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Kirill SKACHKOV", "负者": "Kanak JHA"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Bojan TOKIC", "负者": "Tomislav PUCAR"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "WANG Yang", "负者": "David POWELL"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Jonathan GROTH", "负者": "Bence MAJOROS"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Omar ASSAR", "负者": "Lei KOU"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Timo BOLL", "负者": "Kirill GERASSIMENKO"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "JANG Woojin", "负者": "Paul DRINKHALL"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "CHUANG Chih-Yuan", "负者": "WONG Chun Ting"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Darko JORGIC", "负者": "Liam PITCHFORD"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Marcos FREITAS", "负者": "Daniel HABESOHN"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Tomokazu HARIMOTO", "负者": "LAM Siu Hang"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "LIN Yun-Ju", "负者": "Anton KALLBERG"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "JEOUNG Youngsik", "负者": "Panagiotis GIONIS"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "FAN Zhendong", "负者": "Emmanuel LEBESSON"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Gustavo TSUBOI", "负者": "Quadri ARUNA"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Hugo CALDERANO", "负者": "Bojan TOKIC"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "MA Long", "负者": "Sharath Kamal ACHANTA"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Simon GAUZY", "负者": "Jonathan GROTH"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Dimitrij OVTCHAROV", "负者": "Kirill SKACHKOV"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Koki NIWA", "负者": "WANG Yang"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Omar ASSAR", "负者": "Mattias KARLSSON"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "JEOUNG Youngsik", "负者": "Timo BOLL"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "LIN Yun-Ju", "负者": "Gustavo TSUBOI"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "FAN Zhendong", "负者": "Marcos FREITAS"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Darko JORGIC", "负者": "Tomokazu HARIMOTO"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "MA Long", "负者": "Simon GAUZY"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Hugo CALDERANO", "负者": "JANG Woojin"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Dimitrij OVTCHAROV", "负者": "Koki NIWA"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Omar ASSAR", "负者": "CHUANG Chih-Yuan"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "FAN Zhendong", "负者": "JEOUNG Youngsik"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "LIN Yun-Ju", "负者": "Darko JORGIC"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "MA Long", "负者": "Omar ASSAR"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Dimitrij OVTCHAROV", "负者": "Hugo CALDERANO"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "FAN Zhendong", "负者": "LIN Yun-Ju"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "MA Long", "负者": "Dimitrij OVTCHAROV"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "Dimitrij OVTCHAROV", "负者": "LIN Yun-Ju"},
+{"日期": "2021-07-23", "类型": "奥运会", "胜者": "MA Long", "负者": "FAN Zhendong"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Snehit SURAVAJJULA", "负者": "Sanil SHETTY"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Kilian ORT", "负者": "Manush SHAH"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Tobias HIPPLER", "负者": "Martin GUMAN"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Fanbo MENG", "负者": "Aidos KENZHIGULOV"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Samuel NOVOTA", "负者": "Filip CIPIN"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Joe SEYFRIED", "负者": "Filip ZELJKO"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Vladimir SIDORENKO", "负者": "Gergo KRAMARICS"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Sadi ISMAILOV", "负者": "Jeet CHANDRA"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Amir Hossein HODAEI", "负者": "Tomas MARTINKO"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Alexander CHEN", "负者": "Tarek AL SAMHOURY"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "David SERDAROGLU", "负者": "Tomas KOLDAS"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Dimitrije LEVAJAC", "负者": "Erik HUZSVAR"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Aleksandr TIUTRIUMOV", "负者": "Jakub ZELINKA"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Bence BALOGH", "负者": "Mudit DANI"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Benedek OLAH", "负者": "Jiri MARTINKO"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Fanbo MENG", "负者": "Tobias HIPPLER"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Kilian ORT", "负者": "Snehit SURAVAJJULA"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Sadi ISMAILOV", "负者": "Samuel NOVOTA"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Amir Hossein HODAEI", "负者": "Dimitrije LEVAJAC"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Alexander CHEN", "负者": "Aleksandr TIUTRIUMOV"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "David SERDAROGLU", "负者": "Bence BALOGH"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Vladimir SIDORENKO", "负者": "Joe SEYFRIED"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Aleksandr KHANIN", "负者": "Amir Hossein HODAEI"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Alexandre ROBINOT", "负者": "Alexander SHIBAEV"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Kilian ORT", "负者": "Sadi ISMAILOV"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Liam PITCHFORD", "负者": "Adam SZUDI"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Kirill SKACHKOV", "负者": "Patrik JUHASZ"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Manav THAKKAR", "负者": "Pavel PLATONOV"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Tomas POLANSKY", "负者": "Ruwen FILUS"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Nandor ECSEKI", "负者": "Alexander CHEN"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Niagol STOYANOV", "负者": "Lubomir PISTEJ"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Dang QIU", "负者": "David SERDAROGLU"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Sathiyan GNANASEKARAN", "负者": "Can AKKUZU"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Harmeet DESAI", "负者": "Csaba ANDRAS"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Fanbo MENG", "负者": "Bence MAJOROS"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Truls MOREGARD", "负者": "Vladimir SIDORENKO"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Quadri ARUNA", "负者": "Andreas LEVENKO"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Benedek OLAH", "负者": "Benedikt DUDA"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Kirill SKACHKOV", "负者": "Manav THAKKAR"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Truls MOREGARD", "负者": "Fanbo MENG"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Niagol STOYANOV", "负者": "Sathiyan GNANASEKARAN"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Liam PITCHFORD", "负者": "Aleksandr KHANIN"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Dang QIU", "负者": "Harmeet DESAI"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Quadri ARUNA", "负者": "Alexandre ROBINOT"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Kilian ORT", "负者": "Benedek OLAH"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Tomas POLANSKY", "负者": "Nandor ECSEKI"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Kilian ORT", "负者": "Liam PITCHFORD"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Tomas POLANSKY", "负者": "Kirill SKACHKOV"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Truls MOREGARD", "负者": "Quadri ARUNA"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Dang QIU", "负者": "Niagol STOYANOV"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Kilian ORT", "负者": "Tomas POLANSKY"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Truls MOREGARD", "负者": "Dang QIU"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Truls MOREGARD", "负者": "Kilian ORT"},
+{"日期": "2021-08-15", "类型": "常规挑战赛", "胜者": "Jakub ZELINKA", "负者": "Balazs LEI"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Alexandre CASSIN", "负者": "Youssef ABID"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Fanbo MENG", "负者": "Daniel GONZALEZ"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Manav THAKKAR", "负者": "Mehdi BOULOUSSA"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Tomas POLANSKY", "负者": "Gaston ALTO"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Brian AFANADOR", "负者": "Khalil STA"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Sadi ISMAILOV", "负者": "David SERDAROGLU"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Abdel-Kader SALIFOU", "负者": "Eric GLOD"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Filip ZELJKO", "负者": "Can AKKUZU"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Martin ALLEGRO", "负者": "Snehit SURAVAJJULA"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Samuel WALKER", "负者": "Yaroslav ZHMUDENKO"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Kilian ORT", "负者": "Adam SZUDI"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Maksim GREBNEV", "负者": "Florent LAMBIET"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Joao GERALDO", "负者": "Aleksandr KHANIN"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Tobias HIPPLER", "负者": "Marcos MADRID"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Patrik JUHASZ", "负者": "Santiago LORENZO"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Benedek OLAH", "负者": "Jordy PICCOLIN"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Alexander SHIBAEV", "负者": "Mishel LEVINSKI"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Nandor ECSEKI", "负者": "Uladzislau RUKLIATSOU"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Daniele PINTO", "负者": "Maciej KOLODZIEJCZYK"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Frane KOJIC", "负者": "Dimitrije LEVAJAC"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Rares SIPOS", "负者": "Carlos FRANCO"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Andreas LEVENKO", "负者": "Alexander CHEN"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Alberto MINO", "负者": "Alexandre ROBINOT"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Enzo ANGLES", "负者": "Mudit DANI"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Jiri MARTINKO", "负者": "Olajide OMOTAYO"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Niagol STOYANOV", "负者": "Alex NAUMI"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Mahmoud HELMY", "负者": "Abdelbasset CHAICHI"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Hunor SZOCS", "负者": "Lev KATSMAN"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Marcelo AGUIRRE", "负者": "Alexandre CASSIN"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Fanbo MENG", "负者": "Tomas POLANSKY"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Manav THAKKAR", "负者": "Brian AFANADOR"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Filip ZELJKO", "负者": "Sadi ISMAILOV"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Abdel-Kader SALIFOU", "负者": "Horacio CIFUENTES"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Maksim GREBNEV", "负者": "Tobias HIPPLER"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Joao GERALDO", "负者": "Kilian ORT"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Martin ALLEGRO", "负者": "Samuel WALKER"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Benedek OLAH", "负者": "Patrik JUHASZ"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Alexander SHIBAEV", "负者": "Daniele PINTO"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Frane KOJIC", "负者": "Nandor ECSEKI"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Rares SIPOS", "负者": "Harmeet DESAI"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Jakub DYJAS", "负者": "Mahmoud HELMY"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Enzo ANGLES", "负者": "Alberto MINO"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Hunor SZOCS", "负者": "Niagol STOYANOV"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Andreas LEVENKO", "负者": "Jiri MARTINKO"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Fanbo MENG", "负者": "Marcelo AGUIRRE"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Martin ALLEGRO", "负者": "Abdel-Kader SALIFOU"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Maksim GREBNEV", "负者": "Joao GERALDO"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Filip ZELJKO", "负者": "Manav THAKKAR"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Alexander SHIBAEV", "负者": "Benedek OLAH"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Enzo ANGLES", "负者": "Andreas LEVENKO"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Jakub DYJAS", "负者": "Hunor SZOCS"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Frane KOJIC", "负者": "Rares SIPOS"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Anton KALLBERG", "负者": "Robert GARDOS"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Patrick FRANZISKA", "负者": "Tiago APOLONIA"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Vitor ISHIY", "负者": "Sharath Kamal ACHANTA"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Kay STUMPER", "负者": "Yang WANG"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Dang QIU", "负者": "Kirill SKACHKOV"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Enzo ANGLES", "负者": "Marcos FREITAS"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Sathiyan GNANASEKARAN", "负者": "Alvaro ROBLES"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Ibrahima DIAW", "负者": "Martin ALLEGRO"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Fanbo MENG", "负者": "Bence MAJOROS"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Ovidiu IONESCU", "负者": "Frane KOJIC"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Filip ZELJKO", "负者": "Marcelo AGUIRRE"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Maksim GREBNEV", "负者": "Truls MOREGARD"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Jakub DYJAS", "负者": "Ruwen FILUS"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Joao MONTEIRO", "负者": "Ahmed SALEH"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Emmanuel LEBESSON", "负者": "Alexander SHIBAEV"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Quadri ARUNA", "负者": "Jon PERSSON"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Filip ZELJKO", "负者": "Vitor ISHIY"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Dang QIU", "负者": "Enzo ANGLES"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Ovidiu IONESCU", "负者": "Kay STUMPER"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Anton KALLBERG", "负者": "Fanbo MENG"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Jakub DYJAS", "负者": "Emmanuel LEBESSON"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Sathiyan GNANASEKARAN", "负者": "Ibrahima DIAW"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Patrick FRANZISKA", "负者": "Maksim GREBNEV"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Quadri ARUNA", "负者": "Joao MONTEIRO"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Filip ZELJKO", "负者": "Patrick FRANZISKA"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Anton KALLBERG", "负者": "Ovidiu IONESCU"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Dang QIU", "负者": "Sathiyan GNANASEKARAN"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Quadri ARUNA", "负者": "Jakub DYJAS"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Dang QIU", "负者": "Filip ZELJKO"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Anton KALLBERG", "负者": "Quadri ARUNA"},
+{"日期": "2021-10-24", "类型": "常规挑战赛", "胜者": "Anton KALLBERG", "负者": "Dang QIU"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Sora MATSUSHIMA", "负者": "Sushmit SRIRAM"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "CHOI Deokhwa", "负者": "CHUA Josh"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Olav KOSOLOSKY", "负者": "Carlo ROSSI"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Leo DE NODREST", "负者": "Tilen CVETKO"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Irvin BERTRAND", "负者": "Mahmoud HELMY"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Maksim GREBNEV", "负者": "Adam KLAJBER"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Felix LEBRUN", "负者": "Alfonso OLAVE"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Maciej KOLODZIEJCZYK", "负者": "Vincent PICARD"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Miguel VILCHEZ", "负者": "Mishel LEVINSKI"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Martin BENTANCOR", "负者": "Cedric TSCHANZ"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Dimitrije LEVAJAC", "负者": "Carlos FRANCO"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "David MCBEATH", "负者": "Adrian DILLON"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Filip CIPIN", "负者": "Jeet CHANDRA"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Soumyajit GHOSH", "负者": "Alexis LEBRUN"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Amin AHMADIAN", "负者": "Daniele PINTO"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Joao GERALDO", "负者": "CHOI Deokhwa"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Manav THAKKAR", "负者": "Yuma TANIGAKI"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Bastien REMBERT", "负者": "Antoine HACHARD"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Ivor BAN", "负者": "David SERDAROGLU"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Niagol STOYANOV", "负者": "Sora MATSUSHIMA"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "John OYEBODE", "负者": "Youssef ABDELAZIZ"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Olav KOSOLOSKY", "负者": "ZHOU Qihao"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Kilian ORT", "负者": "Cristian CHIRITA"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Maksim GREBNEV", "负者": "Daniel GONZALEZ"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Hiroto SHINOZUKA", "负者": "Lilian BARDET"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Yuto KIZUKURI", "负者": "Xavier DIXON"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Carlos CABALLERO", "负者": "Dillon CHAMBERS"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Felix LEBRUN", "负者": "Khalid ASSAR"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Gaston ALTO", "负者": "Irvin BERTRAND"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "CHEW Clarence", "负者": "Jonas PROMBERGER"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Florent LAMBIET", "负者": "Miguel VILCHEZ"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Robin DEVOS", "负者": "Maciej KOLODZIEJCZYK"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Leo DE NODREST", "负者": "Yuta TANAKA"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Laurens DEVOS", "负者": "Eric THILLEN"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Taiwo MATI", "负者": "Tom JARVIS"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "LIU Dingshuo", "负者": "Filip ZELJKO"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Aleksandr KHANIN", "负者": "Martin BENTANCOR"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Andrei PUTUNTICA", "负者": "Aljaz GODEC"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Amalraj ANTHONY", "负者": "Dimitrije LEVAJAC"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Snehit SURAVAJJULA", "负者": "Lionel WEBER"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Pavel PLATONOV", "负者": "Filip CIPIN"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "David MCBEATH", "负者": "Brian AFANADOR"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Alexander CHEN", "负者": "Aidos KENZHIGULOV"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Luka MLADENOVIC", "负者": "Ziga ZIGON"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Steffen MENGEL", "负者": "Pedro OSIRO"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Eric JOUTI", "负者": "Soumyajit GHOSH"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Ivor BAN", "负者": "Niagol STOYANOV"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Joao GERALDO", "负者": "Bastien REMBERT"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Olav KOSOLOSKY", "负者": "John OYEBODE"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Manav THAKKAR", "负者": "Amin AHMADIAN"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Yuto KIZUKURI", "负者": "Leo DE NODREST"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Hiroto SHINOZUKA", "负者": "Gaston ALTO"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Kilian ORT", "负者": "Maksim GREBNEV"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Carlos CABALLERO", "负者": "Felix LEBRUN"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Robin DEVOS", "负者": "CHEW Clarence"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Laurens DEVOS", "负者": "David MCBEATH"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Aleksandr KHANIN", "负者": "Taiwo MATI"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "LIU Dingshuo", "负者": "Florent LAMBIET"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Pavel PLATONOV", "负者": "Luka MLADENOVIC"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Steffen MENGEL", "负者": "Snehit SURAVAJJULA"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Eric JOUTI", "负者": "Alexander CHEN"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Amalraj ANTHONY", "负者": "Andrei PUTUNTICA"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Steffen MENGEL", "负者": "Eric JOUTI"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Joao GERALDO", "负者": "Manav THAKKAR"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Laurens DEVOS", "负者": "Aleksandr KHANIN"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Hiroto SHINOZUKA", "负者": "Kilian ORT"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Yuto KIZUKURI", "负者": "Carlos CABALLERO"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "LIU Dingshuo", "负者": "Robin DEVOS"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Olav KOSOLOSKY", "负者": "Ivor BAN"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Pavel PLATONOV", "负者": "Amalraj ANTHONY"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "WANG Chuqin", "负者": "Olajide OMOTAYO"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Sathiyan GNANASEKARAN", "负者": "Alberto MINO"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Deni KOZUL", "负者": "Takuya JIN"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Tiago APOLONIA", "负者": "Can AKKUZU"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "LIN Gaoyuan", "负者": "Bojan TOKIC"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "LIU Dingshuo", "负者": "Pavel PLATONOV"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Jon PERSSON", "负者": "Kirill SKACHKOV"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Joao GERALDO", "负者": "Benedek OLAH"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Quadri ARUNA", "负者": "Thiago MONTEIRO"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Benedikt DUDA", "负者": "Vitor ISHIY"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Kirill GERASSIMENKO", "负者": "Bence MAJOROS"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Hiroto SHINOZUKA", "负者": "Kanak JHA"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Steffen MENGEL", "负者": "Olav KOSOLOSKY"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "LIANG Jingkun", "负者": "Laurens DEVOS"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Yuto KIZUKURI", "负者": "Sharath Kamal ACHANTA"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Paul DRINKHALL", "负者": "Peter HRIBAR"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Kirill GERASSIMENKO", "负者": "Hiroto SHINOZUKA"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "LIU Dingshuo", "负者": "Benedikt DUDA"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Paul DRINKHALL", "负者": "LIN Gaoyuan"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "WANG Chuqin", "负者": "Steffen MENGEL"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "LIANG Jingkun", "负者": "Deni KOZUL"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Jon PERSSON", "负者": "Sathiyan GNANASEKARAN"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Yuto KIZUKURI", "负者": "Joao GERALDO"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Tiago APOLONIA", "负者": "Quadri ARUNA"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Kirill GERASSIMENKO", "负者": "Paul DRINKHALL"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "LIU Dingshuo", "负者": "WANG Chuqin"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Jon PERSSON", "负者": "Tiago APOLONIA"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "LIANG Jingkun", "负者": "Yuto KIZUKURI"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "Kirill GERASSIMENKO", "负者": "LIU Dingshuo"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "LIANG Jingkun", "负者": "Jon PERSSON"},
+{"日期": "2021-11-01", "类型": "常规挑战赛", "胜者": "LIANG Jingkun", "负者": "Kirill GERASSIMENKO"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Nicholas LUM", "负者": "Tobias RASMUSSEN"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Can AKKUZU", "负者": "Jassem MOHAMMED"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Steffen MENGEL", "负者": "Soumyajit GHOSH"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Amin AHMADIAN", "负者": "Dillon CHAMBERS"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "CHEW Clarence", "负者": "Taiwo MATI"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Snehit SURAVAJJULA", "负者": "Manav THAKKAR"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Felix LEBRUN", "负者": "Aidos KENZHIGULOV"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Hiroto SHINOZUKA", "负者": "Khalid ASSAR"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Sushmit SRIRAM", "负者": "Miha PODOBNIK"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Lubomir JANCARIK", "负者": "Adrian DILLON"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Aleksandr KHANIN", "负者": "Andrei PUTUNTICA"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "ZHOU Qihao", "负者": "Abdulla ALBALOOSHI"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Cedric TSCHANZ", "负者": "Peter HRIBAR"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Filip CIPIN", "负者": "Ziga ZIGON"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Yuto KIZUKURI", "负者": "Zubair SARHAN"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "LIU Dingshuo", "负者": "Alfonso OLAVE"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Xavier DIXON", "负者": "Amalraj ANTHONY"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Alexander CHEN", "负者": "Tilen CVETKO"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Bastian STEGER", "负者": "David SERDAROGLU"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Filip ZELJKO", "负者": "CHUA Josh"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Martin ALLEGRO", "负者": "Finn LUU"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Samuel WALKER", "负者": "Eric GLOD"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Jiri MARTINKO", "负者": "Tomas POLANSKY"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Jeet CHANDRA", "负者": "Padasak TANVIRIYAVECHAKUL"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Alexis LEBRUN", "负者": "Calum MORRISON"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Yuta TANAKA", "负者": "Sora MATSUSHIMA"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "CHOI Deokhwa", "负者": "Vincent PICARD"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Deni KOZUL", "负者": "Aljaz GODEC"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Luka MLADENOVIC", "负者": "Eric THILLEN"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Alexander SHIBAEV", "负者": "Mishel LEVINSKI"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Kilian ORT", "负者": "Esteban DORR"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Yuma TANIGAKI", "负者": "Tobias HIPPLER"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Steffen MENGEL", "负者": "Nicholas LUM"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Felix LEBRUN", "负者": "Hiroto SHINOZUKA"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Can AKKUZU", "负者": "Amin AHMADIAN"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "CHEW Clarence", "负者": "Snehit SURAVAJJULA"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Aleksandr KHANIN", "负者": "Cedric TSCHANZ"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Lubomir JANCARIK", "负者": "Sushmit SRIRAM"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Filip CIPIN", "负者": "Xavier DIXON"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "ZHOU Qihao", "负者": "LIU Dingshuo"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Bastian STEGER", "负者": "Alexander CHEN"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Yuto KIZUKURI", "负者": "Martin ALLEGRO"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Samuel WALKER", "负者": "Jeet CHANDRA"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Filip ZELJKO", "负者": "Jiri MARTINKO"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Yuta TANAKA", "负者": "CHOI Deokhwa"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Alexander SHIBAEV", "负者": "Yuma TANIGAKI"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Deni KOZUL", "负者": "Alexis LEBRUN"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Kilian ORT", "负者": "Luka MLADENOVIC"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Felix LEBRUN", "负者": "CHEW Clarence"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "ZHOU Qihao", "负者": "Filip CIPIN"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Lubomir JANCARIK", "负者": "Aleksandr KHANIN"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Can AKKUZU", "负者": "Steffen MENGEL"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Alexander SHIBAEV", "负者": "Kilian ORT"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Yuta TANAKA", "负者": "Deni KOZUL"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Yuto KIZUKURI", "负者": "Bastian STEGER"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Filip ZELJKO", "负者": "Samuel WALKER"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "LIN Gaoyuan", "负者": "Filip ZELJKO"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "LIANG Jingkun", "负者": "Alexander SHIBAEV"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Kristian KARLSSON", "负者": "Daniel HABESOHN"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Felix LEBRUN", "负者": "CHUANG Chih-Yuan"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Sharath Kamal ACHANTA", "负者": "Takuya JIN"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Bojan TOKIC", "负者": "Ibrahima DIAW"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Darko JORGIC", "负者": "Can AKKUZU"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Simon GAUZY", "负者": "Lubomir JANCARIK"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Yuto KIZUKURI", "负者": "Mattias KARLSSON"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Anton KALLBERG", "负者": "Yuta TANAKA"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Truls MOREGARD", "负者": "Tomislav PUCAR"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "WANG Chuqin", "负者": "Alvaro ROBLES"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Sathiyan GNANASEKARAN", "负者": "Harmeet DESAI"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "ZHOU Qihao", "负者": "Kirill GERASSIMENKO"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Kirill SKACHKOV", "负者": "Andrej GACINA"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Robert GARDOS", "负者": "Tiago APOLONIA"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Kristian KARLSSON", "负者": "Felix LEBRUN"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "LIANG Jingkun", "负者": "Sharath Kamal ACHANTA"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "WANG Chuqin", "负者": "Truls MOREGARD"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Simon GAUZY", "负者": "Kirill SKACHKOV"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "LIN Gaoyuan", "负者": "Bojan TOKIC"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Darko JORGIC", "负者": "Sathiyan GNANASEKARAN"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Anton KALLBERG", "负者": "Robert GARDOS"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "ZHOU Qihao", "负者": "Yuto KIZUKURI"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "LIN Gaoyuan", "负者": "Anton KALLBERG"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "Darko JORGIC", "负者": "ZHOU Qihao"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "WANG Chuqin", "负者": "Kristian KARLSSON"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "LIANG Jingkun", "负者": "Simon GAUZY"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "WANG Chuqin", "负者": "Darko JORGIC"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "LIANG Jingkun", "负者": "LIN Gaoyuan"},
+{"日期": "2021-11-08", "类型": "常规挑战赛", "胜者": "LIANG Jingkun", "负者": "WANG Chuqin"},
+{"日期": "2021-12-04", "类型": "总决赛", "胜者": "JEOUNG Youngsik", "负者": "LEE Sang Su"},
+{"日期": "2021-12-04", "类型": "总决赛", "胜者": "Liam PITCHFORD", "负者": "JANG Woojin"},
+{"日期": "2021-12-04", "类型": "总决赛", "胜者": "WANG Chuqin", "负者": "LIN Yun-Ju"},
+{"日期": "2021-12-04", "类型": "总决赛", "胜者": "FAN Zhendong", "负者": "Patrick FRANZISKA"},
+{"日期": "2021-12-04", "类型": "总决赛", "胜者": "Quadri ARUNA", "负者": "LIANG Jingkun"},
+{"日期": "2021-12-04", "类型": "总决赛", "胜者": "WONG Chun Ting", "负者": "Simon GAUZY"},
+{"日期": "2021-12-04", "类型": "总决赛", "胜者": "Tomokazu HARIMOTO", "负者": "Mattias KARLSSON"},
+{"日期": "2021-12-04", "类型": "总决赛", "胜者": "Hugo CALDERANO", "负者": "LIN Gaoyuan"},
+{"日期": "2021-12-04", "类型": "总决赛", "胜者": "FAN Zhendong", "负者": "JEOUNG Youngsik"},
+{"日期": "2021-12-04", "类型": "总决赛", "胜者": "WANG Chuqin", "负者": "Liam PITCHFORD"},
+{"日期": "2021-12-04", "类型": "总决赛", "胜者": "Tomokazu HARIMOTO", "负者": "WONG Chun Ting"},
+{"日期": "2021-12-04", "类型": "总决赛", "胜者": "Hugo CALDERANO", "负者": "Quadri ARUNA"},
+{"日期": "2021-12-04", "类型": "总决赛", "胜者": "FAN Zhendong", "负者": "WANG Chuqin"},
+{"日期": "2021-12-04", "类型": "总决赛", "胜者": "Tomokazu HARIMOTO", "负者": "Hugo CALDERANO"},
+{"日期": "2021-12-04", "类型": "总决赛", "胜者": "FAN Zhendong", "负者": "Tomokazu HARIMOTO"}
 ]
