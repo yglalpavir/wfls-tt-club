@@ -204,7 +204,7 @@ function wttGetApproxScoreAtDate(playerName, targetDate, sortedLog, startScores,
             if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
             const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], sc);
             sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
-            sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * 0.8);
+            sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
         } else if (isBonusRecord(r)) {
             const t = r['对象'];
             const b = parseFloat(r['分数']) || 0;
@@ -379,13 +379,13 @@ function wttRenderPersonalStats(playerName) {
         const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], scores);
         if (w === playerName) {
             oppPointsGained[l] = (oppPointsGained[l] || 0) + wg;
-            oppPointsLost[l] = (oppPointsLost[l] || 0) + wg * 0.8;
+            oppPointsLost[l] = (oppPointsLost[l] || 0) + wg * LOSER_POINT_MULTIPLIER;
         } else if (l === playerName) {
             oppPointsLost[w] = (oppPointsLost[w] || 0) + wg;
-            oppPointsGained[w] = (oppPointsGained[w] || 0) + wg * 0.8;
+            oppPointsGained[w] = (oppPointsGained[w] || 0) + wg * LOSER_POINT_MULTIPLIER;
         }
         scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg);
-        scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * 0.8);
+        scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * LOSER_POINT_MULTIPLIER);
     }
 
     const beatenOpps = Object.entries(oppStats)
@@ -642,13 +642,13 @@ function computeWttDailyScoreHistory(playerName, sortedLog, startScores) {
             if (sc[l] === undefined) sc[l] = DEFAULT_INITIAL_SCORE;
 
             const dayDiff = Math.floor((snapTime - m.time) / 86400000);
-            const tw = getDecay(dayDiff);
+            const tw = SCORE_TIME_DECAY_ENABLED ? getDecay(dayDiff) : 1;
             const base = getBaseScore((sc[w] || DEFAULT_INITIAL_SCORE) - (sc[l] || DEFAULT_INITIAL_SCORE));
             const coeff = getEventCoefficient(m.type);
             const wg = base * coeff * tw;
 
             sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
-            sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * 0.8);
+            sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
             mi++;
         }
 

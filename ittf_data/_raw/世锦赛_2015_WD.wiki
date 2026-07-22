@@ -1,0 +1,1346 @@
+{{Short description|none}}
+{{Infobox
+| bodystyle = width:27em;
+| bodyclass = vevent
+| aboveclass = summary
+| abovestyle = font-size:125%; border-bottom:1px #aaa solid
+| above = Women's doubles<br />at&nbsp;the 2015 World Table Tennis Championships
+| headerstyle = border-top:1px #aaa solid; padding-bottom:0;
+| label1 = Venue
+| data1 = [[Suzhou International Expo Center]]
+| label2 = Location
+| data2 = [[Suzhou]], [[China]]
+| label3 = Dates
+| data3 = 26 April–3 May
+| label4 = Final score
+| data4 = 8–11, 11–8, 3–11, 11–8, 11–13, 11–8, 11–8
+| header5 = Medalists
+| data6 = <table style="width:100%; margin:0; text-align:left; background:transparent; border-collapse:collapse">
+<tr style="vertical-align:top;"><td>[[File:Gold medal icon.svg|14px]]&nbsp;</td><td class="nowraplinks">[[Liu Shiwen]]<br />[[Zhu Yuling]]</td><td class="nowraplinks">{{flagcountry|CHN}}</td></tr>
+<tr style="vertical-align:top;"><td>[[File:Silver medal icon.svg|14px]]&nbsp;</td><td class="nowraplinks">[[Ding Ning]]<br />[[Li Xiaoxia]]</td><td class="nowraplinks">{{flagcountry|CHN}}</td></tr>
+<tr style="vertical-align:top;"><td>[[File:Bronze medal icon.svg|14px]]&nbsp;</td><td class="nowraplinks">[[Li Jie (table tennis)|Li Jie]]<br />[[Li Qian (Polish table tennis)|Li Qian]]</td><td class="nowraplinks">{{flagcountry|NED}}<br />{{flagcountry|POL}}</td></tr>
+<tr style="vertical-align:top;"><td>[[File:Bronze medal icon.svg|14px]]&nbsp;</td><td class="nowraplinks">[[Feng Tianwei]]<br />[[Yu Mengyu]]</td><td class="nowraplinks">{{flagcountry|SIN}}</td></tr>
+</table>
+| belowclass = noprint
+| belowstyle = border-top:#aaa 1px solid
+| below = {{align|left|←&nbsp;[[2013 World Table Tennis Championships – Women's doubles|2013]]}} {{align|right|[[2017 World Table Tennis Championships – Women's doubles|2017]]&nbsp;→}}
+| decat = yes
+}}
+{{WorldTableTennisChampionshipsEvents|year=2015}}
+{{main article|2015 World Table Tennis Championships}}
+
+The '''2015 World Table Tennis Championships women's doubles''' was the 52nd edition of the women's doubles championship.<ref>{{cite web|url=http://www.allabouttabletennis.com/world-table-tennis-championships-medal-winners.html|title=List of Winners|publisher=All About Tennis}}</ref><ref name=ITTF>{{cite web|url=http://www.ittf.com/museum/WorldChResultsWD.pdf|archive-url=https://web.archive.org/web/20120412045730/http://www.ittf.com/museum/WorldChResultsWD.pdf|url-status=dead|archive-date=2012-04-12|title=Women's doubles results|publisher=International Table Tennis Federation}}</ref><ref>{{cite web|url=http://sports123.com/tte/index.html|title=Table Tennis World Championship medal winners|publisher=Sports123|access-date=2018-03-21|archive-date=2018-09-22|archive-url=https://web.archive.org/web/20180922055935/http://sports123.com/tte/index.html|url-status=dead}}</ref> [[Guo Yue (table tennis)|Guo Yue]] and [[Li Xiaoxia]] were the defending champions.<ref>[http://www.ittf.com/ittf_tournaments/ittf_entries_doubles_wttc_web.asp?Gender=W&Tour_ID=2503&Doubles=1 Entry list]</ref>
+
+[[Liu Shiwen]] and [[Zhu Yuling]] won the title by defeating [[Ding Ning]] and [[Li Xiaoxia]] 8–11, 11–8, 3–11, 11–8, 11–13, 11–8, 11–8 in the final.<ref>{{cite web|url=http://www.ittf.com/_front_page/ittf_full_story1.asp?ID=39540&Competition_ID=2503&|title=Reversal of Fortunes for Liu Shiwen, Women's Doubles Title Secured with Zhu Yuling|date=3 May 2015|work=ittf.com}}</ref>
+
+==Seeds==
+Matches will be best of 5 games in qualification and best of 7 games in the 64-player sized main draw.<ref>[http://www.ittf.com//World_Events/wttc_2015/Playing%20system_WTTC2015.pdf Playing system]</ref><ref>[http://www.ittf.com/ittf_tournaments/ittf_entries_doubles_wttc_web.asp?Gender=W&Tour_ID=2503&Seeded_Doubles=1&FormParticipants_Sorting=26&FormParticipants_Sorted=& Seeds]</ref>
+
+{{colbegin}}
+# {{flagicon|JPN}} [[Ai Fukuhara]] / {{flagicon|JPN}} [[Misako Wakamiya]] ''(quarterfinals)''
+# {{flagicon|SIN}} [[Feng Tianwei]] / {{flagicon|SIN}} [[Yu Mengyu]] ''(semifinals)''
+# {{flagicon|CHN}} '''[[Liu Shiwen]]''' / {{flagicon|CHN}} '''[[Zhu Yuling]]''' ''(champion)''
+# {{flagicon|JPN}} [[Miu Hirano]] / {{flagicon|JPN}} [[Mima Ito]] ''(second round)''
+# {{flagicon|POL}} [[Katarzyna Grzybowska]] / {{flagicon|POL}} [[Natalia Partyka]] ''(third round)''
+# {{flagicon|HKG}} [[Doo Hoi Kem]] / {{flagicon|HKG}} [[Lee Ho Ching]] ''(third round)''
+# {{flagicon|CHN}} [[Ding Ning]] / {{flagicon|CHN}} [[Li Xiaoxia]] ''(final)''
+# {{flagicon|KOR}} [[Park Young-sook]] / {{flagicon|KOR}} [[Yang Ha-eun]] ''(quarterfinals)''
+# {{flagicon|HKG}} [[Jiang Huajun]] / {{flagicon|HKG}} [[Tie Ya Na]] ''(third round)''
+# {{flagicon|GER}} [[Nina Mittelham]] / {{flagicon|GER}} [[Petrissa Solja]] ''(third round)''
+# {{flagicon|EGY}} [[Nadeen El-Dawlatly]] / {{flagicon|EGY}} [[Dina Meshref]] ''(first round)''
+# {{flagicon|AUT}} [[Liu Jia]] / {{flagicon|CZE}} [[Iveta Vacenovská]] ''(third round)''
+# {{flagicon|CGO}} [[Han Xing]] / {{flagicon|CGO}} [[Onyinyechi Nwachukwu]] ''(second round)''
+# {{flagicon|GER}} [[Kristin Silbereisen]] / {{flagicon|GER}} [[Sabine Winter]] ''(third round)''
+# {{flagicon|TPE}} [[Cheng I-ching]] / {{flagicon|TPE}} [[Lee I-chen]] ''(quarterfinals)''
+# {{flagicon|RUS}} [[Maria Dolgikh]] / {{flagicon|RUS}} [[Polina Mikhailova]] ''(third round)''
+# {{flagicon|PRK}} [[Kim Hye-song (table tennis)|Kim Hye-song]]/{{flagicon|PRK}} [[Kim Jong (table tennis)|Kim Jong]] ''(third round)''
+# {{flagicon|TPE}} [[Chen Szu-yu (table tennis)|Chen Szu-yu]] / {{flagicon|TPE}} [[Liu Hsing-yin]] ''(second round)''
+# {{flagicon|PUR}} [[Adriana Diaz (table tennis)|Adriana Diaz]] / {{flagicon|PUR}} [[Melanie Diaz]] ''(second round)''
+# {{flagicon|SWE}} [[Matilda Ekholm]] / {{flagicon|CRO}} [[Lea Rakovac]] ''(second round)''
+# {{flagicon|HUN}} [[Szandra Pergel]] / {{flagicon|ROU}} [[Elizabeta Samara]] ''(first round)''
+# {{flagicon|ESP}} [[Galia Dvorak]] / {{flagicon|ESP}} [[Sara Ramírez (table tennis)|Sara Ramírez]] ''(second round)''
+# {{flagicon|CZE}} [[Kateřina Pěnkavová]] / {{flagicon|CZE}} [[Renáta Štrbíková]] ''(second round)''
+# {{flagicon|ARG}} [[Camila Arguelles]] / {{flagicon|ARG}} [[Ana Codina]] ''(first round)''
+# {{flagicon|CHI}} [[Natalia Castellano]] / {{flagicon|CHI}} [[Paulina Vega (table tennis)|Paulina Vega]] ''(second round)''
+# {{flagicon|THA}} [[Nanthana Komwong]] / {{flagicon|CHN}} [[Li Xiaodan]] ''(second round)''
+# {{flagicon|BRA}} [[Lin Gui (table tennis)|Gui Lin]] / {{flagicon|BRA}} [[Caroline Kumahara]] ''(second round)''
+# {{flagicon|TUR}} [[Melek Hu]] / {{flagicon|ESP}} [[Shen Yanfei]] ''(quarterfinals)''
+# {{flagicon|UKR}} [[Tetyana Sorochynska]] / {{flagicon|UKR}} [[Ganna Gaponova]] ''(second round)''
+# {{flagicon|RUS}} [[Yana Noskova]] / {{flagicon|RUS}} [[Yulia Prokhorova]] ''(second round)''
+# {{flagicon|FRA}} [[Carole Grundisch]] / {{flagicon|FRA}} [[Xian Yifang]] ''(first round)''
+# {{flagicon|ROU}} [[Camelia Postoaca]] / {{flagicon|ROU}} [[Bernadette Szőcs]] ''(first round)''
+{{colend}}
+
+==Draw==
+{{Table Tennis Draw Key}}
+
+===Finals===
+{{4TeamBracket|compact=y|sets=7
+|nowrap=y
+| RD1=Semifinals
+| RD2=Final
+| team-width=140
+| score-width=20
+
+| RD1-seed1=7
+| RD1-team1='''{{flagicon|CHN}} [[Ding Ning]]<br />{{flagicon|CHN}} [[Li Xiaoxia]]'''
+| RD1-score1-1='''11'''
+| RD1-score1-2='''11'''
+| RD1-score1-3='''11'''
+| RD1-score1-4='''11'''
+| RD1-score1-5=
+| RD1-score1-6=
+| RD1-score1-7=
+| RD1-seed2=
+| RD1-team2={{flagicon|NED}} [[Li Jie (table tennis)|Li Jie]]<br />{{flagicon|POL}} [[Li Qian (Polish table tennis)|Li Qian]]
+| RD1-score2-1=5
+| RD1-score2-2=2
+| RD1-score2-3=7
+| RD1-score2-4=6
+| RD1-score2-5=
+| RD1-score2-6=
+| RD1-score2-7=
+
+| RD1-seed3=3
+| RD1-team3='''{{flagicon|CHN}} [[Liu Shiwen]]<br />{{flagicon|CHN}} [[Zhu Yuling]]'''
+| RD1-score3-1=9
+| RD1-score3-2='''11'''
+| RD1-score3-3='''11'''
+| RD1-score3-4='''11'''
+| RD1-score3-5='''11'''
+| RD1-score3-6=
+| RD1-score3-7=
+| RD1-seed4=2
+| RD1-team4={{flagicon|SIN}} [[Feng Tianwei]]<br />{{flagicon|SIN}} [[Yu Mengyu]]
+| RD1-score4-1='''11'''
+| RD1-score4-2=9
+| RD1-score4-3=6
+| RD1-score4-4=7
+| RD1-score4-5=4
+| RD1-score4-6=
+| RD1-score4-7=
+
+| RD2-seed1=7
+| RD2-team1={{flagicon|CHN}} [[Ding Ning]]<br />{{flagicon|CHN}} [[Li Xiaoxia]]
+| RD2-score1-1='''11'''
+| RD2-score1-2=8
+| RD2-score1-3='''11'''
+| RD2-score1-4=8
+| RD2-score1-5='''13'''
+| RD2-score1-6=8
+| RD2-score1-7=8
+| RD2-seed2=3
+| RD2-team2={{flagicon|CHN}} '''[[Liu Shiwen]]'''<br />{{flagicon|CHN}} '''[[Zhu Yuling]]'''
+| RD2-score2-1=8
+| RD2-score2-2='''11'''
+| RD2-score2-3=3
+| RD2-score2-4='''11'''
+| RD2-score2-5=11
+| RD2-score2-6='''11'''
+| RD2-score2-7='''11'''
+}}
+
+===Top half===
+
+====Section 1====
+{{16TeamBracket|compact=y|sets=7
+|nowrap=y
+| RD1=First round
+| RD2=Second round
+| RD3=Third round
+| RD4=Quarterfinals
+| team-width=140
+| score-width=20
+
+| RD1-seed01=1
+| RD1-team01='''{{flagicon|JPN}} [[Ai Fukuhara|Fukuhara]]<br />{{flagicon|JPN}} [[Misako Wakamiya|Wakamiya]]'''
+| RD1-score01-1='''11'''
+| RD1-score01-2='''11'''
+| RD1-score01-3='''11'''
+| RD1-score01-4='''11'''
+| RD1-score01-5=
+| RD1-score01-6=
+| RD1-score01-7=
+| RD1-seed02=
+| RD1-team02={{flagicon|USA}} [[Judy Hugh|Hugh]]<br />{{flagicon|USA}} [[Prachi Jha|Jha]]
+| RD1-score02-1=8
+| RD1-score02-2=4
+| RD1-score02-3=8
+| RD1-score02-4=3
+| RD1-score02-5=
+| RD1-score02-6=
+| RD1-score02-7=
+
+| RD1-seed03=
+| RD1-team03='''{{flagicon|PRK}} [[Ri Mi-gyong|Ri Mi]]<br />{{flagicon|PRK}} [[Ri Myong-sun|Ri My]]'''
+| RD1-score03-1='''11'''
+| RD1-score03-2='''11'''
+| RD1-score03-3='''13'''
+| RD1-score03-4='''11'''
+| RD1-score03-5=
+| RD1-score03-6=
+| RD1-score03-7=
+| RD1-seed04=31
+| RD1-team04={{flagicon|FRA}} [[Carole Grundisch|Grundisch]]<br />{{flagicon|FRA}} [[Xian Yifang|Xian]]
+| RD1-score04-1=5
+| RD1-score04-2=5
+| RD1-score04-3=11
+| RD1-score04-4=7
+| RD1-score04-5=
+| RD1-score04-6=
+| RD1-score04-7=
+
+| RD1-seed05=18
+| RD1-team05='''{{flagicon|TPE}} [[Chen Szu-yu (table tennis)|Chen]]<br />{{flagicon|TPE}} [[Liu Hsing-yin|Liu]]'''
+| RD1-score05-1='''11'''
+| RD1-score05-2='''11'''
+| RD1-score05-3='''11'''
+| RD1-score05-4='''11'''
+| RD1-score05-5=
+| RD1-score05-6=
+| RD1-score05-7=
+| RD1-seed06=
+| RD1-team06={{flagicon|COL}} [[Paula Medina|Medina]]<br />{{flagicon|COL}} [[Lady Ruano|Ruano]]
+| RD1-score06-1=3
+| RD1-score06-2=4
+| RD1-score06-3=7
+| RD1-score06-4=4
+| RD1-score06-5=
+| RD1-score06-6=
+| RD1-score06-7=
+
+| RD1-seed07=
+| RD1-team07={{flagicon|SVK}} [[Barbora Balážová|Balážová]]<br />{{flagicon|SVK}} [[Eva Ódorová|Ódorová]]
+| RD1-score07-1=12
+| RD1-score07-2='''11'''
+| RD1-score07-3=8
+| RD1-score07-4=7
+| RD1-score07-5='''11'''
+| RD1-score07-6=7
+| RD1-score07-7=
+| RD1-seed08=14
+| RD1-team08='''{{flagicon|GER}} [[Kristin Silbereisen|Silbereisen]]<br />{{flagicon|GER}} [[Sabine Winter|Winter]]'''
+| RD1-score08-1='''14'''
+| RD1-score08-2=5
+| RD1-score08-3='''11'''
+| RD1-score08-4='''11'''
+| RD1-score08-5=9
+| RD1-score08-6='''11'''
+| RD1-score08-7=
+
+| RD1-seed09=10
+| RD1-team09='''{{flagicon|GER}} [[Nina Mittelham|Mittelham]]<br />{{flagicon|GER}} [[Petrissa Solja|Solja]]'''
+| RD1-score09-1=10
+| RD1-score09-2='''11'''
+| RD1-score09-3='''11'''
+| RD1-score09-4='''11'''
+| RD1-score09-5='''11'''
+| RD1-score09-6=
+| RD1-score09-7=
+| RD1-seed10=
+| RD1-team10={{flagicon|UZB}} [[Rimma Gufranova|Gufranova]]<br />{{flagicon|UZB}} [[Regina Kim|Kim]]
+| RD1-score10-1='''12'''
+| RD1-score10-2=6
+| RD1-score10-3=1
+| RD1-score10-4=7
+| RD1-score10-5=7
+| RD1-score10-6=
+| RD1-score10-7=
+
+| RD1-seed11=
+| RD1-team11={{flagicon|ALG}} [[Islem Laid|Laid]]<br />{{flagicon|ALG}} [[Lynda Loghraibi|Loghraibi]]
+| RD1-score11-1=4
+| RD1-score11-2=5
+| RD1-score11-3=6
+| RD1-score11-4=5
+| RD1-score11-5=
+| RD1-score11-6=
+| RD1-score11-7=
+| RD1-seed12=29
+| RD1-team12='''{{Nowrap|{{flagicon|UKR}} [[Tetyana Sorochynska|Sorochynska]]}}<br />{{flagicon|UKR}} [[Ganna Gaponova|Gaponova]]'''
+| RD1-score12-1='''11'''
+| RD1-score12-2='''11'''
+| RD1-score12-3='''11'''
+| RD1-score12-4='''11'''
+| RD1-score12-5=
+| RD1-score12-6=
+| RD1-score12-7=
+
+| RD1-seed13=30
+| RD1-team13='''{{flagicon|RUS}} [[Yana Noskova|Noskova]]<br />{{flagicon|RUS}} [[Yulia Prokhorova|Prokhorova]]'''
+| RD1-score13-1='''11'''
+| RD1-score13-2='''11'''
+| RD1-score13-3='''13'''
+| RD1-score13-4='''11'''
+| RD1-score13-5=
+| RD1-score13-6=
+| RD1-score13-7=
+| RD1-seed14=
+| RD1-team14={{flagicon|SIN}} [[Isabelle Li|Li]]<br />{{flagicon|SIN}} [[Eunice Lim|Lim]]
+| RD1-score14-1=6
+| RD1-score14-2=9
+| RD1-score14-3=11
+| RD1-score14-4=6
+| RD1-score14-5=
+| RD1-score14-6=
+| RD1-score14-7=
+
+| RD1-seed15=
+| RD1-team15={{flagicon|SRB}} [[Andrea Todorović|Todorović]]<br />{{flagicon|ISR}} [[Nicole Trosman|Trosman]]
+| RD1-score15-1=3
+| RD1-score15-2=9
+| RD1-score15-3=7
+| RD1-score15-4=1
+| RD1-score15-5=
+| RD1-score15-6=
+| RD1-score15-7=
+| RD1-seed16=7
+| RD1-team16='''{{flagicon|CHN}} [[Ding Ning|Ding]]<br />{{flagicon|CHN}} [[Li Xiaoxia|Li Xiaox]]'''
+| RD1-score16-1='''11'''
+| RD1-score16-2='''11'''
+| RD1-score16-3='''11'''
+| RD1-score16-4='''11'''
+| RD1-score16-5=
+| RD1-score16-6=
+| RD1-score16-7=
+
+| RD2-seed01=1
+| RD2-team01='''{{flagicon|JPN}} [[Ai Fukuhara|Fukuhara]]<br />{{flagicon|JPN}} [[Misako Wakamiya|Wakamiya]]'''
+| RD2-score01-1=8
+| RD2-score01-2='''13'''
+| RD2-score01-3='''11'''
+| RD2-score01-4='''11'''
+| RD2-score01-5='''11'''
+| RD2-score01-6=
+| RD2-score01-7=
+| RD2-seed02=
+| RD2-team02={{flagicon|PRK}} [[Ri Mi-gyong|Ri Mi]]<br />{{flagicon|PRK}} [[Ri Myong-sun|Ri My]]
+| RD2-score02-1='''11'''
+| RD2-score02-2=11
+| RD2-score02-3=2
+| RD2-score02-4=5
+| RD2-score02-5=4
+| RD2-score02-6=
+| RD2-score02-7=
+
+| RD2-seed03=18
+| RD2-team03={{flagicon|TPE}} [[Chen Szu-yu (table tennis)|Chen]]<br />{{flagicon|TPE}} [[Liu Hsing-yin|Liu]]
+| RD2-score03-1=8
+| RD2-score03-2=8
+| RD2-score03-3=6
+| RD2-score03-4=7
+| RD2-score03-5=
+| RD2-score03-6=
+| RD2-score03-7=
+| RD2-seed04=14
+| RD2-team04='''{{flagicon|GER}} [[Kristin Silbereisen|Silbereisen]]<br />{{flagicon|GER}} [[Sabine Winter|Winter]]'''
+| RD2-score04-1='''11'''
+| RD2-score04-2='''11'''
+| RD2-score04-3='''11'''
+| RD2-score04-4='''11'''
+| RD2-score04-5=
+| RD2-score04-6=
+| RD2-score04-7=
+
+| RD2-seed05=10
+| RD2-team05='''{{flagicon|GER}} [[Nina Mittelham|Mittelham]]<br />{{flagicon|GER}} [[Petrissa Solja|Solja]]'''
+| RD2-score05-1='''12'''
+| RD2-score05-2='''11'''
+| RD2-score05-3='''11'''
+| RD2-score05-4=11
+| RD2-score05-5='''11'''
+| RD2-score05-6=
+| RD2-score05-7=
+| RD2-seed06=29
+| RD2-team06={{Nowrap|{{flagicon|UKR}} [[Tetyana Sorochynska|Sorochynska]]}}<br />{{flagicon|UKR}} [[Ganna Gaponova|Gaponova]]
+| RD2-score06-1=10
+| RD2-score06-2=9
+| RD2-score06-3=9
+| RD2-score06-4='''13'''
+| RD2-score06-5=8
+| RD2-score06-6=
+| RD2-score06-7=
+
+| RD2-seed07=30
+| RD2-team07={{flagicon|RUS}} [[Yana Noskova|Noskova]]<br />{{flagicon|RUS}} [[Yulia Prokhorova|Prokhorova]]
+| RD2-score07-1=5
+| RD2-score07-2=2
+| RD2-score07-3=4
+| RD2-score07-4=10
+| RD2-score07-5=
+| RD2-score07-6=
+| RD2-score07-7=
+| RD2-seed08=7
+| RD2-team08='''{{flagicon|CHN}} [[Ding Ning|Ding]]<br />{{flagicon|CHN}} [[Li Xiaoxia|Li Xiaox]]'''
+| RD2-score08-1='''11'''
+| RD2-score08-2='''11'''
+| RD2-score08-3='''11'''
+| RD2-score08-4='''12'''
+| RD2-score08-5=
+| RD2-score08-6=
+| RD2-score08-7=
+
+| RD3-seed01=1
+| RD3-team01='''{{flagicon|JPN}} [[Ai Fukuhara|Fukuhara]]<br />{{Nowrap|{{flagicon|JPN}} [[Misako Wakamiya|Wakamiya]]}}'''
+| RD3-score01-1='''12'''
+| RD3-score01-2='''11'''
+| RD3-score01-3=7
+| RD3-score01-4='''12'''
+| RD3-score01-5='''11'''
+| RD3-score01-6=
+| RD3-score01-7=
+| RD3-seed02=14
+| RD3-team02={{flagicon|GER}} [[Kristin Silbereisen|Silbereisen]]<br />{{flagicon|GER}} [[Sabine Winter|Winter]]
+| RD3-score02-1=10
+| RD3-score02-2=4
+| RD3-score02-3='''11'''
+| RD3-score02-4=10
+| RD3-score02-5=4
+| RD3-score02-6=
+| RD3-score02-7=
+
+| RD3-seed03=10
+| RD3-team03={{flagicon|GER}} [[Nina Mittelham|Mittelham]]<br />{{flagicon|GER}} [[Petrissa Solja|Solja]]
+| RD3-score03-1=8
+| RD3-score03-2=8
+| RD3-score03-3=6
+| RD3-score03-4=7
+| RD3-score03-5=
+| RD3-score03-6=
+| RD3-score03-7=
+| RD3-seed04=7
+| RD3-team04='''{{flagicon|CHN}} [[Ding Ning|Ding]]<br />{{flagicon|CHN}} [[Li Xiaoxia|Li Xiaox]]'''
+| RD3-score04-1='''11'''
+| RD3-score04-2='''11'''
+| RD3-score04-3='''11'''
+| RD3-score04-4='''11'''
+| RD3-score04-5=
+| RD3-score04-6=
+| RD3-score04-7=
+
+| RD4-seed01=1
+| RD4-team01={{flagicon|JPN}} [[Ai Fukuhara|Fukuhara]]<br />{{Nowrap|{{flagicon|JPN}} [[Misako Wakamiya|Wakamiya]]}}
+| RD4-score01-1=8
+| RD4-score01-2=10
+| RD4-score01-3=5
+| RD4-score01-4=9
+| RD4-score01-5=
+| RD4-score01-6=
+| RD4-score01-7=
+| RD4-seed02=7
+| RD4-team02='''{{flagicon|CHN}} [[Ding Ning|Ding]]<br />{{flagicon|CHN}} [[Li Xiaoxia|Li Xiaox]]'''
+| RD4-score02-1='''11'''
+| RD4-score02-2='''12'''
+| RD4-score02-3='''11'''
+| RD4-score02-4='''11'''
+| RD4-score02-5=
+| RD4-score02-6=
+| RD4-score02-7=
+
+}}
+
+====Section 2====
+{{16TeamBracket|compact=y|sets=7
+|nowrap=y
+| RD1=First round
+| RD2=Second round
+| RD3=Third round
+| RD4=Quarterfinals
+| team-width=140
+| score-width=20
+
+| RD1-seed01=6
+| RD1-team01='''{{flagicon|HKG}} [[Doo Hoi Kem|Doo]]<br />{{flagicon|HKG}} [[Lee Ho Ching|Lee]]'''
+| RD1-score01-1='''11'''
+| RD1-score01-2='''11'''
+| RD1-score01-3='''11'''
+| RD1-score01-4='''11'''
+| RD1-score01-5=
+| RD1-score01-6=
+| RD1-score01-7=
+| RD1-seed02=
+| RD1-team02={{flagicon|MEX}} [[Monica Serrano|Serrano]]<br />{{flagicon|COL}} [[Angie Umbacia|Umbacia]]
+| RD1-score02-1=2
+| RD1-score02-2=5
+| RD1-score02-3=3
+| RD1-score02-4=5
+| RD1-score02-5=
+| RD1-score02-6=
+| RD1-score02-7=
+
+| RD1-seed03=
+| RD1-team03={{flagicon|POR}} [[Rita Fins|Fins]]<br />{{flagicon|BLR}} [[Daria Trigolos|Trigolos]]
+| RD1-score03-1=9
+| RD1-score03-2=9
+| RD1-score03-3=7
+| RD1-score03-4=9
+| RD1-score03-5=
+| RD1-score03-6=
+| RD1-score03-7=
+| RD1-seed04=22
+| RD1-team04='''{{flagicon|ESP}} [[Galia Dvorak|Dvorak]]<br />{{flagicon|ESP}} [[Sara Ramírez (table tennis)|Ramírez]]'''
+| RD1-score04-1='''11'''
+| RD1-score04-2='''11'''
+| RD1-score04-3='''11'''
+| RD1-score04-4='''11'''
+| RD1-score04-5=
+| RD1-score04-6=
+| RD1-score04-7=
+
+| RD1-seed05=28
+| RD1-team05='''{{flagicon|TUR}} [[Melek Hu|Hu]]<br />{{flagicon|ESP}} [[Shen Yanfei|Shen]]'''
+| RD1-score05-1='''11'''
+| RD1-score05-2='''12'''
+| RD1-score05-3='''14'''
+| RD1-score05-4='''11'''
+| RD1-score05-5=
+| RD1-score05-6=
+| RD1-score05-7=
+| RD1-seed06=
+| RD1-team06={{flagicon|LUX}} [[Sarah de Nutte|De Nutte]]<br />{{flagicon|LUX}} [[Ni Xialian|Ni]]
+| RD1-score06-1=8
+| RD1-score06-2=10
+| RD1-score06-3=12
+| RD1-score06-4=6
+| RD1-score06-5=
+| RD1-score06-6=
+| RD1-score06-7=
+
+| RD1-seed07=
+| RD1-team07='''{{flagicon|CMR}} [[Sarah Hanffou|Hanffou]]<br />{{flagicon|NGA}} [[Olufunke Oshonaike|Oshonaike]]'''
+| RD1-score07-1='''11'''
+| RD1-score07-2=14
+| RD1-score07-3='''11'''
+| RD1-score07-4='''11'''
+| RD1-score07-5='''11'''
+| RD1-score07-6=
+| RD1-score07-7=
+| RD1-seed08=11
+| RD1-team08={{flagicon|EGY}} [[Nadeen El-Dawlatly|El-Dawlatly]]<br />{{flagicon|EGY}} [[Dina Meshref|Meshref]]
+| RD1-score08-1=7
+| RD1-score08-2='''16'''
+| RD1-score08-3=7
+| RD1-score08-4=6
+| RD1-score08-5=4
+| RD1-score08-6=
+| RD1-score08-7=
+
+| RD1-seed09=13
+| RD1-team09='''{{flagicon|CGO}} [[Han Xing|Han]]<br />{{Nowrap|{{flagicon|CGO}} [[Onyinyechi Nwachukwu|Nwachukwu]]}}'''
+| RD1-score09-1='''11'''
+| RD1-score09-2='''11'''
+| RD1-score09-3='''11'''
+| RD1-score09-4='''12'''
+| RD1-score09-5=
+| RD1-score09-6=
+| RD1-score09-7=
+| RD1-seed10=
+| RD1-team10={{flagicon|SRI}} [[Ishara Madurangi|Madurangi]]<br />{{flagicon|SRI}} [[Tharunnya Shashini|Shashini]]
+| RD1-score10-1=7
+| RD1-score10-2=5
+| RD1-score10-3=3
+| RD1-score10-4=10
+| RD1-score10-5=
+| RD1-score10-6=
+| RD1-score10-7=
+
+| RD1-seed11=
+| RD1-team11={{flagicon|POR}} [[Catia Martins|Martins]]<br />{{flagicon|POR}} [[Leila Oliveira|Oliveira]]
+| RD1-score11-1=2
+| RD1-score11-2=10
+| RD1-score11-3=4
+| RD1-score11-4=6
+| RD1-score11-5=
+| RD1-score11-6=
+| RD1-score11-7=
+| RD1-seed12=17
+| RD1-team12='''{{flagicon|PRK}} [[Kim Hye-song (table tennis)|Kim H]]<br />{{flagicon|PRK}} [[Kim Jong (table tennis)|Kim J]]'''
+| RD1-score12-1='''11'''
+| RD1-score12-2='''12'''
+| RD1-score12-3='''11'''
+| RD1-score12-4='''11'''
+| RD1-score12-5=
+| RD1-score12-6=
+| RD1-score12-7=
+
+| RD1-seed13=32
+| RD1-team13={{flagicon|ROU}} [[Camelia Postoaca|Postoaca]]<br />{{flagicon|ROU}} [[Bernadette Szőcs|Szőcs]]
+| RD1-score13-1=5
+| RD1-score13-2=9
+| RD1-score13-3=7
+| RD1-score13-4=5
+| RD1-score13-5=
+| RD1-score13-6=
+| RD1-score13-7=
+| RD1-seed14=
+| RD1-team14='''{{flagicon|NED}} [[Li Jie (table tennis)|Li]]<br />{{flagicon|POL}} [[Li Qian (Polish table tennis)|Li]]'''
+| RD1-score14-1='''11'''
+| RD1-score14-2='''11'''
+| RD1-score14-3='''11'''
+| RD1-score14-4='''11'''
+| RD1-score14-5=
+| RD1-score14-6=
+| RD1-score14-7=
+
+| RD1-seed15=
+| RD1-team15={{flagicon|EGY}} [[Yousra Helmy|Helmy]]<br />{{flagicon|GUA}} [[Andrea Montufar|Montufar]]
+| RD1-score15-1=6
+| RD1-score15-2=3
+| RD1-score15-3=4
+| RD1-score15-4=2
+| RD1-score15-5=
+| RD1-score15-6=
+| RD1-score15-7=
+| RD1-seed16=4
+| RD1-team16='''{{flagicon|JPN}} [[Miu Hirano|Hirano]]<br />{{flagicon|JPN}} [[Mima Ito|Ito]]'''
+| RD1-score16-1='''11'''
+| RD1-score16-2='''11'''
+| RD1-score16-3='''11'''
+| RD1-score16-4='''11'''
+| RD1-score16-5=
+| RD1-score16-6=
+| RD1-score16-7=
+
+| RD2-seed01=6
+| RD2-team01='''{{flagicon|HKG}} [[Doo Hoi Kem|Doo]]<br />{{flagicon|HKG}} [[Lee Ho Ching|Lee]]'''
+| RD2-score01-1=9
+| RD2-score01-2='''11'''
+| RD2-score01-3='''11'''
+| RD2-score01-4='''11'''
+| RD2-score01-5=9
+| RD2-score01-6='''11'''
+| RD2-score01-7=
+| RD2-seed02=22
+| RD2-team02={{flagicon|ESP}} [[Galia Dvorak|Dvorak]]<br />{{flagicon|ESP}} [[Sara Ramírez (table tennis)|Ramírez]]
+| RD2-score02-1='''11'''
+| RD2-score02-2=6
+| RD2-score02-3=2
+| RD2-score02-4=3
+| RD2-score02-5='''11'''
+| RD2-score02-6=6
+| RD2-score02-7=
+
+| RD2-seed03=28
+| RD2-team03='''{{flagicon|TUR}} [[Melek Hu|Hu]]<br />{{flagicon|ESP}} [[Shen Yanfei|Shen]]'''
+| RD2-score03-1='''13'''
+| RD2-score03-2=8
+| RD2-score03-3='''11'''
+| RD2-score03-4='''11'''
+| RD2-score03-5='''11'''
+| RD2-score03-6=
+| RD2-score03-7=
+| RD2-seed04=
+| RD2-team04={{flagicon|CMR}} [[Sarah Hanffou|Hanffou]]<br />{{flagicon|NGA}} [[Olufunke Oshonaike|Oshonaike]]
+| RD2-score04-1=11
+| RD2-score04-2='''11'''
+| RD2-score04-3=6
+| RD2-score04-4=6
+| RD2-score04-5=3
+| RD2-score04-6=
+| RD2-score04-7=
+
+| RD2-seed05=13
+| RD2-team05={{flagicon|CGO}} [[Han Xing|Han]]<br />{{Nowrap|{{flagicon|CGO}} [[Onyinyechi Nwachukwu|Nwachukwu]]}}
+| RD2-score05-1=3
+| RD2-score05-2=5
+| RD2-score05-3=5
+| RD2-score05-4=6
+| RD2-score05-5=
+| RD2-score05-6=
+| RD2-score05-7=
+| RD2-seed06=17
+| RD2-team06='''{{flagicon|PRK}} [[Kim Hye-song (table tennis)|Kim H]]<br />{{flagicon|PRK}} [[Kim Jong (table tennis)|Kim J]]'''
+| RD2-score06-1='''11'''
+| RD2-score06-2='''11'''
+| RD2-score06-3='''11'''
+| RD2-score06-4='''11'''
+| RD2-score06-5=
+| RD2-score06-6=
+| RD2-score06-7=
+
+| RD2-seed07=
+| RD2-team07='''{{flagicon|NED}} [[Li Jie (table tennis)|Li]]<br />{{flagicon|POL}} [[Li Qian (Polish table tennis)|Li]]'''
+| RD2-score07-1='''11'''
+| RD2-score07-2=6
+| RD2-score07-3='''11'''
+| RD2-score07-4='''11'''
+| RD2-score07-5=9
+| RD2-score07-6=4
+| RD2-score07-7='''11'''
+| RD2-seed08=4
+| RD2-team08={{flagicon|JPN}} [[Miu Hirano|Hirano]]<br />{{flagicon|JPN}} [[Mima Ito|Ito]]
+| RD2-score08-1=8
+| RD2-score08-2='''11'''
+| RD2-score08-3=8
+| RD2-score08-4=8
+| RD2-score08-5='''11'''
+| RD2-score08-6='''11'''
+| RD2-score08-7=9
+
+| RD3-seed01=6
+| RD3-team01={{flagicon|HKG}} [[Doo Hoi Kem|Doo]]<br />{{flagicon|HKG}} [[Lee Ho Ching|Lee]]
+| RD3-score01-1=8
+| RD3-score01-2=8
+| RD3-score01-3=10
+| RD3-score01-4=7
+| RD3-score01-5=
+| RD3-score01-6=
+| RD3-score01-7=
+| RD3-seed02=28
+| RD3-team02='''{{flagicon|TUR}} [[Melek Hu|Hu]]<br />{{flagicon|ESP}} [[Shen Yanfei|Shen]]'''
+| RD3-score02-1='''11'''
+| RD3-score02-2='''11'''
+| RD3-score02-3='''12'''
+| RD3-score02-4='''11'''
+| RD3-score02-5=
+| RD3-score02-6=
+| RD3-score02-7=
+
+| RD3-seed03=17
+| RD3-team03={{Nowrap|{{flagicon|PRK}} [[Kim Hye-song (table tennis)|Kim H]]}}<br />{{flagicon|PRK}} [[Kim Jong (table tennis)|Kim J]]
+| RD3-score03-1=6
+| RD3-score03-2=7
+| RD3-score03-3=6
+| RD3-score03-4=10
+| RD3-score03-5=
+| RD3-score03-6=
+| RD3-score03-7=
+| RD3-seed04=
+| RD3-team04='''{{flagicon|NED}} [[Li Jie (table tennis)|Li]]<br />{{flagicon|POL}} [[Li Qian (Polish table tennis)|Li]]'''
+| RD3-score04-1='''11'''
+| RD3-score04-2='''11'''
+| RD3-score04-3='''11'''
+| RD3-score04-4='''12'''
+| RD3-score04-5=
+| RD3-score04-6=
+| RD3-score04-7=
+
+| RD4-seed01=28
+| RD4-team01={{flagicon|TUR}} [[Melek Hu|Hu]]<br />{{Nowrap|{{flagicon|ESP}} [[Shen Yanfei|Shen]]}}
+| RD4-score01-1=2
+| RD4-score01-2=6
+| RD4-score01-3=9
+| RD4-score01-4=4
+| RD4-score01-5=
+| RD4-score01-6=
+| RD4-score01-7=
+| RD4-seed02=
+| RD4-team02='''{{flagicon|NED}} [[Li Jie (table tennis)|Li]]<br />{{flagicon|POL}} [[Li Qian (Polish table tennis)|Li]]'''
+| RD4-score02-1='''11'''
+| RD4-score02-2='''11'''
+| RD4-score02-3='''11'''
+| RD4-score02-4='''11'''
+| RD4-score02-5=
+| RD4-score02-6=
+| RD4-score02-7=
+
+}}
+
+===Bottom half===
+
+====Section 3====
+{{16TeamBracket|compact=y|sets=7
+|nowrap=y
+| RD1=First round
+| RD2=Second round
+| RD3=Third round
+| RD4=Quarterfinals
+| team-width=140
+| score-width=20
+
+| RD1-seed01=3
+| RD1-team01='''{{flagicon|CHN}} [[Liu Shiwen|Liu]]<br />{{flagicon|CHN}} [[Zhu Yuling|Zhu]]'''
+| RD1-score01-1='''11'''
+| RD1-score01-2='''11'''
+| RD1-score01-3=10
+| RD1-score01-4='''11'''
+| RD1-score01-5='''11'''
+| RD1-score01-6=
+| RD1-score01-7=
+| RD1-seed02=
+| RD1-team02={{flagicon|THA}} [[Tamolwan Khetkhuan|Khetkhuan]]<br />{{flagicon|THA}} [[Orawan Paranang|Paranang]]
+| RD1-score02-1=7
+| RD1-score02-2=4
+| RD1-score02-3='''12'''
+| RD1-score02-4=8
+| RD1-score02-5=7
+| RD1-score02-6=
+| RD1-score02-7=
+
+| RD1-seed03=
+| RD1-team03={{flagicon|IND}} [[Mouma Das|Das]]<br />{{flagicon|IND}} [[Shamini Kumaresan|Kumaresan]]
+| RD1-score03-1='''11'''
+| RD1-score03-2=6
+| RD1-score03-3=1
+| RD1-score03-4=8
+| RD1-score03-5=7
+| RD1-score03-6=
+| RD1-score03-7=
+| RD1-seed04=26
+| RD1-team04='''{{flagicon|THA}} [[Nanthana Komwong|Komwong]]<br />{{flagicon|CHN}} [[Li Xiaodan|Li Xiaod]]'''
+| RD1-score04-1=7
+| RD1-score04-2='''11'''
+| RD1-score04-3='''11'''
+| RD1-score04-4='''11'''
+| RD1-score04-5='''11'''
+| RD1-score04-6=
+| RD1-score04-7=
+
+| RD1-seed05=19
+| RD1-team05='''{{flagicon|PUR}} [[Adriana Diaz (table tennis)|A Diaz]]<br />{{flagicon|PUR}} [[Melanie Diaz|M Diaz]]'''
+| RD1-score05-1=4
+| RD1-score05-2='''11'''
+| RD1-score05-3=7
+| RD1-score05-4='''11'''
+| RD1-score05-5=5
+| RD1-score05-6='''11'''
+| RD1-score05-7='''11'''
+| RD1-seed06=
+| RD1-team06={{flagicon|SUI}} [[Rahel Aschwanden|Aschwanden]]<br />{{flagicon|SUI}} [[Rachel Moret|Moret]]
+| RD1-score06-1='''11'''
+| RD1-score06-2=7
+| RD1-score06-3='''11'''
+| RD1-score06-4=8
+| RD1-score06-5='''11'''
+| RD1-score06-6=7
+| RD1-score06-7=4
+
+| RD1-seed07=
+| RD1-team07={{flagicon|CAN}} [[Luo Anqi|Luo]]<br />{{flagicon|CAN}} [[Zhang Mo (table tennis)|Zhang]]
+| RD1-score07-1=7
+| RD1-score07-2=4
+| RD1-score07-3='''14'''
+| RD1-score07-4=2
+| RD1-score07-5='''11'''
+| RD1-score07-6=3
+| RD1-score07-7=
+| RD1-seed08=16
+| RD1-team08='''{{flagicon|RUS}} [[Maria Dolgikh|Dolgikh]]<br />{{flagicon|RUS}} [[Polina Mikhailova|Mikhailova]]'''
+| RD1-score08-1='''11'''
+| RD1-score08-2='''11'''
+| RD1-score08-3=12
+| RD1-score08-4='''11'''
+| RD1-score08-5=8
+| RD1-score08-6='''11'''
+| RD1-score08-7=
+
+| RD1-seed09=15
+| RD1-team09='''{{flagicon|TPE}} [[Cheng I-ching|Cheng]]<br />{{flagicon|TPE}} [[Lee I-chen|Lee]]'''
+| RD1-score09-1='''11'''
+| RD1-score09-2='''11'''
+| RD1-score09-3='''11'''
+| RD1-score09-4='''11'''
+| RD1-score09-5=
+| RD1-score09-6=
+| RD1-score09-7=
+| RD1-seed10=
+| RD1-team10={{flagicon|KOR}} [[Hwang Ji-na|Hwang]]<br />{{flagicon|KOR}} [[Lee Zion|Lee]]
+| RD1-score10-1=4
+| RD1-score10-2=7
+| RD1-score10-3=9
+| RD1-score10-4=5
+| RD1-score10-5=
+| RD1-score10-6=
+| RD1-score10-7=
+
+| RD1-seed11=
+| RD1-team11='''{{flagicon|MEX}} [[Mercedes Madrid|Madrid]]<br />{{flagicon|MEX}} [[Yadira Silva|Silva]]'''
+| RD1-score11-1=
+| RD1-score11-2=
+| RD1-score11-3=
+| RD1-score11-4=
+| RD1-score11-5=
+| RD1-score11-6=
+| RD1-score11-7=
+| RD1-seed12=24
+| RD1-team12={{flagicon|ARG}} [[Camila Arguelles|Arguelles]]<br />{{flagicon|ARG}} [[Ana Codina|Codina]]
+| RD1-score12-1=w/o
+| RD1-score12-2=
+| RD1-score12-3=
+| RD1-score12-4=
+| RD1-score12-5=
+| RD1-score12-6=
+| RD1-score12-7=
+
+| RD1-seed13=27
+| RD1-team13='''{{flagicon|BRA}} [[Lin Gui (table tennis)|Gui]]<br />{{flagicon|BRA}} [[Caroline Kumahara|Kumahara]]'''
+| RD1-score13-1=11
+| RD1-score13-2='''11'''
+| RD1-score13-3='''11'''
+| RD1-score13-4=2
+| RD1-score13-5='''11'''
+| RD1-score13-6='''11'''
+| RD1-score13-7=
+| RD1-seed14=
+| RD1-team14={{flagicon|NZL}} [[Sun Yang (table tennis)|Sun]]<br />{{flagicon|NZL}} [[Annie Yang|Yang]]
+| RD1-score14-1='''13'''
+| RD1-score14-2=5
+| RD1-score14-3=7
+| RD1-score14-4='''11'''
+| RD1-score14-5=4
+| RD1-score14-6=6
+| RD1-score14-7=
+
+| RD1-seed15=
+| RD1-team15={{flagicon|GUA}} [[Mabelyn Enriquez|Enriquez]]<br />{{flagicon|GUA}} [[Andrea Estrada|Estrada]]
+| RD1-score15-1=9
+| RD1-score15-2=7
+| RD1-score15-3=3
+| RD1-score15-4=3
+| RD1-score15-5=
+| RD1-score15-6=
+| RD1-score15-7=
+| RD1-seed16=5
+| RD1-team16='''{{Nowrap|{{flagicon|POL}} [[Katarzyna Grzybowska|Grzybowska]]}}<br />{{flagicon|POL}} [[Natalia Partyka|Partyka]]'''
+| RD1-score16-1='''11'''
+| RD1-score16-2='''11'''
+| RD1-score16-3='''11'''
+| RD1-score16-4='''11'''
+| RD1-score16-5=
+| RD1-score16-6=
+| RD1-score16-7=
+
+| RD2-seed01=3
+| RD2-team01='''{{flagicon|CHN}} [[Liu Shiwen|Liu]]<br />{{flagicon|CHN}} [[Zhu Yuling|Zhu]]'''
+| RD2-score01-1='''11'''
+| RD2-score01-2='''13'''
+| RD2-score01-3='''11'''
+| RD2-score01-4='''11'''
+| RD2-score01-5=
+| RD2-score01-6=
+| RD2-score01-7=
+| RD2-seed02=26
+| RD2-team02={{flagicon|THA}} [[Nanthana Komwong|Komwong]]<br />{{flagicon|CHN}} [[Li Xiaodan|Li Xiaod]]
+| RD2-score02-1=7
+| RD2-score02-2=11
+| RD2-score02-3=3
+| RD2-score02-4=5
+| RD2-score02-5=
+| RD2-score02-6=
+| RD2-score02-7=
+
+| RD2-seed03=19
+| RD2-team03={{flagicon|PUR}} [[Adriana Diaz (table tennis)|A Diaz]]<br />{{flagicon|PUR}} [[Melanie Diaz|M Diaz]]
+| RD2-score03-1='''11'''
+| RD2-score03-2=6
+| RD2-score03-3=3
+| RD2-score03-4=4
+| RD2-score03-5=2
+| RD2-score03-6=
+| RD2-score03-7=
+| RD2-seed04=16
+| RD2-team04='''{{flagicon|RUS}} [[Maria Dolgikh|Dolgikh]]<br />{{flagicon|RUS}} [[Polina Mikhailova|Mikhailova]]'''
+| RD2-score04-1=3
+| RD2-score04-2='''11'''
+| RD2-score04-3='''11'''
+| RD2-score04-4='''11'''
+| RD2-score04-5='''11'''
+| RD2-score04-6=
+| RD2-score04-7=
+
+| RD2-seed05=15
+| RD2-team05='''{{flagicon|TPE}} [[Cheng I-ching|Cheng]]<br />{{flagicon|TPE}} [[Lee I-chen|Lee]]'''
+| RD2-score05-1='''11'''
+| RD2-score05-2='''11'''
+| RD2-score05-3='''11'''
+| RD2-score05-4='''11'''
+| RD2-score05-5=
+| RD2-score05-6=
+| RD2-score05-7=
+| RD2-seed06=
+| RD2-team06={{flagicon|MEX}} [[Mercedes Madrid|Madrid]]<br />{{flagicon|MEX}} [[Yadira Silva|Silva]]
+| RD2-score06-1=2
+| RD2-score06-2=3
+| RD2-score06-3=6
+| RD2-score06-4=8
+| RD2-score06-5=
+| RD2-score06-6=
+| RD2-score06-7=
+
+| RD2-seed07=27
+| RD2-team07={{flagicon|BRA}} [[Lin Gui (table tennis)|Gui]]<br />{{flagicon|BRA}} [[Caroline Kumahara|Kumahara]]
+| RD2-score07-1=9
+| RD2-score07-2=9
+| RD2-score07-3=5
+| RD2-score07-4=4
+| RD2-score07-5=
+| RD2-score07-6=
+| RD2-score07-7=
+| RD2-seed08=5
+| RD2-team08='''{{Nowrap|{{flagicon|POL}} [[Katarzyna Grzybowska|Grzybowska]]}}<br />{{flagicon|POL}} [[Natalia Partyka|Partyka]]'''
+| RD2-score08-1='''11'''
+| RD2-score08-2='''11'''
+| RD2-score08-3='''11'''
+| RD2-score08-4='''11'''
+| RD2-score08-5=
+| RD2-score08-6=
+| RD2-score08-7=
+
+| RD3-seed01=3
+| RD3-team01='''{{flagicon|CHN}} [[Liu Shiwen|Liu]]<br />{{flagicon|CHN}} [[Zhu Yuling|Zhu]]'''
+| RD3-score01-1='''13'''
+| RD3-score01-2='''12'''
+| RD3-score01-3='''11'''
+| RD3-score01-4='''11'''
+| RD3-score01-5=
+| RD3-score01-6=
+| RD3-score01-7=
+| RD3-seed02=16
+| RD3-team02={{flagicon|RUS}} [[Maria Dolgikh|Dolgikh]]<br />{{flagicon|RUS}} [[Polina Mikhailova|Mikhailova]]
+| RD3-score02-1=11
+| RD3-score02-2=10
+| RD3-score02-3=2
+| RD3-score02-4=5
+| RD3-score02-5=
+| RD3-score02-6=
+| RD3-score02-7=
+
+| RD3-seed03=15
+| RD3-team03='''{{flagicon|TPE}} [[Cheng I-ching|Cheng]]<br />{{flagicon|TPE}} [[Lee I-chen|Lee]]'''
+| RD3-score03-1=9
+| RD3-score03-2='''11'''
+| RD3-score03-3=11
+| RD3-score03-4=9
+| RD3-score03-5='''11'''
+| RD3-score03-6='''11'''
+| RD3-score03-7='''13'''
+| RD3-seed04=5
+| RD3-team04={{Nowrap|{{flagicon|POL}} [[Katarzyna Grzybowska|Grzybowska]]}}<br />{{flagicon|POL}} [[Natalia Partyka|Partyka]]
+| RD3-score04-1='''11'''
+| RD3-score04-2=9
+| RD3-score04-3='''13'''
+| RD3-score04-4='''11'''
+| RD3-score04-5=3
+| RD3-score04-6=9
+| RD3-score04-7=11
+
+| RD4-seed01=3
+| RD4-team01='''{{flagicon|CHN}} [[Liu Shiwen|Liu]]<br />{{flagicon|CHN}} [[Zhu Yuling|Zhu]]'''
+| RD4-score01-1='''11'''
+| RD4-score01-2='''11'''
+| RD4-score01-3='''11'''
+| RD4-score01-4='''11'''
+| RD4-score01-5=
+| RD4-score01-6=
+| RD4-score01-7=
+| RD4-seed02=15
+| RD4-team02={{Nowrap|{{flagicon|TPE}} [[Cheng I-ching|Cheng]]}}<br />{{flagicon|TPE}} [[Lee I-chen|Lee]]
+| RD4-score02-1=9
+| RD4-score02-2=8
+| RD4-score02-3=5
+| RD4-score02-4=3
+| RD4-score02-5=
+| RD4-score02-6=
+| RD4-score02-7=
+
+}}
+
+====Section 4====
+{{16TeamBracket|compact=y|sets=7
+|nowrap=y
+| RD1=First round
+| RD2=Second round
+| RD3=Third round
+| RD4=Quarterfinals
+| team-width=140
+| score-width=20
+
+| RD1-seed01=8
+| RD1-team01='''{{flagicon|KOR}} [[Park Young-sook|Park]]<br />{{flagicon|KOR}} [[Yang Ha-eun|Yang]]'''
+| RD1-score01-1='''11'''
+| RD1-score01-2='''13'''
+| RD1-score01-3=4
+| RD1-score01-4='''11'''
+| RD1-score01-5='''11'''
+| RD1-score01-6=
+| RD1-score01-7=
+| RD1-seed02=
+| RD1-team02={{Nowrap|{{flagicon|LTU}} [[Rūta Paškauskienė|Paškauskienė]]}}<br />{{flagicon|UKR}} [[Margaryta Pesotska|Pesotska]]
+| RD1-score02-1=6
+| RD1-score02-2=11
+| RD1-score02-3='''11'''
+| RD1-score02-4=9
+| RD1-score02-5=7
+| RD1-score02-6=
+| RD1-score02-7=
+
+| RD1-seed03=
+| RD1-team03={{flagicon|ARG}} [[Agustina Iwasa|Iwasa]]<br />{{flagicon|CHI}} [[Katherine Low|Low]]
+| RD1-score03-1=8
+| RD1-score03-2=8
+| RD1-score03-3=4
+| RD1-score03-4=12
+| RD1-score03-5=
+| RD1-score03-6=
+| RD1-score03-7=
+| RD1-seed04=23
+| RD1-team04='''{{flagicon|CZE}} [[Kateřina Pěnkavová|Pěnkavová]]<br />{{flagicon|CZE}} [[Renáta Štrbíková|Štrbíková]]'''
+| RD1-score04-1='''11'''
+| RD1-score04-2='''11'''
+| RD1-score04-3='''11'''
+| RD1-score04-4='''14'''
+| RD1-score04-5=
+| RD1-score04-6=
+| RD1-score04-7=
+
+| RD1-seed05=25
+| RD1-team05='''{{flagicon|CHI}} [[Natalia Castellano|Castellano]]<br />{{flagicon|CHI}} [[Paulina Vega (table tennis)|Vega]]'''
+| RD1-score05-1='''15'''
+| RD1-score05-2=5
+| RD1-score05-3='''11'''
+| RD1-score05-4='''11'''
+| RD1-score05-5=10
+| RD1-score05-6=15
+| RD1-score05-7='''11'''
+| RD1-seed06=
+| RD1-team06={{flagicon|CRO}} [[Petra Petek|Petek]]<br />{{flagicon|CRO}} [[Tian Yuan (table tennis)|Tian]]
+| RD1-score06-1=13
+| RD1-score06-2='''11'''
+| RD1-score06-3=9
+| RD1-score06-4=9
+| RD1-score06-5='''12'''
+| RD1-score06-6='''17'''
+| RD1-score06-7=2
+
+| RD1-seed07=
+| RD1-team07={{flagicon|NGA}} [[Offiong Edem|Edem]]<br />{{flagicon|NGA}} [[Janet Effiom|Effiom]]
+| RD1-score07-1=
+| RD1-score07-2=
+| RD1-score07-3=
+| RD1-score07-4=
+| RD1-score07-5=
+| RD1-score07-6=
+| RD1-score07-7=
+| RD1-seed08=12
+| RD1-team08='''{{flagicon|AUT}} [[Liu Jia|Liu]]<br />{{flagicon|CZE}} [[Iveta Vacenovská|Vacenovská]]'''
+| RD1-score08-1=w/o
+| RD1-score08-2=
+| RD1-score08-3=
+| RD1-score08-4=
+| RD1-score08-5=
+| RD1-score08-6=
+| RD1-score08-7=
+
+| RD1-seed09=9
+| RD1-team09='''{{flagicon|HKG}} [[Jiang Huajun|Jiang]]<br />{{flagicon|HKG}} [[Tie Ya Na|Tie]]'''
+| RD1-score09-1='''11'''
+| RD1-score09-2='''11'''
+| RD1-score09-3='''11'''
+| RD1-score09-4='''11'''
+| RD1-score09-5=
+| RD1-score09-6=
+| RD1-score09-7=
+| RD1-seed10=
+| RD1-team10={{flagicon|BLR}} [[Alina Arlouskaya|Arlouskaya]]<br />{{flagicon|BLR}} [[Katsiaryna Baravok|Baravok]]
+| RD1-score10-1=4
+| RD1-score10-2=5
+| RD1-score10-3=6
+| RD1-score10-4=6
+| RD1-score10-5=
+| RD1-score10-6=
+| RD1-score10-7=
+
+| RD1-seed11=
+| RD1-team11='''{{flagicon|SRB}} [[Anamaria Erdelji|Erdelji]]<br />{{flagicon|SRB}} [[Gabriela Feher|Feher]]'''
+| RD1-score11-1=w/o
+| RD1-score11-2=
+| RD1-score11-3=
+| RD1-score11-4=
+| RD1-score11-5=
+| RD1-score11-6=
+| RD1-score11-7=
+| RD1-seed12=21
+| RD1-team12={{flagicon|HUN}} [[Szandra Pergel|Pergel]]<br />{{flagicon|ROU}} [[Elizabeta Samara|Samara]]
+| RD1-score12-1=
+| RD1-score12-2=
+| RD1-score12-3=
+| RD1-score12-4=
+| RD1-score12-5=
+| RD1-score12-6=
+| RD1-score12-7=
+
+| RD1-seed13=20
+| RD1-team13='''{{flagicon|SWE}} [[Matilda Ekholm|Ekholm]]<br />{{flagicon|CRO}} [[Lea Rakovac|Rakovac]]'''
+| RD1-score13-1='''11'''
+| RD1-score13-2='''11'''
+| RD1-score13-3=8
+| RD1-score13-4=6
+| RD1-score13-5='''11'''
+| RD1-score13-6='''11'''
+| RD1-score13-7=
+| RD1-seed14=
+| RD1-team14={{flagicon|NED}} [[Britt Eerland|Eerland]]<br />{{flagicon|NED}} [[Li Jiao (table tennis)|Li]]
+| RD1-score14-1=9
+| RD1-score14-2=7
+| RD1-score14-3='''11'''
+| RD1-score14-4='''11'''
+| RD1-score14-5=9
+| RD1-score14-6=1
+| RD1-score14-7=
+
+| RD1-seed15=
+| RD1-team15={{flagicon|IRN}} [[Mahjobeh Omrani|Omrani]]<br />{{flagicon|IRN}} [[Neda Shahsavari|Shahsavari]]
+| RD1-score15-1=5
+| RD1-score15-2=1
+| RD1-score15-3=5
+| RD1-score15-4=8
+| RD1-score15-5=
+| RD1-score15-6=
+| RD1-score15-7=
+| RD1-seed16=2
+| RD1-team16='''{{flagicon|SIN}} [[Feng Tianwei|Feng]]<br />{{flagicon|SIN}} [[Yu Mengyu|Yu]]'''
+| RD1-score16-1='''11'''
+| RD1-score16-2='''11'''
+| RD1-score16-3='''11'''
+| RD1-score16-4='''11'''
+| RD1-score16-5=
+| RD1-score16-6=
+| RD1-score16-7=
+
+| RD2-seed01=8
+| RD2-team01='''{{flagicon|KOR}} [[Park Young-sook|Park]]<br />{{flagicon|KOR}} [[Yang Ha-eun|Yang]]'''
+| RD2-score01-1='''11'''
+| RD2-score01-2='''11'''
+| RD2-score01-3='''11'''
+| RD2-score01-4='''11'''
+| RD2-score01-5=
+| RD2-score01-6=
+| RD2-score01-7=
+| RD2-seed02=23
+| RD2-team02={{flagicon|CZE}} [[Kateřina Pěnkavová|Pěnkavová]]<br />{{flagicon|CZE}} [[Renáta Štrbíková|Štrbíková]]
+| RD2-score02-1=7
+| RD2-score02-2=1
+| RD2-score02-3=3
+| RD2-score02-4=7
+| RD2-score02-5=
+| RD2-score02-6=
+| RD2-score02-7=
+
+| RD2-seed03=25
+| RD2-team03={{flagicon|CHI}} [[Natalia Castellano|Castellano]]<br />{{flagicon|CHI}} [[Paulina Vega (table tennis)|Vega]]
+| RD2-score03-1=9
+| RD2-score03-2=4
+| RD2-score03-3=6
+| RD2-score03-4=3
+| RD2-score03-5=
+| RD2-score03-6=
+| RD2-score03-7=
+| RD2-seed04=12
+| RD2-team04='''{{flagicon|AUT}} [[Liu Jia|Liu]]<br />{{Nowrap|{{flagicon|CZE}} [[Iveta Vacenovská|Vacenovská]]}}'''
+| RD2-score04-1='''11'''
+| RD2-score04-2='''11'''
+| RD2-score04-3='''11'''
+| RD2-score04-4='''11'''
+| RD2-score04-5=
+| RD2-score04-6=
+| RD2-score04-7=
+
+| RD2-seed05=9
+| RD2-team05='''{{flagicon|HKG}} [[Jiang Huajun|Jiang]]<br />{{flagicon|HKG}} [[Tie Ya Na|Tie]]'''
+| RD2-score05-1='''11'''
+| RD2-score05-2='''11'''
+| RD2-score05-3='''11'''
+| RD2-score05-4=6
+| RD2-score05-5=8
+| RD2-score05-6='''15'''
+| RD2-score05-7=
+| RD2-seed06=
+| RD2-team06={{flagicon|SRB}} [[Anamaria Erdelji|Erdelji]]<br />{{flagicon|SRB}} [[Gabriela Feher|Feher]]
+| RD2-score06-1=9
+| RD2-score06-2=5
+| RD2-score06-3=6
+| RD2-score06-4='''11'''
+| RD2-score06-5='''11'''
+| RD2-score06-6=13
+| RD2-score06-7=
+
+| RD2-seed07=20
+| RD2-team07={{flagicon|SWE}} [[Matilda Ekholm|Ekholm]]<br />{{flagicon|CRO}} [[Lea Rakovac|Rakovac]]
+| RD2-score07-1='''11'''
+| RD2-score07-2=7
+| RD2-score07-3=5
+| RD2-score07-4=9
+| RD2-score07-5='''11'''
+| RD2-score07-6=3
+| RD2-score07-7=
+| RD2-seed08=2
+| RD2-team08='''{{flagicon|SIN}} [[Feng Tianwei|Feng]]<br />{{flagicon|SIN}} [[Yu Mengyu|Yu]]'''
+| RD2-score08-1=7
+| RD2-score08-2='''11'''
+| RD2-score08-3='''11'''
+| RD2-score08-4='''11'''
+| RD2-score08-5=3
+| RD2-score08-6='''11'''
+| RD2-score08-7=
+
+| RD3-seed01=8
+| RD3-team01='''{{flagicon|KOR}} [[Park Young-sook|Park]]<br />{{flagicon|KOR}} [[Yang Ha-eun|Yang]]'''
+| RD3-score01-1=8
+| RD3-score01-2=6
+| RD3-score01-3='''11'''
+| RD3-score01-4='''13'''
+| RD3-score01-5='''13'''
+| RD3-score01-6='''12'''
+| RD3-score01-7=
+| RD3-seed02=12
+| RD3-team02={{flagicon|AUT}} [[Liu Jia|Liu]]<br />{{Nowrap|{{flagicon|CZE}} [[Iveta Vacenovská|Vacenovská]]}}
+| RD3-score02-1='''11'''
+| RD3-score02-2='''11'''
+| RD3-score02-3=6
+| RD3-score02-4=11
+| RD3-score02-5=11
+| RD3-score02-6=10
+| RD3-score02-7=
+
+| RD3-seed03=9
+| RD3-team03={{flagicon|HKG}} [[Jiang Huajun|Jiang]]<br />{{flagicon|HKG}} [[Tie Ya Na|Tie]]
+| RD3-score03-1='''11'''
+| RD3-score03-2=7
+| RD3-score03-3=10
+| RD3-score03-4=7
+| RD3-score03-5=8
+| RD3-score03-6=
+| RD3-score03-7=
+| RD3-seed04=2
+| RD3-team04='''{{flagicon|SIN}} [[Feng Tianwei|Feng]]<br />{{flagicon|SIN}} [[Yu Mengyu|Yu]]'''
+| RD3-score04-1=8
+| RD3-score04-2='''11'''
+| RD3-score04-3='''12'''
+| RD3-score04-4='''11'''
+| RD3-score04-5='''11'''
+| RD3-score04-6=
+| RD3-score04-7=
+
+| RD4-seed01=8
+| RD4-team01={{flagicon|KOR}} [[Park Young-sook|Park]]<br />{{Nowrap|{{flagicon|KOR}} [[Yang Ha-eun|Yang]]}}
+| RD4-score01-1=8
+| RD4-score01-2=5
+| RD4-score01-3=7
+| RD4-score01-4='''11'''
+| RD4-score01-5=9
+| RD4-score01-6=
+| RD4-score01-7=
+| RD4-seed02=2
+| RD4-team02={{Nowrap|'''{{flagicon|SIN}} [[Feng Tianwei|Feng]]'''}}<br />{{flagicon|SIN}} [[Yu Mengyu|Yu]]
+| RD4-score02-1='''11'''
+| RD4-score02-2='''11'''
+| RD4-score02-3='''11'''
+| RD4-score02-4=6
+| RD4-score02-5='''11'''
+| RD4-score02-6=
+| RD4-score02-7=
+}}
+
+==References==
+{{reflist}}
+
+==External links==
+*[http://www.ittf.com/competitions/test/matches_per_round1.asp?s_Event_Type=WD&Competition_ID=2503&rnd=64 Main Draw]
+*[http://www.ittf.com/competitions/test/matches_per_round1.asp?s_Event_Type=WQ&Competition_ID=2503&rnd=64 Qualifying Draw]
+
+{{World Table Tennis Championships}}
+
+{{DEFAULTSORT:2015 World Table Tennis Championships - Women's Doubles}}
+[[Category:2015 World Table Tennis Championships|Women's doubles]]
+[[Category:2015 in women's table tennis|World]]
+[[Category:Women's events at the World Table Tennis Championships]]

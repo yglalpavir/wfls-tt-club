@@ -105,6 +105,8 @@ const ITEMS_PER_PAGE = 10;
 let initialScoresData = null, eventCoefficients = null, seasonsData = null, playerTagsData = null;
 const SCORE_FLOOR = 1200, HALF_LIFE_DAYS = 180;
 let DEFAULT_INITIAL_SCORE = 1300;  // 可配置的默认初始分（WTT settings.json 中的 baseScore 可覆盖）
+let SCORE_TIME_DECAY_ENABLED = true;  // 赛季内时间衰减开关（WTT 关闭）
+let LOSER_POINT_MULTIPLIER = 0.8;     // 负者扣分系数（WTT 设为 1.0，即负者扣分=胜者得分）
 
 const hamburger = document.getElementById('hamburger'), navMenu = document.getElementById('navMenu'), navbar = document.getElementById('navbar');
 const themeToggle = document.getElementById('themeToggle'), langToggle = document.getElementById('langToggle');

@@ -1,0 +1,1338 @@
+{{Short description|none}}
+{{Infobox sports competition event
+| event = Men's doubles
+| competition = 2015 World Table Tennis Championships
+| venue = [[Suzhou International Expo Center]]
+| location = [[Suzhou]], [[China]]
+| dates = 26 April–2 May
+| win_label = Final score
+| win_value = 12–14, 11–7, 11–9, 9–11, 11–7, 11–9
+| gold = [[Xu Xin (table tennis)|Xu Xin]]<br />[[Zhang Jike]]
+| gold_nation = CHN
+| silver = [[Fan Zhendong]]<br />[[Zhou Yu (table tennis)|Zhou Yu]]
+| silver_nation = CHN
+| bronze = [[Lee Sang-su]] <br />[[Seo Hyun-deok]]
+| bronze_nation = KOR
+| bronze2 = [[Kenta Matsudaira]] <br />[[Koki Niwa]]
+| bronze2_nation = JPN
+| prev = [[2013 World Table Tennis Championships – Men's doubles|2013]]
+| next = [[2017 World Table Tennis Championships – Men's doubles|2017]]
+}}
+{{WorldTableTennisChampionshipsEvents|year=2015}}
+{{main|2015 World Table Tennis Championships}}
+
+The '''2015 World Table Tennis Championships men's doubles''' was the 53rd edition of the men's doubles championship.<ref>{{cite web|url=http://www.allabouttabletennis.com/world-table-tennis-championships-medal-winners.html|title=List of Winners|publisher=All About Table Tennis}}</ref>
+<ref name=ITTF>{{cite web|url=http://www.ittf.com/museum/WorldChResultsMD.pdf|archive-url=https://web.archive.org/web/20120412045730/http://www.ittf.com/museum/WorldChResultsMD.pdf|url-status=dead|archive-date=2012-04-12|title=2015 results|publisher=International Table Tennis Federation}}</ref>
+
+[[Chen Chien-an]] and [[Chuang Chih-yuan]] were the defending champions, but chose not to participate this year.<ref>[http://www.ittf.com/ittf_tournaments/ittf_entries_doubles_wttc_web.asp?Gender=M&Tour_ID=2503&Doubles=1 Entry list]</ref>
+
+[[Xu Xin (table tennis)|Xu Xin]] and [[Zhang Jike]] won the title by defeating [[Fan Zhendong]] and [[Zhou Yu (table tennis)|Zhou Yu]] 12–14, 11–7, 11–9, 9–11, 11–7, 11–9 in the final.<ref>{{cite web|url=http://www.ittf.com/_front_page/ittf_full_story1.asp?ID=39531&Competition_ID=2503&|title=Xu Xin Adds to Title Hall, Partners Zhang Jike to Men's Doubles Gold|date=2 May 2015|work=ittf.com}}</ref>
+
+==Seeds==
+Matches were best of 5 games in qualification and best of 7 games in the 64-player sized main draw.<ref>[http://www.ittf.com//World_Events/wttc_2015/Playing%20system_WTTC2015.pdf Playing system]</ref><ref>[http://www.ittf.com/ittf_tournaments/ittf_entries_doubles_wttc_web.asp?Gender=M&Tour_ID=2503&Seeded_Doubles=1&FormParticipants_Sorting=26&FormParticipants_Sorted=& Seeds]</ref>
+
+{{colbegin}}
+# {{flagicon|TPE}} [[Chiang Hung-chieh]] / {{flagicon|TPE}} [[Huang Sheng-sheng]] ''(second round)''
+# {{flagicon|JPN}} [[Kenta Matsudaira]] / {{flagicon|JPN}} [[Koki Niwa]] ''(semifinals)''
+# {{flagicon|HKG}} [[Tang Peng]] / {{flagicon|HKG}} [[Wong Chun Ting]] ''(third round)''
+# {{flagicon|TPE}} [[Chen Chien-an]] / {{flagicon|TPE}} [[Chuang Chih-yuan]] ''(second round)''
+# {{flagicon|AUT}} [[Robert Gardos]] / {{flagicon|AUT}} [[Daniel Habesohn]] ''(third round)''
+# {{flagicon|RUS}} [[Fedor Kuzmin]] / {{flagicon|RUS}} [[Grigory Vlasov]] ''(second round)''
+# {{flagicon|CHN}} '''[[Xu Xin (table tennis)|Xu Xin]]''' / {{flagicon|CHN}} '''[[Zhang Jike]] (champions)'''
+# {{flagicon|RUS}} [[Alexey Liventsov]] / {{flagicon|RUS}} [[Mikhail Paikov]] ''(second round)''
+# {{flagicon|CRO}} [[Tan Ruiwu]] / {{flagicon|CRO}} [[Wang Zengyi]] ''(second round)''
+# {{flagicon|ESP}} [[He Zhi Wen]] / {{flagicon|ESP}} [[Carlos Machado (table tennis)|Carlos Machado]] ''(second round)''
+# {{flagicon|NGA}} [[Quadri Aruna]] / {{flagicon|NGA}} [[Makanjuola Kazeem]] ''(second round)''
+# {{flagicon|KOR}} [[Jung Young-sik]] / {{flagicon|KOR}} [[Kim Min-seok (table tennis)|Kim Min-seok]] ''(quarterfinals)''
+# {{flagicon|KOR}} [[Lee Sang-su]] / {{flagicon|KOR}} [[Seo Hyun-deok]] ''(semifinals)''
+# {{flagicon|SWE}} [[Kristian Karlsson]] / {{flagicon|SWE}} [[Mattias Karlsson (table tennis)|Mattias Karlsson]] ''(third round)''
+# {{flagicon|CHN}} [[Fan Zhendong]] / {{flagicon|CHN}} [[Zhou Yu (table tennis)|Zhou Yu]] ''(final)''
+# {{flagicon|JPN}} [[Masataka Morizono]] / {{flagicon|JPN}} [[Yuya Oshima]] ''(quarterfinals)''
+# {{flagicon|GER}} [[Timo Boll]] / {{flagicon|CHN}} [[Ma Long (table tennis)|Ma Long]] ''(second round)''
+# {{flagicon|AUS}} [[David Powell (table tennis)|David Powell]] / {{flagicon|AUS}} [[Kane Townsend]] ''(first round)''
+# {{flagicon|POR}} [[Tiago Apolónia]] / {{flagicon|POR}} [[João Monteiro (table tennis)|João Monteiro]] ''(third round)''
+# {{flagicon|EGY}} [[Khalid Assar]] / {{flagicon|EGY}} [[Omar Assar]] ''(second round)''
+# {{flagicon|FRA}} [[Simon Gauzy]] / {{flagicon|FRA}} [[Emmanuel Lebesson]] ''(third round)''
+# {{flagicon|SIN}} [[Gao Ning]] / {{flagicon|SIN}} [[Yang Zi (table tennis)|Yang Zi]] ''(second round)''
+# {{flagicon|BRA}} [[Hugo Calderano]] / {{flagicon|BRA}} [[Gustavo Tsuboi]] ''(third round)''
+# {{flagicon|FRA}} [[Adrien Mattenet]] / {{flagicon|FRA}} [[Abdel-Kader Salifou]] ''(first round)''
+# {{flagicon|GER}} [[Patrick Franziska]] / {{flagicon|GER}} [[Bastian Steger]] ''(second round)''
+# {{flagicon|EGY}} [[Mohamed El-Beiali]] / {{flagicon|EGY}} [[El-sayed Lashin]] ''(first round)''
+# {{flagicon|POR}} [[Chen Diogo]] / {{flagicon|POR}} [[Marcos Freitas]] ''(third round)''
+# {{flagicon|CHI}} [[Gustavo Gómez (table tennis)|Gustavo Gómez]] / {{flagicon|CHI}} [[Manuel Moya]] ''(first round)''
+# {{flagicon|PRK}} [[Kim Hyok-bong]] / {{flagicon|PRK}} [[Pak Sin-hyok]] ''(quarterfinals)''
+# {{flagicon|SRB}} [[Marko Jevtović (table tennis)|Marko Jevtović]] / {{flagicon|SRB}} [[Žolt Pete]] ''(second round)''
+# {{flagicon|ARG}} [[Gaston Alto]] / {{flagicon|ARG}} [[Pablo Tabachnik]] ''(first round)''
+# {{flagicon|HKG}} [[Ho Kwan Kit]] / {{flagicon|HKG}} [[Li Hon Ming]] ''(first round)''
+{{colend}}
+
+==Draw==
+{{Table Tennis Draw Key}}
+
+===Finals===
+{{4TeamBracket|compact=y|sets=7
+|nowrap=y
+| RD1=Semifinals
+| RD2=Final
+| team-width=140
+| score-width=20
+
+| RD1-seed1=7
+| RD1-team1='''{{flagicon|CHN}} [[Xu Xin (table tennis)|Xu Xin]]<br />{{flagicon|CHN}} [[Zhang Jike]]'''
+| RD1-score1-1=9
+| RD1-score1-2='''11'''
+| RD1-score1-3='''11'''
+| RD1-score1-4='''11'''
+| RD1-score1-5=4
+| RD1-score1-6='''11'''
+| RD1-score1-7=
+| RD1-seed2=13
+| RD1-team2={{flagicon|KOR}} [[Lee Sang-su]]<br />{{flagicon|KOR}} [[Seo Hyun-deok]]
+| RD1-score2-1='''11'''
+| RD1-score2-2=6
+| RD1-score2-3=9
+| RD1-score2-4=6
+| RD1-score2-5='''11'''
+| RD1-score2-6=3
+| RD1-score2-7=
+
+| RD1-seed3=15
+| RD1-team3='''{{flagicon|CHN}} [[Fan Zhendong]]<br />{{flagicon|CHN}} [[Zhou Yu (table tennis)|Zhou Yu]]'''
+| RD1-score3-1='''11'''
+| RD1-score3-2='''11'''
+| RD1-score3-3='''11'''
+| RD1-score3-4='''11'''
+| RD1-score3-5=
+| RD1-score3-6=
+| RD1-score3-7=
+| RD1-seed4=2
+| RD1-team4={{flagicon|JPN}} [[Kenta Matsudaira]]<br />{{flagicon|JPN}} [[Koki Niwa]]
+| RD1-score4-1=6
+| RD1-score4-2=7
+| RD1-score4-3=6
+| RD1-score4-4=6
+| RD1-score4-5=
+| RD1-score4-6=
+| RD1-score4-7=
+
+| RD2-seed1=7
+| RD2-team1={{flagicon|CHN}} '''[[Xu Xin (table tennis)|Xu Xin]]<br />{{flagicon|CHN}} [[Zhang Jike]]'''
+| RD2-score1-1=12
+| RD2-score1-2='''11'''
+| RD2-score1-3='''11'''
+| RD2-score1-4=9
+| RD2-score1-5='''11'''
+| RD2-score1-6='''11'''
+| RD2-score1-7=
+| RD2-seed2=15
+| RD2-team2={{flagicon|CHN}} [[Fan Zhendong]]<br />{{flagicon|CHN}} [[Zhou Yu (table tennis)|Zhou Yu]]
+| RD2-score2-1='''14'''
+| RD2-score2-2=7
+| RD2-score2-3=9
+| RD2-score2-4='''11'''
+| RD2-score2-5=7
+| RD2-score2-6=9
+| RD2-score2-7=
+}}
+
+===Top half===
+====Section 1====
+{{16TeamBracket|compact=y|sets=7
+|nowrap=y
+| RD1=First round
+| RD2=Second round
+| RD3=Third round
+| RD4=Quarterfinals
+| team-width=140
+| score-width=20
+
+| RD1-seed01=1
+| RD1-team01={{flagicon|TPE}} '''[[Chiang Hung-chieh|Chiang]]<br />{{flagicon|TPE}} [[Huang Sheng-sheng|Huang]]'''
+| RD1-score01-1='''11'''
+| RD1-score01-2=10
+| RD1-score01-3='''12'''
+| RD1-score01-4='''11'''
+| RD1-score01-5=6
+| RD1-score01-6='''11'''
+| RD1-score01-7=
+| RD1-seed02=
+| RD1-team02={{flagicon|IND}} [[Soumyajit Ghosh|Ghosh]]<br />{{flagicon|IND}} [[Sanil Shetty|Shetty]]
+| RD1-score02-1=9
+| RD1-score02-2='''12'''
+| RD1-score02-3=10
+| RD1-score02-4=4
+| RD1-score02-5='''11'''
+| RD1-score02-6=8
+| RD1-score02-7=
+
+| RD1-seed03=
+| RD1-team03={{flagicon|POL}} '''[[Jakub Dyjas|Dyjas]]<br />{{flagicon|POL}} [[Daniel Górak|Górak]]'''
+| RD1-score03-1='''11'''
+| RD1-score03-2='''11'''
+| RD1-score03-3='''11'''
+| RD1-score03-4=7
+| RD1-score03-5='''11'''
+| RD1-score03-6=
+| RD1-score03-7=
+| RD1-seed04=24
+| RD1-team04={{flagicon|FRA}} [[Adrien Mattenet|Mattenet]]<br />{{flagicon|FRA}} [[Abdel-Kader Salifou|Salifou]]
+| RD1-score04-1=8
+| RD1-score04-2=9
+| RD1-score04-3=2
+| RD1-score04-4='''11'''
+| RD1-score04-5=9
+| RD1-score04-6=
+| RD1-score04-7=
+
+| RD1-seed05=25
+| RD1-team05={{flagicon|GER}} '''[[Patrick Franziska|Franziska]]<br />{{flagicon|GER}} [[Bastian Steger|Steger]]'''
+| RD1-score05-1='''11'''
+| RD1-score05-2='''11'''
+| RD1-score05-3=9
+| RD1-score05-4='''11'''
+| RD1-score05-5='''11'''
+| RD1-score05-6=
+| RD1-score05-7=
+| RD1-seed06=
+| RD1-team06={{flagicon|FIN}} [[Miikka O'Connor|O'Connor]]<br />{{flagicon|FIN}} [[Benedek Oláh|Oláh]]
+| RD1-score06-1=3
+| RD1-score06-2=5
+| RD1-score06-3='''11'''
+| RD1-score06-4=6
+| RD1-score06-5=7
+| RD1-score06-6=
+| RD1-score06-7=
+
+| RD1-seed07=
+| RD1-team07={{flagicon|IND}} [[Sharath Kamal|Kamal]]<br />{{Nowrap|{{flagicon|IND}} [[Sathiyan Gnanasekaran|Gnanasekaran]]}}
+| RD1-score07-1=4
+| RD1-score07-2='''11'''
+| RD1-score07-3=6
+| RD1-score07-4=4
+| RD1-score07-5=5
+| RD1-score07-6=
+| RD1-score07-7=
+| RD1-seed08=16
+| RD1-team08={{flagicon|JPN}} '''[[Masataka Morizono|Morizono]]<br />{{flagicon|JPN}} [[Yuya Oshima|Oshima]]'''
+| RD1-score08-1='''11'''
+| RD1-score08-2=9
+| RD1-score08-3='''11'''
+| RD1-score08-4='''11'''
+| RD1-score08-5='''11'''
+| RD1-score08-6=
+| RD1-score08-7=
+
+| RD1-seed09=14
+| RD1-team09={{flagicon|SWE}} '''[[Kristian Karlsson|K Karlsson]]<br />{{flagicon|SWE}} [[Mattias Karlsson (table tennis)|M Karlsson]]'''
+| RD1-score09-1=10
+| RD1-score09-2='''11'''
+| RD1-score09-3='''12'''
+| RD1-score09-4=7
+| RD1-score09-5='''11'''
+| RD1-score09-6='''13'''
+| RD1-score09-7=
+| RD1-seed10=
+| RD1-team10={{flagicon|SRB}} [[Aleksandar Karakašević|Karakašević]]<br />{{flagicon|SVN}} [[Bojan Tokič|Tokič]]
+| RD1-score10-1='''12'''
+| RD1-score10-2=3
+| RD1-score10-3=10
+| RD1-score10-4='''11'''
+| RD1-score10-5=9
+| RD1-score10-6=11
+| RD1-score10-7=
+
+| RD1-seed11=
+| RD1-team11={{flagicon|USA}} '''[[Kanak Jha|Jha]]<br />{{flagicon|USA}} [[Timothy Wang|Wang]]'''
+| RD1-score11-1='''11'''
+| RD1-score11-2='''11'''
+| RD1-score11-3='''11'''
+| RD1-score11-4=7
+| RD1-score11-5=7
+| RD1-score11-6=2
+| RD1-score11-7='''11'''
+| RD1-seed12=26
+| RD1-team12={{flagicon|EGY}} [[Mohamed El-Beiali|El-Beiali]]<br />{{flagicon|EGY}} [[El-sayed Lashin|Lashin]]
+| RD1-score12-1=7
+| RD1-score12-2=6
+| RD1-score12-3=9
+| RD1-score12-4='''11'''
+| RD1-score12-5='''11'''
+| RD1-score12-6='''11'''
+| RD1-score12-7=7
+
+| RD1-seed13=17
+| RD1-team13={{flagicon|GER}} '''[[Timo Boll|Boll]]<br />{{flagicon|CHN}} [[Ma Long (table tennis)|Ma]]'''
+| RD1-score13-1='''11'''
+| RD1-score13-2='''11'''
+| RD1-score13-3='''11'''
+| RD1-score13-4='''11'''
+| RD1-score13-5=
+| RD1-score13-6=
+| RD1-score13-7=
+| RD1-seed14=
+| RD1-team14={{flagicon|TUR}} [[Ibrahim Gündüz|Gündüz]]<br />{{flagicon|TUR}} [[Gençay Menge|Menge]]
+| RD1-score14-1=4
+| RD1-score14-2=9
+| RD1-score14-3=3
+| RD1-score14-4=5
+| RD1-score14-5=
+| RD1-score14-6=
+| RD1-score14-7=
+
+| RD1-seed15=
+| RD1-team15={{flagicon|PAR}} [[Marcelo Aguirre (table tennis)|Aguirre]]<br />{{flagicon|ARG}} [[Rodrigo Gilabert|Gilabert]]
+| RD1-score15-1=7
+| RD1-score15-2=4
+| RD1-score15-3=9
+| RD1-score15-4=4
+| RD1-score15-5=
+| RD1-score15-6=
+| RD1-score15-7=
+| RD1-seed16=7
+| RD1-team16={{flagicon|CHN}} '''[[Xu Xin (table tennis)|Xu]]<br />{{flagicon|CHN}} [[Zhang Jike|Zhang]]'''
+| RD1-score16-1='''11'''
+| RD1-score16-2='''11'''
+| RD1-score16-3='''11'''
+| RD1-score16-4='''11'''
+| RD1-score16-5=
+| RD1-score16-6=
+| RD1-score16-7=
+
+| RD2-seed01=1
+| RD2-team01={{flagicon|TPE}} [[Chiang Hung-chieh|Chiang]]<br />{{flagicon|TPE}} [[Huang Sheng-sheng|Huang]]
+| RD2-score01-1='''11'''
+| RD2-score01-2=11
+| RD2-score01-3='''11'''
+| RD2-score01-4=5
+| RD2-score01-5='''11'''
+| RD2-score01-6=9
+| RD2-score01-7=9
+| RD2-seed02=
+| RD2-team02={{flagicon|POL}} '''[[Jakub Dyjas|Dyjas]]<br />{{flagicon|POL}} [[Daniel Górak|Górak]]'''
+| RD2-score02-1=3
+| RD2-score02-2='''13'''
+| RD2-score02-3=9
+| RD2-score02-4='''11'''
+| RD2-score02-5=4
+| RD2-score02-6='''11'''
+| RD2-score02-7='''11'''
+
+| RD2-seed03=25
+| RD2-team03={{flagicon|GER}} [[Patrick Franziska|Franziska]]<br />{{flagicon|GER}} [[Bastian Steger|Steger]]
+| RD2-score03-1='''13'''
+| RD2-score03-2=9
+| RD2-score03-3=6
+| RD2-score03-4=2
+| RD2-score03-5='''11'''
+| RD2-score03-6=3
+| RD2-score03-7=
+| RD2-seed04=16
+| RD2-team04={{flagicon|JPN}} '''[[Masataka Morizono|Morizono]]<br />{{flagicon|JPN}} [[Yuya Oshima|Oshima]]'''
+| RD2-score04-1=11
+| RD2-score04-2='''11'''
+| RD2-score04-3='''11'''
+| RD2-score04-4='''11'''
+| RD2-score04-5=9
+| RD2-score04-6='''11'''
+| RD2-score04-7=
+
+| RD2-seed05=14
+| RD2-team05={{Nowrap|{{flagicon|SWE}} '''[[Kristian Karlsson|K Karlsson]]'''}}<br />{{flagicon|SWE}} [[Mattias Karlsson (table tennis)|M Karlsson]]
+| RD2-score05-1='''11'''
+| RD2-score05-2='''11'''
+| RD2-score05-3='''11'''
+| RD2-score05-4='''11'''
+| RD2-score05-5=
+| RD2-score05-6=
+| RD2-score05-7=
+| RD2-seed06=
+| RD2-team06={{flagicon|USA}} [[Kanak Jha|Jha]]<br />{{flagicon|USA}} [[Timothy Wang|Wang]]
+| RD2-score06-1=9
+| RD2-score06-2=6
+| RD2-score06-3=6
+| RD2-score06-4=8
+| RD2-score06-5=
+| RD2-score06-6=
+| RD2-score06-7=
+
+| RD2-seed07=17
+| RD2-team07={{flagicon|GER}} [[Timo Boll|Boll]]<br />{{flagicon|CHN}} [[Ma Long (table tennis)|Ma]]
+| RD2-score07-1='''11'''
+| RD2-score07-2='''11'''
+| RD2-score07-3=6
+| RD2-score07-4=4
+| RD2-score07-5=8
+| RD2-score07-6=9
+| RD2-score07-7=
+| RD2-seed08=7
+| RD2-team08={{flagicon|CHN}} '''[[Xu Xin (table tennis)|Xu]]<br />{{flagicon|CHN}} [[Zhang Jike|Zhang]]'''
+| RD2-score08-1=9
+| RD2-score08-2=7
+| RD2-score08-3='''11'''
+| RD2-score08-4='''11'''
+| RD2-score08-5='''11'''
+| RD2-score08-6='''11'''
+| RD2-score08-7=
+
+| RD3-seed01=
+| RD3-team01={{flagicon|POL}} [[Jakub Dyjas|Dyjas]]<br />{{flagicon|POL}} [[Daniel Górak|Górak]]
+| RD3-score01-1=7
+| RD3-score01-2=6
+| RD3-score01-3=7
+| RD3-score01-4=10
+| RD3-score01-5=
+| RD3-score01-6=
+| RD3-score01-7=
+| RD3-seed02=16
+| RD3-team02='''{{flagicon|JPN}} [[Masataka Morizono|Morizono]]<br />{{flagicon|JPN}} [[Yuya Oshima|Oshima]]'''
+| RD3-score02-1='''11'''
+| RD3-score02-2='''11'''
+| RD3-score02-3='''11'''
+| RD3-score02-4='''12'''
+| RD3-score02-5=
+| RD3-score02-6=
+| RD3-score02-7=
+
+| RD3-seed03=14
+| RD3-team03={{flagicon|SWE}} [[Kristian Karlsson|K Karlsson]]<br />{{Nowrap|{{flagicon|SWE}} [[Mattias Karlsson (table tennis)|M Karlsson]]}}
+| RD3-score03-1=7
+| RD3-score03-2=8
+| RD3-score03-3='''12'''
+| RD3-score03-4=4
+| RD3-score03-5=8
+| RD3-score03-6=
+| RD3-score03-7=
+| RD3-seed04=7
+| RD3-team04='''{{flagicon|CHN}} [[Xu Xin (table tennis)|Xu]]<br />{{flagicon|CHN}} [[Zhang Jike|Zhang]]'''
+| RD3-score04-1='''11'''
+| RD3-score04-2='''11'''
+| RD3-score04-3=10
+| RD3-score04-4='''11'''
+| RD3-score04-5='''11'''
+| RD3-score04-6=
+| RD3-score04-7=
+
+| RD4-seed01=16
+| RD4-team01={{Nowrap|{{flagicon|JPN}} [[Masataka Morizono|Morizono]]}}<br />{{flagicon|JPN}} [[Yuya Oshima|Oshima]]
+| RD4-score01-1='''11'''
+| RD4-score01-2=8
+| RD4-score01-3=7
+| RD4-score01-4='''11'''
+| RD4-score01-5='''12'''
+| RD4-score01-6=9
+| RD4-score01-7=10
+| RD4-seed02=7
+| RD4-team02='''{{flagicon|CHN}} [[Xu Xin (table tennis)|Xu]]<br />{{flagicon|CHN}} [[Zhang Jike|Zhang]]'''
+| RD4-score02-1=9
+| RD4-score02-2='''11'''
+| RD4-score02-3='''11'''
+| RD4-score02-4=9
+| RD4-score02-5=10
+| RD4-score02-6='''11'''
+| RD4-score02-7='''12'''
+
+}}
+
+====Section 2====
+{{16TeamBracket|compact=y|sets=7
+|nowrap=y
+| RD1=First round
+| RD2=Second round
+| RD3=Third round
+| RD4=Quarterfinals
+| team-width=140
+| score-width=20
+
+| RD1-seed01=5
+| RD1-team01={{flagicon|AUT}} '''[[Robert Gardos|Gardos]]<br />{{flagicon|AUT}} [[Daniel Habesohn|Habesohn]]'''
+| RD1-score01-1='''11'''
+| RD1-score01-2='''11'''
+| RD1-score01-3='''11'''
+| RD1-score01-4='''11'''
+| RD1-score01-5=
+| RD1-score01-6=
+| RD1-score01-7=
+| RD1-seed02=
+| RD1-team02={{flagicon|ITA}} [[Leonardo Mutti|Mutti]]<br />{{flagicon|ITA}} [[Marco Rech Daldosso|Rech Daldosso]]
+| RD1-score02-1=4
+| RD1-score02-2=8
+| RD1-score02-3=6
+| RD1-score02-4=8
+| RD1-score02-5=
+| RD1-score02-6=
+| RD1-score02-7=
+
+| RD1-seed03=
+| RD1-team03={{flagicon|ESP}} '''[[Marc Durán|Durán]]<br />{{flagicon|ESP}} [[Álvaro Robles (table tennis)|Robles]]'''
+| RD1-score03-1='''11'''
+| RD1-score03-2=9
+| RD1-score03-3='''11'''
+| RD1-score03-4='''12'''
+| RD1-score03-5='''11'''
+| RD1-score03-6=
+| RD1-score03-7=
+| RD1-seed04=32
+| RD1-team04={{flagicon|HKG}} [[Ho Kwan Kit|Ho]]<br />{{flagicon|HKG}} [[Li Hon Ming|Li]]
+| RD1-score04-1=8
+| RD1-score04-2='''11'''
+| RD1-score04-3='''11'''
+| RD1-score04-4=10
+| RD1-score04-5=5
+| RD1-score04-6=
+| RD1-score04-7=
+
+| RD1-seed05=31
+| RD1-team05={{flagicon|ARG}} [[Gaston Alto|Alto]]<br />{{flagicon|ARG}} [[Pablo Tabachnik|Tabachnik]]
+| RD1-score05-1='''11'''
+| RD1-score05-2=9
+| RD1-score05-3='''11'''
+| RD1-score05-4=5
+| RD1-score05-5=9
+| RD1-score05-6=8
+| RD1-score05-7=
+| RD1-seed06=
+| RD1-team06={{flagicon|GRE}} '''[[Panagiotis Gionis|Gionis]]<br />{{Nowrap|{{flagicon|GRE}} [[Konstantinos Papageorgiou (table tennis)|Papageorgiou]]}}'''
+| RD1-score06-1=7
+| RD1-score06-2='''11'''
+| RD1-score06-3=5
+| RD1-score06-4='''11'''
+| RD1-score06-5='''11'''
+| RD1-score06-6='''11'''
+| RD1-score06-7=
+
+| RD1-seed07=
+| RD1-team07={{flagicon|BLR}} [[Pavel Platonov (table tennis)|Platonov]]<br />{{flagicon|BLR}} [[Vladimir Samsonov|Samsonov]]
+| RD1-score07-1=7
+| RD1-score07-2=10
+| RD1-score07-3=5
+| RD1-score07-4=4
+| RD1-score07-5=
+| RD1-score07-6=
+| RD1-score07-7=
+| RD1-seed08=13
+| RD1-team08={{flagicon|KOR}} '''[[Lee Sang-su|Lee]]<br />{{flagicon|KOR}} [[Seo Hyun-deok|Seo]]'''
+| RD1-score08-1='''11'''
+| RD1-score08-2='''12'''
+| RD1-score08-3='''11'''
+| RD1-score08-4='''11'''
+| RD1-score08-5=
+| RD1-score08-6=
+| RD1-score08-7=
+
+| RD1-seed09=11
+| RD1-team09={{flagicon|NGA}} '''[[Quadri Aruna|Aruna]]<br />{{flagicon|NGA}} [[Makanjuola Kazeem|Kazeem]]'''
+| RD1-score09-1='''11'''
+| RD1-score09-2='''11'''
+| RD1-score09-3='''11'''
+| RD1-score09-4=9
+| RD1-score09-5='''11'''
+| RD1-score09-6=
+| RD1-score09-7=
+| RD1-seed10=
+| RD1-team10={{flagicon|KSA}} [[Ali Al-Khadrawi|Al-Khadrawi]]<br />{{flagicon|KSA}} [[Abdulaziz Bu Shulaybi|Bu Shulaybi]]
+| RD1-score10-1=6
+| RD1-score10-2=6
+| RD1-score10-3=4
+| RD1-score10-4='''11'''
+| RD1-score10-5=4
+| RD1-score10-6=
+| RD1-score10-7=
+
+| RD1-seed11=
+| RD1-team11={{flagicon|BRA}} '''[[Cazuo Matsumoto|Matsumoto]]<br />{{flagicon|BRA}} [[Thiago Monteiro (table tennis)|Monteiro]]'''
+| RD1-score11-1='''11'''
+| RD1-score11-2='''11'''
+| RD1-score11-3='''11'''
+| RD1-score11-4='''11'''
+| RD1-score11-5=
+| RD1-score11-6=
+| RD1-score11-7=
+| RD1-seed12=28
+| RD1-team12={{flagicon|CHI}} [[Gustavo Gómez (table tennis)|Gómez]]<br />{{flagicon|CHI}} [[Manuel Moya|Moya]]
+| RD1-score12-1=5
+| RD1-score12-2=3
+| RD1-score12-3=9
+| RD1-score12-4=9
+| RD1-score12-5=
+| RD1-score12-6=
+| RD1-score12-7=
+
+| RD1-seed13=21
+| RD1-team13={{flagicon|FRA}} '''[[Simon Gauzy|Gauzy]]<br />{{flagicon|FRA}} [[Emmanuel Lebesson|Lebesson]]'''
+| RD1-score13-1=7
+| RD1-score13-2='''11'''
+| RD1-score13-3=9
+| RD1-score13-4='''11'''
+| RD1-score13-5=9
+| RD1-score13-6='''11'''
+| RD1-score13-7='''11'''
+| RD1-seed14=
+| RD1-team14={{flagicon|BEL}} [[Robin Devos|Devos]]<br />{{flagicon|BEL}} [[Cedric Nuytinck|Nuytinck]]
+| RD1-score14-1='''11'''
+| RD1-score14-2=4
+| RD1-score14-3='''11'''
+| RD1-score14-4=5
+| RD1-score14-5='''11'''
+| RD1-score14-6=7
+| RD1-score14-7=6
+
+| RD1-seed15=
+| RD1-team15={{flagicon|SVN}} [[Darko Jorgić|Jorgić]]<br />{{flagicon|SVN}} [[Jan Žibrat|Žibrat]]
+| RD1-score15-1=4
+| RD1-score15-2=2
+| RD1-score15-3=2
+| RD1-score15-4=6
+| RD1-score15-5=
+| RD1-score15-6=
+| RD1-score15-7=
+| RD1-seed16=4
+| RD1-team16={{flagicon|TPE}} '''[[Chen Chien-an|Chen]]<br />{{flagicon|TPE}} [[Chuang Chih-yuan|Chuang]]'''
+| RD1-score16-1='''11'''
+| RD1-score16-2='''11'''
+| RD1-score16-3='''11'''
+| RD1-score16-4='''11'''
+| RD1-score16-5=
+| RD1-score16-6=
+| RD1-score16-7=
+
+| RD2-seed01=5
+| RD2-team01={{flagicon|AUT}} '''[[Robert Gardos|Gardos]]<br />{{flagicon|AUT}} [[Daniel Habesohn|Habesohn]]'''
+| RD2-score01-1='''11'''
+| RD2-score01-2='''11'''
+| RD2-score01-3='''11'''
+| RD2-score01-4='''11'''
+| RD2-score01-5=
+| RD2-score01-6=
+| RD2-score01-7=
+| RD2-seed02=
+| RD2-team02={{flagicon|ESP}} [[Marc Durán|Durán]]<br />{{flagicon|ESP}} [[Álvaro Robles (table tennis)|Robles]]
+| RD2-score02-1=7
+| RD2-score02-2=6
+| RD2-score02-3=9
+| RD2-score02-4=8
+| RD2-score02-5=
+| RD2-score02-6=
+| RD2-score02-7=
+
+| RD2-seed03=
+| RD2-team03={{flagicon|GRE}} [[Panagiotis Gionis|Gionis]]<br />{{Nowrap|{{flagicon|GRE}} [[Konstantinos Papageorgiou (table tennis)|Papageorgiou]]}}
+| RD2-score03-1=10
+| RD2-score03-2=5
+| RD2-score03-3=8
+| RD2-score03-4=4
+| RD2-score03-5=
+| RD2-score03-6=
+| RD2-score03-7=
+| RD2-seed04=13
+| RD2-team04={{flagicon|KOR}} '''[[Lee Sang-su|Lee]]<br />{{flagicon|KOR}} [[Seo Hyun-deok|Seo]]'''
+| RD2-score04-1='''12'''
+| RD2-score04-2='''11'''
+| RD2-score04-3='''11'''
+| RD2-score04-4='''11'''
+| RD2-score04-5=
+| RD2-score04-6=
+| RD2-score04-7=
+
+| RD2-seed05=11
+| RD2-team05={{flagicon|NGA}} [[Quadri Aruna|Aruna]]<br />{{flagicon|NGA}} [[Makanjuola Kazeem|Kazeem]]
+| RD2-score05-1='''11'''
+| RD2-score05-2=7
+| RD2-score05-3=5
+| RD2-score05-4=6
+| RD2-score05-5=5
+| RD2-score05-6=
+| RD2-score05-7=
+| RD2-seed06=
+| RD2-team06={{flagicon|BRA}} '''[[Cazuo Matsumoto|Matsumoto]]<br />{{flagicon|BRA}} [[Thiago Monteiro (table tennis)|Monteiro]]'''
+| RD2-score06-1=7
+| RD2-score06-2='''11'''
+| RD2-score06-3='''11'''
+| RD2-score06-4='''11'''
+| RD2-score06-5='''11'''
+| RD2-score06-6=
+| RD2-score06-7=
+
+| RD2-seed07=21
+| RD2-team07={{flagicon|FRA}} '''[[Simon Gauzy|Gauzy]]<br />{{flagicon|FRA}} [[Emmanuel Lebesson|Lebesson]]'''
+| RD2-score07-1='''11'''
+| RD2-score07-2='''12'''
+| RD2-score07-3='''11'''
+| RD2-score07-4='''11'''
+| RD2-score07-5=
+| RD2-score07-6=
+| RD2-score07-7=
+| RD2-seed08=4
+| RD2-team08={{flagicon|TPE}} [[Chen Chien-an|Chen]]<br />{{flagicon|TPE}} [[Chuang Chih-yuan|Chuang]]
+| RD2-score08-1=7
+| RD2-score08-2=10
+| RD2-score08-3=4
+| RD2-score08-4=9
+| RD2-score08-5=
+| RD2-score08-6=
+| RD2-score08-7=
+
+| RD3-seed01=5
+| RD3-team01={{flagicon|AUT}} [[Robert Gardos|Gardos]]<br />{{flagicon|AUT}} [[Daniel Habesohn|Habesohn]]
+| RD3-score01-1=9
+| RD3-score01-2=9
+| RD3-score01-3=4
+| RD3-score01-4='''12'''
+| RD3-score01-5='''11'''
+| RD3-score01-6=8
+| RD3-score01-7=
+| RD3-seed02=13
+| RD3-team02='''{{flagicon|KOR}} [[Lee Sang-su|Lee]]<br />{{flagicon|KOR}} [[Seo Hyun-deok|Seo]]'''
+| RD3-score02-1='''11'''
+| RD3-score02-2='''11'''
+| RD3-score02-3='''11'''
+| RD3-score02-4=10
+| RD3-score02-5=8
+| RD3-score02-6='''11'''
+| RD3-score02-7=
+
+| RD3-seed03=
+| RD3-team03='''{{Nowrap|{{flagicon|BRA}} [[Cazuo Matsumoto|Matsumoto]]}}<br />{{flagicon|BRA}} [[Thiago Monteiro (table tennis)|Monteiro]]'''
+| RD3-score03-1='''11'''
+| RD3-score03-2=7
+| RD3-score03-3=8
+| RD3-score03-4='''12'''
+| RD3-score03-5=6
+| RD3-score03-6='''11'''
+| RD3-score03-7='''11'''
+| RD3-seed04=21
+| RD3-team04={{flagicon|FRA}} [[Simon Gauzy|Gauzy]]<br />{{flagicon|FRA}} [[Emmanuel Lebesson|Lebesson]]
+| RD3-score04-1=4
+| RD3-score04-2='''11'''
+| RD3-score04-3='''11'''
+| RD3-score04-4=10
+| RD3-score04-5='''11'''
+| RD3-score04-6=9
+| RD3-score04-7=7
+
+| RD4-seed01=13
+| RD4-team01='''{{flagicon|KOR}} [[Lee Sang-su|Lee]]<br />{{flagicon|KOR}} [[Seo Hyun-deok|Seo]]'''
+| RD4-score01-1='''11'''
+| RD4-score01-2=6
+| RD4-score01-3=6
+| RD4-score01-4='''11'''
+| RD4-score01-5='''11'''
+| RD4-score01-6=6
+| RD4-score01-7='''11'''
+| RD4-seed02=
+| RD4-team02={{Nowrap|{{flagicon|BRA}} [[Cazuo Matsumoto|Matsumoto]]}}<br />{{flagicon|BRA}} [[Thiago Monteiro (table tennis)|Monteiro]]
+| RD4-score02-1=6
+| RD4-score02-2='''11'''
+| RD4-score02-3='''11'''
+| RD4-score02-4=5
+| RD4-score02-5=7
+| RD4-score02-6='''11'''
+| RD4-score02-7=7
+
+}}
+
+===Bottom half===
+====Section 3====
+{{16TeamBracket|compact=y|sets=7
+|nowrap=y
+| RD1=First round
+| RD2=Second round
+| RD3=Third round
+| RD4=Quarterfinals
+| team-width=140
+| score-width=20
+
+| RD1-seed01=3
+| RD1-team01={{flagicon|HKG}} '''[[Tang Peng|Tang]]<br />{{flagicon|HKG}} [[Wong Chun Ting|Wong]]'''
+| RD1-score01-1='''11'''
+| RD1-score01-2='''11'''
+| RD1-score01-3='''11'''
+| RD1-score01-4='''11'''
+| RD1-score01-5=
+| RD1-score01-6=
+| RD1-score01-7=
+| RD1-seed02=
+| RD1-team02={{flagicon|LUX}} [[Eric Glod|Glod]]<br />{{flagicon|SCO}} [[Gavin Rumgay|Rumgay]]
+| RD1-score02-1=9
+| RD1-score02-2=8
+| RD1-score02-3=2
+| RD1-score02-4=8
+| RD1-score02-5=
+| RD1-score02-6=
+| RD1-score02-7=
+
+| RD1-seed03=
+| RD1-team03={{flagicon|SWE}} [[Pär Gerell|Gerell]]<br />{{flagicon|SWE}} [[Jon Persson (table tennis)|Persson]]
+| RD1-score03-1=4
+| RD1-score03-2=10
+| RD1-score03-3='''11'''
+| RD1-score03-4='''11'''
+| RD1-score03-5='''11'''
+| RD1-score03-6=10
+| RD1-score03-7=10
+| RD1-seed04=22
+| RD1-team04={{flagicon|SIN}} '''[[Gao Ning|Gao]]<br />{{flagicon|SIN}} [[Yang Zi (table tennis)|Yang]]'''
+| RD1-score04-1='''11'''
+| RD1-score04-2='''12'''
+| RD1-score04-3=6
+| RD1-score04-4=5
+| RD1-score04-5=5
+| RD1-score04-6='''12'''
+| RD1-score04-7='''12'''
+
+| RD1-seed05=30
+| RD1-team05={{flagicon|SRB}} '''[[Marko Jevtović (table tennis)|Jevtović]]<br />{{flagicon|SRB}} [[Žolt Pete|Pete]]'''
+| RD1-score05-1=10
+| RD1-score05-2='''11'''
+| RD1-score05-3='''11'''
+| RD1-score05-4='''12'''
+| RD1-score05-5=12
+| RD1-score05-6='''11'''
+| RD1-score05-7=
+| RD1-seed06=
+| RD1-team06={{flagicon|NED}} [[Rajko Gommers|Gommers]]<br />{{flagicon|NED}} [[Laurens Tromer|Tromer]]
+| RD1-score06-1='''12'''
+| RD1-score06-2=5
+| RD1-score06-3=5
+| RD1-score06-4=10
+| RD1-score06-5='''14'''
+| RD1-score06-6=9
+| RD1-score06-7=
+
+| RD1-seed07=
+| RD1-team07={{flagicon|MEX}} [[Marcos Madrid|Madrid]]<br />{{flagicon|GUA}} [[José Ramírez (table tennis)|Ramírez]]
+| RD1-score07-1=9
+| RD1-score07-2=5
+| RD1-score07-3=7
+| RD1-score07-4=4
+| RD1-score07-5=
+| RD1-score07-6=
+| RD1-score07-7=
+| RD1-seed08=15
+| RD1-team08={{flagicon|CHN}} '''[[Fan Zhendong|Fan]]<br />{{flagicon|CHN}} [[Zhou Yu (table tennis)|Zhou]]'''
+| RD1-score08-1='''11'''
+| RD1-score08-2='''11'''
+| RD1-score08-3='''11'''
+| RD1-score08-4='''11'''
+| RD1-score08-5=
+| RD1-score08-6=
+| RD1-score08-7=
+
+| RD1-seed09=12
+| RD1-team09={{flagicon|KOR}} '''[[Jung Young-sik|Jung]]<br />{{flagicon|KOR}} [[Kim Min-seok (table tennis)|Kim]]'''
+| RD1-score09-1='''11'''
+| RD1-score09-2='''11'''
+| RD1-score09-3=4
+| RD1-score09-4=7
+| RD1-score09-5='''11'''
+| RD1-score09-6='''11'''
+| RD1-score09-7=
+| RD1-seed10=
+| RD1-team10={{flagicon|ENG}} [[Paul Drinkhall|Drinkhall]]<br />{{flagicon|ENG}} [[Liam Pitchford|Pitchford]]
+| RD1-score10-1=7
+| RD1-score10-2=6
+| RD1-score10-3='''11'''
+| RD1-score10-4='''11'''
+| RD1-score10-5=8
+| RD1-score10-6=8
+| RD1-score10-7=
+
+| RD1-seed11=
+| RD1-team11={{flagicon|CZE}} '''[[Tomáš Konečný (table tennis)|Konečný]]<br />{{flagicon|CZE}} [[Tomáš Tregler|Tregler]]'''
+| RD1-score11-1='''11'''
+| RD1-score11-2='''14'''
+| RD1-score11-3='''11'''
+| RD1-score11-4='''11'''
+| RD1-score11-5=
+| RD1-score11-6=
+| RD1-score11-7=
+| RD1-seed12=18
+| RD1-team12={{flagicon|AUS}} [[David Powell (table tennis)|Powell]]<br />{{flagicon|AUS}} [[Kane Townsend|Townsend]]
+| RD1-score12-1=6
+| RD1-score12-2=12
+| RD1-score12-3=4
+| RD1-score12-4=6
+| RD1-score12-5=
+| RD1-score12-6=
+| RD1-score12-7=
+
+| RD1-seed13=23
+| RD1-team13={{Nowrap|{{flagicon|BRA}} '''[[Hugo Calderano|Calderano]]'''}}<br />{{flagicon|BRA}} [[Gustavo Tsuboi|Tsuboi]]
+| RD1-score13-1='''11'''
+| RD1-score13-2=7
+| RD1-score13-3='''11'''
+| RD1-score13-4='''11'''
+| RD1-score13-5=9
+| RD1-score13-6='''11'''
+| RD1-score13-7=
+| RD1-seed14=
+| RD1-team14={{flagicon|ISR}} [[Omri Ben Ari|Ben Ari]]<br />{{flagicon|ISR}} [[Shimon Rabinovich|Rabinovich]]
+| RD1-score14-1=3
+| RD1-score14-2='''11'''
+| RD1-score14-3=7
+| RD1-score14-4=8
+| RD1-score14-5='''11'''
+| RD1-score14-6=8
+| RD1-score14-7=
+
+| RD1-seed15=
+| RD1-team15={{flagicon|CGO}} [[Saheed Idowu|Idowu]]<br />{{flagicon|CGO}} [[Suraju Saka|Saka]]
+| RD1-score15-1=2
+| RD1-score15-2='''11'''
+| RD1-score15-3=9
+| RD1-score15-4=4
+| RD1-score15-5='''11'''
+| RD1-score15-6=2
+| RD1-score15-7=
+| RD1-seed16=6
+| RD1-team16={{flagicon|RUS}} '''[[Fedor Kuzmin|Kuzmin]]<br />{{flagicon|RUS}} [[Grigory Vlasov|Vlasov]]'''
+| RD1-score16-1='''11'''
+| RD1-score16-2=8
+| RD1-score16-3='''11'''
+| RD1-score16-4='''11'''
+| RD1-score16-5=9
+| RD1-score16-6='''11'''
+| RD1-score16-7=
+
+| RD2-seed01=3
+| RD2-team01={{flagicon|HKG}} '''[[Tang Peng|Tang]]<br />{{flagicon|HKG}} [[Wong Chun Ting|Wong]]'''
+| RD2-score01-1='''11'''
+| RD2-score01-2='''13'''
+| RD2-score01-3='''14'''
+| RD2-score01-4='''13'''
+| RD2-score01-5=
+| RD2-score01-6=
+| RD2-score01-7=
+| RD2-seed02=22
+| RD2-team02={{flagicon|SIN}} [[Gao Ning|Gao]]<br />{{flagicon|SIN}} [[Yang Zi (table tennis)|Yang]]
+| RD2-score02-1=6
+| RD2-score02-2=11
+| RD2-score02-3=12
+| RD2-score02-4=11
+| RD2-score02-5=
+| RD2-score02-6=
+| RD2-score02-7=
+
+| RD2-seed03=30
+| RD2-team03={{flagicon|SRB}} [[Marko Jevtović (table tennis)|Jevtović]]<br />{{flagicon|SRB}} [[Žolt Pete|Pete]]
+| RD2-score03-1=8
+| RD2-score03-2=3
+| RD2-score03-3=8
+| RD2-score03-4=5
+| RD2-score03-5=
+| RD2-score03-6=
+| RD2-score03-7=
+| RD2-seed04=15
+| RD2-team04={{flagicon|CHN}} '''[[Fan Zhendong|Fan]]<br />{{flagicon|CHN}} [[Zhou Yu (table tennis)|Zhou]]'''
+| RD2-score04-1='''11'''
+| RD2-score04-2='''11'''
+| RD2-score04-3='''11'''
+| RD2-score04-4='''11'''
+| RD2-score04-5=
+| RD2-score04-6=
+| RD2-score04-7=
+
+| RD2-seed05=12
+| RD2-team05={{flagicon|KOR}} '''[[Jung Young-sik|Jung]]<br />{{flagicon|KOR}} [[Kim Min-seok (table tennis)|Kim]]'''
+| RD2-score05-1='''11'''
+| RD2-score05-2='''11'''
+| RD2-score05-3='''11'''
+| RD2-score05-4='''11'''
+| RD2-score05-5=
+| RD2-score05-6=
+| RD2-score05-7=
+| RD2-seed06=
+| RD2-team06={{flagicon|CZE}} [[Tomáš Konečný (table tennis)|Konečný]]<br />{{flagicon|CZE}} [[Tomáš Tregler|Tregler]]
+| RD2-score06-1=9
+| RD2-score06-2=9
+| RD2-score06-3=5
+| RD2-score06-4=7
+| RD2-score06-5=
+| RD2-score06-6=
+| RD2-score06-7=
+
+| RD2-seed07=23
+| RD2-team07={{Nowrap|{{flagicon|BRA}} '''[[Hugo Calderano|Calderano]]'''}}<br />{{flagicon|BRA}} [[Gustavo Tsuboi|Tsuboi]]
+| RD2-score07-1=9
+| RD2-score07-2='''11'''
+| RD2-score07-3='''11'''
+| RD2-score07-4='''11'''
+| RD2-score07-5=4
+| RD2-score07-6='''11'''
+| RD2-score07-7=
+| RD2-seed08=6
+| RD2-team08={{flagicon|RUS}} [[Fedor Kuzmin|Kuzmin]]<br />{{flagicon|RUS}} [[Grigory Vlasov|Vlasov]]
+| RD2-score08-1='''11'''
+| RD2-score08-2=8
+| RD2-score08-3=8
+| RD2-score08-4=6
+| RD2-score08-5='''11'''
+| RD2-score08-6=3
+| RD2-score08-7=
+
+| RD3-seed01=3
+| RD3-team01={{flagicon|HKG}} [[Tang Peng|Tang]]<br />{{flagicon|HKG}} [[Wong Chun Ting|Wong]]
+| RD3-score01-1=6
+| RD3-score01-2=10
+| RD3-score01-3=9
+| RD3-score01-4='''11'''
+| RD3-score01-5=3
+| RD3-score01-6=
+| RD3-score01-7=
+| RD3-seed02=15
+| RD3-team02='''{{flagicon|CHN}} [[Fan Zhendong|Fan]]<br />{{flagicon|CHN}} [[Zhou Yu (table tennis)|Zhou]]'''
+| RD3-score02-1='''11'''
+| RD3-score02-2='''12'''
+| RD3-score02-3='''11'''
+| RD3-score02-4=9
+| RD3-score02-5='''11'''
+| RD3-score02-6=
+| RD3-score02-7=
+
+| RD3-seed03=12
+| RD3-team03='''{{flagicon|KOR}} [[Jung Young-sik|Jung]]<br />{{flagicon|KOR}} [[Kim Min-seok (table tennis)|Kim]]'''
+| RD3-score03-1=7
+| RD3-score03-2='''11'''
+| RD3-score03-3='''11'''
+| RD3-score03-4=8
+| RD3-score03-5='''11'''
+| RD3-score03-6='''11'''
+| RD3-score03-7=
+| RD3-seed04=23
+| RD3-team04={{Nowrap|{{flagicon|BRA}} [[Hugo Calderano|Calderano]]}}<br />{{flagicon|BRA}} [[Gustavo Tsuboi|Tsuboi]]
+| RD3-score04-1='''11'''
+| RD3-score04-2=8
+| RD3-score04-3=8
+| RD3-score04-4='''11'''
+| RD3-score04-5=8
+| RD3-score04-6=3
+| RD3-score04-7=
+
+| RD4-seed01=15
+| RD4-team01='''{{flagicon|CHN}} [[Fan Zhendong|Fan]]<br />{{Nowrap|{{flagicon|CHN}} [[Zhou Yu (table tennis)|Zhou]]}}'''
+| RD4-score01-1='''15'''
+| RD4-score01-2='''13'''
+| RD4-score01-3='''11'''
+| RD4-score01-4='''11'''
+| RD4-score01-5=
+| RD4-score01-6=
+| RD4-score01-7=
+| RD4-seed02=12
+| RD4-team02={{flagicon|KOR}} [[Jung Young-sik|Jung]]<br />{{flagicon|KOR}} [[Kim Min-seok (table tennis)|Kim]]
+| RD4-score02-1=13
+| RD4-score02-2=11
+| RD4-score02-3=5
+| RD4-score02-4=7
+| RD4-score02-5=
+| RD4-score02-6=
+| RD4-score02-7=
+
+}}
+
+====Section 4====
+{{16TeamBracket|compact=y|sets=7
+|nowrap=y
+| RD1=First round
+| RD2=Second round
+| RD3=Third round
+| RD4=Quarterfinals
+| team-width=140
+| score-width=20
+
+| RD1-seed01=8
+| RD1-team01={{flagicon|RUS}} '''[[Alexey Liventsov|Liventsov]]<br />{{flagicon|RUS}} [[Mikhail Paikov|Paikov]]'''
+| RD1-score01-1=8
+| RD1-score01-2=12
+| RD1-score01-3='''11'''
+| RD1-score01-4=6
+| RD1-score01-5='''11'''
+| RD1-score01-6='''11'''
+| RD1-score01-7='''11'''
+| RD1-seed02=
+| RD1-team02={{flagicon|IRN}} [[Nima Alamian|Ni Alamian]]<br />{{flagicon|IRN}} [[Noshad Alamian|No Alamian]]
+| RD1-score02-1='''11'''
+| RD1-score02-2='''14'''
+| RD1-score02-3=7
+| RD1-score02-4='''11'''
+| RD1-score02-5=2
+| RD1-score02-6=7
+| RD1-score02-7=8
+
+| RD1-seed03=
+| RD1-team03={{flagicon|IRN}} [[Afshin Norouzi|Norouzi]]<br />{{flagicon|IRN}} [[Seyed Omrani|Omrani]]
+| RD1-score03-1=11
+| RD1-score03-2=5
+| RD1-score03-3=6
+| RD1-score03-4=7
+| RD1-score03-5=
+| RD1-score03-6=
+| RD1-score03-7=
+| RD1-seed04=27
+| RD1-team04={{flagicon|POR}} '''[[Chen Diogo|Chen]]<br />{{flagicon|POR}} [[Marcos Freitas|Freitas]]'''
+| RD1-score04-1='''13'''
+| RD1-score04-2='''11'''
+| RD1-score04-3='''11'''
+| RD1-score04-4='''11'''
+| RD1-score04-5=
+| RD1-score04-6=
+| RD1-score04-7=
+
+| RD1-seed05=29
+| RD1-team05={{flagicon|PRK}} '''[[Kim Hyok-bong|Kim]]<br />{{flagicon|PRK}} [[Pak Sin-hyok|Pak]]'''
+| RD1-score05-1='''11'''
+| RD1-score05-2=3
+| RD1-score05-3='''11'''
+| RD1-score05-4='''11'''
+| RD1-score05-5=11
+| RD1-score05-6='''13'''
+| RD1-score05-7=
+| RD1-seed06=
+| RD1-team06={{flagicon|DEN}} [[Jonathan Groth|Groth]]<br />{{flagicon|DEN}} [[Kasper Sternberg|Sternberg]]
+| RD1-score06-1=8
+| RD1-score06-2='''11'''
+| RD1-score06-3=9
+| RD1-score06-4=9
+| RD1-score06-5='''13'''
+| RD1-score06-6=11
+| RD1-score06-7=
+
+| RD1-seed07=
+| RD1-team07={{flagicon|BUL}} [[Teodor Alexandrov|Alexandrov]]<br />{{flagicon|SVK}} [[Alexander Valuch|Valuch]]
+| RD1-score07-1='''12'''
+| RD1-score07-2=6
+| RD1-score07-3=3
+| RD1-score07-4=8
+| RD1-score07-5=9
+| RD1-score07-6=
+| RD1-score07-7=
+| RD1-seed08=10
+| RD1-team08={{flagicon|ESP}} '''[[He Zhi Wen|He]]<br />{{flagicon|ESP}} [[Carlos Machado (table tennis)|Machado]]'''
+| RD1-score08-1=10
+| RD1-score08-2='''11'''
+| RD1-score08-3='''11'''
+| RD1-score08-4='''11'''
+| RD1-score08-5='''11'''
+| RD1-score08-6=
+| RD1-score08-7=
+
+| RD1-seed09=9
+| RD1-team09={{flagicon|CRO}} '''[[Tan Ruiwu|Tan]]<br />{{flagicon|CRO}} [[Wang Zengyi|Wang]]'''
+| RD1-score09-1='''11'''
+| RD1-score09-2=9
+| RD1-score09-3='''11'''
+| RD1-score09-4='''13'''
+| RD1-score09-5='''11'''
+| RD1-score09-6=
+| RD1-score09-7=
+| RD1-seed10=
+| RD1-team10={{flagicon|LAT}} [[Matīss Burģis|Burģis]]<br />{{flagicon|CZE}} [[Lubomír Jančařík|Jančařík]]
+| RD1-score10-1=8
+| RD1-score10-2='''11'''
+| RD1-score10-3=8
+| RD1-score10-4=11
+| RD1-score10-5=5
+| RD1-score10-6=
+| RD1-score10-7=
+
+| RD1-seed11=
+| RD1-team11={{flagicon|ROU}} [[Andrei Filimon|Filimon]]<br />{{flagicon|ROU}} [[Ovidiu Ionescu|Ionescu]]
+| RD1-score11-1=10
+| RD1-score11-2=4
+| RD1-score11-3='''13'''
+| RD1-score11-4='''11'''
+| RD1-score11-5=8
+| RD1-score11-6=2
+| RD1-score11-7=
+| RD1-seed12=19
+| RD1-team12={{flagicon|POR}} '''[[Tiago Apolónia|Apolónia]]<br />{{flagicon|POR}} [[João Monteiro (table tennis)|Monteiro]]'''
+| RD1-score12-1='''12'''
+| RD1-score12-2='''11'''
+| RD1-score12-3=11
+| RD1-score12-4=8
+| RD1-score12-5='''11'''
+| RD1-score12-6='''11'''
+| RD1-score12-7=
+
+| RD1-seed13=20
+| RD1-team13={{flagicon|EGY}} '''[[Khalid Assar|K Assar]]<br />{{flagicon|EGY}} [[Omar Assar|O Assar]]'''
+| RD1-score13-1='''11'''
+| RD1-score13-2=9
+| RD1-score13-3='''11'''
+| RD1-score13-4='''11'''
+| RD1-score13-5='''11'''
+| RD1-score13-6=
+| RD1-score13-7=
+| RD1-seed14=
+| RD1-team14={{flagicon|ITA}} [[Mihai Bobocica|Bobocica]]<br />{{flagicon|ITA}} [[Niagol Stoyanov|Stoyanov]]
+| RD1-score14-1=9
+| RD1-score14-2='''11'''
+| RD1-score14-3=7
+| RD1-score14-4=9
+| RD1-score14-5=6
+| RD1-score14-6=
+| RD1-score14-7=
+
+| RD1-seed15=
+| RD1-team15={{flagicon|NGA}} [[Ojo Onaolapo|Onaolapo]]<br />{{flagicon|NGA}} [[Segun Toriola|Toriola]]
+| RD1-score15-1=
+| RD1-score15-2=
+| RD1-score15-3=
+| RD1-score15-4=
+| RD1-score15-5=
+| RD1-score15-6=
+| RD1-score15-7=
+| RD1-seed16=2
+| RD1-team16={{Nowrap|{{flagicon|JPN}} '''[[Kenta Matsudaira|Matsudaira]]'''}}<br />{{flagicon|JPN}} [[Koki Niwa|Niwa]]
+| RD1-score16-1=w/o
+| RD1-score16-2=
+| RD1-score16-3=
+| RD1-score16-4=
+| RD1-score16-5=
+| RD1-score16-6=
+| RD1-score16-7=
+
+| RD2-seed01=8
+| RD2-team01={{flagicon|RUS}} [[Alexey Liventsov|Liventsov]]<br />{{flagicon|RUS}} [[Mikhail Paikov|Paikov]]
+| RD2-score01-1=8
+| RD2-score01-2='''11'''
+| RD2-score01-3=9
+| RD2-score01-4=11
+| RD2-score01-5='''14'''
+| RD2-score01-6='''11'''
+| RD2-score01-7=4
+| RD2-seed02=27
+| RD2-team02={{flagicon|POR}} '''[[Chen Diogo|Chen]]<br />{{flagicon|POR}} [[Marcos Freitas|Freitas]]'''
+| RD2-score02-1='''11'''
+| RD2-score02-2=8
+| RD2-score02-3='''11'''
+| RD2-score02-4='''13'''
+| RD2-score02-5=12
+| RD2-score02-6=5
+| RD2-score02-7='''11'''
+
+| RD2-seed03=29
+| RD2-team03={{flagicon|PRK}} '''[[Kim Hyok-bong|Kim]]<br />{{flagicon|PRK}} [[Pak Sin-hyok|Pak]]'''
+| RD2-score03-1=10
+| RD2-score03-2='''11'''
+| RD2-score03-3=8
+| RD2-score03-4='''11'''
+| RD2-score03-5='''11'''
+| RD2-score03-6='''11'''
+| RD2-score03-7=
+| RD2-seed04=10
+| RD2-team04={{flagicon|ESP}} [[He Zhi Wen|He]]<br />{{flagicon|ESP}} [[Carlos Machado (table tennis)|Machado]]
+| RD2-score04-1='''12'''
+| RD2-score04-2=1
+| RD2-score04-3='''11'''
+| RD2-score04-4=5
+| RD2-score04-5=5
+| RD2-score04-6=6
+| RD2-score04-7=
+
+| RD2-seed05=9
+| RD2-team05={{flagicon|CRO}} [[Tan Ruiwu|Tan]]<br />{{flagicon|CRO}} [[Wang Zengyi|Wang]]
+| RD2-score05-1=2
+| RD2-score05-2=7
+| RD2-score05-3='''11'''
+| RD2-score05-4=9
+| RD2-score05-5=8
+| RD2-score05-6=
+| RD2-score05-7=
+| RD2-seed06=19
+| RD2-team06={{flagicon|POR}} '''[[Tiago Apolónia|Apolónia]]<br />{{flagicon|POR}} [[João Monteiro (table tennis)|Monteiro]]'''
+| RD2-score06-1='''11'''
+| RD2-score06-2='''11'''
+| RD2-score06-3=6
+| RD2-score06-4='''11'''
+| RD2-score06-5='''11'''
+| RD2-score06-6=
+| RD2-score06-7=
+
+| RD2-seed07=20
+| RD2-team07={{flagicon|EGY}} [[Khalid Assar|K Assar]]<br />{{flagicon|EGY}} [[Omar Assar|O Assar]]
+| RD2-score07-1=10
+| RD2-score07-2=5
+| RD2-score07-3=6
+| RD2-score07-4=7
+| RD2-score07-5=
+| RD2-score07-6=
+| RD2-score07-7=
+| RD2-seed08=2
+| RD2-team08={{Nowrap|{{flagicon|JPN}} '''[[Kenta Matsudaira|Matsudaira]]'''}}<br />{{flagicon|JPN}} [[Koki Niwa|Niwa]]
+| RD2-score08-1='''12'''
+| RD2-score08-2='''11'''
+| RD2-score08-3='''11'''
+| RD2-score08-4='''11'''
+| RD2-score08-5=
+| RD2-score08-6=
+| RD2-score08-7=
+
+| RD3-seed01=27
+| RD3-team01={{flagicon|POR}} [[Chen Diogo|Chen]]<br />{{flagicon|POR}} [[Marcos Freitas|Freitas]]
+| RD3-score01-1=6
+| RD3-score01-2='''11'''
+| RD3-score01-3=10
+| RD3-score01-4='''11'''
+| RD3-score01-5=12
+| RD3-score01-6=5
+| RD3-score01-7=
+| RD3-seed02=29
+| RD3-team02={{flagicon|PRK}} '''[[Kim Hyok-bong|Kim]]<br />{{flagicon|PRK}} [[Pak Sin-hyok|Pak]]'''
+| RD3-score02-1='''11'''
+| RD3-score02-2=9
+| RD3-score02-3='''12'''
+| RD3-score02-4=9
+| RD3-score02-5='''14'''
+| RD3-score02-6='''11'''
+| RD3-score02-7=
+
+| RD3-seed03=19
+| RD3-team03={{flagicon|POR}} [[Tiago Apolónia|Apolónia]]<br />{{flagicon|POR}} [[João Monteiro (table tennis)|Monteiro]]
+| RD3-score03-1=8
+| RD3-score03-2='''11'''
+| RD3-score03-3=9
+| RD3-score03-4='''11'''
+| RD3-score03-5=6
+| RD3-score03-6=5
+| RD3-score03-7=
+| RD3-seed04=2
+| RD3-team04='''{{Nowrap|{{flagicon|JPN}} [[Kenta Matsudaira|Matsudaira]]}}<br />{{flagicon|JPN}} [[Koki Niwa|Niwa]]'''
+| RD3-score04-1='''11'''
+| RD3-score04-2=9
+| RD3-score04-3='''11'''
+| RD3-score04-4=3
+| RD3-score04-5='''11'''
+| RD3-score04-6='''11'''
+| RD3-score04-7=
+
+| RD4-seed01=29
+| RD4-team01={{flagicon|PRK}} [[Kim Hyok-bong|Kim]]<br />{{flagicon|PRK}} [[Pak Sin-hyok|Pak]]
+| RD4-score01-1=3
+| RD4-score01-2=7
+| RD4-score01-3=10
+| RD4-score01-4=14
+| RD4-score01-5=
+| RD4-score01-6=
+| RD4-score01-7=
+| RD4-seed02=2
+| RD4-team02='''{{Nowrap|{{flagicon|JPN}} [[Kenta Matsudaira|Matsudaira]]}}<br />{{flagicon|JPN}} [[Koki Niwa|Niwa]]'''
+| RD4-score02-1='''11'''
+| RD4-score02-2='''11'''
+| RD4-score02-3='''12'''
+| RD4-score02-4='''16'''
+| RD4-score02-5=
+| RD4-score02-6=
+| RD4-score02-7=
+}}
+
+==References==
+{{reflist}}
+
+==External links==
+*[http://www.ittf.com/competitions/test/matches_per_round1.asp?s_Event_Type=MD&Competition_ID=2503&rnd=64 Main draw]
+*[http://www.ittf.com/competitions/test/matches_per_round1.asp?s_Event_Type=MQ&Competition_ID=2503&rnd=128 Qualifying draw]
+
+{{World Table Tennis Championships}}
+
+{{DEFAULTSORT:2015 World Table Tennis Championships - Men's Doubles}}
+[[Category:2015 World Table Tennis Championships|Men's doubles]]
+[[Category:Men's events at the World Table Tennis Championships]]

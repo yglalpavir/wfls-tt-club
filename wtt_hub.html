@@ -341,8 +341,22 @@
             categories.forEach(async cat => {
                 const statusEl = document.getElementById('status-' + cat.id);
                 try {
-                    const resp = await fetch(`wtt_data/${cat.id}/score-log.json`);
-                    if (!resp.ok) { updateStatus(statusEl, cat.id, 'empty'); return; }
+                    // 先尝试加载 score-log.json
+                    let resp = await fetch(`wtt_data/${cat.id}/score-log.json`);
+                    if (!resp.ok) {
+                        // 回退：尝试按赛季文件检测（尝试加载第一个赛季文件）
+                        const probes = ['2021', '2022', '2023', '2024', '2009'];
+                        const suffixes = cat.id === 'ms' ? ['wtt', 'ittf'] : [cat.id, 'ittf'];
+                        let found = false;
+                        for (const year of probes) {
+                            for (const suffix of suffixes) {
+                                resp = await fetch(`wtt_data/${cat.id}/score-log-${year}-${suffix}.json`);
+                                if (resp.ok) { found = true; break; }
+                            }
+                            if (found) break;
+                        }
+                        if (!found) { updateStatus(statusEl, cat.id, 'empty'); return; }
+                    }
                     const data = await resp.json();
                     const realRecords = data.filter(wttIsValidRecord);
                     if (realRecords.length > 0) {

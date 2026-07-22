@@ -161,9 +161,9 @@ function calculateAllRankingsWithSeasons(scoreLog, initialScores, seasons) {
                     const w = r['胜者'], l = r['负者'];
                     if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE;
                     if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
-                    const wg = calcMatchPoints(w, l, r['类型'], r['日期'], sd, sc);
+                    const wg = calcMatchPoints(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? sd : r['日期'], sc);
                     sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
-                    sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * 0.8);
+                    sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
                 } else if (isBonusRecord(r)) {
                     const t = r['对象'];
                     const b = parseFloat(r['分数']) || 0;
@@ -274,9 +274,9 @@ async function calculateAllRankingsWithSeasonsAsync(scoreLog, initialScores, sea
                     const w = r['胜者'], l = r['负者'];
                     if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE;
                     if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
-                    const wg = calcMatchPoints(w, l, r['类型'], r['日期'], sd, sc);
+                    const wg = calcMatchPoints(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? sd : r['日期'], sc);
                     sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
-                    sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * 0.8);
+                    sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
                 } else if (isBonusRecord(r)) {
                     const t = r['对象'];
                     const b = parseFloat(r['分数']) || 0;
@@ -330,7 +330,7 @@ async function calculateAllRankingsWithSeasonsAsync(scoreLog, initialScores, sea
     return allRankings;
 }
 
-function calculateEndScores(sl, ss, sst, sen) { const sc={...ss}; sl.forEach(r=>{ if(r['日期']<sst||r['日期']>sen)return; if(isMatchRecord(r)){const w=r['胜者'],l=r['负者'];if(!sc[w])sc[w]=DEFAULT_INITIAL_SCORE;if(!sc[l])sc[l]=DEFAULT_INITIAL_SCORE;const wg=calcMatchPoints(w,l,r['类型'],r['日期'],sen,sc);sc[w]=Math.max(SCORE_FLOOR,sc[w]+wg);sc[l]=Math.max(SCORE_FLOOR,sc[l]-wg*0.8);}else if(isBonusRecord(r)){const t=r['对象'];const b=parseFloat(r['分数'])||0;if(!sc[t])sc[t]=DEFAULT_INITIAL_SCORE;sc[t]=Math.max(SCORE_FLOOR,sc[t]+b);} }); return sc; }
+function calculateEndScores(sl, ss, sst, sen) { const sc={...ss}; sl.forEach(r=>{ if(r['日期']<sst||r['日期']>sen)return; if(isMatchRecord(r)){const w=r['胜者'],l=r['负者'];if(!sc[w])sc[w]=DEFAULT_INITIAL_SCORE;if(!sc[l])sc[l]=DEFAULT_INITIAL_SCORE;const wg=calcMatchPoints(w,l,r['类型'],r['日期'],SCORE_TIME_DECAY_ENABLED?sen:r['日期'],sc);sc[w]=Math.max(SCORE_FLOOR,sc[w]+wg);sc[l]=Math.max(SCORE_FLOOR,sc[l]-wg*LOSER_POINT_MULTIPLIER);}else if(isBonusRecord(r)){const t=r['对象'];const b=parseFloat(r['分数'])||0;if(!sc[t])sc[t]=DEFAULT_INITIAL_SCORE;sc[t]=Math.max(SCORE_FLOOR,sc[t]+b);} }); return sc; }
 function formatSnapshotLabel(ds) { const d = new Date(ds + 'T00:00:00'); return `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日`; }
 
 // 获取快照日期所在的赛季
@@ -406,9 +406,9 @@ function calculateRealtimeRanking() {
         if (isMatchRecord(r)) {
             const w = r['胜者'], l = r['负者'];
             if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE; if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
-            const wg = calcMatchPoints(w, l, r['类型'], r['日期'], effectiveEnd, sc);
+            const wg = calcMatchPoints(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? effectiveEnd : r['日期'], sc);
             sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
-            sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * 0.8);
+            sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
         } else if (isBonusRecord(r)) {
             const t = r['对象']; const b = parseFloat(r['分数']) || 0;
             if (!sc[t]) sc[t] = DEFAULT_INITIAL_SCORE;

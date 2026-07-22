@@ -123,14 +123,22 @@ function wttLoadScoreLog() {
 async function wttLoadScoreLogFromSeasonFiles() {
     // 根据当前 category 构建可能的赛季 ID 列表
     // MS 使用 "wtt" 后缀（历史原因），其他项目使用对应字母
-    const years = ['2021', '2022', '2023', '2024', '2025', '2026'];
+    // 同时尝试 ITTF 时期的文件（2009 等）
+    const wttYears = ['2021', '2022', '2023', '2024', '2025', '2026'];
+    const ittfYears = ['2009', '2011', '2013', '2015', '2017', '2019'];
     let seasonIds;
     if (wttCurrentCategory === 'ms') {
-        // MS 的赛季 ID 后缀为 "wtt"（因为最初只有男子单打）
-        seasonIds = years.map(y => `${y}-wtt`);
+        // MS 的赛季 ID 后缀为 "wtt"（因为最初只有男子单打），同时也尝试 ittf 后缀
+        seasonIds = [
+            ...ittfYears.map(y => `${y}-ittf`),
+            ...wttYears.map(y => `${y}-wtt`)
+        ];
     } else {
-        // 其他项目的赛季 ID 后缀与 category 相同（如 ws → 2021-ws）
-        seasonIds = years.map(y => `${y}-${wttCurrentCategory}`);
+        // 其他项目的赛季 ID 后缀与 category 相同（如 ws → 2021-ws），也尝试 ittf
+        seasonIds = [
+            ...ittfYears.map(y => `${y}-ittf`),
+            ...wttYears.map(y => `${y}-${wttCurrentCategory}`)
+        ];
     }
 
     const allRecords = [];
@@ -180,6 +188,9 @@ function wttLoadSettings() {
             if (d.baseScore && typeof d.baseScore === 'number') {
                 DEFAULT_INITIAL_SCORE = d.baseScore;
             }
+            // WTT 积分规则：取消赛季内衰减，负者扣分 = 胜者得分
+            SCORE_TIME_DECAY_ENABLED = false;
+            LOSER_POINT_MULTIPLIER = 1.0;
             console.log(`WTT[${wttCurrentCategory}] 设置加载成功, scoreMode: ${d.scoreMode || 'initial'}, baseScore: ${DEFAULT_INITIAL_SCORE}`);
             return true;
         })
@@ -187,6 +198,9 @@ function wttLoadSettings() {
             // settings.json 不存在时使用默认值
             wttSettings = { scoreMode: 'initial', baseScore: 1300 };
             DEFAULT_INITIAL_SCORE = 1300;
+            // WTT 积分规则：取消赛季内衰减，负者扣分 = 胜者得分
+            SCORE_TIME_DECAY_ENABLED = false;
+            LOSER_POINT_MULTIPLIER = 1.0;
             console.warn(`WTT[${wttCurrentCategory}] settings.json 未找到，使用默认设置 (scoreMode: initial, baseScore: 1300)`);
             return true;
         });

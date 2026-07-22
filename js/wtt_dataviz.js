@@ -709,7 +709,7 @@ function wttCalcFormScore(playerName) {
             if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
             const wg = calcRawPoints(w, l, m['类型'], scores);
             scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg);
-            scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * 0.8);
+            scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * LOSER_POINT_MULTIPLIER);
         } else if (isBonusRecord(m)) {
             const target = m['对象'];
             const bonus = parseFloat(m['分数']) || 0;
@@ -727,11 +727,11 @@ function wttCalcFormScore(playerName) {
         if (w === playerName) {
             totalChange += rawPoints;
             scores[w] = Math.max(SCORE_FLOOR, scores[w] + rawPoints);
-            scores[l] = Math.max(SCORE_FLOOR, scores[l] - rawPoints * 0.8);
+            scores[l] = Math.max(SCORE_FLOOR, scores[l] - rawPoints * LOSER_POINT_MULTIPLIER);
         } else {
-            totalChange -= rawPoints * 0.8;
+            totalChange -= rawPoints * LOSER_POINT_MULTIPLIER;
             scores[w] = Math.max(SCORE_FLOOR, scores[w] + rawPoints);
-            scores[l] = Math.max(SCORE_FLOOR, scores[l] - rawPoints * 0.8);
+            scores[l] = Math.max(SCORE_FLOOR, scores[l] - rawPoints * LOSER_POINT_MULTIPLIER);
         }
     }
 
@@ -842,15 +842,15 @@ function wttRenderComparison(playerA, playerB) {
             if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
             const wg = calcMatchPoints(w, l, m['类型'], m['日期'], m['日期'], scores);
             const aIsW = w === playerA;
-            const aChange = aIsW ? wg : -(wg * 0.8);
-            const bChange = aIsW ? -(wg * 0.8) : wg;
+            const aChange = aIsW ? wg : -(wg * LOSER_POINT_MULTIPLIER);
+            const bChange = aIsW ? -(wg * LOSER_POINT_MULTIPLIER) : wg;
             html += `<tr>
                 <td>${m['日期']}</td><td>${m['类型']}</td><td>${w}</td>
                 <td class="${aIsW ? 'win-highlight' : 'loss-highlight'}">${aChange > 0 ? '+' : ''}${aChange.toFixed(1)}</td>
                 <td class="${!aIsW ? 'win-highlight' : 'loss-highlight'}">${bChange > 0 ? '+' : ''}${bChange.toFixed(1)}</td>
             </tr>`;
             scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg);
-            scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * 0.8);
+            scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * LOSER_POINT_MULTIPLIER);
         }
         html += '</tbody></table></div>';
     } else {
