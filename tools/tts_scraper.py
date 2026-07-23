@@ -71,7 +71,12 @@ def get_matches(category, player_id, player_name):
         r = requests.get(url, headers=HEADERS, timeout=10)
         data = r.json()
         if not data.get("success"): return []
-        return data.get("matches", [])
+        matches = data.get("matches", [])
+        # 将球员信息附加到每条记录中，方便后续转换
+        for m in matches:
+            m["_player_id"] = player_id
+            m["_player_name"] = player_name
+        return matches
     except:
         return []
 

@@ -1,0 +1,27 @@
+{
+  "name": "wfls-tt-club",
+  "version": "1.0.0",
+  "description": "武汉外国语学校乒乓球社团官方网站",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yglalpavir/wfls-tt-club.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/yglalpavir/wfls-tt-club/issues"
+  },
+  "homepage": "https://github.com/yglalpavir/wfls-tt-club#readme",
+  "dependencies": {
+    "ittf-pingpong": "^2.0.1"
+  }
+}
