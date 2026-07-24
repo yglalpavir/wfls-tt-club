@@ -397,24 +397,26 @@ function wttRenderPersonalStats(playerName) {
         .sort((a, b) => b[1].preMatchScore - a[1].preMatchScore)
         .slice(0, 3);
 
+    // 福星：胜率最高的对手（玩家对其战绩最好）
     const luckyStars = Object.entries(oppStats)
         .map(([name, s]) => {
-            const gained = oppPointsGained[name] || 0;
-            const lost = oppPointsLost[name] || 0;
-            return { name, wins: s.wins, losses: s.losses, curScore: s.curScore, gained, lost, net: gained - lost };
+            const total = s.wins + s.losses;
+            const wr = total > 0 ? s.wins / total : 0;
+            return { name, wins: s.wins, losses: s.losses, curScore: s.curScore, winRate: wr, total };
         })
-        .filter(x => x.wins + x.losses > 0 && x.net > 0)
-        .sort((a, b) => b.net - a.net)
+        .filter(x => x.total > 0)
+        .sort((a, b) => b.winRate - a.winRate || b.total - a.total)
         .slice(0, 3);
 
+    // 苦主：胜率最低的对手（玩家对其战绩最差）
     const nemeses = Object.entries(oppStats)
         .map(([name, s]) => {
-            const gained = oppPointsGained[name] || 0;
-            const lost = oppPointsLost[name] || 0;
-            return { name, wins: s.wins, losses: s.losses, curScore: s.curScore, gained, lost, net: gained - lost };
+            const total = s.wins + s.losses;
+            const wr = total > 0 ? s.wins / total : 0;
+            return { name, wins: s.wins, losses: s.losses, curScore: s.curScore, winRate: wr, total };
         })
-        .filter(x => x.wins + x.losses > 0 && x.net < 0)
-        .sort((a, b) => a.net - b.net)
+        .filter(x => x.total > 0)
+        .sort((a, b) => a.winRate - b.winRate || b.total - a.total)
         .slice(0, 3);
 
     function fmtDate(ds) {

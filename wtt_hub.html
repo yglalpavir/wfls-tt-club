@@ -263,6 +263,7 @@
         </div>
     </div>
 
+    <script src="js/wtt_common.js"></script>
     <script>
         // ============ 背景粒子动画 ============
         (function initParticles() {
@@ -344,9 +345,11 @@
                     // 先尝试加载 score-log.json
                     let resp = await fetch(`wtt_data/${cat.id}/score-log.json`);
                     if (!resp.ok) {
-                        // 回退：尝试按赛季文件检测（尝试加载第一个赛季文件）
-                        const probes = ['2021', '2022', '2023', '2024', '2009'];
-                        const suffixes = cat.id === 'ms' ? ['wtt', 'ittf'] : [cat.id, 'ittf'];
+                        // 回退：尝试按赛季文件检测
+                        const probes = ['2021', '2022', '2023', '2024', '2025', '2026', '2009', '2008'];
+                        const suffixes = cat.id === 'ms'
+                            ? ['wtt', 'ittf']
+                            : [cat.id, 'ittf', 'unmatched', 'tts'];
                         let found = false;
                         for (const year of probes) {
                             for (const suffix of suffixes) {
@@ -354,6 +357,13 @@
                                 if (resp.ok) { found = true; break; }
                             }
                             if (found) break;
+                        }
+                        // 额外尝试无年份后缀的文件（如 tts, unmatched）
+                        if (!found) {
+                            for (const suffix of ['tts', 'unmatched']) {
+                                resp = await fetch(`wtt_data/${cat.id}/score-log-${suffix}.json`);
+                                if (resp.ok) { found = true; break; }
+                            }
                         }
                         if (!found) { updateStatus(statusEl, cat.id, 'empty'); return; }
                     }
@@ -388,6 +398,5 @@
             }
         })();
     </script>
-    <script src="js/wtt_common.js"></script>
 </body>
 </html>

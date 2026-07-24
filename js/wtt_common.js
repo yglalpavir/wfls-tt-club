@@ -125,7 +125,7 @@ async function wttLoadScoreLogFromSeasonFiles() {
     // MS 使用 "wtt" 后缀（历史原因），其他项目使用对应字母
     // 同时尝试 ITTF 时期的文件（2009 等）
     const wttYears = ['2021', '2022', '2023', '2024', '2025', '2026'];
-    const ittfYears = ['2009', '2011', '2013', '2015', '2017', '2019'];
+    const ittfYears = ['2008', '2009', '2011', '2013', '2015', '2017', '2019'];
     let seasonIds;
     if (wttCurrentCategory === 'ms') {
         // MS 的赛季 ID 后缀为 "wtt"（因为最初只有男子单打），同时也尝试 ittf 后缀
@@ -140,6 +140,9 @@ async function wttLoadScoreLogFromSeasonFiles() {
             ...wttYears.map(y => `${y}-${wttCurrentCategory}`)
         ];
     }
+
+    // 额外尝试无年份前缀的特殊文件（tts, unmatched 等）
+    seasonIds.push('tts', 'unmatched');
 
     const allRecords = [];
     let foundAny = false;

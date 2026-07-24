@@ -139,10 +139,10 @@ async function loadAllData() {
     // WTT 分项 score-log 数据 - 加载主文件 + 年度分文件
     // 各分项可能的年度文件后缀
     const discYearSuffixes = {
-        ms: ["2021-wtt","2022-wtt","2023-wtt","2024-wtt","2025-wtt","2026-wtt"],
-        ws: ["2021-ws","unmatched"],
+        ms: ["2008-ittf","2009-ittf","2021-wtt","2022-wtt","2023-wtt","2024-wtt","2025-wtt","2026-wtt"],
+        ws: ["2008-ittf","2009-ittf","2022-ws","2023-ws","2024-ws","2025-ws","2026-ws"],
         wd: ["2021-wd","unmatched"],
-        md: ["unmatched"],
+        md: ["tts"],
         xd: ["2021-xd","unmatched"],
     };
     for (const [disc, cfg] of Object.entries(DATA_PATHS.wttDisc)) {
@@ -282,6 +282,7 @@ function computeStats() {
 
     // WTT 赛季数（聚合各分项的可见赛季，去重）
     const allWttSeasons = new Map();
+    s.wttSeasonsPerDisc = {};
     for (const disc of discKeys) {
         const seasonsData = allData["disc_"+disc+"_seasons"];
         if (Array.isArray(seasonsData)) {
@@ -291,6 +292,7 @@ function computeStats() {
                 }
             });
         }
+        s.wttSeasonsPerDisc[disc] = Array.isArray(seasonsData) ? seasonsData : [];
     }
     s.wttSeasons = allWttSeasons.size;
     // 保存聚合后的赛季列表供渲染使用
@@ -541,29 +543,47 @@ function renderDashboard(loadTime) {
     const seasonsGrid = document.createElement("div");
     seasonsGrid.className = "dash-charts-row";
 
-    // WTT 赛季
+    // WTT 赛季 - 按分项类型展示
     const wttSeasonPanel = document.createElement("div");
     wttSeasonPanel.className = "dash-panel";
-    let wttSeasonRows = "";
-    if (Array.isArray(stats.wttSeasonsList) && stats.wttSeasonsList.length > 0) {
-        stats.wttSeasonsList.forEach(s => {
-            wttSeasonRows += `<tr>
-                <td><span class="mono">${escHtml(s.id||"")}</span></td>
-                <td>${escHtml(s.label||"")}</td>
-                <td class="mono">${escHtml(s.startDate||"")} ~ ${escHtml(s.endDate||"")}</td>
-                <td>${s.visible ? '<span style="color:var(--dash-success);">✅ 可见</span>' : '<span style="color:var(--dash-text-muted);">❌ 隐藏</span>'}</td>
-            </tr>`;
-        });
+    let wttSeasonBodyHtml = "";
+    const discKeys2 = ["ms","ws","md","wd","xd"];
+    for (const disc of discKeys2) {
+        const cfg = DATA_PATHS.wttDisc[disc];
+        const discSeasons = stats.wttSeasonsPerDisc[disc] || [];
+        let discRows = "";
+        if (discSeasons.length > 0) {
+            discSeasons.forEach(s => {
+                discRows += `<tr>
+                    <td><span class="mono">${escHtml(s.id||"")}</span></td>
+                    <td>${escHtml(s.label||"")}</td>
+                    <td class="mono">${escHtml(s.startDate||"")} ~ ${escHtml(s.endDate||"")}</td>
+                    <td>${s.visible ? '<span style="color:var(--dash-success);">✅ 可见</span>' : '<span style="color:var(--dash-text-muted);">❌ 隐藏</span>'}</td>
+                </tr>`;
+            });
+        }
+        const discColor = cfg ? cfg.color : "#6c757d";
+        wttSeasonBodyHtml += `<tr style="background:var(--dash-bg);">
+            <td colspan="4" style="padding:8px 14px;font-weight:700;font-size:0.82rem;color:${discColor};font-family:'Poppins',sans-serif;">
+                <i class="fa-solid fa-table-tennis-paddle-ball"></i> ${cfg ? cfg.label : disc.toUpperCase()}
+                <span style="font-weight:400;color:var(--dash-text-muted);font-size:0.7rem;margin-left:6px;">${discSeasons.length} 个赛季</span>
+            </td>
+        </tr>`;
+        if (discRows) {
+            wttSeasonBodyHtml += discRows;
+        } else {
+            wttSeasonBodyHtml += `<tr><td colspan="4" class="dash-empty">暂无数据</td></tr>`;
+        }
     }
     wttSeasonPanel.innerHTML = `
         <div class="dash-panel-header">
-            <span class="dash-panel-title"><i class="fa-solid fa-globe"></i> WTT 赛季</span>
+            <span class="dash-panel-title"><i class="fa-solid fa-globe"></i> WTT 赛季（按分项）</span>
             <span style="font-size:0.78rem;color:var(--dash-text-muted);">${stats.wttSeasons} 个赛季</span>
         </div>
         <div class="dash-table-wrap">
             <table class="dash-table">
                 <thead><tr><th>ID</th><th>名称</th><th>日期范围</th><th>状态</th></tr></thead>
-                <tbody>${wttSeasonRows || '<tr><td colspan="4" class="dash-empty">暂无数据</td></tr>'}</tbody>
+                <tbody>${wttSeasonBodyHtml || '<tr><td colspan="4" class="dash-empty">暂无数据</td></tr>'}</tbody>
             </table>
         </div>`;
     seasonsGrid.appendChild(wttSeasonPanel);
