@@ -347,9 +347,15 @@
                     if (!resp.ok) {
                         // 回退：尝试按赛季文件检测
                         const probes = ['2021', '2022', '2023', '2024', '2025', '2026', '2009', '2008'];
-                        const suffixes = cat.id === 'ms'
-                            ? ['wtt', 'ittf']
-                            : [cat.id, 'ittf', 'unmatched', 'tts'];
+                        let suffixes;
+                        if (cat.id === 'ms') {
+                            suffixes = ['wtt', 'ittf'];
+                        } else if (cat.id === 'ws') {
+                            suffixes = ['ws', 'ittf'];
+                        } else {
+                            // MD/WD/XD 统一使用 wtt 后缀
+                            suffixes = ['wtt', cat.id, 'ittf'];
+                        }
                         let found = false;
                         for (const year of probes) {
                             for (const suffix of suffixes) {

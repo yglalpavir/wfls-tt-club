@@ -122,8 +122,8 @@ function wttLoadScoreLog() {
  */
 async function wttLoadScoreLogFromSeasonFiles() {
     // 根据当前 category 构建可能的赛季 ID 列表
-    // MS 使用 "wtt" 后缀（历史原因），其他项目使用对应字母
-    // 同时尝试 ITTF 时期的文件（2009 等）
+    // MS/WS 各自使用 "wtt"/"ws" 后缀，MD/WD/XD 统一使用 "wtt" 后缀
+    // 同时尝试 ITTF 时期的文件
     const wttYears = ['2021', '2022', '2023', '2024', '2025', '2026'];
     const ittfYears = ['2008', '2009', '2011', '2013', '2015', '2017', '2019'];
     let seasonIds;
@@ -133,10 +133,17 @@ async function wttLoadScoreLogFromSeasonFiles() {
             ...ittfYears.map(y => `${y}-ittf`),
             ...wttYears.map(y => `${y}-wtt`)
         ];
-    } else {
-        // 其他项目的赛季 ID 后缀与 category 相同（如 ws → 2021-ws），也尝试 ittf
+    } else if (wttCurrentCategory === 'ws') {
+        // WS 使用 "ws" 后缀，也尝试 ittf
         seasonIds = [
             ...ittfYears.map(y => `${y}-ittf`),
+            ...wttYears.map(y => `${y}-ws`)
+        ];
+    } else {
+        // MD/WD/XD 统一使用 "wtt" 后缀，也尝试各自后缀和 ittf 作为回退
+        seasonIds = [
+            ...ittfYears.map(y => `${y}-ittf`),
+            ...wttYears.map(y => `${y}-wtt`),
             ...wttYears.map(y => `${y}-${wttCurrentCategory}`)
         ];
     }
