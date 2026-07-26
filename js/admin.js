@@ -143,7 +143,7 @@ async function loadAllData() {
         ws: ["2008-ittf","2009-ittf","2022-ws","2023-ws","2024-ws","2025-ws","2026-ws"],
         wd: ["2024-wtt","2025-wtt","2026-wtt"],
         md: ["2024-wtt","2025-wtt","2026-wtt"],
-        xd: ["2024-wtt"],
+        xd: ["2024-wtt","2025-wtt","2026-wtt"],
     };
     for (const [disc, cfg] of Object.entries(DATA_PATHS.wttDisc)) {
         // 加载主 score-log.json

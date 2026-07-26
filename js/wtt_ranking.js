@@ -208,17 +208,29 @@ async function wttLoadRankingData() {
 
     try {
         // 🔥 逐个加载数据文件，显示详细进度（而非一次性 Promise.all）
+        // 先加载 settings.json 以判断是否需要 initial-scores
+        updateProgress('正在下载 项目设置 (1/5): settings.json');
+        await new Promise(r => setTimeout(r, 0));
+        await wttLoadSettings();
+
+        // flat1300 模式下跳过 initial-scores 加载
+        const needsInitScores = !wttSettings || wttSettings.scoreMode !== 'flat1300';
+
         const dataFiles = [
             { name: 'score-log (按赛季)',   loader: wttLoadScoreLog,          label: '比赛记录' },
-            { name: 'initial-scores.json',   loader: wttLoadInitialScores,     label: '初始积分' },
-            { name: 'settings.json',         loader: wttLoadSettings,          label: '项目设置' },
+        ];
+        if (needsInitScores) {
+            dataFiles.push({ name: 'initial-scores.json', loader: wttLoadInitialScores, label: '初始积分' });
+        }
+        dataFiles.push(
             { name: 'event-coefficient.json',loader: wttLoadEventCoefficients, label: '赛事系数' },
             { name: 'seasons.json',          loader: wttLoadSeasons,           label: '赛季配置' }
-        ];
+        );
 
         for (let i = 0; i < dataFiles.length; i++) {
             const f = dataFiles[i];
-            updateProgress(`正在下载 ${f.label} (${i + 1}/${dataFiles.length}): ${f.name}`);
+            const total = dataFiles.length;
+            updateProgress(`正在下载 ${f.label} (${i + 1}/${total}): ${f.name}`);
             // yield 到浏览器，确保 UI 更新
             await new Promise(r => setTimeout(r, 0));
             await f.loader();
