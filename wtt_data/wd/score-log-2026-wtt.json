@@ -175,5 +175,20 @@
 { "日期": "2026-07-01", "类型": "大满贯", "胜者": "Miwa HARIMOTO/Hina HAYATA", "负者": "Diya CHITALE/Yashaswini GHORPADE" },
 { "日期": "2026-07-02", "类型": "大满贯", "胜者": "WANG Manyu/KUAI Man", "负者": "WANG Yidi/CHEN Yi" },
 { "日期": "2026-07-02", "类型": "大满贯", "胜者": "Miwa HARIMOTO/Hina HAYATA", "负者": "SHIN Yubin/JOO Cheonhui" },
-{ "日期": "2026-07-04", "类型": "大满贯", "胜者": "WANG Manyu/KUAI Man", "负者": "Miwa HARIMOTO/Hina HAYATA" }
+{ "日期": "2026-07-04", "类型": "大满贯", "胜者": "WANG Manyu/KUAI Man", "负者": "Miwa HARIMOTO/Hina HAYATA" },
+{ "日期": "2026-07-23", "类型": "球星挑战赛", "胜者": "Hitomi SATO/Saki SHIBATA", "负者": "Karina SHIRAY/Beatriz FIORE" },
+{ "日期": "2026-07-23", "类型": "球星挑战赛", "胜者": "Paulina VEGA/Daniela ORTEGA", "负者": "Jessica PRATES/Sofia KANO" },
+{ "日期": "2026-07-23", "类型": "球星挑战赛", "胜者": "Hina HAYATA/Kaho AKAE", "负者": "Valentina RIOS/Sofia VEGA" },
+{ "日期": "2026-07-23", "类型": "球星挑战赛", "胜者": "Tatiana KUKULKOVA/Elizabet ABRAAMIAN", "负者": "Giulia TAKAHASHI/Laura WATANABE" },
+{ "日期": "2026-07-23", "类型": "球星挑战赛", "胜者": "Victoria STRASSBURGER/Beatriz KANASHIRO", "负者": "Bianca BORGES/Luiza FONTANIVE" },
+{ "日期": "2026-07-23", "类型": "球星挑战赛", "胜者": "DOO Hoi Kem/NG Wing Lam", "负者": "SU Tsz Tung/LEE Hoi Man" },
+{ "日期": "2026-07-23", "类型": "球星挑战赛", "胜者": "Arantxa COSSIO/Filippa BERGAND", "负者": "Mahayla SARDA/MAIARA AGNONE" },
+{ "日期": "2026-07-23", "类型": "球星挑战赛", "胜者": "Sakura YOKOI/Sachi AOKI", "负者": "Isabel AMORIM/Gabriella ZAGO" },
+{ "日期": "2026-07-24", "类型": "球星挑战赛", "胜者": "Hitomi SATO/Saki SHIBATA", "负者": "Paulina VEGA/Daniela ORTEGA" },
+{ "日期": "2026-07-24", "类型": "球星挑战赛", "胜者": "Hina HAYATA/Kaho AKAE", "负者": "Tatiana KUKULKOVA/Elizabet ABRAAMIAN" },
+{ "日期": "2026-07-24", "类型": "球星挑战赛", "胜者": "DOO Hoi Kem/NG Wing Lam", "负者": "Victoria STRASSBURGER/Beatriz KANASHIRO" },
+{ "日期": "2026-07-24", "类型": "球星挑战赛", "胜者": "Sakura YOKOI/Sachi AOKI", "负者": "Arantxa COSSIO/Filippa BERGAND" },
+{ "日期": "2026-07-24", "类型": "球星挑战赛", "胜者": "Hina HAYATA/Kaho AKAE", "负者": "Hitomi SATO/Saki SHIBATA" },
+{ "日期": "2026-07-24", "类型": "球星挑战赛", "胜者": "DOO Hoi Kem/NG Wing Lam", "负者": "Sakura YOKOI/Sachi AOKI" },
+{ "日期": "2026-07-25", "类型": "球星挑战赛", "胜者": "Hina HAYATA/Kaho AKAE", "负者": "DOO Hoi Kem/NG Wing Lam" }
 ]

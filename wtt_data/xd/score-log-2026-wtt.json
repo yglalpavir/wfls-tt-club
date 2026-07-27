@@ -179,5 +179,20 @@
 { "日期": "2026-07-01", "类型": "大满贯", "胜者": "Hugo CALDERANO/Bruna TAKAHASHI", "负者": "Jishan LIANG/Sally MOYLAND" },
 { "日期": "2026-07-02", "类型": "大满贯", "胜者": "LIM Jonghoon/SHIN Yubin", "负者": "WEN Ruibo/KUAI Man" },
 { "日期": "2026-07-02", "类型": "大满贯", "胜者": "WANG Chuqin/SUN Yingsha", "负者": "Hugo CALDERANO/Bruna TAKAHASHI" },
-{ "日期": "2026-07-03", "类型": "大满贯", "胜者": "LIM Jonghoon/SHIN Yubin", "负者": "WANG Chuqin/SUN Yingsha" }
+{ "日期": "2026-07-03", "类型": "大满贯", "胜者": "LIM Jonghoon/SHIN Yubin", "负者": "WANG Chuqin/SUN Yingsha" },
+{ "日期": "2026-07-23", "类型": "球星挑战赛", "胜者": "Hugo CALDERANO/Bruna TAKAHASHI", "负者": "Eusebio VOS/Valentina RIOS" },
+{ "日期": "2026-07-23", "类型": "球星挑战赛", "胜者": "Guilherme TEODORO/Giulia TAKAHASHI", "负者": "Benedikt DUDA/Nina MITTELHAM" },
+{ "日期": "2026-07-23", "类型": "球星挑战赛", "胜者": "Gustavo GOMEZ/Daniela ORTEGA", "负者": "Lubomir PISTEJ/Tatiana KUKULKOVA" },
+{ "日期": "2026-07-23", "类型": "球星挑战赛", "胜者": "YIU Kwan To/NG Wing Lam", "负者": "Nicolas BURGOS/Paulina VEGA" },
+{ "日期": "2026-07-23", "类型": "球星挑战赛", "胜者": "OH Junsung/YOO Yerin", "负者": "Felipe ARADO/Laura WATANABE" },
+{ "日期": "2026-07-23", "类型": "球星挑战赛", "胜者": "Shunsuke TOGAMI/Satsuki ODO", "负者": "Alexis LEBRUN/Charlotte LUTZ" },
+{ "日期": "2026-07-23", "类型": "球星挑战赛", "胜者": "Vincent PICARD/Elizabet ABRAAMIAN", "负者": "Edward LY/Mo ZHANG" },
+{ "日期": "2026-07-23", "类型": "球星挑战赛", "胜者": "WONG Chun Ting/DOO Hoi Kem", "负者": "Leonardo IIZUKA/Victoria STRASSBURGER" },
+{ "日期": "2026-07-24", "类型": "球星挑战赛", "胜者": "Hugo CALDERANO/Bruna TAKAHASHI", "负者": "Guilherme TEODORO/Giulia TAKAHASHI" },
+{ "日期": "2026-07-24", "类型": "球星挑战赛", "胜者": "YIU Kwan To/NG Wing Lam", "负者": "Gustavo GOMEZ/Daniela ORTEGA" },
+{ "日期": "2026-07-24", "类型": "球星挑战赛", "胜者": "Shunsuke TOGAMI/Satsuki ODO", "负者": "OH Junsung/YOO Yerin" },
+{ "日期": "2026-07-24", "类型": "球星挑战赛", "胜者": "WONG Chun Ting/DOO Hoi Kem", "负者": "Vincent PICARD/Elizabet ABRAAMIAN" },
+{ "日期": "2026-07-25", "类型": "球星挑战赛", "胜者": "Hugo CALDERANO/Bruna TAKAHASHI", "负者": "YIU Kwan To/NG Wing Lam" },
+{ "日期": "2026-07-25", "类型": "球星挑战赛", "胜者": "Shunsuke TOGAMI/Satsuki ODO", "负者": "WONG Chun Ting/DOO Hoi Kem" },
+{ "日期": "2026-07-26", "类型": "球星挑战赛", "胜者": "Shunsuke TOGAMI/Satsuki ODO", "负者": "Hugo CALDERANO/Bruna TAKAHASHI" }
 ]
