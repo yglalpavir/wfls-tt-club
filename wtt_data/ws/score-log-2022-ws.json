@@ -1,0 +1,974 @@
+[
+  {
+    "日期": "2022-02-05",
+    "类型": "T联赛",
+    "胜者": "Kenta MATSUDAIRA",
+    "负者": "Maharu YOSHIMURA"
+  },
+  {
+    "日期": "2022-02-05",
+    "类型": "T联赛",
+    "胜者": "Yukiya UDA",
+    "负者": "Hiroto SHINOZUKA"
+  },
+  {
+    "日期": "2022-02-05",
+    "类型": "T联赛",
+    "胜者": "Kazuki HAMADA",
+    "负者": "Koki NIWA"
+  },
+  {
+    "日期": "2022-02-07",
+    "类型": "T联赛",
+    "胜者": "Kazuki HAMADA",
+    "负者": "Hayate SUZUKI"
+  },
+  {
+    "日期": "2022-02-07",
+    "类型": "T联赛",
+    "胜者": "Sora MATSUSHIMA",
+    "负者": "Maharu YOSHIMURA"
+  },
+  {
+    "日期": "2022-02-07",
+    "类型": "T联赛",
+    "胜者": "Yukiya UDA",
+    "负者": "Sota NODA"
+  },
+  {
+    "日期": "2022-02-08",
+    "类型": "T联赛",
+    "胜者": "HAO Shuai",
+    "负者": "Maharu YOSHIMURA"
+  },
+  {
+    "日期": "2022-02-08",
+    "类型": "T联赛",
+    "胜者": "Yukiya UDA",
+    "负者": "Yuma TANIGAKI"
+  },
+  {
+    "日期": "2022-02-08",
+    "类型": "T联赛",
+    "胜者": "Masataka MORIZONO",
+    "负者": "Kazuki HAMADA"
+  },
+  {
+    "日期": "2022-02-08",
+    "类型": "T联赛",
+    "胜者": "Kazuki HAMADA",
+    "负者": "HAO Shuai"
+  },
+  {
+    "日期": "2022-02-07",
+    "类型": "T联赛",
+    "胜者": "HAN Ying",
+    "负者": "Rin OMODA"
+  },
+  {
+    "日期": "2022-02-07",
+    "类型": "T联赛",
+    "胜者": "Minami ANDO",
+    "负者": "Miwa HARIMOTO"
+  },
+  {
+    "日期": "2022-02-07",
+    "类型": "T联赛",
+    "胜者": "Kasumi KIMURA",
+    "负者": "Mami OKAWA"
+  },
+  {
+    "日期": "2022-02-07",
+    "类型": "T联赛",
+    "胜者": "Kasumi KIMURA",
+    "负者": "Minami ANDO"
+  },
+  {
+    "日期": "2022-02-14",
+    "类型": "T联赛",
+    "胜者": "Rena ASO",
+    "负者": "Kotona OKADA"
+  },
+  {
+    "日期": "2022-02-14",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI",
+    "负者": "Mami OKAWA"
+  },
+  {
+    "日期": "2022-02-14",
+    "类型": "T联赛",
+    "胜者": "Minami ANDO",
+    "负者": "Asuka SASAO"
+  },
+  {
+    "日期": "2022-01-07",
+    "类型": "T联赛",
+    "胜者": "Miyu KATO",
+    "负者": "Honoka HASHIMOTO"
+  },
+  {
+    "日期": "2022-01-07",
+    "类型": "T联赛",
+    "胜者": "Haruna OJIO",
+    "负者": "Sakura YOKOI"
+  },
+  {
+    "日期": "2022-01-07",
+    "类型": "T联赛",
+    "胜者": "Hitomi SATO",
+    "负者": "Saki SHIBATA"
+  },
+  {
+    "日期": "2022-01-08",
+    "类型": "T联赛",
+    "胜者": "Miyu KATO",
+    "负者": "Rika SUZUKI"
+  },
+  {
+    "日期": "2022-01-08",
+    "类型": "T联赛",
+    "胜者": "Satsuki OTO",
+    "负者": "Mami OKAWA"
+  },
+  {
+    "日期": "2022-01-08",
+    "类型": "T联赛",
+    "胜者": "Minami ANDO",
+    "负者": "Haruna OJIO"
+  },
+  {
+    "日期": "2022-02-05",
+    "类型": "T联赛",
+    "胜者": "Hina HAYATA",
+    "负者": "Kasumi KIMURA"
+  },
+  {
+    "日期": "2022-02-05",
+    "类型": "T联赛",
+    "胜者": "Miwa HARIMOTO",
+    "负者": "Asuka SASAO"
+  },
+  {
+    "日期": "2022-02-05",
+    "类型": "T联赛",
+    "胜者": "Sakura MORI",
+    "负者": "Rin OMODA"
+  },
+  {
+    "日期": "2022-02-06",
+    "类型": "T联赛",
+    "胜者": "Sakura MORI",
+    "负者": "Kotomi OMOTA"
+  },
+  {
+    "日期": "2022-02-06",
+    "类型": "T联赛",
+    "胜者": "Hina HAYATA",
+    "负者": "Sakura YOKOI"
+  },
+  {
+    "日期": "2022-02-06",
+    "类型": "T联赛",
+    "胜者": "Hitomi SATO",
+    "负者": "Asuka SASAO"
+  },
+  {
+    "日期": "2022-02-06",
+    "类型": "T联赛",
+    "胜者": "Hina HAYATA",
+    "负者": "Honoka HASHIMOTO"
+  },
+  {
+    "日期": "2022-02-05",
+    "类型": "T联赛",
+    "胜者": "Hitomi EDAGAWA",
+    "负者": "Kotomi OMOTA"
+  },
+  {
+    "日期": "2022-02-05",
+    "类型": "T联赛",
+    "胜者": "Hitomi SATO",
+    "负者": "HAN Ying"
+  },
+  {
+    "日期": "2022-02-05",
+    "类型": "T联赛",
+    "胜者": "Minami ANDO",
+    "负者": "Sakura YOKOI"
+  },
+  {
+    "日期": "2022-02-05",
+    "类型": "T联赛",
+    "胜者": "HAN Ying",
+    "负者": "Honoka HASHIMOTO"
+  },
+  {
+    "日期": "2022-02-06",
+    "类型": "T联赛",
+    "胜者": "Hitomi EDAGAWA",
+    "负者": "Natsuki TSURUOKA"
+  },
+  {
+    "日期": "2022-02-06",
+    "类型": "T联赛",
+    "胜者": "Minami ANDO",
+    "负者": "Yurika NANBA"
+  },
+  {
+    "日期": "2022-02-06",
+    "类型": "T联赛",
+    "胜者": "Saki SHIBATA",
+    "负者": "HAN Ying"
+  },
+  {
+    "日期": "2022-02-06",
+    "类型": "T联赛",
+    "胜者": "Satsuki OTO",
+    "负者": "Natsuki TSURUOKA"
+  },
+  {
+    "日期": "2022-02-13",
+    "类型": "T联赛",
+    "胜者": "Miyuu KIHARA",
+    "负者": "Asuka SASAO"
+  },
+  {
+    "日期": "2022-02-13",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI",
+    "负者": "Kasumi ISHIKAWA"
+  },
+  {
+    "日期": "2022-02-13",
+    "类型": "T联赛",
+    "胜者": "Rena ASO",
+    "负者": "Kasumi KIMURA"
+  },
+  {
+    "日期": "2022-02-12",
+    "类型": "T联赛",
+    "胜者": "Minami ANDO",
+    "负者": "Kyoka IZUSAWA"
+  },
+  {
+    "日期": "2022-02-12",
+    "类型": "T联赛",
+    "胜者": "Sakura YOKOI",
+    "负者": "Mami OKAWA"
+  },
+  {
+    "日期": "2022-02-12",
+    "类型": "T联赛",
+    "胜者": "HAN Ying",
+    "负者": "Hitomi SATO"
+  },
+  {
+    "日期": "2022-02-12",
+    "类型": "T联赛",
+    "胜者": "Honoka HASHIMOTO",
+    "负者": "Minami ANDO"
+  },
+  {
+    "日期": "2022-02-13",
+    "类型": "T联赛",
+    "胜者": "Minami ANDO",
+    "负者": "Rika SUZUKI"
+  },
+  {
+    "日期": "2022-02-13",
+    "类型": "T联赛",
+    "胜者": "Satsuki OTO",
+    "负者": "Mami OKAWA"
+  },
+  {
+    "日期": "2022-02-13",
+    "类型": "T联赛",
+    "胜者": "Haruna OJIO",
+    "负者": "Minami ANDO"
+  },
+  {
+    "日期": "2022-02-13",
+    "类型": "T联赛",
+    "胜者": "Saki SHIBATA",
+    "负者": "HAN Ying"
+  },
+  {
+    "日期": "2022-02-18",
+    "类型": "T联赛",
+    "胜者": "Saki SHIBATA",
+    "负者": "Kasumi ISHIKAWA"
+  },
+  {
+    "日期": "2022-02-18",
+    "类型": "T联赛",
+    "胜者": "Miyuu KIHARA",
+    "负者": "Haruna OJIO"
+  },
+  {
+    "日期": "2022-02-18",
+    "类型": "T联赛",
+    "胜者": "Kasumi ISHIKAWA",
+    "负者": "Satsuki OTO"
+  },
+  {
+    "日期": "2022-02-18",
+    "类型": "T联赛",
+    "胜者": "Miwa HARIMOTO",
+    "负者": "Saki SHIBATA"
+  },
+  {
+    "日期": "2022-02-19",
+    "类型": "T联赛",
+    "胜者": "Satsuki OTO",
+    "负者": "Minami ANDO"
+  },
+  {
+    "日期": "2022-02-19",
+    "类型": "T联赛",
+    "胜者": "Haruna OJIO",
+    "负者": "Kotona OKADA"
+  },
+  {
+    "日期": "2022-02-19",
+    "类型": "T联赛",
+    "胜者": "Satsuki OTO",
+    "负者": "Minami ANDO"
+  },
+  {
+    "日期": "2022-02-19",
+    "类型": "T联赛",
+    "胜者": "Saki SHIBATA",
+    "负者": "Mami OKAWA"
+  },
+  {
+    "日期": "2022-02-20",
+    "类型": "T联赛",
+    "胜者": "Satsuki OTO",
+    "负者": "Miu HIRANO"
+  },
+  {
+    "日期": "2022-02-20",
+    "类型": "T联赛",
+    "胜者": "Hina HAYATA",
+    "负者": "Saki SHIBATA"
+  },
+  {
+    "日期": "2022-02-20",
+    "类型": "T联赛",
+    "胜者": "Sakura MORI",
+    "负者": "Satsuki OTO"
+  },
+  {
+    "日期": "2022-02-20",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI",
+    "负者": "Yurika NANBA"
+  },
+  {
+    "日期": "2022-02-19",
+    "类型": "T联赛",
+    "胜者": "Sakura MORI",
+    "负者": "Kyoka IZUSAWA"
+  },
+  {
+    "日期": "2022-02-19",
+    "类型": "T联赛",
+    "胜者": "Honoka HASHIMOTO",
+    "负者": "Asuka SASAO"
+  },
+  {
+    "日期": "2022-02-19",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI",
+    "负者": "Sakura YOKOI"
+  },
+  {
+    "日期": "2022-02-19",
+    "类型": "T联赛",
+    "胜者": "Sakura MORI",
+    "负者": "Hitomi SATO"
+  },
+  {
+    "日期": "2022-02-20",
+    "类型": "T联赛",
+    "胜者": "Miwa HARIMOTO",
+    "负者": "Sakura YOKOI"
+  },
+  {
+    "日期": "2022-02-20",
+    "类型": "T联赛",
+    "胜者": "Miyuu KIHARA",
+    "负者": "Kyoka IZUSAWA"
+  },
+  {
+    "日期": "2022-02-20",
+    "类型": "T联赛",
+    "胜者": "Honoka HASHIMOTO",
+    "负者": "Kasumi KIMURA"
+  },
+  {
+    "日期": "2022-02-20",
+    "类型": "T联赛",
+    "胜者": "Hitomi SATO",
+    "负者": "Miwa HARIMOTO"
+  },
+  {
+    "日期": "2022-02-23",
+    "类型": "T联赛",
+    "胜者": "Yuka UMEMURA",
+    "负者": "Satsuki OTO"
+  },
+  {
+    "日期": "2022-02-23",
+    "类型": "T联赛",
+    "胜者": "Saki SHIBATA",
+    "负者": "Miyuu KIHARA"
+  },
+  {
+    "日期": "2022-02-23",
+    "类型": "T联赛",
+    "胜者": "Miwa HARIMOTO",
+    "负者": "Yurika NANBA"
+  },
+  {
+    "日期": "2022-02-23",
+    "类型": "T联赛",
+    "胜者": "Satsuki OTO",
+    "负者": "Kasumi KIMURA"
+  },
+  {
+    "日期": "2022-02-23",
+    "类型": "T联赛",
+    "胜者": "Miyuu KIHARA",
+    "负者": "Saki SHIBATA"
+  },
+  {
+    "日期": "2022-02-26",
+    "类型": "T联赛",
+    "胜者": "Miwa HARIMOTO",
+    "负者": "Mami OKAWA"
+  },
+  {
+    "日期": "2022-02-26",
+    "类型": "T联赛",
+    "胜者": "Miyuu KIHARA",
+    "负者": "Minami ANDO"
+  },
+  {
+    "日期": "2022-02-26",
+    "类型": "T联赛",
+    "胜者": "Kasumi ISHIKAWA",
+    "负者": "Hitomi EDAGAWA"
+  },
+  {
+    "日期": "2022-02-27",
+    "类型": "T联赛",
+    "胜者": "Sakura YOKOI",
+    "负者": "Miwa HARIMOTO"
+  },
+  {
+    "日期": "2022-02-27",
+    "类型": "T联赛",
+    "胜者": "Miyuu KIHARA",
+    "负者": "Honoka HASHIMOTO"
+  },
+  {
+    "日期": "2022-02-27",
+    "类型": "T联赛",
+    "胜者": "Kasumi ISHIKAWA",
+    "负者": "Kotomi OMOTA"
+  },
+  {
+    "日期": "2022-02-27",
+    "类型": "T联赛",
+    "胜者": "Hitomi SATO",
+    "负者": "Miyuu KIHARA"
+  },
+  {
+    "日期": "2022-02-26",
+    "类型": "T联赛",
+    "胜者": "Miu HIRANO",
+    "负者": "Sakura YOKOI"
+  },
+  {
+    "日期": "2022-02-26",
+    "类型": "T联赛",
+    "胜者": "Hina HAYATA",
+    "负者": "Kotomi OMOTA"
+  },
+  {
+    "日期": "2022-02-26",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI",
+    "负者": "Honoka HASHIMOTO"
+  },
+  {
+    "日期": "2022-02-27",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI",
+    "负者": "Sakura MORI"
+  },
+  {
+    "日期": "2022-02-27",
+    "类型": "T联赛",
+    "胜者": "Hina HAYATA",
+    "负者": "Saki SHIBATA"
+  },
+  {
+    "日期": "2022-02-27",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI",
+    "负者": "Satsuki OTO"
+  },
+  {
+    "日期": "2022-02-27",
+    "类型": "T联赛",
+    "胜者": "Miu HIRANO",
+    "负者": "Yurika NANBA"
+  },
+  {
+    "日期": "2022-03-02",
+    "类型": "T联赛",
+    "胜者": "Hitomi SATO",
+    "负者": "Satsuki OTO"
+  },
+  {
+    "日期": "2022-03-02",
+    "类型": "T联赛",
+    "胜者": "Haruna OJIO",
+    "负者": "Kotomi OMOTA"
+  },
+  {
+    "日期": "2022-03-02",
+    "类型": "T联赛",
+    "胜者": "Saki SHIBATA",
+    "负者": "Hitomi SATO"
+  },
+  {
+    "日期": "2022-03-02",
+    "类型": "T联赛",
+    "胜者": "Satsuki OTO",
+    "负者": "Sakura YOKOI"
+  },
+  {
+    "日期": "2022-03-04",
+    "类型": "T联赛",
+    "胜者": "Sakura MORI",
+    "负者": "Miyu NAGASAKI"
+  },
+  {
+    "日期": "2022-03-04",
+    "类型": "T联赛",
+    "胜者": "Hina HAYATA",
+    "负者": "Haruna OJIO"
+  },
+  {
+    "日期": "2022-03-04",
+    "类型": "T联赛",
+    "胜者": "Miu HIRANO",
+    "负者": "Satsuki OTO"
+  },
+  {
+    "日期": "2022-03-04",
+    "类型": "T联赛",
+    "胜者": "Saki SHIBATA",
+    "负者": "Miyu NAGASAKI"
+  },
+  {
+    "日期": "2022-09-16",
+    "类型": "T联赛",
+    "胜者": "Honoka HASHIMOTO",
+    "负者": "CHENG I-Ching"
+  },
+  {
+    "日期": "2022-09-16",
+    "类型": "T联赛",
+    "胜者": "Minami ANDO",
+    "负者": "Satsuki OTO"
+  },
+  {
+    "日期": "2022-09-16",
+    "类型": "T联赛",
+    "胜者": "Saki SHIBATA",
+    "负者": "HAN Ying"
+  },
+  {
+    "日期": "2022-09-17",
+    "类型": "T联赛",
+    "胜者": "Honoka HASHIMOTO",
+    "负者": "Xiaona SHAN"
+  },
+  {
+    "日期": "2022-09-17",
+    "类型": "T联赛",
+    "胜者": "Satsuki OTO",
+    "负者": "Ayami NARIMOTO"
+  },
+  {
+    "日期": "2022-09-17",
+    "类型": "T联赛",
+    "胜者": "Hitomi SATO",
+    "负者": "DOO Hoi Kem"
+  },
+  {
+    "日期": "2022-09-23",
+    "类型": "T联赛",
+    "胜者": "HAN Ying",
+    "负者": "Miu HIRANO"
+  },
+  {
+    "日期": "2022-09-23",
+    "类型": "T联赛",
+    "胜者": "Miyuu KIHARA",
+    "负者": "Minami ANDO"
+  },
+  {
+    "日期": "2022-09-23",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI",
+    "负者": "CHENG I-Ching"
+  },
+  {
+    "日期": "2022-09-23",
+    "类型": "T联赛",
+    "胜者": "Miyuu KIHARA",
+    "负者": "CHENG I-Ching"
+  },
+  {
+    "日期": "2022-09-24",
+    "类型": "T联赛",
+    "胜者": "Miyuu KIHARA",
+    "负者": "DOO Hoi Kem"
+  },
+  {
+    "日期": "2022-09-24",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI",
+    "负者": "WEI Wensheng"
+  },
+  {
+    "日期": "2022-09-24",
+    "类型": "T联赛",
+    "胜者": "Miu HIRANO",
+    "负者": "Mika TAMURA"
+  },
+  {
+    "日期": "2022-09-25",
+    "类型": "T联赛",
+    "胜者": "Saki SHIBATA",
+    "负者": "Miyu NAGASAKI"
+  },
+  {
+    "日期": "2022-09-25",
+    "类型": "T联赛",
+    "胜者": "Kasumi ISHIKAWA",
+    "负者": "Satsuki OTO"
+  },
+  {
+    "日期": "2022-09-25",
+    "类型": "T联赛",
+    "胜者": "Miyuu KIHARA",
+    "负者": "Sakura YOKOI"
+  },
+  {
+    "日期": "2022-09-25",
+    "类型": "T联赛",
+    "胜者": "Miyuu KIHARA",
+    "负者": "Saki SHIBATA"
+  },
+  {
+    "日期": "2022-10-23",
+    "类型": "T联赛",
+    "胜者": "Miu HIRANO",
+    "负者": "Miyu KATO"
+  },
+  {
+    "日期": "2022-10-23",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI",
+    "负者": "Seira USHIJIMA"
+  },
+  {
+    "日期": "2022-10-23",
+    "类型": "T联赛",
+    "胜者": "Miwa HARIMOTO",
+    "负者": "Moe NOMURA"
+  },
+  {
+    "日期": "2022-11-02",
+    "类型": "T联赛",
+    "胜者": "Miu HIRANO",
+    "负者": "LI Jie"
+  },
+  {
+    "日期": "2022-11-02",
+    "类型": "T联赛",
+    "胜者": "Sakura MORI",
+    "负者": "Miyuu KIHARA"
+  },
+  {
+    "日期": "2022-11-02",
+    "类型": "T联赛",
+    "胜者": "LEE Eunhye",
+    "负者": "Asuka SASAO"
+  },
+  {
+    "日期": "2022-11-03",
+    "类型": "T联赛",
+    "胜者": "Sakura MORI",
+    "负者": "Kyoka IZUSAWA"
+  },
+  {
+    "日期": "2022-11-03",
+    "类型": "T联赛",
+    "胜者": "Miyu KATO",
+    "负者": "Asuka SASAO"
+  },
+  {
+    "日期": "2022-11-03",
+    "类型": "T联赛",
+    "胜者": "Moe NOMURA",
+    "负者": "LI Jie"
+  },
+  {
+    "日期": "2022-11-03",
+    "类型": "T联赛",
+    "胜者": "Sakura MORI",
+    "负者": "Moe NOMURA"
+  },
+  {
+    "日期": "2022-11-04",
+    "类型": "T联赛",
+    "胜者": "Miu HIRANO",
+    "负者": "Honoka HASHIMOTO"
+  },
+  {
+    "日期": "2022-11-04",
+    "类型": "T联赛",
+    "胜者": "Kasumi ISHIKAWA",
+    "负者": "Satsuki OTO"
+  },
+  {
+    "日期": "2022-11-04",
+    "类型": "T联赛",
+    "胜者": "Miyuu KIHARA",
+    "负者": "Saki SHIBATA"
+  },
+  {
+    "日期": "2022-11-05",
+    "类型": "T联赛",
+    "胜者": "Honoka HASHIMOTO",
+    "负者": "Minami ANDO"
+  },
+  {
+    "日期": "2022-11-05",
+    "类型": "T联赛",
+    "胜者": "Saki SHIBATA",
+    "负者": "HAN Ying"
+  },
+  {
+    "日期": "2022-11-05",
+    "类型": "T联赛",
+    "胜者": "CHENG I-Ching",
+    "负者": "Hitomi SATO"
+  },
+  {
+    "日期": "2022-11-06",
+    "类型": "T联赛",
+    "胜者": "LI Jie",
+    "负者": "Miyu KATO"
+  },
+  {
+    "日期": "2022-11-06",
+    "类型": "T联赛",
+    "胜者": "Moe NOMURA",
+    "负者": "Sakura MORI"
+  },
+  {
+    "日期": "2022-11-06",
+    "类型": "T联赛",
+    "胜者": "Asuka SASAO",
+    "负者": "Seira USHIJIMA"
+  },
+  {
+    "日期": "2022-11-06",
+    "类型": "T联赛",
+    "胜者": "Miyu KATO",
+    "负者": "Sakura MORI"
+  },
+  {
+    "日期": "2022-11-19",
+    "类型": "T联赛",
+    "胜者": "Miu HIRANO",
+    "负者": "Yurika NANBA"
+  },
+  {
+    "日期": "2022-11-19",
+    "类型": "T联赛",
+    "胜者": "Miyuu KIHARA",
+    "负者": "SUH Hyowon"
+  },
+  {
+    "日期": "2022-11-19",
+    "类型": "T联赛",
+    "胜者": "Minami ANDO",
+    "负者": "Miwa HARIMOTO"
+  },
+  {
+    "日期": "2022-11-19",
+    "类型": "T联赛",
+    "胜者": "Minami ANDO",
+    "负者": "Miu HIRANO"
+  },
+  {
+    "日期": "2022-11-20",
+    "类型": "T联赛",
+    "胜者": "SHIN Yubin",
+    "负者": "Miu HIRANO"
+  },
+  {
+    "日期": "2022-11-20",
+    "类型": "T联赛",
+    "胜者": "Miwa HARIMOTO",
+    "负者": "Kyoka IZUSAWA"
+  },
+  {
+    "日期": "2022-11-20",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI",
+    "负者": "Narumi SHUTO"
+  },
+  {
+    "日期": "2022-12-03",
+    "类型": "T联赛",
+    "胜者": "Saki SHIBATA",
+    "负者": "Kyoka IZUSAWA"
+  },
+  {
+    "日期": "2022-12-03",
+    "类型": "T联赛",
+    "胜者": "Maki SHIOMI",
+    "负者": "Hitomi SATO"
+  },
+  {
+    "日期": "2022-12-03",
+    "类型": "T联赛",
+    "胜者": "Honoka HASHIMOTO",
+    "负者": "Moe NOMURA"
+  },
+  {
+    "日期": "2022-12-04",
+    "类型": "T联赛",
+    "胜者": "Saki SHIBATA",
+    "负者": "Mima ITO"
+  },
+  {
+    "日期": "2022-12-04",
+    "类型": "T联赛",
+    "胜者": "Sakura YOKOI",
+    "负者": "ZHANG Hui"
+  },
+  {
+    "日期": "2022-12-04",
+    "类型": "T联赛",
+    "胜者": "Honoka HASHIMOTO",
+    "负者": "Sakura MORI"
+  },
+  {
+    "日期": "2022-12-17",
+    "类型": "T联赛",
+    "胜者": "Miu HIRANO",
+    "负者": "Sakura YOKOI"
+  },
+  {
+    "日期": "2022-12-17",
+    "类型": "T联赛",
+    "胜者": "Saki SHIBATA",
+    "负者": "Miyuu KIHARA"
+  },
+  {
+    "日期": "2022-12-17",
+    "类型": "T联赛",
+    "胜者": "Satsuki OTO",
+    "负者": "Miyu NAGASAKI"
+  },
+  {
+    "日期": "2022-12-17",
+    "类型": "T联赛",
+    "胜者": "Miwa HARIMOTO",
+    "负者": "Saki SHIBATA"
+  },
+  {
+    "日期": "2022-12-23",
+    "类型": "T联赛",
+    "胜者": "Saki SHIBATA",
+    "负者": "Ayami NARIMOTO"
+  },
+  {
+    "日期": "2022-12-23",
+    "类型": "T联赛",
+    "胜者": "Satsuki OTO",
+    "负者": "YUAN Xuejiao"
+  },
+  {
+    "日期": "2022-12-23",
+    "类型": "T联赛",
+    "胜者": "Honoka HASHIMOTO",
+    "负者": "Xiaona SHAN"
+  },
+  {
+    "日期": "2022-12-24",
+    "类型": "T联赛",
+    "胜者": "Saki SHIBATA",
+    "负者": "Moe NOMURA"
+  },
+  {
+    "日期": "2022-12-24",
+    "类型": "T联赛",
+    "胜者": "Miyu KATO",
+    "负者": "Honoka HASHIMOTO"
+  },
+  {
+    "日期": "2022-12-24",
+    "类型": "T联赛",
+    "胜者": "Satsuki OTO",
+    "负者": "Seira USHIJIMA"
+  },
+  {
+    "日期": "2022-12-26",
+    "类型": "T联赛",
+    "胜者": "Miu HIRANO",
+    "负者": "Sakura MORI"
+  },
+  {
+    "日期": "2022-12-26",
+    "类型": "T联赛",
+    "胜者": "Hina HAYATA",
+    "负者": "Rin OMODA"
+  },
+  {
+    "日期": "2022-12-26",
+    "类型": "T联赛",
+    "胜者": "Miwa HARIMOTO",
+    "负者": "Karen AKAE"
+  },
+  {
+    "日期": "2022-12-27",
+    "类型": "T联赛",
+    "胜者": "YUAN Xuejiao",
+    "负者": "Hina HAYATA"
+  },
+  {
+    "日期": "2022-12-27",
+    "类型": "T联赛",
+    "胜者": "Ayami NARIMOTO",
+    "负者": "Karen AKAE"
+  },
+  {
+    "日期": "2022-12-27",
+    "类型": "T联赛",
+    "胜者": "DOO Hoi Kem",
+    "负者": "Sakura MORI"
+  }
+]

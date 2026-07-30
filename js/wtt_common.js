@@ -34,6 +34,301 @@ let wttCurrentSortDir = 'desc';
 let wttCurrentScoreContext = { player: '', snapshotDate: '' };
 let wttInitialized = false;
 
+// ============ 双打组合名称规范化 ============
+
+/**
+ * XD（混合双打）球员性别映射表
+ * 根据 MS/WS/MD/WD 比赛数据自动生成
+ * 用于 XD 双打组合中男前女后排序
+ */
+const WTT_KNOWN_GENDERS = {
+    "Abdulbasit ABDULFATAI": "M",
+    "Abdullah YIGENLER": "M",
+    "Abhinandh PRADHIVADHI": "M",
+    "Abir HAJ SALAH": "F",
+    "Aboubaker BOURASS": "M",
+    "Aditya SAREEN": "M",
+    "Adriana DIAZ": "F",
+    "Aia MOHAMED": "F",
+    "Aishat RABIU": "F",
+    "Akash PAL": "M",
+    "Alexis LEBRUN": "M",
+    "Alvaro ROBLES": "M",
+    "Amelia NIKOLOV": "F",
+    "Ana TOFANT": "F",
+    "Anders LIND": "M",
+    "Andrea PAVLOVIC": "F",
+    "Andreea DRAGOMAN": "F",
+    "Andrej STOJANOVSKI": "M",
+    "Anirban GHOSH": "M",
+    "Ankur BHATTACHARJEE": "M",
+    "Anna HURSEY": "F",
+    "Annett KAUFMANN": "F",
+    "Anusha KUTUMBALE": "F",
+    "Arantxa COSSIO": "F",
+    "Ayhika MUKHERJEE": "F",
+    "Balamurugan RAJASEKARAN": "M",
+    "Barbora VARADY": "F",
+    "Benedikt DUDA": "M",
+    "Bernadette SZOCS": "F",
+    "Borgar HAUG": "M",
+    "Borna PETEK": "M",
+    "Bosman BOTHA": "M",
+    "Brianna BURGOS": "F",
+    "Bruna TAKAHASHI": "F",
+    "CHAN Baldwin": "M",
+    "CHEN Junsong": "M",
+    "CHEN Szu-Yu": "F",
+    "CHEN Yi": "F",
+    "CHEN Yuanyu": "M",
+    "CHENG I-Ching": "F",
+    "CHO Daeseong": "M",
+    "CHOI Jiwook": "M",
+    "CHOONG Javen": "M",
+    "Camille LUTZ": "F",
+    "Cedric MEISSNER": "M",
+    "Charlotte LUTZ": "F",
+    "Chinenye OKAFOR": "F",
+    "Christina KALLBERG": "F",
+    "Connor GREEN": "M",
+    "Cynthia KWABI": "F",
+    "DOO Hoi Kem": "F",
+    "Dang QIU": "M",
+    "Daniela FONSECA CARRAZANA": "F",
+    "Daniela ORTEGA": "F",
+    "Darius MOVILEANU": "M",
+    "Debora VIVARELLI": "F",
+    "Dina MESHREF": "F",
+    "Diya CHITALE": "F",
+    "Dora MADARASZ": "F",
+    "Ece HARAC": "F",
+    "Eduard IONESCU": "M",
+    "Edward LY": "M",
+    "Elizabet ABRAAMIAN": "F",
+    "Esteban DORR": "M",
+    "Eusebio VOS": "M",
+    "Evgeny TIKHONOV": "M",
+    "Fadwa GARCIA": "F",
+    "Favour OJO": "F",
+    "Felipe ARADO": "M",
+    "Filippa BERGAND": "F",
+    "Flavien COTON": "M",
+    "Francis ANTWI": "M",
+    "Giulia TAKAHASHI": "F",
+    "Guilherme TEODORO": "M",
+    "Gustavo GOMEZ": "M",
+    "HAN Feier": "F",
+    "HUANG Youzheng": "M",
+    "Hana ARAPOVIC": "F",
+    "Hana GODA": "F",
+    "Harmeet DESAI": "M",
+    "Hina HAYATA": "F",
+    "Hiromu KOBAYASHI": "M",
+    "Hitomi SATO": "F",
+    "Hugo CALDERANO": "M",
+    "Ibrahim GUNDUZ": "M",
+    "Iskender KHARKI": "M",
+    "Ivor BAN": "M",
+    "JOO Cheonhui": "F",
+    "James MARFO": "M",
+    "Jennifer VARGHESE": "F",
+    "Jessica REYES LAI": "F",
+    "Jia Nan YUAN": "F",
+    "Jishan LIANG": "M",
+    "Joanita BORTEYE": "F",
+    "Jorge CAMPOS": "M",
+    "Jules ROLLAND": "M",
+    "KIM Eunseo": "F",
+    "KIM Kum Yong": "F",
+    "KIM Nayeong": "F",
+    "KIM Seongjin": "F",
+    "KUAI Man": "F",
+    "Kabirat AYOOLA": "F",
+    "Katarina STRAZAR": "F",
+    "Kaushani NATH": "F",
+    "Kazuhiro YOSHIMURA": "M",
+    "Kristian KARLSSON": "M",
+    "Kristijan STANOJKOVSKI": "M",
+    "LAM Yee Lok": "F",
+    "LEE Hoi Man": "F",
+    "LI Hechen": "M",
+    "LIM Jonghoon": "M",
+    "LIN Yun-Ju": "M",
+    "LYNE Karen": "F",
+    "Laura WATANABE": "F",
+    "Leo DE NODREST": "M",
+    "Leonardo IIZUKA": "M",
+    "Lev KATSMAN": "M",
+    "Lubomir PISTEJ": "M",
+    "Luka MLADENOVIC": "M",
+    "Maharu YOSHIMURA": "M",
+    "Manav THAKKAR": "M",
+    "Manika BATRA": "F",
+    "Manush SHAH": "M",
+    "Mao TAKAMORI": "F",
+    "Maria PANFILOVA": "F",
+    "Maria XIAO": "F",
+    "Mariam ALHODABY": "F",
+    "Mariia TAILAKOVA": "F",
+    "Martin FRIIS": "M",
+    "Matthew KUTI": "M",
+    "Miha PODOBNIK": "M",
+    "Minhyung JEE": "F",
+    "Miwa HARIMOTO": "F",
+    "Miyu NAGASAKI": "F",
+    "Miyuu KIHARA": "F",
+    "Mo ZHANG": "F",
+    "Mohammed ABDULWAHHAB": "M",
+    "Mudit DANI": "M",
+    "Muizz ADEGOKE": "M",
+    "NG Wing Lam": "F",
+    "Nandan NARESH": "M",
+    "Nandor ECSEKI": "M",
+    "Nicholas LUM": "M",
+    "Nicolas BURGOS": "M",
+    "Nikita ARTEMENKO": "M",
+    "Nina MITTELHAM": "F",
+    "Nithya MANI": "F",
+    "OH Junsung": "M",
+    "OH Seunghwan": "M",
+    "Olajide OMOTAYO": "M",
+    "Omar ASSAR": "M",
+    "Ovidiu IONESCU": "M",
+    "PANG Koen": "M",
+    "PARK Ganghyeon": "M",
+    "PARK Gyuhyeon": "M",
+    "Patrick FRANZISKA": "M",
+    "Paulina VEGA": "F",
+    "Payas JAIN": "M",
+    "Peter HRIBAR": "M",
+    "Prithika PAVADE": "F",
+    "QIN Yuxuan": "F",
+    "QUEK Izaac": "M",
+    "RI Jong Sik": "M",
+    "Reina ASO": "F",
+    "Remi CHAMBET-WEIL": "M",
+    "Robert GARDOS": "M",
+    "Rogelio CASTRO": "M",
+    "Rokaia ELBAZ": "F",
+    "SER Lin Qian": "F",
+    "SHI Xunyao": "F",
+    "SHIN Yubin": "F",
+    "SUN Yingsha": "F",
+    "Sabine WINTER": "F",
+    "Sally MOYLAND": "F",
+    "Sara STOJANOVSKA": "F",
+    "Sarah DE NUTTE": "F",
+    "Sarvinoz MIRKADIROVA": "F",
+    "Sathiyan GNANASEKARAN": "M",
+    "Satoshi AIDA": "M",
+    "Satsuki ODO": "F",
+    "Sayali WANI": "F",
+    "Shunsuke TOGAMI": "M",
+    "Sibel ALTINKAYA": "F",
+    "Sodiq ADESANYA": "M",
+    "Sofia POLCANOVA": "F",
+    "Sophia KLEE": "F",
+    "Sora MATSUSHIMA": "M",
+    "Stepan BRHEL": "M",
+    "Steven MORENO": "M",
+    "Sukurat AIYELABEGAN": "F",
+    "Sultan AL-KUWARI": "M",
+    "Swastika GHOSH": "F",
+    "Syndrela DAS": "F",
+    "TEE Ai Xin": "F",
+    "Taiwo MATI": "M",
+    "Tatiana KUKULKOVA": "F",
+    "Thibault PORET": "M",
+    "Tin-Tin HO": "F",
+    "Tomokazu HARIMOTO": "M",
+    "Valentina RIOS": "F",
+    "Valeriia SHCHERBATYKH": "F",
+    "Veronika POLAKOVA": "F",
+    "Victoria STRASSBURGER": "F",
+    "Vincent PICARD": "M",
+    "Vitor ISHIY": "M",
+    "Vladimir SIDORENKO": "M",
+    "WANG Chuqin": "M",
+    "WANG Xiaotong": "F",
+    "WEN Ruibo": "M",
+    "WONG Chun Ting": "M",
+    "WONG Qi Shen": "M",
+    "Wassim ESSID": "M",
+    "Wim VERDONSCHOT": "M",
+    "XUE Fei": "M",
+    "Xia Lian NI": "F",
+    "YAO Ruixuan": "F",
+    "YIU Kwan To": "M",
+    "YOO Siwoo": "F",
+    "YOO Yerin": "F",
+    "YUAN Licen": "M",
+    "Yangzi LIU": "F",
+    "Yashaswini GHORPADE": "F",
+    "Youssef ABDELAZIZ": "M",
+    "Yuhi SAKAI": "M",
+    "ZENG Jian": "F",
+    "ZONG Geman": "F"
+};
+
+/**
+ * 双打类别集合
+ */
+const WTT_DOUBLES_CATEGORIES = new Set(['md', 'wd', 'xd']);
+
+/**
+ * 规范化双打组合名称：确保 A/B 和 B/A 被视为同一组
+ * - MD/WD：按字母顺序排序两位球员名
+ * - XD：男选手在前，女选手在后（使用 WTT_KNOWN_GENDERS 映射表）
+ * - 非双打类别：返回原值
+ * @param {string} name - 原始组合名（如 "JANG Woojin/CHO Daeseong"）
+ * @returns {string} 规范化后的组合名
+ */
+function wttNormalizeDoublesName(name) {
+    // 非双打（无 / 分隔符）或非双打类别，直接返回
+    if (!name || !name.includes('/') || !WTT_DOUBLES_CATEGORIES.has(wttCurrentCategory)) {
+        return name;
+    }
+
+    // 分割两位球员
+    var parts = name.split('/');
+    if (parts.length !== 2) return name;
+    var p1 = parts[0].trim();
+    var p2 = parts[1].trim();
+    if (!p1 || !p2) return name;
+
+    if (wttCurrentCategory === 'xd') {
+        // XD：男前女后
+        var g1 = WTT_KNOWN_GENDERS[p1];
+        var g2 = WTT_KNOWN_GENDERS[p2];
+        if (g1 === 'M' && g2 === 'F') {
+            return p1 + '/' + p2;
+        } else if (g1 === 'F' && g2 === 'M') {
+            return p2 + '/' + p1;
+        }
+        // 无法判断性别时，按字母顺序排序
+        return (p1 <= p2 ? p1 : p2) + '/' + (p1 <= p2 ? p2 : p1);
+    }
+
+    // MD/WD：按字母顺序排序（所有球员同性别）
+    return (p1 <= p2 ? p1 : p2) + '/' + (p1 <= p2 ? p2 : p1);
+}
+
+/**
+ * 对 score-log 数据数组应用双打组合名规范化
+ * @param {Array} records - 比赛记录数组
+ * @returns {Array} 规范化后的数组（原地修改）
+ */
+function wttNormalizeDoublesScoreLog(records) {
+    if (!records || !records.length) return records;
+    if (!WTT_DOUBLES_CATEGORIES.has(wttCurrentCategory)) return records;
+    for (var i = 0; i < records.length; i++) {
+        var r = records[i];
+        if (r['胜者']) r['胜者'] = wttNormalizeDoublesName(r['胜者']);
+        if (r['负者']) r['负者'] = wttNormalizeDoublesName(r['负者']);
+    }
+    return records;
+}
+
 // ============ 项目切换 ============
 
 /**
@@ -108,6 +403,7 @@ function wttLoadScoreLog() {
             .then(r => r.json())
             .then(d => {
                 wttScoreLogData = d.filter(wttIsValidRecord);
+                wttNormalizeDoublesScoreLog(wttScoreLogData);
                 clearFirstAppearanceCache();
             });
     }).catch(e => {
@@ -174,8 +470,9 @@ async function wttLoadScoreLogFromSeasonFiles() {
         throw new Error('No season files found, fall back to single file');
     }
 
-    console.log(`WTT[${wttCurrentCategory}] 从 ${seasonIds.filter(() => true).length} 个赛季文件中加载了 ${allRecords.length} 条记录`);
+    console.log(`WTT[${wttCurrentCategory}] 从多个赛季文件中加载了 ${allRecords.length} 条记录`);
     wttScoreLogData = allRecords.filter(wttIsValidRecord);
+    wttNormalizeDoublesScoreLog(wttScoreLogData);
     clearFirstAppearanceCache();
 }
 

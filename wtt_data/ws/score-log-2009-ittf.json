@@ -1,529 +1,3164 @@
 [
-{ "日期": "2009-05-15", "类型": "世锦赛", "胜者": "TÓTH Krisztina", "负者": "TOMAZINI Jana" },
-{ "日期": "2009-05-15", "类型": "世锦赛", "胜者": "HU Melek", "负者": "CHIU Soo Jiin" },
-{ "日期": "2009-05-15", "类型": "世锦赛", "胜者": "FUKUOKA Haruna", "负者": "NEGRISOLI Laura" },
-{ "日期": "2009-05-15", "类型": "世锦赛", "胜者": "VORONOVA Anastasia", "负者": "BOROŠ Tamara" },
-{ "日期": "2009-05-15", "类型": "世锦赛", "胜者": "VACENOVSKÁ Iveta", "负者": "RAMOS Fabiola" },
-{ "日期": "2009-05-15", "类型": "世锦赛", "胜者": "PARK Young Sook", "负者": "YAO Yan" },
-{ "日期": "2009-05-15", "类型": "世锦赛", "胜者": "DVORAK Galia", "负者": "SARA El-Sokary" },
-{ "日期": "2009-05-15", "类型": "世锦赛", "胜者": "GUO Yan", "负者": "RUVMAN Natali" },
-{ "日期": "2009-05-15", "类型": "世锦赛", "胜者": "WU Jiaduo", "负者": "PRIVALOVA Alexandra" },
-{ "日期": "2009-05-15", "类型": "世锦赛", "胜者": "LI Qiangbing", "负者": "MATTENET Audrey" },
-{ "日期": "2009-05-15", "类型": "世锦赛", "胜者": "DING Ning", "负者": "MEDINA Paula" },
-{ "日期": "2009-05-15", "类型": "世锦赛", "胜者": "DANG Ye-Seo", "负者": "SILVA Ligia Santos" },
-{ "日期": "2009-05-15", "类型": "世锦赛", "胜者": "KOMWONG Nanthana", "负者": "OZLER Fulya" },
-{ "日期": "2009-05-15", "类型": "世锦赛", "胜者": "KIM Kyung Ah", "负者": "DAS Mouma" },
-{ "日期": "2009-05-15", "类型": "世锦赛", "胜者": "MIAO Miao", "负者": "LAU Sui Fei" },
-{ "日期": "2009-05-15", "类型": "世锦赛", "胜者": "FUJINUMA Ai", "负者": "KASABOVA Asya" },
-{ "日期": "2009-05-15", "类型": "世锦赛", "胜者": "SAMARA Elizabeta", "负者": "REED Jasna" },
-{ "日期": "2009-05-15", "类型": "世锦赛", "胜者": "GUO Yue", "负者": "GHATAK Poulomi" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "SHEN Yanfei", "负者": "HAN Xing" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "NG Wing Nam", "负者": "PATKAR Madhurika" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "FANG Lay Jian", "负者": "TIKHOMIROVA Anna" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "LI Jiao", "负者": "WINTER Sabine" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "LI Jiawei", "负者": "YU Kwok See" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "CHENG I-Ching", "负者": "TODOROVIĆ Andrea" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "BARTHEL Zhenqi", "负者": "KOMWONG Nanthana" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "WU Yang", "负者": "MIKHAYLOVA Polina" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "TÓTH Krisztina", "负者": "SILVA Ligia" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "EKHOLM Matilda", "负者": "HADAČOVÁ Dana" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "ERDELJI Anamaria", "负者": "YUAN Guan Meng" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "HIRANO Sayaka", "负者": "CHEN Szu-Yu" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "HUANG Yi-Hua", "负者": "BALAZOVA Barbora" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "FEHER Gabriela", "负者": "GUNGOR Gokcenur" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "RI Mi-Gyong", "负者": "GRUNDISCH Carole" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "GUO Yue", "负者": "EERLAND Britt" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "YANG Ha-Eun", "负者": "STEFANSKA Kinga" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "PARTYKA Natalia", "负者": "MOLNAR Cornelia" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "TANIOKA Ayuka", "负者": "DAS Mouma" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "ISHIKAWA Kasumi", "负者": "HIRICI Cristina" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "YU Mengyu", "负者": "TIAN Yuan" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "NI Xialian", "负者": "HSING Ariel" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "ÓDOROVÁ Eva", "负者": "STRBIKOVA Renata" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "FENG Tianwei", "负者": "SZOCS Bernadette" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "JIANG Huajun", "负者": "PROKHOROVA Yulia" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "WAKAMIYA Misako", "负者": "DUBKOVA Alena" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "MOON Hyun-Jung", "负者": "PETTERSSON Malin" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "WANG Yuegu", "负者": "PARK Young-Sook" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "SUN Beibei", "负者": "TOMAZINI Jana" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "LEE Ho Ching", "负者": "KRAVCHENKO Marina" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "SAMARA Elizabeta", "负者": "FÜHRER Monika" },
-{ "日期": "2011-05-15", "类型": "世锦赛", "胜者": "GUO Yan", "负者": "GATINSKA Katalina" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "DING Ning", "负者": "DEDERKO Zhenhua" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "KOMWONG Nanthana", "负者": "ABBAT Alice" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "STEFANOVA Nikoleta", "负者": "KUMARESAN Shamini" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "HU Limei", "负者": "PÓTA Georgina" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "CHENG I-Ching", "负者": "BALÁŽOVÁ Barbora" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "FANG Xian Yi", "负者": "HAN Xing" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "ZHANG Lily", "负者": "NG Sock Khim" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "PARK Seong-Hye", "负者": "FUKUHARA Ai" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "DING Ning", "负者": "KOMWONG Nanthana" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "HU Limei", "负者": "STEFANOVA Nikoleta" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "FANG Xian Yi", "负者": "CHENG I-Ching" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "PARK Seong-Hye", "负者": "ZHANG Lily" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "DING Ning", "负者": "HU Limei" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "PARK Seong-Hye", "负者": "FANG Xian Yi" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "DING Ning", "负者": "PARK Seong-Hye" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "YANG Ha-Eun", "负者": "NEVES Ana" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "PERGEL Szandra", "负者": "SAVELYEVA Antonina" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "CHEN Szu-Yu", "负者": "GALIČ Alex" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "LIU Jia", "负者": "BARAVOK Katsiaryna" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "RI Myong-Sun", "负者": "SILVA Lígia" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "RI Mi-Gyong", "负者": "GRZYBOWSKA Katarzyna" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "ŠTRBÍKOVÁ Renáta", "负者": "NUTTE Sarah De" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "ISHIKAWA Kasumi", "负者": "NADEEN El-Dawlatly" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "YANG Ha-Eun", "负者": "PERGEL Szandra" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "LIU Jia", "负者": "CHEN Szu-Yu" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "RI Myong-Sun", "负者": "RI Mi-Gyong" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "ISHIKAWA Kasumi", "负者": "ŠTRBÍKOVÁ Renáta" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "LIU Jia", "负者": "YANG Ha-Eun" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "RI Myong-Sun", "负者": "ISHIKAWA Kasumi" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "RI Myong-Sun", "负者": "LIU Jia" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "WU Yang", "负者": "GONDERINGER Tessy" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "PĚNKAVOVÁ Katerina", "负者": "SKOV Mie" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "IVANCAN Irene", "负者": "PARKER Joanna" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "WU Jiaduo", "负者": "MUANGSUK Anisara" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "HUANG Yi-Hua", "负者": "MOLNAR Monika" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "NI Xialian", "负者": "L Gasnier" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "KIM Hye-Song", "负者": "SZŐCS Bernadette" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "SAMARA Elizabeta", "负者": "ARLOUSKAYA Alina" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "WU Yang", "负者": "PĚNKAVOVÁ Katerina" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "WU Jiaduo", "负者": "IVANCAN Irene" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "HUANG Yi-Hua", "负者": "NI Xialian" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "KIM Hye-Song", "负者": "SAMARA Elizabeta" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "WU Yang", "负者": "WU Jiaduo" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "KIM Hye-Song", "负者": "HUANG Yi-Hua" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "WU Yang", "负者": "KIM Hye-Song" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "CHEN Meng", "负者": "BERHO Marina" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "KIM Jong", "负者": "LIU Hsing-Y" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "NG Wing Nam", "负者": "PATKAR Madhurika" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "PESOTSKA Margaryta", "负者": "LI Isabelle Siyun" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "HIRANO Sayaka", "负者": "SZYMAŃSKA Antonina" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "MADARÁSZ Dóra", "负者": "ERDELJI Anamaria" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "TÓTH Krisztina", "负者": "LI Ching Wan" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "LI Xiaoxia", "负者": "PAŠKAUSKIENĖ Rūta" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "CHEN Meng", "负者": "KIM Jong" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "PESOTSKA Margaryta", "负者": "NG Wing Nam" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "HIRANO Sayaka", "负者": "MADARÁSZ Dóra" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "LI Xiaoxia", "负者": "TÓTH Krisztina" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "CHEN Meng", "负者": "PESOTSKA Margaryta" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "LI Xiaoxia", "负者": "HIRANO Sayaka" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "LI Xiaoxia", "负者": "CHEN Meng" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "FENG Tianwei", "负者": "NECULA Iulia" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "MORIZONO Misaki", "负者": "BLIZNET Olga" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "MATSUDAIRA Shiho", "负者": "PIETKIEWICZ Monika" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "YU Mengyu", "负者": "SAWETTABUT Suthasini" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "FUJII Hiroko", "负者": "CHRISTOFORAKI Maria" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "LIN Chia-Hui", "负者": "HSING Ariel" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "BILENKO Tetyana", "负者": "MIGOT Marie" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "SEOK Ha-Jung", "负者": "POSTOACA Camelia" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "FENG Tianwei", "负者": "MORIZONO Misaki" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "MATSUDAIRA Shiho", "负者": "YU Mengyu" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "FUJII Hiroko", "负者": "LIN Chia-Hui" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "BILENKO Tetyana", "负者": "SEOK Ha-Jung" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "FENG Tianwei", "负者": "MATSUDAIRA Shiho" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "BILENKO Tetyana", "负者": "FUJII Hiroko" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "FENG Tianwei", "负者": "BILENKO Tetyana" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "JIANG Huajun", "负者": "MISIKONYTĖ Lina" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "KEM Doo Hoi", "负者": "OWEN Naomi" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "GAPONOVA Ganna", "负者": "VEGA Paulina" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "SILBEREISEN Kristin", "负者": "DOLGIKH Maria" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "LEE Ho Ching", "负者": "DAS Mouma" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "MESHREF Dina", "负者": "SOLJA Petrissa" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "PARK Young-Sook", "负者": "MENGYUAN Guan" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "ZHU Yuling", "负者": "TROSHNEVA Elena" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "JIANG Huajun", "负者": "KEM Doo Hoi" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "SILBEREISEN Kristin", "负者": "GAPONOVA Ganna" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "LEE Ho Ching", "负者": "MESHREF Dina" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "ZHU Yuling", "负者": "PARK Young-Sook" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "JIANG Huajun", "负者": "SILBEREISEN Kristin" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "ZHU Yuling", "负者": "LEE Ho Ching" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "ZHU Yuling", "负者": "JIANG Huajun" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "SHEN Yanfei", "负者": "YAMADA Jessica" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "PARTYKA Natalia", "负者": "YOO Eun-Chong" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "MIKHAILOVA Polina", "负者": "GATINSKA Katalina" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "DODEAN Daniela", "负者": "SILVA Yadira" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "EKHOLM Matilda", "负者": "TIAN Yuan" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "KUMAHARA Caroline", "负者": "NOSKOVA Yana" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "HU Melek", "负者": "GRUNDISCH Carole" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "PAVLOVICH Viktoria", "负者": "MATSUZAWA Marina" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "SHEN Yanfei", "负者": "PARTYKA Natalia" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "DODEAN Daniela", "负者": "MIKHAILOVA Polina" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "EKHOLM Matilda", "负者": "KUMAHARA Caroline" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "HU Melek", "负者": "PAVLOVICH Viktoria" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "SHEN Yanfei", "负者": "DODEAN Daniela" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "HU Melek", "负者": "EKHOLM Matilda" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "HU Melek", "负者": "SHEN Yanfei" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "ČECHOVÁ Dana", "负者": "DVORAK Galia" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "LI Jiao", "负者": "MATELOVA Hana" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "VACENOVSKÁ Iveta", "负者": "PRIVALOVA Aleksandra" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "BARTHEL Zhenqi", "负者": "JO Yu-Jin" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "LOVAS Petra", "负者": "LENNON Emmanuelle" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "LIU Shiwen", "负者": "SIBLEY Kelly" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "SEO Hyo-Won", "负者": "ČECHOVÁ Dana" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "LI Jiao", "负者": "FANG Lay Jian" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "BARTHEL Zhenqi", "负者": "VACENOVSKÁ Iveta" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "LIU Shiwen", "负者": "LOVAS Petra" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "SEO Hyo-Won", "负者": "LI Jiao" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "LIU Shiwen", "负者": "BARTHEL Zhenqi" },
-{ "日期": "2013-05-15", "类型": "世锦赛", "胜者": "LIU Shiwen", "负者": "SEO Hyo-Won" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "DING Ning", "负者": "OSHONAIKE Olufunke" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "PARTYKA Natalia", "负者": "PERGEL Szandra" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "KIM Jong", "负者": "MORET Rachel" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "HIRANO Miu", "负者": "BATRA Manika" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "IVANCAN Irene", "负者": "GUAN Angela" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "FAJMUT Manca", "负者": "PROKHOROVA Yulia" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "PARK Young-Sook", "负者": "HWEE Yee Herng" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "SEO Hyo-Won", "负者": "JHA Prachi" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "DING Ning", "负者": "PARTYKA Natalia" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "HIRANO Miu", "负者": "KIM Jong" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "IVANCAN Irene", "负者": "FAJMUT Manca" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "PARK Young-Sook", "负者": "SEO Hyo-Won" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "DING Ning", "负者": "HIRANO Miu" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "IVANCAN Irene", "负者": "PARK Young-Sook" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "DING Ning", "负者": "IVANCAN Irene" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "SAMARA Elizabeta", "负者": "ARLOUSKAYA Alina" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "MITTELHAM Nina", "负者": "JONSSON Jennifer" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "TIAN Yuan", "负者": "SAMET Maryam" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "CHENG I-Ching", "负者": "DIAZ Adriana" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "LEE I-Chen", "负者": "NG Sock Khim" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "GAPONOVA Ganna", "负者": "RIOS Daniely" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "BALÁŽOVÁ Barbora", "负者": "VEGA Paulina" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "WU Yang", "负者": "NUTTE Sarah De" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "SAMARA Elizabeta", "负者": "MITTELHAM Nina" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "CHENG I-Ching", "负者": "TIAN Yuan" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "GAPONOVA Ganna", "负者": "LEE I-Chen" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "WU Yang", "负者": "BALÁŽOVÁ Barbora" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "CHENG I-Ching", "负者": "SAMARA Elizabeta" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "WU Yang", "负者": "GAPONOVA Ganna" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "WU Yang", "负者": "CHENG I-Ching" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "ISHIKAWA Kasumi", "负者": "SLADKOVA Nataliya" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "PAŠKAUSKIENĖ Rūta", "负者": "KUMARESAN Shamini" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "ŠTRBÍKOVÁ Renata", "负者": "KUMAHARA Caroline" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "ZI Mu", "负者": "SILBEREISEN Kristin" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "HU Melek", "负者": "KAROVA Anelia" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "PESOTSKA Margaryta", "负者": "LIN Gui" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "EKHOLM Matilda", "负者": "LUO Anqi" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "LEE Zion", "负者": "LIU Jia" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "ISHIKAWA Kasumi", "负者": "PAŠKAUSKIENĖ Rūta" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "ZI Mu", "负者": "ŠTRBÍKOVÁ Renata" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "PESOTSKA Margaryta", "负者": "HU Melek" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "EKHOLM Matilda", "负者": "LEE Zion" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "ZI Mu", "负者": "ISHIKAWA Kasumi" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "EKHOLM Matilda", "负者": "PESOTSKA Margaryta" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "ZI Mu", "负者": "EKHOLM Matilda" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "YU Mengyu", "负者": "LI Ching Wan" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "OLIVEIRA Leila", "负者": "MESHREF Dina" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "ÓDOROVÁ Eva", "负者": "RAMÍREZ Sara" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "LI Qian", "负者": "GATS Yuliya" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "SOLJA Petrissa", "负者": "LEE Rou You" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "GRZYBOWSKA Katarzyna", "负者": "PĚNKAVOVÁ Kateřina" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "WINTER Sabine", "负者": "RUANO Lady" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "FENG Tianwei", "负者": "HÎRÎCI Cristina" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "YU Mengyu", "负者": "OLIVEIRA Leila" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "LI Qian", "负者": "ÓDOROVÁ Eva" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "GRZYBOWSKA Katarzyna", "负者": "SOLJA Petrissa" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "FENG Tianwei", "负者": "WINTER Sabine" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "YU Mengyu", "负者": "LI Qian" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "FENG Tianwei", "负者": "GRZYBOWSKA Katarzyna" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "FENG Tianwei", "负者": "YU Mengyu" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "LI Xiaoxia", "负者": "HWANG Ji-Na" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "ZHANG Mo", "负者": "NADEEN El-Dawlatly" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "MIKHAILOVA Polina", "负者": "DAS Mouma" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "RI Myong-Sun", "负者": "PAVČNIK Tamara" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "JIANG Huajun", "负者": "KHETKHUAN Tamolwan" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "NI Xialian", "负者": "TROSMAN Nicole" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "MATELOVÁ Hana", "负者": "KOMWONG Nanthana" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "HIRANO Sayaka", "负者": "SILVA Lígia" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "LI Xiaoxia", "负者": "ZHANG Mo" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "RI Myong-Sun", "负者": "MIKHAILOVA Polina" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "JIANG Huajun", "负者": "NI Xialian" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "MATELOVÁ Hana", "负者": "HIRANO Sayaka" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "LI Xiaoxia", "负者": "RI Myong-Sun" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "JIANG Huajun", "负者": "MATELOVÁ Hana" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "LI Xiaoxia", "负者": "JIANG Huajun" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "ITO Mima", "负者": "MEDINA Paula" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "FANG Lay Jian", "负者": "LI Isabelle" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "NOSKOVA Yana", "负者": "SILVA Yadira" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "CHEN Szu-Yu", "负者": "TOLIOU Aikaterini" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "LEE Ho Ching", "负者": "GALIČ Alex" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "DOLGIKH Maria", "负者": "HUGH Judy" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "SOROCHYNSKA Tetyana", "负者": "STUCKYTĖ Eglė" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "FUKUHARA Ai", "负者": "FEHER Gabriela" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "ITO Mima", "负者": "FANG Lay Jian" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "CHEN Szu-Yu", "负者": "NOSKOVA Yana" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "DOLGIKH Maria", "负者": "LEE Ho Ching" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "SOROCHYNSKA Tetyana", "负者": "FUKUHARA Ai" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "ITO Mima", "负者": "CHEN Szu-Yu" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "SOROCHYNSKA Tetyana", "负者": "DOLGIKH Maria" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "ITO Mima", "负者": "SOROCHYNSKA Tetyana" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "ZHU Yuling", "负者": "LIU Hsing-Yin" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "VACENOVSKÁ Iveta", "负者": "HAN Xing" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "EERLAND Britt", "负者": "TODOROVIĆ Andrea" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "NA Tie Ya", "负者": "PAPADAKI Angeliki" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "LI Jie", "负者": "VIVARELLI Debora" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "DVORAK Galia", "负者": "LI Qiangbing" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "RI Mi-Gyong", "负者": "LORENZOTTI Maria" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "KEM Doo Hoi", "负者": "KIM Hye-Song" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "ZHU Yuling", "负者": "VACENOVSKÁ Iveta" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "NA Tie Ya", "负者": "EERLAND Britt" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "LI Jie", "负者": "DVORAK Galia" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "KEM Doo Hoi", "负者": "RI Mi-Gyong" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "ZHU Yuling", "负者": "NA Tie Ya" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "LI Jie", "负者": "KEM Doo Hoi" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "ZHU Yuling", "负者": "LI Jie" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "YANG Ha-Eun", "负者": "PICCOLIN Giorgia" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "GRUNDISCH Carole", "负者": "GELMAN Shelli" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "POSTOACA Camelia", "负者": "ERDELJI Anamaria" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "SHEN Yanfei", "负者": "SAWETTABUT Suthasini" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "LI Jiao", "负者": "RAKOVAC Lea" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "FANG Xian Yi", "负者": "HANFFOU Sarah" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "SZŐCS Bernadette", "负者": "UMBACIA Angie" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "LIU Shiwen", "负者": "PETEK Petra" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "YANG Ha-Eun", "负者": "GRUNDISCH Carole" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "SHEN Yanfei", "负者": "POSTOACA Camelia" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "LI Jiao", "负者": "FANG Xian Yi" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "LIU Shiwen", "负者": "SZŐCS Bernadette" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "YANG Ha-Eun", "负者": "SHEN Yanfei" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "LIU Shiwen", "负者": "LI Jiao" },
-{ "日期": "2015-05-15", "类型": "世锦赛", "胜者": "LIU Shiwen", "负者": "YANG Ha-Eun" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "DING Ning", "负者": "TRIGOLOS Daria" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "ADÁMKOVÁ Karin", "负者": "CIOBANU Irina" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "NI Xialian", "负者": "MEDINA Paula" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "PÓTA Georgina", "负者": "BERGSTRÖM Linda" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "WINTER Sabine", "负者": "JEGER Mateja" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "ZHANG Lily", "负者": "TRANG Mai Hoàng Mỹ" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "ÓDOROVÁ Eva", "负者": "RAMÍREZ Sara" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "LI Jie", "负者": "KUKULKOVA Tatiana" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "DING Ning", "负者": "ADÁMKOVÁ Karin" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "NI Xialian", "负者": "PÓTA Georgina" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "ZHANG Lily", "负者": "WINTER Sabine" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "LI Jie", "负者": "ÓDOROVÁ Eva" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "DING Ning", "负者": "NI Xialian" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "LI Jie", "负者": "ZHANG Lily" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "DING Ning", "负者": "LI Jie" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "SATO Hitomi", "负者": "MUKHERJEE Ayhika" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "CHENG Hsien-Tzu", "负者": "RAZEK Yousra Abdel" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "KHETKHUAN Tamolwan", "负者": "WING Mak Tze" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "SAMARA Elizabeta", "负者": "LUNG Lisa" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "MIKHAILOVA Polina", "负者": "PARANANG Orawan" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "SIM Ri Hyon", "负者": "GRZYBOWSKA Katarzyna" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "NOSKOVA Yana", "负者": "GALIĆ Alex" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "ISHIKAWA Kasumi", "负者": "KUMAHARA Caroline" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "SATO Hitomi", "负者": "CHENG Hsien-Tzu" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "SAMARA Elizabeta", "负者": "KHETKHUAN Tamolwan" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "SIM Ri Hyon", "负者": "MIKHAILOVA Polina" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "ISHIKAWA Kasumi", "负者": "NOSKOVA Yana" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "SAMARA Elizabeta", "负者": "SATO Hitomi" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "ISHIKAWA Kasumi", "负者": "SIM Ri Hyon" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "ISHIKAWA Kasumi", "负者": "SAMARA Elizabeta" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "HIRANO Miu", "负者": "OSHONAIKE Olufunke" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "SAWETTABUT Suthasini", "负者": "PICCOLIN Giorgia" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "DIACONU Adina", "负者": "MANTZ Chantal" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "CHEN Szu-Yu", "负者": "LOW Katherine" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "POLCANOVA Sofia", "负者": "FAJMUT Manca" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "ZHANG Mo", "负者": "TODOROVIĆ Andrea" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "XIAO María", "负者": "MITTELHAM Nina" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "KEM Doo Hoi", "负者": "ARLOUSKAYA Alina" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "HIRANO Miu", "负者": "SAWETTABUT Suthasini" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "CHEN Szu-Yu", "负者": "DIACONU Adina" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "ZHANG Mo", "负者": "POLCANOVA Sofia" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "XIAO María", "负者": "KEM Doo Hoi" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "HIRANO Miu", "负者": "CHEN Szu-Yu" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "XIAO María", "负者": "ZHANG Mo" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "HIRANO Miu", "负者": "XIAO María" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "YU Mengyu", "负者": "MORET Rachel" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "SILBEREISEN Kristin", "负者": "CAREY Charlotte" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "LEE Zi-On", "负者": "LUPULESKU Izabela" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "SOROCHYNSKA Tetyana", "负者": "ASCHWANDEN Rahel" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "LEE Ho Ching", "负者": "MARCHETTI Nathalie" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "PARTYKA Natalia", "负者": "CHASSELIN Pauline" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "KOMWONG Nanthana", "负者": "TOMANOVSKA Katerina" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "FENG Tianwei", "负者": "VOROBEVA Olga" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "SILBEREISEN Kristin", "负者": "YU Mengyu" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "LEE Zi-On", "负者": "SOROCHYNSKA Tetyana" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "LEE Ho Ching", "负者": "PARTYKA Natalia" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "FENG Tianwei", "负者": "KOMWONG Nanthana" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "SILBEREISEN Kristin", "负者": "LEE Zi-On" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "FENG Tianwei", "负者": "LEE Ho Ching" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "FENG Tianwei", "负者": "SILBEREISEN Kristin" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "ZHU Yuling", "负者": "PETROVA Valeria" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "NUTTE Sarah De", "负者": "HUANG Yu-Wen" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "BATRA Manika", "负者": "KUSIŃSKA Klaudia" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "KIM Kyungah", "负者": "BRATEYKO Solomiya" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "MINNIE Soo Wai Yam", "负者": "AMBRUS Krisztina" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "PAVLOVICH Viktoria", "负者": "TOLIOU Aikaterini" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "EERLAND Britt", "负者": "SREBRNJAK Dorina" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "ITO Mima", "负者": "LIN Gui" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "ZHU Yuling", "负者": "NUTTE Sarah De" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "KIM Kyungah", "负者": "BATRA Manika" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "MINNIE Soo Wai Yam", "负者": "PAVLOVICH Viktoria" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "ITO Mima", "负者": "EERLAND Britt" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "ZHU Yuling", "负者": "KIM Kyungah" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "ITO Mima", "负者": "MINNIE Soo Wai Yam" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "ZHU Yuling", "负者": "ITO Mima" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "LIU Jia", "负者": "DAS Mouma" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "SZŐCS Bernadette", "负者": "LIU Yu-Hsin" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "DÍAZ Adriana", "负者": "OLIVEIRA Leila" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "DODEAN Daniela", "负者": "WANG Crystal" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "CECHOVA Dana", "负者": "EKHOLM Matilda" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "DVORAK Galia", "负者": "YUAN Wan" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "LAY Jian Fang", "负者": "PATKAR Madhurika" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "CHEN Meng", "负者": "TAILAKOVA Mariia" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "LIU Jia", "负者": "SZŐCS Bernadette" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "DODEAN Daniela", "负者": "DÍAZ Adriana" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "CECHOVA Dana", "负者": "DVORAK Galia" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "CHEN Meng", "负者": "LAY Jian Fang" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "DODEAN Daniela", "负者": "LIU Jia" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "CHEN Meng", "负者": "CECHOVA Dana" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "CHEN Meng", "负者": "DODEAN Daniela" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "CHENG I-Ching", "负者": "MESHREF Dina" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "ZI Mu", "负者": "GAPONOVA Ganna" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "YOO Eun-Chong", "负者": "TAKAHASHI Bruna" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "LI Qian", "负者": "STUCKYTĖ Eglė" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "KATO Miyu", "负者": "ZHANG Xuan" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "NG Wing Nam", "负者": "KALLBERG Christina" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "RI Mi-Gyong", "负者": "GASNIER Laura" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "YANG Ha-Eun", "负者": "GUFRANOVA Rimma" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "ZI Mu", "负者": "CHENG I-Ching" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "LI Qian", "负者": "YOO Eun-Chong" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "KATO Miyu", "负者": "NG Wing Nam" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "YANG Ha-Eun", "负者": "RI Mi-Gyong" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "KATO Miyu", "负者": "YANG Ha-Eun" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "ZI Mu", "负者": "KATO Miyu" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "SOLJA Petrissa", "负者": "WU Jennifer" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "PERGEL Szandra", "负者": "GUAN Angela" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "MADARÁSZ Dóra", "负者": "ZHOU Chuyi" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "KIM Song-I", "负者": "VIGNJEVIĆ Dragana" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "SEO Hyo-Won", "负者": "ASHTARI Mahshid" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "LOEUILLETTE Stéphanie", "负者": "MATELOVÁ Hana" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "PAŠKAUSKIENĖ Rūta", "负者": "KIM Vermaas" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "LIU Shiwen", "负者": "AVAMERI Airi" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "PERGEL Szandra", "负者": "SOLJA Petrissa" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "KIM Song-I", "负者": "MADARÁSZ Dóra" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "SEO Hyo-Won", "负者": "LOEUILLETTE Stéphanie" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "LIU Shiwen", "负者": "PAŠKAUSKIENĖ Rūta" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "KIM Song-I", "负者": "PERGEL Szandra" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "LIU Shiwen", "负者": "SEO Hyo-Won" },
-{ "日期": "2017-05-15", "类型": "世锦赛", "胜者": "LIU Shiwen", "负者": "KIM Song-I" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "DING Ning", "负者": "HELMY Yousra" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "NUTTE Sarah De", "负者": "MISCHEK Karoline" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "MUKHERJEE Sutirtha", "负者": "WINTER Sabine" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "DÍAZ Adriana", "负者": "VIVARELLI Debora" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "SOLJA Petrissa", "负者": "MARCHETTI Nathalie" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "CHENG Hsien-Tzu", "负者": "KÄLLBERG Christina" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "TAKAHASHI Bruna", "负者": "MORALES Judith" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "HYOWON Suh", "负者": "MEDINA Paula" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "DING Ning", "负者": "NUTTE Sarah De" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "DÍAZ Adriana", "负者": "MUKHERJEE Sutirtha" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "CHENG Hsien-Tzu", "负者": "SOLJA Petrissa" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "HYOWON Suh", "负者": "TAKAHASHI Bruna" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "DING Ning", "负者": "DÍAZ Adriana" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "HYOWON Suh", "负者": "CHENG Hsien-Tzu" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "DING Ning", "负者": "HYOWON Suh" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "SZŐCS Bernadette", "负者": "ORTEGA Daniela" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "KIM Nam-Hae", "负者": "XIAO Maria" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "LUPULESKU Izabela", "负者": "BALÁŽOVÁ Barbora" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "MINNIE Soo Wai Yam", "负者": "HADZIAHMETOVIĆ Emina" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "ZHANG Mo", "负者": "TAILAKOVA Mariia" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "MESHREF Dina", "负者": "KAMATH Archana Girish" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "PESOTSKA Margaryta", "负者": "KOMWONG Nanthana" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "HIRANO Miu", "负者": "KIM Jin-Hyang" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "SZŐCS Bernadette", "负者": "KIM Nam-Hae" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "MINNIE Soo Wai Yam", "负者": "LUPULESKU Izabela" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "ZHANG Mo", "负者": "MESHREF Dina" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "HIRANO Miu", "负者": "PESOTSKA Margaryta" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "MINNIE Soo Wai Yam", "负者": "SZŐCS Bernadette" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "HIRANO Miu", "负者": "ZHANG Mo" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "HIRANO Miu", "负者": "MINNIE Soo Wai Yam" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "CHENG I-Ching", "负者": "HARTBRICH Leonie" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "MITTELHAM Nina", "负者": "AVAMERI Airi" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "PERGEL Szandra", "负者": "CHASSELIN Pauline" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "KATO Miyu", "负者": "BRATEYKO Solomiya" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "CHEN Szu-Yu", "负者": "VEGA Paulina" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "BATRA Manika", "负者": "TODOROVIĆ Andrea" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "NG Wing Nam", "负者": "SHAHSAVARI Neda" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "POLCANOVA Sofia", "负者": "DEGRAEF Margo" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "CHENG I-Ching", "负者": "MITTELHAM Nina" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "KATO Miyu", "负者": "PERGEL Szandra" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "CHEN Szu-Yu", "负者": "BATRA Manika" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "POLCANOVA Sofia", "负者": "NG Wing Nam" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "KATO Miyu", "负者": "CHENG I-Ching" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "CHEN Szu-Yu", "负者": "POLCANOVA Sofia" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "KATO Miyu", "负者": "CHEN Szu-Yu" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "KIM Song-I", "负者": "TRIGOLOS Daria" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "KIM Vermaas", "负者": "MIKHAYLOVA Polina" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "ŠURJAN Sabina", "负者": "NI Xialian" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "LIU Hsing-Yin", "负者": "PÓTA Georgina" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "EERLAND Britt", "负者": "GARCIA Ana" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "NOSKOVA Yana", "负者": "PICCOLIN Giorgia" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "MATELOVÁ Hana", "负者": "LANG Kristin" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "LIU Shiwen", "负者": "BOGDANOVA Nadezhda" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "KIM Song-I", "负者": "KIM Vermaas" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "LIU Hsing-Yin", "负者": "ŠURJAN Sabina" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "EERLAND Britt", "负者": "NOSKOVA Yana" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "LIU Shiwen", "负者": "MATELOVÁ Hana" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "KIM Song-I", "负者": "LIU Hsing-Yin" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "LIU Shiwen", "负者": "EERLAND Britt" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "LIU Shiwen", "负者": "KIM Song-I" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "WANG Manyu", "负者": "HANFFOU Sarah" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "ADÁMKOVÁ Karin", "负者": "DVORAK Galia" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "KIRICHENKO Anna", "负者": "GALIČ Alex" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "SAMARA Elizabeta", "负者": "COLANTONI Chiara" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "WU Jennifer", "负者": "MALANINA Maria" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "CIOBANU Irina", "负者": "LOEUILLETTE Stéphanie" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "ČECHOVÁ Dana", "负者": "FEHÉR Orsolya" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "SATO Hitomi", "负者": "LIN Gui" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "WANG Manyu", "负者": "ADÁMKOVÁ Karin" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "SAMARA Elizabeta", "负者": "KIRICHENKO Anna" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "WU Jennifer", "负者": "CIOBANU Irina" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "SATO Hitomi", "负者": "ČECHOVÁ Dana" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "WANG Manyu", "负者": "SAMARA Elizabeta" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "SATO Hitomi", "负者": "WU Jennifer" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "WANG Manyu", "负者": "SATO Hitomi" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "JEON Ji-Hee", "负者": "ZHANG Xuan" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "SOROCHYNSKA Tetyana", "负者": "ZHU Chengzhu" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "CHA Hyo-Sim", "负者": "KUKULKOVÁ Tatiana" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "EKHOLM Matilda", "负者": "DODEAN Daniela" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "SUN Yingsha", "负者": "KONSBRUCK Danielle" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "LIU Jia", "负者": "COTE Alicia" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "ZHANG Lily", "负者": "TSAPTSINOS Maria" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "ITO Mima", "负者": "KUČEROVÁ Aneta" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "JEON Ji-Hee", "负者": "SOROCHYNSKA Tetyana" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "CHA Hyo-Sim", "负者": "EKHOLM Matilda" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "SUN Yingsha", "负者": "LIU Jia" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "ITO Mima", "负者": "ZHANG Lily" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "CHA Hyo-Sim", "负者": "JEON Ji-Hee" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "SUN Yingsha", "负者": "ITO Mima" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "SUN Yingsha", "负者": "CHA Hyo-Sim" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "ISHIKAWA Kasumi", "负者": "LAVROVA Anastassiya" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "SOLJA Amelie", "负者": "PATKAR Madhurika" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "CHOI Hyo-Joo", "负者": "BERGAND Filippa" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "LI Qian", "负者": "SU Pei-Ling" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "LEE Ho Ching", "负者": "DIACONU Adina" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "GAPONOVA Ganna", "负者": "REEM El-Eraky" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "LEE Zion", "负者": "CAREY Charlotte" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "KEM Doo Hoi", "负者": "YOO Eun-Chong" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "ISHIKAWA Kasumi", "负者": "SOLJA Amelie" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "LI Qian", "负者": "CHOI Hyo-Joo" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "LEE Ho Ching", "负者": "GAPONOVA Ganna" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "KEM Doo Hoi", "负者": "LEE Zion" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "ISHIKAWA Kasumi", "负者": "LI Qian" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "KEM Doo Hoi", "负者": "LEE Ho Ching" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "KEM Doo Hoi", "负者": "ISHIKAWA Kasumi" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "FENG Tianwei", "负者": "WANG Amy" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "BERGSTRÖM Linda", "负者": "BAJOR Natalia" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "MADARÁSZ Dóra", "负者": "TOLIOU Aikaterini" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "LI Jie", "负者": "BÁLINT Bernadett" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "SAWETTABUT Suthasini", "负者": "GASNIER Laura" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "PARTYKA Natalia", "负者": "JEGER Mateja" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "LIN Ye", "负者": "HO Tin-Tin" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "CHEN Meng", "负者": "WONG Xin-Ru" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "FENG Tianwei", "负者": "BERGSTRÖM Linda" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "MADARÁSZ Dóra", "负者": "LI Jie" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "SAWETTABUT Suthasini", "负者": "PARTYKA Natalia" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "CHEN Meng", "负者": "LIN Ye" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "FENG Tianwei", "负者": "MADARÁSZ Dóra" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "CHEN Meng", "负者": "SAWETTABUT Suthasini" },
-{ "日期": "2019-05-15", "类型": "世锦赛", "胜者": "CHEN Meng", "负者": "FENG Tianwei" }
+ {
+  "日期": "2009-05-15",
+  "类型": "世锦赛",
+  "胜者": "TÓTH Krisztina",
+  "负者": "TOMAZINI Jana"
+ },
+ {
+  "日期": "2009-05-15",
+  "类型": "世锦赛",
+  "胜者": "HU Melek",
+  "负者": "CHIU Soo Jiin"
+ },
+ {
+  "日期": "2009-05-15",
+  "类型": "世锦赛",
+  "胜者": "FUKUOKA Haruna",
+  "负者": "NEGRISOLI Laura"
+ },
+ {
+  "日期": "2009-05-15",
+  "类型": "世锦赛",
+  "胜者": "VORONOVA Anastasia",
+  "负者": "BOROŠ Tamara"
+ },
+ {
+  "日期": "2009-05-15",
+  "类型": "世锦赛",
+  "胜者": "VACENOVSKÁ Iveta",
+  "负者": "RAMOS Fabiola"
+ },
+ {
+  "日期": "2009-05-15",
+  "类型": "世锦赛",
+  "胜者": "PARK Young Sook",
+  "负者": "YAO Yan"
+ },
+ {
+  "日期": "2009-05-15",
+  "类型": "世锦赛",
+  "胜者": "DVORAK Galia",
+  "负者": "SARA El-Sokary"
+ },
+ {
+  "日期": "2009-05-15",
+  "类型": "世锦赛",
+  "胜者": "GUO Yan",
+  "负者": "RUVMAN Natali"
+ },
+ {
+  "日期": "2009-05-15",
+  "类型": "世锦赛",
+  "胜者": "WU Jiaduo",
+  "负者": "PRIVALOVA Alexandra"
+ },
+ {
+  "日期": "2009-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Qiangbing",
+  "负者": "MATTENET Audrey"
+ },
+ {
+  "日期": "2009-05-15",
+  "类型": "世锦赛",
+  "胜者": "DING Ning",
+  "负者": "MEDINA Paula"
+ },
+ {
+  "日期": "2009-05-15",
+  "类型": "世锦赛",
+  "胜者": "DANG Ye-Seo",
+  "负者": "SILVA Ligia Santos"
+ },
+ {
+  "日期": "2009-05-15",
+  "类型": "世锦赛",
+  "胜者": "KOMWONG Nanthana",
+  "负者": "OZLER Fulya"
+ },
+ {
+  "日期": "2009-05-15",
+  "类型": "世锦赛",
+  "胜者": "KIM Kyung Ah",
+  "负者": "DAS Mouma"
+ },
+ {
+  "日期": "2009-05-15",
+  "类型": "世锦赛",
+  "胜者": "MIAO Miao",
+  "负者": "LAU Sui Fei"
+ },
+ {
+  "日期": "2009-05-15",
+  "类型": "世锦赛",
+  "胜者": "FUJINUMA Ai",
+  "负者": "KASABOVA Asya"
+ },
+ {
+  "日期": "2009-05-15",
+  "类型": "世锦赛",
+  "胜者": "SAMARA Elizabeta",
+  "负者": "REED Jasna"
+ },
+ {
+  "日期": "2009-05-15",
+  "类型": "世锦赛",
+  "胜者": "GUO Yue",
+  "负者": "GHATAK Poulomi"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "SHEN Yanfei",
+  "负者": "HAN Xing"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "NG Wing Nam",
+  "负者": "PATKAR Madhurika"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "FANG Lay Jian",
+  "负者": "TIKHOMIROVA Anna"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Jiao",
+  "负者": "WINTER Sabine"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Jiawei",
+  "负者": "YU Kwok See"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHENG I-Ching",
+  "负者": "TODOROVIĆ Andrea"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "BARTHEL Zhenqi",
+  "负者": "KOMWONG Nanthana"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "WU Yang",
+  "负者": "MIKHAYLOVA Polina"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "TÓTH Krisztina",
+  "负者": "SILVA Ligia"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "EKHOLM Matilda",
+  "负者": "HADAČOVÁ Dana"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "ERDELJI Anamaria",
+  "负者": "YUAN Guan Meng"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "Sayaka HIRANO",
+  "负者": "CHEN Szu-Yu"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "HUANG Yi-Hua",
+  "负者": "BALAZOVA Barbora"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "FEHER Gabriela",
+  "负者": "GUNGOR Gokcenur"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "RI Mi-Gyong",
+  "负者": "GRUNDISCH Carole"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "GUO Yue",
+  "负者": "EERLAND Britt"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "YANG Ha-Eun",
+  "负者": "STEFANSKA Kinga"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "PARTYKA Natalia",
+  "负者": "MOLNAR Cornelia"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "TANIOKA Ayuka",
+  "负者": "DAS Mouma"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "Kasumi ISHIKAWA",
+  "负者": "HIRICI Cristina"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "YU Mengyu",
+  "负者": "TIAN Yuan"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "NI Xialian",
+  "负者": "HSING Ariel"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "ÓDOROVÁ Eva",
+  "负者": "STRBIKOVA Renata"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "FENG Tianwei",
+  "负者": "SZOCS Bernadette"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "JIANG Huajun",
+  "负者": "PROKHOROVA Yulia"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "WAKAMIYA Misako",
+  "负者": "DUBKOVA Alena"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "MOON Hyun-Jung",
+  "负者": "PETTERSSON Malin"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "WANG Yuegu",
+  "负者": "PARK Young-Sook"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "SUN Beibei",
+  "负者": "TOMAZINI Jana"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "LEE Ho Ching",
+  "负者": "KRAVCHENKO Marina"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "SAMARA Elizabeta",
+  "负者": "FÜHRER Monika"
+ },
+ {
+  "日期": "2011-05-15",
+  "类型": "世锦赛",
+  "胜者": "GUO Yan",
+  "负者": "GATINSKA Katalina"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "DING Ning",
+  "负者": "DEDERKO Zhenhua"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "KOMWONG Nanthana",
+  "负者": "ABBAT Alice"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "STEFANOVA Nikoleta",
+  "负者": "KUMARESAN Shamini"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "HU Limei",
+  "负者": "PÓTA Georgina"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHENG I-Ching",
+  "负者": "BALÁŽOVÁ Barbora"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "FANG Xian Yi",
+  "负者": "HAN Xing"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZHANG Lily",
+  "负者": "NG Sock Khim"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "PARK Seong-Hye",
+  "负者": "Ai FUKUHARA"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "DING Ning",
+  "负者": "KOMWONG Nanthana"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "HU Limei",
+  "负者": "STEFANOVA Nikoleta"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "FANG Xian Yi",
+  "负者": "CHENG I-Ching"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "PARK Seong-Hye",
+  "负者": "ZHANG Lily"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "DING Ning",
+  "负者": "HU Limei"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "PARK Seong-Hye",
+  "负者": "FANG Xian Yi"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "DING Ning",
+  "负者": "PARK Seong-Hye"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "YANG Ha-Eun",
+  "负者": "NEVES Ana"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "PERGEL Szandra",
+  "负者": "SAVELYEVA Antonina"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHEN Szu-Yu",
+  "负者": "GALIČ Alex"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "LIU Jia",
+  "负者": "BARAVOK Katsiaryna"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "RI Myong-Sun",
+  "负者": "SILVA Lígia"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "RI Mi-Gyong",
+  "负者": "GRZYBOWSKA Katarzyna"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "ŠTRBÍKOVÁ Renáta",
+  "负者": "NUTTE Sarah De"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "Kasumi ISHIKAWA",
+  "负者": "NADEEN El-Dawlatly"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "YANG Ha-Eun",
+  "负者": "PERGEL Szandra"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "LIU Jia",
+  "负者": "CHEN Szu-Yu"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "RI Myong-Sun",
+  "负者": "RI Mi-Gyong"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "Kasumi ISHIKAWA",
+  "负者": "ŠTRBÍKOVÁ Renáta"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "LIU Jia",
+  "负者": "YANG Ha-Eun"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "RI Myong-Sun",
+  "负者": "Kasumi ISHIKAWA"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "RI Myong-Sun",
+  "负者": "LIU Jia"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "WU Yang",
+  "负者": "GONDERINGER Tessy"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "PĚNKAVOVÁ Katerina",
+  "负者": "SKOV Mie"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "IVANCAN Irene",
+  "负者": "PARKER Joanna"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "WU Jiaduo",
+  "负者": "MUANGSUK Anisara"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "HUANG Yi-Hua",
+  "负者": "MOLNAR Monika"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "NI Xialian",
+  "负者": "L Gasnier"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "KIM Hye-Song",
+  "负者": "SZŐCS Bernadette"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "SAMARA Elizabeta",
+  "负者": "ARLOUSKAYA Alina"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "WU Yang",
+  "负者": "PĚNKAVOVÁ Katerina"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "WU Jiaduo",
+  "负者": "IVANCAN Irene"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "HUANG Yi-Hua",
+  "负者": "NI Xialian"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "KIM Hye-Song",
+  "负者": "SAMARA Elizabeta"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "WU Yang",
+  "负者": "WU Jiaduo"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "KIM Hye-Song",
+  "负者": "HUANG Yi-Hua"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "WU Yang",
+  "负者": "KIM Hye-Song"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHEN Meng",
+  "负者": "BERHO Marina"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "KIM Jong",
+  "负者": "LIU Hsing-Y"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "NG Wing Nam",
+  "负者": "PATKAR Madhurika"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "PESOTSKA Margaryta",
+  "负者": "LI Isabelle Siyun"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "Sayaka HIRANO",
+  "负者": "SZYMAŃSKA Antonina"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "MADARÁSZ Dóra",
+  "负者": "ERDELJI Anamaria"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "TÓTH Krisztina",
+  "负者": "LI Ching Wan"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Xiaoxia",
+  "负者": "PAŠKAUSKIENĖ Rūta"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHEN Meng",
+  "负者": "KIM Jong"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "PESOTSKA Margaryta",
+  "负者": "NG Wing Nam"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "Sayaka HIRANO",
+  "负者": "MADARÁSZ Dóra"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Xiaoxia",
+  "负者": "TÓTH Krisztina"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHEN Meng",
+  "负者": "PESOTSKA Margaryta"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Xiaoxia",
+  "负者": "Sayaka HIRANO"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Xiaoxia",
+  "负者": "CHEN Meng"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "FENG Tianwei",
+  "负者": "NECULA Iulia"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "Misaki MORIZONO",
+  "负者": "BLIZNET Olga"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "Shiho MATSUDAIRA",
+  "负者": "PIETKIEWICZ Monika"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "YU Mengyu",
+  "负者": "SAWETTABUT Suthasini"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "Hiroko FUJII",
+  "负者": "CHRISTOFORAKI Maria"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "LIN Chia-Hui",
+  "负者": "HSING Ariel"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "BILENKO Tetyana",
+  "负者": "MIGOT Marie"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "SEOK Ha-Jung",
+  "负者": "POSTOACA Camelia"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "FENG Tianwei",
+  "负者": "Misaki MORIZONO"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "Shiho MATSUDAIRA",
+  "负者": "YU Mengyu"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "Hiroko FUJII",
+  "负者": "LIN Chia-Hui"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "BILENKO Tetyana",
+  "负者": "SEOK Ha-Jung"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "FENG Tianwei",
+  "负者": "Shiho MATSUDAIRA"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "BILENKO Tetyana",
+  "负者": "Hiroko FUJII"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "FENG Tianwei",
+  "负者": "BILENKO Tetyana"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "JIANG Huajun",
+  "负者": "MISIKONYTĖ Lina"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "KEM Doo Hoi",
+  "负者": "OWEN Naomi"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "GAPONOVA Ganna",
+  "负者": "VEGA Paulina"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "SILBEREISEN Kristin",
+  "负者": "DOLGIKH Maria"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "LEE Ho Ching",
+  "负者": "DAS Mouma"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "MESHREF Dina",
+  "负者": "SOLJA Petrissa"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "PARK Young-Sook",
+  "负者": "MENGYUAN Guan"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZHU Yuling",
+  "负者": "TROSHNEVA Elena"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "JIANG Huajun",
+  "负者": "KEM Doo Hoi"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "SILBEREISEN Kristin",
+  "负者": "GAPONOVA Ganna"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "LEE Ho Ching",
+  "负者": "MESHREF Dina"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZHU Yuling",
+  "负者": "PARK Young-Sook"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "JIANG Huajun",
+  "负者": "SILBEREISEN Kristin"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZHU Yuling",
+  "负者": "LEE Ho Ching"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZHU Yuling",
+  "负者": "JIANG Huajun"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "SHEN Yanfei",
+  "负者": "YAMADA Jessica"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "PARTYKA Natalia",
+  "负者": "YOO Eun-Chong"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "MIKHAILOVA Polina",
+  "负者": "GATINSKA Katalina"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "DODEAN Daniela",
+  "负者": "SILVA Yadira"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "EKHOLM Matilda",
+  "负者": "TIAN Yuan"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "KUMAHARA Caroline",
+  "负者": "NOSKOVA Yana"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "HU Melek",
+  "负者": "GRUNDISCH Carole"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "PAVLOVICH Viktoria",
+  "负者": "MATSUZAWA Marina"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "SHEN Yanfei",
+  "负者": "PARTYKA Natalia"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "DODEAN Daniela",
+  "负者": "MIKHAILOVA Polina"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "EKHOLM Matilda",
+  "负者": "KUMAHARA Caroline"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "HU Melek",
+  "负者": "PAVLOVICH Viktoria"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "SHEN Yanfei",
+  "负者": "DODEAN Daniela"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "HU Melek",
+  "负者": "EKHOLM Matilda"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "HU Melek",
+  "负者": "SHEN Yanfei"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "ČECHOVÁ Dana",
+  "负者": "DVORAK Galia"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Jiao",
+  "负者": "MATELOVA Hana"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "VACENOVSKÁ Iveta",
+  "负者": "PRIVALOVA Aleksandra"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "BARTHEL Zhenqi",
+  "负者": "JO Yu-Jin"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "LOVAS Petra",
+  "负者": "LENNON Emmanuelle"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "LIU Shiwen",
+  "负者": "SIBLEY Kelly"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "SEO Hyo-Won",
+  "负者": "ČECHOVÁ Dana"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Jiao",
+  "负者": "FANG Lay Jian"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "BARTHEL Zhenqi",
+  "负者": "VACENOVSKÁ Iveta"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "LIU Shiwen",
+  "负者": "LOVAS Petra"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "SEO Hyo-Won",
+  "负者": "LI Jiao"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "LIU Shiwen",
+  "负者": "BARTHEL Zhenqi"
+ },
+ {
+  "日期": "2013-05-15",
+  "类型": "世锦赛",
+  "胜者": "LIU Shiwen",
+  "负者": "SEO Hyo-Won"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "DING Ning",
+  "负者": "OSHONAIKE Olufunke"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "PARTYKA Natalia",
+  "负者": "PERGEL Szandra"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "KIM Jong",
+  "负者": "MORET Rachel"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "Miu HIRANO",
+  "负者": "BATRA Manika"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "IVANCAN Irene",
+  "负者": "GUAN Angela"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "FAJMUT Manca",
+  "负者": "PROKHOROVA Yulia"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "PARK Young-Sook",
+  "负者": "HWEE Yee Herng"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "SEO Hyo-Won",
+  "负者": "JHA Prachi"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "DING Ning",
+  "负者": "PARTYKA Natalia"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "Miu HIRANO",
+  "负者": "KIM Jong"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "IVANCAN Irene",
+  "负者": "FAJMUT Manca"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "PARK Young-Sook",
+  "负者": "SEO Hyo-Won"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "DING Ning",
+  "负者": "Miu HIRANO"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "IVANCAN Irene",
+  "负者": "PARK Young-Sook"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "DING Ning",
+  "负者": "IVANCAN Irene"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "SAMARA Elizabeta",
+  "负者": "ARLOUSKAYA Alina"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "MITTELHAM Nina",
+  "负者": "JONSSON Jennifer"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "TIAN Yuan",
+  "负者": "SAMET Maryam"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHENG I-Ching",
+  "负者": "DIAZ Adriana"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "LEE I-Chen",
+  "负者": "NG Sock Khim"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "GAPONOVA Ganna",
+  "负者": "RIOS Daniely"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "BALÁŽOVÁ Barbora",
+  "负者": "VEGA Paulina"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "WU Yang",
+  "负者": "NUTTE Sarah De"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "SAMARA Elizabeta",
+  "负者": "MITTELHAM Nina"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHENG I-Ching",
+  "负者": "TIAN Yuan"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "GAPONOVA Ganna",
+  "负者": "LEE I-Chen"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "WU Yang",
+  "负者": "BALÁŽOVÁ Barbora"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHENG I-Ching",
+  "负者": "SAMARA Elizabeta"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "WU Yang",
+  "负者": "GAPONOVA Ganna"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "WU Yang",
+  "负者": "CHENG I-Ching"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "Kasumi ISHIKAWA",
+  "负者": "SLADKOVA Nataliya"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "PAŠKAUSKIENĖ Rūta",
+  "负者": "KUMARESAN Shamini"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "ŠTRBÍKOVÁ Renata",
+  "负者": "KUMAHARA Caroline"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZI Mu",
+  "负者": "SILBEREISEN Kristin"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "HU Melek",
+  "负者": "KAROVA Anelia"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "PESOTSKA Margaryta",
+  "负者": "LIN Gui"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "EKHOLM Matilda",
+  "负者": "LUO Anqi"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "LEE Zion",
+  "负者": "LIU Jia"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "Kasumi ISHIKAWA",
+  "负者": "PAŠKAUSKIENĖ Rūta"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZI Mu",
+  "负者": "ŠTRBÍKOVÁ Renata"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "PESOTSKA Margaryta",
+  "负者": "HU Melek"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "EKHOLM Matilda",
+  "负者": "LEE Zion"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZI Mu",
+  "负者": "Kasumi ISHIKAWA"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "EKHOLM Matilda",
+  "负者": "PESOTSKA Margaryta"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZI Mu",
+  "负者": "EKHOLM Matilda"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "YU Mengyu",
+  "负者": "LI Ching Wan"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "OLIVEIRA Leila",
+  "负者": "MESHREF Dina"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "ÓDOROVÁ Eva",
+  "负者": "RAMÍREZ Sara"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Qian",
+  "负者": "GATS Yuliya"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "SOLJA Petrissa",
+  "负者": "LEE Rou You"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "GRZYBOWSKA Katarzyna",
+  "负者": "PĚNKAVOVÁ Kateřina"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "WINTER Sabine",
+  "负者": "RUANO Lady"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "FENG Tianwei",
+  "负者": "HÎRÎCI Cristina"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "YU Mengyu",
+  "负者": "OLIVEIRA Leila"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Qian",
+  "负者": "ÓDOROVÁ Eva"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "GRZYBOWSKA Katarzyna",
+  "负者": "SOLJA Petrissa"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "FENG Tianwei",
+  "负者": "WINTER Sabine"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "YU Mengyu",
+  "负者": "LI Qian"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "FENG Tianwei",
+  "负者": "GRZYBOWSKA Katarzyna"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "FENG Tianwei",
+  "负者": "YU Mengyu"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Xiaoxia",
+  "负者": "HWANG Ji-Na"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZHANG Mo",
+  "负者": "NADEEN El-Dawlatly"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "MIKHAILOVA Polina",
+  "负者": "DAS Mouma"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "RI Myong-Sun",
+  "负者": "PAVČNIK Tamara"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "JIANG Huajun",
+  "负者": "KHETKHUAN Tamolwan"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "NI Xialian",
+  "负者": "TROSMAN Nicole"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "MATELOVÁ Hana",
+  "负者": "KOMWONG Nanthana"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "Sayaka HIRANO",
+  "负者": "SILVA Lígia"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Xiaoxia",
+  "负者": "ZHANG Mo"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "RI Myong-Sun",
+  "负者": "MIKHAILOVA Polina"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "JIANG Huajun",
+  "负者": "NI Xialian"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "MATELOVÁ Hana",
+  "负者": "Sayaka HIRANO"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Xiaoxia",
+  "负者": "RI Myong-Sun"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "JIANG Huajun",
+  "负者": "MATELOVÁ Hana"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Xiaoxia",
+  "负者": "JIANG Huajun"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "Mima ITO",
+  "负者": "MEDINA Paula"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "FANG Lay Jian",
+  "负者": "LI Isabelle"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "NOSKOVA Yana",
+  "负者": "SILVA Yadira"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHEN Szu-Yu",
+  "负者": "TOLIOU Aikaterini"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "LEE Ho Ching",
+  "负者": "GALIČ Alex"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "DOLGIKH Maria",
+  "负者": "HUGH Judy"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "SOROCHYNSKA Tetyana",
+  "负者": "STUCKYTĖ Eglė"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "Ai FUKUHARA",
+  "负者": "FEHER Gabriela"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "Mima ITO",
+  "负者": "FANG Lay Jian"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHEN Szu-Yu",
+  "负者": "NOSKOVA Yana"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "DOLGIKH Maria",
+  "负者": "LEE Ho Ching"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "SOROCHYNSKA Tetyana",
+  "负者": "Ai FUKUHARA"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "Mima ITO",
+  "负者": "CHEN Szu-Yu"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "SOROCHYNSKA Tetyana",
+  "负者": "DOLGIKH Maria"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "Mima ITO",
+  "负者": "SOROCHYNSKA Tetyana"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZHU Yuling",
+  "负者": "LIU Hsing-Yin"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "VACENOVSKÁ Iveta",
+  "负者": "HAN Xing"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "EERLAND Britt",
+  "负者": "TODOROVIĆ Andrea"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "NA Tie Ya",
+  "负者": "PAPADAKI Angeliki"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Jie",
+  "负者": "VIVARELLI Debora"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "DVORAK Galia",
+  "负者": "LI Qiangbing"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "RI Mi-Gyong",
+  "负者": "LORENZOTTI Maria"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "KEM Doo Hoi",
+  "负者": "KIM Hye-Song"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZHU Yuling",
+  "负者": "VACENOVSKÁ Iveta"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "NA Tie Ya",
+  "负者": "EERLAND Britt"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Jie",
+  "负者": "DVORAK Galia"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "KEM Doo Hoi",
+  "负者": "RI Mi-Gyong"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZHU Yuling",
+  "负者": "NA Tie Ya"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Jie",
+  "负者": "KEM Doo Hoi"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZHU Yuling",
+  "负者": "LI Jie"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "YANG Ha-Eun",
+  "负者": "PICCOLIN Giorgia"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "GRUNDISCH Carole",
+  "负者": "GELMAN Shelli"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "POSTOACA Camelia",
+  "负者": "ERDELJI Anamaria"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "SHEN Yanfei",
+  "负者": "SAWETTABUT Suthasini"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Jiao",
+  "负者": "RAKOVAC Lea"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "FANG Xian Yi",
+  "负者": "HANFFOU Sarah"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "SZŐCS Bernadette",
+  "负者": "UMBACIA Angie"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "LIU Shiwen",
+  "负者": "PETEK Petra"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "YANG Ha-Eun",
+  "负者": "GRUNDISCH Carole"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "SHEN Yanfei",
+  "负者": "POSTOACA Camelia"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Jiao",
+  "负者": "FANG Xian Yi"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "LIU Shiwen",
+  "负者": "SZŐCS Bernadette"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "YANG Ha-Eun",
+  "负者": "SHEN Yanfei"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "LIU Shiwen",
+  "负者": "LI Jiao"
+ },
+ {
+  "日期": "2015-05-15",
+  "类型": "世锦赛",
+  "胜者": "LIU Shiwen",
+  "负者": "YANG Ha-Eun"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "DING Ning",
+  "负者": "TRIGOLOS Daria"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "ADÁMKOVÁ Karin",
+  "负者": "CIOBANU Irina"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "NI Xialian",
+  "负者": "MEDINA Paula"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "PÓTA Georgina",
+  "负者": "BERGSTRÖM Linda"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "WINTER Sabine",
+  "负者": "JEGER Mateja"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZHANG Lily",
+  "负者": "TRANG Mai Hoàng Mỹ"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "ÓDOROVÁ Eva",
+  "负者": "RAMÍREZ Sara"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Jie",
+  "负者": "KUKULKOVA Tatiana"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "DING Ning",
+  "负者": "ADÁMKOVÁ Karin"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "NI Xialian",
+  "负者": "PÓTA Georgina"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZHANG Lily",
+  "负者": "WINTER Sabine"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Jie",
+  "负者": "ÓDOROVÁ Eva"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "DING Ning",
+  "负者": "NI Xialian"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Jie",
+  "负者": "ZHANG Lily"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "DING Ning",
+  "负者": "LI Jie"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "Hitomi SATO",
+  "负者": "MUKHERJEE Ayhika"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHENG Hsien-Tzu",
+  "负者": "RAZEK Yousra Abdel"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "KHETKHUAN Tamolwan",
+  "负者": "WING Mak Tze"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "SAMARA Elizabeta",
+  "负者": "LUNG Lisa"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "MIKHAILOVA Polina",
+  "负者": "PARANANG Orawan"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "SIM Ri Hyon",
+  "负者": "GRZYBOWSKA Katarzyna"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "NOSKOVA Yana",
+  "负者": "GALIĆ Alex"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "Kasumi ISHIKAWA",
+  "负者": "KUMAHARA Caroline"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "Hitomi SATO",
+  "负者": "CHENG Hsien-Tzu"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "SAMARA Elizabeta",
+  "负者": "KHETKHUAN Tamolwan"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "SIM Ri Hyon",
+  "负者": "MIKHAILOVA Polina"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "Kasumi ISHIKAWA",
+  "负者": "NOSKOVA Yana"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "SAMARA Elizabeta",
+  "负者": "Hitomi SATO"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "Kasumi ISHIKAWA",
+  "负者": "SIM Ri Hyon"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "Kasumi ISHIKAWA",
+  "负者": "SAMARA Elizabeta"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "Miu HIRANO",
+  "负者": "OSHONAIKE Olufunke"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "SAWETTABUT Suthasini",
+  "负者": "PICCOLIN Giorgia"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "DIACONU Adina",
+  "负者": "MANTZ Chantal"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHEN Szu-Yu",
+  "负者": "LOW Katherine"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "POLCANOVA Sofia",
+  "负者": "FAJMUT Manca"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZHANG Mo",
+  "负者": "TODOROVIĆ Andrea"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "XIAO María",
+  "负者": "MITTELHAM Nina"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "KEM Doo Hoi",
+  "负者": "ARLOUSKAYA Alina"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "Miu HIRANO",
+  "负者": "SAWETTABUT Suthasini"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHEN Szu-Yu",
+  "负者": "DIACONU Adina"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZHANG Mo",
+  "负者": "POLCANOVA Sofia"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "XIAO María",
+  "负者": "KEM Doo Hoi"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "Miu HIRANO",
+  "负者": "CHEN Szu-Yu"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "XIAO María",
+  "负者": "ZHANG Mo"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "Miu HIRANO",
+  "负者": "XIAO María"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "YU Mengyu",
+  "负者": "MORET Rachel"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "SILBEREISEN Kristin",
+  "负者": "CAREY Charlotte"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "LEE Zi-On",
+  "负者": "LUPULESKU Izabela"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "SOROCHYNSKA Tetyana",
+  "负者": "ASCHWANDEN Rahel"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "LEE Ho Ching",
+  "负者": "MARCHETTI Nathalie"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "PARTYKA Natalia",
+  "负者": "CHASSELIN Pauline"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "KOMWONG Nanthana",
+  "负者": "TOMANOVSKA Katerina"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "FENG Tianwei",
+  "负者": "VOROBEVA Olga"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "SILBEREISEN Kristin",
+  "负者": "YU Mengyu"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "LEE Zi-On",
+  "负者": "SOROCHYNSKA Tetyana"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "LEE Ho Ching",
+  "负者": "PARTYKA Natalia"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "FENG Tianwei",
+  "负者": "KOMWONG Nanthana"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "SILBEREISEN Kristin",
+  "负者": "LEE Zi-On"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "FENG Tianwei",
+  "负者": "LEE Ho Ching"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "FENG Tianwei",
+  "负者": "SILBEREISEN Kristin"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZHU Yuling",
+  "负者": "PETROVA Valeria"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "NUTTE Sarah De",
+  "负者": "HUANG Yu-Wen"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "BATRA Manika",
+  "负者": "KUSIŃSKA Klaudia"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "KIM Kyungah",
+  "负者": "BRATEYKO Solomiya"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "MINNIE Soo Wai Yam",
+  "负者": "AMBRUS Krisztina"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "PAVLOVICH Viktoria",
+  "负者": "TOLIOU Aikaterini"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "EERLAND Britt",
+  "负者": "SREBRNJAK Dorina"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "Mima ITO",
+  "负者": "LIN Gui"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZHU Yuling",
+  "负者": "NUTTE Sarah De"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "KIM Kyungah",
+  "负者": "BATRA Manika"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "MINNIE Soo Wai Yam",
+  "负者": "PAVLOVICH Viktoria"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "Mima ITO",
+  "负者": "EERLAND Britt"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZHU Yuling",
+  "负者": "KIM Kyungah"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "Mima ITO",
+  "负者": "MINNIE Soo Wai Yam"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZHU Yuling",
+  "负者": "Mima ITO"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "LIU Jia",
+  "负者": "DAS Mouma"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "SZŐCS Bernadette",
+  "负者": "LIU Yu-Hsin"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "DÍAZ Adriana",
+  "负者": "OLIVEIRA Leila"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "DODEAN Daniela",
+  "负者": "WANG Crystal"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "CECHOVA Dana",
+  "负者": "EKHOLM Matilda"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "DVORAK Galia",
+  "负者": "YUAN Wan"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "LAY Jian Fang",
+  "负者": "PATKAR Madhurika"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHEN Meng",
+  "负者": "TAILAKOVA Mariia"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "LIU Jia",
+  "负者": "SZŐCS Bernadette"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "DODEAN Daniela",
+  "负者": "DÍAZ Adriana"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "CECHOVA Dana",
+  "负者": "DVORAK Galia"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHEN Meng",
+  "负者": "LAY Jian Fang"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "DODEAN Daniela",
+  "负者": "LIU Jia"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHEN Meng",
+  "负者": "CECHOVA Dana"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHEN Meng",
+  "负者": "DODEAN Daniela"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHENG I-Ching",
+  "负者": "MESHREF Dina"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZI Mu",
+  "负者": "GAPONOVA Ganna"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "YOO Eun-Chong",
+  "负者": "Bruna TAKAHASHI"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Qian",
+  "负者": "STUCKYTĖ Eglė"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "Miyu KATO",
+  "负者": "ZHANG Xuan"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "NG Wing Nam",
+  "负者": "KALLBERG Christina"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "RI Mi-Gyong",
+  "负者": "GASNIER Laura"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "YANG Ha-Eun",
+  "负者": "GUFRANOVA Rimma"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZI Mu",
+  "负者": "CHENG I-Ching"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Qian",
+  "负者": "YOO Eun-Chong"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "Miyu KATO",
+  "负者": "NG Wing Nam"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "YANG Ha-Eun",
+  "负者": "RI Mi-Gyong"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "Miyu KATO",
+  "负者": "YANG Ha-Eun"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZI Mu",
+  "负者": "Miyu KATO"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "SOLJA Petrissa",
+  "负者": "WU Jennifer"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "PERGEL Szandra",
+  "负者": "GUAN Angela"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "MADARÁSZ Dóra",
+  "负者": "ZHOU Chuyi"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "KIM Song-I",
+  "负者": "VIGNJEVIĆ Dragana"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "SEO Hyo-Won",
+  "负者": "ASHTARI Mahshid"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "LOEUILLETTE Stéphanie",
+  "负者": "MATELOVÁ Hana"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "PAŠKAUSKIENĖ Rūta",
+  "负者": "KIM Vermaas"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "LIU Shiwen",
+  "负者": "AVAMERI Airi"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "PERGEL Szandra",
+  "负者": "SOLJA Petrissa"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "KIM Song-I",
+  "负者": "MADARÁSZ Dóra"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "SEO Hyo-Won",
+  "负者": "LOEUILLETTE Stéphanie"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "LIU Shiwen",
+  "负者": "PAŠKAUSKIENĖ Rūta"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "KIM Song-I",
+  "负者": "PERGEL Szandra"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "LIU Shiwen",
+  "负者": "SEO Hyo-Won"
+ },
+ {
+  "日期": "2017-05-15",
+  "类型": "世锦赛",
+  "胜者": "LIU Shiwen",
+  "负者": "KIM Song-I"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "DING Ning",
+  "负者": "HELMY Yousra"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "NUTTE Sarah De",
+  "负者": "MISCHEK Karoline"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "MUKHERJEE Sutirtha",
+  "负者": "WINTER Sabine"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "DÍAZ Adriana",
+  "负者": "VIVARELLI Debora"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "SOLJA Petrissa",
+  "负者": "MARCHETTI Nathalie"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHENG Hsien-Tzu",
+  "负者": "KÄLLBERG Christina"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "Bruna TAKAHASHI",
+  "负者": "MORALES Judith"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "HYOWON Suh",
+  "负者": "MEDINA Paula"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "DING Ning",
+  "负者": "NUTTE Sarah De"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "DÍAZ Adriana",
+  "负者": "MUKHERJEE Sutirtha"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHENG Hsien-Tzu",
+  "负者": "SOLJA Petrissa"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "HYOWON Suh",
+  "负者": "Bruna TAKAHASHI"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "DING Ning",
+  "负者": "DÍAZ Adriana"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "HYOWON Suh",
+  "负者": "CHENG Hsien-Tzu"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "DING Ning",
+  "负者": "HYOWON Suh"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "SZŐCS Bernadette",
+  "负者": "ORTEGA Daniela"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "KIM Nam-Hae",
+  "负者": "XIAO Maria"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "LUPULESKU Izabela",
+  "负者": "BALÁŽOVÁ Barbora"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "MINNIE Soo Wai Yam",
+  "负者": "HADZIAHMETOVIĆ Emina"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZHANG Mo",
+  "负者": "TAILAKOVA Mariia"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "MESHREF Dina",
+  "负者": "KAMATH Archana Girish"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "PESOTSKA Margaryta",
+  "负者": "KOMWONG Nanthana"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "Miu HIRANO",
+  "负者": "KIM Jin-Hyang"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "SZŐCS Bernadette",
+  "负者": "KIM Nam-Hae"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "MINNIE Soo Wai Yam",
+  "负者": "LUPULESKU Izabela"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZHANG Mo",
+  "负者": "MESHREF Dina"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "Miu HIRANO",
+  "负者": "PESOTSKA Margaryta"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "MINNIE Soo Wai Yam",
+  "负者": "SZŐCS Bernadette"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "Miu HIRANO",
+  "负者": "ZHANG Mo"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "Miu HIRANO",
+  "负者": "MINNIE Soo Wai Yam"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHENG I-Ching",
+  "负者": "HARTBRICH Leonie"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "MITTELHAM Nina",
+  "负者": "AVAMERI Airi"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "PERGEL Szandra",
+  "负者": "CHASSELIN Pauline"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "Miyu KATO",
+  "负者": "BRATEYKO Solomiya"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHEN Szu-Yu",
+  "负者": "VEGA Paulina"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "BATRA Manika",
+  "负者": "TODOROVIĆ Andrea"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "NG Wing Nam",
+  "负者": "SHAHSAVARI Neda"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "POLCANOVA Sofia",
+  "负者": "DEGRAEF Margo"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHENG I-Ching",
+  "负者": "MITTELHAM Nina"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "Miyu KATO",
+  "负者": "PERGEL Szandra"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHEN Szu-Yu",
+  "负者": "BATRA Manika"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "POLCANOVA Sofia",
+  "负者": "NG Wing Nam"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "Miyu KATO",
+  "负者": "CHENG I-Ching"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHEN Szu-Yu",
+  "负者": "POLCANOVA Sofia"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "Miyu KATO",
+  "负者": "CHEN Szu-Yu"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "KIM Song-I",
+  "负者": "TRIGOLOS Daria"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "KIM Vermaas",
+  "负者": "MIKHAYLOVA Polina"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "ŠURJAN Sabina",
+  "负者": "NI Xialian"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "LIU Hsing-Yin",
+  "负者": "PÓTA Georgina"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "EERLAND Britt",
+  "负者": "GARCIA Ana"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "NOSKOVA Yana",
+  "负者": "PICCOLIN Giorgia"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "MATELOVÁ Hana",
+  "负者": "LANG Kristin"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "LIU Shiwen",
+  "负者": "BOGDANOVA Nadezhda"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "KIM Song-I",
+  "负者": "KIM Vermaas"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "LIU Hsing-Yin",
+  "负者": "ŠURJAN Sabina"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "EERLAND Britt",
+  "负者": "NOSKOVA Yana"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "LIU Shiwen",
+  "负者": "MATELOVÁ Hana"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "KIM Song-I",
+  "负者": "LIU Hsing-Yin"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "LIU Shiwen",
+  "负者": "EERLAND Britt"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "LIU Shiwen",
+  "负者": "KIM Song-I"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "WANG Manyu",
+  "负者": "HANFFOU Sarah"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "ADÁMKOVÁ Karin",
+  "负者": "DVORAK Galia"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "KIRICHENKO Anna",
+  "负者": "GALIČ Alex"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "SAMARA Elizabeta",
+  "负者": "COLANTONI Chiara"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "WU Jennifer",
+  "负者": "MALANINA Maria"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "CIOBANU Irina",
+  "负者": "LOEUILLETTE Stéphanie"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "ČECHOVÁ Dana",
+  "负者": "FEHÉR Orsolya"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "Hitomi SATO",
+  "负者": "LIN Gui"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "WANG Manyu",
+  "负者": "ADÁMKOVÁ Karin"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "SAMARA Elizabeta",
+  "负者": "KIRICHENKO Anna"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "WU Jennifer",
+  "负者": "CIOBANU Irina"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "Hitomi SATO",
+  "负者": "ČECHOVÁ Dana"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "WANG Manyu",
+  "负者": "SAMARA Elizabeta"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "Hitomi SATO",
+  "负者": "WU Jennifer"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "WANG Manyu",
+  "负者": "Hitomi SATO"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "JEON Ji-Hee",
+  "负者": "ZHANG Xuan"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "SOROCHYNSKA Tetyana",
+  "负者": "ZHU Chengzhu"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHA Hyo-Sim",
+  "负者": "KUKULKOVÁ Tatiana"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "EKHOLM Matilda",
+  "负者": "DODEAN Daniela"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "SUN Yingsha",
+  "负者": "KONSBRUCK Danielle"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "LIU Jia",
+  "负者": "COTE Alicia"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "ZHANG Lily",
+  "负者": "TSAPTSINOS Maria"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "Mima ITO",
+  "负者": "KUČEROVÁ Aneta"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "JEON Ji-Hee",
+  "负者": "SOROCHYNSKA Tetyana"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHA Hyo-Sim",
+  "负者": "EKHOLM Matilda"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "SUN Yingsha",
+  "负者": "LIU Jia"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "Mima ITO",
+  "负者": "ZHANG Lily"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHA Hyo-Sim",
+  "负者": "JEON Ji-Hee"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "SUN Yingsha",
+  "负者": "Mima ITO"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "SUN Yingsha",
+  "负者": "CHA Hyo-Sim"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "Kasumi ISHIKAWA",
+  "负者": "LAVROVA Anastassiya"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "SOLJA Amelie",
+  "负者": "PATKAR Madhurika"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHOI Hyo-Joo",
+  "负者": "BERGAND Filippa"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Qian",
+  "负者": "SU Pei-Ling"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "LEE Ho Ching",
+  "负者": "DIACONU Adina"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "GAPONOVA Ganna",
+  "负者": "REEM El-Eraky"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "LEE Zion",
+  "负者": "CAREY Charlotte"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "KEM Doo Hoi",
+  "负者": "YOO Eun-Chong"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "Kasumi ISHIKAWA",
+  "负者": "SOLJA Amelie"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Qian",
+  "负者": "CHOI Hyo-Joo"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "LEE Ho Ching",
+  "负者": "GAPONOVA Ganna"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "KEM Doo Hoi",
+  "负者": "LEE Zion"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "Kasumi ISHIKAWA",
+  "负者": "LI Qian"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "KEM Doo Hoi",
+  "负者": "LEE Ho Ching"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "KEM Doo Hoi",
+  "负者": "Kasumi ISHIKAWA"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "FENG Tianwei",
+  "负者": "WANG Amy"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "BERGSTRÖM Linda",
+  "负者": "BAJOR Natalia"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "MADARÁSZ Dóra",
+  "负者": "TOLIOU Aikaterini"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "LI Jie",
+  "负者": "BÁLINT Bernadett"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "SAWETTABUT Suthasini",
+  "负者": "GASNIER Laura"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "PARTYKA Natalia",
+  "负者": "JEGER Mateja"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "LIN Ye",
+  "负者": "HO Tin-Tin"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHEN Meng",
+  "负者": "WONG Xin-Ru"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "FENG Tianwei",
+  "负者": "BERGSTRÖM Linda"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "MADARÁSZ Dóra",
+  "负者": "LI Jie"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "SAWETTABUT Suthasini",
+  "负者": "PARTYKA Natalia"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHEN Meng",
+  "负者": "LIN Ye"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "FENG Tianwei",
+  "负者": "MADARÁSZ Dóra"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHEN Meng",
+  "负者": "SAWETTABUT Suthasini"
+ },
+ {
+  "日期": "2019-05-15",
+  "类型": "世锦赛",
+  "胜者": "CHEN Meng",
+  "负者": "FENG Tianwei"
+ }
 ]

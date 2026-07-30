@@ -1,18 +1,1412 @@
 [
-{ "日期": "2024-07-30", "类型": "奥运会团体", "胜者": "WANG Chuqin/SUN Yingsha", "负者": "RI Jong Sik/KIM Kum Yong" },
-{ "日期": "2024-07-30", "类型": "奥运会团体", "胜者": "LIM Jonghoon/SHIN Yubin", "负者": "WONG Chun Ting/DOO Hoi Kem" },
-{ "日期": "2024-07-29", "类型": "奥运会团体", "胜者": "WANG Chuqin/SUN Yingsha", "负者": "LIM Jonghoon/SHIN Yubin" },
-{ "日期": "2024-07-29", "类型": "奥运会团体", "胜者": "RI Jong Sik/KIM Kum Yong", "负者": "WONG Chun Ting/DOO Hoi Kem" },
-{ "日期": "2024-07-28", "类型": "奥运会团体", "胜者": "WANG Chuqin/SUN Yingsha", "负者": "LIN Yun-Ju/CHEN Szu-Yu" },
-{ "日期": "2024-07-28", "类型": "奥运会团体", "胜者": "LIM Jonghoon/SHIN Yubin", "负者": "Ovidiu IONESCU/Bernadette SZOCS" },
-{ "日期": "2024-07-28", "类型": "奥运会团体", "胜者": "WONG Chun Ting/DOO Hoi Kem", "负者": "Alvaro ROBLES/Maria XIAO" },
-{ "日期": "2024-07-28", "类型": "奥运会团体", "胜者": "RI Jong Sik/KIM Kum Yong", "负者": "Kristian KARLSSON/Christina KALLBERG" },
-{ "日期": "2024-07-27", "类型": "奥运会团体", "胜者": "WANG Chuqin/SUN Yingsha", "负者": "Omar ASSAR/Dina MESHREF" },
-{ "日期": "2024-07-27", "类型": "奥运会团体", "胜者": "LIN Yun-Ju/CHEN Szu-Yu", "负者": "Alexis LEBRUN/Jia Nan YUAN" },
-{ "日期": "2024-07-27", "类型": "奥运会团体", "胜者": "Ovidiu IONESCU/Bernadette SZOCS", "负者": "Nicholas LUM/Minhyung JEE" },
-{ "日期": "2024-07-27", "类型": "奥运会团体", "胜者": "LIM Jonghoon/SHIN Yubin", "负者": "Dang QIU/Nina MITTELHAM" },
-{ "日期": "2024-07-27", "类型": "奥运会团体", "胜者": "WONG Chun Ting/DOO Hoi Kem", "负者": "Nandor ECSEKI/Dora MADARASZ" },
-{ "日期": "2024-07-27", "类型": "奥运会团体", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "Vitor ISHIY/Bruna TAKAHASHI" },
-{ "日期": "2024-07-27", "类型": "奥运会团体", "胜者": "Kristian KARLSSON/Christina KALLBERG", "负者": "Jorge CAMPOS/Daniela FONSECA CARRAZANA" },
-{ "日期": "2024-07-27", "类型": "奥运会团体", "胜者": "RI Jong Sik/KIM Kum Yong", "负者": "Tomokazu HARIMOTO/Hina HAYATA" }
+  {
+    "日期": "2025-01-07",
+    "类型": "球星挑战赛",
+    "胜者": "Maharu YOSHIMURA/Satsuki ODO",
+    "负者": "Lubomir PISTEJ/Tatiana KUKULKOVA"
+  },
+  {
+    "日期": "2025-01-07",
+    "类型": "球星挑战赛",
+    "胜者": "Manika BATRA/Manav THAKKAR",
+    "负者": "Charlotte LUTZ/Flavien COTON"
+  },
+  {
+    "日期": "2025-01-07",
+    "类型": "球星挑战赛",
+    "胜者": "Sora MATSUSHIMA/Miwa HARIMOTO",
+    "负者": "Hwan BAE/Minhyung JEE"
+  },
+  {
+    "日期": "2025-01-07",
+    "类型": "球星挑战赛",
+    "胜者": "HUANG Youzheng/SHI Xunyao",
+    "负者": "Liam PITCHFORD/Anna HURSEY"
+  },
+  {
+    "日期": "2025-01-08",
+    "类型": "球星挑战赛",
+    "胜者": "WONG Chun Ting/DOO Hoi Kem",
+    "负者": "Maharu YOSHIMURA/Satsuki ODO"
+  },
+  {
+    "日期": "2025-01-08",
+    "类型": "球星挑战赛",
+    "胜者": "HUANG Youzheng/SHI Xunyao",
+    "负者": "KIM Nayeong/LIM Jonghoon"
+  },
+  {
+    "日期": "2025-01-08",
+    "类型": "球星挑战赛",
+    "胜者": "CHO Daeseong/SHIN Yubin",
+    "负者": "XIANG Peng/KUAI Man"
+  },
+  {
+    "日期": "2025-01-08",
+    "类型": "球星挑战赛",
+    "胜者": "Mohammed ABDULWAHHAB/Aia MOHAMED",
+    "负者": "Hwan BAE/Minhyung JEE"
+  },
+  {
+    "日期": "2025-01-08",
+    "类型": "球星挑战赛",
+    "胜者": "Sora MATSUSHIMA/Miwa HARIMOTO",
+    "负者": "Bernadette SZOCS/Eduard IONESCU"
+  },
+  {
+    "日期": "2025-01-08",
+    "类型": "球星挑战赛",
+    "胜者": "Diya CHITALE/Manush SHAH",
+    "负者": "NG Wing Lam/YIU Kwan To"
+  },
+  {
+    "日期": "2025-01-08",
+    "类型": "球星挑战赛",
+    "胜者": "CHEN Yuanyu/CHEN Yi",
+    "负者": "Manika BATRA/Manav THAKKAR"
+  },
+  {
+    "日期": "2025-01-08",
+    "类型": "球星挑战赛",
+    "胜者": "Maria XIAO/Alvaro ROBLES",
+    "负者": "Liam PITCHFORD/Anna HURSEY"
+  },
+  {
+    "日期": "2025-01-09",
+    "类型": "球星挑战赛",
+    "胜者": "HUANG Youzheng/SHI Xunyao",
+    "负者": "WONG Chun Ting/DOO Hoi Kem"
+  },
+  {
+    "日期": "2025-01-09",
+    "类型": "球星挑战赛",
+    "胜者": "CHO Daeseong/SHIN Yubin",
+    "负者": "Mohammed ABDULWAHHAB/Aia MOHAMED"
+  },
+  {
+    "日期": "2025-01-09",
+    "类型": "球星挑战赛",
+    "胜者": "Sora MATSUSHIMA/Miwa HARIMOTO",
+    "负者": "Diya CHITALE/Manush SHAH"
+  },
+  {
+    "日期": "2025-01-09",
+    "类型": "球星挑战赛",
+    "胜者": "CHEN Yuanyu/CHEN Yi",
+    "负者": "Maria XIAO/Alvaro ROBLES"
+  },
+  {
+    "日期": "2025-01-09",
+    "类型": "球星挑战赛",
+    "胜者": "HUANG Youzheng/SHI Xunyao",
+    "负者": "CHO Daeseong/SHIN Yubin"
+  },
+  {
+    "日期": "2025-01-09",
+    "类型": "球星挑战赛",
+    "胜者": "Sora MATSUSHIMA/Miwa HARIMOTO",
+    "负者": "CHEN Yuanyu/CHEN Yi"
+  },
+  {
+    "日期": "2025-01-11",
+    "类型": "球星挑战赛",
+    "胜者": "Sora MATSUSHIMA/Miwa HARIMOTO",
+    "负者": "HUANG Youzheng/SHI Xunyao"
+  },
+  {
+    "日期": "2025-02-02",
+    "类型": "大满贯",
+    "胜者": "Xia Lian NI/Luka MLADENOVIC",
+    "负者": "Finn LUU/Giulia TAKAHASHI"
+  },
+  {
+    "日期": "2025-02-02",
+    "类型": "大满贯",
+    "胜者": "Eduard IONESCU/Bernadette SZOCS",
+    "负者": "Prithika PAVADE/Simon GAUZY"
+  },
+  {
+    "日期": "2025-02-02",
+    "类型": "大满贯",
+    "胜者": "Lubomir PISTEJ/Tatiana KUKULKOVA",
+    "负者": "Anders LIND/Adriana DIAZ"
+  },
+  {
+    "日期": "2025-02-02",
+    "类型": "大满贯",
+    "胜者": "Arantxa COSSIO/Marcos MADRID",
+    "负者": "QUEK Izaac/ZHOU Jingyi"
+  },
+  {
+    "日期": "2025-02-02",
+    "类型": "大满贯",
+    "胜者": "Hugo CALDERANO/Bruna TAKAHASHI",
+    "负者": "ZENG Jian/PANG Koen"
+  },
+  {
+    "日期": "2025-02-02",
+    "类型": "大满贯",
+    "胜者": "Barbora BALAZOVA/Ovidiu IONESCU",
+    "负者": "Edward LY/Ivy LIAO"
+  },
+  {
+    "日期": "2025-02-02",
+    "类型": "大满贯",
+    "胜者": "NG Wing Lam/Hwan BAE",
+    "负者": "Nicholas LUM/Yangzi LIU"
+  },
+  {
+    "日期": "2025-02-02",
+    "类型": "大满贯",
+    "胜者": "YIU Kwan To/Miyu NAGASAKI",
+    "负者": "CHEW Clarence/SER Lin Qian"
+  },
+  {
+    "日期": "2025-02-04",
+    "类型": "大满贯",
+    "胜者": "KUAI Man/LIN Shidong",
+    "负者": "Xia Lian NI/Luka MLADENOVIC"
+  },
+  {
+    "日期": "2025-02-04",
+    "类型": "大满贯",
+    "胜者": "CHO Daeseong/SHIN Yubin",
+    "负者": "Eduard IONESCU/Bernadette SZOCS"
+  },
+  {
+    "日期": "2025-02-04",
+    "类型": "大满贯",
+    "胜者": "Alvaro ROBLES/Maria XIAO",
+    "负者": "Lubomir PISTEJ/Tatiana KUKULKOVA"
+  },
+  {
+    "日期": "2025-02-04",
+    "类型": "大满贯",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "Arantxa COSSIO/Marcos MADRID"
+  },
+  {
+    "日期": "2025-02-04",
+    "类型": "大满贯",
+    "胜者": "Sora MATSUSHIMA/Miwa HARIMOTO",
+    "负者": "Hugo CALDERANO/Bruna TAKAHASHI"
+  },
+  {
+    "日期": "2025-02-04",
+    "类型": "大满贯",
+    "胜者": "Kristian KARLSSON/Christina KALLBERG",
+    "负者": "Barbora BALAZOVA/Ovidiu IONESCU"
+  },
+  {
+    "日期": "2025-02-04",
+    "类型": "大满贯",
+    "胜者": "Sofia POLCANOVA/Robert GARDOS",
+    "负者": "NG Wing Lam/Hwan BAE"
+  },
+  {
+    "日期": "2025-02-04",
+    "类型": "大满贯",
+    "胜者": "DOO Hoi Kem/WONG Chun Ting",
+    "负者": "YIU Kwan To/Miyu NAGASAKI"
+  },
+  {
+    "日期": "2025-02-05",
+    "类型": "大满贯",
+    "胜者": "KUAI Man/LIN Shidong",
+    "负者": "CHO Daeseong/SHIN Yubin"
+  },
+  {
+    "日期": "2025-02-05",
+    "类型": "大满贯",
+    "胜者": "Alvaro ROBLES/Maria XIAO",
+    "负者": "Manush SHAH/Diya CHITALE"
+  },
+  {
+    "日期": "2025-02-05",
+    "类型": "大满贯",
+    "胜者": "Sora MATSUSHIMA/Miwa HARIMOTO",
+    "负者": "Kristian KARLSSON/Christina KALLBERG"
+  },
+  {
+    "日期": "2025-02-05",
+    "类型": "大满贯",
+    "胜者": "DOO Hoi Kem/WONG Chun Ting",
+    "负者": "Sofia POLCANOVA/Robert GARDOS"
+  },
+  {
+    "日期": "2025-02-06",
+    "类型": "大满贯",
+    "胜者": "KUAI Man/LIN Shidong",
+    "负者": "Alvaro ROBLES/Maria XIAO"
+  },
+  {
+    "日期": "2025-02-06",
+    "类型": "大满贯",
+    "胜者": "Sora MATSUSHIMA/Miwa HARIMOTO",
+    "负者": "DOO Hoi Kem/WONG Chun Ting"
+  },
+  {
+    "日期": "2025-02-07",
+    "类型": "大满贯",
+    "胜者": "KUAI Man/LIN Shidong",
+    "负者": "Sora MATSUSHIMA/Miwa HARIMOTO"
+  },
+  {
+    "日期": "2025-03-27",
+    "类型": "球星挑战赛",
+    "胜者": "DOO Hoi Kem/WONG Chun Ting",
+    "负者": "YIU Kwan To/NG Wing Lam"
+  },
+  {
+    "日期": "2025-03-27",
+    "类型": "球星挑战赛",
+    "胜者": "Hwan BAE/Barbora BALAZOVA",
+    "负者": "Anirban GHOSH/Swastika GHOSH"
+  },
+  {
+    "日期": "2025-03-27",
+    "类型": "球星挑战赛",
+    "胜者": "Miwa HARIMOTO/Sora MATSUSHIMA",
+    "负者": "Manika BATRA/Manav THAKKAR"
+  },
+  {
+    "日期": "2025-03-27",
+    "类型": "球星挑战赛",
+    "胜者": "Satsuki ODO/Maharu YOSHIMURA",
+    "负者": "Yashaswini GHORPADE/Harmeet DESAI"
+  },
+  {
+    "日期": "2025-03-27",
+    "类型": "球星挑战赛",
+    "胜者": "Akash PAL/Poymantee BAISYA",
+    "负者": "ZENG Jian/Nicholas LUM"
+  },
+  {
+    "日期": "2025-03-27",
+    "类型": "球星挑战赛",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "Ankur BHATTACHARJEE/Ayhika MUKHERJEE"
+  },
+  {
+    "日期": "2025-03-27",
+    "类型": "球星挑战赛",
+    "胜者": "CHAN Baldwin/ZHU Chengzhu",
+    "负者": "Sreeja AKULA/Sathiyan GNANASEKARAN"
+  },
+  {
+    "日期": "2025-03-27",
+    "类型": "球星挑战赛",
+    "胜者": "SHIN Yubin/LIM Jonghoon",
+    "负者": "Minhyung JEE/Finn LUU"
+  },
+  {
+    "日期": "2025-03-28",
+    "类型": "球星挑战赛",
+    "胜者": "DOO Hoi Kem/WONG Chun Ting",
+    "负者": "Hwan BAE/Barbora BALAZOVA"
+  },
+  {
+    "日期": "2025-03-28",
+    "类型": "球星挑战赛",
+    "胜者": "Satsuki ODO/Maharu YOSHIMURA",
+    "负者": "Miwa HARIMOTO/Sora MATSUSHIMA"
+  },
+  {
+    "日期": "2025-03-28",
+    "类型": "球星挑战赛",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "Akash PAL/Poymantee BAISYA"
+  },
+  {
+    "日期": "2025-03-28",
+    "类型": "球星挑战赛",
+    "胜者": "SHIN Yubin/LIM Jonghoon",
+    "负者": "CHAN Baldwin/ZHU Chengzhu"
+  },
+  {
+    "日期": "2025-03-28",
+    "类型": "球星挑战赛",
+    "胜者": "Satsuki ODO/Maharu YOSHIMURA",
+    "负者": "DOO Hoi Kem/WONG Chun Ting"
+  },
+  {
+    "日期": "2025-03-28",
+    "类型": "球星挑战赛",
+    "胜者": "SHIN Yubin/LIM Jonghoon",
+    "负者": "Manush SHAH/Diya CHITALE"
+  },
+  {
+    "日期": "2025-03-30",
+    "类型": "球星挑战赛",
+    "胜者": "SHIN Yubin/LIM Jonghoon",
+    "负者": "Satsuki ODO/Maharu YOSHIMURA"
+  },
+  {
+    "日期": "2025-04-10",
+    "类型": "常规挑战赛",
+    "胜者": "XIANG Peng/LIU Weishan",
+    "负者": "Kai ZHANG/DENG Zhen"
+  },
+  {
+    "日期": "2025-04-10",
+    "类型": "常规挑战赛",
+    "胜者": "YUAN Licen/CHEN Yi",
+    "负者": "QUEK Izaac/ZENG Jian"
+  },
+  {
+    "日期": "2025-04-10",
+    "类型": "常规挑战赛",
+    "胜者": "CHEN Yuanyu/YAN Yutong",
+    "负者": "CHAN Baldwin/ZHU Chengzhu"
+  },
+  {
+    "日期": "2025-04-10",
+    "类型": "常规挑战赛",
+    "胜者": "AN Jaehyun/RYU Hanna",
+    "负者": "Harmeet DESAI/Swastika GHOSH"
+  },
+  {
+    "日期": "2025-04-10",
+    "类型": "常规挑战赛",
+    "胜者": "LIM Jonghoon/KIM Nayeong",
+    "负者": "PANG Koen/SER Lin Qian"
+  },
+  {
+    "日期": "2025-04-10",
+    "类型": "常规挑战赛",
+    "胜者": "PARK Ganghyeon/YOO Siwoo",
+    "负者": "PARK Gyuhyeon/PARK Gahyeon"
+  },
+  {
+    "日期": "2025-04-11",
+    "类型": "常规挑战赛",
+    "胜者": "XUE Fei/QIAN Tianyi",
+    "负者": "XIANG Peng/LIU Weishan"
+  },
+  {
+    "日期": "2025-04-11",
+    "类型": "常规挑战赛",
+    "胜者": "YUAN Licen/CHEN Yi",
+    "负者": "CHEN Yuanyu/YAN Yutong"
+  },
+  {
+    "日期": "2025-04-11",
+    "类型": "常规挑战赛",
+    "胜者": "LIM Jonghoon/KIM Nayeong",
+    "负者": "AN Jaehyun/RYU Hanna"
+  },
+  {
+    "日期": "2025-04-11",
+    "类型": "常规挑战赛",
+    "胜者": "PARK Ganghyeon/YOO Siwoo",
+    "负者": "YIU Kwan To/NG Wing Lam"
+  },
+  {
+    "日期": "2025-04-11",
+    "类型": "常规挑战赛",
+    "胜者": "XUE Fei/QIAN Tianyi",
+    "负者": "YUAN Licen/CHEN Yi"
+  },
+  {
+    "日期": "2025-04-11",
+    "类型": "常规挑战赛",
+    "胜者": "LIM Jonghoon/KIM Nayeong",
+    "负者": "PARK Ganghyeon/YOO Siwoo"
+  },
+  {
+    "日期": "2025-04-12",
+    "类型": "常规挑战赛",
+    "胜者": "LIM Jonghoon/KIM Nayeong",
+    "负者": "XUE Fei/QIAN Tianyi"
+  },
+  {
+    "日期": "2025-04-25",
+    "类型": "常规挑战赛",
+    "胜者": "Kristian KARLSSON/Christina KALLBERG",
+    "负者": "Thibault PORET/Leana HOCHART"
+  },
+  {
+    "日期": "2025-04-25",
+    "类型": "常规挑战赛",
+    "胜者": "Wassim ESSID/Hana GODA",
+    "负者": "Remi CHAMBET-WEIL/Sofia VEGA"
+  },
+  {
+    "日期": "2025-04-25",
+    "类型": "常规挑战赛",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "SUN Yang/HU Yi"
+  },
+  {
+    "日期": "2025-04-25",
+    "类型": "常规挑战赛",
+    "胜者": "Sathiyan GNANASEKARAN/Sreeja AKULA",
+    "负者": "Dimitrije LEVAJAC/Izabela LUPULESKU"
+  },
+  {
+    "日期": "2025-04-25",
+    "类型": "常规挑战赛",
+    "胜者": "Harmeet DESAI/Yashaswini GHORPADE",
+    "负者": "LI Hechen/YAO Ruixuan"
+  },
+  {
+    "日期": "2025-04-25",
+    "类型": "常规挑战赛",
+    "胜者": "Guilherme TEODORO/Giulia TAKAHASHI",
+    "负者": "HUANG Xunan/DING Yijie"
+  },
+  {
+    "日期": "2025-04-25",
+    "类型": "常规挑战赛",
+    "胜者": "Mattias FALCK/Linda BERGSTROM",
+    "负者": "Youssef ABDELAZIZ/Mariam ALHODABY"
+  },
+  {
+    "日期": "2025-04-25",
+    "类型": "常规挑战赛",
+    "胜者": "Sora MATSUSHIMA/Miwa HARIMOTO",
+    "负者": "Ankur BHATTACHARJEE/Taneesha KOTECHA"
+  },
+  {
+    "日期": "2025-04-25",
+    "类型": "常规挑战赛",
+    "胜者": "Wassim ESSID/Hana GODA",
+    "负者": "Kristian KARLSSON/Christina KALLBERG"
+  },
+  {
+    "日期": "2025-04-25",
+    "类型": "常规挑战赛",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "Sathiyan GNANASEKARAN/Sreeja AKULA"
+  },
+  {
+    "日期": "2025-04-25",
+    "类型": "常规挑战赛",
+    "胜者": "Guilherme TEODORO/Giulia TAKAHASHI",
+    "负者": "Harmeet DESAI/Yashaswini GHORPADE"
+  },
+  {
+    "日期": "2025-04-25",
+    "类型": "常规挑战赛",
+    "胜者": "Sora MATSUSHIMA/Miwa HARIMOTO",
+    "负者": "Mattias FALCK/Linda BERGSTROM"
+  },
+  {
+    "日期": "2025-04-26",
+    "类型": "常规挑战赛",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "Wassim ESSID/Hana GODA"
+  },
+  {
+    "日期": "2025-04-26",
+    "类型": "常规挑战赛",
+    "胜者": "Sora MATSUSHIMA/Miwa HARIMOTO",
+    "负者": "Guilherme TEODORO/Giulia TAKAHASHI"
+  },
+  {
+    "日期": "2025-04-26",
+    "类型": "常规挑战赛",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "Sora MATSUSHIMA/Miwa HARIMOTO"
+  },
+  {
+    "日期": "2025-06-12",
+    "类型": "常规挑战赛",
+    "胜者": "Kristian KARLSSON/Christina KALLBERG",
+    "负者": "Oscar BIRRIEL/Alondra RODRIGUEZ"
+  },
+  {
+    "日期": "2025-06-12",
+    "类型": "常规挑战赛",
+    "胜者": "Kazuhiro YOSHIMURA/Miyu NAGASAKI",
+    "负者": "Dimitrije LEVAJAC/Izabela LUPULESKU"
+  },
+  {
+    "日期": "2025-06-12",
+    "类型": "常规挑战赛",
+    "胜者": "LI Hechen/SHI Xunyao",
+    "负者": "Ibrahim GUNDUZ/Ece HARAC"
+  },
+  {
+    "日期": "2025-06-12",
+    "类型": "常规挑战赛",
+    "胜者": "Darius MOVILEANU/Elena ZAHARIA",
+    "负者": "Xuqi LIN/Shuohan MEN"
+  },
+  {
+    "日期": "2025-06-12",
+    "类型": "常规挑战赛",
+    "胜者": "KWON Hyuk/YOO Yerin",
+    "负者": "Abdullah YIGENLER/Ozge YILMAZ"
+  },
+  {
+    "日期": "2025-06-12",
+    "类型": "常规挑战赛",
+    "胜者": "ZENG Beixun/FENG Yixuan",
+    "负者": "CHANG Yu-An/CHENG Pusyuan"
+  },
+  {
+    "日期": "2025-06-12",
+    "类型": "常规挑战赛",
+    "胜者": "Yuhi SAKAI/Kotomi OMODA",
+    "负者": "MA Jinbao/Jiangshan GUO"
+  },
+  {
+    "日期": "2025-06-12",
+    "类型": "常规挑战赛",
+    "胜者": "LIM Jonghoon/KIM Nayeong",
+    "负者": "WEN Ruibo/YAN Yutong"
+  },
+  {
+    "日期": "2025-06-13",
+    "类型": "常规挑战赛",
+    "胜者": "Kristian KARLSSON/Christina KALLBERG",
+    "负者": "Kazuhiro YOSHIMURA/Miyu NAGASAKI"
+  },
+  {
+    "日期": "2025-06-13",
+    "类型": "常规挑战赛",
+    "胜者": "LI Hechen/SHI Xunyao",
+    "负者": "Darius MOVILEANU/Elena ZAHARIA"
+  },
+  {
+    "日期": "2025-06-13",
+    "类型": "常规挑战赛",
+    "胜者": "ZENG Beixun/FENG Yixuan",
+    "负者": "KWON Hyuk/YOO Yerin"
+  },
+  {
+    "日期": "2025-06-13",
+    "类型": "常规挑战赛",
+    "胜者": "LIM Jonghoon/KIM Nayeong",
+    "负者": "Yuhi SAKAI/Kotomi OMODA"
+  },
+  {
+    "日期": "2025-06-13",
+    "类型": "常规挑战赛",
+    "胜者": "Kristian KARLSSON/Christina KALLBERG",
+    "负者": "LI Hechen/SHI Xunyao"
+  },
+  {
+    "日期": "2025-06-13",
+    "类型": "常规挑战赛",
+    "胜者": "ZENG Beixun/FENG Yixuan",
+    "负者": "LIM Jonghoon/KIM Nayeong"
+  },
+  {
+    "日期": "2025-06-14",
+    "类型": "常规挑战赛",
+    "胜者": "Kristian KARLSSON/Christina KALLBERG",
+    "负者": "ZENG Beixun/FENG Yixuan"
+  },
+  {
+    "日期": "2025-06-19",
+    "类型": "球星挑战赛",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "Peter HRIBAR/Ana TOFANT"
+  },
+  {
+    "日期": "2025-06-19",
+    "类型": "球星挑战赛",
+    "胜者": "Tomokazu HARIMOTO/Miwa HARIMOTO",
+    "负者": "HUANG Youzheng/CHEN Yi"
+  },
+  {
+    "日期": "2025-06-19",
+    "类型": "球星挑战赛",
+    "胜者": "Kristian KARLSSON/Christina KALLBERG",
+    "负者": "Samuel KULCZYCKI/Zuzanna WIELGOS"
+  },
+  {
+    "日期": "2025-06-19",
+    "类型": "球星挑战赛",
+    "胜者": "CHO Daeseong/JOO Cheonhui",
+    "负者": "XUE Fei/QIAN Tianyi"
+  },
+  {
+    "日期": "2025-06-19",
+    "类型": "球星挑战赛",
+    "胜者": "YIU Kwan To/NG Wing Lam",
+    "负者": "Payas JAIN/Manika BATRA"
+  },
+  {
+    "日期": "2025-06-19",
+    "类型": "球星挑战赛",
+    "胜者": "Alvaro ROBLES/Maria XIAO",
+    "负者": "Flavien COTON/Charlotte LUTZ"
+  },
+  {
+    "日期": "2025-06-19",
+    "类型": "球星挑战赛",
+    "胜者": "Wim VERDONSCHOT/Franziska SCHREINER",
+    "负者": "Bojan TOKIC/Sara TOKIC"
+  },
+  {
+    "日期": "2025-06-19",
+    "类型": "球星挑战赛",
+    "胜者": "Hugo CALDERANO/Bruna TAKAHASHI",
+    "负者": "WONG Chun Ting/DOO Hoi Kem"
+  },
+  {
+    "日期": "2025-06-20",
+    "类型": "球星挑战赛",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "Tomokazu HARIMOTO/Miwa HARIMOTO"
+  },
+  {
+    "日期": "2025-06-20",
+    "类型": "球星挑战赛",
+    "胜者": "CHO Daeseong/JOO Cheonhui",
+    "负者": "Kristian KARLSSON/Christina KALLBERG"
+  },
+  {
+    "日期": "2025-06-20",
+    "类型": "球星挑战赛",
+    "胜者": "YIU Kwan To/NG Wing Lam",
+    "负者": "Alvaro ROBLES/Maria XIAO"
+  },
+  {
+    "日期": "2025-06-20",
+    "类型": "球星挑战赛",
+    "胜者": "Hugo CALDERANO/Bruna TAKAHASHI",
+    "负者": "Wim VERDONSCHOT/Franziska SCHREINER"
+  },
+  {
+    "日期": "2025-06-20",
+    "类型": "球星挑战赛",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "CHO Daeseong/JOO Cheonhui"
+  },
+  {
+    "日期": "2025-06-20",
+    "类型": "球星挑战赛",
+    "胜者": "Hugo CALDERANO/Bruna TAKAHASHI",
+    "负者": "YIU Kwan To/NG Wing Lam"
+  },
+  {
+    "日期": "2025-06-22",
+    "类型": "球星挑战赛",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "Hugo CALDERANO/Bruna TAKAHASHI"
+  },
+  {
+    "日期": "2025-06-26",
+    "类型": "常规挑战赛",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "Abdullah YIGENLER/Ozge YILMAZ"
+  },
+  {
+    "日期": "2025-06-26",
+    "类型": "常规挑战赛",
+    "胜者": "YUAN Licen/XU Yi",
+    "负者": "YIU Kwan To/NG Wing Lam"
+  },
+  {
+    "日期": "2025-06-26",
+    "类型": "常规挑战赛",
+    "胜者": "Tomokazu HARIMOTO/Miwa HARIMOTO",
+    "负者": "WOO Hyeonggyu/KIM Seoyun"
+  },
+  {
+    "日期": "2025-06-26",
+    "类型": "常规挑战赛",
+    "胜者": "CHEN Yuanyu/QIAN Tianyi",
+    "负者": "Ibrahim GUNDUZ/Sibel ALTINKAYA"
+  },
+  {
+    "日期": "2025-06-26",
+    "类型": "常规挑战赛",
+    "胜者": "Shunsuke TOGAMI/Hina HAYATA",
+    "负者": "OH Junsung/Miyu NAGASAKI"
+  },
+  {
+    "日期": "2025-06-26",
+    "类型": "常规挑战赛",
+    "胜者": "HUANG Youzheng/CHEN Yi",
+    "负者": "Dimitrije LEVAJAC/Izabela LUPULESKU"
+  },
+  {
+    "日期": "2025-06-26",
+    "类型": "常规挑战赛",
+    "胜者": "Mudit DANI/Yashaswini GHORPADE",
+    "负者": "Peter HRIBAR/Ana TOFANT"
+  },
+  {
+    "日期": "2025-06-26",
+    "类型": "常规挑战赛",
+    "胜者": "WONG Chun Ting/DOO Hoi Kem",
+    "负者": "Leon BENKO/Dora COSIC"
+  },
+  {
+    "日期": "2025-06-27",
+    "类型": "常规挑战赛",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "YUAN Licen/XU Yi"
+  },
+  {
+    "日期": "2025-06-27",
+    "类型": "常规挑战赛",
+    "胜者": "Tomokazu HARIMOTO/Miwa HARIMOTO",
+    "负者": "CHEN Yuanyu/QIAN Tianyi"
+  },
+  {
+    "日期": "2025-06-27",
+    "类型": "常规挑战赛",
+    "胜者": "HUANG Youzheng/CHEN Yi",
+    "负者": "Shunsuke TOGAMI/Hina HAYATA"
+  },
+  {
+    "日期": "2025-06-27",
+    "类型": "常规挑战赛",
+    "胜者": "WONG Chun Ting/DOO Hoi Kem",
+    "负者": "Mudit DANI/Yashaswini GHORPADE"
+  },
+  {
+    "日期": "2025-06-27",
+    "类型": "常规挑战赛",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "Tomokazu HARIMOTO/Miwa HARIMOTO"
+  },
+  {
+    "日期": "2025-06-27",
+    "类型": "常规挑战赛",
+    "胜者": "HUANG Youzheng/CHEN Yi",
+    "负者": "WONG Chun Ting/DOO Hoi Kem"
+  },
+  {
+    "日期": "2025-06-28",
+    "类型": "常规挑战赛",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "HUANG Youzheng/CHEN Yi"
+  },
+  {
+    "日期": "2025-07-06",
+    "类型": "大满贯",
+    "胜者": "Robert GARDOS/Sofia POLCANOVA",
+    "负者": "Nicolas BURGOS/Paulina VEGA"
+  },
+  {
+    "日期": "2025-07-06",
+    "类型": "大满贯",
+    "胜者": "Eduard IONESCU/Bernadette SZOCS",
+    "负者": "Bosman BOTHA/Amy WANG"
+  },
+  {
+    "日期": "2025-07-06",
+    "类型": "大满贯",
+    "胜者": "Edward LY/Izabela LUPULESKU",
+    "负者": "Nicholas LUM/Yangzi LIU"
+  },
+  {
+    "日期": "2025-07-06",
+    "类型": "大满贯",
+    "胜者": "OH Junsung/Satsuki ODO",
+    "负者": "Marcos MADRID/Arantxa COSSIO"
+  },
+  {
+    "日期": "2025-07-06",
+    "类型": "大满贯",
+    "胜者": "LIN Yun-Ju/CHENG I-Ching",
+    "负者": "QUEK Izaac/NG Wing Lam"
+  },
+  {
+    "日期": "2025-07-06",
+    "类型": "大满贯",
+    "胜者": "Nandan NARESH/Sally MOYLAND",
+    "负者": "Liam PITCHFORD/Anna HURSEY"
+  },
+  {
+    "日期": "2025-07-06",
+    "类型": "大满贯",
+    "胜者": "Simon GAUZY/Prithika PAVADE",
+    "负者": "Youssef ABDELAZIZ/Mariam ALHODABY"
+  },
+  {
+    "日期": "2025-07-06",
+    "类型": "大满贯",
+    "胜者": "Ovidiu IONESCU/Barbora VARADY",
+    "负者": "Lubomir PISTEJ/Tatiana KUKULKOVA"
+  },
+  {
+    "日期": "2025-07-08",
+    "类型": "大满贯",
+    "胜者": "LIN Shidong/KUAI Man",
+    "负者": "Robert GARDOS/Sofia POLCANOVA"
+  },
+  {
+    "日期": "2025-07-08",
+    "类型": "大满贯",
+    "胜者": "Guilherme TEODORO/Giulia TAKAHASHI",
+    "负者": "Eduard IONESCU/Bernadette SZOCS"
+  },
+  {
+    "日期": "2025-07-08",
+    "类型": "大满贯",
+    "胜者": "WONG Chun Ting/DOO Hoi Kem",
+    "负者": "Edward LY/Izabela LUPULESKU"
+  },
+  {
+    "日期": "2025-07-08",
+    "类型": "大满贯",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "OH Junsung/Satsuki ODO"
+  },
+  {
+    "日期": "2025-07-08",
+    "类型": "大满贯",
+    "胜者": "LIN Yun-Ju/CHENG I-Ching",
+    "负者": "Kristian KARLSSON/Christina KALLBERG"
+  },
+  {
+    "日期": "2025-07-08",
+    "类型": "大满贯",
+    "胜者": "Sora MATSUSHIMA/Miwa HARIMOTO",
+    "负者": "Nandan NARESH/Sally MOYLAND"
+  },
+  {
+    "日期": "2025-07-08",
+    "类型": "大满贯",
+    "胜者": "Alvaro ROBLES/Maria XIAO",
+    "负者": "Simon GAUZY/Prithika PAVADE"
+  },
+  {
+    "日期": "2025-07-08",
+    "类型": "大满贯",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "Ovidiu IONESCU/Barbora VARADY"
+  },
+  {
+    "日期": "2025-07-09",
+    "类型": "大满贯",
+    "胜者": "LIN Shidong/KUAI Man",
+    "负者": "Guilherme TEODORO/Giulia TAKAHASHI"
+  },
+  {
+    "日期": "2025-07-09",
+    "类型": "大满贯",
+    "胜者": "WONG Chun Ting/DOO Hoi Kem",
+    "负者": "Manush SHAH/Diya CHITALE"
+  },
+  {
+    "日期": "2025-07-09",
+    "类型": "大满贯",
+    "胜者": "LIN Yun-Ju/CHENG I-Ching",
+    "负者": "Sora MATSUSHIMA/Miwa HARIMOTO"
+  },
+  {
+    "日期": "2025-07-09",
+    "类型": "大满贯",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "Alvaro ROBLES/Maria XIAO"
+  },
+  {
+    "日期": "2025-07-10",
+    "类型": "大满贯",
+    "胜者": "LIN Shidong/KUAI Man",
+    "负者": "WONG Chun Ting/DOO Hoi Kem"
+  },
+  {
+    "日期": "2025-07-10",
+    "类型": "大满贯",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "LIN Yun-Ju/CHENG I-Ching"
+  },
+  {
+    "日期": "2025-07-11",
+    "类型": "大满贯",
+    "胜者": "LIN Shidong/KUAI Man",
+    "负者": "LIM Jonghoon/SHIN Yubin"
+  },
+  {
+    "日期": "2025-07-24",
+    "类型": "常规挑战赛",
+    "胜者": "Akash PAL/Poymantee BAISYA",
+    "负者": "Muizz ADEGOKE/Aishat RABIU"
+  },
+  {
+    "日期": "2025-07-24",
+    "类型": "常规挑战赛",
+    "胜者": "Remi CHAMBET-WEIL/Sibel ALTINKAYA",
+    "负者": "Yaya AZEEZ/Deborah FALEYE"
+  },
+  {
+    "日期": "2025-07-24",
+    "类型": "常规挑战赛",
+    "胜者": "Matthew KUTI/Ajoke OJOMU",
+    "负者": "Taiwo MATI/Favour OJO"
+  },
+  {
+    "日期": "2025-07-24",
+    "类型": "常规挑战赛",
+    "胜者": "John OYEBODE/Gaia MONFARDINI",
+    "负者": "Monday OLABIYI/Madinath YESSOUFOU"
+  },
+  {
+    "日期": "2025-07-24",
+    "类型": "常规挑战赛",
+    "胜者": "Mudit DANI/Taneesha KOTECHA",
+    "负者": "Francis ANTWI/Bernice BORQUAYE"
+  },
+  {
+    "日期": "2025-07-24",
+    "类型": "常规挑战赛",
+    "胜者": "Anirban GHOSH/Krittwika ROY",
+    "负者": "Niagol STOYANOV/Giorgia PICCOLIN"
+  },
+  {
+    "日期": "2025-07-24",
+    "类型": "常规挑战赛",
+    "胜者": "Sathiyan GNANASEKARAN/Sreeja AKULA",
+    "负者": "Carlo ROSSI/Debora VIVARELLI"
+  },
+  {
+    "日期": "2025-07-24",
+    "类型": "常规挑战赛",
+    "胜者": "Jules ROLLAND/Prithika PAVADE",
+    "负者": "Wassim ESSID/Hana GODA"
+  },
+  {
+    "日期": "2025-07-24",
+    "类型": "常规挑战赛",
+    "胜者": "Akash PAL/Poymantee BAISYA",
+    "负者": "Remi CHAMBET-WEIL/Sibel ALTINKAYA"
+  },
+  {
+    "日期": "2025-07-24",
+    "类型": "常规挑战赛",
+    "胜者": "John OYEBODE/Gaia MONFARDINI",
+    "负者": "Matthew KUTI/Ajoke OJOMU"
+  },
+  {
+    "日期": "2025-07-24",
+    "类型": "常规挑战赛",
+    "胜者": "Anirban GHOSH/Krittwika ROY",
+    "负者": "Mudit DANI/Taneesha KOTECHA"
+  },
+  {
+    "日期": "2025-07-24",
+    "类型": "常规挑战赛",
+    "胜者": "Jules ROLLAND/Prithika PAVADE",
+    "负者": "Sathiyan GNANASEKARAN/Sreeja AKULA"
+  },
+  {
+    "日期": "2025-07-25",
+    "类型": "常规挑战赛",
+    "胜者": "Akash PAL/Poymantee BAISYA",
+    "负者": "John OYEBODE/Gaia MONFARDINI"
+  },
+  {
+    "日期": "2025-07-25",
+    "类型": "常规挑战赛",
+    "胜者": "Jules ROLLAND/Prithika PAVADE",
+    "负者": "Anirban GHOSH/Krittwika ROY"
+  },
+  {
+    "日期": "2025-07-25",
+    "类型": "常规挑战赛",
+    "胜者": "Jules ROLLAND/Prithika PAVADE",
+    "负者": "Akash PAL/Poymantee BAISYA"
+  },
+  {
+    "日期": "2025-07-24",
+    "类型": "常规挑战赛",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "Hiroto SHINOZUKA/Satsuki ODO"
+  },
+  {
+    "日期": "2025-07-24",
+    "类型": "常规挑战赛",
+    "胜者": "Harmeet DESAI/Yashaswini GHORPADE",
+    "负者": "Alfonso OLAVE/Sofia VEGA"
+  },
+  {
+    "日期": "2025-07-24",
+    "类型": "常规挑战赛",
+    "胜者": "Nicolas BURGOS/Paulina VEGA",
+    "负者": "Rogelio CASTRO/Clio BARCENAS"
+  },
+  {
+    "日期": "2025-07-24",
+    "类型": "常规挑战赛",
+    "胜者": "Gustavo GOMEZ/Daniela ORTEGA",
+    "负者": "Santiago LORENZO/Ana CODINA"
+  },
+  {
+    "日期": "2025-07-24",
+    "类型": "常规挑战赛",
+    "胜者": "Ankur BHATTACHARJEE/Ayhika MUKHERJEE",
+    "负者": "Horacio CIFUENTES/Candela MOLERO"
+  },
+  {
+    "日期": "2025-07-24",
+    "类型": "常规挑战赛",
+    "胜者": "OH Junsung/Miyu NAGASAKI",
+    "负者": "Leandro FUENTES/Mariam SHAHMURADYAN"
+  },
+  {
+    "日期": "2025-07-24",
+    "类型": "常规挑战赛",
+    "胜者": "Felipe DOTI/Giulia TAKAHASHI",
+    "负者": "Martin BENTANCOR/Valentina PAROLA"
+  },
+  {
+    "日期": "2025-07-24",
+    "类型": "常规挑战赛",
+    "胜者": "Hugo CALDERANO/Bruna TAKAHASHI",
+    "负者": "Manav THAKKAR/Swastika GHOSH"
+  },
+  {
+    "日期": "2025-07-25",
+    "类型": "常规挑战赛",
+    "胜者": "Harmeet DESAI/Yashaswini GHORPADE",
+    "负者": "Manush SHAH/Diya CHITALE"
+  },
+  {
+    "日期": "2025-07-25",
+    "类型": "常规挑战赛",
+    "胜者": "Gustavo GOMEZ/Daniela ORTEGA",
+    "负者": "Nicolas BURGOS/Paulina VEGA"
+  },
+  {
+    "日期": "2025-07-25",
+    "类型": "常规挑战赛",
+    "胜者": "Ankur BHATTACHARJEE/Ayhika MUKHERJEE",
+    "负者": "OH Junsung/Miyu NAGASAKI"
+  },
+  {
+    "日期": "2025-07-25",
+    "类型": "常规挑战赛",
+    "胜者": "Hugo CALDERANO/Bruna TAKAHASHI",
+    "负者": "Felipe DOTI/Giulia TAKAHASHI"
+  },
+  {
+    "日期": "2025-07-25",
+    "类型": "常规挑战赛",
+    "胜者": "Harmeet DESAI/Yashaswini GHORPADE",
+    "负者": "Gustavo GOMEZ/Daniela ORTEGA"
+  },
+  {
+    "日期": "2025-07-25",
+    "类型": "常规挑战赛",
+    "胜者": "Hugo CALDERANO/Bruna TAKAHASHI",
+    "负者": "Ankur BHATTACHARJEE/Ayhika MUKHERJEE"
+  },
+  {
+    "日期": "2025-07-26",
+    "类型": "常规挑战赛",
+    "胜者": "Hugo CALDERANO/Bruna TAKAHASHI",
+    "负者": "Harmeet DESAI/Yashaswini GHORPADE"
+  },
+  {
+    "日期": "2025-07-31",
+    "类型": "球星挑战赛",
+    "胜者": "Gustavo GOMEZ/Daniela ORTEGA",
+    "负者": "CHANG Yu-An/LI Yu-Jhun"
+  },
+  {
+    "日期": "2025-07-31",
+    "类型": "球星挑战赛",
+    "胜者": "Nicolas BURGOS/Paulina VEGA",
+    "负者": "Felipe DOTI/Karina SHIRAY"
+  },
+  {
+    "日期": "2025-07-31",
+    "类型": "球星挑战赛",
+    "胜者": "Eusebio VOS/Valentina RIOS",
+    "负者": "Leonardo IIZUKA/Laura WATANABE"
+  },
+  {
+    "日期": "2025-07-31",
+    "类型": "球星挑战赛",
+    "胜者": "Satoshi AIDA/Honoka HASHIMOTO",
+    "负者": "Rafael TURRINI/Victoria STRASSBURGER"
+  },
+  {
+    "日期": "2025-07-31",
+    "类型": "球星挑战赛",
+    "胜者": "Manav THAKKAR/Swastika GHOSH",
+    "负者": "Guilherme TEODORO/Giulia TAKAHASHI"
+  },
+  {
+    "日期": "2025-07-31",
+    "类型": "球星挑战赛",
+    "胜者": "OH Junsung/Miyu NAGASAKI",
+    "负者": "Harmeet DESAI/Yashaswini GHORPADE"
+  },
+  {
+    "日期": "2025-07-31",
+    "类型": "球星挑战赛",
+    "胜者": "Hugo CALDERANO/Bruna TAKAHASHI",
+    "负者": "Alfonso OLAVE/Sofia VEGA"
+  },
+  {
+    "日期": "2025-08-01",
+    "类型": "球星挑战赛",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "Gustavo GOMEZ/Daniela ORTEGA"
+  },
+  {
+    "日期": "2025-08-01",
+    "类型": "球星挑战赛",
+    "胜者": "Nicolas BURGOS/Paulina VEGA",
+    "负者": "Eusebio VOS/Valentina RIOS"
+  },
+  {
+    "日期": "2025-08-01",
+    "类型": "球星挑战赛",
+    "胜者": "Satoshi AIDA/Honoka HASHIMOTO",
+    "负者": "Manav THAKKAR/Swastika GHOSH"
+  },
+  {
+    "日期": "2025-08-01",
+    "类型": "球星挑战赛",
+    "胜者": "OH Junsung/Miyu NAGASAKI",
+    "负者": "Hugo CALDERANO/Bruna TAKAHASHI"
+  },
+  {
+    "日期": "2025-08-01",
+    "类型": "球星挑战赛",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "Nicolas BURGOS/Paulina VEGA"
+  },
+  {
+    "日期": "2025-08-01",
+    "类型": "球星挑战赛",
+    "胜者": "Satoshi AIDA/Honoka HASHIMOTO",
+    "负者": "OH Junsung/Miyu NAGASAKI"
+  },
+  {
+    "日期": "2025-08-03",
+    "类型": "球星挑战赛",
+    "胜者": "Satoshi AIDA/Honoka HASHIMOTO",
+    "负者": "Manush SHAH/Diya CHITALE"
+  },
+  {
+    "日期": "2025-08-17",
+    "类型": "大满贯",
+    "胜者": "Patrick FRANZISKA/Annett KAUFMANN",
+    "负者": "OH Junsung/Miyu NAGASAKI"
+  },
+  {
+    "日期": "2025-08-17",
+    "类型": "大满贯",
+    "胜者": "LIN Yun-Ju/CHENG I-Ching",
+    "负者": "QUEK Izaac/NG Wing Lam"
+  },
+  {
+    "日期": "2025-08-17",
+    "类型": "大满贯",
+    "胜者": "Eduard IONESCU/Bernadette SZOCS",
+    "负者": "Elias RANEFUR/Filippa BERGAND"
+  },
+  {
+    "日期": "2025-08-17",
+    "类型": "大满贯",
+    "胜者": "PANG Koen/ZENG Jian",
+    "负者": "Luka MLADENOVIC/Barbora VARADY"
+  },
+  {
+    "日期": "2025-08-17",
+    "类型": "大满贯",
+    "胜者": "Nicholas LUM/Yangzi LIU",
+    "负者": "Marcos MADRID/Arantxa COSSIO"
+  },
+  {
+    "日期": "2025-08-17",
+    "类型": "大满贯",
+    "胜者": "Simon GAUZY/Prithika PAVADE",
+    "负者": "Mattias FALCK/Linda BERGSTROM"
+  },
+  {
+    "日期": "2025-08-17",
+    "类型": "大满贯",
+    "胜者": "Anders LIND/Adriana DIAZ",
+    "负者": "Lubomir PISTEJ/Tatiana KUKULKOVA"
+  },
+  {
+    "日期": "2025-08-17",
+    "类型": "大满贯",
+    "胜者": "Martin FRIIS/Nomin BAASAN",
+    "负者": "Youssef ABDELAZIZ/Mariam ALHODABY"
+  },
+  {
+    "日期": "2025-08-19",
+    "类型": "大满贯",
+    "胜者": "LIN Shidong/KUAI Man",
+    "负者": "Patrick FRANZISKA/Annett KAUFMANN"
+  },
+  {
+    "日期": "2025-08-19",
+    "类型": "大满贯",
+    "胜者": "LIN Yun-Ju/CHENG I-Ching",
+    "负者": "Kristian KARLSSON/Christina KALLBERG"
+  },
+  {
+    "日期": "2025-08-19",
+    "类型": "大满贯",
+    "胜者": "Eduard IONESCU/Bernadette SZOCS",
+    "负者": "WONG Chun Ting/DOO Hoi Kem"
+  },
+  {
+    "日期": "2025-08-19",
+    "类型": "大满贯",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "PANG Koen/ZENG Jian"
+  },
+  {
+    "日期": "2025-08-19",
+    "类型": "大满贯",
+    "胜者": "Hugo CALDERANO/Bruna TAKAHASHI",
+    "负者": "Nicholas LUM/Yangzi LIU"
+  },
+  {
+    "日期": "2025-08-19",
+    "类型": "大满贯",
+    "胜者": "Sora MATSUSHIMA/Satsuki ODO",
+    "负者": "Simon GAUZY/Prithika PAVADE"
+  },
+  {
+    "日期": "2025-08-19",
+    "类型": "大满贯",
+    "胜者": "Anders LIND/Adriana DIAZ",
+    "负者": "Alvaro ROBLES/Maria XIAO"
+  },
+  {
+    "日期": "2025-08-19",
+    "类型": "大满贯",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "Martin FRIIS/Nomin BAASAN"
+  },
+  {
+    "日期": "2025-08-20",
+    "类型": "大满贯",
+    "胜者": "LIN Shidong/KUAI Man",
+    "负者": "LIN Yun-Ju/CHENG I-Ching"
+  },
+  {
+    "日期": "2025-08-20",
+    "类型": "大满贯",
+    "胜者": "Eduard IONESCU/Bernadette SZOCS",
+    "负者": "Manush SHAH/Diya CHITALE"
+  },
+  {
+    "日期": "2025-08-20",
+    "类型": "大满贯",
+    "胜者": "Sora MATSUSHIMA/Satsuki ODO",
+    "负者": "Hugo CALDERANO/Bruna TAKAHASHI"
+  },
+  {
+    "日期": "2025-08-20",
+    "类型": "大满贯",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "Anders LIND/Adriana DIAZ"
+  },
+  {
+    "日期": "2025-08-21",
+    "类型": "大满贯",
+    "胜者": "LIN Shidong/KUAI Man",
+    "负者": "Eduard IONESCU/Bernadette SZOCS"
+  },
+  {
+    "日期": "2025-08-21",
+    "类型": "大满贯",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "Sora MATSUSHIMA/Satsuki ODO"
+  },
+  {
+    "日期": "2025-08-22",
+    "类型": "大满贯",
+    "胜者": "LIN Shidong/KUAI Man",
+    "负者": "LIM Jonghoon/SHIN Yubin"
+  },
+  {
+    "日期": "2025-09-04",
+    "类型": "常规挑战赛",
+    "胜者": "XUE Fei/QIAN Tianyi",
+    "负者": "Sanzhar ZHUBANOV/Anel BAKHYT"
+  },
+  {
+    "日期": "2025-09-04",
+    "类型": "常规挑战赛",
+    "胜者": "Vladislav ZAKHAROV/Angelina ROMANOVSKAYA",
+    "负者": "Iskender KHARKI/Sarvinoz MIRKADIROVA"
+  },
+  {
+    "日期": "2025-09-04",
+    "类型": "常规挑战赛",
+    "胜者": "PARK Ganghyeon/YOO Siwoo",
+    "负者": "WONG Qi Shen/TEE Ai Xin"
+  },
+  {
+    "日期": "2025-09-04",
+    "类型": "常规挑战赛",
+    "胜者": "Vladimir SIDORENKO/Mariia TAILAKOVA",
+    "负者": "CHOONG Javen/LYNE Karen"
+  },
+  {
+    "日期": "2025-09-04",
+    "类型": "常规挑战赛",
+    "胜者": "Hiromu KOBAYASHI/Sakura YOKOI",
+    "负者": "Alan KURMANGALIYEV/Zauresh AKASHEVA"
+  },
+  {
+    "日期": "2025-09-04",
+    "类型": "常规挑战赛",
+    "胜者": "Satoshi AIDA/Honoka HASHIMOTO",
+    "负者": "Shokhrukh ISKANDAROV/Arujan KAMALOVA"
+  },
+  {
+    "日期": "2025-09-04",
+    "类型": "常规挑战赛",
+    "胜者": "PARK Gyuhyeon/KIM Nayeong",
+    "负者": "NGUYEN Anh Tu/NGUYEN Khanh"
+  },
+  {
+    "日期": "2025-09-04",
+    "类型": "常规挑战赛",
+    "胜者": "HUANG Youzheng/SHI Xunyao",
+    "负者": "Lev KATSMAN/Elizabet ABRAAMIAN"
+  },
+  {
+    "日期": "2025-09-05",
+    "类型": "常规挑战赛",
+    "胜者": "XUE Fei/QIAN Tianyi",
+    "负者": "Vladislav ZAKHAROV/Angelina ROMANOVSKAYA"
+  },
+  {
+    "日期": "2025-09-05",
+    "类型": "常规挑战赛",
+    "胜者": "PARK Ganghyeon/YOO Siwoo",
+    "负者": "Vladimir SIDORENKO/Mariia TAILAKOVA"
+  },
+  {
+    "日期": "2025-09-05",
+    "类型": "常规挑战赛",
+    "胜者": "Satoshi AIDA/Honoka HASHIMOTO",
+    "负者": "Hiromu KOBAYASHI/Sakura YOKOI"
+  },
+  {
+    "日期": "2025-09-05",
+    "类型": "常规挑战赛",
+    "胜者": "HUANG Youzheng/SHI Xunyao",
+    "负者": "PARK Gyuhyeon/KIM Nayeong"
+  },
+  {
+    "日期": "2025-09-05",
+    "类型": "常规挑战赛",
+    "胜者": "XUE Fei/QIAN Tianyi",
+    "负者": "PARK Ganghyeon/YOO Siwoo"
+  },
+  {
+    "日期": "2025-09-05",
+    "类型": "常规挑战赛",
+    "胜者": "HUANG Youzheng/SHI Xunyao",
+    "负者": "Satoshi AIDA/Honoka HASHIMOTO"
+  },
+  {
+    "日期": "2025-09-06",
+    "类型": "常规挑战赛",
+    "胜者": "HUANG Youzheng/SHI Xunyao",
+    "负者": "XUE Fei/QIAN Tianyi"
+  }
 ]
