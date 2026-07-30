@@ -1402,5 +1402,575 @@
     "类型": "常规挑战赛",
     "胜者": "Honoka HASHIMOTO/Hitomi SATO",
     "负者": "SHI Xunyao/QIAN Tianyi"
+  },
+  {
+    "日期": "2025-09-29",
+    "类型": "大满贯",
+    "胜者": "DOO Hoi Kem/ZHU Chengzhu",
+    "负者": "Paulina VEGA/Daniela ORTEGA"
+  },
+  {
+    "日期": "2025-09-30",
+    "类型": "大满贯",
+    "胜者": "ZONG Geman/QIN Yuxuan",
+    "负者": "Jiamuwa WU/Constantina PSIHOGIOS"
+  },
+  {
+    "日期": "2025-09-29",
+    "类型": "大满贯",
+    "胜者": "WANG Yidi/Lily ZHANG",
+    "负者": "Andreea DRAGOMAN/Charlotte LUTZ"
+  },
+  {
+    "日期": "2025-09-30",
+    "类型": "大满贯",
+    "胜者": "Prithika PAVADE/Adriana DIAZ",
+    "负者": "Xiaona SHAN/NG Wing Lam"
+  },
+  {
+    "日期": "2025-09-29",
+    "类型": "大满贯",
+    "胜者": "Annett KAUFMANN/Yangzi LIU",
+    "负者": "Mateja JEGER/Lea RAKOVAC"
+  },
+  {
+    "日期": "2025-09-29",
+    "类型": "大满贯",
+    "胜者": "WANG Xiaotong/XU Yi",
+    "负者": "Ayhika MUKHERJEE/Sutirtha MUKHERJEE"
+  },
+  {
+    "日期": "2025-09-30",
+    "类型": "大满贯",
+    "胜者": "Suthasini SAWETTABUT/Orawan PARANANG",
+    "负者": "Yashaswini GHORPADE/Minhyung JEE"
+  },
+  {
+    "日期": "2025-09-30",
+    "类型": "大满贯",
+    "胜者": "Hina HAYATA/JOO Cheonhui",
+    "负者": "Izabela LUPULESKU/Sabina SURJAN"
+  },
+  {
+    "日期": "2025-10-01",
+    "类型": "大满贯",
+    "胜者": "KUAI Man/WANG Manyu",
+    "负者": "DOO Hoi Kem/ZHU Chengzhu"
+  },
+  {
+    "日期": "2025-10-01",
+    "类型": "大满贯",
+    "胜者": "Miyu NAGASAKI/SHIN Yubin",
+    "负者": "ZONG Geman/QIN Yuxuan"
+  },
+  {
+    "日期": "2025-10-01",
+    "类型": "大满贯",
+    "胜者": "CHEN Xingtong/QIAN Tianyi",
+    "负者": "WANG Yidi/Lily ZHANG"
+  },
+  {
+    "日期": "2025-10-01",
+    "类型": "大满贯",
+    "胜者": "Elizabeta SAMARA/Bernadette SZOCS",
+    "负者": "Prithika PAVADE/Adriana DIAZ"
+  },
+  {
+    "日期": "2025-10-01",
+    "类型": "大满贯",
+    "胜者": "Annett KAUFMANN/Yangzi LIU",
+    "负者": "Hana MATELOVA/Barbora VARADY"
+  },
+  {
+    "日期": "2025-10-01",
+    "类型": "大满贯",
+    "胜者": "WANG Xiaotong/XU Yi",
+    "负者": "KIM Nayeong/RYU Hanna"
+  },
+  {
+    "日期": "2025-10-01",
+    "类型": "大满贯",
+    "胜者": "Suthasini SAWETTABUT/Orawan PARANANG",
+    "负者": "Sabine WINTER/Yuan WAN"
+  },
+  {
+    "日期": "2025-10-01",
+    "类型": "大满贯",
+    "胜者": "Hina HAYATA/JOO Cheonhui",
+    "负者": "Miwa HARIMOTO/Satsuki ODO"
+  },
+  {
+    "日期": "2025-10-02",
+    "类型": "大满贯",
+    "胜者": "KUAI Man/WANG Manyu",
+    "负者": "Miyu NAGASAKI/SHIN Yubin"
+  },
+  {
+    "日期": "2025-10-02",
+    "类型": "大满贯",
+    "胜者": "CHEN Xingtong/QIAN Tianyi",
+    "负者": "Elizabeta SAMARA/Bernadette SZOCS"
+  },
+  {
+    "日期": "2025-10-02",
+    "类型": "大满贯",
+    "胜者": "WANG Xiaotong/XU Yi",
+    "负者": "Annett KAUFMANN/Yangzi LIU"
+  },
+  {
+    "日期": "2025-10-02",
+    "类型": "大满贯",
+    "胜者": "Hina HAYATA/JOO Cheonhui",
+    "负者": "Suthasini SAWETTABUT/Orawan PARANANG"
+  },
+  {
+    "日期": "2025-10-03",
+    "类型": "大满贯",
+    "胜者": "KUAI Man/WANG Manyu",
+    "负者": "CHEN Xingtong/QIAN Tianyi"
+  },
+  {
+    "日期": "2025-10-03",
+    "类型": "大满贯",
+    "胜者": "Hina HAYATA/JOO Cheonhui",
+    "负者": "WANG Xiaotong/XU Yi"
+  },
+  {
+    "日期": "2025-10-04",
+    "类型": "大满贯",
+    "胜者": "KUAI Man/WANG Manyu",
+    "负者": "Hina HAYATA/JOO Cheonhui"
+  },
+  {
+    "日期": "2025-09-29",
+    "类型": "大满贯",
+    "胜者": "DOO Hoi Kem/ZHU Chengzhu",
+    "负者": "Paulina VEGA/Daniela ORTEGA"
+  },
+  {
+    "日期": "2025-09-30",
+    "类型": "大满贯",
+    "胜者": "ZONG Geman/QIN Yuxuan",
+    "负者": "Jiamuwa WU/Constantina PSIHOGIOS"
+  },
+  {
+    "日期": "2025-09-29",
+    "类型": "大满贯",
+    "胜者": "WANG Yidi/Lily ZHANG",
+    "负者": "Andreea DRAGOMAN/Charlotte LUTZ"
+  },
+  {
+    "日期": "2025-09-30",
+    "类型": "大满贯",
+    "胜者": "Prithika PAVADE/Adriana DIAZ",
+    "负者": "Xiaona SHAN/NG Wing Lam"
+  },
+  {
+    "日期": "2025-09-29",
+    "类型": "大满贯",
+    "胜者": "Annett KAUFMANN/Yangzi LIU",
+    "负者": "Mateja JEGER/Lea RAKOVAC"
+  },
+  {
+    "日期": "2025-09-29",
+    "类型": "大满贯",
+    "胜者": "WANG Xiaotong/XU Yi",
+    "负者": "Ayhika MUKHERJEE/Sutirtha MUKHERJEE"
+  },
+  {
+    "日期": "2025-09-30",
+    "类型": "大满贯",
+    "胜者": "Suthasini SAWETTABUT/Orawan PARANANG",
+    "负者": "Yashaswini GHORPADE/Minhyung JEE"
+  },
+  {
+    "日期": "2025-09-30",
+    "类型": "大满贯",
+    "胜者": "Hina HAYATA/JOO Cheonhui",
+    "负者": "Izabela LUPULESKU/Sabina SURJAN"
+  },
+  {
+    "日期": "2025-10-01",
+    "类型": "大满贯",
+    "胜者": "KUAI Man/WANG Manyu",
+    "负者": "DOO Hoi Kem/ZHU Chengzhu"
+  },
+  {
+    "日期": "2025-10-01",
+    "类型": "大满贯",
+    "胜者": "Miyu NAGASAKI/SHIN Yubin",
+    "负者": "ZONG Geman/QIN Yuxuan"
+  },
+  {
+    "日期": "2025-10-01",
+    "类型": "大满贯",
+    "胜者": "CHEN Xingtong/QIAN Tianyi",
+    "负者": "WANG Yidi/Lily ZHANG"
+  },
+  {
+    "日期": "2025-10-01",
+    "类型": "大满贯",
+    "胜者": "Elizabeta SAMARA/Bernadette SZOCS",
+    "负者": "Prithika PAVADE/Adriana DIAZ"
+  },
+  {
+    "日期": "2025-10-01",
+    "类型": "大满贯",
+    "胜者": "Annett KAUFMANN/Yangzi LIU",
+    "负者": "Hana MATELOVA/Barbora VARADY"
+  },
+  {
+    "日期": "2025-10-01",
+    "类型": "大满贯",
+    "胜者": "WANG Xiaotong/XU Yi",
+    "负者": "KIM Nayeong/RYU Hanna"
+  },
+  {
+    "日期": "2025-10-01",
+    "类型": "大满贯",
+    "胜者": "Suthasini SAWETTABUT/Orawan PARANANG",
+    "负者": "Sabine WINTER/Yuan WAN"
+  },
+  {
+    "日期": "2025-10-01",
+    "类型": "大满贯",
+    "胜者": "Hina HAYATA/JOO Cheonhui",
+    "负者": "Miwa HARIMOTO/Satsuki ODO"
+  },
+  {
+    "日期": "2025-10-02",
+    "类型": "大满贯",
+    "胜者": "KUAI Man/WANG Manyu",
+    "负者": "Miyu NAGASAKI/SHIN Yubin"
+  },
+  {
+    "日期": "2025-10-02",
+    "类型": "大满贯",
+    "胜者": "CHEN Xingtong/QIAN Tianyi",
+    "负者": "Elizabeta SAMARA/Bernadette SZOCS"
+  },
+  {
+    "日期": "2025-10-02",
+    "类型": "大满贯",
+    "胜者": "WANG Xiaotong/XU Yi",
+    "负者": "Annett KAUFMANN/Yangzi LIU"
+  },
+  {
+    "日期": "2025-10-02",
+    "类型": "大满贯",
+    "胜者": "Hina HAYATA/JOO Cheonhui",
+    "负者": "Suthasini SAWETTABUT/Orawan PARANANG"
+  },
+  {
+    "日期": "2025-10-03",
+    "类型": "大满贯",
+    "胜者": "KUAI Man/WANG Manyu",
+    "负者": "CHEN Xingtong/QIAN Tianyi"
+  },
+  {
+    "日期": "2025-10-03",
+    "类型": "大满贯",
+    "胜者": "Hina HAYATA/JOO Cheonhui",
+    "负者": "WANG Xiaotong/XU Yi"
+  },
+  {
+    "日期": "2025-10-04",
+    "类型": "大满贯",
+    "胜者": "KUAI Man/WANG Manyu",
+    "负者": "Hina HAYATA/JOO Cheonhui"
+  },
+  {
+    "日期": "2025-09-29",
+    "类型": "大满贯",
+    "胜者": "DOO Hoi Kem/ZHU Chengzhu",
+    "负者": "Paulina VEGA/Daniela ORTEGA"
+  },
+  {
+    "日期": "2025-09-30",
+    "类型": "大满贯",
+    "胜者": "ZONG Geman/QIN Yuxuan",
+    "负者": "Jiamuwa WU/Constantina PSIHOGIOS"
+  },
+  {
+    "日期": "2025-09-29",
+    "类型": "大满贯",
+    "胜者": "WANG Yidi/Lily ZHANG",
+    "负者": "Andreea DRAGOMAN/Charlotte LUTZ"
+  },
+  {
+    "日期": "2025-09-30",
+    "类型": "大满贯",
+    "胜者": "Prithika PAVADE/Adriana DIAZ",
+    "负者": "Xiaona SHAN/NG Wing Lam"
+  },
+  {
+    "日期": "2025-09-29",
+    "类型": "大满贯",
+    "胜者": "Annett KAUFMANN/Yangzi LIU",
+    "负者": "Mateja JEGER/Lea RAKOVAC"
+  },
+  {
+    "日期": "2025-09-29",
+    "类型": "大满贯",
+    "胜者": "WANG Xiaotong/XU Yi",
+    "负者": "Ayhika MUKHERJEE/Sutirtha MUKHERJEE"
+  },
+  {
+    "日期": "2025-09-30",
+    "类型": "大满贯",
+    "胜者": "Suthasini SAWETTABUT/Orawan PARANANG",
+    "负者": "Yashaswini GHORPADE/Minhyung JEE"
+  },
+  {
+    "日期": "2025-09-30",
+    "类型": "大满贯",
+    "胜者": "Hina HAYATA/JOO Cheonhui",
+    "负者": "Izabela LUPULESKU/Sabina SURJAN"
+  },
+  {
+    "日期": "2025-10-01",
+    "类型": "大满贯",
+    "胜者": "KUAI Man/WANG Manyu",
+    "负者": "DOO Hoi Kem/ZHU Chengzhu"
+  },
+  {
+    "日期": "2025-10-01",
+    "类型": "大满贯",
+    "胜者": "Miyu NAGASAKI/SHIN Yubin",
+    "负者": "ZONG Geman/QIN Yuxuan"
+  },
+  {
+    "日期": "2025-10-01",
+    "类型": "大满贯",
+    "胜者": "CHEN Xingtong/QIAN Tianyi",
+    "负者": "WANG Yidi/Lily ZHANG"
+  },
+  {
+    "日期": "2025-10-01",
+    "类型": "大满贯",
+    "胜者": "Elizabeta SAMARA/Bernadette SZOCS",
+    "负者": "Prithika PAVADE/Adriana DIAZ"
+  },
+  {
+    "日期": "2025-10-01",
+    "类型": "大满贯",
+    "胜者": "Annett KAUFMANN/Yangzi LIU",
+    "负者": "Hana MATELOVA/Barbora VARADY"
+  },
+  {
+    "日期": "2025-10-01",
+    "类型": "大满贯",
+    "胜者": "WANG Xiaotong/XU Yi",
+    "负者": "KIM Nayeong/RYU Hanna"
+  },
+  {
+    "日期": "2025-10-01",
+    "类型": "大满贯",
+    "胜者": "Suthasini SAWETTABUT/Orawan PARANANG",
+    "负者": "Sabine WINTER/Yuan WAN"
+  },
+  {
+    "日期": "2025-10-01",
+    "类型": "大满贯",
+    "胜者": "Hina HAYATA/JOO Cheonhui",
+    "负者": "Miwa HARIMOTO/Satsuki ODO"
+  },
+  {
+    "日期": "2025-10-02",
+    "类型": "大满贯",
+    "胜者": "KUAI Man/WANG Manyu",
+    "负者": "Miyu NAGASAKI/SHIN Yubin"
+  },
+  {
+    "日期": "2025-10-02",
+    "类型": "大满贯",
+    "胜者": "CHEN Xingtong/QIAN Tianyi",
+    "负者": "Elizabeta SAMARA/Bernadette SZOCS"
+  },
+  {
+    "日期": "2025-10-02",
+    "类型": "大满贯",
+    "胜者": "WANG Xiaotong/XU Yi",
+    "负者": "Annett KAUFMANN/Yangzi LIU"
+  },
+  {
+    "日期": "2025-10-02",
+    "类型": "大满贯",
+    "胜者": "Hina HAYATA/JOO Cheonhui",
+    "负者": "Suthasini SAWETTABUT/Orawan PARANANG"
+  },
+  {
+    "日期": "2025-10-03",
+    "类型": "大满贯",
+    "胜者": "KUAI Man/WANG Manyu",
+    "负者": "CHEN Xingtong/QIAN Tianyi"
+  },
+  {
+    "日期": "2025-10-03",
+    "类型": "大满贯",
+    "胜者": "Hina HAYATA/JOO Cheonhui",
+    "负者": "WANG Xiaotong/XU Yi"
+  },
+  {
+    "日期": "2025-10-04",
+    "类型": "大满贯",
+    "胜者": "KUAI Man/WANG Manyu",
+    "负者": "Hina HAYATA/JOO Cheonhui"
+  },
+  {
+    "日期": "2025-10-23",
+    "类型": "球星挑战赛",
+    "胜者": "Hina HAYATA/Mima ITO",
+    "负者": "Miwa HARIMOTO/Honoka HASHIMOTO"
+  },
+  {
+    "日期": "2025-10-23",
+    "类型": "球星挑战赛",
+    "胜者": "NG Wing Lam/WONG Hoi Tung",
+    "负者": "Tin-Tin HO/Sophie EARLEY"
+  },
+  {
+    "日期": "2025-10-23",
+    "类型": "球星挑战赛",
+    "胜者": "QIN Yuxuan/ZONG Geman",
+    "负者": "HAN Feier/YANG Yiyun"
+  },
+  {
+    "日期": "2025-10-23",
+    "类型": "球星挑战赛",
+    "胜者": "Barbora VARADY/Tatiana KUKULKOVA",
+    "负者": "ZENG Jian/SER Lin Qian"
+  },
+  {
+    "日期": "2025-10-23",
+    "类型": "球星挑战赛",
+    "胜者": "SHI Xunyao/ZHANG Xiangyu",
+    "负者": "LYNE Karen/TEE Ai Xin"
+  },
+  {
+    "日期": "2025-10-23",
+    "类型": "球星挑战赛",
+    "胜者": "Adina DIACONU/Maria XIAO",
+    "负者": "Bernadette SZOCS/Anna HURSEY"
+  },
+  {
+    "日期": "2025-10-23",
+    "类型": "球星挑战赛",
+    "胜者": "Izabela LUPULESKU/Sabina SURJAN",
+    "负者": "Camille LUTZ/Audrey ZARIF"
+  },
+  {
+    "日期": "2025-10-23",
+    "类型": "球星挑战赛",
+    "胜者": "DOO Hoi Kem/ZHU Chengzhu",
+    "负者": "YOO Siwoo/LEE Zion"
+  },
+  {
+    "日期": "2025-10-24",
+    "类型": "球星挑战赛",
+    "胜者": "Hina HAYATA/Mima ITO",
+    "负者": "NG Wing Lam/WONG Hoi Tung"
+  },
+  {
+    "日期": "2025-10-24",
+    "类型": "球星挑战赛",
+    "胜者": "QIN Yuxuan/ZONG Geman",
+    "负者": "Barbora VARADY/Tatiana KUKULKOVA"
+  },
+  {
+    "日期": "2025-10-24",
+    "类型": "球星挑战赛",
+    "胜者": "SHI Xunyao/ZHANG Xiangyu",
+    "负者": "Adina DIACONU/Maria XIAO"
+  },
+  {
+    "日期": "2025-10-24",
+    "类型": "球星挑战赛",
+    "胜者": "DOO Hoi Kem/ZHU Chengzhu",
+    "负者": "Izabela LUPULESKU/Sabina SURJAN"
+  },
+  {
+    "日期": "2025-10-25",
+    "类型": "球星挑战赛",
+    "胜者": "QIN Yuxuan/ZONG Geman",
+    "负者": "Hina HAYATA/Mima ITO"
+  },
+  {
+    "日期": "2025-10-25",
+    "类型": "球星挑战赛",
+    "胜者": "SHI Xunyao/ZHANG Xiangyu",
+    "负者": "DOO Hoi Kem/ZHU Chengzhu"
+  },
+  {
+    "日期": "2025-10-25",
+    "类型": "球星挑战赛",
+    "胜者": "SHI Xunyao/ZHANG Xiangyu",
+    "负者": "QIN Yuxuan/ZONG Geman"
+  },
+  {
+    "日期": "2025-11-19",
+    "类型": "球星挑战赛",
+    "胜者": "Diya CHITALE/Swastika GHOSH",
+    "负者": "Fu YU/Jieni SHAO"
+  },
+  {
+    "日期": "2025-11-19",
+    "类型": "球星挑战赛",
+    "胜者": "Yangzi LIU/Jiamuwa WU",
+    "负者": "Giorgia PICCOLIN/Gaia MONFARDINI"
+  },
+  {
+    "日期": "2025-11-19",
+    "类型": "球星挑战赛",
+    "胜者": "Elizabet ABRAAMIAN/Vlada VORONINA",
+    "负者": "Barbora VARADY/Tatiana KUKULKOVA"
+  },
+  {
+    "日期": "2025-11-19",
+    "类型": "球星挑战赛",
+    "胜者": "Sutirtha MUKHERJEE/Anusha KUTUMBALE",
+    "负者": "ZENG Jian/SER Lin Qian"
+  },
+  {
+    "日期": "2025-11-20",
+    "类型": "球星挑战赛",
+    "胜者": "Satsuki ODO/Sakura YOKOI",
+    "负者": "Diya CHITALE/Swastika GHOSH"
+  },
+  {
+    "日期": "2025-11-20",
+    "类型": "球星挑战赛",
+    "胜者": "Yangzi LIU/Jiamuwa WU",
+    "负者": "Adina DIACONU/Andreea DRAGOMAN"
+  },
+  {
+    "日期": "2025-11-20",
+    "类型": "球星挑战赛",
+    "胜者": "Elizabet ABRAAMIAN/Vlada VORONINA",
+    "负者": "Bernadette SZOCS/Elizabeta SAMARA"
+  },
+  {
+    "日期": "2025-11-20",
+    "类型": "球星挑战赛",
+    "胜者": "JOO Cheonhui/KIM Nayeong",
+    "负者": "Sutirtha MUKHERJEE/Anusha KUTUMBALE"
+  },
+  {
+    "日期": "2025-11-20",
+    "类型": "球星挑战赛",
+    "胜者": "Satsuki ODO/Sakura YOKOI",
+    "负者": "Yangzi LIU/Jiamuwa WU"
+  },
+  {
+    "日期": "2025-11-20",
+    "类型": "球星挑战赛",
+    "胜者": "JOO Cheonhui/KIM Nayeong",
+    "负者": "Elizabet ABRAAMIAN/Vlada VORONINA"
+  },
+  {
+    "日期": "2025-11-21",
+    "类型": "球星挑战赛",
+    "胜者": "Satsuki ODO/Sakura YOKOI",
+    "负者": "JOO Cheonhui/KIM Nayeong"
   }
 ]
