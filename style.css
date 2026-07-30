@@ -1291,6 +1291,34 @@ body.dark-mode .score-detail-table tbody tr:nth-child(even) td { background-colo
 .viz-personal-selector .compare-selector-group { margin-bottom: 0; }
 .viz-personal-selector .compare-selector-group select { width: 100%; padding: 10px 14px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); background: var(--bg-white); color: var(--text-primary); font-size: 0.9rem; cursor: pointer; outline: none; font-family: var(--font-cn); }
 .viz-personal-selector .compare-selector-group select:focus { border-color: var(--primary-blue); }
+
+/* 自定义球员搜索下拉框 */
+.player-search-container { position: relative; width: 100%; }
+.player-search-input-wrapper { position: relative; display: flex; align-items: center; width: 100%; }
+.player-search-icon { position: absolute; left: 12px; color: var(--text-muted); font-size: 0.82rem; pointer-events: none; z-index: 1; }
+.player-search-input { width: 100%; padding: 10px 36px 10px 34px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); background: var(--bg-white); color: var(--text-primary); font-size: 0.9rem; outline: none; font-family: var(--font-cn); transition: border-color var(--transition-fast); box-sizing: border-box; }
+.player-search-input:focus { border-color: var(--primary-blue); }
+.player-search-input::placeholder { color: var(--text-muted); font-size: 0.82rem; }
+.player-search-clear { position: absolute; right: 6px; background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 4px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all var(--transition-fast); font-size: 0.85rem; }
+.player-search-clear:hover { color: var(--accent-red); background: var(--bg-lighter); }
+.player-search-dropdown { position: absolute; top: calc(100% + 4px); left: 0; right: 0; max-height: 280px; overflow-y: auto; background: var(--bg-white); border: 1px solid var(--border-color); border-radius: var(--radius-sm); box-shadow: 0 8px 24px rgba(0,0,0,0.12); z-index: 100; display: none; }
+.player-search-dropdown.active { display: block; }
+.player-search-list { padding: 4px 0; }
+.player-search-item { display: block; width: 100%; padding: 8px 14px; text-align: left; background: none; border: none; color: var(--text-primary); font-size: 0.85rem; font-family: var(--font-cn); cursor: pointer; transition: background var(--transition-fast); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.player-search-item:hover,
+.player-search-item.highlighted { background: var(--primary-pale); }
+.player-search-item.selected { background: var(--primary-pale); font-weight: 600; }
+.player-search-item .match-highlight { color: var(--primary-blue); font-weight: 700; }
+.player-search-item .player-score { float: right; color: var(--text-muted); font-size: 0.75rem; font-weight: 600; margin-left: 8px; }
+.player-search-no-results { padding: 20px 14px; text-align: center; color: var(--text-muted); font-size: 0.82rem; }
+.player-search-no-results i { display: block; font-size: 1.5rem; margin-bottom: 8px; opacity: 0.4; }
+
+/* 暗色模式适配 */
+body.dark .player-search-dropdown { box-shadow: 0 8px 24px rgba(0,0,0,0.4); border-color: var(--border-color); }
+body.dark .player-search-item:hover,
+body.dark .player-search-item.highlighted { background: rgba(77, 163, 255, 0.1); }
+body.dark .player-search-item.selected { background: rgba(77, 163, 255, 0.15); }
+
 .tag-filter-section { text-align: left; margin-bottom: 4px; }
 .tag-filter-list { display: flex; flex-wrap: wrap; gap: 6px; }
 .tag-filter-badge { display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; font-size: 0.72rem; font-weight: 500; color: var(--text-muted); background: var(--bg-lighter); border: 1px solid var(--border-color); border-radius: 16px; cursor: pointer; transition: all var(--transition-fast); user-select: none; white-space: nowrap; }

@@ -64,7 +64,19 @@
                 <div class="viz-personal-selector glass-card">
                     <div class="compare-selector-group">
                         <label>选择球员</label>
-                        <select id="wttPersonalPlayerSelect"><option value="">-- 选择球员 --</option></select>
+                        <div class="player-search-container" id="wttPersonalPlayerSearchContainer">
+                            <div class="player-search-input-wrapper">
+                                <i class="fa-solid fa-magnifying-glass player-search-icon"></i>
+                                <input type="text" id="wttPersonalPlayerSearch" class="player-search-input" placeholder="搜索球员名称..." autocomplete="off">
+                                <button class="player-search-clear" id="wttPersonalPlayerSearchClear" style="display:none;">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+                            </div>
+                            <div class="player-search-dropdown" id="wttPersonalPlayerDropdown">
+                                <div class="player-search-list" id="wttPersonalPlayerList"></div>
+                            </div>
+                            <input type="hidden" id="wttPersonalPlayerSelect" value="">
+                        </div>
                     </div>
                     <button class="btn btn-sm btn-primary" id="applyWttPersonalStats" style="width:100%;margin-top:12px;justify-content:center;">查看数据</button>
                 </div>

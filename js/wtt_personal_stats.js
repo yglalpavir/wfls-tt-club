@@ -129,10 +129,44 @@ function wttGetAllPlayersForPersonal() {
     return players;
 }
 
-function wttRenderPersonalPlayerSelect() {
+// ============ 球员搜索栏功能 ============
+
+let wttPlayerSearchData = []; // { name, score } 数组，按积分降序
+
+/**
+ * 模糊匹配函数（包含匹配 + 字符顺序匹配）
+ * @param {string} query - 搜索关键词
+ * @param {string} name - 球员名称
+ * @returns {{ matched: boolean, score: number, matchType: string }}
+ */
+function wttFuzzyMatch(query, name) {
+    if (!query || !name) return { matched: false, score: 0 };
+    const q = query.toLowerCase().trim();
+    const n = name.toLowerCase();
+
+    // 子串包含匹配（最高优先级）
+    const idx = n.indexOf(q);
+    if (idx !== -1) {
+        return { matched: true, score: 1000 - idx, matchType: 'substring' };
+    }
+
+    // 字符顺序匹配（fuzzy）
+    let qi = 0;
+    for (let i = 0; i < n.length && qi < q.length; i++) {
+        if (n[i] === q[qi]) qi++;
+    }
+    if (qi === q.length) {
+        return { matched: true, score: 500, matchType: 'fuzzy' };
+    }
+
+    return { matched: false, score: 0 };
+}
+
+/**
+ * 构建球员搜索数据缓存（含积分排序）
+ */
+function wttBuildPlayerSearchData() {
     const players = wttGetAllPlayersForPersonal();
-    const sel = document.getElementById('wttPersonalPlayerSelect');
-    if (!sel) return;
 
     // 切换到 WTT 全局数据以使用 getSeasonStartScores
     const origScoreLog = scoreLogData;
@@ -179,10 +213,216 @@ function wttRenderPersonalPlayerSelect() {
     eventCoefficients = origEvent;
     seasonsData = origSeasons;
 
-    const sortedPlayers = [...players].sort((a, b) => (scoreMap[b] || 0) - (scoreMap[a] || 0));
+    wttPlayerSearchData = [...players]
+        .map(name => ({ name, score: scoreMap[name] || 0 }))
+        .sort((a, b) => b.score - a.score);
+}
 
-    const opts = sortedPlayers.map(p => `<option value="${p}">${p}</option>`).join('');
-    sel.innerHTML = '<option value="">-- 选择球员 --</option>' + opts;
+/**
+ * 高亮匹配文本（返回 HTML）
+ * @param {string} text - 球员名原文
+ * @param {string} query - 搜索关键词
+ * @returns {string} 高亮后的 HTML
+ */
+function wttHighlightMatch(text, query) {
+    if (!query || !query.trim()) return text;
+    const q = query.toLowerCase().trim();
+    const lower = text.toLowerCase();
+
+    // 子串匹配高亮
+    const idx = lower.indexOf(q);
+    if (idx !== -1) {
+        return text.slice(0, idx)
+            + '<span class="match-highlight">' + text.slice(idx, idx + q.length) + '</span>'
+            + text.slice(idx + q.length);
+    }
+
+    // 字符顺序匹配高亮（逐个字符标记）
+    let result = '';
+    let qi = 0;
+    for (let i = 0; i < text.length; i++) {
+        if (qi < q.length && lower[i] === q[qi]) {
+            result += '<span class="match-highlight">' + text[i] + '</span>';
+            qi++;
+        } else {
+            result += text[i];
+        }
+    }
+    return result;
+}
+
+/**
+ * 渲染下拉列表
+ * @param {Array} filteredPlayers - 过滤后的球员数据
+ * @param {string} query - 当前搜索词（用于高亮）
+ */
+function wttRenderPlayerDropdown(filteredPlayers, query) {
+    const list = document.getElementById('wttPersonalPlayerList');
+    const dropdown = document.getElementById('wttPersonalPlayerDropdown');
+    if (!list) return;
+
+    if (!filteredPlayers || filteredPlayers.length === 0) {
+        list.innerHTML = '<div class="player-search-no-results"><i class="fa-solid fa-user-slash"></i>无匹配球员</div>';
+        dropdown.classList.add('active');
+        return;
+    }
+
+    list.innerHTML = filteredPlayers.map((p, i) => {
+        const displayName = query ? wttHighlightMatch(p.name, query) : p.name;
+        return '<button type="button" class="player-search-item' + (i === 0 ? ' highlighted' : '') + '" data-value="' + p.name + '" data-index="' + i + '">'
+            + displayName
+            + '<span class="player-score">' + Math.round(p.score) + '</span>'
+            + '</button>';
+    }).join('');
+
+    dropdown.classList.add('active');
+}
+
+/**
+ * 关闭下拉列表
+ */
+function wttClosePlayerDropdown() {
+    const dropdown = document.getElementById('wttPersonalPlayerDropdown');
+    if (dropdown) dropdown.classList.remove('active');
+}
+
+/**
+ * 选中球员
+ * @param {string} playerName
+ */
+function wttSelectPlayer(playerName) {
+    const hiddenInput = document.getElementById('wttPersonalPlayerSelect');
+    const searchInput = document.getElementById('wttPersonalPlayerSearch');
+    if (!hiddenInput || !searchInput) return;
+
+    hiddenInput.value = playerName;
+    searchInput.value = playerName;
+    wttClosePlayerDropdown();
+}
+
+/**
+ * 初始化球员搜索组件（替代原来的 wttRenderPersonalPlayerSelect）
+ */
+function wttInitPersonalPlayerSearch() {
+    const container = document.getElementById('wttPersonalPlayerSearchContainer');
+    const searchInput = document.getElementById('wttPersonalPlayerSearch');
+    const clearBtn = document.getElementById('wttPersonalPlayerSearchClear');
+    const dropdown = document.getElementById('wttPersonalPlayerDropdown');
+    const hiddenInput = document.getElementById('wttPersonalPlayerSelect');
+    if (!container || !searchInput || !dropdown || !hiddenInput) return;
+
+    // 构建球员数据缓存
+    wttBuildPlayerSearchData();
+
+    let highlightedIndex = -1;
+    let currentFiltered = [];
+
+    /**
+     * 执行过滤并更新下拉
+     */
+    function doFilter() {
+        const q = searchInput.value;
+        if (!q || !q.trim()) {
+            currentFiltered = wttPlayerSearchData;
+            highlightedIndex = currentFiltered.length > 0 ? 0 : -1;
+            wttRenderPlayerDropdown(currentFiltered, '');
+            clearBtn.style.display = 'none';
+            return;
+        }
+
+        clearBtn.style.display = 'flex';
+
+        // 模糊匹配过滤
+        const results = [];
+        for (const p of wttPlayerSearchData) {
+            const m = wttFuzzyMatch(q, p.name);
+            if (m.matched) {
+                results.push({ name: p.name, score: p.score, matchScore: m.score, matchType: m.matchType });
+            }
+        }
+        // 按匹配度降序 → 积分降序
+        results.sort((a, b) => {
+            if (b.matchScore !== a.matchScore) return b.matchScore - a.matchScore;
+            return b.score - a.score;
+        });
+        currentFiltered = results;
+        highlightedIndex = currentFiltered.length > 0 ? 0 : -1;
+        wttRenderPlayerDropdown(currentFiltered, q);
+    }
+
+    // 输入事件 → 实时过滤
+    searchInput.addEventListener('input', doFilter);
+
+    // 聚焦事件 → 展开下拉
+    searchInput.addEventListener('focus', function onFocus() {
+        if (!searchInput.value) {
+            currentFiltered = wttPlayerSearchData;
+            highlightedIndex = currentFiltered.length > 0 ? 0 : -1;
+            wttRenderPlayerDropdown(currentFiltered, '');
+        } else {
+            doFilter();
+        }
+    });
+
+    // 键盘导航
+    searchInput.addEventListener('keydown', function onKeydown(e) {
+        const items = dropdown.querySelectorAll('.player-search-item');
+        if (!items.length) return;
+
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            const next = Math.min(highlightedIndex + 1, items.length - 1);
+            items.forEach(function (el) { el.classList.remove('highlighted'); });
+            items[next].classList.add('highlighted');
+            items[next].scrollIntoView({ block: 'nearest' });
+            highlightedIndex = next;
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            const prev = Math.max(highlightedIndex - 1, 0);
+            items.forEach(function (el) { el.classList.remove('highlighted'); });
+            items[prev].classList.add('highlighted');
+            items[prev].scrollIntoView({ block: 'nearest' });
+            highlightedIndex = prev;
+        } else if (e.key === 'Enter') {
+            e.preventDefault();
+            const highlighted = dropdown.querySelector('.player-search-item.highlighted');
+            if (highlighted) {
+                wttSelectPlayer(highlighted.dataset.value);
+                clearBtn.style.display = 'flex';
+            }
+        } else if (e.key === 'Escape') {
+            wttClosePlayerDropdown();
+        }
+    });
+
+    // 点击列表项（事件委托）
+    dropdown.addEventListener('click', function onDropdownClick(e) {
+        var item = e.target.closest('.player-search-item');
+        if (item) {
+            wttSelectPlayer(item.dataset.value);
+            clearBtn.style.display = 'flex';
+        }
+    });
+
+    // 清除按钮
+    clearBtn.addEventListener('click', function onClear() {
+        searchInput.value = '';
+        hiddenInput.value = '';
+        clearBtn.style.display = 'none';
+        searchInput.focus();
+        currentFiltered = wttPlayerSearchData;
+        highlightedIndex = currentFiltered.length > 0 ? 0 : -1;
+        wttRenderPlayerDropdown(currentFiltered, '');
+    });
+
+    // 点击外部关闭下拉
+    document.addEventListener('click', function onDocClick(e) {
+        if (!container.contains(e.target)) {
+            wttClosePlayerDropdown();
+        }
+    });
+
+    console.log('[WttPersonalStats] 球员搜索栏初始化完成，球员数:', wttPlayerSearchData.length);
 }
 
 function wttGetApproxScoreAtDate(playerName, targetDate, sortedLog, startScores, beforeMatch) {
@@ -925,8 +1165,8 @@ async function loadWttPersonalChartSettings() {
 function initWttPersonalStats() {
     console.log('[WttPersonalStats] 开始初始化，wttRankingTimeline 长度:', wttRankingTimeline.length);
 
-    if (!document.getElementById('wttPersonalPlayerSelect')) {
-        console.warn('[WttPersonalStats] 页面上找不到 wttPersonalPlayerSelect 元素');
+    if (!document.getElementById('wttPersonalPlayerSearchContainer')) {
+        console.warn('[WttPersonalStats] 页面上找不到 wttPersonalPlayerSearchContainer 元素');
         return;
     }
 
@@ -935,11 +1175,13 @@ function initWttPersonalStats() {
         return;
     }
 
-    loadWttPersonalChartSettings().then(() => {
-        wttRenderPersonalPlayerSelect();
+    loadWttPersonalChartSettings().then(function () {
+        // 初始化搜索组件
+        wttInitPersonalPlayerSearch();
 
-        document.getElementById('applyWttPersonalStats')?.addEventListener('click', () => {
-            const p = document.getElementById('wttPersonalPlayerSelect')?.value;
+        // "查看数据"按钮仍然读取 hidden input 的值
+        document.getElementById('applyWttPersonalStats')?.addEventListener('click', function () {
+            var p = document.getElementById('wttPersonalPlayerSelect')?.value;
             if (!p) { alert('请选择一名球员'); return; }
             wttRenderPersonalStats(p);
         });
