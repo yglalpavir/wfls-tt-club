@@ -225,6 +225,8 @@ function getApproxScoreAtDate(playerName, targetDate, sortedLog, startScores, be
     }
 
     const sc = { ...effectiveStartScores };
+    // 构建赛季内 [seasonStartDate, targetDate] 的批次定格索引
+    playerTypeBatches = buildPlayerTypeBatches(sortedLog.filter(r => (!seasonStartDate || r['日期'] >= seasonStartDate) && r['日期'] <= targetDate));
     for (const r of sortedLog) {
         // 跳过赛季开始前的记录
         if (seasonStartDate && r['日期'] < seasonStartDate) continue;
@@ -366,6 +368,8 @@ function renderPersonalStats(playerName) {
 
     const oppPointsGained = {};
     const oppPointsLost = {};
+    // 对手积分变动属展示型指标：用全量日志构建批次定格索引
+    playerTypeBatches = buildPlayerTypeBatches(sortedLog);
     for (const r of sortedLog) {
         // 检查是否跨越赛季边界，应用50%继承
         if (seasonsData && seasonsData.length > 0 && currentSeasonIdx >= 0) {
@@ -697,6 +701,11 @@ function computeDailyScoreHistory(playerName, sortedLog, startScores) {
 
         let mi = 0, bi = 0;
 
+        // 构建赛季内 [seasonStartDate, dateStr] 的批次定格索引（每赛季清零 + 时间截断定格）
+        playerTypeBatches = buildPlayerTypeBatches(matchRecs
+            .filter(r => (!seasonStartDate || r.date >= seasonStartDate) && r.date <= dateStr)
+            .map(r => ({ '胜者': r.winner, '负者': r.loser, '类型': r.type, '日期': r.date })));
+
         // 只处理赛季内的赛事记录（从赛季开始到当前日期）
         while (mi < matchRecs.length && matchRecs[mi].time <= snapTime) {
             const m = matchRecs[mi];
@@ -707,10 +716,9 @@ function computeDailyScoreHistory(playerName, sortedLog, startScores) {
             if (sc[w] === undefined) sc[w] = DEFAULT_INITIAL_SCORE;
             if (sc[l] === undefined) sc[l] = DEFAULT_INITIAL_SCORE;
 
-            const dayDiff = Math.floor((snapTime - m.time) / 86400000);
-            const tw = getDecay(dayDiff);
             const base = getBaseScore((sc[w] || DEFAULT_INITIAL_SCORE) - (sc[l] || DEFAULT_INITIAL_SCORE));
             const coeff = getEventCoefficient(m.type);
+            const tw = getFreezeWeight(w, m.type, m.date, dateStr);
             const wg = base * coeff * tw;
 
             sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);

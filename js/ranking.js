@@ -48,6 +48,8 @@ function renderScoreDetail() {
     const scores = { ...seasonStartScores };
     const allRecords = [...scoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
     const recordsWithScores = [];
+    // 构建赛季内 [赛季开始日, 快照日] 的批次定格索引
+    playerTypeBatches = buildPlayerTypeBatches(allRecords.filter(r => r['日期'] >= currentSeason.startDate && r['日期'] <= snapshotDate));
 
     for (const record of allRecords) {
         // 只处理当前赛季开始到快照日期之间的记录
@@ -117,6 +119,7 @@ async function loadRankingData() {
             { name: 'score-log.json',        loader: loadScoreLogData,      label: '比赛记录' },
             { name: 'initial-scores.json',   loader: loadInitialScores,     label: '初始积分' },
             { name: 'event-coefficient.json',loader: loadEventCoefficients, label: '赛事系数' },
+            { name: 'decay-config.json',     loader: loadDecayConfig,       label: '衰减配置' },
             { name: 'seasons.json',          loader: loadSeasons,           label: '赛季配置' }
         ];
 

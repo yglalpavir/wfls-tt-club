@@ -20,6 +20,7 @@ async function loadRankingDataForViz() {
             { name: 'score-log.json',        loader: loadScoreLogForViz,      label: '比赛记录' },
             { name: 'initial-scores.json',   loader: loadInitialScores,       label: '初始积分' },
             { name: 'event-coefficient.json',loader: loadEventCoefficients,   label: '赛事系数' },
+            { name: 'decay-config.json',     loader: loadDecayConfig,         label: '衰减配置' },
             { name: 'seasons.json',          loader: loadSeasons,             label: '赛季配置' }
         ];
 
