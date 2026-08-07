@@ -20,14 +20,14 @@
   {
     "日期": "2025-01-12",
     "类型": "T联赛",
-    "胜者": "Yuka UMEMURA/Maki SHIOMI",
-    "负者": "Asuka SASAO/Rena ASO"
+    "胜者": "Kotona OKADA/LI Jingsika",
+    "负者": "Saki AOKI/Shina ITO"
   },
   {
     "日期": "2025-01-12",
     "类型": "T联赛",
-    "胜者": "Kotona OKADA/LI Jingsika",
-    "负者": "Saki AOKI/Shina ITO"
+    "胜者": "Yuka UMEMURA/Maki SHIOMI",
+    "负者": "Asuka SASAO/Rena ASO"
   },
   {
     "日期": "2025-02-08",
@@ -44,14 +44,14 @@
   {
     "日期": "2025-02-15",
     "类型": "T联赛",
-    "胜者": "Yuka UMEMURA/Maki SHIOMI",
-    "负者": "Miku IZUMO/Asahi HIRANO"
+    "胜者": "Honoka HASHIMOTO/Hitomi SATO",
+    "负者": "Akiko NAGAO/Yurika NANBA"
   },
   {
     "日期": "2025-02-15",
     "类型": "T联赛",
-    "胜者": "Honoka HASHIMOTO/Hitomi SATO",
-    "负者": "Akiko NAGAO/Yurika NANBA"
+    "胜者": "Yuka UMEMURA/Maki SHIOMI",
+    "负者": "Miku IZUMO/Asahi HIRANO"
   },
   {
     "日期": "2025-02-16",
@@ -74,14 +74,14 @@
   {
     "日期": "2025-02-22",
     "类型": "T联赛",
-    "胜者": "Hiromu KOBAYASHI/Taimu ARINOBU",
-    "负者": "Toin RYUZAKI/Masataka MORIZONO"
+    "胜者": "Anne UESAWA/Asuka SASAO",
+    "负者": "Honoka HASHIMOTO/Hitomi SATO"
   },
   {
     "日期": "2025-02-22",
     "类型": "T联赛",
-    "胜者": "Anne UESAWA/Asuka SASAO",
-    "负者": "Honoka HASHIMOTO/Hitomi SATO"
+    "胜者": "Hiromu KOBAYASHI/Taimu ARINOBU",
+    "负者": "Toin RYUZAKI/Masataka MORIZONO"
   },
   {
     "日期": "2025-02-23",
@@ -116,26 +116,26 @@
   {
     "日期": "2025-03-09",
     "类型": "T联赛",
-    "胜者": "Minami ANDO/Kasumi KIMURA",
-    "负者": "Miyuu KIHARA/Miyu NAGASAKI"
-  },
-  {
-    "日期": "2025-03-09",
-    "类型": "T联赛",
     "胜者": "Asuka SASAO/Rena ASO",
     "负者": "Saki AOKI/Sakura YOKOI"
   },
   {
-    "日期": "2025-03-22",
+    "日期": "2025-03-09",
     "类型": "T联赛",
-    "胜者": "Hiromu KOBAYASHI/Taimu ARINOBU",
-    "负者": "LEE Sangsu/Kazuki YOSHIYAMA"
+    "胜者": "Minami ANDO/Kasumi KIMURA",
+    "负者": "Miyuu KIHARA/Miyu NAGASAKI"
   },
   {
     "日期": "2025-03-22",
     "类型": "T联赛",
     "胜者": "Asuka SASAO/Rena ASO",
     "负者": "Miyu NAGASAKI/ZHU Chengxi"
+  },
+  {
+    "日期": "2025-03-22",
+    "类型": "T联赛",
+    "胜者": "Hiromu KOBAYASHI/Taimu ARINOBU",
+    "负者": "LEE Sangsu/Kazuki YOSHIYAMA"
   },
   {
     "日期": "2025-03-23",
@@ -152,14 +152,8 @@
   {
     "日期": "2025-05-17",
     "类型": "世乒赛",
-    "胜者": "TAN Zhao Yun/ZHANG Wanling",
-    "负者": "Zauresh AKASHEVA/Sarvinoz MIRKADIROVA"
-  },
-  {
-    "日期": "2025-05-17",
-    "类型": "世乒赛",
-    "胜者": "Mateja JEGER/Lea RAKOVAC",
-    "负者": "Elizabeta SAMARA/Andreea DRAGOMAN"
+    "胜者": "Annett KAUFMANN/Xiaona SHAN",
+    "负者": "Mo ZHANG/Ivy LIAO"
   },
   {
     "日期": "2025-05-17",
@@ -170,8 +164,14 @@
   {
     "日期": "2025-05-17",
     "类型": "世乒赛",
-    "胜者": "Annett KAUFMANN/Xiaona SHAN",
-    "负者": "Mo ZHANG/Ivy LIAO"
+    "胜者": "Charlotte LUTZ/Leana HOCHART",
+    "负者": "Fana FTWI/Yordanos DEJENE"
+  },
+  {
+    "日期": "2025-05-17",
+    "类型": "世乒赛",
+    "胜者": "Clio BARCENAS/Arantxa COSSIO",
+    "负者": "Marta GULTI/Feven KINFU"
   },
   {
     "日期": "2025-05-17",
@@ -194,38 +194,8 @@
   {
     "日期": "2025-05-17",
     "类型": "世乒赛",
-    "胜者": "Clio BARCENAS/Arantxa COSSIO",
-    "负者": "Marta GULTI/Feven KINFU"
-  },
-  {
-    "日期": "2025-05-17",
-    "类型": "世乒赛",
-    "胜者": "Charlotte LUTZ/Leana HOCHART",
-    "负者": "Fana FTWI/Yordanos DEJENE"
-  },
-  {
-    "日期": "2025-05-17",
-    "类型": "世乒赛",
-    "胜者": "Sabine WINTER/Yuan WAN",
-    "负者": "Aia MOHAMED/Maryam ALI"
-  },
-  {
-    "日期": "2025-05-17",
-    "类型": "世乒赛",
     "胜者": "Jia Nan YUAN/Prithika PAVADE",
     "负者": "Sally MOYLAND/Jessica REYES LAI"
-  },
-  {
-    "日期": "2025-05-17",
-    "类型": "世乒赛",
-    "胜者": "ZENG Jian/SER Lin Qian",
-    "负者": "Judith NANGONZI/Jemimah NAKAWALA"
-  },
-  {
-    "日期": "2025-05-17",
-    "类型": "世乒赛",
-    "胜者": "Yashaswini GHORPADE/Diya CHITALE",
-    "负者": "Markhabo MAGDIEVA/Asel ERKEBAEVA"
   },
   {
     "日期": "2025-05-17",
@@ -240,52 +210,46 @@
     "负者": "Ruth TAVARES/Isabel ALBINO"
   },
   {
-    "日期": "2025-05-18",
+    "日期": "2025-05-17",
     "类型": "世乒赛",
-    "胜者": "Satsuki ODO/Sakura YOKOI",
-    "负者": "Veronika MATIUNINA/Solomiya BRATEYKO"
+    "胜者": "Mateja JEGER/Lea RAKOVAC",
+    "负者": "Elizabeta SAMARA/Andreea DRAGOMAN"
+  },
+  {
+    "日期": "2025-05-17",
+    "类型": "世乒赛",
+    "胜者": "Sabine WINTER/Yuan WAN",
+    "负者": "Aia MOHAMED/Maryam ALI"
+  },
+  {
+    "日期": "2025-05-17",
+    "类型": "世乒赛",
+    "胜者": "TAN Zhao Yun/ZHANG Wanling",
+    "负者": "Zauresh AKASHEVA/Sarvinoz MIRKADIROVA"
+  },
+  {
+    "日期": "2025-05-17",
+    "类型": "世乒赛",
+    "胜者": "Yashaswini GHORPADE/Diya CHITALE",
+    "负者": "Markhabo MAGDIEVA/Asel ERKEBAEVA"
+  },
+  {
+    "日期": "2025-05-17",
+    "类型": "世乒赛",
+    "胜者": "ZENG Jian/SER Lin Qian",
+    "负者": "Judith NANGONZI/Jemimah NAKAWALA"
   },
   {
     "日期": "2025-05-18",
     "类型": "世乒赛",
-    "胜者": "SHIN Yubin/RYU Hanna",
-    "负者": "Yassamine BOUHENNI/Malissa NASRI"
+    "胜者": "CHA Su Yong/PAK Su Gyong",
+    "负者": "Jinnipa SAWETTABUT/Kulapassr VIJITVIRIYAGUL"
   },
   {
     "日期": "2025-05-18",
     "类型": "世乒赛",
-    "胜者": "Sofia POLCANOVA/Bernadette SZOCS",
-    "负者": "Mubanga KUNDA/Latifa NALAVWE"
-  },
-  {
-    "日期": "2025-05-18",
-    "类型": "世乒赛",
-    "胜者": "TSAI Yun-En/HUANG Yi-Hua",
-    "负者": "Izabela LUPULESKU/Sabina SURJAN"
-  },
-  {
-    "日期": "2025-05-18",
-    "类型": "世乒赛",
-    "胜者": "QIAN Tianyi/CHEN Xingtong",
-    "负者": "Daniela FONSECA/Estela CRESPO"
-  },
-  {
-    "日期": "2025-05-18",
-    "类型": "世乒赛",
-    "胜者": "Miwa HARIMOTO/Miyuu KIHARA",
-    "负者": "Paulina VEGA/Daniela ORTEGA"
-  },
-  {
-    "日期": "2025-05-18",
-    "类型": "世乒赛",
-    "胜者": "Natalia BAJOR/Tatiana KUKULKOVA",
-    "负者": "Kabirat AYOOLA/Ajoke OJOMU"
-  },
-  {
-    "日期": "2025-05-18",
-    "类型": "世乒赛",
-    "胜者": "Rachel MORET/Gaia MONFARDINI",
-    "负者": "Jiamuwa WU/Constantina PSIHOGIOS"
+    "胜者": "CHANG Li Sian/LYNE Karen",
+    "负者": "Fatimo BELLO/Hope UDOAKA"
   },
   {
     "日期": "2025-05-18",
@@ -296,8 +260,8 @@
   {
     "日期": "2025-05-18",
     "类型": "世乒赛",
-    "胜者": "NG Wing Lam/ZHU Chengzhu",
-    "负者": "Charlotte CAREY/Anna HURSEY"
+    "胜者": "LEE Hoi Man/KONG Tsz Lam",
+    "负者": "Orawan PARANANG/Suthasini SAWETTABUT"
   },
   {
     "日期": "2025-05-18",
@@ -314,20 +278,56 @@
   {
     "日期": "2025-05-18",
     "类型": "世乒赛",
-    "胜者": "LEE Hoi Man/KONG Tsz Lam",
-    "负者": "Orawan PARANANG/Suthasini SAWETTABUT"
+    "胜者": "Miwa HARIMOTO/Miyuu KIHARA",
+    "负者": "Paulina VEGA/Daniela ORTEGA"
   },
   {
     "日期": "2025-05-18",
     "类型": "世乒赛",
-    "胜者": "CHANG Li Sian/LYNE Karen",
-    "负者": "Fatimo BELLO/Hope UDOAKA"
+    "胜者": "NG Wing Lam/ZHU Chengzhu",
+    "负者": "Charlotte CAREY/Anna HURSEY"
   },
   {
     "日期": "2025-05-18",
     "类型": "世乒赛",
-    "胜者": "CHA Su Yong/PAK Su Gyong",
-    "负者": "Jinnipa SAWETTABUT/Kulapassr VIJITVIRIYAGUL"
+    "胜者": "Natalia BAJOR/Tatiana KUKULKOVA",
+    "负者": "Kabirat AYOOLA/Ajoke OJOMU"
+  },
+  {
+    "日期": "2025-05-18",
+    "类型": "世乒赛",
+    "胜者": "QIAN Tianyi/CHEN Xingtong",
+    "负者": "Daniela FONSECA/Estela CRESPO"
+  },
+  {
+    "日期": "2025-05-18",
+    "类型": "世乒赛",
+    "胜者": "Rachel MORET/Gaia MONFARDINI",
+    "负者": "Jiamuwa WU/Constantina PSIHOGIOS"
+  },
+  {
+    "日期": "2025-05-18",
+    "类型": "世乒赛",
+    "胜者": "SHIN Yubin/RYU Hanna",
+    "负者": "Yassamine BOUHENNI/Malissa NASRI"
+  },
+  {
+    "日期": "2025-05-18",
+    "类型": "世乒赛",
+    "胜者": "Satsuki ODO/Sakura YOKOI",
+    "负者": "Veronika MATIUNINA/Solomiya BRATEYKO"
+  },
+  {
+    "日期": "2025-05-18",
+    "类型": "世乒赛",
+    "胜者": "Sofia POLCANOVA/Bernadette SZOCS",
+    "负者": "Mubanga KUNDA/Latifa NALAVWE"
+  },
+  {
+    "日期": "2025-05-18",
+    "类型": "世乒赛",
+    "胜者": "TSAI Yun-En/HUANG Yi-Hua",
+    "负者": "Izabela LUPULESKU/Sabina SURJAN"
   },
   {
     "日期": "2025-05-18",
@@ -338,8 +338,38 @@
   {
     "日期": "2025-05-19",
     "类型": "世乒赛",
-    "胜者": "Satsuki ODO/Sakura YOKOI",
-    "负者": "Anel BAKHYT/Angelina ROMANOVSKAYA"
+    "胜者": "Annett KAUFMANN/Xiaona SHAN",
+    "负者": "Ayhika MUKHERJEE/Sutirtha MUKHERJEE"
+  },
+  {
+    "日期": "2025-05-19",
+    "类型": "世乒赛",
+    "胜者": "CHENG I-Ching/LI Yu-Jhun",
+    "负者": "Rachel MORET/Gaia MONFARDINI"
+  },
+  {
+    "日期": "2025-05-19",
+    "类型": "世乒赛",
+    "胜者": "Hana MATELOVA/Barbora BALAZOVA",
+    "负者": "Hend FATHY/Hana GODA"
+  },
+  {
+    "日期": "2025-05-19",
+    "类型": "世乒赛",
+    "胜者": "KIM Nayeong/LEE Eunhye",
+    "负者": "Natalia BAJOR/Tatiana KUKULKOVA"
+  },
+  {
+    "日期": "2025-05-19",
+    "类型": "世乒赛",
+    "胜者": "LEE Hoi Man/KONG Tsz Lam",
+    "负者": "CHANG Li Sian/LYNE Karen"
+  },
+  {
+    "日期": "2025-05-19",
+    "类型": "世乒赛",
+    "胜者": "Maria XIAO/Adina DIACONU",
+    "负者": "Lucia CORDERO/Hidalynn ZAPATA"
   },
   {
     "日期": "2025-05-19",
@@ -350,8 +380,20 @@
   {
     "日期": "2025-05-19",
     "类型": "世乒赛",
-    "胜者": "Annett KAUFMANN/Xiaona SHAN",
-    "负者": "Ayhika MUKHERJEE/Sutirtha MUKHERJEE"
+    "胜者": "Miwa HARIMOTO/Miyuu KIHARA",
+    "负者": "Jia Nan YUAN/Prithika PAVADE"
+  },
+  {
+    "日期": "2025-05-19",
+    "类型": "世乒赛",
+    "胜者": "NG Wing Lam/ZHU Chengzhu",
+    "负者": "Mariam ALHODABY/Marwa ALHODABY"
+  },
+  {
+    "日期": "2025-05-19",
+    "类型": "世乒赛",
+    "胜者": "QIAN Tianyi/CHEN Xingtong",
+    "负者": "Sabine WINTER/Yuan WAN"
   },
   {
     "日期": "2025-05-19",
@@ -362,8 +404,8 @@
   {
     "日期": "2025-05-19",
     "类型": "世乒赛",
-    "胜者": "Hana MATELOVA/Barbora BALAZOVA",
-    "负者": "Hend FATHY/Hana GODA"
+    "胜者": "Satsuki ODO/Sakura YOKOI",
+    "负者": "Anel BAKHYT/Angelina ROMANOVSKAYA"
   },
   {
     "日期": "2025-05-19",
@@ -380,62 +422,14 @@
   {
     "日期": "2025-05-19",
     "类型": "世乒赛",
-    "胜者": "QIAN Tianyi/CHEN Xingtong",
-    "负者": "Sabine WINTER/Yuan WAN"
-  },
-  {
-    "日期": "2025-05-19",
-    "类型": "世乒赛",
-    "胜者": "Miwa HARIMOTO/Miyuu KIHARA",
-    "负者": "Jia Nan YUAN/Prithika PAVADE"
+    "胜者": "WANG Manyu/KUAI Man",
+    "负者": "CHA Su Yong/PAK Su Gyong"
   },
   {
     "日期": "2025-05-19",
     "类型": "世乒赛",
     "胜者": "Yashaswini GHORPADE/Diya CHITALE",
     "负者": "ZENG Jian/SER Lin Qian"
-  },
-  {
-    "日期": "2025-05-19",
-    "类型": "世乒赛",
-    "胜者": "KIM Nayeong/LEE Eunhye",
-    "负者": "Natalia BAJOR/Tatiana KUKULKOVA"
-  },
-  {
-    "日期": "2025-05-19",
-    "类型": "世乒赛",
-    "胜者": "CHENG I-Ching/LI Yu-Jhun",
-    "负者": "Rachel MORET/Gaia MONFARDINI"
-  },
-  {
-    "日期": "2025-05-19",
-    "类型": "世乒赛",
-    "胜者": "NG Wing Lam/ZHU Chengzhu",
-    "负者": "Mariam ALHODABY/Marwa ALHODABY"
-  },
-  {
-    "日期": "2025-05-19",
-    "类型": "世乒赛",
-    "胜者": "Maria XIAO/Adina DIACONU",
-    "负者": "Lucia CORDERO/Hidalynn ZAPATA"
-  },
-  {
-    "日期": "2025-05-19",
-    "类型": "世乒赛",
-    "胜者": "LEE Hoi Man/KONG Tsz Lam",
-    "负者": "CHANG Li Sian/LYNE Karen"
-  },
-  {
-    "日期": "2025-05-19",
-    "类型": "世乒赛",
-    "胜者": "WANG Manyu/KUAI Man",
-    "负者": "CHA Su Yong/PAK Su Gyong"
-  },
-  {
-    "日期": "2025-05-20",
-    "类型": "世乒赛",
-    "胜者": "SHIN Yubin/RYU Hanna",
-    "负者": "Annett KAUFMANN/Xiaona SHAN"
   },
   {
     "日期": "2025-05-20",
@@ -452,8 +446,26 @@
   {
     "日期": "2025-05-20",
     "类型": "世乒赛",
+    "胜者": "SHIN Yubin/RYU Hanna",
+    "负者": "Annett KAUFMANN/Xiaona SHAN"
+  },
+  {
+    "日期": "2025-05-20",
+    "类型": "世乒赛",
     "胜者": "WANG Manyu/KUAI Man",
     "负者": "LEE Hoi Man/KONG Tsz Lam"
+  },
+  {
+    "日期": "2025-05-21",
+    "类型": "世乒赛",
+    "胜者": "Miwa HARIMOTO/Miyuu KIHARA",
+    "负者": "Yashaswini GHORPADE/Diya CHITALE"
+  },
+  {
+    "日期": "2025-05-21",
+    "类型": "世乒赛",
+    "胜者": "Sabine WINTER/Yuan WAN",
+    "负者": "TSAI Yun-En/HUANG Yi-Hua"
   },
   {
     "日期": "2025-05-21",
@@ -468,28 +480,16 @@
     "负者": "Hana MATELOVA/Barbora BALAZOVA"
   },
   {
-    "日期": "2025-05-21",
-    "类型": "世乒赛",
-    "胜者": "Sabine WINTER/Yuan WAN",
-    "负者": "TSAI Yun-En/HUANG Yi-Hua"
-  },
-  {
-    "日期": "2025-05-21",
+    "日期": "2025-05-22",
     "类型": "世乒赛",
     "胜者": "Miwa HARIMOTO/Miyuu KIHARA",
-    "负者": "Yashaswini GHORPADE/Diya CHITALE"
+    "负者": "KIM Nayeong/LEE Eunhye"
   },
   {
     "日期": "2025-05-22",
     "类型": "世乒赛",
     "胜者": "SHIN Yubin/RYU Hanna",
     "负者": "Satsuki ODO/Sakura YOKOI"
-  },
-  {
-    "日期": "2025-05-22",
-    "类型": "世乒赛",
-    "胜者": "Miwa HARIMOTO/Miyuu KIHARA",
-    "负者": "KIM Nayeong/LEE Eunhye"
   },
   {
     "日期": "2025-05-23",
@@ -602,14 +602,14 @@
   {
     "日期": "2025-09-13",
     "类型": "T联赛",
-    "胜者": "Miyu NAGASAKI/ZHANG Rui",
-    "负者": "Yume KUDO/Miku IZUMO"
+    "胜者": "Anne UESAWA/Asuka SASAO",
+    "负者": "Mao TAKAMORI/Hitomi SATO"
   },
   {
     "日期": "2025-09-13",
     "类型": "T联赛",
-    "胜者": "Anne UESAWA/Asuka SASAO",
-    "负者": "Mao TAKAMORI/Hitomi SATO"
+    "胜者": "Miyu NAGASAKI/ZHANG Rui",
+    "负者": "Yume KUDO/Miku IZUMO"
   },
   {
     "日期": "2025-09-14",
@@ -698,14 +698,14 @@
   {
     "日期": "2025-11-15",
     "类型": "T联赛",
-    "胜者": "Hiromu KOBAYASHI/Masaki DEN",
-    "负者": "Daito ONO/OH Junsung"
+    "胜者": "Anne UESAWA/Asuka SASAO",
+    "负者": "Haruna OJIO/Yurika NANBA"
   },
   {
     "日期": "2025-11-15",
     "类型": "T联赛",
-    "胜者": "Anne UESAWA/Asuka SASAO",
-    "负者": "Haruna OJIO/Yurika NANBA"
+    "胜者": "Hiromu KOBAYASHI/Masaki DEN",
+    "负者": "Daito ONO/OH Junsung"
   },
   {
     "日期": "2025-11-16",
@@ -734,12 +734,6 @@
   {
     "日期": "2025-11-29",
     "类型": "T联赛",
-    "胜者": "Yuhi SAKAI/Yuya OSHIMA",
-    "负者": "Yukiya UDA/Takaya KAMI"
-  },
-  {
-    "日期": "2025-11-29",
-    "类型": "T联赛",
     "胜者": "Kotona OKADA/Miyu NAGASAKI",
     "负者": "Moe NOMURA/Yuna KURIYAMA"
   },
@@ -750,6 +744,24 @@
     "负者": "Sakura YOKOI/Satsuki OTO"
   },
   {
+    "日期": "2025-11-29",
+    "类型": "T联赛",
+    "胜者": "Yuhi SAKAI/Yuya OSHIMA",
+    "负者": "Yukiya UDA/Takaya KAMI"
+  },
+  {
+    "日期": "2025-11-30",
+    "类型": "世界杯团体",
+    "胜者": "Daniela ORTEGA/Paulina VEGA",
+    "负者": "Marwa ALHODABY/Mariam ALHODABY"
+  },
+  {
+    "日期": "2025-11-30",
+    "类型": "T联赛",
+    "胜者": "Miyuu KIHARA/Akiko NAGAO",
+    "负者": "Yume KUDO/Miku IZUMO"
+  },
+  {
     "日期": "2025-11-30",
     "类型": "T联赛",
     "胜者": "Moe NOMURA/Yuna KURIYAMA",
@@ -757,9 +769,159 @@
   },
   {
     "日期": "2025-11-30",
-    "类型": "T联赛",
-    "胜者": "Miyuu KIHARA/Akiko NAGAO",
-    "负者": "Yume KUDO/Miku IZUMO"
+    "类型": "世界杯团体",
+    "胜者": "Sabine WINTER/Nina MITTELHAM",
+    "负者": "Elizabeta SAMARA/Bernadette SZOCS"
+  },
+  {
+    "日期": "2025-11-30",
+    "类型": "世界杯团体",
+    "胜者": "TSAI Yun-En/HUANG Yu-Chiao",
+    "负者": "Tashiya PIYADASA/Mandy YU"
+  },
+  {
+    "日期": "2025-11-30",
+    "类型": "世界杯团体",
+    "胜者": "Yashaswini GHORPADE/Diya CHITALE",
+    "负者": "Mateja JEGER/Lea RAKOVAC"
+  },
+  {
+    "日期": "2025-12-01",
+    "类型": "世界杯团体",
+    "胜者": "Elizabeta SAMARA/Bernadette SZOCS",
+    "负者": "Victoria STRASSBURGER/Karina SHIRAY"
+  },
+  {
+    "日期": "2025-12-01",
+    "类型": "世界杯团体",
+    "胜者": "KIM Nayeong/CHOI Hyojoo",
+    "负者": "HUANG Yu-Chiao/LI Yu-Jhun"
+  },
+  {
+    "日期": "2025-12-01",
+    "类型": "世界杯团体",
+    "胜者": "Mima ITO/Hina HAYATA",
+    "负者": "Yashaswini GHORPADE/Diya CHITALE"
+  },
+  {
+    "日期": "2025-12-02",
+    "类型": "世界杯团体",
+    "胜者": "Constantina PSIHOGIOS/Yangzi LIU",
+    "负者": "Diya CHITALE/Manika BATRA"
+  },
+  {
+    "日期": "2025-12-02",
+    "类型": "世界杯团体",
+    "胜者": "Elizabeta SAMARA/Bernadette SZOCS",
+    "负者": "Jia Nan YUAN/Prithika PAVADE"
+  },
+  {
+    "日期": "2025-12-02",
+    "类型": "世界杯团体",
+    "胜者": "Miwa HARIMOTO/Satsuki ODO",
+    "负者": "Mateja JEGER/Lea RAKOVAC"
+  },
+  {
+    "日期": "2025-12-02",
+    "类型": "世界杯团体",
+    "胜者": "Sabine WINTER/Nina MITTELHAM",
+    "负者": "Laura WATANABE/Victoria STRASSBURGER"
+  },
+  {
+    "日期": "2025-12-03",
+    "类型": "世界杯团体",
+    "胜者": "KIM Nayeong/CHOI Hyojoo",
+    "负者": "Jia Nan YUAN/Prithika PAVADE"
+  },
+  {
+    "日期": "2025-12-03",
+    "类型": "世界杯团体",
+    "胜者": "Miwa HARIMOTO/Hina HAYATA",
+    "负者": "ZHU Chengzhu/NG Wing Lam"
+  },
+  {
+    "日期": "2025-12-03",
+    "类型": "世界杯团体",
+    "胜者": "Sabine WINTER/Nina MITTELHAM",
+    "负者": "Christina KALLBERG/Linda BERGSTROM"
+  },
+  {
+    "日期": "2025-12-04",
+    "类型": "世界杯团体",
+    "胜者": "Charlotte LUTZ/Prithika PAVADE",
+    "负者": "Mateja JEGER/Lea RAKOVAC"
+  },
+  {
+    "日期": "2025-12-04",
+    "类型": "世界杯团体",
+    "胜者": "Christina KALLBERG/Linda BERGSTROM",
+    "负者": "ZHU Chengzhu/NG Wing Lam"
+  },
+  {
+    "日期": "2025-12-04",
+    "类型": "世界杯团体",
+    "胜者": "KIM Nayeong/CHOI Hyojoo",
+    "负者": "ZHU Chengzhu/DOO Hoi Kem"
+  },
+  {
+    "日期": "2025-12-05",
+    "类型": "世界杯团体",
+    "胜者": "ZHU Chengzhu/DOO Hoi Kem",
+    "负者": "Jia Nan YUAN/Prithika PAVADE"
+  },
+  {
+    "日期": "2025-12-06",
+    "类型": "世界杯团体",
+    "胜者": "KIM Nayeong/CHOI Hyojoo",
+    "负者": "Mateja JEGER/Lea RAKOVAC"
+  },
+  {
+    "日期": "2025-12-06",
+    "类型": "世界杯团体",
+    "胜者": "KUAI Man/WANG Manyu",
+    "负者": "Linda BERGSTROM/Filippa BERGAND"
+  },
+  {
+    "日期": "2025-12-06",
+    "类型": "世界杯团体",
+    "胜者": "KUAI Man/WANG Manyu",
+    "负者": "Miwa HARIMOTO/Satsuki ODO"
+  },
+  {
+    "日期": "2025-12-06",
+    "类型": "世界杯团体",
+    "胜者": "Mima ITO/Satsuki ODO",
+    "负者": "Jia Nan YUAN/Prithika PAVADE"
+  },
+  {
+    "日期": "2025-12-06",
+    "类型": "世界杯团体",
+    "胜者": "Sabine WINTER/Annett KAUFMANN",
+    "负者": "ZHU Chengzhu/DOO Hoi Kem"
+  },
+  {
+    "日期": "2025-12-06",
+    "类型": "世界杯团体",
+    "胜者": "Sabine WINTER/Nina MITTELHAM",
+    "负者": "KIM Nayeong/CHOI Hyojoo"
+  },
+  {
+    "日期": "2025-12-06",
+    "类型": "世界杯团体",
+    "胜者": "ZHU Chengzhu/NG Wing Lam",
+    "负者": "Mateja JEGER/Lea RAKOVAC"
+  },
+  {
+    "日期": "2025-12-07",
+    "类型": "世界杯团体",
+    "胜者": "LEE Eunhye/CHOI Hyojoo",
+    "负者": "KUAI Man/WANG Manyu"
+  },
+  {
+    "日期": "2025-12-07",
+    "类型": "世界杯团体",
+    "胜者": "Sabine WINTER/Nina MITTELHAM",
+    "负者": "LEE Eunhye/CHOI Hyojoo"
   },
   {
     "日期": "2025-12-13",
