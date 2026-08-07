@@ -442,5 +442,545 @@
     "类型": "T联赛",
     "胜者": "Kyoka IZUSAWA/Emiko TAGUCHI",
     "负者": "Ayami NARIMOTO/Ai EDAGAKI"
+  },
+  {
+    "日期": "2023-12-10",
+    "类型": "世界杯团体",
+    "胜者": "LIN Yen-Chun/WANG Chen-You",
+    "负者": "Anton KALLBERG/Isak ALFREDSSON"
+  },
+  {
+    "日期": "2023-12-10",
+    "类型": "世界杯团体",
+    "胜者": "Felix LEBRUN/Alexis LEBRUN",
+    "负者": "Samuel ARPAS/Jakub ZELINKA"
+  },
+  {
+    "日期": "2023-12-09",
+    "类型": "世界杯团体",
+    "胜者": "WANG Chuqin/MA Long",
+    "负者": "Kakeru SONE/Shunsuke TOGAMI"
+  },
+  {
+    "日期": "2023-12-09",
+    "类型": "世界杯团体",
+    "胜者": "Kristian KARLSSON/Anton KALLBERG",
+    "负者": "Simon GAUZY/Felix LEBRUN"
+  },
+  {
+    "日期": "2023-12-09",
+    "类型": "世界杯团体",
+    "胜者": "LIM Jonghoon/AN Jaehyun",
+    "负者": "Cedric MEISSNER/Ricardo WALTHER"
+  },
+  {
+    "日期": "2023-12-09",
+    "类型": "世界杯团体",
+    "胜者": "YANG Chia-An/WANG Chen-You",
+    "负者": "Samuel ARPAS/Jakub ZELINKA"
+  },
+  {
+    "日期": "2023-12-08",
+    "类型": "世界杯团体",
+    "胜者": "JANG Woojin/LIM Jonghoon",
+    "负者": "Tomokazu HARIMOTO/Shunsuke TOGAMI"
+  },
+  {
+    "日期": "2023-12-08",
+    "类型": "世界杯团体",
+    "胜者": "Simon GAUZY/Felix LEBRUN",
+    "负者": "YANG Chia-An/LIN Yen-Chun"
+  },
+  {
+    "日期": "2023-12-07",
+    "类型": "世界杯团体",
+    "胜者": "Kakeru SONE/Shunsuke TOGAMI",
+    "负者": "Samuel ARPAS/Jakub ZELINKA"
+  },
+  {
+    "日期": "2023-12-07",
+    "类型": "世界杯团体",
+    "胜者": "JANG Woojin/LIM Jonghoon",
+    "负者": "Kristian KARLSSON/Anton KALLBERG"
+  },
+  {
+    "日期": "2023-12-07",
+    "类型": "世界杯团体",
+    "胜者": "Tomokazu HARIMOTO/Shunsuke TOGAMI",
+    "负者": "Kristian KARLSSON/Anton KALLBERG"
+  },
+  {
+    "日期": "2023-12-07",
+    "类型": "世界杯团体",
+    "胜者": "Kristian KARLSSON/Anton KALLBERG",
+    "负者": "Tomokazu HARIMOTO/Shunsuke TOGAMI"
+  },
+  {
+    "日期": "2023-12-07",
+    "类型": "世界杯团体",
+    "胜者": "Simon GAUZY/Felix LEBRUN",
+    "负者": "Ricardo WALTHER/Kay STUMPER"
+  },
+  {
+    "日期": "2023-12-06",
+    "类型": "世界杯团体",
+    "胜者": "Ricardo WALTHER/Kay STUMPER",
+    "负者": "Kristian KARLSSON/Anton KALLBERG"
+  },
+  {
+    "日期": "2023-12-06",
+    "类型": "世界杯团体",
+    "胜者": "LIM Jonghoon/AN Jaehyun",
+    "负者": "Simon GAUZY/Felix LEBRUN"
+  },
+  {
+    "日期": "2023-12-05",
+    "类型": "世界杯团体",
+    "胜者": "Felix LEBRUN/Alexis LEBRUN",
+    "负者": "Eduard IONESCU/Darius MOVILEANU"
+  },
+  {
+    "日期": "2023-12-05",
+    "类型": "世界杯团体",
+    "胜者": "PANG Koen/QUEK Izaac",
+    "负者": "YANG Chia-An/LIN Yen-Chun"
+  },
+  {
+    "日期": "2023-12-05",
+    "类型": "世界杯团体",
+    "胜者": "Mohamed ELBEIALI/Youssef ABDELAZIZ",
+    "负者": "Goncalo GOMES/Rafael KONG"
+  },
+  {
+    "日期": "2023-12-05",
+    "类型": "世界杯团体",
+    "胜者": "Kristian KARLSSON/Anton KALLBERG",
+    "负者": "Daniel GONZALEZ/Brian AFANADOR"
+  },
+  {
+    "日期": "2023-12-05",
+    "类型": "世界杯团体",
+    "胜者": "Tomokazu HARIMOTO/Shunsuke TOGAMI",
+    "负者": "Felix LEBRUN/Alexis LEBRUN"
+  },
+  {
+    "日期": "2023-12-05",
+    "类型": "世界杯团体",
+    "胜者": "PANG Koen/QUEK Izaac",
+    "负者": "Edward LY/Simeon MARTIN"
+  },
+  {
+    "日期": "2023-12-04",
+    "类型": "世界杯团体",
+    "胜者": "Felix LEBRUN/Alexis LEBRUN",
+    "负者": "Jishan LIANG/Sid NARESH"
+  },
+  {
+    "日期": "2023-12-04",
+    "类型": "世界杯团体",
+    "胜者": "YANG Chia-An/LIN Yen-Chun",
+    "负者": "Sanil SHETTY/Snehit SURAVAJJULA"
+  },
+  {
+    "日期": "2023-12-04",
+    "类型": "世界杯团体",
+    "胜者": "Daniel GONZALEZ/Brian AFANADOR",
+    "负者": "LAM Siu Hang/WONG Chun Ting"
+  },
+  {
+    "日期": "2023-12-04",
+    "类型": "世界杯团体",
+    "胜者": "Samuel ARPAS/Yang WANG",
+    "负者": "Tiago LI/Rafael KONG"
+  },
+  {
+    "日期": "2023-12-04",
+    "类型": "世界杯团体",
+    "胜者": "LIN Gaoyuan/WANG Chuqin",
+    "负者": "Kristian KARLSSON/Anton KALLBERG"
+  },
+  {
+    "日期": "2023-12-04",
+    "类型": "世界杯团体",
+    "胜者": "Eugene WANG/Edward LY",
+    "负者": "Sanil SHETTY/Snehit SURAVAJJULA"
+  },
+  {
+    "日期": "2023-12-04",
+    "类型": "世界杯团体",
+    "胜者": "Sanil SHETTY/Snehit SURAVAJJULA",
+    "负者": "CHUA Josh/PANG Koen"
+  },
+  {
+    "日期": "2023-12-04",
+    "类型": "世界杯团体",
+    "胜者": "Eduard IONESCU/Andrei ISTRATE",
+    "负者": "Jishan LIANG/Sid NARESH"
+  },
+  {
+    "日期": "2023-12-04",
+    "类型": "世界杯团体",
+    "胜者": "YANG Chia-An/LIN Yen-Chun",
+    "负者": "Eugene WANG/Simeon MARTIN"
+  },
+  {
+    "日期": "2023-05-20",
+    "类型": "世乒赛",
+    "胜者": "Kirill GERASSIMENKO/Alan KURMANGALIYEV",
+    "负者": "Ali ALKHADRAWI/Abdulaziz BU SHULAYBI"
+  },
+  {
+    "日期": "2023-05-21",
+    "类型": "世乒赛",
+    "胜者": "Eric GLOD/Luka MLADENOVIC",
+    "负者": "Nicholas LUM/Finn LUU"
+  },
+  {
+    "日期": "2023-05-20",
+    "类型": "世乒赛",
+    "胜者": "Alexis LEBRUN/Felix LEBRUN",
+    "负者": "KAO Cheng-Jui/CHUANG Chih-Yuan"
+  },
+  {
+    "日期": "2023-05-21",
+    "类型": "世乒赛",
+    "胜者": "Darko JORGIC/Tomas POLANSKY",
+    "负者": "Gasika SEPA/Geoffrey LOI"
+  },
+  {
+    "日期": "2023-05-20",
+    "类型": "世乒赛",
+    "胜者": "Mihai BOBOCICA/Niagol STOYANOV",
+    "负者": "Olajide OMOTAYO/Taiwo MATI"
+  },
+  {
+    "日期": "2023-05-20",
+    "类型": "世乒赛",
+    "胜者": "Jakub ZELINKA/Lubomir PISTEJ",
+    "负者": "Alberto MINO/Emiliano RIOFRIO"
+  },
+  {
+    "日期": "2023-05-21",
+    "类型": "世乒赛",
+    "胜者": "LIN Shidong/LIN Gaoyuan",
+    "负者": "Maharu YOSHIMURA/Tomokazu HARIMOTO"
+  },
+  {
+    "日期": "2023-05-21",
+    "类型": "世乒赛",
+    "胜者": "LEE Sang Su/CHO Daeseong",
+    "负者": "Anton KALLBERG/Jon PERSSON"
+  },
+  {
+    "日期": "2023-05-20",
+    "类型": "世乒赛",
+    "胜者": "BEH Kun Ting/CHEW Zhe Yu Clarence",
+    "负者": "Ahmad Khalil AL-MOHANNADI/Mohammed ABDULWAHHAB"
+  },
+  {
+    "日期": "2023-05-20",
+    "类型": "世乒赛",
+    "胜者": "Martin ALLEGRO/Florent LAMBIET",
+    "负者": "LAM Siu Hang/NG Pak Nam"
+  },
+  {
+    "日期": "2023-05-21",
+    "类型": "世乒赛",
+    "胜者": "Ovidiu IONESCU/Alvaro ROBLES",
+    "负者": "Ramon MAXWELL/Tyrese KNIGHT"
+  },
+  {
+    "日期": "2023-05-20",
+    "类型": "世乒赛",
+    "胜者": "Cedric NUYTINCK/Jakub DYJAS",
+    "负者": "Khalid ASSAR/Ahmed SALEH"
+  },
+  {
+    "日期": "2023-05-20",
+    "类型": "世乒赛",
+    "胜者": "Maciej KUBIK/Samuel KULCZYCKI",
+    "负者": "Joao GERALDO/Tiago APOLONIA"
+  },
+  {
+    "日期": "2023-05-20",
+    "类型": "世乒赛",
+    "胜者": "Darius MOVILEANU/Eduard IONESCU",
+    "负者": "Dean LEVY/Liam BEUKES"
+  },
+  {
+    "日期": "2023-05-20",
+    "类型": "世乒赛",
+    "胜者": "Yukiya UDA/Shunsuke TOGAMI",
+    "负者": "Marcos MADRID/Jishan LIANG"
+  },
+  {
+    "日期": "2023-05-21",
+    "类型": "世乒赛",
+    "胜者": "Harmeet DESAI/Manush Utpalbhai SHAH",
+    "负者": "Denis ZHOLUDEV/Sagantay KURMAMBAYEV"
+  },
+  {
+    "日期": "2023-05-20",
+    "类型": "世乒赛",
+    "胜者": "Dimitrij OVTCHAROV/Patrick FRANZISKA",
+    "负者": "Amin AHMADIAN/Amir Hossein HODAEI"
+  },
+  {
+    "日期": "2023-05-21",
+    "类型": "世乒赛",
+    "胜者": "HO Kwan Kit/WONG Chun Ting",
+    "负者": "Samuel WALKER/Tom JARVIS"
+  },
+  {
+    "日期": "2023-05-20",
+    "类型": "世乒赛",
+    "胜者": "Liam PITCHFORD/Paul DRINKHALL",
+    "负者": "David SERDAROGLU/Alexander CHEN"
+  },
+  {
+    "日期": "2023-05-20",
+    "类型": "世乒赛",
+    "胜者": "Nicolas BURGOS/Gustavo GOMEZ",
+    "负者": "PANG Yew En Koen/QUEK Izaac"
+  },
+  {
+    "日期": "2023-05-21",
+    "类型": "世乒赛",
+    "胜者": "Sharath Kamal ACHANTA/Sathiyan GNANASEKARAN",
+    "负者": "Mohamed EL-BEIALI/Mohamed SHOUMAN"
+  },
+  {
+    "日期": "2023-05-21",
+    "类型": "世乒赛",
+    "胜者": "Bence MAJOROS/Anders LIND",
+    "负者": "Gaston ALTO/Horacio CIFUENTES"
+  },
+  {
+    "日期": "2023-05-20",
+    "类型": "世乒赛",
+    "胜者": "Nima ALAMIAN/Noshad ALAMIYAN",
+    "负者": "Benedikt DUDA/Dang QIU"
+  },
+  {
+    "日期": "2023-05-20",
+    "类型": "世乒赛",
+    "胜者": "Daniel GONZALEZ/Brian AFANADOR",
+    "负者": "Jiri MARTINKO/Pavel SIRUCEK"
+  },
+  {
+    "日期": "2023-05-21",
+    "类型": "世乒赛",
+    "胜者": "Vitor ISHIY/Eric JOUTI",
+    "负者": "Theo COGILL/Chetan NATHOO"
+  },
+  {
+    "日期": "2023-05-20",
+    "类型": "世乒赛",
+    "胜者": "Nandor ECSEKI/Adam SZUDI",
+    "负者": "Quadri ARUNA/Bode ABIODUN"
+  },
+  {
+    "日期": "2023-05-21",
+    "类型": "世乒赛",
+    "胜者": "Daniel HABESOHN/Robert GARDOS",
+    "负者": "Edward LY/Matteo MARTIN"
+  },
+  {
+    "日期": "2023-05-21",
+    "类型": "世乒赛",
+    "胜者": "Xavier DIXON/Yonghun LEE",
+    "负者": "Shemar BRITTON/Christopher FRANKLIN"
+  },
+  {
+    "日期": "2023-05-21",
+    "类型": "世乒赛",
+    "胜者": "Emmanuel LEBESSON/Can AKKUZU",
+    "负者": "YANG Tzu-Yi/HUANG Yan-Cheng"
+  },
+  {
+    "日期": "2023-05-22",
+    "类型": "世乒赛",
+    "胜者": "FAN Zhendong/WANG Chuqin",
+    "负者": "Kirill GERASSIMENKO/Alan KURMANGALIYEV"
+  },
+  {
+    "日期": "2023-05-22",
+    "类型": "世乒赛",
+    "胜者": "Alexis LEBRUN/Felix LEBRUN",
+    "负者": "Eric GLOD/Luka MLADENOVIC"
+  },
+  {
+    "日期": "2023-05-22",
+    "类型": "世乒赛",
+    "胜者": "Darko JORGIC/Tomas POLANSKY",
+    "负者": "Mihai BOBOCICA/Niagol STOYANOV"
+  },
+  {
+    "日期": "2023-05-22",
+    "类型": "世乒赛",
+    "胜者": "LIN Shidong/LIN Gaoyuan",
+    "负者": "Jakub ZELINKA/Lubomir PISTEJ"
+  },
+  {
+    "日期": "2023-05-22",
+    "类型": "世乒赛",
+    "胜者": "LEE Sang Su/CHO Daeseong",
+    "负者": "BEH Kun Ting/CHEW Zhe Yu Clarence"
+  },
+  {
+    "日期": "2023-05-22",
+    "类型": "世乒赛",
+    "胜者": "Ovidiu IONESCU/Alvaro ROBLES",
+    "负者": "Martin ALLEGRO/Florent LAMBIET"
+  },
+  {
+    "日期": "2023-05-22",
+    "类型": "世乒赛",
+    "胜者": "Maciej KUBIK/Samuel KULCZYCKI",
+    "负者": "Cedric NUYTINCK/Jakub DYJAS"
+  },
+  {
+    "日期": "2023-05-22",
+    "类型": "世乒赛",
+    "胜者": "Kristian KARLSSON/Mattias FALCK",
+    "负者": "Darius MOVILEANU/Eduard IONESCU"
+  },
+  {
+    "日期": "2023-05-22",
+    "类型": "世乒赛",
+    "胜者": "Yukiya UDA/Shunsuke TOGAMI",
+    "负者": "Harmeet DESAI/Manush Utpalbhai SHAH"
+  },
+  {
+    "日期": "2023-05-22",
+    "类型": "世乒赛",
+    "胜者": "Dimitrij OVTCHAROV/Patrick FRANZISKA",
+    "负者": "HO Kwan Kit/WONG Chun Ting"
+  },
+  {
+    "日期": "2023-05-22",
+    "类型": "世乒赛",
+    "胜者": "Liam PITCHFORD/Paul DRINKHALL",
+    "负者": "Nicolas BURGOS/Gustavo GOMEZ"
+  },
+  {
+    "日期": "2023-05-22",
+    "类型": "世乒赛",
+    "胜者": "Sharath Kamal ACHANTA/Sathiyan GNANASEKARAN",
+    "负者": "Bence MAJOROS/Anders LIND"
+  },
+  {
+    "日期": "2023-05-22",
+    "类型": "世乒赛",
+    "胜者": "Daniel GONZALEZ/Brian AFANADOR",
+    "负者": "Nima ALAMIAN/Noshad ALAMIYAN"
+  },
+  {
+    "日期": "2023-05-22",
+    "类型": "世乒赛",
+    "胜者": "Nandor ECSEKI/Adam SZUDI",
+    "负者": "Vitor ISHIY/Eric JOUTI"
+  },
+  {
+    "日期": "2023-05-22",
+    "类型": "世乒赛",
+    "胜者": "Daniel HABESOHN/Robert GARDOS",
+    "负者": "Xavier DIXON/Yonghun LEE"
+  },
+  {
+    "日期": "2023-05-22",
+    "类型": "世乒赛",
+    "胜者": "JANG Woojin/LIM Jonghoon",
+    "负者": "Emmanuel LEBESSON/Can AKKUZU"
+  },
+  {
+    "日期": "2023-05-23",
+    "类型": "世乒赛",
+    "胜者": "FAN Zhendong/WANG Chuqin",
+    "负者": "Alexis LEBRUN/Felix LEBRUN"
+  },
+  {
+    "日期": "2023-05-23",
+    "类型": "世乒赛",
+    "胜者": "LIN Shidong/LIN Gaoyuan",
+    "负者": "Darko JORGIC/Tomas POLANSKY"
+  },
+  {
+    "日期": "2023-05-24",
+    "类型": "世乒赛",
+    "胜者": "LEE Sang Su/CHO Daeseong",
+    "负者": "Ovidiu IONESCU/Alvaro ROBLES"
+  },
+  {
+    "日期": "2023-05-23",
+    "类型": "世乒赛",
+    "胜者": "Kristian KARLSSON/Mattias FALCK",
+    "负者": "Maciej KUBIK/Samuel KULCZYCKI"
+  },
+  {
+    "日期": "2023-05-24",
+    "类型": "世乒赛",
+    "胜者": "Dimitrij OVTCHAROV/Patrick FRANZISKA",
+    "负者": "Yukiya UDA/Shunsuke TOGAMI"
+  },
+  {
+    "日期": "2023-05-24",
+    "类型": "世乒赛",
+    "胜者": "Liam PITCHFORD/Paul DRINKHALL",
+    "负者": "Sharath Kamal ACHANTA/Sathiyan GNANASEKARAN"
+  },
+  {
+    "日期": "2023-05-24",
+    "类型": "世乒赛",
+    "胜者": "Nandor ECSEKI/Adam SZUDI",
+    "负者": "Daniel GONZALEZ/Brian AFANADOR"
+  },
+  {
+    "日期": "2023-05-23",
+    "类型": "世乒赛",
+    "胜者": "JANG Woojin/LIM Jonghoon",
+    "负者": "Daniel HABESOHN/Robert GARDOS"
+  },
+  {
+    "日期": "2023-05-25",
+    "类型": "世乒赛",
+    "胜者": "FAN Zhendong/WANG Chuqin",
+    "负者": "LIN Shidong/LIN Gaoyuan"
+  },
+  {
+    "日期": "2023-05-25",
+    "类型": "世乒赛",
+    "胜者": "LEE Sang Su/CHO Daeseong",
+    "负者": "Kristian KARLSSON/Mattias FALCK"
+  },
+  {
+    "日期": "2023-05-25",
+    "类型": "世乒赛",
+    "胜者": "Dimitrij OVTCHAROV/Patrick FRANZISKA",
+    "负者": "Liam PITCHFORD/Paul DRINKHALL"
+  },
+  {
+    "日期": "2023-05-25",
+    "类型": "世乒赛",
+    "胜者": "JANG Woojin/LIM Jonghoon",
+    "负者": "Nandor ECSEKI/Adam SZUDI"
+  },
+  {
+    "日期": "2023-05-26",
+    "类型": "世乒赛",
+    "胜者": "FAN Zhendong/WANG Chuqin",
+    "负者": "LEE Sang Su/CHO Daeseong"
+  },
+  {
+    "日期": "2023-05-26",
+    "类型": "世乒赛",
+    "胜者": "JANG Woojin/LIM Jonghoon",
+    "负者": "Dimitrij OVTCHAROV/Patrick FRANZISKA"
+  },
+  {
+    "日期": "2023-05-27",
+    "类型": "世乒赛",
+    "胜者": "FAN Zhendong/WANG Chuqin",
+    "负者": "JANG Woojin/LIM Jonghoon"
   }
 ]
