@@ -1,101 +1,5 @@
 [
   {
-    "日期": "2024-08-09",
-    "类型": "奥运会团体",
-    "胜者": "MA Long/WANG Chuqin",
-    "负者": "Anton KALLBERG/Kristian KARLSSON"
-  },
-  {
-    "日期": "2024-08-09",
-    "类型": "奥运会团体",
-    "胜者": "Simon GAUZY/Alexis LEBRUN",
-    "负者": "Hiroto SHINOZUKA/Shunsuke TOGAMI"
-  },
-  {
-    "日期": "2024-08-08",
-    "类型": "奥运会团体",
-    "胜者": "MA Long/WANG Chuqin",
-    "负者": "Simon GAUZY/Alexis LEBRUN"
-  },
-  {
-    "日期": "2024-08-08",
-    "类型": "奥运会团体",
-    "胜者": "Hiroto SHINOZUKA/Shunsuke TOGAMI",
-    "负者": "Anton KALLBERG/Kristian KARLSSON"
-  },
-  {
-    "日期": "2024-08-07",
-    "类型": "奥运会团体",
-    "胜者": "Simon GAUZY/Alexis LEBRUN",
-    "负者": "Guilherme TEODORO/Vitor ISHIY"
-  },
-  {
-    "日期": "2024-08-07",
-    "类型": "奥运会团体",
-    "胜者": "MA Long/WANG Chuqin",
-    "负者": "CHO Daeseong/JANG Woojin"
-  },
-  {
-    "日期": "2024-08-07",
-    "类型": "奥运会团体",
-    "胜者": "Kristian KARLSSON/Anton KALLBERG",
-    "负者": "Dang QIU/Timo BOLL"
-  },
-  {
-    "日期": "2024-08-07",
-    "类型": "奥运会团体",
-    "胜者": "Hiroto SHINOZUKA/Shunsuke TOGAMI",
-    "负者": "CHUANG Chih-Yuan/KAO Cheng-Jui"
-  },
-  {
-    "日期": "2024-08-06",
-    "类型": "奥运会团体",
-    "胜者": "MA Long/WANG Chuqin",
-    "负者": "Harmeet DESAI/Manav Vikash THAKKAR"
-  },
-  {
-    "日期": "2024-08-06",
-    "类型": "奥运会团体",
-    "胜者": "CHO Daeseong/JANG Woojin",
-    "负者": "Filip ZELJKO/Andrej GACINA"
-  },
-  {
-    "日期": "2024-08-06",
-    "类型": "奥运会团体",
-    "胜者": "Dang QIU/Timo BOLL",
-    "负者": "Jeremy HAZIN/Eugene WANG"
-  },
-  {
-    "日期": "2024-08-06",
-    "类型": "奥运会团体",
-    "胜者": "Simon GAUZY/Alexis LEBRUN",
-    "负者": "Peter HRIBAR/Deni KOZUL"
-  },
-  {
-    "日期": "2024-08-06",
-    "类型": "奥运会团体",
-    "胜者": "Vitor ISHIY/Guilherme TEODORO",
-    "负者": "Tiago APOLONIA/Marcos FREITAS"
-  },
-  {
-    "日期": "2024-08-06",
-    "类型": "奥运会团体",
-    "胜者": "Shunsuke TOGAMI/Hiroto SHINOZUKA",
-    "负者": "Nicholas LUM/Finn LUU"
-  },
-  {
-    "日期": "2024-08-06",
-    "类型": "奥运会团体",
-    "胜者": "CHUANG Chih-Yuan/KAO Cheng-Jui",
-    "负者": "Khalid ASSAR/Youssef ABDEL-AZIZ"
-  },
-  {
-    "日期": "2024-08-06",
-    "类型": "奥运会团体",
-    "胜者": "Anton KALLBERG/Kristian KARLSSON",
-    "负者": "Martin Buch ANDERSEN/Jonathan GROTH"
-  },
-  {
     "日期": "2024-01-06",
     "类型": "T联赛",
     "胜者": "Yuya OSHIMA/Hiroto SHINOZUKA",
@@ -180,6 +84,18 @@
     "负者": "CHEN Jinqi/LIAO Cheng-Ting"
   },
   {
+    "日期": "2024-03-05",
+    "类型": "T联赛",
+    "胜者": "CHO Seungmin/Fumiya IGARASHI",
+    "负者": "Yuya OSHIMA/Hiroto SHINOZUKA"
+  },
+  {
+    "日期": "2024-03-06",
+    "类型": "T联赛",
+    "胜者": "CHO Seungmin/Fumiya IGARASHI",
+    "负者": "Hiromu KOBAYASHI/Sho SONE"
+  },
+  {
     "日期": "2024-03-22",
     "类型": "T联赛",
     "胜者": "ZHAO Xinghao/XU Yu",
@@ -198,16 +114,100 @@
     "负者": "SONG Meiyou/SONG Yijin"
   },
   {
-    "日期": "2024-03-05",
-    "类型": "T联赛",
-    "胜者": "CHO Seungmin/Fumiya IGARASHI",
-    "负者": "Yuya OSHIMA/Hiroto SHINOZUKA"
+    "日期": "2024-08-06",
+    "类型": "奥运会团体",
+    "胜者": "MA Long/WANG Chuqin",
+    "负者": "Harmeet DESAI/Manav Vikash THAKKAR"
   },
   {
-    "日期": "2024-03-06",
-    "类型": "T联赛",
-    "胜者": "CHO Seungmin/Fumiya IGARASHI",
-    "负者": "Hiromu KOBAYASHI/Sho SONE"
+    "日期": "2024-08-06",
+    "类型": "奥运会团体",
+    "胜者": "CHO Daeseong/JANG Woojin",
+    "负者": "Filip ZELJKO/Andrej GACINA"
+  },
+  {
+    "日期": "2024-08-06",
+    "类型": "奥运会团体",
+    "胜者": "Dang QIU/Timo BOLL",
+    "负者": "Jeremy HAZIN/Eugene WANG"
+  },
+  {
+    "日期": "2024-08-06",
+    "类型": "奥运会团体",
+    "胜者": "Simon GAUZY/Alexis LEBRUN",
+    "负者": "Peter HRIBAR/Deni KOZUL"
+  },
+  {
+    "日期": "2024-08-06",
+    "类型": "奥运会团体",
+    "胜者": "Vitor ISHIY/Guilherme TEODORO",
+    "负者": "Tiago APOLONIA/Marcos FREITAS"
+  },
+  {
+    "日期": "2024-08-06",
+    "类型": "奥运会团体",
+    "胜者": "Shunsuke TOGAMI/Hiroto SHINOZUKA",
+    "负者": "Nicholas LUM/Finn LUU"
+  },
+  {
+    "日期": "2024-08-06",
+    "类型": "奥运会团体",
+    "胜者": "CHUANG Chih-Yuan/KAO Cheng-Jui",
+    "负者": "Khalid ASSAR/Youssef ABDEL-AZIZ"
+  },
+  {
+    "日期": "2024-08-06",
+    "类型": "奥运会团体",
+    "胜者": "Anton KALLBERG/Kristian KARLSSON",
+    "负者": "Martin Buch ANDERSEN/Jonathan GROTH"
+  },
+  {
+    "日期": "2024-08-07",
+    "类型": "奥运会团体",
+    "胜者": "Simon GAUZY/Alexis LEBRUN",
+    "负者": "Guilherme TEODORO/Vitor ISHIY"
+  },
+  {
+    "日期": "2024-08-07",
+    "类型": "奥运会团体",
+    "胜者": "MA Long/WANG Chuqin",
+    "负者": "CHO Daeseong/JANG Woojin"
+  },
+  {
+    "日期": "2024-08-07",
+    "类型": "奥运会团体",
+    "胜者": "Kristian KARLSSON/Anton KALLBERG",
+    "负者": "Dang QIU/Timo BOLL"
+  },
+  {
+    "日期": "2024-08-07",
+    "类型": "奥运会团体",
+    "胜者": "Hiroto SHINOZUKA/Shunsuke TOGAMI",
+    "负者": "CHUANG Chih-Yuan/KAO Cheng-Jui"
+  },
+  {
+    "日期": "2024-08-08",
+    "类型": "奥运会团体",
+    "胜者": "MA Long/WANG Chuqin",
+    "负者": "Simon GAUZY/Alexis LEBRUN"
+  },
+  {
+    "日期": "2024-08-08",
+    "类型": "奥运会团体",
+    "胜者": "Hiroto SHINOZUKA/Shunsuke TOGAMI",
+    "负者": "Anton KALLBERG/Kristian KARLSSON"
+  },
+  {
+    "日期": "2024-08-09",
+    "类型": "奥运会团体",
+    "胜者": "MA Long/WANG Chuqin",
+    "负者": "Anton KALLBERG/Kristian KARLSSON"
+  },
+  {
+    "日期": "2024-08-09",
+    "类型": "奥运会团体",
+    "胜者": "Simon GAUZY/Alexis LEBRUN",
+    "负者": "Hiroto SHINOZUKA/Shunsuke TOGAMI"
   },
   {
     "日期": "2024-08-24",
@@ -354,12 +354,6 @@
     "负者": "Misuzu TAKEYA/Anne UESAWA"
   },
   {
-    "日期": "2024-11-03",
-    "类型": "T联赛",
-    "胜者": "Kazuki YOSHIYAMA/Ryoichi YOSHIYAMA",
-    "负者": "Hayate SUZUKI/Shunsuke OKANO"
-  },
-  {
     "日期": "2024-11-02",
     "类型": "T联赛",
     "胜者": "Toin RYUZAKI/Masataka MORIZONO",
@@ -372,10 +366,10 @@
     "负者": "Kyoka IZUSAWA/Narumi SHUTO"
   },
   {
-    "日期": "2024-11-04",
+    "日期": "2024-11-03",
     "类型": "T联赛",
-    "胜者": "PARK Gyuhyeon/Masaki YOSHIDA",
-    "负者": "Kazuki YOSHIYAMA/Mizuki OIKAWA"
+    "胜者": "Kazuki YOSHIYAMA/Ryoichi YOSHIYAMA",
+    "负者": "Hayate SUZUKI/Shunsuke OKANO"
   },
   {
     "日期": "2024-11-03",
@@ -388,6 +382,12 @@
     "类型": "T联赛",
     "胜者": "Kyoka IZUSAWA/Narumi SHUTO",
     "负者": "Saki SHIBATA/Shina ITO"
+  },
+  {
+    "日期": "2024-11-04",
+    "类型": "T联赛",
+    "胜者": "PARK Gyuhyeon/Masaki YOSHIDA",
+    "负者": "Kazuki YOSHIYAMA/Mizuki OIKAWA"
   },
   {
     "日期": "2024-11-09",
@@ -444,22 +444,10 @@
     "负者": "Anne UESAWA/Asuka SASAO"
   },
   {
-    "日期": "2024-12-15",
-    "类型": "T联赛",
-    "胜者": "Hayate SUZUKI/Hiroto SHINOZUKA",
-    "负者": "Masataka MORIZONO/Kazuki HAMADA"
-  },
-  {
     "日期": "2024-11-23",
     "类型": "T联赛",
     "胜者": "Hiromu KOBAYASHI/Taimu ARINOBU",
     "负者": "LEE Sangsu/Koki NIWA"
-  },
-  {
-    "日期": "2024-12-14",
-    "类型": "T联赛",
-    "胜者": "Hayate SUZUKI/Hiroto SHINOZUKA",
-    "负者": "Kenta TAZOE/Keishi HAGIHARA"
   },
   {
     "日期": "2024-11-24",
@@ -504,22 +492,142 @@
     "负者": "Miku IZUMO/Mitsuki NAKAMURA"
   },
   {
+    "日期": "2024-12-01",
+    "类型": "世界杯团体",
+    "胜者": "Keishi HAGIHARA/Yuta TANAKA",
+    "负者": "Kay STUMPER/Fanbo MENG"
+  },
+  {
+    "日期": "2024-12-01",
+    "类型": "世界杯团体",
+    "胜者": "Thibault PORET/Esteban DORR",
+    "负者": "WONG Chun Ting/YIU Kwan To"
+  },
+  {
+    "日期": "2024-12-01",
+    "类型": "世界杯团体",
+    "胜者": "KUO Guan-Hong/HUANG Yan-Cheng",
+    "负者": "QUEK Izaac/PANG Koen"
+  },
+  {
+    "日期": "2024-12-01",
+    "类型": "世界杯团体",
+    "胜者": "Snehit SURAVAJJULA/Jeet CHANDRA",
+    "负者": "Xiangjing ZHANG/Jishan LIANG"
+  },
+  {
+    "日期": "2024-12-02",
+    "类型": "世界杯团体",
+    "胜者": "Keishi HAGIHARA/Yuta TANAKA",
+    "负者": "Marwan GAMAL/Mohamed AZZAM"
+  },
+  {
+    "日期": "2024-12-02",
+    "类型": "世界杯团体",
+    "胜者": "Xiangjing ZHANG/Jishan LIANG",
+    "负者": "Nicholas LUM/Finn LUU"
+  },
+  {
+    "日期": "2024-12-02",
+    "类型": "世界杯团体",
+    "胜者": "Darius MOVILEANU/Eduard IONESCU",
+    "负者": "QUEK Izaac/PANG Koen"
+  },
+  {
+    "日期": "2024-12-03",
+    "类型": "世界杯团体",
+    "胜者": "Anders ERIKSSON/Kristian KARLSSON",
+    "负者": "CHAN Baldwin/WONG Chun Ting"
+  },
+  {
+    "日期": "2024-12-03",
+    "类型": "世界杯团体",
+    "胜者": "Snehit SURAVAJJULA/Jeet CHANDRA",
+    "负者": "Nicholas LUM/Finn LUU"
+  },
+  {
+    "日期": "2024-12-03",
+    "类型": "世界杯团体",
+    "胜者": "KUO Guan-Hong/HUANG Yan-Cheng",
+    "负者": "Darius MOVILEANU/Eduard IONESCU"
+  },
+  {
+    "日期": "2024-12-04",
+    "类型": "世界杯团体",
+    "胜者": "OH Junsung/CHO Daeseong",
+    "负者": "CHAN Baldwin/WONG Chun Ting"
+  },
+  {
+    "日期": "2024-12-05",
+    "类型": "世界杯团体",
+    "胜者": "WANG Chuqin/LIANG Jingkun",
+    "负者": "AN Jaehyun/CHO Daeseong"
+  },
+  {
+    "日期": "2024-12-05",
+    "类型": "世界杯团体",
+    "胜者": "Kay STUMPER/Cedric MEISSNER",
+    "负者": "WONG Chun Ting/YIU Kwan To"
+  },
+  {
+    "日期": "2024-12-05",
+    "类型": "世界杯团体",
+    "胜者": "Ryuusei KAWAKAMI/Keishi HAGIHARA",
+    "负者": "Jules ROLLAND/Esteban DORR"
+  },
+  {
     "日期": "2024-12-07",
     "类型": "T联赛",
     "胜者": "Toin RYUZAKI/Masataka MORIZONO",
     "负者": "Sora MATSUSHIMA/Kazuhiro YOSHIMURA"
   },
   {
-    "日期": "2024-12-26",
-    "类型": "T联赛",
-    "胜者": "Yuka UMEMURA/Maki SHIOMI",
-    "负者": "Karen AKAE/Hina HAYATA"
+    "日期": "2024-12-07",
+    "类型": "世界杯团体",
+    "胜者": "Thibault PORET/Esteban DORR",
+    "负者": "Sid NARESH/Nandan NARESH"
+  },
+  {
+    "日期": "2024-12-07",
+    "类型": "世界杯团体",
+    "胜者": "Keishi HAGIHARA/Yuta TANAKA",
+    "负者": "WONG Chun Ting/YIU Kwan To"
+  },
+  {
+    "日期": "2024-12-07",
+    "类型": "世界杯团体",
+    "胜者": "OH Junsung/CHO Daeseong",
+    "负者": "Cedric MEISSNER/Fanbo MENG"
+  },
+  {
+    "日期": "2024-12-07",
+    "类型": "世界杯团体",
+    "胜者": "Ryuusei KAWAKAMI/Keishi HAGIHARA",
+    "负者": "AN Jaehyun/CHO Daeseong"
+  },
+  {
+    "日期": "2024-12-07",
+    "类型": "世界杯团体",
+    "胜者": "Kay STUMPER/Fanbo MENG",
+    "负者": "Darius MOVILEANU/Eduard IONESCU"
   },
   {
     "日期": "2024-12-08",
     "类型": "T联赛",
     "胜者": "Sora MATSUSHIMA/Kazuhiro YOSHIMURA",
     "负者": "Kazuki YOSHIYAMA/Mizuki OIKAWA"
+  },
+  {
+    "日期": "2024-12-08",
+    "类型": "世界杯团体",
+    "胜者": "Darius MOVILEANU/Eduard IONESCU",
+    "负者": "WONG Chun Ting/YIU Kwan To"
+  },
+  {
+    "日期": "2024-12-08",
+    "类型": "世界杯团体",
+    "胜者": "WONG Chun Ting/YIU Kwan To",
+    "负者": "AN Jaehyun/CHO Daeseong"
   },
   {
     "日期": "2024-12-13",
@@ -530,8 +638,26 @@
   {
     "日期": "2024-12-14",
     "类型": "T联赛",
+    "胜者": "Hayate SUZUKI/Hiroto SHINOZUKA",
+    "负者": "Kenta TAZOE/Keishi HAGIHARA"
+  },
+  {
+    "日期": "2024-12-14",
+    "类型": "T联赛",
     "胜者": "Seira USHIJIMA/Ringo KOBAYASHI",
     "负者": "Miku IZUMO/Asahi HIRANO"
+  },
+  {
+    "日期": "2024-12-15",
+    "类型": "T联赛",
+    "胜者": "Hayate SUZUKI/Hiroto SHINOZUKA",
+    "负者": "Masataka MORIZONO/Kazuki HAMADA"
+  },
+  {
+    "日期": "2024-12-26",
+    "类型": "T联赛",
+    "胜者": "Yuka UMEMURA/Maki SHIOMI",
+    "负者": "Karen AKAE/Hina HAYATA"
   },
   {
     "日期": "2024-12-27",

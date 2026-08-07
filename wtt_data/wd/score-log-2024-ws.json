@@ -324,6 +324,102 @@
     "负者": "Yukari SUGASAWA/Mitsuki NAKAMURA"
   },
   {
+    "日期": "2024-12-01",
+    "类型": "世界杯团体",
+    "胜者": "Hend FATHY/Alaa YEHIA",
+    "负者": "Katarzyna WEGRZYN/Natalia BAJOR"
+  },
+  {
+    "日期": "2024-12-01",
+    "类型": "世界杯团体",
+    "胜者": "Audrey ZARIF/Camille LUTZ",
+    "负者": "NG Wing Lam/DOO Hoi Kem"
+  },
+  {
+    "日期": "2024-12-01",
+    "类型": "世界杯团体",
+    "胜者": "WANG Yi-Ju/HUANG Yu-Chiao",
+    "负者": "SER Lin Qian/ZENG Jian"
+  },
+  {
+    "日期": "2024-12-01",
+    "类型": "世界杯团体",
+    "胜者": "SHIN Yubin/JEON Jihee",
+    "负者": "Elizabeta SAMARA/Bernadette SZOCS"
+  },
+  {
+    "日期": "2024-12-02",
+    "类型": "世界杯团体",
+    "胜者": "Yuan WAN/Franziska SCHREINER",
+    "负者": "Katarzyna WEGRZYN/Natalia BAJOR"
+  },
+  {
+    "日期": "2024-12-02",
+    "类型": "世界杯团体",
+    "胜者": "Audrey ZARIF/Camille LUTZ",
+    "负者": "Christina KALLBERG/Linda BERGSTROM"
+  },
+  {
+    "日期": "2024-12-02",
+    "类型": "世界杯团体",
+    "胜者": "LEE Hoi Man/WONG Hoi Tung",
+    "负者": "Jessie XU/Ivy LIAO"
+  },
+  {
+    "日期": "2024-12-02",
+    "类型": "世界杯团体",
+    "胜者": "Sally MOYLAND/Tiffany KE",
+    "负者": "Constantina PSIHOGIOS/Jian Fang LAY"
+  },
+  {
+    "日期": "2024-12-03",
+    "类型": "世界杯团体",
+    "胜者": "Christina KALLBERG/Linda BERGSTROM",
+    "负者": "NG Wing Lam/DOO Hoi Kem"
+  },
+  {
+    "日期": "2024-12-03",
+    "类型": "世界杯团体",
+    "胜者": "Pritha VARTIKAR/Yashaswini GHORPADE",
+    "负者": "Constantina PSIHOGIOS/Jian Fang LAY"
+  },
+  {
+    "日期": "2024-12-04",
+    "类型": "世界杯团体",
+    "胜者": "Audrey ZARIF/Camille LUTZ",
+    "负者": "Elizabeta SAMARA/Bernadette SZOCS"
+  },
+  {
+    "日期": "2024-12-05",
+    "类型": "世界杯团体",
+    "胜者": "Camille LUTZ/Clea DE STOPPELEIRE",
+    "负者": "Yuan WAN/Franziska SCHREINER"
+  },
+  {
+    "日期": "2024-12-05",
+    "类型": "世界杯团体",
+    "胜者": "Sakura MORI/Asuka SASAO",
+    "负者": "Andreea DRAGOMAN/Bernadette SZOCS"
+  },
+  {
+    "日期": "2024-12-05",
+    "类型": "世界杯团体",
+    "胜者": "Sophia KLEE/Yuan WAN",
+    "负者": "NG Wing Lam/DOO Hoi Kem"
+  },
+  {
+    "日期": "2024-12-06",
+    "类型": "世界杯团体",
+    "胜者": "WANG Manyu/SUN Yingsha",
+    "负者": "Asuka SASAO/Kaho AKAE"
+  },
+  {
+    "日期": "2024-12-06",
+    "类型": "世界杯团体",
+    "胜者": "Andreea DRAGOMAN/Bernadette SZOCS",
+    "负者": "NG Wing Lam/DOO Hoi Kem"
+  },
+  {
     "日期": "2024-12-07",
     "类型": "T联赛",
     "胜者": "Hiromu KOBAYASHI/Taimu ARINOBU",
@@ -336,6 +432,42 @@
     "负者": "MA Yuhan/Yurika NANBA"
   },
   {
+    "日期": "2024-12-07",
+    "类型": "世界杯团体",
+    "胜者": "Audrey ZARIF/Camille LUTZ",
+    "负者": "Sally MOYLAND/Jessica REYES LAI"
+  },
+  {
+    "日期": "2024-12-07",
+    "类型": "世界杯团体",
+    "胜者": "Kaho AKAE/Rin MENDE",
+    "负者": "NG Wing Lam/DOO Hoi Kem"
+  },
+  {
+    "日期": "2024-12-07",
+    "类型": "世界杯团体",
+    "胜者": "SHIN Yubin/JEON Jihee",
+    "负者": "Sophia KLEE/Yuan WAN"
+  },
+  {
+    "日期": "2024-12-07",
+    "类型": "世界杯团体",
+    "胜者": "Sally MOYLAND/Jessica REYES LAI",
+    "负者": "NG Wing Lam/DOO Hoi Kem"
+  },
+  {
+    "日期": "2024-12-07",
+    "类型": "世界杯团体",
+    "胜者": "Sakura MORI/Asuka SASAO",
+    "负者": "SHIN Yubin/JEON Jihee"
+  },
+  {
+    "日期": "2024-12-07",
+    "类型": "世界杯团体",
+    "胜者": "Yuan WAN/Franziska SCHREINER",
+    "负者": "Andreea DRAGOMAN/Bernadette SZOCS"
+  },
+  {
     "日期": "2024-12-08",
     "类型": "T联赛",
     "胜者": "Hiromu KOBAYASHI/Taimu ARINOBU",
@@ -346,6 +478,12 @@
     "类型": "T联赛",
     "胜者": "Sakura YOKOI/Satsuki OTO",
     "负者": "Miyuu KIHARA/Miwa HARIMOTO"
+  },
+  {
+    "日期": "2024-12-08",
+    "类型": "世界杯团体",
+    "胜者": "NG Wing Lam/DOO Hoi Kem",
+    "负者": "SHIN Yubin/JEON Jihee"
   },
   {
     "日期": "2024-12-28",

@@ -1,5 +1,83 @@
 [
   {
+    "日期": "2024-01-06",
+    "类型": "T联赛",
+    "胜者": "Satoshi EIDA",
+    "负者": "Sora MATSUSHIMA"
+  },
+  {
+    "日期": "2024-01-06",
+    "类型": "T联赛",
+    "胜者": "Mizuki OIKAWA",
+    "负者": "Takashi TAKAGIWA"
+  },
+  {
+    "日期": "2024-01-06",
+    "类型": "T联赛",
+    "胜者": "Hiroto SHINOZUKA",
+    "负者": "Sho SONE"
+  },
+  {
+    "日期": "2024-01-07",
+    "类型": "T联赛",
+    "胜者": "Akira YOKOYA",
+    "负者": "HAO Shuai"
+  },
+  {
+    "日期": "2024-01-07",
+    "类型": "T联赛",
+    "胜者": "Taisei MATSUSHITA",
+    "负者": "Ryoichi YOSHIYAMA"
+  },
+  {
+    "日期": "2024-01-07",
+    "类型": "T联赛",
+    "胜者": "Masataka MORIZONO",
+    "负者": "YAN An"
+  },
+  {
+    "日期": "2024-01-08",
+    "类型": "T联赛",
+    "胜者": "YAN An",
+    "负者": "Keishi HAGIHARA"
+  },
+  {
+    "日期": "2024-01-08",
+    "类型": "T联赛",
+    "胜者": "Sora MATSUSHIMA",
+    "负者": "HAO Shuai"
+  },
+  {
+    "日期": "2024-01-08",
+    "类型": "T联赛",
+    "胜者": "Yuya OSHIMA",
+    "负者": "Koki NIWA"
+  },
+  {
+    "日期": "2024-01-12",
+    "类型": "T联赛",
+    "胜者": "Satoshi EIDA",
+    "负者": "Taisei MATSUSHITA"
+  },
+  {
+    "日期": "2024-01-12",
+    "类型": "T联赛",
+    "胜者": "Akira YOKOYA",
+    "负者": "Sho SONE"
+  },
+  {
+    "日期": "2024-01-12",
+    "类型": "T联赛",
+    "胜者": "Masataka MORIZONO",
+    "负者": "Yuto KIZUKURI"
+  },
+  {
+    "日期": "2024-01-12",
+    "类型": "T联赛",
+    "胜者": "Akira YOKOYA",
+    "负者": "Satoshi EIDA"
+  },
+  {
     "日期": "2024-01-13",
     "类型": "球星挑战赛",
     "胜者": "WANG Chuqin",
@@ -616,6 +694,30 @@
     "类型": "球星挑战赛",
     "胜者": "Benedikt DUDA",
     "负者": "Sultan AL-KUWARI"
+  },
+  {
+    "日期": "2024-01-13",
+    "类型": "T联赛",
+    "胜者": "Maharu YOSHIMURA",
+    "负者": "Masataka MORIZONO"
+  },
+  {
+    "日期": "2024-01-13",
+    "类型": "T联赛",
+    "胜者": "ZHAO Xinghao",
+    "负者": "Akira YOKOYA"
+  },
+  {
+    "日期": "2024-01-13",
+    "类型": "T联赛",
+    "胜者": "Yuki MATSUYAMA",
+    "负者": "Shunsuke OKANO"
+  },
+  {
+    "日期": "2024-01-13",
+    "类型": "T联赛",
+    "胜者": "Maharu YOSHIMURA",
+    "负者": "Akira YOKOYA"
   },
   {
     "日期": "2024-01-20",
@@ -1602,6 +1704,198 @@
     "负者": "Ansh SABHARWAL"
   },
   {
+    "日期": "2024-02-03",
+    "类型": "T联赛",
+    "胜者": "LIN Yun-Ju",
+    "负者": "CHO Seungmin"
+  },
+  {
+    "日期": "2024-02-03",
+    "类型": "T联赛",
+    "胜者": "Shunsuke TOGAMI",
+    "负者": "Kenta MATSUDAIRA"
+  },
+  {
+    "日期": "2024-02-03",
+    "类型": "T联赛",
+    "胜者": "Hiroto SHINOZUKA",
+    "负者": "Fumiya IGARASHI"
+  },
+  {
+    "日期": "2024-02-04",
+    "类型": "T联赛",
+    "胜者": "HAO Shuai",
+    "负者": "Sora MATSUSHIMA"
+  },
+  {
+    "日期": "2024-02-04",
+    "类型": "T联赛",
+    "胜者": "LIN Yun-Ju",
+    "负者": "Shohei ONODERA"
+  },
+  {
+    "日期": "2024-02-04",
+    "类型": "T联赛",
+    "胜者": "YAN An",
+    "负者": "Shunsuke TOGAMI"
+  },
+  {
+    "日期": "2024-02-04",
+    "类型": "T联赛",
+    "胜者": "LIN Yun-Ju",
+    "负者": "HAO Shuai"
+  },
+  {
+    "日期": "2024-02-10",
+    "类型": "T联赛",
+    "胜者": "Maharu YOSHIMURA",
+    "负者": "Yuhi SAKAI"
+  },
+  {
+    "日期": "2024-02-10",
+    "类型": "T联赛",
+    "胜者": "ZHAO Xinghao",
+    "负者": "Akira YOKOYA"
+  },
+  {
+    "日期": "2024-02-10",
+    "类型": "T联赛",
+    "胜者": "Masataka MORIZONO",
+    "负者": "Kazuki HAMADA"
+  },
+  {
+    "日期": "2024-02-11",
+    "类型": "T联赛",
+    "胜者": "ZHAO Xinghao",
+    "负者": "Yuya OSHIMA"
+  },
+  {
+    "日期": "2024-02-11",
+    "类型": "T联赛",
+    "胜者": "Hiroto SHINOZUKA",
+    "负者": "Maharu YOSHIMURA"
+  },
+  {
+    "日期": "2024-02-11",
+    "类型": "T联赛",
+    "胜者": "Sora MATSUSHIMA",
+    "负者": "Taimu ARINOBU"
+  },
+  {
+    "日期": "2024-02-11",
+    "类型": "T联赛",
+    "胜者": "XU Yu",
+    "负者": "Hiroto SHINOZUKA"
+  },
+  {
+    "日期": "2024-02-12",
+    "类型": "T联赛",
+    "胜者": "CHEN Jinqi",
+    "负者": "Akira YOKOYA"
+  },
+  {
+    "日期": "2024-02-12",
+    "类型": "T联赛",
+    "胜者": "Fumiya IGARASHI",
+    "负者": "Masataka MORIZONO"
+  },
+  {
+    "日期": "2024-02-12",
+    "类型": "T联赛",
+    "胜者": "Taisei MATSUSHITA",
+    "负者": "Kenta MATSUDAIRA"
+  },
+  {
+    "日期": "2024-02-12",
+    "类型": "T联赛",
+    "胜者": "Kenta MATSUDAIRA",
+    "负者": "Taisei MATSUSHITA"
+  },
+  {
+    "日期": "2024-03-02",
+    "类型": "T联赛",
+    "胜者": "HAO Shuai",
+    "负者": "Tomokazu HARIMOTO"
+  },
+  {
+    "日期": "2024-03-02",
+    "类型": "T联赛",
+    "胜者": "Yuma TANIGAKI",
+    "负者": "Maharu YOSHIMURA"
+  },
+  {
+    "日期": "2024-03-02",
+    "类型": "T联赛",
+    "胜者": "Taimu ARINOBU",
+    "负者": "Koki NIWA"
+  },
+  {
+    "日期": "2024-03-03",
+    "类型": "T联赛",
+    "胜者": "HAO Shuai",
+    "负者": "CHEN Jinqi"
+  },
+  {
+    "日期": "2024-03-03",
+    "类型": "T联赛",
+    "胜者": "Yuta TANAKA",
+    "负者": "YAN An"
+  },
+  {
+    "日期": "2024-03-03",
+    "类型": "T联赛",
+    "胜者": "Ryoichi YOSHIYAMA",
+    "负者": "Kenta MATSUDAIRA"
+  },
+  {
+    "日期": "2024-03-05",
+    "类型": "T联赛",
+    "胜者": "LIN Yun-Ju",
+    "负者": "Kenta MATSUDAIRA"
+  },
+  {
+    "日期": "2024-03-05",
+    "类型": "T联赛",
+    "胜者": "Hiroto SHINOZUKA",
+    "负者": "CHEN Jinqi"
+  },
+  {
+    "日期": "2024-03-05",
+    "类型": "T联赛",
+    "胜者": "Yuta TANAKA",
+    "负者": "Sora MATSUSHIMA"
+  },
+  {
+    "日期": "2024-03-05",
+    "类型": "T联赛",
+    "胜者": "LIN Yun-Ju",
+    "负者": "Yuta TANAKA"
+  },
+  {
+    "日期": "2024-03-06",
+    "类型": "T联赛",
+    "胜者": "Yuto KIZUKURI",
+    "负者": "Kenta MATSUDAIRA"
+  },
+  {
+    "日期": "2024-03-06",
+    "类型": "T联赛",
+    "胜者": "Fumiya IGARASHI",
+    "负者": "Sho SONE"
+  },
+  {
+    "日期": "2024-03-06",
+    "类型": "T联赛",
+    "胜者": "Satoshi EIDA",
+    "负者": "CHEN Jinqi"
+  },
+  {
+    "日期": "2024-03-06",
+    "类型": "T联赛",
+    "胜者": "Satoshi EIDA",
+    "负者": "CHO Seungmin"
+  },
+  {
     "日期": "2024-03-17",
     "类型": "大满贯",
     "胜者": "WANG Chuqin",
@@ -2314,6 +2608,42 @@
     "类型": "大满贯",
     "胜者": "MA Jinbao",
     "负者": "Eric JOUTI"
+  },
+  {
+    "日期": "2024-03-22",
+    "类型": "T联赛",
+    "胜者": "HAO Shuai",
+    "负者": "ZHAO Xinghao"
+  },
+  {
+    "日期": "2024-03-22",
+    "类型": "T联赛",
+    "胜者": "YAN An",
+    "负者": "Tomokazu HARIMOTO"
+  },
+  {
+    "日期": "2024-03-22",
+    "类型": "T联赛",
+    "胜者": "Ryoichi YOSHIYAMA",
+    "负者": "Maharu YOSHIMURA"
+  },
+  {
+    "日期": "2024-03-23",
+    "类型": "T联赛",
+    "胜者": "LIN Yun-Ju",
+    "负者": "HAO Shuai"
+  },
+  {
+    "日期": "2024-03-23",
+    "类型": "T联赛",
+    "胜者": "Sora MATSUSHIMA",
+    "负者": "YAN An"
+  },
+  {
+    "日期": "2024-03-23",
+    "类型": "T联赛",
+    "胜者": "Shunsuke TOGAMI",
+    "负者": "Ryoichi YOSHIYAMA"
   },
   {
     "日期": "2024-03-31",
@@ -6942,6 +7272,234 @@
     "负者": "CHUA Josh"
   },
   {
+    "日期": "2024-08-06",
+    "类型": "奥运会团体",
+    "胜者": "WANG Chuqin",
+    "负者": "Manav Vikash THAKKAR"
+  },
+  {
+    "日期": "2024-08-06",
+    "类型": "奥运会团体",
+    "胜者": "FAN Zhendong",
+    "负者": "Sharath Kamal ACHANTA"
+  },
+  {
+    "日期": "2024-08-06",
+    "类型": "奥运会团体",
+    "胜者": "JANG Woojin",
+    "负者": "Andrej GACINA"
+  },
+  {
+    "日期": "2024-08-06",
+    "类型": "奥运会团体",
+    "胜者": "LIM Jonghoon",
+    "负者": "Tomislav PUCAR"
+  },
+  {
+    "日期": "2024-08-06",
+    "类型": "奥运会团体",
+    "胜者": "Timo BOLL",
+    "负者": "Eugene WANG"
+  },
+  {
+    "日期": "2024-08-06",
+    "类型": "奥运会团体",
+    "胜者": "Dimitrij OVTCHAROV",
+    "负者": "Edward LY"
+  },
+  {
+    "日期": "2024-08-06",
+    "类型": "奥运会团体",
+    "胜者": "Alexis LEBRUN",
+    "负者": "Deni KOZUL"
+  },
+  {
+    "日期": "2024-08-06",
+    "类型": "奥运会团体",
+    "胜者": "Felix LEBRUN",
+    "负者": "Darko JORGIC"
+  },
+  {
+    "日期": "2024-08-06",
+    "类型": "奥运会团体",
+    "胜者": "Vitor ISHIY",
+    "负者": "Joao GERALDO"
+  },
+  {
+    "日期": "2024-08-06",
+    "类型": "奥运会团体",
+    "胜者": "Hugo CALDERANO",
+    "负者": "Joao GERALDO"
+  },
+  {
+    "日期": "2024-08-06",
+    "类型": "奥运会团体",
+    "胜者": "Marcos FREITAS",
+    "负者": "Guilherme TEODORO"
+  },
+  {
+    "日期": "2024-08-06",
+    "类型": "奥运会团体",
+    "胜者": "Hiroto SHINOZUKA",
+    "负者": "Finn LUU"
+  },
+  {
+    "日期": "2024-08-06",
+    "类型": "奥运会团体",
+    "胜者": "Tomokazu HARIMOTO",
+    "负者": "BAE Hwan"
+  },
+  {
+    "日期": "2024-08-06",
+    "类型": "奥运会团体",
+    "胜者": "KAO Cheng-Jui",
+    "负者": "Youssef ABDEL-AZIZ"
+  },
+  {
+    "日期": "2024-08-06",
+    "类型": "奥运会团体",
+    "胜者": "LIN Yun-Ju",
+    "负者": "Mohamed EL-BEIALI"
+  },
+  {
+    "日期": "2024-08-06",
+    "类型": "奥运会团体",
+    "胜者": "Kristian KARLSSON",
+    "负者": "Jonathan GROTH"
+  },
+  {
+    "日期": "2024-08-06",
+    "类型": "奥运会团体",
+    "胜者": "Truls MOREGARD",
+    "负者": "Anders LIND"
+  },
+  {
+    "日期": "2024-08-07",
+    "类型": "奥运会团体",
+    "胜者": "Felix LEBRUN",
+    "负者": "Hugo CALDERANO"
+  },
+  {
+    "日期": "2024-08-07",
+    "类型": "奥运会团体",
+    "胜者": "Alexis LEBRUN",
+    "负者": "Vitor ISHIY"
+  },
+  {
+    "日期": "2024-08-07",
+    "类型": "奥运会团体",
+    "胜者": "FAN Zhendong",
+    "负者": "LIM Jonghoon"
+  },
+  {
+    "日期": "2024-08-07",
+    "类型": "奥运会团体",
+    "胜者": "WANG Chuqin",
+    "负者": "JANG Woojin"
+  },
+  {
+    "日期": "2024-08-07",
+    "类型": "奥运会团体",
+    "胜者": "Anton KALLBERG",
+    "负者": "Timo BOLL"
+  },
+  {
+    "日期": "2024-08-07",
+    "类型": "奥运会团体",
+    "胜者": "Truls MOREGARD",
+    "负者": "Dimitrij OVTCHAROV"
+  },
+  {
+    "日期": "2024-08-07",
+    "类型": "奥运会团体",
+    "胜者": "Tomokazu HARIMOTO",
+    "负者": "CHUANG Chih-Yuan"
+  },
+  {
+    "日期": "2024-08-07",
+    "类型": "奥运会团体",
+    "胜者": "Shunsuke TOGAMI",
+    "负者": "KAO Cheng-Jui"
+  },
+  {
+    "日期": "2024-08-07",
+    "类型": "奥运会团体",
+    "胜者": "LIN Yun-Ju",
+    "负者": "Tomokazu HARIMOTO"
+  },
+  {
+    "日期": "2024-08-08",
+    "类型": "奥运会团体",
+    "胜者": "FAN Zhendong",
+    "负者": "Felix LEBRUN"
+  },
+  {
+    "日期": "2024-08-08",
+    "类型": "奥运会团体",
+    "胜者": "WANG Chuqin",
+    "负者": "Alexis LEBRUN"
+  },
+  {
+    "日期": "2024-08-08",
+    "类型": "奥运会团体",
+    "胜者": "Tomokazu HARIMOTO",
+    "负者": "Truls MOREGARD"
+  },
+  {
+    "日期": "2024-08-08",
+    "类型": "奥运会团体",
+    "胜者": "Kristian KARLSSON",
+    "负者": "Shunsuke TOGAMI"
+  },
+  {
+    "日期": "2024-08-08",
+    "类型": "奥运会团体",
+    "胜者": "Truls MOREGARD",
+    "负者": "Hiroto SHINOZUKA"
+  },
+  {
+    "日期": "2024-08-08",
+    "类型": "奥运会团体",
+    "胜者": "Anton KALLBERG",
+    "负者": "Tomokazu HARIMOTO"
+  },
+  {
+    "日期": "2024-08-09",
+    "类型": "奥运会团体",
+    "胜者": "FAN Zhendong",
+    "负者": "Truls MOREGARD"
+  },
+  {
+    "日期": "2024-08-09",
+    "类型": "奥运会团体",
+    "胜者": "WANG Chuqin",
+    "负者": "Kristian KARLSSON"
+  },
+  {
+    "日期": "2024-08-09",
+    "类型": "奥运会团体",
+    "胜者": "Felix LEBRUN",
+    "负者": "Tomokazu HARIMOTO"
+  },
+  {
+    "日期": "2024-08-09",
+    "类型": "奥运会团体",
+    "胜者": "Shunsuke TOGAMI",
+    "负者": "Alexis LEBRUN"
+  },
+  {
+    "日期": "2024-08-09",
+    "类型": "奥运会团体",
+    "胜者": "Tomokazu HARIMOTO",
+    "负者": "Simon GAUZY"
+  },
+  {
+    "日期": "2024-08-09",
+    "类型": "奥运会团体",
+    "胜者": "Felix LEBRUN",
+    "负者": "Hiroto SHINOZUKA"
+  },
+  {
     "日期": "2024-08-11",
     "类型": "奥运会",
     "胜者": "FAN Zhendong",
@@ -7344,232 +7902,22 @@
     "负者": "Vladislav URSU"
   },
   {
-    "日期": "2024-08-09",
-    "类型": "奥运会团体",
-    "胜者": "FAN Zhendong",
-    "负者": "Truls MOREGARD"
-  },
-  {
-    "日期": "2024-08-09",
-    "类型": "奥运会团体",
-    "胜者": "WANG Chuqin",
-    "负者": "Kristian KARLSSON"
-  },
-  {
-    "日期": "2024-08-09",
-    "类型": "奥运会团体",
-    "胜者": "Felix LEBRUN",
-    "负者": "Tomokazu HARIMOTO"
-  },
-  {
-    "日期": "2024-08-09",
-    "类型": "奥运会团体",
-    "胜者": "Shunsuke TOGAMI",
-    "负者": "Alexis LEBRUN"
-  },
-  {
-    "日期": "2024-08-09",
-    "类型": "奥运会团体",
-    "胜者": "Tomokazu HARIMOTO",
-    "负者": "Simon GAUZY"
-  },
-  {
-    "日期": "2024-08-09",
-    "类型": "奥运会团体",
-    "胜者": "Felix LEBRUN",
-    "负者": "Hiroto SHINOZUKA"
-  },
-  {
-    "日期": "2024-08-08",
-    "类型": "奥运会团体",
-    "胜者": "FAN Zhendong",
-    "负者": "Felix LEBRUN"
-  },
-  {
-    "日期": "2024-08-08",
-    "类型": "奥运会团体",
-    "胜者": "WANG Chuqin",
-    "负者": "Alexis LEBRUN"
-  },
-  {
-    "日期": "2024-08-08",
-    "类型": "奥运会团体",
-    "胜者": "Tomokazu HARIMOTO",
-    "负者": "Truls MOREGARD"
-  },
-  {
-    "日期": "2024-08-08",
-    "类型": "奥运会团体",
-    "胜者": "Kristian KARLSSON",
-    "负者": "Shunsuke TOGAMI"
-  },
-  {
-    "日期": "2024-08-08",
-    "类型": "奥运会团体",
-    "胜者": "Truls MOREGARD",
-    "负者": "Hiroto SHINOZUKA"
-  },
-  {
-    "日期": "2024-08-08",
-    "类型": "奥运会团体",
-    "胜者": "Anton KALLBERG",
-    "负者": "Tomokazu HARIMOTO"
-  },
-  {
-    "日期": "2024-08-07",
-    "类型": "奥运会团体",
-    "胜者": "Felix LEBRUN",
-    "负者": "Hugo CALDERANO"
-  },
-  {
-    "日期": "2024-08-07",
-    "类型": "奥运会团体",
-    "胜者": "Alexis LEBRUN",
-    "负者": "Vitor ISHIY"
-  },
-  {
-    "日期": "2024-08-07",
-    "类型": "奥运会团体",
-    "胜者": "FAN Zhendong",
-    "负者": "LIM Jonghoon"
-  },
-  {
-    "日期": "2024-08-07",
-    "类型": "奥运会团体",
-    "胜者": "WANG Chuqin",
-    "负者": "JANG Woojin"
-  },
-  {
-    "日期": "2024-08-07",
-    "类型": "奥运会团体",
-    "胜者": "Anton KALLBERG",
-    "负者": "Timo BOLL"
-  },
-  {
-    "日期": "2024-08-07",
-    "类型": "奥运会团体",
-    "胜者": "Truls MOREGARD",
-    "负者": "Dimitrij OVTCHAROV"
-  },
-  {
-    "日期": "2024-08-07",
-    "类型": "奥运会团体",
-    "胜者": "Tomokazu HARIMOTO",
-    "负者": "CHUANG Chih-Yuan"
-  },
-  {
-    "日期": "2024-08-07",
-    "类型": "奥运会团体",
-    "胜者": "Shunsuke TOGAMI",
-    "负者": "KAO Cheng-Jui"
-  },
-  {
-    "日期": "2024-08-07",
-    "类型": "奥运会团体",
+    "日期": "2024-08-24",
+    "类型": "T联赛",
     "胜者": "LIN Yun-Ju",
-    "负者": "Tomokazu HARIMOTO"
+    "负者": "Masataka MORIZONO"
   },
   {
-    "日期": "2024-08-06",
-    "类型": "奥运会团体",
-    "胜者": "WANG Chuqin",
-    "负者": "Manav Vikash THAKKAR"
+    "日期": "2024-08-24",
+    "类型": "T联赛",
+    "胜者": "Sora MATSUSHIMA",
+    "负者": "Taisei MATSUSHITA"
   },
   {
-    "日期": "2024-08-06",
-    "类型": "奥运会团体",
-    "胜者": "FAN Zhendong",
-    "负者": "Sharath Kamal ACHANTA"
-  },
-  {
-    "日期": "2024-08-06",
-    "类型": "奥运会团体",
-    "胜者": "JANG Woojin",
-    "负者": "Andrej GACINA"
-  },
-  {
-    "日期": "2024-08-06",
-    "类型": "奥运会团体",
-    "胜者": "LIM Jonghoon",
-    "负者": "Tomislav PUCAR"
-  },
-  {
-    "日期": "2024-08-06",
-    "类型": "奥运会团体",
-    "胜者": "Timo BOLL",
-    "负者": "Eugene WANG"
-  },
-  {
-    "日期": "2024-08-06",
-    "类型": "奥运会团体",
-    "胜者": "Dimitrij OVTCHAROV",
-    "负者": "Edward LY"
-  },
-  {
-    "日期": "2024-08-06",
-    "类型": "奥运会团体",
-    "胜者": "Alexis LEBRUN",
-    "负者": "Deni KOZUL"
-  },
-  {
-    "日期": "2024-08-06",
-    "类型": "奥运会团体",
-    "胜者": "Felix LEBRUN",
-    "负者": "Darko JORGIC"
-  },
-  {
-    "日期": "2024-08-06",
-    "类型": "奥运会团体",
-    "胜者": "Vitor ISHIY",
-    "负者": "Joao GERALDO"
-  },
-  {
-    "日期": "2024-08-06",
-    "类型": "奥运会团体",
-    "胜者": "Hugo CALDERANO",
-    "负者": "Joao GERALDO"
-  },
-  {
-    "日期": "2024-08-06",
-    "类型": "奥运会团体",
-    "胜者": "Marcos FREITAS",
-    "负者": "Guilherme TEODORO"
-  },
-  {
-    "日期": "2024-08-06",
-    "类型": "奥运会团体",
-    "胜者": "Hiroto SHINOZUKA",
-    "负者": "Finn LUU"
-  },
-  {
-    "日期": "2024-08-06",
-    "类型": "奥运会团体",
-    "胜者": "Tomokazu HARIMOTO",
-    "负者": "BAE Hwan"
-  },
-  {
-    "日期": "2024-08-06",
-    "类型": "奥运会团体",
-    "胜者": "KAO Cheng-Jui",
-    "负者": "Youssef ABDEL-AZIZ"
-  },
-  {
-    "日期": "2024-08-06",
-    "类型": "奥运会团体",
-    "胜者": "LIN Yun-Ju",
-    "负者": "Mohamed EL-BEIALI"
-  },
-  {
-    "日期": "2024-08-06",
-    "类型": "奥运会团体",
-    "胜者": "Kristian KARLSSON",
-    "负者": "Jonathan GROTH"
-  },
-  {
-    "日期": "2024-08-06",
-    "类型": "奥运会团体",
-    "胜者": "Truls MOREGARD",
-    "负者": "Anders LIND"
+    "日期": "2024-08-24",
+    "类型": "T联赛",
+    "胜者": "Satoshi EIDA",
+    "负者": "Yuya OSHIMA"
   },
   {
     "日期": "2024-08-25",
@@ -7816,6 +8164,60 @@
     "类型": "常规挑战赛",
     "胜者": "Johan CHAVEZ",
     "负者": "Bryan BLAS"
+  },
+  {
+    "日期": "2024-08-31",
+    "类型": "T联赛",
+    "胜者": "Tomokazu HARIMOTO",
+    "负者": "Fumiya IGARASHI"
+  },
+  {
+    "日期": "2024-08-31",
+    "类型": "T联赛",
+    "胜者": "JANG Woojin",
+    "负者": "Maharu YOSHIMURA"
+  },
+  {
+    "日期": "2024-08-31",
+    "类型": "T联赛",
+    "胜者": "Hiroto SHINOZUKA",
+    "负者": "Yuta TANAKA"
+  },
+  {
+    "日期": "2024-09-01",
+    "类型": "T联赛",
+    "胜者": "LIN Yun-Ju",
+    "负者": "Maharu YOSHIMURA"
+  },
+  {
+    "日期": "2024-09-01",
+    "类型": "T联赛",
+    "胜者": "Sora MATSUSHIMA",
+    "负者": "Tomokazu HARIMOTO"
+  },
+  {
+    "日期": "2024-09-01",
+    "类型": "T联赛",
+    "胜者": "Hiroto SHINOZUKA",
+    "负者": "Yuya OSHIMA"
+  },
+  {
+    "日期": "2024-09-07",
+    "类型": "T联赛",
+    "胜者": "Hiroto SHINOZUKA",
+    "负者": "Satoshi EIDA"
+  },
+  {
+    "日期": "2024-09-07",
+    "类型": "T联赛",
+    "胜者": "Tomokazu HARIMOTO",
+    "负者": "Kazuki HAMADA"
+  },
+  {
+    "日期": "2024-09-07",
+    "类型": "T联赛",
+    "胜者": "Maharu YOSHIMURA",
+    "负者": "Masataka MORIZONO"
   },
   {
     "日期": "2024-09-08",
@@ -8142,6 +8544,30 @@
     "负者": "YIU Kwan To"
   },
   {
+    "日期": "2024-09-08",
+    "类型": "T联赛",
+    "胜者": "Fumiya IGARASHI",
+    "负者": "Masataka MORIZONO"
+  },
+  {
+    "日期": "2024-09-08",
+    "类型": "T联赛",
+    "胜者": "Kazuki HAMADA",
+    "负者": "Masaki YOSHIDA"
+  },
+  {
+    "日期": "2024-09-08",
+    "类型": "T联赛",
+    "胜者": "Kenta MATSUDAIRA",
+    "负者": "Satoshi EIDA"
+  },
+  {
+    "日期": "2024-09-08",
+    "类型": "T联赛",
+    "胜者": "Satoshi EIDA",
+    "负者": "Masaki YOSHIDA"
+  },
+  {
     "日期": "2024-09-15",
     "类型": "冠军赛",
     "胜者": "LIN Shidong",
@@ -8326,6 +8752,168 @@
     "类型": "冠军赛",
     "胜者": "Liam PITCHFORD",
     "负者": "Nicholas LUM"
+  },
+  {
+    "日期": "2024-09-21",
+    "类型": "T联赛",
+    "胜者": "Hiroto SHINOZUKA",
+    "负者": "Ryoichi YOSHIYAMA"
+  },
+  {
+    "日期": "2024-09-21",
+    "类型": "T联赛",
+    "胜者": "Tomokazu HARIMOTO",
+    "负者": "HAO Shuai"
+  },
+  {
+    "日期": "2024-09-21",
+    "类型": "T联赛",
+    "胜者": "Maharu YOSHIMURA",
+    "负者": "Mizuki OIKAWA"
+  },
+  {
+    "日期": "2024-09-21",
+    "类型": "T联赛",
+    "胜者": "LIN Yun-Ju",
+    "负者": "JANG Woojin"
+  },
+  {
+    "日期": "2024-09-21",
+    "类型": "T联赛",
+    "胜者": "Yuta TANAKA",
+    "负者": "Sora MATSUSHIMA"
+  },
+  {
+    "日期": "2024-09-21",
+    "类型": "T联赛",
+    "胜者": "Yuya OSHIMA",
+    "负者": "Fumiya IGARASHI"
+  },
+  {
+    "日期": "2024-09-21",
+    "类型": "T联赛",
+    "胜者": "LIN Yun-Ju",
+    "负者": "PARK Gyuhyeon"
+  },
+  {
+    "日期": "2024-09-22",
+    "类型": "T联赛",
+    "胜者": "HAO Shuai",
+    "负者": "Yuhi SAKAI"
+  },
+  {
+    "日期": "2024-09-22",
+    "类型": "T联赛",
+    "胜者": "Masataka MORIZONO",
+    "负者": "Mizuki OIKAWA"
+  },
+  {
+    "日期": "2024-09-22",
+    "类型": "T联赛",
+    "胜者": "Ryoichi YOSHIYAMA",
+    "负者": "Asuka MACHI"
+  },
+  {
+    "日期": "2024-09-22",
+    "类型": "T联赛",
+    "胜者": "Sora MATSUSHIMA",
+    "负者": "Daito ONO"
+  },
+  {
+    "日期": "2024-09-22",
+    "类型": "T联赛",
+    "胜者": "LIN Yun-Ju",
+    "负者": "Sho SONE"
+  },
+  {
+    "日期": "2024-09-22",
+    "类型": "T联赛",
+    "胜者": "Yuya OSHIMA",
+    "负者": "Yuto KIZUKURI"
+  },
+  {
+    "日期": "2024-09-28",
+    "类型": "T联赛",
+    "胜者": "CHO Seungmin",
+    "负者": "Yuto KIZUKURI"
+  },
+  {
+    "日期": "2024-09-28",
+    "类型": "T联赛",
+    "胜者": "Yukiya UDA",
+    "负者": "Masahiro MIYAKAWA"
+  },
+  {
+    "日期": "2024-09-28",
+    "类型": "T联赛",
+    "胜者": "Taimu ARINOBU",
+    "负者": "Hayate SUZUKI"
+  },
+  {
+    "日期": "2024-09-28",
+    "类型": "T联赛",
+    "胜者": "Yukiya UDA",
+    "负者": "Hayate SUZUKI"
+  },
+  {
+    "日期": "2024-09-28",
+    "类型": "T联赛",
+    "胜者": "Yuya OSHIMA",
+    "负者": "Satoshi EIDA"
+  },
+  {
+    "日期": "2024-09-28",
+    "类型": "T联赛",
+    "胜者": "Taisei MATSUSHITA",
+    "负者": "Kazuhiro YOSHIMURA"
+  },
+  {
+    "日期": "2024-09-28",
+    "类型": "T联赛",
+    "胜者": "Akira YOKOYA",
+    "负者": "Masataka MORIZONO"
+  },
+  {
+    "日期": "2024-09-28",
+    "类型": "T联赛",
+    "胜者": "Yuya OSHIMA",
+    "负者": "Taisei MATSUSHITA"
+  },
+  {
+    "日期": "2024-09-29",
+    "类型": "T联赛",
+    "胜者": "Koki NIWA",
+    "负者": "Masahiro MIYAKAWA"
+  },
+  {
+    "日期": "2024-09-29",
+    "类型": "T联赛",
+    "胜者": "Ryoichi YOSHIYAMA",
+    "负者": "CHO Seungmin"
+  },
+  {
+    "日期": "2024-09-29",
+    "类型": "T联赛",
+    "胜者": "Hayate SUZUKI",
+    "负者": "HAO Shuai"
+  },
+  {
+    "日期": "2024-09-29",
+    "类型": "T联赛",
+    "胜者": "Masataka MORIZONO",
+    "负者": "PARK Gyuhyeon"
+  },
+  {
+    "日期": "2024-09-29",
+    "类型": "T联赛",
+    "胜者": "Satoshi EIDA",
+    "负者": "KANG Dongsoo"
+  },
+  {
+    "日期": "2024-09-29",
+    "类型": "T联赛",
+    "胜者": "Kenta MATSUDAIRA",
+    "负者": "Taisei MATSUSHITA"
   },
   {
     "日期": "2024-10-06",
@@ -9042,6 +9630,96 @@
     "负者": "Santiago LORENZO"
   },
   {
+    "日期": "2024-10-12",
+    "类型": "T联赛",
+    "胜者": "Yuta TANAKA",
+    "负者": "Shunsuke OKANO"
+  },
+  {
+    "日期": "2024-10-12",
+    "类型": "T联赛",
+    "胜者": "Shunto IWAIDA",
+    "负者": "Kenta MATSUDAIRA"
+  },
+  {
+    "日期": "2024-10-12",
+    "类型": "T联赛",
+    "胜者": "Masaki YOSHIDA",
+    "负者": "Masahiro MIYAKAWA"
+  },
+  {
+    "日期": "2024-10-19",
+    "类型": "T联赛",
+    "胜者": "Masaki YOSHIDA",
+    "负者": "HAO Shuai"
+  },
+  {
+    "日期": "2024-10-19",
+    "类型": "T联赛",
+    "胜者": "Mizuki OIKAWA",
+    "负者": "Yuta TANAKA"
+  },
+  {
+    "日期": "2024-10-19",
+    "类型": "T联赛",
+    "胜者": "LEE Sangsu",
+    "负者": "KANG Dongsoo"
+  },
+  {
+    "日期": "2024-10-20",
+    "类型": "T联赛",
+    "胜者": "HAO Shuai",
+    "负者": "Yuya OSHIMA"
+  },
+  {
+    "日期": "2024-10-20",
+    "类型": "T联赛",
+    "胜者": "Ryoichi YOSHIYAMA",
+    "负者": "Sora MATSUSHIMA"
+  },
+  {
+    "日期": "2024-10-20",
+    "类型": "T联赛",
+    "胜者": "LEE Sangsu",
+    "负者": "Hayato MIKI"
+  },
+  {
+    "日期": "2024-10-25",
+    "类型": "T联赛",
+    "胜者": "Hiromu KOBAYASHI",
+    "负者": "KANG Dongsoo"
+  },
+  {
+    "日期": "2024-10-25",
+    "类型": "T联赛",
+    "胜者": "Takaya KAMI",
+    "负者": "CHEN Jinqi"
+  },
+  {
+    "日期": "2024-10-25",
+    "类型": "T联赛",
+    "胜者": "Yuta TANAKA",
+    "负者": "Yuto KIZUKURI"
+  },
+  {
+    "日期": "2024-10-26",
+    "类型": "T联赛",
+    "胜者": "Yuta TANAKA",
+    "负者": "Yuhi SAKAI"
+  },
+  {
+    "日期": "2024-10-26",
+    "类型": "T联赛",
+    "胜者": "Masaki YOSHIDA",
+    "负者": "Kazuki HAMADA"
+  },
+  {
+    "日期": "2024-10-26",
+    "类型": "T联赛",
+    "胜者": "KANG Dongsoo",
+    "负者": "Satoshi EIDA"
+  },
+  {
     "日期": "2024-10-27",
     "类型": "冠军赛",
     "胜者": "Felix LEBRUN",
@@ -9228,774 +9906,6 @@
     "负者": "KAO Cheng-Jui"
   },
   {
-    "日期": "2024-11-24",
-    "类型": "总决赛",
-    "胜者": "WANG Chuqin",
-    "负者": "Tomokazu HARIMOTO"
-  },
-  {
-    "日期": "2024-11-24",
-    "类型": "总决赛",
-    "胜者": "WANG Chuqin",
-    "负者": "Darko JORGIC"
-  },
-  {
-    "日期": "2024-11-24",
-    "类型": "总决赛",
-    "胜者": "Tomokazu HARIMOTO",
-    "负者": "LIN Shidong"
-  },
-  {
-    "日期": "2024-11-24",
-    "类型": "总决赛",
-    "胜者": "LIN Shidong",
-    "负者": "Dang QIU"
-  },
-  {
-    "日期": "2024-11-24",
-    "类型": "总决赛",
-    "胜者": "Tomokazu HARIMOTO",
-    "负者": "JANG Woojin"
-  },
-  {
-    "日期": "2024-11-24",
-    "类型": "总决赛",
-    "胜者": "WANG Chuqin",
-    "负者": "Truls MOREGARD"
-  },
-  {
-    "日期": "2024-11-24",
-    "类型": "总决赛",
-    "胜者": "Darko JORGIC",
-    "负者": "Benedikt DUDA"
-  },
-  {
-    "日期": "2024-11-24",
-    "类型": "总决赛",
-    "胜者": "WANG Chuqin",
-    "负者": "Patrick FRANZISKA"
-  },
-  {
-    "日期": "2024-11-24",
-    "类型": "总决赛",
-    "胜者": "LIN Shidong",
-    "负者": "Alexis LEBRUN"
-  },
-  {
-    "日期": "2024-11-24",
-    "类型": "总决赛",
-    "胜者": "JANG Woojin",
-    "负者": "Hugo CALDERANO"
-  },
-  {
-    "日期": "2024-11-24",
-    "类型": "总决赛",
-    "胜者": "Truls MOREGARD",
-    "负者": "Anton KALLBERG"
-  },
-  {
-    "日期": "2024-11-24",
-    "类型": "总决赛",
-    "胜者": "Benedikt DUDA",
-    "负者": "Felix LEBRUN"
-  },
-  {
-    "日期": "2024-11-24",
-    "类型": "总决赛",
-    "胜者": "Tomokazu HARIMOTO",
-    "负者": "LIANG Jingkun"
-  },
-  {
-    "日期": "2024-11-24",
-    "类型": "总决赛",
-    "胜者": "Dang QIU",
-    "负者": "LIN Yun-Ju"
-  },
-  {
-    "日期": "2024-11-24",
-    "类型": "总决赛",
-    "胜者": "Darko JORGIC",
-    "负者": "LIN Gaoyuan"
-  },
-  {
-    "日期": "2024-01-06",
-    "类型": "T联赛",
-    "胜者": "Satoshi EIDA",
-    "负者": "Sora MATSUSHIMA"
-  },
-  {
-    "日期": "2024-01-06",
-    "类型": "T联赛",
-    "胜者": "Mizuki OIKAWA",
-    "负者": "Takashi TAKAGIWA"
-  },
-  {
-    "日期": "2024-01-06",
-    "类型": "T联赛",
-    "胜者": "Hiroto SHINOZUKA",
-    "负者": "Sho SONE"
-  },
-  {
-    "日期": "2024-01-07",
-    "类型": "T联赛",
-    "胜者": "Akira YOKOYA",
-    "负者": "HAO Shuai"
-  },
-  {
-    "日期": "2024-01-07",
-    "类型": "T联赛",
-    "胜者": "Taisei MATSUSHITA",
-    "负者": "Ryoichi YOSHIYAMA"
-  },
-  {
-    "日期": "2024-01-07",
-    "类型": "T联赛",
-    "胜者": "Masataka MORIZONO",
-    "负者": "YAN An"
-  },
-  {
-    "日期": "2024-01-08",
-    "类型": "T联赛",
-    "胜者": "YAN An",
-    "负者": "Keishi HAGIHARA"
-  },
-  {
-    "日期": "2024-01-08",
-    "类型": "T联赛",
-    "胜者": "Sora MATSUSHIMA",
-    "负者": "HAO Shuai"
-  },
-  {
-    "日期": "2024-01-08",
-    "类型": "T联赛",
-    "胜者": "Yuya OSHIMA",
-    "负者": "Koki NIWA"
-  },
-  {
-    "日期": "2024-01-12",
-    "类型": "T联赛",
-    "胜者": "Satoshi EIDA",
-    "负者": "Taisei MATSUSHITA"
-  },
-  {
-    "日期": "2024-01-12",
-    "类型": "T联赛",
-    "胜者": "Akira YOKOYA",
-    "负者": "Sho SONE"
-  },
-  {
-    "日期": "2024-01-12",
-    "类型": "T联赛",
-    "胜者": "Masataka MORIZONO",
-    "负者": "Yuto KIZUKURI"
-  },
-  {
-    "日期": "2024-01-12",
-    "类型": "T联赛",
-    "胜者": "Akira YOKOYA",
-    "负者": "Satoshi EIDA"
-  },
-  {
-    "日期": "2024-01-13",
-    "类型": "T联赛",
-    "胜者": "Maharu YOSHIMURA",
-    "负者": "Masataka MORIZONO"
-  },
-  {
-    "日期": "2024-01-13",
-    "类型": "T联赛",
-    "胜者": "ZHAO Xinghao",
-    "负者": "Akira YOKOYA"
-  },
-  {
-    "日期": "2024-01-13",
-    "类型": "T联赛",
-    "胜者": "Yuki MATSUYAMA",
-    "负者": "Shunsuke OKANO"
-  },
-  {
-    "日期": "2024-01-13",
-    "类型": "T联赛",
-    "胜者": "Maharu YOSHIMURA",
-    "负者": "Akira YOKOYA"
-  },
-  {
-    "日期": "2024-02-03",
-    "类型": "T联赛",
-    "胜者": "LIN Yun-Ju",
-    "负者": "CHO Seungmin"
-  },
-  {
-    "日期": "2024-02-03",
-    "类型": "T联赛",
-    "胜者": "Shunsuke TOGAMI",
-    "负者": "Kenta MATSUDAIRA"
-  },
-  {
-    "日期": "2024-02-03",
-    "类型": "T联赛",
-    "胜者": "Hiroto SHINOZUKA",
-    "负者": "Fumiya IGARASHI"
-  },
-  {
-    "日期": "2024-02-04",
-    "类型": "T联赛",
-    "胜者": "HAO Shuai",
-    "负者": "Sora MATSUSHIMA"
-  },
-  {
-    "日期": "2024-02-04",
-    "类型": "T联赛",
-    "胜者": "LIN Yun-Ju",
-    "负者": "Shohei ONODERA"
-  },
-  {
-    "日期": "2024-02-04",
-    "类型": "T联赛",
-    "胜者": "YAN An",
-    "负者": "Shunsuke TOGAMI"
-  },
-  {
-    "日期": "2024-02-04",
-    "类型": "T联赛",
-    "胜者": "LIN Yun-Ju",
-    "负者": "HAO Shuai"
-  },
-  {
-    "日期": "2024-02-10",
-    "类型": "T联赛",
-    "胜者": "Maharu YOSHIMURA",
-    "负者": "Yuhi SAKAI"
-  },
-  {
-    "日期": "2024-02-10",
-    "类型": "T联赛",
-    "胜者": "ZHAO Xinghao",
-    "负者": "Akira YOKOYA"
-  },
-  {
-    "日期": "2024-02-10",
-    "类型": "T联赛",
-    "胜者": "Masataka MORIZONO",
-    "负者": "Kazuki HAMADA"
-  },
-  {
-    "日期": "2024-02-11",
-    "类型": "T联赛",
-    "胜者": "ZHAO Xinghao",
-    "负者": "Yuya OSHIMA"
-  },
-  {
-    "日期": "2024-02-11",
-    "类型": "T联赛",
-    "胜者": "Hiroto SHINOZUKA",
-    "负者": "Maharu YOSHIMURA"
-  },
-  {
-    "日期": "2024-02-11",
-    "类型": "T联赛",
-    "胜者": "Sora MATSUSHIMA",
-    "负者": "Taimu ARINOBU"
-  },
-  {
-    "日期": "2024-02-11",
-    "类型": "T联赛",
-    "胜者": "XU Yu",
-    "负者": "Hiroto SHINOZUKA"
-  },
-  {
-    "日期": "2024-02-12",
-    "类型": "T联赛",
-    "胜者": "CHEN Jinqi",
-    "负者": "Akira YOKOYA"
-  },
-  {
-    "日期": "2024-02-12",
-    "类型": "T联赛",
-    "胜者": "Fumiya IGARASHI",
-    "负者": "Masataka MORIZONO"
-  },
-  {
-    "日期": "2024-02-12",
-    "类型": "T联赛",
-    "胜者": "Taisei MATSUSHITA",
-    "负者": "Kenta MATSUDAIRA"
-  },
-  {
-    "日期": "2024-02-12",
-    "类型": "T联赛",
-    "胜者": "Kenta MATSUDAIRA",
-    "负者": "Taisei MATSUSHITA"
-  },
-  {
-    "日期": "2024-03-02",
-    "类型": "T联赛",
-    "胜者": "HAO Shuai",
-    "负者": "Tomokazu HARIMOTO"
-  },
-  {
-    "日期": "2024-03-02",
-    "类型": "T联赛",
-    "胜者": "Yuma TANIGAKI",
-    "负者": "Maharu YOSHIMURA"
-  },
-  {
-    "日期": "2024-03-02",
-    "类型": "T联赛",
-    "胜者": "Taimu ARINOBU",
-    "负者": "Koki NIWA"
-  },
-  {
-    "日期": "2024-03-03",
-    "类型": "T联赛",
-    "胜者": "HAO Shuai",
-    "负者": "CHEN Jinqi"
-  },
-  {
-    "日期": "2024-03-03",
-    "类型": "T联赛",
-    "胜者": "Yuta TANAKA",
-    "负者": "YAN An"
-  },
-  {
-    "日期": "2024-03-03",
-    "类型": "T联赛",
-    "胜者": "Ryoichi YOSHIYAMA",
-    "负者": "Kenta MATSUDAIRA"
-  },
-  {
-    "日期": "2024-03-22",
-    "类型": "T联赛",
-    "胜者": "HAO Shuai",
-    "负者": "ZHAO Xinghao"
-  },
-  {
-    "日期": "2024-03-22",
-    "类型": "T联赛",
-    "胜者": "YAN An",
-    "负者": "Tomokazu HARIMOTO"
-  },
-  {
-    "日期": "2024-03-22",
-    "类型": "T联赛",
-    "胜者": "Ryoichi YOSHIYAMA",
-    "负者": "Maharu YOSHIMURA"
-  },
-  {
-    "日期": "2024-03-23",
-    "类型": "T联赛",
-    "胜者": "LIN Yun-Ju",
-    "负者": "HAO Shuai"
-  },
-  {
-    "日期": "2024-03-23",
-    "类型": "T联赛",
-    "胜者": "Sora MATSUSHIMA",
-    "负者": "YAN An"
-  },
-  {
-    "日期": "2024-03-23",
-    "类型": "T联赛",
-    "胜者": "Shunsuke TOGAMI",
-    "负者": "Ryoichi YOSHIYAMA"
-  },
-  {
-    "日期": "2024-03-05",
-    "类型": "T联赛",
-    "胜者": "LIN Yun-Ju",
-    "负者": "Kenta MATSUDAIRA"
-  },
-  {
-    "日期": "2024-03-05",
-    "类型": "T联赛",
-    "胜者": "Hiroto SHINOZUKA",
-    "负者": "CHEN Jinqi"
-  },
-  {
-    "日期": "2024-03-05",
-    "类型": "T联赛",
-    "胜者": "Yuta TANAKA",
-    "负者": "Sora MATSUSHIMA"
-  },
-  {
-    "日期": "2024-03-05",
-    "类型": "T联赛",
-    "胜者": "LIN Yun-Ju",
-    "负者": "Yuta TANAKA"
-  },
-  {
-    "日期": "2024-03-06",
-    "类型": "T联赛",
-    "胜者": "Yuto KIZUKURI",
-    "负者": "Kenta MATSUDAIRA"
-  },
-  {
-    "日期": "2024-03-06",
-    "类型": "T联赛",
-    "胜者": "Fumiya IGARASHI",
-    "负者": "Sho SONE"
-  },
-  {
-    "日期": "2024-03-06",
-    "类型": "T联赛",
-    "胜者": "Satoshi EIDA",
-    "负者": "CHEN Jinqi"
-  },
-  {
-    "日期": "2024-03-06",
-    "类型": "T联赛",
-    "胜者": "Satoshi EIDA",
-    "负者": "CHO Seungmin"
-  },
-  {
-    "日期": "2024-08-24",
-    "类型": "T联赛",
-    "胜者": "LIN Yun-Ju",
-    "负者": "Masataka MORIZONO"
-  },
-  {
-    "日期": "2024-08-24",
-    "类型": "T联赛",
-    "胜者": "Sora MATSUSHIMA",
-    "负者": "Taisei MATSUSHITA"
-  },
-  {
-    "日期": "2024-08-24",
-    "类型": "T联赛",
-    "胜者": "Satoshi EIDA",
-    "负者": "Yuya OSHIMA"
-  },
-  {
-    "日期": "2024-08-31",
-    "类型": "T联赛",
-    "胜者": "Tomokazu HARIMOTO",
-    "负者": "Fumiya IGARASHI"
-  },
-  {
-    "日期": "2024-08-31",
-    "类型": "T联赛",
-    "胜者": "JANG Woojin",
-    "负者": "Maharu YOSHIMURA"
-  },
-  {
-    "日期": "2024-08-31",
-    "类型": "T联赛",
-    "胜者": "Hiroto SHINOZUKA",
-    "负者": "Yuta TANAKA"
-  },
-  {
-    "日期": "2024-09-01",
-    "类型": "T联赛",
-    "胜者": "LIN Yun-Ju",
-    "负者": "Maharu YOSHIMURA"
-  },
-  {
-    "日期": "2024-09-01",
-    "类型": "T联赛",
-    "胜者": "Sora MATSUSHIMA",
-    "负者": "Tomokazu HARIMOTO"
-  },
-  {
-    "日期": "2024-09-01",
-    "类型": "T联赛",
-    "胜者": "Hiroto SHINOZUKA",
-    "负者": "Yuya OSHIMA"
-  },
-  {
-    "日期": "2024-09-07",
-    "类型": "T联赛",
-    "胜者": "Hiroto SHINOZUKA",
-    "负者": "Satoshi EIDA"
-  },
-  {
-    "日期": "2024-09-07",
-    "类型": "T联赛",
-    "胜者": "Tomokazu HARIMOTO",
-    "负者": "Kazuki HAMADA"
-  },
-  {
-    "日期": "2024-09-07",
-    "类型": "T联赛",
-    "胜者": "Maharu YOSHIMURA",
-    "负者": "Masataka MORIZONO"
-  },
-  {
-    "日期": "2024-09-08",
-    "类型": "T联赛",
-    "胜者": "Fumiya IGARASHI",
-    "负者": "Masataka MORIZONO"
-  },
-  {
-    "日期": "2024-09-08",
-    "类型": "T联赛",
-    "胜者": "Kazuki HAMADA",
-    "负者": "Masaki YOSHIDA"
-  },
-  {
-    "日期": "2024-09-08",
-    "类型": "T联赛",
-    "胜者": "Kenta MATSUDAIRA",
-    "负者": "Satoshi EIDA"
-  },
-  {
-    "日期": "2024-09-08",
-    "类型": "T联赛",
-    "胜者": "Satoshi EIDA",
-    "负者": "Masaki YOSHIDA"
-  },
-  {
-    "日期": "2024-09-21",
-    "类型": "T联赛",
-    "胜者": "Hiroto SHINOZUKA",
-    "负者": "Ryoichi YOSHIYAMA"
-  },
-  {
-    "日期": "2024-09-21",
-    "类型": "T联赛",
-    "胜者": "Tomokazu HARIMOTO",
-    "负者": "HAO Shuai"
-  },
-  {
-    "日期": "2024-09-21",
-    "类型": "T联赛",
-    "胜者": "Maharu YOSHIMURA",
-    "负者": "Mizuki OIKAWA"
-  },
-  {
-    "日期": "2024-09-21",
-    "类型": "T联赛",
-    "胜者": "LIN Yun-Ju",
-    "负者": "JANG Woojin"
-  },
-  {
-    "日期": "2024-09-21",
-    "类型": "T联赛",
-    "胜者": "Yuta TANAKA",
-    "负者": "Sora MATSUSHIMA"
-  },
-  {
-    "日期": "2024-09-21",
-    "类型": "T联赛",
-    "胜者": "Yuya OSHIMA",
-    "负者": "Fumiya IGARASHI"
-  },
-  {
-    "日期": "2024-09-21",
-    "类型": "T联赛",
-    "胜者": "LIN Yun-Ju",
-    "负者": "PARK Gyuhyeon"
-  },
-  {
-    "日期": "2024-09-22",
-    "类型": "T联赛",
-    "胜者": "HAO Shuai",
-    "负者": "Yuhi SAKAI"
-  },
-  {
-    "日期": "2024-09-22",
-    "类型": "T联赛",
-    "胜者": "Masataka MORIZONO",
-    "负者": "Mizuki OIKAWA"
-  },
-  {
-    "日期": "2024-09-22",
-    "类型": "T联赛",
-    "胜者": "Ryoichi YOSHIYAMA",
-    "负者": "Asuka MACHI"
-  },
-  {
-    "日期": "2024-09-22",
-    "类型": "T联赛",
-    "胜者": "Sora MATSUSHIMA",
-    "负者": "Daito ONO"
-  },
-  {
-    "日期": "2024-09-22",
-    "类型": "T联赛",
-    "胜者": "LIN Yun-Ju",
-    "负者": "Sho SONE"
-  },
-  {
-    "日期": "2024-09-22",
-    "类型": "T联赛",
-    "胜者": "Yuya OSHIMA",
-    "负者": "Yuto KIZUKURI"
-  },
-  {
-    "日期": "2024-09-28",
-    "类型": "T联赛",
-    "胜者": "CHO Seungmin",
-    "负者": "Yuto KIZUKURI"
-  },
-  {
-    "日期": "2024-09-28",
-    "类型": "T联赛",
-    "胜者": "Yukiya UDA",
-    "负者": "Masahiro MIYAKAWA"
-  },
-  {
-    "日期": "2024-09-28",
-    "类型": "T联赛",
-    "胜者": "Taimu ARINOBU",
-    "负者": "Hayate SUZUKI"
-  },
-  {
-    "日期": "2024-09-28",
-    "类型": "T联赛",
-    "胜者": "Yukiya UDA",
-    "负者": "Hayate SUZUKI"
-  },
-  {
-    "日期": "2024-09-28",
-    "类型": "T联赛",
-    "胜者": "Yuya OSHIMA",
-    "负者": "Satoshi EIDA"
-  },
-  {
-    "日期": "2024-09-28",
-    "类型": "T联赛",
-    "胜者": "Taisei MATSUSHITA",
-    "负者": "Kazuhiro YOSHIMURA"
-  },
-  {
-    "日期": "2024-09-28",
-    "类型": "T联赛",
-    "胜者": "Akira YOKOYA",
-    "负者": "Masataka MORIZONO"
-  },
-  {
-    "日期": "2024-09-28",
-    "类型": "T联赛",
-    "胜者": "Yuya OSHIMA",
-    "负者": "Taisei MATSUSHITA"
-  },
-  {
-    "日期": "2024-09-29",
-    "类型": "T联赛",
-    "胜者": "Koki NIWA",
-    "负者": "Masahiro MIYAKAWA"
-  },
-  {
-    "日期": "2024-09-29",
-    "类型": "T联赛",
-    "胜者": "Ryoichi YOSHIYAMA",
-    "负者": "CHO Seungmin"
-  },
-  {
-    "日期": "2024-09-29",
-    "类型": "T联赛",
-    "胜者": "Hayate SUZUKI",
-    "负者": "HAO Shuai"
-  },
-  {
-    "日期": "2024-09-29",
-    "类型": "T联赛",
-    "胜者": "Masataka MORIZONO",
-    "负者": "PARK Gyuhyeon"
-  },
-  {
-    "日期": "2024-09-29",
-    "类型": "T联赛",
-    "胜者": "Satoshi EIDA",
-    "负者": "KANG Dongsoo"
-  },
-  {
-    "日期": "2024-09-29",
-    "类型": "T联赛",
-    "胜者": "Kenta MATSUDAIRA",
-    "负者": "Taisei MATSUSHITA"
-  },
-  {
-    "日期": "2024-10-12",
-    "类型": "T联赛",
-    "胜者": "Yuta TANAKA",
-    "负者": "Shunsuke OKANO"
-  },
-  {
-    "日期": "2024-10-12",
-    "类型": "T联赛",
-    "胜者": "Shunto IWAIDA",
-    "负者": "Kenta MATSUDAIRA"
-  },
-  {
-    "日期": "2024-10-12",
-    "类型": "T联赛",
-    "胜者": "Masaki YOSHIDA",
-    "负者": "Masahiro MIYAKAWA"
-  },
-  {
-    "日期": "2024-10-19",
-    "类型": "T联赛",
-    "胜者": "Masaki YOSHIDA",
-    "负者": "HAO Shuai"
-  },
-  {
-    "日期": "2024-10-19",
-    "类型": "T联赛",
-    "胜者": "Mizuki OIKAWA",
-    "负者": "Yuta TANAKA"
-  },
-  {
-    "日期": "2024-10-19",
-    "类型": "T联赛",
-    "胜者": "LEE Sangsu",
-    "负者": "KANG Dongsoo"
-  },
-  {
-    "日期": "2024-10-20",
-    "类型": "T联赛",
-    "胜者": "HAO Shuai",
-    "负者": "Yuya OSHIMA"
-  },
-  {
-    "日期": "2024-10-20",
-    "类型": "T联赛",
-    "胜者": "Ryoichi YOSHIYAMA",
-    "负者": "Sora MATSUSHIMA"
-  },
-  {
-    "日期": "2024-10-20",
-    "类型": "T联赛",
-    "胜者": "LEE Sangsu",
-    "负者": "Hayato MIKI"
-  },
-  {
-    "日期": "2024-10-25",
-    "类型": "T联赛",
-    "胜者": "Hiromu KOBAYASHI",
-    "负者": "KANG Dongsoo"
-  },
-  {
-    "日期": "2024-10-25",
-    "类型": "T联赛",
-    "胜者": "Takaya KAMI",
-    "负者": "CHEN Jinqi"
-  },
-  {
-    "日期": "2024-10-25",
-    "类型": "T联赛",
-    "胜者": "Yuta TANAKA",
-    "负者": "Yuto KIZUKURI"
-  },
-  {
-    "日期": "2024-10-26",
-    "类型": "T联赛",
-    "胜者": "Yuta TANAKA",
-    "负者": "Yuhi SAKAI"
-  },
-  {
-    "日期": "2024-10-26",
-    "类型": "T联赛",
-    "胜者": "Masaki YOSHIDA",
-    "负者": "Kazuki HAMADA"
-  },
-  {
-    "日期": "2024-10-26",
-    "类型": "T联赛",
-    "胜者": "KANG Dongsoo",
-    "负者": "Satoshi EIDA"
-  },
-  {
     "日期": "2024-10-27",
     "类型": "T联赛",
     "胜者": "Sora MATSUSHIMA",
@@ -10032,30 +9942,6 @@
     "负者": "Takaya KAMI"
   },
   {
-    "日期": "2024-11-03",
-    "类型": "T联赛",
-    "胜者": "HAO Shuai",
-    "负者": "CHO Seungmin"
-  },
-  {
-    "日期": "2024-11-03",
-    "类型": "T联赛",
-    "胜者": "Maharu YOSHIMURA",
-    "负者": "Ryoichi YOSHIYAMA"
-  },
-  {
-    "日期": "2024-11-03",
-    "类型": "T联赛",
-    "胜者": "Hiroto SHINOZUKA",
-    "负者": "Koki NIWA"
-  },
-  {
-    "日期": "2024-11-03",
-    "类型": "T联赛",
-    "胜者": "HAO Shuai",
-    "负者": "Hiroto SHINOZUKA"
-  },
-  {
     "日期": "2024-11-02",
     "类型": "T联赛",
     "胜者": "Akira YOKOYA",
@@ -10080,22 +9966,28 @@
     "负者": "Kazuki HAMADA"
   },
   {
-    "日期": "2024-11-04",
+    "日期": "2024-11-03",
     "类型": "T联赛",
-    "胜者": "Yuta TANAKA",
-    "负者": "HAO Shuai"
+    "胜者": "HAO Shuai",
+    "负者": "CHO Seungmin"
   },
   {
-    "日期": "2024-11-04",
+    "日期": "2024-11-03",
     "类型": "T联赛",
-    "胜者": "Masaki YOSHIDA",
+    "胜者": "Maharu YOSHIMURA",
+    "负者": "Ryoichi YOSHIYAMA"
+  },
+  {
+    "日期": "2024-11-03",
+    "类型": "T联赛",
+    "胜者": "Hiroto SHINOZUKA",
     "负者": "Koki NIWA"
   },
   {
-    "日期": "2024-11-04",
+    "日期": "2024-11-03",
     "类型": "T联赛",
-    "胜者": "KANG Dongsoo",
-    "负者": "Mizuki OIKAWA"
+    "胜者": "HAO Shuai",
+    "负者": "Hiroto SHINOZUKA"
   },
   {
     "日期": "2024-11-03",
@@ -10114,6 +10006,24 @@
     "类型": "T联赛",
     "胜者": "Yuto KIZUKURI",
     "负者": "Masataka MORIZONO"
+  },
+  {
+    "日期": "2024-11-04",
+    "类型": "T联赛",
+    "胜者": "Yuta TANAKA",
+    "负者": "HAO Shuai"
+  },
+  {
+    "日期": "2024-11-04",
+    "类型": "T联赛",
+    "胜者": "Masaki YOSHIDA",
+    "负者": "Koki NIWA"
+  },
+  {
+    "日期": "2024-11-04",
+    "类型": "T联赛",
+    "胜者": "KANG Dongsoo",
+    "负者": "Mizuki OIKAWA"
   },
   {
     "日期": "2024-11-09",
@@ -10206,24 +10116,6 @@
     "负者": "Kanta TOKUDA"
   },
   {
-    "日期": "2024-12-15",
-    "类型": "T联赛",
-    "胜者": "Tomokazu HARIMOTO",
-    "负者": "Satoshi EIDA"
-  },
-  {
-    "日期": "2024-12-15",
-    "类型": "T联赛",
-    "胜者": "Hiroto SHINOZUKA",
-    "负者": "Kazuki HAMADA"
-  },
-  {
-    "日期": "2024-12-15",
-    "类型": "T联赛",
-    "胜者": "Yuhi SAKAI",
-    "负者": "Maharu YOSHIMURA"
-  },
-  {
     "日期": "2024-11-23",
     "类型": "T联赛",
     "胜者": "Yukiya UDA",
@@ -10242,22 +10134,94 @@
     "负者": "LEE Sangsu"
   },
   {
-    "日期": "2024-12-14",
-    "类型": "T联赛",
+    "日期": "2024-11-24",
+    "类型": "总决赛",
+    "胜者": "WANG Chuqin",
+    "负者": "Tomokazu HARIMOTO"
+  },
+  {
+    "日期": "2024-11-24",
+    "类型": "总决赛",
+    "胜者": "WANG Chuqin",
+    "负者": "Darko JORGIC"
+  },
+  {
+    "日期": "2024-11-24",
+    "类型": "总决赛",
     "胜者": "Tomokazu HARIMOTO",
-    "负者": "Soma ONO"
+    "负者": "LIN Shidong"
   },
   {
-    "日期": "2024-12-14",
-    "类型": "T联赛",
-    "胜者": "Maharu YOSHIMURA",
-    "负者": "Keishi HAGIHARA"
+    "日期": "2024-11-24",
+    "类型": "总决赛",
+    "胜者": "LIN Shidong",
+    "负者": "Dang QIU"
   },
   {
-    "日期": "2024-12-14",
-    "类型": "T联赛",
-    "胜者": "Hiroto SHINOZUKA",
-    "负者": "Akira YOKOYA"
+    "日期": "2024-11-24",
+    "类型": "总决赛",
+    "胜者": "Tomokazu HARIMOTO",
+    "负者": "JANG Woojin"
+  },
+  {
+    "日期": "2024-11-24",
+    "类型": "总决赛",
+    "胜者": "WANG Chuqin",
+    "负者": "Truls MOREGARD"
+  },
+  {
+    "日期": "2024-11-24",
+    "类型": "总决赛",
+    "胜者": "Darko JORGIC",
+    "负者": "Benedikt DUDA"
+  },
+  {
+    "日期": "2024-11-24",
+    "类型": "总决赛",
+    "胜者": "WANG Chuqin",
+    "负者": "Patrick FRANZISKA"
+  },
+  {
+    "日期": "2024-11-24",
+    "类型": "总决赛",
+    "胜者": "LIN Shidong",
+    "负者": "Alexis LEBRUN"
+  },
+  {
+    "日期": "2024-11-24",
+    "类型": "总决赛",
+    "胜者": "JANG Woojin",
+    "负者": "Hugo CALDERANO"
+  },
+  {
+    "日期": "2024-11-24",
+    "类型": "总决赛",
+    "胜者": "Truls MOREGARD",
+    "负者": "Anton KALLBERG"
+  },
+  {
+    "日期": "2024-11-24",
+    "类型": "总决赛",
+    "胜者": "Benedikt DUDA",
+    "负者": "Felix LEBRUN"
+  },
+  {
+    "日期": "2024-11-24",
+    "类型": "总决赛",
+    "胜者": "Tomokazu HARIMOTO",
+    "负者": "LIANG Jingkun"
+  },
+  {
+    "日期": "2024-11-24",
+    "类型": "总决赛",
+    "胜者": "Dang QIU",
+    "负者": "LIN Yun-Ju"
+  },
+  {
+    "日期": "2024-11-24",
+    "类型": "总决赛",
+    "胜者": "Darko JORGIC",
+    "负者": "LIN Gaoyuan"
   },
   {
     "日期": "2024-11-24",
@@ -10356,6 +10320,246 @@
     "负者": "Kazuki HAMADA"
   },
   {
+    "日期": "2024-12-01",
+    "类型": "世界杯团体",
+    "胜者": "Yuta TANAKA",
+    "负者": "Kay STUMPER"
+  },
+  {
+    "日期": "2024-12-01",
+    "类型": "世界杯团体",
+    "胜者": "Badr MOSTAFA",
+    "负者": "Milosz REDZIMSKI"
+  },
+  {
+    "日期": "2024-12-01",
+    "类型": "世界杯团体",
+    "胜者": "Thibault PORET",
+    "负者": "WONG Chun Ting"
+  },
+  {
+    "日期": "2024-12-01",
+    "类型": "世界杯团体",
+    "胜者": "Kristian KARLSSON",
+    "负者": "Eugene WANG"
+  },
+  {
+    "日期": "2024-12-01",
+    "类型": "世界杯团体",
+    "胜者": "HUANG Yan-Cheng",
+    "负者": "QUEK Izaac"
+  },
+  {
+    "日期": "2024-12-01",
+    "类型": "世界杯团体",
+    "胜者": "JANG Woojin",
+    "负者": "Ovidiu IONESCU"
+  },
+  {
+    "日期": "2024-12-01",
+    "类型": "世界杯团体",
+    "胜者": "Jeet CHANDRA",
+    "负者": "Xiangjing ZHANG"
+  },
+  {
+    "日期": "2024-12-01",
+    "类型": "世界杯团体",
+    "胜者": "WANG Chuqin",
+    "负者": "Hwan BAE"
+  },
+  {
+    "日期": "2024-12-02",
+    "类型": "世界杯团体",
+    "胜者": "Ryuusei KAWAKAMI",
+    "负者": "Mohamed AZZAM"
+  },
+  {
+    "日期": "2024-12-02",
+    "类型": "世界杯团体",
+    "胜者": "Kay STUMPER",
+    "负者": "Mateusz ZALEWSKI"
+  },
+  {
+    "日期": "2024-12-02",
+    "类型": "世界杯团体",
+    "胜者": "Thibault PORET",
+    "负者": "Anders ERIKSSON"
+  },
+  {
+    "日期": "2024-12-02",
+    "类型": "世界杯团体",
+    "胜者": "LAM Siu Hang",
+    "负者": "Edward LY"
+  },
+  {
+    "日期": "2024-12-02",
+    "类型": "世界杯团体",
+    "胜者": "Xiangjing ZHANG",
+    "负者": "Nicholas LUM"
+  },
+  {
+    "日期": "2024-12-02",
+    "类型": "世界杯团体",
+    "胜者": "WANG Chuqin",
+    "负者": "Snehit SURAVAJJULA"
+  },
+  {
+    "日期": "2024-12-02",
+    "类型": "世界杯团体",
+    "胜者": "Eduard IONESCU",
+    "负者": "QUEK Izaac"
+  },
+  {
+    "日期": "2024-12-02",
+    "类型": "世界杯团体",
+    "胜者": "AN Jaehyun",
+    "负者": "HUANG Yan-Cheng"
+  },
+  {
+    "日期": "2024-12-03",
+    "类型": "世界杯团体",
+    "胜者": "Yuta TANAKA",
+    "负者": "Mateusz ZALEWSKI"
+  },
+  {
+    "日期": "2024-12-03",
+    "类型": "世界杯团体",
+    "胜者": "Marwan GAMAL",
+    "负者": "Kay STUMPER"
+  },
+  {
+    "日期": "2024-12-03",
+    "类型": "世界杯团体",
+    "胜者": "Kristian KARLSSON",
+    "负者": "CHAN Baldwin"
+  },
+  {
+    "日期": "2024-12-03",
+    "类型": "世界杯团体",
+    "胜者": "Thibault PORET",
+    "负者": "Edward LY"
+  },
+  {
+    "日期": "2024-12-03",
+    "类型": "世界杯团体",
+    "胜者": "Snehit SURAVAJJULA",
+    "负者": "Nicholas LUM"
+  },
+  {
+    "日期": "2024-12-03",
+    "类型": "世界杯团体",
+    "胜者": "LIN Shidong",
+    "负者": "Sid NARESH"
+  },
+  {
+    "日期": "2024-12-03",
+    "类型": "世界杯团体",
+    "胜者": "HUANG Yan-Cheng",
+    "负者": "Eduard IONESCU"
+  },
+  {
+    "日期": "2024-12-03",
+    "类型": "世界杯团体",
+    "胜者": "OH Junsung",
+    "负者": "PANG Koen"
+  },
+  {
+    "日期": "2024-12-04",
+    "类型": "世界杯团体",
+    "胜者": "Thibault PORET",
+    "负者": "Eduard IONESCU"
+  },
+  {
+    "日期": "2024-12-04",
+    "类型": "世界杯团体",
+    "胜者": "LIANG Jingkun",
+    "负者": "Fanbo MENG"
+  },
+  {
+    "日期": "2024-12-04",
+    "类型": "世界杯团体",
+    "胜者": "AN Jaehyun",
+    "负者": "LAM Siu Hang"
+  },
+  {
+    "日期": "2024-12-04",
+    "类型": "世界杯团体",
+    "胜者": "Keishi HAGIHARA",
+    "负者": "Jishan LIANG"
+  },
+  {
+    "日期": "2024-12-05",
+    "类型": "世界杯团体",
+    "胜者": "AN Jaehyun",
+    "负者": "Sid NARESH"
+  },
+  {
+    "日期": "2024-12-05",
+    "类型": "世界杯团体",
+    "胜者": "LIN Shidong",
+    "负者": "CHAN Baldwin"
+  },
+  {
+    "日期": "2024-12-05",
+    "类型": "世界杯团体",
+    "胜者": "Jules ROLLAND",
+    "负者": "Kay STUMPER"
+  },
+  {
+    "日期": "2024-12-05",
+    "类型": "世界杯团体",
+    "胜者": "Yuta TANAKA",
+    "负者": "Eduard IONESCU"
+  },
+  {
+    "日期": "2024-12-05",
+    "类型": "世界杯团体",
+    "胜者": "WANG Chuqin",
+    "负者": "OH Junsung"
+  },
+  {
+    "日期": "2024-12-05",
+    "类型": "世界杯团体",
+    "胜者": "Kay STUMPER",
+    "负者": "WONG Chun Ting"
+  },
+  {
+    "日期": "2024-12-05",
+    "类型": "世界杯团体",
+    "胜者": "Yuta TANAKA",
+    "负者": "Jules ROLLAND"
+  },
+  {
+    "日期": "2024-12-05",
+    "类型": "世界杯团体",
+    "胜者": "Nandan NARESH",
+    "负者": "Eduard IONESCU"
+  },
+  {
+    "日期": "2024-12-06",
+    "类型": "世界杯团体",
+    "胜者": "LIN Shidong",
+    "负者": "Yuta TANAKA"
+  },
+  {
+    "日期": "2024-12-06",
+    "类型": "世界杯团体",
+    "胜者": "Jishan LIANG",
+    "负者": "Kay STUMPER"
+  },
+  {
+    "日期": "2024-12-06",
+    "类型": "世界杯团体",
+    "胜者": "Eduard IONESCU",
+    "负者": "WONG Chun Ting"
+  },
+  {
+    "日期": "2024-12-06",
+    "类型": "世界杯团体",
+    "胜者": "JANG Woojin",
+    "负者": "Jules ROLLAND"
+  },
+  {
     "日期": "2024-12-07",
     "类型": "T联赛",
     "胜者": "Satoshi EIDA",
@@ -10374,6 +10578,54 @@
     "负者": "Yuya OSHIMA"
   },
   {
+    "日期": "2024-12-07",
+    "类型": "世界杯团体",
+    "胜者": "Thibault PORET",
+    "负者": "Sid NARESH"
+  },
+  {
+    "日期": "2024-12-07",
+    "类型": "世界杯团体",
+    "胜者": "LIANG Jingkun",
+    "负者": "Darius MOVILEANU"
+  },
+  {
+    "日期": "2024-12-07",
+    "类型": "世界杯团体",
+    "胜者": "Yuta TANAKA",
+    "负者": "WONG Chun Ting"
+  },
+  {
+    "日期": "2024-12-07",
+    "类型": "世界杯团体",
+    "胜者": "OH Junsung",
+    "负者": "Fanbo MENG"
+  },
+  {
+    "日期": "2024-12-07",
+    "类型": "世界杯团体",
+    "胜者": "LIN Shidong",
+    "负者": "Thibault PORET"
+  },
+  {
+    "日期": "2024-12-07",
+    "类型": "世界杯团体",
+    "胜者": "Nandan NARESH",
+    "负者": "YIU Kwan To"
+  },
+  {
+    "日期": "2024-12-07",
+    "类型": "世界杯团体",
+    "胜者": "Yuta TANAKA",
+    "负者": "JANG Woojin"
+  },
+  {
+    "日期": "2024-12-07",
+    "类型": "世界杯团体",
+    "胜者": "Kay STUMPER",
+    "负者": "Eduard IONESCU"
+  },
+  {
     "日期": "2024-12-08",
     "类型": "T联赛",
     "胜者": "Yuya OSHIMA",
@@ -10390,6 +10642,66 @@
     "类型": "T联赛",
     "胜者": "HAO Shuai",
     "负者": "LIN Yun-Ju"
+  },
+  {
+    "日期": "2024-12-08",
+    "类型": "世界杯团体",
+    "胜者": "LIN Shidong",
+    "负者": "OH Junsung"
+  },
+  {
+    "日期": "2024-12-08",
+    "类型": "世界杯团体",
+    "胜者": "Eduard IONESCU",
+    "负者": "WONG Chun Ting"
+  },
+  {
+    "日期": "2024-12-08",
+    "类型": "世界杯团体",
+    "胜者": "WONG Chun Ting",
+    "负者": "JANG Woojin"
+  },
+  {
+    "日期": "2024-12-08",
+    "类型": "世界杯团体",
+    "胜者": "LIN Shidong",
+    "负者": "Eduard IONESCU"
+  },
+  {
+    "日期": "2024-12-14",
+    "类型": "T联赛",
+    "胜者": "Tomokazu HARIMOTO",
+    "负者": "Soma ONO"
+  },
+  {
+    "日期": "2024-12-14",
+    "类型": "T联赛",
+    "胜者": "Maharu YOSHIMURA",
+    "负者": "Keishi HAGIHARA"
+  },
+  {
+    "日期": "2024-12-14",
+    "类型": "T联赛",
+    "胜者": "Hiroto SHINOZUKA",
+    "负者": "Akira YOKOYA"
+  },
+  {
+    "日期": "2024-12-15",
+    "类型": "T联赛",
+    "胜者": "Tomokazu HARIMOTO",
+    "负者": "Satoshi EIDA"
+  },
+  {
+    "日期": "2024-12-15",
+    "类型": "T联赛",
+    "胜者": "Hiroto SHINOZUKA",
+    "负者": "Kazuki HAMADA"
+  },
+  {
+    "日期": "2024-12-15",
+    "类型": "T联赛",
+    "胜者": "Yuhi SAKAI",
+    "负者": "Maharu YOSHIMURA"
   },
   {
     "日期": "2024-12-27",
