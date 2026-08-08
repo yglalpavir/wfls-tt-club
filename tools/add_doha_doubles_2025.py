@@ -10,7 +10,7 @@ BASE = Path(r"s:\wfls-tt-club\wfls-tt-club\wtt_data")
 # 目标: 类别 -> (目录, 文件名)
 TARGET = {
     "MD": ("md", "score-log-2025-wtt.json"),
-    "WD": ("wd", "score-log-2025-ws.json"),
+    "WD": ("wd", "score-log-2025-wtt.json"),
     "XD": ("xd", "score-log-2025-wtt.json"),
 }
 

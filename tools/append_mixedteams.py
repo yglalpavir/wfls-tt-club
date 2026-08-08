@@ -24,7 +24,7 @@ CAT_MAP = {
     "MS": ("ms", "score-log-{Y}-wtt.json"),
     "WS": ("ws", "score-log-{Y}-ws.json"),
     "MD": ("md", "score-log-{Y}-wtt.json"),
-    "WD": ("wd", "score-log-{Y}-ws.json"),
+    "WD": ("wd", "score-log-{Y}-wtt.json"),
     "XD": ("xd", "score-log-{Y}-wtt.json"),
 }
 

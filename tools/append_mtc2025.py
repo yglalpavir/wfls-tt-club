@@ -13,7 +13,7 @@ TARGET = {
     "MS": ("ms", "score-log-2025-wtt.json"),
     "WS": ("ws", "score-log-2025-ws.json"),
     "MD": ("md", "score-log-2025-wtt.json"),
-    "WD": ("wd", "score-log-2025-ws.json"),
+    "WD": ("wd", "score-log-2025-wtt.json"),
     "XD": ("xd", "score-log-2025-wtt.json"),
 }
 

@@ -181,7 +181,7 @@ def append_to_scorelog(category, matches):
     elif category == "md":
         filename = f"score-log-{EVENT_YEAR}-wtt.json"
     elif category == "wd":
-        filename = f"score-log-{EVENT_YEAR}-ws.json"
+        filename = f"score-log-{EVENT_YEAR}-wtt.json"
     elif category == "xd":
         filename = f"score-log-{EVENT_YEAR}-wtt.json"
     else:
@@ -245,7 +245,7 @@ def verify_data(category, expected_count):
     elif category == "md":
         filename = f"score-log-{EVENT_YEAR}-wtt.json"
     elif category == "wd":
-        filename = f"score-log-{EVENT_YEAR}-ws.json"
+        filename = f"score-log-{EVENT_YEAR}-wtt.json"
     elif category == "xd":
         filename = f"score-log-{EVENT_YEAR}-wtt.json"
 
