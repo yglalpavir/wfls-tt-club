@@ -40,6 +40,7 @@
             </ul>
             <div class="nav-actions">
                 <button class="theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+                <button class="lang-toggle" id="langToggle" aria-label="切换语言"><span data-i18n="lang_btn">EN</span></button>
             </div>
             <button class="hamburger" id="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
         </div>
@@ -50,7 +51,7 @@
         <div class="page-hero-content">
             <span class="section-tag wtt-easter-egg-tag">🥚 Easter Egg</span>
             <h1>WTT <span id="wttCatName">World Ranking</span></h1>
-            <p>WTT 排名查询 · 点击姓名查看积分明细</p>
+            <p data-i18n="wtt_hero_desc">WTT 排名查询 · 点击姓名查看积分明细</p>
         </div>
     </section>
 
@@ -58,7 +59,7 @@
         <div class="container">
             <div class="ranking-layout">
                 <aside class="ranking-sidebar glass-card" id="rankingSidebar">
-                    <h3 class="sidebar-title">时间节点</h3>
+                    <h3 class="sidebar-title" data-i18n="rank_sidebar_title">时间节点</h3>
                     <ul class="time-node-list" id="timeNodeList">
                         <!-- JS动态渲染 -->
                     </ul>
@@ -67,27 +68,27 @@
                 <div class="ranking-content">
                     <div class="section-header" style="text-align:left;margin-bottom:24px;">
                         <span class="section-tag">Data Viz</span>
-                        <h2 class="section-title" style="margin-bottom:8px;">WTT 数据可视化</h2>
+                        <h2 class="section-title" style="margin-bottom:8px;" data-i18n="wtt_dataviz_title">WTT 数据可视化</h2>
                         <a href="wtt_dataviz.html" class="btn btn-primary btn-sm" style="display:inline-flex;align-items:center;gap:6px;">
-                            <i class="fa-solid fa-chart-line"></i> 查看 WTT 数据可视化
+                            <i class="fa-solid fa-chart-line"></i> <span data-i18n="wtt_dataviz_btn">查看 WTT 数据可视化</span>
                         </a>
                     </div>
                     
                     <div class="section-header" style="text-align:left;margin-bottom:24px;">
                         <span class="section-tag">Personal Stats</span>
-                        <h2 class="section-title" style="margin-bottom:8px;">WTT 个人数据</h2>
+                        <h2 class="section-title" style="margin-bottom:8px;" data-i18n="wtt_personal_title">WTT 个人数据</h2>
                         <a href="wtt_personal_stats.html" class="btn btn-primary btn-sm" style="display:inline-flex;align-items:center;gap:6px;">
-                            <i class="fa-solid fa-user-chart"></i> 查看 WTT 个人数据
+                            <i class="fa-solid fa-user-chart"></i> <span data-i18n="wtt_personal_btn">查看 WTT 个人数据</span>
                         </a>
                     </div>
                     
                     <div class="section-header" style="text-align:left;margin-bottom:24px;">
                         <span class="section-tag">Data Table</span>
-                        <h2 class="section-title">WTT 积分数据表</h2>
+                        <h2 class="section-title" data-i18n="wtt_table_title">WTT 积分数据表</h2>
                     </div>
                     
                     <div class="ranking-controls">
-                        <span class="sort-hint">当前排序：<strong id="sortIndicator">积分降序</strong></span>
+                        <span class="sort-hint"><span data-i18n="rank_sort_hint">当前排序：</span><strong id="sortIndicator">积分降序</strong></span>
                         <span class="update-info" id="currentTimeLabel">加载中...</span>
                     </div>
                     
@@ -96,23 +97,23 @@
                             <thead>
                                 <tr>
                                     <th data-sort="rank" class="sortable" style="width:50px;"># <span class="sort-arrow"></span></th>
-                                    <th data-sort="姓名" class="sortable">姓名 <span class="sort-arrow"></span></th>
-                                    <th data-sort="当前积分" class="sortable active-sort">当前积分 <span class="sort-arrow">&#9660;</span></th>
-                                    <th data-sort="积分变化" class="sortable" style="width:80px;">积分变化 <span class="sort-arrow"></span></th>
-                                    <th data-sort="变化" style="width:80px;">排名变化</th>
-                                    <th data-sort="总场次" class="sortable">总场次 <span class="sort-arrow"></span></th>
-                                    <th data-sort="胜率" class="sortable">胜率 <span class="sort-arrow"></span></th>
+                                    <th data-sort="姓名" class="sortable" data-i18n="rank_col_name">姓名 <span class="sort-arrow"></span></th>
+                                    <th data-sort="当前积分" class="sortable active-sort" data-i18n="rank_col_points">当前积分 <span class="sort-arrow">&#9660;</span></th>
+                                    <th data-sort="积分变化" class="sortable" style="width:80px;" data-i18n="rank_col_points_change">积分变化 <span class="sort-arrow"></span></th>
+                                    <th data-sort="变化" style="width:80px;" data-i18n="rank_col_change">排名变化</th>
+                                    <th data-sort="总场次" class="sortable" data-i18n="rank_col_matches">总场次 <span class="sort-arrow"></span></th>
+                                    <th data-sort="胜率" class="sortable" data-i18n="rank_col_winrate">胜率 <span class="sort-arrow"></span></th>
                                 </tr>
                             </thead>
                             <tbody id="rankingFullBody">
-                                <tr><td colspan="7" style="text-align:center;padding:40px;">加载排名数据中...</td></tr>
+                                <tr><td colspan="7" style="text-align:center;padding:40px;" data-i18n="wtt_loading">正在加载 WTT 数据...</td></tr>
                             </tbody>
                         </table>
                     </div>
 
                     <div class="wtt-back-link" style="text-align:center;margin-top:40px;">
                         <a href="wtt_hub.html" class="btn btn-secondary btn-sm">
-                            <i class="fa-solid fa-arrow-left"></i> 返回 WTT Hub
+                            <i class="fa-solid fa-arrow-left"></i> <span data-i18n="wtt_back_hub">返回 WTT Hub</span>
                         </a>
                     </div>
                 </div>
@@ -129,13 +130,13 @@
                 <table class="score-detail-table">
                     <thead>
                         <tr>
-                            <th>日期</th>
-                            <th>类型</th>
-                            <th>对手</th>
-                            <th>结果</th>
-                            <th>赛前积分</th>
-                            <th>积分变动</th>
-                            <th>赛后积分</th>
+                            <th data-i18n="score_col_date">日期</th>
+                            <th data-i18n="score_col_type">类型</th>
+                            <th data-i18n="score_col_opponent">对手</th>
+                            <th data-i18n="score_col_result">结果</th>
+                            <th data-i18n="score_col_score_before">赛前积分</th>
+                            <th data-i18n="score_col_change">积分变动</th>
+                            <th data-i18n="score_col_score_after">赛后积分</th>
                         </tr>
                     </thead>
                     <tbody id="scoreDetailBody">

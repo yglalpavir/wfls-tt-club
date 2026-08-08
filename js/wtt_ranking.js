@@ -54,7 +54,7 @@ function wttShowScoreDetail(playerName, snapshotDate) {
         player: playerName,
         snapshotDate: snapshotDate || (wttRankingTimeline[wttCurrentTimeIndex]?.time || '')
     };
-    title.textContent = `${playerName} - 积分明细（${wttRankingTimeline[wttCurrentTimeIndex]?.label || ''}）`;
+    title.textContent = `${playerName} - ${i18n[currentLang].score_detail_title}（${wttRankingTimeline[wttCurrentTimeIndex]?.label || ''}）`;
     wttRenderScoreDetail();
     wttAdjustModalSize();
     openModal(modal);
@@ -94,8 +94,9 @@ function wttRenderScoreDetail() {
 
     // 找到快照日期所在的赛季
     const currentSeason = getSeasonForDate(snapshotDate);
+    const noRecordsHtml = '<tr><td colspan="7" style="text-align:center;padding:20px;">' + i18n[currentLang].wtt_no_records + '</td></tr>';
     if (!currentSeason) {
-        body.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:20px;">暂无记录</td></tr>';
+        body.innerHTML = noRecordsHtml;
         setTimeout(() => { const m = document.getElementById('scoreDetailModal'); if (m) m.classList.add('content-fit'); }, 100);
         scoreLogData = origScoreLog; initialScoresData = origInitial;
         eventCoefficients = origEvent; seasonsData = origSeasons;
@@ -114,7 +115,7 @@ function wttRenderScoreDetail() {
     records.sort((a, b) => a['日期'].localeCompare(b['日期']));
 
     if (!records.length) {
-        body.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:20px;">暂无记录</td></tr>';
+        body.innerHTML = noRecordsHtml;
         setTimeout(() => { const m = document.getElementById('scoreDetailModal'); if (m) m.classList.add('content-fit'); }, 100);
         scoreLogData = origScoreLog; initialScoresData = origInitial;
         eventCoefficients = origEvent; seasonsData = origSeasons;
@@ -152,7 +153,7 @@ function wttRenderScoreDetail() {
             const bonus = parseFloat(record['分数']) || 0;
             if (!scores[player]) scores[player] = DEFAULT_INITIAL_SCORE;
             recordsWithScores.push({
-                date: record['日期'], type: '加分', opponent: '-',
+                date: record['日期'], type: i18n[currentLang].wtt_bonus, opponent: '-',
                 isWinner: true, isBonus: true,
                 scoreBefore: scores[player], rawChange: bonus, decayedChange: bonus,
                 scoreAfter: scores[player] + bonus
@@ -171,9 +172,9 @@ function wttRenderScoreDetail() {
         if (r.isBonus) {
             const cc = r.decayedChange >= 0 ? 'score-change-positive' : 'score-change-negative';
             const sign = r.decayedChange >= 0 ? '+' : '';
-            return `<tr><td>${r.date}</td><td>${r.type}</td><td>-</td><td class="result-win">加分</td><td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${sign}${r.decayedChange.toFixed(1)}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
+            return `<tr><td>${r.date}</td><td>${r.type}</td><td>-</td><td class="result-win">${i18n[currentLang].wtt_bonus}</td><td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${sign}${r.decayedChange.toFixed(1)}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
         }
-        const res = r.isWinner ? '胜' : '负';
+        const res = r.isWinner ? i18n[currentLang].score_result_win : i18n[currentLang].score_result_loss;
         const rc = r.isWinner ? 'result-win' : 'result-loss';
         const cc = r.decayedChange >= 0 ? 'score-change-positive' : 'score-change-negative';
         const signRaw = r.rawChange >= 0 ? '+' : '';
@@ -204,14 +205,14 @@ async function wttLoadRankingData() {
     // 在 tbody 中显示加载状态（保留表格结构）
     tb.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:40px;">
         <div class="wtt-spinner" style="width:36px;height:36px;border:3px solid var(--border-color);border-top-color:var(--accent-blue);border-radius:50%;animation:wttSpin 0.8s linear infinite;margin:0 auto 12px;"></div>
-        <p style="color:var(--text-secondary);">正在加载 WTT 数据...</p>
-        <p class="wtt-progress-text" style="font-size:0.8rem;color:var(--text-tertiary);margin-top:4px;">准备下载数据文件...</p>
+        <p style="color:var(--text-secondary);">${i18n[currentLang].wtt_loading}</p>
+        <p class="wtt-progress-text" style="font-size:0.8rem;color:var(--text-tertiary);margin-top:4px;">${i18n[currentLang].wtt_prepare}</p>
     </td></tr>`;
 
     try {
         // 🔥 逐个加载数据文件，显示详细进度（而非一次性 Promise.all）
         // 先加载 settings.json 以判断是否需要 initial-scores
-        updateProgress('正在下载 项目设置 (1/5): settings.json');
+        updateProgress(`${i18n[currentLang].wtt_downloading.replace('{label}', i18n[currentLang].wtt_file_settings).replace('{i}', '1').replace('{total}', '5').replace('{file}', 'settings.json')}`);
         await new Promise(r => setTimeout(r, 0));
         await wttLoadSettings();
 
@@ -219,20 +220,20 @@ async function wttLoadRankingData() {
         const needsInitScores = !wttSettings || wttSettings.scoreMode !== 'flat1300';
 
         const dataFiles = [
-            { name: 'score-log (按赛季)',   loader: wttLoadScoreLog,          label: '比赛记录' },
+            { name: 'score-log (按赛季)',   loader: wttLoadScoreLog,          label: i18n[currentLang].wtt_file_matches },
         ];
         if (needsInitScores) {
-            dataFiles.push({ name: 'initial-scores.json', loader: wttLoadInitialScores, label: '初始积分' });
+            dataFiles.push({ name: 'initial-scores.json', loader: wttLoadInitialScores, label: i18n[currentLang].wtt_file_initial });
         }
         dataFiles.push(
-            { name: 'event-coefficient.json',loader: wttLoadEventCoefficients, label: '赛事系数' },
-            { name: 'seasons.json',          loader: wttLoadSeasons,           label: '赛季配置' }
+            { name: 'event-coefficient.json',loader: wttLoadEventCoefficients, label: i18n[currentLang].wtt_file_event },
+            { name: 'seasons.json',          loader: wttLoadSeasons,           label: i18n[currentLang].wtt_file_season }
         );
 
         for (let i = 0; i < dataFiles.length; i++) {
             const f = dataFiles[i];
             const total = dataFiles.length;
-            updateProgress(`正在下载 ${f.label} (${i + 1}/${total}): ${f.name}`);
+            updateProgress(i18n[currentLang].wtt_downloading.replace('{label}', f.label).replace('{i}', String(i + 1)).replace('{total}', String(total)).replace('{file}', f.name));
             // yield 到浏览器，确保 UI 更新
             await new Promise(r => setTimeout(r, 0));
             await f.loader();
@@ -244,11 +245,11 @@ async function wttLoadRankingData() {
         if (!wttEventCoefficients || !wttSeasonsData) throw new Error('WTT数据加载失败');
 
         // 更新加载文字
-        updateProgress('正在计算排名积分...');
+        updateProgress(i18n[currentLang].wtt_calculating);
 
         // 异步分块计算（每 2 个快照 yield 到浏览器，保持 UI 响应）
         wttRankingTimeline = await wttCalculateAllRankingsAsync((current, total, label) => {
-            updateProgress(`${label || ''} · 快照 ${current}/${total}`);
+            updateProgress((label || '') + ' · ' + i18n[currentLang].wtt_snapshot.replace('{current}', current).replace('{total}', total));
         });
 
         wttCurrentTimeIndex = wttRankingTimeline.length - 1;
@@ -260,7 +261,7 @@ async function wttLoadRankingData() {
         wttSetupSortListeners();
     } catch (e) {
         console.error('WTT排名计算失败', e);
-        if (tb) tb.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;color:var(--accent-red);">无法计算WTT排名数据</td></tr>';
+        if (tb) tb.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;color:var(--accent-red);">' + i18n[currentLang].wtt_cant_compute + '</td></tr>';
     }
 }
 
@@ -280,7 +281,7 @@ function wttRenderTimeNodeList() {
     realtimeNodes.forEach(n => {
         const rli = document.createElement('li');
         rli.className = 'realtime-group';
-        rli.innerHTML = `<div class="realtime-header"><i class="fa-solid fa-clock"></i><span class="realtime-label">实时积分</span></div><ul class="season-node-list"><li class="time-node-item realtime-node ${n.index === wttCurrentTimeIndex ? 'active' : ''}" data-index="${n.index}"><span class="node-dot"></span>${n.label}<span class="node-count">${n.data.length}人</span></li></ul>`;
+        rli.innerHTML = `<div class="realtime-header"><i class="fa-solid fa-clock"></i><span class="realtime-label">${i18n[currentLang].rank_realtime_header}</span></div><ul class="season-node-list"><li class="time-node-item realtime-node ${n.index === wttCurrentTimeIndex ? 'active' : ''}" data-index="${n.index}"><span class="node-dot"></span>${n.label}<span class="node-count">${i18n[currentLang].wtt_ppl.replace('{n}', n.data.length)}</span></li></ul>`;
         list.appendChild(rli);
         rli.querySelector('.time-node-item').addEventListener('click', () => {
             wttCurrentTimeIndex = parseInt(rli.querySelector('.time-node-item').getAttribute('data-index'));
@@ -292,7 +293,7 @@ function wttRenderTimeNodeList() {
     // 赛季分组
     const seasons = {};
     regularNodes.forEach((n) => {
-        const s = n.season || '默认赛季';
+        const s = n.season || i18n[currentLang].wtt_default_season;
         if (!seasons[s]) seasons[s] = [];
         seasons[s].push({ ...n, index: n.index });
     });
@@ -300,7 +301,7 @@ function wttRenderTimeNodeList() {
     Object.entries(seasons).forEach(([season, nodes]) => {
         const sli = document.createElement('li');
         sli.className = 'season-group';
-        sli.innerHTML = `<div class="season-header"><i class="fa-solid fa-chevron-down season-arrow"></i><span class="season-label">${season}</span><span class="season-count">${nodes.length}个节点</span></div><ul class="season-node-list">${nodes.map(n => `<li class="time-node-item ${n.index === wttCurrentTimeIndex ? 'active' : ''} ${n.isInitial ? 'initial-node' : ''}" data-index="${n.index}"><span class="node-dot"></span>${n.label}<span class="node-count">${n.data.length}人</span></li>`).join('')}</ul>`;
+        sli.innerHTML = `<div class="season-header"><i class="fa-solid fa-chevron-down season-arrow"></i><span class="season-label">${season}</span><span class="season-count">${i18n[currentLang].wtt_node_count.replace('{n}', nodes.length)}</span></div><ul class="season-node-list">${nodes.map(n => `<li class="time-node-item ${n.index === wttCurrentTimeIndex ? 'active' : ''} ${n.isInitial ? 'initial-node' : ''}" data-index="${n.index}"><span class="node-dot"></span>${n.label}<span class="node-count">${i18n[currentLang].wtt_ppl.replace('{n}', n.data.length)}</span></li>`).join('')}</ul>`;
         list.appendChild(sli);
         sli.querySelector('.season-header').addEventListener('click', () => sli.classList.toggle('collapsed'));
         sli.querySelectorAll('.time-node-item').forEach(item => {
@@ -348,6 +349,10 @@ function wttCalculateRankChanges(cd, pd, isInitial) {
     });
 }
 
+function wttSortKeyLabel(key) {
+    return i18n[currentLang]['rank_col_' + ({ rank: 'rank', '姓名': 'name', '当前积分': 'points', '积分变化': 'points_change', '变化': 'change', '总场次': 'matches', '胜率': 'winrate' }[key] || key)] || key;
+}
+
 function wttUpdateRankingDisplay() {
     if (!wttRankingTimeline.length || !wttRankingTimeline[wttCurrentTimeIndex]) return;
     const cn = wttRankingTimeline[wttCurrentTimeIndex];
@@ -356,7 +361,7 @@ function wttUpdateRankingDisplay() {
     wttCurrentDisplayData = wttSortDisplayData(wttCurrentSortKey, wttCurrentSortDir);
     wttRenderRankingTable(wttCurrentDisplayData);
     const ind = document.getElementById('sortIndicator');
-    if (ind) ind.textContent = `${wttCurrentSortKey}${wttCurrentSortDir === 'desc' ? '降序' : '升序'}`;
+    if (ind) ind.textContent = `${wttSortKeyLabel(wttCurrentSortKey)}${wttCurrentSortDir === 'desc' ? i18n[currentLang].sort_desc : i18n[currentLang].sort_asc}`;
     wttUpdateSortHeaderHighlight();
     const lbl = document.getElementById('currentTimeLabel');
     if (lbl) lbl.textContent = cn.label;
@@ -379,7 +384,7 @@ function wttRenderRankingTable(data) {
     const tb = document.getElementById('rankingFullBody');
     if (!tb) return;
     if (!data || !data.length) {
-        tb.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;">暂无排名数据</td></tr>';
+        tb.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;">' + i18n[currentLang].wtt_no_data + '</td></tr>';
         return;
     }
     tb.innerHTML = '';
@@ -403,7 +408,7 @@ function wttRenderRankingTable(data) {
 
         const pn = p['姓名'] || '-';
         const nc = (wttScoreLogData.length > 0)
-            ? `<span class="player-name-link" onclick="wttShowScoreDetail('${pn}','${currentSnapshotDate}')" title="点击查看积分明细">${pn}</span>`
+            ? `<span class="player-name-link" onclick="wttShowScoreDetail('${pn}','${currentSnapshotDate}')" title="${i18n[currentLang].wtt_click_detail}">${pn}</span>`
             : pn;
 
         tr.innerHTML = `<td>${i + 1}</td><td>${nc}</td><td><strong>${(p['当前积分'] || 0).toFixed(1)}</strong></td><td>${pch}</td><td>${ch}</td><td>${p['总场次'] || 0}</td><td>${wd}</td>`;
@@ -437,7 +442,7 @@ function wttSetupSortListeners() {
             if (ar) ar.innerHTML = wttCurrentSortDir === 'desc' ? '&#9660;' : '&#9650;';
             nt.classList.add('active-sort');
             const ind = document.getElementById('sortIndicator');
-            if (ind) ind.textContent = `${key}${wttCurrentSortDir === 'desc' ? '降序' : '升序'}`;
+            if (ind) ind.textContent = `${wttSortKeyLabel(key)}${wttCurrentSortDir === 'desc' ? i18n[currentLang].sort_desc : i18n[currentLang].sort_asc}`;
         });
     });
 }
@@ -461,6 +466,31 @@ function wttInitRankingPage() {
     });
 
     wttLoadRankingData();
+}
+
+// 语言切换时重渲染排名界面（覆盖 wtt_common.js 中的同名函数）
+function wttReapplyI18n() {
+    wttUpdatePageCategoryDisplay();
+    if (!wttRankingTimeline || !wttRankingTimeline.length) return;
+    wttRenderTimeNodeList();
+    wttUpdateRankingDisplay();
+    wttUpdateScoreDetailIfOpen();
+}
+
+function wttUpdateCategoryDisplay() {
+    const catEl = document.getElementById('wttCatName');
+    if (catEl) {
+        const info = wttGetCategoryInfo();
+        catEl.textContent = (typeof currentLang !== 'undefined' && currentLang === 'en' && info.nameEn) ? info.nameEn : info.name;
+        catEl.style.color = info.color;
+    }
+}
+
+function wttUpdateScoreDetailIfOpen() {
+    const modal = document.getElementById('scoreDetailModal');
+    if (modal && modal.classList.contains('active') && wttCurrentScoreContext && wttCurrentScoreContext.player) {
+        wttRenderScoreDetail();
+    }
 }
 
 if (document.readyState === 'loading') {

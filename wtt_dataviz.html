@@ -41,6 +41,7 @@
             </ul>
             <div class="nav-actions">
                 <button class="theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+                <button class="lang-toggle" id="langToggle" aria-label="切换语言"><span data-i18n="lang_btn">EN</span></button>
             </div>
             <button class="hamburger" id="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
         </div>
@@ -51,7 +52,7 @@
         <div class="page-hero-content">
             <span class="section-tag wtt-easter-egg-tag">🥚 WTT Data Visualization</span>
             <h1>WTT <span id="wttCatName">数据可视化</span></h1>
-            <p>积分趋势 · 排名变化 · 球员对比</p>
+            <p data-i18n="data_viz_desc">积分趋势 · 排名变化 · 球员对比</p>
         </div>
     </section>
 
@@ -59,18 +60,18 @@
         <div class="container">
             <div class="viz-section-header">
                 <span class="section-tag">Line Chart</span>
-                <h2 class="section-title">积分趋势</h2>
+                <h2 class="section-title" data-i18n="data_viz_points_trend">积分趋势</h2>
                 <div class="viz-topn-selector">
-                    <span>最近</span>
+                    <span data-i18n="wtt_recent">最近</span>
                     <input type="number" id="wttPointsTrendDataCount" value="20" min="2" max="200" style="width:70px;text-align:center;" title="显示最近N个数据点">
-                    <span>个数据点</span>
+                    <span data-i18n="wtt_data_points">个数据点</span>
                 </div>
             </div>
             <div class="viz-grid-2col">
                 <div class="viz-player-selector glass-card" style="display:flex;flex-direction:column;">
-                    <h4>选择球员（最多8人）</h4>
+                    <h4 data-i18n="wtt_select_players">选择球员（最多8人）</h4>
                     <div class="player-checkbox-list" id="wttPlayerCheckboxList" style="flex:1;overflow-y:auto;min-height:0;margin-bottom:0;"></div>
-                    <button class="btn btn-sm btn-primary" id="wttApplyPointsTrend" style="margin-top:12px;flex-shrink:0;">应用</button>
+                    <button class="btn btn-sm btn-primary" id="wttApplyPointsTrend" style="margin-top:12px;flex-shrink:0;" data-i18n="data_viz_apply">应用</button>
                 </div>
                 <div class="viz-chart-container glass-card">
                     <canvas id="wttPointsTrendChart"></canvas>
@@ -79,16 +80,16 @@
 
             <div class="viz-section-header" style="margin-top:48px;">
                 <span class="section-tag">Stream Graph</span>
-                <h2 class="section-title">排名变化河流图</h2>
+                <h2 class="section-title" data-i18n="data_viz_rank_stream">排名变化河流图</h2>
                 <div class="viz-topn-selector">
-                    <span>显示前</span>
+                    <span data-i18n="data_viz_top_n">显示前</span>
                     <input type="number" id="wttTopNSelect" value="10" min="1" max="20" style="width:60px;text-align:center;" title="填写1-20的任意正整数">
-                    <span>名球员</span>
+                    <span data-i18n="wtt_players">名球员</span>
                 </div>
                 <div class="viz-topn-selector" style="margin-left:16px;">
-                    <span>最近</span>
+                    <span data-i18n="wtt_recent">最近</span>
                     <input type="number" id="wttStreamDataCount" value="20" min="2" max="200" style="width:70px;text-align:center;" title="显示最近N个数据点">
-                    <span>个数据点</span>
+                    <span data-i18n="wtt_data_points">个数据点</span>
                 </div>
             </div>
             <div class="viz-chart-container glass-card" style="min-height:450px;">
@@ -97,25 +98,25 @@
 
             <div class="viz-section-header" style="margin-top:48px;">
                 <span class="section-tag">Comparison</span>
-                <h2 class="section-title">球员对比</h2>
+                <h2 class="section-title" data-i18n="data_viz_player_compare">球员对比</h2>
             </div>
             <div class="viz-compare-grid">
                 <div class="viz-compare-selectors glass-card">
                     <div class="compare-selector-group">
-                        <label>球员 A</label>
+                        <label data-i18n="wtt_player_a">球员 A</label>
                         <select id="wttPlayerASelect"><option value="">-- 选择球员 --</option></select>
                     </div>
                     <div class="compare-vs">VS</div>
                     <div class="compare-selector-group">
-                        <label>球员 B</label>
+                        <label data-i18n="wtt_player_b">球员 B</label>
                         <select id="wttPlayerBSelect"><option value="">-- 选择球员 --</option></select>
                     </div>
-                    <button class="btn btn-sm btn-primary" id="wttApplyCompare">对比</button>
+                    <button class="btn btn-sm btn-primary" id="wttApplyCompare" data-i18n="wtt_compare_btn">对比</button>
                 </div>
                 <div class="viz-compare-result glass-card" id="wttCompareResult">
                     <div class="compare-placeholder">
                         <i class="fa-solid fa-people-arrows"></i>
-                        <p>选择两名球员进行对比分析</p>
+                        <p data-i18n="wtt_compare_placeholder">选择两名球员进行对比分析</p>
                     </div>
                 </div>
             </div>
@@ -124,7 +125,7 @@
 
         <div class="wtt-back-link" style="text-align:center;margin-top:40px;">
             <a href="wtt_hub.html" class="btn btn-secondary btn-sm">
-                <i class="fa-solid fa-arrow-left"></i> 返回 WTT Hub
+                <i class="fa-solid fa-arrow-left"></i> <span data-i18n="wtt_back_hub">返回 WTT Hub</span>
             </a>
         </div>
     </section>

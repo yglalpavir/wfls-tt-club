@@ -233,15 +233,20 @@
     <!-- 主容器 -->
     <div class="hub-container">
 
+        <!-- 语言切换 -->
+        <div style="text-align:right;">
+            <button class="lang-toggle" id="langToggle" aria-label="切换语言" style="display:inline-flex;align-items:center;gap:6px;padding:6px 16px;border-radius:16px;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.12);cursor:pointer;"><span data-i18n="lang_btn">EN</span></button>
+        </div>
+
         <!-- 头部 -->
         <header class="hub-header">
             <div class="hub-egg-badge">
                 <i class="fa-solid fa-egg"></i><span>Easter Egg</span><i class="fa-solid fa-egg"></i>
             </div>
             <h1 class="hub-title">WTT World Ranking</h1>
-            <p class="hub-subtitle">
-                基于武外乒乓球社积分规则的 WTT 国际乒联积分排名模拟系统。<br>
-                选择下方项目查看对应排名、数据可视化和个人数据。
+            <p class="hub-subtitle" id="hubSubtitle">
+                <span id="hubSubA" data-i18n="wtt_hub_sub_a">基于武外乒乓球社积分规则的 WTT 国际乒联积分排名模拟系统。</span><br>
+                <span id="hubSubB" data-i18n="wtt_hub_sub_b">选择下方项目查看对应排名、数据可视化和个人数据。</span>
             </p>
         </header>
 
@@ -252,17 +257,18 @@
 
         <!-- 返回链接 -->
         <div class="hub-footer">
-            <a href="ranking.html" class="hub-back-btn">
-                <i class="fa-solid fa-arrow-left"></i> 返回社团 Ranking
+            <a href="ranking.html" class="hub-back-btn" id="hubBackBtn">
+                <i class="fa-solid fa-arrow-left"></i> <span data-i18n="wtt_hub_back">返回社团 Ranking</span>
             </a>
         </div>
 
         <!-- 版权 -->
         <div class="hub-credit">
-            <p>数据仅供娱乐 · 非官方 WTT 排名 · &copy; 2026 WFLS Table Tennis Club</p>
+            <p data-i18n="wtt_hub_credit">数据仅供娱乐 · 非官方 WTT 排名 · &copy; 2026 WFLS Table Tennis Club</p>
         </div>
     </div>
 
+    <script src="js/common.js"></script>
     <script src="js/wtt_common.js"></script>
     <script>
         // ============ 背景粒子动画 ============
@@ -289,12 +295,16 @@
         (function renderHubCards() {
             const grid = document.getElementById('hubGrid');
             const categories = [
-                { id: 'ms', faIcon: 'fa-user',          name: '男子单打', nameEn: "Men's Singles",    color: '#4da3ff' },
-                { id: 'ws', faIcon: 'fa-user-large',     name: '女子单打', nameEn: "Women's Singles",  color: '#ff6b6b' },
-                { id: 'md', faIcon: 'fa-user-group',     name: '男子双打', nameEn: "Men's Doubles",    color: '#52c41a' },
-                { id: 'wd', faIcon: 'fa-user-group',     name: '女子双打', nameEn: "Women's Doubles",  color: '#f5c542' },
-                { id: 'xd', faIcon: 'fa-people-arrows',  name: '混合双打', nameEn: 'Mixed Doubles',    color: '#a55eea' }
+                { id: 'ms', faIcon: 'fa-user',          nameEn: "Men's Singles",    color: '#4da3ff' },
+                { id: 'ws', faIcon: 'fa-user-large',     nameEn: "Women's Singles",  color: '#ff6b6b' },
+                { id: 'md', faIcon: 'fa-user-group',     nameEn: "Men's Doubles",    color: '#52c41a' },
+                { id: 'wd', faIcon: 'fa-user-group',     nameEn: "Women's Doubles",  color: '#f5c542' },
+                { id: 'xd', faIcon: 'fa-people-arrows',  nameEn: 'Mixed Doubles',    color: '#a55eea' }
             ];
+
+            function catName(cat) {
+                return (i18n[currentLang] && i18n[currentLang]['wtt_cat_' + cat.id]) || cat.nameEn || cat.name;
+            }
 
             // 先渲染静态卡片，异步检查数据状态
             categories.forEach(cat => {
@@ -305,20 +315,20 @@
 
                 card.innerHTML = `
                     <div class="hub-card-icon"><i class="fa-solid ${cat.faIcon}"></i></div>
-                    <div class="hub-card-title" style="color:${cat.color}">${cat.name}</div>
+                    <div class="hub-card-title" style="color:${cat.color}">${catName(cat)}</div>
                     <div class="hub-card-title-en">${cat.nameEn}</div>
                     <div class="hub-card-status" id="status-${cat.id}" style="color:rgba(255,255,255,0.4)">
-                        <i class="fa-solid fa-spinner fa-pulse"></i> 检测中...
+                        <i class="fa-solid fa-spinner fa-pulse"></i> ${i18n[currentLang].wtt_status_check}
                     </div>
                     <div class="hub-card-links">
                         <span class="hub-card-link" data-href="wtt_ranking.html?cat=${cat.id}">
-                            <i class="fa-solid fa-list-ol"></i> 排名
+                            <i class="fa-solid fa-list-ol"></i> ${i18n[currentLang].wtt_link_rank}
                         </span>
                         <span class="hub-card-link" data-href="wtt_dataviz.html?cat=${cat.id}">
-                            <i class="fa-solid fa-chart-line"></i> 数据可视化
+                            <i class="fa-solid fa-chart-line"></i> ${i18n[currentLang].wtt_link_dataviz}
                         </span>
                         <span class="hub-card-link" data-href="wtt_personal_stats.html?cat=${cat.id}">
-                            <i class="fa-solid fa-user-chart"></i> 个人数据
+                            <i class="fa-solid fa-user-chart"></i> ${i18n[currentLang].wtt_link_personal}
                         </span>
                     </div>
                 `;
@@ -339,6 +349,7 @@
             });
 
             // 异步检查每个项目的数据状态
+            const hubStatuses = {};
             categories.forEach(async cat => {
                 const statusEl = document.getElementById('status-' + cat.id);
                 try {
@@ -386,22 +397,50 @@
             });
 
             function updateStatus(el, catId, status) {
+                hubStatuses[catId] = status;
                 const allLinks = el.parentElement.querySelectorAll('.hub-card-link');
                 if (status === 'ready') {
                     el.className = 'hub-card-status ready';
-                    el.innerHTML = '<i class="fa-solid fa-circle-check"></i> 数据已就绪';
+                    el.innerHTML = '<i class="fa-solid fa-circle-check"></i> ' + i18n[currentLang].wtt_status_ready;
                     allLinks.forEach(l => l.classList.remove('disabled'));
                 } else if (status === 'template') {
                     el.className = 'hub-card-status template';
-                    el.innerHTML = '<i class="fa-solid fa-file-pen"></i> 待填充数据';
+                    el.innerHTML = '<i class="fa-solid fa-file-pen"></i> ' + i18n[currentLang].wtt_status_template;
                     // 模板状态下链接仍然可用（会显示空数据页面）
                     allLinks.forEach(l => l.classList.remove('disabled'));
                 } else {
                     el.className = 'hub-card-status empty';
-                    el.innerHTML = '<i class="fa-solid fa-circle"></i> 暂无数据';
+                    el.innerHTML = '<i class="fa-solid fa-circle"></i> ' + i18n[currentLang].wtt_status_empty;
                     allLinks.forEach(l => l.classList.add('disabled'));
                 }
             }
+
+            // 刷新所有卡片文本（语言切换时调用）
+            function refreshHubTexts() {
+                categories.forEach(cat => {
+                    const card = grid.querySelector('.hub-card[data-cat="' + cat.id + '"]');
+                    if (!card) return;
+                    const titleEl = card.querySelector('.hub-card-title');
+                    if (titleEl) titleEl.textContent = catName(cat);
+                    const statusEl = document.getElementById('status-' + cat.id);
+                    if (statusEl && hubStatuses[cat.id]) {
+                        const prev = statusEl.className.split(' ')[1];
+                        updateStatus(statusEl, cat.id, hubStatuses[cat.id]);
+                        statusEl.className = 'hub-card-status ' + prev;
+                    }
+                    const linkEls = card.querySelectorAll('.hub-card-link');
+                    if (linkEls.length >= 3) {
+                        linkEls[0].innerHTML = '<i class="fa-solid fa-list-ol"></i> ' + i18n[currentLang].wtt_link_rank;
+                        linkEls[1].innerHTML = '<i class="fa-solid fa-chart-line"></i> ' + i18n[currentLang].wtt_link_dataviz;
+                        linkEls[2].innerHTML = '<i class="fa-solid fa-user-chart"></i> ' + i18n[currentLang].wtt_link_personal;
+                    }
+                });
+            }
+
+            // 语言切换钩子（由 common.js 的 setLanguage 调用）
+            window.wttReapplyI18n = function() {
+                refreshHubTexts();
+            };
         })();
     </script>
 </body>

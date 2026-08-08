@@ -4,6 +4,7 @@
    ======================================== */
 
 let wttPersonalChartSettings = null;  // 折线图设置
+let wttCurrentPersonalPlayer = null;  // 当前查看的球员（语言切换时重渲染用）
 
 // 注：wttScoreLogData 等共享变量已在 wtt_common.js 中声明（let），无需重复声明
 
@@ -18,18 +19,18 @@ function wttPSShowProgress(msg) {
     if (!el) return;
     el.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;color:var(--text-secondary);">
         <div class="wtt-spinner" style="width:32px;height:32px;border:3px solid var(--border-color);border-top-color:var(--accent-blue);border-radius:50%;animation:wttSpin 0.8s linear infinite;margin-bottom:12px;"></div>
-        <p style="font-size:0.9rem;margin:0;">${msg || '加载数据中...'}</p>
+        <p style="font-size:0.9rem;margin:0;">${msg || i18n[currentLang].wtt_loading}</p>
     </div>`;
 }
 
 async function wttLoadRankingDataForPersonal() {
     // 显示加载进度
-    wttPSShowProgress('准备下载数据文件...');
+    wttPSShowProgress(i18n[currentLang].wtt_prepare);
 
     try {
         // 🔥 逐个加载数据文件，显示详细进度
         // 先加载 settings.json 以判断是否需要 initial-scores
-        wttPSShowProgress('正在下载 项目设置 (1/5): settings.json');
+        wttPSShowProgress(i18n[currentLang].wtt_downloading.replace('{label}', 'settings').replace('{i}', '1').replace('{total}', '5').replace('{file}', 'settings.json'));
         await new Promise(r => setTimeout(r, 0));
         await wttLoadSettings();
 
@@ -37,20 +38,20 @@ async function wttLoadRankingDataForPersonal() {
         const needsInitScores = !wttSettings || wttSettings.scoreMode !== 'flat1300';
 
         const dataFiles = [
-            { name: 'score-log (按赛季)',   loader: wttLoadScoreLog,          label: '比赛记录' },
+            { name: 'score-log (按赛季)',   loader: wttLoadScoreLog,          label: i18n[currentLang].wtt_file_matches },
         ];
         if (needsInitScores) {
-            dataFiles.push({ name: 'initial-scores.json', loader: wttLoadInitialScores, label: '初始积分' });
+            dataFiles.push({ name: 'initial-scores.json', loader: wttLoadInitialScores, label: i18n[currentLang].wtt_file_initial });
         }
         dataFiles.push(
-            { name: 'event-coefficient.json',loader: wttLoadEventCoefficients, label: '赛事系数' },
-            { name: 'seasons.json',          loader: wttLoadSeasons,           label: '赛季配置' }
+            { name: 'event-coefficient.json',loader: wttLoadEventCoefficients, label: i18n[currentLang].wtt_file_event },
+            { name: 'seasons.json',          loader: wttLoadSeasons,           label: i18n[currentLang].wtt_file_season }
         );
 
         for (let i = 0; i < dataFiles.length; i++) {
             const f = dataFiles[i];
             const total = dataFiles.length;
-            wttPSShowProgress(`正在下载 ${f.label} (${i + 1}/${total}): ${f.name}`);
+            wttPSShowProgress(i18n[currentLang].wtt_downloading.replace('{label}', f.label).replace('{i}', i + 1).replace('{total}', total).replace('{file}', f.name));
             // yield 到浏览器，确保 UI 更新
             await new Promise(r => setTimeout(r, 0));
             await f.loader();
@@ -62,11 +63,11 @@ async function wttLoadRankingDataForPersonal() {
         if (!wttEventCoefficients || !wttSeasonsData) throw new Error('WTT数据加载失败');
 
         // 更新进度为计算排名
-        wttPSShowProgress('正在计算排名积分...');
+        wttPSShowProgress(i18n[currentLang].wtt_calculating);
 
         // 异步分块计算（带进度回调）
         wttRankingTimeline = await wttCalculateAllRankingsAsync((current, total, label) => {
-            wttPSShowProgress(`${label || ''} · 快照 ${current}/${total}`);
+            wttPSShowProgress(i18n[currentLang].wtt_snapshot.replace('{current}', current).replace('{total}', total));
         });
 
         // 加载完成，恢复占位文字
@@ -74,7 +75,7 @@ async function wttLoadRankingDataForPersonal() {
         if (el) {
             el.innerHTML = `<div class="compare-placeholder">
                 <i class="fa-solid fa-user-chart"></i>
-                <p>选择一名球员查看个人数据</p>
+                <p>${i18n[currentLang].wtt_ps_placeholder}</p>
             </div>`;
         }
 
@@ -84,7 +85,7 @@ async function wttLoadRankingDataForPersonal() {
         wttRankingTimeline = [];
         const el = document.getElementById('wttPersonalResult');
         if (el) {
-            el.innerHTML = '<div style="padding:20px;color:var(--accent-red);text-align:center;">❌ WTT排名数据加载失败，请刷新页面重试</div>';
+            el.innerHTML = '<div style="padding:20px;color:var(--accent-red);text-align:center;">❌ ' + i18n[currentLang].wtt_error_fail + '</div>';
         }
         return false;
     }
@@ -262,7 +263,7 @@ function wttRenderPlayerDropdown(filteredPlayers, query) {
     if (!list) return;
 
     if (!filteredPlayers || filteredPlayers.length === 0) {
-        list.innerHTML = '<div class="player-search-no-results"><i class="fa-solid fa-user-slash"></i>无匹配球员</div>';
+        list.innerHTML = '<div class="player-search-no-results"><i class="fa-solid fa-user-slash"></i>' + i18n[currentLang].wtt_ps_nomatch + '</div>';
         dropdown.classList.add('active');
         return;
     }
@@ -484,8 +485,8 @@ function wttRenderPersonalStats(playerName) {
     eventCoefficients = wttEventCoefficients;
     seasonsData = wttSeasonsData;
 
-    if (!scoreLogData || !scoreLogData.length) {
-        container.innerHTML = '<div class="compare-placeholder"><p>暂无比赛数据</p></div>';
+if (!scoreLogData || !scoreLogData.length) {
+        container.innerHTML = '<div class="compare-placeholder"><p>' + i18n[currentLang].wtt_ps_nodata + '</p></div>';
         scoreLogData = origScoreLog; initialScoresData = origInitial;
         eventCoefficients = origEvent; seasonsData = origSeasons;
         return;
@@ -673,22 +674,26 @@ function wttRenderPersonalStats(playerName) {
 
     function fmtDate(ds) {
         const d = new Date(ds + 'T00:00:00');
+        if (currentLang === 'en') {
+            return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+        }
         return d.getFullYear() + '年' + (d.getMonth() + 1) + '月' + d.getDate() + '日';
     }
 
     let html = '';
     html += '<div class="personal-overview">';
-    html += '<div class="personal-overview-item"><span class="personal-overview-num">' + totalMatches + '</span><span class="personal-overview-label">总场次</span></div>';
-    html += '<div class="personal-overview-item win"><span class="personal-overview-num">' + wins + '</span><span class="personal-overview-label">获胜</span></div>';
-    html += '<div class="personal-overview-item loss"><span class="personal-overview-num">' + losses + '</span><span class="personal-overview-label">失利</span></div>';
-    html += '<div class="personal-overview-item"><span class="personal-overview-num">' + percentile.toFixed(2) + '%</span><span class="personal-overview-label">积分超过</span></div>';
-    html += '<div class="personal-overview-item best"><span class="personal-overview-num">' + maxScore + '</span><span class="personal-overview-label">最高积分</span></div>';
-    html += '<div class="personal-overview-item best"><span class="personal-overview-num">#' + (bestRank === Infinity ? '-' : bestRank) + '</span><span class="personal-overview-label">最高排名</span></div>';
+    html += '<div class="personal-overview-item"><span class="personal-overview-num">' + totalMatches + '</span><span class="personal-overview-label">' + i18n[currentLang].wtt_ov_total + '</span></div>';
+    html += '<div class="personal-overview-item win"><span class="personal-overview-num">' + wins + '</span><span class="personal-overview-label">' + i18n[currentLang].wtt_ov_wins + '</span></div>';
+    html += '<div class="personal-overview-item loss"><span class="personal-overview-num">' + losses + '</span><span class="personal-overview-label">' + i18n[currentLang].wtt_ov_losses + '</span></div>';
+    html += '<div class="personal-overview-item"><span class="personal-overview-num">' + percentile.toFixed(2) + '%</span><span class="personal-overview-label">' + i18n[currentLang].wtt_ov_percentile + '</span></div>';
+    html += '<div class="personal-overview-item best"><span class="personal-overview-num">' + maxScore + '</span><span class="personal-overview-label">' + i18n[currentLang].wtt_ov_max + '</span></div>';
+    html += '<div class="personal-overview-item best"><span class="personal-overview-num">#' + (bestRank === Infinity ? '-' : bestRank) + '</span><span class="personal-overview-label">' + i18n[currentLang].wtt_ov_bestrank + '</span></div>';
     html += '</div>';
 
     html += '<div class="personal-summary-text">';
-    html += '<strong>' + playerName + '</strong>共进行了<strong>' + totalMatches + '</strong>盘单打比赛，其中获胜<strong>' + wins + '</strong>盘，失利<strong>' + losses + '</strong>盘。';
-    html += '<strong>' + playerName + '</strong>的积分超过了全部<strong>' + percentile.toFixed(2) + '%</strong>的选手。';
+    html += i18n[currentLang].wtt_ps_sum1.replace('{player}', '<strong>' + playerName + '</strong>').replace('{total}', '<strong>' + totalMatches + '</strong>').replace('{wins}', '<strong>' + wins + '</strong>').replace('{losses}', '<strong>' + losses + '</strong>');
+    html += '<br>';
+    html += i18n[currentLang].wtt_ps_sum2.replace('{player}', '<strong>' + playerName + '</strong>').replace('{percent}', '<strong>' + percentile.toFixed(2) + '</strong>');
     html += '</div>';
 
     // === 积分变化折线图 ===
@@ -697,11 +702,11 @@ function wttRenderPersonalStats(playerName) {
     if (dailyScoreHistory.length > 1 || scoreHistory.length > 1) {
         html += '<div class="personal-chart-section">';
         html += '<div class="personal-chart-header">';
-        html += '<span><i class="fa-solid fa-chart-line"></i> 积分变化趋势</span>';
+        html += '<span><i class="fa-solid fa-chart-line"></i> ' + i18n[currentLang].wtt_ps_trend + '</span>';
         html += '<div class="personal-chart-granularity">';
-        html += '<button class="granularity-btn active" data-gran="day">按天</button>';
-        html += '<button class="granularity-btn" data-gran="week">按周</button>';
-        html += '<button class="granularity-btn" data-gran="snapshot">快照</button>';
+        html += '<button class="granularity-btn active" data-gran="day">' + i18n[currentLang].wtt_ps_day + '</button>';
+        html += '<button class="granularity-btn" data-gran="week">' + i18n[currentLang].wtt_ps_week + '</button>';
+        html += '<button class="granularity-btn" data-gran="snapshot">' + i18n[currentLang].wtt_ps_snapshot + '</button>';
         html += '</div>';
         html += '</div>';
         html += '<div class="personal-chart-wrapper"><canvas id="wttPersonalScoreChart"></canvas></div>';
@@ -711,9 +716,9 @@ function wttRenderPersonalStats(playerName) {
     html += '<div class="personal-cards-grid">';
 
     html += '<div class="personal-card victory-card">';
-    html += '<div class="personal-card-header"><i class="fa-solid fa-trophy"></i> 胜利 · 曾战胜的前三名</div>';
+    html += '<div class="personal-card-header"><i class="fa-solid fa-trophy"></i> ' + i18n[currentLang].wtt_victory_card + '</div>';
     if (beatenOpps.length === 0) {
-        html += '<div class="personal-card-empty">暂无</div>';
+        html += '<div class="personal-card-empty">' + i18n[currentLang].wtt_empty + '</div>';
     } else {
         html += '<div class="personal-card-list">';
         beatenOpps.forEach(([name, s], i) => {
@@ -728,9 +733,9 @@ function wttRenderPersonalStats(playerName) {
     html += '</div>';
 
     html += '<div class="personal-card pk-card">';
-    html += '<div class="personal-card-header"><i class="fa-solid fa-hand-fist"></i> PK · 曾交手的前三名</div>';
+    html += '<div class="personal-card-header"><i class="fa-solid fa-hand-fist"></i> ' + i18n[currentLang].wtt_pk_card + '</div>';
     if (frequentOpps.length === 0) {
-        html += '<div class="personal-card-empty">暂无</div>';
+        html += '<div class="personal-card-empty">' + i18n[currentLang].wtt_empty + '</div>';
     } else {
         html += '<div class="personal-card-list">';
         frequentOpps.forEach(([name, s], i) => {
@@ -745,9 +750,9 @@ function wttRenderPersonalStats(playerName) {
     html += '</div>';
 
     html += '<div class="personal-card lucky-card">';
-    html += '<div class="personal-card-header"><i class="fa-solid fa-star"></i> 福星</div>';
+    html += '<div class="personal-card-header"><i class="fa-solid fa-star"></i> ' + i18n[currentLang].wtt_lucky_card + '</div>';
     if (luckyStars.length === 0) {
-        html += '<div class="personal-card-empty">暂无</div>';
+        html += '<div class="personal-card-empty">' + i18n[currentLang].wtt_empty + '</div>';
     } else {
         html += '<div class="personal-card-list">';
         luckyStars.forEach((x, i) => {
@@ -756,7 +761,7 @@ function wttRenderPersonalStats(playerName) {
             html += '<div class="personal-card-item">';
             html += '<span class="personal-card-rank">' + (i + 1) + '</span>';
             html += '<span class="personal-card-name">' + x.name + '<span class="personal-card-score">(' + x.curScore + ')</span></span>';
-            html += '<span class="personal-card-sub">' + x.wins + '胜' + x.losses + '负 胜率:' + wr + '%</span>';
+            html += '<span class="personal-card-sub">' + i18n[currentLang].wtt_sub_wl.replace('{wins}', x.wins).replace('{losses}', x.losses).replace('{rate}', wr) + '</span>';
             html += '</div>';
         });
         html += '</div>';
@@ -764,9 +769,9 @@ function wttRenderPersonalStats(playerName) {
     html += '</div>';
 
     html += '<div class="personal-card nemesis-card">';
-    html += '<div class="personal-card-header"><i class="fa-solid fa-skull"></i> 苦主</div>';
+    html += '<div class="personal-card-header"><i class="fa-solid fa-skull"></i> ' + i18n[currentLang].wtt_nemesis_card + '</div>';
     if (nemeses.length === 0) {
-        html += '<div class="personal-card-empty">暂无</div>';
+        html += '<div class="personal-card-empty">' + i18n[currentLang].wtt_empty + '</div>';
     } else {
         html += '<div class="personal-card-list">';
         nemeses.forEach((x, i) => {
@@ -775,7 +780,7 @@ function wttRenderPersonalStats(playerName) {
             html += '<div class="personal-card-item">';
             html += '<span class="personal-card-rank">' + (i + 1) + '</span>';
             html += '<span class="personal-card-name">' + x.name + '<span class="personal-card-score">(' + x.curScore + ')</span></span>';
-            html += '<span class="personal-card-sub">' + x.wins + '胜' + x.losses + '负 胜率:' + wr + '%</span>';
+            html += '<span class="personal-card-sub">' + i18n[currentLang].wtt_sub_wl.replace('{wins}', x.wins).replace('{losses}', x.losses).replace('{rate}', wr) + '</span>';
             html += '</div>';
         });
         html += '</div>';
@@ -1051,7 +1056,7 @@ function renderWttPersonalScoreChart(dailyHistory, snapshotHistory) {
         data: {
             labels: labels,
             datasets: [{
-                label: '积分',
+                label: i18n[currentLang].wtt_axis_points,
                 data: scores,
                 borderColor: lineColor,
                 backgroundColor: fillColor,
@@ -1092,8 +1097,8 @@ function renderWttPersonalScoreChart(dailyHistory, snapshotHistory) {
                         label: function(item) {
                             const idx = item.dataIndex;
                             const dp = dataPoints[idx];
-                            let txt = '积分: ' + dp.score;
-                            if (dp.rank) txt += ' | 排名: #' + dp.rank;
+                            let txt = i18n[currentLang].wtt_tooltip_points.replace('{score}', dp.score);
+                            if (dp.rank) txt += ' ' + i18n[currentLang].wtt_tooltip_rank.replace('{rank}', dp.rank);
                             return txt;
                         }
                     }
@@ -1182,10 +1187,21 @@ function initWttPersonalStats() {
         // "查看数据"按钮仍然读取 hidden input 的值
         document.getElementById('applyWttPersonalStats')?.addEventListener('click', function () {
             var p = document.getElementById('wttPersonalPlayerSelect')?.value;
-            if (!p) { alert('请选择一名球员'); return; }
+            if (!p) { alert(i18n[currentLang].wtt_ps_alert); return; }
+            wttCurrentPersonalPlayer = p;
             wttRenderPersonalStats(p);
         });
 
         console.log('[WttPersonalStats] 初始化完成');
     });
+}
+
+// 语言切换时重渲染个人数据界面（覆盖 wtt_common.js 中的同名函数）
+function wttReapplyI18n() {
+    wttUpdatePageCategoryDisplay();
+    const searchInput = document.getElementById('wttPersonalPlayerSearch');
+    if (searchInput) searchInput.placeholder = i18n[currentLang].wtt_ps_search_ph;
+    if (wttCurrentPersonalPlayer) {
+        wttRenderPersonalStats(wttCurrentPersonalPlayer);
+    }
 }

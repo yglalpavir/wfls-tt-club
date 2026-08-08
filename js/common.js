@@ -11,6 +11,32 @@
     document.head.appendChild(style);
 })();
 
+// 全局搜索：为所有加载 common.js 的页面注入搜索按钮 + 遮罩层（若页面未内置）
+(function ensureGlobalSearchUI() {
+    if (document.getElementById('searchToggle')) return;
+    // 搜索按钮：插入到 nav-actions 最前面
+    var actions = document.querySelector('.nav-actions');
+    var toggle = document.createElement('button');
+    toggle.className = 'search-toggle';
+    toggle.id = 'searchToggle';
+    toggle.setAttribute('aria-label', '搜索');
+    toggle.innerHTML = '<i class="fa-solid fa-magnifying-glass"></i>';
+    if (actions) {
+        actions.insertBefore(toggle, actions.firstChild);
+    } else {
+        // 无导航栏的页面（如 wtt_hub）：固定在右上角
+        toggle.style.cssText = 'position:fixed;top:16px;right:16px;z-index:1200;margin-left:auto;';
+        toggle.classList.add('lang-toggle', 'search-toggle-hub');
+        document.body.appendChild(toggle);
+    }
+    // 搜索遮罩层
+    var overlay = document.createElement('div');
+    overlay.className = 'search-overlay';
+    overlay.id = 'searchOverlay';
+    overlay.innerHTML = '<div class="search-modal glass-card"><div class="search-header"><div class="search-input-wrapper"><i class="fa-solid fa-magnifying-glass search-input-icon"></i><input type="text" class="search-input" id="searchInput" placeholder="搜索..." autocomplete="off"><button class="search-clear" id="searchClear" style="display:none;"><i class="fa-solid fa-xmark"></i></button></div><button class="search-close-btn" id="searchClose"><i class="fa-solid fa-xmark"></i></button></div><div class="search-results" id="searchResults"><div class="search-placeholder"><i class="fa-solid fa-magnifying-glass"></i><p data-i18n="search_input_hint">输入关键词开始搜索</p><p class="search-hint" data-i18n="search_hint_info">支持搜索标题、内容、姓名等</p></div></div></div></div>';
+    document.body.appendChild(overlay);
+})();
+
 // 通用内容区加载提示（用于 news/competitions/home 等页面）
 function showContentLoading(containerId, msg) {
     var el = document.getElementById(containerId);
@@ -56,7 +82,26 @@ const i18n = {
         rank_realtime_header: "实时积分", rank_realtime_label: "实时积分",
         changelog_page_title: "更新日志 | WFLS Table Tennis Club", changelog_hero_tag: "Changelog", changelog_hero_title: "更新日志", changelog_hero_desc: "版本历史 · 功能更新 · 问题修复", changelog_list_tag: "Version History", changelog_list_title: "版本历史", changelog_empty: "暂无更新日志",
         tag_release: "正式发布", tag_feature: "新功能", tag_fix: "修复",
-        draws_tab_content: "赛事详情", draws_tab_bracket: "对阵表"
+        draws_tab_content: "赛事详情", draws_tab_bracket: "对阵表",
+        wtt_hero_desc: "WTT 排名查询 · 点击姓名查看积分明细", wtt_dataviz_title: "WTT 数据可视化", wtt_dataviz_btn: "查看 WTT 数据可视化", wtt_personal_title: "WTT 个人数据", wtt_personal_btn: "查看 WTT 个人数据", wtt_table_title: "WTT 积分数据表", wtt_loading: "正在加载 WTT 数据...", wtt_click_detail: "点击查看积分明细", wtt_error_fail: "WTT排名数据加载失败，请刷新页面重试",
+        wtt_back_hub: "返回 WTT Hub",
+        sort_desc: "降序", sort_asc: "升序",
+        wtt_file_matches: "比赛记录", wtt_file_initial: "初始积分", wtt_file_event: "赛事系数", wtt_file_season: "赛季配置",
+        wtt_prepare: "准备下载数据文件...", wtt_downloading: "正在下载 {label} ({i}/{total}): {file}", wtt_calculating: "正在计算排名积分...", wtt_snapshot: "快照 {current}/{total}",
+        wtt_default_season: "默认赛季", wtt_node_count: "{n}个节点", wtt_ppl: "{n}人",
+        wtt_no_records: "暂无记录", wtt_no_data: "暂无排名数据", wtt_cant_compute: "无法计算WTT排名数据", wtt_bonus: "加分",
+        wtt_no_players: "暂无球员数据", wtt_select_player: "-- 选择球员 --", wtt_compare_btn: "对比", wtt_compare_placeholder: "选择两名球员进行对比分析",
+        wtt_alert_select_one: "请至少选择一名球员", wtt_alert_max: "最多选择15名球员", wtt_alert_two: "请选择两名球员", wtt_alert_diff: "请选择不同的球员",
+        wtt_axis_points: "积分", wtt_axis_rank: "排名", wtt_rank_suffix: "第{n}名",
+        wtt_cur_score: "当前积分", wtt_h2h_rate: "交手胜率", wtt_pred_rate: "预测胜率", wtt_total_h2h: "总交手: {n} 场", wtt_wins: "{player} {n} 胜", wtt_recent: "最近: {date} (胜者: {winner})", wtt_winner: "胜者", wtt_pts_change: "{player} 积分变动", wtt_no_h2h: "暂无交手记录",
+        wtt_ps_hero_title: "WTT 个人比赛数据统计", wtt_ps_title: "WTT 个人数据", wtt_ps_label: "选择球员", wtt_ps_search_ph: "搜索球员名称...", wtt_ps_view: "查看数据", wtt_ps_placeholder: "选择一名球员查看个人数据", wtt_ps_nomatch: "无匹配球员", wtt_ps_nodata: "暂无比赛数据",
+        wtt_ov_total: "总场次", wtt_ov_wins: "获胜", wtt_ov_losses: "失利", wtt_ov_percentile: "积分超过", wtt_ov_max: "最高积分", wtt_ov_bestrank: "最高排名",
+        wtt_ps_sum1: "{player}共进行了{total}盘比赛，获胜{wins}盘，失利{losses}盘。", wtt_ps_sum2: "{player}的积分超过了全部{percent}%的选手。",
+        wtt_ps_trend: "积分变化趋势", wtt_ps_day: "按天", wtt_ps_week: "按周", wtt_ps_snapshot: "快照",
+        wtt_victory_card: "胜利 · 曾战胜的前三名", wtt_pk_card: "PK · 曾交手的前三名", wtt_lucky_card: "福星", wtt_nemesis_card: "苦主", wtt_empty: "暂无", wtt_sub_wl: "{player}胜{losses}负 胜率:{rate}%", wtt_tooltip_points: "积分: {score}", wtt_tooltip_rank: "| 排名:#{rank}", wtt_ps_alert: "请选择一名球员",
+        wtt_hub_sub_a: "基于乒乓球社团积分规则的 WTT 国际乒联积分排名模拟系统。", wtt_hub_sub_b: "选择下方项目查看对应积分排名、数据可视化和个人数据。", wtt_hub_back: "返回社团 Ranking", wtt_hub_credit: "数据仅供娱乐 · 非官方 WTT 排名 · © 2026 WFLS Table Tennis Club",
+        wtt_status_check: "检测中...", wtt_status_ready: "数据已就绪", wtt_status_template: "待填充数据", wtt_status_empty: "暂无数据", wtt_link_rank: "排名", wtt_link_dataviz: "数据可视化", wtt_link_personal: "个人数据",
+        wtt_cat_ms: "男子单打", wtt_cat_ws: "女子单打", wtt_cat_md: "男子双打", wtt_cat_wd: "女子双打", wtt_cat_xd: "混合双打"
     },
     en: {
         site_title: "WFLS Table Tennis Club | Wuhan Foreign Languages School", nav_home: "Home", nav_news: "News", nav_competitions: "Competitions", nav_contact: "Contact", nav_more: "More...", nav_members: "Core Members", nav_qa: "Q&A", lang_btn: "中文",
@@ -89,7 +134,26 @@ const i18n = {
         rank_realtime_header: "Real-time", rank_realtime_label: "Live Ranking",
         changelog_page_title: "Changelog | WFLS Table Tennis Club", changelog_hero_tag: "Changelog", changelog_hero_title: "Changelog", changelog_hero_desc: "Version History 路 Features 路 Bug Fixes", changelog_list_tag: "Version History", changelog_list_title: "Version History", changelog_empty: "No changelog entries yet",
         tag_release: "Release", tag_feature: "Feature", tag_fix: "Fix",
-        draws_tab_content: "Details", draws_tab_bracket: "Bracket"
+        draws_tab_content: "Details", draws_tab_bracket: "Bracket",
+        wtt_hero_desc: "WTT Rankings · Click a name for score details", wtt_dataviz_title: "WTT Data Visualization", wtt_dataviz_btn: "View WTT Data Visualization", wtt_personal_title: "WTT Personal Stats", wtt_personal_btn: "View WTT Personal Stats", wtt_table_title: "WTT Points Table", wtt_loading: "Loading WTT data...", wtt_click_detail: "Click for score details", wtt_error_fail: "Failed to load WTT rankings. Please refresh and try again.",
+        wtt_back_hub: "Back to WTT Hub",
+        sort_desc: "Descending", sort_asc: "Ascending",
+        wtt_file_matches: "Match Records", wtt_file_initial: "Initial Scores", wtt_file_event: "Event Coefficients", wtt_file_season: "Season Config",
+        wtt_prepare: "Preparing data files...", wtt_downloading: "Downloading {label} ({i}/{total}): {file}", wtt_calculating: "Calculating rankings...", wtt_snapshot: "Snapshot {current}/{total}",
+        wtt_default_season: "Default Season", wtt_node_count: "{n} nodes", wtt_ppl: "{n} players",
+        wtt_no_records: "No records", wtt_no_data: "No ranking data", wtt_cant_compute: "Could not compute WTT rankings", wtt_bonus: "Bonus",
+        wtt_no_players: "No player data", wtt_select_player: "-- Select Player --", wtt_compare_btn: "Compare", wtt_compare_placeholder: "Select two players to compare",
+        wtt_alert_select_one: "Please select at least one player", wtt_alert_max: "Maximum of 15 players", wtt_alert_two: "Please select two players", wtt_alert_diff: "Please select two different players",
+        wtt_axis_points: "Points", wtt_axis_rank: "Rank", wtt_rank_suffix: "Rank #{n}",
+        wtt_cur_score: "Current Points", wtt_h2h_rate: "Head-to-head Win Rate", wtt_pred_rate: "Predicted Win Rate", wtt_total_h2h: "Head-to-head: {n} matches", wtt_wins: "{player} {n} wins", wtt_recent: "Recent: {date} (Winner: {winner})", wtt_winner: "Winner", wtt_pts_change: "{player} point change", wtt_no_h2h: "No head-to-head records",
+        wtt_ps_hero_title: "WTT Personal Match Statistics", wtt_ps_title: "WTT Personal Stats", wtt_ps_label: "Select Player", wtt_ps_search_ph: "Search player name...", wtt_ps_view: "View Data", wtt_ps_placeholder: "Select a player to view personal data", wtt_ps_nomatch: "No matching players", wtt_ps_nodata: "No match data",
+        wtt_ov_total: "Matches", wtt_ov_wins: "Wins", wtt_ov_losses: "Losses", wtt_ov_percentile: "Beat Percentile", wtt_ov_max: "Peak Points", wtt_ov_bestrank: "Best Rank",
+        wtt_ps_sum1: "{player} has played {total} matches, winning {wins} and losing {losses}.", wtt_ps_sum2: "{player}'s points beat {percent}% of all players.",
+        wtt_ps_trend: "Points Trend", wtt_ps_day: "By Day", wtt_ps_week: "By Week", wtt_ps_snapshot: "Snapshots",
+        wtt_victory_card: "Victories · Top 3 Beaten", wtt_pk_card: "Head-to-Head · Top 3 Opponents", wtt_lucky_card: "Lucky Stars", wtt_nemesis_card: "Nemesis", wtt_empty: "None", wtt_sub_wl: "{wins}W {losses}L Win Rate: {rate}%", wtt_tooltip_points: "Points: {score}", wtt_tooltip_rank: "| Rank: #{rank}", wtt_ps_alert: "Please select a player",
+        wtt_hub_sub_a: "A WTT ranking simulation based on the WFLS TT Club scoring system.", wtt_hub_sub_b: "Select a category below for rankings, visualizations, and personal stats.", wtt_hub_back: "Back to Club Ranking", wtt_hub_credit: "For entertainment only · Not official WTT rankings · © 2026 WFLS Table Tennis Club",
+        wtt_status_check: "Checking...", wtt_status_ready: "Data Ready", wtt_status_template: "Template Data", wtt_status_empty: "No Data", wtt_link_rank: "Ranking", wtt_link_dataviz: "Data Viz", wtt_link_personal: "Personal Stats",
+        wtt_cat_ms: "Men's Singles", wtt_cat_ws: "Women's Singles", wtt_cat_md: "Men's Doubles", wtt_cat_wd: "Women's Doubles", wtt_cat_xd: "Mixed Doubles"
     }
 };
 
@@ -131,6 +195,7 @@ function setLanguage(lang) {
     if (typeof updateRankingHeaders === 'function') updateRankingHeaders();
     if (typeof updatePdfButtons === 'function') updatePdfButtons();
     if (dataLoaded && typeof updateDetailPage === 'function') updateDetailPage();
+    if (typeof wttReapplyI18n === 'function') wttReapplyI18n();
 }
 async function updateHeroLastUpdated() { const el = document.getElementById('heroLastUpdated'); if (!el) return; const cached = localStorage.getItem('wfls-last-updated'); if (cached) { try { const cd = JSON.parse(cached); if (cd.date && (Date.now() - cd.ts) < 3600000) { el.textContent = currentLang === 'zh' ? `上次更新：${cd.date}` : `Last updated: ${cd.date}`; return; } } catch(e) {} } try { const res = await fetch('https://api.github.com/repos/yglalpavir/wfls-tt-club/commits?per_page=1'); if (res.ok) { const commits = await res.json(); if (commits && commits.length > 0) { const d = new Date(commits[0].commit.committer.date); const ds = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); localStorage.setItem('wfls-last-updated', JSON.stringify({ date: ds, ts: Date.now() })); el.textContent = currentLang === 'zh' ? `上次更新：${ds}` : `Last updated: ${ds}`; return; } } } catch(e) { console.warn('GitHub API failed, fallback to about.json'); } if (aboutData && aboutData.lastUpdated) { el.textContent = currentLang === 'zh' ? `上次更新：${aboutData.lastUpdated}` : `Last updated: ${aboutData.lastUpdated}`; } }
 function updateRankingHeaders() { document.querySelectorAll('.ranking-table-full th[data-i18n]').forEach(th => { const key = th.getAttribute('data-i18n'); if (i18n[currentLang] && i18n[currentLang][key]) th.innerHTML = i18n[currentLang][key] + ' <span class="sort-arrow"></span>'; }); }

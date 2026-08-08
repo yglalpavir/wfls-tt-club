@@ -126,6 +126,15 @@ git push -u origin main
 - **球员选择器**：多选复选框，默认选择前5名
 - 图表使用 Chart.js 渲染，支持悬停查看数值
 
+### WTT 彩蛋（Easter Egg）
+
+- **WTT Hub**（`wtt_hub.html`）：男子/女子单打、双打、混双积分排名入口，自动检测各项目数据状态
+- **WTT 排名**（`wtt_ranking.html`）：基于真实 WTT 比赛记录的积分模拟排名，支持时间节点切换、排序、积分明细
+- **WTT 数据可视化**（`wtt_dataviz.html`）：积分趋势、排名河流图、球员对比
+- **WTT 个人数据**（`wtt_personal_stats.html`）：单名球员的战绩、对手分析、积分变化趋势
+- 数据存放于 `wtt_data/{分类}/`（ms 男单 / ws 女单 / md 男双 / wd 女双 / xd 混双）
+- 全站支持中英文双语切换，WTT 页面动态内容（图表、进度、统计）随语言实时刷新
+
 ### 社团信息
 
 - 社团简介（历史、理念、活动，数据源自 `about.json`）

@@ -40,6 +40,7 @@
             </ul>
             <div class="nav-actions">
                 <button class="theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+                <button class="lang-toggle" id="langToggle" aria-label="切换语言"><span data-i18n="lang_btn">EN</span></button>
             </div>
             <button class="hamburger" id="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
         </div>
@@ -50,7 +51,7 @@
         <div class="page-hero-content">
             <span class="section-tag wtt-easter-egg-tag">🥚 Easter Egg</span>
             <h1>WTT <span id="wttCatName">个人数据</span></h1>
-            <p>WTT 个人比赛数据统计</p>
+            <p data-i18n="wtt_ps_hero_title">WTT 个人比赛数据统计</p>
         </div>
     </section>
 
@@ -58,12 +59,12 @@
         <div class="container">
             <div class="viz-section-header">
                 <span class="section-tag">Personal Stats</span>
-                <h2 class="section-title">WTT 个人数据</h2>
+                <h2 class="section-title" data-i18n="wtt_ps_title">WTT 个人数据</h2>
             </div>
             <div class="viz-personal-grid">
                 <div class="viz-personal-selector glass-card">
                     <div class="compare-selector-group">
-                        <label>选择球员</label>
+                        <label data-i18n="wtt_ps_label">选择球员</label>
                         <div class="player-search-container" id="wttPersonalPlayerSearchContainer">
                             <div class="player-search-input-wrapper">
                                 <i class="fa-solid fa-magnifying-glass player-search-icon"></i>
@@ -78,19 +79,19 @@
                             <input type="hidden" id="wttPersonalPlayerSelect" value="">
                         </div>
                     </div>
-                    <button class="btn btn-sm btn-primary" id="applyWttPersonalStats" style="width:100%;margin-top:12px;justify-content:center;">查看数据</button>
+                    <button class="btn btn-sm btn-primary" id="applyWttPersonalStats" style="width:100%;margin-top:12px;justify-content:center;" data-i18n="wtt_ps_view">查看数据</button>
                 </div>
                 <div class="viz-personal-result glass-card" id="wttPersonalResult">
                     <div class="compare-placeholder">
                         <i class="fa-solid fa-user-chart"></i>
-                        <p>选择一名球员查看个人数据</p>
+                        <p data-i18n="wtt_ps_placeholder">选择一名球员查看个人数据</p>
                     </div>
                 </div>
             </div>
 
             <div class="wtt-back-link" style="text-align:center;margin-top:40px;">
                 <a href="wtt_hub.html" class="btn btn-secondary btn-sm">
-                    <i class="fa-solid fa-arrow-left"></i> 返回 WTT Hub
+                    <i class="fa-solid fa-arrow-left"></i> <span data-i18n="wtt_back_hub">返回 WTT Hub</span>
                 </a>
             </div>
         </div>

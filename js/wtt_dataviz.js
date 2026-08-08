@@ -4,6 +4,7 @@
    ======================================== */
 
 let wttPointsTrendChart = null, wttRankStreamChart = null;
+let wttCurrentCompare = null;  // 当前对比的球员对（语言切换时重渲染用）
 let wttDataVizSettings = null;  // 折线图设置（从 data/data_viz-settings.json 加载）
 const WTT_CHART_COLORS = ['#4da3ff','#ff6b6b','#52c41a','#f5c542','#ff9f43','#a55eea','#26de81','#fd79a8','#45b7d1','#f78fb3','#3dc1d3','#e66767','#778beb','#f5cd79','#cf6a87','#786fa6','#f8a5c2','#63cdda','#ea8685','#596275'];
 const WTT_STREAM_COLORS = ['#4da3ff','#52c41a','#ff9f43','#a55eea','#26de81','#ff6b6b','#45b7d1','#f5c542','#778beb','#fd79a8','#3dc1d3','#f78fb3','#63cdda','#e66767','#f5cd79','#cf6a87','#786fa6','#f8a5c2','#ea8685','#596275'];
@@ -48,7 +49,7 @@ function wttVizShowProgress(containerId, msg) {
     if (!el) return;
     el.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;color:var(--text-secondary);">
         <div class="wtt-spinner" style="width:32px;height:32px;border:3px solid var(--border-color);border-top-color:var(--accent-blue);border-radius:50%;animation:wttSpin 0.8s linear infinite;margin-bottom:12px;"></div>
-        <p style="font-size:0.9rem;margin:0;">${msg || '加载数据中...'}</p>
+        <p style="font-size:0.9rem;margin:0;">${msg || i18n[currentLang].wtt_loading}</p>
     </div>`;
 }
 
@@ -68,7 +69,7 @@ async function wttLoadRankingDataForViz() {
             overlay.className = 'wtt-loading-overlay';
             overlay.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;min-height:300px;color:var(--text-secondary);">
                 <div class="wtt-spinner" style="width:36px;height:36px;border:3px solid var(--border-color);border-top-color:var(--accent-blue);border-radius:50%;animation:wttSpin 0.8s linear infinite;margin-bottom:12px;"></div>
-                <p style="font-size:0.95rem;margin:0;" class="wtt-chart-progress-text">${msg || '加载数据中...'}</p>
+                <p style="font-size:0.95rem;margin:0;" class="wtt-chart-progress-text">${msg || i18n[currentLang].wtt_loading}</p>
             </div>`;
             overlay.style.cssText = 'position:absolute;top:0;left:0;right:0;bottom:0;z-index:10;display:flex;';
             chartContainer.style.position = 'relative';
@@ -86,13 +87,13 @@ async function wttLoadRankingDataForViz() {
         }
     }
 
-    showProgress('准备下载数据文件...');
+    showProgress(i18n[currentLang].wtt_prepare);
     console.log('[WttDataViz] 开始加载数据...');
 
     try {
         // 🔥 逐个加载数据文件，显示详细进度
         // 先加载 settings.json 以判断是否需要 initial-scores
-        showProgress('正在下载 项目设置 (1/5): settings.json');
+        showProgress(i18n[currentLang].wtt_downloading.replace('{label}', 'settings').replace('{i}', '1').replace('{total}', '5').replace('{file}', 'settings.json'));
         await new Promise(r => setTimeout(r, 0));
         await wttLoadSettings();
 
@@ -100,20 +101,20 @@ async function wttLoadRankingDataForViz() {
         const needsInitScores = !wttSettings || wttSettings.scoreMode !== 'flat1300';
 
         const dataFiles = [
-            { name: 'score-log (按赛季)',   loader: wttLoadScoreLog,          label: '比赛记录' },
+            { name: 'score-log (按赛季)',   loader: wttLoadScoreLog,          label: i18n[currentLang].wtt_file_matches },
         ];
         if (needsInitScores) {
-            dataFiles.push({ name: 'initial-scores.json', loader: wttLoadInitialScores, label: '初始积分' });
+            dataFiles.push({ name: 'initial-scores.json', loader: wttLoadInitialScores, label: i18n[currentLang].wtt_file_initial });
         }
         dataFiles.push(
-            { name: 'event-coefficient.json',loader: wttLoadEventCoefficients, label: '赛事系数' },
-            { name: 'seasons.json',          loader: wttLoadSeasons,           label: '赛季配置' }
+            { name: 'event-coefficient.json',loader: wttLoadEventCoefficients, label: i18n[currentLang].wtt_file_event },
+            { name: 'seasons.json',          loader: wttLoadSeasons,           label: i18n[currentLang].wtt_file_season }
         );
 
         for (let i = 0; i < dataFiles.length; i++) {
             const f = dataFiles[i];
             const total = dataFiles.length;
-            showProgress(`正在下载 ${f.label} (${i + 1}/${total}): ${f.name}`);
+            showProgress(i18n[currentLang].wtt_downloading.replace('{label}', f.label).replace('{i}', i + 1).replace('{total}', total).replace('{file}', f.name));
             // yield 到浏览器，确保 UI 更新
             await new Promise(r => setTimeout(r, 0));
             await f.loader();
@@ -125,11 +126,11 @@ async function wttLoadRankingDataForViz() {
         if (!wttEventCoefficients || !wttSeasonsData) throw new Error('WTT数据加载失败');
 
         // 更新进度为计算排名
-        showProgress('正在计算排名积分...');
+        showProgress(i18n[currentLang].wtt_calculating);
 
         // 异步分块计算（带进度回调）
         wttRankingTimeline = await wttCalculateAllRankingsAsync((current, total, label) => {
-            showProgress(`${label || ''} · 快照 ${current}/${total}`);
+            showProgress(i18n[currentLang].wtt_snapshot.replace('{current}', current).replace('{total}', total));
         });
 
         // 加载完成，清理图表区的 loading overlay
@@ -140,7 +141,7 @@ async function wttLoadRankingDataForViz() {
         wttRankingTimeline = [];
         hideChartOverlay();
         if (progressContainer) {
-            progressContainer.innerHTML = '<div style="padding:20px;color:var(--accent-red);">❌ WTT排名数据加载失败，请刷新页面重试</div>';
+            progressContainer.innerHTML = '<div style="padding:20px;color:var(--accent-red);">❌ ' + i18n[currentLang].wtt_error_fail + '</div>';
         }
         return false;
     }
@@ -161,14 +162,15 @@ function initWttDataViz() {
 
     if (!wttRankingTimeline || wttRankingTimeline.length === 0) {
         console.error('[WttDataViz] wttRankingTimeline 为空，排名数据未加载成功');
-        document.getElementById('wttPlayerCheckboxList').innerHTML = '<div style="padding:20px;color:var(--accent-red);">❌ WTT排名数据加载失败，请刷新页面重试</div>';
+        console.error('[WttDataViz] wttRankingTimeline 为空，排名数据未加载成功');
+        document.getElementById('wttPlayerCheckboxList').innerHTML = '<div style="padding:20px;color:var(--accent-red);">❌ ' + i18n[currentLang].wtt_error_fail + '</div>';
         return;
     }
 
     const players = wttGetAllPlayers();
     if (!players.length) {
         console.error('[WttDataViz] wttGetAllPlayers() 返回空数组');
-        document.getElementById('wttPlayerCheckboxList').innerHTML = '<div style="padding:20px;color:var(--accent-red);">❌ 无法获取球员列表</div>';
+        document.getElementById('wttPlayerCheckboxList').innerHTML = '<div style="padding:20px;color:var(--accent-red);">❌ ' + i18n[currentLang].wtt_no_players + '</div>';
         return;
     }
 
@@ -195,8 +197,8 @@ function initWttDataViz() {
         // 事件监听
     document.getElementById('wttApplyPointsTrend')?.addEventListener('click', () => {
         const sel = wttGetSelectedPlayers();
-        if (!sel.length) { alert('请至少选择一名球员'); return; }
-        if (sel.length > 15) { alert('最多选择15名球员'); return; }
+        if (!sel.length) { alert(i18n[currentLang].wtt_alert_select_one); return; }
+        if (sel.length > 15) { alert(i18n[currentLang].wtt_alert_max); return; }
         const dc = parseInt(document.getElementById('wttPointsTrendDataCount')?.value) || 20;
         wttRenderPointsTrend(sel, dc);
     });
@@ -221,8 +223,9 @@ function initWttDataViz() {
     });
     document.getElementById('wttApplyCompare')?.addEventListener('click', () => {
         const pa = document.getElementById('wttPlayerASelect')?.value, pb = document.getElementById('wttPlayerBSelect')?.value;
-        if (!pa || !pb) { alert('请选择两名球员'); return; }
-        if (pa === pb) { alert('请选择不同的球员'); return; }
+        if (!pa || !pb) { alert(i18n[currentLang].wtt_alert_two); return; }
+        if (pa === pb) { alert(i18n[currentLang].wtt_alert_diff); return; }
+        wttCurrentCompare = { a: pa, b: pb };
         wttRenderComparison(pa, pb);
     });
     console.log('[WttDataViz] 初始化完成');
@@ -297,7 +300,7 @@ function wttRenderPlayerCheckboxes() {
 
     const players = wttGetAllPlayers();
     if (!players.length) {
-        container.innerHTML = '<div style="padding:20px;text-align:center;color:var(--text-muted);">暂无球员数据</div>';
+        container.innerHTML = '<div style="padding:20px;text-align:center;color:var(--text-muted);">' + i18n[currentLang].wtt_no_players + '</div>';
         return;
     }
 
@@ -418,9 +421,10 @@ function wttRenderCompareSelects() {
     const sortedPlayers = [...players].sort((a, b) => (scoreMap[b] || 0) - (scoreMap[a] || 0));
 
     const opts = sortedPlayers.map(p => `<option value="${p}">${p}</option>`).join('');
+    const ph = i18n[currentLang].wtt_select_player;
     const sa = document.getElementById('wttPlayerASelect'), sb = document.getElementById('wttPlayerBSelect');
-    if (sa) sa.innerHTML = '<option value="">-- 选择球员 --</option>' + opts;
-    if (sb) sb.innerHTML = '<option value="">-- 选择球员 --</option>' + opts;
+    if (sa) sa.innerHTML = `<option value="">${ph}</option>` + opts;
+    if (sb) sb.innerHTML = `<option value="">${ph}</option>` + opts;
 }
 
 // ============ 积分趋势图 ============
@@ -577,7 +581,7 @@ function wttRenderPointsTrend(playerNames, dataCount) {
                 },
                 scales: {
                     x: { grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 9 : 11 }, maxRotation: isMobile ? 45 : 0 } },
-                    y: { beginAtZero: false, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 9 : 11 } }, title: { display: true, text: '积分', font: { size: isMobile ? 10 : 12 } } }
+                    y: { beginAtZero: false, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 9 : 11 } }, title: { display: true, text: i18n[currentLang].wtt_axis_points, font: { size: isMobile ? 10 : 12 } } }
                 }
             }
         });
@@ -644,12 +648,12 @@ function wttRenderRankStream(topN, dataCount) {
                     },
                     tooltip: {
                         backgroundColor: 'rgba(26,29,40,0.9)', titleFont: { size: isMobile ? 11 : 13 }, bodyFont: { size: isMobile ? 10 : 12 }, padding: isMobile ? 8 : 12, cornerRadius: 8,
-                        callbacks: { label: ctx => `${ctx.dataset.label}: 第${ctx.raw}名` }
+                        callbacks: { label: ctx => `${ctx.dataset.label}: ${i18n[currentLang].wtt_rank_suffix.replace('{n}', ctx.raw)}` }
                     }
                 },
                 scales: {
                     x: { grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 9 : 11 }, maxRotation: isMobile ? 45 : 0 } },
-                    y: { reverse: true, min: 1, max: topN, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 9 : 11 }, stepSize: 1 }, title: { display: true, text: '排名', font: { size: isMobile ? 10 : 12 } } }
+                    y: { reverse: true, min: 1, max: topN, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 9 : 11 }, stepSize: 1 }, title: { display: true, text: i18n[currentLang].wtt_axis_rank, font: { size: isMobile ? 10 : 12 } } }
                 }
             }
         });
@@ -803,29 +807,29 @@ function wttRenderComparison(playerA, playerB) {
     let html = `<div class="compare-summary">
         <div class="compare-player-col">
             <div class="compare-player-name">${playerA}</div>
-            <div class="compare-player-stat">当前积分: <strong>${ad ? ad['当前积分'].toFixed(1) : '-'}</strong></div>
-            <div class="compare-player-stat">交手胜率: <strong>${aWinRate}</strong></div>
-            <div class="compare-player-stat">预测胜率: <strong>${predA}%</strong></div>
+            <div class="compare-player-stat">${i18n[currentLang].wtt_cur_score}: <strong>${ad ? ad['当前积分'].toFixed(1) : '-'}</strong></div>
+            <div class="compare-player-stat">${i18n[currentLang].wtt_h2h_rate}: <strong>${aWinRate}</strong></div>
+            <div class="compare-player-stat">${i18n[currentLang].wtt_pred_rate}: <strong>${predA}%</strong></div>
         </div>
         <div class="compare-divider">VS</div>
         <div class="compare-player-col">
             <div class="compare-player-name">${playerB}</div>
-            <div class="compare-player-stat">当前积分: <strong>${bd ? bd['当前积分'].toFixed(1) : '-'}</strong></div>
-            <div class="compare-player-stat">交手胜率: <strong>${bWinRate}</strong></div>
-            <div class="compare-player-stat">预测胜率: <strong>${predB}%</strong></div>
+            <div class="compare-player-stat">${i18n[currentLang].wtt_cur_score}: <strong>${bd ? bd['当前积分'].toFixed(1) : '-'}</strong></div>
+            <div class="compare-player-stat">${i18n[currentLang].wtt_h2h_rate}: <strong>${bWinRate}</strong></div>
+            <div class="compare-player-stat">${i18n[currentLang].wtt_pred_rate}: <strong>${predB}%</strong></div>
         </div>
     </div>`;
 
     if (total > 0) {
         html += `<div style="text-align:center;margin-bottom:16px;">
-            <span style="font-weight:600;">总交手: ${total} 场</span> |
-            <span style="color:#52c41a;">${playerA} ${aW} 胜</span> |
-            <span style="color:#52c41a;">${playerB} ${bW} 胜</span>
-            ${recent ? ` | 最近: ${recent['日期']} (胜者: ${recent['胜者']})` : ''}
+            <span style="font-weight:600;">${i18n[currentLang].wtt_total_h2h.replace('{n}', total)}</span> |
+            <span style="color:#52c41a;">${i18n[currentLang].wtt_wins.replace('{player}', playerA).replace('{n}', aW)}</span> |
+            <span style="color:#52c41a;">${i18n[currentLang].wtt_wins.replace('{player}', playerB).replace('{n}', bW)}</span>
+            ${recent ? ` | ${i18n[currentLang].wtt_recent.replace('{date}', recent['日期']).replace('{winner}', recent['胜者'])}` : ''}
         </div>
         <div class="compare-h2h-wrapper">
             <table class="compare-h2h-table">
-                <thead><tr><th>日期</th><th>类型</th><th>胜者</th><th>${playerA} 积分变动</th><th>${playerB} 积分变动</th></tr></thead>
+                <thead><tr><th>${i18n[currentLang].score_col_date}</th><th>${i18n[currentLang].score_col_type}</th><th>${i18n[currentLang].wtt_winner}</th><th>${i18n[currentLang].wtt_pts_change.replace('{player}', playerA)}</th><th>${i18n[currentLang].wtt_pts_change.replace('{player}', playerB)}</th></tr></thead>
                 <tbody>`;
 
         const scores = {};
@@ -866,11 +870,29 @@ function wttRenderComparison(playerA, playerB) {
         }
         html += '</tbody></table></div>';
     } else {
-        html += '<div class="compare-placeholder"><p>暂无交手记录</p></div>';
+        html += '<div class="compare-placeholder"><p>' + i18n[currentLang].wtt_no_h2h + '</p></div>';
     }
 
     container.innerHTML = html;
 
     scoreLogData = origScoreLog; initialScoresData = origInitial;
     eventCoefficients = origEvent; seasonsData = origSeasons;
+}
+
+// 语言切换时重绘图表（覆盖 wtt_common.js 中的同名函数）
+function wttReapplyI18n() {
+    wttUpdatePageCategoryDisplay();
+    const sel = wttGetSelectedPlayers();
+    const dc = parseInt(document.getElementById('wttPointsTrendDataCount')?.value) || 20;
+    if (sel.length) wttRenderPointsTrend(sel, dc);
+    const topN = parseInt(document.getElementById('wttTopNSelect')?.value) || 10;
+    const sdc = parseInt(document.getElementById('wttStreamDataCount')?.value) || 20;
+    if (wttRankStreamChart) wttRenderRankStream(topN, sdc);
+    wttUpdateCompareBox();
+}
+
+function wttUpdateCompareBox() {
+    const container = document.getElementById('wttCompareResult');
+    if (!container || !wttCurrentCompare) return;
+    wttRenderComparison(wttCurrentCompare.a, wttCurrentCompare.b);
 }

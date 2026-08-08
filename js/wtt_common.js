@@ -903,9 +903,10 @@ function wttCalculateAllRankings() {
 function wttShowLoading(containerId, message) {
     const el = document.getElementById(containerId);
     if (!el) return;
+    const txt = message || ((typeof i18n !== 'undefined' && typeof currentLang !== 'undefined' && i18n[currentLang] && i18n[currentLang].wtt_loading) ? i18n[currentLang].wtt_loading : '加载数据中...');
     el.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 20px;color:var(--text-secondary);">
         <div class="wtt-spinner" style="width:40px;height:40px;border:3px solid var(--border-color);border-top-color:var(--accent-blue);border-radius:50%;animation:wttSpin 0.8s linear infinite;margin-bottom:16px;"></div>
-        <p style="font-size:0.95rem;">${message || '加载数据中...'}</p>
+        <p style="font-size:0.95rem;">${txtMsg}</p>
         <p class="wtt-progress-text" style="font-size:0.8rem;margin-top:4px;color:var(--text-tertiary);"></p>
     </div>`;
 }
@@ -992,14 +993,31 @@ console.log(`[WTT Common] 当前项目: ${wttCurrentCategory} (${WTT_CATEGORIES[
 
 /**
  * 更新页面上的项目名称显示（Hero 标题中的 <span id="wttCatName">）
+ * 根据当前语言显示中英文名称
  */
+function wttGetCategoryDisplayName() {
+    const info = wttGetCategoryInfo();
+    if (typeof currentLang !== 'undefined' && currentLang === 'en' && info.nameEn) {
+        return info.nameEn;
+    }
+    return info.name;
+}
+
 function wttUpdatePageCategoryDisplay() {
     const catEl = document.getElementById('wttCatName');
     if (catEl) {
         const info = wttGetCategoryInfo();
-        catEl.textContent = info.name;
+        catEl.textContent = wttGetCategoryDisplayName();
         catEl.style.color = info.color;
     }
+}
+
+/**
+ * 语言切换后的 WTT 通用重审触发函数
+ */
+function wttReapplyI18n() {
+    wttUpdatePageCategoryDisplay();
+    wttPatchInternalLinks();
 }
 
 // 页面加载后自动更新显示

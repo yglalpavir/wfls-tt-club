@@ -129,13 +129,6 @@ async function loadAllData() {
         );
     }
 
-    // WTT 对阵表数据（无分项版本，保留在根目录）
-    promises.push(
-        fetchJson("wtt_data/wtt_draws.json")
-            .then(d => ({ key: "wtt_draws", data:d, group:"wttDraws" }))
-            .catch(() => ({ key: "wtt_draws", data:[], group:"wttDraws" }))
-    );
-
     // WTT 分项 score-log 数据 - 加载主文件 + 年度分文件
     // 各分项可能的年度文件后缀
     const discYearSuffixes = {
@@ -276,9 +269,6 @@ function computeStats() {
 
     // --- WTT 主数据统计（从各分项聚合计算，不再依赖旧版扁平文件）---
     const discKeys = ["ms","ws","wd","md","xd"];
-
-    // WTT 对阵表数（从 wtt_data/wtt_draws.json 加载）
-    s.wttDraws = Array.isArray(allData.wtt_draws) ? allData.wtt_draws.length : 0;
 
     // WTT 赛季数（聚合各分项的可见赛季，去重）
     const allWttSeasons = new Map();
