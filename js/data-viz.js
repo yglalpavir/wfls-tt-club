@@ -185,7 +185,7 @@ function renderPlayerCheckboxes() {
     container.innerHTML = sortedPlayers.map((name, i) => { 
         const checked = i < 8 ? 'checked' : ''; 
         const pts = scoreMap[name] !== undefined ? scoreMap[name].toFixed(1) : '-'; 
-        return `<label class="player-checkbox-item ${i<5?'checked':''}"><input type="checkbox" value="${name}" ${checked}><span>${name}</span><span class="player-rank">${pts}</span></label>`; 
+        return `<label class="player-checkbox-item ${i<5?'checked':''}"><input type="checkbox" value="${escapeHtml(String(name))}" ${checked}><span>${escapeHtml(String(name))}</span><span class="player-rank">${pts}</span></label>`; 
     }).join(''); 
     
     container.querySelectorAll('.player-checkbox-item').forEach(item => { 
@@ -208,7 +208,7 @@ function renderCompareSelects() {
     const scoreMap = getCurrentSeasonFallbackScores();
     const sortedPlayers = [...players].sort((a, b) => (scoreMap[b] || 0) - (scoreMap[a] || 0));
     
-    const opts = sortedPlayers.map(p => `<option value="${p}">${p}</option>`).join(''); 
+    const opts = sortedPlayers.map(p => `<option value="${escapeHtml(String(p))}">${escapeHtml(String(p))}</option>`).join(''); 
     const sa = document.getElementById('playerASelect'), 
           sb = document.getElementById('playerBSelect'); 
     if (sa) sa.innerHTML = '<option value="">-- 选择球员 --</option>' + opts; 
@@ -536,7 +536,7 @@ function renderComparison(playerA, playerB) {
         }
         if (Object.keys(scores).length === 0 && initialScoresData) Object.assign(scores, initialScoresData.initialScores);
         const h2hSeasonStart = (seasonsData && seasonsData.length > 0 && h2h.length > 0) ? (() => { const d = h2h[0]['日期']; for (const s of seasonsData) { if (d >= s.startDate && d <= s.endDate) return s.startDate; } return seasonsData[seasonsData.length - 1].startDate; })() : '';
-        const sortedLog = [...scoreLogData].sort((a,b) => a['日期'].localeCompare(b['日期'])); for (const m of sortedLog) { if (h2hSeasonStart && m['日期'] < h2hSeasonStart) continue; if (isMatchRecord(m)) { const w = m['胜者'], l = m['负者']; if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE; if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE; const wg = calcMatchPoints(w, l, m['类型'], m['日期'], m['日期'], scores); if ((w === playerA && l === playerB) || (w === playerB && l === playerA)) { const aIsW = w === playerA; const aChange = aIsW ? wg : -(wg * 0.8); const bChange = aIsW ? -(wg * 0.8) : wg; html += `<tr><td>${m['日期']}</td><td>${m['类型']}</td><td>${w}</td><td class="${aIsW?'win-highlight':'loss-highlight'}">${aChange>0?'+':''}${aChange.toFixed(1)}</td><td class="${!aIsW?'win-highlight':'loss-highlight'}">${bChange>0?'+':''}${bChange.toFixed(1)}</td></tr>`; } scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg); scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * 0.8); } else if (isBonusRecord(m)) { const target = m['对象']; const bonus = parseFloat(m['分数']) || 0; if (!scores[target]) scores[target] = DEFAULT_INITIAL_SCORE; scores[target] = Math.max(SCORE_FLOOR, scores[target] + bonus); } } html += '</tbody></table></div>'; } else { html += '<div class="compare-placeholder"><i class="fa-solid fa-circle-info"></i><p>暂无交手记录</p></div>'; } container.innerHTML = html; }
+        const sortedLog = [...scoreLogData].sort((a,b) => a['日期'].localeCompare(b['日期'])); for (const m of sortedLog) { if (h2hSeasonStart && m['日期'] < h2hSeasonStart) continue; if (isMatchRecord(m)) { const w = m['胜者'], l = m['负者']; if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE; if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE; const wg = calcMatchPoints(w, l, m['类型'], m['日期'], m['日期'], scores); if ((w === playerA && l === playerB) || (w === playerB && l === playerA)) { const aIsW = w === playerA; const aChange = aIsW ? wg : -(wg * 0.8); const bChange = aIsW ? -(wg * 0.8) : wg; html += `<tr><td>${escapeHtml(m['日期'])}</td><td>${escapeHtml(m['类型'])}</td><td>${escapeHtml(w)}</td><td class="${aIsW?'win-highlight':'loss-highlight'}">${aChange>0?'+':''}${aChange.toFixed(1)}</td><td class="${!aIsW?'win-highlight':'loss-highlight'}">${bChange>0?'+':''}${bChange.toFixed(1)}</td></tr>`; } scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg); scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * 0.8); } else if (isBonusRecord(m)) { const target = m['对象']; const bonus = parseFloat(m['分数']) || 0; if (!scores[target]) scores[target] = DEFAULT_INITIAL_SCORE; scores[target] = Math.max(SCORE_FLOOR, scores[target] + bonus); } } html += '</tbody></table></div>'; } else { html += '<div class="compare-placeholder"><i class="fa-solid fa-circle-info"></i><p>暂无交手记录</p></div>'; } container.innerHTML = html; }
 // ========================================
 // 个人数据板块
 // ========================================
@@ -550,7 +550,7 @@ function renderPersonalPlayerSelect() {
     const scoreMap = getCurrentSeasonFallbackScores();
     const sortedPlayers = [...players].sort((a, b) => (scoreMap[b] || 0) - (scoreMap[a] || 0));
 
-    const opts = sortedPlayers.map(p => `<option value="${p}">${p}</option>`).join('');
+    const opts = sortedPlayers.map(p => `<option value="${escapeHtml(String(p))}">${escapeHtml(String(p))}</option>`).join('');
     sel.innerHTML = '<option value="">-- 选择球员 --</option>' + opts;
 }
 

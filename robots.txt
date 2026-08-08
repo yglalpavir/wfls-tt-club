@@ -1,5 +1,15 @@
 User-agent: *
 Allow: /
+
+# 公开页面资源
 Disallow: /Assets/
+
+# 数据文件（JSON）与生成目录无需被抓取
+Disallow: /data/
+Disallow: /wtt_data/
+Disallow: /ittf_data/
+Disallow: /ittf-pingpong_api/
+Disallow: /tools/
+Disallow: /node_modules/
 
 Sitemap: https://yglalpavir.github.io/wfls-tt-club/sitemap.xml

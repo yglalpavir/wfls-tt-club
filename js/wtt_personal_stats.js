@@ -269,8 +269,9 @@ function wttRenderPlayerDropdown(filteredPlayers, query) {
     }
 
     list.innerHTML = filteredPlayers.map((p, i) => {
-        const displayName = query ? wttHighlightMatch(p.name, query) : p.name;
-        return '<button type="button" class="player-search-item' + (i === 0 ? ' highlighted' : '') + '" data-value="' + p.name + '" data-index="' + i + '">'
+        const pNameSafe = escapeHtml(String(p.name || ''));
+        const displayName = query ? wttHighlightMatch(pNameSafe, query) : pNameSafe;
+        return '<button type="button" class="player-search-item' + (i === 0 ? ' highlighted' : '') + '" data-value="' + pNameSafe + '" data-index="' + i + '">'
             + displayName
             + '<span class="player-score">' + Math.round(p.score) + '</span>'
             + '</button>';
@@ -760,7 +761,7 @@ if (!scoreLogData || !scoreLogData.length) {
             const wr = totalGames > 0 ? ((x.wins / totalGames) * 100).toFixed(0) : 0;
             html += '<div class="personal-card-item">';
             html += '<span class="personal-card-rank">' + (i + 1) + '</span>';
-            html += '<span class="personal-card-name">' + x.name + '<span class="personal-card-score">(' + x.curScore + ')</span></span>';
+            html += '<span class="personal-card-name">' + escapeHtml(String(x.name || '')) + '<span class="personal-card-score">(' + escapeHtml(String(x.curScore)) + ')</span></span>';
             html += '<span class="personal-card-sub">' + i18n[currentLang].wtt_sub_wl.replace('{wins}', x.wins).replace('{losses}', x.losses).replace('{rate}', wr) + '</span>';
             html += '</div>';
         });
@@ -779,7 +780,7 @@ if (!scoreLogData || !scoreLogData.length) {
             const wr = totalGames > 0 ? ((x.wins / totalGames) * 100).toFixed(0) : 0;
             html += '<div class="personal-card-item">';
             html += '<span class="personal-card-rank">' + (i + 1) + '</span>';
-            html += '<span class="personal-card-name">' + x.name + '<span class="personal-card-score">(' + x.curScore + ')</span></span>';
+            html += '<span class="personal-card-name">' + escapeHtml(String(x.name || '')) + '<span class="personal-card-score">(' + escapeHtml(String(x.curScore)) + ')</span></span>';
             html += '<span class="personal-card-sub">' + i18n[currentLang].wtt_sub_wl.replace('{wins}', x.wins).replace('{losses}', x.losses).replace('{rate}', wr) + '</span>';
             html += '</div>';
         });

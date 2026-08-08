@@ -595,10 +595,7 @@ function wttLoadScoreLog() {
         return fetch(wttGetDataPath('score-log.json'))
             .then(r => r.json())
             .then(d => {
-                wttScoreLogData = d.filter(wttIsValidRecord);
-                wttNamesNormalized = false;
-                wttNormalizeDoublesScoreLog(wttScoreLogData);
-                clearFirstAppearanceCache();
+                wttApplyLoadedLog(d);
             });
     }).catch(e => {
         console.error(`WTT[${wttCurrentCategory}] score-log 加载失败`, e);
@@ -607,44 +604,86 @@ function wttLoadScoreLog() {
 }
 
 /**
- * 尝试从按赛季拆分的文件中加载 score log
- * 文件名格式: score-log-{seasonId}.json（如 score-log-2021-wtt.json）
+ * 对合并后的记录做统一后处理（过滤 + 归一化 + 清缓存）
  */
-async function wttLoadScoreLogFromSeasonFiles() {
-    // 根据当前 category 构建可能的赛季 ID 列表
-    // MS/WS 各自使用 "wtt"/"ws" 后缀，MD/WD/XD 统一使用 "wtt" 后缀
-    // 同时尝试 ITTF 时期的文件
+function wttApplyLoadedLog(records) {
+    wttScoreLogData = records.filter(wttIsValidRecord);
+    wttNamesNormalized = false;
+    wttNormalizeDoublesScoreLog(wttScoreLogData);
+    clearFirstAppearanceCache();
+}
+
+/**
+ * 根据当前 category 构建可能的赛季 ID 列表（无 manifest 时的回退用）
+ * MS/WS 各自使用 "wtt"/"ws" 后缀，MD/WD/XD 统一使用 "wtt" 后缀
+ */
+function wttBuildSeasonIds() {
     const wttYears = ['2021', '2022', '2023', '2024', '2025', '2026'];
     const ittfYears = ['2008', '2009', '2011', '2013', '2015', '2017', '2019'];
     let seasonIds;
     if (wttCurrentCategory === 'ms') {
-        // MS 的赛季 ID 后缀为 "wtt"（因为最初只有男子单打），同时也尝试 ittf 后缀
-        seasonIds = [
-            ...ittfYears.map(y => `${y}-ittf`),
-            ...wttYears.map(y => `${y}-wtt`)
-        ];
+        seasonIds = [...ittfYears.map(y => `${y}-ittf`), ...wttYears.map(y => `${y}-wtt`)];
     } else if (wttCurrentCategory === 'ws') {
-        // WS 使用 "ws" 后缀，也尝试 ittf
-        seasonIds = [
-            ...ittfYears.map(y => `${y}-ittf`),
-            ...wttYears.map(y => `${y}-ws`)
-        ];
+        seasonIds = [...ittfYears.map(y => `${y}-ittf`), ...wttYears.map(y => `${y}-ws`)];
     } else {
-        // MD/WD/XD 统一使用 "wtt" 后缀，也尝试各自后缀和 ittf 作为回退
-        seasonIds = [
-            ...ittfYears.map(y => `${y}-ittf`),
-            ...wttYears.map(y => `${y}-wtt`),
-            ...wttYears.map(y => `${y}-${wttCurrentCategory}`)
-        ];
+        seasonIds = [...ittfYears.map(y => `${y}-ittf`), ...wttYears.map(y => `${y}-wtt`), ...wttYears.map(y => `${y}-${wttCurrentCategory}`)];
     }
-
     // 额外尝试无年份前缀的特殊文件（tts, unmatched 等）
     seasonIds.push('tts', 'unmatched');
+    return seasonIds;
+}
 
+/**
+ * 尝试从 manifest.json 读取该分项真实存在的赛季文件名，并行加载。
+ * manifest.json 格式: { "scoreLogs": ["score-log-2024-wtt.json", ...] }
+ * 成功并加载到数据时返回 true。
+ */
+async function wttTryLoadFromManifest() {
+    try {
+        const resp = await fetch(wttGetDataPath('manifest.json'));
+        if (!resp.ok) return false;
+        const manifest = await resp.json();
+        const names = Array.isArray(manifest) ? manifest
+                     : (manifest && Array.isArray(manifest.scoreFiles) ? manifest.scoreFiles : []);
+        const files = names.filter(n => typeof n === 'string' && n.startsWith('score-log-') && n.endsWith('.json'));
+        if (!files.length) return false;
+
+        // 并行加载所有真实存在的赛季文件
+        const grouped = await Promise.all(files.map(async name => {
+            try {
+                const r = await fetch(wttGetDataPath(name));
+                if (!r.ok) return [];
+                const data = await r.json();
+                return Array.isArray(data) ? data : [];
+            } catch (e) {
+                return [];
+            }
+        }));
+        const allRecords = grouped.flat();
+        if (!allRecords.length) return false;
+
+        console.log(`WTT[${wttCurrentCategory}] 从 manifest 并行加载了 ${allRecords.length} 条记录（${files.length} 个文件）`);
+        wttApplyLoadedLog(allRecords);
+        return true;
+    } catch (e) {
+        return false;
+    }
+}
+
+/**
+ * 尝试从按赛季拆分的文件中加载 score log
+ * 文件名格式: score-log-{seasonId}.json（如 score-log-2021-wtt.json）
+ *
+ * 优先读取 manifest.json（并行加载真实存在的文件、避免 404 探测）；
+ * 若无 manifest 则逐个探测（兼容旧部署）。
+ */
+async function wttLoadScoreLogFromSeasonFiles() {
+    if (await wttTryLoadFromManifest()) return;
+
+    const seasonIds = wttBuildSeasonIds();
     const allRecords = [];
     let foundAny = false;
 
-    // 逐个尝试加载每个赛季文件
     for (const seasonId of seasonIds) {
         try {
             const resp = await fetch(wttGetDataPath(`score-log-${seasonId}.json`));
@@ -665,10 +704,7 @@ async function wttLoadScoreLogFromSeasonFiles() {
     }
 
     console.log(`WTT[${wttCurrentCategory}] 从多个赛季文件中加载了 ${allRecords.length} 条记录`);
-    wttScoreLogData = allRecords.filter(wttIsValidRecord);
-    wttNamesNormalized = false;
-    wttNormalizeDoublesScoreLog(wttScoreLogData);
-    clearFirstAppearanceCache();
+    wttApplyLoadedLog(allRecords);
 }
 
 function wttLoadInitialScores() {

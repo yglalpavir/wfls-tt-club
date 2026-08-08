@@ -356,7 +356,7 @@ function wttRenderPlayerCheckboxes() {
     container.innerHTML = sortedPlayers.map((name, i) => {
         const checked = i < 8 ? 'checked' : '';
         const pts = scoreMap[name] !== undefined ? scoreMap[name].toFixed(1) : '-';
-        return `<label class="player-checkbox-item ${i<5?'checked':''}"><input type="checkbox" value="${name}" ${checked}><span>${name}</span><span class="player-rank">${pts}</span></label>`;
+        return `<label class="player-checkbox-item ${i<5?'checked':''}"><input type="checkbox" value="${escapeHtml(String(name))}" ${checked}><span>${escapeHtml(String(name))}</span><span class="player-rank">${pts}</span></label>`;
     }).join('');
 
     container.querySelectorAll('.player-checkbox-item').forEach(item => {
@@ -420,7 +420,7 @@ function wttRenderCompareSelects() {
 
     const sortedPlayers = [...players].sort((a, b) => (scoreMap[b] || 0) - (scoreMap[a] || 0));
 
-    const opts = sortedPlayers.map(p => `<option value="${p}">${p}</option>`).join('');
+    const opts = sortedPlayers.map(p => `<option value="${escapeHtml(String(p))}">${escapeHtml(String(p))}</option>`).join('');
     const ph = i18n[currentLang].wtt_select_player;
     const sa = document.getElementById('wttPlayerASelect'), sb = document.getElementById('wttPlayerBSelect');
     if (sa) sa.innerHTML = `<option value="">${ph}</option>` + opts;
@@ -861,7 +861,7 @@ function wttRenderComparison(playerA, playerB) {
             const aChange = aIsW ? wg : -(wg * LOSER_POINT_MULTIPLIER);
             const bChange = aIsW ? -(wg * LOSER_POINT_MULTIPLIER) : wg;
             html += `<tr>
-                <td>${m['日期']}</td><td>${m['类型']}</td><td>${w}</td>
+                <td>${escapeHtml(m['日期'])}</td><td>${escapeHtml(m['类型'])}</td><td>${escapeHtml(w)}</td>
                 <td class="${aIsW ? 'win-highlight' : 'loss-highlight'}">${aChange > 0 ? '+' : ''}${aChange.toFixed(1)}</td>
                 <td class="${!aIsW ? 'win-highlight' : 'loss-highlight'}">${bChange > 0 ? '+' : ''}${bChange.toFixed(1)}</td>
             </tr>`;

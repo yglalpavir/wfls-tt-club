@@ -2,44 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://yglalpavir.github.io/wfls-tt-club/</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-08-08</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://yglalpavir.github.io/wfls-tt-club/news.html</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-08-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://yglalpavir.github.io/wfls-tt-club/competitions.html</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-08-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://yglalpavir.github.io/wfls-tt-club/ranking.html</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-08-08</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://yglalpavir.github.io/wfls-tt-club/data_viz.html</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-08-08</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://yglalpavir.github.io/wfls-tt-club/personal_stats.html</loc>
+        <lastmod>2026-08-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://yglalpavir.github.io/wfls-tt-club/members.html</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-08-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://yglalpavir.github.io/wfls-tt-club/contact.html</loc>
-        <lastmod>2026-06-18</lastmod>
+        <loc>https://yglalpavir.github.io/wfls-tt-club/qa.html</loc>
+        <lastmod>2026-08-08</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://yglalpavir.github.io/wfls-tt-club/changelog.html</loc>
+        <lastmod>2026-08-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://yglalpavir.github.io/wfls-tt-club/contact.html</loc>
+        <lastmod>2026-08-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://yglalpavir.github.io/wfls-tt-club/wtt_hub.html</loc>
+        <lastmod>2026-08-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://yglalpavir.github.io/wfls-tt-club/wtt_ranking.html</loc>
+        <lastmod>2026-08-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://yglalpavir.github.io/wfls-tt-club/wtt_dataviz.html</loc>
+        <lastmod>2026-08-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://yglalpavir.github.io/wfls-tt-club/wtt_personal_stats.html</loc>
+        <lastmod>2026-08-08</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.5</priority>
     </url>
 </urlset>

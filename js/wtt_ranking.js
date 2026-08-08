@@ -168,11 +168,12 @@ function wttRenderScoreDetail() {
     }
 
     recordsWithScores.reverse();
+    recordsWithScores.reverse();
     body.innerHTML = recordsWithScores.map(r => {
         if (r.isBonus) {
             const cc = r.decayedChange >= 0 ? 'score-change-positive' : 'score-change-negative';
             const sign = r.decayedChange >= 0 ? '+' : '';
-            return `<tr><td>${r.date}</td><td>${r.type}</td><td>-</td><td class="result-win">${i18n[currentLang].wtt_bonus}</td><td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${sign}${r.decayedChange.toFixed(1)}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
+            return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(r.type)}</td><td>-</td><td class="result-win">${escapeHtml(i18n[currentLang].wtt_bonus)}</td><td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${sign}${r.decayedChange.toFixed(1)}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
         }
         const res = r.isWinner ? i18n[currentLang].score_result_win : i18n[currentLang].score_result_loss;
         const rc = r.isWinner ? 'result-win' : 'result-loss';
@@ -180,7 +181,7 @@ function wttRenderScoreDetail() {
         const signRaw = r.rawChange >= 0 ? '+' : '';
         const signDecayed = r.decayedChange >= 0 ? '+' : '';
         const changeDisplay = `${signRaw}${r.rawChange.toFixed(1)}（${signDecayed}${r.decayedChange.toFixed(1)}）`;
-        return `<tr><td>${r.date}</td><td>${r.type}</td><td>${r.opponent}</td><td class="${rc}">${res}</td><td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${changeDisplay}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
+        return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(r.type)}</td><td>${escapeHtml(r.opponent)}</td><td class="${rc}">${res}</td><td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${changeDisplay}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
     }).join('');
 
     scoreLogData = origScoreLog; initialScoresData = origInitial;
@@ -406,10 +407,12 @@ function wttRenderRankingTable(data) {
         else if (p.pointsChangeType === 'new') pch = '<span class="rank-new">NEW</span>';
         else pch = '<span class="rank-same">-</span>';
 
-        const pn = p['姓名'] || '-';
+        const pn = String(p['姓名'] || '-');
+        const pnSafe = escapeHtml(pn);
+        const sds = escapeHtml(currentSnapshotDate || '');
         const nc = (wttScoreLogData.length > 0)
-            ? `<span class="player-name-link" onclick="wttShowScoreDetail('${pn}','${currentSnapshotDate}')" title="${i18n[currentLang].wtt_click_detail}">${pn}</span>`
-            : pn;
+            ? `<span class="player-name-link" onclick="wttShowScoreDetail('${pnSafe}','${sds}')" title="${escapeHtml(i18n[currentLang].wtt_click_detail)}">${pnSafe}</span>`
+            : pnSafe;
 
         tr.innerHTML = `<td>${i + 1}</td><td>${nc}</td><td><strong>${(p['当前积分'] || 0).toFixed(1)}</strong></td><td>${pch}</td><td>${ch}</td><td>${p['总场次'] || 0}</td><td>${wd}</td>`;
         tb.appendChild(tr);

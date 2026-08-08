@@ -85,8 +85,8 @@ function renderTagFilters() {
         const count = getTagPlayerCount(tag);
         const isMerged = !!TAG_MERGE_RULES[tag];
         const mergedClass = isMerged ? ' merged' : '';
-        return `<span class="tag-filter-badge${isActive ? ' active' : ''}${mergedClass}" data-tag="${tag}">
-            ${tag}<span class="tag-filter-count">${count}</span>
+        return `<span class="tag-filter-badge${isActive ? ' active' : ''}${mergedClass}" data-tag="${escapeHtml(String(tag))}">
+            ${escapeHtml(String(tag))}<span class="tag-filter-count">${count}</span>
         </span>`;
     }).join('');
 
@@ -191,7 +191,7 @@ function renderPersonalPlayerSelect() {
     }
     const sortedPlayers = [...players].sort((a, b) => (scoreMap[b] || 0) - (scoreMap[a] || 0));
 
-    const opts = sortedPlayers.map(p => `<option value="${p}">${p}</option>`).join('');
+    const opts = sortedPlayers.map(p => `<option value="${escapeHtml(String(p))}">${escapeHtml(String(p))}</option>`).join('');
     sel.innerHTML = '<option value="">-- 选择球员 --</option>' + opts;
 
     const label = sel.parentElement.querySelector('label');

@@ -7,30 +7,61 @@
 ```text
 wfls-tt-club/
 ├── index.html                  # 主页（含全站搜索功能 + 左侧定位条）
-├── news.html                   # 新闻列表页（支持分页，每页10条）
-├── competitions.html           # 赛事列表页（支持分页，每页10条）
+├── news.html                   # 新闻列表页（分页 + 标签筛选）
+├── competitions.html           # 赛事列表页（分页 + 标签筛选 + 对阵表）
 ├── members.html                # 社团骨干页面
 ├── ranking.html                # Ranking Beta 排名系统（自动计算 + 赛季继承 + 积分明细）
 ├── data_viz.html               # 数据可视化（积分趋势 + 排名河流图 + 球员对比）
-├── detail.html                 # 新闻/赛事详情页（支持图片、视频、文件附件）
+├── personal_stats.html         # 个人数据页面（积分趋势 + 荣誉成就）
+├── detail.html                 # 新闻/赛事/Q&A 详情页（支持图片、视频、文件附件）
+├── qa.html                     # 常见问题（Q&A）页面
+├── changelog.html              # 更新日志页面
 ├── contact.html                # 联系我们页面（社团QQ群二维码）
+├── admin.html                  # 后台数据概览仪表盘
+├── 404.html                    # 404 页面
+│
+├── wtt_hub.html                # WTT 彩蛋入口（男/女单打、双打、混双）
+├── wtt_ranking.html            # WTT 排名页面
+├── wtt_dataviz.html            # WTT 数据可视化
+├── wtt_personal_stats.html     # WTT 个人数据
+│
 ├── style.css                   # 全局样式表（玻璃拟态 + 暗色模式 + 响应式）
 │
 ├── js/                         # JavaScript 模块（按页面拆分）
-│   ├── common.js               # 语言包 + 全局变量 + UI交互 + 通用函数
+│   ├── common.js               # 语言包 + 全局变量 + UI交互 + 通用渲染/搜索
 │   ├── score-engine.js         # 积分计算核心引擎
 │   ├── ranking.js              # 排名系统 + 积分明细模态框
 │   ├── data-viz.js             # 数据可视化（Chart.js）
-│   └── main.js                 # 入口初始化
+│   ├── personal-stats.js       # 个人数据页面
+│   ├── draws-viewer.js         # 对阵表（Draws）渲染器
+│   ├── admin.js                # 后台数据概览仪表盘
+│   ├── main.js                 # 入口初始化
+│   ├── wtt_common.js           # WTT 通用数据加载 + 积分计算
+│   ├── wtt_ranking.js          # WTT 排名
+│   ├── wtt_dataviz.js          # WTT 数据可视化
+│   └── wtt_personal_stats.js   # WTT 个人数据
 │
-├── about.json                  # 社团简介数据（历史、理念、活动）
-├── members.json                # 社团骨干数据
-├── news.json                   # 新闻动态数据
-├── competitions.json           # 赛事信息数据
-├── initial-scores.json         # 球员初始积分 + 快照日期
-├── event-coefficient.json      # 赛事系数配置
-├── seasons.json                # 赛季定义（含继承规则）
-├── score-log.json              # 比赛记录 + 积分调整记录
+├── data/                       # 站内数据（JSON）
+│   ├── about.json              # 社团简介数据（历史、理念、活动）
+│   ├── members.json            # 社团骨干数据
+│   ├── news.json               # 新闻动态数据
+│   ├── competitions.json       # 赛事信息数据
+│   ├── qa.json                 # 常见问题数据
+│   ├── changelog.json          # 更新日志数据
+│   ├── draws.json              # 对阵表数据
+│   ├── player-tags.json        # 球员标签与荣誉数据
+│   ├── initial-scores.json     # 球员初始积分 + 快照日期
+│   ├── event-coefficient.json  # 赛事系数配置
+│   ├── seasons.json            # 赛季定义（含继承规则）
+│   ├── decay-config.json       # 时间衰减配置（半衰期 & 保值类型）
+│   ├── score-log.json          # 比赛记录 + 积分调整记录
+│   ├── data_viz-settings.json  # 数据可视化设置
+│   └── personal-stats-chart-settings.json  # 个人数据图表设置
+│
+├── wtt_data/                   # WTT 彩蛋数据（ms/ws/md/wd/xd，按赛季拆分 + manifest.json）
+├── ittf_data/                  # ITTF 历史数据（ms / ws）
+├── ittf-pingpong_api/          # ittf-pingpong API 原始抓取数据
+├── tools/                       # 数据抓取/生成脚本（Python / Node）
 │
 ├── Assets/
 │   ├── images/                 # 图片资源
