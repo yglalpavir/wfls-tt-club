@@ -22,6 +22,7 @@ function getWttActiveData() {
 // 封装计算：使用 wttWithDataContext 自动切换全局数据 → 计算 → 恢复
 // 覆盖 wtt_common.js 中的同名函数
 function wttCalculateAllRankings() {
+    wttApplyNameNormalization();
     return wttWithDataContext(() => {
         const effScores = wttGetEffectiveInitialScores();
         console.log(`[WTT Ranking] 计算模式: ${wttSettings?.scoreMode || 'initial'}, initialScores 键数: ${Object.keys(effScores).length}`);
@@ -33,6 +34,7 @@ function wttCalculateAllRankings() {
 }
 
 function wttCalculateRealtimeRanking() {
+    wttApplyNameNormalization();
     return wttWithDataContext(() => calculateRealtimeRanking());
 }
 

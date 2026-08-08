@@ -33,6 +33,8 @@ let wttCurrentSortKey = '当前积分';
 let wttCurrentSortDir = 'desc';
 let wttCurrentScoreContext = { player: '', snapshotDate: '' };
 let wttInitialized = false;
+let wttNamesNormalized = false;   // 球员名归一化标记（数据重载时重置）
+let wttMergedNames = null;        // 别名 -> 规范名 映射（运行时内存）
 
 // ============ 双打组合名称规范化 ============
 
@@ -298,8 +300,8 @@ function wttNormalizeDoublesName(name) {
 
     if (wttCurrentCategory === 'xd') {
         // XD：男前女后
-        var g1 = WTT_KNOWN_GENDERS[p1];
-        var g2 = WTT_KNOWN_GENDERS[p2];
+        var g1 = wttGender(p1);
+        var g2 = wttGender(p2);
         if (g1 === 'M' && g2 === 'F') {
             return p1 + '/' + p2;
         } else if (g1 === 'F' && g2 === 'M') {
@@ -327,6 +329,197 @@ function wttNormalizeDoublesScoreLog(records) {
         if (r['负者']) r['负者'] = wttNormalizeDoublesName(r['负者']);
     }
     return records;
+}
+
+// ============ 球员名字自动识别与合并 ============
+
+/**
+ * 计算一名球员名字的身份标识（identity key）。
+ * 大小写无关、词序无关、标点无关：
+ *   "HARIMOTO Tomokazu" 与 "Tomokazu HARIMOTO" 得到相同 key，
+ *   因此同一球员的不同拼写会被识别为同一人（参考 player-name-format.md）。
+ * @param {string} name - 单个球员名（不含双打 / 分隔）
+ * @returns {string} 身份 key
+ */
+function wttNameIdentity(name) {
+    if (!name || typeof name !== 'string') return '';
+    // 转大写 -> 按空白切词 -> 每词去标点(保留字母数字) -> 排序 -> 以空格连接
+    var tokens = name.toUpperCase().split(/\s+/).map(function (t) {
+        return t.replace(/[^A-Z0-9]/g, '');
+    }).filter(function (t) { return t.length > 0; });
+    tokens.sort();
+    return tokens.join(' ');
+}
+
+/**
+ * 尝试把球员名按身份 key 拆分，用于统计与规范名选择：
+ * 单打返回 [name]，双打按 / 拆分。
+ */
+function wttSplitPlayerNames(name) {
+    if (!name) return [];
+    if (name.indexOf('/') === -1) return [name];
+    return name.split('/').map(function (p) { return p.trim(); }).filter(function (p) { return p.length > 0; });
+}
+
+/**
+ * 根据 wttScoreLogData + wttInitialScoresData 构建「同身份」分组，
+ * 并为每组挑选一个规范名，生成 别名->规范名 映射。
+ * 规范名规则（优先级从高到低）：
+ *  1. 存在于 initial-scores.json 的写法
+ *  2. 出现频次最高的写法
+ *  3. 字典序最小
+ * @returns {{ map: Object, mergedGroups: number, mergedAliases: number, samples: string[] }}
+ */
+function wttBuildNormalizedNameMap() {
+    var counts = {};   // name -> 出现次数（initial-scores 键给极大权重）
+
+    var initKeys = {};
+    if (wttInitialScoresData && wttInitialScoresData.initialScores) {
+        Object.keys(wttInitialScoresData.initialScores).forEach(function (k) { initKeys[k] = true; });
+    }
+
+    function addName(raw) {
+        if (!raw) return;
+        wttSplitPlayerNames(raw).forEach(function (n) {
+            if (!n) return;
+            counts[n] = (counts[n] || 0) + 1;
+        });
+    }
+
+    // 遍历比赛记录（胜者/负者/对象）
+    (wttScoreLogData || []).forEach(function (r) {
+        addName(r['胜者']);
+        addName(r['负者']);
+        addName(r['对象']);
+    });
+
+    // 构建「交过手」集合：同一场比赛中站在对立两侧的名字，必为不同球员。
+    // 用于防止把两个真实存在的不同球员（如 "Ali MOHAMMED" 与 "Mohammed ALI"）误判为同一人。
+    var opposed = {};
+    function opposedKey(a, b) { return a < b ? a + '\u0000' + b : b + '\u0000' + a; }
+    (wttScoreLogData || []).forEach(function (r) {
+        var winners = wttSplitPlayerNames(r && r['胜者']);
+        var losers = wttSplitPlayerNames(r && r['负者']);
+        if (!winners.length || !losers.length) return;
+        winners.forEach(function (w) {
+            if (!w) return;
+            losers.forEach(function (l) {
+                if (!l || w === l) return;
+                opposed[opposedKey(w, l)] = true;
+            });
+        });
+    });
+
+    // 遍历初始积分键（作为规范名候选，极大权重保证优先）
+    Object.keys(initKeys).forEach(function (n) {
+        counts[n] = (counts[n] || 0) + 1000000;
+    });
+
+    // 分组建表：identity -> [名字...]
+    var groups = {};
+    Object.keys(counts).forEach(function (n) {
+        var id = wttNameIdentity(n);
+        if (!id) return;
+        if (!groups[id]) groups[id] = [];
+        groups[id].push(n);
+    });
+
+    var aliasMap = {};
+    var mergedGroups = 0;
+    var mergedAliases = 0;
+    var samples = [];
+
+    Object.keys(groups).forEach(function (id) {
+        var names = groups[id];
+        if (names.length < 2) return;
+        mergedGroups++;
+        // 选出规范名
+        var best = names[0];
+        var bestScore = -Infinity;
+        names.forEach(function (n) {
+            var score = counts[n] || 0;
+            if (initKeys[n]) score += 1000000;
+            if (score > bestScore) { bestScore = score; best = n; }
+            else if (score === bestScore && n < best) { best = n; }
+        });
+        names.forEach(function (n) {
+            if (n === best) return;
+            // 若这两个写法在比赛中交过手，则它们属于两个真实的不同球员，禁止合并。
+            if (opposed[opposedKey(n, best)]) {
+                if (samples.length < 10) samples.push("'" + n + "' 与 '" + best + "' 交过手，保留为不同球员");
+                return;
+            }
+            aliasMap[n] = best;
+            mergedAliases++;
+            if (samples.length < 10) samples.push("'" + n + "' -> '" + best + "'");
+        });
+    });
+
+    return { map: aliasMap, mergedGroups: mergedGroups, mergedAliases: mergedAliases, samples: samples };
+}
+
+/**
+ * 归一化单个球员名（可能是双打组合）。
+ * @param {string} name
+ * @returns {string}
+ */
+function wttNormalizeMergedName(name) {
+    if (!name || !wttMergedNames) return name;
+    if (name.indexOf('/') === -1) {
+        return wttMergedNames[name] || name;
+    }
+    // 双打：逐半归一化后拼回
+    return name.split('/').map(function (p) {
+        var t = p.trim();
+        return wttMergedNames[t] || t;
+    }).join('/');
+}
+
+/**
+ * 应用球员名合并（幂等）。
+ * 就地改写 wttScoreLogData / wttInitialScoresData，并重建双打排序。
+ */
+function wttApplyNameNormalization() {
+    if (wttNamesNormalized) return;
+    var res = wttBuildNormalizedNameMap();
+    wttMergedNames = res.map;
+
+    if (wttScoreLogData) {
+        wttScoreLogData.forEach(function (r) {
+            if (r['胜者']) r['胜者'] = wttNormalizeMergedName(r['胜者']);
+            if (r['负者']) r['负者'] = wttNormalizeMergedName(r['负者']);
+            if (r['对象']) r['对象'] = wttNormalizeMergedName(r['对象']);
+        });
+    }
+    if (wttInitialScoresData && wttInitialScoresData.initialScores) {
+        var ns = {};
+        Object.keys(wttInitialScoresData.initialScores).forEach(function (k) {
+            var nk = wttNormalizeMergedName(k);
+            ns[nk] = wttInitialScoresData.initialScores[k];
+        });
+        wttInitialScoresData.initialScores = ns;
+    }
+    clearFirstAppearanceCache();
+    wttNormalizeDoublesScoreLog(wttScoreLogData);
+    wttNamesNormalized = true;
+
+    if (res.mergedAliases > 0) {
+        console.warn('[WTT] 识别并合并 ' + res.mergedGroups + ' 个球员名分组，共 ' + res.mergedAliases + ' 个别名');
+        res.samples.forEach(function (s) { console.warn('[WTT]   ' + s); });
+    }
+}
+
+/**
+ * 查询球员性别：先查已知表，再回退合并后的规范名。
+ * @param {string} name
+ * @returns {string|undefined} 'M' / 'F'
+ */
+function wttGender(name) {
+    if (!name) return undefined;
+    var g = WTT_KNOWN_GENDERS[name];
+    if (g) return g;
+    var merged = wttMergedNames ? (wttMergedNames[name] || name) : name;
+    return WTT_KNOWN_GENDERS[merged];
 }
 
 // ============ 项目切换 ============
@@ -403,6 +596,7 @@ function wttLoadScoreLog() {
             .then(r => r.json())
             .then(d => {
                 wttScoreLogData = d.filter(wttIsValidRecord);
+                wttNamesNormalized = false;
                 wttNormalizeDoublesScoreLog(wttScoreLogData);
                 clearFirstAppearanceCache();
             });
@@ -472,6 +666,7 @@ async function wttLoadScoreLogFromSeasonFiles() {
 
     console.log(`WTT[${wttCurrentCategory}] 从多个赛季文件中加载了 ${allRecords.length} 条记录`);
     wttScoreLogData = allRecords.filter(wttIsValidRecord);
+    wttNamesNormalized = false;
     wttNormalizeDoublesScoreLog(wttScoreLogData);
     clearFirstAppearanceCache();
 }
@@ -481,6 +676,7 @@ function wttLoadInitialScores() {
         .then(r => r.json())
         .then(d => {
             wttInitialScoresData = d;
+            wttNamesNormalized = false;
             return true;
         })
         .catch(e => { console.error(`WTT[${wttCurrentCategory}] initial-scores 加载失败`, e); return false; });
@@ -656,6 +852,7 @@ async function wttWithDataContextAsync(fn) {
  * @param {function} onProgress - 进度回调 (current, total, message)
  */
 async function wttCalculateAllRankingsAsync(onProgress) {
+    wttApplyNameNormalization();
     return wttWithDataContextAsync(async () => {
         const effScores = wttGetEffectiveInitialScores();
         const timeline = await calculateAllRankingsWithSeasonsAsync(
@@ -682,6 +879,7 @@ async function wttCalculateAllRankingsAsync(onProgress) {
  * 同步版本（兼容旧代码调用，在支持异步的地方请用 wttCalculateAllRankingsAsync）
  */
 function wttCalculateAllRankings() {
+    wttApplyNameNormalization();
     return wttWithDataContext(() => {
         const effScores = wttGetEffectiveInitialScores();
         const timeline = calculateAllRankingsWithSeasons(
