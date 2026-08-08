@@ -1383,6 +1383,50 @@ body.dark-mode .draws-match { background: var(--glass-bg); border-color: var(--b
 .ranking-table-full th.active-sort { color: var(--primary-blue); background: var(--primary-pale); }
 .sort-arrow { font-size: 0.65rem; margin-left: 4px; }
 
+/* QA入口链接按钮 */
+.qa-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 16px;
+    border-radius: 999px;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    font-family: var(--font-cn);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.qa-link-btn i {
+    font-size: 0.88rem;
+    color: var(--primary-blue);
+    transition: transform var(--transition-fast), color var(--transition-fast);
+}
+.qa-link-btn:hover,
+.qa-link-btn:focus-visible {
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    background: var(--primary-pale);
+    transform: translateY(-1px);
+    outline: none;
+}
+.qa-link-btn:hover i,
+.qa-link-btn:focus-visible i {
+    transform: translateX(2px);
+}
+.qa-link-btn:active {
+    transform: translateY(0);
+}
+.qa-link-btn:focus-visible {
+    box-shadow: 0 0 0 3px var(--primary-pale);
+}
+
 /* 积分明细模态框 */
 .modal-content.score-detail-modal { max-width: 80vw !important; width: 80vw !important; max-height: 80vh !important; height: 80vh !important; min-width: 800px; min-height: 500px; text-align: left; padding: 0 !important; overflow: hidden; display: flex; flex-direction: column; background: linear-gradient(145deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.92) 30%, rgba(240,245,255,0.9) 70%, rgba(230,240,255,0.88) 100%); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border: 1px solid rgba(255,255,255,0.6); border-radius: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.04), 0 10px 30px rgba(0,0,0,0.06), 0 20px 60px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.8); }
 body.dark-mode .modal-content.score-detail-modal { background: linear-gradient(145deg, rgba(30,35,48,0.98) 0%, rgba(26,30,42,0.96) 30%, rgba(22,26,38,0.95) 70%, rgba(20,24,35,0.94) 100%); border: 1px solid rgba(255,255,255,0.06); box-shadow: 0 4px 6px rgba(0,0,0,0.2), 0 10px 30px rgba(0,0,0,0.3), 0 20px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04); }
@@ -1911,6 +1955,8 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
     /* ---- 按钮 ---- */
     .btn { width: 100%; justify-content: center; padding: 10px 20px; font-size: 0.85rem; }
     .btn-sm { width: auto; padding: 7px 14px; font-size: 0.75rem; }
+    .qa-link-btn { padding: 6px 13px; font-size: 0.78rem; gap: 6px; }
+    .qa-link-btn i { font-size: 0.8rem; }
 
     /* ---- 标题 ---- */
     .section-title { font-size: 1.3rem; }
