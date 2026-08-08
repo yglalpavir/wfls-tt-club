@@ -1496,6 +1496,33 @@ body.dark-mode .score-detail-table tbody tr:nth-child(even) td { background-colo
 .viz-topn-selector { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-secondary); margin-top: 8px; }
 .viz-topn-selector select { padding: 4px 12px; border: 1px solid var(--border-color); border-radius: 16px; background: var(--bg-white); color: var(--text-primary); font-size: 0.85rem; cursor: pointer; outline: none; }
 .viz-topn-selector select:focus { border-color: var(--primary-blue); }
+.viz-topn-selector input[type="number"] {
+    width: 68px;
+    padding: 4px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    background: var(--bg-white);
+    color: var(--text-primary);
+    font-family: var(--font-en);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-align: center;
+    outline: none;
+    appearance: textfield;
+    -moz-appearance: textfield;
+    transition: border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+}
+.viz-topn-selector input[type="number"]::-webkit-outer-spin-button,
+.viz-topn-selector input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.viz-topn-selector input[type="number"]:hover { border-color: var(--primary-light); }
+.viz-topn-selector input[type="number"]:focus {
+    border-color: var(--primary-blue);
+    background: var(--primary-pale);
+    box-shadow: 0 0 0 3px var(--primary-pale);
+}
 .viz-compare-grid { display: grid; grid-template-columns: 320px 1fr; gap: 24px; align-items: start; }
 .viz-compare-selectors { padding: 24px; text-align: center; }
 .compare-selector-group { margin-bottom: 16px; }
@@ -2026,6 +2053,7 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
     .compare-placeholder i { font-size: 2rem; }
     .compare-player-name { font-size: 0.95rem; }
     .viz-topn-selector select { font-size: 0.78rem; padding: 3px 8px; }
+    .viz-topn-selector input[type="number"] { font-size: 0.78rem; padding: 3px 8px; width: 56px; }
 }
 
 /* 超小屏手机 (iPhone SE 等 320-375px) */
