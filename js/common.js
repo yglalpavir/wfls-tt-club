@@ -13,6 +13,7 @@
 
 // 全局搜索：为所有加载 common.js 的页面注入搜索按钮 + 遮罩层（若页面未内置）
 (function ensureGlobalSearchUI() {
+    if (window.__WFLS_DISABLE_SEARCH__) return;  // 页面可设置此标志以禁用注入（如 wtt_hub.html）
     if (document.getElementById('searchToggle')) return;
     // 搜索按钮：插入到 nav-actions 最前面
     var actions = document.querySelector('.nav-actions');
@@ -101,6 +102,7 @@ const i18n = {
         wtt_victory_card: "胜利 · 曾战胜的前三名", wtt_pk_card: "PK · 曾交手的前三名", wtt_lucky_card: "福星", wtt_nemesis_card: "苦主", wtt_empty: "暂无", wtt_sub_wl: "{player}胜{losses}负 胜率:{rate}%", wtt_tooltip_points: "积分: {score}", wtt_tooltip_rank: "| 排名:#{rank}", wtt_ps_alert: "请选择一名球员",
         wtt_hub_sub_a: "基于乒乓球社团积分规则的 WTT 国际乒联积分排名模拟系统。", wtt_hub_sub_b: "选择下方项目查看对应积分排名、数据可视化和个人数据。", wtt_hub_back: "返回社团 Ranking", wtt_hub_credit: "数据仅供娱乐 · 非官方 WTT 排名 · © 2026 WFLS Table Tennis Club",
         wtt_status_check: "检测中...", wtt_status_ready: "数据已就绪", wtt_status_template: "待填充数据", wtt_status_empty: "暂无数据", wtt_link_rank: "排名", wtt_link_dataviz: "数据可视化", wtt_link_personal: "个人数据",
+        wtt_hub_cat_tag: "Categories", wtt_hub_cat_title: "选择项目", wtt_hub_cat_desc: "点击卡片查看对应项目的排名、数据可视化与个人数据",
         wtt_cat_ms: "男子单打", wtt_cat_ws: "女子单打", wtt_cat_md: "男子双打", wtt_cat_wd: "女子双打", wtt_cat_xd: "混合双打"
     },
     en: {
@@ -153,6 +155,7 @@ const i18n = {
         wtt_victory_card: "Victories · Top 3 Beaten", wtt_pk_card: "Head-to-Head · Top 3 Opponents", wtt_lucky_card: "Lucky Stars", wtt_nemesis_card: "Nemesis", wtt_empty: "None", wtt_sub_wl: "{wins}W {losses}L Win Rate: {rate}%", wtt_tooltip_points: "Points: {score}", wtt_tooltip_rank: "| Rank: #{rank}", wtt_ps_alert: "Please select a player",
         wtt_hub_sub_a: "A WTT ranking simulation based on the WFLS TT Club scoring system.", wtt_hub_sub_b: "Select a category below for rankings, visualizations, and personal stats.", wtt_hub_back: "Back to Club Ranking", wtt_hub_credit: "For entertainment only · Not official WTT rankings · © 2026 WFLS Table Tennis Club",
         wtt_status_check: "Checking...", wtt_status_ready: "Data Ready", wtt_status_template: "Template Data", wtt_status_empty: "No Data", wtt_link_rank: "Ranking", wtt_link_dataviz: "Data Viz", wtt_link_personal: "Personal Stats",
+        wtt_hub_cat_tag: "Categories", wtt_hub_cat_title: "Select an Event", wtt_hub_cat_desc: "Click a card to explore rankings, visualizations, and personal stats for each event",
         wtt_cat_ms: "Men's Singles", wtt_cat_ws: "Women's Singles", wtt_cat_md: "Men's Doubles", wtt_cat_wd: "Women's Doubles", wtt_cat_xd: "Mixed Doubles"
     }
 };

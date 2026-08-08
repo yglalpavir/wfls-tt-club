@@ -15,278 +15,314 @@
     <link rel="stylesheet" href="style.css">
     <style>
         /* ============ WTT Hub 专属样式 ============ */
-        :root {
-            --hub-bg: #0a0e27;
-            --hub-card-bg: rgba(255,255,255,0.05);
-            --hub-card-hover: rgba(255,255,255,0.1);
+        .wtt-hub-hero {
+            background: linear-gradient(135deg, #0a1628 0%, #0d2a45 45%, #1a0a24 100%);
+        }
+        body.dark-mode .wtt-hub-hero {
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 55%, #1a1018 100%);
+        }
+        .wtt-hub-hero h1 .hub-title-accent {
+            color: var(--primary-light);
+        }
+        body.dark-mode .wtt-hub-hero h1 .hub-title-accent {
+            color: var(--primary-light);
         }
 
-        .wtt-hub-page {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #0a0e27 0%, #111640 30%, #0d1230 60%, #0a0e27 100%);
-            color: #e0e0e0;
-            font-family: var(--font-sc), var(--font-en), sans-serif;
-        }
-
-        /* 背景粒子动画 */
-        .hub-particles {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none; z-index: 0; overflow: hidden;
+        /* Hero 内的漂浮粒子（仅装饰，不遮挡内容） */
+        .hub-hero-particles {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            overflow: hidden;
         }
         .hub-particle {
             position: absolute;
+            bottom: -10px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.15);
-            animation: floatUp linear infinite;
+            background: rgba(255, 255, 255, 0.35);
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.12);
+            animation: hubFloatUp linear infinite;
         }
-        @keyframes floatUp {
-            0%   { transform: translateY(100vh) scale(0); opacity: 0; }
-            10%  { opacity: 1; }
-            90%  { opacity: 1; }
-            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
-        }
-        @keyframes floatUpDelayed {
-            0%   { transform: translateY(100vh) scale(0); opacity: 0; }
-            15%  { opacity: 1; }
-            85%  { opacity: 1; }
-            100% { transform: translateY(-10vh) scale(0.8); opacity: 0; }
+        @keyframes hubFloatUp {
+            0%   { transform: translateY(0) scale(0.6); opacity: 0; }
+            12%  { opacity: 0.55; }
+            85%  { opacity: 0.55; }
+            100% { transform: translateY(-54vh) scale(1.1); opacity: 0; }
         }
 
-        /* 主容器 */
-        .hub-container {
-            position: relative; z-index: 1;
-            max-width: 1100px; margin: 0 auto; padding: 40px 20px 60px;
+        /* 主体区域 */
+        .wtt-hub-section {
+            background: var(--bg-light);
         }
-
-        /* 头部 */
-        .hub-header {
-            text-align: center; padding: 60px 20px 40px;
-        }
-        .hub-egg-badge {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: linear-gradient(135deg, rgba(245,197,66,0.2), rgba(224,168,0,0.2));
-            border: 1px solid rgba(245,197,66,0.3);
-            padding: 8px 20px; border-radius: 20px;
-            font-size: 0.85rem; color: #f5c542; margin-bottom: 16px;
-        }
-        .hub-title {
-            font-size: 2.8rem; font-weight: 800;
-            background: linear-gradient(135deg, #f5c542, #ff8c42, #f5c542);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 12px;
-        }
-        .hub-subtitle {
-            font-size: 1.1rem; color: rgba(255,255,255,0.6);
-            max-width: 600px; margin: 0 auto;
-            line-height: 1.7;
+        body.dark-mode .wtt-hub-section {
+            background: var(--bg-light);
         }
 
         /* 分类卡片网格 */
         .hub-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px; padding: 20px 0;
+            gap: 24px;
+            padding: 8px 0 32px;
         }
 
-        /* 单个卡片 */
+        /* 单个卡片（玻璃卡片风格，与全站一致） */
         .hub-card {
+            --cat: var(--primary-blue);
+            --cat-soft: rgba(77, 163, 255, 0.14);
             position: relative;
-            display: flex; flex-direction: column; align-items: center;
-            padding: 36px 28px 28px;
-            border-radius: 20px;
-            background: var(--hub-card-bg);
-            border: 1px solid rgba(255,255,255,0.08);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            text-decoration: none; color: inherit;
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            padding: 28px;
+            border-radius: var(--radius-lg);
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            text-decoration: none;
+            color: inherit;
+            transition: all var(--transition-base);
             overflow: hidden;
             cursor: pointer;
         }
         .hub-card::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            border-radius: 20px;
+            /* 悬停时类别色光晕 */
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 50% 0%, var(--cat-soft), transparent 68%);
             opacity: 0;
-            transition: opacity 0.35s;
-            z-index: 0;
+            transition: opacity var(--transition-base);
+            pointer-events: none;
         }
         .hub-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(255,255,255,0.2);
-            box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--cat);
         }
         .hub-card:hover::before { opacity: 1; }
         .hub-card > * { position: relative; z-index: 1; }
 
-        /* 卡片配色 */
-        .hub-card[data-cat="ms"]::before { background: radial-gradient(circle at 50% 0%, rgba(77,163,255,0.15), transparent 70%); }
-        .hub-card[data-cat="ms"]:hover { border-color: rgba(77,163,255,0.4); }
-        .hub-card[data-cat="ws"]::before { background: radial-gradient(circle at 50% 0%, rgba(255,107,107,0.15), transparent 70%); }
-        .hub-card[data-cat="ws"]:hover { border-color: rgba(255,107,107,0.4); }
-        .hub-card[data-cat="md"]::before { background: radial-gradient(circle at 50% 0%, rgba(82,196,26,0.15), transparent 70%); }
-        .hub-card[data-cat="md"]:hover { border-color: rgba(82,196,26,0.4); }
-        .hub-card[data-cat="wd"]::before { background: radial-gradient(circle at 50% 0%, rgba(245,197,66,0.15), transparent 70%); }
-        .hub-card[data-cat="wd"]:hover { border-color: rgba(245,197,66,0.4); }
-        .hub-card[data-cat="xd"]::before { background: radial-gradient(circle at 50% 0%, rgba(165,94,234,0.15), transparent 70%); }
-        .hub-card[data-cat="xd"]:hover { border-color: rgba(165,94,234,0.4); }
+        .hub-card[data-cat="ms"] { --cat: #4da3ff; --cat-soft: rgba(77, 163, 255, 0.14); }
+        .hub-card[data-cat="ws"] { --cat: #ff6b6b; --cat-soft: rgba(255, 107, 107, 0.14); }
+        .hub-card[data-cat="md"] { --cat: #52c41a; --cat-soft: rgba(82, 196, 26, 0.14); }
+        .hub-card[data-cat="wd"] { --cat: #f0a500; --cat-soft: rgba(240, 165, 0, 0.16); }
+        .hub-card[data-cat="xd"] { --cat: #a55eea; --cat-soft: rgba(165, 94, 234, 0.15); }
 
-        /* 卡片图标 */
+        /* 卡片头部：图标 + 状态 */
+        .hub-card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
         .hub-card-icon {
-            font-size: 2.4rem; margin-bottom: 16px;
-            transition: transform 0.35s;
-            width: 72px; height: 72px;
-            display: flex; align-items: center; justify-content: center;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.06);
+            width: 54px;
+            height: 54px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--cat-soft);
+            color: var(--cat);
+            font-size: 1.3rem;
+            transition: transform var(--transition-base);
         }
-        .hub-card-icon i {
-            opacity: 0.85;
+        .hub-card:hover .hub-card-icon { transform: scale(1.08); }
+
+        /* 状态标签 */
+        .hub-card-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 12px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            background: var(--bg-lighter);
+            color: var(--text-muted);
         }
-        .hub-card:hover .hub-card-icon { transform: scale(1.15); }
+        .hub-card-status.ready {
+            background: rgba(82, 196, 26, 0.12);
+            color: #52c41a;
+            border-color: rgba(82, 196, 26, 0.3);
+        }
+        .hub-card-status.template {
+            background: rgba(240, 165, 0, 0.12);
+            color: #d48806;
+            border-color: rgba(240, 165, 0, 0.3);
+        }
+        .hub-card-status.empty {
+            background: var(--bg-lighter);
+            color: var(--text-muted);
+            border-color: var(--border-color);
+        }
+        .hub-card-status i { font-size: 0.68rem; }
 
         /* 卡片标题 */
         .hub-card-title {
-            font-size: 1.35rem; font-weight: 700; margin-bottom: 6px;
-            text-align: center;
+            font-family: var(--font-en);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 6px;
         }
         .hub-card-title-en {
-            font-size: 0.8rem; color: rgba(255,255,255,0.45);
-            font-family: var(--font-en); text-transform: uppercase;
-            letter-spacing: 1.5px; margin-bottom: 12px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            font-family: var(--font-en);
+            margin-bottom: 22px;
         }
 
-        /* 卡片状态标签 */
-        .hub-card-status {
-            display: inline-flex; align-items: center; gap: 5px;
-            padding: 4px 14px; border-radius: 12px;
-            font-size: 0.75rem; font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .hub-card-status.ready {
-            background: rgba(82,196,26,0.2); color: #52c41a; border: 1px solid rgba(82,196,26,0.3);
-        }
-        .hub-card-status.template {
-            background: rgba(245,197,66,0.15); color: #f5c542; border: 1px solid rgba(245,197,66,0.25);
-        }
-        .hub-card-status.empty {
-            background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.4); border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        /* 卡片快速链接 */
+        /* 快速链接 */
         .hub-card-links {
-            display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 4px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: auto;
         }
         .hub-card-link {
-            display: inline-flex; align-items: center; gap: 4px;
-            padding: 6px 14px; border-radius: 8px;
-            font-size: 0.78rem; font-weight: 500;
-            background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.7);
-            border: 1px solid rgba(255,255,255,0.1);
-            text-decoration: none;
-            transition: all 0.25s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 7px 14px;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            background: var(--bg-light);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-fast);
         }
         .hub-card-link:hover {
-            background: rgba(255,255,255,0.14); color: #fff;
-            border-color: rgba(255,255,255,0.25);
+            color: var(--cat);
+            border-color: var(--cat);
+            background: var(--cat-soft);
         }
         .hub-card-link.disabled {
-            opacity: 0.35; pointer-events: none; cursor: not-allowed;
+            opacity: 0.35;
+            pointer-events: none;
+            cursor: not-allowed;
         }
 
-        /* 底部返回链接 */
+        /* 返回按钮 */
         .hub-footer {
-            text-align: center; padding: 40px 20px;
+            text-align: center;
+            padding: 8px 0 24px;
         }
-        .hub-back-btn {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 10px 24px; border-radius: 24px;
-            background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.65);
-            border: 1px solid rgba(255,255,255,0.12);
-            text-decoration: none; font-size: 0.9rem;
-            transition: all 0.25s;
-        }
-        .hub-back-btn:hover {
-            background: rgba(255,255,255,0.15); color: #fff;
-            border-color: rgba(255,255,255,0.3);
-        }
+        .hub-footer .btn { min-width: 220px; justify-content: center; }
 
-        /* 页脚区域 */
+        /* 页脚说明 */
         .hub-credit {
-            text-align: center; padding: 20px;
-            font-size: 0.75rem; color: rgba(255,255,255,0.25);
+            text-align: center;
+            padding: 8px 24px 44px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            background: var(--bg-light);
         }
 
         /* 响应式 */
         @media (max-width: 768px) {
-            .hub-title { font-size: 2rem; }
             .hub-grid { grid-template-columns: 1fr; }
-            .hub-card { padding: 28px 20px 24px; }
+            .hub-card { padding: 24px; }
         }
     </style>
 </head>
 <body class="wtt-hub-page">
 
-    <!-- 背景粒子 -->
-    <div class="hub-particles" id="hubParticles"></div>
-
-    <!-- 主容器 -->
-    <div class="hub-container">
-
-        <!-- 语言切换 -->
-        <div style="text-align:right;">
-            <button class="lang-toggle" id="langToggle" aria-label="切换语言" style="display:inline-flex;align-items:center;gap:6px;padding:6px 16px;border-radius:16px;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.12);cursor:pointer;"><span data-i18n="lang_btn">EN</span></button>
-        </div>
-
-        <!-- 头部 -->
-        <header class="hub-header">
-            <div class="hub-egg-badge">
-                <i class="fa-solid fa-egg"></i><span>Easter Egg</span><i class="fa-solid fa-egg"></i>
-            </div>
-            <h1 class="hub-title">WTT World Ranking</h1>
-            <p class="hub-subtitle" id="hubSubtitle">
-                <span id="hubSubA" data-i18n="wtt_hub_sub_a">基于武外乒乓球社积分规则的 WTT 国际乒联积分排名模拟系统。</span><br>
-                <span id="hubSubB" data-i18n="wtt_hub_sub_b">选择下方项目查看对应排名、数据可视化和个人数据。</span>
-            </p>
-        </header>
-
-        <!-- 项目卡片网格 -->
-        <div class="hub-grid" id="hubGrid">
-            <!-- JS 动态渲染 -->
-        </div>
-
-        <!-- 返回链接 -->
-        <div class="hub-footer">
-            <a href="ranking.html" class="hub-back-btn" id="hubBackBtn">
-                <i class="fa-solid fa-arrow-left"></i> <span data-i18n="wtt_hub_back">返回社团 Ranking</span>
+    <!-- 顶部导航（与全站一致） -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon"><i class="fa-solid fa-table-tennis-paddle-ball"></i></span>
+                <span class="logo-text">WFLS TT Club</span>
             </a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
+                <li class="nav-item"><a href="competitions.html" class="nav-link">Competitions</a></li>
+                <li class="nav-item"><a href="ranking.html" class="nav-link">Ranking <span class="beta-tag">Beta</span></a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="moreDropdown">More... <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu" id="dropdownMenu">
+                        <li><a href="members.html" class="dropdown-link">社团骨干</a></li>
+                        <li><a href="data_viz.html" class="dropdown-link">Data Viz <span class="beta-tag">Beta</span></a></li>
+                        <li><a href="personal_stats.html" class="dropdown-link">个人数据</a></li>
+                        <li><a href="qa.html" class="dropdown-link">Q&A</a></li>
+                        <li><a href="changelog.html" class="dropdown-link">更新日志</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="切换主题"><i class="fa-solid fa-moon"></i></button>
+                <button class="lang-toggle" id="langToggle" aria-label="切换语言"><span data-i18n="lang_btn">EN</span></button>
+            </div>
+            <button class="hamburger" id="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
         </div>
+    </nav>
 
-        <!-- 版权 -->
-        <div class="hub-credit">
-            <p data-i18n="wtt_hub_credit">数据仅供娱乐 · 非官方 WTT 排名 · &copy; 2026 WFLS Table Tennis Club</p>
+    <!-- 页面头部 -->
+    <section class="page-hero wtt-hub-hero">
+        <div class="hub-hero-particles" id="hubParticles"></div>
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-content">
+            <span class="section-tag wtt-easter-egg-tag">🥚 Easter Egg</span>
+            <h1>WTT <span class="hub-title-accent">Ranking Hub</span></h1>
+            <p id="hubSubA" data-i18n="wtt_hub_sub_a">基于乒乓球社团积分规则的 WTT 国际乒联积分排名模拟系统。</p>
+            <p id="hubSubB" data-i18n="wtt_hub_sub_b">选择下方项目查看对应积分排名、数据可视化和个人数据。</p>
         </div>
+    </section>
+
+    <!-- 项目卡片区域 -->
+    <section class="section wtt-hub-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="wtt_hub_cat_tag">Categories</span>
+                <h2 class="section-title" data-i18n="wtt_hub_cat_title">选择项目</h2>
+                <p class="section-desc" data-i18n="wtt_hub_cat_desc">点击卡片查看对应项目的排名、数据可视化与个人数据</p>
+            </div>
+
+            <div class="hub-grid" id="hubGrid">
+                <!-- JS 动态渲染 -->
+            </div>
+
+            <div class="hub-footer">
+                <a href="ranking.html" class="btn btn-secondary" id="hubBackBtn">
+                    <i class="fa-solid fa-arrow-left"></i> <span data-i18n="wtt_hub_back">返回社团 Ranking</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 版权说明 -->
+    <div class="hub-credit">
+        <p data-i18n="wtt_hub_credit">数据仅供娱乐 · 非官方 WTT 排名 · &copy; 2026 WFLS Table Tennis Club</p>
     </div>
 
+    <script>window.__WFLS_DISABLE_SEARCH__ = true;</script>
     <script src="js/common.js"></script>
     <script src="js/wtt_common.js"></script>
     <script>
-        // ============ 背景粒子动画 ============
+        // ============ Hero 粒子动画 ============
         (function initParticles() {
             const container = document.getElementById('hubParticles');
-            const colors = ['rgba(77,163,255,0.2)', 'rgba(255,107,107,0.2)', 'rgba(82,196,26,0.2)',
-                           'rgba(245,197,66,0.2)', 'rgba(165,94,234,0.2)', 'rgba(255,255,255,0.12)'];
-            for (let i = 0; i < 40; i++) {
+            if (!container) return;
+            for (let i = 0; i < 26; i++) {
                 const p = document.createElement('div');
                 p.classList.add('hub-particle');
-                const size = Math.random() * 6 + 3;
+                const size = Math.random() * 4 + 2;
                 p.style.width = size + 'px';
                 p.style.height = size + 'px';
                 p.style.left = Math.random() * 100 + '%';
-                p.style.background = colors[Math.floor(Math.random() * colors.length)];
-                p.style.animationDuration = (Math.random() * 12 + 8) + 's';
-                p.style.animationDelay = (Math.random() * 10) + 's';
-                if (Math.random() > 0.5) p.style.animationName = 'floatUpDelayed';
+                p.style.animationDuration = (Math.random() * 10 + 8) + 's';
+                p.style.animationDelay = (Math.random() * 8) + 's';
                 container.appendChild(p);
             }
         })();
@@ -295,18 +331,17 @@
         (function renderHubCards() {
             const grid = document.getElementById('hubGrid');
             const categories = [
-                { id: 'ms', faIcon: 'fa-user',          nameEn: "Men's Singles",    color: '#4da3ff' },
-                { id: 'ws', faIcon: 'fa-user-large',     nameEn: "Women's Singles",  color: '#ff6b6b' },
-                { id: 'md', faIcon: 'fa-user-group',     nameEn: "Men's Doubles",    color: '#52c41a' },
-                { id: 'wd', faIcon: 'fa-user-group',     nameEn: "Women's Doubles",  color: '#f5c542' },
-                { id: 'xd', faIcon: 'fa-people-arrows',  nameEn: 'Mixed Doubles',    color: '#a55eea' }
+                { id: 'ms', faIcon: 'fa-user',       nameEn: "Men's Singles" },
+                { id: 'ws', faIcon: 'fa-user-large', nameEn: "Women's Singles" },
+                { id: 'md', faIcon: 'fa-user-group', nameEn: "Men's Doubles" },
+                { id: 'wd', faIcon: 'fa-user-group', nameEn: "Women's Doubles" },
+                { id: 'xd', faIcon: 'fa-people-arrows', nameEn: 'Mixed Doubles' }
             ];
 
             function catName(cat) {
-                return (i18n[currentLang] && i18n[currentLang]['wtt_cat_' + cat.id]) || cat.nameEn || cat.name;
+                return (i18n[currentLang] && i18n[currentLang]['wtt_cat_' + cat.id]) || cat.nameEn;
             }
 
-            // 先渲染静态卡片，异步检查数据状态
             categories.forEach(cat => {
                 const card = document.createElement('a');
                 card.className = 'hub-card';
@@ -314,12 +349,15 @@
                 card.href = `wtt_ranking.html?cat=${cat.id}`;
 
                 card.innerHTML = `
-                    <div class="hub-card-icon"><i class="fa-solid ${cat.faIcon}"></i></div>
-                    <div class="hub-card-title" style="color:${cat.color}">${catName(cat)}</div>
-                    <div class="hub-card-title-en">${cat.nameEn}</div>
-                    <div class="hub-card-status" id="status-${cat.id}" style="color:rgba(255,255,255,0.4)">
-                        <i class="fa-solid fa-spinner fa-pulse"></i> ${i18n[currentLang].wtt_status_check}
+                    <div class="hub-card-header">
+                        <div class="hub-card-icon"><i class="fa-solid ${cat.faIcon}"></i></div>
+                        <div class="hub-card-status" id="status-${cat.id}">
+                            <i class="fa-solid fa-spinner fa-spin"></i>
+                            <span>${i18n[currentLang].wtt_status_check}</span>
+                        </div>
                     </div>
+                    <div class="hub-card-title">${catName(cat)}</div>
+                    <div class="hub-card-title-en">${cat.nameEn}</div>
                     <div class="hub-card-links">
                         <span class="hub-card-link" data-href="wtt_ranking.html?cat=${cat.id}">
                             <i class="fa-solid fa-list-ol"></i> ${i18n[currentLang].wtt_link_rank}
@@ -364,7 +402,6 @@
                         } else if (cat.id === 'ws') {
                             suffixes = ['ws', 'ittf'];
                         } else {
-                            // MD/WD/XD 统一使用 wtt 后缀
                             suffixes = ['wtt', cat.id, 'ittf'];
                         }
                         let found = false;
@@ -375,7 +412,6 @@
                             }
                             if (found) break;
                         }
-                        // 额外尝试无年份后缀的文件（如 tts, unmatched）
                         if (!found) {
                             for (const suffix of ['tts', 'unmatched']) {
                                 resp = await fetch(`wtt_data/${cat.id}/score-log-${suffix}.json`);
@@ -398,19 +434,19 @@
 
             function updateStatus(el, catId, status) {
                 hubStatuses[catId] = status;
-                const allLinks = el.parentElement.querySelectorAll('.hub-card-link');
+                const allLinks = el.parentElement.parentElement.querySelectorAll('.hub-card-link');
                 if (status === 'ready') {
                     el.className = 'hub-card-status ready';
-                    el.innerHTML = '<i class="fa-solid fa-circle-check"></i> ' + i18n[currentLang].wtt_status_ready;
+                    el.innerHTML = '<i class="fa-solid fa-circle-check"></i> <span>' + (i18n[currentLang].wtt_status_ready) + '</span>';
                     allLinks.forEach(l => l.classList.remove('disabled'));
                 } else if (status === 'template') {
                     el.className = 'hub-card-status template';
-                    el.innerHTML = '<i class="fa-solid fa-file-pen"></i> ' + i18n[currentLang].wtt_status_template;
+                    el.innerHTML = '<i class="fa-solid fa-file-pen"></i> <span>' + (i18n[currentLang].wtt_status_template) + '</span>';
                     // 模板状态下链接仍然可用（会显示空数据页面）
                     allLinks.forEach(l => l.classList.remove('disabled'));
                 } else {
                     el.className = 'hub-card-status empty';
-                    el.innerHTML = '<i class="fa-solid fa-circle"></i> ' + i18n[currentLang].wtt_status_empty;
+                    el.innerHTML = '<i class="fa-solid fa-circle"></i> <span>' + (i18n[currentLang].wtt_status_empty) + '</span>';
                     allLinks.forEach(l => l.classList.add('disabled'));
                 }
             }
@@ -424,9 +460,7 @@
                     if (titleEl) titleEl.textContent = catName(cat);
                     const statusEl = document.getElementById('status-' + cat.id);
                     if (statusEl && hubStatuses[cat.id]) {
-                        const prev = statusEl.className.split(' ')[1];
                         updateStatus(statusEl, cat.id, hubStatuses[cat.id]);
-                        statusEl.className = 'hub-card-status ' + prev;
                     }
                     const linkEls = card.querySelectorAll('.hub-card-link');
                     if (linkEls.length >= 3) {
