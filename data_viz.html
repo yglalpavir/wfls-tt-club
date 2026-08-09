@@ -71,9 +71,9 @@
                 <span class="section-tag">Line Chart</span>
                 <h2 class="section-title" data-i18n="data_viz_points_trend">积分趋势</h2>
                 <div class="viz-topn-selector">
-                    <span>最近</span>
-                    <input type="number" id="pointsTrendDataCount" value="20" min="2" max="200" title="显示最近N个数据点">
-                    <span>个数据点</span>
+                    <span data-i18n="data_viz_recent">最近</span>
+                    <input type="number" id="pointsTrendDataCount" value="20" min="2" max="200" data-i18n-title="data_viz_topn_title">
+                    <span data-i18n="data_viz_data_points">个数据点</span>
                 </div>
             </div>
             <div class="viz-grid-2col">
@@ -92,13 +92,13 @@
                 <h2 class="section-title" data-i18n="data_viz_rank_stream">排名变化河流图</h2>
                 <div class="viz-topn-selector">
                     <span data-i18n="data_viz_top_n">显示前</span>
-                    <input type="number" id="topNSelect" value="10" min="1" max="20" title="填写1-20的任意正整数">
-                    <span>名球员</span>
+                    <input type="number" id="topNSelect" value="10" min="1" max="20" data-i18n-title="data_viz_topn_select_title">
+                    <span data-i18n="data_viz_top_n_suffix">名球员</span>
                 </div>
                 <div class="viz-topn-selector" style="margin-left:16px;">
-                    <span>最近</span>
-                    <input type="number" id="streamDataCount" value="20" min="2" max="200" title="显示最近N个数据点">
-                    <span>个数据点</span>
+                    <span data-i18n="data_viz_recent">最近</span>
+                    <input type="number" id="streamDataCount" value="20" min="2" max="200" data-i18n-title="data_viz_stream_title">
+                    <span data-i18n="data_viz_data_points">个数据点</span>
                 </div>
             </div>
             <div class="viz-chart-container glass-card" style="min-height:450px;">
@@ -113,19 +113,19 @@
                 <div class="viz-compare-selectors glass-card">
                     <div class="compare-selector-group">
                         <label data-i18n="data_viz_select_player_a">球员 A</label>
-                        <select id="playerASelect"><option value="">-- 选择球员 --</option></select>
+                        <select id="playerASelect"><option value="" data-i18n="data_viz_select_player_ph">-- 选择球员 --</option></select>
                     </div>
                     <div class="compare-vs">VS</div>
                     <div class="compare-selector-group">
                         <label data-i18n="data_viz_select_player_b">球员 B</label>
-                        <select id="playerBSelect"><option value="">-- 选择球员 --</option></select>
+                        <select id="playerBSelect"><option value="" data-i18n="data_viz_select_player_ph">-- 选择球员 --</option></select>
                     </div>
-                    <button class="btn btn-sm btn-primary" id="applyCompare">对比</button>
+                    <button class="btn btn-sm btn-primary" id="applyCompare" data-i18n="data_viz_compare_btn">对比</button>
                 </div>
                 <div class="viz-compare-result glass-card" id="compareResult">
                     <div class="compare-placeholder">
                         <i class="fa-solid fa-people-arrows"></i>
-                        <p>选择两名球员进行对比分析</p>
+                        <p data-i18n="data_viz_compare_placeholder">选择两名球员进行对比分析</p>
                     </div>
                 </div>
             </div>

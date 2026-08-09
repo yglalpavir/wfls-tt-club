@@ -8,26 +8,26 @@ async function loadRankingDataForViz() {
         if (progressEl) {
             progressEl.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;color:var(--text-secondary);">
                 <div class="wtt-spinner" style="width:32px;height:32px;border:3px solid var(--border-color);border-top-color:var(--accent-blue);border-radius:50%;animation:wttSpin 0.8s linear infinite;margin-bottom:12px;"></div>
-                <p style="font-size:0.9rem;margin:0;">${msg || '加载数据中...'}</p>
+                <p style="font-size:0.9rem;margin:0;">${msg || i18n[currentLang].data_viz_loading}</p>
             </div>`;
         }
     }
 
-    showProgress('准备下载数据文件...');
+    showProgress(i18n[currentLang].data_viz_prepare);
 
     try {
         const dataFiles = [
-            { name: 'players.json',         loader: loadPlayers,           label: '球员档案' },
-            { name: 'score-log.json',        loader: loadScoreLogForViz,    label: '比赛记录' },
-            { name: 'initial-scores.json',   loader: loadInitialScores,     label: '初始积分' },
-            { name: 'event-coefficient.json',loader: loadEventCoefficients,   label: '赛事系数' },
-            { name: 'decay-config.json',     loader: loadDecayConfig,         label: '衰减配置' },
-            { name: 'seasons.json',          loader: loadSeasons,             label: '赛季配置' }
+            { name: 'players.json',         loader: loadPlayers,           label: i18n[currentLang].data_viz_file_players },
+            { name: 'score-log.json',        loader: loadScoreLogForViz,    label: i18n[currentLang].data_viz_file_matches },
+            { name: 'initial-scores.json',   loader: loadInitialScores,     label: i18n[currentLang].data_viz_file_initial },
+            { name: 'event-coefficient.json',loader: loadEventCoefficients,   label: i18n[currentLang].data_viz_file_event },
+            { name: 'decay-config.json',     loader: loadDecayConfig,         label: i18n[currentLang].data_viz_file_decay },
+            { name: 'seasons.json',          loader: loadSeasons,             label: i18n[currentLang].data_viz_file_season }
         ];
 
         for (let i = 0; i < dataFiles.length; i++) {
             const f = dataFiles[i];
-            showProgress(`正在下载 ${f.label} (${i + 1}/${dataFiles.length}): ${f.name}`);
+            showProgress(i18n[currentLang].data_viz_downloading.replace('{label}', f.label).replace('{i}', i + 1).replace('{total}', dataFiles.length).replace('{file}', f.name));
             await new Promise(r => setTimeout(r, 0));
             await f.loader();
         }
@@ -37,7 +37,7 @@ async function loadRankingDataForViz() {
 
         if (!initialScoresData || !eventCoefficients || !seasonsData) throw new Error('数据加载失败');
 
-        showProgress('正在计算排名积分...');
+        showProgress(i18n[currentLang].data_viz_calculating);
         await new Promise(r => setTimeout(r, 0));
 
         // 同步计算（club数据量小，不需要分块异步）
@@ -49,7 +49,7 @@ async function loadRankingDataForViz() {
         console.error('DataViz: 排名计算失败', e);
         rankingTimeline = [];
         if (progressEl) {
-            progressEl.innerHTML = '<div style="padding:20px;color:var(--accent-red);">❌ 排名数据加载失败，请刷新页面重试</div>';
+            progressEl.innerHTML = '<div style="padding:20px;color:var(--accent-red);">' + i18n[currentLang].data_viz_load_fail + '</div>';
         }
         return false;
     }

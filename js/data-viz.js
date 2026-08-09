@@ -45,14 +45,14 @@ function initDataViz() {
     
     if (!rankingTimeline || rankingTimeline.length === 0) {
         console.error('[DataViz] rankingTimeline 为空，排名数据未加载成功');
-        document.getElementById('playerCheckboxList').innerHTML = '<div style="padding:20px;color:var(--accent-red);">❌ 排名数据加载失败，请刷新页面重试</div>';
+        document.getElementById('playerCheckboxList').innerHTML = '<div style="padding:20px;color:var(--accent-red);">' + i18n[currentLang].data_viz_load_fail.replace('❌ ', '') + '</div>';
         return;
     }
     
     const players = getAllPlayers();
     if (!players.length) {
         console.error('[DataViz] getAllPlayers() 返回空数组');
-        document.getElementById('playerCheckboxList').innerHTML = '<div style="padding:20px;color:var(--accent-red);">❌ 无法获取球员列表</div>';
+        document.getElementById('playerCheckboxList').innerHTML = '<div style="padding:20px;color:var(--accent-red);">' + i18n[currentLang].data_viz_no_player_list.replace('❌ ', '') + '</div>';
         return;
     }
 
@@ -79,8 +79,8 @@ function initDataViz() {
         // 事件监听
         document.getElementById('applyPointsTrend')?.addEventListener('click', () => { 
             const sel = getSelectedPlayers(); 
-            if (!sel.length) { alert('请至少选择一名球员'); return; } 
-            if (sel.length > 15) { alert('最多选择15名球员'); return; } 
+            if (!sel.length) { alert(i18n[currentLang].data_viz_alert_select_one); return; } 
+            if (sel.length > 15) { alert(i18n[currentLang].data_viz_alert_max); return; } 
             const dc = parseInt(document.getElementById('pointsTrendDataCount')?.value) || 20;
             renderPointsTrend(sel, dc); 
         });
@@ -106,8 +106,8 @@ function initDataViz() {
     });
     document.getElementById('applyCompare')?.addEventListener('click', () => { 
         const pa = document.getElementById('playerASelect')?.value, pb = document.getElementById('playerBSelect')?.value; 
-        if (!pa || !pb) { alert('请选择两名球员'); return; } 
-        if (pa === pb) { alert('请选择不同的球员'); return; } 
+        if (!pa || !pb) { alert(i18n[currentLang].data_viz_alert_two); return; } 
+        if (pa === pb) { alert(i18n[currentLang].data_viz_alert_diff); return; } 
         renderComparison(pa, pb); 
     });
     console.log('[DataViz] 初始化完成');
@@ -172,7 +172,7 @@ function renderPlayerCheckboxes() {
     
     const players = getAllPlayers();
     if (!players.length) {
-        container.innerHTML = '<div style="padding:20px;text-align:center;color:var(--text-muted);">暂无球员数据</div>';
+        container.innerHTML = '<div style="padding:20px;text-align:center;color:var(--text-muted);">' + i18n[currentLang].data_viz_no_players + '</div>';
         return;
     }
     
@@ -211,8 +211,8 @@ function renderCompareSelects() {
     const opts = sortedPlayers.map(p => `<option value="${escapeHtml(String(p))}">${escapeHtml(String(p))}</option>`).join(''); 
     const sa = document.getElementById('playerASelect'), 
           sb = document.getElementById('playerBSelect'); 
-    if (sa) sa.innerHTML = '<option value="">-- 选择球员 --</option>' + opts; 
-    if (sb) sb.innerHTML = '<option value="">-- 选择球员 --</option>' + opts; 
+    if (sa) sa.innerHTML = `<option value="">${escapeHtml(i18n[currentLang].data_viz_select_player_ph)}</option>` + opts; 
+    if (sb) sb.innerHTML = `<option value="">${escapeHtml(i18n[currentLang].data_viz_select_player_ph)}</option>` + opts; 
     console.log('[DataViz] renderCompareSelects: 已加载', players.length, '名球员');
 }
 
@@ -370,7 +370,7 @@ function renderPointsTrend(playerNames, dataCount) {
                 },
                 scales: {
                     x: { grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 9 : 11 }, maxRotation: isMobile ? 45 : 0 } },
-                    y: { beginAtZero: false, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 9 : 11 } }, title: { display: true, text: currentLang === 'zh' ? '积分' : 'Points', font: { size: isMobile ? 10 : 12 } } }
+                    y: { beginAtZero: false, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 9 : 11 } }, title: { display: true, text: i18n[currentLang].data_viz_axis_points, font: { size: isMobile ? 10 : 12 } } }
                 }
             }
         });
@@ -414,7 +414,7 @@ function renderRankStream(topN, dataCount) {
         const data = slicedTimeline.map(t => getPlayerRankAtSnapshot(name, t));
         const color = STREAM_COLORS[idx%STREAM_COLORS.length];
         return { label:name, data, borderColor:color, backgroundColor:color+'25', borderWidth:isMobile?1.5:2, pointRadius:isMobile?2:3, pointHoverRadius:isMobile?4:6, tension:0.4, fill:true, spanGaps:true };
-    }); try { rankStreamChart = new Chart(canvas, { type:'line', data:{labels,datasets}, options:{ responsive:true, maintainAspectRatio:false, interaction:{ intersect:false, mode:'index' }, plugins:{ legend:{ position:'bottom', labels:{ usePointStyle:true, padding:isMobile?8:16, font:{ size:isMobile?9:11, family:"'Poppins', sans-serif" }, color:textColor, boxWidth:isMobile?10:12 } }, tooltip:{ backgroundColor:'rgba(26,29,40,0.9)', titleFont:{ size:isMobile?11:13 }, bodyFont:{ size:isMobile?10:12 }, padding:isMobile?8:12, cornerRadius:8, itemSort:(a,b)=>(a.parsed.y ?? Infinity)-(b.parsed.y ?? Infinity), callbacks:{ label:ctx => `${ctx.dataset.label}: 第${ctx.raw}名` } } }, scales:{ x:{ grid:{ color:'rgba(128,128,128,0.1)' }, ticks:{ font:{ size:isMobile?9:11 }, maxRotation:isMobile?45:0 } }, y:{ reverse:true, min:1, max:topN, grid:{ color:'rgba(128,128,128,0.1)' }, ticks:{ font:{ size:isMobile?9:11 }, stepSize:1 }, title:{ display:true, text:currentLang==='zh'?'排名':'Rank', font:{ size:isMobile?10:12 } } } } } }); } catch(err) { console.error('排名河流图失败', err); } }
+    }); try { rankStreamChart = new Chart(canvas, { type:'line', data:{labels,datasets}, options:{ responsive:true, maintainAspectRatio:false, interaction:{ intersect:false, mode:'index' }, plugins:{ legend:{ position:'bottom', labels:{ usePointStyle:true, padding:isMobile?8:16, font:{ size:isMobile?9:11, family:"'Poppins', sans-serif" }, color:textColor, boxWidth:isMobile?10:12 } }, tooltip:{ backgroundColor:'rgba(26,29,40,0.9)', titleFont:{ size:isMobile?11:13 }, bodyFont:{ size:isMobile?10:12 }, padding:isMobile?8:12, cornerRadius:8, itemSort:(a,b)=>(a.parsed.y ?? Infinity)-(b.parsed.y ?? Infinity), callbacks:{ label:ctx => `${ctx.dataset.label}: ${i18n[currentLang].data_viz_rank_suffix.replace('{n}', ctx.raw)}` } } }, scales:{ x:{ grid:{ color:'rgba(128,128,128,0.1)' }, ticks:{ font:{ size:isMobile?9:11 }, maxRotation:isMobile?45:0 } }, y:{ reverse:true, min:1, max:topN, grid:{ color:'rgba(128,128,128,0.1)' }, ticks:{ font:{ size:isMobile?9:11 }, stepSize:1 }, title:{ display:true, text:i18n[currentLang].data_viz_axis_rank, font:{ size:isMobile?10:12 } } } } } }); } catch(err) { console.error('排名河流图失败', err); } }
 
 // 计算球员近期状态分（最近10场比赛的积分变化总和）
 function calcFormScore(playerName) {
@@ -523,7 +523,7 @@ function renderComparison(playerA, playerB) {
     const fA = calcFormScore(playerA), fB = calcFormScore(playerB);
     const predA = (calcPredictedWinRate(rA, rB, aW, bW, fA, fB) * 100).toFixed(1);
     const predB = (calcPredictedWinRate(rB, rA, bW, aW, fB, fA) * 100).toFixed(1);
-    let html = `<div class="compare-summary"><div class="compare-player-col"><div class="compare-player-name">${linkPlayerName(playerA)}</div><div class="compare-player-stat">当前积分: <strong>${ad?ad['当前积分'].toFixed(1):'-'}</strong></div><div class="compare-player-stat">交手胜率: <strong>${aWinRate}</strong></div><div class="compare-player-stat">预测胜率: <strong>${predA}%</strong></div></div><div class="compare-divider">VS</div><div class="compare-player-col"><div class="compare-player-name">${linkPlayerName(playerB)}</div><div class="compare-player-stat">当前积分: <strong>${bd?bd['当前积分'].toFixed(1):'-'}</strong></div><div class="compare-player-stat">交手胜率: <strong>${bWinRate}</strong></div><div class="compare-player-stat">预测胜率: <strong>${predB}%</strong></div></div></div>`; if (total > 0) { html += `<div style="text-align:center;margin-bottom:16px;"><span style="font-weight:600;">总交手: ${total} 场</span> | <span style="color:#52c41a;">${linkPlayerName(playerA)} ${aW} 胜</span> | <span style="color:#52c41a;">${linkPlayerName(playerB)} ${bW} 胜</span>${recent?` | 最近: ${recent['日期']} (胜者: ${linkPlayerName(recent['胜者'])})`:''}</div><div class="compare-h2h-wrapper"><table class="compare-h2h-table"><thead><tr><th>日期</th><th>类型</th><th>胜者</th><th>${linkPlayerName(playerA)} 积分变动</th><th>${linkPlayerName(playerB)} 积分变动</th></tr></thead><tbody>`; const scores = {}; 
+    let html = `<div class="compare-summary"><div class="compare-player-col"><div class="compare-player-name">${linkPlayerName(playerA)}</div><div class="compare-player-stat">${i18n[currentLang].data_viz_cur_score}: <strong>${ad?ad['当前积分'].toFixed(1):'-'}</strong></div><div class="compare-player-stat">${i18n[currentLang].data_viz_h2h_rate}: <strong>${aWinRate}</strong></div><div class="compare-player-stat">${i18n[currentLang].data_viz_pred_rate}: <strong>${predA}%</strong></div></div><div class="compare-divider">VS</div><div class="compare-player-col"><div class="compare-player-name">${linkPlayerName(playerB)}</div><div class="compare-player-stat">${i18n[currentLang].data_viz_cur_score}: <strong>${bd?bd['当前积分'].toFixed(1):'-'}</strong></div><div class="compare-player-stat">${i18n[currentLang].data_viz_h2h_rate}: <strong>${bWinRate}</strong></div><div class="compare-player-stat">${i18n[currentLang].data_viz_pred_rate}: <strong>${predB}%</strong></div></div></div>`; if (total > 0) { html += `<div style="text-align:center;margin-bottom:16px;"><span style="font-weight:600;">${i18n[currentLang].data_viz_total_h2h.replace('{n}', total)}</span> | <span style="color:#52c41a;">${linkPlayerName(playerA)} ${aW} ${i18n[currentLang].data_viz_win}</span> | <span style="color:#52c41a;">${linkPlayerName(playerB)} ${bW} ${i18n[currentLang].data_viz_win}</span>${recent?` | ${i18n[currentLang].data_viz_recent_match.replace('{date}', recent['日期']).replace('{winner}', linkPlayerName(recent['胜者']))}`:''}</div><div class="compare-h2h-wrapper"><table class="compare-h2h-table"><thead><tr><th>${i18n[currentLang].data_viz_col_date}</th><th>${i18n[currentLang].data_viz_col_type}</th><th>${i18n[currentLang].data_viz_col_winner}</th><th>${i18n[currentLang].data_viz_pts_change.replace('{player}', linkPlayerName(playerA))}</th><th>${i18n[currentLang].data_viz_pts_change.replace('{player}', linkPlayerName(playerB))}</th></tr></thead><tbody>`; const scores = {}; 
         // 使用赛季感知的起始积分（如果存在赛季数据）
         if (seasonsData && seasonsData.length > 0 && h2h.length > 0) {
             const firstH2hDate = h2h[0]['日期'];
@@ -536,7 +536,7 @@ function renderComparison(playerA, playerB) {
         }
         if (Object.keys(scores).length === 0 && initialScoresData) Object.assign(scores, initialScoresData.initialScores);
         const h2hSeasonStart = (seasonsData && seasonsData.length > 0 && h2h.length > 0) ? (() => { const d = h2h[0]['日期']; for (const s of seasonsData) { if (d >= s.startDate && d <= s.endDate) return s.startDate; } return seasonsData[seasonsData.length - 1].startDate; })() : '';
-        const sortedLog = [...scoreLogData].sort((a,b) => a['日期'].localeCompare(b['日期'])); for (const m of sortedLog) { if (h2hSeasonStart && m['日期'] < h2hSeasonStart) continue; if (isMatchRecord(m)) { const w = m['胜者'], l = m['负者']; if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE; if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE; const wg = calcMatchPoints(w, l, m['类型'], m['日期'], m['日期'], scores); if ((w === playerA && l === playerB) || (w === playerB && l === playerA)) { const aIsW = w === playerA; const aChange = aIsW ? wg : -(wg * 0.8); const bChange = aIsW ? -(wg * 0.8) : wg; html += `<tr><td>${escapeHtml(m['日期'])}</td><td>${escapeHtml(m['类型'])}</td><td>${linkPlayerName(w)}</td><td class="${aIsW?'win-highlight':'loss-highlight'}">${aChange>0?'+':''}${aChange.toFixed(1)}</td><td class="${!aIsW?'win-highlight':'loss-highlight'}">${bChange>0?'+':''}${bChange.toFixed(1)}</td></tr>`; } scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg); scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * 0.8); } else if (isBonusRecord(m)) { const target = m['对象']; const bonus = parseFloat(m['分数']) || 0; if (!scores[target]) scores[target] = DEFAULT_INITIAL_SCORE; scores[target] = Math.max(SCORE_FLOOR, scores[target] + bonus); } } html += '</tbody></table></div>'; } else { html += '<div class="compare-placeholder"><i class="fa-solid fa-circle-info"></i><p>暂无交手记录</p></div>'; } container.innerHTML = html; }
+        const sortedLog = [...scoreLogData].sort((a,b) => a['日期'].localeCompare(b['日期'])); for (const m of sortedLog) { if (h2hSeasonStart && m['日期'] < h2hSeasonStart) continue; if (isMatchRecord(m)) { const w = m['胜者'], l = m['负者']; if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE; if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE; const wg = calcMatchPoints(w, l, m['类型'], m['日期'], m['日期'], scores); if ((w === playerA && l === playerB) || (w === playerB && l === playerA)) { const aIsW = w === playerA; const aChange = aIsW ? wg : -(wg * 0.8); const bChange = aIsW ? -(wg * 0.8) : wg; html += `<tr><td>${escapeHtml(m['日期'])}</td><td>${escapeHtml(m['类型'])}</td><td>${linkPlayerName(w)}</td><td class="${aIsW?'win-highlight':'loss-highlight'}">${aChange>0?'+':''}${aChange.toFixed(1)}</td><td class="${!aIsW?'win-highlight':'loss-highlight'}">${bChange>0?'+':''}${bChange.toFixed(1)}</td></tr>`; } scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg); scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * 0.8); } else if (isBonusRecord(m)) { const target = m['对象']; const bonus = parseFloat(m['分数']) || 0; if (!scores[target]) scores[target] = DEFAULT_INITIAL_SCORE; scores[target] = Math.max(SCORE_FLOOR, scores[target] + bonus); } } html += '</tbody></table></div>'; } else { html += '<div class="compare-placeholder"><i class="fa-solid fa-circle-info"></i><p>' + i18n[currentLang].data_viz_no_h2h + '</p></div>'; } container.innerHTML = html; }
 // ========================================
 // 个人数据板块
 // ========================================
