@@ -536,7 +536,15 @@ function calculateRealtimeRanking() {
     return { time: today, label: i18n[currentLang].rank_realtime_label, season: activeSeason.label, isInitial: false, isRealtime: true, data: sp };
 }
 
-async function loadInitialScores() { try { initialScoresData = await (await fetch('data/initial-scores.json')).json(); return true; } catch(e) { console.error('initial-scores.json 加载失败', e); return false; } }
+async function loadInitialScores() {
+    if (playersData && Array.isArray(playersData.players)) {
+        const is = {};
+        for (const p of playersData.players) if (p && p.name) is[p.name] = (p.initialScore != null ? p.initialScore : DEFAULT_INITIAL_SCORE);
+        initialScoresData = { baseDate: playersData.baseDate || '2026-03-01', initialScores: is };
+        return true;
+    }
+    try { initialScoresData = await (await fetch('data/legacy/initial-scores.json')).json(); return true; } catch(e) { console.error('initial-scores.json 加载失败', e); return false; }
+}
 async function loadEventCoefficients() { try { eventCoefficients = await (await fetch('data/event-coefficient.json')).json(); return true; } catch(e) { console.error('event-coefficient.json 加载失败', e); return false; } }
 async function loadDecayConfig() { try { decayConfig = await (await fetch('data/decay-config.json')).json() || {}; } catch(e) { console.error('decay-config.json 加载失败（使用默认配置）', e); decayConfig = { noDecayTypes: ['校乒赛单打', '校乒赛团体'] }; } if (typeof decayConfig.t === 'number' && decayConfig.t > 0) DECAY_HALF_LIFE_DAYS = decayConfig.t; }
 
@@ -555,5 +563,5 @@ function isFreezeEligible(et) {
     return FREEZE_ON_REPEAT && !isNoDecayType(et);
 }
 async function loadSeasons() { try { seasonsData = (await (await fetch('data/seasons.json')).json()).filter(s => s.visible !== false); return true; } catch(e) { console.error('seasons.json 加载失败', e); seasonsData = []; return false; } }
-async function loadScoreLogData() { try { scoreLogData = await (await fetch('data/score-log.json')).json(); clearFirstAppearanceCache(); } catch(e) { scoreLogData = []; } }
-async function loadScoreLogForViz() { try { scoreLogData = await (await fetch('data/score-log.json')).json(); clearFirstAppearanceCache(); return true; } catch(e) { scoreLogData = []; return true; } }
+async function loadScoreLogData() { try { scoreLogData = normalizeScoreLog(await (await fetch('data/score-log.json')).json()); clearFirstAppearanceCache(); } catch(e) { scoreLogData = []; } }
+async function loadScoreLogForViz() { try { scoreLogData = normalizeScoreLog(await (await fetch('data/score-log.json')).json()); clearFirstAppearanceCache(); return true; } catch(e) { scoreLogData = []; return true; } }

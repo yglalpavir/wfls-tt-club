@@ -9,7 +9,8 @@
 const DATA_PATHS = {
     // 核心数据
     core: {
-        members:      "data/members.json",
+        players:      "data/players.json",
+        members:      "data/legacy/members.json",
         news:         "data/news.json",
         competitions: "data/competitions.json",
         scoreLog:     "data/score-log.json",
@@ -17,9 +18,9 @@ const DATA_PATHS = {
         qa:           "data/qa.json",
         changelog:    "data/changelog.json",
         draws:        "data/draws.json",
-        playerTags:   "data/player-tags.json",
+        playerTags:   "data/legacy/player-tags.json",
         about:        "data/about.json",
-        initialScores:"data/initial-scores.json",
+        initialScores:"data/legacy/initial-scores.json",
         eventCoeff:   "data/event-coefficient.json",
     },
     // WTT 各分项
@@ -227,6 +228,7 @@ function computeStats() {
     const s = {};
 
     // --- 核心数据统计 ---
+    s.corePlayers = (allData.players && Array.isArray(allData.players.players)) ? allData.players.players.length : 0;
     s.coreMembers = Array.isArray(allData.members) ? allData.members.length : 0;
     s.coreNews = Array.isArray(allData.news) ? allData.news.length : 0;
     s.coreCompetitions = Array.isArray(allData.competitions) ? allData.competitions.length : 0;
@@ -407,7 +409,7 @@ function renderDashboard(loadTime) {
         { icon:"fa-solid fa-users", label:"WTT 选手总数", value:stats.wttPlayers, sub:"初始积分在册选手", cls:"accent-purple" },
         { icon:"fa-solid fa-calendar-days", label:"WTT 赛季数", value:stats.wttSeasons, sub:"赛季管理", cls:"accent-green" },
         { icon:"fa-solid fa-weight-scale", label:"WTT 赛事类型", value:stats.wttEventTypes, sub:"不同级别赛事", cls:"accent-warning" },
-        { icon:"fa-solid fa-user-group", label:"社团成员", value:stats.coreMembers, sub:"核心团队", cls:"accent-info" },
+        { icon:"fa-solid fa-id-card", label:"球员档案", value:stats.corePlayers, sub:"统一球员数据", cls:"accent-info" },
         { icon:"fa-solid fa-newspaper", label:"新闻/赛事", value:(stats.coreNews + stats.coreCompetitions), sub:"新闻:"+stats.coreNews+" · 赛事:"+stats.coreCompetitions, cls:"accent-danger" },
     ];
     container.appendChild(createCardsRow(overviewCards));
@@ -493,6 +495,7 @@ function renderDashboard(loadTime) {
     const corePanel = document.createElement("div");
     corePanel.className = "dash-panel";
     const coreRows = [
+        { name:"players.json", icon:"fa-id-card", count:stats.corePlayers, unit:"位球员档案" },
         { name:"members.json", icon:"fa-users", count:stats.coreMembers, unit:"位成员" },
         { name:"news.json", icon:"fa-newspaper", count:stats.coreNews, unit:"篇新闻" },
         { name:"competitions.json", icon:"fa-trophy", count:stats.coreCompetitions, unit:"场赛事" },
@@ -501,7 +504,7 @@ function renderDashboard(loadTime) {
         { name:"qa.json", icon:"fa-circle-question", count:stats.coreQa, unit:"条问答" },
         { name:"changelog.json", icon:"fa-clock-rotate-left", count:stats.coreChangelog, unit:"条更新日志" },
         { name:"draws.json", icon:"fa-diagram-project", count:stats.coreDraws, unit:"张对阵表" },
-        { name:"initial-scores.json", icon:"fa-chart-simple", count:stats.coreInitPlayers, unit:"位球员" },
+        { name:"initial-scores.json", icon:"fa-chart-simple", count:stats.coreInitPlayers, unit:"位球员(legacy)" },
         { name:"event-coefficient.json", icon:"fa-weight-scale", count:stats.coreEventTypes, unit:"种赛事类型" },
         { name:"player-tags.json", icon:"fa-tags", count:stats.playerTagCount, unit:"位球员 · "+stats.uniqueTags+" 种标签" },
         { name:"about.json", icon:"fa-circle-info", count:stats.aboutLastUpdated, unit:"" },

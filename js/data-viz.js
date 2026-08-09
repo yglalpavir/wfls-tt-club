@@ -523,7 +523,7 @@ function renderComparison(playerA, playerB) {
     const fA = calcFormScore(playerA), fB = calcFormScore(playerB);
     const predA = (calcPredictedWinRate(rA, rB, aW, bW, fA, fB) * 100).toFixed(1);
     const predB = (calcPredictedWinRate(rB, rA, bW, aW, fB, fA) * 100).toFixed(1);
-    let html = `<div class="compare-summary"><div class="compare-player-col"><div class="compare-player-name">${playerA}</div><div class="compare-player-stat">当前积分: <strong>${ad?ad['当前积分'].toFixed(1):'-'}</strong></div><div class="compare-player-stat">交手胜率: <strong>${aWinRate}</strong></div><div class="compare-player-stat">预测胜率: <strong>${predA}%</strong></div></div><div class="compare-divider">VS</div><div class="compare-player-col"><div class="compare-player-name">${playerB}</div><div class="compare-player-stat">当前积分: <strong>${bd?bd['当前积分'].toFixed(1):'-'}</strong></div><div class="compare-player-stat">交手胜率: <strong>${bWinRate}</strong></div><div class="compare-player-stat">预测胜率: <strong>${predB}%</strong></div></div></div>`; if (total > 0) { html += `<div style="text-align:center;margin-bottom:16px;"><span style="font-weight:600;">总交手: ${total} 场</span> | <span style="color:#52c41a;">${playerA} ${aW} 胜</span> | <span style="color:#52c41a;">${playerB} ${bW} 胜</span>${recent?` | 最近: ${recent['日期']} (胜者: ${recent['胜者']})`:''}</div><div class="compare-h2h-wrapper"><table class="compare-h2h-table"><thead><tr><th>日期</th><th>类型</th><th>胜者</th><th>${playerA} 积分变动</th><th>${playerB} 积分变动</th></tr></thead><tbody>`; const scores = {}; 
+    let html = `<div class="compare-summary"><div class="compare-player-col"><div class="compare-player-name">${linkPlayerName(playerA)}</div><div class="compare-player-stat">当前积分: <strong>${ad?ad['当前积分'].toFixed(1):'-'}</strong></div><div class="compare-player-stat">交手胜率: <strong>${aWinRate}</strong></div><div class="compare-player-stat">预测胜率: <strong>${predA}%</strong></div></div><div class="compare-divider">VS</div><div class="compare-player-col"><div class="compare-player-name">${linkPlayerName(playerB)}</div><div class="compare-player-stat">当前积分: <strong>${bd?bd['当前积分'].toFixed(1):'-'}</strong></div><div class="compare-player-stat">交手胜率: <strong>${bWinRate}</strong></div><div class="compare-player-stat">预测胜率: <strong>${predB}%</strong></div></div></div>`; if (total > 0) { html += `<div style="text-align:center;margin-bottom:16px;"><span style="font-weight:600;">总交手: ${total} 场</span> | <span style="color:#52c41a;">${linkPlayerName(playerA)} ${aW} 胜</span> | <span style="color:#52c41a;">${linkPlayerName(playerB)} ${bW} 胜</span>${recent?` | 最近: ${recent['日期']} (胜者: ${linkPlayerName(recent['胜者'])})`:''}</div><div class="compare-h2h-wrapper"><table class="compare-h2h-table"><thead><tr><th>日期</th><th>类型</th><th>胜者</th><th>${linkPlayerName(playerA)} 积分变动</th><th>${linkPlayerName(playerB)} 积分变动</th></tr></thead><tbody>`; const scores = {}; 
         // 使用赛季感知的起始积分（如果存在赛季数据）
         if (seasonsData && seasonsData.length > 0 && h2h.length > 0) {
             const firstH2hDate = h2h[0]['日期'];
@@ -536,7 +536,7 @@ function renderComparison(playerA, playerB) {
         }
         if (Object.keys(scores).length === 0 && initialScoresData) Object.assign(scores, initialScoresData.initialScores);
         const h2hSeasonStart = (seasonsData && seasonsData.length > 0 && h2h.length > 0) ? (() => { const d = h2h[0]['日期']; for (const s of seasonsData) { if (d >= s.startDate && d <= s.endDate) return s.startDate; } return seasonsData[seasonsData.length - 1].startDate; })() : '';
-        const sortedLog = [...scoreLogData].sort((a,b) => a['日期'].localeCompare(b['日期'])); for (const m of sortedLog) { if (h2hSeasonStart && m['日期'] < h2hSeasonStart) continue; if (isMatchRecord(m)) { const w = m['胜者'], l = m['负者']; if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE; if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE; const wg = calcMatchPoints(w, l, m['类型'], m['日期'], m['日期'], scores); if ((w === playerA && l === playerB) || (w === playerB && l === playerA)) { const aIsW = w === playerA; const aChange = aIsW ? wg : -(wg * 0.8); const bChange = aIsW ? -(wg * 0.8) : wg; html += `<tr><td>${escapeHtml(m['日期'])}</td><td>${escapeHtml(m['类型'])}</td><td>${escapeHtml(w)}</td><td class="${aIsW?'win-highlight':'loss-highlight'}">${aChange>0?'+':''}${aChange.toFixed(1)}</td><td class="${!aIsW?'win-highlight':'loss-highlight'}">${bChange>0?'+':''}${bChange.toFixed(1)}</td></tr>`; } scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg); scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * 0.8); } else if (isBonusRecord(m)) { const target = m['对象']; const bonus = parseFloat(m['分数']) || 0; if (!scores[target]) scores[target] = DEFAULT_INITIAL_SCORE; scores[target] = Math.max(SCORE_FLOOR, scores[target] + bonus); } } html += '</tbody></table></div>'; } else { html += '<div class="compare-placeholder"><i class="fa-solid fa-circle-info"></i><p>暂无交手记录</p></div>'; } container.innerHTML = html; }
+        const sortedLog = [...scoreLogData].sort((a,b) => a['日期'].localeCompare(b['日期'])); for (const m of sortedLog) { if (h2hSeasonStart && m['日期'] < h2hSeasonStart) continue; if (isMatchRecord(m)) { const w = m['胜者'], l = m['负者']; if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE; if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE; const wg = calcMatchPoints(w, l, m['类型'], m['日期'], m['日期'], scores); if ((w === playerA && l === playerB) || (w === playerB && l === playerA)) { const aIsW = w === playerA; const aChange = aIsW ? wg : -(wg * 0.8); const bChange = aIsW ? -(wg * 0.8) : wg; html += `<tr><td>${escapeHtml(m['日期'])}</td><td>${escapeHtml(m['类型'])}</td><td>${linkPlayerName(w)}</td><td class="${aIsW?'win-highlight':'loss-highlight'}">${aChange>0?'+':''}${aChange.toFixed(1)}</td><td class="${!aIsW?'win-highlight':'loss-highlight'}">${bChange>0?'+':''}${bChange.toFixed(1)}</td></tr>`; } scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg); scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * 0.8); } else if (isBonusRecord(m)) { const target = m['对象']; const bonus = parseFloat(m['分数']) || 0; if (!scores[target]) scores[target] = DEFAULT_INITIAL_SCORE; scores[target] = Math.max(SCORE_FLOOR, scores[target] + bonus); } } html += '</tbody></table></div>'; } else { html += '<div class="compare-placeholder"><i class="fa-solid fa-circle-info"></i><p>暂无交手记录</p></div>'; } container.innerHTML = html; }
 // ========================================
 // 个人数据板块
 // ========================================
@@ -630,6 +630,16 @@ function renderPersonalStats(playerName) {
         }
     }
 
+    let curScoreDisp = '-';
+    let latestCd = [];
+    for (let i = rankingTimeline.length - 1; i >= 0; i--) {
+        if (rankingTimeline[i].data && rankingTimeline[i].data.length > 0) { latestCd = rankingTimeline[i].data; break; }
+    }
+    const curMine = latestCd.find(p => p['姓名'] === playerName);
+    if (curMine && curMine['当前积分'] != null) {
+        curScoreDisp = typeof curMine['当前积分'] === 'number' ? curMine['当前积分'].toFixed(1) : curMine['当前积分'];
+    }
+
     const startScores = initialScoresData ? { ...initialScoresData.initialScores } : {};
     const oppStats = {};
     for (const r of allMatches) {
@@ -708,7 +718,7 @@ function renderPersonalStats(playerName) {
             const lost = oppPointsLost[name] || 0;
             return { name, wins: s.wins, losses: s.losses, curScore: s.curScore, gained, lost, net: gained - lost };
         })
-        .filter(x => x.wins + x.losses > 0 && x.net > 0)
+        .filter(x => x.wins + x.losses > 0 && x.wins > 0 && x.net > 0)
         .sort((a, b) => b.net - a.net)
         .slice(0, 3);
 
@@ -718,7 +728,7 @@ function renderPersonalStats(playerName) {
             const lost = oppPointsLost[name] || 0;
             return { name, wins: s.wins, losses: s.losses, curScore: s.curScore, gained, lost, net: gained - lost };
         })
-        .filter(x => x.wins + x.losses > 0 && x.net < 0)
+        .filter(x => x.wins + x.losses > 0 && x.losses > 0 && x.net < 0)
         .sort((a, b) => a.net - b.net)
         .slice(0, 3);
 
@@ -732,12 +742,13 @@ function renderPersonalStats(playerName) {
     html += '<div class="personal-overview-item"><span class="personal-overview-num">' + totalMatches + '</span><span class="personal-overview-label">总场次</span></div>';
     html += '<div class="personal-overview-item win"><span class="personal-overview-num">' + wins + '</span><span class="personal-overview-label">获胜</span></div>';
     html += '<div class="personal-overview-item loss"><span class="personal-overview-num">' + losses + '</span><span class="personal-overview-label">失利</span></div>';
-    html += '<div class="personal-overview-item"><span class="personal-overview-num">' + percentile.toFixed(2) + '%</span><span class="personal-overview-label">积分超过</span></div>';
+    html += '<div class="personal-overview-item"><span class="personal-overview-num">' + (totalMatches > 0 ? Math.round(wins / totalMatches * 100) : 0) + '%</span><span class="personal-overview-label">胜率</span></div>';
+    html += '<div class="personal-overview-item"><span class="personal-overview-num">' + curScoreDisp + '</span><span class="personal-overview-label">当前积分</span></div>';
     html += '</div>';
 
     html += '<div class="personal-summary-text">';
     html += '<strong>' + playerName + '</strong>共进行了<strong>' + totalMatches + '</strong>盘单打比赛，其中获胜<strong>' + wins + '</strong>盘，失利<strong>' + losses + '</strong>盘。';
-    html += '<strong>' + playerName + '</strong>的积分超过了本校<strong>' + percentile.toFixed(2) + '%</strong>的乒乓球选手。';
+    html += '<strong>' + playerName + '</strong>的胜率为<strong>' + (totalMatches > 0 ? Math.round(wins / totalMatches * 100) : 0) + '%</strong>。';
     html += '</div>';
 
     // === 自定义标签和荣誉 ===
@@ -804,7 +815,7 @@ function renderPersonalStats(playerName) {
     html += '</div>';
 
     html += '<div class="personal-card lucky-card">';
-    html += '<div class="personal-card-header"><i class="fa-solid fa-star"></i> 福星</div>';
+    html += '<div class="personal-card-header"><i class="fa-solid fa-star"></i> 拿捏</div>';
     if (luckyStars.length === 0) {
         html += '<div class="personal-card-empty">暂无</div>';
     } else {
@@ -823,7 +834,7 @@ function renderPersonalStats(playerName) {
     html += '</div>';
 
     html += '<div class="personal-card nemesis-card">';
-    html += '<div class="personal-card-header"><i class="fa-solid fa-skull"></i> 苦主</div>';
+    html += '<div class="personal-card-header"><i class="fa-solid fa-skull"></i> 克星</div>';
     if (nemeses.length === 0) {
         html += '<div class="personal-card-empty">暂无</div>';
     } else {

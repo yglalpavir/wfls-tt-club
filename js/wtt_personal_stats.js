@@ -568,6 +568,9 @@ if (!scoreLogData || !scoreLogData.length) {
         }
     }
 
+    const curMine = currentCd.find(p => p['姓名'] === playerName);
+    const curScoreDisp = curMine && curMine['当前积分'] != null ? (typeof curMine['当前积分'] === 'number' ? curMine['当前积分'].toFixed(1) : curMine['当前积分']) : '-';
+
     // 计算对手各项分数（已通过 wttGetApproxScoreAtDate 处理赛季继承）
     for (const opp in oppStats) {
         const s = oppStats[opp];
@@ -658,7 +661,7 @@ if (!scoreLogData || !scoreLogData.length) {
             const wr = total > 0 ? s.wins / total : 0;
             return { name, wins: s.wins, losses: s.losses, curScore: s.curScore, winRate: wr, total };
         })
-        .filter(x => x.total > 0)
+        .filter(x => x.total > 0 && x.wins > 0)
         .sort((a, b) => b.winRate - a.winRate || b.total - a.total)
         .slice(0, 3);
 
@@ -669,7 +672,7 @@ if (!scoreLogData || !scoreLogData.length) {
             const wr = total > 0 ? s.wins / total : 0;
             return { name, wins: s.wins, losses: s.losses, curScore: s.curScore, winRate: wr, total };
         })
-        .filter(x => x.total > 0)
+        .filter(x => x.total > 0 && x.losses > 0)
         .sort((a, b) => a.winRate - b.winRate || b.total - a.total)
         .slice(0, 3);
 
@@ -686,7 +689,8 @@ if (!scoreLogData || !scoreLogData.length) {
     html += '<div class="personal-overview-item"><span class="personal-overview-num">' + totalMatches + '</span><span class="personal-overview-label">' + i18n[currentLang].wtt_ov_total + '</span></div>';
     html += '<div class="personal-overview-item win"><span class="personal-overview-num">' + wins + '</span><span class="personal-overview-label">' + i18n[currentLang].wtt_ov_wins + '</span></div>';
     html += '<div class="personal-overview-item loss"><span class="personal-overview-num">' + losses + '</span><span class="personal-overview-label">' + i18n[currentLang].wtt_ov_losses + '</span></div>';
-    html += '<div class="personal-overview-item"><span class="personal-overview-num">' + percentile.toFixed(2) + '%</span><span class="personal-overview-label">' + i18n[currentLang].wtt_ov_percentile + '</span></div>';
+    html += '<div class="personal-overview-item"><span class="personal-overview-num">' + (totalMatches > 0 ? Math.round(wins / totalMatches * 100) : 0) + '%</span><span class="personal-overview-label">' + i18n[currentLang].wtt_ov_percentile + '</span></div>';
+    html += '<div class="personal-overview-item"><span class="personal-overview-num">' + curScoreDisp + '</span><span class="personal-overview-label">' + i18n[currentLang].wtt_ov_current + '</span></div>';
     html += '<div class="personal-overview-item best"><span class="personal-overview-num">' + maxScore + '</span><span class="personal-overview-label">' + i18n[currentLang].wtt_ov_max + '</span></div>';
     html += '<div class="personal-overview-item best"><span class="personal-overview-num">#' + (bestRank === Infinity ? '-' : bestRank) + '</span><span class="personal-overview-label">' + i18n[currentLang].wtt_ov_bestrank + '</span></div>';
     html += '</div>';
@@ -694,7 +698,7 @@ if (!scoreLogData || !scoreLogData.length) {
     html += '<div class="personal-summary-text">';
     html += i18n[currentLang].wtt_ps_sum1.replace('{player}', '<strong>' + playerName + '</strong>').replace('{total}', '<strong>' + totalMatches + '</strong>').replace('{wins}', '<strong>' + wins + '</strong>').replace('{losses}', '<strong>' + losses + '</strong>');
     html += '<br>';
-    html += i18n[currentLang].wtt_ps_sum2.replace('{player}', '<strong>' + playerName + '</strong>').replace('{percent}', '<strong>' + percentile.toFixed(2) + '</strong>');
+    html += i18n[currentLang].wtt_ps_sum2.replace('{player}', '<strong>' + playerName + '</strong>').replace('{percent}', '<strong>' + (totalMatches > 0 ? Math.round(wins / totalMatches * 100) : 0) + '</strong>');
     html += '</div>';
 
     // === 积分变化折线图 ===

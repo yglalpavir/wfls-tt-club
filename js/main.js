@@ -17,8 +17,9 @@ async function loadRankingDataForViz() {
 
     try {
         const dataFiles = [
-            { name: 'score-log.json',        loader: loadScoreLogForViz,      label: '比赛记录' },
-            { name: 'initial-scores.json',   loader: loadInitialScores,       label: '初始积分' },
+            { name: 'players.json',         loader: loadPlayers,           label: '球员档案' },
+            { name: 'score-log.json',        loader: loadScoreLogForViz,    label: '比赛记录' },
+            { name: 'initial-scores.json',   loader: loadInitialScores,     label: '初始积分' },
             { name: 'event-coefficient.json',loader: loadEventCoefficients,   label: '赛事系数' },
             { name: 'decay-config.json',     loader: loadDecayConfig,         label: '衰减配置' },
             { name: 'seasons.json',          loader: loadSeasons,             label: '赛季配置' }
@@ -57,10 +58,11 @@ async function loadRankingDataForViz() {
 function initPage() {
     loadAboutData(); loadMembersData(); loadNewsData(); loadCompetitionsData(); loadDrawsData(); loadQaData(); loadChangelogData();
     initCommon();
-    const isRanking = !!document.getElementById('rankingFullBody'), isDataViz = !!document.getElementById('pointsTrendChart'), isWttDataViz = !!document.getElementById('wttPointsTrendChart'), isPersonalStats = !!document.getElementById('personalPlayerSelect'), isWttPersonalStats = !!document.getElementById('wttPersonalPlayerSelect') && !document.getElementById('wttPointsTrendChart');
+    const isRanking = !!document.getElementById('rankingFullBody'), isDataViz = !!document.getElementById('pointsTrendChart'), isWttDataViz = !!document.getElementById('wttPointsTrendChart'), isPersonalStats = !!document.getElementById('personalResult'), isPlayerPage = !!document.getElementById('playerDetailContent'), isWttPersonalStats = !!document.getElementById('wttPersonalPlayerSelect') && !document.getElementById('wttPointsTrendChart');
     if (isRanking) { loadRankingData(); }
     if (isDataViz) { loadRankingDataForViz().then(() => { if (rankingTimeline.length) initDataViz(); }).catch(err => console.error('DataViz: 初始化失败', err)); }
-    if (isPersonalStats) { loadRankingDataForViz().then(() => { if (rankingTimeline.length) initPersonalStats(); }).catch(err => console.error('PersonalStats: 初始化失败', err)); }
+    if (isPersonalStats) { loadRankingDataForViz().then(() => initPersonalStats()).catch(err => console.error('PersonalStats: 初始化失败', err)); }
+    if (isPlayerPage) { loadRankingDataForViz().then(() => initPlayerPage()).catch(err => console.error('PlayerPage: 初始化失败', err)); }
     if (isWttDataViz) { wttLoadRankingDataForViz().then(() => { if (wttRankingTimeline.length) initWttDataViz(); }).catch(err => console.error('WttDataViz: 初始化失败', err)); }
     if (isWttPersonalStats) { wttLoadRankingDataForPersonal().then(() => { if (wttRankingTimeline.length) initWttPersonalStats(); }).catch(err => console.error('WttPersonalStats: 初始化失败', err)); }
     initPdfViewer();

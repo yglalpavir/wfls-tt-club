@@ -1,0 +1,583 @@
+{
+  "version": 1,
+  "baseDate": "2026-03-01",
+  "players": [
+    {
+      "uid": 10000,
+      "name": "陈瑜萱",
+      "aliases": [],
+      "initialScore": 2000,
+      "tags": [
+        "25-26年副社长",
+        "校队成员",
+        "大满贯"
+      ],
+      "honors": [
+        "校乒赛2025单打冠军",
+        "校乒赛2026团体冠军"
+      ],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10001,
+      "name": "付大卫",
+      "aliases": [],
+      "initialScore": 2000,
+      "tags": [],
+      "honors": [
+        "校乒赛2026单打亚军"
+      ],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10002,
+      "name": "龚雨煊",
+      "aliases": [],
+      "initialScore": 2000,
+      "tags": [
+        "26-27年社长",
+        "校队成员"
+      ],
+      "honors": [
+        "校乒赛2026团体亚军"
+      ],
+      "role": "社长&新高二校队成员",
+      "qq": "3152269031",
+      "description": "统筹社团事务",
+      "status": "active"
+    },
+    {
+      "uid": 10003,
+      "name": "谷子易",
+      "aliases": [],
+      "initialScore": 2000,
+      "tags": [
+        "26-27年副社长",
+        "校队成员"
+      ],
+      "honors": [
+        "校乒赛2026单打季军"
+      ],
+      "role": "副社长&新高二校队成员",
+      "qq": "3447137342",
+      "description": "辅助社长管理社团，校乒赛2026单打季军",
+      "status": "active"
+    },
+    {
+      "uid": 10004,
+      "name": "姜子润",
+      "aliases": [],
+      "initialScore": 2000,
+      "tags": [
+        "校队成员"
+      ],
+      "honors": [],
+      "role": "新高二校队成员",
+      "qq": "2507798118",
+      "description": "校队成员",
+      "status": "active"
+    },
+    {
+      "uid": 10005,
+      "name": "李南熠",
+      "aliases": [],
+      "initialScore": 2000,
+      "tags": [
+        "校队成员",
+        "校一直板"
+      ],
+      "honors": [
+        "校乒赛2026团体冠军"
+      ],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "alumni"
+    },
+    {
+      "uid": 10006,
+      "name": "彭一和",
+      "aliases": [],
+      "initialScore": 2000,
+      "tags": [
+        "校队成员"
+      ],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10007,
+      "name": "祁子傲",
+      "aliases": [],
+      "initialScore": 2000,
+      "tags": [
+        "25-26年社长",
+        "24-25年副社长",
+        "校队成员"
+      ],
+      "honors": [
+        "校乒赛2026团体冠军"
+      ],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10008,
+      "name": "任安喆",
+      "aliases": [],
+      "initialScore": 2000,
+      "tags": [
+        "26-27年副社长",
+        "校队成员"
+      ],
+      "honors": [],
+      "role": "副社长&新高二校队成员",
+      "qq": "3942336638",
+      "description": "辅助社长管理社团",
+      "status": "active"
+    },
+    {
+      "uid": 10009,
+      "name": "任峻贤",
+      "aliases": [],
+      "initialScore": 2000,
+      "tags": [
+        "校队成员"
+      ],
+      "honors": [
+        "校乒赛2026单打冠军",
+        "校乒赛2026团体季军"
+      ],
+      "role": "官网负责人",
+      "qq": "399324556",
+      "description": "负责维护官网和积分系统\n联系方式：qq:399324556",
+      "status": "active"
+    },
+    {
+      "uid": 10010,
+      "name": "魏罗瑞",
+      "aliases": [],
+      "initialScore": 2000,
+      "tags": [
+        "25-26年副社长",
+        "校队成员"
+      ],
+      "honors": [
+        "校乒赛2026团体冠军"
+      ],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10011,
+      "name": "梅哲宇",
+      "aliases": [],
+      "initialScore": 1900,
+      "tags": [
+        "26-27年副社长",
+        "校队成员"
+      ],
+      "honors": [
+        "校乒赛2026团体亚军",
+        "校乒赛2026单打季军"
+      ],
+      "role": "副社长",
+      "qq": "2651128121",
+      "description": "辅助社长管理社团，校乒赛2026单打季军",
+      "status": "active"
+    },
+    {
+      "uid": 10012,
+      "name": "王成悦",
+      "aliases": [],
+      "initialScore": 1900,
+      "tags": [],
+      "honors": [
+        "校乒赛2026团体冠军"
+      ],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10013,
+      "name": "胡朗诚",
+      "aliases": [],
+      "initialScore": 1800,
+      "tags": [],
+      "honors": [
+        "校乒赛2025团体季军"
+      ],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10014,
+      "name": "孙钰鑫",
+      "aliases": [],
+      "initialScore": 1800,
+      "tags": [
+        "校二直板"
+      ],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10015,
+      "name": "陶锦源",
+      "aliases": [],
+      "initialScore": 1800,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10016,
+      "name": "张宸瑞1",
+      "aliases": [],
+      "initialScore": 1800,
+      "tags": [],
+      "honors": [
+        "校乒赛2026团体季军"
+      ],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10017,
+      "name": "李全景",
+      "aliases": [],
+      "initialScore": 1700,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10018,
+      "name": "刘冠羽",
+      "aliases": [],
+      "initialScore": 1700,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10019,
+      "name": "汪宁轩",
+      "aliases": [],
+      "initialScore": 1700,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10020,
+      "name": "王思博",
+      "aliases": [],
+      "initialScore": 1700,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10021,
+      "name": "吴慈航",
+      "aliases": [],
+      "initialScore": 1700,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10022,
+      "name": "杨苏旭",
+      "aliases": [],
+      "initialScore": 1700,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10023,
+      "name": "陈知勉",
+      "aliases": [],
+      "initialScore": 1600,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10024,
+      "name": "丁胜怀",
+      "aliases": [],
+      "initialScore": 1600,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10025,
+      "name": "何子涵",
+      "aliases": [],
+      "initialScore": 1600,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10026,
+      "name": "胡永轩",
+      "aliases": [],
+      "initialScore": 1600,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10027,
+      "name": "王子一",
+      "aliases": [],
+      "initialScore": 1600,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10028,
+      "name": "叶泓鑫",
+      "aliases": [],
+      "initialScore": 1600,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10029,
+      "name": "叶孟恒",
+      "aliases": [],
+      "initialScore": 1600,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10030,
+      "name": "曹高畅",
+      "aliases": [],
+      "initialScore": 1500,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10031,
+      "name": "邓以清",
+      "aliases": [],
+      "initialScore": 1500,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10032,
+      "name": "何齐烨",
+      "aliases": [],
+      "initialScore": 1500,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10033,
+      "name": "刘天齐",
+      "aliases": [],
+      "initialScore": 1500,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10034,
+      "name": "刘彧铭",
+      "aliases": [],
+      "initialScore": 1500,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10035,
+      "name": "宁悦辛",
+      "aliases": [],
+      "initialScore": 1500,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10036,
+      "name": "肖辰宇",
+      "aliases": [],
+      "initialScore": 1500,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10037,
+      "name": "张宸瑞2",
+      "aliases": [],
+      "initialScore": 1500,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10038,
+      "name": "刘浩扬",
+      "aliases": [],
+      "initialScore": 1400,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10039,
+      "name": "吕曜而",
+      "aliases": [],
+      "initialScore": 1400,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10040,
+      "name": "王玥涵",
+      "aliases": [],
+      "initialScore": 1400,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10041,
+      "name": "熊子乐",
+      "aliases": [],
+      "initialScore": 1400,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10042,
+      "name": "俞睿哲",
+      "aliases": [],
+      "initialScore": 1300,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    }
+  ]
+}

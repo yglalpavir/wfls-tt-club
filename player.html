@@ -4,18 +4,18 @@
     <link rel="icon" type="image/svg+xml" href="Assets/files/favicon_4DA3FF.svg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="WFLS 乒乓球社团个人数据。查看球员个人战绩、胜率、对手分析等详细数据。">
+    <meta name="description" content="WFLS 乒乓球社团球员个人主页。查看球员个人战绩、胜率、积分趋势、对手分析等详细数据。">
     <meta name="keywords" content="武汉外国语学校,WFLS,乒乓球,个人数据,球员数据,战绩分析">
     <meta name="author" content="WFLS Table Tennis Club">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="个人数据 | WFLS Table Tennis Club">
-    <meta property="og:description" content="WFLS 乒乓球社团个人数据。查看球员个人战绩、胜率、对手分析等详细数据。">
+    <meta property="og:title" content="球员个人数据 | WFLS Table Tennis Club">
+    <meta property="og:description" content="WFLS 乒乓球社团球员个人主页。查看球员个人战绩、胜率、积分趋势、对手分析等详细数据。">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yglalpavir.github.io/wfls-tt-club/personal_stats.html">
+    <meta property="og:url" content="https://yglalpavir.github.io/wfls-tt-club/player.html">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="个人数据 | WFLS Table Tennis Club">
-    <meta name="twitter:description" content="WFLS 乒乓球社团个人数据。查看球员个人战绩、胜率、对手分析等详细数据。">
-    <link rel="canonical" href="https://yglalpavir.github.io/wfls-tt-club/personal_stats.html">
+    <meta name="twitter:title" content="球员个人数据 | WFLS Table Tennis Club">
+    <meta name="twitter:description" content="WFLS 乒乓球社团球员个人主页。">
+    <link rel="canonical" href="https://yglalpavir.github.io/wfls-tt-club/player.html">
     <title data-i18n="personal_stats_page_title">个人数据 | WFLS Table Tennis Club</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +40,7 @@
                     <ul class="dropdown-menu" id="dropdownMenu">
                         <li><a href="members.html" class="dropdown-link" data-i18n="nav_members">社团骨干</a></li>
                         <li><a href="data_viz.html" class="dropdown-link">Data Viz <span class="beta-tag">Beta</span></a></li>
-                        <li><a href="personal_stats.html" class="dropdown-link active" data-i18n="personal_stats_title">个人数据</a></li>
+                        <li><a href="personal_stats.html" class="dropdown-link active">个人数据</a></li>
                         <li><a href="qa.html" class="dropdown-link" data-i18n="nav_qa">Q&A</a></li>
                         <li><a href="changelog.html" class="dropdown-link" data-i18n="nav_changelog">更新日志</a></li>
                     </ul>
@@ -55,42 +55,18 @@
         </div>
     </nav>
 
-    <section class="page-hero">
-        <div class="page-hero-overlay"></div>
-        <div class="page-hero-content">
-            <span class="section-tag" data-i18n="personal_stats_tag">Personal Stats</span>
-            <h1 data-i18n="personal_stats_title">个人数据</h1>
-            <p data-i18n="personal_stats_desc">个人比赛数据统计</p>
-        </div>
-    </section>
-
-    <section class="section personal-stats-main-section">
+    <section class="section personal-stats-main-section player-page-no-hero">
         <div class="container">
             <div class="viz-section-header">
-                <span class="section-tag">Personal Stats</span>
-                <h2 class="section-title" data-i18n="personal_stats_title">个人数据</h2>
-            </div>
-            <div class="viz-personal-grid">
-                <div class="viz-personal-selector glass-card">
-                    <div class="tag-filter-section" id="tagFilterSection">
-                        <label style="font-size:0.8rem;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:8px;"><i class="fa-solid fa-tags"></i> <span data-i18n="personal_stats_filter_label">按标签筛选</span></label>
-                        <div class="tag-filter-list" id="tagFilterList">
-                            <!-- JS 动态渲染 -->
-                        </div>
-                    </div>
-                    <div class="compare-selector-group" style="margin-top:16px;">
-                        <label data-i18n="personal_stats_search_label">搜索球员</label>
-                        <div class="player-search-wrapper">
-                            <i class="fa-solid fa-magnifying-glass player-search-icon"></i>
-                            <input type="text" class="player-search-input" id="playerSearchInput" placeholder="搜索球员姓名 / 编号 / 标签（支持拼音）" autocomplete="off">
-                        </div>
-                    </div>
+                <div class="player-page-top">
+                    <a href="personal_stats.html" class="btn btn-sm"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="pp_back_index">返回总览</span></a>
+                    <div class="player-nav-switch" id="playerNavSwitch"></div>
                 </div>
-                <div class="viz-personal-result glass-card" id="personalResult">
-                    <div class="compare-placeholder">
-                        <i class="fa-solid fa-user-chart"></i>
-                        <p><span id="playerIndexCount">--</span> <span data-i18n="personal_stats_placeholder">位球员，选择一名查看个人数据页</span></p>
-                    </div>
+            </div>
+            <div id="playerDetailContent">
+                <div class="compare-placeholder">
+                    <i class="fa-solid fa-user-chart"></i>
+                    <p data-i18n="pp_loading">正在加载球员数据...</p>
                 </div>
             </div>
         </div>
@@ -100,7 +76,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand"><h4>WFLS Table Tennis Club</h4><p data-i18n="footer_brand">武汉外国语学校乒乓球社团</p><p class="footer-motto" data-i18n="footer_motto">挥拍逐梦，旋转青春</p></div>
-                <div class="footer-links"><h4 data-i18n="footer_nav">快速导航</h4><a href="index.html" data-i18n="nav_home">Home</a><a href="news.html" data-i18n="nav_news">News</a><a href="competitions.html" data-i18n="nav_competitions">Competitions</a><a href="members.html" data-i18n="nav_members">社团骨干</a><a href="ranking.html">Ranking</a><a href="data_viz.html">Data Viz</a><a href="personal_stats.html" data-i18n="personal_stats_title">个人数据</a><a href="qa.html" data-i18n="nav_qa">Q&A</a><a href="changelog.html" data-i18n="nav_changelog">更新日志</a><a href="contact.html" data-i18n="nav_contact">Contact</a></div>
+                <div class="footer-links"><h4 data-i18n="footer_nav">快速导航</h4><a href="index.html" data-i18n="nav_home">Home</a><a href="news.html" data-i18n="nav_news">News</a><a href="competitions.html" data-i18n="nav_competitions">Competitions</a><a href="members.html" data-i18n="nav_members">社团骨干</a><a href="ranking.html">Ranking</a><a href="data_viz.html">Data Viz</a><a href="personal_stats.html">个人数据</a><a href="qa.html" data-i18n="nav_qa">Q&A</a><a href="changelog.html" data-i18n="nav_changelog">更新日志</a><a href="contact.html" data-i18n="nav_contact">Contact</a></div>
                 <div class="footer-school"><h4 data-i18n="footer_school">学校信息</h4><p data-i18n="footer_school_name">武汉外国语学校</p><p>Wuhan Foreign Languages School</p><p data-i18n="footer_location">湖北省武汉市</p></div>
             </div>
             <div class="footer-bottom"><p>&copy; 2026 WFLS Table Tennis Club. All rights reserved.</p></div>
@@ -118,10 +94,10 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/pinyin-pro@3.28.2/dist/index.js"></script>
     <script src="js/common.js"></script>
     <script src="js/score-engine.js"></script>
     <script src="js/personal-stats.js"></script>
+    <script src="js/player-page.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

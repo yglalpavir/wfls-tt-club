@@ -33,6 +33,7 @@ wfls-tt-club/
 │   ├── ranking.js              # 排名系统 + 积分明细模态框
 │   ├── data-viz.js             # 数据可视化（Chart.js）
 │   ├── personal-stats.js       # 个人数据页面
+│   ├── player-page.js          # 球员个人主页（player.html）
 │   ├── draws-viewer.js         # 对阵表（Draws）渲染器
 │   ├── admin.js                # 后台数据概览仪表盘
 │   ├── main.js                 # 入口初始化
@@ -43,20 +44,19 @@ wfls-tt-club/
 │
 ├── data/                       # 站内数据（JSON）
 │   ├── about.json              # 社团简介数据（历史、理念、活动）
-│   ├── members.json            # 社团骨干数据
+│   ├── players.json            # 统一球员档案（uid/初始积分/标签/荣誉/职务）
 │   ├── news.json               # 新闻动态数据
 │   ├── competitions.json       # 赛事信息数据
 │   ├── qa.json                 # 常见问题数据
 │   ├── changelog.json          # 更新日志数据
 │   ├── draws.json              # 对阵表数据
-│   ├── player-tags.json        # 球员标签与荣誉数据
-│   ├── initial-scores.json     # 球员初始积分 + 快照日期
 │   ├── event-coefficient.json  # 赛事系数配置
 │   ├── seasons.json            # 赛季定义（含继承规则）
 │   ├── decay-config.json       # 时间衰减配置（半衰期 & 保值类型）
 │   ├── score-log.json          # 比赛记录 + 积分调整记录
 │   ├── data_viz-settings.json  # 数据可视化设置
-│   └── personal-stats-chart-settings.json  # 个人数据图表设置
+│   ├── personal-stats-chart-settings.json  # 个人数据图表设置
+│   └── legacy/                 # 旧版数据（members / player-tags / initial-scores，兼容回退）
 │
 ├── wtt_data/                   # WTT 彩蛋数据（ms/ws/md/wd/xd，按赛季拆分 + manifest.json）
 ├── ittf_data/                  # ITTF 历史数据（ms / ws）
@@ -197,17 +197,30 @@ git push -u origin main
 }
 ```
 
-### `members.json` - 社团骨干
+### `players.json` - 统一球员档案
 
 ```json
-[
-  {
-    "name": "姓名",
-    "role": "职务",
-    "description": "描述"
-  }
-]
+{
+  "version": "1",
+  "baseDate": "2026-03-01",
+  "players": [
+    {
+      "uid": 10000,
+      "name": "姓名",
+      "aliases": [],
+      "initialScore": 2000,
+      "tags": ["校队成员"],
+      "honors": ["校乒赛2025单打冠军"],
+      "role": "社长",
+      "qq": "",
+      "description": "",
+      "status": "active"
+    }
+  ]
+}
 ```
+
+> 角色字段非空的球员会自动出现在社团骨干页（members.html）。每名球员拥有唯一 5 位 uid（10000 起），用于个人主页地址 `player.html?uid=xxxxx`。旧版 `members.json` / `player-tags.json` / `initial-scores.json` 已移入 `data/legacy/` 仅作兼容回退。各字段的详细取值形式、用途与维护约束见 [docs/players-json.md](docs/players-json.md)。
 
 ### `news.json` - 新闻动态
 
@@ -262,7 +275,9 @@ git push -u origin main
 | `result`    | 比赛结果 | Result      | 已结束的比赛结果 |
 | `live`      | 进行中   | Live        | 正在进行的比赛   |
 
-### `initial-scores.json` - 初始积分配置
+### `legacy/initial-scores.json` - 初始积分配置（旧版）
+
+> 已迁移至 `data/players.json` 的 `initialScore` 字段。旧文件仅作为兼容回退保留：
 
 ```json
 {
@@ -407,7 +422,7 @@ git push -u origin main
 ### 修改社团信息
 
 - 编辑 `about.json`：修改社团简介卡片内容
-- 编辑 `members.json`：修改社团骨干名单
+- 编辑 `players.json`：修改球员档案（含 `role` 非空者自动显示在社团骨干页）
 
 ### 添加新闻/赛事
 
@@ -422,7 +437,7 @@ git push -u origin main
 
 ### 调整快照日期
 
-- 编辑 `initial-scores.json` 中的 `snapshotDates` 数组
+- 编辑 `players.json` 中的 `baseDate`（初始积分基准日）
 - 编辑 `seasons.json` 中的赛季起始/结束日期
 
 ### 调整主题色
