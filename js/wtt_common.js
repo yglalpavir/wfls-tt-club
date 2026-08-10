@@ -1094,3 +1094,121 @@ function wttPatchInternalLinks() {
         // wtt_hub.html 不需要 cat 参数
     });
 }
+
+// ============ 球员 uid（确定性哈希路由） ============
+
+/**
+ * FNV-1a 32 位哈希
+ * @param {string} str
+ * @param {number} seed - 32 位种子
+ * @returns {number} 无符号 32 位整数
+ */
+function wttFnv1a(str, seed) {
+    let h = seed >>> 0;
+    for (let i = 0; i < str.length; i++) {
+        h ^= str.charCodeAt(i);
+        h = Math.imul(h, 0x01000193) >>> 0;
+    }
+    return h >>> 0;
+}
+
+/**
+ * 生成球员的确定性 uid：{cat}-{64bit hex}
+ * 基于规范化后的最终姓名：同一姓名永远同一 uid（幂等、零维护、无需注册表）
+ * @param {string} name
+ * @returns {string}
+ */
+function wttPlayerUid(name) {
+    const cat = wttCurrentCategory || 'ms';
+    const a = wttFnv1a(String(name), 0x811c9dc5).toString(16).padStart(8, '0');
+    const b = wttFnv1a(String(name), 0x9e3779b9).toString(16).padStart(8, '0');
+    return cat + '-' + a + b;
+}
+
+// uid -> 姓名 反向索引（数据加载完成后构建）
+let wttUidIndex = null;
+
+/**
+ * 收集当前项目全部球员名（规范化后），供 uid 解析
+ * @returns {string[]}
+ */
+function wttCollectWttPlayerNames() {
+    const set = new Set();
+    if (wttScoreLogData && wttScoreLogData.length) {
+        for (const r of wttScoreLogData) {
+            if (isMatchRecord(r)) {
+                if (r['胜者']) set.add(r['胜者']);
+                if (r['负者']) set.add(r['负者']);
+            } else if (isBonusRecord(r) && r['对象']) {
+                set.add(r['对象']);
+            }
+        }
+    }
+    if (wttInitialScoresData && wttInitialScoresData.initialScores) {
+        for (const n of Object.keys(wttInitialScoresData.initialScores)) {
+            if (n) set.add(n);
+        }
+    }
+    if (wttRankingTimeline && wttRankingTimeline.length) {
+        for (const t of wttRankingTimeline) {
+            if (t && t.data && t.data.length) {
+                for (const p of t.data) {
+                    if (p['姓名']) set.add(p['姓名']);
+                }
+            }
+        }
+    }
+    return Array.from(set);
+}
+
+/**
+ * 构建 uid -> 姓名 索引（带碰撞检测）
+ */
+function wttBuildUidIndex() {
+    wttApplyNameNormalization();
+    wttUidIndex = {};
+    const players = wttCollectWttPlayerNames();
+    for (const n of players) {
+        const uid = wttPlayerUid(n);
+        if (wttUidIndex[uid] && wttUidIndex[uid] !== n) {
+            console.warn('[WTT] uid 碰撞:', uid, wttUidIndex[uid], '<->', n);
+        }
+        wttUidIndex[uid] = n;
+    }
+    return wttUidIndex;
+}
+
+/**
+ * 从 URL 参数解析球员名：优先 uid，回退 player 参数
+ * @returns {string|null}
+ */
+function wttResolvePlayerParam() {
+    const params = new URLSearchParams(window.location.search);
+    const uid = params.get('uid');
+    if (uid) {
+        if (!wttUidIndex) wttBuildUidIndex();
+        if (wttUidIndex[uid]) return wttUidIndex[uid];
+    }
+    const name = params.get('player');
+    return name ? String(name) : null;
+}
+
+/**
+ * 生成球员个人页 URL（带 uid 参数，?cat= 显式携带避免与 wttPatchInternalLinks 冲突）
+ * @param {string} name
+ * @returns {string}
+ */
+function wttPlayerPageUrl(name) {
+    return 'wtt_player.html?cat=' + encodeURIComponent(wttCurrentCategory || 'ms') + '&uid=' + encodeURIComponent(wttPlayerUid(name));
+}
+
+/**
+ * 生成球员姓名链接（用于排名表 / 记录对手列）
+ * @param {string} name
+ * @returns {string}
+ */
+function wttLinkPlayerName(name) {
+    if (!name) return '';
+    const safe = escapeHtml(String(name));
+    return '<a href="' + wttPlayerPageUrl(name) + '" class="player-name-link" title="' + escapeHtml(i18n[currentLang].wtt_pp_open) + '">' + safe + '</a>';
+}

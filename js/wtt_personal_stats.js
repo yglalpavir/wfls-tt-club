@@ -471,8 +471,8 @@ function wttGetApproxScoreAtDate(playerName, targetDate, sortedLog, startScores,
 
 // ============ 主渲染函数 ============
 
-function wttRenderPersonalStats(playerName) {
-    const container = document.getElementById('wttPersonalResult');
+function wttRenderPersonalStats(playerName, containerId, showOpenLink) {
+    const container = document.getElementById(containerId || 'wttPersonalResult');
     if (!container) return;
 
     // 切换到 WTT 全局数据
@@ -700,6 +700,13 @@ if (!scoreLogData || !scoreLogData.length) {
     html += '<br>';
     html += i18n[currentLang].wtt_ps_sum2.replace('{player}', '<strong>' + playerName + '</strong>').replace('{percent}', '<strong>' + (totalMatches > 0 ? Math.round(wins / totalMatches * 100) : 0) + '</strong>');
     html += '</div>';
+
+    // 打开球员个人页入口（个人数据页显示；个人页本身不显示）
+    if (showOpenLink) {
+        html += '<div style="text-align:center;margin-top:14px;">';
+        html += '<a href="' + wttPlayerPageUrl(playerName) + '" class="btn btn-sm btn-primary" style="justify-content:center;display:inline-flex;"><i class="fa-solid fa-user"></i> ' + i18n[currentLang].wtt_pp_open + '</a>';
+        html += '</div>';
+    }
 
     // === 积分变化折线图 ===
     const dailyScoreHistory = computeWttDailyScoreHistory(playerName, sortedLog, startScores);
@@ -1194,7 +1201,7 @@ function initWttPersonalStats() {
             var p = document.getElementById('wttPersonalPlayerSelect')?.value;
             if (!p) { alert(i18n[currentLang].wtt_ps_alert); return; }
             wttCurrentPersonalPlayer = p;
-            wttRenderPersonalStats(p);
+            wttRenderPersonalStats(p, undefined, true);
         });
 
         console.log('[WttPersonalStats] 初始化完成');
@@ -1207,6 +1214,6 @@ function wttReapplyI18n() {
     const searchInput = document.getElementById('wttPersonalPlayerSearch');
     if (searchInput) searchInput.placeholder = i18n[currentLang].wtt_ps_search_ph;
     if (wttCurrentPersonalPlayer) {
-        wttRenderPersonalStats(wttCurrentPersonalPlayer);
+        wttRenderPersonalStats(wttCurrentPersonalPlayer, undefined, true);
     }
 }

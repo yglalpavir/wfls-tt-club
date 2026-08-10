@@ -411,7 +411,7 @@ function wttRenderRankingTable(data) {
         const pnSafe = escapeHtml(pn);
         const sds = escapeHtml(currentSnapshotDate || '');
         const nc = (wttScoreLogData.length > 0)
-            ? `<span class="player-name-link" onclick="wttShowScoreDetail('${pnSafe}','${sds}')" title="${escapeHtml(i18n[currentLang].wtt_click_detail)}">${pnSafe}</span>`
+            ? wttLinkPlayerName(pn) + ` <button class="score-detail-icon" onclick="wttShowScoreDetail('${pnSafe}','${sds}')" title="${escapeHtml(i18n[currentLang].wtt_click_detail)}"><i class="fa-solid fa-receipt"></i></button>`
             : pnSafe;
 
         tr.innerHTML = `<td>${i + 1}</td><td>${nc}</td><td><strong>${(p['当前积分'] || 0).toFixed(1)}</strong></td><td>${pch}</td><td>${ch}</td><td>${p['总场次'] || 0}</td><td>${wd}</td>`;
