@@ -400,5 +400,17 @@
     "类型": "奥运会",
     "胜者": "XU Xin/MA Long",
     "负者": "Patrick FRANZISKA/Timo BOLL"
+  },
+  {
+    "日期": "2021-10-17",
+    "类型": "T联赛",
+    "胜者": "Kenta TAZOE/Hokuto KORIYAMA",
+    "负者": "Taimu ARINOBU/Masaki TAKAMI"
+  },
+  {
+    "日期": "2021-10-22",
+    "类型": "T联赛",
+    "胜者": "Masataka MORIZONO/Asuka MACHI",
+    "负者": "Taimu ARINOBU/Yuki HIRANO"
   }
 ]

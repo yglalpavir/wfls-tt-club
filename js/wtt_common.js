@@ -942,7 +942,7 @@ function wttShowLoading(containerId, message) {
     const txt = message || ((typeof i18n !== 'undefined' && typeof currentLang !== 'undefined' && i18n[currentLang] && i18n[currentLang].wtt_loading) ? i18n[currentLang].wtt_loading : '加载数据中...');
     el.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 20px;color:var(--text-secondary);">
         <div class="wtt-spinner" style="width:40px;height:40px;border:3px solid var(--border-color);border-top-color:var(--accent-blue);border-radius:50%;animation:wttSpin 0.8s linear infinite;margin-bottom:16px;"></div>
-        <p style="font-size:0.95rem;">${txtMsg}</p>
+        <p style="font-size:0.95rem;">${txt}</p>
         <p class="wtt-progress-text" style="font-size:0.8rem;margin-top:4px;color:var(--text-tertiary);"></p>
     </div>`;
 }
@@ -1000,13 +1000,7 @@ function loadRankingData() {
     return wttLoadAllData().then(async () => {
         if (typeof wttCalculateAllRankingsAsync === 'function') {
             // 使用异步分块计算（不阻塞 UI，但没有进度回调因为不知道容器）
-            wttRankingTimeline = await wttCalculateAllRankingsAsync(
-                wttScoreLogData,
-                wttGetEffectiveInitialScores(),
-                wttSeasonsData,
-                null,  // 无进度回调（回退路径无法确定 DOM 容器）
-                5      // 每 5 个快照 yield 一次
-            );
+            wttRankingTimeline = await wttCalculateAllRankingsAsync(null);
         } else {
             wttRankingTimeline = wttCalculateAllRankings();
         }

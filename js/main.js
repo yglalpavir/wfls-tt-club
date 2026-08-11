@@ -56,7 +56,14 @@ async function loadRankingDataForViz() {
 }
 
 function initPage() {
-    loadAboutData(); loadMembersData(); loadNewsData(); loadCompetitionsData(); loadDrawsData(); loadQaData(); loadChangelogData();
+    // 按页面 DOM 标记按需加载数据，避免每个页面都下载全部数据
+    if (document.getElementById('aboutSections') || document.getElementById('heroLastUpdated') || document.getElementById('coreMembersGrid')) loadAboutData();
+    if (document.getElementById('coreMembersGrid') || document.getElementById('allMembersGrid')) loadMembersData();
+    if (document.getElementById('newsPreviewGrid') || document.getElementById('newsFullGrid') || document.getElementById('detailContent')) loadNewsData();
+    if (document.getElementById('competitionsPreviewGrid') || document.getElementById('competitionsFullGrid') || document.getElementById('detailContent')) loadCompetitionsData();
+    if (document.getElementById('detailDraws') || document.getElementById('drawsContainer') || document.getElementById('drawsSection')) loadDrawsData();
+    if (document.getElementById('qaFullGrid') || document.getElementById('qaList') || document.getElementById('detailContent')) loadQaData();
+    if (document.getElementById('changelogTimeline') || document.getElementById('changelogList')) loadChangelogData();
     initCommon();
     const isRanking = !!document.getElementById('rankingFullBody'), isDataViz = !!document.getElementById('pointsTrendChart'), isWttDataViz = !!document.getElementById('wttPointsTrendChart'), isPersonalStats = !!document.getElementById('personalResult'), isPlayerPage = !!document.getElementById('playerDetailContent'), isWttPersonalStats = !!document.getElementById('wttPersonalPlayerSelect') && !document.getElementById('wttPointsTrendChart');
     if (isRanking) { loadRankingData(); }
@@ -66,7 +73,7 @@ function initPage() {
     if (isWttDataViz) { wttLoadRankingDataForViz().then(() => { if (wttRankingTimeline.length) initWttDataViz(); }).catch(err => console.error('WttDataViz: 初始化失败', err)); }
     if (isWttPersonalStats) { wttLoadRankingDataForPersonal().then(() => { if (wttRankingTimeline.length) initWttPersonalStats(); }).catch(err => console.error('WttPersonalStats: 初始化失败', err)); }
     initPdfViewer();
-    if (window.location.pathname.includes('detail.html') && (newsData.length > 0 || competitionsData.length > 0)) updateDetailPage();
+    if (window.location.pathname.includes('detail.html') && (newsData.length > 0 || competitionsData.length > 0 || qaData.length > 0)) updateDetailPage();
 }
 
 document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', e => { const href = a.getAttribute('href'); if (href === '#') return; const t = document.querySelector(href); if (t) { e.preventDefault(); t.scrollIntoView({ behavior:'smooth' }); } }); });

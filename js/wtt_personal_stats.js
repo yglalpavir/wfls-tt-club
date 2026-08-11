@@ -1169,7 +1169,9 @@ function renderWttPersonalScoreChart(dailyHistory, snapshotHistory) {
 
 async function loadWttPersonalChartSettings() {
     try {
-        wttPersonalChartSettings = await (await fetch('data/personal-stats-chart-settings.json')).json();
+        const resp = await fetch('data/personal-stats-chart-settings.json');
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        wttPersonalChartSettings = await resp.json();
         console.log('[WttPersonalStats] 折线图设置加载完成');
     } catch (e) {
         console.warn('[WttPersonalStats] 折线图设置加载失败，使用默认值', e);

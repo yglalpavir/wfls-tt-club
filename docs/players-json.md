@@ -7,7 +7,7 @@
 ## 1. 文件位置与加载方式
 
 - 路径：`data/players.json`
-- 加载：`js/common.js` 中的 `loadPlayers()` 负责读取，失败时回退到旧版 `data/legacy/*`。
+- 加载：`js/common.js` 中的 `loadPlayers()` 负责读取，失败时回退到旧版 `data/_legacy/*`。
 - 其余数据文件会**以本文件为事实来源**派生：
   - `initialScoresData`：由每位球员的 `initialScore` + 顶层 `baseDate` 生成（见 `js/score-engine.js` 的 `loadInitialScores()`）。
   - `playerTagsData`：由每位球员的 `tags` / `honors` 生成（见 `js/common.js` 的 `loadPlayerTagsData()`）。
@@ -91,7 +91,7 @@
 | 约束 | 无数据时默认取 `DEFAULT_INITIAL_SCORE`（默认 1300）；积分地板 `SCORE_FLOOR` 为 1200。 |
 | 用途 | 构建 `initialScoresData.initialScores`（姓名 → 分）映射，是积分引擎所有赛季计算的基准（见 `js/score-engine.js` 的 `getSeasonStartScores()`、`js/personal-stats.js` 的 `getApproxScoreAtDate()` / `computeDailyScoreHistory()` 等）。 |
 
-> 说明：`tools/build_players.js` 会读取 `data/legacy/initial-scores.json` 迁移该字段；旧文件仅作兼容回退保留。
+> 说明：`tools/build_players.js` 会读取 `data/_legacy/initial-scores.json` 迁移该字段；旧文件仅作兼容回退保留。
 
 ### 3.5 `tags` — 标签数组（可选）
 
@@ -151,8 +151,8 @@
 ## 4. 数据结构与上游/下游依赖
 
 ```
-data/legacy/initial-scores.json ──► data/players.json ◄── data/legacy/player-tags.json
-data/legacy/members.json      ──►        │                 data/legacy/members.json
+data/_legacy/initial-scores.json ──► data/players.json ◄── data/_legacy/player-tags.json
+data/_legacy/members.json      ──►        │                 data/_legacy/members.json
                                           │
                     ┌─────────────────────┼─────────────────────┐
                     ▼                     ▼                     ▼
@@ -166,7 +166,7 @@ data/legacy/members.json      ──►        │                 data/legacy/m
 ## 5. 兼容与回退
 
 - `loadPlayers()` 优先读取新版 `players.json`；若解析失败或结构异常（`!Array.isArray(players.players)`），会置空 `playersData` 并返回 `false`。
-- 在 `players.json` 缺失/失败时，下游数据会各自回退到 `data/legacy/` 旧文件：
+- 在 `players.json` 缺失/失败时，下游数据会各自回退到 `data/_legacy/` 旧文件：
   - `initial-scores.json` → `loadInitialScores()` 回退使用（生成 `initialScoresData`）。
   - `player-tags.json` → `loadPlayerTagsData()` 回退使用（生成 `playerTagsData`）。
   - `members.json` → `loadMembersData()` 回退使用（生成 `membersData`）。

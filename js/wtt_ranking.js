@@ -168,7 +168,6 @@ function wttRenderScoreDetail() {
     }
 
     recordsWithScores.reverse();
-    recordsWithScores.reverse();
     body.innerHTML = recordsWithScores.map(r => {
         if (r.isBonus) {
             const cc = r.decayedChange >= 0 ? 'score-change-positive' : 'score-change-negative';

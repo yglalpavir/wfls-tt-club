@@ -450,9 +450,18 @@ function getSeasonForDate(snapshotDate) {
 }
 
 // 获取某赛季的初始积分（考虑继承）
+// 结果按 seasonIndex 缓存（每次切换数据源时自动失效，见下方 key 设计）
+let _seasonStartCache = null;   // { log: scoreLogData, map: Map<seasonIndex, scores> }
+
 function getSeasonStartScores(seasonIndex) {
     if (!initialScoresData || !seasonsData) return { ...initialScoresData.initialScores };
     if (seasonIndex <= 0) return { ...initialScoresData.initialScores };
+    // 缓存：数据源（scoreLogData 引用）不变时复用，WTT/club 切换时自动失效
+    if (!_seasonStartCache || _seasonStartCache.log !== scoreLogData) {
+        _seasonStartCache = { log: scoreLogData, map: new Map() };
+    }
+    const cached = _seasonStartCache.map.get(seasonIndex);
+    if (cached) return { ...cached };
     const sortedLog = [...scoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
     let startScores = { ...initialScoresData.initialScores };
     for (let i = 0; i < seasonIndex; i++) {
@@ -466,6 +475,7 @@ function getSeasonStartScores(seasonIndex) {
         for (const n in initialScoresData.initialScores) { if (!inherited[n]) inherited[n] = initialScoresData.initialScores[n]; }
         startScores = inherited;
     }
+    _seasonStartCache.map.set(seasonIndex, { ...startScores });
     return { ...startScores };
 }
 
@@ -543,10 +553,10 @@ async function loadInitialScores() {
         initialScoresData = { baseDate: playersData.baseDate || '2026-03-01', initialScores: is };
         return true;
     }
-    try { initialScoresData = await (await fetch('data/legacy/initial-scores.json')).json(); return true; } catch(e) { console.error('initial-scores.json 加载失败', e); return false; }
+    try { const resp = await fetch('data/_legacy/initial-scores.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); initialScoresData = await resp.json(); return true; } catch(e) { console.error('initial-scores.json 加载失败', e); return false; }
 }
-async function loadEventCoefficients() { try { eventCoefficients = await (await fetch('data/event-coefficient.json')).json(); return true; } catch(e) { console.error('event-coefficient.json 加载失败', e); return false; } }
-async function loadDecayConfig() { try { decayConfig = await (await fetch('data/decay-config.json')).json() || {}; } catch(e) { console.error('decay-config.json 加载失败（使用默认配置）', e); decayConfig = { noDecayTypes: ['校乒赛单打', '校乒赛团体'] }; } if (typeof decayConfig.t === 'number' && decayConfig.t > 0) DECAY_HALF_LIFE_DAYS = decayConfig.t; }
+async function loadEventCoefficients() { try { const resp = await fetch('data/event-coefficient.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); eventCoefficients = await resp.json(); return true; } catch(e) { console.error('event-coefficient.json 加载失败', e); return false; } }
+async function loadDecayConfig() { try { const resp = await fetch('data/decay-config.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); decayConfig = await resp.json() || {}; } catch(e) { console.error('decay-config.json 加载失败（使用默认配置）', e); decayConfig = { noDecayTypes: ['校乒赛单打', '校乒赛团体'] }; } if (typeof decayConfig.t === 'number' && decayConfig.t > 0) DECAY_HALF_LIFE_DAYS = decayConfig.t; }
 
 /**
  * 判断某赛事类型是否永久保值（不参与衰减/定格）

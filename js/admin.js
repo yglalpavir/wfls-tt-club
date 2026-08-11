@@ -10,17 +10,17 @@ const DATA_PATHS = {
     // 核心数据
     core: {
         players:      "data/players.json",
-        members:      "data/legacy/members.json",
-        news:         "data/news.json",
-        competitions: "data/competitions.json",
+        members:      "data/_legacy/members.json",
+        news:         "data/news/index.json",
+        competitions: "data/competitions/index.json",
         scoreLog:     "data/score-log.json",
         seasons:      "data/seasons.json",
-        qa:           "data/qa.json",
+        qa:           "data/qa/index.json",
         changelog:    "data/changelog.json",
         draws:        "data/draws.json",
-        playerTags:   "data/legacy/player-tags.json",
+        playerTags:   "data/_legacy/player-tags.json",
         about:        "data/about.json",
-        initialScores:"data/legacy/initial-scores.json",
+        initialScores:"data/_legacy/initial-scores.json",
         eventCoeff:   "data/event-coefficient.json",
     },
     // WTT 各分项
@@ -221,6 +221,23 @@ function isRealEntry(r) {
     return true;
 }
 
+// 统计前台隐藏条目（visible === false）
+function countHidden(arr) {
+    if (!Array.isArray(arr)) return 0;
+    return arr.filter(i => i && i.visible === false).length;
+}
+
+// 统计条目中被隐藏的历史版本快照（history[].visible === false）
+function countHiddenVersions(arr) {
+    if (!Array.isArray(arr)) return 0;
+    let n = 0;
+    arr.forEach(i => {
+        if (!i || !Array.isArray(i.history)) return;
+        i.history.forEach(h => { if (h && typeof h === 'object' && h.visible === false) n++; });
+    });
+    return n;
+}
+
 // ========================================
 // 统计计算
 // ========================================
@@ -231,9 +248,15 @@ function computeStats() {
     s.corePlayers = (allData.players && Array.isArray(allData.players.players)) ? allData.players.players.length : 0;
     s.coreMembers = Array.isArray(allData.members) ? allData.members.length : 0;
     s.coreNews = Array.isArray(allData.news) ? allData.news.length : 0;
+    s.coreNewsHidden = countHidden(allData.news);
+    s.coreNewsHiddenVersions = countHiddenVersions(allData.news);
     s.coreCompetitions = Array.isArray(allData.competitions) ? allData.competitions.length : 0;
+    s.coreCompetitionsHidden = countHidden(allData.competitions);
+    s.coreCompetitionsHiddenVersions = countHiddenVersions(allData.competitions);
     s.coreScoreLog = Array.isArray(allData.scoreLog) ? allData.scoreLog.length : 0;
     s.coreQa = Array.isArray(allData.qa) ? allData.qa.length : 0;
+    s.coreQaHidden = countHidden(allData.qa);
+    s.coreQaHiddenVersions = countHiddenVersions(allData.qa);
     s.coreChangelog = Array.isArray(allData.changelog) ? allData.changelog.length : 0;
     s.coreDraws = Array.isArray(allData.draws) ? allData.draws.length : 0;
     s.coreSeasons = Array.isArray(allData.seasons) ? allData.seasons.length : 0;
@@ -410,7 +433,7 @@ function renderDashboard(loadTime) {
         { icon:"fa-solid fa-calendar-days", label:"WTT 赛季数", value:stats.wttSeasons, sub:"赛季管理", cls:"accent-green" },
         { icon:"fa-solid fa-weight-scale", label:"WTT 赛事类型", value:stats.wttEventTypes, sub:"不同级别赛事", cls:"accent-warning" },
         { icon:"fa-solid fa-id-card", label:"球员档案", value:stats.corePlayers, sub:"统一球员数据", cls:"accent-info" },
-        { icon:"fa-solid fa-newspaper", label:"新闻/赛事", value:(stats.coreNews + stats.coreCompetitions), sub:"新闻:"+stats.coreNews+" · 赛事:"+stats.coreCompetitions, cls:"accent-danger" },
+        { icon:"fa-solid fa-newspaper", label:"新闻/赛事", value:(stats.coreNews + stats.coreCompetitions), sub:"新闻:"+stats.coreNews+(stats.coreNewsHidden?"(隐藏"+stats.coreNewsHidden+")":"")+" · 赛事:"+stats.coreCompetitions+(stats.coreCompetitionsHidden?"(隐藏"+stats.coreCompetitionsHidden+")":""), cls:"accent-danger" },
     ];
     container.appendChild(createCardsRow(overviewCards));
 
@@ -497,11 +520,11 @@ function renderDashboard(loadTime) {
     const coreRows = [
         { name:"players.json", icon:"fa-id-card", count:stats.corePlayers, unit:"位球员档案" },
         { name:"members.json", icon:"fa-users", count:stats.coreMembers, unit:"位成员" },
-        { name:"news.json", icon:"fa-newspaper", count:stats.coreNews, unit:"篇新闻" },
-        { name:"competitions.json", icon:"fa-trophy", count:stats.coreCompetitions, unit:"场赛事" },
+        { name:"news/", icon:"fa-newspaper", count:stats.coreNews, unit:"篇新闻（独立文件+index.json）" + (stats.coreNewsHidden ? `，隐藏 ${stats.coreNewsHidden} 篇` : "") + (stats.coreNewsHiddenVersions ? `，隐藏版本 ${stats.coreNewsHiddenVersions} 个` : "") },
+        { name:"competitions/", icon:"fa-trophy", count:stats.coreCompetitions, unit:"场赛事（独立文件+index.json）" + (stats.coreCompetitionsHidden ? `，隐藏 ${stats.coreCompetitionsHidden} 场` : "") + (stats.coreCompetitionsHiddenVersions ? `，隐藏版本 ${stats.coreCompetitionsHiddenVersions} 个` : "") },
         { name:"score-log.json", icon:"fa-table-list", count:stats.coreScoreLog, unit:"条比赛记录" },
         { name:"seasons.json", icon:"fa-calendar-days", count:stats.coreSeasons, unit:"个赛季" },
-        { name:"qa.json", icon:"fa-circle-question", count:stats.coreQa, unit:"条问答" },
+        { name:"qa/", icon:"fa-circle-question", count:stats.coreQa, unit:"条问答（独立文件+index.json）" + (stats.coreQaHidden ? `，隐藏 ${stats.coreQaHidden} 条` : "") + (stats.coreQaHiddenVersions ? `，隐藏版本 ${stats.coreQaHiddenVersions} 个` : "") },
         { name:"changelog.json", icon:"fa-clock-rotate-left", count:stats.coreChangelog, unit:"条更新日志" },
         { name:"draws.json", icon:"fa-diagram-project", count:stats.coreDraws, unit:"张对阵表" },
         { name:"initial-scores.json", icon:"fa-chart-simple", count:stats.coreInitPlayers, unit:"位球员(legacy)" },

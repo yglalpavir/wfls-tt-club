@@ -1137,7 +1137,9 @@ function renderPersonalScoreChart(dailyHistory, snapshotHistory) {
 
 async function loadPersonalChartSettings() {
     try {
-        personalChartSettings = await (await fetch('data/personal-stats-chart-settings.json')).json();
+        const resp = await fetch('data/personal-stats-chart-settings.json');
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        personalChartSettings = await resp.json();
         console.log('[PersonalStats] 折线图设置加载完成');
     } catch (e) {
         console.warn('[PersonalStats] 折线图设置加载失败，使用默认值', e);

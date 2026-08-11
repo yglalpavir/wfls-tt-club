@@ -29,7 +29,9 @@ function wttGetDataVizTier(dataCount) {
 
 async function wttLoadDataVizSettings() {
     try {
-        wttDataVizSettings = await (await fetch('data/data_viz-settings.json')).json();
+        const resp = await fetch('data/data_viz-settings.json');
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        wttDataVizSettings = await resp.json();
         console.log('[WttDataViz] 折线图设置加载完成');
     } catch (e) {
         console.warn('[WttDataViz] 折线图设置加载失败，使用内置默认值', e);
@@ -231,17 +233,25 @@ function initWttDataViz() {
     console.log('[WttDataViz] 初始化完成');
     });  // ← 关闭 wttLoadDataVizSettings().then()
 
-    // 响应窗口大小变化，重绘图表
+    // 响应窗口大小变化：仅跨断点时重建（应用移动端样式），否则 Chart.js 自动 resize
     let resizeTimeout;
+    let lastIsMobile = window.innerWidth <= 768;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
-            const sel = wttGetSelectedPlayers();
-            const dc = parseInt(document.getElementById('wttPointsTrendDataCount')?.value) || 20;
-            if (sel.length && wttPointsTrendChart) wttRenderPointsTrend(sel, dc);
-            const topN = parseInt(document.getElementById('wttTopNSelect')?.value) || 10;
-            const sdc = parseInt(document.getElementById('wttStreamDataCount')?.value) || 20;
-            if (wttRankStreamChart) wttRenderRankStream(topN, sdc);
+            const isMobile = window.innerWidth <= 768;
+            if (isMobile !== lastIsMobile) {
+                lastIsMobile = isMobile;
+                const sel = wttGetSelectedPlayers();
+                const dc = parseInt(document.getElementById('wttPointsTrendDataCount')?.value) || 20;
+                if (sel.length && wttPointsTrendChart) wttRenderPointsTrend(sel, dc);
+                const topN = parseInt(document.getElementById('wttTopNSelect')?.value) || 10;
+                const sdc = parseInt(document.getElementById('wttStreamDataCount')?.value) || 20;
+                if (wttRankStreamChart) wttRenderRankStream(topN, sdc);
+            } else {
+                try { wttPointsTrendChart?.resize(); } catch(e) {}
+                try { wttRankStreamChart?.resize(); } catch(e) {}
+            }
         }, 300);
     });
 }

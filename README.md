@@ -45,9 +45,9 @@ wfls-tt-club/
 ├── data/                       # 站内数据（JSON）
 │   ├── about.json              # 社团简介数据（历史、理念、活动）
 │   ├── players.json            # 统一球员档案（uid/初始积分/标签/荣誉/职务）
-│   ├── news.json               # 新闻动态数据
-│   ├── competitions.json       # 赛事信息数据
-│   ├── qa.json                 # 常见问题数据
+│   ├── news/                   # 新闻动态（每条目一个文件 + index.json 索引）
+│   ├── competitions/           # 赛事信息（每条目一个文件 + index.json 索引）
+│   ├── qa/                     # 常见问题（每条目一个文件 + index.json 索引）
 │   ├── changelog.json          # 更新日志数据
 │   ├── draws.json              # 对阵表数据
 │   ├── event-coefficient.json  # 赛事系数配置
@@ -56,7 +56,7 @@ wfls-tt-club/
 │   ├── score-log.json          # 比赛记录 + 积分调整记录
 │   ├── data_viz-settings.json  # 数据可视化设置
 │   ├── personal-stats-chart-settings.json  # 个人数据图表设置
-│   └── legacy/                 # 旧版数据（members / player-tags / initial-scores，兼容回退）
+│   └── _legacy/                # 旧版/备份数据（members / player-tags / initial-scores / 合并版 news/competitions/qa）
 │
 ├── wtt_data/                   # WTT 彩蛋数据（ms/ws/md/wd/xd，按赛季拆分 + manifest.json）
 ├── ittf_data/                  # ITTF 历史数据（ms / ws）
@@ -220,26 +220,67 @@ git push -u origin main
 }
 ```
 
-> 角色字段非空的球员会自动出现在社团骨干页（members.html）。每名球员拥有唯一 5 位 uid（10000 起），用于个人主页地址 `player.html?uid=xxxxx`。旧版 `members.json` / `player-tags.json` / `initial-scores.json` 已移入 `data/legacy/` 仅作兼容回退。各字段的详细取值形式、用途与维护约束见 [docs/players-json.md](docs/players-json.md)。
+> 角色字段非空的球员会自动出现在社团骨干页（members.html）。每名球员拥有唯一 5 位 uid（10000 起），用于个人主页地址 `player.html?uid=xxxxx`。旧版 `members.json` / `player-tags.json` / `initial-scores.json` 已移入 `data/_legacy/` 仅作兼容回退。各字段的详细取值形式、用途与维护约束见 [docs/players-json.md](docs/players-json.md)。
 
-### `news.json` - 新闻动态
+### `news/` `competitions/` `qa/` - 新闻动态 / 赛事信息 / 常见问题
+
+三类内容采用**一条目一文件**的存储方式：
+
+```
+data/news/           data/competitions/     data/qa/
+├── index.json        ├── index.json         ├── index.json
+├── n1.json           ├── c1.json            ├── q1.json
+├── n2.json           ├── c2.json            └── q2.json
+└── ...               └── ...
+```
+
+- `{id}.json`：每条目一个文件，是**唯一数据源**（编辑维护时改它）
+- `index.json`：由 `tools/sync_content.py` 生成的完整条目索引（含 content，供列表/搜索/详情使用），**不要手动编辑**
+- 列表与搜索按 `date` 倒序展示，`date` 需为 `YYYY-MM-DD`（该字段也用于排序与校验）
+
+单条目文件格式（三类通用，字段可选多少不同）：
 
 ```json
-[
-  {
-    "id": "n1",
-    "date": "2025-01-05",
-    "title": "标题",
-    "excerpt": "摘要（支持\\n换行和**加粗**）",
-    "content": "正文内容（可选）",
-    "tag": "notice",
-    "media": [
-      {"type": "image", "src": "Assets/images/example.jpg"},
-      {"type": "video", "src": "Assets/videos/example.mp4"},
-      {"type": "file", "src": "Assets/files/example.pdf", "name": "文件名"}
-    ]
-  }
-]
+{
+  "id": "n1",
+  "date": "2025-01-05",
+  "title": "标题",
+  "excerpt": "摘要（支持\\n换行和**加粗**）",
+  "content": "正文内容（可选）",
+  "tag": "notice",
+  "media": [
+    {"type": "image", "src": "Assets/images/example.jpg"},
+    {"type": "video", "src": "Assets/videos/example.mp4"},
+    {"type": "file", "src": "Assets/files/example.pdf", "name": "文件名"}
+  ]
+}
+```
+
+#### 显示控制（`visible`）
+
+可选字段，默认显示。设为 `false` 时前台**隐藏**（列表、搜索、详情均不可见），但条目仍保留在 `index.json` 中，管理后台会显示隐藏数量；改回 `true` 即可恢复：
+
+```json
+{ "id": "n1", "visible": false }
+```
+
+#### 历史版本（`history`）
+
+可选字段，由 `tools/sync_content.py` **自动维护**，请勿手动编辑：
+
+- 首次同步为每条目建立 v1 基线快照（`updatedAt` 取条目 `date`）
+- 此后每次内容变更（`date/title/excerpt/content/tag/media` 任一变化），同步时自动把**上一版线上内容**归档为新快照（版本号 +1，`updatedAt` 为当天），`history` 从新到旧排列
+- 每次同步后 `history[0]` 与当前线上内容一致，未改动时重复运行脚本不会新增快照（幂等）
+- 详情页自动显示版本号与最后更新时间，可展开查看并切换旧版本
+
+```json
+{
+  "id": "n1",
+  "title": "新版标题",
+  "history": [
+    {"version": 2, "updatedAt": "2026-08-11", "date": "2025-01-06", "title": "历史标题", "excerpt": "...", "content": "...", "tag": "notice", "media": []}
+  ]
+}
 ```
 
 #### 新闻标签类型
@@ -250,22 +291,7 @@ git push -u origin main
 | `training`| 训练     | Training    | 训练相关通知 |
 | `notice`  | 公告     | Notice      | 重要公告     |
 | `event`   | 活动     | Event       | 社团活动     |
-
-### `competitions.json` - 赛事信息
-
-```json
-[
-  {
-    "id": "c1",
-    "date": "2025-01-10",
-    "title": "标题",
-    "excerpt": "摘要",
-    "content": "正文内容（可选）",
-    "tag": "result",
-    "media": []
-  }
-]
-```
+| `daily`   | 日常     | Daily       | 日常动态     |
 
 #### 赛事标签类型
 
@@ -275,7 +301,20 @@ git push -u origin main
 | `result`    | 比赛结果 | Result      | 已结束的比赛结果 |
 | `live`      | 进行中   | Live        | 正在进行的比赛   |
 
-### `legacy/initial-scores.json` - 初始积分配置（旧版）
+#### 更新索引（必做）
+
+编辑任意条目文件后，运行：
+
+```bash
+python tools/sync_content.py            # 重写 index.json + 自动维护版本历史（附带校验警告）
+python tools/sync_content.py --check    # 仅校验（含预计新增快照数），不写入
+```
+
+脚本会校验：文件名 == 条目 id、必填字段、tag 白名单、日期格式、media 文件是否存在、id 唯一、history 结构（版本号从新到旧递减、快照字段齐全）。输出中会显示各类型隐藏数与快照总数。
+
+> 原合并版 `data/news.json` / `data/competitions.json` / `data/qa.json` 已备份至 `data/_legacy/`，仅作历史存档，代码不再读取。
+
+### `_legacy/initial-scores.json` - 初始积分配置（旧版）
 
 > 已迁移至 `data/players.json` 的 `initialScore` 字段。旧文件仅作为兼容回退保留：
 
@@ -424,11 +463,13 @@ git push -u origin main
 - 编辑 `about.json`：修改社团简介卡片内容
 - 编辑 `players.json`：修改球员档案（含 `role` 非空者自动显示在社团骨干页）
 
-### 添加新闻/赛事
+### 添加新闻/赛事/问答
 
-- 编辑 `news.json` 或 `competitions.json`
-- 在数组**开头**插入新条目（最新的显示在最前）
+- 新增一个条目文件，如 `data/news/n17.json`（id 与文件名一致，格式见上文）
+- 删除条目：直接删除对应 `data/{type}/{id}.json` 文件
+- 临时隐藏（不删除）：在条目文件里加 `"visible": false`，之后改回 `true` 即可恢复
 - 媒体文件放入对应 `Assets/` 子文件夹，路径需与 JSON 中一致
+- 修改后运行 `python tools/sync_content.py` 重新生成索引（顺序自动按 date 倒序，历史版本自动归档，无需手动排序）
 
 ### 添加比赛记录
 

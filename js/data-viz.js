@@ -27,7 +27,9 @@ function getDataVizTier(dataCount) {
 
 async function loadDataVizSettings() {
     try {
-        dataVizSettings = await (await fetch('data/data_viz-settings.json')).json();
+        const resp = await fetch('data/data_viz-settings.json');
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        dataVizSettings = await resp.json();
         console.log('[DataViz] 折线图设置加载完成');
     } catch (e) {
         console.warn('[DataViz] 折线图设置加载失败，使用内置默认值', e);
@@ -112,17 +114,25 @@ function initDataViz() {
     });
     console.log('[DataViz] 初始化完成');
 
-    // 响应窗口大小变化，重绘图表
+    // 响应窗口大小变化：仅跨断点时重建（应用移动端样式），否则 Chart.js 自动 resize
     let resizeTimeout;
+    let lastIsMobile = window.innerWidth <= 768;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
-            const sel = getSelectedPlayers();
-            const dc = parseInt(document.getElementById('pointsTrendDataCount')?.value) || 20;
-            if (sel.length && pointsTrendChart) renderPointsTrend(sel, dc);
-            const topN = parseInt(document.getElementById('topNSelect')?.value) || 10;
-            const sdc = parseInt(document.getElementById('streamDataCount')?.value) || 20;
-            if (rankStreamChart) renderRankStream(topN, sdc);
+            const isMobile = window.innerWidth <= 768;
+            if (isMobile !== lastIsMobile) {
+                lastIsMobile = isMobile;
+                const sel = getSelectedPlayers();
+                const dc = parseInt(document.getElementById('pointsTrendDataCount')?.value) || 20;
+                if (sel.length && pointsTrendChart) renderPointsTrend(sel, dc);
+                const topN = parseInt(document.getElementById('topNSelect')?.value) || 10;
+                const sdc = parseInt(document.getElementById('streamDataCount')?.value) || 20;
+                if (rankStreamChart) renderRankStream(topN, sdc);
+            } else {
+                try { pointsTrendChart?.resize(); } catch(e) {}
+                try { rankStreamChart?.resize(); } catch(e) {}
+            }
         }, 300);
     });
 }

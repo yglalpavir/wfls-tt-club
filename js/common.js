@@ -243,10 +243,72 @@ function initSearch() {
     });
 }
 function showSearchPlaceholder() { if (!searchResults) return; searchResults.innerHTML = `<div class="search-placeholder"><i class="fa-solid fa-magnifying-glass"></i><p>输入关键词开始搜索</p><p class="search-hint">支持搜索标题、内容、姓名等</p></div>`; }
-function performSearch(query) {     if (!searchResults) return;     const results = [];     if (newsData && newsData.length) newsData.forEach(item => {         const s = calcScore(query, item.title, item.excerpt || '', item.content || '');         if (s > 0) results.push({ type: 'news', typeLabel: i18n[currentLang].search_type_news, title: item.title, excerpt: item.excerpt || item.content || '', date: item.date, link: 'detail.html?type=news&id=' + item.id, score: s });     });     if (competitionsData && competitionsData.length) competitionsData.forEach(item => {         const s = calcScore(query, item.title, item.excerpt || '', item.content || '');         if (s > 0) results.push({ type: 'competition', typeLabel: i18n[currentLang].search_type_competition, title: item.title, excerpt: item.excerpt || item.content || '', date: item.date, link: 'detail.html?type=competition&id=' + item.id, score: s });     });     if (membersData && membersData.length) membersData.forEach(m => {         const s = calcScore(query, m.name, m.role, m.description);         if (s > 0) results.push({ type: 'member', typeLabel: i18n[currentLang].search_type_member, title: m.name + ' - ' + m.role, excerpt: m.description || '', date: '', link: 'members.html', score: s });     });     if (currentDisplayData && currentDisplayData.length) currentDisplayData.forEach(p => {         const s = calcScore(query, p['姓名'], String(p['当前积分'] || ''), '');         if (s > 0) {             const uid = getUidForPlayerName(p['姓名']);             const tpl = '排名：' + (p.rank || '-') + ' | 胜率：' + (p['胜率'] || '0%');             results.push({ type: 'ranking', typeLabel: i18n[currentLang].search_type_ranking, title: p['姓名'] + ' - ' + (p['当前积分'] || 0).toFixed(1) + '分', excerpt: tpl, date: '', link: uid != null ? ('player.html?uid=' + uid) : 'ranking.html', score: s + (uid != null ? 5 : 0) });         }     });     if (qaData && qaData.length) qaData.forEach(item => {         const s = calcScore(query, item.title, item.excerpt || '', item.content || '');         if (s > 0) results.push({ type: 'qa', typeLabel: i18n[currentLang].search_type_qa, title: item.title, excerpt: item.excerpt || item.content || '', date: item.date, link: 'detail.html?type=qa&id=' + item.id, score: s });     });     if (changelogData && changelogData.length) changelogData.forEach(item => {         const changesText = item.changes ? item.changes.join(' ') : '';         const s = calcScore(query, item.title, item.version, changesText);         if (s > 0) results.push({ type: 'changelog', typeLabel: i18n[currentLang].search_type_changelog, title: item.version + ' - ' + item.title, excerpt: item.changes ? item.changes.slice(0, 3).join(' | ') : '', date: item.date, link: 'changelog.html', score: s });     });     results.sort((a, b) => b.score - a.score);     if (!results.length) { searchResults.innerHTML = '<div class="search-no-results"><i class="fa-solid fa-face-frown"></i><p>' + i18n[currentLang].search_no_results + '</p></div>'; return; }     const safeResult = r => {         const linkSafe = escapeHtml(String(r.link || '#'));         const typeSafe = String(r.type || '').replace(/[^a-zA-Z0-9_-]/g, '');         const titleSafe = hlMatch(escapeHtml(String(r.title || '')), query);         const excerptSafe = hlMatch(escapeHtml(String(r.excerpt || '').substring(0, 100)), query);         return '<div class="search-result-item" onclick="window.location.href=\'' + linkSafe + '\'"><span class="search-result-type ' + escapeHtml(typeSafe) + '">' + escapeHtml(String(r.typeLabel || '')) + '</span><div class="search-result-title">' + titleSafe + '</div><div class="search-result-excerpt">' + excerptSafe + '</div>' + (r.date ? '<div style="font-size:0.7rem;color:var(--text-muted);margin-top:4px;">' + escapeHtml(String(r.date)) + '</div>' : '') + '</div>';     };     searchResults.innerHTML = '<div class="search-result-list">' + results.map(safeResult).join('') + '</div>'; }
 function calcScore(query, ...texts) { const q = query.toLowerCase(); let s = 0; texts.forEach((t, i) => { if (!t) return; const tl = t.toLowerCase(); if (tl === q) s += 100; const w = i === 0 ? 3 : 1; if (tl.includes(q)) s += 20 * w; const cs = q.split(''); let mc = 0; cs.forEach(c => { if (tl.includes(c)) mc++; }); s += (mc / cs.length) * 10 * w; }); return Math.round(s); }
 function hlMatch(text, query) { if (!text || !query) return text || ''; return text.replace(new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi'), '<strong style="color:var(--primary-blue);background:var(--primary-pale);padding:0 2px;border-radius:2px;">$1</strong>'); }
 
+// ========================================
+// 搜索（懒加载 search.json 搜索索引；失败时回退索引元数据）
+// ========================================
+const searchDataCache = {};
+function ensureSearchData(type) {
+    if (!(type in searchDataCache)) {
+        searchDataCache[type] = fetch('data/' + type + '/search.json').then(r => { if (!r.ok) return null; return r.json(); }).catch(() => null);
+    }
+    return searchDataCache[type];
+}
+let searchQueryToken = 0;
+async function performSearch(query) {
+    if (!searchResults) return;
+    const token = ++searchQueryToken;
+    const data = await Promise.all([ensureSearchData('news'), ensureSearchData('competitions'), ensureSearchData('qa')]);
+    if (token !== searchQueryToken) return;
+    const newsList = (Array.isArray(data[0]) ? data[0] : []).filter(i => i && i.visible !== false);
+    const compList = (Array.isArray(data[1]) ? data[1] : []).filter(i => i && i.visible !== false);
+    const qaList = (Array.isArray(data[2]) ? data[2] : []).filter(i => i && i.visible !== false);
+    const newsItems = newsList.length ? newsList : (newsData || []);
+    const compItems = compList.length ? compList : (competitionsData || []);
+    const qaItems = qaList.length ? qaList : (qaData || []);
+    const results = [];
+    if (newsItems.length) newsItems.forEach(item => {
+        const s = calcScore(query, item.title, item.excerpt || '', item.content || '');
+        if (s > 0) results.push({ type: 'news', typeLabel: i18n[currentLang].search_type_news, title: item.title, excerpt: item.excerpt || item.content || '', date: item.date, link: 'detail.html?type=news&id=' + item.id, score: s });
+    });
+    if (compItems.length) compItems.forEach(item => {
+        const s = calcScore(query, item.title, item.excerpt || '', item.content || '');
+        if (s > 0) results.push({ type: 'competition', typeLabel: i18n[currentLang].search_type_competition, title: item.title, excerpt: item.excerpt || item.content || '', date: item.date, link: 'detail.html?type=competition&id=' + item.id, score: s });
+    });
+    if (membersData && membersData.length) membersData.forEach(m => {
+        const s = calcScore(query, m.name, m.role, m.description);
+        if (s > 0) results.push({ type: 'member', typeLabel: i18n[currentLang].search_type_member, title: m.name + ' - ' + m.role, excerpt: m.description || '', date: '', link: 'members.html', score: s });
+    });
+    if (currentDisplayData && currentDisplayData.length) currentDisplayData.forEach(p => {
+        const s = calcScore(query, p['姓名'], String(p['当前积分'] || ''), '');
+        if (s > 0) {
+            const uid = getUidForPlayerName(p['姓名']);
+            const tpl = '排名：' + (p.rank || '-') + ' | 胜率：' + (p['胜率'] || '0%');
+            results.push({ type: 'ranking', typeLabel: i18n[currentLang].search_type_ranking, title: p['姓名'] + ' - ' + (p['当前积分'] || 0).toFixed(1) + '分', excerpt: tpl, date: '', link: uid != null ? ('player.html?uid=' + uid) : 'ranking.html', score: s + (uid != null ? 5 : 0) });
+        }
+    });
+    if (qaItems.length) qaItems.forEach(item => {
+        const s = calcScore(query, item.title, item.excerpt || '', item.content || '');
+        if (s > 0) results.push({ type: 'qa', typeLabel: i18n[currentLang].search_type_qa, title: item.title, excerpt: item.excerpt || item.content || '', date: item.date, link: 'detail.html?type=qa&id=' + item.id, score: s });
+    });
+    if (changelogData && changelogData.length) changelogData.forEach(item => {
+        const changesText = item.changes ? item.changes.join(' ') : '';
+        const s = calcScore(query, item.title, item.version, changesText);
+        if (s > 0) results.push({ type: 'changelog', typeLabel: i18n[currentLang].search_type_changelog, title: item.version + ' - ' + item.title, excerpt: item.changes ? item.changes.slice(0, 3).join(' | ') : '', date: item.date, link: 'changelog.html', score: s });
+    });
+    results.sort((a, b) => b.score - a.score);
+    if (!results.length) { searchResults.innerHTML = '<div class="search-no-results"><i class="fa-solid fa-face-frown"></i><p>' + i18n[currentLang].search_no_results + '</p></div>'; return; }
+    const safeResult = r => {
+        const linkSafe = escapeHtml(String(r.link || '#'));
+        const typeSafe = String(r.type || '').replace(/[^a-zA-Z0-9_-]/g, '');
+        const titleSafe = hlMatch(escapeHtml(String(r.title || '')), query);
+        const excerptSafe = hlMatch(escapeHtml(String(r.excerpt || '').substring(0, 100)), query);
+        return '<div class="search-result-item" onclick="window.location.href=\'' + linkSafe + '\'"><span class="search-result-type ' + escapeHtml(typeSafe) + '">' + escapeHtml(String(r.typeLabel || '')) + '</span><div class="search-result-title">' + titleSafe + '</div><div class="search-result-excerpt">' + excerptSafe + '</div>' + (r.date ? '<div style="font-size:0.7rem;color:var(--text-muted);margin-top:4px;">' + escapeHtml(String(r.date)) + '</div>' : '') + '</div>';
+    };
+    searchResults.innerHTML = '<div class="search-result-list">' + results.map(safeResult).join('') + '</div>';
+}
 if (hamburger && navMenu) {
     // 创建移动端导航遮罩
     const navBackdrop = document.createElement('div');
@@ -337,20 +399,22 @@ function setNewsFilter(tag) { newsFilterTag = tag; newsCurrentPage = 1; renderAl
 function setCompetitionsFilter(tag) { competitionsFilterTag = tag; competitionsCurrentPage = 1; renderAllCompetitions(); }
 function renderPagination(cid, d, cp) { const c = document.getElementById(cid); if (!c) return; const ep = c.parentElement.querySelector('.pagination'); if (ep) ep.remove(); const tp = getTotalPages(d); if (tp <= 1) return; const pe = document.createElement('div'); pe.className = 'pagination'; const pb = document.createElement('button'); pb.className = 'pagination-btn'; pb.textContent = i18n[currentLang].pagination_prev; pb.disabled = cp <= 1; pb.addEventListener('click', () => { if (cid === 'newsFullGrid') { newsCurrentPage = cp-1; renderAllNews(); } else if (cid === 'competitionsFullGrid') { competitionsCurrentPage = cp-1; renderAllCompetitions(); } else { qaCurrentPage = cp-1; renderAllQa(); } window.scrollTo({ top: c.offsetTop-100, behavior:'smooth' }); }); pe.appendChild(pb); for (let i=1; i<=tp; i++) { const pg = document.createElement('button'); pg.className = 'pagination-btn'; if (i===cp) pg.classList.add('active'); pg.textContent = i; pg.addEventListener('click', () => { if (cid === 'newsFullGrid') { newsCurrentPage = i; renderAllNews(); } else if (cid === 'competitionsFullGrid') { competitionsCurrentPage = i; renderAllCompetitions(); } else { qaCurrentPage = i; renderAllQa(); } window.scrollTo({ top: c.offsetTop-100, behavior:'smooth' }); }); pe.appendChild(pg); } const nb = document.createElement('button'); nb.className = 'pagination-btn'; nb.textContent = i18n[currentLang].pagination_next; nb.disabled = cp >= tp; nb.addEventListener('click', () => { if (cid === 'newsFullGrid') { newsCurrentPage = cp+1; renderAllNews(); } else if (cid === 'competitionsFullGrid') { competitionsCurrentPage = cp+1; renderAllCompetitions(); } else { qaCurrentPage = cp+1; renderAllQa(); } window.scrollTo({ top: c.offsetTop-100, behavior:'smooth' }); }); pe.appendChild(nb); const ie = document.createElement('span'); ie.className = 'pagination-info'; ie.textContent = i18n[currentLang].pagination_info.replace('{current}', cp).replace('{total}', tp); pe.appendChild(ie); c.parentElement.appendChild(pe); }
 
-async function loadAboutData() { showContentLoading('coreMembersGrid', '加载社团信息...'); try { aboutData = await (await fetch('data/about.json')).json(); } catch(e) { aboutData = null; } if (typeof renderAboutSections === 'function') renderAboutSections(); updateHeroLastUpdated(); }
-async function loadMembersData() { showContentLoading('coreMembersGrid', '加载成员数据...'); if (!playersData) await loadPlayers(); if (playersData && Array.isArray(playersData.players)) { membersData = playersData.players.filter(p => p.role).map(p => ({ name: p.name, uid: p.uid, role: p.role, description: p.description, qq: p.qq })); } else { try { membersData = await (await fetch('data/legacy/members.json')).json(); } catch(e) { membersData = []; } } if (typeof renderCoreMembers === 'function') { renderCoreMembers(); if (typeof renderAllMembersPage === 'function') renderAllMembersPage(); } }
-async function loadNewsData() { showContentLoading('newsPreviewGrid', '加载动态...'); showContentLoading('newsFullGrid', '加载动态...'); try { newsData = await (await fetch('data/news.json')).json(); } catch(e) { newsData = []; } if (typeof renderAllNews === 'function') renderAllNews(); checkAllDataLoaded(); }
-async function loadCompetitionsData() { showContentLoading('competitionsPreviewGrid', '加载赛事...'); showContentLoading('competitionsFullGrid', '加载赛事...'); try { competitionsData = await (await fetch('data/competitions.json')).json(); } catch(e) { competitionsData = []; } if (typeof renderAllCompetitions === 'function') renderAllCompetitions(); checkAllDataLoaded(); }
-async function loadDrawsData() { try { drawsData = await (await fetch('data/draws.json')).json(); } catch(e) { drawsData = []; } checkAllDataLoaded(); }
+async function loadAboutData() { showContentLoading('coreMembersGrid', '加载社团信息...'); try { const resp = await fetch('data/about.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); aboutData = await resp.json(); } catch(e) { aboutData = null; } if (typeof renderAboutSections === 'function') renderAboutSections(); updateHeroLastUpdated(); }
+async function loadMembersData() { showContentLoading('coreMembersGrid', '加载成员数据...'); if (!playersData) await loadPlayers(); if (playersData && Array.isArray(playersData.players)) { membersData = playersData.players.filter(p => p.role).map(p => ({ name: p.name, uid: p.uid, role: p.role, description: p.description, qq: p.qq })); } else { try { const resp = await fetch('data/_legacy/members.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); membersData = await resp.json(); } catch(e) { membersData = []; } } if (typeof renderCoreMembers === 'function') { renderCoreMembers(); if (typeof renderAllMembersPage === 'function') renderAllMembersPage(); } }
+async function loadNewsData() { showContentLoading('newsPreviewGrid', '加载动态...'); showContentLoading('newsFullGrid', '加载动态...'); try { const resp = await fetch('data/news/index.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); newsData = await resp.json(); } catch(e) { newsData = []; } if (typeof renderAllNews === 'function') renderAllNews(); checkAllDataLoaded(); }
+async function loadCompetitionsData() { showContentLoading('competitionsPreviewGrid', '加载赛事...'); showContentLoading('competitionsFullGrid', '加载赛事...'); try { const resp = await fetch('data/competitions/index.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); competitionsData = await resp.json(); } catch(e) { competitionsData = []; } if (typeof renderAllCompetitions === 'function') renderAllCompetitions(); checkAllDataLoaded(); }
+async function loadDrawsData() { try { const resp = await fetch('data/draws.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); drawsData = await resp.json(); } catch(e) { drawsData = []; } checkAllDataLoaded(); }
 function getDrawsForCompetition(competitionId) { if (!drawsData || !drawsData.length) return null; return drawsData.find(d => d.competitionId === competitionId) || null; }
-async function loadQaData() { try { qaData = await (await fetch('data/qa.json')).json(); } catch(e) { qaData = []; } if (typeof renderAllQa === 'function') renderAllQa(); }
-async function loadChangelogData() { try { changelogData = await (await fetch('data/changelog.json')).json(); } catch(e) { changelogData = []; } if (typeof renderAllChangelog === 'function') renderAllChangelog(); }
-async function loadPlayerTagsData() { if (!playersData) await loadPlayers(); if (playersData && Array.isArray(playersData.players)) { const map = {}; for (const p of playersData.players) map[p.name] = { tags: p.tags || [], honors: p.honors || [] }; playerTagsData = { players: map }; return; } try { playerTagsData = await (await fetch('data/legacy/player-tags.json')).json(); } catch(e) { playerTagsData = null; } }
+async function loadQaData() { try { const resp = await fetch('data/qa/index.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); qaData = await resp.json(); } catch(e) { qaData = []; } if (typeof renderAllQa === 'function') renderAllQa(); }
+async function loadChangelogData() { try { const resp = await fetch('data/changelog.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); changelogData = await resp.json(); } catch(e) { changelogData = []; } if (typeof renderAllChangelog === 'function') renderAllChangelog(); }
+async function loadPlayerTagsData() { if (!playersData) await loadPlayers(); if (playersData && Array.isArray(playersData.players)) { const map = {}; for (const p of playersData.players) map[p.name] = { tags: p.tags || [], honors: p.honors || [] }; playerTagsData = { players: map }; return; } try { const resp = await fetch('data/_legacy/player-tags.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); playerTagsData = await resp.json(); } catch(e) { playerTagsData = null; } }
 
-// ===== 统一球员档案加载（data/players.json，兼容回退 data/legacy/）=====
+// ===== 统一球员档案加载（data/players.json，兼容回退 data/_legacy/）=====
 async function loadPlayers() {
     try {
-        const raw = await (await fetch('data/players.json')).json();
+        const resp = await fetch('data/players.json');
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        const raw = await resp.json();
         if (!raw || !Array.isArray(raw.players)) throw new Error('players.json 结构异常');
         playersData = raw;
         buildPlayerIndexes();
@@ -399,24 +463,75 @@ function renderAllNews() { const pg = document.getElementById('newsPreviewGrid')
 function renderAllCompetitions() { const pg = document.getElementById('competitionsPreviewGrid'); if (pg) { pg.innerHTML = ''; competitionsData.slice(0,3).forEach(item => { const c = document.createElement('div'); c.className = 'competitions-card'; c.innerHTML = createCompetitionCard(item); c.addEventListener('click', () => window.location.href = `detail.html?type=competition&id=${item.id}`); pg.appendChild(c); }); } const fg = document.getElementById('competitionsFullGrid'); if (fg) { const fd = getFilteredCompetitionsData(); fg.innerHTML = ''; getPaginatedData(fd, competitionsCurrentPage).forEach(item => { const c = document.createElement('div'); c.className = 'competitions-card'; c.innerHTML = createCompetitionCard(item); c.addEventListener('click', () => window.location.href = `detail.html?type=competition&id=${item.id}`); fg.appendChild(c); }); renderPagination('competitionsFullGrid', fd, competitionsCurrentPage); renderTagFilter('competitionsTagFilter', competitionsData, competitionsFilterTag, setCompetitionsFilter); } }
 function renderAllQa() { const fg = document.getElementById('qaFullGrid'); if (fg) { fg.innerHTML = ''; getPaginatedData(qaData, qaCurrentPage).forEach(item => { const c = document.createElement('div'); c.className = 'qa-card'; c.innerHTML = createQaCard(item); c.addEventListener('click', () => window.location.href = `detail.html?type=qa&id=${item.id}`); fg.appendChild(c); }); renderPagination('qaFullGrid', qaData, qaCurrentPage); } }
 function renderAllChangelog() { const tl = document.getElementById('changelogTimeline'); if (!tl) return; tl.innerHTML = ''; if (!changelogData || !changelogData.length) { tl.innerHTML = '<div class="changelog-empty"><i class="fa-solid fa-clock-rotate-left"></i><p data-i18n="changelog_empty">鏆傛棤鏇存柊鏃ュ織</p></div>'; return; } changelogData.forEach((item, idx) => { const entry = document.createElement('div'); entry.className = 'changelog-entry'; const tagLabel = i18n[currentLang]['tag_' + item.tag] || item.tag; const tagSafe = 'tag-' + String(item.tag || '').replace(/[^a-zA-Z0-9_-]/g, ''); const changesHtml = item.changes && item.changes.length ? '<ul class="changelog-changes">' + item.changes.map(c => '<li>' + renderMarkdown(c) + '</li>').join('') + '</ul>' : ''; entry.innerHTML = `<div class="changelog-entry-marker"><div class="changelog-dot"></div>${idx < changelogData.length - 1 ? '<div class="changelog-line"></div>' : ''}</div><div class="changelog-entry-content glass-card"><div class="changelog-entry-header"><span class="changelog-version">${escapeHtml(item.version)}</span><span class="changelog-tag ${escapeHtml(tagSafe)}">${escapeHtml(tagLabel)}</span><span class="changelog-date">${escapeHtml(item.date)}</span></div><h3 class="changelog-entry-title">${escapeHtml(item.title)}</h3>${changesHtml}</div>`; tl.appendChild(entry); }); }
-function updateDetailPage() {
+// ========================================
+// 详情页：条目文件夹 {type}/{id}/{id}.json（展示）+ {id}.history.json（版本清单）+ {id}.v{n}.json（快照）
+// ========================================
+function getContentListByType(type) { return type === 'news' ? newsData : (type === 'competition' ? competitionsData : qaData); }
+function getContentDirByType(type) { return type === 'news' ? 'news' : (type === 'competition' ? 'competitions' : 'qa'); }
+const DETAIL_SNAPSHOT_KEYS = ['date', 'title', 'excerpt', 'content', 'tag', 'media'];
+function snapshotOf(item) { const s = {}; DETAIL_SNAPSHOT_KEYS.forEach(k => s[k] = (item[k] === undefined ? null : item[k])); return s; }
+function snapshotsEqual(a, b) { return JSON.stringify(snapshotOf(a)) === JSON.stringify(snapshotOf(b)); }
+function getVersionInfo(item) {
+    const hist = (Array.isArray(item.history) ? item.history : []).filter(h => h && typeof h === 'object');
+    if (!hist.length) return { current: 1, updatedAt: null, old: [] };
+    const last = hist[0], base = Number(last.version) || 1;
+    const old = hist.slice(1).filter(h => h.visible !== false);
+    const lastIsMeta = ('file' in last) && !('content' in last);
+    if (lastIsMeta || snapshotsEqual(item, last)) return { current: base, updatedAt: last.updatedAt || null, old: old };
+    return { current: base + 1, updatedAt: last.updatedAt || null, old: hist.filter(h => h.visible !== false) };
+}
+let detailState = null;
+async function loadContentItem(type, id) {
+    const dir = getContentDirByType(type);
+    try {
+        const resp = await fetch(`data/${dir}/${encodeURIComponent(id)}/${encodeURIComponent(id)}.json`);
+        if (resp.ok) return await resp.json();
+    } catch(e) { /* 回退到索引数据 */ }
+    const da = getContentListByType(type);
+    return (da && da.find(d => d.id == id)) || null;
+}
+async function loadHistoryManifest(type, id) {
+    const dir = getContentDirByType(type);
+    try {
+        const resp = await fetch(`data/${dir}/${encodeURIComponent(id)}/${encodeURIComponent(id)}.history.json`);
+        if (resp.ok) return await resp.json();
+    } catch(e) { /* 清单缺失时按无历史处理 */ }
+    return null;
+}
+async function updateDetailPage() {
     const params = new URLSearchParams(window.location.search);
     const type = params.get('type'), id = params.get('id');
     if (!type || !id) return;
-    const da = type === 'news' ? newsData : (type === 'competition' ? competitionsData : qaData);
-    if (!da || !da.length) { setTimeout(() => updateDetailPage(), 200); return; }
-    const item = da.find(d => d.id == id);
-    if (!item) {
+    const [item, hist] = await Promise.all([loadContentItem(type, id), loadHistoryManifest(type, id)]);
+    if (!item || item.visible === false) {
+        const da = getContentListByType(type);
+        if (!da || !da.length) { setTimeout(updateDetailPage, 200); return; }
         document.getElementById('detailTitle').textContent = '未找到内容';
         document.getElementById('detailDate').textContent = '';
         document.getElementById('detailContent').innerHTML = '<p>请求的内容不存在或已被移除。</p>';
         document.getElementById('detailMedia').innerHTML = '';
+        const hc = document.getElementById('detailVersion');
+        if (hc) hc.style.display = 'none';
         return;
     }
+    if (Array.isArray(hist) && hist.length) item.history = hist;
+    detailState = { type, item };
+    renderDetailItem(type, item);
+}
+
+function renderDetailItem(type, item) {
     document.getElementById('detailTypeTag').textContent = i18n[currentLang][type === 'news' ? 'news_hero_tag' : (type === 'competition' ? 'comp_hero_tag' : 'qa_hero_tag')];
     document.getElementById('detailTitle').textContent = item.title;
     document.getElementById('detailDate').textContent = item.date;
     document.getElementById('detailContent').innerHTML = renderMarkdown(item.content || item.excerpt || '');
+    const contentSection = document.getElementById('detailContent');
+    if (contentSection) contentSection.style.display = '';
+    renderDetailMedia(item);
+    renderDetailDrawsSection(type, item);
+    renderDetailVersion(type, item);
+}
+
+function renderDetailMedia(item) {
     const mc = document.getElementById('detailMedia');
     mc.innerHTML = '';
     if (item.media && Array.isArray(item.media) && item.media.length) {
@@ -437,7 +552,7 @@ function updateDetailPage() {
                 const v = document.createElement('video');
                 v.controls = true;
                 v.playsInline = true;
-                v.preload = 'auto';
+                v.preload = 'metadata';
                 v.style.width = '100%';
                 const source = document.createElement('source');
                 source.src = m.src;
@@ -488,21 +603,20 @@ function updateDetailPage() {
             mc.appendChild(mi);
         });
     }
+}
 
-    // Draws toggle for competitions
+function renderDetailDrawsSection(type, item) {
     const drawsToggleContainer = document.getElementById('detailDrawsToggle');
     const drawsContainer = document.getElementById('detailDraws');
     if (drawsToggleContainer && drawsContainer) {
         if (type === 'competition') {
-            const draws = getDrawsForCompetition(id);
+            const draws = getDrawsForCompetition(item.id);
             if (draws) {
-                // Show toggle buttons
                 drawsToggleContainer.style.display = 'flex';
                 drawsToggleContainer.innerHTML = `
                     <button class="draws-tab-btn active" data-tab="content" data-i18n="draws_tab_content">${i18n[currentLang].draws_tab_content}</button>
                     <button class="draws-tab-btn" data-tab="draws" data-i18n="draws_tab_bracket">${i18n[currentLang].draws_tab_bracket}</button>
                 `;
-                // Bind toggle events
                 const contentSection = document.getElementById('detailContent');
                 const mediaSection = document.getElementById('detailMedia');
                 drawsToggleContainer.querySelectorAll('.draws-tab-btn').forEach(btn => {
@@ -521,11 +635,9 @@ function updateDetailPage() {
                         }
                     });
                 });
-                // Render draws based on version
                 if (draws.version === 2 && typeof initDrawsViewer === 'function') {
                     drawsContainer.innerHTML = '';
                     drawsContainer.style.display = 'none';
-                    // The viewer will be initialized when tab is clicked
                     let viewerInitialized = false;
                     const bracketTab = drawsToggleContainer.querySelector('[data-tab="draws"]');
                     if (bracketTab) {
@@ -553,6 +665,86 @@ function updateDetailPage() {
     }
 }
 
+function renderDetailVersion(type, item) {
+    const container = document.getElementById('detailVersion');
+    if (!container) return;
+    container.innerHTML = '';
+    const vinfo = getVersionInfo(item);
+    const t = i18n[currentLang];
+    if (!vinfo.updatedAt && !vinfo.old.length) { container.style.display = 'none'; return; }
+    container.style.display = '';
+    const entry = document.createElement('button');
+    entry.className = 'detail-version-entry' + (vinfo.old.length ? ' has-history' : '');
+    entry.innerHTML = `<span class="detail-version-ver">v${escapeHtml(String(vinfo.current))}</span>${vinfo.updatedAt ? '<span class="detail-version-updated">' + escapeHtml(t.detail_version_updated.replace('{date}', String(vinfo.updatedAt))) + '</span>' : ''}${vinfo.old.length ? '<i class="fa-solid fa-chevron-down"></i>' : ''}`;
+    container.appendChild(entry);
+    if (!vinfo.old.length) return;
+    const dropdown = document.createElement('div');
+    dropdown.className = 'detail-version-dropdown';
+    dropdown.style.display = 'none';
+    const head = document.createElement('div');
+    head.className = 'detail-version-head';
+    head.innerHTML = `<i class="fa-solid fa-clock-rotate-left"></i><span>${escapeHtml(t.detail_version_list)}</span><span class="detail-version-count">${escapeHtml(String(vinfo.old.length))}</span>`;
+    dropdown.appendChild(head);
+    const list = document.createElement('ul');
+    list.className = 'detail-version-list';
+    vinfo.old.forEach(snap => {
+        const li = document.createElement('li');
+        li.className = 'detail-version-item';
+        li.innerHTML = `<span class="detail-version-item-ver">v${escapeHtml(String(snap.version || '?'))}</span><span class="detail-version-item-date">${escapeHtml(String(snap.updatedAt || ''))}</span><span class="detail-version-item-title">${escapeHtml(String(snap.title || ''))}</span>`;
+        const vb = document.createElement('button');
+        vb.className = 'detail-version-view';
+        vb.textContent = t.detail_version_view;
+        vb.addEventListener('click', () => { dropdown.style.display = 'none'; viewHistoryVersion(snap); });
+        li.appendChild(vb);
+        list.appendChild(li);
+    });
+    dropdown.appendChild(list);
+    container.appendChild(dropdown);
+    entry.addEventListener('click', () => { dropdown.style.display = dropdown.style.display === 'none' ? '' : 'none'; });
+    const closeHandler = (e) => { if (!container.contains(e.target)) { dropdown.style.display = 'none'; document.removeEventListener('click', closeHandler); } };
+    document.addEventListener('click', closeHandler);
+}
+
+async function viewHistoryVersion(snap) {
+    if (!detailState || !snap) return;
+    if (snap.file && !snap.content) {
+        const type = detailState.type, item = detailState.item;
+        const dir = getContentDirByType(type);
+        try {
+            const resp = await fetch(`data/${dir}/${encodeURIComponent(item.id)}/${encodeURIComponent(snap.file)}`);
+            if (resp.ok) {
+                const full = await resp.json();
+                if (full && typeof full === 'object') snap = Object.assign({}, snap, full);
+            }
+        } catch(e) { /* 快照加载失败时按清单数据渲染 */ }
+    }
+    const type = detailState.type, item = detailState.item;
+    document.getElementById('detailTitle').textContent = snap.title || '';
+    document.getElementById('detailDate').textContent = snap.date || '';
+    document.getElementById('detailContent').innerHTML = renderMarkdown(snap.content || snap.excerpt || '');
+    const contentSection = document.getElementById('detailContent');
+    if (contentSection) contentSection.style.display = '';
+    renderDetailMedia(snap);
+    renderDetailDrawsSection(type, item);
+    const container = document.getElementById('detailVersion');
+    if (!container) return;
+    container.innerHTML = '';
+    container.style.display = '';
+    const t = i18n[currentLang];
+    const vinfo = getVersionInfo(item);
+    const banner = document.createElement('div');
+    banner.className = 'detail-version-viewing';
+    const msg = document.createElement('span');
+    msg.innerHTML = `<i class="fa-solid fa-clock-rotate-left"></i>${escapeHtml(t.detail_version_viewing.replace('{version}', String(snap.version || '?')).replace('{date}', String(snap.updatedAt || '')))}`;
+    const back = document.createElement('button');
+    back.className = 'detail-version-back';
+    back.textContent = t.detail_version_back.replace('{version}', String(vinfo.current));
+    back.addEventListener('click', () => { renderDetailItem(type, item); });
+    banner.appendChild(msg);
+    banner.appendChild(back);
+    container.appendChild(banner);
+    if (typeof window.scrollTo === 'function') window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 function getPlayerName(p) {
     if (!p) return '—';
     if (typeof p === 'string') return p;

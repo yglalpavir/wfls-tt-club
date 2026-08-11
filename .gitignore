@@ -1,0 +1,26 @@
+# ===== Node =====
+node_modules/
+npm-debug.log*
+
+# ===== Python =====
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# ===== IDE =====
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===== 临时/一次性脚本数据（tools/）=====
+tools/tleague_data/
+tools/backup_wd/
+tools/_archive*/
+tools/mtc2025_matchcards.json
+tools/tleague_all.json
+tools/tleague_matches.json
+tools/doha_doubles_raw.txt
+tools/mixedteams2024playerlist copy.txt

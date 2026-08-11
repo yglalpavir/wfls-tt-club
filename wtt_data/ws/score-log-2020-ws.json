@@ -26,30 +26,6 @@
   {
     "日期": "2020-01-25",
     "类型": "T联赛",
-    "胜者": "Maharu YOSHIMURA",
-    "负者": "Kenta MATSUDAIRA"
-  },
-  {
-    "日期": "2020-01-25",
-    "类型": "T联赛",
-    "胜者": "Yuki HIRANO",
-    "负者": "Yuto KIZUKURI"
-  },
-  {
-    "日期": "2020-01-25",
-    "类型": "T联赛",
-    "胜者": "Takaya KAMI",
-    "负者": "JOO Saehyuk"
-  },
-  {
-    "日期": "2020-01-25",
-    "类型": "T联赛",
-    "胜者": "Yuki HIRANO",
-    "负者": "Maharu YOSHIMURA"
-  },
-  {
-    "日期": "2020-01-25",
-    "类型": "T联赛",
     "胜者": "Miyu NAGASAKI",
     "负者": "JEON Jihee"
   },
@@ -64,18 +40,6 @@
     "类型": "T联赛",
     "胜者": "Miu HIRANO",
     "负者": "Miyuu KIHARA"
-  },
-  {
-    "日期": "2020-01-26",
-    "类型": "T联赛",
-    "胜者": "Masaki YOSHIDA",
-    "负者": "Takaya KAMI"
-  },
-  {
-    "日期": "2020-01-26",
-    "类型": "T联赛",
-    "胜者": "Kazuhiro YOSHIMURA",
-    "负者": "Kenta MATSUDAIRA"
   },
   {
     "日期": "2020-01-26",
@@ -148,24 +112,6 @@
     "类型": "T联赛",
     "胜者": "YOO Mongyu",
     "负者": "YANG Haeun"
-  },
-  {
-    "日期": "2020-02-09",
-    "类型": "T联赛",
-    "胜者": "Takaya KAMI",
-    "负者": "Jun MIZUTANI"
-  },
-  {
-    "日期": "2020-02-09",
-    "类型": "T联赛",
-    "胜者": "Tomokazu HARIMOTO",
-    "负者": "Kenta MATSUDAIRA"
-  },
-  {
-    "日期": "2020-02-09",
-    "类型": "T联赛",
-    "胜者": "Tomokazu HARIMOTO",
-    "负者": "Kenta MATSUDAIRA"
   },
   {
     "日期": "2020-02-09",
@@ -326,24 +272,6 @@
   {
     "日期": "2020-11-20",
     "类型": "T联赛",
-    "胜者": "Jun MIZUTANI",
-    "负者": "Hiroto SHINOZUKA"
-  },
-  {
-    "日期": "2020-11-20",
-    "类型": "T联赛",
-    "胜者": "Kenta MATSUDAIRA",
-    "负者": "Mizuki OIKAWA"
-  },
-  {
-    "日期": "2020-11-20",
-    "类型": "T联赛",
-    "胜者": "Takaya KAMI",
-    "负者": "Yuya OSHIMA"
-  },
-  {
-    "日期": "2020-11-20",
-    "类型": "T联赛",
     "胜者": "Hina HAYATA",
     "负者": "Kyoka IZUSAWA"
   },
@@ -358,24 +286,6 @@
     "类型": "T联赛",
     "胜者": "YOO Mongyu",
     "负者": "Marina IBAYASHI"
-  },
-  {
-    "日期": "2020-11-21",
-    "类型": "T联赛",
-    "胜者": "Yuki HIRANO",
-    "负者": "Takaya KAMI"
-  },
-  {
-    "日期": "2020-11-21",
-    "类型": "T联赛",
-    "胜者": "Maharu YOSHIMURA",
-    "负者": "Kenta MATSUDAIRA"
-  },
-  {
-    "日期": "2020-11-21",
-    "类型": "T联赛",
-    "胜者": "Satoshi EIDA",
-    "负者": "Yukiya UDA"
   },
   {
     "日期": "2020-11-22",
@@ -424,18 +334,6 @@
     "类型": "T联赛",
     "胜者": "Hina HAYATA",
     "负者": "Haruna OJIO"
-  },
-  {
-    "日期": "2020-12-04",
-    "类型": "T联赛",
-    "胜者": "Satoshi EIDA",
-    "负者": "Yuki HIRANO"
-  },
-  {
-    "日期": "2020-12-04",
-    "类型": "T联赛",
-    "胜者": "Kazuhiro YOSHIMURA",
-    "负者": "Takaya KAMI"
   },
   {
     "日期": "2020-12-05",
@@ -544,36 +442,6 @@
     "类型": "T联赛",
     "胜者": "Hina HAYATA",
     "负者": "HAN Ying"
-  },
-  {
-    "日期": "2020-12-23",
-    "类型": "T联赛",
-    "胜者": "Yuki HIRANO",
-    "负者": "Taimu ARINOBU"
-  },
-  {
-    "日期": "2020-12-23",
-    "类型": "T联赛",
-    "胜者": "Kenta MATSUDAIRA",
-    "负者": "Yukiya UDA"
-  },
-  {
-    "日期": "2020-12-23",
-    "类型": "T联赛",
-    "胜者": "Shunsuke TOGAMI",
-    "负者": "Hiroto SHINOZUKA"
-  },
-  {
-    "日期": "2020-12-23",
-    "类型": "T联赛",
-    "胜者": "Sho SONE",
-    "负者": "Maharu YOSHIMURA"
-  },
-  {
-    "日期": "2020-12-23",
-    "类型": "T联赛",
-    "胜者": "Shunsuke TOGAMI",
-    "负者": "Sho SONE"
   },
   {
     "日期": "2020-12-25",

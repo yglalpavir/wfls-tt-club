@@ -3,6 +3,7 @@
    ======================================== */
 :root {
     --primary-blue: #007bff;
+    --accent-blue: #007bff;
     --primary-dark: #0056b3;
     --primary-light: #4da3ff;
     --primary-pale: #e6f2ff;
@@ -44,6 +45,7 @@
    ======================================== */
 body.dark-mode {
     --primary-blue: #4da3ff;
+    --accent-blue: #4da3ff;
     --primary-dark: #2b7de9;
     --primary-light: #7bbfff;
     --primary-pale: rgba(77, 163, 255, 0.12);
@@ -1235,6 +1237,35 @@ body.dark-mode .draws-player.draws-winner { color: var(--primary-light); }
 body.dark-mode .draws-vs { color: var(--text-muted); background: var(--bg-lighter); }
 body.dark-mode .draws-match-score { color: var(--accent-red); }
 body.dark-mode .draws-match { background: var(--glass-bg); border-color: var(--border-color); }
+
+/* ========================================
+   详情页版本历史（标题下方入口）
+   ======================================== */
+.detail-version { position: relative; display: inline-flex; justify-content: center; margin-top: 12px; z-index: 20; }
+.detail-version-entry, .detail-version-viewing { display: inline-flex; align-items: center; gap: 8px; padding: 5px 14px; border: 1px solid rgba(255,255,255,0.4); border-radius: 18px; background: rgba(255,255,255,0.14); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); color: #fff; font-size: 0.85rem; transition: all var(--transition-fast); }
+.detail-version-entry { cursor: pointer; }
+.detail-version-entry:hover { background: rgba(255,255,255,0.26); border-color: #fff; }
+.detail-version-entry.has-history { padding-right: 10px; }
+.detail-version-ver { font-weight: 700; font-family: var(--font-en); }
+.detail-version-updated { opacity: 0.9; }
+.detail-version-entry i { font-size: 0.72rem; opacity: 0.9; }
+.detail-version-dropdown { position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%); width: min(460px, 88vw); background: var(--glass-bg); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); box-shadow: var(--glass-shadow); overflow: hidden; text-align: left; }
+.detail-version-head { display: flex; align-items: center; gap: 8px; padding: 10px 16px; font-weight: 600; font-size: 0.9rem; color: var(--text-primary); border-bottom: 1px solid var(--border-color); }
+.detail-version-head i { color: var(--primary-blue); font-size: 0.85rem; }
+.detail-version-count { margin-left: auto; color: var(--text-muted); font-size: 0.8rem; font-weight: 400; }
+.detail-version-list { list-style: none; margin: 0; padding: 6px 0; max-height: 260px; overflow-y: auto; }
+.detail-version-item { display: flex; align-items: center; gap: 10px; padding: 8px 16px; color: var(--text-primary); }
+.detail-version-item:hover { background: var(--bg-lighter); }
+.detail-version-item-ver { font-family: var(--font-en); font-weight: 700; font-size: 0.78rem; color: var(--primary-blue); background: var(--primary-pale); padding: 2px 8px; border-radius: 10px; flex-shrink: 0; }
+.detail-version-item-date { color: var(--text-muted); font-size: 0.8rem; flex-shrink: 0; width: 88px; }
+.detail-version-item-title { color: var(--text-secondary); font-size: 0.88rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.detail-version-view { margin-left: auto; padding: 3px 12px; border: 1px solid var(--border-color); border-radius: 13px; background: transparent; color: var(--text-secondary); font-size: 0.8rem; cursor: pointer; flex-shrink: 0; transition: all var(--transition-fast); }
+.detail-version-view:hover { color: #fff; background: var(--primary-blue); border-color: var(--primary-blue); }
+.detail-version-viewing i { color: var(--primary-light); font-size: 0.85rem; }
+.detail-version-back { margin-left: 6px; padding: 4px 14px; border: none; border-radius: 14px; background: #fff; color: var(--primary-dark); font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: all var(--transition-fast); }
+.detail-version-back:hover { background: var(--primary-blue); color: #fff; }
+body.dark-mode .detail-version-dropdown { background: var(--glass-bg); border-color: var(--border-color); }
+body.dark-mode .detail-version-item-ver { color: var(--primary-light); background: rgba(77,163,255,0.12); }
 
 /* ========================================
    Markdown 内容样式
