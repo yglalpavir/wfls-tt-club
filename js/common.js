@@ -487,8 +487,19 @@ async function loadContentItem(type, id) {
         const resp = await fetch(`data/${dir}/${encodeURIComponent(id)}/${encodeURIComponent(id)}.json`);
         if (resp.ok) return await resp.json();
     } catch(e) { /* 回退到索引数据 */ }
+    // 索引回退：index.json 为元数据（无 content），search.json 含正文
     const da = getContentListByType(type);
-    return (da && da.find(d => d.id == id)) || null;
+    let item = (da && da.find(d => d.id == id)) || null;
+    if (item && item.content) return item;
+    try {
+        const sresp = await fetch(`data/${dir}/search.json`);
+        if (sresp.ok) {
+            const slist = await sresp.json();
+            const sitem = (Array.isArray(slist) ? slist : []).find(d => d.id == id);
+            if (sitem) item = Object.assign({}, item || {}, sitem);
+        }
+    } catch(e) { /* 搜索索引缺失时保持索引回退结果 */ }
+    return item;
 }
 async function loadHistoryManifest(type, id) {
     const dir = getContentDirByType(type);

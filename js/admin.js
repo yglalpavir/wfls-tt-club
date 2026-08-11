@@ -194,11 +194,32 @@ async function loadAllData() {
 
     const elapsed = ((performance.now() - startTime) / 1000).toFixed(1);
 
+    // 隐藏历史版本计数（index.json 为元数据，需读各条目 history 清单）
+    const hiddenVersions = await loadHiddenVersionCounts();
+
     // 渲染仪表盘
-    renderDashboard(elapsed);
+    renderDashboard(elapsed, hiddenVersions);
 
     $("loadingView").style.display = "none";
     $("dashboardContent").style.display = "";
+}
+
+async function loadHiddenVersionCounts() {
+    const counts = { news: 0, competitions: 0, qa: 0 };
+    const dirMap = { news: "news", competitions: "competitions", qa: "qa" };
+    const jobs = [];
+    for (const [key, dir] of Object.entries(dirMap)) {
+        const list = allData[key] || [];
+        for (const it of list) {
+            if (!it || it.id == null) continue;
+            const id = String(it.id);
+            jobs.push(fetchJson(`data/${dir}/${encodeURIComponent(id)}/${encodeURIComponent(id)}.history.json`)
+                .then(m => { if (Array.isArray(m)) counts[key] += m.filter(x => x && x.visible === false).length; })
+                .catch(() => {}));
+        }
+    }
+    await Promise.all(jobs);
+    return counts;
 }
 
 async function fetchJson(path) {
@@ -413,8 +434,13 @@ function computeStats() {
 // ========================================
 // 仪表盘渲染
 // ========================================
-function renderDashboard(loadTime) {
+function renderDashboard(loadTime, hiddenVersions) {
     const stats = computeStats();
+    if (hiddenVersions) {
+        stats.coreNewsHiddenVersions = hiddenVersions.news;
+        stats.coreCompetitionsHiddenVersions = hiddenVersions.competitions;
+        stats.coreQaHiddenVersions = hiddenVersions.qa;
+    }
     const container = $("dashboardContent");
     container.innerHTML = "";
 

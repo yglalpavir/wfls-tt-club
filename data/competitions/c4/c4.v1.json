@@ -1,0 +1,21 @@
+{
+  "date": "2026-04-10",
+  "title": "2026年武汉外国语学校乒乓球团体比赛结果",
+  "excerpt": "冠军：魏罗瑞、陈瑜萱、王成悦\n祁子傲、李南熠、丁瑞、张书行（替补）\n亚军：梅哲宇、龚雨煊、王天森\n季军：张宸瑞、陈项诚、任峻贤、岳镇淳（替补）",
+  "content": "冠军：魏罗瑞、陈瑜萱、王成悦\n祁子傲、李南熠、丁瑞、张书行（替补）\n亚军：梅哲宇、龚雨煊、王天森\n季军：张宸瑞、陈项诚、任峻贤、岳镇淳（替补）",
+  "tag": "result",
+  "media": [
+    {
+      "type": "file",
+      "src": "Assets/files/2026-wflsttmatch-1.pdf",
+      "name": "比赛记录PDF"
+    },
+    {
+      "type": "file",
+      "src": "Assets/files/2026-wflsttmatch-1.xlsx",
+      "name": "比赛记录Excel"
+    }
+  ],
+  "version": 1,
+  "updatedAt": "2026-04-10"
+}

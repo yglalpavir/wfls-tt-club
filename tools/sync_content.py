@@ -17,9 +17,15 @@
   - 版本快照:  {id}.v{版本号}.json     （如 n1.v1.json、n1.v2.json）
   - 版本清单:  {id}.history.json       （列出版本号/更新日期/标题/可见性/文件名）
 
-条目展示 JSON 可携带两个可选字段:
+条目展示 JSON 可携带三个可选字段:
   - "visible": false  表示前台隐藏（仍进入 index.json/search.json，前端过滤；再改回 true 即可恢复）
   - "media": []       媒体附件列表
+  - "contentFile":    正文引用 Markdown 文件，替代直接写 "content"
+      * 值为文件名（如 "content.md"）时，指向条目文件夹下 {type}/{id}/content.md
+      * 值为含 "/" 的路径（如 "Assets/md/n1.md" 或 "/Assets/md/n1.md"）时，指向站点根目录相对路径
+      * 同步时脚本自动读取该文件，把正文内联进 search.json 与版本快照；前端详情页也会实时拉取该文件
+      * "content" 与 "contentFile" 同时存在时以 contentFile 为准（不做内联校验警告）
+      * 版本比较基于内联后的正文：md 内容变了即归档新版本快照
 
 版本历史由脚本自动维护（写入快照文件与清单，不修改展示文件）:
   - 首次同步为条目建立 v1 基线快照（updatedAt 取条目 date）
@@ -394,20 +400,51 @@ def migrate_flat_entry(type_name, fpath):
     return True
 
 
+def flat_entry_files(type_name):
+    """返回顶层旧版扁平条目文件（除 index.json / search.json 外）"""
+    dir_path = os.path.join(DATA_DIR, type_name)
+    if not os.path.isdir(dir_path):
+        return []
+    return [f for f in sorted(glob.glob(os.path.join(dir_path, "*.json")))
+            if os.path.basename(f) not in GENERATED_FILES]
+
+
+def migrate_flat_files(type_name):
+    """迁移旧版扁平条目文件（写文件）。"""
+    for f in flat_entry_files(type_name):
+        migrate_flat_entry(type_name, f)
+
+
+def simulate_flat_manifest(item, item_id):
+    """内存模拟扁平文件迁移后的 (manifest, snapshots)，不写文件。
+    内嵌 history（新→旧）抽取为清单与快照字典；无 history 则视为空。"""
+    hist = item.get("history")
+    manifest, snapshots = [], {}
+    if isinstance(hist, list):
+        for snap in hist:
+            if not isinstance(snap, dict):
+                continue
+            v = snapshot_version(snap)
+            if v < 1:
+                continue
+            snapshots[v] = snap
+            manifest.append({
+                "version": v,
+                "updatedAt": snap.get("updatedAt") or "",
+                "title": snap.get("title") or "",
+                "visible": snap.get("visible") if "visible" in snap else None,
+                "file": "{}.v{}.json".format(item_id, v),
+            })
+        manifest.sort(key=snapshot_version, reverse=True)
+    return manifest, snapshots
+
+
 def scan_entries(type_name):
-    """扫描条目文件夹，返回 [(item_id, item)]，并处理旧版扁平文件迁移。
-    顶层 *.json 中除 index.json / search.json 外的文件视为旧版扁平条目文件。"""
+    """扫描条目文件夹，返回 [(item_id, item)]。"""
     dir_path = os.path.join(DATA_DIR, type_name)
     if not os.path.isdir(dir_path):
         log_warn("{}: {} 目录不存在".format(type_name, dir_path))
         return []
-
-    # 旧版扁平条目文件迁移
-    for f in sorted(glob.glob(os.path.join(dir_path, "*.json"))):
-        base = os.path.basename(f)
-        if base in GENERATED_FILES:
-            continue
-        migrate_flat_entry(type_name, f)
 
     entries = []
     for folder in sorted(glob.glob(os.path.join(dir_path, "*"))):
@@ -429,8 +466,9 @@ def scan_entries(type_name):
 
 
 def sync_type(type_name):
-    """扫描条目，维护版本历史，重新生成 index.json（元数据）与 search.json（搜索索引）。"""
+    """迁移旧版扁平文件，扫描条目，维护版本历史，重新生成 index.json 与 search.json。"""
     dir_path = os.path.join(DATA_DIR, type_name)
+    migrate_flat_files(type_name)
     entries = scan_entries(type_name)
 
     items = []
@@ -509,6 +547,22 @@ def check_type(type_name):
             hidden += 1
         sim_item = copy.deepcopy(item)
         sim_manifest, new_snap, _ = maintain_history(type_name, sim_item, manifest, snapshots)
+        if new_snap is not None:
+            planned += 1
+        total_snaps += len(sim_manifest)
+    # 模拟旧版扁平文件的迁移结果（不写文件）
+    for f in flat_entry_files(type_name):
+        item = load_json(f)
+        if item is None or not isinstance(item, dict):
+            continue
+        item_id = str(item.get("id") or "")
+        if not validate_item(type_name, item, item_id):
+            continue
+        if item.get("visible") is False:
+            hidden += 1
+        sim_manifest, sim_snapshots = simulate_flat_manifest(item, item_id)
+        sim_item = copy.deepcopy(item)
+        sim_manifest, new_snap, _ = maintain_history(type_name, sim_item, sim_manifest, sim_snapshots)
         if new_snap is not None:
             planned += 1
         total_snaps += len(sim_manifest)

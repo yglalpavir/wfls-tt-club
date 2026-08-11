@@ -45,9 +45,9 @@ wfls-tt-club/
 ├── data/                       # 站内数据（JSON）
 │   ├── about.json              # 社团简介数据（历史、理念、活动）
 │   ├── players.json            # 统一球员档案（uid/初始积分/标签/荣誉/职务）
-│   ├── news/                   # 新闻动态（每条目一个文件 + index.json 索引）
-│   ├── competitions/           # 赛事信息（每条目一个文件 + index.json 索引）
-│   ├── qa/                     # 常见问题（每条目一个文件 + index.json 索引）
+│   ├── news/                   # 新闻动态（条目文件夹 {id}/ + 生成的 index/search.json）
+│   ├── competitions/           # 赛事信息（条目文件夹 {id}/ + 生成的 index/search.json）
+│   ├── qa/                     # 常见问题（条目文件夹 {id}/ + 生成的 index/search.json）
 │   ├── changelog.json          # 更新日志数据
 │   ├── draws.json              # 对阵表数据
 │   ├── event-coefficient.json  # 赛事系数配置
@@ -224,21 +224,30 @@ git push -u origin main
 
 ### `news/` `competitions/` `qa/` - 新闻动态 / 赛事信息 / 常见问题
 
-三类内容采用**一条目一文件**的存储方式：
+三类内容采用**一条目一个文件夹**的存储方式：
 
 ```
-data/news/           data/competitions/     data/qa/
-├── index.json        ├── index.json         ├── index.json
-├── n1.json           ├── c1.json            ├── q1.json
-├── n2.json           ├── c2.json            └── q2.json
-└── ...               └── ...
+data/news/               data/competitions/     data/qa/
+├── index.json           ├── index.json         ├── index.json   ← 生成：元数据索引
+├── search.json          ├── search.json        ├── search.json  ← 生成：搜索索引（含正文）
+├── n1/                  ├── c1/                ├── q1/
+│   ├── n1.json          │   ├── c1.json        │   ├── q1.json  ← 唯一数据源（编辑维护时改它）
+│   ├── n1.history.json  │   ├── c1.history.json│   ├── q1.history.json ← 生成：版本清单
+│   └── n1.v1.json       │   └── c1.v1.json     │   └── q1.v1.json      ← 生成：版本快照（只读）
+├── n2/                  ├── c2/                └── q2/
+└── ...                  └── ...
 ```
 
-- `{id}.json`：每条目一个文件，是**唯一数据源**（编辑维护时改它）
-- `index.json`：由 `tools/sync_content.py` 生成的完整条目索引（含 content，供列表/搜索/详情使用），**不要手动编辑**
+各文件职责：
+
+- `{id}/{id}.json`：**唯一数据源**，编辑维护时只改它（纯内容字段，不含 `history`）
+- `{id}/{id}.history.json`：版本清单（生成），形如 `[{version, updatedAt, title, visible, file}]`，新→旧排列
+- `{id}/{id}.v{n}.json`：版本快照 v{n}（生成，只读；n 从 1 起递增，只增不改）
+- `index.json`：由 `tools/sync_content.py` 生成的**元数据索引**（id/date/title/excerpt/tag/media/visible），供列表与详情兜底使用，**不要手动编辑**
+- `search.json`：由脚本生成的**搜索索引**（id/date/title/excerpt/content），**不要手动编辑**
 - 列表与搜索按 `date` 倒序展示，`date` 需为 `YYYY-MM-DD`（该字段也用于排序与校验）
 
-单条目文件格式（三类通用，字段可选多少不同）：
+条目展示文件格式（三类通用，字段可选多少不同）：
 
 ```json
 {
@@ -258,28 +267,29 @@ data/news/           data/competitions/     data/qa/
 
 #### 显示控制（`visible`）
 
-可选字段，默认显示。设为 `false` 时前台**隐藏**（列表、搜索、详情均不可见），但条目仍保留在 `index.json` 中，管理后台会显示隐藏数量；改回 `true` 即可恢复：
+可选字段，默认显示。设为 `false` 时前台**隐藏**（列表、搜索、详情均不可见），但条目仍保留在 `index.json`/`search.json` 中，管理后台会显示隐藏数量；改回 `true` 即可恢复：
 
 ```json
 { "id": "n1", "visible": false }
 ```
 
-#### 历史版本（`history`）
+#### 历史版本（版本清单 + 快照）
 
-可选字段，由 `tools/sync_content.py` **自动维护**，请勿手动编辑：
+由 `tools/sync_content.py` **自动维护**，请勿手动编辑：
 
 - 首次同步为每条目建立 v1 基线快照（`updatedAt` 取条目 `date`）
-- 此后每次内容变更（`date/title/excerpt/content/tag/media` 任一变化），同步时自动把**上一版线上内容**归档为新快照（版本号 +1，`updatedAt` 为当天），`history` 从新到旧排列
-- 每次同步后 `history[0]` 与当前线上内容一致，未改动时重复运行脚本不会新增快照（幂等）
-- 详情页自动显示版本号与最后更新时间，可展开查看并切换旧版本
+- 此后每次内容变更（`date/title/excerpt/content/tag/media` 任一变化），同步时自动把**上一版线上内容**归档为新快照（版本号 +1，`updatedAt` 为当天），版本清单从新到旧排列
+- 每次同步后清单首项与当前线上内容一致，未改动时重复运行脚本不会新增快照（幂等）
+- 详情页自动显示版本号与最后更新时间，可展开查看并切换旧版本（点击"查看"时按清单 `file` 懒加载对应快照文件）
+- 如需隐藏某个历史版本，可在对应快照文件 `{id}.v{n}.json` 上设 `"visible": false`（同步时保留进清单，详情页历史列表不显示）
 
 ```json
 {
-  "id": "n1",
-  "title": "新版标题",
-  "history": [
-    {"version": 2, "updatedAt": "2026-08-11", "date": "2025-01-06", "title": "历史标题", "excerpt": "...", "content": "...", "tag": "notice", "media": []}
-  ]
+  "version": 2,
+  "updatedAt": "2026-08-11",
+  "title": "历史标题",
+  "visible": null,
+  "file": "n1.v2.json"
 }
 ```
 
@@ -306,11 +316,13 @@ data/news/           data/competitions/     data/qa/
 编辑任意条目文件后，运行：
 
 ```bash
-python tools/sync_content.py            # 重写 index.json + 自动维护版本历史（附带校验警告）
+python tools/sync_content.py            # 重写 index.json / search.json + 维护版本历史（附带校验警告）
 python tools/sync_content.py --check    # 仅校验（含预计新增快照数），不写入
 ```
 
-脚本会校验：文件名 == 条目 id、必填字段、tag 白名单、日期格式、media 文件是否存在、id 唯一、history 结构（版本号从新到旧递减、快照字段齐全）。输出中会显示各类型隐藏数与快照总数。
+- 新增条目：在 `data/{type}/{id}/` 下新建 `{id}.json`，运行脚本即可（首次同步自动建立 v1 基线快照）
+- 旧版扁平文件（`data/{type}/{id}.json`，含内嵌 history）：运行脚本时自动一次性迁移为文件夹结构（快照从内嵌 history 抽取，平铺文件删除）
+- 脚本会校验：文件名 == 条目 id、必填字段、tag 白名单、日期格式、media 文件是否存在、id 唯一、清单与快照结构（版本号递减、字段齐全）。输出中会显示各类型隐藏数与快照总数。
 
 > 原合并版 `data/news.json` / `data/competitions.json` / `data/qa.json` 已备份至 `data/_legacy/`，仅作历史存档，代码不再读取。
 
@@ -465,8 +477,8 @@ python tools/sync_content.py --check    # 仅校验（含预计新增快照数�
 
 ### 添加新闻/赛事/问答
 
-- 新增一个条目文件，如 `data/news/n17.json`（id 与文件名一致，格式见上文）
-- 删除条目：直接删除对应 `data/{type}/{id}.json` 文件
+- 新增条目：新建文件夹 `data/{type}/{id}/`，放入条目文件 `data/{type}/{id}/{id}.json`（id 与文件名/文件夹名一致，格式见上文）
+- 删除条目：直接删除对应 `data/{type}/{id}/` 文件夹
 - 临时隐藏（不删除）：在条目文件里加 `"visible": false`，之后改回 `true` 即可恢复
 - 媒体文件放入对应 `Assets/` 子文件夹，路径需与 JSON 中一致
 - 修改后运行 `python tools/sync_content.py` 重新生成索引（顺序自动按 date 倒序，历史版本自动归档，无需手动排序）
