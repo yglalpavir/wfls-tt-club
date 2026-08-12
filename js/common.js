@@ -72,13 +72,14 @@ const i18n = {
         score_detail_title: "积分明细", score_col_date: "日期", score_col_type: "类型", score_col_opponent: "对手", score_col_result: "结果", score_col_score_before: "赛前积分", score_col_change: "积分变动", score_col_score_after: "赛后积分", score_result_win: "胜", score_result_loss: "负",
         tag_match: "赛事", tag_training: "训练", tag_notice: "公告", tag_event: "活动", tag_daily: "日常", tag_upcoming: "即将开始", tag_result: "比赛结果", tag_live: "进行中",
         filter_all: "全部",
-        detail_page_title: "详情 | WFLS Table Tennis Club", detail_back: "返回列表", pdf_preview_btn: "预览PDF", pdf_download_btn: "下载PDF",
+        detail_page_title: "详情 | WFLS Table Tennis Club", detail_back: "返回列表", detail_version_updated: "更新于 {date}", detail_version_list: "历史版本", detail_version_view: "查看", detail_version_viewing: "正在查看 v{version}（更新于 {date}）", detail_version_back: "返回 v{version}", pdf_preview_btn: "预览PDF", pdf_download_btn: "下载PDF",
         search_placeholder: "搜索新闻、赛事、成员、排名、更新日志...", search_no_results: "未找到相关结果", search_type_news: "新闻", search_type_competition: "赛事", search_type_member: "成员", search_type_ranking: "排名", search_type_qa: "问答", search_type_changelog: "更新日志",
         qa_page_title: "常见问题 | WFLS Table Tennis Club", qa_hero_tag: "Q&A", qa_hero_title: "常见问题", qa_hero_desc: "加入社团 / 活动安排 / 积分系统 / 比赛报名", qa_list_tag: "All Q&A", qa_list_title: "全部问答",
         pagination_prev: "上一页", pagination_next: "下一页", pagination_info: "第 {current} 页，共 {total} 页",
         data_viz_page_title: "数据可视化 | WFLS Table Tennis Club", data_viz_tag: "Data Visualization", data_viz_title: "数据可视化", data_viz_desc: "积分趋势 · 排名变化 · 球员对比",
         data_viz_points_trend: "积分趋势", data_viz_rank_stream: "排名变化河流图", data_viz_player_compare: "球员对比", data_viz_select_players: "选择球员（最多8人）", data_viz_select_player_a: "球员 A", data_viz_select_player_b: "球员 B", data_viz_apply: "应用", data_viz_top_n: "显示前", data_viz_head_to_head: "历史交手记录",
         data_viz_recent: "最近", data_viz_data_points: "个数据点", data_viz_top_n_suffix: "名球员", data_viz_compare_btn: "对比", data_viz_compare_placeholder: "选择两名球员进行对比分析", data_viz_no_players: "暂无球员数据", data_viz_alert_select_one: "请至少选择一名球员", data_viz_alert_max: "最多选择15名球员", data_viz_alert_two: "请选择两名球员", data_viz_alert_diff: "请选择不同的球员", data_viz_select_player_ph: "-- 选择球员 --", data_viz_win: "胜", data_viz_total_h2h: "总交手: {n} 场", data_viz_recent_match: "最近: {date} (胜者: {winner})", data_viz_pts_change: "{player} 积分变动", data_viz_no_h2h: "暂无交手记录", data_viz_col_date: "日期", data_viz_col_type: "类型", data_viz_col_winner: "胜者", data_viz_axis_points: "积分", data_viz_axis_rank: "排名", data_viz_rank_suffix: "第{n}名", data_viz_topn_select_title: "填写1-20的任意正整数", data_viz_cur_score: "当前积分", data_viz_h2h_rate: "交手胜率", data_viz_pred_rate: "预测胜率", data_viz_prepare: "准备下载数据文件...", data_viz_topn_title: "显示最近N个数据点", data_viz_stream_title: "显示最近N个数据点", data_viz_loading: "加载数据中...", data_viz_downloading: "正在下载 {label} ({i}/{total}): {file}", data_viz_calculating: "正在计算排名积分...", data_viz_load_fail: "❌ 排名数据加载失败，请刷新页面重试", data_viz_file_players: "球员档案", data_viz_file_matches: "比赛记录", data_viz_file_initial: "初始积分", data_viz_file_event: "赛事系数", data_viz_file_decay: "衰减配置", data_viz_file_season: "赛季配置", data_viz_no_player_list: "❌ 无法获取球员列表",
+        data_viz_record_title: "战绩统计", data_viz_efficiency_title: "场次×积分效率", data_viz_heatmap_title: "交手热力矩阵", data_viz_freq_title: "比赛频次时间轴", data_viz_dist_title: "积分区间分布", data_viz_loss: "负", data_viz_total: "总场次", data_viz_winrate: "胜率", data_viz_form: "状态分", data_viz_pts_norm: "积分", data_viz_bucket_week: "按周", data_viz_bucket_month: "按月", data_viz_bins: "分档数", data_viz_no_data: "暂无数据", data_viz_heatmap_cell: "{winner} 对 {loser} 胜 {n} 场", data_viz_heatmap_hint: "行球员对列球员的胜场 · 颜色越深胜场越多", data_viz_axis_matches: "场次", data_viz_axis_players: "球员", data_viz_axis_count: "人数", data_viz_bucket_label: "时间粒度", data_viz_other: "其他",
         season_initial_label: "{season}初始积分", score_type_bonus: "比赛结果加分",
         personal_stats_page_title: "个人数据 | WFLS Table Tennis Club", personal_stats_tag: "Personal Stats", personal_stats_title: "个人数据", personal_stats_desc: "个人比赛数据统计", personal_stats_filter_label: "按标签筛选", personal_stats_search_label: "搜索球员", personal_stats_search_ph: "搜索球员姓名 / 编号 / 标签（支持拼音）", personal_stats_placeholder: "位球员，选择一名查看个人数据页", personal_stats_no_tags: "暂无标签数据", personal_stats_tag_count: "{n}人", personal_stats_player_count: "{shown} / {total}", personal_stats_player_count_total: "{total}", personal_stats_no_match: "未找到匹配球员", personal_stats_no_data: "暂无比赛数据", personal_stats_load_fail: "数据加载失败，请刷新重试",
         pp_back_index: "返回总览", pp_prev_player: "上一名", pp_next_player: "下一名", pp_no_player: "未找到该球员", pp_all_records: "全部比赛记录", pp_player_id: "球员编号", pp_search_ph: "搜索球员姓名 / 编号 / 标签", pp_total_players: "共 {n} 名球员", pp_role: "职务", pp_match_detail: "积分明细", pp_view_profile: "查看个人数据页",
@@ -98,6 +99,8 @@ const i18n = {
         wtt_alert_select_one: "请至少选择一名球员", wtt_alert_max: "最多选择15名球员", wtt_alert_two: "请选择两名球员", wtt_alert_diff: "请选择不同的球员",
         wtt_axis_points: "积分", wtt_axis_rank: "排名", wtt_rank_suffix: "第{n}名",
         wtt_cur_score: "当前积分", wtt_h2h_rate: "交手胜率", wtt_pred_rate: "预测胜率", wtt_total_h2h: "总交手: {n} 场", wtt_wins: "{player} {n} 胜", wtt_recent: "最近: {date} (胜者: {winner})", wtt_winner: "胜者", wtt_pts_change: "{player} 积分变动", wtt_no_h2h: "暂无交手记录",
+        wtt_recent_label: "最近", wtt_data_points: "个数据点", wtt_players: "名球员", wtt_player_a: "球员 A", wtt_player_b: "球员 B", wtt_select_players: "选择球员（最多8人）", wtt_top_n: "显示前",
+        wtt_record_title: "战绩统计", wtt_efficiency_title: "场次×积分效率", wtt_heatmap_title: "交手热力矩阵", wtt_freq_title: "比赛频次时间轴", wtt_dist_title: "积分区间分布", wtt_loss: "负", wtt_total: "总场次", wtt_winrate: "胜率", wtt_form: "状态分", wtt_pts_norm: "积分", wtt_bucket_week: "按周", wtt_bucket_month: "按月", wtt_bins: "分档数", wtt_no_data: "暂无数据", wtt_heatmap_cell: "{winner} 对 {loser} 胜 {n} 场", wtt_heatmap_hint: "行球员对列球员的胜场 · 颜色越深胜场越多", wtt_axis_matches: "场次", wtt_axis_players: "球员", wtt_axis_count: "人数", wtt_bucket_label: "时间粒度", wtt_other: "其他",
         wtt_ps_hero_title: "WTT 个人比赛数据统计", wtt_ps_title: "WTT 个人数据", wtt_ps_label: "选择球员", wtt_ps_search_ph: "搜索球员名称...", wtt_ps_view: "查看数据", wtt_ps_placeholder: "选择一名球员查看个人数据", wtt_ps_nomatch: "无匹配球员", wtt_ps_nodata: "暂无比赛数据",
         wtt_ov_total: "总场次", wtt_ov_wins: "获胜", wtt_ov_losses: "失利", wtt_ov_percentile: "胜率", wtt_ov_current: "当前积分", wtt_ov_max: "最高积分", wtt_ov_bestrank: "最高排名",
         wtt_ps_sum1: "{player}共进行了{total}盘比赛，获胜{wins}盘，失利{losses}盘。", wtt_ps_sum2: "{player}的胜率为{percent}%。",
@@ -129,13 +132,14 @@ const i18n = {
         score_detail_title: "Score Details", score_col_date: "Date", score_col_type: "Type", score_col_opponent: "Opponent", score_col_result: "Result", score_col_score_before: "Before", score_col_change: "Change", score_col_score_after: "After", score_result_win: "Win", score_result_loss: "Loss",
         tag_match: "Match", tag_training: "Training", tag_notice: "Notice", tag_event: "Event", tag_daily: "Daily", tag_upcoming: "Upcoming", tag_result: "Result", tag_live: "Live",
         filter_all: "All",
-        detail_page_title: "Details | WFLS Table Tennis Club", detail_back: "Back to List", pdf_preview_btn: "Preview PDF", pdf_download_btn: "Download PDF",
+        detail_page_title: "Details | WFLS Table Tennis Club", detail_back: "Back to List", detail_version_updated: "Updated {date}", detail_version_list: "Version History", detail_version_view: "View", detail_version_viewing: "Viewing v{version} (updated {date})", detail_version_back: "Back to v{version}", pdf_preview_btn: "Preview PDF", pdf_download_btn: "Download PDF",
         search_placeholder: "Search news, competitions, members, rankings, changelog...", search_no_results: "No results found", search_type_news: "News", search_type_competition: "Competition", search_type_member: "Member", search_type_ranking: "Ranking", search_type_qa: "Q&A", search_type_changelog: "Changelog",
         qa_page_title: "Q&A | WFLS Table Tennis Club", qa_hero_tag: "Q&A", qa_hero_title: "Q&A", qa_hero_desc: "Join / Schedule / Ranking / Registration", qa_list_tag: "All Q&A", qa_list_title: "All Q&A",
         pagination_prev: "Previous", pagination_next: "Next", pagination_info: "Page {current} of {total}",
         data_viz_page_title: "Data Visualization | WFLS Table Tennis Club", data_viz_tag: "Data Visualization", data_viz_title: "Data Visualization", data_viz_desc: "Points Trend · Rank Flow · Player Compare",
         data_viz_points_trend: "Points Trend", data_viz_rank_stream: "Rank Flow", data_viz_player_compare: "Player Comparison", data_viz_select_players: "Select Players (max 8)", data_viz_select_player_a: "Player A", data_viz_select_player_b: "Player B", data_viz_apply: "Apply", data_viz_top_n: "Top", data_viz_head_to_head: "Head to Head",
         data_viz_recent: "Recent", data_viz_data_points: "data points", data_viz_top_n_suffix: "players", data_viz_compare_btn: "Compare", data_viz_compare_placeholder: "Select two players to compare", data_viz_no_players: "No players yet", data_viz_alert_select_one: "Please select at least one player", data_viz_alert_max: "Maximum of 15 players", data_viz_alert_two: "Please select two players", data_viz_alert_diff: "Please select two different players", data_viz_select_player_ph: "-- Select Player --", data_viz_win: "wins", data_viz_total_h2h: "Total H2H: {n} matches", data_viz_recent_match: "Recent: {date} (Winner: {winner})", data_viz_pts_change: "{player} point change", data_viz_no_h2h: "No head-to-head records", data_viz_col_date: "Date", data_viz_col_type: "Type", data_viz_col_winner: "Winner", data_viz_axis_points: "Points", data_viz_axis_rank: "Rank", data_viz_rank_suffix: "Rank #{n}", data_viz_topn_select_title: "Enter any positive integer from 1 to 20", data_viz_cur_score: "Current Points", data_viz_h2h_rate: "H2H Win Rate", data_viz_pred_rate: "Predicted Win Rate", data_viz_prepare: "Preparing data files...", data_viz_topn_title: "Show recent N data points", data_viz_stream_title: "Show recent N data points", data_viz_loading: "Loading data...", data_viz_downloading: "Downloading {label} ({i}/{total}): {file}", data_viz_calculating: "Calculating rankings...", data_viz_load_fail: "❌ Failed to load ranking data. Please refresh and try again.", data_viz_file_players: "Players", data_viz_file_matches: "Match Records", data_viz_file_initial: "Initial Scores", data_viz_file_event: "Event Coefficients", data_viz_file_decay: "Decay Config", data_viz_file_season: "Season Config", data_viz_no_player_list: "❌ Could not fetch player list",
+        data_viz_record_title: "Match Records", data_viz_efficiency_title: "Matches × Points", data_viz_heatmap_title: "Head-to-Head Matrix", data_viz_freq_title: "Match Frequency Timeline", data_viz_dist_title: "Score Distribution", data_viz_loss: "Losses", data_viz_total: "Matches", data_viz_winrate: "Win Rate", data_viz_form: "Form", data_viz_pts_norm: "Points", data_viz_bucket_week: "Weekly", data_viz_bucket_month: "Monthly", data_viz_bins: "Bins", data_viz_no_data: "No data", data_viz_heatmap_cell: "{winner} beats {loser} {n} times", data_viz_heatmap_hint: "Row player wins vs column player · darker = more wins", data_viz_axis_matches: "Matches", data_viz_axis_players: "Players", data_viz_axis_count: "Players", data_viz_bucket_label: "Granularity", data_viz_other: "Other",
         season_initial_label: "{season} Initial Scores", score_type_bonus: "Bonus Points",
         personal_stats_page_title: "Personal Stats | WFLS Table Tennis Club", personal_stats_tag: "Personal Stats", personal_stats_title: "Personal Stats", personal_stats_desc: "Personal Match Statistics", personal_stats_filter_label: "Filter by Tags", personal_stats_search_label: "Search Players", personal_stats_search_ph: "Search by name / ID / tag (pinyin supported)", personal_stats_placeholder: "players total, select to view personal stats", personal_stats_no_tags: "No tags available", personal_stats_tag_count: "{n} players", personal_stats_player_count: "{shown} / {total}", personal_stats_player_count_total: "{total}", personal_stats_no_match: "No matching players", personal_stats_no_data: "No match data yet", personal_stats_load_fail: "Failed to load data. Please refresh and try again.",
         pp_back_index: "Back to Overview", pp_prev_player: "Previous", pp_next_player: "Next", pp_no_player: "Player not found", pp_all_records: "All Match Records", pp_player_id: "Player ID", pp_search_ph: "Search by name / ID / tag", pp_total_players: "{n} players total", pp_role: "Role", pp_match_detail: "Score Details", pp_view_profile: "View Personal Page",
@@ -155,6 +159,8 @@ const i18n = {
         wtt_alert_select_one: "Please select at least one player", wtt_alert_max: "Maximum of 15 players", wtt_alert_two: "Please select two players", wtt_alert_diff: "Please select two different players",
         wtt_axis_points: "Points", wtt_axis_rank: "Rank", wtt_rank_suffix: "Rank #{n}",
         wtt_cur_score: "Current Points", wtt_h2h_rate: "Head-to-head Win Rate", wtt_pred_rate: "Predicted Win Rate", wtt_total_h2h: "Head-to-head: {n} matches", wtt_wins: "{player} {n} wins", wtt_recent: "Recent: {date} (Winner: {winner})", wtt_winner: "Winner", wtt_pts_change: "{player} point change", wtt_no_h2h: "No head-to-head records",
+        wtt_recent_label: "Recent", wtt_data_points: "data points", wtt_players: "players", wtt_player_a: "Player A", wtt_player_b: "Player B", wtt_select_players: "Select Players (max 8)", wtt_top_n: "Top",
+        wtt_record_title: "Match Records", wtt_efficiency_title: "Matches × Points", wtt_heatmap_title: "Head-to-Head Matrix", wtt_freq_title: "Match Frequency Timeline", wtt_dist_title: "Score Distribution", wtt_loss: "Losses", wtt_total: "Matches", wtt_winrate: "Win Rate", wtt_form: "Form", wtt_pts_norm: "Points", wtt_bucket_week: "Weekly", wtt_bucket_month: "Monthly", wtt_bins: "Bins", wtt_no_data: "No data", wtt_heatmap_cell: "{winner} beats {loser} {n} times", wtt_heatmap_hint: "Row player wins vs column player · darker = more wins", wtt_axis_matches: "Matches", wtt_axis_players: "Players", wtt_axis_count: "Players", wtt_bucket_label: "Granularity", wtt_other: "Other",
         wtt_ps_hero_title: "WTT Personal Match Statistics", wtt_ps_title: "WTT Personal Stats", wtt_ps_label: "Select Player", wtt_ps_search_ph: "Search player name...", wtt_ps_view: "View Data", wtt_ps_placeholder: "Select a player to view personal data", wtt_ps_nomatch: "No matching players", wtt_ps_nodata: "No match data",
         wtt_ov_total: "Matches", wtt_ov_wins: "Wins", wtt_ov_losses: "Losses", wtt_ov_percentile: "Win Rate", wtt_ov_current: "Current Points", wtt_ov_max: "Peak Points", wtt_ov_bestrank: "Best Rank",
         wtt_ps_sum1: "{player} has played {total} matches, winning {wins} and losing {losses}.", wtt_ps_sum2: "{player}'s win rate is {percent}%.",
@@ -212,6 +218,7 @@ function setLanguage(lang) {
     if (typeof updatePdfButtons === 'function') updatePdfButtons();
     if (dataLoaded && typeof updateDetailPage === 'function') updateDetailPage();
     if (typeof wttReapplyI18n === 'function') wttReapplyI18n();
+    if (typeof dataVizReapplyI18n === 'function') dataVizReapplyI18n();
     if (typeof reapplyPlayerPage === 'function') reapplyPlayerPage();
     if (typeof reapplyPersonalStats === 'function') reapplyPersonalStats();
 }
@@ -468,7 +475,20 @@ function renderAllChangelog() { const tl = document.getElementById('changelogTim
 // ========================================
 function getContentListByType(type) { return type === 'news' ? newsData : (type === 'competition' ? competitionsData : qaData); }
 function getContentDirByType(type) { return type === 'news' ? 'news' : (type === 'competition' ? 'competitions' : 'qa'); }
+async function resolveItemContent(type, item) {
+    if (!item) return '';
+    if (item.contentFile) {
+        const cf = String(item.contentFile).replace(/\\/g, '/').replace(/^\/+/, '');
+        const url = cf.includes('/') ? cf : `data/${getContentDirByType(type)}/${encodeURIComponent(String(item.id))}/${encodeURIComponent(cf)}`;
+        try {
+            const resp = await fetch(url);
+            if (resp.ok) return await resp.text();
+        } catch(e) { /* 拉取失败时回退到内联字段 */ }
+    }
+    return item.content || item.excerpt || '';
+}
 const DETAIL_SNAPSHOT_KEYS = ['date', 'title', 'excerpt', 'content', 'tag', 'media'];
+const VERSION_I18N_DEFAULTS = { detail_version_updated: '更新于 {date}', detail_version_list: '历史版本', detail_version_view: '查看', detail_version_viewing: '正在查看 v{version}（更新于 {date}）', detail_version_back: '返回 v{version}' };
 function snapshotOf(item) { const s = {}; DETAIL_SNAPSHOT_KEYS.forEach(k => s[k] = (item[k] === undefined ? null : item[k])); return s; }
 function snapshotsEqual(a, b) { return JSON.stringify(snapshotOf(a)) === JSON.stringify(snapshotOf(b)); }
 function getVersionInfo(item) {
@@ -490,7 +510,7 @@ async function loadContentItem(type, id) {
     // 索引回退：index.json 为元数据（无 content），search.json 含正文
     const da = getContentListByType(type);
     let item = (da && da.find(d => d.id == id)) || null;
-    if (item && item.content) return item;
+    if (item && (item.content || item.contentFile)) return item;
     try {
         const sresp = await fetch(`data/${dir}/search.json`);
         if (sresp.ok) {
@@ -527,14 +547,15 @@ async function updateDetailPage() {
     }
     if (Array.isArray(hist) && hist.length) item.history = hist;
     detailState = { type, item };
-    renderDetailItem(type, item);
+    await renderDetailItem(type, item);
 }
 
-function renderDetailItem(type, item) {
+async function renderDetailItem(type, item) {
     document.getElementById('detailTypeTag').textContent = i18n[currentLang][type === 'news' ? 'news_hero_tag' : (type === 'competition' ? 'comp_hero_tag' : 'qa_hero_tag')];
     document.getElementById('detailTitle').textContent = item.title;
     document.getElementById('detailDate').textContent = item.date;
-    document.getElementById('detailContent').innerHTML = renderMarkdown(item.content || item.excerpt || '');
+    const bodyText = await resolveItemContent(type, item);
+    document.getElementById('detailContent').innerHTML = renderMarkdown(bodyText);
     const contentSection = document.getElementById('detailContent');
     if (contentSection) contentSection.style.display = '';
     renderDetailMedia(item);
@@ -681,7 +702,7 @@ function renderDetailVersion(type, item) {
     if (!container) return;
     container.innerHTML = '';
     const vinfo = getVersionInfo(item);
-    const t = i18n[currentLang];
+    const t = Object.assign({}, VERSION_I18N_DEFAULTS, i18n[currentLang] || {});
     if (!vinfo.updatedAt && !vinfo.old.length) { container.style.display = 'none'; return; }
     container.style.display = '';
     const entry = document.createElement('button');
@@ -730,9 +751,10 @@ async function viewHistoryVersion(snap) {
         } catch(e) { /* 快照加载失败时按清单数据渲染 */ }
     }
     const type = detailState.type, item = detailState.item;
+    const bodyText = await resolveItemContent(type, snap);
     document.getElementById('detailTitle').textContent = snap.title || '';
     document.getElementById('detailDate').textContent = snap.date || '';
-    document.getElementById('detailContent').innerHTML = renderMarkdown(snap.content || snap.excerpt || '');
+    document.getElementById('detailContent').innerHTML = renderMarkdown(bodyText);
     const contentSection = document.getElementById('detailContent');
     if (contentSection) contentSection.style.display = '';
     renderDetailMedia(snap);
@@ -741,7 +763,7 @@ async function viewHistoryVersion(snap) {
     if (!container) return;
     container.innerHTML = '';
     container.style.display = '';
-    const t = i18n[currentLang];
+    const t = Object.assign({}, VERSION_I18N_DEFAULTS, i18n[currentLang] || {});
     const vinfo = getVersionInfo(item);
     const banner = document.createElement('div');
     banner.className = 'detail-version-viewing';

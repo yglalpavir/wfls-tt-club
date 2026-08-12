@@ -900,6 +900,7 @@ function wttReapplyI18n() {
     const sdc = parseInt(document.getElementById('wttStreamDataCount')?.value) || 20;
     if (wttRankStreamChart) wttRenderRankStream(topN, sdc);
     wttUpdateCompareBox();
+    if (typeof wttReapplyDataVizExtra === 'function') wttReapplyDataVizExtra();
 }
 
 function wttUpdateCompareBox() {

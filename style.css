@@ -1580,6 +1580,23 @@ body.dark-mode .score-detail-table tbody tr:nth-child(even) td { background-colo
 .compare-h2h-table .win-highlight { color: #52c41a; font-weight: 600; }
 .compare-h2h-table .loss-highlight { color: var(--accent-red); font-weight: 600; }
 
+/* 交手热力矩阵 */
+#h2hHeatmapContainer, #wttH2hHeatmapContainer { display: block; text-align: center; }
+.h2h-heatmap-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; width: 100%; text-align: center; }
+.h2h-heatmap-table { border-collapse: collapse; font-size: 0.78rem; margin: 0 auto; min-width: 420px; }
+.h2h-heatmap-table th, .h2h-heatmap-table td { padding: 7px 10px; text-align: center; border: 1px solid var(--border-color); white-space: nowrap; }
+.h2h-heatmap-table th { background: var(--primary-pale); color: var(--primary-blue); font-weight: 600; font-size: 0.7rem; }
+.h2h-heatmap-table .h2h-corner { background: transparent; }
+.h2h-heatmap-table .h2h-row-label { font-weight: 600; color: var(--text-primary); max-width: 110px; overflow: hidden; text-overflow: ellipsis; }
+.h2h-heatmap-table .h2h-col-label { max-width: 110px; overflow: hidden; text-overflow: ellipsis; }
+.h2h-heatmap-table .h2h-cell { color: var(--text-primary); font-weight: 600; cursor: default; min-width: 34px; }
+.h2h-heatmap-table .h2h-cell:hover { outline: 2px solid var(--primary-blue); outline-offset: -2px; }
+.h2h-heatmap-table .h2h-diag { background: repeating-linear-gradient(45deg, transparent, transparent 4px, var(--bg-lighter) 4px, var(--bg-lighter) 8px); }
+.h2h-legend { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 14px; font-size: 0.75rem; color: var(--text-muted); flex-wrap: wrap; }
+.h2h-legend-bar { display: inline-flex; align-items: center; gap: 2px; }
+.h2h-legend-bar i { display: inline-block; width: 26px; height: 12px; border: 1px solid var(--border-color); }
+.h2h-legend-bar b { margin-left: 4px; color: var(--text-secondary); font-weight: 600; }
+
 /* 个人数据板块 */
 .viz-personal-grid { display: grid; grid-template-columns: 280px 1fr; gap: 24px; align-items: start; }
 .viz-personal-selector { padding: 24px; text-align: center; }

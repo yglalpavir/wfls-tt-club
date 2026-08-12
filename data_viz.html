@@ -129,6 +129,77 @@
                 </div>
             </div>
 
+            <div class="viz-section-header" style="margin-top:48px;">
+                <span class="section-tag">Match Records</span>
+                <h2 class="section-title" data-i18n="data_viz_record_title">战绩统计</h2>
+                <div class="viz-topn-selector">
+                    <span data-i18n="data_viz_top_n">显示前</span>
+                    <input type="number" id="recordTopN" value="10" min="1" max="50" data-i18n-title="data_viz_topn_select_title">
+                    <span data-i18n="data_viz_top_n_suffix">名球员</span>
+                </div>
+            </div>
+            <div class="viz-chart-container glass-card" style="min-height:420px;">
+                <canvas id="recordBarChart"></canvas>
+            </div>
+
+            <div class="viz-section-header" style="margin-top:48px;">
+                <span class="section-tag">Efficiency Scatter</span>
+                <h2 class="section-title" data-i18n="data_viz_efficiency_title">场次×积分效率</h2>
+                <div class="viz-topn-selector">
+                    <span data-i18n="data_viz_top_n">显示前</span>
+                    <input type="number" id="efficiencyTopN" value="15" min="1" max="100" data-i18n-title="data_viz_topn_select_title">
+                    <span data-i18n="data_viz_top_n_suffix">名球员</span>
+                </div>
+            </div>
+            <div class="viz-chart-container glass-card" style="min-height:420px;">
+                <canvas id="efficiencyScatterChart"></canvas>
+            </div>
+
+            <div class="viz-section-header" style="margin-top:48px;">
+                <span class="section-tag">Head-to-Head Matrix</span>
+                <h2 class="section-title" data-i18n="data_viz_heatmap_title">交手热力矩阵</h2>
+                <div class="viz-topn-selector">
+                    <span data-i18n="data_viz_top_n">显示前</span>
+                    <input type="number" id="heatmapTopN" value="8" min="2" max="20" data-i18n-title="data_viz_topn_select_title">
+                    <span data-i18n="data_viz_top_n_suffix">名球员</span>
+                </div>
+            </div>
+            <div class="viz-chart-container glass-card" id="h2hHeatmapContainer" style="min-height:400px;">
+                <div class="compare-placeholder"><i class="fa-solid fa-border-all"></i><p data-i18n="data_viz_no_data">暂无数据</p></div>
+            </div>
+
+            <div class="viz-section-header" style="margin-top:48px;">
+                <span class="section-tag">Match Frequency</span>
+                <h2 class="section-title" data-i18n="data_viz_freq_title">比赛频次时间轴</h2>
+                <div class="viz-topn-selector">
+                    <span data-i18n="data_viz_bucket_label">时间粒度</span>
+                    <select id="freqBucketSelect">
+                        <option value="week" data-i18n="data_viz_bucket_week">按周</option>
+                        <option value="month" data-i18n="data_viz_bucket_month">按月</option>
+                    </select>
+                </div>
+                <div class="viz-topn-selector" style="margin-left:16px;">
+                    <span data-i18n="data_viz_recent">最近</span>
+                    <input type="number" id="freqDataCount" value="24" min="2" max="200" data-i18n-title="data_viz_stream_title">
+                    <span data-i18n="data_viz_data_points">个数据点</span>
+                </div>
+            </div>
+            <div class="viz-chart-container glass-card" style="min-height:420px;">
+                <canvas id="matchFrequencyChart"></canvas>
+            </div>
+
+            <div class="viz-section-header" style="margin-top:48px;">
+                <span class="section-tag">Score Distribution</span>
+                <h2 class="section-title" data-i18n="data_viz_dist_title">积分区间分布</h2>
+                <div class="viz-topn-selector">
+                    <span data-i18n="data_viz_bins">分档数</span>
+                    <input type="number" id="distBinCount" value="10" min="4" max="30" data-i18n-title="data_viz_topn_select_title">
+                </div>
+            </div>
+            <div class="viz-chart-container glass-card" style="min-height:420px;">
+                <canvas id="scoreDistributionChart"></canvas>
+            </div>
+
 
         </div>
     </section>
@@ -159,6 +230,7 @@
     <script src="js/common.js"></script>
     <script src="js/score-engine.js"></script>
     <script src="js/data-viz.js"></script>
+    <script src="js/data-viz-extra.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

@@ -120,6 +120,77 @@
                 </div>
             </div>
 
+            <div class="viz-section-header" style="margin-top:48px;">
+                <span class="section-tag">Match Records</span>
+                <h2 class="section-title" data-i18n="wtt_record_title">战绩统计</h2>
+                <div class="viz-topn-selector">
+                    <span data-i18n="wtt_top_n">显示前</span>
+                    <input type="number" id="wttRecordTopN" value="10" min="1" max="50" title="填写1-20的任意正整数">
+                    <span data-i18n="wtt_players">名球员</span>
+                </div>
+            </div>
+            <div class="viz-chart-container glass-card" style="min-height:420px;">
+                <canvas id="wttRecordBarChart"></canvas>
+            </div>
+
+            <div class="viz-section-header" style="margin-top:48px;">
+                <span class="section-tag">Efficiency Scatter</span>
+                <h2 class="section-title" data-i18n="wtt_efficiency_title">场次×积分效率</h2>
+                <div class="viz-topn-selector">
+                    <span data-i18n="wtt_top_n">显示前</span>
+                    <input type="number" id="wttEfficiencyTopN" value="15" min="1" max="100" title="填写1-100的任意正整数">
+                    <span data-i18n="wtt_players">名球员</span>
+                </div>
+            </div>
+            <div class="viz-chart-container glass-card" style="min-height:420px;">
+                <canvas id="wttEfficiencyScatterChart"></canvas>
+            </div>
+
+            <div class="viz-section-header" style="margin-top:48px;">
+                <span class="section-tag">Head-to-Head Matrix</span>
+                <h2 class="section-title" data-i18n="wtt_heatmap_title">交手热力矩阵</h2>
+                <div class="viz-topn-selector">
+                    <span data-i18n="wtt_top_n">显示前</span>
+                    <input type="number" id="wttHeatmapTopN" value="8" min="2" max="20" title="填写2-20的任意正整数">
+                    <span data-i18n="wtt_players">名球员</span>
+                </div>
+            </div>
+            <div class="viz-chart-container glass-card" id="wttH2hHeatmapContainer" style="min-height:400px;">
+                <div class="compare-placeholder"><i class="fa-solid fa-border-all"></i><p data-i18n="wtt_no_data">暂无数据</p></div>
+            </div>
+
+            <div class="viz-section-header" style="margin-top:48px;">
+                <span class="section-tag">Match Frequency</span>
+                <h2 class="section-title" data-i18n="wtt_freq_title">比赛频次时间轴</h2>
+                <div class="viz-topn-selector">
+                    <span data-i18n="wtt_bucket_label">时间粒度</span>
+                    <select id="wttFreqBucketSelect">
+                        <option value="week" data-i18n="wtt_bucket_week">按周</option>
+                        <option value="month" data-i18n="wtt_bucket_month">按月</option>
+                    </select>
+                </div>
+                <div class="viz-topn-selector" style="margin-left:16px;">
+                    <span data-i18n="wtt_recent_label">最近</span>
+                    <input type="number" id="wttFreqDataCount" value="24" min="2" max="200" title="显示最近N个数据点">
+                    <span data-i18n="wtt_data_points">个数据点</span>
+                </div>
+            </div>
+            <div class="viz-chart-container glass-card" style="min-height:420px;">
+                <canvas id="wttMatchFrequencyChart"></canvas>
+            </div>
+
+            <div class="viz-section-header" style="margin-top:48px;">
+                <span class="section-tag">Score Distribution</span>
+                <h2 class="section-title" data-i18n="wtt_dist_title">积分区间分布</h2>
+                <div class="viz-topn-selector">
+                    <span data-i18n="wtt_bins">分档数</span>
+                    <input type="number" id="wttDistBinCount" value="10" min="4" max="30" title="填写4-30的任意正整数">
+                </div>
+            </div>
+            <div class="viz-chart-container glass-card" style="min-height:420px;">
+                <canvas id="wttScoreDistributionChart"></canvas>
+            </div>
+
         </div>
 
         <div class="wtt-back-link" style="text-align:center;margin-top:40px;">
@@ -146,6 +217,7 @@
     <script src="js/score-engine.js"></script>
     <script src="js/wtt_common.js"></script>
     <script src="js/wtt_dataviz.js"></script>
+    <script src="js/wtt_dataviz_extra.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

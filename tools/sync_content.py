@@ -170,9 +170,47 @@ def validate_item(type_name, item, filename):
     return True
 
 
+def content_file_path(type_name, item_id, content_file):
+    """解析 contentFile 引用的 Markdown 实际路径：
+    纯文件名 → 条目文件夹 {type}/{id}/{file}；含 "/" → 站点根目录相对路径。"""
+    cf = str(content_file or "").replace("\\", "/").lstrip("/")
+    if not cf:
+        return None
+    if "/" in cf:
+        return os.path.normpath(os.path.join(ROOT, cf))
+    return os.path.join(entry_dir_path(type_name, item_id), cf)
+
+
+def read_effective_content(type_name, item, quiet=False):
+    """返回条目有效正文：contentFile 优先（读取 md 文件内联），否则取 content 字段。"""
+    content_file = item.get("contentFile")
+    if content_file:
+        item_id = str(item.get("id") or "")
+        path = content_file_path(type_name, item_id, content_file)
+        if not path or not os.path.exists(path):
+            if not quiet:
+                log_warn("{}: contentFile 文件不存在 {}".format(item_id or "?", content_file))
+            return item.get("content")
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                return f.read()
+        except Exception as e:
+            if not quiet:
+                log_warn("{}: 无法读取 contentFile {}: {}".format(item_id or "?", content_file, e))
+            return item.get("content")
+    return item.get("content")
+
+
 def snapshot_of(item):
     """取条目中参与版本快照的内容字段"""
     return {k: item.get(k) for k in SNAPSHOT_KEYS}
+
+
+def effective_snapshot(item, content):
+    """参与版本快照的内容字段，content 以内联后的有效正文为准"""
+    snap = {k: item.get(k) for k in SNAPSHOT_KEYS}
+    snap["content"] = content
+    return snap
 
 
 def snapshot_version(snap):
@@ -262,7 +300,7 @@ def load_history(type_name, item_id):
     return manifest, snapshots, problems
 
 
-def maintain_history(type_name, item, manifest, snapshots):
+def maintain_history(type_name, item, manifest, snapshots, content=None):
     """维护条目版本历史（清单 + 快照文件），不修改展示文件。
     返回 (new_manifest, new_snapshot, changed)：
       - new_manifest: 新清单（新→旧）
@@ -273,8 +311,10 @@ def maintain_history(type_name, item, manifest, snapshots):
       - 无清单 → 建立 v1 基线（updatedAt 取条目 date）
       - 当前内容与最新快照一致 → 幂等
       - 当前内容有变化 → 归档新版本（version + 1，updatedAt 为今天）
+      - content 为内联后的有效正文（contentFile 优先读 md 文件），
+        快照中以内联正文落盘，md 内容变了即归档新版本
     """
-    cur = snapshot_of(item)
+    cur = effective_snapshot(item, content)
     item_id = str(item.get("id") or "")
 
     if not manifest:
@@ -486,9 +526,10 @@ def sync_type(type_name):
             continue
         seen_ids.add(item_id)
 
+        content = read_effective_content(type_name, item)
         manifest, snapshots, _ = load_history(type_name, item_id)
         before = len(manifest)
-        new_manifest, new_snap, changed = maintain_history(type_name, item, manifest, snapshots)
+        new_manifest, new_snap, changed = maintain_history(type_name, item, manifest, snapshots, content)
         if new_snap is not None:
             v, snap = new_snap
             write_json(snapshot_file_path(type_name, item_id, v), snap)
@@ -513,7 +554,9 @@ def sync_type(type_name):
     # search.json：搜索索引（含 content，不含 history；前端过滤 visible）
     search_data = []
     for it in items:
-        search_data.append({k: it.get(k) for k in ("id", "date", "title", "excerpt", "content")})
+        entry = {k: it.get(k) for k in ("id", "date", "title", "excerpt", "content")}
+        entry["content"] = read_effective_content(type_name, it, quiet=True)
+        search_data.append(entry)
     write_json(os.path.join(dir_path, "search.json"), search_data)
 
     hidden = sum(1 for i in items if i.get("visible") is False)
@@ -546,7 +589,9 @@ def check_type(type_name):
         if item.get("visible") is False:
             hidden += 1
         sim_item = copy.deepcopy(item)
-        sim_manifest, new_snap, _ = maintain_history(type_name, sim_item, manifest, snapshots)
+        sim_manifest, new_snap, _ = maintain_history(
+            type_name, sim_item, manifest, snapshots,
+            read_effective_content(type_name, sim_item))
         if new_snap is not None:
             planned += 1
         total_snaps += len(sim_manifest)
@@ -562,7 +607,9 @@ def check_type(type_name):
             hidden += 1
         sim_manifest, sim_snapshots = simulate_flat_manifest(item, item_id)
         sim_item = copy.deepcopy(item)
-        sim_manifest, new_snap, _ = maintain_history(type_name, sim_item, sim_manifest, sim_snapshots)
+        sim_manifest, new_snap, _ = maintain_history(
+            type_name, sim_item, sim_manifest, sim_snapshots,
+            read_effective_content(type_name, sim_item))
         if new_snap is not None:
             planned += 1
         total_snaps += len(sim_manifest)
