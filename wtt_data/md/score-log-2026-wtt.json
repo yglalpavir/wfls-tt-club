@@ -1602,24 +1602,6 @@
     "负者": "Joe SEYFRIED/Vincent PICARD"
   },
   {
-    "日期": "2026-07-29",
-    "类型": "乒超联赛",
-    "胜者": "YAN Sheng/CAI Shunhang",
-    "负者": "LIN Gaoyuan/LI Yijie"
-  },
-  {
-    "日期": "2026-07-29",
-    "类型": "乒超联赛",
-    "胜者": "YUAN Licen/ZHOU Guanhong",
-    "负者": "CHEN Yuanyu/QUAN Kaiyuan"
-  },
-  {
-    "日期": "2026-08-01",
-    "类型": "乒超联赛",
-    "胜者": "XIANG Peng/WEN Ruibo",
-    "负者": "HUANG Youzheng/XU Yingbin"
-  },
-  {
     "日期": "2026-01-29",
     "类型": "支线赛",
     "胜者": "HUANG Youzheng/WEN Ruibo",
@@ -2848,5 +2830,515 @@
     "类型": "大满贯",
     "胜者": "WONG Chun Ting/CHAN Baldwin",
     "负者": "Benedikt DUDA/Dang QIU"
+  },
+  {
+    "日期": "2026-07-23",
+    "类型": "乒超联赛",
+    "胜者": "WANG Chuqin/ZHOU Qihao",
+    "负者": "LI Shangjun/NING Xiankun"
+  },
+  {
+    "日期": "2026-07-24",
+    "类型": "乒超联赛",
+    "胜者": "KANG Youde/ZHANG Yudong",
+    "负者": "LUO Zheng/ZHOU Jinquan"
+  },
+  {
+    "日期": "2026-07-25",
+    "类型": "乒超联赛",
+    "胜者": "SONG Zhuoheng/ZHENG Peifeng",
+    "负者": "CHEN Yuanyu/XIA Yizheng"
+  },
+  {
+    "日期": "2026-07-26",
+    "类型": "乒超联赛",
+    "胜者": "WEN Ruibo/XIANG Peng",
+    "负者": "AO Hualei/CHEN Hengda"
+  },
+  {
+    "日期": "2026-07-27",
+    "类型": "乒超联赛",
+    "胜者": "LI Hechen/LIANG Jingkun",
+    "负者": "LUO Zheng/ZHOU Jinquan"
+  },
+  {
+    "日期": "2026-07-28",
+    "类型": "乒超联赛",
+    "胜者": "AO Hualei/CHEN Junsong",
+    "负者": "KANG Youde/ZHANG Yudong"
+  },
+  {
+    "日期": "2026-07-29",
+    "类型": "乒超联赛",
+    "胜者": "LI Hechen/YU Haiyang",
+    "负者": "HUANG Youzheng/XU Yingbin"
+  },
+  {
+    "日期": "2026-07-30",
+    "类型": "乒超联赛",
+    "胜者": "XUE Fei/YAN An",
+    "负者": "NIU Guankai/TANG Yiren"
+  },
+  {
+    "日期": "2026-07-31",
+    "类型": "乒超联赛",
+    "胜者": "HUANG Youzheng/XU Yingbin",
+    "负者": "GU Hao/ZHAI Jiale"
+  },
+  {
+    "日期": "2026-08-01",
+    "类型": "乒超联赛",
+    "胜者": "LIN Shidong/YUAN Licen",
+    "负者": "CHEN Xuanyi/HU Yiyan"
+  },
+  {
+    "日期": "2026-07-23",
+    "类型": "乒超联赛",
+    "胜者": "HU Dongshen/SUN Yang",
+    "负者": "GU Hao/ZHAI Jiale"
+  },
+  {
+    "日期": "2026-07-24",
+    "类型": "乒超联赛",
+    "胜者": "YUAN Licen/ZHOU Guanhong",
+    "负者": "CHEN Yuanyu/QUAN Kaiyuan"
+  },
+  {
+    "日期": "2026-07-25",
+    "类型": "乒超联赛",
+    "胜者": "HUANG Youzheng/XU Yingbin",
+    "负者": "WEN Ruibo/XIANG Peng"
+  },
+  {
+    "日期": "2026-07-26",
+    "类型": "乒超联赛",
+    "胜者": "HUANG Youzheng/XU Yingbin",
+    "负者": "KANG Youde/YU Yiyang"
+  },
+  {
+    "日期": "2026-07-27",
+    "类型": "乒超联赛",
+    "胜者": "LI Hechen/LIANG Jingkun",
+    "负者": "CHEN Xuanyi/ZHENG Peifeng"
+  },
+  {
+    "日期": "2026-07-28",
+    "类型": "乒超联赛",
+    "胜者": "YUAN Licen/ZHOU Guanhong",
+    "负者": "LONG Yu/NING Xiankun"
+  },
+  {
+    "日期": "2026-07-29",
+    "类型": "乒超联赛",
+    "胜者": "XUE Fei/YAN An",
+    "负者": "CAI Shunhang/YAN Sheng"
+  },
+  {
+    "日期": "2026-07-30",
+    "类型": "乒超联赛",
+    "胜者": "XUE Fei/YAN An",
+    "负者": "CHEN Xuanyi/ZHENG Peifeng"
+  },
+  {
+    "日期": "2026-07-31",
+    "类型": "乒超联赛",
+    "胜者": "NIU Guankai/XU Yingbin",
+    "负者": "AO Hualei/CHEN Junsong"
+  },
+  {
+    "日期": "2026-08-01",
+    "类型": "乒超联赛",
+    "胜者": "QUAN Kaiyuan/XU Haidong",
+    "负者": "HUANG Youzheng/XU Yingbin"
+  },
+  {
+    "日期": "2026-07-23",
+    "类型": "乒超联赛",
+    "胜者": "CHEN Xuanyi/ZHENG Peifeng",
+    "负者": "NIU Guankai/TANG Yiren"
+  },
+  {
+    "日期": "2026-07-24",
+    "类型": "乒超联赛",
+    "胜者": "WEN Ruibo/XIANG Peng",
+    "负者": "LIANG Jingkun/WANG Chuqin"
+  },
+  {
+    "日期": "2026-07-25",
+    "类型": "乒超联赛",
+    "胜者": "CAI Shunhang/YAN Sheng",
+    "负者": "HU Dongshen/SUN Yang"
+  },
+  {
+    "日期": "2026-07-26",
+    "类型": "乒超联赛",
+    "胜者": "WANG Chuqin/ZHOU Qihao",
+    "负者": "HUANG Xunan/WU Yifei"
+  },
+  {
+    "日期": "2026-07-27",
+    "类型": "乒超联赛",
+    "胜者": "GU Hao/ZHAI Jiale",
+    "负者": "LIU Guancheng/ZHANG Heliang"
+  },
+  {
+    "日期": "2026-07-28",
+    "类型": "乒超联赛",
+    "胜者": "CAI Shunhang/YAN Sheng",
+    "负者": "SONG Zhuoheng/ZHENG Peifeng"
+  },
+  {
+    "日期": "2026-07-29",
+    "类型": "乒超联赛",
+    "胜者": "WANG Chuqin/ZHOU Qihao",
+    "负者": "QUAN Kaiyuan/XU Haidong"
+  },
+  {
+    "日期": "2026-07-30",
+    "类型": "乒超联赛",
+    "胜者": "GU Hao/ZHAI Jiale",
+    "负者": "QUAN Kaiyuan/XU Haidong"
+  },
+  {
+    "日期": "2026-07-31",
+    "类型": "乒超联赛",
+    "胜者": "YUAN Licen/ZHOU Guanhong",
+    "负者": "TANG Yiren/XU Yingbin"
+  },
+  {
+    "日期": "2026-08-01",
+    "类型": "乒超联赛",
+    "胜者": "LIANG Jingkun/WANG Chuqin",
+    "负者": "AO Hualei/CHEN Hengda"
+  },
+  {
+    "日期": "2026-07-23",
+    "类型": "乒超联赛",
+    "胜者": "LI Yijie/LIN Gaoyuan",
+    "负者": "HUANG Youzheng/XU Yingbin"
+  },
+  {
+    "日期": "2026-07-24",
+    "类型": "乒超联赛",
+    "胜者": "LI Yijie/LIN Gaoyuan",
+    "负者": "LI Shangjun/WANG Jixuan"
+  },
+  {
+    "日期": "2026-07-25",
+    "类型": "乒超联赛",
+    "胜者": "CHEN Yuanyu/XIA Yizheng",
+    "负者": "AO Hualei/CHEN Hengda"
+  },
+  {
+    "日期": "2026-07-26",
+    "类型": "乒超联赛",
+    "胜者": "LONG Yu/NING Xiankun",
+    "负者": "CHEN Yuanyu/QUAN Kaiyuan"
+  },
+  {
+    "日期": "2026-07-27",
+    "类型": "乒超联赛",
+    "胜者": "AO Hualei/CHEN Junsong",
+    "负者": "SONG Zhuoheng/ZHENG Peifeng"
+  },
+  {
+    "日期": "2026-07-28",
+    "类型": "乒超联赛",
+    "胜者": "HU Dongshen/SUN Yang",
+    "负者": "HUANG Youzheng/TANG Yiren"
+  },
+  {
+    "日期": "2026-07-29",
+    "类型": "乒超联赛",
+    "胜者": "LI Shangjun/WANG Jixuan",
+    "负者": "SUN Zheng/ZHAO Zhaoyan"
+  },
+  {
+    "日期": "2026-07-30",
+    "类型": "乒超联赛",
+    "胜者": "HUANG Youzheng/XU Yingbin",
+    "负者": "WANG Jixuan/ZHENG Hongbo"
+  },
+  {
+    "日期": "2026-07-31",
+    "类型": "乒超联赛",
+    "胜者": "YUAN Licen/ZHOU Guanhong",
+    "负者": "CAI Shunhang/YAN Sheng"
+  },
+  {
+    "日期": "2026-08-01",
+    "类型": "乒超联赛",
+    "胜者": "WANG Chuqin/ZHOU Qihao",
+    "负者": "SONG Zhuoheng/ZHAI Jiale"
+  },
+  {
+    "日期": "2026-07-23",
+    "类型": "乒超联赛",
+    "胜者": "AO Hualei/CHEN Junsong",
+    "负者": "LI Yijie/LIN Gaoyuan"
+  },
+  {
+    "日期": "2026-07-24",
+    "类型": "乒超联赛",
+    "胜者": "LIN Shidong/ZHAO Zhaoyan",
+    "负者": "HUANG Youhao/HUANG Youzheng"
+  },
+  {
+    "日期": "2026-07-25",
+    "类型": "乒超联赛",
+    "胜者": "QUAN Kaiyuan/XU Haidong",
+    "负者": "KANG Youde/ZHANG Yudong"
+  },
+  {
+    "日期": "2026-07-26",
+    "类型": "乒超联赛",
+    "胜者": "XIA Yizheng/XU Haidong",
+    "负者": "LI Shangjun/WANG Jixuan"
+  },
+  {
+    "日期": "2026-07-27",
+    "类型": "乒超联赛",
+    "胜者": "LUO Zheng/ZHOU Jinquan",
+    "负者": "LONG Yu/ZHENG Hongbo"
+  },
+  {
+    "日期": "2026-07-28",
+    "类型": "乒超联赛",
+    "胜者": "LI Yijie/LIN Gaoyuan",
+    "负者": "CHEN Xuanyi/ZHENG Peifeng"
+  },
+  {
+    "日期": "2026-07-29",
+    "类型": "乒超联赛",
+    "胜者": "XUE Fei/YAN An",
+    "负者": "LONG Yu/WANG Jixuan"
+  },
+  {
+    "日期": "2026-07-30",
+    "类型": "乒超联赛",
+    "胜者": "WEN Ruibo/XIANG Peng",
+    "负者": "ZHAO Zhaoyan/ZHAO Zihao"
+  },
+  {
+    "日期": "2026-07-31",
+    "类型": "乒超联赛",
+    "胜者": "XUE Fei/YAN An",
+    "负者": "LI Mingxu/XIA Yizheng"
+  },
+  {
+    "日期": "2026-08-01",
+    "类型": "乒超联赛",
+    "胜者": "CHEN Yuanyu/XIA Yizheng",
+    "负者": "LI Yijie/LIN Gaoyuan"
+  },
+  {
+    "日期": "2026-07-23",
+    "类型": "乒超联赛",
+    "胜者": "XUE Fei/YAN An",
+    "负者": "HUANG Xunan/LUO Zheng"
+  },
+  {
+    "日期": "2026-07-24",
+    "类型": "乒超联赛",
+    "胜者": "LI Hechen/LIANG Jingkun",
+    "负者": "WANG Jixuan/ZHENG Hongbo"
+  },
+  {
+    "日期": "2026-07-25",
+    "类型": "乒超联赛",
+    "胜者": "CHEN Yuanyu/XIA Yizheng",
+    "负者": "CAI Shunhang/YAN Sheng"
+  },
+  {
+    "日期": "2026-07-26",
+    "类型": "乒超联赛",
+    "胜者": "LIN Shidong/ZHAO Zhaoyan",
+    "负者": "WANG Chuqin/ZHOU Qihao"
+  },
+  {
+    "日期": "2026-07-27",
+    "类型": "乒超联赛",
+    "胜者": "LI Hechen/ZHOU Qihao",
+    "负者": "HU Dongshen/SUN Yang"
+  },
+  {
+    "日期": "2026-07-28",
+    "类型": "乒超联赛",
+    "胜者": "WEN Ruibo/XIANG Peng",
+    "负者": "LI Yijie/ZHOU Jinquan"
+  },
+  {
+    "日期": "2026-07-29",
+    "类型": "乒超联赛",
+    "胜者": "HU Dongshen/SUN Yang",
+    "负者": "LI Shangjun/WANG Jixuan"
+  },
+  {
+    "日期": "2026-07-30",
+    "类型": "乒超联赛",
+    "胜者": "KANG Youde/ZHANG Yudong",
+    "负者": "GU Hao/ZHAI Jiale"
+  },
+  {
+    "日期": "2026-07-31",
+    "类型": "乒超联赛",
+    "胜者": "CHEN Yuanyu/XIA Yizheng",
+    "负者": "LI Hechen/LIANG Jingkun"
+  },
+  {
+    "日期": "2026-08-01",
+    "类型": "乒超联赛",
+    "胜者": "CAI Shunhang/YAN Sheng",
+    "负者": "HUANG Yihua/NIU Guankai"
+  },
+  {
+    "日期": "2026-07-23",
+    "类型": "乒超联赛",
+    "胜者": "YUAN Licen/ZHOU Kai",
+    "负者": "XUE Fei/YAN An"
+  },
+  {
+    "日期": "2026-07-24",
+    "类型": "乒超联赛",
+    "胜者": "QUAN Kaiyuan/XU Haidong",
+    "负者": "HUANG Xunan/LUO Zheng"
+  },
+  {
+    "日期": "2026-07-25",
+    "类型": "乒超联赛",
+    "胜者": "HUANG Xunan/LUO Zheng",
+    "负者": "HU Dongshen/SUN Yang"
+  },
+  {
+    "日期": "2026-07-26",
+    "类型": "乒超联赛",
+    "胜者": "CAI Shunhang/YAN Sheng",
+    "负者": "LI Yijie/LIN Gaoyuan"
+  },
+  {
+    "日期": "2026-07-27",
+    "类型": "乒超联赛",
+    "胜者": "LIANG Jingkun/WANG Chuqin",
+    "负者": "NIU Guankai/TANG Yiren"
+  },
+  {
+    "日期": "2026-07-28",
+    "类型": "乒超联赛",
+    "胜者": "GU Hao/ZHAI Jiale",
+    "负者": "NING Xiankun/ZHENG Hongbo"
+  },
+  {
+    "日期": "2026-07-29",
+    "类型": "乒超联赛",
+    "胜者": "ZHOU Guanhong/ZHOU Kai",
+    "负者": "GU Hao/ZHENG Peifeng"
+  },
+  {
+    "日期": "2026-07-30",
+    "类型": "乒超联赛",
+    "胜者": "WEN Ruibo/XIANG Peng",
+    "负者": "KANG Youde/YU Yiyang"
+  },
+  {
+    "日期": "2026-07-31",
+    "类型": "乒超联赛",
+    "胜者": "WEN Ruibo/XIANG Peng",
+    "负者": "CHEN Yuanyu/XU Haidong"
+  },
+  {
+    "日期": "2026-08-01",
+    "类型": "乒超联赛",
+    "胜者": "XUE Fei/YAN An",
+    "负者": "CHEN Junsong/SUN Yang"
+  },
+  {
+    "日期": "2026-07-23",
+    "类型": "乒超联赛",
+    "胜者": "LI Hechen/LIANG Jingkun",
+    "负者": "CAI Shunhang/YAN Sheng"
+  },
+  {
+    "日期": "2026-07-24",
+    "类型": "乒超联赛",
+    "胜者": "NIU Guankai/TANG Yiren",
+    "负者": "LONG Yu/NING Xiankun"
+  },
+  {
+    "日期": "2026-07-25",
+    "类型": "乒超联赛",
+    "胜者": "ZHAO Zhaoyan/ZHOU Kai",
+    "负者": "LUO Zheng/ZHOU Jinquan"
+  },
+  {
+    "日期": "2026-07-26",
+    "类型": "乒超联赛",
+    "胜者": "LUO Zheng/ZHOU Jinquan",
+    "负者": "SONG Zhuoheng/ZHAI Jiale"
+  },
+  {
+    "日期": "2026-07-27",
+    "类型": "乒超联赛",
+    "胜者": "SONG Zhuoheng/ZHENG Peifeng",
+    "负者": "LONG Yu/WANG Jixuan"
+  },
+  {
+    "日期": "2026-07-28",
+    "类型": "乒超联赛",
+    "胜者": "CHEN Yuanyu/XIA Yizheng",
+    "负者": "NIU Guankai/TANG Yiren"
+  },
+  {
+    "日期": "2026-07-29",
+    "类型": "乒超联赛",
+    "胜者": "LI Hechen/LIANG Jingkun",
+    "负者": "YUAN Licen/ZHOU Guanhong"
+  },
+  {
+    "日期": "2026-07-30",
+    "类型": "乒超联赛",
+    "胜者": "ZHAO Zihao/ZHOU Kai",
+    "负者": "HU Dongshen/SUN Yang"
+  },
+  {
+    "日期": "2026-07-31",
+    "类型": "乒超联赛",
+    "胜者": "CAI Shunhang/YAN Sheng",
+    "负者": "LI Shangjun/ZHENG Hongbo"
+  },
+  {
+    "日期": "2026-08-01",
+    "类型": "乒超联赛",
+    "胜者": "WANG Chuqin/ZHOU Qihao",
+    "负者": "KANG Youde/ZHANG Yudong"
+  },
+  {
+    "日期": "2026-07-23",
+    "类型": "乒超联赛",
+    "胜者": "LUO Zheng/ZHOU Jinquan",
+    "负者": "HUANG Youhao/NIU Guankai"
+  },
+  {
+    "日期": "2026-07-24",
+    "类型": "乒超联赛",
+    "胜者": "LI Hechen/LIANG Jingkun",
+    "负者": "XUE Fei/YAN An"
+  },
+  {
+    "日期": "2026-07-25",
+    "类型": "乒超联赛",
+    "胜者": "LIN Shidong/ZHAO Zhaoyan",
+    "负者": "KANG Youde/ZHANG Yudong"
+  },
+  {
+    "日期": "2026-07-26",
+    "类型": "乒超联赛",
+    "胜者": "LIN Shidong/YUAN Licen",
+    "负者": "AO Hualei/CHEN Junsong"
+  },
+  {
+    "日期": "2026-07-27",
+    "类型": "乒超联赛",
+    "胜者": "HUANG Xunan/LIN Gaoyuan",
+    "负者": "YUAN Licen/ZHOU Guanhong"
   }
 ]
