@@ -1391,6 +1391,11 @@ body.dark-mode .detail-version-item-ver { color: var(--primary-light); backgroun
 
 .player-name-link { color: var(--primary-blue); cursor: pointer; font-weight: 600; transition: all var(--transition-fast); border-bottom: 1px dashed var(--primary-light); }
 .player-name-link:hover { color: var(--primary-dark); border-bottom-color: var(--primary-blue); }
+.player-flag { display: inline-block; font-size: 1rem; line-height: 1; width: 1.333em; height: 1em; background-size: contain; background-position: center; background-repeat: no-repeat; margin-right: 5px; vertical-align: -2px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,0.08); cursor: default; }
+.viz-flag-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; justify-content: center; margin-top: 12px; font-size: 0.85rem; color: var(--text-secondary); }
+.viz-flag-legend .flag-legend-item { display: inline-flex; align-items: center; gap: 6px; }
+.assoc-checkbox-label { display: inline-flex; align-items: center; gap: 6px; min-width: 0; flex: 1; }
+.assoc-checkbox-label .player-flag { margin-right: 0; }
 .ranking-content { min-width: 0; }
 .ranking-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding: 0 4px; font-size: 0.85rem; color: var(--text-muted); }
 .sort-hint strong { color: var(--primary-blue); }

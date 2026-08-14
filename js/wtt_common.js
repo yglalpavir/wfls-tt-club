@@ -35,6 +35,7 @@ let wttCurrentScoreContext = { player: '', snapshotDate: '' };
 let wttInitialized = false;
 let wttNamesNormalized = false;   // 球员名归一化标记（数据重载时重置）
 let wttMergedNames = null;        // 别名 -> 规范名 映射（运行时内存）
+let wttPlayerAssocData = null;    // 协会籍数据：规范名 -> { assoc, country }（assoc.json 存在时加载）
 
 // ============ 双打组合名称规范化 ============
 
@@ -787,6 +788,95 @@ function wttLoadSeasons() {
             return true;
         })
         .catch(e => { wttSeasonsData = []; return false; });
+}
+
+/**
+ * 加载协会籍数据（assoc.json），按项目目录存放：wtt_data/{cat}/assoc.json
+ * 文件不存在或解析失败时不报错、不展示（静默返回 false）。
+ * 兼容两种格式：
+ *   1) 数组/rows 形式: [{ "name": "WANG Chuqin", "assoc": "CHN", "country": "China" }, ...]
+ *   2) 映射形式: { "WANG Chuqin": "CHN" } 或 { "WANG Chuqin": { "assoc": "CHN", "country": "China" } }
+ * 查询时按 wttNameIdentity 归一化匹配，与球员名合并规则一致。
+ */
+async function wttLoadPlayerAssoc() {
+    wttPlayerAssocData = null;
+    try {
+        const resp = await fetch(wttGetDataPath('assoc.json'));
+        if (!resp.ok) return false;
+        const d = await resp.json();
+        if (!d) return false;
+
+        const map = {};
+        const rows = Array.isArray(d) ? d : (d.rows && Array.isArray(d.rows) ? d.rows : null);
+        if (rows) {
+            for (const r of rows) {
+                if (!r || !r.name || !r.assoc) continue;
+                const key = wttNameIdentity(r.name);
+                if (!key) continue;
+                map[key] = { assoc: String(r.assoc), country: r.country ? String(r.country) : '' };
+            }
+        } else if (typeof d === 'object') {
+            for (const name of Object.keys(d)) {
+                const v = d[name];
+                if (!name || !v) continue;
+                const key = wttNameIdentity(name);
+                if (!key) continue;
+                if (typeof v === 'string') map[key] = { assoc: v, country: '' };
+                else if (v && v.assoc) map[key] = { assoc: String(v.assoc), country: v.country ? String(v.country) : '' };
+            }
+        }
+        wttPlayerAssocData = Object.keys(map).length ? map : null;
+        console.log(`WTT[${wttCurrentCategory}] 协会籍数据加载成功: ${wttPlayerAssocData ? Object.keys(wttPlayerAssocData).length : 0} 人`);
+        return !!wttPlayerAssocData;
+    } catch (e) {
+        console.warn(`WTT[${wttCurrentCategory}] assoc.json 未找到，跳过协会籍显示`);
+        wttPlayerAssocData = null;
+        return false;
+    }
+}
+
+/**
+ * 查询球员协会籍信息
+ * @param {string} name - 球员名（自动按身份归一化匹配）
+ * @returns {{ assoc: string, country: string }|null} 未加载/未匹配时返回 null
+ */
+function wttGetPlayerAssoc(name) {
+    if (!wttPlayerAssocData || !name) return null;
+    return wttPlayerAssocData[wttNameIdentity(name)] || null;
+}
+
+/**
+ * 协会代码 -> flag-icons 旗帜类名（SVG 旗帜，跨平台渲染，含 Windows）
+ * 非 ISO 3166-1 代码手工映射；其余三位 ITTF 代码经 WTT_ASSOC_ISO2 转两位 ISO 代码。
+ * 用于积分数据表姓名左侧展示。
+ */
+const WTT_ASSOC_FLAG_CLASSES = {
+    'ENG': 'gb-eng', 'SCO': 'gb-sct', 'WAL': 'gb-wls', 'NIR': 'gb-nir',
+    'TPE': 'tw', 'HKG': 'hk', 'MAC': 'mo', 'UNK': '', 'OTH': ''
+};
+// 三位 ITTF/奥运协会代码 -> ISO 3166-1 alpha-2（flag-icons 使用两位 ISO 代码）
+const WTT_ASSOC_ISO2 = {
+    ALG: 'DZ', ARG: 'AR', AUS: 'AU', AUT: 'AT', BEL: 'BE', BEN: 'BJ', BRA: 'BR', BRN: 'BH',
+    CAN: 'CA', CHI: 'CL', CHN: 'CN', CMR: 'CM', COL: 'CO', CRO: 'HR', CZE: 'CZ', DEN: 'DK',
+    EGY: 'EG', ESP: 'ES', FRA: 'FR', GER: 'DE', GHA: 'GH', GRE: 'GR', HUN: 'HU', IND: 'IN',
+    IRI: 'IR', ITA: 'IT', JPN: 'JP', KAZ: 'KZ', KOR: 'KR', KSA: 'SA', LBN: 'LB', LUX: 'LU',
+    MAD: 'MG', MAS: 'MY', MDA: 'MD', MEX: 'MX', MGL: 'MN', MKD: 'MK', MLT: 'MT', NED: 'NL',
+    NEP: 'NP', NGR: 'NG', NOR: 'NO', NZL: 'NZ', OMA: 'OM', PHI: 'PH', POL: 'PL', POR: 'PT',
+    PUR: 'PR', QAT: 'QA', ROU: 'RO', RUS: 'RU', SGP: 'SG', SLO: 'SI', SRB: 'RS', SUI: 'CH',
+    SVK: 'SK', SWE: 'SE', THA: 'TH', TOG: 'TG', TUN: 'TN', TUR: 'TR', USA: 'US'
+};
+/**
+ * 协会代码 -> flag-icons 类名（如 "fi fi-cn"）；无法识别时返回 ''。
+ */
+function wttAssocFlagClass(assoc) {
+    if (!assoc) return '';
+    const code = String(assoc).toUpperCase().trim();
+    if (WTT_ASSOC_FLAG_CLASSES[code] !== undefined) {
+        const c = WTT_ASSOC_FLAG_CLASSES[code];
+        return c ? `fi fi-${c}` : '';
+    }
+    const iso2 = code.length === 3 ? (WTT_ASSOC_ISO2[code] || '') : (code.length === 2 ? code : '');
+    return /^[A-Z]{2}$/.test(iso2) ? `fi fi-${iso2.toLowerCase()}` : '';
 }
 
 /**

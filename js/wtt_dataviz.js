@@ -95,7 +95,7 @@ async function wttLoadRankingDataForViz() {
     try {
         // 🔥 逐个加载数据文件，显示详细进度
         // 先加载 settings.json 以判断是否需要 initial-scores
-        showProgress(i18n[currentLang].wtt_downloading.replace('{label}', 'settings').replace('{i}', '1').replace('{total}', '5').replace('{file}', 'settings.json'));
+        showProgress(i18n[currentLang].wtt_downloading.replace('{label}', 'settings').replace('{i}', '1').replace('{total}', '6').replace('{file}', 'settings.json'));
         await new Promise(r => setTimeout(r, 0));
         await wttLoadSettings();
 
@@ -110,7 +110,8 @@ async function wttLoadRankingDataForViz() {
         }
         dataFiles.push(
             { name: 'event-coefficient.json',loader: wttLoadEventCoefficients, label: i18n[currentLang].wtt_file_event },
-            { name: 'seasons.json',          loader: wttLoadSeasons,           label: i18n[currentLang].wtt_file_season }
+            { name: 'seasons.json',          loader: wttLoadSeasons,           label: i18n[currentLang].wtt_file_season },
+            { name: 'assoc.json',            loader: wttLoadPlayerAssoc,       label: i18n[currentLang].wtt_pp_assoc }
         );
 
         for (let i = 0; i < dataFiles.length; i++) {

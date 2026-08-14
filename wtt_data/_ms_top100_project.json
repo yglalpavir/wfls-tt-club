@@ -1,0 +1,707 @@
+{
+  "snapshot": "2026-08-15",
+  "label": "实时",
+  "total": 541,
+  "rows": [
+    {
+      "rank": 1,
+      "name": "WANG Chuqin",
+      "points": 2154.2,
+      "matches": 41,
+      "winrate": "90%"
+    },
+    {
+      "rank": 2,
+      "name": "Sora MATSUSHIMA",
+      "points": 1998.8,
+      "matches": 41,
+      "winrate": "71%"
+    },
+    {
+      "rank": 3,
+      "name": "Tomokazu HARIMOTO",
+      "points": 1959.6,
+      "matches": 48,
+      "winrate": "75%"
+    },
+    {
+      "rank": 4,
+      "name": "Felix LEBRUN",
+      "points": 1957.4,
+      "matches": 47,
+      "winrate": "79%"
+    },
+    {
+      "rank": 5,
+      "name": "FAN Zhendong",
+      "points": 1953.6,
+      "matches": 20,
+      "winrate": "80%"
+    },
+    {
+      "rank": 6,
+      "name": "Hugo CALDERANO",
+      "points": 1922.1,
+      "matches": 36,
+      "winrate": "78%"
+    },
+    {
+      "rank": 7,
+      "name": "Alexis LEBRUN",
+      "points": 1915.6,
+      "matches": 41,
+      "winrate": "73%"
+    },
+    {
+      "rank": 8,
+      "name": "Truls MOREGARD",
+      "points": 1881,
+      "matches": 34,
+      "winrate": "76%"
+    },
+    {
+      "rank": 9,
+      "name": "Anders LIND",
+      "points": 1795.1,
+      "matches": 39,
+      "winrate": "62%"
+    },
+    {
+      "rank": 10,
+      "name": "Vladimir SIDORENKO",
+      "points": 1795,
+      "matches": 28,
+      "winrate": "57%"
+    },
+    {
+      "rank": 11,
+      "name": "LIN Yun-Ju",
+      "points": 1785,
+      "matches": 34,
+      "winrate": "76%"
+    },
+    {
+      "rank": 12,
+      "name": "LIN Shidong",
+      "points": 1776.2,
+      "matches": 45,
+      "winrate": "67%"
+    },
+    {
+      "rank": 13,
+      "name": "Shunsuke TOGAMI",
+      "points": 1773.9,
+      "matches": 38,
+      "winrate": "63%"
+    },
+    {
+      "rank": 14,
+      "name": "Elias RANEFUR",
+      "points": 1765.7,
+      "matches": 27,
+      "winrate": "74%"
+    },
+    {
+      "rank": 15,
+      "name": "Darko JORGIC",
+      "points": 1762.4,
+      "matches": 43,
+      "winrate": "65%"
+    },
+    {
+      "rank": 16,
+      "name": "Yukiya UDA",
+      "points": 1757.2,
+      "matches": 41,
+      "winrate": "61%"
+    },
+    {
+      "rank": 17,
+      "name": "ZHOU Qihao",
+      "points": 1754.1,
+      "matches": 32,
+      "winrate": "72%"
+    },
+    {
+      "rank": 18,
+      "name": "JANG Woojin",
+      "points": 1753.5,
+      "matches": 34,
+      "winrate": "62%"
+    },
+    {
+      "rank": 19,
+      "name": "OH Junsung",
+      "points": 1742.8,
+      "matches": 31,
+      "winrate": "58%"
+    },
+    {
+      "rank": 20,
+      "name": "Hiroto SHINOZUKA",
+      "points": 1742.8,
+      "matches": 42,
+      "winrate": "64%"
+    },
+    {
+      "rank": 21,
+      "name": "Thibault PORET",
+      "points": 1731.5,
+      "matches": 24,
+      "winrate": "58%"
+    },
+    {
+      "rank": 22,
+      "name": "XIANG Peng",
+      "points": 1731,
+      "matches": 30,
+      "winrate": "53%"
+    },
+    {
+      "rank": 23,
+      "name": "Dimitrij OVTCHAROV",
+      "points": 1724.9,
+      "matches": 30,
+      "winrate": "60%"
+    },
+    {
+      "rank": 24,
+      "name": "LIANG Jingkun",
+      "points": 1724.5,
+      "matches": 19,
+      "winrate": "53%"
+    },
+    {
+      "rank": 25,
+      "name": "Patrick FRANZISKA",
+      "points": 1707.3,
+      "matches": 43,
+      "winrate": "56%"
+    },
+    {
+      "rank": 26,
+      "name": "WEN Ruibo",
+      "points": 1698.4,
+      "matches": 43,
+      "winrate": "70%"
+    },
+    {
+      "rank": 27,
+      "name": "KUO Guan-Hong",
+      "points": 1693.6,
+      "matches": 31,
+      "winrate": "55%"
+    },
+    {
+      "rank": 28,
+      "name": "Maharu YOSHIMURA",
+      "points": 1690.5,
+      "matches": 29,
+      "winrate": "72%"
+    },
+    {
+      "rank": 29,
+      "name": "Dang QIU",
+      "points": 1678.2,
+      "matches": 46,
+      "winrate": "54%"
+    },
+    {
+      "rank": 30,
+      "name": "Flavien COTON",
+      "points": 1677,
+      "matches": 27,
+      "winrate": "59%"
+    },
+    {
+      "rank": 31,
+      "name": "Anton KALLBERG",
+      "points": 1671.3,
+      "matches": 45,
+      "winrate": "58%"
+    },
+    {
+      "rank": 32,
+      "name": "Kirill GERASSIMENKO",
+      "points": 1671.1,
+      "matches": 41,
+      "winrate": "68%"
+    },
+    {
+      "rank": 33,
+      "name": "Iulian CHIRITA",
+      "points": 1668.4,
+      "matches": 32,
+      "winrate": "56%"
+    },
+    {
+      "rank": 34,
+      "name": "Joao GERALDO",
+      "points": 1664.9,
+      "matches": 30,
+      "winrate": "63%"
+    },
+    {
+      "rank": 35,
+      "name": "Andre BERTELSMEIER",
+      "points": 1664.2,
+      "matches": 33,
+      "winrate": "61%"
+    },
+    {
+      "rank": 36,
+      "name": "Benedikt DUDA",
+      "points": 1660.8,
+      "matches": 44,
+      "winrate": "61%"
+    },
+    {
+      "rank": 37,
+      "name": "Kristian KARLSSON",
+      "points": 1658,
+      "matches": 25,
+      "winrate": "44%"
+    },
+    {
+      "rank": 38,
+      "name": "PARK Ganghyeon",
+      "points": 1656.2,
+      "matches": 25,
+      "winrate": "60%"
+    },
+    {
+      "rank": 39,
+      "name": "Kanak JHA",
+      "points": 1654.3,
+      "matches": 39,
+      "winrate": "56%"
+    },
+    {
+      "rank": 40,
+      "name": "LIN Gaoyuan",
+      "points": 1652.8,
+      "matches": 2,
+      "winrate": "0%"
+    },
+    {
+      "rank": 41,
+      "name": "YUAN Licen",
+      "points": 1650.1,
+      "matches": 21,
+      "winrate": "67%"
+    },
+    {
+      "rank": 42,
+      "name": "Simon GAUZY",
+      "points": 1649.6,
+      "matches": 27,
+      "winrate": "52%"
+    },
+    {
+      "rank": 43,
+      "name": "XUE Fei",
+      "points": 1642.7,
+      "matches": 25,
+      "winrate": "64%"
+    },
+    {
+      "rank": 44,
+      "name": "LIM Jonghoon",
+      "points": 1640.4,
+      "matches": 30,
+      "winrate": "60%"
+    },
+    {
+      "rank": 45,
+      "name": "Tomislav PUCAR",
+      "points": 1638.4,
+      "matches": 27,
+      "winrate": "44%"
+    },
+    {
+      "rank": 46,
+      "name": "KAO Cheng-Jui",
+      "points": 1637.2,
+      "matches": 6,
+      "winrate": "67%"
+    },
+    {
+      "rank": 47,
+      "name": "Csaba ANDRAS",
+      "points": 1636.6,
+      "matches": 43,
+      "winrate": "67%"
+    },
+    {
+      "rank": 48,
+      "name": "Omar ASSAR",
+      "points": 1636.1,
+      "matches": 19,
+      "winrate": "42%"
+    },
+    {
+      "rank": 49,
+      "name": "WONG Chun Ting",
+      "points": 1626.9,
+      "matches": 24,
+      "winrate": "54%"
+    },
+    {
+      "rank": 50,
+      "name": "CHO Seungmin",
+      "points": 1619.7,
+      "matches": 5,
+      "winrate": "80%"
+    },
+    {
+      "rank": 51,
+      "name": "FENG Yi-Hsin",
+      "points": 1619.1,
+      "matches": 49,
+      "winrate": "57%"
+    },
+    {
+      "rank": 52,
+      "name": "Horacio CIFUENTES",
+      "points": 1618.3,
+      "matches": 9,
+      "winrate": "67%"
+    },
+    {
+      "rank": 53,
+      "name": "Wim VERDONSCHOT",
+      "points": 1617.4,
+      "matches": 29,
+      "winrate": "69%"
+    },
+    {
+      "rank": 54,
+      "name": "Cedric NUYTINCK",
+      "points": 1616.7,
+      "matches": 27,
+      "winrate": "56%"
+    },
+    {
+      "rank": 55,
+      "name": "Milosz REDZIMSKI",
+      "points": 1615.4,
+      "matches": 13,
+      "winrate": "46%"
+    },
+    {
+      "rank": 56,
+      "name": "Steffen MENGEL",
+      "points": 1615.3,
+      "matches": 13,
+      "winrate": "77%"
+    },
+    {
+      "rank": 57,
+      "name": "Vladislav URSU",
+      "points": 1615,
+      "matches": 15,
+      "winrate": "60%"
+    },
+    {
+      "rank": 58,
+      "name": "Ryoichi YOSHIYAMA",
+      "points": 1614.7,
+      "matches": 24,
+      "winrate": "67%"
+    },
+    {
+      "rank": 59,
+      "name": "Masaki OMODA",
+      "points": 1613.4,
+      "matches": 3,
+      "winrate": "100%"
+    },
+    {
+      "rank": 60,
+      "name": "Yuma TANIGAKI",
+      "points": 1613.2,
+      "matches": 10,
+      "winrate": "80%"
+    },
+    {
+      "rank": 61,
+      "name": "PARK Gyuhyeon",
+      "points": 1612.4,
+      "matches": 22,
+      "winrate": "68%"
+    },
+    {
+      "rank": 62,
+      "name": "Leo DE NODREST",
+      "points": 1607.6,
+      "matches": 32,
+      "winrate": "63%"
+    },
+    {
+      "rank": 63,
+      "name": "CHEN Yuanyu",
+      "points": 1604,
+      "matches": 33,
+      "winrate": "52%"
+    },
+    {
+      "rank": 64,
+      "name": "HUNG Jing-Kai",
+      "points": 1602.8,
+      "matches": 26,
+      "winrate": "58%"
+    },
+    {
+      "rank": 65,
+      "name": "AN Jaehyun",
+      "points": 1598.7,
+      "matches": 28,
+      "winrate": "46%"
+    },
+    {
+      "rank": 66,
+      "name": "Mizuki OIKAWA",
+      "points": 1596.8,
+      "matches": 17,
+      "winrate": "65%"
+    },
+    {
+      "rank": 67,
+      "name": "XU Haidong",
+      "points": 1595.3,
+      "matches": 16,
+      "winrate": "63%"
+    },
+    {
+      "rank": 68,
+      "name": "Yuto KIZUKURI",
+      "points": 1590.6,
+      "matches": 23,
+      "winrate": "78%"
+    },
+    {
+      "rank": 69,
+      "name": "Deni KOZUL",
+      "points": 1589.1,
+      "matches": 33,
+      "winrate": "55%"
+    },
+    {
+      "rank": 70,
+      "name": "XU Yingbin",
+      "points": 1588.7,
+      "matches": 18,
+      "winrate": "67%"
+    },
+    {
+      "rank": 71,
+      "name": "Jonathan GROTH",
+      "points": 1584.1,
+      "matches": 18,
+      "winrate": "44%"
+    },
+    {
+      "rank": 72,
+      "name": "CHAN Baldwin",
+      "points": 1580.9,
+      "matches": 23,
+      "winrate": "52%"
+    },
+    {
+      "rank": 73,
+      "name": "HUANG Youzheng",
+      "points": 1579.6,
+      "matches": 30,
+      "winrate": "63%"
+    },
+    {
+      "rank": 74,
+      "name": "Satoshi AIDA",
+      "points": 1578,
+      "matches": 14,
+      "winrate": "64%"
+    },
+    {
+      "rank": 75,
+      "name": "LI Tianyang",
+      "points": 1577.4,
+      "matches": 18,
+      "winrate": "72%"
+    },
+    {
+      "rank": 76,
+      "name": "Tom JARVIS",
+      "points": 1577.2,
+      "matches": 38,
+      "winrate": "47%"
+    },
+    {
+      "rank": 77,
+      "name": "Romain RUIZ",
+      "points": 1575.5,
+      "matches": 18,
+      "winrate": "67%"
+    },
+    {
+      "rank": 78,
+      "name": "ZENG Beixun",
+      "points": 1574.3,
+      "matches": 4,
+      "winrate": "50%"
+    },
+    {
+      "rank": 79,
+      "name": "Alvaro ROBLES",
+      "points": 1573,
+      "matches": 24,
+      "winrate": "46%"
+    },
+    {
+      "rank": 80,
+      "name": "Kazuhiro YOSHIMURA",
+      "points": 1571.2,
+      "matches": 12,
+      "winrate": "50%"
+    },
+    {
+      "rank": 81,
+      "name": "Bastian STEGER",
+      "points": 1569.4,
+      "matches": 14,
+      "winrate": "64%"
+    },
+    {
+      "rank": 82,
+      "name": "HAO Shuai",
+      "points": 1568.5,
+      "matches": 9,
+      "winrate": "44%"
+    },
+    {
+      "rank": 83,
+      "name": "ZHOU Kai",
+      "points": 1565.5,
+      "matches": 4,
+      "winrate": "75%"
+    },
+    {
+      "rank": 84,
+      "name": "Marcos FREITAS",
+      "points": 1564.5,
+      "matches": 31,
+      "winrate": "52%"
+    },
+    {
+      "rank": 85,
+      "name": "Harmeet DESAI",
+      "points": 1564.4,
+      "matches": 15,
+      "winrate": "47%"
+    },
+    {
+      "rank": 86,
+      "name": "Taimu ARINOBU",
+      "points": 1562.4,
+      "matches": 8,
+      "winrate": "50%"
+    },
+    {
+      "rank": 87,
+      "name": "Evgeny TIKHONOV",
+      "points": 1561.9,
+      "matches": 17,
+      "winrate": "59%"
+    },
+    {
+      "rank": 88,
+      "name": "CHO Daeseong",
+      "points": 1558.5,
+      "matches": 6,
+      "winrate": "33%"
+    },
+    {
+      "rank": 89,
+      "name": "Yuta TANAKA",
+      "points": 1558.3,
+      "matches": 19,
+      "winrate": "42%"
+    },
+    {
+      "rank": 90,
+      "name": "QUEK Yong Izaac",
+      "points": 1556.7,
+      "matches": 3,
+      "winrate": "67%"
+    },
+    {
+      "rank": 91,
+      "name": "Jakub DYJAS",
+      "points": 1556.2,
+      "matches": 3,
+      "winrate": "67%"
+    },
+    {
+      "rank": 92,
+      "name": "Jules ROLLAND",
+      "points": 1554.1,
+      "matches": 30,
+      "winrate": "63%"
+    },
+    {
+      "rank": 93,
+      "name": "ZHAI Jiale",
+      "points": 1550.6,
+      "matches": 8,
+      "winrate": "88%"
+    },
+    {
+      "rank": 94,
+      "name": "ZHAO Zihao",
+      "points": 1550.3,
+      "matches": 1,
+      "winrate": "100%"
+    },
+    {
+      "rank": 95,
+      "name": "Kazuki HAMADA",
+      "points": 1550,
+      "matches": 24,
+      "winrate": "58%"
+    },
+    {
+      "rank": 96,
+      "name": "QUEK Izaac",
+      "points": 1549.9,
+      "matches": 18,
+      "winrate": "44%"
+    },
+    {
+      "rank": 97,
+      "name": "Nikita ARTEMENKO",
+      "points": 1548.9,
+      "matches": 20,
+      "winrate": "75%"
+    },
+    {
+      "rank": 98,
+      "name": "Marek BADOWSKI",
+      "points": 1547.7,
+      "matches": 16,
+      "winrate": "56%"
+    },
+    {
+      "rank": 99,
+      "name": "Vincent PICARD",
+      "points": 1547.3,
+      "matches": 20,
+      "winrate": "50%"
+    },
+    {
+      "rank": 100,
+      "name": "Rubio Wen",
+      "points": 1547,
+      "matches": 1,
+      "winrate": "100%"
+    }
+  ]
+}

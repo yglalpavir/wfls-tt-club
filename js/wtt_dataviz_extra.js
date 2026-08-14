@@ -4,7 +4,8 @@
    ======================================== */
 
 let wttRecordBarChart = null, wttEfficiencyScatterChart = null, wttMatchFrequencyChart = null, wttScoreDistributionChart = null;
-let wttDataVizExtraState = { recordTopN: 10, efficiencyTopN: 15, heatmapTopN: 8, freqBucket: 'week', freqCount: 24, distBins: 10 };
+let wttAssocTrendChart = null, wttAssocTop5Chart = null;
+let wttDataVizExtraState = { recordTopN: 10, efficiencyTopN: 15, heatmapTopN: 8, freqBucket: 'week', freqCount: 24, distBins: 10, assocTrendCount: 20, assocTop5TopN: 8 };
 
 // ============ 通用辅助（WTT 页未加载 data-viz-extra.js，需自带） ============
 
@@ -97,6 +98,106 @@ function wttBuildRecordStats(playerNames) {
     return stats;
 }
 
+// ============ 协会籍辅助 ============
+
+const WTT_ASSOC_WEIGHTS = [0.4, 0.3, 0.15, 0.1, 0.05];
+
+function wttBuildAssocCountryMap() {
+    const m = {};
+    if (wttPlayerAssocData) {
+        for (const v of Object.values(wttPlayerAssocData)) {
+            if (v && v.assoc) {
+                const code = String(v.assoc).toUpperCase();
+                if (!m[code]) m[code] = v.country || v.assoc;
+            }
+        }
+    }
+    return m;
+}
+
+// 由按积分降序的球员数组计算协会实力分（前五加权，不足5人按可用权重归一化）
+function wttAssocStrengthFromScores(sortedPlayers) {
+    if (!sortedPlayers || !sortedPlayers.length) return 0;
+    const top = sortedPlayers.slice(0, 5);
+    let num = 0, den = 0;
+    for (let i = 0; i < top.length; i++) {
+        num += top[i].score * WTT_ASSOC_WEIGHTS[i];
+        den += WTT_ASSOC_WEIGHTS[i];
+    }
+    return den > 0 ? num / den : 0;
+}
+
+// 给定一个快照，返回完整 姓名->积分 映射（活跃 + 赛季继承 + 初始分兜底）
+function wttBuildSnapshotScoreMap(entry) {
+    const scores = {};
+    for (const p of (entry && entry.data) || []) {
+        if (p['姓名'] != null) scores[p['姓名']] = p['当前积分'] || 0;
+    }
+    wttWithDataContext(() => {
+        if (wttSeasonsData && wttSeasonsData.length > 0 && entry && entry.season) {
+            const season = wttSeasonsData.find(s => s.label === entry.season);
+            if (season) {
+                const idx = wttSeasonsData.indexOf(season);
+                if (idx >= 0) {
+                    const startScores = getSeasonStartScores(idx);
+                    for (const [name, score] of Object.entries(startScores)) {
+                        if (!(name in scores)) scores[name] = score;
+                    }
+                }
+            }
+        }
+        const effInit = wttGetInitialScoresDataForEngine();
+        if (effInit && effInit.initialScores) {
+            for (const [name, score] of Object.entries(effInit.initialScores)) {
+                if (!(name in scores)) scores[name] = score;
+            }
+        }
+    });
+    return scores;
+}
+
+// 代码 -> [球员名...]（仅包含能在 assoc.json 中匹配到的球员）
+function wttBuildAssocPlayerMap() {
+    const map = {};
+    for (const name of wttGetAllPlayers()) {
+        const a = wttGetPlayerAssoc(name);
+        if (!a || !a.assoc) continue;
+        const code = String(a.assoc).toUpperCase();
+        if (!map[code]) map[code] = [];
+        map[code].push(name);
+    }
+    return map;
+}
+
+// 由某时刻的完整积分映射计算各协会实力分，返回按分数降序的列表
+function wttComputeAssocStrengthList(scoreMap) {
+    const assocPlayers = wttBuildAssocPlayerMap();
+    const countryMap = wttBuildAssocCountryMap();
+    const list = [];
+    for (const [code, players] of Object.entries(assocPlayers)) {
+        const scored = players
+            .map(name => ({ name, score: (scoreMap && scoreMap[name] != null) ? scoreMap[name] : 0 }))
+            .sort((a, b) => b.score - a.score);
+        const top5 = scored.slice(0, 5);
+        const score = wttAssocStrengthFromScores(scored);
+        list.push({ assoc: code, country: countryMap[code] || code, score, top5, count: scored.length });
+    }
+    list.sort((a, b) => b.score - a.score);
+    return list;
+}
+
+// 旗帜图例
+function wttRenderAssocFlagLegend(containerId, items) {
+    const el = document.getElementById(containerId);
+    if (!el) return;
+    if (!items || !items.length) { el.innerHTML = ''; return; }
+    el.innerHTML = items.map(it => {
+        const cls = wttAssocFlagClass(it.assoc);
+        const flag = cls ? `<span class="player-flag ${cls}"></span>` : '';
+        return `<span class="flag-legend-item" title="${escapeHtml(it.assoc)}">${flag}<span>${escapeHtml(it.country || it.assoc)}</span></span>`;
+    }).join('');
+}
+
 // ============ 初始化 ============
 
 function initWttDataVizExtra() {
@@ -110,11 +211,16 @@ function initWttDataVizExtra() {
     wttDataVizExtraState.efficiencyTopN = parseInt(document.getElementById('wttEfficiencyTopN')?.value) || 15;
     wttDataVizExtraState.heatmapTopN = parseInt(document.getElementById('wttHeatmapTopN')?.value) || 8;
     wttDataVizExtraState.distBins = parseInt(document.getElementById('wttDistBinCount')?.value) || 10;
+    wttDataVizExtraState.assocTrendCount = parseInt(document.getElementById('wttAssocTrendCount')?.value) || 20;
+    wttDataVizExtraState.assocTop5TopN = parseInt(document.getElementById('wttAssocTop5TopN')?.value) || 8;
     wttRenderRecordBar(wttDataVizExtraState.recordTopN);
     wttRenderEfficiencyScatter(wttDataVizExtraState.efficiencyTopN);
     wttRenderH2hHeatmap(wttDataVizExtraState.heatmapTopN);
     wttRenderMatchFrequency(wttDataVizExtraState.freqBucket, wttDataVizExtraState.freqCount);
     wttRenderScoreDistribution(wttDataVizExtraState.distBins);
+    wttRenderAssocCheckboxes();
+    wttRenderAssocTrend(wttGetSelectedAssocs(), wttDataVizExtraState.assocTrendCount);
+    wttRenderAssocTop5(wttDataVizExtraState.assocTop5TopN);
 
     document.getElementById('wttRecordTopN')?.addEventListener('change', () => {
         const v = wttClampInt(document.getElementById('wttRecordTopN').value, 1, 50);
@@ -149,6 +255,26 @@ function initWttDataVizExtra() {
         document.getElementById('wttDistBinCount').value = v;
         wttDataVizExtraState.distBins = v;
         wttRenderScoreDistribution(v);
+    });
+    document.getElementById('wttApplyAssocTrend')?.addEventListener('click', () => {
+        const sel = wttGetSelectedAssocs();
+        if (!sel.length) { alert(i18n[currentLang].wtt_alert_select_assoc); return; }
+        if (sel.length > 8) { alert(i18n[currentLang].wtt_alert_max_assoc); return; }
+        const dc = parseInt(document.getElementById('wttAssocTrendCount')?.value) || 20;
+        wttDataVizExtraState.assocTrendCount = dc;
+        wttRenderAssocTrend(sel, dc);
+    });
+    document.getElementById('wttAssocTrendCount')?.addEventListener('change', () => {
+        const sel = wttGetSelectedAssocs();
+        const dc = parseInt(document.getElementById('wttAssocTrendCount')?.value) || 20;
+        wttDataVizExtraState.assocTrendCount = dc;
+        if (sel.length) wttRenderAssocTrend(sel, dc);
+    });
+    document.getElementById('wttAssocTop5TopN')?.addEventListener('change', () => {
+        const v = wttClampInt(document.getElementById('wttAssocTop5TopN').value, 1, 66);
+        document.getElementById('wttAssocTop5TopN').value = v;
+        wttDataVizExtraState.assocTop5TopN = v;
+        wttRenderAssocTop5(v);
     });
 }
 
@@ -445,6 +571,158 @@ function wttRenderScoreDistribution(bins) {
     } catch (err) { console.error('WTT积分区间分布失败', err); }
 }
 
+// ============ 协会积分趋势（折线） ============
+
+function wttRenderAssocCheckboxes() {
+    const container = document.getElementById('wttAssocCheckboxList');
+    if (!container) return;
+    if (!wttPlayerAssocData) {
+        container.innerHTML = '<div style="padding:20px;text-align:center;color:var(--text-muted);">' + i18n[currentLang].wtt_no_data + '</div>';
+        return;
+    }
+    const list = wttComputeAssocStrengthList(wttBuildCurrentScoreMap());
+    if (!list.length) {
+        container.innerHTML = '<div style="padding:20px;text-align:center;color:var(--text-muted);">' + i18n[currentLang].wtt_no_data + '</div>';
+        return;
+    }
+    container.innerHTML = list.map((a, i) => {
+        const checked = i < 8 ? 'checked' : '';
+        const cls = wttAssocFlagClass(a.assoc);
+        const flag = cls ? `<span class="player-flag ${cls}"></span>` : '';
+        return `<label class="player-checkbox-item ${i < 8 ? 'checked' : ''}"><input type="checkbox" value="${escapeHtml(a.assoc)}" ${checked}>` +
+            `<span class="assoc-checkbox-label">${flag}${escapeHtml(a.country || a.assoc)}</span>` +
+            `<span class="player-rank">${a.score.toFixed(1)}</span></label>`;
+    }).join('');
+    container.querySelectorAll('.player-checkbox-item').forEach(item => {
+        item.addEventListener('click', e => {
+            if (e.target.tagName === 'INPUT') return;
+            const cb = item.querySelector('input');
+            cb.checked = !cb.checked;
+            item.classList.toggle('checked', cb.checked);
+        });
+    });
+}
+
+function wttGetSelectedAssocs() {
+    return Array.from(document.querySelectorAll('#wttAssocCheckboxList input[type="checkbox"]:checked')).map(cb => cb.value);
+}
+
+function wttRenderAssocTrend(assocCodes, dataCount) {
+    const canvas = document.getElementById('wttAssocTrendChart');
+    if (!canvas || !wttRankingTimeline.length) return;
+    if (wttAssocTrendChart) { wttAssocTrendChart.destroy(); wttAssocTrendChart = null; }
+    if (!assocCodes || !assocCodes.length) return;
+
+    dataCount = Math.max(2, Math.min(dataCount || 20, wttRankingTimeline.length));
+    const sliced = wttRankingTimeline.slice(-dataCount);
+    const isMobile = window.innerWidth <= 768;
+    const countryMap = wttBuildAssocCountryMap();
+
+    const labels = sliced.map(t => t.label);
+    const strengthByAssoc = {};
+    for (const code of assocCodes) strengthByAssoc[code] = [];
+    for (const t of sliced) {
+        const scoreMap = wttBuildSnapshotScoreMap(t);
+        const list = wttComputeAssocStrengthList(scoreMap);
+        const m = {};
+        for (const a of list) m[a.assoc] = a.score;
+        for (const code of assocCodes) strengthByAssoc[code].push(m[code] != null ? m[code] : null);
+    }
+
+    const datasets = assocCodes.map((code, idx) => ({
+        label: countryMap[code] || code,
+        data: strengthByAssoc[code],
+        borderColor: WTT_CHART_COLORS[idx % WTT_CHART_COLORS.length],
+        backgroundColor: WTT_CHART_COLORS[idx % WTT_CHART_COLORS.length] + '20',
+        borderWidth: isMobile ? 1.5 : 2,
+        pointRadius: isMobile ? 2 : 3,
+        pointHoverRadius: isMobile ? 4 : 6,
+        tension: 0.3, fill: false, spanGaps: true
+    }));
+
+    try {
+        wttAssocTrendChart = new Chart(canvas, {
+            type: 'line', data: { labels, datasets },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                interaction: { intersect: false, mode: 'index' },
+                plugins: {
+                    legend: { position: 'bottom', labels: { usePointStyle: true, padding: isMobile ? 8 : 16, font: { size: isMobile ? 9 : 11, family: "'Poppins', sans-serif" }, boxWidth: isMobile ? 10 : 12 } },
+                    tooltip: { backgroundColor: 'rgba(26,29,40,0.9)', titleFont: { size: isMobile ? 11 : 13 }, bodyFont: { size: isMobile ? 10 : 12 }, padding: isMobile ? 8 : 12, cornerRadius: 8, itemSort: (a, b) => (b.parsed.y ?? -Infinity) - (a.parsed.y ?? -Infinity), callbacks: { label: ctx => `${ctx.dataset.label}: ${ctx.raw == null ? '-' : ctx.raw.toFixed(1)}` } }
+                },
+                scales: {
+                    x: { grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 9 : 11 }, maxRotation: isMobile ? 45 : 0 } },
+                    y: { beginAtZero: false, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 9 : 11 } }, title: { display: true, text: i18n[currentLang].wtt_assoc_strength_axis, font: { size: isMobile ? 10 : 12 } } }
+                }
+            }
+        });
+    } catch (err) { console.error('WTT协会积分趋势失败', err); }
+}
+
+// ============ 协会前五球员（分组柱状） ============
+
+function wttRenderAssocTop5(topN) {
+    const canvas = document.getElementById('wttAssocTop5Chart');
+    const legendEl = document.getElementById('wttAssocTop5Legend');
+    if (!canvas) return;
+    if (wttAssocTop5Chart) { wttAssocTop5Chart.destroy(); wttAssocTop5Chart = null; }
+    if (!wttPlayerAssocData) {
+        if (legendEl) legendEl.innerHTML = '<div class="compare-placeholder"><p>' + i18n[currentLang].wtt_no_data + '</p></div>';
+        return;
+    }
+    const isMobile = window.innerWidth <= 768;
+    const list = wttComputeAssocStrengthList(wttBuildCurrentScoreMap()).slice(0, topN);
+    if (!list.length) {
+        if (legendEl) legendEl.innerHTML = '<div class="compare-placeholder"><p>' + i18n[currentLang].wtt_no_data + '</p></div>';
+        return;
+    }
+
+    const labels = list.map(a => a.country || a.assoc);
+    const rankColors = ['#4da3ff', '#6fb7ff', '#90cbff', '#b1dfff', '#d2efff'];
+    const datasets = [0, 1, 2, 3, 4].map(rank => ({
+        label: i18n[currentLang].wtt_assoc_rank_n.replace('{n}', rank + 1),
+        data: list.map(a => (a.top5[rank] ? a.top5[rank].score : 0)),
+        backgroundColor: rankColors[rank],
+        borderRadius: 4
+    }));
+
+    try {
+        wttAssocTop5Chart = new Chart(canvas, {
+            type: 'bar',
+            data: { labels, datasets },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                interaction: { intersect: false, mode: 'index' },
+                plugins: {
+                    legend: { position: 'bottom', labels: { usePointStyle: true, padding: isMobile ? 8 : 16, font: { size: isMobile ? 9 : 11, family: "'Poppins', sans-serif" }, boxWidth: isMobile ? 10 : 12 } },
+                    tooltip: {
+                        backgroundColor: 'rgba(26,29,40,0.9)', titleFont: { size: isMobile ? 11 : 13 }, bodyFont: { size: isMobile ? 10 : 12 }, padding: isMobile ? 8 : 12, cornerRadius: 8,
+                        callbacks: {
+                            title: items => {
+                                const a = items[0] && list[items[0].dataIndex];
+                                if (!a) return '';
+                                return (a.country || a.assoc) + ' · ' + i18n[currentLang].wtt_assoc_players_count.replace('{n}', a.count);
+                            },
+                            label: ctx => {
+                                const a = list[ctx.dataIndex];
+                                const p = a && a.top5[ctx.datasetIndex];
+                                const rankLabel = i18n[currentLang].wtt_assoc_rank_n.replace('{n}', ctx.datasetIndex + 1);
+                                return p ? `${rankLabel} ${p.name}: ${p.score.toFixed(1)}` : `${rankLabel}: -`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: { grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 8 : 10 }, maxRotation: isMobile ? 45 : 0 } },
+                    y: { beginAtZero: false, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 9 : 11 } }, title: { display: true, text: i18n[currentLang].wtt_axis_points, font: { size: isMobile ? 10 : 12 } } }
+                }
+            }
+        });
+    } catch (err) { console.error('WTT协会前五柱状图失败', err); }
+
+    wttRenderAssocFlagLegend('wttAssocTop5Legend', list.map(a => ({ assoc: a.assoc, country: a.country })));
+}
+
 // ============ 语言切换重绘 ============
 
 function wttReapplyDataVizExtra() {
@@ -454,4 +732,7 @@ function wttReapplyDataVizExtra() {
     wttRenderH2hHeatmap(wttDataVizExtraState.heatmapTopN);
     wttRenderMatchFrequency(wttDataVizExtraState.freqBucket, wttDataVizExtraState.freqCount);
     wttRenderScoreDistribution(wttDataVizExtraState.distBins);
+    const assocSel = wttGetSelectedAssocs();
+    if (assocSel.length) wttRenderAssocTrend(assocSel, wttDataVizExtraState.assocTrendCount);
+    wttRenderAssocTop5(wttDataVizExtraState.assocTop5TopN);
 }

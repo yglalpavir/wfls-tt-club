@@ -227,7 +227,8 @@ async function wttLoadRankingData() {
         }
         dataFiles.push(
             { name: 'event-coefficient.json',loader: wttLoadEventCoefficients, label: i18n[currentLang].wtt_file_event },
-            { name: 'seasons.json',          loader: wttLoadSeasons,           label: i18n[currentLang].wtt_file_season }
+            { name: 'seasons.json',          loader: wttLoadSeasons,           label: i18n[currentLang].wtt_file_season },
+            { name: 'assoc.json',            loader: wttLoadPlayerAssoc,       label: i18n[currentLang].wtt_pp_assoc }
         );
 
         for (let i = 0; i < dataFiles.length; i++) {
@@ -409,9 +410,15 @@ function wttRenderRankingTable(data) {
         const pn = String(p['姓名'] || '-');
         const pnSafe = escapeHtml(pn);
         const sds = escapeHtml(currentSnapshotDate || '');
+        const flagHtml = (function () {
+            const a = wttGetPlayerAssoc(pn);
+            const cls = a ? wttAssocFlagClass(a.assoc) : '';
+            if (!cls) return '';
+            return `<span class="player-flag ${cls}" title="${escapeHtml(a.assoc)}${a.country ? ' · ' + escapeHtml(a.country) : ''}"></span> `;
+        })();
         const nc = (wttScoreLogData.length > 0)
-            ? wttLinkPlayerName(pn) + ` <button class="score-detail-icon" onclick="wttShowScoreDetail('${pnSafe}','${sds}')" title="${escapeHtml(i18n[currentLang].wtt_click_detail)}"><i class="fa-solid fa-receipt"></i></button>`
-            : pnSafe;
+            ? flagHtml + wttLinkPlayerName(pn) + ` <button class="score-detail-icon" onclick="wttShowScoreDetail('${pnSafe}','${sds}')" title="${escapeHtml(i18n[currentLang].wtt_click_detail)}"><i class="fa-solid fa-receipt"></i></button>`
+            : flagHtml + pnSafe;
 
         tr.innerHTML = `<td>${i + 1}</td><td>${nc}</td><td><strong>${(p['当前积分'] || 0).toFixed(1)}</strong></td><td>${pch}</td><td>${ch}</td><td>${p['总场次'] || 0}</td><td>${wd}</td>`;
         tb.appendChild(tr);

@@ -35,7 +35,8 @@ async function wttLoadRankingDataForPlayer() {
         }
         dataFiles.push(
             { name: 'event-coefficient.json',loader: wttLoadEventCoefficients, label: i18n[currentLang].wtt_file_event },
-            { name: 'seasons.json',          loader: wttLoadSeasons,           label: i18n[currentLang].wtt_file_season }
+            { name: 'seasons.json',          loader: wttLoadSeasons,           label: i18n[currentLang].wtt_file_season },
+            { name: 'assoc.json',            loader: wttLoadPlayerAssoc,       label: i18n[currentLang].wtt_pp_assoc }
         );
 
         for (let i = 0; i < dataFiles.length; i++) {
@@ -131,6 +132,7 @@ function wttPpRenderHeader(playerName) {
     const row = snap ? snap.row : null;
     const curScore = row && row['当前积分'] != null ? (typeof row['当前积分'] === 'number' ? row['当前积分'].toFixed(1) : row['当前积分']) : '-';
     const info = wttGetCategoryInfo();
+    const assoc = wttGetPlayerAssoc(playerName);
 
     const header = document.createElement('div');
     header.className = 'player-profile glass-card';
@@ -145,6 +147,7 @@ function wttPpRenderHeader(playerName) {
             <div class="player-profile-meta">
                 <span class="player-score-chip"><i class="fa-solid fa-gem"></i> ${i18n[currentLang].rank_col_points} ${curScore}</span>
                 <span class="player-score-chip"><i class="fa-solid fa-medal"></i> ${rank ? '#' + rank : '-'}</span>
+                ${assoc ? `<span class="player-score-chip" title="${escapeHtml(i18n[currentLang].wtt_pp_assoc)}"><i class="fa-solid fa-earth-asia"></i> ${escapeHtml(assoc.assoc)}${assoc.country ? ' · ' + escapeHtml(assoc.country) : ''}</span>` : ''}
                 ${snap ? `<span class="player-score-chip"><i class="fa-solid fa-clock"></i> ${escapeHtml(String(snap.label))}</span>` : ''}
             </div>
         </div>

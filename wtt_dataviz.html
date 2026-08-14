@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.5.0/css/flag-icons.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -189,6 +190,40 @@
             </div>
             <div class="viz-chart-container glass-card" style="min-height:420px;">
                 <canvas id="wttScoreDistributionChart"></canvas>
+            </div>
+
+            <div class="viz-section-header" style="margin-top:48px;">
+                <span class="section-tag">Association Trend</span>
+                <h2 class="section-title" data-i18n="wtt_assoc_trend_title">协会积分趋势</h2>
+                <div class="viz-topn-selector">
+                    <span data-i18n="wtt_recent">最近</span>
+                    <input type="number" id="wttAssocTrendCount" value="20" min="2" max="200" title="显示最近N个数据点">
+                    <span data-i18n="wtt_data_points">个数据点</span>
+                </div>
+            </div>
+            <div class="viz-grid-2col">
+                <div class="viz-player-selector glass-card" style="display:flex;flex-direction:column;">
+                    <h4 data-i18n="wtt_select_assocs">选择协会（最多8个）</h4>
+                    <div class="player-checkbox-list" id="wttAssocCheckboxList" style="flex:1;overflow-y:auto;min-height:0;margin-bottom:0;"></div>
+                    <button class="btn btn-sm btn-primary" id="wttApplyAssocTrend" style="margin-top:12px;flex-shrink:0;" data-i18n="data_viz_apply">应用</button>
+                </div>
+                <div class="viz-chart-container glass-card">
+                    <canvas id="wttAssocTrendChart"></canvas>
+                </div>
+            </div>
+
+            <div class="viz-section-header" style="margin-top:48px;">
+                <span class="section-tag">Association Top 5</span>
+                <h2 class="section-title" data-i18n="wtt_assoc_top5_title">协会前五球员</h2>
+                <div class="viz-topn-selector">
+                    <span data-i18n="wtt_top_n">显示前</span>
+                    <input type="number" id="wttAssocTop5TopN" value="8" min="1" max="66" title="填写1-66的任意正整数">
+                    <span data-i18n="wtt_assocs">个协会</span>
+                </div>
+            </div>
+            <div class="viz-chart-container glass-card" style="min-height:420px;">
+                <canvas id="wttAssocTop5Chart"></canvas>
+                <div id="wttAssocTop5Legend" class="viz-flag-legend"></div>
             </div>
 
         </div>
