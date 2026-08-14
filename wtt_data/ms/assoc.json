@@ -1,4 +1,9 @@
 {
+    "FAN Zhendong": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id121404"
+  },
   "MATSUSHIMA Sora": {
     "assoc": "JPN",
     "country": "Japan",
@@ -2078,11 +2083,6 @@
     "assoc": "IRI",
     "country": "Iran",
     "source": "official-416"
-  },
-  "FAN Zhendong": {
-    "assoc": "CHN",
-    "country": "China",
-    "source": "official-id121404"
   },
   "Masaki OMODA": {
     "assoc": "JPN",

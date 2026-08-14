@@ -1,0 +1,4092 @@
+{
+  "YAN Xuejiao": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id135040"
+  },
+  "Miyu MAEDA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id113617"
+  },
+  "Miyuu KIHARA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id131036"
+  },
+  "Sakura MORI": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id119542"
+  },
+  "Kasumi ISHIKAWA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id110752"
+  },
+  "CHEN Szu-Yu": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "official-id114105"
+  },
+  "Yui HAMAMOTO": {
+    "assoc": "AUT",
+    "country": "Austria",
+    "source": "official-id117819"
+  },
+  "Minami ANDO": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id123847"
+  },
+  "SUH Hyowon": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id108470"
+  },
+  "Hina HAYATA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id123672"
+  },
+  "Miyu NAGASAKI": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id124591"
+  },
+  "ZHANG Hui": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id110551"
+  },
+  "Miyu KATO": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id117822"
+  },
+  "DOO Hoi Kem": {
+    "assoc": "HKG",
+    "country": "Hong Kong, China",
+    "source": "official-id115543"
+  },
+  "Mizuki MORIZONO": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id115027"
+  },
+  "Saki TASHIRO": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id113592"
+  },
+  "CHENG I-Ching": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "official-id110797"
+  },
+  "Yumeno SOMA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id134995"
+  },
+  "LEE Ho Ching": {
+    "assoc": "HKG",
+    "country": "Hong Kong, China",
+    "source": "official-id105159"
+  },
+  "Shiho MATSUDAIRA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id117370"
+  },
+  "Misaki MORIZONO": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id110753"
+  },
+  "Yuka UMEMURA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id133690"
+  },
+  "Ayane MORITA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id117924"
+  },
+  "Asuka SASAO": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id134790"
+  },
+  "ZENG Jian": {
+    "assoc": "SGP",
+    "country": "Singapore",
+    "source": "official-id131342"
+  },
+  "Ying HAN": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "official-id118762"
+  },
+  "Elizabeta SAMARA": {
+    "assoc": "ROU",
+    "country": "Romania",
+    "source": "official-id108226"
+  },
+  "Sofia POLCANOVA": {
+    "assoc": "AUT",
+    "country": "Austria",
+    "source": "official-id107477"
+  },
+  "Haruna OJIO": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id135179"
+  },
+  "JEON Jihee": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id118994"
+  },
+  "YANG Haeun": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id112368"
+  },
+  "Miu HIRANO": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id117820"
+  },
+  "Miku IZUMO": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id135939"
+  },
+  "LIN Ye": {
+    "assoc": "CAN",
+    "country": "Canada",
+    "source": "official-id118786"
+  },
+  "Kasumi KIMURA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id132096"
+  },
+  "Miwa HARIMOTO": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id136711"
+  },
+  "Xiaona SHAN": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "official-id111849"
+  },
+  "Rika SUZUKI": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id111368"
+  },
+  "Sakura YOKOI": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id135935"
+  },
+  "Honoka HASHIMOTO": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id133000"
+  },
+  "Saki SHIBATA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id123848"
+  },
+  "Kotona OKADA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id211037"
+  },
+  "Yuna OJIO": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id145267"
+  },
+  "Maki SHIOMI": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id132095"
+  },
+  "Ayuka TANIOKA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id111367"
+  },
+  "Hitomi SATO": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id122261"
+  },
+  "Chelsea EDGHILL": {
+    "assoc": "GUY",
+    "country": "Guyana",
+    "source": "official-id115498"
+  },
+  "Sally YEE": {
+    "assoc": "FIJ",
+    "country": "Fiji",
+    "source": "official-id121017"
+  },
+  "Juan LIU": {
+    "assoc": "USA",
+    "country": "USA",
+    "source": "official-id105472"
+  },
+  "Olufunke OSHONAIKE": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id106995"
+  },
+  "Bolorerdene BATMUNKH": {
+    "assoc": "MGL",
+    "country": "Mongolia",
+    "source": "official-id132126"
+  },
+  "Fadwa GARCI": {
+    "assoc": "TUN",
+    "country": "Tunisia",
+    "source": "official-id117150"
+  },
+  "Jia LIU": {
+    "assoc": "AUT",
+    "country": "Austria",
+    "source": "official-id105469"
+  },
+  "Hend ZAZA": {
+    "assoc": "SYR",
+    "country": "Syria",
+    "source": "official-id135310"
+  },
+  "Jian Fang LAY": {
+    "assoc": "AUS",
+    "country": "Australia",
+    "source": "official-id105111"
+  },
+  "Daniela FONSECA": {
+    "assoc": "CUB",
+    "country": "Cuba",
+    "source": "official-id124042"
+  },
+  "Sarah HANFFOU": {
+    "assoc": "CMR",
+    "country": "Cameroon",
+    "source": "official-id103425"
+  },
+  "Rachel MORET": {
+    "assoc": "SUI",
+    "country": "Switzerland",
+    "source": "official-id111416"
+  },
+  "Jessica YAMADA": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id110286"
+  },
+  "Yana NOSKOVA": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "official-id106788"
+  },
+  "Prithika PAVADE": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "official-id131100"
+  },
+  "Natalia PARTYKA": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "official-id107177"
+  },
+  "Michelle BROMLEY": {
+    "assoc": "AUS",
+    "country": "Australia",
+    "source": "official-id101000"
+  },
+  "SHIN Yubin": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id123977"
+  },
+  "Orawan PARANANG": {
+    "assoc": "THA",
+    "country": "Thailand",
+    "source": "official-id120972"
+  },
+  "Melanie DIAZ": {
+    "assoc": "PUR",
+    "country": "Puerto Rico",
+    "source": "official-id112463"
+  },
+  "Manika BATRA": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id115920"
+  },
+  "Tin-Tin HO": {
+    "assoc": "ENG",
+    "country": "England",
+    "source": "official-id115430"
+  },
+  "Galia DVORAK": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "official-id102427"
+  },
+  "Jieni SHAO": {
+    "assoc": "POR",
+    "country": "Portugal",
+    "source": "official-id121401"
+  },
+  "Christina KAELLBERG": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "official-id118507"
+  },
+  "Sutirtha MUKHERJEE": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id117365"
+  },
+  "Linda BERGSTROEM": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "official-id114905"
+  },
+  "Maria Paulina VEGA": {
+    "assoc": "CHI",
+    "country": "Chile",
+    "source": "official-id109777"
+  },
+  "Ganna GAPONOVA": {
+    "assoc": "UKR",
+    "country": "Ukraine",
+    "source": "official-id102949"
+  },
+  "Jia Nan YUAN": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "official-id137894"
+  },
+  "Yousra HELMY": {
+    "assoc": "EGY",
+    "country": "Egypt",
+    "source": "official-id113908"
+  },
+  "Maria XIAO": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "official-id111072"
+  },
+  "Anastassiya LAVROVA": {
+    "assoc": "KAZ",
+    "country": "Kazakhstan",
+    "source": "official-id117891"
+  },
+  "Debora VIVARELLI": {
+    "assoc": "ITA",
+    "country": "Italy",
+    "source": "official-id110995"
+  },
+  "Offiong EDEM": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id102445"
+  },
+  "Dora MADARASZ": {
+    "assoc": "HUN",
+    "country": "Hungary",
+    "source": "official-id111213"
+  },
+  "Sarah DE NUTTE": {
+    "assoc": "LUX",
+    "country": "Luxembourg",
+    "source": "official-id112280"
+  },
+  "Georgina POTA": {
+    "assoc": "HUN",
+    "country": "Hungary",
+    "source": "official-id107525"
+  },
+  "Mo ZHANG": {
+    "assoc": "CAN",
+    "country": "Canada",
+    "source": "official-id110560"
+  },
+  "Dina MESHREF": {
+    "assoc": "EGY",
+    "country": "Egypt",
+    "source": "official-id111656"
+  },
+  "Xia Lian NI": {
+    "assoc": "LUX",
+    "country": "Luxembourg",
+    "source": "official-id106706"
+  },
+  "Hana MATELOVA": {
+    "assoc": "CZE",
+    "country": "Czechia",
+    "source": "official-id105913"
+  },
+  "Margaryta PESOTSKA": {
+    "assoc": "UKR",
+    "country": "Ukraine",
+    "source": "official-id107321"
+  },
+  "YU Mengyu": {
+    "assoc": "SGP",
+    "country": "Singapore",
+    "source": "official-id111628"
+  },
+  "Fu YU": {
+    "assoc": "POR",
+    "country": "Portugal",
+    "source": "official-id102863"
+  },
+  "Suthasini SAWETTABUT": {
+    "assoc": "THA",
+    "country": "Thailand",
+    "source": "official-id111833"
+  },
+  "Polina MIKHAILOVA": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "official-id106114"
+  },
+  "Bruna TAKAHASHI": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id121623"
+  },
+  "SOO Wai Yam Minnie": {
+    "assoc": "HKG",
+    "country": "Hong Kong, China",
+    "source": "official-id115037"
+  },
+  "Qian LI": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "official-id111882"
+  },
+  "Xiaoxin YANG": {
+    "assoc": "MON",
+    "country": "Monaco",
+    "source": "official-id112868"
+  },
+  "CHEN Meng": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id112019"
+  },
+  "Petrissa SOLJA": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "official-id111065"
+  },
+  "Britt EERLAND": {
+    "assoc": "NED",
+    "country": "Netherlands",
+    "source": "official-id113701"
+  },
+  "Bernadette SZOCS": {
+    "assoc": "ROU",
+    "country": "Romania",
+    "source": "official-id111012"
+  },
+  "Mima ITO": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id117821"
+  },
+  "Adriana DIAZ": {
+    "assoc": "PUR",
+    "country": "Puerto Rico",
+    "source": "official-id115009"
+  },
+  "FENG Tianwei": {
+    "assoc": "SGP",
+    "country": "Singapore",
+    "source": "official-id102712"
+  },
+  "SUN Yingsha": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id131163"
+  },
+  "WANG Manyu": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id121411"
+  },
+  "CHOI Hyojoo": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id131401"
+  },
+  "CHENG I Ching": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "official-id110797"
+  },
+  "CHEN Szu Yu": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "official-id114105"
+  },
+  "Daniela DODEAN": {
+    "assoc": "ROU",
+    "country": "Romania",
+    "source": "official-id102316"
+  },
+  "Natalia BAJOR": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "official-id115454"
+  },
+  "Huijing WANG": {
+    "assoc": "USA",
+    "country": "USA",
+    "source": "official-id117758"
+  },
+  "Szandra PERGEL": {
+    "assoc": "HUN",
+    "country": "Hungary",
+    "source": "official-id107302"
+  },
+  "Yuan LIU": {
+    "assoc": "AUT",
+    "country": "Austria",
+    "source": "official-id111881"
+  },
+  "Farah ABDELAZIZ": {
+    "assoc": "EGY",
+    "country": "Egypt",
+    "source": "official-id100032"
+  },
+  "WEI Wensheng": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id136992"
+  },
+  "Mika TAMURA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id222250"
+  },
+  "Seira USHIJIMA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id122556"
+  },
+  "Moe NOMURA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id136808"
+  },
+  "Jie LI": {
+    "assoc": "NED",
+    "country": "Netherlands",
+    "source": "official-id111772"
+  },
+  "LEE Eunhye": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id122052"
+  },
+  "YUAN Xuejiao": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id135040"
+  },
+  "Nina MITTELHAM": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "official-id114726"
+  },
+  "LI Yu-Jhun": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "official-id124162"
+  },
+  "LIU Hsing-Yin": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "official-id113300"
+  },
+  "Ema LABOSOVA": {
+    "assoc": "SVK",
+    "country": "Slovak Republic",
+    "source": "official-id121890"
+  },
+  "Tatiana KUKULKOVA": {
+    "assoc": "SVK",
+    "country": "Slovak Republic",
+    "source": "official-id121714"
+  },
+  "Ines MATOS": {
+    "assoc": "POR",
+    "country": "Portugal",
+    "source": "official-id133659"
+  },
+  "ZHU Chengzhu": {
+    "assoc": "HKG",
+    "country": "Hong Kong, China",
+    "source": "official-id123505"
+  },
+  "ZHOU Jingyi": {
+    "assoc": "SGP",
+    "country": "Singapore",
+    "source": "official-id131965"
+  },
+  "WONG Xin Ru": {
+    "assoc": "SGP",
+    "country": "Singapore",
+    "source": "official-id123575"
+  },
+  "Tessy GONDERINGER": {
+    "assoc": "LUX",
+    "country": "Luxembourg",
+    "source": "official-id103175"
+  },
+  "KIM Nayeong": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id133814"
+  },
+  "LEE Zion": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id119285"
+  },
+  "YOON Hyobin": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id119089"
+  },
+  "Leonie HARTBRICH": {
+    "assoc": "HUN",
+    "country": "Hungary",
+    "source": "official-id118868"
+  },
+  "Helga DARI": {
+    "assoc": "HUN",
+    "country": "Hungary",
+    "source": "official-id133004"
+  },
+  "Adina DIACONU": {
+    "assoc": "ROU",
+    "country": "Romania",
+    "source": "official-id117463"
+  },
+  "Pauline CHASSELIN": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "official-id116921"
+  },
+  "Sreeja AKULA": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id122718"
+  },
+  "Diya Parag CHITALE": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id131395"
+  },
+  "Katerina TOMANOVSKA": {
+    "assoc": "CZE",
+    "country": "Czechia",
+    "source": "official-id114517"
+  },
+  "Marketa SEVCIKOVA": {
+    "assoc": "CZE",
+    "country": "Czechia",
+    "source": "official-id121883"
+  },
+  "Daniely RIOS": {
+    "assoc": "PUR",
+    "country": "Puerto Rico",
+    "source": "official-id112462"
+  },
+  "Emiko TAGUCHI": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id136641"
+  },
+  "Saya YAMAMURO": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id145266"
+  },
+  "Yuna KURIYAMA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id209518"
+  },
+  "Mirei MAKINO": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id206021"
+  },
+  "Miku MATSUSHIMA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id205512"
+  },
+  "Rina MAKINO": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id205784"
+  },
+  "Anne UESAWA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id136712"
+  },
+  "HE Zhuojia": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id119730"
+  },
+  "Jade SASMAN": {
+    "assoc": "RSA",
+    "country": "South Africa",
+    "source": "official-id120795"
+  },
+  "Arisha MADAREE": {
+    "assoc": "RSA",
+    "country": "South Africa",
+    "source": "official-id105678"
+  },
+  "HUANG Yu-Chiao": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "official-id119749"
+  },
+  "Jesse NOMDO": {
+    "assoc": "RSA",
+    "country": "South Africa",
+    "source": "official-id133646"
+  },
+  "Tshepiso REBATENNE": {
+    "assoc": "BOT",
+    "country": "Botswana",
+    "source": "official-id123707"
+  },
+  "Snesipho MACHI": {
+    "assoc": "RSA",
+    "country": "South Africa",
+    "source": "official-id203757"
+  },
+  "Boipelo MASHWABI": {
+    "assoc": "RSA",
+    "country": "South Africa",
+    "source": "official-id202639"
+  },
+  "Latifa NALAVWE": {
+    "assoc": "ZAM",
+    "country": "Zambia",
+    "source": "official-id202375"
+  },
+  "Zodwa MAPHANGA": {
+    "assoc": "RSA",
+    "country": "South Africa",
+    "source": "official-id110837"
+  },
+  "Shyreen PENSULO": {
+    "assoc": "MAW",
+    "country": "Malawi",
+    "source": "official-id114667"
+  },
+  "Boingotlo MOTHUPI": {
+    "assoc": "RSA",
+    "country": "South Africa",
+    "source": "official-id203752"
+  },
+  "Juane SCHOLTZ": {
+    "assoc": "RSA",
+    "country": "South Africa",
+    "source": "official-id203755"
+  },
+  "HUANG Hsin": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "official-id115789"
+  },
+  "Simeen MOOKREY": {
+    "assoc": "RSA",
+    "country": "South Africa",
+    "source": "official-id123791"
+  },
+  "CHIEN Tung-Chuan": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "official-id124165"
+  },
+  "Kaitlin BIGGAS": {
+    "assoc": "RSA",
+    "country": "South Africa",
+    "source": "official-id203754"
+  },
+  "Bhavna HEERALAL": {
+    "assoc": "RSA",
+    "country": "South Africa",
+    "source": "official-id202643"
+  },
+  "Hashmika HEERALAL": {
+    "assoc": "RSA",
+    "country": "South Africa",
+    "source": "official-id202644"
+  },
+  "HUANG Yu-Jie": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "official-id124584"
+  },
+  "Isabel ALBINO": {
+    "assoc": "ANG",
+    "country": "Angola",
+    "source": "official-id120719"
+  },
+  "Ozge YILMAZ": {
+    "assoc": "TUR",
+    "country": "Türkiye",
+    "source": "official-id133026"
+  },
+  "Ece HARAC": {
+    "assoc": "TUR",
+    "country": "Türkiye",
+    "source": "official-id133340"
+  },
+  "Lailaa EDWARDS": {
+    "assoc": "RSA",
+    "country": "South Africa",
+    "source": "official-id144777"
+  },
+  "YEH Yi-Tian": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "official-id136987"
+  },
+  "Sabine WINTER": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "official-id111066"
+  },
+  "Danisha PATEL": {
+    "assoc": "RSA",
+    "country": "South Africa",
+    "source": "official-id112086"
+  },
+  "ZHANG Rui": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id123112"
+  },
+  "Charlotte LUTZ": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "official-id135501"
+  },
+  "FAN Siqi": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id119529"
+  },
+  "Camille LUTZ": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "official-id123550"
+  },
+  "Musfiquh KALAM": {
+    "assoc": "RSA",
+    "country": "South Africa",
+    "source": "official-id133647"
+  },
+  "LIU Weishan": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id133894"
+  },
+  "KUAI Man": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id135049"
+  },
+  "Archana Girish KAMATH": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id123684"
+  },
+  "Yuan WAN": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "official-id118777"
+  },
+  "QIAN Tianyi": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id119797"
+  },
+  "Sibel ALTINKAYA": {
+    "assoc": "TUR",
+    "country": "Türkiye",
+    "source": "official-id112944"
+  },
+  "CHEN Yi": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id132132"
+  },
+  "JOO Cheonhui": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id200413"
+  },
+  "Katarzyna WEGRZYN": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "official-id121041"
+  },
+  "Swastika GHOSH": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id133593"
+  },
+  "Irina CIOBANU": {
+    "assoc": "ROU",
+    "country": "Romania",
+    "source": "official-id113711"
+  },
+  "Elena ZAHARIA": {
+    "assoc": "ROU",
+    "country": "Romania",
+    "source": "official-id134011"
+  },
+  "Markhabo MAGDIEVA": {
+    "assoc": "UZB",
+    "country": "Uzbekistan",
+    "source": "official-id145016"
+  },
+  "Rozalina KHADJIEVA": {
+    "assoc": "UZB",
+    "country": "Uzbekistan",
+    "source": "official-id132900"
+  },
+  "LEE Hoi Man Karen": {
+    "assoc": "HKG",
+    "country": "Hong Kong, China",
+    "source": "official-id132320"
+  },
+  "Karoline MISCHEK": {
+    "assoc": "AUT",
+    "country": "Austria",
+    "source": "official-id118893"
+  },
+  "GOI Rui Xuan": {
+    "assoc": "SGP",
+    "country": "Singapore",
+    "source": "official-id123579"
+  },
+  "Chantal MANTZ": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "official-id116674"
+  },
+  "Marwa ALHODABY": {
+    "assoc": "EGY",
+    "country": "Egypt",
+    "source": "official-id120725"
+  },
+  "Margo DEGRAEF": {
+    "assoc": "BEL",
+    "country": "Belgium",
+    "source": "official-id118774"
+  },
+  "Sofia-Xuan ZHANG": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "official-id115402"
+  },
+  "Anna WEGRZYN": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "official-id121040"
+  },
+  "ZHANG Wanling": {
+    "assoc": "SGP",
+    "country": "Singapore",
+    "source": "official-id122231"
+  },
+  "CHENG Hsien-Tzu": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "official-id114706"
+  },
+  "KONG Tsz Lam": {
+    "assoc": "HKG",
+    "country": "Hong Kong, China",
+    "source": "official-id135187"
+  },
+  "Yashaswini GHORPADE": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id137850"
+  },
+  "Franziska SCHREINER": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "official-id131086"
+  },
+  "NG Wing Lam": {
+    "assoc": "HKG",
+    "country": "Hong Kong, China",
+    "source": "official-id132318"
+  },
+  "Amelie SOLJA": {
+    "assoc": "AUT",
+    "country": "Austria",
+    "source": "official-id108843"
+  },
+  "Zauresh AKASHEVA": {
+    "assoc": "KAZ",
+    "country": "Kazakhstan",
+    "source": "official-id123228"
+  },
+  "SER Lin Qian": {
+    "assoc": "SGP",
+    "country": "Singapore",
+    "source": "official-id132144"
+  },
+  "WONG Hoi Tung": {
+    "assoc": "HKG",
+    "country": "Hong Kong, China",
+    "source": "official-id135190"
+  },
+  "Andreea DRAGOMAN": {
+    "assoc": "ROU",
+    "country": "Romania",
+    "source": "official-id122428"
+  },
+  "Jinnipa SAWETTABUT": {
+    "assoc": "THA",
+    "country": "Thailand",
+    "source": "official-id123894"
+  },
+  "Hana ARAPOVIC": {
+    "assoc": "CRO",
+    "country": "Croatia",
+    "source": "official-id132756"
+  },
+  "Mariam ALHODABY": {
+    "assoc": "EGY",
+    "country": "Egypt",
+    "source": "official-id120726"
+  },
+  "QI Fei": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id135923"
+  },
+  "Giorgia PICCOLIN": {
+    "assoc": "ITA",
+    "country": "Italy",
+    "source": "official-id115413"
+  },
+  "Christina KALLBERG": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "official-id118507"
+  },
+  "SHI Xunyao": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id123120"
+  },
+  "Annett KAUFMANN": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "official-id135493"
+  },
+  "Hana GODA": {
+    "assoc": "EGY",
+    "country": "Egypt",
+    "source": "official-id131335"
+  },
+  "Maryam ALI": {
+    "assoc": "QAT",
+    "country": "Qatar",
+    "source": "official-id133314"
+  },
+  "Ishara MADURANGI": {
+    "assoc": "SRI",
+    "country": "Sri Lanka",
+    "source": "official-id105681"
+  },
+  "Zeina SADAQA": {
+    "assoc": "JOR",
+    "country": "Jordan",
+    "source": "official-id145542"
+  },
+  "QIN Yuxuan": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id144628"
+  },
+  "Mira ALHAJ HASHEM": {
+    "assoc": "JOR",
+    "country": "Jordan",
+    "source": "official-id201279"
+  },
+  "ZHANG Xiangyu": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id133901"
+  },
+  "ZONG Geman": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id200907"
+  },
+  "Filippa BERGAND": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "official-id120125"
+  },
+  "Gaia MONFARDINI": {
+    "assoc": "ITA",
+    "country": "Italy",
+    "source": "official-id120294"
+  },
+  "Leila IMRE": {
+    "assoc": "HUN",
+    "country": "Hungary",
+    "source": "official-id115039"
+  },
+  "Andrea TODOROVIC": {
+    "assoc": "SRB",
+    "country": "Serbia",
+    "source": "official-id109453"
+  },
+  "Charlotte CAREY": {
+    "assoc": "WAL",
+    "country": "Wales",
+    "source": "official-id113587"
+  },
+  "FAN Shuhan": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id136403"
+  },
+  "Ana TOFANT": {
+    "assoc": "SLO",
+    "country": "Slovenia",
+    "source": "official-id122842"
+  },
+  "Taimmaa ABO-YAMAN": {
+    "assoc": "JOR",
+    "country": "Jordan",
+    "source": "official-id118087"
+  },
+  "Batool KHADER": {
+    "assoc": "JOR",
+    "country": "Jordan",
+    "source": "official-id137097"
+  },
+  "HAN Feier": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id133529"
+  },
+  "Sewar ABUYAMAN": {
+    "assoc": "JOR",
+    "country": "Jordan",
+    "source": "official-id113373"
+  },
+  "Rinad EL-HASANI": {
+    "assoc": "JOR",
+    "country": "Jordan",
+    "source": "official-id135912"
+  },
+  "Reeth TENNISON": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id115939"
+  },
+  "Stephanie LOEUILLETTE": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "official-id112356"
+  },
+  "Linda BERGSTROM": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "official-id114905"
+  },
+  "Minhyung JEE": {
+    "assoc": "AUS",
+    "country": "Australia",
+    "source": "official-id104092"
+  },
+  "Prithoki CHAKRABORTI": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id134874"
+  },
+  "Pritha Priya VARTIKAR": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id135511"
+  },
+  "Nabita SHRESTHA": {
+    "assoc": "NEP",
+    "country": "Nepal",
+    "source": "official-id111260"
+  },
+  "Prapti SEN": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id132907"
+  },
+  "Anannya BASAK": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id200226"
+  },
+  "ZHANG Wenjing": {
+    "assoc": "HKG",
+    "country": "Hong Kong, China",
+    "source": "official-id134665"
+  },
+  "Marina DONNER": {
+    "assoc": "FIN",
+    "country": "Finland",
+    "source": "official-id200904"
+  },
+  "LAM Yee Lok": {
+    "assoc": "HKG",
+    "country": "Hong Kong, China",
+    "source": "official-id116152"
+  },
+  "Anusha KUTUMBALE": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id132909"
+  },
+  "Nithya MANI": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id134887"
+  },
+  "Anjali ROHILLA": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id134867"
+  },
+  "Elina MAHARJAN": {
+    "assoc": "NEP",
+    "country": "Nepal",
+    "source": "official-id114563"
+  },
+  "LI Ching Wan": {
+    "assoc": "HKG",
+    "country": "Hong Kong, China",
+    "source": "official-id114127"
+  },
+  "KIM Hayeong": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id123113"
+  },
+  "Poymantee BAISYA": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id134888"
+  },
+  "Ayhika MUKHERJEE": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id119537"
+  },
+  "Yangzi LIU": {
+    "assoc": "AUS",
+    "country": "Australia",
+    "source": "official-id137627"
+  },
+  "Suhana SAINI": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id131914"
+  },
+  "WANG Yidi": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id124110"
+  },
+  "Hanna HAPONOVA": {
+    "assoc": "UKR",
+    "country": "Ukraine",
+    "source": "official-id102949"
+  },
+  "Brianna BURGOS": {
+    "assoc": "PUR",
+    "country": "Puerto Rico",
+    "source": "official-id135306"
+  },
+  "LAI Chloe": {
+    "assoc": "SGP",
+    "country": "Singapore",
+    "source": "official-id135571"
+  },
+  "Ivana MALOBABIC": {
+    "assoc": "CRO",
+    "country": "Croatia",
+    "source": "official-id105779"
+  },
+  "Camila ARGUELLES": {
+    "assoc": "ARG",
+    "country": "Argentina",
+    "source": "official-id119109"
+  },
+  "Amy WANG": {
+    "assoc": "USA",
+    "country": "USA",
+    "source": "official-id119022"
+  },
+  "Nicole ARLIA": {
+    "assoc": "ITA",
+    "country": "Italy",
+    "source": "official-id131581"
+  },
+  "CHENG Janissa": {
+    "assoc": "SGP",
+    "country": "Singapore",
+    "source": "official-id133606"
+  },
+  "Clio BARCENAS": {
+    "assoc": "MEX",
+    "country": "Mexico",
+    "source": "official-id131618"
+  },
+  "TAN Zhao Yun": {
+    "assoc": "SGP",
+    "country": "Singapore",
+    "source": "official-id131966"
+  },
+  "SU Pei-Ling": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "official-id122716"
+  },
+  "Sabina SURJAN": {
+    "assoc": "SRB",
+    "country": "Serbia",
+    "source": "official-id121074"
+  },
+  "Mateja JEGER": {
+    "assoc": "CRO",
+    "country": "Croatia",
+    "source": "official-id112453"
+  },
+  "Audrey ZARIF": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "official-id116874"
+  },
+  "Arantxa COSSIO ACEVES": {
+    "assoc": "MEX",
+    "country": "Mexico",
+    "source": "official-id134356"
+  },
+  "LOY Ming Ying": {
+    "assoc": "SGP",
+    "country": "Singapore",
+    "source": "official-id201453"
+  },
+  "Paulina VEGA": {
+    "assoc": "CHI",
+    "country": "Chile",
+    "source": "official-id109777"
+  },
+  "Izabela LUPULESKU": {
+    "assoc": "SRB",
+    "country": "Serbia",
+    "source": "official-id120187"
+  },
+  "CHEN Xingtong": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id121403"
+  },
+  "Wanwisa AUEAWIRIYAYOTHIN": {
+    "assoc": "THA",
+    "country": "Thailand",
+    "source": "official-id133668"
+  },
+  "YANG Ha Eun": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id112368"
+  },
+  "Kulapassr VIJITVIRIYAGUL": {
+    "assoc": "THA",
+    "country": "Thailand",
+    "source": "official-id201438"
+  },
+  "Aiya ALIMBAYEVA": {
+    "assoc": "KAZ",
+    "country": "Kazakhstan",
+    "source": "official-id119545"
+  },
+  "Supamas PANKHAOYOY": {
+    "assoc": "THA",
+    "country": "Thailand",
+    "source": "official-id134836"
+  },
+  "Tamolwan KHETKHUAN": {
+    "assoc": "THA",
+    "country": "Thailand",
+    "source": "official-id115565"
+  },
+  "Phantita PINYOPISAN": {
+    "assoc": "THA",
+    "country": "Thailand",
+    "source": "official-id131876"
+  },
+  "Khemisarar DERUJIJAROEN": {
+    "assoc": "THA",
+    "country": "Thailand",
+    "source": "official-id144653"
+  },
+  "Wiranchana SREECHAK": {
+    "assoc": "THA",
+    "country": "Thailand",
+    "source": "official-id202344"
+  },
+  "RYU Hanna": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id132701"
+  },
+  "Natsima DIKAENG": {
+    "assoc": "THA",
+    "country": "Thailand",
+    "source": "official-id134837"
+  },
+  "Phatsaraphon WONGLAKHON": {
+    "assoc": "THA",
+    "country": "Thailand",
+    "source": "official-id202345"
+  },
+  "HUANG Yu-Wen": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "official-id117373"
+  },
+  "Nanapat KOLA": {
+    "assoc": "THA",
+    "country": "Thailand",
+    "source": "official-id122326"
+  },
+  "Wirakarn TAYAPITAK": {
+    "assoc": "THA",
+    "country": "Thailand",
+    "source": "official-id134834"
+  },
+  "HUANG Yi-Hua": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "official-id103752"
+  },
+  "WU Yangchen": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id136101"
+  },
+  "SUH Hyo Won": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id108470"
+  },
+  "LI Yake": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id136613"
+  },
+  "Cynthia KWABI": {
+    "assoc": "GHA",
+    "country": "Ghana",
+    "source": "official-id113565"
+  },
+  "Cecilia AKPAN": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id106868"
+  },
+  "Rofiat JIMOH": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id133722"
+  },
+  "KIM Seoyun": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id135373"
+  },
+  "Hilda AGBOTTAH": {
+    "assoc": "GHA",
+    "country": "Ghana",
+    "source": "official-id137140"
+  },
+  "Sukurat AIYELBEGAN": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id133723"
+  },
+  "GUO Yuhan": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id123114"
+  },
+  "YANG Yiyun": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id135922"
+  },
+  "Essevoh Mireille LEBA": {
+    "assoc": "CIV",
+    "country": "Cote D'Ivoire",
+    "source": "official-id136471"
+  },
+  "Abosede Esther AKINSETE": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id137142"
+  },
+  "Kehinde OYENIYI": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id133740"
+  },
+  "Cecilia FREMA": {
+    "assoc": "GHA",
+    "country": "Ghana",
+    "source": "official-id135290"
+  },
+  "WANG Xiaotong": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id136539"
+  },
+  "Kehinde AKINYINKA": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id123129"
+  },
+  "Hope UDOAKA": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id205850"
+  },
+  "Agnes COLEMAN": {
+    "assoc": "GHA",
+    "country": "Ghana",
+    "source": "official-id205816"
+  },
+  "ZANG Xiaotong": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id135894"
+  },
+  "Mojisola Suliat AJIBIKE": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id111790"
+  },
+  "Esther ORIBAMISE": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id122193"
+  },
+  "Fatimo BELLO": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id115379"
+  },
+  "Ajoke OJOMU": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id122660"
+  },
+  "Oceane GUISNEL": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "official-id121688"
+  },
+  "Abir HAJ SALAH": {
+    "assoc": "TUN",
+    "country": "Tunisia",
+    "source": "official-id120020"
+  },
+  "Islam OUNAEIS": {
+    "assoc": "TUN",
+    "country": "Tunisia",
+    "source": "official-id122153"
+  },
+  "Andrea PAVLOVIC": {
+    "assoc": "CRO",
+    "country": "Croatia",
+    "source": "official-id122988"
+  },
+  "Sophia KLEE": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "official-id132978"
+  },
+  "Maram ZOGHLAMI": {
+    "assoc": "TUN",
+    "country": "Tunisia",
+    "source": "official-id131741"
+  },
+  "Arianna BARANI": {
+    "assoc": "ITA",
+    "country": "Italy",
+    "source": "official-id133328"
+  },
+  "Malissa NASRI": {
+    "assoc": "ALG",
+    "country": "Algeria",
+    "source": "official-id120750"
+  },
+  "Hadjer TAHMI": {
+    "assoc": "ALG",
+    "country": "Algeria",
+    "source": "official-id133463"
+  },
+  "Lea RAKOVAC": {
+    "assoc": "CRO",
+    "country": "Croatia",
+    "source": "official-id113944"
+  },
+  "Valentina RONCALLO": {
+    "assoc": "ITA",
+    "country": "Italy",
+    "source": "official-id123649"
+  },
+  "Ariel BARBOSA": {
+    "assoc": "LUX",
+    "country": "Luxembourg",
+    "source": "official-id123982"
+  },
+  "Rachel SUNG": {
+    "assoc": "USA",
+    "country": "USA",
+    "source": "official-id121250"
+  },
+  "Isa COK": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "official-id131846"
+  },
+  "Lynda LOGHRAIBI": {
+    "assoc": "ALG",
+    "country": "Algeria",
+    "source": "official-id117142"
+  },
+  "Sara TOKIC": {
+    "assoc": "SLO",
+    "country": "Slovenia",
+    "source": "official-id133426"
+  },
+  "Aikaterini TOLIOU": {
+    "assoc": "GRE",
+    "country": "Greece",
+    "source": "official-id115850"
+  },
+  "Enya MOLTARA": {
+    "assoc": "SLO",
+    "country": "Slovenia",
+    "source": "official-id136166"
+  },
+  "Aishath NAZIM": {
+    "assoc": "MDV",
+    "country": "Maldives",
+    "source": "official-id132829"
+  },
+  "Tjasa NOVAK": {
+    "assoc": "SLO",
+    "country": "Slovenia",
+    "source": "official-id134176"
+  },
+  "Elisavet TERPOU": {
+    "assoc": "GRE",
+    "country": "Greece",
+    "source": "official-id123198"
+  },
+  "Dragana VIGNJEVIC": {
+    "assoc": "SRB",
+    "country": "Serbia",
+    "source": "official-id120185"
+  },
+  "CHENG Pusyuan": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "official-id135091"
+  },
+  "Tania PLAIAN": {
+    "assoc": "ROU",
+    "country": "Romania",
+    "source": "official-id123519"
+  },
+  "Fathimath ALI": {
+    "assoc": "MDV",
+    "country": "Maldives",
+    "source": "official-id134974"
+  },
+  "Lara OPEKA": {
+    "assoc": "SLO",
+    "country": "Slovenia",
+    "source": "official-id131587"
+  },
+  "Bernadett BALINT": {
+    "assoc": "HUN",
+    "country": "Hungary",
+    "source": "official-id114897"
+  },
+  "CHEN Ying-Chen": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "official-id124156"
+  },
+  "Fabiola DIAZ": {
+    "assoc": "PUR",
+    "country": "Puerto Rico",
+    "source": "official-id132083"
+  },
+  "Zhiying ZENG": {
+    "assoc": "CHI",
+    "country": "Chile",
+    "source": "official-id205401"
+  },
+  "Vivien SCHOLZ": {
+    "assoc": "LUX",
+    "country": "Luxembourg",
+    "source": "official-id131748"
+  },
+  "Alejandra PRIETO": {
+    "assoc": "PER",
+    "country": "Peru",
+    "source": "official-id136433"
+  },
+  "Judith MORALES": {
+    "assoc": "CHI",
+    "country": "Chile",
+    "source": "official-id111346"
+  },
+  "Valentina RIOS": {
+    "assoc": "CHI",
+    "country": "Chile",
+    "source": "official-id124506"
+  },
+  "Anna HURSEY": {
+    "assoc": "WAL",
+    "country": "Wales",
+    "source": "official-id131480"
+  },
+  "Daniela ORTEGA": {
+    "assoc": "CHI",
+    "country": "Chile",
+    "source": "official-id117294"
+  },
+  "Cecilia Valentina ZEA HUACAN": {
+    "assoc": "PER",
+    "country": "Peru",
+    "source": "official-id145868"
+  },
+  "Isabel DUFFOO": {
+    "assoc": "PER",
+    "country": "Peru",
+    "source": "official-id122604"
+  },
+  "Camila SERIKAWA": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id206350"
+  },
+  "Mahayla Aime SARDA": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id200756"
+  },
+  "Jessica PRATES": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id122786"
+  },
+  "Gabrielle PINCERATO": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id200642"
+  },
+  "Alondra RODRIGUEZ": {
+    "assoc": "PUR",
+    "country": "Puerto Rico",
+    "source": "official-id137647"
+  },
+  "Victoria STRASSBURGER": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id146091"
+  },
+  "Karina Ayumi SENAGA SHIRAY": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id144239"
+  },
+  "Bruna ALEXANDRE": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id117298"
+  },
+  "Giulia TAKAHASHI": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id133478"
+  },
+  "Laura WATANABE": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id136420"
+  },
+  "Albina ZHAXYLYKOVA": {
+    "assoc": "KAZ",
+    "country": "Kazakhstan",
+    "source": "official-id200347"
+  },
+  "Aray ASHKEYEVA": {
+    "assoc": "KAZ",
+    "country": "Kazakhstan",
+    "source": "official-id200322"
+  },
+  "Zhanerke KOSHKUMBAYEVA": {
+    "assoc": "KAZ",
+    "country": "Kazakhstan",
+    "source": "official-id200323"
+  },
+  "Viktoriya MOCHALKINA": {
+    "assoc": "KAZ",
+    "country": "Kazakhstan",
+    "source": "official-id200324"
+  },
+  "Guzel TORSHAYEVA": {
+    "assoc": "KAZ",
+    "country": "Kazakhstan",
+    "source": "official-id200345"
+  },
+  "YOO Siwoo": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id132715"
+  },
+  "SIM Hyunju": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id121523"
+  },
+  "Anel BAKHYT": {
+    "assoc": "KAZ",
+    "country": "Kazakhstan",
+    "source": "official-id133074"
+  },
+  "KIM Yealin": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id132712"
+  },
+  "ZHU Sibing": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id200908"
+  },
+  "Angelina ROMANOVSKAYA": {
+    "assoc": "KAZ",
+    "country": "Kazakhstan",
+    "source": "official-id133124"
+  },
+  "Amira YOUSRY": {
+    "assoc": "EGY",
+    "country": "Egypt",
+    "source": "official-id116733"
+  },
+  "Sarvinoz MIRKADIROVA": {
+    "assoc": "KAZ",
+    "country": "Kazakhstan",
+    "source": "official-id133113"
+  },
+  "Nathacha Dennys MATA APONTE": {
+    "assoc": "VEN",
+    "country": "Venezuela",
+    "source": "official-id200360"
+  },
+  "Dakota FERRER": {
+    "assoc": "VEN",
+    "country": "Venezuela",
+    "source": "official-id201909"
+  },
+  "XU Yi": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id137465"
+  },
+  "Lilou MASSART": {
+    "assoc": "BEL",
+    "country": "Belgium",
+    "source": "official-id136258"
+  },
+  "Matilda HANSSON": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "official-id131454"
+  },
+  "Simay KULAKCEKEN": {
+    "assoc": "TUR",
+    "country": "Türkiye",
+    "source": "official-id117931"
+  },
+  "Busra DEMIR": {
+    "assoc": "TUR",
+    "country": "Türkiye",
+    "source": "official-id200087"
+  },
+  "Yadira SILVA": {
+    "assoc": "MEX",
+    "country": "Mexico",
+    "source": "official-id113309"
+  },
+  "DENG Zhen": {
+    "assoc": "USA",
+    "country": "USA",
+    "source": "official-id145860"
+  },
+  "Matilde PINTO": {
+    "assoc": "POR",
+    "country": "Portugal",
+    "source": "official-id135660"
+  },
+  "Archana KAMATH": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id123684"
+  },
+  "Ivy LIAO": {
+    "assoc": "CAN",
+    "country": "Canada",
+    "source": "official-id122419"
+  },
+  "XU Jessie": {
+    "assoc": "CAN",
+    "country": "Canada",
+    "source": "official-id136600"
+  },
+  "Sarah JALLI": {
+    "assoc": "USA",
+    "country": "USA",
+    "source": "official-id135701"
+  },
+  "Ruqayyah KINOO": {
+    "assoc": "MRI",
+    "country": "Mauritius",
+    "source": "official-id131834"
+  },
+  "Liopa SANTHY": {
+    "assoc": "VAN",
+    "country": "Vanuatu",
+    "source": "official-id108289"
+  },
+  "Melissa TAPPER": {
+    "assoc": "AUS",
+    "country": "Australia",
+    "source": "official-id109272"
+  },
+  "Ana CODINA": {
+    "assoc": "ARG",
+    "country": "Argentina",
+    "source": "official-id111053"
+  },
+  "Barbora VARADY": {
+    "assoc": "SVK",
+    "country": "Slovak Republic",
+    "source": "official-id100868"
+  },
+  "Aia MOHAMED": {
+    "assoc": "QAT",
+    "country": "Qatar",
+    "source": "official-id113197"
+  },
+  "LEE Daeun": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id132702"
+  },
+  "Diya CHITALE": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id131395"
+  },
+  "Zuzanna WIELGOS": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "official-id135039"
+  },
+  "Nathalie MARCHETTI": {
+    "assoc": "BEL",
+    "country": "Belgium",
+    "source": "official-id117009"
+  },
+  "Faouzia MELKI": {
+    "assoc": "QAT",
+    "country": "Qatar",
+    "source": "official-id137491"
+  },
+  "Mahshid ASHTARI": {
+    "assoc": "IRI",
+    "country": "Iran",
+    "source": "official-id121959"
+  },
+  "Karoline MISCHEK-COLUCCI": {
+    "assoc": "AUT",
+    "country": "Austria",
+    "source": "official-id118893"
+  },
+  "WANG Yi-Ju": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "official-id116160"
+  },
+  "Jennifer VARGHESE": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id201311"
+  },
+  "Debolina DAS": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id208363"
+  },
+  "Sayanika MAJI": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id202797"
+  },
+  "Radhapriya GOEL": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id135504"
+  },
+  "Ms. NAINA": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id119535"
+  },
+  "Taneesha KOTECHA": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id145455"
+  },
+  "Yashini SIVASANKAR": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id132760"
+  },
+  "Sayali WANI": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id200317"
+  },
+  "Lakshita NARANG": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id134121"
+  },
+  "Frenaz CHIPIA": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id132975"
+  },
+  "Selena SELVAKUMAR": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id131171"
+  },
+  "Trisha GOGOI": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id135514"
+  },
+  "Pritha VARTIKAR": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id135511"
+  },
+  "Diya BRAMHACHARY": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id146057"
+  },
+  "Garima GOYAL": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id143785"
+  },
+  "Nikoleta STEFANOVA": {
+    "assoc": "ITA",
+    "country": "Italy",
+    "source": "official-id108955"
+  },
+  "LYNE Karen": {
+    "assoc": "MAS",
+    "country": "Malaysia",
+    "source": "official-id132892"
+  },
+  "CHANG Li Sian": {
+    "assoc": "MAS",
+    "country": "Malaysia",
+    "source": "official-id132724"
+  },
+  "HO Ying": {
+    "assoc": "MAS",
+    "country": "Malaysia",
+    "source": "official-id117499"
+  },
+  "Ioana SINGEORZAN": {
+    "assoc": "ROU",
+    "country": "Romania",
+    "source": "official-id134369"
+  },
+  "Arantxa COSSIO": {
+    "assoc": "MEX",
+    "country": "Mexico",
+    "source": "official-id134356"
+  },
+  "Solomiya YAREMCHUK": {
+    "assoc": "UKR",
+    "country": "Ukraine",
+    "source": "official-id122348"
+  },
+  "LEE Eudora": {
+    "assoc": "SGP",
+    "country": "Singapore",
+    "source": "official-id144498"
+  },
+  "Carolyn LI": {
+    "assoc": "FIJ",
+    "country": "Fiji",
+    "source": "official-id112591"
+  },
+  "Hend FATHY": {
+    "assoc": "EGY",
+    "country": "Egypt",
+    "source": "official-id132023"
+  },
+  "Lucie MOBAREK": {
+    "assoc": "ALG",
+    "country": "Algeria",
+    "source": "official-id134329"
+  },
+  "Tiffany KE": {
+    "assoc": "USA",
+    "country": "USA",
+    "source": "official-id124363"
+  },
+  "Beatriz FIORE": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id135760"
+  },
+  "Abigail MENEZES": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id200637"
+  },
+  "Karina SHIRAY": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id144239"
+  },
+  "Sofia KANO": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id200393"
+  },
+  "Lucia CORDERO": {
+    "assoc": "GUA",
+    "country": "Guatemala",
+    "source": "official-id118028"
+  },
+  "Sabrina MIYABARA": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id146023"
+  },
+  "Lana OZEKI": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id200640"
+  },
+  "Mahayla SARDA": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id200756"
+  },
+  "Beatriz KANASHIRO": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id146213"
+  },
+  "Lhays STOLARSKI": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id146089"
+  },
+  "Maria NASCIMENTO": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id208996"
+  },
+  "Candela SANCHI": {
+    "assoc": "ITA",
+    "country": "Italy",
+    "source": "official-id200977"
+  },
+  "Abril IWASA": {
+    "assoc": "ARG",
+    "country": "Argentina",
+    "source": "official-id136233"
+  },
+  "Alma MARCIAL": {
+    "assoc": "ARG",
+    "country": "Argentina",
+    "source": "official-id201828"
+  },
+  "Candela MOLERO": {
+    "assoc": "ARG",
+    "country": "Argentina",
+    "source": "official-id116364"
+  },
+  "Tijana JOKIC": {
+    "assoc": "SRB",
+    "country": "Serbia",
+    "source": "official-id121708"
+  },
+  "Ilona SZTWIERTNIA": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "official-id136574"
+  },
+  "Jessica REYES LAI": {
+    "assoc": "USA",
+    "country": "USA",
+    "source": "official-id208510"
+  },
+  "Anna BRZYSKA": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "official-id133758"
+  },
+  "Dora COSIC": {
+    "assoc": "CRO",
+    "country": "Croatia",
+    "source": "official-id134345"
+  },
+  "Paulina KRZYSIEK": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "official-id119266"
+  },
+  "Reka BEZEG": {
+    "assoc": "SRB",
+    "country": "Serbia",
+    "source": "official-id132809"
+  },
+  "Satsuki ODO": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id133405"
+  },
+  "Lea PAULIN": {
+    "assoc": "SLO",
+    "country": "Slovenia",
+    "source": "official-id123667"
+  },
+  "Katarina STRAZAR": {
+    "assoc": "SLO",
+    "country": "Slovenia",
+    "source": "official-id123666"
+  },
+  "XU Huiyao": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id202971"
+  },
+  "Joanita BORTEYE": {
+    "assoc": "GHA",
+    "country": "Ghana",
+    "source": "official-id207008"
+  },
+  "Aishat RABIU": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id209660"
+  },
+  "Farida BADAWY": {
+    "assoc": "EGY",
+    "country": "Egypt",
+    "source": "official-id132028"
+  },
+  "Halima HUSSAIN": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id114776"
+  },
+  "YAO Zixuan": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id203471"
+  },
+  "DING Yijie": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id203618"
+  },
+  "Bernice BORQUAYE": {
+    "assoc": "GHA",
+    "country": "Ghana",
+    "source": "official-id113568"
+  },
+  "Blessing LABANTI": {
+    "assoc": "GHA",
+    "country": "Ghana",
+    "source": "official-id202262"
+  },
+  "SUN Sinan": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id204290"
+  },
+  "Sukurat AIYELABEGAN": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id133723"
+  },
+  "Aminat FASHOLA": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id123149"
+  },
+  "Mojisola AJIBIKE": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id111790"
+  },
+  "Abosede AKINSETE": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id137142"
+  },
+  "Abosede ODUSANYA": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id122195"
+  },
+  "Nikoleta PUCHOVANOVA": {
+    "assoc": "SVK",
+    "country": "Slovak Republic",
+    "source": "official-id121715"
+  },
+  "KIM Seongjin": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id135370"
+  },
+  "Jana RIERA": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "official-id134656"
+  },
+  "Salma BOUHJAR": {
+    "assoc": "TUN",
+    "country": "Tunisia",
+    "source": "official-id136146"
+  },
+  "Elvira RAD": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "official-id136180"
+  },
+  "Balkis SUISSI": {
+    "assoc": "TUN",
+    "country": "Tunisia",
+    "source": "official-id146150"
+  },
+  "Neda SHAHSAVARI": {
+    "assoc": "IRI",
+    "country": "Iran",
+    "source": "official-id108526"
+  },
+  "YOO Yerin": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id137193"
+  },
+  "NGUYEN Khanh": {
+    "assoc": "VIE",
+    "country": "Vietnam",
+    "source": "official-id137300"
+  },
+  "Thanwarat CHANTANA": {
+    "assoc": "THA",
+    "country": "Thailand",
+    "source": "official-id202341"
+  },
+  "CHOI Nahyun": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id136479"
+  },
+  "Pacharaphorn CHANVANITBORIKAN": {
+    "assoc": "THA",
+    "country": "Thailand",
+    "source": "official-id144654"
+  },
+  "Mariana SAHAKIAN": {
+    "assoc": "LBN",
+    "country": "Lebanon",
+    "source": "official-id108825"
+  },
+  "PYON Song Gyong": {
+    "assoc": "PRK",
+    "country": "Korea DPR",
+    "source": "official-id132886"
+  },
+  "Priscilla TOMMY": {
+    "assoc": "VAN",
+    "country": "Vanuatu",
+    "source": "official-id109480"
+  },
+  "Kiara TAFUR": {
+    "assoc": "PER",
+    "country": "Peru",
+    "source": "official-id201776"
+  },
+  "Luciana GRANADOS": {
+    "assoc": "PER",
+    "country": "Peru",
+    "source": "official-id146065"
+  },
+  "Alejandra CHAVEZ": {
+    "assoc": "PER",
+    "country": "Peru",
+    "source": "official-id145871"
+  },
+  "Natzumi AQUIJE": {
+    "assoc": "PER",
+    "country": "Peru",
+    "source": "official-id146068"
+  },
+  "Erika YAMANAKA": {
+    "assoc": "PER",
+    "country": "Peru",
+    "source": "official-id201203"
+  },
+  "Camila HUAMAN": {
+    "assoc": "PER",
+    "country": "Peru",
+    "source": "official-id207454"
+  },
+  "Ana SANLLEHI": {
+    "assoc": "PER",
+    "country": "Peru",
+    "source": "official-id205778"
+  },
+  "Eliana GONZALEZ": {
+    "assoc": "PER",
+    "country": "Peru",
+    "source": "official-id103189"
+  },
+  "Andrea RETAMOZO": {
+    "assoc": "PER",
+    "country": "Peru",
+    "source": "official-id146045"
+  },
+  "Karla Joana MENDOZA SALAZAR": {
+    "assoc": "PER",
+    "country": "Peru",
+    "source": "official-id145875"
+  },
+  "Noelia CARREON": {
+    "assoc": "PER",
+    "country": "Peru",
+    "source": "official-id201754"
+  },
+  "Mariagrazia LA TORRE": {
+    "assoc": "PER",
+    "country": "Peru",
+    "source": "official-id145290"
+  },
+  "Alessia COLFER": {
+    "assoc": "PER",
+    "country": "Peru",
+    "source": "official-id145122"
+  },
+  "Isabella LEON": {
+    "assoc": "PER",
+    "country": "Peru",
+    "source": "official-id146061"
+  },
+  "Krittwika ROY": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id117035"
+  },
+  "Camila PAREDES": {
+    "assoc": "PER",
+    "country": "Peru",
+    "source": "official-id208769"
+  },
+  "Misuzu TAKEYA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id144862"
+  },
+  "Asel ERKEBAEVA": {
+    "assoc": "UZB",
+    "country": "Uzbekistan",
+    "source": "official-id146301"
+  },
+  "Kaho AKAE": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id136309"
+  },
+  "TEE Ai Xin": {
+    "assoc": "MAS",
+    "country": "Malaysia",
+    "source": "official-id134085"
+  },
+  "Priyadarshini DAS": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id117368"
+  },
+  "Gungun SAHU": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id210501"
+  },
+  "JI Eunchae": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id119676"
+  },
+  "Alissa TSVIGUN": {
+    "assoc": "KAZ",
+    "country": "Kazakhstan",
+    "source": "official-id200321"
+  },
+  "PARK Gahyeon": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id201032"
+  },
+  "Honami NAKAMORI": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id133410"
+  },
+  "ZHU Yuling": {
+    "assoc": "MAC",
+    "country": "Macao, China",
+    "source": "official-id117332"
+  },
+  "Mao TAKAMORI": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id135937"
+  },
+  "LEE Hoi Man": {
+    "assoc": "HKG",
+    "country": "Hong Kong, China",
+    "source": "official-id132320"
+  },
+  "Talya AL RAWAHI": {
+    "assoc": "OMA",
+    "country": "Oman",
+    "source": "official-id202899"
+  },
+  "Hana YOSHIMOTO": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id201872"
+  },
+  "Shiki KUSAKABE": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id205325"
+  },
+  "Yukari SUGASAWA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id132800"
+  },
+  "Mayu INOUE": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id208979"
+  },
+  "Sally MOYLAND": {
+    "assoc": "USA",
+    "country": "USA",
+    "source": "official-id134489"
+  },
+  "Rin MENDE": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id144860"
+  },
+  "Constantina PSIHOGIOS": {
+    "assoc": "AUS",
+    "country": "Australia",
+    "source": "official-id145134"
+  },
+  "Alaa YEHIA": {
+    "assoc": "EGY",
+    "country": "Egypt",
+    "source": "official-id133475"
+  },
+  "Kayla GOODWIN": {
+    "assoc": "USA",
+    "country": "USA",
+    "source": "official-id135715"
+  },
+  "Clea DE STOPPELEIRE": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "official-id136361"
+  },
+  "CHEN Min-Hsin": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "official-id203313"
+  },
+  "Anastasia STERNER": {
+    "assoc": "AUT",
+    "country": "Austria",
+    "source": "official-id133123"
+  },
+  "CHEN Chi-Shiuan": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "official-id146280"
+  },
+  "Sarrinah SHAIKH": {
+    "assoc": "QAT",
+    "country": "Qatar",
+    "source": "official-id209332"
+  },
+  "SU Tsz Tung": {
+    "assoc": "HKG",
+    "country": "Hong Kong, China",
+    "source": "official-id206252"
+  },
+  "Leana HOCHART": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "official-id145544"
+  },
+  "LI Jingsika": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id128176"
+  },
+  "Hana SAKURAI": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id206129"
+  },
+  "Jiangshan GUO": {
+    "assoc": "USA",
+    "country": "USA",
+    "source": "official-id135698"
+  },
+  "PUSHPAK Amrutha": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id117367"
+  },
+  "Ananya MURALIDHARAN": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id200318"
+  },
+  "Ananya CHANDE": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id135900"
+  },
+  "Naisha REWASKAR": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id202752"
+  },
+  "Alolika SEN": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id213376"
+  },
+  "Avani TRIPATHI": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id202443"
+  },
+  "KUMARI Neha": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id213377"
+  },
+  "Harsha CALANGE": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id122717"
+  },
+  "Divyanshi BHOWMICK": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id202723"
+  },
+  "Nikhat BANU": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id114100"
+  },
+  "Srijanee DEY": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id145169"
+  },
+  "Maria RONY": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id119069"
+  },
+  "Guna VARANASI": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id212845"
+  },
+  "Hansini MATHAN": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id145804"
+  },
+  "Senhora DSOUZA": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id114584"
+  },
+  "Kavya BHATT": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id200839"
+  },
+  "Manushree PATIL": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id133594"
+  },
+  "Aditi CHODANKAR": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id220489"
+  },
+  "Hardee PATEL": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id137856"
+  },
+  "Jiyah LAKSHMAN": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id213217"
+  },
+  "Nandini SAHA": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id201364"
+  },
+  "Kavya BASKAR": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id134124"
+  },
+  "JOARDAR Oishiki": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id134873"
+  },
+  "Thanuja NAGARAJAN": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id213185"
+  },
+  "Syndrela DAS": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id201368"
+  },
+  "KIM Haeun": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id122046"
+  },
+  "YAN Yutong": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id202970"
+  },
+  "Yuan ITO": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id202540"
+  },
+  "ZHU Ziyu": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id202747"
+  },
+  "Mariem HAMROUNI": {
+    "assoc": "TUN",
+    "country": "Tunisia",
+    "source": "official-id136143"
+  },
+  "Sofia VEGA": {
+    "assoc": "CHI",
+    "country": "Chile",
+    "source": "official-id136424"
+  },
+  "ZHU Qihui": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id210320"
+  },
+  "Ela SAIDI": {
+    "assoc": "TUN",
+    "country": "Tunisia",
+    "source": "official-id146173"
+  },
+  "Mariam BRAHIMI": {
+    "assoc": "TUN",
+    "country": "Tunisia",
+    "source": "official-id200331"
+  },
+  "LIU Ziling": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id212898"
+  },
+  "ZHAO Wangqi": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id206218"
+  },
+  "HU Yi": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id210319"
+  },
+  "Nour BRAHIMI": {
+    "assoc": "TUN",
+    "country": "Tunisia",
+    "source": "official-id200332"
+  },
+  "YANG Huize": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id206219"
+  },
+  "YAO Ruixuan": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id209007"
+  },
+  "Elizabet ABRAAMIAN": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "official-id131231"
+  },
+  "Rochica SONDAY": {
+    "assoc": "RSA",
+    "country": "South Africa",
+    "source": "official-id202645"
+  },
+  "PAK Su Gyong": {
+    "assoc": "PRK",
+    "country": "Korea DPR",
+    "source": "official-id145054"
+  },
+  "Jiamuwa WU": {
+    "assoc": "AUS",
+    "country": "Australia",
+    "source": "official-id131132"
+  },
+  "Lisa GEAR": {
+    "assoc": "NZL",
+    "country": "New Zealand",
+    "source": "official-id200205"
+  },
+  "Veronika MATIUNINA": {
+    "assoc": "UKR",
+    "country": "Ukraine",
+    "source": "official-id136755"
+  },
+  "Judith NANGONZI": {
+    "assoc": "UGA",
+    "country": "Uganda",
+    "source": "official-id202164"
+  },
+  "Hanitra RAHARIMANANA": {
+    "assoc": "MAD",
+    "country": "Madagascar",
+    "source": "official-id131141"
+  },
+  "KIM Kum Yong": {
+    "assoc": "PRK",
+    "country": "Korea DPR",
+    "source": "official-id136607"
+  },
+  "Maylis GIRET": {
+    "assoc": "NCL",
+    "country": "France",
+    "source": "official-id209548"
+  },
+  "Lucia ZAVALETA": {
+    "assoc": "CRC",
+    "country": "Costa Rica",
+    "source": "official-id200029"
+  },
+  "Rosalba AGUIAR": {
+    "assoc": "CUB",
+    "country": "Cuba",
+    "source": "official-id124049"
+  },
+  "TSAI Yun-En": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "official-id133835"
+  },
+  "Kheith CRUZ": {
+    "assoc": "PHI",
+    "country": "Philippines",
+    "source": "official-id136491"
+  },
+  "FENG Yixuan": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id209805"
+  },
+  "Shuohan MEN": {
+    "assoc": "NED",
+    "country": "Netherlands",
+    "source": "official-id131383"
+  },
+  "Sara STOJANOVSKA": {
+    "assoc": "MKD",
+    "country": "North Macedonia",
+    "source": "official-id145296"
+  },
+  "Monika STAJKOVSKA": {
+    "assoc": "MKD",
+    "country": "North Macedonia",
+    "source": "official-id203654"
+  },
+  "Amelia NIKOLOV": {
+    "assoc": "MKD",
+    "country": "North Macedonia",
+    "source": "official-id112956"
+  },
+  "Fani JOVANOSKA": {
+    "assoc": "MKD",
+    "country": "North Macedonia",
+    "source": "official-id145443"
+  },
+  "Eugenia SASTRE": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "official-id136495"
+  },
+  "Kotomi OMODA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id213286"
+  },
+  "Sofija HASANU": {
+    "assoc": "MKD",
+    "country": "North Macedonia",
+    "source": "official-id145459"
+  },
+  "Ainhoa CRISTOBAL": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "official-id133035"
+  },
+  "Reina ASO": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id136543"
+  },
+  "CHOI Haeeun": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id123972"
+  },
+  "CHOI Seoyeon": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id145805"
+  },
+  "Anastasiya DYMYTRENKO": {
+    "assoc": "UKR",
+    "country": "Ukraine",
+    "source": "official-id133945"
+  },
+  "Josephina NEUMANN": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "official-id145807"
+  },
+  "LIANG Yu-Hsin": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "official-id200016"
+  },
+  "Irene YEOH": {
+    "assoc": "USA",
+    "country": "USA",
+    "source": "official-id200606"
+  },
+  "Mandy YU": {
+    "assoc": "USA",
+    "country": "USA",
+    "source": "official-id200584"
+  },
+  "Deborah FALEYE": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id221906"
+  },
+  "Mariam ARUNA": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id208118"
+  },
+  "Stecy AMADJI": {
+    "assoc": "BEN",
+    "country": "Benin",
+    "source": "official-id204949"
+  },
+  "Ajarat ASAJU": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id117954"
+  },
+  "Chinenye OKAFOR": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id220353"
+  },
+  "Madinath YESSOUFOU": {
+    "assoc": "BEN",
+    "country": "Benin",
+    "source": "official-id207009"
+  },
+  "Kadijat OKANLAWON": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id221517"
+  },
+  "Sadiat Alimat AKEEM": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id137501"
+  },
+  "Fatimoh AHMED": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id211165"
+  },
+  "Camila OBANDO": {
+    "assoc": "VEN",
+    "country": "Venezuela",
+    "source": "official-id124426"
+  },
+  "Anuoluwapo AJUWON": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id137011"
+  },
+  "Maryam AHMED": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id211164"
+  },
+  "Aziza SEZUO": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id206049"
+  },
+  "Catalina RAMIREZ": {
+    "assoc": "CHI",
+    "country": "Chile",
+    "source": "official-id202070"
+  },
+  "Manuela PEREYRA": {
+    "assoc": "ARG",
+    "country": "Argentina",
+    "source": "official-id136284"
+  },
+  "Mariam SHAHMURADYAN": {
+    "assoc": "ARG",
+    "country": "Argentina",
+    "source": "official-id204995"
+  },
+  "Ayoko Fanida AMAH": {
+    "assoc": "TOG",
+    "country": "Togo",
+    "source": "official-id136516"
+  },
+  "Cristina GOMEZ": {
+    "assoc": "VEN",
+    "country": "Venezuela",
+    "source": "official-id146284"
+  },
+  "Luciana FRIAS": {
+    "assoc": "ARG",
+    "country": "Argentina",
+    "source": "official-id202016"
+  },
+  "Iyanu Oluwa FALANA": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id133739"
+  },
+  "Joy EMMANUEL": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id222184"
+  },
+  "Eva BRITO": {
+    "assoc": "DOM",
+    "country": "Dominican Republic",
+    "source": "official-id111517"
+  },
+  "Favour OJO": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id221708"
+  },
+  "Kabirat AYOOLA": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id206050"
+  },
+  "Ziadath AKADIRI": {
+    "assoc": "BEN",
+    "country": "Benin",
+    "source": "official-id131728"
+  },
+  "Lyntia AGUEH": {
+    "assoc": "BEN",
+    "country": "Benin",
+    "source": "official-id202247"
+  },
+  "Roxy GONZALEZ": {
+    "assoc": "VEN",
+    "country": "Venezuela",
+    "source": "official-id112144"
+  },
+  "Onyinyechi MBAH": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id122197"
+  },
+  "Mariangel DIAZ": {
+    "assoc": "VEN",
+    "country": "Venezuela",
+    "source": "official-id145408"
+  },
+  "Macarena REYES": {
+    "assoc": "CHI",
+    "country": "Chile",
+    "source": "official-id144751"
+  },
+  "Valentina PAROLA": {
+    "assoc": "ARG",
+    "country": "Argentina",
+    "source": "official-id132792"
+  },
+  "Kokona MURAMATSU": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id209670"
+  },
+  "MAIARA AGNONE": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id200647"
+  },
+  "Maria MENDES": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id221535"
+  },
+  "Julia HATAKEYAMA": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id204989"
+  },
+  "Isabel AMORIM": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id208301"
+  },
+  "Mana SHINTANI": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id213119"
+  },
+  "Hannah HOLGERSSON": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "official-id131464"
+  },
+  "Alice NILSSON": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "official-id136016"
+  },
+  "HEO Yerim": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id204138"
+  },
+  "Siri BENJEGARD": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "official-id201097"
+  },
+  "Leah TVEIT": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "official-id133396"
+  },
+  "Agnes SVENSSON": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "official-id200186"
+  },
+  "Alma ROOSE": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "official-id131461"
+  },
+  "Nomin BAASAN": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "official-id131455"
+  },
+  "Sakura AOI": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id220446"
+  },
+  "Adelina KHASANOVA": {
+    "assoc": "UZB",
+    "country": "Uzbekistan",
+    "source": "official-id203924"
+  },
+  "Shakhzoda AKHMADALIYEVA": {
+    "assoc": "KAZ",
+    "country": "Kazakhstan",
+    "source": "official-id200341"
+  },
+  "Arujan KAMALOVA": {
+    "assoc": "UZB",
+    "country": "Uzbekistan",
+    "source": "official-id146298"
+  },
+  "Nursaya NURMAN": {
+    "assoc": "KAZ",
+    "country": "Kazakhstan",
+    "source": "official-id203048"
+  },
+  "Katsiaryna BARAVOK": {
+    "assoc": "BLR",
+    "country": "Belarus",
+    "source": "official-id111144"
+  },
+  "Darya FU": {
+    "assoc": "KAZ",
+    "country": "Kazakhstan",
+    "source": "official-id203527"
+  },
+  "Kyoka IDESAWA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id144633"
+  },
+  "Lizaveta TSIMASHKOVA": {
+    "assoc": "BLR",
+    "country": "Belarus",
+    "source": "official-id136947"
+  },
+  "Yelizaveta LAVROVA": {
+    "assoc": "KAZ",
+    "country": "Kazakhstan",
+    "source": "official-id203052"
+  },
+  "Malika SANDYBAYEVA": {
+    "assoc": "KAZ",
+    "country": "Kazakhstan",
+    "source": "official-id200320"
+  },
+  "Mariya LUKYANOVA": {
+    "assoc": "KAZ",
+    "country": "Kazakhstan",
+    "source": "official-id203526"
+  },
+  "Maria PANFILOVA": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "official-id133117"
+  },
+  "Mariia TAILAKOVA": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "official-id121706"
+  },
+  "Zhaniya BEKMUKHAMBETOVA": {
+    "assoc": "KAZ",
+    "country": "Kazakhstan",
+    "source": "official-id205984"
+  },
+  "LI YING Im": {
+    "assoc": "MAS",
+    "country": "Malaysia",
+    "source": "official-id144473"
+  },
+  "Vlada VORONINA": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "official-id137574"
+  },
+  "Ulyana MIASHCHANSKAYA": {
+    "assoc": "BLR",
+    "country": "Belarus",
+    "source": "official-id136908"
+  },
+  "Nazym SERIKBAY": {
+    "assoc": "KAZ",
+    "country": "Kazakhstan",
+    "source": "official-id200342"
+  },
+  "Noila KHANIYAZOVA": {
+    "assoc": "KAZ",
+    "country": "Kazakhstan",
+    "source": "official-id203045"
+  },
+  "KUAN Cheok Lam": {
+    "assoc": "MAC",
+    "country": "Macao, China",
+    "source": "official-id207486"
+  },
+  "Sienna JETHA": {
+    "assoc": "ENG",
+    "country": "England",
+    "source": "official-id143735"
+  },
+  "Tianer YU": {
+    "assoc": "ENG",
+    "country": "England",
+    "source": "official-id203536"
+  },
+  "Anna Lillian GREEN": {
+    "assoc": "ENG",
+    "country": "England",
+    "source": "official-id145606"
+  },
+  "Ella PASHLEY": {
+    "assoc": "ENG",
+    "country": "England",
+    "source": "official-id202679"
+  },
+  "Mille STOFFREGEN": {
+    "assoc": "DEN",
+    "country": "Denmark",
+    "source": "official-id145695"
+  },
+  "Mia GRIESEL": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "official-id135498"
+  },
+  "Hannah SILCOCK": {
+    "assoc": "JEY",
+    "country": "Jersey",
+    "source": "official-id200182"
+  },
+  "Mari BALDWIN": {
+    "assoc": "ENG",
+    "country": "England",
+    "source": "official-id137709"
+  },
+  "Jasmin WONG": {
+    "assoc": "ENG",
+    "country": "England",
+    "source": "official-id133422"
+  },
+  "Sophie EARLEY": {
+    "assoc": "ENG",
+    "country": "England",
+    "source": "official-id134575"
+  },
+  "Koharu ITAGAKI": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "official-id200456"
+  },
+  "YANG Zitong": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id112635"
+  },
+  "Hisa URIU": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id209318"
+  },
+  "MA Xiaohui": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id204847"
+  },
+  "YANG Shilu": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id136390"
+  },
+  "LIU Fei": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id123508"
+  },
+  "SUN Yizhen": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id123115"
+  },
+  "SUN Mingyang": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id133895"
+  },
+  "HU Limei": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id119605"
+  },
+  "WANG Tianyi": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id133528"
+  },
+  "Hiyori OKAZAKI": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id135995"
+  },
+  "KALBHAIRAV Tanishka": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id203837"
+  },
+  "Sampada BHIWANDKAR": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id202760"
+  },
+  "Yura SHINOHARA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id136713"
+  },
+  "Rokaia ELBAZ": {
+    "assoc": "QAT",
+    "country": "Qatar",
+    "source": "official-id201305"
+  },
+  "LOGHRAIBI Racha": {
+    "assoc": "QAT",
+    "country": "Qatar",
+    "source": "official-id206304"
+  },
+  "GANZORIG Khatansaikhan": {
+    "assoc": "MGL",
+    "country": "Mongolia",
+    "source": "official-id223730"
+  },
+  "HUANG Ching-Chia": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "official-id201445"
+  },
+  "Sachi AOKI": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id144861"
+  },
+  "ELBAZ Alia": {
+    "assoc": "QAT",
+    "country": "Qatar",
+    "source": "official-id220393"
+  },
+  "Claire PICARD": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "official-id123548"
+  },
+  "Arina SLAUTINA": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "official-id131274"
+  },
+  "POLAKOVA Veronika": {
+    "assoc": "CZE",
+    "country": "Czechia",
+    "source": "official-id145746"
+  },
+  "BAI Siwen": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id222594"
+  },
+  "Dominika WILTSCHKOVA": {
+    "assoc": "SVK",
+    "country": "Slovak Republic",
+    "source": "official-id134330"
+  },
+  "Hanka KODET": {
+    "assoc": "CZE",
+    "country": "Czechia",
+    "source": "official-id200095"
+  },
+  "AMRUTE Shruti": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id123215"
+  },
+  "BANIK Sammridhi": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id223889"
+  },
+  "SARKAR Nikita": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id132910"
+  },
+  "PENG Yu-Han": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "official-id145033"
+  },
+  "JAISWAL Varuni": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id131880"
+  },
+  "NATH Kaushani": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id133592"
+  },
+  "SAINI Tamanna": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id210603"
+  },
+  "PARAMESH Pranati": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id145456"
+  },
+  "THAPA Evana": {
+    "assoc": "NEP",
+    "country": "Nepal",
+    "source": "official-id200578"
+  },
+  "GHIA Palak": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id223892"
+  },
+  "ANAND Shriya": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id145739"
+  },
+  "ASPATHI Satya": {
+    "assoc": "USA",
+    "country": "USA",
+    "source": "official-id212966"
+  },
+  "PAL Moumita": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id223952"
+  },
+  "DONGARI Devi": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "official-id223695"
+  },
+  "CHIANG Janelle": {
+    "assoc": "SGP",
+    "country": "Singapore",
+    "source": "official-id201454"
+  },
+  "CHONG Zi Sian": {
+    "assoc": "SGP",
+    "country": "Singapore",
+    "source": "official-id206411"
+  },
+  "Kokomi ISHIDA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id209320"
+  },
+  "Nina GUO ZHENG": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "official-id146232"
+  },
+  "Elee ABASSI": {
+    "assoc": "TUN",
+    "country": "Tunisia",
+    "source": "official-id201260"
+  },
+  "Miriam CARNOVALE": {
+    "assoc": "ITA",
+    "country": "Italy",
+    "source": "official-id131586"
+  },
+  "Valeriia SHCHERBATYKH": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "official-id118685"
+  },
+  "Yuka KANEYOSHI": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id210921"
+  },
+  "WANG Xinya": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id225384"
+  },
+  "JIANG Yiyi": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id206217"
+  },
+  "WEI Jingming": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id223247"
+  },
+  "KIM Eunseo": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id203535"
+  },
+  "ZHANG Yulu": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id225385"
+  },
+  "CHEN Xianchang": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "official-id203062"
+  },
+  "Ying Syuan WU": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "official-id201874"
+  },
+  "Tanja HELLE": {
+    "assoc": "NED",
+    "country": "Netherlands",
+    "source": "official-id131765"
+  },
+  "Danielle KELLY": {
+    "assoc": "WAL",
+    "country": "Wales",
+    "source": "official-id132283"
+  },
+  "Ivy PAN": {
+    "assoc": "CAN",
+    "country": "Canada",
+    "source": "official-id201017"
+  },
+  "Sunny ZHANG": {
+    "assoc": "CAN",
+    "country": "Canada",
+    "source": "official-id207052"
+  },
+  "Su Yong CHA": {
+    "assoc": "PRK",
+    "country": "Korea DPR",
+    "source": "official-id132257"
+  },
+  "Nina SKERBINZ": {
+    "assoc": "AUT",
+    "country": "Austria",
+    "source": "official-id200271"
+  },
+  "Enisa SADIKOVIC": {
+    "assoc": "LUX",
+    "country": "Luxembourg",
+    "source": "official-id136401"
+  },
+  "Fanny DOUTAZ": {
+    "assoc": "SUI",
+    "country": "Switzerland",
+    "source": "official-id137036"
+  },
+  "Edmarie LEON": {
+    "assoc": "PUR",
+    "country": "Puerto Rico",
+    "source": "official-id137185"
+  },
+  "Tetyana BILENKO": {
+    "assoc": "UKR",
+    "country": "Ukraine",
+    "source": "official-id108875"
+  },
+  "Emmanuella SHAIBU": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id221592"
+  },
+  "Elizabeth EMELIKE": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id221577"
+  },
+  "Khadijah MUSA": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "official-id221423"
+  },
+  "Cocona MURAMATSU": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id209670"
+  },
+  "Franka MISKIC": {
+    "assoc": "CRO",
+    "country": "Croatia",
+    "source": "official-id200265"
+  },
+  "Rheann CHUNG": {
+    "assoc": "TTO",
+    "country": "Trinidad And Tobago",
+    "source": "official-id101836"
+  },
+  "Lana BENKO": {
+    "assoc": "CRO",
+    "country": "Croatia",
+    "source": "official-id145498"
+  },
+  "Lizett FAZEKAS": {
+    "assoc": "CRO",
+    "country": "Croatia",
+    "source": "official-id203424"
+  },
+  "Laura RAHOTIN PAVIC": {
+    "assoc": "SLO",
+    "country": "Slovenia",
+    "source": "official-id200262"
+  },
+  "Ke WANG": {
+    "assoc": "USA",
+    "country": "USA",
+    "source": "official-id122956"
+  },
+  "Hildy CHEN": {
+    "assoc": "USA",
+    "country": "USA",
+    "source": "official-id209711"
+  },
+  "Tashiya PIYADASA": {
+    "assoc": "USA",
+    "country": "USA",
+    "source": "official-id200566"
+  },
+  "Mariana FRANCO": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id226410"
+  },
+  "Gabriella ZAGO": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id225273"
+  },
+  "Luiza FONTANIVE": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id205653"
+  },
+  "Bianca BORGES": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "official-id211628"
+  },
+  "Olga VISHNIAKOVA": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "official-id131229"
+  },
+  "Olga VOROBEVA": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "official-id111871"
+  },
+  "Nandeshwaree JALIM": {
+    "assoc": "MRI",
+    "country": "Mauritius",
+    "source": "official-id131818"
+  },
+  "Jade HUYNH": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "official-id146235"
+  },
+  "Elise PUJOL": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "official-id137626"
+  },
+  "Betul Nur KAHRAMAN": {
+    "assoc": "TUR",
+    "country": "Türkiye",
+    "source": "official-id123638"
+  },
+  "Yui SAKUMA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id209319"
+  },
+  "Merve DEMIR": {
+    "assoc": "TUR",
+    "country": "Türkiye",
+    "source": "official-id131677"
+  },
+  "Valeriia KOTSIUR": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "official-id114947"
+  },
+  "Julia LEAL": {
+    "assoc": "POR",
+    "country": "Portugal",
+    "source": "official-id145615"
+  },
+  "Manami IMAEDA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "official-id205095"
+  },
+  "Elisa NGUYEN": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "official-id200444"
+  },
+  "Lorena MORSCH": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "official-id145796"
+  },
+  "Laura RAHOTIN": {
+    "assoc": "SLO",
+    "country": "Slovenia",
+    "source": "official-id200262"
+  },
+  "Klara HRABICOVA": {
+    "assoc": "CZE",
+    "country": "Czechia",
+    "source": "official-id134339"
+  },
+  "Jana VASENDOVA": {
+    "assoc": "CZE",
+    "country": "Czechia",
+    "source": "official-id134338"
+  },
+  "Bianca MEI-ROSU": {
+    "assoc": "ROU",
+    "country": "Romania",
+    "source": "official-id136153"
+  },
+  "Maria BERZOSA": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "official-id144098"
+  },
+  "Kornelija RILISKYTE": {
+    "assoc": "LTU",
+    "country": "Lithuania",
+    "source": "official-id131249"
+  },
+  "Nursema COKLAR": {
+    "assoc": "TUR",
+    "country": "Türkiye",
+    "source": "official-id225184"
+  },
+  "KIM Dahee": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id135076"
+  },
+  "Malamatenia PAPADIMITRIOU": {
+    "assoc": "GRE",
+    "country": "Greece",
+    "source": "official-id132780"
+  },
+  "Agathe AVEZOU": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "official-id146231"
+  },
+  "Karin GROFOVA": {
+    "assoc": "CZE",
+    "country": "Czechia",
+    "source": "official-id113942"
+  },
+  "CHOI Yeseo": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id137274"
+  },
+  "Natalia GRIGELOVA": {
+    "assoc": "SVK",
+    "country": "Slovak Republic",
+    "source": "official-id120292"
+  },
+  "Ema CINCUROVA": {
+    "assoc": "SVK",
+    "country": "Slovak Republic",
+    "source": "official-id134323"
+  },
+  "Nina DAROVCOVA": {
+    "assoc": "SVK",
+    "country": "Slovak Republic",
+    "source": "official-id137583"
+  },
+  "NatalIA GAJEWSKA": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "official-id222625"
+  },
+  "LEE Dahye": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id202245"
+  },
+  "LEE Seungmi": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id124546"
+  },
+  "Vanda VANISOVA": {
+    "assoc": "SVK",
+    "country": "Slovak Republic",
+    "source": "official-id200829"
+  },
+  "Nina NEMETHOVA": {
+    "assoc": "SVK",
+    "country": "Slovak Republic",
+    "source": "official-id200115"
+  },
+  "Maftuna GULIMOVA": {
+    "assoc": "UZB",
+    "country": "Uzbekistan",
+    "source": "official-id221183"
+  },
+  "LEE Seungeun": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id137275"
+  },
+  "Alexia NODIN": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "official-id201083"
+  },
+  "Clemence CHEVALLIER": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "official-id136357"
+  },
+  "Nathaly PAREDES": {
+    "assoc": "ECU",
+    "country": "Ecuador",
+    "source": "official-id118126"
+  },
+  "Chloe FRASER": {
+    "assoc": "TTO",
+    "country": "Trinidad And Tobago",
+    "source": "official-id145365"
+  },
+  "Gaetane BLED": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "official-id146024"
+  },
+  "Anais SALPIN": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "official-id120064"
+  },
+  "MOON Chowon": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "official-id205896"
+  },
+  "Angelina BEBAWY": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "official-id201470"
+  }
+}
