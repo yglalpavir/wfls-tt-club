@@ -4088,5 +4088,35 @@
     "assoc": "SWE",
     "country": "Sweden",
     "source": "official-id201470"
+  },
+  "Satsuki OTO": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "user-confirmed"
+  },
+  "Lily ZHANG": {
+    "assoc": "USA",
+    "country": "USA",
+    "source": "user-confirmed"
+  },
+  "Kyoka IZUSAWA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "user-confirmed"
+  },
+  "Karen AKAE": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "user-confirmed"
+  },
+  "Rin OMODA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "user-confirmed"
+  },
+  "Saki AOKI": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "user-confirmed"
   }
 }
