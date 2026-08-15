@@ -279,6 +279,12 @@ const WTT_KNOWN_GENDERS = {
 const WTT_DOUBLES_CATEGORIES = new Set(['md', 'wd', 'xd']);
 
 /**
+ * 双打项目协会籍来源（从单打 assoc.json 推导）
+ * md→ms，wd→ws，xd→ms+ws
+ */
+const WTT_ASSOC_SINGLES_SOURCE = { md: ['ms'], wd: ['ws'], xd: ['ms', 'ws'] };
+
+/**
  * 规范化双打组合名称：确保 A/B 和 B/A 被视为同一组
  * - MD/WD：按字母顺序排序两位球员名
  * - XD：男选手在前，女选手在后（使用 WTT_KNOWN_GENDERS 映射表）
@@ -797,36 +803,44 @@ function wttLoadSeasons() {
  *   1) 数组/rows 形式: [{ "name": "WANG Chuqin", "assoc": "CHN", "country": "China" }, ...]
  *   2) 映射形式: { "WANG Chuqin": "CHN" } 或 { "WANG Chuqin": { "assoc": "CHN", "country": "China" } }
  * 查询时按 wttNameIdentity 归一化匹配，与球员名合并规则一致。
+ * 双打项目（md/wd/xd）无独立 assoc.json，改为从单打 assoc.json 推导：
+ *   两名球员都有协会记录且协会相同 → 该组合归该协会；否则该组合无协会数据。
  */
 async function wttLoadPlayerAssoc() {
     wttPlayerAssocData = null;
     try {
-        const resp = await fetch(wttGetDataPath('assoc.json'));
-        if (!resp.ok) return false;
-        const d = await resp.json();
-        if (!d) return false;
-
         const map = {};
-        const rows = Array.isArray(d) ? d : (d.rows && Array.isArray(d.rows) ? d.rows : null);
-        if (rows) {
-            for (const r of rows) {
-                if (!r || !r.name || !r.assoc) continue;
-                const key = wttNameIdentity(r.name);
-                if (!key) continue;
-                map[key] = { assoc: String(r.assoc), country: r.country ? String(r.country) : '' };
-            }
-        } else if (typeof d === 'object') {
-            for (const name of Object.keys(d)) {
-                const v = d[name];
-                if (!name || !v) continue;
-                const key = wttNameIdentity(name);
-                if (!key) continue;
-                if (typeof v === 'string') map[key] = { assoc: v, country: '' };
-                else if (v && v.assoc) map[key] = { assoc: String(v.assoc), country: v.country ? String(v.country) : '' };
+        const sources = WTT_DOUBLES_CATEGORIES.has(wttCurrentCategory)
+            ? (WTT_ASSOC_SINGLES_SOURCE[wttCurrentCategory] || [])
+            : [wttCurrentCategory];
+
+        for (const src of sources) {
+            const resp = await fetch(`wtt_data/${src}/assoc.json`);
+            if (!resp.ok) continue;
+            const d = await resp.json();
+            if (!d) continue;
+
+            const rows = Array.isArray(d) ? d : (d.rows && Array.isArray(d.rows) ? d.rows : null);
+            if (rows) {
+                for (const r of rows) {
+                    if (!r || !r.name || !r.assoc) continue;
+                    const key = wttNameIdentity(r.name);
+                    if (!key) continue;
+                    map[key] = { assoc: String(r.assoc), country: r.country ? String(r.country) : '' };
+                }
+            } else if (typeof d === 'object') {
+                for (const name of Object.keys(d)) {
+                    const v = d[name];
+                    if (!name || !v) continue;
+                    const key = wttNameIdentity(name);
+                    if (!key) continue;
+                    if (typeof v === 'string') map[key] = { assoc: v, country: '' };
+                    else if (v && v.assoc) map[key] = { assoc: String(v.assoc), country: v.country ? String(v.country) : '' };
+                }
             }
         }
         wttPlayerAssocData = Object.keys(map).length ? map : null;
-        console.log(`WTT[${wttCurrentCategory}] 协会籍数据加载成功: ${wttPlayerAssocData ? Object.keys(wttPlayerAssocData).length : 0} 人`);
+        console.log(`WTT[${wttCurrentCategory}] 协会籍数据加载成功: ${wttPlayerAssocData ? Object.keys(wttPlayerAssocData).length : 0} 人${WTT_DOUBLES_CATEGORIES.has(wttCurrentCategory) ? '（由单打 assoc.json 推导）' : ''}`);
         return !!wttPlayerAssocData;
     } catch (e) {
         console.warn(`WTT[${wttCurrentCategory}] assoc.json 未找到，跳过协会籍显示`);
@@ -837,12 +851,24 @@ async function wttLoadPlayerAssoc() {
 
 /**
  * 查询球员协会籍信息
- * @param {string} name - 球员名（自动按身份归一化匹配）
+ * 单打：按身份归一化匹配 assoc.json 记录。
+ * 双打（组合名含 /）：拆分两名球员分别查单打表，
+ *   两人均有记录且协会相同 → 返回该协会；任一缺失或协会不同 → 返回 null（无协会数据）。
+ * @param {string} name - 球员/组合名（自动按身份归一化匹配）
  * @returns {{ assoc: string, country: string }|null} 未加载/未匹配时返回 null
  */
 function wttGetPlayerAssoc(name) {
     if (!wttPlayerAssocData || !name) return null;
-    return wttPlayerAssocData[wttNameIdentity(name)] || null;
+    const single = wttPlayerAssocData[wttNameIdentity(name)];
+    if (single) return single;
+    if (String(name).indexOf('/') === -1) return null;
+    const parts = wttSplitPlayerNames(name);
+    if (parts.length < 2) return null;
+    const a1 = wttPlayerAssocData[wttNameIdentity(parts[0])];
+    const a2 = wttPlayerAssocData[wttNameIdentity(parts[1])];
+    if (!a1 || !a2 || !a1.assoc || !a2.assoc) return null;
+    if (String(a1.assoc).toUpperCase() !== String(a2.assoc).toUpperCase()) return null;
+    return { assoc: a1.assoc, country: a1.country || a2.country || '' };
 }
 
 /**
@@ -852,7 +878,7 @@ function wttGetPlayerAssoc(name) {
  */
 const WTT_ASSOC_FLAG_CLASSES = {
     'ENG': 'gb-eng', 'SCO': 'gb-sct', 'WAL': 'gb-wls', 'NIR': 'gb-nir',
-    'TPE': 'tw', 'HKG': 'hk', 'MAC': 'mo', 'UNK': '', 'OTH': ''
+    'TPE': 'ctoc', 'HKG': 'hk', 'MAC': 'mo', 'UNK': '', 'OTH': ''
 };
 // 三位 ITTF/奥运协会代码 -> ISO 3166-1 alpha-2（flag-icons 使用两位 ISO 代码）
 const WTT_ASSOC_ISO2 = {

@@ -1559,6 +1559,33 @@ body.dark-mode .score-detail-table tbody tr:nth-child(even) td { background-colo
     background: var(--primary-pale);
     box-shadow: 0 0 0 3px var(--primary-pale);
 }
+/* Bar Chart Race（排名动态竞速，视频级舞台） */
+.viz-race-stage { position: relative; padding: 26px 28px 16px; min-height: 640px; display: flex; align-items: center; justify-content: center; }
+.viz-race-clock { position: absolute; top: 14px; right: 22px; z-index: 5; font-family: var(--font-en); font-size: 1.9rem; font-weight: 700; color: var(--text-primary); opacity: 0.9; letter-spacing: 0.5px; background: var(--glass-bg); padding: 2px 12px; border-radius: 10px; }
+.viz-race-hint { margin-top: 8px; font-size: 0.8rem; color: var(--text-muted); }
+.viz-bar-race-wrap { width: 100%; max-width: 920px; margin: 0 auto; padding-top: 38px; }
+.viz-bar-race { --bar-race-row-h: 32px; position: relative; width: 100%; height: 0; }
+.bar-race-scale { position: relative; height: 26px; margin-top: 8px; margin-left: 238px; margin-right: 84px; font-family: var(--font-en); font-size: 0.7rem; font-weight: 500; color: var(--text-muted); }
+.bar-race-scale::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--border-color); }
+.bar-race-tick { position: absolute; top: 0; transform: translateX(-50%); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bar-race-tick::before { content: ''; display: block; width: 1px; height: 5px; background: var(--border-color); margin: 0 auto 3px; }
+.bar-race-row { position: absolute; top: 0; left: 0; right: 0; height: calc(var(--bar-race-row-h) - 4px); display: grid; grid-template-columns: 30px minmax(0, 180px) 1fr; align-items: center; gap: 10px; padding: 0 8px; border-radius: 8px; transition: background var(--transition-fast); will-change: transform, opacity; }
+.bar-race-row:hover { background: var(--bg-lighter); }
+.bar-race-rank { font-family: var(--font-en); font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-align: center; }
+.bar-race-rank.top1 { color: #f5c542; }
+.bar-race-rank.top2 { color: #94a3b8; }
+.bar-race-rank.top3 { color: #cd7f32; }
+.bar-race-name { display: flex; align-items: center; gap: 6px; min-width: 0; font-size: 0.82rem; color: var(--text-primary); font-weight: 500; }
+.bar-race-name .player-flag { margin-right: 0; flex-shrink: 0; }
+.bar-race-name-text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bar-race-track { position: relative; display: block; height: 20px; margin-right: 76px; background: var(--bg-lighter); border-radius: 10px; }
+.bar-race-fill { display: block; height: 100%; width: 0%; border-radius: 10px; will-change: width; }
+.bar-race-value { position: absolute; top: 50%; transform: translate(8px, -50%); font-family: var(--font-en); font-size: 0.88rem; font-weight: 700; color: var(--text-primary); white-space: nowrap; will-change: left; }
+.viz-race-controls { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 18px; }
+.viz-race-slider { flex: 1 1 320px; max-width: 640px; accent-color: var(--primary-blue); cursor: pointer; }
+.viz-race-speed { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-secondary); }
+.viz-race-speed select { padding: 5px 10px; border: 1px solid var(--border-color); border-radius: 16px; background: var(--bg-white); color: var(--text-primary); font-size: 0.85rem; font-family: var(--font-en); cursor: pointer; outline: none; }
+.viz-race-speed select:focus { border-color: var(--primary-blue); }
 .viz-compare-grid { display: grid; grid-template-columns: 320px 1fr; gap: 24px; align-items: start; }
 .viz-compare-selectors { padding: 24px; text-align: center; }
 .compare-selector-group { margin-bottom: 16px; }
@@ -1989,6 +2016,17 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
     .viz-section-header { margin-bottom: 16px; }
     .viz-section-header .section-title { font-size: 1.2rem; }
     .viz-topn-selector { font-size: 0.78rem; flex-wrap: wrap; justify-content: center; }
+    .viz-race-stage { min-height: 520px; padding: 20px 18px 12px; }
+    .viz-race-clock { font-size: 1.4rem; top: 10px; right: 14px; }
+    .viz-bar-race-wrap { padding-top: 30px; }
+    .viz-bar-race { --bar-race-row-h: 28px; }
+    .bar-race-row { grid-template-columns: 24px minmax(0, 130px) 1fr; gap: 6px; padding: 0 4px; }
+    .bar-race-name { font-size: 0.75rem; }
+    .bar-race-rank { font-size: 0.72rem; }
+    .bar-race-track { height: 15px; margin-right: 60px; }
+    .bar-race-value { font-size: 0.78rem; }
+    .viz-race-controls { gap: 10px; }
+    .bar-race-scale { font-size: 0.65rem; margin-top: 6px; margin-left: 170px; margin-right: 64px; height: 22px; }
 
     /* ---- 个人数据 ---- */
     .personal-overview { grid-template-columns: repeat(2, 1fr); }
@@ -2107,6 +2145,19 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
     .compare-player-name { font-size: 0.95rem; }
     .viz-topn-selector select { font-size: 0.78rem; padding: 3px 8px; }
     .viz-topn-selector input[type="number"] { font-size: 0.78rem; padding: 3px 8px; width: 56px; }
+    .viz-race-stage { min-height: 480px; padding: 16px 12px 10px; }
+    .viz-race-clock { font-size: 1.15rem; top: 8px; right: 10px; }
+    .viz-bar-race-wrap { padding-top: 24px; }
+    .viz-bar-race { --bar-race-row-h: 26px; }
+    .bar-race-row { grid-template-columns: 20px minmax(0, 104px) 1fr; gap: 5px; padding: 0 3px; }
+    .bar-race-name { font-size: 0.7rem; gap: 4px; }
+    .bar-race-rank { font-size: 0.68rem; }
+    .bar-race-track { height: 13px; margin-right: 52px; }
+    .bar-race-value { font-size: 0.72rem; }
+    .viz-race-controls .btn { width: auto; padding: 6px 12px; font-size: 0.78rem; }
+    .viz-race-speed { font-size: 0.75rem; }
+    .viz-race-speed select { font-size: 0.75rem; padding: 3px 8px; }
+    .bar-race-scale { font-size: 0.6rem; margin-top: 5px; margin-left: 137px; margin-right: 55px; height: 20px; }
 }
 
 /* 超小屏手机 (iPhone SE 等 320-375px) */
@@ -2138,6 +2189,15 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
     .viz-chart-container canvas { max-height: 200px; }
     .viz-player-selector { max-height: 180px; padding: 10px; }
     .player-checkbox-item { padding: 4px 6px; font-size: 0.7rem; }
+    .viz-race-stage { min-height: 440px; padding: 14px 8px 8px; }
+    .viz-race-clock { font-size: 1rem; top: 8px; right: 8px; }
+    .viz-bar-race-wrap { padding-top: 20px; }
+    .viz-bar-race { --bar-race-row-h: 24px; }
+    .bar-race-row { grid-template-columns: 18px minmax(0, 86px) 1fr; gap: 4px; }
+    .bar-race-name { font-size: 0.65rem; }
+    .bar-race-track { height: 11px; margin-right: 46px; }
+    .bar-race-value { font-size: 0.65rem; }
+    .bar-race-scale { font-size: 0.55rem; margin-top: 4px; margin-left: 115px; margin-right: 49px; height: 18px; }
 
     .footer { padding: 24px 0 12px; }
     .footer-brand h4 { font-size: 0.9rem; }

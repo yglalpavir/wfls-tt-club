@@ -5,7 +5,7 @@
 
 let wttRecordBarChart = null, wttEfficiencyScatterChart = null, wttMatchFrequencyChart = null, wttScoreDistributionChart = null;
 let wttAssocTrendChart = null, wttAssocTop5Chart = null;
-let wttDataVizExtraState = { recordTopN: 10, efficiencyTopN: 15, heatmapTopN: 8, freqBucket: 'week', freqCount: 24, distBins: 10, assocTrendCount: 20, assocTop5TopN: 8 };
+let wttDataVizExtraState = { recordTopN: 10, efficiencyTopN: 15, heatmapTopN: 8, freqBucket: 'week', freqCount: 24, distBins: 10, assocTrendCount: 20, assocTop5TopN: 8, raceFrameIndex: 0 };
 
 // ============ 通用辅助（WTT 页未加载 data-viz-extra.js，需自带） ============
 
@@ -116,6 +116,7 @@ function wttBuildAssocCountryMap() {
 }
 
 // 由按积分降序的球员数组计算协会实力分（前五加权，不足5人按可用权重归一化）
+// 协会人数 n < 5 时，实力分额外乘以 0.95^(5-n)，避免单名高排名球员撑起小协会排名
 function wttAssocStrengthFromScores(sortedPlayers) {
     if (!sortedPlayers || !sortedPlayers.length) return 0;
     const top = sortedPlayers.slice(0, 5);
@@ -124,7 +125,11 @@ function wttAssocStrengthFromScores(sortedPlayers) {
         num += top[i].score * WTT_ASSOC_WEIGHTS[i];
         den += WTT_ASSOC_WEIGHTS[i];
     }
-    return den > 0 ? num / den : 0;
+    let strength = den > 0 ? num / den : 0;
+    if (strength > 0 && top.length < 5) {
+        strength *= Math.pow(0.95, 5 - top.length);
+    }
+    return strength;
 }
 
 // 给定一个快照，返回完整 姓名->积分 映射（活跃 + 赛季继承 + 初始分兜底）
@@ -276,6 +281,8 @@ function initWttDataVizExtra() {
         wttDataVizExtraState.assocTop5TopN = v;
         wttRenderAssocTop5(v);
     });
+
+    wttInitBarRace();
 }
 
 function wttClampInt(v, min, max) {
@@ -284,6 +291,384 @@ function wttClampInt(v, min, max) {
     if (n < min) n = min;
     if (n > max) n = max;
     return n;
+}
+
+// ============ Bar Chart Race（排名动态竞速 Top 20） ============
+
+const WTT_RACE_TOP_N = 20;
+// 协会配色：黄金角色相步进 + 中低饱和度，保证相邻协会色差大且不刺眼
+const WTT_RACE_HUE_STEP = 137.508;  // 黄金角（度）
+const WTT_RACE_SATURATION = 50;     // 饱和度 %（中低，避免过高）
+const WTT_RACE_LIGHTNESS = 55;      // 亮度 %
+const WTT_RACE_UNKNOWN_COLOR = '#94a3b8';
+const WTT_RACE_FRAME_MS = 700;
+const WTT_RACE_BAR_MIN_PCT = 8;  // 横轴最低刻度对应的条形宽度（%），使横轴不从 0 开始
+
+let wttBarRace = {
+    initialized: false,
+    playing: false,
+    timer: null,
+    rafId: null,
+    frameIndex: 0,
+    speed: 1,
+    cache: new Map(),
+    assocColors: {},
+    rowMap: new Map(),
+    rowHeight: 32,
+    lastTs: null
+};
+
+// HSL -> 十六进制颜色（h: 0-360, s/l: 0-100）
+function wttHslToHex(h, s, l) {
+    h = ((h % 360) + 360) % 360;
+    s = Math.max(0, Math.min(100, s)) / 100;
+    l = Math.max(0, Math.min(100, l)) / 100;
+    const c = (1 - Math.abs(2 * l - 1)) * s;
+    const x = c * (1 - Math.abs((h / 60) % 2 - 1));
+    const m = l - c / 2;
+    let r = 0, g = 0, b = 0;
+    if (h < 60) { r = c; g = x; b = 0; }
+    else if (h < 120) { r = x; g = c; b = 0; }
+    else if (h < 180) { r = 0; g = c; b = x; }
+    else if (h < 240) { r = 0; g = x; b = c; }
+    else if (h < 300) { r = x; g = 0; b = c; }
+    else { r = c; g = 0; b = x; }
+    const toHex = v => Math.round((v + m) * 255).toString(16).padStart(2, '0');
+    return '#' + toHex(r) + toHex(g) + toHex(b);
+}
+
+// 收集全部协会代码并分配稳定颜色（按协会分层设色）
+// 按黄金角色相分配，相邻协会色相相差约 137.5°，饱和度/亮度统一控制
+function wttBuildBarRaceAssocColors() {
+    const codes = new Set();
+    for (const name of wttGetAllPlayers()) {
+        const a = wttGetPlayerAssoc(name);
+        if (a && a.assoc) codes.add(String(a.assoc).toUpperCase());
+    }
+    const colors = {};
+    Array.from(codes).sort().forEach((code, i) => {
+        colors[code] = wttHslToHex(i * WTT_RACE_HUE_STEP, WTT_RACE_SATURATION, WTT_RACE_LIGHTNESS);
+    });
+    return colors;
+}
+
+// 懒缓存：按需计算某一帧的 Top 20 数据（含积分、协会、旗帜）
+function wttGetBarRaceFrame(frameIndex) {
+    if (wttBarRace.cache.has(frameIndex)) return wttBarRace.cache.get(frameIndex);
+    const entry = wttRankingTimeline[frameIndex];
+    if (!entry) return null;
+    const scoreMap = wttBuildSnapshotScoreMap(entry);
+    const items = Object.keys(scoreMap)
+        .map(name => {
+            const a = wttGetPlayerAssoc(name);
+            const code = a && a.assoc ? String(a.assoc).toUpperCase() : '';
+            return {
+                name,
+                score: Number(scoreMap[name]) || 0,
+                assoc: code,
+                country: (a && a.country) ? a.country : code,
+                flagClass: code ? wttAssocFlagClass(code) : ''
+            };
+        })
+        .sort((a, b) => b.score - a.score)
+        .slice(0, WTT_RACE_TOP_N);
+    const frame = { label: entry.label || '', items };
+    wttBarRace.cache.set(frameIndex, frame);
+    return frame;
+}
+
+function wttCreateBarRaceRow(item) {
+    const row = document.createElement('div');
+    row.className = 'bar-race-row';
+    row.setAttribute('data-name', item.name);
+    row.innerHTML =
+        '<span class="bar-race-rank"></span>' +
+        '<span class="bar-race-name" title="' + escapeHtml(item.name) + '">' +
+            (item.flagClass ? '<span class="player-flag ' + item.flagClass + '"></span>' : '') +
+            '<span class="bar-race-name-text">' + escapeHtml(item.name) + '</span>' +
+        '</span>' +
+        '<span class="bar-race-track">' +
+            '<span class="bar-race-fill"></span>' +
+            '<span class="bar-race-value"></span>' +
+        '</span>';
+    row.style.opacity = '0';
+    return row;
+}
+
+function wttUpdateBarRaceRow(row, item, rank, maxScore, minScore) {
+    const rankEl = row.querySelector('.bar-race-rank');
+    const fillEl = row.querySelector('.bar-race-fill');
+    const valueEl = row.querySelector('.bar-race-value');
+    const nameTextEl = row.querySelector('.bar-race-name-text');
+    if (rankEl) {
+        rankEl.textContent = rank + 1;
+        rankEl.classList.toggle('top1', rank === 0);
+        rankEl.classList.toggle('top2', rank === 1);
+        rankEl.classList.toggle('top3', rank === 2);
+    }
+    if (nameTextEl) nameTextEl.textContent = item.name;
+    if (fillEl) {
+        let pct;
+        if (maxScore > minScore) {
+            pct = WTT_RACE_BAR_MIN_PCT + (item.score - minScore) / (maxScore - minScore) * (100 - WTT_RACE_BAR_MIN_PCT);
+        } else {
+            pct = 100;
+        }
+        const color = wttBarRace.assocColors[item.assoc] || WTT_RACE_UNKNOWN_COLOR;
+        fillEl.style.width = pct.toFixed(2) + '%';
+        fillEl.style.background = color;
+        if (valueEl) {
+            valueEl.textContent = item.score.toFixed(1);
+            valueEl.style.left = pct.toFixed(2) + '%';
+            valueEl.style.color = color;
+        }
+    }
+}
+
+// 读取 CSS 变量中的行高（含行间距）
+function wttReadBarRaceRowHeight() {
+    const container = document.getElementById('wttBarRaceContainer');
+    if (!container) return;
+    const v = getComputedStyle(container).getPropertyValue('--bar-race-row-h');
+    const n = parseFloat(v);
+    if (n > 0) wttBarRace.rowHeight = n;
+}
+
+// 渲染横坐标轴刻度（按当前显示分数范围，在 8%–100% 条宽区间内取 5 个刻度）
+function wttRenderBarRaceAxis(axisEl, minScore, maxScore) {
+    if (!axisEl) return;
+    const tickPcts = [8, 31, 54, 77, 100];
+    axisEl.innerHTML = tickPcts.map(pct => {
+        const value = maxScore > minScore
+            ? minScore + (pct - WTT_RACE_BAR_MIN_PCT) / (100 - WTT_RACE_BAR_MIN_PCT) * (maxScore - minScore)
+            : maxScore;
+        return '<span class="bar-race-tick" style="left:' + pct + '%;">' + value.toFixed(0) + '</span>';
+    }).join('');
+}
+
+// 根据当前显示分数排序并定位所有行（每帧调用，直接设置 transform/width，无 CSS 过渡）
+function wttRenderBarRacePositions() {
+    const container = document.getElementById('wttBarRaceContainer');
+    if (!container) return;
+
+    const active = Array.from(wttBarRace.rowMap.values()).filter(st => !st.leaving);
+    active.sort((a, b) => b.score - a.score);
+
+    const rowH = wttBarRace.rowHeight || 32;
+    container.style.height = (active.length * rowH) + 'px';
+
+    const minScore = active.length ? active[active.length - 1].score : 0;
+    const maxScore = active.length ? active[0].score : 0;
+    const axisEl = document.getElementById('wttRaceScaleLabel');
+    if (axisEl) {
+        if (active.length) wttRenderBarRaceAxis(axisEl, minScore, maxScore);
+        else axisEl.innerHTML = '';
+    }
+
+    active.forEach((st, i) => {
+        const offset = st.enterOffset || 0;
+        st.row.style.transform = 'translateY(' + ((i + offset) * rowH) + 'px)';
+        st.row.style.opacity = st.opacity;
+        wttUpdateBarRaceRow(st.row, { name: st.name, score: st.score, assoc: st.assoc }, i, maxScore, minScore);
+    });
+}
+
+// 移除已经淡出的离场行
+function wttBarRaceRemoveLeftovers() {
+    for (const [name, st] of Array.from(wttBarRace.rowMap)) {
+        if (st.leaving && st.opacity <= 0.01) {
+            st.row.remove();
+            wttBarRace.rowMap.delete(name);
+        }
+    }
+}
+
+// 设置目标帧：更新每个球员的目标分数，并启动连续插值动画
+function wttSetBarRaceFrame(frameIndex, animate = true) {
+    const container = document.getElementById('wttBarRaceContainer');
+    if (!container || !wttRankingTimeline.length) return;
+    const frame = wttGetBarRaceFrame(frameIndex);
+    if (!frame) return;
+
+    wttBarRace.frameIndex = frameIndex;
+    wttDataVizExtraState.raceFrameIndex = frameIndex;
+    const slider = document.getElementById('wttRaceSlider');
+    if (slider) slider.value = frameIndex;
+    const dateLabel = document.getElementById('wttRaceDateLabel');
+    if (dateLabel) dateLabel.textContent = frame.label;
+
+    wttReadBarRaceRowHeight();
+
+    const activeNames = new Set();
+    for (const item of frame.items) {
+        activeNames.add(item.name);
+        let st = wttBarRace.rowMap.get(item.name);
+        if (!st) {
+            const row = wttCreateBarRaceRow(item);
+            container.appendChild(row);
+            st = {
+                name: item.name,
+                row,
+                score: item.score,
+                targetScore: item.score,
+                opacity: 0,
+                leaving: false,
+                assoc: item.assoc,
+                enterOffset: animate ? 1.2 : 0
+            };
+            wttBarRace.rowMap.set(item.name, st);
+        }
+        st.targetScore = item.score;
+        st.leaving = false;
+    }
+
+    for (const [name, st] of wttBarRace.rowMap) {
+        if (!activeNames.has(name) && !st.leaving) {
+            st.leaving = true;
+            st.targetScore = st.score;
+        }
+    }
+
+    if (!animate) {
+        for (const st of wttBarRace.rowMap.values()) {
+            st.score = st.targetScore;
+            st.opacity = st.leaving ? 0 : 1;
+            st.row.style.opacity = st.opacity;
+        }
+        wttRenderBarRacePositions();
+        wttBarRaceRemoveLeftovers();
+        return;
+    }
+
+    if (wttBarRace.rafId == null) {
+        wttBarRace.lastTs = null;
+        wttBarRace.rafId = requestAnimationFrame(wttBarRaceTick);
+    }
+}
+
+// 连续动画循环：分数指数趋近目标，排名/条长随每帧重算
+function wttBarRaceTick(ts) {
+    let needsAnotherFrame = false;
+    if (wttBarRace.lastTs == null) {
+        wttBarRace.lastTs = ts;
+        needsAnotherFrame = true;
+    }
+    const dt = Math.min(64, Math.max(0, ts - wttBarRace.lastTs));
+    wttBarRace.lastTs = ts;
+
+    const scoreSmoothing = 1 - Math.exp(-dt / 220);   // 时间常数 ~220ms，分数过渡更绵长顺滑
+    const fadeInRate = dt / 180;
+    const fadeOutRate = dt / 220;
+
+    for (const st of wttBarRace.rowMap.values()) {
+        if (st.leaving) {
+            st.opacity = Math.max(0, st.opacity - fadeOutRate);
+            st.row.style.opacity = st.opacity;
+            if (st.opacity > 0.01) needsAnotherFrame = true;
+        } else {
+            if (st.opacity < 1) {
+                st.opacity = Math.min(1, st.opacity + fadeInRate);
+                st.row.style.opacity = st.opacity;
+                if (st.opacity < 1) needsAnotherFrame = true;
+            }
+            if (st.enterOffset > 0) {
+                st.enterOffset = Math.max(0, st.enterOffset - dt / 260);
+                needsAnotherFrame = true;
+            }
+            const diff = st.targetScore - st.score;
+            if (Math.abs(diff) > 0.05) {
+                st.score += diff * scoreSmoothing;
+                if (Math.abs(st.targetScore - st.score) < 0.05) st.score = st.targetScore;
+                needsAnotherFrame = true;
+            }
+        }
+    }
+
+    wttRenderBarRacePositions();
+    wttBarRaceRemoveLeftovers();
+
+    if (needsAnotherFrame) {
+        wttBarRace.rafId = requestAnimationFrame(wttBarRaceTick);
+    } else {
+        wttBarRace.rafId = null;
+    }
+}
+
+function wttBarRaceSyncPlayButton() {
+    const btn = document.getElementById('wttRacePlayBtn');
+    if (!btn) return;
+    const key = wttBarRace.playing ? 'wtt_race_pause' : 'wtt_race_play';
+    const icon = wttBarRace.playing ? 'fa-pause' : 'fa-play';
+    btn.innerHTML = '<i class="fa-solid ' + icon + '"></i> <span data-i18n="' + key + '">' + escapeHtml(i18n[currentLang][key]) + '</span>';
+}
+
+function wttBarRaceAdvance() {
+    const max = wttRankingTimeline.length - 1;
+    wttBarRace.frameIndex = wttBarRace.frameIndex >= max ? 0 : wttBarRace.frameIndex + 1;
+    wttSetBarRaceFrame(wttBarRace.frameIndex, true);
+}
+
+function wttBarRaceStartTimer() {
+    if (wttBarRace.timer) { clearInterval(wttBarRace.timer); wttBarRace.timer = null; }
+    wttBarRace.timer = setInterval(wttBarRaceAdvance, Math.max(120, WTT_RACE_FRAME_MS / wttBarRace.speed));
+}
+
+function wttBarRaceStartPlay() {
+    if (wttBarRace.playing) return;
+    wttBarRace.playing = true;
+    wttBarRaceSyncPlayButton();
+    wttBarRaceStartTimer();
+}
+
+function wttBarRaceStopPlay() {
+    if (!wttBarRace.playing && !wttBarRace.timer) return;
+    wttBarRace.playing = false;
+    if (wttBarRace.timer) { clearInterval(wttBarRace.timer); wttBarRace.timer = null; }
+    wttBarRaceSyncPlayButton();
+}
+
+function wttInitBarRace() {
+    const container = document.getElementById('wttBarRaceContainer');
+    const slider = document.getElementById('wttRaceSlider');
+    const playBtn = document.getElementById('wttRacePlayBtn');
+    const speedSelect = document.getElementById('wttRaceSpeedSelect');
+    if (!container || !slider || !playBtn) return;
+    if (!wttRankingTimeline || !wttRankingTimeline.length) return;
+
+    wttBarRace.initialized = true;
+    wttBarRace.assocColors = wttBuildBarRaceAssocColors();
+    wttBarRace.speed = parseFloat(speedSelect && speedSelect.value) || 1;
+    wttBarRace.frameIndex = (wttDataVizExtraState.raceFrameIndex > 0)
+        ? Math.min(wttDataVizExtraState.raceFrameIndex, wttRankingTimeline.length - 1)
+        : wttRankingTimeline.length - 1;
+    slider.max = wttRankingTimeline.length - 1;
+    slider.value = wttBarRace.frameIndex;
+
+    slider.addEventListener('input', () => {
+        wttBarRaceStopPlay();
+        wttBarRace.frameIndex = wttClampInt(slider.value, 0, wttRankingTimeline.length - 1);
+        wttSetBarRaceFrame(wttBarRace.frameIndex, true);
+    });
+    playBtn.addEventListener('click', () => {
+        if (wttBarRace.playing) wttBarRaceStopPlay();
+        else wttBarRaceStartPlay();
+    });
+    speedSelect?.addEventListener('change', () => {
+        wttBarRace.speed = parseFloat(speedSelect.value) || 1;
+        if (wttBarRace.playing) wttBarRaceStartTimer();
+    });
+
+    // 响应窗口大小变化：行高由 CSS 变量控制，变化后重新读取并重排
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            wttReadBarRaceRowHeight();
+            wttRenderBarRacePositions();
+        }, 150);
+    });
+
+    wttSetBarRaceFrame(wttBarRace.frameIndex, false);
 }
 
 // ============ 战绩统计条形图 ============
@@ -735,4 +1120,9 @@ function wttReapplyDataVizExtra() {
     const assocSel = wttGetSelectedAssocs();
     if (assocSel.length) wttRenderAssocTrend(assocSel, wttDataVizExtraState.assocTrendCount);
     wttRenderAssocTop5(wttDataVizExtraState.assocTop5TopN);
+    if (wttBarRace.initialized) {
+        wttBarRace.assocColors = wttBuildBarRaceAssocColors();
+        wttBarRaceSyncPlayButton();
+        wttSetBarRaceFrame(wttDataVizExtraState.raceFrameIndex, false);
+    }
 }

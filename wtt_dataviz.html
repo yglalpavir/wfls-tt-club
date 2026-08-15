@@ -226,6 +226,34 @@
                 <div id="wttAssocTop5Legend" class="viz-flag-legend"></div>
             </div>
 
+            <div class="viz-section-header" style="margin-top:48px;">
+                <span class="section-tag">Bar Chart Race</span>
+                <h2 class="section-title" data-i18n="wtt_race_title">排名动态竞速 Top 20</h2>
+                <p class="viz-race-hint" data-i18n="wtt_race_hint">拖动滑块或播放，查看排名随时间变化</p>
+            </div>
+            <div class="viz-race-stage glass-card">
+                <div class="viz-race-clock" id="wttRaceDateLabel"></div>
+                <div class="viz-bar-race-wrap">
+                    <div id="wttBarRaceContainer" class="viz-bar-race"></div>
+                    <div class="bar-race-scale" id="wttRaceScaleLabel"></div>
+                </div>
+            </div>
+            <div class="viz-race-controls">
+                <button class="btn btn-sm btn-primary" id="wttRacePlayBtn" aria-label="播放/暂停">
+                    <i class="fa-solid fa-play"></i> <span data-i18n="wtt_race_play">播放</span>
+                </button>
+                <input type="range" id="wttRaceSlider" class="viz-race-slider" min="0" max="0" value="0" step="1">
+                <label class="viz-race-speed">
+                    <span data-i18n="wtt_race_speed">速度</span>
+                    <select id="wttRaceSpeedSelect">
+                        <option value="0.5">0.5×</option>
+                        <option value="1" selected>1×</option>
+                        <option value="1.5">1.5×</option>
+                        <option value="2">2×</option>
+                    </select>
+                </label>
+            </div>
+
         </div>
 
         <div class="wtt-back-link" style="text-align:center;margin-top:40px;">
