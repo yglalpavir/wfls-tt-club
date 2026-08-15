@@ -56,9 +56,26 @@
         </div>
     </section>
 
+    <!-- 左侧定位条 -->
+    <nav class="side-nav" id="sideNav">
+        <ul class="side-nav-list">
+            <li class="side-nav-item"><a href="#viz-points" class="side-nav-link active" data-section="viz-points" data-i18n="data_viz_points_trend">积分趋势</a></li>
+            <li class="side-nav-item"><a href="#viz-stream" class="side-nav-link" data-section="viz-stream" data-i18n="data_viz_rank_stream">排名变化河流图</a></li>
+            <li class="side-nav-item"><a href="#viz-compare" class="side-nav-link" data-section="viz-compare" data-i18n="data_viz_player_compare">球员对比</a></li>
+            <li class="side-nav-item"><a href="#viz-record" class="side-nav-link" data-section="viz-record" data-i18n="wtt_record_title">战绩统计</a></li>
+            <li class="side-nav-item"><a href="#viz-efficiency" class="side-nav-link" data-section="viz-efficiency" data-i18n="wtt_efficiency_title">场次×积分效率</a></li>
+            <li class="side-nav-item"><a href="#viz-heatmap" class="side-nav-link" data-section="viz-heatmap" data-i18n="wtt_heatmap_title">交手热力矩阵</a></li>
+            <li class="side-nav-item"><a href="#viz-freq" class="side-nav-link" data-section="viz-freq" data-i18n="wtt_freq_title">比赛频次时间轴</a></li>
+            <li class="side-nav-item"><a href="#viz-dist" class="side-nav-link" data-section="viz-dist" data-i18n="wtt_dist_title">积分区间分布</a></li>
+            <li class="side-nav-item"><a href="#wtt-viz-assoc-trend" class="side-nav-link" data-section="wtt-viz-assoc-trend" data-i18n="wtt_assoc_trend_title">协会积分趋势</a></li>
+            <li class="side-nav-item"><a href="#wtt-viz-assoc-top5" class="side-nav-link" data-section="wtt-viz-assoc-top5" data-i18n="wtt_assoc_top5_title">协会前五球员</a></li>
+            <li class="side-nav-item"><a href="#wtt-viz-race" class="side-nav-link" data-section="wtt-viz-race" data-i18n="wtt_race_title">排名动态竞速 Top 20</a></li>
+        </ul>
+    </nav>
+
     <section class="section viz-main-section">
         <div class="container">
-            <div class="viz-section-header">
+            <div class="viz-section-header" id="viz-points">
                 <span class="section-tag">Line Chart</span>
                 <h2 class="section-title" data-i18n="data_viz_points_trend">积分趋势</h2>
                 <div class="viz-topn-selector">
@@ -78,7 +95,7 @@
                 </div>
             </div>
 
-            <div class="viz-section-header" style="margin-top:48px;">
+            <div class="viz-section-header" id="viz-stream" style="margin-top:48px;">
                 <span class="section-tag">Stream Graph</span>
                 <h2 class="section-title" data-i18n="data_viz_rank_stream">排名变化河流图</h2>
                 <div class="viz-topn-selector">
@@ -96,7 +113,7 @@
                 <canvas id="wttRankStreamChart"></canvas>
             </div>
 
-            <div class="viz-section-header" style="margin-top:48px;">
+            <div class="viz-section-header" id="viz-compare" style="margin-top:48px;">
                 <span class="section-tag">Comparison</span>
                 <h2 class="section-title" data-i18n="data_viz_player_compare">球员对比</h2>
             </div>
@@ -121,7 +138,7 @@
                 </div>
             </div>
 
-            <div class="viz-section-header" style="margin-top:48px;">
+            <div class="viz-section-header" id="viz-record" style="margin-top:48px;">
                 <span class="section-tag">Match Records</span>
                 <h2 class="section-title" data-i18n="wtt_record_title">战绩统计</h2>
                 <div class="viz-topn-selector">
@@ -134,7 +151,7 @@
                 <canvas id="wttRecordBarChart"></canvas>
             </div>
 
-            <div class="viz-section-header" style="margin-top:48px;">
+            <div class="viz-section-header" id="viz-efficiency" style="margin-top:48px;">
                 <span class="section-tag">Efficiency Scatter</span>
                 <h2 class="section-title" data-i18n="wtt_efficiency_title">场次×积分效率</h2>
                 <div class="viz-topn-selector">
@@ -147,7 +164,7 @@
                 <canvas id="wttEfficiencyScatterChart"></canvas>
             </div>
 
-            <div class="viz-section-header" style="margin-top:48px;">
+            <div class="viz-section-header" id="viz-heatmap" style="margin-top:48px;">
                 <span class="section-tag">Head-to-Head Matrix</span>
                 <h2 class="section-title" data-i18n="wtt_heatmap_title">交手热力矩阵</h2>
                 <div class="viz-topn-selector">
@@ -160,7 +177,7 @@
                 <div class="compare-placeholder"><i class="fa-solid fa-border-all"></i><p data-i18n="wtt_no_data">暂无数据</p></div>
             </div>
 
-            <div class="viz-section-header" style="margin-top:48px;">
+            <div class="viz-section-header" id="viz-freq" style="margin-top:48px;">
                 <span class="section-tag">Match Frequency</span>
                 <h2 class="section-title" data-i18n="wtt_freq_title">比赛频次时间轴</h2>
                 <div class="viz-topn-selector">
@@ -180,7 +197,7 @@
                 <canvas id="wttMatchFrequencyChart"></canvas>
             </div>
 
-            <div class="viz-section-header" style="margin-top:48px;">
+            <div class="viz-section-header" id="viz-dist" style="margin-top:48px;">
                 <span class="section-tag">Score Distribution</span>
                 <h2 class="section-title" data-i18n="wtt_dist_title">积分区间分布</h2>
                 <div class="viz-topn-selector">
@@ -192,7 +209,7 @@
                 <canvas id="wttScoreDistributionChart"></canvas>
             </div>
 
-            <div class="viz-section-header" style="margin-top:48px;">
+            <div class="viz-section-header" id="wtt-viz-assoc-trend" style="margin-top:48px;">
                 <span class="section-tag">Association Trend</span>
                 <h2 class="section-title" data-i18n="wtt_assoc_trend_title">协会积分趋势</h2>
                 <div class="viz-topn-selector">
@@ -212,7 +229,7 @@
                 </div>
             </div>
 
-            <div class="viz-section-header" style="margin-top:48px;">
+            <div class="viz-section-header" id="wtt-viz-assoc-top5" style="margin-top:48px;">
                 <span class="section-tag">Association Top 5</span>
                 <h2 class="section-title" data-i18n="wtt_assoc_top5_title">协会前五球员</h2>
                 <div class="viz-topn-selector">
@@ -226,7 +243,7 @@
                 <div id="wttAssocTop5Legend" class="viz-flag-legend"></div>
             </div>
 
-            <div class="viz-section-header" style="margin-top:48px;">
+            <div class="viz-section-header" id="wtt-viz-race" style="margin-top:48px;">
                 <span class="section-tag">Bar Chart Race</span>
                 <h2 class="section-title" data-i18n="wtt_race_title">排名动态竞速 Top 20</h2>
                 <p class="viz-race-hint" data-i18n="wtt_race_hint">拖动滑块或播放，查看排名随时间变化</p>

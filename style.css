@@ -352,6 +352,8 @@ body.dark-mode .navbar.scrolled {
     padding: 12px 0;
     box-shadow: var(--shadow-md);
     min-width: 130px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
 }
 .side-nav-list { display: flex; flex-direction: column; }
 .side-nav-item { position: relative; }
@@ -1515,7 +1517,7 @@ body.dark-mode .score-detail-table tbody tr:nth-child(even) td { background-colo
 
 /* 数据可视化 */
 .viz-main-section { background: var(--bg-light); padding-top: 40px; padding-bottom: 80px; }
-.viz-section-header { text-align: center; margin-bottom: 28px; }
+.viz-section-header { text-align: center; margin-bottom: 28px; scroll-margin-top: 90px; }
 .viz-section-header .section-title { font-size: 1.5rem; margin-bottom: 8px; }
 .viz-section-header .section-tag { font-size: 0.7rem; padding: 4px 12px; }
 .viz-grid-2col { display: grid; grid-template-columns: 280px 1fr; gap: 24px; align-items: start; }
