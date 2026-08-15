@@ -4118,5 +4118,10 @@
     "assoc": "JPN",
     "country": "Japan",
     "source": "user-confirmed"
+  },
+  "LIU Shiwen": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "user-confirmed"
   }
 }
