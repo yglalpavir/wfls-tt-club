@@ -3310,5 +3310,437 @@
     "类型": "T联赛",
     "胜者": "Hiromu KOBAYASHI/Masaki DEN",
     "负者": "Fumiya IGARASHI/Taisei MATSUSHITA"
+  },
+  {
+    "日期": "2025-06-09",
+    "类型": "乒超联赛",
+    "胜者": "LIN Gaoyuan/XU Haidong",
+    "负者": "XU Yingbin/YUAN Licen"
+  },
+  {
+    "日期": "2025-06-10",
+    "类型": "乒超联赛",
+    "胜者": "FEI Junhang/ZHOU Yu",
+    "负者": "CHEN Junsong/WONG Chun Ting"
+  },
+  {
+    "日期": "2025-06-11",
+    "类型": "乒超联赛",
+    "胜者": "LIANG Jingkun/LIN Yun-Ju",
+    "负者": "XU Yingbin/YUAN Licen"
+  },
+  {
+    "日期": "2025-07-25",
+    "类型": "乒超联赛",
+    "胜者": "LIN Gaoyuan/XU Haidong",
+    "负者": "LIANG Yanning/QUAN Kaiyuan"
+  },
+  {
+    "日期": "2025-07-26",
+    "类型": "乒超联赛",
+    "胜者": "CHEN Yuanyu/LIN Gaoyuan",
+    "负者": "XU Xin/ZHOU Kai"
+  },
+  {
+    "日期": "2025-07-27",
+    "类型": "乒超联赛",
+    "胜者": "LIN Yun-Ju/ZHOU Qihao",
+    "负者": "ZHAO Zhaoyan/ZHAO Zihao"
+  },
+  {
+    "日期": "2025-07-28",
+    "类型": "乒超联赛",
+    "胜者": "CHEN Junsong/WONG Chun Ting",
+    "负者": "NING Xiankun/TAO Yuchang"
+  },
+  {
+    "日期": "2025-08-29",
+    "类型": "乒超联赛",
+    "胜者": "XU Xin/ZHOU Kai",
+    "负者": "WONG Chun Ting/YAN Sheng"
+  },
+  {
+    "日期": "2025-08-30",
+    "类型": "乒超联赛",
+    "胜者": "XIANG Peng/XUE Fei",
+    "负者": "WONG Chun Ting/YAN Sheng"
+  },
+  {
+    "日期": "2025-08-31",
+    "类型": "乒超联赛",
+    "胜者": "XIANG Peng/XUE Fei",
+    "负者": "XU Yingbin/YUAN Licen"
+  },
+  {
+    "日期": "2025-09-01",
+    "类型": "乒超联赛",
+    "胜者": "ZHAO Zhaoyan/ZHAO Zihao",
+    "负者": "LIN Gaoyuan/XU Haidong"
+  },
+  {
+    "日期": "2025-12-26",
+    "类型": "乒超联赛",
+    "胜者": "XU Xin/ZHOU Kai",
+    "负者": "AO Hualei/WANG Yang"
+  },
+  {
+    "日期": "2025-12-27",
+    "类型": "乒超联赛",
+    "胜者": "XIANG Peng/XUE Fei",
+    "负者": "QUEK Izaac/WEN Ruibo"
+  },
+  {
+    "日期": "2025-12-28",
+    "类型": "乒超联赛",
+    "胜者": "LIANG Jingkun/LIN Yun-Ju",
+    "负者": "ZHAO Zhaoyan/ZHAO Zihao"
+  },
+  {
+    "日期": "2025-06-09",
+    "类型": "乒超联赛",
+    "胜者": "LIANG Jingkun/LIN Yun-Ju",
+    "负者": "HUANG Xunan/LI Yijie"
+  },
+  {
+    "日期": "2025-06-10",
+    "类型": "乒超联赛",
+    "胜者": "CHEN Junsong/YAN Sheng",
+    "负者": "LIANG Jingkun/LIN Yun-Ju"
+  },
+  {
+    "日期": "2025-06-11",
+    "类型": "乒超联赛",
+    "胜者": "LIN Gaoyuan/XU Haidong",
+    "负者": "QUEK Izaac/WEN Ruibo"
+  },
+  {
+    "日期": "2025-07-25",
+    "类型": "乒超联赛",
+    "胜者": "Sora MATSUSHIMA/YAN An",
+    "负者": "LIANG Yanning/SONG Zhuoheng"
+  },
+  {
+    "日期": "2025-07-26",
+    "类型": "乒超联赛",
+    "胜者": "Sora MATSUSHIMA/YAN An",
+    "负者": "CHEN Junsong/YAN Sheng"
+  },
+  {
+    "日期": "2025-07-27",
+    "类型": "乒超联赛",
+    "胜者": "XU Xin/ZHOU Kai",
+    "负者": "AO Hualei/WANG Yang"
+  },
+  {
+    "日期": "2025-07-28",
+    "类型": "乒超联赛",
+    "胜者": "YAN An/YUAN Licen",
+    "负者": "AO Hualei/WANG Yang"
+  },
+  {
+    "日期": "2025-08-29",
+    "类型": "乒超联赛",
+    "胜者": "LIANG Yanning/QUAN Kaiyuan",
+    "负者": "SUN Zheng/ZHAO Zhaoyan"
+  },
+  {
+    "日期": "2025-08-30",
+    "类型": "乒超联赛",
+    "胜者": "XU Yingbin/YUAN Licen",
+    "负者": "ZHAO Zihao/ZHOU Kai"
+  },
+  {
+    "日期": "2025-08-31",
+    "类型": "乒超联赛",
+    "胜者": "XIANG Peng/XUE Fei",
+    "负者": "WANG Chuqin/ZHOU Qihao"
+  },
+  {
+    "日期": "2025-09-01",
+    "类型": "乒超联赛",
+    "胜者": "YAN An/YUAN Licen",
+    "负者": "CHEN Yuanyu/LIN Gaoyuan"
+  },
+  {
+    "日期": "2025-12-26",
+    "类型": "乒超联赛",
+    "胜者": "QUEK Izaac/WEN Ruibo",
+    "负者": "CHEN Junsong/WONG Chun Ting"
+  },
+  {
+    "日期": "2025-12-27",
+    "类型": "乒超联赛",
+    "胜者": "LIANG Jingkun/LIN Yun-Ju",
+    "负者": "CHEN Yuanyu/LIN Gaoyuan"
+  },
+  {
+    "日期": "2025-12-28",
+    "类型": "乒超联赛",
+    "胜者": "LIN Yun-Ju/ZHOU Qihao",
+    "负者": "SUN Wen/YAN Sheng"
+  },
+  {
+    "日期": "2025-06-09",
+    "类型": "乒超联赛",
+    "胜者": "LIANG Yanning/SONG Zhuoheng",
+    "负者": "NING Xiankun/TAO Yuchang"
+  },
+  {
+    "日期": "2025-06-10",
+    "类型": "乒超联赛",
+    "胜者": "CHEN Junsong/YAN Sheng",
+    "负者": "ZHAO Zihao/ZHOU Kai"
+  },
+  {
+    "日期": "2025-06-11",
+    "类型": "乒超联赛",
+    "胜者": "LIANG Jingkun/LIN Yun-Ju",
+    "负者": "LIANG Yanning/SONG Zhuoheng"
+  },
+  {
+    "日期": "2025-07-25",
+    "类型": "乒超联赛",
+    "胜者": "AO Hualei/CHAN Baldwin",
+    "负者": "NING Xiankun/TAO Yuchang"
+  },
+  {
+    "日期": "2025-07-26",
+    "类型": "乒超联赛",
+    "胜者": "LIN Yun-Ju/ZHOU Qihao",
+    "负者": "Sora MATSUSHIMA/YAN An"
+  },
+  {
+    "日期": "2025-07-27",
+    "类型": "乒超联赛",
+    "胜者": "ZHAO Zihao/ZHOU Kai",
+    "负者": "XIANG Peng/XUE Fei"
+  },
+  {
+    "日期": "2025-07-28",
+    "类型": "乒超联赛",
+    "胜者": "CHEN Junsong/YAN Sheng",
+    "负者": "LIANG Yanning/QUAN Kaiyuan"
+  },
+  {
+    "日期": "2025-08-29",
+    "类型": "乒超联赛",
+    "胜者": "LIANG Yanning/SONG Zhuoheng",
+    "负者": "CHAN Baldwin/FEI Junhang"
+  },
+  {
+    "日期": "2025-08-30",
+    "类型": "乒超联赛",
+    "胜者": "LIANG Yanning/SONG Zhuoheng",
+    "负者": "FEI Junhang/ZHOU Yu"
+  },
+  {
+    "日期": "2025-08-31",
+    "类型": "乒超联赛",
+    "胜者": "LI Yijie/LIN Gaoyuan",
+    "负者": "AO Hualei/WANG Yang"
+  },
+  {
+    "日期": "2025-09-01",
+    "类型": "乒超联赛",
+    "胜者": "ZHAO Zihao/ZHOU Kai",
+    "负者": "NING Xiankun/TAO Yuchang"
+  },
+  {
+    "日期": "2025-12-26",
+    "类型": "乒超联赛",
+    "胜者": "QUEK Izaac/WEN Ruibo",
+    "负者": "AO Hualei/WANG Yang"
+  },
+  {
+    "日期": "2025-12-27",
+    "类型": "乒超联赛",
+    "胜者": "CHEN Junsong/YAN Sheng",
+    "负者": "HU Chang/LIN Shidong"
+  },
+  {
+    "日期": "2025-12-28",
+    "类型": "乒超联赛",
+    "胜者": "XIANG Peng/XUE Fei",
+    "负者": "XU Yingbin/YUAN Licen"
+  },
+  {
+    "日期": "2025-06-09",
+    "类型": "乒超联赛",
+    "胜者": "LIN Gaoyuan/XU Haidong",
+    "负者": "CHAN Baldwin/FEI Junhang"
+  },
+  {
+    "日期": "2025-06-10",
+    "类型": "乒超联赛",
+    "胜者": "CHEN Yuanyu/LIN Gaoyuan",
+    "负者": "CHEN Junsong/WONG Chun Ting"
+  },
+  {
+    "日期": "2025-06-11",
+    "类型": "乒超联赛",
+    "胜者": "QUAN Kaiyuan/SONG Zhuoheng",
+    "负者": "LIN Gaoyuan/XU Haidong"
+  },
+  {
+    "日期": "2025-07-25",
+    "类型": "乒超联赛",
+    "胜者": "XIANG Peng/XUE Fei",
+    "负者": "FEI Junhang/ZHOU Yu"
+  },
+  {
+    "日期": "2025-07-26",
+    "类型": "乒超联赛",
+    "胜者": "AO Hualei/WANG Yang",
+    "负者": "XIANG Peng/XUE Fei"
+  },
+  {
+    "日期": "2025-07-27",
+    "类型": "乒超联赛",
+    "胜者": "QUEK Izaac/WEN Ruibo",
+    "负者": "XU Xin/ZHOU Kai"
+  },
+  {
+    "日期": "2025-07-28",
+    "类型": "乒超联赛",
+    "胜者": "QUEK Izaac/WEN Ruibo",
+    "负者": "LIANG Yanning/SONG Zhuoheng"
+  },
+  {
+    "日期": "2025-08-29",
+    "类型": "乒超联赛",
+    "胜者": "XU Yingbin/YUAN Licen",
+    "负者": "NIU Guankai/QUEK Izaac"
+  },
+  {
+    "日期": "2025-08-30",
+    "类型": "乒超联赛",
+    "胜者": "SUN Wen/WONG Chun Ting",
+    "负者": "LIANG Yanning/SONG Zhuoheng"
+  },
+  {
+    "日期": "2025-08-31",
+    "类型": "乒超联赛",
+    "胜者": "CHEN Junsong/WONG Chun Ting",
+    "负者": "CHEN Yuanyu/LI Hechen"
+  },
+  {
+    "日期": "2025-09-01",
+    "类型": "乒超联赛",
+    "胜者": "XU Yingbin/YUAN Licen",
+    "负者": "SUN Wen/WONG Chun Ting"
+  },
+  {
+    "日期": "2025-12-26",
+    "类型": "乒超联赛",
+    "胜者": "LIANG Jingkun/LIN Yun-Ju",
+    "负者": "LIANG Yanning/SONG Zhuoheng"
+  },
+  {
+    "日期": "2025-12-27",
+    "类型": "乒超联赛",
+    "胜者": "LIN Gaoyuan/XU Haidong",
+    "负者": "NING Xiankun/TAO Yuchang"
+  },
+  {
+    "日期": "2025-12-28",
+    "类型": "乒超联赛",
+    "胜者": "QUEK Izaac/TAO Yuchang",
+    "负者": "XU Yingbin/YUAN Licen"
+  },
+  {
+    "日期": "2025-06-09",
+    "类型": "乒超联赛",
+    "胜者": "QUEK Izaac/WEN Ruibo",
+    "负者": "LIN Yun-Ju/ZHOU Qihao"
+  },
+  {
+    "日期": "2025-06-10",
+    "类型": "乒超联赛",
+    "胜者": "WONG Chun Ting/YAN Sheng",
+    "负者": "FEI Junhang/ZHOU Yu"
+  },
+  {
+    "日期": "2025-06-11",
+    "类型": "乒超联赛",
+    "胜者": "YU Ziyang/ZHOU Qihao",
+    "负者": "HU Chang/LIU Guancheng"
+  },
+  {
+    "日期": "2025-07-25",
+    "类型": "乒超联赛",
+    "胜者": "NING Xiankun/TAO Yuchang",
+    "负者": "HU Chang/LIU Guancheng"
+  },
+  {
+    "日期": "2025-07-26",
+    "类型": "乒超联赛",
+    "胜者": "HUANG Youzheng/LIANG Jingkun",
+    "负者": "NING Xiankun/TAO Yuchang"
+  },
+  {
+    "日期": "2025-07-27",
+    "类型": "乒超联赛",
+    "胜者": "LIANG Jingkun/LIN Yun-Ju",
+    "负者": "AO Hualei/ZHOU Yu"
+  },
+  {
+    "日期": "2025-07-28",
+    "类型": "乒超联赛",
+    "胜者": "XIANG Peng/XUE Fei",
+    "负者": "LIANG Yanning/SONG Zhuoheng"
+  },
+  {
+    "日期": "2025-08-29",
+    "类型": "乒超联赛",
+    "胜者": "XIANG Peng/XUE Fei",
+    "负者": "LIN Gaoyuan/XU Haidong"
+  },
+  {
+    "日期": "2025-08-30",
+    "类型": "乒超联赛",
+    "胜者": "QUAN Kaiyuan/SONG Zhuoheng",
+    "负者": "YAN An/YUAN Licen"
+  },
+  {
+    "日期": "2025-08-31",
+    "类型": "乒超联赛",
+    "胜者": "YAN An/YUAN Licen",
+    "负者": "AO Hualei/ZHOU Yu"
+  },
+  {
+    "日期": "2025-09-01",
+    "类型": "乒超联赛",
+    "胜者": "XIANG Peng/XUE Fei",
+    "负者": "ZHAO Zihao/ZHOU Kai"
+  },
+  {
+    "日期": "2025-12-26",
+    "类型": "乒超联赛",
+    "胜者": "XU Xin/ZHOU Kai",
+    "负者": "LIANG Yanning/QUAN Kaiyuan"
+  },
+  {
+    "日期": "2025-12-27",
+    "类型": "乒超联赛",
+    "胜者": "LIANG Yanning/SONG Zhuoheng",
+    "负者": "XIANG Peng/XUE Fei"
+  },
+  {
+    "日期": "2025-12-28",
+    "类型": "乒超联赛",
+    "胜者": "FEI Junhang/ZHOU Yu",
+    "负者": "HUANG Youzheng/ZHOU Qihao"
+  },
+  {
+    "日期": "2025-06-09",
+    "类型": "乒超联赛",
+    "胜者": "YAN An/YUAN Licen",
+    "负者": "XU Xin/ZHOU Kai"
+  },
+  {
+    "日期": "2025-06-10",
+    "类型": "乒超联赛",
+    "胜者": "LIN Gaoyuan/XU Haidong",
+    "负者": "XIANG Peng/XUE Fei"
   }
 ]
