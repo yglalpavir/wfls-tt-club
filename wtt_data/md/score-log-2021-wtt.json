@@ -412,5 +412,23 @@
     "类型": "T联赛",
     "胜者": "Masataka MORIZONO/Asuka MACHI",
     "负者": "Taimu ARINOBU/Yuki HIRANO"
+  },
+  {
+    "日期": "2021-10-10",
+    "类型": "乒超联赛",
+    "胜者": "ZHOU Qihao/ZHOU Yu",
+    "负者": "LIN Gaoyuan/XU Haidong"
+  },
+  {
+    "日期": "2021-10-11",
+    "类型": "乒超联赛",
+    "胜者": "WANG Chuqin/YAN An",
+    "负者": "XU Chenhao/XU Xin"
+  },
+  {
+    "日期": "2021-10-12",
+    "类型": "乒超联赛",
+    "胜者": "ZHOU Qihao/ZHOU Yu",
+    "负者": "WANG Chuqin/YAN An"
   }
 ]

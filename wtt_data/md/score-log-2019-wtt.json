@@ -340,5 +340,23 @@
     "类型": "T联赛",
     "胜者": "JEONG Youngsik/Yuki HIRANO",
     "负者": "Taimu ARINOBU/Koki NIWA"
+  },
+  {
+    "日期": "2019-02-16",
+    "类型": "乒超联赛",
+    "胜者": "CHENG Jingqi/ZHAO Zihao",
+    "负者": "YAN An/ZHANG Chao"
+  },
+  {
+    "日期": "2019-02-17",
+    "类型": "乒超联赛",
+    "胜者": "FANG Bo/ZHU Linfeng",
+    "负者": "ZHAO Zhaoyan/ZHOU Kai"
+  },
+  {
+    "日期": "2019-02-18",
+    "类型": "乒超联赛",
+    "胜者": "FANG Bo/ZHU Linfeng",
+    "负者": "CHENG Jingqi/ZHAO Zihao"
   }
 ]
