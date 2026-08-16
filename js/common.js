@@ -1047,12 +1047,50 @@ function escapeHtml(str) {
 
 function initPdfViewer() { const btn = document.getElementById('pdfViewBtn'), ctr = document.getElementById('pdfPreviewContainer'), ph = document.getElementById('pdfPlaceholder'), vw = document.getElementById('pdfViewer'); if (!btn) return; let loaded = false; btn.addEventListener('click', () => { if (!loaded) { btn.disabled = true; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Loading...'; vw.src = vw.getAttribute('data-src'); loaded = true; vw.onload = () => { btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> ${i18n[currentLang].pdf_preview_btn}`; btn.disabled = false; }; setTimeout(() => { if (btn.disabled) { btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> ${i18n[currentLang].pdf_preview_btn}`; btn.disabled = false; } }, 10000); } if (ctr.style.display === 'none' || !ctr.style.display) { ctr.style.display = 'block'; ph.style.display = 'none'; } else { ctr.style.display = 'none'; ph.style.display = 'flex'; } }); }
 
-function updateSideNavHighlight() { const links = document.querySelectorAll('.side-nav-link'); if (!links.length) return; const pos = window.scrollY + 150; let cur = null; links.forEach(l => { const el = document.querySelector(l.getAttribute('href')); if (!el) return; const top = el.getBoundingClientRect().top + window.scrollY; if (pos >= top) cur = l.getAttribute('data-section'); }); if (!cur) cur = links[0].getAttribute('data-section'); links.forEach(l => l.classList.toggle('active', l.getAttribute('data-section') === cur)); }
+function updateSideNavHighlight() { const links = document.querySelectorAll('.side-nav-link, .viz-tab-link'); if (!links.length) return; const pos = window.scrollY + 150; let cur = null; links.forEach(l => { const el = document.querySelector(l.getAttribute('href')); if (!el) return; const top = el.getBoundingClientRect().top + window.scrollY; if (pos >= top) cur = l.getAttribute('data-section'); }); if (!cur) cur = links[0].getAttribute('data-section'); links.forEach(l => l.classList.toggle('active', l.getAttribute('data-section') === cur)); const activeTab = document.querySelector('.viz-tab-link.active'); const tabNav = document.getElementById('vizMobileNav'); if (activeTab && tabNav) { const tl = tabNav.querySelector('.viz-tab-list'); if (tl) tl.scrollTo({ left: Math.max(0, activeTab.offsetLeft - tl.offsetLeft - 12), behavior: 'smooth' }); } }
 function highlightNavByPath() { const cp = window.location.pathname.split('/').pop() || 'index.html'; const anl = document.querySelectorAll('.nav-link:not(.dropdown-toggle)'), dl = document.querySelectorAll('.dropdown-link'); anl.forEach(l => l.classList.remove('active')); dl.forEach(l => l.classList.remove('active')); const dt2 = document.getElementById('moreDropdown'); if (dt2) dt2.classList.remove('active'); anl.forEach(link => { const h = link.getAttribute('href'); if (!h) return; if (h === cp || (cp === '' && h === 'index.html') || (cp === 'index.html' && h === 'index.html') || (cp === 'contact.html' && h === 'contact.html')) link.classList.add('active'); }); if (cp === 'members.html' || cp === 'data_viz.html' || cp === 'personal_stats.html' || cp === 'player.html' || cp === 'qa.html' || cp === 'changelog.html') { if (dt2) dt2.classList.add('active'); dl.forEach(link => { const h = link.getAttribute('href'); if (h === cp || (cp === 'player.html' && h === 'personal_stats.html')) link.classList.add('active'); }); } }
 
 function initCommon() {
     initSearch();
     highlightNavByPath();
+    initVizMobileNav();
+    if (typeof Chart !== 'undefined') Chart.defaults.devicePixelRatio = Math.min(window.devicePixelRatio || 1, 2);
     window.addEventListener('scroll', updateSideNavHighlight);
     updateSideNavHighlight();
+}
+
+function initVizMobileNav() {
+    const sideNav = document.querySelector('.side-nav');
+    if (!sideNav || document.getElementById('vizMobileNav')) return;
+    const list = sideNav.querySelector('.side-nav-list');
+    if (!list) return;
+    const srcLinks = list.querySelectorAll('.side-nav-link');
+    if (!srcLinks.length) return;
+    const nav = document.createElement('nav');
+    nav.className = 'viz-mobile-nav';
+    nav.id = 'vizMobileNav';
+    nav.setAttribute('aria-label', '页面章节导航');
+    const inner = document.createElement('div');
+    inner.className = 'viz-tab-list';
+    srcLinks.forEach(src => {
+        const a = document.createElement('a');
+        a.className = 'viz-tab-link';
+        const href = src.getAttribute('href') || '#';
+        a.setAttribute('href', href);
+        const sec = src.getAttribute('data-section');
+        if (sec) a.setAttribute('data-section', sec);
+        const key = src.getAttribute('data-i18n');
+        if (key) a.setAttribute('data-i18n', key);
+        a.textContent = (src.textContent || '').trim();
+        a.addEventListener('click', e => {
+            e.preventDefault();
+            const t = document.querySelector(href);
+            if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        inner.appendChild(a);
+    });
+    nav.appendChild(inner);
+    const target = document.querySelector('.viz-main-section');
+    if (target) target.before(nav);
+    else document.body.insertBefore(nav, document.body.firstChild);
 }

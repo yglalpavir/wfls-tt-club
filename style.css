@@ -365,6 +365,46 @@ body.dark-mode .navbar.scrolled {
 .side-nav-link:hover { color: var(--primary-blue); background: var(--primary-pale); border-left-color: var(--primary-light); }
 .side-nav-link.active { color: var(--primary-blue); background: var(--primary-pale); font-weight: 600; border-left-color: var(--primary-blue); }
 
+/* 移动端章节 pill 导航（≤1200px 替代左侧 side-nav） */
+.viz-mobile-nav {
+    position: sticky;
+    top: var(--nav-height);
+    z-index: 950;
+    display: none;
+    background: var(--bg-white);
+    border-bottom: 1px solid var(--border-color);
+    padding: 8px 10px;
+    -webkit-overflow-scrolling: touch;
+}
+.viz-tab-list {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 2px;
+}
+.viz-tab-list::-webkit-scrollbar { display: none; }
+.viz-tab-link {
+    flex: 0 0 auto;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-family: var(--font-cn);
+    color: var(--text-secondary);
+    background: var(--bg-lighter);
+    border: 1px solid var(--border-color);
+    white-space: nowrap;
+    transition: all var(--transition-fast);
+    cursor: pointer;
+}
+.viz-tab-link:hover { color: var(--primary-blue); border-color: var(--primary-light); }
+.viz-tab-link.active { color: #fff; background: var(--primary-blue); border-color: var(--primary-blue); font-weight: 600; }
+@media (max-width: 1200px) {
+    .viz-mobile-nav { display: block; }
+}
+
 /* 搜索功能 */
 .search-overlay {
     position: fixed; inset: 0; z-index: 2000; background: rgba(0, 0, 0, 0.7);
@@ -1521,9 +1561,9 @@ body.dark-mode .score-detail-table tbody tr:nth-child(even) td { background-colo
 .viz-section-header .section-title { font-size: 1.5rem; margin-bottom: 8px; }
 .viz-section-header .section-tag { font-size: 0.7rem; padding: 4px 12px; }
 .viz-grid-2col { display: grid; grid-template-columns: 280px 1fr; gap: 24px; align-items: start; }
-.viz-player-selector { padding: 24px; max-height: 500px; overflow-y: auto; }
+.viz-player-selector { padding: 24px; max-height: 500px; overflow-y: auto; -webkit-overflow-scrolling: touch; }
 .viz-player-selector h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 16px; color: var(--text-primary); text-align: center; }
-.player-checkbox-list { display: flex; flex-direction: column; gap: 4px; margin-bottom: 16px; }
+.player-checkbox-list { display: flex; flex-direction: column; gap: 4px; margin-bottom: 16px; -webkit-overflow-scrolling: touch; }
 .player-checkbox-item { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: var(--radius-sm); cursor: pointer; transition: all var(--transition-fast); font-size: 0.85rem; color: var(--text-secondary); }
 .player-checkbox-item:hover { background: var(--bg-lighter); }
 .player-checkbox-item.checked { background: var(--primary-pale); color: var(--primary-blue); font-weight: 500; }
@@ -1562,7 +1602,7 @@ body.dark-mode .score-detail-table tbody tr:nth-child(even) td { background-colo
     box-shadow: 0 0 0 3px var(--primary-pale);
 }
 /* Bar Chart Race（排名动态竞速，视频级舞台） */
-.viz-race-stage { position: relative; padding: 26px 28px 16px; min-height: 640px; display: flex; align-items: center; justify-content: center; }
+.viz-race-stage { position: relative; padding: 26px 28px 16px; min-height: 640px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 .viz-race-clock { position: absolute; top: 14px; right: 22px; z-index: 5; font-family: var(--font-en); font-size: 1.9rem; font-weight: 700; color: var(--text-primary); opacity: 0.9; letter-spacing: 0.5px; background: var(--glass-bg); padding: 2px 12px; border-radius: 10px; }
 .viz-race-hint { margin-top: 8px; font-size: 0.8rem; color: var(--text-muted); }
 .viz-bar-race-wrap { width: 100%; max-width: 920px; margin: 0 auto; padding-top: 38px; }
@@ -1596,7 +1636,7 @@ body.dark-mode .score-detail-table tbody tr:nth-child(even) td { background-colo
 .compare-selector-group select:focus { border-color: var(--primary-blue); }
 .compare-vs { font-size: 1.5rem; font-weight: 800; color: var(--primary-blue); margin: 12px 0; font-family: var(--font-en); }
 .viz-compare-selectors .btn { margin-top: 12px; width: 100%; justify-content: center; }
-.viz-compare-result { padding: 24px; min-height: 300px; overflow-x: auto; }
+.viz-compare-result { padding: 24px; min-height: 300px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .compare-placeholder { text-align: center; padding: 60px 20px; color: var(--text-muted); }
 .compare-placeholder i { font-size: 3rem; margin-bottom: 12px; opacity: 0.3; }
 .compare-placeholder p { font-size: 0.95rem; }
@@ -2006,18 +2046,28 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
     .section-header { margin-bottom: 32px; }
 
     /* ---- 数据可视化 ---- */
-    .viz-chart-container { min-height: 280px; padding: 14px; }
-    .viz-chart-container canvas { max-height: 280px; }
+    .viz-chart-container { min-height: 300px; padding: 14px; }
+    .viz-chart-container canvas { max-height: 300px; }
     .viz-player-selector { padding: 16px; max-height: 250px; }
     .viz-player-selector h4 { font-size: 0.82rem; margin-bottom: 10px; }
-    .player-checkbox-item { padding: 6px 10px; font-size: 0.8rem; }
+    .player-checkbox-item { padding: 8px 10px; font-size: 0.8rem; min-height: 42px; }
+    .player-checkbox-item input[type="checkbox"] { width: 16px; height: 16px; }
     .compare-summary { grid-template-columns: 1fr; }
     .compare-divider { text-align: center; }
     .viz-compare-selectors { padding: 16px; }
     .viz-compare-result { padding: 16px; min-height: 200px; }
     .viz-section-header { margin-bottom: 16px; }
     .viz-section-header .section-title { font-size: 1.2rem; }
-    .viz-topn-selector { font-size: 0.78rem; flex-wrap: wrap; justify-content: center; }
+    .viz-topn-selector { font-size: 0.78rem; flex-wrap: wrap; justify-content: center; margin-left: 0 !important; }
+    .viz-topn-selector select { font-size: 0.78rem; padding: 5px 10px; }
+    .viz-topn-selector input[type="number"] { font-size: 0.78rem; padding: 5px 10px; }
+    .h2h-heatmap-wrapper, .compare-h2h-wrapper { position: relative; }
+    .h2h-heatmap-wrapper::after, .compare-h2h-wrapper::after {
+        content: '';
+        position: absolute; top: 0; bottom: 0; right: 0; width: 24px;
+        background: linear-gradient(to left, var(--bg-white), transparent);
+        pointer-events: none;
+    }
     .viz-race-stage { min-height: 520px; padding: 20px 18px 12px; }
     .viz-race-clock { font-size: 1.4rem; top: 10px; right: 14px; }
     .viz-bar-race-wrap { padding-top: 30px; }
@@ -2133,11 +2183,11 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
 
     /* ---- 数据可视化 ---- */
     .viz-main-section { padding-top: 24px; padding-bottom: 48px; }
-    .viz-chart-container { min-height: 240px; padding: 10px; }
-    .viz-chart-container canvas { max-height: 240px; }
+    .viz-chart-container { min-height: 260px; padding: 10px; }
+    .viz-chart-container canvas { max-height: 260px; }
     .viz-player-selector { max-height: 220px; padding: 12px; }
-    .player-checkbox-item { padding: 5px 8px; font-size: 0.75rem; }
-    .player-checkbox-item input[type="checkbox"] { width: 14px; height: 14px; }
+    .player-checkbox-item { padding: 8px 8px; font-size: 0.75rem; min-height: 40px; }
+    .player-checkbox-item input[type="checkbox"] { width: 16px; height: 16px; }
     .viz-compare-selectors { flex-direction: column; padding: 12px; gap: 8px; }
     .viz-compare-selectors .compare-selector-group { flex: 1 1 auto; width: 100%; }
     .viz-compare-selectors .compare-vs { margin: 4px 0; }
@@ -2145,8 +2195,8 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
     .compare-placeholder { padding: 30px 12px; }
     .compare-placeholder i { font-size: 2rem; }
     .compare-player-name { font-size: 0.95rem; }
-    .viz-topn-selector select { font-size: 0.78rem; padding: 3px 8px; }
-    .viz-topn-selector input[type="number"] { font-size: 0.78rem; padding: 3px 8px; width: 56px; }
+    .viz-topn-selector select { font-size: 0.78rem; padding: 5px 10px; }
+    .viz-topn-selector input[type="number"] { font-size: 0.78rem; padding: 5px 10px; width: 58px; }
     .viz-race-stage { min-height: 480px; padding: 16px 12px 10px; }
     .viz-race-clock { font-size: 1.15rem; top: 8px; right: 10px; }
     .viz-bar-race-wrap { padding-top: 24px; }
@@ -2156,10 +2206,19 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
     .bar-race-rank { font-size: 0.68rem; }
     .bar-race-track { height: 13px; margin-right: 52px; }
     .bar-race-value { font-size: 0.72rem; }
-    .viz-race-controls .btn { width: auto; padding: 6px 12px; font-size: 0.78rem; }
-    .viz-race-speed { font-size: 0.75rem; }
-    .viz-race-speed select { font-size: 0.75rem; padding: 3px 8px; }
+    .viz-race-controls { flex-direction: column; align-items: stretch; gap: 10px; }
+    .viz-race-controls .btn { align-self: center; width: auto; padding: 7px 16px; font-size: 0.8rem; }
+    .viz-race-slider { flex: 1 1 auto; width: 100%; max-width: 100%; }
+    .viz-race-speed { justify-content: center; font-size: 0.75rem; }
+    .viz-race-speed select { font-size: 0.75rem; padding: 4px 10px; }
     .bar-race-scale { font-size: 0.6rem; margin-top: 5px; margin-left: 137px; margin-right: 55px; height: 20px; }
+    .h2h-heatmap-wrapper::after, .compare-h2h-wrapper::after { width: 20px; }
+
+    /* ---- 个人数据 ---- */
+    .personal-cards-grid { grid-template-columns: 1fr; }
+    .personal-chart-wrapper { height: 220px; }
+    .personal-overview { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .personal-overview-num { font-size: 1.4rem; }
 }
 
 /* 超小屏手机 (iPhone SE 等 320-375px) */
@@ -2187,19 +2246,19 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
     .season-node-list { grid-template-columns: repeat(auto-fill, minmax(85px, 1fr)); }
     .time-node-item { padding: 6px 4px; font-size: 0.65rem; }
 
-    .viz-chart-container { min-height: 200px; padding: 6px; }
-    .viz-chart-container canvas { max-height: 200px; }
+    .viz-chart-container { min-height: 230px; padding: 6px; }
+    .viz-chart-container canvas { max-height: 230px; }
     .viz-player-selector { max-height: 180px; padding: 10px; }
-    .player-checkbox-item { padding: 4px 6px; font-size: 0.7rem; }
+    .player-checkbox-item { padding: 6px 6px; font-size: 0.7rem; min-height: 36px; }
     .viz-race-stage { min-height: 440px; padding: 14px 8px 8px; }
     .viz-race-clock { font-size: 1rem; top: 8px; right: 8px; }
     .viz-bar-race-wrap { padding-top: 20px; }
     .viz-bar-race { --bar-race-row-h: 24px; }
     .bar-race-row { grid-template-columns: 18px minmax(0, 86px) 1fr; gap: 4px; }
     .bar-race-name { font-size: 0.65rem; }
-    .bar-race-track { height: 11px; margin-right: 46px; }
+    .bar-race-track { height: 11px; margin-right: 48px; }
     .bar-race-value { font-size: 0.65rem; }
-    .bar-race-scale { font-size: 0.55rem; margin-top: 4px; margin-left: 115px; margin-right: 49px; height: 18px; }
+    .bar-race-scale { font-size: 0.55rem; margin-top: 4px; margin-left: 115px; margin-right: 51px; height: 18px; }
 
     .footer { padding: 24px 0 12px; }
     .footer-brand h4 { font-size: 0.9rem; }
