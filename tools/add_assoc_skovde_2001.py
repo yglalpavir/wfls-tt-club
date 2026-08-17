@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""为 2001 Swedish Open (Skovde) 球员补充 assoc.json 协会籍记录。"""
+"""为 2001 Swedish Open (Skovde) / German Open (Bayreuth) 球员补充 assoc.json 协会籍记录。"""
 import json
 import os
 import re
@@ -10,38 +10,65 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 WTT_DIR = os.path.join(os.path.dirname(BASE_DIR), "wtt_data")
 
 # 复用导入脚本的 NAME_MAP（标准名）
-spec = importlib.util.spec_from_file_location("importer", os.path.join(BASE_DIR, "import_skovde_2001.py"))
-mod = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(mod)
-NAME_MAP = mod.NAME_MAP
+def _load_import_module(name, filename):
+    spec = importlib.util.spec_from_file_location(name, os.path.join(BASE_DIR, filename))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+NAME_MAP = {}
+for _mname, _fname in (("skovde", "import_skovde_2001.py"), ("bayreuth", "import_bayreuth_2001.py")):
+    _mod = _load_import_module(_mname, _fname)
+    NAME_MAP.update(_mod.NAME_MAP)
 
 # 国家代码 -> 全称（与现有 assoc.json 惯例一致）
 COUNTRY_MAP = {
-    "AUS": "Australia", "AUT": "Austria", "BEL": "Belgium", "BLR": "Belarus",
+    "AUS": "Australia", "AUT": "Austria", "ARG": "Argentina", "BEL": "Belgium",
+    "BIH": "Bosnia and Herzegovina", "BLR": "Belarus", "BRA": "Brazil", "CAN": "Canada",
     "CHI": "Chile", "CHN": "China", "CRO": "Croatia", "CZE": "Czechia",
-    "DEN": "Denmark", "ENG": "England", "ESP": "Spain", "FRA": "France",
-    "GER": "Germany", "HKG": "Hong Kong, China", "ITA": "Italy", "JPN": "Japan",
-    "KOR": "Korea Republic", "LIE": "Liechtenstein", "LUX": "Luxembourg",
-    "NED": "Netherlands", "NOR": "Norway", "POL": "Poland", "PRK": "Korea DPR",
+    "DEN": "Denmark", "EGY": "Egypt", "ENG": "England", "ESP": "Spain", "FRA": "France",
+    "GER": "Germany", "GRE": "Greece", "HKG": "Hong Kong, China", "HUN": "Hungary",
+    "ITA": "Italy", "JOR": "Jordan", "JPN": "Japan",
+    "KOR": "Korea Republic", "LIE": "Liechtenstein", "LTU": "Lithuania", "LUX": "Luxembourg",
+    "NED": "Netherlands", "NOR": "Norway", "NZL": "New Zealand", "POL": "Poland", "PRK": "Korea DPR",
     "ROU": "Romania", "RUS": "Russia", "SGP": "Singapore", "SLO": "Slovenia",
     "SRB": "Serbia", "SUI": "Switzerland", "SVK": "Slovak Republic",
-    "SWE": "Sweden", "TPE": "Chinese Taipei", "TUR": "Turkiye", "WAL": "Wales",
+    "SWE": "Sweden", "TPE": "Chinese Taipei", "TUR": "Turkiye", "USA": "USA", "WAL": "Wales",
 }
 
 
-def extract_players(rawfile):
-    """原始文件: 原始名(去国家) -> 国家代码集合"""
+def extract_players(rawfile, cat=None):
+    """原始文件: 原始名(去国家) -> 国家代码集合（兼容断行/缺列）。
+    cat 指定 'ms'/'ws' 时仅提取对应子项目的球员。"""
     players = {}
     with open(rawfile, encoding="utf-8-sig") as f:
-        for line in f:
-            line = line.strip()
-            if not line:
+        raw_lines = [l.rstrip("\n") for l in f]
+    lines = []
+    i = 0
+    while i < len(raw_lines):
+        l = raw_lines[i].strip()
+        if not l:
+            i += 1
+            continue
+        cols = [c.strip() for c in l.split("\t")]
+        if cols and cols[-1] in ("MS", "WS") and len(cols) < 8 and i + 1 < len(raw_lines):
+            nxt = raw_lines[i + 1].strip()
+            if nxt:
+                lines.append(l + "\t" + nxt)
+                i += 2
                 continue
-            cols = [c.strip() for c in line.split("\t")]
-            for raw in (cols[2], cols[4]):
-                m = re.match(r"^(.*?) \(([A-Z]{3})\)$", raw)
-                if m:
-                    players.setdefault(m.group(1), set()).add(m.group(2))
+        lines.append(l)
+        i += 1
+    for line in lines:
+        cols = [c.strip() for c in line.split("\t")]
+        if len(cols) < 7:
+            continue
+        if cat and cols[6] != cat.upper():
+            continue
+        for raw in (cols[2], cols[4]):
+            m = re.match(r"^(.*?) \(([A-Z]{3})\)$", raw)
+            if m:
+                players.setdefault(m.group(1), set()).add(m.group(2))
     return players
 
 
@@ -55,7 +82,7 @@ def add_to_assoc(cat, rawfile):
         data = json.load(f)
 
     existing_ids = {identity(k): k for k in data}
-    raw_players = extract_players(rawfile)
+    raw_players = extract_players(rawfile, cat=cat)
 
     added = 0
     missing_code = []
@@ -86,6 +113,8 @@ def add_to_assoc(cat, rawfile):
 
 
 if __name__ == "__main__":
-    print("补充 assoc.json (2001 Skovde)")
+    print("补充 assoc.json (2001 Skovde + Bayreuth)")
     add_to_assoc("ms", "_skovde2001_ms_raw.txt")
     add_to_assoc("ws", "_skovde2001_ws_raw.txt")
+    add_to_assoc("ms", "_bayreuth2001_raw.txt")
+    add_to_assoc("ws", "_bayreuth2001_raw.txt")
