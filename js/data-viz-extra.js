@@ -125,9 +125,9 @@ function renderRecordBar(topN) {
                 indexAxis: 'y',
                 interaction: { intersect: false, mode: 'index' },
                 plugins: {
-                    legend: { position: 'bottom', labels: { usePointStyle: true, padding: isMobile ? 8 : 16, font: { size: isMobile ? 9 : 11, family: "'Poppins', sans-serif" }, boxWidth: isMobile ? 10 : 12 } },
+                    legend: { position: 'bottom', labels: { usePointStyle: true, padding: isMobile ? 10 : 16, font: { size: isMobile ? 10 : 11, family: "'Poppins', sans-serif" }, boxWidth: isMobile ? 11 : 12 } },
                     tooltip: {
-                        backgroundColor: 'rgba(26,29,40,0.9)', titleFont: { size: isMobile ? 11 : 13 }, bodyFont: { size: isMobile ? 10 : 12 }, padding: isMobile ? 8 : 12, cornerRadius: 8,
+                        backgroundColor: 'rgba(26,29,40,0.9)', titleFont: { size: isMobile ? 12 : 13 }, bodyFont: { size: isMobile ? 11 : 12 }, padding: isMobile ? 8 : 12, cornerRadius: 8,
                         callbacks: {
                             title: items => fullNames[items[0]?.dataIndex] || '',
                             label: ctx => `${ctx.dataset.label}: ${ctx.raw} 场`
@@ -135,8 +135,8 @@ function renderRecordBar(topN) {
                     }
                 },
                 scales: {
-                    x: { beginAtZero: true, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 9 : 11 } }, title: { display: true, text: i18n[currentLang].data_viz_axis_matches, font: { size: isMobile ? 10 : 12 } } },
-                    y: { grid: { display: false }, ticks: { font: { size: isMobile ? 9 : 11 } } }
+                    x: { beginAtZero: true, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 10 : 11 } }, title: { display: true, text: i18n[currentLang].data_viz_axis_matches, font: { size: isMobile ? 11 : 12 } } },
+                    y: { grid: { display: false }, ticks: { font: { size: isMobile ? 10 : 11 } } }
                 }
             }
         });
@@ -182,7 +182,7 @@ function renderEfficiencyScatter(topN) {
                 plugins: {
                     legend: { display: false },
                     tooltip: {
-                        backgroundColor: 'rgba(26,29,40,0.9)', titleFont: { size: isMobile ? 11 : 13 }, bodyFont: { size: isMobile ? 10 : 12 }, padding: isMobile ? 8 : 12, cornerRadius: 8,
+                        backgroundColor: 'rgba(26,29,40,0.9)', titleFont: { size: isMobile ? 12 : 13 }, bodyFont: { size: isMobile ? 11 : 12 }, padding: isMobile ? 8 : 12, cornerRadius: 8,
                         callbacks: {
                             title: ctx => ctx[0]?.raw?.player || '',
                             label: ctx => {
@@ -198,8 +198,8 @@ function renderEfficiencyScatter(topN) {
                     }
                 },
                 scales: {
-                    x: { title: { display: true, text: i18n[currentLang].data_viz_axis_matches, font: { size: isMobile ? 10 : 12 } }, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 9 : 11 } } },
-                    y: { title: { display: true, text: i18n[currentLang].data_viz_pts_norm, font: { size: isMobile ? 10 : 12 } }, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 9 : 11 } } }
+                    x: { title: { display: true, text: i18n[currentLang].data_viz_axis_matches, font: { size: isMobile ? 11 : 12 } }, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 10 : 11 } } },
+                    y: { title: { display: true, text: i18n[currentLang].data_viz_pts_norm, font: { size: isMobile ? 11 : 12 } }, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 10 : 11 } } }
                 }
             }
         });
@@ -355,12 +355,12 @@ function renderMatchFrequency(bucketType, count) {
             options: {
                 responsive: true, maintainAspectRatio: false,
                 plugins: {
-                    legend: { position: 'bottom', labels: { usePointStyle: true, padding: isMobile ? 8 : 16, font: { size: isMobile ? 9 : 11, family: "'Poppins', sans-serif" }, boxWidth: isMobile ? 10 : 12 } },
-                    tooltip: { backgroundColor: 'rgba(26,29,40,0.9)', titleFont: { size: isMobile ? 11 : 13 }, bodyFont: { size: isMobile ? 10 : 12 }, padding: isMobile ? 8 : 12, cornerRadius: 8, callbacks: { label: ctx => `${ctx.dataset.label}: ${ctx.raw} 场` } }
+                    legend: { position: 'bottom', labels: { usePointStyle: true, padding: isMobile ? 10 : 16, font: { size: isMobile ? 10 : 11, family: "'Poppins', sans-serif" }, boxWidth: isMobile ? 11 : 12 } },
+                    tooltip: { backgroundColor: 'rgba(26,29,40,0.9)', titleFont: { size: isMobile ? 12 : 13 }, bodyFont: { size: isMobile ? 11 : 12 }, padding: isMobile ? 8 : 12, cornerRadius: 8, callbacks: { label: ctx => `${ctx.dataset.label}: ${ctx.raw} 场` } }
                 },
                 scales: {
-                    x: { stacked: true, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 9 : 11 }, maxRotation: isMobile ? 45 : 0 } },
-                    y: { stacked: true, beginAtZero: true, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 9 : 11 } }, title: { display: true, text: i18n[currentLang].data_viz_axis_matches, font: { size: isMobile ? 10 : 12 } } }
+                    x: { stacked: true, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 10 : 11 }, maxRotation: isMobile ? 45 : 0 } },
+                    y: { stacked: true, beginAtZero: true, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 10 : 11 } }, title: { display: true, text: i18n[currentLang].data_viz_axis_matches, font: { size: isMobile ? 11 : 12 } } }
                 }
             }
         });
@@ -409,11 +409,11 @@ function renderScoreDistribution(bins) {
                 responsive: true, maintainAspectRatio: false,
                 plugins: {
                     legend: { display: false },
-                    tooltip: { backgroundColor: 'rgba(26,29,40,0.9)', titleFont: { size: isMobile ? 11 : 13 }, bodyFont: { size: isMobile ? 10 : 12 }, padding: isMobile ? 8 : 12, cornerRadius: 8, callbacks: { label: ctx => i18n[currentLang].data_viz_axis_count + ': ' + ctx.raw } }
+                    tooltip: { backgroundColor: 'rgba(26,29,40,0.9)', titleFont: { size: isMobile ? 12 : 13 }, bodyFont: { size: isMobile ? 11 : 12 }, padding: isMobile ? 8 : 12, cornerRadius: 8, callbacks: { label: ctx => i18n[currentLang].data_viz_axis_count + ': ' + ctx.raw } }
                 },
                 scales: {
-                    x: { grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 9 : 11 }, maxRotation: isMobile ? 45 : 0 } },
-                    y: { beginAtZero: true, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 9 : 11 } }, title: { display: true, text: i18n[currentLang].data_viz_axis_count, font: { size: isMobile ? 10 : 12 } } }
+                    x: { grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 10 : 11 }, maxRotation: isMobile ? 45 : 0 } },
+                    y: { beginAtZero: true, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 10 : 11 } }, title: { display: true, text: i18n[currentLang].data_viz_axis_count, font: { size: isMobile ? 11 : 12 } } }
                 }
             }
         });

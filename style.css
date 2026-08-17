@@ -1602,7 +1602,7 @@ body.dark-mode .score-detail-table tbody tr:nth-child(even) td { background-colo
     box-shadow: 0 0 0 3px var(--primary-pale);
 }
 /* Bar Chart Race（排名动态竞速，视频级舞台） */
-.viz-race-stage { position: relative; padding: 26px 28px 16px; min-height: 640px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.viz-race-stage { position: relative; padding: 26px 28px 16px; min-height: 720px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 .viz-race-clock { position: absolute; top: 14px; right: 22px; z-index: 5; font-family: var(--font-en); font-size: 1.9rem; font-weight: 700; color: var(--text-primary); opacity: 0.9; letter-spacing: 0.5px; background: var(--glass-bg); padding: 2px 12px; border-radius: 10px; }
 .viz-race-hint { margin-top: 8px; font-size: 0.8rem; color: var(--text-muted); }
 .viz-bar-race-wrap { width: 100%; max-width: 920px; margin: 0 auto; padding-top: 38px; }
@@ -1776,8 +1776,8 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
 /* 平板及以下：隐藏侧边导航，评分详情模态框适配 */
 @media (max-width: 1200px) {
     .side-nav { display: none; }
-    /* 数据可视化：双列变单列 */
-    .viz-grid-2col { grid-template-columns: 1fr; }
+    /* 数据可视化：双列变单列，图表优先显示 */
+    .viz-grid-2col { display: flex; flex-direction: column-reverse; align-items: stretch; gap: 16px; }
     .viz-player-selector { max-height: 280px; }
     .viz-compare-grid { grid-template-columns: 1fr; }
     .viz-compare-selectors { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
@@ -2046,8 +2046,8 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
     .section-header { margin-bottom: 32px; }
 
     /* ---- 数据可视化 ---- */
-    .viz-chart-container { min-height: 300px; padding: 14px; }
-    .viz-chart-container canvas { max-height: 300px; }
+    .viz-chart-container { min-height: 400px; padding: 14px; }
+    .viz-chart-container canvas { max-height: none; }
     .viz-player-selector { padding: 16px; max-height: 250px; }
     .viz-player-selector h4 { font-size: 0.82rem; margin-bottom: 10px; }
     .player-checkbox-item { padding: 8px 10px; font-size: 0.8rem; min-height: 42px; }
@@ -2068,7 +2068,7 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
         background: linear-gradient(to left, var(--bg-white), transparent);
         pointer-events: none;
     }
-    .viz-race-stage { min-height: 520px; padding: 20px 18px 12px; }
+    .viz-race-stage { min-height: 620px; padding: 20px 18px 12px; }
     .viz-race-clock { font-size: 1.4rem; top: 10px; right: 14px; }
     .viz-bar-race-wrap { padding-top: 30px; }
     .viz-bar-race { --bar-race-row-h: 28px; }
@@ -2183,8 +2183,8 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
 
     /* ---- 数据可视化 ---- */
     .viz-main-section { padding-top: 24px; padding-bottom: 48px; }
-    .viz-chart-container { min-height: 260px; padding: 10px; }
-    .viz-chart-container canvas { max-height: 260px; }
+    .viz-chart-container { min-height: 380px; padding: 10px; }
+    .viz-chart-container canvas { max-height: none; }
     .viz-player-selector { max-height: 220px; padding: 12px; }
     .player-checkbox-item { padding: 8px 8px; font-size: 0.75rem; min-height: 40px; }
     .player-checkbox-item input[type="checkbox"] { width: 16px; height: 16px; }
@@ -2197,7 +2197,7 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
     .compare-player-name { font-size: 0.95rem; }
     .viz-topn-selector select { font-size: 0.78rem; padding: 5px 10px; }
     .viz-topn-selector input[type="number"] { font-size: 0.78rem; padding: 5px 10px; width: 58px; }
-    .viz-race-stage { min-height: 480px; padding: 16px 12px 10px; }
+    .viz-race-stage { min-height: 580px; padding: 16px 12px 10px; }
     .viz-race-clock { font-size: 1.15rem; top: 8px; right: 10px; }
     .viz-bar-race-wrap { padding-top: 24px; }
     .viz-bar-race { --bar-race-row-h: 26px; }
@@ -2246,11 +2246,11 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
     .season-node-list { grid-template-columns: repeat(auto-fill, minmax(85px, 1fr)); }
     .time-node-item { padding: 6px 4px; font-size: 0.65rem; }
 
-    .viz-chart-container { min-height: 230px; padding: 6px; }
-    .viz-chart-container canvas { max-height: 230px; }
+    .viz-chart-container { min-height: 340px; padding: 8px; }
+    .viz-chart-container canvas { max-height: none; }
     .viz-player-selector { max-height: 180px; padding: 10px; }
     .player-checkbox-item { padding: 6px 6px; font-size: 0.7rem; min-height: 36px; }
-    .viz-race-stage { min-height: 440px; padding: 14px 8px 8px; }
+    .viz-race-stage { min-height: 540px; padding: 14px 8px 8px; }
     .viz-race-clock { font-size: 1rem; top: 8px; right: 8px; }
     .viz-bar-race-wrap { padding-top: 20px; }
     .viz-bar-race { --bar-race-row-h: 24px; }
