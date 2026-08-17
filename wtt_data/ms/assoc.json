@@ -1,5 +1,5 @@
 {
-    "FAN Zhendong": {
+  "FAN Zhendong": {
     "assoc": "CHN",
     "country": "China",
     "source": "official-id121404"
@@ -2172,6 +2172,586 @@
   "XU Xin": {
     "assoc": "CHN",
     "country": "China",
+    "source": "user-confirmed"
+  },
+  "Eirik ANSNES": {
+    "assoc": "NOR",
+    "country": "Norway",
+    "source": "user-confirmed"
+  },
+  "Cyprian ASAMOAH": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "user-confirmed"
+  },
+  "Michal BARDON": {
+    "assoc": "SVK",
+    "country": "Slovak Republic",
+    "source": "user-confirmed"
+  },
+  "Allan BENTSEN": {
+    "assoc": "DEN",
+    "country": "Denmark",
+    "source": "user-confirmed"
+  },
+  "Lucjan BLASZCZYK": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "user-confirmed"
+  },
+  "Martin BRATANOV": {
+    "assoc": "BEL",
+    "country": "Belgium",
+    "source": "user-confirmed"
+  },
+  "Cedrik CABESTANY": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "user-confirmed"
+  },
+  "Alfredo CARNEROS": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "user-confirmed"
+  },
+  "CHANG Miao": {
+    "assoc": "NOR",
+    "country": "Norway",
+    "source": "user-confirmed"
+  },
+  "CHEN Weixing": {
+    "assoc": "AUT",
+    "country": "Austria",
+    "source": "user-confirmed"
+  },
+  "CHEUNG Yuk": {
+    "assoc": "HKG",
+    "country": "Hong Kong, China",
+    "source": "user-confirmed"
+  },
+  "Patrick CHILA": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "user-confirmed"
+  },
+  "CHUANG Chih-Yuan": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "user-confirmed"
+  },
+  "Marc CLOSSET": {
+    "assoc": "BEL",
+    "country": "Belgium",
+    "source": "user-confirmed"
+  },
+  "Sukru DERELI": {
+    "assoc": "TUR",
+    "country": "Turkiye",
+    "source": "user-confirmed"
+  },
+  "Damien ELOI": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "user-confirmed"
+  },
+  "Geir ERLANDSEN": {
+    "assoc": "NOR",
+    "country": "Norway",
+    "source": "user-confirmed"
+  },
+  "Robert GARDOS": {
+    "assoc": "AUT",
+    "country": "Austria",
+    "source": "user-confirmed"
+  },
+  "Antonin GAVLAS": {
+    "assoc": "CZE",
+    "country": "Czechia",
+    "source": "user-confirmed"
+  },
+  "Raymond GONZALES": {
+    "assoc": "NOR",
+    "country": "Norway",
+    "source": "user-confirmed"
+  },
+  "Daniel GORAK": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "user-confirmed"
+  },
+  "Fredrik HAKANSSON": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "user-confirmed"
+  },
+  "Danny HEISTER": {
+    "assoc": "NED",
+    "country": "Netherlands",
+    "source": "user-confirmed"
+  },
+  "William HENZELL": {
+    "assoc": "AUS",
+    "country": "Australia",
+    "source": "user-confirmed"
+  },
+  "Lars HIELSCHER": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "user-confirmed"
+  },
+  "Anders HOLM": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "user-confirmed"
+  },
+  "Miroslav HOREJSI": {
+    "assoc": "CZE",
+    "country": "Czechia",
+    "source": "user-confirmed"
+  },
+  "Erik ILLAS": {
+    "assoc": "SVK",
+    "country": "Slovak Republic",
+    "source": "user-confirmed"
+  },
+  "Ryan JENKINS": {
+    "assoc": "WAL",
+    "country": "Wales",
+    "source": "user-confirmed"
+  },
+  "Karl JINDRAK": {
+    "assoc": "AUT",
+    "country": "Austria",
+    "source": "user-confirmed"
+  },
+  "JONG Kyong Chol": {
+    "assoc": "PRK",
+    "country": "Korea DPR",
+    "source": "user-confirmed"
+  },
+  "Sebastien JOVER": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "user-confirmed"
+  },
+  "Peter KARLSSON": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "user-confirmed"
+  },
+  "Trinko KEEN": {
+    "assoc": "NED",
+    "country": "Netherlands",
+    "source": "user-confirmed"
+  },
+  "Raphael KELLER": {
+    "assoc": "SUI",
+    "country": "Switzerland",
+    "source": "user-confirmed"
+  },
+  "KIM Joosang": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "user-confirmed"
+  },
+  "KIM Song Hui": {
+    "assoc": "PRK",
+    "country": "Korea DPR",
+    "source": "user-confirmed"
+  },
+  "KIM Taeksoo": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "user-confirmed"
+  },
+  "Seiya KISHIKAWA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "user-confirmed"
+  },
+  "Marek KLASEK": {
+    "assoc": "CZE",
+    "country": "Czechia",
+    "source": "user-confirmed"
+  },
+  "Morten KNUDSEN": {
+    "assoc": "DEN",
+    "country": "Denmark",
+    "source": "user-confirmed"
+  },
+  "KO Lai Chak": {
+    "assoc": "HKG",
+    "country": "Hong Kong, China",
+    "source": "user-confirmed"
+  },
+  "Tomas KONECNY": {
+    "assoc": "CZE",
+    "country": "Czechia",
+    "source": "user-confirmed"
+  },
+  "Christian KONGSGAARD": {
+    "assoc": "DEN",
+    "country": "Denmark",
+    "source": "user-confirmed"
+  },
+  "Petr KORBEL": {
+    "assoc": "CZE",
+    "country": "Czechia",
+    "source": "user-confirmed"
+  },
+  "Jakub KOSOWSKI": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "user-confirmed"
+  },
+  "Tomasz KRZESZEWSKI": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "user-confirmed"
+  },
+  "Marcin KUSINSKI": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "user-confirmed"
+  },
+  "Fedor KUZMIN": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "user-confirmed"
+  },
+  "Glen LARSEN": {
+    "assoc": "NOR",
+    "country": "Norway",
+    "source": "user-confirmed"
+  },
+  "LEE Chulseung": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "user-confirmed"
+  },
+  "Christophe LEGOUT": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "user-confirmed"
+  },
+  "LEUNG Chu Yan": {
+    "assoc": "HKG",
+    "country": "Hong Kong, China",
+    "source": "user-confirmed"
+  },
+  "LI Ching": {
+    "assoc": "HKG",
+    "country": "Hong Kong, China",
+    "source": "user-confirmed"
+  },
+  "LIU Guoliang": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "user-confirmed"
+  },
+  "LIU Guozheng": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "user-confirmed"
+  },
+  "LIU Heng": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "user-confirmed"
+  },
+  "Jens LUNDQVIST": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "user-confirmed"
+  },
+  "MA Lin": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "user-confirmed"
+  },
+  "MA Wenge": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "user-confirmed"
+  },
+  "Magnus MANSSON": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "user-confirmed"
+  },
+  "Michel MARTINEZ": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "user-confirmed"
+  },
+  "Michael MAZE": {
+    "assoc": "DEN",
+    "country": "Denmark",
+    "source": "user-confirmed"
+  },
+  "Cedric MIRAULT": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "user-confirmed"
+  },
+  "Muneaki MITAMURA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "user-confirmed"
+  },
+  "Istvan MOLDOVAN": {
+    "assoc": "NOR",
+    "country": "Norway",
+    "source": "user-confirmed"
+  },
+  "Magnus MOLIN": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "user-confirmed"
+  },
+  "Martin MONRAD": {
+    "assoc": "DEN",
+    "country": "Denmark",
+    "source": "user-confirmed"
+  },
+  "Augusto MORALES": {
+    "assoc": "CHI",
+    "country": "Chile",
+    "source": "user-confirmed"
+  },
+  "Frank MULLER": {
+    "assoc": "LIE",
+    "country": "Liechtenstein",
+    "source": "user-confirmed"
+  },
+  "Peter NILSSON": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "user-confirmed"
+  },
+  "Stefan NILSSON": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "user-confirmed"
+  },
+  "O Il": {
+    "assoc": "PRK",
+    "country": "Korea DPR",
+    "source": "user-confirmed"
+  },
+  "OH Sangeun": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "user-confirmed"
+  },
+  "Martin OLEJNIK": {
+    "assoc": "CZE",
+    "country": "Czechia",
+    "source": "user-confirmed"
+  },
+  "PAK Won Chol": {
+    "assoc": "PRK",
+    "country": "Korea DPR",
+    "source": "user-confirmed"
+  },
+  "Juan PAPIC": {
+    "assoc": "CHI",
+    "country": "Chile",
+    "source": "user-confirmed"
+  },
+  "Tomas PAVELKA": {
+    "assoc": "CZE",
+    "country": "Czechia",
+    "source": "user-confirmed"
+  },
+  "Dorian QUENTEL": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "user-confirmed"
+  },
+  "Adam ROBERTSON": {
+    "assoc": "WAL",
+    "country": "Wales",
+    "source": "user-confirmed"
+  },
+  "Alejandro RODRIGUEZ": {
+    "assoc": "CHI",
+    "country": "Chile",
+    "source": "user-confirmed"
+  },
+  "Jorg ROSSKOPF": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "user-confirmed"
+  },
+  "Henrik ROSVALL": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "user-confirmed"
+  },
+  "RYU Seungmin": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "user-confirmed"
+  },
+  "Jean-Michel SAIVE": {
+    "assoc": "BEL",
+    "country": "Belgium",
+    "source": "user-confirmed"
+  },
+  "Philippe SAIVE": {
+    "assoc": "BEL",
+    "country": "Belgium",
+    "source": "user-confirmed"
+  },
+  "Ryusuke SAKAMOTO": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "user-confirmed"
+  },
+  "Juan SALAMANCA": {
+    "assoc": "CHI",
+    "country": "Chile",
+    "source": "user-confirmed"
+  },
+  "Koji SANADA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "user-confirmed"
+  },
+  "Werner SCHLAGER": {
+    "assoc": "AUT",
+    "country": "Austria",
+    "source": "user-confirmed"
+  },
+  "Peter SEREDA": {
+    "assoc": "SVK",
+    "country": "Slovak Republic",
+    "source": "user-confirmed"
+  },
+  "Mads SKOVSEN": {
+    "assoc": "DEN",
+    "country": "Denmark",
+    "source": "user-confirmed"
+  },
+  "Joachim SORENSEN": {
+    "assoc": "NOR",
+    "country": "Norway",
+    "source": "user-confirmed"
+  },
+  "Mads SORENSEN": {
+    "assoc": "DEN",
+    "country": "Denmark",
+    "source": "user-confirmed"
+  },
+  "Marten STENBERG": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "user-confirmed"
+  },
+  "Mattias STENBERG": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "user-confirmed"
+  },
+  "David STEPANEK": {
+    "assoc": "CZE",
+    "country": "Czechia",
+    "source": "user-confirmed"
+  },
+  "Robert SVENSSON": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "user-confirmed"
+  },
+  "Alex SWANSON": {
+    "assoc": "AUS",
+    "country": "Australia",
+    "source": "user-confirmed"
+  },
+  "Toshio TASAKI": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "user-confirmed"
+  },
+  "Kunihito TASEI": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "user-confirmed"
+  },
+  "Bojan TOKIC": {
+    "assoc": "SLO",
+    "country": "Slovenia",
+    "source": "user-confirmed"
+  },
+  "Finn TUGWELL": {
+    "assoc": "DEN",
+    "country": "Denmark",
+    "source": "user-confirmed"
+  },
+  "Magnus WAHLGREN": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "user-confirmed"
+  },
+  "Katsutoshi WAKINOTANI": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "user-confirmed"
+  },
+  "Jan-Ove WALDNER": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "user-confirmed"
+  },
+  "WANG Hao": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "user-confirmed"
+  },
+  "WANG Jianfeng": {
+    "assoc": "NOR",
+    "country": "Norway",
+    "source": "user-confirmed"
+  },
+  "WANG Liqin": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "user-confirmed"
+  },
+  "Torben WOSIK": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "user-confirmed"
+  },
+  "YAN Sen": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "user-confirmed"
+  },
+  "YEO Chansoo": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "user-confirmed"
+  },
+  "YOON Jaeyoung": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "user-confirmed"
+  },
+  "Terry YOUNG": {
+    "assoc": "ENG",
+    "country": "England",
+    "source": "user-confirmed"
+  },
+  "YUNG Kyong Chol": {
+    "assoc": "PRK",
+    "country": "Korea DPR",
+    "source": "user-confirmed"
+  },
+  "Mikael ZOOGLING": {
+    "assoc": "SWE",
+    "country": "Sweden",
     "source": "user-confirmed"
   }
 }
