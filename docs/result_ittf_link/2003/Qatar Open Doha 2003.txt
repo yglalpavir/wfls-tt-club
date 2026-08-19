@@ -1,0 +1,171 @@
+2003	Qatar Open Doha 2003	ITTF World Tour / Pro Tour	--	136	2003-03-03	2003-03-07
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 67
+
+2003	Qatar Open Doha 2003	AL-MOHANNADI Ahmad Khalil (QAT)		AL-ABBAD Abdulaziz (KSA)		MS	Qualification		0 - 4	6:11 7:11 11:13 2:11	AL-ABBAD Abdulaziz	
+2003	Qatar Open Doha 2003	DIAA Sherif (EGY)		AL-ABBAD Abdulaziz (KSA)		MS	Qualification	QR2	4 - 3	11:6 9:11 4:11 11:5 6:11 11:9 11:3	DIAA Sherif	
+2003	Qatar Open Doha 2003	DIAA Sherif (EGY)		AL-MOHANNADI Ahmad Khalil (QAT)		MS	Qualification	3	4 - 0	12:10 12:10 11:4 11:7	DIAA Sherif	
+2003	Qatar Open Doha 2003	CHAKRABORTY Sourav (IND)		ALHAJJAI Waled Nasser (QAT)		MS	Qualification		4 - 0	11:9 12:10 11:8 11:6	CHAKRABORTY Sourav	
+2003	Qatar Open Doha 2003	KASSAM Faazil (CAN)		ALHAJJAI Waled Nasser (QAT)		MS	Qualification	QR2	4 - 1	9:11 11:8 11:7 11:8 11:9	KASSAM Faazil	
+2003	Qatar Open Doha 2003	KASSAM Faazil (CAN)		CHAKRABORTY Sourav (IND)		MS	Qualification	3	1 - 4	7:11 9:11 6:11 12:10 7:11	CHAKRABORTY Sourav	
+2003	Qatar Open Doha 2003	ACHANTA Sharath (IND)		ISMAIL Khalil (QAT)		MS	Qualification		4 - 0	11:6 11:5 11:7 14:12	ACHANTA Sharath	
+2003	Qatar Open Doha 2003	LASHIN Aly (EGY)		JIN Enhua (CHN)		MS	Qualification		0 - 4	9:11 2:11 7:11 4:11	JIN Enhua	
+2003	Qatar Open Doha 2003	EL BOUBOU Rachid (LBN)		AL-HOOTI Fahid (KSA)		MS	Qualification		4 - 3	8:11 11:8 11:3 11:8 6:11 9:11 11:7	EL BOUBOU Rachid	
+2003	Qatar Open Doha 2003	MULLER Frank (LIE)		ISMAEEL Hamza (QAT)		MS	Qualification		4 - 0	11:4 11:8 11:5 11:7	MULLER Frank	
+2003	Qatar Open Doha 2003	AL-JUMAN Mohamed (QAT)		WING Ei (CHN)		MS	Qualification		1 - 4	12:10 6:11 4:11 4:11 2:11	WING Ei	
+2003	Qatar Open Doha 2003	EL HABECH Mohamad (LBN)		AL-AWAMI Aman (KSA)		MS	Qualification		4 - 0	12:10 12:10 11:6 11:9	EL HABECH Mohamad	
+2003	Qatar Open Doha 2003	AL-JUMAN Mohamed (QAT)		CHAKRABORTY Sourav (IND)		MS	Main Draw	R64	0 - 4	6:11 3:11 4:11 8:11	CHAKRABORTY Sourav	
+2003	Qatar Open Doha 2003	AL-AWAMI Aman (KSA)		ROSSKOPF Jorg (GER)		MS	Main Draw	R64	0 - 4	9:11 7:11 8:11 5:11	ROSSKOPF Jorg	
+2003	Qatar Open Doha 2003	LUNDQVIST Jens (SWE)		WING Ei (CHN)		MS	Main Draw	R64	4 - 0	11:8 12:10 11:9 12:10	LUNDQVIST Jens	
+2003	Qatar Open Doha 2003	JIN Enhua (CHN)		JINDRAK Karl (AUT)		MS	Main Draw	R64	4 - 0	11:6 11:6 11:7 11:8	JIN Enhua	
+2003	Qatar Open Doha 2003	MOSELHY Emad (EGY)		AL-RUMEIHI Mohamed (QAT)		MS	Main Draw	R64	4 - 1	11:2 11:6 11:5 11:13 11:5	MOSELHY Emad	
+2003	Qatar Open Doha 2003	MULLER Frank (LIE)		ACHANTA Sharath (IND)		MS	Main Draw	R64	0 - 4	6:11 9:11 8:11 7:11	ACHANTA Sharath	
+2003	Qatar Open Doha 2003	NADIM Ahmed (EGY)		EL BOUBOU Rachid (LBN)		MS	Main Draw	R64	4 - 0	11:7 11:5 13:11 11:4	NADIM Ahmed	
+2003	Qatar Open Doha 2003	EL HABECH Mohamad (LBN)		BENTSEN Allan (DEN)		MS	Main Draw	R64	0 - 4	5:11 3:11 6:11 7:11	BENTSEN Allan	
+2003	Qatar Open Doha 2003	KRZESZEWSKI Tomasz (POL)		AL-ABBAD Abdulaziz (KSA)		MS	Main Draw	R64	4 - 1	11:5 11:7 7:11 11:6 11:5	KRZESZEWSKI Tomasz	
+2003	Qatar Open Doha 2003	ISMAEEL Hamza (QAT)		SALEH Ahmed (EGY)		MS	Main Draw	R64	0 - 4	7:11 5:11 6:11 4:11	SALEH Ahmed	
+2003	Qatar Open Doha 2003	FETH Stefan (GER)		ISMAIL Khalil (QAT)		MS	Main Draw	R64	4 - 0	11:3 11:4 11:3 11:8	FETH Stefan	
+2003	Qatar Open Doha 2003	AL-HAMMADI Abdulla (QAT)		DIAA Sherif (EGY)		MS	Main Draw	R64	0 - 4	6:11 3:11 5:11 5:11	DIAA Sherif	
+2003	Qatar Open Doha 2003	AL-HAMMADI Hamad (QAT)		KASSAM Faazil (CAN)		MS	Main Draw	R64	4 - 3	14:16 6:11 11:3 11:7 11:9 8:11 11:9	AL-HAMMADI Hamad	
+2003	Qatar Open Doha 2003	AL-HOOTI Fahid (KSA)		BLASZCZYK Lucjan (POL)		MS	Main Draw	R64	0 - 4	6:11 10:12 7:11 5:11	BLASZCZYK Lucjan	
+2003	Qatar Open Doha 2003	SAIVE Philippe (BEL)		NAJEM Alfred (LBN)		MS	Main Draw	R64	4 - 0	11:1 11:6 11:7 11:7	SAIVE Philippe	
+2003	Qatar Open Doha 2003	EL-SHARKAWI Mohamed (LBN)		KUZMIN Fedor (RUS)		MS	Main Draw	R64	0 - 4	5:11 4:11 2:11 2:11	KUZMIN Fedor	
+2003	Qatar Open Doha 2003	TOKIC Bojan (SLO)		ISMAIL Hesham (EGY)		MS	Main Draw	R64	4 - 1	6:11 11:4 11:5 11:6 12:10	TOKIC Bojan	
+2003	Qatar Open Doha 2003	AL-HARBI Khaled (KSA)		LASHIN Elsayed (EGY)		MS	Main Draw	R64	2 - 4	11:7 11:8 10:12 4:11 3:11 7:11	LASHIN Elsayed	
+2003	Qatar Open Doha 2003	CSABA Bence (CAN)		CHUMAKOU Dmitry (BLR)		MS	Main Draw	R64	2 - 4	8:11 3:11 8:11 11:9 11:8 6:11	CHUMAKOU Dmitry	
+2003	Qatar Open Doha 2003	ALHAJJAI Waled Nasser (QAT)		HAKANSSON Fredrik (SWE)		MS	Main Draw	R64	0 - 4	5:11 8:11 5:11 7:11	HAKANSSON Fredrik	
+2003	Qatar Open Doha 2003	LASHIN Aly (EGY)		KEINATH Thomas (SVK)		MS	Main Draw	R64	2 - 4	11:7 7:11 7:11 11:3 10:12 9:11	KEINATH Thomas	
+2003	Qatar Open Doha 2003	FEJER-KONNERTH Zoltan (GER)		NASSER Abbad (QAT)		MS	Main Draw	R64	4 - 0	11:2 11:6 11:8 11:4	FEJER-KONNERTH Zoltan	
+2003	Qatar Open Doha 2003	SCHLAGER Werner (AUT)		CHAKRABORTY Sourav (IND)		MS	Main Draw	R32	4 - 0	11:6 11:5 11:6 11:8	SCHLAGER Werner	
+2003	Qatar Open Doha 2003	KARAKASEVIC Aleksandar (SRB)		ROSSKOPF Jorg (GER)		MS	Main Draw	R32	4 - 2	11:6 5:11 7:11 12:10 11:4 12:10	KARAKASEVIC Aleksandar	
+2003	Qatar Open Doha 2003	LUNDQVIST Jens (SWE)		JIN Enhua (CHN)		MS	Main Draw	R32	4 - 2	11:8 12:10 11:13 11:5 3:11 11:7	LUNDQVIST Jens	
+2003	Qatar Open Doha 2003	MOSELHY Emad (EGY)		SAIVE Jean-Michel (BEL)		MS	Main Draw	R32	1 - 4	8:11 4:11 11:7 10:12 3:11	SAIVE Jean-Michel	
+2003	Qatar Open Doha 2003	SMIRNOV Alexey (RUS)		ACHANTA Sharath (IND)		MS	Main Draw	R32	4 - 1	11:5 6:11 13:11 11:3 11:3	SMIRNOV Alexey	
+2003	Qatar Open Doha 2003	NADIM Ahmed (EGY)		BENTSEN Allan (DEN)		MS	Main Draw	R32	2 - 4	8:11 11:4 6:11 11:7 7:11 4:11	BENTSEN Allan	
+2003	Qatar Open Doha 2003	KRZESZEWSKI Tomasz (POL)		SALEH Ahmed (EGY)		MS	Main Draw	R32	4 - 0	11:4 12:10 11:7 11:6	KRZESZEWSKI Tomasz	
+2003	Qatar Open Doha 2003	FETH Stefan (GER)		KREANGA Kalinikos (GRE)		MS	Main Draw	R32	1 - 4	12:10 4:11 6:11 11:13 5:11	KREANGA Kalinikos	
+2003	Qatar Open Doha 2003	PRIMORAC Zoran (CRO)		DIAA Sherif (EGY)		MS	Main Draw	R32	4 - 0	11:4 15:13 11:5 11:7	PRIMORAC Zoran	
+2003	Qatar Open Doha 2003	AL-HAMMADI Hamad (QAT)		BLASZCZYK Lucjan (POL)		MS	Main Draw	R32	0 - 4	7:11 10:12 5:11 5:11	BLASZCZYK Lucjan	
+2003	Qatar Open Doha 2003	SAIVE Philippe (BEL)		KUZMIN Fedor (RUS)		MS	Main Draw	R32	1 - 4	8:11 8:11 11:9 7:11 9:11	KUZMIN Fedor	
+2003	Qatar Open Doha 2003	TOKIC Bojan (SLO)		PERSSON Jorgen (SWE)		MS	Main Draw	R32	4 - 1	11:6 11:5 11:9 2:11 11:4	TOKIC Bojan	
+2003	Qatar Open Doha 2003	KARLSSON Peter (SWE)		LASHIN Elsayed (EGY)		MS	Main Draw	R32	4 - 2	12:10 11:4 3:11 8:11 11:5 11:3	KARLSSON Peter	
+2003	Qatar Open Doha 2003	CHUMAKOU Dmitry (BLR)		HAKANSSON Fredrik (SWE)		MS	Main Draw	R32	0 - 4	7:11 8:11 5:11 6:11	HAKANSSON Fredrik	
+2003	Qatar Open Doha 2003	WOSIK Torben (GER)		KEINATH Thomas (SVK)		MS	Main Draw	R32	1 - 4	9:11 9:11 4:11 11:2 11:13	KEINATH Thomas	
+2003	Qatar Open Doha 2003	FEJER-KONNERTH Zoltan (GER)		SAMSONOV Vladimir (BLR)		MS	Main Draw	R32	0 - 4	4:11 9:11 8:11 11:13	SAMSONOV Vladimir	
+2003	Qatar Open Doha 2003	SCHLAGER Werner (AUT)		KARAKASEVIC Aleksandar (SRB)		MS	Main Draw	R16	4 - 0	11:6 11:5 12:10 11:7	SCHLAGER Werner	
+2003	Qatar Open Doha 2003	LUNDQVIST Jens (SWE)		SAIVE Jean-Michel (BEL)		MS	Main Draw	R16	4 - 3	9:11 11:9 11:8 9:11 9:11 13:11 11:8	LUNDQVIST Jens	
+2003	Qatar Open Doha 2003	SMIRNOV Alexey (RUS)		BENTSEN Allan (DEN)		MS	Main Draw	R16	4 - 3	10:12 11:8 12:10 11:13 11:5 4:11 11:7	SMIRNOV Alexey	
+2003	Qatar Open Doha 2003	KRZESZEWSKI Tomasz (POL)		KREANGA Kalinikos (GRE)		MS	Main Draw	R16	3 - 4	9:11 9:11 11:9 11:3 11:13 11:7 9:11	KREANGA Kalinikos	
+2003	Qatar Open Doha 2003	PRIMORAC Zoran (CRO)		BLASZCZYK Lucjan (POL)		MS	Main Draw	R16	1 - 4	15:17 11:7 10:12 9:11 8:11	BLASZCZYK Lucjan	
+2003	Qatar Open Doha 2003	KUZMIN Fedor (RUS)		TOKIC Bojan (SLO)		MS	Main Draw	R16	1 - 4	7:11 11:8 9:11 7:11 3:11	TOKIC Bojan	
+2003	Qatar Open Doha 2003	KARLSSON Peter (SWE)		HAKANSSON Fredrik (SWE)		MS	Main Draw	R16	3 - 4	2:11 14:12 11:9 9:11 7:11 13:11 8:11	HAKANSSON Fredrik	
+2003	Qatar Open Doha 2003	KEINATH Thomas (SVK)		SAMSONOV Vladimir (BLR)		MS	Main Draw	R16	2 - 4	11:9 5:11 9:11 11:7 6:11 8:11	SAMSONOV Vladimir	
+2003	Qatar Open Doha 2003	SCHLAGER Werner (AUT)		LUNDQVIST Jens (SWE)		MS	Main Draw	QuarterFinal	4 - 1	10:12 11:7 11:9 11:9 11:5	SCHLAGER Werner	
+2003	Qatar Open Doha 2003	SMIRNOV Alexey (RUS)		KREANGA Kalinikos (GRE)		MS	Main Draw	QuarterFinal	4 - 2	11:9 14:12 4:11 12:10 11:13 11:6	SMIRNOV Alexey	
+2003	Qatar Open Doha 2003	BLASZCZYK Lucjan (POL)		TOKIC Bojan (SLO)		MS	Main Draw	QuarterFinal	4 - 1	11:5 12:14 11:6 16:14 11:3	BLASZCZYK Lucjan	
+2003	Qatar Open Doha 2003	HAKANSSON Fredrik (SWE)		SAMSONOV Vladimir (BLR)		MS	Main Draw	QuarterFinal	2 - 4	12:10 7:11 4:11 14:12 6:11 6:11	SAMSONOV Vladimir	
+2003	Qatar Open Doha 2003	SCHLAGER Werner (AUT)		SMIRNOV Alexey (RUS)		MS	Main Draw	SemiFinal	0 - 4	8:11 4:11 9:11 8:11	SMIRNOV Alexey	
+2003	Qatar Open Doha 2003	BLASZCZYK Lucjan (POL)		SAMSONOV Vladimir (BLR)		MS	Main Draw	SemiFinal	3 - 4	11:9 8:11 4:11 11:6 11:13 11:5 8:11	SAMSONOV Vladimir	
+2003	Qatar Open Doha 2003	SMIRNOV Alexey (RUS)		SAMSONOV Vladimir (BLR)		MS	Main Draw	Final	0 - 4	7:11 9:11 9:11 4:11	SAMSONOV Vladimir	
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 35
+
+2003	Qatar Open Doha 2003	GHATAK Poulomi (IND)		OSMAN Bacent (EGY)		WS	Qualification		4 - 0	11:8 11:7 11:4 11:6	GHATAK Poulomi	
+2003	Qatar Open Doha 2003	PASKAUSKIENE Ruta (LTU)		OSMAN Bacent (EGY)		WS	Qualification	QR2	4 - 0	11:4 11:6 11:8 11:5	PASKAUSKIENE Ruta	
+2003	Qatar Open Doha 2003	PASKAUSKIENE Ruta (LTU)		GHATAK Poulomi (IND)		WS	Qualification	3	4 - 1	82:80 11:9 9:11 11:9 11:8	PASKAUSKIENE Ruta	
+2003	Qatar Open Doha 2003	DING Yan (ITA)		ASHRAF Ayatollah (EGY)		WS	Qualification		4 - 0	11:3 11:6 11:1 11:5	DING Yan	
+2003	Qatar Open Doha 2003	KOSTROMINA Tatyana (1973) (BLR)		ASHRAF Ayatollah (EGY)		WS	Qualification	QR2	4 - 0	11:4 11:2 11:2 11:3	KOSTROMINA Tatyana (1973)	
+2003	Qatar Open Doha 2003	KOSTROMINA Tatyana (1973) (BLR)		DING Yan (ITA)		WS	Qualification	3	4 - 0	11:4 11:9 11:3 11:8	KOSTROMINA Tatyana (1973)	
+2003	Qatar Open Doha 2003	TAN Wenling (ITA)		SAMIR Samar (EGY)		WS	Qualification		4 - 0	11:7 11:7 11:3 11:3	TAN Wenling	
+2003	Qatar Open Doha 2003	LOGATZKAYA Tatyana (BLR)		SAMIR Samar (EGY)		WS	Qualification	QR2	4 - 0	11:5 12:10 11:8 11:7	LOGATZKAYA Tatyana	
+2003	Qatar Open Doha 2003	LOGATZKAYA Tatyana (BLR)		TAN Wenling (ITA)		WS	Qualification	3	2 - 4	11:8 10:12 11:9 5:11 1:11 1:11	TAN Wenling	
+2003	Qatar Open Doha 2003	PAVLOVICH Veronika (BLR)		WANG Yu (YOB=1981) (ITA)		WS	Qualification	3	2 - 4	5:11 8:11 11:2 7:11 11:4 10:12	WANG Yu (YOB=1981)	
+2003	Qatar Open Doha 2003	DAS Mouma (IND)		WANG Chen (USA)		WS	Qualification		0 - 4	5:11 8:11 6:11 3:11	WANG Chen	
+2003	Qatar Open Doha 2003	NEGRISOLI Laura (ITA)		WANG Chen (USA)		WS	Qualification	QR2	1 - 4	11:7 5:11 8:11 5:11 9:11	WANG Chen	
+2003	Qatar Open Doha 2003	NEGRISOLI Laura (ITA)		DAS Mouma (IND)		WS	Qualification	3	4 - 1	11:7 11:5 11:6 8:11 11:4	NEGRISOLI Laura	
+2003	Qatar Open Doha 2003	KRAMER Tanja (GER)		STEFANOVA Nikoleta (ITA)		WS	Qualification	3	4 - 1	11:8 11:8 11:5 8:11 11:5	KRAMER Tanja	
+2003	Qatar Open Doha 2003	DAS Mouma (IND)		ASHRAF Ayatollah (EGY)		WS	Main Draw	R32	4 - 0	11:4 11:6 11:4 11:7	DAS Mouma	
+2003	Qatar Open Doha 2003	SMIRNOVA Natalia (RUS)		TAN Wenling (ITA)		WS	Main Draw	R32	0 - 4	2:11 2:11 6:11 9:11	TAN Wenling	
+2003	Qatar Open Doha 2003	WANG Yu (YOB=1981) (ITA)		SAMIR Samar (EGY)		WS	Main Draw	R32	4 - 0	11:7 11:6 15:13 11:4	WANG Yu (YOB=1981)	
+2003	Qatar Open Doha 2003	GHATAK Poulomi (IND)		KRAMER Tanja (GER)		WS	Main Draw	R32	0 - 4	11:13 5:11 7:11 5:11	KRAMER Tanja	
+2003	Qatar Open Doha 2003	NEGRISOLI Laura (ITA)		WANG Chen (USA)		WS	Main Draw	R32	3 - 4	11:4 10:12 12:10 9:11 8:11 12:10 4:11	WANG Chen	
+2003	Qatar Open Doha 2003	OSMAN Bacent (EGY)		STEFANOVA Nikoleta (ITA)		WS	Main Draw	R32	0 - 4	10:12 5:11 2:11 4:11	STEFANOVA Nikoleta	
+2003	Qatar Open Doha 2003	BOROS Tamara (CRO)		DING Yan (ITA)		WS	Main Draw	R16	4 - 1	12:10 11:9 11:9 8:11 11:2	BOROS Tamara	
+2003	Qatar Open Doha 2003	DAS Mouma (IND)		PASKAUSKIENE Ruta (LTU)		WS	Main Draw	R16	4 - 2	11:8 12:10 11:6 5:11 6:11 11:9	DAS Mouma	
+2003	Qatar Open Doha 2003	LOGATZKAYA Tatyana (BLR)		TAN Wenling (ITA)		WS	Main Draw	R16	0 - 4	5:11 7:11 6:11 7:11	TAN Wenling	
+2003	Qatar Open Doha 2003	WANG Yu (YOB=1981) (ITA)		MELNIK Galina (RUS)		WS	Main Draw	R16	3 - 4	6:11 15:13 11:8 12:10 10:12 4:11 8:11	MELNIK Galina	
+2003	Qatar Open Doha 2003	SCHALL Elke (GER)		KRAMER Tanja (GER)		WS	Main Draw	R16	2 - 4	11:4 14:16 11:8 9:11 4:11 10:12	KRAMER Tanja	
+2003	Qatar Open Doha 2003	WANG Chen (USA)		KOSTROMINA Tatyana (1973) (BLR)		WS	Main Draw	R16	0 - 4	4:11 4:11 0:11 0:11	KOSTROMINA Tatyana (1973)	
+2003	Qatar Open Doha 2003	PAVLOVICH Viktoria (BLR)		STEFANOVA Nikoleta (ITA)		WS	Main Draw	R16	4 - 2	9:11 11:4 11:8 4:11 11:9 11:3	PAVLOVICH Viktoria	
+2003	Qatar Open Doha 2003	PAVLOVICH Veronika (BLR)		NEMES Olga (ROU)		WS	Main Draw	R16	4 - 2	12:10 10:12 8:11 11:4 11:7 13:11	PAVLOVICH Veronika	
+2003	Qatar Open Doha 2003	BOROS Tamara (CRO)		DAS Mouma (IND)		WS	Main Draw	QuarterFinal	4 - 0	11:7 12:10 11:7 11:3	BOROS Tamara	
+2003	Qatar Open Doha 2003	TAN Wenling (ITA)		MELNIK Galina (RUS)		WS	Main Draw	QuarterFinal	4 - 1	11:5 11:8 9:11 11:5 12:10	TAN Wenling	
+2003	Qatar Open Doha 2003	KRAMER Tanja (GER)		KOSTROMINA Tatyana (1973) (BLR)		WS	Main Draw	QuarterFinal	1 - 4	11:9 6:11 9:11 7:11 4:11	KOSTROMINA Tatyana (1973)	
+2003	Qatar Open Doha 2003	PAVLOVICH Viktoria (BLR)		PAVLOVICH Veronika (BLR)		WS	Main Draw	QuarterFinal	4 - 2	11:8 6:11 11:5 10:12 11:9 11:8	PAVLOVICH Viktoria	
+2003	Qatar Open Doha 2003	BOROS Tamara (CRO)		TAN Wenling (ITA)		WS	Main Draw	SemiFinal	4 - 2	7:11 11:6 11:8 6:11 11:8 13:11	BOROS Tamara	
+2003	Qatar Open Doha 2003	KOSTROMINA Tatyana (1973) (BLR)		PAVLOVICH Viktoria (BLR)		WS	Main Draw	SemiFinal	0 - 4	8:11 8:11 5:11 5:11	PAVLOVICH Viktoria	
+2003	Qatar Open Doha 2003	BOROS Tamara (CRO)		PAVLOVICH Viktoria (BLR)		WS	Main Draw	Final	4 - 3	8:11 11:9 11:8 6:11 11:4 13:15 11:6	BOROS Tamara
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 25
+
+2003	Qatar Open Doha 2003	JINDRAK Karl (AUT)	SCHLAGER Werner (AUT)	FETH Stefan (GER)	KEINATH Thomas (SVK)	MD	Main Draw	R16	4 - 2	16:14 11:6 11:7 4:11 4:11 11:5	JINDRAK Karl	SCHLAGER Werner
+2003	Qatar Open Doha 2003	JINDRAK Karl (AUT)	SCHLAGER Werner (AUT)	KARAKASEVIC Aleksandar (SRB)	TOKIC Bojan (SLO)	MD	Main Draw	QuarterFinal	4 - 1	11:4 11:9 11:7 6:11 11:4	JINDRAK Karl	SCHLAGER Werner
+2003	Qatar Open Doha 2003	JINDRAK Karl (AUT)	SCHLAGER Werner (AUT)	KREANGA Kalinikos (GRE)	ROSSKOPF Jorg (GER)	MD	Main Draw	Final	2 - 4	11:9 9:11 10:12 4:11 11:3 10:12	KREANGA Kalinikos	ROSSKOPF Jorg
+2003	Qatar Open Doha 2003	CHUMAKOU Dmitry (BLR)	SAMSONOV Vladimir (BLR)	BLASZCZYK Lucjan (POL)	KRZESZEWSKI Tomasz (POL)	MD	Main Draw	R16	4 - 3	8:11 9:11 11:7 11:9 9:11 11:6 12:10	CHUMAKOU Dmitry	SAMSONOV Vladimir
+2003	Qatar Open Doha 2003	CSABA Bence (CAN)	KASSAM Faazil (CAN)	LUNDQVIST Jens (SWE)	PERSSON Jorgen (SWE)	MD	Main Draw	R16	2 - 4	8:11 11:9 11:9 7:11 4:11 4:11	LUNDQVIST Jens	PERSSON Jorgen
+2003	Qatar Open Doha 2003	JIN Enhua (CHN)	WING Ei (CHN)	AL-MOHANNADI Ahmad Khalil (QAT)	ALHAJJAI Waled Nasser (QAT)	MD	Qualification	QR16	0 - 3	4:11 1:11 9:11	AL-MOHANNADI Ahmad Khalil	ALHAJJAI Waled Nasser
+2003	Qatar Open Doha 2003	BENTSEN Allan (DEN)	PRIMORAC Zoran (CRO)	SALEH Ahmed (EGY)	LASHIN Elsayed (EGY)	MD	Main Draw	R16	4 - 0	11:5 11:9 11:5 11:4	BENTSEN Allan	PRIMORAC Zoran
+2003	Qatar Open Doha 2003	BENTSEN Allan (DEN)	PRIMORAC Zoran (CRO)	FEJER-KONNERTH Zoltan (GER)	WOSIK Torben (GER)	MD	Main Draw	QuarterFinal	0 - 4	9:11 9:11 3:11 9:11	FEJER-KONNERTH Zoltan	WOSIK Torben
+2003	Qatar Open Doha 2003	LASHIN Aly (EGY)	NADIM Ahmed (EGY)	CHAKRABORTY Sourav (IND)	ACHANTA Sharath (IND)	MD	Qualification	QR32	3 - 2	5:11 18:16 13:11 5:11 11:5	LASHIN Aly	NADIM Ahmed
+2003	Qatar Open Doha 2003	LASHIN Aly (EGY)	NADIM Ahmed (EGY)	FEJER-KONNERTH Zoltan (GER)	WOSIK Torben (GER)	MD	Main Draw	R16	0 - 4	11:13 11:13 5:11 5:11	FEJER-KONNERTH Zoltan	WOSIK Torben
+2003	Qatar Open Doha 2003	ISMAIL Hesham (EGY)	MUELLER Frank (FRA)	SAIVE Jean-Michel (BEL)	SAIVE Philippe (BEL)	MD	Qualification	QR16	3 - 1	11:3 12:10 8:11 11:9	ISMAIL Hesham	MUELLER Frank
+2003	Qatar Open Doha 2003	KREANGA Kalinikos (GRE)	ROSSKOPF Jorg (GER)	CHUMAKOU Dmitry (BLR)	SAMSONOV Vladimir (BLR)	MD	Main Draw	QuarterFinal	4 - 2	11:7 10:12 11:3 12:14 13:11 12:10	KREANGA Kalinikos	ROSSKOPF Jorg
+2003	Qatar Open Doha 2003	AL-ABBAD Abdulaziz (KSA)	AL-HARBI Khaled (KSA)	LASHIN Aly (EGY)	NADIM Ahmed (EGY)	MD	Qualification	QR16	2 - 3	8:11 11:9 4:11 11:2 10:12	LASHIN Aly	NADIM Ahmed
+2003	Qatar Open Doha 2003	EL-SHARKAWI Mohamed (LBN)	NAJEM Alfred (LBN)	SALEH Ahmed (EGY)	LASHIN Elsayed (EGY)	MD	Qualification	QR16	1 - 3	7:11 8:11 11:9 6:11	SALEH Ahmed	LASHIN Elsayed
+2003	Qatar Open Doha 2003	AL-HAMMADI Hamad (QAT)	AL-RUMEIHI Mohamed (QAT)	DIAA Sherif (EGY)	MOSELHY Emad (EGY)	MD	Qualification	QR32	3 - 0	11:3 11:7 11:9	AL-HAMMADI Hamad	AL-RUMEIHI Mohamed
+2003	Qatar Open Doha 2003	AL-MOHANNADI Ahmad Khalil (QAT)	ALHAJJAI Waled Nasser (QAT)	EL BOUBOU Rachid (LBN)	EL HABECH Mohamad (LBN)	MD	Qualification	QR32	3 - 0	11:4 11:1 11:9	AL-MOHANNADI Ahmad Khalil	ALHAJJAI Waled Nasser
+2003	Qatar Open Doha 2003	AL-MOGASSIB Talal (QAT)	AL-REYAHI Omar (QAT)	ISMAIL Hesham (EGY)	MUELLER Frank (FRA)	MD	Qualification	QR32	1 - 3	3:11 10:12 11:8 9:11	ISMAIL Hesham	MUELLER Frank
+2003	Qatar Open Doha 2003	ALAWLAQI Ahmed (QAT)	ALYAFEI Mohammed (QAT)	KARAKASEVIC Aleksandar (SRB)	TOKIC Bojan (SLO)	MD	Qualification	QR16	0 - 3	3:11 5:11 7:11	KARAKASEVIC Aleksandar	TOKIC Bojan
+2003	Qatar Open Doha 2003	KARAKASEVIC Aleksandar (SRB)	TOKIC Bojan (SLO)	KUZMIN Fedor (RUS)	SMIRNOV Alexey (RUS)	MD	Main Draw	R16	4 - 1	11:6 11:4 11:9 3:11 11:7	KARAKASEVIC Aleksandar	TOKIC Bojan
+2003	Qatar Open Doha 2003	FETH Stefan (GER)	KEINATH Thomas (SVK)	AL-HAMMADI Hamad (QAT)	AL-RUMEIHI Mohamed (QAT)	MD	Qualification	QR16	3 - 1	5:11 11:1 11:7 11:6	FETH Stefan	KEINATH Thomas
+2003	Qatar Open Doha 2003	HAKANSSON Fredrik (SWE)	KARLSSON Peter (SWE)	EL BOUBOU Rachid (LBN)	EL HABECH Mohamad (LBN)	MD	Main Draw	R16	4 - 0	11:4 11:6 11:7 11:1	HAKANSSON Fredrik	KARLSSON Peter
+2003	Qatar Open Doha 2003	HAKANSSON Fredrik (SWE)	KARLSSON Peter (SWE)	LUNDQVIST Jens (SWE)	PERSSON Jorgen (SWE)	MD	Main Draw	QuarterFinal	4 - 3	11:8 9:11 5:11 6:11 11:7 11:5 12:10	HAKANSSON Fredrik	KARLSSON Peter
+2003	Qatar Open Doha 2003	HAKANSSON Fredrik (SWE)	KARLSSON Peter (SWE)	KREANGA Kalinikos (GRE)	ROSSKOPF Jorg (GER)	MD	Main Draw	SemiFinal	1 - 4	11:6 6:11 14:16 8:11 12:14	KREANGA Kalinikos	ROSSKOPF Jorg
+2003	Qatar Open Doha 2003	CHUMAKOU Dmitry (BLR)	SAMSONOV Vladimir (BLR)	AL-MOGASSIB Fahad (QAT)		MD	Qualification	QR16	3 - 0	11:3 11:4 11:1	CHUMAKOU Dmitry	SAMSONOV Vladimir
+2003	Qatar Open Doha 2003	AL-AWAMI Aman (KSA)		CSABA Bence (CAN)	KASSAM Faazil (CAN)	MD	Qualification	QR16	1 - 3	11:4 4:11 2:11 7:11	CSABA Bence	KASSAM Faazil
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 9
+
+2003	Qatar Open Doha 2003	KOSTROMINA Tatyana (1973) (BLR)	PAVLOVICH Viktoria (BLR)	NEGRISOLI Laura (ITA)	TAN Wenling (ITA)	WD	Main Draw	QuarterFinal	1 - 4	11:6 7:11 8:11 6:11 9:11	NEGRISOLI Laura	TAN Wenling
+2003	Qatar Open Doha 2003	LOGATZKAYA Tatyana (BLR)	PAVLOVICH Veronika (BLR)	DING Yan (ITA)	WANG Chen (USA)	WD	Main Draw	Final	4 - 1	11:7 11:7 9:11 11:7 11:5	LOGATZKAYA Tatyana	PAVLOVICH Veronika
+2003	Qatar Open Doha 2003	ASHRAF Ayatollah (EGY)	SAMIR Samar (EGY)	DAS Mouma (IND)	GHATAK Poulomi (IND)	WD	Main Draw	R16	2 - 4	9:11 11:8 3:11 11:7 6:11 7:11	DAS Mouma	GHATAK Poulomi
+2003	Qatar Open Doha 2003	KRAMER Tanja (GER)	SCHALL Elke (GER)	DAS Mouma (IND)	GHATAK Poulomi (IND)	WD	Main Draw	QuarterFinal	4 - 0	12:10 11:7 11:4 11:8	KRAMER Tanja	SCHALL Elke
+2003	Qatar Open Doha 2003	KRAMER Tanja (GER)	SCHALL Elke (GER)	LOGATZKAYA Tatyana (BLR)	PAVLOVICH Veronika (BLR)	WD	Main Draw	SemiFinal	3 - 4	11:9 11:6 10:12 7:11 12:10 9:11 9:11	LOGATZKAYA Tatyana	PAVLOVICH Veronika
+2003	Qatar Open Doha 2003	STEFANOVA Nikoleta (ITA)	WANG Yu (YOB=1981) (ITA)	LOGATZKAYA Tatyana (BLR)	PAVLOVICH Veronika (BLR)	WD	Main Draw	QuarterFinal	2 - 4	16:14 8:11 10:12 8:11 12:10 2:11	LOGATZKAYA Tatyana	PAVLOVICH Veronika
+2003	Qatar Open Doha 2003	NEGRISOLI Laura (ITA)	TAN Wenling (ITA)	DING Yan (ITA)	WANG Chen (USA)	WD	Main Draw	SemiFinal	0 - 4	7:11 7:11 10:12 6:11	DING Yan	WANG Chen
+2003	Qatar Open Doha 2003	DING Yan (ITA)	WANG Chen (USA)	OSMAN Bacent (EGY)	SMIRNOVA Natalia (RUS)	WD	Main Draw	R16	4 - 0	11:3 11:9 11:2 11:7	DING Yan	WANG Chen
+2003	Qatar Open Doha 2003	DING Yan (ITA)	WANG Chen (USA)	PASKAUSKIENE Ruta (LTU)	MELNIK Galina (RUS)	WD	Main Draw	QuarterFinal	4 - 1	11:6 8:11 11:9 11:8 11:5	DING Yan	WANG Chen

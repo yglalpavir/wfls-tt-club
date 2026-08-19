@@ -1,0 +1,682 @@
+赛事编号：1710
+年份：2004
+赛事名称：German Open Leipzig 2004
+赛事类型：ITTF World Tour / Pro Tour
+赛事种类：--
+参赛人数：634
+开始日期：2004-11-11
+结束日期：2004-11-14
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 3 Total: 298
+
+Start
+Prev
+1
+2
+3
+Next
+End
+2004	German Open Leipzig 2004	GAVLAS Antonin (CZE)		REDJEP Ronald (CRO)		MS	Qualification		1 - 4	2:11 8:11 4:11 14:12 5:11	REDJEP Ronald	
+2004	German Open Leipzig 2004	KARAKASEVIC Aleksandar (SRB)		REDJEP Ronald (CRO)		MS	Qualification	QR2	4 - 1	11:7 10:12 11:5 11:2 11:6	KARAKASEVIC Aleksandar	
+2004	German Open Leipzig 2004	KARAKASEVIC Aleksandar (SRB)		GAVLAS Antonin (CZE)		MS	Qualification	3	4 - 2	11:5 5:11 11:6 11:6 10:12 11:8	KARAKASEVIC Aleksandar	
+2004	German Open Leipzig 2004	OVTCHAROV Dimitrij (GER)		NAKANO Yusuke (JPN)		MS	Qualification		4 - 1	11:9 11:8 11:7 9:11 11:5	OVTCHAROV Dimitrij	
+2004	German Open Leipzig 2004	HEISTER Danny (NED)		NAKANO Yusuke (JPN)		MS	Qualification	QR2	4 - 0	12:10 11:7 16:14 11:5	HEISTER Danny	
+2004	German Open Leipzig 2004	HEISTER Danny (NED)		OVTCHAROV Dimitrij (GER)		MS	Qualification	3	4 - 2	7:11 11:6 10:12 11:9 20:18 11:4	HEISTER Danny	
+2004	German Open Leipzig 2004	GERADA Simon (AUS)		PETERSEN Christoffer (DEN)		MS	Qualification		3 - 4	6:11 11:9 11:9 8:11 11:4 8:11 5:11	PETERSEN Christoffer	
+2004	German Open Leipzig 2004	KRZESZEWSKI Tomasz (POL)		PETERSEN Christoffer (DEN)		MS	Qualification	QR2	4 - 1	11:8 4:11 11:5 11:6 11:8	KRZESZEWSKI Tomasz	
+2004	German Open Leipzig 2004	KRZESZEWSKI Tomasz (POL)		GERADA Simon (AUS)		MS	Qualification	3	4 - 1	11:6 11:7 6:11 11:9 11:6	KRZESZEWSKI Tomasz	
+2004	German Open Leipzig 2004	YOUNG Terry (ENG)		PEREK Jakub (POL)		MS	Qualification		3 - 4	11:5 5:11 16:18 12:14 11:7 11:7 8:11	PEREK Jakub	
+2004	German Open Leipzig 2004	FENG Zhe (BUL)		PEREK Jakub (POL)		MS	Qualification	QR2	4 - 1	12:10 7:11 11:5 11:6 11:4	FENG Zhe	
+2004	German Open Leipzig 2004	FENG Zhe (BUL)		YOUNG Terry (ENG)		MS	Qualification	3	4 - 0	11:5 11:5 11:9 11:8	FENG Zhe	
+2004	German Open Leipzig 2004	WIJERS Barry (NED)		DAVID Petr (CZE)		MS	Qualification		0 - 4	13:15 2:11 4:11 4:11	DAVID Petr	
+2004	German Open Leipzig 2004	FEJER-KONNERTH Zoltan (GER)		DAVID Petr (CZE)		MS	Qualification	QR2	4 - 3	3:11 4:11 4:11 11:5 11:6 11:9 17:15	FEJER-KONNERTH Zoltan	
+2004	German Open Leipzig 2004	FEJER-KONNERTH Zoltan (GER)		WIJERS Barry (NED)		MS	Qualification	3	4 - 2	11:13 9:11 11:1 11:5 11:4 11:8	FEJER-KONNERTH Zoltan	
+2004	German Open Leipzig 2004	CSABA Bence (CAN)		BITZIGEIO Jorg (GER)		MS	Qualification		4 - 3	7:11 11:13 11:9 11:8 11:7 7:11 11:8	CSABA Bence	
+2004	German Open Leipzig 2004	GARDOS Robert (AUT)		BITZIGEIO Jorg (GER)		MS	Qualification	QR2	4 - 2	8:11 11:6 13:11 11:4 5:11 11:7	GARDOS Robert	
+2004	German Open Leipzig 2004	GARDOS Robert (AUT)		CSABA Bence (CAN)		MS	Qualification	3	4 - 1	5:11 11:9 11:7 11:3 11:6	GARDOS Robert	
+2004	German Open Leipzig 2004	GRIGOREV Artur (RUS)		HABESOHN Daniel (AUT)		MS	Qualification		4 - 0	11:7 11:4 11:7 11:8	GRIGOREV Artur	
+2004	German Open Leipzig 2004	SUSS Christian (GER)		HABESOHN Daniel (AUT)		MS	Qualification	QR2	4 - 0	11:9 11:3 11:3 11:6	SUSS Christian	
+2004	German Open Leipzig 2004	SUSS Christian (GER)		GRIGOREV Artur (RUS)		MS	Qualification	3	4 - 1	11:2 11:5 10:12 11:7 11:9	SUSS Christian	
+2004	German Open Leipzig 2004	BALL Andreas (GER)		MENDES Enio (POR)		MS	Qualification		4 - 0	11:8 11:8 11:7 11:9	BALL Andreas	
+2004	German Open Leipzig 2004	TASAKI Toshio (JPN)		MENDES Enio (POR)		MS	Qualification	QR2	4 - 1	8:11 11:3 11:9 11:9 11:8	TASAKI Toshio	
+2004	German Open Leipzig 2004	TASAKI Toshio (JPN)		BALL Andreas (GER)		MS	Qualification	3	4 - 2	9:11 11:7 11:9 8:11 13:11 11:5	TASAKI Toshio	
+2004	German Open Leipzig 2004	HIELSCHER Lars (GER)		PICHLER Michael (AUT)		MS	Qualification	QR2	4 - 0	11:4 11:6 11:3 11:7	HIELSCHER Lars	
+2004	German Open Leipzig 2004	STEGER Bastian (GER)		SIMONER Christoph (AUT)		MS	Qualification	3	4 - 0	11:7 11:6 11:9 11:9	STEGER Bastian	
+2004	German Open Leipzig 2004	PRESSLMAYER Bernhard (AUT)		ROSNER Benjamin (GER)		MS	Qualification		4 - 0	11:5 11:8 11:6 11:3	PRESSLMAYER Bernhard	
+2004	German Open Leipzig 2004	LEGOUT Christophe (FRA)		ROSNER Benjamin (GER)		MS	Qualification	QR2	4 - 0	11:9 11:7 11:8 12:10	LEGOUT Christophe	
+2004	German Open Leipzig 2004	LEGOUT Christophe (FRA)		PRESSLMAYER Bernhard (AUT)		MS	Qualification	3	4 - 1	11:7 7:11 12:10 12:10 11:1	LEGOUT Christophe	
+2004	German Open Leipzig 2004	WANG Jianfeng (NOR)		KONGSGAARD Christian (DEN)		MS	Qualification	3	4 - 2	10:12 11:1 11:5 11:9 7:11 11:8	WANG Jianfeng	
+2004	German Open Leipzig 2004	TAKAKIWA Taku (JPN)		MILOSEVIC Bojan (SRB)		MS	Qualification		4 - 0	11:6 11:9 11:6 11:7	TAKAKIWA Taku	
+2004	German Open Leipzig 2004	TUGWELL Finn (DEN)		MILOSEVIC Bojan (SRB)		MS	Qualification	QR2	4 - 0	11:8 11:2 11:4 11:7	TUGWELL Finn	
+2004	German Open Leipzig 2004	TUGWELL Finn (DEN)		TAKAKIWA Taku (JPN)		MS	Qualification	3	2 - 4	11:6 7:11 8:11 4:11 11:7 9:11	TAKAKIWA Taku	
+2004	German Open Leipzig 2004	MATSUMOTO Cazuo (BRA)		KLEPRLIK Jakub (CZE)		MS	Qualification		4 - 1	2:11 11:6 11:8 11:9 11:6	MATSUMOTO Cazuo	
+2004	German Open Leipzig 2004	SHMYREV Maxim (RUS)		KLEPRLIK Jakub (CZE)		MS	Qualification	QR2	4 - 1	11:5 12:10 11:13 11:7 11:3	SHMYREV Maxim	
+2004	German Open Leipzig 2004	SHMYREV Maxim (RUS)		MATSUMOTO Cazuo (BRA)		MS	Qualification	3	4 - 0	12:10 11:6 11:5 11:7	SHMYREV Maxim	
+2004	German Open Leipzig 2004	DURAN Marc (ESP)		PALCEK Martin (SVK)		MS	Qualification		4 - 2	11:5 7:11 9:11 11:6 11:1 11:8	DURAN Marc	
+2004	German Open Leipzig 2004	MAZUNOV Dmitry (RUS)		PALCEK Martin (SVK)		MS	Qualification	QR2	4 - 0	11:7 12:10 11:5 11:2	MAZUNOV Dmitry	
+2004	German Open Leipzig 2004	MAZUNOV Dmitry (RUS)		DURAN Marc (ESP)		MS	Qualification	3	4 - 2	7:11 11:9 11:8 11:9 8:11 11:4	MAZUNOV Dmitry	
+2004	German Open Leipzig 2004	SHAN Mingjie (CHN)		PAPAGEORGIOU Konstantinos (GRE)		MS	Qualification	3	4 - 3	12:10 9:11 11:7 10:12 8:11 11:9 11:6	SHAN Mingjie	
+2004	German Open Leipzig 2004	FADEEV Evgeny (RUS)		CHMIEL Pawel (POL)		MS	Qualification		4 - 0	12:10 11:7 11:4 11:5	FADEEV Evgeny	
+2004	German Open Leipzig 2004	ERLANDSEN Geir (NOR)		CHMIEL Pawel (POL)		MS	Qualification	QR2	4 - 2	11:8 13:11 5:11 11:13 11:6 11:9	ERLANDSEN Geir	
+2004	German Open Leipzig 2004	ERLANDSEN Geir (NOR)		FADEEV Evgeny (RUS)		MS	Qualification	3	4 - 1	11:13 11:5 11:8 11:9 11:7	ERLANDSEN Geir	
+2004	German Open Leipzig 2004	CHRIST Nico (GER)		DE SOUSA Arlindo (LUX)		MS	Qualification		4 - 3	4:11 9:11 8:11 11:1 11:8 11:4 11:6	CHRIST Nico	
+2004	German Open Leipzig 2004	SAIVE Philippe (BEL)		DE SOUSA Arlindo (LUX)		MS	Qualification	QR2	4 - 1	6:11 11:5 11:5 11:5 11:6	SAIVE Philippe	
+2004	German Open Leipzig 2004	SAIVE Philippe (BEL)		CHRIST Nico (GER)		MS	Qualification	3	4 - 0	11:4 11:9 11:7 11:6	SAIVE Philippe	
+2004	German Open Leipzig 2004	KONECNY Tomas (CZE)		CHUMAKOU Dmitry (BLR)		MS	Qualification		4 - 2	5:11 11:4 11:7 9:11 11:6 11:8	KONECNY Tomas	
+2004	German Open Leipzig 2004	KEINATH Thomas (SVK)		CHUMAKOU Dmitry (BLR)		MS	Qualification	QR2	4 - 1	11:7 8:11 11:7 11:8 11:7	KEINATH Thomas	
+2004	German Open Leipzig 2004	KEINATH Thomas (SVK)		KONECNY Tomas (CZE)		MS	Qualification	3	4 - 0	11:8 11:7 11:6 11:9	KEINATH Thomas	
+2004	German Open Leipzig 2004	DESPRES Rodolphe (FRA)		FILUS Ruwen (GER)		MS	Qualification		4 - 2	11:5 4:11 11:8 11:6 9:11 11:6	DESPRES Rodolphe	
+2004	German Open Leipzig 2004	CHTCHETININE Evgueni (BLR)		FILUS Ruwen (GER)		MS	Qualification	QR2	4 - 2	8:11 11:8 9:11 11:8 13:11 11:6	CHTCHETININE Evgueni	
+2004	German Open Leipzig 2004	CHTCHETININE Evgueni (BLR)		DESPRES Rodolphe (FRA)		MS	Qualification	3	4 - 1	3:11 11:5 15:13 11:8 11:5	CHTCHETININE Evgueni	
+2004	German Open Leipzig 2004	JENKINS Ryan (WAL)		RINIOTIS Anastasios (GRE)		MS	Qualification		4 - 1	11:8 8:11 11:8 11:7 11:6	JENKINS Ryan	
+2004	German Open Leipzig 2004	ZHANG Chao (CHN)		RINIOTIS Anastasios (GRE)		MS	Qualification	QR2	4 - 0	11:6 11:7 11:9 11:3	ZHANG Chao	
+2004	German Open Leipzig 2004	ZHANG Chao (CHN)		JENKINS Ryan (WAL)		MS	Qualification	3	4 - 0	11:7 11:7 11:7 11:8	ZHANG Chao	
+2004	German Open Leipzig 2004	ROBERTSON Adam (WAL)		FYNSK Daniel (DEN)		MS	Qualification		4 - 2	12:10 11:7 6:11 11:9 7:11 12:10	ROBERTSON Adam	
+2004	German Open Leipzig 2004	LENGEROV Kostadin (AUT)		FYNSK Daniel (DEN)		MS	Qualification	QR2	4 - 2	11:5 11:7 9:11 13:11 9:11 11:5	LENGEROV Kostadin	
+2004	German Open Leipzig 2004	LENGEROV Kostadin (AUT)		ROBERTSON Adam (WAL)		MS	Qualification	3	1 - 4	11:13 11:9 8:11 8:11 7:11	ROBERTSON Adam	
+2004	German Open Leipzig 2004	VARGA Zoltan (HUN)		HABESOHN Mathias (AUT)		MS	Qualification		4 - 1	9:11 11:4 11:8 11:9 11:7	VARGA Zoltan	
+2004	German Open Leipzig 2004	BOBILLIER Loic (FRA)		JEVTOVIC Marko (SRB)		MS	Qualification		4 - 0	11:7 11:6 11:8 11:7	BOBILLIER Loic	
+2004	German Open Leipzig 2004	MANSSON Magnus (SWE)		JEVTOVIC Marko (SRB)		MS	Qualification	QR2	2 - 4	5:11 6:11 15:13 5:11 11:9 7:11	JEVTOVIC Marko	
+2004	German Open Leipzig 2004	MANSSON Magnus (SWE)		BOBILLIER Loic (FRA)		MS	Qualification	3	4 - 3	11:9 11:4 10:12 9:11 12:10 7:11 11:5	MANSSON Magnus	
+2004	German Open Leipzig 2004	LAKEEV Vasily (RUS)		REILAND Herve (FRA)		MS	Qualification		4 - 0	11:9 11:9 12:10 11:9	LAKEEV Vasily	
+2004	German Open Leipzig 2004	SUCH Bartosz (POL)		REILAND Herve (FRA)		MS	Qualification	QR2	4 - 1	11:4 11:5 11:7 13:15 13:11	SUCH Bartosz	
+2004	German Open Leipzig 2004	SUCH Bartosz (POL)		LAKEEV Vasily (RUS)		MS	Qualification	3	2 - 4	8:11 11:6 5:11 11:3 5:11 3:11	LAKEEV Vasily	
+2004	German Open Leipzig 2004	STEHLE Nico (GER)		PETRUKHIN Evgeny (RUS)		MS	Qualification		2 - 4	8:11 11:7 8:11 11:5 13:15 7:11	PETRUKHIN Evgeny	
+2004	German Open Leipzig 2004	PAZSY Ferenc (HUN)		PETRUKHIN Evgeny (RUS)		MS	Qualification	QR2	4 - 2	11:3 11:9 5:11 8:11 11:8 11:6	PAZSY Ferenc	
+2004	German Open Leipzig 2004	PAZSY Ferenc (HUN)		STEHLE Nico (GER)		MS	Qualification	3	4 - 1	11:7 13:11 9:11 13:11 11:5	PAZSY Ferenc	
+2004	German Open Leipzig 2004	MAIER Christoph (AUT)		MOLNAR Krisztian (HUN)		MS	Qualification		4 - 0	11:7 11:5 11:9 11:8	MAIER Christoph	
+2004	German Open Leipzig 2004	MONRAD Martin (DEN)		MOLNAR Krisztian (HUN)		MS	Qualification	QR2	4 - 3	11:6 7:11 12:10 6:11 11:6 9:11 11:2	MONRAD Martin	
+2004	German Open Leipzig 2004	MONRAD Martin (DEN)		MAIER Christoph (AUT)		MS	Qualification	3	4 - 3	9:11 11:5 8:11 11:4 7:11 11:4 11:8	MONRAD Martin	
+2004	German Open Leipzig 2004	MUSKO Peter (HUN)		PETO Zsolt (SRB)		MS	Qualification		4 - 2	11:9 7:11 13:11 11:8 4:11 11:4	MUSKO Peter	
+2004	German Open Leipzig 2004	FILIMON Andrei (ROU)		PETO Zsolt (SRB)		MS	Qualification	QR2	4 - 1	11:9 11:5 8:11 11:6 11:8	FILIMON Andrei	
+2004	German Open Leipzig 2004	FILIMON Andrei (ROU)		MUSKO Peter (HUN)		MS	Qualification	3	4 - 0	11:2 11:4 11:9 11:7	FILIMON Andrei	
+2004	German Open Leipzig 2004	BAUM Patrick (GER)		RUSHTON Andrew (ENG)		MS	Qualification		4 - 1	6:11 11:7 11:3 13:11 11:7	BAUM Patrick	
+2004	German Open Leipzig 2004	CIOTI Constantin (ROU)		RUSHTON Andrew (ENG)		MS	Qualification	QR2	4 - 1	11:4 11:8 11:5 8:11 11:7	CIOTI Constantin	
+2004	German Open Leipzig 2004	CIOTI Constantin (ROU)		BAUM Patrick (GER)		MS	Qualification	3	4 - 1	9:11 11:6 11:8 11:9 19:17	CIOTI Constantin	
+2004	German Open Leipzig 2004	JAKAB Janos (HUN)		RENGENHART Frank (NED)		MS	Qualification		4 - 1	11:9 9:11 11:6 11:4 11:2	JAKAB Janos	
+2004	German Open Leipzig 2004	GIONIS Panagiotis (GRE)		RENGENHART Frank (NED)		MS	Qualification	QR2	4 - 2	8:11 11:3 11:9 14:16 11:7 11:7	GIONIS Panagiotis	
+2004	German Open Leipzig 2004	GIONIS Panagiotis (GRE)		JAKAB Janos (HUN)		MS	Qualification	3	4 - 1	6:11 11:1 11:9 11:3 11:7	GIONIS Panagiotis	
+2004	German Open Leipzig 2004	SVENSSON Robert (SWE)		RUMGAY Gavin (SCO)		MS	Qualification		4 - 0	11:7 11:7 11:5 11:7	SVENSSON Robert	
+2004	German Open Leipzig 2004	BRATANOV Martin (BEL)		RUMGAY Gavin (SCO)		MS	Qualification	QR2	4 - 1	9:11 11:9 11:4 11:4 11:7	BRATANOV Martin	
+2004	German Open Leipzig 2004	BRATANOV Martin (BEL)		SVENSSON Robert (SWE)		MS	Qualification	3	2 - 4	11:8 8:11 11:7 5:11 6:11 5:11	SVENSSON Robert	
+2004	German Open Leipzig 2004	BERTIN Christophe (FRA)		SHEVCHENKO Semen (RUS)		MS	Qualification		4 - 2	11:7 11:6 11:8 7:11 5:11 11:2	BERTIN Christophe	
+2004	German Open Leipzig 2004	PAVELKA Tomas (CZE)		SHEVCHENKO Semen (RUS)		MS	Qualification	QR2	4 - 1	11:6 8:11 11:7 11:5 11:6	PAVELKA Tomas	
+2004	German Open Leipzig 2004	PAVELKA Tomas (CZE)		BERTIN Christophe (FRA)		MS	Qualification	3	4 - 2	1:11 11:8 13:11 14:12 9:11 11:7	PAVELKA Tomas	
+2004	German Open Leipzig 2004	STEPHENSEN Gudmundur (ISL)		LEBESSON Emmanuel (FRA)		MS	Qualification		4 - 3	9:11 11:3 11:8 11:4 3:11 7:11 11:6	STEPHENSEN Gudmundur	
+2004	German Open Leipzig 2004	FAZEKAS Peter (HUN)		LEBESSON Emmanuel (FRA)		MS	Qualification	QR2	4 - 0	11:5 11:7 11:8 11:4	FAZEKAS Peter	
+2004	German Open Leipzig 2004	FAZEKAS Peter (HUN)		STEPHENSEN Gudmundur (ISL)		MS	Qualification	3	4 - 1	8:11 11:7 11:9 11:4 11:5	FAZEKAS Peter	
+2004	German Open Leipzig 2004	SCHLICHTER Jorg (GER)		PAPADIMITRIOU Dimitrios (GRE)		MS	Qualification		4 - 2	7:11 11:9 10:12 11:9 11:6 11:8	SCHLICHTER Jorg	
+2004	German Open Leipzig 2004	JINDRAK Karl (AUT)		PAPADIMITRIOU Dimitrios (GRE)		MS	Qualification	QR2	1 - 4	9:11 6:11 11:5 8:11 9:11	PAPADIMITRIOU Dimitrios	
+2004	German Open Leipzig 2004	JINDRAK Karl (AUT)		SCHLICHTER Jorg (GER)		MS	Qualification	3	1 - 4	7:11 5:11 11:9 7:11 1:11	SCHLICHTER Jorg	
+2004	German Open Leipzig 2004	HENZELL William (AUS)		DANIEL Artur (POL)		MS	Qualification		0 - 4	8:11 6:11 10:12 4:11	DANIEL Artur	
+2004	German Open Leipzig 2004	KISHIKAWA Seiya (JPN)		DANIEL Artur (POL)		MS	Qualification	QR2	4 - 3	7:11 11:7 11:9 16:18 11:7 7:11 11:9	KISHIKAWA Seiya	
+2004	German Open Leipzig 2004	KISHIKAWA Seiya (JPN)		HENZELL William (AUS)		MS	Qualification	3	4 - 1	8:11 11:6 11:6 12:10 11:5	KISHIKAWA Seiya	
+2004	German Open Leipzig 2004	VOZICKY Bohumil (CZE)		NAVARRO Pere (ESP)		MS	Qualification		4 - 0	11:9 11:5 14:12 11:4	VOZICKY Bohumil	
+2004	German Open Leipzig 2004	CABESTANY Cedrik (FRA)		NAVARRO Pere (ESP)		MS	Qualification	QR2	4 - 0	11:8 11:4 11:6 11:3	CABESTANY Cedrik	
+2004	German Open Leipzig 2004	CABESTANY Cedrik (FRA)		VOZICKY Bohumil (CZE)		MS	Qualification	3	4 - 3	10:12 12:10 12:10 3:11 11:7 11:13 11:8	CABESTANY Cedrik	
+2004	German Open Leipzig 2004	MACHADO Carlos (ESP)		ZALCBERG David (AUS)		MS	Qualification		4 - 1	11:3 7:11 11:6 11:5 11:3	MACHADO Carlos	
+2004	German Open Leipzig 2004	LIVENTSOV Alexey (RUS)		ZALCBERG David (AUS)		MS	Qualification	QR2	3 - 4	11:13 11:3 10:12 11:7 8:11 12:10 7:11	ZALCBERG David
+2004	German Open Leipzig 2004	LIVENTSOV Alexey (RUS)		MACHADO Carlos (ESP)		MS	Qualification	3	4 - 2	11:6 16:14 6:11 6:11 11:7 11:6	LIVENTSOV Alexey	
+2004	German Open Leipzig 2004	LINDNER Adam (HUN)		DEBRUYERES Clement (FRA)		MS	Qualification		4 - 2	11:6 11:8 11:5 10:12 9:11 11:7	LINDNER Adam	
+2004	German Open Leipzig 2004	DAUS David (GER)		DEBRUYERES Clement (FRA)		MS	Qualification	QR2	4 - 2	12:10 9:11 11:3 11:9 7:11 12:10	DAUS David	
+2004	German Open Leipzig 2004	DAUS David (GER)		LINDNER Adam (HUN)		MS	Qualification	3	2 - 4	6:11 11:9 11:9 5:11 4:11 7:11	LINDNER Adam	
+2004	German Open Leipzig 2004	DIDUKH Oleksandr (UKR)		BAST Mike (LUX)		MS	Qualification		4 - 1	9:11 11:5 11:9 11:3 11:9	DIDUKH Oleksandr	
+2004	German Open Leipzig 2004	TORRES Daniel (ESP)		BAST Mike (LUX)		MS	Qualification	QR2	1 - 4	7:11 11:3 9:11 7:11 7:11	BAST Mike	
+2004	German Open Leipzig 2004	TORRES Daniel (ESP)		DIDUKH Oleksandr (UKR)		MS	Qualification	3	1 - 4	6:11 7:11 6:11 11:7 15:17	DIDUKH Oleksandr	
+2004	German Open Leipzig 2004	GARDOS Krisztian (AUT)		SIMON Fabien (LUX)		MS	Qualification		4 - 1	11:7 11:6 11:7 8:11 11:4	GARDOS Krisztian	
+2004	German Open Leipzig 2004	JOVER Sebastien (FRA)		SIMON Fabien (LUX)		MS	Qualification	QR2	4 - 0	11:5 11:4 11:5 11:8	JOVER Sebastien	
+2004	German Open Leipzig 2004	JOVER Sebastien (FRA)		GARDOS Krisztian (AUT)		MS	Qualification	3	4 - 2	9:11 11:4 11:6 11:7 6:11 11:7	JOVER Sebastien	
+2004	German Open Leipzig 2004	GORAK Daniel (POL)		IGNJATOVIC Sasa (SLO)		MS	Qualification	3	4 - 2	12:10 11:7 7:11 11:7 10:12 11:7	GORAK Daniel	
+2004	German Open Leipzig 2004	MIZUTANI Jun (JPN)		HINSE Pierre-Luc (CAN)		MS	Qualification		4 - 0	11:9 11:6 11:8 11:4	MIZUTANI Jun	
+2004	German Open Leipzig 2004	PISTEJ Lubomir (SVK)		HINSE Pierre-Luc (CAN)		MS	Qualification	QR2	4 - 2	11:6 14:12 11:3 6:11 13:15 11:7	PISTEJ Lubomir	
+2004	German Open Leipzig 2004	PISTEJ Lubomir (SVK)		MIZUTANI Jun (JPN)		MS	Qualification	3	1 - 4	15:13 10:12 9:11 8:11 11:13	MIZUTANI Jun	
+2004	German Open Leipzig 2004	MONTEIRO Joao (POR)		ZLAMAL Jaromir (CZE)		MS	Qualification		4 - 0	11:4 11:1 11:8 11:7	MONTEIRO Joao	
+2004	German Open Leipzig 2004	MARKOVIC Rade (SRB)		ZLAMAL Jaromir (CZE)		MS	Qualification	QR2	4 - 0	11:8 12:10 11:2 11:7	MARKOVIC Rade	
+2004	German Open Leipzig 2004	MARKOVIC Rade (SRB)		MONTEIRO Joao (POR)		MS	Qualification	3	2 - 4	9:11 6:11 10:12 11:7 11:4 4:11	MONTEIRO Joao	
+2004	German Open Leipzig 2004	DEMETER Lehel (HUN)		MICHELY Gilles (LUX)		MS	Qualification		4 - 1	9:11 11:3 11:6 11:8 15:13	DEMETER Lehel	
+2004	German Open Leipzig 2004	FETH Stefan (GER)		MICHELY Gilles (LUX)		MS	Qualification	QR2	4 - 2	11:9 11:5 9:11 11:5 9:11 11:8	FETH Stefan	
+2004	German Open Leipzig 2004	FETH Stefan (GER)		DEMETER Lehel (HUN)		MS	Qualification	3	0 - 4	10:12 9:11 6:11 8:11	DEMETER Lehel	
+2004	German Open Leipzig 2004	SEREDA Peter (SVK)		MURAMORI Minoru (JPN)		MS	Qualification	3	4 - 0	12:10 11:9 11:9 11:8	SEREDA Peter	
+2004	German Open Leipzig 2004	SORENSEN Mads (DEN)		SLESAR Michal (SVK)		MS	Qualification		4 - 0	11:8 11:6 11:7 11:9	SORENSEN Mads	
+2004	German Open Leipzig 2004	RUBTSOV Igor (RUS)		SLESAR Michal (SVK)		MS	Qualification	QR2	4 - 1	11:6 7:11 11:5 11:6 11:9	RUBTSOV Igor	
+2004	German Open Leipzig 2004	RUBTSOV Igor (RUS)		SORENSEN Mads (DEN)		MS	Qualification	3	3 - 4	11:8 7:11 5:11 11:8 5:11 11:9 7:11	SORENSEN Mads	
+2004	German Open Leipzig 2004	MITAMURA Muneaki (JPN)		BAZENOV Valentin (SVK)		MS	Qualification		4 - 2	8:11 11:7 6:11 12:10 11:6 11:5	MITAMURA Muneaki	
+2004	German Open Leipzig 2004	MOLDOVAN Istvan (NOR)		BAZENOV Valentin (SVK)		MS	Qualification	QR2	4 - 1	11:5 11:6 11:8 8:11 11:9	MOLDOVAN Istvan	
+2004	German Open Leipzig 2004	MOLDOVAN Istvan (NOR)		MITAMURA Muneaki (JPN)		MS	Qualification	3	3 - 4	4:11 15:13 9:11 11:9 8:11 11:8 12:14	MITAMURA Muneaki	
+2004	German Open Leipzig 2004	SAKAMOTO Ryusuke (JPN)		JIRASEK Michal (SVK)		MS	Qualification		4 - 0	11:5 11:5 11:4 11:3	SAKAMOTO Ryusuke	
+2004	German Open Leipzig 2004	CARNEROS Alfredo (ESP)		JIRASEK Michal (SVK)		MS	Qualification	QR2	4 - 1	11:6 12:10 11:6 4:11 11:5	CARNEROS Alfredo	
+2004	German Open Leipzig 2004	CARNEROS Alfredo (ESP)		SAKAMOTO Ryusuke (JPN)		MS	Qualification	3	1 - 4	8:11 11:7 7:11 5:11 7:11	SAKAMOTO Ryusuke	
+2004	German Open Leipzig 2004	CIHAK Marek (CZE)		HUDEC Lukas (SVK)		MS	Qualification		4 - 0	11:3 11:5 11:0 11:3	CIHAK Marek	
+2004	German Open Leipzig 2004	KOSOWSKI Jakub (POL)		HUDEC Lukas (SVK)		MS	Qualification	QR2	4 - 0	11:8 11:5 11:2 11:5	KOSOWSKI Jakub	
+2004	German Open Leipzig 2004	KOSOWSKI Jakub (POL)		CIHAK Marek (CZE)		MS	Qualification	3	3 - 4	5:11 11:9 11:8 13:15 8:11 11:8 9:11	CIHAK Marek	
+2004	German Open Leipzig 2004	AXELQVIST Johan (SWE)		MULLER Frank (LIE)		MS	Qualification		4 - 0	11:7 11:6 11:0 11:0	AXELQVIST Johan	
+2004	German Open Leipzig 2004	ZWICKL Daniel (HUN)		MULLER Frank (LIE)		MS	Qualification	QR2	4 - 0	11:3 11:7 11:9 11:3	ZWICKL Daniel	
+2004	German Open Leipzig 2004	ZWICKL Daniel (HUN)		AXELQVIST Johan (SWE)		MS	Qualification	3	4 - 1	11:8 9:11 11:6 12:10 12:10	ZWICKL Daniel	
+2004	German Open Leipzig 2004	MAZUNOV Dmitry (RUS)		ZWICKL Daniel (HUN)		MS	Qualification	QR64	4 - 1	11:5 7:11 11:8 11:9 16:14	MAZUNOV Dmitry	
+2004	German Open Leipzig 2004	SHAN Mingjie (CHN)		CIHAK Marek (CZE)		MS	Qualification	QR64	4 - 0	11:8 11:4 11:8 11:9	SHAN Mingjie	
+2004	German Open Leipzig 2004	ERLANDSEN Geir (NOR)		SAKAMOTO Ryusuke (JPN)		MS	Qualification	QR64	4 - 2	14:12 11:6 6:11 9:11 11:7 11:6	ERLANDSEN Geir	
+2004	German Open Leipzig 2004	SAIVE Philippe (BEL)		MITAMURA Muneaki (JPN)		MS	Qualification	QR64	4 - 0	11:8 12:10 11:6 12:10	SAIVE Philippe	
+2004	German Open Leipzig 2004	KEINATH Thomas (SVK)		SORENSEN Mads (DEN)		MS	Qualification	QR64	4 - 2	11:9 9:11 11:1 6:11 11:5 11:9	KEINATH Thomas	
+2004	German Open Leipzig 2004	CHTCHETININE Evgueni (BLR)		SEREDA Peter (SVK)		MS	Qualification	QR64	4 - 0	11:4 11:4 12:10 11:9	CHTCHETININE Evgueni	
+2004	German Open Leipzig 2004	ZHANG Chao (CHN)		DEMETER Lehel (HUN)		MS	Qualification	QR64	4 - 1	11:5 11:5 12:10 8:11 11:5	ZHANG Chao	
+2004	German Open Leipzig 2004	ROBERTSON Adam (WAL)		MONTEIRO Joao (POR)		MS	Qualification	QR64	1 - 4	11:7 2:11 6:11 9:11 7:11	MONTEIRO Joao	
+2004	German Open Leipzig 2004	VARGA Zoltan (HUN)		MIZUTANI Jun (JPN)		MS	Qualification	QR64	1 - 4	11:8 3:11 7:11 8:11 6:11	MIZUTANI Jun	
+2004	German Open Leipzig 2004	BOBILLIER Loic (FRA)		GORAK Daniel (POL)		MS	Qualification	QR64	2 - 4	10:12 11:6 3:11 6:11 11:9 9:11	GORAK Daniel	
+2004	German Open Leipzig 2004	LAKEEV Vasily (RUS)		JOVER Sebastien (FRA)		MS	Qualification	QR64	4 - 2	11:7 11:6 5:11 11:7 10:12 11:9	LAKEEV Vasily	
+2004	German Open Leipzig 2004	PAZSY Ferenc (HUN)		DIDUKH Oleksandr (UKR)		MS	Qualification	QR64	4 - 1	13:11 6:11 11:7 11:7 19:17	PAZSY Ferenc	
+2004	German Open Leipzig 2004	MONRAD Martin (DEN)		LINDNER Adam (HUN)		MS	Qualification	QR64	4 - 1	11:8 6:11 11:7 14:12 11:5	MONRAD Martin	
+2004	German Open Leipzig 2004	FILIMON Andrei (ROU)		MACHADO Carlos (ESP)		MS	Qualification	QR64	4 - 0	12:10 11:8 11:8 11:8	FILIMON Andrei	
+2004	German Open Leipzig 2004	CIOTI Constantin (ROU)		CABESTANY Cedrik (FRA)		MS	Qualification	QR64	1 - 4	11:9 4:11 9:11 11:13 10:12	CABESTANY Cedrik	
+2004	German Open Leipzig 2004	GIONIS Panagiotis (GRE)		KISHIKAWA Seiya (JPN)		MS	Qualification	QR64	4 - 1	6:11 11:6 11:4 11:4 11:8	GIONIS Panagiotis	
+2004	German Open Leipzig 2004	SVENSSON Robert (SWE)		SCHLICHTER Jorg (GER)		MS	Qualification	QR64	4 - 1	9:11 13:11 11:8 11:8 11:9	SVENSSON Robert	
+2004	German Open Leipzig 2004	PAVELKA Tomas (CZE)		FAZEKAS Peter (HUN)		MS	Qualification	QR64	4 - 0	11:9 11:7 11:8 12:10	PAVELKA Tomas	
+2004	German Open Leipzig 2004	CHEN Qi (CHN)		PAVELKA Tomas (CZE)		MS	Main Draw	R64	4 - 0	11:4 11:2 11:6 12:10	CHEN Qi	
+2004	German Open Leipzig 2004	WANG Jianfeng (NOR)		BLASZCZYK Lucjan (POL)		MS	Main Draw	R64	2 - 4	6:11 12:10 5:11 11:7 6:11 3:11	BLASZCZYK Lucjan	
+2004	German Open Leipzig 2004	WOSIK Torben (GER)		SHAN Mingjie (CHN)		MS	Main Draw	R64	4 - 3	14:12 11:9 7:11 11:9 15:17 10:12 11:7	WOSIK Torben	
+2004	German Open Leipzig 2004	SUSS Christian (GER)		PERSSON Jorgen (SWE)		MS	Main Draw	R64	4 - 1	11:6 11:6 9:11 11:6 16:14	SUSS Christian	
+2004	German Open Leipzig 2004	SMIRNOV Alexey (RUS)		TAKAKIWA Taku (JPN)		MS	Main Draw	R64	4 - 3	14:16 11:6 9:11 11:6 10:12 11:3 11:9	SMIRNOV Alexey	
+2004	German Open Leipzig 2004	KRZESZEWSKI Tomasz (POL)		LI Ching (HKG)		MS	Main Draw	R64	0 - 4	3:11 6:11 7:11 8:11	LI Ching	
+2004	German Open Leipzig 2004	QIU Yike (CHN)		MONRAD Martin (DEN)		MS	Main Draw	R64	4 - 2	11:8 3:11 9:11 11:5 11:6 11:6	QIU Yike	
+2004	German Open Leipzig 2004	HEISTER Danny (NED)		CHEN Weixing (AUT)		MS	Main Draw	R64	0 - 4	13:15 5:11 5:11 9:11	CHEN Weixing	
+2004	German Open Leipzig 2004	WALDNER Jan-Ove (SWE)		SAIVE Philippe (BEL)		MS	Main Draw	R64	4 - 0	11:5 11:5 11:4 13:11	WALDNER Jan-Ove	
+2004	German Open Leipzig 2004	MIZUTANI Jun (JPN)		CHILA Patrick (FRA)		MS	Main Draw	R64	1 - 4	4:11 12:10 2:11 6:11 6:11	CHILA Patrick	
+2004	German Open Leipzig 2004	KO Lai Chak (HKG)		CHTCHETININE Evgueni (BLR)		MS	Main Draw	R64	4 - 1	5:11 11:6 11:8 11:6 11:2	KO Lai Chak	
+2004	German Open Leipzig 2004	MONTEIRO Joao (POR)		SAIVE Jean-Michel (BEL)		MS	Main Draw	R64	1 - 4	9:11 5:11 8:11 14:12 9:11	SAIVE Jean-Michel	
+2004	German Open Leipzig 2004	KARLSSON Peter (SWE)		GIONIS Panagiotis (GRE)		MS	Main Draw	R64	4 - 0	11:3 11:9 13:11 11:7	KARLSSON Peter	
+2004	German Open Leipzig 2004	FENG Zhe (BUL)		HAKANSSON Fredrik (SWE)		MS	Main Draw	R64	4 - 1	6:11 11:5 11:4 11:6 11:8	FENG Zhe	
+2004	German Open Leipzig 2004	KUZMIN Fedor (RUS)		KEINATH Thomas (SVK)		MS	Main Draw	R64	2 - 4	10:12 14:12 8:11 5:11 13:11 6:11	KEINATH Thomas	
+2004	German Open Leipzig 2004	SVENSSON Robert (SWE)		BOLL Timo (GER)		MS	Main Draw	R64	1 - 4	11:6 6:11 8:11 6:11 7:11	BOLL Timo	
+2004	German Open Leipzig 2004	SAMSONOV Vladimir (BLR)		MAZUNOV Dmitry (RUS)		MS	Main Draw	R64	4 - 1	15:13 11:5 2:11 11:6 16:14	SAMSONOV Vladimir	
+2004	German Open Leipzig 2004	PAZSY Ferenc (HUN)		ELOI Damien (FRA)		MS	Main Draw	R64	0 - 4	10:12 8:11 9:11 7:11	ELOI Damien	
+2004	German Open Leipzig 2004	CHEUNG Yuk (HKG)		SHMYREV Maxim (RUS)		MS	Main Draw	R64	4 - 2	12:10 11:8 6:11 11:9 8:11 11:9	CHEUNG Yuk	
+2004	German Open Leipzig 2004	FILIMON Andrei (ROU)		HAO Shuai (CHN)		MS	Main Draw	R64	0 - 4	9:11 7:11 3:11 12:14	HAO Shuai	
+2004	German Open Leipzig 2004	LEUNG Chu Yan (HKG)		ZHANG Chao (CHN)		MS	Main Draw	R64	0 - 4	7:11 8:11 6:11 5:11	ZHANG Chao	
+2004	German Open Leipzig 2004	CABESTANY Cedrik (FRA)		KEEN Trinko (NED)		MS	Main Draw	R64	1 - 4	4:11 9:11 7:11 11:9 12:14	KEEN Trinko	
+2004	German Open Leipzig 2004	GRUJIC Slobodan (SRB)		LEGOUT Christophe (FRA)		MS	Main Draw	R64	1 - 4	9:11 14:16 8:11 11:5 8:11	LEGOUT Christophe	
+2004	German Open Leipzig 2004	GORAK Daniel (POL)		MAZE Michael (DEN)		MS	Main Draw	R64	1 - 4	3:11 6:11 7:11 11:9 8:11	MAZE Michael	
+2004	German Open Leipzig 2004	LIU Guozheng (CHN)		HIELSCHER Lars (GER)		MS	Main Draw	R64	4 - 0	11:8 11:6 11:6 11:9	LIU Guozheng	
+2004	German Open Leipzig 2004	KARAKASEVIC Aleksandar (SRB)		TOKIC Bojan (SLO)		MS	Main Draw	R64	4 - 2	11:8 12:10 5:11 5:11 11:8 11:8	KARAKASEVIC Aleksandar	
+2004	German Open Leipzig 2004	LUNDQVIST Jens (SWE)		STEGER Bastian (GER)		MS	Main Draw	R64	3 - 4	9:11 11:6 13:11 11:4 7:11 10:12 7:11	STEGER Bastian	
+2004	German Open Leipzig 2004	FEJER-KONNERTH Zoltan (GER)		PRIMORAC Zoran (CRO)		MS	Main Draw	R64	4 - 1	11:9 13:11 4:11 11:6 11:9	FEJER-KONNERTH Zoltan	
+2004	German Open Leipzig 2004	CRISAN Adrian (ROU)		TASAKI Toshio (JPN)		MS	Main Draw	R64	4 - 2	11:8 8:11 11:9 11:9 5:11 11:7	CRISAN Adrian	
+2004	German Open Leipzig 2004	ERLANDSEN Geir (NOR)		KORBEL Petr (CZE)		MS	Main Draw	R64	0 - 4	6:11 8:11 7:11 12:14	KORBEL Petr	
+2004	German Open Leipzig 2004	ROSSKOPF Jorg (GER)		LAKEEV Vasily (RUS)		MS	Main Draw	R64	4 - 0	11:7 11:3 11:6 11:7	ROSSKOPF Jorg	
+2004	German Open Leipzig 2004	GARDOS Robert (AUT)		CHUANG Chih-Yuan (TPE)		MS	Main Draw	R64	1 - 4	7:11 5:11 14:12 8:11 4:11	CHUANG Chih-Yuan	
+2004	German Open Leipzig 2004	CHEN Qi (CHN)		BLASZCZYK Lucjan (POL)		MS	Main Draw	R32	3 - 4	11:5 11:6 2:11 7:11 11:7 7:11 7:11	BLASZCZYK Lucjan	
+2004	German Open Leipzig 2004	WOSIK Torben (GER)		SUSS Christian (GER)		MS	Main Draw	R32	4 - 0	11:9 13:11 11:9 11:8	WOSIK Torben	
+2004	German Open Leipzig 2004	SMIRNOV Alexey (RUS)		LI Ching (HKG)		MS	Main Draw	R32	1 - 4	8:11 9:11 11:9 7:11 2:11	LI Ching	
+2004	German Open Leipzig 2004	QIU Yike (CHN)		CHEN Weixing (AUT)		MS	Main Draw	R32	4 - 2	12:10 11:3 12:14 11:7 6:11 11:6	QIU Yike	
+2004	German Open Leipzig 2004	WALDNER Jan-Ove (SWE)		CHILA Patrick (FRA)		MS	Main Draw	R32	4 - 1	3:11 11:9 11:9 14:12 13:11	WALDNER Jan-Ove	
+2004	German Open Leipzig 2004	KO Lai Chak (HKG)		SAIVE Jean-Michel (BEL)		MS	Main Draw	R32	2 - 4	5:11 7:11 11:3 11:7 8:11 2:11	SAIVE Jean-Michel	
+2004	German Open Leipzig 2004	KARLSSON Peter (SWE)		FENG Zhe (BUL)		MS	Main Draw	R32	0 - 4	8:11 5:11 6:11 9:11	FENG Zhe	
+2004	German Open Leipzig 2004	KEINATH Thomas (SVK)		BOLL Timo (GER)		MS	Main Draw	R32	0 - 4	7:11 9:11 7:11 3:11	BOLL Timo	
+2004	German Open Leipzig 2004	SAMSONOV Vladimir (BLR)		ELOI Damien (FRA)		MS	Main Draw	R32	4 - 1	11:8 11:7 11:5 3:11 11:5	SAMSONOV Vladimir	
+2004	German Open Leipzig 2004	CHEUNG Yuk (HKG)		HAO Shuai (CHN)		MS	Main Draw	R32	4 - 2	11:7 11:8 2:11 11:8 3:11 11:9	CHEUNG Yuk	
+2004	German Open Leipzig 2004	ZHANG Chao (CHN)		KEEN Trinko (NED)		MS	Main Draw	R32	2 - 4	9:11 11:13 11:6 11:13 12:10 10:12	KEEN Trinko	
+2004	German Open Leipzig 2004	LEGOUT Christophe (FRA)		MAZE Michael (DEN)		MS	Main Draw	R32	0 - 4	7:11 17:19 6:11 5:11	MAZE Michael	
+2004	German Open Leipzig 2004	LIU Guozheng (CHN)		KARAKASEVIC Aleksandar (SRB)		MS	Main Draw	R32	4 - 3	8:11 5:11 11:13 11:8 11:6 11:6 11:8	LIU Guozheng	
+2004	German Open Leipzig 2004	STEGER Bastian (GER)		FEJER-KONNERTH Zoltan (GER)		MS	Main Draw	R32	4 - 1	8:11 11:6 11:5 11:8 11:9	STEGER Bastian
+2004	German Open Leipzig 2004	CRISAN Adrian (ROU)		KORBEL Petr (CZE)		MS	Main Draw	R32	2 - 4	11:9 12:14 9:11 5:11 11:4 8:11	KORBEL Petr	
+2004	German Open Leipzig 2004	ROSSKOPF Jorg (GER)		CHUANG Chih-Yuan (TPE)		MS	Main Draw	R32	2 - 4	7:11 13:11 15:13 5:11 8:11 6:11	CHUANG Chih-Yuan	
+2004	German Open Leipzig 2004	BLASZCZYK Lucjan (POL)		WOSIK Torben (GER)		MS	Main Draw	R16	4 - 2	11:5 11:5 6:11 11:9 11:13 12:10	BLASZCZYK Lucjan	
+2004	German Open Leipzig 2004	LI Ching (HKG)		QIU Yike (CHN)		MS	Main Draw	R16	2 - 4	8:11 8:11 11:9 13:11 9:11 9:11	QIU Yike	
+2004	German Open Leipzig 2004	WALDNER Jan-Ove (SWE)		SAIVE Jean-Michel (BEL)		MS	Main Draw	R16	0 - 4	10:12 9:11 13:15 5:11	SAIVE Jean-Michel	
+2004	German Open Leipzig 2004	FENG Zhe (BUL)		BOLL Timo (GER)		MS	Main Draw	R16	1 - 4	6:11 13:11 11:13 9:11 8:11	BOLL Timo	
+2004	German Open Leipzig 2004	SAMSONOV Vladimir (BLR)		CHEUNG Yuk (HKG)		MS	Main Draw	R16	4 - 1	8:11 11:9 11:5 11:7 11:9	SAMSONOV Vladimir	
+2004	German Open Leipzig 2004	KEEN Trinko (NED)		MAZE Michael (DEN)		MS	Main Draw	R16	4 - 3	6:11 11:5 9:11 11:9 10:12 11:8 13:11	KEEN Trinko	
+2004	German Open Leipzig 2004	LIU Guozheng (CHN)		STEGER Bastian (GER)		MS	Main Draw	R16	4 - 2	10:12 9:11 11:4 11:4 11:9 11:6	LIU Guozheng	
+2004	German Open Leipzig 2004	KORBEL Petr (CZE)		CHUANG Chih-Yuan (TPE)		MS	Main Draw	R16	4 - 1	11:9 11:9 9:11 11:9 11:8	KORBEL Petr	
+2004	German Open Leipzig 2004	BLASZCZYK Lucjan (POL)		QIU Yike (CHN)		MS	Main Draw	QuarterFinal	2 - 4	11:5 11:8 7:11 9:11 7:11 8:11	QIU Yike	
+2004	German Open Leipzig 2004	SAIVE Jean-Michel (BEL)		BOLL Timo (GER)		MS	Main Draw	QuarterFinal	1 - 4	3:11 7:11 15:13 9:11 5:11	BOLL Timo	
+2004	German Open Leipzig 2004	SAMSONOV Vladimir (BLR)		KEEN Trinko (NED)		MS	Main Draw	QuarterFinal	2 - 4	5:11 8:11 9:11 11:3 11:8 7:11	KEEN Trinko	
+2004	German Open Leipzig 2004	LIU Guozheng (CHN)		KORBEL Petr (CZE)		MS	Main Draw	QuarterFinal	4 - 1	11:9 12:14 11:5 11:9 11:2	LIU Guozheng	
+2004	German Open Leipzig 2004	QIU Yike (CHN)		BOLL Timo (GER)		MS	Main Draw	SemiFinal	1 - 4	11:9 13:15 8:11 7:11 10:12	BOLL Timo	
+2004	German Open Leipzig 2004	KEEN Trinko (NED)		LIU Guozheng (CHN)		MS	Main Draw	SemiFinal	2 - 4	11:5 11:7 10:12 3:11 9:11 9:11	LIU Guozheng	
+2004	German Open Leipzig 2004	BOLL Timo (GER)		LIU Guozheng (CHN)		MS	Main Draw	Final	4 - 2	6:11 5:11 11:7 11:8 11:7 11:2	BOLL Timo	
+2004	German Open Leipzig 2004	JEVTOVIC Marko (SRB)		MOLNAR Krisztian (HUN)		U21MS	Qualification		2 - 3	9:11 11:8 11:2 10:12 6:11	MOLNAR Krisztian	
+2004	German Open Leipzig 2004	LAKEEV Vasily (RUS)		MOLNAR Krisztian (HUN)		U21MS	Qualification	QR2	2 - 3	8:11 11:7 8:11 11:4 6:11	MOLNAR Krisztian	
+2004	German Open Leipzig 2004	HABESOHN Mathias (AUT)		PETRUKHIN Evgeny (RUS)		U21MS	Qualification		2 - 3	10:12 8:11 11:7 11:7 10:12	PETRUKHIN Evgeny	
+2004	German Open Leipzig 2004	BOBILLIER Loic (FRA)		PETRUKHIN Evgeny (RUS)		U21MS	Qualification	QR2	3 - 0	11:7 11:3 11:6	BOBILLIER Loic	
+2004	German Open Leipzig 2004	BOBILLIER Loic (FRA)		HABESOHN Mathias (AUT)		U21MS	Qualification	3	3 - 2	9:11 11:7 12:10 6:11 11:6	BOBILLIER Loic	
+2004	German Open Leipzig 2004	RINIOTIS Anastasios (GRE)		PETO Zsolt (SRB)		U21MS	Qualification		2 - 3	8:11 8:11 11:8 11:6 7:11	PETO Zsolt	
+2004	German Open Leipzig 2004	ROBERTSON Adam (WAL)		PETO Zsolt (SRB)		U21MS	Qualification	QR2	0 - 3	8:11 6:11 8:11	PETO Zsolt	
+2004	German Open Leipzig 2004	CHUMAKOU Dmitry (BLR)		RUSHTON Andrew (ENG)		U21MS	Qualification		3 - 1	5:11 11:9 11:5 11:4	CHUMAKOU Dmitry	
+2004	German Open Leipzig 2004	DESPRES Rodolphe (FRA)		RUSHTON Andrew (ENG)		U21MS	Qualification	QR2	3 - 1	11:8 13:11 7:11 11:8	DESPRES Rodolphe	
+2004	German Open Leipzig 2004	DESPRES Rodolphe (FRA)		CHUMAKOU Dmitry (BLR)		U21MS	Qualification	3	3 - 1	9:11 13:11 11:5 13:11	DESPRES Rodolphe	
+2004	German Open Leipzig 2004	FILUS Ruwen (GER)		RUMGAY Gavin (SCO)		U21MS	Qualification		3 - 0	11:8 12:10 11:7	FILUS Ruwen	
+2004	German Open Leipzig 2004	KONECNY Tomas (CZE)		RUMGAY Gavin (SCO)		U21MS	Qualification	QR2	3 - 0	11:4 13:11 11:5	KONECNY Tomas	
+2004	German Open Leipzig 2004	KONECNY Tomas (CZE)		FILUS Ruwen (GER)		U21MS	Qualification	3	3 - 0	11:6 12:10 11:8	KONECNY Tomas	
+2004	German Open Leipzig 2004	CHMIEL Pawel (POL)		SHEVCHENKO Semen (RUS)		U21MS	Qualification		3 - 1	11:7 8:11 11:7 11:9	CHMIEL Pawel	
+2004	German Open Leipzig 2004	DURAN Marc (ESP)		SHEVCHENKO Semen (RUS)		U21MS	Qualification	QR2	3 - 2	11:5 11:8 12:14 7:11 11:4	DURAN Marc	
+2004	German Open Leipzig 2004	DURAN Marc (ESP)		CHMIEL Pawel (POL)		U21MS	Qualification	3	3 - 1	7:11 13:11 11:8 11:6	DURAN Marc	
+2004	German Open Leipzig 2004	PALCEK Martin (SVK)		LEBESSON Emmanuel (FRA)		U21MS	Qualification		1 - 3	11:9 5:11 4:11 8:11	LEBESSON Emmanuel	
+2004	German Open Leipzig 2004	MATSUMOTO Cazuo (BRA)		LEBESSON Emmanuel (FRA)		U21MS	Qualification	QR2	3 - 1	11:7 2:11 11:3 11:0	MATSUMOTO Cazuo	
+2004	German Open Leipzig 2004	MATSUMOTO Cazuo (BRA)		PALCEK Martin (SVK)		U21MS	Qualification	3	3 - 0	11:7 11:9 11:7	MATSUMOTO Cazuo	
+2004	German Open Leipzig 2004	KLEPRLIK Jakub (CZE)		PAPADIMITRIOU Dimitrios (GRE)		U21MS	Qualification		3 - 0	13:11 11:6 12:10	KLEPRLIK Jakub	
+2004	German Open Leipzig 2004	KONGSGAARD Christian (DEN)		PAPADIMITRIOU Dimitrios (GRE)		U21MS	Qualification	QR2	3 - 0	12:10 11:4 12:10	KONGSGAARD Christian	
+2004	German Open Leipzig 2004	KONGSGAARD Christian (DEN)		KLEPRLIK Jakub (CZE)		U21MS	Qualification	3	3 - 0	18:16 13:11 11:8	KONGSGAARD Christian	
+2004	German Open Leipzig 2004	ROSNER Benjamin (GER)		NAVARRO Pere (ESP)		U21MS	Qualification		3 - 2	15:13 7:11 8:11 14:12 13:11	ROSNER Benjamin	
+2004	German Open Leipzig 2004	TAKAKIWA Taku (JPN)		NAVARRO Pere (ESP)		U21MS	Qualification	QR2	3 - 0	11:9 11:6 14:12	TAKAKIWA Taku	
+2004	German Open Leipzig 2004	TAKAKIWA Taku (JPN)		ROSNER Benjamin (GER)		U21MS	Qualification	3	3 - 0	11:9 11:5 16:14	TAKAKIWA Taku	
+2004	German Open Leipzig 2004	MILOSEVIC Bojan (SRB)		DEBRUYERES Clement (FRA)		U21MS	Qualification		1 - 3	11:8 9:11 9:11 6:11	DEBRUYERES Clement	
+2004	German Open Leipzig 2004	SIMONER Christoph (AUT)		DEBRUYERES Clement (FRA)		U21MS	Qualification	QR2	3 - 2	8:11 11:9 11:9 9:11 11:6	SIMONER Christoph	
+2004	German Open Leipzig 2004	SIMONER Christoph (AUT)		MILOSEVIC Bojan (SRB)		U21MS	Qualification	3	1 - 3	9:11 7:11 11:7 7:11	MILOSEVIC Bojan	
+2004	German Open Leipzig 2004	PICHLER Michael (AUT)		SIMON Fabien (LUX)		U21MS	Qualification		0 - 3	6:11 8:11 7:11	SIMON Fabien	
+2004	German Open Leipzig 2004	BALL Andreas (GER)		SIMON Fabien (LUX)		U21MS	Qualification	QR2	3 - 1	11:6 11:7 6:11 15:13	BALL Andreas	
+2004	German Open Leipzig 2004	BALL Andreas (GER)		PICHLER Michael (AUT)		U21MS	Qualification	3	3 - 0	11:4 11:9 11:8	BALL Andreas	
+2004	German Open Leipzig 2004	MENDES Enio (POR)		HINSE Pierre-Luc (CAN)		U21MS	Qualification		3 - 0	11:4 11:5 11:7	MENDES Enio	
+2004	German Open Leipzig 2004	GRIGOREV Artur (RUS)		HINSE Pierre-Luc (CAN)		U21MS	Qualification	QR2	3 - 0	11:8 11:9 11:7	GRIGOREV Artur	
+2004	German Open Leipzig 2004	GRIGOREV Artur (RUS)		MENDES Enio (POR)		U21MS	Qualification	3	3 - 1	12:14 11:7 11:4 11:4	GRIGOREV Artur	
+2004	German Open Leipzig 2004	HABESOHN Daniel (AUT)		ZLAMAL Jaromir (CZE)		U21MS	Qualification		1 - 3	11:9 6:11 9:11 9:11	ZLAMAL Jaromir	
+2004	German Open Leipzig 2004	CSABA Bence (CAN)		ZLAMAL Jaromir (CZE)		U21MS	Qualification	QR2	3 - 1	11:7 11:5 7:11 11:6	CSABA Bence	
+2004	German Open Leipzig 2004	CSABA Bence (CAN)		HABESOHN Daniel (AUT)		U21MS	Qualification	3	1 - 3	11:8 8:11 9:11 11:13	HABESOHN Daniel	
+2004	German Open Leipzig 2004	DAVID Petr (CZE)		HUDEC Lukas (SVK)		U21MS	Qualification		3 - 1	11:6 11:7 8:11 11:7	DAVID Petr	
+2004	German Open Leipzig 2004	OVTCHAROV Dimitrij (GER)		HUDEC Lukas (SVK)		U21MS	Qualification	QR2	3 - 0	11:7 11:5 11:8	OVTCHAROV Dimitrij	
+2004	German Open Leipzig 2004	OVTCHAROV Dimitrij (GER)		DAVID Petr (CZE)		U21MS	Qualification	3	3 - 1	6:11 14:12 11:9 11:9	OVTCHAROV Dimitrij	
+2004	German Open Leipzig 2004	PETERSEN Christoffer (DEN)		SLESAR Michal (SVK)		U21MS	Qualification		3 - 0	11:7 11:5 11:5	PETERSEN Christoffer	
+2004	German Open Leipzig 2004	GAVLAS Antonin (CZE)		SLESAR Michal (SVK)		U21MS	Qualification	QR2	3 - 1	11:8 17:15 7:11 11:5	GAVLAS Antonin	
+2004	German Open Leipzig 2004	GAVLAS Antonin (CZE)		PETERSEN Christoffer (DEN)		U21MS	Qualification	3	3 - 0	11:6 11:8 13:11	GAVLAS Antonin	
+2004	German Open Leipzig 2004	NAKANO Yusuke (JPN)		MICHELY Gilles (LUX)		U21MS	Qualification		3 - 0	11:7 11:5 11:5	NAKANO Yusuke	
+2004	German Open Leipzig 2004	PEREK Jakub (POL)		BAZENOV Valentin (SVK)		U21MS	Qualification	QR2	3 - 0	11:9 11:9 11:7	PEREK Jakub	
+2004	German Open Leipzig 2004	NAKANO Yusuke (JPN)		BAZENOV Valentin (SVK)		U21MS	Qualification	3	3 - 1	13:11 10:12 11:9 11:8	NAKANO Yusuke	
+2004	German Open Leipzig 2004	PEREK Jakub (POL)		MICHELY Gilles (LUX)		U21MS	Qualification	QR4	2 - 3	9:11 18:16 8:11 11:3 7:11	MICHELY Gilles	
+2004	German Open Leipzig 2004	NAKANO Yusuke (JPN)		PEREK Jakub (POL)		U21MS	Qualification	5	3 - 2	13:15 7:11 13:11 11:4 11:8	NAKANO Yusuke	
+2004	German Open Leipzig 2004	BAZENOV Valentin (SVK)		MICHELY Gilles (LUX)		U21MS	Qualification	6	3 - 2	11:7 13:11 7:11 9:11 11:9	BAZENOV Valentin	
+2004	German Open Leipzig 2004	MOLNAR Krisztian (HUN)		BAUM Patrick (GER)		U21MS	Main Draw	R32	3 - 4	7:11 7:11 2:11 11:8 11:9 13:11 10:12	BAUM Patrick	
+2004	German Open Leipzig 2004	BERTIN Christophe (FRA)		GAVLAS Antonin (CZE)		U21MS	Main Draw	R32	4 - 2	11:9 11:9 8:11 11:7 6:11 11:6	BERTIN Christophe	
+2004	German Open Leipzig 2004	DURAN Marc (ESP)		SAKAMOTO Ryusuke (JPN)		U21MS	Main Draw	R32	4 - 3	13:15 6:11 11:9 11:5 10:12 11:8 11:5	DURAN Marc	
+2004	German Open Leipzig 2004	SEREDA Peter (SVK)		CSABA Bence (CAN)		U21MS	Main Draw	R32	4 - 2	12:10 11:8 11:9 3:11 10:12 12:10	SEREDA Peter	
+2004	German Open Leipzig 2004	DEBRUYERES Clement (FRA)		MIZUTANI Jun (JPN)		U21MS	Main Draw	R32	4 - 2	3:11 11:8 11:9 8:11 11:9 11:5	DEBRUYERES Clement	
+2004	German Open Leipzig 2004	JAKAB Janos (HUN)		GRIGOREV Artur (RUS)		U21MS	Main Draw	R32	0 - 4	10:12 8:11 8:11 7:11	GRIGOREV Artur	
+2004	German Open Leipzig 2004	OVTCHAROV Dimitrij (GER)		PISTEJ Lubomir (SVK)		U21MS	Main Draw	R32	3 - 4	11:13 11:4 11:9 11:7 8:11 6:11 4:11	PISTEJ Lubomir	
+2004	German Open Leipzig 2004	GORAK Daniel (POL)		DESPRES Rodolphe (FRA)		U21MS	Main Draw	R32	4 - 0	12:10 11:9 11:8 11:9	GORAK Daniel	
+2004	German Open Leipzig 2004	PETO Zsolt (SRB)		MURAMORI Minoru (JPN)		U21MS	Main Draw	R32	0 - 4	7:11 7:11 7:11 7:11	MURAMORI Minoru	
+2004	German Open Leipzig 2004	MONTEIRO Joao (POR)		BOBILLIER Loic (FRA)		U21MS	Main Draw	R32	3 - 4	2:11 9:11 11:8 11:8 11:8 4:11 3:11	BOBILLIER Loic	
+2004	German Open Leipzig 2004	KONGSGAARD Christian (DEN)		AXELQVIST Johan (SWE)		U21MS	Main Draw	R32	1 - 4	8:11 8:11 8:11 11:8 8:11	AXELQVIST Johan	
+2004	German Open Leipzig 2004	ZWICKL Daniel (HUN)		MATSUMOTO Cazuo (BRA)		U21MS	Main Draw	R32	3 - 4	9:11 5:11 11:7 12:10 13:11 10:12 7:11	MATSUMOTO Cazuo	
+2004	German Open Leipzig 2004	KONECNY Tomas (CZE)		SCHLICHTER Jorg (GER)		U21MS	Main Draw	R32	2 - 4	7:11 11:6 8:11 11:6 3:11 8:11	SCHLICHTER Jorg	
+2004	German Open Leipzig 2004	SVENSSON Robert (SWE)		NAKANO Yusuke (JPN)		U21MS	Main Draw	R32	4 - 0	11:8 11:4 11:5 11:8	SVENSSON Robert	
+2004	German Open Leipzig 2004	BALL Andreas (GER)		SUCH Bartosz (POL)		U21MS	Main Draw	R32	2 - 4	4:11 11:3 11:4 8:11 5:11 6:11	SUCH Bartosz	
+2004	German Open Leipzig 2004	TAKAKIWA Taku (JPN)		BAUM Patrick (GER)		U21MS	Main Draw	R16	2 - 4	4:11 14:12 11:13 11:8 7:11 9:11	BAUM Patrick	
+2004	German Open Leipzig 2004	BERTIN Christophe (FRA)		DURAN Marc (ESP)		U21MS	Main Draw	R16	4 - 0	11:9 11:3 11:8 11:7	BERTIN Christophe	
+2004	German Open Leipzig 2004	SEREDA Peter (SVK)		DEBRUYERES Clement (FRA)		U21MS	Main Draw	R16	4 - 0	11:6 11:5 15:13 11:8	SEREDA Peter	
+2004	German Open Leipzig 2004	GRIGOREV Artur (RUS)		PISTEJ Lubomir (SVK)		U21MS	Main Draw	R16	0 - 4	10:12 4:11 7:11 10:12	PISTEJ Lubomir	
+2004	German Open Leipzig 2004	GORAK Daniel (POL)		MURAMORI Minoru (JPN)		U21MS	Main Draw	R16	4 - 2	11:6 11:9 6:11 9:11 11:2 12:10	GORAK Daniel	
+2004	German Open Leipzig 2004	BOBILLIER Loic (FRA)		AXELQVIST Johan (SWE)		U21MS	Main Draw	R16	2 - 4	8:11 5:11 11:5 11:4 5:11 10:12	AXELQVIST Johan	
+2004	German Open Leipzig 2004	MATSUMOTO Cazuo (BRA)		SCHLICHTER Jorg (GER)		U21MS	Main Draw	R16	3 - 4	11:9 11:9 11:3 5:11 6:11 6:11 4:11	SCHLICHTER Jorg	
+2004	German Open Leipzig 2004	SVENSSON Robert (SWE)		SUCH Bartosz (POL)		U21MS	Main Draw	R16	3 - 4	5:11 11:9 13:11 5:11 5:11 11:7 4:11	SUCH Bartosz	
+2004	German Open Leipzig 2004	BAUM Patrick (GER)		BERTIN Christophe (FRA)		U21MS	Main Draw	QuarterFinal	2 - 4	8:11 5:11 11:8 11:9 7:11 8:11	BERTIN Christophe	
+2004	German Open Leipzig 2004	SEREDA Peter (SVK)		PISTEJ Lubomir (SVK)		U21MS	Main Draw	QuarterFinal	4 - 1	9:11 11:7 11:4 11:5 11:3	SEREDA Peter	
+2004	German Open Leipzig 2004	GORAK Daniel (POL)		AXELQVIST Johan (SWE)		U21MS	Main Draw	QuarterFinal	2 - 4	9:11 11:7 11:9 9:11 12:14 6:11	AXELQVIST Johan	
+2004	German Open Leipzig 2004	SCHLICHTER Jorg (GER)		SUCH Bartosz (POL)		U21MS	Main Draw	QuarterFinal	4 - 0	11:5 11:8 11:9 11:3	SCHLICHTER Jorg	
+2004	German Open Leipzig 2004	BERTIN Christophe (FRA)		SEREDA Peter (SVK)		U21MS	Main Draw	SemiFinal	4 - 0	11:9 11:6 11:8 11:4	BERTIN Christophe	
+2004	German Open Leipzig 2004	AXELQVIST Johan (SWE)		SCHLICHTER Jorg (GER)		U21MS	Main Draw	SemiFinal	4 - 1	7:11 11:4 12:10 11:3 11:9	AXELQVIST Johan	
+2004	German Open Leipzig 2004	BERTIN Christophe (FRA)		AXELQVIST Johan (SWE)		U21MS	Main Draw	Final	4 - 3	4:11 11:9 9:11 11:6 8:11 11:8 11:6	BERTIN Christophe
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 3 Total: 203
+
+Start
+Prev
+1
+2
+3
+Next
+End
+2004	German Open Leipzig 2004	LOVAS Petra (HUN)		PENG Luyang (CHN)		WS	Main Draw	R64	2 - 4	5:11 7:11 4:11 15:13 11:8 4:11	PENG Luyang	
+2004	German Open Leipzig 2004	FUKUOKA Haruna (JPN)		ELLO Vivien (HUN)		WS	Main Draw	R64	0 - 4	8:11 7:11 7:11 8:11	ELLO Vivien	
+2004	German Open Leipzig 2004	PAVLOVICH Veronika (BLR)		ZHANG Rui (HKG)		WS	Main Draw	R64	3 - 4	13:11 6:11 9:11 11:9 11:5 6:11 10:12	ZHANG Rui	
+2004	German Open Leipzig 2004	FUJINUMA Ai (JPN)		BOLLMEIER Nadine (GER)		WS	Main Draw	R64	4 - 3	11:13 3:11 11:8 11:4 11:9 6:11 11:3	FUJINUMA Ai	
+2004	German Open Leipzig 2004	PAOVIC Sandra (CRO)		KOSTROMINA Tatyana (1973) (BLR)		WS	Main Draw	R64	1 - 4	5:11 9:11 3:11 11:3 7:11	KOSTROMINA Tatyana (1973)	
+2004	German Open Leipzig 2004	SCHALL Elke (GER)		LI Qiangbing (AUT)		WS	Main Draw	R64	4 - 2	11:8 11:4 11:6 4:11 8:11 11:5	SCHALL Elke	
+2004	German Open Leipzig 2004	VACHOVCOVA Alena (CZE)		LAU Sui Fei (HKG)		WS	Main Draw	R64	3 - 4	11:6 11:5 5:11 11:9 4:11 6:11 7:11	LAU Sui Fei	
+2004	German Open Leipzig 2004	LIU Jia (AUT)		NECULA Iulia (ROU)		WS	Main Draw	R64	4 - 0	13:11 11:4 11:7 11:7	LIU Jia	
+2004	German Open Leipzig 2004	PETZNER Martina (AUT)		PASKAUSKIENE Ruta (LTU)		WS	Main Draw	R64	0 - 4	6:11 8:11 6:11 4:11	PASKAUSKIENE Ruta	
+2004	German Open Leipzig 2004	PALINA Irina (RUS)		GOURIN Anne-Sophie (FRA)		WS	Main Draw	R64	4 - 1	11:8 6:11 12:10 11:5 11:8	PALINA Irina	
+2004	German Open Leipzig 2004	HIURA Reiko (JPN)		PAVLOVICH Viktoria (BLR)		WS	Main Draw	R64	0 - 4	9:11 6:11 10:12 8:11	PAVLOVICH Viktoria	
+2004	German Open Leipzig 2004	SCHOPP Jie (GER)		DODEAN Daniela (ROU)		WS	Main Draw	R64	4 - 0	15:13 13:11 13:11 11:4	SCHOPP Jie	
+2004	German Open Leipzig 2004	ROBERTSON Laura (GER)		BATORFI Csilla (HUN)		WS	Main Draw	R64	4 - 2	4:11 11:8 7:11 11:5 11:7 11:5	ROBERTSON Laura	
+2004	German Open Leipzig 2004	GANINA Svetlana (RUS)		LANG Kristin (GER)		WS	Main Draw	R64	2 - 4	5:11 11:5 5:11 10:12 11:5 7:11	LANG Kristin	
+2004	German Open Leipzig 2004	CIGANKOVA Nataliya (BLR)		BOROS Tamara (CRO)		WS	Main Draw	R64	0 - 4	4:11 5:11 4:11 5:11	BOROS Tamara	
+2004	German Open Leipzig 2004	GUO Yue (CHN)		BOLSHAKOVA Natalia (RUS)		WS	Main Draw	R64	4 - 2	11:8 2:11 5:11 11:6 12:10 11:5	GUO Yue	
+2004	German Open Leipzig 2004	BAKULA Andrea (CRO)		FADEEVA Oxana (RUS)		WS	Main Draw	R64	4 - 3	11:8 11:7 11:8 10:12 8:11 9:11 11:7	BAKULA Andrea	
+2004	German Open Leipzig 2004	STRBIKOVA Renata (CZE)		SOLJA Amelie (AUT)		WS	Main Draw	R64	4 - 0	12:10 11:3 12:10 11:2	STRBIKOVA Renata	
+2004	German Open Leipzig 2004	DVORAK Galia (ESP)		LI Xiaoxia (CHN)		WS	Main Draw	R64	2 - 4	11:9 11:3 7:11 6:11 4:11 11:13	LI Xiaoxia	
+2004	German Open Leipzig 2004	TOTH Krisztina (HUN)		ROHR Meike (GER)		WS	Main Draw	R64	4 - 1	11:6 11:9 7:11 13:11 11:3	TOTH Krisztina	
+2004	German Open Leipzig 2004	GOBEL Jessica (GER)		FAZEKAS Maria (HUN)		WS	Main Draw	R64	4 - 1	11:5 8:11 11:9 11:9 11:9	GOBEL Jessica	
+2004	German Open Leipzig 2004	JANTA-LIPINSKA Anna (POL)		CAO Zhen (CHN)		WS	Main Draw	R64	0 - 4	9:11 6:11 5:11 6:11	CAO Zhen	
+2004	German Open Leipzig 2004	TIE Yana (HKG)		FUJII Hiroko (JPN)		WS	Main Draw	R64	1 - 4	10:12 12:10 8:11 9:11 9:11	FUJII Hiroko	
+2004	German Open Leipzig 2004	VACENOVSKA Iveta (CZE)		ZAMFIR Adriana (ROU)		WS	Main Draw	R64	0 - 4	8:11 7:11 10:12 9:11	ZAMFIR Adriana	
+2004	German Open Leipzig 2004	POTA Georgina (HUN)		KRAMER Tanja (GER)		WS	Main Draw	R64	4 - 1	11:9 7:11 11:9 11:8 11:5	POTA Georgina	
+2004	German Open Leipzig 2004	MOLNAR Zita (HUN)		SONG Ah Sim (HKG)		WS	Main Draw	R64	0 - 4	12:14 7:11 4:11 5:11	SONG Ah Sim	
+2004	German Open Leipzig 2004	STEFF Mihaela (ROU)		ZHU Fang (ESP)		WS	Main Draw	R64	4 - 3	8:11 11:9 11:4 11:7 8:11 7:11 11:1	STEFF Mihaela	
+2004	German Open Leipzig 2004	LI Yun Fei (BEL)		HIRANO Sayaka (JPN)		WS	Main Draw	R64	1 - 4	8:11 11:4 9:11 3:11 4:11	HIRANO Sayaka	
+2004	German Open Leipzig 2004	MOLNAR Cornelia (CRO)		DEMIENOVA Zuzana (SVK)		WS	Main Draw	R64	4 - 2	11:3 11:4 3:11 11:6 10:12 11:3	MOLNAR Cornelia	
+2004	German Open Leipzig 2004	SAMARA Elizabeta (ROU)		GUO Yan (1982) (CHN)		WS	Main Draw	R64	0 - 4	2:11 6:11 5:11 6:11	GUO Yan (1982)	
+2004	German Open Leipzig 2004	NIU Jianfeng (CHN)		PENG Luyang (CHN)		WS	Main Draw	R32	4 - 0	11:9 11:3 11:7 11:3	NIU Jianfeng	
+2004	German Open Leipzig 2004	ELLO Vivien (HUN)		ZHANG Rui (HKG)		WS	Main Draw	R32	4 - 3	12:14 13:11 11:9 6:11 12:14 11:8 11:7	ELLO Vivien	
+2004	German Open Leipzig 2004	FUJINUMA Ai (JPN)		KOSTROMINA Tatyana (1973) (BLR)		WS	Main Draw	R32	4 - 2	11:8 11:5 11:5 9:11 7:11 11:9	FUJINUMA Ai	
+2004	German Open Leipzig 2004	SCHALL Elke (GER)		LAU Sui Fei (HKG)		WS	Main Draw	R32	3 - 4	11:9 5:11 11:8 4:11 10:12 11:8 7:11	LAU Sui Fei	
+2004	German Open Leipzig 2004	LIU Jia (AUT)		PASKAUSKIENE Ruta (LTU)		WS	Main Draw	R32	2 - 4	7:11 9:11 11:9 11:9 5:11 9:11	PASKAUSKIENE Ruta	
+2004	German Open Leipzig 2004	PALINA Irina (RUS)		PAVLOVICH Viktoria (BLR)		WS	Main Draw	R32	1 - 4	7:11 8:11 11:9 8:11 3:11	PAVLOVICH Viktoria	
+2004	German Open Leipzig 2004	SCHOPP Jie (GER)		ROBERTSON Laura (GER)		WS	Main Draw	R32	4 - 3	11:9 11:7 13:11 10:12 9:11 8:11 11:4	SCHOPP Jie	
+2004	German Open Leipzig 2004	LANG Kristin (GER)		BOROS Tamara (CRO)		WS	Main Draw	R32	3 - 4	7:11 9:11 4:11 11:9 11:8 11:3 6:11	BOROS Tamara	
+2004	German Open Leipzig 2004	GUO Yue (CHN)		BAKULA Andrea (CRO)		WS	Main Draw	R32	4 - 0	11:6 11:9 11:6 11:5	GUO Yue	
+2004	German Open Leipzig 2004	STRBIKOVA Renata (CZE)		LI Xiaoxia (CHN)		WS	Main Draw	R32	0 - 4	4:11 9:11 6:11 6:11	LI Xiaoxia	
+2004	German Open Leipzig 2004	TOTH Krisztina (HUN)		GOBEL Jessica (GER)		WS	Main Draw	R32	4 - 1	11:6 11:9 9:11 14:12 11:8	TOTH Krisztina	
+2004	German Open Leipzig 2004	ERDELJI Silvija (SRB)		CAO Zhen (CHN)		WS	Main Draw	R32	2 - 4	7:11 12:14 11:9 9:11 11:7 7:11	CAO Zhen	
+2004	German Open Leipzig 2004	FUJII Hiroko (JPN)		ZAMFIR Adriana (ROU)		WS	Main Draw	R32	4 - 3	9:11 16:14 6:11 11:6 6:11 11:8 11:5	FUJII Hiroko	
+2004	German Open Leipzig 2004	POTA Georgina (HUN)		SONG Ah Sim (HKG)		WS	Main Draw	R32	4 - 2	11:1 11:9 11:5 5:11 9:11 12:10	POTA Georgina	
+2004	German Open Leipzig 2004	STEFF Mihaela (ROU)		HIRANO Sayaka (JPN)		WS	Main Draw	R32	4 - 0	11:7 11:6 11:4 11:7	STEFF Mihaela	
+2004	German Open Leipzig 2004	MOLNAR Cornelia (CRO)		GUO Yan (1982) (CHN)		WS	Main Draw	R32	0 - 4	8:11 6:11 7:11 8:11	GUO Yan (1982)	
+2004	German Open Leipzig 2004	NIU Jianfeng (CHN)		ELLO Vivien (HUN)		WS	Main Draw	R16	4 - 0	11:7 11:5 11:5 11:3	NIU Jianfeng	
+2004	German Open Leipzig 2004	FUJINUMA Ai (JPN)		LAU Sui Fei (HKG)		WS	Main Draw	R16	3 - 4	10:12 6:11 13:15 11:4 11:9 12:10 8:11	LAU Sui Fei	
+2004	German Open Leipzig 2004	PASKAUSKIENE Ruta (LTU)		PAVLOVICH Viktoria (BLR)		WS	Main Draw	R16	2 - 4	11:2 5:11 11:6 8:11 4:11 9:11	PAVLOVICH Viktoria	
+2004	German Open Leipzig 2004	SCHOPP Jie (GER)		BOROS Tamara (CRO)		WS	Main Draw	R16	0 - 4	4:11 7:11 8:11 9:11	BOROS Tamara	
+2004	German Open Leipzig 2004	GUO Yue (CHN)		LI Xiaoxia (CHN)		WS	Main Draw	R16	1 - 4	8:11 12:14 11:8 6:11 8:11	LI Xiaoxia	
+2004	German Open Leipzig 2004	TOTH Krisztina (HUN)		CAO Zhen (CHN)		WS	Main Draw	R16	1 - 4	4:11 11:8 6:11 8:11 8:11	CAO Zhen	
+2004	German Open Leipzig 2004	FUJII Hiroko (JPN)		POTA Georgina (HUN)		WS	Main Draw	R16	0 - 4	6:11 6:11 11:13 7:11	POTA Georgina	
+2004	German Open Leipzig 2004	STEFF Mihaela (ROU)		GUO Yan (1982) (CHN)		WS	Main Draw	R16	2 - 4	11:13 6:11 8:11 11:8 11:7 10:12	GUO Yan (1982)	
+2004	German Open Leipzig 2004	NIU Jianfeng (CHN)		LAU Sui Fei (HKG)		WS	Main Draw	QuarterFinal	4 - 0	11:5 11:7 11:3 11:4	NIU Jianfeng	
+2004	German Open Leipzig 2004	PAVLOVICH Viktoria (BLR)		BOROS Tamara (CRO)		WS	Main Draw	QuarterFinal	0 - 4	7:11 3:11 5:11 9:11	BOROS Tamara	
+2004	German Open Leipzig 2004	LI Xiaoxia (CHN)		CAO Zhen (CHN)		WS	Main Draw	QuarterFinal	4 - 1	11:4 11:9 11:5 5:11 11:5	LI Xiaoxia	
+2004	German Open Leipzig 2004	POTA Georgina (HUN)		GUO Yan (1982) (CHN)		WS	Main Draw	QuarterFinal	2 - 4	5:11 11:6 11:8 2:11 2:11 10:12	GUO Yan (1982)	
+2004	German Open Leipzig 2004	NIU Jianfeng (CHN)		BOROS Tamara (CRO)		WS	Main Draw	SemiFinal	4 - 2	11:6 9:11 11:9 6:11 11:4 11:8	NIU Jianfeng	
+2004	German Open Leipzig 2004	LI Xiaoxia (CHN)		GUO Yan (1982) (CHN)		WS	Main Draw	SemiFinal	2 - 4	12:10 11:6 5:11 7:11 6:11 5:11	GUO Yan (1982)	
+2004	German Open Leipzig 2004	NIU Jianfeng (CHN)		GUO Yan (1982) (CHN)		WS	Main Draw	Final	4 - 1	11:6 11:7 4:11 11:4 11:8	NIU Jianfeng	
+2004	German Open Leipzig 2004	RAMIREZ Sara (ESP)		BOBETIC Andrea (CRO)		WS	Qualification		4 - 1	11:8 5:11 11:9 11:9 11:9	RAMIREZ Sara	
+2004	German Open Leipzig 2004	LI Yun Fei (BEL)		BOBETIC Andrea (CRO)		WS	Qualification	QR2	4 - 0	11:5 11:6 11:5 11:4	LI Yun Fei	
+2004	German Open Leipzig 2004	LI Yun Fei (BEL)		RAMIREZ Sara (ESP)		WS	Qualification	3	4 - 1	11:6 11:13 12:10 12:10 11:7	LI Yun Fei	
+2004	German Open Leipzig 2004	KMOTORKOVA Lenka (SVK)		CECHOVA Dana (CZE)		WS	Qualification		1 - 4	11:8 6:11 8:11 7:11 9:11	CECHOVA Dana	
+2004	German Open Leipzig 2004	HIURA Reiko (JPN)		CECHOVA Dana (CZE)		WS	Qualification	QR2	4 - 1	9:11 12:10 11:8 11:3 11:7	HIURA Reiko	
+2004	German Open Leipzig 2004	HIURA Reiko (JPN)		KMOTORKOVA Lenka (SVK)		WS	Qualification	3	4 - 2	9:11 6:11 11:7 11:8 11:7 11:9	HIURA Reiko	
+2004	German Open Leipzig 2004	BUKA-EDEL Ekaterina (RUS)		SAMARA Elizabeta (ROU)		WS	Qualification		2 - 4	6:11 8:11 11:8 4:11 13:11 8:11	SAMARA Elizabeta	
+2004	German Open Leipzig 2004	ERDELJI Silvija (SRB)		SAMARA Elizabeta (ROU)		WS	Qualification	QR2	4 - 3	12:10 9:11 13:11 8:11 5:11 11:7 11:7	ERDELJI Silvija	
+2004	German Open Leipzig 2004	ERDELJI Silvija (SRB)		BUKA-EDEL Ekaterina (RUS)		WS	Qualification	3	4 - 0	12:10 11:1 11:6 11:5	ERDELJI Silvija	
+2004	German Open Leipzig 2004	CIGANKOVA Nataliya (BLR)		JANTA-LIPINSKA Anna (POL)		WS	Qualification		3 - 4	11:5 11:9 11:7 5:11 9:11 11:13 8:11	JANTA-LIPINSKA Anna	
+2004	German Open Leipzig 2004	MELNIK Galina (RUS)		JANTA-LIPINSKA Anna (POL)		WS	Qualification	QR2	2 - 4	11:7 9:11 11:13 5:11 11:8 12:14	JANTA-LIPINSKA Anna	
+2004	German Open Leipzig 2004	MELNIK Galina (RUS)		CIGANKOVA Nataliya (BLR)		WS	Qualification	3	2 - 4	11:5 13:11 9:11 8:11 6:11 9:11	CIGANKOVA Nataliya	
+2004	German Open Leipzig 2004	PETUKHOVA Evgeniya (RUS)		PERGEL Szandra (HUN)		WS	Qualification		1 - 4	7:11 8:11 3:11 11:8 15:17	PERGEL Szandra	
+2004	German Open Leipzig 2004	KRAMER Tanja (GER)		PERGEL Szandra (HUN)		WS	Qualification	QR2	4 - 1	11:8 9:11 11:4 11:2 11:3	KRAMER Tanja	
+2004	German Open Leipzig 2004	KRAMER Tanja (GER)		PETUKHOVA Evgeniya (RUS)		WS	Qualification	3	4 - 1	11:8 11:7 11:5 4:11 11:6	KRAMER Tanja	
+2004	German Open Leipzig 2004	LI Bin (HUN)		CREEMERS Linda (NED)		WS	Qualification		2 - 4	11:1 11:9 10:12 8:11 6:11 8:11	CREEMERS Linda	
+2004	German Open Leipzig 2004	LANG Kristin (GER)		CREEMERS Linda (NED)		WS	Qualification	QR2	4 - 0	11:7 11:8 11:7 11:1	LANG Kristin	
+2004	German Open Leipzig 2004	LANG Kristin (GER)		LI Bin (HUN)		WS	Qualification	3	4 - 2	8:11 10:12 11:7 11:6 11:6 12:10	LANG Kristin	
+2004	German Open Leipzig 2004	VORONOVA Anastasia (RUS)		VAN ULSEN Sigrid (NED)		WS	Qualification		1 - 4	10:12 6:11 11:9 7:11 8:11	VAN ULSEN Sigrid	
+2004	German Open Leipzig 2004	LI Qiangbing (AUT)		VAN ULSEN Sigrid (NED)		WS	Qualification	QR2	4 - 2	11:9 11:5 8:11 11:5 9:11 11:9	LI Qiangbing	
+2004	German Open Leipzig 2004	LI Qiangbing (AUT)		VORONOVA Anastasia (RUS)		WS	Qualification	3	4 - 1	11:7 11:7 11:6 9:11 11:7	LI Qiangbing	
+2004	German Open Leipzig 2004	SCHELD Alexandra (GER)		SHABAN Zeina (JOR)		WS	Qualification		4 - 0	11:6 11:9 11:4 11:7	SCHELD Alexandra	
+2004	German Open Leipzig 2004	PAVLOVICH Veronika (BLR)		SHABAN Zeina (JOR)		WS	Qualification	QR2	4 - 0	16:14 11:5 11:5 11:7	PAVLOVICH Veronika	
+2004	German Open Leipzig 2004	PAVLOVICH Veronika (BLR)		SCHELD Alexandra (GER)		WS	Qualification	3	4 - 1	11:7 11:9 6:11 11:8 11:5	PAVLOVICH Veronika	
+2004	German Open Leipzig 2004	HEINE Veronika (AUT)		PRADES Alba (ESP)		WS	Qualification		4 - 3	12:14 12:10 11:4 11:4 6:11 11:13 11:9	HEINE Veronika	
+2004	German Open Leipzig 2004	FUJII Hiroko (JPN)		PRADES Alba (ESP)		WS	Qualification	QR2	4 - 1	11:6 12:10 3:11 11:5 11:5	FUJII Hiroko	
+2004	German Open Leipzig 2004	FUJII Hiroko (JPN)		HEINE Veronika (AUT)		WS	Qualification	3	4 - 0	12:10 11:6 11:6 11:9	FUJII Hiroko	
+2004	German Open Leipzig 2004	PIETKIEWICZ Monika (POL)		OPDENCAMP Karen (BEL)		WS	Qualification		4 - 0	13:11 12:10 11:9 11:9	PIETKIEWICZ Monika	
+2004	German Open Leipzig 2004	LOVAS Petra (HUN)		OPDENCAMP Karen (BEL)		WS	Qualification	QR2	4 - 0	11:3 11:6 13:11 11:3	LOVAS Petra	
+2004	German Open Leipzig 2004	LOVAS Petra (HUN)		PIETKIEWICZ Monika (POL)		WS	Qualification	3	4 - 1	11:6 16:18 11:4 12:10 11:9	LOVAS Petra	
+2004	German Open Leipzig 2004	BOLSHAKOVA Natalia (RUS)		DRINKHALL Joanna (ENG)		WS	Qualification		4 - 1	12:10 11:9 11:7 8:11 11:4	BOLSHAKOVA Natalia	
+2004	German Open Leipzig 2004	ELLO Vivien (HUN)		DRINKHALL Joanna (ENG)		WS	Qualification	QR2	4 - 2	12:10 11:7 7:11 7:11 11:3 11:8	ELLO Vivien	
+2004	German Open Leipzig 2004	ELLO Vivien (HUN)		BOLSHAKOVA Natalia (RUS)		WS	Qualification	3	4 - 1	10:12 11:3 11:6 11:9 11:4	ELLO Vivien	
+2004	German Open Leipzig 2004	LUCZAKOWSKA Daria (POL)		SCHNEIDER Katharina (GER)		WS	Qualification		4 - 1	12:10 5:11 11:7 11:9 11:7	LUCZAKOWSKA Daria	
+2004	German Open Leipzig 2004	ZHU Fang (ESP)		SCHNEIDER Katharina (GER)		WS	Qualification	QR2	4 - 1	10:12 11:2 11:8 11:3 11:6	ZHU Fang	
+2004	German Open Leipzig 2004	ZHU Fang (ESP)		LUCZAKOWSKA Daria (POL)		WS	Qualification	3	4 - 3	11:4 7:11 11:7 11:7 8:11 9:11 11:8	ZHU Fang	
+2004	German Open Leipzig 2004	XU Chris (CAN)		GOLOTA Marta (POL)		WS	Qualification		4 - 3	4:11 11:9 11:8 11:9 9:11 10:12 11:6	XU Chris	
+2004	German Open Leipzig 2004	ROBERTSON Laura (GER)		GOLOTA Marta (POL)		WS	Qualification	QR2	4 - 1	8:11 11:4 11:4 11:6 11:7	ROBERTSON Laura	
+2004	German Open Leipzig 2004	ROBERTSON Laura (GER)		XU Chris (CAN)		WS	Qualification	3	4 - 0	11:5 11:8 11:7 11:5	ROBERTSON Laura
+2004	German Open Leipzig 2004	VACENOVSKA Iveta (CZE)		PEREZ Sara (ESP)		WS	Qualification	QR2	4 - 0	11:2 11:7 11:8 11:7	VACENOVSKA Iveta	
+2004	German Open Leipzig 2004	ROHR Meike (GER)		PERHOC Ines (CRO)		WS	Qualification		4 - 3	11:2 11:4 6:11 12:14 11:8 6:11 11:6	ROHR Meike	
+2004	German Open Leipzig 2004	RATHER Jasna (USA)		PERHOC Ines (CRO)		WS	Qualification	QR2	4 - 1	11:9 11:2 11:6 9:11 11:6	RATHER Jasna	
+2004	German Open Leipzig 2004	RATHER Jasna (USA)		ROHR Meike (GER)		WS	Qualification	3	3 - 4	11:7 11:3 8:11 6:11 12:10 8:11 2:11	ROHR Meike	
+2004	German Open Leipzig 2004	ERDELJI Anamaria (SRB)		SCHNEIDER Jacqueline (GER)		WS	Qualification		4 - 0	11:5 11:1 11:2 11:5	ERDELJI Anamaria	
+2004	German Open Leipzig 2004	MOLNAR Zita (HUN)		SCHNEIDER Jacqueline (GER)		WS	Qualification	QR2	4 - 1	11:6 11:4 11:9 7:11 11:9	MOLNAR Zita	
+2004	German Open Leipzig 2004	MOLNAR Zita (HUN)		ERDELJI Anamaria (SRB)		WS	Qualification	3	4 - 2	8:11 11:3 6:11 11:5 12:10 11:4	MOLNAR Zita	
+2004	German Open Leipzig 2004	CICHOCKA Magdalena (POL)		WALKER Georgina (ENG)		WS	Qualification		4 - 0	11:6 11:2 11:4 13:11	CICHOCKA Magdalena	
+2004	German Open Leipzig 2004	BAKULA Andrea (CRO)		WALKER Georgina (ENG)		WS	Qualification	QR2	4 - 2	10:12 11:7 11:3 11:3 10:12 11:3	BAKULA Andrea	
+2004	German Open Leipzig 2004	BAKULA Andrea (CRO)		CICHOCKA Magdalena (POL)		WS	Qualification	3	4 - 1	11:8 11:6 11:6 6:11 11:6	BAKULA Andrea	
+2004	German Open Leipzig 2004	KASABOVA Asya (BUL)		PETZNER Martina (AUT)		WS	Qualification		1 - 4	11:5 7:11 9:11 8:11 4:11	PETZNER Martina	
+2004	German Open Leipzig 2004	VACHOVCOVA Alena (CZE)		PETZNER Martina (AUT)		WS	Qualification	QR2	1 - 4	8:11 11:5 10:12 5:11 7:11	PETZNER Martina	
+2004	German Open Leipzig 2004	VACHOVCOVA Alena (CZE)		KASABOVA Asya (BUL)		WS	Qualification	3	4 - 3	11:5 5:11 5:11 11:8 11:5 10:12 18:16	VACHOVCOVA Alena	
+2004	German Open Leipzig 2004	WAGGERMAYER Elena (AUT)		KOLAROVA Dominika (SVK)		WS	Qualification		4 - 2	14:16 17:15 11:8 11:8 12:14 11:4	WAGGERMAYER Elena	
+2004	German Open Leipzig 2004	GOURIN Anne-Sophie (FRA)		KOLAROVA Dominika (SVK)		WS	Qualification	QR2	4 - 2	11:13 10:12 11:4 11:9 11:9 11:5	GOURIN Anne-Sophie	
+2004	German Open Leipzig 2004	GOURIN Anne-Sophie (FRA)		WAGGERMAYER Elena (AUT)		WS	Qualification	3	4 - 1	12:10 11:9 11:6 7:11 11:8	GOURIN Anne-Sophie	
+2004	German Open Leipzig 2004	SMISTIKOVA Martina (CZE)		XU Jie (1982) (POL)		WS	Qualification		1 - 4	13:11 7:11 5:11 5:11 9:11	XU Jie (1982)	
+2004	German Open Leipzig 2004	GOBEL Jessica (GER)		XU Jie (1982) (POL)		WS	Qualification	QR2	4 - 1	9:11 11:6 11:8 11:6 11:5	GOBEL Jessica	
+2004	German Open Leipzig 2004	GOBEL Jessica (GER)		SMISTIKOVA Martina (CZE)		WS	Qualification	3	4 - 1	11:5 15:13 12:10 6:11 11:6	GOBEL Jessica	
+2004	German Open Leipzig 2004	ROHR Gaby (GER)		HAAN Simone (LUX)		WS	Qualification		4 - 1	11:7 11:9 11:7 12:14 11:8	ROHR Gaby	
+2004	German Open Leipzig 2004	DEMIENOVA Zuzana (SVK)		HAAN Simone (LUX)		WS	Qualification	QR2	4 - 2	8:11 13:11 10:12 11:5 14:12 11:3	DEMIENOVA Zuzana	
+2004	German Open Leipzig 2004	DEMIENOVA Zuzana (SVK)		ROHR Gaby (GER)		WS	Qualification	3	4 - 3	11:0 6:11 10:12 2:11 11:7 11:7 11:7	DEMIENOVA Zuzana	
+2004	German Open Leipzig 2004	BOLLMEIER Nadine (GER)		KROUSTALLI Maria (GRE)		WS	Qualification		4 - 1	12:10 11:13 11:2 11:9 11:8	BOLLMEIER Nadine	
+2004	German Open Leipzig 2004	DODEAN Daniela (ROU)		HARTMANN Carole (LUX)		WS	Qualification		4 - 2	11:8 11:7 12:10 9:11 13:15 11:4	DODEAN Daniela	
+2004	German Open Leipzig 2004	IVANCAN Irene (GER)		HARTMANN Carole (LUX)		WS	Qualification	QR2	4 - 0	11:8 12:10 11:5 11:6	IVANCAN Irene	
+2004	German Open Leipzig 2004	IVANCAN Irene (GER)		DODEAN Daniela (ROU)		WS	Qualification	3	0 - 4	11:13 8:11 13:15 9:11	DODEAN Daniela	
+2004	German Open Leipzig 2004	NECULA Iulia (ROU)		SOLJA Amelie (AUT)		WS	Qualification		4 - 1	4:11 11:6 11:6 11:4 11:9	NECULA Iulia	
+2004	German Open Leipzig 2004	GATINSKA Katalina (BUL)		SOLJA Amelie (AUT)		WS	Qualification	QR2	0 - 4	9:11 9:11 10:12 7:11	SOLJA Amelie	
+2004	German Open Leipzig 2004	GATINSKA Katalina (BUL)		NECULA Iulia (ROU)		WS	Qualification	3	4 - 1	11:8 11:8 11:6 6:11 14:12	GATINSKA Katalina	
+2004	German Open Leipzig 2004	DVORAK Galia (ESP)		DETRIGNE Carol (BEL)		WS	Qualification		4 - 0	11:3 11:4 11:9 11:6	DVORAK Galia	
+2004	German Open Leipzig 2004	KERTAI Rita (HUN)		DETRIGNE Carol (BEL)		WS	Qualification	QR2	4 - 1	11:7 10:12 11:7 11:9 11:9	KERTAI Rita	
+2004	German Open Leipzig 2004	KERTAI Rita (HUN)		DVORAK Galia (ESP)		WS	Qualification	3	2 - 4	7:11 11:8 7:11 4:11 12:10 4:11	DVORAK Galia	
+2004	German Open Leipzig 2004	WEBEROVA Ivana (CZE)		SHEN Yanfei (ESP)		WS	Qualification		0 - 4	12:14 3:11 6:11 10:12	SHEN Yanfei	
+2004	German Open Leipzig 2004	PAOVIC Sandra (CRO)		SHEN Yanfei (ESP)		WS	Qualification	QR2	4 - 1	11:8 11:5 11:6 9:11 11:6	PAOVIC Sandra	
+2004	German Open Leipzig 2004	PAOVIC Sandra (CRO)		WEBEROVA Ivana (CZE)		WS	Qualification	3	4 - 0	11:5 11:7 11:7 11:7	PAOVIC Sandra	
+2004	German Open Leipzig 2004	VAN ULSEN Sigrid (NED)		SHABAN Zeina (JOR)		U21WS	Qualification		1 - 3	11:6 12:14 7:11 9:11	SHABAN Zeina	
+2004	German Open Leipzig 2004	VACENOVSKA Iveta (CZE)		SHABAN Zeina (JOR)		U21WS	Qualification	QR2	3 - 1	11:7 8:11 11:3 11:2	VACENOVSKA Iveta	
+2004	German Open Leipzig 2004	VACENOVSKA Iveta (CZE)		VAN ULSEN Sigrid (NED)		U21WS	Qualification	3	3 - 1	11:8 9:11 11:7 11:7	VACENOVSKA Iveta	
+2004	German Open Leipzig 2004	CREEMERS Linda (NED)		MAMALIGA Andreea (ROU)		U21WS	Qualification		2 - 3	11:8 5:11 11:9 9:11 10:12	MAMALIGA Andreea	
+2004	German Open Leipzig 2004	IVANCAN Irene (GER)		MAMALIGA Andreea (ROU)		U21WS	Qualification	QR2	3 - 1	4:11 11:9 11:5 11:9	IVANCAN Irene	
+2004	German Open Leipzig 2004	IVANCAN Irene (GER)		CREEMERS Linda (NED)		U21WS	Qualification	3	3 - 0	11:8 11:5 11:9	IVANCAN Irene	
+2004	German Open Leipzig 2004	PERGEL Szandra (HUN)		DRINKHALL Joanna (ENG)		U21WS	Qualification		1 - 3	2:11 12:10 6:11 9:11	DRINKHALL Joanna	
+2004	German Open Leipzig 2004	PAOVIC Sandra (CRO)		DRINKHALL Joanna (ENG)		U21WS	Qualification	QR2	3 - 0	11:4 11:9 11:6	PAOVIC Sandra	
+2004	German Open Leipzig 2004	PAOVIC Sandra (CRO)		PERGEL Szandra (HUN)		U21WS	Qualification	3	3 - 0	11:9 11:5 11:3	PAOVIC Sandra	
+2004	German Open Leipzig 2004	SAMARA Elizabeta (ROU)		GOLOTA Marta (POL)		U21WS	Qualification		3 - 0	11:7 11:5 11:8	SAMARA Elizabeta	
+2004	German Open Leipzig 2004	DVORAK Galia (ESP)		GOLOTA Marta (POL)		U21WS	Qualification	QR2	3 - 1	8:11 11:7 11:3 11:8	DVORAK Galia	
+2004	German Open Leipzig 2004	DVORAK Galia (ESP)		SAMARA Elizabeta (ROU)		U21WS	Qualification	3	2 - 3	11:8 3:11 11:6 7:11 5:11	SAMARA Elizabeta	
+2004	German Open Leipzig 2004	JANTA-LIPINSKA Anna (POL)		SCHNEIDER Katharina (GER)		U21WS	Qualification		0 - 3	3:11 9:11 7:11	SCHNEIDER Katharina	
+2004	German Open Leipzig 2004	NECULA Iulia (ROU)		SCHNEIDER Katharina (GER)		U21WS	Qualification	QR2	3 - 1	12:10 10:12 11:7 11:6	NECULA Iulia	
+2004	German Open Leipzig 2004	NECULA Iulia (ROU)		JANTA-LIPINSKA Anna (POL)		U21WS	Qualification	3	2 - 3	7:11 11:7 11:9 4:11 12:14	JANTA-LIPINSKA Anna	
+2004	German Open Leipzig 2004	CECHOVA Dana (CZE)		SCHNEIDER Jacqueline (GER)		U21WS	Qualification		3 - 0	11:7 11:9 11:6	CECHOVA Dana	
+2004	German Open Leipzig 2004	DODEAN Daniela (ROU)		SCHNEIDER Jacqueline (GER)		U21WS	Qualification	QR2	3 - 1	11:9 8:11 11:8 11:6	DODEAN Daniela	
+2004	German Open Leipzig 2004	DODEAN Daniela (ROU)		CECHOVA Dana (CZE)		U21WS	Qualification	3	3 - 2	6:11 11:5 7:11 11:6 11:6	DODEAN Daniela	
+2004	German Open Leipzig 2004	BOBETIC Andrea (CRO)		CHIRAMETLI Alexandra (ROU)		U21WS	Qualification		3 - 0	11:8 11:9 20:18	BOBETIC Andrea	
+2004	German Open Leipzig 2004	SMISTIKOVA Martina (CZE)		CHIRAMETLI Alexandra (ROU)		U21WS	Qualification	QR2	3 - 0	11:2 11:9 12:10	SMISTIKOVA Martina	
+2004	German Open Leipzig 2004	SMISTIKOVA Martina (CZE)		BOBETIC Andrea (CRO)		U21WS	Qualification	3	3 - 1	11:9 9:11 11:8 12:10	SMISTIKOVA Martina	
+2004	German Open Leipzig 2004	RAMIREZ Sara (ESP)		PERHOC Ines (CRO)		U21WS	Qualification		3 - 2	8:11 11:6 9:11 11:7 11:1	RAMIREZ Sara	
+2004	German Open Leipzig 2004	ROHR Gaby (GER)		PERHOC Ines (CRO)		U21WS	Qualification	QR2	3 - 0	11:9 11:7 11:8	ROHR Gaby	
+2004	German Open Leipzig 2004	ROHR Gaby (GER)		RAMIREZ Sara (ESP)		U21WS	Qualification	3	3 - 1	11:7 11:9 8:11 11:8	ROHR Gaby	
+2004	German Open Leipzig 2004	KMOTORKOVA Lenka (SVK)		WALKER Georgina (ENG)		U21WS	Qualification		3 - 1	8:11 11:7 13:11 11:7	KMOTORKOVA Lenka	
+2004	German Open Leipzig 2004	CICHOCKA Magdalena (POL)		WALKER Georgina (ENG)		U21WS	Qualification	QR2	3 - 0	11:8 11:6 11:7	CICHOCKA Magdalena	
+2004	German Open Leipzig 2004	CICHOCKA Magdalena (POL)		KMOTORKOVA Lenka (SVK)		U21WS	Qualification	3	3 - 2	11:6 9:11 7:11 11:5 12:10	CICHOCKA Magdalena	
+2004	German Open Leipzig 2004	PETUKHOVA Evgeniya (RUS)		PETZNER Martina (AUT)		U21WS	Qualification		3 - 2	10:12 11:6 11:6 9:11 11:4	PETUKHOVA Evgeniya	
+2004	German Open Leipzig 2004	ERDELJI Anamaria (SRB)		PETZNER Martina (AUT)		U21WS	Qualification	QR2	3 - 0	11:4 11:6 12:10	ERDELJI Anamaria	
+2004	German Open Leipzig 2004	ERDELJI Anamaria (SRB)		PETUKHOVA Evgeniya (RUS)		U21WS	Qualification	3	3 - 1	11:9 5:11 11:6 11:5	ERDELJI Anamaria	
+2004	German Open Leipzig 2004	LI Bin (HUN)		KOLAROVA Dominika (SVK)		U21WS	Qualification		3 - 0	11:4 11:9 11:9	LI Bin	
+2004	German Open Leipzig 2004	ROHR Meike (GER)		KOLAROVA Dominika (SVK)		U21WS	Qualification	QR2	3 - 1	12:10 11:8 8:11 12:10	ROHR Meike	
+2004	German Open Leipzig 2004	ROHR Meike (GER)		LI Bin (HUN)		U21WS	Qualification	3	0 - 3	3:11 8:11 8:11	LI Bin	
+2004	German Open Leipzig 2004	VORONOVA Anastasia (RUS)		HAAN Simone (LUX)		U21WS	Qualification		0 - 3	7:11 8:11 8:11	HAAN Simone	
+2004	German Open Leipzig 2004	LUCZAKOWSKA Daria (POL)		SOLJA Amelie (AUT)		U21WS	Qualification		2 - 3	11:8 7:11 11:9 10:12 5:11	SOLJA Amelie	
+2004	German Open Leipzig 2004	HEINE Veronika (AUT)		KROUSTALLI Maria (GRE)		U21WS	Qualification	QR2	3 - 2	11:3 8:11 11:9 4:11 13:11	HEINE Veronika	
+2004	German Open Leipzig 2004	LUCZAKOWSKA Daria (POL)		KROUSTALLI Maria (GRE)		U21WS	Qualification	3	3 - 1	11:1 4:11 12:10 11:8	LUCZAKOWSKA Daria	
+2004	German Open Leipzig 2004	HEINE Veronika (AUT)		SOLJA Amelie (AUT)		U21WS	Qualification	QR4	0 - 3	4:11 6:11 3:11	SOLJA Amelie	
+2004	German Open Leipzig 2004	LUCZAKOWSKA Daria (POL)		HEINE Veronika (AUT)		U21WS	Qualification	5	3 - 2	6:11 11:8 4:11 11:8 12:10	LUCZAKOWSKA Daria	
+2004	German Open Leipzig 2004	KROUSTALLI Maria (GRE)		SOLJA Amelie (AUT)		U21WS	Qualification	6	0 - 3	1:11 1:11 3:11	SOLJA Amelie	
+2004	German Open Leipzig 2004	BOLSHAKOVA Natalia (RUS)		DETRIGNE Carol (BEL)		U21WS	Qualification		3 - 1	6:11 11:7 11:9 11:6	BOLSHAKOVA Natalia	
+2004	German Open Leipzig 2004	PIETKIEWICZ Monika (POL)		HARTMANN Carole (LUX)		U21WS	Qualification	QR2	3 - 0	11:8 11:2 11:8	PIETKIEWICZ Monika	
+2004	German Open Leipzig 2004	BOLSHAKOVA Natalia (RUS)		HARTMANN Carole (LUX)		U21WS	Qualification	3	3 - 2	9:11 13:15 11:5 11:9 11:6	BOLSHAKOVA Natalia	
+2004	German Open Leipzig 2004	PIETKIEWICZ Monika (POL)		DETRIGNE Carol (BEL)		U21WS	Qualification	QR4	3 - 1	11:3 11:6 10:12 11:8	PIETKIEWICZ Monika	
+2004	German Open Leipzig 2004	BOLSHAKOVA Natalia (RUS)		PIETKIEWICZ Monika (POL)		U21WS	Qualification	5	3 - 2	11:9 11:6 9:11 7:11 11:8	BOLSHAKOVA Natalia	
+2004	German Open Leipzig 2004	HARTMANN Carole (LUX)		DETRIGNE Carol (BEL)		U21WS	Qualification	6	3 - 0	11:5 12:10 11:8	HARTMANN Carole	
+2004	German Open Leipzig 2004	PAOVIC Sandra (CRO)		SOLJA Amelie (AUT)		U21WS	Qualification	QR16	3 - 0	11:5 11:6 11:9	PAOVIC Sandra	
+2004	German Open Leipzig 2004	SCHNEIDER Katharina (GER)		BOLSHAKOVA Natalia (RUS)		U21WS	Qualification	QR16	1 - 3	11:9 5:11 5:11 9:11	BOLSHAKOVA Natalia	
+2004	German Open Leipzig 2004	DODEAN Daniela (ROU)		LI Bin (HUN)		U21WS	Qualification	QR16	3 - 1	11:7 11:6 10:12 14:12	DODEAN Daniela	
+2004	German Open Leipzig 2004	SMISTIKOVA Martina (CZE)		ERDELJI Anamaria (SRB)		U21WS	Qualification	QR16	3 - 1	11:7 4:11 11:8 14:12	SMISTIKOVA Martina	
+2004	German Open Leipzig 2004	ROHR Gaby (GER)		CICHOCKA Magdalena (POL)		U21WS	Qualification	QR16	2 - 3	8:11 11:5 11:4 7:11 8:11	CICHOCKA Magdalena	
+2004	German Open Leipzig 2004	VACENOVSKA Iveta (CZE)		LI Qiangbing (AUT)		U21WS	Main Draw	R16	1 - 4	8:11 11:5 10:12 4:11 6:11	LI Qiangbing	
+2004	German Open Leipzig 2004	LANG Kristin (GER)		DODEAN Daniela (ROU)		U21WS	Main Draw	R16	4 - 1	11:7 11:4 12:10 5:11 11:9	LANG Kristin	
+2004	German Open Leipzig 2004	IVANCAN Irene (GER)		FUKUOKA Haruna (JPN)		U21WS	Main Draw	R16	0 - 4	8:11 7:11 6:11 8:11	FUKUOKA Haruna	
+2004	German Open Leipzig 2004	BOLSHAKOVA Natalia (RUS)		HIURA Reiko (JPN)		U21WS	Main Draw	R16	1 - 4	9:11 7:11 11:3 10:12 6:11	HIURA Reiko	
+2004	German Open Leipzig 2004	ROBERTSON Laura (GER)		CICHOCKA Magdalena (POL)		U21WS	Main Draw	R16	4 - 0	11:4 11:8 11:5 21:19	ROBERTSON Laura	
+2004	German Open Leipzig 2004	HIRANO Sayaka (JPN)		LI Qiangbing (AUT)		U21WS	Main Draw	QuarterFinal	4 - 3	5:11 11:8 11:8 6:11 11:6 8:11 11:4	HIRANO Sayaka	
+2004	German Open Leipzig 2004	LANG Kristin (GER)		FUKUOKA Haruna (JPN)		U21WS	Main Draw	QuarterFinal	3 - 4	11:9 11:6 8:11 11:7 4:11 7:11 9:11	FUKUOKA Haruna	
+2004	German Open Leipzig 2004	SMISTIKOVA Martina (CZE)		HIURA Reiko (JPN)		U21WS	Main Draw	QuarterFinal	1 - 4	10:12 11:7 6:11 4:11 9:11	HIURA Reiko	
+2004	German Open Leipzig 2004	ROBERTSON Laura (GER)		PAOVIC Sandra (CRO)		U21WS	Main Draw	QuarterFinal	0 - 4	3:11 12:14 11:13 3:11	PAOVIC Sandra	
+2004	German Open Leipzig 2004	HIRANO Sayaka (JPN)		FUKUOKA Haruna (JPN)		U21WS	Main Draw	SemiFinal	4 - 3	11:3 11:3 5:11 6:11 13:11 10:12 11:9	HIRANO Sayaka	
+2004	German Open Leipzig 2004	HIURA Reiko (JPN)		PAOVIC Sandra (CRO)		U21WS	Main Draw	SemiFinal	4 - 1	11:5 11:4 11:13 11:4 11:3	HIURA Reiko	
+2004	German Open Leipzig 2004	HIRANO Sayaka (JPN)		HIURA Reiko (JPN)		U21WS	Main Draw	Final	4 - 1	11:6 9:11 12:10 11:7 11:8	HIRANO Sayaka	
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 82
+
+2004	German Open Leipzig 2004	HENZELL William (AUS)	ZALCBERG David (AUS)	DURAN Marc (ESP)	MACHADO Carlos (ESP)	MD	Qualification	QR128	1 - 3	11:2 9:11 6:11 10:12	DURAN Marc	MACHADO Carlos
+2004	German Open Leipzig 2004	HABESOHN Daniel (AUT)	PICHLER Michael (AUT)	MARKOVIC Rade (SRB)	MILOSEVIC Bojan (SRB)	MD	Qualification	QR128	2 - 3	11:8 11:5 11:13 12:14 6:11	MARKOVIC Rade	MILOSEVIC Bojan
+2004	German Open Leipzig 2004	MAIER Christoph (AUT)	PRESSLMAYER Bernhard (AUT)	GRIGOREV Artur (RUS)	SHEVCHENKO Semen (RUS)	MD	Qualification	QR128	1 - 3	5:11 2:11 11:6 4:11	GRIGOREV Artur	SHEVCHENKO Semen
+2004	German Open Leipzig 2004	FENG Zhe (BUL)	LENGEROV Kostadin (AUT)	CIHAK Marek (CZE)	GAVLAS Antonin (CZE)	MD	Qualification	QR64	3 - 0	11:9 11:7 11:8	FENG Zhe	LENGEROV Kostadin
+2004	German Open Leipzig 2004	FENG Zhe (BUL)	LENGEROV Kostadin (AUT)	CHUANG Chih-Yuan (TPE)	CRISAN Adrian (ROU)	MD	Qualification	QR32	2 - 3	10:12 11:9 8:11 11:2 2:11	CHUANG Chih-Yuan	CRISAN Adrian
+2004	German Open Leipzig 2004	CHUMAKOU Dmitry (BLR)	SAMSONOV Vladimir (BLR)	FYNSK Daniel (DEN)	SORENSEN Mads (DEN)	MD	Qualification	QR64	3 - 0	11:9 13:11 11:5	CHUMAKOU Dmitry	SAMSONOV Vladimir
+2004	German Open Leipzig 2004	CHUMAKOU Dmitry (BLR)	SAMSONOV Vladimir (BLR)	GARDOS Krisztian (AUT)	GARDOS Robert (AUT)	MD	Qualification	QR32	0 - 3	6:11 9:11 5:11	GARDOS Krisztian	GARDOS Robert
+2004	German Open Leipzig 2004	CSABA Bence (CAN)	HINSE Pierre-Luc (CAN)	GORAK Daniel (POL)	SUCH Bartosz (POL)	MD	Qualification	QR128	0 - 3	9:11 9:11 5:11	GORAK Daniel	SUCH Bartosz
+2004	German Open Leipzig 2004	HAO Shuai (CHN)	ZHANG Chao (CHN)	JAKAB Janos (HUN)	MOLNAR Krisztian (HUN)	MD	Qualification	QR64	3 - 1	11:4 11:3 8:11 11:6	HAO Shuai	ZHANG Chao
+2004	German Open Leipzig 2004	HAO Shuai (CHN)	ZHANG Chao (CHN)	HEISTER Danny (NED)	WIJERS Barry (NED)	MD	Qualification	QR32	3 - 1	9:11 11:8 11:9 11:6	HAO Shuai	ZHANG Chao
+2004	German Open Leipzig 2004	HAO Shuai (CHN)	ZHANG Chao (CHN)	KISHIKAWA Seiya (JPN)	SAKAMOTO Ryusuke (JPN)	MD	Qualification	QR16	2 - 3	11:6 11:6 6:11 9:11 8:11	KISHIKAWA Seiya	SAKAMOTO Ryusuke
+2004	German Open Leipzig 2004	CHEN Qi (CHN)	QIU Yike (CHN)	HAKANSSON Fredrik (SWE)	SVENSSON Robert (SWE)	MD	Main Draw	R16	4 - 0	11:5 11:7 11:9 11:9	CHEN Qi	QIU Yike
+2004	German Open Leipzig 2004	CHEN Qi (CHN)	QIU Yike (CHN)	GRUJIC Slobodan (SRB)	KARAKASEVIC Aleksandar (SRB)	MD	Main Draw	QuarterFinal	4 - 3	10:12 11:8 5:11 11:9 12:14 11:8 11:9	CHEN Qi	QIU Yike
+2004	German Open Leipzig 2004	PRIMORAC Zoran (CRO)	REDJEP Ronald (CRO)	LINDNER Adam (HUN)	VARGA Zoltan (HUN)	MD	Qualification	QR64	3 - 1	1:11 11:3 11:4 13:11	PRIMORAC Zoran	REDJEP Ronald
+2004	German Open Leipzig 2004	PRIMORAC Zoran (CRO)	REDJEP Ronald (CRO)	HIELSCHER Lars (GER)	ROSSKOPF Jorg (GER)	MD	Qualification	QR32	3 - 1	11:8 10:12 11:9 11:8	PRIMORAC Zoran	REDJEP Ronald
+2004	German Open Leipzig 2004	PRIMORAC Zoran (CRO)	REDJEP Ronald (CRO)	MAZE Michael (DEN)	TUGWELL Finn (DEN)	MD	Main Draw	R16	0 - 4	6:11 2:11 10:12 6:11	MAZE Michael	TUGWELL Finn
+2004	German Open Leipzig 2004	KONGSGAARD Christian (DEN)	PETERSEN Christoffer (DEN)	CHUANG Chih-Yuan (TPE)	CRISAN Adrian (ROU)	MD	Qualification	QR64	1 - 3	11:7 6:11 7:11 8:11	CHUANG Chih-Yuan	CRISAN Adrian
+2004	German Open Leipzig 2004	MAZE Michael (DEN)	TUGWELL Finn (DEN)	BOLL Timo (GER)	SUSS Christian (GER)	MD	Main Draw	SemiFinal	1 - 4	2:11 9:11 11:9 5:11 9:11	BOLL Timo	SUSS Christian
+2004	German Open Leipzig 2004	DURAN Marc (ESP)	MACHADO Carlos (ESP)	HABESOHN Mathias (AUT)	SIMONER Christoph (AUT)	MD	Qualification	QR64	3 - 1	10:12 12:10 11:6 11:7	DURAN Marc	MACHADO Carlos
+2004	German Open Leipzig 2004	MAZUNOV Dmitry (RUS)	SMIRNOV Aleksandr (EST)	BAUM Patrick (GER)	OVTCHAROV Dimitrij (GER)	MD	Qualification	QR64	3 - 0	11:6 11:4 11:6	MAZUNOV Dmitry	SMIRNOV Aleksandr
+2004	German Open Leipzig 2004	MAZUNOV Dmitry (RUS)	SMIRNOV Aleksandr (EST)	DURAN Marc (ESP)	MACHADO Carlos (ESP)	MD	Qualification	QR32	3 - 1	11:8 9:11 11:8 11:7	MAZUNOV Dmitry	SMIRNOV Aleksandr
+2004	German Open Leipzig 2004	MAZUNOV Dmitry (RUS)	SMIRNOV Aleksandr (EST)	HAKANSSON Fredrik (SWE)	SVENSSON Robert (SWE)	MD	Qualification	QR16	2 - 3	2:11 7:11 11:4 11:9 5:11	HAKANSSON Fredrik	SVENSSON Robert
+2004	German Open Leipzig 2004	DESPRES Rodolphe (FRA)	LEGOUT Christophe (FRA)	DE SOUSA Arlindo (LUX)	MICHELY Gilles (LUX)	MD	Qualification	QR64	3 - 0	11:6 11:8 11:8	DESPRES Rodolphe	LEGOUT Christophe
+2004	German Open Leipzig 2004	CABESTANY Cedrik (FRA)	JOVER Sebastien (FRA)	CARNEROS Alfredo (ESP)	TORRES Daniel (ESP)	MD	Qualification	QR64	3 - 2	11:9 8:11 11:5 4:11 11:8	CABESTANY Cedrik	JOVER Sebastien
+2004	German Open Leipzig 2004	BERTIN Christophe (FRA)	BOBILLIER Loic (FRA)	JENKINS Ryan (WAL)	ROBERTSON Adam (WAL)	MD	Qualification	QR64	3 - 1	11:7 11:5 5:11 11:6	BERTIN Christophe	BOBILLIER Loic
+2004	German Open Leipzig 2004	CHILA Patrick (FRA)	ELOI Damien (FRA)	CHMIEL Pawel (POL)	PEREK Jakub (POL)	MD	Qualification	QR64	3 - 0	11:7 11:4 11:6	CHILA Patrick	ELOI Damien
+2004	German Open Leipzig 2004	DESPRES Rodolphe (FRA)	LEGOUT Christophe (FRA)	FEJER-KONNERTH Zoltan (GER)	WOSIK Torben (GER)	MD	Qualification	QR32	3 - 2	9:11 7:11 11:4 11:9 11:6	DESPRES Rodolphe	LEGOUT Christophe
+2004	German Open Leipzig 2004	BERTIN Christophe (FRA)	BOBILLIER Loic (FRA)	KONECNY Tomas (CZE)	VOZICKY Bohumil (CZE)	MD	Qualification	QR32	3 - 0	11:8 11:5 11:9	BERTIN Christophe	BOBILLIER Loic
+2004	German Open Leipzig 2004	CHILA Patrick (FRA)	ELOI Damien (FRA)	DIDUKH Oleksandr (UKR)	PAPADIMITRIOU Dimitrios (GRE)	MD	Qualification	QR32	3 - 0	11:1 11:8 11:7	CHILA Patrick	ELOI Damien
+2004	German Open Leipzig 2004	BERTIN Christophe (FRA)	BOBILLIER Loic (FRA)	PRIMORAC Zoran (CRO)	REDJEP Ronald (CRO)	MD	Qualification	QR16	0 - 3	4:11 7:11 5:11	PRIMORAC Zoran	REDJEP Ronald
+2004	German Open Leipzig 2004	CHILA Patrick (FRA)	ELOI Damien (FRA)	MONRAD Martin (DEN)	STEPHENSEN Gudmundur (ISL)	MD	Qualification	QR16	3 - 0	11:9 11:7 11:6	CHILA Patrick	ELOI Damien
+2004	German Open Leipzig 2004	CHILA Patrick (FRA)	ELOI Damien (FRA)	GRUJIC Slobodan (SRB)	KARAKASEVIC Aleksandar (SRB)	MD	Main Draw	R16	3 - 4	11:9 11:6 5:11 7:11 4:11 11:9 11:13	GRUJIC Slobodan	KARAKASEVIC Aleksandar
+2004	German Open Leipzig 2004	DESPRES Rodolphe (FRA)	LEGOUT Christophe (FRA)	JINDRAK Karl (AUT)	SCHLAGER Werner (AUT)	MD	Main Draw	R16	4 - 1	11:6 13:11 11:9 7:11 11:8	DESPRES Rodolphe	LEGOUT Christophe
+2004	German Open Leipzig 2004	MUSKO Peter (HUN)	ROSNER Benjamin (GER)	AXELQVIST Johan (SWE)	MANSSON Magnus (SWE)	MD	Qualification	QR128	0 - 3	10:12 5:11 9:11	AXELQVIST Johan	MANSSON Magnus
+2004	German Open Leipzig 2004	BALL Andreas (GER)	CHRIST Nico (GER)	DIDUKH Oleksandr (UKR)	PAPADIMITRIOU Dimitrios (GRE)	MD	Qualification	QR128	2 - 3	12:10 11:8 9:11 12:14 8:11	DIDUKH Oleksandr	PAPADIMITRIOU Dimitrios
+2004	German Open Leipzig 2004	BITZIGEIO Jorg (GER)	FILUS Ruwen (GER)	NAVARRO Pere (ESP)	SLESAR Michal (SVK)	MD	Qualification	QR128	3 - 0	18:16 11:9 11:6	BITZIGEIO Jorg	FILUS Ruwen
+2004	German Open Leipzig 2004	DAUS David (GER)	STEGER Bastian (GER)	LAKEEV Vasily (RUS)	PETRUKHIN Evgeny (RUS)	MD	Qualification	QR64	3 - 0	11:3 11:3 11:7	DAUS David	STEGER Bastian
+2004	German Open Leipzig 2004	BITZIGEIO Jorg (GER)	FILUS Ruwen (GER)	HEISTER Danny (NED)	WIJERS Barry (NED)	MD	Qualification	QR64	0 - 3	12:14 17:19 8:11	HEISTER Danny	WIJERS Barry
+2004	German Open Leipzig 2004	DAUS David (GER)	STEGER Bastian (GER)	CABESTANY Cedrik (FRA)	JOVER Sebastien (FRA)	MD	Qualification	QR32	3 - 2	8:11 11:9 12:10 8:11 12:10	DAUS David	STEGER Bastian
+2004	German Open Leipzig 2004	DAUS David (GER)	STEGER Bastian (GER)	GARDOS Krisztian (AUT)	GARDOS Robert (AUT)	MD	Qualification	QR16	1 - 3	8:11 7:11 11:9 9:11	GARDOS Krisztian	GARDOS Robert
+2004	German Open Leipzig 2004	BOLL Timo (GER)	SUSS Christian (GER)	MIZUTANI Jun (JPN)	TASAKI Toshio (JPN)	MD	Main Draw	R16	4 - 2	11:5 11:8 18:16 7:11 12:14 14:12	BOLL Timo	SUSS Christian
+2004	German Open Leipzig 2004	BOLL Timo (GER)	SUSS Christian (GER)	DESPRES Rodolphe (FRA)	LEGOUT Christophe (FRA)	MD	Main Draw	QuarterFinal	4 - 1	11:3 11:8 12:14 11:6 11:4	BOLL Timo	SUSS Christian
+2004	German Open Leipzig 2004	PAPAGEORGIOU Konstantinos (GRE)	RINIOTIS Anastasios (GRE)	CIOTI Constantin (ROU)	FILIMON Andrei (ROU)	MD	Qualification	QR128	1 - 3	4:11 11:8 8:11 8:11	CIOTI Constantin	FILIMON Andrei
+2004	German Open Leipzig 2004	CHEN Weixing (AUT)	GIONIS Panagiotis (GRE)	DEBRUYERES Clement (FRA)	LEBESSON Emmanuel (FRA)	MD	Qualification	QR64	3 - 0	11:8 11:4 11:5	CHEN Weixing	GIONIS Panagiotis
+2004	German Open Leipzig 2004	DIDUKH Oleksandr (UKR)	PAPADIMITRIOU Dimitrios (GRE)	PISTEJ Lubomir (SVK)	SEREDA Peter (SVK)	MD	Qualification	QR64	3 - 1	19:17 17:15 6:11 11:5	DIDUKH Oleksandr	PAPADIMITRIOU Dimitrios
+2004	German Open Leipzig 2004	CHEN Weixing (AUT)	GIONIS Panagiotis (GRE)	KUZMIN Fedor (RUS)	SHMYREV Maxim (RUS)	MD	Qualification	QR32	1 - 3	11:5 14:16 12:14 11:13	KUZMIN Fedor	SHMYREV Maxim
+2004	German Open Leipzig 2004	KO Lai Chak (HKG)	LI Ching (HKG)	KISHIKAWA Seiya (JPN)	SAKAMOTO Ryusuke (JPN)	MD	Main Draw	R16	4 - 0	11:8 11:6 11:5 11:3	KO Lai Chak	LI Ching
+2004	German Open Leipzig 2004	CHEUNG Yuk (HKG)	LEUNG Chu Yan (HKG)	GARDOS Krisztian (AUT)	GARDOS Robert (AUT)	MD	Main Draw	R16	4 - 3	10:12 9:11 11:6 2:11 11:6 11:5 11:5	CHEUNG Yuk	LEUNG Chu Yan
+2004	German Open Leipzig 2004	KO Lai Chak (HKG)	LI Ching (HKG)	FAZEKAS Peter (HUN)	PAZSY Ferenc (HUN)	MD	Main Draw	QuarterFinal	4 - 2	11:8 11:9 8:11 5:11 14:12 11:9	KO Lai Chak	LI Ching
+2004	German Open Leipzig 2004	CHEUNG Yuk (HKG)	LEUNG Chu Yan (HKG)	MAZE Michael (DEN)	TUGWELL Finn (DEN)	MD	Main Draw	QuarterFinal	2 - 4	9:11 11:9 6:11 11:6 7:11 8:11	MAZE Michael	TUGWELL Finn
+2004	German Open Leipzig 2004	KO Lai Chak (HKG)	LI Ching (HKG)	CHEN Qi (CHN)	QIU Yike (CHN)	MD	Main Draw	SemiFinal	4 - 2	11:7 11:9 14:12 8:11 5:11 11:9	KO Lai Chak	LI Ching
+2004	German Open Leipzig 2004	KO Lai Chak (HKG)	LI Ching (HKG)	BOLL Timo (GER)	SUSS Christian (GER)	MD	Main Draw	Final	3 - 4	11:9 11:9 10:12 11:2 10:12 7:11 12:14	BOLL Timo	SUSS Christian
+2004	German Open Leipzig 2004	FAZEKAS Peter (HUN)	PAZSY Ferenc (HUN)	MURAMORI Minoru (JPN)	TAKAKIWA Taku (JPN)	MD	Qualification	QR64	3 - 0	11:8 11:6 11:7	FAZEKAS Peter	PAZSY Ferenc
+2004	German Open Leipzig 2004	DEMETER Lehel (HUN)	ZWICKL Daniel (HUN)	LUNDQVIST Jens (SWE)	MOLDOVAN Istvan (NOR)	MD	Qualification	QR64	3 - 2	8:11 7:11 11:8 11:6 11:8	DEMETER Lehel	ZWICKL Daniel
+2004	German Open Leipzig 2004	FAZEKAS Peter (HUN)	PAZSY Ferenc (HUN)	DANIEL Artur (POL)	KOSOWSKI Jakub (POL)	MD	Qualification	QR32	3 - 2	13:11 11:6 8:11 8:11 11:3	FAZEKAS Peter	PAZSY Ferenc
+2004	German Open Leipzig 2004	FAZEKAS Peter (HUN)	PAZSY Ferenc (HUN)	BLASZCZYK Lucjan (POL)	KRZESZEWSKI Tomasz (POL)	MD	Main Draw	R16	4 - 1	8:11 11:9 14:12 11:9 11:7	FAZEKAS Peter	PAZSY Ferenc
+2004	German Open Leipzig 2004	MONRAD Martin (DEN)	STEPHENSEN Gudmundur (ISL)	FADEEV Evgeny (RUS)	RUBTSOV Igor (RUS)	MD	Qualification	QR64	3 - 1	11:6 11:7 6:11 11:5	MONRAD Martin	STEPHENSEN Gudmundur
+2004	German Open Leipzig 2004	MONRAD Martin (DEN)	STEPHENSEN Gudmundur (ISL)	DEMETER Lehel (HUN)	ZWICKL Daniel (HUN)	MD	Qualification	QR32	3 - 2	6:11 12:10 11:2 3:11 11:5	MONRAD Martin	STEPHENSEN Gudmundur
+2004	German Open Leipzig 2004	MIZUTANI Jun (JPN)	TASAKI Toshio (JPN)	SCHLICHTER Jorg (GER)	STEHLE Nico (GER)	MD	Qualification	QR64	3 - 0	11:7 11:3 11:9	MIZUTANI Jun	TASAKI Toshio
+2004	German Open Leipzig 2004	MITAMURA Muneaki (JPN)	NAKANO Yusuke (JPN)	GARDOS Krisztian (AUT)	GARDOS Robert (AUT)	MD	Qualification	QR64	0 - 3	3:11 6:11 6:11	GARDOS Krisztian	GARDOS Robert
+2004	German Open Leipzig 2004	MIZUTANI Jun (JPN)	TASAKI Toshio (JPN)	LIU Guozheng (CHN)	SHAN Mingjie (CHN)	MD	Qualification	QR32	3 - 0	12:10 11:9 11:7	MIZUTANI Jun	TASAKI Toshio
+2004	German Open Leipzig 2004	MIZUTANI Jun (JPN)	TASAKI Toshio (JPN)	CHUANG Chih-Yuan (TPE)	CRISAN Adrian (ROU)	MD	Qualification	QR16	3 - 1	11:5 13:15 11:6 11:9	MIZUTANI Jun	TASAKI Toshio
+2004	German Open Leipzig 2004	BAST Mike (LUX)	SIMON Fabien (LUX)	KISHIKAWA Seiya (JPN)	SAKAMOTO Ryusuke (JPN)	MD	Qualification	QR32	0 - 3	9:11 6:11 6:11	KISHIKAWA Seiya	SAKAMOTO Ryusuke
+2004	German Open Leipzig 2004	MATSUMOTO Cazuo (BRA)	RENGENHART Frank (NED)	JEVTOVIC Marko (SRB)	PETO Zsolt (SRB)	MD	Qualification	QR128	2 - 3	8:11 11:4 4:11 11:5 6:11	JEVTOVIC Marko	PETO Zsolt
+2004	German Open Leipzig 2004	GORAK Daniel (POL)	SUCH Bartosz (POL)	LIU Guozheng (CHN)	SHAN Mingjie (CHN)	MD	Qualification	QR64	2 - 3	11:8 11:7 9:11 13:15 9:11	LIU Guozheng	SHAN Mingjie
+2004	German Open Leipzig 2004	DANIEL Artur (POL)	KOSOWSKI Jakub (POL)	FETH Stefan (GER)	KEINATH Thomas (SVK)	MD	Qualification	QR64	3 - 2	3:11 13:15 11:6 11:9 11:7	DANIEL Artur	KOSOWSKI Jakub
+2004	German Open Leipzig 2004	MENDES Enio (POR)	MONTEIRO Joao (POR)	IGNJATOVIC Sasa (SLO)	LIVENTSOV Alexey (RUS)	MD	Qualification	QR128	2 - 3	9:11 11:5 8:11 11:7 4:11	IGNJATOVIC Sasa	LIVENTSOV Alexey
+2004	German Open Leipzig 2004	CIOTI Constantin (ROU)	FILIMON Andrei (ROU)	ERLANDSEN Geir (NOR)	WANG Jianfeng (NOR)	MD	Qualification	QR64	1 - 3	5:11 2:11 11:9 9:11	ERLANDSEN Geir	WANG Jianfeng
+2004	German Open Leipzig 2004	LAKEEV Vasily (RUS)	PETRUKHIN Evgeny (RUS)	KLEPRLIK Jakub (CZE)	ZLAMAL Jaromir (CZE)	MD	Qualification	QR128	3 - 1	11:4 11:9 5:11 11:5	LAKEEV Vasily	PETRUKHIN Evgeny
+2004	German Open Leipzig 2004	GRIGOREV Artur (RUS)	SHEVCHENKO Semen (RUS)	KONECNY Tomas (CZE)	VOZICKY Bohumil (CZE)	MD	Qualification	QR64	0 - 3	8:11 7:11 11:13	KONECNY Tomas	VOZICKY Bohumil
+2004	German Open Leipzig 2004	IGNJATOVIC Sasa (SLO)	LIVENTSOV Alexey (RUS)	KISHIKAWA Seiya (JPN)	SAKAMOTO Ryusuke (JPN)	MD	Qualification	QR64	1 - 3	6:11 9:11 11:9 6:11	KISHIKAWA Seiya	SAKAMOTO Ryusuke
+2004	German Open Leipzig 2004	KUZMIN Fedor (RUS)	SHMYREV Maxim (RUS)	FAZEKAS Peter (HUN)	PAZSY Ferenc (HUN)	MD	Qualification	QR16	1 - 3	15:13 8:11 7:11 7:11	FAZEKAS Peter	PAZSY Ferenc
+2004	German Open Leipzig 2004	KEEN Trinko (NED)	TOKIC Bojan (SLO)	RUSHTON Andrew (ENG)	YOUNG Terry (ENG)	MD	Qualification	QR64	3 - 0	11:6 11:6 11:6	KEEN Trinko	TOKIC Bojan
+2004	German Open Leipzig 2004	KEEN Trinko (NED)	TOKIC Bojan (SLO)	ERLANDSEN Geir (NOR)	WANG Jianfeng (NOR)	MD	Qualification	QR32	3 - 2	7:11 7:11 11:6 11:8 11:6	KEEN Trinko	TOKIC Bojan
+2004	German Open Leipzig 2004	KEEN Trinko (NED)	TOKIC Bojan (SLO)	DESPRES Rodolphe (FRA)	LEGOUT Christophe (FRA)	MD	Qualification	QR16	1 - 3	6:11 9:11 11:9 7:11	DESPRES Rodolphe	LEGOUT Christophe
+2004	German Open Leipzig 2004	JEVTOVIC Marko (SRB)	PETO Zsolt (SRB)	KORBEL Petr (CZE)	PAVELKA Tomas (CZE)	MD	Qualification	QR64	3 - 2	11:8 3:11 11:7 8:11 11:6	JEVTOVIC Marko	PETO Zsolt
+2004	German Open Leipzig 2004	MARKOVIC Rade (SRB)	MILOSEVIC Bojan (SRB)	FEJER-KONNERTH Zoltan (GER)	WOSIK Torben (GER)	MD	Qualification	QR64	1 - 3	7:11 12:10 5:11 6:11	FEJER-KONNERTH Zoltan	WOSIK Torben
+2004	German Open Leipzig 2004	HUDEC Lukas (SVK)	JIRASEK Michal (SVK)	MURAMORI Minoru (JPN)	TAKAKIWA Taku (JPN)	MD	Qualification	QR128	0 - 3	9:11 5:11 10:12	MURAMORI Minoru	TAKAKIWA Taku
+2004	German Open Leipzig 2004	BAZENOV Valentin (SVK)	PALCEK Martin (SVK)	HIELSCHER Lars (GER)	ROSSKOPF Jorg (GER)	MD	Qualification	QR64	1 - 3	11:7 9:11 7:11 10:12	HIELSCHER Lars	ROSSKOPF Jorg
+2004	German Open Leipzig 2004	HAKANSSON Fredrik (SWE)	SVENSSON Robert (SWE)	CHTCHETININE Evgueni (BLR)	MULLER Frank (LIE)	MD	Qualification	QR64	3 - 2	11:5 12:10 8:11 13:15 11:4	HAKANSSON Fredrik	SVENSSON Robert
+2004	German Open Leipzig 2004	AXELQVIST Johan (SWE)	MANSSON Magnus (SWE)	KUZMIN Fedor (RUS)	SHMYREV Maxim (RUS)	MD	Qualification	QR64	0 - 3	9:11 6:11 5:11	KUZMIN Fedor	SHMYREV Maxim
+2004	German Open Leipzig 2004	HAKANSSON Fredrik (SWE)	SVENSSON Robert (SWE)	JEVTOVIC Marko (SRB)	PETO Zsolt (SRB)	MD	Qualification	QR32	3 - 0	11:7 11:5 11:6	HAKANSSON Fredrik	SVENSSON Robert
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 51
+
+2004	German Open Leipzig 2004	SCHNEIDER Jacqueline (GER)	SOLJA Amelie (AUT)	JANTA-LIPINSKA Anna (POL)	LUCZAKOWSKA Daria (POL)	WD	Qualification	QR64	3 - 2	12:10 11:13 11:4 5:11 11:5	SCHNEIDER Jacqueline	SOLJA Amelie
+2004	German Open Leipzig 2004	LI Qiangbing (AUT)	PETZNER Martina (AUT)	GOLOTA Marta (POL)	KOLAROVA Dominika (SVK)	WD	Qualification	QR64	3 - 2	11:3 9:11 11:8 9:11 11:5	LI Qiangbing	PETZNER Martina
+2004	German Open Leipzig 2004	HEINE Veronika (AUT)	LIU Jia (AUT)	NECULA Iulia (ROU)	PERGEL Szandra (HUN)	WD	Qualification	QR32	3 - 1	11:8 11:7 9:11 11:5	HEINE Veronika	LIU Jia
+2004	German Open Leipzig 2004	LI Qiangbing (AUT)	PETZNER Martina (AUT)	MOLNAR Cornelia (CRO)	ZAMFIR Adriana (ROU)	WD	Qualification	QR32	1 - 3	7:11 12:10 9:11 6:11	MOLNAR Cornelia	ZAMFIR Adriana
+2004	German Open Leipzig 2004	HEINE Veronika (AUT)	LIU Jia (AUT)	LANG Kristin (GER)	ROBERTSON Laura (GER)	WD	Qualification	QR16	2 - 3	10:12 4:11 11:7 16:14 8:11	LANG Kristin	ROBERTSON Laura
+2004	German Open Leipzig 2004	DETRIGNE Carol (BEL)	OPDENCAMP Karen (BEL)	DEMIENOVA Zuzana (SVK)	KMOTORKOVA Lenka (SVK)	WD	Qualification	QR64	2 - 3	11:9 6:11 7:11 11:4 9:11	DEMIENOVA Zuzana	KMOTORKOVA Lenka
+2004	German Open Leipzig 2004	FUKUOKA Haruna (JPN)	LI Yun Fei (BEL)	PAVLOVICH Veronika (BLR)	CIGANKOVA Nataliya (BLR)	WD	Qualification	QR16	3 - 0	12:10 11:5 11:8	FUKUOKA Haruna	LI Yun Fei
+2004	German Open Leipzig 2004	KOSTROMINA Tatyana (1973) (BLR)	PAVLOVICH Viktoria (BLR)	FUJII Hiroko (JPN)	HIRANO Sayaka (JPN)	WD	Main Draw	R16	4 - 2	10:12 11:4 11:3 11:13 11:5 11:2	KOSTROMINA Tatyana (1973)	PAVLOVICH Viktoria
+2004	German Open Leipzig 2004	KOSTROMINA Tatyana (1973) (BLR)	PAVLOVICH Viktoria (BLR)	SONG Ah Sim (HKG)	TIE Yana (HKG)	WD	Main Draw	QuarterFinal	4 - 3	12:10 2:11 11:9 11:8 3:11 3:11 11:6	KOSTROMINA Tatyana (1973)	PAVLOVICH Viktoria
+2004	German Open Leipzig 2004	GATINSKA Katalina (BUL)	KASABOVA Asya (BUL)	DRINKHALL Joanna (ENG)	WALKER Georgina (ENG)	WD	Qualification	QR64	3 - 0	11:8 12:10 14:12	GATINSKA Katalina	KASABOVA Asya
+2004	German Open Leipzig 2004	GATINSKA Katalina (BUL)	KASABOVA Asya (BUL)	RATHER Jasna (USA)	SHABAN Zeina (JOR)	WD	Qualification	QR32	3 - 1	9:11 11:5 11:5 11:8	GATINSKA Katalina	KASABOVA Asya
+2004	German Open Leipzig 2004	CAO Zhen (CHN)	LI Xiaoxia (CHN)	DODEAN Daniela (ROU)	SAMARA Elizabeta (ROU)	WD	Qualification	QR32	3 - 1	11:2 10:12 11:4 11:6	CAO Zhen	LI Xiaoxia
+2004	German Open Leipzig 2004	CAO Zhen (CHN)	LI Xiaoxia (CHN)	IVANCAN Irene (GER)	SCHOPP Jie (GER)	WD	Qualification	QR16	3 - 1	8:11 11:7 11:4 11:6	CAO Zhen	LI Xiaoxia
+2004	German Open Leipzig 2004	GUO Yue (CHN)	NIU Jianfeng (CHN)	FUKUOKA Haruna (JPN)	LI Yun Fei (BEL)	WD	Main Draw	R16	4 - 1	11:1 11:6 12:10 7:11 11:8	GUO Yue	NIU Jianfeng
+2004	German Open Leipzig 2004	CAO Zhen (CHN)	LI Xiaoxia (CHN)	FUJINUMA Ai (JPN)	HIURA Reiko (JPN)	WD	Main Draw	R16	4 - 1	11:5 11:5 6:11 11:6 11:8	CAO Zhen	LI Xiaoxia
+2004	German Open Leipzig 2004	GUO Yue (CHN)	NIU Jianfeng (CHN)	CAO Zhen (CHN)	LI Xiaoxia (CHN)	WD	Main Draw	QuarterFinal	4 - 1	11:1 15:17 11:6 11:9 11:9	GUO Yue	NIU Jianfeng
+2004	German Open Leipzig 2004	GUO Yan (1982) (CHN)	PENG Luyang (CHN)	BATORFI Csilla (HUN)	TOTH Krisztina (HUN)	WD	Main Draw	QuarterFinal	4 - 3	12:10 9:11 11:4 11:4 9:11 2:11 12:10	GUO Yan (1982)	PENG Luyang
+2004	German Open Leipzig 2004	GUO Yue (CHN)	NIU Jianfeng (CHN)	KOSTROMINA Tatyana (1973) (BLR)	PAVLOVICH Viktoria (BLR)	WD	Main Draw	SemiFinal	4 - 2	6:11 11:3 10:12 11:4 11:6 11:6	GUO Yue	NIU Jianfeng
+2004	German Open Leipzig 2004	GUO Yue (CHN)	NIU Jianfeng (CHN)	GUO Yan (1982) (CHN)	PENG Luyang (CHN)	WD	Main Draw	Final	4 - 3	13:15 11:6 4:11 14:12 11:7 2:11 11:8	GUO Yue	NIU Jianfeng
+2004	German Open Leipzig 2004	BAKULA Andrea (CRO)	PAOVIC Sandra (CRO)	GUO Yan (1982) (CHN)	PENG Luyang (CHN)	WD	Qualification	QR16	0 - 3	2:11 4:11 9:11	GUO Yan (1982)	PENG Luyang
+2004	German Open Leipzig 2004	CECHOVA Dana (CZE)	STRBIKOVA Renata (CZE)	KROUSTALLI Maria (GRE)	XU Chris (CAN)	WD	Qualification	QR64	3 - 0	11:8 12:10 11:8	CECHOVA Dana	STRBIKOVA Renata
+2004	German Open Leipzig 2004	VACHOVCOVA Alena (CZE)	WEBEROVA Ivana (CZE)	BAKULA Andrea (CRO)	PAOVIC Sandra (CRO)	WD	Qualification	QR64	0 - 3	13:15 10:12 10:12	BAKULA Andrea	PAOVIC Sandra
+2004	German Open Leipzig 2004	CECHOVA Dana (CZE)	STRBIKOVA Renata (CZE)	ROHR Gaby (GER)	ROHR Meike (GER)	WD	Qualification	QR32	1 - 3	4:11 8:11 11:8 5:11	ROHR Gaby	ROHR Meike
+2004	German Open Leipzig 2004	SMISTIKOVA Martina (CZE)	VACENOVSKA Iveta (CZE)	FADEEVA Oxana (RUS)	MELNIK Galina (RUS)	WD	Qualification	QR32	0 - 3	5:11 7:11 4:11	FADEEVA Oxana	MELNIK Galina
+2004	German Open Leipzig 2004	DVORAK Galia (ESP)	RAMIREZ Sara (ESP)	BOBETIC Andrea (CRO)	PERHOC Ines (CRO)	WD	Qualification	QR64	3 - 2	7:11 11:7 11:9 9:11 13:11	DVORAK Galia	RAMIREZ Sara
+2004	German Open Leipzig 2004	DVORAK Galia (ESP)	RAMIREZ Sara (ESP)	PAVLOVICH Veronika (BLR)	CIGANKOVA Nataliya (BLR)	WD	Qualification	QR32	2 - 3	11:9 3:11 7:11 11:8 8:11	PAVLOVICH Veronika	CIGANKOVA Nataliya
+2004	German Open Leipzig 2004	IVANCAN Irene (GER)	SCHOPP Jie (GER)	BOLSHAKOVA Natalia (RUS)	BUKA-EDEL Ekaterina (RUS)	WD	Qualification	QR64	3 - 1	9:11 11:7 11:7 11:5	IVANCAN Irene	SCHOPP Jie
+2004	German Open Leipzig 2004	BOLLMEIER Nadine (GER)	STRUSE Nicole (GER)	BAKULA Andrea (CRO)	PAOVIC Sandra (CRO)	WD	Qualification	QR32	1 - 3	12:14 9:11 11:4 5:11	BAKULA Andrea	PAOVIC Sandra
+2004	German Open Leipzig 2004	ROHR Gaby (GER)	ROHR Meike (GER)	SONG Ah Sim (HKG)	TIE Yana (HKG)	WD	Main Draw	R16	3 - 4	13:11 11:6 4:11 11:8 6:11 8:11 1:11	SONG Ah Sim	TIE Yana
+2004	German Open Leipzig 2004	LAU Sui Fei (HKG)	ZHANG Rui (HKG)	GUO Yan (1982) (CHN)	PENG Luyang (CHN)	WD	Main Draw	R16	0 - 4	1:11 7:11 10:12 9:11	GUO Yan (1982)	PENG Luyang
+2004	German Open Leipzig 2004	ELLO Vivien (HUN)	KERTAI Rita (HUN)	FUKUOKA Haruna (JPN)	LI Yun Fei (BEL)	WD	Qualification	QR32	2 - 3	11:8 11:7 4:11 10:12 5:11	FUKUOKA Haruna	LI Yun Fei
+2004	German Open Leipzig 2004	POTA Georgina (HUN)	FAZEKAS Maria (HUN)	SCHNEIDER Jacqueline (GER)	SOLJA Amelie (AUT)	WD	Qualification	QR32	3 - 0	11:8 11:3 11:7	POTA Georgina	FAZEKAS Maria
+2004	German Open Leipzig 2004	GOURIN Anne-Sophie (FRA)	LOVAS Petra (HUN)	CREEMERS Linda (NED)	VAN ULSEN Sigrid (NED)	WD	Qualification	QR32	3 - 1	11:7 11:3 9:11 11:9	GOURIN Anne-Sophie	LOVAS Petra
+2004	German Open Leipzig 2004	POTA Georgina (HUN)	FAZEKAS Maria (HUN)	GATINSKA Katalina (BUL)	KASABOVA Asya (BUL)	WD	Qualification	QR16	3 - 2	11:5 11:9 8:11 7:11 11:4	POTA Georgina	FAZEKAS Maria
+2004	German Open Leipzig 2004	GOURIN Anne-Sophie (FRA)	LOVAS Petra (HUN)	MOLNAR Cornelia (CRO)	ZAMFIR Adriana (ROU)	WD	Qualification	QR16	0 - 3	7:11 9:11 3:11	MOLNAR Cornelia	ZAMFIR Adriana
+2004	German Open Leipzig 2004	FAZEKAS Maria (HUN)	POTA Georgina (HUN)	KRAMER Tanja (GER)	SCHALL Elke (GER)	WD	Main Draw	R16	4 - 3	11:8 11:6 4:11 6:11 11:4 6:11 11:8	FAZEKAS Maria	POTA Georgina
+2004	German Open Leipzig 2004	FAZEKAS Maria (HUN)	POTA Georgina (HUN)	GUO Yan (1982) (CHN)	PENG Luyang (CHN)	WD	Main Draw	SemiFinal	2 - 4	11:6 9:11 10:12 8:11 11:8 10:12	GUO Yan (1982)	PENG Luyang
+2004	German Open Leipzig 2004	HIRANO Sayaka (JPN)	FUJII Hiroko (JPN)	SHEN Yanfei (ESP)	ZHU Fang (ESP)	WD	Qualification	QR32	3 - 2	14:12 9:11 11:7 8:11 11:6	HIRANO Sayaka	FUJII Hiroko
+2004	German Open Leipzig 2004	HIRANO Sayaka (JPN)	FUJII Hiroko (JPN)	FADEEVA Oxana (RUS)	MELNIK Galina (RUS)	WD	Qualification	QR16	3 - 0	11:9 11:3 11:8	HIRANO Sayaka	FUJII Hiroko
+2004	German Open Leipzig 2004	HAAN Simone (LUX)	HARTMANN Carole (LUX)	FUKUOKA Haruna (JPN)	LI Yun Fei (BEL)	WD	Qualification	QR64	2 - 3	4:11 11:9 12:10 3:11 4:11	FUKUOKA Haruna	LI Yun Fei
+2004	German Open Leipzig 2004	CREEMERS Linda (NED)	VAN ULSEN Sigrid (NED)	GOBEL Jessica (GER)	SCHELD Alexandra (GER)	WD	Qualification	QR64	3 - 2	13:11 11:9 8:11 7:11 11:8	CREEMERS Linda	VAN ULSEN Sigrid
+2004	German Open Leipzig 2004	CICHOCKA Magdalena (POL)	XU Jie (1982) (POL)	PEREZ Sara (ESP)	PRADES Alba (ESP)	WD	Qualification	QR64	3 - 1	12:10 4:11 11:4 11:5	CICHOCKA Magdalena	XU Jie (1982)
+2004	German Open Leipzig 2004	CICHOCKA Magdalena (POL)	XU Jie (1982) (POL)	GUO Yan (1982) (CHN)	PENG Luyang (CHN)	WD	Qualification	QR32	0 - 3	3:11 7:11 4:11	GUO Yan (1982)	PENG Luyang
+2004	German Open Leipzig 2004	DODEAN Daniela (ROU)	SAMARA Elizabeta (ROU)	LI Bin (HUN)	MOLNAR Zita (HUN)	WD	Qualification	QR64	3 - 1	11:8 12:14 11:8 11:7	DODEAN Daniela	SAMARA Elizabeta
+2004	German Open Leipzig 2004	BOROS Tamara (CRO)	STEFF Mihaela (ROU)	DEMIENOVA Zuzana (SVK)	KMOTORKOVA Lenka (SVK)	WD	Qualification	QR32	2 - 3	11:6 9:11 11:8 9:11 9:11	DEMIENOVA Zuzana	KMOTORKOVA Lenka
+2004	German Open Leipzig 2004	GANINA Svetlana (RUS)	PALINA Irina (RUS)	LANG Kristin (GER)	ROBERTSON Laura (GER)	WD	Main Draw	R16	4 - 1	11:6 11:8 8:11 11:5 11:7	GANINA Svetlana	PALINA Irina
+2004	German Open Leipzig 2004	GANINA Svetlana (RUS)	PALINA Irina (RUS)	FAZEKAS Maria (HUN)	POTA Georgina (HUN)	WD	Main Draw	QuarterFinal	3 - 4	13:11 11:7 7:11 7:11 11:9 6:11 7:11	FAZEKAS Maria	POTA Georgina
+2004	German Open Leipzig 2004	ERDELJI Anamaria (SRB)	ERDELJI Silvija (SRB)	PETUKHOVA Evgeniya (RUS)	VORONOVA Anastasia (RUS)	WD	Qualification	QR64	3 - 0	11:6 11:4 11:7	ERDELJI Anamaria	ERDELJI Silvija
+2004	German Open Leipzig 2004	ERDELJI Anamaria (SRB)	ERDELJI Silvija (SRB)	LANG Kristin (GER)	ROBERTSON Laura (GER)	WD	Qualification	QR32	0 - 3	7:11 6:11 7:11	LANG Kristin	ROBERTSON Laura
+2004	German Open Leipzig 2004	DEMIENOVA Zuzana (SVK)	KMOTORKOVA Lenka (SVK)	ROHR Gaby (GER)	ROHR Meike (GER)	WD	Qualification	QR16	0 - 3	9:11 9:11 3:11	ROHR Gaby	ROHR Meike
+2004	German Open Leipzig 2004	SMISTIKOVA Martina (CZE)	VACENOVSKA Iveta (CZE)	SCHNEIDER Katharina (GER)		WD	Qualification	QR64	3 - 2	11:0 11:2 6:11 8:11 11:8	SMISTIKOVA Martina	VACENOVSKA Iveta

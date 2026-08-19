@@ -1,0 +1,76 @@
+2004	Men's and Women's World Cup Hangzhou 2004	ITTF World Cup	--	57	2004-10-27	2004-10-31
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 27
+
+2004	Men's and Women's World Cup Hangzhou 2004	BOLL Timo (GER)		CHIANG Peng-Lung (TPE)		MS	Qualification	3	4 - 3	12:10 4:11 11:2 4:11 11:4 7:11 11:8	BOLL Timo	
+2004	Men's and Women's World Cup Hangzhou 2004	WANG Liqin (CHN)		CHIANG Peng-Lung (TPE)		MS	Qualification	1	2 - 4	8:11 11:4 9:11 11:9 9:11 8:11	CHIANG Peng-Lung	
+2004	Men's and Women's World Cup Hangzhou 2004	WANG Liqin (CHN)		BOLL Timo (GER)		MS	Qualification	QR2	4 - 3	11:5 9:11 9:11 7:11 11:2 11:7 11:6	WANG Liqin	
+2004	Men's and Women's World Cup Hangzhou 2004	MA Lin (CHN)		LAVALE Russell (AUS)		MS	Qualification	3	4 - 0	11:9 11:1 11:4 11:7	MA Lin	
+2004	Men's and Women's World Cup Hangzhou 2004	CHUANG Chih-Yuan (TPE)		JOO Saehyuk (KOR)		MS	Qualification	3	3 - 4	11:5 11:7 11:7 6:11 2:11 4:11 8:11	JOO Saehyuk	
+2004	Men's and Women's World Cup Hangzhou 2004	MA Lin (CHN)		JOO Saehyuk (KOR)		MS	Qualification	1	4 - 0	11:2 11:8 11:8 11:7	MA Lin	
+2004	Men's and Women's World Cup Hangzhou 2004	LAVALE Russell (AUS)		CHUANG Chih-Yuan (TPE)		MS	Qualification		0 - 4	2:11 7:11 7:11 6:11	CHUANG Chih-Yuan	
+2004	Men's and Women's World Cup Hangzhou 2004	MA Lin (CHN)		CHUANG Chih-Yuan (TPE)		MS	Qualification	QR2	4 - 1	11:7 6:11 11:5 14:12 11:8	MA Lin	
+2004	Men's and Women's World Cup Hangzhou 2004	JOO Saehyuk (KOR)		LAVALE Russell (AUS)		MS	Qualification	QR2	4 - 2	11:8 9:11 11:5 8:11 11:8 11:7	JOO Saehyuk	
+2004	Men's and Women's World Cup Hangzhou 2004	WANG Hao (CHN)		HUANG Johnny (CAN)		MS	Qualification	3	4 - 0	11:3 11:1 11:7 13:11	WANG Hao	
+2004	Men's and Women's World Cup Hangzhou 2004	SAMSONOV Vladimir (BLR)		KREANGA Kalinikos (GRE)		MS	Qualification	3	1 - 4	7:11 11:7 9:11 5:11 9:11	KREANGA Kalinikos	
+2004	Men's and Women's World Cup Hangzhou 2004	WANG Hao (CHN)		KREANGA Kalinikos (GRE)		MS	Qualification	1	4 - 2	9:11 14:12 11:6 11:8 10:12 11:8	WANG Hao	
+2004	Men's and Women's World Cup Hangzhou 2004	HUANG Johnny (CAN)		SAMSONOV Vladimir (BLR)		MS	Qualification		1 - 4	6:11 7:11 8:11 11:3 5:11	SAMSONOV Vladimir	
+2004	Men's and Women's World Cup Hangzhou 2004	WANG Hao (CHN)		SAMSONOV Vladimir (BLR)		MS	Qualification	QR2	4 - 3	9:11 11:8 5:11 16:14 11:6 9:11 12:10	WANG Hao	
+2004	Men's and Women's World Cup Hangzhou 2004	KREANGA Kalinikos (GRE)		HUANG Johnny (CAN)		MS	Qualification	QR2	4 - 1	11:9 11:5 5:11 11:8 11:5	KREANGA Kalinikos	
+2004	Men's and Women's World Cup Hangzhou 2004	RYU Seungmin (KOR)		MONTEIRO Thiago (BRA)		MS	Qualification	3	3 - 4	11:5 12:10 8:11 6:11 11:8 8:11 8:11	MONTEIRO Thiago	
+2004	Men's and Women's World Cup Hangzhou 2004	SCHLAGER Werner (AUT)		WALDNER Jan-Ove (SWE)		MS	Qualification	3	4 - 1	11:7 9:11 11:8 11:8 11:5	SCHLAGER Werner	
+2004	Men's and Women's World Cup Hangzhou 2004	RYU Seungmin (KOR)		WALDNER Jan-Ove (SWE)		MS	Qualification	1	4 - 3	11:7 11:9 10:12 11:9 11:13 8:11 11:9	RYU Seungmin	
+2004	Men's and Women's World Cup Hangzhou 2004	MONTEIRO Thiago (BRA)		SCHLAGER Werner (AUT)		MS	Qualification		0 - 4	4:11 5:11 8:11 8:11	SCHLAGER Werner	
+2004	Men's and Women's World Cup Hangzhou 2004	RYU Seungmin (KOR)		SCHLAGER Werner (AUT)		MS	Qualification	QR2	2 - 4	10:12 11:9 5:11 6:11 11:7 5:11	SCHLAGER Werner	
+2004	Men's and Women's World Cup Hangzhou 2004	WALDNER Jan-Ove (SWE)		MONTEIRO Thiago (BRA)		MS	Qualification	QR2	4 - 2	8:11 11:8 11:5 11:8 7:11 13:11	WALDNER Jan-Ove	
+2004	Men's and Women's World Cup Hangzhou 2004	CHIANG Peng-Lung (TPE)		JOO Saehyuk (KOR)		MS	Main Draw	QuarterFinal	0 - 4	12:14 4:11 4:11 12:14	JOO Saehyuk	
+2004	Men's and Women's World Cup Hangzhou 2004	KREANGA Kalinikos (GRE)		SCHLAGER Werner (AUT)		MS	Main Draw	QuarterFinal	4 - 1	12:10 11:9 6:11 11:9 11:6	KREANGA Kalinikos	
+2004	Men's and Women's World Cup Hangzhou 2004	WANG Hao (CHN)		WALDNER Jan-Ove (SWE)		MS	Main Draw	QuarterFinal	4 - 0	11:6 11:9 11:9 11:4	WANG Hao	
+2004	Men's and Women's World Cup Hangzhou 2004	BOLL Timo (GER)		MA Lin (CHN)		MS	Main Draw	QuarterFinal	1 - 4	4:11 1:11 11:9 8:11 0:11	MA Lin	
+2004	Men's and Women's World Cup Hangzhou 2004	JOO Saehyuk (KOR)		KREANGA Kalinikos (GRE)		MS	Main Draw	SemiFinal	2 - 4	9:11 11:3 7:11 9:11 15:13 8:11	KREANGA Kalinikos	
+2004	Men's and Women's World Cup Hangzhou 2004	WANG Hao (CHN)		MA Lin (CHN)		MS	Main Draw	SemiFinal	0 - 4	1:11 8:11 3:11 4:11	MA Lin
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 30
+
+2004	Men's and Women's World Cup Hangzhou 2004	ZHANG Yining (CHN)		MIAO Miao (AUS)		WS	Qualification	3	4 - 0	11:5 11:4 11:3 11:7	ZHANG Yining	
+2004	Men's and Women's World Cup Hangzhou 2004	LI Jiawei (SGP)		STEFF Mihaela (ROU)		WS	Qualification	3	4 - 3	11:5 7:11 11:8 11:13 8:11 11:5 11:9	LI Jiawei	
+2004	Men's and Women's World Cup Hangzhou 2004	ZHANG Yining (CHN)		STEFF Mihaela (ROU)		WS	Qualification		4 - 0	11:3 12:10 11:2 11:6	ZHANG Yining	
+2004	Men's and Women's World Cup Hangzhou 2004	MIAO Miao (AUS)		LI Jiawei (SGP)		WS	Qualification	1	0 - 4	4:11 2:11 4:11 8:11	LI Jiawei	
+2004	Men's and Women's World Cup Hangzhou 2004	ZHANG Yining (CHN)		LI Jiawei (SGP)		WS	Qualification	QR2	4 - 1	11:2 11:4 11:6 5:11 11:4	ZHANG Yining	
+2004	Men's and Women's World Cup Hangzhou 2004	STEFF Mihaela (ROU)		MIAO Miao (AUS)		WS	Qualification	QR2	4 - 2	7:11 11:9 11:7 10:12 11:5 11:3	STEFF Mihaela	
+2004	Men's and Women's World Cup Hangzhou 2004	WANG Nan (CHN)		WU Xue (DOM)		WS	Qualification	3	4 - 2	11:7 9:11 11:9 11:9 7:11 12:10	WANG Nan	
+2004	Men's and Women's World Cup Hangzhou 2004	TIE Yana (HKG)		GAO Jun (USA)		WS	Qualification	3	4 - 2	13:11 8:11 13:11 11:8 8:11 11:6	TIE Yana	
+2004	Men's and Women's World Cup Hangzhou 2004	WANG Nan (CHN)		GAO Jun (USA)		WS	Qualification		3 - 4	9:11 11:9 11:8 13:15 11:8 14:16 9:11	GAO Jun	
+2004	Men's and Women's World Cup Hangzhou 2004	WU Xue (DOM)		TIE Yana (HKG)		WS	Qualification	1	0 - 4	8:11 3:11 8:11 6:11	TIE Yana	
+2004	Men's and Women's World Cup Hangzhou 2004	WANG Nan (CHN)		TIE Yana (HKG)		WS	Qualification	QR2	4 - 2	11:6 13:11 11:8 10:12 11:13 11:9	WANG Nan	
+2004	Men's and Women's World Cup Hangzhou 2004	GAO Jun (USA)		WU Xue (DOM)		WS	Qualification	QR2	4 - 1	11:5 11:6 11:8 7:11 11:7	GAO Jun	
+2004	Men's and Women's World Cup Hangzhou 2004	NIU Jianfeng (CHN)		BADESCU Otilia (ROU)		WS	Qualification	3	4 - 1	6:11 11:6 11:3 11:5 13:11	NIU Jianfeng	
+2004	Men's and Women's World Cup Hangzhou 2004	BOROS Tamara (CRO)		LAU Sui Fei (HKG)		WS	Qualification	3	3 - 4	9:11 14:12 9:11 11:3 13:11 8:11 7:11	LAU Sui Fei	
+2004	Men's and Women's World Cup Hangzhou 2004	NIU Jianfeng (CHN)		LAU Sui Fei (HKG)		WS	Qualification		3 - 4	11:3 8:11 11:6 9:11 11:6 4:11 5:11	LAU Sui Fei	
+2004	Men's and Women's World Cup Hangzhou 2004	BADESCU Otilia (ROU)		BOROS Tamara (CRO)		WS	Qualification	1	1 - 4	5:11 11:6 9:11 9:11 5:11	BOROS Tamara	
+2004	Men's and Women's World Cup Hangzhou 2004	NIU Jianfeng (CHN)		BOROS Tamara (CRO)		WS	Qualification	QR2	0 - 4	9:11 10:12 4:11 8:11	BOROS Tamara	
+2004	Men's and Women's World Cup Hangzhou 2004	LAU Sui Fei (HKG)		BADESCU Otilia (ROU)		WS	Qualification	QR2	3 - 4	11:1 10:12 11:8 15:17 11:9 7:11 8:11	BADESCU Otilia	
+2004	Men's and Women's World Cup Hangzhou 2004	KIM Kyungah (KOR)		OSHONAIKE Olufunke (NGR)		WS	Qualification	3	4 - 0	11:8 11:6 11:2 11:5	KIM Kyungah	
+2004	Men's and Women's World Cup Hangzhou 2004	LIU Jia (AUT)		PAVLOVICH Viktoria (BLR)		WS	Qualification	3	4 - 3	9:11 11:9 9:11 11:7 11:9 9:11 11:6	LIU Jia	
+2004	Men's and Women's World Cup Hangzhou 2004	KIM Kyungah (KOR)		PAVLOVICH Viktoria (BLR)		WS	Qualification		1 - 4	11:13 7:11 11:8 9:11 9:11	PAVLOVICH Viktoria	
+2004	Men's and Women's World Cup Hangzhou 2004	OSHONAIKE Olufunke (NGR)		LIU Jia (AUT)		WS	Qualification	1	0 - 4	9:11 12:14 9:11 6:11	LIU Jia	
+2004	Men's and Women's World Cup Hangzhou 2004	KIM Kyungah (KOR)		LIU Jia (AUT)		WS	Qualification	QR2	4 - 0	13:11 11:4 11:8 11:6	KIM Kyungah	
+2004	Men's and Women's World Cup Hangzhou 2004	PAVLOVICH Viktoria (BLR)		OSHONAIKE Olufunke (NGR)		WS	Qualification	QR2	4 - 0	11:5 11:8 11:4 11:5	PAVLOVICH Viktoria	
+2004	Men's and Women's World Cup Hangzhou 2004	ZHANG Yining (CHN)		KIM Kyungah (KOR)		WS	Main Draw	QuarterFinal	4 - 0	11:2 11:2 11:8 11:7	ZHANG Yining	
+2004	Men's and Women's World Cup Hangzhou 2004	TIE Yana (HKG)		LAU Sui Fei (HKG)		WS	Main Draw	QuarterFinal	4 - 2	9:11 6:11 11:9 11:9 11:9 11:8	TIE Yana	
+2004	Men's and Women's World Cup Hangzhou 2004	PAVLOVICH Viktoria (BLR)		LI Jiawei (SGP)		WS	Main Draw	QuarterFinal	2 - 4	11:5 11:13 8:11 11:6 11:13 6:11	LI Jiawei	
+2004	Men's and Women's World Cup Hangzhou 2004	BOROS Tamara (CRO)		WANG Nan (CHN)		WS	Main Draw	QuarterFinal	2 - 4	12:10 11:5 5:11 7:11 7:11 8:11	WANG Nan	
+2004	Men's and Women's World Cup Hangzhou 2004	ZHANG Yining (CHN)		TIE Yana (HKG)		WS	Main Draw	SemiFinal	4 - 0	11:6 11:4 11:3 11:4	ZHANG Yining	
+2004	Men's and Women's World Cup Hangzhou 2004	LI Jiawei (SGP)		WANG Nan (CHN)		WS	Main Draw	SemiFinal	2 - 4	12:10 9:11 11:4 4:11 5:11 3:11	WANG Nan

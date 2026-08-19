@@ -1,0 +1,294 @@
+赛事编号：1712
+年份：2004
+赛事名称：St. Petersburg Open 2004
+赛事类型：ITTF World Tour / Pro Tour
+赛事种类：--
+参赛人数：278
+开始日期：2004-11-25
+结束日期：2004-11-28
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 2 Total: 140
+
+Start
+Prev
+1
+2
+Next
+End
+2004	St. Petersburg Open 2004	BARBOLIN Illia (BLR)		IVANOV Leonid (RUS)		MS	Qualification		0 - 4	8:11 8:11 8:11 2:11	IVANOV Leonid	
+2004	St. Petersburg Open 2004	LAKEEV Vasily (RUS)		IVANOV Leonid (RUS)		MS	Qualification	QR2	4 - 1	11:7 11:8 11:9 10:12 11:7	LAKEEV Vasily	
+2004	St. Petersburg Open 2004	LAKEEV Vasily (RUS)		BARBOLIN Illia (BLR)		MS	Qualification	3	4 - 0	11:6 11:8 11:9 11:8	LAKEEV Vasily	
+2004	St. Petersburg Open 2004	MAKSIMOV Maksim (RUS)		BARKHATOV Evgenij (RUS)		MS	Qualification		4 - 0	11:8 11:9 11:7 11:2	MAKSIMOV Maksim	
+2004	St. Petersburg Open 2004	DESPRES Rodolphe (FRA)		BARKHATOV Evgenij (RUS)		MS	Qualification	QR2	4 - 2	9:11 11:7 9:11 11:8 11:9 11:8	DESPRES Rodolphe	
+2004	St. Petersburg Open 2004	DESPRES Rodolphe (FRA)		MAKSIMOV Maksim (RUS)		MS	Qualification	3	4 - 0	11:7 11:9 11:8 12:10	DESPRES Rodolphe	
+2004	St. Petersburg Open 2004	ZAIKIN Alan (RUS)		MOSKAEV Ivan (RUS)		MS	Qualification		4 - 1	13:11 11:9 11:6 9:11 11:7	ZAIKIN Alan	
+2004	St. Petersburg Open 2004	CLOSSET Marc (BEL)		MOSKAEV Ivan (RUS)		MS	Qualification	QR2	4 - 1	11:9 11:9 13:11 5:11 11:7	CLOSSET Marc	
+2004	St. Petersburg Open 2004	CLOSSET Marc (BEL)		ZAIKIN Alan (RUS)		MS	Qualification	3	2 - 4	5:11 7:11 12:14 14:12 11:8 9:11	ZAIKIN Alan	
+2004	St. Petersburg Open 2004	ILLAS Erik (SVK)		AFONIN Alexander (RUS)		MS	Qualification	QR2	4 - 0	11:9 11:6 11:6 11:8	ILLAS Erik	
+2004	St. Petersburg Open 2004	KARPOV Andrei (RUS)		MANTUROV Sergei (EST)		MS	Qualification		4 - 2	11:9 6:11 11:5 5:11 11:6 11:8	KARPOV Andrei	
+2004	St. Petersburg Open 2004	KATKOV Ivan (UKR)		MANTUROV Sergei (EST)		MS	Qualification	QR2	4 - 1	11:9 11:7 16:14 4:11 11:6	KATKOV Ivan	
+2004	St. Petersburg Open 2004	KATKOV Ivan (UKR)		KARPOV Andrei (RUS)		MS	Qualification	3	4 - 0	13:11 11:6 11:9 13:11	KATKOV Ivan	
+2004	St. Petersburg Open 2004	GAVLAS Petr (CZE)		KOMOV Alexander (RUS)		MS	Qualification		4 - 1	11:7 11:4 8:11 11:1 11:7	GAVLAS Petr	
+2004	St. Petersburg Open 2004	GAVRILOV Denis (RUS)		KOMOV Alexander (RUS)		MS	Qualification	QR2	4 - 1	13:11 11:5 11:5 9:11 11:4	GAVRILOV Denis	
+2004	St. Petersburg Open 2004	GAVRILOV Denis (RUS)		GAVLAS Petr (CZE)		MS	Qualification	3	4 - 1	11:6 10:12 11:9 12:10 11:8	GAVRILOV Denis	
+2004	St. Petersburg Open 2004	GAVLAS Antonin (CZE)		VAKHTA Dmitry (UKR)		MS	Qualification	3	4 - 1	11:9 5:11 11:7 11:2 11:8	GAVLAS Antonin	
+2004	St. Petersburg Open 2004	BALTRUSHKA Dzmitry (BLR)		GORDEEV Alexander (RUS)		MS	Qualification		4 - 2	8:11 11:6 9:11 11:3 11:7 11:2	BALTRUSHKA Dzmitry	
+2004	St. Petersburg Open 2004	KHOMUTOV Mikhail (RUS)		GORDEEV Alexander (RUS)		MS	Qualification	QR2	4 - 0	11:5 11:4 11:3 11:9	KHOMUTOV Mikhail	
+2004	St. Petersburg Open 2004	KHOMUTOV Mikhail (RUS)		BALTRUSHKA Dzmitry (BLR)		MS	Qualification	3	4 - 1	11:9 11:4 8:11 11:8 11:8	KHOMUTOV Mikhail	
+2004	St. Petersburg Open 2004	FILENKO Oleg (UKR)		CHEPELYUK Evgenij (RUS)		MS	Qualification		4 - 0	11:6 11:8 11:8 11:6	FILENKO Oleg	
+2004	St. Petersburg Open 2004	TIAPKIN Sergei (RUS)		CHEPELYUK Evgenij (RUS)		MS	Qualification	QR2	4 - 0	11:9 11:2 11:8 11:3	TIAPKIN Sergei	
+2004	St. Petersburg Open 2004	TIAPKIN Sergei (RUS)		FILENKO Oleg (UKR)		MS	Qualification	3	4 - 2	4:11 11:6 11:13 11:3 11:5 11:7	TIAPKIN Sergei	
+2004	St. Petersburg Open 2004	PLATONOV Pavel (BLR)		SAVELYEV Alexander (RUS)		MS	Qualification		0 - 4	8:11 8:11 7:11 8:11	SAVELYEV Alexander	
+2004	St. Petersburg Open 2004	LIEVSHYN Vitaliy (UKR)		SAVELYEV Alexander (RUS)		MS	Qualification	QR2	4 - 2	12:14 11:7 12:10 9:11 11:5 13:11	LIEVSHYN Vitaliy	
+2004	St. Petersburg Open 2004	LIEVSHYN Vitaliy (UKR)		PLATONOV Pavel (BLR)		MS	Qualification	3	4 - 2	11:6 11:4 11:5 9:11 13:15 11:6	LIEVSHYN Vitaliy	
+2004	St. Petersburg Open 2004	BALOV Dmitrij (RUS)		MASLEEV Evgenij (RUS)		MS	Qualification		4 - 2	9:11 11:8 10:12 11:9 11:9 11:6	BALOV Dmitrij	
+2004	St. Petersburg Open 2004	ZHMUDENKO Yaroslav (UKR)		MASLEEV Evgenij (RUS)		MS	Qualification	QR2	4 - 2	11:4 8:11 11:13 11:4 11:7 11:8	ZHMUDENKO Yaroslav	
+2004	St. Petersburg Open 2004	ZHMUDENKO Yaroslav (UKR)		BALOV Dmitrij (RUS)		MS	Qualification	3	4 - 1	11:6 11:4 10:12 13:11 11:8	ZHMUDENKO Yaroslav	
+2004	St. Petersburg Open 2004	KUPRIANOV Oleg (RUS)		SARGSYAN Davit (ARM)		MS	Qualification	3	2 - 4	5:11 8:11 13:11 7:11 11:3 7:11	SARGSYAN Davit	
+2004	St. Petersburg Open 2004	REGENTOV Evgenii (RUS)		KUCHUK Aleksandr (BLR)		MS	Qualification		4 - 1	3:11 11:6 11:5 11:6 12:10	REGENTOV Evgenii	
+2004	St. Petersburg Open 2004	PRYSHCHEPA Ievgen (UKR)		KUCHUK Aleksandr (BLR)		MS	Qualification	QR2	0 - 4	8:11 10:12 7:11 8:11	KUCHUK Aleksandr	
+2004	St. Petersburg Open 2004	PRYSHCHEPA Ievgen (UKR)		REGENTOV Evgenii (RUS)		MS	Qualification	3	1 - 4	8:11 7:11 11:3 8:11 9:11	REGENTOV Evgenii	
+2004	St. Petersburg Open 2004	FILICHEV Vitaly (RUS)		XIAO Bo (RUS)		MS	Qualification		0 - 4	10:12 6:11 7:11 12:14	XIAO Bo	
+2004	St. Petersburg Open 2004	GUDILKIN Igor (UKR)		XIAO Bo (RUS)		MS	Qualification	QR2	0 - 4	8:11 9:11 7:11 6:11	XIAO Bo	
+2004	St. Petersburg Open 2004	GUDILKIN Igor (UKR)		FILICHEV Vitaly (RUS)		MS	Qualification	3	2 - 4	8:11 11:8 10:12 10:12 13:11 10:12	FILICHEV Vitaly	
+2004	St. Petersburg Open 2004	NEKHVEDOVICH Vitaly (BLR)		BUROV Viacheslav (RUS)		MS	Qualification	3	1 - 4	11:7 7:11 7:11 7:11 9:11	BUROV Viacheslav	
+2004	St. Petersburg Open 2004	PETRUKHIN Evgeny (RUS)		SKACHKOV Kirill (RUS)		MS	Qualification	3	2 - 4	7:11 10:12 11:5 5:11 11:7 9:11	SKACHKOV Kirill	
+2004	St. Petersburg Open 2004	GLADYSHEV Mikhail (RUS)		LEBEDEV Viktor (RUS)		MS	Qualification	QR2	3 - 4	11:3 11:5 11:7 13:15 8:11 10:12 7:11	LEBEDEV Viktor	
+2004	St. Petersburg Open 2004	CALBRIX Nicolas (FRA)		KOTOV Yevgen (UKR)		MS	Qualification		4 - 2	5:11 11:9 11:6 13:11 2:11 11:8	CALBRIX Nicolas	
+2004	St. Petersburg Open 2004	GRACHEV Andrei (RUS)		KOTOV Yevgen (UKR)		MS	Qualification	QR2	2 - 4	11:7 7:11 9:11 11:6 8:11 10:12	KOTOV Yevgen	
+2004	St. Petersburg Open 2004	GRACHEV Andrei (RUS)		CALBRIX Nicolas (FRA)		MS	Qualification	3	4 - 1	11:6 8:11 11:9 11:9 11:8	GRACHEV Andrei	
+2004	St. Petersburg Open 2004	SCHLAGER Werner (AUT)		MAKSIMOV Maksim (RUS)		MS	Main Draw	R64	4 - 1	7:11 11:4 11:7 12:10 11:9	SCHLAGER Werner	
+2004	St. Petersburg Open 2004	LAKEEV Vasily (RUS)		MONTEIRO Joao (POR)		MS	Main Draw	R64	0 - 4	2:11 7:11 7:11 6:11	MONTEIRO Joao	
+2004	St. Petersburg Open 2004	LO Dany (FRA)		ZAIKIN Alan (RUS)		MS	Main Draw	R64	1 - 4	11:9 8:11 9:11 9:11 6:11	ZAIKIN Alan	
+2004	St. Petersburg Open 2004	AFONIN Alexander (RUS)		BENTSEN Allan (DEN)		MS	Main Draw	R64	0 - 4	4:11 6:11 6:11 3:11	BENTSEN Allan	
+2004	St. Petersburg Open 2004	HAKANSSON Fredrik (SWE)		KUCHUK Aleksandr (BLR)		MS	Main Draw	R64	4 - 0	11:9 11:5 11:5 13:11	HAKANSSON Fredrik	
+2004	St. Petersburg Open 2004	TIAPKIN Sergei (RUS)		PHUNG Armand (FRA)		MS	Main Draw	R64	2 - 4	5:11 11:8 8:11 8:11 11:6 7:11	PHUNG Armand	
+2004	St. Petersburg Open 2004	GERELL Par (SWE)		ILLAS Erik (SVK)		MS	Main Draw	R64	1 - 4	7:11 11:6 4:11 10:12 10:12	ILLAS Erik	
+2004	St. Petersburg Open 2004	BALOV Dmitrij (RUS)		OH Sangeun (KOR)		MS	Main Draw	R64	1 - 4	11:7 5:11 1:11 3:11 10:12	OH Sangeun	
+2004	St. Petersburg Open 2004	PRIMORAC Zoran (CRO)		CLOSSET Marc (BEL)		MS	Main Draw	R64	4 - 1	8:11 11:6 11:3 11:6 11:6	PRIMORAC Zoran	
+2004	St. Petersburg Open 2004	LIEVSHYN Vitaliy (UKR)		SEREDA Peter (SVK)		MS	Main Draw	R64	0 - 4	2:11 8:11 11:13 8:11	SEREDA Peter	
+2004	St. Petersburg Open 2004	FETH Stefan (GER)		KHOMUTOV Mikhail (RUS)		MS	Main Draw	R64	4 - 1	11:8 11:4 11:8 10:12 12:10	FETH Stefan	
+2004	St. Petersburg Open 2004	KARPOV Andrei (RUS)		LEE Jungwoo (KOR)		MS	Main Draw	R64	1 - 4	8:11 6:11 8:11 11:9 8:11	LEE Jungwoo	
+2004	St. Petersburg Open 2004	GIONIS Panagiotis (GRE)		BALTRUSHKA Dzmitry (BLR)		MS	Main Draw	R64	4 - 0	11:3 11:6 12:10 11:7	GIONIS Panagiotis	
+2004	St. Petersburg Open 2004	GRACHEV Andrei (RUS)		DAUS David (GER)		MS	Main Draw	R64	1 - 4	11:8 5:11 9:11 5:11 8:11	DAUS David	
+2004	St. Petersburg Open 2004	LIVENTSOV Alexey (RUS)		KATKOV Ivan (UKR)		MS	Main Draw	R64	4 - 0	11:7 11:6 11:4 11:5	LIVENTSOV Alexey	
+2004	St. Petersburg Open 2004	FILICHEV Vitaly (RUS)		KARLSSON Peter (SWE)		MS	Main Draw	R64	1 - 4	11:7 15:17 6:11 7:11 8:11	KARLSSON Peter	
+2004	St. Petersburg Open 2004	CHEN Weixing (AUT)		REGENTOV Alexei (RUS)		MS	Main Draw	R64	4 - 0	11:6 11:1 11:5 11:4	CHEN Weixing	
+2004	St. Petersburg Open 2004	BUROV Viacheslav (RUS)		BRATANOV Martin (BEL)		MS	Main Draw	R64	4 - 3	12:10 11:8 7:11 6:11 2:11 11:6 11:3	BUROV Viacheslav	
+2004	St. Petersburg Open 2004	OLLIVIER Brice (FRA)		LEBEDEV Viktor (RUS)		MS	Main Draw	R64	4 - 1	9:11 11:5 11:6 11:7 11:4	OLLIVIER Brice	
+2004	St. Petersburg Open 2004	VAKHTA Dmitry (UKR)		SHMYREV Maxim (RUS)		MS	Main Draw	R64	0 - 4	8:11 5:11 10:12 4:11	SHMYREV Maxim	
+2004	St. Petersburg Open 2004	GARDOS Robert (AUT)		SKACHKOV Kirill (RUS)		MS	Main Draw	R64	4 - 2	11:9 9:11 11:8 8:11 11:8 11:4	GARDOS Robert	
+2004	St. Petersburg Open 2004	GAVRILOV Denis (RUS)		CHOI Hyunjin (KOR)		MS	Main Draw	R64	4 - 1	5:11 11:7 11:6 11:6 11:5	GAVRILOV Denis	
+2004	St. Petersburg Open 2004	DIDUKH Oleksandr (UKR)		XIAO Bo (RUS)		MS	Main Draw	R64	4 - 1	7:11 13:11 11:7 11:8 11:4	DIDUKH Oleksandr	
+2004	St. Petersburg Open 2004	GAVLAS Petr (CZE)		SMIRNOV Alexey (RUS)		MS	Main Draw	R64	1 - 4	7:11 8:11 12:10 7:11 2:11	SMIRNOV Alexey	
+2004	St. Petersburg Open 2004	SAIVE Jean-Michel (BEL)		SAVELYEV Alexander (RUS)		MS	Main Draw	R64	4 - 0	11:4 11:5 11:7 11:9	SAIVE Jean-Michel	
+2004	St. Petersburg Open 2004	SARGSYAN Davit (ARM)		STEPHENSEN Gudmundur (ISL)		MS	Main Draw	R64	1 - 4	6:11 11:9 8:11 11:13 6:11	STEPHENSEN Gudmundur	
+2004	St. Petersburg Open 2004	ANDRIANOV Sergei (RUS)		ZHMUDENKO Yaroslav (UKR)		MS	Main Draw	R64	4 - 3	4:11 11:6 8:11 10:12 11:6 11:6 11:6	ANDRIANOV Sergei	
+2004	St. Petersburg Open 2004	PETRUKHIN Evgeny (RUS)		ROSSKOPF Jorg (GER)		MS	Main Draw	R64	2 - 4	6:11 11:7 14:12 9:11 6:11 12:14	ROSSKOPF Jorg	
+2004	St. Petersburg Open 2004	FRANZ Peter (GER)		KOTOV Yevgen (UKR)		MS	Main Draw	R64	4 - 1	11:4 11:5 10:12 11:4 11:4	FRANZ Peter	
+2004	St. Petersburg Open 2004	DESPRES Rodolphe (FRA)		RUBTSOV Igor (RUS)		MS	Main Draw	R64	2 - 4	5:11 11:8 9:11 11:9 4:11 7:11	RUBTSOV Igor	
+2004	St. Petersburg Open 2004	ASAMOAH Cyprian (SWE)		GAVLAS Antonin (CZE)		MS	Main Draw	R64	1 - 4	5:11 11:3 7:11 6:11 7:11	GAVLAS Antonin	
+2004	St. Petersburg Open 2004	FILENKO Oleg (UKR)		KREANGA Kalinikos (GRE)		MS	Main Draw	R64	0 - 4	9:11 8:11 7:11 8:11	KREANGA Kalinikos	
+2004	St. Petersburg Open 2004	SCHLAGER Werner (AUT)		MONTEIRO Joao (POR)		MS	Main Draw	R32	4 - 1	11:5 7:11 12:10 11:8 11:6	SCHLAGER Werner	
+2004	St. Petersburg Open 2004	ZAIKIN Alan (RUS)		BENTSEN Allan (DEN)		MS	Main Draw	R32	1 - 4	9:11 6:11 11:6 13:15 5:11	BENTSEN Allan	
+2004	St. Petersburg Open 2004	HAKANSSON Fredrik (SWE)		PHUNG Armand (FRA)		MS	Main Draw	R32	3 - 4	11:6 5:11 11:4 11:7 8:11 8:11 7:11	PHUNG Armand	
+2004	St. Petersburg Open 2004	ILLAS Erik (SVK)		OH Sangeun (KOR)		MS	Main Draw	R32	2 - 4	6:11 12:10 4:11 6:11 11:4 11:13	OH Sangeun	
+2004	St. Petersburg Open 2004	PRIMORAC Zoran (CRO)		SEREDA Peter (SVK)		MS	Main Draw	R32	4 - 0	11:9 13:11 11:2 11:4	PRIMORAC Zoran	
+2004	St. Petersburg Open 2004	FETH Stefan (GER)		LEE Jungwoo (KOR)		MS	Main Draw	R32	2 - 4	11:7 6:11 7:11 8:11 11:9 6:11	LEE Jungwoo	
+2004	St. Petersburg Open 2004	GIONIS Panagiotis (GRE)		DAUS David (GER)		MS	Main Draw	R32	4 - 1	11:3 7:11 11:7 11:6 11:6	GIONIS Panagiotis	
+2004	St. Petersburg Open 2004	LIVENTSOV Alexey (RUS)		KARLSSON Peter (SWE)		MS	Main Draw	R32	0 - 4	7:11 4:11 6:11 6:11	KARLSSON Peter	
+2004	St. Petersburg Open 2004	CHEN Weixing (AUT)		BUROV Viacheslav (RUS)		MS	Main Draw	R32	4 - 0	11:5 11:4 11:4 11:3	CHEN Weixing	
+2004	St. Petersburg Open 2004	OLLIVIER Brice (FRA)		SHMYREV Maxim (RUS)		MS	Main Draw	R32	3 - 4	5:11 8:11 4:11 11:8 12:10 11:9 9:11	SHMYREV Maxim	
+2004	St. Petersburg Open 2004	GARDOS Robert (AUT)		GAVRILOV Denis (RUS)		MS	Main Draw	R32	4 - 1	11:7 11:3 11:2 6:11 12:10	GARDOS Robert	
+2004	St. Petersburg Open 2004	DIDUKH Oleksandr (UKR)		SMIRNOV Alexey (RUS)		MS	Main Draw	R32	4 - 1	11:9 6:11 11:5 11:8 11:6	DIDUKH Oleksandr	
+2004	St. Petersburg Open 2004	SAIVE Jean-Michel (BEL)		STEPHENSEN Gudmundur (ISL)		MS	Main Draw	R32	4 - 0	11:7 11:2 11:8 11:7	SAIVE Jean-Michel	
+2004	St. Petersburg Open 2004	ANDRIANOV Sergei (RUS)		ROSSKOPF Jorg (GER)		MS	Main Draw	R32	3 - 4	10:12 8:11 11:8 14:12 11:13 11:8 8:11	ROSSKOPF Jorg	
+2004	St. Petersburg Open 2004	FRANZ Peter (GER)		RUBTSOV Igor (RUS)		MS	Main Draw	R32	4 - 2	12:10 11:5 10:12 11:3 7:11 11:9	FRANZ Peter	
+2004	St. Petersburg Open 2004	GAVLAS Antonin (CZE)		KREANGA Kalinikos (GRE)		MS	Main Draw	R32	1 - 4	11:7 4:11 10:12 3:11 5:11	KREANGA Kalinikos	
+2004	St. Petersburg Open 2004	SCHLAGER Werner (AUT)		BENTSEN Allan (DEN)		MS	Main Draw	R16	4 - 2	11:8 8:11 11:5 11:4 6:11 11:5	SCHLAGER Werner	
+2004	St. Petersburg Open 2004	PHUNG Armand (FRA)		OH Sangeun (KOR)		MS	Main Draw	R16	0 - 4	8:11 6:11 6:11 10:12	OH Sangeun	
+2004	St. Petersburg Open 2004	PRIMORAC Zoran (CRO)		LEE Jungwoo (KOR)		MS	Main Draw	R16	1 - 4	11:8 4:11 6:11 7:11 2:11	LEE Jungwoo	
+2004	St. Petersburg Open 2004	GIONIS Panagiotis (GRE)		KARLSSON Peter (SWE)		MS	Main Draw	R16	1 - 4	11:6 8:11 7:11 7:11 4:11	KARLSSON Peter	
+2004	St. Petersburg Open 2004	CHEN Weixing (AUT)		SHMYREV Maxim (RUS)		MS	Main Draw	R16	4 - 1	11:3 11:8 9:11 11:8 11:8	CHEN Weixing	
+2004	St. Petersburg Open 2004	GARDOS Robert (AUT)		DIDUKH Oleksandr (UKR)		MS	Main Draw	R16	4 - 3	7:11 11:6 11:6 2:11 9:11 11:4 11:8	GARDOS Robert	
+2004	St. Petersburg Open 2004	SAIVE Jean-Michel (BEL)		ROSSKOPF Jorg (GER)		MS	Main Draw	R16	4 - 3	11:9 7:11 8:11 11:2 11:8 14:16 14:12	SAIVE Jean-Michel	
+2004	St. Petersburg Open 2004	FRANZ Peter (GER)		KREANGA Kalinikos (GRE)		MS	Main Draw	R16	2 - 4	7:11 11:7 13:11 11:13 5:11 7:11	KREANGA Kalinikos	
+2004	St. Petersburg Open 2004	SCHLAGER Werner (AUT)		OH Sangeun (KOR)		MS	Main Draw	QuarterFinal	3 - 4	7:11 11:7 11:6 9:11 2:11 12:10 9:11	OH Sangeun	
+2004	St. Petersburg Open 2004	LEE Jungwoo (KOR)		KARLSSON Peter (SWE)		MS	Main Draw	QuarterFinal	2 - 4	11:13 11:13 11:8 11:8 4:11 8:11	KARLSSON Peter
+2004	St. Petersburg Open 2004	CHEN Weixing (AUT)		GARDOS Robert (AUT)		MS	Main Draw	QuarterFinal	0 - 4	2:11 6:11 5:11 2:11	GARDOS Robert	
+2004	St. Petersburg Open 2004	SAIVE Jean-Michel (BEL)		KREANGA Kalinikos (GRE)		MS	Main Draw	QuarterFinal	1 - 4	11:5 6:11 6:11 9:11 6:11	KREANGA Kalinikos	
+2004	St. Petersburg Open 2004	OH Sangeun (KOR)		KARLSSON Peter (SWE)		MS	Main Draw	SemiFinal	3 - 4	11:8 9:11 12:14 12:10 11:8 6:11 8:11	KARLSSON Peter	
+2004	St. Petersburg Open 2004	GARDOS Robert (AUT)		KREANGA Kalinikos (GRE)		MS	Main Draw	SemiFinal	3 - 4	11:6 11:4 9:11 9:11 11:4 10:12 7:11	KREANGA Kalinikos	
+2004	St. Petersburg Open 2004	KARLSSON Peter (SWE)		KREANGA Kalinikos (GRE)		MS	Main Draw	Final	0 - 4	5:11 11:13 5:11 6:11	KREANGA Kalinikos	
+2004	St. Petersburg Open 2004	CALBRIX Nicolas (FRA)		KATKOV Ivan (UKR)		U21MS	Main Draw	R16	4 - 2	11:3 10:12 11:5 11:8 7:11 11:6	CALBRIX Nicolas	
+2004	St. Petersburg Open 2004	DESPRES Rodolphe (FRA)		ZHMUDENKO Yaroslav (UKR)		U21MS	Main Draw	R16	4 - 3	11:8 6:11 11:8 11:8 10:12 5:11 11:5	DESPRES Rodolphe	
+2004	St. Petersburg Open 2004	KUPRIANOV Oleg (RUS)		LO Dany (FRA)		U21MS	Main Draw	R16	2 - 4	10:12 11:3 11:6 8:11 9:11 10:12	LO Dany	
+2004	St. Petersburg Open 2004	MONTEIRO Joao (POR)		GLADYSHEV Mikhail (RUS)		U21MS	Main Draw	R16	4 - 2	11:7 8:11 11:7 11:8 9:11 11:6	MONTEIRO Joao	
+2004	St. Petersburg Open 2004	LEBEDEV Viktor (RUS)		GAVLAS Antonin (CZE)		U21MS	Main Draw	R16	3 - 4	11:8 3:11 11:8 8:11 8:11 11:8 10:12	GAVLAS Antonin	
+2004	St. Petersburg Open 2004	LIEVSHYN Vitaliy (UKR)		BUROV Viacheslav (RUS)		U21MS	Main Draw	R16	1 - 4	7:11 11:13 9:11 11:9 8:11	BUROV Viacheslav	
+2004	St. Petersburg Open 2004	PETRUKHIN Evgeny (RUS)		SEREDA Peter (SVK)		U21MS	Main Draw	R16	0 - 4	13:15 8:11 10:12 1:11	SEREDA Peter	
+2004	St. Petersburg Open 2004	BALTRUSHKA Dzmitry (BLR)		CALBRIX Nicolas (FRA)		U21MS	Main Draw	QuarterFinal	3 - 4	11:8 7:11 4:11 11:13 12:10 11:7 7:11	CALBRIX Nicolas	
+2004	St. Petersburg Open 2004	DESPRES Rodolphe (FRA)		LO Dany (FRA)		U21MS	Main Draw	QuarterFinal	0 - 4	5:11 8:11 6:11 10:12	LO Dany	
+2004	St. Petersburg Open 2004	BUROV Viacheslav (RUS)		SEREDA Peter (SVK)		U21MS	Main Draw	QuarterFinal	0 - 4	6:11 8:11 8:11 9:11	SEREDA Peter	
+2004	St. Petersburg Open 2004	CALBRIX Nicolas (FRA)		LO Dany (FRA)		U21MS	Main Draw	SemiFinal	0 - 4	9:11 8:11 9:11 10:12	LO Dany	
+2004	St. Petersburg Open 2004	MONTEIRO Joao (POR)		SEREDA Peter (SVK)		U21MS	Main Draw	SemiFinal	2 - 4	8:11 11:13 4:11 11:3 11:9 5:11	SEREDA Peter	
+2004	St. Petersburg Open 2004	LO Dany (FRA)		SEREDA Peter (SVK)		U21MS	Main Draw	Final	1 - 4	2:11 11:7 3:11 12:14 8:11	SEREDA Peter	
+2004	St. Petersburg Open 2004	KARPOV Andrei (RUS)		BARKHATOV Evgenij (RUS)		U21MS	Qualification		2 - 3	8:11 5:11 12:10 11:7 7:11	BARKHATOV Evgenij	
+2004	St. Petersburg Open 2004	ZHMUDENKO Yaroslav (UKR)		BARKHATOV Evgenij (RUS)		U21MS	Qualification	QR2	3 - 1	11:7 10:12 11:8 11:7	ZHMUDENKO Yaroslav	
+2004	St. Petersburg Open 2004	ZHMUDENKO Yaroslav (UKR)		KARPOV Andrei (RUS)		U21MS	Qualification	3	3 - 0	11:2 11:5 11:9	ZHMUDENKO Yaroslav	
+2004	St. Petersburg Open 2004	KOTOV Yevgen (UKR)		KOMOV Alexander (RUS)		U21MS	Qualification		3 - 1	11:1 11:7 9:11 11:7	KOTOV Yevgen	
+2004	St. Petersburg Open 2004	KUPRIANOV Oleg (RUS)		KOMOV Alexander (RUS)		U21MS	Qualification	QR2	3 - 0	11:5 11:2 11:4	KUPRIANOV Oleg	
+2004	St. Petersburg Open 2004	KUPRIANOV Oleg (RUS)		KOTOV Yevgen (UKR)		U21MS	Qualification	3	3 - 2	11:3 10:12 6:11 14:12 11:6	KUPRIANOV Oleg	
+2004	St. Petersburg Open 2004	PETRUKHIN Evgeny (RUS)		PRYSHCHEPA Ievgen (UKR)		U21MS	Qualification	3	3 - 2	11:7 12:10 4:11 5:11 11:8	PETRUKHIN Evgeny	
+2004	St. Petersburg Open 2004	VAKHTA Dmitry (UKR)		KUCHUK Aleksandr (BLR)		U21MS	Qualification		0 - 3	8:11 5:11 4:11	KUCHUK Aleksandr	
+2004	St. Petersburg Open 2004	GLADYSHEV Mikhail (RUS)		KUCHUK Aleksandr (BLR)		U21MS	Qualification	QR2	3 - 0	11:4 11:8 11:9	GLADYSHEV Mikhail	
+2004	St. Petersburg Open 2004	GLADYSHEV Mikhail (RUS)		VAKHTA Dmitry (UKR)		U21MS	Qualification	3	2 - 3	11:6 9:11 11:5 7:11 6:11	VAKHTA Dmitry	
+2004	St. Petersburg Open 2004	CALBRIX Nicolas (FRA)		BARBOLIN Illia (BLR)		U21MS	Qualification	3	3 - 0	11:8 14:12 11:9	CALBRIX Nicolas	
+2004	St. Petersburg Open 2004	BALTRUSHKA Dzmitry (BLR)		MASLEEV Evgenij (RUS)		U21MS	Qualification		3 - 1	11:7 12:10 9:11 11:9	BALTRUSHKA Dzmitry	
+2004	St. Petersburg Open 2004	SKACHKOV Kirill (RUS)		MASLEEV Evgenij (RUS)		U21MS	Qualification	QR2	1 - 3	11:7 7:11 10:12 9:11	MASLEEV Evgenij	
+2004	St. Petersburg Open 2004	SKACHKOV Kirill (RUS)		BALTRUSHKA Dzmitry (BLR)		U21MS	Qualification	3	3 - 2	10:12 9:11 12:10 12:10 11:4	SKACHKOV Kirill	
+2004	St. Petersburg Open 2004	BUROV Viacheslav (RUS)		LEBEDEV Viktor (RUS)		U21MS	Qualification		0 - 3	9:11 9:11 8:11	LEBEDEV Viktor	
+2004	St. Petersburg Open 2004	PLATONOV Pavel (BLR)		CHEPELYUK Evgenij (RUS)		U21MS	Qualification	QR2	2 - 3	6:11 5:11 11:7 11:5 9:11	CHEPELYUK Evgenij	
+2004	St. Petersburg Open 2004	BUROV Viacheslav (RUS)		CHEPELYUK Evgenij (RUS)		U21MS	Qualification	3	3 - 0	11:5 11:3 11:4	BUROV Viacheslav	
+2004	St. Petersburg Open 2004	PLATONOV Pavel (BLR)		LEBEDEV Viktor (RUS)		U21MS	Qualification	QR4	0 - 3	10:12 6:11 12:14	LEBEDEV Viktor	
+2004	St. Petersburg Open 2004	BUROV Viacheslav (RUS)		PLATONOV Pavel (BLR)		U21MS	Qualification	5	3 - 0	11:3 11:7 11:8	BUROV Viacheslav	
+2004	St. Petersburg Open 2004	CHEPELYUK Evgenij (RUS)		LEBEDEV Viktor (RUS)		U21MS	Qualification	6	0 - 3	5:11 8:11 8:11	LEBEDEV Viktor
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 86
+
+2004	St. Petersburg Open 2004	KOZLOVSKAIAI Anna (RUS)		MUGURDUMOVA Eugenia (RUS)		WS	Qualification		4 - 3	8:11 11:13 11:8 15:13 11:3 10:12 11:9	KOZLOVSKAIAI Anna	
+2004	St. Petersburg Open 2004	KULAGINA Tatjana (RUS)		MUGURDUMOVA Eugenia (RUS)		WS	Qualification	QR2	4 - 0	13:11 11:8 11:5 11:7	KULAGINA Tatjana	
+2004	St. Petersburg Open 2004	KULAGINA Tatjana (RUS)		KOZLOVSKAIAI Anna (RUS)		WS	Qualification	3	4 - 0	11:4 11:5 11:7 11:6	KULAGINA Tatjana	
+2004	St. Petersburg Open 2004	ABRAMOVA Natalia (RUS)		LEMESHEVSKAYA Valeriya (RUS)		WS	Qualification		0 - 4	7:11 8:11 9:11 8:11	LEMESHEVSKAYA Valeriya	
+2004	St. Petersburg Open 2004	KREKINA Svetlana (RUS)		LEMESHEVSKAYA Valeriya (RUS)		WS	Qualification	QR2	2 - 4	6:11 8:11 9:11 11:5 11:6 8:11	LEMESHEVSKAYA Valeriya	
+2004	St. Petersburg Open 2004	KREKINA Svetlana (RUS)		ABRAMOVA Natalia (RUS)		WS	Qualification	3	4 - 0	11:6 12:10 11:8 11:8	KREKINA Svetlana	
+2004	St. Petersburg Open 2004	KIM Minhee (YOB=1985) (KOR)		KLYUKINA Elena (RUS)		WS	Qualification	QR2	4 - 1	9:11 11:4 11:3 11:4 11:8	KIM Minhee (YOB=1985)	
+2004	St. Petersburg Open 2004	MITIUKOVA Daria (RUS)		ERMAKOVA Irina (RUS)		WS	Qualification		4 - 0	11:8 11:5 11:8 11:8	MITIUKOVA Daria	
+2004	St. Petersburg Open 2004	TIKHOMIROVA Anna (RUS)		ERMAKOVA Irina (RUS)		WS	Qualification	QR2	4 - 0	11:2 11:7 11:6 11:7	TIKHOMIROVA Anna	
+2004	St. Petersburg Open 2004	TIKHOMIROVA Anna (RUS)		MITIUKOVA Daria (RUS)		WS	Qualification	3	4 - 1	11:7 14:12 11:7 9:11 11:7	TIKHOMIROVA Anna	
+2004	St. Petersburg Open 2004	FETUKHINA Margarita (RUS)		MORKOVKINA Irina (RUS)		WS	Qualification		4 - 2	9:11 11:4 11:6 11:9 7:11 11:6	FETUKHINA Margarita	
+2004	St. Petersburg Open 2004	PIETARIKOVA-LAPTEVA Natalia (RUS)		MORKOVKINA Irina (RUS)		WS	Qualification	QR2	4 - 0	11:8 11:4 11:8 11:2	PIETARIKOVA-LAPTEVA Natalia	
+2004	St. Petersburg Open 2004	PIETARIKOVA-LAPTEVA Natalia (RUS)		FETUKHINA Margarita (RUS)		WS	Qualification	3	4 - 1	11:7 11:8 10:12 11:7 11:6	PIETARIKOVA-LAPTEVA Natalia	
+2004	St. Petersburg Open 2004	VORONOVA Anastasia (RUS)		LINDMAE Karin (EST)		WS	Qualification	3	4 - 0	11:3 12:10 11:5 11:5	VORONOVA Anastasia	
+2004	St. Petersburg Open 2004	VINOGRADOVA Mariia (RUS)		DORONINA Olga (RUS)		WS	Qualification		4 - 2	11:9 8:11 7:11 11:9 13:11 11:8	VINOGRADOVA Mariia	
+2004	St. Petersburg Open 2004	TIMINA Yana (NED)		DORONINA Olga (RUS)		WS	Qualification	QR2	4 - 0	11:6 11:1 11:1 11:4	TIMINA Yana	
+2004	St. Petersburg Open 2004	TIMINA Yana (NED)		VINOGRADOVA Mariia (RUS)		WS	Qualification	3	4 - 0	11:8 11:3 11:8 11:8	TIMINA Yana	
+2004	St. Petersburg Open 2004	LISOVA Olga (RUS)		KHVOSTIK Evgenia (RUS)		WS	Qualification	QR2	4 - 0	11:1 11:8 11:5 11:1	LISOVA Olga	
+2004	St. Petersburg Open 2004	LAKHOVA Tatiana (RUS)		SABIROVA Lada (RUS)		WS	Qualification		4 - 0	11:5 12:10 11:2 11:9	LAKHOVA Tatiana	
+2004	St. Petersburg Open 2004	KIRITSA Liudmila (RUS)		SABIROVA Lada (RUS)		WS	Qualification	QR2	4 - 0	11:8 11:6 11:3 11:4	KIRITSA Liudmila	
+2004	St. Petersburg Open 2004	KIRITSA Liudmila (RUS)		LAKHOVA Tatiana (RUS)		WS	Qualification	3	4 - 3	11:3 9:11 6:11 11:8 11:4 10:12 11:7	KIRITSA Liudmila	
+2004	St. Petersburg Open 2004	AKHMETOVA Liubov (RUS)		TERZEMAN Anna (RUS)		WS	Qualification		4 - 0	11:4 11:2 11:3 11:3	AKHMETOVA Liubov	
+2004	St. Petersburg Open 2004	NOVIKOVA Zoya (RUS)		TERZEMAN Anna (RUS)		WS	Qualification	QR2	4 - 0	11:2 11:5 11:4 11:4	NOVIKOVA Zoya	
+2004	St. Petersburg Open 2004	NOVIKOVA Zoya (RUS)		AKHMETOVA Liubov (RUS)		WS	Qualification	3	4 - 1	12:10 11:8 11:6 12:14 11:9	NOVIKOVA Zoya	
+2004	St. Petersburg Open 2004	KIM Kyungah (KOR)		KOZLOVSKAIAI Anna (RUS)		WS	Main Draw	R32	4 - 1	11:1 11:5 11:9 6:11 11:6	KIM Kyungah	
+2004	St. Petersburg Open 2004	LISOVA Olga (RUS)		LANG Kristin (GER)		WS	Main Draw	R32	2 - 4	11:7 13:15 3:11 11:5 4:11 3:11	LANG Kristin	
+2004	St. Petersburg Open 2004	KIM Kyungha (KOR)		LEMESHEVSKAYA Valeriya (RUS)		WS	Main Draw	R32	3 - 4	7:11 9:11 9:11 11:5 11:9 12:10 9:11	LEMESHEVSKAYA Valeriya	
+2004	St. Petersburg Open 2004	KIRITSA Liudmila (RUS)		GANINA Svetlana (RUS)		WS	Main Draw	R32	0 - 4	7:11 10:12 7:11 4:11	GANINA Svetlana	
+2004	St. Petersburg Open 2004	MOON Hyunjung (KOR)		VORONOVA Anastasia (RUS)		WS	Main Draw	R32	4 - 2	11:9 11:9 8:11 6:11 11:6 11:5	MOON Hyunjung	
+2004	St. Petersburg Open 2004	KIM Minhee (YOB=1985) (KOR)		FADEEVA Oxana (RUS)		WS	Main Draw	R32	4 - 2	7:11 11:8 7:11 11:8 11:5 11:4	KIM Minhee (YOB=1985)	
+2004	St. Petersburg Open 2004	LEE Eunhee (KOR)		VIKTORCHYK Maryia (BLR)		WS	Main Draw	R32	4 - 1	11:4 11:9 9:11 11:1 11:6	LEE Eunhee	
+2004	St. Petersburg Open 2004	KORNILOVA Alla (RUS)		SONG Ah Sim (HKG)		WS	Main Draw	R32	1 - 4	8:11 9:11 11:13 11:8 7:11	SONG Ah Sim	
+2004	St. Petersburg Open 2004	ZHANG Rui (HKG)		GLADIEUX Elisabeth (FRA)		WS	Main Draw	R32	4 - 0	11:7 11:4 11:7 11:7	ZHANG Rui	
+2004	St. Petersburg Open 2004	TIKHOMIROVA Anna (RUS)		KHVOSTIK Evgenia (RUS)		WS	Main Draw	R32	4 - 0	11:7 11:3 11:5 11:4	TIKHOMIROVA Anna	
+2004	St. Petersburg Open 2004	KO Somi (KOR)		MIKHAYLOVA Olga (RUS)		WS	Main Draw	R32	4 - 0	11:8 11:2 14:12 11:6	KO Somi	
+2004	St. Petersburg Open 2004	KULAGINA Tatjana (RUS)		ZAMFIR Adriana (ROU)		WS	Main Draw	R32	2 - 4	6:11 5:11 11:9 6:11 11:9 2:11	ZAMFIR Adriana	
+2004	St. Petersburg Open 2004	BADESCU Otilia (ROU)		NOVIKOVA Ekaterina (RUS)		WS	Main Draw	R32	4 - 0	11:8 11:9 11:9 11:3	BADESCU Otilia	
+2004	St. Petersburg Open 2004	KIM Junghyun (KOR)		TIMINA Yana (NED)		WS	Main Draw	R32	4 - 1	11:6 10:12 11:5 11:4 11:6	KIM Junghyun	
+2004	St. Petersburg Open 2004	VINOGRADOVA Mariia (RUS)		TIE Yana (HKG)		WS	Main Draw	R32	0 - 4	6:11 9:11 4:11 3:11	TIE Yana	
+2004	St. Petersburg Open 2004	KIM Kyungah (KOR)		LANG Kristin (GER)		WS	Main Draw	R16	4 - 3	12:10 9:11 9:11 11:9 11:2 10:12 11:7	KIM Kyungah	
+2004	St. Petersburg Open 2004	LEMESHEVSKAYA Valeriya (RUS)		GANINA Svetlana (RUS)		WS	Main Draw	R16	2 - 4	11:6 12:10 1:11 10:12 6:11 6:11	GANINA Svetlana	
+2004	St. Petersburg Open 2004	MOON Hyunjung (KOR)		KIM Minhee (YOB=1985) (KOR)		WS	Main Draw	R16	4 - 0	11:9 11:5 11:6 11:6	MOON Hyunjung	
+2004	St. Petersburg Open 2004	LEE Eunhee (KOR)		SONG Ah Sim (HKG)		WS	Main Draw	R16	2 - 4	11:7 13:11 3:11 7:11 6:11 7:11	SONG Ah Sim	
+2004	St. Petersburg Open 2004	ZHANG Rui (HKG)		TIKHOMIROVA Anna (RUS)		WS	Main Draw	R16	4 - 0	11:6 11:6 11:7 11:6	ZHANG Rui	
+2004	St. Petersburg Open 2004	KO Somi (KOR)		ZAMFIR Adriana (ROU)		WS	Main Draw	R16	4 - 1	9:11 11:3 11:7 15:13 11:6	KO Somi	
+2004	St. Petersburg Open 2004	BADESCU Otilia (ROU)		PIETARIKOVA-LAPTEVA Natalia (RUS)		WS	Main Draw	R16	4 - 2	16:14 11:6 9:11 11:9 9:11 11:7	BADESCU Otilia	
+2004	St. Petersburg Open 2004	KIM Junghyun (KOR)		TIE Yana (HKG)		WS	Main Draw	R16	1 - 4	9:11 13:11 1:11 9:11 8:11	TIE Yana	
+2004	St. Petersburg Open 2004	KIM Kyungah (KOR)		GANINA Svetlana (RUS)		WS	Main Draw	QuarterFinal	4 - 2	4:11 11:9 2:11 11:5 11:8 11:8	KIM Kyungah	
+2004	St. Petersburg Open 2004	MOON Hyunjung (KOR)		SONG Ah Sim (HKG)		WS	Main Draw	QuarterFinal	1 - 4	11:6 4:11 7:11 7:11 6:11	SONG Ah Sim	
+2004	St. Petersburg Open 2004	ZHANG Rui (HKG)		KO Somi (KOR)		WS	Main Draw	QuarterFinal	4 - 0	11:9 11:9 11:3 11:5	ZHANG Rui	
+2004	St. Petersburg Open 2004	BADESCU Otilia (ROU)		TIE Yana (HKG)		WS	Main Draw	QuarterFinal	1 - 4	6:11 6:11 5:11 13:11 6:11	TIE Yana	
+2004	St. Petersburg Open 2004	KIM Kyungah (KOR)		SONG Ah Sim (HKG)		WS	Main Draw	SemiFinal	4 - 0	11:5 11:1 11:7 11:8	KIM Kyungah	
+2004	St. Petersburg Open 2004	ZHANG Rui (HKG)		TIE Yana (HKG)		WS	Main Draw	SemiFinal	1 - 4	8:11 11:6 5:11 3:11 7:11	TIE Yana	
+2004	St. Petersburg Open 2004	KIM Kyungah (KOR)		TIE Yana (HKG)		WS	Main Draw	Final	0 - 4	8:11 7:11 10:12 6:11	TIE Yana
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+50
+Total: 33
+
+2004	St. Petersburg Open 2004	GRACHEV Andrei (RUS)	SARGSYAN Davit (ARM)	GLADYSHEV Mikhail (RUS)	KUPRIANOV Oleg (RUS)	MD	Qualification	QR32	2 - 3	8:11 11:4 11:6 10:12 8:11	GLADYSHEV Mikhail	KUPRIANOV Oleg
+2004	St. Petersburg Open 2004	BARBOLIN Illia (BLR)	KUCHUK Aleksandr (BLR)	FILICHEV Vitaly (RUS)	MANTUROV Sergei (EST)	MD	Qualification	QR32	1 - 3	4:11 9:11 11:9 5:11	FILICHEV Vitaly	MANTUROV Sergei
+2004	St. Petersburg Open 2004	GAVLAS Antonin (CZE)	GAVLAS Petr (CZE)	DAUS David (GER)	FETH Stefan (GER)	MD	Qualification	QR16	1 - 3	12:10 7:11 10:12 6:11	DAUS David	FETH Stefan
+2004	St. Petersburg Open 2004	FILICHEV Vitaly (RUS)	MANTUROV Sergei (EST)	CLOSSET Marc (BEL)	SEREDA Peter (SVK)	MD	Qualification	QR16	1 - 3	10:12 13:11 5:11 8:11	CLOSSET Marc	SEREDA Peter
+2004	St. Petersburg Open 2004	CALBRIX Nicolas (FRA)	DESPRES Rodolphe (FRA)	OLLIVIER Brice (FRA)	PHUNG Armand (FRA)	MD	Qualification	QR16	2 - 3	11:8 11:9 9:11 5:11 6:11	OLLIVIER Brice	PHUNG Armand
+2004	St. Petersburg Open 2004	OLLIVIER Brice (FRA)	PHUNG Armand (FRA)	ROSSKOPF Jorg (GER)	SCHLAGER Werner (AUT)	MD	Main Draw	QuarterFinal	3 - 4	13:11 10:12 10:12 11:9 11:3 10:12 6:11	ROSSKOPF Jorg	SCHLAGER Werner
+2004	St. Petersburg Open 2004	FRANZ Peter (GER)	KREANGA Kalinikos (GRE)	BUROV Viacheslav (RUS)	PETRUKHIN Evgeny (RUS)	MD	Qualification	QR16	3 - 0	11:7 11:8 11:8	FRANZ Peter	KREANGA Kalinikos
+2004	St. Petersburg Open 2004	FRANZ Peter (GER)	KREANGA Kalinikos (GRE)	CHEN Weixing (AUT)	GIONIS Panagiotis (GRE)	MD	Main Draw	R16	4 - 3	10:12 11:4 4:11 8:11 11:6 11:9 11:6	FRANZ Peter	KREANGA Kalinikos
+2004	St. Petersburg Open 2004	FRANZ Peter (GER)	KREANGA Kalinikos (GRE)	CLOSSET Marc (BEL)	SEREDA Peter (SVK)	MD	Main Draw	Final	4 - 0	11:9 11:6 11:6 11:8	FRANZ Peter	KREANGA Kalinikos
+2004	St. Petersburg Open 2004	LO Dany (FRA)	STEPHENSEN Gudmundur (ISL)	BENTSEN Allan (DEN)	PRIMORAC Zoran (CRO)	MD	Main Draw	R16	2 - 4	4:11 11:6 13:11 5:11 13:15 9:11	BENTSEN Allan	PRIMORAC Zoran
+2004	St. Petersburg Open 2004	CHOI Hyunjin (KOR)	LEE Jungwoo (KOR)	DAUS David (GER)	FETH Stefan (GER)	MD	Main Draw	R16	4 - 2	10:12 11:7 8:11 11:7 11:5 11:9	CHOI Hyunjin	LEE Jungwoo
+2004	St. Petersburg Open 2004	CHOI Hyunjin (KOR)	LEE Jungwoo (KOR)	CLOSSET Marc (BEL)	SEREDA Peter (SVK)	MD	Main Draw	QuarterFinal	1 - 4	9:11 10:12 5:11 11:6 5:11	CLOSSET Marc	SEREDA Peter
+2004	St. Petersburg Open 2004	BARKHATOV Evgenij (RUS)	KARPOV Andrei (RUS)	OLLIVIER Brice (FRA)	PHUNG Armand (FRA)	MD	Qualification	QR32	0 - 3	13:15 5:11 5:11	OLLIVIER Brice	PHUNG Armand
+2004	St. Petersburg Open 2004	GAVRILOV Denis (RUS)	XIAO Bo (RUS)	LIEVSHYN Vitaliy (UKR)	PRYSHCHEPA Ievgen (UKR)	MD	Qualification	QR32	3 - 1	16:14 11:4 4:11 11:3	GAVRILOV Denis	XIAO Bo
+2004	St. Petersburg Open 2004	LEBEDEV Viktor (RUS)	SKACHKOV Kirill (RUS)	BALTRUSHKA Dzmitry (BLR)	PLATONOV Pavel (BLR)	MD	Qualification	QR32	2 - 3	5:11 11:8 11:7 9:11 8:11	BALTRUSHKA Dzmitry	PLATONOV Pavel
+2004	St. Petersburg Open 2004	CHEPELYUK Evgenij (RUS)	MASLEEV Evgenij (RUS)	GAVLAS Antonin (CZE)	GAVLAS Petr (CZE)	MD	Qualification	QR32	0 - 3	3:11 6:11 7:11	GAVLAS Antonin	GAVLAS Petr
+2004	St. Petersburg Open 2004	GLADYSHEV Mikhail (RUS)	KUPRIANOV Oleg (RUS)	LO Dany (FRA)	STEPHENSEN Gudmundur (ISL)	MD	Qualification	QR16	1 - 3	11:9 6:11 11:13 16:18	LO Dany	STEPHENSEN Gudmundur
+2004	St. Petersburg Open 2004	GAVRILOV Denis (RUS)	XIAO Bo (RUS)	ANDRIANOV Sergei (RUS)	LAKEEV Vasily (RUS)	MD	Qualification	QR16	3 - 1	11:8 9:11 11:7 16:14	GAVRILOV Denis	XIAO Bo
+2004	St. Petersburg Open 2004	GARDOS Robert (AUT)	SMIRNOV Alexey (RUS)	ASAMOAH Cyprian (SWE)	GERELL Par (SWE)	MD	Main Draw	R16	4 - 2	8:11 3:11 11:7 11:2 11:9 11:8	GARDOS Robert	SMIRNOV Alexey
+2004	St. Petersburg Open 2004	OH Sangeun (KOR)	SHMYREV Maxim (RUS)	OLLIVIER Brice (FRA)	PHUNG Armand (FRA)	MD	Main Draw	R16	1 - 4	11:5 9:11 6:11 10:12 8:11	OLLIVIER Brice	PHUNG Armand
+2004	St. Petersburg Open 2004	MAKSIMOV Maksim (RUS)	TIAPKIN Sergei (RUS)	ROSSKOPF Jorg (GER)	SCHLAGER Werner (AUT)	MD	Main Draw	R16	2 - 4	13:11 7:11 11:9 3:11 12:14 8:11	ROSSKOPF Jorg	SCHLAGER Werner
+2004	St. Petersburg Open 2004	GARDOS Robert (AUT)	SMIRNOV Alexey (RUS)	BENTSEN Allan (DEN)	PRIMORAC Zoran (CRO)	MD	Main Draw	QuarterFinal	4 - 2	11:5 5:11 11:9 7:11 11:9 11:6	GARDOS Robert	SMIRNOV Alexey
+2004	St. Petersburg Open 2004	GARDOS Robert (AUT)	SMIRNOV Alexey (RUS)	FRANZ Peter (GER)	KREANGA Kalinikos (GRE)	MD	Main Draw	SemiFinal	2 - 4	3:11 11:1 7:11 11:7 6:11 5:11	FRANZ Peter	KREANGA Kalinikos
+2004	St. Petersburg Open 2004	DIDUKH Oleksandr (UKR)	ILLAS Erik (SVK)	MAKSIMOV Maksim (RUS)	TIAPKIN Sergei (RUS)	MD	Qualification	QR16	2 - 3	11:7 8:11 11:5 3:11 7:11	MAKSIMOV Maksim	TIAPKIN Sergei
+2004	St. Petersburg Open 2004	CLOSSET Marc (BEL)	SEREDA Peter (SVK)	LIVENTSOV Alexey (RUS)	RUBTSOV Igor (RUS)	MD	Main Draw	R16	4 - 3	11:8 8:11 11:4 9:11 8:11 11:8 11:9	CLOSSET Marc	SEREDA Peter
+2004	St. Petersburg Open 2004	CLOSSET Marc (BEL)	SEREDA Peter (SVK)	ROSSKOPF Jorg (GER)	SCHLAGER Werner (AUT)	MD	Main Draw	SemiFinal	4 - 2	12:14 11:7 11:6 11:4 6:11 11:3	CLOSSET Marc	SEREDA Peter
+2004	St. Petersburg Open 2004	ASAMOAH Cyprian (SWE)	GERELL Par (SWE)	IVANOV Ivan (BUL)	ZAIKIN Alan (RUS)	MD	Qualification	QR32	3 - 1	8:11 11:6 11:4 16:14	ASAMOAH Cyprian	GERELL Par
+2004	St. Petersburg Open 2004	ASAMOAH Cyprian (SWE)	GERELL Par (SWE)	BALTRUSHKA Dzmitry (BLR)	PLATONOV Pavel (BLR)	MD	Qualification	QR16	3 - 0	11:6 11:4 12:10	ASAMOAH Cyprian	GERELL Par
+2004	St. Petersburg Open 2004	HAKANSSON Fredrik (SWE)	KARLSSON Peter (SWE)	GAVRILOV Denis (RUS)	XIAO Bo (RUS)	MD	Main Draw	R16	4 - 3	9:11 15:13 10:12 11:9 6:11 11:7 11:7	HAKANSSON Fredrik	KARLSSON Peter
+2004	St. Petersburg Open 2004	HAKANSSON Fredrik (SWE)	KARLSSON Peter (SWE)	FRANZ Peter (GER)	KREANGA Kalinikos (GRE)	MD	Main Draw	QuarterFinal	2 - 4	7:11 11:7 11:7 11:13 4:11 6:11	FRANZ Peter	KREANGA Kalinikos
+2004	St. Petersburg Open 2004	FILENKO Oleg (UKR)	GUDILKIN Igor (UKR)	BUROV Viacheslav (RUS)	PETRUKHIN Evgeny (RUS)	MD	Qualification	QR32	1 - 3	11:7 9:11 11:13 10:12	BUROV Viacheslav	PETRUKHIN Evgeny
+2004	St. Petersburg Open 2004		NEKHVEDOVICH Vitaly (BLR)	MAKSIMOV Maksim (RUS)	TIAPKIN Sergei (RUS)	MD	Qualification	QR32	0 - 3	8:11 7:11 11:13	MAKSIMOV Maksim	TIAPKIN Sergei
+2004	St. Petersburg Open 2004	KATKOV Ivan (UKR)		ANDRIANOV Sergei (RUS)	LAKEEV Vasily (RUS)	MD	Qualification	QR32	0 - 3	11:13 7:11 6:11	ANDRIANOV Sergei	LAKEEV Vasily
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+50
+Total: 19
+
+2004	St. Petersburg Open 2004	LEMESHEVSKAYA Valeriya (RUS)	VIKTORCHYK Maryia (BLR)	KIM Junghyun (KOR)	KIM Kyungha (KOR)	WD	Main Draw	R16	1 - 4	4:11 10:12 14:12 5:11 1:11	KIM Junghyun	KIM Kyungha
+2004	St. Petersburg Open 2004	SONG Ah Sim (HKG)	TIE Yana (HKG)	KORNILOVA Alla (RUS)	TIKHOMIROVA Anna (RUS)	WD	Main Draw	R16	4 - 0	11:6 11:5 11:3 13:11	SONG Ah Sim	TIE Yana
+2004	St. Petersburg Open 2004	LANG Kristin (GER)	ZHANG Rui (HKG)	GLADIEUX Elisabeth (FRA)	PIETARIKOVA-LAPTEVA Natalia (RUS)	WD	Main Draw	R16	4 - 2	11:7 11:6 3:11 11:7 11:13 14:12	LANG Kristin	ZHANG Rui
+2004	St. Petersburg Open 2004	SONG Ah Sim (HKG)	TIE Yana (HKG)	KIM Minhee (YOB=1985) (KOR)	MOON Hyunjung (KOR)	WD	Main Draw	QuarterFinal	4 - 0	11:3 11:5 11:5 11:2	SONG Ah Sim	TIE Yana
+2004	St. Petersburg Open 2004	LANG Kristin (GER)	ZHANG Rui (HKG)	GANINA Svetlana (RUS)	KIM Kyungah (KOR)	WD	Main Draw	QuarterFinal	2 - 4	7:11 11:8 9:11 14:12 8:11 3:11	GANINA Svetlana	KIM Kyungah
+2004	St. Petersburg Open 2004	SONG Ah Sim (HKG)	TIE Yana (HKG)	KIM Junghyun (KOR)	KIM Kyungha (KOR)	WD	Main Draw	SemiFinal	4 - 0	11:7 11:6 13:11 11:5	SONG Ah Sim	TIE Yana
+2004	St. Petersburg Open 2004	SONG Ah Sim (HKG)	TIE Yana (HKG)	BADESCU Otilia (ROU)	ZAMFIR Adriana (ROU)	WD	Main Draw	Final	4 - 3	14:16 5:11 6:11 11:7 11:5 11:9 11:7	SONG Ah Sim	TIE Yana
+2004	St. Petersburg Open 2004	KO Somi (KOR)	LEE Eunhee (KOR)	GANINA Svetlana (RUS)	KIM Kyungah (KOR)	WD	Main Draw	R16	1 - 4	9:11 8:11 7:11 11:5 6:11	GANINA Svetlana	KIM Kyungah
+2004	St. Petersburg Open 2004	BADESCU Otilia (ROU)	ZAMFIR Adriana (ROU)	MITIUKOVA Daria (RUS)	TIMINA Yana (NED)	WD	Main Draw	R16	4 - 2	11:4 11:5 10:12 13:11 6:11 11:8	BADESCU Otilia	ZAMFIR Adriana
+2004	St. Petersburg Open 2004	BADESCU Otilia (ROU)	ZAMFIR Adriana (ROU)	ABRAMOVA Natalia (RUS)	AKHMETOVA Liubov (RUS)	WD	Main Draw	QuarterFinal	4 - 2	6:11 11:2 11:7 6:11 11:3 11:4	BADESCU Otilia	ZAMFIR Adriana
+2004	St. Petersburg Open 2004	BADESCU Otilia (ROU)	ZAMFIR Adriana (ROU)	GANINA Svetlana (RUS)	KIM Kyungah (KOR)	WD	Main Draw	SemiFinal	4 - 0	15:13 11:4 11:9 11:9	BADESCU Otilia	ZAMFIR Adriana
+2004	St. Petersburg Open 2004	VINOGRADOVA Mariia (RUS)	LAKHOVA Tatiana (RUS)	KIM Minhee (YOB=1985) (KOR)	MOON Hyunjung (KOR)	WD	Main Draw	R16	0 - 4	7:11 6:11 7:11 4:11	KIM Minhee (YOB=1985)	MOON Hyunjung
+2004	St. Petersburg Open 2004	ABRAMOVA Natalia (RUS)	AKHMETOVA Liubov (RUS)	KIRITSA Liudmila (RUS)	KREKINA Svetlana (RUS)	WD	Main Draw	R16	4 - 2	11:9 12:14 11:9 11:13 11:9 13:11	ABRAMOVA Natalia	AKHMETOVA Liubov
+2004	St. Petersburg Open 2004	FADEEVA Oxana (RUS)	KULAGINA Tatjana (RUS)	KIM Junghyun (KOR)	KIM Kyungha (KOR)	WD	Main Draw	QuarterFinal	2 - 4	9:11 5:11 11:9 12:10 7:11 8:11	KIM Junghyun	KIM Kyungha
+2004	St. Petersburg Open 2004	KORNILOVA Alla (RUS)	TIKHOMIROVA Anna (RUS)	DORONINA Olga (RUS)	KLYUKINA Elena (RUS)	WD	Qualification	QR16	3 - 1	11:8 11:8 12:14 11:9	KORNILOVA Alla	TIKHOMIROVA Anna
+2004	St. Petersburg Open 2004	LISOVA Olga (RUS)	VORONOVA Anastasia (RUS)	ABRAMOVA Natalia (RUS)	AKHMETOVA Liubov (RUS)	WD	Qualification	QR16	2 - 3	11:4 11:8 8:11 7:11 8:11	ABRAMOVA Natalia	AKHMETOVA Liubov
+2004	St. Petersburg Open 2004	ERMAKOVA Irina (RUS)	MORKOVKINA Irina (RUS)	LEMESHEVSKAYA Valeriya (RUS)	VIKTORCHYK Maryia (BLR)	WD	Qualification	QR16	2 - 3	11:6 11:9 5:11 4:11 4:11	LEMESHEVSKAYA Valeriya	VIKTORCHYK Maryia
+2004	St. Petersburg Open 2004	FETUKHINA Margarita (RUS)	MUGURDUMOVA Eugenia (RUS)	VINOGRADOVA Mariia (RUS)	LAKHOVA Tatiana (RUS)	WD	Qualification	QR16	2 - 3	13:11 7:11 11:6 8:11 1:11	VINOGRADOVA Mariia	LAKHOVA Tatiana
+2004	St. Petersburg Open 2004		NOVIKOVA Ekaterina (RUS)	MITIUKOVA Daria (RUS)	TIMINA Yana (NED)	WD	Qualification	QR16	2 - 3	9:11 11:8 14:12 10:12 2:11	MITIUKOVA Daria	TIMINA Yana

@@ -1,0 +1,176 @@
+赛事编号：1700
+年份：2004
+赛事名称：China Open Wuxi 2004
+赛事类型：ITTF World Tour / Pro Tour
+赛事种类：--
+参赛人数：216
+开始日期：2004-09-09
+结束日期：2004-09-12
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 96
+
+2004	China Open Wuxi 2004	WANG Liqin (CHN)		HWANG Sunghoon (KOR)		MS	Main Draw	R32	4 - 0	11:2 11:7 11:3 12:10	WANG Liqin	
+2004	China Open Wuxi 2004	GERELL Par (SWE)		YAN Sen (CHN)		MS	Main Draw	R32	3 - 4	5:11 12:10 14:12 7:11 11:8 3:11 7:11	YAN Sen	
+2004	China Open Wuxi 2004	CHILA Patrick (FRA)		AXELQVIST Johan (SWE)		MS	Main Draw	R32	2 - 4	6:11 11:6 11:4 6:11 8:11 6:11	AXELQVIST Johan	
+2004	China Open Wuxi 2004	KIM Taehoon (KOR)		LEUNG Chu Yan (HKG)		MS	Main Draw	R32	2 - 4	5:11 12:10 8:11 11:6 9:11 7:11	LEUNG Chu Yan	
+2004	China Open Wuxi 2004	KARLSSON Peter (SWE)		YOSHIDA Kaii (JPN)		MS	Main Draw	R32	4 - 3	16:14 11:1 2:11 11:7 7:11 8:11 11:4	KARLSSON Peter	
+2004	China Open Wuxi 2004	YANG Zi (SGP)		KIM Gunhwan (KOR)		MS	Main Draw	R32	4 - 3	16:14 11:6 10:12 12:14 9:11 12:10 12:10	YANG Zi	
+2004	China Open Wuxi 2004	HAKANSSON Fredrik (SWE)		LIM Jaehyun (KOR)		MS	Main Draw	R32	3 - 4	10:12 9:11 11:8 11:6 11:6 10:12 5:11	LIM Jaehyun	
+2004	China Open Wuxi 2004	KIHO Shinnosuke (JPN)		MA Lin (CHN)		MS	Main Draw	R32	1 - 4	10:12 4:11 7:11 11:8 8:11	MA Lin	
+2004	China Open Wuxi 2004	CHEN Qi (CHN)		LEE Jungsam (KOR)		MS	Main Draw	R32	4 - 1	11:8 11:3 11:3 9:11 13:11	CHEN Qi	
+2004	China Open Wuxi 2004	LO Dany (FRA)		CHEUNG Yuk (HKG)		MS	Main Draw	R32	1 - 4	10:12 12:10 4:11 6:11 4:11	CHEUNG Yuk	
+2004	China Open Wuxi 2004	O Il (PRK)		TAKAKIWA Taku (JPN)		MS	Main Draw	R32	4 - 3	11:4 11:9 11:3 8:11 7:11 5:11 11:5	O Il	
+2004	China Open Wuxi 2004	OMORI Takahiro (JPN)		KONG Linghui (CHN)		MS	Main Draw	R32	0 - 4	6:11 2:11 6:11 8:11	KONG Linghui	
+2004	China Open Wuxi 2004	SMIRNOV Alexey (RUS)		LAI Kuan-Shen (TPE)		MS	Main Draw	R32	4 - 1	11:9 9:11 11:4 14:12 11:6	SMIRNOV Alexey	
+2004	China Open Wuxi 2004	ASAMOAH Cyprian (SWE)		PAK Won Chol (PRK)		MS	Main Draw	R32	2 - 4	11:9 12:10 9:11 7:11 6:11 11:13	PAK Won Chol	
+2004	China Open Wuxi 2004	YOSHITOMI Eigo (JPN)		CHOU Tung-Yu (TPE)		MS	Main Draw	R32	4 - 2	11:8 7:11 11:6 11:9 10:12 12:10	YOSHITOMI Eigo	
+2004	China Open Wuxi 2004	KIM Song Chol (PRK)		WANG Hao (CHN)		MS	Main Draw	R32	0 - 4	8:11 7:11 6:11 10:12	WANG Hao	
+2004	China Open Wuxi 2004	WANG Liqin (CHN)		YAN Sen (CHN)		MS	Main Draw	R16	4 - 0	11:6 11:3 11:9 11:4	WANG Liqin	
+2004	China Open Wuxi 2004	AXELQVIST Johan (SWE)		LEUNG Chu Yan (HKG)		MS	Main Draw	R16	1 - 4	13:11 8:11 6:11 9:11 10:12	LEUNG Chu Yan	
+2004	China Open Wuxi 2004	KARLSSON Peter (SWE)		YANG Zi (SGP)		MS	Main Draw	R16	4 - 1	7:11 11:5 11:9 11:8 11:7	KARLSSON Peter	
+2004	China Open Wuxi 2004	LIM Jaehyun (KOR)		MA Lin (CHN)		MS	Main Draw	R16	0 - 4	6:11 8:11 7:11 8:11	MA Lin	
+2004	China Open Wuxi 2004	CHEN Qi (CHN)		CHEUNG Yuk (HKG)		MS	Main Draw	R16	4 - 1	11:6 6:11 11:7 11:8 13:11	CHEN Qi	
+2004	China Open Wuxi 2004	O Il (PRK)		KONG Linghui (CHN)		MS	Main Draw	R16	0 - 4	9:11 4:11 5:11 2:11	KONG Linghui	
+2004	China Open Wuxi 2004	SMIRNOV Alexey (RUS)		PAK Won Chol (PRK)		MS	Main Draw	R16	4 - 3	11:5 6:11 9:11 11:6 11:8 6:11 12:10	SMIRNOV Alexey	
+2004	China Open Wuxi 2004	YOSHITOMI Eigo (JPN)		WANG Hao (CHN)		MS	Main Draw	R16	1 - 4	3:11 4:11 11:4 9:11 12:14	WANG Hao	
+2004	China Open Wuxi 2004	WANG Liqin (CHN)		LEUNG Chu Yan (HKG)		MS	Main Draw	QuarterFinal	4 - 0	14:12 11:8 11:9 11:3	WANG Liqin	
+2004	China Open Wuxi 2004	KARLSSON Peter (SWE)		MA Lin (CHN)		MS	Main Draw	QuarterFinal	0 - 4	7:11 3:11 6:11 4:11	MA Lin	
+2004	China Open Wuxi 2004	CHEN Qi (CHN)		KONG Linghui (CHN)		MS	Main Draw	QuarterFinal	4 - 3	9:11 6:11 11:8 11:13 13:11 13:11 12:10	CHEN Qi	
+2004	China Open Wuxi 2004	SMIRNOV Alexey (RUS)		WANG Hao (CHN)		MS	Main Draw	QuarterFinal	1 - 4	10:12 12:10 2:11 3:11 8:11	WANG Hao	
+2004	China Open Wuxi 2004	WANG Liqin (CHN)		MA Lin (CHN)		MS	Main Draw	SemiFinal	1 - 4	12:10 8:11 4:11 6:11 10:12	MA Lin	
+2004	China Open Wuxi 2004	CHEN Qi (CHN)		WANG Hao (CHN)		MS	Main Draw	SemiFinal	3 - 4	11:5 3:11 11:9 8:11 5:11 11:6 7:11	WANG Hao	
+2004	China Open Wuxi 2004	MA Lin (CHN)		WANG Hao (CHN)		MS	Main Draw	Final	4 - 2	11:8 8:11 11:6 11:8 10:12 11:3	MA Lin	
+2004	China Open Wuxi 2004	KIHO Shinnosuke (JPN)		CHOU Tung-Yu (TPE)		MS	Qualification	3	3 - 4	11:7 9:11 11:6 9:11 6:11 11:9 7:11	CHOU Tung-Yu	
+2004	China Open Wuxi 2004	OMORI Takahiro (JPN)		HUANG Wei-Chin (TPE)		MS	Qualification		4 - 0	11:9 11:9 11:4 11:3	OMORI Takahiro	
+2004	China Open Wuxi 2004	GERELL Par (SWE)		HUANG Wei-Chin (TPE)		MS	Qualification	QR2	4 - 0	11:6 11:5 11:6 11:9	GERELL Par	
+2004	China Open Wuxi 2004	GERELL Par (SWE)		OMORI Takahiro (JPN)		MS	Qualification	3	4 - 3	11:5 6:11 11:8 7:11 11:5 10:12 11:9	GERELL Par	
+2004	China Open Wuxi 2004	LIM Jaehyun (KOR)		LAI Kuan-Shen (TPE)		MS	Qualification	QR2	4 - 0	11:9 16:14 11:8 11:1	LIM Jaehyun	
+2004	China Open Wuxi 2004	YANG Zi (SGP)		CHUAN Che-Wei (TPE)		MS	Qualification		4 - 0	11:4 11:4 11:8 11:9	YANG Zi	
+2004	China Open Wuxi 2004	BERTIN Christophe (FRA)		YOSHIDA Kaii (JPN)		MS	Qualification	QR2	3 - 4	11:9 12:10 8:11 7:11 7:11 11:8 5:11	YOSHIDA Kaii	
+2004	China Open Wuxi 2004	YANG Zi (SGP)		YOSHIDA Kaii (JPN)		MS	Qualification	3	4 - 0	11:4 11:2 11:6 11:6	YANG Zi	
+2004	China Open Wuxi 2004	BERTIN Christophe (FRA)		CHUAN Che-Wei (TPE)		MS	Qualification	QR4	4 - 2	10:12 11:6 11:7 8:11 13:11 11:9	BERTIN Christophe	
+2004	China Open Wuxi 2004	YANG Zi (SGP)		BERTIN Christophe (FRA)		MS	Qualification	5	4 - 1	11:5 7:11 11:9 11:6 11:4	YANG Zi	
+2004	China Open Wuxi 2004	YOSHIDA Kaii (JPN)		CHUAN Che-Wei (TPE)		MS	Qualification	6	4 - 0	11:3 11:6 11:5 11:7	YOSHIDA Kaii	
+2004	China Open Wuxi 2004	KIM Taehoon (KOR)		VIPAWATANAKUL Tanawat (THA)		MS	Qualification		4 - 0	11:3 11:7 11:5 11:4	KIM Taehoon	
+2004	China Open Wuxi 2004	TAKAKIWA Taku (JPN)		SUN Wen-Wei (TPE)		MS	Qualification	QR2	4 - 0	11:8 11:6 11:4 11:4	TAKAKIWA Taku	
+2004	China Open Wuxi 2004	KIM Taehoon (KOR)		SUN Wen-Wei (TPE)		MS	Qualification	3	4 - 0	11:9 11:5 14:12 13:11	KIM Taehoon	
+2004	China Open Wuxi 2004	VIPAWATANAKUL Tanawat (THA)		TAKAKIWA Taku (JPN)		MS	Qualification	QR4	0 - 4	4:11 2:11 5:11 4:11	TAKAKIWA Taku	
+2004	China Open Wuxi 2004	KIM Taehoon (KOR)		TAKAKIWA Taku (JPN)		MS	Qualification	5	3 - 4	11:3 11:9 9:11 11:7 2:11 7:11 4:11	TAKAKIWA Taku	
+2004	China Open Wuxi 2004	SUN Wen-Wei (TPE)		VIPAWATANAKUL Tanawat (THA)		MS	Qualification	6	4 - 1	11:8 11:4 11:9 6:11 11:7	SUN Wen-Wei	
+2004	China Open Wuxi 2004	ASAMOAH Cyprian (SWE)		TAKAKIWA Kenichi (JPN)		MS	Qualification		4 - 2	11:9 12:10 2:11 17:15 6:11 11:7	ASAMOAH Cyprian	
+2004	China Open Wuxi 2004	LEE Jungsam (KOR)		TSE Ka Chun (HKG)		MS	Qualification	QR2	4 - 2	11:2 11:8 11:8 6:11 6:11 11:6	LEE Jungsam	
+2004	China Open Wuxi 2004	ASAMOAH Cyprian (SWE)		TSE Ka Chun (HKG)		MS	Qualification	3	4 - 1	11:6 11:5 11:4 9:11 11:8	ASAMOAH Cyprian	
+2004	China Open Wuxi 2004	TAKAKIWA Kenichi (JPN)		LEE Jungsam (KOR)		MS	Qualification	QR4	3 - 4	13:11 4:11 11:6 11:8 6:11 5:11 7:11	LEE Jungsam	
+2004	China Open Wuxi 2004	ASAMOAH Cyprian (SWE)		LEE Jungsam (KOR)		MS	Qualification	5	4 - 1	13:11 7:11 11:8 11:4 11:5	ASAMOAH Cyprian	
+2004	China Open Wuxi 2004	TSE Ka Chun (HKG)		TAKAKIWA Kenichi (JPN)		MS	Qualification	6	1 - 4	9:11 9:11 11:9 6:11 8:11	TAKAKIWA Kenichi	
+2004	China Open Wuxi 2004	BOBILLIER Loic (FRA)		HWANG Sunghoon (KOR)		MS	Qualification		0 - 4	9:11 7:11 10:12 11:13	HWANG Sunghoon	
+2004	China Open Wuxi 2004	AXELQVIST Johan (SWE)		HUANG Sheng-Sheng (TPE)		MS	Qualification	QR2	4 - 0	11:5 11:9 11:7 14:12	AXELQVIST Johan	
+2004	China Open Wuxi 2004	BOBILLIER Loic (FRA)		HUANG Sheng-Sheng (TPE)		MS	Qualification	3	4 - 2	10:12 11:4 11:9 2:11 11:8 12:10	BOBILLIER Loic	
+2004	China Open Wuxi 2004	AXELQVIST Johan (SWE)		HWANG Sunghoon (KOR)		MS	Qualification	QR4	4 - 3	11:8 11:5 8:11 11:8 4:11 7:11 11:8	AXELQVIST Johan	
+2004	China Open Wuxi 2004	BOBILLIER Loic (FRA)		AXELQVIST Johan (SWE)		MS	Qualification	5	0 - 4	7:11 8:11 4:11 9:11	AXELQVIST Johan	
+2004	China Open Wuxi 2004	HUANG Sheng-Sheng (TPE)		HWANG Sunghoon (KOR)		MS	Qualification	6	4 - 3	11:8 7:11 14:12 11:5 9:11 7:11 11:8	HUANG Sheng-Sheng	
+2004	China Open Wuxi 2004	LO Dany (FRA)		SANADA Koji (JPN)		MS	Qualification		4 - 0	11:7 12:10 12:10 11:7	LO Dany	
+2004	China Open Wuxi 2004	KIM Song Chol (PRK)		VIPAWATANAKUL Sithichok (AUS)		MS	Qualification	QR2	4 - 0	11:5 14:12 12:10 11:4	KIM Song Chol	
+2004	China Open Wuxi 2004	LO Dany (FRA)		VIPAWATANAKUL Sithichok (AUS)		MS	Qualification	3	4 - 2	11:7 6:11 11:4 9:11 11:6 13:11	LO Dany	
+2004	China Open Wuxi 2004	KIM Song Chol (PRK)		SANADA Koji (JPN)		MS	Qualification	QR4	4 - 1	11:9 11:7 11:3 10:12 13:11	KIM Song Chol	
+2004	China Open Wuxi 2004	LO Dany (FRA)		KIM Song Chol (PRK)		MS	Qualification	5	4 - 1	8:11 12:10 11:7 11:8 11:5	LO Dany	
+2004	China Open Wuxi 2004	VIPAWATANAKUL Sithichok (AUS)		SANADA Koji (JPN)		MS	Qualification	6	0 - 4	2:11 5:11 8:11 4:11	SANADA Koji
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 83
+
+2004	China Open Wuxi 2004	ZHANG Yining (CHN)		PAN Chun-Chu (TPE)		WS	Main Draw	R32	4 - 0	11:2 11:6 11:4 11:5	ZHANG Yining	
+2004	China Open Wuxi 2004	KOMWONG Nanthana (THA)		HIRANO Sayaka (JPN)		WS	Main Draw	R32	3 - 4	11:7 11:7 4:11 9:11 19:17 8:11 6:11	HIRANO Sayaka	
+2004	China Open Wuxi 2004	LI Xiaoxia (CHN)		KIM Jong (PRK)		WS	Main Draw	R32	4 - 0	11:4 11:7 11:9 11:1	LI Xiaoxia	
+2004	China Open Wuxi 2004	MUANGSUK Anisara (THA)		KIM Hyang Mi (PRK)		WS	Main Draw	R32	3 - 4	11:8 7:11 11:7 9:11 4:11 12:10 4:11	KIM Hyang Mi	
+2004	China Open Wuxi 2004	ZHANG Rui (HKG)		KIM Hyehyun (KOR)		WS	Main Draw	R32	4 - 0	11:6 11:7 12:10 11:7	ZHANG Rui	
+2004	China Open Wuxi 2004	JANG Hyon Ae (PRK)		MOON Hyunjung (KOR)		WS	Main Draw	R32	0 - 4	10:12 4:11 6:11 8:11	MOON Hyunjung	
+2004	China Open Wuxi 2004	CAO Zhen (CHN)		KIM Mi Yong (PRK)		WS	Main Draw	R32	4 - 2	3:11 11:7 11:9 8:11 11:6 11:6	CAO Zhen	
+2004	China Open Wuxi 2004	LEE I-Chen (TPE)		TIE Yana (HKG)		WS	Main Draw	R32	1 - 4	8:11 5:11 11:8 5:11 5:11	TIE Yana	
+2004	China Open Wuxi 2004	LAU Sui Fei (HKG)		KIM Minhee (YOB=1985) (KOR)		WS	Main Draw	R32	4 - 0	11:6 11:3 11:8 11:8	LAU Sui Fei	
+2004	China Open Wuxi 2004	KWAK Bangbang (KOR)		KONISHI An (JPN)		WS	Main Draw	R32	1 - 4	6:11 14:12 5:11 7:11 9:11	KONISHI An	
+2004	China Open Wuxi 2004	KIM Hyon Hui (PRK)		WANG Tingting (CHN)		WS	Main Draw	R32	1 - 4	8:11 4:11 14:12 9:11 7:11	WANG Tingting	
+2004	China Open Wuxi 2004	HUANG Yi-Hua (TPE)		FUKUHARA Ai (JPN)		WS	Main Draw	R32	1 - 4	5:11 17:19 14:12 6:11 8:11	FUKUHARA Ai	
+2004	China Open Wuxi 2004	FAN Ying (CHN)		LEE Hyangmi (KOR)		WS	Main Draw	R32	4 - 0	11:5 11:7 11:6 11:5	FAN Ying	
+2004	China Open Wuxi 2004	ETSUZAKI Ayumi (JPN)		SONG Ah Sim (HKG)		WS	Main Draw	R32	4 - 2	11:7 8:11 11:3 11:6 6:11 16:14	ETSUZAKI Ayumi	
+2004	China Open Wuxi 2004	KIM Yun Mi (PRK)		FUJITA Yuki (JPN)		WS	Main Draw	R32	4 - 3	11:7 6:11 11:4 9:11 13:11 8:11 11:9	KIM Yun Mi	
+2004	China Open Wuxi 2004	JEON Hyekyung (KOR)		WANG Nan (CHN)		WS	Main Draw	R32	1 - 4	11:9 5:11 8:11 5:11 6:11	WANG Nan	
+2004	China Open Wuxi 2004	ZHANG Yining (CHN)		HIRANO Sayaka (JPN)		WS	Main Draw	R16	4 - 0	11:8 11:7 11:6 11:4	ZHANG Yining	
+2004	China Open Wuxi 2004	LI Xiaoxia (CHN)		KIM Hyang Mi (PRK)		WS	Main Draw	R16	4 - 1	11:7 11:7 11:5 9:11 11:7	LI Xiaoxia	
+2004	China Open Wuxi 2004	ZHANG Rui (HKG)		MOON Hyunjung (KOR)		WS	Main Draw	R16	4 - 3	11:9 9:11 11:9 11:13 6:11 11:9 11:9	ZHANG Rui	
+2004	China Open Wuxi 2004	CAO Zhen (CHN)		TIE Yana (HKG)		WS	Main Draw	R16	4 - 0	13:11 11:8 11:5 11:4	CAO Zhen	
+2004	China Open Wuxi 2004	LAU Sui Fei (HKG)		KONISHI An (JPN)		WS	Main Draw	R16	2 - 4	7:11 11:13 11:7 7:11 11:9 7:11	KONISHI An	
+2004	China Open Wuxi 2004	WANG Tingting (CHN)		FUKUHARA Ai (JPN)		WS	Main Draw	R16	4 - 2	7:11 11:6 9:11 11:8 11:9 11:3	WANG Tingting	
+2004	China Open Wuxi 2004	FAN Ying (CHN)		ETSUZAKI Ayumi (JPN)		WS	Main Draw	R16	4 - 2	11:6 11:5 9:11 11:8 7:11 11:8	FAN Ying	
+2004	China Open Wuxi 2004	KIM Yun Mi (PRK)		WANG Nan (CHN)		WS	Main Draw	R16	1 - 4	7:11 7:11 8:11 11:2 8:11	WANG Nan	
+2004	China Open Wuxi 2004	ZHANG Yining (CHN)		LI Xiaoxia (CHN)		WS	Main Draw	QuarterFinal	4 - 2	11:9 9:11 8:11 11:7 11:3 13:11	ZHANG Yining	
+2004	China Open Wuxi 2004	ZHANG Rui (HKG)		CAO Zhen (CHN)		WS	Main Draw	QuarterFinal	1 - 4	3:11 9:11 6:11 11:6 6:11	CAO Zhen	
+2004	China Open Wuxi 2004	KONISHI An (JPN)		WANG Tingting (CHN)		WS	Main Draw	QuarterFinal	0 - 4	9:11 9:11 9:11 8:11	WANG Tingting	
+2004	China Open Wuxi 2004	FAN Ying (CHN)		WANG Nan (CHN)		WS	Main Draw	QuarterFinal	4 - 3	4:11 11:4 6:11 11:6 10:12 11:7 11:5	FAN Ying	
+2004	China Open Wuxi 2004	ZHANG Yining (CHN)		CAO Zhen (CHN)		WS	Main Draw	SemiFinal	2 - 4	11:9 7:11 9:11 6:11 12:10 3:11	CAO Zhen	
+2004	China Open Wuxi 2004	WANG Tingting (CHN)		FAN Ying (CHN)		WS	Main Draw	SemiFinal	4 - 2	6:11 12:10 11:9 9:11 11:8 11:7	WANG Tingting	
+2004	China Open Wuxi 2004	CAO Zhen (CHN)		WANG Tingting (CHN)		WS	Main Draw	Final	4 - 0	11:3 11:4 11:4 12:10	CAO Zhen
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 19
+
+2004	China Open Wuxi 2004	CHEN Qi (CHN)	MA Lin (CHN)	HWANG Sunghoon (KOR)	KIM Gunhwan (KOR)	MD	Main Draw	R16	4 - 0	11:6 11:5 11:7 11:6	CHEN Qi	MA Lin
+2004	China Open Wuxi 2004	CHEN Qi (CHN)	MA Lin (CHN)	HAKANSSON Fredrik (SWE)	KARLSSON Peter (SWE)	MD	Main Draw	QuarterFinal	4 - 1	11:7 11:5 11:1 7:11 11:8	CHEN Qi	MA Lin
+2004	China Open Wuxi 2004	CHEN Qi (CHN)	MA Lin (CHN)	WANG Liqin (CHN)	YAN Sen (CHN)	MD	Main Draw	SemiFinal	4 - 0	11:9 11:9 13:11 17:15	CHEN Qi	MA Lin
+2004	China Open Wuxi 2004	CHEN Qi (CHN)	MA Lin (CHN)	CHEUNG Yuk (HKG)	LEUNG Chu Yan (HKG)	MD	Main Draw	Final	4 - 1	11:5 8:11 11:7 11:8 12:10	CHEN Qi	MA Lin
+2004	China Open Wuxi 2004	BERTIN Christophe (FRA)	BOBILLIER Loic (FRA)	TAKAKIWA Kenichi (JPN)	TAKAKIWA Taku (JPN)	MD	Main Draw	R16	4 - 1	11:7 11:9 11:7 9:11 13:11	BERTIN Christophe	BOBILLIER Loic
+2004	China Open Wuxi 2004	BERTIN Christophe (FRA)	BOBILLIER Loic (FRA)	KONG Linghui (CHN)	WANG Hao (CHN)	MD	Main Draw	QuarterFinal	0 - 4	9:11 6:11 3:11 7:11	KONG Linghui	WANG Hao
+2004	China Open Wuxi 2004	CHEUNG Yuk (HKG)	LEUNG Chu Yan (HKG)	CHOU Tung-Yu (TPE)	HUANG Wei-Chin (TPE)	MD	Main Draw	R16	4 - 0	11:9 15:13 11:5 11:9	CHEUNG Yuk	LEUNG Chu Yan
+2004	China Open Wuxi 2004	CHEUNG Yuk (HKG)	LEUNG Chu Yan (HKG)	CHILA Patrick (FRA)	LO Dany (FRA)	MD	Main Draw	QuarterFinal	4 - 2	12:14 11:6 11:8 11:3 10:12 11:8	CHEUNG Yuk	LEUNG Chu Yan
+2004	China Open Wuxi 2004	CHEUNG Yuk (HKG)	LEUNG Chu Yan (HKG)	KONG Linghui (CHN)	WANG Hao (CHN)	MD	Main Draw	SemiFinal	4 - 1	11:4 3:11 11:4 12:10 11:9	CHEUNG Yuk	LEUNG Chu Yan
+2004	China Open Wuxi 2004	OMORI Takahiro (JPN)	YOSHIDA Kaii (JPN)	AXELQVIST Johan (SWE)	SMIRNOV Alexey (RUS)	MD	Main Draw	R16	4 - 0	11:9 11:7 11:8 11:5	OMORI Takahiro	YOSHIDA Kaii
+2004	China Open Wuxi 2004	TSE Ka Chun (HKG)	YOSHITOMI Eigo (JPN)	WANG Liqin (CHN)	YAN Sen (CHN)	MD	Main Draw	R16	0 - 4	7:11 6:11 7:11 10:12	WANG Liqin	YAN Sen
+2004	China Open Wuxi 2004	KIHO Shinnosuke (JPN)	SANADA Koji (JPN)	KONG Linghui (CHN)	WANG Hao (CHN)	MD	Main Draw	R16	0 - 4	8:11 7:11 8:11 7:11	KONG Linghui	WANG Hao
+2004	China Open Wuxi 2004	OMORI Takahiro (JPN)	YOSHIDA Kaii (JPN)	WANG Liqin (CHN)	YAN Sen (CHN)	MD	Main Draw	QuarterFinal	0 - 4	6:11 2:11 4:11 4:11	WANG Liqin	YAN Sen
+2004	China Open Wuxi 2004	KIHO Shinnosuke (JPN)	SANADA Koji (JPN)	CHUAN Che-Wei (TPE)	LAI Kuan-Shen (TPE)	MD	Qualification	QR16	3 - 0	11:8 11:5 14:12	KIHO Shinnosuke	SANADA Koji
+2004	China Open Wuxi 2004	TSE Ka Chun (HKG)	YOSHITOMI Eigo (JPN)	VIPAWATANAKUL Sithichok (AUS)	VIPAWATANAKUL Tanawat (THA)	MD	Qualification	QR16	3 - 2	12:14 11:8 8:11 11:9 11:5	TSE Ka Chun	YOSHITOMI Eigo
+2004	China Open Wuxi 2004	LEE Jungsam (KOR)	LIM Jaehyun (KOR)	CHILA Patrick (FRA)	LO Dany (FRA)	MD	Main Draw	R16	1 - 4	9:11 13:11 7:11 10:12 14:16	CHILA Patrick	LO Dany
+2004	China Open Wuxi 2004	HWANG Sunghoon (KOR)	KIM Gunhwan (KOR)	ASAMOAH Cyprian (SWE)	GERELL Par (SWE)	MD	Qualification	QR16	3 - 2	13:11 5:11 11:7 3:11 11:7	HWANG Sunghoon	KIM Gunhwan
+2004	China Open Wuxi 2004	LEE Jungsam (KOR)	LIM Jaehyun (KOR)	HUANG Sheng-Sheng (TPE)	SUN Wen-Wei (TPE)	MD	Qualification	QR16	3 - 1	11:8 11:8 11:13 11:7	LEE Jungsam	LIM Jaehyun
+2004	China Open Wuxi 2004	KIM Song Chol (PRK)	PAK Won Chol (PRK)	HAKANSSON Fredrik (SWE)	KARLSSON Peter (SWE)	MD	Main Draw	R16	2 - 4	9:11 11:4 8:11 11:6 7:11 19:21	HAKANSSON Fredrik	KARLSSON Peter
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 18
+
+2004	China Open Wuxi 2004	WANG Nan (CHN)	ZHANG Yining (CHN)	JUN Hyunsil (KOR)	LEE Hyangmi (KOR)	WD	Main Draw	R16	4 - 0	11:9 11:4 11:5 11:5	WANG Nan	ZHANG Yining
+2004	China Open Wuxi 2004	FAN Ying (CHN)	WANG Tingting (CHN)	KIM Hyang Mi (PRK)	KIM Hyon Hui (PRK)	WD	Main Draw	R16	4 - 3	11:7 11:8 7:11 9:11 9:11 11:6 11:8	FAN Ying	WANG Tingting
+2004	China Open Wuxi 2004	CAO Zhen (CHN)	LI Xiaoxia (CHN)	JEON Hyekyung (KOR)	PARK Kyungae (I) (KOR)	WD	Main Draw	R16	4 - 1	11:6 11:5 11:8 9:11 11:3	CAO Zhen	LI Xiaoxia
+2004	China Open Wuxi 2004	WANG Nan (CHN)	ZHANG Yining (CHN)	FAN Ying (CHN)	WANG Tingting (CHN)	WD	Main Draw	QuarterFinal	3 - 4	6:11 11:13 11:5 8:11 11:5 11:7 8:11	FAN Ying	WANG Tingting
+2004	China Open Wuxi 2004	CAO Zhen (CHN)	LI Xiaoxia (CHN)	SONG Ah Sim (HKG)	TIE Yana (HKG)	WD	Main Draw	SemiFinal	4 - 0	11:5 11:9 11:8 11:9	CAO Zhen	LI Xiaoxia
+2004	China Open Wuxi 2004	FAN Ying (CHN)	WANG Tingting (CHN)	CAO Zhen (CHN)	LI Xiaoxia (CHN)	WD	Main Draw	Final	0 - 4	7:11 9:11 12:14 4:11	CAO Zhen	LI Xiaoxia
+2004	China Open Wuxi 2004	FAN Ying (CHN)	WANG Tingting (CHN)	PAN Chun-Chu (TPE)	YU Mei-Ju (TPE)	WD	Qualification	QR4	3 - 0	11:6 11:4 11:5	FAN Ying	WANG Tingting
+2004	China Open Wuxi 2004	LAU Sui Fei (HKG)	ZHANG Rui (HKG)	KIM Hyehyun (KOR)	KWAK Bangbang (KOR)	WD	Main Draw	R16	1 - 4	10:12 6:11 9:11 11:6 10:12	KIM Hyehyun	KWAK Bangbang
+2004	China Open Wuxi 2004	HIRANO Sayaka (JPN)	KONISHI An (JPN)	KIM Mi Yong (PRK)	KO Un Gyong (PRK)	WD	Main Draw	R16	2 - 4	9:11 10:12 11:9 8:11 11:7 9:11	KIM Mi Yong	KO Un Gyong
+2004	China Open Wuxi 2004	ETSUZAKI Ayumi (JPN)	FUJITA Yuki (JPN)	KIM Mi Yong (PRK)	KO Un Gyong (PRK)	WD	Qualification	QR4	0 - 3	9:11 6:11 6:11	KIM Mi Yong	KO Un Gyong
+2004	China Open Wuxi 2004	KIM Minhee (YOB=1985) (KOR)	MOON Hyunjung (KOR)	HUANG Yi-Hua (TPE)	LU Yun-Feng (TPE)	WD	Main Draw	R16	4 - 2	8:11 11:6 0:11 12:10 11:8 11:7	KIM Minhee (YOB=1985)	MOON Hyunjung
+2004	China Open Wuxi 2004	KIM Hyehyun (KOR)	KWAK Bangbang (KOR)	CAO Zhen (CHN)	LI Xiaoxia (CHN)	WD	Main Draw	QuarterFinal	1 - 4	11:6 5:11 6:11 10:12 4:11	CAO Zhen	LI Xiaoxia
+2004	China Open Wuxi 2004	KIM Jong (PRK)	KIM Yun Mi (PRK)	KERTAI Rita (HUN)	LOVAS Petra (HUN)	WD	Main Draw	R16	4 - 1	11:13 11:9 11:5 11:5 11:6	KIM Jong	KIM Yun Mi
+2004	China Open Wuxi 2004	KIM Mi Yong (PRK)	KO Un Gyong (PRK)	KIM Minhee (YOB=1985) (KOR)	MOON Hyunjung (KOR)	WD	Main Draw	QuarterFinal	4 - 2	11:2 11:4 11:6 3:11 4:11 11:6	KIM Mi Yong	KO Un Gyong
+2004	China Open Wuxi 2004	KIM Jong (PRK)	KIM Yun Mi (PRK)	SONG Ah Sim (HKG)	TIE Yana (HKG)	WD	Main Draw	QuarterFinal	2 - 4	7:11 11:8 11:13 7:11 11:8 7:11	SONG Ah Sim	TIE Yana
+2004	China Open Wuxi 2004	KOMWONG Nanthana (THA)	MUANGSUK Anisara (THA)	SONG Ah Sim (HKG)	TIE Yana (HKG)	WD	Main Draw	R16	2 - 4	8:11 13:11 11:7 8:11 7:11 7:11	SONG Ah Sim	TIE Yana
+2004	China Open Wuxi 2004	LEE I-Chen (TPE)	HSU Hui-Tsun (TPE)	ETSUZAKI Ayumi (JPN)	FUJITA Yuki (JPN)	WD	Qualification	QR8	0 - 3	6:11 8:11 9:11	ETSUZAKI Ayumi	FUJITA Yuki
+2004	China Open Wuxi 2004	PAN Chun-Chu (TPE)	YU Mei-Ju (TPE)		YU Kwok See (HKG)	WD	Qualification	QR8	3 - 0	11:8 13:11 11:9	PAN Chun-Chu	YU Mei-Ju

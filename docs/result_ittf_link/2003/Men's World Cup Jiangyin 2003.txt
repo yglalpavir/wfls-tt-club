@@ -1,0 +1,41 @@
+2003	Men's World Cup Jiangyin 2003	ITTF World Cup	--	32	2003-10-09	2003-10-12
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 32
+
+2003	Men's World Cup Jiangyin 2003	MA Lin (CHN)		BOLL Timo (GER)		MS	Main Draw	QuarterFinal	4 - 2	11:4 13:11 11:5 9:11 12:14 11:8	MA Lin	
+2003	Men's World Cup Jiangyin 2003	RYU Seungmin (KOR)		WANG Liqin (CHN)		MS	Main Draw	QuarterFinal	1 - 4	7:11 8:11 11:9 8:11 3:11	WANG Liqin	
+2003	Men's World Cup Jiangyin 2003	WANG Hao (CHN)		SAIVE Jean-Michel (BEL)		MS	Main Draw	QuarterFinal	3 - 4	11:8 11:9 8:11 5:11 7:11 15:13 9:11	SAIVE Jean-Michel	
+2003	Men's World Cup Jiangyin 2003	KREANGA Kalinikos (GRE)		SMIRNOV Alexey (RUS)		MS	Main Draw	QuarterFinal	4 - 0	11:5 13:11 11:7 11:7	KREANGA Kalinikos	
+2003	Men's World Cup Jiangyin 2003	MA Lin (CHN)		WANG Liqin (CHN)		MS	Main Draw	SemiFinal	4 - 1	11:8 11:9 3:11 11:4 11:6	MA Lin	
+2003	Men's World Cup Jiangyin 2003	SAIVE Jean-Michel (BEL)		KREANGA Kalinikos (GRE)		MS	Main Draw	SemiFinal	0 - 4	9:11 9:11 9:11 6:11	KREANGA Kalinikos	
+2003	Men's World Cup Jiangyin 2003	MA Lin (CHN)		KREANGA Kalinikos (GRE)		MS	Main Draw	Final	4 - 1	9:11 11:6 11:9 11:7 11:9	MA Lin	
+2003	Men's World Cup Jiangyin 2003	WANG Liqin (CHN)		SAIVE Jean-Michel (BEL)		MS	Position Draw	2	4 - 1	11:6 9:11 11:9 11:8 11:8	WANG Liqin	
+2003	Men's World Cup Jiangyin 2003	MA Lin (CHN)		SAIVE Jean-Michel (BEL)		MS	Qualification		4 - 0	11:7 11:7 11:6 11:6	MA Lin	
+2003	Men's World Cup Jiangyin 2003	CHUANG Chih-Yuan (TPE)		JACKSON Peter (NZL)		MS	Qualification	QR2	4 - 0	11:5 11:2 11:5 11:3	CHUANG Chih-Yuan	
+2003	Men's World Cup Jiangyin 2003	MA Lin (CHN)		CHUANG Chih-Yuan (TPE)		MS	Qualification	3	4 - 1	7:11 11:5 11:8 11:4 12:10	MA Lin	
+2003	Men's World Cup Jiangyin 2003	SAIVE Jean-Michel (BEL)		JACKSON Peter (NZL)		MS	Qualification	QR4	4 - 0	11:3 11:2 11:6 11:8	SAIVE Jean-Michel	
+2003	Men's World Cup Jiangyin 2003	MA Lin (CHN)		JACKSON Peter (NZL)		MS	Qualification	5	4 - 0	11:6 11:7 11:3 11:5	MA Lin	
+2003	Men's World Cup Jiangyin 2003	CHUANG Chih-Yuan (TPE)		SAIVE Jean-Michel (BEL)		MS	Qualification	6	0 - 4	9:11 4:11 6:11 10:12	SAIVE Jean-Michel	
+2003	Men's World Cup Jiangyin 2003	BOLL Timo (GER)		SMIRNOV Alexey (RUS)		MS	Qualification		1 - 4	12:10 6:11 10:12 10:12 6:11	SMIRNOV Alexey	
+2003	Men's World Cup Jiangyin 2003	CHIANG Peng-Lung (TPE)		HUANG Johnny (CAN)		MS	Qualification	QR2	3 - 4	6:11 11:8 8:11 11:6 11:13 13:11 9:11	HUANG Johnny	
+2003	Men's World Cup Jiangyin 2003	BOLL Timo (GER)		CHIANG Peng-Lung (TPE)		MS	Qualification	3	3 - 4	11:5 9:11 11:2 9:11 11:3 10:12 5:11	CHIANG Peng-Lung	
+2003	Men's World Cup Jiangyin 2003	SMIRNOV Alexey (RUS)		HUANG Johnny (CAN)		MS	Qualification	QR4	4 - 1	11:8 12:10 11:3 10:12 11:8	SMIRNOV Alexey	
+2003	Men's World Cup Jiangyin 2003	BOLL Timo (GER)		HUANG Johnny (CAN)		MS	Qualification	5	4 - 1	8:11 12:10 11:4 11:8 11:7	BOLL Timo	
+2003	Men's World Cup Jiangyin 2003	CHIANG Peng-Lung (TPE)		SMIRNOV Alexey (RUS)		MS	Qualification	6	0 - 4	6:11 7:11 3:11 7:11	SMIRNOV Alexey	
+2003	Men's World Cup Jiangyin 2003	WANG Liqin (CHN)		PRIMORAC Zoran (CRO)		MS	Qualification		4 - 2	11:6 11:9 9:11 8:11 11:5 11:9	WANG Liqin	
+2003	Men's World Cup Jiangyin 2003	KREANGA Kalinikos (GRE)		JOO Saehyuk (KOR)		MS	Qualification	QR2	2 - 4	7:11 11:7 11:8 8:11 8:11 5:11	JOO Saehyuk	
+2003	Men's World Cup Jiangyin 2003	WANG Liqin (CHN)		KREANGA Kalinikos (GRE)		MS	Qualification	3	2 - 4	7:11 11:4 9:11 11:8 5:11 11:13	KREANGA Kalinikos	
+2003	Men's World Cup Jiangyin 2003	PRIMORAC Zoran (CRO)		JOO Saehyuk (KOR)		MS	Qualification	QR4	2 - 4	11:9 4:11 8:11 5:11 11:6 5:11	JOO Saehyuk	
+2003	Men's World Cup Jiangyin 2003	WANG Liqin (CHN)		JOO Saehyuk (KOR)		MS	Qualification	5	4 - 1	11:6 7:11 11:2 11:5 11:7	WANG Liqin	
+2003	Men's World Cup Jiangyin 2003	KREANGA Kalinikos (GRE)		PRIMORAC Zoran (CRO)		MS	Qualification	6	4 - 2	6:11 11:9 9:11 11:9 11:7 12:10	KREANGA Kalinikos	
+2003	Men's World Cup Jiangyin 2003	SCHLAGER Werner (AUT)		RYU Seungmin (KOR)		MS	Qualification		3 - 4	9:11 11:4 6:11 8:11 11:6 11:9 4:11	RYU Seungmin	
+2003	Men's World Cup Jiangyin 2003	WANG Hao (CHN)		WOSIK Torben (GER)		MS	Qualification	QR2	4 - 0	11:3 11:2 11:4 11:3	WANG Hao	
+2003	Men's World Cup Jiangyin 2003	SCHLAGER Werner (AUT)		WANG Hao (CHN)		MS	Qualification	3	0 - 4	6:11 6:11 7:11 6:11	WANG Hao	
+2003	Men's World Cup Jiangyin 2003	RYU Seungmin (KOR)		WOSIK Torben (GER)		MS	Qualification	QR4	4 - 0	11:6 11:8 11:7 11:4	RYU Seungmin	
+2003	Men's World Cup Jiangyin 2003	SCHLAGER Werner (AUT)		WOSIK Torben (GER)		MS	Qualification	5	4 - 3	7:11 11:8 5:11 11:7 9:11 11:6 14:12	SCHLAGER Werner	
+2003	Men's World Cup Jiangyin 2003	WANG Hao (CHN)		RYU Seungmin (KOR)		MS	Qualification	6	4 - 3	11:6 3:11 11:8 10:12 12:14 11:5 11:8	WANG Hao

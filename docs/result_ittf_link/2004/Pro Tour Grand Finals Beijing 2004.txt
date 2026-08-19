@@ -1,0 +1,88 @@
+赛事编号：1716
+年份：2004
+赛事名称：Pro Tour Grand Finals Beijing 2004
+赛事类型：ITTF World Tour / Pro Tour
+赛事种类：Grand Finals
+参赛人数：44
+开始日期：2004-12-10
+结束日期：2004-12-12
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 15
+
+2004	Pro Tour Grand Finals Beijing 2004	WANG Liqin (CHN)		SAIVE Jean-Michel (BEL)		MS	Main Draw	R16	4 - 2	6:11 11:8 12:10 11:7 11:13 12:10	WANG Liqin	
+2004	Pro Tour Grand Finals Beijing 2004	LEUNG Chu Yan (HKG)		CHEN Qi (CHN)		MS	Main Draw	R16	2 - 4	7:11 11:5 8:11 7:11 12:10 7:11	CHEN Qi	
+2004	Pro Tour Grand Finals Beijing 2004	SCHLAGER Werner (AUT)		KONG Linghui (CHN)		MS	Main Draw	R16	4 - 3	11:9 7:11 4:11 10:12 11:5 11:4 14:12	SCHLAGER Werner	
+2004	Pro Tour Grand Finals Beijing 2004	KREANGA Kalinikos (GRE)		WANG Hao (CHN)		MS	Main Draw	R16	2 - 4	11:9 11:9 10:12 4:11 7:11 4:11	WANG Hao	
+2004	Pro Tour Grand Finals Beijing 2004	MA Lin (CHN)		KARLSSON Peter (SWE)		MS	Main Draw	R16	4 - 1	11:7 9:11 11:3 11:8 11:6	MA Lin	
+2004	Pro Tour Grand Finals Beijing 2004	MAZE Michael (DEN)		CHEN Weixing (AUT)		MS	Main Draw	R16	4 - 3	11:5 11:8 11:9 8:11 12:14 9:11 11:9	MAZE Michael	
+2004	Pro Tour Grand Finals Beijing 2004	CHUANG Chih-Yuan (TPE)		SAMSONOV Vladimir (BLR)		MS	Main Draw	R16	1 - 4	7:11 11:13 9:11 11:8 1:11	SAMSONOV Vladimir	
+2004	Pro Tour Grand Finals Beijing 2004	BLASZCZYK Lucjan (POL)		BOLL Timo (GER)		MS	Main Draw	R16	2 - 4	11:7 11:9 7:11 8:11 7:11 7:11	BOLL Timo	
+2004	Pro Tour Grand Finals Beijing 2004	WANG Liqin (CHN)		CHEN Qi (CHN)		MS	Main Draw	QuarterFinal	4 - 2	8:11 14:12 14:12 11:9 5:11 11:8	WANG Liqin	
+2004	Pro Tour Grand Finals Beijing 2004	SCHLAGER Werner (AUT)		WANG Hao (CHN)		MS	Main Draw	QuarterFinal	3 - 4	9:11 11:8 11:4 11:9 4:11 9:11 6:11	WANG Hao	
+2004	Pro Tour Grand Finals Beijing 2004	MA Lin (CHN)		MAZE Michael (DEN)		MS	Main Draw	QuarterFinal	4 - 2	11:4 11:6 9:11 11:8 8:11 11:9	MA Lin	
+2004	Pro Tour Grand Finals Beijing 2004	SAMSONOV Vladimir (BLR)		BOLL Timo (GER)		MS	Main Draw	QuarterFinal	1 - 4	7:11 8:11 11:4 7:11 8:11	BOLL Timo	
+2004	Pro Tour Grand Finals Beijing 2004	WANG Liqin (CHN)		WANG Hao (CHN)		MS	Main Draw	SemiFinal	4 - 0	11:5 11:9 13:11 13:11	WANG Liqin	
+2004	Pro Tour Grand Finals Beijing 2004	MA Lin (CHN)		BOLL Timo (GER)		MS	Main Draw	SemiFinal	4 - 3	11:7 7:11 8:11 6:11 11:5 11:7 14:12	MA Lin	
+2004	Pro Tour Grand Finals Beijing 2004	WANG Liqin (CHN)		MA Lin (CHN)		MS	Main Draw	Final	4 - 1	11:8 11:8 3:11 11:9 11:4	WANG Liqin
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 15
+
+2004	Pro Tour Grand Finals Beijing 2004	ZHANG Yining (CHN)		PAVLOVICH Viktoria (BLR)		WS	Main Draw	R16	4 - 1	10:12 13:11 11:2 13:11 11:8	ZHANG Yining	
+2004	Pro Tour Grand Finals Beijing 2004	LEE Eunsil (KOR)		WANG Nan (CHN)		WS	Main Draw	R16	2 - 4	11:9 4:11 4:11 4:11 11:9 9:11	WANG Nan	
+2004	Pro Tour Grand Finals Beijing 2004	GUO Yue (CHN)		LI Jiawei (SGP)		WS	Main Draw	R16	4 - 0	11:5 11:6 12:10 11:3	GUO Yue	
+2004	Pro Tour Grand Finals Beijing 2004	SONG Ah Sim (HKG)		KIM Kyungah (KOR)		WS	Main Draw	R16	3 - 4	9:11 8:11 11:9 13:11 9:11 11:9 5:11	KIM Kyungah	
+2004	Pro Tour Grand Finals Beijing 2004	LIU Jia (AUT)		ZHANG Rui (HKG)		WS	Main Draw	R16	4 - 2	11:8 13:15 11:9 8:11 11:5 11:6	LIU Jia	
+2004	Pro Tour Grand Finals Beijing 2004	GANINA Svetlana (RUS)		LAU Sui Fei (HKG)		WS	Main Draw	R16	2 - 4	11:8 8:11 8:11 7:11 11:9 15:17	LAU Sui Fei	
+2004	Pro Tour Grand Finals Beijing 2004	BOROS Tamara (CRO)		LANG Kristin (GER)		WS	Main Draw	R16	4 - 0	11:6 11:7 11:4 11:3	BOROS Tamara	
+2004	Pro Tour Grand Finals Beijing 2004	TIE Yana (HKG)		NIU Jianfeng (CHN)		WS	Main Draw	R16	0 - 4	9:11 6:11 10:12 6:11	NIU Jianfeng	
+2004	Pro Tour Grand Finals Beijing 2004	ZHANG Yining (CHN)		WANG Nan (CHN)		WS	Main Draw	QuarterFinal	1 - 4	10:12 11:4 7:11 9:11 10:12	WANG Nan	
+2004	Pro Tour Grand Finals Beijing 2004	GUO Yue (CHN)		KIM Kyungah (KOR)		WS	Main Draw	QuarterFinal	4 - 1	11:5 11:13 11:9 11:6 11:4	GUO Yue	
+2004	Pro Tour Grand Finals Beijing 2004	LIU Jia (AUT)		LAU Sui Fei (HKG)		WS	Main Draw	QuarterFinal	4 - 1	11:7 5:11 11:3 11:3 11:9	LIU Jia	
+2004	Pro Tour Grand Finals Beijing 2004	BOROS Tamara (CRO)		NIU Jianfeng (CHN)		WS	Main Draw	QuarterFinal	2 - 4	11:9 7:11 3:11 11:8 4:11 4:11	NIU Jianfeng	
+2004	Pro Tour Grand Finals Beijing 2004	WANG Nan (CHN)		GUO Yue (CHN)		WS	Main Draw	SemiFinal	1 - 4	9:11 9:11 11:8 9:11 7:11	GUO Yue	
+2004	Pro Tour Grand Finals Beijing 2004	LIU Jia (AUT)		NIU Jianfeng (CHN)		WS	Main Draw	SemiFinal	1 - 4	8:11 9:11 11:7 5:11 5:11	NIU Jianfeng	
+2004	Pro Tour Grand Finals Beijing 2004	GUO Yue (CHN)		NIU Jianfeng (CHN)		WS	Main Draw	Final	4 - 2	11:8 12:10 11:3 12:14 14:16 11:8	GUO Yue
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 7
+
+2004	Pro Tour Grand Finals Beijing 2004	JINDRAK Karl (AUT)	SCHLAGER Werner (AUT)	KONG Linghui (CHN)	WANG Hao (CHN)	MD	Main Draw	QuarterFinal	2 - 4	11:6 7:11 9:11 7:11 12:10 4:11	KONG Linghui	WANG Hao
+2004	Pro Tour Grand Finals Beijing 2004	CHEN Qi (CHN)	MA Lin (CHN)	FRANZ Peter (GER)	LUNDQVIST Jens (SWE)	MD	Main Draw	QuarterFinal	4 - 1	6:11 11:5 11:9 11:6 11:7	CHEN Qi	MA Lin
+2004	Pro Tour Grand Finals Beijing 2004	CHEN Qi (CHN)	MA Lin (CHN)	MAZE Michael (DEN)	TUGWELL Finn (DEN)	MD	Main Draw	SemiFinal	4 - 3	11:8 11:9 9:11 6:11 11:5 10:12 11:8	CHEN Qi	MA Lin
+2004	Pro Tour Grand Finals Beijing 2004	CHEN Qi (CHN)	MA Lin (CHN)	KONG Linghui (CHN)	WANG Hao (CHN)	MD	Main Draw	Final	4 - 3	7:11 11:8 10:12 11:7 11:4 10:12 11:9	CHEN Qi	MA Lin
+2004	Pro Tour Grand Finals Beijing 2004	MAZE Michael (DEN)	TUGWELL Finn (DEN)	BOLL Timo (GER)	SUSS Christian (GER)	MD	Main Draw	QuarterFinal	4 - 3	11:13 8:11 18:16 11:3 7:11 12:10 11:5	MAZE Michael	TUGWELL Finn
+2004	Pro Tour Grand Finals Beijing 2004	LI Ching (HKG)	KO Lai Chak (HKG)	CHEUNG Yuk (HKG)	LEUNG Chu Yan (HKG)	MD	Main Draw	QuarterFinal	4 - 3	9:11 11:4 11:7 7:11 11:7 7:11 11:6	LI Ching	KO Lai Chak
+2004	Pro Tour Grand Finals Beijing 2004	LI Ching (HKG)	KO Lai Chak (HKG)	KONG Linghui (CHN)	WANG Hao (CHN)	MD	Main Draw	SemiFinal	1 - 4	3:11 3:11 11:9 6:11 8:11	KONG Linghui	WANG Hao
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 7
+
+2004	Pro Tour Grand Finals Beijing 2004	LIU Jia (AUT)	HEINE Veronika (AUT)	WANG Nan (CHN)	ZHANG Yining (CHN)	WD	Main Draw	QuarterFinal	0 - 4	5:11 4:11 5:11 6:11	WANG Nan	ZHANG Yining
+2004	Pro Tour Grand Finals Beijing 2004	GUO Yue (CHN)	NIU Jianfeng (CHN)	KOSTROMINA Tatyana (1973) (BLR)	PAVLOVICH Viktoria (BLR)	WD	Main Draw	QuarterFinal	4 - 1	11:4 11:7 6:11 11:2 11:7	GUO Yue	NIU Jianfeng
+2004	Pro Tour Grand Finals Beijing 2004	GUO Yue (CHN)	NIU Jianfeng (CHN)	TIE Yana (HKG)	SONG Ah Sim (HKG)	WD	Main Draw	SemiFinal	4 - 0	11:8 11:9 11:6 11:6	GUO Yue	NIU Jianfeng
+2004	Pro Tour Grand Finals Beijing 2004	GUO Yue (CHN)	NIU Jianfeng (CHN)	WANG Nan (CHN)	ZHANG Yining (CHN)	WD	Main Draw	Final	1 - 4	6:11 7:11 3:11 11:8 12:14	WANG Nan	ZHANG Yining
+2004	Pro Tour Grand Finals Beijing 2004	LEE Eunsil (KOR)	SUK Eunmi (KOR)	ZHANG Rui (HKG)	LAU Sui Fei (HKG)	WD	Main Draw	QuarterFinal	4 - 0	11:8 11:5 11:9 11:4	LEE Eunsil	SUK Eunmi
+2004	Pro Tour Grand Finals Beijing 2004	LEE Eunsil (KOR)	SUK Eunmi (KOR)	WANG Nan (CHN)	ZHANG Yining (CHN)	WD	Main Draw	SemiFinal	2 - 4	3:11 8:11 11:3 1:11 11:5 6:11	WANG Nan	ZHANG Yining
+2004	Pro Tour Grand Finals Beijing 2004	LU Yun-Feng (TPE)	HUANG Yi-Hua (TPE)	TIE Yana (HKG)	SONG Ah Sim (HKG)	WD	Main Draw	QuarterFinal	2 - 4	7:11 13:15 5:11 15:13 11:8 6:11	TIE Yana	SONG Ah Sim

@@ -1,0 +1,80 @@
+2003	Pro Tour Grand Finals Guangzhou 2003	ITTF World Tour / Pro Tour	Grand Finals	44	2003-12-11	2003-12-14
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+50
+Total: 15
+
+2003	Pro Tour Grand Finals Guangzhou 2003	MA Lin (CHN)		LUNDQVIST Jens (SWE)		MS	Main Draw	R16	2 - 4	11:4 11:13 9:11 10:12 11:8 9:11	LUNDQVIST Jens	
+2003	Pro Tour Grand Finals Guangzhou 2003	KREANGA Kalinikos (GRE)		SMIRNOV Alexey (RUS)		MS	Main Draw	R16	4 - 0	11:8 11:6 11:3 11:8	KREANGA Kalinikos	
+2003	Pro Tour Grand Finals Guangzhou 2003	CHEN Qi (CHN)		SCHLAGER Werner (AUT)		MS	Main Draw	R16	4 - 1	11:8 11:3 15:17 11:8 11:5	CHEN Qi	
+2003	Pro Tour Grand Finals Guangzhou 2003	KARLSSON Peter (SWE)		WANG Hao (CHN)		MS	Main Draw	R16	1 - 4	11:8 3:11 6:11 7:11 6:11	WANG Hao	
+2003	Pro Tour Grand Finals Guangzhou 2003	CHUANG Chih-Yuan (TPE)		OH Sangeun (KOR)		MS	Main Draw	R16	4 - 2	11:9 11:9 5:11 11:6 5:11 11:6	CHUANG Chih-Yuan	
+2003	Pro Tour Grand Finals Guangzhou 2003	HAKANSSON Fredrik (SWE)		HAO Shuai (CHN)		MS	Main Draw	R16	0 - 4	9:11 7:11 5:11 7:11	HAO Shuai	
+2003	Pro Tour Grand Finals Guangzhou 2003	LIU Guozheng (CHN)		CHIANG Peng-Lung (TPE)		MS	Main Draw	R16	4 - 1	11:7 11:8 9:11 11:9 11:8	LIU Guozheng	
+2003	Pro Tour Grand Finals Guangzhou 2003	RYU Seungmin (KOR)		WANG Liqin (CHN)		MS	Main Draw	R16	4 - 3	6:11 15:13 7:11 11:4 7:11 11:5 11:8	RYU Seungmin	
+2003	Pro Tour Grand Finals Guangzhou 2003	LUNDQVIST Jens (SWE)		KREANGA Kalinikos (GRE)		MS	Main Draw	QuarterFinal	4 - 3	12:10 8:11 8:11 9:11 11:7 11:8 11:9	LUNDQVIST Jens	
+2003	Pro Tour Grand Finals Guangzhou 2003	CHEN Qi (CHN)		WANG Hao (CHN)		MS	Main Draw	QuarterFinal	3 - 4	11:8 11:9 9:11 7:11 7:11 11:4 5:11	WANG Hao	
+2003	Pro Tour Grand Finals Guangzhou 2003	CHUANG Chih-Yuan (TPE)		HAO Shuai (CHN)		MS	Main Draw	QuarterFinal	0 - 4	9:11 11:13 13:15 7:11	HAO Shuai	
+2003	Pro Tour Grand Finals Guangzhou 2003	LIU Guozheng (CHN)		RYU Seungmin (KOR)		MS	Main Draw	QuarterFinal	1 - 4	6:11 8:11 11:8 9:11 8:11	RYU Seungmin	
+2003	Pro Tour Grand Finals Guangzhou 2003	LUNDQVIST Jens (SWE)		WANG Hao (CHN)		MS	Main Draw	SemiFinal	1 - 4	5:11 11:5 5:11 3:11 8:11	WANG Hao	
+2003	Pro Tour Grand Finals Guangzhou 2003	HAO Shuai (CHN)		RYU Seungmin (KOR)		MS	Main Draw	SemiFinal	4 - 1	11:9 11:9 11:8 4:11 13:11	HAO Shuai	
+2003	Pro Tour Grand Finals Guangzhou 2003	WANG Hao (CHN)		HAO Shuai (CHN)		MS	Main Draw	Final	4 - 3	13:11 6:11 11:4 7:11 13:11 8:11 11:5	WANG Hao
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+50
+Total: 15
+
+2003	Pro Tour Grand Finals Guangzhou 2003	ZHANG Yining (CHN)		KIM Kyungah (KOR)		WS	Main Draw	R16	4 - 1	9:11 11:5 14:12 11:9 11:9	ZHANG Yining	
+2003	Pro Tour Grand Finals Guangzhou 2003	LIN Ling (HKG)		SONG Ah Sim (HKG)		WS	Main Draw	R16	4 - 2	11:9 6:11 11:8 11:13 11:6 11:9	LIN Ling	
+2003	Pro Tour Grand Finals Guangzhou 2003	WANG Nan (CHN)		LAU Sui Fei (HKG)		WS	Main Draw	R16	4 - 0	11:6 11:2 11:2 15:13	WANG Nan	
+2003	Pro Tour Grand Finals Guangzhou 2003	LIU Jia (AUT)		BOROS Tamara (CRO)		WS	Main Draw	R16	0 - 4	8:11 3:11 10:12 4:11	BOROS Tamara	
+2003	Pro Tour Grand Finals Guangzhou 2003	NIU Jianfeng (CHN)		UMEMURA Aya (JPN)		WS	Main Draw	R16	4 - 0	11:9 11:4 11:5 11:7	NIU Jianfeng	
+2003	Pro Tour Grand Finals Guangzhou 2003	LI Nan (CHN)		TIE Yana (HKG)		WS	Main Draw	R16	1 - 4	6:11 11:9 6:11 5:11 5:11	TIE Yana	
+2003	Pro Tour Grand Finals Guangzhou 2003	GUO Yue (CHN)		FUJINUMA Ai (JPN)		WS	Main Draw	R16	4 - 0	11:7 11:8 11:6 11:6	GUO Yue	
+2003	Pro Tour Grand Finals Guangzhou 2003	ZHANG Rui (HKG)		GUO Yan (1982) (CHN)		WS	Main Draw	R16	0 - 4	6:11 6:11 7:11 7:11	GUO Yan (1982)	
+2003	Pro Tour Grand Finals Guangzhou 2003	ZHANG Yining (CHN)		LIN Ling (HKG)		WS	Main Draw	QuarterFinal	4 - 0	11:5 11:4 13:11 11:5	ZHANG Yining	
+2003	Pro Tour Grand Finals Guangzhou 2003	WANG Nan (CHN)		BOROS Tamara (CRO)		WS	Main Draw	QuarterFinal	4 - 3	11:8 8:11 6:11 8:11 12:10 11:6 11:9	WANG Nan	
+2003	Pro Tour Grand Finals Guangzhou 2003	NIU Jianfeng (CHN)		TIE Yana (HKG)		WS	Main Draw	QuarterFinal	4 - 2	9:11 11:7 11:7 8:11 11:5 11:7	NIU Jianfeng	
+2003	Pro Tour Grand Finals Guangzhou 2003	GUO Yue (CHN)		GUO Yan (1982) (CHN)		WS	Main Draw	QuarterFinal	0 - 4	6:11 6:11 7:11 7:11	GUO Yan (1982)	
+2003	Pro Tour Grand Finals Guangzhou 2003	ZHANG Yining (CHN)		WANG Nan (CHN)		WS	Main Draw	SemiFinal	4 - 0	11:8 11:7 11:4 11:7	ZHANG Yining	
+2003	Pro Tour Grand Finals Guangzhou 2003	NIU Jianfeng (CHN)		GUO Yan (1982) (CHN)		WS	Main Draw	SemiFinal	4 - 2	11:7 7:11 11:1 11:4 5:11 11:5	NIU Jianfeng	
+2003	Pro Tour Grand Finals Guangzhou 2003	ZHANG Yining (CHN)		NIU Jianfeng (CHN)		WS	Main Draw	Final	3 - 4	9:11 11:8 11:13 11:6 11:4 11:13 9:11	NIU Jianfeng	
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+50
+Total: 7
+
+2003	Pro Tour Grand Finals Guangzhou 2003	JINDRAK Karl (AUT)	SCHLAGER Werner (AUT)	KARAKASEVIC Aleksandar (SRB)	TOKIC Bojan (SLO)	MD	Main Draw	QuarterFinal	1 - 4	8:11 11:6 6:11 8:11 2:11	KARAKASEVIC Aleksandar	TOKIC Bojan
+2003	Pro Tour Grand Finals Guangzhou 2003	HAO Shuai (CHN)	QIU Yike (CHN)	CHEUNG Yuk (HKG)	LEUNG Chu Yan (HKG)	MD	Main Draw	SemiFinal	3 - 4	11:4 11:8 15:17 7:11 11:7 3:11 6:11	CHEUNG Yuk	LEUNG Chu Yan
+2003	Pro Tour Grand Finals Guangzhou 2003	KO Lai Chak (HKG)	LI Ching (HKG)	HAO Shuai (CHN)	QIU Yike (CHN)	MD	Main Draw	QuarterFinal	3 - 4	11:9 6:11 11:3 11:13 8:11 11:5 10:12	HAO Shuai	QIU Yike
+2003	Pro Tour Grand Finals Guangzhou 2003	CHEUNG Yuk (HKG)	LEUNG Chu Yan (HKG)	CHEN Qi (CHN)	MA Lin (CHN)	MD	Main Draw	Final	0 - 4	8:11 6:11 8:11 8:11	CHEN Qi	MA Lin
+2003	Pro Tour Grand Finals Guangzhou 2003	CHEN Weixing (AUT)	MATSUSHITA Koji (JPN)	CHEN Qi (CHN)	MA Lin (CHN)	MD	Main Draw	QuarterFinal	0 - 4	7:11 6:11 1:11 4:11	CHEN Qi	MA Lin
+2003	Pro Tour Grand Finals Guangzhou 2003	KARAKASEVIC Aleksandar (SRB)	TOKIC Bojan (SLO)	CHEN Qi (CHN)	MA Lin (CHN)	MD	Main Draw	SemiFinal	1 - 4	9:11 7:11 11:5 7:11 7:11	CHEN Qi	MA Lin
+2003	Pro Tour Grand Finals Guangzhou 2003	HAKANSSON Fredrik (SWE)	KARLSSON Peter (SWE)	CHEUNG Yuk (HKG)	LEUNG Chu Yan (HKG)	MD	Main Draw	QuarterFinal	2 - 4	12:10 4:11 3:11 8:11 11:9 4:11	CHEUNG Yuk	LEUNG Chu Yan
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+50
+Total: 7
+
+2003	Pro Tour Grand Finals Guangzhou 2003	GUO Yue (CHN)	NIU Jianfeng (CHN)	SONG Ah Sim (HKG)	TIE Yana (HKG)	WD	Main Draw	QuarterFinal	4 - 1	11:4 12:10 9:11 13:11 11:7	GUO Yue	NIU Jianfeng
+2003	Pro Tour Grand Finals Guangzhou 2003	GUO Yan (1982) (CHN)	LI Nan (CHN)	FUJINUMA Ai (JPN)	HIURA Reiko (JPN)	WD	Main Draw	QuarterFinal	4 - 0	11:8 11:4 11:6 11:6	GUO Yan (1982)	LI Nan
+2003	Pro Tour Grand Finals Guangzhou 2003	GUO Yue (CHN)	NIU Jianfeng (CHN)	LIN Ling (HKG)	ZHANG Rui (HKG)	WD	Main Draw	SemiFinal	4 - 1	11:3 11:4 11:8 9:11 11:3	GUO Yue	NIU Jianfeng
+2003	Pro Tour Grand Finals Guangzhou 2003	GUO Yan (1982) (CHN)	LI Nan (CHN)	WANG Nan (CHN)	ZHANG Yining (CHN)	WD	Main Draw	SemiFinal	1 - 4	11:9 8:11 9:11 10:12 5:11	WANG Nan	ZHANG Yining
+2003	Pro Tour Grand Finals Guangzhou 2003	GUO Yue (CHN)	NIU Jianfeng (CHN)	WANG Nan (CHN)	ZHANG Yining (CHN)	WD	Main Draw	Final	4 - 3	9:11 11:3 11:4 3:11 11:7 6:11 11:8	GUO Yue	NIU Jianfeng
+2003	Pro Tour Grand Finals Guangzhou 2003	KISHIDA Satoko (JPN)	UMEMURA Aya (JPN)	WANG Nan (CHN)	ZHANG Yining (CHN)	WD	Main Draw	QuarterFinal	1 - 4	8:11 11:8 7:11 5:11 8:11	WANG Nan	ZHANG Yining
+2003	Pro Tour Grand Finals Guangzhou 2003	HUANG Yi-Hua (TPE)	LU Yun-Feng (TPE)	LIN Ling (HKG)	ZHANG Rui (HKG)	WD	Main Draw	QuarterFinal	2 - 4	8:11 11:7 8:11 11:9 4:11 2:11	LIN Ling	ZHANG Rui

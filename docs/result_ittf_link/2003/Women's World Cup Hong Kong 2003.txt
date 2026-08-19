@@ -1,0 +1,40 @@
+2003	Women's World Cup Hong Kong 2003	ITTF World Cup	--	32	2003-12-17	2003-12-19
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 32
+
+2003	Women's World Cup Hong Kong 2003	ZHANG Yining (CHN)		BADESCU Otilia (ROU)		WS	Qualification		4 - 0	11:3 11:4 11:7 11:7	ZHANG Yining	
+2003	Women's World Cup Hong Kong 2003	LAU Sui Fei (HKG)		RAMOS Fabiola (VEN)		WS	Qualification	QR2	4 - 0	11:3 13:11 11:7 12:10	LAU Sui Fei	
+2003	Women's World Cup Hong Kong 2003	ZHANG Yining (CHN)		LAU Sui Fei (HKG)		WS	Qualification	3	4 - 1	13:11 9:11 11:5 11:7 17:15	ZHANG Yining	
+2003	Women's World Cup Hong Kong 2003	BADESCU Otilia (ROU)		RAMOS Fabiola (VEN)		WS	Qualification	QR4	4 - 0	11:4 11:3 11:7 11:5	BADESCU Otilia	
+2003	Women's World Cup Hong Kong 2003	ZHANG Yining (CHN)		RAMOS Fabiola (VEN)		WS	Qualification	5	4 - 0	11:4 11:3 11:1 16:14	ZHANG Yining	
+2003	Women's World Cup Hong Kong 2003	LAU Sui Fei (HKG)		BADESCU Otilia (ROU)		WS	Qualification	6	4 - 0	11:8 13:11 11:7 11:9	LAU Sui Fei	
+2003	Women's World Cup Hong Kong 2003	WANG Nan (CHN)		GAO Jun (USA)		WS	Qualification		2 - 4	11:8 7:11 15:17 11:8 8:11 9:11	GAO Jun	
+2003	Women's World Cup Hong Kong 2003	BOROS Tamara (CRO)		XU Chris (CAN)		WS	Qualification	QR2	4 - 0	11:6 11:7 11:3 11:8	BOROS Tamara	
+2003	Women's World Cup Hong Kong 2003	WANG Nan (CHN)		BOROS Tamara (CRO)		WS	Qualification	3	4 - 0	11:4 11:5 11:8 11:8	WANG Nan	
+2003	Women's World Cup Hong Kong 2003	GAO Jun (USA)		XU Chris (CAN)		WS	Qualification	QR4	4 - 0	11:4 11:3 11:2 11:2	GAO Jun	
+2003	Women's World Cup Hong Kong 2003	WANG Nan (CHN)		XU Chris (CAN)		WS	Qualification	5	4 - 0	11:1 11:1 11:3 11:3	WANG Nan	
+2003	Women's World Cup Hong Kong 2003	BOROS Tamara (CRO)		GAO Jun (USA)		WS	Qualification	6	0 - 4	4:11 10:12 10:12 7:11	GAO Jun	
+2003	Women's World Cup Hong Kong 2003	NIU Jianfeng (CHN)		UMEMURA Aya (JPN)		WS	Qualification		4 - 0	11:5 11:9 11:6 11:8	NIU Jianfeng	
+2003	Women's World Cup Hong Kong 2003	KIM Kyungah (KOR)		OSHONAIKE Olufunke (NGR)		WS	Qualification	QR2	4 - 0	11:8 11:3 11:7 11:7	KIM Kyungah	
+2003	Women's World Cup Hong Kong 2003	NIU Jianfeng (CHN)		KIM Kyungah (KOR)		WS	Qualification	3	4 - 0	11:4 11:7 11:2 11:8	NIU Jianfeng	
+2003	Women's World Cup Hong Kong 2003	UMEMURA Aya (JPN)		OSHONAIKE Olufunke (NGR)		WS	Qualification	QR4	4 - 2	11:6 10:12 11:7 11:8 10:12 11:9	UMEMURA Aya	
+2003	Women's World Cup Hong Kong 2003	NIU Jianfeng (CHN)		OSHONAIKE Olufunke (NGR)		WS	Qualification	5	4 - 1	11:5 11:2 7:11 11:8 11:3	NIU Jianfeng	
+2003	Women's World Cup Hong Kong 2003	KIM Kyungah (KOR)		UMEMURA Aya (JPN)		WS	Qualification	6	4 - 1	9:11 11:8 11:8 11:6 11:4	KIM Kyungah	
+2003	Women's World Cup Hong Kong 2003	TIE Yana (HKG)		STEFF Mihaela (ROU)		WS	Qualification		4 - 2	11:9 8:11 11:7 9:11 11:9 11:8	TIE Yana	
+2003	Women's World Cup Hong Kong 2003	LI Jiawei (SGP)		LAY Jian Fang (AUS)		WS	Qualification	QR2	4 - 1	9:11 11:8 11:7 11:7 11:6	LI Jiawei	
+2003	Women's World Cup Hong Kong 2003	TIE Yana (HKG)		LI Jiawei (SGP)		WS	Qualification	3	4 - 0	11:5 11:7 11:6 11:5	TIE Yana	
+2003	Women's World Cup Hong Kong 2003	STEFF Mihaela (ROU)		LAY Jian Fang (AUS)		WS	Qualification	QR4	4 - 2	11:6 11:9 7:11 9:11 11:8 11:6	STEFF Mihaela	
+2003	Women's World Cup Hong Kong 2003	TIE Yana (HKG)		LAY Jian Fang (AUS)		WS	Qualification	5	4 - 0	11:4 11:5 11:4 11:8	TIE Yana	
+2003	Women's World Cup Hong Kong 2003	LI Jiawei (SGP)		STEFF Mihaela (ROU)		WS	Qualification	6	0 - 4	10:12 5:11 4:11 8:11	STEFF Mihaela	
+2003	Women's World Cup Hong Kong 2003	ZHANG Yining (CHN)		KIM Kyungah (KOR)		WS	Main Draw	QuarterFinal	4 - 0	11:6 12:10 11:8 11:8	ZHANG Yining	
+2003	Women's World Cup Hong Kong 2003	WANG Nan (CHN)		TIE Yana (HKG)		WS	Main Draw	QuarterFinal	4 - 1	11:8 11:6 11:4 7:11 11:6	WANG Nan	
+2003	Women's World Cup Hong Kong 2003	NIU Jianfeng (CHN)		LAU Sui Fei (HKG)		WS	Main Draw	QuarterFinal	4 - 2	9:11 11:1 11:6 9:11 11:9 11:8	NIU Jianfeng	
+2003	Women's World Cup Hong Kong 2003	STEFF Mihaela (ROU)		GAO Jun (USA)		WS	Main Draw	QuarterFinal	4 - 1	5:11 16:14 12:10 12:10 12:10	STEFF Mihaela	
+2003	Women's World Cup Hong Kong 2003	ZHANG Yining (CHN)		WANG Nan (CHN)		WS	Main Draw	SemiFinal	0 - 4	7:11 7:11 4:11 3:11	WANG Nan	
+2003	Women's World Cup Hong Kong 2003	NIU Jianfeng (CHN)		STEFF Mihaela (ROU)		WS	Main Draw	SemiFinal	4 - 1	11:7 11:5 6:11 11:5 11:6	NIU Jianfeng	
+2003	Women's World Cup Hong Kong 2003	WANG Nan (CHN)		NIU Jianfeng (CHN)		WS	Main Draw	Final	4 - 1	11:9 11:9 6:11 11:4 11:6	WANG Nan	
+2003	Women's World Cup Hong Kong 2003	ZHANG Yining (CHN)		STEFF Mihaela (ROU)		WS	Position Draw	2	4 - 0	11:9 11:5 11:6 11:3	ZHANG Yining	

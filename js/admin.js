@@ -43,6 +43,22 @@ const EVENT_COLORS = {
     "世界杯":"#dc3545",
     "世乒赛":"#ffc107",
     "奥运会":"#28a745",
+    "奥运会团体":"#20c997",
+    "世乒赛团体":"#ffc107",
+    "世界杯团体":"#e35d6a",
+    "全运会":"#20c997",
+    "洲杯赛":"#6c5ce7",
+    "洲锦赛":"#a29bfe",
+    "洲锦赛团体":"#a29bfe",
+    "德甲联赛":"#e17055",
+    "德甲联赛半决赛":"#e17055",
+    "德甲联赛决赛":"#d63031",
+    "欧冠团体":"#0984e3",
+    "乒超联赛":"#00b894",
+    "T联赛":"#fdcb6e",
+    "全日锦":"#fd79a8",
+    "ittf公开赛":"#00cec9",
+    "支线赛":"#74b9ff",
 };
 
 // ========================================
@@ -130,28 +146,36 @@ async function loadAllData() {
         );
     }
 
-    // WTT 分项 score-log 数据 - 加载主文件 + 年度分文件
-    // 各分项可能的年度文件后缀
+    // WTT 分项 score-log 数据 - 优先读取 manifest.json 中的真实文件清单，回退到内置年度后缀
+    // 各分项可能的年度文件后缀（manifest 缺失时的回退）
     const discYearSuffixes = {
-        ms: ["2008-ittf","2009-ittf","2021-wtt","2022-wtt","2023-wtt","2024-wtt","2025-wtt","2026-wtt"],
-        ws: ["2008-ittf","2009-ittf","2022-ws","2023-ws","2024-ws","2025-ws","2026-ws"],
-        wd: ["2024-wtt","2025-wtt","2026-wtt"],
-        md: ["2024-wtt","2025-wtt","2026-wtt"],
-        xd: ["2024-wtt","2025-wtt","2026-wtt"],
+        ms: ["2001-wtt","2002-wtt","2014-wtt","2015-wtt","2016-wtt","2017-wtt","2018-wtt","2019-wtt","2020-wtt","2021-wtt","2022-wtt","2023-wtt","2024-wtt","2025-wtt","2026-wtt"],
+        ws: ["2001-ws","2002-ws","2018-ws","2019-ws","2020-ws","2021-ws","2022-ws","2023-ws","2024-ws","2025-ws","2026-ws"],
+        wd: ["2002-wtt","2018-wtt","2019-wtt","2020-wtt","2021-wtt","2022-wtt","2023-wtt","2024-wtt","2025-wtt","2026-wtt"],
+        md: ["2002-wtt","2018-wtt","2019-wtt","2020-wtt","2021-wtt","2022-wtt","2023-wtt","2024-wtt","2025-wtt","2026-wtt"],
+        xd: ["2021-wtt","2023-wtt","2024-wtt","2025-wtt","2026-wtt"],
     };
     for (const [disc, cfg] of Object.entries(DATA_PATHS.wttDisc)) {
         // 加载主 score-log.json
         promises.push(fetchJson(cfg.path).then(d => ({ key:"disc_"+disc, data:d, group:"wttDisc", disc })).catch(() => ({ key:"disc_"+disc, data:[], group:"wttDisc", disc })));
-        // 尝试加载年度分文件，合并到分项数据中
-        const suffixes = discYearSuffixes[disc] || [];
-        for (const sfx of suffixes) {
-            const yrPath = cfg.path.replace("score-log.json", "score-log-"+sfx+".json");
-            promises.push(
-                fetchJson(yrPath)
-                    .then(d => ({ key:"disc_"+disc+"_yr", data:d, group:"wttDiscYear", disc }))
-                    .catch(() => null)
-            );
-        }
+        // 依据 manifest.json 解析该分项真实存在的年度文件并加载；manifest 不可用时回退到内置后缀
+        const baseDir = cfg.path.replace("/score-log.json", "");
+        const manifestPromise = fetchJson(baseDir + "/manifest.json")
+            .then(manifest => {
+                const names = Array.isArray(manifest) ? manifest
+                            : (manifest && Array.isArray(manifest.scoreFiles) ? manifest.scoreFiles
+                            : (manifest && Array.isArray(manifest.scoreLogs) ? manifest.scoreLogs : []));
+                return names.filter(n => typeof n === "string" && n.startsWith("score-log-") && n.endsWith(".json"));
+            })
+            .then(files => {
+                const paths = (files && files.length)
+                    ? files.map(name => baseDir + "/" + name)
+                    : (discYearSuffixes[disc] || []).map(sfx => baseDir + "/score-log-" + sfx + ".json");
+                return Promise.all(paths.map(p => fetchJson(p).catch(() => [])));
+            })
+            .then(arrays => ({ key:"disc_"+disc+"_yr", data: arrays.flat(), group:"wttDiscYear", disc }))
+            .catch(() => ({ key:"disc_"+disc+"_yr", data: [], group:"wttDiscYear", disc }));
+        promises.push(manifestPromise);
     }
 
     const results = await Promise.all(promises);

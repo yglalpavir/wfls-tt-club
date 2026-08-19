@@ -1,0 +1,234 @@
+2004	Olympic Games Athens 2004	Olympic Games	--	194	2004-08-14	2004-08-23
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 2 Total: 199
+
+Start
+Prev
+1
+2
+Next
+End
+2004	Olympic Games Athens 2004	GUEYE Mohamed (SEN)		WOSIK Torben (GER)		MS	Main Draw	R128	0 - 4	4:11 5:11 6:11 4:11	WOSIK Torben	
+2004	Olympic Games Athens 2004	LIU Song (ARG)		ARAI Shu (JPN)		MS	Main Draw	R128	4 - 1	11:7 7:11 12:10 11:5 11:4	LIU Song	
+2004	Olympic Games Athens 2004	ACHANTA Sharath (IND)		BOUDJADJA Sofiene (ALG)		MS	Main Draw	R128	4 - 0	11:4 12:10 11:6 11:3	ACHANTA Sharath	
+2004	Olympic Games Athens 2004	MEROTOHUN Monday (NGR)		BABUNGU Bomboko (COD)		MS	Main Draw	R128	4 - 0	11:5 11:8 11:8 11:8	MEROTOHUN Monday	
+2004	Olympic Games Athens 2004	DOAN Kien Quoc (VIE)		YANG Min (ITA)		MS	Main Draw	R128	1 - 4	5:11 13:11 7:11 5:11 5:11	YANG Min	
+2004	Olympic Games Athens 2004	NGUYEN Khoa (USA)		HENZELL William (AUS)		MS	Main Draw	R128	1 - 4	7:11 11:6 7:11 4:11 9:11	HENZELL William	
+2004	Olympic Games Athens 2004	YUZAWA Ryo (JPN)		LIN Ju (DOM)		MS	Main Draw	R128	1 - 4	8:11 11:7 8:11 3:11 9:11	LIN Ju	
+2004	Olympic Games Athens 2004	KRZESZEWSKI Tomasz (POL)		HOYAMA Hugo (BRA)		MS	Main Draw	R128	4 - 0	12:10 11:4 11:4 11:8	KRZESZEWSKI Tomasz	
+2004	Olympic Games Athens 2004	MATSUSHITA Koji (JPN)		BROWN Trevor (AUS)		MS	Main Draw	R128	4 - 0	11:4 11:6 11:9 11:3	MATSUSHITA Koji	
+2004	Olympic Games Athens 2004	PAPIC Juan (CHI)		LUPULESKU Ilija (USA)		MS	Main Draw	R128	0 - 4	2:11 4:11 5:11 2:11	LUPULESKU Ilija	
+2004	Olympic Games Athens 2004	O Il (PRK)		LUYINDULA Jose (COD)		MS	Main Draw	R128	4 - 1	11:7 11:8 9:11 11:4 11:7	O Il	
+2004	Olympic Games Athens 2004	GIONIS Panagiotis (GRE)		HE Zhiwen (ESP)		MS	Main Draw	R128	1 - 4	7:11 11:13 4:11 13:11 13:15	HE Zhiwen	
+2004	Olympic Games Athens 2004	AKHLAGHPASAND Mohammadreza (USA)		MONTEIRO Thiago (BRA)		MS	Main Draw	R128	1 - 4	8:11 13:9 9:11 7:11 5:11	MONTEIRO Thiago	
+2004	Olympic Games Athens 2004	TORIOLA Segun (NGR)		TABACHNIK Pablo (ARG)		MS	Main Draw	R128	4 - 1	12:10 11:8 11:13 11:3 11:8	TORIOLA Segun	
+2004	Olympic Games Athens 2004	KARAKASEVIC Aleksandar (SRB)		AL-HARBI Khaled (KSA)		MS	Main Draw	R128	4 - 0	11:9 11:3 11:3 11:3	KARAKASEVIC Aleksandar	
+2004	Olympic Games Athens 2004	LAVALE Russell (AUS)		MILICEVIC Srdan (BIH)		MS	Main Draw	R128	2 - 4	12:10 9:11 4:11 11:9 16:18 11:13	MILICEVIC Srdan	
+2004	Olympic Games Athens 2004	WOSIK Torben (GER)		KEEN Trinko (NED)		MS	Main Draw	R64	3 - 4	10:12 12:10 11:7 5:11 11:5 11:13 9:11	KEEN Trinko	
+2004	Olympic Games Athens 2004	GRUJIC Slobodan (SRB)		LIU Song (ARG)		MS	Main Draw	R64	1 - 4	4:11 7:11 11:4 2:11 12:14	LIU Song	
+2004	Olympic Games Athens 2004	ACHANTA Sharath (IND)		KO Lai Chak (HKG)		MS	Main Draw	R64	0 - 4	9:11 5:11 9:11 6:11	KO Lai Chak	
+2004	Olympic Games Athens 2004	PERSSON Jorgen (SWE)		MEROTOHUN Monday (NGR)		MS	Main Draw	R64	4 - 1	9:11 11:5 11:5 11:7 11:8	PERSSON Jorgen	
+2004	Olympic Games Athens 2004	YANG Min (ITA)		KARLSSON Peter (SWE)		MS	Main Draw	R64	3 - 4	9:11 4:11 8:11 11:9 11:7 13:11 9:11	KARLSSON Peter	
+2004	Olympic Games Athens 2004	CHEN Weixing (AUT)		HENZELL William (AUS)		MS	Main Draw	R64	4 - 0	11:7 11:3 12:10 11:6	CHEN Weixing	
+2004	Olympic Games Athens 2004	LIN Ju (DOM)		SMIRNOV Alexey (RUS)		MS	Main Draw	R64	4 - 0	11:9 11:4 11:5 11:6	LIN Ju	
+2004	Olympic Games Athens 2004	ROSSKOPF Jorg (GER)		KRZESZEWSKI Tomasz (POL)		MS	Main Draw	R64	4 - 1	6:11 11:8 11:7 17:15 13:11	ROSSKOPF Jorg	
+2004	Olympic Games Athens 2004	MATSUSHITA Koji (JPN)		HEISTER Danny (NED)		MS	Main Draw	R64	4 - 0	11:7 11:7 11:8 11:4	MATSUSHITA Koji	
+2004	Olympic Games Athens 2004	CRISAN Adrian (ROU)		LUPULESKU Ilija (USA)		MS	Main Draw	R64	4 - 0	11:9 11:8 15:13 11:8	CRISAN Adrian	
+2004	Olympic Games Athens 2004	O Il (PRK)		LEUNG Chu Yan (HKG)		MS	Main Draw	R64	1 - 4	3:11 9:11 13:11 4:11 8:11	LEUNG Chu Yan	
+2004	Olympic Games Athens 2004	BLASZCZYK Lucjan (POL)		HE Zhiwen (ESP)		MS	Main Draw	R64	4 - 3	11:5 10:12 11:2 8:11 7:11 11:6 11:9	BLASZCZYK Lucjan	
+2004	Olympic Games Athens 2004	MONTEIRO Thiago (BRA)		LI Ching (HKG)		MS	Main Draw	R64	1 - 4	6:11 11:9 7:11 9:11 5:11	LI Ching	
+2004	Olympic Games Athens 2004	CHILA Patrick (FRA)		TORIOLA Segun (NGR)		MS	Main Draw	R64	4 - 2	11:3 8:11 10:12 11:7 11:8 11:9	CHILA Patrick	
+2004	Olympic Games Athens 2004	KARAKASEVIC Aleksandar (SRB)		HUANG Johnny (CAN)		MS	Main Draw	R64	4 - 2	7:11 11:8 11:5 9:11 11:9 11:9	KARAKASEVIC Aleksandar	
+2004	Olympic Games Athens 2004	PRIMORAC Zoran (CRO)		MILICEVIC Srdan (BIH)		MS	Main Draw	R64	4 - 1	8:11 11:6 11:7 11:8 11:8	PRIMORAC Zoran	
+2004	Olympic Games Athens 2004	WANG Liqin (CHN)		KEEN Trinko (NED)		MS	Main Draw	R32	4 - 1	6:11 11:1 11:8 11:4 11:2	WANG Liqin	
+2004	Olympic Games Athens 2004	LIU Song (ARG)		JOO Saehyuk (KOR)		MS	Main Draw	R32	0 - 4	12:14 9:11 6:11 8:11	JOO Saehyuk	
+2004	Olympic Games Athens 2004	KORBEL Petr (CZE)		KO Lai Chak (HKG)		MS	Main Draw	R32	3 - 4	7:11 11:9 7:11 11:2 6:11 11:9 7:11	KO Lai Chak	
+2004	Olympic Games Athens 2004	PERSSON Jorgen (SWE)		KREANGA Kalinikos (GRE)		MS	Main Draw	R32	4 - 0	11:5 11:7 11:9 11:8	PERSSON Jorgen	
+2004	Olympic Games Athens 2004	CHUANG Chih-Yuan (TPE)		KARLSSON Peter (SWE)		MS	Main Draw	R32	4 - 2	16:18 11:6 8:11 11:7 11:3 11:8	CHUANG Chih-Yuan	
+2004	Olympic Games Athens 2004	CHEN Weixing (AUT)		OH Sangeun (KOR)		MS	Main Draw	R32	3 - 4	11:7 6:11 7:11 8:11 11:5 11:9 2:11	OH Sangeun	
+2004	Olympic Games Athens 2004	SAIVE Jean-Michel (BEL)		LIN Ju (DOM)		MS	Main Draw	R32	2 - 4	5:11 4:11 11:5 13:11 16:18 8:11	LIN Ju	
+2004	Olympic Games Athens 2004	ROSSKOPF Jorg (GER)		WANG Hao (CHN)		MS	Main Draw	R32	1 - 4	5:11 10:12 5:11 13:11 6:11	WANG Hao	
+2004	Olympic Games Athens 2004	RYU Seungmin (KOR)		MATSUSHITA Koji (JPN)		MS	Main Draw	R32	4 - 0	11:9 11:6 11:6 11:2	RYU Seungmin	
+2004	Olympic Games Athens 2004	CRISAN Adrian (ROU)		CHIANG Peng-Lung (TPE)		MS	Main Draw	R32	1 - 4	9:11 5:11 10:12 11:2 8:11	CHIANG Peng-Lung	
+2004	Olympic Games Athens 2004	MAZE Michael (DEN)		LEUNG Chu Yan (HKG)		MS	Main Draw	R32	1 - 4	11:6 5:11 3:11 8:11 9:11	LEUNG Chu Yan	
+2004	Olympic Games Athens 2004	BLASZCZYK Lucjan (POL)		SAMSONOV Vladimir (BLR)		MS	Main Draw	R32	2 - 4	5:11 11:5 10:12 11:8 4:11 9:11	SAMSONOV Vladimir	
+2004	Olympic Games Athens 2004	SCHLAGER Werner (AUT)		LI Ching (HKG)		MS	Main Draw	R32	4 - 2	8:11 11:9 12:14 11:9 11:9 11:6	SCHLAGER Werner	
+2004	Olympic Games Athens 2004	CHILA Patrick (FRA)		BOLL Timo (GER)		MS	Main Draw	R32	1 - 4	3:11 16:14 9:11 3:11 9:11	BOLL Timo	
+2004	Olympic Games Athens 2004	WALDNER Jan-Ove (SWE)		KARAKASEVIC Aleksandar (SRB)		MS	Main Draw	R32	4 - 2	13:11 11:9 5:11 11:6 10:12 11:9	WALDNER Jan-Ove	
+2004	Olympic Games Athens 2004	PRIMORAC Zoran (CRO)		MA Lin (CHN)		MS	Main Draw	R32	1 - 4	5:11 3:11 3:11 11:9 5:11	MA Lin	
+2004	Olympic Games Athens 2004	WANG Liqin (CHN)		JOO Saehyuk (KOR)		MS	Main Draw	R16	4 - 1	11:7 11:8 9:11 11:6 11:6	WANG Liqin	
+2004	Olympic Games Athens 2004	KO Lai Chak (HKG)		PERSSON Jorgen (SWE)		MS	Main Draw	R16	4 - 1	11:7 11:6 8:11 11:4 12:10	KO Lai Chak	
+2004	Olympic Games Athens 2004	CHUANG Chih-Yuan (TPE)		OH Sangeun (KOR)		MS	Main Draw	R16	4 - 2	12:10 12:10 6:11 12:10 9:11 11:5	CHUANG Chih-Yuan	
+2004	Olympic Games Athens 2004	LIN Ju (DOM)		WANG Hao (CHN)		MS	Main Draw	R16	1 - 4	5:11 7:11 11:7 10:12 6:11	WANG Hao	
+2004	Olympic Games Athens 2004	RYU Seungmin (KOR)		CHIANG Peng-Lung (TPE)		MS	Main Draw	R16	4 - 3	11:6 11:6 7:11 8:11 11:3 6:11 11:4	RYU Seungmin	
+2004	Olympic Games Athens 2004	LEUNG Chu Yan (HKG)		SAMSONOV Vladimir (BLR)		MS	Main Draw	R16	4 - 3	11:7 6:11 11:9 6:11 11:5 7:11 11:8	LEUNG Chu Yan	
+2004	Olympic Games Athens 2004	SCHLAGER Werner (AUT)		BOLL Timo (GER)		MS	Main Draw	R16	3 - 4	2:11 14:12 5:11 9:11 11:6 11:4 6:11	BOLL Timo	
+2004	Olympic Games Athens 2004	WALDNER Jan-Ove (SWE)		MA Lin (CHN)		MS	Main Draw	R16	4 - 1	11:9 12:10 7:11 11:5 11:9	WALDNER Jan-Ove	
+2004	Olympic Games Athens 2004	WANG Liqin (CHN)		KO Lai Chak (HKG)		MS	Main Draw	QuarterFinal	4 - 1	11:9 13:11 6:11 11:8 11:4	WANG Liqin	
+2004	Olympic Games Athens 2004	CHUANG Chih-Yuan (TPE)		WANG Hao (CHN)		MS	Main Draw	QuarterFinal	2 - 4	11:5 10:12 11:9 4:11 6:11 7:11	WANG Hao	
+2004	Olympic Games Athens 2004	RYU Seungmin (KOR)		LEUNG Chu Yan (HKG)		MS	Main Draw	QuarterFinal	4 - 2	6:11 10:12 11:6 11:6 11:9 11:5	RYU Seungmin	
+2004	Olympic Games Athens 2004	BOLL Timo (GER)		WALDNER Jan-Ove (SWE)		MS	Main Draw	QuarterFinal	1 - 4	7:11 11:13 11:6 7:11 11:13	WALDNER Jan-Ove	
+2004	Olympic Games Athens 2004	WANG Liqin (CHN)		WANG Hao (CHN)		MS	Main Draw	SemiFinal	1 - 4	8:11 5:11 11:6 9:11 3:11	WANG Hao	
+2004	Olympic Games Athens 2004	RYU Seungmin (KOR)		WALDNER Jan-Ove (SWE)		MS	Main Draw	SemiFinal	4 - 1	11:9 9:11 11:9 11:5 11:5	RYU Seungmin	
+2004	Olympic Games Athens 2004	WANG Hao (CHN)		RYU Seungmin (KOR)		MS	Main Draw	Final	2 - 4	3:11 11:9 9:11 9:11 13:11 9:11	RYU Seungmin
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 64
+
+2004	Olympic Games Athens 2004	YOON Jihye (KOR)		BANH THUA Tawny (USA)		WS	Main Draw	R128	3 - 4	11:8 9:11 11:9 14:16 11:3 8:11 6:11	BANH THUA Tawny	
+2004	Olympic Games Athens 2004	RAMOS Fabiola (VEN)		NEGRISOLI Laura (ITA)		WS	Main Draw	R128	1 - 4	9:11 5:11 6:11 11:8 3:11	NEGRISOLI Laura	
+2004	Olympic Games Athens 2004	KOMWONG Nanthana (THA)		DAS Mouma (IND)		WS	Main Draw	R128	4 - 0	11:6 11:7 11:3 12:10	KOMWONG Nanthana	
+2004	Olympic Games Athens 2004	KRAVCHENKO Marina (ISR)		VOLAKAKI Archontoula (GRE)		WS	Main Draw	R128	4 - 0	11:6 11:5 11:4 11:5	KRAVCHENKO Marina	
+2004	Olympic Games Athens 2004	OSHONAIKE Olufunke (NGR)		RODRIGUEZ Berta (CHI)		WS	Main Draw	R128	4 - 0	11:9 11:8 11:7 11:9	OSHONAIKE Olufunke	
+2004	Olympic Games Athens 2004	ERDELJI Silvija (SRB)		BEN KAHIA Nesrine (TUN)		WS	Main Draw	R128	4 - 0	11:3 11:1 11:3 11:7	ERDELJI Silvija	
+2004	Olympic Games Athens 2004	ESPINEIRA Marisol (PER)		MIAO Miao (AUS)		WS	Main Draw	R128	2 - 4	8:11 9:11 11:5 11:4 6:11 6:11	MIAO Miao	
+2004	Olympic Games Athens 2004	BOUCETTA Leila (ALG)		HUANG Yi-Hua (TPE)		WS	Main Draw	R128	0 - 4	8:11 3:11 4:11 7:11	HUANG Yi-Hua	
+2004	Olympic Games Athens 2004	MOLNAR Cornelia (CRO)		LAY Jian Fang (AUS)		WS	Main Draw	R128	0 - 4	10:12 5:11 6:11 11:13	LAY Jian Fang	
+2004	Olympic Games Athens 2004	INOYATOVA Manzura (UZB)		FAZEKAS Maria (HUN)		WS	Main Draw	R128	0 - 4	6:11 7:11 3:11 7:11	FAZEKAS Maria	
+2004	Olympic Games Athens 2004	RATHER Jasna (USA)		STRBIKOVA Renata (CZE)		WS	Main Draw	R128	4 - 2	9:11 6:11 15:13 11:4 11:8 11:9	RATHER Jasna	
+2004	Olympic Games Athens 2004	FADEEVA Oxana (RUS)		WU Xue (DOM)		WS	Main Draw	R128	1 - 4	11:9 8:11 6:11 7:11 9:11	WU Xue	
+2004	Olympic Games Athens 2004	CADA Petra (CAN)		GUENNI Olfa (TUN)		WS	Main Draw	R128	4 - 0	11:4 11:7 11:4 11:7	CADA Petra	
+2004	Olympic Games Athens 2004	MENAIFI Asma (ALG)		STEFANOVA Nikoleta (ITA)		WS	Main Draw	R128	0 - 4	6:11 8:11 6:11 6:11	STEFANOVA Nikoleta	
+2004	Olympic Games Athens 2004	SHABAN Zeina (JOR)		MEDINA Iizzwa (HON)		WS	Main Draw	R128	4 - 3	11:7 11:13 11:8 9:11 11:5 9:11 11:9	SHABAN Zeina	
+2004	Olympic Games Athens 2004	AKPAN Cecilia (NGR)		SILVA Ligia (BRA)		WS	Main Draw	R128	4 - 1	11:8 11:6 9:11 12:10 11:8	AKPAN Cecilia	
+2004	Olympic Games Athens 2004	BANH THUA Tawny (USA)		LI Chunli (NZL)		WS	Main Draw	R64	1 - 4	8:11 10:12 9:11 11:8 9:11	LI Chunli	
+2004	Olympic Games Athens 2004	GANINA Svetlana (RUS)		NEGRISOLI Laura (ITA)		WS	Main Draw	R64	4 - 2	11:9 14:12 7:11 3:11 11:6 11:9	GANINA Svetlana	
+2004	Olympic Games Athens 2004	KOMWONG Nanthana (THA)		STRUSE Nicole (GER)		WS	Main Draw	R64	4 - 1	11:7 11:4 9:11 11:7 13:11	KOMWONG Nanthana	
+2004	Olympic Games Athens 2004	BADESCU Otilia (ROU)		KRAVCHENKO Marina (ISR)		WS	Main Draw	R64	2 - 4	6:11 9:11 11:4 3:11 11:8 6:11	KRAVCHENKO Marina	
+2004	Olympic Games Athens 2004	OSHONAIKE Olufunke (NGR)		TOTH Krisztina (HUN)		WS	Main Draw	R64	2 - 4	12:10 10:12 16:14 6:11 13:15 5:11	TOTH Krisztina	
+2004	Olympic Games Athens 2004	JING Junhong (SGP)		ERDELJI Silvija (SRB)		WS	Main Draw	R64	4 - 2	11:3 11:8 10:12 11:4 4:11 11:6	JING Junhong	
+2004	Olympic Games Athens 2004	MIAO Miao (AUS)		FUKUHARA Ai (JPN)		WS	Main Draw	R64	3 - 4	11:5 11:7 9:11 6:11 5:11 11:9 9:11	FUKUHARA Ai	
+2004	Olympic Games Athens 2004	TAN Wenling (ITA)		HUANG Yi-Hua (TPE)		WS	Main Draw	R64	4 - 2	11:3 9:11 11:9 9:11 13:11 11:7	TAN Wenling	
+2004	Olympic Games Athens 2004	LAY Jian Fang (AUS)		SCHALL Elke (GER)		WS	Main Draw	R64	2 - 4	11:3 6:11 11:6 7:11 8:11 10:12	SCHALL Elke	
+2004	Olympic Games Athens 2004	KIM Hyang Mi (PRK)		FAZEKAS Maria (HUN)		WS	Main Draw	R64	4 - 1	11:7 11:8 9:11 11:8 11:8	KIM Hyang Mi	
+2004	Olympic Games Athens 2004	RATHER Jasna (USA)		ZHANG Xueling (SGP)		WS	Main Draw	R64	1 - 4	7:11 7:11 11:8 7:11 5:11	ZHANG Xueling	
+2004	Olympic Games Athens 2004	FUJINUMA Ai (JPN)		WU Xue (DOM)		WS	Main Draw	R64	4 - 0	13:11 11:7 14:12 11:5	FUJINUMA Ai	
+2004	Olympic Games Athens 2004	CADA Petra (CAN)		BATORFI Csilla (HUN)		WS	Main Draw	R64	4 - 3	11:7 9:11 16:18 11:6 11:8 8:11 12:10	CADA Petra	
+2004	Olympic Games Athens 2004	SCHOPP Jie (GER)		STEFANOVA Nikoleta (ITA)		WS	Main Draw	R64	4 - 1	11:5 11:13 11:5 12:10 11:7	SCHOPP Jie	
+2004	Olympic Games Athens 2004	SHABAN Zeina (JOR)		ZAMFIR Adriana (ROU)		WS	Main Draw	R64	1 - 4	11:8 5:11 8:11 5:11 4:11	ZAMFIR Adriana	
+2004	Olympic Games Athens 2004	KIM Yun Mi (PRK)		AKPAN Cecilia (NGR)		WS	Main Draw	R64	4 - 0	11:5 11:7 11:6 11:8	KIM Yun Mi	
+2004	Olympic Games Athens 2004	ZHANG Yining (CHN)		LI Chunli (NZL)		WS	Main Draw	R32	4 - 0	11:8 12:10 11:5 11:7	ZHANG Yining	
+2004	Olympic Games Athens 2004	GANINA Svetlana (RUS)		LAU Sui Fei (HKG)		WS	Main Draw	R32	1 - 4	3:11 6:11 12:10 5:11 6:11	LAU Sui Fei	
+2004	Olympic Games Athens 2004	PAVLOVICH Viktoria (BLR)		KOMWONG Nanthana (THA)		WS	Main Draw	R32	4 - 2	11:4 11:6 9:11 11:3 7:11 11:1	PAVLOVICH Viktoria	
+2004	Olympic Games Athens 2004	KRAVCHENKO Marina (ISR)		BOROS Tamara (CRO)		WS	Main Draw	R32	0 - 4	8:11 6:11 5:11 7:11	BOROS Tamara	
+2004	Olympic Games Athens 2004	TIE Yana (HKG)		TOTH Krisztina (HUN)		WS	Main Draw	R32	4 - 1	11:6 6:11 12:10 14:12 11:6	TIE Yana	
+2004	Olympic Games Athens 2004	JING Junhong (SGP)		KIM Hyon Hui (PRK)		WS	Main Draw	R32	2 - 4	11:7 8:11 11:6 5:11 4:11 9:11	KIM Hyon Hui	
+2004	Olympic Games Athens 2004	GAO Jun (USA)		FUKUHARA Ai (JPN)		WS	Main Draw	R32	0 - 4	3:11 6:11 8:11 9:11	FUKUHARA Ai	
+2004	Olympic Games Athens 2004	TAN Wenling (ITA)		KIM Kyungah (KOR)		WS	Main Draw	R32	1 - 4	11:9 7:11 5:11 3:11 9:11	KIM Kyungah	
+2004	Olympic Games Athens 2004	NIU Jianfeng (CHN)		SCHALL Elke (GER)		WS	Main Draw	R32	4 - 3	12:14 12:14 11:5 10:12 11:6 11:2 11:6	NIU Jianfeng	
+2004	Olympic Games Athens 2004	KIM Hyang Mi (PRK)		STEFF Mihaela (ROU)		WS	Main Draw	R32	4 - 2	7:11 11:8 11:7 11:7 6:11 11:9	KIM Hyang Mi	
+2004	Olympic Games Athens 2004	LEE Eunsil (KOR)		ZHANG Xueling (SGP)		WS	Main Draw	R32	1 - 4	5:11 7:11 9:11 11:9 6:11	ZHANG Xueling	
+2004	Olympic Games Athens 2004	FUJINUMA Ai (JPN)		LIU Jia (AUT)		WS	Main Draw	R32	4 - 3	7:11 6:11 12:10 11:6 11:7 8:11 11:7	FUJINUMA Ai	
+2004	Olympic Games Athens 2004	LI Jiawei (SGP)		CADA Petra (CAN)		WS	Main Draw	R32	4 - 0	11:4 11:6 11:7 11:8	LI Jiawei	
+2004	Olympic Games Athens 2004	SCHOPP Jie (GER)		UMEMURA Aya (JPN)		WS	Main Draw	R32	2 - 4	13:15 11:9 10:12 11:4 7:11 3:11	UMEMURA Aya	
+2004	Olympic Games Athens 2004	LIN Ling (HKG)		ZAMFIR Adriana (ROU)		WS	Main Draw	R32	2 - 4	6:11 7:11 11:5 8:11 11:7 10:12	ZAMFIR Adriana	
+2004	Olympic Games Athens 2004	KIM Yun Mi (PRK)		WANG Nan (CHN)		WS	Main Draw	R32	2 - 4	6:11 15:13 11:8 2:11 5:11 9:11	WANG Nan	
+2004	Olympic Games Athens 2004	ZHANG Yining (CHN)		LAU Sui Fei (HKG)		WS	Main Draw	R16	4 - 1	11:5 11:7 11:3 9:11 11:5	ZHANG Yining	
+2004	Olympic Games Athens 2004	PAVLOVICH Viktoria (BLR)		BOROS Tamara (CRO)		WS	Main Draw	R16	2 - 4	5:11 8:11 11:9 8:11 11:6 7:11	BOROS Tamara	
+2004	Olympic Games Athens 2004	TIE Yana (HKG)		KIM Hyon Hui (PRK)		WS	Main Draw	R16	4 - 1	11:6 11:7 11:4 8:11 11:8	TIE Yana	
+2004	Olympic Games Athens 2004	FUKUHARA Ai (JPN)		KIM Kyungah (KOR)		WS	Main Draw	R16	1 - 4	8:11 5:11 11:7 13:15 6:11	KIM Kyungah	
+2004	Olympic Games Athens 2004	NIU Jianfeng (CHN)		KIM Hyang Mi (PRK)		WS	Main Draw	R16	0 - 4	8:11 9:11 9:11 4:11	KIM Hyang Mi	
+2004	Olympic Games Athens 2004	ZHANG Xueling (SGP)		FUJINUMA Ai (JPN)		WS	Main Draw	R16	4 - 2	11:7 11:8 6:11 11:7 9:11 11:9	ZHANG Xueling	
+2004	Olympic Games Athens 2004	LI Jiawei (SGP)		UMEMURA Aya (JPN)		WS	Main Draw	R16	4 - 2	14:12 13:11 8:11 15:13 9:11 11:7	LI Jiawei	
+2004	Olympic Games Athens 2004	ZAMFIR Adriana (ROU)		WANG Nan (CHN)		WS	Main Draw	R16	1 - 4	11:9 8:11 2:11 9:11 4:11	WANG Nan	
+2004	Olympic Games Athens 2004	ZHANG Yining (CHN)		BOROS Tamara (CRO)		WS	Main Draw	QuarterFinal	4 - 0	12:10 15:13 13:11 11:3	ZHANG Yining	
+2004	Olympic Games Athens 2004	TIE Yana (HKG)		KIM Kyungah (KOR)		WS	Main Draw	QuarterFinal	1 - 4	6:11 12:10 9:11 7:11 7:11	KIM Kyungah	
+2004	Olympic Games Athens 2004	KIM Hyang Mi (PRK)		ZHANG Xueling (SGP)		WS	Main Draw	QuarterFinal	4 - 2	11:7 11:4 9:11 11:8 8:11 12:10	KIM Hyang Mi	
+2004	Olympic Games Athens 2004	LI Jiawei (SGP)		WANG Nan (CHN)		WS	Main Draw	QuarterFinal	4 - 1	11:7 11:7 11:13 11:9 11:8	LI Jiawei	
+2004	Olympic Games Athens 2004	ZHANG Yining (CHN)		KIM Kyungah (KOR)		WS	Main Draw	SemiFinal	4 - 1	13:11 11:8 11:6 5:11 11:8	ZHANG Yining	
+2004	Olympic Games Athens 2004	KIM Hyang Mi (PRK)		LI Jiawei (SGP)		WS	Main Draw	SemiFinal	4 - 3	8:11 11:6 0:11 8:11 11:8 11:6 11:9	KIM Hyang Mi	
+2004	Olympic Games Athens 2004	ZHANG Yining (CHN)		KIM Hyang Mi (PRK)		WS	Main Draw	Final	4 - 0	11:8 11:7 11:2 11:2	ZHANG Yining
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 32
+
+2004	Olympic Games Athens 2004	BOUDJADJA Sofiene (ALG)	DJAZIRI Abdelhakim (ALG)	ARAI Shu (JPN)	YUZAWA Ryo (JPN)	MD	Main Draw	R64	0 - 4	6:11 2:11 8:11 16:18	ARAI Shu	YUZAWA Ryo
+2004	Olympic Games Athens 2004	GONZALES Enrique (ARG)	TABACHNIK Pablo (ARG)	GIONIS Panagiotis (GRE)	KREANGA Kalinikos (GRE)	MD	Main Draw	R64	1 - 4	7:11 7:11 2:11 11:9 6:11	GIONIS Panagiotis	KREANGA Kalinikos
+2004	Olympic Games Athens 2004	HENZELL William (AUS)	ZALCBERG David (AUS)	MONDELLO Massimiliano (ITA)	YANG Min (ITA)	MD	Main Draw	R64	4 - 1	11:6 8:11 11:7 11:7 11:5	HENZELL William	ZALCBERG David
+2004	Olympic Games Athens 2004	HENZELL William (AUS)	ZALCBERG David (AUS)	HEISTER Danny (NED)	KEEN Trinko (NED)	MD	Main Draw	R32	1 - 4	13:15 10:12 11:6 12:14 3:11	HEISTER Danny	KEEN Trinko
+2004	Olympic Games Athens 2004	JINDRAK Karl (AUT)	SCHLAGER Werner (AUT)	MAZE Michael (DEN)	TUGWELL Finn (DEN)	MD	Main Draw	R16	0 - 4	10:12 7:11 6:11 7:11	MAZE Michael	TUGWELL Finn
+2004	Olympic Games Athens 2004	HANASHIRO Hugo (BRA)	HOYAMA Hugo (BRA)	HIELSCHER Lars (GER)	ROSSKOPF Jorg (GER)	MD	Main Draw	R64	2 - 4	11:9 8:11 5:11 11:5 9:11 5:11	HIELSCHER Lars	ROSSKOPF Jorg
+2004	Olympic Games Athens 2004	HUANG Johnny (CAN)	KASSAM Faazil (CAN)	BROWN Trevor (AUS)	LAVALE Russell (AUS)	MD	Main Draw	R64	4 - 0	11:9 11:3 11:6 11:8	HUANG Johnny	KASSAM Faazil
+2004	Olympic Games Athens 2004	CHEN Qi (CHN)	MA Lin (CHN)	HEISTER Danny (NED)	KEEN Trinko (NED)	MD	Main Draw	R16	4 - 2	10:12 11:7 11:7 11:13 11:5 11:3	CHEN Qi	MA Lin
+2004	Olympic Games Athens 2004	CHEN Qi (CHN)	MA Lin (CHN)	BLASZCZYK Lucjan (POL)	KRZESZEWSKI Tomasz (POL)	MD	Main Draw	QuarterFinal	4 - 1	8:11 11:6 11:6 12:10 11:7	CHEN Qi	MA Lin
+2004	Olympic Games Athens 2004	CHEN Qi (CHN)	MA Lin (CHN)	MAZE Michael (DEN)	TUGWELL Finn (DEN)	MD	Main Draw	SemiFinal	4 - 2	11:9 10:12 11:7 8:11 13:11 13:11	CHEN Qi	MA Lin
+2004	Olympic Games Athens 2004	CHEN Qi (CHN)	MA Lin (CHN)	KO Lai Chak (HKG)	LI Ching (HKG)	MD	Main Draw	Final	4 - 2	11:6 11:9 7:11 11:8 8:11 11:5	CHEN Qi	MA Lin
+2004	Olympic Games Athens 2004	MAZE Michael (DEN)	TUGWELL Finn (DEN)	PERSSON Jorgen (SWE)	WALDNER Jan-Ove (SWE)	MD	Main Draw	QuarterFinal	4 - 1	11:5 8:11 11:8 12:10 12:10	MAZE Michael	TUGWELL Finn
+2004	Olympic Games Athens 2004	MAZE Michael (DEN)	TUGWELL Finn (DEN)	MAZUNOV Dmitry (RUS)	SMIRNOV Alexey (RUS)	MD	Position Draw	2	4 - 2	11:3 11:8 12:14 3:11 11:9 11:8	MAZE Michael	TUGWELL Finn
+2004	Olympic Games Athens 2004	GIONIS Panagiotis (GRE)	KREANGA Kalinikos (GRE)	KITO Akira (JPN)	TASAKI Toshio (JPN)	MD	Main Draw	R32	3 - 4	11:9 11:6 5:11 11:8 6:11 11:13 4:11	KITO Akira	TASAKI Toshio
+2004	Olympic Games Athens 2004	ARAI Shu (JPN)	YUZAWA Ryo (JPN)	BOLL Timo (GER)	FEJER-KONNERTH Zoltan (GER)	MD	Main Draw	R32	0 - 4	4:11 9:11 4:11 9:11	BOLL Timo	FEJER-KONNERTH Zoltan
+2004	Olympic Games Athens 2004	JOO Saehyuk (KOR)	OH Sangeun (KOR)	HIELSCHER Lars (GER)	ROSSKOPF Jorg (GER)	MD	Main Draw	R32	4 - 1	11:5 11:6 11:6 9:11 11:9	JOO Saehyuk	OH Sangeun
+2004	Olympic Games Athens 2004	LEE Chulseung (KOR)	RYU Seungmin (KOR)	BOLL Timo (GER)	FEJER-KONNERTH Zoltan (GER)	MD	Main Draw	R16	4 - 0	11:7 11:9 11:7 11:9	LEE Chulseung	RYU Seungmin
+2004	Olympic Games Athens 2004	JOO Saehyuk (KOR)	OH Sangeun (KOR)	KO Lai Chak (HKG)	LI Ching (HKG)	MD	Main Draw	R16	1 - 4	8:11 9:11 3:11 11:5 12:14	KO Lai Chak	LI Ching
+2004	Olympic Games Athens 2004	LEE Chulseung (KOR)	RYU Seungmin (KOR)	MAZUNOV Dmitry (RUS)	SMIRNOV Alexey (RUS)	MD	Main Draw	QuarterFinal	1 - 4	12:10 7:11 9:11 4:11 8:11	MAZUNOV Dmitry	SMIRNOV Alexey
+2004	Olympic Games Athens 2004	MEROTOHUN Monday (NGR)	TORIOLA Segun (NGR)	HAZINSKI Mark (USA)	LUPULESKU Ilija (USA)	MD	Main Draw	R64	0 - 4	7:11 4:11 5:11 5:11	HAZINSKI Mark	LUPULESKU Ilija
+2004	Olympic Games Athens 2004	AKINLABI Peter (NGR)	NASIRU Kazeem (NGR)	PAPIC Juan (CHI)	RODRIGUEZ Alejandro (CHI)	MD	Main Draw	R64	4 - 1	11:9 11:5 16:18 11:9 11:7	AKINLABI Peter	NASIRU Kazeem
+2004	Olympic Games Athens 2004	AKINLABI Peter (NGR)	NASIRU Kazeem (NGR)	MAZE Michael (DEN)	TUGWELL Finn (DEN)	MD	Main Draw	R32	2 - 4	11:8 11:9 7:11 11:13 9:11 4:11	MAZE Michael	TUGWELL Finn
+2004	Olympic Games Athens 2004	MAZUNOV Dmitry (RUS)	SMIRNOV Alexey (RUS)	KORBEL Petr (CZE)	VYBORNY Richard (CZE)	MD	Main Draw	R32	4 - 1	11:4 13:11 11:7 9:11 11:6	MAZUNOV Dmitry	SMIRNOV Alexey
+2004	Olympic Games Athens 2004	MAZUNOV Dmitry (RUS)	SMIRNOV Alexey (RUS)	CHEUNG Yuk (HKG)	LEUNG Chu Yan (HKG)	MD	Main Draw	R16	4 - 0	14:11 11:7 11:8 11:7	MAZUNOV Dmitry	SMIRNOV Alexey
+2004	Olympic Games Athens 2004	MAZUNOV Dmitry (RUS)	SMIRNOV Alexey (RUS)	KO Lai Chak (HKG)	LI Ching (HKG)	MD	Main Draw	SemiFinal	2 - 4	5:11 9:11 11:5 11:8 8:11 6:11	KO Lai Chak	LI Ching
+2004	Olympic Games Athens 2004	GRUJIC Slobodan (SRB)	KARAKASEVIC Aleksandar (SRB)	KITO Akira (JPN)	TASAKI Toshio (JPN)	MD	Main Draw	R16	4 - 1	11:9 9:11 11:9 12:10 12:10	GRUJIC Slobodan	KARAKASEVIC Aleksandar
+2004	Olympic Games Athens 2004	GRUJIC Slobodan (SRB)	KARAKASEVIC Aleksandar (SRB)	KO Lai Chak (HKG)	LI Ching (HKG)	MD	Main Draw	QuarterFinal	1 - 4	6:11 12:10 6:11 11:13 9:11	KO Lai Chak	LI Ching
+2004	Olympic Games Athens 2004	PERSSON Jorgen (SWE)	WALDNER Jan-Ove (SWE)	HUANG Johnny (CAN)	KASSAM Faazil (CAN)	MD	Main Draw	R32	4 - 2	11:7 16:18 11:3 7:11 11:7 11:6	PERSSON Jorgen	WALDNER Jan-Ove
+2004	Olympic Games Athens 2004	PERSSON Jorgen (SWE)	WALDNER Jan-Ove (SWE)	KONG Linghui (CHN)	WANG Hao (CHN)	MD	Main Draw	R16	4 - 1	8:11 11:6 11:9 11:9 12:10	PERSSON Jorgen	WALDNER Jan-Ove
+2004	Olympic Games Athens 2004	CHIANG Peng-Lung (TPE)	CHUANG Chih-Yuan (TPE)	HAZINSKI Mark (USA)	LUPULESKU Ilija (USA)	MD	Main Draw	R32	4 - 1	14:12 8:11 13:11 16:14 11:9	CHIANG Peng-Lung	CHUANG Chih-Yuan
+2004	Olympic Games Athens 2004	CHIANG Peng-Lung (TPE)	CHUANG Chih-Yuan (TPE)	BLASZCZYK Lucjan (POL)	KRZESZEWSKI Tomasz (POL)	MD	Main Draw	R16	2 - 4	11:7 10:12 11:8 7:11 7:11 5:11	BLASZCZYK Lucjan	KRZESZEWSKI Tomasz
+2004	Olympic Games Athens 2004		LUYINDULA Jose (COD)	KORBEL Petr (CZE)	VYBORNY Richard (CZE)	MD	Main Draw	R64	0 - 4	3:11 4:11 6:11 4:11	KORBEL Petr	VYBORNY Richard
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 34
+
+2004	Olympic Games Athens 2004	KOSTROMINA Tatyana (1973) (BLR)	PAVLOVICH Viktoria (BLR)	STEFANOVA Nikoleta (ITA)	TAN Wenling (ITA)	WD	Main Draw	R32	2 - 4	7:11 12:10 13:11 5:11 7:11 7:11	STEFANOVA Nikoleta	TAN Wenling
+2004	Olympic Games Athens 2004	NONAKA Mariany (BRA)	SILVA Ligia (BRA)	STRBIKOVA Renata (CZE)	VACHOVCOVA Alena (CZE)	WD	Main Draw	R64	2 - 4	2:11 4:11 11:7 11:6 9:11 9:11	STRBIKOVA Renata	VACHOVCOVA Alena
+2004	Olympic Games Athens 2004	CADA Petra (CAN)	ROUSSY Marie-Christine (CAN)	MIROU Maria (GRE)	VOLAKAKI Archontoula (GRE)	WD	Main Draw	R64	4 - 1	11:8 4:11 11:7 11:9 11:8	CADA Petra	ROUSSY Marie-Christine
+2004	Olympic Games Athens 2004	CADA Petra (CAN)	ROUSSY Marie-Christine (CAN)	GANINA Svetlana (RUS)	PALINA Irina (RUS)	WD	Main Draw	R32	0 - 4	5:11 2:11 7:11 6:11	GANINA Svetlana	PALINA Irina
+2004	Olympic Games Athens 2004	RODRIGUEZ Berta (CHI)	VEGA Paulina (CHI)	PEREZ Luisana (VEN)	RAMOS Fabiola (VEN)	WD	Qualification	QR4	3 - 4	14:12 8:11 11:6 7:11 13:11 5:11 7:11	PEREZ Luisana	RAMOS Fabiola
+2004	Olympic Games Athens 2004	GUO Yue (CHN)	NIU Jianfeng (CHN)	HUANG Yi-Hua (TPE)	LU Yun-Feng (TPE)	WD	Main Draw	R16	4 - 0	11:9 11:4 11:6 11:2	GUO Yue	NIU Jianfeng
+2004	Olympic Games Athens 2004	GUO Yue (CHN)	NIU Jianfeng (CHN)	FUJINUMA Ai (JPN)	UMEMURA Aya (JPN)	WD	Main Draw	QuarterFinal	4 - 2	11:3 12:10 9:11 12:14 11:4 11:8	GUO Yue	NIU Jianfeng
+2004	Olympic Games Athens 2004	GUO Yue (CHN)	NIU Jianfeng (CHN)	WANG Nan (CHN)	ZHANG Yining (CHN)	WD	Main Draw	SemiFinal	2 - 4	7:11 11:13 11:9 11:13 11:6 11:13	WANG Nan	ZHANG Yining
+2004	Olympic Games Athens 2004	WANG Nan (CHN)	ZHANG Yining (CHN)	LEE Eunsil (KOR)	SUK Eunmi (KOR)	WD	Main Draw	Final	4 - 0	11:9 11:7 11:6 11:6	WANG Nan	ZHANG Yining
+2004	Olympic Games Athens 2004	GUO Yue (CHN)	NIU Jianfeng (CHN)	KIM Bokrae (KOR)	KIM Kyungah (KOR)	WD	Position Draw	2	4 - 3	11:7 5:11 11:4 11:9 7:11 9:11 11:9	GUO Yue	NIU Jianfeng
+2004	Olympic Games Athens 2004	BOROS Tamara (CRO)	MOLNAR Cornelia (CRO)	KIM Bokrae (KOR)	KIM Kyungah (KOR)	WD	Main Draw	QuarterFinal	0 - 4	4:11 5:11 3:11 8:11	KIM Bokrae	KIM Kyungah
+2004	Olympic Games Athens 2004	STRBIKOVA Renata (CZE)	VACHOVCOVA Alena (CZE)	BOROS Tamara (CRO)	MOLNAR Cornelia (CRO)	WD	Main Draw	R32	1 - 4	11:9 8:11 8:11 7:11 3:11	BOROS Tamara	MOLNAR Cornelia
+2004	Olympic Games Athens 2004	STRUSE Nicole (GER)	SCHALL Elke (GER)	LI Chunli (NZL)	LI Karen (NZL)	WD	Main Draw	R32	1 - 4	6:11 7:11 7:11 12:10 6:11	LI Chunli	LI Karen
+2004	Olympic Games Athens 2004	LAU Sui Fei (HKG)	LIN Ling (HKG)	FADEEVA Oxana (RUS)	MELNIK Galina (RUS)	WD	Main Draw	R32	4 - 2	11:8 11:7 11:5 8:11 11:13 11:8	LAU Sui Fei	LIN Ling
+2004	Olympic Games Athens 2004	LAU Sui Fei (HKG)	LIN Ling (HKG)	FUJINUMA Ai (JPN)	UMEMURA Aya (JPN)	WD	Main Draw	R16	2 - 4	9:11 11:6 9:11 10:12 11:7 7:11	FUJINUMA Ai	UMEMURA Aya
+2004	Olympic Games Athens 2004	SONG Ah Sim (HKG)	TIE Yana (HKG)	GANINA Svetlana (RUS)	PALINA Irina (RUS)	WD	Main Draw	R16	4 - 0	11:7 11:6 11:7 11:7	SONG Ah Sim	TIE Yana
+2004	Olympic Games Athens 2004	SONG Ah Sim (HKG)	TIE Yana (HKG)	WANG Nan (CHN)	ZHANG Yining (CHN)	WD	Main Draw	QuarterFinal	2 - 4	4:11 11:3 13:11 8:11 10:12 8:11	WANG Nan	ZHANG Yining
+2004	Olympic Games Athens 2004	BATORFI Csilla (HUN)	TOTH Krisztina (HUN)	BOROS Tamara (CRO)	MOLNAR Cornelia (CRO)	WD	Main Draw	R16	1 - 4	6:11 11:9 9:11 3:11 3:11	BOROS Tamara	MOLNAR Cornelia
+2004	Olympic Games Athens 2004	STEFANOVA Nikoleta (ITA)	TAN Wenling (ITA)	WANG Nan (CHN)	ZHANG Yining (CHN)	WD	Main Draw	R16	0 - 4	6:11 3:11 10:12 12:14	WANG Nan	ZHANG Yining
+2004	Olympic Games Athens 2004	KIM Bokrae (KOR)	KIM Kyungah (KOR)	BANH THUA Tawny (USA)	GAO Jun (USA)	WD	Main Draw	R32	4 - 0	11:4 11:3 11:7 11:9	KIM Bokrae	KIM Kyungah
+2004	Olympic Games Athens 2004	LEE Eunsil (KOR)	SUK Eunmi (KOR)	TAN Paey Fern (SGP)	ZHANG Xueling (SGP)	WD	Main Draw	R16	4 - 0	14:12 11:7 11:7 11:8	LEE Eunsil	SUK Eunmi
+2004	Olympic Games Athens 2004	KIM Bokrae (KOR)	KIM Kyungah (KOR)	JING Junhong (SGP)	LI Jiawei (SGP)	WD	Main Draw	R16	4 - 3	9:11 11:5 12:10 8:11 9:11 11:8 11:8	KIM Bokrae	KIM Kyungah
+2004	Olympic Games Athens 2004	LEE Eunsil (KOR)	SUK Eunmi (KOR)	KIM Hyang Mi (PRK)	KIM Hyon Hui (PRK)	WD	Main Draw	QuarterFinal	4 - 2	12:10 4:11 11:9 11:8 9:11 11:7	LEE Eunsil	SUK Eunmi
+2004	Olympic Games Athens 2004	LEE Eunsil (KOR)	SUK Eunmi (KOR)	KIM Bokrae (KOR)	KIM Kyungah (KOR)	WD	Main Draw	SemiFinal	4 - 0	11:6 12:10 11:7 11:2	LEE Eunsil	SUK Eunmi
+2004	Olympic Games Athens 2004	KAFFO Bose (NGR)	OSHONAIKE Olufunke (NGR)	STEFANOVA Nikoleta (ITA)	TAN Wenling (ITA)	WD	Main Draw	R64	3 - 4	9:11 6:11 10:12 12:10 11:5 12:10 9:11	STEFANOVA Nikoleta	TAN Wenling
+2004	Olympic Games Athens 2004	LI Chunli (NZL)	LI Karen (NZL)	LAY Jian Fang (AUS)	MIAO Miao (AUS)	WD	Main Draw	R64	4 - 2	12:10 8:11 6:11 11:5 11:2 14:12	LI Chunli	LI Karen
+2004	Olympic Games Athens 2004	LI Chunli (NZL)	LI Karen (NZL)	KIM Hyang Mi (PRK)	KIM Hyon Hui (PRK)	WD	Main Draw	R16	2 - 4	8:11 13:11 6:11 13:11 5:11 4:11	KIM Hyang Mi	KIM Hyon Hui
+2004	Olympic Games Athens 2004	FADEEVA Oxana (RUS)	MELNIK Galina (RUS)	EDEM Offiong (NGR)	AKPAN Cecilia (NGR)	WD	Main Draw	R64	4 - 3	7:11 11:3 11:9 11:2 6:11 10:12 11:6	FADEEVA Oxana	MELNIK Galina
+2004	Olympic Games Athens 2004	TAN Paey Fern (SGP)	ZHANG Xueling (SGP)	PING Whitney (USA)	RATHER Jasna (USA)	WD	Main Draw	R64	4 - 0	11:8 11:4 11:5 13:11	TAN Paey Fern	ZHANG Xueling
+2004	Olympic Games Athens 2004	TAN Paey Fern (SGP)	ZHANG Xueling (SGP)	STEFF Mihaela (ROU)	ZAMFIR Adriana (ROU)	WD	Main Draw	R32	4 - 1	8:11 11:6 12:10 11:9 11:8	TAN Paey Fern	ZHANG Xueling
+2004	Olympic Games Athens 2004	HUANG Yi-Hua (TPE)	LU Yun-Feng (TPE)	BEN KAHIA Nesrine (TUN)	GUENNI Olfa (TUN)	WD	Main Draw	R64	4 - 0	11:4 11:4 11:6 11:4	HUANG Yi-Hua	LU Yun-Feng
+2004	Olympic Games Athens 2004	HUANG Yi-Hua (TPE)	LU Yun-Feng (TPE)	LOGATZKAYA Tatyana (BLR)	PAVLOVICH Veronika (BLR)	WD	Main Draw	R32	4 - 3	10:12 10:12 11:7 7:11 14:12 11:9 11:7	HUANG Yi-Hua	LU Yun-Feng
+2004	Olympic Games Athens 2004	BEN KAHIA Nesrine (TUN)	GUENNI Olfa (TUN)	MENAIFI Asma (ALG)	NECHAB Souad (ALG)	WD	Qualification	QR4	4 - 2	11:9 11:7 11:5 9:11 8:11 11:8	BEN KAHIA Nesrine	GUENNI Olfa
+2004	Olympic Games Athens 2004	PEREZ Luisana (VEN)	RAMOS Fabiola (VEN)	BANH THUA Tawny (USA)	GAO Jun (USA)	WD	Main Draw	R64	0 - 4	3:11 4:11 6:11 6:11	BANH THUA Tawny	GAO Jun

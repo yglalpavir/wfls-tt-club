@@ -414,3 +414,249 @@ MS 286 名 / WS 227 名球员全部有 assoc 记录（identity 命中率 100%）
 
 - `tools/import_2002.py`：十站导入脚本（自动 NAME_MAP、断行合并、双打双胜者匹配、日期模板、去重追加、manifest 注册）。
 - `tools/add_assoc_2002.py`：补充 assoc.json 脚本（复用 import_2002 的 NAME_MAP 与原始国家代码）。
+
+---
+
+# 第六部分：2003 年 ITTF 十三站赛事（MS/WS/MD/WD/XD）
+
+本次将 **2003 年 13 站 ITTF 赛事**（男子单打 MS、女子单打 WS、男子双打 MD、女子双打 WD、混合双打 XD）数据导入 WTT 计分系统。新增两种场景：**世乒赛（含混合双打 XD）** 与 **总决赛/世界杯的双打**。
+
+| 站 | 类型 | 时间 |
+| --- | --- | --- |
+| Brazilian Open Rio de Janeiro | `ittf公开赛` | 2003-06-26 ~ 06-29 |
+| China Open Guangzhou | `ittf公开赛` | 2003-09-11 ~ 09-14 |
+| Croatia Open Croatia | `ittf公开赛` | 2003-01-23 ~ 01-26 |
+| Danish Open Aarhus | `ittf公开赛` | 2003-11-12 ~ 11-16 |
+| German Open Bremen | `ittf公开赛` | 2003-11-06 ~ 11-09 |
+| Japan Open Kobe | `ittf公开赛` | 2003-09-18 ~ 09-21 |
+| Malaysian Open Johor Bahru | `ittf公开赛` | 2003-10-02 ~ 10-05 |
+| Men's World Cup Jiangyin | `世界杯` | 2003-10-09 ~ 10-12 |
+| Pro Tour Grand Finals Guangzhou | `总决赛` | 2003-12-11 ~ 12-14 |
+| Qatar Open Doha | `ittf公开赛` | 2003-03-03 ~ 03-07 |
+| Swedish Open Malmo | `ittf公开赛` | 2003-11-19 ~ 11-23 |
+| Women's World Cup Hong Kong | `世界杯` | 2003-12-17 ~ 12-19 |
+| World Table Tennis Championships Paris | `世乒赛` | 2003-05-19 ~ 05-25 |
+
+## 1. 基本信息
+
+| 项 | 值 |
+| --- | --- |
+| 项目 | MS（男单）、WS（女单）、MD（男双）、WD（女双）、XD（混双，仅世乒赛） |
+| 类型 | `ittf公开赛`（9 站 Pro Tour）、`世界杯`（男/女世界杯）、`总决赛`（Pro Tour 总决赛）、`世乒赛`（世锦赛） |
+| 系数 | 五类 event-coefficient.json 均已含四类类型：ms/ws 的 `世乒赛` 1.83、`世界杯` 1.62、`总决赛` 1.35、`ittf公开赛` 0.42；md/wd/xd 的 `世乒赛` 0.8、`世界杯` 0.58、`总决赛` 0.51、`ittf公开赛` 0.28（均已存在，未改值） |
+| 数据来源 | 用户提供（ITTF 官方数据页，Ratings Central 档案格式，与 2001/2002 同源） |
+
+## 2. 数据文件
+
+| 类别 | 文件 | 2003 场次 |
+| --- | --- | --- |
+| MS | `wtt_data/ms/score-log-2003-wtt.json` | 1721 |
+| WS | `wtt_data/ws/score-log-2003-ws.json` | 1110 |
+| MD | `wtt_data/md/score-log-2003-wtt.json` | 527 |
+| WD | `wtt_data/wd/score-log-2003-wtt.json` | 373 |
+| XD | `wtt_data/xd/score-log-2003-wtt.json` | 62 |
+| 合计 | | 3793 场 |
+
+五个类别的 `manifest.json` 均已在 scoreFiles 首位注册 `score-log-2003-*`。原始数据位于 `docs/result_ittf_link/2003/`，tab 分隔，列结构同 2002（Year/Event/PlayerA/PlayerB/PlayerX/PlayerY/Sub-event/Stage/Round/Result/Games/Winner/Winner），双打胜者占两列，XD 为新增子项目。
+
+各站详细导入数（按实际数据行计）：
+
+| 站 | MS | WS | MD | WD | XD |
+| --- | --- | --- | --- | --- | --- |
+| Brazilian Open | 101 | 71 | 29 | 23 | - |
+| China Open | 101 | 10 | 35 | 30 | - |
+| Croatia Open | 248 | 160 | 83 | 52 | - |
+| Danish Open | 215 | 140 | 81 | 53 | - |
+| German Open | 251 | 172 | 92 | 65 | - |
+| Japan Open | 62 | 60 | 36 | 27 | - |
+| Malaysian Open | 61 | 31 | 29 | 16 | - |
+| Men's World Cup | 32 | - | - | - | - |
+| Grand Finals | 15 | 15 | 7 | 7 | - |
+| Qatar Open | 65 | 35 | 23 | 9 | - |
+| Swedish Open | 135 | 95 | 53 | 30 | - |
+| Women's World Cup | - | 32 | - | - | - |
+| WTTC Paris | 435 | 289 | 59 | 61 | 62 |
+
+> 缺失说明（用户已确认数量差无须在意）：China Open WS 源数据仅 R16 起 10 行（截断）；German/Danish WD 各 1-2 行、Qatar MD 2 行缺对手位成员、WTTC MS 6 行缺对手或胜者、WTTC WD 1 行双方重复球员（HERCZIG Judit），均按源数据错误跳过。
+
+## 3. 日期映射
+
+沿用赛程模板（近似日期），新增 `wttc` 模板（7 天）：
+
+- Pro Tour 4 天站：Qualification → 第 1 天，R64/R32 → 第 2 天，R16/1/4 决赛 → 第 3 天，半决赛/决赛 → 第 4 天。
+- Pro Tour 5 天站（Danish/Qatar/Swedish）：半决赛 → 第 4 天，决赛 → 第 5 天。
+- Grand Finals（4 天）：R16 → 12-11，1/4 决赛 → 12-12，半决赛 → 12-13，决赛 → 12-14。
+- Men's World Cup（4 天）：资格赛 → 10-09，1/4 决赛 → 10-10，半决赛 → 10-11，决赛 → 10-12。
+- Women's World Cup（3 天）：资格赛 → 12-17，1/4 决赛/半决赛/排位赛 → 12-18，决赛 → 12-19。
+- WTTC（7 天）：资格赛 → 05-19，R128 → 05-21，R64 → 05-22，R32 → 05-23，R16/1/4 决赛 → 05-24，半决赛/决赛 → 05-25。
+
+## 4. 姓名规范处理
+
+遵循 `wtt_data/player-name-format.md`，`tools/import_2003.py` 自动生成标准名映射（约 700+ 球员）。
+
+- 中/港/台/新/韩/朝：`姓 名` 保持原文，如 `WANG Hao`、`CHUANG Chih-Yuan`、`KIM Kyungah`、`CHEUNG Yuk`。
+- 日本：`名 姓` 交换，如 `Seiya KISHIKAWA`、`Sayaka HIRANO`、`Ryusuke SAKAMOTO`、`Akira KITO`。
+- 欧美等：`名 姓`，如 `Werner SCHLAGER`、`Kalinikos KREANGA`、`Michael MAZE`、`Zoltan FEJER-KONNERTH`。
+- 华裔代表他国：中姓 + 非华语国家保留 `姓 名`，如 `CHEN Weixing`(AUT)、`GAO Jun`(USA)、`HOU Yingchao`(CAN)、`XU Chris`(CAN)、`LI Qiangbing`(AUT)、`LIU Jia`(AUT)、`TAN Wenling`/`DING Yan`/`WANG Yu`(ITA)、`LI Jiawei`/`JING Junhong`/`CAI Xiaoli`(SGP)、`NI Xia Lian`(LUX)。
+- 后缀清理：`GUO Yan (1982)` → `GUO Yan`、`WANG Yu (YOB=1981)` → `WANG Yu`、`KOSTROMINA Tatyana (1973)` → `Tatyana KOSTROMINA`。
+- 特例覆盖：`FORT Carlos I` → `Carlos FORT`（I 为名一部分）；与既有 DB 一致覆盖 `SCHOPP Jie`、`LANG Kristin`、`NI Xia Lian`、`LI Qian`。
+- 同名单注意：`MULLER Frank`(LIE) 与 `MUELLER Frank`(FRA) 为两位不同球员，分别保留；`KIM Kyungah` 与 `KIM Kyungha` 为两位不同韩国球员。
+
+全部 3793 场无缺失名字、无胜者不匹配、无重复导入、无双打胜者=负者（仅源数据缺列/重复球员的 12 行跳过）。
+
+## 5. 协会籍（assoc.json）补充
+
+| 文件 | 本次新增 | 合计 |
+| --- | --- | --- |
+| `wtt_data/ms/assoc.json` | 314 | 1130 |
+| `wtt_data/ws/assoc.json` | 179 | 1293 |
+
+MS 596 名 / WS 397 名 2003 球员全部有 assoc 记录（identity 命中率 100%）。新增国家映射：`ALB/ALG/ARM/ARU/BDI/BEN/CAM/CGO/CIV/COD/CRC/CYP/DOM/EST/FIJ/GAB/GHA/GUI/GUY/INA/IRL/ISL/JAM/KAZ/KSA/KUW/LAT/LBN/LCA/MAC/MAD/MAR/MAS/MDV/MEX/MGL/MKD/MLT/MRI/PER/PUR/PYF/QAT/RSA/SCO/SEN/SEY/SMR/SOM/SRI/THA/TKM/TOG/TTO/TUN/VIE/YEM` 等（阿尔巴尼亚/阿尔及利亚/亚美尼亚/阿鲁巴/布隆迪/贝宁/柬埔寨/刚果（布）/科特迪瓦/刚果（金）/哥斯达黎加/塞浦路斯/多米尼加/爱沙尼亚/斐济/加蓬/加纳/几内亚/圭亚那/印尼/爱尔兰/冰岛/牙买加/哈萨克斯坦/沙特/科威特/拉脱维亚/黎巴嫩/圣卢西亚/澳门/马达加斯加/摩洛哥/马来西亚/马尔代夫/墨西哥/蒙古/北马其顿/马耳他/毛里求斯/秘鲁/波多黎各/法属波利尼西亚/卡塔尔/南非/苏格兰/塞内加尔/塞舌尔/圣马力诺/索马里/斯里兰卡/泰国/土库曼斯坦/多哥/特立尼达和多巴哥/突尼斯/越南/也门）。
+
+## 6. 关键场次验证
+
+| 场次 | 结果 |
+| --- | --- |
+| 世乒赛 MS 决赛 | `Werner SCHLAGER` 胜 `JOO Saehyuk`（2003-05-25） |
+| 世乒赛 WS 决赛 | `WANG Nan` 胜 `ZHANG Yining`（2003-05-25） |
+| 世乒赛 MD 决赛 | `WANG Liqin/YAN Sen` 胜 `WANG Hao/KONG Linghui`（2003-05-25） |
+| 世乒赛 WD 决赛 | `WANG Nan/ZHANG Yining` 胜 `NIU Jianfeng/GUO Yue`（2003-05-25） |
+| 世乒赛 XD 决赛 | `MA Lin/WANG Nan` 胜 `LIU Guozheng/BAI Yang`（2003-05-25） |
+| 男子世界杯决赛 | `MA Lin` 胜 `Kalinikos KREANGA`（2003-10-12） |
+| 女子世界杯决赛 | `WANG Nan` 胜 `NIU Jianfeng`（2003-12-19） |
+| 总决赛 MS 决赛 | `WANG Hao` 胜 `HAO Shuai`（2003-12-14） |
+| 总决赛 WS 决赛 | `NIU Jianfeng` 胜 `ZHANG Yining`（2003-12-14） |
+| 总决赛 MD 决赛 | `CHEN Qi/MA Lin` 胜 `CHEUNG Yuk/LEUNG Chu Yan`（2003-12-14） |
+| 总决赛 WD 决赛 | `GUO Yue/NIU Jianfeng` 胜 `WANG Nan/ZHANG Yining`（2003-12-14） |
+| Chinese Open MS 决赛 | `MA Lin` 胜 `WANG Hao`（2003-09-14） |
+| Brazilian Open MS 决赛 | `CHUANG Chih-Yuan` 胜 `Jens LUNDQVIST`（2003-06-29） |
+
+## 7. 相关脚本
+
+- `tools/import_2003.py`：十三站导入脚本（自动 NAME_MAP、断行合并、双打双胜者匹配、单胜者归属推断、重复球员检测、日期模板含 wttc、去重追加、manifest 注册，含 XD 子项目）。
+- `tools/add_assoc_2003.py`：补充 assoc.json 脚本（复用 import_2003 的 NAME_MAP 与原始国家代码，扩充 COUNTRY_MAP 至 100+ 国家/地区）。
+
+# 第七部分：2004 年 ITTF 赛事（MS/WS/MD/WD）
+
+本次将 **2004 年 19 站 ITTF 赛事**（男子单打 MS、女子单打 WS、男子双打 MD、女子双打 WD）数据导入 WTT 计分系统。新增四种场景：**世乒赛团体**（团体世锦赛，MT/WT 按单打导入）、**奥运会**、**世界杯**（男女合办一站）、**总决赛**（3 天）。
+
+| 站 | 类型 | 时间 |
+| --- | --- | --- |
+| Brazilian Open Rio de Janeiro | `ittf公开赛` | 2004-06-24 ~ 06-27 |
+| Chile Open Santiago | `ittf公开赛` | 2004-06-16 ~ 06-20 |
+| China Open Wuxi | `ittf公开赛` | 2004-09-09 ~ 09-12 |
+| Croatia Open Croatia | `ittf公开赛` | 2004-01-22 ~ 01-25 |
+| Danish Open Aarhus | `ittf公开赛` | 2004-10-21 ~ 10-24 |
+| Egypt Open Cairo | `ittf公开赛` | 2004-05-04 ~ 05-07 |
+| German Open Leipzig | `ittf公开赛` | 2004-11-11 ~ 11-14 |
+| Greece Open Athens | `ittf公开赛` | 2004-01-29 ~ 02-01 |
+| Japan Open Kobe | `ittf公开赛` | 2004-09-23 ~ 09-26 |
+| Korean Open Pyeong Chang | `ittf公开赛` | 2004-05-20 ~ 05-23 |
+| Polish Open Warsaw | `ittf公开赛` | 2004-10-14 ~ 10-17 |
+| Singapore Open | `ittf公开赛` | 2004-05-27 ~ 05-30 |
+| St. Petersburg Open | `ittf公开赛` | 2004-11-25 ~ 11-28 |
+| US Open Chicago | `ittf公开赛` | 2004-06-30 ~ 07-03 |
+| Volkswagen China Open Changchun | `ittf公开赛` | 2004-09-16 ~ 09-19 |
+| Pro Tour Grand Finals Beijing | `总决赛` | 2004-12-10 ~ 12-12 |
+| Men's and Women's World Cup Hangzhou | `世界杯` | 2004-10-27 ~ 10-31 |
+| Olympic Games Athens | `奥运会` | 2004-08-14 ~ 08-23 |
+| World Team Table Tennis Championships Doha | `世乒赛团体` | 2004-03-01 ~ 03-07 |
+
+## 1. 基本信息
+
+| 项 | 值 |
+| --- | --- |
+| 项目 | MS（男单）、WS（女单）、MD（男双）、WD（女双）。世乒赛团体子项目 MT（男团）/WT（女团）按单打导入为 MS/WS |
+| 类型 | `ittf公开赛`（15 站 Pro Tour）、`总决赛`（Pro Tour 总决赛）、`世界杯`（男女合办）、`奥运会`、`世乒赛团体` |
+| 系数 | 四类 event-coefficient.json 均已含所涉类型：ms/ws 的 `世乒赛团体` 1.21、`奥运会` 2.25、`世界杯` 1.62、`总决赛` 1.35、`ittf公开赛` 0.42；md/wd 的 `奥运会` 1.0、`世界杯` 0.58、`总决赛` 0.51、`ittf公开赛` 0.28（均已存在，未改值；世乒赛团体仅涉及单打，md/wd 无需） |
+| 数据来源 | 用户提供（ITTF 官方数据页，Ratings Central 档案格式，与 2001/2002/2003 同源） |
+
+## 2. 数据文件
+
+| 类别 | 文件 | 2004 场次 |
+| --- | --- | --- |
+| MS | `wtt_data/ms/score-log-2004-wtt.json` | 2099 |
+| WS | `wtt_data/ws/score-log-2004-ws.json` | 1663 |
+| MD | `wtt_data/md/score-log-2004-wtt.json` | 714 |
+| WD | `wtt_data/wd/score-log-2004-wtt.json` | 477 |
+| 合计 | | 4953 场 |
+
+四个类别的 `manifest.json` 均已在 scoreFiles 首位注册 `score-log-2004-*`。原始数据位于 `docs/result_ittf_link/2004/`，tab 分隔，列结构同 2003（Year/Event/PlayerA/PlayerB/PlayerX/PlayerY/Sub-event/Stage/Round/Result/Games/Winner/Winner）。Pro Tour 公开赛文件首部含一行中文元数据头（赛事编号/年份/名称/类型/参赛人数/起止日期），世界杯/奥运会/世乒赛团体为单行头，解析时按数据行过滤即可。
+
+各站导入数：
+
+| 站 | MS | WS | MD | WD |
+| --- | --- | --- | --- | --- |
+| Brazilian Open | 60 | 31 | 33 | 25 |
+| Chile Open | 100 | 45 | 37 | 15 |
+| China Open Wuxi | 66 | 31 | 19 | 17 |
+| Croatia Open | 131 | 128 | 80 | 49 |
+| Danish Open | 63 | 29 | 53 | 29 |
+| Egypt Open | 63 | 30 | 44 | 23 |
+| German Open | 217 | 135 | 82 | 50 |
+| Greece Open | 62 | 62 | 59 | 43 |
+| Japan Open | 63 | 31 | 35 | 26 |
+| Korean Open | 31 | 31 | 28 | 20 |
+| Polish Open | 63 | 63 | 67 | 42 |
+| Singapore Open | 141 | 114 | 52 | 39 |
+| St. Petersburg Open | 105 | 54 | 31 | 18 |
+| US Open | 59 | 29 | 37 | 22 |
+| China Open Changchun | 31 | 60 | 19 | 18 |
+| Grand Finals | 15 | 15 | 7 | 7 |
+| World Cup | 27 | 30 | - | - |
+| Olympic Games | 63 | 63 | 31 | 34 |
+| WTTC Doha（团队） | 739 | 682 | - | - |
+
+> 缺失说明（用户已确认数量差无须在意）：世界杯 2004 MS/WS 源数据止于半决赛（决赛行缺失，截断）；埃及 MD 4 行/WD 3 行、圣彼得堡 MD 2 行/WD 1 行、US Open MD/WD 各 1 行、巴西 MD 1 行、无锡 WD 1 行、莱比锡 WD 1 行、雅典 WD 1 行、奥运 MD 1 行缺球员或搭档，按源数据错误跳过；世乒赛团体 WT 5 行（与既有记录同日同对完全相同）去重。
+
+## 3. 日期映射
+
+沿用赛程模板（近似日期），新增 4 个模板：
+
+- Pro Tour 4 天站：Qualification → 第 1 天，R64/R32 → 第 2 天，R16/1/4 决赛 → 第 3 天，半决赛/决赛 → 第 4 天。
+- Pro Tour 5 天站（Chile）：半决赛 → 第 4 天，决赛 → 第 5 天。
+- Grand Finals（3 天）：R16 → 12-10，1/4 决赛 → 12-11，半决赛/决赛 → 12-12。
+- World Cup（5 天）：资格赛 → 10-27，1/4 决赛 → 10-29，半决赛 → 10-30，决赛 → 10-31。
+- Olympic Games（10 天）：R128 → 08-14，R64 → 08-15，R32 → 08-16，R16 → 08-17，1/4 决赛 → 08-18，半决赛 → 08-19；决赛按项目区分：WD → 08-20、MD → 08-21、WS → 08-22、MS → 08-23。
+- 世乒赛团体（7 天）：资格赛 → 03-01，Main Draw → 03-07。
+
+## 4. 姓名规范处理
+
+遵循 `wtt_data/player-name-format.md`，`tools/import_2004.py` 自动生成标准名映射（600+ 球员）。
+
+- 中/港/台/新/韩/朝：`姓 名` 保持原文，如 `WANG Hao`、`CHUANG Chih-Yuan`、`KIM Kyungah`、`BEH Lee Wei`、`NG Sock Khim`。
+- 日本：`名 姓` 交换，如 `Jun MIZUTANI`、`Reiko HIURA`、`Sayaka HIRANO`。
+- 欧美等：`名 姓`，如 `Werner SCHLAGER`、`Dimitrij OVTCHAROV`、`Emmanuel LEBESSON`、`Elizabeta SAMARA`。
+- 华裔代表他国：中姓 + 非华语国家保留 `姓 名`，如 `CHEN Weixing`(AUT)、`GAO Jun`/`WANG Chen`(USA)、`XU Chris`(CAN)、`SHEN Yanfei`/`ZHU Fang`(ESP)、`TAN Wenling`/`DING Yan`/`WANG Yu`(ITA)、`LI Qiangbing`(AUT)、`LIU Jia`(AUT)、`LI Jiao`(NED)、`LI Yun Fei`(BEL)、`XU Jie`(POL)。
+- 后缀清理：`GUO Yan (1982)` → `GUO Yan`、`XU Jie (1982)` → `XU Jie`、`KIM Minhee (YOB=1985)` → `KIM Minhee`、`WANG Yu (YOB=1981)` → `WANG Yu`、`KOSTROMINA Tatyana (1973)` → `Tatyana KOSTROMINA`。
+- 同名单注意：`PARK Kyungae (I)` 与 `PARK Kyungae (II)` 为两位不同球员，保留后缀区分（II 按 2001/2002 惯例归并）；`MULLER Frank`(LIE) 与 `MUELLER Frank`(FRA) 为两位不同球员；`KIM Kyungah` 与 `KIM Kyungha` 为两位不同韩国球员；`LOGATSKAYA Olga`(BLR) 与 `LOGATZKAYA Tatyana`(BLR) 为两位不同球员。
+
+全部 4953 场无缺失名字、无胜者不匹配、无重复导入、无双打胜者=负者（仅源数据缺列的 16 行 + 奥运 1 行 + 团队重复 5 行跳过）。
+
+## 5. 协会籍（assoc.json）补充
+
+| 文件 | 本次新增 | 合计 |
+| --- | --- | --- |
+| `wtt_data/ms/assoc.json` | 256 | 1386 |
+| `wtt_data/ws/assoc.json` | 150 | 1443 |
+
+MS 616 名 / WS 420 名 2004 球员全部有 assoc 记录（identity 命中率 100%）。新增国家映射：`AZE/BRN/COL/FIN/HON/KEN/KOS/LBA/NEP/PAK/TJK/UAE/URU` 等（阿塞拜疆/巴林/哥伦比亚/芬兰/洪都拉斯/肯尼亚/科索沃/利比亚/尼泊尔/巴基斯坦/塔吉克斯坦/阿联酋/乌拉圭）。MD/WD 双打球员如从未进入 MS/WS 则不入 assoc（与 2002/2003 惯例一致）。
+
+## 6. 关键场次验证
+
+| 场次 | 结果 |
+| --- | --- |
+| 奥运会 MS 决赛 | `RYU Seungmin` 胜 `WANG Hao`（2004-08-23） |
+| 奥运会 WS 决赛 | `ZHANG Yining` 胜 `KIM Hyang Mi`（2004-08-22） |
+| 奥运会 MD 决赛 | `CHEN Qi/MA Lin` 胜 `KO Lai Chak/LI Ching`（2004-08-21） |
+| 奥运会 WD 决赛 | `WANG Nan/ZHANG Yining` 胜 `LEE Eunsil/SUK Eunmi`（2004-08-20） |
+| 总决赛 MS 决赛 | `WANG Liqin` 胜 `MA Lin`（2004-12-12） |
+| 总决赛 WS 决赛 | `GUO Yue` 胜 `NIU Jianfeng`（2004-12-12） |
+| 世乒赛团体（团队决赛日） | MS 组 `WANG Liqin`、`MA Lin`、`WANG Hao` 等对阵德国队（2004-03-07） |
+| 世界杯 MS 半决赛 | `MA Lin` 胜 `WANG Hao`（2004-10-30，源数据决赛缺失） |
+| 世界杯 WS 半决赛 | `ZHANG Yining` 胜 `TIE Yana`、`WANG Nan` 胜 `LI Jiawei`（2004-10-30，源数据决赛缺失） |
+
+## 7. 相关脚本
+
+- `tools/import_2004.py`：十九站导入脚本（复用 2003 逻辑，新增 `olympic`/`wcup`/`wttct`/`grandfinals3` 模板、MT/WT→MS/WS 映射、奥运会决赛分项目日期）。
+- `tools/add_assoc_2004.py`：补充 assoc.json 脚本（复用 import_2004 的 NAME_MAP 与原始国家代码，扩充 COUNTRY_MAP 至 110+ 国家/地区，MT/WT 亦纳入单打提取）。

@@ -1,0 +1,172 @@
+赛事编号：1702
+年份：2004
+赛事名称：Volkswagen China Open Changchun 2004
+赛事类型：ITTF World Tour / Pro Tour
+赛事种类：--
+参赛人数：204
+开始日期：2004-09-16
+结束日期：2004-09-19
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 83
+
+2004	Volkswagen China Open Changchun 2004	WANG Liqin (CHN)		O Il (PRK)		MS	Main Draw	R32	4 - 2	11:9 11:9 8:11 4:11 11:4 11:9	WANG Liqin	
+2004	Volkswagen China Open Changchun 2004	LEE Jungsam (KOR)		CHEUNG Yuk (HKG)		MS	Main Draw	R32	0 - 4	16:18 4:11 14:16 9:11	CHEUNG Yuk	
+2004	Volkswagen China Open Changchun 2004	LUNDQVIST Jens (SWE)		PAK Won Chol (PRK)		MS	Main Draw	R32	4 - 2	10:12 11:5 7:11 11:8 11:8 11:4	LUNDQVIST Jens	
+2004	Volkswagen China Open Changchun 2004	SAKAMOTO Ryusuke (JPN)		CHEN Weixing (AUT)		MS	Main Draw	R32	2 - 4	2:11 12:10 9:11 12:10 5:11 8:11	CHEN Weixing	
+2004	Volkswagen China Open Changchun 2004	BOLL Timo (GER)		DESPRES Rodolphe (FRA)		MS	Main Draw	R32	4 - 0	11:5 11:7 11:4 11:7	BOLL Timo	
+2004	Volkswagen China Open Changchun 2004	TAKAKIWA Kenichi (JPN)		LEUNG Chu Yan (HKG)		MS	Main Draw	R32	1 - 4	8:11 9:11 13:11 10:12 5:11	LEUNG Chu Yan	
+2004	Volkswagen China Open Changchun 2004	SMIRNOV Alexey (RUS)		KIM Song Chol (PRK)		MS	Main Draw	R32	4 - 2	11:2 11:9 11:4 6:11 9:11 11:4	SMIRNOV Alexey	
+2004	Volkswagen China Open Changchun 2004	LIM Jaehyun (KOR)		CHEN Qi (CHN)		MS	Main Draw	R32	1 - 4	4:11 6:11 3:11 12:10 2:11	CHEN Qi	
+2004	Volkswagen China Open Changchun 2004	MA Lin (CHN)		LEE Jungwoo (KOR)		MS	Main Draw	R32	4 - 2	12:10 11:9 9:11 6:11 11:8 11:5	MA Lin	
+2004	Volkswagen China Open Changchun 2004	LO Dany (FRA)		LI Ching (HKG)		MS	Main Draw	R32	2 - 4	3:11 12:10 12:10 8:11 7:11 7:11	LI Ching	
+2004	Volkswagen China Open Changchun 2004	KO Lai Chak (HKG)		SUSS Christian (GER)		MS	Main Draw	R32	4 - 0	11:5 11:4 11:7 11:7	KO Lai Chak	
+2004	Volkswagen China Open Changchun 2004	STEGER Bastian (GER)		HAO Shuai (CHN)		MS	Main Draw	R32	1 - 4	8:11 5:11 4:11 15:13 9:11	HAO Shuai	
+2004	Volkswagen China Open Changchun 2004	KONG Linghui (CHN)		HIELSCHER Lars (GER)		MS	Main Draw	R32	4 - 2	11:13 11:4 11:7 11:4 8:11 11:8	KONG Linghui	
+2004	Volkswagen China Open Changchun 2004	KEINATH Thomas (SVK)		CHILA Patrick (FRA)		MS	Main Draw	R32	0 - 4	1:11 7:11 3:11 6:11	CHILA Patrick	
+2004	Volkswagen China Open Changchun 2004	HAKANSSON Fredrik (SWE)		KIHO Shinnosuke (JPN)		MS	Main Draw	R32	4 - 2	6:11 11:4 11:6 15:13 6:11 11:8	HAKANSSON Fredrik	
+2004	Volkswagen China Open Changchun 2004	BERTIN Christophe (FRA)		WANG Hao (CHN)		MS	Main Draw	R32	0 - 4	5:11 9:11 9:11 10:12	WANG Hao	
+2004	Volkswagen China Open Changchun 2004	WANG Liqin (CHN)		CHEUNG Yuk (HKG)		MS	Main Draw	R16	4 - 0	11:6 11:8 11:7 11:8	WANG Liqin	
+2004	Volkswagen China Open Changchun 2004	LUNDQVIST Jens (SWE)		CHEN Weixing (AUT)		MS	Main Draw	R16	4 - 3	5:11 12:10 13:15 14:12 5:11 11:8 15:13	LUNDQVIST Jens	
+2004	Volkswagen China Open Changchun 2004	BOLL Timo (GER)		LEUNG Chu Yan (HKG)		MS	Main Draw	R16	4 - 3	11:3 8:11 11:4 9:11 11:2 9:11 11:3	BOLL Timo	
+2004	Volkswagen China Open Changchun 2004	SMIRNOV Alexey (RUS)		CHEN Qi (CHN)		MS	Main Draw	R16	1 - 4	12:14 11:6 10:12 8:11 7:11	CHEN Qi	
+2004	Volkswagen China Open Changchun 2004	MA Lin (CHN)		LI Ching (HKG)		MS	Main Draw	R16	4 - 2	12:14 11:7 11:4 9:11 11:4 11:8	MA Lin	
+2004	Volkswagen China Open Changchun 2004	KO Lai Chak (HKG)		HAO Shuai (CHN)		MS	Main Draw	R16	4 - 2	4:11 13:11 13:11 11:8 8:11 11:6	KO Lai Chak	
+2004	Volkswagen China Open Changchun 2004	KONG Linghui (CHN)		CHILA Patrick (FRA)		MS	Main Draw	R16	4 - 1	20:18 11:7 11:5 9:11 12:10	KONG Linghui	
+2004	Volkswagen China Open Changchun 2004	HAKANSSON Fredrik (SWE)		WANG Hao (CHN)		MS	Main Draw	R16	2 - 4	11:8 6:11 11:9 8:11 6:11 8:11	WANG Hao	
+2004	Volkswagen China Open Changchun 2004	WANG Liqin (CHN)		LUNDQVIST Jens (SWE)		MS	Main Draw	QuarterFinal	4 - 0	11:2 11:5 11:8 11:8	WANG Liqin	
+2004	Volkswagen China Open Changchun 2004	BOLL Timo (GER)		CHEN Qi (CHN)		MS	Main Draw	QuarterFinal	3 - 4	9:11 11:9 11:8 5:11 5:11 11:8 9:11	CHEN Qi	
+2004	Volkswagen China Open Changchun 2004	MA Lin (CHN)		KO Lai Chak (HKG)		MS	Main Draw	QuarterFinal	4 - 0	11:9 11:5 11:8 11:6	MA Lin	
+2004	Volkswagen China Open Changchun 2004	KONG Linghui (CHN)		WANG Hao (CHN)		MS	Main Draw	QuarterFinal	1 - 4	8:11 6:11 11:5 9:11 6:11	WANG Hao	
+2004	Volkswagen China Open Changchun 2004	WANG Liqin (CHN)		CHEN Qi (CHN)		MS	Main Draw	SemiFinal	4 - 1	11:5 13:11 11:4 8:11 11:9	WANG Liqin	
+2004	Volkswagen China Open Changchun 2004	MA Lin (CHN)		WANG Hao (CHN)		MS	Main Draw	SemiFinal	1 - 4	10:12 8:11 8:11 11:9 7:11	WANG Hao	
+2004	Volkswagen China Open Changchun 2004	WANG Liqin (CHN)		WANG Hao (CHN)		MS	Main Draw	Final	4 - 3	6:11 11:6 13:11 10:12 11:6 12:14 11:2	WANG Liqin
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 84
+
+2004	Volkswagen China Open Changchun 2004	ZHANG Yining (CHN)		JANG Hyon Ae (PRK)		WS	Main Draw	R32	4 - 0	11:2 11:4 11:3 11:5	ZHANG Yining	
+2004	Volkswagen China Open Changchun 2004	KIM Mi Yong (PRK)		SONG Ah Sim (HKG)		WS	Main Draw	R32	0 - 4	9:11 7:11 6:11 9:11	SONG Ah Sim	
+2004	Volkswagen China Open Changchun 2004	ZHANG Rui (HKG)		HIURA Reiko (JPN)		WS	Main Draw	R32	3 - 4	5:11 11:9 11:8 10:12 11:5 6:11 4:11	HIURA Reiko	
+2004	Volkswagen China Open Changchun 2004	KISHIDA Satoko (JPN)		TIE Yana (HKG)		WS	Main Draw	R32	3 - 4	11:8 7:11 11:4 11:5 11:13 6:11 4:11	TIE Yana	
+2004	Volkswagen China Open Changchun 2004	KIM Hyang Mi (PRK)		MOON Hyunjung (KOR)		WS	Main Draw	R32	1 - 4	8:11 7:11 13:11 7:11 8:11	MOON Hyunjung	
+2004	Volkswagen China Open Changchun 2004	KO Somi (KOR)		KONISHI An (JPN)		WS	Main Draw	R32	4 - 1	13:11 9:11 11:8 11:7 11:7	KO Somi	
+2004	Volkswagen China Open Changchun 2004	FUKUHARA Ai (JPN)		XU Yan (SGP)		WS	Main Draw	R32	4 - 0	11:2 13:11 11:7 12:10	FUKUHARA Ai	
+2004	Volkswagen China Open Changchun 2004	MUANGSUK Anisara (THA)		GUO Yan (1982) (CHN)		WS	Main Draw	R32	0 - 4	10:12 12:14 5:11 6:11	GUO Yan (1982)	
+2004	Volkswagen China Open Changchun 2004	LI Jiawei (SGP)		ROHR Gaby (GER)		WS	Main Draw	R32	4 - 0	11:6 11:8 11:7 11:6	LI Jiawei	
+2004	Volkswagen China Open Changchun 2004	FUKUOKA Haruna (JPN)		KIM Yun Mi (PRK)		WS	Main Draw	R32	4 - 1	11:6 11:8 13:11 7:11 11:9	FUKUOKA Haruna	
+2004	Volkswagen China Open Changchun 2004	PENG Luyang (CHN)		FUJII Hiroko (JPN)		WS	Main Draw	R32	4 - 0	11:7 11:4 11:5 11:8	PENG Luyang	
+2004	Volkswagen China Open Changchun 2004	KO Un Gyong (PRK)		LAU Sui Fei (HKG)		WS	Main Draw	R32	0 - 4	6:11 10:12 14:16 3:11	LAU Sui Fei	
+2004	Volkswagen China Open Changchun 2004	LI Nan (CHN)		TASEI Mikie (JPN)		WS	Main Draw	R32	4 - 0	11:8 11:8 11:6 11:9	LI Nan	
+2004	Volkswagen China Open Changchun 2004	SHIOSAKI Yuka (JPN)		BAI Yang (CHN)		WS	Main Draw	R32	2 - 4	8:11 11:6 3:11 12:10 2:11 8:11	BAI Yang	
+2004	Volkswagen China Open Changchun 2004	KIM Hyon Hui (PRK)		KOMWONG Nanthana (THA)		WS	Main Draw	R32	4 - 1	11:3 11:7 11:8 10:12 11:5	KIM Hyon Hui	
+2004	Volkswagen China Open Changchun 2004	KIM Minhee (YOB=1985) (KOR)		WANG Nan (CHN)		WS	Main Draw	R32	1 - 4	6:11 6:11 11:9 10:12 2:11	WANG Nan	
+2004	Volkswagen China Open Changchun 2004	ZHANG Yining (CHN)		SONG Ah Sim (HKG)		WS	Main Draw	R16	4 - 0	11:8 14:12 11:5 11:4	ZHANG Yining	
+2004	Volkswagen China Open Changchun 2004	HIURA Reiko (JPN)		TIE Yana (HKG)		WS	Main Draw	R16	0 - 4	6:11 8:11 8:11 9:11	TIE Yana	
+2004	Volkswagen China Open Changchun 2004	MOON Hyunjung (KOR)		KO Somi (KOR)		WS	Main Draw	R16	1 - 4	11:13 8:11 11:8 5:11 17:19	KO Somi	
+2004	Volkswagen China Open Changchun 2004	FUKUHARA Ai (JPN)		GUO Yan (1982) (CHN)		WS	Main Draw	R16	1 - 4	11:8 4:11 11:13 6:11 10:12	GUO Yan (1982)	
+2004	Volkswagen China Open Changchun 2004	LI Jiawei (SGP)		FUKUOKA Haruna (JPN)		WS	Main Draw	R16	0 - 4	2:11 11:13 6:11 6:11	FUKUOKA Haruna	
+2004	Volkswagen China Open Changchun 2004	PENG Luyang (CHN)		LAU Sui Fei (HKG)		WS	Main Draw	R16	4 - 1	11:9 8:11 11:7 11:5 11:8	PENG Luyang	
+2004	Volkswagen China Open Changchun 2004	LI Nan (CHN)		BAI Yang (CHN)		WS	Main Draw	R16	1 - 4	8:11 14:12 10:12 5:11 4:11	BAI Yang	
+2004	Volkswagen China Open Changchun 2004	KIM Hyon Hui (PRK)		WANG Nan (CHN)		WS	Main Draw	R16	2 - 4	13:11 11:7 5:11 5:11 11:13 5:11	WANG Nan	
+2004	Volkswagen China Open Changchun 2004	ZHANG Yining (CHN)		TIE Yana (HKG)		WS	Main Draw	QuarterFinal	4 - 0	12:10 11:7 11:5 11:5	ZHANG Yining	
+2004	Volkswagen China Open Changchun 2004	KO Somi (KOR)		GUO Yan (1982) (CHN)		WS	Main Draw	QuarterFinal	0 - 4	3:11 7:11 5:11 5:11	GUO Yan (1982)	
+2004	Volkswagen China Open Changchun 2004	FUKUOKA Haruna (JPN)		PENG Luyang (CHN)		WS	Main Draw	QuarterFinal	0 - 4	4:11 5:11 5:11 6:11	PENG Luyang	
+2004	Volkswagen China Open Changchun 2004	BAI Yang (CHN)		WANG Nan (CHN)		WS	Main Draw	QuarterFinal	4 - 1	11:7 11:8 9:11 11:6 11:3	BAI Yang	
+2004	Volkswagen China Open Changchun 2004	ZHANG Yining (CHN)		GUO Yan (1982) (CHN)		WS	Main Draw	SemiFinal	4 - 1	11:13 11:8 11:4 11:6 11:7	ZHANG Yining	
+2004	Volkswagen China Open Changchun 2004	PENG Luyang (CHN)		BAI Yang (CHN)		WS	Main Draw	SemiFinal	1 - 4	9:11 7:11 12:10 9:11 6:11	BAI Yang	
+2004	Volkswagen China Open Changchun 2004	MOON Hyunjung (KOR)		SHIOSAKI Yuka (JPN)		WS	Qualification		2 - 4	10:12 11:7 9:11 7:11 11:6 11:13	SHIOSAKI Yuka	
+2004	Volkswagen China Open Changchun 2004	LANG Kristin (GER)		JANG Hyon Ae (PRK)		WS	Qualification	QR2	1 - 4	5:11 7:11 10:12 11:9 7:11	JANG Hyon Ae	
+2004	Volkswagen China Open Changchun 2004	MOON Hyunjung (KOR)		JANG Hyon Ae (PRK)		WS	Qualification	3	4 - 0	11:4 11:8 11:7 11:7	MOON Hyunjung	
+2004	Volkswagen China Open Changchun 2004	SHIOSAKI Yuka (JPN)		LANG Kristin (GER)		WS	Qualification	QR4	0 - 4	7:11 7:11 9:11 16:18	LANG Kristin	
+2004	Volkswagen China Open Changchun 2004	MOON Hyunjung (KOR)		LANG Kristin (GER)		WS	Qualification	5	4 - 3	11:13 11:6 11:7 11:7 10:12 8:11 11:9	MOON Hyunjung	
+2004	Volkswagen China Open Changchun 2004	JANG Hyon Ae (PRK)		SHIOSAKI Yuka (JPN)		WS	Qualification	6	0 - 4	11:13 7:11 7:11 9:11	SHIOSAKI Yuka	
+2004	Volkswagen China Open Changchun 2004	KIM Kyungha (KOR)		ROHR Gaby (GER)		WS	Qualification		1 - 4	7:11 4:11 11:6 3:11 9:11	ROHR Gaby	
+2004	Volkswagen China Open Changchun 2004	FUKUOKA Haruna (JPN)		KO Un Gyong (PRK)		WS	Qualification	QR2	4 - 1	7:11 11:7 11:8 12:10 11:3	FUKUOKA Haruna	
+2004	Volkswagen China Open Changchun 2004	KIM Kyungha (KOR)		KO Un Gyong (PRK)		WS	Qualification	3	1 - 4	11:5 8:11 8:11 8:11 3:11	KO Un Gyong	
+2004	Volkswagen China Open Changchun 2004	ROHR Gaby (GER)		FUKUOKA Haruna (JPN)		WS	Qualification	QR4	0 - 4	11:13 4:11 8:11 5:11	FUKUOKA Haruna	
+2004	Volkswagen China Open Changchun 2004	KIM Kyungha (KOR)		FUKUOKA Haruna (JPN)		WS	Qualification	5	1 - 4	5:11 6:11 11:9 4:11 6:11	FUKUOKA Haruna	
+2004	Volkswagen China Open Changchun 2004	KO Un Gyong (PRK)		ROHR Gaby (GER)		WS	Qualification	6	4 - 1	9:11 11:7 11:7 11:5 11:5	KO Un Gyong	
+2004	Volkswagen China Open Changchun 2004	KOMWONG Nanthana (THA)		KIM Minhee (YOB=1985) (KOR)		WS	Qualification		4 - 2	11:9 11:9 9:11 10:12 11:5 11:4	KOMWONG Nanthana	
+2004	Volkswagen China Open Changchun 2004	FUJII Hiroko (JPN)		KIM Jong (PRK)		WS	Qualification	QR2	4 - 3	4:11 11:4 11:9 13:15 7:11 11:9 11:9	FUJII Hiroko	
+2004	Volkswagen China Open Changchun 2004	KOMWONG Nanthana (THA)		KIM Jong (PRK)		WS	Qualification	3	4 - 2	8:11 8:11 11:8 11:9 11:3 11:4	KOMWONG Nanthana	
+2004	Volkswagen China Open Changchun 2004	KIM Minhee (YOB=1985) (KOR)		FUJII Hiroko (JPN)		WS	Qualification	QR4	1 - 4	11:7 4:11 5:11 8:11 9:11	FUJII Hiroko	
+2004	Volkswagen China Open Changchun 2004	KOMWONG Nanthana (THA)		FUJII Hiroko (JPN)		WS	Qualification	5	4 - 3	11:4 7:11 11:3 10:12 7:11 11:9 11:7	KOMWONG Nanthana	
+2004	Volkswagen China Open Changchun 2004	KIM Jong (PRK)		KIM Minhee (YOB=1985) (KOR)		WS	Qualification	6	3 - 4	11:6 8:11 11:8 11:9 9:11 8:11 10:12	KIM Minhee (YOB=1985)	
+2004	Volkswagen China Open Changchun 2004	KISHIDA Satoko (JPN)		YU Kwok See (HKG)		WS	Qualification		4 - 2	11:4 7:11 8:11 11:4 11:4 11:7	KISHIDA Satoko	
+2004	Volkswagen China Open Changchun 2004	KO Somi (KOR)		MUANGSUK Anisara (THA)		WS	Qualification	QR2	4 - 3	11:6 8:11 11:4 11:9 2:11 8:11 11:8	KO Somi	
+2004	Volkswagen China Open Changchun 2004	KISHIDA Satoko (JPN)		MUANGSUK Anisara (THA)		WS	Qualification	3	4 - 1	8:11 11:1 11:7 11:7 11:2	KISHIDA Satoko	
+2004	Volkswagen China Open Changchun 2004	YU Kwok See (HKG)		KO Somi (KOR)		WS	Qualification	QR4	1 - 4	11:9 9:11 5:11 7:11 9:11	KO Somi	
+2004	Volkswagen China Open Changchun 2004	KISHIDA Satoko (JPN)		KO Somi (KOR)		WS	Qualification	5	1 - 4	5:11 11:9 9:11 4:11 9:11	KO Somi	
+2004	Volkswagen China Open Changchun 2004	MUANGSUK Anisara (THA)		YU Kwok See (HKG)		WS	Qualification	6	4 - 0	11:4 11:8 11:4 11:3	MUANGSUK Anisara	
+2004	Volkswagen China Open Changchun 2004	KIM Mi Yong (PRK)		ROHR Meike (GER)		WS	Qualification		4 - 3	8:11 17:15 7:11 9:11 11:6 11:5 11:8	KIM Mi Yong	
+2004	Volkswagen China Open Changchun 2004	TASEI Mikie (JPN)		ROHR Meike (GER)		WS	Qualification	QR2	4 - 1	11:5 11:4 11:6 10:12 11:5	TASEI Mikie	
+2004	Volkswagen China Open Changchun 2004	TASEI Mikie (JPN)		KIM Mi Yong (PRK)		WS	Qualification	3	1 - 4	5:11 7:11 7:11 11:9 5:11	KIM Mi Yong	
+2004	Volkswagen China Open Changchun 2004	HIURA Reiko (JPN)		KIM Junghyun (KOR)		WS	Qualification		4 - 3	11:9 6:11 11:7 9:11 11:9 9:11 12:10	HIURA Reiko	
+2004	Volkswagen China Open Changchun 2004	XU Yan (SGP)		KIM Junghyun (KOR)		WS	Qualification	QR2	4 - 1	11:5 11:3 11:9 3:11 11:4	XU Yan	
+2004	Volkswagen China Open Changchun 2004	XU Yan (SGP)		HIURA Reiko (JPN)		WS	Qualification	3	4 - 3	12:14 11:9 8:11 12:10 11:9 10:12 11:8	XU Yan
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 19
+
+2004	Volkswagen China Open Changchun 2004	CHEN Qi (CHN)	MA Lin (CHN)	CHILA Patrick (FRA)	LO Dany (FRA)	MD	Main Draw	R16	4 - 2	11:7 11:4 11:7 9:11 5:11 11:7	CHEN Qi	MA Lin
+2004	Volkswagen China Open Changchun 2004	HAO Shuai (CHN)	WANG Liqin (CHN)	KIHO Shinnosuke (JPN)	TAKAKIWA Kenichi (JPN)	MD	Main Draw	R16	4 - 0	11:2 13:11 11:5 11:5	HAO Shuai	WANG Liqin
+2004	Volkswagen China Open Changchun 2004	CHEN Qi (CHN)	MA Lin (CHN)	LEE Jungsam (KOR)	LIM Jaehyun (KOR)	MD	Main Draw	QuarterFinal	4 - 0	11:2 11:9 12:10 11:8	CHEN Qi	MA Lin
+2004	Volkswagen China Open Changchun 2004	HAO Shuai (CHN)	WANG Liqin (CHN)	KONG Linghui (CHN)	WANG Hao (CHN)	MD	Main Draw	QuarterFinal	3 - 4	7:11 16:14 13:11 12:14 11:7 8:11 8:11	KONG Linghui	WANG Hao
+2004	Volkswagen China Open Changchun 2004	CHEN Qi (CHN)	MA Lin (CHN)	KONG Linghui (CHN)	WANG Hao (CHN)	MD	Main Draw	SemiFinal	2 - 4	8:11 4:11 11:6 5:11 15:13 9:11	KONG Linghui	WANG Hao
+2004	Volkswagen China Open Changchun 2004	KONG Linghui (CHN)	WANG Hao (CHN)	BOLL Timo (GER)	SUSS Christian (GER)	MD	Main Draw	Final	4 - 1	10:12 12:10 11:6 11:8 11:9	KONG Linghui	WANG Hao
+2004	Volkswagen China Open Changchun 2004	BERTIN Christophe (FRA)	BOBILLIER Loic (FRA)	AXELQVIST Johan (SWE)	O Il (PRK)	MD	Qualification	QR16	3 - 0	12:10 11:4 11:8	BERTIN Christophe	BOBILLIER Loic
+2004	Volkswagen China Open Changchun 2004	BAUM Patrick (GER)	STEGER Bastian (GER)	LEE Jungsam (KOR)	LIM Jaehyun (KOR)	MD	Qualification	QR16	1 - 3	5:11 10:12 11:5 9:11	LEE Jungsam	LIM Jaehyun
+2004	Volkswagen China Open Changchun 2004	BOLL Timo (GER)	SUSS Christian (GER)	CHOI Hyunjin (KOR)	LEE Jungwoo (KOR)	MD	Main Draw	SemiFinal	4 - 1	11:9 11:6 11:6 9:11 11:3	BOLL Timo	SUSS Christian
+2004	Volkswagen China Open Changchun 2004	DESPRES Rodolphe (FRA)	TSE Ka Chun (HKG)	SAKAMOTO Ryusuke (JPN)	TAKAKIWA Kenichi (JPN)	MD	Qualification	QR16	1 - 3	6:11 11:9 9:11 3:11	SAKAMOTO Ryusuke	TAKAKIWA Kenichi
+2004	Volkswagen China Open Changchun 2004	CHEUNG Yuk (HKG)	LEUNG Chu Yan (HKG)	BERTIN Christophe (FRA)	BOBILLIER Loic (FRA)	MD	Main Draw	R16	4 - 1	11:9 11:5 9:11 11:7 11:5	CHEUNG Yuk	LEUNG Chu Yan
+2004	Volkswagen China Open Changchun 2004	CHEUNG Yuk (HKG)	LEUNG Chu Yan (HKG)	BOLL Timo (GER)	SUSS Christian (GER)	MD	Main Draw	QuarterFinal	2 - 4	12:10 11:5 4:11 9:11 6:11 8:11	BOLL Timo	SUSS Christian
+2004	Volkswagen China Open Changchun 2004	KIHO Shinnosuke (JPN)	TAKAKIWA Kenichi (JPN)	KIM Gunhwan (KOR)	YOON Jaeyoung (KOR)	MD	Qualification	QR16	3 - 1	13:11 11:8 5:11 11:7	KIHO Shinnosuke	TAKAKIWA Kenichi
+2004	Volkswagen China Open Changchun 2004	SAKAMOTO Ryusuke (JPN)	TAKAKIWA Taku (JPN)	KONG Linghui (CHN)	WANG Hao (CHN)	MD	Main Draw	R16	1 - 4	6:11 15:17 14:12 9:11 6:11	KONG Linghui	WANG Hao
+2004	Volkswagen China Open Changchun 2004	LEE Jungsam (KOR)	LIM Jaehyun (KOR)	HAKANSSON Fredrik (SWE)	LUNDQVIST Jens (SWE)	MD	Main Draw	R16	4 - 1	12:10 9:11 11:9 11:5 11:8	LEE Jungsam	LIM Jaehyun
+2004	Volkswagen China Open Changchun 2004	CHOI Hyunjin (KOR)	LEE Jungwoo (KOR)	KO Lai Chak (HKG)	LI Ching (HKG)	MD	Main Draw	R16	4 - 1	6:11 11:6 12:10 11:9 11:9	CHOI Hyunjin	LEE Jungwoo
+2004	Volkswagen China Open Changchun 2004	KIM Song Chol (PRK)	PAK Won Chol (PRK)	BOLL Timo (GER)	SUSS Christian (GER)	MD	Main Draw	R16	0 - 4	8:11 7:11 21:23 8:11	BOLL Timo	SUSS Christian
+2004	Volkswagen China Open Changchun 2004	CHEN Weixing (AUT)	SMIRNOV Alexey (RUS)	HIELSCHER Lars (GER)	KEINATH Thomas (SVK)	MD	Main Draw	R16	4 - 2	12:10 11:8 5:11 7:11 11:7 11:9	CHEN Weixing	SMIRNOV Alexey
+2004	Volkswagen China Open Changchun 2004	CHEN Weixing (AUT)	SMIRNOV Alexey (RUS)	CHOI Hyunjin (KOR)	LEE Jungwoo (KOR)	MD	Main Draw	QuarterFinal	1 - 4	11:5 10:12 6:11 4:11 15:17	CHOI Hyunjin	LEE Jungwoo
+
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 18
+
+2004	Volkswagen China Open Changchun 2004	WANG Nan (CHN)	ZHANG Yining (CHN)	KIM Mi Yong (PRK)	KO Un Gyong (PRK)	WD	Main Draw	R16	4 - 3	9:11 11:5 11:3 4:11 8:11 11:9 12:10	WANG Nan	ZHANG Yining
+2004	Volkswagen China Open Changchun 2004	LI Nan (CHN)	PENG Luyang (CHN)	FUKUOKA Haruna (JPN)	KISHIDA Satoko (JPN)	WD	Main Draw	R16	4 - 2	12:14 11:8 12:10 3:11 12:10 11:8	LI Nan	PENG Luyang
+2004	Volkswagen China Open Changchun 2004	WANG Nan (CHN)	ZHANG Yining (CHN)	BAI Yang (CHN)	GUO Yan (1982) (CHN)	WD	Main Draw	QuarterFinal	4 - 3	11:5 7:11 10:12 11:3 11:4 9:11 12:10	WANG Nan	ZHANG Yining
+2004	Volkswagen China Open Changchun 2004	LI Nan (CHN)	PENG Luyang (CHN)	LI Jiawei (SGP)	XU Yan (SGP)	WD	Main Draw	QuarterFinal	4 - 0	11:6 12:10 11:8 11:3	LI Nan	PENG Luyang
+2004	Volkswagen China Open Changchun 2004	WANG Nan (CHN)	ZHANG Yining (CHN)	LI Nan (CHN)	PENG Luyang (CHN)	WD	Main Draw	SemiFinal	4 - 2	11:9 8:11 11:8 11:8 8:11 12:10	WANG Nan	ZHANG Yining
+2004	Volkswagen China Open Changchun 2004	WANG Nan (CHN)	ZHANG Yining (CHN)	KIM Hyang Mi (PRK)	KIM Hyon Hui (PRK)	WD	Main Draw	Final	4 - 0	11:9 11:9 11:7 11:5	WANG Nan	ZHANG Yining
+2004	Volkswagen China Open Changchun 2004	ROHR Gaby (GER)	ROHR Meike (GER)	KIM Jong (PRK)	KIM Yun Mi (PRK)	WD	Qualification	QR16	3 - 2	7:11 7:11 11:8 11:8 11:9	ROHR Gaby	ROHR Meike
+2004	Volkswagen China Open Changchun 2004	KIM Kyungha (KOR)	LANG Kristin (GER)	BAI Yang (CHN)	GUO Yan (1982) (CHN)	WD	Main Draw	R16	1 - 4	4:11 5:11 11:6 4:11 6:11	BAI Yang	GUO Yan (1982)
+2004	Volkswagen China Open Changchun 2004	JANG Hyon Ae (PRK)	YU Kwok See (HKG)	LI Jiawei (SGP)	XU Yan (SGP)	WD	Main Draw	R16	2 - 4	9:11 5:11 15:13 8:11 11:1 6:11	LI Jiawei	XU Yan
+2004	Volkswagen China Open Changchun 2004	LAU Sui Fei (HKG)	ZHANG Rui (HKG)	HIURA Reiko (JPN)	SHIOSAKI Yuka (JPN)	WD	Main Draw	R16	4 - 0	12:10 11:7 11:3 11:6	LAU Sui Fei	ZHANG Rui
+2004	Volkswagen China Open Changchun 2004	LAU Sui Fei (HKG)	ZHANG Rui (HKG)	KONISHI An (JPN)	TASEI Mikie (JPN)	WD	Main Draw	QuarterFinal	4 - 3	10:12 11:8 9:11 11:7 11:9 5:11 11:7	LAU Sui Fei	ZHANG Rui
+2004	Volkswagen China Open Changchun 2004	LAU Sui Fei (HKG)	ZHANG Rui (HKG)	KIM Hyang Mi (PRK)	KIM Hyon Hui (PRK)	WD	Main Draw	SemiFinal	3 - 4	8:11 9:11 11:9 11:6 11:8 11:13 11:13	KIM Hyang Mi	KIM Hyon Hui
+2004	Volkswagen China Open Changchun 2004	FUJII Hiroko (JPN)	FUKUHARA Ai (JPN)	SONG Ah Sim (HKG)	TIE Yana (HKG)	WD	Main Draw	R16	3 - 4	8:11 11:7 11:9 11:7 8:11 6:11 9:11	SONG Ah Sim	TIE Yana
+2004	Volkswagen China Open Changchun 2004	KIM Junghyun (KOR)	KO Somi (KOR)	KIM Mi Yong (PRK)	KO Un Gyong (PRK)	WD	Qualification	QR16	1 - 3	3:11 12:10 10:12 10:12	KIM Mi Yong	KO Un Gyong
+2004	Volkswagen China Open Changchun 2004	KIM Minhee (YOB=1985) (KOR)	MOON Hyunjung (KOR)	KONISHI An (JPN)	TASEI Mikie (JPN)	WD	Main Draw	R16	3 - 4	7:11 11:13 8:11 11:8 14:12 11:8 6:11	KONISHI An	TASEI Mikie
+2004	Volkswagen China Open Changchun 2004	KIM Hyang Mi (PRK)	KIM Hyon Hui (PRK)	ROHR Gaby (GER)	ROHR Meike (GER)	WD	Main Draw	R16	4 - 3	9:11 8:11 11:5 11:6 7:11 11:6 11:6	KIM Hyang Mi	KIM Hyon Hui
+2004	Volkswagen China Open Changchun 2004	KIM Hyang Mi (PRK)	KIM Hyon Hui (PRK)	SONG Ah Sim (HKG)	TIE Yana (HKG)	WD	Main Draw	QuarterFinal	4 - 2	11:9 11:9 7:11 8:11 11:8 11:3	KIM Hyang Mi	KIM Hyon Hui
+2004	Volkswagen China Open Changchun 2004	KOMWONG Nanthana (THA)	MUANGSUK Anisara (THA)	JANG Hyon Ae (PRK)	YU Kwok See (HKG)	WD	Qualification	QR16	0 - 3	3:11 11:13 6:11	JANG Hyon Ae	YU Kwok See
