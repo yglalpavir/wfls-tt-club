@@ -660,3 +660,130 @@ MS 616 名 / WS 420 名 2004 球员全部有 assoc 记录（identity 命中率 1
 
 - `tools/import_2004.py`：十九站导入脚本（复用 2003 逻辑，新增 `olympic`/`wcup`/`wttct`/`grandfinals3` 模板、MT/WT→MS/WS 映射、奥运会决赛分项目日期）。
 - `tools/add_assoc_2004.py`：补充 assoc.json 脚本（复用 import_2004 的 NAME_MAP 与原始国家代码，扩充 COUNTRY_MAP 至 110+ 国家/地区，MT/WT 亦纳入单打提取）。
+
+# 第八部分：2005 年 ITTF 赛事（MS/WS/MD/WD/XD）
+
+本次导入 **2005 年 18 站 ITTF 赛事**，覆盖男子单打 MS、女子单打 WS、男子双打 MD、女子双打 WD、混合双打 XD（仅世乒赛），数据写入 WTT 计分系统。赛事类型含 **世乒赛**（个人锦标赛，含 XD）、**世界杯**（男/女分站）、**总决赛**、**ittf公开赛**（Pro Tour）。
+
+| 站 | 类型 | 时间 |
+| --- | --- | --- |
+| Brazilian Open Rio de Janeiro | `ittf公开赛` | 2005-06-23 ~ 06-26 |
+| Chile Open Santiago | `ittf公开赛` | 2005-06-29 ~ 07-03 |
+| Chinese Taipei Open Taipei | `ittf公开赛` | 2005-06-16 ~ 06-19 |
+| Croatia Open Zagreb | `ittf公开赛` | 2005-01-19 ~ 01-23 |
+| German Open Magdeburg | `ittf公开赛` | 2005-11-09 ~ 11-13 |
+| Japan Open Yokohama | `ittf公开赛` | 2005-09-22 ~ 09-25 |
+| Korean Open Suncheon | `ittf公开赛` | 2005-06-09 ~ 06-12 |
+| Panasonic China Open Harbin | `ittf公开赛` | 2005-09-08 ~ 09-11 |
+| Qatar Open Doha | `ittf公开赛` | 2005-02-21 ~ 02-25 |
+| SLOVENIA Open Velenje | `ittf公开赛` | 2005-01-12 ~ 01-15 |
+| St. Petersburg Open | `ittf公开赛` | 2005-11-03 ~ 11-06 |
+| Swedish Open Gothenburg | `ittf公开赛` | 2005-11-17 ~ 11-20 |
+| US Open Fort Lauderdale | `ittf公开赛` | 2005-07-07 ~ 07-10 |
+| Volkswagen China Open Shenzhen | `ittf公开赛` | 2005-09-15 ~ 09-18 |
+| Pro Tour Grand Finals Fuzhou | `总决赛` | 2005-12-09 ~ 12-11 |
+| Men's World Cup Liege | `世界杯` | 2005-10-21 ~ 10-23 |
+| Women's World Cup Guangzhou | `世界杯` | 2005-12-13 ~ 12-15 |
+| World Table Tennis Championships Shanghai | `世乒赛` | 2005-04-30 ~ 05-06 |
+
+## 1. 基本信息
+
+| 项 | 值 |
+| --- | --- |
+| 项目 | MS（男子单打）、WS（女子单打）、MD（男子双打）、WD（女子双打）、XD（混合双打） |
+| 类型 | `ittf公开赛`（14 站 Pro Tour）、`总决赛`（Pro Tour 总决赛）、`世界杯`（男/女分站）、`世乒赛`（个人锦标赛） |
+| 系数 | 复用 event-coefficient.json 已有全部类型：ms/ws 为 `世乒赛` 1.83、`世界杯` 1.62、`总决赛` 1.35、`ittf公开赛` 0.42；md/wd/xd 为 `世乒赛` 0.8、`世界杯` 0.58、`总决赛` 0.51、`ittf公开赛` 0.28（均已存在，未改值）。 |
+| 数据来源 | 用户提供（ITTF 官方网页/赛事记录，Ratings Central 同源格式，2001~2004 同源）。 |
+
+## 2. 数据文件
+
+| 分类 | 文件 | 2005 记录 |
+| --- | --- | --- |
+| MS | `wtt_data/ms/score-log-2005-wtt.json` | 1693 |
+| WS | `wtt_data/ws/score-log-2005-ws.json` | 1390 |
+| MD | `wtt_data/md/score-log-2005-wtt.json` | 752 |
+| WD | `wtt_data/wd/score-log-2005-wtt.json` | 559 |
+| XD | `wtt_data/xd/score-log-2005-wtt.json` | 135 |
+| 合计 | | 4529 条 |
+
+五个分类的 `manifest.json` 已将 `score-log-2005-*` 注册到 scoreFiles 首位。原始数据位于 `docs/result_ittf_link/2005/`，tab 分隔行结构同 2004；Pro Tour 文件带中文元数据块（赛事编号/名称/类型/参赛人数/起止日期），世界杯/总决赛/世乒赛为表头直入（世乒赛无元数据块，起止日期 04-30 ~ 05-06 按实际赛事推算）。
+
+分站明细（按原始文件实际可解析行数）：
+
+| 站 | MS | WS | MD | WD | XD |
+| --- | --- | --- | --- | --- | --- |
+| Brazilian Open | - | 53 | 33 | 17 | - |
+| Chile Open | 157 | 77 | 61 | 30 | - |
+| Chinese Taipei Open | 79 | 71 | 29 | 27 | - |
+| Croatia Open | 262 | 161 | 92 | 62 | - |
+| German Open | 192 | 71 | 9 | 67 | - |
+| Japan Open | 44 | 79 | 39 | 33 | - |
+| Korean Open | 69 | 59 | 25 | 20 | - |
+| Men's World Cup | 32 | - | - | - | - |
+| Panasonic Harbin | 55 | 78 | 19 | 23 | - |
+| Grand Finals | 15 | 15 | 7 | 7 | - |
+| Qatar Open | 120 | 68 | 36 | 24 | - |
+| SLOVENIA Open | 166 | 116 | 62 | 39 | - |
+| St. Petersburg Open | 62 | 105 | 61 | 33 | - |
+| Swedish Open | 114 | 126 | 83 | 47 | - |
+| US Open | 100 | 82 | 43 | 28 | - |
+| China Open Shenzhen | 100 | 73 | 37 | 27 | - |
+| Women's World Cup | - | 32 | - | - | - |
+| WTTC Shanghai | 126 | 124 | 116 | 75 | 135 |
+
+> 缺失说明（用户确认数量差可忽略）：Brazilian Open 源文件无 MS 主赛事数据（仅 U21MS）；German Open MD 源文件仅含部分行（页头 Total: 110，实际数据 10 行，其中 1 行缺搭档跳行）；WTTC Shanghai 各单项源文件亦为部分页数据（MS 页头 Total: 465，实际数据 126 行）；Chinese Taipei Open WS 1 行对手/胜者全空（轮空行），跳过；WTTC 各单项资格赛部分行缺搭档或胜者，跳过。
+
+## 3. 日期映射
+
+沿用既有模板（附起止日期），新增 `wc3`（世界杯 3 天）：
+
+- Pro Tour 4 天站：Qualification → 第 1 天，R64/R32 → 第 2 天，R16/1/4 决赛 → 第 3 天，半决赛/决赛 → 第 4 天。
+- Pro Tour 5 天站（Chile/Croatia/German/Qatar）：半决赛 → 第 4 天，决赛 → 第 5 天。
+- Grand Finals（3 天）：R16 → 12-09，1/4 决赛 → 12-10，半决赛/决赛 → 12-11。
+- Men's World Cup（3 天）：资格赛 → 10-21，1/4 决赛 → 10-22，半决赛/决赛/排位赛 → 10-23。
+- Women's World Cup（3 天）：资格赛 → 12-13，1/4 决赛 → 12-14，半决赛/决赛/排位赛 → 12-15。
+- WTTC（7 天）：资格赛 → 04-30，R128 → 05-02，R64 → 05-03，R32 → 05-04，R16/1/4 决赛 → 05-05，半决赛/决赛 → 05-06。
+
+## 4. 姓名规范化说明
+
+遵循 `wtt_data/player-name-format.md`，`tools/import_2005.py` 自动生成标准名映射（约 700+ 球员）。
+
+- 中/港/台/新/韩/朝：`姓 名` 保持原文，如 `WANG Liqin`、`CHUANG Chih-Yuan`、`KIM Kyungah`、`LI Jiawei`。
+- 日本：`名 姓` 交换，如 `Jun MIZUTANI`、`Timo BOLL`（欧美同理）、`Yuki MORITA`（源数据含 YOB 后缀剥离）。
+- 华裔代表他国（中文姓 + 非华语国家）：保持 `姓 名`，如 `CHEN Weixing`(AUT)、`GAO Jun`/`SHEN Yanfei`(USA/ESP)、`LI Qiangbing`(AUT)、`LIU Jia`(AUT)、`TAN Wenling`/`WANG Yu`(ITA)、`CAI Xiaoli`/`LI Jiawei`(SGP)、`NI Xia Lian`(LUX)。
+- 后缀剥离：`GUO Yan (1982)` → `GUO Yan`、`WANG Yu (YOB=1981)` → `WANG Yu`、`KOSTROMINA Tatyana (1973)` → `Tatyana KOSTROMINA`、`KIM Minhee (YOB=1985)` → `KIM Minhee`、`NAM Hyejin (1985)` → `NAM Hyejin`、`MORITA Yuki (YOB=1984)` → `Yuki MORITA`。
+- 姓名特例：`XU Jie (1979)`（WAL）与 `XU Jie (1982)`（POL）为**两位不同球员**——前者保留 `(1979)` 后缀区分，后者并入既有 DB 的 `XU Jie`（POL，2004 已录入）；`PARK Kyungae (II)` 并入既有 DB 的 `PARK Kyungae`。
+- 同名异人注意：`XU Jie (1979)`(WAL) ≠ `XU Jie`(POL)；`LAY Jian Fang`(AUS) 按 2003 惯例为 `Fang LAY Jian`；`LIN Ling`(CHN)、`LIN Ju`(DOM) 为两位不同球员，按原始拼写区分。
+
+全部 4529 条无缺失名字、无胜者不匹配、无重复录入、无双打胜者=负者（源数据缺行/重复球员 12 处已按规则处理）。
+
+## 5. 协会籍补充（assoc.json）
+
+| 文件 | 本次新增 | 合计 |
+| --- | --- | --- |
+| `wtt_data/ms/assoc.json` | 181 | 1567 |
+| `wtt_data/ws/assoc.json` | 115 | 1558 |
+
+MS 547 名 / WS 412 名 2005 球员全部有 assoc 记录（identity 命中率 100%）。新增国家映射：`KGZ/PAR`（吉尔吉斯斯坦/巴拉圭）。MD/WD/XD 双打球员如从未进入 MS/WS 则不入 assoc（与 2002~2004 惯例一致）。
+
+## 6. 关键场次验证
+
+| 场次 | 结果 |
+| --- | --- |
+| 世乒赛 MS 决赛 | `WANG Liqin` 胜 `MA Lin`（2005-05-06） |
+| 世乒赛 WS 决赛 | `ZHANG Yining` 胜 `GUO Yan`（2005-05-06） |
+| 世乒赛 MD 决赛 | `KONG Linghui/WANG Hao` 胜 `Christian SUSS/Timo BOLL`（2005-05-06） |
+| 世乒赛 WD 决赛 | `WANG Nan/ZHANG Yining` 胜 `GUO Yue/NIU Jianfeng`（2005-05-06） |
+| 世乒赛 XD 决赛 | `WANG Liqin/GUO Yue` 胜 `LIU Guozheng/BAI Yang`（2005-05-06） |
+| 男子世界杯决赛 | `Timo BOLL` 胜 `WANG Hao`（2005-10-23） |
+| 女子世界杯决赛 | `ZHANG Yining` 胜 `GUO Yan`（2005-12-15） |
+| 总决赛 MS 决赛 | `Timo BOLL` 胜 `Jean-Michel SAIVE`（2005-12-11） |
+| 总决赛 WS 决赛 | `ZHANG Yining` 胜 `LI Jiawei`（2005-12-11） |
+| 总决赛 MD 决赛 | `Christian SUSS/Timo BOLL` 胜 `LEE Jungwoo/OH Sangeun`（2005-12-11） |
+| 总决赛 WD 决赛 | `GAO Jun/SHEN Yanfei` 胜 `KIM Bokrae/KIM Kyungah`（2005-12-11） |
+| German Open MS 决赛 | `Vladimir SAMSONOV` 胜 `MA Long`（2005-11-13） |
+
+## 7. 相关脚本
+
+- `tools/import_2005.py`：十八站导入脚本（复用 2003/2004 逻辑，新增 `wc3` 模板、XD 保留原始顺序（男前）、`XU Jie (1979)` 特例保留后缀、双打单胜者归属、重复球员检测、去重追加、manifest 注册）。
+- `tools/add_assoc_2005.py`：补充 assoc.json 脚本（复用 import_2005 的 NAME_MAP 与原始国家代码，扩充 COUNTRY_MAP 至 120+ 国家/地区）。
