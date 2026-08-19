@@ -1,0 +1,812 @@
+[
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "LIN Ju/WU Xue",
+    "负者": "Robert GARDOS/Veronika HEINE"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Werner SCHLAGER/LIU Jia",
+    "负者": "Darius KNIGHT/Joanna DRINKHALL"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "Werner SCHLAGER/LIU Jia",
+    "负者": "Henry MUJICA/Luisana PEREZ"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "Ilija LUPULESKU/GAO Jun",
+    "负者": "Karl JINDRAK/LI Qiangbing"
+  },
+  {
+    "日期": "2005-05-04",
+    "类型": "世乒赛",
+    "胜者": "Werner SCHLAGER/LIU Jia",
+    "负者": "Ilija LUPULESKU/GAO Jun"
+  },
+  {
+    "日期": "2005-05-05",
+    "类型": "世乒赛",
+    "胜者": "Werner SCHLAGER/LIU Jia",
+    "负者": "OH Sangeun/LEE Hyangmi"
+  },
+  {
+    "日期": "2005-05-05",
+    "类型": "世乒赛",
+    "胜者": "WANG Liqin/GUO Yue",
+    "负者": "Werner SCHLAGER/LIU Jia"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Yannick VOSTES/Laurence JUNKER",
+    "负者": "Aleksandr SMIRNOV/Marina MOROZOVA"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Dmitry CHUMAKOU/Veronika PAVLOVICH",
+    "负者": "Erik ILLAS/Viktoria LUCENKOVA"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "FENG Zhe/Asya KASABOVA",
+    "负者": "Artur GRIGOREV/Oxana FADEEVA"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "Seiya KISHIKAWA/Ai FUJINUMA",
+    "负者": "FENG Zhe/Asya KASABOVA"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "YAN Sen/GUO Yan",
+    "负者": "Bence CSABA/Anna NGAN"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Henry MUJICA/Luisana PEREZ",
+    "负者": "Pradeeban PETER-PAUL/XU Chris"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "CHUANG Chih-Yuan/HUANG Yi-Hua",
+    "负者": "Faazil KASSAM/YAN Shirley"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "WANG Hao/WANG Nan",
+    "负者": "Par GERELL/Matilda EKHOLM"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "QIU Yike/CAO Zhen",
+    "负者": "Sasa IGNJATOVIC/Martina POHAR"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "HAO Shuai/NIU Jianfeng",
+    "负者": "Lubomir PISTEJ/Eva ODOROVA"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "CHEN Qi/ZHANG Yining",
+    "负者": "Daniel ZWICKL/Csilla BATORFI"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "WANG Hao/WANG Nan",
+    "负者": "Konstantinos PAPAGEORGIOU/Ekaterina NTOULAKI"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "QIU Yike/CAO Zhen",
+    "负者": "Alexey LIVENTSOV/Anastasia VORONOVA"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "HAO Shuai/NIU Jianfeng",
+    "负者": "Oleksandr DIDUKH/Tetyana BILENKO"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "CHEN Qi/ZHANG Yining",
+    "负者": "Kirill SKACHKOV/Natalia BOLSHAKOVA"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "AN Chol Yong/XU Xin",
+    "负者": "Mitja HORVAT/Petra SKABAR"
+  },
+  {
+    "日期": "2005-05-04",
+    "类型": "世乒赛",
+    "胜者": "WANG Hao/WANG Nan",
+    "负者": "Peter FAZEKAS/Krisztina TOTH"
+  },
+  {
+    "日期": "2005-05-04",
+    "类型": "世乒赛",
+    "胜者": "QIU Yike/CAO Zhen",
+    "负者": "Bojan TOKIC/Helena HALAS"
+  },
+  {
+    "日期": "2005-05-04",
+    "类型": "世乒赛",
+    "胜者": "HAO Shuai/NIU Jianfeng",
+    "负者": "CAI Xiaoli/LI Jiawei"
+  },
+  {
+    "日期": "2005-05-04",
+    "类型": "世乒赛",
+    "胜者": "CHEN Qi/ZHANG Yining",
+    "负者": "LIN Ju/WU Xue"
+  },
+  {
+    "日期": "2005-05-04",
+    "类型": "世乒赛",
+    "胜者": "WANG Liqin/GUO Yue",
+    "负者": "AN Chol Yong/XU Xin"
+  },
+  {
+    "日期": "2005-05-05",
+    "类型": "世乒赛",
+    "胜者": "WANG Hao/WANG Nan",
+    "负者": "LI Ching/LAU Sui Fei"
+  },
+  {
+    "日期": "2005-05-05",
+    "类型": "世乒赛",
+    "胜者": "QIU Yike/CAO Zhen",
+    "负者": "Zoltan FEJER-KONNERTH/Nicole STRUSE"
+  },
+  {
+    "日期": "2005-05-05",
+    "类型": "世乒赛",
+    "胜者": "HAO Shuai/NIU Jianfeng",
+    "负者": "YANG Min/Nikoleta STEFANOVA"
+  },
+  {
+    "日期": "2005-05-05",
+    "类型": "世乒赛",
+    "胜者": "YAN Sen/GUO Yan",
+    "负者": "CHEN Qi/ZHANG Yining"
+  },
+  {
+    "日期": "2005-05-05",
+    "类型": "世乒赛",
+    "胜者": "QIU Yike/CAO Zhen",
+    "负者": "WANG Hao/WANG Nan"
+  },
+  {
+    "日期": "2005-05-05",
+    "类型": "世乒赛",
+    "胜者": "LIU Guozheng/BAI Yang",
+    "负者": "HAO Shuai/NIU Jianfeng"
+  },
+  {
+    "日期": "2005-05-05",
+    "类型": "世乒赛",
+    "胜者": "YAN Sen/GUO Yan",
+    "负者": "Seiya KISHIKAWA/Ai FUJINUMA"
+  },
+  {
+    "日期": "2005-05-06",
+    "类型": "世乒赛",
+    "胜者": "LIU Guozheng/BAI Yang",
+    "负者": "QIU Yike/CAO Zhen"
+  },
+  {
+    "日期": "2005-05-06",
+    "类型": "世乒赛",
+    "胜者": "WANG Liqin/GUO Yue",
+    "负者": "YAN Sen/GUO Yan"
+  },
+  {
+    "日期": "2005-05-06",
+    "类型": "世乒赛",
+    "胜者": "WANG Liqin/GUO Yue",
+    "负者": "LIU Guozheng/BAI Yang"
+  },
+  {
+    "日期": "2005-04-30",
+    "类型": "世乒赛",
+    "胜者": "Julius ESPOSO/Jesusa TAYAG",
+    "负者": "Junior ZOMBO/Dacha MONGONDI"
+  },
+  {
+    "日期": "2005-04-30",
+    "类型": "世乒赛",
+    "胜者": "Godfrey SULTAN/Janice MELLIE",
+    "负者": "Jose LUYINDULA/Junior TUAKANA Ngarangi"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Lars HIELSCHER/Tanja KRAMER",
+    "负者": "Jonathan SALAZAR/Paula MEDINA"
+  },
+  {
+    "日期": "2005-04-30",
+    "类型": "世乒赛",
+    "胜者": "Ernesto EBUEN/Sendrina BALATBAT",
+    "负者": "Hernan PINZON/Natalia BEDOYA"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "CHUANG Chih-Yuan/HUANG Yi-Hua",
+    "负者": "Andreas TZIAMBOS/Louiza KOUREA"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Tomas PAVELKA/Iveta VACENOVSKA",
+    "负者": "Victor SANCHEZ/Galia DVORAK"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Marek KLASEK/Renata STRBIKOVA",
+    "负者": "Fedor KUZMIN/Irina PALINA"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "LI Ching/LAU Sui Fei",
+    "负者": "Tomas PAVELKA/Iveta VACENOVSKA"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Oleksandr DIDUKH/Tetyana BILENKO",
+    "负者": "Emad MOSELHY/Ayatollah ASHRAF"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "OH Sangeun/LEE Hyangmi",
+    "负者": "Paul DRINKHALL/Kelly SIBLEY"
+  },
+  {
+    "日期": "2005-04-30",
+    "类型": "世乒赛",
+    "胜者": "Luis DIAZ/Maria RAMOS",
+    "负者": "Josue DONADO/Morayle ALVAREZ"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Seiya KISHIKAWA/Ai FUJINUMA",
+    "负者": "Carlos MACHADO/Carmen SOLICHERO"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "RYU Seungmin/KIM Hyehyun",
+    "负者": "Vallot VAINULA/Karin LINDMAE"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Christian SUSS/Kristin LANG",
+    "负者": "Christophe BERTIN/Carole GRUNDISCH"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "Zoltan FEJER-KONNERTH/Nicole STRUSE",
+    "负者": "CHENG Yinghua/Jasna RATHER"
+  },
+  {
+    "日期": "2005-05-04",
+    "类型": "世乒赛",
+    "胜者": "Zoltan FEJER-KONNERTH/Nicole STRUSE",
+    "负者": "RYU Seungmin/KIM Hyehyun"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Panagiotis GIONIS/Maria MIROU",
+    "负者": "Sheng KHO Mao/Fong BEH Lee"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "CHEUNG Yuk/TIE Yana",
+    "负者": "Panagiotis GIONIS/Maria MIROU"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "LEUNG Chu Yan/SONG Ah Sim",
+    "负者": "CHOI Hyunjin/JEON Hyekyung"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Janos JAKAB/Maria FAZEKAS",
+    "负者": "TSE Ka Chun/YU Kwok See"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "KO Lai Chak/ZHANG Rui",
+    "负者": "KIM Hyok Bong/KIM Mi Yong"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "LEUNG Chu Yan/SONG Ah Sim",
+    "负者": "Dmitry CHUMAKOU/Veronika PAVLOVICH"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "KO Lai Chak/ZHANG Rui",
+    "负者": "Ahmed SALEH/Bacent OSMAN"
+  },
+  {
+    "日期": "2005-05-04",
+    "类型": "世乒赛",
+    "胜者": "LEUNG Chu Yan/SONG Ah Sim",
+    "负者": "Janos JAKAB/Maria FAZEKAS"
+  },
+  {
+    "日期": "2005-05-04",
+    "类型": "世乒赛",
+    "胜者": "KO Lai Chak/ZHANG Rui",
+    "负者": "LEE Jinkwon/KIM Kyungah"
+  },
+  {
+    "日期": "2005-05-05",
+    "类型": "世乒赛",
+    "胜者": "LIU Guozheng/BAI Yang",
+    "负者": "LEUNG Chu Yan/SONG Ah Sim"
+  },
+  {
+    "日期": "2005-05-05",
+    "类型": "世乒赛",
+    "胜者": "WANG Liqin/GUO Yue",
+    "负者": "KO Lai Chak/ZHANG Rui"
+  },
+  {
+    "日期": "2005-04-30",
+    "类型": "世乒赛",
+    "胜者": "Hunor SZOCS/Besjana TOSUNI",
+    "负者": "Christian BOLA/LI Chung Him"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "AN Chol Yong/XU Xin",
+    "负者": "Ferenc PAZSY/Georgina POTA"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "Janos JAKAB/Maria FAZEKAS",
+    "负者": "Bastian STEGER/Elke SCHALL"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Nombulelo MGOQI/Mamata PRABHU",
+    "负者": "Bode ABIODUN/Atisi OWOH"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "CAI Xiaoli/LI Jiawei",
+    "负者": "Nombulelo MGOQI/Mamata PRABHU"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "YANG Min/Nikoleta STEFANOVA",
+    "负者": "Uros SLATINSEK/Biljana TODOROVIC"
+  },
+  {
+    "日期": "2005-05-04",
+    "类型": "世乒赛",
+    "胜者": "YANG Min/Nikoleta STEFANOVA",
+    "负者": "CHUANG Chih-Yuan/HUANG Yi-Hua"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Ryusuke SAKAMOTO/Ai FUKUHARA",
+    "负者": "Soumyadeep ROY/Vishaka VIJAY"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Taku TAKAKIWA/Sayaka HIRANO",
+    "负者": "ZHUANG David/Tawny BANH THUA"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "RYU Seungmin/KIM Hyehyun",
+    "负者": "Jun MIZUTANI/Aya UMEMURA"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "Ryusuke SAKAMOTO/Ai FUKUHARA",
+    "负者": "Yannick VOSTES/Laurence JUNKER"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "LIU Guozheng/BAI Yang",
+    "负者": "Taku TAKAKIWA/Sayaka HIRANO"
+  },
+  {
+    "日期": "2005-05-04",
+    "类型": "世乒赛",
+    "胜者": "LIU Guozheng/BAI Yang",
+    "负者": "Ryusuke SAKAMOTO/Ai FUKUHARA"
+  },
+  {
+    "日期": "2005-05-05",
+    "类型": "世乒赛",
+    "胜者": "Seiya KISHIKAWA/Ai FUJINUMA",
+    "负者": "KIM Song Chol/KIM Jong"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "CHEUNG Yuk/TIE Yana",
+    "负者": "YOON Jaeyoung/KIM Soongsil"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "LEE Jungwoo/MOON Hyunjung",
+    "负者": "LEONG Kin Wa/WONG Choi Chi"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "LEE Jinkwon/KIM Kyungah",
+    "负者": "Subhajit SAHA/Nandita SAHA"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "LEE Jungwoo/MOON Hyunjung",
+    "负者": "Marc DURAN/Sara RAMIREZ"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "LEE Jinkwon/KIM Kyungah",
+    "负者": "Christian SUSS/Kristin LANG"
+  },
+  {
+    "日期": "2005-05-04",
+    "类型": "世乒赛",
+    "胜者": "OH Sangeun/LEE Hyangmi",
+    "负者": "LEE Jungwoo/MOON Hyunjung"
+  },
+  {
+    "日期": "2005-04-30",
+    "类型": "世乒赛",
+    "胜者": "Antonio GIANNINI/Fabiola RAMOS",
+    "负者": "Andrea TAROCCO/Soulinda SISAVATH"
+  },
+  {
+    "日期": "2005-04-30",
+    "类型": "世乒赛",
+    "胜者": "L PIYADASA Thilina/Gayanthika HERATH KALPANI",
+    "负者": "Alfred NAJEM/Elizabeth BARIKIAN"
+  },
+  {
+    "日期": "2005-04-30",
+    "类型": "世乒赛",
+    "胜者": "Antonio GIANNINI/Fabiola RAMOS",
+    "负者": "Rachid EL BOUBOU/Lara KEJEBACHIAN"
+  },
+  {
+    "日期": "2005-04-30",
+    "类型": "世乒赛",
+    "胜者": "LAM Tong Hou/CHAN Lai Ha",
+    "负者": "Yagshimyrat ANNAMYRADOV/Irina PERMONOVA"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Karl JINDRAK/LI Qiangbing",
+    "负者": "CHAN Koon Wah/Khim NG Sock"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "OH Sangeun/LEE Hyangmi",
+    "负者": "CHONG Chit Sheng/Jiin CHIU Soo"
+  },
+  {
+    "日期": "2005-04-30",
+    "类型": "世乒赛",
+    "胜者": "Marcos MADRID/Mariana MANDUJANO",
+    "负者": "Stavros TSOUDEROS/Elena MARI"
+  },
+  {
+    "日期": "2005-04-30",
+    "类型": "世乒赛",
+    "胜者": "Rhikesh TAUCOORY/Wendy KWOK CHOON",
+    "负者": "Bomboko BABUNGU/Jonathan MOKOHA"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Danny HEISTER/LI Jiao",
+    "负者": "Jonathan PINO/Mariana GUANCHEZ"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "Danny HEISTER/LI Jiao",
+    "负者": "Peter SEREDA/Lenka KMOTORKOVA"
+  },
+  {
+    "日期": "2005-05-04",
+    "类型": "世乒赛",
+    "胜者": "LI Ching/LAU Sui Fei",
+    "负者": "Danny HEISTER/LI Jiao"
+  },
+  {
+    "日期": "2005-04-30",
+    "类型": "世乒赛",
+    "胜者": "Joselito ALMAZAN/Arlene BORJA",
+    "负者": "Hunor SZOCS/Besjana TOSUNI"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Konstantinos PAPAGEORGIOU/Ekaterina NTOULAKI",
+    "负者": "Tiago APOLONIA/Ana NEVES"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Bastian STEGER/Elke SCHALL",
+    "负者": "Joao MONTEIRO/Ana SILVA"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "LIU Guozheng/BAI Yang",
+    "负者": "RI Chol Guk/KO Un Gyong"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "PAK Won Chol/KIM Hyang Mi",
+    "负者": "Segun TORIOLA/Olufunke OSHONAIKE"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "KIM Song Chol/KIM Jong",
+    "负者": "Sofiene BOUDJADJA/Leila BOUCETTA"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "PAK Won Chol/KIM Hyang Mi",
+    "负者": "CHANG Yen-Shu/PAN Chun-Chu"
+  },
+  {
+    "日期": "2005-05-04",
+    "类型": "世乒赛",
+    "胜者": "YAN Sen/GUO Yan",
+    "负者": "PAK Won Chol/KIM Hyang Mi"
+  },
+  {
+    "日期": "2005-05-04",
+    "类型": "世乒赛",
+    "胜者": "KIM Song Chol/KIM Jong",
+    "负者": "CHEUNG Yuk/TIE Yana"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Adrian CRISAN/Otilia BADESCU",
+    "负者": "Loic BOBILLIER/Laurie PHAI PANG"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "Adrian CRISAN/Otilia BADESCU",
+    "负者": "Lars HIELSCHER/Tanja KRAMER"
+  },
+  {
+    "日期": "2005-05-04",
+    "类型": "世乒赛",
+    "胜者": "Seiya KISHIKAWA/Ai FUJINUMA",
+    "负者": "Adrian CRISAN/Otilia BADESCU"
+  },
+  {
+    "日期": "2005-04-30",
+    "类型": "世乒赛",
+    "胜者": "Hernan PINZON/Natalia BEDOYA",
+    "负者": "Radu VOINEA/Adrian SUCIU"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Alexey LIVENTSOV/Anastasia VORONOVA",
+    "负者": "Shakirin IBRAHIM Muhd/Wei BEH Lee"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Kirill SKACHKOV/Natalia BOLSHAKOVA",
+    "负者": "HO Jason/TAN Paey Fern"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Alexey SMIRNOV/Svetlana GANINA",
+    "负者": "Massimiliano MONDELLO/TAN Wenling"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "KIM Song Chol/KIM Jong",
+    "负者": "Alexey SMIRNOV/Svetlana GANINA"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Peter SEREDA/Lenka KMOTORKOVA",
+    "负者": "Sas LASAN/Jana TOMAZINI"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Bojan TOKIC/Helena HALAS",
+    "负者": "Joselito ALMAZAN/Arlene BORJA"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "Bojan TOKIC/Helena HALAS",
+    "负者": "Marek KLASEK/Renata STRBIKOVA"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Peter FAZEKAS/Krisztina TOTH",
+    "负者": "L PIYADASA Thilina/Gayanthika HERATH KALPANI"
+  },
+  {
+    "日期": "2005-04-30",
+    "类型": "世乒赛",
+    "胜者": "L PIYADASA Thilina/Gayanthika HERATH KALPANI",
+    "负者": "Julius ESPOSO/Jesusa TAYAG"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Ahmed SALEH/Bacent OSMAN",
+    "负者": "Chaisit CHAITAT/Anisara MUANGSUK"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Jun MIZUTANI/Aya UMEMURA",
+    "负者": "CHIANG Hung-Chieh/LEE I-Chen"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "CHOU Tung-Yu/YU Mei-Ju",
+    "负者": "Daniel HABESOHN/Martina PETZNER"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "CHANG Yen-Shu/PAN Chun-Chu",
+    "负者": "Simon WALLACE/YANG Annie"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Ilija LUPULESKU/GAO Jun",
+    "负者": "WU Chih-Chi/LU Yun-Feng"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "LIN Ju/WU Xue",
+    "负者": "CHOU Tung-Yu/YU Mei-Ju"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "Mitja HORVAT/Petra SKABAR",
+    "负者": "Gdara HAMAM/Olfa GUENNI"
+  },
+  {
+    "日期": "2005-04-30",
+    "类型": "世乒赛",
+    "胜者": "Ernesto EBUEN/Sendrina BALATBAT",
+    "负者": "Mourad ZHIOUA/Roua KORBI"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "Peter FAZEKAS/Krisztina TOTH",
+    "负者": "Safa AVCI/Bilgen OZTURK"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "CHENG Yinghua/Jasna RATHER",
+    "负者": "Irfan TAVUKCUOGLU/Nevin MUTLU"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "CAI Xiaoli/LI Jiawei",
+    "负者": "Khoa NGUYEN/Jacqueline LEE"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "XIAO Han/Lily YIP",
+    "负者": "Marcos FREITAS/Joana GONCALVES"
+  },
+  {
+    "日期": "2005-05-03",
+    "类型": "世乒赛",
+    "胜者": "WANG Liqin/GUO Yue",
+    "负者": "XIAO Han/Lily YIP"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "LI Ching/LAU Sui Fei",
+    "负者": "Antonio GIANNINI/Fabiola RAMOS"
+  },
+  {
+    "日期": "2005-05-02",
+    "类型": "世乒赛",
+    "胜者": "WANG Liqin/GUO Yue",
+    "负者": "Luis DIAZ/Maria RAMOS"
+  },
+  {
+    "日期": "2005-04-30",
+    "类型": "世乒赛",
+    "胜者": "Luis DIAZ/Maria RAMOS",
+    "负者": "Joseph CRUZ/Chrisma CAPISTRANO"
+  },
+  {
+    "日期": "2005-04-30",
+    "类型": "世乒赛",
+    "胜者": "Antonio GIANNINI/Fabiola RAMOS",
+    "负者": "Ernesto EBUEN/Sendrina BALATBAT"
+  }
+]
