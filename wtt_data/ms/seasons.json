@@ -4,7 +4,7 @@
     "label": "before2021",
     "startDate": "2000-01-01",
     "endDate": "2020-12-31",
-    "visible": false,
+    "visible": true,
     "snapshotDates": [
       "2000-01-01",
       "2000-07-01",      

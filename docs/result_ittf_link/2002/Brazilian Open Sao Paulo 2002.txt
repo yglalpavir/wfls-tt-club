@@ -1,0 +1,162 @@
+2002	Brazilian Open Sao Paulo 2002	ITTF World Tour / Pro Tour	--	128	2002-07-11	2002-07-14
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 57
+
+2002	Brazilian Open Sao Paulo 2002	CAVALCANTE Andre (BRA)		COELLO Geovanny (ECU)		MS	Qualification		2 - 4	11:4 7:11 8:11 11:7 7:11 9:11	COELLO Geovanny	
+2002	Brazilian Open Sao Paulo 2002	FEJER-KONNERTH Zoltan (GER)		COELLO Geovanny (ECU)		MS	Qualification		4 - 0	11:5 11:5 11:3 11:4	FEJER-KONNERTH Zoltan	
+2002	Brazilian Open Sao Paulo 2002	FEJER-KONNERTH Zoltan (GER)		CAVALCANTE Andre (BRA)		MS	Qualification		4 - 0	11:5 11:8 11:3 11:6	FEJER-KONNERTH Zoltan	
+2002	Brazilian Open Sao Paulo 2002	ABDALA Bruno (BRA)		BITZIGEIO Jorg (GER)		MS	Qualification		0 - 4	3:11 2:11 3:11 7:11	BITZIGEIO Jorg	
+2002	Brazilian Open Sao Paulo 2002	KIHO Shinnosuke (JPN)		BITZIGEIO Jorg (GER)		MS	Qualification		4 - 2	11:7 8:11 13:11 7:11 13:11 11:5	KIHO Shinnosuke	
+2002	Brazilian Open Sao Paulo 2002	KIHO Shinnosuke (JPN)		ABDALA Bruno (BRA)		MS	Qualification		4 - 0	11:8 11:5 11:8 11:2	KIHO Shinnosuke	
+2002	Brazilian Open Sao Paulo 2002	SANADA Koji (JPN)		CARDOSO Rivalino (BRA)		MS	Qualification		4 - 0	11:5 11:7 11:4 11:4	SANADA Koji	
+2002	Brazilian Open Sao Paulo 2002	TAKAYAMA Thiago (BRA)		ARAI Shu (JPN)		MS	Qualification		0 - 4	1:11 7:11 7:11 6:11	ARAI Shu	
+2002	Brazilian Open Sao Paulo 2002	CLOSSET Marc (BEL)		ARAI Shu (JPN)		MS	Qualification		4 - 2	12:10 11:5 10:12 11:7 11:13 11:9	CLOSSET Marc	
+2002	Brazilian Open Sao Paulo 2002	CLOSSET Marc (BEL)		TAKAYAMA Thiago (BRA)		MS	Qualification		4 - 0	12:10 11:3 11:5 11:3	CLOSSET Marc	
+2002	Brazilian Open Sao Paulo 2002	JINDRAK Karl (AUT)		VENTURA DOS ANJOS Bruno (BRA)		MS	Qualification		4 - 0	12:10 11:6 11:8 11:7	JINDRAK Karl	
+2002	Brazilian Open Sao Paulo 2002	FETH Stefan (GER)		YAMAMOTO Reinaldo (BRA)		MS	Qualification		4 - 0	11:3 11:2 11:7 11:4	FETH Stefan	
+2002	Brazilian Open Sao Paulo 2002	MONTEIRO Thiago (BRA)		TAKAMORI Hidero (JPN)		MS	Qualification		4 - 1	9:11 11:5 11:5 11:6 11:7	MONTEIRO Thiago	
+2002	Brazilian Open Sao Paulo 2002	PAPIC Juan (CHI)		TSUBOI Gustavo (BRA)		MS	Qualification		4 - 2	11:5 6:11 11:6 4:11 11:6 11:8	PAPIC Juan	
+2002	Brazilian Open Sao Paulo 2002	SAKAMOTO Ryusuke (JPN)		TSUBOI Gustavo (BRA)		MS	Qualification		4 - 2	11:7 11:8 11:8 6:11 4:11 14:12	SAKAMOTO Ryusuke	
+2002	Brazilian Open Sao Paulo 2002	SAKAMOTO Ryusuke (JPN)		PAPIC Juan (CHI)		MS	Qualification		3 - 4	9:11 12:10 11:6 8:11 13:15 11:9 7:11	PAPIC Juan	
+2002	Brazilian Open Sao Paulo 2002	HANASHIRO Hugo (BRA)		CARVALHO Efraim (BRA)		MS	Qualification		4 - 1	11:6 9:11 11:7 11:8 11:4	HANASHIRO Hugo	
+2002	Brazilian Open Sao Paulo 2002	TANIGUCHI Yuji (JPN)		CARVALHO Efraim (BRA)		MS	Qualification		4 - 0	11:4 11:6 11:9 11:5	TANIGUCHI Yuji	
+2002	Brazilian Open Sao Paulo 2002	TANIGUCHI Yuji (JPN)		HANASHIRO Hugo (BRA)		MS	Qualification		3 - 4	11:7 11:5 11:9 7:11 6:11 9:11 7:11	HANASHIRO Hugo	
+2002	Brazilian Open Sao Paulo 2002	KISHIKAWA Seiya (JPN)		RAMOS FILHO Pedro (BRA)		MS	Qualification		4 - 0	12:10 11:7 11:7 11:4	KISHIKAWA Seiya	
+2002	Brazilian Open Sao Paulo 2002	WEITZ Daniel (GER)		MATSUMOTO Cazuo (BRA)		MS	Qualification		2 - 4	8:11 11:6 6:11 11:9 6:11 12:14	MATSUMOTO Cazuo	
+2002	Brazilian Open Sao Paulo 2002	MATSUMOTO Cazuo (BRA)		RAMOS FILHO Pedro (BRA)		MS	Qualification		4 - 1	12:10 11:5 11:5 3:11 11:9	MATSUMOTO Cazuo	
+2002	Brazilian Open Sao Paulo 2002	KISHIKAWA Seiya (JPN)		WEITZ Daniel (GER)		MS	Qualification		2 - 4	13:11 12:10 8:11 9:11 9:11 4:11	WEITZ Daniel	
+2002	Brazilian Open Sao Paulo 2002	KISHIKAWA Seiya (JPN)		MATSUMOTO Cazuo (BRA)		MS	Qualification		4 - 3	8:11 11:5 8:11 13:11 11:8 6:11 14:12	KISHIKAWA Seiya	
+2002	Brazilian Open Sao Paulo 2002	WEITZ Daniel (GER)		RAMOS FILHO Pedro (BRA)		MS	Qualification		4 - 1	11:5 11:5 11:5 8:11 11:8	WEITZ Daniel	
+2002	Brazilian Open Sao Paulo 2002	SCHLAGER Werner (AUT)		ARAI Shu (JPN)		MS	Main Draw	R32	4 - 3	3:11 7:11 10:12 11:8 11:7 12:10 11:3	SCHLAGER Werner	
+2002	Brazilian Open Sao Paulo 2002	MONTEIRO Thiago (BRA)		WOSIK Torben (GER)		MS	Main Draw	R32	0 - 4	3:11 7:11 4:11 8:11	WOSIK Torben	
+2002	Brazilian Open Sao Paulo 2002	SMIRNOV Alexey (RUS)		TANIGUCHI Yuji (JPN)		MS	Main Draw	R32	4 - 1	11:3 11:7 9:11 11:4 11:6	SMIRNOV Alexey	
+2002	Brazilian Open Sao Paulo 2002	YAMAMOTO Reinaldo (BRA)		TASAKI Toshio (JPN)		MS	Main Draw	R32	0 - 4	4:11 8:11 9:11 6:11	TASAKI Toshio	
+2002	Brazilian Open Sao Paulo 2002	LEE Chulseung (KOR)		MATSUMOTO Cazuo (BRA)		MS	Main Draw	R32	4 - 1	11:6 8:11 11:4 11:5 11:5	LEE Chulseung	
+2002	Brazilian Open Sao Paulo 2002	KIHO Shinnosuke (JPN)		MONRAD Martin (DEN)		MS	Main Draw	R32	4 - 3	9:11 6:11 9:11 11:6 11:9 11:9 11:9	KIHO Shinnosuke	
+2002	Brazilian Open Sao Paulo 2002	MAZE Michael (DEN)		FEJER-KONNERTH Zoltan (GER)		MS	Main Draw	R32	4 - 2	11:7 11:8 8:11 7:11 11:6 11:9	MAZE Michael	
+2002	Brazilian Open Sao Paulo 2002	TAKAMORI Hidero (JPN)		KEEN Trinko (NED)		MS	Main Draw	R32	1 - 4	8:11 10:12 11:9 6:11 10:12	KEEN Trinko	
+2002	Brazilian Open Sao Paulo 2002	RYU Seungmin (KOR)		HANASHIRO Hugo (BRA)		MS	Main Draw	R32	4 - 1	11:8 11:5 11:5 9:11 11:4	RYU Seungmin	
+2002	Brazilian Open Sao Paulo 2002	SANADA Koji (JPN)		TUGWELL Finn (DEN)		MS	Main Draw	R32	4 - 3	7:11 11:6 13:15 12:14 11:5 11:3 11:4	SANADA Koji	
+2002	Brazilian Open Sao Paulo 2002	HOYAMA Hugo (BRA)		JINDRAK Karl (AUT)		MS	Main Draw	R32	2 - 4	13:11 3:11 4:11 6:11 12:10 9:11	JINDRAK Karl	
+2002	Brazilian Open Sao Paulo 2002	FETH Stefan (GER)		HEISTER Danny (NED)		MS	Main Draw	R32	0 - 4	9:11 3:11 3:11 10:12	HEISTER Danny	
+2002	Brazilian Open Sao Paulo 2002	CHEN Weixing (AUT)		COELLO Geovanny (ECU)		MS	Main Draw	R32	4 - 0	11:3 11:1 11:2 11:2	CHEN Weixing	
+2002	Brazilian Open Sao Paulo 2002	PAPIC Juan (CHI)		KEINATH Thomas (SVK)		MS	Main Draw	R32	0 - 4	7:11 5:11 4:11 11:13	KEINATH Thomas	
+2002	Brazilian Open Sao Paulo 2002	GARDOS Robert (AUT)		CLOSSET Marc (BEL)		MS	Main Draw	R32	4 - 3	11:5 11:7 9:11 12:10 8:11 7:11 11:5	GARDOS Robert	
+2002	Brazilian Open Sao Paulo 2002	BITZIGEIO Jorg (GER)		OH Sangeun (KOR)		MS	Main Draw	R32	0 - 4	7:11 8:11 5:11 7:11	OH Sangeun	
+2002	Brazilian Open Sao Paulo 2002	SCHLAGER Werner (AUT)		WOSIK Torben (GER)		MS	Main Draw	R16	4 - 3	6:11 11:9 8:11 11:8 6:11 11:5 11:6	SCHLAGER Werner	
+2002	Brazilian Open Sao Paulo 2002	SMIRNOV Alexey (RUS)		TASAKI Toshio (JPN)		MS	Main Draw	R16	4 - 3	11:6 11:4 6:11 11:6 9:11 8:11 11:7	SMIRNOV Alexey	
+2002	Brazilian Open Sao Paulo 2002	LEE Chulseung (KOR)		KIHO Shinnosuke (JPN)		MS	Main Draw	R16	4 - 1	11:8 11:8 11:6 6:11 12:10	LEE Chulseung	
+2002	Brazilian Open Sao Paulo 2002	MAZE Michael (DEN)		KEEN Trinko (NED)		MS	Main Draw	R16	4 - 2	11:7 5:11 11:9 5:11 15:13 11:3	MAZE Michael	
+2002	Brazilian Open Sao Paulo 2002	RYU Seungmin (KOR)		SANADA Koji (JPN)		MS	Main Draw	R16	4 - 0	11:6 11:4 11:3 11:9	RYU Seungmin	
+2002	Brazilian Open Sao Paulo 2002	JINDRAK Karl (AUT)		HEISTER Danny (NED)		MS	Main Draw	R16	0 - 4	7:11 6:11 8:11 9:11	HEISTER Danny	
+2002	Brazilian Open Sao Paulo 2002	CHEN Weixing (AUT)		KEINATH Thomas (SVK)		MS	Main Draw	R16	0 - 4	11:13 8:11 8:11 2:11	KEINATH Thomas	
+2002	Brazilian Open Sao Paulo 2002	GARDOS Robert (AUT)		OH Sangeun (KOR)		MS	Main Draw	R16	0 - 4	5:11 7:11 8:11 5:11	OH Sangeun	
+2002	Brazilian Open Sao Paulo 2002	SMIRNOV Alexey (RUS)		SCHLAGER Werner (AUT)		MS	Main Draw	QuarterFinal	3 - 4	11:6 9:11 11:8 8:11 11:6 5:11 6:11	SCHLAGER Werner	
+2002	Brazilian Open Sao Paulo 2002	MAZE Michael (DEN)		LEE Chulseung (KOR)		MS	Main Draw	QuarterFinal	4 - 3	7:11 8:11 7:11 11:6 12:10 11:8 11:5	MAZE Michael	
+2002	Brazilian Open Sao Paulo 2002	HEISTER Danny (NED)		RYU Seungmin (KOR)		MS	Main Draw	QuarterFinal	2 - 4	10:12 8:11 14:12 7:11 11:7 8:11	RYU Seungmin	
+2002	Brazilian Open Sao Paulo 2002	OH Sangeun (KOR)		KEINATH Thomas (SVK)		MS	Main Draw	QuarterFinal	2 - 4	11:2 8:11 8:11 12:14 11:1 8:11	KEINATH Thomas	
+2002	Brazilian Open Sao Paulo 2002	MAZE Michael (DEN)		SCHLAGER Werner (AUT)		MS	Main Draw	SemiFinal	2 - 4	9:11 11:7 5:11 9:11 11:8 8:11	SCHLAGER Werner	
+2002	Brazilian Open Sao Paulo 2002	KEINATH Thomas (SVK)		RYU Seungmin (KOR)		MS	Main Draw	SemiFinal	1 - 4	11:13 11:9 5:11 5:11 7:11	RYU Seungmin
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 37
+
+2002	Brazilian Open Sao Paulo 2002	FERNANDES Simone (BRA)		MEDINA Iizzwa (HON)		WS	Qualification		4 - 3	5:11 8:11 11:9 5:11 11:9 11:6 11:9	FERNANDES Simone	
+2002	Brazilian Open Sao Paulo 2002	NISHII Miyuki (JPN)		MEDINA Iizzwa (HON)		WS	Qualification		4 - 0	11:5 11:3 11:8 11:4	NISHII Miyuki	
+2002	Brazilian Open Sao Paulo 2002	NISHII Miyuki (JPN)		FERNANDES Simone (BRA)		WS	Qualification		4 - 0	11:5 11:7 11:5 15:13	NISHII Miyuki	
+2002	Brazilian Open Sao Paulo 2002	IKEIZUMI Claudia (BRA)		SAKO Karin (BRA)		WS	Qualification		4 - 2	10:12 11:7 13:11 9:11 11:6 11:7	IKEIZUMI Claudia	
+2002	Brazilian Open Sao Paulo 2002	KRAMER Tanja (GER)		SAKO Karin (BRA)		WS	Qualification		4 - 1	11:2 11:6 11:6 7:11 11:8	KRAMER Tanja	
+2002	Brazilian Open Sao Paulo 2002	KRAMER Tanja (GER)		IKEIZUMI Claudia (BRA)		WS	Qualification		4 - 0	11:5 15:13 12:10 12:10	KRAMER Tanja	
+2002	Brazilian Open Sao Paulo 2002	HASEGAVA Thais (BRA)		SHIWA Silvia (BRA)		WS	Qualification		4 - 0	11:9 11:6 11:8 11:3	HASEGAVA Thais	
+2002	Brazilian Open Sao Paulo 2002	HAN Kwangsun (KOR)		SHIWA Silvia (BRA)		WS	Qualification		4 - 0	12:10 11:6 11:4 11:3	HAN Kwangsun	
+2002	Brazilian Open Sao Paulo 2002	HAN Kwangsun (KOR)		HASEGAVA Thais (BRA)		WS	Qualification		4 - 0	11:6 11:4 11:3 11:2	HAN Kwangsun	
+2002	Brazilian Open Sao Paulo 2002	NONAKA Mariany (BRA)		SOUZA Caroline (BRA)		WS	Qualification		4 - 2	9:11 11:6 11:4 11:8 7:11 11:5	NONAKA Mariany	
+2002	Brazilian Open Sao Paulo 2002	BARREIRA Nathalia (BRA)		KOCK Luciana (BRA)		WS	Qualification		4 - 0	11:4 11:6 11:6 11:9	BARREIRA Nathalia	
+2002	Brazilian Open Sao Paulo 2002	IKEIZUMI Claudia (BRA)		SUK Eunmi (KOR)		WS	Main Draw	R32	0 - 4	8:11 3:11 4:11 7:11	SUK Eunmi	
+2002	Brazilian Open Sao Paulo 2002	NISHII Yuka (JPN)		SAKO Karin (BRA)		WS	Main Draw	R32	4 - 0	11:3 11:3 11:5 11:3	NISHII Yuka	
+2002	Brazilian Open Sao Paulo 2002	NEMES Olga (ROU)		SHIWA Silvia (BRA)		WS	Main Draw	R32	4 - 0	11:2 11:5 11:5 11:3	NEMES Olga	
+2002	Brazilian Open Sao Paulo 2002	NONAKA Mariany (BRA)		SCHALL Elke (GER)		WS	Main Draw	R32	1 - 4	2:11 11:7 6:11 8:11 4:11	SCHALL Elke	
+2002	Brazilian Open Sao Paulo 2002	KISHIDA Satoko (JPN)		KRAMER Tanja (GER)		WS	Main Draw	R32	4 - 1	11:7 9:11 11:7 11:4 11:6	KISHIDA Satoko	
+2002	Brazilian Open Sao Paulo 2002	LIU Jia (AUT)		SOUZA Caroline (BRA)		WS	Main Draw	R32	4 - 0	11:2 11:1 11:3 11:3	LIU Jia	
+2002	Brazilian Open Sao Paulo 2002	HAN Kwangsun (KOR)		FUKUHARA Ai (JPN)		WS	Main Draw	R32	3 - 4	16:14 11:6 12:10 8:11 4:11 6:11 8:11	FUKUHARA Ai	
+2002	Brazilian Open Sao Paulo 2002	SILVA Ligia (BRA)		NISHII Miyuki (JPN)		WS	Main Draw	R32	0 - 4	4:11 12:14 3:11 4:11	NISHII Miyuki	
+2002	Brazilian Open Sao Paulo 2002	KOCK Luciana (BRA)		STRUSE Nicole (GER)		WS	Main Draw	R32	0 - 4	2:11 2:11 3:11 4:11	STRUSE Nicole	
+2002	Brazilian Open Sao Paulo 2002	LEE Eunsil (KOR)		FERNANDES Simone (BRA)		WS	Main Draw	R32	4 - 0	11:8 11:4 11:2 11:3	LEE Eunsil	
+2002	Brazilian Open Sao Paulo 2002	HASEGAVA Thais (BRA)		FUJINUMA Ai (JPN)		WS	Main Draw	R32	0 - 4	1:11 4:11 4:11 0:11	FUJINUMA Ai	
+2002	Brazilian Open Sao Paulo 2002	HIURA Reiko (JPN)		BARREIRA Nathalia (BRA)		WS	Main Draw	R32	4 - 0	11:9 11:3 11:6 11:7	HIURA Reiko	
+2002	Brazilian Open Sao Paulo 2002	SUK Eunmi (KOR)		RYU Jihae (KOR)		WS	Main Draw	R16	4 - 0	11:6 11:8 14:12 11:9	SUK Eunmi	
+2002	Brazilian Open Sao Paulo 2002	TASEI Mikie (JPN)		NISHII Yuka (JPN)		WS	Main Draw	R16	1 - 4	11:6 8:11 7:11 7:11 2:11	NISHII Yuka	
+2002	Brazilian Open Sao Paulo 2002	SCHALL Elke (GER)		NEMES Olga (ROU)		WS	Main Draw	R16	0 - 4	11:13 4:11 10:12 4:11	NEMES Olga	
+2002	Brazilian Open Sao Paulo 2002	UMEMURA Aya (JPN)		KISHIDA Satoko (JPN)		WS	Main Draw	R16	4 - 3	11:5 7:11 11:6 6:11 11:8 5:11 11:9	UMEMURA Aya	
+2002	Brazilian Open Sao Paulo 2002	FUKUHARA Ai (JPN)		LIU Jia (AUT)		WS	Main Draw	R16	3 - 4	5:11 7:11 13:11 10:12 11:9 12:10 7:11	LIU Jia	
+2002	Brazilian Open Sao Paulo 2002	STRUSE Nicole (GER)		NISHII Miyuki (JPN)		WS	Main Draw	R16	4 - 3	11:8 11:9 5:11 9:11 10:12 11:5 11:6	STRUSE Nicole	
+2002	Brazilian Open Sao Paulo 2002	FUJINUMA Ai (JPN)		LEE Eunsil (KOR)		WS	Main Draw	R16	4 - 2	11:9 8:11 15:13 11:7 7:11 11:7	FUJINUMA Ai	
+2002	Brazilian Open Sao Paulo 2002	KIM Mookyo (KOR)		HIURA Reiko (JPN)		WS	Main Draw	R16	4 - 3	8:11 11:5 8:11 11:5 11:4 11:13 11:7	KIM Mookyo	
+2002	Brazilian Open Sao Paulo 2002	NISHII Yuka (JPN)		SUK Eunmi (KOR)		WS	Main Draw	QuarterFinal	3 - 4	14:16 11:6 11:7 4:11 9:11 12:9 9:11	SUK Eunmi	
+2002	Brazilian Open Sao Paulo 2002	UMEMURA Aya (JPN)		NEMES Olga (ROU)		WS	Main Draw	QuarterFinal	4 - 0	11:2 14:12 14:12 12:10	UMEMURA Aya	
+2002	Brazilian Open Sao Paulo 2002	STRUSE Nicole (GER)		LIU Jia (AUT)		WS	Main Draw	QuarterFinal	4 - 2	9:11 11:6 5:11 15:13 11:9 11:3	STRUSE Nicole	
+2002	Brazilian Open Sao Paulo 2002	KIM Mookyo (KOR)		FUJINUMA Ai (JPN)		WS	Main Draw	QuarterFinal	2 - 4	8:11 11:13 9:11 16:14 11:5 7:11	FUJINUMA Ai	
+2002	Brazilian Open Sao Paulo 2002	UMEMURA Aya (JPN)		SUK Eunmi (KOR)		WS	Main Draw	SemiFinal	4 - 1	11:3 12:10 11:7 10:12 12:10	UMEMURA Aya	
+2002	Brazilian Open Sao Paulo 2002	FUJINUMA Ai (JPN)		STRUSE Nicole (GER)		WS	Main Draw	SemiFinal	2 - 4	12:10 11:2 8:11 3:11 6:11 7:11	STRUSE Nicole
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 21
+
+2002	Brazilian Open Sao Paulo 2002	CHEN Weixing (AUT)	GARDOS Robert (AUT)	CARDOSO Rivalino (BRA)	RAMOS FILHO Pedro (BRA)	MD	Qualification	14	3 - 0	11:9 11:5 11:6	CHEN Weixing	GARDOS Robert
+2002	Brazilian Open Sao Paulo 2002	CHEN Weixing (AUT)	GARDOS Robert (AUT)	CLOSSET Marc (BEL)	TUGWELL Finn (DEN)	MD	Main Draw	R16	3 - 2	11:8 7:11 13:15 11:6 11:9	CHEN Weixing	GARDOS Robert
+2002	Brazilian Open Sao Paulo 2002	CHEN Weixing (AUT)	GARDOS Robert (AUT)	OH Sangeun (KOR)	SMIRNOV Alexey (RUS)	MD	Main Draw	QuarterFinal	0 - 3	9:11 7:11 6:11	OH Sangeun	SMIRNOV Alexey
+2002	Brazilian Open Sao Paulo 2002	JINDRAK Karl (AUT)	SCHLAGER Werner (AUT)	TANIGUCHI Yuji (JPN)	TASAKI Toshio (JPN)	MD	Main Draw	QuarterFinal	3 - 0	11:6 11:5 11:9	JINDRAK Karl	SCHLAGER Werner
+2002	Brazilian Open Sao Paulo 2002	JINDRAK Karl (AUT)	SCHLAGER Werner (AUT)	OH Sangeun (KOR)	SMIRNOV Alexey (RUS)	MD	Main Draw	SemiFinal	4 - 1	11:9 11:7 9:11 11:6 11:5	JINDRAK Karl	SCHLAGER Werner
+2002	Brazilian Open Sao Paulo 2002	JINDRAK Karl (AUT)	SCHLAGER Werner (AUT)	FEJER-KONNERTH Zoltan (GER)	WOSIK Torben (GER)	MD	Main Draw	Final	4 - 0	11:4 11:6 11:9 11:9	JINDRAK Karl	SCHLAGER Werner
+2002	Brazilian Open Sao Paulo 2002	ABDALA Bruno (BRA)	CARVALHO Efraim (BRA)	ARAI Shu (JPN)	TAKAMORI Hidero (JPN)	MD	Qualification	14	0 - 3	7:11 4:11 4:11	ARAI Shu	TAKAMORI Hidero
+2002	Brazilian Open Sao Paulo 2002	HOYAMA Hugo (BRA)	MONTEIRO Thiago (BRA)	JINDRAK Karl (AUT)	SCHLAGER Werner (AUT)	MD	Main Draw	R16	1 - 3	11:6 9:11 9:11 8:11	JINDRAK Karl	SCHLAGER Werner
+2002	Brazilian Open Sao Paulo 2002	COELLO Geovanny (ECU)	PAPIC Juan (CHI)	KIHO Shinnosuke (JPN)	SANADA Koji (JPN)	MD	Qualification	14	0 - 3	5:11 7:11 4:11	KIHO Shinnosuke	SANADA Koji
+2002	Brazilian Open Sao Paulo 2002	MAZE Michael (DEN)	MONRAD Martin (DEN)	VENTURA DOS ANJOS Bruno (BRA)	MATSUMOTO Cazuo (BRA)	MD	Main Draw	R16	3 - 0	11:9 11:6 11:9	MAZE Michael	MONRAD Martin
+2002	Brazilian Open Sao Paulo 2002	MAZE Michael (DEN)	MONRAD Martin (DEN)	FEJER-KONNERTH Zoltan (GER)	WOSIK Torben (GER)	MD	Main Draw	SemiFinal	3 - 4	1:11 11:7 10:12 4:11 11:7 11:9 8:11	FEJER-KONNERTH Zoltan	WOSIK Torben
+2002	Brazilian Open Sao Paulo 2002	BITZIGEIO Jorg (GER)	WEITZ Daniel (GER)	HANASHIRO Hugo (BRA)	TSUBOI Gustavo (BRA)	MD	Qualification	14	3 - 2	10:12 8:11 11:8 11:6 11:5	BITZIGEIO Jorg	WEITZ Daniel
+2002	Brazilian Open Sao Paulo 2002	FEJER-KONNERTH Zoltan (GER)	WOSIK Torben (GER)	LEE Chulseung (KOR)	RYU Seungmin (KOR)	MD	Main Draw	QuarterFinal	3 - 2	11:7 11:9 6:11 5:11 11:6	FEJER-KONNERTH Zoltan	WOSIK Torben
+2002	Brazilian Open Sao Paulo 2002	KISHIKAWA Seiya (JPN)	SAKAMOTO Ryusuke (JPN)	TAKAYAMA Thiago (BRA)	YAMAMOTO Reinaldo (BRA)	MD	Qualification	14	3 - 0	11:8 11:9 11:8	KISHIKAWA Seiya	SAKAMOTO Ryusuke
+2002	Brazilian Open Sao Paulo 2002	KIHO Shinnosuke (JPN)	SANADA Koji (JPN)	FEJER-KONNERTH Zoltan (GER)	WOSIK Torben (GER)	MD	Main Draw	R16	1 - 3	9:11 11:7 7:11 9:11	FEJER-KONNERTH Zoltan	WOSIK Torben
+2002	Brazilian Open Sao Paulo 2002	KISHIKAWA Seiya (JPN)	SAKAMOTO Ryusuke (JPN)	HEISTER Danny (NED)	KEEN Trinko (NED)	MD	Main Draw	R16	3 - 0	11:9 12:10 12:10	KISHIKAWA Seiya	SAKAMOTO Ryusuke
+2002	Brazilian Open Sao Paulo 2002	TANIGUCHI Yuji (JPN)	TASAKI Toshio (JPN)	FETH Stefan (GER)	KEINATH Thomas (SVK)	MD	Main Draw	R16	3 - 1	11:8 4:11 11:6 11:9	TANIGUCHI Yuji	TASAKI Toshio
+2002	Brazilian Open Sao Paulo 2002	KISHIKAWA Seiya (JPN)	SAKAMOTO Ryusuke (JPN)	MAZE Michael (DEN)	MONRAD Martin (DEN)	MD	Main Draw	QuarterFinal	1 - 3	11:4 4:11 6:11 7:11	MAZE Michael	MONRAD Martin
+2002	Brazilian Open Sao Paulo 2002	LEE Chulseung (KOR)	RYU Seungmin (KOR)	BITZIGEIO Jorg (GER)	WEITZ Daniel (GER)	MD	Main Draw	R16	3 - 0	11:4 11:4 11:3	LEE Chulseung	RYU Seungmin
+2002	Brazilian Open Sao Paulo 2002	OH Sangeun (KOR)	SMIRNOV Alexey (RUS)	ARAI Shu (JPN)	TAKAMORI Hidero (JPN)	MD	Main Draw	R16	3 - 1	11:9 4:11 11:7 11:2	OH Sangeun	SMIRNOV Alexey
+2002	Brazilian Open Sao Paulo 2002	CAVALCANTE Andre (BRA)		FETH Stefan (GER)	KEINATH Thomas (SVK)	MD	Qualification	14	0 - 3	4:11 6:11 7:11	FETH Stefan	KEINATH Thomas
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 13
+
+2002	Brazilian Open Sao Paulo 2002	KRAMER Tanja (GER)	LIU Jia (AUT)	FERNANDES Simone (BRA)	SILVA Ligia (BRA)	WD	Main Draw	R16	3 - 0	11:3 11:4 11:8	KRAMER Tanja	LIU Jia
+2002	Brazilian Open Sao Paulo 2002	HASEGAVA Thais (BRA)	SAKO Karin (BRA)	LEE Eunsil (KOR)	SUK Eunmi (KOR)	WD	Main Draw	R16	0 - 3	3:11 6:11 5:11	LEE Eunsil	SUK Eunmi
+2002	Brazilian Open Sao Paulo 2002	STRUSE Nicole (GER)	SCHALL Elke (GER)	BARREIRA Nathalia (BRA)	NONAKA Mariany (BRA)	WD	Main Draw	R16	3 - 0	11:8 11:5 11:5	STRUSE Nicole	SCHALL Elke
+2002	Brazilian Open Sao Paulo 2002	NISHII Yuka (JPN)	NISHII Miyuki (JPN)	IKEIZUMI Claudia (BRA)	SHIWA Silvia (BRA)	WD	Main Draw	R16	3 - 0	11:4 11:3 11:6	NISHII Yuka	NISHII Miyuki
+2002	Brazilian Open Sao Paulo 2002	KISHIDA Satoko (JPN)	UMEMURA Aya (JPN)	KIM Mookyo (KOR)	RYU Jihae (KOR)	WD	Main Draw	QuarterFinal	3 - 1	8:11 11:7 11:7 11:5	KISHIDA Satoko	UMEMURA Aya
+2002	Brazilian Open Sao Paulo 2002	FUKUHARA Ai (JPN)	TASEI Mikie (JPN)	STRUSE Nicole (GER)	SCHALL Elke (GER)	WD	Main Draw	QuarterFinal	1 - 3	7:11 6:11 11:3 9:11	STRUSE Nicole	SCHALL Elke
+2002	Brazilian Open Sao Paulo 2002	KIM Mookyo (KOR)	RYU Jihae (KOR)	KOCK Luciana (BRA)	SOUZA Caroline (BRA)	WD	Main Draw	R16	3 - 0	11:1 11:2 11:6	KIM Mookyo	RYU Jihae
+2002	Brazilian Open Sao Paulo 2002	LEE Eunsil (KOR)	SUK Eunmi (KOR)	NISHII Yuka (JPN)	NISHII Miyuki (JPN)	WD	Main Draw	QuarterFinal	3 - 0	11:7 11:3 12:10	LEE Eunsil	SUK Eunmi
+2002	Brazilian Open Sao Paulo 2002	LEE Eunsil (KOR)	SUK Eunmi (KOR)	STRUSE Nicole (GER)	SCHALL Elke (GER)	WD	Main Draw	SemiFinal	4 - 1	4:11 11:4 11:5 11:4 11:2	LEE Eunsil	SUK Eunmi
+2002	Brazilian Open Sao Paulo 2002	LEE Eunsil (KOR)	SUK Eunmi (KOR)	HAN Kwangsun (KOR)	NEMES Olga (ROU)	WD	Main Draw	Final	4 - 1	11:5 12:10 5:11 11:6 11:8	LEE Eunsil	SUK Eunmi
+2002	Brazilian Open Sao Paulo 2002	HAN Kwangsun (KOR)	NEMES Olga (ROU)	FUJINUMA Ai (JPN)	HIURA Reiko (JPN)	WD	Main Draw	R16	3 - 2	6:11 11:13 11:9 11:2 11:6	HAN Kwangsun	NEMES Olga
+2002	Brazilian Open Sao Paulo 2002	HAN Kwangsun (KOR)	NEMES Olga (ROU)	KRAMER Tanja (GER)	LIU Jia (AUT)	WD	Main Draw	QuarterFinal	3 - 1	7:11 11:7 11:7 11:7	HAN Kwangsun	NEMES Olga
+2002	Brazilian Open Sao Paulo 2002	HAN Kwangsun (KOR)	NEMES Olga (ROU)	KISHIDA Satoko (JPN)	UMEMURA Aya (JPN)	WD	Main Draw	SemiFinal	4 - 3	11:6 14:12 3:11 7:11 11:9 8:11 11:6	HAN Kwangsun	NEMES Olga

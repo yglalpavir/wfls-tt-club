@@ -1,0 +1,291 @@
+Event Data
+Swedish Open Skovde 2001
+SWEDEN
+Dates: 21 Nov - 25 Nov 2001
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+2001	Swedish Open Skovde 2001	TUGWELL Finn (DEN)		CABESTANY Cedrik (FRA)		MS	Qualification		2 - 4	12:14 13:11 10:12 13:11 5:11 9:11	CABESTANY Cedrik	
+2001	Swedish Open Skovde 2001	RODRIGUEZ Alejandro (CHI)		MOLDOVAN Istvan (NOR)		MS	Qualification		0 - 4	7:11 9:11 5:11 8:11	MOLDOVAN Istvan	
+2001	Swedish Open Skovde 2001	RODRIGUEZ Alejandro (CHI)		ROBERTSON Adam (WAL)		MS	Qualification		2 - 4	13:11 8:11 7:11 6:11 11:7 9:11	ROBERTSON Adam	
+2001	Swedish Open Skovde 2001	RODRIGUEZ Alejandro (CHI)		KUZMIN Fedor (RUS)		MS	Qualification		0 - 4	2:11 9:11 6:11 8:11	KUZMIN Fedor	
+2001	Swedish Open Skovde 2001	MOLDOVAN Istvan (NOR)		ROBERTSON Adam (WAL)		MS	Qualification		4 - 1	10:12 11:1 11:2 11:9 11:5	MOLDOVAN Istvan	
+2001	Swedish Open Skovde 2001	MOLDOVAN Istvan (NOR)		KUZMIN Fedor (RUS)		MS	Qualification		0 - 4	6:11 3:11 5:11 10:12	KUZMIN Fedor	
+2001	Swedish Open Skovde 2001	ROBERTSON Adam (WAL)		KUZMIN Fedor (RUS)		MS	Qualification		0 - 4	6:11 7:11 6:11 6:11	KUZMIN Fedor	
+2001	Swedish Open Skovde 2001	SALAMANCA Juan (CHI)		GARDOS Robert (AUT)		MS	Qualification		0 - 4	4:11 8:11 5:11 7:11	GARDOS Robert	
+2001	Swedish Open Skovde 2001	SALAMANCA Juan (CHI)		WAHLGREN Magnus (SWE)		MS	Qualification		0 - 4	9:11 9:11 7:11 3:11	WAHLGREN Magnus	
+2001	Swedish Open Skovde 2001	SALAMANCA Juan (CHI)		HENZELL William (AUS)		MS	Qualification		4 - 3	11:9 12:10 10:12 11:9 7:11 7:11 11:6	SALAMANCA Juan	
+2001	Swedish Open Skovde 2001	GARDOS Robert (AUT)		WAHLGREN Magnus (SWE)		MS	Qualification		4 - 3	11:7 9:11 11:13 10:12 11:6 11:6 11:5	GARDOS Robert	
+2001	Swedish Open Skovde 2001	GARDOS Robert (AUT)		HENZELL William (AUS)		MS	Qualification		4 - 1	11:9 13:11 13:11 6:11 11:9	GARDOS Robert	
+2001	Swedish Open Skovde 2001	WAHLGREN Magnus (SWE)		HENZELL William (AUS)		MS	Qualification		4 - 3	11:8 11:6 11:13 3:11 13:11 11:13 11:4	WAHLGREN Magnus	
+2001	Swedish Open Skovde 2001	PAPIC Juan (CHI)		LARSEN Glen (NOR)		MS	Qualification		2 - 4	12:10 11:8 6:11 8:11 9:11 5:11	LARSEN Glen	
+2001	Swedish Open Skovde 2001	PAPIC Juan (CHI)		KLASEK Marek (CZE)		MS	Qualification		0 - 4	5:11 9:11 5:11 7:11	KLASEK Marek	
+2001	Swedish Open Skovde 2001	PAPIC Juan (CHI)		MARTINEZ Michel (FRA)		MS	Qualification		1 - 4	4:11 11:9 10:12 3:11 5:11	MARTINEZ Michel	
+2001	Swedish Open Skovde 2001	LARSEN Glen (NOR)		KLASEK Marek (CZE)		MS	Qualification		1 - 4	11:9 4:11 8:11 3:11 0:11	KLASEK Marek	
+2001	Swedish Open Skovde 2001	LARSEN Glen (NOR)		MARTINEZ Michel (FRA)		MS	Qualification		2 - 4	10:12 11:9 3:11 11:4 9:11 4:11	MARTINEZ Michel	
+2001	Swedish Open Skovde 2001	KLASEK Marek (CZE)		MARTINEZ Michel (FRA)		MS	Qualification		4 - 2	12:10 11:7 10:12 12:10 8:11 11:9	KLASEK Marek	
+2001	Swedish Open Skovde 2001	MIRAULT Cedric (FRA)		MITAMURA Muneaki (JPN)		MS	Qualification		0 - 4	9:11 9:11 8:11 8:11	MITAMURA Muneaki	
+2001	Swedish Open Skovde 2001	MIRAULT Cedric (FRA)		ASAMOAH Cyprian (SWE)		MS	Qualification		4 - 3	9:11 11:4 11:9 4:11 11:6 10:12 11:6	MIRAULT Cedric	
+2001	Swedish Open Skovde 2001	MIRAULT Cedric (FRA)		KELLER Raphael (SUI)		MS	Qualification		4 - 0	11:6 11:9 11:2 11:8	MIRAULT Cedric	
+2001	Swedish Open Skovde 2001	MITAMURA Muneaki (JPN)		ASAMOAH Cyprian (SWE)		MS	Qualification		4 - 3	6:11 11:3 11:6 11:7 11:13 11:13 11:9	MITAMURA Muneaki	
+2001	Swedish Open Skovde 2001	MITAMURA Muneaki (JPN)		KELLER Raphael (SUI)		MS	Qualification		4 - 2	11:8 7:11 11:7 7:11 11:5 11:7	MITAMURA Muneaki	
+2001	Swedish Open Skovde 2001	ASAMOAH Cyprian (SWE)		KELLER Raphael (SUI)		MS	Qualification		4 - 1	11:9 11:7 7:11 11:8 11:9	ASAMOAH Cyprian	
+2001	Swedish Open Skovde 2001	LUNDQVIST Jens (SWE)		MITAMURA Muneaki (JPN)		MS	Qualification	QR16	4 - 1	11:8 11:7 11:13 11:5 15:13	LUNDQVIST Jens	
+2001	Swedish Open Skovde 2001	MONRAD Martin (DEN)		KLASEK Marek (CZE)		MS	Qualification	QR16	1 - 4	11:8 10:12 8:11 4:11 7:11	KLASEK Marek	
+2001	Swedish Open Skovde 2001	GARDOS Robert (AUT)		YOON Jaeyoung (KOR)		MS	Qualification	QR16	4 - 3	11:13 11:3 11:5 9:11 1:11 11:9 11:9	GARDOS Robert	
+2001	Swedish Open Skovde 2001	WANG Jianfeng (NOR)		KUZMIN Fedor (RUS)		MS	Qualification	QR16	4 - 2	11:13 11:9 9:11 11:7 12:10 11:6	WANG Jianfeng	
+2001	Swedish Open Skovde 2001	ERLANDSEN Geir (NOR)		CABESTANY Cedrik (FRA)		MS	Qualification	QR16	3 - 4	13:11 9:11 6:11 11:7 11:13 13:11 9:11	CABESTANY Cedrik	
+2001	Swedish Open Skovde 2001	LIU Heng (CHN)		HOREJSI Miroslav (CZE)		MS	Qualification	QR16	4 - 2	11:6 7:11 14:12 11:3 8:11 11:9	LIU Heng	
+2001	Swedish Open Skovde 2001	MAZE Michael (DEN)		LEGOUT Christophe (FRA)		MS	Main Draw	R64	3 - 4	6:11 5:11 9:11 11:9 11:3 12:10 10:12	LEGOUT Christophe	
+2001	Swedish Open Skovde 2001	ELOI Damien (FRA)		PAVELKA Tomas (CZE)		MS	Main Draw	R64	4 - 0	11:3 11:7 11:4 11:6	ELOI Damien	
+2001	Swedish Open Skovde 2001	KO Lai Chak (HKG)		WOSIK Torben (GER)		MS	Main Draw	R64	4 - 3	13:11 11:3 4:11 5:11 7:11 11:4 11:7	KO Lai Chak	
+2001	Swedish Open Skovde 2001	LEE Chulseung (KOR)		LIU Heng (CHN)		MS	Main Draw	R64	1 - 4	7:11 5:11 11:5 9:11 9:11	LIU Heng	
+2001	Swedish Open Skovde 2001	JONG Kyong Chol (PRK)		YAN Sen (CHN)		MS	Main Draw	R64	3 - 4	7:11 11:8 11:5 11:5 4:11 6:11 8:11	YAN Sen	
+2001	Swedish Open Skovde 2001	SAIVE Philippe (BEL)		NILSSON Stefan (SWE)		MS	Main Draw	R64	4 - 2	12:10 11:8 11:8 4:11 6:11 11:7	SAIVE Philippe	
+2001	Swedish Open Skovde 2001	WANG Jianfeng (NOR)		KEEN Trinko (NED)		MS	Main Draw	R64	2 - 4	8:11 10:12 7:11 11:9 11:6 9:11	KEEN Trinko	
+2001	Swedish Open Skovde 2001	CHEN Weixing (AUT)		LI Ching (HKG)		MS	Main Draw	R64	4 - 3	6:11 9:11 11:7 11:9 9:11 11:9 11:2	CHEN Weixing	
+2001	Swedish Open Skovde 2001	KUSINSKI Marcin (POL)		HEISTER Danny (NED)		MS	Main Draw	R64	1 - 4	6:11 9:11 13:11 9:11 4:11	HEISTER Danny	
+2001	Swedish Open Skovde 2001	KRZESZEWSKI Tomasz (POL)		LUNDQVIST Jens (SWE)		MS	Main Draw	R64	4 - 2	11:8 8:11 10:12 11:7 12:10 11:5	KRZESZEWSKI Tomasz	
+2001	Swedish Open Skovde 2001	KLASEK Marek (CZE)		HAKANSSON Fredrik (SWE)		MS	Main Draw	R64	0 - 4	4:11 8:11 9:11 9:11	HAKANSSON Fredrik	
+2001	Swedish Open Skovde 2001	KARLSSON Peter (SWE)		LEUNG Chu Yan (HKG)		MS	Main Draw	R64	2 - 4	9:11 12:10 7:11 11:6 8:11 8:11	LEUNG Chu Yan	
+2001	Swedish Open Skovde 2001	CABESTANY Cedrik (FRA)		RYU Seungmin (KOR)		MS	Main Draw	R64	1 - 4	8:11 6:11 3:11 11:6 7:11	RYU Seungmin	
+2001	Swedish Open Skovde 2001	CHEUNG Yuk (HKG)		GARDOS Robert (AUT)		MS	Main Draw	R64	4 - 2	12:10 11:8 6:11 9:11 11:8 12:10	CHEUNG Yuk	
+2001	Swedish Open Skovde 2001	TASEI Kunihito (JPN)		WANG Hao (CHN)		MS	Main Draw	R64	1 - 4	11:6 9:11 5:11 6:11 7:11	WANG Hao	
+2001	Swedish Open Skovde 2001	TASAKI Toshio (JPN)		KIM Song Hui (PRK)		MS	Main Draw	R64	4 - 3	5:11 11:8 13:15 11:8 11:7 8:11 11:7	TASAKI Toshio	
+2001	Swedish Open Skovde 2001	WANG Liqin (CHN)		LEGOUT Christophe (FRA)		MS	Main Draw	R32	4 - 3	11:1 9:11 12:10 7:11 11:4 9:11 11:9	WANG Liqin	
+2001	Swedish Open Skovde 2001	ELOI Damien (FRA)		BOLL Timo (GER)		MS	Main Draw	R32	0 - 4	5:11 9:11 4:11 6:11	BOLL Timo	
+2001	Swedish Open Skovde 2001	MA Wenge (CHN)		KO Lai Chak (HKG)		MS	Main Draw	R32	4 - 1	8:11 11:3 11:8 11:8 11:5	MA Wenge	
+2001	Swedish Open Skovde 2001	LIU Heng (CHN)		LIU Guoliang (CHN)		MS	Main Draw	R32	1 - 4	10:12 8:11 9:11 11:7 3:11	LIU Guoliang	
+2001	Swedish Open Skovde 2001	SAIVE Jean-Michel (BEL)		YAN Sen (CHN)		MS	Main Draw	R32	3 - 4	7:11 11:6 8:11 4:11 11:9 11:6 9:11	YAN Sen	
+2001	Swedish Open Skovde 2001	SAIVE Philippe (BEL)		KORBEL Petr (CZE)		MS	Main Draw	R32	1 - 4	8:11 12:10 4:11 9:11 4:11	KORBEL Petr	
+2001	Swedish Open Skovde 2001	OH Sangeun (KOR)		KEEN Trinko (NED)		MS	Main Draw	R32	4 - 1	11:8 11:4 11:8 9:11 11:6	OH Sangeun	
+2001	Swedish Open Skovde 2001	CHEN Weixing (AUT)		MA Lin (CHN)		MS	Main Draw	R32	2 - 4	11:4 7:11 9:11 11:8 13:15 3:11	MA Lin	
+2001	Swedish Open Skovde 2001	KIM Taeksoo (KOR)		HEISTER Danny (NED)		MS	Main Draw	R32	4 - 0	15:13 13:10 11:8 11:9	KIM Taeksoo	
+2001	Swedish Open Skovde 2001	KRZESZEWSKI Tomasz (POL)		BLASZCZYK Lucjan (POL)		MS	Main Draw	R32	4 - 0	13:11 11:9 11:9 11:8	KRZESZEWSKI Tomasz	
+2001	Swedish Open Skovde 2001	CHILA Patrick (FRA)		HAKANSSON Fredrik (SWE)		MS	Main Draw	R32	2 - 4	11:8 11:3 14:16 8:11 4:11 10:12	HAKANSSON Fredrik	
+2001	Swedish Open Skovde 2001	LEUNG Chu Yan (HKG)		SCHLAGER Werner (AUT)		MS	Main Draw	R32	1 - 4	6:11 14:12 8:11 6:11 8:11	SCHLAGER Werner	
+2001	Swedish Open Skovde 2001	WALDNER Jan-Ove (SWE)		RYU Seungmin (KOR)		MS	Main Draw	R32	2 - 4	8:11 11:4 9:11 10:12 11:8 12:14	RYU Seungmin	
+2001	Swedish Open Skovde 2001	CHEUNG Yuk (HKG)		CHUANG Chih-Yuan (TPE)		MS	Main Draw	R32	4 - 3	8:11 7:11 11:9 11:8 11:8 9:11 11:6	CHEUNG Yuk	
+2001	Swedish Open Skovde 2001	ROSSKOPF Jorg (GER)		WANG Hao (CHN)		MS	Main Draw	R32	4 - 1	11:9 11:9 11:9 7:11 11:3	ROSSKOPF Jorg	
+2001	Swedish Open Skovde 2001	TASAKI Toshio (JPN)		LIU Guozheng (CHN)		MS	Main Draw	R32	1 - 4	8:11 11:9 7:11 8:11 9:11	LIU Guozheng	
+2001	Swedish Open Skovde 2001	WANG Liqin (CHN)		BOLL Timo (GER)		MS	Main Draw	R16	4 - 1	11:8 11:9 6:11 11:6 11:8	WANG Liqin	
+2001	Swedish Open Skovde 2001	MA Wenge (CHN)		LIU Guoliang (CHN)		MS	Main Draw	R16	0 - 4	6:11 6:11 9:11 12:14	LIU Guoliang	
+2001	Swedish Open Skovde 2001	YAN Sen (CHN)		KORBEL Petr (CZE)		MS	Main Draw	R16	4 - 3	11:6 7:11 12:10 11:13 10:12 11:9 11:5	YAN Sen	
+2001	Swedish Open Skovde 2001	OH Sangeun (KOR)		MA Lin (CHN)		MS	Main Draw	R16	4 - 1	11:7 12:10 10:12 11:8 11:3	OH Sangeun	
+2001	Swedish Open Skovde 2001	KIM Taeksoo (KOR)		KRZESZEWSKI Tomasz (POL)		MS	Main Draw	R16	2 - 4	11:8 9:11 5:11 5:11 11:5 7:11	KRZESZEWSKI Tomasz	
+2001	Swedish Open Skovde 2001	HAKANSSON Fredrik (SWE)		SCHLAGER Werner (AUT)		MS	Main Draw	R16	4 - 2	11:9 11:7 13:15 11:6 7:11 11:8	HAKANSSON Fredrik	
+2001	Swedish Open Skovde 2001	RYU Seungmin (KOR)		CHEUNG Yuk (HKG)		MS	Main Draw	R16	4 - 1	11:7 2:11 15:13 11:7 11:8	RYU Seungmin	
+2001	Swedish Open Skovde 2001	ROSSKOPF Jorg (GER)		LIU Guozheng (CHN)		MS	Main Draw	R16	4 - 2	12:10 11:9 11:9 8:11 5:11 12:10	ROSSKOPF Jorg	
+2001	Swedish Open Skovde 2001	WANG Liqin (CHN)		LIU Guoliang (CHN)		MS	Main Draw	QuarterFinal	4 - 1	9:11 11:2 11:7 11:4 11:4	WANG Liqin	
+2001	Swedish Open Skovde 2001	YAN Sen (CHN)		OH Sangeun (KOR)		MS	Main Draw	QuarterFinal	2 - 4	15:13 11:8 4:11 5:11 6:11 11:13	OH Sangeun	
+2001	Swedish Open Skovde 2001	KRZESZEWSKI Tomasz (POL)		HAKANSSON Fredrik (SWE)		MS	Main Draw	QuarterFinal	3 - 4	8:11 11:9 8:11 11:9 6:11 17:15 9:11	HAKANSSON Fredrik	
+2001	Swedish Open Skovde 2001	RYU Seungmin (KOR)		ROSSKOPF Jorg (GER)		MS	Main Draw	QuarterFinal	4 - 3	11:6 11:13 11:6 11:5 11:13 7:11 11:7	RYU Seungmin	
+2001	Swedish Open Skovde 2001	WANG Liqin (CHN)		OH Sangeun (KOR)		MS	Main Draw	SemiFinal	4 - 2	5:11 11:9 11:9 5:11 12:10 11:7	WANG Liqin	
+2001	Swedish Open Skovde 2001	HAKANSSON Fredrik (SWE)		RYU Seungmin (KOR)		MS	Main Draw	SemiFinal	2 - 4	12:14 9:11 6:11 11:8 11:7 10:12	RYU Seungmin	
+2001	Swedish Open Skovde 2001	WANG Liqin (CHN)		RYU Seungmin (KOR)		MS	Main Draw	Final	4 - 2	8:11 7:11 11:7 11:4 16:14 11:6	WANG Liqin
+2001	Swedish Open Skovde 2001	KO Lai Chak (HKG)		DERELI Sukru (TUR)		MS	Qualification		4 - 1	11:6 11:1 10:12 11:4 11:2	KO Lai Chak	
+2001	Swedish Open Skovde 2001	KO Lai Chak (HKG)		KOSOWSKI Jakub (POL)		MS	Qualification		4 - 2	11:8 8:11 11:6 12:10 9:11 11:2	KO Lai Chak	
+2001	Swedish Open Skovde 2001	KO Lai Chak (HKG)		SORENSEN Mads (DEN)		MS	Qualification		4 - 0	11:3 11:2 11:2 11:8	KO Lai Chak	
+2001	Swedish Open Skovde 2001	DERELI Sukru (TUR)		KOSOWSKI Jakub (POL)		MS	Qualification		0 - 4	9:11 7:11 2:11 3:11	KOSOWSKI Jakub	
+2001	Swedish Open Skovde 2001	DERELI Sukru (TUR)		SORENSEN Mads (DEN)		MS	Qualification		1 - 4	5:11 9:11 7:11 11:9 5:11	SORENSEN Mads	
+2001	Swedish Open Skovde 2001	KOSOWSKI Jakub (POL)		SORENSEN Mads (DEN)		MS	Qualification		0 - 4	6:11 7:11 9:11 9:11	SORENSEN Mads	
+2001	Swedish Open Skovde 2001	O Il (PRK)		TASEI Kunihito (JPN)		MS	Qualification		4 - 2	11:9 12:14 11:3 11:9 7:11 11:5	O Il	
+2001	Swedish Open Skovde 2001	O Il (PRK)		YOUNG Terry (ENG)		MS	Qualification		4 - 0	16:14 11:4 11:7 17:15	O Il	
+2001	Swedish Open Skovde 2001	O Il (PRK)		BENTSEN Allan (DEN)		MS	Qualification		1 - 4	11:13 9:11 11:8 6:11 5:11	BENTSEN Allan	
+2001	Swedish Open Skovde 2001	TASEI Kunihito (JPN)		YOUNG Terry (ENG)		MS	Qualification		4 - 0	11:8 11:7 11:4 11:6	TASEI Kunihito	
+2001	Swedish Open Skovde 2001	TASEI Kunihito (JPN)		BENTSEN Allan (DEN)		MS	Qualification		4 - 1	11:9 10:12 11:6 11:4 11:8	TASEI Kunihito	
+2001	Swedish Open Skovde 2001	YOUNG Terry (ENG)		BENTSEN Allan (DEN)		MS	Qualification		0 - 4	7:11 8:11 9:11 8:11	BENTSEN Allan	
+2001	Swedish Open Skovde 2001	CLOSSET Marc (BEL)		JENKINS Ryan (WAL)		MS	Qualification		4 - 1	11:5 12:10 6:11 11:5 11:9	CLOSSET Marc	
+2001	Swedish Open Skovde 2001	CLOSSET Marc (BEL)		MAZE Michael (DEN)		MS	Qualification		1 - 4	9:11 7:11 3:11 11:7 7:11	MAZE Michael	
+2001	Swedish Open Skovde 2001	JENKINS Ryan (WAL)		MAZE Michael (DEN)		MS	Qualification		1 - 4	6:11 8:11 9:11 14:12 14:16	MAZE Michael	
+2001	Swedish Open Skovde 2001	KIM Song Hui (PRK)		OLEJNIK Martin (CZE)		MS	Qualification		4 - 2	7:11 11:9 11:5 7:11 11:9 11:4	KIM Song Hui	
+2001	Swedish Open Skovde 2001	KIM Song Hui (PRK)		MANSSON Magnus (SWE)		MS	Qualification		4 - 1	11:8 11:9 7:11 11:4 11:8	KIM Song Hui	
+2001	Swedish Open Skovde 2001	KIM Song Hui (PRK)		BAGGALEY Andrew (ENG)		MS	Qualification		4 - 2	7:11 11:6 11:5 11:6 4:11 11:8	KIM Song Hui	
+2001	Swedish Open Skovde 2001	OLEJNIK Martin (CZE)		MANSSON Magnus (SWE)		MS	Qualification		2 - 4	9:11 13:11 7:11 11:6 6:11 9:11	MANSSON Magnus	
+2001	Swedish Open Skovde 2001	OLEJNIK Martin (CZE)		BAGGALEY Andrew (ENG)		MS	Qualification		4 - 3	11:7 11:9 9:11 11:6 7:11 9:11 11:9	OLEJNIK Martin	
+2001	Swedish Open Skovde 2001	QUENTEL Dorian (FRA)		LI Ching (HKG)		MS	Qualification		0 - 4	4:11 9:11 6:11 7:11	LI Ching	
+2001	Swedish Open Skovde 2001	QUENTEL Dorian (FRA)		CHANG Miao (NOR)		MS	Qualification		4 - 2	8:11 11:6 11:6 8:11 11:6 11:8	QUENTEL Dorian	
+2001	Swedish Open Skovde 2001	QUENTEL Dorian (FRA)		ROSVALL Henrik (SWE)		MS	Qualification		4 - 3	11:9 5:11 8:11 11:9 9:11 11:7 11:4	QUENTEL Dorian	
+2001	Swedish Open Skovde 2001	LI Ching (HKG)		CHANG Miao (NOR)		MS	Qualification		4 - 2	13:11 10:12 8:11 11:5 11:5 11:6	LI Ching	
+2001	Swedish Open Skovde 2001	LI Ching (HKG)		ROSVALL Henrik (SWE)		MS	Qualification		4 - 1	11:5 11:4 8:11 11:2 11:4	LI Ching	
+2001	Swedish Open Skovde 2001	CHANG Miao (NOR)		ROSVALL Henrik (SWE)		MS	Qualification		4 - 0	11:6 11:7 11:7 11:9	CHANG Miao	
+2001	Swedish Open Skovde 2001	ILLAS Erik (SVK)		YUNG Kyong Chol (PRK)		MS	Qualification		3 - 4	13:11 9:11 12:10 11:4 8:11 9:11 13:15	YUNG Kyong Chol	
+2001	Swedish Open Skovde 2001	ILLAS Erik (SVK)		MOLIN Magnus (SWE)		MS	Qualification		1 - 4	4:11 11:8 8:11 7:11 7:11	MOLIN Magnus	
+2001	Swedish Open Skovde 2001	YUNG Kyong Chol (PRK)		MOLIN Magnus (SWE)		MS	Qualification		4 - 2	11:8 5:11 11:8 8:11 11:0 11:8	YUNG Kyong Chol	
+2001	Swedish Open Skovde 2001	SORENSEN Joachim (NOR)		ZOOGLING Mikael (SWE)		MS	Qualification		0 - 4	7:11 5:11 3:11 8:11	ZOOGLING Mikael	
+2001	Swedish Open Skovde 2001	SORENSEN Joachim (NOR)		KUSINSKI Marcin (POL)		MS	Qualification		0 - 4	5:11 5:11 5:11 5:11	KUSINSKI Marcin	
+2001	Swedish Open Skovde 2001	SORENSEN Joachim (NOR)		SAKAMOTO Ryusuke (JPN)		MS	Qualification		1 - 4	9:11 9:11 11:9 4:11 8:11	SAKAMOTO Ryusuke	
+2001	Swedish Open Skovde 2001	ZOOGLING Mikael (SWE)		KUSINSKI Marcin (POL)		MS	Qualification		3 - 4	7:11 12:10 11:6 6:11 12:10 7:11 6:11	KUSINSKI Marcin	
+2001	Swedish Open Skovde 2001	ZOOGLING Mikael (SWE)		SAKAMOTO Ryusuke (JPN)		MS	Qualification		4 - 1	11:5 11:5 5:11 11:7 11:9	ZOOGLING Mikael	
+2001	Swedish Open Skovde 2001	KUSINSKI Marcin (POL)		SAKAMOTO Ryusuke (JPN)		MS	Qualification		4 - 2	11:4 11:13 11:6 11:7 6:11 11:8	KUSINSKI Marcin	
+2001	Swedish Open Skovde 2001	BRATANOV Martin (BEL)		PAVELKA Tomas (CZE)		MS	Qualification		2 - 4	7:11 11:7 11:9 7:11 8:11 9:11	PAVELKA Tomas	
+2001	Swedish Open Skovde 2001	BRATANOV Martin (BEL)		SVENSSON Robert (SWE)		MS	Qualification		4 - 3	7:11 8:11 11:8 6:11 11:7 12:10 11:5	BRATANOV Martin	
+2001	Swedish Open Skovde 2001	BRATANOV Martin (BEL)		ANSNES Eirik (NOR)		MS	Qualification		4 - 0	11:3 11:6 11:3 11:4	BRATANOV Martin	
+2001	Swedish Open Skovde 2001	PAVELKA Tomas (CZE)		SVENSSON Robert (SWE)		MS	Qualification		4 - 3	6:11 11:6 7:11 11:3 11:4 10:12 11:4	PAVELKA Tomas	
+2001	Swedish Open Skovde 2001	PAVELKA Tomas (CZE)		ANSNES Eirik (NOR)		MS	Qualification		3 - 4	9:11 11:7 11:9 4:11 9:11 11:6 9:11	ANSNES Eirik	
+2001	Swedish Open Skovde 2001	SVENSSON Robert (SWE)		ANSNES Eirik (NOR)		MS	Qualification		4 - 3	13:15 11:9 11:5 11:8 2:11 9:11 11:7	SVENSSON Robert	
+2001	Swedish Open Skovde 2001	NILSSON Stefan (SWE)		HIELSCHER Lars (GER)		MS	Qualification		4 - 0	14:12 11:6 11:9 11:4	NILSSON Stefan	
+2001	Swedish Open Skovde 2001	NILSSON Stefan (SWE)		GORAK Daniel (POL)		MS	Qualification		4 - 0	11:6 11:7 11:6 11:9	NILSSON Stefan	
+2001	Swedish Open Skovde 2001	NILSSON Stefan (SWE)		YEO Chansoo (KOR)		MS	Qualification		4 - 2	11:9 11:7 11:8 7:11 7:11 12:10	NILSSON Stefan	
+2001	Swedish Open Skovde 2001	HIELSCHER Lars (GER)		GORAK Daniel (POL)		MS	Qualification		4 - 1	11:9 11:8 10:12 11:9 11:5	HIELSCHER Lars	
+2001	Swedish Open Skovde 2001	HIELSCHER Lars (GER)		YEO Chansoo (KOR)		MS	Qualification		4 - 0	12:10 11:9 11:6 11:9	HIELSCHER Lars	
+2001	Swedish Open Skovde 2001	GORAK Daniel (POL)		YEO Chansoo (KOR)		MS	Qualification		3 - 4	10:12 11:3 8:11 9:11 11:8 11:7 10:12	YEO Chansoo	
+2001	Swedish Open Skovde 2001	JINDRAK Karl (AUT)		LEUNG Chu Yan (HKG)		MS	Qualification		1 - 4	11:8 7:11 5:11 8:11 9:11	LEUNG Chu Yan	
+2001	Swedish Open Skovde 2001	JINDRAK Karl (AUT)		SKOVSEN Mads (DEN)		MS	Qualification		4 - 0	11:3 11:9 11:7 11:8	JINDRAK Karl	
+2001	Swedish Open Skovde 2001	JINDRAK Karl (AUT)		GONZALES Raymond (NOR)		MS	Qualification		4 - 3	9:11 11:9 10:12 17:15 11:6 13:15 14:12	JINDRAK Karl	
+2001	Swedish Open Skovde 2001	LEUNG Chu Yan (HKG)		SKOVSEN Mads (DEN)		MS	Qualification		4 - 0	11:6 11:6 11:8 11:6	LEUNG Chu Yan	
+2001	Swedish Open Skovde 2001	LEUNG Chu Yan (HKG)		GONZALES Raymond (NOR)		MS	Qualification		4 - 2	11:6 9:11 9:11 11:7 11:7 11:9	LEUNG Chu Yan	
+2001	Swedish Open Skovde 2001	SKOVSEN Mads (DEN)		GONZALES Raymond (NOR)		MS	Qualification		3 - 4	11:9 8:11 10:12 11:3 5:11 11:9 9:11	GONZALES Raymond	
+2001	Swedish Open Skovde 2001	LUNDQVIST Jens (SWE)		PISTEJ Lubomir (SVK)		MS	Qualification		4 - 2	11:13 13:11 7:11 15:13 11:7 11:4	LUNDQVIST Jens	
+2001	Swedish Open Skovde 2001	LUNDQVIST Jens (SWE)		KIM Joosang (KOR)		MS	Qualification		4 - 0	11:9 11:5 11:6 13:11	LUNDQVIST Jens	
+2001	Swedish Open Skovde 2001	LUNDQVIST Jens (SWE)		KNUDSEN Morten (DEN)		MS	Qualification		4 - 1	12:10 9:11 11:7 11:9 11:7	LUNDQVIST Jens	
+2001	Swedish Open Skovde 2001	PISTEJ Lubomir (SVK)		KIM Joosang (KOR)		MS	Qualification		4 - 0	11:8 11:7 11:9 11:8	PISTEJ Lubomir	
+2001	Swedish Open Skovde 2001	PISTEJ Lubomir (SVK)		KNUDSEN Morten (DEN)		MS	Qualification		4 - 1	11:5 10:12 11:5 11:9 11:7	PISTEJ Lubomir	
+2001	Swedish Open Skovde 2001	KIM Joosang (KOR)		KNUDSEN Morten (DEN)		MS	Qualification		3 - 4	9:11 5:11 11:2 16:14 3:11 11:3 9:11	KNUDSEN Morten	
+2001	Swedish Open Skovde 2001	MONRAD Martin (DEN)		JOVER Sebastien (FRA)		MS	Qualification		4 - 0	11:6 11:9 11:3 11:3	MONRAD Martin	
+2001	Swedish Open Skovde 2001	MONRAD Martin (DEN)		WAKINOTANI Katsutoshi (JPN)		MS	Qualification		4 - 2	10:12 9:11 11:6 11:8 11:6 12:10	MONRAD Martin	
+2001	Swedish Open Skovde 2001	MONRAD Martin (DEN)		BARDON Michal (SVK)		MS	Qualification		2 - 4	5:11 13:15 11:6 8:11 11:4 8:11	BARDON Michal	
+2001	Swedish Open Skovde 2001	JOVER Sebastien (FRA)		WAKINOTANI Katsutoshi (JPN)		MS	Qualification		4 - 2	11:5 4:11 10:12 11:3 11:3 11:6	JOVER Sebastien	
+2001	Swedish Open Skovde 2001	JOVER Sebastien (FRA)		BARDON Michal (SVK)		MS	Qualification		4 - 1	11:5 11:5 9:11 12:10 11:6	JOVER Sebastien	
+2001	Swedish Open Skovde 2001	WAKINOTANI Katsutoshi (JPN)		BARDON Michal (SVK)		MS	Qualification		0 - 4	5:11 9:11 4:11 6:11	BARDON Michal	
+2001	Swedish Open Skovde 2001	NILSSON Peter (SWE)		YOON Jaeyoung (KOR)		MS	Qualification		1 - 4	4:11 11:4 10:12 9:11 10:12	YOON Jaeyoung	
+2001	Swedish Open Skovde 2001	NILSSON Peter (SWE)		KONGSGAARD Christian (DEN)		MS	Qualification		4 - 0	11:5 11:3 11:8 11:7	NILSSON Peter	
+2001	Swedish Open Skovde 2001	NILSSON Peter (SWE)		KISHIKAWA Seiya (JPN)		MS	Qualification		4 - 2	11:2 6:11 10:12 11:7 12:10 11:7	NILSSON Peter	
+2001	Swedish Open Skovde 2001	YOON Jaeyoung (KOR)		KONGSGAARD Christian (DEN)		MS	Qualification		4 - 2	11:5 8:11 11:8 9:11 11:3 11:8	YOON Jaeyoung	
+2001	Swedish Open Skovde 2001	YOON Jaeyoung (KOR)		KISHIKAWA Seiya (JPN)		MS	Qualification		4 - 1	11:7 11:13 11:7 11:3 11:9	YOON Jaeyoung	
+2001	Swedish Open Skovde 2001	KONGSGAARD Christian (DEN)		KISHIKAWA Seiya (JPN)		MS	Qualification		2 - 4	15:13 6:11 7:11 2:11 11:9 1:11	KISHIKAWA Seiya	
+2001	Swedish Open Skovde 2001	KONECNY Tomas (CZE)		STENBERG Marten (SWE)		MS	Qualification		1 - 4	7:11 6:11 11:9 7:11 9:11	STENBERG Marten	
+2001	Swedish Open Skovde 2001	KONECNY Tomas (CZE)		SANADA Koji (JPN)		MS	Qualification		0 - 4	10:12 4:11 6:11 4:11	SANADA Koji	
+2001	Swedish Open Skovde 2001	KONECNY Tomas (CZE)		WANG Jianfeng (NOR)		MS	Qualification		0 - 4	1:11 7:11 6:11 4:11	WANG Jianfeng	
+2001	Swedish Open Skovde 2001	STENBERG Marten (SWE)		SANADA Koji (JPN)		MS	Qualification		4 - 2	11:5 9:11 11:13 11:9 11:4 11:9	STENBERG Marten	
+2001	Swedish Open Skovde 2001	STENBERG Marten (SWE)		WANG Jianfeng (NOR)		MS	Qualification		2 - 4	11:5 13:15 4:11 5:11 11:5 4:11	WANG Jianfeng	
+2001	Swedish Open Skovde 2001	SANADA Koji (JPN)		WANG Jianfeng (NOR)		MS	Qualification		2 - 4	11:3 10:12 11:5 9:11 8:11 9:11	WANG Jianfeng	
+2001	Swedish Open Skovde 2001	ERLANDSEN Geir (NOR)		CARNEROS Alfredo (ESP)		MS	Qualification		4 - 2	12:10 11:6 11:6 9:11 8:11 11:6	ERLANDSEN Geir	
+2001	Swedish Open Skovde 2001	ERLANDSEN Geir (NOR)		GAVLAS Antonin (CZE)		MS	Qualification		4 - 0	11:7 11:6 13:11 11:5	ERLANDSEN Geir	
+2001	Swedish Open Skovde 2001	ERLANDSEN Geir (NOR)		STENBERG Mattias (SWE)		MS	Qualification		4 - 2	12:10 7:11 11:7 11:8 9:11 11:9	ERLANDSEN Geir	
+2001	Swedish Open Skovde 2001	CARNEROS Alfredo (ESP)		GAVLAS Antonin (CZE)		MS	Qualification		4 - 1	11:4 11:6 9:11 11:8 11:6	CARNEROS Alfredo	
+2001	Swedish Open Skovde 2001	CARNEROS Alfredo (ESP)		STENBERG Mattias (SWE)		MS	Qualification		2 - 4	11:9 6:11 6:11 11:4 4:11 8:11	STENBERG Mattias	
+2001	Swedish Open Skovde 2001	GAVLAS Antonin (CZE)		STENBERG Mattias (SWE)		MS	Qualification		1 - 4	11:13 6:11 7:11 11:7 5:11	STENBERG Mattias	
+2001	Swedish Open Skovde 2001	HOLM Anders (SWE)		STEPANEK David (CZE)		MS	Qualification		4 - 3	9:11 11:4 5:11 15:13 5:11 11:7 11:9	HOLM Anders	
+2001	Swedish Open Skovde 2001	HOLM Anders (SWE)		LIU Heng (CHN)		MS	Qualification		1 - 4	11:9 4:11 6:11 6:11 4:11	LIU Heng	
+2001	Swedish Open Skovde 2001	HOLM Anders (SWE)		PAK Won Chol (PRK)		MS	Qualification		2 - 4	11:4 7:11 8:11 11:8 13:15 6:11	PAK Won Chol	
+2001	Swedish Open Skovde 2001	STEPANEK David (CZE)		LIU Heng (CHN)		MS	Qualification		4 - 3	8:11 16:14 4:11 5:11 11:2 11:3 15:13	STEPANEK David	
+2001	Swedish Open Skovde 2001	STEPANEK David (CZE)		PAK Won Chol (PRK)		MS	Qualification		0 - 4	9:11 9:11 12:14 6:11	PAK Won Chol	
+2001	Swedish Open Skovde 2001	LIU Heng (CHN)		PAK Won Chol (PRK)		MS	Qualification		4 - 0	11:6 11:7 11:8 11:8	LIU Heng	
+2001	Swedish Open Skovde 2001	MORALES Augusto (CHI)		TOKIC Bojan (SLO)		MS	Qualification		0 - 4	5:11 2:11 6:11 8:11	TOKIC Bojan	
+2001	Swedish Open Skovde 2001	MORALES Augusto (CHI)		HOREJSI Miroslav (CZE)		MS	Qualification		1 - 4	5:11 11:13 11:9 4:11 9:11	HOREJSI Miroslav	
+2001	Swedish Open Skovde 2001	MORALES Augusto (CHI)		MULLER Frank (LIE)		MS	Qualification		4 - 0	11:2 11:8 11:4 11:5	MORALES Augusto	
+2001	Swedish Open Skovde 2001	TOKIC Bojan (SLO)		HOREJSI Miroslav (CZE)		MS	Qualification		2 - 4	11:9 8:11 11:5 8:11 7:11 7:11	HOREJSI Miroslav	
+2001	Swedish Open Skovde 2001	TOKIC Bojan (SLO)		MULLER Frank (LIE)		MS	Qualification		4 - 0	11:6 11:5 11:8 11:8	TOKIC Bojan	
+2001	Swedish Open Skovde 2001	HOREJSI Miroslav (CZE)		MULLER Frank (LIE)		MS	Qualification		4 - 2	5:11 11:9 7:11 11:8 11:4 11:7	HOREJSI Miroslav	
+2001	Swedish Open Skovde 2001	SEREDA Peter (SVK)		SWANSON Alex (AUS)		MS	Qualification		4 - 0	11:4 11:6 11:7 11:2	SEREDA Peter	
+2001	Swedish Open Skovde 2001	SEREDA Peter (SVK)		TUGWELL Finn (DEN)		MS	Qualification		2 - 4	10:12 6:11 11:9 11:5 9:11 6:11	TUGWELL Finn	
+2001	Swedish Open Skovde 2001	SEREDA Peter (SVK)		CABESTANY Cedrik (FRA)		MS	Qualification		2 - 4	11:8 6:11 9:11 11:5 7:11 4:11	CABESTANY Cedrik	
+2001	Swedish Open Skovde 2001	SWANSON Alex (AUS)		TUGWELL Finn (DEN)		MS	Qualification		0 - 4	4:11 4:11 6:11 8:11	TUGWELL Finn	
+2001	Swedish Open Skovde 2001	SWANSON Alex (AUS)		CABESTANY Cedrik (FRA)		MS	Qualification		0 - 4	4:11 8:11 9:11 5:11	CABESTANY Cedrik
+
+
+
+2001	Swedish Open Skovde 2001	LI Jiawei (SGP)		BOROS Tamara (CRO)		WS	Main Draw	QuarterFinal	3 - 4	7:11 5:11 11:8 4:11 11:8 14:12 3:11	BOROS Tamara	
+2001	Swedish Open Skovde 2001	BAI Yang (CHN)		GUO Yan (1982) (CHN)		WS	Main Draw	SemiFinal	2 - 4	8:11 7:11 12:10 12:14 11:4 1:11	GUO Yan (1982)	
+2001	Swedish Open Skovde 2001	TASEI Mikie (JPN)		BOROS Tamara (CRO)		WS	Main Draw	SemiFinal	0 - 4	6:11 9:11 8:11 8:11	BOROS Tamara	
+2001	Swedish Open Skovde 2001	GUO Yan (1982) (CHN)		BOROS Tamara (CRO)		WS	Main Draw	Final	4 - 3	12:10 7:11 6:11 9:11 11:6 11:9 11:7	GUO Yan (1982)
+2001	Swedish Open Skovde 2001	JENSEN Janne (DEN)		BERGLUND Anna (SWE)		WS	Qualification		4 - 2	11:7 11:7 11:8 6:11 8:11 12:10	JENSEN Janne	
+2001	Swedish Open Skovde 2001	JENSEN Janne (DEN)		GOURIN Anne-Sophie (FRA)		WS	Qualification		0 - 4	5:11 9:11 3:11 7:11	GOURIN Anne-Sophie	
+2001	Swedish Open Skovde 2001	BERGLUND Anna (SWE)		GOURIN Anne-Sophie (FRA)		WS	Qualification		1 - 4	7:11 11:7 5:11 9:11 3:11	GOURIN Anne-Sophie	
+2001	Swedish Open Skovde 2001	SJOGREN Marie (SWE)		MOREL Silvia (CHI)		WS	Qualification		4 - 0	11:5 11:9 11:4 11:9	SJOGREN Marie	
+2001	Swedish Open Skovde 2001	SJOGREN Marie (SWE)		COSTES Agathe (FRA)		WS	Qualification		4 - 0	11:9 11:9 11:5 11:8	SJOGREN Marie	
+2001	Swedish Open Skovde 2001	MOREL Silvia (CHI)		COSTES Agathe (FRA)		WS	Qualification		0 - 4	5:11 10:12 3:11 4:11	COSTES Agathe	
+2001	Swedish Open Skovde 2001	EKHOLM Matilda (SWE)		TEPES Sofija (CHI)		WS	Qualification		4 - 0	11:6 11:8 11:0 11:8	EKHOLM Matilda	
+2001	Swedish Open Skovde 2001	EKHOLM Matilda (SWE)		STEFANSKA Kinga (POL)		WS	Qualification		2 - 4	2:11 11:9 9:11 11:13 11:8 5:11	STEFANSKA Kinga	
+2001	Swedish Open Skovde 2001	TEPES Sofija (CHI)		STEFANSKA Kinga (POL)		WS	Qualification		1 - 4	11:8 10:12 8:11 5:11 4:11	STEFANSKA Kinga	
+2001	Swedish Open Skovde 2001	PARK Miyoung (KOR)		WIGOW Susanna (SWE)		WS	Qualification		4 - 1	14:12 13:11 11:7 9:11 11:5	PARK Miyoung	
+2001	Swedish Open Skovde 2001	PARK Miyoung (KOR)		TAMBORINI Aurelie (FRA)		WS	Qualification		4 - 0	12:10 11:5 11:5 11:5	PARK Miyoung	
+2001	Swedish Open Skovde 2001	PARK Miyoung (KOR)		WESTHOLM Sofia (SWE)		WS	Qualification		4 - 0	11:6 11:3 11:5 11:8	PARK Miyoung	
+2001	Swedish Open Skovde 2001	WIGOW Susanna (SWE)		TAMBORINI Aurelie (FRA)		WS	Qualification		1 - 4	6:11 11:9 9:11 9:11 6:11	TAMBORINI Aurelie	
+2001	Swedish Open Skovde 2001	WIGOW Susanna (SWE)		WESTHOLM Sofia (SWE)		WS	Qualification		4 - 0	11:7 11:6 11:6 11:2	WIGOW Susanna	
+2001	Swedish Open Skovde 2001	TAMBORINI Aurelie (FRA)		WESTHOLM Sofia (SWE)		WS	Qualification		4 - 0	12:10 11:8 11:2 13:11	TAMBORINI Aurelie	
+2001	Swedish Open Skovde 2001	PARKER Katy (ENG)		PARK Bokyung (KOR)		WS	Qualification		0 - 4	5:11 9:11 5:11 6:11	PARK Bokyung	
+2001	Swedish Open Skovde 2001	PARKER Katy (ENG)		REGENWETTER Peggy (LUX)		WS	Qualification		2 - 4	12:10 11:9 9:11 7:11 4:11 5:11	REGENWETTER Peggy	
+2001	Swedish Open Skovde 2001	PARKER Katy (ENG)		VAKKILA Nina (SWE)		WS	Qualification		0 - 4	12:14 1:11 9:11 8:11	VAKKILA Nina	
+2001	Swedish Open Skovde 2001	PARK Bokyung (KOR)		REGENWETTER Peggy (LUX)		WS	Qualification		4 - 2	4:11 8:11 15:13 11:8 11:7 11:7	PARK Bokyung	
+2001	Swedish Open Skovde 2001	PARK Bokyung (KOR)		VAKKILA Nina (SWE)		WS	Qualification		4 - 0	11:6 11:7 11:3 11:7	PARK Bokyung	
+2001	Swedish Open Skovde 2001	REGENWETTER Peggy (LUX)		VAKKILA Nina (SWE)		WS	Qualification		4 - 1	11:7 11:6 11:8 7:11 11:4	REGENWETTER Peggy	
+2001	Swedish Open Skovde 2001	ENOCSSON Evelina (SWE)		HARABASZOVA Lenka (CZE)		WS	Qualification		1 - 4	5:11 6:11 18:16 6:11 6:11	HARABASZOVA Lenka	
+2001	Swedish Open Skovde 2001	ENOCSSON Evelina (SWE)		SILVESTRE Julia (FRA)		WS	Qualification		0 - 4	3:11 5:11 4:11 4:11	SILVESTRE Julia	
+2001	Swedish Open Skovde 2001	ENOCSSON Evelina (SWE)		OLSSON Marie (SWE)		WS	Qualification		1 - 4	11:7 10:12 7:11 8:11 4:11	OLSSON Marie	
+2001	Swedish Open Skovde 2001	HARABASZOVA Lenka (CZE)		SILVESTRE Julia (FRA)		WS	Qualification		1 - 4	4:11 10:12 11:4 5:11 8:11	SILVESTRE Julia	
+2001	Swedish Open Skovde 2001	HARABASZOVA Lenka (CZE)		OLSSON Marie (SWE)		WS	Qualification		2 - 4	12:14 10:12 13:11 11:13 11:9 3:11	OLSSON Marie	
+2001	Swedish Open Skovde 2001	SILVESTRE Julia (FRA)		OLSSON Marie (SWE)		WS	Qualification		0 - 4	3:11 9:11 5:11 11:13	OLSSON Marie	
+2001	Swedish Open Skovde 2001	RODRIGUEZ Berta (CHI)		CECHOVA Dana (CZE)		WS	Qualification		4 - 3	6:11 11:9 9:11 6:11 12:10 15:13 16:14	RODRIGUEZ Berta	
+2001	Swedish Open Skovde 2001	RODRIGUEZ Berta (CHI)		BOMANN Anne-Cathrine (DEN)		WS	Qualification		4 - 1	11:8 11:5 11:9 11:13 11:8	RODRIGUEZ Berta	
+2001	Swedish Open Skovde 2001	RODRIGUEZ Berta (CHI)		NORDENBERG Linda (SWE)		WS	Qualification		3 - 4	11:4 4:11 16:18 11:5 9:11 11:8 6:11	NORDENBERG Linda	
+2001	Swedish Open Skovde 2001	CECHOVA Dana (CZE)		BOMANN Anne-Cathrine (DEN)		WS	Qualification		4 - 0	11:7 11:9 11:5 14:12	CECHOVA Dana	
+2001	Swedish Open Skovde 2001	CECHOVA Dana (CZE)		NORDENBERG Linda (SWE)		WS	Qualification		1 - 4	9:11 9:11 3:11 12:10 9:11	NORDENBERG Linda	
+2001	Swedish Open Skovde 2001	BOMANN Anne-Cathrine (DEN)		NORDENBERG Linda (SWE)		WS	Qualification		0 - 4	5:11 6:11 7:11 9:11	NORDENBERG Linda	
+2001	Swedish Open Skovde 2001	WON Youngah (KOR)		FINNEMANN Pia (DEN)		WS	Qualification		4 - 2	11:7 8:11 11:7 11:9 5:11 11:4	WON Youngah	
+2001	Swedish Open Skovde 2001	WON Youngah (KOR)		ROHDIN Sara (SWE)		WS	Qualification		4 - 2	7:11 11:4 11:8 9:11 11:8 11:6	WON Youngah	
+2001	Swedish Open Skovde 2001	WON Youngah (KOR)		GLADIEUX Elisabeth (FRA)		WS	Qualification		4 - 1	7:11 11:9 11:7 11:9 11:6	WON Youngah	
+2001	Swedish Open Skovde 2001	FINNEMANN Pia (DEN)		ROHDIN Sara (SWE)		WS	Qualification		3 - 4	11:3 10:12 13:11 11:7 8:11 9:11 10:12	ROHDIN Sara	
+2001	Swedish Open Skovde 2001	FINNEMANN Pia (DEN)		GLADIEUX Elisabeth (FRA)		WS	Qualification		3 - 4	5:11 11:6 13:11 10:12 11:5 8:11 8:11	GLADIEUX Elisabeth	
+2001	Swedish Open Skovde 2001	ROHDIN Sara (SWE)		GLADIEUX Elisabeth (FRA)		WS	Qualification		4 - 3	5:11 11:9 10:12 16:14 11:7 6:11 11:9	ROHDIN Sara	
+2001	Swedish Open Skovde 2001	STEWARD Kathryn (ENG)		LINDSTROM Jennie (SWE)		WS	Qualification		4 - 3	8:11 9:11 7:11 12:10 11:3 11:5 11:8	STEWARD Kathryn	
+2001	Swedish Open Skovde 2001	STEWARD Kathryn (ENG)		ALVAREZ Patricia (CHI)		WS	Qualification		4 - 0	11:6 11:8 12:10 11:5	STEWARD Kathryn	
+2001	Swedish Open Skovde 2001	STEWARD Kathryn (ENG)		LEGAY Solene (FRA)		WS	Qualification		1 - 4	5:11 12:10 7:11 7:11 8:11	LEGAY Solene	
+2001	Swedish Open Skovde 2001	LINDSTROM Jennie (SWE)		ALVAREZ Patricia (CHI)		WS	Qualification		4 - 2	6:11 11:9 11:3 11:5 2:11 11:8	LINDSTROM Jennie	
+2001	Swedish Open Skovde 2001	LINDSTROM Jennie (SWE)		LEGAY Solene (FRA)		WS	Qualification		0 - 4	5:11 6:11 6:11 7:11	LEGAY Solene	
+2001	Swedish Open Skovde 2001	ALVAREZ Patricia (CHI)		LEGAY Solene (FRA)		WS	Qualification		0 - 4	11:13 3:11 3:11 9:11	LEGAY Solene	
+2001	Swedish Open Skovde 2001	HO Yang-Han (TPE)		CIGANKOVA Nataliya (BLR)		WS	Qualification		3 - 4	9:11 8:11 9:11 13:11 11:6 11:8 7:11	CIGANKOVA Nataliya	
+2001	Swedish Open Skovde 2001	HO Yang-Han (TPE)		GAJIC Jelena (SRB)		WS	Qualification		1 - 4	8:11 7:11 8:11 12:10 6:11	GAJIC Jelena	
+2001	Swedish Open Skovde 2001	HO Yang-Han (TPE)		JONSSON Carina (SWE)		WS	Qualification		4 - 1	11:9 10:12 13:11 11:8 11:6	HO Yang-Han	
+2001	Swedish Open Skovde 2001	CIGANKOVA Nataliya (BLR)		GAJIC Jelena (SRB)		WS	Qualification		4 - 2	11:13 11:4 8:11 11:8 11:7 11:8	CIGANKOVA Nataliya	
+2001	Swedish Open Skovde 2001	CIGANKOVA Nataliya (BLR)		JONSSON Carina (SWE)		WS	Qualification		3 - 4	6:11 10:12 11:7 14:12 4:11 11:8 11:13	JONSSON Carina	
+2001	Swedish Open Skovde 2001	GAJIC Jelena (SRB)		JONSSON Carina (SWE)		WS	Qualification		2 - 4	18:16 11:7 5:11 5:11 6:11 10:12	JONSSON Carina	
+2001	Swedish Open Skovde 2001	JOHANSSON Frida (SWE)		JIANG Huajun (HKG)		WS	Qualification		0 - 4	5:11 4:11 7:11 8:11	JIANG Huajun	
+2001	Swedish Open Skovde 2001	JOHANSSON Frida (SWE)		DAUNTON Bethan (WAL)		WS	Qualification		3 - 4	11:9 6:11 7:11 11:8 11:5 8:11 12:14	DAUNTON Bethan	
+2001	Swedish Open Skovde 2001	JOHANSSON Frida (SWE)		HALAS Helena (SLO)		WS	Qualification		1 - 4	9:11 13:15 11:6 8:11 8:11	HALAS Helena	
+2001	Swedish Open Skovde 2001	JIANG Huajun (HKG)		DAUNTON Bethan (WAL)		WS	Qualification		4 - 0	11:4 12:10 11:5 11:6	JIANG Huajun	
+2001	Swedish Open Skovde 2001	JIANG Huajun (HKG)		HALAS Helena (SLO)		WS	Qualification		4 - 0	11:5 11:10 11:8 11:8	JIANG Huajun	
+2001	Swedish Open Skovde 2001	DAUNTON Bethan (WAL)		HALAS Helena (SLO)		WS	Qualification		2 - 4	15:13 11:9 3:11 8:11 8:11 7:11	HALAS Helena	
+2001	Swedish Open Skovde 2001	NORDENBERG Linda (SWE)		KOSTROMINA Tatyana (1973) (BLR)		WS	Main Draw	R64	0 - 4	3:11 8:11 9:11 4:11	KOSTROMINA Tatyana (1973)	
+2001	Swedish Open Skovde 2001	STRBIKOVA Renata (CZE)		SJOGREN Marie (SWE)		WS	Main Draw	R64	4 - 1	11:7 11:7 11:4 7:11 12:10	STRBIKOVA Renata	
+2001	Swedish Open Skovde 2001	STEFANSKA Kinga (POL)		GANINA Svetlana (RUS)		WS	Main Draw	R64	2 - 4	11:8 7:11 11:8 1:11 6:11 9:11	GANINA Svetlana	
+2001	Swedish Open Skovde 2001	LU Yun-Feng (TPE)		OLSSON Marie (SWE)		WS	Main Draw	R64	4 - 3	11:3 6:11 7:11 6:11 11:7 11:9 11:8	LU Yun-Feng	
+2001	Swedish Open Skovde 2001	TAMBORINI Aurelie (FRA)		GOBEL Jessica (GER)		WS	Main Draw	R64	1 - 4	3:11 5:11 11:13 11:8 6:11	GOBEL Jessica	
+2001	Swedish Open Skovde 2001	SCHALL Elke (GER)		JONSSON Carina (SWE)		WS	Main Draw	R64	4 - 3	11:5 11:2 8:11 13:11 9:11 8:11 11:2	SCHALL Elke	
+2001	Swedish Open Skovde 2001	REGENWETTER Peggy (LUX)		JONSSON Susanne (SWE)		WS	Main Draw	R64	3 - 4	11:5 3:11 9:11 6:11 11:9 11:5 8:11	JONSSON Susanne	
+2001	Swedish Open Skovde 2001	GAO Xi (CHN)		LEGAY Solene (FRA)		WS	Main Draw	R64	4 - 1	7:11 11:3 11:7 11:8 11:5	GAO Xi	
+2001	Swedish Open Skovde 2001	STEWARD Kathryn (ENG)		FUJINUMA Ai (JPN)		WS	Main Draw	R64	0 - 4	6:11 8:11 5:11 5:11	FUJINUMA Ai	
+2001	Swedish Open Skovde 2001	HIURA Reiko (JPN)		JENSEN Janne (DEN)		WS	Main Draw	R64	4 - 0	11:5 11:7 11:9 11:5	HIURA Reiko	
+2001	Swedish Open Skovde 2001	WON Youngah (KOR)		VACHOVCOVA Alena (CZE)		WS	Main Draw	R64	4 - 3	8:11 4:11 6:11 11:5 11:9 11:3 13:11	WON Youngah	
+2001	Swedish Open Skovde 2001	KIM Bokrae (KOR)		GOURIN Anne-Sophie (FRA)		WS	Main Draw	R64	4 - 3	11:7 11:9 8:11 11:13 6:11 11:6 15:13	KIM Bokrae	
+2001	Swedish Open Skovde 2001	CIGANKOVA Nataliya (BLR)		TAN Paey Fern (SGP)		WS	Main Draw	R64	4 - 0	11:8 11:6 11:8 11:3	CIGANKOVA Nataliya	
+2001	Swedish Open Skovde 2001	JOHANSSON Sandra (SWE)		PARK Bokyung (KOR)		WS	Main Draw	R64	4 - 2	7:11 11:9 11:2 5:11 11:8 11:5	JOHANSSON Sandra	
+2001	Swedish Open Skovde 2001	JIANG Huajun (HKG)		ZHANG Xueling (SGP)		WS	Main Draw	R64	4 - 0	11:8 11:9 11:8 11:3	JIANG Huajun	
+2001	Swedish Open Skovde 2001	NEGRISOLI Laura (ITA)		PARK Miyoung (KOR)		WS	Main Draw	R64	0 - 4	8:11 6:11 7:11 11:13	PARK Miyoung	
+2001	Swedish Open Skovde 2001	RYU Jihae (KOR)		KOSTROMINA Tatyana (1973) (BLR)		WS	Main Draw	R32	4 - 0	11:4 11:5 11:5 11:8	RYU Jihae	
+2001	Swedish Open Skovde 2001	STRBIKOVA Renata (CZE)		NEMES Olga (ROU)		WS	Main Draw	R32	4 - 3	11:8 3:11 13:11 8:11 9:11 11:7 12:10	STRBIKOVA Renata	
+2001	Swedish Open Skovde 2001	LEE Eunsil (KOR)		GANINA Svetlana (RUS)		WS	Main Draw	R32	4 - 0	11:6 11:5 11:4 11:9	LEE Eunsil	
+2001	Swedish Open Skovde 2001	LU Yun-Feng (TPE)		BAI Yang (CHN)		WS	Main Draw	R32	1 - 4	11:6 4:11 8:11 6:11 7:11	BAI Yang	
+2001	Swedish Open Skovde 2001	GUO Yan (1982) (CHN)		GOBEL Jessica (GER)		WS	Main Draw	R32	4 - 0	11:9 11:8 11:7 11:8	GUO Yan (1982)	
+2001	Swedish Open Skovde 2001	SCHALL Elke (GER)		LI Jia (CHN)		WS	Main Draw	R32	0 - 4	4:11 3:11 9:11 6:11	LI Jia	
+2001	Swedish Open Skovde 2001	PAVLOVICH Viktoria (BLR)		JONSSON Susanne (SWE)		WS	Main Draw	R32	4 - 1	11:2 10:12 11:4 11:7 11:8	PAVLOVICH Viktoria	
+2001	Swedish Open Skovde 2001	GAO Xi (CHN)		YANG Ying (CHN)		WS	Main Draw	R32	4 - 1	11:7 11:7 13:11 8:11 11:6	GAO Xi	
+2001	Swedish Open Skovde 2001	NI Xia Lian (LUX)		FUJINUMA Ai (JPN)		WS	Main Draw	R32	4 - 0	12:10 11:2 11:1 11:7	NI Xia Lian	
+2001	Swedish Open Skovde 2001	HIURA Reiko (JPN)		NISHII Yuka (JPN)		WS	Main Draw	R32	0 - 4	6:11 6:11 6:11 9:11	NISHII Yuka	
+2001	Swedish Open Skovde 2001	TASEI Mikie (JPN)		WON Youngah (KOR)		WS	Main Draw	R32	4 - 1	4:11 11:6 11:8 11:5 13:11	TASEI Mikie	
+2001	Swedish Open Skovde 2001	KIM Bokrae (KOR)		JING Junhong (SGP)		WS	Main Draw	R32	4 - 1	12:10 5:11 11:8 11:6 11:7	KIM Bokrae	
+2001	Swedish Open Skovde 2001	LI Jiawei (SGP)		CIGANKOVA Nataliya (BLR)		WS	Main Draw	R32	4 - 1	11:9 11:7 11:5 6:11 11:3	LI Jiawei	
+2001	Swedish Open Skovde 2001	JOHANSSON Sandra (SWE)		KONISHI An (JPN)		WS	Main Draw	R32	1 - 4	9:11 14:16 4:11 11:7 8:11	KONISHI An	
+2001	Swedish Open Skovde 2001	STRUSE Nicole (GER)		JIANG Huajun (HKG)		WS	Main Draw	R32	2 - 4	13:11 6:11 2:11 11:9 7:11 9:11	JIANG Huajun	
+2001	Swedish Open Skovde 2001	PARK Miyoung (KOR)		BOROS Tamara (CRO)		WS	Main Draw	R32	1 - 4	11:7 4:11 5:11 6:11 9:11	BOROS Tamara	
+2001	Swedish Open Skovde 2001	RYU Jihae (KOR)		STRBIKOVA Renata (CZE)		WS	Main Draw	R16	4 - 2	8:11 6:11 11:4 11:8 11:4 11:4	RYU Jihae	
+2001	Swedish Open Skovde 2001	LEE Eunsil (KOR)		BAI Yang (CHN)		WS	Main Draw	R16	0 - 4	8:11 4:11 6:11 7:11	BAI Yang	
+2001	Swedish Open Skovde 2001	GUO Yan (1982) (CHN)		LI Jia (CHN)		WS	Main Draw	R16	4 - 2	9:11 11:4 11:5 7:11 11:6 13:11	GUO Yan (1982)	
+2001	Swedish Open Skovde 2001	PAVLOVICH Viktoria (BLR)		GAO Xi (CHN)		WS	Main Draw	R16	4 - 0	11:9 11:6 11:9 11:5	PAVLOVICH Viktoria	
+2001	Swedish Open Skovde 2001	NI Xia Lian (LUX)		NISHII Yuka (JPN)		WS	Main Draw	R16	4 - 1	11:7 7:11 11:8 11:8 11:5	NI Xia Lian	
+2001	Swedish Open Skovde 2001	TASEI Mikie (JPN)		KIM Bokrae (KOR)		WS	Main Draw	R16	4 - 1	11:5 13:11 3:11 11:2 11:4	TASEI Mikie	
+2001	Swedish Open Skovde 2001	LI Jiawei (SGP)		KONISHI An (JPN)		WS	Main Draw	R16	4 - 0	13:11 12:10 11:6 11:7	LI Jiawei	
+2001	Swedish Open Skovde 2001	JIANG Huajun (HKG)		BOROS Tamara (CRO)		WS	Main Draw	R16	3 - 4	11:5 12:10 11:7 6:11 12:14 8:11 6:11	BOROS Tamara	
+2001	Swedish Open Skovde 2001	RYU Jihae (KOR)		BAI Yang (CHN)		WS	Main Draw	QuarterFinal	0 - 4	10:12 6:11 10:12 5:11	BAI Yang	
+2001	Swedish Open Skovde 2001	GUO Yan (1982) (CHN)		PAVLOVICH Viktoria (BLR)		WS	Main Draw	QuarterFinal	4 - 2	11:5 10:12 9:11 11:2 11:8 11:4	GUO Yan (1982)	
+2001	Swedish Open Skovde 2001	NI Xia Lian (LUX)		TASEI Mikie (JPN)		WS	Main Draw	QuarterFinal	3 - 4	11:9 17:15 10:12 12:10 5:11 4:11 8:11	TASEI Mikie

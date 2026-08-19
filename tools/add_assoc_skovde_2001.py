@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""为 2001 Swedish Open (Skovde) / German Open (Bayreuth) 球员补充 assoc.json 协会籍记录。"""
+"""为 2001 Swedish/German Open, Japan Open, US Open 球员补充 assoc.json 协会籍记录。"""
 import json
 import os
 import re
@@ -17,23 +17,25 @@ def _load_import_module(name, filename):
     return mod
 
 NAME_MAP = {}
-for _mname, _fname in (("skovde", "import_skovde_2001.py"), ("bayreuth", "import_bayreuth_2001.py")):
+for _mname, _fname in (("skovde", "import_skovde_2001.py"), ("bayreuth", "import_bayreuth_2001.py"),
+                       ("japan", "import_japanopen_2001.py"), ("usopen", "import_usopen_2001.py")):
     _mod = _load_import_module(_mname, _fname)
     NAME_MAP.update(_mod.NAME_MAP)
 
 # 国家代码 -> 全称（与现有 assoc.json 惯例一致）
 COUNTRY_MAP = {
-    "AUS": "Australia", "AUT": "Austria", "ARG": "Argentina", "BEL": "Belgium",
-    "BIH": "Bosnia and Herzegovina", "BLR": "Belarus", "BRA": "Brazil", "CAN": "Canada",
-    "CHI": "Chile", "CHN": "China", "CRO": "Croatia", "CZE": "Czechia",
+    "AUS": "Australia", "AUT": "Austria", "ARG": "Argentina", "BAR": "Barbados",
+    "BEL": "Belgium", "BIH": "Bosnia and Herzegovina", "BLR": "Belarus", "BRA": "Brazil",
+    "CAN": "Canada", "CHI": "Chile", "CHN": "China", "CRO": "Croatia", "CZE": "Czechia",
     "DEN": "Denmark", "EGY": "Egypt", "ENG": "England", "ESP": "Spain", "FRA": "France",
-    "GER": "Germany", "GRE": "Greece", "HKG": "Hong Kong, China", "HUN": "Hungary",
-    "ITA": "Italy", "JOR": "Jordan", "JPN": "Japan",
+    "GER": "Germany", "GRE": "Greece", "GUA": "Guatemala", "HKG": "Hong Kong, China", "HUN": "Hungary",
+    "IND": "India", "ITA": "Italy", "JOR": "Jordan", "JPN": "Japan",
     "KOR": "Korea Republic", "LIE": "Liechtenstein", "LTU": "Lithuania", "LUX": "Luxembourg",
-    "NED": "Netherlands", "NOR": "Norway", "NZL": "New Zealand", "POL": "Poland", "PRK": "Korea DPR",
-    "ROU": "Romania", "RUS": "Russia", "SGP": "Singapore", "SLO": "Slovenia",
-    "SRB": "Serbia", "SUI": "Switzerland", "SVK": "Slovak Republic",
-    "SWE": "Sweden", "TPE": "Chinese Taipei", "TUR": "Turkiye", "USA": "USA", "WAL": "Wales",
+    "NED": "Netherlands", "NGR": "Nigeria", "NOR": "Norway", "NZL": "New Zealand", "POL": "Poland",
+    "POR": "Portugal", "PRK": "Korea DPR", "ROU": "Romania", "RUS": "Russia", "SGP": "Singapore",
+    "SLO": "Slovenia", "SRB": "Serbia", "SUI": "Switzerland", "SVK": "Slovak Republic",
+    "SWE": "Sweden", "TPE": "Chinese Taipei", "TUR": "Turkiye", "UGA": "Uganda",
+    "USA": "USA", "VEN": "Venezuela", "WAL": "Wales",
 }
 
 
@@ -113,8 +115,12 @@ def add_to_assoc(cat, rawfile):
 
 
 if __name__ == "__main__":
-    print("补充 assoc.json (2001 Skovde + Bayreuth)")
-    add_to_assoc("ms", "_skovde2001_ms_raw.txt")
-    add_to_assoc("ws", "_skovde2001_ws_raw.txt")
-    add_to_assoc("ms", "_bayreuth2001_raw.txt")
-    add_to_assoc("ws", "_bayreuth2001_raw.txt")
+    print("补充 assoc.json (2001 Skovde + Bayreuth + Japan Open + US Open)")
+    add_to_assoc("ms", os.path.join(BASE_DIR, "_skovde2001_ms_raw.txt"))
+    add_to_assoc("ws", os.path.join(BASE_DIR, "_skovde2001_ws_raw.txt"))
+    add_to_assoc("ms", os.path.join(BASE_DIR, "_bayreuth2001_raw.txt"))
+    add_to_assoc("ws", os.path.join(BASE_DIR, "_bayreuth2001_raw.txt"))
+    add_to_assoc("ms", os.path.join(BASE_DIR, "_japanopen2001_raw.txt"))
+    add_to_assoc("ws", os.path.join(BASE_DIR, "_japanopen2001_raw.txt"))
+    add_to_assoc("ms", os.path.join(BASE_DIR, "_usopen2001_raw.txt"))
+    add_to_assoc("ws", os.path.join(BASE_DIR, "_usopen2001_raw.txt"))

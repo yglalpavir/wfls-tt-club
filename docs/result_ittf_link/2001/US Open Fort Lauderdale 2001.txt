@@ -1,0 +1,204 @@
+	2001	US Open Fort Lauderdale 2001	ITTF World Tour / Pro Tour	--	180	2001-07-07	2001-07-07
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 2 Total: 108
+
+Start
+Prev
+1
+2
+Next
+End
+2001	US Open Fort Lauderdale 2001	SORENSEN Mads (DEN)		SUBRAMANYAM Raman (IND)		MS	Qualification		2 - 0	21:14 24:22	SORENSEN Mads	
+2001	US Open Fort Lauderdale 2001	SORENSEN Mads (DEN)		OMODING Julius (UGA)		MS	Qualification		2 - 0	21:17 21:19	SORENSEN Mads	
+2001	US Open Fort Lauderdale 2001	SORENSEN Mads (DEN)		ALBAN Keith (USA)		MS	Qualification		2 - 0	21:17 21:9	SORENSEN Mads	
+2001	US Open Fort Lauderdale 2001	SUBRAMANYAM Raman (IND)		OMODING Julius (UGA)		MS	Qualification		2 - 0	21:13 21:15	SUBRAMANYAM Raman	
+2001	US Open Fort Lauderdale 2001	SUBRAMANYAM Raman (IND)		ALBAN Keith (USA)		MS	Qualification		2 - 0	21:15 21:19	SUBRAMANYAM Raman	
+2001	US Open Fort Lauderdale 2001	OMODING Julius (UGA)		ALBAN Keith (USA)		MS	Qualification		0 - 2	8:21 14:21	ALBAN Keith	
+2001	US Open Fort Lauderdale 2001	TUGWELL Finn (DEN)		GIANNINI Antonio (VEN)		MS	Qualification		2 - 0	21:12 21:11	TUGWELL Finn	
+2001	US Open Fort Lauderdale 2001	TUGWELL Finn (DEN)		OVIEDO Alejandro (GUA)		MS	Qualification		2 - 0	21:7 21:7	TUGWELL Finn	
+2001	US Open Fort Lauderdale 2001	TUGWELL Finn (DEN)		OYEBODE Michael (NGR)		MS	Qualification		2 - 0	22:20 21:19	TUGWELL Finn	
+2001	US Open Fort Lauderdale 2001	GIANNINI Antonio (VEN)		OVIEDO Alejandro (GUA)		MS	Qualification		2 - 1	15:21 21:8 21:19	GIANNINI Antonio	
+2001	US Open Fort Lauderdale 2001	GIANNINI Antonio (VEN)		OYEBODE Michael (NGR)		MS	Qualification		0 - 2	12:21 22:24	OYEBODE Michael	
+2001	US Open Fort Lauderdale 2001	OVIEDO Alejandro (GUA)		OYEBODE Michael (NGR)		MS	Qualification		0 - 2	12:21 18:21	OYEBODE Michael	
+2001	US Open Fort Lauderdale 2001	MARTINEZ Michel (FRA)		LAGOGIANNIS Konstantinos (GRE)		MS	Qualification		2 - 1	21:18 10:21 21:11	MARTINEZ Michel	
+2001	US Open Fort Lauderdale 2001	MARTINEZ Michel (FRA)		HERRERA Jorge (GUA)		MS	Qualification		2 - 0	21:17 21:13	MARTINEZ Michel	
+2001	US Open Fort Lauderdale 2001	LAGOGIANNIS Konstantinos (GRE)		HERRERA Jorge (GUA)		MS	Qualification		2 - 0	21:16 21:9	LAGOGIANNIS Konstantinos	
+2001	US Open Fort Lauderdale 2001	KEINATH Thomas (SVK)		FLORES Omar (GUA)		MS	Qualification		2 - 0	21:12 21:18	KEINATH Thomas	
+2001	US Open Fort Lauderdale 2001	KEINATH Thomas (SVK)		MUJICA Henry (VEN)		MS	Qualification		2 - 1	20:22 21:8 21:14	KEINATH Thomas	
+2001	US Open Fort Lauderdale 2001	KEINATH Thomas (SVK)		FAN Yiyong (USA)		MS	Qualification		0 - 2	17:21 11:21	FAN Yiyong	
+2001	US Open Fort Lauderdale 2001	FLORES Omar (GUA)		MUJICA Henry (VEN)		MS	Qualification		0 - 2	18:21 18:21	MUJICA Henry	
+2001	US Open Fort Lauderdale 2001	FLORES Omar (GUA)		FAN Yiyong (USA)		MS	Qualification		0 - 2	14:21 8:21	FAN Yiyong	
+2001	US Open Fort Lauderdale 2001	MUJICA Henry (VEN)		FAN Yiyong (USA)		MS	Qualification		0 - 2	11:21 13:21	FAN Yiyong	
+2001	US Open Fort Lauderdale 2001	MITAMURA Muneaki (JPN)		EKUN Abas (NGR)		MS	Qualification		2 - 0	21:16 21:15	MITAMURA Muneaki	
+2001	US Open Fort Lauderdale 2001	MITAMURA Muneaki (JPN)		BISPHAM Anson (CAN)		MS	Qualification		2 - 0	21:19 21:14	MITAMURA Muneaki	
+2001	US Open Fort Lauderdale 2001	MITAMURA Muneaki (JPN)		RONDON Ely (VEN)		MS	Qualification		2 - 0	21:9 21:14	MITAMURA Muneaki	
+2001	US Open Fort Lauderdale 2001	EKUN Abas (NGR)		BISPHAM Anson (CAN)		MS	Qualification		2 - 0	21:19 21:14	EKUN Abas	
+2001	US Open Fort Lauderdale 2001	EKUN Abas (NGR)		RONDON Ely (VEN)		MS	Qualification		2 - 1	21:14 19:21 21:18	EKUN Abas	
+2001	US Open Fort Lauderdale 2001	BISPHAM Anson (CAN)		RONDON Ely (VEN)		MS	Qualification		2 - 0	23:21 21:19	BISPHAM Anson	
+2001	US Open Fort Lauderdale 2001	HERBERT Gareth (ENG)		KASSAM Faazil (CAN)		MS	Qualification		2 - 0	21:15 21:14	HERBERT Gareth	
+2001	US Open Fort Lauderdale 2001	HERBERT Gareth (ENG)		MUSUBIIRE Sylas (UGA)		MS	Qualification		2 - 0	21:8 21:7	HERBERT Gareth	
+2001	US Open Fort Lauderdale 2001	KASSAM Faazil (CAN)		MUSUBIIRE Sylas (UGA)		MS	Qualification		2 - 0	21:8 21:12	KASSAM Faazil	
+2001	US Open Fort Lauderdale 2001	GARDOS Robert (AUT)		CSABA Bence (CAN)		MS	Qualification		2 - 0	21:12 21:10	GARDOS Robert	
+2001	US Open Fort Lauderdale 2001	GARDOS Robert (AUT)		BUTLER Jimmy (USA)		MS	Qualification		2 - 1	21:12 14:21 21:11	GARDOS Robert	
+2001	US Open Fort Lauderdale 2001	CSABA Bence (CAN)		BUTLER Jimmy (USA)		MS	Qualification		2 - 0	21:11 21:14	CSABA Bence	
+2001	US Open Fort Lauderdale 2001	GIONIS Panagiotis (GRE)		PETER-PAUL Pradeeban (CAN)		MS	Qualification		2 - 0	21:12 21:16	GIONIS Panagiotis	
+2001	US Open Fort Lauderdale 2001	GIONIS Panagiotis (GRE)		WER Estuardo (GUA)		MS	Qualification		2 - 0	21:9 21:10	GIONIS Panagiotis	
+2001	US Open Fort Lauderdale 2001	GIONIS Panagiotis (GRE)		JAIN Ashoo (USA)		MS	Qualification		2 - 0	21:6 21:16	GIONIS Panagiotis	
+2001	US Open Fort Lauderdale 2001	PETER-PAUL Pradeeban (CAN)		WER Estuardo (GUA)		MS	Qualification		2 - 0	21:7 21:11	PETER-PAUL Pradeeban	
+2001	US Open Fort Lauderdale 2001	PETER-PAUL Pradeeban (CAN)		JAIN Ashoo (USA)		MS	Qualification		2 - 0	21:16 21:12	PETER-PAUL Pradeeban	
+2001	US Open Fort Lauderdale 2001	JINDRAK Karl (AUT)		SAHA Subhajit (IND)		MS	Qualification		2 - 1	19:21 21:13 21:16	JINDRAK Karl	
+2001	US Open Fort Lauderdale 2001	JINDRAK Karl (AUT)		VENTURA DOS ANJOS Bruno (BRA)		MS	Qualification		2 - 0	21:13 21:9	JINDRAK Karl	
+2001	US Open Fort Lauderdale 2001	SAHA Subhajit (IND)		VENTURA DOS ANJOS Bruno (BRA)		MS	Qualification		2 - 0	21:8 21:16	SAHA Subhajit	
+2001	US Open Fort Lauderdale 2001	FETH Stefan (GER)		KNUDSEN Morten (DEN)		MS	Qualification		2 - 1	17:21 21:16 21:11	FETH Stefan	
+2001	US Open Fort Lauderdale 2001	FETH Stefan (GER)		PACE Brian (USA)		MS	Qualification		2 - 0	21:9 21:9	FETH Stefan	
+2001	US Open Fort Lauderdale 2001	KNUDSEN Morten (DEN)		PACE Brian (USA)		MS	Qualification		2 - 0	21:12 21:10	KNUDSEN Morten	
+2001	US Open Fort Lauderdale 2001	YOUNG Terry (ENG)		ROY Soumyadeep (IND)		MS	Qualification		2 - 0	21:12 21:12	YOUNG Terry	
+2001	US Open Fort Lauderdale 2001	YOUNG Terry (ENG)		YANG Heesuk (KOR)		MS	Qualification		1 - 2	21:15 11:21 18:21	YANG Heesuk	
+2001	US Open Fort Lauderdale 2001	YOUNG Terry (ENG)		GABRIEL Santiago (USA)		MS	Qualification		2 - 0	21:9 21:6	YOUNG Terry	
+2001	US Open Fort Lauderdale 2001	ROY Soumyadeep (IND)		YANG Heesuk (KOR)		MS	Qualification		0 - 2	17:21 13:21	YANG Heesuk	
+2001	US Open Fort Lauderdale 2001	ROY Soumyadeep (IND)		GABRIEL Santiago (USA)		MS	Qualification		2 - 0	21:14 21:17	ROY Soumyadeep	
+2001	US Open Fort Lauderdale 2001	YANG Heesuk (KOR)		GABRIEL Santiago (USA)		MS	Qualification		2 - 0	21:16 21:16	YANG Heesuk	
+2001	US Open Fort Lauderdale 2001	MIRAULT Cedric (FRA)		CLOSSET Marc (BEL)		MS	Qualification		2 - 0	21:14 21:19	MIRAULT Cedric	
+2001	US Open Fort Lauderdale 2001	MIRAULT Cedric (FRA)		KIM Seung Hun (KOR)		MS	Qualification		2 - 1	21:18 16:21 21:14	MIRAULT Cedric	
+2001	US Open Fort Lauderdale 2001	MIRAULT Cedric (FRA)		CRETU Razvan (USA)		MS	Qualification		2 - 0	21:13 21:14	MIRAULT Cedric	
+2001	US Open Fort Lauderdale 2001	CLOSSET Marc (BEL)		KIM Seung Hun (KOR)		MS	Qualification		2 - 0	21:19 21:15	CLOSSET Marc	
+2001	US Open Fort Lauderdale 2001	CLOSSET Marc (BEL)		CRETU Razvan (USA)		MS	Qualification		2 - 0	21:12 22:20	CLOSSET Marc	
+2001	US Open Fort Lauderdale 2001	KIM Seung Hun (KOR)		CRETU Razvan (USA)		MS	Qualification		2 - 1	21:16 18:21 21:13	KIM Seung Hun	
+2001	US Open Fort Lauderdale 2001	TASEI Kunihito (JPN)		GONZALES Raymond (NOR)		MS	Qualification		2 - 1	21:12 10:21 21:12	TASEI Kunihito	
+2001	US Open Fort Lauderdale 2001	TASEI Kunihito (JPN)		GUO Keli (CHN)		MS	Qualification		1 - 2	21:16 18:21 20:22	GUO Keli	
+2001	US Open Fort Lauderdale 2001	TASEI Kunihito (JPN)		HAZINSKI Mark (USA)		MS	Qualification		2 - 1	21:17 11:21 23:21	TASEI Kunihito	
+2001	US Open Fort Lauderdale 2001	GONZALES Raymond (NOR)		GUO Keli (CHN)		MS	Qualification		2 - 1	12:21 21:17 21:11	GONZALES Raymond	
+2001	US Open Fort Lauderdale 2001	GONZALES Raymond (NOR)		HAZINSKI Mark (USA)		MS	Qualification		0 - 2	16:21 21:23	HAZINSKI Mark	
+2001	US Open Fort Lauderdale 2001	GUO Keli (CHN)		HAZINSKI Mark (USA)		MS	Qualification		2 - 0	21:16 21:6	GUO Keli	
+2001	US Open Fort Lauderdale 2001	FAN Yiyong (USA)		TRUKSA Jaromir (SVK)		MS	Main Draw	R64	1 - 3	21:16 17:21 17:21 6:21	TRUKSA Jaromir	
+2001	US Open Fort Lauderdale 2001	BABOOR Chetan (IND)		OWENS Eric (USA)		MS	Main Draw	R64	3 - 2	18:21 21:15 21:17 19:21 21:10	BABOOR Chetan	
+2001	US Open Fort Lauderdale 2001	MARTINEZ Michel (FRA)		KARAKASEVIC Aleksandar (SRB)		MS	Main Draw	R64	1 - 3	11:21 21:17 18:21 20:22	KARAKASEVIC Aleksandar	
+2001	US Open Fort Lauderdale 2001	ERLANDSEN Geir (NOR)		YANG Heesuk (KOR)		MS	Main Draw	R64	1 - 3	18:21 20:22 21:6 21:23	YANG Heesuk	
+2001	US Open Fort Lauderdale 2001	CLOSSET Marc (BEL)		FEJER-KONNERTH Zoltan (GER)		MS	Main Draw	R64	3 - 2	20:22 21:15 21:11 17:21 21:18	CLOSSET Marc	
+2001	US Open Fort Lauderdale 2001	YUZAWA Ryo (JPN)		GUO Keli (CHN)		MS	Main Draw	R64	3 - 1	21:13 21:8 15:21 21:14	YUZAWA Ryo	
+2001	US Open Fort Lauderdale 2001	EKUN Abas (NGR)		LUPULESKU Ilija (USA)		MS	Main Draw	R64	0 - 3	5:21 20:22 12:21	LUPULESKU Ilija	
+2001	US Open Fort Lauderdale 2001	BRATANOV Martin (BEL)		SORENSEN Mads (DEN)		MS	Main Draw	R64	3 - 1	21:15 21:13 15:21 21:11	BRATANOV Martin	
+2001	US Open Fort Lauderdale 2001	MIRAULT Cedric (FRA)		BENTSEN Allan (DEN)		MS	Main Draw	R64	1 - 3	10:21 19:21 22:20 16:21	BENTSEN Allan	
+2001	US Open Fort Lauderdale 2001	HOYAMA Hugo (BRA)		GARDOS Robert (AUT)		MS	Main Draw	R64	0 - 3	14:21 13:21 16:21	GARDOS Robert	
+2001	US Open Fort Lauderdale 2001	HERBERT Gareth (ENG)		VARIN Eric (FRA)		MS	Main Draw	R64	3 - 0	21:14 21:17 21:19	HERBERT Gareth	
+2001	US Open Fort Lauderdale 2001	LIU Song (ARG)		FETH Stefan (GER)		MS	Main Draw	R64	3 - 0	21:17 21:15 21:13	LIU Song	
+2001	US Open Fort Lauderdale 2001	TUGWELL Finn (DEN)		JOO Saehyuk (KOR)		MS	Main Draw	R64	2 - 3	15:21 21:15 21:19 18:21 12:21	JOO Saehyuk	
+2001	US Open Fort Lauderdale 2001	CHANG Yen-Shu (TPE)		GIONIS Panagiotis (GRE)		MS	Main Draw	R64	3 - 0	21:11 21:16 21:17	CHANG Yen-Shu	
+2001	US Open Fort Lauderdale 2001	JINDRAK Karl (AUT)		ZHUANG David (USA)		MS	Main Draw	R64	1 - 3	21:16 17:21 17:21 19:21	ZHUANG David	
+2001	US Open Fort Lauderdale 2001	LIU Guozheng (CHN)		TRUKSA Jaromir (SVK)		MS	Main Draw	R32	3 - 0	21:18 21:14 21:9	LIU Guozheng	
+2001	US Open Fort Lauderdale 2001	BABOOR Chetan (IND)		KEEN Trinko (NED)		MS	Main Draw	R32	1 - 3	21:19 12:21 17:21 10:21	KEEN Trinko	
+2001	US Open Fort Lauderdale 2001	HEISTER Danny (NED)		KARAKASEVIC Aleksandar (SRB)		MS	Main Draw	R32	3 - 0	23:21 21:8 21:16	HEISTER Danny	
+2001	US Open Fort Lauderdale 2001	YANG Heesuk (KOR)		BLASZCZYK Lucjan (POL)		MS	Main Draw	R32	0 - 3	12:21 10:21 22:24	BLASZCZYK Lucjan	
+2001	US Open Fort Lauderdale 2001	ROSSKOPF Jorg (GER)		CLOSSET Marc (BEL)		MS	Main Draw	R32	3 - 1	21:11 21:14 20:22 21:11	ROSSKOPF Jorg	
+2001	US Open Fort Lauderdale 2001	YUZAWA Ryo (JPN)		WOSIK Torben (GER)		MS	Main Draw	R32	3 - 1	20:22 21:18 21:9 21:13	YUZAWA Ryo	
+2001	US Open Fort Lauderdale 2001	TASAKI Toshio (JPN)		LUPULESKU Ilija (USA)		MS	Main Draw	R32	3 - 1	21:9 15:21 21:19 21:18	TASAKI Toshio	
+2001	US Open Fort Lauderdale 2001	BRATANOV Martin (BEL)		SAIVE Jean-Michel (BEL)		MS	Main Draw	R32	1 - 3	20:22 21:19 11:21 15:21	SAIVE Jean-Michel	
+2001	US Open Fort Lauderdale 2001	SCHLAGER Werner (AUT)		BENTSEN Allan (DEN)		MS	Main Draw	R32	3 - 2	20:22 17:21 22:20 21:12 21:16	SCHLAGER Werner	
+2001	US Open Fort Lauderdale 2001	GARDOS Robert (AUT)		HUANG Johnny (CAN)		MS	Main Draw	R32	2 - 3	21:15 18:21 14:21 21:17 22:24	HUANG Johnny	
+2001	US Open Fort Lauderdale 2001	OH Sangeun (KOR)		HERBERT Gareth (ENG)		MS	Main Draw	R32	3 - 0	21:10 21:18 23:21	OH Sangeun	
+2001	US Open Fort Lauderdale 2001	LIU Song (ARG)		BOLL Timo (GER)		MS	Main Draw	R32	0 - 3	15:21 7:21 17:21	BOLL Timo	
+2001	US Open Fort Lauderdale 2001	KREANGA Kalinikos (GRE)		JOO Saehyuk (KOR)		MS	Main Draw	R32	3 - 0	21:19 21:17 21:13	KREANGA Kalinikos	
+2001	US Open Fort Lauderdale 2001	CHANG Yen-Shu (TPE)		CHUANG Chih-Yuan (TPE)		MS	Main Draw	R32	0 - 3	13:21 14:21 19:21	CHUANG Chih-Yuan	
+2001	US Open Fort Lauderdale 2001	LEE Chulseung (KOR)		ZHUANG David (USA)		MS	Main Draw	R32	3 - 2	9:21 21:16 21:16 21:23 21:17	LEE Chulseung	
+2001	US Open Fort Lauderdale 2001	GRUJIC Slobodan (SRB)		CHIANG Peng-Lung (TPE)		MS	Main Draw	R32	1 - 3	10:21 21:16 16:21 13:21	CHIANG Peng-Lung	
+2001	US Open Fort Lauderdale 2001	LIU Guozheng (CHN)		KEEN Trinko (NED)		MS	Main Draw	R16	3 - 0	23:21 21:19 21:8	LIU Guozheng	
+2001	US Open Fort Lauderdale 2001	HEISTER Danny (NED)		BLASZCZYK Lucjan (POL)		MS	Main Draw	R16	2 - 3	17:21 21:15 21:15 14:21 17:21	BLASZCZYK Lucjan	
+2001	US Open Fort Lauderdale 2001	ROSSKOPF Jorg (GER)		YUZAWA Ryo (JPN)		MS	Main Draw	R16	3 - 0	23:20 21:13 21:16	ROSSKOPF Jorg	
+2001	US Open Fort Lauderdale 2001	TASAKI Toshio (JPN)		SAIVE Jean-Michel (BEL)		MS	Main Draw	R16	0 - 3	15:21 14:21 13:21	SAIVE Jean-Michel	
+2001	US Open Fort Lauderdale 2001	SCHLAGER Werner (AUT)		HUANG Johnny (CAN)		MS	Main Draw	R16	2 - 3	11:21 14:21 22:20 21:19 21:23	HUANG Johnny	
+2001	US Open Fort Lauderdale 2001	OH Sangeun (KOR)		BOLL Timo (GER)		MS	Main Draw	R16	3 - 1	21:14 21:16 18:21 21:13	OH Sangeun	
+2001	US Open Fort Lauderdale 2001	KREANGA Kalinikos (GRE)		CHUANG Chih-Yuan (TPE)		MS	Main Draw	R16	1 - 3	15:21 25:27 22:20 10:21	CHUANG Chih-Yuan
+2001	US Open Fort Lauderdale 2001	LEE Chulseung (KOR)		CHIANG Peng-Lung (TPE)		MS	Main Draw	R16	0 - 3	10:21 9:21 9:21	CHIANG Peng-Lung	
+2001	US Open Fort Lauderdale 2001	LIU Guozheng (CHN)		BLASZCZYK Lucjan (POL)		MS	Main Draw	QuarterFinal	3 - 1	23:25 22:20 21:11 21:17	LIU Guozheng	
+2001	US Open Fort Lauderdale 2001	ROSSKOPF Jorg (GER)		SAIVE Jean-Michel (BEL)		MS	Main Draw	QuarterFinal	1 - 3	15:21 21:14 19:21 17:21	SAIVE Jean-Michel	
+2001	US Open Fort Lauderdale 2001	HUANG Johnny (CAN)		OH Sangeun (KOR)		MS	Main Draw	QuarterFinal	3 - 1	16:21 30:28 21:16 21:5	HUANG Johnny	
+2001	US Open Fort Lauderdale 2001	CHUANG Chih-Yuan (TPE)		CHIANG Peng-Lung (TPE)		MS	Main Draw	QuarterFinal	3 - 1	16:21 21:19 23:21 21:9	CHUANG Chih-Yuan	
+2001	US Open Fort Lauderdale 2001	LIU Guozheng (CHN)		SAIVE Jean-Michel (BEL)		MS	Main Draw	SemiFinal	3 - 1	12:21 21:9 21:18 21:11	LIU Guozheng	
+2001	US Open Fort Lauderdale 2001	HUANG Johnny (CAN)		CHUANG Chih-Yuan (TPE)		MS	Main Draw	SemiFinal	3 - 2	15:21 19:21 21:17 21:12 21:12	HUANG Johnny	
+2001	US Open Fort Lauderdale 2001	LIU Guozheng (CHN)		HUANG Johnny (CAN)		MS	Main Draw	Final	3 - 2	13:21 21:17 17:21 21:14 21:17	LIU Guozheng
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 72
+
+2001	US Open Fort Lauderdale 2001	FINNEMANN Pia (DEN)		ALVAREZ Ruth (GUA)		WS	Qualification		2 - 0	21:11 21:14	FINNEMANN Pia	
+2001	US Open Fort Lauderdale 2001	FINNEMANN Pia (DEN)		RAMOS Fabiola (VEN)		WS	Qualification		2 - 0	21:11 21:9	FINNEMANN Pia	
+2001	US Open Fort Lauderdale 2001	ALVAREZ Ruth (GUA)		RAMOS Fabiola (VEN)		WS	Qualification		2 - 0	21:14 21:18	ALVAREZ Ruth	
+2001	US Open Fort Lauderdale 2001	GUANCHEZ Mariana (VEN)		SENYONDO Mildred (UGA)		WS	Qualification		2 - 0	21:8 21:9	GUANCHEZ Mariana	
+2001	US Open Fort Lauderdale 2001	GUANCHEZ Mariana (VEN)		WANG Chen (USA)		WS	Qualification		0 - 2	11:21 12:21	WANG Chen	
+2001	US Open Fort Lauderdale 2001	SENYONDO Mildred (UGA)		WANG Chen (USA)		WS	Qualification		0 - 2	7:21 11:21	WANG Chen	
+2001	US Open Fort Lauderdale 2001	SUNG Virginia (USA)		INDU Nagapattinam R (IND)		WS	Qualification		2 - 0	21:8 21:16	SUNG Virginia	
+2001	US Open Fort Lauderdale 2001	SUNG Virginia (USA)		KIM Bokrae (KOR)		WS	Qualification		0 - 2	11:21 8:21	KIM Bokrae	
+2001	US Open Fort Lauderdale 2001	INDU Nagapattinam R (IND)		KIM Bokrae (KOR)		WS	Qualification		0 - 2	12:21 13:21	KIM Bokrae	
+2001	US Open Fort Lauderdale 2001	GHATAK Poulomi (IND)		CHIU Wennin (CAN)		WS	Qualification		2 - 0	21:16 21:10	GHATAK Poulomi	
+2001	US Open Fort Lauderdale 2001	GHATAK Poulomi (IND)		YOON Jihye (KOR)		WS	Qualification		0 - 2	19:21 15:21	YOON Jihye	
+2001	US Open Fort Lauderdale 2001	GHATAK Poulomi (IND)		KYAKOBYE June (UGA)		WS	Qualification		2 - 0	21:15 21:12	GHATAK Poulomi	
+2001	US Open Fort Lauderdale 2001	CHIU Wennin (CAN)		YOON Jihye (KOR)		WS	Qualification		0 - 2	18:21 14:21	YOON Jihye	
+2001	US Open Fort Lauderdale 2001	CHIU Wennin (CAN)		KYAKOBYE June (UGA)		WS	Qualification		2 - 0	21:10 21:11	CHIU Wennin	
+2001	US Open Fort Lauderdale 2001	YOON Jihye (KOR)		KYAKOBYE June (UGA)		WS	Qualification		2 - 0	21:12 21:9	YOON Jihye	
+2001	US Open Fort Lauderdale 2001	YANG Simone (USA)		YU Fu (POR)		WS	Qualification		0 - 2	13:21 15:21	YU Fu	
+2001	US Open Fort Lauderdale 2001	YU Fu (POR)		BOSIKA Mimi (USA)		WS	Qualification		2 - 0	21:18 21:13	YU Fu	
+2001	US Open Fort Lauderdale 2001	GHOSH Mantu (IND)		PEREZ Luisana (VEN)		WS	Qualification		2 - 0	21:18 21:15	GHOSH Mantu	
+2001	US Open Fort Lauderdale 2001	GHOSH Mantu (IND)		JIA Beibei (CHN)		WS	Qualification		0 - 2	24:26 9:21	JIA Beibei	
+2001	US Open Fort Lauderdale 2001	GHOSH Mantu (IND)		MOSELEY Kibibi (BAR)		WS	Qualification		0 - 2	14:21 13:21	MOSELEY Kibibi	
+2001	US Open Fort Lauderdale 2001	PEREZ Luisana (VEN)		JIA Beibei (CHN)		WS	Qualification		0 - 2	11:21 13:21	JIA Beibei	
+2001	US Open Fort Lauderdale 2001	PEREZ Luisana (VEN)		MOSELEY Kibibi (BAR)		WS	Qualification		2 - 0	21:17 21:19	PEREZ Luisana	
+2001	US Open Fort Lauderdale 2001	JIA Beibei (CHN)		MOSELEY Kibibi (BAR)		WS	Qualification		2 - 0	21:11 21:15	JIA Beibei	
+2001	US Open Fort Lauderdale 2001	RAMOS Fabiola (VEN)		ROUSSY Marie-Christine (CAN)		WS	Qualification		0 - 2	10:21 15:21	ROUSSY Marie-Christine	
+2001	US Open Fort Lauderdale 2001	RAMOS Fabiola (VEN)		LI Qiangbing (AUT)		WS	Qualification		0 - 2	14:21 18:21	LI Qiangbing	
+2001	US Open Fort Lauderdale 2001	RAMOS Fabiola (VEN)		ROUFEH Mahin (USA)		WS	Qualification		2 - 0	21:9 21:10	RAMOS Fabiola	
+2001	US Open Fort Lauderdale 2001	ROUSSY Marie-Christine (CAN)		LI Qiangbing (AUT)		WS	Qualification		0 - 2	14:21 8:21	LI Qiangbing	
+2001	US Open Fort Lauderdale 2001	ALVAREZ Ruth (GUA)		KIM Kyungha (KOR)		WS	Main Draw	R64	0 - 3	6:21 10:21 6:21	KIM Kyungha	
+2001	US Open Fort Lauderdale 2001	WANG Chen (USA)		KIM Bokrae (KOR)		WS	Main Draw	R64	0 - 3	19:21 7:21 14:21	KIM Bokrae	
+2001	US Open Fort Lauderdale 2001	NEMES Olga (ROU)		PARK Kyungae (II) (KOR)		WS	Main Draw	R64	3 - 0	21:12 21:14 21:16	NEMES Olga	
+2001	US Open Fort Lauderdale 2001	BOSIKA Mimi (USA)		FINNEMANN Pia (DEN)		WS	Main Draw	R64	0 - 3	16:21 18:21 19:21	FINNEMANN Pia	
+2001	US Open Fort Lauderdale 2001	BENTSEN Eldijana (CRO)		YOON Jihye (KOR)		WS	Main Draw	R64	2 - 3	21:10 18:21 19:21 21:19 18:21	YOON Jihye	
+2001	US Open Fort Lauderdale 2001	JIA Beibei (CHN)		REGENWETTER Peggy (LUX)		WS	Main Draw	R64	3 - 0	21:18 21:6 23:21	JIA Beibei	
+2001	US Open Fort Lauderdale 2001	KIM Soongsil (KOR)		PEREZ Luisana (VEN)		WS	Main Draw	R64	3 - 0	21:18 21:6 21:11	KIM Soongsil	
+2001	US Open Fort Lauderdale 2001	ROUSSY Marie-Christine (CAN)		BANH THUA Tawny (USA)		WS	Main Draw	R64	0 - 3	9:21 15:21 12:21	BANH THUA Tawny	
+2001	US Open Fort Lauderdale 2001	GUANCHEZ Mariana (VEN)		CADA Petra (CAN)		WS	Main Draw	R64	0 - 3	10:21 11:21 15:21	CADA Petra	
+2001	US Open Fort Lauderdale 2001	YU Fu (POR)		DAS Mouma (IND)		WS	Main Draw	R64	3 - 0	21:14 21:14 21:7	YU Fu	
+2001	US Open Fort Lauderdale 2001	NISHII Yuka (JPN)		GHOSH Mantu (IND)		WS	Main Draw	R64	3 - 0	21:10 21:12 21:8	NISHII Yuka	
+2001	US Open Fort Lauderdale 2001	CHIU Wennin (CAN)		SHIN Soohee (KOR)		WS	Main Draw	R64	0 - 3	15:21 17:21 17:21	SHIN Soohee	
+2001	US Open Fort Lauderdale 2001	LEE Hyangmi (KOR)		GHATAK Poulomi (IND)		WS	Main Draw	R64	3 - 0	21:9 21:12 21:17	LEE Hyangmi	
+2001	US Open Fort Lauderdale 2001	SUNG Virginia (USA)		XU Chris (CAN)		WS	Main Draw	R64	3 - 0	21:11 21:14 21:14	SUNG Virginia	
+2001	US Open Fort Lauderdale 2001	RATHER Jasna (USA)		LI Qiangbing (AUT)		WS	Main Draw	R64	3 - 2	21:16 12:21 22:24 21:10 21:14	RATHER Jasna	
+2001	US Open Fort Lauderdale 2001	ZHANG Yining (CHN)		KIM Kyungha (KOR)		WS	Main Draw	R32	3 - 0	23:21 21:11 21:18	ZHANG Yining	
+2001	US Open Fort Lauderdale 2001	KIM Bokrae (KOR)		BAI Yang (CHN)		WS	Main Draw	R32	0 - 3	11:21 15:21 13:21	BAI Yang	
+2001	US Open Fort Lauderdale 2001	NEMES Olga (ROU)		FINNEMANN Pia (DEN)		WS	Main Draw	R32	3 - 1	21:14 21:13 20:22 21:16	NEMES Olga	
+2001	US Open Fort Lauderdale 2001	YOON Jihye (KOR)		BATORFI Csilla (HUN)		WS	Main Draw	R32	2 - 3	21:9 16:21 21:13 14:21 21:23	BATORFI Csilla	
+2001	US Open Fort Lauderdale 2001	TOTH Krisztina (HUN)		JIA Beibei (CHN)		WS	Main Draw	R32	1 - 3	15:21 13:21 21:18 17:21	JIA Beibei	
+2001	US Open Fort Lauderdale 2001	KIM Soongsil (KOR)		UMEMURA Aya (JPN)		WS	Main Draw	R32	0 - 3	11:21 11:21 17:21	UMEMURA Aya	
+2001	US Open Fort Lauderdale 2001	LEE Eunsil (KOR)		BANH THUA Tawny (USA)		WS	Main Draw	R32	3 - 1	21:18 17:21 21:14 21:13	LEE Eunsil	
+2001	US Open Fort Lauderdale 2001	KRAMER Tanja (GER)		NI Xia Lian (LUX)		WS	Main Draw	R32	0 - 3	10:21 11:21 12:21	NI Xia Lian	
+2001	US Open Fort Lauderdale 2001	NIU Jianfeng (CHN)		CADA Petra (CAN)		WS	Main Draw	R32	3 - 0	21:15 21:13 21:12	NIU Jianfeng	
+2001	US Open Fort Lauderdale 2001	RAMOS Fabiola (VEN)		GAO Jun (USA)		WS	Main Draw	R32	0 - 3	18:21 16:21 12:21	GAO Jun	
+2001	US Open Fort Lauderdale 2001	NISHII Yuka (JPN)		GUO Yan (1982) (CHN)		WS	Main Draw	R32	3 - 1	21:19 21:17 17:21 23:21	NISHII Yuka	
+2001	US Open Fort Lauderdale 2001	KONISHI An (JPN)		SHIN Soohee (KOR)		WS	Main Draw	R32	3 - 2	19:21 20:22 21:14 21:15 21:7	KONISHI An	
+2001	US Open Fort Lauderdale 2001	LEE Hyangmi (KOR)		WANG Tingting (CHN)		WS	Main Draw	R32	0 - 3	15:21 13:21 15:21	WANG Tingting	
+2001	US Open Fort Lauderdale 2001	SVENSSON Asa (SWE)		SUNG Virginia (USA)		WS	Main Draw	R32	3 - 0	21:17 21:12 21:17	SVENSSON Asa	
+2001	US Open Fort Lauderdale 2001	RATHER Jasna (USA)		RYU Jihae (KOR)		WS	Main Draw	R32	0 - 3	13:21 12:21 13:21	RYU Jihae	
+2001	US Open Fort Lauderdale 2001	ZHANG Yining (CHN)		BAI Yang (CHN)		WS	Main Draw	R16	3 - 1	21:15 21:19 11:21 21:11	ZHANG Yining	
+2001	US Open Fort Lauderdale 2001	NEMES Olga (ROU)		BATORFI Csilla (HUN)		WS	Main Draw	R16	3 - 1	15:21 21:11 21:19 21:7	NEMES Olga	
+2001	US Open Fort Lauderdale 2001	JIA Beibei (CHN)		UMEMURA Aya (JPN)		WS	Main Draw	R16	1 - 3	20:22 21:19 15:21 8:21	UMEMURA Aya	
+2001	US Open Fort Lauderdale 2001	LEE Eunsil (KOR)		NI Xia Lian (LUX)		WS	Main Draw	R16	1 - 3	15:21 8:21 21:11 16:21	NI Xia Lian	
+2001	US Open Fort Lauderdale 2001	NIU Jianfeng (CHN)		GAO Jun (USA)		WS	Main Draw	R16	3 - 1	21:11 21:15 20:22 21:19	NIU Jianfeng	
+2001	US Open Fort Lauderdale 2001	YU Fu (POR)		NISHII Yuka (JPN)		WS	Main Draw	R16	3 - 1	21:12 21:18 6:22 21:18	YU Fu	
+2001	US Open Fort Lauderdale 2001	KONISHI An (JPN)		WANG Tingting (CHN)		WS	Main Draw	R16	0 - 3	20:22 11:21 13:21	WANG Tingting	
+2001	US Open Fort Lauderdale 2001	SVENSSON Asa (SWE)		RYU Jihae (KOR)		WS	Main Draw	R16	2 - 3	21:10 21:18 18:21 17:21 17:21	RYU Jihae	
+2001	US Open Fort Lauderdale 2001	ZHANG Yining (CHN)		NEMES Olga (ROU)		WS	Main Draw	QuarterFinal	2 - 3	17:21 15:21 22:20 21:7 18:21	NEMES Olga	
+2001	US Open Fort Lauderdale 2001	UMEMURA Aya (JPN)		NI Xia Lian (LUX)		WS	Main Draw	QuarterFinal	3 - 1	12:21 23:21 21:17 21:13	UMEMURA Aya	
+2001	US Open Fort Lauderdale 2001	NIU Jianfeng (CHN)		YU Fu (POR)		WS	Main Draw	QuarterFinal	3 - 0	21:7 21:15 21:12	NIU Jianfeng	
+2001	US Open Fort Lauderdale 2001	WANG Tingting (CHN)		RYU Jihae (KOR)		WS	Main Draw	QuarterFinal	0 - 3	18:21 17:21 21:23	RYU Jihae	
+2001	US Open Fort Lauderdale 2001	NEMES Olga (ROU)		UMEMURA Aya (JPN)		WS	Main Draw	SemiFinal	1 - 3	16:21 18:21 21:13 17:21	UMEMURA Aya	
+2001	US Open Fort Lauderdale 2001	NIU Jianfeng (CHN)		RYU Jihae (KOR)		WS	Main Draw	SemiFinal	3 - 0	21:13 21:15 21:5	NIU Jianfeng	
+2001	US Open Fort Lauderdale 2001	UMEMURA Aya (JPN)		NIU Jianfeng (CHN)		WS	Main Draw	Final	0 - 3	11:21 13:21 2:21	NIU Jianfeng

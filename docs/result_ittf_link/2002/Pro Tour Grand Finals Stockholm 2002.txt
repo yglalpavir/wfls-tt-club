@@ -1,0 +1,82 @@
+2002	Pro Tour Grand Finals Stockholm 2002	ITTF World Tour / Pro Tour	Grand Finals	44	2002-12-12	2002-12-15
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+50
+Total: 15
+
+2002	Pro Tour Grand Finals Stockholm 2002	MA Lin (CHN)		SMIRNOV Alexey (RUS)		MS	Main Draw	R16	4 - 2	11:9 11:7 5:11 11:9 1:11 11:4	MA Lin	
+2002	Pro Tour Grand Finals Stockholm 2002	SAMSONOV Vladimir (BLR)		WANG Hao (CHN)		MS	Main Draw	R16	3 - 4	10:12 12:10 6:11 11:8 4:11 11:8 4:11	WANG Hao	
+2002	Pro Tour Grand Finals Stockholm 2002	CHUANG Chih-Yuan (TPE)		KONG Linghui (CHN)		MS	Main Draw	R16	4 - 3	7:11 13:11 11:9 11:6 10:12 9:11 11:7	CHUANG Chih-Yuan	
+2002	Pro Tour Grand Finals Stockholm 2002	MAZE Michael (DEN)		SAIVE Jean-Michel (BEL)		MS	Main Draw	R16	1 - 4	6:11 11:7 9:11 8:11 3:11	SAIVE Jean-Michel	
+2002	Pro Tour Grand Finals Stockholm 2002	BOLL Timo (GER)		KARLSSON Peter (SWE)		MS	Main Draw	R16	4 - 2	7:11 11:3 11:6 9:11 11:9 12:10	BOLL Timo	
+2002	Pro Tour Grand Finals Stockholm 2002	RYU Seungmin (KOR)		WANG Liqin (CHN)		MS	Main Draw	R16	2 - 4	11:6 12:10 5:11 10:12 4:11 2:11	WANG Liqin	
+2002	Pro Tour Grand Finals Stockholm 2002	KREANGA Kalinikos (GRE)		QIN Zhijian (CHN)		MS	Main Draw	R16	4 - 0	11:9 12:10 11:6 11:9	KREANGA Kalinikos	
+2002	Pro Tour Grand Finals Stockholm 2002	HEISTER Danny (NED)		SCHLAGER Werner (AUT)		MS	Main Draw	R16	4 - 2	11:2 11:7 6:11 5:11 11:8 11:1	HEISTER Danny	
+2002	Pro Tour Grand Finals Stockholm 2002	MA Lin (CHN)		WANG Hao (CHN)		MS	Main Draw	QuarterFinal	3 - 4	11:13 8:11 12:10 11:7 11:5 8:11 11:13	WANG Hao	
+2002	Pro Tour Grand Finals Stockholm 2002	CHUANG Chih-Yuan (TPE)		SAIVE Jean-Michel (BEL)		MS	Main Draw	QuarterFinal	4 - 2	11:6 7:11 11:7 11:9 8:11 12:10	CHUANG Chih-Yuan	
+2002	Pro Tour Grand Finals Stockholm 2002	BOLL Timo (GER)		WANG Liqin (CHN)		MS	Main Draw	QuarterFinal	4 - 3	7:11 11:8 11:9 7:11 8:11 11:9 11:6	BOLL Timo	
+2002	Pro Tour Grand Finals Stockholm 2002	KREANGA Kalinikos (GRE)		HEISTER Danny (NED)		MS	Main Draw	QuarterFinal	4 - 1	11:7 11:3 11:5 6:11 15:13	KREANGA Kalinikos	
+2002	Pro Tour Grand Finals Stockholm 2002	WANG Hao (CHN)		CHUANG Chih-Yuan (TPE)		MS	Main Draw	SemiFinal	3 - 4	11:8 10:12 7:11 7:11 11:7 11:8 8:11	CHUANG Chih-Yuan	
+2002	Pro Tour Grand Finals Stockholm 2002	BOLL Timo (GER)		KREANGA Kalinikos (GRE)		MS	Main Draw	SemiFinal	3 - 4	11:13 8:11 9:11 13:11 11:6 11:7 4:11	KREANGA Kalinikos	
+2002	Pro Tour Grand Finals Stockholm 2002	CHUANG Chih-Yuan (TPE)		KREANGA Kalinikos (GRE)		MS	Main Draw	Final	4 - 3	11:9 11:7 9:11 10:12 11:1 7:11 11:6	CHUANG Chih-Yuan
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+50
+Total: 15
+
+2002	Pro Tour Grand Finals Stockholm 2002	ZHANG Yining (CHN)		STEFF Mihaela (ROU)		WS	Main Draw	R16	4 - 1	14:12 11:13 11:5 11:2 11:5	ZHANG Yining	
+2002	Pro Tour Grand Finals Stockholm 2002	JOHANSSON Sandra (SWE)		LIN Ling (HKG)		WS	Main Draw	R16	1 - 4	11:13 2:11 7:11 12:10 7:11	LIN Ling	
+2002	Pro Tour Grand Finals Stockholm 2002	UMEMURA Aya (JPN)		GUO Yan (1982) (CHN)		WS	Main Draw	R16	2 - 4	11:9 7:11 11:5 10:12 8:11 14:16	GUO Yan (1982)	
+2002	Pro Tour Grand Finals Stockholm 2002	LI Jiawei (SGP)		BOROS Tamara (CRO)		WS	Main Draw	R16	4 - 2	11:4 11:5 9:11 9:11 12:10 11:5	LI Jiawei	
+2002	Pro Tour Grand Finals Stockholm 2002	NIU Jianfeng (CHN)		JING Junhong (SGP)		WS	Main Draw	R16	4 - 2	8:11 11:4 11:9 6:11 13:11 13:11	NIU Jianfeng	
+2002	Pro Tour Grand Finals Stockholm 2002	STRUSE Nicole (GER)		TIE Yana (HKG)		WS	Main Draw	R16	4 - 3	11:9 3:11 11:6 11:9 11:13 13:15 11:6	STRUSE Nicole	
+2002	Pro Tour Grand Finals Stockholm 2002	LAU Sui Fei (HKG)		FUJINUMA Ai (JPN)		WS	Main Draw	R16	4 - 0	16:14 11:8 11:9 11:4	LAU Sui Fei	
+2002	Pro Tour Grand Finals Stockholm 2002	GUO Yue (CHN)		LI Nan (CHN)		WS	Main Draw	R16	4 - 2	11:5 8:11 8:11 11:5 11:6 11:8	GUO Yue	
+2002	Pro Tour Grand Finals Stockholm 2002	ZHANG Yining (CHN)		LIN Ling (HKG)		WS	Main Draw	QuarterFinal	4 - 2	11:7 11:4 8:11 10:12 11:4 11:2	ZHANG Yining	
+2002	Pro Tour Grand Finals Stockholm 2002	GUO Yan (1982) (CHN)		LI Jiawei (SGP)		WS	Main Draw	QuarterFinal	4 - 3	11:4 11:6 1:11 8:11 6:11 11:2 12:10	GUO Yan (1982)	
+2002	Pro Tour Grand Finals Stockholm 2002	NIU Jianfeng (CHN)		STRUSE Nicole (GER)		WS	Main Draw	QuarterFinal	4 - 0	11:7 11:2 11:8 11:6	NIU Jianfeng	
+2002	Pro Tour Grand Finals Stockholm 2002	LAU Sui Fei (HKG)		GUO Yue (CHN)		WS	Main Draw	QuarterFinal	2 - 4	9:11 6:11 11:6 5:11 11:8 10:12	GUO Yue	
+2002	Pro Tour Grand Finals Stockholm 2002	ZHANG Yining (CHN)		GUO Yan (1982) (CHN)		WS	Main Draw	SemiFinal	4 - 1	11:9 11:8 12:10 7:11 11:9	ZHANG Yining	
+2002	Pro Tour Grand Finals Stockholm 2002	NIU Jianfeng (CHN)		GUO Yue (CHN)		WS	Main Draw	SemiFinal	2 - 4	9:11 11:5 13:15 2:11 11:3 10:12	GUO Yue	
+2002	Pro Tour Grand Finals Stockholm 2002	ZHANG Yining (CHN)		GUO Yue (CHN)		WS	Main Draw	Final	4 - 1	11:7 13:11 4:11 11:8 11:9	ZHANG Yining	
+
+Sub-Event Matches
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+50
+Total: 7
+
+2002	Pro Tour Grand Finals Stockholm 2002	JINDRAK Karl (AUT)	SCHLAGER Werner (AUT)	CHEUNG Yuk (HKG)	LEUNG Chu Yan (HKG)	MD	Main Draw	QuarterFinal	2 - 4	11:4 9:11 9:11 11:8 7:11 12:14	CHEUNG Yuk	LEUNG Chu Yan
+2002	Pro Tour Grand Finals Stockholm 2002	KONG Linghui (CHN)	MA Lin (CHN)	HAKANSSON Fredrik (SWE)	KARLSSON Peter (SWE)	MD	Main Draw	QuarterFinal	4 - 0	11:7 12:10 11:9 11:8	KONG Linghui	MA Lin
+2002	Pro Tour Grand Finals Stockholm 2002	KONG Linghui (CHN)	MA Lin (CHN)	QIN Zhijian (CHN)	WANG Liqin (CHN)	MD	Main Draw	SemiFinal	4 - 1	2:11 11:8 11:3 12:10 11:7	KONG Linghui	MA Lin
+2002	Pro Tour Grand Finals Stockholm 2002	KONG Linghui (CHN)	MA Lin (CHN)	KITO Akira (JPN)	TASAKI Toshio (JPN)	MD	Main Draw	Final	4 - 0	11:5 11:5 15:13 11:7	KONG Linghui	MA Lin
+2002	Pro Tour Grand Finals Stockholm 2002	CHEUNG Yuk (HKG)	LEUNG Chu Yan (HKG)	KITO Akira (JPN)	TASAKI Toshio (JPN)	MD	Main Draw	SemiFinal	2 - 4	13:11 3:11 8:11 11:8 9:11 8:11	KITO Akira	TASAKI Toshio
+2002	Pro Tour Grand Finals Stockholm 2002	KITO Akira (JPN)	TASAKI Toshio (JPN)	KO Lai Chak (HKG)	LI Ching (HKG)	MD	Main Draw	QuarterFinal	4 - 1	11:8 11:8 11:8 6:11 11:4	KITO Akira	TASAKI Toshio
+2002	Pro Tour Grand Finals Stockholm 2002	LEE Chulseung (KOR)	RYU Seungmin (KOR)	QIN Zhijian (CHN)	WANG Liqin (CHN)	MD	Main Draw	QuarterFinal	0 - 4	7:11 8:11 4:11 10:12	QIN Zhijian	WANG Liqin
+
+Sub-Event Matches
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+50
+Total: 7
+
+2002	Pro Tour Grand Finals Stockholm 2002	LI Jia (CHN)	NIU Jianfeng (CHN)	FUJINUMA Ai (JPN)	HIURA Reiko (JPN)	WD	Main Draw	QuarterFinal	4 - 0	11:7 13:11 11:4 11:6	LI Jia	NIU Jianfeng
+2002	Pro Tour Grand Finals Stockholm 2002	LI Jia (CHN)	NIU Jianfeng (CHN)	LEE Eunsil (KOR)	SUK Eunmi (KOR)	WD	Main Draw	SemiFinal	4 - 1	11:6 11:8 4:11 11:7 11:9	LI Jia	NIU Jianfeng
+2002	Pro Tour Grand Finals Stockholm 2002	LI Jia (CHN)	NIU Jianfeng (CHN)	LI Nan (CHN)	ZHANG Yining (CHN)	WD	Main Draw	Final	4 - 0	11:9 11:9 11:6 12:10	LI Jia	NIU Jianfeng
+2002	Pro Tour Grand Finals Stockholm 2002	KISHIDA Satoko (JPN)	UMEMURA Aya (JPN)	LI Nan (CHN)	ZHANG Yining (CHN)	WD	Main Draw	QuarterFinal	1 - 4	6:11 10:12 11:9 8:11 9:11	LI Nan	ZHANG Yining
+2002	Pro Tour Grand Finals Stockholm 2002	JING Junhong (SGP)	LI Jiawei (SGP)	FAN Ying (CHN)	GUO Yue (CHN)	WD	Main Draw	QuarterFinal	4 - 1	11:4 9:11 11:7 11:4 11:6	JING Junhong	LI Jiawei
+2002	Pro Tour Grand Finals Stockholm 2002	JING Junhong (SGP)	LI Jiawei (SGP)	LI Nan (CHN)	ZHANG Yining (CHN)	WD	Main Draw	SemiFinal	0 - 4	6:11 7:11 4:11 9:11	LI Nan	ZHANG Yining
+2002	Pro Tour Grand Finals Stockholm 2002	JOHANSSON Sandra (SWE)	JONSSON Susanne (SWE)	LEE Eunsil (KOR)	SUK Eunmi (KOR)	WD	Main Draw	QuarterFinal	0 - 4	7:11 3:11 6:11 4:11	LEE Eunsil	SUK Eunmi
