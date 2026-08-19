@@ -6,3 +6,613 @@
 参赛人数：519
 开始日期：2005-01-12
 结束日期：2005-01-15
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 3 Total: 248
+
+Start
+Prev
+1
+2
+3
+Next
+End
+2005	SLOVENIA Open Velenje 2005	LEUNG Chu Yan (HKG)		MATSUMOTO Cazuo (BRA)		MS	Main Draw	R64	4 - 0	11:7 11:8 11:2 11:5	LEUNG Chu Yan	
+2005	SLOVENIA Open Velenje 2005	JUZBASIC Ivan (CRO)		FILIMON Andrei (ROU)		MS	Main Draw	R64	3 - 4	9:11 12:10 8:11 11:9 8:11 12:10 10:12	FILIMON Andrei	
+2005	SLOVENIA Open Velenje 2005	GERELL Par (SWE)		BOBILLIER Loic (FRA)		MS	Main Draw	R64	3 - 4	7:11 12:10 4:11 5:11 11:7 11:3 4:11	BOBILLIER Loic	
+2005	SLOVENIA Open Velenje 2005	SVENSSON Robert (SWE)		ERLANDSEN Geir (NOR)		MS	Main Draw	R64	3 - 4	10:12 8:11 13:11 11:9 11:7 6:11 9:11	ERLANDSEN Geir	
+2005	SLOVENIA Open Velenje 2005	KRZESZEWSKI Tomasz (POL)		GAO Ning (SGP)		MS	Main Draw	R64	3 - 4	11:9 9:11 7:11 11:4 11:13 11:9 6:11	GAO Ning	
+2005	SLOVENIA Open Velenje 2005	SIMONCIK Josef (CZE)		FAZEKAS Peter (HUN)		MS	Main Draw	R64	3 - 4	11:5 11:5 10:12 11:9 12:14 8:11 6:11	FAZEKAS Peter	
+2005	SLOVENIA Open Velenje 2005	CABESTANY Cedrik (FRA)		SCHLICHTER Jorg (GER)		MS	Main Draw	R64	2 - 4	10:12 12:10 11:4 9:11 7:11 7:11	SCHLICHTER Jorg	
+2005	SLOVENIA Open Velenje 2005	LINDNER Adam (HUN)		TOKIC Bojan (SLO)		MS	Main Draw	R64	3 - 4	10:12 12:10 1:11 11:13 13:11 12:10 10:12	TOKIC Bojan	
+2005	SLOVENIA Open Velenje 2005	KUZMIN Fedor (RUS)		AXELQVIST Johan (SWE)		MS	Main Draw	R64	4 - 2	5:11 11:9 11:5 11:9 8:11 11:8	KUZMIN Fedor	
+2005	SLOVENIA Open Velenje 2005	ZUBCIC Tomislav (CRO)		WANG Zengyi (POL)		MS	Main Draw	R64	1 - 4	4:11 7:11 11:6 13:15 5:11	WANG Zengyi	
+2005	SLOVENIA Open Velenje 2005	GORAK Daniel (POL)		FILUS Ruwen (GER)		MS	Main Draw	R64	4 - 0	11:5 13:11 11:7 13:11	GORAK Daniel	
+2005	SLOVENIA Open Velenje 2005	REDJEP Ronald (CRO)		KLASEK Marek (CZE)		MS	Main Draw	R64	4 - 2	11:4 8:11 11:9 12:14 12:10 11:8	REDJEP Ronald	
+2005	SLOVENIA Open Velenje 2005	PAZSY Ferenc (HUN)		CIHAK Marek (CZE)		MS	Main Draw	R64	0 - 4	11:13 7:11 6:11 7:11	CIHAK Marek	
+2005	SLOVENIA Open Velenje 2005	ASAMOAH Cyprian (SWE)		CIOTI Constantin (ROU)		MS	Main Draw	R64	1 - 4	4:11 11:8 7:11 10:12 7:11	CIOTI Constantin	
+2005	SLOVENIA Open Velenje 2005	YANG Zi (SGP)		SURBEK Dragutin (CRO)		MS	Main Draw	R64	4 - 0	11:8 14:12 11:7 11:4	YANG Zi	
+2005	SLOVENIA Open Velenje 2005	MAGYAR Laszlo (HUN)		CHEUNG Yuk (HKG)		MS	Main Draw	R64	1 - 4	11:8 9:11 8:11 3:11 4:11	CHEUNG Yuk	
+2005	SLOVENIA Open Velenje 2005	LI Ching (HKG)		VOZICKY Bohumil (CZE)		MS	Main Draw	R64	4 - 1	11:9 11:2 12:10 8:11 11:7	LI Ching	
+2005	SLOVENIA Open Velenje 2005	DEMETER Lehel (HUN)		DIDUKH Oleksandr (UKR)		MS	Main Draw	R64	4 - 0	11:7 11:7 11:6 12:10	DEMETER Lehel	
+2005	SLOVENIA Open Velenje 2005	SUCH Bartosz (POL)		TAN Ruiwu (CRO)		MS	Main Draw	R64	4 - 3	9:11 11:6 11:5 8:11 11:8 10:12 11:9	SUCH Bartosz	
+2005	SLOVENIA Open Velenje 2005	PERRY Alex (ENG)		MOLDOVAN Istvan (NOR)		MS	Main Draw	R64	0 - 4	4:11 5:11 2:11 3:11	MOLDOVAN Istvan	
+2005	SLOVENIA Open Velenje 2005	KEINATH Thomas (SVK)		KOMAC Gregor (SLO)		MS	Main Draw	R64	4 - 0	11:3 12:10 11:2 11:8	KEINATH Thomas	
+2005	SLOVENIA Open Velenje 2005	KOSOWSKI Jakub (POL)		MONTEIRO Joao (POR)		MS	Main Draw	R64	0 - 4	4:11 4:11 7:11 8:11	MONTEIRO Joao	
+2005	SLOVENIA Open Velenje 2005	KUSINSKI Marcin (POL)		JAPEC Tomislav (CRO)		MS	Main Draw	R64	4 - 2	6:11 11:5 11:7 7:11 11:7 11:6	KUSINSKI Marcin	
+2005	SLOVENIA Open Velenje 2005	APOLONIA Tiago (POR)		KARAKASEVIC Aleksandar (SRB)		MS	Main Draw	R64	1 - 4	9:11 8:11 4:11 12:10 6:11	KARAKASEVIC Aleksandar	
+2005	SLOVENIA Open Velenje 2005	BENTSEN Allan (DEN)		BITZIGEIO Jorg (GER)		MS	Main Draw	R64	4 - 3	11:6 6:11 8:11 11:3 11:9 4:11 11:7	BENTSEN Allan	
+2005	SLOVENIA Open Velenje 2005	PRESSLMAYER Bernhard (AUT)		FETH Stefan (GER)		MS	Main Draw	R64	2 - 4	5:11 11:6 3:11 11:3 10:12 4:11	FETH Stefan	
+2005	SLOVENIA Open Velenje 2005	IGNJATOVIC Sasa (SLO)		COOKE Alan (ENG)		MS	Main Draw	R64	1 - 4	10:12 3:11 11:8 13:15 8:11	COOKE Alan	
+2005	SLOVENIA Open Velenje 2005	KOLAREK Tomislav (CRO)		MONTEIRO Thiago (BRA)		MS	Main Draw	R64	3 - 4	8:11 13:11 7:11 11:6 7:11 11:8 7:11	MONTEIRO Thiago	
+2005	SLOVENIA Open Velenje 2005	LEGOUT Christophe (FRA)		HABESOHN Daniel (AUT)		MS	Main Draw	R64	4 - 1	11:2 6:11 11:7 11:9 13:11	LEGOUT Christophe	
+2005	SLOVENIA Open Velenje 2005	CAI Xiaoli (SGP)		SEREDA Peter (SVK)		MS	Main Draw	R64	4 - 3	11:9 11:6 8:11 3:11 11:7 6:11 11:3	CAI Xiaoli	
+2005	SLOVENIA Open Velenje 2005	PISTEJ Lubomir (SVK)		LO Dany (FRA)		MS	Main Draw	R64	4 - 3	5:11 11:9 11:8 8:11 9:11 11:9 11:5	PISTEJ Lubomir	
+2005	SLOVENIA Open Velenje 2005	BAZENOV Valentin (SVK)		KO Lai Chak (HKG)		MS	Main Draw	R64	1 - 4	9:11 9:11 10:12 11:7 9:11	KO Lai Chak	
+2005	SLOVENIA Open Velenje 2005	LEUNG Chu Yan (HKG)		FILIMON Andrei (ROU)		MS	Main Draw	R32	4 - 0	11:2 11:7 11:7 13:11	LEUNG Chu Yan	
+2005	SLOVENIA Open Velenje 2005	BOBILLIER Loic (FRA)		ERLANDSEN Geir (NOR)		MS	Main Draw	R32	0 - 4	9:11 8:11 10:12 9:11	ERLANDSEN Geir	
+2005	SLOVENIA Open Velenje 2005	GAO Ning (SGP)		FAZEKAS Peter (HUN)		MS	Main Draw	R32	4 - 1	14:12 11:9 11:3 14:16 11:5	GAO Ning	
+2005	SLOVENIA Open Velenje 2005	SCHLICHTER Jorg (GER)		TOKIC Bojan (SLO)		MS	Main Draw	R32	4 - 2	9:11 11:8 11:7 8:11 12:10 14:12	SCHLICHTER Jorg	
+2005	SLOVENIA Open Velenje 2005	KUZMIN Fedor (RUS)		WANG Zengyi (POL)		MS	Main Draw	R32	4 - 2	11:7 11:8 11:8 9:11 10:12 12:10	KUZMIN Fedor	
+2005	SLOVENIA Open Velenje 2005	GORAK Daniel (POL)		REDJEP Ronald (CRO)		MS	Main Draw	R32	4 - 1	4:11 11:5 11:9 11:6 11:3	GORAK Daniel	
+2005	SLOVENIA Open Velenje 2005	CIHAK Marek (CZE)		CIOTI Constantin (ROU)		MS	Main Draw	R32	3 - 4	7:11 9:11 13:11 11:9 9:11 11:8 13:15	CIOTI Constantin	
+2005	SLOVENIA Open Velenje 2005	YANG Zi (SGP)		CHEUNG Yuk (HKG)		MS	Main Draw	R32	4 - 1	14:12 11:8 4:11 11:3 11:6	YANG Zi	
+2005	SLOVENIA Open Velenje 2005	LI Ching (HKG)		DEMETER Lehel (HUN)		MS	Main Draw	R32	4 - 1	11:5 6:11 11:9 14:12 11:7	LI Ching	
+2005	SLOVENIA Open Velenje 2005	SUCH Bartosz (POL)		MOLDOVAN Istvan (NOR)		MS	Main Draw	R32	4 - 3	11:13 11:13 11:8 11:6 11:8 9:11 11:8	SUCH Bartosz	
+2005	SLOVENIA Open Velenje 2005	KEINATH Thomas (SVK)		MONTEIRO Joao (POR)		MS	Main Draw	R32	4 - 3	11:7 7:11 12:10 5:11 11:8 10:12 11:9	KEINATH Thomas	
+2005	SLOVENIA Open Velenje 2005	KUSINSKI Marcin (POL)		KARAKASEVIC Aleksandar (SRB)		MS	Main Draw	R32	4 - 3	3:11 14:12 11:9 8:11 7:11 14:12 11:9	KUSINSKI Marcin	
+2005	SLOVENIA Open Velenje 2005	BENTSEN Allan (DEN)		FETH Stefan (GER)		MS	Main Draw	R32	4 - 1	12:14 11:5 11:9 11:9 12:10	BENTSEN Allan	
+2005	SLOVENIA Open Velenje 2005	COOKE Alan (ENG)		MONTEIRO Thiago (BRA)		MS	Main Draw	R32	4 - 1	11:9 13:11 6:11 11:7 12:10	COOKE Alan	
+2005	SLOVENIA Open Velenje 2005	LEGOUT Christophe (FRA)		CAI Xiaoli (SGP)		MS	Main Draw	R32	4 - 1	11:4 11:3 11:7 8:11 11:6	LEGOUT Christophe	
+2005	SLOVENIA Open Velenje 2005	PISTEJ Lubomir (SVK)		KO Lai Chak (HKG)		MS	Main Draw	R32	3 - 4	6:11 11:9 11:8 10:12 14:12 3:11 5:11	KO Lai Chak	
+2005	SLOVENIA Open Velenje 2005	LEUNG Chu Yan (HKG)		ERLANDSEN Geir (NOR)		MS	Main Draw	R16	4 - 2	11:9 13:15 11:6 11:2 5:11 11:4	LEUNG Chu Yan	
+2005	SLOVENIA Open Velenje 2005	GAO Ning (SGP)		SCHLICHTER Jorg (GER)		MS	Main Draw	R16	4 - 2	11:9 9:11 11:6 13:11 8:11 11:9	GAO Ning	
+2005	SLOVENIA Open Velenje 2005	KUZMIN Fedor (RUS)		GORAK Daniel (POL)		MS	Main Draw	R16	4 - 3	11:6 3:11 6:11 7:11 11:5 11:7 11:2	KUZMIN Fedor	
+2005	SLOVENIA Open Velenje 2005	CIOTI Constantin (ROU)		YANG Zi (SGP)		MS	Main Draw	R16	1 - 4	8:11 8:11 7:11 11:7 9:11	YANG Zi	
+2005	SLOVENIA Open Velenje 2005	LI Ching (HKG)		SUCH Bartosz (POL)		MS	Main Draw	R16	0 - 4	9:11 12:14 8:11 8:11	SUCH Bartosz	
+2005	SLOVENIA Open Velenje 2005	KEINATH Thomas (SVK)		KUSINSKI Marcin (POL)		MS	Main Draw	R16	1 - 4	7:11 12:10 8:11 7:11 9:11	KUSINSKI Marcin	
+2005	SLOVENIA Open Velenje 2005	BENTSEN Allan (DEN)		COOKE Alan (ENG)		MS	Main Draw	R16	1 - 4	10:12 12:14 13:11 5:11 13:15	COOKE Alan	
+2005	SLOVENIA Open Velenje 2005	LEGOUT Christophe (FRA)		KO Lai Chak (HKG)		MS	Main Draw	R16	2 - 4	7:11 10:12 11:7 11:9 7:11 7:11	KO Lai Chak	
+2005	SLOVENIA Open Velenje 2005	LEUNG Chu Yan (HKG)		GAO Ning (SGP)		MS	Main Draw	QuarterFinal	0 - 4	9:11 9:11 6:11 9:11	GAO Ning	
+2005	SLOVENIA Open Velenje 2005	KUZMIN Fedor (RUS)		YANG Zi (SGP)		MS	Main Draw	QuarterFinal	4 - 0	11:9 11:9 11:7 11:5	KUZMIN Fedor	
+2005	SLOVENIA Open Velenje 2005	SUCH Bartosz (POL)		KUSINSKI Marcin (POL)		MS	Main Draw	QuarterFinal	4 - 1	11:8 8:11 11:6 11:8 11:9	SUCH Bartosz	
+2005	SLOVENIA Open Velenje 2005	COOKE Alan (ENG)		KO Lai Chak (HKG)		MS	Main Draw	QuarterFinal	0 - 4	10:12 7:11 9:11 6:11	KO Lai Chak	
+2005	SLOVENIA Open Velenje 2005	GAO Ning (SGP)		KUZMIN Fedor (RUS)		MS	Main Draw	SemiFinal	3 - 4	11:5 8:11 7:11 11:9 5:11 11:6 12:14	KUZMIN Fedor	
+2005	SLOVENIA Open Velenje 2005	SUCH Bartosz (POL)		KO Lai Chak (HKG)		MS	Main Draw	SemiFinal	2 - 4	10:12 3:11 3:11 11:7 11:3 7:11	KO Lai Chak	
+2005	SLOVENIA Open Velenje 2005	KUZMIN Fedor (RUS)		KO Lai Chak (HKG)		MS	Main Draw	Final	4 - 1	11:8 11:4 7:11 13:11 11:8	KUZMIN Fedor	
+2005	SLOVENIA Open Velenje 2005	MOLDOVAN Istvan (NOR)		GACINA Andrej (CRO)		MS	Qualification	3	4 - 1	11:8 11:3 9:11 11:2 14:12	MOLDOVAN Istvan	
+2005	SLOVENIA Open Velenje 2005	JUZBASIC Neven (CRO)		MAECK Anthony (BEL)		MS	Qualification		4 - 2	11:6 10:12 11:6 12:10 9:11 11:6	JUZBASIC Neven	
+2005	SLOVENIA Open Velenje 2005	AXELQVIST Johan (SWE)		MAECK Anthony (BEL)		MS	Qualification	QR2	4 - 2	11:6 11:6 8:11 11:4 7:11 11:2	AXELQVIST Johan	
+2005	SLOVENIA Open Velenje 2005	AXELQVIST Johan (SWE)		JUZBASIC Neven (CRO)		MS	Qualification	3	4 - 1	8:11 11:8 11:6 11:6 11:3	AXELQVIST Johan	
+2005	SLOVENIA Open Velenje 2005	PLAVSIC Stojan (AUT)		NAVARRO Pere (ESP)		MS	Qualification		3 - 4	11:4 11:3 9:11 6:11 10:12 11:7 9:11	NAVARRO Pere	
+2005	SLOVENIA Open Velenje 2005	LINDNER Adam (HUN)		NAVARRO Pere (ESP)		MS	Qualification	QR2	4 - 3	11:7 11:13 8:11 11:2 11:5 9:11 11:5	LINDNER Adam	
+2005	SLOVENIA Open Velenje 2005	LINDNER Adam (HUN)		PLAVSIC Stojan (AUT)		MS	Qualification	3	4 - 1	6:11 11:4 11:3 11:5 11:7	LINDNER Adam	
+2005	SLOVENIA Open Velenje 2005	RENGENHART Frank (NED)		GOLOVANOV Stanislav (BUL)		MS	Qualification		2 - 4	3:11 11:4 5:11 11:7 4:11 3:11	GOLOVANOV Stanislav	
+2005	SLOVENIA Open Velenje 2005	COOKE Alan (ENG)		GOLOVANOV Stanislav (BUL)		MS	Qualification	QR2	4 - 2	12:10 11:6 5:11 11:5 8:11 11:5	COOKE Alan	
+2005	SLOVENIA Open Velenje 2005	COOKE Alan (ENG)		RENGENHART Frank (NED)		MS	Qualification	3	4 - 0	11:2 11:5 11:6 11:7	COOKE Alan	
+2005	SLOVENIA Open Velenje 2005	PLOHL Zvonko (SLO)		THERIEN Xavier (CAN)		MS	Qualification		1 - 4	9:11 10:12 5:11 11:7 8:11	THERIEN Xavier	
+2005	SLOVENIA Open Velenje 2005	KOSOWSKI Jakub (POL)		THERIEN Xavier (CAN)		MS	Qualification	QR2	4 - 2	14:16 11:9 8:11 11:7 11:7 11:2	KOSOWSKI Jakub	
+2005	SLOVENIA Open Velenje 2005	KOSOWSKI Jakub (POL)		PLOHL Zvonko (SLO)		MS	Qualification	3	4 - 1	11:5 6:11 11:5 11:8 11:8	KOSOWSKI Jakub	
+2005	SLOVENIA Open Velenje 2005	HORVAT Mitja (SLO)		MOLNAR Csaba (HUN)		MS	Qualification		4 - 3	9:11 6:11 11:8 11:8 11:7 8:11 11:6	HORVAT Mitja	
+2005	SLOVENIA Open Velenje 2005	CIHAK Marek (CZE)		MOLNAR Csaba (HUN)		MS	Qualification	QR2	4 - 0	11:5 11:4 11:7 11:7	CIHAK Marek	
+2005	SLOVENIA Open Velenje 2005	CIHAK Marek (CZE)		HORVAT Mitja (SLO)		MS	Qualification	3	4 - 0	11:5 11:7 12:10 11:6	CIHAK Marek	
+2005	SLOVENIA Open Velenje 2005	DRINKHALL Paul (ENG)		PAVIC Bojan (SLO)		MS	Qualification		4 - 3	11:7 4:11 11:9 10:12 9:11 11:3 11:4	DRINKHALL Paul	
+2005	SLOVENIA Open Velenje 2005	LO Dany (FRA)		PAVIC Bojan (SLO)		MS	Qualification	QR2	4 - 1	12:10 7:11 11:8 11:5 11:3	LO Dany	
+2005	SLOVENIA Open Velenje 2005	LO Dany (FRA)		DRINKHALL Paul (ENG)		MS	Qualification	3	4 - 1	11:5 9:11 11:6 12:10 11:8	LO Dany	
+2005	SLOVENIA Open Velenje 2005	BOJANIC Nenad (SLO)		HENRIQUES Nuno (POR)		MS	Qualification		2 - 4	15:13 11:9 3:11 9:11 8:11 8:11	HENRIQUES Nuno	
+2005	SLOVENIA Open Velenje 2005	DEMETER Lehel (HUN)		HENRIQUES Nuno (POR)		MS	Qualification	QR2	4 - 0	11:5 11:9 11:9 11:8	DEMETER Lehel	
+2005	SLOVENIA Open Velenje 2005	DEMETER Lehel (HUN)		BOJANIC Nenad (SLO)		MS	Qualification	3	4 - 1	12:10 14:12 11:8 5:11 11:7	DEMETER Lehel	
+2005	SLOVENIA Open Velenje 2005	KOLAREK Tomislav (CRO)		JAZBEC Ziga (SLO)		MS	Qualification		4 - 2	6:11 11:6 11:4 11:6 10:12 11:7	KOLAREK Tomislav	
+2005	SLOVENIA Open Velenje 2005	BERTIN Christophe (FRA)		JAZBEC Ziga (SLO)		MS	Qualification	QR2	4 - 0	11:7 11:8 11:8 15:13	BERTIN Christophe	
+2005	SLOVENIA Open Velenje 2005	BERTIN Christophe (FRA)		KOLAREK Tomislav (CRO)		MS	Qualification	3	2 - 4	7:11 9:11 12:10 11:9 8:11 9:11	KOLAREK Tomislav	
+2005	SLOVENIA Open Velenje 2005	MOLNAR Krisztian (HUN)		ROPOSA Bojan (SLO)		MS	Qualification		4 - 3	6:11 11:8 15:17 12:14 13:11 11:8 11:6	MOLNAR Krisztian	
+2005	SLOVENIA Open Velenje 2005	SCHLICHTER Jorg (GER)		ROPOSA Bojan (SLO)		MS	Qualification	QR2	4 - 1	8:11 11:8 11:8 11:9 16:14	SCHLICHTER Jorg	
+2005	SLOVENIA Open Velenje 2005	SCHLICHTER Jorg (GER)		MOLNAR Krisztian (HUN)		MS	Qualification	3	4 - 3	8:11 11:4 11:8 11:9 13:15 4:11 11:5	SCHLICHTER Jorg	
+2005	SLOVENIA Open Velenje 2005	PETO Zsolt (SRB)		BAST Mike (LUX)		MS	Qualification		4 - 0	11:9 11:3 11:6 11:7	PETO Zsolt	
+2005	SLOVENIA Open Velenje 2005	ASAMOAH Cyprian (SWE)		BAST Mike (LUX)		MS	Qualification	QR2	4 - 2	11:3 8:11 11:5 8:11 11:6 11:5	ASAMOAH Cyprian	
+2005	SLOVENIA Open Velenje 2005	ASAMOAH Cyprian (SWE)		PETO Zsolt (SRB)		MS	Qualification	3	4 - 0	11:6 11:8 11:8 11:7	ASAMOAH Cyprian	
+2005	SLOVENIA Open Velenje 2005	PETROVCIC Janez (SLO)		SIMON Fabien (LUX)		MS	Qualification		1 - 4	8:11 12:14 6:11 11:3 10:12	SIMON Fabien	
+2005	SLOVENIA Open Velenje 2005	VOZICKY Bohumil (CZE)		SIMON Fabien (LUX)		MS	Qualification	QR2	4 - 3	8:11 9:11 17:15 11:2 6:11 11:5 11:4	VOZICKY Bohumil	
+2005	SLOVENIA Open Velenje 2005	VOZICKY Bohumil (CZE)		PETROVCIC Janez (SLO)		MS	Qualification	3	4 - 1	11:6 11:9 11:8 9:11 11:9	VOZICKY Bohumil	
+2005	SLOVENIA Open Velenje 2005	HABESOHN Mathias (AUT)		FILENKO Oleg (UKR)		MS	Qualification		3 - 4	8:11 9:11 11:5 11:13 11:5 11:6 8:11	FILENKO Oleg	
+2005	SLOVENIA Open Velenje 2005	SURBEK Dragutin (CRO)		FILENKO Oleg (UKR)		MS	Qualification	QR2	4 - 1	11:7 11:3 11:7 9:11 11:3	SURBEK Dragutin	
+2005	SLOVENIA Open Velenje 2005	SURBEK Dragutin (CRO)		HABESOHN Mathias (AUT)		MS	Qualification	3	4 - 2	15:13 8:11 11:3 18:16 9:11 11:5	SURBEK Dragutin
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 2 of 3 Total: 248
+
+Start
+Prev
+1
+2
+3
+Next
+End
+2005	SLOVENIA Open Velenje 2005	MAGYAR Laszlo (HUN)		JEVTOVIC Marko (SRB)		MS	Qualification	3	4 - 2	11:8 9:11 5:11 11:7 11:3 11:2	MAGYAR Laszlo	
+2005	SLOVENIA Open Velenje 2005	PRYSHCHEPA Ievgen (UKR)		ZAFOSTNIK Gregor (SLO)		MS	Qualification		4 - 1	11:4 11:4 10:12 11:2 11:9	PRYSHCHEPA Ievgen	
+2005	SLOVENIA Open Velenje 2005	SVENSSON Robert (SWE)		ZAFOSTNIK Gregor (SLO)		MS	Qualification	QR2	4 - 0	11:4 11:5 11:8 11:6	SVENSSON Robert	
+2005	SLOVENIA Open Velenje 2005	SVENSSON Robert (SWE)		PRYSHCHEPA Ievgen (UKR)		MS	Qualification	3	4 - 0	12:10 11:9 11:1 11:8	SVENSSON Robert	
+2005	SLOVENIA Open Velenje 2005	FILUS Ruwen (GER)		KLEPRLIK Michal (CZE)		MS	Qualification		4 - 1	6:11 11:8 14:12 11:7 12:10	FILUS Ruwen	
+2005	SLOVENIA Open Velenje 2005	JAKAB Janos (HUN)		KLEPRLIK Michal (CZE)		MS	Qualification	QR2	4 - 1	11:8 10:12 11:4 11:7 11:9	JAKAB Janos	
+2005	SLOVENIA Open Velenje 2005	JAKAB Janos (HUN)		FILUS Ruwen (GER)		MS	Qualification	3	2 - 4	9:11 9:11 8:11 11:6 11:7 12:14	FILUS Ruwen	
+2005	SLOVENIA Open Velenje 2005	KLEPRLIK Jakub (CZE)		LASAN Sas (SLO)		MS	Qualification		1 - 4	11:8 8:11 5:11 9:11 3:11	LASAN Sas	
+2005	SLOVENIA Open Velenje 2005	PERRY Alex (ENG)		LASAN Sas (SLO)		MS	Qualification	QR2	4 - 2	9:11 11:9 11:6 11:8 7:11 11:8	PERRY Alex	
+2005	SLOVENIA Open Velenje 2005	PERRY Alex (ENG)		KLEPRLIK Jakub (CZE)		MS	Qualification	3	4 - 3	11:1 11:5 11:3 9:11 8:11 7:11 11:8	PERRY Alex	
+2005	SLOVENIA Open Velenje 2005	PICHLER Michael (AUT)		KNIGHT Darius (ENG)		MS	Qualification		0 - 4	6:11 7:11 9:11 3:11	KNIGHT Darius	
+2005	SLOVENIA Open Velenje 2005	CAI Xiaoli (SGP)		KNIGHT Darius (ENG)		MS	Qualification	QR2	4 - 0	11:8 14:12 11:6 11:7	CAI Xiaoli	
+2005	SLOVENIA Open Velenje 2005	CAI Xiaoli (SGP)		PICHLER Michael (AUT)		MS	Qualification	3	4 - 3	5:11 7:11 11:6 11:8 12:10 10:12 11:9	CAI Xiaoli	
+2005	SLOVENIA Open Velenje 2005	LIEVSHYN Vitaliy (UKR)		ZLAMAL Jaromir (CZE)		MS	Qualification		4 - 1	11:13 11:2 11:7 11:3 12:10	LIEVSHYN Vitaliy	
+2005	SLOVENIA Open Velenje 2005	BOBILLIER Loic (FRA)		ZLAMAL Jaromir (CZE)		MS	Qualification	QR2	4 - 0	11:9 11:5 11:9 11:6	BOBILLIER Loic	
+2005	SLOVENIA Open Velenje 2005	BOBILLIER Loic (FRA)		LIEVSHYN Vitaliy (UKR)		MS	Qualification	3	4 - 2	8:11 7:11 11:5 11:4 11:5 11:8	BOBILLIER Loic	
+2005	SLOVENIA Open Velenje 2005	SIMONCIK Josef (CZE)		CRAVEN Peter (NZL)		MS	Qualification		4 - 0	11:9 11:9 11:6 11:8	SIMONCIK Josef	
+2005	SLOVENIA Open Velenje 2005	VARGA Zoltan (HUN)		CRAVEN Peter (NZL)		MS	Qualification	QR2	4 - 0	11:4 11:7 11:5 11:4	VARGA Zoltan	
+2005	SLOVENIA Open Velenje 2005	VARGA Zoltan (HUN)		SIMONCIK Josef (CZE)		MS	Qualification	3	0 - 4	10:12 8:11 5:11 9:11	SIMONCIK Josef	
+2005	SLOVENIA Open Velenje 2005	ZHMUDENKO Yaroslav (UKR)		MICHELY Gilles (LUX)		MS	Qualification		4 - 2	7:11 4:11 11:8 11:8 11:5 11:3	ZHMUDENKO Yaroslav	
+2005	SLOVENIA Open Velenje 2005	APOLONIA Tiago (POR)		MICHELY Gilles (LUX)		MS	Qualification	QR2	2 - 4	9:11 7:11 8:11 14:12 11:7 8:11	MICHELY Gilles	
+2005	SLOVENIA Open Velenje 2005	APOLONIA Tiago (POR)		ZHMUDENKO Yaroslav (UKR)		MS	Qualification	3	4 - 0	11:4 11:9 11:8 11:8	APOLONIA Tiago	
+2005	SLOVENIA Open Velenje 2005	BAZENOV Valentin (SVK)		SLATINSEK Jure (SLO)		MS	Qualification		4 - 0	11:6 11:8 11:3 11:5	BAZENOV Valentin	
+2005	SLOVENIA Open Velenje 2005	KAUCKY Petr (CZE)		SLATINSEK Jure (SLO)		MS	Qualification	QR2	4 - 0	11:9 11:9 11:7 11:2	KAUCKY Petr	
+2005	SLOVENIA Open Velenje 2005	KAUCKY Petr (CZE)		BAZENOV Valentin (SVK)		MS	Qualification	3	0 - 4	9:11 8:11 8:11 6:11	BAZENOV Valentin	
+2005	SLOVENIA Open Velenje 2005	BITZIGEIO Jorg (GER)		PLACEK Frantisek (CZE)		MS	Qualification		4 - 0	11:9 11:5 11:7 11:9	BITZIGEIO Jorg	
+2005	SLOVENIA Open Velenje 2005	ILLAS Erik (SVK)		PLACEK Frantisek (CZE)		MS	Qualification	QR2	3 - 4	11:9 11:13 8:11 15:13 11:13 14:12 8:11	PLACEK Frantisek	
+2005	SLOVENIA Open Velenje 2005	ILLAS Erik (SVK)		BITZIGEIO Jorg (GER)		MS	Qualification	3	0 - 4	4:11 8:11 10:12 7:11	BITZIGEIO Jorg	
+2005	SLOVENIA Open Velenje 2005	ZUBCIC Tomislav (CRO)		UNGER Mirko (SLO)		MS	Qualification		4 - 1	11:9 8:11 11:8 11:6 11:8	ZUBCIC Tomislav	
+2005	SLOVENIA Open Velenje 2005	DESPRES Rodolphe (FRA)		UNGER Mirko (SLO)		MS	Qualification	QR2	3 - 4	11:6 8:11 11:6 9:11 4:11 13:11 7:11	UNGER Mirko	
+2005	SLOVENIA Open Velenje 2005	DESPRES Rodolphe (FRA)		ZUBCIC Tomislav (CRO)		MS	Qualification	3	2 - 4	8:11 9:11 11:9 11:9 7:11 10:12	ZUBCIC Tomislav	
+2005	SLOVENIA Open Velenje 2005	HABESOHN Daniel (AUT)		JALZABETIC Alen (CRO)		MS	Qualification		4 - 1	11:6 11:7 8:11 11:6 11:6	HABESOHN Daniel	
+2005	SLOVENIA Open Velenje 2005	ZHENG Qi (SGP)		JALZABETIC Alen (CRO)		MS	Qualification	QR2	4 - 1	8:11 11:4 11:5 11:7 11:8	ZHENG Qi	
+2005	SLOVENIA Open Velenje 2005	ZHENG Qi (SGP)		HABESOHN Daniel (AUT)		MS	Qualification	3	2 - 4	11:7 9:11 11:5 2:11 8:11 9:11	HABESOHN Daniel	
+2005	SLOVENIA Open Velenje 2005	KASSAM Faazil (CAN)		MARIC Vladimir (SRB)		MS	Qualification		4 - 1	11:8 11:5 11:5 6:11 11:9	KASSAM Faazil	
+2005	SLOVENIA Open Velenje 2005	KOMAC Gregor (SLO)		MARIC Vladimir (SRB)		MS	Qualification	QR2	4 - 2	11:9 6:11 10:12 11:3 11:4 11:3	KOMAC Gregor	
+2005	SLOVENIA Open Velenje 2005	KOMAC Gregor (SLO)		KASSAM Faazil (CAN)		MS	Qualification	3	4 - 3	8:11 8:11 3:11 11:5 11:5 11:6 11:5	KOMAC Gregor	
+2005	SLOVENIA Open Velenje 2005	VOSTES Yannick (BEL)		NISAVIC Gregor (SLO)		MS	Qualification		4 - 0	11:5 11:9 11:8 11:5	VOSTES Yannick	
+2005	SLOVENIA Open Velenje 2005	MATSUMOTO Cazuo (BRA)		NISAVIC Gregor (SLO)		MS	Qualification	QR2	4 - 2	10:12 11:5 11:5 11:8 8:11 11:4	MATSUMOTO Cazuo	
+2005	SLOVENIA Open Velenje 2005	MATSUMOTO Cazuo (BRA)		VOSTES Yannick (BEL)		MS	Qualification	3	4 - 2	11:6 5:11 11:7 9:11 11:7 11:7	MATSUMOTO Cazuo	
+2005	SLOVENIA Open Velenje 2005	KRIVIC Jakov (CRO)		GAO Ning (SGP)		MS	Qualification		2 - 4	3:11 6:11 11:8 11:7 7:11 5:11	GAO Ning	
+2005	SLOVENIA Open Velenje 2005	DURAN Marc (ESP)		GAO Ning (SGP)		MS	Qualification	QR2	1 - 4	9:11 7:11 12:10 10:12 6:11	GAO Ning	
+2005	SLOVENIA Open Velenje 2005	DURAN Marc (ESP)		KRIVIC Jakov (CRO)		MS	Qualification	3	4 - 1	14:12 6:11 11:8 11:2 11:9	DURAN Marc	
+2005	SLOVENIA Open Velenje 2005	REDJEP Ronald (CRO)		KOSCAK Jure (SLO)		MS	Qualification		4 - 0	11:5 11:7 11:5 11:6	REDJEP Ronald	
+2005	SLOVENIA Open Velenje 2005	SIMONER Christoph (AUT)		KOSCAK Jure (SLO)		MS	Qualification	QR2	4 - 0	11:4 11:6 11:8 11:5	SIMONER Christoph	
+2005	SLOVENIA Open Velenje 2005	SIMONER Christoph (AUT)		REDJEP Ronald (CRO)		MS	Qualification	3	1 - 4	11:7 5:11 7:11 9:11 8:11	REDJEP Ronald	
+2005	SLOVENIA Open Velenje 2005	SEL Zolt (SRB)		GUMAN Martin (SVK)		MS	Qualification		4 - 0	11:4 11:7 11:6 11:6	SEL Zolt	
+2005	SLOVENIA Open Velenje 2005	PRESSLMAYER Bernhard (AUT)		GUMAN Martin (SVK)		MS	Qualification	QR2	4 - 0	12:10 11:6 11:7 14:12	PRESSLMAYER Bernhard	
+2005	SLOVENIA Open Velenje 2005	PRESSLMAYER Bernhard (AUT)		SEL Zolt (SRB)		MS	Qualification	3	4 - 1	11:5 11:8 9:11 11:8 11:8	PRESSLMAYER Bernhard	
+2005	SLOVENIA Open Velenje 2005	DAVID Petr (CZE)		KOVAC Borna (CRO)		MS	Qualification		4 - 0	11:8 13:11 11:9 11:3	DAVID Petr	
+2005	SLOVENIA Open Velenje 2005	GRIGOREV Artur (RUS)		KOVAC Borna (CRO)		MS	Qualification	QR2	4 - 0	11:8 11:9 12:10 11:9	GRIGOREV Artur	
+2005	SLOVENIA Open Velenje 2005	GRIGOREV Artur (RUS)		DAVID Petr (CZE)		MS	Qualification	3	4 - 1	11:8 4:11 13:11 11:7 11:6	GRIGOREV Artur	
+2005	SLOVENIA Open Velenje 2005	WIJERS Barry (NED)		GREEN Wally (USA)		MS	Qualification		4 - 0	11:2 11:1 11:4 11:5	WIJERS Barry	
+2005	SLOVENIA Open Velenje 2005	JAPEC Tomislav (CRO)		GREEN Wally (USA)		MS	Qualification	QR2	4 - 0	11:1 11:2 11:4 11:5	JAPEC Tomislav	
+2005	SLOVENIA Open Velenje 2005	JAPEC Tomislav (CRO)		WIJERS Barry (NED)		MS	Qualification	3	4 - 2	12:10 2:11 11:8 7:11 11:9 14:12	JAPEC Tomislav	
+2005	SLOVENIA Open Velenje 2005	PETER-PAUL Pradeeban (CAN)		JANASEK Thomas (CZE)		MS	Qualification		2 - 4	11:9 5:11 7:11 5:11 11:5 4:11	JANASEK Thomas	
+2005	SLOVENIA Open Velenje 2005	JUZBASIC Ivan (CRO)		JANASEK Thomas (CZE)		MS	Qualification	QR2	4 - 3	7:11 12:10 11:9 7:11 7:11 11:9 14:12	JUZBASIC Ivan	
+2005	SLOVENIA Open Velenje 2005	JUZBASIC Ivan (CRO)		PETER-PAUL Pradeeban (CAN)		MS	Qualification	3	4 - 1	11:6 11:4 8:11 11:1 11:8	JUZBASIC Ivan	
+2005	SLOVENIA Open Velenje 2005	CSABA Bence (CAN)		GASYMOV Elcin (SVK)		MS	Qualification		4 - 0	11:6 11:8 11:3 11:2	CSABA Bence	
+2005	SLOVENIA Open Velenje 2005	KATKOV Ivan (UKR)		TAN Ruiwu (CRO)		MS	Qualification	QR2	1 - 4	11:8 5:11 2:11 3:11 3:11	TAN Ruiwu	
+2005	SLOVENIA Open Velenje 2005	CSABA Bence (CAN)		TAN Ruiwu (CRO)		MS	Qualification	3	1 - 4	11:13 9:11 5:11 11:7 7:11	TAN Ruiwu	
+2005	SLOVENIA Open Velenje 2005	KATKOV Ivan (UKR)		GASYMOV Elcin (SVK)		MS	Qualification	QR4	4 - 1	11:5 8:11 13:11 11:5 11:3	KATKOV Ivan	
+2005	SLOVENIA Open Velenje 2005	CSABA Bence (CAN)		KATKOV Ivan (UKR)		MS	Qualification	5	3 - 4	11:7 15:13 9:11 10:12 11:13 14:12 10:12	KATKOV Ivan	
+2005	SLOVENIA Open Velenje 2005	TAN Ruiwu (CRO)		GASYMOV Elcin (SVK)		MS	Qualification	6	4 - 0	11:8 11:5 11:9 11:8	TAN Ruiwu	
+2005	SLOVENIA Open Velenje 2005	GRIGOREV Artur (RUS)		TAN Ruiwu (CRO)		MS	Qualification	QR4	0 - 4	8:11 6:11 10:12 10:12	TAN Ruiwu	
+2005	SLOVENIA Open Velenje 2005	JAPEC Tomislav (CRO)		JUZBASIC Ivan (CRO)		MS	Qualification	QR4	2 - 4	7:11 11:7 1:11 11:7 6:11 15:17	JUZBASIC Ivan	
+2005	SLOVENIA Open Velenje 2005	YANG Zi (SGP)		MICHELY Gilles (LUX)		U21MS	Main Draw	R32	4 - 0	11:5 11:5 11:6 11:9	YANG Zi	
+2005	SLOVENIA Open Velenje 2005	DAVID Petr (CZE)		MATSUMOTO Cazuo (BRA)		U21MS	Main Draw	R32	4 - 2	3:11 12:10 8:11 11:7 13:11 11:9	DAVID Petr	
+2005	SLOVENIA Open Velenje 2005	APOLONIA Tiago (POR)		BAZENOV Valentin (SVK)		U21MS	Main Draw	R32	4 - 3	6:11 10:12 11:9 11:7 11:13 11:4 11:8	APOLONIA Tiago	
+2005	SLOVENIA Open Velenje 2005	KLEPRLIK Jakub (CZE)		BOBILLIER Loic (FRA)		U21MS	Main Draw	R32	0 - 4	5:11 3:11 8:11 5:11	BOBILLIER Loic	
+2005	SLOVENIA Open Velenje 2005	JAKAB Janos (HUN)		PRYSHCHEPA Ievgen (UKR)		U21MS	Main Draw	R32	2 - 4	11:7 11:4 8:11 4:11 11:13 10:12	PRYSHCHEPA Ievgen	
+2005	SLOVENIA Open Velenje 2005	MOLNAR Csaba (HUN)		DURAN Marc (ESP)		U21MS	Main Draw	R32	1 - 4	6:11 11:9 10:12 3:11 7:11	DURAN Marc	
+2005	SLOVENIA Open Velenje 2005	CSABA Bence (CAN)		PETO Zsolt (SRB)		U21MS	Main Draw	R32	0 - 4	9:11 9:11 9:11 7:11	PETO Zsolt	
+2005	SLOVENIA Open Velenje 2005	MOLNAR Krisztian (HUN)		AXELQVIST Johan (SWE)		U21MS	Main Draw	R32	1 - 4	11:7 5:11 6:11 8:11 4:11	AXELQVIST Johan	
+2005	SLOVENIA Open Velenje 2005	PISTEJ Lubomir (SVK)		KASSAM Faazil (CAN)		U21MS	Main Draw	R32	4 - 2	8:11 11:4 8:11 12:10 11:8 11:7	PISTEJ Lubomir	
+2005	SLOVENIA Open Velenje 2005	HABESOHN Mathias (AUT)		DESPRES Rodolphe (FRA)		U21MS	Main Draw	R32	4 - 2	12:10 5:11 11:8 7:11 11:8 11:6	HABESOHN Mathias	
+2005	SLOVENIA Open Velenje 2005	JAPEC Tomislav (CRO)		JEVTOVIC Marko (SRB)		U21MS	Main Draw	R32	4 - 3	9:11 7:11 12:10 11:1 8:11 11:8 11:5	JAPEC Tomislav	
+2005	SLOVENIA Open Velenje 2005	ZHMUDENKO Yaroslav (UKR)		BERTIN Christophe (FRA)		U21MS	Main Draw	R32	4 - 1	11:5 11:4 11:9 5:11 11:5	ZHMUDENKO Yaroslav	
+2005	SLOVENIA Open Velenje 2005	LO Dany (FRA)		KNIGHT Darius (ENG)		U21MS	Main Draw	R32	2 - 4	6:11 11:7 11:8 9:11 7:11 6:11	KNIGHT Darius	
+2005	SLOVENIA Open Velenje 2005	FILUS Ruwen (GER)		GRIGOREV Artur (RUS)		U21MS	Main Draw	R32	1 - 4	5:11 16:18 11:7 16:18 9:11	GRIGOREV Artur	
+2005	SLOVENIA Open Velenje 2005	KATKOV Ivan (UKR)		GOLOVANOV Stanislav (BUL)		U21MS	Main Draw	R32	4 - 3	12:14 3:11 8:11 11:7 11:6 16:14 11:5	KATKOV Ivan	
+2005	SLOVENIA Open Velenje 2005	SEL Zolt (SRB)		SEREDA Peter (SVK)		U21MS	Main Draw	R32	0 - 4	4:11 3:11 11:13 1:11	SEREDA Peter	
+2005	SLOVENIA Open Velenje 2005	YANG Zi (SGP)		DAVID Petr (CZE)		U21MS	Main Draw	R16	4 - 3	10:12 10:12 11:8 11:4 6:11 11:3 11:9	YANG Zi	
+2005	SLOVENIA Open Velenje 2005	APOLONIA Tiago (POR)		BOBILLIER Loic (FRA)		U21MS	Main Draw	R16	0 - 4	6:11 7:11 4:11 6:11	BOBILLIER Loic	
+2005	SLOVENIA Open Velenje 2005	PRYSHCHEPA Ievgen (UKR)		DURAN Marc (ESP)		U21MS	Main Draw	R16	2 - 4	12:14 8:11 11:4 11:8 5:11 8:11	DURAN Marc	
+2005	SLOVENIA Open Velenje 2005	PETO Zsolt (SRB)		AXELQVIST Johan (SWE)		U21MS	Main Draw	R16	1 - 4	5:11 5:11 8:11 11:9 8:11	AXELQVIST Johan	
+2005	SLOVENIA Open Velenje 2005	PISTEJ Lubomir (SVK)		HABESOHN Mathias (AUT)		U21MS	Main Draw	R16	4 - 0	11:5 12:10 11:6 11:8	PISTEJ Lubomir	
+2005	SLOVENIA Open Velenje 2005	JAPEC Tomislav (CRO)		ZHMUDENKO Yaroslav (UKR)		U21MS	Main Draw	R16	4 - 3	11:8 16:14 5:11 9:11 11:9 9:11 11:3	JAPEC Tomislav	
+2005	SLOVENIA Open Velenje 2005	KNIGHT Darius (ENG)		GRIGOREV Artur (RUS)		U21MS	Main Draw	R16	1 - 4	7:11 15:13 9:11 5:11 10:12	GRIGOREV Artur	
+2005	SLOVENIA Open Velenje 2005	KATKOV Ivan (UKR)		SEREDA Peter (SVK)		U21MS	Main Draw	R16	2 - 4	3:11 12:10 11:8 9:11 6:11 7:11	SEREDA Peter	
+2005	SLOVENIA Open Velenje 2005	YANG Zi (SGP)		BOBILLIER Loic (FRA)		U21MS	Main Draw	QuarterFinal	2 - 4	10:12 9:11 12:10 11:6 7:11 6:11	BOBILLIER Loic	
+2005	SLOVENIA Open Velenje 2005	DURAN Marc (ESP)		AXELQVIST Johan (SWE)		U21MS	Main Draw	QuarterFinal	2 - 4	5:11 11:9 11:8 6:11 7:11 3:11	AXELQVIST Johan	
+2005	SLOVENIA Open Velenje 2005	PISTEJ Lubomir (SVK)		JAPEC Tomislav (CRO)		U21MS	Main Draw	QuarterFinal	4 - 1	11:9 11:3 9:11 11:7 11:9	PISTEJ Lubomir	
+2005	SLOVENIA Open Velenje 2005	GRIGOREV Artur (RUS)		SEREDA Peter (SVK)		U21MS	Main Draw	QuarterFinal	4 - 1	11:9 11:8 5:11 16:14 11:9	GRIGOREV Artur	
+2005	SLOVENIA Open Velenje 2005	BOBILLIER Loic (FRA)		AXELQVIST Johan (SWE)		U21MS	Main Draw	SemiFinal	2 - 4	13:15 11:4 6:11 8:11 11:9 10:12	AXELQVIST Johan	
+2005	SLOVENIA Open Velenje 2005	PISTEJ Lubomir (SVK)		GRIGOREV Artur (RUS)		U21MS	Main Draw	SemiFinal	4 - 1	12:10 11:4 7:11 11:9 11:4	PISTEJ Lubomir	
+2005	SLOVENIA Open Velenje 2005	AXELQVIST Johan (SWE)		PISTEJ Lubomir (SVK)		U21MS	Main Draw	Final	4 - 3	11:8 1:11 7:11 9:11 11:7 11:3 11:8	AXELQVIST Johan	
+2005	SLOVENIA Open Velenje 2005	JALZABETIC Alen (CRO)		KLJAJIC Miha (SLO)		U21MS	Qualification		3 - 0	11:7 11:6 11:6	JALZABETIC Alen	
+2005	SLOVENIA Open Velenje 2005	DAVID Petr (CZE)		KLJAJIC Miha (SLO)		U21MS	Qualification	QR2	3 - 0	11:8 11:4 11:8	DAVID Petr	
+2005	SLOVENIA Open Velenje 2005	DAVID Petr (CZE)		JALZABETIC Alen (CRO)		U21MS	Qualification	3	3 - 1	11:6 9:11 11:9 12:10	DAVID Petr
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 3 of 3 Total: 248
+
+Start
+Prev
+1
+2
+3
+Next
+End
+2005	SLOVENIA Open Velenje 2005	PLACEK Frantisek (CZE)		GUMAN Martin (SVK)		U21MS	Qualification		3 - 2	5:11 11:5 12:10 8:11 11:6	PLACEK Frantisek	
+2005	SLOVENIA Open Velenje 2005	SEL Zolt (SRB)		GUMAN Martin (SVK)		U21MS	Qualification	QR2	3 - 1	8:11 11:6 11:2 11:9	SEL Zolt	
+2005	SLOVENIA Open Velenje 2005	SEL Zolt (SRB)		PLACEK Frantisek (CZE)		U21MS	Qualification	3	3 - 1	8:11 11:7 11:6 11:9	SEL Zolt	
+2005	SLOVENIA Open Velenje 2005	MICHELY Gilles (LUX)		PUPCEVIC Dejan (SLO)		U21MS	Qualification		3 - 0	11:6 11:1 11:9	MICHELY Gilles	
+2005	SLOVENIA Open Velenje 2005	VOSTES Yannick (BEL)		PUPCEVIC Dejan (SLO)		U21MS	Qualification	QR2	3 - 0	11:4 11:7 11:4	VOSTES Yannick	
+2005	SLOVENIA Open Velenje 2005	VOSTES Yannick (BEL)		MICHELY Gilles (LUX)		U21MS	Qualification	3	1 - 3	11:4 9:11 11:13 9:11	MICHELY Gilles	
+2005	SLOVENIA Open Velenje 2005	ZLAMAL Jaromir (CZE)		AVBELJ Andraz (SLO)		U21MS	Qualification		3 - 2	9:11 9:11 11:5 11:8 11:4	ZLAMAL Jaromir	
+2005	SLOVENIA Open Velenje 2005	KASSAM Faazil (CAN)		AVBELJ Andraz (SLO)		U21MS	Qualification	QR2	3 - 0	11:7 11:2 11:5	KASSAM Faazil	
+2005	SLOVENIA Open Velenje 2005	KASSAM Faazil (CAN)		ZLAMAL Jaromir (CZE)		U21MS	Qualification	3	3 - 0	12:10 11:5 11:5	KASSAM Faazil	
+2005	SLOVENIA Open Velenje 2005	KNIGHT Darius (ENG)		GOLAVSEK Jaka (SLO)		U21MS	Qualification		3 - 0	11:2 11:3 11:7	KNIGHT Darius	
+2005	SLOVENIA Open Velenje 2005	HABESOHN Daniel (AUT)		GOLAVSEK Jaka (SLO)		U21MS	Qualification	QR2	3 - 0	11:3 12:10 11:7	HABESOHN Daniel	
+2005	SLOVENIA Open Velenje 2005	HABESOHN Daniel (AUT)		KNIGHT Darius (ENG)		U21MS	Qualification	3	2 - 3	8:11 11:5 11:6 9:11 11:13	KNIGHT Darius	
+2005	SLOVENIA Open Velenje 2005	KLEPRLIK Michal (CZE)		GASYMOV Elcin (SVK)		U21MS	Qualification		3 - 0	11:8 11:4 11:3	KLEPRLIK Michal	
+2005	SLOVENIA Open Velenje 2005	ZUBCIC Tomislav (CRO)		GASYMOV Elcin (SVK)		U21MS	Qualification	QR2	3 - 0	11:8 11:6 11:7	ZUBCIC Tomislav	
+2005	SLOVENIA Open Velenje 2005	ZUBCIC Tomislav (CRO)		KLEPRLIK Michal (CZE)		U21MS	Qualification	3	1 - 3	4:11 3:11 11:5 5:11	KLEPRLIK Michal	
+2005	SLOVENIA Open Velenje 2005	ROPOSA Bojan (SLO)		KOVAC Borna (CRO)		U21MS	Qualification		3 - 2	11:5 10:12 8:11 20:18 13:11	ROPOSA Bojan	
+2005	SLOVENIA Open Velenje 2005	BAZENOV Valentin (SVK)		KOVAC Borna (CRO)		U21MS	Qualification	QR2	3 - 2	11:6 9:11 11:9 10:12 11:9	BAZENOV Valentin	
+2005	SLOVENIA Open Velenje 2005	BAZENOV Valentin (SVK)		ROPOSA Bojan (SLO)		U21MS	Qualification	3	3 - 1	11:3 6:11 11:4 12:10	BAZENOV Valentin	
+2005	SLOVENIA Open Velenje 2005	HENRIQUES Nuno (POR)		LUKNER Mitja (SLO)		U21MS	Qualification		3 - 0	11:7 11:5 11:8	HENRIQUES Nuno	
+2005	SLOVENIA Open Velenje 2005	ZHMUDENKO Yaroslav (UKR)		LUKNER Mitja (SLO)		U21MS	Qualification	QR2	3 - 0	11:4 11:3 11:5	ZHMUDENKO Yaroslav	
+2005	SLOVENIA Open Velenje 2005	ZHMUDENKO Yaroslav (UKR)		HENRIQUES Nuno (POR)		U21MS	Qualification	3	3 - 0	11:6 11:2 11:8	ZHMUDENKO Yaroslav	
+2005	SLOVENIA Open Velenje 2005	MOLNAR Csaba (HUN)		SKURNIK Jure (SLO)		U21MS	Qualification		3 - 0	11:6 11:5 11:3	MOLNAR Csaba	
+2005	SLOVENIA Open Velenje 2005	LIEVSHYN Vitaliy (UKR)		SKURNIK Jure (SLO)		U21MS	Qualification	QR2	3 - 0	11:8 11:5 11:9	LIEVSHYN Vitaliy	
+2005	SLOVENIA Open Velenje 2005	LIEVSHYN Vitaliy (UKR)		MOLNAR Csaba (HUN)		U21MS	Qualification	3	2 - 3	11:13 8:11 11:5 11:4 7:11	MOLNAR Csaba	
+2005	SLOVENIA Open Velenje 2005	GOLOVANOV Stanislav (BUL)		LENARCIC Jan (SLO)		U21MS	Qualification		3 - 1	11:8 10:12 11:5 11:3	GOLOVANOV Stanislav	
+2005	SLOVENIA Open Velenje 2005	KLEPRLIK Jakub (CZE)		LENARCIC Jan (SLO)		U21MS	Qualification	QR2	3 - 0	11:4 11:8 11:8	KLEPRLIK Jakub	
+2005	SLOVENIA Open Velenje 2005	KLEPRLIK Jakub (CZE)		GOLOVANOV Stanislav (BUL)		U21MS	Qualification	3	1 - 3	11:4 10:12 8:11 10:12	GOLOVANOV Stanislav	
+2005	SLOVENIA Open Velenje 2005	NAVARRO Pere (ESP)		KRENKER Jaka (SLO)		U21MS	Qualification		3 - 0	11:6 11:8 11:7	NAVARRO Pere	
+2005	SLOVENIA Open Velenje 2005	FILUS Ruwen (GER)		KRENKER Jaka (SLO)		U21MS	Qualification	QR2	3 - 0	11:6 11:6 11:8	FILUS Ruwen	
+2005	SLOVENIA Open Velenje 2005	FILUS Ruwen (GER)		NAVARRO Pere (ESP)		U21MS	Qualification	3	3 - 1	9:11 11:4 11:9 11:5	FILUS Ruwen	
+2005	SLOVENIA Open Velenje 2005	MENGEL Steffen (GER)		ROPOSA Anton (SLO)		U21MS	Qualification		3 - 0	11:8 11:9 11:6	MENGEL Steffen	
+2005	SLOVENIA Open Velenje 2005	PRYSHCHEPA Ievgen (UKR)		ROPOSA Anton (SLO)		U21MS	Qualification	QR2	3 - 0	11:7 11:5 13:11	PRYSHCHEPA Ievgen	
+2005	SLOVENIA Open Velenje 2005	PRYSHCHEPA Ievgen (UKR)		MENGEL Steffen (GER)		U21MS	Qualification	3	3 - 2	5:11 11:7 11:9 8:11 11:9	PRYSHCHEPA Ievgen	
+2005	SLOVENIA Open Velenje 2005	PLAVSIC Stojan (AUT)		ROUDI Tomaz (SLO)		U21MS	Qualification		3 - 0	11:6 11:7 11:6	PLAVSIC Stojan	
+2005	SLOVENIA Open Velenje 2005	JEVTOVIC Marko (SRB)		ROUDI Tomaz (SLO)		U21MS	Qualification	QR2	3 - 1	11:9 8:11 11:6 11:1	JEVTOVIC Marko	
+2005	SLOVENIA Open Velenje 2005	JEVTOVIC Marko (SRB)		PLAVSIC Stojan (AUT)		U21MS	Qualification	3	3 - 0	11:6 11:0 11:7	JEVTOVIC Marko	
+2005	SLOVENIA Open Velenje 2005	GACINA Andrej (CRO)		FRIDRIH Tim (SLO)		U21MS	Qualification		3 - 0	11:9 12:10 11:6	GACINA Andrej	
+2005	SLOVENIA Open Velenje 2005	HABESOHN Mathias (AUT)		FRIDRIH Tim (SLO)		U21MS	Qualification	QR2	3 - 0	11:7 11:5 11:4	HABESOHN Mathias	
+2005	SLOVENIA Open Velenje 2005	HABESOHN Mathias (AUT)		GACINA Andrej (CRO)		U21MS	Qualification	3	3 - 1	7:11 11:6 11:5 12:10	HABESOHN Mathias	
+2005	SLOVENIA Open Velenje 2005	DRINKHALL Paul (ENG)		ORESNIK David (SLO)		U21MS	Qualification		3 - 1	11:9 11:4 11:13 11:7	DRINKHALL Paul	
+2005	SLOVENIA Open Velenje 2005	PETO Zsolt (SRB)		ORESNIK David (SLO)		U21MS	Qualification	QR2	3 - 0	11:5 11:9 11:4	PETO Zsolt	
+2005	SLOVENIA Open Velenje 2005	PETO Zsolt (SRB)		DRINKHALL Paul (ENG)		U21MS	Qualification	3	3 - 1	11:4 11:8 6:11 11:9	PETO Zsolt	
+2005	SLOVENIA Open Velenje 2005	MOLNAR Krisztian (HUN)		DE GOEDE Pim (NED)		U21MS	Qualification		3 - 0	11:6 11:8 11:7	MOLNAR Krisztian	
+2005	SLOVENIA Open Velenje 2005	KOLAREK Tomislav (CRO)		PILJAK Danilo (SLO)		U21MS	Qualification	QR2	3 - 0	11:9 11:5 12:10	KOLAREK Tomislav	
+2005	SLOVENIA Open Velenje 2005	MOLNAR Krisztian (HUN)		PILJAK Danilo (SLO)		U21MS	Qualification	3	3 - 0	11:8 11:5 11:8	MOLNAR Krisztian	
+2005	SLOVENIA Open Velenje 2005	KOLAREK Tomislav (CRO)		DE GOEDE Pim (NED)		U21MS	Qualification	QR4	3 - 2	11:5 11:2 9:11 10:12 11:6	KOLAREK Tomislav	
+2005	SLOVENIA Open Velenje 2005	MOLNAR Krisztian (HUN)		KOLAREK Tomislav (CRO)		U21MS	Qualification	5	3 - 2	11:6 11:6 4:11 8:11 11:9	MOLNAR Krisztian	
+2005	SLOVENIA Open Velenje 2005	PILJAK Danilo (SLO)		DE GOEDE Pim (NED)		U21MS	Qualification	6	0 - 3	10:12 6:11 7:11	DE GOEDE Pim
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 2 Total: 170
+
+Start
+Prev
+1
+2
+Next
+End
+2005	SLOVENIA Open Velenje 2005	BOROS Tamara (CRO)		ZHANG Mo (CAN)		WS	Main Draw	R64	4 - 2	7:11 11:6 9:11 11:6 11:1 11:3	BOROS Tamara	
+2005	SLOVENIA Open Velenje 2005	HALAS Helena (SLO)		RATHER Jasna (USA)		WS	Main Draw	R64	0 - 4	10:12 10:12 8:11 11:13	RATHER Jasna	
+2005	SLOVENIA Open Velenje 2005	LOVAS Petra (HUN)		SIBLEY Kelly (ENG)		WS	Main Draw	R64	4 - 1	11:6 2:11 11:8 11:4 11:6	LOVAS Petra	
+2005	SLOVENIA Open Velenje 2005	TAN Wenling (ITA)		CHO May (AUS)		WS	Main Draw	R64	4 - 0	12:10 11:4 11:3 11:7	TAN Wenling	
+2005	SLOVENIA Open Velenje 2005	XU Jie (1982) (POL)		JONSSON Susanne (SWE)		WS	Main Draw	R64	4 - 2	8:11 11:1 11:5 13:11 8:11 11:9	XU Jie (1982)	
+2005	SLOVENIA Open Velenje 2005	KRAMER Tanja (GER)		CICHOCKA Magdalena (POL)		WS	Main Draw	R64	1 - 4	11:6 11:13 9:11 3:11 2:11	CICHOCKA Magdalena	
+2005	SLOVENIA Open Velenje 2005	RECKO Ema (SRB)		ZHANG Rui (HKG)		WS	Main Draw	R64	0 - 4	5:11 3:11 5:11 4:11	ZHANG Rui	
+2005	SLOVENIA Open Velenje 2005	LIN Ling (HKG)		PAUKOVIC Sanja (CRO)		WS	Main Draw	R64	4 - 1	11:6 11:4 9:11 11:9 11:9	LIN Ling	
+2005	SLOVENIA Open Velenje 2005	MALOBABIC Ivana (CRO)		XU Yan (SGP)		WS	Main Draw	R64	1 - 4	12:10 8:11 8:11 3:11 5:11	XU Yan	
+2005	SLOVENIA Open Velenje 2005	MOLNAR Zita (HUN)		SUN Beibei (SGP)		WS	Main Draw	R64	4 - 2	11:6 11:6 3:11 11:8 4:11 11:6	MOLNAR Zita	
+2005	SLOVENIA Open Velenje 2005	WAGGERMAYER Elena (AUT)		NEGRISOLI Laura (ITA)		WS	Main Draw	R64	0 - 4	8:11 10:12 9:11 8:11	NEGRISOLI Laura	
+2005	SLOVENIA Open Velenje 2005	ZHANG Xueling (SGP)		DING Yan (ITA)		WS	Main Draw	R64	4 - 1	9:11 11:4 11:8 11:4 11:8	ZHANG Xueling	
+2005	SLOVENIA Open Velenje 2005	KERTAI Rita (HUN)		WANG Yu (YOB=1981) (ITA)		WS	Main Draw	R64	4 - 2	11:6 11:7 5:11 11:7 7:11 11:7	KERTAI Rita	
+2005	SLOVENIA Open Velenje 2005	TODOROVIC Biljana (SLO)		EKHOLM Matilda (SWE)		WS	Main Draw	R64	1 - 4	4:11 11:8 12:14 12:14 5:11	EKHOLM Matilda	
+2005	SLOVENIA Open Velenje 2005	CREEMERS Linda (NED)		LAU Sui Fei (HKG)		WS	Main Draw	R64	1 - 4	11:9 7:11 3:11 4:11 9:11	LAU Sui Fei	
+2005	SLOVENIA Open Velenje 2005	TIE Yana (HKG)		RAHOTIN Kristina (SLO)		WS	Main Draw	R64	4 - 0	11:3 11:2 11:2 11:5	TIE Yana	
+2005	SLOVENIA Open Velenje 2005	FEHER Gabriela (SRB)		ODOROVA Eva (SVK)		WS	Main Draw	R64	4 - 2	5:11 11:8 11:7 11:9 5:11 11:7	FEHER Gabriela	
+2005	SLOVENIA Open Velenje 2005	MIAO Miao (AUS)		JONSSON Carina (SWE)		WS	Main Draw	R64	2 - 4	11:9 11:6 10:12 3:11 7:11 2:11	JONSSON Carina	
+2005	SLOVENIA Open Velenje 2005	TOMAZINI Jana (SLO)		MOLNAR Cornelia (CRO)		WS	Main Draw	R64	0 - 4	5:11 7:11 1:11 6:11	MOLNAR Cornelia	
+2005	SLOVENIA Open Velenje 2005	GANINA Svetlana (RUS)		CAMPBELL Peri (AUS)		WS	Main Draw	R64	4 - 0	11:9 11:2 11:2 11:4	GANINA Svetlana	
+2005	SLOVENIA Open Velenje 2005	OLSSON Marie (SWE)		GOBEL Jessica (GER)		WS	Main Draw	R64	3 - 4	11:2 8:11 6:11 11:5 7:11 11:9 9:11	GOBEL Jessica	
+2005	SLOVENIA Open Velenje 2005	TAN Paey Fern (SGP)		ERDELJI Anamaria (SRB)		WS	Main Draw	R64	4 - 1	9:11 11:6 11:6 11:5 11:3	TAN Paey Fern	
+2005	SLOVENIA Open Velenje 2005	PHAI PANG Laurie (FRA)		BADESCU Otilia (ROU)		WS	Main Draw	R64	4 - 3	7:11 11:9 11:6 9:11 11:3 9:11 11:6	PHAI PANG Laurie	
+2005	SLOVENIA Open Velenje 2005	SONG Ah Sim (HKG)		BOBETIC Andrea (CRO)		WS	Main Draw	R64	4 - 0	11:8 11:4 12:10 15:13	SONG Ah Sim	
+2005	SLOVENIA Open Velenje 2005	WIGOW Susanna (SWE)		BAKULA Andrea (CRO)		WS	Main Draw	R64	1 - 4	11:7 6:11 9:11 8:11 7:11	BAKULA Andrea	
+2005	SLOVENIA Open Velenje 2005	JANTA-LIPINSKA Anna (POL)		STEFANOVA Nikoleta (ITA)		WS	Main Draw	R64	0 - 4	2:11 6:11 7:11 8:11	STEFANOVA Nikoleta	
+2005	SLOVENIA Open Velenje 2005	FAZEKAS Maria (HUN)		PERHOC Ines (CRO)		WS	Main Draw	R64	4 - 1	11:6 9:11 11:9 11:8 11:5	FAZEKAS Maria	
+2005	SLOVENIA Open Velenje 2005	BEH Lee Wei (MAS)		PAOVIC Sandra (CRO)		WS	Main Draw	R64	2 - 4	11:7 13:15 11:7 3:11 7:11 3:11	PAOVIC Sandra	
+2005	SLOVENIA Open Velenje 2005	POHAR Martina (SLO)		JOHANSSON Frida (SWE)		WS	Main Draw	R64	4 - 3	9:11 12:10 12:10 6:11 7:11 11:3 11:5	POHAR Martina	
+2005	SLOVENIA Open Velenje 2005	NG Sock Khim (MAS)		LI Jiawei (SGP)		WS	Main Draw	R64	0 - 4	2:11 5:11 4:11 5:11	LI Jiawei	
+2005	SLOVENIA Open Velenje 2005	BOROS Tamara (CRO)		RATHER Jasna (USA)		WS	Main Draw	R32	4 - 3	11:6 11:8 16:18 9:11 9:11 12:10 11:9	BOROS Tamara	
+2005	SLOVENIA Open Velenje 2005	LOVAS Petra (HUN)		CECHOVA Dana (CZE)		WS	Main Draw	R32	3 - 4	11:13 6:11 11:8 1:11 11:8 11:6 9:11	CECHOVA Dana	
+2005	SLOVENIA Open Velenje 2005	TAN Wenling (ITA)		XU Jie (1982) (POL)		WS	Main Draw	R32	0 - 4	9:11 7:11 7:11 10:12	XU Jie (1982)	
+2005	SLOVENIA Open Velenje 2005	CICHOCKA Magdalena (POL)		ZHANG Rui (HKG)		WS	Main Draw	R32	2 - 4	11:8 11:9 13:15 5:11 4:11 7:11	ZHANG Rui	
+2005	SLOVENIA Open Velenje 2005	LIN Ling (HKG)		XU Yan (SGP)		WS	Main Draw	R32	4 - 3	7:11 8:11 25:23 11:1 11:6 10:12 11:8	LIN Ling	
+2005	SLOVENIA Open Velenje 2005	MOLNAR Zita (HUN)		NEGRISOLI Laura (ITA)		WS	Main Draw	R32	1 - 4	9:11 8:11 4:11 11:9 8:11	NEGRISOLI Laura	
+2005	SLOVENIA Open Velenje 2005	ZHANG Xueling (SGP)		KERTAI Rita (HUN)		WS	Main Draw	R32	4 - 1	11:5 8:11 11:6 11:8 11:9	ZHANG Xueling	
+2005	SLOVENIA Open Velenje 2005	EKHOLM Matilda (SWE)		LAU Sui Fei (HKG)		WS	Main Draw	R32	0 - 4	7:11 8:11 11:13 2:11	LAU Sui Fei	
+2005	SLOVENIA Open Velenje 2005	TIE Yana (HKG)		FEHER Gabriela (SRB)		WS	Main Draw	R32	4 - 0	11:7 11:8 11:9 11:5	TIE Yana	
+2005	SLOVENIA Open Velenje 2005	JONSSON Carina (SWE)		MOLNAR Cornelia (CRO)		WS	Main Draw	R32	1 - 4	7:11 9:11 11:9 8:11 11:13	MOLNAR Cornelia	
+2005	SLOVENIA Open Velenje 2005	GANINA Svetlana (RUS)		GOBEL Jessica (GER)		WS	Main Draw	R32	4 - 2	11:6 11:1 12:10 7:11 8:11 11:7	GANINA Svetlana	
+2005	SLOVENIA Open Velenje 2005	TAN Paey Fern (SGP)		PHAI PANG Laurie (FRA)		WS	Main Draw	R32	4 - 1	11:7 11:2 11:9 8:11 11:7	TAN Paey Fern	
+2005	SLOVENIA Open Velenje 2005	SONG Ah Sim (HKG)		BAKULA Andrea (CRO)		WS	Main Draw	R32	4 - 2	6:11 10:12 12:10 11:9 11:4 11:7	SONG Ah Sim	
+2005	SLOVENIA Open Velenje 2005	PLAVSIC Gordana (SRB)		STEFANOVA Nikoleta (ITA)		WS	Main Draw	R32	3 - 4	11:9 11:13 11:7 13:11 7:11 7:11 9:11	STEFANOVA Nikoleta	
+2005	SLOVENIA Open Velenje 2005	FAZEKAS Maria (HUN)		PAOVIC Sandra (CRO)		WS	Main Draw	R32	3 - 4	11:1 6:11 11:7 4:11 6:11 11:4 13:15	PAOVIC Sandra	
+2005	SLOVENIA Open Velenje 2005	POHAR Martina (SLO)		LI Jiawei (SGP)		WS	Main Draw	R32	3 - 4	7:11 11:9 7:11 11:9 11:5 7:11 10:12	LI Jiawei	
+2005	SLOVENIA Open Velenje 2005	BOROS Tamara (CRO)		CECHOVA Dana (CZE)		WS	Main Draw	R16	4 - 1	11:8 11:6 8:11 12:10 13:11	BOROS Tamara	
+2005	SLOVENIA Open Velenje 2005	XU Jie (1982) (POL)		ZHANG Rui (HKG)		WS	Main Draw	R16	0 - 4	9:11 2:11 7:11 6:11	ZHANG Rui	
+2005	SLOVENIA Open Velenje 2005	LIN Ling (HKG)		NEGRISOLI Laura (ITA)		WS	Main Draw	R16	4 - 1	9:11 11:3 12:10 11:7 11:3	LIN Ling	
+2005	SLOVENIA Open Velenje 2005	ZHANG Xueling (SGP)		LAU Sui Fei (HKG)		WS	Main Draw	R16	0 - 4	11:13 9:11 4:11 7:11	LAU Sui Fei	
+2005	SLOVENIA Open Velenje 2005	TIE Yana (HKG)		MOLNAR Cornelia (CRO)		WS	Main Draw	R16	4 - 1	11:4 7:11 11:5 11:9 11:4	TIE Yana	
+2005	SLOVENIA Open Velenje 2005	GANINA Svetlana (RUS)		TAN Paey Fern (SGP)		WS	Main Draw	R16	3 - 4	11:7 7:11 11:8 9:11 11:5 6:11 14:16	TAN Paey Fern	
+2005	SLOVENIA Open Velenje 2005	SONG Ah Sim (HKG)		STEFANOVA Nikoleta (ITA)		WS	Main Draw	R16	3 - 4	12:10 8:11 7:11 11:7 12:14 11:7 7:11	STEFANOVA Nikoleta	
+2005	SLOVENIA Open Velenje 2005	PAOVIC Sandra (CRO)		LI Jiawei (SGP)		WS	Main Draw	R16	2 - 4	4:11 11:7 4:11 11:4 13:15 8:11	LI Jiawei	
+2005	SLOVENIA Open Velenje 2005	BOROS Tamara (CRO)		ZHANG Rui (HKG)		WS	Main Draw	QuarterFinal	4 - 0	11:9 11:9 11:7 12:10	BOROS Tamara	
+2005	SLOVENIA Open Velenje 2005	LIN Ling (HKG)		LAU Sui Fei (HKG)		WS	Main Draw	QuarterFinal	4 - 2	11:5 11:13 11:7 11:9 8:11 11:9	LIN Ling	
+2005	SLOVENIA Open Velenje 2005	TIE Yana (HKG)		TAN Paey Fern (SGP)		WS	Main Draw	QuarterFinal	0 - 4	8:11 9:11 7:11 8:11	TAN Paey Fern	
+2005	SLOVENIA Open Velenje 2005	STEFANOVA Nikoleta (ITA)		LI Jiawei (SGP)		WS	Main Draw	QuarterFinal	2 - 4	11:5 6:11 11:7 7:11 7:11 5:11	LI Jiawei	
+2005	SLOVENIA Open Velenje 2005	BOROS Tamara (CRO)		LIN Ling (HKG)		WS	Main Draw	SemiFinal	1 - 4	11:5 3:11 7:11 1:11 3:11	LIN Ling	
+2005	SLOVENIA Open Velenje 2005	TAN Paey Fern (SGP)		LI Jiawei (SGP)		WS	Main Draw	SemiFinal	1 - 4	9:11 4:11 10:12 11:8 5:11	LI Jiawei	
+2005	SLOVENIA Open Velenje 2005	LIN Ling (HKG)		LI Jiawei (SGP)		WS	Main Draw	Final	1 - 4	8:11 12:14 7:11 11:3 6:11	LI Jiawei	
+2005	SLOVENIA Open Velenje 2005	CHO May (AUS)		KOLAROVA Dominika (SVK)		WS	Qualification		4 - 1	11:3 3:11 11:7 11:6 11:4	CHO May	
+2005	SLOVENIA Open Velenje 2005	KERTAI Rita (HUN)		KOLAROVA Dominika (SVK)		WS	Qualification	QR2	4 - 0	11:9 11:8 11:6 12:10	KERTAI Rita	
+2005	SLOVENIA Open Velenje 2005	KERTAI Rita (HUN)		CHO May (AUS)		WS	Qualification	3	4 - 0	11:6 11:9 11:4 11:9	KERTAI Rita	
+2005	SLOVENIA Open Velenje 2005	SIVEC Sashka (SLO)		CAMPBELL Peri (AUS)		WS	Qualification		1 - 4	3:11 11:9 7:11 7:11 3:11	CAMPBELL Peri	
+2005	SLOVENIA Open Velenje 2005	BEH Lee Wei (MAS)		CAMPBELL Peri (AUS)		WS	Qualification	QR2	4 - 1	11:5 11:5 11:7 6:11 11:2	BEH Lee Wei	
+2005	SLOVENIA Open Velenje 2005	BEH Lee Wei (MAS)		SIVEC Sashka (SLO)		WS	Qualification	3	4 - 0	11:8 11:3 11:5 11:5	BEH Lee Wei	
+2005	SLOVENIA Open Velenje 2005	PERHOC Ines (CRO)		HAAN Simone (LUX)		WS	Qualification		4 - 1	11:6 11:8 8:11 11:7 11:7	PERHOC Ines	
+2005	SLOVENIA Open Velenje 2005	PLAVSIC Gordana (SRB)		HAAN Simone (LUX)		WS	Qualification	QR2	4 - 1	11:6 4:11 11:5 12:10 11:4	PLAVSIC Gordana	
+2005	SLOVENIA Open Velenje 2005	PLAVSIC Gordana (SRB)		PERHOC Ines (CRO)		WS	Qualification	3	4 - 1	11:6 13:11 11:5 10:12 11:8	PLAVSIC Gordana	
+2005	SLOVENIA Open Velenje 2005	VUGRINEC Suncica (CRO)		MILOST Janja (SLO)		WS	Qualification		4 - 3	11:9 11:5 7:11 3:11 4:11 11:7 11:6	VUGRINEC Suncica	
+2005	SLOVENIA Open Velenje 2005	ERDELJI Anamaria (SRB)		MILOST Janja (SLO)		WS	Qualification	QR2	4 - 0	11:1 11:7 11:6 11:7	ERDELJI Anamaria	
+2005	SLOVENIA Open Velenje 2005	ERDELJI Anamaria (SRB)		VUGRINEC Suncica (CRO)		WS	Qualification	3	4 - 2	10:12 11:5 12:14 11:5 11:7 11:2	ERDELJI Anamaria	
+2005	SLOVENIA Open Velenje 2005	RAHOTIN Kristina (SLO)		HARTMANN Carole (LUX)		WS	Qualification		4 - 1	11:9 11:4 7:11 11:7 11:5	RAHOTIN Kristina	
+2005	SLOVENIA Open Velenje 2005	WAGGERMAYER Elena (AUT)		HARTMANN Carole (LUX)		WS	Qualification	QR2	4 - 0	11:6 11:6 11:3 11:6	WAGGERMAYER Elena	
+2005	SLOVENIA Open Velenje 2005	WAGGERMAYER Elena (AUT)		RAHOTIN Kristina (SLO)		WS	Qualification	3	4 - 1	11:6 11:7 14:16 11:4 11:8	WAGGERMAYER Elena	
+2005	SLOVENIA Open Velenje 2005	PAUKOVIC Sanja (CRO)		LUZAR Natalija (SLO)		WS	Qualification		4 - 2	12:10 11:7 6:11 4:11 11:7 11:5	PAUKOVIC Sanja	
+2005	SLOVENIA Open Velenje 2005	CICHOCKA Magdalena (POL)		LUZAR Natalija (SLO)		WS	Qualification	QR2	4 - 2	11:9 9:11 7:11 11:7 12:10 12:10	CICHOCKA Magdalena	
+2005	SLOVENIA Open Velenje 2005	CICHOCKA Magdalena (POL)		PAUKOVIC Sanja (CRO)		WS	Qualification	3	4 - 0	11:8 12:10 11:5 11:2	CICHOCKA Magdalena	
+2005	SLOVENIA Open Velenje 2005	DING Yan (ITA)		TOMAZINI Jana (SLO)		WS	Qualification	3	4 - 3	11:6 10:12 6:11 12:10 11:7 8:11 11:6	DING Yan	
+2005	SLOVENIA Open Velenje 2005	SKABAR Petra (SLO)		PARKER Katy (ENG)		WS	Qualification		2 - 4	17:19 13:11 11:7 5:11 8:11 9:11	PARKER Katy	
+2005	SLOVENIA Open Velenje 2005	OLSSON Marie (SWE)		PARKER Katy (ENG)		WS	Qualification	QR2	4 - 0	11:8 11:9 11:6 14:12	OLSSON Marie	
+2005	SLOVENIA Open Velenje 2005	OLSSON Marie (SWE)		SKABAR Petra (SLO)		WS	Qualification	3	4 - 3	11:8 7:11 7:11 8:11 11:8 11:6 11:6	OLSSON Marie	
+2005	SLOVENIA Open Velenje 2005	NG Sock Khim (MAS)		DURAK Mirela (CRO)		WS	Qualification		4 - 0	11:4 11:8 11:6 11:5	NG Sock Khim	
+2005	SLOVENIA Open Velenje 2005	HALAS Helena (SLO)		DURAK Mirela (CRO)		WS	Qualification	QR2	4 - 0	11:1 13:11 11:7 11:5	HALAS Helena	
+2005	SLOVENIA Open Velenje 2005	HALAS Helena (SLO)		NG Sock Khim (MAS)		WS	Qualification	3	4 - 0	12:10 11:4 11:3 11:8	HALAS Helena	
+2005	SLOVENIA Open Velenje 2005	MALOBABIC Ivana (CRO)		STEINMAN Tina (SLO)		WS	Qualification		4 - 0	11:5 11:3 11:6 11:3	MALOBABIC Ivana	
+2005	SLOVENIA Open Velenje 2005	LI Bin (HUN)		STEINMAN Tina (SLO)		WS	Qualification	QR2	4 - 0	11:8 11:3 11:4 11:5	LI Bin	
+2005	SLOVENIA Open Velenje 2005	LI Bin (HUN)		MALOBABIC Ivana (CRO)		WS	Qualification	3	1 - 4	5:11 11:9 4:11 10:12 5:11	MALOBABIC Ivana	
+2005	SLOVENIA Open Velenje 2005	SIBLEY Kelly (ENG)		TOMAZIC Katja (SLO)		WS	Qualification		4 - 1	14:16 11:8 11:4 11:9 11:6	SIBLEY Kelly	
+2005	SLOVENIA Open Velenje 2005	NORDENBERG Linda (SWE)		TOMAZIC Katja (SLO)		WS	Qualification	QR2	4 - 1	11:6 11:3 9:11 11:6 11:7	NORDENBERG Linda	
+2005	SLOVENIA Open Velenje 2005	NORDENBERG Linda (SWE)		SIBLEY Kelly (ENG)		WS	Qualification	3	2 - 4	11:8 6:11 12:10 10:12 6:11 12:14	SIBLEY Kelly	
+2005	SLOVENIA Open Velenje 2005	SMETEK Marta (POL)		JERIC Tamara (SLO)		WS	Qualification		4 - 1	11:8 2:11 11:6 12:10 11:6	SMETEK Marta	
+2005	SLOVENIA Open Velenje 2005	JONSSON Carina (SWE)		JERIC Tamara (SLO)		WS	Qualification	QR2	4 - 1	11:5 11:6 11:4 8:11 11:5	JONSSON Carina	
+2005	SLOVENIA Open Velenje 2005	JONSSON Carina (SWE)		SMETEK Marta (POL)		WS	Qualification	3	4 - 3	11:5 8:11 12:10 3:11 7:11 15:13 14:12	JONSSON Carina	
+2005	SLOVENIA Open Velenje 2005	FEHER Gabriela (SRB)		MOSKALENKO Tanja (BLR)		WS	Qualification		4 - 3	11:7 11:6 7:11 9:11 7:11 11:6 11:7	FEHER Gabriela	
+2005	SLOVENIA Open Velenje 2005	JANTA-LIPINSKA Anna (POL)		MOSKALENKO Tanja (BLR)		WS	Qualification	QR2	4 - 1	11:13 11:4 11:7 11:6 11:1	JANTA-LIPINSKA Anna	
+2005	SLOVENIA Open Velenje 2005	JANTA-LIPINSKA Anna (POL)		FEHER Gabriela (SRB)		WS	Qualification	3	2 - 4	11:2 8:11 7:11 7:11 16:14 2:11	FEHER Gabriela	
+2005	SLOVENIA Open Velenje 2005	VAN ULSEN Sigrid (NED)		SUN Beibei (SGP)		WS	Qualification		2 - 4	11:3 7:11 2:11 12:10 0:11 5:11	SUN Beibei	
+2005	SLOVENIA Open Velenje 2005	BURGAR Spela (SLO)		SUN Beibei (SGP)		WS	Qualification	QR2	1 - 4	7:11 11:9 13:15 2:11 7:11	SUN Beibei
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 2 of 2 Total: 170
+
+Start
+Prev
+1
+2
+Next
+End
+2005	SLOVENIA Open Velenje 2005	BURGAR Spela (SLO)		VAN ULSEN Sigrid (NED)		WS	Qualification	3	4 - 3	8:11 11:7 11:8 4:11 11:8 10:12 13:11	BURGAR Spela	
+2005	SLOVENIA Open Velenje 2005	WIGOW Susanna (SWE)		FAJMUT Manca (SLO)		WS	Qualification		4 - 1	11:5 9:11 11:9 11:3 11:9	WIGOW Susanna	
+2005	SLOVENIA Open Velenje 2005	BOBETIC Andrea (CRO)		FAJMUT Manca (SLO)		WS	Qualification	QR2	4 - 0	11:4 11:7 11:1 11:9	BOBETIC Andrea	
+2005	SLOVENIA Open Velenje 2005	BOBETIC Andrea (CRO)		WIGOW Susanna (SWE)		WS	Qualification	3	2 - 4	14:12 9:11 11:8 7:11 8:11 7:11	WIGOW Susanna	
+2005	SLOVENIA Open Velenje 2005	RECKO Ema (SRB)		FATORIC Kristin (SLO)		WS	Qualification		4 - 0	11:4 11:6 11:6 11:7	RECKO Ema	
+2005	SLOVENIA Open Velenje 2005	JOHANSSON Frida (SWE)		FATORIC Kristin (SLO)		WS	Qualification	QR2	4 - 0	11:9 11:5 11:4 11:8	JOHANSSON Frida	
+2005	SLOVENIA Open Velenje 2005	JOHANSSON Frida (SWE)		RECKO Ema (SRB)		WS	Qualification	3	4 - 3	10:12 12:10 9:11 1:11 11:6 11:4 11:6	JOHANSSON Frida	
+2005	SLOVENIA Open Velenje 2005	CREEMERS Linda (NED)		ZERA Ivana (SLO)		WS	Qualification		4 - 3	8:11 13:15 11:7 11:3 11:4 9:11 11:2	CREEMERS Linda	
+2005	SLOVENIA Open Velenje 2005	CECHOVA Dana (CZE)		ZERA Ivana (SLO)		WS	Qualification	QR2	4 - 1	11:5 11:1 5:11 11:6 11:6	CECHOVA Dana	
+2005	SLOVENIA Open Velenje 2005	CECHOVA Dana (CZE)		CREEMERS Linda (NED)		WS	Qualification	3	4 - 2	8:11 6:11 11:8 11:6 11:6 11:9	CECHOVA Dana	
+2005	SLOVENIA Open Velenje 2005	ZHANG Mo (CAN)		FAGANELJ Tadeja (SLO)		WS	Qualification		4 - 1	10:12 11:5 11:7 11:8 11:4	ZHANG Mo	
+2005	SLOVENIA Open Velenje 2005	XU Jie (1982) (POL)		FAGANELJ Tadeja (SLO)		WS	Qualification	QR2	4 - 0	11:6 11:3 11:4 11:2	XU Jie (1982)	
+2005	SLOVENIA Open Velenje 2005	XU Jie (1982) (POL)		ZHANG Mo (CAN)		WS	Qualification	3	4 - 0	11:5 11:7 11:2 11:6	XU Jie (1982)	
+2005	SLOVENIA Open Velenje 2005	PHAI PANG Laurie (FRA)		REZNA Pavlina (SVK)		WS	Qualification		4 - 2	11:3 11:6 11:3 8:11 10:12 11:2	PHAI PANG Laurie	
+2005	SLOVENIA Open Velenje 2005	EKHOLM Matilda (SWE)		REZNA Pavlina (SVK)		WS	Qualification	QR2	4 - 1	11:3 11:5 11:7 11:13 11:5	EKHOLM Matilda	
+2005	SLOVENIA Open Velenje 2005	EKHOLM Matilda (SWE)		PHAI PANG Laurie (FRA)		WS	Qualification	3	4 - 1	11:5 11:5 9:11 11:9 11:9	EKHOLM Matilda	
+2005	SLOVENIA Open Velenje 2005	STEFANOVA Nikoleta (ITA)		FEHER Gabriela (SRB)		U21WS	Main Draw	R16	4 - 2	13:11 11:1 3:11 11:8 7:11 12:10	STEFANOVA Nikoleta	
+2005	SLOVENIA Open Velenje 2005	ZHANG Mo (CAN)		LI Bin (HUN)		U21WS	Main Draw	R16	4 - 2	13:11 11:5 9:11 5:11 11:9 11:9	ZHANG Mo	
+2005	SLOVENIA Open Velenje 2005	BURGAR Spela (SLO)		CREEMERS Linda (NED)		U21WS	Main Draw	R16	4 - 3	8:11 11:8 5:11 11:9 8:11 11:7 11:5	BURGAR Spela	
+2005	SLOVENIA Open Velenje 2005	PHAI PANG Laurie (FRA)		CICHOCKA Magdalena (POL)		U21WS	Main Draw	R16	0 - 4	5:11 9:11 6:11 12:14	CICHOCKA Magdalena	
+2005	SLOVENIA Open Velenje 2005	ERDELJI Anamaria (SRB)		PAUKOVIC Sanja (CRO)		U21WS	Main Draw	R16	4 - 2	7:11 11:8 11:4 13:11 3:11 11:9	ERDELJI Anamaria	
+2005	SLOVENIA Open Velenje 2005	VAN ULSEN Sigrid (NED)		JANTA-LIPINSKA Anna (POL)		U21WS	Main Draw	R16	4 - 2	7:11 8:11 11:9 11:7 11:7 11:3	VAN ULSEN Sigrid	
+2005	SLOVENIA Open Velenje 2005	OLSSON Marie (SWE)		SUN Beibei (SGP)		U21WS	Main Draw	R16	1 - 4	5:11 5:11 5:11 11:4 7:11	SUN Beibei	
+2005	SLOVENIA Open Velenje 2005	JOHANSSON Frida (SWE)		XU Yan (SGP)		U21WS	Main Draw	R16	0 - 4	8:11 8:11 9:11 4:11	XU Yan	
+2005	SLOVENIA Open Velenje 2005	STEFANOVA Nikoleta (ITA)		ZHANG Mo (CAN)		U21WS	Main Draw	QuarterFinal	4 - 1	7:11 11:8 16:14 12:10 15:13	STEFANOVA Nikoleta	
+2005	SLOVENIA Open Velenje 2005	BURGAR Spela (SLO)		CICHOCKA Magdalena (POL)		U21WS	Main Draw	QuarterFinal	1 - 4	8:11 11:8 9:11 6:11 11:13	CICHOCKA Magdalena	
+2005	SLOVENIA Open Velenje 2005	ERDELJI Anamaria (SRB)		VAN ULSEN Sigrid (NED)		U21WS	Main Draw	QuarterFinal	4 - 0	11:6 11:5 11:8 11:5	ERDELJI Anamaria	
+2005	SLOVENIA Open Velenje 2005	SUN Beibei (SGP)		XU Yan (SGP)		U21WS	Main Draw	QuarterFinal	4 - 1	10:12 12:10 11:7 11:4 11:4	SUN Beibei	
+2005	SLOVENIA Open Velenje 2005	STEFANOVA Nikoleta (ITA)		CICHOCKA Magdalena (POL)		U21WS	Main Draw	SemiFinal	4 - 0	11:6 11:5 11:4 14:12	STEFANOVA Nikoleta	
+2005	SLOVENIA Open Velenje 2005	ERDELJI Anamaria (SRB)		SUN Beibei (SGP)		U21WS	Main Draw	SemiFinal	4 - 3	11:7 11:5 11:9 9:11 5:11 8:11 11:8	ERDELJI Anamaria	
+2005	SLOVENIA Open Velenje 2005	STEFANOVA Nikoleta (ITA)		ERDELJI Anamaria (SRB)		U21WS	Main Draw	Final	4 - 1	11:7 11:5 11:6 10:12 11:5	STEFANOVA Nikoleta	
+2005	SLOVENIA Open Velenje 2005	JERIC Tamara (SLO)		KUKOVEC Petra (SLO)		U21WS	Qualification		3 - 1	9:11 11:4 11:8 11:3	JERIC Tamara	
+2005	SLOVENIA Open Velenje 2005	JOHANSSON Frida (SWE)		KUKOVEC Petra (SLO)		U21WS	Qualification	QR2	3 - 1	11:3 7:11 11:4 11:5	JOHANSSON Frida	
+2005	SLOVENIA Open Velenje 2005	JOHANSSON Frida (SWE)		JERIC Tamara (SLO)		U21WS	Qualification	3	3 - 0	11:4 11:6 11:9	JOHANSSON Frida	
+2005	SLOVENIA Open Velenje 2005	TOMAZIC Katja (SLO)		REZNA Pavlina (SVK)		U21WS	Qualification		3 - 1	8:11 11:2 12:10 11:8	TOMAZIC Katja	
+2005	SLOVENIA Open Velenje 2005	PHAI PANG Laurie (FRA)		REZNA Pavlina (SVK)		U21WS	Qualification	QR2	3 - 1	11:9 12:14 12:10 11:3	PHAI PANG Laurie	
+2005	SLOVENIA Open Velenje 2005	PHAI PANG Laurie (FRA)		TOMAZIC Katja (SLO)		U21WS	Qualification	3	3 - 1	11:8 11:5 8:11 11:3	PHAI PANG Laurie	
+2005	SLOVENIA Open Velenje 2005	STEINMAN Tina (SLO)		DURAK Mirela (CRO)		U21WS	Qualification		2 - 3	12:10 11:5 8:11 9:11 12:14	DURAK Mirela	
+2005	SLOVENIA Open Velenje 2005	ZHANG Mo (CAN)		DURAK Mirela (CRO)		U21WS	Qualification	QR2	3 - 0	11:4 11:8 11:8	ZHANG Mo	
+2005	SLOVENIA Open Velenje 2005	ZHANG Mo (CAN)		STEINMAN Tina (SLO)		U21WS	Qualification	3	3 - 0	11:3 11:6 11:4	ZHANG Mo	
+2005	SLOVENIA Open Velenje 2005	HARTMANN Carole (LUX)		FAJMUT Manca (SLO)		U21WS	Qualification		3 - 0	14:12 13:11 11:8	HARTMANN Carole	
+2005	SLOVENIA Open Velenje 2005	CREEMERS Linda (NED)		FAJMUT Manca (SLO)		U21WS	Qualification	QR2	3 - 1	11:13 11:6 11:3 11:7	CREEMERS Linda	
+2005	SLOVENIA Open Velenje 2005	CREEMERS Linda (NED)		HARTMANN Carole (LUX)		U21WS	Qualification	3	3 - 0	11:6 11:6 11:5	CREEMERS Linda	
+2005	SLOVENIA Open Velenje 2005	LUZAR Natalija (SLO)		SUN Beibei (SGP)		U21WS	Qualification		0 - 3	7:11 7:11 4:11	SUN Beibei	
+2005	SLOVENIA Open Velenje 2005	RECKO Ema (SRB)		SUN Beibei (SGP)		U21WS	Qualification	QR2	0 - 3	9:11 6:11 7:11	SUN Beibei	
+2005	SLOVENIA Open Velenje 2005	RECKO Ema (SRB)		LUZAR Natalija (SLO)		U21WS	Qualification	3	0 - 3	9:11 3:11 7:11	LUZAR Natalija	
+2005	SLOVENIA Open Velenje 2005	HAAN Simone (LUX)		FATORIC Kristin (SLO)		U21WS	Qualification		3 - 0	11:9 11:7 11:6	HAAN Simone	
+2005	SLOVENIA Open Velenje 2005	VAN ULSEN Sigrid (NED)		FATORIC Kristin (SLO)		U21WS	Qualification	QR2	3 - 0	11:2 11:8 11:5	VAN ULSEN Sigrid	
+2005	SLOVENIA Open Velenje 2005	VAN ULSEN Sigrid (NED)		HAAN Simone (LUX)		U21WS	Qualification	3	3 - 0	11:5 11:5 11:5	VAN ULSEN Sigrid	
+2005	SLOVENIA Open Velenje 2005	KOLAROVA Dominika (SVK)		ZERA Ivana (SLO)		U21WS	Qualification		3 - 0	11:8 11:7 11:9	KOLAROVA Dominika	
+2005	SLOVENIA Open Velenje 2005	SMETEK Marta (POL)		ZERA Ivana (SLO)		U21WS	Qualification	QR2	3 - 0	11:3 11:6 12:10	SMETEK Marta	
+2005	SLOVENIA Open Velenje 2005	SMETEK Marta (POL)		KOLAROVA Dominika (SVK)		U21WS	Qualification	3	3 - 1	11:7 9:11 11:5 11:8	SMETEK Marta	
+2005	SLOVENIA Open Velenje 2005	PERHOC Ines (CRO)		BUDIHNA Teja (SLO)		U21WS	Qualification		3 - 0	11:5 11:9 11:7	PERHOC Ines	
+2005	SLOVENIA Open Velenje 2005	FEHER Gabriela (SRB)		BUDIHNA Teja (SLO)		U21WS	Qualification	QR2	3 - 0	11:3 11:5 11:4	FEHER Gabriela	
+2005	SLOVENIA Open Velenje 2005	FEHER Gabriela (SRB)		PERHOC Ines (CRO)		U21WS	Qualification	3	3 - 1	8:11 11:5 11:8 11:9	FEHER Gabriela	
+2005	SLOVENIA Open Velenje 2005	VUGRINEC Suncica (CRO)		TERBUC Vesna (SLO)		U21WS	Qualification		3 - 0	11:9 11:1 11:4	VUGRINEC Suncica	
+2005	SLOVENIA Open Velenje 2005	SIBLEY Kelly (ENG)		TERBUC Vesna (SLO)		U21WS	Qualification	QR2	3 - 0	11:2 11:5 11:4	SIBLEY Kelly	
+2005	SLOVENIA Open Velenje 2005	SIBLEY Kelly (ENG)		VUGRINEC Suncica (CRO)		U21WS	Qualification	3	1 - 3	4:11 13:11 9:11 9:11	VUGRINEC Suncica	
+2005	SLOVENIA Open Velenje 2005	PAUKOVIC Sanja (CRO)		SETINA Zata (SLO)		U21WS	Qualification		3 - 0	11:4 11:7 11:1	PAUKOVIC Sanja	
+2005	SLOVENIA Open Velenje 2005	SKABAR Petra (SLO)		SETINA Zata (SLO)		U21WS	Qualification	QR2	3 - 0	11:4 11:2 11:2	SKABAR Petra	
+2005	SLOVENIA Open Velenje 2005	SKABAR Petra (SLO)		PAUKOVIC Sanja (CRO)		U21WS	Qualification	3	2 - 3	13:11 7:11 11:8 7:11 10:12	PAUKOVIC Sanja	
+2005	SLOVENIA Open Velenje 2005	NG Sock Khim (MAS)		PARKER Katy (ENG)		U21WS	Qualification		3 - 2	11:9 6:11 11:9 6:11 12:10	NG Sock Khim	
+2005	SLOVENIA Open Velenje 2005	TOMAZINI Jana (SLO)		VERHNJAK Melita (SLO)		U21WS	Qualification	QR2	3 - 0	11:8 11:6 12:10	TOMAZINI Jana	
+2005	SLOVENIA Open Velenje 2005	NG Sock Khim (MAS)		VERHNJAK Melita (SLO)		U21WS	Qualification	3	3 - 2	8:11 11:5 6:11 14:12 12:10	NG Sock Khim	
+2005	SLOVENIA Open Velenje 2005	TOMAZINI Jana (SLO)		PARKER Katy (ENG)		U21WS	Qualification	QR4	3 - 1	3:11 12:10 11:9 11:9	TOMAZINI Jana	
+2005	SLOVENIA Open Velenje 2005	NG Sock Khim (MAS)		TOMAZINI Jana (SLO)		U21WS	Qualification	5	1 - 3	10:12 11:9 6:11 5:11	TOMAZINI Jana	
+2005	SLOVENIA Open Velenje 2005	VERHNJAK Melita (SLO)		PARKER Katy (ENG)		U21WS	Qualification	6	0 - 3	7:11 6:11 10:12	PARKER Katy	
+2005	SLOVENIA Open Velenje 2005	VAN ULSEN Sigrid (NED)		TOMAZINI Jana (SLO)		U21WS	Qualification	QR8	3 - 2	11:9 11:7 4:11 9:11 11:6	VAN ULSEN Sigrid	
+2005	SLOVENIA Open Velenje 2005	SMETEK Marta (POL)		PAUKOVIC Sanja (CRO)		U21WS	Qualification	QR8	2 - 3	9:11 13:11 11:8 9:11 5:11	PAUKOVIC Sanja	
+2005	SLOVENIA Open Velenje 2005	FEHER Gabriela (SRB)		VUGRINEC Suncica (CRO)		U21WS	Qualification	QR8	3 - 0	11:3 11:8 11:6	FEHER Gabriela
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 62
+
+2005	SLOVENIA Open Velenje 2005	HABESOHN Daniel (AUT)	PICHLER Michael (AUT)	BOJANIC Nenad (SLO)	SLATINSEK Jure (SLO)	MD	Qualification	QR64	3 - 0	11:7 11:8 11:7	HABESOHN Daniel	PICHLER Michael
+2005	SLOVENIA Open Velenje 2005	HABESOHN Mathias (AUT)	SIMONER Christoph (AUT)	LIEVSHYN Vitaliy (UKR)	ZHMUDENKO Yaroslav (UKR)	MD	Qualification	QR64	3 - 1	12:10 15:13 7:11 12:10	HABESOHN Mathias	SIMONER Christoph
+2005	SLOVENIA Open Velenje 2005	HABESOHN Daniel (AUT)	PICHLER Michael (AUT)	YANG Zi (SGP)	ZHENG Qi (SGP)	MD	Qualification	QR32	0 - 3	13:15 7:11 5:11	YANG Zi	ZHENG Qi
+2005	SLOVENIA Open Velenje 2005	HABESOHN Mathias (AUT)	SIMONER Christoph (AUT)	JANASEK Thomas (CZE)	SIMONCIK Josef (CZE)	MD	Qualification	QR32	3 - 1	11:13 11:5 11:6 11:8	HABESOHN Mathias	SIMONER Christoph
+2005	SLOVENIA Open Velenje 2005	HABESOHN Mathias (AUT)	SIMONER Christoph (AUT)	KOSOWSKI Jakub (POL)	WANG Zengyi (POL)	MD	Qualification	QR16	1 - 3	12:14 13:11 5:11 7:11	KOSOWSKI Jakub	WANG Zengyi
+2005	SLOVENIA Open Velenje 2005	MATSUMOTO Cazuo (BRA)	MONTEIRO Thiago (BRA)	CRAVEN Peter (NZL)	GREEN Wally (USA)	MD	Qualification	QR64	3 - 1	11:6 11:6 11:13 11:7	MATSUMOTO Cazuo	MONTEIRO Thiago
+2005	SLOVENIA Open Velenje 2005	MATSUMOTO Cazuo (BRA)	MONTEIRO Thiago (BRA)	JUZBASIC Ivan (CRO)	JUZBASIC Neven (CRO)	MD	Qualification	QR32	2 - 3	11:8 7:11 11:5 8:11 8:11	JUZBASIC Ivan	JUZBASIC Neven
+2005	SLOVENIA Open Velenje 2005	CSABA Bence (CAN)	KASSAM Faazil (CAN)	MAECK Anthony (BEL)	VOSTES Yannick (BEL)	MD	Qualification	QR32	3 - 2	10:12 11:5 8:11 11:3 11:6	CSABA Bence	KASSAM Faazil
+2005	SLOVENIA Open Velenje 2005	CSABA Bence (CAN)	KASSAM Faazil (CAN)	LINDNER Adam (HUN)	VARGA Zoltan (HUN)	MD	Qualification	QR16	0 - 3	6:11 13:15 9:11	LINDNER Adam	VARGA Zoltan
+2005	SLOVENIA Open Velenje 2005	KRIVIC Jakov (CRO)	REDJEP Ronald (CRO)	HORVAT Mitja (SLO)	UNGER Mirko (SLO)	MD	Qualification	QR64	3 - 0	11:5 11:7 11:8	KRIVIC Jakov	REDJEP Ronald
+2005	SLOVENIA Open Velenje 2005	JUZBASIC Ivan (CRO)	JUZBASIC Neven (CRO)	KOMAC Gregor (SLO)	ZAFOSTNIK Gregor (SLO)	MD	Qualification	QR64	3 - 0	11:5 11:6 11:5	JUZBASIC Ivan	JUZBASIC Neven
+2005	SLOVENIA Open Velenje 2005	GACINA Andrej (CRO)	ZUBCIC Tomislav (CRO)	HENRIQUES Nuno (POR)	MONTEIRO Joao (POR)	MD	Qualification	QR64	2 - 3	15:17 11:2 11:4 7:11 4:11	HENRIQUES Nuno	MONTEIRO Joao
+2005	SLOVENIA Open Velenje 2005	KRIVIC Jakov (CRO)	REDJEP Ronald (CRO)	PLAVSIC Stojan (AUT)	PRESSLMAYER Bernhard (AUT)	MD	Qualification	QR32	3 - 1	11:8 7:11 11:9 11:8	KRIVIC Jakov	REDJEP Ronald
+2005	SLOVENIA Open Velenje 2005	JUZBASIC Ivan (CRO)	JUZBASIC Neven (CRO)	CIOTI Constantin (ROU)	FILIMON Andrei (ROU)	MD	Qualification	QR16	0 - 3	5:11 10:12 8:11	CIOTI Constantin	FILIMON Andrei
+2005	SLOVENIA Open Velenje 2005	CIHAK Marek (CZE)	KLASEK Marek (CZE)	KOSOWSKI Jakub (POL)	WANG Zengyi (POL)	MD	Main Draw	QuarterFinal	4 - 3	11:4 5:11 11:5 7:11 11:4 6:11 11:8	CIHAK Marek	KLASEK Marek
+2005	SLOVENIA Open Velenje 2005	CIHAK Marek (CZE)	KLASEK Marek (CZE)	FETH Stefan (GER)	KEINATH Thomas (SVK)	MD	Main Draw	SemiFinal	1 - 4	11:9 7:11 5:11 10:12 4:11	FETH Stefan	KEINATH Thomas
+2005	SLOVENIA Open Velenje 2005	KLEPRLIK Jakub (CZE)	KLEPRLIK Michal (CZE)	BITZIGEIO Jorg (GER)	CABESTANY Cedrik (FRA)	MD	Qualification	QR64	3 - 2	11:6 7:11 9:11 11:8 11:7	KLEPRLIK Jakub	KLEPRLIK Michal
+2005	SLOVENIA Open Velenje 2005	CIHAK Marek (CZE)	KLASEK Marek (CZE)	PETER-PAUL Pradeeban (CAN)	THERIEN Xavier (CAN)	MD	Qualification	QR64	3 - 0	11:4 11:8 11:4	CIHAK Marek	KLASEK Marek
+2005	SLOVENIA Open Velenje 2005	KAUCKY Petr (CZE)	VOZICKY Bohumil (CZE)	MARIC Vladimir (SRB)	SEL Zolt (SRB)	MD	Qualification	QR64	2 - 3	11:8 7:11 23:21 10:12 8:11	MARIC Vladimir	SEL Zolt
+2005	SLOVENIA Open Velenje 2005	DAVID Petr (CZE)	ZLAMAL Jaromir (CZE)	LINDNER Adam (HUN)	VARGA Zoltan (HUN)	MD	Qualification	QR64	0 - 3	8:11 7:11 6:11	LINDNER Adam	VARGA Zoltan
+2005	SLOVENIA Open Velenje 2005	CIHAK Marek (CZE)	KLASEK Marek (CZE)	DRINKHALL Paul (ENG)	KNIGHT Darius (ENG)	MD	Qualification	QR32	3 - 1	11:4 11:9 9:11 11:7	CIHAK Marek	KLASEK Marek
+2005	SLOVENIA Open Velenje 2005	CIHAK Marek (CZE)	KLASEK Marek (CZE)	PLOHL Zvonko (SLO)	ROPOSA Bojan (SLO)	MD	Qualification	QR16	3 - 0	11:3 11:1 11:6	CIHAK Marek	KLASEK Marek
+2005	SLOVENIA Open Velenje 2005	DRINKHALL Paul (ENG)	KNIGHT Darius (ENG)	BAZENOV Valentin (SVK)	GUMAN Martin (SVK)	MD	Qualification	QR64	3 - 0	12:10 11:5 14:12	DRINKHALL Paul	KNIGHT Darius
+2005	SLOVENIA Open Velenje 2005	COOKE Alan (ENG)	PERRY Alex (ENG)	DURAN Marc (ESP)	NAVARRO Pere (ESP)	MD	Qualification	QR64	3 - 0	13:11 11:2 11:6	COOKE Alan	PERRY Alex
+2005	SLOVENIA Open Velenje 2005	BERTIN Christophe (FRA)	BOBILLIER Loic (FRA)	CIHAK Marek (CZE)	KLASEK Marek (CZE)	MD	Main Draw	R16	1 - 4	9:11 8:11 6:11 14:12 6:11	CIHAK Marek	KLASEK Marek
+2005	SLOVENIA Open Velenje 2005	KO Lai Chak (HKG)	LI Ching (HKG)	CAI Xiaoli (SGP)	GAO Ning (SGP)	MD	Main Draw	R16	4 - 1	11:4 11:3 5:11 11:5 11:7	KO Lai Chak	LI Ching
+2005	SLOVENIA Open Velenje 2005	KO Lai Chak (HKG)	LI Ching (HKG)	FAZEKAS Peter (HUN)	PAZSY Ferenc (HUN)	MD	Main Draw	QuarterFinal	4 - 0	11:9 11:7 11:6 11:5	KO Lai Chak	LI Ching
+2005	SLOVENIA Open Velenje 2005	KO Lai Chak (HKG)	LI Ching (HKG)	DEMETER Lehel (HUN)	KUZMIN Fedor (RUS)	MD	Main Draw	SemiFinal	4 - 2	11:7 9:11 11:8 4:11 11:7 11:9	KO Lai Chak	LI Ching
+2005	SLOVENIA Open Velenje 2005	KO Lai Chak (HKG)	LI Ching (HKG)	FETH Stefan (GER)	KEINATH Thomas (SVK)	MD	Main Draw	Final	4 - 1	11:5 11:3 7:11 11:6 11:8	KO Lai Chak	LI Ching
+2005	SLOVENIA Open Velenje 2005	LINDNER Adam (HUN)	VARGA Zoltan (HUN)	CHEUNG Yuk (HKG)	LEUNG Chu Yan (HKG)	MD	Main Draw	R16	0 - 4	6:11 14:16 9:11 8:11	CHEUNG Yuk	LEUNG Chu Yan
+2005	SLOVENIA Open Velenje 2005	JAKAB Janos (HUN)	MOLNAR Krisztian (HUN)	PLOHL Zvonko (SLO)	ROPOSA Bojan (SLO)	MD	Qualification	QR64	2 - 3	8:11 11:7 10:12 11:4 5:11	PLOHL Zvonko	ROPOSA Bojan
+2005	SLOVENIA Open Velenje 2005	BAST Mike (LUX)	SIMON Fabien (LUX)	KOLAREK Tomislav (CRO)	SURBEK Dragutin (CRO)	MD	Qualification	QR64	0 - 3	9:11 8:11 6:11	KOLAREK Tomislav	SURBEK Dragutin
+2005	SLOVENIA Open Velenje 2005	GOLOVANOV Stanislav (BUL)	MICHELY Gilles (LUX)	MAECK Anthony (BEL)	VOSTES Yannick (BEL)	MD	Qualification	QR64	2 - 3	8:11 11:8 11:7 5:11 2:11	MAECK Anthony	VOSTES Yannick
+2005	SLOVENIA Open Velenje 2005	RENGENHART Frank (NED)	WIJERS Barry (NED)	JAPEC Tomislav (CRO)	TAN Ruiwu (CRO)	MD	Qualification	QR64	1 - 3	9:11 12:10 4:11 3:11	JAPEC Tomislav	TAN Ruiwu
+2005	SLOVENIA Open Velenje 2005	KRZESZEWSKI Tomasz (POL)	KUSINSKI Marcin (POL)	HENRIQUES Nuno (POR)	MONTEIRO Joao (POR)	MD	Main Draw	R16	4 - 2	11:6 11:6 13:11 9:11 5:11 11:6	KRZESZEWSKI Tomasz	KUSINSKI Marcin
+2005	SLOVENIA Open Velenje 2005	KOSOWSKI Jakub (POL)	WANG Zengyi (POL)	DESPRES Rodolphe (FRA)	LEGOUT Christophe (FRA)	MD	Main Draw	R16	4 - 1	11:5 9:11 11:9 11:9 12:10	KOSOWSKI Jakub	WANG Zengyi
+2005	SLOVENIA Open Velenje 2005	KRZESZEWSKI Tomasz (POL)	KUSINSKI Marcin (POL)	DEMETER Lehel (HUN)	KUZMIN Fedor (RUS)	MD	Main Draw	QuarterFinal	2 - 4	11:7 11:13 11:4 11:13 9:11 9:11	DEMETER Lehel	KUZMIN Fedor
+2005	SLOVENIA Open Velenje 2005	GORAK Daniel (POL)	SUCH Bartosz (POL)	JALZABETIC Alen (CRO)	KOVAC Borna (CRO)	MD	Qualification	QR64	3 - 1	12:10 6:11 11:2 11:7	GORAK Daniel	SUCH Bartosz
+2005	SLOVENIA Open Velenje 2005	GORAK Daniel (POL)	SUCH Bartosz (POL)	LINDNER Adam (HUN)	VARGA Zoltan (HUN)	MD	Qualification	QR32	1 - 3	6:11 11:7 4:11 5:11	LINDNER Adam	VARGA Zoltan
+2005	SLOVENIA Open Velenje 2005	HENRIQUES Nuno (POR)	MONTEIRO Joao (POR)	COOKE Alan (ENG)	PERRY Alex (ENG)	MD	Qualification	QR16	3 - 0	11:9 11:7 11:7	HENRIQUES Nuno	MONTEIRO Joao
+2005	SLOVENIA Open Velenje 2005	DEMETER Lehel (HUN)	KUZMIN Fedor (RUS)	BENTSEN Allan (DEN)	TOKIC Bojan (SLO)	MD	Main Draw	R16	4 - 0	12:10 11:7 11:6 11:7	DEMETER Lehel	KUZMIN Fedor
+2005	SLOVENIA Open Velenje 2005	DEMETER Lehel (HUN)	KUZMIN Fedor (RUS)	JAPEC Tomislav (CRO)	TAN Ruiwu (CRO)	MD	Qualification	QR32	3 - 0	11:5 11:8 11:7	DEMETER Lehel	KUZMIN Fedor
+2005	SLOVENIA Open Velenje 2005	DEMETER Lehel (HUN)	KUZMIN Fedor (RUS)	YANG Zi (SGP)	ZHENG Qi (SGP)	MD	Qualification	QR16	3 - 2	9:11 11:8 5:11 11:4 12:10	DEMETER Lehel	KUZMIN Fedor
+2005	SLOVENIA Open Velenje 2005	YANG Zi (SGP)	ZHENG Qi (SGP)	ASAMOAH Cyprian (SWE)	GERELL Par (SWE)	MD	Qualification	QR64	3 - 1	11:7 14:12 8:11 11:9	YANG Zi	ZHENG Qi
+2005	SLOVENIA Open Velenje 2005	CAI Xiaoli (SGP)	GAO Ning (SGP)	DIDUKH Oleksandr (UKR)	ILLAS Erik (SVK)	MD	Qualification	QR16	3 - 0	11:8 11:8 14:12	CAI Xiaoli	GAO Ning
+2005	SLOVENIA Open Velenje 2005	JAZBEC Ziga (SLO)	PETROVCIC Janez (SLO)	JANASEK Thomas (CZE)	SIMONCIK Josef (CZE)	MD	Qualification	QR64	1 - 3	11:9 8:11 5:11 6:11	JANASEK Thomas	SIMONCIK Josef
+2005	SLOVENIA Open Velenje 2005	GRIGOREV Artur (RUS)	IGNJATOVIC Sasa (SLO)	FILUS Ruwen (GER)	MENGEL Steffen (GER)	MD	Qualification	QR64	3 - 0	11:7 11:7 11:5	GRIGOREV Artur	IGNJATOVIC Sasa
+2005	SLOVENIA Open Velenje 2005	LASAN Sas (SLO)	NISAVIC Gregor (SLO)	CAI Xiaoli (SGP)	GAO Ning (SGP)	MD	Qualification	QR64	1 - 3	11:9 2:11 7:11 7:11	CAI Xiaoli	GAO Ning
+2005	SLOVENIA Open Velenje 2005	PLOHL Zvonko (SLO)	ROPOSA Bojan (SLO)	KOLAREK Tomislav (CRO)	SURBEK Dragutin (CRO)	MD	Qualification	QR32	3 - 0	11:8 12:10 11:3	PLOHL Zvonko	ROPOSA Bojan
+2005	SLOVENIA Open Velenje 2005	GRIGOREV Artur (RUS)	IGNJATOVIC Sasa (SLO)	KOSOWSKI Jakub (POL)	WANG Zengyi (POL)	MD	Qualification	QR32	1 - 3	11:9 6:11 8:11 4:11	KOSOWSKI Jakub	WANG Zengyi
+2005	SLOVENIA Open Velenje 2005	MARIC Vladimir (SRB)	SEL Zolt (SRB)	CIOTI Constantin (ROU)	FILIMON Andrei (ROU)	MD	Qualification	QR32	2 - 3	2:11 14:12 14:12 4:11 9:11	CIOTI Constantin	FILIMON Andrei
+2005	SLOVENIA Open Velenje 2005	JEVTOVIC Marko (SRB)	PETO Zsolt (SRB)	CAI Xiaoli (SGP)	GAO Ning (SGP)	MD	Qualification	QR32	0 - 3	4:11 7:11 11:13	CAI Xiaoli	GAO Ning
+2005	SLOVENIA Open Velenje 2005	PISTEJ Lubomir (SVK)	SEREDA Peter (SVK)	FAZEKAS Peter (HUN)	PAZSY Ferenc (HUN)	MD	Main Draw	R16	1 - 4	5:11 11:3 6:11 4:11 7:11	FAZEKAS Peter	PAZSY Ferenc
+2005	SLOVENIA Open Velenje 2005	FETH Stefan (GER)	KEINATH Thomas (SVK)	CIOTI Constantin (ROU)	FILIMON Andrei (ROU)	MD	Main Draw	R16	4 - 0	11:9 11:5 11:5 11:8	FETH Stefan	KEINATH Thomas
+2005	SLOVENIA Open Velenje 2005	FETH Stefan (GER)	KEINATH Thomas (SVK)	CHEUNG Yuk (HKG)	LEUNG Chu Yan (HKG)	MD	Main Draw	QuarterFinal	4 - 0	11:7 11:8 11:9 11:8	FETH Stefan	KEINATH Thomas
+2005	SLOVENIA Open Velenje 2005	DIDUKH Oleksandr (UKR)	ILLAS Erik (SVK)	KOSCAK Jure (SLO)	LO Dany (FRA)	MD	Qualification	QR64	3 - 2	7:11 11:7 12:14 11:6 11:7	DIDUKH Oleksandr	ILLAS Erik
+2005	SLOVENIA Open Velenje 2005	PISTEJ Lubomir (SVK)	SEREDA Peter (SVK)	KLEPRLIK Jakub (CZE)	KLEPRLIK Michal (CZE)	MD	Qualification	QR32	3 - 1	9:11 12:10 11:5 12:10	PISTEJ Lubomir	SEREDA Peter
+2005	SLOVENIA Open Velenje 2005	DIDUKH Oleksandr (UKR)	ILLAS Erik (SVK)	ERLANDSEN Geir (NOR)	MOLDOVAN Istvan (NOR)	MD	Qualification	QR32	3 - 1	11:6 11:6 5:11 12:10	DIDUKH Oleksandr	ILLAS Erik
+2005	SLOVENIA Open Velenje 2005	PISTEJ Lubomir (SVK)	SEREDA Peter (SVK)	KRIVIC Jakov (CRO)	REDJEP Ronald (CRO)	MD	Qualification	QR16	3 - 0	11:7 11:7 11:9	PISTEJ Lubomir	SEREDA Peter
+2005	SLOVENIA Open Velenje 2005	AXELQVIST Johan (SWE)	SVENSSON Robert (SWE)	MAGYAR Laszlo (HUN)	MOLNAR Csaba (HUN)	MD	Qualification	QR64	3 - 0	11:8 11:7 11:8	AXELQVIST Johan	SVENSSON Robert
+2005	SLOVENIA Open Velenje 2005	AXELQVIST Johan (SWE)	SVENSSON Robert (SWE)	HENRIQUES Nuno (POR)	MONTEIRO Joao (POR)	MD	Qualification	QR32	2 - 3	11:5 9:11 9:11 12:10 4:11	HENRIQUES Nuno	MONTEIRO Joao
+2005	SLOVENIA Open Velenje 2005	KATKOV Ivan (UKR)	PRYSHCHEPA Ievgen (UKR)	PLAVSIC Stojan (AUT)	PRESSLMAYER Bernhard (AUT)	MD	Qualification	QR64	1 - 3	6:11 11:6 8:11 10:12	PLAVSIC Stojan	PRESSLMAYER Bernhard
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 39
+
+2005	SLOVENIA Open Velenje 2005	CHO May (AUS)	MIAO Miao (AUS)	JONSSON Susanne (SWE)	OLSSON Marie (SWE)	WD	Qualification	QR32	2 - 3	11:7 12:10 4:11 8:11 8:11	JONSSON Susanne	OLSSON Marie
+2005	SLOVENIA Open Velenje 2005	WANG Yu (YOB=1981) (ITA)	ZHANG Mo (CAN)	BOBETIC Andrea (CRO)	PERHOC Ines (CRO)	WD	Qualification	QR32	1 - 3	8:11 11:6 6:11 12:14	BOBETIC Andrea	PERHOC Ines
+2005	SLOVENIA Open Velenje 2005	BAKULA Andrea (CRO)	PAOVIC Sandra (CRO)	HALAS Helena (SLO)	TODOROVIC Biljana (SLO)	WD	Main Draw	R16	1 - 4	12:14 20:18 9:11 6:11 10:12	HALAS Helena	TODOROVIC Biljana
+2005	SLOVENIA Open Velenje 2005	WAGGERMAYER Elena (AUT)	MALOBABIC Ivana (CRO)	FATORIC Kristin (SLO)	ZERA Ivana (SLO)	WD	Qualification	QR32	3 - 1	10:12 11:3 11:6 11:1	WAGGERMAYER Elena	MALOBABIC Ivana
+2005	SLOVENIA Open Velenje 2005	BOBETIC Andrea (CRO)	PERHOC Ines (CRO)	JONSSON Carina (SWE)	WIGOW Susanna (SWE)	WD	Qualification	QR16	1 - 3	11:6 6:11 5:11 10:12	JONSSON Carina	WIGOW Susanna
+2005	SLOVENIA Open Velenje 2005	WAGGERMAYER Elena (AUT)	MALOBABIC Ivana (CRO)	PARKER Katy (ENG)	SIBLEY Kelly (ENG)	WD	Qualification	QR16	3 - 1	6:11 11:6 11:8 11:4	WAGGERMAYER Elena	MALOBABIC Ivana
+2005	SLOVENIA Open Velenje 2005	PARKER Katy (ENG)	SIBLEY Kelly (ENG)	CECHOVA Dana (CZE)	RATHER Jasna (USA)	WD	Qualification	QR32	3 - 1	13:11 12:10 6:11 14:12	PARKER Katy	SIBLEY Kelly
+2005	SLOVENIA Open Velenje 2005	BADESCU Otilia (ROU)	LIN Ling (HKG)	FEHER Gabriela (SRB)	PLAVSIC Gordana (SRB)	WD	Main Draw	QuarterFinal	4 - 1	7:11 11:3 11:6 13:11 11:9	BADESCU Otilia	LIN Ling
+2005	SLOVENIA Open Velenje 2005	BADESCU Otilia (ROU)	LIN Ling (HKG)	NEGRISOLI Laura (ITA)	STEFANOVA Nikoleta (ITA)	WD	Main Draw	SemiFinal	4 - 0	11:7 11:5 11:5 12:10	BADESCU Otilia	LIN Ling
+2005	SLOVENIA Open Velenje 2005	BADESCU Otilia (ROU)	LIN Ling (HKG)	TIE Yana (HKG)	ZHANG Rui (HKG)	WD	Main Draw	Final	2 - 4	14:12 6:11 6:11 11:8 5:11 6:11	TIE Yana	ZHANG Rui
+2005	SLOVENIA Open Velenje 2005	BADESCU Otilia (ROU)	LIN Ling (HKG)	CREEMERS Linda (NED)	VAN ULSEN Sigrid (NED)	WD	Qualification	QR32	3 - 0	11:8 11:4 12:10	BADESCU Otilia	LIN Ling
+2005	SLOVENIA Open Velenje 2005	BADESCU Otilia (ROU)	LIN Ling (HKG)	BEH Lee Wei (MAS)	NG Sock Khim (MAS)	WD	Qualification	QR16	3 - 1	11:3 11:9 9:11 11:7	BADESCU Otilia	LIN Ling
+2005	SLOVENIA Open Velenje 2005	LI Bin (HUN)	MOLNAR Zita (HUN)	SKABAR Petra (SLO)	TOMAZINI Jana (SLO)	WD	Qualification	QR32	3 - 0	11:5 12:10 11:3	LI Bin	MOLNAR Zita
+2005	SLOVENIA Open Velenje 2005	KERTAI Rita (HUN)	LOVAS Petra (HUN)	FEHER Gabriela (SRB)	PLAVSIC Gordana (SRB)	WD	Qualification	QR16	0 - 3	8:11 4:11 9:11	FEHER Gabriela	PLAVSIC Gordana
+2005	SLOVENIA Open Velenje 2005	LI Bin (HUN)	MOLNAR Zita (HUN)	JONSSON Susanne (SWE)	OLSSON Marie (SWE)	WD	Qualification	QR16	1 - 3	5:11 9:11 11:7 11:13	JONSSON Susanne	OLSSON Marie
+2005	SLOVENIA Open Velenje 2005	NEGRISOLI Laura (ITA)	STEFANOVA Nikoleta (ITA)	WAGGERMAYER Elena (AUT)	MALOBABIC Ivana (CRO)	WD	Main Draw	R16	4 - 1	11:13 11:8 11:2 13:11 11:8	NEGRISOLI Laura	STEFANOVA Nikoleta
+2005	SLOVENIA Open Velenje 2005	DING Yan (ITA)	TAN Wenling (ITA)	TIE Yana (HKG)	ZHANG Rui (HKG)	WD	Main Draw	R16	1 - 4	11:9 9:11 8:11 7:11 7:11	TIE Yana	ZHANG Rui
+2005	SLOVENIA Open Velenje 2005	NEGRISOLI Laura (ITA)	STEFANOVA Nikoleta (ITA)	JONSSON Susanne (SWE)	OLSSON Marie (SWE)	WD	Main Draw	QuarterFinal	4 - 0	14:12 11:8 13:11 11:7	NEGRISOLI Laura	STEFANOVA Nikoleta
+2005	SLOVENIA Open Velenje 2005	DING Yan (ITA)	TAN Wenling (ITA)	JERIC Tamara (SLO)	TOMAZIC Katja (SLO)	WD	Qualification	QR32	3 - 0	11:7 11:4 11:5	DING Yan	TAN Wenling
+2005	SLOVENIA Open Velenje 2005	DING Yan (ITA)	TAN Wenling (ITA)	HAAN Simone (LUX)	HARTMANN Carole (LUX)	WD	Qualification	QR16	3 - 0	11:8 11:6 11:6	DING Yan	TAN Wenling
+2005	SLOVENIA Open Velenje 2005	REZNA Pavlina (SVK)	SMETEK Marta (POL)	FAGANELJ Tadeja (SLO)	MILOST Janja (SLO)	WD	Qualification	QR64	2 - 3	8:11 7:11 11:9 11:7 11:13	FAGANELJ Tadeja	MILOST Janja
+2005	SLOVENIA Open Velenje 2005	CAMPBELL Peri (AUS)	JANTA-LIPINSKA Anna (POL)	GOBEL Jessica (GER)	KRAMER Tanja (GER)	WD	Qualification	QR32	3 - 1	6:11 12:10 11:8 11:7	CAMPBELL Peri	JANTA-LIPINSKA Anna
+2005	SLOVENIA Open Velenje 2005	LI Jiawei (SGP)	XU Yan (SGP)	JONSSON Carina (SWE)	WIGOW Susanna (SWE)	WD	Main Draw	R16	4 - 0	12:10 11:8 11:5 11:5	LI Jiawei	XU Yan
+2005	SLOVENIA Open Velenje 2005	LI Jiawei (SGP)	XU Yan (SGP)	TAN Paey Fern (SGP)	ZHANG Xueling (SGP)	WD	Main Draw	QuarterFinal	4 - 1	8:11 11:7 11:7 11:5 11:9	LI Jiawei	XU Yan
+2005	SLOVENIA Open Velenje 2005	LI Jiawei (SGP)	XU Yan (SGP)	TIE Yana (HKG)	ZHANG Rui (HKG)	WD	Main Draw	SemiFinal	2 - 4	2:11 11:9 11:9 9:11 4:11 7:11	TIE Yana	ZHANG Rui
+2005	SLOVENIA Open Velenje 2005	KOLAROVA Dominika (SVK)	SUN Beibei (SGP)	CICHOCKA Magdalena (POL)	XU Jie (1982) (POL)	WD	Qualification	QR32	3 - 2	7:11 11:9 9:11 11:6 11:7	KOLAROVA Dominika	SUN Beibei
+2005	SLOVENIA Open Velenje 2005	HALAS Helena (SLO)	TODOROVIC Biljana (SLO)	TIE Yana (HKG)	ZHANG Rui (HKG)	WD	Main Draw	QuarterFinal	0 - 4	8:11 5:11 2:11 9:11	TIE Yana	ZHANG Rui
+2005	SLOVENIA Open Velenje 2005	LUZAR Natalija (SLO)	SIVEC Sashka (SLO)	FEHER Gabriela (SRB)	PLAVSIC Gordana (SRB)	WD	Qualification	QR64	1 - 3	15:13 6:11 8:11 8:11	FEHER Gabriela	PLAVSIC Gordana
+2005	SLOVENIA Open Velenje 2005	MOSKALENKO Tanja (BLR)	RAHOTIN Kristina (SLO)	EKHOLM Matilda (SWE)	NORDENBERG Linda (SWE)	WD	Qualification	QR64	3 - 0	11:7 11:5 11:2	MOSKALENKO Tanja	RAHOTIN Kristina
+2005	SLOVENIA Open Velenje 2005	FAJMUT Manca (SLO)	STEINMAN Tina (SLO)	JONSSON Carina (SWE)	WIGOW Susanna (SWE)	WD	Qualification	QR32	0 - 3	7:11 8:11 6:11	JONSSON Carina	WIGOW Susanna
+2005	SLOVENIA Open Velenje 2005	MOSKALENKO Tanja (BLR)	RAHOTIN Kristina (SLO)	BEH Lee Wei (MAS)	NG Sock Khim (MAS)	WD	Qualification	QR32	1 - 3	12:10 4:11 4:11 2:11	BEH Lee Wei	NG Sock Khim
+2005	SLOVENIA Open Velenje 2005	HALAS Helena (SLO)	TODOROVIC Biljana (SLO)	PAUKOVIC Sanja (CRO)	VUGRINEC Suncica (CRO)	WD	Qualification	QR32	3 - 0	11:9 11:8 11:3	HALAS Helena	TODOROVIC Biljana
+2005	SLOVENIA Open Velenje 2005	HALAS Helena (SLO)	TODOROVIC Biljana (SLO)	KOLAROVA Dominika (SVK)	SUN Beibei (SGP)	WD	Qualification	QR16	3 - 2	11:6 11:8 7:11 7:11 11:5	HALAS Helena	TODOROVIC Biljana
+2005	SLOVENIA Open Velenje 2005	FEHER Gabriela (SRB)	PLAVSIC Gordana (SRB)	BURGAR Spela (SLO)	POHAR Martina (SLO)	WD	Main Draw	R16	4 - 1	6:11 11:7 11:7 11:5 11:6	FEHER Gabriela	PLAVSIC Gordana
+2005	SLOVENIA Open Velenje 2005	ERDELJI Anamaria (SRB)	RECKO Ema (SRB)	TAN Paey Fern (SGP)	ZHANG Xueling (SGP)	WD	Main Draw	R16	1 - 4	2:11 11:8 4:11 10:12 11:13	TAN Paey Fern	ZHANG Xueling
+2005	SLOVENIA Open Velenje 2005	FEHER Gabriela (SRB)	PLAVSIC Gordana (SRB)	JOHANSSON Frida (SWE)	PHAI PANG Laurie (FRA)	WD	Qualification	QR32	3 - 1	8:11 11:8 11:4 11:7	FEHER Gabriela	PLAVSIC Gordana
+2005	SLOVENIA Open Velenje 2005	ERDELJI Anamaria (SRB)	RECKO Ema (SRB)	FAGANELJ Tadeja (SLO)	MILOST Janja (SLO)	WD	Qualification	QR32	3 - 0	11:3 11:6 11:4	ERDELJI Anamaria	RECKO Ema
+2005	SLOVENIA Open Velenje 2005	ERDELJI Anamaria (SRB)	RECKO Ema (SRB)	CAMPBELL Peri (AUS)	JANTA-LIPINSKA Anna (POL)	WD	Qualification	QR16	3 - 0	12:10 11:9 11:6	ERDELJI Anamaria	RECKO Ema
+2005	SLOVENIA Open Velenje 2005	JONSSON Susanne (SWE)	OLSSON Marie (SWE)	FAZEKAS Maria (HUN)	MOLNAR Cornelia (CRO)	WD	Main Draw	R16	4 - 0	16:14 11:9 11:7 11:7	JONSSON Susanne	OLSSON Marie

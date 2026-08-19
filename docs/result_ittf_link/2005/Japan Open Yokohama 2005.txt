@@ -6,3 +6,263 @@
 参赛人数：355
 开始日期：2005-09-22
 结束日期：2005-09-25
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 2 of 2 Total: 159
+
+Start
+Prev
+1
+2
+Next
+End
+2005	Japan Open Yokohama 2005	MITAMURA Muneaki (JPN)		CHIANG Peng-Lung (TPE)		MS	Main Draw	R64	1 - 4	13:11 8:11 6:11 6:11 5:11	CHIANG Peng-Lung	
+2005	Japan Open Yokohama 2005	LIU Guozheng (CHN)		YOKOYAMA Yuichi (JPN)		MS	Main Draw	R64	4 - 1	11:6 13:15 11:7 11:6 11:6	LIU Guozheng	
+2005	Japan Open Yokohama 2005	YANG Zi (SGP)		LEE Jungwoo (KOR)		MS	Main Draw	R64	4 - 2	8:11 11:9 2:11 11:8 11:9 11:5	YANG Zi	
+2005	Japan Open Yokohama 2005	FEJER-KONNERTH Zoltan (GER)		KONGSGAARD Christian (DEN)		MS	Main Draw	R64	4 - 1	8:11 11:9 11:9 11:3 11:6	FEJER-KONNERTH Zoltan	
+2005	Japan Open Yokohama 2005	BERTIN Christophe (FRA)		CHEN Weixing (AUT)		MS	Main Draw	R64	1 - 4	9:11 6:11 11:7 6:11 5:11	CHEN Weixing	
+2005	Japan Open Yokohama 2005	CHEN Qi (CHN)		CAI Xiaoli (SGP)		MS	Main Draw	R64	4 - 0	11:6 11:3 11:4 11:8	CHEN Qi	
+2005	Japan Open Yokohama 2005	LIM Jaehyun (KOR)		GARDOS Robert (AUT)		MS	Main Draw	R64	4 - 2	11:8 11:5 11:5 10:12 4:11 11:8	LIM Jaehyun	
+2005	Japan Open Yokohama 2005	KUZMIN Fedor (RUS)		KEINATH Thomas (SVK)		MS	Main Draw	R64	3 - 4	11:4 11:8 13:15 12:14 7:11 11:8 9:11	KEINATH Thomas	
+2005	Japan Open Yokohama 2005	SAKAMOTO Ryusuke (JPN)		CRISAN Adrian (ROU)		MS	Main Draw	R64	1 - 4	11:9 8:11 13:15 8:11 9:11	CRISAN Adrian	
+2005	Japan Open Yokohama 2005	MAZE Michael (DEN)		KIHO Shinnosuke (JPN)		MS	Main Draw	R64	2 - 4	7:11 6:11 11:7 11:7 7:11 5:11	KIHO Shinnosuke	
+2005	Japan Open Yokohama 2005	CHANG Yen-Shu (TPE)		WOSIK Torben (GER)		MS	Main Draw	R64	0 - 4	10:12 7:11 7:11 3:11	WOSIK Torben	
+2005	Japan Open Yokohama 2005	FRANZ Peter (GER)		TAN Ruiwu (CRO)		MS	Main Draw	R64	2 - 4	11:6 11:9 10:12 9:11 10:12 12:14	TAN Ruiwu	
+2005	Japan Open Yokohama 2005	TAKAKIWA Kenichi (JPN)		BOLL Timo (GER)		MS	Main Draw	R64	2 - 4	6:11 6:11 11:6 7:11 11:8 6:11	BOLL Timo	
+2005	Japan Open Yokohama 2005	WANG Liqin (CHN)		PRIMORAC Zoran (CRO)		MS	Main Draw	R32	1 - 4	9:11 6:11 8:11 14:12 11:13	PRIMORAC Zoran	
+2005	Japan Open Yokohama 2005	LO Dany (FRA)		HAO Shuai (CHN)		MS	Main Draw	R32	2 - 4	11:8 8:11 6:11 11:8 4:11 8:11	HAO Shuai	
+2005	Japan Open Yokohama 2005	TOSIC Roko (CRO)		MIZUTANI Jun (JPN)		MS	Main Draw	R32	4 - 0	11:7 11:9 11:8 11:7	TOSIC Roko	
+2005	Japan Open Yokohama 2005	MA Long (CHN)		SCHLAGER Werner (AUT)		MS	Main Draw	R32	4 - 1	12:10 8:11 11:9 11:8 11:6	MA Long	
+2005	Japan Open Yokohama 2005	RYU Seungmin (KOR)		SUSS Christian (GER)		MS	Main Draw	R32	4 - 1	8:11 11:4 11:6 11:3 11:4	RYU Seungmin	
+2005	Japan Open Yokohama 2005	CHILA Patrick (FRA)		SMIRNOV Alexey (RUS)		MS	Main Draw	R32	4 - 2	12:10 7:11 11:9 9:11 11:7 11:5	CHILA Patrick	
+2005	Japan Open Yokohama 2005	CHUANG Chih-Yuan (TPE)		LUNDQVIST Jens (SWE)		MS	Main Draw	R32	4 - 3	11:9 12:10 8:11 9:11 8:11 11:9 11:9	CHUANG Chih-Yuan	
+2005	Japan Open Yokohama 2005	MONRAD Martin (DEN)		CHIANG Hung-Chieh (TPE)		MS	Main Draw	R32	3 - 4	6:11 11:8 5:11 11:8 7:11 11:2 11:13	CHIANG Hung-Chieh	
+2005	Japan Open Yokohama 2005	WANG Hao (CHN)		YOSHIDA Kaii (JPN)		MS	Main Draw	R32	4 - 2	8:11 5:11 11:7 11:5 11:5 12:10	WANG Hao	
+2005	Japan Open Yokohama 2005	STEGER Bastian (GER)		CHIANG Peng-Lung (TPE)		MS	Main Draw	R32	2 - 4	11:8 9:11 9:11 2:11 11:9 11:13	CHIANG Peng-Lung	
+2005	Japan Open Yokohama 2005	LIU Guozheng (CHN)		YANG Zi (SGP)		MS	Main Draw	R32	4 - 3	7:11 4:11 11:7 11:13 11:5 14:12 12:10	LIU Guozheng	
+2005	Japan Open Yokohama 2005	FEJER-KONNERTH Zoltan (GER)		CHEN Weixing (AUT)		MS	Main Draw	R32	2 - 4	9:11 11:7 6:11 12:10 6:11 6:11	CHEN Weixing	
+2005	Japan Open Yokohama 2005	CHEN Qi (CHN)		LIM Jaehyun (KOR)		MS	Main Draw	R32	4 - 2	10:12 9:11 11:4 15:13 11:6 11:8	CHEN Qi	
+2005	Japan Open Yokohama 2005	KEINATH Thomas (SVK)		CRISAN Adrian (ROU)		MS	Main Draw	R32	2 - 4	14:12 8:11 11:9 9:11 9:11 6:11	CRISAN Adrian	
+2005	Japan Open Yokohama 2005	KIHO Shinnosuke (JPN)		WOSIK Torben (GER)		MS	Main Draw	R32	1 - 4	5:11 6:11 11:6 8:11 9:11	WOSIK Torben	
+2005	Japan Open Yokohama 2005	TAN Ruiwu (CRO)		BOLL Timo (GER)		MS	Main Draw	R32	1 - 4	5:11 9:11 11:9 9:11 9:11	BOLL Timo	
+2005	Japan Open Yokohama 2005	PRIMORAC Zoran (CRO)		HAO Shuai (CHN)		MS	Main Draw	R16	1 - 4	9:11 7:11 11:7 2:11 5:11	HAO Shuai	
+2005	Japan Open Yokohama 2005	TOSIC Roko (CRO)		MA Long (CHN)		MS	Main Draw	R16	0 - 4	5:11 6:11 5:11 8:11	MA Long	
+2005	Japan Open Yokohama 2005	RYU Seungmin (KOR)		CHILA Patrick (FRA)		MS	Main Draw	R16	4 - 3	7:11 11:5 6:11 12:10 11:6 8:11 11:9	RYU Seungmin	
+2005	Japan Open Yokohama 2005	CHUANG Chih-Yuan (TPE)		CHIANG Hung-Chieh (TPE)		MS	Main Draw	R16	4 - 2	12:10 11:6 11:4 9:11 6:11 11:8	CHUANG Chih-Yuan	
+2005	Japan Open Yokohama 2005	WANG Hao (CHN)		CHIANG Peng-Lung (TPE)		MS	Main Draw	R16	4 - 0	11:8 11:8 11:8 11:5	WANG Hao	
+2005	Japan Open Yokohama 2005	LIU Guozheng (CHN)		CHEN Weixing (AUT)		MS	Main Draw	R16	4 - 0	11:6 11:7 11:7 11:7	LIU Guozheng	
+2005	Japan Open Yokohama 2005	CHEN Qi (CHN)		CRISAN Adrian (ROU)		MS	Main Draw	R16	4 - 0	11:6 11:9 11:3 11:6	CHEN Qi	
+2005	Japan Open Yokohama 2005	WOSIK Torben (GER)		BOLL Timo (GER)		MS	Main Draw	R16	1 - 4	11:9 4:11 9:11 3:11 3:11	BOLL Timo	
+2005	Japan Open Yokohama 2005	HAO Shuai (CHN)		MA Long (CHN)		MS	Main Draw	QuarterFinal	1 - 4	11:7 4:11 8:11 8:11 13:15	MA Long	
+2005	Japan Open Yokohama 2005	RYU Seungmin (KOR)		CHUANG Chih-Yuan (TPE)		MS	Main Draw	QuarterFinal	4 - 1	4:11 11:9 11:5 11:8 11:8	RYU Seungmin	
+2005	Japan Open Yokohama 2005	WANG Hao (CHN)		LIU Guozheng (CHN)		MS	Main Draw	QuarterFinal	4 - 2	9:11 11:4 9:11 11:3 11:3 11:9	WANG Hao	
+2005	Japan Open Yokohama 2005	CHEN Qi (CHN)		BOLL Timo (GER)		MS	Main Draw	QuarterFinal	1 - 4	11:9 8:11 8:11 9:11 9:11	BOLL Timo	
+2005	Japan Open Yokohama 2005	MA Long (CHN)		RYU Seungmin (KOR)		MS	Main Draw	SemiFinal	3 - 4	11:9 11:9 4:11 12:10 5:11 8:11 8:11	RYU Seungmin	
+2005	Japan Open Yokohama 2005	WANG Hao (CHN)		BOLL Timo (GER)		MS	Main Draw	SemiFinal	3 - 4	11:1 9:11 11:8 6:11 7:11 11:1 7:11	BOLL Timo	
+2005	Japan Open Yokohama 2005	RYU Seungmin (KOR)		BOLL Timo (GER)		MS	Main Draw	Final	0 - 4	9:11 10:12 4:11 9:11	BOLL Timo
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 2 Total: 124
+
+Start
+Prev
+1
+2
+Next
+End
+2005	Japan Open Yokohama 2005	PAN Chun-Chu (TPE)		YOON Sunae (KOR)		WS	Qualification		0 - 4	9:11 6:11 4:11 2:11	YOON Sunae	
+2005	Japan Open Yokohama 2005	STRUSE Nicole (GER)		YOON Sunae (KOR)		WS	Qualification	QR2	4 - 2	11:6 8:11 11:3 8:11 11:8 12:10	STRUSE Nicole	
+2005	Japan Open Yokohama 2005	STRUSE Nicole (GER)		PAN Chun-Chu (TPE)		WS	Qualification	3	4 - 0	11:4 11:5 11:6 11:6	STRUSE Nicole	
+2005	Japan Open Yokohama 2005	MUANGSUK Anisara (THA)		SHIN Soohee (KOR)		WS	Qualification		3 - 4	11:3 9:11 11:6 11:8 9:11 8:11 7:11	SHIN Soohee	
+2005	Japan Open Yokohama 2005	HIRANO Sayaka (JPN)		SHIN Soohee (KOR)		WS	Qualification	QR2	4 - 0	11:5 12:10 11:2 11:6	HIRANO Sayaka	
+2005	Japan Open Yokohama 2005	HIRANO Sayaka (JPN)		MUANGSUK Anisara (THA)		WS	Qualification	3	4 - 1	11:8 10:12 11:6 11:9 11:5	HIRANO Sayaka	
+2005	Japan Open Yokohama 2005	LU Yun-Feng (TPE)		KERTAI Rita (HUN)		WS	Qualification		4 - 0	11:7 11:9 11:8 11:9	LU Yun-Feng	
+2005	Japan Open Yokohama 2005	SCHALL Elke (GER)		KERTAI Rita (HUN)		WS	Qualification	QR2	4 - 0	13:11 11:9 11:8 11:6	SCHALL Elke	
+2005	Japan Open Yokohama 2005	SCHALL Elke (GER)		LU Yun-Feng (TPE)		WS	Qualification	3	4 - 0	11:9 11:9 11:2 11:6	SCHALL Elke	
+2005	Japan Open Yokohama 2005	KIM Junghyun (KOR)		ISHIGAKI Yuka (JPN)		WS	Qualification		4 - 1	11:8 12:10 8:11 15:13 11:7	KIM Junghyun	
+2005	Japan Open Yokohama 2005	POTA Georgina (HUN)		ISHIGAKI Yuka (JPN)		WS	Qualification	QR2	2 - 4	11:5 8:11 11:5 9:11 6:11 7:11	ISHIGAKI Yuka	
+2005	Japan Open Yokohama 2005	POTA Georgina (HUN)		KIM Junghyun (KOR)		WS	Qualification	3	3 - 4	11:9 6:11 11:9 12:14 9:11 11:5 5:11	KIM Junghyun	
+2005	Japan Open Yokohama 2005	LOVAS Petra (HUN)		KIM Hyehyun (KOR)		WS	Qualification		4 - 2	11:13 11:5 16:14 11:5 7:11 11:9	LOVAS Petra	
+2005	Japan Open Yokohama 2005	TAN Wenling (ITA)		KIM Hyehyun (KOR)		WS	Qualification	QR2	3 - 4	10:12 11:9 7:11 11:7 11:7 7:11 6:11	KIM Hyehyun	
+2005	Japan Open Yokohama 2005	TAN Wenling (ITA)		LOVAS Petra (HUN)		WS	Qualification	3	4 - 0	11:9 11:3 11:9 11:9	TAN Wenling	
+2005	Japan Open Yokohama 2005	ROBERTSON Laura (GER)		LEE I-Chen (TPE)		WS	Qualification		3 - 4	11:5 10:12 10:12 12:10 9:11 11:6 8:11	LEE I-Chen	
+2005	Japan Open Yokohama 2005	KIM Bokrae (KOR)		LEE I-Chen (TPE)		WS	Qualification	QR2	4 - 1	11:8 11:3 8:11 11:4 11:9	KIM Bokrae	
+2005	Japan Open Yokohama 2005	KIM Bokrae (KOR)		ROBERTSON Laura (GER)		WS	Qualification	3	4 - 3	7:11 8:11 11:9 14:12 11:4 10:12 11:8	KIM Bokrae	
+2005	Japan Open Yokohama 2005	LIU Shiwen (CHN)		YU Mei-Ju (TPE)		WS	Qualification		4 - 0	11:9 11:9 11:7 11:7	LIU Shiwen	
+2005	Japan Open Yokohama 2005	FUJINUMA Ai (JPN)		YU Mei-Ju (TPE)		WS	Qualification	QR2	4 - 0	11:6 11:7 11:4 11:9	FUJINUMA Ai	
+2005	Japan Open Yokohama 2005	FUJINUMA Ai (JPN)		LIU Shiwen (CHN)		WS	Qualification	3	1 - 4	8:11 8:11 11:4 4:11 5:11	LIU Shiwen	
+2005	Japan Open Yokohama 2005	KRAMER Tanja (GER)		SU Hsien-Ching (TPE)		WS	Qualification		4 - 1	11:7 11:6 11:4 12:14 11:9	KRAMER Tanja	
+2005	Japan Open Yokohama 2005	FUKUOKA Haruna (JPN)		SU Hsien-Ching (TPE)		WS	Qualification	QR2	4 - 0	11:4 11:6 11:8 11:7	FUKUOKA Haruna	
+2005	Japan Open Yokohama 2005	FUKUOKA Haruna (JPN)		KRAMER Tanja (GER)		WS	Qualification	3	4 - 2	12:10 11:7 9:11 11:8 10:12 11:9	FUKUOKA Haruna	
+2005	Japan Open Yokohama 2005	GOBEL Jessica (GER)		TERUI Moemi (JPN)		WS	Qualification		4 - 1	9:11 12:10 11:5 11:5 11:9	GOBEL Jessica	
+2005	Japan Open Yokohama 2005	ZHANG Xueling (SGP)		TERUI Moemi (JPN)		WS	Qualification	QR2	4 - 3	11:9 11:7 10:12 10:12 3:11 11:7 14:12	ZHANG Xueling	
+2005	Japan Open Yokohama 2005	ZHANG Xueling (SGP)		GOBEL Jessica (GER)		WS	Qualification	3	4 - 3	11:8 5:11 12:14 11:9 4:11 11:4 11:7	ZHANG Xueling	
+2005	Japan Open Yokohama 2005	TAN Paey Fern (SGP)		ONO Shiho (JPN)		WS	Qualification		4 - 2	14:12 11:8 7:11 11:8 8:11 11:3	TAN Paey Fern	
+2005	Japan Open Yokohama 2005	LANG Kristin (GER)		ONO Shiho (JPN)		WS	Qualification	QR2	3 - 4	11:3 9:11 11:8 7:11 11:7 9:11 10:12	ONO Shiho	
+2005	Japan Open Yokohama 2005	LANG Kristin (GER)		TAN Paey Fern (SGP)		WS	Qualification	3	1 - 4	8:11 11:7 12:14 6:11 6:11	TAN Paey Fern	
+2005	Japan Open Yokohama 2005	KISHIDA Satoko (JPN)		LEE Kyeola (KOR)		WS	Qualification		4 - 1	11:9 11:6 11:9 6:11 14:12	KISHIDA Satoko	
+2005	Japan Open Yokohama 2005	BATORFI Csilla (HUN)		LEE Kyeola (KOR)		WS	Qualification	QR2	4 - 3	5:11 11:4 11:8 11:13 11:5 9:11 11:5	BATORFI Csilla	
+2005	Japan Open Yokohama 2005	BATORFI Csilla (HUN)		KISHIDA Satoko (JPN)		WS	Qualification	3	1 - 4	12:14 7:11 11:9 8:11 9:11	KISHIDA Satoko	
+2005	Japan Open Yokohama 2005	PAVLOVICH Veronika (BLR)		MORIMOTO Fumie (JPN)		WS	Qualification		4 - 2	8:11 11:6 11:9 6:11 11:9 11:9	PAVLOVICH Veronika	
+2005	Japan Open Yokohama 2005	STEFANOVA Nikoleta (ITA)		MORIMOTO Fumie (JPN)		WS	Qualification	QR2	4 - 3	14:16 13:11 8:11 11:6 11:3 8:11 11:7	STEFANOVA Nikoleta	
+2005	Japan Open Yokohama 2005	STEFANOVA Nikoleta (ITA)		PAVLOVICH Veronika (BLR)		WS	Qualification	3	1 - 4	4:11 11:5 8:11 10:12 4:11	PAVLOVICH Veronika	
+2005	Japan Open Yokohama 2005	HUANG Yi-Hua (TPE)		KIM Sujin (KOR)		WS	Qualification		4 - 1	11:6 5:11 12:10 11:9 11:9	HUANG Yi-Hua	
+2005	Japan Open Yokohama 2005	FUJII Hiroko (JPN)		KIM Sujin (KOR)		WS	Qualification	QR2	4 - 0	11:4 11:8 11:8 11:8	FUJII Hiroko	
+2005	Japan Open Yokohama 2005	FUJII Hiroko (JPN)		HUANG Yi-Hua (TPE)		WS	Qualification	3	4 - 0	11:6 11:4 11:5 11:7	FUJII Hiroko	
+2005	Japan Open Yokohama 2005	KIM Minji (KOR)		NAKAGAWA Miho (JPN)		U21WS	Qualification		3 - 1	7:11 13:11 13:11 13:11	KIM Minji	
+2005	Japan Open Yokohama 2005	LEE I-Chen (TPE)		NAKAGAWA Miho (JPN)		U21WS	Qualification	QR2	3 - 0	11:4 11:5 11:6	LEE I-Chen	
+2005	Japan Open Yokohama 2005	LEE I-Chen (TPE)		KIM Minji (KOR)		U21WS	Qualification	3	3 - 0	11:8 11:6 11:6	LEE I-Chen	
+2005	Japan Open Yokohama 2005	INOUE Tomoni (JPN)		PENG Wan-Hua (TPE)		U21WS	Qualification		3 - 1	11:7 11:6 8:11 11:5	INOUE Tomoni	
+2005	Japan Open Yokohama 2005	YU Mei-Ju (TPE)		PENG Wan-Hua (TPE)		U21WS	Qualification	QR2	3 - 0	11:7 11:8 11:5	YU Mei-Ju	
+2005	Japan Open Yokohama 2005	YU Mei-Ju (TPE)		INOUE Tomoni (JPN)		U21WS	Qualification	3	3 - 1	11:8 11:7 8:11 13:11	YU Mei-Ju	
+2005	Japan Open Yokohama 2005	LIU Hsing-Yin (TPE)		KANG Wang-Shan (TPE)		U21WS	Qualification		3 - 0	11:9 11:8 11:4	LIU Hsing-Yin	
+2005	Japan Open Yokohama 2005	TERUI Moemi (JPN)		KANG Wang-Shan (TPE)		U21WS	Qualification	QR2	3 - 0	11:8 11:6 12:10	TERUI Moemi	
+2005	Japan Open Yokohama 2005	TERUI Moemi (JPN)		LIU Hsing-Yin (TPE)		U21WS	Qualification	3	0 - 3	8:11 8:11 7:11	LIU Hsing-Yin	
+2005	Japan Open Yokohama 2005	KIM Sujin (KOR)		CHENG I-Ching (TPE)		U21WS	Qualification		1 - 3	5:11 9:11 11:7 4:11	CHENG I-Ching	
+2005	Japan Open Yokohama 2005	SU Hsien-Ching (TPE)		KAWAGUCHI Nana (JPN)		U21WS	Qualification	QR2	0 - 3	12:14 2:11 3:11	KAWAGUCHI Nana	
+2005	Japan Open Yokohama 2005	KIM Sujin (KOR)		KAWAGUCHI Nana (JPN)		U21WS	Qualification	3	3 - 1	11:9 11:13 11:5 11:5	KIM Sujin	
+2005	Japan Open Yokohama 2005	SU Hsien-Ching (TPE)		CHENG I-Ching (TPE)		U21WS	Qualification	QR4	0 - 3	7:11 3:11 8:11	CHENG I-Ching	
+2005	Japan Open Yokohama 2005	CHENG I-Ching (TPE)		KAWAGUCHI Nana (JPN)		U21WS	Qualification	5	2 - 3	11:7 8:11 9:11 11:9 9:11	KAWAGUCHI Nana	
+2005	Japan Open Yokohama 2005	SU Hsien-Ching (TPE)		KIM Sujin (KOR)		U21WS	Qualification	6	0 - 3	9:11 6:11 9:11	KIM Sujin	
+2005	Japan Open Yokohama 2005	LEE Kyeola (KOR)		HSIUNG Nai-I (TPE)		U21WS	Qualification		3 - 1	11:3 7:11 11:6 11:9	LEE Kyeola	
+2005	Japan Open Yokohama 2005	ONO Shiho (JPN)		NAKAJIMA Misaki (JPN)		U21WS	Qualification	QR2	3 - 0	11:8 11:2 11:5	ONO Shiho	
+2005	Japan Open Yokohama 2005	LEE Kyeola (KOR)		NAKAJIMA Misaki (JPN)		U21WS	Qualification	3	3 - 0	11:7 11:5 11:7	LEE Kyeola	
+2005	Japan Open Yokohama 2005	ONO Shiho (JPN)		HSIUNG Nai-I (TPE)		U21WS	Qualification	QR4	3 - 0	11:5 11:6 11:8	ONO Shiho	
+2005	Japan Open Yokohama 2005	HSIUNG Nai-I (TPE)		NAKAJIMA Misaki (JPN)		U21WS	Qualification	5	3 - 2	11:8 11:4 5:11 10:12 11:7	HSIUNG Nai-I	
+2005	Japan Open Yokohama 2005	ONO Shiho (JPN)		LEE Kyeola (KOR)		U21WS	Qualification	6	3 - 1	10:12 11:6 11:7 17:15	ONO Shiho	
+2005	Japan Open Yokohama 2005	ZHANG Yining (CHN)		KANAZAWA Saki (JPN)		WS	Main Draw	R32	4 - 0	11:7 11:9 13:11 11:4	ZHANG Yining	
+2005	Japan Open Yokohama 2005	FUJII Hiroko (JPN)		TOTH Krisztina (HUN)		WS	Main Draw	R32	4 - 1	5:11 11:8 11:6 11:7 12:10	FUJII Hiroko	
+2005	Japan Open Yokohama 2005	BAI Yang (CHN)		HIURA Reiko (JPN)		WS	Main Draw	R32	4 - 2	11:6 11:8 2:11 11:7 7:11 11:7	BAI Yang	
+2005	Japan Open Yokohama 2005	LIU Shiwen (CHN)		KIM Kyungah (KOR)		WS	Main Draw	R32	1 - 4	7:11 11:5 5:11 5:11 6:11	KIM Kyungah	
+2005	Japan Open Yokohama 2005	LAU Sui Fei (HKG)		PAVLOVICH Veronika (BLR)		WS	Main Draw	R32	4 - 0		LAU Sui Fei	
+2005	Japan Open Yokohama 2005	KIM Junghyun (KOR)		FUKUHARA Ai (JPN)		WS	Main Draw	R32	0 - 4	5:11 4:11 8:11 6:11	FUKUHARA Ai	
+2005	Japan Open Yokohama 2005	CAO Zhen (CHN)		KWAK Bangbang (KOR)		WS	Main Draw	R32	4 - 1	11:4 11:13 11:4 11:6 12:10	CAO Zhen	
+2005	Japan Open Yokohama 2005	KIM Bokrae (KOR)		GUO Yue (CHN)		WS	Main Draw	R32	1 - 4	8:11 4:11 4:11 11:8 1:11	GUO Yue	
+2005	Japan Open Yokohama 2005	GUO Yan (1982) (CHN)		TAN Wenling (ITA)		WS	Main Draw	R32	4 - 0	11:6 11:4 11:5 11:8	GUO Yan (1982)	
+2005	Japan Open Yokohama 2005	HIRANO Sayaka (JPN)		WANG Yuegu (SGP)		WS	Main Draw	R32	0 - 4	3:11 9:11 5:11 7:11	WANG Yuegu	
+2005	Japan Open Yokohama 2005	SUN Beibei (SGP)		SCHALL Elke (GER)		WS	Main Draw	R32	1 - 4	9:11 8:11 7:11 12:10 6:11	SCHALL Elke	
+2005	Japan Open Yokohama 2005	STRUSE Nicole (GER)		BOROS Tamara (CRO)		WS	Main Draw	R32	2 - 4	5:11 11:9 2:11 8:11 11:8 15:17	BOROS Tamara	
+2005	Japan Open Yokohama 2005	PAVLOVICH Viktoria (BLR)		FUKUOKA Haruna (JPN)		WS	Main Draw	R32	4 - 0	11:8 11:6 11:7 11:9	PAVLOVICH Viktoria	
+2005	Japan Open Yokohama 2005	TAN Paey Fern (SGP)		UMEMURA Aya (JPN)		WS	Main Draw	R32	2 - 4	9:11 11:8 11:9 6:11 6:11 4:11	UMEMURA Aya	
+2005	Japan Open Yokohama 2005	MOON Hyunjung (KOR)		ZHANG Xueling (SGP)		WS	Main Draw	R32	3 - 4	3:11 11:7 11:9 6:11 11:6 9:11 7:11	ZHANG Xueling	
+2005	Japan Open Yokohama 2005	KISHIDA Satoko (JPN)		LI Jiawei (SGP)		WS	Main Draw	R32	0 - 4	9:11 9:11 3:11 1:11	LI Jiawei	
+2005	Japan Open Yokohama 2005	ZHANG Yining (CHN)		FUJII Hiroko (JPN)		WS	Main Draw	R16	4 - 1	11:5 5:11 11:7 12:10 11:9	ZHANG Yining	
+2005	Japan Open Yokohama 2005	BAI Yang (CHN)		KIM Kyungah (KOR)		WS	Main Draw	R16	1 - 4	13:11 4:11 6:11 8:11 4:11	KIM Kyungah	
+2005	Japan Open Yokohama 2005	LAU Sui Fei (HKG)		FUKUHARA Ai (JPN)		WS	Main Draw	R16	4 - 2	11:7 9:11 11:9 11:9 8:11 11:9	LAU Sui Fei	
+2005	Japan Open Yokohama 2005	CAO Zhen (CHN)		GUO Yue (CHN)		WS	Main Draw	R16	0 - 4	9:11 9:11 8:11 8:11	GUO Yue	
+2005	Japan Open Yokohama 2005	GUO Yan (1982) (CHN)		WANG Yuegu (SGP)		WS	Main Draw	R16	4 - 0	11:8 11:7 11:9 11:6	GUO Yan (1982)	
+2005	Japan Open Yokohama 2005	SCHALL Elke (GER)		BOROS Tamara (CRO)		WS	Main Draw	R16	2 - 4	9:11 7:11 12:10 11:4 10:12 9:11	BOROS Tamara	
+2005	Japan Open Yokohama 2005	PAVLOVICH Viktoria (BLR)		UMEMURA Aya (JPN)		WS	Main Draw	R16	4 - 1	11:7 11:3 11:6 5:11 11:6	PAVLOVICH Viktoria	
+2005	Japan Open Yokohama 2005	ZHANG Xueling (SGP)		LI Jiawei (SGP)		WS	Main Draw	R16	2 - 4	11:8 10:12 11:9 7:11 13:15 8:11	LI Jiawei	
+2005	Japan Open Yokohama 2005	ZHANG Yining (CHN)		KIM Kyungah (KOR)		WS	Main Draw	QuarterFinal	4 - 0	11:8 11:8 14:12 11:5	ZHANG Yining	
+2005	Japan Open Yokohama 2005	LAU Sui Fei (HKG)		GUO Yue (CHN)		WS	Main Draw	QuarterFinal	2 - 4	11:8 9:11 8:11 11:5 6:11 5:11	GUO Yue	
+2005	Japan Open Yokohama 2005	GUO Yan (1982) (CHN)		BOROS Tamara (CRO)		WS	Main Draw	QuarterFinal	4 - 0	11:5 11:4 11:6 11:7	GUO Yan (1982)	
+2005	Japan Open Yokohama 2005	PAVLOVICH Viktoria (BLR)		LI Jiawei (SGP)		WS	Main Draw	QuarterFinal	2 - 4	4:11 11:8 9:11 11:4 8:11 8:11	LI Jiawei	
+2005	Japan Open Yokohama 2005	ZHANG Yining (CHN)		GUO Yue (CHN)		WS	Main Draw	SemiFinal	4 - 3	10:12 15:13 4:11 8:11 11:3 11:3 12:10	ZHANG Yining	
+2005	Japan Open Yokohama 2005	GUO Yan (1982) (CHN)		LI Jiawei (SGP)		WS	Main Draw	SemiFinal	4 - 1	11:2 11:9 11:2 8:11 11:5	GUO Yan (1982)	
+2005	Japan Open Yokohama 2005	ZHANG Yining (CHN)		GUO Yan (1982) (CHN)		WS	Main Draw	Final	4 - 0	11:8 11:9 11:8 11:8	ZHANG Yining	
+2005	Japan Open Yokohama 2005	NEGRISOLI Laura (ITA)		KIM Minji (KOR)		WS	Qualification		4 - 0	11:6 11:6 11:7 11:8	NEGRISOLI Laura	
+2005	Japan Open Yokohama 2005	HIURA Reiko (JPN)		LIU Hsing-Yin (TPE)		WS	Qualification	QR2	4 - 1	6:11 11:1 11:6 11:5 11:3	HIURA Reiko	
+2005	Japan Open Yokohama 2005	NEGRISOLI Laura (ITA)		LIU Hsing-Yin (TPE)		WS	Qualification	3	3 - 4	7:11 5:11 11:5 10:12 11:7 11:8 7:11	LIU Hsing-Yin	
+2005	Japan Open Yokohama 2005	HIURA Reiko (JPN)		KIM Minji (KOR)		WS	Qualification	QR4	4 - 0	11:0 11:5 11:8 11:3	HIURA Reiko	
+2005	Japan Open Yokohama 2005	KIM Minji (KOR)		LIU Hsing-Yin (TPE)		WS	Qualification	5	0 - 4	7:11 12:14 4:11 9:11	LIU Hsing-Yin	
+2005	Japan Open Yokohama 2005	HIURA Reiko (JPN)		NEGRISOLI Laura (ITA)		WS	Qualification	6	4 - 3	11:9 11:8 6:11 14:12 8:11 5:11 11:5	HIURA Reiko	
+2005	Japan Open Yokohama 2005	KWAK Bangbang (KOR)		KANG Wang-Shan (TPE)		WS	Qualification		4 - 1	7:11 11:8 11:3 11:6 11:7	KWAK Bangbang	
+2005	Japan Open Yokohama 2005	TASEI Mikie (JPN)		CHENG I-Ching (TPE)		WS	Qualification	QR2	4 - 0	11:9 11:5 11:7 11:3	TASEI Mikie	
+2005	Japan Open Yokohama 2005	KWAK Bangbang (KOR)		CHENG I-Ching (TPE)		WS	Qualification	3	4 - 2	11:2 11:5 10:12 11:7 9:11 11:5	KWAK Bangbang
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 39
+
+2005	Japan Open Yokohama 2005	CHEN Weixing (AUT)	GARDOS Robert (AUT)	HAO Shuai (CHN)	WANG Liqin (CHN)	MD	Main Draw	R16	4 - 2	9:11 11:9 13:11 11:7 9:11 11:8	CHEN Weixing	GARDOS Robert
+2005	Japan Open Yokohama 2005	CHEN Weixing (AUT)	GARDOS Robert (AUT)	LEE Jungwoo (KOR)	OH Sangeun (KOR)	MD	Main Draw	QuarterFinal	2 - 4	11:7 5:11 8:11 2:11 11:5 3:11	LEE Jungwoo	OH Sangeun
+2005	Japan Open Yokohama 2005	SCHLICHTER Jorg (GER)	VOSTES Yannick (BEL)	CHO Eonrae (KOR)	CHOI Hyunjin (KOR)	MD	Qualification	QR32	3 - 2	11:6 11:6 5:11 5:11 17:15	SCHLICHTER Jorg	VOSTES Yannick
+2005	Japan Open Yokohama 2005	LIU Guozheng (CHN)	MA Long (CHN)	BERTIN Christophe (FRA)	BOBILLIER Loic (FRA)	MD	Main Draw	R16	4 - 2	6:11 7:11 11:5 11:2 11:8 11:7	LIU Guozheng	MA Long
+2005	Japan Open Yokohama 2005	HAO Shuai (CHN)	WANG Liqin (CHN)	MITAMURA Muneaki (JPN)	YOSHIDA Kaii (JPN)	MD	Qualification	QR32	3 - 0	11:8 11:5 11:3	HAO Shuai	WANG Liqin
+2005	Japan Open Yokohama 2005	LIU Guozheng (CHN)	MA Long (CHN)	PRIMORAC Zoran (CRO)	TOSIC Roko (CRO)	MD	Qualification	QR16	3 - 1	11:4 7:11 11:8 11:9	LIU Guozheng	MA Long
+2005	Japan Open Yokohama 2005	HAO Shuai (CHN)	WANG Liqin (CHN)	KEINATH Thomas (SVK)	TAN Ruiwu (CRO)	MD	Qualification	QR16	3 - 0	11:7 12:10 11:7	HAO Shuai	WANG Liqin
+2005	Japan Open Yokohama 2005	ELENSKY Gregory (ISR)	LO Dany (FRA)	KEINATH Thomas (SVK)	TAN Ruiwu (CRO)	MD	Qualification	QR32	2 - 3	11:13 6:11 11:8 11:7 8:11	KEINATH Thomas	TAN Ruiwu
+2005	Japan Open Yokohama 2005	BOLL Timo (GER)	SUSS Christian (GER)	GAO Ning (SGP)	LIU Zhongze (SGP)	MD	Main Draw	R16	4 - 0	11:8 11:8 11:4 11:6	BOLL Timo	SUSS Christian
+2005	Japan Open Yokohama 2005	HIELSCHER Lars (GER)	STEGER Bastian (GER)	LEE Jungwoo (KOR)	OH Sangeun (KOR)	MD	Main Draw	R16	0 - 4	7:11 5:11 9:11 6:11	LEE Jungwoo	OH Sangeun
+2005	Japan Open Yokohama 2005	CHILA Patrick (FRA)	FEJER-KONNERTH Zoltan (GER)	FRANZ Peter (GER)	SCHLAGER Werner (AUT)	MD	Main Draw	R16	3 - 4	6:11 11:6 11:9 10:12 12:10 9:11 9:11	FRANZ Peter	SCHLAGER Werner
+2005	Japan Open Yokohama 2005	BOLL Timo (GER)	SUSS Christian (GER)	LIU Guozheng (CHN)	MA Long (CHN)	MD	Main Draw	QuarterFinal	4 - 3	12:10 5:11 11:7 11:7 12:14 9:11 11:8	BOLL Timo	SUSS Christian
+2005	Japan Open Yokohama 2005	BOLL Timo (GER)	SUSS Christian (GER)	LEE Jungwoo (KOR)	OH Sangeun (KOR)	MD	Main Draw	SemiFinal	4 - 3	17:15 3:11 11:8 2:11 11:9 9:11 11:6	BOLL Timo	SUSS Christian
+2005	Japan Open Yokohama 2005	BOLL Timo (GER)	SUSS Christian (GER)	KUZMIN Fedor (RUS)	SMIRNOV Alexey (RUS)	MD	Main Draw	Final	4 - 0	11:6 11:8 12:10 11:7	BOLL Timo	SUSS Christian
+2005	Japan Open Yokohama 2005	KORBEL Petr (CZE)	WOSIK Torben (GER)	BAUM Patrick (GER)	OVTCHAROV Dimitrij (GER)	MD	Qualification	QR32	2 - 3	11:1 7:11 11:5 7:11 4:11	BAUM Patrick	OVTCHAROV Dimitrij
+2005	Japan Open Yokohama 2005	BAUM Patrick (GER)	OVTCHAROV Dimitrij (GER)	HARA Yoshihiro (JPN)	TAKAGI Kazunori (JPN)	MD	Qualification	QR16	3 - 0	11:7 11:8 11:5	BAUM Patrick	OVTCHAROV Dimitrij
+2005	Japan Open Yokohama 2005	KISHIKAWA Seiya (JPN)	SAKAMOTO Ryusuke (JPN)	BAUM Patrick (GER)	OVTCHAROV Dimitrij (GER)	MD	Main Draw	R16	4 - 1	11:7 11:7 5:11 11:6 11:7	KISHIKAWA Seiya	SAKAMOTO Ryusuke
+2005	Japan Open Yokohama 2005	MIHARA Takahiro (JPN)	TAKASHI Akira (JPN)	CHEN Qi (CHN)	WANG Hao (CHN)	MD	Main Draw	R16	1 - 4	6:11 11:9 3:11 5:11 8:11	CHEN Qi	WANG Hao
+2005	Japan Open Yokohama 2005	KISHIKAWA Seiya (JPN)	SAKAMOTO Ryusuke (JPN)	CHEN Qi (CHN)	WANG Hao (CHN)	MD	Main Draw	QuarterFinal	4 - 3	3:11 11:9 6:11 11:9 11:5 7:11 11:8	KISHIKAWA Seiya	SAKAMOTO Ryusuke
+2005	Japan Open Yokohama 2005	OYA Hidetoshi (JPN)	YOKOYAMA Yuichi (JPN)	PRIMORAC Zoran (CRO)	TOSIC Roko (CRO)	MD	Qualification	QR32	0 - 3	6:11 4:11 10:12	PRIMORAC Zoran	TOSIC Roko
+2005	Japan Open Yokohama 2005	MIZUTANI Jun (JPN)	TAKAKIWA Taku (JPN)	GAO Ning (SGP)	LIU Zhongze (SGP)	MD	Qualification	QR32	0 - 3	8:11 9:11 4:11	GAO Ning	LIU Zhongze
+2005	Japan Open Yokohama 2005	HARA Yoshihiro (JPN)	TAKAGI Kazunori (JPN)	KONGSGAARD Christian (DEN)	YOON Jaeyoung (KOR)	MD	Qualification	QR32	3 - 1	11:6 9:11 11:8 11:8	HARA Yoshihiro	TAKAGI Kazunori
+2005	Japan Open Yokohama 2005	HOSONO Hiroto (JPN)	YOSHIDA Masaki (JPN)	GREEN Wally (USA)	ZHANG Wilson (CAN)	MD	Qualification	QR32	3 - 0	11:9 12:10 11:9	HOSONO Hiroto	YOSHIDA Masaki
+2005	Japan Open Yokohama 2005	KIHO Shinnosuke (JPN)	TANIGUCHI Yuji (JPN)	CHILA Patrick (FRA)	FEJER-KONNERTH Zoltan (GER)	MD	Qualification	QR32	0 - 3	7:11 2:11 6:11	CHILA Patrick	FEJER-KONNERTH Zoltan
+2005	Japan Open Yokohama 2005	MIHARA Takahiro (JPN)	TAKASHI Akira (JPN)	LEE Jinkwon (KOR)	RYU Seungmin (KOR)	MD	Qualification	QR16	3 - 1	11:8 6:11 11:8 11:8	MIHARA Takahiro	TAKASHI Akira
+2005	Japan Open Yokohama 2005	HOSONO Hiroto (JPN)	YOSHIDA Masaki (JPN)	HIELSCHER Lars (GER)	STEGER Bastian (GER)	MD	Qualification	QR16	1 - 3	7:11 12:14 11:7 9:11	HIELSCHER Lars	STEGER Bastian
+2005	Japan Open Yokohama 2005	KIM Jungkyu (KOR)	LEE Bumhyung (KOR)	MATSUDAIRA Kenta (JPN)	TAKAKIWA Kenichi (JPN)	MD	Qualification	QR32	3 - 2	8:11 7:11 11:7 11:9 11:7	KIM Jungkyu	LEE Bumhyung
+2005	Japan Open Yokohama 2005	KIM Junghoon (KOR)	LIM Jaehyun (KOR)	CHANG Yen-Shu (TPE)	SUN Wen-Wei (TPE)	MD	Qualification	QR32	3 - 0	11:9 11:9 11:6	KIM Junghoon	LIM Jaehyun
+2005	Japan Open Yokohama 2005	KIM Junghoon (KOR)	LIM Jaehyun (KOR)	CHILA Patrick (FRA)	FEJER-KONNERTH Zoltan (GER)	MD	Qualification	QR16	0 - 3	9:11 8:11 18:20	CHILA Patrick	FEJER-KONNERTH Zoltan
+2005	Japan Open Yokohama 2005	KUZMIN Fedor (RUS)	SMIRNOV Alexey (RUS)	GERELL Par (SWE)	LUNDQVIST Jens (SWE)	MD	Main Draw	R16	4 - 3	8:11 14:12 10:12 11:6 11:8 4:11 11:9	KUZMIN Fedor	SMIRNOV Alexey
+2005	Japan Open Yokohama 2005	KUZMIN Fedor (RUS)	SMIRNOV Alexey (RUS)	FRANZ Peter (GER)	SCHLAGER Werner (AUT)	MD	Main Draw	QuarterFinal	4 - 3	12:10 6:11 12:10 7:11 8:11 11:7 11:3	KUZMIN Fedor	SMIRNOV Alexey
+2005	Japan Open Yokohama 2005	KUZMIN Fedor (RUS)	SMIRNOV Alexey (RUS)	KISHIKAWA Seiya (JPN)	SAKAMOTO Ryusuke (JPN)	MD	Main Draw	SemiFinal	4 - 0	13:11 12:10 11:7 11:5	KUZMIN Fedor	SMIRNOV Alexey
+2005	Japan Open Yokohama 2005	CAI Xiaoli (SGP)	YANG Zi (SGP)	MIHARA Takahiro (JPN)	TAKASHI Akira (JPN)	MD	Qualification	QR32	1 - 3	8:11 5:11 11:8 6:11	MIHARA Takahiro	TAKASHI Akira
+2005	Japan Open Yokohama 2005	GAO Ning (SGP)	LIU Zhongze (SGP)	SCHLICHTER Jorg (GER)	VOSTES Yannick (BEL)	MD	Qualification	QR16	3 - 1	10:12 12:10 16:14 11:6	GAO Ning	LIU Zhongze
+2005	Japan Open Yokohama 2005	GERELL Par (SWE)	LUNDQVIST Jens (SWE)	BAUBET Vincent (FRA)	SALIFOU Abdel-Kader (BEN)	MD	Qualification	QR32	3 - 2	12:14 8:11 11:4 11:8 11:6	GERELL Par	LUNDQVIST Jens
+2005	Japan Open Yokohama 2005	GERELL Par (SWE)	LUNDQVIST Jens (SWE)	KIM Jungkyu (KOR)	LEE Bumhyung (KOR)	MD	Qualification	QR16	3 - 2	5:11 2:11 11:8 11:9 11:7	GERELL Par	LUNDQVIST Jens
+2005	Japan Open Yokohama 2005	VIPAWATANAKUL Sithichok (AUS)	VIPAWATANAKUL Tanawat (THA)	LEE Jinkwon (KOR)	RYU Seungmin (KOR)	MD	Qualification	QR32	0 - 3	8:11 4:11 6:11	LEE Jinkwon	RYU Seungmin
+2005	Japan Open Yokohama 2005	CHIANG Peng-Lung (TPE)	CHUANG Chih-Yuan (TPE)	LIU Guozheng (CHN)	MA Long (CHN)	MD	Qualification	QR32	0 - 3	10:12 7:11 6:11	LIU Guozheng	MA Long
+2005	Japan Open Yokohama 2005	CHIANG Hung-Chieh (TPE)	WU Chih-Chi (TPE)	HIELSCHER Lars (GER)	STEGER Bastian (GER)	MD	Qualification	QR32	0 - 3	10:12 6:11 9:11	HIELSCHER Lars	STEGER Bastian
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 33
+
+2005	Japan Open Yokohama 2005	BAI Yang (CHN)	CAO Zhen (CHN)	SUN Beibei (SGP)	WANG Yuegu (SGP)	WD	Main Draw	R16	4 - 2	7:11 11:7 11:3 11:6 9:11 11:6	BAI Yang	CAO Zhen
+2005	Japan Open Yokohama 2005	GUO Yan (1982) (CHN)	GUO Yue (CHN)	PAVLOVICH Veronika (BLR)	PAVLOVICH Viktoria (BLR)	WD	Main Draw	R16	4 - 0		GUO Yan (1982)	GUO Yue
+2005	Japan Open Yokohama 2005	BAI Yang (CHN)	CAO Zhen (CHN)	GUO Yan (1982) (CHN)	GUO Yue (CHN)	WD	Main Draw	SemiFinal	4 - 1	4:11 11:5 11:9 11:8 11:5	BAI Yang	CAO Zhen
+2005	Japan Open Yokohama 2005	BAI Yang (CHN)	CAO Zhen (CHN)	NAKAGAWA Miho (JPN)	NAKAJIMA Misaki (JPN)	WD	Qualification	QR32	3 - 0	11:5 11:5 11:8	BAI Yang	CAO Zhen
+2005	Japan Open Yokohama 2005	GUO Yan (1982) (CHN)	GUO Yue (CHN)	HIRANO Sayaka (JPN)	HIURA Reiko (JPN)	WD	Qualification	QR16	3 - 0	11:4 11:5 11:5	GUO Yan (1982)	GUO Yue
+2005	Japan Open Yokohama 2005	BAI Yang (CHN)	CAO Zhen (CHN)	LEE I-Chen (TPE)	PAN Chun-Chu (TPE)	WD	Qualification	QR16	3 - 0	11:2 11:8 11:4	BAI Yang	CAO Zhen
+2005	Japan Open Yokohama 2005	LANG Kristin (GER)	SCHALL Elke (GER)	PARK Miyoung (KOR)	YOON Sunae (KOR)	WD	Qualification	QR16	3 - 1	4:11 11:6 12:10 11:8	LANG Kristin	SCHALL Elke
+2005	Japan Open Yokohama 2005	BATORFI Csilla (HUN)	TOTH Krisztina (HUN)	LANG Kristin (GER)	SCHALL Elke (GER)	WD	Main Draw	R16	4 - 3	11:9 7:11 7:11 11:4 11:2 8:11 12:10	BATORFI Csilla	TOTH Krisztina
+2005	Japan Open Yokohama 2005	KRAMER Tanja (GER)	POTA Georgina (HUN)	BOROS Tamara (CRO)	NEGRISOLI Laura (ITA)	WD	Main Draw	R16	4 - 0	13:11 16:14 13:11 12:10	KRAMER Tanja	POTA Georgina
+2005	Japan Open Yokohama 2005	BATORFI Csilla (HUN)	TOTH Krisztina (HUN)	FUJII Hiroko (JPN)	KANAZAWA Saki (JPN)	WD	Main Draw	QuarterFinal	4 - 2	13:11 4:11 5:11 11:3 15:13 11:7	BATORFI Csilla	TOTH Krisztina
+2005	Japan Open Yokohama 2005	KRAMER Tanja (GER)	POTA Georgina (HUN)	KIM Bokrae (KOR)	KIM Kyungah (KOR)	WD	Main Draw	QuarterFinal	1 - 4	11:4 5:11 7:11 6:11 9:11	KIM Bokrae	KIM Kyungah
+2005	Japan Open Yokohama 2005	BATORFI Csilla (HUN)	TOTH Krisztina (HUN)	KIM Bokrae (KOR)	KIM Kyungah (KOR)	WD	Main Draw	SemiFinal	1 - 4	9:11 3:11 5:11 11:8 5:11	KIM Bokrae	KIM Kyungah
+2005	Japan Open Yokohama 2005	STEFANOVA Nikoleta (ITA)	TAN Wenling (ITA)	KIM Sujin (KOR)	KWAK Bangbang (KOR)	WD	Qualification	QR32	3 - 0	11:5 11:3 11:8	STEFANOVA Nikoleta	TAN Wenling
+2005	Japan Open Yokohama 2005	STEFANOVA Nikoleta (ITA)	TAN Wenling (ITA)	KISHIDA Satoko (JPN)	UMEMURA Aya (JPN)	WD	Qualification	QR16	1 - 3	8:11 7:11 11:8 11:13	KISHIDA Satoko	UMEMURA Aya
+2005	Japan Open Yokohama 2005	FUJII Hiroko (JPN)	KANAZAWA Saki (JPN)	KIM Hyehyun (KOR)	KIM Junghyun (KOR)	WD	Main Draw	R16	4 - 2	7:11 11:9 14:12 12:10 7:11 11:4	FUJII Hiroko	KANAZAWA Saki
+2005	Japan Open Yokohama 2005	FUJINUMA Ai (JPN)	FUKUHARA Ai (JPN)	LIU Shiwen (CHN)	ZHANG Yining (CHN)	WD	Main Draw	R16	4 - 3	5:11 11:7 13:15 11:9 6:11 11:9 11:3	FUJINUMA Ai	FUKUHARA Ai
+2005	Japan Open Yokohama 2005	KISHIDA Satoko (JPN)	UMEMURA Aya (JPN)	BAI Yang (CHN)	CAO Zhen (CHN)	WD	Main Draw	QuarterFinal	1 - 4	7:11 5:11 11:5 5:11 8:11	BAI Yang	CAO Zhen
+2005	Japan Open Yokohama 2005	FUJINUMA Ai (JPN)	FUKUHARA Ai (JPN)	GUO Yan (1982) (CHN)	GUO Yue (CHN)	WD	Main Draw	QuarterFinal	1 - 4	8:11 6:11 7:11 11:9 8:11	GUO Yan (1982)	GUO Yue
+2005	Japan Open Yokohama 2005	INOUE Tomoni (JPN)	ONO Shiho (JPN)	PARK Miyoung (KOR)	YOON Sunae (KOR)	WD	Qualification	QR32	0 - 3	9:11 4:11 3:11	PARK Miyoung	YOON Sunae
+2005	Japan Open Yokohama 2005	ISHIGAKI Yuka (JPN)	TERUI Moemi (JPN)	MOON Hyunjung (KOR)	SHIN Soohee (KOR)	WD	Qualification	QR32	2 - 3	11:8 11:5 5:11 2:11 9:11	MOON Hyunjung	SHIN Soohee
+2005	Japan Open Yokohama 2005	FUJII Hiroko (JPN)	KANAZAWA Saki (JPN)	KANG Wang-Shan (TPE)	LIU Hsing-Yin (TPE)	WD	Qualification	QR32	3 - 0	11:5 11:7 11:9	FUJII Hiroko	KANAZAWA Saki
+2005	Japan Open Yokohama 2005	FUKUOKA Haruna (JPN)	TASEI Mikie (JPN)	SU Hsien-Ching (TPE)	YU Mei-Ju (TPE)	WD	Qualification	QR32	3 - 0	11:4 11:9 11:6	FUKUOKA Haruna	TASEI Mikie
+2005	Japan Open Yokohama 2005	MORIMOTO Fumie (JPN)	YUHARA Miho (JPN)	BOROS Tamara (CRO)	NEGRISOLI Laura (ITA)	WD	Qualification	QR16	0 - 3	12:14 5:11 5:11	BOROS Tamara	NEGRISOLI Laura
+2005	Japan Open Yokohama 2005	FUJII Hiroko (JPN)	KANAZAWA Saki (JPN)	KERTAI Rita (HUN)	LOVAS Petra (HUN)	WD	Qualification	QR16	3 - 1	6:11 11:8 11:8 11:4	FUJII Hiroko	KANAZAWA Saki
+2005	Japan Open Yokohama 2005	FUKUOKA Haruna (JPN)	TASEI Mikie (JPN)	LIU Shiwen (CHN)	ZHANG Yining (CHN)	WD	Qualification	QR16	2 - 3	11:5 9:11 11:8 9:11 7:11	LIU Shiwen	ZHANG Yining
+2005	Japan Open Yokohama 2005	KIM Bokrae (KOR)	KIM Kyungah (KOR)	BAI Yang (CHN)	CAO Zhen (CHN)	WD	Main Draw	Final	2 - 4	12:10 10:12 9:11 15:17 11:6 10:12	BAI Yang	CAO Zhen
+2005	Japan Open Yokohama 2005	KIM Minji (KOR)	LEE Kyeola (KOR)	KISHIDA Satoko (JPN)	UMEMURA Aya (JPN)	WD	Qualification	QR32	0 - 3	3:11 8:11 3:11	KISHIDA Satoko	UMEMURA Aya
+2005	Japan Open Yokohama 2005	LI Jiawei (SGP)	ZHANG Xueling (SGP)	KIM Bokrae (KOR)	KIM Kyungah (KOR)	WD	Main Draw	R16	2 - 4	4:11 9:11 2:11 11:3 11:9 5:11	KIM Bokrae	KIM Kyungah
+2005	Japan Open Yokohama 2005	GOBEL Jessica (GER)	TAN Paey Fern (SGP)	MORIMOTO Fumie (JPN)	YUHARA Miho (JPN)	WD	Qualification	QR32	2 - 3	11:6 8:11 13:15 11:6 11:13	MORIMOTO Fumie	YUHARA Miho
+2005	Japan Open Yokohama 2005	LI Jiawei (SGP)	ZHANG Xueling (SGP)	MOON Hyunjung (KOR)	SHIN Soohee (KOR)	WD	Qualification	QR16	3 - 0	11:7 11:6 11:5	LI Jiawei	ZHANG Xueling
+2005	Japan Open Yokohama 2005	HUANG Yi-Hua (TPE)	LU Yun-Feng (TPE)	KISHIDA Satoko (JPN)	UMEMURA Aya (JPN)	WD	Main Draw	R16	3 - 4	11:3 10:12 11:5 11:5 6:11 13:15 9:11	KISHIDA Satoko	UMEMURA Aya
+2005	Japan Open Yokohama 2005	HSIUNG Nai-I (TPE)	PENG Wan-Hua (TPE)	HIRANO Sayaka (JPN)	HIURA Reiko (JPN)	WD	Qualification	QR32	1 - 3	9:11 8:11 11:5 6:11	HIRANO Sayaka	HIURA Reiko
+2005	Japan Open Yokohama 2005	LEE I-Chen (TPE)	PAN Chun-Chu (TPE)	STRUSE Nicole (GER)	ROBERTSON Laura (GER)	WD	Qualification	QR32	3 - 2	11:7 11:8 12:14 10:12 11:3	LEE I-Chen	PAN Chun-Chu

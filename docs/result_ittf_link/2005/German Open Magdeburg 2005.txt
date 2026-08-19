@@ -6,3 +6,418 @@
 参赛人数：820
 开始日期：2005-11-09
 结束日期：2005-11-13
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 2 of 5 Total: 404
+
+Start
+Prev
+1
+2
+3
+4
+5
+Next
+End
+2005	German Open Magdeburg 2005	ELENSKY Gregory (ISR)		MICHELY Gilles (LUX)		MS	Qualification		0 - 4	10:12 5:11 10:12 10:12	MICHELY Gilles	
+2005	German Open Magdeburg 2005	OLEJNIK Martin (CZE)		MICHELY Gilles (LUX)		MS	Qualification	QR2	4 - 0	11:3 11:6 11:6 11:6	OLEJNIK Martin	
+2005	German Open Magdeburg 2005	OLEJNIK Martin (CZE)		ELENSKY Gregory (ISR)		MS	Qualification	3	4 - 2	11:4 8:11 11:13 12:10 11:4 11:3	OLEJNIK Martin	
+2005	German Open Magdeburg 2005	PATTANTYUS Adam (HUN)		BAST Mike (LUX)		MS	Qualification		4 - 0	11:3 11:2 11:9 11:7	PATTANTYUS Adam	
+2005	German Open Magdeburg 2005	MANSSON Magnus (SWE)		BAST Mike (LUX)		MS	Qualification	QR2	4 - 0	11:5 11:6 11:6 11:2	MANSSON Magnus	
+2005	German Open Magdeburg 2005	MANSSON Magnus (SWE)		PATTANTYUS Adam (HUN)		MS	Qualification	3	1 - 4	8:11 11:5 9:11 5:11 5:11	PATTANTYUS Adam	
+2005	German Open Magdeburg 2005	PAPAGEORGIOU Konstantinos (GRE)		SIMON Fabien (LUX)		MS	Qualification		4 - 0	11:9 11:3 11:7 11:5	PAPAGEORGIOU Konstantinos	
+2005	German Open Magdeburg 2005	KISHIKAWA Seiya (JPN)		SIMON Fabien (LUX)		MS	Qualification	QR2	4 - 0	11:4 11:8 11:6 11:5	KISHIKAWA Seiya	
+2005	German Open Magdeburg 2005	KISHIKAWA Seiya (JPN)		PAPAGEORGIOU Konstantinos (GRE)		MS	Qualification	3	4 - 0	11:1 19:17 11:7 13:11	KISHIKAWA Seiya	
+2005	German Open Magdeburg 2005	VARGA Zoltan (HUN)		KLEPRLIK Michal (CZE)		MS	Qualification		4 - 1	11:9 8:11 11:7 11:3 11:8	VARGA Zoltan	
+2005	German Open Magdeburg 2005	ZHANG Wilson (CAN)		KLEPRLIK Michal (CZE)		MS	Qualification	QR2	4 - 1	11:9 10:12 11:2 12:10 11:7	ZHANG Wilson	
+2005	German Open Magdeburg 2005	ZHANG Wilson (CAN)		VARGA Zoltan (HUN)		MS	Qualification	3	0 - 4	6:11 10:12 13:15 10:12	VARGA Zoltan	
+2005	German Open Magdeburg 2005	GRIGOREV Artur (RUS)		BALTRUSHKA Dzmitry (BLR)		MS	Qualification		4 - 1	11:13 11:9 11:4 11:6 11:7	GRIGOREV Artur	
+2005	German Open Magdeburg 2005	DIDUKH Oleksandr (UKR)		BALTRUSHKA Dzmitry (BLR)		MS	Qualification	QR2	4 - 0	12:10 11:7 11:4 11:9	DIDUKH Oleksandr	
+2005	German Open Magdeburg 2005	DIDUKH Oleksandr (UKR)		GRIGOREV Artur (RUS)		MS	Qualification	3	4 - 0	11:7 11:6 11:4 11:6	DIDUKH Oleksandr	
+2005	German Open Magdeburg 2005	CHOU Tung-Yu (TPE)		BERNER Eric (NOR)		MS	Qualification		4 - 1	11:8 11:9 11:13 11:8 11:4	CHOU Tung-Yu	
+2005	German Open Magdeburg 2005	KLASEK Marek (CZE)		BERNER Eric (NOR)		MS	Qualification	QR2	4 - 0	11:5 11:8 11:3 15:13	KLASEK Marek	
+2005	German Open Magdeburg 2005	KLASEK Marek (CZE)		CHOU Tung-Yu (TPE)		MS	Qualification	3	4 - 0	11:9 11:2 11:9 11:7	KLASEK Marek	
+2005	German Open Magdeburg 2005	ILLAS Erik (SVK)		BURGIS Matiss (LAT)		MS	Qualification		4 - 1	8:11 11:5 11:9 14:12 11:6	ILLAS Erik	
+2005	German Open Magdeburg 2005	WU Chih-Chi (TPE)		BURGIS Matiss (LAT)		MS	Qualification	QR2	4 - 0	11:8 11:6 12:10 11:4	WU Chih-Chi	
+2005	German Open Magdeburg 2005	WU Chih-Chi (TPE)		ILLAS Erik (SVK)		MS	Qualification	3	2 - 4	8:11 11:5 6:11 11:8 6:11 6:11	ILLAS Erik	
+2005	German Open Magdeburg 2005	APOLONIA Tiago (POR)		DAVIS Kyle (AUS)		MS	Qualification		4 - 1	11:8 11:6 10:12 11:5 11:7	APOLONIA Tiago	
+2005	German Open Magdeburg 2005	PISTEJ Lubomir (SVK)		DAVIS Kyle (AUS)		MS	Qualification	QR2	4 - 0	11:9 11:8 11:3 15:13	PISTEJ Lubomir	
+2005	German Open Magdeburg 2005	PISTEJ Lubomir (SVK)		APOLONIA Tiago (POR)		MS	Qualification	3	4 - 1	11:5 11:4 11:9 9:11 11:6	PISTEJ Lubomir	
+2005	German Open Magdeburg 2005	TAKAKIWA Taku (JPN)		PLACEK Frantisek (CZE)		MS	Qualification		4 - 0	11:5 11:9 11:7 11:7	TAKAKIWA Taku	
+2005	German Open Magdeburg 2005	HOYAMA Hugo (BRA)		PLACEK Frantisek (CZE)		MS	Qualification	QR2	4 - 0	11:8 11:6 11:3 11:6	HOYAMA Hugo	
+2005	German Open Magdeburg 2005	HOYAMA Hugo (BRA)		TAKAKIWA Taku (JPN)		MS	Qualification	3	3 - 4	11:6 3:11 6:11 13:15 11:8 13:11 8:11	TAKAKIWA Taku	
+2005	German Open Magdeburg 2005	MATSUMOTO Cazuo (BRA)		SZARKA Levente (HUN)		MS	Qualification		4 - 2	12:10 11:13 11:9 7:11 11:8 12:10	MATSUMOTO Cazuo	
+2005	German Open Magdeburg 2005	HU Jiashun (SUI)		SZARKA Levente (HUN)		MS	Qualification	QR2	1 - 4	3:11 11:6 9:11 7:11 7:11	SZARKA Levente	
+2005	German Open Magdeburg 2005	HU Jiashun (SUI)		MATSUMOTO Cazuo (BRA)		MS	Qualification	3	4 - 3	8:11 14:12 11:8 10:12 13:11 9:11 11:4	HU Jiashun	
+2005	German Open Magdeburg 2005	BAGGALEY Andrew (ENG)		WENZELL Aron (DEN)		MS	Qualification		4 - 3	7:11 11:9 8:11 11:6 11:4 6:11 11:9	BAGGALEY Andrew	
+2005	German Open Magdeburg 2005	LO Dany (FRA)		WENZELL Aron (DEN)		MS	Qualification	QR2	4 - 1	11:7 4:11 11:9 11:3 11:4	LO Dany	
+2005	German Open Magdeburg 2005	LO Dany (FRA)		BAGGALEY Andrew (ENG)		MS	Qualification	3	3 - 4	12:10 7:11 10:12 7:11 12:10 11:6 6:11	BAGGALEY Andrew	
+2005	German Open Magdeburg 2005	DURAN Marc (ESP)		SIROKIJS Viktors (LAT)		MS	Qualification		4 - 0	11:3 11:6 11:6 14:12	DURAN Marc	
+2005	German Open Magdeburg 2005	AXELQVIST Johan (SWE)		SIROKIJS Viktors (LAT)		MS	Qualification	QR2	4 - 1	10:12 11:7 11:5 11:2 11:6	AXELQVIST Johan	
+2005	German Open Magdeburg 2005	AXELQVIST Johan (SWE)		DURAN Marc (ESP)		MS	Qualification	3	4 - 1	11:7 1:11 17:15 13:11 11:8	AXELQVIST Johan	
+2005	German Open Magdeburg 2005	ROBERTSON Adam (WAL)		SEHIC Adnan (BIH)		MS	Qualification		4 - 1	11:5 11:9 11:7 9:11 11:3	ROBERTSON Adam	
+2005	German Open Magdeburg 2005	LIVENTSOV Alexey (RUS)		SEHIC Adnan (BIH)		MS	Qualification	QR2	4 - 1	15:13 11:5 6:11 11:2 11:7	LIVENTSOV Alexey	
+2005	German Open Magdeburg 2005	LIVENTSOV Alexey (RUS)		ROBERTSON Adam (WAL)		MS	Qualification	3	4 - 3	6:11 12:10 9:11 11:7 13:15 11:3 11:5	LIVENTSOV Alexey	
+2005	German Open Magdeburg 2005	KONGSGAARD Christian (DEN)		OBESLO Michal (CZE)		MS	Qualification		4 - 3	11:6 7:11 11:13 11:6 11:7 7:11 11:9	KONGSGAARD Christian	
+2005	German Open Magdeburg 2005	KIHO Shinnosuke (JPN)		OBESLO Michal (CZE)		MS	Qualification	QR2	4 - 0	11:7 11:8 11:6 11:6	KIHO Shinnosuke	
+2005	German Open Magdeburg 2005	KIHO Shinnosuke (JPN)		KONGSGAARD Christian (DEN)		MS	Qualification	3	4 - 2	13:11 9:11 11:4 9:11 11:6 12:10	KIHO Shinnosuke	
+2005	German Open Magdeburg 2005	BAUM Patrick (GER)		SIDOROVS Igors (LAT)		MS	Qualification		4 - 0	11:7 11:9 11:7 13:11	BAUM Patrick	
+2005	German Open Magdeburg 2005	MONTEIRO Joao (POR)		SIDOROVS Igors (LAT)		MS	Qualification	QR2	4 - 1	10:12 11:5 11:7 11:8 11:8	MONTEIRO Joao	
+2005	German Open Magdeburg 2005	MONTEIRO Joao (POR)		BAUM Patrick (GER)		MS	Qualification	3	4 - 3	11:9 5:11 11:8 12:14 11:8 5:11 11:9	MONTEIRO Joao	
+2005	German Open Magdeburg 2005	TAKAKIWA Kenichi (JPN)		FERNANDO Chamara (AUS)		MS	Qualification		4 - 0	11:8 11:3 11:7 13:11	TAKAKIWA Kenichi	
+2005	German Open Magdeburg 2005	MOLDOVAN Istvan (NOR)		FERNANDO Chamara (AUS)		MS	Qualification	QR2	4 - 0	13:11 11:5 11:9 11:6	MOLDOVAN Istvan	
+2005	German Open Magdeburg 2005	MOLDOVAN Istvan (NOR)		TAKAKIWA Kenichi (JPN)		MS	Qualification	3	3 - 4	11:7 8:11 11:7 8:11 11:9 11:13 7:11	TAKAKIWA Kenichi	
+2005	German Open Magdeburg 2005	HENZELL William (AUS)		TANG Peng (HKG)		MS	Qualification		2 - 4	11:6 11:9 8:11 9:11 3:11 8:11	TANG Peng	
+2005	German Open Magdeburg 2005	SCHLICHTER Jorg (GER)		TANG Peng (HKG)		MS	Qualification	QR2	2 - 4	11:8 13:11 7:11 8:11 2:11 9:11	TANG Peng	
+2005	German Open Magdeburg 2005	SCHLICHTER Jorg (GER)		HENZELL William (AUS)		MS	Qualification	3	0 - 4	6:11 5:11 7:11 9:11	HENZELL William	
+2005	German Open Magdeburg 2005	FAN Guoliang (ESP)		JIANG Tianyi (HKG)		MS	Qualification		0 - 4	3:11 3:11 10:12 4:11	JIANG Tianyi	
+2005	German Open Magdeburg 2005	BERTIN Christophe (FRA)		JIANG Tianyi (HKG)		MS	Qualification	QR2	2 - 4	8:11 12:10 11:8 10:12 1:11 12:14	JIANG Tianyi	
+2005	German Open Magdeburg 2005	BERTIN Christophe (FRA)		FAN Guoliang (ESP)		MS	Qualification	3	1 - 4	6:11 9:11 11:5 5:11 9:11	FAN Guoliang	
+2005	German Open Magdeburg 2005	VOZICKY Bohumil (CZE)		BEN ARI Omri (ISR)		MS	Qualification		4 - 0	12:10 11:2 11:6 11:7	VOZICKY Bohumil	
+2005	German Open Magdeburg 2005	RUBTSOV Igor (RUS)		BEN ARI Omri (ISR)		MS	Qualification	QR2	4 - 0	11:4 11:6 12:10 11:4	RUBTSOV Igor	
+2005	German Open Magdeburg 2005	RUBTSOV Igor (RUS)		VOZICKY Bohumil (CZE)		MS	Qualification	3	2 - 4	7:11 9:11 11:8 11:7 4:11 5:11	VOZICKY Bohumil	
+2005	German Open Magdeburg 2005	MILICEVIC Srdan (BIH)		THEISSMANN Thomas (GER)		MS	Qualification		4 - 3	11:9 11:9 7:11 11:4 9:11 8:11 11:8	MILICEVIC Srdan	
+2005	German Open Magdeburg 2005	SAKAMOTO Ryusuke (JPN)		THEISSMANN Thomas (GER)		MS	Qualification	QR2	4 - 1	11:5 11:9 12:10 9:11 11:7	SAKAMOTO Ryusuke	
+2005	German Open Magdeburg 2005	SAKAMOTO Ryusuke (JPN)		MILICEVIC Srdan (BIH)		MS	Qualification	3	4 - 2	11:5 8:11 11:6 11:9 5:11 11:7	SAKAMOTO Ryusuke	
+2005	German Open Magdeburg 2005	MACHADO Carlos (ESP)		MUCA Mario (ALB)		MS	Qualification		4 - 0		MACHADO Carlos	
+2005	German Open Magdeburg 2005	KIM Junghoon (KOR)		MUCA Mario (ALB)		MS	Qualification	QR2	4 - 0		KIM Junghoon	
+2005	German Open Magdeburg 2005	KIM Junghoon (KOR)		MACHADO Carlos (ESP)		MS	Qualification	3	4 - 2	9:11 12:10 11:5 4:11 13:11 11:5	KIM Junghoon	
+2005	German Open Magdeburg 2005	KOSOWSKI Jakub (POL)		MAREK David (CZE)		MS	Qualification		4 - 1	4:11 11:3 11:7 11:4 11:6	KOSOWSKI Jakub	
+2005	German Open Magdeburg 2005	DEMETER Lehel (HUN)		MAREK David (CZE)		MS	Qualification	QR2	4 - 0	11:9 13:11 11:9 11:6	DEMETER Lehel	
+2005	German Open Magdeburg 2005	DEMETER Lehel (HUN)		KOSOWSKI Jakub (POL)		MS	Qualification	3	2 - 4	12:14 11:4 8:11 11:7 7:11 7:11	KOSOWSKI Jakub	
+2005	German Open Magdeburg 2005	OVTCHAROV Dimitrij (GER)		CASAS Jacques Orlando (USA)		MS	Qualification		4 - 0	11:4 11:2 11:9 13:11	OVTCHAROV Dimitrij	
+2005	German Open Magdeburg 2005	CIHAK Marek (CZE)		CASAS Jacques Orlando (USA)		MS	Qualification	QR2	4 - 0	11:6 11:7 11:2 11:4	CIHAK Marek	
+2005	German Open Magdeburg 2005	CIHAK Marek (CZE)		OVTCHAROV Dimitrij (GER)		MS	Qualification	3	3 - 4	11:4 4:11 9:11 11:9 9:11 11:4 8:11	OVTCHAROV Dimitrij	
+2005	German Open Magdeburg 2005	SORENSEN Mads (DEN)		VRABLIK Jiri (CZE)		MS	Qualification		4 - 1	12:10 11:6 11:5 8:11 11:6	SORENSEN Mads	
+2005	German Open Magdeburg 2005	BOBILLIER Loic (FRA)		VRABLIK Jiri (CZE)		MS	Qualification	QR2	4 - 2	11:4 10:12 11:8 11:9 9:11 11:9	BOBILLIER Loic	
+2005	German Open Magdeburg 2005	BOBILLIER Loic (FRA)		SORENSEN Mads (DEN)		MS	Qualification	3	1 - 4	8:11 5:11 12:14 11:7 7:11	SORENSEN Mads	
+2005	German Open Magdeburg 2005	SVENSSON Robert (SWE)		TELIISKI Georgi (BUL)		MS	Qualification		4 - 0	11:8 11:2 11:3 11:4	SVENSSON Robert	
+2005	German Open Magdeburg 2005	LINDNER Adam (HUN)		TELIISKI Georgi (BUL)		MS	Qualification	QR2	4 - 0	11:3 13:11 11:8 11:6	LINDNER Adam	
+2005	German Open Magdeburg 2005	LINDNER Adam (HUN)		SVENSSON Robert (SWE)		MS	Qualification	3	2 - 4	13:11 4:11 10:12 11:9 8:11 8:11	SVENSSON Robert	
+2005	German Open Magdeburg 2005	MARKOVIC Rade (SRB)		KAMBEROV Radoslav (BUL)		MS	Qualification		0 - 4		KAMBEROV Radoslav	
+2005	German Open Magdeburg 2005	TORRES Daniel (ESP)		KAMBEROV Radoslav (BUL)		MS	Qualification	QR2	4 - 1	9:11 11:7 11:6 11:6 11:3	TORRES Daniel	
+2005	German Open Magdeburg 2005	TORRES Daniel (ESP)		MARKOVIC Rade (SRB)		MS	Qualification	3	4 - 0		TORRES Daniel	
+2005	German Open Magdeburg 2005	SIMONER Christoph (AUT)		LI Ping (QAT)		MS	Qualification		4 - 1	11:7 11:5 12:14 11:5 13:11	SIMONER Christoph	
+2005	German Open Magdeburg 2005	ZWICKL Daniel (HUN)		LI Ping (QAT)		MS	Qualification	QR2	1 - 4	11:13 11:9 7:11 8:11 9:11	LI Ping	
+2005	German Open Magdeburg 2005	ZWICKL Daniel (HUN)		SIMONER Christoph (AUT)		MS	Qualification	3	4 - 3	9:11 11:5 11:8 8:11 6:11 11:7 11:6	ZWICKL Daniel	
+2005	German Open Magdeburg 2005	FETH Stefan (GER)		PANIC Sasa (BIH)		MS	Qualification		4 - 0	11:5 11:5 11:4 11:6	FETH Stefan	
+2005	German Open Magdeburg 2005	LEE Jungsam (KOR)		SIMULESCU Eugen (ROU)		MS	Qualification	QR2	4 - 0	11:5 11:8 11:3 11:5	LEE Jungsam	
+2005	German Open Magdeburg 2005	LEE Jungsam (KOR)		PANIC Sasa (BIH)		MS	Qualification	3	4 - 0	11:7 11:7 11:6 11:3	LEE Jungsam	
+2005	German Open Magdeburg 2005	FETH Stefan (GER)		SIMULESCU Eugen (ROU)		MS	Qualification	QR4	4 - 0	11:5 11:3 11:7 11:6	FETH Stefan	
+2005	German Open Magdeburg 2005	LEE Jungsam (KOR)		FETH Stefan (GER)		MS	Qualification	5	4 - 1	13:15 14:12 11:8 13:11 11:4	LEE Jungsam	
+2005	German Open Magdeburg 2005	PANIC Sasa (BIH)		SIMULESCU Eugen (ROU)		MS	Qualification	6	2 - 4	11:2 12:10 6:11 6:11 11:13 8:11	SIMULESCU Eugen	
+2005	German Open Magdeburg 2005	CARNEROS Alfredo (ESP)		VUKELIC Boris (SRB)		MS	Qualification		4 - 2	9:11 7:11 11:8 11:9 11:9 12:10	CARNEROS Alfredo	
+2005	German Open Magdeburg 2005	PIACENTINI Valentino (ITA)		TERNIQI Arjon (ALB)		MS	Qualification	QR2	4 - 0		PIACENTINI Valentino	
+2005	German Open Magdeburg 2005	PIACENTINI Valentino (ITA)		VUKELIC Boris (SRB)		MS	Qualification	3	4 - 0	11:8 11:7 17:15 11:7	PIACENTINI Valentino	
+2005	German Open Magdeburg 2005	CARNEROS Alfredo (ESP)		TERNIQI Arjon (ALB)		MS	Qualification	QR4	4 - 0		CARNEROS Alfredo	
+2005	German Open Magdeburg 2005	PIACENTINI Valentino (ITA)		CARNEROS Alfredo (ESP)		MS	Qualification	5	2 - 4	11:4 8:11 8:11 11:9 4:11 4:11	CARNEROS Alfredo	
+2005	German Open Magdeburg 2005	VUKELIC Boris (SRB)		TERNIQI Arjon (ALB)		MS	Qualification	6	4 - 0		VUKELIC Boris	
+2005	German Open Magdeburg 2005	STENBERG Marten (SWE)		KITTENBERGER Hiroshi (AUT)		MS	Qualification		4 - 1	11:6 11:5 11:0 10:12 11:8	STENBERG Marten	
+2005	German Open Magdeburg 2005	JAKAB Janos (HUN)		GREEN Wally (USA)		MS	Qualification	QR2	4 - 0	11:7 11:7 11:5 11:3	JAKAB Janos	
+2005	German Open Magdeburg 2005	JAKAB Janos (HUN)		KITTENBERGER Hiroshi (AUT)		MS	Qualification	3	4 - 0	11:8 11:6 11:9 11:9	JAKAB Janos	
+2005	German Open Magdeburg 2005	STENBERG Marten (SWE)		GREEN Wally (USA)		MS	Qualification	QR4	4 - 0	11:4 11:8 11:9 11:8	STENBERG Marten	
+2005	German Open Magdeburg 2005	JAKAB Janos (HUN)		STENBERG Marten (SWE)		MS	Qualification	5	3 - 4	12:14 6:11 11:9 11:8 7:11 11:5 10:12	STENBERG Marten	
+2005	German Open Magdeburg 2005	KITTENBERGER Hiroshi (AUT)		GREEN Wally (USA)		MS	Qualification	6	4 - 0	11:8 11:1 13:11 11:9	KITTENBERGER Hiroshi	
+2005	German Open Magdeburg 2005	BOLL Timo (GER)		TOKIC Bojan (SLO)		MS	Main Draw	R64	4 - 0	11:3 15:13 11:4 11:3	BOLL Timo
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 3 of 5 Total: 404
+
+Start
+Prev
+1
+2
+3
+4
+5
+Next
+End
+2005	German Open Magdeburg 2005	GARDOS Robert (AUT)		FRANZ Peter (GER)		MS	Main Draw	R64	1 - 4	6:11 8:11 11:8 10:12 5:11	FRANZ Peter	
+2005	German Open Magdeburg 2005	KEEN Trinko (NED)		PLACHY Josef (CZE)		MS	Main Draw	R64	4 - 2	10:12 11:8 11:3 9:11 11:4 11:5	KEEN Trinko	
+2005	German Open Magdeburg 2005	DIDUKH Oleksandr (UKR)		MAZE Michael (DEN)		MS	Main Draw	R64	0 - 4	6:11 4:11 2:11 2:11	MAZE Michael	
+2005	German Open Magdeburg 2005	KORBEL Petr (CZE)		CHOI Hyunjin (KOR)		MS	Main Draw	R64	4 - 1	11:3 11:13 11:9 12:10 11:8	KORBEL Petr	
+2005	German Open Magdeburg 2005	FREITAS Marcos (POR)		STEGER Bastian (GER)		MS	Main Draw	R64	2 - 4	5:11 11:8 11:9 3:11 4:11 9:11	STEGER Bastian	
+2005	German Open Magdeburg 2005	LEGOUT Christophe (FRA)		LIVENTSOV Alexey (RUS)		MS	Main Draw	R64	4 - 2	11:7 7:11 13:11 7:11 11:8 11:6	LEGOUT Christophe	
+2005	German Open Magdeburg 2005	OLEJNIK Martin (CZE)		CRISAN Adrian (ROU)		MS	Main Draw	R64	3 - 4	9:11 14:12 15:13 6:11 12:14 11:5 9:11	CRISAN Adrian	
+2005	German Open Magdeburg 2005	CHUANG Chih-Yuan (TPE)		YOON Jaeyoung (KOR)		MS	Main Draw	R64	4 - 1	10:12 11:5 11:9 11:7 12:10	CHUANG Chih-Yuan	
+2005	German Open Magdeburg 2005	AXELQVIST Johan (SWE)		SUSS Christian (GER)		MS	Main Draw	R64	1 - 4	11:9 4:11 7:11 5:11 8:11	SUSS Christian	
+2005	German Open Magdeburg 2005	MA Long (CHN)		WANG Zengyi (POL)		MS	Main Draw	R64	4 - 1	11:8 11:4 12:14 11:9 12:10	MA Long	
+2005	German Open Magdeburg 2005	KUSINSKI Marcin (POL)		HIELSCHER Lars (GER)		MS	Main Draw	R64	4 - 0	11:8 11:7 11:6 11:5	KUSINSKI Marcin	
+2005	German Open Magdeburg 2005	SCHLAGER Werner (AUT)		PISTEJ Lubomir (SVK)		MS	Main Draw	R64	4 - 0	11:7 11:5 11:9 11:4	SCHLAGER Werner	
+2005	German Open Magdeburg 2005	CHTCHETININE Evgueni (BLR)		BLASZCZYK Lucjan (POL)		MS	Main Draw	R64	0 - 4	4:11 7:11 9:11 3:11	BLASZCZYK Lucjan	
+2005	German Open Magdeburg 2005	LIN Ju (DOM)		GERELL Par (SWE)		MS	Main Draw	R64	4 - 1	11:3 6:11 13:11 11:8 11:7	LIN Ju	
+2005	German Open Magdeburg 2005	HAKANSSON Fredrik (SWE)		OH Sangeun (KOR)		MS	Main Draw	R64	0 - 4	3:11 12:14 4:11 3:11	OH Sangeun	
+2005	German Open Magdeburg 2005	RYU Seungmin (KOR)		YOSHIDA Kaii (JPN)		MS	Main Draw	R64	4 - 1	9:11 11:3 11:7 11:9 11:7	RYU Seungmin	
+2005	German Open Magdeburg 2005	ZHANG Chao (CHN)		FENG Zhe (BUL)		MS	Main Draw	R64	4 - 0	11:6 11:9 13:11 11:7	ZHANG Chao	
+2005	German Open Magdeburg 2005	LEUNG Chu Yan (HKG)		KARAKASEVIC Aleksandar (SRB)		MS	Main Draw	R64	3 - 4	11:9 11:7 7:11 6:11 11:7 7:11 4:11	KARAKASEVIC Aleksandar	
+2005	German Open Magdeburg 2005	CHO Jihoon (KOR)		HAO Shuai (CHN)		MS	Main Draw	R64	0 - 4	15:17 8:11 2:11 7:11	HAO Shuai	
+2005	German Open Magdeburg 2005	SMIRNOV Alexey (RUS)		ERLANDSEN Geir (NOR)		MS	Main Draw	R64	4 - 0	11:9 11:8 11:6 11:5	SMIRNOV Alexey	
+2005	German Open Magdeburg 2005	TANG Peng (HKG)		WOSIK Torben (GER)		MS	Main Draw	R64	4 - 2	12:10 8:11 12:10 11:9 7:11 11:4	TANG Peng	
+2005	German Open Magdeburg 2005	FEJER-KONNERTH Zoltan (GER)		STENBERG Mattias (SWE)		MS	Main Draw	R64	4 - 3	13:11 5:11 8:11 10:12 11:6 12:10 11:9	FEJER-KONNERTH Zoltan	
+2005	German Open Magdeburg 2005	SHMYREV Maxim (RUS)		LIU Guozheng (CHN)		MS	Main Draw	R64	4 - 3	12:10 11:6 3:11 11:5 10:12 4:11 12:10	SHMYREV Maxim	
+2005	German Open Magdeburg 2005	CHEN Weixing (AUT)		KEINATH Thomas (SVK)		MS	Main Draw	R64	4 - 0	11:6 12:10 11:7 11:8	CHEN Weixing	
+2005	German Open Magdeburg 2005	JIANG Weizhong (CRO)		GRUJIC Slobodan (SRB)		MS	Main Draw	R64	1 - 4	6:11 5:11 8:11 11:9 6:11	GRUJIC Slobodan	
+2005	German Open Magdeburg 2005	CHEUNG Yuk (HKG)		PAZSY Ferenc (HUN)		MS	Main Draw	R64	4 - 1	14:12 11:5 11:4 13:15 14:12	CHEUNG Yuk	
+2005	German Open Magdeburg 2005	LIM Jaehyun (KOR)		SAIVE Jean-Michel (BEL)		MS	Main Draw	R64	3 - 4	12:10 2:11 5:11 10:12 11:7 11:4 13:15	SAIVE Jean-Michel	
+2005	German Open Magdeburg 2005	LEE Jungwoo (KOR)		KISHIKAWA Seiya (JPN)		MS	Main Draw	R64	4 - 0	11:9 11:9 12:10 11:6	LEE Jungwoo	
+2005	German Open Magdeburg 2005	GIONIS Panagiotis (GRE)		KUZMIN Fedor (RUS)		MS	Main Draw	R64	4 - 3	9:11 3:11 11:9 4:11 11:9 11:9 14:12	GIONIS Panagiotis	
+2005	German Open Magdeburg 2005	LUNDQVIST Jens (SWE)		MIZUTANI Jun (JPN)		MS	Main Draw	R64	0 - 4	2:11 5:11 9:11 0:11	MIZUTANI Jun	
+2005	German Open Magdeburg 2005	VARGA Zoltan (HUN)		SAMSONOV Vladimir (BLR)		MS	Main Draw	R64	0 - 4	5:11 9:11 6:11 6:11	SAMSONOV Vladimir	
+2005	German Open Magdeburg 2005	BOLL Timo (GER)		FRANZ Peter (GER)		MS	Main Draw	R32	4 - 0	11:6 11:6 11:9 11:4	BOLL Timo	
+2005	German Open Magdeburg 2005	KEEN Trinko (NED)		MAZE Michael (DEN)		MS	Main Draw	R32	0 - 4	8:11 6:11 9:11 8:11	MAZE Michael	
+2005	German Open Magdeburg 2005	KORBEL Petr (CZE)		STEGER Bastian (GER)		MS	Main Draw	R32	0 - 4	8:11 9:11 14:16 10:12	STEGER Bastian	
+2005	German Open Magdeburg 2005	LEGOUT Christophe (FRA)		CRISAN Adrian (ROU)		MS	Main Draw	R32	2 - 4	7:11 11:7 4:11 11:8 4:11 9:11	CRISAN Adrian	
+2005	German Open Magdeburg 2005	CHUANG Chih-Yuan (TPE)		SUSS Christian (GER)		MS	Main Draw	R32	4 - 2	8:11 10:12 11:3 11:6 11:8 11:7	CHUANG Chih-Yuan	
+2005	German Open Magdeburg 2005	MA Long (CHN)		KUSINSKI Marcin (POL)		MS	Main Draw	R32	4 - 0	11:7 11:6 11:8 13:11	MA Long	
+2005	German Open Magdeburg 2005	SCHLAGER Werner (AUT)		BLASZCZYK Lucjan (POL)		MS	Main Draw	R32	4 - 1	11:6 9:11 11:8 11:6 11:7	SCHLAGER Werner	
+2005	German Open Magdeburg 2005	LIN Ju (DOM)		OH Sangeun (KOR)		MS	Main Draw	R32	2 - 4	15:17 5:11 4:11 11:9 11:9 8:11	OH Sangeun	
+2005	German Open Magdeburg 2005	RYU Seungmin (KOR)		ZHANG Chao (CHN)		MS	Main Draw	R32	4 - 1	8:11 11:5 12:10 12:10 12:10	RYU Seungmin	
+2005	German Open Magdeburg 2005	KARAKASEVIC Aleksandar (SRB)		HAO Shuai (CHN)		MS	Main Draw	R32	4 - 2	10:12 4:11 11:8 11:8 11:7 11:7	KARAKASEVIC Aleksandar	
+2005	German Open Magdeburg 2005	SMIRNOV Alexey (RUS)		TANG Peng (HKG)		MS	Main Draw	R32	4 - 2	11:8 5:11 11:13 11:5 11:8 11:7	SMIRNOV Alexey	
+2005	German Open Magdeburg 2005	FEJER-KONNERTH Zoltan (GER)		SHMYREV Maxim (RUS)		MS	Main Draw	R32	4 - 3	11:8 8:11 11:8 11:5 7:11 8:11 11:8	FEJER-KONNERTH Zoltan	
+2005	German Open Magdeburg 2005	CHEN Weixing (AUT)		GRUJIC Slobodan (SRB)		MS	Main Draw	R32	4 - 1	7:11 11:7 11:8 11:8 11:6	CHEN Weixing	
+2005	German Open Magdeburg 2005	CHEUNG Yuk (HKG)		SAIVE Jean-Michel (BEL)		MS	Main Draw	R32	4 - 1	14:12 7:11 12:10 11:8 11:7	CHEUNG Yuk	
+2005	German Open Magdeburg 2005	LEE Jungwoo (KOR)		GIONIS Panagiotis (GRE)		MS	Main Draw	R32	4 - 3	8:11 9:11 11:3 11:7 7:11 11:7 11:4	LEE Jungwoo	
+2005	German Open Magdeburg 2005	MIZUTANI Jun (JPN)		SAMSONOV Vladimir (BLR)		MS	Main Draw	R32	0 - 4	9:11 5:11 4:11 3:11	SAMSONOV Vladimir	
+2005	German Open Magdeburg 2005	BOLL Timo (GER)		MAZE Michael (DEN)		MS	Main Draw	R16	4 - 2	11:9 8:11 7:11 11:8 11:8 12:10	BOLL Timo	
+2005	German Open Magdeburg 2005	STEGER Bastian (GER)		CRISAN Adrian (ROU)		MS	Main Draw	R16	3 - 4	11:3 11:5 11:13 11:7 9:11 7:11 5:11	CRISAN Adrian	
+2005	German Open Magdeburg 2005	CHUANG Chih-Yuan (TPE)		MA Long (CHN)		MS	Main Draw	R16	0 - 4	13:15 19:21 9:11 4:11	MA Long	
+2005	German Open Magdeburg 2005	SCHLAGER Werner (AUT)		OH Sangeun (KOR)		MS	Main Draw	R16	1 - 4	11:8 9:11 13:15 8:11 4:11	OH Sangeun	
+2005	German Open Magdeburg 2005	RYU Seungmin (KOR)		KARAKASEVIC Aleksandar (SRB)		MS	Main Draw	R16	3 - 4	7:11 13:11 11:7 11:3 4:11 5:11 8:11	KARAKASEVIC Aleksandar	
+2005	German Open Magdeburg 2005	SMIRNOV Alexey (RUS)		FEJER-KONNERTH Zoltan (GER)		MS	Main Draw	R16	1 - 4	4:11 11:9 9:11 5:11 4:11	FEJER-KONNERTH Zoltan	
+2005	German Open Magdeburg 2005	CHEN Weixing (AUT)		CHEUNG Yuk (HKG)		MS	Main Draw	R16	3 - 4	6:11 8:11 11:9 10:12 11:7 13:11 8:11	CHEUNG Yuk	
+2005	German Open Magdeburg 2005	LEE Jungwoo (KOR)		SAMSONOV Vladimir (BLR)		MS	Main Draw	R16	2 - 4	7:11 12:10 7:11 11:9 8:11 10:12	SAMSONOV Vladimir	
+2005	German Open Magdeburg 2005	BOLL Timo (GER)		CRISAN Adrian (ROU)		MS	Main Draw	QuarterFinal	4 - 0	15:13 11:9 11:7 11:8	BOLL Timo	
+2005	German Open Magdeburg 2005	MA Long (CHN)		OH Sangeun (KOR)		MS	Main Draw	QuarterFinal	4 - 2	12:10 11:8 11:8 6:11 10:12 11:7	MA Long	
+2005	German Open Magdeburg 2005	KARAKASEVIC Aleksandar (SRB)		FEJER-KONNERTH Zoltan (GER)		MS	Main Draw	QuarterFinal	3 - 4	6:11 11:8 8:11 11:4 9:11 11:5 6:11	FEJER-KONNERTH Zoltan	
+2005	German Open Magdeburg 2005	CHEUNG Yuk (HKG)		SAMSONOV Vladimir (BLR)		MS	Main Draw	QuarterFinal	1 - 4	13:15 6:11 11:9 11:13 11:13	SAMSONOV Vladimir	
+2005	German Open Magdeburg 2005	BOLL Timo (GER)		MA Long (CHN)		MS	Main Draw	SemiFinal	1 - 4	9:11 11:7 10:12 10:12 8:11	MA Long	
+2005	German Open Magdeburg 2005	FEJER-KONNERTH Zoltan (GER)		SAMSONOV Vladimir (BLR)		MS	Main Draw	SemiFinal	0 - 4	8:11 9:11 8:11 9:11	SAMSONOV Vladimir	
+2005	German Open Magdeburg 2005	MA Long (CHN)		SAMSONOV Vladimir (BLR)		MS	Main Draw	Final	3 - 4	11:6 11:8 3:11 11:7 5:11 4:11 9:11	SAMSONOV Vladimir	
+2005	German Open Magdeburg 2005	SUCH Bartosz (POL)		STENBERG Mattias (SWE)		MS	Qualification	QR64	3 - 4	8:11 11:9 12:10 7:11 16:18 11:7 5:11	STENBERG Mattias	
+2005	German Open Magdeburg 2005	TOKIC Bojan (SLO)		CARNEROS Alfredo (ESP)		MS	Qualification	QR64	4 - 0	11:6 13:11 11:5 11:8	TOKIC Bojan	
+2005	German Open Magdeburg 2005	KEINATH Thomas (SVK)		LEE Jungsam (KOR)		MS	Qualification	QR64	4 - 1	11:6 8:11 12:10 11:5 11:8	KEINATH Thomas	
+2005	German Open Magdeburg 2005	YOSHIDA Kaii (JPN)		SIMONER Christoph (AUT)		MS	Qualification	QR64	4 - 2	13:11 8:11 5:11 14:12 11:7 11:3	YOSHIDA Kaii	
+2005	German Open Magdeburg 2005	YOON Jaeyoung (KOR)		TORRES Daniel (ESP)		MS	Qualification	QR64	4 - 0	11:8 11:8 11:4 11:8	YOON Jaeyoung	
+2005	German Open Magdeburg 2005	WANG Zengyi (POL)		SVENSSON Robert (SWE)		MS	Qualification	QR64	4 - 0	12:10 12:10 15:13 11:6	WANG Zengyi	
+2005	German Open Magdeburg 2005	ZHANG Chao (CHN)		SORENSEN Mads (DEN)		MS	Qualification	QR64	4 - 2	4:11 11:6 11:4 13:11 9:11 11:4	ZHANG Chao	
+2005	German Open Magdeburg 2005	LIM Jaehyun (KOR)		OVTCHAROV Dimitrij (GER)		MS	Qualification	QR64	4 - 3	11:8 8:11 11:4 9:11 9:11 11:8 11:3	LIM Jaehyun	
+2005	German Open Magdeburg 2005	GIONIS Panagiotis (GRE)		KOSOWSKI Jakub (POL)		MS	Qualification	QR64	4 - 1	11:7 14:16 12:10 15:13 11:9	GIONIS Panagiotis	
+2005	German Open Magdeburg 2005	HAKANSSON Fredrik (SWE)		KIM Junghoon (KOR)		MS	Qualification	QR64	4 - 3	8:11 7:11 12:10 6:11 12:10 13:11 11:6	HAKANSSON Fredrik	
+2005	German Open Magdeburg 2005	SHMYREV Maxim (RUS)		SAKAMOTO Ryusuke (JPN)		MS	Qualification	QR64	4 - 0	11:4 11:5 18:16 11:8	SHMYREV Maxim	
+2005	German Open Magdeburg 2005	ERLANDSEN Geir (NOR)		VOZICKY Bohumil (CZE)		MS	Qualification	QR64	4 - 3	11:7 11:5 9:11 13:11 6:11 8:11 11:9	ERLANDSEN Geir	
+2005	German Open Magdeburg 2005	CHOI Hyunjin (KOR)		JIANG Tianyi (HKG)		MS	Qualification	QR64	4 - 0	11:5 11:7 11:5 11:6	CHOI Hyunjin	
+2005	German Open Magdeburg 2005	ZHMUDENKO Yaroslav (UKR)		TANG Peng (HKG)		MS	Qualification	QR64	1 - 4	9:11 9:11 12:10 6:11 9:11	TANG Peng	
+2005	German Open Magdeburg 2005	CHTCHETININE Evgueni (BLR)		TAKAKIWA Kenichi (JPN)		MS	Qualification	QR64	4 - 0	11:4 11:7 11:7 11:5	CHTCHETININE Evgueni	
+2005	German Open Magdeburg 2005	PAZSY Ferenc (HUN)		MONTEIRO Joao (POR)		MS	Qualification	QR64	4 - 3	11:4 11:6 7:11 3:11 11:8 10:12 11:7	PAZSY Ferenc	
+2005	German Open Magdeburg 2005	CHO Jihoon (KOR)		KIHO Shinnosuke (JPN)		MS	Qualification	QR64	4 - 2	9:11 7:11 16:14 11:8 11:8 11:7	CHO Jihoon	
+2005	German Open Magdeburg 2005	TUGWELL Finn (DEN)		LIVENTSOV Alexey (RUS)		MS	Qualification	QR64	0 - 4	9:11 2:11 6:11 12:14	LIVENTSOV Alexey	
+2005	German Open Magdeburg 2005	JAPEC Tomislav (CRO)		AXELQVIST Johan (SWE)		MS	Qualification	QR64	1 - 4	4:11 11:5 10:12 10:12 6:11	AXELQVIST Johan	
+2005	German Open Magdeburg 2005	FREITAS Marcos (POR)		BAGGALEY Andrew (ENG)		MS	Qualification	QR64	4 - 0	11:8 13:11 11:4 11:8	FREITAS Marcos	
+2005	German Open Magdeburg 2005	MIZUTANI Jun (JPN)		SZARKA Levente (HUN)		MS	Qualification	QR64	4 - 0	11:2 11:4 11:6 11:8	MIZUTANI Jun	
+2005	German Open Magdeburg 2005	KUSINSKI Marcin (POL)		TAKAKIWA Taku (JPN)		MS	Qualification	QR64	4 - 3	8:11 11:5 13:15 11:9 11:8 6:11 11:8	KUSINSKI Marcin	
+2005	German Open Magdeburg 2005	MOLIN Magnus (SWE)		PISTEJ Lubomir (SVK)		MS	Qualification	QR64	2 - 4	11:9 14:12 7:11 7:11 7:11 4:11	PISTEJ Lubomir	
+2005	German Open Magdeburg 2005	PLACHY Josef (CZE)		ILLAS Erik (SVK)		MS	Qualification	QR64	4 - 1	11:9 11:1 9:11 11:9 11:5	PLACHY Josef	
+2005	German Open Magdeburg 2005	GERELL Par (SWE)		KLASEK Marek (CZE)		MS	Qualification	QR64	4 - 3	8:11 11:4 11:9 6:11 12:10 10:12 11:9	GERELL Par	
+2005	German Open Magdeburg 2005	XU Hui (CHN)		DIDUKH Oleksandr (UKR)		MS	Qualification	QR64	2 - 4	6:11 11:8 11:8 6:11 10:12 5:11	DIDUKH Oleksandr	
+2005	German Open Magdeburg 2005	FAZEKAS Peter (HUN)		KISHIKAWA Seiya (JPN)		MS	Qualification	QR64	3 - 4	7:11 11:9 11:4 8:11 6:11 11:8 6:11	KISHIKAWA Seiya	
+2005	German Open Magdeburg 2005	VYBORNY Richard (CZE)		VARGA Zoltan (HUN)		MS	Qualification	QR64	3 - 4	7:11 17:15 11:8 11:7 5:11 9:11 7:11	VARGA Zoltan	
+2005	German Open Magdeburg 2005	JIANG Weizhong (CRO)		PATTANTYUS Adam (HUN)		MS	Qualification	QR64	4 - 3	8:11 12:14 14:12 7:11 11:9 13:11 11:3	JIANG Weizhong	
+2005	German Open Magdeburg 2005	LEE Jinkwon (KOR)		OLEJNIK Martin (CZE)		MS	Qualification	QR64	1 - 4	11:8 9:11 10:12 5:11 4:11	OLEJNIK Martin
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 2 of 3 Total: 239
+
+Start
+Prev
+1
+2
+3
+Next
+End
+2005	German Open Magdeburg 2005	MOLNAR Zita (HUN)		BAKULA Andrea (CRO)		WS	Qualification	5	4 - 1	12:10 11:5 10:12 11:5 11:6	MOLNAR Zita	
+2005	German Open Magdeburg 2005	BOMANN Anne-Cathrine (DEN)		WU Jiaduo (GER)		WS	Qualification	6	0 - 4	7:11 7:11 8:11 8:11	WU Jiaduo	
+2005	German Open Magdeburg 2005	ZHU Fang (ESP)		JIANG Huajun (HKG)		WS	Qualification		0 - 4	7:11 8:11 5:11 13:15	JIANG Huajun	
+2005	German Open Magdeburg 2005	PAOVIC Sandra (CRO)		SKOV Mie (DEN)		WS	Qualification	QR2	4 - 0	11:8 11:6 11:6 11:5	PAOVIC Sandra	
+2005	German Open Magdeburg 2005	PAOVIC Sandra (CRO)		JIANG Huajun (HKG)		WS	Qualification	3	0 - 4	5:11 5:11 4:11 3:11	JIANG Huajun	
+2005	German Open Magdeburg 2005	ZHU Fang (ESP)		SKOV Mie (DEN)		WS	Qualification	QR4	4 - 2	11:7 11:3 9:11 11:7 5:11 11:6	ZHU Fang	
+2005	German Open Magdeburg 2005	PAOVIC Sandra (CRO)		ZHU Fang (ESP)		WS	Qualification	5	1 - 4	9:11 11:8 3:11 10:12 8:11	ZHU Fang	
+2005	German Open Magdeburg 2005	JIANG Huajun (HKG)		SKOV Mie (DEN)		WS	Qualification	6	4 - 0	11:2 11:7 11:4 11:2	JIANG Huajun	
+2005	German Open Magdeburg 2005	KIM Kyungah (KOR)		WU Jiaduo (GER)		WS	Main Draw	R64	4 - 1	11:7 11:7 6:11 15:13 11:8	KIM Kyungah	
+2005	German Open Magdeburg 2005	HUANG Yi-Hua (TPE)		HIRANO Sayaka (JPN)		WS	Main Draw	R64	1 - 4	10:12 7:11 11:5 7:11 5:11	HIRANO Sayaka	
+2005	German Open Magdeburg 2005	GANINA Svetlana (RUS)		WU Xue (DOM)		WS	Main Draw	R64	1 - 4	6:11 9:11 9:11 11:8 8:11	WU Xue	
+2005	German Open Magdeburg 2005	KISHIDA Satoko (JPN)		LI Jiao (NED)		WS	Main Draw	R64	3 - 4	11:13 11:5 11:9 6:11 11:9 9:11 1:11	LI Jiao	
+2005	German Open Magdeburg 2005	TOTH Krisztina (HUN)		KONISHI An (JPN)		WS	Main Draw	R64	4 - 3	6:11 8:11 11:6 7:11 11:3 11:7 11:4	TOTH Krisztina	
+2005	German Open Magdeburg 2005	MOLNAR Cornelia (CRO)		UMEMURA Aya (JPN)		WS	Main Draw	R64	2 - 4	6:11 11:7 2:11 11:9 7:11 8:11	UMEMURA Aya	
+2005	German Open Magdeburg 2005	FUJINUMA Ai (JPN)		ODOROVA Eva (SVK)		WS	Main Draw	R64	2 - 4	11:9 13:15 11:7 4:11 4:11 7:11	ODOROVA Eva	
+2005	German Open Magdeburg 2005	PALINA Irina (RUS)		LAU Sui Fei (HKG)		WS	Main Draw	R64	2 - 4	11:8 11:13 8:11 6:11 12:10 6:11	LAU Sui Fei	
+2005	German Open Magdeburg 2005	LI Xiaoxia (CHN)		STEFANOVA Nikoleta (ITA)		WS	Main Draw	R64	2 - 4	11:7 11:8 5:11 7:11 12:14 9:11	STEFANOVA Nikoleta	
+2005	German Open Magdeburg 2005	RAMIREZ Sara (ESP)		MOON Hyunjung (KOR)		WS	Main Draw	R64	1 - 4	7:11 2:11 11:9 9:11 9:11	MOON Hyunjung	
+2005	German Open Magdeburg 2005	SHEN Yanfei (ESP)		PARK Miyoung (KOR)		WS	Main Draw	R64	0 - 4	8:11 5:11 8:11 11:13	PARK Miyoung	
+2005	German Open Magdeburg 2005	POHAR Martina (SLO)		CAO Zhen (CHN)		WS	Main Draw	R64	0 - 4	4:11 9:11 7:11 6:11	CAO Zhen	
+2005	German Open Magdeburg 2005	STEFF Mihaela (ROU)		PAVLOVICH Veronika (BLR)		WS	Main Draw	R64	4 - 2	5:11 11:8 11:8 11:8 5:11 11:9	STEFF Mihaela	
+2005	German Open Magdeburg 2005	GOBEL Jessica (GER)		TAN Wenling (ITA)		WS	Main Draw	R64	2 - 4	8:11 10:12 11:8 15:13 5:11 7:11	TAN Wenling	
+2005	German Open Magdeburg 2005	POTA Georgina (HUN)		XU Jie (1979) (WAL)		WS	Main Draw	R64	1 - 4	11:9 6:11 5:11 5:11 10:12	XU Jie (1979)	
+2005	German Open Magdeburg 2005	YOON Sunae (KOR)		TIE Yana (HKG)		WS	Main Draw	R64	1 - 4	8:11 9:11 11:7 5:11 8:11	TIE Yana	
+2005	German Open Magdeburg 2005	LIN Ling (HKG)		ZAMFIR Adriana (ROU)		WS	Main Draw	R64	4 - 1	7:11 11:9 11:1 11:7 11:2	LIN Ling	
+2005	German Open Magdeburg 2005	LI Qiangbing (AUT)		STRUSE Nicole (GER)		WS	Main Draw	R64	0 - 4	8:11 3:11 11:13 3:11	STRUSE Nicole	
+2005	German Open Magdeburg 2005	KIM Bokrae (KOR)		HIURA Reiko (JPN)		WS	Main Draw	R64	0 - 4	8:11 9:11 5:11 7:11	HIURA Reiko	
+2005	German Open Magdeburg 2005	ERDELJI Silvija (SRB)		LIU Jia (AUT)		WS	Main Draw	R64	0 - 4	4:11 7:11 9:11 8:11	LIU Jia	
+2005	German Open Magdeburg 2005	FAN Ying (CHN)		FUJII Hiroko (JPN)		WS	Main Draw	R64	4 - 1	12:10 11:7 3:11 11:5 11:6	FAN Ying	
+2005	German Open Magdeburg 2005	KANAZAWA Saki (JPN)		PENG Luyang (CHN)		WS	Main Draw	R64	4 - 1	6:11 11:5 11:9 11:9 11:7	KANAZAWA Saki	
+2005	German Open Magdeburg 2005	XU Jie (1982) (POL)		VACENOVSKA Iveta (CZE)		WS	Main Draw	R64	4 - 1	11:6 11:7 11:6 7:11 11:8	XU Jie (1982)	
+2005	German Open Magdeburg 2005	LEE Eunhee (KOR)		GAO Jun (USA)		WS	Main Draw	R64	4 - 2	16:14 3:11 12:14 11:1 11:6 11:1	LEE Eunhee	
+2005	German Open Magdeburg 2005	PAVLOVICH Viktoria (BLR)		DING Ning (CHN)		WS	Main Draw	R64	4 - 1	11:6 5:11 11:9 11:4 11:9	PAVLOVICH Viktoria	
+2005	German Open Magdeburg 2005	FADEEVA Oxana (RUS)		SCHOPP Jie (GER)		WS	Main Draw	R64	1 - 4	11:9 10:12 9:11 8:11 10:12	SCHOPP Jie	
+2005	German Open Magdeburg 2005	SCHALL Elke (GER)		JIANG Huajun (HKG)		WS	Main Draw	R64	4 - 3	6:11 11:8 8:11 11:7 9:11 11:5 12:10	SCHALL Elke	
+2005	German Open Magdeburg 2005	BOLLMEIER Nadine (GER)		SONG Ah Sim (HKG)		WS	Main Draw	R64	1 - 4	11:5 8:11 7:11 9:11 7:11	SONG Ah Sim	
+2005	German Open Magdeburg 2005	ZHANG Rui (HKG)		IVANCAN Irene (GER)		WS	Main Draw	R64	4 - 2	8:11 11:8 11:6 7:11 11:5 11:3	ZHANG Rui	
+2005	German Open Magdeburg 2005	MUANGSUK Anisara (THA)		CHANG Chenchen (CHN)		WS	Main Draw	R64	0 - 4	8:11 9:11 7:11 5:11	CHANG Chenchen	
+2005	German Open Magdeburg 2005	LANG Kristin (GER)		ERDELJI Anamaria (SRB)		WS	Main Draw	R64	3 - 4	11:9 11:8 4:11 11:5 6:11 6:11 10:12	ERDELJI Anamaria	
+2005	German Open Magdeburg 2005	WEBEROVA Ivana (CZE)		BOROS Tamara (CRO)		WS	Main Draw	R64	1 - 4	3:11 11:8 7:11 1:11 6:11	BOROS Tamara	
+2005	German Open Magdeburg 2005	KIM Kyungah (KOR)		HIRANO Sayaka (JPN)		WS	Main Draw	R32	4 - 0	11:6 11:8 12:10 11:9	KIM Kyungah	
+2005	German Open Magdeburg 2005	WU Xue (DOM)		LI Jiao (NED)		WS	Main Draw	R32	4 - 1	11:7 11:5 9:11 11:8 11:4	WU Xue	
+2005	German Open Magdeburg 2005	TOTH Krisztina (HUN)		UMEMURA Aya (JPN)		WS	Main Draw	R32	4 - 1	9:11 11:9 11:7 11:8 11:3	TOTH Krisztina	
+2005	German Open Magdeburg 2005	ODOROVA Eva (SVK)		LAU Sui Fei (HKG)		WS	Main Draw	R32	3 - 4	4:11 11:9 12:10 4:11 6:11 11:9 9:11	LAU Sui Fei	
+2005	German Open Magdeburg 2005	STEFANOVA Nikoleta (ITA)		MOON Hyunjung (KOR)		WS	Main Draw	R32	2 - 4	11:9 8:11 5:11 11:9 6:11 9:11	MOON Hyunjung	
+2005	German Open Magdeburg 2005	PARK Miyoung (KOR)		CAO Zhen (CHN)		WS	Main Draw	R32	1 - 4	7:11 11:3 7:11 3:11 9:11	CAO Zhen	
+2005	German Open Magdeburg 2005	STEFF Mihaela (ROU)		TAN Wenling (ITA)		WS	Main Draw	R32	4 - 0	11:5 11:5 11:3 11:3	STEFF Mihaela	
+2005	German Open Magdeburg 2005	XU Jie (1979) (WAL)		TIE Yana (HKG)		WS	Main Draw	R32	1 - 4	10:12 11:9 8:11 8:11 7:11	TIE Yana	
+2005	German Open Magdeburg 2005	LIN Ling (HKG)		STRUSE Nicole (GER)		WS	Main Draw	R32	2 - 4	12:10 4:11 9:11 4:11 12:10 8:11	STRUSE Nicole	
+2005	German Open Magdeburg 2005	HIURA Reiko (JPN)		LIU Jia (AUT)		WS	Main Draw	R32	4 - 1	9:11 11:6 11:6 14:12 12:10	HIURA Reiko	
+2005	German Open Magdeburg 2005	FAN Ying (CHN)		KANAZAWA Saki (JPN)		WS	Main Draw	R32	4 - 1	5:11 11:6 11:3 11:4 11:7	FAN Ying	
+2005	German Open Magdeburg 2005	XU Jie (1982) (POL)		LEE Eunhee (KOR)		WS	Main Draw	R32	1 - 4	11:9 14:16 5:11 7:11 5:11	LEE Eunhee	
+2005	German Open Magdeburg 2005	PAVLOVICH Viktoria (BLR)		SCHOPP Jie (GER)		WS	Main Draw	R32	4 - 1	7:11 11:7 11:7 11:8 11:5	PAVLOVICH Viktoria	
+2005	German Open Magdeburg 2005	SCHALL Elke (GER)		SONG Ah Sim (HKG)		WS	Main Draw	R32	4 - 1	11:5 11:7 13:11 7:11 11:5	SCHALL Elke	
+2005	German Open Magdeburg 2005	ZHANG Rui (HKG)		CHANG Chenchen (CHN)		WS	Main Draw	R32	0 - 4	12:14 9:11 7:11 7:11	CHANG Chenchen	
+2005	German Open Magdeburg 2005	ERDELJI Anamaria (SRB)		BOROS Tamara (CRO)		WS	Main Draw	R32	0 - 4	3:11 8:11 2:11 7:11	BOROS Tamara	
+2005	German Open Magdeburg 2005	KIM Kyungah (KOR)		WU Xue (DOM)		WS	Main Draw	R16	4 - 1	11:8 11:7 5:11 11:2 11:1	KIM Kyungah	
+2005	German Open Magdeburg 2005	TOTH Krisztina (HUN)		LAU Sui Fei (HKG)		WS	Main Draw	R16	4 - 3	9:11 12:14 5:11 11:8 11:5 11:7 11:9	TOTH Krisztina	
+2005	German Open Magdeburg 2005	MOON Hyunjung (KOR)		CAO Zhen (CHN)		WS	Main Draw	R16	0 - 4	8:11 7:11 5:11 6:11	CAO Zhen	
+2005	German Open Magdeburg 2005	STEFF Mihaela (ROU)		TIE Yana (HKG)		WS	Main Draw	R16	4 - 2	13:11 4:11 5:11 11:8 11:7 11:8	STEFF Mihaela	
+2005	German Open Magdeburg 2005	STRUSE Nicole (GER)		HIURA Reiko (JPN)		WS	Main Draw	R16	4 - 0	11:9 11:5 11:4 11:7	STRUSE Nicole	
+2005	German Open Magdeburg 2005	FAN Ying (CHN)		LEE Eunhee (KOR)		WS	Main Draw	R16	4 - 1	12:10 6:11 11:9 11:5 11:8	FAN Ying	
+2005	German Open Magdeburg 2005	PAVLOVICH Viktoria (BLR)		SCHALL Elke (GER)		WS	Main Draw	R16	4 - 1	12:10 8:11 11:7 11:8 12:10	PAVLOVICH Viktoria	
+2005	German Open Magdeburg 2005	CHANG Chenchen (CHN)		BOROS Tamara (CRO)		WS	Main Draw	R16	3 - 4	11:7 8:11 14:12 6:11 11:6 5:11 11:13	BOROS Tamara	
+2005	German Open Magdeburg 2005	KIM Kyungah (KOR)		TOTH Krisztina (HUN)		WS	Main Draw	QuarterFinal	4 - 1	3:11 11:8 11:6 11:5 11:5	KIM Kyungah	
+2005	German Open Magdeburg 2005	CAO Zhen (CHN)		STEFF Mihaela (ROU)		WS	Main Draw	QuarterFinal	4 - 3	11:7 11:9 7:11 8:11 11:8 6:11 11:3	CAO Zhen	
+2005	German Open Magdeburg 2005	STRUSE Nicole (GER)		FAN Ying (CHN)		WS	Main Draw	QuarterFinal	0 - 4	8:11 5:11 9:11 8:11	FAN Ying	
+2005	German Open Magdeburg 2005	PAVLOVICH Viktoria (BLR)		BOROS Tamara (CRO)		WS	Main Draw	QuarterFinal	2 - 4	11:5 13:11 7:11 7:11 3:11 8:11	BOROS Tamara	
+2005	German Open Magdeburg 2005	KIM Kyungah (KOR)		CAO Zhen (CHN)		WS	Main Draw	SemiFinal	0 - 4	10:12 8:11 9:11 5:11	CAO Zhen	
+2005	German Open Magdeburg 2005	FAN Ying (CHN)		BOROS Tamara (CRO)		WS	Main Draw	SemiFinal	4 - 1	11:9 11:3 11:5 9:11 12:10	FAN Ying	
+2005	German Open Magdeburg 2005	CAO Zhen (CHN)		FAN Ying (CHN)		WS	Main Draw	Final	4 - 0	12:10 11:8 15:13 11:7	CAO Zhen
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 2 of 2 Total: 110
+
+Start
+Prev
+1
+2
+Next
+End
+2005	German Open Magdeburg 2005	JEVTOVIC Marko (SRB)	PETO Zsolt (SRB)	FAZEKAS Peter (HUN)	PAZSY Ferenc (HUN)	MD	Qualification	QR32	2 - 3	11:7 6:11 2:11 11:5 5:11	FAZEKAS Peter	PAZSY Ferenc
+2005	German Open Magdeburg 2005	PISTEJ Lubomir (SVK)	SEREDA Peter (SVK)	LIN Ju (DOM)	PATTANTYUS Adam (HUN)	MD	Qualification	QR64	1 - 3	4:11 11:5 7:11 2:11	LIN Ju	PATTANTYUS Adam
+2005	German Open Magdeburg 2005	HAKANSSON Fredrik (SWE)	MOLIN Magnus (SWE)	LEE Jungwoo (KOR)	OH Sangeun (KOR)	MD	Main Draw	R16	1 - 4	7:11 2:11 12:14 11:7 3:11	LEE Jungwoo	OH Sangeun
+2005	German Open Magdeburg 2005	MONTEIRO Joao (POR)	STENBERG Mattias (SWE)	JEVTOVIC Marko (SRB)	PETO Zsolt (SRB)	MD	Qualification	QR128	2 - 3	8:11 11:6 8:11 11:9 10:12	JEVTOVIC Marko	PETO Zsolt
+2005	German Open Magdeburg 2005	GERELL Par (SWE)	LUNDQVIST Jens (SWE)	CIHAK Marek (CZE)	OLEJNIK Martin (CZE)	MD	Qualification	QR64	0 - 3		CIHAK Marek	OLEJNIK Martin
+2005	German Open Magdeburg 2005	HAKANSSON Fredrik (SWE)	MOLIN Magnus (SWE)	JAKAB Janos (HUN)	ZWICKL Daniel (HUN)	MD	Qualification	QR16	3 - 1	8:11 12:10 11:4 11:7	HAKANSSON Fredrik	MOLIN Magnus
+2005	German Open Magdeburg 2005	DIDUKH Oleksandr (UKR)	ZHMUDENKO Yaroslav (UKR)	MILOSEVIC Bojan (SRB)	VUKELIC Boris (SRB)	MD	Qualification	QR128	2 - 3	11:6 10:12 11:8 5:11 9:11	MILOSEVIC Bojan	VUKELIC Boris
+2005	German Open Magdeburg 2005	LIEVSHYN Vitaliy (UKR)	PRYSHCHEPA Ievgen (UKR)	APOLONIA Tiago (POR)	FREITAS Marcos (POR)	MD	Qualification	QR128	0 - 3	6:11 6:11 5:11	APOLONIA Tiago	FREITAS Marcos
+2005	German Open Magdeburg 2005	CASAS Jacques Orlando (USA)	GREEN Wally (USA)	OYA Hidetoshi (JPN)	YOSHIDA Kaii (JPN)	MD	Qualification	QR128	0 - 3	12:14 9:11 8:11	OYA Hidetoshi	YOSHIDA Kaii
+2005	German Open Magdeburg 2005	MANSSON Magnus (SWE)		WU Chih-Chi (TPE)	ZOMBORI David (HUN)	MD	Qualification	QR128	1 - 3	7:11 11:5 6:11 7:11	WU Chih-Chi	ZOMBORI David
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 67
+
+2005	German Open Magdeburg 2005	LUCENKOVA Viktoria (SVK)	MIAO Miao (AUS)	POHAR Martina (SLO)	ZAMFIR Adriana (ROU)	WD	Qualification	QR64	1 - 3	9:11 8:11 11:6 5:11	POHAR Martina	ZAMFIR Adriana
+2005	German Open Magdeburg 2005	FADEEVA Oxana (RUS)	WAGGERMAYER Elena (AUT)	PENKAVOVA Katerina (CZE)	VACENOVSKA Iveta (CZE)	WD	Qualification	QR64	3 - 1	13:11 10:12 12:10 11:1	FADEEVA Oxana	WAGGERMAYER Elena
+2005	German Open Magdeburg 2005	YILDIRIM Fulya (TUR)	SOLJA Amelie (AUT)	PARK Miyoung (KOR)	YOON Sunae (KOR)	WD	Qualification	QR64	0 - 3	10:12 9:11 6:11	PARK Miyoung	YOON Sunae
+2005	German Open Magdeburg 2005	FADEEVA Oxana (RUS)	WAGGERMAYER Elena (AUT)	BOMANN Anne-Cathrine (DEN)	SKOV Mie (DEN)	WD	Qualification	QR32	3 - 1	10:12 11:3 11:6 11:7	FADEEVA Oxana	WAGGERMAYER Elena
+2005	German Open Magdeburg 2005	PAVLOVICH Veronika (BLR)	PAVLOVICH Viktoria (BLR)	KIM Hyehyun (KOR)	KIM Junghyun (KOR)	WD	Main Draw	R16	4 - 3	13:15 11:6 11:4 7:11 11:8 3:11 11:8	PAVLOVICH Veronika	PAVLOVICH Viktoria
+2005	German Open Magdeburg 2005	JOHANSSON Frida (SWE)	KASABOVA Asya (BUL)	LI Qiangbing (AUT)	PETZNER Martina (AUT)	WD	Qualification	QR64	2 - 3	11:5 2:11 7:11 11:8 6:11	LI Qiangbing	PETZNER Martina
+2005	German Open Magdeburg 2005	LI Xiaoxia (CHN)	PENG Luyang (CHN)	BARTHEL Zhenqi (GER)	GOBEL Jessica (GER)	WD	Qualification	QR64	3 - 0	14:12 17:15 11:2	LI Xiaoxia	PENG Luyang
+2005	German Open Magdeburg 2005	CAO Zhen (CHN)	DING Ning (CHN)	AMBRUS Timea (HUN)	LI Bin (HUN)	WD	Qualification	QR64	3 - 0	11:4 11:8 12:10	CAO Zhen	DING Ning
+2005	German Open Magdeburg 2005	LI Xiaoxia (CHN)	PENG Luyang (CHN)	KMOTORKOVA Lenka (SVK)	ODOROVA Eva (SVK)	WD	Qualification	QR32	3 - 1	11:3 11:4 4:11 11:4	LI Xiaoxia	PENG Luyang
+2005	German Open Magdeburg 2005	CAO Zhen (CHN)	DING Ning (CHN)	BAKULA Andrea (CRO)	PAOVIC Sandra (CRO)	WD	Qualification	QR32	3 - 0	11:6 11:6 11:5	CAO Zhen	DING Ning
+2005	German Open Magdeburg 2005	LI Xiaoxia (CHN)	PENG Luyang (CHN)	GANINA Svetlana (RUS)	PALINA Irina (RUS)	WD	Qualification	QR16	3 - 1	8:11 11:2 11:7 13:11	LI Xiaoxia	PENG Luyang
+2005	German Open Magdeburg 2005	BOBETIC Andrea (CRO)	VUGRINEC Suncica (CRO)	KOMWONG Nanthana (THA)	MUANGSUK Anisara (THA)	WD	Qualification	QR64	0 - 3	9:11 8:11 4:11	KOMWONG Nanthana	MUANGSUK Anisara
+2005	German Open Magdeburg 2005	VACHOVCOVA Alena (CZE)	WEBEROVA Ivana (CZE)	KISHIDA Satoko (JPN)	UMEMURA Aya (JPN)	WD	Qualification	QR64	0 - 3	6:11 7:11 1:11	KISHIDA Satoko	UMEMURA Aya
+2005	German Open Magdeburg 2005	CECHOVA Dana (CZE)	SMISTIKOVA Martina (CZE)	LI Qiangbing (AUT)	PETZNER Martina (AUT)	WD	Qualification	QR32	3 - 2	11:8 11:4 6:11 8:11 11:5	CECHOVA Dana	SMISTIKOVA Martina
+2005	German Open Magdeburg 2005	CECHOVA Dana (CZE)	SMISTIKOVA Martina (CZE)	PAVLOVICH Veronika (BLR)	PAVLOVICH Viktoria (BLR)	WD	Qualification	QR16	0 - 3	7:11 7:11 8:11	PAVLOVICH Veronika	PAVLOVICH Viktoria
+2005	German Open Magdeburg 2005	BOMANN Anne-Cathrine (DEN)	SKOV Mie (DEN)	KERTAI Rita (HUN)	LOVAS Petra (HUN)	WD	Qualification	QR64	3 - 0		BOMANN Anne-Cathrine	SKOV Mie
+2005	German Open Magdeburg 2005	LIAN Qian (DOM)	WU Xue (DOM)	JONSSON Carina (SWE)	OLSSON Marie (SWE)	WD	Qualification	QR64	3 - 0	11:7 11:5 11:7	LIAN Qian	WU Xue
+2005	German Open Magdeburg 2005	DRINKHALL Joanna (ENG)	SIBLEY Kelly (ENG)	EKHOLM Matilda (SWE)	WIGOW Susanna (SWE)	WD	Qualification	QR64	0 - 3	6:11 7:11 8:11	EKHOLM Matilda	WIGOW Susanna
+2005	German Open Magdeburg 2005	GAO Jun (USA)	SHEN Yanfei (ESP)	JIANG Huajun (HKG)	SONG Ah Sim (HKG)	WD	Main Draw	R16	2 - 4	9:11 11:4 12:14 3:11 11:8 5:11	JIANG Huajun	SONG Ah Sim
+2005	German Open Magdeburg 2005	GAO Jun (USA)	SHEN Yanfei (ESP)	TIMINA Elena (NED)	VAN ULSEN Sigrid (NED)	WD	Qualification	QR64	3 - 1	11:7 11:7 6:11 11:4	GAO Jun	SHEN Yanfei
+2005	German Open Magdeburg 2005	XU Jie (1979) (WAL)	ZHU Fang (ESP)	STEFANOVA Nikoleta (ITA)	TAN Wenling (ITA)	WD	Qualification	QR64	2 - 3	12:10 3:11 9:11 11:5 10:12	STEFANOVA Nikoleta	TAN Wenling
+2005	German Open Magdeburg 2005	DVORAK Galia (ESP)	RAMIREZ Sara (ESP)	CECHOVA Dana (CZE)	SMISTIKOVA Martina (CZE)	WD	Qualification	QR64	1 - 3	5:11 7:11 12:10 8:11	CECHOVA Dana	SMISTIKOVA Martina
+2005	German Open Magdeburg 2005	GAO Jun (USA)	SHEN Yanfei (ESP)	BOLLMEIER Nadine (GER)	ROBERTSON Laura (GER)	WD	Qualification	QR32	3 - 0	17:15 11:5 11:3	GAO Jun	SHEN Yanfei
+2005	German Open Magdeburg 2005	GAO Jun (USA)	SHEN Yanfei (ESP)	FADEEVA Oxana (RUS)	WAGGERMAYER Elena (AUT)	WD	Qualification	QR16	3 - 0	11:8 11:5 11:6	GAO Jun	SHEN Yanfei
+2005	German Open Magdeburg 2005	LANG Kristin (GER)	STRUSE Nicole (GER)	KRAMER Tanja (GER)	POTA Georgina (HUN)	WD	Main Draw	R16	1 - 4	11:8 10:12 8:11 9:11 6:11	KRAMER Tanja	POTA Georgina
+2005	German Open Magdeburg 2005	IVANCAN Irene (GER)	SCHOPP Jie (GER)	BOROS Tamara (CRO)	MOLNAR Cornelia (CRO)	WD	Main Draw	R16	1 - 4	6:11 11:4 9:11 6:11 10:12	BOROS Tamara	MOLNAR Cornelia
+2005	German Open Magdeburg 2005	SCHALL Elke (GER)	WU Jiaduo (GER)	DODEAN Daniela (ROU)	SAMARA Elizabeta (ROU)	WD	Qualification	QR64	3 - 0	11:5 13:11 12:10	SCHALL Elke	WU Jiaduo
+2005	German Open Magdeburg 2005	ROHR Gaby (GER)	ROHR Meike (GER)	ERDELJI Anamaria (SRB)	ERDELJI Silvija (SRB)	WD	Qualification	QR64	3 - 1	15:13 11:7 12:14 11:9	ROHR Gaby	ROHR Meike
+2005	German Open Magdeburg 2005	IVANCAN Irene (GER)	SCHOPP Jie (GER)	BAK Natalia (POL)	PARTYKA Natalia (POL)	WD	Qualification	QR64	3 - 1	13:11 11:4 3:11 11:3	IVANCAN Irene	SCHOPP Jie
+2005	German Open Magdeburg 2005	SCHALL Elke (GER)	WU Jiaduo (GER)	HEINE Veronika (AUT)	LIU Jia (AUT)	WD	Qualification	QR32	2 - 3	7:11 11:5 11:8 8:11 7:11	HEINE Veronika	LIU Jia
+2005	German Open Magdeburg 2005	ROHR Gaby (GER)	ROHR Meike (GER)	LEE Eunhee (KOR)	LEE Hyangmi (KOR)	WD	Qualification	QR32	1 - 3	11:8 3:11 13:15 7:11	LEE Eunhee	LEE Hyangmi
+2005	German Open Magdeburg 2005	IVANCAN Irene (GER)	SCHOPP Jie (GER)	STEFANOVA Nikoleta (ITA)	TAN Wenling (ITA)	WD	Qualification	QR32	3 - 2	7:11 11:5 6:11 11:4 11:9	IVANCAN Irene	SCHOPP Jie
+2005	German Open Magdeburg 2005	TIE Yana (HKG)	ZHANG Rui (HKG)	HIRANO Sayaka (JPN)	HIURA Reiko (JPN)	WD	Main Draw	R16	4 - 1	11:9 9:11 15:13 11:6 11:6	TIE Yana	ZHANG Rui
+2005	German Open Magdeburg 2005	TIE Yana (HKG)	ZHANG Rui (HKG)	PAVLOVICH Veronika (BLR)	PAVLOVICH Viktoria (BLR)	WD	Main Draw	QuarterFinal	4 - 1	11:9 8:11 11:8 11:4 11:4	TIE Yana	ZHANG Rui
+2005	German Open Magdeburg 2005	TIE Yana (HKG)	ZHANG Rui (HKG)	BOROS Tamara (CRO)	MOLNAR Cornelia (CRO)	WD	Main Draw	SemiFinal	4 - 0	11:2 11:4 11:9 11:8	TIE Yana	ZHANG Rui
+2005	German Open Magdeburg 2005	TIE Yana (HKG)	ZHANG Rui (HKG)	KIM Bokrae (KOR)	KIM Kyungah (KOR)	WD	Main Draw	Final	4 - 1	11:13 11:8 11:6 15:13 11:8	TIE Yana	ZHANG Rui
+2005	German Open Magdeburg 2005	LAU Sui Fei (HKG)	LIN Ling (HKG)	POHAR Martina (SLO)	ZAMFIR Adriana (ROU)	WD	Qualification	QR32	3 - 1	11:4 11:6 9:11 11:9	LAU Sui Fei	LIN Ling
+2005	German Open Magdeburg 2005	LAU Sui Fei (HKG)	LIN Ling (HKG)	KISHIDA Satoko (JPN)	UMEMURA Aya (JPN)	WD	Qualification	QR16	1 - 3	5:11 11:8 12:14 8:11	KISHIDA Satoko	UMEMURA Aya
+2005	German Open Magdeburg 2005	KRAMER Tanja (GER)	POTA Georgina (HUN)	BOROS Tamara (CRO)	MOLNAR Cornelia (CRO)	WD	Main Draw	QuarterFinal	2 - 4	13:15 12:10 6:11 11:6 10:12 6:11	BOROS Tamara	MOLNAR Cornelia
+2005	German Open Magdeburg 2005	KRAMER Tanja (GER)	POTA Georgina (HUN)	KOMWONG Nanthana (THA)	MUANGSUK Anisara (THA)	WD	Qualification	QR32	3 - 2	8:11 11:6 11:9 6:11 12:10	KRAMER Tanja	POTA Georgina
+2005	German Open Magdeburg 2005	KRAMER Tanja (GER)	POTA Georgina (HUN)	LEE Eunhee (KOR)	LEE Hyangmi (KOR)	WD	Qualification	QR16	3 - 2	12:10 8:11 4:11 11:9 11:9	KRAMER Tanja	POTA Georgina
+2005	German Open Magdeburg 2005	KISHIDA Satoko (JPN)	UMEMURA Aya (JPN)	PARK Miyoung (KOR)	YOON Sunae (KOR)	WD	Main Draw	QuarterFinal	1 - 4	3:11 11:8 5:11 10:12 8:11	PARK Miyoung	YOON Sunae
+2005	German Open Magdeburg 2005	HIRANO Sayaka (JPN)	HIURA Reiko (JPN)	MOLNAR Zita (HUN)	PERGEL Szandra (HUN)	WD	Qualification	QR64	3 - 2	11:4 8:11 8:11 11:7 11:5	HIRANO Sayaka	HIURA Reiko
+2005	German Open Magdeburg 2005	ITO Midori (JPN)	KONISHI An (JPN)	LEE Eunhee (KOR)	LEE Hyangmi (KOR)	WD	Qualification	QR64	0 - 3	5:11 8:11 10:12	LEE Eunhee	LEE Hyangmi
+2005	German Open Magdeburg 2005	FUJII Hiroko (JPN)	KANAZAWA Saki (JPN)	CICHOCKA Magdalena (POL)	XU Jie (1982) (POL)	WD	Qualification	QR64	3 - 2	11:9 8:11 10:12 11:7 11:4	FUJII Hiroko	KANAZAWA Saki
+2005	German Open Magdeburg 2005	FUJINUMA Ai (JPN)	WATANABE Yuko (JPN)	CSERNYIK Ildiko (HUN)	OPDENCAMP Karen (BEL)	WD	Qualification	QR64	3 - 0	11:3 11:5 11:7	FUJINUMA Ai	WATANABE Yuko
+2005	German Open Magdeburg 2005	HIRANO Sayaka (JPN)	HIURA Reiko (JPN)	LIAN Qian (DOM)	WU Xue (DOM)	WD	Qualification	QR32	3 - 0	11:9 11:5 11:9	HIRANO Sayaka	HIURA Reiko
+2005	German Open Magdeburg 2005	FUJII Hiroko (JPN)	KANAZAWA Saki (JPN)	CHANG Chenchen (CHN)	FAN Ying (CHN)	WD	Qualification	QR32	3 - 0	11:4 11:7 11:4	FUJII Hiroko	KANAZAWA Saki
+2005	German Open Magdeburg 2005	FUJINUMA Ai (JPN)	WATANABE Yuko (JPN)	PARK Miyoung (KOR)	YOON Sunae (KOR)	WD	Qualification	QR32	0 - 3	8:11 8:11 8:11	PARK Miyoung	YOON Sunae
+2005	German Open Magdeburg 2005	HIRANO Sayaka (JPN)	HIURA Reiko (JPN)	HEINE Veronika (AUT)	LIU Jia (AUT)	WD	Qualification	QR16	3 - 1	14:12 3:11 11:5 12:10	HIRANO Sayaka	HIURA Reiko
+2005	German Open Magdeburg 2005	FUJII Hiroko (JPN)	KANAZAWA Saki (JPN)	IVANCAN Irene (GER)	SCHOPP Jie (GER)	WD	Qualification	QR16	0 - 3	7:11 9:11 6:11	IVANCAN Irene	SCHOPP Jie
+2005	German Open Magdeburg 2005	KIM Bokrae (KOR)	KIM Kyungah (KOR)	LI Xiaoxia (CHN)	PENG Luyang (CHN)	WD	Main Draw	R16	4 - 1	6:11 11:5 16:14 11:5 11:6	KIM Bokrae	KIM Kyungah
+2005	German Open Magdeburg 2005	PARK Miyoung (KOR)	YOON Sunae (KOR)	BATORFI Csilla (HUN)	TOTH Krisztina (HUN)	WD	Main Draw	R16	4 - 3	11:6 13:11 9:11 11:4 8:11 3:11 12:10	PARK Miyoung	YOON Sunae
+2005	German Open Magdeburg 2005	KIM Bokrae (KOR)	KIM Kyungah (KOR)	JIANG Huajun (HKG)	SONG Ah Sim (HKG)	WD	Main Draw	QuarterFinal	4 - 0	11:6 12:10 12:10 11:6	KIM Bokrae	KIM Kyungah
+2005	German Open Magdeburg 2005	KIM Bokrae (KOR)	KIM Kyungah (KOR)	PARK Miyoung (KOR)	YOON Sunae (KOR)	WD	Main Draw	SemiFinal	4 - 0	12:10 11:3 11:6 11:9	KIM Bokrae	KIM Kyungah
+2005	German Open Magdeburg 2005	KWAK Bangbang (KOR)	MOON Hyunjung (KOR)	FEHER Gabriela (SRB)	PLAVSIC Gordana (SRB)	WD	Qualification	QR64	3 - 0	11:9 11:7 11:6	KWAK Bangbang	MOON Hyunjung
+2005	German Open Magdeburg 2005	KWAK Bangbang (KOR)	MOON Hyunjung (KOR)	KISHIDA Satoko (JPN)	UMEMURA Aya (JPN)	WD	Qualification	QR32	1 - 3	11:8 8:11 4:11 5:11	KISHIDA Satoko	UMEMURA Aya
+2005	German Open Magdeburg 2005	PARK Miyoung (KOR)	YOON Sunae (KOR)	CAO Zhen (CHN)	DING Ning (CHN)	WD	Qualification	QR16	3 - 1	9:11 11:4 11:6 11:2	PARK Miyoung	YOON Sunae
+2005	German Open Magdeburg 2005	JEON Hyekyung (KOR)	LI Jiao (NED)	JANTA-LIPINSKA Anna (POL)	NECULA Iulia (ROU)	WD	Qualification	QR64	2 - 3	11:3 11:7 10:12 7:11 8:11	JANTA-LIPINSKA Anna	NECULA Iulia
+2005	German Open Magdeburg 2005	CREEMERS Linda (NED)	NOUWEN Carla (NED)	CHANG Chenchen (CHN)	FAN Ying (CHN)	WD	Qualification	QR64	1 - 3	8:11 11:8 4:11 5:11	CHANG Chenchen	FAN Ying
+2005	German Open Magdeburg 2005	GOLOTA Marta (POL)	SMETEK Marta (POL)	GANINA Svetlana (RUS)	PALINA Irina (RUS)	WD	Qualification	QR64	0 - 3	4:11 6:11 7:11	GANINA Svetlana	PALINA Irina
+2005	German Open Magdeburg 2005	PIETKIEWICZ Monika (POL)	STEFANSKA Kinga (POL)	BAKULA Andrea (CRO)	PAOVIC Sandra (CRO)	WD	Qualification	QR64	2 - 3	11:7 11:5 8:11 9:11 6:11	BAKULA Andrea	PAOVIC Sandra
+2005	German Open Magdeburg 2005	HARTMANN Carole (LUX)	MAMALIGA Andreea (ROU)	BOLLMEIER Nadine (GER)	ROBERTSON Laura (GER)	WD	Qualification	QR64	0 - 3	5:11 6:11 5:11	BOLLMEIER Nadine	ROBERTSON Laura
+2005	German Open Magdeburg 2005	JANTA-LIPINSKA Anna (POL)	NECULA Iulia (ROU)	GANINA Svetlana (RUS)	PALINA Irina (RUS)	WD	Qualification	QR32	2 - 3	11:8 6:11 2:11 11:7 4:11	GANINA Svetlana	PALINA Irina
+2005	German Open Magdeburg 2005	KMOTORKOVA Lenka (SVK)	ODOROVA Eva (SVK)	NEGRISOLI Laura (ITA)	WANG Yu (YOB=1981) (ITA)	WD	Qualification	QR64	3 - 0		KMOTORKOVA Lenka	ODOROVA Eva
+2005	German Open Magdeburg 2005	EKHOLM Matilda (SWE)	WIGOW Susanna (SWE)	PAVLOVICH Veronika (BLR)	PAVLOVICH Viktoria (BLR)	WD	Qualification	QR32	0 - 3	7:11 5:11 9:11	PAVLOVICH Veronika	PAVLOVICH Viktoria
+2005	German Open Magdeburg 2005	HUANG Yi-Hua (TPE)	LU Yun-Feng (TPE)	KISHIDA Satoko (JPN)	UMEMURA Aya (JPN)	WD	Main Draw	R16	1 - 4	10:12 11:8 10:12 6:11 3:11	KISHIDA Satoko	UMEMURA Aya
+

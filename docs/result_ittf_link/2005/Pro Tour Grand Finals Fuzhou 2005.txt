@@ -6,3 +6,110 @@
 参赛人数：74
 开始日期：2005-12-09
 结束日期：2005-12-11
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+50
+Total: 30
+
+2005	Pro Tour Grand Finals Fuzhou 2005	SAMSONOV Vladimir (BLR)		SAIVE Jean-Michel (BEL)		MS	Main Draw	R16	3 - 4	9:11 11:13 12:14 11:7 11:8 11:5 12:14	SAIVE Jean-Michel	
+2005	Pro Tour Grand Finals Fuzhou 2005	SCHLAGER Werner (AUT)		CRISAN Adrian (ROU)		MS	Main Draw	R16	3 - 4	10:12 6:11 11:6 11:8 11:8 11:13 6:11	CRISAN Adrian	
+2005	Pro Tour Grand Finals Fuzhou 2005	MA Long (CHN)		FRANZ Peter (GER)		MS	Main Draw	R16	4 - 1	9:11 11:6 11:4 11:7 11:8	MA Long	
+2005	Pro Tour Grand Finals Fuzhou 2005	CHILA Patrick (FRA)		OH Sangeun (KOR)		MS	Main Draw	R16	2 - 4	11:6 10:12 11:8 6:11 6:11 1:11	OH Sangeun	
+2005	Pro Tour Grand Finals Fuzhou 2005	LEE Jungwoo (KOR)		KUZMIN Fedor (RUS)		MS	Main Draw	R16	1 - 4	5:11 6:11 11:5 5:11 8:11	KUZMIN Fedor	
+2005	Pro Tour Grand Finals Fuzhou 2005	LIM Jaehyun (KOR)		RYU Seungmin (KOR)		MS	Main Draw	R16	1 - 4	5:11 2:11 11:9 14:16 6:11	RYU Seungmin	
+2005	Pro Tour Grand Finals Fuzhou 2005	CHEN Weixing (AUT)		KO Lai Chak (HKG)		MS	Main Draw	R16	1 - 4	11:9 9:11 9:11 6:11 12:14	KO Lai Chak	
+2005	Pro Tour Grand Finals Fuzhou 2005	CHUANG Chih-Yuan (TPE)		BOLL Timo (GER)		MS	Main Draw	R16	3 - 4	5:11 6:11 11:8 11:7 11:9 4:11 6:11	BOLL Timo	
+2005	Pro Tour Grand Finals Fuzhou 2005	SAIVE Jean-Michel (BEL)		CRISAN Adrian (ROU)		MS	Main Draw	QuarterFinal	4 - 0	11:5 11:6 11:6 11:6	SAIVE Jean-Michel	
+2005	Pro Tour Grand Finals Fuzhou 2005	MA Long (CHN)		OH Sangeun (KOR)		MS	Main Draw	QuarterFinal	1 - 4	7:11 9:11 13:11 8:11 9:11	OH Sangeun	
+2005	Pro Tour Grand Finals Fuzhou 2005	KUZMIN Fedor (RUS)		RYU Seungmin (KOR)		MS	Main Draw	QuarterFinal	0 - 4	7:11 7:11 8:11 9:11	RYU Seungmin	
+2005	Pro Tour Grand Finals Fuzhou 2005	KO Lai Chak (HKG)		BOLL Timo (GER)		MS	Main Draw	QuarterFinal	3 - 4	6:11 7:11 8:11 11:4 11:7 11:6 3:11	BOLL Timo	
+2005	Pro Tour Grand Finals Fuzhou 2005	SAIVE Jean-Michel (BEL)		OH Sangeun (KOR)		MS	Main Draw	SemiFinal	4 - 2	11:13 13:11 6:11 11:9 11:7 11:3	SAIVE Jean-Michel	
+2005	Pro Tour Grand Finals Fuzhou 2005	RYU Seungmin (KOR)		BOLL Timo (GER)		MS	Main Draw	SemiFinal	1 - 4	7:11 11:7 4:11 6:11 8:11	BOLL Timo	
+2005	Pro Tour Grand Finals Fuzhou 2005	SAIVE Jean-Michel (BEL)		BOLL Timo (GER)		MS	Main Draw	Final	1 - 4	6:11 8:11 7:11 11:9 5:11	BOLL Timo	
+2005	Pro Tour Grand Finals Fuzhou 2005	YANG Zi (SGP)		AXELQVIST Johan (SWE)		U21MS	Main Draw	SemiFinal	4 - 2	11:9 11:7 5:11 10:12 11:1 11:7	YANG Zi	
+2005	Pro Tour Grand Finals Fuzhou 2005	LIM Jaehyun (KOR)		CHO Eonrae (KOR)		U21MS	Main Draw	SemiFinal	2 - 4	11:7 8:11 14:16 11:4 5:11 7:11	CHO Eonrae	
+2005	Pro Tour Grand Finals Fuzhou 2005	YANG Zi (SGP)		CHO Eonrae (KOR)		U21MS	Main Draw	Final	4 - 0	13:11 11:7 11:2 11:4	YANG Zi	
+2005	Pro Tour Grand Finals Fuzhou 2005	CHO Eonrae (KOR)		YANG Zi (SGP)		U21MS	Qualification		2 - 4	15:13 8:11 11:8 9:11 3:11 9:11	YANG Zi	
+2005	Pro Tour Grand Finals Fuzhou 2005	JAKAB Janos (HUN)		PISTEJ Lubomir (SVK)		U21MS	Qualification	QR2	4 - 2	9:11 11:7 10:12 11:8 13:11 12:10	JAKAB Janos	
+2005	Pro Tour Grand Finals Fuzhou 2005	CHO Eonrae (KOR)		JAKAB Janos (HUN)		U21MS	Qualification	3	4 - 2	11:4 3:11 9:11 11:9 11:3 11:9	CHO Eonrae	
+2005	Pro Tour Grand Finals Fuzhou 2005	YANG Zi (SGP)		PISTEJ Lubomir (SVK)		U21MS	Qualification	QR4	4 - 2	7:11 11:8 11:8 5:11 11:8 11:6	YANG Zi	
+2005	Pro Tour Grand Finals Fuzhou 2005	CHO Eonrae (KOR)		PISTEJ Lubomir (SVK)		U21MS	Qualification	5	3 - 4	8:11 11:5 11:6 9:11 11:9 9:11 8:11	PISTEJ Lubomir	
+2005	Pro Tour Grand Finals Fuzhou 2005	JAKAB Janos (HUN)		YANG Zi (SGP)		U21MS	Qualification	6	2 - 4	10:12 11:9 10:12 11:9 8:11 8:11	YANG Zi	
+2005	Pro Tour Grand Finals Fuzhou 2005	LIM Jaehyun (KOR)		SEREDA Peter (SVK)		U21MS	Qualification		4 - 2	8:11 12:10 9:11 12:10 13:11 11:1	LIM Jaehyun	
+2005	Pro Tour Grand Finals Fuzhou 2005	BOBILLIER Loic (FRA)		AXELQVIST Johan (SWE)		U21MS	Qualification	QR2	4 - 2	5:11 11:5 11:6 3:11 11:6 11:4	BOBILLIER Loic	
+2005	Pro Tour Grand Finals Fuzhou 2005	LIM Jaehyun (KOR)		BOBILLIER Loic (FRA)		U21MS	Qualification	3	4 - 0	14:12 11:5 14:12 13:11	LIM Jaehyun	
+2005	Pro Tour Grand Finals Fuzhou 2005	SEREDA Peter (SVK)		AXELQVIST Johan (SWE)		U21MS	Qualification	QR4	3 - 4	11:7 11:6 18:16 9:11 8:11 9:11 9:11	AXELQVIST Johan	
+2005	Pro Tour Grand Finals Fuzhou 2005	LIM Jaehyun (KOR)		AXELQVIST Johan (SWE)		U21MS	Qualification	5	2 - 4	7:11 11:9 8:11 9:11 11:6 6:11	AXELQVIST Johan	
+2005	Pro Tour Grand Finals Fuzhou 2005	BOBILLIER Loic (FRA)		SEREDA Peter (SVK)		U21MS	Qualification	6	4 - 1	11:6 11:6 11:9 6:11 11:6	BOBILLIER Loic
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+50
+Total: 30
+
+2005	Pro Tour Grand Finals Fuzhou 2005	ZHANG Yining (CHN)		SCHALL Elke (GER)		WS	Main Draw	R16	4 - 0	11:7 11:8 13:11 11:6	ZHANG Yining	
+2005	Pro Tour Grand Finals Fuzhou 2005	STRUSE Nicole (GER)		ZHANG Rui (HKG)		WS	Main Draw	R16	4 - 1	11:5 14:16 11:6 11:6 11:7	STRUSE Nicole	
+2005	Pro Tour Grand Finals Fuzhou 2005	PAVLOVICH Viktoria (BLR)		MOON Hyunjung (KOR)		WS	Main Draw	R16	3 - 4	3:11 12:10 4:11 11:9 11:6 2:11 4:11	MOON Hyunjung	
+2005	Pro Tour Grand Finals Fuzhou 2005	SHEN Yanfei (ESP)		KIM Kyungah (KOR)		WS	Main Draw	R16	0 - 4	8:11 8:11 2:11 5:11	KIM Kyungah	
+2005	Pro Tour Grand Finals Fuzhou 2005	TIE Yana (HKG)		LAU Sui Fei (HKG)		WS	Main Draw	R16	4 - 2	10:12 11:6 11:6 9:11 11:4 11:2	TIE Yana	
+2005	Pro Tour Grand Finals Fuzhou 2005	SUN Beibei (SGP)		GAO Jun (USA)		WS	Main Draw	R16	2 - 4	8:11 7:11 11:6 11:13 11:3 9:11	GAO Jun	
+2005	Pro Tour Grand Finals Fuzhou 2005	BOROS Tamara (CRO)		LIN Ling (HKG)		WS	Main Draw	R16	4 - 1	11:3 12:10 7:11 11:9 13:11	BOROS Tamara	
+2005	Pro Tour Grand Finals Fuzhou 2005	WANG Yuegu (SGP)		LI Jiawei (SGP)		WS	Main Draw	R16	1 - 4	11:13 12:10 9:11 7:11 8:11	LI Jiawei	
+2005	Pro Tour Grand Finals Fuzhou 2005	ZHANG Yining (CHN)		STRUSE Nicole (GER)		WS	Main Draw	QuarterFinal	4 - 0	11:7 11:8 11:5 11:4	ZHANG Yining	
+2005	Pro Tour Grand Finals Fuzhou 2005	MOON Hyunjung (KOR)		KIM Kyungah (KOR)		WS	Main Draw	QuarterFinal	4 - 3	6:11 8:11 11:5 9:11 12:10 11:5 11:7	MOON Hyunjung	
+2005	Pro Tour Grand Finals Fuzhou 2005	TIE Yana (HKG)		GAO Jun (USA)		WS	Main Draw	QuarterFinal	4 - 1	11:5 9:11 11:5 13:11 11:8	TIE Yana	
+2005	Pro Tour Grand Finals Fuzhou 2005	BOROS Tamara (CRO)		LI Jiawei (SGP)		WS	Main Draw	QuarterFinal	1 - 4	10:12 9:11 11:8 7:11 9:11	LI Jiawei	
+2005	Pro Tour Grand Finals Fuzhou 2005	ZHANG Yining (CHN)		MOON Hyunjung (KOR)		WS	Main Draw	SemiFinal	4 - 0	11:9 11:4 11:5 11:8	ZHANG Yining	
+2005	Pro Tour Grand Finals Fuzhou 2005	TIE Yana (HKG)		LI Jiawei (SGP)		WS	Main Draw	SemiFinal	3 - 4	13:11 4:11 11:8 6:11 10:12 12:10 6:11	LI Jiawei	
+2005	Pro Tour Grand Finals Fuzhou 2005	ZHANG Yining (CHN)		LI Jiawei (SGP)		WS	Main Draw	Final	4 - 0	11:9 12:10 11:8 11:9	ZHANG Yining	
+2005	Pro Tour Grand Finals Fuzhou 2005	STEFANOVA Nikoleta (ITA)		LEE Eunhee (KOR)		U21WS	Main Draw	SemiFinal	4 - 3	6:11 11:4 7:11 11:6 11:13 11:6 11:3	STEFANOVA Nikoleta	
+2005	Pro Tour Grand Finals Fuzhou 2005	SUN Beibei (SGP)		LI Qiangbing (AUT)		U21WS	Main Draw	SemiFinal	4 - 1	11:9 11:4 11:7 4:11 11:9	SUN Beibei	
+2005	Pro Tour Grand Finals Fuzhou 2005	STEFANOVA Nikoleta (ITA)		SUN Beibei (SGP)		U21WS	Main Draw	Final	2 - 4	11:8 4:11 5:11 11:8 5:11 6:11	SUN Beibei	
+2005	Pro Tour Grand Finals Fuzhou 2005	STEFANOVA Nikoleta (ITA)		HUANG Yi-Hua (TPE)		U21WS	Qualification		4 - 1	11:8 11:7 11:9 6:11 11:8	STEFANOVA Nikoleta	
+2005	Pro Tour Grand Finals Fuzhou 2005	LI Qiangbing (AUT)		KIM Junghyun (KOR)		U21WS	Qualification	QR2	4 - 1	7:11 11:9 11:7 11:8 11:7	LI Qiangbing	
+2005	Pro Tour Grand Finals Fuzhou 2005	STEFANOVA Nikoleta (ITA)		LI Qiangbing (AUT)		U21WS	Qualification	3	4 - 2	11:9 10:12 11:8 8:11 11:9 12:10	STEFANOVA Nikoleta	
+2005	Pro Tour Grand Finals Fuzhou 2005	HUANG Yi-Hua (TPE)		KIM Junghyun (KOR)		U21WS	Qualification	QR4	4 - 1	11:6 11:9 11:3 9:11 11:5	HUANG Yi-Hua	
+2005	Pro Tour Grand Finals Fuzhou 2005	STEFANOVA Nikoleta (ITA)		KIM Junghyun (KOR)		U21WS	Qualification	5	2 - 4	11:6 9:11 11:9 9:11 11:13 9:11	KIM Junghyun	
+2005	Pro Tour Grand Finals Fuzhou 2005	LI Qiangbing (AUT)		HUANG Yi-Hua (TPE)		U21WS	Qualification	6	4 - 2	4:11 11:2 11:4 11:4 9:11 11:9	LI Qiangbing	
+2005	Pro Tour Grand Finals Fuzhou 2005	POTA Georgina (HUN)		KIM Hyehyun (KOR)		U21WS	Qualification		4 - 0	11:1 11:5 11:6 11:4	POTA Georgina	
+2005	Pro Tour Grand Finals Fuzhou 2005	SUN Beibei (SGP)		LEE Eunhee (KOR)		U21WS	Qualification	QR2	4 - 0	11:7 11:8 12:10 11:8	SUN Beibei	
+2005	Pro Tour Grand Finals Fuzhou 2005	POTA Georgina (HUN)		SUN Beibei (SGP)		U21WS	Qualification	3	4 - 2	15:13 9:11 8:11 11:9 12:10 11:7	POTA Georgina	
+2005	Pro Tour Grand Finals Fuzhou 2005	KIM Hyehyun (KOR)		LEE Eunhee (KOR)		U21WS	Qualification	QR4	2 - 4	11:7 9:11 11:5 7:11 9:11 6:11	LEE Eunhee	
+2005	Pro Tour Grand Finals Fuzhou 2005	POTA Georgina (HUN)		LEE Eunhee (KOR)		U21WS	Qualification	5	0 - 4	3:11 2:11 4:11 3:11	LEE Eunhee	
+2005	Pro Tour Grand Finals Fuzhou 2005	SUN Beibei (SGP)		KIM Hyehyun (KOR)		U21WS	Qualification	6	4 - 2	11:5 11:8 10:12 8:11 11:8 16:14	SUN Beibei
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+50
+Total: 7
+
+2005	Pro Tour Grand Finals Fuzhou 2005	JINDRAK Karl (AUT)	SCHLAGER Werner (AUT)	KO Lai Chak (HKG)	LI Ching (HKG)	MD	Main Draw	QuarterFinal	0 - 4	10:12 6:11 7:11 8:11	KO Lai Chak	LI Ching
+2005	Pro Tour Grand Finals Fuzhou 2005	BERTIN Christophe (FRA)	BOBILLIER Loic (FRA)	CHEN Qi (CHN)	WANG Liqin (CHN)	MD	Main Draw	QuarterFinal	1 - 4	7:11 13:11 9:11 8:11 5:11	CHEN Qi	WANG Liqin
+2005	Pro Tour Grand Finals Fuzhou 2005	BOLL Timo (GER)	SUSS Christian (GER)	CHEUNG Yuk (HKG)	LEUNG Chu Yan (HKG)	MD	Main Draw	QuarterFinal	4 - 0	11:6 13:11 13:11 11:9	BOLL Timo	SUSS Christian
+2005	Pro Tour Grand Finals Fuzhou 2005	BOLL Timo (GER)	SUSS Christian (GER)	KO Lai Chak (HKG)	LI Ching (HKG)	MD	Main Draw	SemiFinal	4 - 3	11:7 11:8 5:11 3:11 12:14 11:6 13:11	BOLL Timo	SUSS Christian
+2005	Pro Tour Grand Finals Fuzhou 2005	LEE Jungwoo (KOR)	OH Sangeun (KOR)	GERELL Par (SWE)	LUNDQVIST Jens (SWE)	MD	Main Draw	QuarterFinal	4 - 3	9:11 11:3 7:11 11:5 12:10 8:11 11:8	LEE Jungwoo	OH Sangeun
+2005	Pro Tour Grand Finals Fuzhou 2005	LEE Jungwoo (KOR)	OH Sangeun (KOR)	CHEN Qi (CHN)	WANG Liqin (CHN)	MD	Main Draw	SemiFinal	4 - 3	5:11 8:11 11:8 11:8 9:11 11:8 11:9	LEE Jungwoo	OH Sangeun
+2005	Pro Tour Grand Finals Fuzhou 2005	LEE Jungwoo (KOR)	OH Sangeun (KOR)	BOLL Timo (GER)	SUSS Christian (GER)	MD	Main Draw	Final	1 - 4	7:11 6:11 11:3 9:11 8:11	BOLL Timo	SUSS Christian
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+50
+Total: 7
+
+2005	Pro Tour Grand Finals Fuzhou 2005	GAO Jun (USA)	SHEN Yanfei (ESP)	GUO Yan (1982) (CHN)	GUO Yue (CHN)	WD	Main Draw	QuarterFinal	4 - 2	11:8 11:5 11:9 4:11 9:11 14:12	GAO Jun	SHEN Yanfei
+2005	Pro Tour Grand Finals Fuzhou 2005	GAO Jun (USA)	SHEN Yanfei (ESP)	SUN Beibei (SGP)	WANG Yuegu (SGP)	WD	Main Draw	SemiFinal	4 - 1	11:8 9:11 11:5 11:9 11:9	GAO Jun	SHEN Yanfei
+2005	Pro Tour Grand Finals Fuzhou 2005	TIE Yana (HKG)	ZHANG Rui (HKG)	KIM Bokrae (KOR)	KIM Kyungah (KOR)	WD	Main Draw	QuarterFinal	3 - 4	11:7 9:11 11:9 7:11 9:11 11:7 8:11	KIM Bokrae	KIM Kyungah
+2005	Pro Tour Grand Finals Fuzhou 2005	KRAMER Tanja (GER)	POTA Georgina (HUN)	TAN Paey Fern (SGP)	ZHANG Xueling (SGP)	WD	Main Draw	QuarterFinal	4 - 3	7:11 11:3 5:11 11:9 11:8 8:11 11:2	KRAMER Tanja	POTA Georgina
+2005	Pro Tour Grand Finals Fuzhou 2005	KIM Hyehyun (KOR)	KIM Junghyun (KOR)	SUN Beibei (SGP)	WANG Yuegu (SGP)	WD	Main Draw	QuarterFinal	1 - 4	3:11 9:11 4:11 11:7 3:11	SUN Beibei	WANG Yuegu
+2005	Pro Tour Grand Finals Fuzhou 2005	KIM Bokrae (KOR)	KIM Kyungah (KOR)	KRAMER Tanja (GER)	POTA Georgina (HUN)	WD	Main Draw	SemiFinal	4 - 1	11:9 11:6 7:11 11:6 11:7	KIM Bokrae	KIM Kyungah
+2005	Pro Tour Grand Finals Fuzhou 2005	KIM Bokrae (KOR)	KIM Kyungah (KOR)	GAO Jun (USA)	SHEN Yanfei (ESP)	WD	Main Draw	Final	1 - 4	7:11 9:11 11:9 8:11 3:11	GAO Jun	SHEN Yanfei

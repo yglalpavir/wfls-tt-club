@@ -1,0 +1,42 @@
+2005	Women's World Cup Guangzhou 2005	ITTF World Cup	--	32	2005-12-13	2005-12-15
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+50
+Total: 32
+
+2005	Women's World Cup Guangzhou 2005	ZHANG Yining (CHN)		GUO Yue (CHN)		WS	Main Draw	QuarterFinal	4 - 2	9:11 7:11 11:8 11:6 11:8 13:11	ZHANG Yining	
+2005	Women's World Cup Guangzhou 2005	LIN Ling (HKG)		TIE Yana (HKG)		WS	Main Draw	QuarterFinal	3 - 4	8:11 6:11 11:6 11:6 9:11 11:8 9:11	TIE Yana	
+2005	Women's World Cup Guangzhou 2005	FUKUHARA Ai (JPN)		GAO Jun (USA)		WS	Main Draw	QuarterFinal	4 - 2	13:11 10:12 7:11 11:6 11:8 11:7	FUKUHARA Ai	
+2005	Women's World Cup Guangzhou 2005	GUO Yan (1982) (CHN)		BOROS Tamara (CRO)		WS	Main Draw	QuarterFinal	4 - 1	11:7 11:6 11:8 7:11 13:11	GUO Yan (1982)	
+2005	Women's World Cup Guangzhou 2005	ZHANG Yining (CHN)		TIE Yana (HKG)		WS	Main Draw	SemiFinal	4 - 0	11:8 11:9 11:5 11:9	ZHANG Yining	
+2005	Women's World Cup Guangzhou 2005	FUKUHARA Ai (JPN)		GUO Yan (1982) (CHN)		WS	Main Draw	SemiFinal	3 - 4	11:6 3:11 11:7 10:12 11:9 2:11 6:11	GUO Yan (1982)	
+2005	Women's World Cup Guangzhou 2005	TIE Yana (HKG)		FUKUHARA Ai (JPN)		WS	Position Draw	2	1 - 4	6:11 6:11 11:3 6:11 8:11	FUKUHARA Ai	
+2005	Women's World Cup Guangzhou 2005	ZHANG Yining (CHN)		GAO Jun (USA)		WS	Qualification		4 - 3	7:11 5:11 11:3 11:3 5:11 11:8 11:7	ZHANG Yining	
+2005	Women's World Cup Guangzhou 2005	FOMUM Victorine Agum (CMR)		KIM Kyungah (KOR)		WS	Qualification	QR2	0 - 4	3:11 3:11 1:11 2:11	KIM Kyungah	
+2005	Women's World Cup Guangzhou 2005	ZHANG Yining (CHN)		KIM Kyungah (KOR)		WS	Qualification	3	4 - 0	11:5 11:6 11:9 11:9	ZHANG Yining	
+2005	Women's World Cup Guangzhou 2005	GAO Jun (USA)		FOMUM Victorine Agum (CMR)		WS	Qualification	QR4	4 - 0	11:2 11:4 11:5 11:5	GAO Jun	
+2005	Women's World Cup Guangzhou 2005	ZHANG Yining (CHN)		FOMUM Victorine Agum (CMR)		WS	Qualification	5	4 - 0	11:3 11:4 11:2 11:3	ZHANG Yining	
+2005	Women's World Cup Guangzhou 2005	KIM Kyungah (KOR)		GAO Jun (USA)		WS	Qualification	6	1 - 4	8:11 4:11 12:10 6:11 7:11	GAO Jun	
+2005	Women's World Cup Guangzhou 2005	GUO Yue (CHN)		PAVLOVICH Viktoria (BLR)		WS	Qualification		4 - 0	11:5 11:4 11:2 11:4	GUO Yue	
+2005	Women's World Cup Guangzhou 2005	LIAN Qian (DOM)		BOROS Tamara (CRO)		WS	Qualification	QR2	2 - 4	11:8 2:11 7:11 4:11 11:3 9:11	BOROS Tamara	
+2005	Women's World Cup Guangzhou 2005	GUO Yue (CHN)		BOROS Tamara (CRO)		WS	Qualification	3	3 - 4	12:10 7:11 6:11 13:11 11:5 10:12 14:16	BOROS Tamara	
+2005	Women's World Cup Guangzhou 2005	PAVLOVICH Viktoria (BLR)		LIAN Qian (DOM)		WS	Qualification	QR4	4 - 2	11:6 12:14 2:11 12:10 11:8 11:6	PAVLOVICH Viktoria	
+2005	Women's World Cup Guangzhou 2005	GUO Yue (CHN)		LIAN Qian (DOM)		WS	Qualification	5	4 - 0	11:6 11:6 11:4 11:8	GUO Yue	
+2005	Women's World Cup Guangzhou 2005	BOROS Tamara (CRO)		PAVLOVICH Viktoria (BLR)		WS	Qualification	6	4 - 0	11:5 11:4 12:10 11:3	BOROS Tamara	
+2005	Women's World Cup Guangzhou 2005	LI Jiawei (SGP)		LAU Sui Fei (HKG)		WS	Qualification		4 - 0	11:9 11:7 11:9 11:7	LI Jiawei	
+2005	Women's World Cup Guangzhou 2005	FUKUHARA Ai (JPN)		LIN Ling (HKG)		WS	Qualification	QR2	4 - 0	12:10 11:6 11:9 11:7	FUKUHARA Ai	
+2005	Women's World Cup Guangzhou 2005	LI Jiawei (SGP)		LIN Ling (HKG)		WS	Qualification	3	1 - 4	7:11 11:4 7:11 10:12 6:11	LIN Ling	
+2005	Women's World Cup Guangzhou 2005	LAU Sui Fei (HKG)		FUKUHARA Ai (JPN)		WS	Qualification	QR4	1 - 4	7:11 5:11 8:11 12:10 10:12	FUKUHARA Ai	
+2005	Women's World Cup Guangzhou 2005	LI Jiawei (SGP)		FUKUHARA Ai (JPN)		WS	Qualification	5	1 - 4	4:11 3:11 12:14 11:6 10:12	FUKUHARA Ai	
+2005	Women's World Cup Guangzhou 2005	LIN Ling (HKG)		LAU Sui Fei (HKG)		WS	Qualification	6	4 - 0	11:6 12:10 12:10 11:5	LIN Ling	
+2005	Women's World Cup Guangzhou 2005	GUO Yan (1982) (CHN)		LIU Jia (AUT)		WS	Qualification		4 - 2	11:8 13:11 11:7 10:12 9:11 11:8	GUO Yan (1982)	
+2005	Women's World Cup Guangzhou 2005	LAY Jian Fang (AUS)		TIE Yana (HKG)		WS	Qualification	QR2	2 - 4	11:9 16:14 6:11 7:11 3:11 9:11	TIE Yana	
+2005	Women's World Cup Guangzhou 2005	GUO Yan (1982) (CHN)		TIE Yana (HKG)		WS	Qualification	3	2 - 4	11:2 10:12 10:12 11:7 8:11 9:11	TIE Yana	
+2005	Women's World Cup Guangzhou 2005	LIU Jia (AUT)		LAY Jian Fang (AUS)		WS	Qualification	QR4	4 - 0	11:3 11:8 11:7 11:7	LIU Jia	
+2005	Women's World Cup Guangzhou 2005	GUO Yan (1982) (CHN)		LAY Jian Fang (AUS)		WS	Qualification	5	4 - 1	8:11 11:3 11:9 11:5 11:3	GUO Yan (1982)	
+2005	Women's World Cup Guangzhou 2005	TIE Yana (HKG)		LIU Jia (AUT)		WS	Qualification	6	4 - 2	11:9 6:11 11:9 10:12 11:7 11:8	TIE Yana	
+2005	Women's World Cup Guangzhou 2005	ZHANG Yining (CHN)		GUO Yan (1982) (CHN)		WS	Main Draw	Final	4 - 0	11:8 14:12 11:7 11:5	ZHANG Yining

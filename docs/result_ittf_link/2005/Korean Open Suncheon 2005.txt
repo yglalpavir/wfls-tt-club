@@ -6,3 +6,280 @@
 参赛人数：245
 开始日期：2005-06-09
 结束日期：2005-06-12
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 2 Total: 108
+
+Start
+Prev
+1
+2
+Next
+End
+2005	Korean Open Suncheon 2005	RYU Seungmin (KOR)		TAKAKIWA Taku (JPN)		MS	Main Draw	R32	4 - 1	11:9 7:11 11:4 13:11 11:6	RYU Seungmin	
+2005	Korean Open Suncheon 2005	KIM Junghoon (KOR)		MIZUTANI Jun (JPN)		MS	Main Draw	R32	1 - 4	11:13 9:11 9:11 12:10 6:11	MIZUTANI Jun	
+2005	Korean Open Suncheon 2005	KISHIKAWA Seiya (JPN)		LEE Jinkwon (KOR)		MS	Main Draw	R32	3 - 4	13:15 11:8 13:11 11:9 9:11 8:11 8:11	LEE Jinkwon	
+2005	Korean Open Suncheon 2005	CHO Jihoon (KOR)		GARDOS Robert (AUT)		MS	Main Draw	R32	4 - 2	11:4 11:7 11:4 3:11 7:11 11:1	CHO Jihoon	
+2005	Korean Open Suncheon 2005	CHEN Weixing (AUT)		DESPRES Rodolphe (FRA)		MS	Main Draw	R32	4 - 0	11:6 11:6 11:4 11:7	CHEN Weixing	
+2005	Korean Open Suncheon 2005	HUANG Sheng-Sheng (TPE)		LEE Jungwoo (KOR)		MS	Main Draw	R32	0 - 4	10:12 6:11 8:11 3:11	LEE Jungwoo	
+2005	Korean Open Suncheon 2005	CHOI Hyunjin (KOR)		MIZUNO Yuya (JPN)		MS	Main Draw	R32	4 - 1	11:8 11:8 13:11 6:11 11:7	CHOI Hyunjin	
+2005	Korean Open Suncheon 2005	TAKAKIWA Kenichi (JPN)		OH Sangeun (KOR)		MS	Main Draw	R32	2 - 4	12:10 6:11 8:11 8:11 11:7 6:11	OH Sangeun	
+2005	Korean Open Suncheon 2005	SCHLAGER Werner (AUT)		CHO Eonrae (KOR)		MS	Main Draw	R32	4 - 1	13:11 11:4 4:11 11:7 11:3	SCHLAGER Werner	
+2005	Korean Open Suncheon 2005	BOBILLIER Loic (FRA)		WU Chih-Chi (TPE)		MS	Main Draw	R32	3 - 4	5:11 9:11 7:11 11:3 13:11 11:9 9:11	WU Chih-Chi	
+2005	Korean Open Suncheon 2005	YOON Jaeyoung (KOR)		LO Dany (FRA)		MS	Main Draw	R32	4 - 1	12:10 10:12 11:6 12:10 11:5	YOON Jaeyoung	
+2005	Korean Open Suncheon 2005	KIM Taehoon (KOR)		GAO Ning (SGP)		MS	Main Draw	R32	1 - 4	6:11 11:13 11:4 20:22 7:11	GAO Ning	
+2005	Korean Open Suncheon 2005	LEGOUT Christophe (FRA)		NAKANO Yusuke (JPN)		MS	Main Draw	R32	4 - 2	5:11 9:11 11:6 13:11 11:8 11:3	LEGOUT Christophe	
+2005	Korean Open Suncheon 2005	YOO Changjae (KOR)		YANG Zi (SGP)		MS	Main Draw	R32	1 - 4	11:6 9:11 7:11 4:11 5:11	YANG Zi	
+2005	Korean Open Suncheon 2005	LIM Jaehyun (KOR)		SAKAMOTO Ryusuke (JPN)		MS	Main Draw	R32	4 - 1	13:11 11:7 9:11 12:10 11:3	LIM Jaehyun	
+2005	Korean Open Suncheon 2005	JINDRAK Karl (AUT)		CHUANG Chih-Yuan (TPE)		MS	Main Draw	R32	2 - 4	11:4 8:11 6:11 12:14 11:8 6:11	CHUANG Chih-Yuan	
+2005	Korean Open Suncheon 2005	RYU Seungmin (KOR)		MIZUTANI Jun (JPN)		MS	Main Draw	R16	4 - 3	6:11 11:9 6:11 11:9 11:6 9:11 11:5	RYU Seungmin	
+2005	Korean Open Suncheon 2005	LEE Jinkwon (KOR)		CHO Jihoon (KOR)		MS	Main Draw	R16	1 - 4	6:11 7:11 6:11 11:5 7:11	CHO Jihoon	
+2005	Korean Open Suncheon 2005	CHEN Weixing (AUT)		LEE Jungwoo (KOR)		MS	Main Draw	R16	1 - 4	5:11 4:11 12:10 5:11 9:11	LEE Jungwoo	
+2005	Korean Open Suncheon 2005	CHOI Hyunjin (KOR)		OH Sangeun (KOR)		MS	Main Draw	R16	1 - 4	5:11 11:8 7:11 8:11 3:11	OH Sangeun	
+2005	Korean Open Suncheon 2005	SCHLAGER Werner (AUT)		WU Chih-Chi (TPE)		MS	Main Draw	R16	4 - 0	11:7 11:9 11:2 11:6	SCHLAGER Werner	
+2005	Korean Open Suncheon 2005	YOON Jaeyoung (KOR)		GAO Ning (SGP)		MS	Main Draw	R16	3 - 4	5:11 8:11 11:7 4:11 11:8 11:9 5:11	GAO Ning	
+2005	Korean Open Suncheon 2005	LEGOUT Christophe (FRA)		YANG Zi (SGP)		MS	Main Draw	R16	4 - 1	11:9 5:11 11:8 12:10 11:2	LEGOUT Christophe	
+2005	Korean Open Suncheon 2005	LIM Jaehyun (KOR)		CHUANG Chih-Yuan (TPE)		MS	Main Draw	R16	4 - 3	12:10 12:10 4:11 11:9 6:11 8:11 12:10	LIM Jaehyun	
+2005	Korean Open Suncheon 2005	RYU Seungmin (KOR)		CHO Jihoon (KOR)		MS	Main Draw	QuarterFinal	4 - 1	6:11 11:9 11:5 13:11 11:1	RYU Seungmin	
+2005	Korean Open Suncheon 2005	LEE Jungwoo (KOR)		OH Sangeun (KOR)		MS	Main Draw	QuarterFinal	2 - 4	11:7 11:13 4:11 12:10 3:11 6:11	OH Sangeun	
+2005	Korean Open Suncheon 2005	SCHLAGER Werner (AUT)		GAO Ning (SGP)		MS	Main Draw	QuarterFinal	4 - 2	10:12 11:6 11:5 11:4 9:11 11:3	SCHLAGER Werner	
+2005	Korean Open Suncheon 2005	LEGOUT Christophe (FRA)		LIM Jaehyun (KOR)		MS	Main Draw	QuarterFinal	2 - 4	5:11 12:10 9:11 9:11 12:10 6:11	LIM Jaehyun	
+2005	Korean Open Suncheon 2005	RYU Seungmin (KOR)		OH Sangeun (KOR)		MS	Main Draw	SemiFinal	1 - 4	9:11 12:10 18:20 7:11 9:11	OH Sangeun	
+2005	Korean Open Suncheon 2005	SCHLAGER Werner (AUT)		LIM Jaehyun (KOR)		MS	Main Draw	SemiFinal	2 - 4	2:11 5:11 13:11 11:9 8:11 8:11	LIM Jaehyun	
+2005	Korean Open Suncheon 2005	OH Sangeun (KOR)		LIM Jaehyun (KOR)		MS	Main Draw	Final	4 - 0	11:8 11:9 11:7 11:7	OH Sangeun	
+2005	Korean Open Suncheon 2005	HUANG Wei-Chin (TPE)		SHIMOYAMA Takanori (JPN)		MS	Qualification		1 - 4	11:6 7:11 6:11 6:11 4:11	SHIMOYAMA Takanori	
+2005	Korean Open Suncheon 2005	LO Dany (FRA)		SHIMOYAMA Takanori (JPN)		MS	Qualification	QR2	4 - 0	11:4 11:8 11:5 11:7	LO Dany	
+2005	Korean Open Suncheon 2005	LO Dany (FRA)		HUANG Wei-Chin (TPE)		MS	Qualification	3	4 - 2	11:6 11:8 12:14 5:11 11:9 11:7	LO Dany	
+2005	Korean Open Suncheon 2005	KIM Sangsoo (KOR)		HUANG Sheng-Sheng (TPE)		MS	Qualification		3 - 4	9:11 11:6 11:4 13:11 8:11 4:11 7:11	HUANG Sheng-Sheng	
+2005	Korean Open Suncheon 2005	JINDRAK Karl (AUT)		HUANG Sheng-Sheng (TPE)		MS	Qualification	QR2	2 - 4	11:9 7:11 4:11 13:11 4:11 9:11	HUANG Sheng-Sheng	
+2005	Korean Open Suncheon 2005	JINDRAK Karl (AUT)		KIM Sangsoo (KOR)		MS	Qualification	3	4 - 1	11:6 11:5 17:15 9:11 11:4	JINDRAK Karl	
+2005	Korean Open Suncheon 2005	LI Hang (SGP)		SUN Wen-Wei (TPE)		MS	Qualification		4 - 3	12:14 11:4 11:8 11:6 8:11 7:11 11:9	LI Hang	
+2005	Korean Open Suncheon 2005	BOBILLIER Loic (FRA)		SUN Wen-Wei (TPE)		MS	Qualification	QR2	4 - 1	7:11 11:3 11:6 11:7 11:5	BOBILLIER Loic	
+2005	Korean Open Suncheon 2005	BOBILLIER Loic (FRA)		LI Hang (SGP)		MS	Qualification	3	4 - 2	11:9 10:12 11:6 11:9 6:11 11:8	BOBILLIER Loic	
+2005	Korean Open Suncheon 2005	KANG Donghoon (KOR)		ZHANG Yiqin (SGP)		MS	Qualification		4 - 0	11:5 11:7 11:8 11:3	KANG Donghoon	
+2005	Korean Open Suncheon 2005	SAKAMOTO Ryusuke (JPN)		ZHANG Yiqin (SGP)		MS	Qualification	QR2	4 - 0	11:6 11:6 11:3 11:7	SAKAMOTO Ryusuke	
+2005	Korean Open Suncheon 2005	SAKAMOTO Ryusuke (JPN)		KANG Donghoon (KOR)		MS	Qualification	3	4 - 0	11:7 11:4 11:6 11:8	SAKAMOTO Ryusuke	
+2005	Korean Open Suncheon 2005	PETER-PAUL Pradeeban (CAN)		FAN Guoliang (ESP)		MS	Qualification		2 - 4	11:7 5:11 11:9 4:11 8:11 5:11	FAN Guoliang	
+2005	Korean Open Suncheon 2005	KIM Taehoon (KOR)		FAN Guoliang (ESP)		MS	Qualification	QR2	4 - 3	9:11 11:6 9:11 11:9 8:11 11:7 12:10	KIM Taehoon	
+2005	Korean Open Suncheon 2005	KIM Taehoon (KOR)		PETER-PAUL Pradeeban (CAN)		MS	Qualification	3	4 - 1	12:10 8:11 11:8 11:7 11:8	KIM Taehoon	
+2005	Korean Open Suncheon 2005	YEO Inho (KOR)		MIZUNO Yuya (JPN)		MS	Qualification		3 - 4	7:11 6:11 11:4 11:4 11:2 11:13 4:11	MIZUNO Yuya	
+2005	Korean Open Suncheon 2005	BERTIN Christophe (FRA)		MIZUNO Yuya (JPN)		MS	Qualification	QR2	2 - 4	7:11 17:15 11:7 8:11 10:12 10:12	MIZUNO Yuya	
+2005	Korean Open Suncheon 2005	ZHENG Qi (SGP)		ELENSKY Gregory (ISR)		MS	Qualification		3 - 4	11:7 8:11 9:11 11:6 9:11 11:6 7:11	ELENSKY Gregory	
+2005	Korean Open Suncheon 2005	LEE Jinkwon (KOR)		ELENSKY Gregory (ISR)		MS	Qualification	QR2	4 - 0	11:6 11:9 11:4 11:7	LEE Jinkwon	
+2005	Korean Open Suncheon 2005	LEE Jinkwon (KOR)		ZHENG Qi (SGP)		MS	Qualification	3	4 - 0	11:3 11:8 11:5 12:10	LEE Jinkwon	
+2005	Korean Open Suncheon 2005	CHO Jihoon (KOR)		TANAKA Katsuhito (JPN)		MS	Qualification		2 - 4	12:14 10:12 11:6 11:2 7:11 9:11	TANAKA Katsuhito	
+2005	Korean Open Suncheon 2005	CAI Xiaoli (SGP)		TANAKA Katsuhito (JPN)		MS	Qualification	QR2	4 - 2	11:6 11:6 13:15 9:11 11:9 12:10	CAI Xiaoli	
+2005	Korean Open Suncheon 2005	CAI Xiaoli (SGP)		CHO Jihoon (KOR)		MS	Qualification	3	2 - 4	2:11 6:11 8:11 11:3 11:8 6:11	CHO Jihoon	
+2005	Korean Open Suncheon 2005	NAKANO Yusuke (JPN)		WEI Chun-Ta (TPE)		MS	Qualification		4 - 1	8:11 11:8 11:6 14:12 14:12	NAKANO Yusuke	
+2005	Korean Open Suncheon 2005	CHO Eonrae (KOR)		WEI Chun-Ta (TPE)		MS	Qualification	QR2	4 - 0	11:7 11:6 11:5 11:9	CHO Eonrae	
+2005	Korean Open Suncheon 2005	CHO Eonrae (KOR)		NAKANO Yusuke (JPN)		MS	Qualification	3	3 - 4	7:11 7:11 10:12 11:6 11:6 11:9 7:11	NAKANO Yusuke	
+2005	Korean Open Suncheon 2005	KASSAM Faazil (CAN)		HOU Ming-Tsung (TPE)		MS	Qualification		2 - 4	14:16 12:10 8:11 11:8 11:13 10:12	HOU Ming-Tsung	
+2005	Korean Open Suncheon 2005	KIM Junghoon (KOR)		HOU Ming-Tsung (TPE)		MS	Qualification	QR2	4 - 1	14:12 9:11 12:10 11:7 12:10	KIM Junghoon	
+2005	Korean Open Suncheon 2005	KIM Junghoon (KOR)		KASSAM Faazil (CAN)		MS	Qualification	3	4 - 1	11:13 12:10 11:7 11:8 12:10	KIM Junghoon	
+2005	Korean Open Suncheon 2005	CHIANG Hung-Chieh (TPE)		GREEN Wally (USA)		MS	Qualification		4 - 0	11:0 11:6 11:3 11:6	CHIANG Hung-Chieh	
+2005	Korean Open Suncheon 2005	YOO Changjae (KOR)		GREEN Wally (USA)		MS	Qualification	QR2	4 - 0	11:6 11:4 11:3 11:7	YOO Changjae	
+2005	Korean Open Suncheon 2005	YOO Changjae (KOR)		CHIANG Hung-Chieh (TPE)		MS	Qualification	3	4 - 1	11:7 11:8 11:5 11:13 11:9	YOO Changjae	
+2005	Korean Open Suncheon 2005	CSABA Bence (CAN)		LEE Bumhyung (KOR)		MS	Qualification		1 - 4	12:10 8:11 9:11 8:11 10:12	LEE Bumhyung	
+2005	Korean Open Suncheon 2005	TAKAKIWA Kenichi (JPN)		LEE Bumhyung (KOR)		MS	Qualification	QR2	4 - 1	11:6 11:6 11:9 8:11 11:7	TAKAKIWA Kenichi	
+2005	Korean Open Suncheon 2005	TAKAKIWA Kenichi (JPN)		CSABA Bence (CAN)		MS	Qualification	3	4 - 1	11:1 11:3 11:6 9:11 11:6	TAKAKIWA Kenichi	
+2005	Korean Open Suncheon 2005	TAKAKIWA Taku (JPN)		PARK Seungyong (KOR)		MS	Qualification		4 - 3	4:11 9:11 9:11 11:8 11:8 11:7 11:4	TAKAKIWA Taku	
+2005	Korean Open Suncheon 2005	DESPRES Rodolphe (FRA)		PARK Seungyong (KOR)		MS	Qualification	QR2	4 - 3	11:5 10:12 11:7 4:11 3:11 11:5 11:9	DESPRES Rodolphe	
+2005	Korean Open Suncheon 2005	DESPRES Rodolphe (FRA)		TAKAKIWA Taku (JPN)		MS	Qualification	3	4 - 1	11:8 11:7 6:11 11:7 11:4	DESPRES Rodolphe	
+2005	Korean Open Suncheon 2005	SHIMOYAMA Takanori (JPN)		ZHANG Yiqin (SGP)		U21MS	Qualification		3 - 2	11:5 6:11 9:11 11:6 11:5	SHIMOYAMA Takanori	
+2005	Korean Open Suncheon 2005	CHO Eonrae (KOR)		ZHANG Yiqin (SGP)		U21MS	Qualification	QR2	2 - 3	11:7 13:11 9:11 8:11 12:14	ZHANG Yiqin	
+2005	Korean Open Suncheon 2005	CHO Eonrae (KOR)		SHIMOYAMA Takanori (JPN)		U21MS	Qualification	3	2 - 3	9:11 8:11 11:9 11:9 4:11	SHIMOYAMA Takanori	
+2005	Korean Open Suncheon 2005	HUANG Wei-Chin (TPE)		PARK Seungyong (KOR)		U21MS	Qualification		3 - 2	8:11 6:11 11:7 11:7 11:3	HUANG Wei-Chin	
+2005	Korean Open Suncheon 2005	TAKAKIWA Kenichi (JPN)		PARK Seungyong (KOR)		U21MS	Qualification	QR2	3 - 0	11:8 11:4 11:7	TAKAKIWA Kenichi	
+2005	Korean Open Suncheon 2005	TAKAKIWA Kenichi (JPN)		HUANG Wei-Chin (TPE)		U21MS	Qualification	3	3 - 1	11:5 6:11 15:13 13:11	TAKAKIWA Kenichi	
+2005	Korean Open Suncheon 2005	NAKANO Yusuke (JPN)		SUN Wen-Wei (TPE)		U21MS	Qualification		3 - 1	11:8 11:9 10:12 12:10	NAKANO Yusuke	
+2005	Korean Open Suncheon 2005	DESPRES Rodolphe (FRA)		SUN Wen-Wei (TPE)		U21MS	Qualification	QR2	3 - 1	12:10 11:5 5:11 11:8	DESPRES Rodolphe	
+2005	Korean Open Suncheon 2005	DESPRES Rodolphe (FRA)		NAKANO Yusuke (JPN)		U21MS	Qualification	3	1 - 3	8:11 11:9 6:11 7:11	NAKANO Yusuke	
+2005	Korean Open Suncheon 2005	LI Hang (SGP)		LEE Bumhyung (KOR)		U21MS	Qualification		1 - 3	9:11 11:4 9:11 7:11	LEE Bumhyung	
+2005	Korean Open Suncheon 2005	TAKAKIWA Taku (JPN)		LEE Bumhyung (KOR)		U21MS	Qualification	QR2	3 - 1	11:7 9:11 11:9 11:9	TAKAKIWA Taku	
+2005	Korean Open Suncheon 2005	TAKAKIWA Taku (JPN)		LI Hang (SGP)		U21MS	Qualification	3	3 - 2	11:7 6:11 11:5 7:11 11:6	TAKAKIWA Taku	
+2005	Korean Open Suncheon 2005	KANG Donghoon (KOR)		MIZUNO Yuya (JPN)		U21MS	Qualification		0 - 3	6:11 8:11 6:11	MIZUNO Yuya	
+2005	Korean Open Suncheon 2005	CSABA Bence (CAN)		MIZUNO Yuya (JPN)		U21MS	Qualification	QR2	1 - 3	11:9 7:11 8:11 7:11	MIZUNO Yuya	
+2005	Korean Open Suncheon 2005	CSABA Bence (CAN)		KANG Donghoon (KOR)		U21MS	Qualification	3	3 - 0	11:7 13:11 11:7	CSABA Bence	
+2005	Korean Open Suncheon 2005	KASSAM Faazil (CAN)		HOU Ming-Tsung (TPE)		U21MS	Qualification		1 - 3	11:6 7:11 8:11 8:11	HOU Ming-Tsung	
+2005	Korean Open Suncheon 2005	CHO Jihoon (KOR)		HOU Ming-Tsung (TPE)		U21MS	Qualification	QR2	3 - 0	11:6 11:4 11:4	CHO Jihoon	
+2005	Korean Open Suncheon 2005	CHO Jihoon (KOR)		KASSAM Faazil (CAN)		U21MS	Qualification	3	3 - 2	11:4 11:7 9:11 10:12 19:17	CHO Jihoon	
+2005	Korean Open Suncheon 2005	YEO Inho (KOR)		ELENSKY Gregory (ISR)		U21MS	Qualification		2 - 3	10:12 11:7 9:11 11:4 9:11	ELENSKY Gregory	
+2005	Korean Open Suncheon 2005	CHIANG Hung-Chieh (TPE)		TANAKA Katsuhito (JPN)		U21MS	Qualification	QR2	2 - 3	8:11 7:11 11:6 11:7 7:11	TANAKA Katsuhito	
+2005	Korean Open Suncheon 2005	YEO Inho (KOR)		TANAKA Katsuhito (JPN)		U21MS	Qualification	3	3 - 0	12:10 11:4 11:8	YEO Inho	
+2005	Korean Open Suncheon 2005	CHIANG Hung-Chieh (TPE)		ELENSKY Gregory (ISR)		U21MS	Qualification	QR4	3 - 1	11:9 4:11 11:3 11:8	CHIANG Hung-Chieh	
+2005	Korean Open Suncheon 2005	YEO Inho (KOR)		CHIANG Hung-Chieh (TPE)		U21MS	Qualification	5	3 - 0	11:6 11:6 11:4	YEO Inho	
+2005	Korean Open Suncheon 2005	TANAKA Katsuhito (JPN)		ELENSKY Gregory (ISR)		U21MS	Qualification	6	0 - 3	8:11 4:11 4:11	ELENSKY Gregory	
+2005	Korean Open Suncheon 2005	YANG Zi (SGP)		ELENSKY Gregory (ISR)		U21MS	Main Draw	R16	4 - 1	11:9 11:9 13:15 11:6 11:4	YANG Zi	
+2005	Korean Open Suncheon 2005	SHIMOYAMA Takanori (JPN)		LEE Jinkwon (KOR)		U21MS	Main Draw	R16	1 - 4	1:11 6:11 14:12 7:11 9:11	LEE Jinkwon	
+2005	Korean Open Suncheon 2005	BOBILLIER Loic (FRA)		TAKAKIWA Taku (JPN)		U21MS	Main Draw	R16	4 - 2	11:3 11:5 8:11 11:7 8:11 12:10	BOBILLIER Loic	
+2005	Korean Open Suncheon 2005	CHO Jihoon (KOR)		LO Dany (FRA)		U21MS	Main Draw	R16	4 - 0	11:7 11:7 11:7 11:7	CHO Jihoon	
+2005	Korean Open Suncheon 2005	WU Chih-Chi (TPE)		NAKANO Yusuke (JPN)		U21MS	Main Draw	R16	1 - 4	9:11 12:14 9:11 11:7 6:11	NAKANO Yusuke	
+2005	Korean Open Suncheon 2005	MIZUNO Yuya (JPN)		BERTIN Christophe (FRA)		U21MS	Main Draw	R16	4 - 3	11:7 8:11 11:8 11:6 7:11 5:11 12:10	MIZUNO Yuya	
+2005	Korean Open Suncheon 2005	KIM Taehoon (KOR)		TAKAKIWA Kenichi (JPN)		U21MS	Main Draw	R16	0 - 4	9:11 7:11 10:12 8:11	TAKAKIWA Kenichi
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 92
+
+2005	Korean Open Suncheon 2005	LI Jiawei (SGP)		KO Eunjin (KOR)		WS	Main Draw	R32	4 - 0	11:5 11:6 13:11 11:4	LI Jiawei	
+2005	Korean Open Suncheon 2005	JEON Hyekyung (KOR)		HIURA Reiko (JPN)		WS	Main Draw	R32	1 - 4	11:13 13:11 6:11 1:11 8:11	HIURA Reiko	
+2005	Korean Open Suncheon 2005	LEE Eunhee (KOR)		WANG Yuegu (SGP)		WS	Main Draw	R32	2 - 4	11:8 11:5 7:11 7:11 11:13 8:11	WANG Yuegu	
+2005	Korean Open Suncheon 2005	PAN Chun-Chu (TPE)		FUJINUMA Ai (JPN)		WS	Main Draw	R32	4 - 2	5:11 2:11 11:9 12:10 11:6 11:4	PAN Chun-Chu	
+2005	Korean Open Suncheon 2005	SUN Beibei (SGP)		NAM Somi (KOR)		WS	Main Draw	R32	4 - 1	11:8 11:1 11:13 11:5 11:3	SUN Beibei	
+2005	Korean Open Suncheon 2005	LEE Hyangmi (KOR)		FUKUOKA Haruna (JPN)		WS	Main Draw	R32	0 - 4	4:11 1:11 6:11 8:11	FUKUOKA Haruna	
+2005	Korean Open Suncheon 2005	XU Yan (SGP)		PARK Miyoung (KOR)		WS	Main Draw	R32	1 - 4	11:9 8:11 10:12 6:11 8:11	PARK Miyoung	
+2005	Korean Open Suncheon 2005	WATANABE Yuko (JPN)		MOON Hyunjung (KOR)		WS	Main Draw	R32	1 - 4	11:9 9:11 6:11 9:11 9:11	MOON Hyunjung	
+2005	Korean Open Suncheon 2005	PAVLOVICH Viktoria (BLR)		KIM Soongsil (KOR)		WS	Main Draw	R32	2 - 4	12:14 11:7 4:11 11:8 3:11 4:11	KIM Soongsil	
+2005	Korean Open Suncheon 2005	SAKAMOTO Saori (JPN)		TAN Paey Fern (SGP)		WS	Main Draw	R32	1 - 4	7:11 11:9 9:11 7:11 5:11	TAN Paey Fern	
+2005	Korean Open Suncheon 2005	KIM Bokrae (KOR)		ITO Midori (JPN)		WS	Main Draw	R32	4 - 2	8:11 11:6 11:4 11:13 11:7 11:6	KIM Bokrae	
+2005	Korean Open Suncheon 2005	SUH Hyo Won (KOR)		ZHANG Xueling (SGP)		WS	Main Draw	R32	4 - 3	12:10 8:11 11:4 9:11 10:12 11:1 11:4	SUH Hyo Won	
+2005	Korean Open Suncheon 2005	HIRANO Sayaka (JPN)		KIM Minhee (YOB=1985) (KOR)		WS	Main Draw	R32	4 - 0	11:7 11:3 11:3 11:9	HIRANO Sayaka	
+2005	Korean Open Suncheon 2005	KIM Junghyun (KOR)		SHEN Yanfei (ESP)		WS	Main Draw	R32	1 - 4	5:11 6:11 11:8 4:11 7:11	SHEN Yanfei	
+2005	Korean Open Suncheon 2005	KIM Kyungha (KOR)		HUANG Yi-Hua (TPE)		WS	Main Draw	R32	1 - 4	7:11 9:11 6:11 11:6 2:11	HUANG Yi-Hua	
+2005	Korean Open Suncheon 2005	NOGAMI Sayaka (JPN)		KIM Kyungah (KOR)		WS	Main Draw	R32	0 - 4	5:11 9:11 5:11 3:11	KIM Kyungah	
+2005	Korean Open Suncheon 2005	LI Jiawei (SGP)		HIURA Reiko (JPN)		WS	Main Draw	R16	4 - 1	11:9 11:8 11:4 6:11 11:4	LI Jiawei	
+2005	Korean Open Suncheon 2005	WANG Yuegu (SGP)		PAN Chun-Chu (TPE)		WS	Main Draw	R16	4 - 0	11:4 11:7 11:2 11:5	WANG Yuegu	
+2005	Korean Open Suncheon 2005	SUN Beibei (SGP)		FUKUOKA Haruna (JPN)		WS	Main Draw	R16	0 - 4	9:11 7:11 6:11 9:11	FUKUOKA Haruna	
+2005	Korean Open Suncheon 2005	PARK Miyoung (KOR)		MOON Hyunjung (KOR)		WS	Main Draw	R16	2 - 4	8:11 11:8 5:11 5:11 11:8 7:11	MOON Hyunjung	
+2005	Korean Open Suncheon 2005	KIM Soongsil (KOR)		TAN Paey Fern (SGP)		WS	Main Draw	R16	4 - 0	11:7 11:7 11:4 11:6	KIM Soongsil	
+2005	Korean Open Suncheon 2005	KIM Bokrae (KOR)		SUH Hyo Won (KOR)		WS	Main Draw	R16	4 - 0	11:9 11:7 11:6 11:8	KIM Bokrae	
+2005	Korean Open Suncheon 2005	HIRANO Sayaka (JPN)		SHEN Yanfei (ESP)		WS	Main Draw	R16	4 - 1	10:12 11:7 11:9 11:9 11:3	HIRANO Sayaka	
+2005	Korean Open Suncheon 2005	HUANG Yi-Hua (TPE)		KIM Kyungah (KOR)		WS	Main Draw	R16	0 - 4	1:11 6:11 6:11 5:11	KIM Kyungah	
+2005	Korean Open Suncheon 2005	LI Jiawei (SGP)		WANG Yuegu (SGP)		WS	Main Draw	QuarterFinal	4 - 2	12:10 11:5 9:11 11:7 8:11 12:10	LI Jiawei	
+2005	Korean Open Suncheon 2005	FUKUOKA Haruna (JPN)		MOON Hyunjung (KOR)		WS	Main Draw	QuarterFinal	1 - 4	9:11 11:9 3:11 11:13 6:11	MOON Hyunjung	
+2005	Korean Open Suncheon 2005	KIM Soongsil (KOR)		KIM Bokrae (KOR)		WS	Main Draw	QuarterFinal	4 - 1	11:8 6:11 11:9 11:9 11:8	KIM Soongsil	
+2005	Korean Open Suncheon 2005	HIRANO Sayaka (JPN)		KIM Kyungah (KOR)		WS	Main Draw	QuarterFinal	1 - 4	12:10 7:11 7:11 6:11 5:11	KIM Kyungah	
+2005	Korean Open Suncheon 2005	KIM Soongsil (KOR)		KIM Kyungah (KOR)		WS	Main Draw	SemiFinal	2 - 4	7:11 15:13 8:11 11:4 9:11 10:12	KIM Kyungah	
+2005	Korean Open Suncheon 2005	LI Jiawei (SGP)		MOON Hyunjung (KOR)		WS	Main Draw	SemiFinal	4 - 1	8:11 12:10 11:7 11:6 11:8	LI Jiawei	
+2005	Korean Open Suncheon 2005	LI Jiawei (SGP)		KIM Kyungah (KOR)		WS	Main Draw	Final	3 - 4	9:11 12:10 11:7 12:10 6:11 2:11 10:12	KIM Kyungah	
+2005	Korean Open Suncheon 2005	JEON Hyekyung (KOR)		NOGAMI Sayaka (JPN)		WS	Qualification		4 - 0	11:6 13:11 13:11 11:4	JEON Hyekyung	
+2005	Korean Open Suncheon 2005	HUANG Yi-Hua (TPE)		KIM Soongsil (KOR)		WS	Qualification		4 - 1	11:6 11:4 10:12 12:10 11:9	HUANG Yi-Hua	
+2005	Korean Open Suncheon 2005	HUANG Yi-Hua (TPE)		HASAMA Nozomi (JPN)		WS	Qualification	QR2	4 - 0	11:6 11:7 11:5 11:4	HUANG Yi-Hua	
+2005	Korean Open Suncheon 2005	HASAMA Nozomi (JPN)		KIM Soongsil (KOR)		WS	Qualification	3	0 - 4	9:11 6:11 9:11 10:12	KIM Soongsil	
+2005	Korean Open Suncheon 2005	LU Yun-Feng (TPE)		ITO Midori (JPN)		WS	Qualification		3 - 4	17:15 6:11 5:11 11:7 8:11 11:8 9:11	ITO Midori	
+2005	Korean Open Suncheon 2005	LU Yun-Feng (TPE)		KO Eunjin (KOR)		WS	Qualification	QR2	2 - 4	8:11 11:6 11:9 8:11 5:11 9:11	KO Eunjin	
+2005	Korean Open Suncheon 2005	KO Eunjin (KOR)		ITO Midori (JPN)		WS	Qualification	3	2 - 4	4:11 8:11 10:12 13:11 11:8 7:11	ITO Midori	
+2005	Korean Open Suncheon 2005	PARK Miyoung (KOR)		WATANABE Yuko (JPN)		WS	Qualification		4 - 0	11:6 11:9 11:5 11:4	PARK Miyoung	
+2005	Korean Open Suncheon 2005	PARK Miyoung (KOR)		XU Chris (CAN)		WS	Qualification	QR2	4 - 1	5:11 11:6 11:7 11:8 11:8	PARK Miyoung	
+2005	Korean Open Suncheon 2005	XU Chris (CAN)		WATANABE Yuko (JPN)		WS	Qualification	3	0 - 4	9:11 7:11 17:19 7:11	WATANABE Yuko	
+2005	Korean Open Suncheon 2005	KIM Junghyun (KOR)		NAM Somi (KOR)		WS	Qualification		4 - 1	4:11 11:6 11:6 12:10 11:7	KIM Junghyun	
+2005	Korean Open Suncheon 2005	KIM Junghyun (KOR)		YU Mei-Ju (TPE)		WS	Qualification	QR2	4 - 0	11:6 11:6 12:10 11:6	KIM Junghyun	
+2005	Korean Open Suncheon 2005	YU Mei-Ju (TPE)		NAM Somi (KOR)		WS	Qualification	3	1 - 4	7:11 9:11 7:11 11:7 5:11	NAM Somi	
+2005	Korean Open Suncheon 2005	LEE Hyangmi (KOR)		SUH Hyo Won (KOR)		WS	Qualification		4 - 0	11:2 11:6 11:7 11:7	LEE Hyangmi	
+2005	Korean Open Suncheon 2005	LEE Hyangmi (KOR)		LEE I-Chen (TPE)		WS	Qualification	QR2	4 - 0	11:6 11:6 11:5 11:5	LEE Hyangmi	
+2005	Korean Open Suncheon 2005	LEE I-Chen (TPE)		SUH Hyo Won (KOR)		WS	Qualification	3	1 - 4	5:11 11:9 5:11 8:11 9:11	SUH Hyo Won	
+2005	Korean Open Suncheon 2005	KIM Hyehyun (KOR)		SUNG Jungah (KOR)		WS	Qualification		2 - 4	7:11 11:8 8:11 11:4 5:11 13:15	SUNG Jungah	
+2005	Korean Open Suncheon 2005	PAN Chun-Chu (TPE)		WANG Yuegu (SGP)		WS	Qualification	QR2	0 - 4	5:11 6:11 6:11 6:11	WANG Yuegu	
+2005	Korean Open Suncheon 2005	KIM Hyehyun (KOR)		PAN Chun-Chu (TPE)		WS	Qualification	3	1 - 4	9:11 11:6 7:11 10:12 6:11	PAN Chun-Chu	
+2005	Korean Open Suncheon 2005	SUNG Jungah (KOR)		WANG Yuegu (SGP)		WS	Qualification	QR4	2 - 4	11:8 11:13 2:11 10:12 11:5 8:11	WANG Yuegu	
+2005	Korean Open Suncheon 2005	KIM Hyehyun (KOR)		WANG Yuegu (SGP)		WS	Qualification	5	0 - 4	2:11 9:11 4:11 3:11	WANG Yuegu	
+2005	Korean Open Suncheon 2005	PAN Chun-Chu (TPE)		SUNG Jungah (KOR)		WS	Qualification	6	4 - 2	4:11 11:4 15:13 11:5 3:11 11:4	PAN Chun-Chu	
+2005	Korean Open Suncheon 2005	SAKAMOTO Saori (JPN)		SU Hsien-Ching (TPE)		WS	Qualification		4 - 0	11:4 11:2 11:4 12:10	SAKAMOTO Saori	
+2005	Korean Open Suncheon 2005	KIM Minhee (YOB=1985) (KOR)		LEE Junga (KOR)		WS	Qualification	QR2	4 - 2	11:6 13:15 11:13 12:10 11:3 11:8	KIM Minhee (YOB=1985)	
+2005	Korean Open Suncheon 2005	SAKAMOTO Saori (JPN)		KIM Minhee (YOB=1985) (KOR)		WS	Qualification	3	4 - 1	12:10 6:11 11:7 11:8 11:9	SAKAMOTO Saori	
+2005	Korean Open Suncheon 2005	SU Hsien-Ching (TPE)		LEE Junga (KOR)		WS	Qualification	QR4	0 - 4	6:11 10:12 10:12 7:11	LEE Junga	
+2005	Korean Open Suncheon 2005	SAKAMOTO Saori (JPN)		LEE Junga (KOR)		WS	Qualification	5	4 - 2	11:9 10:12 11:3 11:9 5:11 15:13	SAKAMOTO Saori	
+2005	Korean Open Suncheon 2005	KIM Minhee (YOB=1985) (KOR)		SU Hsien-Ching (TPE)		WS	Qualification	6	4 - 1	11:3 13:11 6:11 11:7 12:10	KIM Minhee (YOB=1985)	
+2005	Korean Open Suncheon 2005	KIM Hyehyun (KOR)		SU Hsien-Ching (TPE)		U21WS	Qualification		1 - 3	11:7 6:11 9:11 8:11	SU Hsien-Ching	
+2005	Korean Open Suncheon 2005	KIM Hyehyun (KOR)		NOGAMI Sayaka (JPN)		U21WS	Qualification	QR2	3 - 0	11:3 11:4 11:5	KIM Hyehyun	
+2005	Korean Open Suncheon 2005	NOGAMI Sayaka (JPN)		SU Hsien-Ching (TPE)		U21WS	Qualification	3	3 - 1	11:8 11:9 7:11 11:8	NOGAMI Sayaka	
+2005	Korean Open Suncheon 2005	SAKAMOTO Saori (JPN)		LEE Junga (KOR)		U21WS	Qualification		3 - 2	10:12 11:6 11:2 7:11 11:8	SAKAMOTO Saori	
+2005	Korean Open Suncheon 2005	SAKAMOTO Saori (JPN)		ZHANG Mo (CAN)		U21WS	Qualification	QR2	3 - 0	11:6 13:11 11:5	SAKAMOTO Saori	
+2005	Korean Open Suncheon 2005	ZHANG Mo (CAN)		LEE Junga (KOR)		U21WS	Qualification	3	2 - 3	11:7 7:11 4:11 11:8 6:11	LEE Junga	
+2005	Korean Open Suncheon 2005	KIM Minhee (YOB=1985) (KOR)		ITO Midori (JPN)		U21WS	Qualification		1 - 3	11:5 3:11 9:11 6:11	ITO Midori	
+2005	Korean Open Suncheon 2005	YU Mei-Ju (TPE)		SUH Hyo Won (KOR)		U21WS	Qualification	QR2	0 - 3	7:11 8:11 9:11	SUH Hyo Won	
+2005	Korean Open Suncheon 2005	KIM Minhee (YOB=1985) (KOR)		YU Mei-Ju (TPE)		U21WS	Qualification	3	3 - 1	11:8 11:2 8:11 11:5	KIM Minhee (YOB=1985)	
+2005	Korean Open Suncheon 2005	ITO Midori (JPN)		SUH Hyo Won (KOR)		U21WS	Qualification	QR4	1 - 3	8:11 3:11 11:9 5:11	SUH Hyo Won	
+2005	Korean Open Suncheon 2005	KIM Minhee (YOB=1985) (KOR)		SUH Hyo Won (KOR)		U21WS	Qualification	5	3 - 1	5:11 11:8 11:8 15:13	KIM Minhee (YOB=1985)	
+2005	Korean Open Suncheon 2005	YU Mei-Ju (TPE)		ITO Midori (JPN)		U21WS	Qualification	6	0 - 3	5:11 6:11 12:14	ITO Midori	
+2005	Korean Open Suncheon 2005	LEE I-Chen (TPE)		NAM Somi (KOR)		U21WS	Qualification		3 - 0	11:9 12:10 11:7	LEE I-Chen	
+2005	Korean Open Suncheon 2005	HASAMA Nozomi (JPN)		WATANABE Yuko (JPN)		U21WS	Qualification	QR2	3 - 1	11:9 11:7 7:11 11:6	HASAMA Nozomi	
+2005	Korean Open Suncheon 2005	LEE I-Chen (TPE)		HASAMA Nozomi (JPN)		U21WS	Qualification	3	0 - 3	9:11 9:11 6:11	HASAMA Nozomi	
+2005	Korean Open Suncheon 2005	NAM Somi (KOR)		WATANABE Yuko (JPN)		U21WS	Qualification	QR4	3 - 2	11:7 7:11 12:14 11:6 11:6	NAM Somi	
+2005	Korean Open Suncheon 2005	LEE I-Chen (TPE)		WATANABE Yuko (JPN)		U21WS	Qualification	5	2 - 3	2:11 13:11 11:6 6:11 6:11	WATANABE Yuko	
+2005	Korean Open Suncheon 2005	HASAMA Nozomi (JPN)		NAM Somi (KOR)		U21WS	Qualification	6	3 - 2	12:10 9:11 11:4 14:16 11:7	HASAMA Nozomi	
+2005	Korean Open Suncheon 2005	MOON Hyunjung (KOR)		SU Hsien-Ching (TPE)		U21WS	Main Draw	R16	4 - 2	5:11 11:3 11:9 8:11 11:7 11:5	MOON Hyunjung	
+2005	Korean Open Suncheon 2005	HASAMA Nozomi (JPN)		LEE Eunhee (KOR)		U21WS	Main Draw	R16	3 - 4	12:10 11:13 11:8 11:7 5:11 2:11 10:12	LEE Eunhee	
+2005	Korean Open Suncheon 2005	HUANG Yi-Hua (TPE)		KIM Hyehyun (KOR)		U21WS	Main Draw	R16	4 - 1	11:4 11:4 11:6 7:11 11:3	HUANG Yi-Hua	
+2005	Korean Open Suncheon 2005	LEE I-Chen (TPE)		XU Yan (SGP)		U21WS	Main Draw	R16	0 - 4	8:11 2:11 7:11 7:11	XU Yan	
+2005	Korean Open Suncheon 2005	FUKUOKA Haruna (JPN)		LEE Junga (KOR)		U21WS	Main Draw	R16	4 - 0	11:2 11:7 11:3 11:9	FUKUOKA Haruna	
+2005	Korean Open Suncheon 2005	SAKAMOTO Saori (JPN)		KIM Junghyun (KOR)		U21WS	Main Draw	R16	4 - 3	18:16 6:11 7:11 11:5 9:11 11:5 14:12	SAKAMOTO Saori	
+2005	Korean Open Suncheon 2005	LU Yun-Feng (TPE)		SUH Hyo Won (KOR)		U21WS	Main Draw	R16	2 - 4	6:11 11:9 9:11 7:11 11:3 6:11	SUH Hyo Won	
+2005	Korean Open Suncheon 2005	ITO Midori (JPN)		SUN Beibei (SGP)		U21WS	Main Draw	R16	2 - 4	11:3 12:10 10:12 1:11 4:11 8:11	SUN Beibei	
+2005	Korean Open Suncheon 2005	MOON Hyunjung (KOR)		LEE Eunhee (KOR)		U21WS	Main Draw	QuarterFinal	4 - 1	11:9 11:3 7:11 11:7 11:5	MOON Hyunjung	
+2005	Korean Open Suncheon 2005	HUANG Yi-Hua (TPE)		XU Yan (SGP)		U21WS	Main Draw	QuarterFinal	4 - 2	7:11 11:7 12:10 9:11 11:3 16:14	HUANG Yi-Hua	
+2005	Korean Open Suncheon 2005	FUKUOKA Haruna (JPN)		SAKAMOTO Saori (JPN)		U21WS	Main Draw	QuarterFinal	4 - 3	10:12 11:5 12:10 7:11 13:11 9:11 11:4	FUKUOKA Haruna	
+2005	Korean Open Suncheon 2005	SUH Hyo Won (KOR)		SUN Beibei (SGP)		U21WS	Main Draw	QuarterFinal	2 - 4	11:9 9:11 12:10 11:13 8:11 5:11	SUN Beibei	
+2005	Korean Open Suncheon 2005	MOON Hyunjung (KOR)		HUANG Yi-Hua (TPE)		U21WS	Main Draw	SemiFinal	3 - 4	11:6 9:11 13:11 9:11 11:4 7:11 8:11	HUANG Yi-Hua	
+2005	Korean Open Suncheon 2005	FUKUOKA Haruna (JPN)		SUN Beibei (SGP)		U21WS	Main Draw	SemiFinal	1 - 4	14:16 12:10 8:11 6:11 4:11	SUN Beibei	
+2005	Korean Open Suncheon 2005	HUANG Yi-Hua (TPE)		SUN Beibei (SGP)		U21WS	Main Draw	Final	0 - 4	9:11 10:12 8:11 9:11	SUN Beibei
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 25
+
+2005	Korean Open Suncheon 2005	JINDRAK Karl (AUT)	SCHLAGER Werner (AUT)	LEE Jinkwon (KOR)	YOON Jaeyoung (KOR)	MD	Main Draw	R16	4 - 1	11:5 11:7 6:11 11:7 12:10	JINDRAK Karl	SCHLAGER Werner
+2005	Korean Open Suncheon 2005	CHEN Weixing (AUT)	GARDOS Robert (AUT)	MIZUNO Yuya (JPN)	TANAKA Katsuhito (JPN)	MD	Main Draw	R16	4 - 0	11:7 12:10 12:10 11:4	CHEN Weixing	GARDOS Robert
+2005	Korean Open Suncheon 2005	JINDRAK Karl (AUT)	SCHLAGER Werner (AUT)	CHO Jihoon (KOR)	KIM Taehoon (KOR)	MD	Main Draw	QuarterFinal	3 - 4	4:11 11:6 8:11 11:3 11:6 9:11 7:11	CHO Jihoon	KIM Taehoon
+2005	Korean Open Suncheon 2005	CHEN Weixing (AUT)	GARDOS Robert (AUT)	DESPRES Rodolphe (FRA)	LEGOUT Christophe (FRA)	MD	Main Draw	QuarterFinal	4 - 2	12:10 12:10 12:14 11:9 13:15 11:4	CHEN Weixing	GARDOS Robert
+2005	Korean Open Suncheon 2005	CHEN Weixing (AUT)	GARDOS Robert (AUT)	LEE Jungwoo (KOR)	RYU Seungmin (KOR)	MD	Main Draw	SemiFinal	2 - 4	11:7 11:9 6:11 9:11 6:11 6:11	LEE Jungwoo	RYU Seungmin
+2005	Korean Open Suncheon 2005	CSABA Bence (CAN)	KASSAM Faazil (CAN)	CHO Jihoon (KOR)	KIM Taehoon (KOR)	MD	Qualification	QR16	1 - 3	9:11 5:11 11:5 3:11	CHO Jihoon	KIM Taehoon
+2005	Korean Open Suncheon 2005	ELENSKY Gregory (ISR)	LO Dany (FRA)	KANG Donghoon (KOR)	PARK Seungyong (KOR)	MD	Qualification	QR16	0 - 3	10:12 7:11 8:11	KANG Donghoon	PARK Seungyong
+2005	Korean Open Suncheon 2005	MIZUTANI Jun (JPN)	TAKAKIWA Taku (JPN)	CHO Eonrae (KOR)	YOO Changjae (KOR)	MD	Qualification	QR16	3 - 1	4:11 11:6 11:9 11:8	MIZUTANI Jun	TAKAKIWA Taku
+2005	Korean Open Suncheon 2005	MIZUNO Yuya (JPN)	TANAKA Katsuhito (JPN)	KIM Sangsoo (KOR)	LIM Jaehyun (KOR)	MD	Qualification	QR16	3 - 1	11:8 11:7 10:12 11:9	MIZUNO Yuya	TANAKA Katsuhito
+2005	Korean Open Suncheon 2005	NAKANO Yusuke (JPN)	SHIMOYAMA Takanori (JPN)	LEE Jinkwon (KOR)	YOON Jaeyoung (KOR)	MD	Qualification	QR16	0 - 3	8:11 9:11 8:11	LEE Jinkwon	YOON Jaeyoung
+2005	Korean Open Suncheon 2005	CHO Jihoon (KOR)	KIM Taehoon (KOR)	BERTIN Christophe (FRA)	BOBILLIER Loic (FRA)	MD	Main Draw	R16	4 - 1	4:11 11:7 13:11 11:9 11:6	CHO Jihoon	KIM Taehoon
+2005	Korean Open Suncheon 2005	KIM Junghoon (KOR)	LEE Bumhyung (KOR)	KISHIKAWA Seiya (JPN)	SAKAMOTO Ryusuke (JPN)	MD	Main Draw	R16	1 - 4	11:13 6:11 4:11 11:5 7:11	KISHIKAWA Seiya	SAKAMOTO Ryusuke
+2005	Korean Open Suncheon 2005	CHOI Hyunjin (KOR)	OH Sangeun (KOR)	MIZUTANI Jun (JPN)	TAKAKIWA Taku (JPN)	MD	Main Draw	R16	4 - 2	12:10 11:9 4:11 11:3 9:11 11:3	CHOI Hyunjin	OH Sangeun
+2005	Korean Open Suncheon 2005	TAKAKIWA Kenichi (JPN)	YEO Inho (KOR)	LEE Jungwoo (KOR)	RYU Seungmin (KOR)	MD	Main Draw	R16	1 - 4	7:11 7:11 12:10 4:11 5:11	LEE Jungwoo	RYU Seungmin
+2005	Korean Open Suncheon 2005	CHOI Hyunjin (KOR)	OH Sangeun (KOR)	LEE Jungwoo (KOR)	RYU Seungmin (KOR)	MD	Main Draw	QuarterFinal	3 - 4	7:11 12:10 6:11 11:3 11:6 7:11 3:11	LEE Jungwoo	RYU Seungmin
+2005	Korean Open Suncheon 2005	CHO Jihoon (KOR)	KIM Taehoon (KOR)	KISHIKAWA Seiya (JPN)	SAKAMOTO Ryusuke (JPN)	MD	Main Draw	SemiFinal	4 - 2	11:7 7:11 9:11 11:8 15:13 11:9	CHO Jihoon	KIM Taehoon
+2005	Korean Open Suncheon 2005	CHO Jihoon (KOR)	KIM Taehoon (KOR)	LEE Jungwoo (KOR)	RYU Seungmin (KOR)	MD	Main Draw	Final	0 - 4	7:11 8:11 4:11 5:11	LEE Jungwoo	RYU Seungmin
+2005	Korean Open Suncheon 2005	CHO Eonrae (KOR)	YOO Changjae (KOR)	HOU Ming-Tsung (TPE)	WEI Chun-Ta (TPE)	MD	Qualification	QR32	3 - 0	11:5 11:5 11:9	CHO Eonrae	YOO Changjae
+2005	Korean Open Suncheon 2005	CAI Xiaoli (SGP)	YANG Zi (SGP)	DESPRES Rodolphe (FRA)	LEGOUT Christophe (FRA)	MD	Main Draw	R16	2 - 4	6:11 11:9 5:11 11:8 9:11 11:13	DESPRES Rodolphe	LEGOUT Christophe
+2005	Korean Open Suncheon 2005	LI Hang (SGP)	ZHANG Yiqin (SGP)	KIM Junghoon (KOR)	LEE Bumhyung (KOR)	MD	Qualification	QR16	0 - 3	3:11 5:11 3:11	KIM Junghoon	LEE Bumhyung
+2005	Korean Open Suncheon 2005	GAO Ning (SGP)	ZHENG Qi (SGP)	TAKAKIWA Kenichi (JPN)	YEO Inho (KOR)	MD	Qualification	QR16	2 - 3	9:11 11:4 11:6 12:14 9:11	TAKAKIWA Kenichi	YEO Inho
+2005	Korean Open Suncheon 2005	CAI Xiaoli (SGP)	YANG Zi (SGP)	HUANG Sheng-Sheng (TPE)	SUN Wen-Wei (TPE)	MD	Qualification	QR16	3 - 1	11:8 12:10 8:11 11:5	CAI Xiaoli	YANG Zi
+2005	Korean Open Suncheon 2005	CHUANG Chih-Yuan (TPE)	HUANG Wei-Chin (TPE)	KANG Donghoon (KOR)	PARK Seungyong (KOR)	MD	Main Draw	R16	4 - 1	14:12 10:12 11:8 11:9 11:6	CHUANG Chih-Yuan	HUANG Wei-Chin
+2005	Korean Open Suncheon 2005	CHUANG Chih-Yuan (TPE)	HUANG Wei-Chin (TPE)	KISHIKAWA Seiya (JPN)	SAKAMOTO Ryusuke (JPN)	MD	Main Draw	QuarterFinal	2 - 4	8:11 9:11 9:11 16:14 11:8 4:11	KISHIKAWA Seiya	SAKAMOTO Ryusuke
+2005	Korean Open Suncheon 2005	CHIANG Hung-Chieh (TPE)	WU Chih-Chi (TPE)	NAKANO Yusuke (JPN)	SHIMOYAMA Takanori (JPN)	MD	Qualification	QR32	2 - 3	6:11 11:7 11:4 10:12 8:11	NAKANO Yusuke	SHIMOYAMA Takanori
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 20
+
+2005	Korean Open Suncheon 2005	FUKUOKA Haruna (JPN)	HIRANO Sayaka (JPN)	LI Jiawei (SGP)	XU Yan (SGP)	WD	Main Draw	R16	0 - 4	5:11 9:11 10:12 9:11	LI Jiawei	XU Yan
+2005	Korean Open Suncheon 2005	HASAMA Nozomi (JPN)	WATANABE Yuko (JPN)	PAVLOVICH Viktoria (BLR)	XU Chris (CAN)	WD	Main Draw	R16	3 - 4	9:11 11:8 11:5 8:11 4:11 11:9 10:12	PAVLOVICH Viktoria	XU Chris
+2005	Korean Open Suncheon 2005	NOGAMI Sayaka (JPN)	SAKAMOTO Saori (JPN)	KIM Soongsil (KOR)	LEE Eunhee (KOR)	WD	Qualification	QR16	3 - 2	11:8 11:9 7:11 12:14 11:7	NOGAMI Sayaka	SAKAMOTO Saori
+2005	Korean Open Suncheon 2005	JEON Hyekyung (KOR)	KIM Kyungha (KOR)	NOGAMI Sayaka (JPN)	SAKAMOTO Saori (JPN)	WD	Main Draw	R16	4 - 3	11:4 10:12 15:13 9:11 11:9 12:14 11:4	JEON Hyekyung	KIM Kyungha
+2005	Korean Open Suncheon 2005	KIM Minhee (YOB=1985) (KOR)	PARK Miyoung (KOR)	FUJINUMA Ai (JPN)	HIURA Reiko (JPN)	WD	Main Draw	R16	1 - 4	8:11 9:11 10:12 11:5 9:11	FUJINUMA Ai	HIURA Reiko
+2005	Korean Open Suncheon 2005	KIM Bokrae (KOR)	KIM Kyungah (KOR)	SUN Beibei (SGP)	WANG Yuegu (SGP)	WD	Main Draw	R16	2 - 4	8:11 6:11 11:7 7:11 11:2 8:11	SUN Beibei	WANG Yuegu
+2005	Korean Open Suncheon 2005	KIM Hyehyun (KOR)	KIM Junghyun (KOR)	TAN Paey Fern (SGP)	ZHANG Xueling (SGP)	WD	Main Draw	QuarterFinal	2 - 4	3:11 11:8 11:8 8:11 8:11 6:11	TAN Paey Fern	ZHANG Xueling
+2005	Korean Open Suncheon 2005	JEON Hyekyung (KOR)	KIM Kyungha (KOR)	FUJINUMA Ai (JPN)	HIURA Reiko (JPN)	WD	Main Draw	QuarterFinal	1 - 4	7:11 7:11 11:9 2:11 7:11	FUJINUMA Ai	HIURA Reiko
+2005	Korean Open Suncheon 2005	KIM Minhee (YOB=1985) (KOR)	PARK Miyoung (KOR)	SHEN Yanfei (ESP)	ZHANG Mo (CAN)	WD	Qualification	QR16	3 - 1	11:5 11:5 11:13 11:7	KIM Minhee (YOB=1985)	PARK Miyoung
+2005	Korean Open Suncheon 2005	KO Eunjin (KOR)	LEE Junga (KOR)	SUN Beibei (SGP)	WANG Yuegu (SGP)	WD	Qualification	QR16	0 - 3	8:11 3:11 6:11	SUN Beibei	WANG Yuegu
+2005	Korean Open Suncheon 2005	ITO Midori (JPN)	SUNG Jungah (KOR)	HASAMA Nozomi (JPN)	WATANABE Yuko (JPN)	WD	Qualification	QR16	1 - 3	11:9 8:11 12:14 8:11	HASAMA Nozomi	WATANABE Yuko
+2005	Korean Open Suncheon 2005	SUN Beibei (SGP)	WANG Yuegu (SGP)	LEE I-Chen (TPE)	PAN Chun-Chu (TPE)	WD	Main Draw	QuarterFinal	4 - 2	11:5 11:3 11:5 11:13 8:11 11:7	SUN Beibei	WANG Yuegu
+2005	Korean Open Suncheon 2005	LI Jiawei (SGP)	XU Yan (SGP)	PAVLOVICH Viktoria (BLR)	XU Chris (CAN)	WD	Main Draw	QuarterFinal	2 - 4	15:13 11:13 11:3 11:13 8:11 6:11	PAVLOVICH Viktoria	XU Chris
+2005	Korean Open Suncheon 2005	TAN Paey Fern (SGP)	ZHANG Xueling (SGP)	FUJINUMA Ai (JPN)	HIURA Reiko (JPN)	WD	Main Draw	SemiFinal	4 - 1	11:9 13:11 11:8 8:11 11:7	TAN Paey Fern	ZHANG Xueling
+2005	Korean Open Suncheon 2005	SUN Beibei (SGP)	WANG Yuegu (SGP)	PAVLOVICH Viktoria (BLR)	XU Chris (CAN)	WD	Main Draw	SemiFinal	4 - 0	12:10 13:11 11:5 11:7	SUN Beibei	WANG Yuegu
+2005	Korean Open Suncheon 2005	TAN Paey Fern (SGP)	ZHANG Xueling (SGP)	SUN Beibei (SGP)	WANG Yuegu (SGP)	WD	Main Draw	Final	4 - 2	9:11 11:6 12:10 6:11 11:5 11:5	TAN Paey Fern	ZHANG Xueling
+2005	Korean Open Suncheon 2005	HUANG Yi-Hua (TPE)	LU Yun-Feng (TPE)	KIM Hyehyun (KOR)	KIM Junghyun (KOR)	WD	Main Draw	R16	1 - 4	11:9 9:11 9:11 9:11 6:11	KIM Hyehyun	KIM Junghyun
+2005	Korean Open Suncheon 2005	SU Hsien-Ching (TPE)	YU Mei-Ju (TPE)	TAN Paey Fern (SGP)	ZHANG Xueling (SGP)	WD	Main Draw	R16	1 - 4	2:11 3:11 4:11 11:8 8:11	TAN Paey Fern	ZHANG Xueling
+2005	Korean Open Suncheon 2005	LEE I-Chen (TPE)	PAN Chun-Chu (TPE)	LEE Hyangmi (KOR)	MOON Hyunjung (KOR)	WD	Main Draw	R16	4 - 2	9:11 11:7 6:11 11:6 11:5 11:5	LEE I-Chen	PAN Chun-Chu
+2005	Korean Open Suncheon 2005	SU Hsien-Ching (TPE)	YU Mei-Ju (TPE)	NAM Somi (KOR)	SUH Hyo Won (KOR)	WD	Qualification	QR16	3 - 2	11:8 6:11 8:11 11:9 15:13	SU Hsien-Ching	YU Mei-Ju

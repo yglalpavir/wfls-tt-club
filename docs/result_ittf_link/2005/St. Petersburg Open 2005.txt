@@ -6,3 +6,390 @@
 参赛人数：512
 开始日期：2005-11-03
 结束日期：2005-11-06
+2005	St. Petersburg Open 2005	SAMSONOV Vladimir (BLR)		RUBTSOV Igor (RUS)		MS	Main Draw	R64	4 - 0	11:3 12:10 11:4 11:2	SAMSONOV Vladimir	
+2005	St. Petersburg Open 2005	VINOKUROV Aleksandr (RUS)		HAKANSSON Fredrik (SWE)		MS	Main Draw	R64	0 - 4	7:11 7:11 7:11 5:11	HAKANSSON Fredrik	
+2005	St. Petersburg Open 2005	PLACHY Josef (CZE)		ZUBCIC Tomislav (CRO)		MS	Main Draw	R64	4 - 1	11:6 11:6 11:7 9:11 12:10	PLACHY Josef	
+2005	St. Petersburg Open 2005	JOVER Sebastien (FRA)		FRANZ Peter (GER)		MS	Main Draw	R64	4 - 2	11:9 14:12 10:12 5:11 11:9 11:8	JOVER Sebastien	
+2005	St. Petersburg Open 2005	TAN Ruiwu (CRO)		KATKOV Ivan (UKR)		MS	Main Draw	R64	4 - 3	11:6 8:11 14:16 11:13 11:4 11:2 11:7	TAN Ruiwu	
+2005	St. Petersburg Open 2005	LIVENTSOV Alexey (RUS)		SEREDA Peter (SVK)		MS	Main Draw	R64	1 - 4	10:12 3:11 11:9 6:11 8:11	SEREDA Peter	
+2005	St. Petersburg Open 2005	AXELQVIST Johan (SWE)		JAPEC Tomislav (CRO)		MS	Main Draw	R64	4 - 3	11:7 8:11 11:6 11:8 5:11 7:11 11:9	AXELQVIST Johan	
+2005	St. Petersburg Open 2005	OLLIVIER Brice (FRA)		KARLSSON Peter (SWE)		MS	Main Draw	R64	0 - 4	5:11 9:11 10:12 11:13	KARLSSON Peter	
+2005	St. Petersburg Open 2005	PRIMORAC Zoran (CRO)		GORAK Daniel (POL)		MS	Main Draw	R64	4 - 1	11:5 9:11 11:4 14:12 11:3	PRIMORAC Zoran	
+2005	St. Petersburg Open 2005	PRYSHCHEPA Ievgen (UKR)		PISTEJ Lubomir (SVK)		MS	Main Draw	R64	2 - 4	6:11 11:5 12:10 9:11 10:12 5:11	PISTEJ Lubomir	
+2005	St. Petersburg Open 2005	GIONIS Panagiotis (GRE)		ACHANTA Sharath (IND)		MS	Main Draw	R64	4 - 1	11:9 11:8 9:11 11:8 11:7	GIONIS Panagiotis	
+2005	St. Petersburg Open 2005	BOBILLIER Loic (FRA)		SUCH Bartosz (POL)		MS	Main Draw	R64	4 - 0	11:5 11:8 11:4 11:4	BOBILLIER Loic	
+2005	St. Petersburg Open 2005	GARDOS Robert (AUT)		GRIGOREV Artur (RUS)		MS	Main Draw	R64	4 - 3	9:11 11:5 13:11 13:11 4:11 8:11 15:13	GARDOS Robert	
+2005	St. Petersburg Open 2005	ROY Soumyadeep (IND)		LO Dany (FRA)		MS	Main Draw	R64	2 - 4	8:11 11:9 8:11 11:9 4:11 7:11	LO Dany
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 3 of 3 Total: 248
+
+Start
+Prev
+1
+2
+3
+Next
+End
+2005	St. Petersburg Open 2005	CABESTANY Cedrik (FRA)		VARGA Zoltan (HUN)		MS	Main Draw	R64	2 - 4	11:4 13:11 10:12 11:13 6:11 7:11	VARGA Zoltan	
+2005	St. Petersburg Open 2005	JAKAB Janos (HUN)		CHEN Weixing (AUT)		MS	Main Draw	R64	2 - 4	3:11 11:5 4:11 7:11 14:12 6:11	CHEN Weixing	
+2005	St. Petersburg Open 2005	SCHLAGER Werner (AUT)		ANDRIANOV Sergei (RUS)		MS	Main Draw	R64	3 - 4	11:8 9:11 12:10 3:11 9:11 11:5 10:12	ANDRIANOV Sergei	
+2005	St. Petersburg Open 2005	HABESOHN Daniel (AUT)		MONTEIRO Thiago (BRA)		MS	Main Draw	R64	0 - 4	8:11 1:11 11:13 5:11	MONTEIRO Thiago	
+2005	St. Petersburg Open 2005	HOYAMA Hugo (BRA)		SKACHKOV Kirill (RUS)		MS	Main Draw	R64	4 - 2	13:11 6:11 7:11 11:6 11:7 11:9	HOYAMA Hugo	
+2005	St. Petersburg Open 2005	SARMATOV Alexei (UKR)		CHILA Patrick (FRA)		MS	Main Draw	R64	0 - 4	10:12 3:11 3:11 5:11	CHILA Patrick	
+2005	St. Petersburg Open 2005	WANG Zengyi (POL)		KONECNY Tomas (CZE)		MS	Main Draw	R64	4 - 0	11:4 11:6 11:6 11:4	WANG Zengyi	
+2005	St. Petersburg Open 2005	PAPAGEORGIOU Konstantinos (GRE)		PAZSY Ferenc (HUN)		MS	Main Draw	R64	1 - 4	9:11 9:11 4:11 11:8 8:11	PAZSY Ferenc	
+2005	St. Petersburg Open 2005	DIDUKH Oleksandr (UKR)		ASAMOAH Cyprian (SWE)		MS	Main Draw	R64	4 - 3	5:11 9:11 9:11 14:12 11:8 11:8 11:7	DIDUKH Oleksandr	
+2005	St. Petersburg Open 2005	VOZICKY Bohumil (CZE)		SMIRNOV Alexey (RUS)		MS	Main Draw	R64	1 - 4	4:11 16:14 4:11 5:11 9:11	SMIRNOV Alexey	
+2005	St. Petersburg Open 2005	SAIVE Jean-Michel (BEL)		GAVRILOV Denis (RUS)		MS	Main Draw	R64	4 - 3	5:11 10:12 11:7 11:9 8:11 11:6 11:8	SAIVE Jean-Michel	
+2005	St. Petersburg Open 2005	STEPHENSEN Gudmundur (ISL)		TOSIC Roko (CRO)		MS	Main Draw	R64	4 - 1	11:9 7:11 11:6 11:6 11:7	STEPHENSEN Gudmundur	
+2005	St. Petersburg Open 2005	FAZEKAS Peter (HUN)		REGENTOV Evgenii (RUS)		MS	Main Draw	R64	4 - 0	11:7 11:9 11:8 12:10	FAZEKAS Peter	
+2005	St. Petersburg Open 2005	BERTIN Christophe (FRA)		KARAKASEVIC Aleksandar (SRB)		MS	Main Draw	R64	4 - 3	11:9 10:12 11:9 10:12 7:11 11:8 11:9	BERTIN Christophe	
+2005	St. Petersburg Open 2005	ELOI Damien (FRA)		SIMONER Christoph (AUT)		MS	Main Draw	R64	4 - 0	11:7 11:7 11:4 11:4	ELOI Damien	
+2005	St. Petersburg Open 2005	SVENSSON Robert (SWE)		PHUNG Armand (FRA)		MS	Main Draw	R64	4 - 1	11:9 4:11 12:10 11:6 11:3	SVENSSON Robert	
+2005	St. Petersburg Open 2005	SHMYREV Maxim (RUS)		DEMETER Lehel (HUN)		MS	Main Draw	R64	4 - 2	11:8 4:11 9:11 13:11 11:8 11:5	SHMYREV Maxim	
+2005	St. Petersburg Open 2005	LINDNER Adam (HUN)		KREANGA Kalinikos (GRE)		MS	Main Draw	R64	2 - 4	11:13 12:10 3:11 11:8 7:11 3:11	KREANGA Kalinikos	
+2005	St. Petersburg Open 2005	SAMSONOV Vladimir (BLR)		HAKANSSON Fredrik (SWE)		MS	Main Draw	R32	4 - 1	11:5 11:6 11:7 7:11 11:4	SAMSONOV Vladimir	
+2005	St. Petersburg Open 2005	PLACHY Josef (CZE)		JOVER Sebastien (FRA)		MS	Main Draw	R32	4 - 2	12:10 11:4 11:6 7:11 9:11 11:7	PLACHY Josef	
+2005	St. Petersburg Open 2005	TAN Ruiwu (CRO)		SEREDA Peter (SVK)		MS	Main Draw	R32	4 - 2	11:9 11:7 11:7 13:15 8:11 12:10	TAN Ruiwu	
+2005	St. Petersburg Open 2005	AXELQVIST Johan (SWE)		KARLSSON Peter (SWE)		MS	Main Draw	R32	1 - 4	5:11 8:11 7:11 14:12 10:12	KARLSSON Peter	
+2005	St. Petersburg Open 2005	PRIMORAC Zoran (CRO)		PISTEJ Lubomir (SVK)		MS	Main Draw	R32	4 - 2	5:11 11:9 11:9 11:8 9:11 11:6	PRIMORAC Zoran	
+2005	St. Petersburg Open 2005	GIONIS Panagiotis (GRE)		BOBILLIER Loic (FRA)		MS	Main Draw	R32	4 - 0	11:6 13:11 11:7 11:9	GIONIS Panagiotis	
+2005	St. Petersburg Open 2005	GARDOS Robert (AUT)		LO Dany (FRA)		MS	Main Draw	R32	4 - 1	11:9 13:11 9:11 11:6 11:4	GARDOS Robert	
+2005	St. Petersburg Open 2005	VARGA Zoltan (HUN)		CHEN Weixing (AUT)		MS	Main Draw	R32	0 - 4	5:11 7:11 3:11 5:11	CHEN Weixing	
+2005	St. Petersburg Open 2005	ANDRIANOV Sergei (RUS)		MONTEIRO Thiago (BRA)		MS	Main Draw	R32	4 - 1	11:8 11:8 11:3 4:11 11:7	ANDRIANOV Sergei	
+2005	St. Petersburg Open 2005	HOYAMA Hugo (BRA)		CHILA Patrick (FRA)		MS	Main Draw	R32	1 - 4	10:12 3:11 11:9 6:11 8:11	CHILA Patrick	
+2005	St. Petersburg Open 2005	WANG Zengyi (POL)		PAZSY Ferenc (HUN)		MS	Main Draw	R32	4 - 1	11:7 11:9 11:4 9:11 11:5	WANG Zengyi	
+2005	St. Petersburg Open 2005	DIDUKH Oleksandr (UKR)		SMIRNOV Alexey (RUS)		MS	Main Draw	R32	3 - 4	6:11 10:12 11:2 11:8 11:6 8:11 8:11	SMIRNOV Alexey	
+2005	St. Petersburg Open 2005	SAIVE Jean-Michel (BEL)		STEPHENSEN Gudmundur (ISL)		MS	Main Draw	R32	4 - 2	13:15 11:8 9:11 11:9 11:3 11:2	SAIVE Jean-Michel	
+2005	St. Petersburg Open 2005	FAZEKAS Peter (HUN)		BERTIN Christophe (FRA)		MS	Main Draw	R32	1 - 4	7:11 2:11 8:11 11:4 10:12	BERTIN Christophe	
+2005	St. Petersburg Open 2005	ELOI Damien (FRA)		SVENSSON Robert (SWE)		MS	Main Draw	R32	3 - 4	7:11 11:8 11:13 8:11 11:0 11:8 11:13	SVENSSON Robert	
+2005	St. Petersburg Open 2005	SHMYREV Maxim (RUS)		KREANGA Kalinikos (GRE)		MS	Main Draw	R32	1 - 4	3:11 6:11 5:11 11:9 3:11	KREANGA Kalinikos	
+2005	St. Petersburg Open 2005	SAMSONOV Vladimir (BLR)		PLACHY Josef (CZE)		MS	Main Draw	R16	4 - 1	11:7 11:6 5:11 11:6 11:6	SAMSONOV Vladimir	
+2005	St. Petersburg Open 2005	TAN Ruiwu (CRO)		KARLSSON Peter (SWE)		MS	Main Draw	R16	2 - 4	11:9 8:11 9:11 11:8 8:11 7:11	KARLSSON Peter	
+2005	St. Petersburg Open 2005	PRIMORAC Zoran (CRO)		GIONIS Panagiotis (GRE)		MS	Main Draw	R16	4 - 3	9:11 11:9 11:6 13:11 5:11 9:11 11:8	PRIMORAC Zoran	
+2005	St. Petersburg Open 2005	GARDOS Robert (AUT)		CHEN Weixing (AUT)		MS	Main Draw	R16	4 - 1	11:7 8:11 11:6 11:4 11:8	GARDOS Robert	
+2005	St. Petersburg Open 2005	ANDRIANOV Sergei (RUS)		CHILA Patrick (FRA)		MS	Main Draw	R16	0 - 4	6:11 9:11 9:11 4:11	CHILA Patrick	
+2005	St. Petersburg Open 2005	WANG Zengyi (POL)		SMIRNOV Alexey (RUS)		MS	Main Draw	R16	1 - 4	11:7 6:11 5:11 7:11 6:11	SMIRNOV Alexey	
+2005	St. Petersburg Open 2005	SAIVE Jean-Michel (BEL)		BERTIN Christophe (FRA)		MS	Main Draw	R16	4 - 0	11:9 11:5 11:5 11:2	SAIVE Jean-Michel	
+2005	St. Petersburg Open 2005	SVENSSON Robert (SWE)		KREANGA Kalinikos (GRE)		MS	Main Draw	R16	0 - 4	6:11 6:11 7:11 12:14	KREANGA Kalinikos	
+2005	St. Petersburg Open 2005	PRIMORAC Zoran (CRO)		GARDOS Robert (AUT)		MS	Main Draw	QuarterFinal	4 - 1	11:7 11:9 8:11 11:3 11:7	PRIMORAC Zoran	
+2005	St. Petersburg Open 2005	CHILA Patrick (FRA)		SMIRNOV Alexey (RUS)		MS	Main Draw	QuarterFinal	4 - 1	6:11 13:11 11:5 12:10 11:9	CHILA Patrick	
+2005	St. Petersburg Open 2005	SAIVE Jean-Michel (BEL)		KREANGA Kalinikos (GRE)		MS	Main Draw	QuarterFinal	1 - 4	5:11 10:12 11:6 7:11 7:11	KREANGA Kalinikos	
+2005	St. Petersburg Open 2005	SAMSONOV Vladimir (BLR)		PRIMORAC Zoran (CRO)		MS	Main Draw	SemiFinal	4 - 1	11:5 11:8 12:10 7:11 11:9	SAMSONOV Vladimir	
+2005	St. Petersburg Open 2005	CHILA Patrick (FRA)		KREANGA Kalinikos (GRE)		MS	Main Draw	SemiFinal	0 - 4	8:11 6:11 6:11 7:11	KREANGA Kalinikos	
+2005	St. Petersburg Open 2005	SAMSONOV Vladimir (BLR)		KREANGA Kalinikos (GRE)		MS	Main Draw	Final	4 - 0	11:5 12:10 11:9 11:6	SAMSONOV Vladimir	
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 2 Total: 170
+
+Start
+Prev
+1
+2
+Next
+End
+2005	St. Petersburg Open 2005	ROHR Meike (GER)		MARKOVA Ekaterina (RUS)		WS	Qualification		4 - 3	11:6 5:11 11:3 7:11 10:12 11:7 15:13	ROHR Meike	
+2005	St. Petersburg Open 2005	ROHR Meike (GER)		TKACHOVA Tetyana (UKR)		WS	Qualification	QR2	4 - 1	10:12 11:6 11:4 11:6 13:11	ROHR Meike	
+2005	St. Petersburg Open 2005	TKACHOVA Tetyana (UKR)		MARKOVA Ekaterina (RUS)		WS	Qualification	3	4 - 3	6:11 11:5 11:2 11:4 8:11 10:12 11:3	TKACHOVA Tetyana	
+2005	St. Petersburg Open 2005	DAS Mouma (IND)		SHAVYRINA Marina (RUS)		WS	Qualification		1 - 4	7:11 7:11 4:11 11:8 6:11	SHAVYRINA Marina	
+2005	St. Petersburg Open 2005	DAS Mouma (IND)		MISIKONYTE Lina (LTU)		WS	Qualification	QR2	4 - 3	6:11 11:9 11:9 10:12 8:11 11:9 20:18	DAS Mouma	
+2005	St. Petersburg Open 2005	MISIKONYTE Lina (LTU)		SHAVYRINA Marina (RUS)		WS	Qualification	3	4 - 1	11:9 7:11 11:9 11:9 11:7	MISIKONYTE Lina	
+2005	St. Petersburg Open 2005	ROHR Gaby (GER)		PETZNER Martina (AUT)		WS	Qualification		4 - 3	11:6 11:6 9:11 6:11 11:9 10:12 11:9	ROHR Gaby	
+2005	St. Petersburg Open 2005	ROHR Gaby (GER)		MIKHAYLOVA Olga (RUS)		WS	Qualification	QR2	4 - 0	11:7 11:9 11:2 11:5	ROHR Gaby	
+2005	St. Petersburg Open 2005	MIKHAYLOVA Olga (RUS)		PETZNER Martina (AUT)		WS	Qualification	3	4 - 2	4:11 11:6 8:11 11:6 11:9 11:9	MIKHAYLOVA Olga	
+2005	St. Petersburg Open 2005	LI Bin (HUN)		KOSTROMINA Tatyana (1973) (BLR)		WS	Qualification		4 - 0	11:9 11:6 11:9 14:12	LI Bin	
+2005	St. Petersburg Open 2005	LI Bin (HUN)		KORNILOVA Alla (RUS)		WS	Qualification	QR2	4 - 2	9:11 12:10 11:7 5:11 12:10 11:4	LI Bin	
+2005	St. Petersburg Open 2005	KORNILOVA Alla (RUS)		KOSTROMINA Tatyana (1973) (BLR)		WS	Qualification	3	4 - 1	12:10 11:4 12:10 8:11 11:4	KORNILOVA Alla	
+2005	St. Petersburg Open 2005	PROKHOROVA Yulia (RUS)		COULIBALY Dieniouma (FRA)		WS	Qualification		4 - 2	7:11 6:11 11:7 11:9 11:9 11:5	PROKHOROVA Yulia	
+2005	St. Petersburg Open 2005	PROKHOROVA Yulia (RUS)		ISHIZUKA Miwako (JPN)		WS	Qualification	QR2	1 - 4	4:11 5:11 7:11 13:11 8:11	ISHIZUKA Miwako	
+2005	St. Petersburg Open 2005	ISHIZUKA Miwako (JPN)		COULIBALY Dieniouma (FRA)		WS	Qualification	3	4 - 0	11:4 11:8 12:10 11:8	ISHIZUKA Miwako	
+2005	St. Petersburg Open 2005	TIKHOMIROVA Anna (RUS)		ABRAMOVA Natalia (RUS)		WS	Qualification		4 - 1	11:4 11:5 11:7 6:11 11:5	TIKHOMIROVA Anna	
+2005	St. Petersburg Open 2005	ONO Shiho (JPN)		KUZMINA Elena (RUS)		WS	Qualification		4 - 0	11:6 11:4 11:2 11:5	ONO Shiho	
+2005	St. Petersburg Open 2005	ONO Shiho (JPN)		KIRITSA Liudmila (RUS)		WS	Qualification	QR2	4 - 1	11:5 11:9 11:6 9:11 11:5	ONO Shiho	
+2005	St. Petersburg Open 2005	KIRITSA Liudmila (RUS)		KUZMINA Elena (RUS)		WS	Qualification	3	4 - 2	11:7 7:11 11:9 5:11 11:7 11:8	KIRITSA Liudmila	
+2005	St. Petersburg Open 2005	TERUI Moemi (JPN)		ANDREEVA Liidia (EST)		WS	Qualification		4 - 1	11:4 11:5 10:12 12:10 11:8	TERUI Moemi	
+2005	St. Petersburg Open 2005	TERUI Moemi (JPN)		FETUKHINA Margarita (RUS)		WS	Qualification	QR2	4 - 0	11:5 12:10 11:3 12:10	TERUI Moemi	
+2005	St. Petersburg Open 2005	FETUKHINA Margarita (RUS)		ANDREEVA Liidia (EST)		WS	Qualification	3	4 - 3	11:7 9:11 9:11 6:11 11:7 11:6 11:9	FETUKHINA Margarita	
+2005	St. Petersburg Open 2005	LOSOSOVSKAYA Olga (RUS)		PRIVALOVA Alexandra (BLR)		WS	Qualification		4 - 0	11:9 11:3 11:3 11:5	LOSOSOVSKAYA Olga	
+2005	St. Petersburg Open 2005	LOSOSOVSKAYA Olga (RUS)		AMBRUS Timea (HUN)		WS	Qualification	QR2	4 - 0	11:5 11:4 12:10 11:6	LOSOSOVSKAYA Olga	
+2005	St. Petersburg Open 2005	AMBRUS Timea (HUN)		PRIVALOVA Alexandra (BLR)		WS	Qualification	3	4 - 0	11:9 11:4 11:8 11:7	AMBRUS Timea	
+2005	St. Petersburg Open 2005	GHATAK Poulomi (IND)		SMIRNOVA Maria (EST)		WS	Qualification		4 - 1	12:10 8:11 11:9 11:4 11:7	GHATAK Poulomi	
+2005	St. Petersburg Open 2005	GHATAK Poulomi (IND)		LEMESHEVSKAYA Valeriya (RUS)		WS	Qualification	QR2	4 - 1	11:8 4:11 11:7 11:3 11:8	GHATAK Poulomi	
+2005	St. Petersburg Open 2005	LEMESHEVSKAYA Valeriya (RUS)		SMIRNOVA Maria (EST)		WS	Qualification	3	4 - 0	11:7 11:4 11:0 12:10	LEMESHEVSKAYA Valeriya	
+2005	St. Petersburg Open 2005	DOLGIKH Maria (RUS)		KARAGODINA Inna (BLR)		WS	Qualification		4 - 0	11:7 11:3 11:8 11:4	DOLGIKH Maria	
+2005	St. Petersburg Open 2005	DOLGIKH Maria (RUS)		SAHA Nandita (IND)		WS	Qualification	QR2	4 - 0	11:4 11:6 13:11 11:5	DOLGIKH Maria	
+2005	St. Petersburg Open 2005	SAHA Nandita (IND)		KARAGODINA Inna (BLR)		WS	Qualification	3	4 - 1	11:4 8:11 11:5 11:6 11:6	SAHA Nandita	
+2005	St. Petersburg Open 2005	KOTIKHINA Irina (RUS)		BARTOSOVA Hana (CZE)		WS	Qualification		4 - 1	11:3 11:6 8:11 11:8 11:7	KOTIKHINA Irina	
+2005	St. Petersburg Open 2005	KOTIKHINA Irina (RUS)		CAHOREAU Nathalie (FRA)		WS	Qualification	QR2	4 - 1	11:7 15:13 12:14 11:3 11:8	KOTIKHINA Irina	
+2005	St. Petersburg Open 2005	CAHOREAU Nathalie (FRA)		BARTOSOVA Hana (CZE)		WS	Qualification	3	4 - 2	11:8 11:6 11:8 8:11 4:11 11:5	CAHOREAU Nathalie	
+2005	St. Petersburg Open 2005	VORONOVA Anastasia (RUS)		ISAEVA Anna (RUS)		WS	Qualification		4 - 3	11:9 11:8 8:11 9:11 11:6 9:11 11:5	VORONOVA Anastasia	
+2005	St. Petersburg Open 2005	VORONOVA Anastasia (RUS)		PARTYKA Natalia (POL)		WS	Qualification	QR2	3 - 4	14:16 11:7 10:12 8:11 11:4 14:12 7:11	PARTYKA Natalia	
+2005	St. Petersburg Open 2005	PARTYKA Natalia (POL)		ISAEVA Anna (RUS)		WS	Qualification	3	4 - 1	11:8 7:11 11:5 11:7 11:9	PARTYKA Natalia	
+2005	St. Petersburg Open 2005	PETUKHOVA Evgeniya (RUS)		MIKHAILOVA Tatiana (RUS)		WS	Qualification		3 - 4	11:7 6:11 11:6 11:9 9:11 3:11 8:11	MIKHAILOVA Tatiana	
+2005	St. Petersburg Open 2005	PETUKHOVA Evgeniya (RUS)		PERGEL Szandra (HUN)		WS	Qualification	QR2	2 - 4	4:11 11:9 8:11 7:11 12:10 8:11	PERGEL Szandra	
+2005	St. Petersburg Open 2005	PERGEL Szandra (HUN)		MIKHAILOVA Tatiana (RUS)		WS	Qualification	3	4 - 3	9:11 11:8 15:13 9:11 11:9 6:11 11:8	PERGEL Szandra	
+2005	St. Petersburg Open 2005	HARABASZOVA Lenka (CZE)		TIMINA Elena (NED)		WS	Qualification		1 - 4	11:7 8:11 9:11 7:11 4:11	TIMINA Elena	
+2005	St. Petersburg Open 2005	HARABASZOVA Lenka (CZE)		MIKHAILOVA Polina (RUS)		WS	Qualification	QR2	3 - 4	11:7 11:6 4:11 11:7 12:14 9:11 10:12	MIKHAILOVA Polina	
+2005	St. Petersburg Open 2005	MIKHAILOVA Polina (RUS)		TIMINA Elena (NED)		WS	Qualification	3	1 - 4	9:11 5:11 11:5 6:11 3:11	TIMINA Elena	
+2005	St. Petersburg Open 2005	POTA Georgina (HUN)		LEMESHEVSKAYA Valeriya (RUS)		U21WS	Main Draw	R32	4 - 0	11:9 11:6 12:10 11:7	POTA Georgina	
+2005	St. Petersburg Open 2005	VORONOVA Anastasia (RUS)		ONO Shiho (JPN)		U21WS	Main Draw	R32	2 - 4	9:11 7:11 11:9 6:11 11:8 8:11	ONO Shiho	
+2005	St. Petersburg Open 2005	LI Bin (HUN)		SHAVYRINA Marina (RUS)		U21WS	Main Draw	R32	4 - 0	11:3 11:9 11:5 11:3	LI Bin	
+2005	St. Petersburg Open 2005	KUZMINA Elena (RUS)		GRUNDISCH Carole (FRA)		U21WS	Main Draw	R32	0 - 4	11:13 7:11 5:11 3:11	GRUNDISCH Carole	
+2005	St. Petersburg Open 2005	HEINE Veronika (AUT)		NAZARIAN Kristina (RUS)		U21WS	Main Draw	R32	4 - 1	11:6 11:5 0:11 11:8 11:6	HEINE Veronika	
+2005	St. Petersburg Open 2005	DOLGIKH Maria (RUS)		ROHR Gaby (GER)		U21WS	Main Draw	R32	1 - 4	11:9 10:12 6:11 5:11 5:11	ROHR Gaby	
+2005	St. Petersburg Open 2005	ROHR Meike (GER)		HARABASZOVA Lenka (CZE)		U21WS	Main Draw	R32	0 - 4	4:11 7:11 9:11 6:11	HARABASZOVA Lenka	
+2005	St. Petersburg Open 2005	MIKHAILOVA Polina (RUS)		ISHIGAKI Yuka (JPN)		U21WS	Main Draw	R32	2 - 4	12:10 5:11 9:11 11:9 5:11 11:13	ISHIGAKI Yuka	
+2005	St. Petersburg Open 2005	VACENOVSKA Iveta (CZE)		FETUKHINA Margarita (RUS)		U21WS	Main Draw	R32	4 - 0	11:9 11:4 11:5 11:9	VACENOVSKA Iveta	
+2005	St. Petersburg Open 2005	PARTYKA Natalia (POL)		TIKHOMIROVA Anna (RUS)		U21WS	Main Draw	R32	2 - 4	9:11 13:11 6:11 11:8 6:11 5:11	TIKHOMIROVA Anna	
+2005	St. Petersburg Open 2005	PROKHOROVA Yulia (RUS)		SAHA Nandita (IND)		U21WS	Main Draw	R32	4 - 3	12:10 11:2 11:6 6:11 14:16 6:11 11:6	PROKHOROVA Yulia	
+2005	St. Petersburg Open 2005	CAHOREAU Nathalie (FRA)		ERDELJI Anamaria (SRB)		U21WS	Main Draw	R32	2 - 4	4:11 11:9 7:11 3:11 11:9 8:11	ERDELJI Anamaria	
+2005	St. Petersburg Open 2005	CICHOCKA Magdalena (POL)		PERGEL Szandra (HUN)		U21WS	Main Draw	R32	1 - 4	4:11 7:11 11:9 2:11 1:11	PERGEL Szandra	
+2005	St. Petersburg Open 2005	TERUI Moemi (JPN)		NECULA Iulia (ROU)		U21WS	Main Draw	R32	2 - 4	12:10 2:11 9:11 12:10 6:11 4:11	NECULA Iulia	
+2005	St. Petersburg Open 2005	PETUKHOVA Evgeniya (RUS)		LI Qiangbing (AUT)		U21WS	Main Draw	R32	0 - 4	5:11 9:11 2:11 11:13	LI Qiangbing	
+2005	St. Petersburg Open 2005	POTA Georgina (HUN)		ONO Shiho (JPN)		U21WS	Main Draw	R16	4 - 0	11:8 17:15 11:4 11:6	POTA Georgina	
+2005	St. Petersburg Open 2005	LI Bin (HUN)		GRUNDISCH Carole (FRA)		U21WS	Main Draw	R16	2 - 4	11:7 15:13 5:11 6:11 2:11 7:11	GRUNDISCH Carole	
+2005	St. Petersburg Open 2005	HEINE Veronika (AUT)		ROHR Gaby (GER)		U21WS	Main Draw	R16	4 - 2	5:11 11:6 5:11 11:8 11:9 11:9	HEINE Veronika	
+2005	St. Petersburg Open 2005	HARABASZOVA Lenka (CZE)		ISHIGAKI Yuka (JPN)		U21WS	Main Draw	R16	1 - 4	4:11 11:5 6:11 7:11 9:11	ISHIGAKI Yuka	
+2005	St. Petersburg Open 2005	VACENOVSKA Iveta (CZE)		TIKHOMIROVA Anna (RUS)		U21WS	Main Draw	R16	4 - 1	11:6 5:11 11:5 11:7 11:4	VACENOVSKA Iveta	
+2005	St. Petersburg Open 2005	PROKHOROVA Yulia (RUS)		ERDELJI Anamaria (SRB)		U21WS	Main Draw	R16	4 - 2	5:11 13:11 11:7 2:11 11:8 11:3	PROKHOROVA Yulia	
+2005	St. Petersburg Open 2005	PERGEL Szandra (HUN)		NECULA Iulia (ROU)		U21WS	Main Draw	R16	1 - 4	11:7 7:11 5:11 9:11 5:11	NECULA Iulia	
+2005	St. Petersburg Open 2005	ISHIZUKA Miwako (JPN)		LI Qiangbing (AUT)		U21WS	Main Draw	R16	0 - 4	6:11 3:11 5:11 4:11	LI Qiangbing	
+2005	St. Petersburg Open 2005	POTA Georgina (HUN)		GRUNDISCH Carole (FRA)		U21WS	Main Draw	QuarterFinal	3 - 4	7:11 4:11 11:8 12:10 6:11 12:10 9:11	GRUNDISCH Carole	
+2005	St. Petersburg Open 2005	HEINE Veronika (AUT)		ISHIGAKI Yuka (JPN)		U21WS	Main Draw	QuarterFinal	1 - 4	8:11 12:10 10:12 15:17 5:11	ISHIGAKI Yuka	
+2005	St. Petersburg Open 2005	VACENOVSKA Iveta (CZE)		PROKHOROVA Yulia (RUS)		U21WS	Main Draw	QuarterFinal	4 - 2	11:0 11:5 11:9 7:11 9:11 11:5	VACENOVSKA Iveta	
+2005	St. Petersburg Open 2005	NECULA Iulia (ROU)		LI Qiangbing (AUT)		U21WS	Main Draw	QuarterFinal	0 - 4	10:12 10:12 3:11 7:11	LI Qiangbing	
+2005	St. Petersburg Open 2005	GRUNDISCH Carole (FRA)		ISHIGAKI Yuka (JPN)		U21WS	Main Draw	SemiFinal	4 - 1	11:6 11:8 8:11 11:7 15:13	GRUNDISCH Carole	
+2005	St. Petersburg Open 2005	VACENOVSKA Iveta (CZE)		LI Qiangbing (AUT)		U21WS	Main Draw	SemiFinal	3 - 4	11:7 9:11 9:11 11:7 11:6 7:11 9:11	LI Qiangbing	
+2005	St. Petersburg Open 2005	GRUNDISCH Carole (FRA)		LI Qiangbing (AUT)		U21WS	Main Draw	Final	1 - 4	3:11 8:11 11:9 10:12 10:12	LI Qiangbing	
+2005	St. Petersburg Open 2005	PAVLOVICH Viktoria (BLR)		HARABASZOVA Lenka (CZE)		WS	Main Draw	R64	4 - 0	11:5 11:8 11:7 13:11	PAVLOVICH Viktoria	
+2005	St. Petersburg Open 2005	ROHR Gaby (GER)		KREKINA Svetlana (RUS)		WS	Main Draw	R64	4 - 3	4:11 11:6 4:11 11:7 11:8 6:11 12:10	ROHR Gaby	
+2005	St. Petersburg Open 2005	GOURIN Anne-Sophie (FRA)		PERGEL Szandra (HUN)		WS	Main Draw	R64	1 - 4	10:12 11:9 10:12 8:11 6:11	PERGEL Szandra	
+2005	St. Petersburg Open 2005	MIKHAILOVA Polina (RUS)		ODOROVA Eva (SVK)		WS	Main Draw	R64	3 - 4	12:10 11:4 11:9 5:11 11:13 8:11 6:11	ODOROVA Eva	
+2005	St. Petersburg Open 2005	FADEEVA Oxana (RUS)		TKACHOVA Tetyana (UKR)		WS	Main Draw	R64	4 - 0	11:9 11:9 11:7 11:6	FADEEVA Oxana	
+2005	St. Petersburg Open 2005	ISHIZUKA Miwako (JPN)		XIAN Yifang (FRA)		WS	Main Draw	R64	1 - 4	12:10 15:17 7:11 5:11 5:11	XIAN Yifang	
+2005	St. Petersburg Open 2005	IVANCAN Irene (GER)		ONO Shiho (JPN)		WS	Main Draw	R64	1 - 4	13:11 9:11 10:12 6:11 10:12	ONO Shiho	
+2005	St. Petersburg Open 2005	FETUKHINA Margarita (RUS)		POTA Georgina (HUN)		WS	Main Draw	R64	0 - 4	7:11 6:11 5:11 9:11	POTA Georgina	
+2005	St. Petersburg Open 2005	XU Jie (1982) (POL)		MIKHAILOVA Tatiana (RUS)		WS	Main Draw	R64	4 - 0	11:8 11:1 11:7 12:10	XU Jie (1982)	
+2005	St. Petersburg Open 2005	TIMINA Elena (NED)		LOVAS Petra (HUN)		WS	Main Draw	R64	1 - 4	10:12 15:13 8:11 12:14 9:11	LOVAS Petra	
+2005	St. Petersburg Open 2005	PROKHOROVA Yulia (RUS)		STRBIKOVA Renata (CZE)		WS	Main Draw	R64	1 - 4	5:11 11:7 9:11 6:11 8:11	STRBIKOVA Renata	
+2005	St. Petersburg Open 2005	VACENOVSKA Iveta (CZE)		VORONOVA Anastasia (RUS)		WS	Main Draw	R64	4 - 0	11:7 11:7 14:12 11:5	VACENOVSKA Iveta	
+2005	St. Petersburg Open 2005	MISIKONYTE Lina (LTU)		NECULA Iulia (ROU)		WS	Main Draw	R64	4 - 2	11:7 9:11 11:7 7:11 11:8 11:6	MISIKONYTE Lina	
+2005	St. Petersburg Open 2005	HEINE Veronika (AUT)		LI Bin (HUN)		WS	Main Draw	R64	2 - 4	11:6 4:11 7:11 11:7 8:11 6:11	LI Bin	
+2005	St. Petersburg Open 2005	KIRITSA Liudmila (RUS)		TOTH Krisztina (HUN)		WS	Main Draw	R64	1 - 4	2:11 4:11 9:11 11:6 8:11	TOTH Krisztina	
+2005	St. Petersburg Open 2005	SCHALL Elke (GER)		LEMESHEVSKAYA Valeriya (RUS)		WS	Main Draw	R64	4 - 1	8:11 11:7 11:5 11:4 11:1	SCHALL Elke	
+2005	St. Petersburg Open 2005	PARTYKA Natalia (POL)		MOLNAR Zita (HUN)		WS	Main Draw	R64	4 - 3	11:5 11:5 6:11 11:8 6:11 7:11 11:7	PARTYKA Natalia	
+2005	St. Petersburg Open 2005	GRUNDISCH Carole (FRA)		GHATAK Poulomi (IND)		WS	Main Draw	R64	4 - 0	11:8 11:9 11:9 11:4	GRUNDISCH Carole	
+2005	St. Petersburg Open 2005	SHAVYRINA Marina (RUS)		PAVLOVICH Veronika (BLR)		WS	Main Draw	R64	2 - 4	7:11 11:9 4:11 11:9 6:11 6:11	PAVLOVICH Veronika	
+2005	St. Petersburg Open 2005	LI Qiangbing (AUT)		ABRAMOVA Natalia (RUS)		WS	Main Draw	R64	4 - 0	11:4 11:8 11:7 12:10	LI Qiangbing	
+2005	St. Petersburg Open 2005	LOSOSOVSKAYA Olga (RUS)		KERTAI Rita (HUN)		WS	Main Draw	R64	1 - 4	6:11 12:14 6:11 11:4 6:11	KERTAI Rita	
+2005	St. Petersburg Open 2005	ROBERTSON Laura (GER)		TIKHOMIROVA Anna (RUS)		WS	Main Draw	R64	4 - 0	11:8 11:2 11:5 11:9	ROBERTSON Laura	
+2005	St. Petersburg Open 2005	CAHOREAU Nathalie (FRA)		GANINA Svetlana (RUS)		WS	Main Draw	R64	4 - 3	11:5 5:11 7:11 11:8 11:3 9:11 11:5	CAHOREAU Nathalie	
+2005	St. Petersburg Open 2005	LANG Kristin (GER)		SAHA Nandita (IND)		WS	Main Draw	R64	4 - 1	15:17 11:8 11:1 11:8 11:6	LANG Kristin	
+2005	St. Petersburg Open 2005	ROHR Meike (GER)		KULAGINA Tatjana (RUS)		WS	Main Draw	R64	3 - 4	9:11 11:6 11:5 9:11 11:6 9:11 3:11	KULAGINA Tatjana	
+2005	St. Petersburg Open 2005	CICHOCKA Magdalena (POL)		TERUI Moemi (JPN)		WS	Main Draw	R64	0 - 4	8:11 5:11 9:11 9:11	TERUI Moemi	
+2005	St. Petersburg Open 2005	MIKHAYLOVA Olga (RUS)		PASKAUSKIENE Ruta (LTU)		WS	Main Draw	R64	1 - 4	4:11 6:11 11:3 6:11 5:11	PASKAUSKIENE Ruta	
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 2 of 2 Total: 170
+
+Start
+Prev
+1
+2
+Next
+End
+2005	St. Petersburg Open 2005	PALINA Irina (RUS)		AMBRUS Timea (HUN)		WS	Main Draw	R64	4 - 0	11:5 12:10 11:5 11:8	PALINA Irina	
+2005	St. Petersburg Open 2005	DOLGIKH Maria (RUS)		ISHIGAKI Yuka (JPN)		WS	Main Draw	R64	4 - 0	11:3 11:2 11:5 11:1	DOLGIKH Maria	
+2005	St. Petersburg Open 2005	ERDELJI Anamaria (SRB)		KOTIKHINA Irina (RUS)		WS	Main Draw	R64	1 - 4	9:11 11:9 13:15 8:11 9:11	KOTIKHINA Irina	
+2005	St. Petersburg Open 2005	KOSTROMINA Tatyana (1973) (BLR)		LIU Jia (AUT)		WS	Main Draw	R64	0 - 4	6:11 5:11 8:11 5:11	LIU Jia	
+2005	St. Petersburg Open 2005	PAVLOVICH Viktoria (BLR)		ROHR Gaby (GER)		WS	Main Draw	R32	4 - 1	11:7 11:8 11:9 9:11 12:10	PAVLOVICH Viktoria	
+2005	St. Petersburg Open 2005	PERGEL Szandra (HUN)		ODOROVA Eva (SVK)		WS	Main Draw	R32	0 - 4	4:11 7:11 6:11 6:11	ODOROVA Eva	
+2005	St. Petersburg Open 2005	FADEEVA Oxana (RUS)		XIAN Yifang (FRA)		WS	Main Draw	R32	4 - 1	11:7 12:10 11:6 8:11 11:3	FADEEVA Oxana	
+2005	St. Petersburg Open 2005	ONO Shiho (JPN)		POTA Georgina (HUN)		WS	Main Draw	R32	4 - 1	11:5 8:11 11:8 11:6 11:6	ONO Shiho	
+2005	St. Petersburg Open 2005	XU Jie (1982) (POL)		LOVAS Petra (HUN)		WS	Main Draw	R32	3 - 4	8:11 11:13 11:7 9:11 11:8 11:5 8:11	LOVAS Petra	
+2005	St. Petersburg Open 2005	KORNILOVA Alla (RUS)		STRBIKOVA Renata (CZE)		WS	Main Draw	R32	2 - 4	15:13 4:11 14:12 9:11 8:11 6:11	STRBIKOVA Renata	
+2005	St. Petersburg Open 2005	VACENOVSKA Iveta (CZE)		MISIKONYTE Lina (LTU)		WS	Main Draw	R32	4 - 2	9:11 11:6 9:11 11:6 13:11 11:8	VACENOVSKA Iveta	
+2005	St. Petersburg Open 2005	LI Bin (HUN)		TOTH Krisztina (HUN)		WS	Main Draw	R32	2 - 4	13:11 7:11 11:3 4:11 6:11 4:11	TOTH Krisztina	
+2005	St. Petersburg Open 2005	SCHALL Elke (GER)		PARTYKA Natalia (POL)		WS	Main Draw	R32	4 - 1	8:11 14:12 11:5 11:1 11:8	SCHALL Elke	
+2005	St. Petersburg Open 2005	GRUNDISCH Carole (FRA)		PAVLOVICH Veronika (BLR)		WS	Main Draw	R32	0 - 4	9:11 11:13 1:11 6:11	PAVLOVICH Veronika	
+2005	St. Petersburg Open 2005	LI Qiangbing (AUT)		KERTAI Rita (HUN)		WS	Main Draw	R32	4 - 2	9:11 12:14 11:3 11:4 11:5 11:5	LI Qiangbing	
+2005	St. Petersburg Open 2005	ROBERTSON Laura (GER)		CAHOREAU Nathalie (FRA)		WS	Main Draw	R32	4 - 0	11:7 11:8 11:8 13:11	ROBERTSON Laura	
+2005	St. Petersburg Open 2005	LANG Kristin (GER)		KULAGINA Tatjana (RUS)		WS	Main Draw	R32	3 - 4	11:8 13:11 7:11 7:11 7:11 11:9 8:11	KULAGINA Tatjana	
+2005	St. Petersburg Open 2005	TERUI Moemi (JPN)		PASKAUSKIENE Ruta (LTU)		WS	Main Draw	R32	4 - 1	11:4 12:10 11:6 3:11 11:5	TERUI Moemi	
+2005	St. Petersburg Open 2005	PALINA Irina (RUS)		DOLGIKH Maria (RUS)		WS	Main Draw	R32	2 - 4	7:11 8:11 5:11 11:7 11:2 6:11	DOLGIKH Maria	
+2005	St. Petersburg Open 2005	KOTIKHINA Irina (RUS)		LIU Jia (AUT)		WS	Main Draw	R32	4 - 2	11:9 1:11 7:11 11:6 16:14 11:8	KOTIKHINA Irina	
+2005	St. Petersburg Open 2005	PAVLOVICH Viktoria (BLR)		ODOROVA Eva (SVK)		WS	Main Draw	R16	4 - 1	16:14 11:7 11:5 7:11 12:10	PAVLOVICH Viktoria	
+2005	St. Petersburg Open 2005	FADEEVA Oxana (RUS)		ONO Shiho (JPN)		WS	Main Draw	R16	0 - 4	8:11 9:11 4:11 6:11	ONO Shiho	
+2005	St. Petersburg Open 2005	LOVAS Petra (HUN)		STRBIKOVA Renata (CZE)		WS	Main Draw	R16	1 - 4	10:12 11:9 6:11 4:11 5:11	STRBIKOVA Renata	
+2005	St. Petersburg Open 2005	VACENOVSKA Iveta (CZE)		TOTH Krisztina (HUN)		WS	Main Draw	R16	0 - 4	4:11 9:11 8:11 2:11	TOTH Krisztina	
+2005	St. Petersburg Open 2005	SCHALL Elke (GER)		PAVLOVICH Veronika (BLR)		WS	Main Draw	R16	4 - 1	6:11 11:9 11:6 11:5 11:9	SCHALL Elke	
+2005	St. Petersburg Open 2005	LI Qiangbing (AUT)		ROBERTSON Laura (GER)		WS	Main Draw	R16	1 - 4	9:11 11:7 10:12 7:11 3:11	ROBERTSON Laura	
+2005	St. Petersburg Open 2005	KULAGINA Tatjana (RUS)		TERUI Moemi (JPN)		WS	Main Draw	R16	4 - 2	4:11 11:9 11:2 12:10 8:11 11:9	KULAGINA Tatjana	
+2005	St. Petersburg Open 2005	DOLGIKH Maria (RUS)		KOTIKHINA Irina (RUS)		WS	Main Draw	R16	1 - 4	8:11 11:8 5:11 2:11 9:11	KOTIKHINA Irina	
+2005	St. Petersburg Open 2005	PAVLOVICH Viktoria (BLR)		ONO Shiho (JPN)		WS	Main Draw	QuarterFinal	3 - 4	11:8 11:13 11:6 10:12 14:12 10:12 16:18	ONO Shiho	
+2005	St. Petersburg Open 2005	STRBIKOVA Renata (CZE)		TOTH Krisztina (HUN)		WS	Main Draw	QuarterFinal	1 - 4	11:6 15:17 3:11 3:11 18:20	TOTH Krisztina	
+2005	St. Petersburg Open 2005	SCHALL Elke (GER)		ROBERTSON Laura (GER)		WS	Main Draw	QuarterFinal	4 - 2	9:11 11:9 12:10 11:3 7:11 15:13	SCHALL Elke	
+2005	St. Petersburg Open 2005	KULAGINA Tatjana (RUS)		KOTIKHINA Irina (RUS)		WS	Main Draw	QuarterFinal	0 - 4	6:11 7:11 10:12 12:14	KOTIKHINA Irina	
+2005	St. Petersburg Open 2005	ONO Shiho (JPN)		TOTH Krisztina (HUN)		WS	Main Draw	SemiFinal	0 - 4	6:11 8:11 8:11 4:11	TOTH Krisztina	
+2005	St. Petersburg Open 2005	SCHALL Elke (GER)		KOTIKHINA Irina (RUS)		WS	Main Draw	SemiFinal	1 - 4	2:11 11:13 12:10 10:12 4:11	KOTIKHINA Irina	
+2005	St. Petersburg Open 2005	TOTH Krisztina (HUN)		KOTIKHINA Irina (RUS)		WS	Main Draw	Final	4 - 1	11:6 11:7 10:12 11:6 11:6	TOTH Krisztina	
+2005	St. Petersburg Open 2005	TERUI Moemi (JPN)		KOSTROMINA Tatyana (1973) (BLR)		U21WS	Qualification	3	3 - 0	13:11 11:4 11:4	TERUI Moemi	
+2005	St. Petersburg Open 2005	AKHMETOVA Liubov (RUS)		PRIVALOVA Alexandra (BLR)		U21WS	Qualification		3 - 0	11:8 11:7 11:9	AKHMETOVA Liubov	
+2005	St. Petersburg Open 2005	DOLGIKH Maria (RUS)		PRIVALOVA Alexandra (BLR)		U21WS	Qualification	QR2	3 - 1	11:4 11:8 5:11 11:2	DOLGIKH Maria	
+2005	St. Petersburg Open 2005	DOLGIKH Maria (RUS)		AKHMETOVA Liubov (RUS)		U21WS	Qualification	3	3 - 0	11:6 11:5 12:10	DOLGIKH Maria	
+2005	St. Petersburg Open 2005	PETZNER Martina (AUT)		ABRAMOVA Natalia (RUS)		U21WS	Qualification		2 - 3	9:11 13:11 11:9 10:12 7:11	ABRAMOVA Natalia	
+2005	St. Petersburg Open 2005	VORONOVA Anastasia (RUS)		ABRAMOVA Natalia (RUS)		U21WS	Qualification	QR2	3 - 0	11:8 11:7 11:5	VORONOVA Anastasia	
+2005	St. Petersburg Open 2005	VORONOVA Anastasia (RUS)		PETZNER Martina (AUT)		U21WS	Qualification	3	3 - 0	11:5 11:4 11:7	VORONOVA Anastasia	
+2005	St. Petersburg Open 2005	SHAVYRINA Marina (RUS)		KARAGODINA Inna (BLR)		U21WS	Qualification		3 - 0	11:9 11:9 13:11	SHAVYRINA Marina	
+2005	St. Petersburg Open 2005	PETUKHOVA Evgeniya (RUS)		KARAGODINA Inna (BLR)		U21WS	Qualification	QR2	3 - 0	11:7 11:5 11:8	PETUKHOVA Evgeniya	
+2005	St. Petersburg Open 2005	PETUKHOVA Evgeniya (RUS)		SHAVYRINA Marina (RUS)		U21WS	Qualification	3	1 - 3	8:11 11:8 8:11 10:12	SHAVYRINA Marina	
+2005	St. Petersburg Open 2005	COULIBALY Dieniouma (FRA)		VINOGRADOVA Mariia (RUS)		U21WS	Qualification		2 - 3	4:11 18:20 11:4 11:7 9:11	VINOGRADOVA Mariia	
+2005	St. Petersburg Open 2005	HARABASZOVA Lenka (CZE)		VINOGRADOVA Mariia (RUS)		U21WS	Qualification	QR2	3 - 0	11:6 11:4 11:5	HARABASZOVA Lenka	
+2005	St. Petersburg Open 2005	HARABASZOVA Lenka (CZE)		COULIBALY Dieniouma (FRA)		U21WS	Qualification	3	3 - 0	15:13 13:11 11:7	HARABASZOVA Lenka	
+2005	St. Petersburg Open 2005	MISIKONYTE Lina (LTU)		MARKOVA Ekaterina (RUS)		U21WS	Qualification		0 - 3	3:11 4:11 6:11	MARKOVA Ekaterina	
+2005	St. Petersburg Open 2005	PARTYKA Natalia (POL)		MARKOVA Ekaterina (RUS)		U21WS	Qualification	QR2	3 - 0	11:9 12:10 11:5	PARTYKA Natalia	
+2005	St. Petersburg Open 2005	PARTYKA Natalia (POL)		MISIKONYTE Lina (LTU)		U21WS	Qualification	3	3 - 0	11:7 11:8 11:2	PARTYKA Natalia	
+2005	St. Petersburg Open 2005	MIKHAYLOVA Olga (RUS)		KRAEVA Marina (RUS)		U21WS	Qualification		3 - 1	11:5 11:8 9:11 11:5	MIKHAYLOVA Olga	
+2005	St. Petersburg Open 2005	PERGEL Szandra (HUN)		KRAEVA Marina (RUS)		U21WS	Qualification	QR2	3 - 0	11:7 11:4 11:4	PERGEL Szandra	
+2005	St. Petersburg Open 2005	PERGEL Szandra (HUN)		MIKHAYLOVA Olga (RUS)		U21WS	Qualification	3	3 - 1	11:6 8:11 11:5 11:7	PERGEL Szandra	
+2005	St. Petersburg Open 2005	ISHIZUKA Miwako (JPN)		KLYUKINA Elena (RUS)		U21WS	Qualification		3 - 0	11:3 11:5 11:5	ISHIZUKA Miwako	
+2005	St. Petersburg Open 2005	MIKHAILOVA Polina (RUS)		KLYUKINA Elena (RUS)		U21WS	Qualification	QR2	3 - 1	11:8 11:2 7:11 11:5	MIKHAILOVA Polina	
+2005	St. Petersburg Open 2005	MIKHAILOVA Polina (RUS)		ISHIZUKA Miwako (JPN)		U21WS	Qualification	3	2 - 3	17:15 5:11 9:11 11:6 10:12	ISHIZUKA Miwako	
+2005	St. Petersburg Open 2005	CAHOREAU Nathalie (FRA)		KUZMINA Elena (RUS)		U21WS	Qualification	QR2	0 - 3	6:11 8:11 5:11	KUZMINA Elena	
+2005	St. Petersburg Open 2005	SAHA Nandita (IND)		ANDREEVA Liidia (EST)		U21WS	Qualification		3 - 0	11:6 11:9 11:8	SAHA Nandita	
+2005	St. Petersburg Open 2005	FETUKHINA Margarita (RUS)		MIKHAILOVA Tatiana (RUS)		U21WS	Qualification	QR2	3 - 1	9:11 11:7 14:12 15:13	FETUKHINA Margarita	
+2005	St. Petersburg Open 2005	SAHA Nandita (IND)		MIKHAILOVA Tatiana (RUS)		U21WS	Qualification	3	3 - 2	9:11 11:8 11:8 4:11 11:8	SAHA Nandita	
+2005	St. Petersburg Open 2005	FETUKHINA Margarita (RUS)		ANDREEVA Liidia (EST)		U21WS	Qualification	QR4	3 - 0	11:4 11:9 11:7	FETUKHINA Margarita	
+2005	St. Petersburg Open 2005	SAHA Nandita (IND)		FETUKHINA Margarita (RUS)		U21WS	Qualification	5	3 - 1	11:9 11:13 11:7 11:3	SAHA Nandita	
+2005	St. Petersburg Open 2005	MIKHAILOVA Tatiana (RUS)		ANDREEVA Liidia (EST)		U21WS	Qualification	6	3 - 1	11:8 11:6 10:12 11:3	MIKHAILOVA Tatiana	
+2005	St. Petersburg Open 2005	AMBRUS Timea (HUN)		SMIRNOVA Maria (EST)		U21WS	Qualification		3 - 0	11:8 11:8 11:6	AMBRUS Timea	
+2005	St. Petersburg Open 2005	LEMESHEVSKAYA Valeriya (RUS)		NAZARIAN Kristina (RUS)		U21WS	Qualification	QR2	0 - 3	4:11 8:11 14:16	NAZARIAN Kristina	
+2005	St. Petersburg Open 2005	AMBRUS Timea (HUN)		NAZARIAN Kristina (RUS)		U21WS	Qualification	3	1 - 3	8:11 9:11 11:7 9:11	NAZARIAN Kristina	
+2005	St. Petersburg Open 2005	LEMESHEVSKAYA Valeriya (RUS)		SMIRNOVA Maria (EST)		U21WS	Qualification	QR4	3 - 1	5:11 11:8 11:9 11:7	LEMESHEVSKAYA Valeriya	
+2005	St. Petersburg Open 2005	AMBRUS Timea (HUN)		LEMESHEVSKAYA Valeriya (RUS)		U21WS	Qualification	5	1 - 3	9:11 9:11 11:9 6:11	LEMESHEVSKAYA Valeriya	
+2005	St. Petersburg Open 2005	NAZARIAN Kristina (RUS)		SMIRNOVA Maria (EST)		U21WS	Qualification	6	3 - 0	11:7 11:6 11:5	NAZARIAN Kristina
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 61
+
+2005	St. Petersburg Open 2005	CHEN Weixing (AUT)	GARDOS Robert (AUT)	ELENSKY Gregory (ISR)	LO Dany (FRA)	MD	Main Draw	R16	4 - 0	11:6 11:4 13:11 11:6	CHEN Weixing	GARDOS Robert
+2005	St. Petersburg Open 2005	CHEN Weixing (AUT)	GARDOS Robert (AUT)	GIONIS Panagiotis (GRE)	PAPAGEORGIOU Konstantinos (GRE)	MD	Main Draw	QuarterFinal	4 - 3	11:8 9:11 12:10 10:12 13:11 4:11 11:7	CHEN Weixing	GARDOS Robert
+2005	St. Petersburg Open 2005	CHEN Weixing (AUT)	GARDOS Robert (AUT)	FRANZ Peter (GER)	KREANGA Kalinikos (GRE)	MD	Main Draw	SemiFinal	4 - 2	11:9 14:12 11:5 6:11 8:11 11:8	CHEN Weixing	GARDOS Robert
+2005	St. Petersburg Open 2005	CHEN Weixing (AUT)	GARDOS Robert (AUT)	KARAKASEVIC Aleksandar (SRB)	SCHLAGER Werner (AUT)	MD	Main Draw	Final	1 - 4	11:13 8:11 6:11 11:6 8:11	KARAKASEVIC Aleksandar	SCHLAGER Werner
+2005	St. Petersburg Open 2005	HABESOHN Daniel (AUT)	PICHLER Michael (AUT)	KLEPRLIK Jakub (CZE)	KLEPRLIK Michal (CZE)	MD	Qualification	QR64	3 - 1	11:2 9:11 12:10 11:5	HABESOHN Daniel	PICHLER Michael
+2005	St. Petersburg Open 2005	HABESOHN Daniel (AUT)	PICHLER Michael (AUT)	GAVRILOV Denis (RUS)	SKACHKOV Kirill (RUS)	MD	Qualification	QR32	0 - 3	8:11 1:11 5:11	GAVRILOV Denis	SKACHKOV Kirill
+2005	St. Petersburg Open 2005	HABESOHN Mathias (AUT)	SIMONER Christoph (AUT)	LINDNER Adam (HUN)	VARGA Zoltan (HUN)	MD	Qualification	QR16	3 - 0	11:7 12:10 11:9	HABESOHN Mathias	SIMONER Christoph
+2005	St. Petersburg Open 2005	MAECK Anthony (BEL)	VOSTES Yannick (BEL)	GRACHEV Andrei (RUS)	SARGSYAN Davit (ARM)	MD	Qualification	QR32	3 - 2	11:6 6:11 11:13 11:6 11:4	MAECK Anthony	VOSTES Yannick
+2005	St. Petersburg Open 2005	MAECK Anthony (BEL)	VOSTES Yannick (BEL)	ANDRIANOV Sergei (RUS)	SHMYREV Maxim (RUS)	MD	Qualification	QR16	2 - 3	4:11 11:6 11:9 5:11 8:11	ANDRIANOV Sergei	SHMYREV Maxim
+2005	St. Petersburg Open 2005	BALTRUSHKA Dzmitry (BLR)	DAVIDOVICH Dmitry (BLR)	ALPAY Apakgun (TUR)	DERELI Sukru (TUR)	MD	Qualification	QR64	3 - 0	11:4 11:4 11:9	BALTRUSHKA Dzmitry	DAVIDOVICH Dmitry
+2005	St. Petersburg Open 2005	BALTRUSHKA Dzmitry (BLR)	DAVIDOVICH Dmitry (BLR)	ANDRIANOV Sergei (RUS)	SHMYREV Maxim (RUS)	MD	Qualification	QR32	1 - 3	11:5 7:11 4:11 8:11	ANDRIANOV Sergei	SHMYREV Maxim
+2005	St. Petersburg Open 2005	CHUMAKOU Dmitry (BLR)	KUCHUK Aleksandr (BLR)	RYZHOV Juri (RUS)	TIAPKIN Sergei (RUS)	MD	Qualification	QR16	3 - 1	6:11 11:7 11:7 12:10	CHUMAKOU Dmitry	KUCHUK Aleksandr
+2005	St. Petersburg Open 2005	HOYAMA Hugo (BRA)	MONTEIRO Thiago (BRA)	HABESOHN Mathias (AUT)	SIMONER Christoph (AUT)	MD	Qualification	QR32	1 - 3	8:11 10:12 12:10 6:11	HABESOHN Mathias	SIMONER Christoph
+2005	St. Petersburg Open 2005	SMIRNOV Alexey (RUS)	TAN Ruiwu (CRO)	CHILA Patrick (FRA)	ELOI Damien (FRA)	MD	Main Draw	R16	4 - 3	8:11 11:6 8:11 11:8 5:11 11:5 11:1	SMIRNOV Alexey	TAN Ruiwu
+2005	St. Petersburg Open 2005	SMIRNOV Alexey (RUS)	TAN Ruiwu (CRO)	CHMIEL Pawel (POL)	STEPHENSEN Gudmundur (ISL)	MD	Qualification	QR32	3 - 1	8:11 14:12 11:5 12:10	SMIRNOV Alexey	TAN Ruiwu
+2005	St. Petersburg Open 2005	SMIRNOV Alexey (RUS)	TAN Ruiwu (CRO)	ACHANTA Sharath (IND)	ROY Soumyadeep (IND)	MD	Qualification	QR16	3 - 0	11:8 11:7 11:9	SMIRNOV Alexey	TAN Ruiwu
+2005	St. Petersburg Open 2005	JAPEC Tomislav (CRO)	ZUBCIC Tomislav (CRO)	GIONIS Panagiotis (GRE)	PAPAGEORGIOU Konstantinos (GRE)	MD	Qualification	QR16	1 - 3	10:12 12:10 6:11 9:11	GIONIS Panagiotis	PAPAGEORGIOU Konstantinos
+2005	St. Petersburg Open 2005	CIHAK Marek (CZE)	PLACHY Josef (CZE)	PISEMSKYY Anton (UKR)	TRUFKIN Oleksandr (UKR)	MD	Qualification	QR64	3 - 0	11:6 11:4 11:6	CIHAK Marek	PLACHY Josef
+2005	St. Petersburg Open 2005	KONECNY Tomas (CZE)	VOZICKY Bohumil (CZE)	DIDUKH Viktor (UKR)	YEFIMOV Viktor (UKR)	MD	Qualification	QR64	3 - 2	9:11 11:6 11:2 6:11 11:7	KONECNY Tomas	VOZICKY Bohumil
+2005	St. Petersburg Open 2005	DAVID Petr (CZE)	VRABLIK Jiri (CZE)	ASAMOAH Cyprian (SWE)	HAKANSSON Fredrik (SWE)	MD	Qualification	QR64	1 - 3	7:11 12:10 5:11 5:11	ASAMOAH Cyprian	HAKANSSON Fredrik
+2005	St. Petersburg Open 2005	CIHAK Marek (CZE)	PLACHY Josef (CZE)	GIONIS Panagiotis (GRE)	PAPAGEORGIOU Konstantinos (GRE)	MD	Qualification	QR32	1 - 3	8:11 10:12 11:9 8:11	GIONIS Panagiotis	PAPAGEORGIOU Konstantinos
+2005	St. Petersburg Open 2005	KONECNY Tomas (CZE)	VOZICKY Bohumil (CZE)	JAKAB Janos (HUN)	ZOMBORI David (HUN)	MD	Qualification	QR32	1 - 3	9:11 12:10 11:13 14:16	JAKAB Janos	ZOMBORI David
+2005	St. Petersburg Open 2005	MOLNAR Csaba (HUN)	SMIRNOV Aleksandr (EST)	GORAK Daniel (POL)	WANG Zengyi (POL)	MD	Qualification	QR64	0 - 3	3:11 7:11 8:11	GORAK Daniel	WANG Zengyi
+2005	St. Petersburg Open 2005	BERTIN Christophe (FRA)	BOBILLIER Loic (FRA)	HABESOHN Mathias (AUT)	SIMONER Christoph (AUT)	MD	Main Draw	R16	4 - 0	11:7 11:8 12:10 12:10	BERTIN Christophe	BOBILLIER Loic
+2005	St. Petersburg Open 2005	BERTIN Christophe (FRA)	BOBILLIER Loic (FRA)	GORAK Daniel (POL)	WANG Zengyi (POL)	MD	Main Draw	QuarterFinal	2 - 4	4:11 6:11 11:6 4:11 11:7 11:13	GORAK Daniel	WANG Zengyi
+2005	St. Petersburg Open 2005	BAYRAMPOUR ARALLO Mohammad (IRI)	CABESTANY Cedrik (FRA)	FILENKO Oleg (UKR)	MELNIK Valery (UKR)	MD	Qualification	QR64	3 - 0	11:3 11:4 11:6	BAYRAMPOUR ARALLO Mohammad	CABESTANY Cedrik
+2005	St. Petersburg Open 2005	BAYRAMPOUR ARALLO Mohammad (IRI)	CABESTANY Cedrik (FRA)	JAPEC Tomislav (CRO)	ZUBCIC Tomislav (CRO)	MD	Qualification	QR32	1 - 3	7:11 3:11 14:12 6:11	JAPEC Tomislav	ZUBCIC Tomislav
+2005	St. Petersburg Open 2005	ELENSKY Gregory (ISR)	LO Dany (FRA)	MEHTA Pathik (IND)	SAHA Subhajit (IND)	MD	Qualification	QR32	3 - 1	2:11 11:7 11:2 11:3	ELENSKY Gregory	LO Dany
+2005	St. Petersburg Open 2005	ELENSKY Gregory (ISR)	LO Dany (FRA)	JAKAB Janos (HUN)	ZOMBORI David (HUN)	MD	Qualification	QR16	3 - 1	11:6 11:5 9:11 11:6	ELENSKY Gregory	LO Dany
+2005	St. Petersburg Open 2005	GIONIS Panagiotis (GRE)	PAPAGEORGIOU Konstantinos (GRE)	PRIMORAC Zoran (CRO)	TOSIC Roko (CRO)	MD	Main Draw	R16	4 - 2	11:9 11:8 10:12 11:3 5:11 11:7	GIONIS Panagiotis	PAPAGEORGIOU Konstantinos
+2005	St. Petersburg Open 2005	FRANZ Peter (GER)	KREANGA Kalinikos (GRE)	ANDRIANOV Sergei (RUS)	SHMYREV Maxim (RUS)	MD	Main Draw	R16	4 - 0	11:9 11:6 11:5 11:9	FRANZ Peter	KREANGA Kalinikos
+2005	St. Petersburg Open 2005	FRANZ Peter (GER)	KREANGA Kalinikos (GRE)	SMIRNOV Alexey (RUS)	TAN Ruiwu (CRO)	MD	Main Draw	QuarterFinal	4 - 1	15:13 11:8 10:12 12:10 11:6	FRANZ Peter	KREANGA Kalinikos
+2005	St. Petersburg Open 2005	LINDNER Adam (HUN)	VARGA Zoltan (HUN)	FILICHEV Vitaly (RUS)	STETSENKO Alexander (RUS)	MD	Qualification	QR64	3 - 0	11:9 11:6 11:3	LINDNER Adam	VARGA Zoltan
+2005	St. Petersburg Open 2005	DEMETER Lehel (HUN)	MOLNAR Krisztian (HUN)	SHEVCHENKO Semen (RUS)	UTOCHKIN Artem (RUS)	MD	Qualification	QR64	3 - 1	11:6 10:12 11:6 11:6	DEMETER Lehel	MOLNAR Krisztian
+2005	St. Petersburg Open 2005	LINDNER Adam (HUN)	VARGA Zoltan (HUN)	ASAMOAH Cyprian (SWE)	HAKANSSON Fredrik (SWE)	MD	Qualification	QR32	3 - 1	9:11 12:10 11:9 11:5	LINDNER Adam	VARGA Zoltan
+2005	St. Petersburg Open 2005	DEMETER Lehel (HUN)	MOLNAR Krisztian (HUN)	PISTEJ Lubomir (SVK)	SEREDA Peter (SVK)	MD	Qualification	QR32	0 - 3	8:11 5:11 9:11	PISTEJ Lubomir	SEREDA Peter
+2005	St. Petersburg Open 2005	ACHANTA Sharath (IND)	ROY Soumyadeep (IND)	KAUCKY Petr (CZE)	URBANEK Jan (CZE)	MD	Qualification	QR64	3 - 1	12:10 11:1 3:11 11:9	ACHANTA Sharath	ROY Soumyadeep
+2005	St. Petersburg Open 2005	MEHTA Pathik (IND)	SAHA Subhajit (IND)	PEREK Jakub (POL)	SUCH Bartosz (POL)	MD	Qualification	QR64	3 - 2	9:11 11:5 11:9 3:11 11:9	MEHTA Pathik	SAHA Subhajit
+2005	St. Petersburg Open 2005	ACHANTA Sharath (IND)	ROY Soumyadeep (IND)	PETRUKHIN Evgeny (RUS)	REGENTOV Evgenii (RUS)	MD	Qualification	QR32	3 - 0	11:9 11:7 11:8	ACHANTA Sharath	ROY Soumyadeep
+2005	St. Petersburg Open 2005	AHADI Mehran (IRI)	AKHLAGHPASAND Mohammadreza (USA)	CHUMAKOU Dmitry (BLR)	KUCHUK Aleksandr (BLR)	MD	Qualification	QR64	1 - 3	11:9 6:11 6:11 5:11	CHUMAKOU Dmitry	KUCHUK Aleksandr
+2005	St. Petersburg Open 2005	GORAK Daniel (POL)	WANG Zengyi (POL)	FAZEKAS Peter (HUN)	PAZSY Ferenc (HUN)	MD	Main Draw	R16	4 - 3	7:11 16:14 11:3 8:11 14:12 6:11 11:6	GORAK Daniel	WANG Zengyi
+2005	St. Petersburg Open 2005	GORAK Daniel (POL)	WANG Zengyi (POL)	KARAKASEVIC Aleksandar (SRB)	SCHLAGER Werner (AUT)	MD	Main Draw	SemiFinal	1 - 4	12:10 4:11 5:11 5:11 10:12	KARAKASEVIC Aleksandar	SCHLAGER Werner
+2005	St. Petersburg Open 2005	GORAK Daniel (POL)	WANG Zengyi (POL)	AXELQVIST Johan (SWE)	SVENSSON Robert (SWE)	MD	Qualification	QR32	3 - 1	2:11 11:7 11:5 11:3	GORAK Daniel	WANG Zengyi
+2005	St. Petersburg Open 2005	LIVENTSOV Alexey (RUS)	RUBTSOV Igor (RUS)	CHUMAKOU Dmitry (BLR)	KUCHUK Aleksandr (BLR)	MD	Main Draw	R16	4 - 0	13:11 11:8 11:7 12:10	LIVENTSOV Alexey	RUBTSOV Igor
+2005	St. Petersburg Open 2005	GAVRILOV Denis (RUS)	SKACHKOV Kirill (RUS)	KARAKASEVIC Aleksandar (SRB)	SCHLAGER Werner (AUT)	MD	Main Draw	R16	0 - 4	7:11 10:12 7:11 3:11	KARAKASEVIC Aleksandar	SCHLAGER Werner
+2005	St. Petersburg Open 2005	LIVENTSOV Alexey (RUS)	RUBTSOV Igor (RUS)	KARAKASEVIC Aleksandar (SRB)	SCHLAGER Werner (AUT)	MD	Main Draw	QuarterFinal	1 - 4	10:12 11:8 7:11 7:11 6:11	KARAKASEVIC Aleksandar	SCHLAGER Werner
+2005	St. Petersburg Open 2005	PETRUKHIN Evgeny (RUS)	REGENTOV Evgenii (RUS)	JOVER Sebastien (FRA)	PHUNG Armand (FRA)	MD	Qualification	QR64	3 - 1	9:11 11:5 15:13 13:11	PETRUKHIN Evgeny	REGENTOV Evgenii
+2005	St. Petersburg Open 2005	GLADYSHEV Mikhail (RUS)	VINOKUROV Aleksandr (RUS)	GIONIS Panagiotis (GRE)	PAPAGEORGIOU Konstantinos (GRE)	MD	Qualification	QR64	1 - 3	8:11 8:11 13:11 12:14	GIONIS Panagiotis	PAPAGEORGIOU Konstantinos
+2005	St. Petersburg Open 2005	RYZHOV Juri (RUS)	TIAPKIN Sergei (RUS)	BUBA Ondrej (CZE)	DEMEK Tomas (CZE)	MD	Qualification	QR64	3 - 1	11:3 10:12 12:10 11:1	RYZHOV Juri	TIAPKIN Sergei
+2005	St. Petersburg Open 2005	BUROV Viacheslav (RUS)	LAKEEV Vasily (RUS)	GAVLAS Antonin (CZE)	ZLAMAL Jaromir (CZE)	MD	Qualification	QR64	3 - 0	11:7 11:6 11:8	BUROV Viacheslav	LAKEEV Vasily
+2005	St. Petersburg Open 2005	RYZHOV Juri (RUS)	TIAPKIN Sergei (RUS)	DESPRES Rodolphe (FRA)	OLLIVIER Brice (FRA)	MD	Qualification	QR32	3 - 1	11:9 11:2 7:11 11:8	RYZHOV Juri	TIAPKIN Sergei
+2005	St. Petersburg Open 2005	GAVRILOV Denis (RUS)	SKACHKOV Kirill (RUS)	PISTEJ Lubomir (SVK)	SEREDA Peter (SVK)	MD	Qualification	QR16	3 - 0	13:11 17:15 11:7	GAVRILOV Denis	SKACHKOV Kirill
+2005	St. Petersburg Open 2005	GASYMOV Elcin (SVK)	GUMAN Martin (SVK)	JAKAB Janos (HUN)	ZOMBORI David (HUN)	MD	Qualification	QR64	0 - 3	4:11 7:11 5:11	JAKAB Janos	ZOMBORI David
+2005	St. Petersburg Open 2005	KATKOV Ivan (UKR)	SARMATOV Alexei (UKR)	CHMIEL Pawel (POL)	STEPHENSEN Gudmundur (ISL)	MD	Qualification	QR64	2 - 3	13:15 8:11 11:7 11:7 10:12	CHMIEL Pawel	STEPHENSEN Gudmundur
+2005	St. Petersburg Open 2005	SOKOLOVSKIJ Sergej (UKR)	TUZHYLIN Olexandr (UKR)	GRACHEV Andrei (RUS)	SARGSYAN Davit (ARM)	MD	Qualification	QR64	1 - 3	6:11 5:11 12:10 11:13	GRACHEV Andrei	SARGSYAN Davit
+2005	St. Petersburg Open 2005	ASHIHMIN Volodymyr (UKR)	GINKEL Sergyi (UKR)	ANDRIANOV Sergei (RUS)	SHMYREV Maxim (RUS)	MD	Qualification	QR64	0 - 3	4:11 3:11 3:11	ANDRIANOV Sergei	SHMYREV Maxim
+2005	St. Petersburg Open 2005	DIDUKH Oleksandr (UKR)	ZHMUDENKO Yaroslav (UKR)	GOLOVANOV Stanislav (BUL)	TACHALOV Anton (RUS)	MD	Qualification	QR64	3 - 0	11:8 11:6 12:10	DIDUKH Oleksandr	ZHMUDENKO Yaroslav
+2005	St. Petersburg Open 2005	KALACHEVSKYI Denys (UKR)	PAVLINA Sergyi (UKR)	GAVRILOV Denis (RUS)	SKACHKOV Kirill (RUS)	MD	Qualification	QR64	0 - 3	10:12 9:11 10:12	GAVRILOV Denis	SKACHKOV Kirill
+2005	St. Petersburg Open 2005	DIDUKH Oleksandr (UKR)	ZHMUDENKO Yaroslav (UKR)	CHUMAKOU Dmitry (BLR)	KUCHUK Aleksandr (BLR)	MD	Qualification	QR32	1 - 3	6:11 15:13 7:11 8:11	CHUMAKOU Dmitry	KUCHUK Aleksandr
+2005	St. Petersburg Open 2005	LIEVSHYN Vitaliy (UKR)	PRYSHCHEPA Ievgen (UKR)	BUROV Viacheslav (RUS)	LAKEEV Vasily (RUS)	MD	Qualification	QR32	3 - 2	8:11 11:8 4:11 11:5 11:6	LIEVSHYN Vitaliy	PRYSHCHEPA Ievgen
+2005	St. Petersburg Open 2005	LIEVSHYN Vitaliy (UKR)	PRYSHCHEPA Ievgen (UKR)	GORAK Daniel (POL)	WANG Zengyi (POL)	MD	Qualification	QR16	0 - 3	2:11 6:11 3:11	GORAK Daniel	WANG Zengyi
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 33
+
+2005	St. Petersburg Open 2005	LI Qiangbing (AUT)	PETZNER Martina (AUT)	KOTIKHINA Irina (RUS)	TIKHOMIROVA Anna (RUS)	WD	Qualification	QR16	1 - 3	8:11 3:11 13:11 7:11	KOTIKHINA Irina	TIKHOMIROVA Anna
+2005	St. Petersburg Open 2005	HEINE Veronika (AUT)	LIU Jia (AUT)	KULAGINA Tatjana (RUS)	VORONOVA Anastasia (RUS)	WD	Main Draw	R16	4 - 2	11:5 12:10 8:11 11:8 7:11 11:6	HEINE Veronika	LIU Jia
+2005	St. Petersburg Open 2005	HEINE Veronika (AUT)	LIU Jia (AUT)	ROHR Gaby (GER)	ROHR Meike (GER)	WD	Main Draw	QuarterFinal	4 - 1	11:6 11:6 9:11 11:7 11:6	HEINE Veronika	LIU Jia
+2005	St. Petersburg Open 2005	HEINE Veronika (AUT)	LIU Jia (AUT)	PAVLOVICH Veronika (BLR)	PAVLOVICH Viktoria (BLR)	WD	Main Draw	SemiFinal	0 - 4	12:14 2:11 9:11 4:11	PAVLOVICH Veronika	PAVLOVICH Viktoria
+2005	St. Petersburg Open 2005	ERDELJI Anamaria (SRB)	KOSTROMINA Tatyana (1973) (BLR)	KIRITSA Liudmila (RUS)	LOSOSOVSKAYA Olga (RUS)	WD	Qualification	QR32	0 - 3	8:11 5:11 9:11	KIRITSA Liudmila	LOSOSOVSKAYA Olga
+2005	St. Petersburg Open 2005	BARTOSOVA Hana (CZE)	HARABASZOVA Lenka (CZE)	MOLNAR Zita (HUN)	PERGEL Szandra (HUN)	WD	Qualification	QR32	1 - 3	2:11 9:11 11:5 10:12	MOLNAR Zita	PERGEL Szandra
+2005	St. Petersburg Open 2005	XIAN Yifang (FRA)	GOURIN Anne-Sophie (FRA)	ROHR Gaby (GER)	ROHR Meike (GER)	WD	Qualification	QR32	2 - 3	3:11 11:6 6:11 11:5 8:11	ROHR Gaby	ROHR Meike
+2005	St. Petersburg Open 2005	CAHOREAU Nathalie (FRA)	COULIBALY Dieniouma (FRA)	ANDREEVA Liidia (EST)	SMIRNOVA Maria (EST)	WD	Qualification	QR32	3 - 2	9:11 11:4 6:11 11:1 12:10	CAHOREAU Nathalie	COULIBALY Dieniouma
+2005	St. Petersburg Open 2005	CAHOREAU Nathalie (FRA)	COULIBALY Dieniouma (FRA)	MISIKONYTE Lina (LTU)	PETUKHOVA Evgeniya (RUS)	WD	Qualification	QR16	0 - 3	6:11 9:11 13:15	MISIKONYTE Lina	PETUKHOVA Evgeniya
+2005	St. Petersburg Open 2005	ROHR Gaby (GER)	ROHR Meike (GER)	KERTAI Rita (HUN)	LOVAS Petra (HUN)	WD	Main Draw	R16	4 - 0	11:7 11:9 11:5 11:4	ROHR Gaby	ROHR Meike
+2005	St. Petersburg Open 2005	IVANCAN Irene (GER)	ROBERTSON Laura (GER)	PAVLOVICH Veronika (BLR)	PAVLOVICH Viktoria (BLR)	WD	Main Draw	R16	3 - 4	11:9 1:11 11:7 5:11 11:5 11:13 7:11	PAVLOVICH Veronika	PAVLOVICH Viktoria
+2005	St. Petersburg Open 2005	AMBRUS Timea (HUN)	LI Bin (HUN)	IVANCAN Irene (GER)	ROBERTSON Laura (GER)	WD	Qualification	QR16	1 - 3	4:11 11:5 10:12 5:11	IVANCAN Irene	ROBERTSON Laura
+2005	St. Petersburg Open 2005	POTA Georgina (HUN)	TOTH Krisztina (HUN)	KOTIKHINA Irina (RUS)	TIKHOMIROVA Anna (RUS)	WD	Main Draw	R16	4 - 1	12:10 8:11 11:8 11:7 11:2	POTA Georgina	TOTH Krisztina
+2005	St. Petersburg Open 2005	POTA Georgina (HUN)	TOTH Krisztina (HUN)	STRBIKOVA Renata (CZE)	VACENOVSKA Iveta (CZE)	WD	Main Draw	QuarterFinal	4 - 1	6:11 11:1 11:4 12:10 11:8	POTA Georgina	TOTH Krisztina
+2005	St. Petersburg Open 2005	POTA Georgina (HUN)	TOTH Krisztina (HUN)	FADEEVA Oxana (RUS)	KREKINA Svetlana (RUS)	WD	Main Draw	SemiFinal	4 - 0	11:4 11:9 11:5 11:4	POTA Georgina	TOTH Krisztina
+2005	St. Petersburg Open 2005	POTA Georgina (HUN)	TOTH Krisztina (HUN)	PAVLOVICH Veronika (BLR)	PAVLOVICH Viktoria (BLR)	WD	Main Draw	Final	4 - 1	11:9 11:8 9:11 11:4 11:7	POTA Georgina	TOTH Krisztina
+2005	St. Petersburg Open 2005	DAS Mouma (IND)	GHATAK Poulomi (IND)	KOTIKHINA Irina (RUS)	TIKHOMIROVA Anna (RUS)	WD	Qualification	QR32	1 - 3	5:11 11:9 6:11 6:11	KOTIKHINA Irina	TIKHOMIROVA Anna
+2005	St. Petersburg Open 2005	ISHIZUKA Miwako (JPN)	ONO Shiho (JPN)	FETUKHINA Margarita (RUS)	ISAEVA Anna (RUS)	WD	Qualification	QR32	3 - 2	11:6 11:13 11:5 11:13 11:7	ISHIZUKA Miwako	ONO Shiho
+2005	St. Petersburg Open 2005	ISHIZUKA Miwako (JPN)	ONO Shiho (JPN)	MARKOVA Ekaterina (RUS)	KUZMINA Elena (RUS)	WD	Qualification	QR16	3 - 1	11:4 7:11 11:6 11:4	ISHIZUKA Miwako	ONO Shiho
+2005	St. Petersburg Open 2005	ISHIGAKI Yuka (JPN)	TERUI Moemi (JPN)	ROHR Gaby (GER)	ROHR Meike (GER)	WD	Qualification	QR16	1 - 3	7:11 11:8 6:11 6:11	ROHR Gaby	ROHR Meike
+2005	St. Petersburg Open 2005	CICHOCKA Magdalena (POL)	XU Jie (1982) (POL)	MISIKONYTE Lina (LTU)	PETUKHOVA Evgeniya (RUS)	WD	Qualification	QR32	0 - 3	10:12 8:11 6:11	MISIKONYTE Lina	PETUKHOVA Evgeniya
+2005	St. Petersburg Open 2005	MARKOVA Ekaterina (RUS)	KUZMINA Elena (RUS)	GRUNDISCH Carole (FRA)	NECULA Iulia (ROU)	WD	Qualification	QR32	3 - 1	17:15 11:6 11:13 11:8	MARKOVA Ekaterina	KUZMINA Elena
+2005	St. Petersburg Open 2005	KULAGINA Tatjana (RUS)	VORONOVA Anastasia (RUS)	KARAGODINA Inna (BLR)	PRIVALOVA Alexandra (BLR)	WD	Qualification	QR32	3 - 1	11:8 6:11 11:7 11:6	KULAGINA Tatjana	VORONOVA Anastasia
+2005	St. Petersburg Open 2005	LEMESHEVSKAYA Valeriya (RUS)	SHAVYRINA Marina (RUS)	ISHIGAKI Yuka (JPN)	TERUI Moemi (JPN)	WD	Qualification	QR32	0 - 3	6:11 4:11 12:14	ISHIGAKI Yuka	TERUI Moemi
+2005	St. Petersburg Open 2005	KULAGINA Tatjana (RUS)	VORONOVA Anastasia (RUS)	KIRITSA Liudmila (RUS)	LOSOSOVSKAYA Olga (RUS)	WD	Qualification	QR16	3 - 2	8:11 11:9 11:6 10:12 11:9	KULAGINA Tatjana	VORONOVA Anastasia
+2005	St. Petersburg Open 2005	PROKHOROVA Yulia (RUS)	DOLGIKH Maria (RUS)	PASKAUSKIENE Ruta (LTU)	ODOROVA Eva (SVK)	WD	Qualification	QR16	3 - 0	11:6 12:10 12:10	PROKHOROVA Yulia	DOLGIKH Maria
+2005	St. Petersburg Open 2005	ABRAMOVA Natalia (RUS)	AKHMETOVA Liubov (RUS)	MOLNAR Zita (HUN)	PERGEL Szandra (HUN)	WD	Qualification	QR16	0 - 3	3:11 10:12 6:11	MOLNAR Zita	PERGEL Szandra
+2005	St. Petersburg Open 2005	MISIKONYTE Lina (LTU)	PETUKHOVA Evgeniya (RUS)	STRBIKOVA Renata (CZE)	VACENOVSKA Iveta (CZE)	WD	Main Draw	R16	1 - 4	8:11 7:11 11:9 9:11 10:12	STRBIKOVA Renata	VACENOVSKA Iveta
+2005	St. Petersburg Open 2005	FADEEVA Oxana (RUS)	KREKINA Svetlana (RUS)	ISHIZUKA Miwako (JPN)	ONO Shiho (JPN)	WD	Main Draw	R16	4 - 0	11:5 11:2 11:9 11:5	FADEEVA Oxana	KREKINA Svetlana
+2005	St. Petersburg Open 2005	PROKHOROVA Yulia (RUS)	DOLGIKH Maria (RUS)	LANG Kristin (GER)	SCHALL Elke (GER)	WD	Main Draw	R16	4 - 2	12:10 11:3 11:9 8:11 8:11 11:7	PROKHOROVA Yulia	DOLGIKH Maria
+2005	St. Petersburg Open 2005	GANINA Svetlana (RUS)	PALINA Irina (RUS)	MOLNAR Zita (HUN)	PERGEL Szandra (HUN)	WD	Main Draw	R16	4 - 0	11:6 11:7 11:5 11:6	GANINA Svetlana	PALINA Irina
+2005	St. Petersburg Open 2005	FADEEVA Oxana (RUS)	KREKINA Svetlana (RUS)	PROKHOROVA Yulia (RUS)	DOLGIKH Maria (RUS)	WD	Main Draw	QuarterFinal	4 - 0	11:7 11:5 11:8 11:9	FADEEVA Oxana	KREKINA Svetlana
+2005	St. Petersburg Open 2005	GANINA Svetlana (RUS)	PALINA Irina (RUS)	PAVLOVICH Veronika (BLR)	PAVLOVICH Viktoria (BLR)	WD	Main Draw	QuarterFinal	2 - 4	11:6 12:10 8:11 6:11 7:11 6:11	PAVLOVICH Veronika	PAVLOVICH Viktoria

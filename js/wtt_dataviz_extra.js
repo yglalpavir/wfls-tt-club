@@ -115,6 +115,41 @@ function wttBuildAssocCountryMap() {
     return m;
 }
 
+// 按标签在 wttSeasonsData 中查找赛季对象
+function wttGetSeasonByLabel(label) {
+    if (!label || !wttSeasonsData || !wttSeasonsData.length) return null;
+    return wttSeasonsData.find(s => s.label === label) || null;
+}
+
+// 定位当前赛季：优先取排名时间线最后一条记录的赛季标签，其次取 seasons 列表最后一项
+function wttGetCurrentSeason() {
+    if (!wttSeasonsData || !wttSeasonsData.length) return null;
+    if (wttRankingTimeline && wttRankingTimeline.length) {
+        for (let i = wttRankingTimeline.length - 1; i >= 0; i--) {
+            if (wttRankingTimeline[i] && wttRankingTimeline[i].season) {
+                const s = wttGetSeasonByLabel(wttRankingTimeline[i].season);
+                if (s) return s;
+            }
+        }
+    }
+    return wttSeasonsData[wttSeasonsData.length - 1];
+}
+
+// 返回某赛季 [startDate, endDate] 内有过比赛记录的球员集合（无赛季时返回 null，表示不过滤）
+function wttGetSeasonActivePlayers(season) {
+    if (!season || !wttScoreLogData || !wttScoreLogData.length) return null;
+    const active = new Set();
+    for (const r of wttScoreLogData) {
+        if (!isMatchRecord(r)) continue;
+        const d = r['日期'];
+        if (d && d >= season.startDate && d <= season.endDate) {
+            if (r['胜者']) active.add(r['胜者']);
+            if (r['负者']) active.add(r['负者']);
+        }
+    }
+    return active;
+}
+
 // 由按积分降序的球员数组计算协会实力分（前五加权，不足5人按可用权重归一化）
 // 协会人数 n < 5 时，实力分额外乘以 0.95^(5-n)，避免单名高排名球员撑起小协会排名
 function wttAssocStrengthFromScores(sortedPlayers) {
@@ -178,9 +213,15 @@ function wttBuildAssocPlayerMap() {
 function wttComputeAssocStrengthList(scoreMap) {
     const assocPlayers = wttBuildAssocPlayerMap();
     const countryMap = wttBuildAssocCountryMap();
+    // 不计算本赛季无比赛数据的球员
+    const activeThisSeason = wttGetSeasonActivePlayers(wttGetCurrentSeason());
+    const filterActive = activeThisSeason && activeThisSeason.size > 0
+        ? name => activeThisSeason.has(name)
+        : () => true;
     const list = [];
     for (const [code, players] of Object.entries(assocPlayers)) {
         const scored = players
+            .filter(filterActive)
             .map(name => ({ name, score: (scoreMap && scoreMap[name] != null) ? scoreMap[name] : 0 }))
             .sort((a, b) => b.score - a.score);
         const top5 = scored.slice(0, 5);
@@ -353,12 +394,19 @@ function wttBuildBarRaceAssocColors() {
 }
 
 // 懒缓存：按需计算某一帧的 Top 20 数据（含积分、协会、旗帜）
+// 该帧所属赛季无比赛数据的球员自动隐去，有比赛数据的赛季正常显示
 function wttGetBarRaceFrame(frameIndex) {
     if (wttBarRace.cache.has(frameIndex)) return wttBarRace.cache.get(frameIndex);
     const entry = wttRankingTimeline[frameIndex];
     if (!entry) return null;
+    const season = wttGetSeasonByLabel(entry.season);
+    const seasonActive = wttGetSeasonActivePlayers(season);
+    const filterActive = seasonActive && seasonActive.size > 0
+        ? name => seasonActive.has(name)
+        : () => true;
     const scoreMap = wttBuildSnapshotScoreMap(entry);
     const items = Object.keys(scoreMap)
+        .filter(filterActive)
         .map(name => {
             const a = wttGetPlayerAssoc(name);
             const code = a && a.assoc ? String(a.assoc).toUpperCase() : '';

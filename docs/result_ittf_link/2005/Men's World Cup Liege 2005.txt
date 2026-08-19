@@ -1,0 +1,42 @@
+2005	Men's World Cup Liege 2005	ITTF World Cup	--	32	2005-10-21	2005-10-23
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+50
+Total: 32
+
+2005	Men's World Cup Liege 2005	BOLL Timo (GER)		WANG Liqin (CHN)		MS	Main Draw	QuarterFinal	4 - 3	3:11 9:11 11:6 14:12 11:9 2:11 11:7	BOLL Timo	
+2005	Men's World Cup Liege 2005	MA Lin (CHN)		RYU Seungmin (KOR)		MS	Main Draw	QuarterFinal	4 - 1	11:9 11:8 9:11 11:6 11:8	MA Lin	
+2005	Men's World Cup Liege 2005	WANG Hao (CHN)		SAIVE Jean-Michel (BEL)		MS	Main Draw	QuarterFinal	4 - 2	11:3 6:11 9:11 11:6 11:9 11:6	WANG Hao	
+2005	Men's World Cup Liege 2005	SAMSONOV Vladimir (BLR)		MAZE Michael (DEN)		MS	Main Draw	QuarterFinal	4 - 1	13:11 11:3 11:5 3:11 11:9	SAMSONOV Vladimir	
+2005	Men's World Cup Liege 2005	BOLL Timo (GER)		MA Lin (CHN)		MS	Main Draw	SemiFinal	4 - 3	11:9 5:11 11:7 6:11 11:8 8:11 11:6	BOLL Timo	
+2005	Men's World Cup Liege 2005	WANG Hao (CHN)		SAMSONOV Vladimir (BLR)		MS	Main Draw	SemiFinal	4 - 1	11:8 7:11 11:9 11:4 11:6	WANG Hao	
+2005	Men's World Cup Liege 2005	BOLL Timo (GER)		WANG Hao (CHN)		MS	Main Draw	Final	4 - 3	11:3 4:11 11:8 3:11 11:13 11:8 11:5	BOLL Timo	
+2005	Men's World Cup Liege 2005	MA Lin (CHN)		SAMSONOV Vladimir (BLR)		MS	Position Draw	2	4 - 2	11:9 11:7 9:11 11:8 8:11 13:11	MA Lin	
+2005	Men's World Cup Liege 2005	WANG Liqin (CHN)		MAZE Michael (DEN)		MS	Qualification		4 - 1	11:6 13:11 8:11 11:5 11:2	WANG Liqin	
+2005	Men's World Cup Liege 2005	OH Sangeun (KOR)		LIN Ju (DOM)		MS	Qualification	QR2	4 - 1	11:7 11:8 11:6 9:11 11:5	OH Sangeun	
+2005	Men's World Cup Liege 2005	MAZE Michael (DEN)		LIN Ju (DOM)		MS	Qualification	3	4 - 1	11:3 6:11 11:6 11:6 11:2	MAZE Michael	
+2005	Men's World Cup Liege 2005	WANG Liqin (CHN)		OH Sangeun (KOR)		MS	Qualification	QR4	4 - 0	11:4 11:9 11:7 11:5	WANG Liqin	
+2005	Men's World Cup Liege 2005	WANG Liqin (CHN)		LIN Ju (DOM)		MS	Qualification	5	4 - 0	11:4 11:9 11:6 11:9	WANG Liqin	
+2005	Men's World Cup Liege 2005	OH Sangeun (KOR)		MAZE Michael (DEN)		MS	Qualification	6	1 - 4	7:11 12:10 12:14 4:11 5:11	MAZE Michael	
+2005	Men's World Cup Liege 2005	BOLL Timo (GER)		CHUANG Chih-Yuan (TPE)		MS	Qualification		4 - 1	6:11 12:10 13:11 11:6 12:10	BOLL Timo	
+2005	Men's World Cup Liege 2005	SAMSONOV Vladimir (BLR)		HENZELL William (AUS)		MS	Qualification	QR2	4 - 0	11:7 11:9 11:3 11:6	SAMSONOV Vladimir	
+2005	Men's World Cup Liege 2005	CHUANG Chih-Yuan (TPE)		HENZELL William (AUS)		MS	Qualification	3	4 - 1	10:12 11:6 11:5 11:9 11:6	CHUANG Chih-Yuan	
+2005	Men's World Cup Liege 2005	BOLL Timo (GER)		SAMSONOV Vladimir (BLR)		MS	Qualification	QR4	2 - 4	11:8 13:15 7:11 11:9 8:11 8:11	SAMSONOV Vladimir	
+2005	Men's World Cup Liege 2005	BOLL Timo (GER)		HENZELL William (AUS)		MS	Qualification	5	4 - 1	11:4 12:10 9:11 11:8 11:7	BOLL Timo	
+2005	Men's World Cup Liege 2005	SAMSONOV Vladimir (BLR)		CHUANG Chih-Yuan (TPE)		MS	Qualification	6	4 - 0	11:4 11:4 11:8 11:8	SAMSONOV Vladimir	
+2005	Men's World Cup Liege 2005	MA Lin (CHN)		SAIVE Jean-Michel (BEL)		MS	Qualification		4 - 1	11:6 12:10 9:11 11:9 11:9	MA Lin	
+2005	Men's World Cup Liege 2005	KREANGA Kalinikos (GRE)		SALEH Ahmed (EGY)		MS	Qualification	QR2	4 - 0	11:5 11:9 11:2 11:7	KREANGA Kalinikos	
+2005	Men's World Cup Liege 2005	SAIVE Jean-Michel (BEL)		SALEH Ahmed (EGY)		MS	Qualification	3	4 - 0	11:8 11:4 11:9 11:6	SAIVE Jean-Michel	
+2005	Men's World Cup Liege 2005	MA Lin (CHN)		KREANGA Kalinikos (GRE)		MS	Qualification	QR4	4 - 1	11:4 11:8 6:11 12:10 11:7	MA Lin	
+2005	Men's World Cup Liege 2005	MA Lin (CHN)		SALEH Ahmed (EGY)		MS	Qualification	5	4 - 1	11:6 11:7 15:17 11:7 11:9	MA Lin	
+2005	Men's World Cup Liege 2005	KREANGA Kalinikos (GRE)		SAIVE Jean-Michel (BEL)		MS	Qualification	6	3 - 4	11:9 10:12 9:11 11:8 7:11 11:8 10:12	SAIVE Jean-Michel	
+2005	Men's World Cup Liege 2005	WANG Hao (CHN)		CHEN Weixing (AUT)		MS	Qualification		4 - 3	11:8 11:9 10:12 11:13 11:6 6:11 11:6	WANG Hao	
+2005	Men's World Cup Liege 2005	RYU Seungmin (KOR)		CSABA Bence (CAN)		MS	Qualification	QR2	4 - 0	11:4 11:5 12:10 11:7	RYU Seungmin	
+2005	Men's World Cup Liege 2005	CHEN Weixing (AUT)		CSABA Bence (CAN)		MS	Qualification	3	4 - 0	11:3 11:4 11:4 11:4	CHEN Weixing	
+2005	Men's World Cup Liege 2005	WANG Hao (CHN)		RYU Seungmin (KOR)		MS	Qualification	QR4	4 - 3	5:11 9:11 11:7 11:7 11:6 14:16 11:2	WANG Hao	
+2005	Men's World Cup Liege 2005	WANG Hao (CHN)		CSABA Bence (CAN)		MS	Qualification	5	4 - 0	11:5 11:9 11:5 11:2	WANG Hao	
+2005	Men's World Cup Liege 2005	RYU Seungmin (KOR)		CHEN Weixing (AUT)		MS	Qualification	6	4 - 1	11:3 11:6 9:11 12:10 11:9	RYU Seungmin

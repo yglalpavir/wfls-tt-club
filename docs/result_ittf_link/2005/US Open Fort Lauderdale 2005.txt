@@ -6,3 +6,321 @@
 参赛人数：360
 开始日期：2005-07-07
 结束日期：2005-07-10
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 2 Total: 171
+
+Start
+Prev
+1
+2
+Next
+End
+2005	US Open Fort Lauderdale 2005	SAMSONOV Vladimir (BLR)		REED Barney (USA)		MS	Main Draw	R64	4 - 0	14:12 13:11 11:5 11:6	SAMSONOV Vladimir	
+2005	US Open Fort Lauderdale 2005	SVENSSON Robert (SWE)		MOLDOVAN Istvan (NOR)		MS	Main Draw	R64	4 - 1	11:7 6:11 12:10 11:8 11:5	SVENSSON Robert	
+2005	US Open Fort Lauderdale 2005	MOLIN Magnus (SWE)		SORENSEN Mads (DEN)		MS	Main Draw	R64	4 - 1	14:12 11:1 8:11 11:6 11:8	MOLIN Magnus	
+2005	US Open Fort Lauderdale 2005	PETER-PAUL Pradeeban (CAN)		WOSIK Torben (GER)		MS	Main Draw	R64	3 - 4	11:3 11:9 11:8 5:11 7:11 11:13 6:11	WOSIK Torben	
+2005	US Open Fort Lauderdale 2005	ELOI Damien (FRA)		PETERSEN Christoffer (DEN)		MS	Main Draw	R64	4 - 1	6:11 11:5 11:6 11:8 11:7	ELOI Damien	
+2005	US Open Fort Lauderdale 2005	ROBERTSON Adam (WAL)		SEREDA Peter (SVK)		MS	Main Draw	R64	1 - 4	7:11 10:12 11:9 3:11 8:11	SEREDA Peter	
+2005	US Open Fort Lauderdale 2005	TUGWELL Finn (DEN)		VOSTES Yannick (BEL)		MS	Main Draw	R64	3 - 4	7:11 11:7 11:3 11:5 3:11 7:11 8:11	VOSTES Yannick	
+2005	US Open Fort Lauderdale 2005	LEE Jinkwon (KOR)		LUNDQVIST Jens (SWE)		MS	Main Draw	R64	0 - 4	7:11 12:14 3:11 9:11	LUNDQVIST Jens	
+2005	US Open Fort Lauderdale 2005	CHEN Weixing (AUT)		LO Dany (FRA)		MS	Main Draw	R64	4 - 0	11:6 11:5 11:4 11:2	CHEN Weixing	
+2005	US Open Fort Lauderdale 2005	BERTIN Christophe (FRA)		PISTEJ Lubomir (SVK)		MS	Main Draw	R64	2 - 4	8:11 11:7 7:11 11:6 9:11 8:11	PISTEJ Lubomir	
+2005	US Open Fort Lauderdale 2005	JOVER Sebastien (FRA)		AXELQVIST Johan (SWE)		MS	Main Draw	R64	3 - 4	12:10 14:12 12:10 9:11 3:11 8:11 9:11	AXELQVIST Johan	
+2005	US Open Fort Lauderdale 2005	CHO Jihoon (KOR)		LEGOUT Christophe (FRA)		MS	Main Draw	R64	1 - 4	7:11 11:8 6:11 4:11 5:11	LEGOUT Christophe	
+2005	US Open Fort Lauderdale 2005	CHILA Patrick (FRA)		KIM Taehoon (KOR)		MS	Main Draw	R64	4 - 2	4:11 11:9 9:11 13:11 11:7 11:5	CHILA Patrick	
+2005	US Open Fort Lauderdale 2005	SAHA Subhajit (IND)		KEINATH Thomas (SVK)		MS	Main Draw	R64	1 - 4	6:11 11:7 7:11 3:11 6:11	KEINATH Thomas	
+2005	US Open Fort Lauderdale 2005	MARMUREK Olivier (FRA)		KONGSGAARD Christian (DEN)		MS	Main Draw	R64	1 - 4	9:11 9:11 11:8 8:11 2:11	KONGSGAARD Christian	
+2005	US Open Fort Lauderdale 2005	MAECK Anthony (BEL)		OH Sangeun (KOR)		MS	Main Draw	R64	0 - 4	8:11 6:11 9:11 8:11	OH Sangeun	
+2005	US Open Fort Lauderdale 2005	SAIVE Jean-Michel (BEL)		HINSE Pierre-Luc (CAN)		MS	Main Draw	R64	4 - 1	11:8 12:10 9:11 11:4 11:4	SAIVE Jean-Michel	
+2005	US Open Fort Lauderdale 2005	DURAN Marc (ESP)		YOON Jaeyoung (KOR)		MS	Main Draw	R64	3 - 4	11:6 6:11 11:7 12:14 11:6 7:11 9:11	YOON Jaeyoung	
+2005	US Open Fort Lauderdale 2005	CHENG Yinghua (USA)		BOBILLIER Loic (FRA)		MS	Main Draw	R64	1 - 4	11:13 9:11 9:11 13:11 5:11	BOBILLIER Loic	
+2005	US Open Fort Lauderdale 2005	YOO Changjae (KOR)		KUZMIN Fedor (RUS)		MS	Main Draw	R64	1 - 4	9:11 11:7 8:11 10:12 3:11	KUZMIN Fedor	
+2005	US Open Fort Lauderdale 2005	LEE Chulseung (KOR)		ACHANTA Sharath (IND)		MS	Main Draw	R64	4 - 3	6:11 9:11 12:10 11:6 11:4 9:11 11:6	LEE Chulseung	
+2005	US Open Fort Lauderdale 2005	KASSAM Faazil (CAN)		LEE Jungwoo (KOR)		MS	Main Draw	R64	0 - 4	6:11 6:11 4:11 5:11	LEE Jungwoo	
+2005	US Open Fort Lauderdale 2005	ZHUANG David (USA)		CHO Eonrae (KOR)		MS	Main Draw	R64	0 - 4	8:11 9:11 10:12 9:11	CHO Eonrae	
+2005	US Open Fort Lauderdale 2005	DESPRES Rodolphe (FRA)		SMIRNOV Alexey (RUS)		MS	Main Draw	R64	0 - 4	5:11 2:11 6:11 4:11	SMIRNOV Alexey	
+2005	US Open Fort Lauderdale 2005	GAO Ning (SGP)		MEHTA Pathik (IND)		MS	Main Draw	R64	4 - 0	11:7 11:3 11:7 11:7	GAO Ning	
+2005	US Open Fort Lauderdale 2005	GERELL Par (SWE)		CHRIST Nico (GER)		MS	Main Draw	R64	4 - 0	11:8 11:5 11:7 11:9	GERELL Par	
+2005	US Open Fort Lauderdale 2005	FAN Guoliang (ESP)		GARDOS Robert (AUT)		MS	Main Draw	R64	1 - 4	13:11 6:11 8:11 2:11 9:11	GARDOS Robert	
+2005	US Open Fort Lauderdale 2005	FEJER-KONNERTH Zoltan (GER)		TAKAKIWA Kenichi (JPN)		MS	Main Draw	R64	4 - 1	11:8 5:11 12:10 11:8 11:9	FEJER-KONNERTH Zoltan	
+2005	US Open Fort Lauderdale 2005	ROY Soumyadeep (IND)		GIONIS Panagiotis (GRE)		MS	Main Draw	R64	2 - 4	7:11 11:13 11:9 11:9 6:11 4:11	GIONIS Panagiotis	
+2005	US Open Fort Lauderdale 2005	MONRAD Martin (DEN)		MATSUMOTO Cazuo (BRA)		MS	Main Draw	R64	4 - 3	3:11 11:6 11:7 2:11 12:10 9:11 14:12	MONRAD Martin	
+2005	US Open Fort Lauderdale 2005	TSUBOI Gustavo (BRA)		CHUANG Chih-Yuan (TPE)		MS	Main Draw	R64	0 - 4	5:11 11:13 6:11 6:11	CHUANG Chih-Yuan	
+2005	US Open Fort Lauderdale 2005	SAMSONOV Vladimir (BLR)		SVENSSON Robert (SWE)		MS	Main Draw	R32	4 - 0	11:2 11:8 11:7 11:4	SAMSONOV Vladimir	
+2005	US Open Fort Lauderdale 2005	MOLIN Magnus (SWE)		WOSIK Torben (GER)		MS	Main Draw	R32	1 - 4	7:11 3:11 11:7 7:11 7:11	WOSIK Torben	
+2005	US Open Fort Lauderdale 2005	ELOI Damien (FRA)		SEREDA Peter (SVK)		MS	Main Draw	R32	4 - 0	13:11 11:5 11:8 11:3	ELOI Damien	
+2005	US Open Fort Lauderdale 2005	VOSTES Yannick (BEL)		LUNDQVIST Jens (SWE)		MS	Main Draw	R32	0 - 4	7:11 9:11 6:11 6:11	LUNDQVIST Jens	
+2005	US Open Fort Lauderdale 2005	CHEN Weixing (AUT)		PISTEJ Lubomir (SVK)		MS	Main Draw	R32	4 - 0	12:10 11:6 11:3 11:5	CHEN Weixing	
+2005	US Open Fort Lauderdale 2005	AXELQVIST Johan (SWE)		LEGOUT Christophe (FRA)		MS	Main Draw	R32	1 - 4	4:11 9:11 7:11 11:8 8:11	LEGOUT Christophe	
+2005	US Open Fort Lauderdale 2005	CHILA Patrick (FRA)		KEINATH Thomas (SVK)		MS	Main Draw	R32	2 - 4	14:12 11:2 7:11 9:11 9:11 6:11	KEINATH Thomas	
+2005	US Open Fort Lauderdale 2005	KONGSGAARD Christian (DEN)		OH Sangeun (KOR)		MS	Main Draw	R32	1 - 4	11:7 7:11 5:11 6:11 9:11	OH Sangeun	
+2005	US Open Fort Lauderdale 2005	SAIVE Jean-Michel (BEL)		YOON Jaeyoung (KOR)		MS	Main Draw	R32	1 - 4	7:11 10:12 11:8 6:11 4:11	YOON Jaeyoung	
+2005	US Open Fort Lauderdale 2005	BOBILLIER Loic (FRA)		KUZMIN Fedor (RUS)		MS	Main Draw	R32	0 - 4	8:11 8:11 8:11 6:11	KUZMIN Fedor	
+2005	US Open Fort Lauderdale 2005	LEE Chulseung (KOR)		LEE Jungwoo (KOR)		MS	Main Draw	R32	1 - 4	8:11 11:8 8:11 9:11 6:11	LEE Jungwoo	
+2005	US Open Fort Lauderdale 2005	CHO Eonrae (KOR)		SMIRNOV Alexey (RUS)		MS	Main Draw	R32	4 - 0	11:7 11:2 11:7 11:5	CHO Eonrae	
+2005	US Open Fort Lauderdale 2005	GAO Ning (SGP)		FETH Stefan (GER)		MS	Main Draw	R32	4 - 2	11:7 8:11 11:8 9:11 12:10 11:7	GAO Ning	
+2005	US Open Fort Lauderdale 2005	GERELL Par (SWE)		GARDOS Robert (AUT)		MS	Main Draw	R32	4 - 0	11:8 12:10 11:9 11:2	GERELL Par	
+2005	US Open Fort Lauderdale 2005	FEJER-KONNERTH Zoltan (GER)		GIONIS Panagiotis (GRE)		MS	Main Draw	R32	3 - 4	7:11 11:8 7:11 11:6 7:11 11:2 3:11	GIONIS Panagiotis	
+2005	US Open Fort Lauderdale 2005	MONRAD Martin (DEN)		CHUANG Chih-Yuan (TPE)		MS	Main Draw	R32	4 - 3	6:11 8:11 6:11 11:6 11:7 11:6 11:7	MONRAD Martin	
+2005	US Open Fort Lauderdale 2005	SAMSONOV Vladimir (BLR)		WOSIK Torben (GER)		MS	Main Draw	R16	4 - 1	8:11 11:5 12:10 11:8 11:8	SAMSONOV Vladimir	
+2005	US Open Fort Lauderdale 2005	ELOI Damien (FRA)		LUNDQVIST Jens (SWE)		MS	Main Draw	R16	3 - 4	12:10 9:11 11:13 11:6 8:11 11:5 8:11	LUNDQVIST Jens	
+2005	US Open Fort Lauderdale 2005	CHEN Weixing (AUT)		LEGOUT Christophe (FRA)		MS	Main Draw	R16	4 - 0	11:5 11:9 11:5 11:9	CHEN Weixing	
+2005	US Open Fort Lauderdale 2005	KEINATH Thomas (SVK)		OH Sangeun (KOR)		MS	Main Draw	R16	3 - 4	5:11 12:10 12:14 11:9 11:9 7:11 7:11	OH Sangeun	
+2005	US Open Fort Lauderdale 2005	YOON Jaeyoung (KOR)		KUZMIN Fedor (RUS)		MS	Main Draw	R16	1 - 4	8:11 11:8 12:14 5:11 7:11	KUZMIN Fedor	
+2005	US Open Fort Lauderdale 2005	LEE Jungwoo (KOR)		CHO Eonrae (KOR)		MS	Main Draw	R16	4 - 3	3:11 11:7 8:11 11:8 11:7 10:12 11:6	LEE Jungwoo	
+2005	US Open Fort Lauderdale 2005	GAO Ning (SGP)		GERELL Par (SWE)		MS	Main Draw	R16	4 - 1	11:9 11:6 6:11 11:8 11:8	GAO Ning	
+2005	US Open Fort Lauderdale 2005	GIONIS Panagiotis (GRE)		MONRAD Martin (DEN)		MS	Main Draw	R16	1 - 4	3:11 10:12 11:9 9:11 8:11	MONRAD Martin	
+2005	US Open Fort Lauderdale 2005	SAMSONOV Vladimir (BLR)		LUNDQVIST Jens (SWE)		MS	Main Draw	QuarterFinal	4 - 0	13:11 11:6 11:7 11:9	SAMSONOV Vladimir	
+2005	US Open Fort Lauderdale 2005	CHEN Weixing (AUT)		OH Sangeun (KOR)		MS	Main Draw	QuarterFinal	2 - 4	9:11 7:11 6:11 11:6 11:8 8:11	OH Sangeun	
+2005	US Open Fort Lauderdale 2005	KUZMIN Fedor (RUS)		LEE Jungwoo (KOR)		MS	Main Draw	QuarterFinal	1 - 4	4:11 11:9 8:11 9:11 5:11	LEE Jungwoo	
+2005	US Open Fort Lauderdale 2005	GAO Ning (SGP)		MONRAD Martin (DEN)		MS	Main Draw	QuarterFinal	2 - 4	11:9 7:11 12:14 11:9 6:11 10:12	MONRAD Martin	
+2005	US Open Fort Lauderdale 2005	SAMSONOV Vladimir (BLR)		OH Sangeun (KOR)		MS	Main Draw	SemiFinal	1 - 4	11:8 4:11 8:11 8:11 9:11	OH Sangeun	
+2005	US Open Fort Lauderdale 2005	LEE Jungwoo (KOR)		MONRAD Martin (DEN)		MS	Main Draw	SemiFinal	4 - 1	11:7 11:4 9:11 11:1 13:11	LEE Jungwoo	
+2005	US Open Fort Lauderdale 2005	OH Sangeun (KOR)		LEE Jungwoo (KOR)		MS	Main Draw	Final	4 - 1	11:13 16:14 11:8 11:6 11:5	OH Sangeun	
+2005	US Open Fort Lauderdale 2005	JOVER Sebastien (FRA)		DATTEL Barry (USA)		MS	Qualification	3	4 - 0	11:4 11:3 11:4 11:9	JOVER Sebastien	
+2005	US Open Fort Lauderdale 2005	COCHRAN Joseph (USA)		SANJAY Lester (GUA)		MS	Qualification		0 - 4	5:11 7:11 6:11 9:11	SANJAY Lester	
+2005	US Open Fort Lauderdale 2005	BOBILLIER Loic (FRA)		SANJAY Lester (GUA)		MS	Qualification	QR2	4 - 0	12:10 11:4 11:3 11:3	BOBILLIER Loic	
+2005	US Open Fort Lauderdale 2005	BOBILLIER Loic (FRA)		COCHRAN Joseph (USA)		MS	Qualification	3	4 - 0	11:3 11:3 11:8 11:8	BOBILLIER Loic	
+2005	US Open Fort Lauderdale 2005	CHUI Chi-Sun (USA)		STRACHAN Darryl (JAM)		MS	Qualification		4 - 0	11:7 11:9 11:7 11:5	CHUI Chi-Sun	
+2005	US Open Fort Lauderdale 2005	FETH Stefan (GER)		STRACHAN Darryl (JAM)		MS	Qualification	QR2	4 - 0	11:4 11:4 11:7 11:0	FETH Stefan	
+2005	US Open Fort Lauderdale 2005	FETH Stefan (GER)		CHUI Chi-Sun (USA)		MS	Qualification	3	4 - 0	11:5 11:7 11:5 11:9	FETH Stefan	
+2005	US Open Fort Lauderdale 2005	AU Kevin (USA)		NANDI Anirban (IND)		MS	Qualification		1 - 4	6:11 11:7 8:11 12:14 8:11	NANDI Anirban	
+2005	US Open Fort Lauderdale 2005	KIM Taehoon (KOR)		NANDI Anirban (IND)		MS	Qualification	QR2	4 - 0	11:8 11:4 11:7 11:3	KIM Taehoon	
+2005	US Open Fort Lauderdale 2005	KIM Taehoon (KOR)		AU Kevin (USA)		MS	Qualification	3	4 - 0	11:7 11:4 11:7 13:11	KIM Taehoon	
+2005	US Open Fort Lauderdale 2005	AXELQVIST Johan (SWE)		ALBAN Keith (USA)		MS	Qualification	3	4 - 0	11:8 11:8 11:8 11:7	AXELQVIST Johan	
+2005	US Open Fort Lauderdale 2005	FAN Guoliang (ESP)		TIMSUWAN Sakda (USA)		MS	Qualification		4 - 0	11:4 11:2 11:6 11:5	FAN Guoliang	
+2005	US Open Fort Lauderdale 2005	LEE Jinkwon (KOR)		TIMSUWAN Sakda (USA)		MS	Qualification	QR2	4 - 0	11:4 11:9 11:5 11:3	LEE Jinkwon	
+2005	US Open Fort Lauderdale 2005	LEE Jinkwon (KOR)		FAN Guoliang (ESP)		MS	Qualification	3	3 - 4	11:7 4:11 14:12 9:11 5:11 11:9 8:11	FAN Guoliang	
+2005	US Open Fort Lauderdale 2005	GATICA Hector (GUA)		RUNYAN Trevor (USA)		MS	Qualification		4 - 2	7:11 8:11 11:9 11:9 11:7 11:7	GATICA Hector	
+2005	US Open Fort Lauderdale 2005	BERTIN Christophe (FRA)		RUNYAN Trevor (USA)		MS	Qualification	QR2	4 - 0	11:4 11:5 11:3 11:1	BERTIN Christophe	
+2005	US Open Fort Lauderdale 2005	BERTIN Christophe (FRA)		GATICA Hector (GUA)		MS	Qualification	3	4 - 0	11:3 11:6 11:8 11:3	BERTIN Christophe	
+2005	US Open Fort Lauderdale 2005	CHIU Peter (CAN)		DUBINA Samson (USA)		MS	Qualification		4 - 3	5:11 11:5 11:2 11:6 8:11 6:11 11:2	CHIU Peter	
+2005	US Open Fort Lauderdale 2005	CHO Eonrae (KOR)		DUBINA Samson (USA)		MS	Qualification	QR2	4 - 0	11:4 11:7 11:8 11:5	CHO Eonrae	
+2005	US Open Fort Lauderdale 2005	CHO Eonrae (KOR)		CHIU Peter (CAN)		MS	Qualification	3	4 - 1	11:6 11:4 11:5 8:11 11:6	CHO Eonrae	
+2005	US Open Fort Lauderdale 2005	SORENSEN Mads (DEN)		KIM Bong Geun (USA)		MS	Qualification	QR2	4 - 0	11:9 11:9 11:7 11:9	SORENSEN Mads	
+2005	US Open Fort Lauderdale 2005	ACHANTA Sharath (IND)		REED Barney (USA)		MS	Qualification	QR2	4 - 0	11:8 11:9 11:6 11:6	ACHANTA Sharath	
+2005	US Open Fort Lauderdale 2005	SVENSSON Robert (SWE)		NGUYEN Anh (USA)		MS	Qualification	QR2	4 - 0	11:4 11:8 11:6 11:6	SVENSSON Robert	
+2005	US Open Fort Lauderdale 2005	GUO Peng (CAN)		GOMBOS Ludovic (USA)		MS	Qualification		0 - 4	2:11 9:11 9:11 6:11	GOMBOS Ludovic	
+2005	US Open Fort Lauderdale 2005	ROBERTSON Adam (WAL)		GOMBOS Ludovic (USA)		MS	Qualification	QR2	4 - 1	11:3 12:10 11:8 12:14 11:0	ROBERTSON Adam	
+2005	US Open Fort Lauderdale 2005	ROBERTSON Adam (WAL)		GUO Peng (CAN)		MS	Qualification	3	4 - 0	12:10 11:7 12:10 12:10	ROBERTSON Adam	
+2005	US Open Fort Lauderdale 2005	HINSE Pierre-Luc (CAN)		SHAO Yu (USA)		MS	Qualification		4 - 1	11:9 11:9 6:11 11:8 11:7	HINSE Pierre-Luc	
+2005	US Open Fort Lauderdale 2005	YOO Changjae (KOR)		SHAO Yu (USA)		MS	Qualification	QR2	4 - 1	11:3 11:13 11:6 11:7 12:10	YOO Changjae	
+2005	US Open Fort Lauderdale 2005	YOO Changjae (KOR)		HINSE Pierre-Luc (CAN)		MS	Qualification	3	4 - 1	3:11 11:8 11:7 11:7 11:9	YOO Changjae	
+2005	US Open Fort Lauderdale 2005	SHEN Qiang (CAN)		HUANG Jeff (USA)		MS	Qualification		4 - 0	11:9 11:7 11:4 11:6	SHEN Qiang	
+2005	US Open Fort Lauderdale 2005	TAKAKIWA Kenichi (JPN)		HUANG Jeff (USA)		MS	Qualification	QR2	4 - 0	11:5 12:10 11:9 11:5	TAKAKIWA Kenichi	
+2005	US Open Fort Lauderdale 2005	TAKAKIWA Kenichi (JPN)		SHEN Qiang (CAN)		MS	Qualification	3	4 - 1	11:7 11:9 9:11 12:10 11:9	TAKAKIWA Kenichi	
+2005	US Open Fort Lauderdale 2005	HUGH Adam (USA)		WATSON Kane (JAM)		MS	Qualification		4 - 1	11:6 11:3 11:4 9:11 12:10	HUGH Adam	
+2005	US Open Fort Lauderdale 2005	ROY Soumyadeep (IND)		WATSON Kane (JAM)		MS	Qualification	QR2	4 - 0	11:4 11:7 11:2 11:6	ROY Soumyadeep	
+2005	US Open Fort Lauderdale 2005	ROY Soumyadeep (IND)		HUGH Adam (USA)		MS	Qualification	3	4 - 3	9:11 8:11 11:8 12:10 11:7 10:12 11:8	ROY Soumyadeep	
+2005	US Open Fort Lauderdale 2005	MATSUMOTO Cazuo (BRA)		THERIEN Xavier (CAN)		MS	Qualification	3	4 - 1	8:11 11:8 11:8 11:6 12:10	MATSUMOTO Cazuo	
+2005	US Open Fort Lauderdale 2005	KAMKAR-PARSI Homayoun (CAN)		GREEN Wally (USA)		MS	Qualification		4 - 1	8:11 11:9 11:5 11:2 11:1	KAMKAR-PARSI Homayoun	
+2005	US Open Fort Lauderdale 2005	DURAN Marc (ESP)		KAMKAR-PARSI Homayoun (CAN)		MS	Qualification	3	4 - 0	12:10 11:5 11:5 11:5	DURAN Marc
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 2 Total: 118
+
+Start
+Prev
+1
+2
+Next
+End
+2005	US Open Fort Lauderdale 2005	TIE Yana (HKG)		KIM Soongsil (KOR)		WS	Main Draw	R32	4 - 1	11:6 15:13 8:11 11:5 11:4	TIE Yana	
+2005	US Open Fort Lauderdale 2005	LEE Eunhee (KOR)		LANG Kristin (GER)		WS	Main Draw	R32	4 - 0	11:9 12:10 11:8 11:1	LEE Eunhee	
+2005	US Open Fort Lauderdale 2005	STRBIKOVA Renata (CZE)		FUJII Hiroko (JPN)		WS	Main Draw	R32	3 - 4	8:11 9:11 8:11 11:7 11:7 11:8 8:11	FUJII Hiroko	
+2005	US Open Fort Lauderdale 2005	KIM Junghyun (KOR)		GAO Jun (USA)		WS	Main Draw	R32	2 - 4	3:11 11:4 5:11 13:11 2:11 9:11	GAO Jun	
+2005	US Open Fort Lauderdale 2005	SONG Ah Sim (HKG)		TASEI Mikie (JPN)		WS	Main Draw	R32	4 - 1	11:8 11:9 8:11 11:8 11:3	SONG Ah Sim	
+2005	US Open Fort Lauderdale 2005	HIURA Reiko (JPN)		STRUSE Nicole (GER)		WS	Main Draw	R32	4 - 0	11:7 11:6 11:4 11:9	HIURA Reiko	
+2005	US Open Fort Lauderdale 2005	ZHANG Xueling (SGP)		KIM Bokrae (KOR)		WS	Main Draw	R32	3 - 4	8:11 7:11 12:10 10:12 15:13 11:8 7:11	KIM Bokrae	
+2005	US Open Fort Lauderdale 2005	WANG Yuegu (SGP)		KIM Kyungah (KOR)		WS	Main Draw	R32	4 - 2	11:9 9:11 11:9 13:15 11:9 11:6	WANG Yuegu	
+2005	US Open Fort Lauderdale 2005	LAU Sui Fei (HKG)		PARK Miyoung (KOR)		WS	Main Draw	R32	4 - 2	11:5 8:11 6:11 11:7 11:5 11:3	LAU Sui Fei	
+2005	US Open Fort Lauderdale 2005	TAN Paey Fern (SGP)		MOON Hyunjung (KOR)		WS	Main Draw	R32	0 - 4	8:11 2:11 9:11 8:11	MOON Hyunjung	
+2005	US Open Fort Lauderdale 2005	SUN Beibei (SGP)		LOVAS Petra (HUN)		WS	Main Draw	R32	4 - 1	6:11 11:6 11:4 11:9 11:5	SUN Beibei	
+2005	US Open Fort Lauderdale 2005	ROBERTSON Laura (GER)		LI Jiao (NED)		WS	Main Draw	R32	1 - 4	11:7 7:11 8:11 4:11 4:11	LI Jiao	
+2005	US Open Fort Lauderdale 2005	ZHANG Rui (HKG)		JEON Hyekyung (KOR)		WS	Main Draw	R32	4 - 3	7:11 11:8 11:7 11:7 7:11 6:11 11:8	ZHANG Rui	
+2005	US Open Fort Lauderdale 2005	KERTAI Rita (HUN)		HIRANO Sayaka (JPN)		WS	Main Draw	R32	0 - 4	10:12 5:11 6:11 5:11	HIRANO Sayaka	
+2005	US Open Fort Lauderdale 2005	SCHALL Elke (GER)		KIM Hyehyun (KOR)		WS	Main Draw	R32	4 - 3	11:4 7:11 11:9 11:6 7:11 9:11 11:6	SCHALL Elke	
+2005	US Open Fort Lauderdale 2005	KIM Minhee (YOB=1985) (KOR)		LI Jiawei (SGP)		WS	Main Draw	R32	1 - 4	3:11 11:7 4:11 3:11 2:11	LI Jiawei	
+2005	US Open Fort Lauderdale 2005	TIE Yana (HKG)		LEE Eunhee (KOR)		WS	Main Draw	R16	4 - 0	11:8 11:7 11:7 11:7	TIE Yana	
+2005	US Open Fort Lauderdale 2005	FUJII Hiroko (JPN)		GAO Jun (USA)		WS	Main Draw	R16	2 - 4	11:9 11:4 7:11 7:11 10:12 11:13	GAO Jun	
+2005	US Open Fort Lauderdale 2005	SONG Ah Sim (HKG)		HIURA Reiko (JPN)		WS	Main Draw	R16	4 - 3	11:7 11:9 7:11 8:11 9:11 11:7 11:8	SONG Ah Sim	
+2005	US Open Fort Lauderdale 2005	KIM Bokrae (KOR)		WANG Yuegu (SGP)		WS	Main Draw	R16	2 - 4	10:12 4:11 11:9 11:9 8:11 7:11	WANG Yuegu	
+2005	US Open Fort Lauderdale 2005	LAU Sui Fei (HKG)		MOON Hyunjung (KOR)		WS	Main Draw	R16	4 - 1	11:9 11:8 11:3 4:11 12:10	LAU Sui Fei	
+2005	US Open Fort Lauderdale 2005	SUN Beibei (SGP)		LI Jiao (NED)		WS	Main Draw	R16	2 - 4	11:3 7:11 13:11 9:11 9:11 9:11	LI Jiao	
+2005	US Open Fort Lauderdale 2005	ZHANG Rui (HKG)		HIRANO Sayaka (JPN)		WS	Main Draw	R16	4 - 0	11:7 11:5 11:7 12:10	ZHANG Rui	
+2005	US Open Fort Lauderdale 2005	SCHALL Elke (GER)		LI Jiawei (SGP)		WS	Main Draw	R16	0 - 4	5:11 5:11 8:11 5:11	LI Jiawei	
+2005	US Open Fort Lauderdale 2005	TIE Yana (HKG)		GAO Jun (USA)		WS	Main Draw	QuarterFinal	4 - 0	11:4 11:4 11:7 11:9	TIE Yana	
+2005	US Open Fort Lauderdale 2005	SONG Ah Sim (HKG)		WANG Yuegu (SGP)		WS	Main Draw	QuarterFinal	1 - 4	6:11 5:11 13:11 8:11 7:11	WANG Yuegu	
+2005	US Open Fort Lauderdale 2005	LAU Sui Fei (HKG)		LI Jiao (NED)		WS	Main Draw	QuarterFinal	4 - 2	11:7 7:11 6:11 11:7 11:9 11:7	LAU Sui Fei	
+2005	US Open Fort Lauderdale 2005	ZHANG Rui (HKG)		LI Jiawei (SGP)		WS	Main Draw	QuarterFinal	1 - 4	4:11 16:14 10:12 8:11 5:11	LI Jiawei	
+2005	US Open Fort Lauderdale 2005	TIE Yana (HKG)		WANG Yuegu (SGP)		WS	Main Draw	SemiFinal	4 - 1	11:7 10:12 11:8 11:4 11:7	TIE Yana	
+2005	US Open Fort Lauderdale 2005	LAU Sui Fei (HKG)		LI Jiawei (SGP)		WS	Main Draw	SemiFinal	1 - 4	4:11 11:8 5:11 2:11 12:14	LI Jiawei	
+2005	US Open Fort Lauderdale 2005	TIE Yana (HKG)		LI Jiawei (SGP)		WS	Main Draw	Final	0 - 4	3:11 4:11 6:11 8:11	LI Jiawei	
+2005	US Open Fort Lauderdale 2005	BOSIKA Mimi (USA)		MEDINA Zzwitjhallim (HON)		WS	Qualification		4 - 0	11:7 12:10 11:7 11:6	BOSIKA Mimi	
+2005	US Open Fort Lauderdale 2005	FUJII Hiroko (JPN)		MEDINA Zzwitjhallim (HON)		WS	Qualification	QR2	4 - 0	11:3 11:7 11:6 11:3	FUJII Hiroko	
+2005	US Open Fort Lauderdale 2005	FUJII Hiroko (JPN)		BOSIKA Mimi (USA)		WS	Qualification	3	4 - 0	11:6 11:5 12:10 11:8	FUJII Hiroko	
+2005	US Open Fort Lauderdale 2005	HUGH Judy (USA)		PRABHU Mamata (IND)		WS	Qualification		4 - 3	8:11 11:8 11:4 11:9 9:11 10:12 14:12	HUGH Judy	
+2005	US Open Fort Lauderdale 2005	TASEI Mikie (JPN)		PRABHU Mamata (IND)		WS	Qualification	QR2	4 - 0	11:2 11:3 11:8 11:2	TASEI Mikie	
+2005	US Open Fort Lauderdale 2005	TASEI Mikie (JPN)		HUGH Judy (USA)		WS	Qualification	3	4 - 0	11:6 11:3 11:6 11:3	TASEI Mikie	
+2005	US Open Fort Lauderdale 2005	YAN Shirley (CAN)		LEACH Laura (USA)		WS	Qualification		4 - 2	11:4 9:11 7:11 11:5 11:7 11:7	YAN Shirley	
+2005	US Open Fort Lauderdale 2005	HIURA Reiko (JPN)		LEACH Laura (USA)		WS	Qualification	QR2	4 - 0	11:2 11:5 11:4 11:9	HIURA Reiko	
+2005	US Open Fort Lauderdale 2005	HIURA Reiko (JPN)		YAN Shirley (CAN)		WS	Qualification	3	4 - 0	11:5 11:9 11:6 11:8	HIURA Reiko	
+2005	US Open Fort Lauderdale 2005	NGAN Anna (CAN)		ELLIOTT Aili (USA)		WS	Qualification		4 - 2	11:6 7:11 11:8 11:8 13:15 11:5	NGAN Anna	
+2005	US Open Fort Lauderdale 2005	LEE Eunhee (KOR)		ELLIOTT Aili (USA)		WS	Qualification	QR2	4 - 0	11:3 11:8 11:8 11:2	LEE Eunhee	
+2005	US Open Fort Lauderdale 2005	LEE Eunhee (KOR)		NGAN Anna (CAN)		WS	Qualification	3	4 - 0	11:8 11:5 11:5 11:2	LEE Eunhee	
+2005	US Open Fort Lauderdale 2005	YI Sophia Dan Dan (USA)		CHAKRABORTY Kasturi (IND)		WS	Qualification		1 - 4	6:11 11:6 5:11 5:11 4:11	CHAKRABORTY Kasturi	
+2005	US Open Fort Lauderdale 2005	TAN Paey Fern (SGP)		CHAKRABORTY Kasturi (IND)		WS	Qualification	QR2	4 - 0	11:5 11:8 11:7 11:4	TAN Paey Fern	
+2005	US Open Fort Lauderdale 2005	TAN Paey Fern (SGP)		YI Sophia Dan Dan (USA)		WS	Qualification	3	4 - 0	11:6 11:4 11:8 11:5	TAN Paey Fern	
+2005	US Open Fort Lauderdale 2005	PAUL Mousumi (IND)		HUANG Crystal Xi (USA)		WS	Qualification		4 - 1	2:11 11:4 11:2 11:9 12:10	PAUL Mousumi	
+2005	US Open Fort Lauderdale 2005	LOVAS Petra (HUN)		HUANG Crystal Xi (USA)		WS	Qualification	QR2	4 - 3	7:11 7:11 11:3 11:3 13:11 8:11 12:10	LOVAS Petra	
+2005	US Open Fort Lauderdale 2005	LOVAS Petra (HUN)		PAUL Mousumi (IND)		WS	Qualification	3	4 - 2	11:4 9:11 11:6 12:14 11:5 13:11	LOVAS Petra	
+2005	US Open Fort Lauderdale 2005	PING Whitney (USA)		VIJAY Vishaka (IND)		WS	Qualification		2 - 4	8:11 6:11 7:11 11:7 11:5 6:11	VIJAY Vishaka	
+2005	US Open Fort Lauderdale 2005	JEON Hyekyung (KOR)		VIJAY Vishaka (IND)		WS	Qualification	QR2	4 - 0	11:7 11:6 11:7 11:4	JEON Hyekyung	
+2005	US Open Fort Lauderdale 2005	JEON Hyekyung (KOR)		PING Whitney (USA)		WS	Qualification	3	4 - 0	11:6 11:8 11:6 11:3	JEON Hyekyung	
+2005	US Open Fort Lauderdale 2005	COULIBALY Dieniouma (FRA)		GRESHAM Toni (USA)		WS	Qualification		4 - 0	11:7 11:8 11:3 11:6	COULIBALY Dieniouma	
+2005	US Open Fort Lauderdale 2005	ROBERTSON Laura (GER)		GRESHAM Toni (USA)		WS	Qualification	QR2	4 - 0	11:3 11:6 11:4 11:6	ROBERTSON Laura	
+2005	US Open Fort Lauderdale 2005	ROBERTSON Laura (GER)		COULIBALY Dieniouma (FRA)		WS	Qualification	3	4 - 2	11:5 11:3 11:8 6:11 8:11 11:9	ROBERTSON Laura	
+2005	US Open Fort Lauderdale 2005	KIM Soongsil (KOR)		LI Zecong (CAN)		WS	Qualification		4 - 0	11:4 11:3 11:2 12:10	KIM Soongsil	
+2005	US Open Fort Lauderdale 2005	RATHER Jasna (USA)		LI Zecong (CAN)		WS	Qualification	QR2	4 - 0	11:4 12:10 11:6 11:5	RATHER Jasna	
+2005	US Open Fort Lauderdale 2005	RATHER Jasna (USA)		KIM Soongsil (KOR)		WS	Qualification	3	1 - 4	9:11 11:7 9:11 3:11 5:11	KIM Soongsil	
+2005	US Open Fort Lauderdale 2005	YUEN Sara (CAN)		XIAO Laura (USA)		WS	Qualification		4 - 0	11:7 11:4 11:7 11:7	YUEN Sara	
+2005	US Open Fort Lauderdale 2005	PARK Miyoung (KOR)		XIAO Laura (USA)		WS	Qualification	QR2	4 - 0	11:6 11:4 11:8 11:3	PARK Miyoung	
+2005	US Open Fort Lauderdale 2005	PARK Miyoung (KOR)		YUEN Sara (CAN)		WS	Qualification	3	4 - 0	11:7 11:9 11:6 11:8	PARK Miyoung	
+2005	US Open Fort Lauderdale 2005	CHIU Wennin (CAN)		LI Nan (USA)		WS	Qualification		3 - 4	10:12 6:11 10:12 11:8 12:10 12:10 8:11	LI Nan	
+2005	US Open Fort Lauderdale 2005	KIM Junghyun (KOR)		LI Nan (USA)		WS	Qualification	QR2	4 - 3	11:9 7:11 9:11 4:11 11:9 11:5 11:9	KIM Junghyun	
+2005	US Open Fort Lauderdale 2005	KIM Junghyun (KOR)		CHIU Wennin (CAN)		WS	Qualification	3	4 - 1	11:3 11:6 8:11 11:2 11:7	KIM Junghyun	
+2005	US Open Fort Lauderdale 2005	MEDINA Iizzwa (HON)		WRONSKA Beata (USA)		WS	Qualification		4 - 0	11:8 11:8 11:6 11:6	MEDINA Iizzwa	
+2005	US Open Fort Lauderdale 2005	KIM Hyehyun (KOR)		WRONSKA Beata (USA)		WS	Qualification	QR2	4 - 0	11:5 11:3 11:2 11:6	KIM Hyehyun	
+2005	US Open Fort Lauderdale 2005	KIM Hyehyun (KOR)		MEDINA Iizzwa (HON)		WS	Qualification	3	4 - 0	11:3 11:4 11:2 11:7	KIM Hyehyun	
+2005	US Open Fort Lauderdale 2005	LEE Jacqueline (USA)		WANG Yuegu (SGP)		WS	Qualification		1 - 4	11:9 5:11 1:11 6:11 5:11	WANG Yuegu	
+2005	US Open Fort Lauderdale 2005	LEE Hyangmi (KOR)		WANG Yuegu (SGP)		WS	Qualification	QR2	2 - 4	11:8 11:9 7:11 3:11 6:11 7:11	WANG Yuegu	
+2005	US Open Fort Lauderdale 2005	LEE Hyangmi (KOR)		LEE Jacqueline (USA)		WS	Qualification	3	4 - 0	11:6 11:5 14:12 11:4	LEE Hyangmi	
+2005	US Open Fort Lauderdale 2005	CAHOREAU Nathalie (FRA)		LIU Charlene Xiaoying (USA)		WS	Qualification		4 - 1	11:4 10:12 11:4 11:4 11:3	CAHOREAU Nathalie	
+2005	US Open Fort Lauderdale 2005	KIM Minhee (YOB=1985) (KOR)		LIU Charlene Xiaoying (USA)		WS	Qualification	QR2	4 - 0	11:6 11:2 11:5 11:9	KIM Minhee (YOB=1985)	
+2005	US Open Fort Lauderdale 2005	KIM Minhee (YOB=1985) (KOR)		CAHOREAU Nathalie (FRA)		WS	Qualification	3	4 - 3	11:4 11:7 6:11 2:11 6:11 11:6 11:7	KIM Minhee (YOB=1985)	
+2005	US Open Fort Lauderdale 2005	HALAS Helena (SLO)		WEI Barbara (USA)		WS	Qualification	QR2	4 - 0	11:3 11:9 11:7 11:4	HALAS Helena	
+2005	US Open Fort Lauderdale 2005	KERTAI Rita (HUN)		WEI Barbara (USA)		WS	Qualification	3	4 - 0	13:11 11:3 11:4 11:9	KERTAI Rita	
+2005	US Open Fort Lauderdale 2005	KERTAI Rita (HUN)		HALAS Helena (SLO)		WS	Qualification	5	4 - 0	11:5 11:6 11:7 11:7	KERTAI Rita	
+2005	US Open Fort Lauderdale 2005	BANH THUA Tawny (USA)		RAY Susmita (IND)		WS	Qualification		4 - 0	11:9 11:9 11:5 11:6	BANH THUA Tawny	
+2005	US Open Fort Lauderdale 2005	GRUNDISCH Carole (FRA)		KIM Bokrae (KOR)		WS	Qualification	QR2	0 - 4	8:11 5:11 3:11 8:11	KIM Bokrae	
+2005	US Open Fort Lauderdale 2005	BANH THUA Tawny (USA)		KIM Bokrae (KOR)		WS	Qualification	3	0 - 4	5:11 8:11 9:11 4:11	KIM Bokrae	
+2005	US Open Fort Lauderdale 2005	GRUNDISCH Carole (FRA)		RAY Susmita (IND)		WS	Qualification	QR4	4 - 1	11:6 11:7 10:12 11:6 11:1	GRUNDISCH Carole	
+2005	US Open Fort Lauderdale 2005	BANH THUA Tawny (USA)		GRUNDISCH Carole (FRA)		WS	Qualification	5	3 - 4	11:8 5:11 8:11 8:11 11:4 13:11 9:11	GRUNDISCH Carole	
+2005	US Open Fort Lauderdale 2005	KIM Bokrae (KOR)		RAY Susmita (IND)		WS	Qualification	6	4 - 0	11:8 11:5 11:5 11:2	KIM Bokrae	
+2005	US Open Fort Lauderdale 2005	SUN Beibei (SGP)		LEE Jacqueline (USA)		U21WS	Main Draw	R16	4 - 1	11:5 11:4 11:8 6:11 11:1	SUN Beibei	
+2005	US Open Fort Lauderdale 2005	YUEN Sara (CAN)		GRUNDISCH Carole (FRA)		U21WS	Main Draw	R16	1 - 4	5:11 6:11 11:7 3:11 9:11	GRUNDISCH Carole	
+2005	US Open Fort Lauderdale 2005	CAHOREAU Nathalie (FRA)		PING Whitney (USA)		U21WS	Main Draw	R16	4 - 1	11:6 7:11 11:3 11:6 11:6	CAHOREAU Nathalie	
+2005	US Open Fort Lauderdale 2005	RAY Susmita (IND)		KIM Junghyun (KOR)		U21WS	Main Draw	R16	0 - 4	4:11 12:14 6:11 7:11	KIM Junghyun	
+2005	US Open Fort Lauderdale 2005	ROBERTSON Laura (GER)		CHIU Wennin (CAN)		U21WS	Main Draw	R16	4 - 1	11:8 11:4 11:7 7:11 11:9	ROBERTSON Laura	
+2005	US Open Fort Lauderdale 2005	COULIBALY Dieniouma (FRA)		KIM Minhee (YOB=1985) (KOR)		U21WS	Main Draw	R16	2 - 4	9:11 9:11 10:12 11:8 11:9 9:11	KIM Minhee (YOB=1985)	
+2005	US Open Fort Lauderdale 2005	KIM Hyehyun (KOR)		PAUL Mousumi (IND)		U21WS	Main Draw	R16	4 - 1	11:7 8:11 11:6 11:5 12:10	KIM Hyehyun	
+2005	US Open Fort Lauderdale 2005	SUN Beibei (SGP)		GRUNDISCH Carole (FRA)		U21WS	Main Draw	QuarterFinal	3 - 4	11:7 7:11 4:11 11:6 11:8 5:11 8:11	GRUNDISCH Carole	
+2005	US Open Fort Lauderdale 2005	CAHOREAU Nathalie (FRA)		KIM Junghyun (KOR)		U21WS	Main Draw	QuarterFinal	0 - 4	5:11 5:11 4:11 7:11	KIM Junghyun	
+2005	US Open Fort Lauderdale 2005	ROBERTSON Laura (GER)		KIM Minhee (YOB=1985) (KOR)		U21WS	Main Draw	QuarterFinal	3 - 4	13:11 11:13 11:8 4:11 11:9 10:12 9:11	KIM Minhee (YOB=1985)	
+2005	US Open Fort Lauderdale 2005	KIM Hyehyun (KOR)		LEE Eunhee (KOR)		U21WS	Main Draw	QuarterFinal	2 - 4	9:11 11:9 8:11 7:11 11:3 1:11	LEE Eunhee	
+2005	US Open Fort Lauderdale 2005	GRUNDISCH Carole (FRA)		KIM Junghyun (KOR)		U21WS	Main Draw	SemiFinal	2 - 4	7:11 4:11 11:5 12:10 8:11 2:11	KIM Junghyun	
+2005	US Open Fort Lauderdale 2005	KIM Minhee (YOB=1985) (KOR)		LEE Eunhee (KOR)		U21WS	Main Draw	SemiFinal	3 - 4	11:7 11:7 4:11 8:11 11:9 9:11 8:11	LEE Eunhee	
+2005	US Open Fort Lauderdale 2005	KIM Junghyun (KOR)		LEE Eunhee (KOR)		U21WS	Main Draw	Final	3 - 4	4:11 11:4 11:6 11:8 7:11 9:11 8:11	LEE Eunhee	
+2005	US Open Fort Lauderdale 2005	LI Zecong (CAN)		DUBINA Amanda (USA)		U21WS	Qualification		3 - 0	11:1 11:7 11:6	LI Zecong	
+2005	US Open Fort Lauderdale 2005	LEE Jacqueline (USA)		DUBINA Amanda (USA)		U21WS	Qualification	QR2	3 - 0	11:9 12:10 13:11	LEE Jacqueline	
+2005	US Open Fort Lauderdale 2005	LEE Jacqueline (USA)		LI Zecong (CAN)		U21WS	Qualification	3	3 - 1	11:6 11:6 11:13 11:7	LEE Jacqueline	
+2005	US Open Fort Lauderdale 2005	DELZO Marisol (PER)		XIAO Laura (USA)		U21WS	Qualification		1 - 3	11:8 8:11 9:11 7:11	XIAO Laura
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 43
+
+2005	US Open Fort Lauderdale 2005	CHEN Weixing (AUT)	GARDOS Robert (AUT)	ELENSKY Gregory (ISR)	LO Dany (FRA)	MD	Main Draw	R16	4 - 1	8:11 11:3 11:6 13:11 11:3	CHEN Weixing	GARDOS Robert
+2005	US Open Fort Lauderdale 2005	CHEN Weixing (AUT)	GARDOS Robert (AUT)	CHILA Patrick (FRA)	ELOI Damien (FRA)	MD	Main Draw	QuarterFinal	2 - 4	7:11 6:11 8:11 11:3 11:5 10:12	CHILA Patrick	ELOI Damien
+2005	US Open Fort Lauderdale 2005	MAECK Anthony (BEL)	VOSTES Yannick (BEL)	KAMKAR-PARSI Homayoun (CAN)	PETER-PAUL Pradeeban (CAN)	MD	Qualification	QR32	3 - 0	11:8 11:9 11:7	MAECK Anthony	VOSTES Yannick
+2005	US Open Fort Lauderdale 2005	MATSUMOTO Cazuo (BRA)	TSUBOI Gustavo (BRA)	DESPRES Rodolphe (FRA)	LEGOUT Christophe (FRA)	MD	Main Draw	R16	2 - 4	6:11 11:4 8:11 14:16 11:5 4:11	DESPRES Rodolphe	LEGOUT Christophe
+2005	US Open Fort Lauderdale 2005	HINSE Pierre-Luc (CAN)	THERIEN Xavier (CAN)	CHO Jihoon (KOR)	KIM Taehoon (KOR)	MD	Qualification	QR32	1 - 3	7:11 11:9 1:11 8:11	CHO Jihoon	KIM Taehoon
+2005	US Open Fort Lauderdale 2005	KONGSGAARD Christian (DEN)	SORENSEN Mads (DEN)	GIONIS Panagiotis (GRE)	PAPADIMITRIOU Dimitrios (GRE)	MD	Qualification	QR32	2 - 3	6:11 7:11 11:9 11:3 10:12	GIONIS Panagiotis	PAPADIMITRIOU Dimitrios
+2005	US Open Fort Lauderdale 2005	DURAN Marc (ESP)	FAN Guoliang (ESP)	DAVID Paul (GUY)	SHAO Yu (USA)	MD	Qualification	QR64	3 - 0	11:7 11:9 11:4	DURAN Marc	FAN Guoliang
+2005	US Open Fort Lauderdale 2005	DURAN Marc (ESP)	FAN Guoliang (ESP)	ALBAN Keith (USA)	JOHNSON Ben (WAL)	MD	Qualification	QR32	3 - 0	11:7 11:4 11:2	DURAN Marc	FAN Guoliang
+2005	US Open Fort Lauderdale 2005	DURAN Marc (ESP)	FAN Guoliang (ESP)	LEE Chulseung (KOR)	YOO Changjae (KOR)	MD	Qualification	QR16	0 - 3	4:11 6:11 4:11	LEE Chulseung	YOO Changjae
+2005	US Open Fort Lauderdale 2005	ELENSKY Gregory (ISR)	LO Dany (FRA)	COCHRAN Joseph (USA)	RUNYAN Trevor (USA)	MD	Qualification	QR64	3 - 0	11:5 12:10 11:2	ELENSKY Gregory	LO Dany
+2005	US Open Fort Lauderdale 2005	ELENSKY Gregory (ISR)	LO Dany (FRA)	BALL Andreas (GER)	ROSNER Benjamin (GER)	MD	Qualification	QR32	3 - 1	12:10 11:5 11:13 11:9	ELENSKY Gregory	LO Dany
+2005	US Open Fort Lauderdale 2005	ELENSKY Gregory (ISR)	LO Dany (FRA)	LEE Jinkwon (KOR)	YOON Jaeyoung (KOR)	MD	Qualification	QR16	3 - 1	6:11 11:9 11:9 12:10	ELENSKY Gregory	LO Dany
+2005	US Open Fort Lauderdale 2005	BERTIN Christophe (FRA)	BOBILLIER Loic (FRA)	MAECK Anthony (BEL)	VOSTES Yannick (BEL)	MD	Main Draw	R16	4 - 1	4:11 11:7 11:9 11:7 11:4	BERTIN Christophe	BOBILLIER Loic
+2005	US Open Fort Lauderdale 2005	CHENG Yinghua (USA)	JOVER Sebastien (FRA)	MOLIN Magnus (SWE)	SVENSSON Robert (SWE)	MD	Main Draw	R16	1 - 4	4:11 5:11 10:12 12:10 9:11	MOLIN Magnus	SVENSSON Robert
+2005	US Open Fort Lauderdale 2005	BERTIN Christophe (FRA)	BOBILLIER Loic (FRA)	LEE Chulseung (KOR)	YOO Changjae (KOR)	MD	Main Draw	QuarterFinal	1 - 4	13:11 13:15 9:11 5:11 11:13	LEE Chulseung	YOO Changjae
+2005	US Open Fort Lauderdale 2005	CHILA Patrick (FRA)	ELOI Damien (FRA)	LEE Chulseung (KOR)	YOO Changjae (KOR)	MD	Main Draw	SemiFinal	0 - 4		LEE Chulseung	YOO Changjae
+2005	US Open Fort Lauderdale 2005	FEJER-KONNERTH Zoltan (GER)	WOSIK Torben (GER)	REED Barney (USA)	ZHUANG David (USA)	MD	Qualification	QR32	3 - 0	11:8 11:9 14:12	FEJER-KONNERTH Zoltan	WOSIK Torben
+2005	US Open Fort Lauderdale 2005	FEJER-KONNERTH Zoltan (GER)	WOSIK Torben (GER)	ACHANTA Sharath (IND)	NANDI Anirban (IND)	MD	Qualification	QR16	3 - 1	8:11 11:6 11:5 11:7	FEJER-KONNERTH Zoltan	WOSIK Torben
+2005	US Open Fort Lauderdale 2005	GIONIS Panagiotis (GRE)	PAPADIMITRIOU Dimitrios (GRE)	CHILA Patrick (FRA)	ELOI Damien (FRA)	MD	Main Draw	R16	2 - 4	7:11 11:7 9:11 11:7 8:11 5:11	CHILA Patrick	ELOI Damien
+2005	US Open Fort Lauderdale 2005	FLORES Omar (GUA)	SANJAY Lester (GUA)	GIONIS Panagiotis (GRE)	PAPADIMITRIOU Dimitrios (GRE)	MD	Qualification	QR16	0 - 3	9:11 5:11 8:11	GIONIS Panagiotis	PAPADIMITRIOU Dimitrios
+2005	US Open Fort Lauderdale 2005	ACHANTA Sharath (IND)	NANDI Anirban (IND)	KASSAM Faazil (CAN)	SHEN Qiang (CAN)	MD	Qualification	QR32	3 - 2	8:11 11:5 11:2 10:12 11:5	ACHANTA Sharath	NANDI Anirban
+2005	US Open Fort Lauderdale 2005	STRACHAN Darryl (JAM)	WATSON Kane (JAM)	FLORES Omar (GUA)	SANJAY Lester (GUA)	MD	Qualification	QR64	0 - 3	5:11 7:11 6:11	FLORES Omar	SANJAY Lester
+2005	US Open Fort Lauderdale 2005	CHO Eonrae (KOR)	TAKAKIWA Kenichi (JPN)	ERLANDSEN Geir (NOR)	MOLDOVAN Istvan (NOR)	MD	Qualification	QR32	3 - 0	11:4 11:4 11:0	CHO Eonrae	TAKAKIWA Kenichi
+2005	US Open Fort Lauderdale 2005	LEE Chulseung (KOR)	YOO Changjae (KOR)	MONRAD Martin (DEN)	TUGWELL Finn (DEN)	MD	Main Draw	R16	4 - 2	11:8 12:10 5:11 11:8 11:13 11:2	LEE Chulseung	YOO Changjae
+2005	US Open Fort Lauderdale 2005	LEE Jungwoo (KOR)	OH Sangeun (KOR)	FEJER-KONNERTH Zoltan (GER)	WOSIK Torben (GER)	MD	Main Draw	R16	4 - 0	12:10 16:14 11:6 14:12	LEE Jungwoo	OH Sangeun
+2005	US Open Fort Lauderdale 2005	LEE Jungwoo (KOR)	OH Sangeun (KOR)	DESPRES Rodolphe (FRA)	LEGOUT Christophe (FRA)	MD	Main Draw	QuarterFinal	4 - 3	11:7 11:6 9:11 11:6 3:11 9:11 11:4	LEE Jungwoo	OH Sangeun
+2005	US Open Fort Lauderdale 2005	LEE Jungwoo (KOR)	OH Sangeun (KOR)	KUZMIN Fedor (RUS)	SMIRNOV Alexey (RUS)	MD	Main Draw	SemiFinal	4 - 0	11:7 11:7 12:10 11:9	LEE Jungwoo	OH Sangeun
+2005	US Open Fort Lauderdale 2005	LEE Chulseung (KOR)	YOO Changjae (KOR)	LEE Jungwoo (KOR)	OH Sangeun (KOR)	MD	Main Draw	Final	0 - 4	6:11 4:11 9:11 5:11	LEE Jungwoo	OH Sangeun
+2005	US Open Fort Lauderdale 2005	DOMANIKU Besart (KOS)	HASANI Astrit (KOS)	DUBINA Samson (USA)	GREEN Wally (USA)	MD	Qualification	QR64	1 - 3	14:12 9:11 6:11 6:11	DUBINA Samson	GREEN Wally
+2005	US Open Fort Lauderdale 2005	FETH Stefan (GER)	KEINATH Thomas (SVK)	ROY Soumyadeep (IND)	SAHA Subhajit (IND)	MD	Qualification	QR32	3 - 1	11:7 12:14 11:7 11:4	FETH Stefan	KEINATH Thomas
+2005	US Open Fort Lauderdale 2005	PISTEJ Lubomir (SVK)	SEREDA Peter (SVK)	HAZINSKI Mark (USA)	HUGH Adam (USA)	MD	Qualification	QR32	3 - 0	15:13 11:6 11:7	PISTEJ Lubomir	SEREDA Peter
+2005	US Open Fort Lauderdale 2005	FETH Stefan (GER)	KEINATH Thomas (SVK)	MAECK Anthony (BEL)	VOSTES Yannick (BEL)	MD	Qualification	QR16	2 - 3	6:11 7:11 11:5 11:7 8:11	MAECK Anthony	VOSTES Yannick
+2005	US Open Fort Lauderdale 2005	PISTEJ Lubomir (SVK)	SEREDA Peter (SVK)	CHO Eonrae (KOR)	TAKAKIWA Kenichi (JPN)	MD	Qualification	QR16	3 - 1	8:11 11:9 11:5 11:4	PISTEJ Lubomir	SEREDA Peter
+2005	US Open Fort Lauderdale 2005	PISTEJ Lubomir (SVK)	SEREDA Peter (SVK)	KUZMIN Fedor (RUS)	SMIRNOV Alexey (RUS)	MD	Main Draw	R16	1 - 4	11:3 7:11 3:11 7:11 9:11	KUZMIN Fedor	SMIRNOV Alexey
+2005	US Open Fort Lauderdale 2005	GERELL Par (SWE)	LUNDQVIST Jens (SWE)	GATICA Hector (GUA)	RAMIREZ Jose Miguel (GUA)	MD	Qualification	QR32	3 - 0	12:10 11:2 11:4	GERELL Par	LUNDQVIST Jens
+2005	US Open Fort Lauderdale 2005	AXELQVIST Johan (SWE)	PERSSON Jon (SWE)	LEE Jinkwon (KOR)	YOON Jaeyoung (KOR)	MD	Qualification	QR32	2 - 3	11:8 8:11 5:11 12:10 12:14	LEE Jinkwon	YOON Jaeyoung
+2005	US Open Fort Lauderdale 2005	GERELL Par (SWE)	LUNDQVIST Jens (SWE)	MATSUMOTO Cazuo (BRA)	TSUBOI Gustavo (BRA)	MD	Qualification	QR16	1 - 3	10:12 6:11 11:7 6:11	MATSUMOTO Cazuo	TSUBOI Gustavo
+2005	US Open Fort Lauderdale 2005	MOLIN Magnus (SWE)	SVENSSON Robert (SWE)	CHO Jihoon (KOR)	KIM Taehoon (KOR)	MD	Qualification	QR16	3 - 0	11:2 11:9 11:9	MOLIN Magnus	SVENSSON Robert
+2005	US Open Fort Lauderdale 2005	MOLIN Magnus (SWE)	SVENSSON Robert (SWE)	KUZMIN Fedor (RUS)	SMIRNOV Alexey (RUS)	MD	Main Draw	QuarterFinal	2 - 4	9:11 11:3 11:5 10:12 9:11 4:11	KUZMIN Fedor	SMIRNOV Alexey
+2005	US Open Fort Lauderdale 2005	DE SOUZA Kwaovi (TOG)	GOMBOS Ludovic (USA)	ERLANDSEN Geir (NOR)	MOLDOVAN Istvan (NOR)	MD	Qualification	QR64	1 - 3	12:10 8:11 8:11 9:11	ERLANDSEN Geir	MOLDOVAN Istvan
+2005	US Open Fort Lauderdale 2005	DUBINA Samson (USA)	GREEN Wally (USA)	LEE Chulseung (KOR)	YOO Changjae (KOR)	MD	Qualification	QR32	0 - 3	2:11 4:11 8:11	LEE Chulseung	YOO Changjae
+2005	US Open Fort Lauderdale 2005	ALBAN Keith (USA)	JOHNSON Ben (WAL)	CHIU Peter (CAN)	GUO Peng (CAN)	MD	Qualification	QR64	3 - 1	11:6 15:17 11:9 11:8	ALBAN Keith	JOHNSON Ben
+2005	US Open Fort Lauderdale 2005	CHRIST Nico (GER)	ROBERTSON Adam (WAL)	MATSUMOTO Cazuo (BRA)	TSUBOI Gustavo (BRA)	MD	Qualification	QR32	1 - 3	7:11 11:7 6:11 4:11	MATSUMOTO Cazuo	TSUBOI Gustavo
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 28
+
+2005	US Open Fort Lauderdale 2005	LEACH Laura (USA)	LEVESQUE Marie-Andree (CAN)	HUGH Judy (USA)	WEI Barbara (USA)	WD	Qualification	QR32	0 - 3	4:11 6:11 8:11	HUGH Judy	WEI Barbara
+2005	US Open Fort Lauderdale 2005	GRUNDISCH Carole (FRA)	ROBERTSON Laura (GER)	NGAN Anna (CAN)	YAN Shirley (CAN)	WD	Qualification	QR32	3 - 1	12:10 11:7 5:11 13:11	GRUNDISCH Carole	ROBERTSON Laura
+2005	US Open Fort Lauderdale 2005	TIE Yana (HKG)	ZHANG Rui (HKG)	LEE Eunhee (KOR)	LEE Hyangmi (KOR)	WD	Main Draw	R16	4 - 1	11:6 12:14 11:9 15:13 11:6	TIE Yana	ZHANG Rui
+2005	US Open Fort Lauderdale 2005	TIE Yana (HKG)	ZHANG Rui (HKG)	KIM Minhee (YOB=1985) (KOR)	MOON Hyunjung (KOR)	WD	Main Draw	QuarterFinal	4 - 1	11:5 5:11 11:5 11:5 11:6	TIE Yana	ZHANG Rui
+2005	US Open Fort Lauderdale 2005	TIE Yana (HKG)	ZHANG Rui (HKG)	SUN Beibei (SGP)	WANG Yuegu (SGP)	WD	Main Draw	SemiFinal	4 - 1	11:5 11:4 11:8 7:11 11:9	TIE Yana	ZHANG Rui
+2005	US Open Fort Lauderdale 2005	TIE Yana (HKG)	ZHANG Rui (HKG)	KIM Hyehyun (KOR)	KIM Junghyun (KOR)	WD	Main Draw	Final	4 - 2	11:5 9:11 5:11 11:5 11:5 11:9	TIE Yana	ZHANG Rui
+2005	US Open Fort Lauderdale 2005	MEDINA Iizzwa (HON)	MEDINA Zzwitjhallim (HON)	HALAS Helena (SLO)	RATHER Jasna (USA)	WD	Qualification	QR16	1 - 3	11:13 11:6 7:11 5:11	HALAS Helena	RATHER Jasna
+2005	US Open Fort Lauderdale 2005	PAUL Mousumi (IND)	RAY Susmita (IND)	CAHOREAU Nathalie (FRA)	COULIBALY Dieniouma (FRA)	WD	Qualification	QR32	1 - 3	9:11 12:10 6:11 5:11	CAHOREAU Nathalie	COULIBALY Dieniouma
+2005	US Open Fort Lauderdale 2005	PRABHU Mamata (IND)	VIJAY Vishaka (IND)	KERTAI Rita (HUN)	LOVAS Petra (HUN)	WD	Qualification	QR16	0 - 3	6:11 9:11 3:11	KERTAI Rita	LOVAS Petra
+2005	US Open Fort Lauderdale 2005	FUJII Hiroko (JPN)	HIURA Reiko (JPN)	CAHOREAU Nathalie (FRA)	COULIBALY Dieniouma (FRA)	WD	Qualification	QR16	3 - 0	11:2 11:5 11:5	FUJII Hiroko	HIURA Reiko
+2005	US Open Fort Lauderdale 2005	FUJII Hiroko (JPN)	HIURA Reiko (JPN)	KIM Bokrae (KOR)	KIM Kyungah (KOR)	WD	Main Draw	R16	2 - 4	7:11 13:11 11:7 9:11 11:13 7:11	KIM Bokrae	KIM Kyungah
+2005	US Open Fort Lauderdale 2005	HIRANO Sayaka (JPN)	TASEI Mikie (JPN)	LI Jiawei (SGP)	PARK Miyoung (KOR)	WD	Main Draw	R16	3 - 4	12:10 8:11 6:11 11:4 16:18 11:6 11:13	LI Jiawei	PARK Miyoung
+2005	US Open Fort Lauderdale 2005	LI Jiawei (SGP)	PARK Miyoung (KOR)	HUGH Judy (USA)	WEI Barbara (USA)	WD	Qualification	QR16	3 - 1	11:5 14:16 11:9 11:9	LI Jiawei	PARK Miyoung
+2005	US Open Fort Lauderdale 2005	KIM Hyehyun (KOR)	KIM Junghyun (KOR)	GRUNDISCH Carole (FRA)	ROBERTSON Laura (GER)	WD	Qualification	QR16	3 - 1	12:10 4:11 11:5 11:9	KIM Hyehyun	KIM Junghyun
+2005	US Open Fort Lauderdale 2005	JEON Hyekyung (KOR)	KIM Soongsil (KOR)	STRBIKOVA Renata (CZE)	STRUSE Nicole (GER)	WD	Qualification	QR16	3 - 0	11:6 11:9 11:7	JEON Hyekyung	KIM Soongsil
+2005	US Open Fort Lauderdale 2005	KIM Minhee (YOB=1985) (KOR)	MOON Hyunjung (KOR)	LANG Kristin (GER)	SCHALL Elke (GER)	WD	Main Draw	R16	4 - 1	12:10 11:5 11:6 9:11 11:3	KIM Minhee (YOB=1985)	MOON Hyunjung
+2005	US Open Fort Lauderdale 2005	JEON Hyekyung (KOR)	KIM Soongsil (KOR)	GAO Jun (USA)	LI Jiao (NED)	WD	Main Draw	R16	4 - 3	5:11 4:11 11:6 11:5 11:7 10:12 11:4	JEON Hyekyung	KIM Soongsil
+2005	US Open Fort Lauderdale 2005	KIM Hyehyun (KOR)	KIM Junghyun (KOR)	LAU Sui Fei (HKG)	SONG Ah Sim (HKG)	WD	Main Draw	R16	4 - 3	10:12 13:11 11:7 11:9 7:11 6:11 11:6	KIM Hyehyun	KIM Junghyun
+2005	US Open Fort Lauderdale 2005	LI Jiawei (SGP)	PARK Miyoung (KOR)	KIM Hyehyun (KOR)	KIM Junghyun (KOR)	WD	Main Draw	QuarterFinal	1 - 4	11:13 11:13 11:6 9:11 9:11	KIM Hyehyun	KIM Junghyun
+2005	US Open Fort Lauderdale 2005	SUN Beibei (SGP)	WANG Yuegu (SGP)	KERTAI Rita (HUN)	LOVAS Petra (HUN)	WD	Main Draw	R16	4 - 0	11:2 11:8 11:9 11:5	SUN Beibei	WANG Yuegu
+2005	US Open Fort Lauderdale 2005	TAN Paey Fern (SGP)	ZHANG Xueling (SGP)	HALAS Helena (SLO)	RATHER Jasna (USA)	WD	Main Draw	R16	4 - 0	11:2 11:5 13:11 11:4	TAN Paey Fern	ZHANG Xueling
+2005	US Open Fort Lauderdale 2005	SUN Beibei (SGP)	WANG Yuegu (SGP)	KIM Bokrae (KOR)	KIM Kyungah (KOR)	WD	Main Draw	QuarterFinal	4 - 1	11:13 11:7 14:12 11:4 11:8	SUN Beibei	WANG Yuegu
+2005	US Open Fort Lauderdale 2005	TAN Paey Fern (SGP)	ZHANG Xueling (SGP)	JEON Hyekyung (KOR)	KIM Soongsil (KOR)	WD	Main Draw	QuarterFinal	4 - 1	12:10 11:9 11:6 9:11 11:9	TAN Paey Fern	ZHANG Xueling
+2005	US Open Fort Lauderdale 2005	TAN Paey Fern (SGP)	ZHANG Xueling (SGP)	KIM Hyehyun (KOR)	KIM Junghyun (KOR)	WD	Main Draw	SemiFinal	0 - 4	9:11 11:13 13:15 8:11	KIM Hyehyun	KIM Junghyun
+2005	US Open Fort Lauderdale 2005	BANH THUA Tawny (USA)	HUANG Crystal Xi (USA)	CHAKRABORTY Kasturi (IND)	PING Whitney (USA)	WD	Qualification	QR32	3 - 0	11:3 13:11 11:4	BANH THUA Tawny	HUANG Crystal Xi
+2005	US Open Fort Lauderdale 2005	CHIU Wennin (CAN)	LEE Jacqueline (USA)	XIAO Laura (USA)	YI Sophia Dan Dan (USA)	WD	Qualification	QR32	3 - 0	11:3 12:10 11:9	CHIU Wennin	LEE Jacqueline
+2005	US Open Fort Lauderdale 2005	BANH THUA Tawny (USA)	HUANG Crystal Xi (USA)	LEE Eunhee (KOR)	LEE Hyangmi (KOR)	WD	Qualification	QR16	1 - 3	11:9 5:11 3:11 4:11	LEE Eunhee	LEE Hyangmi
+2005	US Open Fort Lauderdale 2005	CHIU Wennin (CAN)	LEE Jacqueline (USA)	KIM Minhee (YOB=1985) (KOR)	MOON Hyunjung (KOR)	WD	Qualification	QR16	0 - 3	10:12 5:11 9:11	KIM Minhee (YOB=1985)	MOON Hyunjung

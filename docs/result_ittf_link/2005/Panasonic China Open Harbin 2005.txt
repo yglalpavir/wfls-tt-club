@@ -6,3 +6,267 @@
 参赛人数：229
 开始日期：2005-09-08
 结束日期：2005-09-11
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 87
+
+2005	Panasonic China Open Harbin 2005	MA Long (CHN)		JANG Song Man (PRK)		MS	Qualification		4 - 1	12:10 13:11 11:7 5:11 11:9	MA Long	
+2005	Panasonic China Open Harbin 2005	MA Long (CHN)		SHIMOYAMA Takanori (JPN)		MS	Qualification	QR2	4 - 0	11:2 11:4 11:3 11:5	MA Long	
+2005	Panasonic China Open Harbin 2005	SHIMOYAMA Takanori (JPN)		JANG Song Man (PRK)		MS	Qualification	3	2 - 4	11:3 4:11 8:11 11:3 8:11 4:11	JANG Song Man	
+2005	Panasonic China Open Harbin 2005	MONTEIRO Joao (POR)		OYA Hidetoshi (JPN)		MS	Qualification		4 - 0	11:8 11:8 11:8 13:11	MONTEIRO Joao	
+2005	Panasonic China Open Harbin 2005	MONTEIRO Joao (POR)		AN Chol Yong (PRK)		MS	Qualification	QR2	3 - 4	11:2 8:11 11:6 14:12 7:11 6:11 10:12	AN Chol Yong	
+2005	Panasonic China Open Harbin 2005	AN Chol Yong (PRK)		OYA Hidetoshi (JPN)		MS	Qualification	3	4 - 3	6:11 6:11 11:9 11:8 10:12 11:8 11:5	AN Chol Yong	
+2005	Panasonic China Open Harbin 2005	LEE Jinkwon (KOR)		MATSUDAIRA Kenta (JPN)		MS	Qualification		4 - 1	15:13 11:7 9:11 11:1 11:9	LEE Jinkwon	
+2005	Panasonic China Open Harbin 2005	LEE Jinkwon (KOR)		RI Chol Guk (PRK)		MS	Qualification	QR2	4 - 2	7:11 11:9 11:7 11:5 9:11 12:10	LEE Jinkwon	
+2005	Panasonic China Open Harbin 2005	RI Chol Guk (PRK)		MATSUDAIRA Kenta (JPN)		MS	Qualification	3	4 - 1	14:12 11:8 11:5 9:11 11:8	RI Chol Guk	
+2005	Panasonic China Open Harbin 2005	NILSSON Peter (SWE)		TSE Ka Chun (HKG)		MS	Qualification		4 - 0	11:5 11:7 12:10 11:9	NILSSON Peter	
+2005	Panasonic China Open Harbin 2005	NILSSON Peter (SWE)		DURAN Marc (ESP)		MS	Qualification	QR2	4 - 2	9:11 7:11 11:5 14:12 11:6 12:10	NILSSON Peter	
+2005	Panasonic China Open Harbin 2005	DURAN Marc (ESP)		TSE Ka Chun (HKG)		MS	Qualification	3	4 - 2	11:6 6:11 11:7 11:9 7:11 11:6	DURAN Marc	
+2005	Panasonic China Open Harbin 2005	CARNEROS Alfredo (ESP)		LIU Zhongze (SGP)		MS	Qualification		4 - 1	9:11 11:9 11:9 11:9 12:10	CARNEROS Alfredo	
+2005	Panasonic China Open Harbin 2005	CARNEROS Alfredo (ESP)		TOKIYOSHI Yuichi (JPN)		MS	Qualification	QR2	3 - 4	11:5 11:9 12:14 10:12 11:9 8:11 9:11	TOKIYOSHI Yuichi	
+2005	Panasonic China Open Harbin 2005	TOKIYOSHI Yuichi (JPN)		LIU Zhongze (SGP)		MS	Qualification	3	4 - 2	11:8 3:11 11:8 11:13 11:9 14:12	TOKIYOSHI Yuichi	
+2005	Panasonic China Open Harbin 2005	CAI Xiaoli (SGP)		RI Kwang Il (PRK)		MS	Qualification		1 - 4	11:5 7:11 5:11 9:11 6:11	RI Kwang Il	
+2005	Panasonic China Open Harbin 2005	CAI Xiaoli (SGP)		LEE Jungsam (KOR)		MS	Qualification	QR2	2 - 4	6:11 11:8 11:8 2:11 3:11 9:11	LEE Jungsam	
+2005	Panasonic China Open Harbin 2005	LEE Jungsam (KOR)		RI Kwang Il (PRK)		MS	Qualification	3	4 - 1	6:11 11:9 11:4 11:9 11:5	LEE Jungsam	
+2005	Panasonic China Open Harbin 2005	MITAMURA Muneaki (JPN)		MA Liang (SGP)		MS	Qualification		4 - 2	11:9 5:11 11:8 3:11 11:4 11:7	MITAMURA Muneaki	
+2005	Panasonic China Open Harbin 2005	MITAMURA Muneaki (JPN)		KIM Junghoon (KOR)		MS	Qualification	QR2	3 - 4	13:11 10:12 7:11 11:9 11:9 6:11 6:11	KIM Junghoon	
+2005	Panasonic China Open Harbin 2005	KIM Junghoon (KOR)		MA Liang (SGP)		MS	Qualification	3	4 - 0	11:5 11:7 11:6 11:7	KIM Junghoon	
+2005	Panasonic China Open Harbin 2005	KIM Hyok Bong (PRK)		ZHANG Wilson (CAN)		MS	Qualification		4 - 1	11:6 10:12 11:7 11:2 11:5	KIM Hyok Bong	
+2005	Panasonic China Open Harbin 2005	KIM Hyok Bong (PRK)		MACHADO Carlos (ESP)		MS	Qualification	QR2	4 - 0	11:8 14:12 13:11 11:5	KIM Hyok Bong	
+2005	Panasonic China Open Harbin 2005	MACHADO Carlos (ESP)		ZHANG Wilson (CAN)		MS	Qualification	3	1 - 4	9:11 7:11 8:11 11:7 11:13	ZHANG Wilson	
+2005	Panasonic China Open Harbin 2005	WANG Liqin (CHN)		ZHANG Wilson (CAN)		MS	Main Draw	R32	4 - 0	11:2 11:9 11:6 11:6	WANG Liqin	
+2005	Panasonic China Open Harbin 2005	LEE Jinkwon (KOR)		AXELQVIST Johan (SWE)		MS	Main Draw	R32	4 - 1	13:11 15:17 11:9 11:5 12:10	LEE Jinkwon	
+2005	Panasonic China Open Harbin 2005	CHO Eonrae (KOR)		KIM Hyok Bong (PRK)		MS	Main Draw	R32	0 - 4	6:11 4:11 6:11 6:11	KIM Hyok Bong	
+2005	Panasonic China Open Harbin 2005	RI Kwang Il (PRK)		KONG Linghui (CHN)		MS	Main Draw	R32	0 - 4	7:11 10:12 7:11 8:11	KONG Linghui	
+2005	Panasonic China Open Harbin 2005	LI Ching (HKG)		RI Chol Guk (PRK)		MS	Main Draw	R32	4 - 2	14:16 11:7 12:10 11:8 8:11 11:7	LI Ching	
+2005	Panasonic China Open Harbin 2005	MA Long (CHN)		YOON Jaeyoung (KOR)		MS	Main Draw	R32	3 - 4	8:11 11:7 12:10 8:11 7:11 11:9 10:12	YOON Jaeyoung	
+2005	Panasonic China Open Harbin 2005	LIM Jaehyun (KOR)		NILSSON Peter (SWE)		MS	Main Draw	R32	4 - 3	11:4 11:8 11:7 7:11 6:11 9:11 11:8	LIM Jaehyun	
+2005	Panasonic China Open Harbin 2005	CARNEROS Alfredo (ESP)		WANG Hao (CHN)		MS	Main Draw	R32	2 - 4	8:11 9:11 7:11 11:9 13:11 7:11	WANG Hao	
+2005	Panasonic China Open Harbin 2005	CHEN Qi (CHN)		JANG Song Man (PRK)		MS	Main Draw	R32	4 - 1	11:8 7:11 11:8 11:6 11:0	CHEN Qi	
+2005	Panasonic China Open Harbin 2005	AN Chol Yong (PRK)		YANG Zi (SGP)		MS	Main Draw	R32	3 - 4	11:4 2:11 11:5 11:8 8:11 11:13 12:14	YANG Zi	
+2005	Panasonic China Open Harbin 2005	TAN Ruiwu (CRO)		KIM Junghoon (KOR)		MS	Main Draw	R32	1 - 4	11:6 6:11 7:11 6:11 6:11	KIM Junghoon	
+2005	Panasonic China Open Harbin 2005	DURAN Marc (ESP)		KO Lai Chak (HKG)		MS	Main Draw	R32	2 - 4	11:8 4:11 12:10 3:11 5:11 3:11	KO Lai Chak	
+2005	Panasonic China Open Harbin 2005	LEE Jungwoo (KOR)		MONTEIRO Joao (POR)		MS	Main Draw	R32	4 - 0	11:8 11:7 14:12 11:3	LEE Jungwoo	
+2005	Panasonic China Open Harbin 2005	LEE Jungsam (KOR)		YOSHIDA Kaii (JPN)		MS	Main Draw	R32	4 - 0	12:10 11:9 11:9 11:9	LEE Jungsam	
+2005	Panasonic China Open Harbin 2005	CHO Jihoon (KOR)		TOKIYOSHI Yuichi (JPN)		MS	Main Draw	R32	4 - 1	11:5 11:7 11:6 2:11 11:7	CHO Jihoon	
+2005	Panasonic China Open Harbin 2005	MITAMURA Muneaki (JPN)		MA Lin (CHN)		MS	Main Draw	R32	0 - 4	11:13 3:11 7:11 5:11	MA Lin	
+2005	Panasonic China Open Harbin 2005	WANG Liqin (CHN)		LEE Jinkwon (KOR)		MS	Main Draw	R16	4 - 1	6:11 11:7 11:8 11:8 11:7	WANG Liqin	
+2005	Panasonic China Open Harbin 2005	KIM Hyok Bong (PRK)		KONG Linghui (CHN)		MS	Main Draw	R16	0 - 4	10:12 6:11 7:11 12:14	KONG Linghui	
+2005	Panasonic China Open Harbin 2005	LI Ching (HKG)		YOON Jaeyoung (KOR)		MS	Main Draw	R16	3 - 4	9:11 11:9 8:11 11:6 8:11 11:4 4:11	YOON Jaeyoung	
+2005	Panasonic China Open Harbin 2005	LIM Jaehyun (KOR)		WANG Hao (CHN)		MS	Main Draw	R16	0 - 4	7:11 8:11 8:11 9:11	WANG Hao	
+2005	Panasonic China Open Harbin 2005	CHEN Qi (CHN)		YANG Zi (SGP)		MS	Main Draw	R16	3 - 4	1:11 6:11 12:10 11:8 9:11 13:11 5:11	YANG Zi	
+2005	Panasonic China Open Harbin 2005	KIM Junghoon (KOR)		KO Lai Chak (HKG)		MS	Main Draw	R16	0 - 4	9:11 6:11 8:11 6:11	KO Lai Chak	
+2005	Panasonic China Open Harbin 2005	LEE Jungwoo (KOR)		LEE Jungsam (KOR)		MS	Main Draw	R16	4 - 2	11:7 11:5 11:13 11:3 5:11 11:4	LEE Jungwoo	
+2005	Panasonic China Open Harbin 2005	CHO Jihoon (KOR)		MA Lin (CHN)		MS	Main Draw	R16	0 - 4	10:12 9:11 5:11 6:11	MA Lin	
+2005	Panasonic China Open Harbin 2005	WANG Liqin (CHN)		KONG Linghui (CHN)		MS	Main Draw	QuarterFinal	4 - 1	11:6 11:8 8:11 11:3 11:6	WANG Liqin	
+2005	Panasonic China Open Harbin 2005	YOON Jaeyoung (KOR)		WANG Hao (CHN)		MS	Main Draw	QuarterFinal	0 - 4	6:11 8:11 8:11 5:11	WANG Hao	
+2005	Panasonic China Open Harbin 2005	YANG Zi (SGP)		KO Lai Chak (HKG)		MS	Main Draw	QuarterFinal	2 - 4	8:11 5:11 12:14 11:7 11:8 6:11	KO Lai Chak	
+2005	Panasonic China Open Harbin 2005	LEE Jungwoo (KOR)		MA Lin (CHN)		MS	Main Draw	QuarterFinal	4 - 0	11:9 11:9 11:5 13:11	LEE Jungwoo	
+2005	Panasonic China Open Harbin 2005	WANG Liqin (CHN)		WANG Hao (CHN)		MS	Main Draw	SemiFinal	4 - 2	8:11 11:4 11:3 9:11 11:1 11:5	WANG Liqin	
+2005	Panasonic China Open Harbin 2005	KO Lai Chak (HKG)		LEE Jungwoo (KOR)		MS	Main Draw	SemiFinal	1 - 4	7:11 11:13 11:8 11:13 11:13	LEE Jungwoo	
+2005	Panasonic China Open Harbin 2005	WANG Liqin (CHN)		LEE Jungwoo (KOR)		MS	Main Draw	Final	4 - 1	11:8 6:11 11:5 11:8 11:8	WANG Liqin	
+2005	Panasonic China Open Harbin 2005	LEE Jinkwon (KOR)		MATSUDAIRA Kenta (JPN)		U21MS	Qualification		3 - 1	8:11 11:3 11:5 11:4	LEE Jinkwon	
+2005	Panasonic China Open Harbin 2005	LEE Jinkwon (KOR)		AN Chol Yong (PRK)		U21MS	Qualification	3	3 - 2	6:11 11:8 3:11 11:7 12:10	LEE Jinkwon	
+2005	Panasonic China Open Harbin 2005	AN Chol Yong (PRK)		MATSUDAIRA Kenta (JPN)		U21MS	Qualification	5	3 - 0	12:10 12:7 12:10	AN Chol Yong	
+2005	Panasonic China Open Harbin 2005	KIM Hyok Bong (PRK)		RI Kwang Il (PRK)		U21MS	Qualification		3 - 1	11:7 9:11 11:3 11:9	KIM Hyok Bong	
+2005	Panasonic China Open Harbin 2005	SHIMOYAMA Takanori (JPN)		TSE Ka Chun (HKG)		U21MS	Qualification	QR2	3 - 0	11:7 11:6 11:8	SHIMOYAMA Takanori	
+2005	Panasonic China Open Harbin 2005	KIM Hyok Bong (PRK)		SHIMOYAMA Takanori (JPN)		U21MS	Qualification	3	3 - 0	11:3 12:10 11:7	KIM Hyok Bong	
+2005	Panasonic China Open Harbin 2005	RI Kwang Il (PRK)		TSE Ka Chun (HKG)		U21MS	Qualification	QR4	3 - 1	13:11 11:8 7:11 11:6	RI Kwang Il	
+2005	Panasonic China Open Harbin 2005	SHIMOYAMA Takanori (JPN)		RI Kwang Il (PRK)		U21MS	Qualification	5	3 - 2	7:11 6:11 11:8 11:8 13:11	SHIMOYAMA Takanori	
+2005	Panasonic China Open Harbin 2005	KIM Hyok Bong (PRK)		TSE Ka Chun (HKG)		U21MS	Qualification	6	3 - 1	11:5 12:10 8:11 11:8	KIM Hyok Bong	
+2005	Panasonic China Open Harbin 2005	LEE Jungsam (KOR)		OYA Hidetoshi (JPN)		U21MS	Qualification		3 - 1	5:11 11:7 11:4 12:10	LEE Jungsam	
+2005	Panasonic China Open Harbin 2005	RI Chol Guk (PRK)		MA Liang (SGP)		U21MS	Qualification	QR2	3 - 0	11:4 11:4 11:4	RI Chol Guk	
+2005	Panasonic China Open Harbin 2005	LEE Jungsam (KOR)		RI Chol Guk (PRK)		U21MS	Qualification	3	3 - 1	11:8 5:11 11:7 11:7	LEE Jungsam	
+2005	Panasonic China Open Harbin 2005	OYA Hidetoshi (JPN)		MA Liang (SGP)		U21MS	Qualification	QR4	0 - 3	8:11 3:11 3:11	MA Liang	
+2005	Panasonic China Open Harbin 2005	RI Chol Guk (PRK)		OYA Hidetoshi (JPN)		U21MS	Qualification	5	3 - 1	11:4 11:9 9:11 14:12	RI Chol Guk	
+2005	Panasonic China Open Harbin 2005	LEE Jungsam (KOR)		MA Liang (SGP)		U21MS	Qualification	6	3 - 0	14:12 11:7 14:12	LEE Jungsam	
+2005	Panasonic China Open Harbin 2005	DURAN Marc (ESP)		JANG Song Man (PRK)		U21MS	Qualification		2 - 3	8:11 8:11 13:11 12:10 9:11	JANG Song Man	
+2005	Panasonic China Open Harbin 2005	TOKIYOSHI Yuichi (JPN)		LIU Zhongze (SGP)		U21MS	Qualification	QR2	3 - 0	11:9 11:6 11:8	TOKIYOSHI Yuichi	
+2005	Panasonic China Open Harbin 2005	DURAN Marc (ESP)		TOKIYOSHI Yuichi (JPN)		U21MS	Qualification	3	3 - 2	11:5 8:11 7:11 11:5 11:8	DURAN Marc	
+2005	Panasonic China Open Harbin 2005	JANG Song Man (PRK)		LIU Zhongze (SGP)		U21MS	Qualification	QR4	3 - 1	6:11 11:6 12:10 11:9	JANG Song Man	
+2005	Panasonic China Open Harbin 2005	TOKIYOSHI Yuichi (JPN)		JANG Song Man (PRK)		U21MS	Qualification	5	0 - 3	3:11 11:13 5:11	JANG Song Man	
+2005	Panasonic China Open Harbin 2005	DURAN Marc (ESP)		LIU Zhongze (SGP)		U21MS	Qualification	6	2 - 3	9:11 12:10 8:11 11:6 6:11	LIU Zhongze	
+2005	Panasonic China Open Harbin 2005	RI Chol Guk (PRK)		LEE Jinkwon (KOR)		U21MS	Main Draw	R16	2 - 4	11:7 6:11 11:7 6:11 9:11 7:11	LEE Jinkwon	
+2005	Panasonic China Open Harbin 2005	LEE Jungsam (KOR)		AN Chol Yong (PRK)		U21MS	Main Draw	R16	4 - 2	11:9 11:4 9:11 11:8 4:11 11:9	LEE Jungsam	
+2005	Panasonic China Open Harbin 2005	SHIMOYAMA Takanori (JPN)		KIM Hyok Bong (PRK)		U21MS	Main Draw	R16	3 - 4	8:11 5:11 6:11 11:6 11:7 15:13 9:11	KIM Hyok Bong	
+2005	Panasonic China Open Harbin 2005	JANG Song Man (PRK)		TOKIYOSHI Yuichi (JPN)		U21MS	Main Draw	R16	3 - 4	11:8 10:12 8:11 11:9 11:7 9:11 3:11	TOKIYOSHI Yuichi	
+2005	Panasonic China Open Harbin 2005	LIM Jaehyun (KOR)		LEE Jinkwon (KOR)		U21MS	Main Draw	QuarterFinal	3 - 4	11:9 12:14 11:9 9:11 9:11 11:9 7:11	LEE Jinkwon	
+2005	Panasonic China Open Harbin 2005	LEE Jungsam (KOR)		AXELQVIST Johan (SWE)		U21MS	Main Draw	QuarterFinal	4 - 1	11:5 6:11 11:7 11:9 11:7	LEE Jungsam	
+2005	Panasonic China Open Harbin 2005	CHO Eonrae (KOR)		KIM Hyok Bong (PRK)		U21MS	Main Draw	QuarterFinal	2 - 4	3:11 12:10 11:6 6:11 12:14 8:11	KIM Hyok Bong	
+2005	Panasonic China Open Harbin 2005	TOKIYOSHI Yuichi (JPN)		YANG Zi (SGP)		U21MS	Main Draw	QuarterFinal	3 - 4	10:12 11:9 8:11 16:14 11:6 6:11 5:11	YANG Zi	
+2005	Panasonic China Open Harbin 2005	LEE Jinkwon (KOR)		LEE Jungsam (KOR)		U21MS	Main Draw	SemiFinal	4 - 1	11:9 9:11 11:7 11:8 11:4	LEE Jinkwon	
+2005	Panasonic China Open Harbin 2005	KIM Hyok Bong (PRK)		YANG Zi (SGP)		U21MS	Main Draw	SemiFinal	4 - 3	4:11 11:5 12:10 4:11 11:9 9:11 11:8	KIM Hyok Bong	
+2005	Panasonic China Open Harbin 2005	LEE Jinkwon (KOR)		KIM Hyok Bong (PRK)		U21MS	Main Draw	Final	4 - 2	11:6 11:5 7:11 13:11 5:11 11:9	LEE Jinkwon4
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 100
+
+2005	Panasonic China Open Harbin 2005	SHEN Yanfei (ESP)		LEE Hyangmi (KOR)		WS	Qualification		4 - 3	12:10 11:9 11:3 7:11 7:11 9:11 11:8	SHEN Yanfei	
+2005	Panasonic China Open Harbin 2005	SHEN Yanfei (ESP)		HAN Hye Song (PRK)		WS	Qualification	QR2	4 - 0	11:9 11:5 11:7 11:9	SHEN Yanfei	
+2005	Panasonic China Open Harbin 2005	HAN Hye Song (PRK)		LEE Hyangmi (KOR)		WS	Qualification	3	4 - 1	11:6 11:6 11:7 9:11 11:8	HAN Hye Song	
+2005	Panasonic China Open Harbin 2005	PENG Luyang (CHN)		RYOM Won Ok (PRK)		WS	Qualification		4 - 0	11:4 11:9 11:7 13:11	PENG Luyang	
+2005	Panasonic China Open Harbin 2005	PENG Luyang (CHN)		SUEMASU Asami (JPN)		WS	Qualification	QR2	4 - 0	11:7 12:10 11:7 14:12	PENG Luyang	
+2005	Panasonic China Open Harbin 2005	SUEMASU Asami (JPN)		RYOM Won Ok (PRK)		WS	Qualification	3	3 - 4	11:9 12:10 7:11 11:7 12:14 10:12 8:11	RYOM Won Ok	
+2005	Panasonic China Open Harbin 2005	ZHANG Xueling (SGP)		YOON Sunae (KOR)		WS	Qualification		1 - 4	11:5 9:11 2:11 5:11 3:11	YOON Sunae	
+2005	Panasonic China Open Harbin 2005	ZHANG Xueling (SGP)		ETSUZAKI Ayumi (JPN)		WS	Qualification	QR2	4 - 3	6:11 11:7 11:7 12:14 11:7 3:11 11:7	ZHANG Xueling	
+2005	Panasonic China Open Harbin 2005	ETSUZAKI Ayumi (JPN)		YOON Sunae (KOR)		WS	Qualification	3	3 - 4	11:2 4:11 3:11 6:11 11:9 11:7 7:11	YOON Sunae	
+2005	Panasonic China Open Harbin 2005	KONISHI An (JPN)		DVORAK Galia (ESP)		WS	Qualification		4 - 0	11:8 11:7 11:8 11:2	KONISHI An	
+2005	Panasonic China Open Harbin 2005	JEE Minhyung (AUS)		PARK Seonghye (KOR)		WS	Qualification	QR2	2 - 4	16:18 13:15 11:7 11:8 5:11 6:11	PARK Seonghye	
+2005	Panasonic China Open Harbin 2005	KONISHI An (JPN)		JEE Minhyung (AUS)		WS	Qualification	3	4 - 0	11:6 11:9 16:14 11:9	KONISHI An	
+2005	Panasonic China Open Harbin 2005	DVORAK Galia (ESP)		PARK Seonghye (KOR)		WS	Qualification	QR4	3 - 4	11:4 4:11 11:8 9:11 9:11 11:9 11:13	PARK Seonghye	
+2005	Panasonic China Open Harbin 2005	JEE Minhyung (AUS)		DVORAK Galia (ESP)		WS	Qualification	5	3 - 4	9:11 10:12 11:8 11:7 5:11 11:7 9:11	DVORAK Galia	
+2005	Panasonic China Open Harbin 2005	KONISHI An (JPN)		PARK Seonghye (KOR)		WS	Qualification	6	4 - 0	11:8 11:4 11:4 11:8	KONISHI An	
+2005	Panasonic China Open Harbin 2005	CHANG Chenchen (CHN)		FUJITA Yuki (JPN)		WS	Qualification		4 - 1	11:3 9:11 11:7 11:7 11:4	CHANG Chenchen	
+2005	Panasonic China Open Harbin 2005	KIM Junghyun (KOR)		MOON Bosun (KOR)		WS	Qualification	QR2	4 - 1	11:9 11:5 12:10 4:11 15:13	KIM Junghyun	
+2005	Panasonic China Open Harbin 2005	CHANG Chenchen (CHN)		KIM Junghyun (KOR)		WS	Qualification	3	4 - 0	11:5 11:6 11:8 11:9	CHANG Chenchen	
+2005	Panasonic China Open Harbin 2005	FUJITA Yuki (JPN)		MOON Bosun (KOR)		WS	Qualification	QR4	4 - 1	11:6 11:9 8:11 11:4 11:4	FUJITA Yuki	
+2005	Panasonic China Open Harbin 2005	KIM Junghyun (KOR)		FUJITA Yuki (JPN)		WS	Qualification	5	4 - 2	11:8 8:11 11:8 7:11 12:10 11:6	KIM Junghyun	
+2005	Panasonic China Open Harbin 2005	CHANG Chenchen (CHN)		MOON Bosun (KOR)		WS	Qualification	6	4 - 1	11:3 11:4 11:9 8:11 11:4	CHANG Chenchen	
+2005	Panasonic China Open Harbin 2005	FUJII Hiroko (JPN)		SHIN Soohee (KOR)		WS	Qualification		4 - 1	11:4 11:9 12:10 5:11 11:5	FUJII Hiroko	
+2005	Panasonic China Open Harbin 2005	LI Qiangbing (AUT)		XU Chris (CAN)		WS	Qualification	QR2	4 - 1	6:11 11:6 11:7 11:8 11:1	LI Qiangbing	
+2005	Panasonic China Open Harbin 2005	FUJII Hiroko (JPN)		LI Qiangbing (AUT)		WS	Qualification	3	4 - 3	13:11 10:12 11:7 8:11 8:11 11:8 11:7	FUJII Hiroko	
+2005	Panasonic China Open Harbin 2005	SHIN Soohee (KOR)		XU Chris (CAN)		WS	Qualification	QR4	4 - 0	11:4 11:5 11:5 11:9	SHIN Soohee	
+2005	Panasonic China Open Harbin 2005	LI Qiangbing (AUT)		SHIN Soohee (KOR)		WS	Qualification	5	4 - 1	11:8 11:7 11:2 10:12 11:9	LI Qiangbing	
+2005	Panasonic China Open Harbin 2005	FUJII Hiroko (JPN)		XU Chris (CAN)		WS	Qualification	6	4 - 0	11:1 11:7 11:8 11:7	FUJII Hiroko	
+2005	Panasonic China Open Harbin 2005	KANAZAWA Saki (JPN)		KO Un Gyong (PRK)		WS	Qualification		2 - 4	11:7 9:11 11:5 7:11 8:11 6:11	KO Un Gyong	
+2005	Panasonic China Open Harbin 2005	KIM Hyehyun (KOR)		JUN Hyunsil (KOR)		WS	Qualification	QR2	4 - 2	5:11 12:10 11:13 11:7 11:9 11:8	KIM Hyehyun	
+2005	Panasonic China Open Harbin 2005	KANAZAWA Saki (JPN)		KIM Hyehyun (KOR)		WS	Qualification	3	4 - 3	11:1 9:11 8:11 9:11 11:6 11:8 12:10	KANAZAWA Saki	
+2005	Panasonic China Open Harbin 2005	KO Un Gyong (PRK)		JUN Hyunsil (KOR)		WS	Qualification	QR4	3 - 4	11:6 4:11 9:11 11:8 11:6 9:11 8:11	JUN Hyunsil	
+2005	Panasonic China Open Harbin 2005	KIM Hyehyun (KOR)		KO Un Gyong (PRK)		WS	Qualification	5	1 - 4	6:11 5:11 9:11 11:4 13:15	KO Un Gyong	
+2005	Panasonic China Open Harbin 2005	KANAZAWA Saki (JPN)		JUN Hyunsil (KOR)		WS	Qualification	6	4 - 0	11:3 11:9 11:7 11:6	KANAZAWA Saki	
+2005	Panasonic China Open Harbin 2005	LEE Eunhee (KOR)		NAM Hyejin (1985) (KOR)		WS	Qualification		1 - 4	7:11 7:11 9:11 11:2 6:11	NAM Hyejin (1985)	
+2005	Panasonic China Open Harbin 2005	TAN Paey Fern (SGP)		OHATA Nahoko (JPN)		WS	Qualification	QR2	3 - 4	11:4 9:11 7:11 14:12 14:12 9:11 9:11	OHATA Nahoko	
+2005	Panasonic China Open Harbin 2005	LEE Eunhee (KOR)		TAN Paey Fern (SGP)		WS	Qualification	3	4 - 2	11:6 11:5 8:11 5:11 11:5 11:3	LEE Eunhee	
+2005	Panasonic China Open Harbin 2005	NAM Hyejin (1985) (KOR)		OHATA Nahoko (JPN)		WS	Qualification	QR4	4 - 3	11:9 8:11 11:6 13:15 11:13 11:9 12:10	NAM Hyejin (1985)	
+2005	Panasonic China Open Harbin 2005	TAN Paey Fern (SGP)		NAM Hyejin (1985) (KOR)		WS	Qualification	5	4 - 2	11:6 2:11 11:7 5:11 11:7 11:4	TAN Paey Fern	
+2005	Panasonic China Open Harbin 2005	LEE Eunhee (KOR)		OHATA Nahoko (JPN)		WS	Qualification	6	4 - 2	11:5 9:11 7:11 11:5 11:8 12:10	LEE Eunhee	
+2005	Panasonic China Open Harbin 2005	KWAK Bangbang (KOR)		YU Kwok See (HKG)		WS	Qualification		4 - 0	11:3 11:8 11:8 11:9	KWAK Bangbang	
+2005	Panasonic China Open Harbin 2005	KIM Mi Yong (PRK)		ISHIZUKA Miwako (JPN)		WS	Qualification	QR2	4 - 3	11:9 11:8 9:11 9:11 11:6 7:11 11:8	KIM Mi Yong	
+2005	Panasonic China Open Harbin 2005	KWAK Bangbang (KOR)		KIM Mi Yong (PRK)		WS	Qualification	3	1 - 4	10:12 8:11 7:11 11:7 7:11	KIM Mi Yong	
+2005	Panasonic China Open Harbin 2005	YU Kwok See (HKG)		ISHIZUKA Miwako (JPN)		WS	Qualification	QR4	3 - 4	11:9 11:9 10:12 9:11 9:11 11:8 9:11	ISHIZUKA Miwako	
+2005	Panasonic China Open Harbin 2005	KIM Mi Yong (PRK)		YU Kwok See (HKG)		WS	Qualification	5	4 - 1	6:11 11:8 11:2 11:7 11:7	KIM Mi Yong	
+2005	Panasonic China Open Harbin 2005	KWAK Bangbang (KOR)		ISHIZUKA Miwako (JPN)		WS	Qualification	6	4 - 1	9:11 11:7 11:9 11:7 11:7	KWAK Bangbang	
+2005	Panasonic China Open Harbin 2005	LI Jiawei (SGP)		KANAZAWA Saki (JPN)		WS	Main Draw	R32	4 - 3	12:10 11:13 11:5 6:11 11:6 9:11 11:9	LI Jiawei	
+2005	Panasonic China Open Harbin 2005	CHANG Chenchen (CHN)		SUN Beibei (SGP)		WS	Main Draw	R32	4 - 0	13:11 11:5 12:10 11:6	CHANG Chenchen	
+2005	Panasonic China Open Harbin 2005	FUKUHARA Ai (JPN)		KIM Mi Yong (PRK)		WS	Main Draw	R32	4 - 1	10:12 11:9 11:9 11:9 11:7	FUKUHARA Ai	
+2005	Panasonic China Open Harbin 2005	KWAK Bangbang (KOR)		LAU Sui Fei (HKG)		WS	Main Draw	R32	4 - 3	9:11 11:8 11:4 11:6 7:11 6:11 13:11	KWAK Bangbang	
+2005	Panasonic China Open Harbin 2005	LIU Jia (AUT)		NAM Hyejin (1985) (KOR)		WS	Main Draw	R32	4 - 1	11:8 11:7 8:11 11:6 12:10	LIU Jia	
+2005	Panasonic China Open Harbin 2005	SHEN Yanfei (ESP)		SONG Ah Sim (HKG)		WS	Main Draw	R32	4 - 2	11:6 11:6 4:11 6:11 18:16 11:9	SHEN Yanfei	
+2005	Panasonic China Open Harbin 2005	LI Xiaoxia (CHN)		KO Un Gyong (PRK)		WS	Main Draw	R32	4 - 1	6:11 12:10 14:12 11:7 17:15	LI Xiaoxia	
+2005	Panasonic China Open Harbin 2005	HAN Hye Song (PRK)		TIE Yana (HKG)		WS	Main Draw	R32	1 - 4	4:11 11:9 6:11 8:11 10:12	TIE Yana	
+2005	Panasonic China Open Harbin 2005	GUO Yan (1982) (CHN)		KIM Junghyun (KOR)		WS	Main Draw	R32	4 - 2	11:7 9:11 11:5 11:5 10:12 11:5	GUO Yan (1982)	
+2005	Panasonic China Open Harbin 2005	KONISHI An (JPN)		KIM Hyang Mi (PRK)		WS	Main Draw	R32	0 - 4	20:22 7:11 11:13 11:13	KIM Hyang Mi	
+2005	Panasonic China Open Harbin 2005	FAN Ying (CHN)		FUJII Hiroko (JPN)		WS	Main Draw	R32	4 - 0	11:7 12:10 11:3 11:8	FAN Ying	
+2005	Panasonic China Open Harbin 2005	LI Qiangbing (AUT)		GAO Jun (USA)		WS	Main Draw	R32	3 - 4	12:10 8:11 7:11 11:4 13:11 9:11 9:11	GAO Jun	
+2005	Panasonic China Open Harbin 2005	LIN Ling (HKG)		LEE Eunhee (KOR)		WS	Main Draw	R32	4 - 0	13:11 11:6 11:6 11:8	LIN Ling	
+2005	Panasonic China Open Harbin 2005	YOON Sunae (KOR)		ZHANG Rui (HKG)		WS	Main Draw	R32	4 - 2	4:11 5:11 11:9 11:4 12:10 11:5	YOON Sunae	
+2005	Panasonic China Open Harbin 2005	WANG Yuegu (SGP)		PENG Luyang (CHN)		WS	Main Draw	R32	1 - 4	11:8 6:11 9:11 11:13 4:11	PENG Luyang	
+2005	Panasonic China Open Harbin 2005	RYOM Won Ok (PRK)		GUO Yue (CHN)		WS	Main Draw	R32	0 - 4	8:11 7:11 8:11 5:11	GUO Yue	
+2005	Panasonic China Open Harbin 2005	LI Jiawei (SGP)		CHANG Chenchen (CHN)		WS	Main Draw	R16	2 - 4	5:11 7:11 11:7 5:11 11:5 10:12	CHANG Chenchen	
+2005	Panasonic China Open Harbin 2005	FUKUHARA Ai (JPN)		KWAK Bangbang (KOR)		WS	Main Draw	R16	4 - 0	12:10 11:9 11:6 11:6	FUKUHARA Ai	
+2005	Panasonic China Open Harbin 2005	LIU Jia (AUT)		SHEN Yanfei (ESP)		WS	Main Draw	R16	3 - 4	11:4 11:6 11:5 9:11 5:11 9:11 11:13	SHEN Yanfei	
+2005	Panasonic China Open Harbin 2005	LI Xiaoxia (CHN)		TIE Yana (HKG)		WS	Main Draw	R16	4 - 0	11:6 11:8 11:5 11:8	LI Xiaoxia	
+2005	Panasonic China Open Harbin 2005	GUO Yan (1982) (CHN)		KIM Hyang Mi (PRK)		WS	Main Draw	R16	4 - 1	12:10 7:11 11:4 14:12 11:4	GUO Yan (1982)	
+2005	Panasonic China Open Harbin 2005	FAN Ying (CHN)		GAO Jun (USA)		WS	Main Draw	R16	2 - 4	6:11 7:11 11:7 11:2 9:11 7:11	GAO Jun	
+2005	Panasonic China Open Harbin 2005	LIN Ling (HKG)		YOON Sunae (KOR)		WS	Main Draw	R16	4 - 1	11:7 11:8 11:2 8:11 11:8	LIN Ling	
+2005	Panasonic China Open Harbin 2005	PENG Luyang (CHN)		GUO Yue (CHN)		WS	Main Draw	R16	3 - 4	11:13 11:6 7:11 11:3 4:11 11:5 9:11	GUO Yue	
+2005	Panasonic China Open Harbin 2005	CHANG Chenchen (CHN)		FUKUHARA Ai (JPN)		WS	Main Draw	QuarterFinal	4 - 0	12:10 11:9 11:3 11:3	CHANG Chenchen	
+2005	Panasonic China Open Harbin 2005	SHEN Yanfei (ESP)		LI Xiaoxia (CHN)		WS	Main Draw	QuarterFinal	0 - 4	7:11 8:11 10:12 4:11	LI Xiaoxia	
+2005	Panasonic China Open Harbin 2005	GUO Yan (1982) (CHN)		GAO Jun (USA)		WS	Main Draw	QuarterFinal	4 - 1	11:9 11:9 8:11 11:8 11:5	GUO Yan (1982)	
+2005	Panasonic China Open Harbin 2005	LIN Ling (HKG)		GUO Yue (CHN)		WS	Main Draw	QuarterFinal	0 - 4	8:11 8:11 9:11 7:11	GUO Yue	
+2005	Panasonic China Open Harbin 2005	CHANG Chenchen (CHN)		LI Xiaoxia (CHN)		WS	Main Draw	SemiFinal	4 - 1	7:11 11:6 11:5 11:9 11:9	CHANG Chenchen	
+2005	Panasonic China Open Harbin 2005	GUO Yan (1982) (CHN)		GUO Yue (CHN)		WS	Main Draw	SemiFinal	2 - 4	8:11 11:4 7:11 8:11 13:11 10:12	GUO Yue	
+2005	Panasonic China Open Harbin 2005	CHANG Chenchen (CHN)		GUO Yue (CHN)		WS	Main Draw	Final	0 - 4	5:11 6:11 5:11 8:11	GUO Yue	
+2005	Panasonic China Open Harbin 2005	SUN Beibei (SGP)		PARK Seonghye (KOR)		U21WS	Qualification		3 - 0	11:3 11:6 11:9	SUN Beibei	
+2005	Panasonic China Open Harbin 2005	SUN Beibei (SGP)		KIM Hyehyun (KOR)		U21WS	Qualification	QR2	3 - 1	7:11 11:6 11:3 11:4	SUN Beibei	
+2005	Panasonic China Open Harbin 2005	KIM Hyehyun (KOR)		PARK Seonghye (KOR)		U21WS	Qualification	3	3 - 0	11:7 12:10 11:4	KIM Hyehyun	
+2005	Panasonic China Open Harbin 2005	LEE Eunhee (KOR)		MOON Bosun (KOR)		U21WS	Qualification		3 - 2	9:11 11:5 8:11 11:9 12:10	LEE Eunhee	
+2005	Panasonic China Open Harbin 2005	LEE Eunhee (KOR)		YU Kwok See (HKG)		U21WS	Qualification	QR2	1 - 3	11:7 9:11 6:11 4:11	YU Kwok See	
+2005	Panasonic China Open Harbin 2005	YU Kwok See (HKG)		MOON Bosun (KOR)		U21WS	Qualification	3	0 - 3	9:11 4:11 6:11	MOON Bosun	
+2005	Panasonic China Open Harbin 2005	LI Qiangbing (AUT)		NAM Hyejin (1985) (KOR)		U21WS	Qualification		3 - 2	7:11 11:6 11:7 8:11 11:8	LI Qiangbing	
+2005	Panasonic China Open Harbin 2005	LI Qiangbing (AUT)		DVORAK Galia (ESP)		U21WS	Qualification	QR2	3 - 0	11:5 12:10 13:11	LI Qiangbing	
+2005	Panasonic China Open Harbin 2005	DVORAK Galia (ESP)		NAM Hyejin (1985) (KOR)		U21WS	Qualification	3	3 - 1	11:5 11:8 9:11 11:8	DVORAK Galia	
+2005	Panasonic China Open Harbin 2005	HAN Hye Song (PRK)		PARK Seonghye (KOR)		WS	Qualification	QR4	4 - 2	9:11 11:8 8:11 11:7 11:7 11:4	HAN Hye Song	
+2005	Panasonic China Open Harbin 2005	RYOM Won Ok (PRK)		ZHANG Xueling (SGP)		WS	Qualification	QR4	4 - 2	11:8 12:10 11:6 8:11 5:11 11:4	RYOM Won Ok	
+2005	Panasonic China Open Harbin 2005	KIM Junghyun (KOR)		JEE Minhyung (AUS)		U21WS	Qualification		1 - 3	8:11 11:7 9:11 8:11	JEE Minhyung	
+2005	Panasonic China Open Harbin 2005	HAN Hye Song (PRK)		ISHIZUKA Miwako (JPN)		U21WS	Qualification	QR2	3 - 2	9:11 11:9 11:9 6:11 11:9	HAN Hye Song	
+2005	Panasonic China Open Harbin 2005	KIM Junghyun (KOR)		HAN Hye Song (PRK)		U21WS	Qualification	3	1 - 3	6:11 11:7 8:11 8:11	HAN Hye Song	
+2005	Panasonic China Open Harbin 2005	JEE Minhyung (AUS)		ISHIZUKA Miwako (JPN)		U21WS	Qualification	QR4	3 - 1	11:6 11:2 12:14 11:8	JEE Minhyung	
+2005	Panasonic China Open Harbin 2005	KIM Junghyun (KOR)		ISHIZUKA Miwako (JPN)		U21WS	Qualification	5	3 - 2	11:5 9:11 12:10 4:11 11:7	KIM Junghyun	
+2005	Panasonic China Open Harbin 2005	HAN Hye Song (PRK)		JEE Minhyung (AUS)		U21WS	Qualification	6	3 - 2	11:9 11:9 9:11 7:11 11:5	HAN Hye Song	
+2005	Panasonic China Open Harbin 2005	SUN Beibei (SGP)		JEE Minhyung (AUS)		U21WS	Main Draw	QuarterFinal	4 - 3	6:11 11:4 11:6 9:11 11:9 7:11 11:4	SUN Beibei	
+2005	Panasonic China Open Harbin 2005	LEE Eunhee (KOR)		HAN Hye Song (PRK)		U21WS	Main Draw	QuarterFinal	3 - 4	6:11 14:12 13:11 8:11 11:8 4:11 5:11	HAN Hye Song	
+2005	Panasonic China Open Harbin 2005	LI Qiangbing (AUT)		KIM Hyehyun (KOR)		U21WS	Main Draw	QuarterFinal	4 - 1	11:7 11:5 8:11 11:6 11:6	LI Qiangbing	
+2005	Panasonic China Open Harbin 2005	DVORAK Galia (ESP)		MOON Bosun (KOR)		U21WS	Main Draw	QuarterFinal	2 - 4	9:11 13:11 5:11 9:11 11:9 6:11	MOON Bosun	
+2005	Panasonic China Open Harbin 2005	SUN Beibei (SGP)		HAN Hye Song (PRK)		U21WS	Main Draw	SemiFinal	3 - 4	9:11 11:6 3:11 2:11 11:4 11:2 8:11	HAN Hye Song	
+2005	Panasonic China Open Harbin 2005	LI Qiangbing (AUT)		MOON Bosun (KOR)		U21WS	Main Draw	SemiFinal	3 - 4	10:12 5:11 11:7 11:8 12:10 9:11 10:12	MOON Bosun	
+2005	Panasonic China Open Harbin 2005	HAN Hye Song (PRK)		MOON Bosun (KOR)		U21WS	Main Draw	Final	4 - 2	11:9 10:12 11:5 2:11 11:2 11:9	HAN Hye Song
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 19
+
+2005	Panasonic China Open Harbin 2005	CHEN Qi (CHN)	WANG Liqin (CHN)	JANG Song Man (PRK)	TAN Ruiwu (CRO)	MD	Main Draw	R16	4 - 0	11:7 11:7 11:8 11:5	CHEN Qi	WANG Liqin
+2005	Panasonic China Open Harbin 2005	CHEN Qi (CHN)	WANG Liqin (CHN)	LEE Jungsam (KOR)	LIM Jaehyun (KOR)	MD	Main Draw	QuarterFinal	4 - 0	11:8 11:8 11:5 11:7	CHEN Qi	WANG Liqin
+2005	Panasonic China Open Harbin 2005	CHEN Qi (CHN)	WANG Liqin (CHN)	MA Lin (CHN)	WANG Hao (CHN)	MD	Main Draw	SemiFinal	0 - 4	12:14 7:11 10:12 9:11	MA Lin	WANG Hao
+2005	Panasonic China Open Harbin 2005	KONG Linghui (CHN)	MA Long (CHN)	MA Lin (CHN)	WANG Hao (CHN)	MD	Main Draw	Final	4 - 3	16:14 11:8 9:11 13:15 11:9 8:11 11:8	KONG Linghui	MA Long
+2005	Panasonic China Open Harbin 2005	JANG Song Man (PRK)	TAN Ruiwu (CRO)	TSE Ka Chun (HKG)	ZHANG Wilson (CAN)	MD	Qualification	QR16	3 - 0	11:4 11:7 11:8	JANG Song Man	TAN Ruiwu
+2005	Panasonic China Open Harbin 2005	CARNEROS Alfredo (ESP)	DURAN Marc (ESP)	RI Chol Guk (PRK)	RI Kwang Il (PRK)	MD	Main Draw	R16	3 - 4	11:9 10:12 13:11 11:7 9:11 6:11 9:11	RI Chol Guk	RI Kwang Il
+2005	Panasonic China Open Harbin 2005	KO Lai Chak (HKG)	LI Ching (HKG)	CHO Jihoon (KOR)	KIM Junghoon (KOR)	MD	Main Draw	R16	4 - 1	11:8 11:2 8:11 11:8 11:8	KO Lai Chak	LI Ching
+2005	Panasonic China Open Harbin 2005	KO Lai Chak (HKG)	LI Ching (HKG)	CHO Eonrae (KOR)	LEE Jungwoo (KOR)	MD	Main Draw	QuarterFinal	2 - 4	2:11 4:11 11:6 11:4 5:11 9:11	CHO Eonrae	LEE Jungwoo
+2005	Panasonic China Open Harbin 2005	MITAMURA Muneaki (JPN)	YOSHIDA Kaii (JPN)	KONG Linghui (CHN)	MA Long (CHN)	MD	Main Draw	R16	1 - 4	7:11 11:6 13:15 3:11 9:11	KONG Linghui	MA Long
+2005	Panasonic China Open Harbin 2005	SHIMOYAMA Takanori (JPN)	TOKIYOSHI Yuichi (JPN)	LEE Jungsam (KOR)	LIM Jaehyun (KOR)	MD	Main Draw	R16	0 - 4	11:13 11:13 6:11 8:11	LEE Jungsam	LIM Jaehyun
+2005	Panasonic China Open Harbin 2005	SHIMOYAMA Takanori (JPN)	TOKIYOSHI Yuichi (JPN)	LIU Zhongze (SGP)	MA Liang (SGP)	MD	Qualification	QR16	3 - 1	11:8 8:11 11:8 13:11	SHIMOYAMA Takanori	TOKIYOSHI Yuichi
+2005	Panasonic China Open Harbin 2005	LEE Jinkwon (KOR)	YOON Jaeyoung (KOR)	MA Lin (CHN)	WANG Hao (CHN)	MD	Main Draw	R16	1 - 4	5:11 5:11 5:11 11:9 10:12	MA Lin	WANG Hao
+2005	Panasonic China Open Harbin 2005	CHO Eonrae (KOR)	LEE Jungwoo (KOR)	KONG Linghui (CHN)	MA Long (CHN)	MD	Main Draw	SemiFinal	3 - 4	7:11 6:11 11:8 3:11 16:14 11:9 10:12	KONG Linghui	MA Long
+2005	Panasonic China Open Harbin 2005	RI Chol Guk (PRK)	RI Kwang Il (PRK)	MA Lin (CHN)	WANG Hao (CHN)	MD	Main Draw	QuarterFinal	0 - 4	6:11 5:11 6:11 5:11	MA Lin	WANG Hao
+2005	Panasonic China Open Harbin 2005	RI Chol Guk (PRK)	RI Kwang Il (PRK)	MACHADO Carlos (ESP)	MONTEIRO Joao (POR)	MD	Qualification	QR16	3 - 0	11:5 12:10 11:9	RI Chol Guk	RI Kwang Il
+2005	Panasonic China Open Harbin 2005	AN Chol Yong (PRK)	KIM Hyok Bong (PRK)	MATSUDAIRA Kenta (JPN)	OYA Hidetoshi (JPN)	MD	Qualification	QR16	3 - 0	11:8 11:5 11:8	AN Chol Yong	KIM Hyok Bong
+2005	Panasonic China Open Harbin 2005	CAI Xiaoli (SGP)	YANG Zi (SGP)	AN Chol Yong (PRK)	KIM Hyok Bong (PRK)	MD	Main Draw	R16	4 - 1	11:7 9:11 11:1 11:8 11:3	CAI Xiaoli	YANG Zi
+2005	Panasonic China Open Harbin 2005	CAI Xiaoli (SGP)	YANG Zi (SGP)	KONG Linghui (CHN)	MA Long (CHN)	MD	Main Draw	QuarterFinal	0 - 4	8:11 12:14 10:12 6:11	KONG Linghui	MA Long
+2005	Panasonic China Open Harbin 2005	AXELQVIST Johan (SWE)	NILSSON Peter (SWE)	CHO Eonrae (KOR)	LEE Jungwoo (KOR)	MD	Main Draw	R16	0 - 4	7:11 7:11 5:11 5:11	CHO Eonrae	LEE Jungwoo
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 23
+
+2005	Panasonic China Open Harbin 2005	LI Qiangbing (AUT)	LIU Jia (AUT)	LI Jiawei (SGP)	ZHANG Xueling (SGP)	WD	Main Draw	QuarterFinal	2 - 4	9:11 5:11 6:11 11:8 12:10 4:11	LI Jiawei	ZHANG Xueling
+2005	Panasonic China Open Harbin 2005	LI Qiangbing (AUT)	LIU Jia (AUT)	ETSUZAKI Ayumi (JPN)	FUJITA Yuki (JPN)	WD	Qualification	QR16	3 - 0	11:3 11:5 11:6	LI Qiangbing	LIU Jia
+2005	Panasonic China Open Harbin 2005	GUO Yan (1982) (CHN)	GUO Yue (CHN)	GAO Jun (USA)	SHEN Yanfei (ESP)	WD	Main Draw	R16	4 - 1	7:11 11:4 11:3 11:8 12:10	GUO Yan (1982)	GUO Yue
+2005	Panasonic China Open Harbin 2005	CHANG Chenchen (CHN)	FAN Ying (CHN)	SUN Beibei (SGP)	WANG Yuegu (SGP)	WD	Main Draw	R16	4 - 1	11:9 11:13 11:8 11:6 11:5	CHANG Chenchen	FAN Ying
+2005	Panasonic China Open Harbin 2005	LI Xiaoxia (CHN)	PENG Luyang (CHN)	KO Un Gyong (PRK)	RYOM Won Ok (PRK)	WD	Main Draw	R16	4 - 2	11:7 11:6 3:11 11:7 6:11 11:1	LI Xiaoxia	PENG Luyang
+2005	Panasonic China Open Harbin 2005	LI Xiaoxia (CHN)	PENG Luyang (CHN)	LAU Sui Fei (HKG)	SONG Ah Sim (HKG)	WD	Main Draw	QuarterFinal	4 - 1	12:10 11:5 7:11 11:9 11:9	LI Xiaoxia	PENG Luyang
+2005	Panasonic China Open Harbin 2005	GUO Yan (1982) (CHN)	GUO Yue (CHN)	CHANG Chenchen (CHN)	FAN Ying (CHN)	WD	Main Draw	SemiFinal	4 - 0	11:6 11:7 11:9 11:8	GUO Yan (1982)	GUO Yue
+2005	Panasonic China Open Harbin 2005	GUO Yan (1982) (CHN)	GUO Yue (CHN)	LI Jiawei (SGP)	ZHANG Xueling (SGP)	WD	Main Draw	Final	4 - 2	11:8 11:6 7:11 8:11 11:9 11:4	GUO Yan (1982)	GUO Yue
+2005	Panasonic China Open Harbin 2005	GUO Yan (1982) (CHN)	GUO Yue (CHN)	JEE Minhyung (AUS)	KWAK Bangbang (KOR)	WD	Qualification	QR16	3 - 1	7:11 11:9 11:5 12:10	GUO Yan (1982)	GUO Yue
+2005	Panasonic China Open Harbin 2005	CHANG Chenchen (CHN)	FAN Ying (CHN)	HAN Hye Song (PRK)	XU Chris (CAN)	WD	Qualification	QR16	3 - 0	12:10 11:4 11:5	CHANG Chenchen	FAN Ying
+2005	Panasonic China Open Harbin 2005	TIE Yana (HKG)	ZHANG Rui (HKG)	OHATA Nahoko (JPN)	SUEMASU Asami (JPN)	WD	Main Draw	R16	4 - 1	8:11 11:2 11:8 11:5 11:1	TIE Yana	ZHANG Rui
+2005	Panasonic China Open Harbin 2005	TIE Yana (HKG)	ZHANG Rui (HKG)	GUO Yan (1982) (CHN)	GUO Yue (CHN)	WD	Main Draw	QuarterFinal	1 - 4	11:7 9:11 4:11 7:11 7:11	GUO Yan (1982)	GUO Yue
+2005	Panasonic China Open Harbin 2005	LIN Ling (HKG)	YU Kwok See (HKG)	DVORAK Galia (ESP)	PARK Seonghye (KOR)	WD	Qualification	QR16	3 - 0	11:8 11:7 11:5	LIN Ling	YU Kwok See
+2005	Panasonic China Open Harbin 2005	ISHIZUKA Miwako (JPN)	KONISHI An (JPN)	LAU Sui Fei (HKG)	SONG Ah Sim (HKG)	WD	Main Draw	R16	0 - 4	10:12 3:11 9:11 7:11	LAU Sui Fei	SONG Ah Sim
+2005	Panasonic China Open Harbin 2005	ISHIZUKA Miwako (JPN)	KONISHI An (JPN)	MOON Bosun (KOR)	SHIN Soohee (KOR)	WD	Qualification	QR16	3 - 2	11:8 10:12 11:4 8:11 11:8	ISHIZUKA Miwako	KONISHI An
+2005	Panasonic China Open Harbin 2005	KIM Hyehyun (KOR)	KIM Junghyun (KOR)	LI Qiangbing (AUT)	LIU Jia (AUT)	WD	Main Draw	R16	3 - 4	11:6 8:11 13:11 11:7 9:11 7:11 8:11	LI Qiangbing	LIU Jia
+2005	Panasonic China Open Harbin 2005	TAN Paey Fern (SGP)	YOON Sunae (KOR)	OHATA Nahoko (JPN)	SUEMASU Asami (JPN)	WD	Qualification	QR16	2 - 3	11:5 7:11 12:14 13:11 7:11	OHATA Nahoko	SUEMASU Asami
+2005	Panasonic China Open Harbin 2005	JUN Hyunsil (KOR)	LEE Hyangmi (KOR)	KO Un Gyong (PRK)	RYOM Won Ok (PRK)	WD	Qualification	QR16	0 - 3	5:11 6:11 5:11	KO Un Gyong	RYOM Won Ok
+2005	Panasonic China Open Harbin 2005	KIM Hyang Mi (PRK)	KIM Mi Yong (PRK)	LIN Ling (HKG)	YU Kwok See (HKG)	WD	Main Draw	R16	4 - 1	11:7 11:7 6:11 11:5 11:6	KIM Hyang Mi	KIM Mi Yong
+2005	Panasonic China Open Harbin 2005	KIM Hyang Mi (PRK)	KIM Mi Yong (PRK)	CHANG Chenchen (CHN)	FAN Ying (CHN)	WD	Main Draw	QuarterFinal	2 - 4	11:9 5:11 3:11 8:11 11:7 6:11	CHANG Chenchen	FAN Ying
+2005	Panasonic China Open Harbin 2005	LI Jiawei (SGP)	ZHANG Xueling (SGP)	FUJII Hiroko (JPN)	KANAZAWA Saki (JPN)	WD	Main Draw	R16	4 - 0	11:8 11:6 11:3 11:7	LI Jiawei	ZHANG Xueling
+2005	Panasonic China Open Harbin 2005	LI Jiawei (SGP)	ZHANG Xueling (SGP)	LI Xiaoxia (CHN)	PENG Luyang (CHN)	WD	Main Draw	SemiFinal	4 - 3	6:11 11:8 9:11 11:9 11:9 4:11 11:9	LI Jiawei	ZHANG Xueling
+2005	Panasonic China Open Harbin 2005	LI Jiawei (SGP)	ZHANG Xueling (SGP)	LEE Eunhee (KOR)	NAM Hyejin (1985) (KOR)	WD	Qualification	QR16	3 - 0	11:9 11:8 11:8	LI Jiawei	ZHANG Xueling

@@ -59,8 +59,8 @@
     <!-- 左侧定位条 -->
     <nav class="side-nav" id="sideNav">
         <ul class="side-nav-list">
+            <li class="side-nav-item"><a href="#wtt-viz-race" class="side-nav-link" data-section="wtt-viz-race" data-i18n="wtt_race_title">排名动态竞速 Top 20</a></li>
             <li class="side-nav-item"><a href="#viz-points" class="side-nav-link active" data-section="viz-points" data-i18n="data_viz_points_trend">积分趋势</a></li>
-            <li class="side-nav-item"><a href="#viz-stream" class="side-nav-link" data-section="viz-stream" data-i18n="data_viz_rank_stream">排名变化河流图</a></li>
             <li class="side-nav-item"><a href="#viz-compare" class="side-nav-link" data-section="viz-compare" data-i18n="data_viz_player_compare">球员对比</a></li>
             <li class="side-nav-item"><a href="#viz-record" class="side-nav-link" data-section="viz-record" data-i18n="wtt_record_title">战绩统计</a></li>
             <li class="side-nav-item"><a href="#viz-efficiency" class="side-nav-link" data-section="viz-efficiency" data-i18n="wtt_efficiency_title">场次×积分效率</a></li>
@@ -69,12 +69,39 @@
             <li class="side-nav-item"><a href="#viz-dist" class="side-nav-link" data-section="viz-dist" data-i18n="wtt_dist_title">积分区间分布</a></li>
             <li class="side-nav-item"><a href="#wtt-viz-assoc-trend" class="side-nav-link" data-section="wtt-viz-assoc-trend" data-i18n="wtt_assoc_trend_title">协会积分趋势</a></li>
             <li class="side-nav-item"><a href="#wtt-viz-assoc-top5" class="side-nav-link" data-section="wtt-viz-assoc-top5" data-i18n="wtt_assoc_top5_title">协会前五球员</a></li>
-            <li class="side-nav-item"><a href="#wtt-viz-race" class="side-nav-link" data-section="wtt-viz-race" data-i18n="wtt_race_title">排名动态竞速 Top 20</a></li>
         </ul>
     </nav>
 
     <section class="section viz-main-section">
         <div class="container">
+            <div class="viz-section-header" id="wtt-viz-race">
+                <span class="section-tag">Bar Chart Race</span>
+                <h2 class="section-title" data-i18n="wtt_race_title">排名动态竞速 Top 20</h2>
+                <p class="viz-race-hint" data-i18n="wtt_race_hint">拖动滑块或播放，查看排名随时间变化</p>
+            </div>
+            <div class="viz-race-stage glass-card">
+                <div class="viz-race-clock" id="wttRaceDateLabel"></div>
+                <div class="viz-bar-race-wrap">
+                    <div id="wttBarRaceContainer" class="viz-bar-race"></div>
+                    <div class="bar-race-scale" id="wttRaceScaleLabel"></div>
+                </div>
+            </div>
+            <div class="viz-race-controls">
+                <button class="btn btn-sm btn-primary" id="wttRacePlayBtn" aria-label="播放/暂停">
+                    <i class="fa-solid fa-play"></i> <span data-i18n="wtt_race_play">播放</span>
+                </button>
+                <input type="range" id="wttRaceSlider" class="viz-race-slider" min="0" max="0" value="0" step="1">
+                <label class="viz-race-speed">
+                    <span data-i18n="wtt_race_speed">速度</span>
+                    <select id="wttRaceSpeedSelect">
+                        <option value="0.5">0.5×</option>
+                        <option value="1" selected>1×</option>
+                        <option value="1.5">1.5×</option>
+                        <option value="2">2×</option>
+                    </select>
+                </label>
+            </div>
+
             <div class="viz-section-header" id="viz-points">
                 <span class="section-tag">Line Chart</span>
                 <h2 class="section-title" data-i18n="data_viz_points_trend">积分趋势</h2>
@@ -93,24 +120,6 @@
                 <div class="viz-chart-container glass-card">
                     <canvas id="wttPointsTrendChart"></canvas>
                 </div>
-            </div>
-
-            <div class="viz-section-header" id="viz-stream" style="margin-top:48px;">
-                <span class="section-tag">Stream Graph</span>
-                <h2 class="section-title" data-i18n="data_viz_rank_stream">排名变化河流图</h2>
-                <div class="viz-topn-selector">
-                    <span data-i18n="data_viz_top_n">显示前</span>
-                    <input type="number" id="wttTopNSelect" value="10" min="1" max="20" title="填写1-20的任意正整数">
-                    <span data-i18n="wtt_players">名球员</span>
-                </div>
-                <div class="viz-topn-selector" style="margin-left:16px;">
-                    <span data-i18n="wtt_recent">最近</span>
-                    <input type="number" id="wttStreamDataCount" value="20" min="2" max="200" title="显示最近N个数据点">
-                    <span data-i18n="wtt_data_points">个数据点</span>
-                </div>
-            </div>
-            <div class="viz-chart-container glass-card" style="min-height:450px;">
-                <canvas id="wttRankStreamChart"></canvas>
             </div>
 
             <div class="viz-section-header" id="viz-compare" style="margin-top:48px;">
@@ -241,34 +250,6 @@
             <div class="viz-chart-container glass-card" style="min-height:420px;">
                 <canvas id="wttAssocTop5Chart"></canvas>
                 <div id="wttAssocTop5Legend" class="viz-flag-legend"></div>
-            </div>
-
-            <div class="viz-section-header" id="wtt-viz-race" style="margin-top:48px;">
-                <span class="section-tag">Bar Chart Race</span>
-                <h2 class="section-title" data-i18n="wtt_race_title">排名动态竞速 Top 20</h2>
-                <p class="viz-race-hint" data-i18n="wtt_race_hint">拖动滑块或播放，查看排名随时间变化</p>
-            </div>
-            <div class="viz-race-stage glass-card">
-                <div class="viz-race-clock" id="wttRaceDateLabel"></div>
-                <div class="viz-bar-race-wrap">
-                    <div id="wttBarRaceContainer" class="viz-bar-race"></div>
-                    <div class="bar-race-scale" id="wttRaceScaleLabel"></div>
-                </div>
-            </div>
-            <div class="viz-race-controls">
-                <button class="btn btn-sm btn-primary" id="wttRacePlayBtn" aria-label="播放/暂停">
-                    <i class="fa-solid fa-play"></i> <span data-i18n="wtt_race_play">播放</span>
-                </button>
-                <input type="range" id="wttRaceSlider" class="viz-race-slider" min="0" max="0" value="0" step="1">
-                <label class="viz-race-speed">
-                    <span data-i18n="wtt_race_speed">速度</span>
-                    <select id="wttRaceSpeedSelect">
-                        <option value="0.5">0.5×</option>
-                        <option value="1" selected>1×</option>
-                        <option value="1.5">1.5×</option>
-                        <option value="2">2×</option>
-                    </select>
-                </label>
             </div>
 
         </div>
