@@ -787,3 +787,125 @@ MS 547 名 / WS 412 名 2005 球员全部有 assoc 记录（identity 命中率 1
 
 - `tools/import_2005.py`：十八站导入脚本（复用 2003/2004 逻辑，新增 `wc3` 模板、XD 保留原始顺序（男前）、`XU Jie (1979)` 特例保留后缀、双打单胜者归属、重复球员检测、去重追加、manifest 注册）。
 - `tools/add_assoc_2005.py`：补充 assoc.json 脚本（复用 import_2005 的 NAME_MAP 与原始国家代码，扩充 COUNTRY_MAP 至 120+ 国家/地区）。
+
+# 第九部分：2013 年 ITTF 赛事（MS/WS/MD/WD/XD）
+
+本次导入 **2013 年 17 站 ITTF 赛事**，覆盖男子单打 MS、女子单打 WS、男子双打 MD、女子双打 WD、混合双打 XD（仅世乒赛），数据写入 WTT 计分系统。与 2001~2005 不同，本年度首次引入 **U21 单打并入 MS/WS** 与 **团队世界杯双打并入 MD/WD** 两条新规则。赛事类型含 **世乒赛**（个人锦标赛，含 XD）、**世界杯**（男/女分站）、**总决赛**（Pro Tour Grand Finals）、**世界杯团体**（Team World Cup）、**ittf白金赛/ittf常规赛/ittf公开赛**（Pro Tour 分站）。
+
+| 站 | 类型 | 时间 |
+| --- | --- | --- |
+| World Tour Austrian Open Wels | `ittf常规赛` | 2013-01-23 ~ 01-27 |
+| World Tour Kuwait Open Kuwait City | `ittf白金赛` | 2013-02-14 ~ 02-18 |
+| World Tour Qatar Open Doha | `ittf白金赛` | 2013-02-20 ~ 02-24 |
+| Team World Cup Guangzhou | `世界杯团体` | 2013-03-28 ~ 03-31 |
+| World Tour Korea Open Incheon | `ittf常规赛` | 2013-04-03 ~ 04-07 |
+| World Table Tennis Championships Paris | `世乒赛` | 2013-05-13 ~ 05-20 |
+| World Tour China Open Changchun | `ittf白金赛` | 2013-06-12 ~ 06-16 |
+| World Tour Japan Open Yokohama | `ittf白金赛` | 2013-06-19 ~ 06-23 |
+| World Tour Harmony China Open Suzhou | `ittf公开赛` | 2013-08-14 ~ 08-18 |
+| World Tour Czeck Open Olomouc | `ittf常规赛` | 2013-08-21 ~ 08-25 |
+| World Tour Polish Open Spala | `ittf常规赛` | 2013-11-06 ~ 11-10 |
+| World Tour German Open Bremen | `ittf白金赛` | 2013-11-13 ~ 11-17 |
+| World Tour Russian Open Ekaterinburg | `ittf常规赛` | 2013-11-20 ~ 11-24 |
+| World Tour Swedish Open Stockholm | `ittf常规赛` | 2013-11-27 ~ 12-01 |
+| Women's World Cup Kobe | `世界杯` | 2013-09-21 ~ 09-23 |
+| Men's World Cup Verviers | `世界杯` | 2013-10-25 ~ 10-27 |
+| World Tour Grand Finals Dubai 2013 | `总决赛` | 2014-01-09 ~ 01-12 |
+
+## 1. 基本信息
+
+| 项 | 值 |
+| --- | --- |
+| 项目 | MS（男子单打，含 U21MS）、WS（女子单打，含 U21WS）、MD（男子双打，含 MT 团队双打）、WD（女子双打，含 WT 团队双打）、XD（混合双打，仅世乒赛） |
+| 类型 | `ittf白金赛`（5 站 Super Series）、`ittf常规赛`（6 站 Major Series）、`ittf公开赛`（Harmony Suzhou 1 站）、`总决赛`、`世界杯`、`世界杯团体`、`世乒赛` |
+| 系数 | 复用 event-coefficient.json 已有全部类型（本年度白金/常规赛系数亦已存在，未改值）：ms/ws 为 `世乒赛` 1.83、`世界杯` 1.62、`总决赛` 1.35、`世界杯团体` 1.05、`ittf白金赛` 1.15、`ittf常规赛` 0.48、`ittf公开赛` 0.42；md/wd/xd 为 `世乒赛` 0.8、`世界杯` 0.58、`总决赛` 0.51、`世界杯团体` 0.36、`ittf白金赛` 0.42、`ittf常规赛` 0.25、`ittf公开赛` 0.28。 |
+| 数据来源 | 用户提供（ITTF 官方网页/赛事记录，Ratings Central 同源格式，2001~2013 同源）。 |
+
+## 2. 数据文件
+
+| 分类 | 文件 | 2013 记录 |
+| --- | --- | --- |
+| MS | `wtt_data/ms/score-log-2013-wtt.json` | 1378 |
+| WS | `wtt_data/ws/score-log-2013-ws.json` | 1185 |
+| MD | `wtt_data/md/score-log-2013-wtt.json` | 667 |
+| WD | `wtt_data/wd/score-log-2013-wtt.json` | 498 |
+| XD | `wtt_data/xd/score-log-2013-wtt.json` | 226 |
+| 合计 | | 3954 条 |
+
+五个分类的 `manifest.json` 已将 `score-log-2013-*` 注册到 scoreFiles 首位。原始数据位于 `docs/result_ittf_link/2013/`，tab 分隔行结构同 2005（Pro Tour 文件带中文元数据块；世界杯/总决赛/世乒赛/团体世界杯为表头直入）。2013 文件经扫描无断行续行问题，无需行拼接。
+
+分站明细（按原始文件实际可解析行数）：
+
+| 站 | MS | WS | MD | WD | XD |
+| --- | --- | --- | --- | --- | --- |
+| Austrian Open Wels | 63 | 62 | 56 | 42 | - |
+| Kuwait Open | 63 | 31 | 38 | 23 | - |
+| Qatar Open | 118 | 69 | 43 | 31 | - |
+| Team World Cup | 52 | 49 | 19 | 19 | - |
+| Korea Open Incheon | 100 | 63 | 24 | 25 | - |
+| WTTC Paris | 127 | 127 | 171 | 124 | 226 |
+| China Open Changchun | 98 | 46 | 20 | 18 | - |
+| Japan Open Yokohama | 79 | 122 | 27 | 22 | - |
+| Harmony Suzhou | 123 | 152 | 19 | 19 | - |
+| Czeck Open Olomouc | 93 | 94 | 55 | 39 | - |
+| Polish Open Spala | 82 | 63 | 60 | 42 | - |
+| German Open Bremen | 63 | 63 | 69 | 46 | - |
+| Russian Open Ekaterinburg | 31 | 31 | 12 | 12 | - |
+| Swedish Open Stockholm | 223 | 150 | 47 | 29 | - |
+| Women's World Cup | - | 32 | - | - | - |
+| Men's World Cup | 32 | - | - | - | - |
+| Grand Finals Dubai | 31 | 31 | 7 | 7 | - |
+
+> 缺失说明（用户确认数量差可忽略）：WTTC Paris 各单项为部分页数据（含资格赛缺员/缺搭档行，跳过）；Austrian WS/WD 的 R16 各缺 1 行（源数据截断）；Grand Finals Dubai MD/WD 仅 QF/SF/F 三轮；Russian Open MS/WS 等站源数据本身行数较少。
+
+## 3. 日期映射
+
+沿用既有模板（附起止日期），新增 `grandfinals4`（总决赛 4 天）、`teamwc4`（团体世界杯 4 天）、`wttc8`（世乒赛 8 天）：
+
+- Pro Tour 5 天站（`pro5`，全部 12 站）：资格赛 → 第 1 天，R64/R32 → 第 2 天，R16/1/4 决赛 → 第 3 天，半决赛 → 第 4 天，决赛 → 第 5 天。
+- Grand Finals（`grandfinals4`，2013 赛季总决赛实际于 2014-01-09 举办）：R32 → 01-09，R16 → 01-10，1/4 决赛 → 01-11，半决赛/决赛 → 01-12。
+- 男/女世界杯（`wc3`）：资格赛 → 第 1 天，1/4 决赛 → 第 2 天，半决赛/决赛/排位赛 → 第 3 天。
+- Team World Cup（`teamwc4`）：资格赛 → 03-28，主赛（Main Draw）→ 03-31。
+- WTTC（`wttc8`，巴黎 8 天）：资格赛 → 05-13，R128 → 05-14，R64 → 05-15，R32 → 05-16，R16 → 05-17，1/4 决赛 → 05-18，半决赛 → 05-19，决赛 → 05-20。
+
+> 注意：Grand Finals Dubai 赛事名称/年份列为 2013 赛季，但实际赛期 2014-01-09~12；按惯例归入 `score-log-2013-wtt.json`（年份列 2013），匹配日期按实际赛期 2014-01 计算。
+
+## 4. 姓名规范化说明
+
+遵循 `wtt_data/player-name-format.md`，`tools/import_2013.py` 自动生成标准名映射（复用 2005 规则，约 750+ 球员）。
+
+- 中/港/台/新/韩/朝：`姓 名` 保持原文；日本/欧美：`名 姓` 交换。
+- 后缀剥离：`GUO Yan (1982)` → `GUO Yan`、`CHEN Chao-Shun (1977)` → `CHEN Chao-Shun`（仅双打，不入 assoc）、`KIM Minhee (YOB=1991)` → 保留为 `KIM Minhee (1991)`（与 2005 已录入的 `KIM Minhee`，YOB=1985 为两位不同球员，保留后缀区分，同 `XU Jie` 先例）。
+- 姓名特例：`FANG Bo`（2013 全部为 KAZ）与既有 assoc 的 `FANG Bo`（KAZ，official-416）一致；`THOMAS WU ZHANG Chloe Anna`（WAL）按欧洲规则处理为 `Anna THOMAS WU ZHANG Chloe`。
+
+全部 3954 条无缺失名字、无胜者不匹配、无重复录入、无双打胜者=负者。
+
+## 5. 协会籍补充（assoc.json）
+
+| 文件 | 本次新增 | 合计 |
+| --- | --- | --- |
+| `wtt_data/ms/assoc.json` | 204 | 1771 |
+| `wtt_data/ws/assoc.json` | 150 | 1708 |
+
+2013 全部 MS/WS 球员（含 U21MS/U21WS/MT/WT 单打）identity 命中率 100%。新增国家映射：`CUB/IRQ/MNE/PAN`（古巴/伊拉克/黑山/巴拿马）。MD/WD/XD 双打球员如从未进入 MS/WS 则不入 assoc（与 2002~2005 惯例一致），如 `CHEN Chao-Shun`(TPE) 仅 MD。
+
+## 6. 关键场次验证
+
+| 场次 | 结果 |
+| --- | --- |
+| 世乒赛 MS 决赛 | `ZHANG Jike` 胜 `WANG Hao`（2013-05-20） |
+| 世乒赛 WS 决赛 | `LI Xiaoxia` 胜 `LIU Shiwen`（2013-05-20） |
+| 世乒赛 MD 决赛 | `CHEN Chien-An/CHUANG Chih-Yuan` 胜 `HAO Shuai/MA Lin`（2013-05-20） |
+| 世乒赛 WD 决赛 | `GUO Yue/LI Xiaoxia` 胜 `DING Ning/LIU Shiwen`（2013-05-20） |
+| 世乒赛 XD 决赛 | `KIM Hyok Bong/KIM Jong` 胜 `LEE Sang Su/PARK Youngsook`（2013-05-20） |
+| 男子世界杯决赛 | `XU Xin` 胜 `Vladimir SAMSONOV`（2013-10-27） |
+| 女子世界杯决赛 | `LIU Shiwen` 胜 `WU Yang`（2013-09-23） |
+| 总决赛 MS 决赛 | `XU Xin` 胜 `MA Long`（2014-01-12） |
+| 总决赛 WS 决赛 | `LIU Shiwen` 胜 `DING Ning`（2014-01-12） |
+| 总决赛 MD 决赛 | `GAO Ning/LI Hu` 胜 `CHIANG Hung-Chieh/HUANG Sheng-Sheng`（2014-01-12） |
+| 总决赛 WD 决赛 | `DING Ning/LI Xiaoxia` 胜 `CHENG I-Ching/HUANG Yi-Hua`（2014-01-12） |
+
+## 7. 相关脚本
+
+- `tools/import_2013.py`：十七站导入脚本（复用 2005 逻辑，新增 `pro5/grandfinals4/teamwc4/wttc8` 模板、U21MS/U21WS 并入 ms/ws、MT/WT 单双打分流（团队双打 → md/wd）、`KIM Minhee (YOB=1991)` 特例保留后缀、去重追加、manifest 注册）。
+- `tools/add_assoc_2013.py`：补充 assoc.json 脚本（复用 import_2013 的 NAME_MAP 与原始国家代码，覆盖 U21MS/U21WS/MT/WT，扩充 COUNTRY_MAP 增 `CUB/IRQ/MNE/PAN`）。

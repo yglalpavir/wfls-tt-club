@@ -5,3 +5,975 @@
 参赛人数：2650
 开始日期：2014-04-28
 结束日期：2014-05-05
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 2 of 18 Total: 1708
+
+Start
+Prev
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Next
+End
+2014	World Team Table Tennis Championships Tokyo 2014	LAWSON-GAIZER Fessou (TOG)		AL-MAHAQERI Taha (YEM)		MT	Qualification		0 - 3	15:17 7:11 9:11	AL-MAHAQERI Taha	
+2014	World Team Table Tennis Championships Tokyo 2014	SALLAH DUSE Maurice (TOG)		AL-DHUBHANI Muneer (YEM)		MT	Qualification		3 - 1	11:7 5:11 13:11 11:9	SALLAH DUSE Maurice	
+2014	World Team Table Tennis Championships Tokyo 2014	AGBETOGLO Mawussi (TOG)		ALI Omar (YEM)		MT	Qualification		3 - 2	6:11 11:6 6:11 12:10 11:6	AGBETOGLO Mawussi	
+2014	World Team Table Tennis Championships Tokyo 2014	JONSSON David (ISL)		SILVA Indika Prasad (SRI)		MT	Qualification		0 - 3	8:11 6:11 9:11	SILVA Indika Prasad	
+2014	World Team Table Tennis Championships Tokyo 2014	GUDMUNDSSON Dadi Freyr (ISL)		RANASINGHA Imesh (USA)		MT	Qualification		0 - 3	9:11 11:13 7:11	RANASINGHA Imesh	
+2014	World Team Table Tennis Championships Tokyo 2014	MAGNUSSON Magnus K (ISL)		SIRISENA Rohan (SRI)		MT	Qualification		0 - 3	3:11 8:11 7:11	SIRISENA Rohan	
+2014	World Team Table Tennis Championships Tokyo 2014	MERCADE Zakaria (MAR)		LAWSON-GAIZER Fessou (TOG)		MT	Qualification		0 - 3	9:11 9:11 5:11	LAWSON-GAIZER Fessou	
+2014	World Team Table Tennis Championships Tokyo 2014	BOUZOUBAA Mohamed (MAR)		AGBETOGLO Mawussi (TOG)		MT	Qualification		0 - 3	9:11 3:11 4:11	AGBETOGLO Mawussi	
+2014	World Team Table Tennis Championships Tokyo 2014	BASSERI Aymane (MAR)		SALLAH DUSE Maurice (TOG)		MT	Qualification		0 - 3	2:11 5:11 2:11	SALLAH DUSE Maurice	
+2014	World Team Table Tennis Championships Tokyo 2014	AL-MAHAQERI Taha (YEM)		GUDMUNDSSON Dadi Freyr (ISL)		MT	Qualification		3 - 2	6:11 8:11 11:5 14:12 11:8	AL-MAHAQERI Taha	
+2014	World Team Table Tennis Championships Tokyo 2014	ALI Omar (YEM)		MAGNUSSON Magnus K (ISL)		MT	Qualification		3 - 0	11:3 12:10 11:5	ALI Omar	
+2014	World Team Table Tennis Championships Tokyo 2014	AL-DHUBHANI Muneer (YEM)		JONSSON David (ISL)		MT	Qualification		3 - 0	11:9 11:6 11:7	AL-DHUBHANI Muneer	
+2014	World Team Table Tennis Championships Tokyo 2014	KULTAEV Ruslan (KGZ)		SIRISENA Rohan (SRI)		MT	Qualification		1 - 3	11:5 9:11 9:11 8:11	SIRISENA Rohan	
+2014	World Team Table Tennis Championships Tokyo 2014	CHOTOEV Tologon (KGZ)		SILVA Indika Prasad (SRI)		MT	Qualification		1 - 3	6:11 13:11 5:11 4:11	SILVA Indika Prasad	
+2014	World Team Table Tennis Championships Tokyo 2014	IAKUPBAEV Alisher (KGZ)		SIRISENA Rohan (SRI)		MT	Qualification		1 - 3	11:9 6:11 9:11 8:11	SIRISENA Rohan	
+2014	World Team Table Tennis Championships Tokyo 2014	KULTAEV Ruslan (KGZ)		RANASINGHA Imesh (USA)		MT	Qualification		3 - 0	11:3 11:8 11:8	KULTAEV Ruslan	
+2014	World Team Table Tennis Championships Tokyo 2014	GUDMUNDSSON Dadi Freyr (ISL)		CHOTOEV Tologon (KGZ)		MT	Qualification		1 - 3	6:11 11:2 6:11 6:11	CHOTOEV Tologon	
+2014	World Team Table Tennis Championships Tokyo 2014	JONSSON David (ISL)		KULTAEV Ruslan (KGZ)		MT	Qualification		1 - 3	5:11 10:12 16:14 4:11	KULTAEV Ruslan	
+2014	World Team Table Tennis Championships Tokyo 2014	MAGNUSSON Magnus K (ISL)		IAKUPBAEV Alisher (KGZ)		MT	Qualification		1 - 3	4:11 11:9 7:11 8:11	IAKUPBAEV Alisher	
+2014	World Team Table Tennis Championships Tokyo 2014	BASSERI Aymane (MAR)		AL-DHUBHANI Muneer (YEM)		MT	Qualification		0 - 3	4:11 2:11 7:11	AL-DHUBHANI Muneer	
+2014	World Team Table Tennis Championships Tokyo 2014	MERCADE Zakaria (MAR)		ALI Omar (YEM)		MT	Qualification		0 - 3	5:11 4:11 2:11	ALI Omar	
+2014	World Team Table Tennis Championships Tokyo 2014	BOUZOUBAA Mohamed (MAR)		AL-MAHAQERI Taha (YEM)		MT	Qualification		0 - 3	6:11 9:11 4:11	AL-MAHAQERI Taha	
+2014	World Team Table Tennis Championships Tokyo 2014	AGBETOGLO Mawussi (TOG)		SIRISENA Rohan (SRI)		MT	Qualification		3 - 2	11:4 10:12 12:10 9:11 11:7	AGBETOGLO Mawussi	
+2014	World Team Table Tennis Championships Tokyo 2014	LAWSON-GAIZER Fessou (TOG)		SILVA Indika Prasad (SRI)		MT	Qualification		3 - 2	8:11 11:9 11:6 9:11 11:8	LAWSON-GAIZER Fessou	
+2014	World Team Table Tennis Championships Tokyo 2014	SALLAH DUSE Maurice (TOG)		SIRISENA Rohan (SRI)		MT	Qualification		1 - 3	5:11 11:9 5:11 9:11	SIRISENA Rohan	
+2014	World Team Table Tennis Championships Tokyo 2014	AGBETOGLO Mawussi (TOG)		RANASINGHA Imesh (USA)		MT	Qualification		3 - 1	7:11 11:8 11:8 11:6	AGBETOGLO Mawussi	
+2014	World Team Table Tennis Championships Tokyo 2014	OCAMPO Norby (GUM)		TAIT Fabian (NAM)		MT	Main Draw		0 - 3	7:11 6:11 8:11	TAIT Fabian	
+2014	World Team Table Tennis Championships Tokyo 2014	CERTEZA Gabriel (GUM)		FLEIDL Heiko (NAM)		MT	Main Draw		0 - 3	12:14 9:11 3:11	FLEIDL Heiko	
+2014	World Team Table Tennis Championships Tokyo 2014	BURGOS Arman (GUM)		STANLEY Reinhardt (NAM)		MT	Main Draw		0 - 3	2:11 13:15 5:11	STANLEY Reinhardt	
+2014	World Team Table Tennis Championships Tokyo 2014	STACEY Lawrence (GGY)		ESTHER Nicholas (SEY)		MT	Main Draw		1 - 3	7:11 4:11 13:11 8:11	ESTHER Nicholas	
+2014	World Team Table Tennis Championships Tokyo 2014	ROBILLIARD Liam (GGY)		MOUSBE Byorn (SEY)		MT	Main Draw		3 - 1	10:12 11:7 11:8 11:4	ROBILLIARD Liam	
+2014	World Team Table Tennis Championships Tokyo 2014	STACEY Joshua (GGY)		ESTHER Nicholas (SEY)		MT	Main Draw		2 - 3	5:11 11:6 5:11 11:8 6:11	ESTHER Nicholas	
+2014	World Team Table Tennis Championships Tokyo 2014	STACEY Lawrence (GGY)		CREA Mick (SEY)		MT	Main Draw		2 - 3	7:11 3:11 11:8 11:9 9:11	CREA Mick	
+2014	World Team Table Tennis Championships Tokyo 2014	NASEEM Mohamed (MDV)		KGATLAMPANE Joseph (BOT)		MT	Main Draw		3 - 0	11:8 12:10 11:5	NASEEM Mohamed	
+2014	World Team Table Tennis Championships Tokyo 2014	MA AAD Ahmed (MDV)		MODISATHEBE Tshepho (BOT)		MT	Main Draw		3 - 2	11:8 8:11 11:4 5:11 11:9	MA AAD Ahmed	
+2014	World Team Table Tennis Championships Tokyo 2014	ADAM ZAHIR Mohammad (MDV)		KGATLAMPANE Joseph (BOT)		MT	Main Draw		3 - 1	12:10 8:11 12:10 11:8	ADAM ZAHIR Mohammad	
+2014	World Team Table Tennis Championships Tokyo 2014	NASEEM Mohamed (MDV)		MATLHATSI Thobo (BOT)		MT	Main Draw		0 - 3	11:13 7:11 6:11	MATLHATSI Thobo	
+2014	World Team Table Tennis Championships Tokyo 2014	STRAUSS Darren (NAM)		STACEY Joshua (GGY)		MT	Main Draw		0 - 3	1:11 4:11 1:11	STACEY Joshua	
+2014	World Team Table Tennis Championships Tokyo 2014	FLEIDL Heiko (NAM)		STACEY Lawrence (GGY)		MT	Main Draw		0 - 3	6:11 4:11 3:11	STACEY Lawrence	
+2014	World Team Table Tennis Championships Tokyo 2014	TAIT Fabian (NAM)		ROBILLIARD Liam (GGY)		MT	Main Draw		0 - 3	8:11 1:11 7:11	ROBILLIARD Liam	
+2014	World Team Table Tennis Championships Tokyo 2014	MODISATHEBE Tshepho (BOT)		OCAMPO Norby (GUM)		MT	Main Draw		3 - 0	11:8 11:2 11:5	MODISATHEBE Tshepho	
+2014	World Team Table Tennis Championships Tokyo 2014	MATLHATSI Thobo (BOT)		BURGOS Arman (GUM)		MT	Main Draw		3 - 0	11:8 11:1 11:7	MATLHATSI Thobo	
+2014	World Team Table Tennis Championships Tokyo 2014	KGATLAMPANE Joseph (BOT)		CERTEZA Gabriel (GUM)		MT	Main Draw		3 - 1	11:4 12:14 11:6 11:6	KGATLAMPANE Joseph	
+2014	World Team Table Tennis Championships Tokyo 2014	WATSON Kane (JAM)		LINGEVELDT Kurt (RSA)		MT	Main Draw		3 - 2	11:9 6:11 11:8 3:11 11:9	WATSON Kane	
+2014	World Team Table Tennis Championships Tokyo 2014	HYATT Michael (JAM)		MATHOLE Terrence (RSA)		MT	Main Draw		2 - 3	7:11 11:9 14:16 11:7 1:11	MATHOLE Terrence	
+2014	World Team Table Tennis Championships Tokyo 2014	TOMLINSON Simon (JAM)		LINGEVELDT Keegan (RSA)		MT	Main Draw		3 - 0	12:10 11:9 11:8	TOMLINSON Simon	
+2014	World Team Table Tennis Championships Tokyo 2014	WATSON Kane (JAM)		MATHOLE Terrence (RSA)		MT	Main Draw		1 - 3	9:11 11:8 5:11 9:11	MATHOLE Terrence	
+2014	World Team Table Tennis Championships Tokyo 2014	HYATT Michael (JAM)		LINGEVELDT Kurt (RSA)		MT	Main Draw		3 - 1	16:14 4:11 12:10 11:8	HYATT Michael	
+2014	World Team Table Tennis Championships Tokyo 2014	ABUSHUWASHI Adir (LBA)		MATHOLE Terrence (RSA)		MT	Main Draw		0 - 3	8:11 8:11 2:11	MATHOLE Terrence	
+2014	World Team Table Tennis Championships Tokyo 2014	ELHEBSHI Mohamed (LBA)		LINGEVELDT Keegan (RSA)		MT	Main Draw		3 - 0	11:7 11:9 11:9	ELHEBSHI Mohamed	
+2014	World Team Table Tennis Championships Tokyo 2014	LARIFI Hisham (LBA)		MATHOLE Terrence (RSA)		MT	Main Draw		1 - 3	8:11 11:8 8:11 6:11	MATHOLE Terrence	
+2014	World Team Table Tennis Championships Tokyo 2014	ABUSHUWASHI Adir (LBA)		LINGEVELDT Kurt (RSA)		MT	Main Draw		0 - 3	11:13 4:11 14:16	LINGEVELDT Kurt	
+2014	World Team Table Tennis Championships Tokyo 2014	HYATT Michael (JAM)		SUWAL Ajay (NEP)		MT	Main Draw		3 - 2	7:11 9:11 11:8 13:11 13:11	HYATT Michael	
+2014	World Team Table Tennis Championships Tokyo 2014	TOMLINSON Simon (JAM)		GOTHE Shiva (NEP)		MT	Main Draw		3 - 1	11:9 3:11 16:14 11:8	TOMLINSON Simon	
+2014	World Team Table Tennis Championships Tokyo 2014	WATSON Kane (JAM)		SUWAL Ajay (NEP)		MT	Main Draw		2 - 3	13:11 11:4 4:11 10:12 10:12	SUWAL Ajay	
+2014	World Team Table Tennis Championships Tokyo 2014	HYATT Michael (JAM)		BAJRACHARYA Purshottam (NEP)		MT	Main Draw		3 - 1	11:5 11:6 4:11 11:8	HYATT Michael	
+2014	World Team Table Tennis Championships Tokyo 2014	LINGEVELDT Keegan (RSA)		TUHIN Mohammad (BAN)		MT	Main Draw		3 - 1	9:11 11:9 11:5 11:4	LINGEVELDT Keegan	
+2014	World Team Table Tennis Championships Tokyo 2014	MATHOLE Terrence (RSA)		AHMED Md Javed (BAN)		MT	Main Draw		3 - 0	11:5 13:11 11:4	MATHOLE Terrence	
+2014	World Team Table Tennis Championships Tokyo 2014	LINGEVELDT Kurt (RSA)		CHOWDHURY Manash (BAN)		MT	Main Draw		3 - 0	11:7 11:9 12:10	LINGEVELDT Kurt	
+2014	World Team Table Tennis Championships Tokyo 2014	LARIFI Hisham (LBA)		RASOLOMANANA Rija (MAD)		MT	Main Draw		3 - 2	11:13 11:5 7:11 17:15 11:8	LARIFI Hisham	
+2014	World Team Table Tennis Championships Tokyo 2014	ABUSHUWASHI Adir (LBA)		ANDRIANJATOVO Jean Christian (MAD)		MT	Main Draw		2 - 3	12:10 10:12 11:9 7:11 8:11	ANDRIANJATOVO Jean Christian	
+2014	World Team Table Tennis Championships Tokyo 2014	ELHEBSHI Mohamed (LBA)		ANDRIAN Jean-Luc (MAD)		MT	Main Draw		3 - 2	11:5 6:11 11:2 12:14 11:5	ELHEBSHI Mohamed	
+2014	World Team Table Tennis Championships Tokyo 2014	LARIFI Hisham (LBA)		ANDRIANJATOVO Jean Christian (MAD)		MT	Main Draw		1 - 3	11:9 8:11 8:11 8:11	ANDRIANJATOVO Jean Christian	
+2014	World Team Table Tennis Championships Tokyo 2014	ABUSHUWASHI Adir (LBA)		RASOLOMANANA Rija (MAD)		MT	Main Draw		3 - 0	11:6 11:5 11:9	ABUSHUWASHI Adir	
+2014	World Team Table Tennis Championships Tokyo 2014	ELLIS Eugene (JEY)		TOMLINSON Simon (JAM)		MT	Main Draw		0 - 3	4:11 7:11 6:11	TOMLINSON Simon	
+2014	World Team Table Tennis Championships Tokyo 2014	MORSHEAD Christopher (JEY)		WATSON Kane (JAM)		MT	Main Draw		1 - 3	6:11 9:11 11:3 5:11	WATSON Kane	
+2014	World Team Table Tennis Championships Tokyo 2014	BAND Joshua (JEY)		HYATT Michael (JAM)		MT	Main Draw		0 - 3	9:11 7:11 7:11	HYATT Michael	
+2014	World Team Table Tennis Championships Tokyo 2014	GOTHE Shiva (NEP)		BAJADA Daniel (MLT)		MT	Main Draw		3 - 0	14:12 13:11 11:7	GOTHE Shiva	
+2014	World Team Table Tennis Championships Tokyo 2014	BAJRACHARYA Purshottam (NEP)		BALDACCHINO Edward (MLT)		MT	Main Draw		3 - 0	11:0 11:6 11:6	BAJRACHARYA Purshottam	
+2014	World Team Table Tennis Championships Tokyo 2014	SUWAL Ajay (NEP)		BAJADA Daniel (MLT)		MT	Main Draw		3 - 0	12:10 11:4 11:6	SUWAL Ajay	
+2014	World Team Table Tennis Championships Tokyo 2014	GOTHE Shiva (NEP)		GAMBINA Andrew (MLT)		MT	Main Draw		2 - 3	4:11 8:11 11:7 11:7 17:19	GAMBINA Andrew	
+2014	World Team Table Tennis Championships Tokyo 2014	ELLIS Eugene (JEY)		MASALMA Fadi (PLE)		MT	Main Draw		3 - 2	15:13 11:9 5:11 10:12 11:7	ELLIS Eugene	
+2014	World Team Table Tennis Championships Tokyo 2014	MORSHEAD Christopher (JEY)		DOUFESH Husam (PLE)		MT	Main Draw		3 - 0	12:10 11:7 11:9	MORSHEAD Christopher	
+2014	World Team Table Tennis Championships Tokyo 2014	BAND Joshua (JEY)		ALBASHAR Ahmad (PLE)		MT	Main Draw		3 - 2	11:5 15:13 9:11 7:11 11:6	BAND Joshua	
+2014	World Team Table Tennis Championships Tokyo 2014	GUDMUNDSSON Dadi Freyr (ISL)		CERVEAUX Adrien (NCL)		MT	Main Draw		3 - 0	11:2 12:10 11:5	GUDMUNDSSON Dadi Freyr	
+2014	World Team Table Tennis Championships Tokyo 2014	JONSSON David (ISL)		SENS Laurent (NCL)		MT	Main Draw		3 - 2	11:9 9:11 9:11 11:7 11:6	JONSSON David	
+2014	World Team Table Tennis Championships Tokyo 2014	MAGNUSSON Magnus K (ISL)		GUILLOT Lorenzo (NCL)		MT	Main Draw		3 - 0	11:4 11:9 11:8	MAGNUSSON Magnus K	
+2014	World Team Table Tennis Championships Tokyo 2014	BOLDBAATAR Baatarsuren (MGL)		GUKHOOL Wasiim (MRI)		MT	Main Draw		3 - 1	11:4 12:10 8:11 11:4	BOLDBAATAR Baatarsuren	
+2014	World Team Table Tennis Championships Tokyo 2014	BATKHISHIG Bilegt (MGL)		CHAN YOOK FO Brian (MRI)		MT	Main Draw		3 - 0	11:4 11:5 11:9	BATKHISHIG Bilegt	
+2014	World Team Table Tennis Championships Tokyo 2014	ENKHBAT Lkhagvasuren (MGL)		CHAN YOOK FO Billy Brent (MRI)		MT	Main Draw		3 - 0	11:2 11:7 11:8	ENKHBAT Lkhagvasuren	
+2014	World Team Table Tennis Championships Tokyo 2014	NETO Edvane (ANG)		KACOWICZ Santiago (URU)		MT	Main Draw		1 - 3	11:9 5:11 6:11 10:12	KACOWICZ Santiago	
+2014	World Team Table Tennis Championships Tokyo 2014	ANDRE Elizandro (ANG)		LORENZOTTI Gonzalo (URU)		MT	Main Draw		0 - 3	7:11 7:11 11:13	LORENZOTTI Gonzalo	
+2014	World Team Table Tennis Championships Tokyo 2014	ANTONIO Alessio (ANG)		WEITZNER Mateo (URU)		MT	Main Draw		1 - 3	5:11 11:8 9:11 4:11	WEITZNER Mateo	
+2014	World Team Table Tennis Championships Tokyo 2014	ENKHBAT Lkhagvasuren (MGL)		ISMAYILOV Farhad (AZE)		MT	Main Draw		3 - 1	11:8 11:9 4:11 11:6	ENKHBAT Lkhagvasuren	
+2014	World Team Table Tennis Championships Tokyo 2014	BOLDBAATAR Baatarsuren (MGL)		HASANOV Hilal (AZE)		MT	Main Draw		3 - 1	8:11 11:5 11:9 11:8	BOLDBAATAR Baatarsuren	
+2014	World Team Table Tennis Championships Tokyo 2014	BATKHISHIG Bilegt (MGL)		ISMAYILOV Farhad (AZE)		MT	Main Draw		0 - 3	5:11 6:11 9:11	ISMAYILOV Farhad	
+2014	World Team Table Tennis Championships Tokyo 2014	ENKHBAT Lkhagvasuren (MGL)		JAFAROV Ramil (AZE)		MT	Main Draw		3 - 1	11:7 12:10 10:12 11:4	ENKHBAT Lkhagvasuren	
+2014	World Team Table Tennis Championships Tokyo 2014	CITAKU Linor (KOS)		CHAN YOOK FO Brian (MRI)		MT	Main Draw		2 - 3	11:7 7:11 6:11 12:10 5:11	CHAN YOOK FO Brian	
+2014	World Team Table Tennis Championships Tokyo 2014	PRESTRESHI Ylli (KOS)		GUKHOOL Wasiim (MRI)		MT	Main Draw		2 - 3	5:11 11:5 4:11 12:10 8:11	GUKHOOL Wasiim	
+2014	World Team Table Tennis Championships Tokyo 2014	DOMANIKU Besart (KOS)		CHAN YOOK FO Brian (MRI)		MT	Main Draw		2 - 3	11:7 7:11 11:8 8:11 9:11	CHAN YOOK FO Brian	
+2014	World Team Table Tennis Championships Tokyo 2014	CITAKU Linor (KOS)		CHAN YOOK FO Billy Brent (MRI)		MT	Main Draw		3 - 0	11:5 11:8 11:4	CITAKU Linor	
+2014	World Team Table Tennis Championships Tokyo 2014	KACOWICZ Santiago (URU)		CASCANTE Gabriel (CRC)		MT	Main Draw		3 - 1	11:8 11:4 7:11 11:6	KACOWICZ Santiago	
+2014	World Team Table Tennis Championships Tokyo 2014	WEITZNER Mateo (URU)		MARTINEZ Jeison (CRC)		MT	Main Draw		3 - 1	3:11 11:8 11:7 12:10	WEITZNER Mateo	
+2014	World Team Table Tennis Championships Tokyo 2014	LORENZOTTI Gonzalo (URU)		FERNANDEZ Cesar (CRC)		MT	Main Draw		3 - 0	11:5 11:7 11:6	LORENZOTTI Gonzalo	
+2014	World Team Table Tennis Championships Tokyo 2014	ANDRE Elizandro (ANG)		IAKUPBAEV Alisher (KGZ)		MT	Main Draw		3 - 2	9:11 11:5 11:8 9:11 11:5	ANDRE Elizandro	
+2014	World Team Table Tennis Championships Tokyo 2014	ANTONIO Alessio (ANG)		KULTAEV Ruslan (KGZ)		MT	Main Draw		0 - 3	6:11 6:11 9:11	KULTAEV Ruslan	
+2014	World Team Table Tennis Championships Tokyo 2014	NETO Edvane (ANG)		CHOTOEV Tologon (KGZ)		MT	Main Draw		3 - 0	11:5 11:7 11:7	NETO Edvane	
+2014	World Team Table Tennis Championships Tokyo 2014	ANDRE Elizandro (ANG)		KULTAEV Ruslan (KGZ)		MT	Main Draw		0 - 3	11:13 8:11 5:11	KULTAEV Ruslan	
+2014	World Team Table Tennis Championships Tokyo 2014	ANTONIO Alessio (ANG)		IAKUPBAEV Alisher (KGZ)		MT	Main Draw		3 - 1	2:11 11:6 11:7 11:8	ANTONIO Alessio	
+2014	World Team Table Tennis Championships Tokyo 2014	ALIYEV Rustam (AZE)		CERVEAUX Adrien (NCL)		MT	Main Draw		3 - 1	8:11 11:9 11:9 11:6	ALIYEV Rustam
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 3 of 18 Total: 1708
+
+Start
+Prev
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Next
+End
+2014	World Team Table Tennis Championships Tokyo 2014	JAFAROV Ramil (AZE)		SENS Laurent (NCL)		MT	Main Draw		3 - 0	11:8 11:6 11:9	JAFAROV Ramil	
+2014	World Team Table Tennis Championships Tokyo 2014	ISMAYILOV Farhad (AZE)		GUILLOT Lorenzo (NCL)		MT	Main Draw		3 - 0	11:3 11:6 11:5	ISMAYILOV Farhad	
+2014	World Team Table Tennis Championships Tokyo 2014	MAGNUSSON Magnus K (ISL)		CHAN YOOK FO Brian (MRI)		MT	Main Draw		1 - 3	8:11 11:6 7:11 5:11	CHAN YOOK FO Brian	
+2014	World Team Table Tennis Championships Tokyo 2014	GUDMUNDSSON Dadi Freyr (ISL)		GUKHOOL Wasiim (MRI)		MT	Main Draw		1 - 3	5:11 11:6 5:11 5:11	GUKHOOL Wasiim	
+2014	World Team Table Tennis Championships Tokyo 2014	JONSSON David (ISL)		CHAN YOOK FO Brian (MRI)		MT	Main Draw		2 - 3	6:11 12:10 5:11 11:4 7:11	CHAN YOOK FO Brian	
+2014	World Team Table Tennis Championships Tokyo 2014	MAGNUSSON Magnus K (ISL)		CHAN YOOK FO Billy Brent (MRI)		MT	Main Draw		3 - 2	9:11 10:12 11:4 11:2 11:9	MAGNUSSON Magnus K	
+2014	World Team Table Tennis Championships Tokyo 2014	CASCANTE Gabriel (CRC)		BASSERI Aymane (MAR)		MT	Main Draw		3 - 1	13:11 11:8 9:11 11:4	CASCANTE Gabriel	
+2014	World Team Table Tennis Championships Tokyo 2014	FERNANDEZ Cesar (CRC)		BOUZOUBAA Mohamed (MAR)		MT	Main Draw		3 - 0	11:9 11:8 11:8	FERNANDEZ Cesar	
+2014	World Team Table Tennis Championships Tokyo 2014	MARTINEZ Jeison (CRC)		MERCADE Zakaria (MAR)		MT	Main Draw		3 - 0	11:8 11:7 11:6	MARTINEZ Jeison	
+2014	World Team Table Tennis Championships Tokyo 2014	SOURINPHOUMY Piyadeth (LAO)		DANDAL Yamen (SYR)		MT	Main Draw		0 - 3	4:11 1:11 1:11	DANDAL Yamen	
+2014	World Team Table Tennis Championships Tokyo 2014	KONGPHET Phinith (LAO)		MOSSLLY Yhya (SYR)		MT	Main Draw		2 - 3	8:11 6:11 17:15 11:9 9:11	MOSSLLY Yhya	
+2014	World Team Table Tennis Championships Tokyo 2014	PHATHAPHONE Thavisack (LAO)		BAATH Mohannad (SYR)		MT	Main Draw		1 - 3	9:11 11:4 11:13 8:11	BAATH Mohannad	
+2014	World Team Table Tennis Championships Tokyo 2014	BERARDI Mattia (SMR)		LEONG Kin Wa (MAC)		MT	Main Draw		0 - 3	8:11 7:11 6:11	LEONG Kin Wa	
+2014	World Team Table Tennis Championships Tokyo 2014	TENTONI Riccardo (SMR)		CHE Long Lam (MAC)		MT	Main Draw		0 - 3	7:11 8:11 11:13	CHE Long Lam	
+2014	World Team Table Tennis Championships Tokyo 2014	VANNUCCI Marco (SMR)		LEONG Kin Wa (MAC)		MT	Main Draw		0 - 3		LEONG Kin Wa	
+2014	World Team Table Tennis Championships Tokyo 2014	BERARDI Mattia (SMR)		LEI Chon Cheok (MAC)		MT	Main Draw		3 - 1	7:11 11:6 11:5 11:9	BERARDI Mattia	
+2014	World Team Table Tennis Championships Tokyo 2014	BAKIC Luka (MNE)		RANASINGHA Imesh (USA)		MT	Main Draw		3 - 0	11:9 12:10 11:4	BAKIC Luka	
+2014	World Team Table Tennis Championships Tokyo 2014	CEKIC Irfan (MNE)		SIRISENA Rohan (SRI)		MT	Main Draw		3 - 1	8:11 11:5 11:5 11:4	CEKIC Irfan	
+2014	World Team Table Tennis Championships Tokyo 2014	RADOVIC Filip (MNE)		SILVA Indika Prasad (SRI)		MT	Main Draw		1 - 3	5:11 15:13 4:11 11:13	SILVA Indika Prasad	
+2014	World Team Table Tennis Championships Tokyo 2014	BAKIC Luka (MNE)		SIRISENA Rohan (SRI)		MT	Main Draw		2 - 3	11:8 11:9 8:11 11:13 10:12	SIRISENA Rohan	
+2014	World Team Table Tennis Championships Tokyo 2014	CEKIC Irfan (MNE)		RANASINGHA Imesh (USA)		MT	Main Draw		3 - 1	13:15 11:5 11:5 11:4	CEKIC Irfan	
+2014	World Team Table Tennis Championships Tokyo 2014	KARIMOV Anvar (UZB)		SILVA Indika Prasad (SRI)		MT	Main Draw		1 - 3	15:13 10:12 9:11 3:11	SILVA Indika Prasad	
+2014	World Team Table Tennis Championships Tokyo 2014	KHOLIKOV Elmurod (UZB)		SIRISENA Rohan (SRI)		MT	Main Draw		1 - 3	11:13 12:10 4:11 6:11	SIRISENA Rohan	
+2014	World Team Table Tennis Championships Tokyo 2014	KENJAEV Zokhid (UZB)		RANASINGHA Imesh (USA)		MT	Main Draw		2 - 3	12:10 10:12 11:6 9:11 6:11	RANASINGHA Imesh	
+2014	World Team Table Tennis Championships Tokyo 2014	BAKIC Luka (MNE)		CHAVEZ Johan (PER)		MT	Main Draw		3 - 1	14:12 11:5 6:11 11:7	BAKIC Luka	
+2014	World Team Table Tennis Championships Tokyo 2014	CEKIC Irfan (MNE)		LI Julio (PER)		MT	Main Draw		3 - 0	11:9 11:7 18:16	CEKIC Irfan	
+2014	World Team Table Tennis Championships Tokyo 2014	JUSKOVIC Nikola (MNE)		RODRIGUEZ Diego (PER)		MT	Main Draw		0 - 3	5:11 5:11 6:11	RODRIGUEZ Diego	
+2014	World Team Table Tennis Championships Tokyo 2014	BAKIC Luka (MNE)		LI Julio (PER)		MT	Main Draw		1 - 3	7:11 9:11 11:5 11:13	LI Julio	
+2014	World Team Table Tennis Championships Tokyo 2014	CEKIC Irfan (MNE)		CHAVEZ Johan (PER)		MT	Main Draw		3 - 2	11:8 9:11 9:11 11:5 11:7	CEKIC Irfan	
+2014	World Team Table Tennis Championships Tokyo 2014	VALLE Rodel (PHI)		RANASINGHA Imesh (USA)		MT	Main Draw		0 - 3	10:12 6:11 6:11	RANASINGHA Imesh	
+2014	World Team Table Tennis Championships Tokyo 2014	GONZALES Richard (PHI)		SIRISENA Rohan (SRI)		MT	Main Draw		3 - 0	11:6 11:8 11:5	GONZALES Richard	
+2014	World Team Table Tennis Championships Tokyo 2014	TIMSON Stephen (PHI)		SILVA Indika Prasad (SRI)		MT	Main Draw		0 - 3	9:11 8:11 3:11	SILVA Indika Prasad	
+2014	World Team Table Tennis Championships Tokyo 2014	VALLE Rodel (PHI)		SIRISENA Rohan (SRI)		MT	Main Draw		1 - 3	9:11 13:11 10:12 5:11	SIRISENA Rohan	
+2014	World Team Table Tennis Championships Tokyo 2014	GONZALES Richard (PHI)		RANASINGHA Imesh (USA)		MT	Main Draw		3 - 0	11:1 11:8 11:6	GONZALES Richard	
+2014	World Team Table Tennis Championships Tokyo 2014	KENJAEV Zokhid (UZB)		JUMA Hasan (BRN)		MT	Main Draw		3 - 0	11:5 11:9 12:10	KENJAEV Zokhid	
+2014	World Team Table Tennis Championships Tokyo 2014	KARIMOV Anvar (UZB)		RASHED Rashed (BRN)		MT	Main Draw		1 - 3	8:11 7:11 11:5 9:11	RASHED Rashed	
+2014	World Team Table Tennis Championships Tokyo 2014	KHOLIKOV Elmurod (UZB)		JUMA Hasan (BRN)		MT	Main Draw		3 - 2	11:3 9:11 11:5 7:11 11:5	KHOLIKOV Elmurod	
+2014	World Team Table Tennis Championships Tokyo 2014	KENJAEV Zokhid (UZB)		ALYASSI Alyas (BRN)		MT	Main Draw		3 - 1	11:6 6:11 11:8 12:10	KENJAEV Zokhid	
+2014	World Team Table Tennis Championships Tokyo 2014	BAKIC Luka (MNE)		SALLAH DUSE Maurice (TOG)		MT	Main Draw		3 - 0	12:10 11:7 11:5	BAKIC Luka	
+2014	World Team Table Tennis Championships Tokyo 2014	CEKIC Irfan (MNE)		AGBETOGLO Mawussi (TOG)		MT	Main Draw		3 - 1	10:12 11:6 11:8 11:9	CEKIC Irfan	
+2014	World Team Table Tennis Championships Tokyo 2014	JUSKOVIC Nikola (MNE)		LAWSON-GAIZER Fessou (TOG)		MT	Main Draw		2 - 3	9:11 11:9 10:12 11:9 10:12	LAWSON-GAIZER Fessou	
+2014	World Team Table Tennis Championships Tokyo 2014	BAKIC Luka (MNE)		AGBETOGLO Mawussi (TOG)		MT	Main Draw		0 - 3	8:11 7:11 9:11	AGBETOGLO Mawussi	
+2014	World Team Table Tennis Championships Tokyo 2014	CEKIC Irfan (MNE)		SALLAH DUSE Maurice (TOG)		MT	Main Draw		3 - 0	11:5 11:5 11:6	CEKIC Irfan	
+2014	World Team Table Tennis Championships Tokyo 2014	ALI Omar (YEM)		RODRIGUEZ Diego (PER)		MT	Main Draw		1 - 3	9:11 15:13 10:12 3:11	RODRIGUEZ Diego	
+2014	World Team Table Tennis Championships Tokyo 2014	AL-DHUBHANI Muneer (YEM)		LI Julio (PER)		MT	Main Draw		3 - 2	11:8 4:11 11:8 9:11 13:11	AL-DHUBHANI Muneer	
+2014	World Team Table Tennis Championships Tokyo 2014	AL-MAHAQERI Taha (YEM)		CHAVEZ Johan (PER)		MT	Main Draw		0 - 3	9:11 6:11 4:11	CHAVEZ Johan	
+2014	World Team Table Tennis Championships Tokyo 2014	ALI Omar (YEM)		LI Julio (PER)		MT	Main Draw		1 - 3	7:11 11:6 6:11 6:11	LI Julio	
+2014	World Team Table Tennis Championships Tokyo 2014	AL-DHUBHANI Muneer (YEM)		RODRIGUEZ Diego (PER)		MT	Main Draw		3 - 0	11:5 11:4 11:9	AL-DHUBHANI Muneer	
+2014	World Team Table Tennis Championships Tokyo 2014	SILVA Indika Prasad (SRI)		SOURINPHOUMY Piyadeth (LAO)		MT	Main Draw		3 - 0	11:1 11:7 11:2	SILVA Indika Prasad	
+2014	World Team Table Tennis Championships Tokyo 2014	RANASINGHA Imesh (USA)		PHATHAPHONE Thavisack (LAO)		MT	Main Draw		3 - 1	11:5 9:11 11:6 12:10	RANASINGHA Imesh	
+2014	World Team Table Tennis Championships Tokyo 2014	SIRISENA Rohan (SRI)		KONGPHET Phinith (LAO)		MT	Main Draw		3 - 2	4:11 11:3 9:11 11:5 11:5	SIRISENA Rohan	
+2014	World Team Table Tennis Championships Tokyo 2014	SALEH Mohamed (BRN)		DANDAL Yamen (SYR)		MT	Main Draw		3 - 1	11:7 11:9 4:11 11:1	SALEH Mohamed	
+2014	World Team Table Tennis Championships Tokyo 2014	RASHED Rashed (BRN)		BAATH Mohannad (SYR)		MT	Main Draw		3 - 1	12:10 11:3 10:12 11:7	RASHED Rashed	
+2014	World Team Table Tennis Championships Tokyo 2014	ALYASSI Alyas (BRN)		DANDAL Yamen (SYR)		MT	Main Draw		3 - 1	11:9 11:4 7:11 12:10	ALYASSI Alyas	
+2014	World Team Table Tennis Championships Tokyo 2014	SALEH Mohamed (BRN)		MOSSLLY Yhya (SYR)		MT	Main Draw		2 - 3	8:11 9:11 11:4 11:7 2:11	MOSSLLY Yhya	
+2014	World Team Table Tennis Championships Tokyo 2014	TENTONI Riccardo (SMR)		LAWSON-GAIZER Fessou (TOG)		MT	Main Draw		0 - 3	6:11 7:11 5:11	LAWSON-GAIZER Fessou	
+2014	World Team Table Tennis Championships Tokyo 2014	BERARDI Mattia (SMR)		AGBETOGLO Mawussi (TOG)		MT	Main Draw		2 - 3	8:11 11:8 11:9 9:11 5:11	AGBETOGLO Mawussi	
+2014	World Team Table Tennis Championships Tokyo 2014	VANNUCCI Marco (SMR)		SALLAH DUSE Maurice (TOG)		MT	Main Draw		1 - 3	10:12 7:11 11:8 3:11	SALLAH DUSE Maurice	
+2014	World Team Table Tennis Championships Tokyo 2014	CHANG Hoi Wa (MAC)		RODRIGUEZ Diego (PER)		MT	Main Draw		1 - 3	1:11 7:11 12:10 6:11	RODRIGUEZ Diego	
+2014	World Team Table Tennis Championships Tokyo 2014	LEONG Kin Wa (MAC)		LI Julio (PER)		MT	Main Draw		3 - 2	8:11 11:5 5:11 11:6 11:5	LEONG Kin Wa	
+2014	World Team Table Tennis Championships Tokyo 2014	CHE Long Lam (MAC)		CHAVEZ Johan (PER)		MT	Main Draw		0 - 3	7:11 4:11 7:11	CHAVEZ Johan	
+2014	World Team Table Tennis Championships Tokyo 2014	CHANG Hoi Wa (MAC)		LI Julio (PER)		MT	Main Draw		2 - 3	11:5 6:11 8:11 12:10 10:12	LI Julio	
+2014	World Team Table Tennis Championships Tokyo 2014	LEONG Kin Wa (MAC)		RODRIGUEZ Diego (PER)		MT	Main Draw		3 - 2	11:7 6:11 11:2 6:11 11:5	LEONG Kin Wa	
+2014	World Team Table Tennis Championships Tokyo 2014	AL-HASAN Salem (KUW)		MOSCOSO Heber (GUA)		MT	Main Draw		2 - 3	6:11 11:9 8:11 13:11 7:11	MOSCOSO Heber	
+2014	World Team Table Tennis Championships Tokyo 2014	ALANSSARI Basel (KUW)		RAMIREZ Jose Miguel (GUA)		MT	Main Draw		2 - 3	11:6 3:11 12:10 3:11 6:11	RAMIREZ Jose Miguel	
+2014	World Team Table Tennis Championships Tokyo 2014	AL-BAHRANI Husain (KUW)		GATICA Hector (GUA)		MT	Main Draw		1 - 3	11:7 7:11 9:11 15:17	GATICA Hector	
+2014	World Team Table Tennis Championships Tokyo 2014	TERNA Denis (MDA)		QURESHI Asim (PAK)		MT	Main Draw		2 - 3	4:11 11:8 13:11 7:11 10:12	QURESHI Asim	
+2014	World Team Table Tennis Championships Tokyo 2014	DUBROVIN Veniamin (MDA)		MINHAS Faryal (PAK)		MT	Main Draw		1 - 3	7:11 5:11 11:9 7:11	MINHAS Faryal	
+2014	World Team Table Tennis Championships Tokyo 2014	CHIRITA Cristian (ROU)		QURESHI Asim (PAK)		MT	Main Draw		2 - 3	8:11 4:11 11:7 11:7 9:11	QURESHI Asim	
+2014	World Team Table Tennis Championships Tokyo 2014	TERNA Denis (MDA)		ABBAS Saleem (PAK)		MT	Main Draw		3 - 0	11:9 11:5 11:5	TERNA Denis	
+2014	World Team Table Tennis Championships Tokyo 2014	MINO Alberto (ECU)		YIANGOU Marios (CYP)		MT	Main Draw		0 - 3	10:12 6:11 4:11	YIANGOU Marios	
+2014	World Team Table Tennis Championships Tokyo 2014	LOPEZ Leonardo (ECU)		YIANGOU Yiangos (CYP)		MT	Main Draw		0 - 3	5:11 3:11 7:11	YIANGOU Yiangos	
+2014	World Team Table Tennis Championships Tokyo 2014	TAPIA Rodrigo (ECU)		YIANGOU Marios (CYP)		MT	Main Draw		0 - 3	2:11 8:11 6:11	YIANGOU Marios	
+2014	World Team Table Tennis Championships Tokyo 2014	MINO Alberto (ECU)		SERAFIMOV Ognyan (CYP)		MT	Main Draw		3 - 0	15:13 11:5 11:4	MINO Alberto	
+2014	World Team Table Tennis Championships Tokyo 2014	LEONG Chee Feng (MAS)		XIAO Phillip (NZL)		MT	Main Draw		3 - 1	5:11 11:7 11:9 11:5	LEONG Chee Feng	
+2014	World Team Table Tennis Championships Tokyo 2014	IBRAHIM Muhd Shakirin (MAS)		LAUGESEN Shane (NZL)		MT	Main Draw		3 - 0	11:8 11:8 14:12	IBRAHIM Muhd Shakirin	
+2014	World Team Table Tennis Championships Tokyo 2014	HAIQAL Muhamad Ashraf (MAS)		XIAO Phillip (NZL)		MT	Main Draw		3 - 2	11:6 11:8 11:13 7:11 12:10	HAIQAL Muhamad Ashraf	
+2014	World Team Table Tennis Championships Tokyo 2014	LEONG Chee Feng (MAS)		CORDUE John (NZL)		MT	Main Draw		1 - 3	11:5 2:11 5:11 8:11	CORDUE John	
+2014	World Team Table Tennis Championships Tokyo 2014	LOPEZ Leonardo (ECU)		ALBALOOSHI Abdulla (UAE)		MT	Main Draw		3 - 0	11:7 11:5 11:8	LOPEZ Leonardo	
+2014	World Team Table Tennis Championships Tokyo 2014	COELLO Geovanny (ECU)		LINJAWI Jassem (UAE)		MT	Main Draw		3 - 1	11:7 11:5 11:13 11:6	COELLO Geovanny	
+2014	World Team Table Tennis Championships Tokyo 2014	MINO Alberto (ECU)		MANSOUR Marawan (UAE)		MT	Main Draw		3 - 1	7:11 11:7 11:4 11:5	MINO Alberto	
+2014	World Team Table Tennis Championships Tokyo 2014	YIANGOU Marios (CYP)		JENKINS Stephen (WAL)		MT	Main Draw		3 - 0	11:2 11:4 11:9	YIANGOU Marios	
+2014	World Team Table Tennis Championships Tokyo 2014	YIANGOU Yiangos (CYP)		EDWARDS Conor (WAL)		MT	Main Draw		3 - 0	11:8 11:4 11:8	YIANGOU Yiangos	
+2014	World Team Table Tennis Championships Tokyo 2014	SERAFIMOV Ognyan (CYP)		JENKINS Stephen (WAL)		MT	Main Draw		0 - 3	10:12 7:11 8:11	JENKINS Stephen	
+2014	World Team Table Tennis Championships Tokyo 2014	YIANGOU Marios (CYP)		O'CONNELL Daniel (WAL)		MT	Main Draw		3 - 0	11:5 11:8 14:12	YIANGOU Marios	
+2014	World Team Table Tennis Championships Tokyo 2014	IBRAHIM Muhd Shakirin (MAS)		MICHELY Gilles (LUX)		MT	Main Draw		3 - 2	11:5 7:11 9:11 11:5 15:13	IBRAHIM Muhd Shakirin	
+2014	World Team Table Tennis Championships Tokyo 2014	HAIQAL Muhamad Ashraf (MAS)		BAST Mike (LUX)		MT	Main Draw		0 - 3	11:13 5:11 3:11	BAST Mike	
+2014	World Team Table Tennis Championships Tokyo 2014	LEONG Chee Feng (MAS)		MICHELY Gilles (LUX)		MT	Main Draw		3 - 2	9:11 10:12 14:12 11:9 11:3	LEONG Chee Feng	
+2014	World Team Table Tennis Championships Tokyo 2014	IBRAHIM Muhd Shakirin (MAS)		HANSEN Sven (LUX)		MT	Main Draw		3 - 1	11:9 11:5 6:11 11:7	IBRAHIM Muhd Shakirin	
+2014	World Team Table Tennis Championships Tokyo 2014	ALHAJJAI Waled Nasser (QAT)		CORDUE John (NZL)		MT	Main Draw		1 - 3	1:11 11:8 10:12 6:11	CORDUE John	
+2014	World Team Table Tennis Championships Tokyo 2014	AL-MOHANNADI Ahmad Khalil (QAT)		LAUGESEN Shane (NZL)		MT	Main Draw		2 - 3	9:11 11:9 14:12 12:14 7:11	LAUGESEN Shane	
+2014	World Team Table Tennis Championships Tokyo 2014	SHEMET German (QAT)		XIAO Phillip (NZL)		MT	Main Draw		2 - 3	5:11 9:11 11:5 13:11 6:11	XIAO Phillip	
+2014	World Team Table Tennis Championships Tokyo 2014	ALHAJJAI Waled Nasser (QAT)		LAUGESEN Shane (NZL)		MT	Main Draw		3 - 2	11:7 11:9 8:11 11:13 11:4	ALHAJJAI Waled Nasser	
+2014	World Team Table Tennis Championships Tokyo 2014	AL-MOHANNADI Ahmad Khalil (QAT)		CORDUE John (NZL)		MT	Main Draw		3 - 1	13:11 9:11 13:11 11:8	AL-MOHANNADI Ahmad Khalil	
+2014	World Team Table Tennis Championships Tokyo 2014	LINJAWI Jassem (UAE)		AL-BAHRANI Husain (KUW)		MT	Main Draw		3 - 1	12:10 5:11 11:4 11:2	LINJAWI Jassem	
+2014	World Team Table Tennis Championships Tokyo 2014	MANSOUR Marawan (UAE)		AL-HASAN Salem (KUW)		MT	Main Draw		1 - 3	11:9 0:11 6:11 11:13	AL-HASAN Salem	
+2014	World Team Table Tennis Championships Tokyo 2014	ALBALOOSHI Abdulla (UAE)		ALANSSARI Basel (KUW)		MT	Main Draw		3 - 1	11:9 11:6 5:11 11:6	ALBALOOSHI Abdulla	
+2014	World Team Table Tennis Championships Tokyo 2014	LINJAWI Jassem (UAE)		AL-HASAN Salem (KUW)		MT	Main Draw		3 - 2	11:13 11:9 11:6 8:11 11:6	LINJAWI Jassem	
+2014	World Team Table Tennis Championships Tokyo 2014	MANSOUR Marawan (UAE)		AL-BAHRANI Husain (KUW)		MT	Main Draw		2 - 3	6:11 13:11 11:1 5:11 5:11	AL-BAHRANI Husain	
+2014	World Team Table Tennis Championships Tokyo 2014	JENKINS Ryan (WAL)		RAMIREZ Jose Miguel (GUA)		MT	Main Draw		3 - 2	11:6 11:4 11:13 8:11 11:8	JENKINS Ryan
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 4 of 18 Total: 1708
+
+Start
+Prev
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Next
+End
+2014	World Team Table Tennis Championships Tokyo 2014	JENKINS Stephen (WAL)		SOTO Kevin (GUA)		MT	Main Draw		3 - 2	5:11 9:11 11:8 11:5 11:5	JENKINS Stephen	
+2014	World Team Table Tennis Championships Tokyo 2014	MARSDEN Michael (WAL)		RAMIREZ Jose Miguel (GUA)		MT	Main Draw		0 - 3	7:11 12:14 4:11	RAMIREZ Jose Miguel	
+2014	World Team Table Tennis Championships Tokyo 2014	JENKINS Ryan (WAL)		GATICA Hector (GUA)		MT	Main Draw		3 - 0	11:9 11:2 11:9	JENKINS Ryan	
+2014	World Team Table Tennis Championships Tokyo 2014	QURESHI Asim (PAK)		MICHELY Gilles (LUX)		MT	Main Draw		2 - 3	4:11 7:11 11:7 11:9 9:11	MICHELY Gilles	
+2014	World Team Table Tennis Championships Tokyo 2014	MINHAS Faryal (PAK)		BAST Mike (LUX)		MT	Main Draw		1 - 3	7:11 11:6 9:11 5:11	BAST Mike	
+2014	World Team Table Tennis Championships Tokyo 2014	ABBAS Saleem (PAK)		MICHELY Gilles (LUX)		MT	Main Draw		1 - 3	11:8 10:12 7:11 2:11	MICHELY Gilles	
+2014	World Team Table Tennis Championships Tokyo 2014	QURESHI Asim (PAK)		HANSEN Sven (LUX)		MT	Main Draw		3 - 1	9:11 15:13 11:8 14:12	QURESHI Asim	
+2014	World Team Table Tennis Championships Tokyo 2014	DUBROVIN Veniamin (MDA)		ALHAJJAI Waled Nasser (QAT)		MT	Main Draw		2 - 3	6:11 13:15 11:6 11:7 7:11	ALHAJJAI Waled Nasser	
+2014	World Team Table Tennis Championships Tokyo 2014	TERNA Denis (MDA)		AL-MOHANNADI Ahmad Khalil (QAT)		MT	Main Draw		0 - 3	8:11 9:11 7:11	AL-MOHANNADI Ahmad Khalil	
+2014	World Team Table Tennis Championships Tokyo 2014	CHIRITA Cristian (ROU)		AL-NAGGAR Abdulrahman (QAT)		MT	Main Draw		3 - 1	11:5 14:12 7:11 11:9	CHIRITA Cristian	
+2014	World Team Table Tennis Championships Tokyo 2014	DUBROVIN Veniamin (MDA)		AL-MOHANNADI Ahmad Khalil (QAT)		MT	Main Draw		0 - 3	6:11 10:12 1:11	AL-MOHANNADI Ahmad Khalil	
+2014	World Team Table Tennis Championships Tokyo 2014	TERNA Denis (MDA)		ALHAJJAI Waled Nasser (QAT)		MT	Main Draw		3 - 2	8:11 11:6 9:11 11:5 12:10	TERNA Denis	
+2014	World Team Table Tennis Championships Tokyo 2014	DOMEIKA Arnoldas (LTU)		FARRELL Ryan (IRL)		MT	Main Draw		3 - 0	11:7 11:3 11:8	DOMEIKA Arnoldas	
+2014	World Team Table Tennis Championships Tokyo 2014	UDRA Alfredas (LTU)		ROBINSON Ashley (IRL)		MT	Main Draw		1 - 3	11:5 9:11 9:11 11:13	ROBINSON Ashley	
+2014	World Team Table Tennis Championships Tokyo 2014	MIKUTIS Tomas (LTU)		MAGUIRE Gavin (IRL)		MT	Main Draw		3 - 2	9:11 11:8 11:6 2:11 11:8	MIKUTIS Tomas	
+2014	World Team Table Tennis Championships Tokyo 2014	DOMEIKA Arnoldas (LTU)		ROBINSON Ashley (IRL)		MT	Main Draw		2 - 3	11:5 3:11 11:4 9:11 6:11	ROBINSON Ashley	
+2014	World Team Table Tennis Championships Tokyo 2014	UDRA Alfredas (LTU)		FARRELL Ryan (IRL)		MT	Main Draw		3 - 2	11:7 9:11 9:11 12:10 11:5	UDRA Alfredas	
+2014	World Team Table Tennis Championships Tokyo 2014	OLAH Benedek (FIN)		KARTUZOVS Olegs (LAT)		MT	Main Draw		0 - 3	5:11 5:11 9:11	KARTUZOVS Olegs	
+2014	World Team Table Tennis Championships Tokyo 2014	SOINE Samuli (FIN)		MASLOVS Leonids (LAT)		MT	Main Draw		2 - 3	11:7 11:7 9:11 2:11 12:14	MASLOVS Leonids	
+2014	World Team Table Tennis Championships Tokyo 2014	KANTOLA Roope (FIN)		KARTUZOVS Olegs (LAT)		MT	Main Draw		3 - 1	3:11 11:6 11:9 11:4	KANTOLA Roope	
+2014	World Team Table Tennis Championships Tokyo 2014	OLAH Benedek (FIN)		REINHOLDS Arturs (LAT)		MT	Main Draw		2 - 3	11:4 3:11 9:11 11:5 8:11	REINHOLDS Arturs	
+2014	World Team Table Tennis Championships Tokyo 2014	URIBE Salvador (MEX)		AFANADOR Brian (PUR)		MT	Main Draw		1 - 3	11:5 10:12 9:11 7:11	AFANADOR Brian	
+2014	World Team Table Tennis Championships Tokyo 2014	MADRID Marcos (MEX)		GONZALEZ Daniel (PUR)		MT	Main Draw		2 - 3	8:11 17:19 11:7 11:4 7:11	GONZALEZ Daniel	
+2014	World Team Table Tennis Championships Tokyo 2014	VILLA Ricardo (MEX)		BERRIOS Hector (PUR)		MT	Main Draw		3 - 2	11:5 9:11 6:11 11:9 11:8	VILLA Ricardo	
+2014	World Team Table Tennis Championships Tokyo 2014	URIBE Salvador (MEX)		GONZALEZ Daniel (PUR)		MT	Main Draw		0 - 3	8:11 7:11 11:13	GONZALEZ Daniel	
+2014	World Team Table Tennis Championships Tokyo 2014	MADRID Marcos (MEX)		AFANADOR Brian (PUR)		MT	Main Draw		3 - 2	11:3 8:11 11:7 7:11 11:5	MADRID Marcos	
+2014	World Team Table Tennis Championships Tokyo 2014	AFANADOR Brian (PUR)		AL-ABBAD Abdulaziz (KSA)		MT	Main Draw		3 - 2	8:11 11:3 4:11 11:6 12:10	AFANADOR Brian	
+2014	World Team Table Tennis Championships Tokyo 2014	BERRIOS Hector (PUR)		ALKHADRAWI Ali (KSA)		MT	Main Draw		2 - 3	6:11 5:11 14:12 11:5 7:11	ALKHADRAWI Ali	
+2014	World Team Table Tennis Championships Tokyo 2014	GONZALEZ Daniel (PUR)		AL-ABBAD Abdulaziz (KSA)		MT	Main Draw		3 - 1	11:8 11:9 8:11 11:6	GONZALEZ Daniel	
+2014	World Team Table Tennis Championships Tokyo 2014	AFANADOR Brian (PUR)		AL-JADAI Naif (KSA)		MT	Main Draw		3 - 0	11:4 11:6 11:7	AFANADOR Brian	
+2014	World Team Table Tennis Championships Tokyo 2014	ZHOLUDEV Denis (KAZ)		URIBE Salvador (MEX)		MT	Main Draw		2 - 3	11:9 11:3 8:11 6:11 2:11	URIBE Salvador	
+2014	World Team Table Tennis Championships Tokyo 2014	GERASSIMENKO Kirill (KAZ)		MADRID Marcos (MEX)		MT	Main Draw		1 - 3	8:11 11:6 8:11 8:11	MADRID Marcos	
+2014	World Team Table Tennis Championships Tokyo 2014	KELBUGANOV Timur (KAZ)		VILLA Ricardo (MEX)		MT	Main Draw		3 - 2	9:11 8:11 11:8 11:2 11:2	KELBUGANOV Timur	
+2014	World Team Table Tennis Championships Tokyo 2014	ZHOLUDEV Denis (KAZ)		MADRID Marcos (MEX)		MT	Main Draw		0 - 3	7:11 9:11 6:11	MADRID Marcos	
+2014	World Team Table Tennis Championships Tokyo 2014	GERASSIMENKO Kirill (KAZ)		URIBE Salvador (MEX)		MT	Main Draw		3 - 0	11:6 11:5 11:9	GERASSIMENKO Kirill	
+2014	World Team Table Tennis Championships Tokyo 2014	AL-JADAI Naif (KSA)		BUTLER Jimmy (USA)		MT	Main Draw		3 - 2	7:11 11:7 10:12 12:10 11:7	AL-JADAI Naif	
+2014	World Team Table Tennis Championships Tokyo 2014	AL-ABBAD Abdulaziz (KSA)		WANG Timothy (USA)		MT	Main Draw		3 - 0	11:2 11:6 11:8	AL-ABBAD Abdulaziz	
+2014	World Team Table Tennis Championships Tokyo 2014	ALKHADRAWI Ali (KSA)		HUGH Adam (USA)		MT	Main Draw		0 - 3	5:11 9:11 9:11	HUGH Adam	
+2014	World Team Table Tennis Championships Tokyo 2014	AL-JADAI Naif (KSA)		WANG Timothy (USA)		MT	Main Draw		0 - 3	7:11 5:11 9:11	WANG Timothy	
+2014	World Team Table Tennis Championships Tokyo 2014	AL-ABBAD Abdulaziz (KSA)		BUTLER Jimmy (USA)		MT	Main Draw		3 - 1	11:13 11:5 11:4 11:4	AL-ABBAD Abdulaziz	
+2014	World Team Table Tennis Championships Tokyo 2014	AFANADOR Brian (PUR)		MOHLER Nicola (SUI)		MT	Main Draw		3 - 1	11:2 12:14 11:9 11:9	AFANADOR Brian	
+2014	World Team Table Tennis Championships Tokyo 2014	BERRIOS Hector (PUR)		CHAMPOD Nicolas (SUI)		MT	Main Draw		0 - 3	11:13 7:11 14:16	CHAMPOD Nicolas	
+2014	World Team Table Tennis Championships Tokyo 2014	GONZALEZ Daniel (PUR)		MOHLER Nicola (SUI)		MT	Main Draw		3 - 0	12:10 11:7 12:10	GONZALEZ Daniel	
+2014	World Team Table Tennis Championships Tokyo 2014	AFANADOR Brian (PUR)		WEBER Lionel (SUI)		MT	Main Draw		3 - 1	11:6 9:11 11:7 11:6	AFANADOR Brian	
+2014	World Team Table Tennis Championships Tokyo 2014	RUMGAY Gavin (SCO)		MADRID Marcos (MEX)		MT	Main Draw		1 - 3	11:8 5:11 6:11 6:11	MADRID Marcos	
+2014	World Team Table Tennis Championships Tokyo 2014	DOHERTY Sean (SCO)		VILLA Ricardo (MEX)		MT	Main Draw		1 - 3	3:11 11:5 6:11 10:12	VILLA Ricardo	
+2014	World Team Table Tennis Championships Tokyo 2014	HOWIESON Craig (SCO)		MADRID Marcos (MEX)		MT	Main Draw		1 - 3	4:11 11:9 8:11 9:11	MADRID Marcos	
+2014	World Team Table Tennis Championships Tokyo 2014	RUMGAY Gavin (SCO)		URIBE Salvador (MEX)		MT	Main Draw		3 - 0	11:2 11:2 11:8	RUMGAY Gavin	
+2014	World Team Table Tennis Championships Tokyo 2014	VAINULA Vallot (EST)		KELBUGANOV Timur (KAZ)		MT	Main Draw		2 - 3	8:11 8:11 11:4 11:7 7:11	KELBUGANOV Timur	
+2014	World Team Table Tennis Championships Tokyo 2014	SMIRNOV Aleksandr (EST)		GERASSIMENKO Kirill (KAZ)		MT	Main Draw		2 - 3	8:11 8:11 14:12 11:4 7:11	GERASSIMENKO Kirill	
+2014	World Team Table Tennis Championships Tokyo 2014	LUSIN Aleksandr (EST)		ZHOLUDEV Denis (KAZ)		MT	Main Draw		3 - 0	11:2 11:5 11:2	LUSIN Aleksandr	
+2014	World Team Table Tennis Championships Tokyo 2014	VAINULA Vallot (EST)		GERASSIMENKO Kirill (KAZ)		MT	Main Draw		0 - 3	5:11 9:11 9:11	GERASSIMENKO Kirill	
+2014	World Team Table Tennis Championships Tokyo 2014	SMIRNOV Aleksandr (EST)		KELBUGANOV Timur (KAZ)		MT	Main Draw		3 - 0	11:6 11:7 11:5	SMIRNOV Aleksandr	
+2014	World Team Table Tennis Championships Tokyo 2014	MIKUTIS Tomas (LTU)		AL-ABBAD Abdulaziz (KSA)		MT	Main Draw		0 - 3	9:11 5:11 5:11	AL-ABBAD Abdulaziz	
+2014	World Team Table Tennis Championships Tokyo 2014	UDRA Alfredas (LTU)		ALKHADRAWI Ali (KSA)		MT	Main Draw		3 - 2	6:11 11:9 11:8 7:11 11:9	UDRA Alfredas	
+2014	World Team Table Tennis Championships Tokyo 2014	DOMEIKA Arnoldas (LTU)		AL-ABBAD Abdulaziz (KSA)		MT	Main Draw		0 - 3	8:11 16:18 8:11	AL-ABBAD Abdulaziz	
+2014	World Team Table Tennis Championships Tokyo 2014	MIKUTIS Tomas (LTU)		AL-JADAI Naif (KSA)		MT	Main Draw		2 - 3	11:5 11:5 5:11 5:11 10:12	AL-JADAI Naif	
+2014	World Team Table Tennis Championships Tokyo 2014	AFANADOR Brian (PUR)		MCCREERY Paul (IRL)		MT	Main Draw		3 - 1	7:11 11:8 11:8 11:5	AFANADOR Brian	
+2014	World Team Table Tennis Championships Tokyo 2014	BERRIOS Hector (PUR)		ROBINSON Ashley (IRL)		MT	Main Draw		2 - 3	8:11 12:14 11:9 11:9 8:11	ROBINSON Ashley	
+2014	World Team Table Tennis Championships Tokyo 2014	GONZALEZ Daniel (PUR)		MCCREERY Paul (IRL)		MT	Main Draw		3 - 0	11:8 11:7 11:4	GONZALEZ Daniel	
+2014	World Team Table Tennis Championships Tokyo 2014	AFANADOR Brian (PUR)		MAGUIRE Gavin (IRL)		MT	Main Draw		3 - 0	11:3 11:7 11:6	AFANADOR Brian	
+2014	World Team Table Tennis Championships Tokyo 2014	RUMGAY Gavin (SCO)		KANTOLA Roope (FIN)		MT	Main Draw		3 - 2	9:11 9:11 11:7 11:8 11:8	RUMGAY Gavin	
+2014	World Team Table Tennis Championships Tokyo 2014	DOHERTY Sean (SCO)		SOINE Samuli (FIN)		MT	Main Draw		2 - 3	11:7 9:11 4:11 11:4 8:11	SOINE Samuli	
+2014	World Team Table Tennis Championships Tokyo 2014	HOWIESON Craig (SCO)		KANTOLA Roope (FIN)		MT	Main Draw		3 - 1	11:6 6:11 11:9 11:9	HOWIESON Craig	
+2014	World Team Table Tennis Championships Tokyo 2014	RUMGAY Gavin (SCO)		OLAH Benedek (FIN)		MT	Main Draw		3 - 1	11:8 4:11 11:6 11:7	RUMGAY Gavin	
+2014	World Team Table Tennis Championships Tokyo 2014	MASLOVS Leonids (LAT)		BABASSOV Asset (KAZ)		MT	Main Draw		1 - 3	6:11 9:11 11:5 7:11	BABASSOV Asset	
+2014	World Team Table Tennis Championships Tokyo 2014	REINHOLDS Arturs (LAT)		GERASSIMENKO Kirill (KAZ)		MT	Main Draw		0 - 3	1:11 8:11 6:11	GERASSIMENKO Kirill	
+2014	World Team Table Tennis Championships Tokyo 2014	KARTUZOVS Olegs (LAT)		ZHOLUDEV Denis (KAZ)		MT	Main Draw		2 - 3	8:11 11:7 7:11 11:6 9:11	ZHOLUDEV Denis	
+2014	World Team Table Tennis Championships Tokyo 2014	ROUSSEAU-EMOND Vincent (CAN)		ALEXANDROV Teodor (BUL)		MT	Main Draw		1 - 3	11:7 7:11 6:11 8:11	ALEXANDROV Teodor	
+2014	World Team Table Tennis Championships Tokyo 2014	THERIAULT Pierre-Luc (CAN)		GOLOVANOV Stanislav (BUL)		MT	Main Draw		3 - 2	11:9 11:2 3:11 7:11 11:4	THERIAULT Pierre-Luc	
+2014	World Team Table Tennis Championships Tokyo 2014	MORAN Alexander (CAN)		ALEXANDROV Teodor (BUL)		MT	Main Draw		0 - 3	9:11 7:11 7:11	ALEXANDROV Teodor	
+2014	World Team Table Tennis Championships Tokyo 2014	ROUSSEAU-EMOND Vincent (CAN)		KRASTEV Petyo (BUL)		MT	Main Draw		0 - 3	6:11 8:11 10:12	KRASTEV Petyo	
+2014	World Team Table Tennis Championships Tokyo 2014	TEMPERLEY Diego (ARG)		TAUBER Michael (ISR)		MT	Main Draw		3 - 1	11:6 4:11 11:8 11:8	TEMPERLEY Diego	
+2014	World Team Table Tennis Championships Tokyo 2014	TITOLO Franco (ARG)		BEN ARI Omri (ISR)		MT	Main Draw		0 - 3	2:11 8:11 10:12	BEN ARI Omri	
+2014	World Team Table Tennis Championships Tokyo 2014	GILABERT Rodrigo (ARG)		TAUBER Michael (ISR)		MT	Main Draw		3 - 2	9:11 11:4 11:4 6:11 11:1	GILABERT Rodrigo	
+2014	World Team Table Tennis Championships Tokyo 2014	TEMPERLEY Diego (ARG)		ELENSKY Gregory (ISR)		MT	Main Draw		3 - 1	7:11 11:6 12:10 11:9	TEMPERLEY Diego	
+2014	World Team Table Tennis Championships Tokyo 2014	HO Andre (CAN)		HU Heming (AUS)		MT	Main Draw		3 - 0	11:6 11:5 11:7	HO Andre	
+2014	World Team Table Tennis Championships Tokyo 2014	THERIAULT Pierre-Luc (CAN)		POWELL David (AUS)		MT	Main Draw		0 - 3	11:13 5:11 7:11	POWELL David	
+2014	World Team Table Tennis Championships Tokyo 2014	THERIEN Xavier (CAN)		TOWNSEND Kane (AUS)		MT	Main Draw		2 - 3	10:12 11:5 11:5 9:11 9:11	TOWNSEND Kane	
+2014	World Team Table Tennis Championships Tokyo 2014	HO Andre (CAN)		POWELL David (AUS)		MT	Main Draw		3 - 1	11:9 11:7 6:11 11:7	HO Andre	
+2014	World Team Table Tennis Championships Tokyo 2014	THERIAULT Pierre-Luc (CAN)		HU Heming (AUS)		MT	Main Draw		3 - 1	11:4 11:6 5:11 12:10	THERIAULT Pierre-Luc	
+2014	World Team Table Tennis Championships Tokyo 2014	GAVILAN Axel (PAR)		ALEXANDROV Teodor (BUL)		MT	Main Draw		0 - 3	9:11 6:11 7:11	ALEXANDROV Teodor	
+2014	World Team Table Tennis Championships Tokyo 2014	TORANZOS Alejandro (PAR)		KRASTEV Petyo (BUL)		MT	Main Draw		1 - 3	9:11 9:11 11:6 9:11	KRASTEV Petyo	
+2014	World Team Table Tennis Championships Tokyo 2014	AGUIRRE Marcelo (PAR)		GOLOVANOV Stanislav (BUL)		MT	Main Draw		1 - 3	11:9 12:14 9:11 8:11	GOLOVANOV Stanislav	
+2014	World Team Table Tennis Championships Tokyo 2014	ALTO Gaston (ARG)		MARDIYONO Yon (INA)		MT	Main Draw		3 - 2	11:7 9:11 9:11 11:9 11:3	ALTO Gaston	
+2014	World Team Table Tennis Championships Tokyo 2014	GILABERT Rodrigo (ARG)		HARURI Dahlan (INA)		MT	Main Draw		3 - 2	7:11 11:8 9:11 15:13 11:8	GILABERT Rodrigo	
+2014	World Team Table Tennis Championships Tokyo 2014	TABACHNIK Pablo (ARG)		MARDIYONO Yon (INA)		MT	Main Draw		0 - 3	10:12 5:11 7:11	MARDIYONO Yon	
+2014	World Team Table Tennis Championships Tokyo 2014	ALTO Gaston (ARG)		MAULANA Gilang (INA)		MT	Main Draw		3 - 2	9:11 11:9 11:4 6:11 11:9	ALTO Gaston	
+2014	World Team Table Tennis Championships Tokyo 2014	KONJIC Edin (BIH)		ELENSKY Gregory (ISR)		MT	Main Draw		1 - 3	9:11 6:11 13:11 6:11	ELENSKY Gregory	
+2014	World Team Table Tennis Championships Tokyo 2014	ALICIC Armin (BIH)		RABINOVICH Shimon (ISR)		MT	Main Draw		0 - 3	4:11 7:11 10:12	RABINOVICH Shimon	
+2014	World Team Table Tennis Championships Tokyo 2014	DURANSPAHIC Admir (BIH)		BEN ARI Omri (ISR)		MT	Main Draw		1 - 3	6:11 11:7 7:11 7:11	BEN ARI Omri	
+2014	World Team Table Tennis Championships Tokyo 2014	GALVEZ Samuel (DOM)		TOWNSEND Kane (AUS)		MT	Main Draw		2 - 3	11:8 4:11 12:10 6:11 5:11	TOWNSEND Kane	
+2014	World Team Table Tennis Championships Tokyo 2014	VILA Isaac (DOM)		POWELL David (AUS)		MT	Main Draw		0 - 3	5:11 8:11 8:11	POWELL David	
+2014	World Team Table Tennis Championships Tokyo 2014	VILA BATISTA Juan (DOM)		HU Heming (AUS)		MT	Main Draw		2 - 3	4:11 5:11 12:10 11:4 11:13	HU Heming	
+2014	World Team Table Tennis Championships Tokyo 2014	WONGSIRI Nikom (THA)		AGUIRRE Marcelo (PAR)		MT	Main Draw		1 - 3	15:13 6:11 9:11 4:11	AGUIRRE Marcelo	
+2014	World Team Table Tennis Championships Tokyo 2014	CHAITAT Chaisit (THA)		GAVILAN Axel (PAR)		MT	Main Draw		3 - 0	11:6 11:9 12:10	CHAITAT Chaisit	
+2014	World Team Table Tennis Championships Tokyo 2014	POUNGSRI Max (THA)		AGUIRRE Marcelo (PAR)		MT	Main Draw		0 - 3	8:11 6:11 8:11	AGUIRRE Marcelo	
+2014	World Team Table Tennis Championships Tokyo 2014	WONGSIRI Nikom (THA)		TORANZOS Alejandro (PAR)		MT	Main Draw		1 - 3	10:12 10:12 11:8 10:12	TORANZOS Alejandro	
+2014	World Team Table Tennis Championships Tokyo 2014	IDOWU Saheed (CGO)		MAULANA Gilang (INA)		MT	Main Draw		2 - 3	13:11 8:11 12:10 5:11 13:15	MAULANA Gilang	
+2014	World Team Table Tennis Championships Tokyo 2014	SAKA Suraju (CGO)		MARDIYONO Yon (INA)		MT	Main Draw		0 - 3	9:11 5:11 4:11	MARDIYONO Yon
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 5 of 18 Total: 1708
+
+Start
+Prev
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Next
+End
+2014	World Team Table Tennis Championships Tokyo 2014	LIGNANDZI Michel (CGO)		HARURI Dahlan (INA)		MT	Main Draw		0 - 3	4:11 1:11 8:11	HARURI Dahlan	
+2014	World Team Table Tennis Championships Tokyo 2014	IDOWU Saheed (CGO)		MARDIYONO Yon (INA)		MT	Main Draw		3 - 1	11:5 6:11 11:9 11:7	IDOWU Saheed	
+2014	World Team Table Tennis Championships Tokyo 2014	SAKA Suraju (CGO)		MAULANA Gilang (INA)		MT	Main Draw		3 - 2	11:8 6:11 11:5 10:12 11:7	SAKA Suraju	
+2014	World Team Table Tennis Championships Tokyo 2014	DURANSPAHIC Admir (BIH)		LE Tien Dat (VIE)		MT	Main Draw		3 - 2	7:11 11:7 7:11 11:9 11:6	DURANSPAHIC Admir	
+2014	World Team Table Tennis Championships Tokyo 2014	KONJIC Edin (BIH)		NGUYEN Anh Tu (VIE)		MT	Main Draw		0 - 3	4:11 9:11 9:11	NGUYEN Anh Tu	
+2014	World Team Table Tennis Championships Tokyo 2014	ALICIC Armin (BIH)		LE Tien Dat (VIE)		MT	Main Draw		3 - 2	9:11 11:9 6:11 11:9 14:12	ALICIC Armin	
+2014	World Team Table Tennis Championships Tokyo 2014	DURANSPAHIC Admir (BIH)		DOAN Ba Tuan Anh (VIE)		MT	Main Draw		3 - 0	11:7 12:10 16:14	DURANSPAHIC Admir	
+2014	World Team Table Tennis Championships Tokyo 2014	PITCHFORD Liam (ENG)		RECH DALDOSSO Marco (ITA)		MT	Main Draw		3 - 1	11:8 7:11 11:2 11:8	PITCHFORD Liam	
+2014	World Team Table Tennis Championships Tokyo 2014	WALKER Samuel (ENG)		STOYANOV Niagol (ITA)		MT	Main Draw		1 - 3	3:11 6:11 11:9 11:13	STOYANOV Niagol	
+2014	World Team Table Tennis Championships Tokyo 2014	DRINKHALL Paul (ENG)		RECH DALDOSSO Marco (ITA)		MT	Main Draw		3 - 2	11:2 11:3 17:19 6:11 12:10	DRINKHALL Paul	
+2014	World Team Table Tennis Championships Tokyo 2014	PITCHFORD Liam (ENG)		MUTTI Leonardo (ITA)		MT	Main Draw		3 - 1	11:5 11:7 12:14 11:7	PITCHFORD Liam	
+2014	World Team Table Tennis Championships Tokyo 2014	DRINKHALL Paul (ENG)		KEINATH Thomas (SVK)		MT	Main Draw		3 - 0	11:5 11:7 12:10	DRINKHALL Paul	
+2014	World Team Table Tennis Championships Tokyo 2014	PITCHFORD Liam (ENG)		PISTEJ Lubomir (SVK)		MT	Main Draw		3 - 0	11:8 11:9 11:8	PITCHFORD Liam	
+2014	World Team Table Tennis Championships Tokyo 2014	REED Daniel (ENG)		SEREDA Peter (SVK)		MT	Main Draw		2 - 3	8:11 8:11 18:16 11:4 7:11	SEREDA Peter	
+2014	World Team Table Tennis Championships Tokyo 2014	DRINKHALL Paul (ENG)		PISTEJ Lubomir (SVK)		MT	Main Draw		2 - 3	2:11 2:11 11:6 11:9 10:12	PISTEJ Lubomir	
+2014	World Team Table Tennis Championships Tokyo 2014	PITCHFORD Liam (ENG)		KEINATH Thomas (SVK)		MT	Main Draw		3 - 0	12:10 12:10 11:8	PITCHFORD Liam	
+2014	World Team Table Tennis Championships Tokyo 2014	MUTTI Leonardo (ITA)		SIRUCEK Pavel (CZE)		MT	Main Draw		3 - 2	11:5 11:9 4:11 5:11 11:8	MUTTI Leonardo	
+2014	World Team Table Tennis Championships Tokyo 2014	STOYANOV Niagol (ITA)		PROKOPCOV Dmitrij (CZE)		MT	Main Draw		3 - 1	11:3 11:7 9:11 11:9	STOYANOV Niagol	
+2014	World Team Table Tennis Championships Tokyo 2014	BOBOCICA Mihai (ITA)		KONECNY Tomas (CZE)		MT	Main Draw		3 - 1	9:11 11:8 11:7 12:10	BOBOCICA Mihai	
+2014	World Team Table Tennis Championships Tokyo 2014	ALAMIYAN Noshad (IRI)		PISTEJ Lubomir (SVK)		MT	Main Draw		0 - 3	2:11 8:11 0:11	PISTEJ Lubomir	
+2014	World Team Table Tennis Championships Tokyo 2014	NOROOZI Afshin (IRI)		SEREDA Peter (SVK)		MT	Main Draw		3 - 0	11:9 11:4 11:9	NOROOZI Afshin	
+2014	World Team Table Tennis Championships Tokyo 2014	ALAMIAN Nima (IRI)		PISTEJ Lubomir (SVK)		MT	Main Draw		2 - 3	12:10 5:11 11:3 12:14 7:11	PISTEJ Lubomir	
+2014	World Team Table Tennis Championships Tokyo 2014	ALAMIYAN Noshad (IRI)		KEINATH Thomas (SVK)		MT	Main Draw		1 - 3	5:11 5:11 11:5 9:11	KEINATH Thomas	
+2014	World Team Table Tennis Championships Tokyo 2014	TORIOLA Segun (NGR)		DRINKHALL Paul (ENG)		MT	Main Draw		1 - 3	6:11 11:9 5:11 9:11	DRINKHALL Paul	
+2014	World Team Table Tennis Championships Tokyo 2014	ARUNA Quadri (NGR)		PITCHFORD Liam (ENG)		MT	Main Draw		1 - 3	5:11 11:6 5:11 6:11	PITCHFORD Liam	
+2014	World Team Table Tennis Championships Tokyo 2014	ONAOLAPO Ojo (NGR)		REED Daniel (ENG)		MT	Main Draw		0 - 3	5:11 7:11 6:11	REED Daniel	
+2014	World Team Table Tennis Championships Tokyo 2014	TORIOLA Segun (NGR)		PITCHFORD Liam (ENG)		MT	Main Draw		3 - 2	10:12 12:10 8:11 11:6 11:6	TORIOLA Segun	
+2014	World Team Table Tennis Championships Tokyo 2014	ARUNA Quadri (NGR)		DRINKHALL Paul (ENG)		MT	Main Draw		3 - 1	12:10 6:11 11:9 11:6	ARUNA Quadri	
+2014	World Team Table Tennis Championships Tokyo 2014	ZIBRAT Jan (SLO)		BOBOCICA Mihai (ITA)		MT	Main Draw		0 - 3	9:11 5:11 6:11	BOBOCICA Mihai	
+2014	World Team Table Tennis Championships Tokyo 2014	SLATINSEK Uros (SLO)		MUTTI Leonardo (ITA)		MT	Main Draw		3 - 1	9:11 13:11 11:9 11:3	SLATINSEK Uros	
+2014	World Team Table Tennis Championships Tokyo 2014	LASAN Sas (SLO)		BOBOCICA Mihai (ITA)		MT	Main Draw		0 - 3	4:11 6:11 7:11	BOBOCICA Mihai	
+2014	World Team Table Tennis Championships Tokyo 2014	ZIBRAT Jan (SLO)		STOYANOV Niagol (ITA)		MT	Main Draw		2 - 3	11:9 8:11 7:11 11:6 7:11	STOYANOV Niagol	
+2014	World Team Table Tennis Championships Tokyo 2014	PROKOPCOV Dmitrij (CZE)		ASSAR Omar (EGY)		MT	Main Draw		3 - 2	9:11 12:10 11:5 5:11 13:11	PROKOPCOV Dmitrij	
+2014	World Team Table Tennis Championships Tokyo 2014	JANCARIK Lubomir (CZE)		SALEH Ahmed (EGY)		MT	Main Draw		3 - 2	8:11 11:8 12:10 8:11 12:10	JANCARIK Lubomir	
+2014	World Team Table Tennis Championships Tokyo 2014	KONECNY Tomas (CZE)		ASSAR Omar (EGY)		MT	Main Draw		0 - 3	8:11 2:11 8:11	ASSAR Omar	
+2014	World Team Table Tennis Championships Tokyo 2014	PROKOPCOV Dmitrij (CZE)		LASHIN Elsayed (EGY)		MT	Main Draw		3 - 2	11:7 9:11 10:12 11:9 11:9	PROKOPCOV Dmitrij	
+2014	World Team Table Tennis Championships Tokyo 2014	RONNEBERG Lars (NOR)		SEREDA Peter (SVK)		MT	Main Draw		1 - 3	5:11 5:11 11:9 5:11	SEREDA Peter	
+2014	World Team Table Tennis Championships Tokyo 2014	JORGENSEN Eskild (NOR)		PISTEJ Lubomir (SVK)		MT	Main Draw		1 - 3	7:11 7:11 11:4 9:11	PISTEJ Lubomir	
+2014	World Team Table Tennis Championships Tokyo 2014	RONNEBERG Espen (NOR)		KEINATH Thomas (SVK)		MT	Main Draw		1 - 3	4:11 11:7 4:11 5:11	KEINATH Thomas	
+2014	World Team Table Tennis Championships Tokyo 2014	MENGE Gencay (TUR)		ONAOLAPO Ojo (NGR)		MT	Main Draw		2 - 3	11:7 11:8 6:11 5:11 6:11	ONAOLAPO Ojo	
+2014	World Team Table Tennis Championships Tokyo 2014	GUNDUZ Ibrahim (TUR)		ARUNA Quadri (NGR)		MT	Main Draw		0 - 3	7:11 3:11 4:11	ARUNA Quadri	
+2014	World Team Table Tennis Championships Tokyo 2014	VANG Bora (TUR)		TORIOLA Segun (NGR)		MT	Main Draw		1 - 3	7:11 11:6 9:11 9:11	TORIOLA Segun	
+2014	World Team Table Tennis Championships Tokyo 2014	JEAN Lauric (BEL)		MUTTI Leonardo (ITA)		MT	Main Draw		2 - 3	9:11 4:11 11:5 11:9 9:11	MUTTI Leonardo	
+2014	World Team Table Tennis Championships Tokyo 2014	LAMBIET Florent (BEL)		BOBOCICA Mihai (ITA)		MT	Main Draw		0 - 3	9:11 10:12 6:11	BOBOCICA Mihai	
+2014	World Team Table Tennis Championships Tokyo 2014	NUYTINCK Cedric (BEL)		STOYANOV Niagol (ITA)		MT	Main Draw		1 - 3	9:11 11:9 5:11 8:11	STOYANOV Niagol	
+2014	World Team Table Tennis Championships Tokyo 2014	SALEH Ahmed (EGY)		DESAI Harmeet (IND)		MT	Main Draw		3 - 1	11:5 11:4 7:11 11:7	SALEH Ahmed	
+2014	World Team Table Tennis Championships Tokyo 2014	LASHIN Elsayed (EGY)		GHOSH Soumyajit (IND)		MT	Main Draw		3 - 1	11:9 9:11 13:11 11:5	LASHIN Elsayed	
+2014	World Team Table Tennis Championships Tokyo 2014	ASSAR Omar (EGY)		ACHANTA Sharath (IND)		MT	Main Draw		3 - 2	11:8 5:11 7:11 11:4 11:6	ASSAR Omar	
+2014	World Team Table Tennis Championships Tokyo 2014	KANG Wi Hun (PRK)		SKACHKOV Kirill (RUS)		MT	Main Draw		0 - 3	8:11 10:12 6:11	SKACHKOV Kirill	
+2014	World Team Table Tennis Championships Tokyo 2014	KIM Nam Chol (PRK)		VLASOV Grigory (RUS)		MT	Main Draw		3 - 0	11:4 11:3 11:6	KIM Nam Chol	
+2014	World Team Table Tennis Championships Tokyo 2014	CHOE Il (PRK)		PAIKOV Mikhail (RUS)		MT	Main Draw		2 - 3	10:12 13:15 12:10 15:13 10:12	PAIKOV Mikhail	
+2014	World Team Table Tennis Championships Tokyo 2014	KANG Wi Hun (PRK)		VLASOV Grigory (RUS)		MT	Main Draw		1 - 3	12:10 9:11 4:11 9:11	VLASOV Grigory	
+2014	World Team Table Tennis Championships Tokyo 2014	KIM Nam Chol (PRK)		SKACHKOV Kirill (RUS)		MT	Main Draw		3 - 2	11:6 8:11 11:8 11:13 11:9	KIM Nam Chol	
+2014	World Team Table Tennis Championships Tokyo 2014	KATKOV Ivan (UKR)		GAUZY Simon (FRA)		MT	Main Draw		1 - 3	11:8 7:11 5:11 5:11	GAUZY Simon	
+2014	World Team Table Tennis Championships Tokyo 2014	DIDUKH Oleksandr (UKR)		OUAICHE Stephane (ALG)		MT	Main Draw		0 - 3	2:11 6:11 8:11	OUAICHE Stephane	
+2014	World Team Table Tennis Championships Tokyo 2014	PRYSHCHEPA Ievgen (UKR)		FLORE Tristan (FRA)		MT	Main Draw		1 - 3	13:15 11:7 4:11 7:11	FLORE Tristan	
+2014	World Team Table Tennis Championships Tokyo 2014	SHIBAEV Alexander (RUS)		KARAKASEVIC Aleksandar (SRB)		MT	Main Draw		3 - 1	11:9 11:5 9:11 11:9	SHIBAEV Alexander	
+2014	World Team Table Tennis Championships Tokyo 2014	PAIKOV Mikhail (RUS)		PETO Zsolt (SRB)		MT	Main Draw		3 - 0	11:8 12:10 11:7	PAIKOV Mikhail	
+2014	World Team Table Tennis Championships Tokyo 2014	LIVENTSOV Alexey (RUS)		KARAKASEVIC Aleksandar (SRB)		MT	Main Draw		1 - 3	7:11 11:8 7:11 9:11	KARAKASEVIC Aleksandar	
+2014	World Team Table Tennis Championships Tokyo 2014	SHIBAEV Alexander (RUS)		JEVTOVIC Marko (SRB)		MT	Main Draw		3 - 0	11:7 11:5 11:8	SHIBAEV Alexander	
+2014	World Team Table Tennis Championships Tokyo 2014	DIEZ Endika (ESP)		CHOE Il (PRK)		MT	Main Draw		1 - 3	11:6 8:11 8:11 9:11	CHOE Il	
+2014	World Team Table Tennis Championships Tokyo 2014	ROBLES Alvaro (ESP)		KIM Hyok Bong (PRK)		MT	Main Draw		0 - 3	9:11 8:11 8:11	KIM Hyok Bong	
+2014	World Team Table Tennis Championships Tokyo 2014	DURAN Marc (ESP)		KIM Nam Chol (PRK)		MT	Main Draw		1 - 3	6:11 3:11 14:12 10:12	KIM Nam Chol	
+2014	World Team Table Tennis Championships Tokyo 2014	MATTENET Adrien (FRA)		TSUBOI Gustavo (BRA)		MT	Main Draw		3 - 1	5:11 11:3 11:7 11:9	MATTENET Adrien	
+2014	World Team Table Tennis Championships Tokyo 2014	OUAICHE Stephane (ALG)		MATSUMOTO Cazuo (BRA)		MT	Main Draw		3 - 2	7:11 11:8 9:11 11:8 11:5	OUAICHE Stephane	
+2014	World Team Table Tennis Championships Tokyo 2014	LEBESSON Emmanuel (FRA)		TSUBOI Gustavo (BRA)		MT	Main Draw		1 - 3	14:12 7:11 5:11 5:11	TSUBOI Gustavo	
+2014	World Team Table Tennis Championships Tokyo 2014	MATTENET Adrien (FRA)		CALDERANO Hugo (BRA)		MT	Main Draw		3 - 2	12:10 5:11 11:3 7:11 11:9	MATTENET Adrien	
+2014	World Team Table Tennis Championships Tokyo 2014	KOU Lei (UKR)		WONG Chun Ting (HKG)		MT	Main Draw		3 - 2	9:11 11:9 11:7 9:11 11:3	KOU Lei	
+2014	World Team Table Tennis Championships Tokyo 2014	DIDUKH Oleksandr (UKR)		LEUNG Chu Yan (HKG)		MT	Main Draw		3 - 1	12:14 11:8 11:8 11:9	DIDUKH Oleksandr	
+2014	World Team Table Tennis Championships Tokyo 2014	KATKOV Ivan (UKR)		WONG Chun Ting (HKG)		MT	Main Draw		0 - 3	2:11 7:11 5:11	WONG Chun Ting	
+2014	World Team Table Tennis Championships Tokyo 2014	KOU Lei (UKR)		JIANG Tianyi (HKG)		MT	Main Draw		3 - 1	11:8 9:11 11:6 11:7	KOU Lei	
+2014	World Team Table Tennis Championships Tokyo 2014	KARAKASEVIC Aleksandar (SRB)		YARASHENKA Vadim (BLR)		MT	Main Draw		3 - 0	11:6 11:9 11:3	KARAKASEVIC Aleksandar	
+2014	World Team Table Tennis Championships Tokyo 2014	PETO Zsolt (SRB)		PLATONOV Pavel (BLR)		MT	Main Draw		3 - 1	11:6 8:11 12:10 12:10	PETO Zsolt	
+2014	World Team Table Tennis Championships Tokyo 2014	JEVTOVIC Marko (SRB)		KHANIN Aleksandr (BLR)		MT	Main Draw		3 - 2	12:10 5:11 9:11 11:8 11:5	JEVTOVIC Marko	
+2014	World Team Table Tennis Championships Tokyo 2014	SZOCS Hunor (ROU)		DURAN Marc (ESP)		MT	Main Draw		0 - 3	9:11 7:11 9:11	DURAN Marc	
+2014	World Team Table Tennis Championships Tokyo 2014	IONESCU Ovidiu (ROU)		ROBLES Alvaro (ESP)		MT	Main Draw		3 - 0	11:3 12:10 11:5	IONESCU Ovidiu	
+2014	World Team Table Tennis Championships Tokyo 2014	FILIMON Andrei (ROU)		DIEZ Endika (ESP)		MT	Main Draw		1 - 3	6:11 9:11 11:3 6:11	DIEZ Endika	
+2014	World Team Table Tennis Championships Tokyo 2014	SZOCS Hunor (ROU)		ROBLES Alvaro (ESP)		MT	Main Draw		2 - 3	9:11 11:3 7:11 11:9 10:12	ROBLES Alvaro	
+2014	World Team Table Tennis Championships Tokyo 2014	IONESCU Ovidiu (ROU)		DURAN Marc (ESP)		MT	Main Draw		3 - 0	11:3 13:11 11:9	IONESCU Ovidiu	
+2014	World Team Table Tennis Championships Tokyo 2014	CALDERANO Hugo (BRA)		RASMUSSEN Morten (DEN)		MT	Main Draw		3 - 0	11:7 11:7 11:5	CALDERANO Hugo	
+2014	World Team Table Tennis Championships Tokyo 2014	TSUBOI Gustavo (BRA)		GROTH Jonathan (DEN)		MT	Main Draw		3 - 1	6:11 11:6 11:5 11:1	TSUBOI Gustavo	
+2014	World Team Table Tennis Championships Tokyo 2014	MATSUMOTO Cazuo (BRA)		STERNBERG Kasper (DEN)		MT	Main Draw		3 - 2	11:7 14:12 10:12 9:11 11:8	MATSUMOTO Cazuo	
+2014	World Team Table Tennis Championships Tokyo 2014	KATKOV Ivan (UKR)		JAKAB Janos (HUN)		MT	Main Draw		3 - 1	13:11 11:8 6:11 11:9	KATKOV Ivan	
+2014	World Team Table Tennis Championships Tokyo 2014	KOU Lei (UKR)		KOSIBA Daniel (HUN)		MT	Main Draw		1 - 3	8:11 11:8 7:11 6:11	KOSIBA Daniel	
+2014	World Team Table Tennis Championships Tokyo 2014	DIDUKH Oleksandr (UKR)		LAKATOS Tamas (HUN)		MT	Main Draw		3 - 2	11:7 11:8 7:11 7:11 11:7	DIDUKH Oleksandr	
+2014	World Team Table Tennis Championships Tokyo 2014	KATKOV Ivan (UKR)		KOSIBA Daniel (HUN)		MT	Main Draw		3 - 1	11:8 11:5 5:11 11:8	KATKOV Ivan	
+2014	World Team Table Tennis Championships Tokyo 2014	KOU Lei (UKR)		JAKAB Janos (HUN)		MT	Main Draw		2 - 3	8:11 11:6 11:9 5:11 6:11	JAKAB Janos	
+2014	World Team Table Tennis Championships Tokyo 2014	MA Long (CHN)		OVTCHAROV Dimitrij (GER)		MT	Main Draw		3 - 0	12:10 11:5 11:2	MA Long	
+2014	World Team Table Tennis Championships Tokyo 2014	XU Xin (CHN)		FRANZISKA Patrick (GER)		MT	Main Draw		3 - 0	11:5 11:2 11:8	XU Xin	
+2014	World Team Table Tennis Championships Tokyo 2014	ZHANG Jike (CHN)		OVTCHAROV Dimitrij (GER)		MT	Main Draw		0 - 3	11:13 8:11 6:11	OVTCHAROV Dimitrij	
+2014	World Team Table Tennis Championships Tokyo 2014	MA Long (CHN)		BOLL Timo (GER)		MT	Main Draw		3 - 0	11:6 11:9 11:9	MA Long	
+2014	World Team Table Tennis Championships Tokyo 2014	BOLL Timo (GER)		MIZUTANI Jun (JPN)		MT	Main Draw		3 - 0	11:6 11:5 11:6	BOLL Timo	
+2014	World Team Table Tennis Championships Tokyo 2014	FRANZISKA Patrick (GER)		MATSUDAIRA Kenta (JPN)		MT	Main Draw		3 - 2	12:10 7:11 6:11 11:5 11:5	FRANZISKA Patrick	
+2014	World Team Table Tennis Championships Tokyo 2014	OVTCHAROV Dimitrij (GER)		MIZUTANI Jun (JPN)		MT	Main Draw		2 - 3	8:11 18:16 11:6 6:11 8:11	MIZUTANI Jun	
+2014	World Team Table Tennis Championships Tokyo 2014	BOLL Timo (GER)		NIWA Koki (JPN)		MT	Main Draw		3 - 1	16:18 11:5 11:4 14:12	BOLL Timo	
+2014	World Team Table Tennis Championships Tokyo 2014	HUANG Sheng-Sheng (TPE)		ZHANG Jike (CHN)		MT	Main Draw		1 - 3	6:11 12:10 3:11 6:11	ZHANG Jike	
+2014	World Team Table Tennis Championships Tokyo 2014	CHUANG Chih-Yuan (TPE)		MA Long (CHN)		MT	Main Draw		0 - 3	9:11 11:13 8:11	MA Long	
+2014	World Team Table Tennis Championships Tokyo 2014	CHEN Chien-An (TPE)		XU Xin (CHN)		MT	Main Draw		0 - 3	7:11 8:11 8:11	XU Xin	
+2014	World Team Table Tennis Championships Tokyo 2014	FRANZISKA Patrick (GER)		PANG Xue Jie (SGP)		MT	Main Draw		3 - 1	9:11 11:5 11:4 11:6	FRANZISKA Patrick	
+2014	World Team Table Tennis Championships Tokyo 2014	BOLL Timo (GER)		GAO Ning (SGP)		MT	Main Draw		3 - 0	13:11 11:7 11:5	BOLL Timo
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 6 of 18 Total: 1708
+
+Start
+Prev
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Next
+End
+2014	World Team Table Tennis Championships Tokyo 2014	OVTCHAROV Dimitrij (GER)		CHEW Clarence (SGP)		MT	Main Draw		3 - 0	11:5 11:8 11:3	OVTCHAROV Dimitrij	
+2014	World Team Table Tennis Championships Tokyo 2014	MONTEIRO Joao (POR)		MATSUDAIRA Kenta (JPN)		MT	Main Draw		1 - 3	7:11 11:9 10:12 7:11	MATSUDAIRA Kenta	
+2014	World Team Table Tennis Championships Tokyo 2014	APOLONIA Tiago (POR)		MIZUTANI Jun (JPN)		MT	Main Draw		0 - 3	4:11 6:11 9:11	MIZUTANI Jun	
+2014	World Team Table Tennis Championships Tokyo 2014	FREITAS Marcos (POR)		NIWA Koki (JPN)		MT	Main Draw		0 - 3	7:11 5:11 14:16	NIWA Koki	
+2014	World Team Table Tennis Championships Tokyo 2014	JEOUNG Youngsik (KOR)		CHEN Chien-An (TPE)		MT	Main Draw		1 - 3	6:11 11:6 7:11 9:11	CHEN Chien-An	
+2014	World Team Table Tennis Championships Tokyo 2014	JOO Saehyuk (KOR)		CHUANG Chih-Yuan (TPE)		MT	Main Draw		2 - 3	11:9 11:6 12:14 6:11 2:11	CHUANG Chih-Yuan	
+2014	World Team Table Tennis Championships Tokyo 2014	CHO Eonrae (KOR)		CHIANG Hung-Chieh (TPE)		MT	Main Draw		3 - 1	11:8 6:11 11:7 11:7	CHO Eonrae	
+2014	World Team Table Tennis Championships Tokyo 2014	JEOUNG Youngsik (KOR)		CHUANG Chih-Yuan (TPE)		MT	Main Draw		1 - 3	4:11 12:10 6:11 10:12	CHUANG Chih-Yuan	
+2014	World Team Table Tennis Championships Tokyo 2014	JOO Saehyuk (KOR)		CHEN Chien-An (TPE)		MT	Main Draw		3 - 2	3:11 14:12 6:11 13:11 11:8	JOO Saehyuk	
+2014	World Team Table Tennis Championships Tokyo 2014	XU Xin (CHN)		FEGERL Stefan (AUT)		MT	Main Draw		3 - 0	11:4 11:4 11:4	XU Xin	
+2014	World Team Table Tennis Championships Tokyo 2014	ZHANG Jike (CHN)		GARDOS Robert (AUT)		MT	Main Draw		3 - 2	11:5 10:12 8:11 14:12 11:5	ZHANG Jike	
+2014	World Team Table Tennis Championships Tokyo 2014	MA Long (CHN)		HABESOHN Daniel (AUT)		MT	Main Draw		3 - 0	11:9 11:9 12:10	MA Long	
+2014	World Team Table Tennis Championships Tokyo 2014	GAO Ning (SGP)		LUNDQVIST Jens (SWE)		MT	Main Draw		3 - 0	11:8 11:8 11:6	GAO Ning	
+2014	World Team Table Tennis Championships Tokyo 2014	CHEW Clarence (SGP)		GERELL Par (SWE)		MT	Main Draw		3 - 0	11:8 11:8 11:9	CHEW Clarence	
+2014	World Team Table Tennis Championships Tokyo 2014	YANG Zi (SGP)		LUNDQVIST Jens (SWE)		MT	Main Draw		1 - 3	13:11 5:11 9:11 6:11	LUNDQVIST Jens	
+2014	World Team Table Tennis Championships Tokyo 2014	GAO Ning (SGP)		KARLSSON Kristian (SWE)		MT	Main Draw		3 - 2	7:11 11:6 16:18 13:11 11:5	GAO Ning	
+2014	World Team Table Tennis Championships Tokyo 2014	WANG Zengyi (POL)		FREITAS Marcos (POR)		MT	Main Draw		1 - 3	5:11 8:11 11:6 12:14	FREITAS Marcos	
+2014	World Team Table Tennis Championships Tokyo 2014	FLORAS Robert (POL)		MONTEIRO Joao (POR)		MT	Main Draw		0 - 3	11:13 8:11 15:17	MONTEIRO Joao	
+2014	World Team Table Tennis Championships Tokyo 2014	GORAK Daniel (POL)		FREITAS Marcos (POR)		MT	Main Draw		0 - 3	8:11 7:11 7:11	FREITAS Marcos	
+2014	World Team Table Tennis Championships Tokyo 2014	WANG Zengyi (POL)		APOLONIA Tiago (POR)		MT	Main Draw		3 - 0	11:7 13:11 14:12	WANG Zengyi	
+2014	World Team Table Tennis Championships Tokyo 2014	GACINA Andrej (CRO)		CHUANG Chih-Yuan (TPE)		MT	Main Draw		0 - 3	7:11 5:11 9:11	CHUANG Chih-Yuan	
+2014	World Team Table Tennis Championships Tokyo 2014	TAN Ruiwu (CRO)		HUANG Sheng-Sheng (TPE)		MT	Main Draw		1 - 3	7:11 11:9 8:11 9:11	HUANG Sheng-Sheng	
+2014	World Team Table Tennis Championships Tokyo 2014	KOLAREK Tomislav (CRO)		CHUANG Chih-Yuan (TPE)		MT	Main Draw		2 - 3	9:11 7:11 16:14 11:9 6:11	CHUANG Chih-Yuan	
+2014	World Team Table Tennis Championships Tokyo 2014	GACINA Andrej (CRO)		CHEN Chien-An (TPE)		MT	Main Draw		3 - 2	11:6 6:11 9:11 13:11 11:7	GACINA Andrej	
+2014	World Team Table Tennis Championships Tokyo 2014	GARDOS Robert (AUT)		PAPAGEORGIOU Konstantinos (GRE)		MT	Main Draw		3 - 0	11:8 11:2 11:6	GARDOS Robert	
+2014	World Team Table Tennis Championships Tokyo 2014	FEGERL Stefan (AUT)		RINIOTIS Anastasios (GRE)		MT	Main Draw		3 - 0	11:4 11:6 11:5	FEGERL Stefan	
+2014	World Team Table Tennis Championships Tokyo 2014	HABESOHN Daniel (AUT)		PAPAGEORGIOU Konstantinos (GRE)		MT	Main Draw		1 - 3	11:13 13:15 11:5 6:11	PAPAGEORGIOU Konstantinos	
+2014	World Team Table Tennis Championships Tokyo 2014	GARDOS Robert (AUT)		KREANGA Kalinikos (GRE)		MT	Main Draw		3 - 1	4:11 11:3 11:5 11:6	GARDOS Robert
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 14 Total: 1398
+
+Start
+Prev
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Next
+End
+2014	World Team Table Tennis Championships Tokyo 2014	BJARNADOTTIR Kolfinna (ISL)		RADITLOKO Oabona (BOT)		WT	Main Draw		3 - 1	9:11 11:7 11:4 11:6	BJARNADOTTIR Kolfinna	
+2014	World Team Table Tennis Championships Tokyo 2014	TOMASDOTTIR Sigrun Ebba (ISL)		BUTALE Boitshwarelo (BOT)		WT	Main Draw		3 - 1	5:11 11:5 11:8 11:9	TOMASDOTTIR Sigrun Ebba	
+2014	World Team Table Tennis Championships Tokyo 2014	LARUSDOTTIR Aldis Run (ISL)		REBATENNE Tshepiso (BOT)		WT	Main Draw		3 - 2	11:6 11:5 5:11 9:11 11:4	LARUSDOTTIR Aldis Run	
+2014	World Team Table Tennis Championships Tokyo 2014	BOFFA Chiara (SMR)		SHAREEF Aminath (MDV)		WT	Main Draw		3 - 0	11:9 11:2 11:9	BOFFA Chiara	
+2014	World Team Table Tennis Championships Tokyo 2014	GIARDI Letizia (SMR)		MOHAMED Mueena (MDV)		WT	Main Draw		1 - 3	9:11 11:3 6:11 11:13	MOHAMED Mueena	
+2014	World Team Table Tennis Championships Tokyo 2014	MORETTI Gloria (SMR)		NISA Aishath (MDV)		WT	Main Draw		1 - 3	7:11 11:8 4:11 9:11	NISA Aishath	
+2014	World Team Table Tennis Championships Tokyo 2014	BOFFA Chiara (SMR)		MOHAMED Mueena (MDV)		WT	Main Draw		3 - 2	8:11 12:10 6:11 12:10 11:5	BOFFA Chiara	
+2014	World Team Table Tennis Championships Tokyo 2014	GIARDI Letizia (SMR)		SHAREEF Aminath (MDV)		WT	Main Draw		3 - 2	11:3 9:11 11:3 10:12 11:9	GIARDI Letizia	
+2014	World Team Table Tennis Championships Tokyo 2014	REID Angela (BAR)		CARNEY Kaydian (JAM)		WT	Main Draw		3 - 0	11:4 11:7 11:5	REID Angela	
+2014	World Team Table Tennis Championships Tokyo 2014	HARVEY Krystle (BAR)		FOSTER Yvonne (JAM)		WT	Main Draw		3 - 1	11:8 5:11 11:4 11:8	HARVEY Krystle	
+2014	World Team Table Tennis Championships Tokyo 2014	FELIX Sherrice (BAR)		CLARE Shenique (JAM)		WT	Main Draw		3 - 1	9:11 11:7 11:2 11:5	FELIX Sherrice	
+2014	World Team Table Tennis Championships Tokyo 2014	ROJAS Sol (CRC)		MORETTI Gloria (SMR)		WT	Main Draw		0 - 3		MORETTI Gloria	
+2014	World Team Table Tennis Championships Tokyo 2014	ROJAS Stefanny (CRC)		GIARDI Letizia (SMR)		WT	Main Draw		0 - 3	2:11 3:11 5:11	GIARDI Letizia	
+2014	World Team Table Tennis Championships Tokyo 2014	GRANADOS Nicole (CRC)		BOFFA Chiara (SMR)		WT	Main Draw		0 - 3	6:11 5:11 8:11	BOFFA Chiara	
+2014	World Team Table Tennis Championships Tokyo 2014	MOHAMED Mueena (MDV)		AKTER Rahima (BAN)		WT	Main Draw		3 - 0	11:7 11:9 11:3	MOHAMED Mueena	
+2014	World Team Table Tennis Championships Tokyo 2014	NISA Aishath (MDV)		ZOHORA Fatema (BAN)		WT	Main Draw		3 - 0	11:9 11:8 11:9	NISA Aishath	
+2014	World Team Table Tennis Championships Tokyo 2014	SHAREEF Aminath (MDV)		AKTER Rahima (BAN)		WT	Main Draw		0 - 3	5:11 3:11 9:11	AKTER Rahima	
+2014	World Team Table Tennis Championships Tokyo 2014	MOHAMED Mueena (MDV)		MINARA Sarmin (BAN)		WT	Main Draw		3 - 1	11:6 11:5 9:11 11:8	MOHAMED Mueena	
+2014	World Team Table Tennis Championships Tokyo 2014	MORGAN Dawn (GGY)		HARVEY Krystle (BAR)		WT	Main Draw		0 - 3	12:14 9:11 5:11	HARVEY Krystle	
+2014	World Team Table Tennis Championships Tokyo 2014	PRIEST Elizabeth (GGY)		REID Angela (BAR)		WT	Main Draw		0 - 3	9:11 5:11 4:11	REID Angela	
+2014	World Team Table Tennis Championships Tokyo 2014	LE TISSIER Chloe (GGY)		HARVEY Krystle (BAR)		WT	Main Draw		0 - 3	11:13 5:11 6:11	HARVEY Krystle	
+2014	World Team Table Tennis Championships Tokyo 2014	MORGAN Dawn (GGY)		FELIX Sherrice (BAR)		WT	Main Draw		3 - 1	9:11 11:4 11:4 11:5	MORGAN Dawn	
+2014	World Team Table Tennis Championships Tokyo 2014	FOSTER Yvonne (JAM)		RATSIMBAZAFY Tiana (MAD)		WT	Main Draw		3 - 2	11:7 11:7 1:11 10:12 11:8	FOSTER Yvonne	
+2014	World Team Table Tennis Championships Tokyo 2014	CARNEY Kaydian (JAM)		RASAMIMALALA Lantosoa Joelle (MAD)		WT	Main Draw		3 - 0	11:8 11:8 11:9	CARNEY Kaydian	
+2014	World Team Table Tennis Championships Tokyo 2014	CLARE Shenique (JAM)		RATSIMBAZAFY Tiana (MAD)		WT	Main Draw		3 - 0	13:11 13:11 13:11	CLARE Shenique	
+2014	World Team Table Tennis Championships Tokyo 2014	FOSTER Yvonne (JAM)		RAJAONAH Rondro (MAD)		WT	Main Draw		0 - 3	11:13 5:11 10:12	RAJAONAH Rondro	
+2014	World Team Table Tennis Championships Tokyo 2014	RADITLOKO Oabona (BOT)		PRIEST Elizabeth (GGY)		WT	Main Draw		1 - 3	11:5 13:15 10:12 6:11	PRIEST Elizabeth	
+2014	World Team Table Tennis Championships Tokyo 2014	BUTALE Boitshwarelo (BOT)		MORGAN Dawn (GGY)		WT	Main Draw		0 - 3	3:11 1:11 3:11	MORGAN Dawn	
+2014	World Team Table Tennis Championships Tokyo 2014	REBATENNE Tshepiso (BOT)		LE TISSIER Chloe (GGY)		WT	Main Draw		0 - 3	3:11 6:11 1:11	LE TISSIER Chloe	
+2014	World Team Table Tennis Championships Tokyo 2014	RATSIMBAZAFY Tiana (MAD)		BJARNADOTTIR Kolfinna (ISL)		WT	Main Draw		3 - 0	12:10 11:6 11:3	RATSIMBAZAFY Tiana	
+2014	World Team Table Tennis Championships Tokyo 2014	RAJAONAH Rondro (MAD)		TOMASDOTTIR Sigrun Ebba (ISL)		WT	Main Draw		3 - 2	11:4 6:11 11:9 8:11 11:7	RAJAONAH Rondro	
+2014	World Team Table Tennis Championships Tokyo 2014	RASAMIMALALA Lantosoa Joelle (MAD)		BJARNADOTTIR Kolfinna (ISL)		WT	Main Draw		2 - 3	6:11 8:11 11:9 11:8 8:11	BJARNADOTTIR Kolfinna	
+2014	World Team Table Tennis Championships Tokyo 2014	RATSIMBAZAFY Tiana (MAD)		LARUSDOTTIR Aldis Run (ISL)		WT	Main Draw		3 - 0	11:8 11:2 14:12	RATSIMBAZAFY Tiana	
+2014	World Team Table Tennis Championships Tokyo 2014	KILINDO Christy (SEY)		KASSAM Raghad (SYR)		WT	Main Draw		2 - 3	9:11 11:7 11:9 6:11 9:11	KASSAM Raghad	
+2014	World Team Table Tennis Championships Tokyo 2014	BENSTRONG Anniesa (SEY)		EBRAHEM Worod (SYR)		WT	Main Draw		3 - 1	4:11 11:6 11:5 11:4	BENSTRONG Anniesa	
+2014	World Team Table Tennis Championships Tokyo 2014	SINON Laura (SEY)		ASAAD Zena (SYR)		WT	Main Draw		1 - 3	11:4 8:11 9:11 1:11	ASAAD Zena	
+2014	World Team Table Tennis Championships Tokyo 2014	KILINDO Christy (SEY)		EBRAHEM Worod (SYR)		WT	Main Draw		0 - 3	8:11 9:11 8:11	EBRAHEM Worod	
+2014	World Team Table Tennis Championships Tokyo 2014	BENSTRONG Anniesa (SEY)		KASSAM Raghad (SYR)		WT	Main Draw		3 - 1	7:11 11:7 11:7 11:9	BENSTRONG Anniesa	
+2014	World Team Table Tennis Championships Tokyo 2014	SHRESTHA Nabita (NEP)		BALLYYEVA Enejan (TKM)		WT	Main Draw		0 - 3	5:11 6:11 10:12	BALLYYEVA Enejan	
+2014	World Team Table Tennis Championships Tokyo 2014	PRAJAPATI Rita (NEP)		MAMEDOVA Nasiba (TKM)		WT	Main Draw		1 - 3	10:12 11:6 8:11 9:11	MAMEDOVA Nasiba	
+2014	World Team Table Tennis Championships Tokyo 2014	MAHARJAN Elina (NEP)		BALLYYEVA Enejan (TKM)		WT	Main Draw		2 - 3	6:11 11:8 6:11 12:10 5:11	BALLYYEVA Enejan	
+2014	World Team Table Tennis Championships Tokyo 2014	SHRESTHA Nabita (NEP)		MEHTIYEVA Mahriban (TKM)		WT	Main Draw		3 - 0	11:6 11:8 11:5	SHRESTHA Nabita	
+2014	World Team Table Tennis Championships Tokyo 2014	SY Jamaica Dianne (PHI)		MANICHANH Dalavone (LAO)		WT	Main Draw		3 - 1	12:14 11:6 11:2 11:8	SY Jamaica Dianne	
+2014	World Team Table Tennis Championships Tokyo 2014	BALATBAT Sendrina (PHI)		DOUANGPANYA Seangdavieng (LAO)		WT	Main Draw		3 - 2	11:13 11:5 5:11 11:8 11:8	BALATBAT Sendrina	
+2014	World Team Table Tennis Championships Tokyo 2014	LARIBA Ian (PHI)		SOUTHAMMAVONG Thiphakone (LAO)		WT	Main Draw		3 - 1	11:5 9:11 11:2 11:5	LARIBA Ian	
+2014	World Team Table Tennis Championships Tokyo 2014	JANKOVIC Sonja (MNE)		SY Jamaica Dianne (PHI)		WT	Main Draw		2 - 3	11:5 5:11 11:9 9:11 5:11	SY Jamaica Dianne	
+2014	World Team Table Tennis Championships Tokyo 2014	ROGIC Suncica (MNE)		LARIBA Ian (PHI)		WT	Main Draw		0 - 3	8:11 6:11 5:11	LARIBA Ian	
+2014	World Team Table Tennis Championships Tokyo 2014	MILACIC Neda (MNE)		BALATBAT Sendrina (PHI)		WT	Main Draw		2 - 3	8:11 7:11 11:6 11:8 14:16	BALATBAT Sendrina	
+2014	World Team Table Tennis Championships Tokyo 2014	KASHIF Rahila (PAK)		SOUTHAMMAVONG Thiphakone (LAO)		WT	Main Draw		0 - 3	8:11 8:11 9:11	SOUTHAMMAVONG Thiphakone	
+2014	World Team Table Tennis Championships Tokyo 2014	BILAL Shabnam (PAK)		DOUANGPANYA Seangdavieng (LAO)		WT	Main Draw		1 - 3	7:11 11:5 5:11 8:11	DOUANGPANYA Seangdavieng	
+2014	World Team Table Tennis Championships Tokyo 2014	ANSARI Aisha (PAK)		MANICHANH Dalavone (LAO)		WT	Main Draw		3 - 0	11:3 12:10 11:6	ANSARI Aisha	
+2014	World Team Table Tennis Championships Tokyo 2014	KASHIF Rahila (PAK)		DOUANGPANYA Seangdavieng (LAO)		WT	Main Draw		1 - 3	7:11 11:8 8:11 7:11	DOUANGPANYA Seangdavieng	
+2014	World Team Table Tennis Championships Tokyo 2014	BILAL Shabnam (PAK)		SOUTHAMMAVONG Thiphakone (LAO)		WT	Main Draw		3 - 0	11:7 11:7 11:6	BILAL Shabnam	
+2014	World Team Table Tennis Championships Tokyo 2014	ROGIC Suncica (MNE)		NIELSEN Henrietta (FRO)		WT	Main Draw		3 - 1	4:11 11:4 13:11 11:6	ROGIC Suncica	
+2014	World Team Table Tennis Championships Tokyo 2014	JANKOVIC Sonja (MNE)		JENSEN Durita (FRO)		WT	Main Draw		3 - 0	11:9 11:1 11:3	JANKOVIC Sonja	
+2014	World Team Table Tennis Championships Tokyo 2014	MILACIC Neda (MNE)		NIELSEN Henrietta (FRO)		WT	Main Draw		2 - 3	11:7 7:11 11:5 8:11 4:11	NIELSEN Henrietta	
+2014	World Team Table Tennis Championships Tokyo 2014	ROGIC Suncica (MNE)		MIKKJALSDOTTIR Anna (FRO)		WT	Main Draw		3 - 0	11:6 11:7 11:4	ROGIC Suncica	
+2014	World Team Table Tennis Championships Tokyo 2014	SY Jamaica Dianne (PHI)		SASMAN Jade (RSA)		WT	Main Draw		3 - 1	11:3 11:13 11:7 11:4	SY Jamaica Dianne	
+2014	World Team Table Tennis Championships Tokyo 2014	BALATBAT Sendrina (PHI)		MADLALA Khanyisile (RSA)		WT	Main Draw		3 - 0	11:8 11:4 11:7	BALATBAT Sendrina	
+2014	World Team Table Tennis Championships Tokyo 2014	LARIBA Ian (PHI)		LINGEVELDT Caitlin (RSA)		WT	Main Draw		3 - 0	11:3 11:6 11:5	LARIBA Ian	
+2014	World Team Table Tennis Championships Tokyo 2014	BILAL Shabnam (PAK)		ALYASSI Kaltham (BRN)		WT	Main Draw		3 - 2	13:11 11:5 8:11 11:13 11:3	BILAL Shabnam	
+2014	World Team Table Tennis Championships Tokyo 2014	ANSARI Aisha (PAK)		ALHAIKI Fatema (BRN)		WT	Main Draw		3 - 0	11:9 11:5 11:4	ANSARI Aisha	
+2014	World Team Table Tennis Championships Tokyo 2014	KASHIF Rahila (PAK)		ALYASSI Kaltham (BRN)		WT	Main Draw		3 - 0	11:9 11:6 11:5	KASHIF Rahila	
+2014	World Team Table Tennis Championships Tokyo 2014	BILAL Shabnam (PAK)		ALQASIMI Maryam (BRN)		WT	Main Draw		2 - 3	10:12 11:8 4:11 11:9 6:11	ALQASIMI Maryam	
+2014	World Team Table Tennis Championships Tokyo 2014	AL ABRI Noora (QAT)		MANICHANH Dalavone (LAO)		WT	Main Draw		1 - 3	9:11 5:11 14:12 5:11	MANICHANH Dalavone	
+2014	World Team Table Tennis Championships Tokyo 2014	FARAMARZI Maha (QAT)		DOUANGPANYA Seangdavieng (LAO)		WT	Main Draw		0 - 3	4:11 4:11 5:11	DOUANGPANYA Seangdavieng	
+2014	World Team Table Tennis Championships Tokyo 2014	MOHAMED Aia (QAT)		SOUTHAMMAVONG Thiphakone (LAO)		WT	Main Draw		2 - 3	5:11 11:4 7:11 17:15 10:12	SOUTHAMMAVONG Thiphakone	
+2014	World Team Table Tennis Championships Tokyo 2014	EBRAHEM Worod (SYR)		NIELSEN Henrietta (FRO)		WT	Main Draw		0 - 3	9:11 5:11 8:11	NIELSEN Henrietta	
+2014	World Team Table Tennis Championships Tokyo 2014	ASAAD Zena (SYR)		JENSEN Durita (FRO)		WT	Main Draw		2 - 3	8:11 11:9 11:7 3:11 10:12	JENSEN Durita	
+2014	World Team Table Tennis Championships Tokyo 2014	KASSAM Raghad (SYR)		NIELSEN Henrietta (FRO)		WT	Main Draw		0 - 3	9:11 7:11 6:11	NIELSEN Henrietta	
+2014	World Team Table Tennis Championships Tokyo 2014	EBRAHEM Worod (SYR)		MIKKJALSDOTTIR Anna (FRO)		WT	Main Draw		3 - 2	11:8 11:6 8:11 7:11 11:9	EBRAHEM Worod	
+2014	World Team Table Tennis Championships Tokyo 2014	BENSTRONG Anniesa (SEY)		MADLALA Khanyisile (RSA)		WT	Main Draw		0 - 3	8:11 9:11 9:11	MADLALA Khanyisile	
+2014	World Team Table Tennis Championships Tokyo 2014	SINON Laura (SEY)		LINGEVELDT Caitlin (RSA)		WT	Main Draw		0 - 3	3:11 6:11 4:11	LINGEVELDT Caitlin	
+2014	World Team Table Tennis Championships Tokyo 2014	KILINDO Christy (SEY)		MADLALA Khanyisile (RSA)		WT	Main Draw		0 - 3	7:11 3:11 6:11	MADLALA Khanyisile	
+2014	World Team Table Tennis Championships Tokyo 2014	BENSTRONG Anniesa (SEY)		SASMAN Jade (RSA)		WT	Main Draw		3 - 0	11:5 11:9 11:9	BENSTRONG Anniesa	
+2014	World Team Table Tennis Championships Tokyo 2014	PRAJAPATI Rita (NEP)		ALHAIKI Fatema (BRN)		WT	Main Draw		1 - 3	11:1 5:11 6:11 9:11	ALHAIKI Fatema	
+2014	World Team Table Tennis Championships Tokyo 2014	MAHARJAN Elina (NEP)		ALYASSI Kaltham (BRN)		WT	Main Draw		1 - 3	6:11 11:8 8:11 9:11	ALYASSI Kaltham	
+2014	World Team Table Tennis Championships Tokyo 2014	SHRESTHA Nabita (NEP)		ALQASIMI Maryam (BRN)		WT	Main Draw		2 - 3	11:9 6:11 11:8 8:11 12:14	ALQASIMI Maryam	
+2014	World Team Table Tennis Championships Tokyo 2014	BALLYYEVA Enejan (TKM)		MOHAMED Aia (QAT)		WT	Main Draw		0 - 3	6:11 4:11 9:11	MOHAMED Aia	
+2014	World Team Table Tennis Championships Tokyo 2014	MEHTIYEVA Mahriban (TKM)		FARAMARZI Maha (QAT)		WT	Main Draw		3 - 1	5:11 11:7 11:7 12:10	MEHTIYEVA Mahriban	
+2014	World Team Table Tennis Championships Tokyo 2014	MAMEDOVA Nasiba (TKM)		AL ABRI Noora (QAT)		WT	Main Draw		2 - 3	11:13 11:9 11:6 11:13 9:11	AL ABRI Noora	
+2014	World Team Table Tennis Championships Tokyo 2014	BALLYYEVA Enejan (TKM)		FARAMARZI Maha (QAT)		WT	Main Draw		3 - 0	11:6 11:9 11:3	BALLYYEVA Enejan	
+2014	World Team Table Tennis Championships Tokyo 2014	MEHTIYEVA Mahriban (TKM)		MOHAMED Aia (QAT)		WT	Main Draw		2 - 3	6:11 11:5 13:11 7:11 10:12	MOHAMED Aia	
+2014	World Team Table Tennis Championships Tokyo 2014	HALITI Ilirjana (KOS)		SEIDALIEVA Burulai (KGZ)		WT	Main Draw		3 - 0	11:4 11:5 12:10	HALITI Ilirjana	
+2014	World Team Table Tennis Championships Tokyo 2014	MALOKU Vlona (KOS)		MODUBASHOVA Elina (KGZ)		WT	Main Draw		3 - 0	11:2 11:8 11:4	MALOKU Vlona	
+2014	World Team Table Tennis Championships Tokyo 2014	JANJEVA Amare (KOS)		MASHANLOEVA Kamila (KGZ)		WT	Main Draw		3 - 0	11:2 11:4 11:7	JANJEVA Amare	
+2014	World Team Table Tennis Championships Tokyo 2014	GAUTHIER Cathy (NCL)		IMANOVA Maryam (AZE)		WT	Main Draw		0 - 3	8:11 5:11 8:11	IMANOVA Maryam	
+2014	World Team Table Tennis Championships Tokyo 2014	BOUTEILLE Ornella (NCL)		MAMMADOVA Dinara (AZE)		WT	Main Draw		3 - 2	5:11 11:7 11:7 5:11 11:4	BOUTEILLE Ornella	
+2014	World Team Table Tennis Championships Tokyo 2014	LAI VAN Lea (NCL)		IMANOVA Maryam (AZE)		WT	Main Draw		1 - 3	3:11 11:8 2:11 4:11	IMANOVA Maryam	
+2014	World Team Table Tennis Championships Tokyo 2014	GAUTHIER Cathy (NCL)		GULIYEVA Rufat (AZE)		WT	Main Draw		1 - 3	11:9 6:11 4:11 13:15	GULIYEVA Rufat	
+2014	World Team Table Tennis Championships Tokyo 2014	CHEONG Cheng I (MAC)		WANG De Ying (ESA)		WT	Main Draw		3 - 0	11:6 11:9 11:8	CHEONG Cheng I	
+2014	World Team Table Tennis Championships Tokyo 2014	U Sio Mei (MAC)		PEREZ Karla (ESA)		WT	Main Draw		3 - 1	11:8 12:10 11:13 12:10	U Sio Mei	
+2014	World Team Table Tennis Championships Tokyo 2014	MA Chao In (MAC)		WANG De Ying (ESA)		WT	Main Draw		2 - 3	11:8 9:11 11:7 6:11 7:11	WANG De Ying	
+2014	World Team Table Tennis Championships Tokyo 2014	CHEONG Cheng I (MAC)		ARIAS Emme (ESA)		WT	Main Draw		3 - 0	11:8 12:10 11:5	CHEONG Cheng I	
+2014	World Team Table Tennis Championships Tokyo 2014	DURAZNO Sandra (ECU)		ORTIZ Yasiris (DOM)		WT	Main Draw		3 - 0	11:9 11:8 11:5	DURAZNO Sandra	
+2014	World Team Table Tennis Championships Tokyo 2014	CAMINO Daniela (ECU)		BRITO Eva (DOM)		WT	Main Draw		3 - 1	11:8 11:4 8:11 11:9	CAMINO Daniela	
+2014	World Team Table Tennis Championships Tokyo 2014	SALAZAR Astrid (ECU)		VILA Lineth (DOM)		WT	Main Draw		2 - 3	11:8 8:11 9:11 13:11 7:11	VILA Lineth	
+2014	World Team Table Tennis Championships Tokyo 2014	DURAZNO Sandra (ECU)		BRITO Eva (DOM)		WT	Main Draw		0 - 3	6:11 7:11 7:11	BRITO Eva	
+2014	World Team Table Tennis Championships Tokyo 2014	CAMINO Daniela (ECU)		ORTIZ Yasiris (DOM)		WT	Main Draw		3 - 1	11:4 11:5 4:11 11:2	CAMINO Daniela	
+2014	World Team Table Tennis Championships Tokyo 2014	U Sio Mei (MAC)		MAJOROVA Viktorija (LAT)		WT	Main Draw		3 - 1	12:10 9:11 11:7 11:8	U Sio Mei
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 2 of 14 Total: 1398
+
+Start
+Prev
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Next
+End
+2014	World Team Table Tennis Championships Tokyo 2014	MA Chao In (MAC)		RUSINOVA Diana (LAT)		WT	Main Draw		3 - 0	11:6 11:8 11:7	MA Chao In	
+2014	World Team Table Tennis Championships Tokyo 2014	CHEONG Cheng I (MAC)		PELCA Antra (LAT)		WT	Main Draw		3 - 1	11:2 11:9 8:11 11:7	CHEONG Cheng I	
+2014	World Team Table Tennis Championships Tokyo 2014	WANG De Ying (ESA)		MABROUK Fatima (ALG)		WT	Main Draw		3 - 0	11:6 11:5 11:5	WANG De Ying	
+2014	World Team Table Tennis Championships Tokyo 2014	PEREZ Karla (ESA)		BOUGADOUM Chahinez (ALG)		WT	Main Draw		3 - 2	10:12 5:11 11:9 11:5 11:7	PEREZ Karla	
+2014	World Team Table Tennis Championships Tokyo 2014	ARIAS Emme (ESA)		MABROUK Fatima (ALG)		WT	Main Draw		1 - 3	9:11 6:11 11:4 7:11	MABROUK Fatima	
+2014	World Team Table Tennis Championships Tokyo 2014	WANG De Ying (ESA)		BOUCLARAS Fatiha (ALG)		WT	Main Draw		3 - 1	11:6 11:3 6:11 11:5	WANG De Ying	
+2014	World Team Table Tennis Championships Tokyo 2014	CAMINO Daniela (ECU)		KIRICHENKO Anna (FIN)		WT	Main Draw		3 - 1	11:9 8:11 11:9 15:13	CAMINO Daniela	
+2014	World Team Table Tennis Championships Tokyo 2014	ALMENDARIZ Tania (ECU)		OKSANEN Jannika (FIN)		WT	Main Draw		3 - 1	8:11 11:5 11:9 11:7	ALMENDARIZ Tania	
+2014	World Team Table Tennis Championships Tokyo 2014	DURAZNO Sandra (ECU)		KIRICHENKO Anna (FIN)		WT	Main Draw		1 - 3	10:12 6:11 11:7 4:11	KIRICHENKO Anna	
+2014	World Team Table Tennis Championships Tokyo 2014	CAMINO Daniela (ECU)		ERIKSSON Pinja (FIN)		WT	Main Draw		3 - 2	8:11 11:5 3:11 11:4 12:10	CAMINO Daniela	
+2014	World Team Table Tennis Championships Tokyo 2014	FLAWS Lynda (SCO)		BRITO Eva (DOM)		WT	Main Draw		1 - 3	11:4 4:11 5:11 7:11	BRITO Eva	
+2014	World Team Table Tennis Championships Tokyo 2014	WHITAKER Corinna (SCO)		VILA Lineth (DOM)		WT	Main Draw		3 - 2	8:11 11:7 12:10 9:11 11:8	WHITAKER Corinna	
+2014	World Team Table Tennis Championships Tokyo 2014	EDWARDS Gillian (SCO)		BRITO Eva (DOM)		WT	Main Draw		0 - 3	12:14 9:11 6:11	BRITO Eva	
+2014	World Team Table Tennis Championships Tokyo 2014	FLAWS Lynda (SCO)		ORTIZ Yasiris (DOM)		WT	Main Draw		2 - 3	9:11 9:11 11:4 11:7 6:11	ORTIZ Yasiris	
+2014	World Team Table Tennis Championships Tokyo 2014	U Sio Mei (MAC)		SEIDALIEVA Burulai (KGZ)		WT	Main Draw		3 - 0	11:2 11:5 13:11	U Sio Mei	
+2014	World Team Table Tennis Championships Tokyo 2014	MA Chao In (MAC)		MODUBASHOVA Elina (KGZ)		WT	Main Draw		3 - 0	11:2 11:5 11:6	MA Chao In	
+2014	World Team Table Tennis Championships Tokyo 2014	CHEONG Cheng I (MAC)		MASHANLOEVA Kamila (KGZ)		WT	Main Draw		3 - 0	11:1 11:6 11:4	CHEONG Cheng I	
+2014	World Team Table Tennis Championships Tokyo 2014	BOUGADOUM Chahinez (ALG)		JANJEVA Amare (KOS)		WT	Main Draw		3 - 2	11:6 2:11 4:11 11:8 11:7	BOUGADOUM Chahinez	
+2014	World Team Table Tennis Championships Tokyo 2014	BOUCLARAS Fatiha (ALG)		MALOKU Vlona (KOS)		WT	Main Draw		3 - 1	10:12 11:6 11:8 13:11	BOUCLARAS Fatiha	
+2014	World Team Table Tennis Championships Tokyo 2014	MABROUK Fatima (ALG)		HALITI Ilirjana (KOS)		WT	Main Draw		3 - 1	6:11 12:10 11:4 12:10	MABROUK Fatima	
+2014	World Team Table Tennis Championships Tokyo 2014	SALAZAR Astrid (ECU)		LAI VAN Lea (NCL)		WT	Main Draw		3 - 1	6:11 11:9 11:6 11:8	SALAZAR Astrid	
+2014	World Team Table Tennis Championships Tokyo 2014	DURAZNO Sandra (ECU)		BOUTEILLE Ornella (NCL)		WT	Main Draw		3 - 0	11:8 11:8 11:6	DURAZNO Sandra	
+2014	World Team Table Tennis Championships Tokyo 2014	CAMINO Daniela (ECU)		GAUTHIER Cathy (NCL)		WT	Main Draw		3 - 0	11:3 12:10 11:7	CAMINO Daniela	
+2014	World Team Table Tennis Championships Tokyo 2014	FLAWS Lynda (SCO)		GULIYEVA Rufat (AZE)		WT	Main Draw		3 - 0	11:4 11:6 11:4	FLAWS Lynda	
+2014	World Team Table Tennis Championships Tokyo 2014	WHITAKER Corinna (SCO)		MAMMADOVA Dinara (AZE)		WT	Main Draw		3 - 0	11:3 11:8 12:10	WHITAKER Corinna	
+2014	World Team Table Tennis Championships Tokyo 2014	EDWARDS Gillian (SCO)		GULIYEVA Rufat (AZE)		WT	Main Draw		3 - 1	11:3 11:5 8:11 11:7	EDWARDS Gillian	
+2014	World Team Table Tennis Championships Tokyo 2014	FLAWS Lynda (SCO)		IMANOVA Maryam (AZE)		WT	Main Draw		1 - 3	11:8 3:11 8:11 11:13	IMANOVA Maryam	
+2014	World Team Table Tennis Championships Tokyo 2014	BATBAYAR Doljinzuu (MGL)		FERNANDO Chamathsara (SRI)		WT	Main Draw		3 - 0	11:4 11:5 11:9	BATBAYAR Doljinzuu	
+2014	World Team Table Tennis Championships Tokyo 2014	MERGEN Delgermaa (MGL)		MADURANGI Ishara (SRI)		WT	Main Draw		3 - 0	11:9 11:7 11:8	MERGEN Delgermaa	
+2014	World Team Table Tennis Championships Tokyo 2014	BATSAIKHAN Batkhishig (MGL)		KAPUGEEKIYANA Hansani (SRI)		WT	Main Draw		3 - 1	9:11 11:7 11:6 11:6	BATSAIKHAN Batkhishig	
+2014	World Team Table Tennis Championships Tokyo 2014	ENRIQUEZ Mabelyn (GUA)		PETROVA Valeria (EST)		WT	Main Draw		1 - 3	11:4 12:14 9:11 9:11	PETROVA Valeria	
+2014	World Team Table Tennis Championships Tokyo 2014	ESTRADA Andrea (GUA)		KETSKO Olesja (EST)		WT	Main Draw		3 - 0	11:6 13:11 11:1	ESTRADA Andrea	
+2014	World Team Table Tennis Championships Tokyo 2014	MONTUFAR Andrea (GUA)		LATT Katlin (EST)		WT	Main Draw		1 - 3	11:9 5:11 4:11 3:11	LATT Katlin	
+2014	World Team Table Tennis Championships Tokyo 2014	ENRIQUEZ Mabelyn (GUA)		KETSKO Olesja (EST)		WT	Main Draw		0 - 3	8:11 9:11 3:11	KETSKO Olesja	
+2014	World Team Table Tennis Championships Tokyo 2014	ESTRADA Andrea (GUA)		PETROVA Valeria (EST)		WT	Main Draw		3 - 2	11:8 9:11 11:9 9:11 11:9	ESTRADA Andrea	
+2014	World Team Table Tennis Championships Tokyo 2014	LI Chunli (NZL)		SILVA Yadira (MEX)		WT	Main Draw		3 - 2	11:6 13:15 12:10 8:11 11:5	LI Chunli	
+2014	World Team Table Tennis Championships Tokyo 2014	YANG Annie (NZL)		SERRANO Monica (MEX)		WT	Main Draw		3 - 0	11:5 11:4 11:4	YANG Annie	
+2014	World Team Table Tennis Championships Tokyo 2014	LI Karen (NZL)		SILVA Yadira (MEX)		WT	Main Draw		0 - 3	4:11 6:11 8:11	SILVA Yadira	
+2014	World Team Table Tennis Championships Tokyo 2014	LI Chunli (NZL)		MADRID Mercedes (MEX)		WT	Main Draw		3 - 0	11:4 11:7 11:5	LI Chunli	
+2014	World Team Table Tennis Championships Tokyo 2014	LI Chunli (NZL)		BLIZNET Olga (MDA)		WT	Main Draw		3 - 0	13:11 11:8 11:6	LI Chunli	
+2014	World Team Table Tennis Championships Tokyo 2014	YANG Annie (NZL)		SMIGANOVSCAIA Ecaterina (MDA)		WT	Main Draw		3 - 1	11:6 8:11 11:3 11:6	YANG Annie	
+2014	World Team Table Tennis Championships Tokyo 2014	LI Karen (NZL)		BLIZNET Olga (MDA)		WT	Main Draw		1 - 3	5:11 11:8 8:11 8:11	BLIZNET Olga	
+2014	World Team Table Tennis Championships Tokyo 2014	LI Chunli (NZL)		SANDUL Alina (MDA)		WT	Main Draw		3 - 0	11:9 11:5 11:5	LI Chunli	
+2014	World Team Table Tennis Championships Tokyo 2014	SILVA Yadira (MEX)		SLADKOVA Nataliya (KAZ)		WT	Main Draw		3 - 1	11:3 8:11 11:1 11:6	SILVA Yadira	
+2014	World Team Table Tennis Championships Tokyo 2014	SERRANO Monica (MEX)		GATS Yuliya (KAZ)		WT	Main Draw		3 - 2	4:11 11:6 11:7 6:11 14:12	SERRANO Monica	
+2014	World Team Table Tennis Championships Tokyo 2014	MADRID Mercedes (MEX)		SLADKOVA Nataliya (KAZ)		WT	Main Draw		0 - 3	3:11 5:11 8:11	SLADKOVA Nataliya	
+2014	World Team Table Tennis Championships Tokyo 2014	SILVA Yadira (MEX)		PILIPENKO Yelena (KAZ)		WT	Main Draw		3 - 2	14:12 5:11 11:9 7:11 11:8	SILVA Yadira	
+2014	World Team Table Tennis Championships Tokyo 2014	HARIMA Maia (ARG)		SMIGANOVSCAIA Ecaterina (MDA)		WT	Main Draw		1 - 3	11:9 2:11 9:11 8:11	SMIGANOVSCAIA Ecaterina	
+2014	World Team Table Tennis Championships Tokyo 2014	IWASA Agustina (ARG)		BLIZNET Olga (MDA)		WT	Main Draw		0 - 3	9:11 5:11 10:12	BLIZNET Olga	
+2014	World Team Table Tennis Championships Tokyo 2014	CODINA Ana (ARG)		SANDUL Alina (MDA)		WT	Main Draw		1 - 3	11:7 4:11 9:11 10:12	SANDUL Alina	
+2014	World Team Table Tennis Championships Tokyo 2014	LI Chunli (NZL)		FITRIA Mira (INA)		WT	Main Draw		3 - 0	11:9 11:4 11:8	LI Chunli	
+2014	World Team Table Tennis Championships Tokyo 2014	YANG Annie (NZL)		PALIT Stella (INA)		WT	Main Draw		0 - 3	10:12 9:11 6:11	PALIT Stella	
+2014	World Team Table Tennis Championships Tokyo 2014	LI Karen (NZL)		FITRIA Mira (INA)		WT	Main Draw		3 - 1	5:11 11:8 11:5 12:10	LI Karen	
+2014	World Team Table Tennis Championships Tokyo 2014	LI Chunli (NZL)		SINTYA Rina (INA)		WT	Main Draw		3 - 1	13:11 9:11 11:5 11:3	LI Chunli	
+2014	World Team Table Tennis Championships Tokyo 2014	SILVA Yadira (MEX)		SHAHSAVARI Neda (IRI)		WT	Main Draw		3 - 1	11:6 11:7 6:11 11:5	SILVA Yadira	
+2014	World Team Table Tennis Championships Tokyo 2014	SERRANO Monica (MEX)		SAMET Maryam (IRI)		WT	Main Draw		3 - 2	8:11 15:13 11:6 7:11 11:6	SERRANO Monica	
+2014	World Team Table Tennis Championships Tokyo 2014	MADRID Mercedes (MEX)		SHAHSAVARI Neda (IRI)		WT	Main Draw		2 - 3	11:8 8:11 11:8 5:11 5:11	SHAHSAVARI Neda	
+2014	World Team Table Tennis Championships Tokyo 2014	SILVA Yadira (MEX)		OMRANI Mahjobeh (IRI)		WT	Main Draw		3 - 0	11:3 11:8 11:5	SILVA Yadira	
+2014	World Team Table Tennis Championships Tokyo 2014	MAFUTA-IVOSO Jolie (CGO)		SLADKOVA Nataliya (KAZ)		WT	Main Draw		0 - 3	5:11 3:11 1:11	SLADKOVA Nataliya	
+2014	World Team Table Tennis Championships Tokyo 2014	HAN Xing (CGO)		PILIPENKO Yelena (KAZ)		WT	Main Draw		3 - 1	11:4 9:11 11:4 11:3	HAN Xing	
+2014	World Team Table Tennis Championships Tokyo 2014	NWACHUKWU Onyinyechi (CGO)		GATS Yuliya (KAZ)		WT	Main Draw		0 - 3	5:11 10:12 9:11	GATS Yuliya	
+2014	World Team Table Tennis Championships Tokyo 2014	MAFUTA-IVOSO Jolie (CGO)		PILIPENKO Yelena (KAZ)		WT	Main Draw		0 - 3	4:11 2:11 9:11	PILIPENKO Yelena	
+2014	World Team Table Tennis Championships Tokyo 2014	HAN Xing (CGO)		SLADKOVA Nataliya (KAZ)		WT	Main Draw		3 - 0	11:1 11:5 11:5	HAN Xing	
+2014	World Team Table Tennis Championships Tokyo 2014	MADURANGI Ishara (SRI)		CODINA Ana (ARG)		WT	Main Draw		0 - 3	11:13 5:11 6:11	CODINA Ana	
+2014	World Team Table Tennis Championships Tokyo 2014	FERNANDO Chamathsara (SRI)		IWASA Agustina (ARG)		WT	Main Draw		0 - 3	6:11 5:11 10:12	IWASA Agustina	
+2014	World Team Table Tennis Championships Tokyo 2014	WARUSAWITHANA Erandi (SRI)		CODINA Ana (ARG)		WT	Main Draw		0 - 3	4:11 6:11 5:11	CODINA Ana	
+2014	World Team Table Tennis Championships Tokyo 2014	MADURANGI Ishara (SRI)		HARIMA Maia (ARG)		WT	Main Draw		3 - 0	11:6 11:2 12:10	MADURANGI Ishara	
+2014	World Team Table Tennis Championships Tokyo 2014	FITRIA Mira (INA)		BATSAIKHAN Batkhishig (MGL)		WT	Main Draw		3 - 1	11:6 7:11 12:10 11:4	FITRIA Mira	
+2014	World Team Table Tennis Championships Tokyo 2014	PALIT Stella (INA)		BATBAYAR Doljinzuu (MGL)		WT	Main Draw		3 - 0	11:7 11:5 11:8	PALIT Stella	
+2014	World Team Table Tennis Championships Tokyo 2014	SINTYA Rina (INA)		BATSAIKHAN Batkhishig (MGL)		WT	Main Draw		1 - 3	7:11 6:11 11:5 6:11	BATSAIKHAN Batkhishig	
+2014	World Team Table Tennis Championships Tokyo 2014	FITRIA Mira (INA)		MERGEN Delgermaa (MGL)		WT	Main Draw		3 - 0	11:7 12:10 11:8	FITRIA Mira	
+2014	World Team Table Tennis Championships Tokyo 2014	SILVA Yadira (MEX)		ESTRADA Andrea (GUA)		WT	Main Draw		3 - 0	11:9 11:8 11:7	SILVA Yadira	
+2014	World Team Table Tennis Championships Tokyo 2014	SERRANO Monica (MEX)		LOPEZ Analdy (GUA)		WT	Main Draw		3 - 1	11:3 11:9 8:11 11:8	SERRANO Monica	
+2014	World Team Table Tennis Championships Tokyo 2014	MADRID Mercedes (MEX)		ESTRADA Andrea (GUA)		WT	Main Draw		2 - 3	15:13 7:11 13:11 8:11 5:11	ESTRADA Andrea	
+2014	World Team Table Tennis Championships Tokyo 2014	SILVA Yadira (MEX)		ENRIQUEZ Mabelyn (GUA)		WT	Main Draw		3 - 1	11:7 10:12 11:5 11:4	SILVA Yadira	
+2014	World Team Table Tennis Championships Tokyo 2014	HAN Xing (CGO)		LATT Katlin (EST)		WT	Main Draw		3 - 1	11:5 11:5 5:11 11:6	HAN Xing	
+2014	World Team Table Tennis Championships Tokyo 2014	NWACHUKWU Onyinyechi (CGO)		KETSKO Olesja (EST)		WT	Main Draw		3 - 0	11:4 11:6 11:6	NWACHUKWU Onyinyechi	
+2014	World Team Table Tennis Championships Tokyo 2014	MAFUTA-IVOSO Jolie (CGO)		LATT Katlin (EST)		WT	Main Draw		0 - 3	9:11 8:11 3:11	LATT Katlin	
+2014	World Team Table Tennis Championships Tokyo 2014	HAN Xing (CGO)		PETROVA Valeria (EST)		WT	Main Draw		3 - 0	11:2 11:4 11:6	HAN Xing	
+2014	World Team Table Tennis Championships Tokyo 2014	RIDOLFI Lisa (ITA)		ASCHWANDEN Rahel (SUI)		WT	Main Draw		0 - 3	9:11 7:11 8:11	ASCHWANDEN Rahel	
+2014	World Team Table Tennis Championships Tokyo 2014	VIVARELLI Debora (ITA)		MORET Rachel (SUI)		WT	Main Draw		1 - 3	8:11 11:6 5:11 8:11	MORET Rachel	
+2014	World Team Table Tennis Championships Tokyo 2014	COLANTONI Chiara (ITA)		REUST Celine (SUI)		WT	Main Draw		3 - 1	11:8 3:11 11:5 11:7	COLANTONI Chiara	
+2014	World Team Table Tennis Championships Tokyo 2014	RIDOLFI Lisa (ITA)		MORET Rachel (SUI)		WT	Main Draw		0 - 3	5:11 7:11 7:11	MORET Rachel	
+2014	World Team Table Tennis Championships Tokyo 2014	VIVARELLI Debora (ITA)		ASCHWANDEN Rahel (SUI)		WT	Main Draw		3 - 1	11:8 5:11 11:9 11:8	VIVARELLI Debora	
+2014	World Team Table Tennis Championships Tokyo 2014	SHOIFER Neli (ISR)		OSHONAIKE Olufunke (NGR)		WT	Main Draw		1 - 3	8:11 6:11 11:9 5:11	OSHONAIKE Olufunke	
+2014	World Team Table Tennis Championships Tokyo 2014	TROSMAN Nicole (ISR)		EDEM Offiong (NGR)		WT	Main Draw		3 - 1	6:11 11:9 12:10 11:7	TROSMAN Nicole	
+2014	World Team Table Tennis Championships Tokyo 2014	GELMAN Shelli (ISR)		AKPAN Cecilia (NGR)		WT	Main Draw		2 - 3	11:9 10:12 11:6 4:11 5:11	AKPAN Cecilia	
+2014	World Team Table Tennis Championships Tokyo 2014	SHOIFER Neli (ISR)		EDEM Offiong (NGR)		WT	Main Draw		1 - 3	11:7 6:11 7:11 9:11	EDEM Offiong	
+2014	World Team Table Tennis Championships Tokyo 2014	TROSMAN Nicole (ISR)		OSHONAIKE Olufunke (NGR)		WT	Main Draw		3 - 0	11:9 11:7 11:7	TROSMAN Nicole	
+2014	World Team Table Tennis Championships Tokyo 2014	RIOS Daniely (PUR)		REUST Celine (SUI)		WT	Main Draw		2 - 3	11:4 8:11 5:11 11:9 6:11	REUST Celine	
+2014	World Team Table Tennis Championships Tokyo 2014	DIAZ Melanie (PUR)		MORET Rachel (SUI)		WT	Main Draw		0 - 3	9:11 5:11 9:11	MORET Rachel	
+2014	World Team Table Tennis Championships Tokyo 2014	CORDERO Carelyn (PUR)		ASCHWANDEN Rahel (SUI)		WT	Main Draw		2 - 3	11:9 11:8 9:11 6:11 5:11	ASCHWANDEN Rahel	
+2014	World Team Table Tennis Championships Tokyo 2014	COLANTONI Chiara (ITA)		CAREY Charlotte (WAL)		WT	Main Draw		3 - 1	10:12 11:7 11:8 11:8	COLANTONI Chiara	
+2014	World Team Table Tennis Championships Tokyo 2014	VIVARELLI Debora (ITA)		OWEN Naomi (WAL)		WT	Main Draw		1 - 3	8:11 5:11 11:5 9:11	OWEN Naomi	
+2014	World Team Table Tennis Championships Tokyo 2014	RIDOLFI Lisa (ITA)		PHILLIPS Megan (WAL)		WT	Main Draw		3 - 1	6:11 11:5 11:6 11:4	RIDOLFI Lisa	
+2014	World Team Table Tennis Championships Tokyo 2014	COLANTONI Chiara (ITA)		OWEN Naomi (WAL)		WT	Main Draw		0 - 3	5:11 5:11 8:11	OWEN Naomi	
+2014	World Team Table Tennis Championships Tokyo 2014	VIVARELLI Debora (ITA)		CAREY Charlotte (WAL)		WT	Main Draw		3 - 1	11:9 10:12 11:6 11:9	VIVARELLI Debora	
+2014	World Team Table Tennis Championships Tokyo 2014	CHRISTOFORAKI Maria (GRE)		TROSMAN Nicole (ISR)		WT	Main Draw		1 - 3	11:8 4:11 10:12 10:12	TROSMAN Nicole	
+2014	World Team Table Tennis Championships Tokyo 2014	TOLIOU Aikaterini (GRE)		KRAVCHENKO Marina (ISR)		WT	Main Draw		2 - 3	12:10 5:11 5:11 11:8 10:12	KRAVCHENKO Marina	
+2014	World Team Table Tennis Championships Tokyo 2014	PAPADAKI Angeliki (GRE)		SHOIFER Neli (ISR)		WT	Main Draw		3 - 1	11:6 11:9 9:11 11:8	PAPADAKI Angeliki
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 3 of 14 Total: 1398
+
+Start
+Prev
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Next
+End
+2014	World Team Table Tennis Championships Tokyo 2014	CHRISTOFORAKI Maria (GRE)		KRAVCHENKO Marina (ISR)		WT	Main Draw		0 - 3	5:11 8:11 9:11	KRAVCHENKO Marina	
+2014	World Team Table Tennis Championships Tokyo 2014	TOLIOU Aikaterini (GRE)		TROSMAN Nicole (ISR)		WT	Main Draw		3 - 0	11:9 11:5 11:7	TOLIOU Aikaterini	
+2014	World Team Table Tennis Championships Tokyo 2014	GUNGOR Gokce Nur (TUR)		EDEM Offiong (NGR)		WT	Main Draw		1 - 3	8:11 9:11 11:8 5:11	EDEM Offiong	
+2014	World Team Table Tennis Championships Tokyo 2014	SAHIN Sanem (TUR)		OSHONAIKE Olufunke (NGR)		WT	Main Draw		3 - 1	11:7 11:9 9:11 13:11	SAHIN Sanem	
+2014	World Team Table Tennis Championships Tokyo 2014	KARAHAN Ipek (TUR)		EDEM Offiong (NGR)		WT	Main Draw		0 - 3	6:11 10:12 9:11	EDEM Offiong	
+2014	World Team Table Tennis Championships Tokyo 2014	GUNGOR Gokce Nur (TUR)		AKPAN Cecilia (NGR)		WT	Main Draw		0 - 3	9:11 3:11 11:13	AKPAN Cecilia	
+2014	World Team Table Tennis Championships Tokyo 2014	DIAZ Adriana (PUR)		RUANO Lady (COL)		WT	Main Draw		3 - 1	13:11 11:2 7:11 11:8	DIAZ Adriana	
+2014	World Team Table Tennis Championships Tokyo 2014	DIAZ Melanie (PUR)		TELLEZ Cory (COL)		WT	Main Draw		3 - 2	7:11 9:11 11:8 11:9 11:3	DIAZ Melanie	
+2014	World Team Table Tennis Championships Tokyo 2014	CORDERO Carelyn (PUR)		RUANO Lady (COL)		WT	Main Draw		3 - 2	7:11 11:6 7:11 13:11 17:15	CORDERO Carelyn	
+2014	World Team Table Tennis Championships Tokyo 2014	DIAZ Adriana (PUR)		MEDINA Paula (COL)		WT	Main Draw		0 - 3	6:11 10:12 2:11	MEDINA Paula	
+2014	World Team Table Tennis Championships Tokyo 2014	VIVARELLI Debora (ITA)		GUFRANOVA Rimma (UZB)		WT	Main Draw		3 - 0	11:4 11:9 12:10	VIVARELLI Debora	
+2014	World Team Table Tennis Championships Tokyo 2014	RIDOLFI Lisa (ITA)		IBRAGIMOVA Aynur (UZB)		WT	Main Draw		3 - 0	11:8 11:5 11:3	RIDOLFI Lisa	
+2014	World Team Table Tennis Championships Tokyo 2014	COLANTONI Chiara (ITA)		GUFRANOVA Rimma (UZB)		WT	Main Draw		2 - 3	8:11 10:12 11:9 11:9 8:11	GUFRANOVA Rimma	
+2014	World Team Table Tennis Championships Tokyo 2014	VIVARELLI Debora (ITA)		KIM Olga (UZB)		WT	Main Draw		3 - 0	11:3 11:5 14:12	VIVARELLI Debora	
+2014	World Team Table Tennis Championships Tokyo 2014	BUSATLIC Belma (BIH)		GELMAN Shelli (ISR)		WT	Main Draw		1 - 3	11:9 5:11 6:11 10:12	GELMAN Shelli	
+2014	World Team Table Tennis Championships Tokyo 2014	ANTONIC Miljana (BIH)		TROSMAN Nicole (ISR)		WT	Main Draw		1 - 3	10:12 6:11 13:11 6:11	TROSMAN Nicole	
+2014	World Team Table Tennis Championships Tokyo 2014	HADZIAHMETOVIC Emina (BIH)		KRAVCHENKO Marina (ISR)		WT	Main Draw		2 - 3	14:12 2:11 9:11 11:8 11:13	KRAVCHENKO Marina	
+2014	World Team Table Tennis Championships Tokyo 2014	AKPAN Cecilia (NGR)		GUZMAN Andrea (PER)		WT	Main Draw		3 - 0	11:4 11:6 13:11	AKPAN Cecilia	
+2014	World Team Table Tennis Championships Tokyo 2014	OSHONAIKE Olufunke (NGR)		MORI Angela (PER)		WT	Main Draw		3 - 2	11:13 10:12 11:9 11:7 11:8	OSHONAIKE Olufunke	
+2014	World Team Table Tennis Championships Tokyo 2014	EDEM Offiong (NGR)		ORTIZ Maria (PER)		WT	Main Draw		3 - 0	11:7 11:6 11:9	EDEM Offiong	
+2014	World Team Table Tennis Championships Tokyo 2014	KUMAHARA Luca (BRA)		EKHOLM Matilda (SWE)		WT	Main Draw		3 - 2	3:11 11:8 12:10 6:11 11:9	KUMAHARA Luca	
+2014	World Team Table Tennis Championships Tokyo 2014	YAMADA Jessica (BRA)		JONSSON Jennifer (SWE)		WT	Main Draw		3 - 1	11:8 9:11 11:5 11:5	YAMADA Jessica	
+2014	World Team Table Tennis Championships Tokyo 2014	GUI Lin (BRA)		BERGSTROM Linda (SWE)		WT	Main Draw		3 - 0	11:8 11:8 11:5	GUI Lin	
+2014	World Team Table Tennis Championships Tokyo 2014	STUCKYTE Egle (LTU)		MOSKOVITS Daniela (SWE)		WT	Main Draw		2 - 3	11:8 8:11 11:5 8:11 8:11	MOSKOVITS Daniela	
+2014	World Team Table Tennis Championships Tokyo 2014	PASKAUSKIENE Ruta (LTU)		EKHOLM Matilda (SWE)		WT	Main Draw		3 - 1	13:11 6:11 11:5 11:2	PASKAUSKIENE Ruta	
+2014	World Team Table Tennis Championships Tokyo 2014	VENSLAVICIUTE Ieva (LTU)		BERGSTROM Linda (SWE)		WT	Main Draw		2 - 3	5:11 13:15 11:5 11:9 7:11	BERGSTROM Linda	
+2014	World Team Table Tennis Championships Tokyo 2014	STUCKYTE Egle (LTU)		EKHOLM Matilda (SWE)		WT	Main Draw		1 - 3	7:11 14:12 4:11 8:11	EKHOLM Matilda	
+2014	World Team Table Tennis Championships Tokyo 2014	PASKAUSKIENE Ruta (LTU)		MOSKOVITS Daniela (SWE)		WT	Main Draw		3 - 0	11:8 11:7 11:8	PASKAUSKIENE Ruta	
+2014	World Team Table Tennis Championships Tokyo 2014	KHETKHUAN Tamolwan (THA)		KUMAHARA Luca (BRA)		WT	Main Draw		2 - 3	11:8 6:11 11:6 5:11 6:11	KUMAHARA Luca	
+2014	World Team Table Tennis Championships Tokyo 2014	KOMWONG Nanthana (THA)		GUI Lin (BRA)		WT	Main Draw		3 - 1	11:5 7:11 15:13 11:8	KOMWONG Nanthana	
+2014	World Team Table Tennis Championships Tokyo 2014	RATTANAVONGSA Rattanaporn (THA)		SILVA Ligia (BRA)		WT	Main Draw		1 - 3	11:9 7:11 12:14 8:11	SILVA Ligia	
+2014	World Team Table Tennis Championships Tokyo 2014	KHETKHUAN Tamolwan (THA)		GUI Lin (BRA)		WT	Main Draw		1 - 3	3:11 11:8 5:11 10:12	GUI Lin	
+2014	World Team Table Tennis Championships Tokyo 2014	KOMWONG Nanthana (THA)		KUMAHARA Luca (BRA)		WT	Main Draw		3 - 1	11:7 8:11 11:4 14:12	KOMWONG Nanthana	
+2014	World Team Table Tennis Championships Tokyo 2014	DRINKHALL Joanna (ENG)		PASKAUSKIENE Ruta (LTU)		WT	Main Draw		0 - 3	5:11 6:11 8:11	PASKAUSKIENE Ruta	
+2014	World Team Table Tennis Championships Tokyo 2014	SIBLEY Kelly (ENG)		STUCKYTE Egle (LTU)		WT	Main Draw		2 - 3	8:11 11:5 11:5 12:14 6:11	STUCKYTE Egle	
+2014	World Team Table Tennis Championships Tokyo 2014	HO Tin-Tin (ENG)		PASKAUSKIENE Ruta (LTU)		WT	Main Draw		0 - 3	10:12 9:11 7:11	PASKAUSKIENE Ruta	
+2014	World Team Table Tennis Championships Tokyo 2014	DRINKHALL Joanna (ENG)		VENSLAVICIUTE Ieva (LTU)		WT	Main Draw		3 - 0	11:6 11:4 12:10	DRINKHALL Joanna	
+2014	World Team Table Tennis Championships Tokyo 2014	EKHOLM Matilda (SWE)		ZHANG Mo (CAN)		WT	Main Draw		3 - 2	9:11 11:8 11:9 9:11 11:4	EKHOLM Matilda	
+2014	World Team Table Tennis Championships Tokyo 2014	BERGSTROM Linda (SWE)		LIAW Michelle (CAN)		WT	Main Draw		3 - 1	11:3 8:11 11:1 11:8	BERGSTROM Linda	
+2014	World Team Table Tennis Championships Tokyo 2014	MOSKOVITS Daniela (SWE)		ZHANG Mo (CAN)		WT	Main Draw		0 - 3	7:11 9:11 1:11	ZHANG Mo	
+2014	World Team Table Tennis Championships Tokyo 2014	EKHOLM Matilda (SWE)		LUO Anqi (CAN)		WT	Main Draw		3 - 0	11:6 11:3 11:5	EKHOLM Matilda	
+2014	World Team Table Tennis Championships Tokyo 2014	GUI Lin (BRA)		BATRA Manika (IND)		WT	Main Draw		3 - 1	14:12 11:7 10:12 11:5	GUI Lin	
+2014	World Team Table Tennis Championships Tokyo 2014	KUMAHARA Luca (BRA)		DAS Ankita (IND)		WT	Main Draw		3 - 1	11:4 11:8 7:11 11:6	KUMAHARA Luca	
+2014	World Team Table Tennis Championships Tokyo 2014	SILVA Ligia (BRA)		BATRA Manika (IND)		WT	Main Draw		1 - 3	11:13 11:7 4:11 10:12	BATRA Manika	
+2014	World Team Table Tennis Championships Tokyo 2014	GUI Lin (BRA)		KUMARESAN Shamini (IND)		WT	Main Draw		3 - 2	11:8 7:11 11:5 9:11 11:7	GUI Lin	
+2014	World Team Table Tennis Championships Tokyo 2014	KOMWONG Nanthana (THA)		FAJMUT Manca (SLO)		WT	Main Draw		3 - 1	11:7 5:11 11:5 11:7	KOMWONG Nanthana	
+2014	World Team Table Tennis Championships Tokyo 2014	PANNAK Piyaporn (THA)		LUDVIK Jana (SLO)		WT	Main Draw		1 - 3	11:8 9:11 5:11 7:11	LUDVIK Jana	
+2014	World Team Table Tennis Championships Tokyo 2014	KHETKHUAN Tamolwan (THA)		FAJMUT Manca (SLO)		WT	Main Draw		3 - 0	11:6 11:7 11:7	KHETKHUAN Tamolwan	
+2014	World Team Table Tennis Championships Tokyo 2014	KOMWONG Nanthana (THA)		TOMAZINI Jana (SLO)		WT	Main Draw		3 - 1	11:6 8:11 11:4 11:8	KOMWONG Nanthana	
+2014	World Team Table Tennis Championships Tokyo 2014	NEVES Ana (POR)		DRINKHALL Joanna (ENG)		WT	Main Draw		0 - 3	8:11 7:11 6:11	DRINKHALL Joanna	
+2014	World Team Table Tennis Championships Tokyo 2014	OLIVEIRA Leila (POR)		HO Tin-Tin (ENG)		WT	Main Draw		3 - 2	9:11 12:10 11:7 5:11 11:8	OLIVEIRA Leila	
+2014	World Team Table Tennis Championships Tokyo 2014	FINS Rita (POR)		DRINKHALL Joanna (ENG)		WT	Main Draw		0 - 3	2:11 4:11 8:11	DRINKHALL Joanna	
+2014	World Team Table Tennis Championships Tokyo 2014	NEVES Ana (POR)		SIBLEY Kelly (ENG)		WT	Main Draw		1 - 3	11:6 8:11 3:11 7:11	SIBLEY Kelly	
+2014	World Team Table Tennis Championships Tokyo 2014	LEE Rou You (MAS)		LIAW Michelle (CAN)		WT	Main Draw		1 - 3	12:14 11:8 8:11 5:11	LIAW Michelle	
+2014	World Team Table Tennis Championships Tokyo 2014	HO Ying (MAS)		ZHANG Mo (CAN)		WT	Main Draw		0 - 3	5:11 8:11 3:11	ZHANG Mo	
+2014	World Team Table Tennis Championships Tokyo 2014	BEH Lee Wei (MAS)		LUO Anqi (CAN)		WT	Main Draw		2 - 3	11:8 9:11 11:8 6:11 7:11	LUO Anqi	
+2014	World Team Table Tennis Championships Tokyo 2014	KUMAHARA Luca (BRA)		ELDAWLATLY Nadeen (EGY)		WT	Main Draw		3 - 0	11:7 11:3 11:8	KUMAHARA Luca	
+2014	World Team Table Tennis Championships Tokyo 2014	GUI Lin (BRA)		MESHREF Dina (EGY)		WT	Main Draw		0 - 3	7:11 6:11 7:11	MESHREF Dina	
+2014	World Team Table Tennis Championships Tokyo 2014	SILVA Ligia (BRA)		SHOUMAN Fagr (EGY)		WT	Main Draw		3 - 0	11:3 11:7 11:8	SILVA Ligia	
+2014	World Team Table Tennis Championships Tokyo 2014	KUMAHARA Luca (BRA)		MESHREF Dina (EGY)		WT	Main Draw		0 - 3	6:11 6:11 4:11	MESHREF Dina	
+2014	World Team Table Tennis Championships Tokyo 2014	GUI Lin (BRA)		ELDAWLATLY Nadeen (EGY)		WT	Main Draw		3 - 0	11:6 15:13 11:6	GUI Lin	
+2014	World Team Table Tennis Championships Tokyo 2014	LUDVIK Jana (SLO)		ANGELOVA Ivanka (BUL)		WT	Main Draw		3 - 0	11:6 12:10 11:5	LUDVIK Jana	
+2014	World Team Table Tennis Championships Tokyo 2014	FAJMUT Manca (SLO)		ALTINKAYA Sibel (TUR)		WT	Main Draw		3 - 2	11:3 5:11 8:11 11:4 11:6	FAJMUT Manca	
+2014	World Team Table Tennis Championships Tokyo 2014	TOMAZINI Jana (SLO)		KAROVA Anelia (BUL)		WT	Main Draw		3 - 2	13:11 11:5 9:11 3:11 11:4	TOMAZINI Jana	
+2014	World Team Table Tennis Championships Tokyo 2014	LI Qiangbing (AUT)		GRZYBOWSKA-FRANC Katarzyna (POL)		WT	Main Draw		2 - 3	11:6 14:16 11:7 10:12 9:11	GRZYBOWSKA-FRANC Katarzyna	
+2014	World Team Table Tennis Championships Tokyo 2014	BURIAN Irene (AUT)		KUSINSKA Klaudia (POL)		WT	Main Draw		0 - 3	6:11 5:11 7:11	KUSINSKA Klaudia	
+2014	World Team Table Tennis Championships Tokyo 2014	WAGGERMAYER Elena (AUT)		BAJOR Natalia (POL)		WT	Main Draw		1 - 3	7:11 6:11 12:10 9:11	BAJOR Natalia	
+2014	World Team Table Tennis Championships Tokyo 2014	PENKAVOVA Katerina (CZE)		MADARASZ Dora (HUN)		WT	Main Draw		0 - 3	6:11 11:13 10:12	MADARASZ Dora	
+2014	World Team Table Tennis Championships Tokyo 2014	MATELOVA Hana (CZE)		PERGEL Szandra (HUN)		WT	Main Draw		2 - 3	11:5 7:11 11:6 8:11 8:11	PERGEL Szandra	
+2014	World Team Table Tennis Championships Tokyo 2014	CECHOVA Dana (CZE)		AMBRUS Krisztina (HUN)		WT	Main Draw		2 - 3	7:11 8:11 12:10 11:4 8:11	AMBRUS Krisztina	
+2014	World Team Table Tennis Championships Tokyo 2014	PENKAVOVA Katerina (CZE)		PERGEL Szandra (HUN)		WT	Main Draw		3 - 0	11:7 11:7 11:6	PENKAVOVA Katerina	
+2014	World Team Table Tennis Championships Tokyo 2014	MATELOVA Hana (CZE)		MADARASZ Dora (HUN)		WT	Main Draw		3 - 1	11:9 6:11 11:4 11:4	MATELOVA Hana	
+2014	World Team Table Tennis Championships Tokyo 2014	LIU Jia (AUT)		TIAN Yuan (CRO)		WT	Main Draw		3 - 0	11:4 11:3 11:9	LIU Jia	
+2014	World Team Table Tennis Championships Tokyo 2014	LI Qiangbing (AUT)		PETEK Petra (CRO)		WT	Main Draw		3 - 1	10:12 11:8 11:6 11:5	LI Qiangbing	
+2014	World Team Table Tennis Championships Tokyo 2014	WAGGERMAYER Elena (AUT)		TIAN Yuan (CRO)		WT	Main Draw		0 - 3	4:11 7:11 8:11	TIAN Yuan	
+2014	World Team Table Tennis Championships Tokyo 2014	LIU Jia (AUT)		RAKOVAC Lea (CRO)		WT	Main Draw		3 - 1	11:5 11:5 7:11 11:3	LIU Jia	
+2014	World Team Table Tennis Championships Tokyo 2014	GONDERINGER Tessy (LUX)		KUSINSKA Klaudia (POL)		WT	Main Draw		0 - 3	9:11 4:11 8:11	KUSINSKA Klaudia	
+2014	World Team Table Tennis Championships Tokyo 2014	DE NUTTE Sarah (LUX)		PARTYKA Natalia (POL)		WT	Main Draw		1 - 3	11:9 10:12 12:14 10:12	PARTYKA Natalia	
+2014	World Team Table Tennis Championships Tokyo 2014	NI Xia Lian (LUX)		GRZYBOWSKA-FRANC Katarzyna (POL)		WT	Main Draw		2 - 3	11:9 4:11 8:11 11:6 7:11	GRZYBOWSKA-FRANC Katarzyna	
+2014	World Team Table Tennis Championships Tokyo 2014	VARADY Barbora (SVK)		MADARASZ Dora (HUN)		WT	Main Draw		1 - 3	6:11 11:9 5:11 10:12	MADARASZ Dora	
+2014	World Team Table Tennis Championships Tokyo 2014	ODOROVA Eva (SVK)		POTA Georgina (HUN)		WT	Main Draw		3 - 2	11:5 8:11 14:12 8:11 11:6	ODOROVA Eva	
+2014	World Team Table Tennis Championships Tokyo 2014	JURKOVA Eva (SVK)		PERGEL Szandra (HUN)		WT	Main Draw		0 - 3	7:11 3:11 8:11	PERGEL Szandra	
+2014	World Team Table Tennis Championships Tokyo 2014	VARADY Barbora (SVK)		POTA Georgina (HUN)		WT	Main Draw		3 - 0	14:12 11:4 11:8	VARADY Barbora	
+2014	World Team Table Tennis Championships Tokyo 2014	ODOROVA Eva (SVK)		MADARASZ Dora (HUN)		WT	Main Draw		1 - 3	9:11 7:11 11:6 8:11	MADARASZ Dora	
+2014	World Team Table Tennis Championships Tokyo 2014	CECHOVA Dana (CZE)		ERDELJI Anamaria (SRB)		WT	Main Draw		3 - 2	11:6 11:9 8:11 7:11 15:13	CECHOVA Dana	
+2014	World Team Table Tennis Championships Tokyo 2014	VACENOVSKA Iveta (CZE)		TODOROVIC Andrea (SRB)		WT	Main Draw		3 - 0	11:7 13:11 11:4	VACENOVSKA Iveta	
+2014	World Team Table Tennis Championships Tokyo 2014	MATELOVA Hana (CZE)		MAKSUTI Aneta (SRB)		WT	Main Draw		2 - 3	9:11 11:3 13:11 9:11 6:11	MAKSUTI Aneta	
+2014	World Team Table Tennis Championships Tokyo 2014	CECHOVA Dana (CZE)		TODOROVIC Andrea (SRB)		WT	Main Draw		2 - 3	4:11 11:4 15:13 7:11 9:11	TODOROVIC Andrea	
+2014	World Team Table Tennis Championships Tokyo 2014	VACENOVSKA Iveta (CZE)		ERDELJI Anamaria (SRB)		WT	Main Draw		3 - 1	11:8 13:11 6:11 11:4	VACENOVSKA Iveta	
+2014	World Team Table Tennis Championships Tokyo 2014	DOLGIKH Maria (RUS)		TIAN Yuan (CRO)		WT	Main Draw		0 - 3	9:11 2:11 10:12	TIAN Yuan	
+2014	World Team Table Tennis Championships Tokyo 2014	MIKHAILOVA Polina (RUS)		RAKOVAC Lea (CRO)		WT	Main Draw		3 - 1	14:12 10:12 11:5 11:7	MIKHAILOVA Polina	
+2014	World Team Table Tennis Championships Tokyo 2014	KUZMINA Elena (RUS)		PETEK Petra (CRO)		WT	Main Draw		3 - 2	10:12 13:11 11:6 11:13 11:9	KUZMINA Elena	
+2014	World Team Table Tennis Championships Tokyo 2014	DOLGIKH Maria (RUS)		RAKOVAC Lea (CRO)		WT	Main Draw		0 - 3	9:11 9:11 8:11	RAKOVAC Lea	
+2014	World Team Table Tennis Championships Tokyo 2014	MIKHAILOVA Polina (RUS)		TIAN Yuan (CRO)		WT	Main Draw		1 - 3	11:13 7:11 11:9 3:11	TIAN Yuan	
+2014	World Team Table Tennis Championships Tokyo 2014	PARTYKA Natalia (POL)		DEDERKO Zhenhua (AUS)		WT	Main Draw		3 - 0	11:1 11:6 11:3	PARTYKA Natalia	
+2014	World Team Table Tennis Championships Tokyo 2014	BAJOR Natalia (POL)		TAPPER Melissa (AUS)		WT	Main Draw		2 - 3	17:15 8:11 11:6 9:11 9:11	TAPPER Melissa	
+2014	World Team Table Tennis Championships Tokyo 2014	GRZYBOWSKA-FRANC Katarzyna (POL)		DEDERKO Zhenhua (AUS)		WT	Main Draw		3 - 0	13:11 11:8 11:8	GRZYBOWSKA-FRANC Katarzyna	
+2014	World Team Table Tennis Championships Tokyo 2014	PARTYKA Natalia (POL)		BROMLEY Michelle (AUS)		WT	Main Draw		3 - 1	11:3 9:11 11:4 11:6	PARTYKA Natalia	
+2014	World Team Table Tennis Championships Tokyo 2014	GRUNDISCH Carole (FRA)		VARADY Barbora (SVK)		WT	Main Draw		2 - 3	7:11 5:11 11:9 11:9 8:11	VARADY Barbora	
+2014	World Team Table Tennis Championships Tokyo 2014	ZARIF Audrey (FRA)		JURKOVA Eva (SVK)		WT	Main Draw		2 - 3	10:12 11:8 4:11 11:6 7:11	JURKOVA Eva
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 4 of 14 Total: 1398
+
+Start
+Prev
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Next
+End
+2014	World Team Table Tennis Championships Tokyo 2014	GASNIER Laura (FRA)		VARADY Barbora (SVK)		WT	Main Draw		1 - 3	9:11 8:11 11:9 4:11	VARADY Barbora	
+2014	World Team Table Tennis Championships Tokyo 2014	GRUNDISCH Carole (FRA)		ODOROVA Eva (SVK)		WT	Main Draw		3 - 0	12:10 13:11 12:10	GRUNDISCH Carole	
+2014	World Team Table Tennis Championships Tokyo 2014	TODOROVIC Andrea (SRB)		WANG Crystal (USA)		WT	Main Draw		3 - 1	11:9 1:11 13:11 11:5	TODOROVIC Andrea	
+2014	World Team Table Tennis Championships Tokyo 2014	ERDELJI Anamaria (SRB)		ZHANG Lily (USA)		WT	Main Draw		2 - 3	4:11 7:11 12:10 11:9 5:11	ZHANG Lily	
+2014	World Team Table Tennis Championships Tokyo 2014	MAKSUTI Aneta (SRB)		JHA Prachi (USA)		WT	Main Draw		3 - 1	8:11 11:9 11:3 11:7	MAKSUTI Aneta	
+2014	World Team Table Tennis Championships Tokyo 2014	TODOROVIC Andrea (SRB)		ZHANG Lily (USA)		WT	Main Draw		0 - 3	13:15 11:13 7:11	ZHANG Lily	
+2014	World Team Table Tennis Championships Tokyo 2014	ERDELJI Anamaria (SRB)		WANG Crystal (USA)		WT	Main Draw		3 - 0	11:2 11:6 11:5	ERDELJI Anamaria	
+2014	World Team Table Tennis Championships Tokyo 2014	LIU Shiwen (CHN)		HIRANO Sayaka (JPN)		WT	Main Draw		3 - 0	11:4 11:2 11:5	LIU Shiwen	
+2014	World Team Table Tennis Championships Tokyo 2014	LI Xiaoxia (CHN)		ISHIKAWA Kasumi (JPN)		WT	Main Draw		3 - 0	11:8 11:7 11:7	LI Xiaoxia	
+2014	World Team Table Tennis Championships Tokyo 2014	DING Ning (CHN)		ISHIGAKI Yuka (JPN)		WT	Main Draw		3 - 1	11:5 8:11 11:2 11:5	DING Ning	
+2014	World Team Table Tennis Championships Tokyo 2014	LEE Ho Ching (HKG)		ISHIKAWA Kasumi (JPN)		WT	Main Draw		2 - 3	4:11 11:8 12:10 9:11 7:11	ISHIKAWA Kasumi	
+2014	World Team Table Tennis Championships Tokyo 2014	NG Wing Nam (HKG)		HIRANO Sayaka (JPN)		WT	Main Draw		2 - 3	11:8 12:10 10:12 2:11 10:12	HIRANO Sayaka	
+2014	World Team Table Tennis Championships Tokyo 2014	JIANG Huajun (HKG)		ISHIKAWA Kasumi (JPN)		WT	Main Draw		2 - 3	11:8 8:11 11:6 9:11 6:11	ISHIKAWA Kasumi	
+2014	World Team Table Tennis Championships Tokyo 2014	LEE Ho Ching (HKG)		ISHIGAKI Yuka (JPN)		WT	Main Draw		3 - 0	15:13 12:10 11:2	LEE Ho Ching	
+2014	World Team Table Tennis Championships Tokyo 2014	LI Isabelle Siyun (SGP)		ZHU Yuling (MAC)		WT	Main Draw		0 - 3	4:11 7:11 7:11	ZHU Yuling	
+2014	World Team Table Tennis Championships Tokyo 2014	YU Mengyu (SGP)		DING Ning (CHN)		WT	Main Draw		0 - 3	6:11 3:11 6:11	DING Ning	
+2014	World Team Table Tennis Championships Tokyo 2014	FENG Tianwei (SGP)		LI Xiaoxia (CHN)		WT	Main Draw		1 - 3	11:8 8:11 5:11 7:11	LI Xiaoxia	
+2014	World Team Table Tennis Championships Tokyo 2014	ISHIKAWA Kasumi (JPN)		EERLAND Britt (NED)		WT	Main Draw		3 - 2	11:8 11:7 8:11 9:11 11:6	ISHIKAWA Kasumi	
+2014	World Team Table Tennis Championships Tokyo 2014	HIRANO Sayaka (JPN)		LI Jiao (NED)		WT	Main Draw		2 - 3	11:9 10:12 3:11 11:4 7:11	LI Jiao	
+2014	World Team Table Tennis Championships Tokyo 2014	ISHIGAKI Yuka (JPN)		LI Jie (NED)		WT	Main Draw		3 - 1	8:11 11:6 11:8 11:9	ISHIGAKI Yuka	
+2014	World Team Table Tennis Championships Tokyo 2014	ISHIKAWA Kasumi (JPN)		LI Jiao (NED)		WT	Main Draw		2 - 3	11:9 8:11 9:11 11:7 10:12	LI Jiao	
+2014	World Team Table Tennis Championships Tokyo 2014	HIRANO Sayaka (JPN)		EERLAND Britt (NED)		WT	Main Draw		3 - 1	11:7 11:8 9:11 11:5	HIRANO Sayaka	
+2014	World Team Table Tennis Championships Tokyo 2014	NG Wing Nam (HKG)		WINTER Sabine (GER)		WT	Main Draw		3 - 0	11:5 11:5 11:7	NG Wing Nam	
+2014	World Team Table Tennis Championships Tokyo 2014	JIANG Huajun (HKG)		IVANCAN Irene (GER)		WT	Main Draw		3 - 2	11:6 9:11 4:11 11:8 12:10	JIANG Huajun	
+2014	World Team Table Tennis Championships Tokyo 2014	LEE Ho Ching (HKG)		SOLJA Petrissa (GER)		WT	Main Draw		3 - 1	9:11 11:3 11:9 11:8	LEE Ho Ching	
+2014	World Team Table Tennis Championships Tokyo 2014	SAMARA Elizabeta (ROU)		FENG Tianwei (SGP)		WT	Main Draw		0 - 3	8:11 5:11 9:11	FENG Tianwei	
+2014	World Team Table Tennis Championships Tokyo 2014	SZOCS Bernadette (ROU)		LI Isabelle Siyun (SGP)		WT	Main Draw		3 - 2	4:11 11:9 11:9 5:11 11:8	SZOCS Bernadette	
+2014	World Team Table Tennis Championships Tokyo 2014	DODEAN Daniela (ROU)		FENG Tianwei (SGP)		WT	Main Draw		0 - 3	10:12 8:11 9:11	FENG Tianwei	
+2014	World Team Table Tennis Championships Tokyo 2014	SAMARA Elizabeta (ROU)		YU Mengyu (SGP)		WT	Main Draw		2 - 3	8:11 11:4 8:11 11:2 7:11	YU Mengyu	
+2014	World Team Table Tennis Championships Tokyo 2014	ZHU Yuling (MAC)		KIM Jong (PRK)		WT	Main Draw		3 - 1	11:5 5:11 11:5 11:6	ZHU Yuling	
+2014	World Team Table Tennis Championships Tokyo 2014	LIU Shiwen (CHN)		RI Myong Sun (PRK)		WT	Main Draw		3 - 0	11:8 11:4 11:6	LIU Shiwen	
+2014	World Team Table Tennis Championships Tokyo 2014	LI Xiaoxia (CHN)		RI Mi Gyong (PRK)		WT	Main Draw		3 - 0	11:6 11:3 11:8	LI Xiaoxia	
+2014	World Team Table Tennis Championships Tokyo 2014	EERLAND Britt (NED)		CHEN Szu-Yu (TPE)		WT	Main Draw		3 - 0	11:9 11:3 11:7	EERLAND Britt	
+2014	World Team Table Tennis Championships Tokyo 2014	LI Jie (NED)		CHENG I-Ching (TPE)		WT	Main Draw		3 - 2	11:7 8:11 11:0 5:11 11:6	LI Jie	
+2014	World Team Table Tennis Championships Tokyo 2014	LI Jiao (NED)		HUANG Yi-Hua (TPE)		WT	Main Draw		3 - 1	12:10 11:9 8:11 11:7	LI Jiao	
+2014	World Team Table Tennis Championships Tokyo 2014	DUBKOVA Elena (BLR)		SOLJA Petrissa (GER)		WT	Main Draw		0 - 3	3:11 9:11 9:11	SOLJA Petrissa	
+2014	World Team Table Tennis Championships Tokyo 2014	PRIVALOVA Alexandra (BLR)		IVANCAN Irene (GER)		WT	Main Draw		2 - 3	12:14 11:7 11:5 7:11 4:11	IVANCAN Irene	
+2014	World Team Table Tennis Championships Tokyo 2014	PAVLOVICH Viktoria (BLR)		WINTER Sabine (GER)		WT	Main Draw		1 - 3	10:12 5:11 11:3 4:11	WINTER Sabine	
+2014	World Team Table Tennis Championships Tokyo 2014	YANG Ha Eun (KOR)		SZOCS Bernadette (ROU)		WT	Main Draw		2 - 3	13:11 9:11 8:11 11:7 5:11	SZOCS Bernadette	
+2014	World Team Table Tennis Championships Tokyo 2014	SUH Hyo Won (KOR)		SAMARA Elizabeta (ROU)		WT	Main Draw		3 - 1	8:11 11:7 11:6 12:10	SUH Hyo Won	
+2014	World Team Table Tennis Championships Tokyo 2014	SEOK Hajung (KOR)		DODEAN Daniela (ROU)		WT	Main Draw		2 - 3	1:11 11:6 5:11 11:5 7:11	DODEAN Daniela	
+2014	World Team Table Tennis Championships Tokyo 2014	YANG Ha Eun (KOR)		SAMARA Elizabeta (ROU)		WT	Main Draw		2 - 3	4:11 11:9 7:11 11:9 5:11	SAMARA Elizabeta	
+2014	World Team Table Tennis Championships Tokyo 2014	SUH Hyo Won (KOR)		SZOCS Bernadette (ROU)		WT	Main Draw		3 - 1	8:11 11:6 11:6 11:6	SUH Hyo Won	
+2014	World Team Table Tennis Championships Tokyo 2014	HAPONOVA Hanna (UKR)		KIM Jong (PRK)		WT	Main Draw		1 - 3	8:11 8:11 11:4 1:11	KIM Jong	
+2014	World Team Table Tennis Championships Tokyo 2014	BILENKO Tetyana (UKR)		RI Mi Gyong (PRK)		WT	Main Draw		0 - 3	9:11 10:12 9:11	RI Mi Gyong	
+2014	World Team Table Tennis Championships Tokyo 2014	PESOTSKA Margaryta (UKR)		RI Myong Sun (PRK)		WT	Main Draw		0 - 3	6:11 5:11 7:11	RI Myong Sun

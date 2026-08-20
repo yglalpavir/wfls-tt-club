@@ -5,3 +5,53 @@
 参赛人数：28
 开始日期：2014-10-24
 结束日期：2014-10-26
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+50
+Page 1 of 28 Total: 1374
+
+Start
+Prev
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Next
+End
+2014	Men's World Cup Dusseldorf 2014	APOLONIA Tiago (POR)		MATSUMOTO Cazuo (BRA)		MS	Qualification		4 - 1	11:7 14:16 11:9 11:9 11:8	APOLONIA Tiago	
+2014	Men's World Cup Dusseldorf 2014	APOLONIA Tiago (POR)		ACHANTA Sharath (IND)		MS	Qualification		4 - 0	11:5 11:7 12:10 12:10	APOLONIA Tiago	
+2014	Men's World Cup Dusseldorf 2014	ACHANTA Sharath (IND)		MATSUMOTO Cazuo (BRA)		MS	Qualification		4 - 1	11:8 5:11 11:9 12:10 12:10	ACHANTA Sharath	
+2014	Men's World Cup Dusseldorf 2014	GIONIS Panagiotis (GRE)		HENZELL William (AUS)		MS	Qualification		4 - 0	11:9 11:8 11:8 11:8	GIONIS Panagiotis	
+2014	Men's World Cup Dusseldorf 2014	GIONIS Panagiotis (GRE)		MATTENET Adrien (FRA)		MS	Qualification		0 - 4	5:11 5:11 8:11 7:11	MATTENET Adrien	
+2014	Men's World Cup Dusseldorf 2014	MATTENET Adrien (FRA)		HENZELL William (AUS)		MS	Qualification		4 - 3	11:7 12:14 12:10 8:11 12:10 4:11 11:6	MATTENET Adrien	
+2014	Men's World Cup Dusseldorf 2014	CHEN Chien-An (TPE)		JHA Kanak (USA)		MS	Qualification		4 - 1	11:13 11:6 11:5 11:2 11:6	CHEN Chien-An	
+2014	Men's World Cup Dusseldorf 2014	CHEN Chien-An (TPE)		CRISAN Adrian (ROU)		MS	Qualification		4 - 3	7:11 8:11 9:11 11:6 13:11 13:11 11:8	CHEN Chien-An	
+2014	Men's World Cup Dusseldorf 2014	CRISAN Adrian (ROU)		JHA Kanak (USA)		MS	Qualification		4 - 0	11:8 11:8 11:4 11:9	CRISAN Adrian	
+2014	Men's World Cup Dusseldorf 2014	MATSUDAIRA Kenta (JPN)		ARUNA Quadri (NGR)		MS	Qualification		2 - 4	3:11 11:7 6:11 11:5 2:11 11:13	ARUNA Quadri	
+2014	Men's World Cup Dusseldorf 2014	MATSUDAIRA Kenta (JPN)		SHIBAEV Alexander (RUS)		MS	Qualification		4 - 1	5:11 14:12 11:8 13:11 11:8	MATSUDAIRA Kenta	
+2014	Men's World Cup Dusseldorf 2014	SHIBAEV Alexander (RUS)		ARUNA Quadri (NGR)		MS	Qualification		0 - 4	6:11 7:11 4:11 8:11	ARUNA Quadri	
+2014	Men's World Cup Dusseldorf 2014	MA Long (CHN)		MATSUDAIRA Kenta (JPN)		MS	Main Draw	R16	4 - 0	11:7 11:4 11:4 11:2	MA Long	
+2014	Men's World Cup Dusseldorf 2014	APOLONIA Tiago (POR)		FREITAS Marcos (POR)		MS	Main Draw	R16	4 - 0	11:6 11:9 11:2 11:5	APOLONIA Tiago	
+2014	Men's World Cup Dusseldorf 2014	CHUANG Chih-Yuan (TPE)		CHEN Chien-An (TPE)		MS	Main Draw	R16	4 - 2	11:8 11:3 2:11 9:11 11:8 12:10	CHUANG Chih-Yuan	
+2014	Men's World Cup Dusseldorf 2014	GIONIS Panagiotis (GRE)		MIZUTANI Jun (JPN)		MS	Main Draw	R16	0 - 4	2:11 10:12 11:13 3:11	MIZUTANI Jun	
+2014	Men's World Cup Dusseldorf 2014	OVTCHAROV Dimitrij (GER)		ACHANTA Sharath (IND)		MS	Main Draw	R16	4 - 3	9:11 11:7 11:6 8:11 11:5 11:13 12:10	OVTCHAROV Dimitrij	
+2014	Men's World Cup Dusseldorf 2014	MATTENET Adrien (FRA)		BOLL Timo (GER)		MS	Main Draw	R16	1 - 4	11:9 13:15 7:11 9:11 9:11	BOLL Timo	
+2014	Men's World Cup Dusseldorf 2014	TANG Peng (HKG)		ARUNA Quadri (NGR)		MS	Main Draw	R16	2 - 4	11:7 9:11 10:12 8:11 11:9 3:11	ARUNA Quadri	
+2014	Men's World Cup Dusseldorf 2014	CRISAN Adrian (ROU)		ZHANG Jike (CHN)		MS	Main Draw	R16	0 - 4	8:11 9:11 11:13 8:11	ZHANG Jike	
+2014	Men's World Cup Dusseldorf 2014	MA Long (CHN)		APOLONIA Tiago (POR)		MS	Main Draw	QuarterFinal	4 - 0	12:10 11:8 11:6 11:1	MA Long	
+2014	Men's World Cup Dusseldorf 2014	CHUANG Chih-Yuan (TPE)		MIZUTANI Jun (JPN)		MS	Main Draw	QuarterFinal	1 - 4	11:5 11:13 6:11 6:11 13:15	MIZUTANI Jun	
+2014	Men's World Cup Dusseldorf 2014	OVTCHAROV Dimitrij (GER)		BOLL Timo (GER)		MS	Main Draw	QuarterFinal	0 - 4	8:11 8:11 5:11 1:11	BOLL Timo	
+2014	Men's World Cup Dusseldorf 2014	ARUNA Quadri (NGR)		ZHANG Jike (CHN)		MS	Main Draw	QuarterFinal	2 - 4	11:6 7:11 4:11 7:11 11:8 8:11	ZHANG Jike	
+2014	Men's World Cup Dusseldorf 2014	MA Long (CHN)		MIZUTANI Jun (JPN)		MS	Main Draw	SemiFinal	4 - 0	11:9 11:4 11:6 11:7	MA Long	
+2014	Men's World Cup Dusseldorf 2014	BOLL Timo (GER)		ZHANG Jike (CHN)		MS	Main Draw	SemiFinal	3 - 4	7:11 11:5 8:11 14:16 11:6 11:6 6:11	ZHANG Jike	
+2014	Men's World Cup Dusseldorf 2014	MA Long (CHN)		ZHANG Jike (CHN)		MS	Main Draw	Final	3 - 4	11:8 4:11 11:13 11:7 11:2 5:11 10:12	ZHANG Jike	
+2014	Men's World Cup Dusseldorf 2014	MIZUTANI Jun (JPN)		BOLL Timo (GER)		MS	Position Draw	2	2 - 4	11:2 7:11 8:11 11:6 2:11 9:11	BOLL Timo

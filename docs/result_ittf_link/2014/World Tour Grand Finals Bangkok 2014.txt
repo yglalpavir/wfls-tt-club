@@ -5,3 +5,109 @@
 参赛人数：74
 开始日期：2014-12-11
 结束日期：2014-12-14
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 30
+
+2014	World Tour Grand Finals Bangkok 2014	MIZUTANI Jun (JPN)		MORIZONO Masataka (JPN)		MS	Main Draw	R16	4 - 3	7:11 7:11 8:11 11:3 11:7 11:6 11:8	MIZUTANI Jun	
+2014	World Tour Grand Finals Bangkok 2014	POUNGSRI Max (THA)		MENGEL Steffen (GER)		MS	Main Draw	R16	0 - 4	4:11 6:11 5:11 7:11	MENGEL Steffen	
+2014	World Tour Grand Finals Bangkok 2014	FREITAS Marcos (POR)		WONG Chun Ting (HKG)		MS	Main Draw	R16	4 - 0	12:10 14:12 11:8 11:6	FREITAS Marcos	
+2014	World Tour Grand Finals Bangkok 2014	CHO Eonrae (KOR)		NIWA Koki (JPN)		MS	Main Draw	R16	2 - 4	11:7 12:14 12:10 7:11 6:11 7:11	NIWA Koki	
+2014	World Tour Grand Finals Bangkok 2014	DRINKHALL Paul (ENG)		TANG Peng (HKG)		MS	Main Draw	R16	2 - 4	11:8 5:11 11:9 11:13 8:11 8:11	TANG Peng	
+2014	World Tour Grand Finals Bangkok 2014	SAMBE Kohei (JPN)		SAMSONOV Vladimir (BLR)		MS	Main Draw	R16	2 - 4	5:11 11:6 10:12 11:8 5:11 7:11	SAMSONOV Vladimir	
+2014	World Tour Grand Finals Bangkok 2014	CHUANG Chih-Yuan (TPE)		APOLONIA Tiago (POR)		MS	Main Draw	R16	4 - 0	11:7 11:5 11:8 11:2	CHUANG Chih-Yuan	
+2014	World Tour Grand Finals Bangkok 2014	MURAMATSU Yuto (JPN)		OVTCHAROV Dimitrij (GER)		MS	Main Draw	R16	0 - 4	1:11 9:11 6:11 4:11	OVTCHAROV Dimitrij	
+2014	World Tour Grand Finals Bangkok 2014	MIZUTANI Jun (JPN)		MENGEL Steffen (GER)		MS	Main Draw	QuarterFinal	4 - 1	11:6 9:11 11:5 11:9 11:3	MIZUTANI Jun	
+2014	World Tour Grand Finals Bangkok 2014	FREITAS Marcos (POR)		NIWA Koki (JPN)		MS	Main Draw	QuarterFinal	4 - 2	11:8 11:8 7:11 11:13 11:9 11:9	FREITAS Marcos	
+2014	World Tour Grand Finals Bangkok 2014	TANG Peng (HKG)		SAMSONOV Vladimir (BLR)		MS	Main Draw	QuarterFinal	4 - 1	11:9 11:6 11:9 9:11 11:8	TANG Peng	
+2014	World Tour Grand Finals Bangkok 2014	CHUANG Chih-Yuan (TPE)		OVTCHAROV Dimitrij (GER)		MS	Main Draw	QuarterFinal	3 - 4	8:11 11:7 11:9 5:11 11:7 7:11 9:11	OVTCHAROV Dimitrij	
+2014	World Tour Grand Finals Bangkok 2014	MIZUTANI Jun (JPN)		FREITAS Marcos (POR)		MS	Main Draw	SemiFinal	4 - 1	11:9 11:7 11:6 4:11 11:9	MIZUTANI Jun	
+2014	World Tour Grand Finals Bangkok 2014	TANG Peng (HKG)		OVTCHAROV Dimitrij (GER)		MS	Main Draw	SemiFinal	0 - 4	6:11 8:11 6:11 7:11	OVTCHAROV Dimitrij	
+2014	World Tour Grand Finals Bangkok 2014	MIZUTANI Jun (JPN)		OVTCHAROV Dimitrij (GER)		MS	Main Draw	Final	4 - 3	14:12 12:10 8:11 11:3 6:11 12:14 11:6	MIZUTANI Jun	
+2014	World Tour Grand Finals Bangkok 2014	CALDERANO Hugo (BRA)		JANG Woojin (KOR)		U21MS	Main Draw	SemiFinal	2 - 4	11:6 11:2 7:11 9:11 6:11 12:14	JANG Woojin	
+2014	World Tour Grand Finals Bangkok 2014	SAKAI Asuka (JPN)		MACHI Asuka (JPN)		U21MS	Main Draw	SemiFinal	2 - 4	11:4 11:6 5:11 4:11 4:11 7:11	MACHI Asuka	
+2014	World Tour Grand Finals Bangkok 2014	JANG Woojin (KOR)		MACHI Asuka (JPN)		U21MS	Main Draw	Final	1 - 4	3:11 7:11 6:11 11:9 8:11	MACHI Asuka	
+2014	World Tour Grand Finals Bangkok 2014	SAKAI Asuka (JPN)		CHEN Feng (SGP)		U21MS	Qualification		4 - 1	12:10 11:6 12:10 4:11 14:12	SAKAI Asuka	
+2014	World Tour Grand Finals Bangkok 2014	CALDERANO Hugo (BRA)		TANVIRIYAVECHAKUL Padasak (THA)		U21MS	Qualification		4 - 2	11:8 7:11 8:11 11:3 11:7 12:10	CALDERANO Hugo	
+2014	World Tour Grand Finals Bangkok 2014	SAKAI Asuka (JPN)		CALDERANO Hugo (BRA)		U21MS	Qualification		3 - 4	6:11 11:9 9:11 11:9 9:11 11:3 9:11	CALDERANO Hugo	
+2014	World Tour Grand Finals Bangkok 2014	CHEN Feng (SGP)		TANVIRIYAVECHAKUL Padasak (THA)		U21MS	Qualification		3 - 4	12:10 5:11 11:9 8:11 5:11 11:7 5:11	TANVIRIYAVECHAKUL Padasak	
+2014	World Tour Grand Finals Bangkok 2014	SAKAI Asuka (JPN)		TANVIRIYAVECHAKUL Padasak (THA)		U21MS	Qualification		4 - 0	11:8 11:6 11:7 11:3	SAKAI Asuka	
+2014	World Tour Grand Finals Bangkok 2014	CALDERANO Hugo (BRA)		CHEN Feng (SGP)		U21MS	Qualification		4 - 2	5:11 11:7 9:11 12:10 11:8 11:9	CALDERANO Hugo	
+2014	World Tour Grand Finals Bangkok 2014	JANG Woojin (KOR)		MACHI Asuka (JPN)		U21MS	Qualification		0 - 4	6:11 9:11 5:11 3:11	MACHI Asuka	
+2014	World Tour Grand Finals Bangkok 2014	LORENTZ Romain (FRA)		SAMBE Kohei (JPN)		U21MS	Qualification		3 - 4	8:11 11:9 12:14 6:11 11:9 11:9 7:11	SAMBE Kohei	
+2014	World Tour Grand Finals Bangkok 2014	JANG Woojin (KOR)		LORENTZ Romain (FRA)		U21MS	Qualification		4 - 1	11:8 12:14 16:14 11:7 11:9	JANG Woojin	
+2014	World Tour Grand Finals Bangkok 2014	MACHI Asuka (JPN)		SAMBE Kohei (JPN)		U21MS	Qualification		4 - 0	15:13 11:4 11:2 11:5	MACHI Asuka	
+2014	World Tour Grand Finals Bangkok 2014	JANG Woojin (KOR)		SAMBE Kohei (JPN)		U21MS	Qualification		4 - 0	11:7 11:9 11:7 11:8	JANG Woojin	
+2014	World Tour Grand Finals Bangkok 2014	LORENTZ Romain (FRA)		MACHI Asuka (JPN)		U21MS	Qualification		1 - 4	11:6 6:11 3:11 9:11 4:11	MACHI Asuka
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 30
+
+2014	World Tour Grand Finals Bangkok 2014	FENG Tianwei (SGP)		KOMWONG Nanthana (THA)		WS	Main Draw	R16	4 - 1	15:13 11:7 7:11 11:8 11:9	FENG Tianwei	
+2014	World Tour Grand Finals Bangkok 2014	SUH Hyo Won (KOR)		LIU Jia (AUT)		WS	Main Draw	R16	4 - 2	8:11 11:7 11:7 9:11 11:8 11:2	SUH Hyo Won	
+2014	World Tour Grand Finals Bangkok 2014	LI Fen (SWE)		HIRANO Sayaka (JPN)		WS	Main Draw	R16	0 - 4	7:11 2:11 9:11 5:11	HIRANO Sayaka	
+2014	World Tour Grand Finals Bangkok 2014	YU Mengyu (SGP)		HAN Ying (GER)		WS	Main Draw	R16	4 - 2	11:9 13:11 5:11 11:6 4:11 11:7	YU Mengyu	
+2014	World Tour Grand Finals Bangkok 2014	SHAN Xiaona (GER)		YU Fu (POR)		WS	Main Draw	R16	3 - 4	12:10 9:11 9:11 11:5 6:11 11:7 5:11	YU Fu	
+2014	World Tour Grand Finals Bangkok 2014	POTA Georgina (HUN)		SAMARA Elizabeta (ROU)		WS	Main Draw	R16	4 - 2	11:6 11:8 10:12 6:11 12:10 11:9	POTA Georgina	
+2014	World Tour Grand Finals Bangkok 2014	FUKUHARA Ai (JPN)		MORIZONO Misaki (JPN)		WS	Main Draw	R16	4 - 3	7:11 11:5 7:11 11:7 11:7 8:11 14:12	FUKUHARA Ai	
+2014	World Tour Grand Finals Bangkok 2014	ISHIGAKI Yuka (JPN)		ISHIKAWA Kasumi (JPN)		WS	Main Draw	R16	1 - 4	11:7 7:11 10:12 6:11 8:11	ISHIKAWA Kasumi	
+2014	World Tour Grand Finals Bangkok 2014	FENG Tianwei (SGP)		SUH Hyo Won (KOR)		WS	Main Draw	QuarterFinal	1 - 4	11:13 3:11 8:11 11:6 8:11	SUH Hyo Won	
+2014	World Tour Grand Finals Bangkok 2014	HIRANO Sayaka (JPN)		YU Mengyu (SGP)		WS	Main Draw	QuarterFinal	1 - 4	5:11 11:5 6:11 7:11 8:11	YU Mengyu	
+2014	World Tour Grand Finals Bangkok 2014	YU Fu (POR)		POTA Georgina (HUN)		WS	Main Draw	QuarterFinal	1 - 4	10:12 11:7 7:11 5:11 9:11	POTA Georgina	
+2014	World Tour Grand Finals Bangkok 2014	FUKUHARA Ai (JPN)		ISHIKAWA Kasumi (JPN)		WS	Main Draw	QuarterFinal	0 - 4	6:11 6:11 11:13 6:11	ISHIKAWA Kasumi	
+2014	World Tour Grand Finals Bangkok 2014	SUH Hyo Won (KOR)		YU Mengyu (SGP)		WS	Main Draw	SemiFinal	4 - 2	4:11 11:5 11:6 11:8 8:11 11:9	SUH Hyo Won	
+2014	World Tour Grand Finals Bangkok 2014	POTA Georgina (HUN)		ISHIKAWA Kasumi (JPN)		WS	Main Draw	SemiFinal	0 - 4	6:11 3:11 7:11 5:11	ISHIKAWA Kasumi	
+2014	World Tour Grand Finals Bangkok 2014	SUH Hyo Won (KOR)		ISHIKAWA Kasumi (JPN)		WS	Main Draw	Final	0 - 4	7:11 7:11 3:11 9:11	ISHIKAWA Kasumi	
+2014	World Tour Grand Finals Bangkok 2014	MAEDA Miyu (JPN)		SOLJA Petrissa (GER)		U21WS	Main Draw	SemiFinal	4 - 1	11:7 11:2 6:11 19:17 11:6	MAEDA Miyu	
+2014	World Tour Grand Finals Bangkok 2014	ITO Mima (JPN)		CHEN Szu-Yu (TPE)		U21WS	Main Draw	SemiFinal	2 - 4	8:11 16:14 2:11 14:12 4:11 9:11	CHEN Szu-Yu	
+2014	World Tour Grand Finals Bangkok 2014	MAEDA Miyu (JPN)		CHEN Szu-Yu (TPE)		U21WS	Main Draw	Final	3 - 4	4:11 12:10 8:11 12:10 11:8 6:11 12:14	CHEN Szu-Yu	
+2014	World Tour Grand Finals Bangkok 2014	SATO Hitomi (JPN)		ITO Mima (JPN)		U21WS	Qualification		1 - 4	8:11 8:11 4:11 11:9 6:11	ITO Mima	
+2014	World Tour Grand Finals Bangkok 2014	POLCANOVA Sofia (AUT)		MAEDA Miyu (JPN)		U21WS	Qualification		4 - 1	11:8 12:10 11:9 9:11 11:7	POLCANOVA Sofia	
+2014	World Tour Grand Finals Bangkok 2014	SATO Hitomi (JPN)		POLCANOVA Sofia (AUT)		U21WS	Qualification		4 - 3	11:13 12:10 11:6 9:11 5:11 11:6 11:3	SATO Hitomi	
+2014	World Tour Grand Finals Bangkok 2014	ITO Mima (JPN)		MAEDA Miyu (JPN)		U21WS	Qualification		3 - 4	5:11 6:11 11:8 11:2 2:11 11:8 3:11	MAEDA Miyu	
+2014	World Tour Grand Finals Bangkok 2014	SATO Hitomi (JPN)		MAEDA Miyu (JPN)		U21WS	Qualification		3 - 4	14:12 8:11 11:9 11:6 10:12 9:11 9:11	MAEDA Miyu	
+2014	World Tour Grand Finals Bangkok 2014	POLCANOVA Sofia (AUT)		ITO Mima (JPN)		U21WS	Qualification		0 - 4	6:11 4:11 8:11 8:11	ITO Mima	
+2014	World Tour Grand Finals Bangkok 2014	SOLJA Petrissa (GER)		MORI Sakura (JPN)		U21WS	Qualification		4 - 2	13:15 11:7 10:12 11:9 11:7 11:8	SOLJA Petrissa	
+2014	World Tour Grand Finals Bangkok 2014	CHEN Szu-Yu (TPE)		SAWETTABUT Suthasini (THA)		U21WS	Qualification		4 - 1	11:5 11:7 11:4 7:11 11:5	CHEN Szu-Yu	
+2014	World Tour Grand Finals Bangkok 2014	SOLJA Petrissa (GER)		CHEN Szu-Yu (TPE)		U21WS	Qualification		4 - 2	11:1 11:5 11:6 8:11 9:11 11:8	SOLJA Petrissa	
+2014	World Tour Grand Finals Bangkok 2014	MORI Sakura (JPN)		SAWETTABUT Suthasini (THA)		U21WS	Qualification		2 - 4	9:11 10:12 7:11 13:11 12:10 7:11	SAWETTABUT Suthasini	
+2014	World Tour Grand Finals Bangkok 2014	SOLJA Petrissa (GER)		SAWETTABUT Suthasini (THA)		U21WS	Qualification		2 - 4	8:11 6:11 11:2 12:14 11:9 9:11	SAWETTABUT Suthasini	
+2014	World Tour Grand Finals Bangkok 2014	CHEN Szu-Yu (TPE)		MORI Sakura (JPN)		U21WS	Qualification		4 - 2	5:11 11:4 11:6 11:5 6:11 11:6	CHEN Szu-YU
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 7
+
+2014	World Tour Grand Finals Bangkok 2014	TANG Peng (HKG)	WONG Chun Ting (HKG)	KUZMIN Fedor (RUS)	VLASOV Grigory (RUS)	MD	Main Draw	QuarterFinal	4 - 1	11:7 9:11 11:3 11:8 11:4	TANG Peng	WONG Chun Ting
+2014	World Tour Grand Finals Bangkok 2014	TANG Peng (HKG)	WONG Chun Ting (HKG)	MATSUDAIRA Kenta (JPN)	NIWA Koki (JPN)	MD	Main Draw	SemiFinal	1 - 4	12:10 9:11 15:17 6:11 7:11	MATSUDAIRA Kenta	NIWA Koki
+2014	World Tour Grand Finals Bangkok 2014	MATSUDAIRA Kenta (JPN)	NIWA Koki (JPN)	CHO Eonrae (KOR)	SEO Hyundeok (KOR)	MD	Main Draw	Final	3 - 4	11:8 10:12 5:11 12:10 6:11 11:6 9:11	CHO Eonrae	SEO Hyundeok
+2014	World Tour Grand Finals Bangkok 2014	CHO Eonrae (KOR)	SEO Hyundeok (KOR)	MORIZONO Masataka (JPN)	SAMBE Kohei (JPN)	MD	Main Draw	QuarterFinal	4 - 1	11:6 9:11 11:9 11:4 13:11	CHO Eonrae	SEO Hyundeok
+2014	World Tour Grand Finals Bangkok 2014	CHO Eonrae (KOR)	SEO Hyundeok (KOR)	LIVENTSOV Alexey (RUS)	PAIKOV Mikhail (RUS)	MD	Main Draw	SemiFinal	4 - 1	11:8 7:11 11:9 11:2 14:12	CHO Eonrae	SEO Hyundeok
+2014	World Tour Grand Finals Bangkok 2014	LIVENTSOV Alexey (RUS)	PAIKOV Mikhail (RUS)	CHIANG Hung-Chieh (TPE)	HUANG Sheng-Sheng (TPE)	MD	Main Draw	QuarterFinal	4 - 2	14:12 11:13 5:11 11:8 11:5 11:9	LIVENTSOV Alexey	PAIKOV Mikhail
+2014	World Tour Grand Finals Bangkok 2014	CHEN Chien-An (TPE)	CHUANG Chih-Yuan (TPE)	MATSUDAIRA Kenta (JPN)	NIWA Koki (JPN)	MD	Main Draw	QuarterFinal	0 - 4	6:11 3:11 3:11 5:11	MATSUDAIRA Kenta	NIWA Koki
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 7
+
+2014	World Tour Grand Finals Bangkok 2014	LEE Ho Ching (HKG)	NG Wing Nam (HKG)	KOMWONG Nanthana (THA)	SAWETTABUT Suthasini (THA)	WD	Main Draw	QuarterFinal	4 - 1	10:12 11:6 11:8 11:2 11:4	LEE Ho Ching	NG Wing Nam
+2014	World Tour Grand Finals Bangkok 2014	LEE Ho Ching (HKG)	NG Wing Nam (HKG)	GRZYBOWSKA-FRANC Katarzyna (POL)	PARTYKA Natalia (POL)	WD	Main Draw	SemiFinal	2 - 4	11:5 5:11 11:8 9:11 9:11 10:12	GRZYBOWSKA-FRANC Katarzyna	PARTYKA Natalia
+2014	World Tour Grand Finals Bangkok 2014	HIRANO Miu (JPN)	ITO Mima (JPN)	SHAN Xiaona (GER)	SOLJA Petrissa (GER)	WD	Main Draw	QuarterFinal	4 - 3	6:11 7:11 11:5 11:9 8:11 11:6 11:7	HIRANO Miu	ITO Mima
+2014	World Tour Grand Finals Bangkok 2014	HIRANO Miu (JPN)	ITO Mima (JPN)	FENG Tianwei (SGP)	YU Mengyu (SGP)	WD	Main Draw	SemiFinal	4 - 2	5:11 11:8 11:6 11:4 9:11 11:8	HIRANO Miu	ITO Mima
+2014	World Tour Grand Finals Bangkok 2014	HIRANO Miu (JPN)	ITO Mima (JPN)	GRZYBOWSKA-FRANC Katarzyna (POL)	PARTYKA Natalia (POL)	WD	Main Draw	Final	4 - 0	11:7 11:6 11:4 11:5	HIRANO Miu	ITO Mima
+2014	World Tour Grand Finals Bangkok 2014	GRZYBOWSKA-FRANC Katarzyna (POL)	PARTYKA Natalia (POL)	FUKUHARA Ai (JPN)	WAKAMIYA Misako (JPN)	WD	Main Draw	QuarterFinal	4 - 2	12:10 3:11 10:12 11:7 13:11 11:6	GRZYBOWSKA-FRANC Katarzyna	PARTYKA Natalia
+2014	World Tour Grand Finals Bangkok 2014	CHENG I-Ching (TPE)	HUANG Yi-Hua (TPE)	FENG Tianwei (SGP)	YU Mengyu (SGP)	WD	Main Draw	QuarterFinal	3 - 4	8:11 8:11 11:5 11:7 9:11 11:5 5:11	FENG Tianwei	YU Mengyu

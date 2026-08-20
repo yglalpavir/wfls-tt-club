@@ -5,3 +5,281 @@
 参赛人数：270
 开始日期：2014-06-04
 结束日期：2014-06-08
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 2 Total: 117
+
+Start
+Prev
+1
+2
+Next
+End
+2014	World Tour China Open Chengdu 2014	SUN Chia-Hung (TPE)		AVI-TAL Omer (PAN)		MS	Qualification		4 - 0	11:6 11:6 11:7 11:7	SUN Chia-Hung	
+2014	World Tour China Open Chengdu 2014	WONG Chun Ting (HKG)		AVI-TAL Omer (PAN)		MS	Qualification		4 - 0	11:4 11:6 11:1 11:1	WONG Chun Ting	
+2014	World Tour China Open Chengdu 2014	WONG Chun Ting (HKG)		SUN Chia-Hung (TPE)		MS	Qualification		2 - 4	11:3 9:11 4:11 3:11 11:4 8:11	SUN Chia-Hung	
+2014	World Tour China Open Chengdu 2014	HUNG Ka Tak (HKG)		WEN Wei-Chieh (TPE)		MS	Qualification		3 - 4	11:7 11:5 8:11 8:11 9:11 11:9 8:11	WEN Wei-Chieh	
+2014	World Tour China Open Chengdu 2014	YOSHIDA Kaii (JPN)		WEN Wei-Chieh (TPE)		MS	Qualification		4 - 0	11:6 11:6 11:9 11:5	YOSHIDA Kaii	
+2014	World Tour China Open Chengdu 2014	YOSHIDA Kaii (JPN)		HUNG Ka Tak (HKG)		MS	Qualification		4 - 0	11:6 11:9 11:7 11:9	YOSHIDA Kaii	
+2014	World Tour China Open Chengdu 2014	PARK Chan-Hyeok (KOR)		LEE Chun-Lin (TPE)		MS	Qualification		4 - 1	8:11 11:8 14:12 21:19 11:7	PARK Chan-Hyeok	
+2014	World Tour China Open Chengdu 2014	MENGEL Steffen (GER)		LEE Chun-Lin (TPE)		MS	Qualification		4 - 2	8:11 11:8 7:11 11:9 11:9 11:5	MENGEL Steffen	
+2014	World Tour China Open Chengdu 2014	MENGEL Steffen (GER)		PARK Chan-Hyeok (KOR)		MS	Qualification		4 - 3	11:7 6:11 7:11 11:5 11:7 10:12 11:5	MENGEL Steffen	
+2014	World Tour China Open Chengdu 2014	LIAO Cheng-Ting (TPE)		LI Hon Ming (HKG)		MS	Qualification		4 - 1	11:5 5:11 11:9 11:5 11:3	LIAO Cheng-Ting	
+2014	World Tour China Open Chengdu 2014	LEE Sang Su (KOR)		LI Hon Ming (HKG)		MS	Qualification		4 - 1	11:7 11:8 6:11 11:5 11:5	LEE Sang Su	
+2014	World Tour China Open Chengdu 2014	LEE Sang Su (KOR)		LIAO Cheng-Ting (TPE)		MS	Qualification		3 - 4	11:7 8:11 8:11 7:11 11:9 11:5 8:11	LIAO Cheng-Ting	
+2014	World Tour China Open Chengdu 2014	FENG Xiaoquan (AUT)		LAI Yi-Yao (TPE)		MS	Qualification		4 - 2	9:11 11:8 7:11 11:3 11:9 11:4	FENG Xiaoquan	
+2014	World Tour China Open Chengdu 2014	JEONG Sangeun (KOR)		LAI Yi-Yao (TPE)		MS	Qualification		4 - 1	11:8 4:11 11:6 11:6 11:4	JEONG Sangeun	
+2014	World Tour China Open Chengdu 2014	JEONG Sangeun (KOR)		FENG Xiaoquan (AUT)		MS	Qualification		4 - 0	11:9 11:5 11:6 11:6	JEONG Sangeun	
+2014	World Tour China Open Chengdu 2014	KIM Minhyeok (KOR)		PENG Wang-Wei (TPE)		MS	Qualification		4 - 1	9:11 11:5 14:12 11:4 11:9	KIM Minhyeok	
+2014	World Tour China Open Chengdu 2014	LI Hu (SGP)		PENG Wang-Wei (TPE)		MS	Qualification		4 - 0	16:14 11:5 11:5 11:9	LI Hu	
+2014	World Tour China Open Chengdu 2014	LI Hu (SGP)		KIM Minhyeok (KOR)		MS	Qualification		4 - 2	12:10 10:12 11:5 9:11 13:11 11:3	LI Hu	
+2014	World Tour China Open Chengdu 2014	SAKAI Asuka (JPN)		LU Po-Hsien (TPE)		MS	Qualification		4 - 0	11:9 11:5 11:7 13:11	SAKAI Asuka	
+2014	World Tour China Open Chengdu 2014	YANG Zi (SGP)		LU Po-Hsien (TPE)		MS	Qualification		4 - 2	4:11 11:3 9:11 11:7 11:3 11:9	YANG Zi	
+2014	World Tour China Open Chengdu 2014	YANG Zi (SGP)		SAKAI Asuka (JPN)		MS	Qualification		1 - 4	11:13 11:9 5:11 9:11 7:11	SAKAI Asuka	
+2014	World Tour China Open Chengdu 2014	MACHI Asuka (JPN)		MAK King Ho (HKG)		MS	Qualification		4 - 0	11:8 11:6 11:3 11:9	MACHI Asuka	
+2014	World Tour China Open Chengdu 2014	CHIANG Hung-Chieh (TPE)		MAK King Ho (HKG)		MS	Qualification		4 - 0	11:7 11:8 11:2 11:8	CHIANG Hung-Chieh	
+2014	World Tour China Open Chengdu 2014	CHIANG Hung-Chieh (TPE)		MACHI Asuka (JPN)		MS	Qualification		4 - 3	11:8 8:11 5:11 13:15 11:7 11:5 12:10	CHIANG Hung-Chieh	
+2014	World Tour China Open Chengdu 2014	HUANG Sheng-Sheng (TPE)		POUNGSRI Max (THA)		MS	Qualification		4 - 0	13:11 11:2 11:5 11:6	HUANG Sheng-Sheng	
+2014	World Tour China Open Chengdu 2014	CHEUNG Yuk (HKG)		POUNGSRI Max (THA)		MS	Qualification		4 - 1	9:11 11:5 11:7 11:9 14:12	CHEUNG Yuk	
+2014	World Tour China Open Chengdu 2014	CHEUNG Yuk (HKG)		HUANG Sheng-Sheng (TPE)		MS	Qualification		1 - 4	6:11 8:11 10:12 12:10 4:11	HUANG Sheng-Sheng	
+2014	World Tour China Open Chengdu 2014	HUNG Tzu-Hsiang (TPE)		KWAN Man Ho (HKG)		MS	Qualification		4 - 3	11:5 11:13 10:12 9:11 12:10 11:5 11:5	HUNG Tzu-Hsiang	
+2014	World Tour China Open Chengdu 2014	MORIZONO Masataka (JPN)		KWAN Man Ho (HKG)		MS	Qualification		4 - 1	14:12 9:11 11:5 11:6 11:9	MORIZONO Masataka	
+2014	World Tour China Open Chengdu 2014	MORIZONO Masataka (JPN)		HUNG Tzu-Hsiang (TPE)		MS	Qualification		4 - 3	11:13 11:5 10:12 11:6 11:8 10:12 11:4	MORIZONO Masataka	
+2014	World Tour China Open Chengdu 2014	WU Chih-Chi (TPE)		HO Kwan Kit (HKG)		MS	Qualification		4 - 3	11:5 9:11 11:5 5:11 14:12 10:12 12:10	WU Chih-Chi	
+2014	World Tour China Open Chengdu 2014	MURAMATSU Yuto (JPN)		HO Kwan Kit (HKG)		MS	Qualification		2 - 4	8:11 11:8 10:12 11:1 6:11 8:11	HO Kwan Kit	
+2014	World Tour China Open Chengdu 2014	MURAMATSU Yuto (JPN)		WU Chih-Chi (TPE)		MS	Qualification		4 - 1	11:3 13:15 11:3 11:7 11:2	MURAMATSU Yuto	
+2014	World Tour China Open Chengdu 2014	WU Zhikang (SGP)		CHANG Shun-Hung (TPE)		MS	Qualification		4 - 1	6:11 12:10 11:8 11:8 11:8	WU Zhikang	
+2014	World Tour China Open Chengdu 2014	SEO Hyundeok (KOR)		CHANG Shun-Hung (TPE)		MS	Qualification		4 - 1	11:2 9:11 11:6 11:6 11:7	SEO Hyundeok	
+2014	World Tour China Open Chengdu 2014	SEO Hyundeok (KOR)		WU Zhikang (SGP)		MS	Qualification		1 - 4	9:11 9:11 11:6 12:14 7:11	WU Zhikang	
+2014	World Tour China Open Chengdu 2014	KIM Donghyun (KOR)		GREEN Wally (USA)		MS	Qualification		4 - 0	11:5 11:3 11:6 11:6	KIM Donghyun	
+2014	World Tour China Open Chengdu 2014	WANG Yang (SVK)		CHEN Chao-Shun (TPE)		MS	Qualification		4 - 0	11:5 11:9 11:5 11:8	WANG Yang	
+2014	World Tour China Open Chengdu 2014	WANG Yang (SVK)		GREEN Wally (USA)		MS	Qualification		4 - 0	11:4 11:3 11:5 11:7	WANG Yang	
+2014	World Tour China Open Chengdu 2014	KIM Donghyun (KOR)		CHEN Chao-Shun (TPE)		MS	Qualification		4 - 2	11:9 14:12 5:11 11:5 8:11 11:7	KIM Donghyun	
+2014	World Tour China Open Chengdu 2014	WANG Yang (SVK)		KIM Donghyun (KOR)		MS	Qualification		3 - 4	13:11 8:11 13:11 11:8 8:11 10:12 8:11	KIM Donghyun	
+2014	World Tour China Open Chengdu 2014	GREEN Wally (USA)		CHEN Chao-Shun (TPE)		MS	Qualification		0 - 4	4:11 7:11 3:11 7:11	CHEN Chao-Shun	
+2014	World Tour China Open Chengdu 2014	KANG Dongsoo (KOR)		HOTZ Christian (SUI)		MS	Qualification		4 - 2	6:11 11:4 9:11 15:13 11:8 11:6	KANG Dongsoo	
+2014	World Tour China Open Chengdu 2014	CHEN Feng (SGP)		CHIN Mao-Cheng (TPE)		MS	Qualification		4 - 1	10:12 12:10 11:7 11:5 11:4	CHEN Feng	
+2014	World Tour China Open Chengdu 2014	CHEN Feng (SGP)		HOTZ Christian (SUI)		MS	Qualification		4 - 0	11:4 12:10 11:6 11:9	CHEN Feng	
+2014	World Tour China Open Chengdu 2014	KANG Dongsoo (KOR)		CHIN Mao-Cheng (TPE)		MS	Qualification		4 - 1	11:7 11:9 11:5 11:13 11:8	KANG Dongsoo	
+2014	World Tour China Open Chengdu 2014	CHEN Feng (SGP)		KANG Dongsoo (KOR)		MS	Qualification		4 - 0	11:7 11:8 11:3 11:5	CHEN Feng	
+2014	World Tour China Open Chengdu 2014	HOTZ Christian (SUI)		CHIN Mao-Cheng (TPE)		MS	Qualification		1 - 4	8:11 7:11 5:11 11:4 2:11	CHIN Mao-Cheng	
+2014	World Tour China Open Chengdu 2014	PENG Wang-Wei (TPE)		HO Kwan Kit (HKG)		U21MS	Qualification		1 - 3	8:11 13:11 8:11 10:12	HO Kwan Kit	
+2014	World Tour China Open Chengdu 2014	KIM Minhyeok (KOR)		HO Kwan Kit (HKG)		U21MS	Qualification		3 - 1	4:11 13:11 11:9 11:7	KIM Minhyeok	
+2014	World Tour China Open Chengdu 2014	KIM Minhyeok (KOR)		PENG Wang-Wei (TPE)		U21MS	Qualification		3 - 1	13:15 11:5 12:10 11:8	KIM Minhyeok	
+2014	World Tour China Open Chengdu 2014	LAI Yi-Yao (TPE)		LIAO Cheng-Ting (TPE)		U21MS	Qualification		0 - 3	13:15 5:11 2:11	LIAO Cheng-Ting	
+2014	World Tour China Open Chengdu 2014	MAK King Ho (HKG)		LIAO Cheng-Ting (TPE)		U21MS	Qualification		2 - 3	11:7 4:11 11:6 7:11 6:11	LIAO Cheng-Ting	
+2014	World Tour China Open Chengdu 2014	MAK King Ho (HKG)		LAI Yi-Yao (TPE)		U21MS	Qualification		3 - 1	11:4 11:5 9:11 11:7	MAK King Ho	
+2014	World Tour China Open Chengdu 2014	LEE Chun-Lin (TPE)		KWAN Man Ho (HKG)		U21MS	Qualification		3 - 0	11:5 11:4 12:10	LEE Chun-Lin	
+2014	World Tour China Open Chengdu 2014	PARK Chan-Hyeok (KOR)		KWAN Man Ho (HKG)		U21MS	Qualification		3 - 0	14:12 11:9 11:9	PARK Chan-Hyeok	
+2014	World Tour China Open Chengdu 2014	PARK Chan-Hyeok (KOR)		LEE Chun-Lin (TPE)		U21MS	Qualification		3 - 1	11:9 11:6 10:12 11:7	PARK Chan-Hyeok	
+2014	World Tour China Open Chengdu 2014	LI Hon Ming (HKG)		POUNGSRI Max (THA)		U21MS	Qualification		2 - 3	8:11 11:4 3:11 11:4 7:11	POUNGSRI Max	
+2014	World Tour China Open Chengdu 2014	SUN Chia-Hung (TPE)		CHIN Mao-Cheng (TPE)		U21MS	Qualification		3 - 1	11:5 11:9 9:11 11:8	SUN Chia-Hung	
+2014	World Tour China Open Chengdu 2014	SUN Chia-Hung (TPE)		POUNGSRI Max (THA)		U21MS	Qualification		3 - 0	11:9 11:5 11:9	SUN Chia-Hung	
+2014	World Tour China Open Chengdu 2014	LI Hon Ming (HKG)		CHIN Mao-Cheng (TPE)		U21MS	Qualification		1 - 3	7:11 8:11 11:8 8:11	CHIN Mao-Cheng	
+2014	World Tour China Open Chengdu 2014	SUN Chia-Hung (TPE)		LI Hon Ming (HKG)		U21MS	Qualification		3 - 0	11:9 11:8 11:8	SUN Chia-Hung	
+2014	World Tour China Open Chengdu 2014	POUNGSRI Max (THA)		CHIN Mao-Cheng (TPE)		U21MS	Qualification		3 - 2	5:11 11:6 4:11 12:10 11:6	POUNGSRI Max	
+2014	World Tour China Open Chengdu 2014	WEN Wei-Chieh (TPE)		LU Po-Hsien (TPE)		U21MS	Qualification		2 - 3	10:12 11:6 2:11 12:10 11:13	LU Po-Hsien	
+2014	World Tour China Open Chengdu 2014	HUNG Ka Tak (HKG)		AVI-TAL Omer (PAN)		U21MS	Qualification		3 - 1	9:11 11:9 11:2 12:10	HUNG Ka Tak	
+2014	World Tour China Open Chengdu 2014	HUNG Ka Tak (HKG)		LU Po-Hsien (TPE)		U21MS	Qualification		3 - 2	8:11 9:11 11:5 11:5 11:3	HUNG Ka Tak	
+2014	World Tour China Open Chengdu 2014	WEN Wei-Chieh (TPE)		AVI-TAL Omer (PAN)		U21MS	Qualification		2 - 3	11:8 6:11 8:11 11:3 9:11	AVI-TAL Omer	
+2014	World Tour China Open Chengdu 2014	HUNG Ka Tak (HKG)		WEN Wei-Chieh (TPE)		U21MS	Qualification		1 - 3	13:15 11:3 4:11 6:11	WEN Wei-Chieh	
+2014	World Tour China Open Chengdu 2014	LU Po-Hsien (TPE)		AVI-TAL Omer (PAN)		U21MS	Qualification		3 - 2	8:11 11:5 9:11 11:5 11:7	LU Po-Hsien	
+2014	World Tour China Open Chengdu 2014	XU Xin (CHN)		FENG Xiaoquan (AUT)		MS	Main Draw	R32	4 - 0	11:8 11:4 11:7 11:4	XU Xin	
+2014	World Tour China Open Chengdu 2014	SUN Chia-Hung (TPE)		STEGER Bastian (GER)		MS	Main Draw	R32	0 - 4	6:11 9:11 8:11 10:12	STEGER Bastian	
+2014	World Tour China Open Chengdu 2014	KISHIKAWA Seiya (JPN)		LIAO Cheng-Ting (TPE)		MS	Main Draw	R32	4 - 3	7:11 12:10 11:3 7:11 5:11 11:3 11:5	KISHIKAWA Seiya	
+2014	World Tour China Open Chengdu 2014	KIM Donghyun (KOR)		GAO Ning (SGP)		MS	Main Draw	R32	2 - 4	7:11 11:8 2:11 11:7 9:11 7:11	GAO Ning	
+2014	World Tour China Open Chengdu 2014	YAN An (CHN)		MORIZONO Masataka (JPN)		MS	Main Draw	R32	4 - 1	9:11 11:9 11:7 11:9 11:8	YAN An	
+2014	World Tour China Open Chengdu 2014	CHEN Feng (SGP)		TANG Peng (HKG)		MS	Main Draw	R32	3 - 4	11:6 11:3 9:11 6:11 11:9 3:11 7:11	TANG Peng	
+2014	World Tour China Open Chengdu 2014	MATSUDAIRA Kenta (JPN)		JEONG Sangeun (KOR)		MS	Main Draw	R32	0 - 4	9:11 6:11 11:13 3:11	JEONG Sangeun	
+2014	World Tour China Open Chengdu 2014	LI Hu (SGP)		ZHANG Jike (CHN)		MS	Main Draw	R32	0 - 4	4:11 3:11 5:11 9:11	ZHANG Jike	
+2014	World Tour China Open Chengdu 2014	FAN Zhendong (CHN)		CHIANG Hung-Chieh (TPE)		MS	Main Draw	R32	4 - 0	11:5 12:10 12:10 11:4	FAN Zhendong	
+2014	World Tour China Open Chengdu 2014	YOSHIDA Kaii (JPN)		CHO Eonrae (KOR)		MS	Main Draw	R32	4 - 3	3:11 11:6 9:11 11:8 7:11 11:6 11:7	YOSHIDA Kaii	
+2014	World Tour China Open Chengdu 2014	JIANG Tianyi (HKG)		WU Zhikang (SGP)		MS	Main Draw	R32	4 - 2	2:11 11:5 4:11 11:9 11:8 11:5	JIANG Tianyi	
+2014	World Tour China Open Chengdu 2014	HUANG Sheng-Sheng (TPE)		WANG Hao (CHN)		MS	Main Draw	R32	0 - 4	7:11 5:11 5:11 9:11	WANG Hao	
+2014	World Tour China Open Chengdu 2014	CHUANG Chih-Yuan (TPE)		SAKAI Asuka (JPN)		MS	Main Draw	R32	4 - 2	14:16 8:11 11:3 11:6 13:11 12:10	CHUANG Chih-Yuan	
+2014	World Tour China Open Chengdu 2014	MENGEL Steffen (GER)		NIWA Koki (JPN)		MS	Main Draw	R32	1 - 4	11:9 3:11 9:11 7:11 9:11	NIWA Koki	
+2014	World Tour China Open Chengdu 2014	CHEN Chien-An (TPE)		MURAMATSU Yuto (JPN)		MS	Main Draw	R32	1 - 4	5:11 9:11 8:11 11:5 6:11	MURAMATSU Yuto	
+2014	World Tour China Open Chengdu 2014	WEN Wei-Chieh (TPE)		MA Long (CHN)		MS	Main Draw	R32	1 - 4	13:11 4:11 8:11 6:11 10:12	MA Long	
+2014	World Tour China Open Chengdu 2014	XU Xin (CHN)		STEGER Bastian (GER)		MS	Main Draw	R16	4 - 0	11:5 11:7 11:4 11:7	XU Xin	
+2014	World Tour China Open Chengdu 2014	KISHIKAWA Seiya (JPN)		GAO Ning (SGP)		MS	Main Draw	R16	0 - 4	4:11 8:11 12:14 9:11	GAO Ning	
+2014	World Tour China Open Chengdu 2014	YAN An (CHN)		TANG Peng (HKG)		MS	Main Draw	R16	3 - 4	12:10 10:12 11:7 10:12 11:9 9:11 4:11	TANG Peng	
+2014	World Tour China Open Chengdu 2014	JEONG Sangeun (KOR)		ZHANG Jike (CHN)		MS	Main Draw	R16	0 - 4	9:11 8:11 2:11 9:11	ZHANG Jike	
+2014	World Tour China Open Chengdu 2014	FAN Zhendong (CHN)		YOSHIDA Kaii (JPN)		MS	Main Draw	R16	4 - 0	11:7 11:8 11:7 13:11	FAN Zhendong	
+2014	World Tour China Open Chengdu 2014	JIANG Tianyi (HKG)		WANG Hao (CHN)		MS	Main Draw	R16	1 - 4	7:11 11:3 6:11 9:11 5:11	WANG Hao	
+2014	World Tour China Open Chengdu 2014	CHUANG Chih-Yuan (TPE)		NIWA Koki (JPN)		MS	Main Draw	R16	4 - 0	11:5 18:16 11:8 11:4	CHUANG Chih-Yuan	
+2014	World Tour China Open Chengdu 2014	MURAMATSU Yuto (JPN)		MA Long (CHN)		MS	Main Draw	R16	0 - 4	7:11 8:11 5:11 7:11	MA Long	
+2014	World Tour China Open Chengdu 2014	XU Xin (CHN)		GAO Ning (SGP)		MS	Main Draw	QuarterFinal	4 - 3	11:7 11:7 9:11 8:11 10:12 11:9 11:6	XU Xin	
+2014	World Tour China Open Chengdu 2014	TANG Peng (HKG)		ZHANG Jike (CHN)		MS	Main Draw	QuarterFinal	1 - 4	7:11 10:12 9:11 11:9 7:11	ZHANG Jike	
+2014	World Tour China Open Chengdu 2014	FAN Zhendong (CHN)		WANG Hao (CHN)		MS	Main Draw	QuarterFinal	4 - 1	11:7 11:13 11:6 11:8 12:10	FAN Zhendong	
+2014	World Tour China Open Chengdu 2014	CHUANG Chih-Yuan (TPE)		MA Long (CHN)		MS	Main Draw	QuarterFinal	1 - 4	6:11 2:11 11:7 8:11 6:11	MA Long	
+2014	World Tour China Open Chengdu 2014	XU Xin (CHN)		ZHANG Jike (CHN)		MS	Main Draw	SemiFinal	4 - 2	7:11 11:7 11:9 8:11 11:7 14:12	XU Xin	
+2014	World Tour China Open Chengdu 2014	FAN Zhendong (CHN)		MA Long (CHN)		MS	Main Draw	SemiFinal	3 - 4	9:11 11:9 6:11 11:7 7:11 11:9 8:11	MA Long	
+2014	World Tour China Open Chengdu 2014	XU Xin (CHN)		MA Long (CHN)		MS	Main Draw	Final	1 - 4	7:11 9:11 11:8 7:11 4:11	MA Long
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 2 Total: 119
+
+Start
+Prev
+1
+2
+Next
+End
+2014	World Tour China Open Chengdu 2014	HSIUNG Nai-I (TPE)		LI Isabelle Siyun (SGP)		WS	Qualification		0 - 4	7:11 8:11 5:11 10:12	LI Isabelle Siyun	
+2014	World Tour China Open Chengdu 2014	WU Jiaduo (GER)		LI Isabelle Siyun (SGP)		WS	Qualification		4 - 0	11:8 11:3 11:5 11:9	WU Jiaduo	
+2014	World Tour China Open Chengdu 2014	WU Jiaduo (GER)		HSIUNG Nai-I (TPE)		WS	Qualification		2 - 4	6:11 11:5 7:11 11:7 7:11 7:11	HSIUNG Nai-I	
+2014	World Tour China Open Chengdu 2014	KIM Mingyung (KOR)		HUANG Hsin (TPE)		WS	Qualification		4 - 1	12:10 5:11 11:6 11:8 11:9	KIM Mingyung	
+2014	World Tour China Open Chengdu 2014	NG Wing Nam (HKG)		HUANG Hsin (TPE)		WS	Qualification		4 - 1	11:8 11:13 11:4 11:2 13:11	NG Wing Nam	
+2014	World Tour China Open Chengdu 2014	NG Wing Nam (HKG)		KIM Mingyung (KOR)		WS	Qualification		4 - 1	11:5 11:8 11:8 5:11 11:9	NG Wing Nam	
+2014	World Tour China Open Chengdu 2014	LEE Dasom (KOR)		SOO Wai Yam (HKG)		WS	Qualification		4 - 2	11:9 11:2 11:9 9:11 5:11 11:8	LEE Dasom	
+2014	World Tour China Open Chengdu 2014	LEE I-Chen (TPE)		SOO Wai Yam (HKG)		WS	Qualification		4 - 1	7:11 11:7 11:5 11:6 11:5	LEE I-Chen	
+2014	World Tour China Open Chengdu 2014	LEE I-Chen (TPE)		LEE Dasom (KOR)		WS	Qualification		4 - 1	11:7 5:11 11:5 11:6 12:10	LEE I-Chen	
+2014	World Tour China Open Chengdu 2014	LEE Eunhye (KOR)		TSUI Pao-Wen (TPE)		WS	Qualification		1 - 4	6:11 4:11 5:11 11:9 9:11	TSUI Pao-Wen	
+2014	World Tour China Open Chengdu 2014	LIN Ye (CAN)		TSUI Pao-Wen (TPE)		WS	Qualification		4 - 0	11:2 11:4 11:4 11:4	LIN Ye	
+2014	World Tour China Open Chengdu 2014	LIN Ye (CAN)		LEE Eunhye (KOR)		WS	Qualification		4 - 1	11:3 7:11 11:7 11:8 13:11	LIN Ye	
+2014	World Tour China Open Chengdu 2014	CHO Hala (KOR)		LI Ching Wan (HKG)		WS	Qualification		3 - 4	11:5 7:11 11:7 9:11 9:11 11:7 5:11	LI Ching Wan	
+2014	World Tour China Open Chengdu 2014	HUANG Yi-Hua (TPE)		LI Ching Wan (HKG)		WS	Qualification		2 - 4	13:15 5:11 6:11 11:9 11:5 4:11	LI Ching Wan	
+2014	World Tour China Open Chengdu 2014	HUANG Yi-Hua (TPE)		CHO Hala (KOR)		WS	Qualification		1 - 4	5:11 11:6 7:11 6:11 8:11	CHO Hala	
+2014	World Tour China Open Chengdu 2014	KIM Minhee (YOB=1991) (KOR)		LIU Hsing-Yin (TPE)		WS	Qualification		2 - 4	11:6 12:10 7:11 10:12 9:11 5:11	LIU Hsing-Yin	
+2014	World Tour China Open Chengdu 2014	HIRANO Miu (JPN)		LIU Hsing-Yin (TPE)		WS	Qualification		4 - 2	11:7 5:11 11:7 11:4 6:11 11:6	HIRANO Miu	
+2014	World Tour China Open Chengdu 2014	HIRANO Miu (JPN)		KIM Minhee (YOB=1991) (KOR)		WS	Qualification		4 - 3	11:8 12:10 4:11 5:11 11:9 9:11 11:9	HIRANO Miu	
+2014	World Tour China Open Chengdu 2014	MORI Sakura (JPN)		LEE Yearam (KOR)		WS	Qualification		1 - 4	7:11 11:5 12:14 7:11 10:12	LEE Yearam	
+2014	World Tour China Open Chengdu 2014	LI Jie (NED)		LEE Yearam (KOR)		WS	Qualification		4 - 1	8:11 11:2 11:8 11:5 11:2	LI Jie	
+2014	World Tour China Open Chengdu 2014	LI Jie (NED)		MORI Sakura (JPN)		WS	Qualification		4 - 0	11:6 11:3 11:2 14:12	LI Jie	
+2014	World Tour China Open Chengdu 2014	CHENG Hsien-Tzu (TPE)		MAK Tze Wing (HKG)		WS	Qualification		4 - 2	13:11 11:6 7:11 9:11 11:7 12:10	CHENG Hsien-Tzu	
+2014	World Tour China Open Chengdu 2014	HAMAMOTO Yui (AUT)		MAK Tze Wing (HKG)		WS	Qualification		4 - 1	11:9 12:10 8:11 11:6 11:3	HAMAMOTO Yui	
+2014	World Tour China Open Chengdu 2014	HAMAMOTO Yui (AUT)		CHENG Hsien-Tzu (TPE)		WS	Qualification		2 - 4	11:9 11:6 7:11 4:11 8:11 7:11	CHENG Hsien-Tzu	
+2014	World Tour China Open Chengdu 2014	MAEDA Miyu (JPN)		WONG Chung Wan (HKG)		WS	Qualification		4 - 0	11:4 13:11 11:9 13:11	MAEDA Miyu	
+2014	World Tour China Open Chengdu 2014	CHEN Szu-Yu (TPE)		WONG Chung Wan (HKG)		WS	Qualification		4 - 1	11:3 11:7 9:11 11:8 12:10	CHEN Szu-Yu	
+2014	World Tour China Open Chengdu 2014	CHEN Szu-Yu (TPE)		MAEDA Miyu (JPN)		WS	Qualification		4 - 0	11:9 11:1 11:4 11:5	CHEN Szu-Yu	
+2014	World Tour China Open Chengdu 2014	SAKAI Haruka (JPN)		HSU Hui-Tsun (TPE)		WS	Qualification		4 - 1	8:11 11:9 11:8 11:4 11:6	SAKAI Haruka	
+2014	World Tour China Open Chengdu 2014	ZHOU Yihan (SGP)		HSU Hui-Tsun (TPE)		WS	Qualification		4 - 1	11:9 6:11 11:9 11:4 11:5	ZHOU Yihan	
+2014	World Tour China Open Chengdu 2014	ZHOU Yihan (SGP)		SAKAI Haruka (JPN)		WS	Qualification		4 - 2	11:8 11:8 2:11 7:11 12:10 11:7	ZHOU Yihan	
+2014	World Tour China Open Chengdu 2014	KATO Miyu (JPN)		LIN Chia-Chih (TPE)		WS	Qualification		4 - 0	11:7 11:7 11:7 11:6	KATO Miyu	
+2014	World Tour China Open Chengdu 2014	SOLJA Amelie (AUT)		LIN Chia-Chih (TPE)		WS	Qualification		4 - 0	11:9 13:11 11:4 11:3	SOLJA Amelie	
+2014	World Tour China Open Chengdu 2014	SOLJA Amelie (AUT)		KATO Miyu (JPN)		WS	Qualification		4 - 2	9:11 11:5 11:9 11:3 10:12 11:8	SOLJA Amelie	
+2014	World Tour China Open Chengdu 2014	YAMANASHI Yuri (JPN)		LIU Qi (HKG)		WS	Qualification		4 - 1	11:8 10:12 11:6 11:8 13:11	YAMANASHI Yuri	
+2014	World Tour China Open Chengdu 2014	PARK Youngsook (KOR)		LIU Qi (HKG)		WS	Qualification		4 - 2	11:6 13:11 11:6 5:11 10:12 14:12	PARK Youngsook	
+2014	World Tour China Open Chengdu 2014	PARK Youngsook (KOR)		YAMANASHI Yuri (JPN)		WS	Qualification		4 - 3	13:11 11:7 5:11 11:4 8:11 7:11 11:6	PARK Youngsook	
+2014	World Tour China Open Chengdu 2014	KOMWONG Nanthana (THA)		KATO Kyoka (JPN)		WS	Qualification		3 - 4	11:9 6:11 8:11 11:5 11:5 11:13 10:12	KATO Kyoka	
+2014	World Tour China Open Chengdu 2014	YOO Eunchong (KOR)		KATO Kyoka (JPN)		WS	Qualification		0 - 4	5:11 7:11 11:13 9:11	KATO Kyoka	
+2014	World Tour China Open Chengdu 2014	YOO Eunchong (KOR)		KOMWONG Nanthana (THA)		WS	Qualification		4 - 1	11:7 13:11 11:5 9:11 12:10	YOO Eunchong	
+2014	World Tour China Open Chengdu 2014	HSING Ariel (USA)		ZHU Chengzhu (HKG)		WS	Qualification		2 - 4	7:11 11:6 11:5 6:11 8:11 11:13	ZHU Chengzhu	
+2014	World Tour China Open Chengdu 2014	ITO Mima (JPN)		ZHU Chengzhu (HKG)		WS	Qualification		4 - 1	11:7 11:8 9:11 11:8 11:8	ITO Mima	
+2014	World Tour China Open Chengdu 2014	ITO Mima (JPN)		HSING Ariel (USA)		WS	Qualification		3 - 4	11:9 7:11 9:11 8:11 12:10 11:7 11:13	HSING Ariel	
+2014	World Tour China Open Chengdu 2014	MATSUDAIRA Shiho (JPN)		WANG Yi-Ju (TPE)		WS	Qualification		4 - 3	11:8 16:14 10:12 11:9 3:11 3:11 11:6	MATSUDAIRA Shiho	
+2014	World Tour China Open Chengdu 2014	LEE Eunhee (KOR)		WANG Yi-Ju (TPE)		WS	Qualification		4 - 2	9:11 9:11 11:7 11:4 11:3 13:11	LEE Eunhee	
+2014	World Tour China Open Chengdu 2014	LEE Eunhee (KOR)		MATSUDAIRA Shiho (JPN)		WS	Qualification		2 - 4	12:10 11:9 7:11 7:11 5:11 9:11	MATSUDAIRA Shiho	
+2014	World Tour China Open Chengdu 2014	LIN Chia-Hui (TPE)		SAWETTABUT Suthasini (THA)		WS	Qualification		2 - 4	7:11 11:6 12:10 6:11 9:11 8:11	SAWETTABUT Suthasini	
+2014	World Tour China Open Chengdu 2014	NONAKA Yuki (JPN)		SAWETTABUT Suthasini (THA)		WS	Qualification		4 - 2	11:5 4:11 11:7 7:11 11:5 11:9	NONAKA Yuki	
+2014	World Tour China Open Chengdu 2014	NONAKA Yuki (JPN)		LIN Chia-Hui (TPE)		WS	Qualification		4 - 2	8:11 11:4 11:9 9:11 11:3 11:8	NONAKA Yuki	
+2014	World Tour China Open Chengdu 2014	LI Ching Wan (HKG)		SAWETTABUT Suthasini (THA)		U21WS	Qualification		2 - 3	11:7 9:11 11:9 9:11 11:13	SAWETTABUT Suthasini	
+2014	World Tour China Open Chengdu 2014	KATO Miyu (JPN)		SAWETTABUT Suthasini (THA)		U21WS	Qualification		3 - 0	11:9 11:4 11:8	KATO Miyu	
+2014	World Tour China Open Chengdu 2014	KATO Miyu (JPN)		LI Ching Wan (HKG)		U21WS	Qualification		3 - 0	11:4 11:6 11:8	KATO Miyu	
+2014	World Tour China Open Chengdu 2014	LI Isabelle Siyun (SGP)		WONG Chung Wan (HKG)		U21WS	Qualification		3 - 0	11:5 11:6 11:4	LI Isabelle Siyun	
+2014	World Tour China Open Chengdu 2014	MATSUDAIRA Shiho (JPN)		WONG Chung Wan (HKG)		U21WS	Qualification		3 - 1	11:4 5:11 11:9 11:7	MATSUDAIRA Shiho	
+2014	World Tour China Open Chengdu 2014	MATSUDAIRA Shiho (JPN)		LI Isabelle Siyun (SGP)		U21WS	Qualification		2 - 3	11:4 7:11 11:7 9:11 1:11	LI Isabelle Siyun	
+2014	World Tour China Open Chengdu 2014	TSUI Pao-Wen (TPE)		LIU Qi (HKG)		U21WS	Qualification		2 - 3	13:15 11:4 13:11 11:13 5:11	LIU Qi	
+2014	World Tour China Open Chengdu 2014	HSING Ariel (USA)		LIU Qi (HKG)		U21WS	Qualification		2 - 3	8:11 19:17 11:9 5:11 8:11	LIU Qi	
+2014	World Tour China Open Chengdu 2014	HSING Ariel (USA)		TSUI Pao-Wen (TPE)		U21WS	Qualification		1 - 3	13:15 6:11 11:7 6:11	TSUI Pao-Wen	
+2014	World Tour China Open Chengdu 2014	HUANG Hsin (TPE)		MAK Tze Wing (HKG)		U21WS	Qualification		3 - 0	11:4 11:8 11:5	HUANG Hsin	
+2014	World Tour China Open Chengdu 2014	MAEDA Miyu (JPN)		MAK Tze Wing (HKG)		U21WS	Qualification		3 - 0	11:7 11:5 11:3	MAEDA Miyu	
+2014	World Tour China Open Chengdu 2014	MAEDA Miyu (JPN)		HUANG Hsin (TPE)		U21WS	Qualification		3 - 0	11:5 11:4 11:8	MAEDA Miyu	
+2014	World Tour China Open Chengdu 2014	SOO Wai Yam (HKG)		KATO Kyoka (JPN)		U21WS	Qualification		0 - 3	9:11 9:11 7:11	KATO Kyoka	
+2014	World Tour China Open Chengdu 2014	CHENG Hsien-Tzu (TPE)		KATO Kyoka (JPN)		U21WS	Qualification		2 - 3	11:6 11:7 6:11 3:11 6:11	KATO Kyoka	
+2014	World Tour China Open Chengdu 2014	CHENG Hsien-Tzu (TPE)		SOO Wai Yam (HKG)		U21WS	Qualification		3 - 0	11:3 11:9 11:7	CHENG Hsien-Tzu	
+2014	World Tour China Open Chengdu 2014	LEE Dasom (KOR)		WANG Yi-Ju (TPE)		U21WS	Qualification		3 - 2	13:11 7:11 6:11 11:8 11:8	LEE Dasom	
+2014	World Tour China Open Chengdu 2014	MORI Sakura (JPN)		ZHU Chengzhu (HKG)		U21WS	Qualification		1 - 3	14:12 12:14 9:11 5:11	ZHU Chengzhu	
+2014	World Tour China Open Chengdu 2014	MORI Sakura (JPN)		WANG Yi-Ju (TPE)		U21WS	Qualification		3 - 1	16:14 6:11 11:6 11:6	MORI Sakura	
+2014	World Tour China Open Chengdu 2014	LEE Dasom (KOR)		ZHU Chengzhu (HKG)		U21WS	Qualification		3 - 0	11:8 11:3 11:9	LEE Dasom	
+2014	World Tour China Open Chengdu 2014	MORI Sakura (JPN)		LEE Dasom (KOR)		U21WS	Qualification		0 - 3	3:11 3:11 4:11	LEE Dasom	
+2014	World Tour China Open Chengdu 2014	WANG Yi-Ju (TPE)		ZHU Chengzhu (HKG)		U21WS	Qualification		2 - 3	11:5 6:11 11:8 9:11 10:12	ZHU Chengzhu	
+2014	World Tour China Open Chengdu 2014	LIU Shiwen (CHN)		LIN Ye (CAN)		WS	Main Draw	R32	4 - 1	11:4 12:10 9:11 11:7 11:6	LIU Shiwen	
+2014	World Tour China Open Chengdu 2014	LI Ching Wan (HKG)		JEON Jihee (KOR)		WS	Main Draw	R32	1 - 4	4:11 11:9 8:11 8:11 8:11	JEON Jihee	
+2014	World Tour China Open Chengdu 2014	CHENG I-Ching (TPE)		MATSUDAIRA Shiho (JPN)		WS	Main Draw	R32	4 - 0	11:7 11:8 11:6 11:8	CHENG I-Ching	
+2014	World Tour China Open Chengdu 2014	NONAKA Yuki (JPN)		ZHU Yuling (MAC)		WS	Main Draw	R32	2 - 4	11:13 11:6 9:11 6:11 12:10 5:11	ZHU Yuling	
+2014	World Tour China Open Chengdu 2014	ISHIKAWA Kasumi (JPN)		ZHOU Yihan (SGP)		WS	Main Draw	R32	4 - 2	11:5 11:9 11:9 6:11 12:14 12:10	ISHIKAWA Kasumi	
+2014	World Tour China Open Chengdu 2014	PARK Youngsook (KOR)		HIRANO Sayaka (JPN)		WS	Main Draw	R32	0 - 4	9:11 6:11 6:11 10:12	HIRANO Sayaka	
+2014	World Tour China Open Chengdu 2014	DOO Hoi Kem (HKG)		SOLJA Amelie (AUT)		WS	Main Draw	R32	4 - 3	3:11 4:11 11:2 11:9 12:14 11:6 11:8	DOO Hoi Kem	
+2014	World Tour China Open Chengdu 2014	CHENG Hsien-Tzu (TPE)		LI Xiaoxia (CHN)		WS	Main Draw	R32	0 - 4	10:12 11:13 5:11 2:11	LI Xiaoxia	
+2014	World Tour China Open Chengdu 2014	CHEN Meng (CHN)		HIRANO Miu (JPN)		WS	Main Draw	R32	4 - 0	11:5 11:9 11:8 11:9	CHEN Meng	
+2014	World Tour China Open Chengdu 2014	WU Jiaduo (GER)		LEE Ho Ching (HKG)		WS	Main Draw	R32	3 - 4	7:11 8:11 11:7 7:11 13:11 11:7 3:11	LEE Ho Ching	
+2014	World Tour China Open Chengdu 2014	HAN Ying (GER)		NG Wing Nam (HKG)		WS	Main Draw	R32	4 - 0	11:4 11:6 11:5 11:6	HAN Ying	
+2014	World Tour China Open Chengdu 2014	LI Jie (NED)		WU Yang (CHN)		WS	Main Draw	R32	2 - 4	11:7 11:7 7:11 6:11 11:13 7:11	WU Yang	
+2014	World Tour China Open Chengdu 2014	SUH Hyo Won (KOR)		CHEN Szu-Yu (TPE)		WS	Main Draw	R32	4 - 0	11:7 11:9 11:3 11:9	SUH Hyo Won	
+2014	World Tour China Open Chengdu 2014	LEE I-Chen (TPE)		YU Mengyu (SGP)		WS	Main Draw	R32	2 - 4	9:11 9:11 8:11 11:6 11:9 10:12	YU Mengyu	
+2014	World Tour China Open Chengdu 2014	YANG Ha Eun (KOR)		ITO Mima (JPN)		WS	Main Draw	R32	4 - 1	11:9 8:11 11:4 11:7 11:4	YANG Ha Eun	
+2014	World Tour China Open Chengdu 2014	KATO Kyoka (JPN)		DING Ning (CHN)		WS	Main Draw	R32	0 - 4	7:11 5:11 4:11 1:11	DING Ning	
+2014	World Tour China Open Chengdu 2014	LIU Shiwen (CHN)		JEON Jihee (KOR)		WS	Main Draw	R16	4 - 0	11:4 11:8 11:9 11:3	LIU Shiwen	
+2014	World Tour China Open Chengdu 2014	CHENG I-Ching (TPE)		ZHU Yuling (MAC)		WS	Main Draw	R16	0 - 4	8:11 7:11 3:11 4:11	ZHU Yuling	
+2014	World Tour China Open Chengdu 2014	ISHIKAWA Kasumi (JPN)		HIRANO Sayaka (JPN)		WS	Main Draw	R16	4 - 0	11:4 11:6 11:9 11:2	ISHIKAWA Kasumi	
+2014	World Tour China Open Chengdu 2014	DOO Hoi Kem (HKG)		LI Xiaoxia (CHN)		WS	Main Draw	R16	2 - 4	6:11 9:11 11:8 18:16 6:11 6:11	LI Xiaoxia	
+2014	World Tour China Open Chengdu 2014	CHEN Meng (CHN)		LEE Ho Ching (HKG)		WS	Main Draw	R16	4 - 3	5:11 11:5 11:6 8:11 8:11 11:6 12:10	CHEN Meng	
+2014	World Tour China Open Chengdu 2014	HAN Ying (GER)		WU Yang (CHN)		WS	Main Draw	R16	0 - 4	8:11 7:11 10:12 4:11	WU Yang	
+2014	World Tour China Open Chengdu 2014	SUH Hyo Won (KOR)		YU Mengyu (SGP)		WS	Main Draw	R16	2 - 4	9:11 11:4 9:11 8:11 11:2 4:11	YU Mengyu	
+2014	World Tour China Open Chengdu 2014	YANG Ha Eun (KOR)		DING Ning (CHN)		WS	Main Draw	R16	0 - 4	6:11 4:11 7:11 7:11	DING Ning	
+2014	World Tour China Open Chengdu 2014	LIU Shiwen (CHN)		ZHU Yuling (MAC)		WS	Main Draw	QuarterFinal	4 - 2	11:7 11:7 11:6 5:11 7:11 11:8	LIU Shiwen	
+2014	World Tour China Open Chengdu 2014	ISHIKAWA Kasumi (JPN)		LI Xiaoxia (CHN)		WS	Main Draw	QuarterFinal	2 - 4	11:9 11:6 3:11 3:11 11:13 2:11	LI Xiaoxia	
+2014	World Tour China Open Chengdu 2014	CHEN Meng (CHN)		WU Yang (CHN)		WS	Main Draw	QuarterFinal	0 - 4	5:11 9:11 8:11 9:11	WU Yang	
+2014	World Tour China Open Chengdu 2014	YU Mengyu (SGP)		DING Ning (CHN)		WS	Main Draw	QuarterFinal	1 - 4	8:11 9:11 6:11 11:8 7:11	DING Ning	
+2014	World Tour China Open Chengdu 2014	LIU Shiwen (CHN)		LI Xiaoxia (CHN)		WS	Main Draw	SemiFinal	4 - 1	13:11 11:9 11:6 9:11 13:11	LIU Shiwen	
+2014	World Tour China Open Chengdu 2014	WU Yang (CHN)		DING Ning (CHN)		WS	Main Draw	SemiFinal	2 - 4	6:11 11:7 12:14 12:10 12:14 9:11	DING Ning	
+2014	World Tour China Open Chengdu 2014	LIU Shiwen (CHN)		DING Ning (CHN)		WS	Main Draw	Final	3 - 4	6:11 11:5 8:11 7:11 11:4 11:2 2:11	DING Ning
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 18
+
+2014	World Tour China Open Chengdu 2014	WANG Hao (CHN)	YAN An (CHN)	KIM Donghyun (KOR)	LEE Sang Su (KOR)	MD	Main Draw	R16	3 - 0	14:12 11:5 11:7	WANG Hao	YAN An
+2014	World Tour China Open Chengdu 2014	XU Xin (CHN)	ZHANG Jike (CHN)	CHO Eonrae (KOR)	SEO Hyundeok (KOR)	MD	Main Draw	R16	3 - 0	11:9 11:7 11:9	XU Xin	ZHANG Jike
+2014	World Tour China Open Chengdu 2014	WANG Hao (CHN)	YAN An (CHN)	GAO Ning (SGP)	LI Hu (SGP)	MD	Main Draw	QuarterFinal	3 - 1	12:10 6:11 11:8 11:2	WANG Hao	YAN An
+2014	World Tour China Open Chengdu 2014	FAN Zhendong (CHN)	MA Long (CHN)	WANG Hao (CHN)	YAN An (CHN)	MD	Main Draw	SemiFinal	3 - 2	6:11 11:13 11:7 13:11 15:13	FAN Zhendong	MA Long
+2014	World Tour China Open Chengdu 2014	XU Xin (CHN)	ZHANG Jike (CHN)	MATSUDAIRA Kenta (JPN)	NIWA Koki (JPN)	MD	Main Draw	SemiFinal	3 - 0	11:5 12:10 11:4	XU Xin	ZHANG Jike
+2014	World Tour China Open Chengdu 2014	FAN Zhendong (CHN)	MA Long (CHN)	XU Xin (CHN)	ZHANG Jike (CHN)	MD	Main Draw	Final	3 - 2	6:11 11:4 5:11 11:4 14:12	FAN Zhendong	MA Long
+2014	World Tour China Open Chengdu 2014	TANG Peng (HKG)	WONG Chun Ting (HKG)	CHEN Feng (SGP)	YANG Zi (SGP)	MD	Main Draw	R16	3 - 0	11:9 11:9 11:8	TANG Peng	WONG Chun Ting
+2014	World Tour China Open Chengdu 2014	JIANG Tianyi (HKG)	LEUNG Chu Yan (HKG)	CHEN Chien-An (TPE)	CHUANG Chih-Yuan (TPE)	MD	Main Draw	R16	2 - 3	5:11 12:10 10:12 11:7 5:11	CHEN Chien-An	CHUANG Chih-Yuan
+2014	World Tour China Open Chengdu 2014	TANG Peng (HKG)	WONG Chun Ting (HKG)	XU Xin (CHN)	ZHANG Jike (CHN)	MD	Main Draw	QuarterFinal	0 - 3	4:11 4:11 9:11	XU Xin	ZHANG Jike
+2014	World Tour China Open Chengdu 2014	HO Kwan Kit (HKG)	HUNG Ka Tak (HKG)	LEE Chun-Lin (TPE)	WU Chih-Chi (TPE)	MD	Qualification	QR16	0 - 3	2:11 11:13 13:15	LEE Chun-Lin	WU Chih-Chi
+2014	World Tour China Open Chengdu 2014	MACHI Asuka (JPN)	MORIZONO Masataka (JPN)	FAN Zhendong (CHN)	MA Long (CHN)	MD	Main Draw	R16	0 - 3	11:13 9:11 9:11	FAN Zhendong	MA Long
+2014	World Tour China Open Chengdu 2014	MATSUDAIRA Kenta (JPN)	NIWA Koki (JPN)	LEE Chun-Lin (TPE)	WU Chih-Chi (TPE)	MD	Main Draw	R16	3 - 0	11:8 11:7 13:11	MATSUDAIRA Kenta	NIWA Koki
+2014	World Tour China Open Chengdu 2014	MATSUDAIRA Kenta (JPN)	NIWA Koki (JPN)	CHEN Chien-An (TPE)	CHUANG Chih-Yuan (TPE)	MD	Main Draw	QuarterFinal	3 - 1	13:11 5:11 14:12 12:10	MATSUDAIRA Kenta	NIWA Koki
+2014	World Tour China Open Chengdu 2014	MURAMATSU Yuto (JPN)	SAKAI Asuka (JPN)	JEONG Sangeun (KOR)	PARK Chan-Hyeok (KOR)	MD	Qualification	QR16	0 - 3	9:11 6:11 10:12	JEONG Sangeun	PARK Chan-Hyeok
+2014	World Tour China Open Chengdu 2014	JEONG Sangeun (KOR)	PARK Chan-Hyeok (KOR)	FAN Zhendong (CHN)	MA Long (CHN)	MD	Main Draw	QuarterFinal	2 - 3	11:9 11:7 4:11 2:11 5:11	FAN Zhendong	MA Long
+2014	World Tour China Open Chengdu 2014	FENG Xiaoquan (AUT)	POUNGSRI Max (THA)	GAO Ning (SGP)	LI Hu (SGP)	MD	Main Draw	R16	0 - 3	8:11 6:11 6:11	GAO Ning	LI Hu
+2014	World Tour China Open Chengdu 2014	FENG Xiaoquan (AUT)	POUNGSRI Max (THA)	GREEN Wally (USA)	HOTZ Christian (SUI)	MD	Qualification	QR16	3 - 0	11:4 11:9 11:4	FENG Xiaoquan	POUNGSRI Max
+2014	World Tour China Open Chengdu 2014	CHIANG Hung-Chieh (TPE)	HUANG Sheng-Sheng (TPE)	JEONG Sangeun (KOR)	PARK Chan-Hyeok (KOR)	MD	Main Draw	R16	1 - 3	11:7 10:12 5:11 4:11	JEONG Sangeun	PARK Chan-Hyeok
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 16
+
+2014	World Tour China Open Chengdu 2014	DING Ning (CHN)	LIU Shiwen (CHN)	KOMWONG Nanthana (THA)	SAWETTABUT Suthasini (THA)	WD	Main Draw	R16	3 - 0	11:9 11:1 12:10	DING Ning	LIU Shiwen
+2014	World Tour China Open Chengdu 2014	DING Ning (CHN)	LIU Shiwen (CHN)	MAEDA Miyu (JPN)	MORI Sakura (JPN)	WD	Main Draw	QuarterFinal	3 - 0	11:8 11:4 12:10	DING Ning	LIU Shiwen
+2014	World Tour China Open Chengdu 2014	DING Ning (CHN)	LIU Shiwen (CHN)	FENG Tianwei (SGP)	YU Mengyu (SGP)	WD	Main Draw	SemiFinal	3 - 0	11:5 11:2 11:1	DING Ning	LIU Shiwen
+2014	World Tour China Open Chengdu 2014	DING Ning (CHN)	LIU Shiwen (CHN)	CHENG I-Ching (TPE)	HUANG Yi-Hua (TPE)	WD	Main Draw	Final	3 - 0	11:5 11:4 11:9	DING Ning	LIU Shiwen
+2014	World Tour China Open Chengdu 2014	HAN Ying (GER)	WU Jiaduo (GER)	HIRANO Sayaka (JPN)	ISHIKAWA Kasumi (JPN)	WD	Main Draw	R16	3 - 2	11:7 11:7 5:11 4:11 11:4	HAN Ying	WU Jiaduo
+2014	World Tour China Open Chengdu 2014	HAN Ying (GER)	WU Jiaduo (GER)	CHENG I-Ching (TPE)	HUANG Yi-Hua (TPE)	WD	Main Draw	SemiFinal	1 - 3	14:12 9:11 4:11 8:11	CHENG I-Ching	HUANG Yi-Hua
+2014	World Tour China Open Chengdu 2014	LEE Ho Ching (HKG)	NG Wing Nam (HKG)	LEE Eunhee (KOR)	LEE Yearam (KOR)	WD	Main Draw	R16	3 - 2	11:8 13:15 5:11 11:4 11:7	LEE Ho Ching	NG Wing Nam
+2014	World Tour China Open Chengdu 2014	LEE Ho Ching (HKG)	NG Wing Nam (HKG)	CHENG I-Ching (TPE)	HUANG Yi-Hua (TPE)	WD	Main Draw	QuarterFinal	1 - 3	8:11 6:11 11:5 8:11	CHENG I-Ching	HUANG Yi-Hua
+2014	World Tour China Open Chengdu 2014	MAEDA Miyu (JPN)	MORI Sakura (JPN)	CHO Hala (KOR)	PARK Youngsook (KOR)	WD	Main Draw	R16	3 - 1	11:8 11:8 8:11 11:9	MAEDA Miyu	MORI Sakura
+2014	World Tour China Open Chengdu 2014	JEON Jihee (KOR)	YANG Ha Eun (KOR)	LIN Chia-Hui (TPE)	LIU Hsing-Yin (TPE)	WD	Main Draw	R16	2 - 3	11:8 9:11 3:11 11:7 5:11	LIN Chia-Hui	LIU Hsing-Yin
+2014	World Tour China Open Chengdu 2014	FENG Tianwei (SGP)	YU Mengyu (SGP)	DOO Hoi Kem (HKG)	SOO Wai Yam (HKG)	WD	Main Draw	R16	3 - 1	12:10 8:11 11:7 11:4	FENG Tianwei	YU Mengyu
+2014	World Tour China Open Chengdu 2014	LIN Ye (CAN)	ZHOU Yihan (SGP)	CHENG I-Ching (TPE)	HUANG Yi-Hua (TPE)	WD	Main Draw	R16	2 - 3	8:11 12:10 4:11 11:7 4:11	CHENG I-Ching	HUANG Yi-Hua
+2014	World Tour China Open Chengdu 2014	FENG Tianwei (SGP)	YU Mengyu (SGP)	CHEN Meng (CHN)	ZHU Yuling (MAC)	WD	Main Draw	QuarterFinal	3 - 2	7:11 13:11 11:9 9:11 11:9	FENG Tianwei	YU Mengyu
+2014	World Tour China Open Chengdu 2014	KOMWONG Nanthana (THA)	SAWETTABUT Suthasini (THA)	LIU Qi (HKG)	MAK Tze Wing (HKG)	WD	Qualification	QR16	3 - 1	11:3 7:11 12:10 11:7	KOMWONG Nanthana	SAWETTABUT Suthasini
+2014	World Tour China Open Chengdu 2014	CHENG Hsien-Tzu (TPE)	CHEN Szu-Yu (TPE)	CHEN Meng (CHN)	ZHU Yuling (MAC)	WD	Main Draw	R16	0 - 3	5:11 4:11 9:11	CHEN Meng	ZHU Yuling
+2014	World Tour China Open Chengdu 2014	LIN Chia-Hui (TPE)	LIU Hsing-Yin (TPE)	HAN Ying (GER)	WU Jiaduo (GER)	WD	Main Draw	QuarterFinal	0 - 3	7:11 6:11 2:11	HAN Ying	WU Jiaduo

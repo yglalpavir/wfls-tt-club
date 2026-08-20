@@ -5,3 +5,53 @@
 参赛人数：28
 开始日期：2014-10-17
 结束日期：2014-10-19
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 22 Total: 2140
+
+Start
+Prev
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Next
+End
+2014	Women's World Cup Linz 2014	LI Jiao (NED)		ZHANG Mo (CAN)		WS	Qualification		4 - 3	6:11 8:11 11:3 11:4 9:11 11:8 11:9	LI Jiao	
+2014	Women's World Cup Linz 2014	LI Jiao (NED)		VACENOVSKA Iveta (CZE)		WS	Qualification		1 - 4	17:15 7:11 10:12 6:11 11:13	VACENOVSKA Iveta	
+2014	Women's World Cup Linz 2014	VACENOVSKA Iveta (CZE)		ZHANG Mo (CAN)		WS	Qualification		4 - 1	11:13 11:2 11:9 11:2 11:4	VACENOVSKA Iveta	
+2014	Women's World Cup Linz 2014	POTA Georgina (HUN)		LAY Jian Fang (AUS)		WS	Qualification		4 - 1	11:13 11:3 11:9 11:3 11:6	POTA Georgina	
+2014	Women's World Cup Linz 2014	POTA Georgina (HUN)		CHENG I-Ching (TPE)		WS	Qualification		4 - 1	11:13 11:5 11:5 11:5 11:6	POTA Georgina	
+2014	Women's World Cup Linz 2014	CHENG I-Ching (TPE)		LAY Jian Fang (AUS)		WS	Qualification		4 - 0	11:9 11:4 11:4 11:8	CHENG I-Ching	
+2014	Women's World Cup Linz 2014	WU Jiaduo (GER)		KUMAHARA Luca (BRA)		WS	Qualification		4 - 0	11:4 11:8 11:4 11:6	WU Jiaduo	
+2014	Women's World Cup Linz 2014	WU Jiaduo (GER)		JIANG Huajun (HKG)		WS	Qualification		4 - 1	10:12 11:6 11:2 13:11 11:6	WU Jiaduo	
+2014	Women's World Cup Linz 2014	JIANG Huajun (HKG)		KUMAHARA Luca (BRA)		WS	Qualification		4 - 0	11:6 11:8 11:6 11:7	JIANG Huajun	
+2014	Women's World Cup Linz 2014	HU Melek (TUR)		MESHREF Dina (EGY)		WS	Qualification		4 - 1	9:11 11:8 11:5 12:10 11:8	HU Melek	
+2014	Women's World Cup Linz 2014	HU Melek (TUR)		SOLJA Petrissa (GER)		WS	Qualification		4 - 2	4:11 11:6 5:11 11:2 11:3 13:11	HU Melek	
+2014	Women's World Cup Linz 2014	SOLJA Petrissa (GER)		MESHREF Dina (EGY)		WS	Qualification		4 - 1	11:8 11:8 12:14 13:11 11:3	SOLJA Petrissa	
+2014	Women's World Cup Linz 2014	DING Ning (CHN)		LI Jiao (NED)		WS	Main Draw	R16	4 - 0	11:3 11:4 11:4 11:5	DING Ning	
+2014	Women's World Cup Linz 2014	HU Melek (TUR)		SAMARA Elizabeta (ROU)		WS	Main Draw	R16	4 - 0	11:5 11:7 14:12 11:7	HU Melek	
+2014	Women's World Cup Linz 2014	HIRANO Sayaka (JPN)		WU Jiaduo (GER)		WS	Main Draw	R16	4 - 1	11:9 11:6 11:3 3:11 11:9	HIRANO Sayaka	
+2014	Women's World Cup Linz 2014	CHENG I-Ching (TPE)		ISHIKAWA Kasumi (JPN)		WS	Main Draw	R16	2 - 4	7:11 12:10 11:8 5:11 6:11 10:12	ISHIKAWA Kasumi	
+2014	Women's World Cup Linz 2014	SUH Hyo Won (KOR)		JIANG Huajun (HKG)		WS	Main Draw	R16	1 - 4	9:11 7:11 6:11 11:2 8:11	JIANG Huajun	
+2014	Women's World Cup Linz 2014	POTA Georgina (HUN)		LEE Ho Ching (HKG)		WS	Main Draw	R16	4 - 0	11:2 11:8 11:9 11:5	POTA Georgina	
+2014	Women's World Cup Linz 2014	LIU Jia (AUT)		VACENOVSKA Iveta (CZE)		WS	Main Draw	R16	4 - 1	6:11 14:12 11:9 11:7 11:8	LIU Jia	
+2014	Women's World Cup Linz 2014	SOLJA Petrissa (GER)		LI Xiaoxia (CHN)		WS	Main Draw	R16	0 - 4	3:11 9:11 4:11 6:11	LI Xiaoxia	
+2014	Women's World Cup Linz 2014	DING Ning (CHN)		HU Melek (TUR)		WS	Main Draw	QuarterFinal	4 - 1	11:9 11:4 11:9 9:11 11:9	DING Ning	
+2014	Women's World Cup Linz 2014	HIRANO Sayaka (JPN)		ISHIKAWA Kasumi (JPN)		WS	Main Draw	QuarterFinal	2 - 4	5:11 3:11 10:12 11:7 11:3 5:11	ISHIKAWA Kasumi	
+2014	Women's World Cup Linz 2014	JIANG Huajun (HKG)		POTA Georgina (HUN)		WS	Main Draw	QuarterFinal	3 - 4	11:8 9:11 13:11 11:7 6:11 9:11 7:11	POTA Georgina	
+2014	Women's World Cup Linz 2014	LIU Jia (AUT)		LI Xiaoxia (CHN)		WS	Main Draw	QuarterFinal	3 - 4	11:7 3:11 6:11 3:11 11:9 16:14 4:11	LI Xiaoxia	
+2014	Women's World Cup Linz 2014	DING Ning (CHN)		ISHIKAWA Kasumi (JPN)		WS	Main Draw	SemiFinal	4 - 2	11:6 11:3 7:11 9:11 11:6 11:7	DING Ning	
+2014	Women's World Cup Linz 2014	POTA Georgina (HUN)		LI Xiaoxia (CHN)		WS	Main Draw	SemiFinal	1 - 4	11:3 5:11 6:11 8:11 8:11	LI Xiaoxia	
+2014	Women's World Cup Linz 2014	DING Ning (CHN)		LI Xiaoxia (CHN)		WS	Main Draw	Final	4 - 0	11:7 11:9 13:11 11:5	DING Ning	
+2014	Women's World Cup Linz 2014	ISHIKAWA Kasumi (JPN)		POTA Georgina (HUN)		WS	Position Draw	2	4 - 3	11:9 8:11 6:11 11:3 7:11 11:9 11:4	ISHIKAWA Kasumi

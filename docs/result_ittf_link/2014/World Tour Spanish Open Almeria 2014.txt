@@ -5,3 +5,496 @@
 参赛人数：483
 开始日期：2014-04-02
 结束日期：2014-04-06
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 8 of 9 Total: 886
+
+Start
+Prev
+1
+2
+3
+4
+5
+6
+7
+8
+9
+Next
+End
+2014	World Tour Spanish Open Almeria 2014	BACIOCCHI Alessandro (ITA)		GARCIA Antonio (ESP)		MS	Qualification		4 - 0	11:7 11:4 11:8 11:9	BACIOCCHI Alessandro	
+2014	World Tour Spanish Open Almeria 2014	KOJIC Frane (CRO)		GARCIA Antonio (ESP)		MS	Qualification		4 - 0	11:7 11:6 11:9 11:4	KOJIC Frane	
+2014	World Tour Spanish Open Almeria 2014	KOJIC Frane (CRO)		BACIOCCHI Alessandro (ITA)		MS	Qualification		4 - 3	7:11 9:11 5:11 11:8 11:5 11:4 11:9	KOJIC Frane	
+2014	World Tour Spanish Open Almeria 2014	LAMBIET Florent (BEL)		GOMEZ Jose Manuel (ESP)		MS	Qualification		4 - 0	11:6 11:4 12:10 11:8	LAMBIET Florent	
+2014	World Tour Spanish Open Almeria 2014	OIKAWA Mizuki (JPN)		GOMEZ Jose Manuel (ESP)		MS	Qualification		4 - 1	11:2 19:21 11:8 11:9 11:8	OIKAWA Mizuki	
+2014	World Tour Spanish Open Almeria 2014	OIKAWA Mizuki (JPN)		LAMBIET Florent (BEL)		MS	Qualification		3 - 4	8:11 11:8 12:10 7:11 11:8 6:11 5:11	LAMBIET Florent	
+2014	World Tour Spanish Open Almeria 2014	DIEZ Endika (ESP)		CONIC Denis (SRB)		MS	Qualification		4 - 2	11:6 9:11 11:3 11:9 10:12 12:10	DIEZ Endika	
+2014	World Tour Spanish Open Almeria 2014	KARLSSON Mattias (SWE)		CONIC Denis (SRB)		MS	Qualification		4 - 0	11:8 11:6 12:10 11:6	KARLSSON Mattias	
+2014	World Tour Spanish Open Almeria 2014	KARLSSON Mattias (SWE)		DIEZ Endika (ESP)		MS	Qualification		4 - 2	4:11 11:3 11:9 11:13 11:5 11:9	KARLSSON Mattias	
+2014	World Tour Spanish Open Almeria 2014	GOMMERS Rajko (NED)		CANO Rodrigo (ESP)		MS	Qualification		4 - 1	11:6 11:6 9:11 11:3 11:8	GOMMERS Rajko	
+2014	World Tour Spanish Open Almeria 2014	LAKATOS Tamas (HUN)		CANO Rodrigo (ESP)		MS	Qualification		4 - 0	11:7 11:6 11:7 11:3	LAKATOS Tamas	
+2014	World Tour Spanish Open Almeria 2014	LAKATOS Tamas (HUN)		GOMMERS Rajko (NED)		MS	Qualification		4 - 3	9:11 13:11 4:11 11:7 2:11 11:7 11:7	LAKATOS Tamas	
+2014	World Tour Spanish Open Almeria 2014	MENGE Gencay (TUR)		VEDRIEL Carlos (ESP)		MS	Qualification		4 - 0	11:7 11:4 11:9 11:6	MENGE Gencay	
+2014	World Tour Spanish Open Almeria 2014	NUYTINCK Cedric (BEL)		VEDRIEL Carlos (ESP)		MS	Qualification		4 - 1	5:11 11:6 11:9 11:4 12:10	NUYTINCK Cedric	
+2014	World Tour Spanish Open Almeria 2014	NUYTINCK Cedric (BEL)		MENGE Gencay (TUR)		MS	Qualification		4 - 0	11:9 11:4 11:8 11:6	NUYTINCK Cedric	
+2014	World Tour Spanish Open Almeria 2014	LI Hon Ming (HKG)		RODRIGUEZ Israel (ESP)		MS	Qualification		4 - 2	11:6 11:4 8:11 11:13 11:8 11:3	LI Hon Ming	
+2014	World Tour Spanish Open Almeria 2014	RUMGAY Gavin (SCO)		RODRIGUEZ Israel (ESP)		MS	Qualification		4 - 0	11:7 11:3 11:7 11:8	RUMGAY Gavin	
+2014	World Tour Spanish Open Almeria 2014	RUMGAY Gavin (SCO)		LI Hon Ming (HKG)		MS	Qualification		0 - 4	7:11 10:12 4:11 5:11	LI Hon Ming	
+2014	World Tour Spanish Open Almeria 2014	RASMUSSEN Morten (DEN)		LOPEZ Pedro (ESP)		MS	Qualification		4 - 0	11:4 11:7 11:8 11:2	RASMUSSEN Morten	
+2014	World Tour Spanish Open Almeria 2014	SHETTY Sanil (IND)		LOPEZ Pedro (ESP)		MS	Qualification		4 - 0	11:5 11:8 11:7 11:7	SHETTY Sanil	
+2014	World Tour Spanish Open Almeria 2014	SHETTY Sanil (IND)		RASMUSSEN Morten (DEN)		MS	Qualification		3 - 4	8:11 9:11 11:6 7:11 12:10 12:10 8:11	RASMUSSEN Morten	
+2014	World Tour Spanish Open Almeria 2014	HINDERSSON Mikkel (DEN)		CHAMORRO Miguel (ESP)		MS	Qualification		4 - 0	11:3 11:9 11:3 15:13	HINDERSSON Mikkel	
+2014	World Tour Spanish Open Almeria 2014	KNIGHT Darius (ENG)		CHAMORRO Miguel (ESP)		MS	Qualification		4 - 0	11:3 11:7 11:6 11:5	KNIGHT Darius	
+2014	World Tour Spanish Open Almeria 2014	KNIGHT Darius (ENG)		HINDERSSON Mikkel (DEN)		MS	Qualification		4 - 2	11:2 7:11 11:9 11:9 8:11 11:7	KNIGHT Darius	
+2014	World Tour Spanish Open Almeria 2014	ROBLES Alvaro (ESP)		CARVALHO Diogo (POR)		MS	Qualification		4 - 3	11:9 5:11 4:11 11:7 11:5 7:11 11:5	ROBLES Alvaro	
+2014	World Tour Spanish Open Almeria 2014	KRIVOSHEEV Viacheslav (RUS)		CARVALHO Diogo (POR)		MS	Qualification		1 - 4	9:11 4:11 9:11 11:7 7:11	CARVALHO Diogo	
+2014	World Tour Spanish Open Almeria 2014	KRIVOSHEEV Viacheslav (RUS)		ROBLES Alvaro (ESP)		MS	Qualification		4 - 3	9:11 8:11 11:8 11:8 11:8 10:12 11:7	KRIVOSHEEV Viacheslav	
+2014	World Tour Spanish Open Almeria 2014	AKKUZU Can (FRA)		GONZALEZ Eduardo (ESP)		MS	Qualification		4 - 0	11:9 11:5 12:10 11:8	AKKUZU Can	
+2014	World Tour Spanish Open Almeria 2014	SODERLUND Hampus (SWE)		GONZALEZ Eduardo (ESP)		MS	Qualification		4 - 1	11:7 11:5 9:11 11:5 11:8	SODERLUND Hampus	
+2014	World Tour Spanish Open Almeria 2014	SODERLUND Hampus (SWE)		AKKUZU Can (FRA)		MS	Qualification		1 - 4	5:11 8:11 7:11 11:8 6:11	AKKUZU Can	
+2014	World Tour Spanish Open Almeria 2014	RECH DALDOSSO Marco (ITA)		MONZO Oriol (ESP)		MS	Qualification		4 - 1	12:10 11:6 9:11 11:7 12:10	RECH DALDOSSO Marco	
+2014	World Tour Spanish Open Almeria 2014	HACHARD Antoine (FRA)		MONZO Oriol (ESP)		MS	Qualification		4 - 1	11:9 11:8 11:6 7:11 11:8	HACHARD Antoine	
+2014	World Tour Spanish Open Almeria 2014	HACHARD Antoine (FRA)		RECH DALDOSSO Marco (ITA)		MS	Qualification		4 - 1	11:8 11:2 11:4 5:11 11:9	HACHARD Antoine	
+2014	World Tour Spanish Open Almeria 2014	LAM Siu Hang (HKG)		SERETTI Damiano (ITA)		MS	Qualification		4 - 1	11:5 11:6 6:11 11:5 11:8	LAM Siu Hang	
+2014	World Tour Spanish Open Almeria 2014	GERALDO Joao (POR)		SERETTI Damiano (ITA)		MS	Qualification		4 - 0	11:4 12:10 11:5 11:9	GERALDO Joao	
+2014	World Tour Spanish Open Almeria 2014	GERALDO Joao (POR)		LAM Siu Hang (HKG)		MS	Qualification		4 - 1	11:6 12:10 10:12 11:9 11:8	GERALDO Joao	
+2014	World Tour Spanish Open Almeria 2014	BOULOUSSA Mehdi (ALG)		KARAKASEVIC Aleksandar (SRB)		MS	Qualification		1 - 4	5:11 1:11 7:11 11:6 9:11	KARAKASEVIC Aleksandar	
+2014	World Tour Spanish Open Almeria 2014	SZUDI Adam (HUN)		KARAKASEVIC Aleksandar (SRB)		MS	Qualification		4 - 2	11:5 9:11 11:8 11:8 6:11 11:9	SZUDI Adam	
+2014	World Tour Spanish Open Almeria 2014	SZUDI Adam (HUN)		BOULOUSSA Mehdi (ALG)		MS	Qualification		0 - 4	9:11 10:12 8:11 5:11	BOULOUSSA Mehdi	
+2014	World Tour Spanish Open Almeria 2014	PERAL Xavier (ESP)		BENITO Javier (ESP)		U21MS	Qualification		3 - 1	10:12 11:9 12:10 11:9	PERAL Xavier	
+2014	World Tour Spanish Open Almeria 2014	PERAL Xavier (ESP)		HACHARD Antoine (FRA)		U21MS	Qualification		0 - 3	9:11 9:11 8:11	HACHARD Antoine	
+2014	World Tour Spanish Open Almeria 2014	HACHARD Antoine (FRA)		BENITO Javier (ESP)		U21MS	Qualification		3 - 0	11:6 11:2 11:5	HACHARD Antoine	
+2014	World Tour Spanish Open Almeria 2014	GERALDO Joao (POR)		SANCHEZ Borja (ESP)		U21MS	Qualification		3 - 1	13:11 11:6 3:11 11:5	GERALDO Joao	
+2014	World Tour Spanish Open Almeria 2014	GERALDO Joao (POR)		CHEN Alexander (AUT)		U21MS	Qualification		3 - 0	11:8 11:5 11:8	GERALDO Joao	
+2014	World Tour Spanish Open Almeria 2014	CHEN Alexander (AUT)		SANCHEZ Borja (ESP)		U21MS	Qualification		3 - 2	9:11 11:3 9:11 11:6 11:9	CHEN Alexander	
+2014	World Tour Spanish Open Almeria 2014	VILCHEZ Miguel (ESP)		CUEVAS Ivan (ESP)		U21MS	Qualification		3 - 0	13:11 11:5 11:5	VILCHEZ Miguel	
+2014	World Tour Spanish Open Almeria 2014	VILCHEZ Miguel (ESP)		SZUDI Adam (HUN)		U21MS	Qualification		0 - 3	4:11 11:13 7:11	SZUDI Adam	
+2014	World Tour Spanish Open Almeria 2014	SZUDI Adam (HUN)		CUEVAS Ivan (ESP)		U21MS	Qualification		3 - 1	4:11 11:7 11:6 11:9	SZUDI Adam	
+2014	World Tour Spanish Open Almeria 2014	BOULOUSSA Mehdi (ALG)		RODRIGUEZ Israel (ESP)		U21MS	Qualification		3 - 0	11:4 11:4 11:3	BOULOUSSA Mehdi	
+2014	World Tour Spanish Open Almeria 2014	BOULOUSSA Mehdi (ALG)		KWAN Man Ho (HKG)		U21MS	Qualification		3 - 1	17:15 11:9 12:14 11:9	BOULOUSSA Mehdi	
+2014	World Tour Spanish Open Almeria 2014	KWAN Man Ho (HKG)		RODRIGUEZ Israel (ESP)		U21MS	Qualification		3 - 0	11:6 13:11 11:6	KWAN Man Ho	
+2014	World Tour Spanish Open Almeria 2014	LAM Siu Hang (HKG)		BAND Joshua (JEY)		U21MS	Qualification		3 - 0	11:5 11:6 11:7	LAM Siu Hang	
+2014	World Tour Spanish Open Almeria 2014	CALVO Alejandro (ESP)		MAESTRE Jose Luis (ESP)		U21MS	Qualification		1 - 3	5:11 11:8 6:11 9:11	MAESTRE Jose Luis	
+2014	World Tour Spanish Open Almeria 2014	LAM Siu Hang (HKG)		CALVO Alejandro (ESP)		U21MS	Qualification		3 - 1	11:7 6:11 11:9 11:2	LAM Siu Hang	
+2014	World Tour Spanish Open Almeria 2014	BAND Joshua (JEY)		MAESTRE Jose Luis (ESP)		U21MS	Qualification		0 - 3	2:11 6:11 2:11	MAESTRE Jose Luis	
+2014	World Tour Spanish Open Almeria 2014	LAM Siu Hang (HKG)		MAESTRE Jose Luis (ESP)		U21MS	Qualification		3 - 0	11:5 11:7 14:12	LAM Siu Hang	
+2014	World Tour Spanish Open Almeria 2014	CALVO Alejandro (ESP)		BAND Joshua (JEY)		U21MS	Qualification		3 - 1	8:11 11:2 11:3 11:5	CALVO Alejandro	
+2014	World Tour Spanish Open Almeria 2014	AKKUZU Can (FRA)		MAK King Ho (HKG)		U21MS	Qualification		3 - 0	11:9 11:5 11:5	AKKUZU Can	
+2014	World Tour Spanish Open Almeria 2014	CHAMORRO Miguel (ESP)		GONZALEZ Eduardo (ESP)		U21MS	Qualification		3 - 2	5:11 11:5 11:9 8:11 12:10	CHAMORRO Miguel	
+2014	World Tour Spanish Open Almeria 2014	AKKUZU Can (FRA)		CHAMORRO Miguel (ESP)		U21MS	Qualification		3 - 0	11:5 11:7 11:7	AKKUZU Can	
+2014	World Tour Spanish Open Almeria 2014	MAK King Ho (HKG)		GONZALEZ Eduardo (ESP)		U21MS	Qualification		3 - 0	11:8 11:9 12:10	MAK King Ho	
+2014	World Tour Spanish Open Almeria 2014	AKKUZU Can (FRA)		GONZALEZ Eduardo (ESP)		U21MS	Qualification		3 - 0	11:7 11:3 11:9	AKKUZU Can	
+2014	World Tour Spanish Open Almeria 2014	CHAMORRO Miguel (ESP)		MAK King Ho (HKG)		U21MS	Qualification		1 - 3	1:11 5:11 13:11 10:12	MAK King Ho	
+2014	World Tour Spanish Open Almeria 2014	LI Hon Ming (HKG)		SERETTI Damiano (ITA)		U21MS	Qualification		3 - 1	3:11 11:6 11:8 11:9	LI Hon Ming	
+2014	World Tour Spanish Open Almeria 2014	FRANCO Carlos (ESP)		CANO Rodrigo (ESP)		U21MS	Qualification		3 - 0	11:3 11:6 11:4	FRANCO Carlos	
+2014	World Tour Spanish Open Almeria 2014	LI Hon Ming (HKG)		FRANCO Carlos (ESP)		U21MS	Qualification		3 - 2	9:11 11:6 10:12 11:4 11:3	LI Hon Ming	
+2014	World Tour Spanish Open Almeria 2014	SERETTI Damiano (ITA)		CANO Rodrigo (ESP)		U21MS	Qualification		3 - 0	11:2 11:9 11:1	SERETTI Damiano	
+2014	World Tour Spanish Open Almeria 2014	LI Hon Ming (HKG)		CANO Rodrigo (ESP)		U21MS	Qualification		3 - 0	11:7 11:7 13:11	LI Hon Ming	
+2014	World Tour Spanish Open Almeria 2014	FRANCO Carlos (ESP)		SERETTI Damiano (ITA)		U21MS	Qualification		1 - 3	3:11 11:3 9:11 6:11	SERETTI Damiano	
+2014	World Tour Spanish Open Almeria 2014	GOMMERS Rajko (NED)		MORATO Adrian (ESP)		U21MS	Qualification		3 - 0	11:8 11:9 11:6	GOMMERS Rajko	
+2014	World Tour Spanish Open Almeria 2014	PFEFFER Simon (AUT)		HO Kwan Kit (HKG)		U21MS	Qualification		3 - 2	11:6 11:8 9:11 6:11 11:8	PFEFFER Simon	
+2014	World Tour Spanish Open Almeria 2014	GOMMERS Rajko (NED)		PFEFFER Simon (AUT)		U21MS	Qualification		0 - 3	10:12 4:11 9:11	PFEFFER Simon	
+2014	World Tour Spanish Open Almeria 2014	MORATO Adrian (ESP)		HO Kwan Kit (HKG)		U21MS	Qualification		0 - 3	4:11 11:13 7:11	HO Kwan Kit	
+2014	World Tour Spanish Open Almeria 2014	GOMMERS Rajko (NED)		HO Kwan Kit (HKG)		U21MS	Qualification		2 - 3	11:8 5:11 8:11 11:8 7:11	HO Kwan Kit	
+2014	World Tour Spanish Open Almeria 2014	PFEFFER Simon (AUT)		MORATO Adrian (ESP)		U21MS	Qualification		3 - 0	11:7 11:8 11:2	PFEFFER Simon	
+2014	World Tour Spanish Open Almeria 2014	LAMBIET Florent (BEL)		TROMER Laurens (NED)		U21MS	Qualification		3 - 0	12:10 11:8 11:8	LAMBIET Florent	
+2014	World Tour Spanish Open Almeria 2014	CHAVES Antonio (ESP)		CASARES Rafael (ESP)		U21MS	Qualification		1 - 3	8:11 11:6 9:11 8:11	CASARES Rafael	
+2014	World Tour Spanish Open Almeria 2014	LAMBIET Florent (BEL)		CHAVES Antonio (ESP)		U21MS	Qualification		3 - 1	8:11 11:9 11:6 11:6	LAMBIET Florent	
+2014	World Tour Spanish Open Almeria 2014	TROMER Laurens (NED)		CASARES Rafael (ESP)		U21MS	Qualification		3 - 0	11:9 11:6 11:9	TROMER Laurens	
+2014	World Tour Spanish Open Almeria 2014	LAMBIET Florent (BEL)		CASARES Rafael (ESP)		U21MS	Qualification		3 - 0	11:8 11:7 11:8	LAMBIET Florent	
+2014	World Tour Spanish Open Almeria 2014	CHAVES Antonio (ESP)		TROMER Laurens (NED)		U21MS	Qualification		1 - 3	0:11 11:7 0:11 3:11	TROMER Laurens	
+2014	World Tour Spanish Open Almeria 2014	BACIOCCHI Alessandro (ITA)		OOSTWOUDER Ewout (NED)		U21MS	Qualification		3 - 1	10:12 11:9 13:11 11:6	BACIOCCHI Alessandro	
+2014	World Tour Spanish Open Almeria 2014	VEDRIEL Carlos (ESP)		SANCHEZ Diego (ESP)		U21MS	Qualification		3 - 0	11:8 11:6 11:5	VEDRIEL Carlos	
+2014	World Tour Spanish Open Almeria 2014	BACIOCCHI Alessandro (ITA)		VEDRIEL Carlos (ESP)		U21MS	Qualification		3 - 1	11:4 11:6 4:11 11:7	BACIOCCHI Alessandro	
+2014	World Tour Spanish Open Almeria 2014	OOSTWOUDER Ewout (NED)		SANCHEZ Diego (ESP)		U21MS	Qualification		3 - 0	11:6 11:8 11:3	OOSTWOUDER Ewout	
+2014	World Tour Spanish Open Almeria 2014	BACIOCCHI Alessandro (ITA)		SANCHEZ Diego (ESP)		U21MS	Qualification		3 - 0	11:7 11:9 11:9	BACIOCCHI Alessandro	
+2014	World Tour Spanish Open Almeria 2014	VEDRIEL Carlos (ESP)		OOSTWOUDER Ewout (NED)		U21MS	Qualification		0 - 3	12:14 8:11 7:11	OOSTWOUDER Ewout	
+2014	World Tour Spanish Open Almeria 2014	CHEN Chien-An (TPE)		KWAN Man Ho (HKG)		MS	Main Draw	R64	4 - 0	11:7 11:5 11:4 11:3	CHEN Chien-An	
+2014	World Tour Spanish Open Almeria 2014	SAMBE Kohei (JPN)		IONESCU Ovidiu (ROU)		MS	Main Draw	R64	1 - 4	6:11 9:11 11:8 3:11 1:11	IONESCU Ovidiu	
+2014	World Tour Spanish Open Almeria 2014	KOSIBA Daniel (HUN)		DESAI Harmeet (IND)		MS	Main Draw	R64	4 - 3	12:10 11:7 12:14 11:4 11:13 8:11 12:10	KOSIBA Daniel	
+2014	World Tour Spanish Open Almeria 2014	MUTTI Leonardo (ITA)		CHIANG Hung-Chieh (TPE)		MS	Main Draw	R64	0 - 4	5:11 5:11 10:12 9:11	CHIANG Hung-Chieh	
+2014	World Tour Spanish Open Almeria 2014	MURAMATSU Yuto (JPN)		LI Hon Ming (HKG)		MS	Main Draw	R64	4 - 0	11:2 11:4 11:7 11:6	MURAMATSU Yuto	
+2014	World Tour Spanish Open Almeria 2014	KNIGHT Darius (ENG)		WU Chih-Chi (TPE)		MS	Main Draw	R64	2 - 4	6:11 12:10 4:11 3:11 12:10 8:11	WU Chih-Chi	
+2014	World Tour Spanish Open Almeria 2014	STERNBERG Kasper (DEN)		CARNEROS Alfredo (ESP)		MS	Main Draw	R64	4 - 0	11:4 12:10 11:2 11:8	STERNBERG Kasper	
+2014	World Tour Spanish Open Almeria 2014	RASMUSSEN Morten (DEN)		YANG Zi (SGP)		MS	Main Draw	R64	1 - 4	10:12 9:11 11:7 6:11 8:11	YANG Zi	
+2014	World Tour Spanish Open Almeria 2014	PROKOPCOV Dmitrij (CZE)		LE BRETON Thomas (FRA)		MS	Main Draw	R64	4 - 0	11:8 11:3 12:10 11:7	PROKOPCOV Dmitrij	
+2014	World Tour Spanish Open Almeria 2014	GERALDO Joao (POR)		DURAN Marc (ESP)		MS	Main Draw	R64	4 - 2	11:9 11:7 8:11 9:11 11:9 11:4	GERALDO Joao	
+2014	World Tour Spanish Open Almeria 2014	PERSSON Jon (SWE)		LAMBIET Florent (BEL)		MS	Main Draw	R64	4 - 3	9:11 13:15 11:7 12:10 9:11 11:5 11:7	PERSSON Jon	
+2014	World Tour Spanish Open Almeria 2014	DUDA Benedikt (GER)		LI Ahmet (TUR)		MS	Main Draw	R64	1 - 4	11:9 9:11 10:12 8:11 7:11	LI Ahmet	
+2014	World Tour Spanish Open Almeria 2014	SALIFOU Abdel-Kader (BEN)		KARLSSON Mattias (SWE)		MS	Main Draw	R64	3 - 4	5:11 8:11 12:10 11:9 11:6 7:11 3:11	KARLSSON Mattias	
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 9 of 9 Total: 886
+
+Start
+Prev
+1
+2
+3
+4
+5
+6
+7
+8
+9
+Next
+End
+2014	World Tour Spanish Open Almeria 2014	AKKUZU Can (FRA)		DRINKHALL Paul (ENG)		MS	Main Draw	R64	3 - 4	9:11 11:3 5:11 11:6 11:9 9:11 6:11	DRINKHALL Paul	
+2014	World Tour Spanish Open Almeria 2014	STOYANOV Niagol (ITA)		SAKAI Asuka (JPN)		MS	Main Draw	R64	4 - 2	3:11 11:7 11:9 9:11 11:9 11:7	STOYANOV Niagol	
+2014	World Tour Spanish Open Almeria 2014	NORDBERG Hampus (SWE)		SMIRNOV Alexey (RUS)		MS	Main Draw	R64	4 - 2	11:7 11:13 11:6 11:7 5:11 13:11	NORDBERG Hampus	
+2014	World Tour Spanish Open Almeria 2014	MATSUDAIRA Kenji (JPN)		VILCHEZ Miguel (ESP)		MS	Main Draw	R64	4 - 0	11:1 11:8 11:7 11:8	MATSUDAIRA Kenji	
+2014	World Tour Spanish Open Almeria 2014	RUIZ Jose Manuel (ESP)		WONG Chun Ting (HKG)		MS	Main Draw	R64	1 - 4	1:11 8:11 11:8 4:11 6:11	WONG Chun Ting	
+2014	World Tour Spanish Open Almeria 2014	HUANG Sheng-Sheng (TPE)		MAK King Ho (HKG)		MS	Main Draw	R64	4 - 0	11:5 11:9 11:5 11:6	HUANG Sheng-Sheng	
+2014	World Tour Spanish Open Almeria 2014	PETIOT Jeremy (FRA)		VANG Bora (TUR)		MS	Main Draw	R64	3 - 4	11:8 6:11 9:11 11:6 6:11 11:7 8:11	VANG Bora	
+2014	World Tour Spanish Open Almeria 2014	PRIMORAC Zoran (CRO)		HACHARD Antoine (FRA)		MS	Main Draw	R64	4 - 1	6:11 11:7 11:8 11:7 11:5	PRIMORAC Zoran	
+2014	World Tour Spanish Open Almeria 2014	CARVALHO Diogo (POR)		BOBOCICA Mihai (ITA)		MS	Main Draw	R64	1 - 4	5:11 5:11 5:11 11:9 8:11	BOBOCICA Mihai	
+2014	World Tour Spanish Open Almeria 2014	LORENTZ Romain (FRA)		NUYTINCK Cedric (BEL)		MS	Main Draw	R64	4 - 1	11:9 11:6 11:9 4:11 11:7	LORENTZ Romain	
+2014	World Tour Spanish Open Almeria 2014	ROBINOT Alexandre (FRA)		HE Zhiwen (ESP)		MS	Main Draw	R64	4 - 0	11:9 11:7 11:6 11:8	ROBINOT Alexandre	
+2014	World Tour Spanish Open Almeria 2014	MORIZONO Masataka (JPN)		FRANCO Carlos (ESP)		MS	Main Draw	R64	4 - 1	10:12 11:6 12:10 11:5 11:8	MORIZONO Masataka	
+2014	World Tour Spanish Open Almeria 2014	LAKATOS Tamas (HUN)		ANTHONY Amalraj (IND)		MS	Main Draw	R64	2 - 4	7:11 9:11 14:12 3:11 11:8 9:11	ANTHONY Amalraj	
+2014	World Tour Spanish Open Almeria 2014	HUNG Tzu-Hsiang (TPE)		BOULOUSSA Mehdi (ALG)		MS	Main Draw	R64	3 - 4	8:11 8:11 11:2 14:12 11:7 7:11 9:11	BOULOUSSA Mehdi	
+2014	World Tour Spanish Open Almeria 2014	ARUNA Quadri (NGR)		MACHADO Carlos (ESP)		MS	Main Draw	R64	4 - 2	11:8 6:11 9:11 11:7 11:8 11:9	ARUNA Quadri	
+2014	World Tour Spanish Open Almeria 2014	PATTANTYUS Adam (HUN)		DURANSPAHIC Admir (BIH)		MS	Main Draw	R64	4 - 0	11:8 11:8 11:2 11:6	PATTANTYUS Adam	
+2014	World Tour Spanish Open Almeria 2014	BROSSIER Benjamin (FRA)		GHOSH Soumyajit (IND)		MS	Main Draw	R64	0 - 4	7:11 6:11 7:11 5:11	GHOSH Soumyajit	
+2014	World Tour Spanish Open Almeria 2014	SILVA Andre (POR)		KOJIC Frane (CRO)		MS	Main Draw	R64	4 - 1	7:11 11:9 11:4 11:6 11:6	SILVA Andre	
+2014	World Tour Spanish Open Almeria 2014	FLEMMING Alexander (GER)		TAKAKIWA Taku (JPN)		MS	Main Draw	R64	3 - 4	11:8 7:11 11:8 5:11 9:11 11:6 6:11	TAKAKIWA Taku	
+2014	World Tour Spanish Open Almeria 2014	CHEN Chien-An (TPE)		IONESCU Ovidiu (ROU)		MS	Main Draw	R32	4 - 1	8:11 11:7 11:3 11:9 11:7	CHEN Chien-An	
+2014	World Tour Spanish Open Almeria 2014	KOSIBA Daniel (HUN)		CHIANG Hung-Chieh (TPE)		MS	Main Draw	R32	0 - 4	6:11 6:11 6:11 7:11	CHIANG Hung-Chieh	
+2014	World Tour Spanish Open Almeria 2014	MURAMATSU Yuto (JPN)		WU Chih-Chi (TPE)		MS	Main Draw	R32	4 - 2	11:4 10:12 11:4 6:11 11:3 11:4	MURAMATSU Yuto	
+2014	World Tour Spanish Open Almeria 2014	STERNBERG Kasper (DEN)		YANG Zi (SGP)		MS	Main Draw	R32	4 - 1	11:7 7:11 11:9 14:12 11:8	STERNBERG Kasper	
+2014	World Tour Spanish Open Almeria 2014	PROKOPCOV Dmitrij (CZE)		GERALDO Joao (POR)		MS	Main Draw	R32	4 - 0	11:8 11:6 11:9 17:15	PROKOPCOV Dmitrij	
+2014	World Tour Spanish Open Almeria 2014	PERSSON Jon (SWE)		LI Ahmet (TUR)		MS	Main Draw	R32	4 - 2	9:11 11:8 7:11 11:8 11:8 12:10	PERSSON Jon	
+2014	World Tour Spanish Open Almeria 2014	KARLSSON Mattias (SWE)		DRINKHALL Paul (ENG)		MS	Main Draw	R32	1 - 4	7:11 12:10 2:11 8:11 8:11	DRINKHALL Paul	
+2014	World Tour Spanish Open Almeria 2014	STOYANOV Niagol (ITA)		NORDBERG Hampus (SWE)		MS	Main Draw	R32	4 - 3	11:6 11:7 5:11 11:9 8:11 8:11 11:8	STOYANOV Niagol	
+2014	World Tour Spanish Open Almeria 2014	MATSUDAIRA Kenji (JPN)		WONG Chun Ting (HKG)		MS	Main Draw	R32	1 - 4	7:11 10:12 9:11 11:6 11:13	WONG Chun Ting	
+2014	World Tour Spanish Open Almeria 2014	HUANG Sheng-Sheng (TPE)		VANG Bora (TUR)		MS	Main Draw	R32	2 - 4	13:15 11:6 11:7 9:11 7:11 9:11	VANG Bora	
+2014	World Tour Spanish Open Almeria 2014	PRIMORAC Zoran (CRO)		BOBOCICA Mihai (ITA)		MS	Main Draw	R32	1 - 4	8:11 9:11 9:11 12:10 11:13	BOBOCICA Mihai	
+2014	World Tour Spanish Open Almeria 2014	LORENTZ Romain (FRA)		ROBINOT Alexandre (FRA)		MS	Main Draw	R32	2 - 4	8:11 11:8 9:11 6:11 11:6 9:11	ROBINOT Alexandre	
+2014	World Tour Spanish Open Almeria 2014	MORIZONO Masataka (JPN)		ANTHONY Amalraj (IND)		MS	Main Draw	R32	4 - 0	11:7 11:7 11:4 11:8	MORIZONO Masataka	
+2014	World Tour Spanish Open Almeria 2014	BOULOUSSA Mehdi (ALG)		ARUNA Quadri (NGR)		MS	Main Draw	R32	0 - 4	5:11 7:11 10:12 8:11	ARUNA Quadri	
+2014	World Tour Spanish Open Almeria 2014	PATTANTYUS Adam (HUN)		GHOSH Soumyajit (IND)		MS	Main Draw	R32	4 - 2	13:11 11:3 13:11 8:11 9:11 11:6	PATTANTYUS Adam	
+2014	World Tour Spanish Open Almeria 2014	SILVA Andre (POR)		TAKAKIWA Taku (JPN)		MS	Main Draw	R32	3 - 4	11:5 11:7 4:11 7:11 8:11 11:7 6:11	TAKAKIWA Taku	
+2014	World Tour Spanish Open Almeria 2014	CHEN Chien-An (TPE)		CHIANG Hung-Chieh (TPE)		MS	Main Draw	R16	2 - 4	9:11 9:11 11:4 9:11 12:10 2:11	CHIANG Hung-Chieh	
+2014	World Tour Spanish Open Almeria 2014	MURAMATSU Yuto (JPN)		STERNBERG Kasper (DEN)		MS	Main Draw	R16	4 - 0	11:7 11:2 11:7 11:5	MURAMATSU Yuto	
+2014	World Tour Spanish Open Almeria 2014	PROKOPCOV Dmitrij (CZE)		PERSSON Jon (SWE)		MS	Main Draw	R16	4 - 2	7:11 8:11 11:8 11:7 13:11 11:8	PROKOPCOV Dmitrij	
+2014	World Tour Spanish Open Almeria 2014	DRINKHALL Paul (ENG)		STOYANOV Niagol (ITA)		MS	Main Draw	R16	4 - 2	14:12 7:11 12:10 11:8 7:11 11:3	DRINKHALL Paul	
+2014	World Tour Spanish Open Almeria 2014	WONG Chun Ting (HKG)		VANG Bora (TUR)		MS	Main Draw	R16	4 - 1	11:9 11:8 11:2 6:11 15:13	WONG Chun Ting	
+2014	World Tour Spanish Open Almeria 2014	BOBOCICA Mihai (ITA)		ROBINOT Alexandre (FRA)		MS	Main Draw	R16	4 - 1	11:7 10:12 11:6 11:2 12:10	BOBOCICA Mihai	
+2014	World Tour Spanish Open Almeria 2014	MORIZONO Masataka (JPN)		ARUNA Quadri (NGR)		MS	Main Draw	R16	4 - 0	11:6 11:7 11:7 12:10	MORIZONO Masataka	
+2014	World Tour Spanish Open Almeria 2014	PATTANTYUS Adam (HUN)		TAKAKIWA Taku (JPN)		MS	Main Draw	R16	2 - 4	3:11 11:4 10:12 13:11 9:11 7:11	TAKAKIWA Taku	
+2014	World Tour Spanish Open Almeria 2014	CHIANG Hung-Chieh (TPE)		MURAMATSU Yuto (JPN)		MS	Main Draw	QuarterFinal	0 - 4	4:11 7:11 3:11 8:11	MURAMATSU Yuto	
+2014	World Tour Spanish Open Almeria 2014	PROKOPCOV Dmitrij (CZE)		DRINKHALL Paul (ENG)		MS	Main Draw	QuarterFinal	0 - 4	2:11 3:11 2:11 10:12	DRINKHALL Paul	
+2014	World Tour Spanish Open Almeria 2014	WONG Chun Ting (HKG)		BOBOCICA Mihai (ITA)		MS	Main Draw	QuarterFinal	4 - 3	10:12 11:5 8:11 11:7 7:11 11:4 11:5	WONG Chun Ting	
+2014	World Tour Spanish Open Almeria 2014	MORIZONO Masataka (JPN)		TAKAKIWA Taku (JPN)		MS	Main Draw	QuarterFinal	4 - 0	12:10 11:2 11:8 11:9	MORIZONO Masataka	
+2014	World Tour Spanish Open Almeria 2014	MURAMATSU Yuto (JPN)		DRINKHALL Paul (ENG)		MS	Main Draw	SemiFinal	1 - 4	9:11 6:11 11:6 11:13 6:11	DRINKHALL Paul	
+2014	World Tour Spanish Open Almeria 2014	WONG Chun Ting (HKG)		MORIZONO Masataka (JPN)		MS	Main Draw	SemiFinal	2 - 4	9:11 6:11 11:8 5:11 11:9 11:13	MORIZONO Masataka	
+2014	World Tour Spanish Open Almeria 2014	DRINKHALL Paul (ENG)		MORIZONO Masataka (JPN)		MS	Main Draw	Final	4 - 2	11:7 11:9 6:11 11:5 6:11 11:8	DRINKHALL Paul	
+2014	World Tour Spanish Open Almeria 2014	HUNG Tzu-Hsiang (TPE)		SERETTI Damiano (ITA)		U21MS	Main Draw	R32	3 - 0	11:7 11:7 11:2	HUNG Tzu-Hsiang	
+2014	World Tour Spanish Open Almeria 2014	GERALDO Joao (POR)		DESAI Harmeet (IND)		U21MS	Main Draw	R32	3 - 2	11:6 8:11 14:12 9:11 11:6	GERALDO Joao	
+2014	World Tour Spanish Open Almeria 2014	DUDA Benedikt (GER)		LAMBIET Florent (BEL)		U21MS	Main Draw	R32	3 - 0	11:8 11:7 12:10	DUDA Benedikt	
+2014	World Tour Spanish Open Almeria 2014	SZUDI Adam (HUN)		BROSSIER Benjamin (FRA)		U21MS	Main Draw	R32	0 - 3	7:11 7:11 8:11	BROSSIER Benjamin	
+2014	World Tour Spanish Open Almeria 2014	SAMBE Kohei (JPN)		TROMER Laurens (NED)		U21MS	Main Draw	R32	3 - 1	11:8 8:11 12:10 11:9	SAMBE Kohei	
+2014	World Tour Spanish Open Almeria 2014	BACIOCCHI Alessandro (ITA)		NUYTINCK Cedric (BEL)		U21MS	Main Draw	R32	0 - 3	3:11 5:11 4:11	NUYTINCK Cedric	
+2014	World Tour Spanish Open Almeria 2014	OIKAWA Mizuki (JPN)		LI Hon Ming (HKG)		U21MS	Main Draw	R32	3 - 1	11:8 3:11 11:3 11:9	OIKAWA Mizuki	
+2014	World Tour Spanish Open Almeria 2014	KWAN Man Ho (HKG)		HACHARD Antoine (FRA)		U21MS	Main Draw	R32	0 - 3	7:11 9:11 8:11	HACHARD Antoine	
+2014	World Tour Spanish Open Almeria 2014	LORENTZ Romain (FRA)		OOSTWOUDER Ewout (NED)		U21MS	Main Draw	R32	3 - 0	11:7 11:5 11:6	LORENTZ Romain	
+2014	World Tour Spanish Open Almeria 2014	AKKUZU Can (FRA)		DEVOS Robin (BEL)		U21MS	Main Draw	R32	3 - 2	13:11 10:12 7:11 11:9 11:8	AKKUZU Can	
+2014	World Tour Spanish Open Almeria 2014	SODERLUND Hampus (SWE)		BOULOUSSA Mehdi (ALG)		U21MS	Main Draw	R32	3 - 0	12:10 11:6 15:13	SODERLUND Hampus	
+2014	World Tour Spanish Open Almeria 2014	HO Kwan Kit (HKG)		ROBINOT Alexandre (FRA)		U21MS	Main Draw	R32	1 - 3	9:11 11:13 11:8 13:15	ROBINOT Alexandre	
+2014	World Tour Spanish Open Almeria 2014	SAKAI Asuka (JPN)		MAK King Ho (HKG)		U21MS	Main Draw	R32	3 - 0	12:10 11:7 11:4	SAKAI Asuka	
+2014	World Tour Spanish Open Almeria 2014	PFEFFER Simon (AUT)		LAKATOS Tamas (HUN)		U21MS	Main Draw	R32	1 - 3	11:6 7:11 11:13 9:11	LAKATOS Tamas	
+2014	World Tour Spanish Open Almeria 2014	MUTTI Leonardo (ITA)		LAM Siu Hang (HKG)		U21MS	Main Draw	R32	1 - 3	7:11 8:11 11:6 4:11	LAM Siu Hang	
+2014	World Tour Spanish Open Almeria 2014	MAESTRE Jose Luis (ESP)		GHOSH Soumyajit (IND)		U21MS	Main Draw	R32	1 - 3	8:11 4:11 13:11 6:11	GHOSH Soumyajit	
+2014	World Tour Spanish Open Almeria 2014	HUNG Tzu-Hsiang (TPE)		GERALDO Joao (POR)		U21MS	Main Draw	R16	0 - 3	9:11 8:11 7:11	GERALDO Joao	
+2014	World Tour Spanish Open Almeria 2014	DUDA Benedikt (GER)		BROSSIER Benjamin (FRA)		U21MS	Main Draw	R16	3 - 2	11:6 8:11 15:13 11:13 12:10	DUDA Benedikt	
+2014	World Tour Spanish Open Almeria 2014	SAMBE Kohei (JPN)		NUYTINCK Cedric (BEL)		U21MS	Main Draw	R16	3 - 2	11:6 8:11 8:11 14:12 11:6	SAMBE Kohei	
+2014	World Tour Spanish Open Almeria 2014	OIKAWA Mizuki (JPN)		HACHARD Antoine (FRA)		U21MS	Main Draw	R16	0 - 3	8:11 9:11 7:11	HACHARD Antoine	
+2014	World Tour Spanish Open Almeria 2014	LORENTZ Romain (FRA)		AKKUZU Can (FRA)		U21MS	Main Draw	R16	3 - 0	11:8 11:5 11:6	LORENTZ Romain	
+2014	World Tour Spanish Open Almeria 2014	SODERLUND Hampus (SWE)		ROBINOT Alexandre (FRA)		U21MS	Main Draw	R16	1 - 3	12:14 6:11 11:5 6:11	ROBINOT Alexandre	
+2014	World Tour Spanish Open Almeria 2014	SAKAI Asuka (JPN)		LAKATOS Tamas (HUN)		U21MS	Main Draw	R16	3 - 0	11:7 11:8 11:7	SAKAI Asuka	
+2014	World Tour Spanish Open Almeria 2014	LAM Siu Hang (HKG)		GHOSH Soumyajit (IND)		U21MS	Main Draw	R16	3 - 1	9:11 11:9 11:7 13:11	LAM Siu Hang	
+2014	World Tour Spanish Open Almeria 2014	GERALDO Joao (POR)		DUDA Benedikt (GER)		U21MS	Main Draw	QuarterFinal	1 - 4	7:11 13:15 11:9 11:13 4:11	DUDA Benedikt	
+2014	World Tour Spanish Open Almeria 2014	SAMBE Kohei (JPN)		HACHARD Antoine (FRA)		U21MS	Main Draw	QuarterFinal	2 - 4	13:11 11:8 5:11 7:11 6:11 9:11	HACHARD Antoine	
+2014	World Tour Spanish Open Almeria 2014	LORENTZ Romain (FRA)		ROBINOT Alexandre (FRA)		U21MS	Main Draw	QuarterFinal	4 - 3	11:7 8:11 8:11 7:11 11:7 11:7 11:8	LORENTZ Romain	
+2014	World Tour Spanish Open Almeria 2014	SAKAI Asuka (JPN)		LAM Siu Hang (HKG)		U21MS	Main Draw	QuarterFinal	3 - 4	11:9 12:10 11:13 13:15 11:8 7:11 9:11	LAM Siu Hang	
+2014	World Tour Spanish Open Almeria 2014	DUDA Benedikt (GER)		HACHARD Antoine (FRA)		U21MS	Main Draw	SemiFinal	4 - 3	14:12 11:9 8:11 9:11 9:11 11:8 11:6	DUDA Benedikt	
+2014	World Tour Spanish Open Almeria 2014	LORENTZ Romain (FRA)		LAM Siu Hang (HKG)		U21MS	Main Draw	SemiFinal	4 - 0	11:9 11:8 11:7 12:10	LORENTZ Romain	
+2014	World Tour Spanish Open Almeria 2014	DUDA Benedikt (GER)		LORENTZ Romain (FRA)		U21MS	Main Draw	Final	3 - 4	5:11 11:8 12:14 11:8 2:11 11:7 8:11	LORENTZ Romain	
+2014	World Tour Spanish Open Almeria 2014	PERAL Xavier (ESP)		OOSTWOUDER Ewout (NED)		U21MS	Qualification	QR16	0 - 3	5:11 2:11 9:11	OOSTWOUDER Ewout	
+2014	World Tour Spanish Open Almeria 2014	CHEN Alexander (AUT)		TROMER Laurens (NED)		U21MS	Qualification	QR16	1 - 3	7:11 11:4 4:11 4:11	TROMER Laurens	
+2014	World Tour Spanish Open Almeria 2014	VILCHEZ Miguel (ESP)		HO Kwan Kit (HKG)		U21MS	Qualification	QR16	0 - 3	8:11 5:11 7:11	HO Kwan Kit	
+2014	World Tour Spanish Open Almeria 2014	KWAN Man Ho (HKG)		SERETTI Damiano (ITA)		U21MS	Qualification	QR16	3 - 2	12:10 10:12 11:3 6:11 11:5	KWAN Man Ho	
+2014	World Tour Spanish Open Almeria 2014	MAESTRE Jose Luis (ESP)		MAK King Ho (HKG)		U21MS	Qualification	QR16	1 - 3	6:11 9:11 11:4 8:11	MAK King Ho
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 2 Total: 175
+
+Start
+Prev
+1
+2
+Next
+End
+2014	World Tour Spanish Open Almeria 2014	BARAVOK Katsiaryna (BLR)		RAMIREZ Laura (ESP)		U21WS	Qualification		3 - 1	10:12 11:5 11:7 12:10	BARAVOK Katsiaryna	
+2014	World Tour Spanish Open Almeria 2014	BARAVOK Katsiaryna (BLR)		KARAHAN Ipek (TUR)		U21WS	Qualification		3 - 1	11:7 11:9 11:13 11:9	BARAVOK Katsiaryna	
+2014	World Tour Spanish Open Almeria 2014	KARAHAN Ipek (TUR)		RAMIREZ Laura (ESP)		U21WS	Qualification		1 - 3	7:11 7:11 11:9 5:11	RAMIREZ Laura	
+2014	World Tour Spanish Open Almeria 2014	KUCHUK Maryia (BLR)		ESCARTIN Nora (ESP)		U21WS	Qualification		3 - 1	11:3 11:9 8:11 11:6	KUCHUK Maryia	
+2014	World Tour Spanish Open Almeria 2014	KUCHUK Maryia (BLR)		BOLENIUS Sannamari (SWE)		U21WS	Qualification		3 - 1	11:7 9:11 11:6 11:5	KUCHUK Maryia	
+2014	World Tour Spanish Open Almeria 2014	BOLENIUS Sannamari (SWE)		ESCARTIN Nora (ESP)		U21WS	Qualification		1 - 3	11:13 10:12 11:1 9:11	ESCARTIN Nora	
+2014	World Tour Spanish Open Almeria 2014	NAGYVARADI Mercedes (HUN)		BALLESTER Sara (ESP)		U21WS	Qualification		3 - 0	11:4 11:9 11:2	NAGYVARADI Mercedes	
+2014	World Tour Spanish Open Almeria 2014	NAGYVARADI Mercedes (HUN)		COLANTONI Chiara (ITA)		U21WS	Qualification		0 - 3	9:11 8:11 4:11	COLANTONI Chiara	
+2014	World Tour Spanish Open Almeria 2014	COLANTONI Chiara (ITA)		BALLESTER Sara (ESP)		U21WS	Qualification		3 - 1	10:12 11:8 11:3 11:5	COLANTONI Chiara	
+2014	World Tour Spanish Open Almeria 2014	SCHUH Anja (GER)		BALLESTER Maria (ESP)		U21WS	Qualification		3 - 0	11:8 13:11 11:7	SCHUH Anja	
+2014	World Tour Spanish Open Almeria 2014	SCHUH Anja (GER)		SAHIN Sanem (TUR)		U21WS	Qualification		3 - 2	10:12 8:11 11:6 11:2 11:8	SCHUH Anja	
+2014	World Tour Spanish Open Almeria 2014	SAHIN Sanem (TUR)		BALLESTER Maria (ESP)		U21WS	Qualification		3 - 0	11:6 14:12 11:8	SAHIN Sanem	
+2014	World Tour Spanish Open Almeria 2014	MOKHNACHEVA Svetlana (RUS)		HAYATA Hina (JPN)		U21WS	Qualification		0 - 3	7:11 5:11 4:11	HAYATA Hina	
+2014	World Tour Spanish Open Almeria 2014	MOKHNACHEVA Svetlana (RUS)		ZHANG Sofia-Xuan (ESP)		U21WS	Qualification		3 - 0	11:7 11:4 11:8	MOKHNACHEVA Svetlana	
+2014	World Tour Spanish Open Almeria 2014	ZHANG Sofia-Xuan (ESP)		HAYATA Hina (JPN)		U21WS	Qualification		0 - 3	3:11 11:13 5:11	HAYATA Hina	
+2014	World Tour Spanish Open Almeria 2014	BUENO Paula (ESP)		LOPEZ Elena (ESP)		U21WS	Qualification		3 - 1	12:10 2:11 12:10 11:2	BUENO Paula	
+2014	World Tour Spanish Open Almeria 2014	BUENO Paula (ESP)		ASCHWANDEN Rahel (SUI)		U21WS	Qualification		3 - 0	12:10 11:7 12:10	BUENO Paula	
+2014	World Tour Spanish Open Almeria 2014	ASCHWANDEN Rahel (SUI)		LOPEZ Elena (ESP)		U21WS	Qualification		3 - 1	11:4 11:8 7:11 11:4	ASCHWANDEN Rahel	
+2014	World Tour Spanish Open Almeria 2014	GUNGOR Gokce Nur (TUR)		PEREZ Maria (ESP)		U21WS	Qualification		3 - 1	10:12 11:6 11:6 11:4	GUNGOR Gokce Nur	
+2014	World Tour Spanish Open Almeria 2014	GUNGOR Gokce Nur (TUR)		MOSKOVITS Daniela (SWE)		U21WS	Qualification		0 - 3	3:11 8:11 8:11	MOSKOVITS Daniela	
+2014	World Tour Spanish Open Almeria 2014	MOSKOVITS Daniela (SWE)		PEREZ Maria (ESP)		U21WS	Qualification		3 - 2	11:7 11:4 9:11 7:11 11:9	MOSKOVITS Daniela	
+2014	World Tour Spanish Open Almeria 2014	EERLAND Britt (NED)		ASCHWANDEN Rahel (SUI)		WS	Qualification		4 - 0	11:7 11:9 11:9 13:11	EERLAND Britt	
+2014	World Tour Spanish Open Almeria 2014	EERLAND Britt (NED)		SABITOVA Valentina (RUS)		WS	Qualification		3 - 4	11:7 8:11 11:5 12:14 11:4 7:11 10:12	SABITOVA Valentina	
+2014	World Tour Spanish Open Almeria 2014	SABITOVA Valentina (RUS)		ASCHWANDEN Rahel (SUI)		WS	Qualification		4 - 1	11:7 11:6 7:11 11:5 11:7	SABITOVA Valentina	
+2014	World Tour Spanish Open Almeria 2014	MORI Sakura (JPN)		GUNGOR Gokce Nur (TUR)		WS	Qualification		4 - 0	11:7 11:6 11:7 11:7	MORI Sakura	
+2014	World Tour Spanish Open Almeria 2014	MORI Sakura (JPN)		MORET Rachel (SUI)		WS	Qualification		4 - 2	11:7 7:11 11:4 4:11 11:2 11:6	MORI Sakura	
+2014	World Tour Spanish Open Almeria 2014	MORET Rachel (SUI)		GUNGOR Gokce Nur (TUR)		WS	Qualification		3 - 4	11:1 11:5 9:11 6:11 6:11 11:5 6:11	GUNGOR Gokce Nur	
+2014	World Tour Spanish Open Almeria 2014	MATELOVA Hana (CZE)		MOSKOVITS Daniela (SWE)		WS	Qualification		4 - 0	11:8 11:3 11:7 11:5	MATELOVA Hana	
+2014	World Tour Spanish Open Almeria 2014	MATELOVA Hana (CZE)		MOKHNACHEVA Svetlana (RUS)		WS	Qualification		4 - 1	8:11 11:7 11:7 11:9 11:7	MATELOVA Hana	
+2014	World Tour Spanish Open Almeria 2014	MOKHNACHEVA Svetlana (RUS)		MOSKOVITS Daniela (SWE)		WS	Qualification		4 - 1	11:6 11:9 6:11 11:9 11:8	MOKHNACHEVA Svetlana	
+2014	World Tour Spanish Open Almeria 2014	DRINKHALL Joanna (ENG)		BUENO Paula (ESP)		WS	Qualification		4 - 0	11:5 11:7 11:9 13:11	DRINKHALL Joanna	
+2014	World Tour Spanish Open Almeria 2014	DRINKHALL Joanna (ENG)		GALONJA Marija (SRB)		WS	Qualification		4 - 0	11:4 12:10 11:8 11:9	DRINKHALL Joanna	
+2014	World Tour Spanish Open Almeria 2014	GALONJA Marija (SRB)		BUENO Paula (ESP)		WS	Qualification		4 - 2	10:12 11:8 7:11 11:8 11:7 11:1	GALONJA Marija	
+2014	World Tour Spanish Open Almeria 2014	MADARASZ Dora (HUN)		ZHANG Sofia-Xuan (ESP)		WS	Qualification		4 - 0	11:8 11:5 11:6 11:4	MADARASZ Dora	
+2014	World Tour Spanish Open Almeria 2014	MADARASZ Dora (HUN)		RIDOLFI Lisa (ITA)		WS	Qualification		4 - 0	11:5 11:6 11:4 11:6	MADARASZ Dora	
+2014	World Tour Spanish Open Almeria 2014	RIDOLFI Lisa (ITA)		ZHANG Sofia-Xuan (ESP)		WS	Qualification		1 - 4	3:11 7:11 11:5 6:11 10:12	ZHANG Sofia-Xuan	
+2014	World Tour Spanish Open Almeria 2014	CHENG Hsien-Tzu (TPE)		SAHIN Sanem (TUR)		WS	Qualification		4 - 0	11:5 11:2 11:1 11:2	CHENG Hsien-Tzu	
+2014	World Tour Spanish Open Almeria 2014	CHENG Hsien-Tzu (TPE)		SHIBAEVA Elza (RUS)		WS	Qualification		4 - 1	7:11 11:8 11:5 11:8 11:8	CHENG Hsien-Tzu	
+2014	World Tour Spanish Open Almeria 2014	SHIBAEVA Elza (RUS)		SAHIN Sanem (TUR)		WS	Qualification		4 - 1	11:6 8:11 11:1 11:7 11:9	SHIBAEVA Elza	
+2014	World Tour Spanish Open Almeria 2014	PROKHOROVA Yulia (RUS)		HICKS Hannah (ENG)		WS	Qualification		4 - 0	11:2 12:10 11:2 11:2	PROKHOROVA Yulia	
+2014	World Tour Spanish Open Almeria 2014	PROKHOROVA Yulia (RUS)		EDEM Offiong (NGR)		WS	Qualification		4 - 1	11:2 8:11 11:6 11:6 11:9	PROKHOROVA Yulia	
+2014	World Tour Spanish Open Almeria 2014	EDEM Offiong (NGR)		HICKS Hannah (ENG)		WS	Qualification		4 - 3	14:12 7:11 7:11 11:5 12:10 6:11 11:5	EDEM Offiong	
+2014	World Tour Spanish Open Almeria 2014	AMBRUS Krisztina (HUN)		COLANTONI Chiara (ITA)		WS	Qualification		4 - 1	13:11 11:7 6:11 13:11 11:3	AMBRUS Krisztina	
+2014	World Tour Spanish Open Almeria 2014	AMBRUS Krisztina (HUN)		SCHUH Anja (GER)		WS	Qualification		0 - 4	9:11 13:15 9:11 8:11	SCHUH Anja	
+2014	World Tour Spanish Open Almeria 2014	SCHUH Anja (GER)		COLANTONI Chiara (ITA)		WS	Qualification		4 - 2	13:11 6:11 11:6 7:11 11:8 12:10	SCHUH Anja	
+2014	World Tour Spanish Open Almeria 2014	SIBLEY Kelly (ENG)		BOLENIUS Sannamari (SWE)		WS	Qualification		4 - 2	11:6 12:10 3:11 9:11 11:5 11:8	SIBLEY Kelly	
+2014	World Tour Spanish Open Almeria 2014	SIBLEY Kelly (ENG)		LIN Chia-Chih (TPE)		WS	Qualification		3 - 4	11:8 7:11 11:7 7:11 7:11 11:6 6:11	LIN Chia-Chih	
+2014	World Tour Spanish Open Almeria 2014	LIN Chia-Chih (TPE)		BOLENIUS Sannamari (SWE)		WS	Qualification		4 - 0	11:4 11:9 12:10 11:7	LIN Chia-Chih	
+2014	World Tour Spanish Open Almeria 2014	BATRA Manika (IND)		KARAHAN Ipek (TUR)		WS	Qualification		4 - 1	11:8 11:6 6:11 11:9 11:8	BATRA Manika	
+2014	World Tour Spanish Open Almeria 2014	BATRA Manika (IND)		KUCHUK Maryia (BLR)		WS	Qualification		4 - 3	11:3 9:11 5:11 11:7 8:11 11:9 11:6	BATRA Manika	
+2014	World Tour Spanish Open Almeria 2014	KUCHUK Maryia (BLR)		KARAHAN Ipek (TUR)		WS	Qualification		4 - 1	14:12 11:6 11:6 11:13 14:12	KUCHUK Maryia	
+2014	World Tour Spanish Open Almeria 2014	ARLOUSKAYA Alina (BLR)		RAMIREZ Laura (ESP)		WS	Qualification		4 - 1	11:4 11:9 8:11 11:8 11:5	ARLOUSKAYA Alina	
+2014	World Tour Spanish Open Almeria 2014	ARLOUSKAYA Alina (BLR)		NAGYVARADI Mercedes (HUN)		WS	Qualification		4 - 0	11:7 12:10 11:8 11:4	ARLOUSKAYA Alina	
+2014	World Tour Spanish Open Almeria 2014	NAGYVARADI Mercedes (HUN)		RAMIREZ Laura (ESP)		WS	Qualification		4 - 1	11:6 14:12 7:11 11:5 11:7	NAGYVARADI Mercedes	
+2014	World Tour Spanish Open Almeria 2014	NECULA Iulia (ROU)		ESCARTIN Nora (ESP)		WS	Qualification		4 - 1	8:11 11:9 11:5 11:7 11:3	NECULA Iulia	
+2014	World Tour Spanish Open Almeria 2014	NECULA Iulia (ROU)		PATKAR Madhurika (IND)		WS	Qualification		4 - 2	10:12 11:9 9:11 11:9 11:9 12:10	NECULA Iulia	
+2014	World Tour Spanish Open Almeria 2014	PATKAR Madhurika (IND)		ESCARTIN Nora (ESP)		WS	Qualification		4 - 2	11:5 11:9 11:6 2:11 5:11 11:6	PATKAR Madhurika	
+2014	World Tour Spanish Open Almeria 2014	KUMARESAN Shamini (IND)		ARUNA Ganiyat (NGR)		WS	Qualification		4 - 0	13:11 11:4 11:8 11:6	KUMARESAN Shamini	
+2014	World Tour Spanish Open Almeria 2014	BARAVOK Katsiaryna (BLR)		LOPEZ Elena (ESP)		WS	Qualification		4 - 0	11:4 13:11 11:3 11:8	BARAVOK Katsiaryna	
+2014	World Tour Spanish Open Almeria 2014	KUMARESAN Shamini (IND)		BARAVOK Katsiaryna (BLR)		WS	Qualification		3 - 4	11:13 11:7 11:6 4:11 11:3 9:11 8:11	BARAVOK Katsiaryna	
+2014	World Tour Spanish Open Almeria 2014	ARUNA Ganiyat (NGR)		LOPEZ Elena (ESP)		WS	Qualification		3 - 4	11:7 9:11 15:13 11:3 10:12 6:11 10:12	LOPEZ Elena	
+2014	World Tour Spanish Open Almeria 2014	KUMARESAN Shamini (IND)		LOPEZ Elena (ESP)		WS	Qualification		4 - 1	11:4 7:11 11:7 11:5 11:6	KUMARESAN Shamini	
+2014	World Tour Spanish Open Almeria 2014	BARAVOK Katsiaryna (BLR)		ARUNA Ganiyat (NGR)		WS	Qualification		4 - 0	11:3 11:5 11:8 12:10	BARAVOK Katsiaryna	
+2014	World Tour Spanish Open Almeria 2014	DAS Ankita (IND)		BALLESTER Sara (ESP)		WS	Qualification		4 - 0	11:7 11:6 11:5 11:5	DAS Ankita	
+2014	World Tour Spanish Open Almeria 2014	LENNON Emmanuelle (FRA)		HAYATA Hina (JPN)		WS	Qualification		2 - 4	11:6 5:11 6:11 11:7 3:11 8:11	HAYATA Hina	
+2014	World Tour Spanish Open Almeria 2014	DAS Ankita (IND)		LENNON Emmanuelle (FRA)		WS	Qualification		4 - 0	11:6 12:10 11:7 11:8	DAS Ankita	
+2014	World Tour Spanish Open Almeria 2014	BALLESTER Sara (ESP)		HAYATA Hina (JPN)		WS	Qualification		0 - 4	6:11 4:11 7:11 7:11	HAYATA Hina	
+2014	World Tour Spanish Open Almeria 2014	DAS Ankita (IND)		HAYATA Hina (JPN)		WS	Qualification		3 - 4	11:9 11:9 8:11 10:12 11:7 9:11 7:11	HAYATA Hina	
+2014	World Tour Spanish Open Almeria 2014	LENNON Emmanuelle (FRA)		BALLESTER Sara (ESP)		WS	Qualification		4 - 0	13:11 11:1 11:9 12:10	LENNON Emmanuelle	
+2014	World Tour Spanish Open Almeria 2014	HUANG Hsin (TPE)		BALLESTER Maria (ESP)		WS	Qualification		4 - 0	13:11 11:7 11:4 11:8	HUANG Hsin	
+2014	World Tour Spanish Open Almeria 2014	VIVARELLI Debora (ITA)		DOI Minami (JPN)		WS	Qualification		1 - 4	2:11 11:13 6:11 11:8 10:12	DOI Minami	
+2014	World Tour Spanish Open Almeria 2014	HUANG Hsin (TPE)		VIVARELLI Debora (ITA)		WS	Qualification		4 - 1	5:11 11:8 12:10 12:10 11:9	HUANG Hsin	
+2014	World Tour Spanish Open Almeria 2014	BALLESTER Maria (ESP)		DOI Minami (JPN)		WS	Qualification		0 - 4	6:11 3:11 6:11 6:11	DOI Minami	
+2014	World Tour Spanish Open Almeria 2014	HUANG Hsin (TPE)		DOI Minami (JPN)		WS	Qualification		0 - 4	7:11 8:11 6:11 7:11	DOI Minami	
+2014	World Tour Spanish Open Almeria 2014	VIVARELLI Debora (ITA)		BALLESTER Maria (ESP)		WS	Qualification		4 - 0	11:8 12:10 11:5 11:6	VIVARELLI Debora	
+2014	World Tour Spanish Open Almeria 2014	LIU Hsing-Yin (TPE)		PEREZ Maria (ESP)		WS	Qualification		4 - 0	11:6 11:6 11:5 11:9	LIU Hsing-Yin	
+2014	World Tour Spanish Open Almeria 2014	LOEUILLETTE Stephanie (FRA)		LI Jie (NED)		WS	Qualification		1 - 4	11:9 4:11 8:11 8:11 1:11	LI Jie	
+2014	World Tour Spanish Open Almeria 2014	LIU Hsing-Yin (TPE)		LOEUILLETTE Stephanie (FRA)		WS	Qualification		4 - 0	11:9 11:9 13:11 11:8	LIU Hsing-Yin	
+2014	World Tour Spanish Open Almeria 2014	PEREZ Maria (ESP)		LI Jie (NED)		WS	Qualification		0 - 4	2:11 1:11 5:11 6:11	LI Jie	
+2014	World Tour Spanish Open Almeria 2014	LIU Hsing-Yin (TPE)		LI Jie (NED)		WS	Qualification		1 - 4	9:11 8:11 11:7 6:11 14:16	LI Jie	
+2014	World Tour Spanish Open Almeria 2014	LOEUILLETTE Stephanie (FRA)		PEREZ Maria (ESP)		WS	Qualification		4 - 0	11:3 11:7 11:9 11:6	LOEUILLETTE Stephanie	
+2014	World Tour Spanish Open Almeria 2014	LIU Jia (AUT)		DAS Ankita (IND)		WS	Main Draw	R64	4 - 0	11:7 11:2 11:4 11:4	LIU Jia	
+2014	World Tour Spanish Open Almeria 2014	DRINKHALL Joanna (ENG)		MATSUZAWA Marina (JPN)		WS	Main Draw	R64	4 - 2	3:11 13:11 16:14 9:11 11:8 11:9	DRINKHALL Joanna	
+2014	World Tour Spanish Open Almeria 2014	PRIVALOVA Alexandra (BLR)		SCHUH Anja (GER)		WS	Main Draw	R64	3 - 4	12:10 9:11 3:11 11:7 11:9 7:11 8:11	SCHUH Anja	
+2014	World Tour Spanish Open Almeria 2014	NAGYVARADI Mercedes (HUN)		WAKAMIYA Misako (JPN)		WS	Main Draw	R64	1 - 4	12:10 7:11 5:11 5:11 5:11	WAKAMIYA Misako	
+2014	World Tour Spanish Open Almeria 2014	ITO Mima (JPN)		KUMARESAN Shamini (IND)		WS	Main Draw	R64	4 - 0	11:8 11:7 11:8 11:6	ITO Mima	
+2014	World Tour Spanish Open Almeria 2014	HAYATA Hina (JPN)		XIAO Maria (ESP)		WS	Main Draw	R64	4 - 2	9:11 11:7 11:6 12:14 11:7 11:6	HAYATA Hina	
+2014	World Tour Spanish Open Almeria 2014	WINTER Sabine (GER)		ARLOUSKAYA Alina (BLR)		WS	Main Draw	R64	4 - 0	11:9 11:5 11:6 11:7	WINTER Sabine	
+2014	World Tour Spanish Open Almeria 2014	HUANG Hsin (TPE)		MORIZONO Misaki (JPN)		WS	Main Draw	R64	3 - 4	11:9 9:11 11:5 3:11 11:8 6:11 4:11	MORIZONO Misaki	
+2014	World Tour Spanish Open Almeria 2014	SHAN Xiaona (GER)		GALONJA Marija (SRB)		WS	Main Draw	R64	4 - 1	11:5 9:11 11:2 11:4 11:4	SHAN Xiaona	
+2014	World Tour Spanish Open Almeria 2014	BARAVOK Katsiaryna (BLR)		HIRANO Miu (JPN)		WS	Main Draw	R64	1 - 4	9:11 2:11 6:11 11:8 7:11	HIRANO Miu	
+2014	World Tour Spanish Open Almeria 2014	DVORAK Galia (ESP)		DOI Minami (JPN)		WS	Main Draw	R64	4 - 0	11:4 11:6 11:8 14:12	DVORAK Galia	
+2014	World Tour Spanish Open Almeria 2014	SHIBAEVA Elza (RUS)		EKHOLM Matilda (SWE)		WS	Main Draw	R64	1 - 4	9:11 9:11 5:11 11:7 4:11	EKHOLM Matilda	
+2014	World Tour Spanish Open Almeria 2014	HUANG Yi-Hua (TPE)		KUCHUK Maryia (BLR)		WS	Main Draw	R64	4 - 0	11:9 11:8 11:4 11:5	HUANG Yi-Hua	
+2014	World Tour Spanish Open Almeria 2014	MORI Sakura (JPN)		VARADY Barbora (SVK)		WS	Main Draw	R64	4 - 0	11:5 11:8 11:8 11:7	MORI Sakura	
+2014	World Tour Spanish Open Almeria 2014	TASHIRO Saki (JPN)		MADARASZ Dora (HUN)		WS	Main Draw	R64	3 - 4	6:11 4:11 11:3 11:6 6:11 12:10 5:11	MADARASZ Dora	
+2014	World Tour Spanish Open Almeria 2014	MOKHNACHEVA Svetlana (RUS)		HU Melek (TUR)		WS	Main Draw	R64	0 - 4	2:11 5:11 3:11 2:11	HU Melek	
+2014	World Tour Spanish Open Almeria 2014	LI Fen (SWE)		LIU Hsing-Yin (TPE)		WS	Main Draw	R64	4 - 1	11:7 11:9 10:12 11:8 12:10	LI Fen	
+2014	World Tour Spanish Open Almeria 2014	PROKHOROVA Yulia (RUS)		MATSUDAIRA Shiho (JPN)		WS	Main Draw	R64	4 - 0	16:14 15:13 11:5 11:9	PROKHOROVA Yulia	
+2014	World Tour Spanish Open Almeria 2014	HAMAMOTO Yui (AUT)		LIN Chia-Chih (TPE)		WS	Main Draw	R64	3 - 4	7:11 11:9 4:11 6:11 11:5 11:7 8:11	LIN Chia-Chih
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 7 of 7 Total: 666
+
+Start
+Prev
+1
+2
+3
+4
+5
+6
+7
+Next
+End
+2014	World Tour Spanish Open Almeria 2014	WINTER Sabine (GER)		HIRANO Miu (JPN)		WS	Main Draw	SemiFinal	3 - 4	12:14 4:11 11:9 12:10 11:5 8:11 4:11	HIRANO Miu	
+2014	World Tour Spanish Open Almeria 2014	LI Fen (SWE)		YU Fu (POR)		WS	Main Draw	SemiFinal	4 - 0	11:6 11:3 11:7 14:12	LI Fen	
+2014	World Tour Spanish Open Almeria 2014	HIRANO Miu (JPN)		LI Fen (SWE)		WS	Main Draw	Final	1 - 4	4:11 11:6 2:11 3:11 10:12	LI Fen	
+2014	World Tour Spanish Open Almeria 2014	ITO Mima (JPN)		KARAHAN Ipek (TUR)		U21WS	Main Draw	R32	3 - 0	11:8 11:4 11:4	ITO Mima	
+2014	World Tour Spanish Open Almeria 2014	KUCHUK Maryia (BLR)		BATRA Manika (IND)		U21WS	Main Draw	R32	0 - 3	4:11 7:11 9:11	BATRA Manika	
+2014	World Tour Spanish Open Almeria 2014	CHENG Hsien-Tzu (TPE)		MOSKOVITS Daniela (SWE)		U21WS	Main Draw	R32	3 - 2	8:11 12:14 11:9 11:7 11:9	CHENG Hsien-Tzu	
+2014	World Tour Spanish Open Almeria 2014	MOKHNACHEVA Svetlana (RUS)		POLCANOVA Sofia (AUT)		U21WS	Main Draw	R32	0 - 3	11:13 5:11 2:11	POLCANOVA Sofia	
+2014	World Tour Spanish Open Almeria 2014	MORI Sakura (JPN)		RAMIREZ Laura (ESP)		U21WS	Main Draw	R32	3 - 0	11:2 11:8 11:3	MORI Sakura	
+2014	World Tour Spanish Open Almeria 2014	BUENO Paula (ESP)		ARLOUSKAYA Alina (BLR)		U21WS	Main Draw	R32	0 - 3	14:16 9:11 8:11	ARLOUSKAYA Alina	
+2014	World Tour Spanish Open Almeria 2014	MADARASZ Dora (HUN)		SCHUH Anja (GER)		U21WS	Main Draw	R32	3 - 0	11:5 11:6 11:9	MADARASZ Dora	
+2014	World Tour Spanish Open Almeria 2014	SAHIN Sanem (TUR)		MATSUDAIRA Shiho (JPN)		U21WS	Main Draw	R32	0 - 3	3:11 7:11 7:11	MATSUDAIRA Shiho	
+2014	World Tour Spanish Open Almeria 2014	HIRANO Miu (JPN)		NAGYVARADI Mercedes (HUN)		U21WS	Main Draw	R32	3 - 0	11:8 11:3 11:7	HIRANO Miu	
+2014	World Tour Spanish Open Almeria 2014	HAYATA Hina (JPN)		XIAO Maria (ESP)		U21WS	Main Draw	R32	3 - 0	11:5 11:9 14:12	HAYATA Hina	
+2014	World Tour Spanish Open Almeria 2014	VIVARELLI Debora (ITA)		GUNGOR Gokce Nur (TUR)		U21WS	Main Draw	R32	3 - 1	11:7 11:9 8:11 11:3	VIVARELLI Debora	
+2014	World Tour Spanish Open Almeria 2014	ESCARTIN Nora (ESP)		EERLAND Britt (NED)		U21WS	Main Draw	R32	0 - 3	5:11 2:11 8:11	EERLAND Britt	
+2014	World Tour Spanish Open Almeria 2014	MAEDA Miyu (JPN)		ASCHWANDEN Rahel (SUI)		U21WS	Main Draw	R32	3 - 0	11:4 11:7 11:7	MAEDA Miyu	
+2014	World Tour Spanish Open Almeria 2014	BARAVOK Katsiaryna (BLR)		DAS Ankita (IND)		U21WS	Main Draw	R32	0 - 3	8:11 6:11 7:11	DAS Ankita	
+2014	World Tour Spanish Open Almeria 2014	HUANG Hsin (TPE)		COLANTONI Chiara (ITA)		U21WS	Main Draw	R32	3 - 2	11:3 7:11 8:11 11:6 11:7	HUANG Hsin	
+2014	World Tour Spanish Open Almeria 2014	BALLESTER Sara (ESP)		HAMAMOTO Yui (AUT)		U21WS	Main Draw	R32	0 - 3	6:11 7:11 7:11	HAMAMOTO Yui	
+2014	World Tour Spanish Open Almeria 2014	ITO Mima (JPN)		BATRA Manika (IND)		U21WS	Main Draw	R16	3 - 1	11:13 11:5 11:5 11:9	ITO Mima	
+2014	World Tour Spanish Open Almeria 2014	CHENG Hsien-Tzu (TPE)		POLCANOVA Sofia (AUT)		U21WS	Main Draw	R16	0 - 3	9:11 7:11 8:11	POLCANOVA Sofia	
+2014	World Tour Spanish Open Almeria 2014	MORI Sakura (JPN)		ARLOUSKAYA Alina (BLR)		U21WS	Main Draw	R16	3 - 0	11:9 11:5 11:8	MORI Sakura	
+2014	World Tour Spanish Open Almeria 2014	MADARASZ Dora (HUN)		MATSUDAIRA Shiho (JPN)		U21WS	Main Draw	R16	3 - 0	11:8 11:8 11:9	MADARASZ Dora	
+2014	World Tour Spanish Open Almeria 2014	HIRANO Miu (JPN)		HAYATA Hina (JPN)		U21WS	Main Draw	R16	3 - 0	11:9 11:5 11:8	HIRANO Miu	
+2014	World Tour Spanish Open Almeria 2014	VIVARELLI Debora (ITA)		EERLAND Britt (NED)		U21WS	Main Draw	R16	0 - 3	8:11 2:11 4:11	EERLAND Britt	
+2014	World Tour Spanish Open Almeria 2014	MAEDA Miyu (JPN)		DAS Ankita (IND)		U21WS	Main Draw	R16	3 - 1	11:7 11:9 10:12 11:5	MAEDA Miyu	
+2014	World Tour Spanish Open Almeria 2014	HUANG Hsin (TPE)		HAMAMOTO Yui (AUT)		U21WS	Main Draw	R16	1 - 3	11:9 4:11 7:11 9:11	HAMAMOTO Yui	
+2014	World Tour Spanish Open Almeria 2014	ITO Mima (JPN)		POLCANOVA Sofia (AUT)		U21WS	Main Draw	QuarterFinal	2 - 4	8:11 5:11 11:8 11:8 8:11 9:11	POLCANOVA Sofia	
+2014	World Tour Spanish Open Almeria 2014	MORI Sakura (JPN)		MADARASZ Dora (HUN)		U21WS	Main Draw	QuarterFinal	3 - 4	11:8 11:9 2:11 12:10 12:14 8:11 8:11	MADARASZ Dora	
+2014	World Tour Spanish Open Almeria 2014	HIRANO Miu (JPN)		EERLAND Britt (NED)		U21WS	Main Draw	QuarterFinal	2 - 4	6:11 4:11 11:8 11:13 11:9 6:11	EERLAND Britt	
+2014	World Tour Spanish Open Almeria 2014	MAEDA Miyu (JPN)		HAMAMOTO Yui (AUT)		U21WS	Main Draw	QuarterFinal	1 - 4	7:11 11:9 6:11 8:11 7:11	HAMAMOTO Yui	
+2014	World Tour Spanish Open Almeria 2014	POLCANOVA Sofia (AUT)		MADARASZ Dora (HUN)		U21WS	Main Draw	SemiFinal	4 - 0	12:10 11:9 11:9 12:10	POLCANOVA Sofia	
+2014	World Tour Spanish Open Almeria 2014	EERLAND Britt (NED)		HAMAMOTO Yui (AUT)		U21WS	Main Draw	SemiFinal	4 - 1	11:6 12:10 11:8 8:11 11:3	EERLAND Britt	
+2014	World Tour Spanish Open Almeria 2014	POLCANOVA Sofia (AUT)		EERLAND Britt (NED)		U21WS	Main Draw	Final	4 - 3	10:12 11:6 9:11 11:7 8:11 11:8 11:8	POLCANOVA Sofia	
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 43
+
+2014	World Tour Spanish Open Almeria 2014	CHEN Alexander (AUT)	PFEFFER Simon (AUT)	ALENCAR Normando (BRA)	VILLANUEVA Nelson (VEN)	MD	Qualification	QR64	3 - 0	11:6 11:8 12:10	CHEN Alexander	PFEFFER Simon
+2014	World Tour Spanish Open Almeria 2014	CHEN Alexander (AUT)	PFEFFER Simon (AUT)	HUNG Tzu-Hsiang (TPE)	WU Chih-Chi (TPE)	MD	Qualification	QR32	1 - 3	11:13 11:8 8:11 7:11	HUNG Tzu-Hsiang	WU Chih-Chi
+2014	World Tour Spanish Open Almeria 2014	DEVOS Robin (BEL)	NUYTINCK Cedric (BEL)	DIEZ Endika (ESP)	ROBLES Alvaro (ESP)	MD	Qualification	QR32	3 - 2	11:7 5:11 11:6 11:13 11:8	DEVOS Robin	NUYTINCK Cedric
+2014	World Tour Spanish Open Almeria 2014	DEVOS Robin (BEL)	NUYTINCK Cedric (BEL)	ANTHONY Amalraj (IND)	SHETTY Sanil (IND)	MD	Qualification	QR16	3 - 2	8:11 15:13 14:12 4:11 11:9	DEVOS Robin	NUYTINCK Cedric
+2014	World Tour Spanish Open Almeria 2014	DUDA Benedikt (GER)	KOJIC Frane (CRO)	KARLSSON Mattias (SWE)	SODERLUND Hampus (SWE)	MD	Main Draw	R16	3 - 0	11:8 11:3 11:6	DUDA Benedikt	KOJIC Frane
+2014	World Tour Spanish Open Almeria 2014	DUDA Benedikt (GER)	KOJIC Frane (CRO)	BOULOUSSA Mehdi (ALG)	PETIOT Jeremy (FRA)	MD	Qualification	QR32	3 - 0	11:6 11:6 11:9	DUDA Benedikt	KOJIC Frane
+2014	World Tour Spanish Open Almeria 2014	DUDA Benedikt (GER)	KOJIC Frane (CRO)	BOBOCICA Mihai (ITA)	STOYANOV Niagol (ITA)	MD	Qualification	QR16	3 - 1	6:11 11:6 11:8 11:7	DUDA Benedikt	KOJIC Frane
+2014	World Tour Spanish Open Almeria 2014	CHEN Chien-An (TPE)	PROKOPCOV Dmitrij (CZE)	MORIZONO Masataka (JPN)	SAMBE Kohei (JPN)	MD	Main Draw	R16	1 - 3	8:11 9:11 11:9 7:11	MORIZONO Masataka	SAMBE Kohei
+2014	World Tour Spanish Open Almeria 2014	CHEN Chien-An (TPE)	PROKOPCOV Dmitrij (CZE)	LAM Siu Hang (HKG)	LI Hon Ming (HKG)	MD	Qualification	QR32	3 - 1	11:7 9:11 11:9 11:4	CHEN Chien-An	PROKOPCOV Dmitrij
+2014	World Tour Spanish Open Almeria 2014	CHEN Chien-An (TPE)	PROKOPCOV Dmitrij (CZE)	LAKATOS Tamas (HUN)	SZUDI Adam (HUN)	MD	Qualification	QR16	3 - 0	11:9 11:9 11:8	CHEN Chien-An	PROKOPCOV Dmitrij
+2014	World Tour Spanish Open Almeria 2014	FLEMMING Alexander (GER)	RASMUSSEN Morten (DEN)	LAM Siu Hang (HKG)	LI Hon Ming (HKG)	MD	Qualification	QR64	1 - 3	6:11 4:11 13:11 7:11	LAM Siu Hang	LI Hon Ming
+2014	World Tour Spanish Open Almeria 2014	HINDERSSON Mikkel (DEN)	STERNBERG Kasper (DEN)	ARUNA Quadri (NGR)	KAZEEM Makanjuola (NGR)	MD	Qualification	QR32	0 - 3	6:11 9:11 7:11	ARUNA Quadri	KAZEEM Makanjuola
+2014	World Tour Spanish Open Almeria 2014	DRINKHALL Paul (ENG)	KNIGHT Darius (ENG)	CALVO Alejandro (ESP)	FRANCO Carlos (ESP)	MD	Qualification	QR32	3 - 0	11:9 13:11 11:5	DRINKHALL Paul	KNIGHT Darius
+2014	World Tour Spanish Open Almeria 2014	DRINKHALL Paul (ENG)	KNIGHT Darius (ENG)	KOSIBA Daniel (HUN)	PATTANTYUS Adam (HUN)	MD	Qualification	QR16	3 - 0	11:7 11:9 11:7	DRINKHALL Paul	KNIGHT Darius
+2014	World Tour Spanish Open Almeria 2014	HE Zhiwen (ESP)	MACHADO Carlos (ESP)	HUNG Tzu-Hsiang (TPE)	WU Chih-Chi (TPE)	MD	Main Draw	R16	1 - 3	7:11 13:11 8:11 8:11	HUNG Tzu-Hsiang	WU Chih-Chi
+2014	World Tour Spanish Open Almeria 2014	BENITO Javier (ESP)	RUIZ Jose Manuel (ESP)	KWAN Man Ho (HKG)	MAK King Ho (HKG)	MD	Qualification	QR64	3 - 1	9:11 11:9 11:9 12:10	BENITO Javier	RUIZ Jose Manuel
+2014	World Tour Spanish Open Almeria 2014	CARNEROS Alfredo (ESP)	VILCHEZ Miguel (ESP)	GOMMERS Rajko (NED)	OOSTWOUDER Ewout (NED)	MD	Qualification	QR32	3 - 2	12:10 11:8 10:12 8:11 11:5	CARNEROS Alfredo	VILCHEZ Miguel
+2014	World Tour Spanish Open Almeria 2014	CARNEROS Alfredo (ESP)	VILCHEZ Miguel (ESP)	NORDBERG Hampus (SWE)	PERSSON Jon (SWE)	MD	Qualification	QR16	2 - 3	5:11 11:13 11:8 13:11 9:11	NORDBERG Hampus	PERSSON Jon
+2014	World Tour Spanish Open Almeria 2014	AKKUZU Can (FRA)	LE BRETON Thomas (FRA)	MATSUDAIRA Kenji (JPN)	TAKAKIWA Taku (JPN)	MD	Main Draw	R16	1 - 3	11:5 2:11 6:11 5:11	MATSUDAIRA Kenji	TAKAKIWA Taku
+2014	World Tour Spanish Open Almeria 2014	LORENTZ Romain (FRA)	SALIFOU Abdel-Kader (BEN)	BENITO Javier (ESP)	RUIZ Jose Manuel (ESP)	MD	Qualification	QR32	3 - 0	11:3 12:10 11:3	LORENTZ Romain	SALIFOU Abdel-Kader
+2014	World Tour Spanish Open Almeria 2014	AKKUZU Can (FRA)	LE BRETON Thomas (FRA)	DURAN Marc (ESP)	MONZO Oriol (ESP)	MD	Qualification	QR16	3 - 2	9:11 6:11 11:7 11:7 11:4	AKKUZU Can	LE BRETON Thomas
+2014	World Tour Spanish Open Almeria 2014	LORENTZ Romain (FRA)	SALIFOU Abdel-Kader (BEN)	ARUNA Quadri (NGR)	KAZEEM Makanjuola (NGR)	MD	Qualification	QR16	2 - 3	11:4 12:14 11:4 10:12 11:13	ARUNA Quadri	KAZEEM Makanjuola
+2014	World Tour Spanish Open Almeria 2014	TANG Peng (HKG)	WONG Chun Ting (HKG)	DEVOS Robin (BEL)	NUYTINCK Cedric (BEL)	MD	Main Draw	R16	3 - 0	15:13 11:9 11:9	TANG Peng	WONG Chun Ting
+2014	World Tour Spanish Open Almeria 2014	TANG Peng (HKG)	WONG Chun Ting (HKG)	DESAI Harmeet (IND)	GHOSH Soumyajit (IND)	MD	Main Draw	QuarterFinal	3 - 0	11:6 11:5 11:6	TANG Peng	WONG Chun Ting
+2014	World Tour Spanish Open Almeria 2014	TANG Peng (HKG)	WONG Chun Ting (HKG)	LI Ahmet (TUR)	VANG Bora (TUR)	MD	Main Draw	SemiFinal	3 - 2	11:4 9:11 11:9 5:11 12:10	TANG Peng	WONG Chun Ting
+2014	World Tour Spanish Open Almeria 2014	LAKATOS Tamas (HUN)	SZUDI Adam (HUN)	OIKAWA Mizuki (JPN)	SAKAI Asuka (JPN)	MD	Qualification	QR32	3 - 0	11:9 11:6 11:9	LAKATOS Tamas	SZUDI Adam
+2014	World Tour Spanish Open Almeria 2014	BACIOCCHI Alessandro (ITA)	SERETTI Damiano (ITA)	ANTHONY Amalraj (IND)	SHETTY Sanil (IND)	MD	Qualification	QR32	1 - 3	5:11 10:12 11:8 5:11	ANTHONY Amalraj	SHETTY Sanil
+2014	World Tour Spanish Open Almeria 2014	MUTTI Leonardo (ITA)	RECH DALDOSSO Marco (ITA)	KRIVOSHEEV Viacheslav (RUS)	SILVA Andre (POR)	MD	Qualification	QR32	2 - 3	11:3 8:11 11:6 7:11 7:11	KRIVOSHEEV Viacheslav	SILVA Andre
+2014	World Tour Spanish Open Almeria 2014	LAMBIET Florent (BEL)	TROMER Laurens (NED)	KOSIBA Daniel (HUN)	PATTANTYUS Adam (HUN)	MD	Qualification	QR32	2 - 3	11:8 8:11 8:11 11:9 6:11	KOSIBA Daniel	PATTANTYUS Adam
+2014	World Tour Spanish Open Almeria 2014	CARVALHO Diogo (POR)	GERALDO Joao (POR)	CILLIS Javier (ARG)	SKUCAS Matas (LTU)	MD	Qualification	QR64	3 - 0	11:9 11:9 11:5	CARVALHO Diogo	GERALDO Joao
+2014	World Tour Spanish Open Almeria 2014	CARVALHO Diogo (POR)	GERALDO Joao (POR)	NORDBERG Hampus (SWE)	PERSSON Jon (SWE)	MD	Qualification	QR32	1 - 3	6:11 6:11 11:6 8:11	NORDBERG Hampus	PERSSON Jon
+2014	World Tour Spanish Open Almeria 2014	KRIVOSHEEV Viacheslav (RUS)	SILVA Andre (POR)	HUNG Tzu-Hsiang (TPE)	WU Chih-Chi (TPE)	MD	Qualification	QR16	1 - 3	12:10 9:11 8:11 10:12	HUNG Tzu-Hsiang	WU Chih-Chi
+2014	World Tour Spanish Open Almeria 2014	DURANSPAHIC Admir (BIH)	IONESCU Ovidiu (ROU)	AKKUZU Can (FRA)	LE BRETON Thomas (FRA)	MD	Qualification	QR32	1 - 3	9:11 11:5 7:11 11:13	AKKUZU Can	LE BRETON Thomas
+2014	World Tour Spanish Open Almeria 2014	HOWIESON Craig (SCO)	RUMGAY Gavin (SCO)	BOBOCICA Mihai (ITA)	STOYANOV Niagol (ITA)	MD	Qualification	QR32	0 - 3	5:11 9:11 3:11	BOBOCICA Mihai	STOYANOV Niagol
+2014	World Tour Spanish Open Almeria 2014	NORDBERG Hampus (SWE)	PERSSON Jon (SWE)	DESAI Harmeet (IND)	GHOSH Soumyajit (IND)	MD	Main Draw	R16	1 - 3	8:11 6:11 11:5 7:11	DESAI Harmeet	GHOSH Soumyajit
+2014	World Tour Spanish Open Almeria 2014	CHIANG Hung-Chieh (TPE)	HUANG Sheng-Sheng (TPE)	ARUNA Quadri (NGR)	KAZEEM Makanjuola (NGR)	MD	Main Draw	R16	3 - 1	11:6 11:8 10:12 11:3	CHIANG Hung-Chieh	HUANG Sheng-Sheng
+2014	World Tour Spanish Open Almeria 2014	CHIANG Hung-Chieh (TPE)	HUANG Sheng-Sheng (TPE)	DUDA Benedikt (GER)	KOJIC Frane (CRO)	MD	Main Draw	QuarterFinal	3 - 1	11:7 8:11 11:9 11:9	CHIANG Hung-Chieh	HUANG Sheng-Sheng
+2014	World Tour Spanish Open Almeria 2014	HUNG Tzu-Hsiang (TPE)	WU Chih-Chi (TPE)	MATSUDAIRA Kenji (JPN)	TAKAKIWA Taku (JPN)	MD	Main Draw	QuarterFinal	0 - 3	4:11 8:11 6:11	MATSUDAIRA Kenji	TAKAKIWA Taku
+2014	World Tour Spanish Open Almeria 2014	CHIANG Hung-Chieh (TPE)	HUANG Sheng-Sheng (TPE)	MATSUDAIRA Kenji (JPN)	TAKAKIWA Taku (JPN)	MD	Main Draw	SemiFinal	3 - 1	11:4 11:6 6:11 11:8	CHIANG Hung-Chieh	HUANG Sheng-Sheng
+2014	World Tour Spanish Open Almeria 2014	CHIANG Hung-Chieh (TPE)	HUANG Sheng-Sheng (TPE)	TANG Peng (HKG)	WONG Chun Ting (HKG)	MD	Main Draw	Final	2 - 3	2:11 11:2 7:11 11:7 7:11	TANG Peng	WONG Chun Ting
+2014	World Tour Spanish Open Almeria 2014	LI Ahmet (TUR)	VANG Bora (TUR)	DRINKHALL Paul (ENG)	KNIGHT Darius (ENG)	MD	Main Draw	R16	3 - 2	8:11 12:10 11:2 9:11 12:10	LI Ahmet	VANG Bora
+2014	World Tour Spanish Open Almeria 2014	LI Ahmet (TUR)	VANG Bora (TUR)	MORIZONO Masataka (JPN)	SAMBE Kohei (JPN)	MD	Main Draw	QuarterFinal	3 - 1	11:7 7:11 11:7 11:4	LI Ahmet	VANG Bora
+2014	World Tour Spanish Open Almeria 2014	HACI Halil (TUR)	MENGE Gencay (TUR)	DURAN Marc (ESP)	MONZO Oriol (ESP)	MD	Qualification	QR32	0 - 3	8:11 6:11 7:11	DURAN Marc	MONZO Oriol
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 36
+
+2014	World Tour Spanish Open Almeria 2014	POLCANOVA Sofia (AUT)	SOLJA Amelie (AUT)	VARADY Barbora (SVK)	MATELOVA Hana (CZE)	WD	Main Draw	R16	0 - 3	9:11 9:11 7:11	VARADY Barbora	MATELOVA Hana
+2014	World Tour Spanish Open Almeria 2014	VARADY Barbora (SVK)	MATELOVA Hana (CZE)	PERGEL Szandra (HUN)	POTA Georgina (HUN)	WD	Main Draw	QuarterFinal	3 - 0	11:8 11:9 11:2	VARADY Barbora	MATELOVA Hana
+2014	World Tour Spanish Open Almeria 2014	LIU Jia (AUT)	VACENOVSKA Iveta (CZE)	SHAN Xiaona (GER)	LANG Kristin (GER)	WD	Main Draw	QuarterFinal	3 - 1	11:8 6:11 11:7 11:8	LIU Jia	VACENOVSKA Iveta
+2014	World Tour Spanish Open Almeria 2014	VARADY Barbora (SVK)	MATELOVA Hana (CZE)	HIRANO Miu (JPN)	ITO Mima (JPN)	WD	Main Draw	SemiFinal	0 - 3	9:11 5:11 9:11	HIRANO Miu	ITO Mima
+2014	World Tour Spanish Open Almeria 2014	LIU Jia (AUT)	VACENOVSKA Iveta (CZE)	KUMARESAN Shamini (IND)	PATKAR Madhurika (IND)	WD	Qualification	QR16	3 - 0	11:1 11:8 11:5	LIU Jia	VACENOVSKA Iveta
+2014	World Tour Spanish Open Almeria 2014	PEREZ Maria (ESP)	ZHANG Sofia-Xuan (ESP)	KUMARESAN Shamini (IND)	PATKAR Madhurika (IND)	WD	Qualification	QR32	1 - 3	5:11 12:10 0:11 8:11	KUMARESAN Shamini	PATKAR Madhurika
+2014	World Tour Spanish Open Almeria 2014	EERLAND Britt (NED)	XIAO Maria (ESP)	COLANTONI Chiara (ITA)	NAGYVARADI Mercedes (HUN)	WD	Qualification	QR32	3 - 0	11:7 11:9 12:10	EERLAND Britt	XIAO Maria
+2014	World Tour Spanish Open Almeria 2014	EERLAND Britt (NED)	XIAO Maria (ESP)	PROKHOROVA Yulia (RUS)	SABITOVA Valentina (RUS)	WD	Qualification	QR16	1 - 3	11:6 10:12 9:11 9:11	PROKHOROVA Yulia	SABITOVA Valentina
+2014	World Tour Spanish Open Almeria 2014	LENNON Emmanuelle (FRA)	LOEUILLETTE Stephanie (FRA)	BARAVOK Katsiaryna (BLR)	PRIVALOVA Alexandra (BLR)	WD	Qualification	QR32	2 - 3	14:12 8:11 11:8 9:11 10:12	BARAVOK Katsiaryna	PRIVALOVA Alexandra
+2014	World Tour Spanish Open Almeria 2014	SCHUH Anja (GER)	WINTER Sabine (GER)	RIDOLFI Lisa (ITA)	VIVARELLI Debora (ITA)	WD	Qualification	QR32	3 - 2	11:8 9:11 11:5 7:11 11:8	SCHUH Anja	WINTER Sabine
+2014	World Tour Spanish Open Almeria 2014	SCHUH Anja (GER)	WINTER Sabine (GER)	VARADY Barbora (SVK)	MATELOVA Hana (CZE)	WD	Qualification	QR16	2 - 3	9:11 8:11 11:5 12:10 9:11	VARADY Barbora	MATELOVA Hana
+2014	World Tour Spanish Open Almeria 2014	AMBRUS Krisztina (HUN)	MADARASZ Dora (HUN)	HIRANO Miu (JPN)	ITO Mima (JPN)	WD	Main Draw	QuarterFinal	0 - 3	5:11 8:11 8:11	HIRANO Miu	ITO Mima
+2014	World Tour Spanish Open Almeria 2014	AMBRUS Krisztina (HUN)	MADARASZ Dora (HUN)	BUENO Paula (ESP)	LOPEZ Elena (ESP)	WD	Qualification	QR32	3 - 1	11:5 11:6 8:11 11:6	AMBRUS Krisztina	MADARASZ Dora
+2014	World Tour Spanish Open Almeria 2014	AMBRUS Krisztina (HUN)	MADARASZ Dora (HUN)	ARLOUSKAYA Alina (BLR)	KUCHUK Maryia (BLR)	WD	Qualification	QR16	3 - 0	11:3 11:9 16:14	AMBRUS Krisztina	MADARASZ Dora
+2014	World Tour Spanish Open Almeria 2014	BATRA Manika (IND)	DAS Ankita (IND)	BALLESTER Maria (ESP)	BALLESTER Sara (ESP)	WD	Qualification	QR32	3 - 1	11:9 11:8 10:12 11:7	BATRA Manika	DAS Ankita
+2014	World Tour Spanish Open Almeria 2014	BATRA Manika (IND)	DAS Ankita (IND)	BARAVOK Katsiaryna (BLR)	PRIVALOVA Alexandra (BLR)	WD	Qualification	QR16	2 - 3	9:11 11:13 11:2 11:6 6:11	BARAVOK Katsiaryna	PRIVALOVA Alexandra
+2014	World Tour Spanish Open Almeria 2014	MAEDA Miyu (JPN)	MORI Sakura (JPN)	PERGEL Szandra (HUN)	POTA Georgina (HUN)	WD	Main Draw	R16	1 - 3	11:5 9:11 4:11 11:13	PERGEL Szandra	POTA Georgina
+2014	World Tour Spanish Open Almeria 2014	HIRANO Sayaka (JPN)	SAKAI Haruka (JPN)	AMBRUS Krisztina (HUN)	MADARASZ Dora (HUN)	WD	Main Draw	R16	2 - 3	14:12 8:11 4:11 11:3 9:11	AMBRUS Krisztina	MADARASZ Dora
+2014	World Tour Spanish Open Almeria 2014	HIRANO Miu (JPN)	ITO Mima (JPN)	LIU Jia (AUT)	VACENOVSKA Iveta (CZE)	WD	Main Draw	Final	3 - 2	8:11 11:5 11:5 9:11 15:13	HIRANO Miu	ITO Mima
+2014	World Tour Spanish Open Almeria 2014	LI Jiao (NED)	LI Jie (NED)	LIU Jia (AUT)	VACENOVSKA Iveta (CZE)	WD	Main Draw	SemiFinal	1 - 3	8:11 7:11 12:10 7:11	LIU Jia	VACENOVSKA Iveta
+2014	World Tour Spanish Open Almeria 2014	LI Fen (SWE)	YU Fu (POR)	SHAN Xiaona (GER)	LANG Kristin (GER)	WD	Main Draw	R16	2 - 3	11:9 11:7 3:11 6:11 7:11	SHAN Xiaona	LANG Kristin
+2014	World Tour Spanish Open Almeria 2014	LI Fen (SWE)	YU Fu (POR)	ESCARTIN Nora (ESP)	RAMIREZ Laura (ESP)	WD	Qualification	QR32	3 - 0	11:8 11:4 11:4	LI Fen	YU Fu
+2014	World Tour Spanish Open Almeria 2014	LI Fen (SWE)	YU Fu (POR)	CHENG Hsien-Tzu (TPE)	LEE I-Chen (TPE)	WD	Qualification	QR16	3 - 1	10:12 11:4 13:11 11:9	LI Fen	YU Fu
+2014	World Tour Spanish Open Almeria 2014	GALONJA Marija (SRB)	NECULA Iulia (ROU)	DRINKHALL Joanna (ENG)	SIBLEY Kelly (ENG)	WD	Qualification	QR32	2 - 3	11:9 8:11 11:7 7:11 7:11	DRINKHALL Joanna	SIBLEY Kelly
+2014	World Tour Spanish Open Almeria 2014	PROKHOROVA Yulia (RUS)	SABITOVA Valentina (RUS)	LI Jiao (NED)	LI Jie (NED)	WD	Main Draw	R16	2 - 3	4:11 11:7 11:9 3:11 5:11	LI Jiao	LI Jie
+2014	World Tour Spanish Open Almeria 2014	MOKHNACHEVA Svetlana (RUS)	SHIBAEVA Elza (RUS)	VARADY Barbora (SVK)	MATELOVA Hana (CZE)	WD	Qualification	QR32	2 - 3	11:7 8:11 11:5 6:11 5:11	VARADY Barbora	MATELOVA Hana
+2014	World Tour Spanish Open Almeria 2014	ASCHWANDEN Rahel (SUI)	MORET Rachel (SUI)	PROKHOROVA Yulia (RUS)	SABITOVA Valentina (RUS)	WD	Qualification	QR32	0 - 3	7:11 3:11 10:12	PROKHOROVA Yulia	SABITOVA Valentina
+2014	World Tour Spanish Open Almeria 2014	DVORAK Galia (ESP)	EKHOLM Matilda (SWE)	LIU Jia (AUT)	VACENOVSKA Iveta (CZE)	WD	Main Draw	R16	2 - 3	2:11 5:11 11:9 11:8 9:11	LIU Jia	VACENOVSKA Iveta
+2014	World Tour Spanish Open Almeria 2014	BOLENIUS Sannamari (SWE)	MOSKOVITS Daniela (SWE)	MAEDA Miyu (JPN)	MORI Sakura (JPN)	WD	Qualification	QR32	2 - 3	12:10 8:11 9:11 14:12 2:11	MAEDA Miyu	MORI Sakura
+2014	World Tour Spanish Open Almeria 2014	HUANG Yi-Hua (TPE)	LIN Chia-Chih (TPE)	BARAVOK Katsiaryna (BLR)	PRIVALOVA Alexandra (BLR)	WD	Main Draw	R16	3 - 0	11:7 11:7 11:8	HUANG Yi-Hua	LIN Chia-Chih
+2014	World Tour Spanish Open Almeria 2014	HUANG Yi-Hua (TPE)	LIN Chia-Chih (TPE)	LI Jiao (NED)	LI Jie (NED)	WD	Main Draw	QuarterFinal	1 - 3	7:11 10:12 11:8 10:12	LI Jiao	LI Jie
+2014	World Tour Spanish Open Almeria 2014	HUANG Hsin (TPE)	LIU Hsing-Yin (TPE)	ARUNA Ganiyat (NGR)	EDEM Offiong (NGR)	WD	Qualification	QR32	3 - 0	11:3 11:6 11:5	HUANG Hsin	LIU Hsing-Yin
+2014	World Tour Spanish Open Almeria 2014	HUANG Hsin (TPE)	LIU Hsing-Yin (TPE)	MAEDA Miyu (JPN)	MORI Sakura (JPN)	WD	Qualification	QR16	0 - 3	12:14 5:11 11:13	MAEDA Miyu	MORI Sakura
+2014	World Tour Spanish Open Almeria 2014	HU Melek (TUR)	SAHIN Sanem (TUR)	HIRANO Miu (JPN)	ITO Mima (JPN)	WD	Main Draw	R16	2 - 3	11:8 5:11 14:12 7:11 6:11	HIRANO Miu	ITO Mima
+2014	World Tour Spanish Open Almeria 2014	GUNGOR Gokce Nur (TUR)	KARAHAN Ipek (TUR)	CHENG Hsien-Tzu (TPE)	LEE I-Chen (TPE)	WD	Qualification	QR32	2 - 3	5:11 11:7 14:12 3:11 4:11	CHENG Hsien-Tzu	LEE I-Chen
+2014	World Tour Spanish Open Almeria 2014	HU Melek (TUR)	SAHIN Sanem (TUR)	DRINKHALL Joanna (ENG)	SIBLEY Kelly (ENG)	WD	Qualification	QR16	3 - 2	11:8 11:7 7:11 9:11 11:7	HU Melek	SAHIN Sanem

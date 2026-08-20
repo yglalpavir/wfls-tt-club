@@ -5,3 +5,241 @@
 参赛人数：375
 开始日期：2014-06-18
 结束日期：2014-06-22
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 3 Total: 210
+
+Start
+Prev
+1
+2
+3
+Next
+End
+2014	World Tour Japan Open Yokohama 2014	CHUANG Chih-Yuan (TPE)		UEDA Jin (JPN)		MS	Main Draw	R64	2 - 4	12:10 3:11 10:12 9:11 11:9 8:11	UEDA Jin	
+2014	World Tour Japan Open Yokohama 2014	OSHIMA Yuya (JPN)		YANG Zi (SGP)		MS	Main Draw	R64	4 - 0	11:9 12:10 15:13 11:9	OSHIMA Yuya	
+2014	World Tour Japan Open Yokohama 2014	SALIFOU Abdel-Kader (BEN)		YU Ziyang (CHN)		MS	Main Draw	R64	1 - 4	9:11 7:11 6:11 11:7 8:11	YU Ziyang	
+2014	World Tour Japan Open Yokohama 2014	HUNG Tzu-Hsiang (TPE)		JEOUNG Youngsik (KOR)		MS	Main Draw	R64	0 - 4	8:11 5:11 7:11 3:11	JEOUNG Youngsik	
+2014	World Tour Japan Open Yokohama 2014	FRANZISKA Patrick (GER)		YANG Tzu-Yi (TPE)		MS	Main Draw	R64	3 - 4	9:11 11:4 11:9 8:11 7:11 11:6 11:13	YANG Tzu-Yi	
+2014	World Tour Japan Open Yokohama 2014	YOSHIDA Masaki (JPN)		CHEN Feng (SGP)		MS	Main Draw	R64	2 - 4	11:8 6:11 13:11 8:11 5:11 9:11	CHEN Feng	
+2014	World Tour Japan Open Yokohama 2014	CHIANG Hung-Chieh (TPE)		LORENTZ Romain (FRA)		MS	Main Draw	R64	4 - 0	11:8 11:7 11:5 11:4	CHIANG Hung-Chieh	
+2014	World Tour Japan Open Yokohama 2014	HACHARD Antoine (FRA)		SHIONO Masato (JPN)		MS	Main Draw	R64	4 - 3	9:11 11:7 11:6 11:4 4:11 6:11 11:9	HACHARD Antoine	
+2014	World Tour Japan Open Yokohama 2014	TANG Peng (HKG)		WEN Wei-Chieh (TPE)		MS	Main Draw	R64	4 - 0	11:2 11:3 11:1 11:5	TANG Peng	
+2014	World Tour Japan Open Yokohama 2014	GHOSH Soumyajit (IND)		LIVENTSOV Alexey (RUS)		MS	Main Draw	R64	4 - 3	16:14 9:11 12:14 14:12 8:11 11:8 11:3	GHOSH Soumyajit	
+2014	World Tour Japan Open Yokohama 2014	KARLSSON Kristian (SWE)		LYU Xiang (CHN)		MS	Main Draw	R64	4 - 3	11:8 11:5 8:11 7:11 11:7 7:11 11:9	KARLSSON Kristian	
+2014	World Tour Japan Open Yokohama 2014	KUZMIN Fedor (RUS)		WONG Chun Ting (HKG)		MS	Main Draw	R64	0 - 4	10:12 9:11 7:11 8:11	WONG Chun Ting	
+2014	World Tour Japan Open Yokohama 2014	MATTENET Adrien (FRA)		MADRID Marcos (MEX)		MS	Main Draw	R64	4 - 2	11:7 12:14 12:10 6:11 11:9 13:11	MATTENET Adrien	
+2014	World Tour Japan Open Yokohama 2014	ZHOU Kai (CHN)		LEBESSON Emmanuel (FRA)		MS	Main Draw	R64	4 - 1	11:6 14:16 11:5 15:13 11:4	ZHOU Kai	
+2014	World Tour Japan Open Yokohama 2014	MORIZONO Masataka (JPN)		KARLSSON Mattias (SWE)		MS	Main Draw	R64	4 - 3	15:13 8:11 10:12 8:11 12:10 11:6 11:8	MORIZONO Masataka	
+2014	World Tour Japan Open Yokohama 2014	SHETTY Sanil (IND)		NIWA Koki (JPN)		MS	Main Draw	R64	1 - 4	11:8 11:13 1:11 7:11 2:11	NIWA Koki	
+2014	World Tour Japan Open Yokohama 2014	CHEN Chien-An (TPE)		XIN Zhaoxu (SGP)		MS	Main Draw	R64	1 - 4	7:11 9:11 5:11 11:6 2:11	XIN Zhaoxu	
+2014	World Tour Japan Open Yokohama 2014	OUAICHE Stephane (ALG)		CALDERANO Hugo (BRA)		MS	Main Draw	R64	1 - 4	11:13 14:16 12:10 8:11 6:11	CALDERANO Hugo	
+2014	World Tour Japan Open Yokohama 2014	VLASOV Grigory (RUS)		KANG Dongsoo (KOR)		MS	Main Draw	R64	1 - 4	8:11 11:4 7:11 8:11 8:11	KANG Dongsoo	
+2014	World Tour Japan Open Yokohama 2014	ZHOU Qihao (CHN)		KISHIKAWA Seiya (JPN)		MS	Main Draw	R64	4 - 0	11:5 11:7 11:7 11:9	ZHOU Qihao	
+2014	World Tour Japan Open Yokohama 2014	TAKAKIWA Taku (JPN)		SUN Chia-Hung (TPE)		MS	Main Draw	R64	4 - 2	11:5 11:7 10:12 8:11 11:9 14:12	TAKAKIWA Taku	
+2014	World Tour Japan Open Yokohama 2014	FLORE Tristan (FRA)		HUANG Sheng-Sheng (TPE)		MS	Main Draw	R64	1 - 4	14:12 9:11 4:11 6:11 6:11	HUANG Sheng-Sheng	
+2014	World Tour Japan Open Yokohama 2014	MURAMATSU Yuto (JPN)		SODERLUND Hampus (SWE)		MS	Main Draw	R64	4 - 0	11:7 11:6 11:8 15:13	MURAMATSU Yuto	
+2014	World Tour Japan Open Yokohama 2014	YANG Heng-Wei (TPE)		MATSUDAIRA Kenta (JPN)		MS	Main Draw	R64	4 - 3	9:11 10:12 6:11 11:4 11:9 12:10 11:6	YANG Heng-Wei	
+2014	World Tour Japan Open Yokohama 2014	GACINA Andrej (CRO)		PARK Chan-Hyeok (KOR)		MS	Main Draw	R64	2 - 4	11:4 8:11 6:11 11:13 11:8 8:11	PARK Chan-Hyeok	
+2014	World Tour Japan Open Yokohama 2014	SIRUCEK Pavel (CZE)		YOSHIMURA Maharu (JPN)		MS	Main Draw	R64	1 - 4	11:8 5:11 10:12 7:11 9:11	YOSHIMURA Maharu	
+2014	World Tour Japan Open Yokohama 2014	TAN Ruiwu (CRO)		JANG Woojin (KOR)		MS	Main Draw	R64	2 - 4	9:11 11:8 11:8 2:11 4:11 7:11	JANG Woojin	
+2014	World Tour Japan Open Yokohama 2014	ROBINOT Alexandre (FRA)		ZHAN Jian (SGP)		MS	Main Draw	R64	1 - 4	6:11 11:5 6:11 6:11 6:11	ZHAN Jian	
+2014	World Tour Japan Open Yokohama 2014	ACHANTA Sharath (IND)		CHEW Clarence (SGP)		MS	Main Draw	R64	4 - 3	11:2 7:11 11:8 8:11 11:8 5:11 12:10	ACHANTA Sharath	
+2014	World Tour Japan Open Yokohama 2014	ANDERSSON Harald (SWE)		SKACHKOV Kirill (RUS)		MS	Main Draw	R64	1 - 4	5:11 6:11 10:12 14:12 6:11	SKACHKOV Kirill	
+2014	World Tour Japan Open Yokohama 2014	LIANG Jingkun (CHN)		MACHI Asuka (JPN)		MS	Main Draw	R64	4 - 0	11:9 11:8 11:8 11:2	LIANG Jingkun	
+2014	World Tour Japan Open Yokohama 2014	HO Kwan Kit (HKG)		MIZUTANI Jun (JPN)		MS	Main Draw	R64	1 - 4	8:11 11:9 3:11 6:11 1:11	MIZUTANI Jun	
+2014	World Tour Japan Open Yokohama 2014	UEDA Jin (JPN)		OSHIMA Yuya (JPN)		MS	Main Draw	R32	4 - 1	11:5 8:11 11:5 11:5 12:10	UEDA Jin	
+2014	World Tour Japan Open Yokohama 2014	YU Ziyang (CHN)		JEOUNG Youngsik (KOR)		MS	Main Draw	R32	4 - 1	11:9 11:6 11:9 9:11 11:9	YU Ziyang	
+2014	World Tour Japan Open Yokohama 2014	YANG Tzu-Yi (TPE)		CHEN Feng (SGP)		MS	Main Draw	R32	4 - 2	9:11 8:11 11:9 11:7 11:3 11:7	YANG Tzu-Yi	
+2014	World Tour Japan Open Yokohama 2014	CHIANG Hung-Chieh (TPE)		HACHARD Antoine (FRA)		MS	Main Draw	R32	4 - 3	10:12 11:7 8:11 11:13 11:7 11:8 11:9	CHIANG Hung-Chieh	
+2014	World Tour Japan Open Yokohama 2014	TANG Peng (HKG)		GHOSH Soumyajit (IND)		MS	Main Draw	R32	4 - 2	10:12 11:8 11:9 9:11 11:5 11:2	TANG Peng	
+2014	World Tour Japan Open Yokohama 2014	KARLSSON Kristian (SWE)		WONG Chun Ting (HKG)		MS	Main Draw	R32	1 - 4	11:9 7:11 3:11 4:11 5:11	WONG Chun Ting	
+2014	World Tour Japan Open Yokohama 2014	MATTENET Adrien (FRA)		ZHOU Kai (CHN)		MS	Main Draw	R32	3 - 4	11:2 11:13 11:9 11:13 4:11 11:7 4:11	ZHOU Kai	
+2014	World Tour Japan Open Yokohama 2014	MORIZONO Masataka (JPN)		NIWA Koki (JPN)		MS	Main Draw	R32	4 - 3	7:11 12:10 11:3 8:11 11:6 10:12 11:7	MORIZONO Masataka	
+2014	World Tour Japan Open Yokohama 2014	XIN Zhaoxu (SGP)		CALDERANO Hugo (BRA)		MS	Main Draw	R32	0 - 4	7:11 6:11 6:11 8:11	CALDERANO Hugo	
+2014	World Tour Japan Open Yokohama 2014	KANG Dongsoo (KOR)		ZHOU Qihao (CHN)		MS	Main Draw	R32	4 - 1	11:7 6:11 11:8 11:7 11:7	KANG Dongsoo	
+2014	World Tour Japan Open Yokohama 2014	TAKAKIWA Taku (JPN)		HUANG Sheng-Sheng (TPE)		MS	Main Draw	R32	2 - 4	11:8 3:11 7:11 7:11 12:10 6:11	HUANG Sheng-Sheng	
+2014	World Tour Japan Open Yokohama 2014	MURAMATSU Yuto (JPN)		YANG Heng-Wei (TPE)		MS	Main Draw	R32	4 - 0	11:6 11:9 11:8 11:6	MURAMATSU Yuto	
+2014	World Tour Japan Open Yokohama 2014	PARK Chan-Hyeok (KOR)		YOSHIMURA Maharu (JPN)		MS	Main Draw	R32	0 - 4	8:11 7:11 8:11 5:11	YOSHIMURA Maharu	
+2014	World Tour Japan Open Yokohama 2014	JANG Woojin (KOR)		ZHAN Jian (SGP)		MS	Main Draw	R32	1 - 4	8:11 10:12 7:11 11:8 1:11	ZHAN Jian	
+2014	World Tour Japan Open Yokohama 2014	ACHANTA Sharath (IND)		SKACHKOV Kirill (RUS)		MS	Main Draw	R32	4 - 2	12:10 10:12 11:6 11:13 11:4 11:9	ACHANTA Sharath	
+2014	World Tour Japan Open Yokohama 2014	LIANG Jingkun (CHN)		MIZUTANI Jun (JPN)		MS	Main Draw	R32	1 - 4	7:11 8:11 11:9 5:11 8:11	MIZUTANI Jun	
+2014	World Tour Japan Open Yokohama 2014	UEDA Jin (JPN)		YU Ziyang (CHN)		MS	Main Draw	R16	1 - 4	10:12 5:11 7:11 11:9 7:11	YU Ziyang	
+2014	World Tour Japan Open Yokohama 2014	YANG Tzu-Yi (TPE)		CHIANG Hung-Chieh (TPE)		MS	Main Draw	R16	1 - 4	9:11 6:11 7:11 11:6 8:11	CHIANG Hung-Chieh	
+2014	World Tour Japan Open Yokohama 2014	TANG Peng (HKG)		WONG Chun Ting (HKG)		MS	Main Draw	R16	4 - 0	11:8 11:4 11:6 11:5	TANG Peng	
+2014	World Tour Japan Open Yokohama 2014	ZHOU Kai (CHN)		MORIZONO Masataka (JPN)		MS	Main Draw	R16	4 - 1	6:11 11:7 11:6 11:5 11:7	ZHOU Kai	
+2014	World Tour Japan Open Yokohama 2014	CALDERANO Hugo (BRA)		KANG Dongsoo (KOR)		MS	Main Draw	R16	0 - 4	9:11 8:11 8:11 10:12	KANG Dongsoo	
+2014	World Tour Japan Open Yokohama 2014	HUANG Sheng-Sheng (TPE)		MURAMATSU Yuto (JPN)		MS	Main Draw	R16	3 - 4	7:11 11:8 11:7 11:6 8:11 5:11 8:11	MURAMATSU Yuto	
+2014	World Tour Japan Open Yokohama 2014	YOSHIMURA Maharu (JPN)		ZHAN Jian (SGP)		MS	Main Draw	R16	2 - 4	11:7 8:11 4:11 11:4 4:11 9:11	ZHAN Jian	
+2014	World Tour Japan Open Yokohama 2014	ACHANTA Sharath (IND)		MIZUTANI Jun (JPN)		MS	Main Draw	R16	0 - 4	4:11 5:11 6:11 11:13	MIZUTANI Jun	
+2014	World Tour Japan Open Yokohama 2014	YU Ziyang (CHN)		CHIANG Hung-Chieh (TPE)		MS	Main Draw	QuarterFinal	4 - 1	11:5 11:6 11:8 8:11 11:9	YU Ziyang	
+2014	World Tour Japan Open Yokohama 2014	TANG Peng (HKG)		ZHOU Kai (CHN)		MS	Main Draw	QuarterFinal	4 - 2	11:5 8:11 11:9 11:7 12:14 11:9	TANG Peng	
+2014	World Tour Japan Open Yokohama 2014	KANG Dongsoo (KOR)		MURAMATSU Yuto (JPN)		MS	Main Draw	QuarterFinal	1 - 4	11:9 5:11 2:11 8:11 4:11	MURAMATSU Yuto	
+2014	World Tour Japan Open Yokohama 2014	ZHAN Jian (SGP)		MIZUTANI Jun (JPN)		MS	Main Draw	QuarterFinal	2 - 4	11:13 11:13 11:7 7:11 11:9 3:11	MIZUTANI Jun	
+2014	World Tour Japan Open Yokohama 2014	YU Ziyang (CHN)		TANG Peng (HKG)		MS	Main Draw	SemiFinal	4 - 0	11:8 12:10 11:8 11:9	YU Ziyang	
+2014	World Tour Japan Open Yokohama 2014	MURAMATSU Yuto (JPN)		MIZUTANI Jun (JPN)		MS	Main Draw	SemiFinal	3 - 4	13:11 4:11 11:7 6:11 8:11 11:5 5:11	MIZUTANI Jun	
+2014	World Tour Japan Open Yokohama 2014	YU Ziyang (CHN)		MIZUTANI Jun (JPN)		MS	Main Draw	Final	4 - 2	8:11 11:4 11:8 6:11 11:4 11:8	YU Ziyang	
+2014	World Tour Japan Open Yokohama 2014	CALDERANO Hugo (BRA)		PARK Chan-Hyeok (KOR)		U21MS	Main Draw	R32	3 - 0	11:2 11:5 11:9	CALDERANO Hugo	
+2014	World Tour Japan Open Yokohama 2014	CHEW Clarence (SGP)		SAMBE Kohei (JPN)		U21MS	Main Draw	R32	3 - 0	11:7 11:7 11:8	CHEW Clarence	
+2014	World Tour Japan Open Yokohama 2014	SAKAI Asuka (JPN)		HUNG Ka Tak (HKG)		U21MS	Main Draw	R32	3 - 1	11:1 11:8 3:11 12:10	SAKAI Asuka	
+2014	World Tour Japan Open Yokohama 2014	SODERLUND Hampus (SWE)		JIN Takuya (JPN)		U21MS	Main Draw	R32	1 - 3	8:11 7:11 11:3 8:11	JIN Takuya	
+2014	World Tour Japan Open Yokohama 2014	GHOSH Soumyajit (IND)		PENG Wang-Wei (TPE)		U21MS	Main Draw	R32	3 - 2	11:6 9:11 11:9 10:12 20:18	GHOSH Soumyajit	
+2014	World Tour Japan Open Yokohama 2014	OIKAWA Mizuki (JPN)		HUNG Tzu-Hsiang (TPE)		U21MS	Main Draw	R32	1 - 3	10:12 10:12 11:7 8:11	HUNG Tzu-Hsiang	
+2014	World Tour Japan Open Yokohama 2014	DESAI Harmeet (IND)		XIN Zhaoxu (SGP)		U21MS	Main Draw	R32	3 - 0	11:2 11:6 11:8	DESAI Harmeet	
+2014	World Tour Japan Open Yokohama 2014	HO Kwan Kit (HKG)		KANG Dongsoo (KOR)		U21MS	Main Draw	R32	3 - 2	9:11 11:8 11:6 9:11 11:9	HO Kwan Kit	
+2014	World Tour Japan Open Yokohama 2014	FLORE Tristan (FRA)		YANG Heng-Wei (TPE)		U21MS	Main Draw	R32	3 - 1	12:10 5:11 11:8 11:4	FLORE Tristan	
+2014	World Tour Japan Open Yokohama 2014	MATSUSHITA Kaiki (JPN)		OUAICHE Stephane (ALG)		U21MS	Main Draw	R32	2 - 3	11:9 4:11 2:11 12:10 9:11	OUAICHE Stephane	
+2014	World Tour Japan Open Yokohama 2014	BROSSIER Benjamin (FRA)		TSUBOI Yuma (JPN)		U21MS	Main Draw	R32	2 - 3	9:11 4:11 11:4 12:10 9:11	TSUBOI Yuma	
+2014	World Tour Japan Open Yokohama 2014	WEN Wei-Chieh (TPE)		JANG Woojin (KOR)		U21MS	Main Draw	R32	1 - 3	7:11 8:11 11:9 4:11	JANG Woojin	
+2014	World Tour Japan Open Yokohama 2014	LORENTZ Romain (FRA)		YANG Tzu-Yi (TPE)		U21MS	Main Draw	R32	3 - 0	11:5 11:6 11:8	LORENTZ Romain	
+2014	World Tour Japan Open Yokohama 2014	HACHARD Antoine (FRA)		LEE Chia-Sheng (TPE)		U21MS	Main Draw	R32	3 - 0	11:3 13:11 11:8	HACHARD Antoine	
+2014	World Tour Japan Open Yokohama 2014	ROBINOT Alexandre (FRA)		ARINOBU Taimu (JPN)		U21MS	Main Draw	R32	3 - 2	4:11 8:11 11:9 11:6 11:5	ROBINOT Alexandre	
+2014	World Tour Japan Open Yokohama 2014	LEE Chun-Lin (TPE)		CHEN Feng (SGP)		U21MS	Main Draw	R32	0 - 3	8:11 9:11 9:11	CHEN Feng	
+2014	World Tour Japan Open Yokohama 2014	CALDERANO Hugo (BRA)		CHEW Clarence (SGP)		U21MS	Main Draw	R16	3 - 1	11:8 10:12 11:6 11:7	CALDERANO Hugo	
+2014	World Tour Japan Open Yokohama 2014	SAKAI Asuka (JPN)		JIN Takuya (JPN)		U21MS	Main Draw	R16	3 - 1	15:13 11:6 9:11 12:10	SAKAI Asuka	
+2014	World Tour Japan Open Yokohama 2014	GHOSH Soumyajit (IND)		HUNG Tzu-Hsiang (TPE)		U21MS	Main Draw	R16	3 - 0	11:7 11:8 11:4	GHOSH Soumyajit	
+2014	World Tour Japan Open Yokohama 2014	DESAI Harmeet (IND)		HO Kwan Kit (HKG)		U21MS	Main Draw	R16	3 - 1	5:11 11:3 11:9 11:4	DESAI Harmeet	
+2014	World Tour Japan Open Yokohama 2014	FLORE Tristan (FRA)		OUAICHE Stephane (ALG)		U21MS	Main Draw	R16	1 - 3	7:11 11:9 8:11 9:11	OUAICHE Stephane	
+2014	World Tour Japan Open Yokohama 2014	TSUBOI Yuma (JPN)		JANG Woojin (KOR)		U21MS	Main Draw	R16	1 - 3	7:11 11:9 14:16 9:11	JANG Woojin	
+2014	World Tour Japan Open Yokohama 2014	LORENTZ Romain (FRA)		HACHARD Antoine (FRA)		U21MS	Main Draw	R16	3 - 0	11:3 14:12 11:6	LORENTZ Romain	
+2014	World Tour Japan Open Yokohama 2014	ROBINOT Alexandre (FRA)		CHEN Feng (SGP)		U21MS	Main Draw	R16	2 - 3	12:10 11:8 8:11 7:11 3:11	CHEN Feng	
+2014	World Tour Japan Open Yokohama 2014	CALDERANO Hugo (BRA)		SAKAI Asuka (JPN)		U21MS	Main Draw	QuarterFinal	4 - 3	13:11 11:9 4:11 15:13 5:11 10:12 11:9	CALDERANO Hugo	
+2014	World Tour Japan Open Yokohama 2014	GHOSH Soumyajit (IND)		DESAI Harmeet (IND)		U21MS	Main Draw	QuarterFinal	4 - 1	11:13 11:7 11:6 11:8 11:5	GHOSH Soumyajit	
+2014	World Tour Japan Open Yokohama 2014	OUAICHE Stephane (ALG)		JANG Woojin (KOR)		U21MS	Main Draw	QuarterFinal	2 - 4	5:11 11:3 8:11 4:11 11:3 3:11	JANG Woojin	
+2014	World Tour Japan Open Yokohama 2014	LORENTZ Romain (FRA)		CHEN Feng (SGP)		U21MS	Main Draw	QuarterFinal	4 - 2	8:11 11:8 5:11 11:9 11:5 11:9	LORENTZ Romain	
+2014	World Tour Japan Open Yokohama 2014	CALDERANO Hugo (BRA)		GHOSH Soumyajit (IND)		U21MS	Main Draw	SemiFinal	4 - 0	11:9 11:8 11:4 11:6	CALDERANO Hugo	
+2014	World Tour Japan Open Yokohama 2014	JANG Woojin (KOR)		LORENTZ Romain (FRA)		U21MS	Main Draw	SemiFinal	4 - 1	11:6 11:5 8:11 11:7 14:12	JANG Woojin	
+2014	World Tour Japan Open Yokohama 2014	CALDERANO Hugo (BRA)		JANG Woojin (KOR)		U21MS	Main Draw	Final	4 - 2	11:8 12:10 7:11 15:13 8:11 11:8	CALDERANO Hugo	
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 2 Total: 117
+
+Start
+Prev
+1
+2
+Next
+End
+2014	World Tour Japan Open Yokohama 2014	FENG Tianwei (SGP)		KIM Byeolnim (KOR)		WS	Main Draw	R32	4 - 0	11:4 11:7 11:7 11:5	FENG Tianwei	
+2014	World Tour Japan Open Yokohama 2014	CHEN Xingtong (CHN)		MORIZONO Misaki (JPN)		WS	Main Draw	R32	4 - 2	9:11 11:5 9:11 11:5 11:7 11:7	CHEN Xingtong	
+2014	World Tour Japan Open Yokohama 2014	WAKAMIYA Misako (JPN)		LIU Ming (CHN)		WS	Main Draw	R32	4 - 3	11:8 6:11 7:11 11:9 11:8 5:11 11:9	WAKAMIYA Misako	
+2014	World Tour Japan Open Yokohama 2014	LIU Hsing-Yin (TPE)		HU Melek (TUR)		WS	Main Draw	R32	3 - 4	6:11 11:9 11:8 6:11 11:8 7:11 8:11	HU Melek	
+2014	World Tour Japan Open Yokohama 2014	LI Fen (SWE)		CHENG Hsien-Tzu (TPE)		WS	Main Draw	R32	4 - 3	11:6 6:11 11:5 11:4 2:11 16:18 11:7	LI Fen	
+2014	World Tour Japan Open Yokohama 2014	MIKHAILOVA Polina (RUS)		CHENG I-Ching (TPE)		WS	Main Draw	R32	4 - 1	11:7 12:14 11:7 13:11 11:3	MIKHAILOVA Polina	
+2014	World Tour Japan Open Yokohama 2014	HUANG Yi-Hua (TPE)		LI Isabelle Siyun (SGP)		WS	Main Draw	R32	4 - 2	11:13 11:6 11:2 10:12 11:7 11:6	HUANG Yi-Hua	
+2014	World Tour Japan Open Yokohama 2014	KUZMINA Elena (RUS)		FUKUHARA Ai (JPN)		WS	Main Draw	R32	0 - 4	8:11 7:11 7:11 15:17	FUKUHARA Ai	
+2014	World Tour Japan Open Yokohama 2014	YU Mengyu (SGP)		ABE Megumi (JPN)		WS	Main Draw	R32	4 - 2	11:7 5:11 7:11 11:6 11:7 11:3	YU Mengyu	
+2014	World Tour Japan Open Yokohama 2014	SUN Jin (HKG)		LEE I-Chen (TPE)		WS	Main Draw	R32	3 - 4	9:11 11:5 7:11 11:3 8:11 11:9 5:11	LEE I-Chen	
+2014	World Tour Japan Open Yokohama 2014	CHEN Szu-Yu (TPE)		TASHIRO Saki (JPN)		WS	Main Draw	R32	4 - 0	11:6 11:9 13:11 13:11	CHEN Szu-Yu	
+2014	World Tour Japan Open Yokohama 2014	LEE Seul (KOR)		HIRANO Sayaka (JPN)		WS	Main Draw	R32	0 - 4	2:11 6:11 5:11 8:11	HIRANO Sayaka	
+2014	World Tour Japan Open Yokohama 2014	ISHIGAKI Yuka (JPN)		YANG Yanmei (CHN)		WS	Main Draw	R32	2 - 4	11:7 11:5 8:11 9:11 9:11 8:11	YANG Yanmei	
+2014	World Tour Japan Open Yokohama 2014	HE Zhuojia (CHN)		ITO Mima (JPN)		WS	Main Draw	R32	4 - 1	11:6 11:7 12:10 6:11 11:7	HE Zhuojia	
+2014	World Tour Japan Open Yokohama 2014	YU Fu (POR)		KATO Miyu (JPN)		WS	Main Draw	R32	4 - 1	11:5 11:9 11:9 10:12 11:7	YU Fu	
+2014	World Tour Japan Open Yokohama 2014	LEE Dasom (KOR)		ISHIKAWA Kasumi (JPN)		WS	Main Draw	R32	1 - 4	9:11 11:9 4:11 8:11 6:11	ISHIKAWA Kasumi	
+2014	World Tour Japan Open Yokohama 2014	FENG Tianwei (SGP)		CHEN Xingtong (CHN)		WS	Main Draw	R16	4 - 1	11:8 11:5 11:5 7:11 11:8	FENG Tianwei	
+2014	World Tour Japan Open Yokohama 2014	WAKAMIYA Misako (JPN)		HU Melek (TUR)		WS	Main Draw	R16	4 - 0	11:9 11:4 11:6 11:5	WAKAMIYA Misako	
+2014	World Tour Japan Open Yokohama 2014	LI Fen (SWE)		MIKHAILOVA Polina (RUS)		WS	Main Draw	R16	4 - 2	4:11 9:11 11:9 11:7 11:8 11:4	LI Fen	
+2014	World Tour Japan Open Yokohama 2014	HUANG Yi-Hua (TPE)		FUKUHARA Ai (JPN)		WS	Main Draw	R16	0 - 4	9:11 5:11 11:13 3:11	FUKUHARA Ai	
+2014	World Tour Japan Open Yokohama 2014	YU Mengyu (SGP)		LEE I-Chen (TPE)		WS	Main Draw	R16	4 - 0	11:8 11:8 11:9 11:7	YU Mengyu	
+2014	World Tour Japan Open Yokohama 2014	CHEN Szu-Yu (TPE)		HIRANO Sayaka (JPN)		WS	Main Draw	R16	4 - 1	11:5 11:7 11:8 6:11 11:7	CHEN Szu-Yu	
+2014	World Tour Japan Open Yokohama 2014	YANG Yanmei (CHN)		HE Zhuojia (CHN)		WS	Main Draw	R16	0 - 4	7:11 11:13 8:11 7:11	HE Zhuojia	
+2014	World Tour Japan Open Yokohama 2014	YU Fu (POR)		ISHIKAWA Kasumi (JPN)		WS	Main Draw	R16	3 - 4	8:11 7:11 11:8 8:11 12:10 11:7 9:11	ISHIKAWA Kasumi	
+2014	World Tour Japan Open Yokohama 2014	FENG Tianwei (SGP)		WAKAMIYA Misako (JPN)		WS	Main Draw	QuarterFinal	4 - 0	11:9 11:5 11:8 11:6	FENG Tianwei	
+2014	World Tour Japan Open Yokohama 2014	LI Fen (SWE)		FUKUHARA Ai (JPN)		WS	Main Draw	QuarterFinal	4 - 1	10:12 11:6 12:10 11:4 11:6	LI Fen	
+2014	World Tour Japan Open Yokohama 2014	YU Mengyu (SGP)		CHEN Szu-Yu (TPE)		WS	Main Draw	QuarterFinal	4 - 3	8:11 11:5 9:11 12:14 11:4 11:5 11:8	YU Mengyu	
+2014	World Tour Japan Open Yokohama 2014	HE Zhuojia (CHN)		ISHIKAWA Kasumi (JPN)		WS	Main Draw	QuarterFinal	3 - 4	13:15 9:11 12:10 11:5 11:7 8:11 5:11	ISHIKAWA Kasumi	
+2014	World Tour Japan Open Yokohama 2014	FENG Tianwei (SGP)		LI Fen (SWE)		WS	Main Draw	SemiFinal	4 - 1	11:7 12:14 11:3 11:7 12:10	FENG Tianwei	
+2014	World Tour Japan Open Yokohama 2014	YU Mengyu (SGP)		ISHIKAWA Kasumi (JPN)		WS	Main Draw	SemiFinal	2 - 4	9:11 3:11 11:3 11:8 9:11 7:11	ISHIKAWA Kasumi	
+2014	World Tour Japan Open Yokohama 2014	FENG Tianwei (SGP)		ISHIKAWA Kasumi (JPN)		WS	Main Draw	Final	4 - 2	12:10 9:11 3:11 11:3 11:5 13:11	FENG Tianwei	
+2014	World Tour Japan Open Yokohama 2014	LEE Zion (KOR)		CHENG Hsien-Tzu (TPE)		WS	Qualification	QR16	2 - 4	8:11 8:11 5:11 11:8 11:3 5:11	CHENG Hsien-Tzu	
+2014	World Tour Japan Open Yokohama 2014	ZHANG Lily (USA)		LEE Seul (KOR)		WS	Qualification	QR16	2 - 4	11:5 4:11 9:11 11:7 10:12 8:11	LEE Seul	
+2014	World Tour Japan Open Yokohama 2014	LIU Hsing-Yin (TPE)		LEE Dasom (KOR)		WS	Qualification	QR16	4 - 3	3:11 3:11 11:8 11:5 11:9 9:11 11:9	LIU Hsing-Yin	
+2014	World Tour Japan Open Yokohama 2014	KIM Byeolnim (KOR)		YANG Yanmei (CHN)		WS	Qualification	QR16	3 - 4	7:11 9:11 19:17 8:11 12:10 11:9 12:14	YANG Yanmei	
+2014	World Tour Japan Open Yokohama 2014	KOMWONG Nanthana (THA)		KUZMINA Elena (RUS)		WS	Qualification	QR16	2 - 4	12:10 5:11 14:16 11:8 5:11 8:11	KUZMINA Elena	
+2014	World Tour Japan Open Yokohama 2014	CHENG Hsien-Tzu (TPE)		SUZUKI Rika (JPN)		U21WS	Main Draw	R16	3 - 0	11:5 11:8 14:12	CHENG Hsien-Tzu	
+2014	World Tour Japan Open Yokohama 2014	ABE Airi (JPN)		MORI Sakura (JPN)		U21WS	Main Draw	R16	0 - 3	7:11 8:11 6:11	MORI Sakura	
+2014	World Tour Japan Open Yokohama 2014	MAEDA Miyu (JPN)		SAWETTABUT Suthasini (THA)		U21WS	Main Draw	R16	3 - 0	11:4 11:7 11:7	MAEDA Miyu	
+2014	World Tour Japan Open Yokohama 2014	KATO Kyoka (JPN)		ZHANG Lily (USA)		U21WS	Main Draw	R16	3 - 2	11:9 8:11 10:12 11:8 11:5	KATO Kyoka	
+2014	World Tour Japan Open Yokohama 2014	ITO Mima (JPN)		CHIU Ssu-Hua (TPE)		U21WS	Main Draw	R16	3 - 1	11:6 8:11 11:7 11:4	ITO Mima	
+2014	World Tour Japan Open Yokohama 2014	LEE Dasom (KOR)		SATO Hitomi (JPN)		U21WS	Main Draw	R16	3 - 1	6:11 11:9 11:6 12:10	LEE Dasom	
+2014	World Tour Japan Open Yokohama 2014	KATO Miyu (JPN)		NIWA Misato (JPN)		U21WS	Main Draw	R16	3 - 1	11:8 11:5 11:13 11:9	KATO Miyu	
+2014	World Tour Japan Open Yokohama 2014	MINOGUCHI Chinatsu (JPN)		CHEN Szu-Yu (TPE)		U21WS	Main Draw	R16	2 - 3	12:10 8:11 11:8 7:11 9:11	CHEN Szu-Yu	
+2014	World Tour Japan Open Yokohama 2014	CHENG Hsien-Tzu (TPE)		MORI Sakura (JPN)		U21WS	Main Draw	QuarterFinal	2 - 4	7:11 6:11 11:8 11:9 6:11 6:11	MORI Sakura	
+2014	World Tour Japan Open Yokohama 2014	MAEDA Miyu (JPN)		KATO Kyoka (JPN)		U21WS	Main Draw	QuarterFinal	4 - 1	11:8 11:9 7:11 11:8 11:7	MAEDA Miyu	
+2014	World Tour Japan Open Yokohama 2014	ITO Mima (JPN)		LEE Dasom (KOR)		U21WS	Main Draw	QuarterFinal	4 - 0	11:7 12:10 11:4 11:8	ITO Mima	
+2014	World Tour Japan Open Yokohama 2014	KATO Miyu (JPN)		CHEN Szu-Yu (TPE)		U21WS	Main Draw	QuarterFinal	3 - 4	11:7 8:11 11:9 11:7 7:11 6:11 6:11	CHEN Szu-Yu	
+2014	World Tour Japan Open Yokohama 2014	MORI Sakura (JPN)		MAEDA Miyu (JPN)		U21WS	Main Draw	SemiFinal	4 - 2	11:7 11:4 4:11 11:4 11:13 12:10	MORI Sakura	
+2014	World Tour Japan Open Yokohama 2014	ITO Mima (JPN)		CHEN Szu-Yu (TPE)		U21WS	Main Draw	SemiFinal	1 - 4	11:6 8:11 5:11 9:11 6:11	CHEN Szu-Yu	
+2014	World Tour Japan Open Yokohama 2014	MORI Sakura (JPN)		CHEN Szu-Yu (TPE)		U21WS	Main Draw	Final	4 - 1	11:6 11:1 12:10 5:11 11:6	MORI Sakura
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 32
+
+2014	World Tour Japan Open Yokohama 2014	LYU Xiang (CHN)	ZHOU Qihao (CHN)	CHEN Chien-An (TPE)	CHUANG Chih-Yuan (TPE)	MD	Main Draw	QuarterFinal	3 - 2	11:9 8:11 8:11 13:11 11:8	LYU Xiang	ZHOU Qihao
+2014	World Tour Japan Open Yokohama 2014	LYU Xiang (CHN)	ZHOU Qihao (CHN)	CHEN Feng (SGP)	CHEW Clarence (SGP)	MD	Qualification	QR32	3 - 1	13:11 11:4 6:11 13:11	LYU Xiang	ZHOU Qihao
+2014	World Tour Japan Open Yokohama 2014	YU Ziyang (CHN)	ZHOU Kai (CHN)	MURAMATSU Yuto (JPN)	SHIONO Masato (JPN)	MD	Qualification	QR32	2 - 3	5:11 7:11 11:8 11:9 9:11	MURAMATSU Yuto	SHIONO Masato
+2014	World Tour Japan Open Yokohama 2014	OUAICHE Stephane (ALG)	SALIFOU Abdel-Kader (BEN)	GACINA Andrej (CRO)	TAN Ruiwu (CRO)	MD	Qualification	QR16	3 - 1	9:11 12:10 11:9 11:7	OUAICHE Stephane	SALIFOU Abdel-Kader
+2014	World Tour Japan Open Yokohama 2014	FLORE Tristan (FRA)	LEBESSON Emmanuel (FRA)	MURAMATSU Yuto (JPN)	SHIONO Masato (JPN)	MD	Qualification	QR16	0 - 3	10:12 9:11 5:11	MURAMATSU Yuto	SHIONO Masato
+2014	World Tour Japan Open Yokohama 2014	TANG Peng (HKG)	WONG Chun Ting (HKG)	DESAI Harmeet (IND)	GHOSH Soumyajit (IND)	MD	Main Draw	R16	3 - 2	11:4 10:12 11:6 6:11 11:6	TANG Peng	WONG Chun Ting
+2014	World Tour Japan Open Yokohama 2014	TANG Peng (HKG)	WONG Chun Ting (HKG)	KISHIKAWA Seiya (JPN)	MIZUTANI Jun (JPN)	MD	Main Draw	QuarterFinal	1 - 3	10:12 9:11 11:1 6:11	KISHIKAWA Seiya	MIZUTANI Jun
+2014	World Tour Japan Open Yokohama 2014	KWAN Man Ho (HKG)	MAK King Ho (HKG)	MADRID Marcos (MEX)	POUNGSRI Max (THA)	MD	Qualification	QR32	3 - 1	9:11 12:10 11:8 11:8	KWAN Man Ho	MAK King Ho
+2014	World Tour Japan Open Yokohama 2014	HO Kwan Kit (HKG)	LI Hon Ming (HKG)	ROBINOT Alexandre (FRA)	SIRUCEK Pavel (CZE)	MD	Qualification	QR32	3 - 1	3:11 11:2 11:6 11:4	HO Kwan Kit	LI Hon Ming
+2014	World Tour Japan Open Yokohama 2014	HO Kwan Kit (HKG)	LI Hon Ming (HKG)	JANG Woojin (KOR)	JEOUNG Youngsik (KOR)	MD	Qualification	QR16	3 - 2	11:7 11:13 7:11 11:7 11:6	HO Kwan Kit	LI Hon Ming
+2014	World Tour Japan Open Yokohama 2014	ANTHONY Amalraj (IND)	GNANASEKARAN Sathiyan (IND)	OUAICHE Stephane (ALG)	SALIFOU Abdel-Kader (BEN)	MD	Qualification	QR32	1 - 3	5:11 6:11 11:9 4:11	OUAICHE Stephane	SALIFOU Abdel-Kader
+2014	World Tour Japan Open Yokohama 2014	DESAI Harmeet (IND)	GHOSH Soumyajit (IND)	HARIMOTO Tomokazu (JPN)	UDA Yukiya (JPN)	MD	Qualification	QR32	3 - 1	11:7 11:7 10:12 12:10	DESAI Harmeet	GHOSH Soumyajit
+2014	World Tour Japan Open Yokohama 2014	DESAI Harmeet (IND)	GHOSH Soumyajit (IND)	KWAN Man Ho (HKG)	MAK King Ho (HKG)	MD	Qualification	QR16	3 - 0	14:12 11:7 11:7	DESAI Harmeet	GHOSH Soumyajit
+2014	World Tour Japan Open Yokohama 2014	UEDA Jin (JPN)	YOSHIMURA Maharu (JPN)	CALDERANO Hugo (BRA)	LIVENTSOV Alexey (RUS)	MD	Main Draw	R16	3 - 0	11:9 13:11 11:8	UEDA Jin	YOSHIMURA Maharu
+2014	World Tour Japan Open Yokohama 2014	MURAMATSU Yuto (JPN)	SHIONO Masato (JPN)	CHEN Chien-An (TPE)	CHUANG Chih-Yuan (TPE)	MD	Main Draw	R16	1 - 3	8:11 11:4 6:11 4:11	CHEN Chien-An	CHUANG Chih-Yuan
+2014	World Tour Japan Open Yokohama 2014	KISHIKAWA Seiya (JPN)	MIZUTANI Jun (JPN)	LYU Xiang (CHN)	ZHOU Qihao (CHN)	MD	Main Draw	SemiFinal	3 - 0	11:4 11:9 11:7	KISHIKAWA Seiya	MIZUTANI Jun
+2014	World Tour Japan Open Yokohama 2014	MORIZONO Masataka (JPN)	SAMBE Kohei (JPN)	LYU Xiang (CHN)	ZHOU Qihao (CHN)	MD	Qualification	QR16	1 - 3	10:12 8:11 11:9 6:11	LYU Xiang	ZHOU Qihao
+2014	World Tour Japan Open Yokohama 2014	CHEON Minhyuck (KOR)	PARK Chan-Hyeok (KOR)	ACHANTA Sharath (IND)	SHETTY Sanil (IND)	MD	Qualification	QR32	3 - 0	11:8 11:9 11:6	CHEON Minhyuck	PARK Chan-Hyeok
+2014	World Tour Japan Open Yokohama 2014	KUZMIN Fedor (RUS)	VLASOV Grigory (RUS)	KISHIKAWA Seiya (JPN)	MIZUTANI Jun (JPN)	MD	Main Draw	R16	0 - 3	6:11 6:11 7:11	KISHIKAWA Seiya	MIZUTANI Jun
+2014	World Tour Japan Open Yokohama 2014	FRANZISKA Patrick (GER)	SKACHKOV Kirill (RUS)	ANDERSSON Harald (SWE)	SODERLUND Hampus (SWE)	MD	Qualification	QR32	0 - 3	8:11 9:11 12:14	ANDERSSON Harald	SODERLUND Hampus
+2014	World Tour Japan Open Yokohama 2014	KUZMIN Fedor (RUS)	VLASOV Grigory (RUS)	CHEON Minhyuck (KOR)	PARK Chan-Hyeok (KOR)	MD	Qualification	QR16	3 - 2	11:5 7:11 11:6 6:11 12:10	KUZMIN Fedor	VLASOV Grigory
+2014	World Tour Japan Open Yokohama 2014	YANG Zi (SGP)	ZHAN Jian (SGP)	LYU Xiang (CHN)	ZHOU Qihao (CHN)	MD	Main Draw	R16	1 - 3	8:11 11:5 9:11 8:11	LYU Xiang	ZHOU Qihao
+2014	World Tour Japan Open Yokohama 2014	KARLSSON Kristian (SWE)	KARLSSON Mattias (SWE)	HO Kwan Kit (HKG)	LI Hon Ming (HKG)	MD	Main Draw	R16	3 - 1	11:5 11:9 6:11 11:8	KARLSSON Kristian	KARLSSON Mattias
+2014	World Tour Japan Open Yokohama 2014	KARLSSON Kristian (SWE)	KARLSSON Mattias (SWE)	MATSUDAIRA Kenta (JPN)	NIWA Koki (JPN)	MD	Main Draw	QuarterFinal	3 - 2	7:11 11:8 11:5 7:11 11:9	KARLSSON Kristian	KARLSSON Mattias
+2014	World Tour Japan Open Yokohama 2014	ANDERSSON Harald (SWE)	SODERLUND Hampus (SWE)	UEDA Jin (JPN)	YOSHIMURA Maharu (JPN)	MD	Qualification	QR16	1 - 3	6:11 11:7 8:11 5:11	UEDA Jin	YOSHIMURA Maharu
+2014	World Tour Japan Open Yokohama 2014	CHIANG Hung-Chieh (TPE)	HUANG Sheng-Sheng (TPE)	OUAICHE Stephane (ALG)	SALIFOU Abdel-Kader (BEN)	MD	Main Draw	R16	3 - 1	11:7 11:3 4:11 11:8	CHIANG Hung-Chieh	HUANG Sheng-Sheng
+2014	World Tour Japan Open Yokohama 2014	LEE Chia-Sheng (TPE)	YANG Heng-Wei (TPE)	MATSUDAIRA Kenta (JPN)	NIWA Koki (JPN)	MD	Main Draw	R16	1 - 3	12:10 8:11 9:11 6:11	MATSUDAIRA Kenta	NIWA Koki
+2014	World Tour Japan Open Yokohama 2014	CHIANG Hung-Chieh (TPE)	HUANG Sheng-Sheng (TPE)	UEDA Jin (JPN)	YOSHIMURA Maharu (JPN)	MD	Main Draw	QuarterFinal	3 - 0	11:6 11:9 11:6	CHIANG Hung-Chieh	HUANG Sheng-Sheng
+2014	World Tour Japan Open Yokohama 2014	CHIANG Hung-Chieh (TPE)	HUANG Sheng-Sheng (TPE)	KARLSSON Kristian (SWE)	KARLSSON Mattias (SWE)	MD	Main Draw	SemiFinal	3 - 1	11:5 7:11 11:4 13:11	CHIANG Hung-Chieh	HUANG Sheng-Sheng
+2014	World Tour Japan Open Yokohama 2014	CHIANG Hung-Chieh (TPE)	HUANG Sheng-Sheng (TPE)	KISHIKAWA Seiya (JPN)	MIZUTANI Jun (JPN)	MD	Main Draw	Final	0 - 3	11:13 9:11 11:13	KISHIKAWA Seiya	MIZUTANI Jun
+2014	World Tour Japan Open Yokohama 2014	LEE Chia-Sheng (TPE)	YANG Heng-Wei (TPE)	LEE Jinkwon (KOR)	YANG Sanghyun (KOR)	MD	Qualification	QR32	3 - 1	11:4 5:11 11:8 11:8	LEE Chia-Sheng	YANG Heng-Wei
+2014	World Tour Japan Open Yokohama 2014	LEE Chia-Sheng (TPE)	YANG Heng-Wei (TPE)	LIANG Jingkun (CHN)	MATTENET Adrien (FRA)	MD	Qualification	QR16	3 - 1	11:6 6:11 12:10 11:9	LEE Chia-Sheng	YANG Heng-Wei
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 16
+
+2014	World Tour Japan Open Yokohama 2014	CHEN Xingtong (CHN)	LIU Ming (CHN)	MAEDA Miyu (JPN)	MORI Sakura (JPN)	WD	Main Draw	R16	3 - 2	6:11 11:7 9:11 11:8 11:7	CHEN Xingtong	LIU Ming
+2014	World Tour Japan Open Yokohama 2014	HE Zhuojia (CHN)	YANG Yanmei (CHN)	FUKUHARA Ai (JPN)	WAKAMIYA Misako (JPN)	WD	Main Draw	R16	2 - 3	11:8 6:11 8:11 11:9 9:11	FUKUHARA Ai	WAKAMIYA Misako
+2014	World Tour Japan Open Yokohama 2014	HE Zhuojia (CHN)	YANG Yanmei (CHN)	NIWA Misato (JPN)	SUZUKI Rika (JPN)	WD	Qualification	QR16	3 - 2	11:7 11:2 7:11 10:12 11:6	HE Zhuojia	YANG Yanmei
+2014	World Tour Japan Open Yokohama 2014	HIRANO Sayaka (JPN)	MORIZONO Misaki (JPN)	KOMWONG Nanthana (THA)	SAWETTABUT Suthasini (THA)	WD	Main Draw	R16	3 - 2	11:4 11:2 9:11 9:11 12:10	HIRANO Sayaka	MORIZONO Misaki
+2014	World Tour Japan Open Yokohama 2014	HIRANO Sayaka (JPN)	MORIZONO Misaki (JPN)	HU Melek (TUR)	MIKHAILOVA Polina (RUS)	WD	Main Draw	QuarterFinal	3 - 2	3:11 8:11 18:16 11:5 11:6	HIRANO Sayaka	MORIZONO Misaki
+2014	World Tour Japan Open Yokohama 2014	HIRANO Sayaka (JPN)	MORIZONO Misaki (JPN)	FENG Tianwei (SGP)	YU Mengyu (SGP)	WD	Main Draw	SemiFinal	1 - 3	8:11 6:11 17:15 7:11	FENG Tianwei	YU Mengyu
+2014	World Tour Japan Open Yokohama 2014	FUKUHARA Ai (JPN)	WAKAMIYA Misako (JPN)	FENG Tianwei (SGP)	YU Mengyu (SGP)	WD	Main Draw	Final	3 - 1	11:8 11:6 7:11 13:11	FUKUHARA Ai	WAKAMIYA Misako
+2014	World Tour Japan Open Yokohama 2014	LEE Seul (KOR)	LEE Zion (KOR)	FENG Tianwei (SGP)	YU Mengyu (SGP)	WD	Main Draw	R16	0 - 3	9:11 7:11 2:11	FENG Tianwei	YU Mengyu
+2014	World Tour Japan Open Yokohama 2014	LEE Nakyung (KOR)	PARK Joohyun (KOR)	CHEN Xingtong (CHN)	LIU Ming (CHN)	WD	Qualification	QR16	1 - 3	6:11 11:9 1:11 9:11	CHEN Xingtong	LIU Ming
+2014	World Tour Japan Open Yokohama 2014	LEE Seul (KOR)	LEE Zion (KOR)	CHIU Ssu-Hua (TPE)	HUANG Hsin (TPE)	WD	Qualification	QR16	3 - 0	11:9 13:11 11:8	LEE Seul	LEE Zion
+2014	World Tour Japan Open Yokohama 2014	LI Fen (SWE)	YU Fu (POR)	HU Melek (TUR)	MIKHAILOVA Polina (RUS)	WD	Main Draw	R16	1 - 3	11:13 12:10 8:11 9:11	HU Melek	MIKHAILOVA Polina
+2014	World Tour Japan Open Yokohama 2014	CHENG I-Ching (TPE)	HUANG Yi-Hua (TPE)	KIM Byeolnim (KOR)	LEE Dasom (KOR)	WD	Main Draw	R16	3 - 1	11:4 11:6 9:11 11:6	CHENG I-Ching	HUANG Yi-Hua
+2014	World Tour Japan Open Yokohama 2014	CHEN Szu-Yu (TPE)	CHENG Hsien-Tzu (TPE)	ZHANG Lily (USA)	ZHENG Jiaqi (USA)	WD	Main Draw	R16	3 - 2	8:11 10:12 11:8 11:3 11:3	CHEN Szu-Yu	CHENG Hsien-Tzu
+2014	World Tour Japan Open Yokohama 2014	CHENG I-Ching (TPE)	HUANG Yi-Hua (TPE)	CHEN Xingtong (CHN)	LIU Ming (CHN)	WD	Main Draw	QuarterFinal	3 - 0	11:8 11:5 11:1	CHENG I-Ching	HUANG Yi-Hua
+2014	World Tour Japan Open Yokohama 2014	CHEN Szu-Yu (TPE)	CHENG Hsien-Tzu (TPE)	FENG Tianwei (SGP)	YU Mengyu (SGP)	WD	Main Draw	QuarterFinal	2 - 3	4:11 8:11 11:5 14:12 5:11	FENG Tianwei	YU Mengyu
+2014	World Tour Japan Open Yokohama 2014	CHENG I-Ching (TPE)	HUANG Yi-Hua (TPE)	FUKUHARA Ai (JPN)	WAKAMIYA Misako (JPN)	WD	Main Draw	SemiFinal	2 - 3	6:11 11:8 6:11 11:8 5:11	FUKUHARA Ai	WAKAMIYA Misako
