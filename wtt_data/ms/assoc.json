@@ -8853,5 +8853,1300 @@
     "assoc": "RUS",
     "country": "Russia",
     "source": "user-confirmed"
+  },
+  "Saleem ABBAS": {
+    "assoc": "PAK",
+    "country": "Pakistan",
+    "source": "user-confirmed"
+  },
+  "Zaid ABO YAMAN": {
+    "assoc": "JOR",
+    "country": "Jordan",
+    "source": "user-confirmed"
+  },
+  "Mohammad ADAM ZAHIR": {
+    "assoc": "MDV",
+    "country": "Maldives",
+    "source": "user-confirmed"
+  },
+  "Brian AFANADOR": {
+    "assoc": "PUR",
+    "country": "Puerto Rico",
+    "source": "user-confirmed"
+  },
+  "Mawussi AGBETOGLO": {
+    "assoc": "TOG",
+    "country": "Togo",
+    "source": "user-confirmed"
+  },
+  "Marcelo AGUIRRE": {
+    "assoc": "PAR",
+    "country": "Paraguay",
+    "source": "user-confirmed"
+  },
+  "Javed AHMED Md": {
+    "assoc": "BAN",
+    "country": "Bangladesh",
+    "source": "user-confirmed"
+  },
+  "Can AKKUZU": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "user-confirmed"
+  },
+  "Husain AL-BAHRANI": {
+    "assoc": "KUW",
+    "country": "Kuwait",
+    "source": "user-confirmed"
+  },
+  "Muneer AL-DHUBHANI": {
+    "assoc": "YEM",
+    "country": "Yemen",
+    "source": "user-confirmed"
+  },
+  "Salem AL-HASAN": {
+    "assoc": "KUW",
+    "country": "Kuwait",
+    "source": "user-confirmed"
+  },
+  "Taha AL-MAHAQERI": {
+    "assoc": "YEM",
+    "country": "Yemen",
+    "source": "user-confirmed"
+  },
+  "Abdulrahman AL-NAGGAR": {
+    "assoc": "QAT",
+    "country": "Qatar",
+    "source": "user-confirmed"
+  },
+  "Nima ALAMIAN": {
+    "assoc": "IRI",
+    "country": "Iran",
+    "source": "user-confirmed"
+  },
+  "Basel ALANSSARI": {
+    "assoc": "KUW",
+    "country": "Kuwait",
+    "source": "user-confirmed"
+  },
+  "Abdullah ALBAHRANI": {
+    "assoc": "KUW",
+    "country": "Kuwait",
+    "source": "user-confirmed"
+  },
+  "Abdulla ALBALOOSHI": {
+    "assoc": "UAE",
+    "country": "United Arab Emirates",
+    "source": "user-confirmed"
+  },
+  "Ahmad ALBASHAR": {
+    "assoc": "PLE",
+    "country": "Palestine",
+    "source": "user-confirmed"
+  },
+  "Zeyad ALDMAISY": {
+    "assoc": "JOR",
+    "country": "Jordan",
+    "source": "user-confirmed"
+  },
+  "Teodor ALEXANDROV": {
+    "assoc": "BUL",
+    "country": "Bulgaria",
+    "source": "user-confirmed"
+  },
+  "Omar ALI": {
+    "assoc": "YEM",
+    "country": "Yemen",
+    "source": "user-confirmed"
+  },
+  "Armin ALICIC": {
+    "assoc": "BIH",
+    "country": "Bosnia and Herzegovina",
+    "source": "user-confirmed"
+  },
+  "Rustam ALIYEV": {
+    "assoc": "AZE",
+    "country": "Azerbaijan",
+    "source": "user-confirmed"
+  },
+  "Marzooq ALRASHIDI": {
+    "assoc": "KUW",
+    "country": "Kuwait",
+    "source": "user-confirmed"
+  },
+  "Alyas ALYASSI": {
+    "assoc": "BRN",
+    "country": "Bahrain",
+    "source": "user-confirmed"
+  },
+  "Jean-Luc ANDRIAN": {
+    "assoc": "MAD",
+    "country": "Madagascar",
+    "source": "user-confirmed"
+  },
+  "Anton ANISIMOV": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "user-confirmed"
+  },
+  "Aleksei ARTEMKIN": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "user-confirmed"
+  },
+  "Asset BABASSOV": {
+    "assoc": "KAZ",
+    "country": "Kazakhstan",
+    "source": "user-confirmed"
+  },
+  "Alessandro BACIOCCHI": {
+    "assoc": "ITA",
+    "country": "Italy",
+    "source": "user-confirmed"
+  },
+  "Daniel BAJADA": {
+    "assoc": "MLT",
+    "country": "Malta",
+    "source": "user-confirmed"
+  },
+  "Purshottam BAJRACHARYA": {
+    "assoc": "NEP",
+    "country": "Nepal",
+    "source": "user-confirmed"
+  },
+  "Luka BAKIC": {
+    "assoc": "MNE",
+    "country": "Montenegro",
+    "source": "user-confirmed"
+  },
+  "Aymane BASSERI": {
+    "assoc": "MAR",
+    "country": "Morocco",
+    "source": "user-confirmed"
+  },
+  "Bilegt BATKHISHIG": {
+    "assoc": "MGL",
+    "country": "Mongolia",
+    "source": "user-confirmed"
+  },
+  "Omar BEDAIR": {
+    "assoc": "EGY",
+    "country": "Egypt",
+    "source": "user-confirmed"
+  },
+  "Javier BENITO": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "user-confirmed"
+  },
+  "Mattia BERARDI": {
+    "assoc": "SMR",
+    "country": "San Marino",
+    "source": "user-confirmed"
+  },
+  "Baatarsuren BOLDBAATAR": {
+    "assoc": "MGL",
+    "country": "Mongolia",
+    "source": "user-confirmed"
+  },
+  "Mohamed BOUZOUBAA": {
+    "assoc": "MAR",
+    "country": "Morocco",
+    "source": "user-confirmed"
+  },
+  "Arman BURGOS": {
+    "assoc": "GUM",
+    "country": "Guam",
+    "source": "user-confirmed"
+  },
+  "Alejandro CALVO": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "user-confirmed"
+  },
+  "Rodrigo CANO": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "user-confirmed"
+  },
+  "Diogo CARVALHO": {
+    "assoc": "POR",
+    "country": "Portugal",
+    "source": "user-confirmed"
+  },
+  "Rafael CASARES": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "user-confirmed"
+  },
+  "Gabriel CASCANTE": {
+    "assoc": "CRC",
+    "country": "Costa Rica",
+    "source": "user-confirmed"
+  },
+  "Gabriel CERTEZA": {
+    "assoc": "GUM",
+    "country": "Guam",
+    "source": "user-confirmed"
+  },
+  "Chaisit CHAITAT": {
+    "assoc": "THA",
+    "country": "Thailand",
+    "source": "user-confirmed"
+  },
+  "Miguel CHAMORRO": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "user-confirmed"
+  },
+  "Nicolas CHAMPOD": {
+    "assoc": "SUI",
+    "country": "Switzerland",
+    "source": "user-confirmed"
+  },
+  "CHAN YOOK FO Billy Brent": {
+    "assoc": "MRI",
+    "country": "Mauritius",
+    "source": "user-confirmed"
+  },
+  "CHAN YOOK FO Brian": {
+    "assoc": "MRI",
+    "country": "Mauritius",
+    "source": "user-confirmed"
+  },
+  "CHANG Hoi Wa": {
+    "assoc": "MAC",
+    "country": "Macau, China",
+    "source": "user-confirmed"
+  },
+  "Antonio CHAVES": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "user-confirmed"
+  },
+  "Johan CHAVEZ": {
+    "assoc": "PER",
+    "country": "Peru",
+    "source": "user-confirmed"
+  },
+  "CHE Long Lam": {
+    "assoc": "MAC",
+    "country": "Macau, China",
+    "source": "user-confirmed"
+  },
+  "CHEN Alexander": {
+    "assoc": "AUT",
+    "country": "Austria",
+    "source": "user-confirmed"
+  },
+  "CHEN Chao-Shun": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "user-confirmed"
+  },
+  "CHIN Mao-Cheng": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "user-confirmed"
+  },
+  "Cristian CHIRITA": {
+    "assoc": "ROU",
+    "country": "Romania",
+    "source": "user-confirmed"
+  },
+  "Tologon CHOTOEV": {
+    "assoc": "KGZ",
+    "country": "Kyrgyzstan",
+    "source": "user-confirmed"
+  },
+  "Manash CHOWDHURY": {
+    "assoc": "BAN",
+    "country": "Bangladesh",
+    "source": "user-confirmed"
+  },
+  "Linor CITAKU": {
+    "assoc": "KOS",
+    "country": "Kosovo",
+    "source": "user-confirmed"
+  },
+  "Denis CONIC": {
+    "assoc": "SRB",
+    "country": "Serbia",
+    "source": "user-confirmed"
+  },
+  "John CORDUE": {
+    "assoc": "NZL",
+    "country": "New Zealand",
+    "source": "user-confirmed"
+  },
+  "Mick CREA": {
+    "assoc": "SEY",
+    "country": "Seychelles",
+    "source": "user-confirmed"
+  },
+  "Ivan CUEVAS": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "user-confirmed"
+  },
+  "Endika DIEZ": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "user-confirmed"
+  },
+  "Anh DOAN Ba Tuan": {
+    "assoc": "VIE",
+    "country": "Vietnam",
+    "source": "user-confirmed"
+  },
+  "Sean DOHERTY": {
+    "assoc": "SCO",
+    "country": "Scotland",
+    "source": "user-confirmed"
+  },
+  "Arnoldas DOMEIKA": {
+    "assoc": "LTU",
+    "country": "Lithuania",
+    "source": "user-confirmed"
+  },
+  "Husam DOUFESH": {
+    "assoc": "PLE",
+    "country": "Palestine",
+    "source": "user-confirmed"
+  },
+  "Veniamin DUBROVIN": {
+    "assoc": "MDA",
+    "country": "Moldova",
+    "source": "user-confirmed"
+  },
+  "Conor EDWARDS": {
+    "assoc": "WAL",
+    "country": "Wales",
+    "source": "user-confirmed"
+  },
+  "Mohamed ELHEBSHI": {
+    "assoc": "LBA",
+    "country": "Libya",
+    "source": "user-confirmed"
+  },
+  "Lkhagvasuren ENKHBAT": {
+    "assoc": "MGL",
+    "country": "Mongolia",
+    "source": "user-confirmed"
+  },
+  "Nicholas ESTHER": {
+    "assoc": "SEY",
+    "country": "Seychelles",
+    "source": "user-confirmed"
+  },
+  "Ryan FARRELL": {
+    "assoc": "IRL",
+    "country": "Ireland",
+    "source": "user-confirmed"
+  },
+  "Cesar FERNANDEZ": {
+    "assoc": "CRC",
+    "country": "Costa Rica",
+    "source": "user-confirmed"
+  },
+  "Heiko FLEIDL": {
+    "assoc": "NAM",
+    "country": "Namibia",
+    "source": "user-confirmed"
+  },
+  "Alexander FLEMMING": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "user-confirmed"
+  },
+  "Carlos FRANCO": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "user-confirmed"
+  },
+  "Tomoya FUJIMURA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "user-confirmed"
+  },
+  "Vildan GADIEV": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "user-confirmed"
+  },
+  "Samuel GALVEZ": {
+    "assoc": "DOM",
+    "country": "Dominican Republic",
+    "source": "user-confirmed"
+  },
+  "Andrew GAMBINA": {
+    "assoc": "MLT",
+    "country": "Malta",
+    "source": "user-confirmed"
+  },
+  "Antonio GARCIA": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "user-confirmed"
+  },
+  "Axel GAVILAN": {
+    "assoc": "PAR",
+    "country": "Paraguay",
+    "source": "user-confirmed"
+  },
+  "Rodrigo GILABERT": {
+    "assoc": "ARG",
+    "country": "Argentina",
+    "source": "user-confirmed"
+  },
+  "Manuel GOMEZ Jose": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "user-confirmed"
+  },
+  "Eduardo GONZALEZ": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "user-confirmed"
+  },
+  "Shiva GOTHE": {
+    "assoc": "NEP",
+    "country": "Nepal",
+    "source": "user-confirmed"
+  },
+  "Freyr GUDMUNDSSON Dadi": {
+    "assoc": "ISL",
+    "country": "Iceland",
+    "source": "user-confirmed"
+  },
+  "Wasiim GUKHOOL": {
+    "assoc": "MRI",
+    "country": "Mauritius",
+    "source": "user-confirmed"
+  },
+  "Ashraf HAIQAL Muhamad": {
+    "assoc": "MAS",
+    "country": "Malaysia",
+    "source": "user-confirmed"
+  },
+  "Mohamad HAMIE": {
+    "assoc": "LBN",
+    "country": "Lebanon",
+    "source": "user-confirmed"
+  },
+  "Dahlan HARURI": {
+    "assoc": "INA",
+    "country": "Indonesia",
+    "source": "user-confirmed"
+  },
+  "Hilal HASANOV": {
+    "assoc": "AZE",
+    "country": "Azerbaijan",
+    "source": "user-confirmed"
+  },
+  "Christian HOTZ": {
+    "assoc": "SUI",
+    "country": "Switzerland",
+    "source": "user-confirmed"
+  },
+  "Craig HOWIESON": {
+    "assoc": "SCO",
+    "country": "Scotland",
+    "source": "user-confirmed"
+  },
+  "HU Heming": {
+    "assoc": "AUS",
+    "country": "Australia",
+    "source": "user-confirmed"
+  },
+  "HUNG Ka Tak": {
+    "assoc": "HKG",
+    "country": "Hong Kong, China",
+    "source": "user-confirmed"
+  },
+  "Michael HYATT": {
+    "assoc": "JAM",
+    "country": "Jamaica",
+    "source": "user-confirmed"
+  },
+  "Alisher IAKUPBAEV": {
+    "assoc": "KGZ",
+    "country": "Kyrgyzstan",
+    "source": "user-confirmed"
+  },
+  "Saheed IDOWU": {
+    "assoc": "CGO",
+    "country": "Congo",
+    "source": "user-confirmed"
+  },
+  "Ramil JAFAROV": {
+    "assoc": "AZE",
+    "country": "Azerbaijan",
+    "source": "user-confirmed"
+  },
+  "Stephen JENKINS": {
+    "assoc": "WAL",
+    "country": "Wales",
+    "source": "user-confirmed"
+  },
+  "David JONSSON": {
+    "assoc": "ISL",
+    "country": "Iceland",
+    "source": "user-confirmed"
+  },
+  "Eskild JORGENSEN": {
+    "assoc": "NOR",
+    "country": "Norway",
+    "source": "user-confirmed"
+  },
+  "Eric JOUTI": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "user-confirmed"
+  },
+  "Nikola JUSKOVIC": {
+    "assoc": "MNE",
+    "country": "Montenegro",
+    "source": "user-confirmed"
+  },
+  "Santiago KACOWICZ": {
+    "assoc": "URU",
+    "country": "Uruguay",
+    "source": "user-confirmed"
+  },
+  "Roope KANTOLA": {
+    "assoc": "FIN",
+    "country": "Finland",
+    "source": "user-confirmed"
+  },
+  "Anvar KARIMOV": {
+    "assoc": "UZB",
+    "country": "Uzbekistan",
+    "source": "user-confirmed"
+  },
+  "Olegs KARTUZOVS": {
+    "assoc": "LAT",
+    "country": "Latvia",
+    "source": "user-confirmed"
+  },
+  "Timur KELBUGANOV": {
+    "assoc": "KAZ",
+    "country": "Kazakhstan",
+    "source": "user-confirmed"
+  },
+  "Zokhid KENJAEV": {
+    "assoc": "UZB",
+    "country": "Uzbekistan",
+    "source": "user-confirmed"
+  },
+  "Aleksandr KHANIN": {
+    "assoc": "BLR",
+    "country": "Belarus",
+    "source": "user-confirmed"
+  },
+  "Elmurod KHOLIKOV": {
+    "assoc": "UZB",
+    "country": "Uzbekistan",
+    "source": "user-confirmed"
+  },
+  "KONG Lingxuan": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "user-confirmed"
+  },
+  "Phinith KONGPHET": {
+    "assoc": "LAO",
+    "country": "Laos",
+    "source": "user-confirmed"
+  },
+  "Edin KONJIC": {
+    "assoc": "BIH",
+    "country": "Bosnia and Herzegovina",
+    "source": "user-confirmed"
+  },
+  "Anton KOTOV": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "user-confirmed"
+  },
+  "Petyo KRASTEV": {
+    "assoc": "BUL",
+    "country": "Bulgaria",
+    "source": "user-confirmed"
+  },
+  "Ruslan KULTAEV": {
+    "assoc": "KGZ",
+    "country": "Kyrgyzstan",
+    "source": "user-confirmed"
+  },
+  "Tamas LAKATOS": {
+    "assoc": "HUN",
+    "country": "Hungary",
+    "source": "user-confirmed"
+  },
+  "Fessou LAWSON-GAIZER": {
+    "assoc": "TOG",
+    "country": "Togo",
+    "source": "user-confirmed"
+  },
+  "LE Tien Dat": {
+    "assoc": "VIE",
+    "country": "Vietnam",
+    "source": "user-confirmed"
+  },
+  "LEI Chon Cheok": {
+    "assoc": "MAC",
+    "country": "Macau, China",
+    "source": "user-confirmed"
+  },
+  "Feng LEONG Chee": {
+    "assoc": "MAS",
+    "country": "Malaysia",
+    "source": "user-confirmed"
+  },
+  "LI Julio": {
+    "assoc": "PER",
+    "country": "Peru",
+    "source": "user-confirmed"
+  },
+  "Michel LIGNANDZI": {
+    "assoc": "CGO",
+    "country": "Congo",
+    "source": "user-confirmed"
+  },
+  "Keegan LINGEVELDT": {
+    "assoc": "RSA",
+    "country": "South Africa",
+    "source": "user-confirmed"
+  },
+  "Kurt LINGEVELDT": {
+    "assoc": "RSA",
+    "country": "South Africa",
+    "source": "user-confirmed"
+  },
+  "Leonardo LOPEZ": {
+    "assoc": "ECU",
+    "country": "Ecuador",
+    "source": "user-confirmed"
+  },
+  "Pedro LOPEZ": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "user-confirmed"
+  },
+  "Miad LOTFIJANABADI": {
+    "assoc": "IRI",
+    "country": "Iran",
+    "source": "user-confirmed"
+  },
+  "Aleksandr LUSIN": {
+    "assoc": "EST",
+    "country": "Estonia",
+    "source": "user-confirmed"
+  },
+  "LYU Xiang": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "user-confirmed"
+  },
+  "MA AAD Ahmed": {
+    "assoc": "MDV",
+    "country": "Maldives",
+    "source": "user-confirmed"
+  },
+  "Luis MAESTRE Jose": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "user-confirmed"
+  },
+  "K MAGNUSSON Magnus": {
+    "assoc": "ISL",
+    "country": "Iceland",
+    "source": "user-confirmed"
+  },
+  "Gavin MAGUIRE": {
+    "assoc": "IRL",
+    "country": "Ireland",
+    "source": "user-confirmed"
+  },
+  "Alexander MAKAROV": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "user-confirmed"
+  },
+  "Marawan MANSOUR": {
+    "assoc": "UAE",
+    "country": "United Arab Emirates",
+    "source": "user-confirmed"
+  },
+  "Michael MARSDEN": {
+    "assoc": "WAL",
+    "country": "Wales",
+    "source": "user-confirmed"
+  },
+  "Jeison MARTINEZ": {
+    "assoc": "CRC",
+    "country": "Costa Rica",
+    "source": "user-confirmed"
+  },
+  "Fadi MASALMA": {
+    "assoc": "PLE",
+    "country": "Palestine",
+    "source": "user-confirmed"
+  },
+  "Leonids MASLOVS": {
+    "assoc": "LAT",
+    "country": "Latvia",
+    "source": "user-confirmed"
+  },
+  "Terrence MATHOLE": {
+    "assoc": "RSA",
+    "country": "South Africa",
+    "source": "user-confirmed"
+  },
+  "Kaiki MATSUSHITA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "user-confirmed"
+  },
+  "Gilang MAULANA": {
+    "assoc": "INA",
+    "country": "Indonesia",
+    "source": "user-confirmed"
+  },
+  "Zakaria MERCADE": {
+    "assoc": "MAR",
+    "country": "Morocco",
+    "source": "user-confirmed"
+  },
+  "Faryal MINHAS": {
+    "assoc": "PAK",
+    "country": "Pakistan",
+    "source": "user-confirmed"
+  },
+  "Alberto MINO": {
+    "assoc": "ECU",
+    "country": "Ecuador",
+    "source": "user-confirmed"
+  },
+  "Alexander MORAN": {
+    "assoc": "CAN",
+    "country": "Canada",
+    "source": "user-confirmed"
+  },
+  "Adrian MORATO": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "user-confirmed"
+  },
+  "Heber MOSCOSO": {
+    "assoc": "GUA",
+    "country": "Guatemala",
+    "source": "user-confirmed"
+  },
+  "Byorn MOUSBE": {
+    "assoc": "SEY",
+    "country": "Seychelles",
+    "source": "user-confirmed"
+  },
+  "Loay MUAWADH": {
+    "assoc": "BRN",
+    "country": "Bahrain",
+    "source": "user-confirmed"
+  },
+  "Vitalii MURZIN": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "user-confirmed"
+  },
+  "Mohamed NASEEM": {
+    "assoc": "MDV",
+    "country": "Maldives",
+    "source": "user-confirmed"
+  },
+  "Tu NGUYEN Anh": {
+    "assoc": "VIE",
+    "country": "Vietnam",
+    "source": "user-confirmed"
+  },
+  "Daniel O'CONNELL": {
+    "assoc": "WAL",
+    "country": "Wales",
+    "source": "user-confirmed"
+  },
+  "Norby OCAMPO": {
+    "assoc": "GUM",
+    "country": "Guam",
+    "source": "user-confirmed"
+  },
+  "Ryotaro OGATA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "user-confirmed"
+  },
+  "Benedek OLAH": {
+    "assoc": "FIN",
+    "country": "Finland",
+    "source": "user-confirmed"
+  },
+  "Ojo ONAOLAPO": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "user-confirmed"
+  },
+  "PARK Jeongwoo": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "user-confirmed"
+  },
+  "Xavier PERAL": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "user-confirmed"
+  },
+  "Thavisack PHATHAPHONE": {
+    "assoc": "LAO",
+    "country": "Laos",
+    "source": "user-confirmed"
+  },
+  "Max POUNGSRI": {
+    "assoc": "THA",
+    "country": "Thailand",
+    "source": "user-confirmed"
+  },
+  "Ylli PRESTRESHI": {
+    "assoc": "KOS",
+    "country": "Kosovo",
+    "source": "user-confirmed"
+  },
+  "Shimon RABINOVICH": {
+    "assoc": "ISR",
+    "country": "Israel",
+    "source": "user-confirmed"
+  },
+  "Filip RADOVIC": {
+    "assoc": "MNE",
+    "country": "Montenegro",
+    "source": "user-confirmed"
+  },
+  "Miguel RAMIREZ Jose": {
+    "assoc": "GUA",
+    "country": "Guatemala",
+    "source": "user-confirmed"
+  },
+  "Imesh RANASINGHA": {
+    "assoc": "USA",
+    "country": "USA",
+    "source": "user-confirmed"
+  },
+  "Rija RASOLOMANANA": {
+    "assoc": "MAD",
+    "country": "Madagascar",
+    "source": "user-confirmed"
+  },
+  "Semen RAZHEV": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "user-confirmed"
+  },
+  "Arturs REINHOLDS": {
+    "assoc": "LAT",
+    "country": "Latvia",
+    "source": "user-confirmed"
+  },
+  "Liam ROBILLIARD": {
+    "assoc": "GGY",
+    "country": "Guernsey",
+    "source": "user-confirmed"
+  },
+  "Ashley ROBINSON": {
+    "assoc": "IRL",
+    "country": "Ireland",
+    "source": "user-confirmed"
+  },
+  "Diego RODRIGUEZ": {
+    "assoc": "PER",
+    "country": "Peru",
+    "source": "user-confirmed"
+  },
+  "Israel RODRIGUEZ": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "user-confirmed"
+  },
+  "Vincent ROUSSEAU-EMOND": {
+    "assoc": "CAN",
+    "country": "Canada",
+    "source": "user-confirmed"
+  },
+  "Manuel RUIZ Jose": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "user-confirmed"
+  },
+  "Suraju SAKA": {
+    "assoc": "CGO",
+    "country": "Congo",
+    "source": "user-confirmed"
+  },
+  "Mohammad SALAMEH": {
+    "assoc": "JOR",
+    "country": "Jordan",
+    "source": "user-confirmed"
+  },
+  "Maurice SALLAH DUSE": {
+    "assoc": "TOG",
+    "country": "Togo",
+    "source": "user-confirmed"
+  },
+  "Borja SANCHEZ": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "user-confirmed"
+  },
+  "Diego SANCHEZ": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "user-confirmed"
+  },
+  "Ognyan SERAFIMOV": {
+    "assoc": "CYP",
+    "country": "Cyprus",
+    "source": "user-confirmed"
+  },
+  "Damiano SERETTI": {
+    "assoc": "ITA",
+    "country": "Italy",
+    "source": "user-confirmed"
+  },
+  "Gleb SHAMRUK": {
+    "assoc": "BLR",
+    "country": "Belarus",
+    "source": "user-confirmed"
+  },
+  "Stepan SHAPOSHNIKOV": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "user-confirmed"
+  },
+  "Rohan SIRISENA": {
+    "assoc": "SRI",
+    "country": "Sri Lanka",
+    "source": "user-confirmed"
+  },
+  "Samuli SOINE": {
+    "assoc": "FIN",
+    "country": "Finland",
+    "source": "user-confirmed"
+  },
+  "Kevin SOTO": {
+    "assoc": "GUA",
+    "country": "Guatemala",
+    "source": "user-confirmed"
+  },
+  "Piyadeth SOURINPHOUMY": {
+    "assoc": "LAO",
+    "country": "Laos",
+    "source": "user-confirmed"
+  },
+  "Joshua STACEY": {
+    "assoc": "GGY",
+    "country": "Guernsey",
+    "source": "user-confirmed"
+  },
+  "Lawrence STACEY": {
+    "assoc": "GGY",
+    "country": "Guernsey",
+    "source": "user-confirmed"
+  },
+  "Reinhardt STANLEY": {
+    "assoc": "NAM",
+    "country": "Namibia",
+    "source": "user-confirmed"
+  },
+  "Darren STRAUSS": {
+    "assoc": "NAM",
+    "country": "Namibia",
+    "source": "user-confirmed"
+  },
+  "Dragan SUBOTIC": {
+    "assoc": "SRB",
+    "country": "Serbia",
+    "source": "user-confirmed"
+  },
+  "Ajay SUWAL": {
+    "assoc": "NEP",
+    "country": "Nepal",
+    "source": "user-confirmed"
+  },
+  "Fabian TAIT": {
+    "assoc": "NAM",
+    "country": "Namibia",
+    "source": "user-confirmed"
+  },
+  "Padasak TANVIRIYAVECHAKUL": {
+    "assoc": "THA",
+    "country": "Thailand",
+    "source": "user-confirmed"
+  },
+  "Rodrigo TAPIA": {
+    "assoc": "ECU",
+    "country": "Ecuador",
+    "source": "user-confirmed"
+  },
+  "Michael TAUBER": {
+    "assoc": "ISR",
+    "country": "Israel",
+    "source": "user-confirmed"
+  },
+  "Kenta TAZOE": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "user-confirmed"
+  },
+  "Denis TERNA": {
+    "assoc": "MDA",
+    "country": "Moldova",
+    "source": "user-confirmed"
+  },
+  "Pierre-Luc THERIAULT": {
+    "assoc": "CAN",
+    "country": "Canada",
+    "source": "user-confirmed"
+  },
+  "Franco TITOLO": {
+    "assoc": "ARG",
+    "country": "Argentina",
+    "source": "user-confirmed"
+  },
+  "Simon TOMLINSON": {
+    "assoc": "JAM",
+    "country": "Jamaica",
+    "source": "user-confirmed"
+  },
+  "Alejandro TORANZOS": {
+    "assoc": "PAR",
+    "country": "Paraguay",
+    "source": "user-confirmed"
+  },
+  "Kane TOWNSEND": {
+    "assoc": "AUS",
+    "country": "Australia",
+    "source": "user-confirmed"
+  },
+  "Tomas TREGLER": {
+    "assoc": "CZE",
+    "country": "Czechia",
+    "source": "user-confirmed"
+  },
+  "Yuma TSUBOI": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "user-confirmed"
+  },
+  "Mohammad TUHIN": {
+    "assoc": "BAN",
+    "country": "Bangladesh",
+    "source": "user-confirmed"
+  },
+  "Alfredas UDRA": {
+    "assoc": "LTU",
+    "country": "Lithuania",
+    "source": "user-confirmed"
+  },
+  "Batuhan ULUCAK": {
+    "assoc": "TUR",
+    "country": "Turkiye",
+    "source": "user-confirmed"
+  },
+  "Salvador URIBE": {
+    "assoc": "MEX",
+    "country": "Mexico",
+    "source": "user-confirmed"
+  },
+  "Carlos VEDRIEL": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "user-confirmed"
+  },
+  "Juan VILA BATISTA": {
+    "assoc": "DOM",
+    "country": "Dominican Republic",
+    "source": "user-confirmed"
+  },
+  "Isaac VILA": {
+    "assoc": "DOM",
+    "country": "Dominican Republic",
+    "source": "user-confirmed"
+  },
+  "Miguel VILCHEZ": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "user-confirmed"
+  },
+  "Ricardo VILLA": {
+    "assoc": "MEX",
+    "country": "Mexico",
+    "source": "user-confirmed"
+  },
+  "Lionel WEBER": {
+    "assoc": "SUI",
+    "country": "Switzerland",
+    "source": "user-confirmed"
+  },
+  "WEI Shihao": {
+    "assoc": "CRO",
+    "country": "Croatia",
+    "source": "user-confirmed"
+  },
+  "Mateo WEITZNER": {
+    "assoc": "URU",
+    "country": "Uruguay",
+    "source": "user-confirmed"
+  },
+  "WEN Wei-Chieh": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "user-confirmed"
+  },
+  "Nikom WONGSIRI": {
+    "assoc": "THA",
+    "country": "Thailand",
+    "source": "user-confirmed"
+  },
+  "XIAO Phillip": {
+    "assoc": "NZL",
+    "country": "New Zealand",
+    "source": "user-confirmed"
+  },
+  "YANG Heng-Wei": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "user-confirmed"
+  },
+  "YANG Tzu-Yi": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "user-confirmed"
+  },
+  "Vadim YARASHENKA": {
+    "assoc": "BLR",
+    "country": "Belarus",
+    "source": "user-confirmed"
+  },
+  "Marios YIANGOU": {
+    "assoc": "CYP",
+    "country": "Cyprus",
+    "source": "user-confirmed"
+  },
+  "Yiangos YIANGOU": {
+    "assoc": "CYP",
+    "country": "Cyprus",
+    "source": "user-confirmed"
+  },
+  "YU Ziyang": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "user-confirmed"
+  },
+  "Denis ZHOLUDEV": {
+    "assoc": "KAZ",
+    "country": "Kazakhstan",
+    "source": "user-confirmed"
+  },
+  "Jan ZIBRAT": {
+    "assoc": "SLO",
+    "country": "Slovenia",
+    "source": "user-confirmed"
+  },
+  "Elizandro ANDRE": {
+    "assoc": "ANG",
+    "country": "Angola",
+    "source": "user-confirmed"
+  },
+  "Alessio ANTONIO": {
+    "assoc": "ANG",
+    "country": "Angola",
+    "source": "user-confirmed"
+  },
+  "Mohannad BAATH": {
+    "assoc": "SYR",
+    "country": "Syria",
+    "source": "user-confirmed"
+  },
+  "Joshua BAND": {
+    "assoc": "JEY",
+    "country": "Jersey",
+    "source": "user-confirmed"
+  },
+  "Adrien CERVEAUX": {
+    "assoc": "NCL",
+    "country": "France",
+    "source": "user-confirmed"
+  },
+  "Yamen DANDAL": {
+    "assoc": "SYR",
+    "country": "Syria",
+    "source": "user-confirmed"
+  },
+  "Eugene ELLIS": {
+    "assoc": "JEY",
+    "country": "Jersey",
+    "source": "user-confirmed"
+  },
+  "Richard GONZALES": {
+    "assoc": "PHI",
+    "country": "Philippines",
+    "source": "user-confirmed"
+  },
+  "Lorenzo GUILLOT": {
+    "assoc": "NCL",
+    "country": "France",
+    "source": "user-confirmed"
+  },
+  "Joseph KGATLAMPANE": {
+    "assoc": "BOT",
+    "country": "Botswana",
+    "source": "user-confirmed"
+  },
+  "Thobo MATLHATSI": {
+    "assoc": "BOT",
+    "country": "Botswana",
+    "source": "user-confirmed"
+  },
+  "Tshepho MODISATHEBE": {
+    "assoc": "BOT",
+    "country": "Botswana",
+    "source": "user-confirmed"
+  },
+  "Christopher MORSHEAD": {
+    "assoc": "JEY",
+    "country": "Jersey",
+    "source": "user-confirmed"
+  },
+  "Yhya MOSSLLY": {
+    "assoc": "SYR",
+    "country": "Syria",
+    "source": "user-confirmed"
+  },
+  "Edvane NETO": {
+    "assoc": "ANG",
+    "country": "Angola",
+    "source": "user-confirmed"
+  },
+  "Laurent SENS": {
+    "assoc": "NCL",
+    "country": "France",
+    "source": "user-confirmed"
+  },
+  "Stephen TIMSON": {
+    "assoc": "PHI",
+    "country": "Philippines",
+    "source": "user-confirmed"
+  },
+  "Rodel VALLE": {
+    "assoc": "PHI",
+    "country": "Philippines",
+    "source": "user-confirmed"
   }
 }

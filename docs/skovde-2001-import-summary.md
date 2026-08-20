@@ -909,3 +909,113 @@ MS 547 名 / WS 412 名 2005 球员全部有 assoc 记录（identity 命中率 1
 
 - `tools/import_2013.py`：十七站导入脚本（复用 2005 逻辑，新增 `pro5/grandfinals4/teamwc4/wttc8` 模板、U21MS/U21WS 并入 ms/ws、MT/WT 单双打分流（团队双打 → md/wd）、`KIM Minhee (YOB=1991)` 特例保留后缀、去重追加、manifest 注册）。
 - `tools/add_assoc_2013.py`：补充 assoc.json 脚本（复用 import_2013 的 NAME_MAP 与原始国家代码，覆盖 U21MS/U21WS/MT/WT，扩充 COUNTRY_MAP 增 `CUB/IRQ/MNE/PAN`）。
+
+---
+
+# 第十部分：2014 年赛事导入
+
+## 1. 概述
+
+2014 年共导入 14 站 ITTF 赛事（无个人世乒赛，故无 XD）。沿用 2013 年全部规则：`U21MS/U21WS` 并入 ms/ws；团体赛（世乒团体 Tokyo）MT/WT 单打并入 ms/ws（2014 团体赛无双打行）；人名格式遵循 `wtt_data/player-name-format.md` 与 `wtt_data/mixed-team-guide.md`。
+
+```python
+# 事件类型映射（按原始文件页眉「赛事种类」判定，2014 无 to agent.txt）
+Super Series   → ittf白金赛（1.15）
+Major Series   → ittf常规赛（0.48）
+Grand Finals   → 总决赛（1.35）
+World Cup      → 世界杯（1.62）
+ITTF WTTC 团体 → 世乒赛团体（1.21）
+```
+
+## 2. 数据来源与导入结果
+
+原始数据位于 `docs/result_ittf_link/2014/`（14 个 txt；`import_2014.py` 为其中元数据生成脚本，非导入脚本）。tab 分隔行结构同 2013，无断行续行问题，无需行拼接。
+
+| 类别 | 目标文件 | 新增 |
+| --- | --- | --- |
+| MS | `wtt_data/ms/score-log-2014-wtt.json` | 1507 |
+| WS | `wtt_data/ws/score-log-2014-ws.json` | 1306 |
+| MD | `wtt_data/md/score-log-2014-wtt.json` | 423 |
+| WD | `wtt_data/wd/score-log-2014-wtt.json` | 304 |
+| XD | `wtt_data/xd/score-log-2014-wtt.json` | 0 |
+| 合计 | | 3540 条 |
+
+> 现有 `ms/score-log-2014-wtt.json` 原已有 7 条洲杯赛记录（2014-02-21~23），按 `(日期,类型,胜者,负者)` 去重追加，无冲突；文件当前总计 1514 条。
+
+五个分类的 `manifest.json` 已将 `score-log-2014-*` 注册到 scoreFiles 首位。
+
+分站明细（按原始文件实际可解析行数）：
+
+| 站 | 类型 | MS | WS | MD | WD |
+| --- | --- | --- | --- | --- | --- |
+| Kuwait Open | 白金 | 93 | 76 | 48 | 28 |
+| Qatar Open | 白金 | 113 | 171 | 41 | 26 |
+| German Open Magdeburg | 白金 | 63 | 63 | 61 | 41 |
+| WTTC Tokyo（团体） | 世乒团体 | 428 | 346 | - | - |
+| China Open Chengdu | 白金 | 100 | 100 | 18 | 16 |
+| Korea Open Incheon | 白金 | 94 | 61 | 30 | 25 |
+| Japan Open Yokohama | 白金 | 94 | 51 | 32 | 16 |
+| Spanish Open Almeria | 常规 | 186 | 134 | 43 | 36 |
+| Czech Open Olomouc | 常规 | 94 | 94 | 56 | 45 |
+| Women's World Cup Linz | 世界杯 | - | 28 | - | - |
+| Men's World Cup Dusseldorf | 世界杯 | 28 | - | - | - |
+| Russian Open Ekaterinburg | 常规 | 94 | 62 | 23 | 20 |
+| Swedish Open Stockholm | 常规 | 94 | 94 | 64 | 44 |
+| Grand Finals Bangkok | 总决赛 | 30 | 30 | 7 | 7 |
+
+> 缺失说明：German Open Magdeburg 源数据无 U21 行（该站 U21 未在导出范围内）；Grand Finals Bangkok MD/WD 仅 QF/SF/F 三轮；各站 MS/WS 行数含 U21MS/U21WS（并入 ms/ws）。
+
+## 3. 日期映射
+
+沿用既有模板，新增 `pro6`（Qatar 6 天）、`team8`（世乒团体 Tokyo 8 天），`wc3` 增加 `R16` 映射（2014 世界杯正赛含 R16 轮）：
+
+- Pro Tour 5 天站（`pro5`，10 站）：资格赛 → 第 1 天，R64/R32 → 第 2 天，R16/1/4 决赛 → 第 3 天，半决赛 → 第 4 天，决赛 → 第 5 天。
+- Qatar Open（`pro6`，2014-02-18~23）：资格赛 → 02-18，R64 → 02-19，R32 → 02-20，R16 → 02-21，1/4 决赛 → 02-22，半决赛/决赛 → 02-23。
+- Grand Finals（`grandfinals4`，Bangkok 2014-12-11~14）：R16 → 12-12，1/4 决赛 → 12-13，半决赛/决赛 → 12-14。
+- 男/女世界杯（`wc3`，各 3 天）：资格赛 → 第 1 天，R16/1/4 决赛 → 第 2 天，半决赛/决赛/排位赛 → 第 3 天。
+- 世乒团体（`team8`，Tokyo 2014-04-28~05-05）：资格赛 → 04-28，主赛（Main Draw）→ 05-05。
+
+## 4. 姓名规范化说明
+
+遵循 `wtt_data/player-name-format.md`，`tools/import_2014.py` 自动生成标准名映射（复用 2013 规则）。
+
+- 中/港/台/新/韩/朝：`姓 名` 保持原文；日本/欧美：`名 姓` 交换（如 `Jun MIZUTANI`、`Koki NIWA`、`Dimitrij OVTCHAROV`）。
+- 复用 2013 姓名特例：`KIM Minhee (YOB=1991)` → 保留为 `KIM Minhee (1991)`（Kuwait/Qatar/Chengdu 2014 均出现）；`LANG Kristin` → `Kristin LANG`；`NI Xia Lian` → `Xia Lian NI`；`LI Qian` → `Qian LI`；`SCHOPP Jie` 保持原文。`FANG Bo`（Korea/Swedish 2014）与既有 assoc 一致为 KAZ。
+- 新增特例：`CHEN Szu-YU`（Grand Finals Bangkok 胜者格大写 U）→ `CHEN Szu-Yu`（与既有 DB 一致）。
+
+全部 3540 条无缺失名字、无胜者不匹配、无重复录入、无双打胜者=负者。
+
+## 5. 协会籍补充（assoc.json）
+
+| 文件 | 本次新增 | 合计 |
+| --- | --- | --- |
+| `wtt_data/ms/assoc.json` | 259 | 2030 |
+| `wtt_data/ws/assoc.json` | 202 | 1910 |
+
+2014 全部 MS/WS 球员（含 U21MS/U21WS/MT/WT 单打）identity 命中率 100%。新增国家映射 8 个：`BAN/ESA/FRO/GGY/GUM/LAO/NAM/PLE`（孟加拉/萨尔瓦多/法罗群岛/根西岛/关岛/老挝/纳米比亚/巴勒斯坦），多来自世乒团体 Tokyo 的队伍。另补全既有代码：`ANG/BOT/JEY/NCL/PHI/SYR`（安哥拉/博茨瓦纳/泽西岛/法国[NCL 沿用既有惯例]/菲律宾/叙利亚）。
+
+## 6. 关键场次验证
+
+| 场次 | 结果 |
+| --- | --- |
+| 男子世界杯决赛 | `ZHANG Jike` 胜 `MA Long`（2014-10-26） |
+| 女子世界杯决赛 | `DING Ning` 胜 `LI Xiaoxia`（2014-10-19） |
+| 总决赛 MS 决赛 | `Jun MIZUTANI` 胜 `Dimitrij OVTCHAROV`（2014-12-14） |
+| 总决赛 WS 决赛 | `Kasumi ISHIKAWA` 胜 `SUH Hyo Won`（2014-12-14） |
+| 总决赛 MD 决赛 | `CHO Eonrae/SEO Hyundeok` 胜 `Kenta MATSUDAIRA/Koki NIWA`（2014-12-14） |
+| 总决赛 WD 决赛 | `Mima ITO/Miu HIRANO` 胜 `Katarzyna GRZYBOWSKA-FRANC/Natalia PARTYKA`（2014-12-14） |
+| Kuwait MS/WS 决赛 | `FAN Zhendong` / `ZHU Yuling` |
+| Qatar MS/WS 决赛 | `XU Xin` / `HU Limei` |
+| German MS/WS 决赛 | `Dimitrij OVTCHAROV` / `SHAN Xiaona` |
+| Chengdu MS/WS 决赛 | `MA Long` / `DING Ning` |
+| Korea MS/WS 决赛 | `XU Xin` / `HAN Ying` |
+| Japan MS/WS 决赛 | `YU Ziyang` / `FENG Tianwei` |
+| Czech MS/WS 决赛 | `Marcos FREITAS` / `Elizabeta SAMARA` |
+| Russian MS/WS 决赛 | `Koki NIWA` / `Kasumi ISHIKAWA` |
+| Swedish MS/WS 决赛 | `FAN Zhendong` / `ZHU Yuling` |
+| Spanish MS/WS 决赛 | `Paul DRINKHALL` / `LI Fen` |
+
+## 7. 相关脚本
+
+- `tools/import_2014.py`：十四站导入脚本（复用 2013 逻辑，新增 `pro6/team8` 模板、`wc3` 增 R16、`CHEN Szu-YU` 特例、去重追加、manifest 首位注册）。
+- `tools/add_assoc_2014.py`：补充 assoc.json 脚本（复用 import_2014 的 NAME_MAP，扩充 COUNTRY_MAP 增 8 新代码及补全 6 既有代码）。
