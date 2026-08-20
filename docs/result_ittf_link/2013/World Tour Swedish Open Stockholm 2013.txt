@@ -10,3 +10,544 @@
 ----------------------------------------
 数据来源：ITTF World Tour 2013
 文件生成时间：自动生成
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 3 Total: 223
+
+Start
+Prev
+1
+2
+3
+Next
+End
+2013	World Tour Swedish Open Stockholm 2013	RANEFUR Elias (SWE)		RASMUSSEN Tobias (DEN)		U21MS	Qualification		0 - 3	9:11 8:11 4:11	RASMUSSEN Tobias	
+2013	World Tour Swedish Open Stockholm 2013	HACHARD Antoine (FRA)		RASMUSSEN Tobias (DEN)		U21MS	Qualification		2 - 3	11:8 11:7 9:11 9:11 9:11	RASMUSSEN Tobias	
+2013	World Tour Swedish Open Stockholm 2013	HACHARD Antoine (FRA)		RANEFUR Elias (SWE)		U21MS	Qualification		3 - 1	11:5 14:16 11:9 11:8	HACHARD Antoine	
+2013	World Tour Swedish Open Stockholm 2013	VASANTH Nitin (IND)		NIELSEN Claus (DEN)		U21MS	Qualification		1 - 3	12:10 7:11 4:11 7:11	NIELSEN Claus	
+2013	World Tour Swedish Open Stockholm 2013	SODERLUND Hampus (SWE)		NIELSEN Claus (DEN)		U21MS	Qualification		3 - 1	11:8 10:12 11:3 11:5	SODERLUND Hampus	
+2013	World Tour Swedish Open Stockholm 2013	SODERLUND Hampus (SWE)		VASANTH Nitin (IND)		U21MS	Qualification		3 - 1	9:11 11:7 11:7 11:3	SODERLUND Hampus	
+2013	World Tour Swedish Open Stockholm 2013	JOHANSSON Henrik (SWE)		PRADELLE Quentin (FRA)		U21MS	Qualification		3 - 0	11:2 11:6 11:6	JOHANSSON Henrik	
+2013	World Tour Swedish Open Stockholm 2013	JOST Frederick (GER)		PRADELLE Quentin (FRA)		U21MS	Qualification		3 - 0	11:6 11:4 11:9	JOST Frederick	
+2013	World Tour Swedish Open Stockholm 2013	JOST Frederick (GER)		JOHANSSON Henrik (SWE)		U21MS	Qualification		3 - 2	11:7 8:11 4:11 11:4 15:13	JOST Frederick	
+2013	World Tour Swedish Open Stockholm 2013	PFEFFER Simon (AUT)		BERGLUND Simon (SWE)		U21MS	Qualification		3 - 2	7:11 11:6 11:9 5:11 11:8	PFEFFER Simon	
+2013	World Tour Swedish Open Stockholm 2013	JEAN Lauric (BEL)		BERGLUND Simon (SWE)		U21MS	Qualification		3 - 1	13:11 11:6 4:11 11:4	JEAN Lauric	
+2013	World Tour Swedish Open Stockholm 2013	JEAN Lauric (BEL)		PFEFFER Simon (AUT)		U21MS	Qualification		3 - 0	13:11 13:11 11:6	JEAN Lauric	
+2013	World Tour Swedish Open Stockholm 2013	HEDLUND Jesper (SWE)		LINDHOLM Eskil (NOR)		U21MS	Qualification		3 - 0	13:11 11:8 11:7	HEDLUND Jesper	
+2013	World Tour Swedish Open Stockholm 2013	OUAICHE Stephane (ALG)		LINDHOLM Eskil (NOR)		U21MS	Qualification		3 - 0	11:6 11:8 11:8	OUAICHE Stephane	
+2013	World Tour Swedish Open Stockholm 2013	OUAICHE Stephane (ALG)		HEDLUND Jesper (SWE)		U21MS	Qualification		3 - 2	11:6 11:9 8:11 7:11 11:9	OUAICHE Stephane	
+2013	World Tour Swedish Open Stockholm 2013	HMAM Adam (TUN)		RONNEBERG Lars (NOR)		U21MS	Qualification		1 - 3	12:14 11:5 6:11 5:11	RONNEBERG Lars	
+2013	World Tour Swedish Open Stockholm 2013	GNANASEKARAN Sathiyan (IND)		RONNEBERG Lars (NOR)		U21MS	Qualification		3 - 0	11:5 12:10 11:8	GNANASEKARAN Sathiyan	
+2013	World Tour Swedish Open Stockholm 2013	GNANASEKARAN Sathiyan (IND)		HMAM Adam (TUN)		U21MS	Qualification		3 - 0	13:11 11:4 11:3	GNANASEKARAN Sathiyan	
+2013	World Tour Swedish Open Stockholm 2013	TROMER Laurens (NED)		ERIKSSON Anders (SWE)		U21MS	Qualification		3 - 1	4:11 11:5 11:2 11:5	TROMER Laurens	
+2013	World Tour Swedish Open Stockholm 2013	RECH DALDOSSO Marco (ITA)		ERIKSSON Anders (SWE)		U21MS	Qualification		3 - 2	11:6 6:11 11:4 5:11 13:11	RECH DALDOSSO Marco	
+2013	World Tour Swedish Open Stockholm 2013	RECH DALDOSSO Marco (ITA)		TROMER Laurens (NED)		U21MS	Qualification		3 - 2	12:10 8:11 11:13 11:8 11:7	RECH DALDOSSO Marco	
+2013	World Tour Swedish Open Stockholm 2013	GOMMERS Rajko (NED)		HANSEN Sven (LUX)		U21MS	Qualification		3 - 1	11:6 11:2 8:11 11:9	GOMMERS Rajko	
+2013	World Tour Swedish Open Stockholm 2013	TRAN Anthony (SWE)		HANSEN Sven (LUX)		U21MS	Qualification		3 - 2	9:11 11:6 11:13 13:11 11:3	TRAN Anthony	
+2013	World Tour Swedish Open Stockholm 2013	TRAN Anthony (SWE)		GOMMERS Rajko (NED)		U21MS	Qualification		0 - 3	12:14 12:14 10:12	GOMMERS Rajko	
+2013	World Tour Swedish Open Stockholm 2013	GORMAN Viktor (SWE)		OZTURK Ozgun (TUR)		U21MS	Qualification		3 - 2	11:9 9:11 9:11 11:8 11:8	GORMAN Viktor	
+2013	World Tour Swedish Open Stockholm 2013	ASSAR Khalid (EGY)		OZTURK Ozgun (TUR)		U21MS	Qualification		2 - 3	10:12 11:9 12:10 7:11 8:11	OZTURK Ozgun	
+2013	World Tour Swedish Open Stockholm 2013	ASSAR Khalid (EGY)		GORMAN Viktor (SWE)		U21MS	Qualification		2 - 3	11:8 10:12 11:6 8:11 8:11	GORMAN Viktor	
+2013	World Tour Swedish Open Stockholm 2013	MCCREERY Paul (IRL)		JIMENEZ Ricardo (PUR)		U21MS	Qualification		3 - 0	15:13 11:8 11:6	MCCREERY Paul	
+2013	World Tour Swedish Open Stockholm 2013	NOVOTA Samuel (SVK)		JIMENEZ Ricardo (PUR)		U21MS	Qualification		3 - 2	11:9 3:11 10:12 11:9 11:4	NOVOTA Samuel	
+2013	World Tour Swedish Open Stockholm 2013	NOVOTA Samuel (SVK)		MCCREERY Paul (IRL)		U21MS	Qualification		3 - 0	11:9 11:6 11:9	NOVOTA Samuel	
+2013	World Tour Swedish Open Stockholm 2013	OOSTWOUDER Ewout (NED)		MAMIA Thameur (TUN)		U21MS	Qualification		3 - 0	12:10 11:7 11:9	OOSTWOUDER Ewout	
+2013	World Tour Swedish Open Stockholm 2013	AHLANDER-J Carl (SWE)		MAMIA Thameur (TUN)		U21MS	Qualification		1 - 3	6:11 9:11 11:2 7:11	MAMIA Thameur	
+2013	World Tour Swedish Open Stockholm 2013	AHLANDER-J Carl (SWE)		OOSTWOUDER Ewout (NED)		U21MS	Qualification		1 - 3	11:8 9:11 14:16 6:11	OOSTWOUDER Ewout	
+2013	World Tour Swedish Open Stockholm 2013	ALLEGRO Martin (BEL)		DILLING Andreas (DEN)		U21MS	Qualification		3 - 2	8:11 7:11 11:7 13:11 11:8	ALLEGRO Martin	
+2013	World Tour Swedish Open Stockholm 2013	LU Po-Hsien (TPE)		DILLING Andreas (DEN)		U21MS	Qualification		3 - 2	11:3 9:11 10:12 11:9 11:7	LU Po-Hsien	
+2013	World Tour Swedish Open Stockholm 2013	LU Po-Hsien (TPE)		ALLEGRO Martin (BEL)		U21MS	Qualification		3 - 2	14:12 9:11 10:12 11:4 11:6	LU Po-Hsien	
+2013	World Tour Swedish Open Stockholm 2013	GONZALEZ Daniel (PUR)		FRANZEN Alexander (SWE)		U21MS	Qualification		1 - 3	3:11 11:7 7:11 6:11	FRANZEN Alexander	
+2013	World Tour Swedish Open Stockholm 2013	BAJGER Ondrej (CZE)		FRANZEN Alexander (SWE)		U21MS	Qualification		3 - 2	7:11 10:12 11:5 12:10 11:5	BAJGER Ondrej	
+2013	World Tour Swedish Open Stockholm 2013	BAJGER Ondrej (CZE)		GONZALEZ Daniel (PUR)		U21MS	Qualification		3 - 0	11:9 12:10 11:5	BAJGER Ondrej	
+2013	World Tour Swedish Open Stockholm 2013	MCBEATH David (ENG)		OOSTWOUDER Ewout (NED)		MS	Qualification		4 - 1	11:7 11:7 11:9 8:11 13:11	MCBEATH David	
+2013	World Tour Swedish Open Stockholm 2013	KUZMIN Fedor (RUS)		OOSTWOUDER Ewout (NED)		MS	Qualification		4 - 0	11:6 11:8 11:7 11:9	KUZMIN Fedor	
+2013	World Tour Swedish Open Stockholm 2013	KUZMIN Fedor (RUS)		MCBEATH David (ENG)		MS	Qualification		4 - 1	10:12 11:8 11:8 11:5 11:3	KUZMIN Fedor	
+2013	World Tour Swedish Open Stockholm 2013	ALLEGRO Martin (BEL)		MCCREERY Paul (IRL)		MS	Qualification		4 - 2	11:6 11:9 10:12 11:9 8:11 11:7	ALLEGRO Martin	
+2013	World Tour Swedish Open Stockholm 2013	GHOSH Soumyajit (IND)		MCCREERY Paul (IRL)		MS	Qualification		4 - 2	11:8 7:11 11:6 11:9 4:11 11:3	GHOSH Soumyajit	
+2013	World Tour Swedish Open Stockholm 2013	GHOSH Soumyajit (IND)		ALLEGRO Martin (BEL)		MS	Qualification		4 - 2	11:3 11:7 11:1 7:11 15:17 11:8	GHOSH Soumyajit	
+2013	World Tour Swedish Open Stockholm 2013	PERETTI Anthony (MON)		GOMMERS Rajko (NED)		MS	Qualification		4 - 1	11:9 7:11 12:10 12:10 11:9	PERETTI Anthony	
+2013	World Tour Swedish Open Stockholm 2013	KOU Lei (UKR)		GOMMERS Rajko (NED)		MS	Qualification		4 - 0	11:7 11:8 11:7 11:8	KOU Lei	
+2013	World Tour Swedish Open Stockholm 2013	KOU Lei (UKR)		PERETTI Anthony (MON)		MS	Qualification		4 - 0	11:9 11:7 11:4 11:8	KOU Lei	
+2013	World Tour Swedish Open Stockholm 2013	LAMBIET Florent (BEL)		TROMER Laurens (NED)		MS	Qualification		4 - 1	12:10 11:7 12:14 11:8 11:8	LAMBIET Florent	
+2013	World Tour Swedish Open Stockholm 2013	KOSOWSKI Jakub (POL)		TROMER Laurens (NED)		MS	Qualification		4 - 1	11:8 11:1 11:9 10:12 11:9	KOSOWSKI Jakub	
+2013	World Tour Swedish Open Stockholm 2013	KOSOWSKI Jakub (POL)		LAMBIET Florent (BEL)		MS	Qualification		4 - 2	11:8 2:11 9:11 11:5 11:6 11:8	KOSOWSKI Jakub	
+2013	World Tour Swedish Open Stockholm 2013	GONZALEZ Daniel (PUR)		HMAM Adam (TUN)		MS	Qualification		4 - 2	11:8 8:11 11:8 12:14 11:6 11:7	GONZALEZ Daniel	
+2013	World Tour Swedish Open Stockholm 2013	ANTHONY Amalraj (IND)		HMAM Adam (TUN)		MS	Qualification		4 - 2	8:11 11:3 11:8 11:8 9:11 11:7	ANTHONY Amalraj	
+2013	World Tour Swedish Open Stockholm 2013	ANTHONY Amalraj (IND)		GONZALEZ Daniel (PUR)		MS	Qualification		4 - 2	13:11 11:9 11:4 9:11 8:11 11:3	ANTHONY Amalraj	
+2013	World Tour Swedish Open Stockholm 2013	BAJGER Ondrej (CZE)		HEDLUND Jesper (SWE)		MS	Qualification		4 - 2	11:5 12:10 1:11 7:11 11:5 11:9	BAJGER Ondrej	
+2013	World Tour Swedish Open Stockholm 2013	LEE Chia-Sheng (TPE)		HEDLUND Jesper (SWE)		MS	Qualification		2 - 4	11:3 11:7 3:11 8:11 5:11 10:12	HEDLUND Jesper	
+2013	World Tour Swedish Open Stockholm 2013	LEE Chia-Sheng (TPE)		BAJGER Ondrej (CZE)		MS	Qualification		4 - 2	11:2 11:9 9:11 11:5 9:11 11:3	LEE Chia-Sheng	
+2013	World Tour Swedish Open Stockholm 2013	IONESCU Ovidiu (ROU)		MUHLBACH Hermann (LUX)		MS	Qualification		4 - 3	10:12 11:4 9:11 11:6 8:11 11:6 11:9	IONESCU Ovidiu	
+2013	World Tour Swedish Open Stockholm 2013	LU Po-Hsien (TPE)		HACI Halil (TUR)		MS	Qualification		4 - 0	11:6 11:9 11:5 11:4	LU Po-Hsien	
+2013	World Tour Swedish Open Stockholm 2013	DURAN Marc (ESP)		HACI Halil (TUR)		MS	Qualification		4 - 0	11:4 11:8 11:4 11:5	DURAN Marc	
+2013	World Tour Swedish Open Stockholm 2013	DURAN Marc (ESP)		LU Po-Hsien (TPE)		MS	Qualification		4 - 0	11:9 11:9 12:10 11:3	DURAN Marc	
+2013	World Tour Swedish Open Stockholm 2013	SMIRNOV Aleksandr (EST)		PFEFFER Simon (AUT)		MS	Qualification		1 - 4	6:11 9:11 13:11 8:11 8:11	PFEFFER Simon	
+2013	World Tour Swedish Open Stockholm 2013	LORENTZ Romain (FRA)		PFEFFER Simon (AUT)		MS	Qualification		4 - 3	3:11 11:13 13:15 11:3 11:4 11:7 11:8	LORENTZ Romain	
+2013	World Tour Swedish Open Stockholm 2013	LORENTZ Romain (FRA)		SMIRNOV Aleksandr (EST)		MS	Qualification		4 - 0	11:8 11:7 11:2 11:8	LORENTZ Romain	
+2013	World Tour Swedish Open Stockholm 2013	ARVIDSSON Simon (SWE)		RASMUSSEN Tobias (DEN)		MS	Qualification		4 - 2	15:13 11:9 8:11 7:11 13:11 11:2	ARVIDSSON Simon	
+2013	World Tour Swedish Open Stockholm 2013	LE BRETON Thomas (FRA)		RASMUSSEN Tobias (DEN)		MS	Qualification		4 - 1	11:4 11:8 9:11 11:8 11:7	LE BRETON Thomas	
+2013	World Tour Swedish Open Stockholm 2013	LE BRETON Thomas (FRA)		ARVIDSSON Simon (SWE)		MS	Qualification		1 - 4	10:12 8:11 5:11 11:8 9:11	ARVIDSSON Simon	
+2013	World Tour Swedish Open Stockholm 2013	CHUMAKOU Dmitry (BLR)		RANEFUR Elias (SWE)		MS	Qualification		4 - 2	7:11 8:11 11:2 11:7 16:14 11:6	CHUMAKOU Dmitry	
+2013	World Tour Swedish Open Stockholm 2013	STOYANOV Niagol (ITA)		RANEFUR Elias (SWE)		MS	Qualification		4 - 2	7:11 11:5 11:7 11:7 8:11 11:7	STOYANOV Niagol	
+2013	World Tour Swedish Open Stockholm 2013	STOYANOV Niagol (ITA)		CHUMAKOU Dmitry (BLR)		MS	Qualification		4 - 2	11:8 11:5 3:11 11:13 11:9 12:10	STOYANOV Niagol	
+2013	World Tour Swedish Open Stockholm 2013	NOVOTA Samuel (SVK)		NIELSEN Claus (DEN)		MS	Qualification		3 - 4	12:14 7:11 11:6 11:6 11:6 5:11 5:11	NIELSEN Claus	
+2013	World Tour Swedish Open Stockholm 2013	PERSSON Jon (SWE)		NIELSEN Claus (DEN)		MS	Qualification		4 - 0	11:9 11:7 11:5 11:5	PERSSON Jon	
+2013	World Tour Swedish Open Stockholm 2013	PERSSON Jon (SWE)		NOVOTA Samuel (SVK)		MS	Qualification		4 - 1	8:11 11:7 13:11 11:8 11:7	PERSSON Jon	
+2013	World Tour Swedish Open Stockholm 2013	TRAN Anthony (SWE)		PRADELLE Quentin (FRA)		MS	Qualification		4 - 0	11:0 11:3 11:6 11:8	TRAN Anthony	
+2013	World Tour Swedish Open Stockholm 2013	BUROV Viacheslav (RUS)		PRADELLE Quentin (FRA)		MS	Qualification		4 - 1	11:7 11:4 12:14 11:9 11:9	BUROV Viacheslav	
+2013	World Tour Swedish Open Stockholm 2013	BUROV Viacheslav (RUS)		TRAN Anthony (SWE)		MS	Qualification		4 - 1	12:10 4:11 11:9 11:9 11:6	BUROV Viacheslav	
+2013	World Tour Swedish Open Stockholm 2013	WANG Timothy (USA)		BERGLUND Simon (SWE)		MS	Qualification		4 - 3	11:3 7:11 12:10 11:5 6:11 8:11 11:7	WANG Timothy	
+2013	World Tour Swedish Open Stockholm 2013	DEVOS Robin (BEL)		BERGLUND Simon (SWE)		MS	Qualification		4 - 0	11:6 11:8 11:8 11:5	DEVOS Robin	
+2013	World Tour Swedish Open Stockholm 2013	DEVOS Robin (BEL)		WANG Timothy (USA)		MS	Qualification		4 - 1	11:8 11:8 11:5 7:11 11:9	DEVOS Robin	
+2013	World Tour Swedish Open Stockholm 2013	BRODD Viktor (SWE)		LINDHOLM Eskil (NOR)		MS	Qualification		4 - 2	5:11 11:7 7:11 11:7 14:12 11:5	BRODD Viktor	
+2013	World Tour Swedish Open Stockholm 2013	DURANSPAHIC Admir (BIH)		LINDHOLM Eskil (NOR)		MS	Qualification		4 - 0	11:8 11:9 11:8 11:6	DURANSPAHIC Admir	
+2013	World Tour Swedish Open Stockholm 2013	DURANSPAHIC Admir (BIH)		BRODD Viktor (SWE)		MS	Qualification		0 - 4	9:11 8:11 3:11 6:11	BRODD Viktor	
+2013	World Tour Swedish Open Stockholm 2013	RASMUSSEN Morten (DEN)		CAMERON Niall (SCO)		MS	Qualification		4 - 0	11:6 12:10 11:4 11:5	RASMUSSEN Morten	
+2013	World Tour Swedish Open Stockholm 2013	OVERSJO Mattias (SWE)		CAMERON Niall (SCO)		MS	Qualification		4 - 0	11:6 11:3 11:7 13:11	OVERSJO Mattias	
+2013	World Tour Swedish Open Stockholm 2013	OVERSJO Mattias (SWE)		RASMUSSEN Morten (DEN)		MS	Qualification		4 - 3	12:14 11:8 11:7 15:17 11:3 7:11 11:8	OVERSJO Mattias	
+2013	World Tour Swedish Open Stockholm 2013	ASSAR Khalid (EGY)		RONNEBERG Lars (NOR)		MS	Qualification		4 - 2	11:6 8:11 11:13 11:1 11:6 11:6	ASSAR Khalid	
+2013	World Tour Swedish Open Stockholm 2013	NORDBERG Hampus (SWE)		RONNEBERG Lars (NOR)		MS	Qualification		4 - 2	10:12 11:4 11:8 11:6 4:11 11:4	NORDBERG Hampus	
+2013	World Tour Swedish Open Stockholm 2013	NORDBERG Hampus (SWE)		ASSAR Khalid (EGY)		MS	Qualification		4 - 0	13:11 11:5 11:6 14:12	NORDBERG Hampus	
+2013	World Tour Swedish Open Stockholm 2013	RECH DALDOSSO Marco (ITA)		HANSEN Sven (LUX)		MS	Qualification		4 - 0	11:8 11:7 12:10 11:6	RECH DALDOSSO Marco	
+2013	World Tour Swedish Open Stockholm 2013	STERNBERG Kasper (DEN)		HANSEN Sven (LUX)		MS	Qualification		4 - 0	11:4 11:5 11:8 11:7	STERNBERG Kasper	
+2013	World Tour Swedish Open Stockholm 2013	STERNBERG Kasper (DEN)		RECH DALDOSSO Marco (ITA)		MS	Qualification		4 - 0	11:6 11:8 11:6 11:7	STERNBERG Kasper	
+2013	World Tour Swedish Open Stockholm 2013	ANDERSSON Harald (SWE)		LORENZOTTI Gonzalo (URU)		MS	Qualification		4 - 0	11:5 11:8 11:5 11:6	ANDERSSON Harald	
+2013	World Tour Swedish Open Stockholm 2013	NUYTINCK Cedric (BEL)		LORENZOTTI Gonzalo (URU)		MS	Qualification		4 - 0	11:5 11:5 11:6 11:5	NUYTINCK Cedric	
+2013	World Tour Swedish Open Stockholm 2013	NUYTINCK Cedric (BEL)		ANDERSSON Harald (SWE)		MS	Qualification		1 - 4	6:11 11:6 6:11 10:12 4:11	ANDERSSON Harald	
+2013	World Tour Swedish Open Stockholm 2013	GNANASEKARAN Sathiyan (IND)		SKUCAS Matas (LTU)		MS	Qualification		4 - 0	11:9 11:5 11:6 11:7	GNANASEKARAN Sathiyan	
+2013	World Tour Swedish Open Stockholm 2013	SZOCS Hunor (ROU)		SKUCAS Matas (LTU)		MS	Qualification		4 - 0	11:7 11:6 11:6 11:8	SZOCS Hunor	
+2013	World Tour Swedish Open Stockholm 2013	SZOCS Hunor (ROU)		GNANASEKARAN Sathiyan (IND)		MS	Qualification		4 - 1	3:11 11:9 11:4 11:9 11:8	SZOCS Hunor	
+2013	World Tour Swedish Open Stockholm 2013	ROBLES Alvaro (ESP)		ERIKSSON Anders (SWE)		MS	Qualification		3 - 4	14:12 8:11 11:4 11:13 11:7 8:11 4:11	ERIKSSON Anders	
+2013	World Tour Swedish Open Stockholm 2013	RUMGAY Gavin (SCO)		ERIKSSON Anders (SWE)		MS	Qualification		4 - 0	11:9 11:6 11:9 11:7	RUMGAY Gavin	
+2013	World Tour Swedish Open Stockholm 2013	RUMGAY Gavin (SCO)		ROBLES Alvaro (ESP)		MS	Qualification		2 - 4	5:11 9:11 11:6 9:11 11:9 8:11	ROBLES Alvaro
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 2 of 3 Total: 287
+
+Start
+Prev
+1
+2
+3
+Next
+End
+2013	World Tour Swedish Open Stockholm 2013	RONNEBERG Espen (NOR)		OZTURK Ozgun (TUR)		MS	Qualification		4 - 1	9:11 11:9 11:5 11:9 11:5	RONNEBERG Espen	
+2013	World Tour Swedish Open Stockholm 2013	AKERSTROM Fabian (SWE)		OZTURK Ozgun (TUR)		MS	Qualification		4 - 0	11:5 11:8 11:8 11:4	AKERSTROM Fabian	
+2013	World Tour Swedish Open Stockholm 2013	AKERSTROM Fabian (SWE)		RONNEBERG Espen (NOR)		MS	Qualification		3 - 4	9:11 11:6 13:15 8:11 13:11 11:4 8:11	RONNEBERG Espen	
+2013	World Tour Swedish Open Stockholm 2013	ROY Soumyadeep (IND)		JIMENEZ Ricardo (PUR)		MS	Qualification		4 - 0	11:8 11:7 11:7 11:6	ROY Soumyadeep	
+2013	World Tour Swedish Open Stockholm 2013	CANTERO Jesus (ESP)		JIMENEZ Ricardo (PUR)		MS	Qualification		4 - 3	11:3 11:4 9:11 8:11 6:11 11:5 11:6	CANTERO Jesus	
+2013	World Tour Swedish Open Stockholm 2013	CANTERO Jesus (ESP)		ROY Soumyadeep (IND)		MS	Qualification		4 - 0	12:10 11:6 11:9 11:9	CANTERO Jesus	
+2013	World Tour Swedish Open Stockholm 2013	TORNKVIST Andreas (SWE)		MAMIA Thameur (TUN)		MS	Qualification		4 - 0	11:7 11:3 11:5 11:2	TORNKVIST Andreas	
+2013	World Tour Swedish Open Stockholm 2013	OSHIMA Yuya (JPN)		MAMIA Thameur (TUN)		MS	Qualification		4 - 0	11:2 11:5 11:8 11:9	OSHIMA Yuya	
+2013	World Tour Swedish Open Stockholm 2013	OSHIMA Yuya (JPN)		TORNKVIST Andreas (SWE)		MS	Qualification		4 - 1	11:13 15:13 11:7 11:8 11:8	OSHIMA Yuya	
+2013	World Tour Swedish Open Stockholm 2013	PETIOT Jeremy (FRA)		KOVAC Borna (CRO)		MS	Qualification		4 - 2	11:3 11:5 8:11 14:12 11:13 11:9	PETIOT Jeremy	
+2013	World Tour Swedish Open Stockholm 2013	OUAICHE Stephane (ALG)		DILLING Andreas (DEN)		MS	Qualification		4 - 0	11:3 11:3 11:8 11:7	OUAICHE Stephane	
+2013	World Tour Swedish Open Stockholm 2013	DESAI Harmeet (IND)		DILLING Andreas (DEN)		MS	Qualification		4 - 1	11:8 11:8 11:8 11:13 11:7	DESAI Harmeet	
+2013	World Tour Swedish Open Stockholm 2013	DESAI Harmeet (IND)		OUAICHE Stephane (ALG)		MS	Qualification		2 - 4	5:11 8:11 11:6 11:9 2:11 8:11	OUAICHE Stephane	
+2013	World Tour Swedish Open Stockholm 2013	KOJIC Frane (CRO)		JEAN Lauric (BEL)		MS	Qualification		4 - 0	11:2 11:7 13:11 11:6	KOJIC Frane	
+2013	World Tour Swedish Open Stockholm 2013	SHETTY Sanil (IND)		SHEVCHENKO Semen (RUS)		MS	Qualification		3 - 4	8:11 14:16 11:7 11:6 12:10 5:11 12:14	SHEVCHENKO Semen	
+2013	World Tour Swedish Open Stockholm 2013	BROSSIER Benjamin (FRA)		SHEVCHENKO Semen (RUS)		MS	Qualification		4 - 2	11:6 11:6 11:13 2:11 11:5 11:4	BROSSIER Benjamin	
+2013	World Tour Swedish Open Stockholm 2013	BROSSIER Benjamin (FRA)		SHETTY Sanil (IND)		MS	Qualification		4 - 1	11:5 11:8 12:10 9:11 14:12	BROSSIER Benjamin	
+2013	World Tour Swedish Open Stockholm 2013	JOST Frederick (GER)		PETRUKHIN Evgeny (RUS)		MS	Qualification		4 - 1	11:5 11:7 9:11 11:4 11:6	JOST Frederick	
+2013	World Tour Swedish Open Stockholm 2013	HIRANO Yuki (JPN)		PETRUKHIN Evgeny (RUS)		MS	Qualification		4 - 0	11:7 12:10 11:8 14:12	HIRANO Yuki	
+2013	World Tour Swedish Open Stockholm 2013	HIRANO Yuki (JPN)		JOST Frederick (GER)		MS	Qualification		4 - 1	11:4 20:18 6:11 11:6 11:9	HIRANO Yuki	
+2013	World Tour Swedish Open Stockholm 2013	KNIGHT Darius (ENG)		FRANZEN Alexander (SWE)		MS	Qualification		4 - 0	13:11 11:6 11:8 11:7	KNIGHT Darius	
+2013	World Tour Swedish Open Stockholm 2013	HACHARD Antoine (FRA)		FRANZEN Alexander (SWE)		MS	Qualification		4 - 2	6:11 11:7 11:9 11:8 2:11 11:7	HACHARD Antoine	
+2013	World Tour Swedish Open Stockholm 2013	HACHARD Antoine (FRA)		KNIGHT Darius (ENG)		MS	Qualification		4 - 1	11:9 11:7 7:11 11:7 11:8	HACHARD Antoine	
+2013	World Tour Swedish Open Stockholm 2013	KLEPRLIK Jakub (CZE)		HAZZAA Walaaeldin (EGY)		MS	Qualification		4 - 1	11:6 7:11 11:3 11:5 11:9	KLEPRLIK Jakub	
+2013	World Tour Swedish Open Stockholm 2013	SODERLUND Hampus (SWE)		SCHAFFER Daniel (HUN)		MS	Qualification		4 - 0	16:14 11:6 11:6 13:11	SODERLUND Hampus	
+2013	World Tour Swedish Open Stockholm 2013	SODERLUND Hampus (SWE)		HAZZAA Walaaeldin (EGY)		MS	Qualification		4 - 0	11:5 11:5 11:6 11:8	SODERLUND Hampus	
+2013	World Tour Swedish Open Stockholm 2013	KLEPRLIK Jakub (CZE)		SCHAFFER Daniel (HUN)		MS	Qualification		4 - 1	11:6 11:6 12:14 12:10 11:5	KLEPRLIK Jakub	
+2013	World Tour Swedish Open Stockholm 2013	SODERLUND Hampus (SWE)		KLEPRLIK Jakub (CZE)		MS	Qualification		4 - 3	7:11 8:11 11:7 11:3 9:11 11:6 14:12	SODERLUND Hampus	
+2013	World Tour Swedish Open Stockholm 2013	HAZZAA Walaaeldin (EGY)		SCHAFFER Daniel (HUN)		MS	Qualification		2 - 4	11:9 6:11 7:11 12:10 5:11 9:11	SCHAFFER Daniel	
+2013	World Tour Swedish Open Stockholm 2013	XU Xin (CHN)		TORNKVIST Andreas (SWE)		MS	Main Draw	R64	4 - 2	11:9 4:11 11:4 8:11 11:6 11:5	XU Xin	
+2013	World Tour Swedish Open Stockholm 2013	OUAICHE Stephane (ALG)		KARLSSON Kristian (SWE)		MS	Main Draw	R64	4 - 3	11:5 11:5 9:11 9:11 9:11 11:9 11:8	OUAICHE Stephane	
+2013	World Tour Swedish Open Stockholm 2013	HUANG Sheng-Sheng (TPE)		GHOSH Soumyajit (IND)		MS	Main Draw	R64	0 - 4	9:11 2:11 8:11 14:16	GHOSH Soumyajit	
+2013	World Tour Swedish Open Stockholm 2013	RONNEBERG Espen (NOR)		MATSUDAIRA Kenji (JPN)		MS	Main Draw	R64	0 - 4	6:11 6:11 6:11 4:11	MATSUDAIRA Kenji	
+2013	World Tour Swedish Open Stockholm 2013	LEBESSON Emmanuel (FRA)		SZOCS Hunor (ROU)		MS	Main Draw	R64	4 - 2	5:11 11:9 11:8 8:11 11:9 11:3	LEBESSON Emmanuel	
+2013	World Tour Swedish Open Stockholm 2013	LEE Chia-Sheng (TPE)		BOBOCICA Mihai (ITA)		MS	Main Draw	R64	4 - 1	11:7 8:11 11:8 11:9 11:9	LEE Chia-Sheng	
+2013	World Tour Swedish Open Stockholm 2013	SIRUCEK Pavel (CZE)		BRODD Viktor (SWE)		MS	Main Draw	R64	4 - 3	17:15 11:9 12:10 5:11 4:11 6:11 11:8	SIRUCEK Pavel	
+2013	World Tour Swedish Open Stockholm 2013	ANDERSSON Harald (SWE)		TAKAKIWA Taku (JPN)		MS	Main Draw	R64	3 - 4	11:9 11:9 11:5 7:11 8:11 7:11 11:13	TAKAKIWA Taku	
+2013	World Tour Swedish Open Stockholm 2013	ZHOU Yu (CHN)		ARVIDSSON Simon (SWE)		MS	Main Draw	R64	4 - 0	11:4 11:9 12:10 11:6	ZHOU Yu	
+2013	World Tour Swedish Open Stockholm 2013	NORDBERG Hampus (SWE)		SALIFOU Abdel-Kader (BEN)		MS	Main Draw	R64	4 - 2	11:5 11:8 5:11 11:3 8:11 11:9	NORDBERG Hampus	
+2013	World Tour Swedish Open Stockholm 2013	ROBINOT Quentin (FRA)		KOSOWSKI Jakub (POL)		MS	Main Draw	R64	2 - 4	11:7 6:11 9:11 13:11 9:11 6:11	KOSOWSKI Jakub	
+2013	World Tour Swedish Open Stockholm 2013	IONESCU Ovidiu (ROU)		LUNDQVIST Jens (SWE)		MS	Main Draw	R64	2 - 4	11:2 10:12 11:7 7:11 6:11 7:11	LUNDQVIST Jens	
+2013	World Tour Swedish Open Stockholm 2013	MONTEIRO Joao (POR)		OVERSJO Mattias (SWE)		MS	Main Draw	R64	4 - 1	11:8 11:8 3:11 11:6 11:6	MONTEIRO Joao	
+2013	World Tour Swedish Open Stockholm 2013	DEVOS Robin (BEL)		TSUBOI Gustavo (BRA)		MS	Main Draw	R64	2 - 4	7:11 11:9 11:8 8:11 5:11 7:11	TSUBOI Gustavo	
+2013	World Tour Swedish Open Stockholm 2013	BENTSEN Allan (DEN)		CANTERO Jesus (ESP)		MS	Main Draw	R64	4 - 3	9:11 11:6 11:7 11:6 9:11 8:11 15:13	BENTSEN Allan	
+2013	World Tour Swedish Open Stockholm 2013	SODERLUND Hampus (SWE)		FAN Zhendong (CHN)		MS	Main Draw	R64	2 - 4	11:7 3:11 2:11 4:11 11:8 11:13	FAN Zhendong	
+2013	World Tour Swedish Open Stockholm 2013	CHEN Chien-An (TPE)		OSHIMA Yuya (JPN)		MS	Main Draw	R64	4 - 1	11:9 11:5 4:11 11:6 11:7	CHEN Chien-An	
+2013	World Tour Swedish Open Stockholm 2013	PERSSON Jon (SWE)		SAIVE Jean-Michel (BEL)		MS	Main Draw	R64	4 - 3	11:6 6:11 11:7 5:11 11:7 4:11 11:8	PERSSON Jon	
+2013	World Tour Swedish Open Stockholm 2013	VANG Bora (TUR)		RUMGAY Gavin (SCO)		MS	Main Draw	R64	4 - 0	12:10 11:6 12:10 11:6	VANG Bora	
+2013	World Tour Swedish Open Stockholm 2013	HIRANO Yuki (JPN)		GIONIS Panagiotis (GRE)		MS	Main Draw	R64	1 - 4	7:11 10:12 16:14 6:11 8:11	GIONIS Panagiotis	
+2013	World Tour Swedish Open Stockholm 2013	MACHADO Carlos (ESP)		KOJIC Frane (CRO)		MS	Main Draw	R64	2 - 4	10:12 11:7 10:12 8:11 11:7 8:11	KOJIC Frane	
+2013	World Tour Swedish Open Stockholm 2013	LORENTZ Romain (FRA)		LI Ahmet (TUR)		MS	Main Draw	R64	3 - 4	13:11 15:13 9:11 9:11 11:5 8:11 8:11	LI Ahmet	
+2013	World Tour Swedish Open Stockholm 2013	HUNG Tzu-Hsiang (TPE)		BUROV Viacheslav (RUS)		MS	Main Draw	R64	4 - 0	11:7 11:9 11:7 11:7	HUNG Tzu-Hsiang	
+2013	World Tour Swedish Open Stockholm 2013	STERNBERG Kasper (DEN)		CHAN Kazuhiro (JPN)		MS	Main Draw	R64	4 - 2	8:11 8:11 11:8 11:9 11:8 11:7	STERNBERG Kasper	
+2013	World Tour Swedish Open Stockholm 2013	LIU Yi (CHN)		ANTHONY Amalraj (IND)		MS	Main Draw	R64	4 - 1	11:9 8:11 11:6 11:4 11:9	LIU Yi	
+2013	World Tour Swedish Open Stockholm 2013	KUZMIN Fedor (RUS)		KORBEL Petr (CZE)		MS	Main Draw	R64	3 - 4	9:11 12:10 8:11 12:14 11:9 11:9 9:11	KORBEL Petr	
+2013	World Tour Swedish Open Stockholm 2013	SHANG Kun (CHN)		HACHARD Antoine (FRA)		MS	Main Draw	R64	4 - 1	7:11 12:10 11:4 11:7 11:5	SHANG Kun	
+2013	World Tour Swedish Open Stockholm 2013	DURAN Marc (ESP)		ASSAR Omar (EGY)		MS	Main Draw	R64	0 - 4	13:15 4:11 5:11 5:11	ASSAR Omar	
+2013	World Tour Swedish Open Stockholm 2013	GERELL Par (SWE)		KOU Lei (UKR)		MS	Main Draw	R64	4 - 0	11:3 11:3 11:9 11:8	GERELL Par	
+2013	World Tour Swedish Open Stockholm 2013	PETIOT Jeremy (FRA)		CHIANG Hung-Chieh (TPE)		MS	Main Draw	R64	4 - 3	5:11 11:7 13:11 11:7 9:11 6:11 14:12	PETIOT Jeremy	
+2013	World Tour Swedish Open Stockholm 2013	PROKOPCOV Dmitrij (CZE)		BROSSIER Benjamin (FRA)		MS	Main Draw	R64	4 - 0	11:2 11:9 12:10 13:11	PROKOPCOV Dmitrij	
+2013	World Tour Swedish Open Stockholm 2013	STOYANOV Niagol (ITA)		YAN An (CHN)		MS	Main Draw	R64	0 - 4	8:11 5:11 5:11 9:11	YAN An	
+2013	World Tour Swedish Open Stockholm 2013	XU Xin (CHN)		OUAICHE Stephane (ALG)		MS	Main Draw	R32	4 - 0	11:8 11:6 11:3 11:7	XU Xin	
+2013	World Tour Swedish Open Stockholm 2013	GHOSH Soumyajit (IND)		MATSUDAIRA Kenji (JPN)		MS	Main Draw	R32	1 - 4	11:9 8:11 9:11 7:11 7:11	MATSUDAIRA Kenji	
+2013	World Tour Swedish Open Stockholm 2013	LEBESSON Emmanuel (FRA)		LEE Chia-Sheng (TPE)		MS	Main Draw	R32	4 - 0	12:10 11:4 11:7 12:10	LEBESSON Emmanuel	
+2013	World Tour Swedish Open Stockholm 2013	SIRUCEK Pavel (CZE)		TAKAKIWA Taku (JPN)		MS	Main Draw	R32	1 - 4	11:8 7:11 6:11 9:11 9:11	TAKAKIWA Taku	
+2013	World Tour Swedish Open Stockholm 2013	ZHOU Yu (CHN)		NORDBERG Hampus (SWE)		MS	Main Draw	R32	4 - 3	11:6 11:5 11:3 12:14 9:11 10:12 14:12	ZHOU Yu	
+2013	World Tour Swedish Open Stockholm 2013	KOSOWSKI Jakub (POL)		LUNDQVIST Jens (SWE)		MS	Main Draw	R32	1 - 4	12:14 11:8 9:11 6:11 5:11	LUNDQVIST Jens	
+2013	World Tour Swedish Open Stockholm 2013	MONTEIRO Joao (POR)		TSUBOI Gustavo (BRA)		MS	Main Draw	R32	3 - 4	11:6 8:11 12:10 8:11 11:8 8:11 7:11	TSUBOI Gustavo	
+2013	World Tour Swedish Open Stockholm 2013	BENTSEN Allan (DEN)		FAN Zhendong (CHN)		MS	Main Draw	R32	1 - 4	11:4 8:11 6:11 7:11 9:11	FAN Zhendong	
+2013	World Tour Swedish Open Stockholm 2013	CHEN Chien-An (TPE)		PERSSON Jon (SWE)		MS	Main Draw	R32	4 - 3	7:11 11:6 8:11 11:2 5:11 13:11 12:10	CHEN Chien-An	
+2013	World Tour Swedish Open Stockholm 2013	VANG Bora (TUR)		GIONIS Panagiotis (GRE)		MS	Main Draw	R32	2 - 4	9:11 11:13 11:9 7:11 11:7 6:11	GIONIS Panagiotis	
+2013	World Tour Swedish Open Stockholm 2013	KOJIC Frane (CRO)		LI Ahmet (TUR)		MS	Main Draw	R32	0 - 4	7:11 9:11 2:11 5:11	LI Ahmet	
+2013	World Tour Swedish Open Stockholm 2013	HUNG Tzu-Hsiang (TPE)		STERNBERG Kasper (DEN)		MS	Main Draw	R32	4 - 0	11:7 12:10 11:9 11:8	HUNG Tzu-Hsiang	
+2013	World Tour Swedish Open Stockholm 2013	LIU Yi (CHN)		KORBEL Petr (CZE)		MS	Main Draw	R32	2 - 4	11:4 4:11 9:11 9:11 11:7 3:11	KORBEL Petr	
+2013	World Tour Swedish Open Stockholm 2013	SHANG Kun (CHN)		ASSAR Omar (EGY)		MS	Main Draw	R32	4 - 1	11:9 11:5 11:7 8:11 11:2	SHANG Kun	
+2013	World Tour Swedish Open Stockholm 2013	GERELL Par (SWE)		PETIOT Jeremy (FRA)		MS	Main Draw	R32	4 - 1	13:11 11:7 11:8 8:11 11:9	GERELL Par	
+2013	World Tour Swedish Open Stockholm 2013	PROKOPCOV Dmitrij (CZE)		YAN An (CHN)		MS	Main Draw	R32	1 - 4	11:7 8:11 8:11 3:11 3:11	YAN An	
+2013	World Tour Swedish Open Stockholm 2013	XU Xin (CHN)		MATSUDAIRA Kenji (JPN)		MS	Main Draw	R16	4 - 1	11:3 11:7 11:6 5:11 11:4	XU Xin	
+2013	World Tour Swedish Open Stockholm 2013	LEBESSON Emmanuel (FRA)		TAKAKIWA Taku (JPN)		MS	Main Draw	R16	1 - 4	3:11 5:11 7:11 11:8 8:11	TAKAKIWA Taku	
+2013	World Tour Swedish Open Stockholm 2013	ZHOU Yu (CHN)		LUNDQVIST Jens (SWE)		MS	Main Draw	R16	4 - 2	11:6 11:8 6:11 11:6 6:11 11:6	ZHOU Yu	
+2013	World Tour Swedish Open Stockholm 2013	TSUBOI Gustavo (BRA)		FAN Zhendong (CHN)		MS	Main Draw	R16	2 - 4	12:10 4:11 7:11 11:8 6:11 8:11	FAN Zhendong	
+2013	World Tour Swedish Open Stockholm 2013	CHEN Chien-An (TPE)		GIONIS Panagiotis (GRE)		MS	Main Draw	R16	1 - 4	11:9 8:11 7:11 7:11 9:11	GIONIS Panagiotis	
+2013	World Tour Swedish Open Stockholm 2013	LI Ahmet (TUR)		HUNG Tzu-Hsiang (TPE)		MS	Main Draw	R16	2 - 4	9:11 11:9 11:5 5:11 15:17 9:11	HUNG Tzu-Hsiang	
+2013	World Tour Swedish Open Stockholm 2013	KORBEL Petr (CZE)		SHANG Kun (CHN)		MS	Main Draw	R16	0 - 4	14:16 5:11 8:11 4:11	SHANG Kun	
+2013	World Tour Swedish Open Stockholm 2013	GERELL Par (SWE)		YAN An (CHN)		MS	Main Draw	R16	0 - 4	7:11 7:11 12:14 3:11	YAN An	
+2013	World Tour Swedish Open Stockholm 2013	XU Xin (CHN)		TAKAKIWA Taku (JPN)		MS	Main Draw	QuarterFinal	4 - 1	13:11 11:3 11:6 8:11 11:6	XU Xin	
+2013	World Tour Swedish Open Stockholm 2013	ZHOU Yu (CHN)		FAN Zhendong (CHN)		MS	Main Draw	QuarterFinal	3 - 4	11:8 12:10 6:11 5:11 5:11 11:5 10:12	FAN Zhendong	
+2013	World Tour Swedish Open Stockholm 2013	GIONIS Panagiotis (GRE)		HUNG Tzu-Hsiang (TPE)		MS	Main Draw	QuarterFinal	4 - 1	11:7 11:9 10:12 11:7 11:9	GIONIS Panagiotis	
+2013	World Tour Swedish Open Stockholm 2013	SHANG Kun (CHN)		YAN An (CHN)		MS	Main Draw	QuarterFinal	1 - 4	11:8 9:11 7:11 6:11 7:11	YAN An	
+2013	World Tour Swedish Open Stockholm 2013	XU Xin (CHN)		FAN Zhendong (CHN)		MS	Main Draw	SemiFinal	3 - 4	11:9 11:7 5:11 8:11 11:9 4:11 9:11	FAN Zhendong	
+2013	World Tour Swedish Open Stockholm 2013	GIONIS Panagiotis (GRE)		YAN An (CHN)		MS	Main Draw	SemiFinal	0 - 4	4:11 9:11 7:11 5:11	YAN An	
+2013	World Tour Swedish Open Stockholm 2013	FAN Zhendong (CHN)		YAN An (CHN)		MS	Main Draw	Final	2 - 4	10:12 11:13 11:8 5:11 11:9 6:11	YAN An	
+2013	World Tour Swedish Open Stockholm 2013	SIRUCEK Pavel (CZE)		HEDLUND Jesper (SWE)		U21MS	Main Draw	R32	3 - 2	7:11 11:6 8:11 11:6 16:14	SIRUCEK Pavel	
+2013	World Tour Swedish Open Stockholm 2013	SODERLUND Hampus (SWE)		HIRANO Yuki (JPN)		U21MS	Main Draw	R32	3 - 1	6:11 11:8 14:12 12:10	SODERLUND Hampus	
+2013	World Tour Swedish Open Stockholm 2013	BROSSIER Benjamin (FRA)		LAMBIET Florent (BEL)		U21MS	Main Draw	R32	3 - 1	11:5 11:8 6:11 11:6	BROSSIER Benjamin	
+2013	World Tour Swedish Open Stockholm 2013	LU Po-Hsien (TPE)		LORENTZ Romain (FRA)		U21MS	Main Draw	R32	0 - 3	4:11 8:11 5:11	LORENTZ Romain	
+2013	World Tour Swedish Open Stockholm 2013	GHOSH Soumyajit (IND)		GOMMERS Rajko (NED)		U21MS	Main Draw	R32	0 - 3	1:11 3:11 4:11	GOMMERS Rajko	
+2013	World Tour Swedish Open Stockholm 2013	OUAICHE Stephane (ALG)		KOJIC Frane (CRO)		U21MS	Main Draw	R32	1 - 3	7:11 11:8 5:11 4:11	KOJIC Frane	
+2013	World Tour Swedish Open Stockholm 2013	NUYTINCK Cedric (BEL)		GORMAN Viktor (SWE)		U21MS	Main Draw	R32	3 - 2	11:3 11:8 10:12 11:13 12:10	NUYTINCK Cedric	
+2013	World Tour Swedish Open Stockholm 2013	GNANASEKARAN Sathiyan (IND)		ROBINOT Quentin (FRA)		U21MS	Main Draw	R32	1 - 3	9:11 11:7 9:11 9:11	ROBINOT Quentin
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 3 of 3 Total: 287
+
+Start
+Prev
+1
+2
+3
+Next
+End
+2013	World Tour Swedish Open Stockholm 2013	HUNG Tzu-Hsiang (TPE)		MCBEATH David (ENG)		U21MS	Main Draw	R32	3 - 0	11:6 11:8 11:7	HUNG Tzu-Hsiang	
+2013	World Tour Swedish Open Stockholm 2013	RASMUSSEN Tobias (DEN)		DEVOS Robin (BEL)		U21MS	Main Draw	R32	1 - 3	10:12 12:10 7:11 10:12	DEVOS Robin	
+2013	World Tour Swedish Open Stockholm 2013	OSHIMA Yuya (JPN)		JOST Frederick (GER)		U21MS	Main Draw	R32	3 - 1	9:11 11:3 11:9 11:5	OSHIMA Yuya	
+2013	World Tour Swedish Open Stockholm 2013	NOVOTA Samuel (SVK)		LE BRETON Thomas (FRA)		U21MS	Main Draw	R32	0 - 3	9:11 7:11 8:11	LE BRETON Thomas	
+2013	World Tour Swedish Open Stockholm 2013	LEE Chia-Sheng (TPE)		RECH DALDOSSO Marco (ITA)		U21MS	Main Draw	R32	2 - 3	4:11 10:12 11:4 11:8 9:11	RECH DALDOSSO Marco	
+2013	World Tour Swedish Open Stockholm 2013	BAJGER Ondrej (CZE)		DESAI Harmeet (IND)		U21MS	Main Draw	R32	0 - 3	3:11 9:11 8:11	DESAI Harmeet	
+2013	World Tour Swedish Open Stockholm 2013	SZOCS Hunor (ROU)		JEAN Lauric (BEL)		U21MS	Main Draw	R32	2 - 3	11:3 11:7 7:11 9:11 5:11	JEAN Lauric	
+2013	World Tour Swedish Open Stockholm 2013	OOSTWOUDER Ewout (NED)		GROTH Jonathan (DEN)		U21MS	Main Draw	R32	3 - 1	11:8 12:10 6:11 11:9	OOSTWOUDER Ewout	
+2013	World Tour Swedish Open Stockholm 2013	SIRUCEK Pavel (CZE)		SODERLUND Hampus (SWE)		U21MS	Main Draw	R16	3 - 2	11:13 11:7 11:7 8:11 12:10	SIRUCEK Pavel	
+2013	World Tour Swedish Open Stockholm 2013	BROSSIER Benjamin (FRA)		LORENTZ Romain (FRA)		U21MS	Main Draw	R16	0 - 3	4:11 2:11 8:11	LORENTZ Romain	
+2013	World Tour Swedish Open Stockholm 2013	GOMMERS Rajko (NED)		KOJIC Frane (CRO)		U21MS	Main Draw	R16	0 - 3	1:11 5:11 6:11	KOJIC Frane	
+2013	World Tour Swedish Open Stockholm 2013	NUYTINCK Cedric (BEL)		ROBINOT Quentin (FRA)		U21MS	Main Draw	R16	0 - 3	14:16 3:11 4:11	ROBINOT Quentin	
+2013	World Tour Swedish Open Stockholm 2013	HUNG Tzu-Hsiang (TPE)		DEVOS Robin (BEL)		U21MS	Main Draw	R16	3 - 0	11:6 12:10 11:6	HUNG Tzu-Hsiang	
+2013	World Tour Swedish Open Stockholm 2013	OSHIMA Yuya (JPN)		LE BRETON Thomas (FRA)		U21MS	Main Draw	R16	3 - 2	11:7 11:9 10:12 7:11 11:6	OSHIMA Yuya	
+2013	World Tour Swedish Open Stockholm 2013	RECH DALDOSSO Marco (ITA)		DESAI Harmeet (IND)		U21MS	Main Draw	R16	1 - 3	11:9 2:11 9:11 5:11	DESAI Harmeet	
+2013	World Tour Swedish Open Stockholm 2013	JEAN Lauric (BEL)		OOSTWOUDER Ewout (NED)		U21MS	Main Draw	R16	3 - 0	11:9 11:8 11:9	JEAN Lauric	
+2013	World Tour Swedish Open Stockholm 2013	SIRUCEK Pavel (CZE)		LORENTZ Romain (FRA)		U21MS	Main Draw	QuarterFinal	4 - 2	11:6 11:9 13:11 8:11 9:11 12:10	SIRUCEK Pavel	
+2013	World Tour Swedish Open Stockholm 2013	KOJIC Frane (CRO)		ROBINOT Quentin (FRA)		U21MS	Main Draw	QuarterFinal	2 - 4	13:11 7:11 5:11 11:8 7:11 5:11	ROBINOT Quentin	
+2013	World Tour Swedish Open Stockholm 2013	HUNG Tzu-Hsiang (TPE)		OSHIMA Yuya (JPN)		U21MS	Main Draw	QuarterFinal	4 - 3	11:9 11:9 9:11 9:11 11:6 8:11 11:6	HUNG Tzu-Hsiang	
+2013	World Tour Swedish Open Stockholm 2013	DESAI Harmeet (IND)		JEAN Lauric (BEL)		U21MS	Main Draw	QuarterFinal	4 - 3	11:8 8:11 11:9 11:8 14:16 6:11 11:3	DESAI Harmeet	
+2013	World Tour Swedish Open Stockholm 2013	SIRUCEK Pavel (CZE)		ROBINOT Quentin (FRA)		U21MS	Main Draw	SemiFinal	1 - 4	3:11 8:11 3:11 11:8 7:11	ROBINOT Quentin	
+2013	World Tour Swedish Open Stockholm 2013	HUNG Tzu-Hsiang (TPE)		DESAI Harmeet (IND)		U21MS	Main Draw	SemiFinal	4 - 2	11:2 8:11 9:11 11:8 11:8 11:8	HUNG Tzu-Hsiang	
+2013	World Tour Swedish Open Stockholm 2013	ROBINOT Quentin (FRA)		HUNG Tzu-Hsiang (TPE)		U21MS	Main Draw	Final	3 - 4	9:11 12:10 6:11 4:11 11:3 11:8 7:11	HUNG Tzu-Hsiang
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 2 Total: 151
+
+Start
+Prev
+1
+2
+Next
+End
+2013	World Tour Swedish Open Stockholm 2013	OWEN Naomi (WAL)		BERGSTROM Linda (SWE)		WS	Qualification		4 - 0	11:8 17:15 11:8 16:14	OWEN Naomi	
+2013	World Tour Swedish Open Stockholm 2013	MATSUDAIRA Shiho (JPN)		BERGSTROM Linda (SWE)		WS	Qualification		1 - 4	12:10 10:12 9:11 8:11 7:11	BERGSTROM Linda	
+2013	World Tour Swedish Open Stockholm 2013	MATSUDAIRA Shiho (JPN)		OWEN Naomi (WAL)		WS	Qualification		4 - 1	11:7 13:11 8:11 11:7 11:7	MATSUDAIRA Shiho	
+2013	World Tour Swedish Open Stockholm 2013	AGGARWAL Neha (IND)		SABITOVA Valentina (RUS)		WS	Qualification		3 - 4	10:12 11:8 10:12 11:5 11:6 9:11 9:11	SABITOVA Valentina	
+2013	World Tour Swedish Open Stockholm 2013	GU Ruochen (CHN)		SABITOVA Valentina (RUS)		WS	Qualification		4 - 1	7:11 11:6 11:3 11:8 17:15	GU Ruochen	
+2013	World Tour Swedish Open Stockholm 2013	GU Ruochen (CHN)		AGGARWAL Neha (IND)		WS	Qualification		4 - 0	11:8 11:4 11:3 11:7	GU Ruochen	
+2013	World Tour Swedish Open Stockholm 2013	ERMAKOVA Irina (RUS)		CHASSELIN Pauline (FRA)		WS	Qualification		3 - 4	11:1 10:12 11:8 12:14 12:10 9:11 10:12	CHASSELIN Pauline	
+2013	World Tour Swedish Open Stockholm 2013	ISHIGAKI Yuka (JPN)		CHASSELIN Pauline (FRA)		WS	Qualification		4 - 0	11:5 11:8 14:12 11:3	ISHIGAKI Yuka	
+2013	World Tour Swedish Open Stockholm 2013	ISHIGAKI Yuka (JPN)		ERMAKOVA Irina (RUS)		WS	Qualification		4 - 1	5:11 11:8 11:5 11:8 11:7	ISHIGAKI Yuka	
+2013	World Tour Swedish Open Stockholm 2013	MIGOT Marie (FRA)		LUND Josefin (SWE)		WS	Qualification		2 - 4	11:6 8:11 12:10 5:11 2:11 8:11	LUND Josefin	
+2013	World Tour Swedish Open Stockholm 2013	RAMIREZ Sara (ESP)		LUND Josefin (SWE)		WS	Qualification		4 - 0	11:4 11:8 12:10 11:7	RAMIREZ Sara	
+2013	World Tour Swedish Open Stockholm 2013	RAMIREZ Sara (ESP)		MIGOT Marie (FRA)		WS	Qualification		4 - 2	11:1 12:14 11:8 11:3 11:13 12:10	RAMIREZ Sara	
+2013	World Tour Swedish Open Stockholm 2013	ISTRATE Roxana (ROU)		MOKHNACHEVA Svetlana (RUS)		WS	Qualification		4 - 1	11:5 6:11 11:8 15:13 11:7	ISTRATE Roxana	
+2013	World Tour Swedish Open Stockholm 2013	LI Fen (SWE)		MOKHNACHEVA Svetlana (RUS)		WS	Qualification		4 - 0	11:6 11:8 11:2 11:6	LI Fen	
+2013	World Tour Swedish Open Stockholm 2013	LI Fen (SWE)		ISTRATE Roxana (ROU)		WS	Qualification		4 - 0	11:9 11:7 11:5 11:4	LI Fen	
+2013	World Tour Swedish Open Stockholm 2013	SMISTIKOVA Martina (CZE)		ZETTERSTROM Kristina (SWE)		WS	Qualification		4 - 0	11:5 11:5 11:5 11:7	SMISTIKOVA Martina	
+2013	World Tour Swedish Open Stockholm 2013	MIKHAILOVA Polina (RUS)		ZETTERSTROM Kristina (SWE)		WS	Qualification		4 - 0	11:7 11:7 11:7 11:3	MIKHAILOVA Polina	
+2013	World Tour Swedish Open Stockholm 2013	MIKHAILOVA Polina (RUS)		SMISTIKOVA Martina (CZE)		WS	Qualification		4 - 0	11:8 12:10 11:9 11:4	MIKHAILOVA Polina	
+2013	World Tour Swedish Open Stockholm 2013	HSU Hui-Tsun (TPE)		CORDERO Carelyn (PUR)		WS	Qualification		4 - 1	11:9 11:3 12:10 9:11 11:8	HSU Hui-Tsun	
+2013	World Tour Swedish Open Stockholm 2013	ERDELJI Anamaria (SRB)		KALLBERG Christina (SWE)		WS	Qualification		4 - 1	11:4 9:11 11:4 11:4 11:5	ERDELJI Anamaria	
+2013	World Tour Swedish Open Stockholm 2013	ERDELJI Anamaria (SRB)		CORDERO Carelyn (PUR)		WS	Qualification		4 - 0	11:6 11:7 11:6 11:7	ERDELJI Anamaria	
+2013	World Tour Swedish Open Stockholm 2013	HSU Hui-Tsun (TPE)		KALLBERG Christina (SWE)		WS	Qualification		4 - 0	11:7 11:9 11:2 11:3	HSU Hui-Tsun	
+2013	World Tour Swedish Open Stockholm 2013	ERDELJI Anamaria (SRB)		HSU Hui-Tsun (TPE)		WS	Qualification		4 - 1	11:1 7:11 12:10 11:5 12:10	ERDELJI Anamaria	
+2013	World Tour Swedish Open Stockholm 2013	CORDERO Carelyn (PUR)		KALLBERG Christina (SWE)		WS	Qualification		3 - 4	8:11 6:11 11:1 11:7 6:11 11:7 14:16	KALLBERG Christina	
+2013	World Tour Swedish Open Stockholm 2013	DE NUTTE Sarah (LUX)		AGERHOLM Pernille (DEN)		WS	Qualification		4 - 0	11:3 11:7 11:9 11:5	DE NUTTE Sarah	
+2013	World Tour Swedish Open Stockholm 2013	GRUNDISCH Carole (FRA)		WERSALL Caroline (SWE)		WS	Qualification		4 - 0	11:8 11:6 11:6 11:5	GRUNDISCH Carole	
+2013	World Tour Swedish Open Stockholm 2013	GRUNDISCH Carole (FRA)		AGERHOLM Pernille (DEN)		WS	Qualification		4 - 1	11:4 11:2 11:3 6:11 11:4	GRUNDISCH Carole	
+2013	World Tour Swedish Open Stockholm 2013	DE NUTTE Sarah (LUX)		WERSALL Caroline (SWE)		WS	Qualification		4 - 2	11:4 6:11 11:9 7:11 11:5 11:7	DE NUTTE Sarah	
+2013	World Tour Swedish Open Stockholm 2013	GRUNDISCH Carole (FRA)		DE NUTTE Sarah (LUX)		WS	Qualification		4 - 1	11:9 9:11 11:8 11:7 11:8	GRUNDISCH Carole	
+2013	World Tour Swedish Open Stockholm 2013	AGERHOLM Pernille (DEN)		WERSALL Caroline (SWE)		WS	Qualification		1 - 4	4:11 9:11 10:12 12:10 7:11	WERSALL Caroline	
+2013	World Tour Swedish Open Stockholm 2013	YAMADA Jessica (BRA)		MOSKOVITS Daniela (SWE)		WS	Qualification		4 - 1	12:10 5:11 11:8 11:5 11:8	YAMADA Jessica	
+2013	World Tour Swedish Open Stockholm 2013	POLCANOVA Sofia (AUT)		MU Zi (CHN)		WS	Qualification		0 - 4	7:11 3:11 5:11 6:11	MU Zi	
+2013	World Tour Swedish Open Stockholm 2013	POLCANOVA Sofia (AUT)		MOSKOVITS Daniela (SWE)		WS	Qualification		4 - 0	11:9 11:8 11:1 11:8	POLCANOVA Sofia	
+2013	World Tour Swedish Open Stockholm 2013	YAMADA Jessica (BRA)		MU Zi (CHN)		WS	Qualification		0 - 4	4:11 4:11 3:11 6:11	MU Zi	
+2013	World Tour Swedish Open Stockholm 2013	POLCANOVA Sofia (AUT)		YAMADA Jessica (BRA)		WS	Qualification		4 - 1	7:11 11:1 11:7 11:9 11:0	POLCANOVA Sofia	
+2013	World Tour Swedish Open Stockholm 2013	MOSKOVITS Daniela (SWE)		MU Zi (CHN)		WS	Qualification		0 - 4	10:12 6:11 9:11 10:12	MU Zi	
+2013	World Tour Swedish Open Stockholm 2013	NAGYVARADI Mercedes (HUN)		GUNGOR Gokce Nur (TUR)		WS	Qualification		4 - 3	11:3 9:11 9:11 12:10 5:11 12:10 11:3	NAGYVARADI Mercedes	
+2013	World Tour Swedish Open Stockholm 2013	SAKAI Haruka (JPN)		BERGAND Filippa (SWE)		WS	Qualification		4 - 0	11:6 11:4 11:6 11:5	SAKAI Haruka	
+2013	World Tour Swedish Open Stockholm 2013	SAKAI Haruka (JPN)		GUNGOR Gokce Nur (TUR)		WS	Qualification		4 - 0	11:6 11:3 11:3 11:6	SAKAI Haruka	
+2013	World Tour Swedish Open Stockholm 2013	NAGYVARADI Mercedes (HUN)		BERGAND Filippa (SWE)		WS	Qualification		4 - 1	11:5 11:2 11:4 9:11 11:9	NAGYVARADI Mercedes	
+2013	World Tour Swedish Open Stockholm 2013	SAKAI Haruka (JPN)		NAGYVARADI Mercedes (HUN)		WS	Qualification		3 - 4	12:14 8:11 11:7 9:11 11:9 11:6 9:11	NAGYVARADI Mercedes	
+2013	World Tour Swedish Open Stockholm 2013	GUNGOR Gokce Nur (TUR)		BERGAND Filippa (SWE)		WS	Qualification		4 - 1	9:11 11:5 11:6 17:15 11:7	GUNGOR Gokce Nur	
+2013	World Tour Swedish Open Stockholm 2013	LOEUILLETTE Stephanie (FRA)		JONSSON Jennifer (SWE)		WS	Qualification		4 - 2	10:12 11:6 9:11 11:5 12:10 11:5	LOEUILLETTE Stephanie	
+2013	World Tour Swedish Open Stockholm 2013	CREEMERS Linda (NED)		THOMAS WU ZHANG Chloe Anna (WAL)		WS	Qualification		4 - 0	11:7 11:8 11:6 11:6	CREEMERS Linda	
+2013	World Tour Swedish Open Stockholm 2013	CREEMERS Linda (NED)		JONSSON Jennifer (SWE)		WS	Qualification		4 - 0	11:8 11:4 11:8 11:2	CREEMERS Linda	
+2013	World Tour Swedish Open Stockholm 2013	LOEUILLETTE Stephanie (FRA)		THOMAS WU ZHANG Chloe Anna (WAL)		WS	Qualification		4 - 2	11:7 8:11 13:11 11:7 9:11 11:5	LOEUILLETTE Stephanie	
+2013	World Tour Swedish Open Stockholm 2013	CREEMERS Linda (NED)		LOEUILLETTE Stephanie (FRA)		WS	Qualification		4 - 2	11:5 11:9 8:11 9:11 11:8 11:7	CREEMERS Linda	
+2013	World Tour Swedish Open Stockholm 2013	JONSSON Jennifer (SWE)		THOMAS WU ZHANG Chloe Anna (WAL)		WS	Qualification		4 - 1	11:9 5:11 11:8 11:6 11:4	JONSSON Jennifer	
+2013	World Tour Swedish Open Stockholm 2013	GHATAK Poulomi (IND)		KARLSSON Michaela (SWE)		WS	Qualification		4 - 0	11:9 12:10 11:7 11:8	GHATAK Poulomi	
+2013	World Tour Swedish Open Stockholm 2013	BOLLMEIER Nadine (GER)		ICHIKAWA Azusa (JPN)		WS	Qualification		4 - 1	11:8 5:11 11:6 14:12 11:9	BOLLMEIER Nadine	
+2013	World Tour Swedish Open Stockholm 2013	BOLLMEIER Nadine (GER)		KARLSSON Michaela (SWE)		WS	Qualification		4 - 0	14:12 11:6 11:8 11:8	BOLLMEIER Nadine	
+2013	World Tour Swedish Open Stockholm 2013	GHATAK Poulomi (IND)		ICHIKAWA Azusa (JPN)		WS	Qualification		4 - 2	6:11 12:10 11:8 6:11 11:9 11:8	GHATAK Poulomi	
+2013	World Tour Swedish Open Stockholm 2013	BOLLMEIER Nadine (GER)		GHATAK Poulomi (IND)		WS	Qualification		4 - 2	14:12 11:9 9:11 11:3 8:11 12:10	BOLLMEIER Nadine	
+2013	World Tour Swedish Open Stockholm 2013	KARLSSON Michaela (SWE)		ICHIKAWA Azusa (JPN)		WS	Qualification		2 - 4	3:11 11:9 13:11 5:11 9:11 9:11	ICHIKAWA Azusa	
+2013	World Tour Swedish Open Stockholm 2013	VINOGRADOVA Mariia (RUS)		JACOBSEN Mie (DEN)		WS	Qualification		4 - 0	11:7 11:6 11:3 11:8	VINOGRADOVA Mariia	
+2013	World Tour Swedish Open Stockholm 2013	EERLAND Britt (NED)		HOLMSTEN Ellen (SWE)		WS	Qualification		4 - 0	12:10 11:6 11:7 11:9	EERLAND Britt	
+2013	World Tour Swedish Open Stockholm 2013	EERLAND Britt (NED)		JACOBSEN Mie (DEN)		WS	Qualification		4 - 0	11:8 11:9 14:12 11:5	EERLAND Britt	
+2013	World Tour Swedish Open Stockholm 2013	VINOGRADOVA Mariia (RUS)		HOLMSTEN Ellen (SWE)		WS	Qualification		4 - 1	12:10 11:6 11:5 8:11 11:8	VINOGRADOVA Mariia	
+2013	World Tour Swedish Open Stockholm 2013	EERLAND Britt (NED)		VINOGRADOVA Mariia (RUS)		WS	Qualification		4 - 3	11:2 11:9 9:11 13:11 8:11 9:11 11:5	EERLAND Britt	
+2013	World Tour Swedish Open Stockholm 2013	JACOBSEN Mie (DEN)		HOLMSTEN Ellen (SWE)		WS	Qualification		1 - 4	6:11 11:8 12:14 9:11 9:11	HOLMSTEN Ellen	
+2013	World Tour Swedish Open Stockholm 2013	PFEFER Laura (FRA)		BOLENIUS Sannamari (SWE)		WS	Qualification		4 - 3	12:10 11:9 10:12 11:6 6:11 8:11 11:8	PFEFER Laura	
+2013	World Tour Swedish Open Stockholm 2013	PROKHOROVA Yulia (RUS)		KULAKCEKEN Simay (TUR)		WS	Qualification		4 - 0	12:10 11:4 12:10 11:5	PROKHOROVA Yulia	
+2013	World Tour Swedish Open Stockholm 2013	PROKHOROVA Yulia (RUS)		BOLENIUS Sannamari (SWE)		WS	Qualification		4 - 0	11:5 11:5 11:6 11:3	PROKHOROVA Yulia	
+2013	World Tour Swedish Open Stockholm 2013	PFEFER Laura (FRA)		KULAKCEKEN Simay (TUR)		WS	Qualification		4 - 1	11:9 11:7 5:11 11:5 11:6	PFEFER Laura	
+2013	World Tour Swedish Open Stockholm 2013	PROKHOROVA Yulia (RUS)		PFEFER Laura (FRA)		WS	Qualification		3 - 4	8:11 6:11 11:6 11:3 9:11 11:7 10:12	PFEFER Laura	
+2013	World Tour Swedish Open Stockholm 2013	BOLENIUS Sannamari (SWE)		KULAKCEKEN Simay (TUR)		WS	Qualification		4 - 2	11:9 9:11 11:7 2:11 13:11 11:8	BOLENIUS Sannamari	
+2013	World Tour Swedish Open Stockholm 2013	GASNIER Laura (FRA)		LORENZOTTI Maria (URU)		WS	Qualification		4 - 0	13:11 11:6 11:3 11:8	GASNIER Laura	
+2013	World Tour Swedish Open Stockholm 2013	MATELOVA Hana (CZE)		FRONT Erika (SWE)		WS	Qualification		4 - 0	11:8 11:8 11:1 11:5	MATELOVA Hana	
+2013	World Tour Swedish Open Stockholm 2013	MATELOVA Hana (CZE)		LORENZOTTI Maria (URU)		WS	Qualification		4 - 0	11:1 11:7 11:2 11:8	MATELOVA Hana	
+2013	World Tour Swedish Open Stockholm 2013	GASNIER Laura (FRA)		FRONT Erika (SWE)		WS	Qualification		4 - 1	8:11 11:5 11:6 11:9 11:9	GASNIER Laura	
+2013	World Tour Swedish Open Stockholm 2013	MATELOVA Hana (CZE)		GASNIER Laura (FRA)		WS	Qualification		4 - 2	11:7 8:11 11:7 7:11 11:9 11:8	MATELOVA Hana	
+2013	World Tour Swedish Open Stockholm 2013	LORENZOTTI Maria (URU)		FRONT Erika (SWE)		WS	Qualification		4 - 0	12:10 11:8 11:9 11:7	LORENZOTTI Maria	
+2013	World Tour Swedish Open Stockholm 2013	KERTAI Rita (HUN)		JOHANSSON Tilda (SWE)		WS	Qualification		4 - 0	11:6 11:7 11:7 11:7	KERTAI Rita	
+2013	World Tour Swedish Open Stockholm 2013	DOLGIKH Maria (RUS)		CHRISTENSEN Stefanie (DEN)		WS	Qualification		4 - 1	7:11 11:4 11:2 11:2 11:5	DOLGIKH Maria	
+2013	World Tour Swedish Open Stockholm 2013	DOLGIKH Maria (RUS)		JOHANSSON Tilda (SWE)		WS	Qualification		4 - 0	11:3 11:6 11:6 11:4	DOLGIKH Maria	
+2013	World Tour Swedish Open Stockholm 2013	KERTAI Rita (HUN)		CHRISTENSEN Stefanie (DEN)		WS	Qualification		4 - 2	18:16 9:11 9:11 11:6 11:2 11:4	KERTAI Rita	
+2013	World Tour Swedish Open Stockholm 2013	DOLGIKH Maria (RUS)		KERTAI Rita (HUN)		WS	Qualification		4 - 0	12:10 11:3 11:6 11:6	DOLGIKH Maria	
+2013	World Tour Swedish Open Stockholm 2013	JOHANSSON Tilda (SWE)		CHRISTENSEN Stefanie (DEN)		WS	Qualification		4 - 1	11:7 11:5 11:7 8:11 11:9	JOHANSSON Tilda	
+2013	World Tour Swedish Open Stockholm 2013	BOLENIUS Sannamari (SWE)		LUND Josefin (SWE)		U21WS	Qualification		3 - 0	11:6 12:10 11:4	BOLENIUS Sannamari	
+2013	World Tour Swedish Open Stockholm 2013	ISTRATE Roxana (ROU)		LUND Josefin (SWE)		U21WS	Qualification		3 - 2	10:12 11:7 9:11 11:6 11:6	ISTRATE Roxana	
+2013	World Tour Swedish Open Stockholm 2013	ISTRATE Roxana (ROU)		BOLENIUS Sannamari (SWE)		U21WS	Qualification		3 - 0	11:8 11:9 11:7	ISTRATE Roxana	
+2013	World Tour Swedish Open Stockholm 2013	ZETTERSTROM Kristina (SWE)		JOHANSSON Tilda (SWE)		U21WS	Qualification		0 - 3	1:11 6:11 10:12	JOHANSSON Tilda	
+2013	World Tour Swedish Open Stockholm 2013	MIGOT Marie (FRA)		JOHANSSON Tilda (SWE)		U21WS	Qualification		3 - 2	11:8 4:11 11:5 7:11 11:9	MIGOT Marie	
+2013	World Tour Swedish Open Stockholm 2013	MIGOT Marie (FRA)		ZETTERSTROM Kristina (SWE)		U21WS	Qualification		3 - 0	11:8 11:7 11:4	MIGOT Marie	
+2013	World Tour Swedish Open Stockholm 2013	KARLSSON Michaela (SWE)		BERGSTROM Linda (SWE)		U21WS	Qualification		1 - 3	11:7 11:13 6:11 15:17	BERGSTROM Linda	
+2013	World Tour Swedish Open Stockholm 2013	CHRISTENSEN Stefanie (DEN)		BERGSTROM Linda (SWE)		U21WS	Qualification		0 - 3	5:11 10:12 11:13	BERGSTROM Linda	
+2013	World Tour Swedish Open Stockholm 2013	CHRISTENSEN Stefanie (DEN)		KARLSSON Michaela (SWE)		U21WS	Qualification		3 - 1	11:13 11:6 14:12 11:8	CHRISTENSEN Stefanie	
+2013	World Tour Swedish Open Stockholm 2013	JACOBSEN Mie (DEN)		FRONT Erika (SWE)		U21WS	Qualification		3 - 2	9:11 6:11 11:8 11:6 11:9	JACOBSEN Mie	
+2013	World Tour Swedish Open Stockholm 2013	MOKHNACHEVA Svetlana (RUS)		FRONT Erika (SWE)		U21WS	Qualification		3 - 1	6:11 11:4 12:10 11:3	MOKHNACHEVA Svetlana	
+2013	World Tour Swedish Open Stockholm 2013	MOKHNACHEVA Svetlana (RUS)		JACOBSEN Mie (DEN)		U21WS	Qualification		3 - 0	11:8 11:4 11:3	MOKHNACHEVA Svetlana	
+2013	World Tour Swedish Open Stockholm 2013	JONSSON Jennifer (SWE)		KULAKCEKEN Simay (TUR)		U21WS	Qualification		3 - 0	11:9 11:7 11:8	JONSSON Jennifer	
+2013	World Tour Swedish Open Stockholm 2013	CHASSELIN Pauline (FRA)		KULAKCEKEN Simay (TUR)		U21WS	Qualification		3 - 1	11:9 11:6 11:13 11:5	CHASSELIN Pauline	
+2013	World Tour Swedish Open Stockholm 2013	CHASSELIN Pauline (FRA)		JONSSON Jennifer (SWE)		U21WS	Qualification		3 - 1	11:7 5:11 11:3 11:3	CHASSELIN Pauline	
+2013	World Tour Swedish Open Stockholm 2013	MOSKOVITS Daniela (SWE)		HOLMSTEN Ellen (SWE)		U21WS	Qualification		3 - 0	11:1 11:3 11:6	MOSKOVITS Daniela	
+2013	World Tour Swedish Open Stockholm 2013	CORDERO Carelyn (PUR)		THOMAS WU ZHANG Chloe Anna (WAL)		U21WS	Qualification		3 - 0	11:7 11:5 11:9	CORDERO Carelyn	
+2013	World Tour Swedish Open Stockholm 2013	CORDERO Carelyn (PUR)		HOLMSTEN Ellen (SWE)		U21WS	Qualification		3 - 1	11:7 11:8 8:11 13:11	CORDERO Carelyn	
+2013	World Tour Swedish Open Stockholm 2013	MOSKOVITS Daniela (SWE)		THOMAS WU ZHANG Chloe Anna (WAL)		U21WS	Qualification		3 - 0	11:5 11:7 11:7	MOSKOVITS Daniela	
+2013	World Tour Swedish Open Stockholm 2013	CORDERO Carelyn (PUR)		MOSKOVITS Daniela (SWE)		U21WS	Qualification		3 - 1	11:4 11:7 5:11 11:7	CORDERO Carelyn	
+2013	World Tour Swedish Open Stockholm 2013	HOLMSTEN Ellen (SWE)		THOMAS WU ZHANG Chloe Anna (WAL)		U21WS	Qualification		1 - 3	11:8 6:11 9:11 9:11	THOMAS WU ZHANG Chloe Anna	
+2013	World Tour Swedish Open Stockholm 2013	BERGAND Filippa (SWE)		KALLBERG Christina (SWE)		U21WS	Qualification		1 - 3	7:11 9:11 11:7 7:11	KALLBERG Christina	
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 2 of 3 Total: 215
+
+Start
+Prev
+1
+2
+3
+Next
+End
+2013	World Tour Swedish Open Stockholm 2013	LORENZOTTI Maria (URU)		GUNGOR Gokce Nur (TUR)		U21WS	Qualification		0 - 3	10:12 5:11 7:11	GUNGOR Gokce Nur	
+2013	World Tour Swedish Open Stockholm 2013	LORENZOTTI Maria (URU)		KALLBERG Christina (SWE)		U21WS	Qualification		3 - 1	3:11 11:9 11:5 11:9	LORENZOTTI Maria	
+2013	World Tour Swedish Open Stockholm 2013	BERGAND Filippa (SWE)		GUNGOR Gokce Nur (TUR)		U21WS	Qualification		0 - 3	6:11 4:11 4:11	GUNGOR Gokce Nur	
+2013	World Tour Swedish Open Stockholm 2013	LORENZOTTI Maria (URU)		BERGAND Filippa (SWE)		U21WS	Qualification		3 - 0	11:6 11:8 11:8	LORENZOTTI Maria	
+2013	World Tour Swedish Open Stockholm 2013	KALLBERG Christina (SWE)		GUNGOR Gokce Nur (TUR)		U21WS	Qualification		0 - 3	6:11 5:11 8:11	GUNGOR Gokce Nur	
+2013	World Tour Swedish Open Stockholm 2013	CHEN Meng (CHN)		MATELOVA Hana (CZE)		WS	Main Draw	R32	4 - 0	11:5 11:3 11:3 11:4	CHEN Meng	
+2013	World Tour Swedish Open Stockholm 2013	ERDELJI Anamaria (SRB)		EKHOLM Matilda (SWE)		WS	Main Draw	R32	3 - 4	11:7 7:11 4:11 11:13 11:6 11:9 8:11	EKHOLM Matilda	
+2013	World Tour Swedish Open Stockholm 2013	ZHAO Yan (CHN)		EERLAND Britt (NED)		WS	Main Draw	R32	4 - 2	6:11 11:5 12:10 6:11 11:5 11:6	ZHAO Yan	
+2013	World Tour Swedish Open Stockholm 2013	DOLGIKH Maria (RUS)		WU Jiaduo (GER)		WS	Main Draw	R32	1 - 4	12:10 3:11 10:12 10:12 1:11	WU Jiaduo	
+2013	World Tour Swedish Open Stockholm 2013	WEN Jia (CHN)		CREEMERS Linda (NED)		WS	Main Draw	R32	4 - 1	11:3 11:13 11:6 11:6 11:4	WEN Jia	
+2013	World Tour Swedish Open Stockholm 2013	MU Zi (CHN)		WAKAMIYA Misako (JPN)		WS	Main Draw	R32	4 - 0	11:5 11:3 11:7 11:6	MU Zi	
+2013	World Tour Swedish Open Stockholm 2013	LEE I-Chen (TPE)		GU Ruochen (CHN)		WS	Main Draw	R32	3 - 4	13:11 4:11 6:11 8:11 11:6 11:5 9:11	GU Ruochen	
+2013	World Tour Swedish Open Stockholm 2013	ISHIGAKI Yuka (JPN)		CHENG I-Ching (TPE)		WS	Main Draw	R32	4 - 3	16:14 8:11 10:12 6:11 15:13 11:5 11:9	ISHIGAKI Yuka	
+2013	World Tour Swedish Open Stockholm 2013	HIRANO Sayaka (JPN)		LI Fen (SWE)		WS	Main Draw	R32	2 - 4	9:11 11:2 8:11 4:11 11:8 4:11	LI Fen	
+2013	World Tour Swedish Open Stockholm 2013	OWEN Naomi (WAL)		LI Xue (FRA)		WS	Main Draw	R32	0 - 4	3:11 6:11 7:11 8:11	LI Xue	
+2013	World Tour Swedish Open Stockholm 2013	SOLJA Amelie (AUT)		BOLLMEIER Nadine (GER)		WS	Main Draw	R32	4 - 0	11:8 11:6 11:7 11:4	SOLJA Amelie	
+2013	World Tour Swedish Open Stockholm 2013	NAGYVARADI Mercedes (HUN)		HU Melek (TUR)		WS	Main Draw	R32	1 - 4	6:11 11:9 3:11 9:11 5:11	HU Melek	
+2013	World Tour Swedish Open Stockholm 2013	HUANG Yi-Hua (TPE)		GRUNDISCH Carole (FRA)		WS	Main Draw	R32	4 - 0	11:8 11:9 11:5 11:8	HUANG Yi-Hua	
+2013	World Tour Swedish Open Stockholm 2013	MIKHAILOVA Polina (RUS)		LI Xiaodan (CHN)		WS	Main Draw	R32	2 - 4	8:11 13:11 11:13 6:11 11:9 9:11	LI Xiaodan	
+2013	World Tour Swedish Open Stockholm 2013	MORIZONO Misaki (JPN)		RAMIREZ Sara (ESP)		WS	Main Draw	R32	4 - 1	11:9 9:11 13:11 11:8 11:5	MORIZONO Misaki	
+2013	World Tour Swedish Open Stockholm 2013	PFEFER Laura (FRA)		LI Jiao (NED)		WS	Main Draw	R32	0 - 4	5:11 4:11 9:11 1:11	LI Jiao	
+2013	World Tour Swedish Open Stockholm 2013	CHEN Meng (CHN)		EKHOLM Matilda (SWE)		WS	Main Draw	R16	4 - 1	8:11 11:4 14:12 11:6 11:7	CHEN Meng	
+2013	World Tour Swedish Open Stockholm 2013	ZHAO Yan (CHN)		WU Jiaduo (GER)		WS	Main Draw	R16	4 - 1	4:11 11:8 11:8 11:9 11:7	ZHAO Yan	
+2013	World Tour Swedish Open Stockholm 2013	WEN Jia (CHN)		MU Zi (CHN)		WS	Main Draw	R16	2 - 4	7:11 9:11 6:11 11:6 11:9 3:11	MU Zi	
+2013	World Tour Swedish Open Stockholm 2013	GU Ruochen (CHN)		ISHIGAKI Yuka (JPN)		WS	Main Draw	R16	4 - 1	8:11 11:9 11:9 11:6 11:5	GU Ruochen	
+2013	World Tour Swedish Open Stockholm 2013	LI Fen (SWE)		LI Xue (FRA)		WS	Main Draw	R16	3 - 4	2:11 11:8 11:8 13:15 11:9 8:11 11:13	LI Xue	
+2013	World Tour Swedish Open Stockholm 2013	SOLJA Amelie (AUT)		HU Melek (TUR)		WS	Main Draw	R16	2 - 4	11:6 10:12 11:8 5:11 2:11 5:11	HU Melek	
+2013	World Tour Swedish Open Stockholm 2013	HUANG Yi-Hua (TPE)		LI Xiaodan (CHN)		WS	Main Draw	R16	0 - 4	12:14 6:11 6:11 3:11	LI Xiaodan	
+2013	World Tour Swedish Open Stockholm 2013	MORIZONO Misaki (JPN)		LI Jiao (NED)		WS	Main Draw	R16	1 - 4	6:11 7:11 10:12 11:3 8:11	LI Jiao	
+2013	World Tour Swedish Open Stockholm 2013	CHEN Meng (CHN)		ZHAO Yan (CHN)		WS	Main Draw	QuarterFinal	4 - 3	11:4 6:11 6:11 11:7 11:4 9:11 11:9	CHEN Meng	
+2013	World Tour Swedish Open Stockholm 2013	MU Zi (CHN)		GU Ruochen (CHN)		WS	Main Draw	QuarterFinal	4 - 1	11:6 11:4 11:2 9:11 11:8	MU Zi	
+2013	World Tour Swedish Open Stockholm 2013	LI Xue (FRA)		HU Melek (TUR)		WS	Main Draw	QuarterFinal	2 - 4	9:11 12:10 9:11 9:11 11:8 5:11	HU Melek	
+2013	World Tour Swedish Open Stockholm 2013	LI Xiaodan (CHN)		LI Jiao (NED)		WS	Main Draw	QuarterFinal	4 - 2	10:12 11:8 11:4 7:11 11:5 11:8	LI Xiaodan	
+2013	World Tour Swedish Open Stockholm 2013	CHEN Meng (CHN)		MU Zi (CHN)		WS	Main Draw	SemiFinal	4 - 3	11:13 7:11 14:12 9:11 11:3 11:5 11:3	CHEN Meng	
+2013	World Tour Swedish Open Stockholm 2013	HU Melek (TUR)		LI Xiaodan (CHN)		WS	Main Draw	SemiFinal	0 - 4	5:11 9:11 6:11 9:11	LI Xiaodan	
+2013	World Tour Swedish Open Stockholm 2013	CHEN Meng (CHN)		LI Xiaodan (CHN)		WS	Main Draw	Final	4 - 2	11:9 11:9 7:11 11:7 8:11 11:3	CHEN Meng	
+2013	World Tour Swedish Open Stockholm 2013	MATSUDAIRA Shiho (JPN)		CHRISTENSEN Stefanie (DEN)		U21WS	Main Draw	R16	3 - 0	11:9 11:3 11:6	MATSUDAIRA Shiho	
+2013	World Tour Swedish Open Stockholm 2013	BERGSTROM Linda (SWE)		LOEUILLETTE Stephanie (FRA)		U21WS	Main Draw	R16	1 - 3	4:11 11:8 6:11 5:11	LOEUILLETTE Stephanie	
+2013	World Tour Swedish Open Stockholm 2013	NAGYVARADI Mercedes (HUN)		CHASSELIN Pauline (FRA)		U21WS	Main Draw	R16	0 - 3	4:11 9:11 9:11	CHASSELIN Pauline	
+2013	World Tour Swedish Open Stockholm 2013	GUNGOR Gokce Nur (TUR)		EERLAND Britt (NED)		U21WS	Main Draw	R16	0 - 3	11:13 9:11 4:11	EERLAND Britt	
+2013	World Tour Swedish Open Stockholm 2013	GASNIER Laura (FRA)		CORDERO Carelyn (PUR)		U21WS	Main Draw	R16	2 - 3	11:7 11:6 11:13 4:11 9:11	CORDERO Carelyn	
+2013	World Tour Swedish Open Stockholm 2013	MOKHNACHEVA Svetlana (RUS)		DE NUTTE Sarah (LUX)		U21WS	Main Draw	R16	2 - 3	11:7 11:8 6:11 6:11 3:11	DE NUTTE Sarah	
+2013	World Tour Swedish Open Stockholm 2013	PFEFER Laura (FRA)		ISTRATE Roxana (ROU)		U21WS	Main Draw	R16	3 - 1	7:11 11:9 11:9 11:6	PFEFER Laura	
+2013	World Tour Swedish Open Stockholm 2013	MIGOT Marie (FRA)		POLCANOVA Sofia (AUT)		U21WS	Main Draw	R16	0 - 3	6:11 6:11 8:11	POLCANOVA Sofia	
+2013	World Tour Swedish Open Stockholm 2013	MATSUDAIRA Shiho (JPN)		LOEUILLETTE Stephanie (FRA)		U21WS	Main Draw	QuarterFinal	4 - 0	11:6 11:1 11:4 11:3	MATSUDAIRA Shiho	
+2013	World Tour Swedish Open Stockholm 2013	CHASSELIN Pauline (FRA)		EERLAND Britt (NED)		U21WS	Main Draw	QuarterFinal	2 - 4	11:8 10:12 3:11 8:11 11:9 7:11	EERLAND Britt	
+2013	World Tour Swedish Open Stockholm 2013	CORDERO Carelyn (PUR)		DE NUTTE Sarah (LUX)		U21WS	Main Draw	QuarterFinal	0 - 4	9:11 7:11 3:11 10:12	DE NUTTE Sarah	
+2013	World Tour Swedish Open Stockholm 2013	PFEFER Laura (FRA)		POLCANOVA Sofia (AUT)		U21WS	Main Draw	QuarterFinal	0 - 4	4:11 5:11 7:11 8:11	POLCANOVA Sofia	
+2013	World Tour Swedish Open Stockholm 2013	MATSUDAIRA Shiho (JPN)		EERLAND Britt (NED)		U21WS	Main Draw	SemiFinal	3 - 4	11:6 11:7 11:4 11:13 6:11 6:11 8:11	EERLAND Britt	
+2013	World Tour Swedish Open Stockholm 2013	DE NUTTE Sarah (LUX)		POLCANOVA Sofia (AUT)		U21WS	Main Draw	SemiFinal	0 - 4	7:11 5:11 6:11 7:11	POLCANOVA Sofia	
+2013	World Tour Swedish Open Stockholm 2013	EERLAND Britt (NED)		POLCANOVA Sofia (AUT)		U21WS	Main Draw	Final	2 - 4	7:11 11:5 8:11 11:9 6:11 5:11	POLCANOVA Sofia
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 47
+
+2013	World Tour Swedish Open Stockholm 2013	ALLEGRO Martin (BEL)	LAMBIET Florent (BEL)	HACI Halil (TUR)	OZTURK Ozgun (TUR)	MD	Qualification	QR64	3 - 0	13:11 11:8 11:8	ALLEGRO Martin	LAMBIET Florent
+2013	World Tour Swedish Open Stockholm 2013	ALLEGRO Martin (BEL)	LAMBIET Florent (BEL)	RASMUSSEN Morten (DEN)	STERNBERG Kasper (DEN)	MD	Qualification	QR32	1 - 3	11:7 3:11 6:11 3:11	RASMUSSEN Morten	STERNBERG Kasper
+2013	World Tour Swedish Open Stockholm 2013	LUNDQVIST Jens (SWE)	XU Xin (CHN)	JEAN Lauric (BEL)	KOU Lei (UKR)	MD	Main Draw	R16	3 - 1	11:9 11:5 9:11 11:3	LUNDQVIST Jens	XU Xin
+2013	World Tour Swedish Open Stockholm 2013	ROBINOT Quentin (FRA)	SHANG Kun (CHN)	GERELL Par (SWE)	YAN An (CHN)	MD	Main Draw	QuarterFinal	0 - 3	11:13 11:13 6:11	GERELL Par	YAN An
+2013	World Tour Swedish Open Stockholm 2013	LUNDQVIST Jens (SWE)	XU Xin (CHN)	FAN Zhendong (CHN)	KARLSSON Kristian (SWE)	MD	Main Draw	QuarterFinal	3 - 2	7:11 8:11 11:6 11:7 11:5	LUNDQVIST Jens	XU Xin
+2013	World Tour Swedish Open Stockholm 2013	LUNDQVIST Jens (SWE)	XU Xin (CHN)	CHEN Chien-An (TPE)	LU Po-Hsien (TPE)	MD	Main Draw	SemiFinal	3 - 0	11:9 14:12 11:6	LUNDQVIST Jens	XU Xin
+2013	World Tour Swedish Open Stockholm 2013	GERELL Par (SWE)	YAN An (CHN)	LUNDQVIST Jens (SWE)	XU Xin (CHN)	MD	Main Draw	Final	1 - 3	1:11 12:10 10:12 9:11	LUNDQVIST Jens	XU Xin
+2013	World Tour Swedish Open Stockholm 2013	BAJGER Ondrej (CZE)	SIRUCEK Pavel (CZE)	PFEFFER Simon (AUT)	SODERLUND Hampus (SWE)	MD	Qualification	QR32	2 - 3	11:6 11:5 6:11 7:11 9:11	PFEFFER Simon	SODERLUND Hampus
+2013	World Tour Swedish Open Stockholm 2013	KORBEL Petr (CZE)	PROKOPCOV Dmitrij (CZE)	BRODD Viktor (SWE)	NORDBERG Hampus (SWE)	MD	Qualification	QR32	0 - 3	9:11 8:11 11:13	BRODD Viktor	NORDBERG Hampus
+2013	World Tour Swedish Open Stockholm 2013	NIELSEN Claus (DEN)	RASMUSSEN Tobias (DEN)	CANTERO Jesus (ESP)	DURAN Marc (ESP)	MD	Qualification	QR32	2 - 3	11:7 8:11 11:7 7:11 9:11	CANTERO Jesus	DURAN Marc
+2013	World Tour Swedish Open Stockholm 2013	SKUCAS Matas (LTU)	HAZZAA Walaaeldin (EGY)	HUNG Tzu-Hsiang (TPE)	LEE Chia-Sheng (TPE)	MD	Qualification	QR32	0 - 3	8:11 9:11 8:11	HUNG Tzu-Hsiang	LEE Chia-Sheng
+2013	World Tour Swedish Open Stockholm 2013	ASSAR Khalid (EGY)	ASSAR Omar (EGY)	JEAN Lauric (BEL)	KOU Lei (UKR)	MD	Qualification	QR32	1 - 3	11:13 11:7 7:11 7:11	JEAN Lauric	KOU Lei
+2013	World Tour Swedish Open Stockholm 2013	JOST Frederick (GER)	ROBLES Alvaro (ESP)	CHAN Kazuhiro (JPN)	MATSUDAIRA Kenji (JPN)	MD	Main Draw	R16	1 - 3	11:7 8:11 9:11 4:11	CHAN Kazuhiro	MATSUDAIRA Kenji
+2013	World Tour Swedish Open Stockholm 2013	JOST Frederick (GER)	ROBLES Alvaro (ESP)	HMAM Adam (TUN)	MAMIA Thameur (TUN)	MD	Qualification	QR64	3 - 0	11:8 11:9 11:7	JOST Frederick	ROBLES Alvaro
+2013	World Tour Swedish Open Stockholm 2013	JOST Frederick (GER)	ROBLES Alvaro (ESP)	DESAI Harmeet (IND)	GHOSH Soumyajit (IND)	MD	Qualification	QR32	3 - 0	11:9 11:5 11:9	JOST Frederick	ROBLES Alvaro
+2013	World Tour Swedish Open Stockholm 2013	LE BRETON Thomas (FRA)	SALIFOU Abdel-Kader (BEN)	GIONIS Panagiotis (GRE)	KOSOWSKI Jakub (POL)	MD	Qualification	QR32	2 - 3	3:11 11:8 8:11 11:9 9:11	GIONIS Panagiotis	KOSOWSKI Jakub
+2013	World Tour Swedish Open Stockholm 2013	ANTHONY Amalraj (IND)	VASANTH Nitin (IND)	GOMMERS Rajko (NED)	TROMER Laurens (NED)	MD	Qualification	QR64	3 - 0	12:10 11:7 11:9	ANTHONY Amalraj	VASANTH Nitin
+2013	World Tour Swedish Open Stockholm 2013	ANTHONY Amalraj (IND)	VASANTH Nitin (IND)	DEVOS Robin (BEL)	NUYTINCK Cedric (BEL)	MD	Qualification	QR32	1 - 3	11:8 6:11 6:11 7:11	DEVOS Robin	NUYTINCK Cedric
+2013	World Tour Swedish Open Stockholm 2013	GNANASEKARAN Sathiyan (IND)	SHETTY Sanil (IND)	ARVIDSSON Simon (SWE)	TORNKVIST Andreas (SWE)	MD	Qualification	QR32	1 - 3	4:11 11:6 10:12 8:11	ARVIDSSON Simon	TORNKVIST Andreas
+2013	World Tour Swedish Open Stockholm 2013	MCBEATH David (ENG)	MCCREERY Paul (IRL)	LI Ahmet (TUR)	VANG Bora (TUR)	MD	Qualification	QR32	3 - 1	11:4 9:11 11:4 14:12	MCBEATH David	MCCREERY Paul
+2013	World Tour Swedish Open Stockholm 2013	HIRANO Yuki (JPN)	OSHIMA Yuya (JPN)	ROBINOT Quentin (FRA)	SHANG Kun (CHN)	MD	Qualification	QR32	0 - 3	4:11 7:11 8:11	ROBINOT Quentin	SHANG Kun
+2013	World Tour Swedish Open Stockholm 2013	HANSEN Sven (LUX)	MUHLBACH Hermann (LUX)	DURANSPAHIC Admir (BIH)	KLEPRLIK Jakub (CZE)	MD	Qualification	QR64	1 - 3	4:11 11:8 4:11 5:11	DURANSPAHIC Admir	KLEPRLIK Jakub
+2013	World Tour Swedish Open Stockholm 2013	KOVAC Borna (CRO)	OOSTWOUDER Ewout (NED)	BROSSIER Benjamin (FRA)	HACHARD Antoine (FRA)	MD	Qualification	QR32	1 - 3	6:11 7:11 11:9 3:11	BROSSIER Benjamin	HACHARD Antoine
+2013	World Tour Swedish Open Stockholm 2013	LINDHOLM Eskil (NOR)	RONNEBERG Lars (NOR)	BRODD Viktor (SWE)	NORDBERG Hampus (SWE)	MD	Qualification	QR64	0 - 3	6:11 11:13 6:11	BRODD Viktor	NORDBERG Hampus
+2013	World Tour Swedish Open Stockholm 2013	GIONIS Panagiotis (GRE)	KOSOWSKI Jakub (POL)	JOST Frederick (GER)	ROBLES Alvaro (ESP)	MD	Qualification	QR16	1 - 3	11:7 9:11 9:11 6:11	JOST Frederick	ROBLES Alvaro
+2013	World Tour Swedish Open Stockholm 2013	GONZALEZ Daniel (PUR)	JIMENEZ Ricardo (PUR)	PFEFFER Simon (AUT)	SODERLUND Hampus (SWE)	MD	Qualification	QR64	1 - 3	7:11 6:11 11:5 2:11	PFEFFER Simon	SODERLUND Hampus
+2013	World Tour Swedish Open Stockholm 2013	IONESCU Ovidiu (ROU)	SZOCS Hunor (ROU)	CHEN Chien-An (TPE)	LU Po-Hsien (TPE)	MD	Main Draw	R16	0 - 3	8:11 8:11 4:11	CHEN Chien-An	LU Po-Hsien
+2013	World Tour Swedish Open Stockholm 2013	BUROV Viacheslav (RUS)	KUZMIN Fedor (RUS)	GERELL Par (SWE)	YAN An (CHN)	MD	Main Draw	R16	0 - 3	8:11 7:11 7:11	GERELL Par	YAN An
+2013	World Tour Swedish Open Stockholm 2013	PETRUKHIN Evgeny (RUS)	SHEVCHENKO Semen (RUS)	GIONIS Panagiotis (GRE)	KOSOWSKI Jakub (POL)	MD	Qualification	QR64	2 - 3	11:9 3:11 7:11 11:9 4:11	GIONIS Panagiotis	KOSOWSKI Jakub
+2013	World Tour Swedish Open Stockholm 2013	BUROV Viacheslav (RUS)	KUZMIN Fedor (RUS)	BOBOCICA Mihai (ITA)	STOYANOV Niagol (ITA)	MD	Qualification	QR32	3 - 2	9:11 8:11 13:11 11:8 11:9	BUROV Viacheslav	KUZMIN Fedor
+2013	World Tour Swedish Open Stockholm 2013	BUROV Viacheslav (RUS)	KUZMIN Fedor (RUS)	RASMUSSEN Morten (DEN)	STERNBERG Kasper (DEN)	MD	Qualification	QR16	3 - 2	9:11 4:11 13:11 11:8 11:6	BUROV Viacheslav	KUZMIN Fedor
+2013	World Tour Swedish Open Stockholm 2013	BRODD Viktor (SWE)	NORDBERG Hampus (SWE)	LEBESSON Emmanuel (FRA)	ZHOU Yu (CHN)	MD	Main Draw	R16	1 - 3	2:11 7:11 11:5 7:11	LEBESSON Emmanuel	ZHOU Yu
+2013	World Tour Swedish Open Stockholm 2013	OVERSJO Mattias (SWE)	PERSSON Jon (SWE)	ROBINOT Quentin (FRA)	SHANG Kun (CHN)	MD	Main Draw	R16	0 - 3	12:14 5:11 5:11	ROBINOT Quentin	SHANG Kun
+2013	World Tour Swedish Open Stockholm 2013	ARVIDSSON Simon (SWE)	TORNKVIST Andreas (SWE)	CAMERON Niall (SCO)	RUMGAY Gavin (SCO)	MD	Qualification	QR64	3 - 2	11:7 7:11 11:5 8:11 11:2	ARVIDSSON Simon	TORNKVIST Andreas
+2013	World Tour Swedish Open Stockholm 2013	AKERSTROM Fabian (SWE)	ANDERSSON Harald (SWE)	RONNEBERG Espen (NOR)	WANG Timothy (USA)	MD	Qualification	QR32	3 - 0	11:8 11:6 11:9	AKERSTROM Fabian	ANDERSSON Harald
+2013	World Tour Swedish Open Stockholm 2013	PFEFFER Simon (AUT)	SODERLUND Hampus (SWE)	HUNG Tzu-Hsiang (TPE)	LEE Chia-Sheng (TPE)	MD	Qualification	QR16	2 - 3	7:11 6:11 11:9 11:6 7:11	HUNG Tzu-Hsiang	LEE Chia-Sheng
+2013	World Tour Swedish Open Stockholm 2013	BRODD Viktor (SWE)	NORDBERG Hampus (SWE)	MCBEATH David (ENG)	MCCREERY Paul (IRL)	MD	Qualification	QR16	3 - 0	11:9 11:5 11:8	BRODD Viktor	NORDBERG Hampus
+2013	World Tour Swedish Open Stockholm 2013	AKERSTROM Fabian (SWE)	ANDERSSON Harald (SWE)	CANTERO Jesus (ESP)	DURAN Marc (ESP)	MD	Qualification	QR16	3 - 0	11:8 13:11 11:4	AKERSTROM Fabian	ANDERSSON Harald
+2013	World Tour Swedish Open Stockholm 2013	ARVIDSSON Simon (SWE)	TORNKVIST Andreas (SWE)	ROBINOT Quentin (FRA)	SHANG Kun (CHN)	MD	Qualification	QR16	0 - 3	8:11 9:11 2:11	ROBINOT Quentin	SHANG Kun
+2013	World Tour Swedish Open Stockholm 2013	CHIANG Hung-Chieh (TPE)	HUANG Sheng-Sheng (TPE)	AKERSTROM Fabian (SWE)	ANDERSSON Harald (SWE)	MD	Main Draw	R16	3 - 1	11:3 11:8 8:11 11:5	CHIANG Hung-Chieh	HUANG Sheng-Sheng
+2013	World Tour Swedish Open Stockholm 2013	HUNG Tzu-Hsiang (TPE)	LEE Chia-Sheng (TPE)	FAN Zhendong (CHN)	KARLSSON Kristian (SWE)	MD	Main Draw	R16	1 - 3	5:11 11:7 8:11 4:11	FAN Zhendong	KARLSSON Kristian
+2013	World Tour Swedish Open Stockholm 2013	CHIANG Hung-Chieh (TPE)	HUANG Sheng-Sheng (TPE)	LEBESSON Emmanuel (FRA)	ZHOU Yu (CHN)	MD	Main Draw	QuarterFinal	3 - 1	11:6 11:6 12:14 11:3	CHIANG Hung-Chieh	HUANG Sheng-Sheng
+2013	World Tour Swedish Open Stockholm 2013	CHEN Chien-An (TPE)	LU Po-Hsien (TPE)	CHAN Kazuhiro (JPN)	MATSUDAIRA Kenji (JPN)	MD	Main Draw	QuarterFinal	3 - 2	11:7 11:8 4:11 6:11 11:8	CHEN Chien-An	LU Po-Hsien
+2013	World Tour Swedish Open Stockholm 2013	CHIANG Hung-Chieh (TPE)	HUANG Sheng-Sheng (TPE)	GERELL Par (SWE)	YAN An (CHN)	MD	Main Draw	SemiFinal	1 - 3	1:11 11:13 11:9 4:11	GERELL Par	YAN An
+2013	World Tour Swedish Open Stockholm 2013	CHEN Chien-An (TPE)	LU Po-Hsien (TPE)	DURANSPAHIC Admir (BIH)	KLEPRLIK Jakub (CZE)	MD	Qualification	QR32	3 - 1	11:5 8:11 11:7 11:4	CHEN Chien-An	LU Po-Hsien
+2013	World Tour Swedish Open Stockholm 2013	CHEN Chien-An (TPE)	LU Po-Hsien (TPE)	DEVOS Robin (BEL)	NUYTINCK Cedric (BEL)	MD	Qualification	QR16	3 - 2	4:11 7:11 11:6 11:6 14:12	CHEN Chien-An	LU Po-Hsien
+2013	World Tour Swedish Open Stockholm 2013	JEAN Lauric (BEL)	KOU Lei (UKR)	BROSSIER Benjamin (FRA)	HACHARD Antoine (FRA)	MD	Qualification	QR16	3 - 2	11:7 11:9 10:12 9:11 11:7	JEAN Lauric	KOU Lei
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 29
+
+2013	World Tour Swedish Open Stockholm 2013	POLCANOVA Sofia (AUT)	SOLJA Amelie (AUT)	DE NUTTE Sarah (LUX)	EERLAND Britt (NED)	WD	Main Draw	R16	3 - 1	11:8 11:8 4:11 11:5	POLCANOVA Sofia	SOLJA Amelie
+2013	World Tour Swedish Open Stockholm 2013	POLCANOVA Sofia (AUT)	SOLJA Amelie (AUT)	BOLLMEIER Nadine (GER)	WU Jiaduo (GER)	WD	Main Draw	QuarterFinal	0 - 3	11:13 4:11 7:11	BOLLMEIER Nadine	WU Jiaduo
+2013	World Tour Swedish Open Stockholm 2013	LUND Josefin (SWE)	YAMADA Jessica (BRA)	PROKHOROVA Yulia (RUS)	SABITOVA Valentina (RUS)	WD	Qualification	QR32	0 - 3	10:12 7:11 5:11	PROKHOROVA Yulia	SABITOVA Valentina
+2013	World Tour Swedish Open Stockholm 2013	GU Ruochen (CHN)	ZHAO Yan (CHN)	DOLGIKH Maria (RUS)	MIKHAILOVA Polina (RUS)	WD	Main Draw	R16	2 - 3	11:8 9:11 15:13 6:11 5:11	DOLGIKH Maria	MIKHAILOVA Polina
+2013	World Tour Swedish Open Stockholm 2013	LI Xiaodan (CHN)	MU Zi (CHN)	CHEN Meng (CHN)	WEN Jia (CHN)	WD	Main Draw	QuarterFinal	3 - 2	8:11 9:11 12:10 11:9 11:9	LI Xiaodan	MU Zi
+2013	World Tour Swedish Open Stockholm 2013	MATELOVA Hana (CZE)	SMISTIKOVA Martina (CZE)	CHEN Meng (CHN)	WEN Jia (CHN)	WD	Main Draw	R16	0 - 3	10:12 7:11 6:11	CHEN Meng	WEN Jia
+2013	World Tour Swedish Open Stockholm 2013	MATELOVA Hana (CZE)	SMISTIKOVA Martina (CZE)	CHASSELIN Pauline (FRA)	PFEFER Laura (FRA)	WD	Qualification	QR16	3 - 2	11:8 8:11 11:7 7:11 11:7	MATELOVA Hana	SMISTIKOVA Martina
+2013	World Tour Swedish Open Stockholm 2013	AGERHOLM Pernille (DEN)	JACOBSEN Mie (DEN)	HSU Hui-Tsun (TPE)	LEE I-Chen (TPE)	WD	Qualification	QR32	0 - 3	5:11 9:11 2:11	HSU Hui-Tsun	LEE I-Chen
+2013	World Tour Swedish Open Stockholm 2013	GASNIER Laura (FRA)	GRUNDISCH Carole (FRA)	HSU Hui-Tsun (TPE)	LEE I-Chen (TPE)	WD	Main Draw	R16	1 - 3	8:11 10:12 11:9 5:11	HSU Hui-Tsun	LEE I-Chen
+2013	World Tour Swedish Open Stockholm 2013	LOEUILLETTE Stephanie (FRA)	MIGOT Marie (FRA)	KERTAI Rita (HUN)	NAGYVARADI Mercedes (HUN)	WD	Qualification	QR16	1 - 3	11:9 6:11 9:11 9:11	KERTAI Rita	NAGYVARADI Mercedes
+2013	World Tour Swedish Open Stockholm 2013	BOLLMEIER Nadine (GER)	WU Jiaduo (GER)	LI Xiaodan (CHN)	MU Zi (CHN)	WD	Main Draw	SemiFinal	1 - 3	9:11 11:7 7:11 6:11	LI Xiaodan	MU Zi
+2013	World Tour Swedish Open Stockholm 2013	AGGARWAL Neha (IND)	GHATAK Poulomi (IND)	BOLLMEIER Nadine (GER)	WU Jiaduo (GER)	WD	Main Draw	R16	1 - 3	8:11 12:10 3:11 2:11	BOLLMEIER Nadine	WU Jiaduo
+2013	World Tour Swedish Open Stockholm 2013	MATSUDAIRA Shiho (JPN)	SAKAI Haruka (JPN)	CREEMERS Linda (NED)	LI Jiao (NED)	WD	Main Draw	R16	1 - 3	7:11 11:8 9:11 6:11	CREEMERS Linda	LI Jiao
+2013	World Tour Swedish Open Stockholm 2013	MATSUDAIRA Shiho (JPN)	SAKAI Haruka (JPN)	MOSKOVITS Daniela (SWE)	ZETTERSTROM Kristina (SWE)	WD	Qualification	QR16	3 - 2	11:3 9:11 11:8 7:11 11:8	MATSUDAIRA Shiho	SAKAI Haruka
+2013	World Tour Swedish Open Stockholm 2013	DOLGIKH Maria (RUS)	MIKHAILOVA Polina (RUS)	HSU Hui-Tsun (TPE)	LEE I-Chen (TPE)	WD	Main Draw	SemiFinal	1 - 3	5:11 4:11 11:9 9:11	HSU Hui-Tsun	LEE I-Chen
+2013	World Tour Swedish Open Stockholm 2013	PROKHOROVA Yulia (RUS)	SABITOVA Valentina (RUS)	LI Xiaodan (CHN)	MU Zi (CHN)	WD	Qualification	QR16	0 - 3	8:11 4:11 5:11	LI Xiaodan	MU Zi
+2013	World Tour Swedish Open Stockholm 2013	VINOGRADOVA Mariia (RUS)	ERMAKOVA Irina (RUS)	DE NUTTE Sarah (LUX)	EERLAND Britt (NED)	WD	Qualification	QR16	0 - 3	3:11 4:11 4:11	DE NUTTE Sarah	EERLAND Britt
+2013	World Tour Swedish Open Stockholm 2013	BERGSTROM Linda (SWE)	BOLENIUS Sannamari (SWE)	LI Xiaodan (CHN)	MU Zi (CHN)	WD	Main Draw	R16	0 - 3	1:11 3:11 3:11	LI Xiaodan	MU Zi
+2013	World Tour Swedish Open Stockholm 2013	MOSKOVITS Daniela (SWE)	ZETTERSTROM Kristina (SWE)	OWEN Naomi (WAL)	THOMAS WU ZHANG Chloe Anna (WAL)	WD	Qualification	QR32	3 - 2	11:7 10:12 12:10 6:11 11:5	MOSKOVITS Daniela	ZETTERSTROM Kristina
+2013	World Tour Swedish Open Stockholm 2013	BERGAND Filippa (SWE)	KARLSSON Michaela (SWE)	DE NUTTE Sarah (LUX)	EERLAND Britt (NED)	WD	Qualification	QR32	0 - 3	6:11 5:11 3:11	DE NUTTE Sarah	EERLAND Britt
+2013	World Tour Swedish Open Stockholm 2013	HOLMSTEN Ellen (SWE)	KALLBERG Christina (SWE)	CHASSELIN Pauline (FRA)	PFEFER Laura (FRA)	WD	Qualification	QR32	1 - 3	8:11 9:11 12:10 8:11	CHASSELIN Pauline	PFEFER Laura
+2013	World Tour Swedish Open Stockholm 2013	ISTRATE Roxana (ROU)	WERSALL Caroline (SWE)	GU Ruochen (CHN)	ZHAO Yan (CHN)	WD	Qualification	QR16	1 - 3	11:9 9:11 5:11 7:11	GU Ruochen	ZHAO Yan
+2013	World Tour Swedish Open Stockholm 2013	CHENG I-Ching (TPE)	HUANG Yi-Hua (TPE)	KERTAI Rita (HUN)	NAGYVARADI Mercedes (HUN)	WD	Main Draw	R16	3 - 0	11:9 11:6 11:9	CHENG I-Ching	HUANG Yi-Hua
+2013	World Tour Swedish Open Stockholm 2013	CHENG I-Ching (TPE)	HUANG Yi-Hua (TPE)	DOLGIKH Maria (RUS)	MIKHAILOVA Polina (RUS)	WD	Main Draw	QuarterFinal	1 - 3	12:14 12:10 6:11 5:11	DOLGIKH Maria	MIKHAILOVA Polina
+2013	World Tour Swedish Open Stockholm 2013	HSU Hui-Tsun (TPE)	LEE I-Chen (TPE)	CREEMERS Linda (NED)	LI Jiao (NED)	WD	Main Draw	QuarterFinal	3 - 2	12:10 8:11 11:7 8:11 11:6	HSU Hui-Tsun	LEE I-Chen
+2013	World Tour Swedish Open Stockholm 2013	HSU Hui-Tsun (TPE)	LEE I-Chen (TPE)	LI Xiaodan (CHN)	MU Zi (CHN)	WD	Main Draw	Final	0 - 3	4:11 3:11 4:11	LI Xiaodan	MU Zi
+2013	World Tour Swedish Open Stockholm 2013	HSU Hui-Tsun (TPE)	LEE I-Chen (TPE)	EKHOLM Matilda (SWE)	JONSSON Jennifer (SWE)	WD	Qualification	QR16	3 - 0	11:6 11:9 11:8	HSU Hui-Tsun	LEE I-Chen
+2013	World Tour Swedish Open Stockholm 2013	CORDERO Carelyn (PUR)	LORENZOTTI Maria (URU)	GUNGOR Gokce Nur (TUR)	KULAKCEKEN Simay (TUR)	WD	Qualification	QR32	3 - 1	11:6 11:9 7:11 11:6	CORDERO Carelyn	LORENZOTTI Maria
+2013	World Tour Swedish Open Stockholm 2013	CORDERO Carelyn (PUR)	LORENZOTTI Maria (URU)	AGGARWAL Neha (IND)	GHATAK Poulomi (IND)	WD	Qualification	QR16	0 - 3	5:11 9:11 4:11	AGGARWAL Neha	GHATAK Poulomi

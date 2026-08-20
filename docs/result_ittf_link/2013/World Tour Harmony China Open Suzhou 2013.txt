@@ -10,3 +10,397 @@
 ----------------------------------------
 数据来源：ITTF World Tour 2013
 文件生成时间：自动生成
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 2 Total: 123
+
+Start
+Prev
+1
+2
+Next
+End
+2013	World Tour Harmony China Open Suzhou 2013	SAKAI Asuka (JPN)		LAI Yi-Yao (TPE)		U21MS	Qualification		3 - 1	11:7 6:11 11:9 11:9	SAKAI Asuka	
+2013	World Tour Harmony China Open Suzhou 2013	SAKAI Asuka (JPN)		PANG Xue Jie (SGP)		U21MS	Qualification		3 - 0	11:6 11:5 11:2	SAKAI Asuka	
+2013	World Tour Harmony China Open Suzhou 2013	PANG Xue Jie (SGP)		LAI Yi-Yao (TPE)		U21MS	Qualification		3 - 2	11:9 4:11 11:3 4:11 11:4	PANG Xue Jie	
+2013	World Tour Harmony China Open Suzhou 2013	PAK Sin Hyok (PRK)		MATSUDA Naoki (JPN)		U21MS	Qualification		3 - 1	11:8 10:12 11:5 11:7	PAK Sin Hyok	
+2013	World Tour Harmony China Open Suzhou 2013	CHEW Clarence (SGP)		MAK King Ho (HKG)		U21MS	Qualification		3 - 1	11:9 11:5 3:11 11:9	CHEW Clarence	
+2013	World Tour Harmony China Open Suzhou 2013	PAK Sin Hyok (PRK)		CHEW Clarence (SGP)		U21MS	Qualification		3 - 0	11:9 11:7 11:6	PAK Sin Hyok	
+2013	World Tour Harmony China Open Suzhou 2013	MATSUDA Naoki (JPN)		MAK King Ho (HKG)		U21MS	Qualification		3 - 0	12:10 11:7 11:8	MATSUDA Naoki	
+2013	World Tour Harmony China Open Suzhou 2013	PAK Sin Hyok (PRK)		MAK King Ho (HKG)		U21MS	Qualification		3 - 1	11:9 11:2 10:12 11:6	PAK Sin Hyok	
+2013	World Tour Harmony China Open Suzhou 2013	CHEW Clarence (SGP)		MATSUDA Naoki (JPN)		U21MS	Qualification		1 - 3	11:7 9:11 9:11 3:11	MATSUDA Naoki	
+2013	World Tour Harmony China Open Suzhou 2013	HIGASHI Yuto (JPN)		LU Po-Hsien (TPE)		U21MS	Qualification		3 - 0	11:7 11:4 11:4	HIGASHI Yuto	
+2013	World Tour Harmony China Open Suzhou 2013	XIN Zhaoxu (SGP)		RI Kwang Won (PRK)		U21MS	Qualification		2 - 3	9:11 12:10 9:11 11:9 9:11	RI Kwang Won	
+2013	World Tour Harmony China Open Suzhou 2013	HIGASHI Yuto (JPN)		XIN Zhaoxu (SGP)		U21MS	Qualification		1 - 3	2:11 9:11 11:7 6:11	XIN Zhaoxu	
+2013	World Tour Harmony China Open Suzhou 2013	LU Po-Hsien (TPE)		RI Kwang Won (PRK)		U21MS	Qualification		3 - 1	15:13 5:11 12:10 11:9	LU Po-Hsien	
+2013	World Tour Harmony China Open Suzhou 2013	HIGASHI Yuto (JPN)		RI Kwang Won (PRK)		U21MS	Qualification		1 - 3	11:8 4:11 6:11 7:11	RI Kwang Won	
+2013	World Tour Harmony China Open Suzhou 2013	XIN Zhaoxu (SGP)		LU Po-Hsien (TPE)		U21MS	Qualification		3 - 1	11:4 11:5 7:11 11:4	XIN Zhaoxu	
+2013	World Tour Harmony China Open Suzhou 2013	SAMBE Kohei (JPN)		OTSUKA Masahiro (JPN)		U21MS	Qualification		3 - 2	6:11 13:11 13:11 6:11 11:5	SAMBE Kohei	
+2013	World Tour Harmony China Open Suzhou 2013	YU Jiaqing (SGP)		CHOE Il (PRK)		U21MS	Qualification		1 - 3	18:20 11:8 6:11 7:11	CHOE Il	
+2013	World Tour Harmony China Open Suzhou 2013	SAMBE Kohei (JPN)		YU Jiaqing (SGP)		U21MS	Qualification		0 - 3	9:11 17:19 9:11	YU Jiaqing	
+2013	World Tour Harmony China Open Suzhou 2013	OTSUKA Masahiro (JPN)		CHOE Il (PRK)		U21MS	Qualification		2 - 3	10:12 11:9 11:7 8:11 4:11	CHOE Il	
+2013	World Tour Harmony China Open Suzhou 2013	SAMBE Kohei (JPN)		CHOE Il (PRK)		U21MS	Qualification		3 - 2	14:12 9:11 11:13 11:8 11:8	SAMBE Kohei	
+2013	World Tour Harmony China Open Suzhou 2013	YU Jiaqing (SGP)		OTSUKA Masahiro (JPN)		U21MS	Qualification		3 - 1	9:11 11:4 11:3 11:5	YU Jiaqing	
+2013	World Tour Harmony China Open Suzhou 2013	SAKAI Asuka (JPN)		SEO Junghwa (KOR)		MS	Qualification		4 - 0	11:5 12:10 11:5 11:6	SAKAI Asuka	
+2013	World Tour Harmony China Open Suzhou 2013	TANG Peng (HKG)		SEO Junghwa (KOR)		MS	Qualification		4 - 1	11:5 11:8 14:12 11:13 12:10	TANG Peng	
+2013	World Tour Harmony China Open Suzhou 2013	TANG Peng (HKG)		SAKAI Asuka (JPN)		MS	Qualification		4 - 1	11:1 11:7 11:9 8:11 11:7	TANG Peng	
+2013	World Tour Harmony China Open Suzhou 2013	HIGASHI Yuto (JPN)		YU Jiaqing (SGP)		MS	Qualification		4 - 3	12:10 9:11 11:5 2:11 9:11 11:9 11:9	HIGASHI Yuto	
+2013	World Tour Harmony China Open Suzhou 2013	CHEN Weixing (AUT)		YU Jiaqing (SGP)		MS	Qualification		4 - 1	11:4 11:6 11:9 9:11 11:5	CHEN Weixing	
+2013	World Tour Harmony China Open Suzhou 2013	CHEN Weixing (AUT)		HIGASHI Yuto (JPN)		MS	Qualification		4 - 0	11:6 13:11 11:7 11:7	CHEN Weixing	
+2013	World Tour Harmony China Open Suzhou 2013	PAK Sin Hyok (PRK)		CHANG Shun-Hung (TPE)		MS	Qualification		4 - 2	12:10 2:11 7:11 11:9 11:7 11:9	PAK Sin Hyok	
+2013	World Tour Harmony China Open Suzhou 2013	TAKAKIWA Taku (JPN)		CHANG Shun-Hung (TPE)		MS	Qualification		4 - 0	11:8 11:9 12:10 11:8	TAKAKIWA Taku	
+2013	World Tour Harmony China Open Suzhou 2013	TAKAKIWA Taku (JPN)		PAK Sin Hyok (PRK)		MS	Qualification		4 - 2	6:11 8:11 11:5 11:8 11:9 11:9	TAKAKIWA Taku	
+2013	World Tour Harmony China Open Suzhou 2013	TSE Ka Chun (HKG)		XIN Zhaoxu (SGP)		MS	Qualification		1 - 4	11:3 6:11 16:18 9:11 9:11	XIN Zhaoxu	
+2013	World Tour Harmony China Open Suzhou 2013	CHAN Kazuhiro (JPN)		XIN Zhaoxu (SGP)		MS	Qualification		2 - 4	11:8 11:3 8:11 7:11 9:11 9:11	XIN Zhaoxu	
+2013	World Tour Harmony China Open Suzhou 2013	CHAN Kazuhiro (JPN)		TSE Ka Chun (HKG)		MS	Qualification		4 - 3	11:6 8:11 8:11 11:5 14:12 8:11 11:8	CHAN Kazuhiro	
+2013	World Tour Harmony China Open Suzhou 2013	KIM Donghyun (KOR)		SAMBE Kohei (JPN)		MS	Qualification		4 - 1	6:11 12:10 11:7 11:6 12:10	KIM Donghyun	
+2013	World Tour Harmony China Open Suzhou 2013	LI Hu (SGP)		SAMBE Kohei (JPN)		MS	Qualification		4 - 2	7:11 11:8 5:11 11:9 11:6 11:6	LI Hu	
+2013	World Tour Harmony China Open Suzhou 2013	LI Hu (SGP)		KIM Donghyun (KOR)		MS	Qualification		4 - 3	9:11 6:11 11:7 11:9 15:13 4:11 11:9	LI Hu	
+2013	World Tour Harmony China Open Suzhou 2013	LEE Jinkwon (KOR)		CHEW Clarence (SGP)		MS	Qualification		4 - 0	11:9 11:4 11:9 11:6	LEE Jinkwon	
+2013	World Tour Harmony China Open Suzhou 2013	KIM Hyok Bong (PRK)		CHEW Clarence (SGP)		MS	Qualification		4 - 0	11:8 11:5 11:7 11:5	KIM Hyok Bong	
+2013	World Tour Harmony China Open Suzhou 2013	KIM Hyok Bong (PRK)		LEE Jinkwon (KOR)		MS	Qualification		4 - 1	11:8 11:5 6:11 11:6 11:7	KIM Hyok Bong	
+2013	World Tour Harmony China Open Suzhou 2013	MA Liang (SGP)		LU Po-Hsien (TPE)		MS	Qualification		4 - 1	11:8 11:5 9:11 11:5 11:6	MA Liang	
+2013	World Tour Harmony China Open Suzhou 2013	CHO Eonrae (KOR)		LU Po-Hsien (TPE)		MS	Qualification		4 - 0	11:1 14:12 11:5 11:8	CHO Eonrae	
+2013	World Tour Harmony China Open Suzhou 2013	CHO Eonrae (KOR)		MA Liang (SGP)		MS	Qualification		4 - 2	4:11 11:9 11:4 11:9 10:12 11:4	CHO Eonrae	
+2013	World Tour Harmony China Open Suzhou 2013	WONG Chun Ting (HKG)		LAI Yi-Yao (TPE)		MS	Qualification		4 - 0	11:8 11:6 11:8 11:8	WONG Chun Ting	
+2013	World Tour Harmony China Open Suzhou 2013	JEOUNG Youngsik (KOR)		LAI Yi-Yao (TPE)		MS	Qualification		4 - 1	11:9 11:5 12:10 6:11 11:7	JEOUNG Youngsik	
+2013	World Tour Harmony China Open Suzhou 2013	JEOUNG Youngsik (KOR)		WONG Chun Ting (HKG)		MS	Qualification		4 - 0	11:7 11:7 16:14 12:10	JEOUNG Youngsik	
+2013	World Tour Harmony China Open Suzhou 2013	WU Chih-Chi (TPE)		PANG Xue Jie (SGP)		MS	Qualification		4 - 0	11:8 11:6 11:9 12:10	WU Chih-Chi	
+2013	World Tour Harmony China Open Suzhou 2013	LEE Sang Su (KOR)		PANG Xue Jie (SGP)		MS	Qualification		4 - 0	11:7 11:7 11:4 11:9	LEE Sang Su	
+2013	World Tour Harmony China Open Suzhou 2013	LEE Sang Su (KOR)		WU Chih-Chi (TPE)		MS	Qualification		4 - 1	11:7 12:10 10:12 11:3 12:10	LEE Sang Su	
+2013	World Tour Harmony China Open Suzhou 2013	WU Zhikang (SGP)		MATSUDA Naoki (JPN)		MS	Qualification		4 - 1	11:9 11:5 9:11 11:4 11:3	WU Zhikang	
+2013	World Tour Harmony China Open Suzhou 2013	LEUNG Chu Yan (HKG)		MATSUDA Naoki (JPN)		MS	Qualification		0 - 2	8:11 8:11 7:8	MATSUDA Naoki	
+2013	World Tour Harmony China Open Suzhou 2013	HUNG Tzu-Hsiang (TPE)		OTSUKA Masahiro (JPN)		MS	Qualification		4 - 0	11:7 11:6 11:7 11:5	HUNG Tzu-Hsiang	
+2013	World Tour Harmony China Open Suzhou 2013	CHEUNG Yuk (HKG)		OTSUKA Masahiro (JPN)		MS	Qualification		3 - 4	14:12 7:11 5:11 11:9 2:11 11:8 9:11	OTSUKA Masahiro	
+2013	World Tour Harmony China Open Suzhou 2013	CHEUNG Yuk (HKG)		HUNG Tzu-Hsiang (TPE)		MS	Qualification		4 - 3	11:4 5:11 12:10 11:9 3:11 9:11 11:8	CHEUNG Yuk	
+2013	World Tour Harmony China Open Suzhou 2013	CHIANG Hung-Chieh (TPE)		MAK King Ho (HKG)		MS	Qualification		4 - 0	11:7 11:6 11:9 11:8	CHIANG Hung-Chieh	
+2013	World Tour Harmony China Open Suzhou 2013	MATSUDAIRA Kenji (JPN)		MAK King Ho (HKG)		MS	Qualification		4 - 0	11:9 11:1 11:9 12:10	MATSUDAIRA Kenji	
+2013	World Tour Harmony China Open Suzhou 2013	MATSUDAIRA Kenji (JPN)		CHIANG Hung-Chieh (TPE)		MS	Qualification		3 - 4	11:8 6:11 7:11 7:11 11:9 11:5 11:13	CHIANG Hung-Chieh	
+2013	World Tour Harmony China Open Suzhou 2013	UEDA Jin (JPN)		GREEN Wally (USA)		MS	Qualification		4 - 0	11:7 11:1 11:2 11:6	UEDA Jin	
+2013	World Tour Harmony China Open Suzhou 2013	YANG Zi (SGP)		LIU Yi (CHN)		MS	Qualification		0 - 4	6:11 9:11 3:11 3:11	LIU Yi	
+2013	World Tour Harmony China Open Suzhou 2013	YANG Zi (SGP)		GREEN Wally (USA)		MS	Qualification		4 - 0	11:7 11:3 11:3 11:3	YANG Zi	
+2013	World Tour Harmony China Open Suzhou 2013	UEDA Jin (JPN)		LIU Yi (CHN)		MS	Qualification		1 - 4	11:9 6:11 5:11 8:11 9:11	LIU Yi	
+2013	World Tour Harmony China Open Suzhou 2013	YANG Zi (SGP)		UEDA Jin (JPN)		MS	Qualification		4 - 3	10:12 9:11 7:11 11:7 11:9 11:7 11:8	YANG Zi	
+2013	World Tour Harmony China Open Suzhou 2013	GREEN Wally (USA)		LIU Yi (CHN)		MS	Qualification		0 - 4	3:11 5:11 3:11 6:11	LIU Yi	
+2013	World Tour Harmony China Open Suzhou 2013	MACHI Asuka (JPN)		BRETON Arthur (FRA)		MS	Qualification		4 - 2	11:6 12:10 10:12 6:11 11:5 11:6	MACHI Asuka	
+2013	World Tour Harmony China Open Suzhou 2013	CHEN Feng (SGP)		KANG Wi Hun (PRK)		MS	Qualification		2 - 4	11:7 6:11 9:11 6:11 11:5 7:11	KANG Wi Hun	
+2013	World Tour Harmony China Open Suzhou 2013	CHEN Feng (SGP)		BRETON Arthur (FRA)		MS	Qualification		4 - 0	11:4 11:8 11:3 12:10	CHEN Feng	
+2013	World Tour Harmony China Open Suzhou 2013	MACHI Asuka (JPN)		KANG Wi Hun (PRK)		MS	Qualification		4 - 1	7:11 13:11 11:5 11:8 13:11	MACHI Asuka	
+2013	World Tour Harmony China Open Suzhou 2013	CHEN Feng (SGP)		MACHI Asuka (JPN)		MS	Qualification		3 - 4	12:10 11:8 7:11 9:11 10:12 11:6 9:11	MACHI Asuka	
+2013	World Tour Harmony China Open Suzhou 2013	BRETON Arthur (FRA)		KANG Wi Hun (PRK)		MS	Qualification		0 - 4	8:11 6:11 3:11 4:11	KANG Wi Hun	
+2013	World Tour Harmony China Open Suzhou 2013	MORIZONO Masataka (JPN)		SHEN Chi-Min (TPE)		MS	Qualification		4 - 0	11:3 11:6 11:5 11:3	MORIZONO Masataka	
+2013	World Tour Harmony China Open Suzhou 2013	KANG Dongsoo (KOR)		CHOE Il (PRK)		MS	Qualification		0 - 4	11:13 12:14 8:11 5:11	CHOE Il	
+2013	World Tour Harmony China Open Suzhou 2013	KANG Dongsoo (KOR)		SHEN Chi-Min (TPE)		MS	Qualification		4 - 0	11:4 11:9 11:9 11:6	KANG Dongsoo	
+2013	World Tour Harmony China Open Suzhou 2013	MORIZONO Masataka (JPN)		CHOE Il (PRK)		MS	Qualification		4 - 1	8:11 11:2 11:7 11:9 11:7	MORIZONO Masataka	
+2013	World Tour Harmony China Open Suzhou 2013	KANG Dongsoo (KOR)		MORIZONO Masataka (JPN)		MS	Qualification		3 - 4	11:7 11:7 10:12 10:12 11:5 4:11 9:11	MORIZONO Masataka	
+2013	World Tour Harmony China Open Suzhou 2013	SHEN Chi-Min (TPE)		CHOE Il (PRK)		MS	Qualification		0 - 4	10:12 8:11 15:17 5:11	CHOE Il	
+2013	World Tour Harmony China Open Suzhou 2013	HUANG Sheng-Sheng (TPE)		RI Kwang Won (PRK)		MS	Qualification		3 - 4	7:11 9:11 11:9 7:11 11:9 11:9 6:11	RI Kwang Won	
+2013	World Tour Harmony China Open Suzhou 2013	YOSHIMURA Maharu (JPN)		RI Kwang Won (PRK)		MS	Qualification		3 - 4	7:11 11:6 11:3 8:11 11:4 8:11 12:14	RI Kwang Won	
+2013	World Tour Harmony China Open Suzhou 2013	HUANG Sheng-Sheng (TPE)		YOSHIMURA Maharu (JPN)		MS	Qualification		4 - 0	11:6 11:7 11:8 11:7	HUANG Sheng-Sheng	
+2013	World Tour Harmony China Open Suzhou 2013	MA Long (CHN)		LEE Sang Su (KOR)		MS	Main Draw	R32	4 - 2	11:9 11:9 11:6 6:11 9:11 11:7	MA Long	
+2013	World Tour Harmony China Open Suzhou 2013	CHO Eonrae (KOR)		JIANG Tianyi (HKG)		MS	Main Draw	R32	4 - 1	11:5 7:11 11:8 13:11 12:10	CHO Eonrae	
+2013	World Tour Harmony China Open Suzhou 2013	KIM Minseok (KOR)		LIU Yi (CHN)		MS	Main Draw	R32	4 - 1	6:11 11:7 11:4 11:9 11:2	KIM Minseok	
+2013	World Tour Harmony China Open Suzhou 2013	TAKAKIWA Taku (JPN)		GAO Ning (SGP)		MS	Main Draw	R32	1 - 4	5:11 7:11 13:11 3:11 7:11	GAO Ning	
+2013	World Tour Harmony China Open Suzhou 2013	YAN An (CHN)		WU Zhikang (SGP)		MS	Main Draw	R32	4 - 0	11:5 11:9 11:9 11:6	YAN An	
+2013	World Tour Harmony China Open Suzhou 2013	KIM Hyok Bong (PRK)		NIWA Koki (JPN)		MS	Main Draw	R32	3 - 4	6:11 8:11 7:11 11:8 11:9 11:3 9:11	NIWA Koki	
+2013	World Tour Harmony China Open Suzhou 2013	MATSUDAIRA Kenta (JPN)		RI Kwang Won (PRK)		MS	Main Draw	R32	4 - 2	11:6 11:9 4:11 9:11 11:7 11:6	MATSUDAIRA Kenta	
+2013	World Tour Harmony China Open Suzhou 2013	HUNG Tzu-Hsiang (TPE)		WANG Hao (CHN)		MS	Main Draw	R32	0 - 4	8:11 6:11 7:11 10:12	WANG Hao	
+2013	World Tour Harmony China Open Suzhou 2013	OVTCHAROV Dimitrij (GER)		LI Hu (SGP)		MS	Main Draw	R32	4 - 1	13:11 9:11 11:8 13:11 11:8	OVTCHAROV Dimitrij	
+2013	World Tour Harmony China Open Suzhou 2013	CHEN Weixing (AUT)		KISHIKAWA Seiya (JPN)		MS	Main Draw	R32	2 - 4	11:7 13:11 8:11 7:11 7:11 3:11	KISHIKAWA Seiya	
+2013	World Tour Harmony China Open Suzhou 2013	CHEN Chien-An (TPE)		TANG Peng (HKG)		MS	Main Draw	R32	1 - 4	8:11 12:10 7:11 10:12 7:11	TANG Peng	
+2013	World Tour Harmony China Open Suzhou 2013	XIN Zhaoxu (SGP)		CHUANG Chih-Yuan (TPE)		MS	Main Draw	R32	2 - 4	6:11 6:11 11:8 11:9 7:11 11:13	CHUANG Chih-Yuan	
+2013	World Tour Harmony China Open Suzhou 2013	JOO Saehyuk (KOR)		MACHI Asuka (JPN)		MS	Main Draw	R32	4 - 0	12:10 11:6 12:10 11:6	JOO Saehyuk	
+2013	World Tour Harmony China Open Suzhou 2013	MORIZONO Masataka (JPN)		ZHAN Jian (SGP)		MS	Main Draw	R32	0 - 4	6:11 3:11 5:11 6:11	ZHAN Jian	
+2013	World Tour Harmony China Open Suzhou 2013	CHEN Qi (CHN)		CHIANG Hung-Chieh (TPE)		MS	Main Draw	R32	2 - 4	11:9 9:11 8:11 9:11 11:9 12:14	CHIANG Hung-Chieh	
+2013	World Tour Harmony China Open Suzhou 2013	JEOUNG Youngsik (KOR)		XU Xin (CHN)		MS	Main Draw	R32	1 - 4	11:6 6:11 7:11 5:11 4:11	XU Xin	
+2013	World Tour Harmony China Open Suzhou 2013	MA Long (CHN)		CHO Eonrae (KOR)		MS	Main Draw	R16	4 - 2	11:13 11:2 11:8 11:2 11:13 11:1	MA Long	
+2013	World Tour Harmony China Open Suzhou 2013	KIM Minseok (KOR)		GAO Ning (SGP)		MS	Main Draw	R16	3 - 4	5:11 11:7 11:3 11:2 5:11 5:11 4:11	GAO Ning	
+2013	World Tour Harmony China Open Suzhou 2013	YAN An (CHN)		NIWA Koki (JPN)		MS	Main Draw	R16	3 - 4	11:7 9:11 9:11 6:11 11:4 11:5 11:13	NIWA Koki	
+2013	World Tour Harmony China Open Suzhou 2013	MATSUDAIRA Kenta (JPN)		WANG Hao (CHN)		MS	Main Draw	R16	4 - 0	11:8 11:7 11:6 11:7	MATSUDAIRA Kenta	
+2013	World Tour Harmony China Open Suzhou 2013	OVTCHAROV Dimitrij (GER)		KISHIKAWA Seiya (JPN)		MS	Main Draw	R16	4 - 1	11:6 11:9 13:15 11:7 11:7	OVTCHAROV Dimitrij	
+2013	World Tour Harmony China Open Suzhou 2013	TANG Peng (HKG)		CHUANG Chih-Yuan (TPE)		MS	Main Draw	R16	1 - 4	6:11 11:5 7:11 6:11 15:17	CHUANG Chih-Yuan	
+2013	World Tour Harmony China Open Suzhou 2013	JOO Saehyuk (KOR)		ZHAN Jian (SGP)		MS	Main Draw	R16	1 - 4	8:11 11:7 14:16 9:11 9:11	ZHAN Jian
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 2 of 4 Total: 363
+
+Start
+Prev
+1
+2
+3
+4
+Next
+End
+2013	World Tour Harmony China Open Suzhou 2013	CHIANG Hung-Chieh (TPE)		XU Xin (CHN)		MS	Main Draw	R16	1 - 4	10:12 9:11 11:9 4:11 8:11	XU Xin	
+2013	World Tour Harmony China Open Suzhou 2013	MA Long (CHN)		GAO Ning (SGP)		MS	Main Draw	QuarterFinal	4 - 1	11:8 11:4 11:3 11:13 11:7	MA Long	
+2013	World Tour Harmony China Open Suzhou 2013	NIWA Koki (JPN)		MATSUDAIRA Kenta (JPN)		MS	Main Draw	QuarterFinal	4 - 3	11:8 8:11 15:17 10:12 11:5 11:9 11:6	NIWA Koki	
+2013	World Tour Harmony China Open Suzhou 2013	OVTCHAROV Dimitrij (GER)		CHUANG Chih-Yuan (TPE)		MS	Main Draw	QuarterFinal	4 - 2	11:9 11:13 15:17 11:8 11:8 11:3	OVTCHAROV Dimitrij	
+2013	World Tour Harmony China Open Suzhou 2013	ZHAN Jian (SGP)		XU Xin (CHN)		MS	Main Draw	QuarterFinal	2 - 4	13:11 6:11 9:11 12:10 8:11 6:11	XU Xin	
+2013	World Tour Harmony China Open Suzhou 2013	MA Long (CHN)		NIWA Koki (JPN)		MS	Main Draw	SemiFinal	4 - 0	11:9 11:5 11:1 11:8	MA Long	
+2013	World Tour Harmony China Open Suzhou 2013	OVTCHAROV Dimitrij (GER)		XU Xin (CHN)		MS	Main Draw	SemiFinal	1 - 4	11:13 11:9 7:11 6:11 10:12	XU Xin	
+2013	World Tour Harmony China Open Suzhou 2013	MA Long (CHN)		XU Xin (CHN)		MS	Main Draw	Final	4 - 1	11:8 11:7 11:2 11:13 11:6	MA Long	
+2013	World Tour Harmony China Open Suzhou 2013	CHEN Feng (SGP)		CHOE Il (PRK)		U21MS	Main Draw	R16	3 - 1	10:12 11:9 11:8 26:24	CHEN Feng	
+2013	World Tour Harmony China Open Suzhou 2013	PAK Sin Hyok (PRK)		WU Zhikang (SGP)		U21MS	Main Draw	R16	2 - 3	11:6 8:11 11:9 7:11 3:11	WU Zhikang	
+2013	World Tour Harmony China Open Suzhou 2013	MACHI Asuka (JPN)		RI Kwang Won (PRK)		U21MS	Main Draw	R16	2 - 3	12:10 12:14 8:11 11:8 6:11	RI Kwang Won	
+2013	World Tour Harmony China Open Suzhou 2013	PANG Xue Jie (SGP)		MORIZONO Masataka (JPN)		U21MS	Main Draw	R16	1 - 3	12:10 8:11 10:12 8:11	MORIZONO Masataka	
+2013	World Tour Harmony China Open Suzhou 2013	YOSHIMURA Maharu (JPN)		XIN Zhaoxu (SGP)		U21MS	Main Draw	R16	3 - 2	11:6 11:9 9:11 5:11 11:4	YOSHIMURA Maharu	
+2013	World Tour Harmony China Open Suzhou 2013	SAKAI Asuka (JPN)		KIM Donghyun (KOR)		U21MS	Main Draw	R16	3 - 1	11:6 7:11 11:5 11:3	SAKAI Asuka	
+2013	World Tour Harmony China Open Suzhou 2013	HUNG Tzu-Hsiang (TPE)		YU Jiaqing (SGP)		U21MS	Main Draw	R16	3 - 2	11:7 10:12 11:3 5:11 11:7	HUNG Tzu-Hsiang	
+2013	World Tour Harmony China Open Suzhou 2013	MATSUDA Naoki (JPN)		KANG Dongsoo (KOR)		U21MS	Main Draw	R16	3 - 2	19:17 11:8 8:11 6:11 11:9	MATSUDA Naoki	
+2013	World Tour Harmony China Open Suzhou 2013	CHEN Feng (SGP)		WU Zhikang (SGP)		U21MS	Main Draw	QuarterFinal	4 - 0	11:8 11:5 11:8 11:8	CHEN Feng	
+2013	World Tour Harmony China Open Suzhou 2013	RI Kwang Won (PRK)		MORIZONO Masataka (JPN)		U21MS	Main Draw	QuarterFinal	0 - 4	5:11 7:11 7:11 10:12	MORIZONO Masataka	
+2013	World Tour Harmony China Open Suzhou 2013	YOSHIMURA Maharu (JPN)		SAKAI Asuka (JPN)		U21MS	Main Draw	QuarterFinal	4 - 0	11:8 11:8 11:7 11:9	YOSHIMURA Maharu	
+2013	World Tour Harmony China Open Suzhou 2013	HUNG Tzu-Hsiang (TPE)		MATSUDA Naoki (JPN)		U21MS	Main Draw	QuarterFinal	4 - 1	11:9 11:3 8:11 14:12 11:9	HUNG Tzu-Hsiang	
+2013	World Tour Harmony China Open Suzhou 2013	CHEN Feng (SGP)		MORIZONO Masataka (JPN)		U21MS	Main Draw	SemiFinal	3 - 4	11:6 11:8 10:12 7:11 11:7 8:11 10:12	MORIZONO Masataka	
+2013	World Tour Harmony China Open Suzhou 2013	YOSHIMURA Maharu (JPN)		HUNG Tzu-Hsiang (TPE)		U21MS	Main Draw	SemiFinal	3 - 4	2:11 11:9 3:11 6:11 13:11 11:6 10:12	HUNG Tzu-Hsiang	
+2013	World Tour Harmony China Open Suzhou 2013	MORIZONO Masataka (JPN)		HUNG Tzu-Hsiang (TPE)		U21MS	Main Draw	Final	4 - 1	11:6 12:10 11:9 9:11 11:6	MORIZONO Masataka
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 2 Total: 153
+
+Start
+Prev
+1
+2
+Next
+End
+2013	World Tour Harmony China Open Suzhou 2013	NONAKA Yuki (JPN)		WU Yue (USA)		WS	Qualification		4 - 0	11:3 11:5 11:5 11:5	NONAKA Yuki	
+2013	World Tour Harmony China Open Suzhou 2013	NONAKA Yuki (JPN)		LI Ching Wan (HKG)		WS	Qualification		4 - 2	7:11 11:8 11:5 11:8 5:11 11:9	NONAKA Yuki	
+2013	World Tour Harmony China Open Suzhou 2013	LI Ching Wan (HKG)		WU Yue (USA)		WS	Qualification		3 - 4	11:7 11:13 12:10 8:11 11:6 9:11 10:12	WU Yue	
+2013	World Tour Harmony China Open Suzhou 2013	LIN Ye (CAN)		TSUI Pao-Wen (TPE)		WS	Qualification		4 - 0	11:3 11:4 11:2 11:8	LIN Ye	
+2013	World Tour Harmony China Open Suzhou 2013	LIN Ye (CAN)		ISHIKAWA Rira (JPN)		WS	Qualification		4 - 2	11:6 5:11 11:5 11:4 6:11 11:7	LIN Ye	
+2013	World Tour Harmony China Open Suzhou 2013	ISHIKAWA Rira (JPN)		TSUI Pao-Wen (TPE)		WS	Qualification		4 - 1	7:11 12:10 11:5 11:3 11:8	ISHIKAWA Rira	
+2013	World Tour Harmony China Open Suzhou 2013	CHOI Moonyoung (KOR)		YU Mei-Ju (TPE)		WS	Qualification		4 - 0	12:10 11:4 11:1 11:7	CHOI Moonyoung	
+2013	World Tour Harmony China Open Suzhou 2013	CHOI Moonyoung (KOR)		LI Isabelle Siyun (SGP)		WS	Qualification		4 - 2	6:11 11:8 12:10 2:11 11:4 11:5	CHOI Moonyoung	
+2013	World Tour Harmony China Open Suzhou 2013	LI Isabelle Siyun (SGP)		YU Mei-Ju (TPE)		WS	Qualification		2 - 4	16:14 7:11 7:11 6:11 11:9 5:11	YU Mei-Ju	
+2013	World Tour Harmony China Open Suzhou 2013	ZHOU Yihan (SGP)		HSU Hui-Tsun (TPE)		WS	Qualification		4 - 0	12:10 11:9 11:5 11:7	ZHOU Yihan	
+2013	World Tour Harmony China Open Suzhou 2013	ZHOU Yihan (SGP)		NEMOTO Riyo (JPN)		WS	Qualification		2 - 4	11:7 11:8 8:11 6:11 7:11 8:11	NEMOTO Riyo	
+2013	World Tour Harmony China Open Suzhou 2013	NEMOTO Riyo (JPN)		HSU Hui-Tsun (TPE)		WS	Qualification		4 - 0	11:8 11:7 11:3 11:2	NEMOTO Riyo	
+2013	World Tour Harmony China Open Suzhou 2013	ISHIGAKI Yuka (JPN)		LEE Yearam (KOR)		WS	Qualification		4 - 1	11:5 24:22 11:4 11:13 11:2	ISHIGAKI Yuka	
+2013	World Tour Harmony China Open Suzhou 2013	ISHIGAKI Yuka (JPN)		HSIUNG Nai-I (TPE)		WS	Qualification		4 - 0	11:8 11:4 11:7 11:2	ISHIGAKI Yuka	
+2013	World Tour Harmony China Open Suzhou 2013	HSIUNG Nai-I (TPE)		LEE Yearam (KOR)		WS	Qualification		4 - 2	11:5 4:11 11:6 11:9 11:13 13:11	HSIUNG Nai-I	
+2013	World Tour Harmony China Open Suzhou 2013	KIM Hye Song (PRK)		ITO Midori (JPN)		WS	Qualification		4 - 0	12:10 11:1 11:7 11:6	KIM Hye Song	
+2013	World Tour Harmony China Open Suzhou 2013	KIM Hye Song (PRK)		SOO Wai Yam (HKG)		WS	Qualification		4 - 3	2:11 11:8 9:11 11:6 9:11 11:6 11:3	KIM Hye Song	
+2013	World Tour Harmony China Open Suzhou 2013	SOO Wai Yam (HKG)		ITO Midori (JPN)		WS	Qualification		4 - 0	14:12 11:9 11:6 11:8	SOO Wai Yam	
+2013	World Tour Harmony China Open Suzhou 2013	SONG Maeum (KOR)		PAN Chun-Chu (TPE)		WS	Qualification		4 - 0	12:10 11:5 11:7 11:7	SONG Maeum	
+2013	World Tour Harmony China Open Suzhou 2013	SONG Maeum (KOR)		SAKAI Haruka (JPN)		WS	Qualification		1 - 4	9:11 8:11 4:11 11:5 4:11	SAKAI Haruka	
+2013	World Tour Harmony China Open Suzhou 2013	SAKAI Haruka (JPN)		PAN Chun-Chu (TPE)		WS	Qualification		4 - 1	11:4 1:11 13:11 11:9 11:4	SAKAI Haruka	
+2013	World Tour Harmony China Open Suzhou 2013	PARK Seonghye (KOR)		YEH Tung-Yi (TPE)		WS	Qualification		4 - 1	11:8 6:11 11:9 11:9 11:6	PARK Seonghye	
+2013	World Tour Harmony China Open Suzhou 2013	PARK Seonghye (KOR)		HASAMA Nozomi (JPN)		WS	Qualification		4 - 3	13:11 6:11 8:11 7:11 19:17 11:9 11:6	PARK Seonghye	
+2013	World Tour Harmony China Open Suzhou 2013	HASAMA Nozomi (JPN)		YEH Tung-Yi (TPE)		WS	Qualification		4 - 3	16:18 9:11 8:11 11:9 11:8 11:7 11:9	HASAMA Nozomi	
+2013	World Tour Harmony China Open Suzhou 2013	LIN Chia-Hui (TPE)		CHO Hala (KOR)		WS	Qualification		4 - 3	18:16 14:12 9:11 6:11 15:13 9:11 11:7	LIN Chia-Hui	
+2013	World Tour Harmony China Open Suzhou 2013	LIN Chia-Hui (TPE)		MATSUMOTO Yuki (JPN)		WS	Qualification		4 - 0	11:6 11:9 11:6 11:7	LIN Chia-Hui	
+2013	World Tour Harmony China Open Suzhou 2013	MATSUMOTO Yuki (JPN)		CHO Hala (KOR)		WS	Qualification		1 - 4	11:6 11:13 9:11 5:11 3:11	CHO Hala	
+2013	World Tour Harmony China Open Suzhou 2013	MAEDA Miyu (JPN)		LEE Chun-Hui (TPE)		WS	Qualification		4 - 0	11:1 11:1 11:2 11:9	MAEDA Miyu	
+2013	World Tour Harmony China Open Suzhou 2013	MAEDA Miyu (JPN)		SHAO Jieni (POR)		WS	Qualification		0 - 4	8:11 8:11 9:11 6:11	SHAO Jieni	
+2013	World Tour Harmony China Open Suzhou 2013	SHAO Jieni (POR)		LEE Chun-Hui (TPE)		WS	Qualification		4 - 0	11:2 11:6 11:3 11:7	SHAO Jieni	
+2013	World Tour Harmony China Open Suzhou 2013	MATSUZAWA Marina (JPN)		KIM Song I (PRK)		WS	Qualification		3 - 4	11:9 11:8 8:11 11:7 6:11 10:12 7:11	KIM Song I	
+2013	World Tour Harmony China Open Suzhou 2013	MATSUZAWA Marina (JPN)		CHENG Hsien-Tzu (TPE)		WS	Qualification		4 - 1	7:11 11:6 11:7 12:10 11:7	MATSUZAWA Marina	
+2013	World Tour Harmony China Open Suzhou 2013	CHENG Hsien-Tzu (TPE)		KIM Song I (PRK)		WS	Qualification		0 - 4	8:11 8:11 4:11 1:11	KIM Song I	
+2013	World Tour Harmony China Open Suzhou 2013	YOO Eunchong (KOR)		CHEN Hung-Ting (TPE)		WS	Qualification		4 - 1	11:5 11:3 11:6 11:13 11:7	YOO Eunchong	
+2013	World Tour Harmony China Open Suzhou 2013	YOO Eunchong (KOR)		FUJII Yuko (JPN)		WS	Qualification		4 - 1	4:11 11:9 11:8 11:6 11:6	YOO Eunchong	
+2013	World Tour Harmony China Open Suzhou 2013	FUJII Yuko (JPN)		CHEN Hung-Ting (TPE)		WS	Qualification		4 - 2	11:8 9:11 11:8 11:4 6:11 11:5	FUJII Yuko	
+2013	World Tour Harmony China Open Suzhou 2013	TASHIRO Saki (JPN)		CHIAO Pei-Ting (TPE)		WS	Qualification		4 - 0	11:5 11:3 11:5 11:7	TASHIRO Saki	
+2013	World Tour Harmony China Open Suzhou 2013	TASHIRO Saki (JPN)		JO Yujin (KOR)		WS	Qualification		2 - 4	11:4 5:11 8:11 11:6 9:11 10:12	JO Yujin	
+2013	World Tour Harmony China Open Suzhou 2013	JO Yujin (KOR)		CHIAO Pei-Ting (TPE)		WS	Qualification		4 - 0	11:9 12:10 11:7 11:8	JO Yujin	
+2013	World Tour Harmony China Open Suzhou 2013	HIRANO Miu (JPN)		HUNG Ling (TPE)		WS	Qualification		4 - 0	11:3 11:5 11:6 11:4	HIRANO Miu	
+2013	World Tour Harmony China Open Suzhou 2013	HIRANO Miu (JPN)		HWANG Jina (KOR)		WS	Qualification		4 - 1	11:8 12:10 11:6 10:12 11:5	HIRANO Miu	
+2013	World Tour Harmony China Open Suzhou 2013	HWANG Jina (KOR)		HUNG Ling (TPE)		WS	Qualification		4 - 2	11:4 11:6 8:11 11:13 11:8 11:4	HWANG Jina	
+2013	World Tour Harmony China Open Suzhou 2013	HAMAMOTO Yui (AUT)		HUANG Hsin (TPE)		WS	Qualification		4 - 0	12:10 11:7 11:6 11:5	HAMAMOTO Yui	
+2013	World Tour Harmony China Open Suzhou 2013	YU Kwok See (HKG)		LIN Chia-Chih (TPE)		WS	Qualification		2 - 4	9:11 8:11 8:11 11:3 11:7 10:12	LIN Chia-Chih	
+2013	World Tour Harmony China Open Suzhou 2013	SO Eka (JPN)		ZHANG Qiang (CHN)		WS	Qualification		3 - 4	11:9 6:11 12:10 5:11 9:11 11:3 5:11	ZHANG Qiang	
+2013	World Tour Harmony China Open Suzhou 2013	YU Kwok See (HKG)		SO Eka (JPN)		WS	Qualification		1 - 4	5:11 7:11 11:4 4:11 7:11	SO Eka	
+2013	World Tour Harmony China Open Suzhou 2013	LIN Chia-Chih (TPE)		ZHANG Qiang (CHN)		WS	Qualification		1 - 4	4:11 5:11 6:11 12:10 1:11	ZHANG Qiang	
+2013	World Tour Harmony China Open Suzhou 2013	YU Kwok See (HKG)		ZHANG Qiang (CHN)		WS	Qualification		0 - 4	7:11 7:11 7:11 10:12	ZHANG Qiang	
+2013	World Tour Harmony China Open Suzhou 2013	SO Eka (JPN)		LIN Chia-Chih (TPE)		WS	Qualification		4 - 0	11:2 11:6 11:7 11:6	SO Eka	
+2013	World Tour Harmony China Open Suzhou 2013	SO Eka (JPN)		TSUI Pao-Wen (TPE)		U21WS	Qualification		3 - 0	11:5 11:4 11:7	SO Eka	
+2013	World Tour Harmony China Open Suzhou 2013	ZHOU Yihan (SGP)		TSUI Pao-Wen (TPE)		U21WS	Qualification		3 - 1	11:9 11:3 5:11 11:9	ZHOU Yihan	
+2013	World Tour Harmony China Open Suzhou 2013	ZHOU Yihan (SGP)		SO Eka (JPN)		U21WS	Qualification		3 - 1	11:4 8:11 14:12 11:4	ZHOU Yihan	
+2013	World Tour Harmony China Open Suzhou 2013	CHENG Hsien-Tzu (TPE)		LI Ching Wan (HKG)		U21WS	Qualification		3 - 2	11:4 13:11 7:11 9:11 11:7	CHENG Hsien-Tzu	
+2013	World Tour Harmony China Open Suzhou 2013	KIM Hye Song (PRK)		LI Ching Wan (HKG)		U21WS	Qualification		3 - 2	11:9 10:12 13:11 8:11 11:2	KIM Hye Song	
+2013	World Tour Harmony China Open Suzhou 2013	KIM Hye Song (PRK)		CHENG Hsien-Tzu (TPE)		U21WS	Qualification		2 - 3	11:6 6:11 11:9 2:11 6:11	CHENG Hsien-Tzu	
+2013	World Tour Harmony China Open Suzhou 2013	HUANG Hsin (TPE)		ISHIKAWA Rira (JPN)		U21WS	Qualification		3 - 0	11:8 11:9 14:12	HUANG Hsin	
+2013	World Tour Harmony China Open Suzhou 2013	SONG Maeum (KOR)		ISHIKAWA Rira (JPN)		U21WS	Qualification		0 - 3	8:11 9:11 9:11	ISHIKAWA Rira	
+2013	World Tour Harmony China Open Suzhou 2013	SONG Maeum (KOR)		HUANG Hsin (TPE)		U21WS	Qualification		3 - 1	11:8 5:11 11:5 11:3	SONG Maeum	
+2013	World Tour Harmony China Open Suzhou 2013	LI Isabelle Siyun (SGP)		YEH Tung-Yi (TPE)		U21WS	Qualification		3 - 1	7:11 11:8 11:5 11:5	LI Isabelle Siyun	
+2013	World Tour Harmony China Open Suzhou 2013	MAEDA Miyu (JPN)		YEH Tung-Yi (TPE)		U21WS	Qualification		3 - 1	5:11 11:5 11:6 11:8	MAEDA Miyu	
+2013	World Tour Harmony China Open Suzhou 2013	MAEDA Miyu (JPN)		LI Isabelle Siyun (SGP)		U21WS	Qualification		3 - 0	11:4 11:9 11:3	MAEDA Miyu	
+2013	World Tour Harmony China Open Suzhou 2013	SOO Wai Yam (HKG)		CHEN Hung-Ting (TPE)		U21WS	Qualification		3 - 0	11:9 11:2 11:3	SOO Wai Yam	
+2013	World Tour Harmony China Open Suzhou 2013	MATSUZAWA Marina (JPN)		CHEN Hung-Ting (TPE)		U21WS	Qualification		3 - 1	7:11 11:7 11:3 11:7	MATSUZAWA Marina	
+2013	World Tour Harmony China Open Suzhou 2013	MATSUZAWA Marina (JPN)		SOO Wai Yam (HKG)		U21WS	Qualification		3 - 0	11:9 14:12 12:10	MATSUZAWA Marina	
+2013	World Tour Harmony China Open Suzhou 2013	MATSUMOTO Yuki (JPN)		LEE Chun-Hui (TPE)		U21WS	Qualification		3 - 0	11:5 11:5 11:8	MATSUMOTO Yuki	
+2013	World Tour Harmony China Open Suzhou 2013	YOO Eunchong (KOR)		LEE Chun-Hui (TPE)		U21WS	Qualification		3 - 0	11:3 11:3 11:6	YOO Eunchong	
+2013	World Tour Harmony China Open Suzhou 2013	YOO Eunchong (KOR)		MATSUMOTO Yuki (JPN)		U21WS	Qualification		3 - 1	9:11 11:8 11:5 11:2	YOO Eunchong	
+2013	World Tour Harmony China Open Suzhou 2013	JO Yujin (KOR)		CHIAO Pei-Ting (TPE)		U21WS	Qualification		3 - 1	11:8 11:5 5:11 11:3	JO Yujin	
+2013	World Tour Harmony China Open Suzhou 2013	HIRANO Miu (JPN)		CHIAO Pei-Ting (TPE)		U21WS	Qualification		3 - 0	11:6 11:4 11:7	HIRANO Miu	
+2013	World Tour Harmony China Open Suzhou 2013	HIRANO Miu (JPN)		JO Yujin (KOR)		U21WS	Qualification		3 - 0	11:3 11:4 11:4	HIRANO Miu	
+2013	World Tour Harmony China Open Suzhou 2013	SHAO Jieni (POR)		KIM Song I (PRK)		U21WS	Qualification		1 - 3	3:11 12:10 6:11 6:11	KIM Song I	
+2013	World Tour Harmony China Open Suzhou 2013	HAMAMOTO Yui (AUT)		HUNG Ling (TPE)		U21WS	Qualification		3 - 0	11:5 11:2 11:9	HAMAMOTO Yui	
+2013	World Tour Harmony China Open Suzhou 2013	HAMAMOTO Yui (AUT)		KIM Song I (PRK)		U21WS	Qualification		1 - 3	1:11 8:11 11:6 8:11	KIM Song I	
+2013	World Tour Harmony China Open Suzhou 2013	SHAO Jieni (POR)		HUNG Ling (TPE)		U21WS	Qualification		3 - 1	11:8 5:11 11:6 11:5	SHAO Jieni	
+2013	World Tour Harmony China Open Suzhou 2013	HAMAMOTO Yui (AUT)		SHAO Jieni (POR)		U21WS	Qualification		3 - 1	10:12 11:8 11:7 13:11	HAMAMOTO Yui	
+2013	World Tour Harmony China Open Suzhou 2013	KIM Song I (PRK)		HUNG Ling (TPE)		U21WS	Qualification		3 - 0	11:5 11:6 11:9	KIM Song I	
+2013	World Tour Harmony China Open Suzhou 2013	LIU Shiwen (CHN)		SONG Maeum (KOR)		WS	Main Draw	R64	4 - 1	11:8 11:7 11:5 8:11 11:7	LIU Shiwen	
+2013	World Tour Harmony China Open Suzhou 2013	NONAKA Yuki (JPN)		LI Xue (FRA)		WS	Main Draw	R64	2 - 4	6:11 5:11 5:11 11:8 11:6 7:11	LI Xue	
+2013	World Tour Harmony China Open Suzhou 2013	LEE I-Chen (TPE)		PARK Seonghye (KOR)		WS	Main Draw	R64	4 - 2	11:8 8:11 11:7 8:11 11:7 11:7	LEE I-Chen	
+2013	World Tour Harmony China Open Suzhou 2013	MATSUZAWA Marina (JPN)		SAMARA Elizabeta (ROU)		WS	Main Draw	R64	4 - 1	11:6 11:3 11:8 10:12 11:9	MATSUZAWA Marina	
+2013	World Tour Harmony China Open Suzhou 2013	SEOK Hajung (KOR)		FUJII Yuko (JPN)		WS	Main Draw	R64	3 - 4	5:11 9:11 11:7 11:8 7:11 11:9 9:11	FUJII Yuko	
+2013	World Tour Harmony China Open Suzhou 2013	SHAO Jieni (POR)		CHEN Szu-Yu (TPE)		WS	Main Draw	R64	1 - 4	11:7 8:11 9:11 6:11 3:11	CHEN Szu-Yu	
+2013	World Tour Harmony China Open Suzhou 2013	HUANG Yi-Hua (TPE)		LIN Ye (CAN)		WS	Main Draw	R64	4 - 2	8:11 15:13 11:9 11:5 10:12 11:3	HUANG Yi-Hua	
+2013	World Tour Harmony China Open Suzhou 2013	HSIUNG Nai-I (TPE)		ISHIKAWA Kasumi (JPN)		WS	Main Draw	R64	1 - 4	3:11 11:9 5:11 7:11 3:11	ISHIKAWA Kasumi	
+2013	World Tour Harmony China Open Suzhou 2013	FUKUHARA Ai (JPN)		ZHOU Yihan (SGP)		WS	Main Draw	R64	4 - 0	11:8 11:7 11:5 11:7	FUKUHARA Ai	
+2013	World Tour Harmony China Open Suzhou 2013	HIRANO Miu (JPN)		PARK Youngsook (KOR)		WS	Main Draw	R64	3 - 4	11:8 8:11 11:3 11:9 9:11 4:11 5:11	PARK Youngsook	
+2013	World Tour Harmony China Open Suzhou 2013	IVANCAN Irene (GER)		CHOI Moonyoung (KOR)		WS	Main Draw	R64	3 - 4	11:9 7:11 11:9 10:12 11:5 7:11 8:11	CHOI Moonyoung	
+2013	World Tour Harmony China Open Suzhou 2013	CHO Hala (KOR)		CHENG I-Ching (TPE)		WS	Main Draw	R64	0 - 4	5:11 8:11 4:11 9:11	CHENG I-Ching	
+2013	World Tour Harmony China Open Suzhou 2013	YANG Ha Eun (KOR)		HUANG Hsin (TPE)		WS	Main Draw	R64	4 - 2	12:10 12:14 9:11 11:7 11:7 11:7	YANG Ha Eun	
+2013	World Tour Harmony China Open Suzhou 2013	ZHANG Qiang (CHN)		MATSUDAIRA Shiho (JPN)		WS	Main Draw	R64	4 - 1	11:4 6:11 11:1 12:10 11:4	ZHANG Qiang	
+2013	World Tour Harmony China Open Suzhou 2013	MORIZONO Misaki (JPN)		JO Yujin (KOR)		WS	Main Draw	R64	4 - 0	11:6 11:4 11:8 11:6	MORIZONO Misaki	
+2013	World Tour Harmony China Open Suzhou 2013	SOO Wai Yam (HKG)		ZHU Yuling (MAC)		WS	Main Draw	R64	0 - 4	3:11 4:11 8:11 7:11	ZHU Yuling	
+2013	World Tour Harmony China Open Suzhou 2013	SHEN Yanfei (ESP)		TASHIRO Saki (JPN)		WS	Main Draw	R64	2 - 4	9:11 11:13 11:6 11:7 19:21 7:11	TASHIRO Saki	
+2013	World Tour Harmony China Open Suzhou 2013	HAMAMOTO Yui (AUT)		NG Wing Nam (HKG)		WS	Main Draw	R64	4 - 1	11:6 11:5 12:10 8:11 11:7	HAMAMOTO Yui	
+2013	World Tour Harmony China Open Suzhou 2013	ZHAO Yan (CHN)		NEMOTO Riyo (JPN)		WS	Main Draw	R64	4 - 0	11:8 11:5 11:8 11:7	ZHAO Yan	
+2013	World Tour Harmony China Open Suzhou 2013	WU Yue (USA)		YU Mengyu (SGP)		WS	Main Draw	R64	0 - 4	9:11 4:11 4:11 4:11	YU Mengyu	
+2013	World Tour Harmony China Open Suzhou 2013	JEON Jihee (KOR)		MAEDA Miyu (JPN)		WS	Main Draw	R64	4 - 1	11:5 8:11 11:5 16:14 12:10	JEON Jihee	
+2013	World Tour Harmony China Open Suzhou 2013	KIM Hye Song (PRK)		KATO Miyu (JPN)		WS	Main Draw	R64	4 - 2	11:6 7:11 11:6 11:7 14:16 11:6	KIM Hye Song	
+2013	World Tour Harmony China Open Suzhou 2013	KIM Jong (PRK)		LIN Chia-Hui (TPE)		WS	Main Draw	R64	4 - 3	9:11 13:11 11:6 5:11 6:11 11:9 11:4	KIM Jong	
+2013	World Tour Harmony China Open Suzhou 2013	YU Mei-Ju (TPE)		CHEN Meng (CHN)		WS	Main Draw	R64	0 - 4	4:11 9:11 4:11 3:11	CHEN Meng
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 2 of 4 Total: 329
+
+Start
+Prev
+1
+2
+3
+4
+Next
+End
+2013	World Tour Harmony China Open Suzhou 2013	WU Yang (CHN)		HWANG Jina (KOR)		WS	Main Draw	R64	4 - 1	7:11 11:6 11:4 11:3 11:2	WU Yang	
+2013	World Tour Harmony China Open Suzhou 2013	SAKAI Haruka (JPN)		YOON Sunae (KOR)		WS	Main Draw	R64	2 - 4	4:11 11:7 9:11 12:10 7:11 4:11	YOON Sunae	
+2013	World Tour Harmony China Open Suzhou 2013	WAKAMIYA Misako (JPN)		YOO Eunchong (KOR)		WS	Main Draw	R64	4 - 1	13:11 5:11 11:8 13:11 11:9	WAKAMIYA Misako	
+2013	World Tour Harmony China Open Suzhou 2013	HASAMA Nozomi (JPN)		SUH Hyo Won (KOR)		WS	Main Draw	R64	0 - 4	10:12 8:11 4:11 4:11	SUH Hyo Won	
+2013	World Tour Harmony China Open Suzhou 2013	RI Myong Sun (PRK)		SO Eka (JPN)		WS	Main Draw	R64	4 - 0	11:9 11:8 11:2 11:9	RI Myong Sun	
+2013	World Tour Harmony China Open Suzhou 2013	ISHIGAKI Yuka (JPN)		RI Mi Gyong (PRK)		WS	Main Draw	R64	1 - 4	8:11 7:11 11:7 7:11 8:11	RI Mi Gyong	
+2013	World Tour Harmony China Open Suzhou 2013	HIRANO Sayaka (JPN)		KIM Song I (PRK)		WS	Main Draw	R64	4 - 0	11:8 11:2 11:6 11:7	HIRANO Sayaka	
+2013	World Tour Harmony China Open Suzhou 2013	ISHIKAWA Rira (JPN)		FENG Tianwei (SGP)		WS	Main Draw	R64	2 - 4	8:11 3:11 11:7 8:11 11:7 8:11	FENG Tianwei	
+2013	World Tour Harmony China Open Suzhou 2013	LIU Shiwen (CHN)		LI Xue (FRA)		WS	Main Draw	R32	4 - 0	11:7 11:5 11:9 11:7	LIU Shiwen	
+2013	World Tour Harmony China Open Suzhou 2013	LEE I-Chen (TPE)		MATSUZAWA Marina (JPN)		WS	Main Draw	R32	4 - 1	11:7 11:8 8:11 11:9 11:6	LEE I-Chen	
+2013	World Tour Harmony China Open Suzhou 2013	FUJII Yuko (JPN)		CHEN Szu-Yu (TPE)		WS	Main Draw	R32	2 - 4	6:11 11:8 9:11 12:10 5:11 4:11	CHEN Szu-Yu	
+2013	World Tour Harmony China Open Suzhou 2013	HUANG Yi-Hua (TPE)		ISHIKAWA Kasumi (JPN)		WS	Main Draw	R32	0 - 4	8:11 8:11 6:11 4:11	ISHIKAWA Kasumi	
+2013	World Tour Harmony China Open Suzhou 2013	FUKUHARA Ai (JPN)		PARK Youngsook (KOR)		WS	Main Draw	R32	4 - 0	11:7 12:10 11:8 11:7	FUKUHARA Ai	
+2013	World Tour Harmony China Open Suzhou 2013	CHOI Moonyoung (KOR)		CHENG I-Ching (TPE)		WS	Main Draw	R32	0 - 4	10:12 9:11 8:11 9:11	CHENG I-Ching	
+2013	World Tour Harmony China Open Suzhou 2013	YANG Ha Eun (KOR)		ZHANG Qiang (CHN)		WS	Main Draw	R32	4 - 0	11:6 11:9 11:9 14:12	YANG Ha Eun	
+2013	World Tour Harmony China Open Suzhou 2013	MORIZONO Misaki (JPN)		ZHU Yuling (MAC)		WS	Main Draw	R32	3 - 4	11:9 6:11 11:9 11:9 3:11 8:11 1:11	ZHU Yuling	
+2013	World Tour Harmony China Open Suzhou 2013	TASHIRO Saki (JPN)		HAMAMOTO Yui (AUT)		WS	Main Draw	R32	2 - 4	11:5 7:11 12:14 11:7 7:11 6:11	HAMAMOTO Yui	
+2013	World Tour Harmony China Open Suzhou 2013	ZHAO Yan (CHN)		YU Mengyu (SGP)		WS	Main Draw	R32	2 - 0	11:6 11:5	ZHAO Yan	
+2013	World Tour Harmony China Open Suzhou 2013	JEON Jihee (KOR)		KIM Hye Song (PRK)		WS	Main Draw	R32	4 - 2	11:6 11:6 6:11 11:5 7:11 12:10	JEON Jihee	
+2013	World Tour Harmony China Open Suzhou 2013	KIM Jong (PRK)		CHEN Meng (CHN)		WS	Main Draw	R32	2 - 4	10:12 5:11 12:10 9:11 11:5 10:12	CHEN Meng	
+2013	World Tour Harmony China Open Suzhou 2013	WU Yang (CHN)		YOON Sunae (KOR)		WS	Main Draw	R32	4 - 2	9:11 11:5 11:5 9:11 11:6 11:4	WU Yang	
+2013	World Tour Harmony China Open Suzhou 2013	WAKAMIYA Misako (JPN)		SUH Hyo Won (KOR)		WS	Main Draw	R32	4 - 3	10:12 16:18 3:11 15:13 11:4 11:5 13:11	WAKAMIYA Misako	
+2013	World Tour Harmony China Open Suzhou 2013	RI Myong Sun (PRK)		RI Mi Gyong (PRK)		WS	Main Draw	R32	1 - 4	2:11 11:9 7:11 11:13 6:11	RI Mi Gyong	
+2013	World Tour Harmony China Open Suzhou 2013	HIRANO Sayaka (JPN)		FENG Tianwei (SGP)		WS	Main Draw	R32	0 - 4	7:11 5:11 5:11 5:11	FENG Tianwei	
+2013	World Tour Harmony China Open Suzhou 2013	LIU Shiwen (CHN)		LEE I-Chen (TPE)		WS	Main Draw	R16	4 - 0	11:5 11:8 11:5 11:8	LIU Shiwen	
+2013	World Tour Harmony China Open Suzhou 2013	CHEN Szu-Yu (TPE)		ISHIKAWA Kasumi (JPN)		WS	Main Draw	R16	3 - 4	8:11 4:11 9:11 12:10 11:5 11:3 9:11	ISHIKAWA Kasumi	
+2013	World Tour Harmony China Open Suzhou 2013	FUKUHARA Ai (JPN)		CHENG I-Ching (TPE)		WS	Main Draw	R16	3 - 4	9:11 11:6 8:11 11:13 11:9 11:6 7:11	CHENG I-Ching	
+2013	World Tour Harmony China Open Suzhou 2013	YANG Ha Eun (KOR)		ZHU Yuling (MAC)		WS	Main Draw	R16	1 - 4	6:11 6:11 11:7 6:11 7:11	ZHU Yuling	
+2013	World Tour Harmony China Open Suzhou 2013	HAMAMOTO Yui (AUT)		ZHAO Yan (CHN)		WS	Main Draw	R16	3 - 4	12:10 11:8 9:11 9:11 8:11 11:9 9:11	ZHAO Yan	
+2013	World Tour Harmony China Open Suzhou 2013	JEON Jihee (KOR)		CHEN Meng (CHN)		WS	Main Draw	R16	1 - 4	8:11 7:11 11:7 5:11 12:14	CHEN Meng	
+2013	World Tour Harmony China Open Suzhou 2013	WU Yang (CHN)		WAKAMIYA Misako (JPN)		WS	Main Draw	R16	4 - 2	10:12 11:7 11:9 9:11 11:7 16:14	WU Yang	
+2013	World Tour Harmony China Open Suzhou 2013	RI Mi Gyong (PRK)		FENG Tianwei (SGP)		WS	Main Draw	R16	0 - 4	7:11 8:11 5:11 8:11	FENG Tianwei	
+2013	World Tour Harmony China Open Suzhou 2013	LIU Shiwen (CHN)		ISHIKAWA Kasumi (JPN)		WS	Main Draw	QuarterFinal	4 - 0	11:9 11:8 11:3 11:2	LIU Shiwen	
+2013	World Tour Harmony China Open Suzhou 2013	CHENG I-Ching (TPE)		ZHU Yuling (MAC)		WS	Main Draw	QuarterFinal	4 - 2	11:6 11:5 3:11 11:9 5:11 13:11	CHENG I-Ching	
+2013	World Tour Harmony China Open Suzhou 2013	ZHAO Yan (CHN)		CHEN Meng (CHN)		WS	Main Draw	QuarterFinal	0 - 4	7:11 6:11 6:11 7:11	CHEN Meng	
+2013	World Tour Harmony China Open Suzhou 2013	WU Yang (CHN)		FENG Tianwei (SGP)		WS	Main Draw	QuarterFinal	4 - 0	13:11 11:4 11:8 11:3	WU Yang	
+2013	World Tour Harmony China Open Suzhou 2013	LIU Shiwen (CHN)		CHENG I-Ching (TPE)		WS	Main Draw	SemiFinal	4 - 0	11:7 11:3 11:9 11:1	LIU Shiwen	
+2013	World Tour Harmony China Open Suzhou 2013	LIU Shiwen (CHN)		CHEN Meng (CHN)		WS	Main Draw	Final	1 - 4	11:9 3:11 0:2	CHEN Meng	
+2013	World Tour Harmony China Open Suzhou 2013	RI Myong Sun (PRK)		HIRANO Miu (JPN)		U21WS	Main Draw	R16	3 - 2	6:11 12:10 7:11 11:7 14:12	RI Myong Sun	
+2013	World Tour Harmony China Open Suzhou 2013	KIM Song I (PRK)		MATSUDAIRA Shiho (JPN)		U21WS	Main Draw	R16	3 - 0	11:9 11:9 11:7	KIM Song I	
+2013	World Tour Harmony China Open Suzhou 2013	LIN Ye (CAN)		CHENG Hsien-Tzu (TPE)		U21WS	Main Draw	R16	1 - 3	8:11 13:11 9:11 10:12	CHENG Hsien-Tzu	
+2013	World Tour Harmony China Open Suzhou 2013	YOO Eunchong (KOR)		NG Wing Nam (HKG)		U21WS	Main Draw	R16	3 - 1	11:7 9:11 11:8 11:7	YOO Eunchong	
+2013	World Tour Harmony China Open Suzhou 2013	CHEN Szu-Yu (TPE)		MAEDA Miyu (JPN)		U21WS	Main Draw	R16	3 - 1	6:11 11:4 11:9 11:2	CHEN Szu-Yu	
+2013	World Tour Harmony China Open Suzhou 2013	ZHOU Yihan (SGP)		KATO Miyu (JPN)		U21WS	Main Draw	R16	3 - 2	11:6 11:8 11:13 7:11 13:11	ZHOU Yihan	
+2013	World Tour Harmony China Open Suzhou 2013	MORIZONO Misaki (JPN)		HUANG Hsin (TPE)		U21WS	Main Draw	R16	3 - 0	11:8 11:9 11:9	MORIZONO Misaki	
+2013	World Tour Harmony China Open Suzhou 2013	MATSUZAWA Marina (JPN)		CHENG I-Ching (TPE)		U21WS	Main Draw	R16	1 - 3	11:9 9:11 9:11 5:11	CHENG I-Ching	
+2013	World Tour Harmony China Open Suzhou 2013	RI Myong Sun (PRK)		KIM Song I (PRK)		U21WS	Main Draw	QuarterFinal	3 - 4	5:11 11:8 10:12 11:6 5:11 11:7 13:15	KIM Song I	
+2013	World Tour Harmony China Open Suzhou 2013	CHENG Hsien-Tzu (TPE)		YOO Eunchong (KOR)		U21WS	Main Draw	QuarterFinal	1 - 4	9:11 11:6 10:12 4:11 6:11	YOO Eunchong	
+2013	World Tour Harmony China Open Suzhou 2013	CHEN Szu-Yu (TPE)		ZHOU Yihan (SGP)		U21WS	Main Draw	QuarterFinal	4 - 1	11:9 12:10 5:11 11:4 11:6	CHEN Szu-Yu	
+2013	World Tour Harmony China Open Suzhou 2013	MORIZONO Misaki (JPN)		CHENG I-Ching (TPE)		U21WS	Main Draw	QuarterFinal	4 - 1	11:7 12:10 11:2 9:11 12:10	MORIZONO Misaki	
+2013	World Tour Harmony China Open Suzhou 2013	KIM Song I (PRK)		YOO Eunchong (KOR)		U21WS	Main Draw	SemiFinal	0 - 4	6:11 9:11 8:11 7:11	YOO Eunchong	
+2013	World Tour Harmony China Open Suzhou 2013	CHEN Szu-Yu (TPE)		MORIZONO Misaki (JPN)		U21WS	Main Draw	SemiFinal	1 - 4	5:11 11:5 7:11 8:11 11:13	MORIZONO Misaki	
+2013	World Tour Harmony China Open Suzhou 2013	YOO Eunchong (KOR)		MORIZONO Misaki (JPN)		U21WS	Main Draw	Final	3 - 4	12:10 4:11 11:7 9:11 11:13 11:7 8:11	MORIZONO Misaki	
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 19
+
+2013	World Tour Harmony China Open Suzhou 2013	OVTCHAROV Dimitrij (GER)	WANG Hao (CHN)	TANG Peng (HKG)	WONG Chun Ting (HKG)	MD	Main Draw	R16	1 - 3	11:13 11:5 4:11 8:11	TANG Peng	WONG Chun Ting
+2013	World Tour Harmony China Open Suzhou 2013	MA Long (CHN)	XU Xin (CHN)	MA Liang (SGP)	PANG Xue Jie (SGP)	MD	Main Draw	R16	3 - 0	11:4 11:5 11:6	MA Long	XU Xin
+2013	World Tour Harmony China Open Suzhou 2013	MA Long (CHN)	XU Xin (CHN)	YANG Zi (SGP)	ZHAN Jian (SGP)	MD	Main Draw	QuarterFinal	3 - 0	11:6 11:7 11:8	MA Long	XU Xin
+2013	World Tour Harmony China Open Suzhou 2013	MA Long (CHN)	XU Xin (CHN)	JEOUNG Youngsik (KOR)	KIM Minseok (KOR)	MD	Main Draw	SemiFinal	3 - 0	11:5 11:3 11:5	MA Long	XU Xin
+2013	World Tour Harmony China Open Suzhou 2013	MAK King Ho (HKG)	TSE Ka Chun (HKG)	UEDA Jin (JPN)	YOSHIMURA Maharu (JPN)	MD	Qualification	QR16	0 - 3	3:11 5:11 11:13	UEDA Jin	YOSHIMURA Maharu
+2013	World Tour Harmony China Open Suzhou 2013	MORIZONO Masataka (JPN)	SAMBE Kohei (JPN)	YANG Zi (SGP)	ZHAN Jian (SGP)	MD	Main Draw	R16	2 - 3	9:11 7:11 11:9 11:7 5:11	YANG Zi	ZHAN Jian
+2013	World Tour Harmony China Open Suzhou 2013	UEDA Jin (JPN)	YOSHIMURA Maharu (JPN)	GAO Ning (SGP)	LI Hu (SGP)	MD	Main Draw	R16	1 - 3	11:8 4:11 9:11 11:13	GAO Ning	LI Hu
+2013	World Tour Harmony China Open Suzhou 2013	MATSUDAIRA Kenta (JPN)	NIWA Koki (JPN)	MA Long (CHN)	XU Xin (CHN)	MD	Main Draw	Final	1 - 3	11:7 4:11 7:11 5:11	MA Long	XU Xin
+2013	World Tour Harmony China Open Suzhou 2013	CHO Eonrae (KOR)	KIM Donghyun (KOR)	KIM Hyok Bong (PRK)	PAK Sin Hyok (PRK)	MD	Qualification	QR16	3 - 2	9:11 11:7 11:6 8:11 18:16	CHO Eonrae	KIM Donghyun
+2013	World Tour Harmony China Open Suzhou 2013	CHEN Qi (CHN)	LEE Sang Su (KOR)	MORIZONO Masataka (JPN)	SAMBE Kohei (JPN)	MD	Qualification	QR16	2 - 3	7:11 8:11 11:3 11:3 11:13	MORIZONO Masataka	SAMBE Kohei
+2013	World Tour Harmony China Open Suzhou 2013	CHO Eonrae (KOR)	KIM Donghyun (KOR)	MATSUDAIRA Kenta (JPN)	NIWA Koki (JPN)	MD	Main Draw	R16	0 - 3	12:14 8:11 5:11	MATSUDAIRA Kenta	NIWA Koki
+2013	World Tour Harmony China Open Suzhou 2013	JEOUNG Youngsik (KOR)	KIM Minseok (KOR)	LIU Yi (CHN)	YAN An (CHN)	MD	Main Draw	R16	3 - 2	8:11 3:11 11:6 11:8 11:8	JEOUNG Youngsik	KIM Minseok
+2013	World Tour Harmony China Open Suzhou 2013	JEOUNG Youngsik (KOR)	KIM Minseok (KOR)	GAO Ning (SGP)	LI Hu (SGP)	MD	Main Draw	QuarterFinal	3 - 1	9:11 11:7 15:13 11:7	JEOUNG Youngsik	KIM Minseok
+2013	World Tour Harmony China Open Suzhou 2013	KANG Wi Hun (PRK)	RI Kwang Won (PRK)	HUNG Tzu-Hsiang (TPE)	WU Chih-Chi (TPE)	MD	Qualification	QR16	3 - 2	10:12 11:4 8:11 11:8 11:1	KANG Wi Hun	RI Kwang Won
+2013	World Tour Harmony China Open Suzhou 2013	MA Liang (SGP)	PANG Xue Jie (SGP)	BRETON Arthur (FRA)	GREEN Wally (USA)	MD	Qualification	QR16	3 - 0	11:5 11:4 11:1	MA Liang	PANG Xue Jie
+2013	World Tour Harmony China Open Suzhou 2013	CHIANG Hung-Chieh (TPE)	HUANG Sheng-Sheng (TPE)	KANG Wi Hun (PRK)	RI Kwang Won (PRK)	MD	Main Draw	R16	3 - 1	11:4 14:16 11:6 11:7	CHIANG Hung-Chieh	HUANG Sheng-Sheng
+2013	World Tour Harmony China Open Suzhou 2013	CHEN Chien-An (TPE)	CHUANG Chih-Yuan (TPE)	TANG Peng (HKG)	WONG Chun Ting (HKG)	MD	Main Draw	QuarterFinal	3 - 1	11:7 6:11 11:4 12:10	CHEN Chien-An	CHUANG Chih-Yuan
+2013	World Tour Harmony China Open Suzhou 2013	CHIANG Hung-Chieh (TPE)	HUANG Sheng-Sheng (TPE)	MATSUDAIRA Kenta (JPN)	NIWA Koki (JPN)	MD	Main Draw	QuarterFinal	2 - 3	11:8 6:11 6:11 11:7 8:11	MATSUDAIRA Kenta	NIWA Koki
+2013	World Tour Harmony China Open Suzhou 2013	CHEN Chien-An (TPE)	CHUANG Chih-Yuan (TPE)	MATSUDAIRA Kenta (JPN)	NIWA Koki (JPN)	MD	Main Draw	SemiFinal	2 - 3	11:9 5:11 7:11 15:13 5:11	MATSUDAIRA Kenta	NIWA Koki
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 19
+
+2013	World Tour Harmony China Open Suzhou 2013	WU Yang (CHN)	ZHAO Yan (CHN)	HSIUNG Nai-I (TPE)	LEE I-Chen (TPE)	WD	Qualification	QR16	3 - 2	11:4 5:11 5:11 12:10 11:8	WU Yang	ZHAO Yan
+2013	World Tour Harmony China Open Suzhou 2013	LIU Shiwen (CHN)	ZHANG Qiang (CHN)	JEON Jihee (KOR)	SEOK Hajung (KOR)	WD	Main Draw	R16	3 - 2	11:4 11:7 7:11 8:11 11:7	LIU Shiwen	ZHANG Qiang
+2013	World Tour Harmony China Open Suzhou 2013	WU Yang (CHN)	ZHAO Yan (CHN)	CHEN Meng (CHN)	ZHU Yuling (MAC)	WD	Main Draw	QuarterFinal	0 - 3	10:12 12:14 7:11	CHEN Meng	ZHU Yuling
+2013	World Tour Harmony China Open Suzhou 2013	LI Ching Wan (HKG)	SOO Wai Yam (HKG)	KIM Song I (PRK)	RI Myong Sun (PRK)	WD	Qualification	QR16	1 - 3	11:6 9:11 10:12 4:11	KIM Song I	RI Myong Sun
+2013	World Tour Harmony China Open Suzhou 2013	NG Wing Nam (HKG)	YU Kwok See (HKG)	FUKUHARA Ai (JPN)	WAKAMIYA Misako (JPN)	WD	Main Draw	R16	0 - 3	9:11 9:11 3:11	FUKUHARA Ai	WAKAMIYA Misako
+2013	World Tour Harmony China Open Suzhou 2013	HIRANO Sayaka (JPN)	ISHIKAWA Kasumi (JPN)	WU Yang (CHN)	ZHAO Yan (CHN)	WD	Main Draw	R16	1 - 3	7:11 11:6 9:11 9:11	WU Yang	ZHAO Yan
+2013	World Tour Harmony China Open Suzhou 2013	FUKUHARA Ai (JPN)	WAKAMIYA Misako (JPN)	CHEN Meng (CHN)	ZHU Yuling (MAC)	WD	Main Draw	SemiFinal	0 - 3	10:12 10:12 7:11	CHEN Meng	ZHU Yuling
+2013	World Tour Harmony China Open Suzhou 2013	JO Yujin (KOR)	SONG Maeum (KOR)	LIN Ye (CAN)	ZHOU Yihan (SGP)	WD	Qualification	QR16	2 - 3	13:11 6:11 10:12 11:7 13:15	LIN Ye	ZHOU Yihan
+2013	World Tour Harmony China Open Suzhou 2013	PARK Youngsook (KOR)	YANG Ha Eun (KOR)	LIN Ye (CAN)	ZHOU Yihan (SGP)	WD	Main Draw	R16	3 - 1	11:7 11:13 11:4 12:10	PARK Youngsook	YANG Ha Eun
+2013	World Tour Harmony China Open Suzhou 2013	PARK Youngsook (KOR)	YANG Ha Eun (KOR)	FUKUHARA Ai (JPN)	WAKAMIYA Misako (JPN)	WD	Main Draw	QuarterFinal	0 - 3	14:16 7:11 6:11	FUKUHARA Ai	WAKAMIYA Misako
+2013	World Tour Harmony China Open Suzhou 2013	LI Isabelle Siyun (SGP)	RI Mi Gyong (PRK)	MAEDA Miyu (JPN)	MATSUDAIRA Shiho (JPN)	WD	Qualification	QR16	2 - 3	11:7 11:6 5:11 8:11 8:11	MAEDA Miyu	MATSUDAIRA Shiho
+2013	World Tour Harmony China Open Suzhou 2013	KIM Song I (PRK)	RI Myong Sun (PRK)	CHEN Meng (CHN)	ZHU Yuling (MAC)	WD	Main Draw	R16	2 - 3	9:11 12:10 2:11 14:12 4:11	CHEN Meng	ZHU Yuling
+2013	World Tour Harmony China Open Suzhou 2013	KIM Hye Song (PRK)	KIM Jong (PRK)	FENG Tianwei (SGP)	YU Mengyu (SGP)	WD	Main Draw	QuarterFinal	3 - 2	11:7 14:12 8:11 9:11 11:8	KIM Hye Song	KIM Jong
+2013	World Tour Harmony China Open Suzhou 2013	KIM Hye Song (PRK)	KIM Jong (PRK)	CHEN Meng (CHN)	ZHU Yuling (MAC)	WD	Main Draw	Final	1 - 3	5:11 9:11 11:9 9:11	CHEN Meng	ZHU Yuling
+2013	World Tour Harmony China Open Suzhou 2013	ERMAKOVA Irina (RUS)	SAMARA Elizabeta (ROU)	KIM Hye Song (PRK)	KIM Jong (PRK)	WD	Main Draw	R16	0 - 3	4:11 2:11 5:11	KIM Hye Song	KIM Jong
+2013	World Tour Harmony China Open Suzhou 2013	CHENG I-Ching (TPE)	HUANG Yi-Hua (TPE)	MAEDA Miyu (JPN)	MATSUDAIRA Shiho (JPN)	WD	Main Draw	R16	3 - 0	16:14 11:4 11:5	CHENG I-Ching	HUANG Yi-Hua
+2013	World Tour Harmony China Open Suzhou 2013	CHEN Szu-Yu (TPE)	CHENG Hsien-Tzu (TPE)	FENG Tianwei (SGP)	YU Mengyu (SGP)	WD	Main Draw	R16	2 - 3	13:11 6:11 11:6 9:11 7:11	FENG Tianwei	YU Mengyu
+2013	World Tour Harmony China Open Suzhou 2013	CHENG I-Ching (TPE)	HUANG Yi-Hua (TPE)	KIM Hye Song (PRK)	KIM Jong (PRK)	WD	Main Draw	SemiFinal	1 - 3	11:6 9:11 4:11 6:11	KIM Hye Song	KIM Jong
+2013	World Tour Harmony China Open Suzhou 2013	SHAO Jieni (POR)	WU Yue (USA)	KIM Hye Song (PRK)	KIM Jong (PRK)	WD	Qualification	QR16	0 - 3	5:11 5:11 8:11	KIM Hye Song	KIM Jong

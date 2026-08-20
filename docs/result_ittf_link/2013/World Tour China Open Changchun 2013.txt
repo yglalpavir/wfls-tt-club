@@ -10,3 +10,233 @@
 ----------------------------------------
 数据来源：ITTF World Tour 2013
 文件生成时间：自动生成
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 2 Total: 116
+
+Start
+Prev
+1
+2
+Next
+End
+2013	World Tour China Open Changchun 2013	XU Xin (CHN)		MA Liang (SGP)		MS	Main Draw	R32	4 - 0	12:10 11:7 11:4 11:7	XU Xin	
+2013	World Tour China Open Changchun 2013	FRANZISKA Patrick (GER)		MATTENET Adrien (FRA)		MS	Main Draw	R32	4 - 2	11:6 6:11 13:11 11:3 5:11 13:11	FRANZISKA Patrick	
+2013	World Tour China Open Changchun 2013	CHEN Weixing (AUT)		SMIRNOV Alexey (RUS)		MS	Main Draw	R32	1 - 4	11:13 11:8 8:11 8:11 8:11	SMIRNOV Alexey	
+2013	World Tour China Open Changchun 2013	MATSUDAIRA Kenta (JPN)		GAO Ning (SGP)		MS	Main Draw	R32	2 - 4	4:11 8:11 6:11 11:8 11:8 6:11	GAO Ning	
+2013	World Tour China Open Changchun 2013	BOLL Timo (GER)		LI Ahmet (TUR)		MS	Main Draw	R32	4 - 1	8:11 11:6 11:3 11:4 11:8	BOLL Timo	
+2013	World Tour China Open Changchun 2013	APOLONIA Tiago (POR)		GACINA Andrej (CRO)		MS	Main Draw	R32	1 - 4	9:11 11:2 6:11 8:11 3:11	GACINA Andrej	
+2013	World Tour China Open Changchun 2013	ZHAN Jian (SGP)		VLASOV Grigory (RUS)		MS	Main Draw	R32	3 - 4	11:9 2:11 9:11 11:2 11:8 9:11 10:12	VLASOV Grigory	
+2013	World Tour China Open Changchun 2013	KARLSSON Kristian (SWE)		WANG Hao (CHN)		MS	Main Draw	R32	0 - 4	5:11 7:11 8:11 10:12	WANG Hao	
+2013	World Tour China Open Changchun 2013	ZHANG Jike (CHN)		LI Hu (SGP)		MS	Main Draw	R32	4 - 1	11:3 11:5 11:7 9:11 15:13	ZHANG Jike	
+2013	World Tour China Open Changchun 2013	KIM Junghoon (KOR)		FAN Zhendong (CHN)		MS	Main Draw	R32	1 - 4	7:11 3:11 2:11 11:7 5:11	FAN Zhendong	
+2013	World Tour China Open Changchun 2013	FREITAS Marcos (POR)		YANG Zi (SGP)		MS	Main Draw	R32	3 - 4	11:6 9:11 9:11 11:9 6:11 11:4 6:11	YANG Zi	
+2013	World Tour China Open Changchun 2013	SKACHKOV Kirill (RUS)		YAN An (CHN)		MS	Main Draw	R32	0 - 4	4:11 5:11 11:13 7:11	YAN An	
+2013	World Tour China Open Changchun 2013	OVTCHAROV Dimitrij (GER)		YOSHIDA Kaii (JPN)		MS	Main Draw	R32	4 - 2	10:12 11:6 11:9 9:11 13:11 11:9	OVTCHAROV Dimitrij	
+2013	World Tour China Open Changchun 2013	KANG Dongsoo (KOR)		TAN Ruiwu (CRO)		MS	Main Draw	R32	2 - 4	7:11 7:11 13:11 11:6 7:11 11:13	TAN Ruiwu	
+2013	World Tour China Open Changchun 2013	STEGER Bastian (GER)		LIVENTSOV Alexey (RUS)		MS	Main Draw	R32	2 - 4	8:11 11:8 8:11 4:11 15:13 8:11	LIVENTSOV Alexey	
+2013	World Tour China Open Changchun 2013	CHEN Feng (SGP)		MA Long (CHN)		MS	Main Draw	R32	0 - 4	4:11 7:11 5:11 4:11	MA Long	
+2013	World Tour China Open Changchun 2013	XU Xin (CHN)		FRANZISKA Patrick (GER)		MS	Main Draw	R16	4 - 0	11:1 11:0 11:0 11:0	XU Xin	
+2013	World Tour China Open Changchun 2013	SMIRNOV Alexey (RUS)		GAO Ning (SGP)		MS	Main Draw	R16	4 - 1	11:8 11:7 10:12 12:10 11:4	SMIRNOV Alexey	
+2013	World Tour China Open Changchun 2013	BOLL Timo (GER)		GACINA Andrej (CRO)		MS	Main Draw	R16	4 - 2	7:11 11:6 11:4 11:7 7:11 11:7	BOLL Timo	
+2013	World Tour China Open Changchun 2013	VLASOV Grigory (RUS)		WANG Hao (CHN)		MS	Main Draw	R16	3 - 4	11:6 9:11 12:14 4:11 11:8 11:4 7:11	WANG Hao	
+2013	World Tour China Open Changchun 2013	ZHANG Jike (CHN)		FAN Zhendong (CHN)		MS	Main Draw	R16	2 - 4	11:7 6:11 5:11 11:6 0:11 0:11	FAN Zhendong	
+2013	World Tour China Open Changchun 2013	YANG Zi (SGP)		YAN An (CHN)		MS	Main Draw	R16	0 - 4	9:11 5:11 6:11 3:11	YAN An	
+2013	World Tour China Open Changchun 2013	OVTCHAROV Dimitrij (GER)		TAN Ruiwu (CRO)		MS	Main Draw	R16	4 - 2	11:6 11:4 11:13 11:9 8:11 11:8	OVTCHAROV Dimitrij	
+2013	World Tour China Open Changchun 2013	LIVENTSOV Alexey (RUS)		MA Long (CHN)		MS	Main Draw	R16	2 - 4	3:11 8:11 6:11 11:8 11:9 5:11	MA Long	
+2013	World Tour China Open Changchun 2013	XU Xin (CHN)		SMIRNOV Alexey (RUS)		MS	Main Draw	QuarterFinal	4 - 0	11:1 11:0 11:0 11:0	XU Xin	
+2013	World Tour China Open Changchun 2013	BOLL Timo (GER)		WANG Hao (CHN)		MS	Main Draw	QuarterFinal	1 - 4	13:11 2:11 9:11 6:11 2:11	WANG Hao	
+2013	World Tour China Open Changchun 2013	FAN Zhendong (CHN)		YAN An (CHN)		MS	Main Draw	QuarterFinal	0 - 4	5:11 9:11 11:13 7:11	YAN An	
+2013	World Tour China Open Changchun 2013	OVTCHAROV Dimitrij (GER)		MA Long (CHN)		MS	Main Draw	QuarterFinal	2 - 4	11:4 7:11 11:5 3:11 6:11 6:11	MA Long	
+2013	World Tour China Open Changchun 2013	XU Xin (CHN)		WANG Hao (CHN)		MS	Main Draw	SemiFinal	2 - 4	4:11 8:11 11:7 10:12 11:4 13:15	WANG Hao	
+2013	World Tour China Open Changchun 2013	YAN An (CHN)		MA Long (CHN)		MS	Main Draw	SemiFinal	0 - 4	11:13 2:11 7:11 11:13	MA Long	
+2013	World Tour China Open Changchun 2013	WANG Hao (CHN)		MA Long (CHN)		MS	Main Draw	Final	0 - 4	8:11 8:11 2:11 8:11	MA Long	
+2013	World Tour China Open Changchun 2013	YAN An (CHN)		WU Zhikang (SGP)		U21MS	Main Draw	R16	3 - 0	11:5 11:6 11:9	YAN An	
+2013	World Tour China Open Changchun 2013	DESAI Harmeet (IND)		ROBINOT Quentin (FRA)		U21MS	Main Draw	R16	1 - 3	8:11 9:11 11:9 9:11	ROBINOT Quentin	
+2013	World Tour China Open Changchun 2013	CHEN Feng (SGP)		SAKAI Asuka (JPN)		U21MS	Main Draw	R16	3 - 2	9:11 9:11 11:7 11:8 11:4	CHEN Feng	
+2013	World Tour China Open Changchun 2013	RYUZAKI Tonin (JPN)		KANG Dongsoo (KOR)		U21MS	Main Draw	R16	0 - 3	9:11 8:11 2:11	KANG Dongsoo	
+2013	World Tour China Open Changchun 2013	FRANZISKA Patrick (GER)		SAMBE Kohei (JPN)		U21MS	Main Draw	R16	3 - 1	11:8 8:11 11:7 11:5	FRANZISKA Patrick	
+2013	World Tour China Open Changchun 2013	PARK Chan-Hyeok (KOR)		PITCHFORD Liam (ENG)		U21MS	Main Draw	R16	0 - 3	4:11 5:11 7:11	PITCHFORD Liam	
+2013	World Tour China Open Changchun 2013	MORIZONO Masataka (JPN)		XIN Zhaoxu (SGP)		U21MS	Main Draw	R16	3 - 2	5:11 11:6 10:12 11:4 12:10	MORIZONO Masataka	
+2013	World Tour China Open Changchun 2013	GHOSH Soumyajit (IND)		FAN Zhendong (CHN)		U21MS	Main Draw	R16	0 - 3	2:11 6:11 10:12	FAN Zhendong	
+2013	World Tour China Open Changchun 2013	YAN An (CHN)		ROBINOT Quentin (FRA)		U21MS	Main Draw	QuarterFinal	4 - 0	12:10 11:5 11:6 11:9	YAN An	
+2013	World Tour China Open Changchun 2013	CHEN Feng (SGP)		KANG Dongsoo (KOR)		U21MS	Main Draw	QuarterFinal	4 - 0	11:4 11:9 12:10 15:13	CHEN Feng	
+2013	World Tour China Open Changchun 2013	FRANZISKA Patrick (GER)		PITCHFORD Liam (ENG)		U21MS	Main Draw	QuarterFinal	4 - 2	13:11 11:5 6:11 10:12 11:7 11:8	FRANZISKA Patrick	
+2013	World Tour China Open Changchun 2013	MORIZONO Masataka (JPN)		FAN Zhendong (CHN)		U21MS	Main Draw	QuarterFinal	0 - 4	8:11 9:11 9:11 7:11	FAN Zhendong	
+2013	World Tour China Open Changchun 2013	YAN An (CHN)		CHEN Feng (SGP)		U21MS	Main Draw	SemiFinal	4 - 2	11:5 7:11 11:5 11:4 11:13 11:3	YAN An	
+2013	World Tour China Open Changchun 2013	FRANZISKA Patrick (GER)		FAN Zhendong (CHN)		U21MS	Main Draw	SemiFinal	2 - 4	11:6 8:11 7:11 5:11 13:11 7:11	FAN Zhendong	
+2013	World Tour China Open Changchun 2013	YAN An (CHN)		FAN Zhendong (CHN)		U21MS	Main Draw	Final	2 - 4	9:11 11:5 11:6 9:11 4:11 11:13	FAN Zhendong	
+2013	World Tour China Open Changchun 2013	GHOSH Soumyajit (IND)		SODERLUND Hampus (SWE)		U21MS	Qualification	QR8	3 - 0	12:10 11:7 11:9	GHOSH Soumyajit	
+2013	World Tour China Open Changchun 2013	YU Jiaqing (SGP)		OIKAWA Mizuki (JPN)		U21MS	Qualification	QR8	3 - 1	10:12 11:4 12:10 11:7	YU Jiaqing	
+2013	World Tour China Open Changchun 2013	JIN Takuya (JPN)		GHOSH Soumyajit (IND)		U21MS	Qualification	QR4	1 - 3	11:6 8:11 4:11 6:11	GHOSH Soumyajit	
+2013	World Tour China Open Changchun 2013	YU Jiaqing (SGP)		WU Zhikang (SGP)		U21MS	Qualification	QR4	0 - 3	5:11 8:11 8:11	WU Zhikang	
+2013	World Tour China Open Changchun 2013	HIGASHI Yuto (JPN)		OVERSJO Mattias (SWE)		MS	Qualification		4 - 3	11:6 11:5 7:11 11:6 9:11 6:11 11:6	HIGASHI Yuto	
+2013	World Tour China Open Changchun 2013	APOLONIA Tiago (POR)		OVERSJO Mattias (SWE)		MS	Qualification		4 - 0	11:9 11:8 12:10 11:4	APOLONIA Tiago	
+2013	World Tour China Open Changchun 2013	APOLONIA Tiago (POR)		HIGASHI Yuto (JPN)		MS	Qualification		4 - 0	11:7 11:3 11:8 11:6	APOLONIA Tiago	
+2013	World Tour China Open Changchun 2013	FENG Xiaoquan (AUT)		OIKAWA Mizuki (JPN)		MS	Qualification		1 - 4	7:11 8:11 8:11 11:7 7:11	OIKAWA Mizuki	
+2013	World Tour China Open Changchun 2013	SKACHKOV Kirill (RUS)		OIKAWA Mizuki (JPN)		MS	Qualification		4 - 0	11:4 11:3 13:11 11:4	SKACHKOV Kirill	
+2013	World Tour China Open Changchun 2013	SKACHKOV Kirill (RUS)		FENG Xiaoquan (AUT)		MS	Qualification		4 - 2	12:10 7:11 11:2 11:7 11:13 11:6	SKACHKOV Kirill	
+2013	World Tour China Open Changchun 2013	SAKAI Asuka (JPN)		SODERLUND Hampus (SWE)		MS	Qualification		4 - 2	11:9 8:11 11:13 11:9 12:10 11:9	SAKAI Asuka	
+2013	World Tour China Open Changchun 2013	LI Hu (SGP)		SODERLUND Hampus (SWE)		MS	Qualification		4 - 2	7:11 11:9 11:5 11:9 6:11 11:9	LI Hu	
+2013	World Tour China Open Changchun 2013	LI Hu (SGP)		SAKAI Asuka (JPN)		MS	Qualification		4 - 0	13:11 11:7 11:7 11:4	LI Hu	
+2013	World Tour China Open Changchun 2013	NORDBERG Hampus (SWE)		DESAI Harmeet (IND)		MS	Qualification		4 - 3	10:12 11:9 11:5 11:9 5:11 8:11 13:11	NORDBERG Hampus	
+2013	World Tour China Open Changchun 2013	MATSUDAIRA Kenta (JPN)		DESAI Harmeet (IND)		MS	Qualification		4 - 2	11:4 11:8 11:9 11:13 8:11 11:9	MATSUDAIRA Kenta	
+2013	World Tour China Open Changchun 2013	MATSUDAIRA Kenta (JPN)		NORDBERG Hampus (SWE)		MS	Qualification		4 - 3	11:7 11:6 5:11 11:8 10:12 9:11 12:10	MATSUDAIRA Kenta	
+2013	World Tour China Open Changchun 2013	GHOSH Soumyajit (IND)		SAMBE Kohei (JPN)		MS	Qualification		4 - 3	11:5 8:11 11:7 9:11 15:13 6:11 11:5	GHOSH Soumyajit	
+2013	World Tour China Open Changchun 2013	SMIRNOV Alexey (RUS)		SAMBE Kohei (JPN)		MS	Qualification		4 - 0	11:7 12:10 11:3 12:10	SMIRNOV Alexey	
+2013	World Tour China Open Changchun 2013	SMIRNOV Alexey (RUS)		GHOSH Soumyajit (IND)		MS	Qualification		4 - 3	8:11 8:11 11:7 11:3 11:13 12:10 11:7	SMIRNOV Alexey	
+2013	World Tour China Open Changchun 2013	KARLSSON Mattias (SWE)		CHIU Chung Hei (HKG)		MS	Qualification		4 - 3	12:14 11:5 6:11 11:5 11:9 7:11 11:9	KARLSSON Mattias	
+2013	World Tour China Open Changchun 2013	FRANZISKA Patrick (GER)		CHIU Chung Hei (HKG)		MS	Qualification		4 - 0	11:4 11:7 11:8 11:5	FRANZISKA Patrick	
+2013	World Tour China Open Changchun 2013	FRANZISKA Patrick (GER)		KARLSSON Mattias (SWE)		MS	Qualification		4 - 3	11:7 11:7 11:7 5:11 9:11 6:11 11:5	FRANZISKA Patrick	
+2013	World Tour China Open Changchun 2013	MA Liang (SGP)		AKERSTROM Fabian (SWE)		MS	Qualification		4 - 2	9:11 11:4 11:5 7:11 11:5 12:10	MA Liang	
+2013	World Tour China Open Changchun 2013	YOSHIDA Kaii (JPN)		AKERSTROM Fabian (SWE)		MS	Qualification		4 - 0	11:7 11:4 11:4 11:6	YOSHIDA Kaii	
+2013	World Tour China Open Changchun 2013	YOSHIDA Kaii (JPN)		MA Liang (SGP)		MS	Qualification		4 - 1	11:5 14:12 11:13 15:13 16:14	YOSHIDA Kaii	
+2013	World Tour China Open Changchun 2013	LI Ahmet (TUR)		YU Jiaqing (SGP)		MS	Qualification		4 - 3	8:11 7:11 11:9 11:6 11:9 5:11 11:3	LI Ahmet	
+2013	World Tour China Open Changchun 2013	ACHANTA Sharath (IND)		YU Jiaqing (SGP)		MS	Qualification		4 - 2	7:11 11:4 11:3 9:11 11:7 11:6	ACHANTA Sharath	
+2013	World Tour China Open Changchun 2013	ACHANTA Sharath (IND)		LI Ahmet (TUR)		MS	Qualification		1 - 4	8:11 7:11 12:14 11:4 8:11	LI Ahmet	
+2013	World Tour China Open Changchun 2013	WU Zhikang (SGP)		SHETTY Sanil (IND)		MS	Qualification		3 - 4	11:8 8:11 11:7 11:13 12:10 5:11 12:14	SHETTY Sanil	
+2013	World Tour China Open Changchun 2013	KIM Junghoon (KOR)		SHETTY Sanil (IND)		MS	Qualification		4 - 0	11:4 11:7 11:4 11:8	KIM Junghoon	
+2013	World Tour China Open Changchun 2013	KIM Junghoon (KOR)		WU Zhikang (SGP)		MS	Qualification		4 - 3	7:11 7:11 11:9 11:13 11:6 11:6 14:12	KIM Junghoon	
+2013	World Tour China Open Changchun 2013	JIN Takuya (JPN)		PARK Chan-Hyeok (KOR)		MS	Qualification		4 - 2	11:6 11:5 11:9 9:11 7:11 11:3	JIN Takuya	
+2013	World Tour China Open Changchun 2013	LIVENTSOV Alexey (RUS)		PARK Chan-Hyeok (KOR)		MS	Qualification		4 - 0	11:8 11:4 11:7 11:7	LIVENTSOV Alexey	
+2013	World Tour China Open Changchun 2013	LIVENTSOV Alexey (RUS)		JIN Takuya (JPN)		MS	Qualification		4 - 2	8:11 8:11 11:6 14:12 12:10 11:7	LIVENTSOV Alexey	
+2013	World Tour China Open Changchun 2013	ANTHONY Amalraj (IND)		CHEW Clarence (SGP)		MS	Qualification		4 - 0	11:7 11:6 11:7 11:9	ANTHONY Amalraj	
+2013	World Tour China Open Changchun 2013	KARLSSON Kristian (SWE)		CHEW Clarence (SGP)		MS	Qualification		4 - 0	12:10 11:7 11:7 12:10	KARLSSON Kristian	
+2013	World Tour China Open Changchun 2013	KARLSSON Kristian (SWE)		ANTHONY Amalraj (IND)		MS	Qualification		4 - 2	11:9 11:13 13:11 3:11 11:8 11:8	KARLSSON Kristian	
+2013	World Tour China Open Changchun 2013	ROBINOT Quentin (FRA)		XIN Zhaoxu (SGP)		MS	Qualification		4 - 0	11:6 11:6 11:8 11:5	ROBINOT Quentin	
+2013	World Tour China Open Changchun 2013	KANG Dongsoo (KOR)		XIN Zhaoxu (SGP)		MS	Qualification		4 - 2	13:11 11:7 9:11 11:6 8:11 14:12	KANG Dongsoo	
+2013	World Tour China Open Changchun 2013	KANG Dongsoo (KOR)		ROBINOT Quentin (FRA)		MS	Qualification		4 - 3	11:6 11:5 9:11 6:11 11:7 9:11 11:3	KANG Dongsoo	
+2013	World Tour China Open Changchun 2013	PAIKOV Mikhail (RUS)		RYUZAKI Tonin (JPN)		MS	Qualification		4 - 3	7:11 13:11 12:10 5:11 11:7 9:11 11:9	PAIKOV Mikhail	
+2013	World Tour China Open Changchun 2013	CHEN Feng (SGP)		RYUZAKI Tonin (JPN)		MS	Qualification		4 - 2	11:9 11:2 11:8 8:11 12:14 11:8	CHEN Feng	
+2013	World Tour China Open Changchun 2013	CHEN Feng (SGP)		PAIKOV Mikhail (RUS)		MS	Qualification		4 - 3	12:10 5:11 11:6 8:11 11:5 9:11 11:4	CHEN Feng	
+2013	World Tour China Open Changchun 2013	MORIZONO Masataka (JPN)		MAK King Ho (HKG)		MS	Qualification		4 - 0	11:4 11:6 11:4 11:4	MORIZONO Masataka	
+2013	World Tour China Open Changchun 2013	VLASOV Grigory (RUS)		MAK King Ho (HKG)		MS	Qualification		4 - 0	11:4 11:7 11:8 11:5	VLASOV Grigory	
+2013	World Tour China Open Changchun 2013	VLASOV Grigory (RUS)		MORIZONO Masataka (JPN)		MS	Qualification		4 - 0	11:4 11:9 11:9 11:8	VLASOV Grigory	
+2013	World Tour China Open Changchun 2013	PITCHFORD Liam (ENG)		OTSUKA Masahiro (JPN)		MS	Qualification		4 - 2	12:10 10:12 11:9 12:10 7:11 11:5	PITCHFORD Liam	
+2013	World Tour China Open Changchun 2013	YANG Zi (SGP)		AVI-TAL Omer (PAN)		MS	Qualification		4 - 0	11:8 11:3 11:5 12:10	YANG Zi	
+2013	World Tour China Open Changchun 2013	YANG Zi (SGP)		OTSUKA Masahiro (JPN)		MS	Qualification		4 - 0	13:11 11:8 11:9 11:6	YANG Zi	
+2013	World Tour China Open Changchun 2013	PITCHFORD Liam (ENG)		AVI-TAL Omer (PAN)		MS	Qualification		4 - 0	11:4 11:4 11:4 11:6	PITCHFORD Liam	
+2013	World Tour China Open Changchun 2013	YANG Zi (SGP)		PITCHFORD Liam (ENG)		MS	Qualification		4 - 0	11:2 11:8 11:9 11:6	YANG Zi	
+2013	World Tour China Open Changchun 2013	OTSUKA Masahiro (JPN)		AVI-TAL Omer (PAN)		MS	Qualification		4 - 0	11:8 11:3 11:7 11:9	OTSUKA Masahiro	
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 2 Total: 109
+
+Start
+Prev
+1
+2
+Next
+End
+2013	World Tour China Open Changchun 2013	DING Ning (CHN)		HIRANO Miu (JPN)		WS	Main Draw	R32	4 - 0	11:8 11:7 11:6 13:11	DING Ning	
+2013	World Tour China Open Changchun 2013	SHAN Xiaona (GER)		LIU Jia (AUT)		WS	Main Draw	R32	4 - 2	11:8 10:12 9:11 11:7 11:4 12:10	SHAN Xiaona	
+2013	World Tour China Open Changchun 2013	SEOK Hajung (KOR)		LIN Ye (CAN)		WS	Main Draw	R32	4 - 2	11:6 12:10 11:5 9:11 8:11 11:9	SEOK Hajung	
+2013	World Tour China Open Changchun 2013	AGGARWAL Neha (IND)		PAVLOVICH Viktoria (BLR)		WS	Main Draw	R32	0 - 4	7:11 7:11 1:11 6:11	PAVLOVICH Viktoria	
+2013	World Tour China Open Changchun 2013	FENG Yalan (CHN)		SHAO Jieni (POR)		WS	Main Draw	R32	4 - 3	8:11 8:11 12:10 9:11 11:6 11:9 11:8	FENG Yalan	
+2013	World Tour China Open Changchun 2013	NG Wing Nam (HKG)		WU Jiaduo (GER)		WS	Main Draw	R32	4 - 2	6:11 11:9 11:8 10:12 11:4 11:6	NG Wing Nam	
+2013	World Tour China Open Changchun 2013	YU Mengyu (SGP)		ITO Mima (JPN)		WS	Main Draw	R32	2 - 4	11:8 9:11 6:11 11:6 8:11 4:11	ITO Mima	
+2013	World Tour China Open Changchun 2013	GUAN Mengyuan (HKG)		LI Xiaoxia (CHN)		WS	Main Draw	R32	0 - 4	8:11 5:11 9:11 6:11	LI Xiaoxia	
+2013	World Tour China Open Changchun 2013	FENG Tianwei (SGP)		HU Melek (TUR)		WS	Main Draw	R32	4 - 0	11:2 11:9 11:8 11:7	FENG Tianwei	
+2013	World Tour China Open Changchun 2013	MATSUDAIRA Shiho (JPN)		LI Jiao (NED)		WS	Main Draw	R32	0 - 4	5:11 9:11 8:11 4:11	LI Jiao	
+2013	World Tour China Open Changchun 2013	JEON Jihee (KOR)		KATO Miyu (JPN)		WS	Main Draw	R32	4 - 0	13:11 11:6 11:5 11:5	JEON Jihee	
+2013	World Tour China Open Changchun 2013	HSING Ariel (USA)		GUO Yan (1982) (CHN)		WS	Main Draw	R32	1 - 4	9:11 5:11 11:9 5:11 5:11	GUO Yan (1982)	
+2013	World Tour China Open Changchun 2013	GUO Yue (CHN)		SUZUKI Rika (JPN)		WS	Main Draw	R32	4 - 0	11:8 11:5 11:6 11:9	GUO Yue	
+2013	World Tour China Open Changchun 2013	ZHANG Lily (USA)		BARTHEL Zhenqi (GER)		WS	Main Draw	R32	4 - 3	11:5 12:10 7:11 7:11 11:7 4:11 11:1	ZHANG Lily	
+2013	World Tour China Open Changchun 2013	SOLJA Amelie (AUT)		KIM Mingyung (KOR)		WS	Main Draw	R32	4 - 1	11:9 17:15 11:8 5:11 11:7	SOLJA Amelie	
+2013	World Tour China Open Changchun 2013	SO Eka (JPN)		LIU Shiwen (CHN)		WS	Main Draw	R32	2 - 4	11:13 4:11 14:12 7:11 11:6 6:11	LIU Shiwen	
+2013	World Tour China Open Changchun 2013	DING Ning (CHN)		SHAN Xiaona (GER)		WS	Main Draw	R16	4 - 0	11:6 11:8 11:8 11:3	DING Ning	
+2013	World Tour China Open Changchun 2013	SEOK Hajung (KOR)		PAVLOVICH Viktoria (BLR)		WS	Main Draw	R16	4 - 1	11:9 7:11 11:1 11:6 11:7	SEOK Hajung	
+2013	World Tour China Open Changchun 2013	FENG Yalan (CHN)		NG Wing Nam (HKG)		WS	Main Draw	R16	4 - 1	11:6 11:3 9:11 11:8 11:3	FENG Yalan	
+2013	World Tour China Open Changchun 2013	ITO Mima (JPN)		LI Xiaoxia (CHN)		WS	Main Draw	R16	0 - 4	5:11 5:11 8:11 5:11	LI Xiaoxia	
+2013	World Tour China Open Changchun 2013	FENG Tianwei (SGP)		LI Jiao (NED)		WS	Main Draw	R16	4 - 0	11:8 11:8 12:10 11:5	FENG Tianwei	
+2013	World Tour China Open Changchun 2013	JEON Jihee (KOR)		GUO Yan (1982) (CHN)		WS	Main Draw	R16	3 - 4	5:11 12:10 7:11 5:11 11:2 11:8 5:11	GUO Yan (1982)	
+2013	World Tour China Open Changchun 2013	GUO Yue (CHN)		ZHANG Lily (USA)		WS	Main Draw	R16	4 - 0	11:3 11:7 11:4 11:1	GUO Yue	
+2013	World Tour China Open Changchun 2013	SOLJA Amelie (AUT)		LIU Shiwen (CHN)		WS	Main Draw	R16	0 - 4	9:11 6:11 7:11 4:11	LIU Shiwen	
+2013	World Tour China Open Changchun 2013	DING Ning (CHN)		SEOK Hajung (KOR)		WS	Main Draw	QuarterFinal	4 - 2	12:10 11:9 9:11 11:6 8:11 11:9	DING Ning	
+2013	World Tour China Open Changchun 2013	FENG Yalan (CHN)		LI Xiaoxia (CHN)		WS	Main Draw	QuarterFinal	3 - 4	9:11 9:11 11:7 12:10 6:11 11:9 7:11	LI Xiaoxia	
+2013	World Tour China Open Changchun 2013	FENG Tianwei (SGP)		GUO Yan (1982) (CHN)		WS	Main Draw	QuarterFinal	1 - 4	6:11 9:11 11:2 13:15 8:11	GUO Yan (1982)	
+2013	World Tour China Open Changchun 2013	GUO Yue (CHN)		LIU Shiwen (CHN)		WS	Main Draw	QuarterFinal	2 - 4	7:11 10:12 10:12 11:5 15:13 6:11	LIU Shiwen	
+2013	World Tour China Open Changchun 2013	DING Ning (CHN)		LI Xiaoxia (CHN)		WS	Main Draw	SemiFinal	3 - 4	10:12 11:9 12:10 11:13 11:7 8:11 9:11	LI Xiaoxia	
+2013	World Tour China Open Changchun 2013	GUO Yan (1982) (CHN)		LIU Shiwen (CHN)		WS	Main Draw	SemiFinal	4 - 1	11:9 6:11 11:8 11:7 11:7	GUO Yan (1982)	
+2013	World Tour China Open Changchun 2013	LI Xiaoxia (CHN)		GUO Yan (1982) (CHN)		WS	Main Draw	Final	4 - 1	11:8 11:9 11:4 4:11 11:5	LI Xiaoxia	
+2013	World Tour China Open Changchun 2013	NG Wing Nam (HKG)		MORI Sakura (JPN)		U21WS	Main Draw	R16	3 - 1	12:14 16:14 11:9 11:7	NG Wing Nam	
+2013	World Tour China Open Changchun 2013	SO Eka (JPN)		HSING Ariel (USA)		U21WS	Main Draw	R16	3 - 0	15:13 11:9 11:8	SO Eka	
+2013	World Tour China Open Changchun 2013	ZHOU Yihan (SGP)		SUZUKI Rika (JPN)		U21WS	Main Draw	R16	3 - 1	11:6 11:6 11:13 11:9	ZHOU Yihan	
+2013	World Tour China Open Changchun 2013	HIRANO Miu (JPN)		ZHANG Lily (USA)		U21WS	Main Draw	R16	1 - 3	11:8 8:11 12:14 16:18	ZHANG Lily	
+2013	World Tour China Open Changchun 2013	LIN Ye (CAN)		MATSUMOTO Yuki (JPN)		U21WS	Main Draw	R16	3 - 1	9:11 12:10 11:1 12:10	LIN Ye	
+2013	World Tour China Open Changchun 2013	SHAO Jieni (POR)		KATO Miyu (JPN)		U21WS	Main Draw	R16	0 - 3	9:11 6:11 12:14	KATO Miyu	
+2013	World Tour China Open Changchun 2013	ITO Mima (JPN)		JUNG Yumi (KOR)		U21WS	Main Draw	R16	3 - 0	11:8 11:6 11:8	ITO Mima	
+2013	World Tour China Open Changchun 2013	GUAN Mengyuan (HKG)		MATSUDAIRA Shiho (JPN)		U21WS	Main Draw	R16	3 - 0	11:8 12:10 11:8	GUAN Mengyuan	
+2013	World Tour China Open Changchun 2013	NG Wing Nam (HKG)		SO Eka (JPN)		U21WS	Main Draw	QuarterFinal	4 - 2	11:8 9:11 4:11 14:12 11:7 11:9	NG Wing Nam	
+2013	World Tour China Open Changchun 2013	ZHOU Yihan (SGP)		ZHANG Lily (USA)		U21WS	Main Draw	QuarterFinal	4 - 1	11:5 5:11 12:10 11:9 11:5	ZHOU Yihan	
+2013	World Tour China Open Changchun 2013	LIN Ye (CAN)		KATO Miyu (JPN)		U21WS	Main Draw	QuarterFinal	0 - 4	10:12 3:11 7:11 8:11	KATO Miyu	
+2013	World Tour China Open Changchun 2013	ITO Mima (JPN)		GUAN Mengyuan (HKG)		U21WS	Main Draw	QuarterFinal	4 - 2	12:10 11:5 6:11 11:5 6:11 11:5	ITO Mima	
+2013	World Tour China Open Changchun 2013	NG Wing Nam (HKG)		ZHOU Yihan (SGP)		U21WS	Main Draw	SemiFinal	4 - 2	6:11 11:2 9:11 11:5 11:9 11:8	NG Wing Nam	
+2013	World Tour China Open Changchun 2013	KATO Miyu (JPN)		ITO Mima (JPN)		U21WS	Main Draw	SemiFinal	4 - 3	4:11 10:12 11:7 11:5 11:7 15:17 11:5	KATO Miyu	
+2013	World Tour China Open Changchun 2013	NG Wing Nam (HKG)		KATO Miyu (JPN)		U21WS	Main Draw	Final	4 - 3	11:8 11:4 6:11 9:11 12:14 11:7 12:10	NG Wing Nam
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 20
+
+2013	World Tour China Open Changchun 2013	MATTENET Adrien (FRA)	ZHANG Jike (CHN)	CHEN Feng (SGP)	CHEW Clarence (SGP)	MD	Main Draw	R16	3 - 0	11:2 11:8 12:10	MATTENET Adrien	ZHANG Jike
+2013	World Tour China Open Changchun 2013	ROBINOT Quentin (FRA)	WANG Hao (CHN)	KIM Junghoon (KOR)	PARK Chan-Hyeok (KOR)	MD	Main Draw	R16	3 - 1	4:11 11:9 11:9 11:9	ROBINOT Quentin	WANG Hao
+2013	World Tour China Open Changchun 2013	MATTENET Adrien (FRA)	ZHANG Jike (CHN)	BOLL Timo (GER)	MA Long (CHN)	MD	Main Draw	QuarterFinal	0 - 3	7:11 6:11 8:11	BOLL Timo	MA Long
+2013	World Tour China Open Changchun 2013	ROBINOT Quentin (FRA)	WANG Hao (CHN)	KARLSSON Kristian (SWE)	KARLSSON Mattias (SWE)	MD	Main Draw	QuarterFinal	3 - 1	11:6 11:9 8:11 11:5	ROBINOT Quentin	WANG Hao
+2013	World Tour China Open Changchun 2013	OVTCHAROV Dimitrij (GER)	YAN An (CHN)	YANG Zi (SGP)	ZHAN Jian (SGP)	MD	Main Draw	SemiFinal	3 - 1	11:7 7:11 11:6 11:5	OVTCHAROV Dimitrij	YAN An
+2013	World Tour China Open Changchun 2013	BOLL Timo (GER)	MA Long (CHN)	ROBINOT Quentin (FRA)	WANG Hao (CHN)	MD	Main Draw	SemiFinal	3 - 2	13:15 12:14 11:5 11:9 11:9	BOLL Timo	MA Long
+2013	World Tour China Open Changchun 2013	OVTCHAROV Dimitrij (GER)	YAN An (CHN)	BOLL Timo (GER)	MA Long (CHN)	MD	Main Draw	Final	1 - 3	13:11 8:11 5:11 6:11	BOLL Timo	MA Long
+2013	World Tour China Open Changchun 2013	GACINA Andrej (CRO)	TAN Ruiwu (CRO)	BOLL Timo (GER)	MA Long (CHN)	MD	Main Draw	R16	0 - 3	8:11 5:11 8:11	BOLL Timo	MA Long
+2013	World Tour China Open Changchun 2013	GACINA Andrej (CRO)	TAN Ruiwu (CRO)	FAN Zhendong (CHN)	KANG Dongsoo (KOR)	MD	Qualification	QR16	3 - 1	11:7 9:11 11:5 11:8	GACINA Andrej	TAN Ruiwu
+2013	World Tour China Open Changchun 2013	CHIU Chung Hei (HKG)	MAK King Ho (HKG)	CHEN Feng (SGP)	CHEW Clarence (SGP)	MD	Qualification	QR16	2 - 3	6:11 11:7 7:11 11:6 9:11	CHEN Feng	CHEW Clarence
+2013	World Tour China Open Changchun 2013	ACHANTA Sharath (IND)	SHETTY Sanil (IND)	MORIZONO Masataka (JPN)	SAMBE Kohei (JPN)	MD	Qualification	QR16	3 - 1	12:14 11:5 12:10 11:7	ACHANTA Sharath	SHETTY Sanil
+2013	World Tour China Open Changchun 2013	HIGASHI Yuto (JPN)	SAKAI Asuka (JPN)	FRANZISKA Patrick (GER)	XU Xin (CHN)	MD	Main Draw	R16	1 - 3	9:11 11:8 7:11 6:11	FRANZISKA Patrick	XU Xin
+2013	World Tour China Open Changchun 2013	KIM Junghoon (KOR)	PARK Chan-Hyeok (KOR)	AKERSTROM Fabian (SWE)	OVERSJO Mattias (SWE)	MD	Qualification	QR16	3 - 2	11:13 11:9 11:7 10:12 11:3	KIM Junghoon	PARK Chan-Hyeok
+2013	World Tour China Open Changchun 2013	SKACHKOV Kirill (RUS)	SMIRNOV Alexey (RUS)	OVTCHAROV Dimitrij (GER)	YAN An (CHN)	MD	Main Draw	R16	2 - 3	11:8 4:11 5:11 13:11 11:13	OVTCHAROV Dimitrij	YAN An
+2013	World Tour China Open Changchun 2013	LIVENTSOV Alexey (RUS)	PAIKOV Mikhail (RUS)	KARLSSON Kristian (SWE)	KARLSSON Mattias (SWE)	MD	Main Draw	R16	1 - 3	10:12 10:12 11:3 8:11	KARLSSON Kristian	KARLSSON Mattias
+2013	World Tour China Open Changchun 2013	SKACHKOV Kirill (RUS)	SMIRNOV Alexey (RUS)	DESAI Harmeet (IND)	GHOSH Soumyajit (IND)	MD	Qualification	QR16	3 - 1	11:9 4:11 11:8 14:12	SKACHKOV Kirill	SMIRNOV Alexey
+2013	World Tour China Open Changchun 2013	GAO Ning (SGP)	LI Hu (SGP)	ACHANTA Sharath (IND)	SHETTY Sanil (IND)	MD	Main Draw	R16	3 - 1	11:5 6:11 11:3 12:10	GAO Ning	LI Hu
+2013	World Tour China Open Changchun 2013	YANG Zi (SGP)	ZHAN Jian (SGP)	JIN Takuya (JPN)	MATSUDAIRA Kenta (JPN)	MD	Main Draw	R16	3 - 2	11:7 9:11 11:8 9:11 11:6	YANG Zi	ZHAN Jian
+2013	World Tour China Open Changchun 2013	GAO Ning (SGP)	LI Hu (SGP)	OVTCHAROV Dimitrij (GER)	YAN An (CHN)	MD	Main Draw	QuarterFinal	0 - 3	8:11 4:11 6:11	OVTCHAROV Dimitrij	YAN An
+2013	World Tour China Open Changchun 2013	NORDBERG Hampus (SWE)	SODERLUND Hampus (SWE)	HIGASHI Yuto (JPN)	SAKAI Asuka (JPN)	MD	Qualification	QR16	2 - 3	11:8 8:11 8:11 11:5 6:11	HIGASHI Yuto	SAKAI Asuka
+
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 18
+
+2013	World Tour China Open Changchun 2013	DING Ning (CHN)	LI Xiaoxia (CHN)	MATSUMOTO Yuki (JPN)	SAKAI Haruka (JPN)	WD	Main Draw	R16	3 - 0	11:1 11:5 11:4	DING Ning	LI Xiaoxia
+2013	World Tour China Open Changchun 2013	FENG Yalan (CHN)	GUO Yan (1982) (CHN)	FENG Tianwei (SGP)	YU Mengyu (SGP)	WD	Main Draw	R16	3 - 0	11:7 11:4 11:8	FENG Yalan	GUO Yan (1982)
+2013	World Tour China Open Changchun 2013	DING Ning (CHN)	LI Xiaoxia (CHN)	BARTHEL Zhenqi (GER)	SHAN Xiaona (GER)	WD	Main Draw	QuarterFinal	3 - 1	11:8 6:11 11:7 11:7	DING Ning	LI Xiaoxia
+2013	World Tour China Open Changchun 2013	DING Ning (CHN)	LI Xiaoxia (CHN)	GUO Yue (CHN)	LIU Shiwen (CHN)	WD	Main Draw	SemiFinal	0 - 3	5:11 7:11 13:15	GUO Yue	LIU Shiwen
+2013	World Tour China Open Changchun 2013	GUO Yue (CHN)	LIU Shiwen (CHN)	FENG Yalan (CHN)	GUO Yan (1982) (CHN)	WD	Main Draw	Final	3 - 0	11:6 11:5 13:11	GUO Yue	LIU Shiwen
+2013	World Tour China Open Changchun 2013	DAS Mouma (IND)	KUMARESAN Shamini (IND)	JUNG Yumi (KOR)	KIM Mingyung (KOR)	WD	Qualification	QR16	2 - 3	11:8 5:11 11:9 8:11 2:11	JUNG Yumi	KIM Mingyung
+2013	World Tour China Open Changchun 2013	AGGARWAL Neha (IND)	PATKAR Madhurika (IND)	JEE Dayoung (KOR)	KIM Byeolnim (KOR)	WD	Qualification	QR16	0 - 3	8:11 10:12 4:11	JEE Dayoung	KIM Byeolnim
+2013	World Tour China Open Changchun 2013	HAMAMOTO Yui (AUT)	KATO Miyu (JPN)	GUO Yue (CHN)	LIU Shiwen (CHN)	WD	Main Draw	R16	2 - 3	4:11 11:4 11:8 10:12 6:11	GUO Yue	LIU Shiwen
+2013	World Tour China Open Changchun 2013	HIRANO Miu (JPN)	ITO Mima (JPN)	LIN Ye (CAN)	ZHOU Yihan (SGP)	WD	Main Draw	R16	0 - 3	4:11 8:11 8:11	LIN Ye	ZHOU Yihan
+2013	World Tour China Open Changchun 2013	JEON Jihee (KOR)	SEOK Hajung (KOR)	PAVLOVICH Viktoria (BLR)	WU Jiaduo (GER)	WD	Main Draw	R16	3 - 2	9:11 5:11 11:9 13:11 11:9	JEON Jihee	SEOK Hajung
+2013	World Tour China Open Changchun 2013	JEE Dayoung (KOR)	KIM Byeolnim (KOR)	GUAN Mengyuan (HKG)	NG Wing Nam (HKG)	WD	Main Draw	R16	0 - 3	5:11 15:17 6:11	GUAN Mengyuan	NG Wing Nam
+2013	World Tour China Open Changchun 2013	JEON Jihee (KOR)	SEOK Hajung (KOR)	GUAN Mengyuan (HKG)	NG Wing Nam (HKG)	WD	Main Draw	QuarterFinal	3 - 0	11:8 11:7 11:1	JEON Jihee	SEOK Hajung
+2013	World Tour China Open Changchun 2013	JEON Jihee (KOR)	SEOK Hajung (KOR)	FENG Yalan (CHN)	GUO Yan (1982) (CHN)	WD	Main Draw	SemiFinal	0 - 3	10:12 3:11 6:11	FENG Yalan	GUO Yan (1982)
+2013	World Tour China Open Changchun 2013	HU Melek (TUR)	LI Jiao (NED)	BARTHEL Zhenqi (GER)	SHAN Xiaona (GER)	WD	Main Draw	R16	2 - 3	11:9 8:11 5:11 11:8 7:11	BARTHEL Zhenqi	SHAN Xiaona
+2013	World Tour China Open Changchun 2013	HU Melek (TUR)	LI Jiao (NED)	SHAO Jieni (POR)	WU Yue (USA)	WD	Qualification	QR16	3 - 2	12:10 11:4 8:11 9:11 11:7	HU Melek	LI Jiao
+2013	World Tour China Open Changchun 2013	LIN Ye (CAN)	ZHOU Yihan (SGP)	FENG Yalan (CHN)	GUO Yan (1982) (CHN)	WD	Main Draw	QuarterFinal	2 - 3	7:11 11:9 5:11 11:8 7:11	FENG Yalan	GUO Yan (1982)
+2013	World Tour China Open Changchun 2013	HSING Ariel (USA)	ZHANG Lily (USA)	JUNG Yumi (KOR)	KIM Mingyung (KOR)	WD	Main Draw	R16	3 - 2	8:11 8:11 11:9 11:7 11:9	HSING Ariel	ZHANG Lily
+2013	World Tour China Open Changchun 2013	HSING Ariel (USA)	ZHANG Lily (USA)	GUO Yue (CHN)	LIU Shiwen (CHN)	WD	Main Draw	QuarterFinal	0 - 3	10:12 8:11 7:11	GUO Yue	LIU Shiwen

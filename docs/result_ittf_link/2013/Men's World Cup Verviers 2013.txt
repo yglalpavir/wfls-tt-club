@@ -1,0 +1,47 @@
+	Men's World Cup Verviers 2013	ITTF World Cup	--	32	2013-10-25	2013-10-27
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 2 Total: 109
+
+Start
+Prev
+1
+2
+Next
+End
+2013	Men's World Cup Verviers 2013	XU Xin (CHN)		YAN An (CHN)		MS	Main Draw	QuarterFinal	4 - 0	11:7 11:7 11:7 11:4	XU Xin	
+2013	Men's World Cup Verviers 2013	TANG Peng (HKG)		OVTCHAROV Dimitrij (GER)		MS	Main Draw	QuarterFinal	1 - 4	9:11 11:9 11:13 5:11 5:11	OVTCHAROV Dimitrij	
+2013	Men's World Cup Verviers 2013	CHUANG Chih-Yuan (TPE)		SAMSONOV Vladimir (BLR)		MS	Main Draw	QuarterFinal	1 - 4	6:11 13:11 12:14 3:11 8:11	SAMSONOV Vladimir	
+2013	Men's World Cup Verviers 2013	FREITAS Marcos (POR)		BOLL Timo (GER)		MS	Main Draw	QuarterFinal	0 - 4	7:11 9:11 10:12 6:11	BOLL Timo	
+2013	Men's World Cup Verviers 2013	XU Xin (CHN)		OVTCHAROV Dimitrij (GER)		MS	Main Draw	SemiFinal	4 - 3	11:5 11:8 8:11 8:11 4:11 11:9 11:2	XU Xin	
+2013	Men's World Cup Verviers 2013	SAMSONOV Vladimir (BLR)		BOLL Timo (GER)		MS	Main Draw	SemiFinal	4 - 0	11:8 11:4 11:8 11:8	SAMSONOV Vladimir	
+2013	Men's World Cup Verviers 2013	XU Xin (CHN)		SAMSONOV Vladimir (BLR)		MS	Main Draw	Final	4 - 1	11:6 12:14 11:8 11:9 11:7	XU Xin	
+2013	Men's World Cup Verviers 2013	OVTCHAROV Dimitrij (GER)		BOLL Timo (GER)		MS	Position Draw	2	4 - 1	11:3 8:11 11:5 11:5 11:6	OVTCHAROV Dimitrij	
+2013	Men's World Cup Verviers 2013	YANG Zi (SGP)		SAIVE Jean-Michel (BEL)		MS	Qualification		4 - 0	11:7 11:7 11:9 15:13	YANG Zi	
+2013	Men's World Cup Verviers 2013	FREITAS Marcos (POR)		SAIVE Jean-Michel (BEL)		MS	Qualification		4 - 3	11:5 11:5 9:11 7:11 9:11 13:11 11:9	FREITAS Marcos	
+2013	Men's World Cup Verviers 2013	FREITAS Marcos (POR)		YANG Zi (SGP)		MS	Qualification		4 - 3	9:11 9:11 12:10 11:6 11:7 6:11 16:14	FREITAS Marcos	
+2013	Men's World Cup Verviers 2013	ACHANTA Sharath (IND)		HENZELL William (AUS)		MS	Qualification		4 - 3	12:14 10:12 9:11 11:6 11:8 11:3 12:10	ACHANTA Sharath	
+2013	Men's World Cup Verviers 2013	TANG Peng (HKG)		HENZELL William (AUS)		MS	Qualification		4 - 2	11:8 4:11 11:4 11:8 11:13 11:6	TANG Peng	
+2013	Men's World Cup Verviers 2013	TANG Peng (HKG)		ACHANTA Sharath (IND)		MS	Qualification		4 - 1	11:9 11:9 11:6 10:12 11:3	TANG Peng	
+2013	Men's World Cup Verviers 2013	ALAMIYAN Noshad (IRI)		HO Andre (CAN)		MS	Qualification		4 - 1	11:8 11:9 9:11 11:7 11:8	ALAMIYAN Noshad	
+2013	Men's World Cup Verviers 2013	CHEN Chien-An (TPE)		HO Andre (CAN)		MS	Qualification		4 - 1	13:11 11:7 11:13 11:8 11:8	CHEN Chien-An	
+2013	Men's World Cup Verviers 2013	CHEN Chien-An (TPE)		ALAMIYAN Noshad (IRI)		MS	Qualification		4 - 3	9:11 8:11 12:10 9:11 11:9 11:7 11:9	CHEN Chien-An	
+2013	Men's World Cup Verviers 2013	LASHIN Elsayed (EGY)		MONTEIRO Thiago (BRA)		MS	Qualification		2 - 4	11:9 7:11 11:9 8:11 9:11 2:11	MONTEIRO Thiago	
+2013	Men's World Cup Verviers 2013	JEOUNG Youngsik (KOR)		MONTEIRO Thiago (BRA)		MS	Qualification		4 - 2	11:9 11:8 8:11 11:3 9:11 11:5	JEOUNG Youngsik	
+2013	Men's World Cup Verviers 2013	JEOUNG Youngsik (KOR)		LASHIN Elsayed (EGY)		MS	Qualification		4 - 0	11:9 11:8 11:6 11:7	JEOUNG Youngsik	
+2013	Men's World Cup Verviers 2013	XU Xin (CHN)		BAUM Patrick (GER)		MS	Qualification		4 - 1	11:5 10:12 11:7 11:5 11:5	XU Xin	
+2013	Men's World Cup Verviers 2013	XU Xin (CHN)		TANG Peng (HKG)		MS	Qualification		4 - 3	11:6 11:13 8:11 8:11 11:4 11:7 11:6	XU Xin	
+2013	Men's World Cup Verviers 2013	BAUM Patrick (GER)		TANG Peng (HKG)		MS	Qualification		2 - 4	1:11 10:12 11:7 8:11 11:7 6:11	TANG Peng	
+2013	Men's World Cup Verviers 2013	BOLL Timo (GER)		JIANG Tianyi (HKG)		MS	Qualification		4 - 0	11:5 11:3 11:8 11:6	BOLL Timo	
+2013	Men's World Cup Verviers 2013	BOLL Timo (GER)		FREITAS Marcos (POR)		MS	Qualification		4 - 0	14:12 17:15 11:5 13:11	BOLL Timo	
+2013	Men's World Cup Verviers 2013	JIANG Tianyi (HKG)		FREITAS Marcos (POR)		MS	Qualification		3 - 4	9:11 11:5 13:11 11:8 7:11 8:11 7:11	FREITAS Marcos	
+2013	Men's World Cup Verviers 2013	OVTCHAROV Dimitrij (GER)		YAN An (CHN)		MS	Qualification		4 - 2	11:7 10:12 12:10 11:5 2:11 11:9	OVTCHAROV Dimitrij	
+2013	Men's World Cup Verviers 2013	OVTCHAROV Dimitrij (GER)		CHEN Chien-An (TPE)		MS	Qualification		4 - 0	11:6 11:8 11:4 11:9	OVTCHAROV Dimitrij	
+2013	Men's World Cup Verviers 2013	YAN An (CHN)		CHEN Chien-An (TPE)		MS	Qualification		4 - 1	11:5 11:6 11:3 9:11 11:4	YAN An	
+2013	Men's World Cup Verviers 2013	CHUANG Chih-Yuan (TPE)		SAMSONOV Vladimir (BLR)		MS	Qualification		4 - 2	11:9 11:8 8:11 2:11 11:9 12:10	CHUANG Chih-Yuan	
+2013	Men's World Cup Verviers 2013	CHUANG Chih-Yuan (TPE)		JEOUNG Youngsik (KOR)		MS	Qualification		4 - 3	8:11 11:6 11:6 9:11 11:7 9:11 11:4	CHUANG Chih-Yuan	
+2013	Men's World Cup Verviers 2013	SAMSONOV Vladimir (BLR)		JEOUNG Youngsik (KOR)		MS	Qualification		4 - 3	11:8 9:11 11:6 6:11 9:11 11:7 11:4	SAMSONOV Vladimir
+

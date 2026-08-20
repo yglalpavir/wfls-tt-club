@@ -10,3 +10,334 @@
 ----------------------------------------
 数据来源：ITTF World Tour 2013
 文件生成时间：自动生成
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 3 Total: 280
+
+Start
+Prev
+1
+2
+3
+Next
+End
+2013	World Tour Czeck Open Olomouc 2013	TAKAKIWA Taku (JPN)		KONECNY Tomas (CZE)		MS	Main Draw	R64	4 - 1	11:7 9:11 11:4 11:4 11:6	TAKAKIWA Taku	
+2013	World Tour Czeck Open Olomouc 2013	WALTHER Ricardo (GER)		MACHADO Carlos (ESP)		MS	Main Draw	R64	3 - 4	11:7 10:12 8:11 11:6 11:5 11:13 10:12	MACHADO Carlos	
+2013	World Tour Czeck Open Olomouc 2013	JEVTOVIC Marko (SRB)		DURAN Marc (ESP)		MS	Main Draw	R64	4 - 1	10:12 11:9 11:9 11:7 11:8	JEVTOVIC Marko	
+2013	World Tour Czeck Open Olomouc 2013	ROBINOT Quentin (FRA)		BAI He (SVK)		MS	Main Draw	R64	4 - 2	11:8 11:9 9:11 6:11 11:9 11:3	ROBINOT Quentin	
+2013	World Tour Czeck Open Olomouc 2013	PROKOPCOV Dmitrij (CZE)		PETO Zsolt (SRB)		MS	Main Draw	R64	3 - 4	11:5 11:9 7:11 10:12 6:11 11:4 9:11	PETO Zsolt	
+2013	World Tour Czeck Open Olomouc 2013	MENGEL Steffen (GER)		SALIFOU Abdel-Kader (BEN)		MS	Main Draw	R64	4 - 1	11:4 8:11 11:6 11:7 11:9	MENGEL Steffen	
+2013	World Tour Czeck Open Olomouc 2013	GROTH Jonathan (DEN)		AKERSTROM Fabian (SWE)		MS	Main Draw	R64	4 - 3	11:8 7:11 12:10 6:11 5:11 11:5 11:7	GROTH Jonathan	
+2013	World Tour Czeck Open Olomouc 2013	NOVOTA Samuel (SVK)		SHIBAEV Alexander (RUS)		MS	Main Draw	R64	0 - 4	6:11 9:11 5:11 7:11	SHIBAEV Alexander	
+2013	World Tour Czeck Open Olomouc 2013	MATSUMOTO Cazuo (BRA)		YOSHIDA Masaki (JPN)		MS	Main Draw	R64	0 - 4	9:11 9:11 5:11 6:11	YOSHIDA Masaki	
+2013	World Tour Czeck Open Olomouc 2013	CIPIN Filip (CRO)		FILUS Ruwen (GER)		MS	Main Draw	R64	0 - 4	7:11 8:11 1:11 5:11	FILUS Ruwen	
+2013	World Tour Czeck Open Olomouc 2013	PAIKOV Mikhail (RUS)		FAZEKAS Peter (HUN)		MS	Main Draw	R64	4 - 3	7:11 6:11 6:11 11:4 11:7 12:10 11:9	PAIKOV Mikhail	
+2013	World Tour Czeck Open Olomouc 2013	KOLAREK Tomislav (CRO)		HABESOHN Daniel (AUT)		MS	Main Draw	R64	4 - 3	7:11 11:4 6:11 11:8 11:3 9:11 11:8	KOLAREK Tomislav	
+2013	World Tour Czeck Open Olomouc 2013	TSUBOI Gustavo (BRA)		JAKAB Janos (HUN)		MS	Main Draw	R64	4 - 2	13:11 4:11 11:4 11:7 10:12 11:6	TSUBOI Gustavo	
+2013	World Tour Czeck Open Olomouc 2013	PLATONOV Pavel (BLR)		KARLSSON Kristian (SWE)		MS	Main Draw	R64	1 - 4	6:11 5:11 4:11 12:10 2:11	KARLSSON Kristian	
+2013	World Tour Czeck Open Olomouc 2013	PATTANTYUS Adam (HUN)		FERTIKOWSKI Pawel (POL)		MS	Main Draw	R64	2 - 4	4:11 10:12 11:2 11:8 5:11 4:11	FERTIKOWSKI Pawel	
+2013	World Tour Czeck Open Olomouc 2013	KUZMIN Fedor (RUS)		CHAN Kazuhiro (JPN)		MS	Main Draw	R64	3 - 4	12:10 10:12 6:11 3:11 14:12 11:7 8:11	CHAN Kazuhiro	
+2013	World Tour Czeck Open Olomouc 2013	SKACHKOV Kirill (RUS)		VRABLIK Jiri (CZE)		MS	Main Draw	R64	4 - 1	11:13 13:11 11:9 11:5 11:2	SKACHKOV Kirill	
+2013	World Tour Czeck Open Olomouc 2013	PISTEJ Lubomir (SVK)		MONTEIRO Thiago (BRA)		MS	Main Draw	R64	4 - 1	13:11 4:11 13:11 13:11 15:13	PISTEJ Lubomir	
+2013	World Tour Czeck Open Olomouc 2013	VLASOV Grigory (RUS)		HACHARD Antoine (FRA)		MS	Main Draw	R64	4 - 0	11:3 13:11 11:8 11:4	VLASOV Grigory	
+2013	World Tour Czeck Open Olomouc 2013	FLORAS Robert (POL)		SHIONO Masato (JPN)		MS	Main Draw	R64	0 - 4	1:11 4:11 4:11 2:11	SHIONO Masato	
+2013	World Tour Czeck Open Olomouc 2013	FEGERL Stefan (AUT)		SZUDI Adam (HUN)		MS	Main Draw	R64	4 - 1	11:6 11:9 11:5 6:11 11:9	FEGERL Stefan	
+2013	World Tour Czeck Open Olomouc 2013	VOZICKY Bohumil (CZE)		PITCHFORD Liam (ENG)		MS	Main Draw	R64	1 - 4	6:11 13:15 11:5 7:11 8:11	PITCHFORD Liam	
+2013	World Tour Czeck Open Olomouc 2013	SIRUCEK Pavel (CZE)		DIDUKH Oleksandr (UKR)		MS	Main Draw	R64	4 - 1	4:11 11:7 14:12 11:8 13:11	SIRUCEK Pavel	
+2013	World Tour Czeck Open Olomouc 2013	FENG Xiaoquan (AUT)		LIVENTSOV Alexey (RUS)		MS	Main Draw	R64	3 - 4	12:10 7:11 4:11 11:7 6:11 11:6 10:12	LIVENTSOV Alexey	
+2013	World Tour Czeck Open Olomouc 2013	ACHANTA Sharath (IND)		DYJAS Jakub (POL)		MS	Main Draw	R64	4 - 0	11:3 11:6 11:6 13:11	ACHANTA Sharath	
+2013	World Tour Czeck Open Olomouc 2013	LE BRETON Thomas (FRA)		LAKEEV Vasily (RUS)		MS	Main Draw	R64	4 - 2	6:11 11:8 13:11 6:11 11:4 12:10	LE BRETON Thomas	
+2013	World Tour Czeck Open Olomouc 2013	YOSHIMURA Maharu (JPN)		LORENTZ Romain (FRA)		MS	Main Draw	R64	4 - 2	6:11 11:8 8:11 14:12 11:7 12:10	YOSHIMURA Maharu	
+2013	World Tour Czeck Open Olomouc 2013	OVERSJO Mattias (SWE)		WANG Zengyi (POL)		MS	Main Draw	R64	4 - 2	5:11 11:2 5:11 11:6 14:12 11:5	OVERSJO Mattias	
+2013	World Tour Czeck Open Olomouc 2013	GORAK Daniel (POL)		SZOCS Hunor (ROU)		MS	Main Draw	R64	4 - 0	11:7 11:7 11:5 11:6	GORAK Daniel	
+2013	World Tour Czeck Open Olomouc 2013	IONESCU Ovidiu (ROU)		GAUZY Simon (FRA)		MS	Main Draw	R64	3 - 4	11:7 8:11 9:11 11:1 11:13 12:10 6:11	GAUZY Simon	
+2013	World Tour Czeck Open Olomouc 2013	KORBEL Petr (CZE)		HIELSCHER Lars (GER)		MS	Main Draw	R64	1 - 4	11:8 3:11 14:16 7:11 9:11	HIELSCHER Lars	
+2013	World Tour Czeck Open Olomouc 2013	SEREDA Peter (SVK)		FRANZISKA Patrick (GER)		MS	Main Draw	R64	0 - 4	8:11 9:11 7:11 5:11	FRANZISKA Patrick	
+2013	World Tour Czeck Open Olomouc 2013	TAKAKIWA Taku (JPN)		MACHADO Carlos (ESP)		MS	Main Draw	R32	2 - 4	3:11 11:4 10:12 12:10 3:11 10:12	MACHADO Carlos	
+2013	World Tour Czeck Open Olomouc 2013	JEVTOVIC Marko (SRB)		ROBINOT Quentin (FRA)		MS	Main Draw	R32	3 - 4	6:11 8:11 11:7 4:11 11:3 11:9 6:11	ROBINOT Quentin	
+2013	World Tour Czeck Open Olomouc 2013	PETO Zsolt (SRB)		MENGEL Steffen (GER)		MS	Main Draw	R32	0 - 4	9:11 6:11 4:11 9:11	MENGEL Steffen	
+2013	World Tour Czeck Open Olomouc 2013	GROTH Jonathan (DEN)		SHIBAEV Alexander (RUS)		MS	Main Draw	R32	1 - 4	8:11 5:11 11:8 9:11 8:11	SHIBAEV Alexander	
+2013	World Tour Czeck Open Olomouc 2013	YOSHIDA Masaki (JPN)		FILUS Ruwen (GER)		MS	Main Draw	R32	0 - 4	6:11 2:11 10:12 7:11	FILUS Ruwen	
+2013	World Tour Czeck Open Olomouc 2013	PAIKOV Mikhail (RUS)		KOLAREK Tomislav (CRO)		MS	Main Draw	R32	4 - 3	11:13 10:12 14:12 11:3 11:4 12:14 11:9	PAIKOV Mikhail	
+2013	World Tour Czeck Open Olomouc 2013	TSUBOI Gustavo (BRA)		KARLSSON Kristian (SWE)		MS	Main Draw	R32	4 - 3	10:12 6:11 11:13 12:10 11:6 11:6 11:9	TSUBOI Gustavo	
+2013	World Tour Czeck Open Olomouc 2013	FERTIKOWSKI Pawel (POL)		CHAN Kazuhiro (JPN)		MS	Main Draw	R32	0 - 4	5:11 8:11 4:11 14:16	CHAN Kazuhiro	
+2013	World Tour Czeck Open Olomouc 2013	SKACHKOV Kirill (RUS)		PISTEJ Lubomir (SVK)		MS	Main Draw	R32	4 - 2	5:11 11:9 9:11 11:9 11:5 11:4	SKACHKOV Kirill	
+2013	World Tour Czeck Open Olomouc 2013	VLASOV Grigory (RUS)		SHIONO Masato (JPN)		MS	Main Draw	R32	1 - 4	6:11 11:7 8:11 4:11 8:11	SHIONO Masato	
+2013	World Tour Czeck Open Olomouc 2013	FEGERL Stefan (AUT)		PITCHFORD Liam (ENG)		MS	Main Draw	R32	3 - 4	13:15 13:11 11:6 8:11 9:11 11:4 9:11	PITCHFORD Liam	
+2013	World Tour Czeck Open Olomouc 2013	SIRUCEK Pavel (CZE)		LIVENTSOV Alexey (RUS)		MS	Main Draw	R32	4 - 1	14:12 5:11 11:6 11:9 11:8	SIRUCEK Pavel	
+2013	World Tour Czeck Open Olomouc 2013	ACHANTA Sharath (IND)		LE BRETON Thomas (FRA)		MS	Main Draw	R32	4 - 0	11:9 13:11 11:7 11:9	ACHANTA Sharath	
+2013	World Tour Czeck Open Olomouc 2013	YOSHIMURA Maharu (JPN)		OVERSJO Mattias (SWE)		MS	Main Draw	R32	3 - 4	11:8 1:11 12:10 11:8 8:11 5:11 9:11	OVERSJO Mattias	
+2013	World Tour Czeck Open Olomouc 2013	GORAK Daniel (POL)		GAUZY Simon (FRA)		MS	Main Draw	R32	4 - 1	11:8 11:5 12:10 9:11 11:9	GORAK Daniel	
+2013	World Tour Czeck Open Olomouc 2013	HIELSCHER Lars (GER)		FRANZISKA Patrick (GER)		MS	Main Draw	R32	0 - 4	6:11 7:11 9:11 5:11	FRANZISKA Patrick	
+2013	World Tour Czeck Open Olomouc 2013	MACHADO Carlos (ESP)		ROBINOT Quentin (FRA)		MS	Main Draw	R16	4 - 2	8:11 13:11 11:8 6:11 11:6 11:8	MACHADO Carlos	
+2013	World Tour Czeck Open Olomouc 2013	MENGEL Steffen (GER)		SHIBAEV Alexander (RUS)		MS	Main Draw	R16	3 - 4	5:11 11:7 11:9 12:10 5:11 10:12 9:11	SHIBAEV Alexander	
+2013	World Tour Czeck Open Olomouc 2013	FILUS Ruwen (GER)		PAIKOV Mikhail (RUS)		MS	Main Draw	R16	4 - 0	11:3 13:11 11:8 11:7	FILUS Ruwen	
+2013	World Tour Czeck Open Olomouc 2013	TSUBOI Gustavo (BRA)		CHAN Kazuhiro (JPN)		MS	Main Draw	R16	0 - 4	3:11 7:11 10:12 10:12	CHAN Kazuhiro	
+2013	World Tour Czeck Open Olomouc 2013	SKACHKOV Kirill (RUS)		SHIONO Masato (JPN)		MS	Main Draw	R16	1 - 4	7:11 4:11 8:11 11:5 8:11	SHIONO Masato	
+2013	World Tour Czeck Open Olomouc 2013	PITCHFORD Liam (ENG)		SIRUCEK Pavel (CZE)		MS	Main Draw	R16	2 - 4	11:8 12:14 6:11 11:8 10:12 4:11	SIRUCEK Pavel	
+2013	World Tour Czeck Open Olomouc 2013	ACHANTA Sharath (IND)		OVERSJO Mattias (SWE)		MS	Main Draw	R16	4 - 1	14:12 12:10 11:8 10:12 11:6	ACHANTA Sharath	
+2013	World Tour Czeck Open Olomouc 2013	GORAK Daniel (POL)		FRANZISKA Patrick (GER)		MS	Main Draw	R16	4 - 2	7:11 3:11 11:9 12:10 11:4 11:3	GORAK Daniel	
+2013	World Tour Czeck Open Olomouc 2013	MACHADO Carlos (ESP)		SHIBAEV Alexander (RUS)		MS	Main Draw	QuarterFinal	4 - 0	11:5 11:6 11:6 11:3	MACHADO Carlos	
+2013	World Tour Czeck Open Olomouc 2013	FILUS Ruwen (GER)		CHAN Kazuhiro (JPN)		MS	Main Draw	QuarterFinal	4 - 0	11:7 11:6 11:8 11:6	FILUS Ruwen	
+2013	World Tour Czeck Open Olomouc 2013	SHIONO Masato (JPN)		SIRUCEK Pavel (CZE)		MS	Main Draw	QuarterFinal	4 - 0	11:6 11:3 11:8 11:5	SHIONO Masato	
+2013	World Tour Czeck Open Olomouc 2013	ACHANTA Sharath (IND)		GORAK Daniel (POL)		MS	Main Draw	QuarterFinal	2 - 4	7:11 6:11 11:6 11:8 8:11 8:11	GORAK Daniel	
+2013	World Tour Czeck Open Olomouc 2013	MACHADO Carlos (ESP)		FILUS Ruwen (GER)		MS	Main Draw	SemiFinal	4 - 0	11:8 11:5 11:6 11:7	MACHADO Carlos	
+2013	World Tour Czeck Open Olomouc 2013	SHIONO Masato (JPN)		GORAK Daniel (POL)		MS	Main Draw	SemiFinal	4 - 3	11:4 6:11 12:10 10:12 11:8 8:11 11:6	SHIONO Masato	
+2013	World Tour Czeck Open Olomouc 2013	MACHADO Carlos (ESP)		SHIONO Masato (JPN)		MS	Main Draw	Final	0 - 4	8:11 6:11 7:11 2:11	SHIONO Masato	
+2013	World Tour Czeck Open Olomouc 2013	FRANZISKA Patrick (GER)		BROSSIER Benjamin (FRA)		U21MS	Main Draw	R32	3 - 2	16:14 6:11 11:9 5:11 11:4	FRANZISKA Patrick	
+2013	World Tour Czeck Open Olomouc 2013	SODERLUND Hampus (SWE)		DUDA Benedikt (GER)		U21MS	Main Draw	R32	2 - 3	13:11 6:11 8:11 11:7 10:12	DUDA Benedikt	
+2013	World Tour Czeck Open Olomouc 2013	DYJAS Jakub (POL)		REITSPIES David (CZE)		U21MS	Main Draw	R32	0 - 3	11:13 13:15 13:15	REITSPIES David	
+2013	World Tour Czeck Open Olomouc 2013	JEAN Lauric (BEL)		ROBINOT Quentin (FRA)		U21MS	Main Draw	R32	0 - 3	7:11 7:11 5:11	ROBINOT Quentin	
+2013	World Tour Czeck Open Olomouc 2013	YOSHIDA Masaki (JPN)		ECSEKI Nandor (HUN)		U21MS	Main Draw	R32	3 - 0	12:10 11:5 11:7	YOSHIDA Masaki	
+2013	World Tour Czeck Open Olomouc 2013	CEKIC Irfan (MNE)		FLORAS Robert (POL)		U21MS	Main Draw	R32	0 - 3	5:11 5:11 5:11	FLORAS Robert	
+2013	World Tour Czeck Open Olomouc 2013	LE BRETON Thomas (FRA)		SZUDI Adam (HUN)		U21MS	Main Draw	R32	3 - 1	9:11 11:9 11:7 12:10	LE BRETON Thomas	
+2013	World Tour Czeck Open Olomouc 2013	FUCEC Luka (CRO)		YOSHIMURA Maharu (JPN)		U21MS	Main Draw	R32	0 - 3	4:11 9:11 6:11	YOSHIMURA Maharu	
+2013	World Tour Czeck Open Olomouc 2013	SIRUCEK Pavel (CZE)		JOST Frederick (GER)		U21MS	Main Draw	R32	3 - 0	11:6 11:8 11:6	SIRUCEK Pavel	
+2013	World Tour Czeck Open Olomouc 2013	KULPA Konrad (POL)		INDEHERBERG Julien (BEL)		U21MS	Main Draw	R32	3 - 1	11:9 6:11 11:6 13:11	KULPA Konrad	
+2013	World Tour Czeck Open Olomouc 2013	SZOCS Hunor (ROU)		MARTINEZ Guillermo (ESP)		U21MS	Main Draw	R32	3 - 0	11:8 11:7 14:12	SZOCS Hunor	
+2013	World Tour Czeck Open Olomouc 2013	ALLEGRO Martin (BEL)		PITCHFORD Liam (ENG)		U21MS	Main Draw	R32	1 - 3	6:11 3:11 11:9 4:11	PITCHFORD Liam	
+2013	World Tour Czeck Open Olomouc 2013	GROTH Jonathan (DEN)		MIKUTIS Tomas (LTU)		U21MS	Main Draw	R32	3 - 1	11:3 8:11 11:8 11:5	GROTH Jonathan	
+2013	World Tour Czeck Open Olomouc 2013	SIMOVIC Miho (CRO)		LORENTZ Romain (FRA)		U21MS	Main Draw	R32	1 - 3	11:13 11:8 7:11 4:11	LORENTZ Romain	
+2013	World Tour Czeck Open Olomouc 2013	CALDERANO Hugo (BRA)		NOVOTA Samuel (SVK)		U21MS	Main Draw	R32	3 - 2	9:11 15:13 11:4 12:14 11:8	CALDERANO Hugo	
+2013	World Tour Czeck Open Olomouc 2013	KUIMOV Philipp (RUS)		GAUZY Simon (FRA)		U21MS	Main Draw	R32	1 - 3	11:8 4:11 11:13 8:11	GAUZY Simon	
+2013	World Tour Czeck Open Olomouc 2013	FRANZISKA Patrick (GER)		DUDA Benedikt (GER)		U21MS	Main Draw	R16	3 - 0	11:7 11:5 11:6	FRANZISKA Patrick	
+2013	World Tour Czeck Open Olomouc 2013	REITSPIES David (CZE)		ROBINOT Quentin (FRA)		U21MS	Main Draw	R16	0 - 3	6:11 8:11 6:11	ROBINOT Quentin	
+2013	World Tour Czeck Open Olomouc 2013	YOSHIDA Masaki (JPN)		FLORAS Robert (POL)		U21MS	Main Draw	R16	3 - 1	11:9 11:9 7:11 11:9	YOSHIDA Masaki	
+2013	World Tour Czeck Open Olomouc 2013	LE BRETON Thomas (FRA)		YOSHIMURA Maharu (JPN)		U21MS	Main Draw	R16	1 - 3	6:11 11:9 10:12 6:11	YOSHIMURA Maharu	
+2013	World Tour Czeck Open Olomouc 2013	SIRUCEK Pavel (CZE)		KULPA Konrad (POL)		U21MS	Main Draw	R16	3 - 0	11:6 11:8 12:10	SIRUCEK Pavel	
+2013	World Tour Czeck Open Olomouc 2013	SZOCS Hunor (ROU)		PITCHFORD Liam (ENG)		U21MS	Main Draw	R16	1 - 3	5:11 9:11 11:6 6:11	PITCHFORD Liam	
+2013	World Tour Czeck Open Olomouc 2013	GROTH Jonathan (DEN)		LORENTZ Romain (FRA)		U21MS	Main Draw	R16	3 - 2	12:10 7:11 9:11 11:9 11:4	GROTH Jonathan	
+2013	World Tour Czeck Open Olomouc 2013	CALDERANO Hugo (BRA)		GAUZY Simon (FRA)		U21MS	Main Draw	R16	3 - 0	11:9 11:8 12:10	CALDERANO Hugo	
+2013	World Tour Czeck Open Olomouc 2013	FRANZISKA Patrick (GER)		ROBINOT Quentin (FRA)		U21MS	Main Draw	QuarterFinal	4 - 0	11:3 11:8 11:9 11:4	FRANZISKA Patrick	
+2013	World Tour Czeck Open Olomouc 2013	YOSHIDA Masaki (JPN)		YOSHIMURA Maharu (JPN)		U21MS	Main Draw	QuarterFinal	4 - 0	13:11 11:9 11:9 11:4	YOSHIDA Masaki	
+2013	World Tour Czeck Open Olomouc 2013	SIRUCEK Pavel (CZE)		PITCHFORD Liam (ENG)		U21MS	Main Draw	QuarterFinal	4 - 2	11:7 7:11 11:6 8:11 11:7 14:12	SIRUCEK Pavel	
+2013	World Tour Czeck Open Olomouc 2013	GROTH Jonathan (DEN)		CALDERANO Hugo (BRA)		U21MS	Main Draw	QuarterFinal	4 - 1	11:9 11:4 2:11 11:9 12:10	GROTH Jonathan	
+2013	World Tour Czeck Open Olomouc 2013	FRANZISKA Patrick (GER)		YOSHIDA Masaki (JPN)		U21MS	Main Draw	SemiFinal	2 - 4	8:11 11:8 10:12 10:12 11:8 8:11	YOSHIDA Masaki	
+2013	World Tour Czeck Open Olomouc 2013	SIRUCEK Pavel (CZE)		GROTH Jonathan (DEN)		U21MS	Main Draw	SemiFinal	2 - 4	4:11 11:13 12:10 6:11 11:3 5:11	GROTH Jonathan	
+2013	World Tour Czeck Open Olomouc 2013	YOSHIDA Masaki (JPN)		GROTH Jonathan (DEN)		U21MS	Main Draw	Final	4 - 2	7:11 11:3 8:11 12:10 11:7 11:5	YOSHIDA Masaki
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 3 Total: 209
+
+Start
+Prev
+1
+2
+3
+Next
+End
+2013	World Tour Czeck Open Olomouc 2013	PAVLOVICH Viktoria (BLR)		BARTOSOVA Hana (CZE)		WS	Main Draw	R64	4 - 0	11:4 11:7 11:7 11:8	PAVLOVICH Viktoria	
+2013	World Tour Czeck Open Olomouc 2013	HIRANO Miu (JPN)		VARADY Barbora (SVK)		WS	Main Draw	R64	4 - 0	11:5 11:6 11:4 11:4	HIRANO Miu	
+2013	World Tour Czeck Open Olomouc 2013	STRBIKOVA Renata (CZE)		PROKHOROVA Yulia (RUS)		WS	Main Draw	R64	1 - 4	8:11 5:11 5:11 11:9 9:11	PROKHOROVA Yulia	
+2013	World Tour Czeck Open Olomouc 2013	SCHUH Anja (GER)		SOLJA Amelie (AUT)		WS	Main Draw	R64	2 - 4	8:11 11:5 11:9 2:11 10:12 7:11	SOLJA Amelie	
+2013	World Tour Czeck Open Olomouc 2013	IVANCAN Irene (GER)		AMBRUS Krisztina (HUN)		WS	Main Draw	R64	4 - 0	11:7 12:10 11:9 11:4	IVANCAN Irene	
+2013	World Tour Czeck Open Olomouc 2013	PENKAVOVA Katerina (CZE)		PERGEL Szandra (HUN)		WS	Main Draw	R64	1 - 4	8:11 11:9 9:11 8:11 9:11	PERGEL Szandra	
+2013	World Tour Czeck Open Olomouc 2013	PARTYKA Natalia (POL)		HAMAMOTO Yui (AUT)		WS	Main Draw	R64	4 - 2	3:11 11:9 2:11 11:8 11:7 11:7	PARTYKA Natalia	
+2013	World Tour Czeck Open Olomouc 2013	KUSINSKA Klaudia (POL)		LANG Kristin (GER)		WS	Main Draw	R64	0 - 4	21:23 6:11 4:11 7:11	LANG Kristin	
+2013	World Tour Czeck Open Olomouc 2013	EKHOLM Matilda (SWE)		KERTAI Rita (HUN)		WS	Main Draw	R64	4 - 2	11:6 11:8 11:7 9:11 4:11 11:9	EKHOLM Matilda	
+2013	World Tour Czeck Open Olomouc 2013	KUCHUK Maryia (BLR)		NONAKA Yuki (JPN)		WS	Main Draw	R64	3 - 4	11:6 6:11 7:11 11:7 11:7 5:11 5:11	NONAKA Yuki	
+2013	World Tour Czeck Open Olomouc 2013	TIAN Yuan (CRO)		KUZMINA Elena (RUS)		WS	Main Draw	R64	3 - 4	11:4 6:11 11:9 9:11 6:11 12:10 6:11	KUZMINA Elena	
+2013	World Tour Czeck Open Olomouc 2013	GUI Lin (BRA)		SOLJA Petrissa (GER)		WS	Main Draw	R64	0 - 4	5:11 9:11 13:15 8:11	SOLJA Petrissa	
+2013	World Tour Czeck Open Olomouc 2013	BARTHEL Zhenqi (GER)		KUMAHARA Luca (BRA)		WS	Main Draw	R64	4 - 2	11:4 11:8 7:11 9:11 11:5 14:12	BARTHEL Zhenqi	
+2013	World Tour Czeck Open Olomouc 2013	MADARASZ Dora (HUN)		YAMANASHI Yuri (JPN)		WS	Main Draw	R64	2 - 4	11:13 6:11 11:9 10:12 11:4 11:13	YAMANASHI Yuri	
+2013	World Tour Czeck Open Olomouc 2013	MIKHAILOVA Polina (RUS)		TODOROVIC Andrea (SRB)		WS	Main Draw	R64	4 - 0	11:8 11:6 11:4 11:6	MIKHAILOVA Polina	
+2013	World Tour Czeck Open Olomouc 2013	MIKULCOVA Kristyna (CZE)		LIU Jia (AUT)		WS	Main Draw	R64	0 - 4	5:11 5:11 4:11 1:11	LIU Jia	
+2013	World Tour Czeck Open Olomouc 2013	VACENOVSKA Iveta (CZE)		DOLGIKH Maria (RUS)		WS	Main Draw	R64	4 - 0	11:5 11:6 11:4 11:7	VACENOVSKA Iveta	
+2013	World Tour Czeck Open Olomouc 2013	FETUKHINA Margarita (RUS)		ONO Shiho (JPN)		WS	Main Draw	R64	1 - 4	8:11 11:9 6:11 9:11 16:18	ONO Shiho	
+2013	World Tour Czeck Open Olomouc 2013	LOVAS Petra (HUN)		FARLADANSKA Ganna (UKR)		WS	Main Draw	R64	4 - 3	11:9 9:11 11:13 11:4 2:11 11:5 11:9	LOVAS Petra	
+2013	World Tour Czeck Open Olomouc 2013	TOMANOVA Tamara (CZE)		SHAN Xiaona (GER)		WS	Main Draw	R64	1 - 4	11:9 4:11 4:11 2:11 1:11	SHAN Xiaona	
+2013	World Tour Czeck Open Olomouc 2013	POTA Georgina (HUN)		VOROBEVA Olga (RUS)		WS	Main Draw	R64	4 - 1	11:4 11:8 11:8 8:11 11:4	POTA Georgina	
+2013	World Tour Czeck Open Olomouc 2013	VINOGRADOVA Mariia (RUS)		CECHOVA Dana (CZE)		WS	Main Draw	R64	4 - 3	8:11 10:12 11:5 11:8 7:11 11:8 11:9	VINOGRADOVA Mariia	
+2013	World Tour Czeck Open Olomouc 2013	PRIVALOVA Alexandra (BLR)		WINTER Sabine (GER)		WS	Main Draw	R64	1 - 4	4:11 7:11 3:11 12:10 7:11	WINTER Sabine	
+2013	World Tour Czeck Open Olomouc 2013	IACOB Camelia (ROU)		WU Jiaduo (GER)		WS	Main Draw	R64	1 - 4	11:7 7:11 6:11 5:11 4:11	WU Jiaduo	
+2013	World Tour Czeck Open Olomouc 2013	DODEAN Daniela (ROU)		DUBKOVA Elena (BLR)		WS	Main Draw	R64	4 - 2	9:11 11:8 7:11 11:5 11:6 11:7	DODEAN Daniela	
+2013	World Tour Czeck Open Olomouc 2013	NECULA Iulia (ROU)		NOSKOVA Yana (RUS)		WS	Main Draw	R64	0 - 4	6:11 5:11 11:13 7:11	NOSKOVA Yana	
+2013	World Tour Czeck Open Olomouc 2013	DVORAK Galia (ESP)		GRZYBOWSKA-FRANC Katarzyna (POL)		WS	Main Draw	R64	2 - 4	9:11 5:11 11:3 11:7 8:11 8:11	GRZYBOWSKA-FRANC Katarzyna	
+2013	World Tour Czeck Open Olomouc 2013	MYNAROVA Karolina (CZE)		HAN Ying (GER)		WS	Main Draw	R64	0 - 4	3:11 3:11 7:11 4:11	HAN Ying	
+2013	World Tour Czeck Open Olomouc 2013	TIKHOMIROVA Anna (RUS)		MATELOVA Hana (CZE)		WS	Main Draw	R64	3 - 4	6:11 12:10 11:9 2:11 11:5 10:12 8:11	MATELOVA Hana	
+2013	World Tour Czeck Open Olomouc 2013	CREEMERS Linda (NED)		KATO Miyu (JPN)		WS	Main Draw	R64	0 - 4	4:11 6:11 7:11 9:11	KATO Miyu	
+2013	World Tour Czeck Open Olomouc 2013	POLCANOVA Sofia (AUT)		SAVELYEVA Antonina (RUS)		WS	Main Draw	R64	4 - 1	11:7 8:11 11:5 11:6 17:15	POLCANOVA Sofia	
+2013	World Tour Czeck Open Olomouc 2013	STEFANSKA Kinga (POL)		LI Jiao (NED)		WS	Main Draw	R64	1 - 4	12:10 5:11 4:11 9:11 7:11	LI Jiao	
+2013	World Tour Czeck Open Olomouc 2013	PAVLOVICH Viktoria (BLR)		HIRANO Miu (JPN)		WS	Main Draw	R32	4 - 0	11:3 11:8 11:8 11:4	PAVLOVICH Viktoria	
+2013	World Tour Czeck Open Olomouc 2013	PROKHOROVA Yulia (RUS)		SOLJA Amelie (AUT)		WS	Main Draw	R32	3 - 4	5:11 11:6 11:9 7:11 12:10 5:11 4:11	SOLJA Amelie	
+2013	World Tour Czeck Open Olomouc 2013	IVANCAN Irene (GER)		PERGEL Szandra (HUN)		WS	Main Draw	R32	4 - 0	12:10 11:8 11:7 11:8	IVANCAN Irene	
+2013	World Tour Czeck Open Olomouc 2013	PARTYKA Natalia (POL)		LANG Kristin (GER)		WS	Main Draw	R32	0 - 4	13:15 8:11 8:11 11:13	LANG Kristin	
+2013	World Tour Czeck Open Olomouc 2013	EKHOLM Matilda (SWE)		NONAKA Yuki (JPN)		WS	Main Draw	R32	1 - 4	4:11 13:11 8:11 9:11 3:11	NONAKA Yuki	
+2013	World Tour Czeck Open Olomouc 2013	KUZMINA Elena (RUS)		SOLJA Petrissa (GER)		WS	Main Draw	R32	1 - 4	8:11 11:6 9:11 9:11 6:11	SOLJA Petrissa	
+2013	World Tour Czeck Open Olomouc 2013	BARTHEL Zhenqi (GER)		YAMANASHI Yuri (JPN)		WS	Main Draw	R32	2 - 4	10:12 11:8 6:11 11:9 8:11 7:11	YAMANASHI Yuri	
+2013	World Tour Czeck Open Olomouc 2013	MIKHAILOVA Polina (RUS)		LIU Jia (AUT)		WS	Main Draw	R32	3 - 4	4:11 11:9 12:10 9:11 9:11 11:9 2:11	LIU Jia	
+2013	World Tour Czeck Open Olomouc 2013	VACENOVSKA Iveta (CZE)		ONO Shiho (JPN)		WS	Main Draw	R32	3 - 4	11:9 9:11 11:9 11:9 8:11 9:11 2:11	ONO Shiho	
+2013	World Tour Czeck Open Olomouc 2013	LOVAS Petra (HUN)		SHAN Xiaona (GER)		WS	Main Draw	R32	2 - 4	11:9 5:11 12:10 10:12 4:11 6:11	SHAN Xiaona	
+2013	World Tour Czeck Open Olomouc 2013	POTA Georgina (HUN)		VINOGRADOVA Mariia (RUS)		WS	Main Draw	R32	4 - 0	11:5 11:6 11:5 11:9	POTA Georgina	
+2013	World Tour Czeck Open Olomouc 2013	WINTER Sabine (GER)		WU Jiaduo (GER)		WS	Main Draw	R32	4 - 2	11:3 3:11 11:9 11:3 7:11 11:7	WINTER Sabine	
+2013	World Tour Czeck Open Olomouc 2013	DODEAN Daniela (ROU)		NOSKOVA Yana (RUS)		WS	Main Draw	R32	4 - 1	12:14 11:9 11:2 11:6 11:5	DODEAN Daniela	
+2013	World Tour Czeck Open Olomouc 2013	GRZYBOWSKA-FRANC Katarzyna (POL)		HAN Ying (GER)		WS	Main Draw	R32	0 - 4	5:11 11:13 6:11 8:11	HAN Ying	
+2013	World Tour Czeck Open Olomouc 2013	MATELOVA Hana (CZE)		KATO Miyu (JPN)		WS	Main Draw	R32	1 - 4	11:13 11:13 11:8 5:11 3:11	KATO Miyu	
+2013	World Tour Czeck Open Olomouc 2013	POLCANOVA Sofia (AUT)		LI Jiao (NED)		WS	Main Draw	R32	0 - 4	7:11 8:11 8:11 2:11	LI Jiao	
+2013	World Tour Czeck Open Olomouc 2013	PAVLOVICH Viktoria (BLR)		SOLJA Amelie (AUT)		WS	Main Draw	R16	4 - 3	11:7 10:12 12:14 9:11 11:3 11:4 12:10	PAVLOVICH Viktoria	
+2013	World Tour Czeck Open Olomouc 2013	IVANCAN Irene (GER)		LANG Kristin (GER)		WS	Main Draw	R16	0 - 4	6:11 7:11 5:11 8:11	LANG Kristin	
+2013	World Tour Czeck Open Olomouc 2013	NONAKA Yuki (JPN)		SOLJA Petrissa (GER)		WS	Main Draw	R16	4 - 2	6:11 11:9 11:9 3:11 11:9 11:8	NONAKA Yuki	
+2013	World Tour Czeck Open Olomouc 2013	YAMANASHI Yuri (JPN)		LIU Jia (AUT)		WS	Main Draw	R16	3 - 4	7:11 11:9 11:6 11:7 7:11 9:11 11:13	LIU Jia	
+2013	World Tour Czeck Open Olomouc 2013	ONO Shiho (JPN)		SHAN Xiaona (GER)		WS	Main Draw	R16	0 - 4	6:11 4:11 9:11 12:14	SHAN Xiaona	
+2013	World Tour Czeck Open Olomouc 2013	POTA Georgina (HUN)		WINTER Sabine (GER)		WS	Main Draw	R16	4 - 1	11:9 11:4 11:8 7:11 13:11	POTA Georgina	
+2013	World Tour Czeck Open Olomouc 2013	DODEAN Daniela (ROU)		HAN Ying (GER)		WS	Main Draw	R16	0 - 4	4:11 10:12 9:11 4:11	HAN Ying	
+2013	World Tour Czeck Open Olomouc 2013	KATO Miyu (JPN)		LI Jiao (NED)		WS	Main Draw	R16	3 - 4	6:11 12:10 12:10 13:11 9:11 8:11 11:13	LI Jiao	
+2013	World Tour Czeck Open Olomouc 2013	PAVLOVICH Viktoria (BLR)		LANG Kristin (GER)		WS	Main Draw	QuarterFinal	4 - 3	8:11 16:14 9:11 8:11 11:4 11:6 11:8	PAVLOVICH Viktoria	
+2013	World Tour Czeck Open Olomouc 2013	NONAKA Yuki (JPN)		LIU Jia (AUT)		WS	Main Draw	QuarterFinal	4 - 0	11:4 11:9 11:7 12:10	NONAKA Yuki	
+2013	World Tour Czeck Open Olomouc 2013	SHAN Xiaona (GER)		POTA Georgina (HUN)		WS	Main Draw	QuarterFinal	0 - 4	7:11 6:11 6:11 9:11	POTA Georgina	
+2013	World Tour Czeck Open Olomouc 2013	HAN Ying (GER)		LI Jiao (NED)		WS	Main Draw	QuarterFinal	1 - 4	12:10 9:11 9:11 4:11 9:11	LI Jiao	
+2013	World Tour Czeck Open Olomouc 2013	PAVLOVICH Viktoria (BLR)		NONAKA Yuki (JPN)		WS	Main Draw	SemiFinal	4 - 1	11:5 8:11 11:6 11:1 11:9	PAVLOVICH Viktoria	
+2013	World Tour Czeck Open Olomouc 2013	POTA Georgina (HUN)		LI Jiao (NED)		WS	Main Draw	SemiFinal	2 - 4	11:5 11:9 6:11 10:12 8:11 9:11	LI Jiao	
+2013	World Tour Czeck Open Olomouc 2013	PAVLOVICH Viktoria (BLR)		LI Jiao (NED)		WS	Main Draw	Final	4 - 2	9:11 12:10 10:12 11:8 11:8 11:7	PAVLOVICH Viktoria	
+2013	World Tour Czeck Open Olomouc 2013	SOLJA Petrissa (GER)		MYNAROVA Karolina (CZE)		U21WS	Main Draw	R32	3 - 0	11:4 11:4 11:6	SOLJA Petrissa	
+2013	World Tour Czeck Open Olomouc 2013	GROFOVA Karin (CZE)		KUSINSKA Klaudia (POL)		U21WS	Main Draw	R32	0 - 3	5:11 7:11 10:12	KUSINSKA Klaudia	
+2013	World Tour Czeck Open Olomouc 2013	TODOROVIC Andrea (SRB)		PETEK Petra (CRO)		U21WS	Main Draw	R32	0 - 3	8:11 2:11 7:11	PETEK Petra	
+2013	World Tour Czeck Open Olomouc 2013	TOMANOVSKA Katerina (CZE)		HIRANO Miu (JPN)		U21WS	Main Draw	R32	1 - 3	18:16 3:11 3:11 5:11	HIRANO Miu	
+2013	World Tour Czeck Open Olomouc 2013	MADARASZ Dora (HUN)		CORDERO Carelyn (PUR)		U21WS	Main Draw	R32	3 - 2	7:11 11:6 11:4 9:11 11:7	MADARASZ Dora	
+2013	World Tour Czeck Open Olomouc 2013	TUBIKANEC Ivana (CRO)		MAKSUTI Aneta (SRB)		U21WS	Main Draw	R32	1 - 3	9:11 15:13 10:12 6:11	MAKSUTI Aneta	
+2013	World Tour Czeck Open Olomouc 2013	KUMAHARA Luca (BRA)		LUPULESKU Anelia (SRB)		U21WS	Main Draw	R32	3 - 1	8:11 11:9 13:11 11:4	KUMAHARA Luca	
+2013	World Tour Czeck Open Olomouc 2013	GALIC Alex (SLO)		NOSKOVA Yana (RUS)		U21WS	Main Draw	R32	0 - 3	7:11 7:11 9:11	NOSKOVA Yana	
+2013	World Tour Czeck Open Olomouc 2013	VARADY Barbora (SVK)		TRUZSINSZKI Viktoria (SRB)		U21WS	Main Draw	R32	3 - 2	8:11 9:11 11:7 11:4 11:4	VARADY Barbora	
+2013	World Tour Czeck Open Olomouc 2013	SCHUH Anja (GER)		HAMAMOTO Yui (AUT)		U21WS	Main Draw	R32	0 - 3	3:11 4:11 6:11	HAMAMOTO Yui	
+2013	World Tour Czeck Open Olomouc 2013	BARAVOK Katsiaryna (BLR)		JURKOVA Eva (SVK)		U21WS	Main Draw	R32	3 - 1	11:9 10:12 11:9 11:7	BARAVOK Katsiaryna	
+2013	World Tour Czeck Open Olomouc 2013	MIKULCOVA Kristyna (CZE)		POLCANOVA Sofia (AUT)		U21WS	Main Draw	R32	0 - 3	5:11 7:11 5:11	POLCANOVA Sofia	
+2013	World Tour Czeck Open Olomouc 2013	WINTER Sabine (GER)		GUI Lin (BRA)		U21WS	Main Draw	R32	3 - 1	11:2 8:11 11:8 11:8	WINTER Sabine	
+2013	World Tour Czeck Open Olomouc 2013	RADONJIC Aleksandra (SRB)		IACOB Camelia (ROU)		U21WS	Main Draw	R32	0 - 3	9:11 6:11 13:15	IACOB Camelia	
+2013	World Tour Czeck Open Olomouc 2013	AMBRUS Krisztina (HUN)		FENYVESI Anna (SRB)		U21WS	Main Draw	R32	3 - 0	12:10 11:8 11:2	AMBRUS Krisztina	
+2013	World Tour Czeck Open Olomouc 2013	TOMANOVA Tamara (CZE)		KATO Miyu (JPN)		U21WS	Main Draw	R32	0 - 3	9:11 8:11 6:11	KATO Miyu	
+2013	World Tour Czeck Open Olomouc 2013	SOLJA Petrissa (GER)		KUSINSKA Klaudia (POL)		U21WS	Main Draw	R16	3 - 0	11:7 13:11 11:8	SOLJA Petrissa	
+2013	World Tour Czeck Open Olomouc 2013	PETEK Petra (CRO)		HIRANO Miu (JPN)		U21WS	Main Draw	R16	1 - 3	13:11 2:11 8:11 7:11	HIRANO Miu	
+2013	World Tour Czeck Open Olomouc 2013	MADARASZ Dora (HUN)		MAKSUTI Aneta (SRB)		U21WS	Main Draw	R16	3 - 0	11:5 11:7 11:7	MADARASZ Dora	
+2013	World Tour Czeck Open Olomouc 2013	KUMAHARA Luca (BRA)		NOSKOVA Yana (RUS)		U21WS	Main Draw	R16	2 - 3	13:15 11:6 7:11 11:9 4:11	NOSKOVA Yana	
+2013	World Tour Czeck Open Olomouc 2013	VARADY Barbora (SVK)		HAMAMOTO Yui (AUT)		U21WS	Main Draw	R16	0 - 3	8:11 4:11 7:11	HAMAMOTO Yui	
+2013	World Tour Czeck Open Olomouc 2013	BARAVOK Katsiaryna (BLR)		POLCANOVA Sofia (AUT)		U21WS	Main Draw	R16	1 - 3	7:11 11:5 2:11 9:11	POLCANOVA Sofia	
+2013	World Tour Czeck Open Olomouc 2013	WINTER Sabine (GER)		IACOB Camelia (ROU)		U21WS	Main Draw	R16	3 - 1	12:10 11:4 2:11 13:11	WINTER Sabine	
+2013	World Tour Czeck Open Olomouc 2013	AMBRUS Krisztina (HUN)		KATO Miyu (JPN)		U21WS	Main Draw	R16	1 - 3	8:11 11:8 6:11 9:11	KATO Miyu	
+2013	World Tour Czeck Open Olomouc 2013	SOLJA Petrissa (GER)		HIRANO Miu (JPN)		U21WS	Main Draw	QuarterFinal	4 - 1	11:6 11:5 11:3 12:14 11:8	SOLJA Petrissa	
+2013	World Tour Czeck Open Olomouc 2013	MADARASZ Dora (HUN)		NOSKOVA Yana (RUS)		U21WS	Main Draw	QuarterFinal	3 - 4	11:8 4:11 9:11 11:8 5:11 12:10 3:11	NOSKOVA Yana	
+2013	World Tour Czeck Open Olomouc 2013	HAMAMOTO Yui (AUT)		POLCANOVA Sofia (AUT)		U21WS	Main Draw	QuarterFinal	4 - 3	12:10 8:11 9:11 11:5 5:11 11:6 11:3	HAMAMOTO Yui	
+2013	World Tour Czeck Open Olomouc 2013	WINTER Sabine (GER)		KATO Miyu (JPN)		U21WS	Main Draw	QuarterFinal	4 - 1	9:11 11:7 11:8 11:3 12:10	WINTER Sabine	
+2013	World Tour Czeck Open Olomouc 2013	SOLJA Petrissa (GER)		NOSKOVA Yana (RUS)		U21WS	Main Draw	SemiFinal	4 - 1	11:6 11:9 9:11 11:4 11:4	SOLJA Petrissa	
+2013	World Tour Czeck Open Olomouc 2013	HAMAMOTO Yui (AUT)		WINTER Sabine (GER)		U21WS	Main Draw	SemiFinal	4 - 0	11:7 11:5 11:9 11:8	HAMAMOTO Yui	
+2013	World Tour Czeck Open Olomouc 2013	SOLJA Petrissa (GER)		HAMAMOTO Yui (AUT)		U21WS	Main Draw	Final	3 - 4	11:6 8:11 9:11 8:11 11:5 11:7 10:12	HAMAMOTO Yui
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 55
+
+2013	World Tour Czeck Open Olomouc 2013	GARDOS Robert (AUT)	HABESOHN Daniel (AUT)	LORENTZ Romain (FRA)	ROBINOT Quentin (FRA)	MD	Main Draw	R16	3 - 1	11:3 9:11 11:7 11:3	GARDOS Robert	HABESOHN Daniel
+2013	World Tour Czeck Open Olomouc 2013	FEGERL Stefan (AUT)	FENG Xiaoquan (AUT)	YOSHIDA Masaki (JPN)	YOSHIMURA Maharu (JPN)	MD	Main Draw	R16	3 - 1	11:6 9:11 11:5 11:9	FEGERL Stefan	FENG Xiaoquan
+2013	World Tour Czeck Open Olomouc 2013	GARDOS Robert (AUT)	HABESOHN Daniel (AUT)	JANCARIK Lubomir (CZE)	PROKOPCOV Dmitrij (CZE)	MD	Main Draw	QuarterFinal	3 - 0	11:1 11:9 11:7	GARDOS Robert	HABESOHN Daniel
+2013	World Tour Czeck Open Olomouc 2013	FEGERL Stefan (AUT)	FENG Xiaoquan (AUT)	LIVENTSOV Alexey (RUS)	PAIKOV Mikhail (RUS)	MD	Main Draw	QuarterFinal	0 - 3	6:11 9:11 7:11	LIVENTSOV Alexey	PAIKOV Mikhail
+2013	World Tour Czeck Open Olomouc 2013	GARDOS Robert (AUT)	HABESOHN Daniel (AUT)	KARLSSON Kristian (SWE)	OVERSJO Mattias (SWE)	MD	Main Draw	SemiFinal	3 - 1	17:15 9:11 11:8 14:12	GARDOS Robert	HABESOHN Daniel
+2013	World Tour Czeck Open Olomouc 2013	GARDOS Robert (AUT)	HABESOHN Daniel (AUT)	FERTIKOWSKI Pawel (POL)	FLORAS Robert (POL)	MD	Main Draw	Final	1 - 3	11:9 9:11 6:11 5:11	FERTIKOWSKI Pawel	FLORAS Robert
+2013	World Tour Czeck Open Olomouc 2013	PLATTNER Dominique (AUT)	STORF Martin (AUT)	FUCEC Luka (CRO)	SIMOVIC Miho (CRO)	MD	Qualification	QR64	3 - 0	11:7 11:5 11:6	PLATTNER Dominique	STORF Martin
+2013	World Tour Czeck Open Olomouc 2013	PLATTNER Dominique (AUT)	STORF Martin (AUT)	FRANZISKA Patrick (GER)	MENGEL Steffen (GER)	MD	Qualification	QR16	2 - 3	11:1 5:11 9:11 14:12 9:11	FRANZISKA Patrick	MENGEL Steffen
+2013	World Tour Czeck Open Olomouc 2013	JEAN Lauric (BEL)	VOSTES Yannick (BEL)	REITSPIES David (CZE)	SEIBERT Jakub (CZE)	MD	Qualification	QR64	1 - 3	8:11 11:6 10:12 8:11	REITSPIES David	SEIBERT Jakub
+2013	World Tour Czeck Open Olomouc 2013	INDEHERBERG Julien (BEL)	LAMBIET Florent (BEL)	JUZBASIC Ivan (CRO)	KOLAREK Tomislav (CRO)	MD	Qualification	QR64	2 - 3	1:11 11:6 19:17 4:11 5:11	JUZBASIC Ivan	KOLAREK Tomislav
+2013	World Tour Czeck Open Olomouc 2013	MILOVANOV Andrey (BLR)	YARASHENKA Vadim (BLR)	ALAWLAQI Ahmed (QAT)	AL-MOHANNADI Ahmad Khalil (QAT)	MD	Qualification	QR64	3 - 1	12:10 11:8 8:11 11:2	MILOVANOV Andrey	YARASHENKA Vadim
+2013	World Tour Czeck Open Olomouc 2013	PITCHFORD Liam (ENG)	PLATONOV Pavel (BLR)	CONTRERAS Matias (CHI)	OLIVARES Felipe (CHI)	MD	Qualification	QR32	3 - 2	11:4 10:12 11:6 8:11 13:11	PITCHFORD Liam	PLATONOV Pavel
+2013	World Tour Czeck Open Olomouc 2013	MILOVANOV Andrey (BLR)	YARASHENKA Vadim (BLR)	FRANZISKA Patrick (GER)	MENGEL Steffen (GER)	MD	Qualification	QR32	0 - 3	7:11 6:11 7:11	FRANZISKA Patrick	MENGEL Steffen
+2013	World Tour Czeck Open Olomouc 2013	PITCHFORD Liam (ENG)	PLATONOV Pavel (BLR)	ACHANTA Sharath (IND)	WALTHER Ricardo (GER)	MD	Qualification	QR16	2 - 3	9:11 12:10 11:8 10:12 7:11	ACHANTA Sharath	WALTHER Ricardo
+2013	World Tour Czeck Open Olomouc 2013	MONTEIRO Thiago (BRA)	TSUBOI Gustavo (BRA)	SHIBAEV Alexander (RUS)	SKACHKOV Kirill (RUS)	MD	Main Draw	R16	3 - 0	11:5 11:3 11:8	MONTEIRO Thiago	TSUBOI Gustavo
+2013	World Tour Czeck Open Olomouc 2013	MONTEIRO Thiago (BRA)	TSUBOI Gustavo (BRA)	FERTIKOWSKI Pawel (POL)	FLORAS Robert (POL)	MD	Main Draw	QuarterFinal	2 - 3	11:4 8:11 11:8 7:11 4:11	FERTIKOWSKI Pawel	FLORAS Robert
+2013	World Tour Czeck Open Olomouc 2013	CONTRERAS Matias (CHI)	OLIVARES Felipe (CHI)	ALMUGHANNE Fahed (QAT)	ALYAFEI Mohammed (QAT)	MD	Qualification	QR64	3 - 0	11:6 11:7 11:9	CONTRERAS Matias	OLIVARES Felipe
+2013	World Tour Czeck Open Olomouc 2013	GOLOVANOV Stanislav (BUL)	KOVAC Borna (CRO)	AKERSTROM Fabian (SWE)	TORNKVIST Andreas (SWE)	MD	Qualification	QR64	2 - 3	15:13 11:13 16:14 4:11 8:11	AKERSTROM Fabian	TORNKVIST Andreas
+2013	World Tour Czeck Open Olomouc 2013	BAJGER Ondrej (CZE)	SIRUCEK Pavel (CZE)	ECSEKI Nandor (HUN)	SZUDI Adam (HUN)	MD	Qualification	QR64	3 - 1	11:7 10:12 11:5 15:13	BAJGER Ondrej	SIRUCEK Pavel
+2013	World Tour Czeck Open Olomouc 2013	GAVLAS Antonin (CZE)	KORBEL Petr (CZE)	GROTH Jonathan (DEN)	STERNBERG Kasper (DEN)	MD	Qualification	QR64	2 - 3	7:11 13:11 2:11 11:3 6:11	GROTH Jonathan	STERNBERG Kasper
+2013	World Tour Czeck Open Olomouc 2013	KONECNY Tomas (CZE)	TREGLER Tomas (CZE)	DURAN Marc (ESP)	ROBLES Alvaro (ESP)	MD	Qualification	QR64	3 - 2	11:13 9:11 11:9 11:8 11:6	KONECNY Tomas	TREGLER Tomas
+2013	World Tour Czeck Open Olomouc 2013	BENES Michal (CZE)	OBESLO Michal (CZE)	CEKIC Irfan (MNE)	TAUBER Michael (ISR)	MD	Qualification	QR64	2 - 3	11:13 12:10 8:11 11:8 7:11	CEKIC Irfan	TAUBER Michael
+2013	World Tour Czeck Open Olomouc 2013	BAJGER Ondrej (CZE)	SIRUCEK Pavel (CZE)	BAI He (SVK)	KOBES Kristian (SVK)	MD	Qualification	QR32	3 - 0	11:8 11:4 11:7	BAJGER Ondrej	SIRUCEK Pavel
+2013	World Tour Czeck Open Olomouc 2013	KONECNY Tomas (CZE)	TREGLER Tomas (CZE)	FAZEKAS Peter (HUN)	PATTANTYUS Adam (HUN)	MD	Qualification	QR32	1 - 3	6:11 11:8 7:11 6:11	FAZEKAS Peter	PATTANTYUS Adam
+2013	World Tour Czeck Open Olomouc 2013	CANTERO Jesus (ESP)	MACHADO Carlos (ESP)	FAZEKAS Peter (HUN)	PATTANTYUS Adam (HUN)	MD	Qualification	QR64	1 - 3	8:11 10:12 11:5 12:14	FAZEKAS Peter	PATTANTYUS Adam
+2013	World Tour Czeck Open Olomouc 2013	BROSSIER Benjamin (FRA)	HACHARD Antoine (FRA)	JANCARIK Lubomir (CZE)	PROKOPCOV Dmitrij (CZE)	MD	Main Draw	R16	1 - 3	4:11 14:12 4:11 10:12	JANCARIK Lubomir	PROKOPCOV Dmitrij
+2013	World Tour Czeck Open Olomouc 2013	BROSSIER Benjamin (FRA)	HACHARD Antoine (FRA)	DUDA Benedikt (GER)	JOST Frederick (GER)	MD	Qualification	QR64	3 - 1	12:10 7:11 11:9 11:8	BROSSIER Benjamin	HACHARD Antoine
+2013	World Tour Czeck Open Olomouc 2013	LORENTZ Romain (FRA)	ROBINOT Quentin (FRA)	BLAS Bryan (PER)	MARTINEZ Guillermo (ESP)	MD	Qualification	QR32	3 - 0	11:9 11:3 12:10	LORENTZ Romain	ROBINOT Quentin
+2013	World Tour Czeck Open Olomouc 2013	BROSSIER Benjamin (FRA)	HACHARD Antoine (FRA)	JAKAB Janos (HUN)	KOSIBA Daniel (HUN)	MD	Qualification	QR32	3 - 2	12:14 11:9 8:11 11:3 13:11	BROSSIER Benjamin	HACHARD Antoine
+2013	World Tour Czeck Open Olomouc 2013	LORENTZ Romain (FRA)	ROBINOT Quentin (FRA)	AKERSTROM Fabian (SWE)	TORNKVIST Andreas (SWE)	MD	Qualification	QR16	3 - 2	11:9 13:11 4:11 9:11 11:8	LORENTZ Romain	ROBINOT Quentin
+2013	World Tour Czeck Open Olomouc 2013	FRANZISKA Patrick (GER)	MENGEL Steffen (GER)	KARLSSON Kristian (SWE)	OVERSJO Mattias (SWE)	MD	Main Draw	R16	2 - 3	11:9 11:7 9:11 13:15 9:11	KARLSSON Kristian	OVERSJO Mattias
+2013	World Tour Czeck Open Olomouc 2013	ACHANTA Sharath (IND)	WALTHER Ricardo (GER)	LIVENTSOV Alexey (RUS)	PAIKOV Mikhail (RUS)	MD	Main Draw	R16	0 - 3	5:11 6:11 11:13	LIVENTSOV Alexey	PAIKOV Mikhail
+2013	World Tour Czeck Open Olomouc 2013	FAZEKAS Peter (HUN)	PATTANTYUS Adam (HUN)	FERTIKOWSKI Pawel (POL)	FLORAS Robert (POL)	MD	Qualification	QR16	1 - 3	11:9 4:11 10:12 7:11	FERTIKOWSKI Pawel	FLORAS Robert
+2013	World Tour Czeck Open Olomouc 2013	CEKIC Irfan (MNE)	TAUBER Michael (ISR)	FERTIKOWSKI Pawel (POL)	FLORAS Robert (POL)	MD	Qualification	QR32	1 - 3	7:11 7:11 13:11 6:11	FERTIKOWSKI Pawel	FLORAS Robert
+2013	World Tour Czeck Open Olomouc 2013	FERTIKOWSKI Pawel (POL)	FLORAS Robert (POL)	CALDERANO Hugo (BRA)	MATSUMOTO Cazuo (BRA)	MD	Main Draw	R16	3 - 1	5:11 11:6 11:4 11:6	FERTIKOWSKI Pawel	FLORAS Robert
+2013	World Tour Czeck Open Olomouc 2013	FERTIKOWSKI Pawel (POL)	FLORAS Robert (POL)	LIVENTSOV Alexey (RUS)	PAIKOV Mikhail (RUS)	MD	Main Draw	SemiFinal	3 - 2	11:8 8:11 9:11 11:9 11:7	FERTIKOWSKI Pawel	FLORAS Robert
+2013	World Tour Czeck Open Olomouc 2013	DYJAS Jakub (POL)	KULPA Konrad (POL)	LE BRETON Thomas (FRA)	SALIFOU Abdel-Kader (BEN)	MD	Qualification	QR64	3 - 2	3:11 12:10 7:11 11:8 15:13	DYJAS Jakub	KULPA Konrad
+2013	World Tour Czeck Open Olomouc 2013	GORAK Daniel (POL)	WANG Zengyi (POL)	O'CONNELL Daniel (WAL)	VALUCH Alexander (SVK)	MD	Qualification	QR32	3 - 0	11:8 11:4 11:1	GORAK Daniel	WANG Zengyi
+2013	World Tour Czeck Open Olomouc 2013	DYJAS Jakub (POL)	KULPA Konrad (POL)	ACHANTA Sharath (IND)	WALTHER Ricardo (GER)	MD	Qualification	QR32	0 - 3	10:12 7:11 5:11	ACHANTA Sharath	WALTHER Ricardo
+2013	World Tour Czeck Open Olomouc 2013	GORAK Daniel (POL)	WANG Zengyi (POL)	BAJGER Ondrej (CZE)	SIRUCEK Pavel (CZE)	MD	Qualification	QR16	3 - 0	11:7 11:9 11:7	GORAK Daniel	WANG Zengyi
+2013	World Tour Czeck Open Olomouc 2013	IONESCU Ovidiu (ROU)	SZOCS Hunor (ROU)	GORAK Daniel (POL)	WANG Zengyi (POL)	MD	Main Draw	R16	3 - 1	6:11 12:10 12:10 13:11	IONESCU Ovidiu	SZOCS Hunor
+2013	World Tour Czeck Open Olomouc 2013	IONESCU Ovidiu (ROU)	SZOCS Hunor (ROU)	KARLSSON Kristian (SWE)	OVERSJO Mattias (SWE)	MD	Main Draw	QuarterFinal	1 - 3	11:6 7:11 10:12 7:11	KARLSSON Kristian	OVERSJO Mattias
+2013	World Tour Czeck Open Olomouc 2013	LAKEEV Vasily (RUS)	VLASOV Grigory (RUS)	LUPERDI Juan (PER)	MIKUTIS Tomas (LTU)	MD	Qualification	QR32	3 - 0	11:5 11:6 11:9	LAKEEV Vasily	VLASOV Grigory
+2013	World Tour Czeck Open Olomouc 2013	LAKEEV Vasily (RUS)	VLASOV Grigory (RUS)	BROSSIER Benjamin (FRA)	HACHARD Antoine (FRA)	MD	Qualification	QR16	2 - 3	3:11 8:11 11:8 11:9 4:11	BROSSIER Benjamin	HACHARD Antoine
+2013	World Tour Czeck Open Olomouc 2013	MIHAILOVIC Boris (SRB)	PETKOV Marko (SRB)	AFANASENKA Siarhei (BLR)	SHAMRUK Gleb (BLR)	MD	Qualification	QR64	3 - 0	11:3 11:7 11:7	MIHAILOVIC Boris	PETKOV Marko
+2013	World Tour Czeck Open Olomouc 2013	MAJSTOROVIC Ilija (SRB)	NAD NEMEDI Valentin (SRB)	CORREA Cecilio (VEN)	NAVARRO Pablo (VEN)	MD	Qualification	QR64	3 - 1	11:13 11:4 11:9 11:9	MAJSTOROVIC Ilija	NAD NEMEDI Valentin
+2013	World Tour Czeck Open Olomouc 2013	JEVTOVIC Marko (SRB)	PETO Zsolt (SRB)	REITSPIES David (CZE)	SEIBERT Jakub (CZE)	MD	Qualification	QR32	3 - 0	11:6 11:6 11:9	JEVTOVIC Marko	PETO Zsolt
+2013	World Tour Czeck Open Olomouc 2013	MIHAILOVIC Boris (SRB)	PETKOV Marko (SRB)	YOSHIDA Masaki (JPN)	YOSHIMURA Maharu (JPN)	MD	Qualification	QR32	0 - 3	4:11 8:11 7:11	YOSHIDA Masaki	YOSHIMURA Maharu
+2013	World Tour Czeck Open Olomouc 2013	MAJSTOROVIC Ilija (SRB)	NAD NEMEDI Valentin (SRB)	SHIBAEV Alexander (RUS)	SKACHKOV Kirill (RUS)	MD	Qualification	QR32	0 - 3	5:11 2:11 6:11	SHIBAEV Alexander	SKACHKOV Kirill
+2013	World Tour Czeck Open Olomouc 2013	JEVTOVIC Marko (SRB)	PETO Zsolt (SRB)	YOSHIDA Masaki (JPN)	YOSHIMURA Maharu (JPN)	MD	Qualification	QR16	2 - 3	11:8 9:11 6:11 11:7 11:13	YOSHIDA Masaki	YOSHIMURA Maharu
+2013	World Tour Czeck Open Olomouc 2013	PISTEJ Lubomir (SVK)	SEREDA Peter (SVK)	PLATTNER Dominique (AUT)	STORF Martin (AUT)	MD	Qualification	QR32	2 - 3	11:4 7:11 11:5 9:11 12:14	PLATTNER Dominique	STORF Martin
+2013	World Tour Czeck Open Olomouc 2013	AKERSTROM Fabian (SWE)	TORNKVIST Andreas (SWE)	GROTH Jonathan (DEN)	STERNBERG Kasper (DEN)	MD	Qualification	QR32	3 - 2	11:7 11:4 11:13 12:14 11:8	AKERSTROM Fabian	TORNKVIST Andreas
+2013	World Tour Czeck Open Olomouc 2013	DIDUKH Oleksandr (UKR)	PRYSHCHEPA Ievgen (UKR)	JUZBASIC Ivan (CRO)	KOLAREK Tomislav (CRO)	MD	Qualification	QR32	3 - 1	6:11 11:6 11:8 11:7	DIDUKH Oleksandr	PRYSHCHEPA Ievgen
+2013	World Tour Czeck Open Olomouc 2013	DIDUKH Oleksandr (UKR)	PRYSHCHEPA Ievgen (UKR)	SHIBAEV Alexander (RUS)	SKACHKOV Kirill (RUS)	MD	Qualification	QR16	0 - 3	8:11 7:11 5:11	SHIBAEV Alexander	SKACHKOV Kirill
+2013	World Tour Czeck Open Olomouc 2013	MIRANDA Jose (VEN)	ROSAS Marcos (VEN)	O'CONNELL Daniel (WAL)	VALUCH Alexander (SVK)	MD	Qualification	QR64	2 - 3	11:8 5:11 11:7 6:11 7:11	O'CONNELL Daniel	VALUCH Alexander
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 39
+
+2013	World Tour Czeck Open Olomouc 2013	BARAVOK Katsiaryna (BLR)	PRIVALOVA Alexandra (BLR)	LUPULESKU Anelia (SRB)	TODOROVIC Andrea (SRB)	WD	Qualification	QR32	3 - 1	8:11 14:12 17:15 11:4	BARAVOK Katsiaryna	PRIVALOVA Alexandra
+2013	World Tour Czeck Open Olomouc 2013	DUBKOVA Elena (BLR)	PAVLOVICH Viktoria (BLR)	ARVELO Gremlis (VEN)	GONZALEZ Roxy (VEN)	WD	Qualification	QR32	3 - 0	12:10 11:5 11:6	DUBKOVA Elena	PAVLOVICH Viktoria
+2013	World Tour Czeck Open Olomouc 2013	BARAVOK Katsiaryna (BLR)	PRIVALOVA Alexandra (BLR)	KERTAI Rita (HUN)	TIAN Yuan (CRO)	WD	Qualification	QR16	1 - 3	5:11 11:6 7:11 8:11	KERTAI Rita	TIAN Yuan
+2013	World Tour Czeck Open Olomouc 2013	DUBKOVA Elena (BLR)	PAVLOVICH Viktoria (BLR)	HIRANO Miu (JPN)	NONAKA Yuki (JPN)	WD	Qualification	QR16	3 - 1	11:7 4:11 11:8 11:6	DUBKOVA Elena	PAVLOVICH Viktoria
+2013	World Tour Czeck Open Olomouc 2013	KUMAHARA Luca (BRA)	SILVA Ligia (BRA)	KERTAI Rita (HUN)	TIAN Yuan (CRO)	WD	Qualification	QR32	0 - 3	6:11 4:11 5:11	KERTAI Rita	TIAN Yuan
+2013	World Tour Czeck Open Olomouc 2013	GUI Lin (BRA)	YAMADA Jessica (BRA)	ONO Shiho (JPN)	YAMANASHI Yuri (JPN)	WD	Qualification	QR16	0 - 3	8:11 9:11 4:11	ONO Shiho	YAMANASHI Yuri
+2013	World Tour Czeck Open Olomouc 2013	KERTAI Rita (HUN)	TIAN Yuan (CRO)	LANG Kristin (GER)	WU Jiaduo (GER)	WD	Main Draw	R16	0 - 3	5:11 10:12 9:11	LANG Kristin	WU Jiaduo
+2013	World Tour Czeck Open Olomouc 2013	PENKAVOVA Katerina (CZE)	VACENOVSKA Iveta (CZE)	DVORAK Galia (ESP)	EKHOLM Matilda (SWE)	WD	Main Draw	R16	2 - 3	11:8 6:11 8:11 11:9 3:11	DVORAK Galia	EKHOLM Matilda
+2013	World Tour Czeck Open Olomouc 2013	SIRUCKOVA Aneta (CZE)	MIKULCOVA Kristyna (CZE)	VOROBEVA Olga (RUS)	KUZMINA Elena (RUS)	WD	Qualification	QR32	1 - 3	4:11 11:5 4:11 4:11	VOROBEVA Olga	KUZMINA Elena
+2013	World Tour Czeck Open Olomouc 2013	VARADY Barbora (SVK)	STRBIKOVA Renata (CZE)	GUI Lin (BRA)	YAMADA Jessica (BRA)	WD	Qualification	QR32	1 - 3	12:14 7:11 11:7 8:11	GUI Lin	YAMADA Jessica
+2013	World Tour Czeck Open Olomouc 2013	GROFOVA Karin (CZE)	TOMANOVA Tamara (CZE)	DOLGIKH Maria (RUS)	MIKHAILOVA Polina (RUS)	WD	Qualification	QR32	0 - 3	8:11 13:15 7:11	DOLGIKH Maria	MIKHAILOVA Polina
+2013	World Tour Czeck Open Olomouc 2013	HARABASZOVA Lenka (CZE)	SMISTIKOVA Martina (CZE)	HIRANO Miu (JPN)	NONAKA Yuki (JPN)	WD	Qualification	QR32	0 - 3	12:14 9:11 6:11	HIRANO Miu	NONAKA Yuki
+2013	World Tour Czeck Open Olomouc 2013	CECHOVA Dana (CZE)	MATELOVA Hana (CZE)	NECULA Iulia (ROU)	IACOB Camelia (ROU)	WD	Qualification	QR32	2 - 3	11:7 7:11 11:8 5:11 9:11	NECULA Iulia	IACOB Camelia
+2013	World Tour Czeck Open Olomouc 2013	SOLJA Petrissa (GER)	WINTER Sabine (GER)	DOLGIKH Maria (RUS)	MIKHAILOVA Polina (RUS)	WD	Main Draw	R16	3 - 2	6:11 7:11 11:5 12:10 11:7	SOLJA Petrissa	WINTER Sabine
+2013	World Tour Czeck Open Olomouc 2013	HAN Ying (GER)	IVANCAN Irene (GER)	PERGEL Szandra (HUN)	POTA Georgina (HUN)	WD	Main Draw	R16	3 - 1	8:11 11:4 11:9 11:5	HAN Ying	IVANCAN Irene
+2013	World Tour Czeck Open Olomouc 2013	SOLJA Petrissa (GER)	WINTER Sabine (GER)	HAN Ying (GER)	IVANCAN Irene (GER)	WD	Main Draw	QuarterFinal	3 - 0	11:8 11:8 11:7	SOLJA Petrissa	WINTER Sabine
+2013	World Tour Czeck Open Olomouc 2013	SOLJA Petrissa (GER)	WINTER Sabine (GER)	GRZYBOWSKA-FRANC Katarzyna (POL)	PARTYKA Natalia (POL)	WD	Main Draw	SemiFinal	1 - 3	4:11 11:13 11:6 8:11	GRZYBOWSKA-FRANC Katarzyna	PARTYKA Natalia
+2013	World Tour Czeck Open Olomouc 2013	HAN Ying (GER)	IVANCAN Irene (GER)	PETEK Petra (CRO)	TUBIKANEC Ivana (CRO)	WD	Qualification	QR32	3 - 1	11:6 11:7 11:13 11:6	HAN Ying	IVANCAN Irene
+2013	World Tour Czeck Open Olomouc 2013	HAN Ying (GER)	IVANCAN Irene (GER)	NECULA Iulia (ROU)	IACOB Camelia (ROU)	WD	Qualification	QR16	3 - 1	13:11 7:11 11:9 11:8	HAN Ying	IVANCAN Irene
+2013	World Tour Czeck Open Olomouc 2013	DODEAN Daniela (ROU)	LOVAS Petra (HUN)	VOROBEVA Olga (RUS)	KUZMINA Elena (RUS)	WD	Main Draw	R16	3 - 2	11:5 11:3 6:11 8:11 11:9	DODEAN Daniela	LOVAS Petra
+2013	World Tour Czeck Open Olomouc 2013	DODEAN Daniela (ROU)	LOVAS Petra (HUN)	GRZYBOWSKA-FRANC Katarzyna (POL)	PARTYKA Natalia (POL)	WD	Main Draw	QuarterFinal	1 - 3	6:11 4:11 11:5 6:11	GRZYBOWSKA-FRANC Katarzyna	PARTYKA Natalia
+2013	World Tour Czeck Open Olomouc 2013	ONO Shiho (JPN)	YAMANASHI Yuri (JPN)	GRZYBOWSKA-FRANC Katarzyna (POL)	PARTYKA Natalia (POL)	WD	Main Draw	R16	0 - 3	9:11 10:12 9:11	GRZYBOWSKA-FRANC Katarzyna	PARTYKA Natalia
+2013	World Tour Czeck Open Olomouc 2013	CREEMERS Linda (NED)	LI Jiao (NED)	POLCANOVA Sofia (AUT)	SOLJA Amelie (AUT)	WD	Main Draw	R16	3 - 2	11:9 10:12 9:11 11:8 11:5	CREEMERS Linda	LI Jiao
+2013	World Tour Czeck Open Olomouc 2013	CREEMERS Linda (NED)	LI Jiao (NED)	LANG Kristin (GER)	WU Jiaduo (GER)	WD	Main Draw	SemiFinal	3 - 1	11:13 11:6 11:3 11:8	CREEMERS Linda	LI Jiao
+2013	World Tour Czeck Open Olomouc 2013	CREEMERS Linda (NED)	LI Jiao (NED)	MONTERO Winberly (VEN)	NINO Neridee (VEN)	WD	Qualification	QR32	3 - 0	11:2 11:5 11:5	CREEMERS Linda	LI Jiao
+2013	World Tour Czeck Open Olomouc 2013	CREEMERS Linda (NED)	LI Jiao (NED)	HAMAMOTO Yui (AUT)	KATO Miyu (JPN)	WD	Qualification	QR16	3 - 1	11:9 12:10 4:11 11:1	CREEMERS Linda	LI Jiao
+2013	World Tour Czeck Open Olomouc 2013	GRZYBOWSKA-FRANC Katarzyna (POL)	PARTYKA Natalia (POL)	CREEMERS Linda (NED)	LI Jiao (NED)	WD	Main Draw	Final	0 - 3	8:11 5:11 7:11	CREEMERS Linda	LI Jiao
+2013	World Tour Czeck Open Olomouc 2013	STEFANSKA Kinga (POL)	ZALOMSKA Roksana (POL)	DURCIK Aliz (SRB)	RADONJIC Aleksandra (SRB)	WD	Qualification	QR32	3 - 2	11:5 11:5 5:11 12:14 16:14	STEFANSKA Kinga	ZALOMSKA Roksana
+2013	World Tour Czeck Open Olomouc 2013	KUSINSKA Klaudia (POL)	SIKORSKA Magdalena (POL)	GALIC Alex (SLO)	KUCHUK Maryia (BLR)	WD	Qualification	QR32	3 - 1	14:12 7:11 11:5 13:11	KUSINSKA Klaudia	SIKORSKA Magdalena
+2013	World Tour Czeck Open Olomouc 2013	STEFANSKA Kinga (POL)	ZALOMSKA Roksana (POL)	VOROBEVA Olga (RUS)	KUZMINA Elena (RUS)	WD	Qualification	QR16	2 - 3	8:11 12:10 11:9 5:11 10:12	VOROBEVA Olga	KUZMINA Elena
+2013	World Tour Czeck Open Olomouc 2013	KUSINSKA Klaudia (POL)	SIKORSKA Magdalena (POL)	DOLGIKH Maria (RUS)	MIKHAILOVA Polina (RUS)	WD	Qualification	QR16	2 - 3	11:7 8:11 11:9 3:11 9:11	DOLGIKH Maria	MIKHAILOVA Polina
+2013	World Tour Czeck Open Olomouc 2013	NOSKOVA Yana (RUS)	TIKHOMIROVA Anna (RUS)	DUBKOVA Elena (BLR)	PAVLOVICH Viktoria (BLR)	WD	Main Draw	R16	3 - 0	11:9 11:5 12:10	NOSKOVA Yana	TIKHOMIROVA Anna
+2013	World Tour Czeck Open Olomouc 2013	NOSKOVA Yana (RUS)	TIKHOMIROVA Anna (RUS)	CREEMERS Linda (NED)	LI Jiao (NED)	WD	Main Draw	QuarterFinal	0 - 3	6:11 10:12 9:11	CREEMERS Linda	LI Jiao
+2013	World Tour Czeck Open Olomouc 2013	FENYVESI Anna (SRB)	TRUZSINSZKI Viktoria (SRB)	HAMAMOTO Yui (AUT)	KATO Miyu (JPN)	WD	Qualification	QR32	0 - 3	8:11 10:12 9:11	HAMAMOTO Yui	KATO Miyu
+2013	World Tour Czeck Open Olomouc 2013	CISARIKOVA Adriana (SVK)	JURKOVA Eva (SVK)	AMBRUS Krisztina (HUN)	MADARASZ Dora (HUN)	WD	Qualification	QR32	0 - 3	8:11 9:11 4:11	AMBRUS Krisztina	MADARASZ Dora
+2013	World Tour Czeck Open Olomouc 2013	DVORAK Galia (ESP)	EKHOLM Matilda (SWE)	LANG Kristin (GER)	WU Jiaduo (GER)	WD	Main Draw	QuarterFinal	2 - 3	6:11 11:8 8:11 11:7 8:11	LANG Kristin	WU Jiaduo
+2013	World Tour Czeck Open Olomouc 2013	DVORAK Galia (ESP)	EKHOLM Matilda (SWE)	LUCENA Josmary (VEN)	RIVAS Carmen (VEN)	WD	Qualification	QR32	3 - 0	11:2 11:6 11:5	DVORAK Galia	EKHOLM Matilda
+2013	World Tour Czeck Open Olomouc 2013	DVORAK Galia (ESP)	EKHOLM Matilda (SWE)	AMBRUS Krisztina (HUN)	MADARASZ Dora (HUN)	WD	Qualification	QR16	3 - 1	11:4 7:11 11:6 11:6	DVORAK Galia	EKHOLM Matilda
+2013	World Tour Czeck Open Olomouc 2013	FARLADANSKA Ganna (UKR)	VASYLIEVA Ievgeniia (UKR)	ONO Shiho (JPN)	YAMANASHI Yuri (JPN)	WD	Qualification	QR32	0 - 3	9:11 5:11 6:11	ONO Shiho	YAMANASHI Yuri

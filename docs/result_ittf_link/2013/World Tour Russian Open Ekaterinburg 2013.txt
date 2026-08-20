@@ -10,3 +10,139 @@
 ----------------------------------------
 数据来源：ITTF World Tour 2013
 文件生成时间：自动生成
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 4 Total: 347
+
+Start
+Prev
+1
+2
+3
+4
+Next
+End
+2013	World Tour Russian Open Ekaterinburg 2013	NIWA Koki (JPN)		KISELEV Maksim (RUS)		MS	Main Draw	R32	4 - 0	11:6 11:4 11:5 11:8	NIWA Koki	
+2013	World Tour Russian Open Ekaterinburg 2013	YIN Hang (CHN)		LAKEEV Vasily (RUS)		MS	Main Draw	R32	4 - 3	8:11 11:4 11:7 12:10 6:11 9:11 11:4	YIN Hang	
+2013	World Tour Russian Open Ekaterinburg 2013	KUZMIN Fedor (RUS)		ZHENG Peifeng (CHN)		MS	Main Draw	R32	1 - 4	9:11 8:11 11:8 8:11 3:11	ZHENG Peifeng	
+2013	World Tour Russian Open Ekaterinburg 2013	GRIGOREV Artur (RUS)		MATSUDAIRA Kenji (JPN)		MS	Main Draw	R32	4 - 1	11:6 11:6 4:11 11:9 11:3	GRIGOREV Artur	
+2013	World Tour Russian Open Ekaterinburg 2013	LIN Gaoyuan (CHN)		MERZLIKIN Taras (RUS)		MS	Main Draw	R32	4 - 0	14:12 11:9 11:1 11:4	LIN Gaoyuan	
+2013	World Tour Russian Open Ekaterinburg 2013	ZHUKOV Aleksei (RUS)		WU Jiaji (DOM)		MS	Main Draw	R32	0 - 4	8:11 5:11 5:11 3:11	WU Jiaji	
+2013	World Tour Russian Open Ekaterinburg 2013	KARUBE Ryusuke (JPN)		KUIMOV Philipp (RUS)		MS	Main Draw	R32	4 - 2	9:11 11:7 8:11 11:6 11:7 11:5	KARUBE Ryusuke	
+2013	World Tour Russian Open Ekaterinburg 2013	SHCHETINKIN Kirill (RUS)		CHAN Kazuhiro (JPN)		MS	Main Draw	R32	0 - 4	6:11 3:11 4:11 6:11	CHAN Kazuhiro	
+2013	World Tour Russian Open Ekaterinburg 2013	SHIONO Masato (JPN)		GUSEV Arseniy (RUS)		MS	Main Draw	R32	4 - 0	11:7 11:6 11:6 11:5	SHIONO Masato	
+2013	World Tour Russian Open Ekaterinburg 2013	BUROV Viacheslav (RUS)		CUI Qinglei (CHN)		MS	Main Draw	R32	3 - 4	11:7 11:9 11:13 11:13 6:11 12:10 6:11	CUI Qinglei	
+2013	World Tour Russian Open Ekaterinburg 2013	KASAHARA Hiromitsu (JPN)		BAIBULDIN Andrei (RUS)		MS	Main Draw	R32	4 - 1	9:11 14:12 11:5 11:8 11:8	KASAHARA Hiromitsu	
+2013	World Tour Russian Open Ekaterinburg 2013	ZHIDKOV Ilya (RUS)		SHIBAEV Alexander (RUS)		MS	Main Draw	R32	1 - 4	3:11 3:11 13:11 2:11 7:11	SHIBAEV Alexander	
+2013	World Tour Russian Open Ekaterinburg 2013	LIVENTSOV Alexey (RUS)		ISMAILOV Sadi (RUS)		MS	Main Draw	R32	4 - 2	7:11 11:4 8:11 11:7 11:6 11:9	LIVENTSOV Alexey	
+2013	World Tour Russian Open Ekaterinburg 2013	CHENG Jingqi (CHN)		PAIKOV Mikhail (RUS)		MS	Main Draw	R32	4 - 0	11:7 11:5 11:7 11:9	CHENG Jingqi	
+2013	World Tour Russian Open Ekaterinburg 2013	KEINATH Thomas (SVK)		KRIVOSHEEV Viacheslav (RUS)		MS	Main Draw	R32	4 - 1	12:10 11:9 9:11 11:9 11:2	KEINATH Thomas	
+2013	World Tour Russian Open Ekaterinburg 2013	SHAMIN Ilya (RUS)		TAKAKIWA Taku (JPN)		MS	Main Draw	R32	0 - 4	8:11 1:11 5:11 7:11	TAKAKIWA Taku	
+2013	World Tour Russian Open Ekaterinburg 2013	NIWA Koki (JPN)		YIN Hang (CHN)		MS	Main Draw	R16	4 - 1	11:8 11:4 11:8 9:11 11:3	NIWA Koki	
+2013	World Tour Russian Open Ekaterinburg 2013	ZHENG Peifeng (CHN)		GRIGOREV Artur (RUS)		MS	Main Draw	R16	4 - 2	11:9 11:9 9:11 14:16 11:5 11:8	ZHENG Peifeng	
+2013	World Tour Russian Open Ekaterinburg 2013	LIN Gaoyuan (CHN)		WU Jiaji (DOM)		MS	Main Draw	R16	4 - 0	11:7 12:10 11:6 11:9	LIN Gaoyuan	
+2013	World Tour Russian Open Ekaterinburg 2013	KARUBE Ryusuke (JPN)		CHAN Kazuhiro (JPN)		MS	Main Draw	R16	2 - 4	12:10 6:11 11:7 8:11 5:11 6:11	CHAN Kazuhiro	
+2013	World Tour Russian Open Ekaterinburg 2013	SHIONO Masato (JPN)		CUI Qinglei (CHN)		MS	Main Draw	R16	4 - 2	6:11 11:8 4:11 11:9 11:8 11:5	SHIONO Masato	
+2013	World Tour Russian Open Ekaterinburg 2013	KASAHARA Hiromitsu (JPN)		SHIBAEV Alexander (RUS)		MS	Main Draw	R16	1 - 4	7:11 3:11 14:12 8:11 7:11	SHIBAEV Alexander	
+2013	World Tour Russian Open Ekaterinburg 2013	LIVENTSOV Alexey (RUS)		CHENG Jingqi (CHN)		MS	Main Draw	R16	2 - 4	10:12 7:11 11:6 14:12 7:11 8:11	CHENG Jingqi	
+2013	World Tour Russian Open Ekaterinburg 2013	KEINATH Thomas (SVK)		TAKAKIWA Taku (JPN)		MS	Main Draw	R16	4 - 3	11:7 12:10 11:4 7:11 5:11 8:11 11:9	KEINATH Thomas	
+2013	World Tour Russian Open Ekaterinburg 2013	NIWA Koki (JPN)		ZHENG Peifeng (CHN)		MS	Main Draw	QuarterFinal	3 - 4	10:12 11:9 14:16 13:11 3:11 12:10 5:11	ZHENG Peifeng	
+2013	World Tour Russian Open Ekaterinburg 2013	LIN Gaoyuan (CHN)		CHAN Kazuhiro (JPN)		MS	Main Draw	QuarterFinal	2 - 4	8:11 5:11 2:11 11:4 11:8 9:11	CHAN Kazuhiro	
+2013	World Tour Russian Open Ekaterinburg 2013	SHIONO Masato (JPN)		SHIBAEV Alexander (RUS)		MS	Main Draw	QuarterFinal	2 - 4	11:6 8:11 11:7 6:11 4:11 10:12	SHIBAEV Alexander	
+2013	World Tour Russian Open Ekaterinburg 2013	CHENG Jingqi (CHN)		KEINATH Thomas (SVK)		MS	Main Draw	QuarterFinal	4 - 1	11:7 11:6 11:9 8:11 13:11	CHENG Jingqi	
+2013	World Tour Russian Open Ekaterinburg 2013	ZHENG Peifeng (CHN)		CHAN Kazuhiro (JPN)		MS	Main Draw	SemiFinal	0 - 4	9:11 6:11 6:11 6:11	CHAN Kazuhiro	
+2013	World Tour Russian Open Ekaterinburg 2013	SHIBAEV Alexander (RUS)		CHENG Jingqi (CHN)		MS	Main Draw	SemiFinal	4 - 2	11:6 11:6 9:11 11:9 8:11 11:8	SHIBAEV Alexander	
+2013	World Tour Russian Open Ekaterinburg 2013	CHAN Kazuhiro (JPN)		SHIBAEV Alexander (RUS)		MS	Main Draw	Final	4 - 3	11:5 8:11 4:11 11:6 11:9 9:11 11:2	CHAN Kazuhiro
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 4 Total: 301
+
+Start
+Prev
+1
+2
+3
+4
+Next
+End
+2013	World Tour Russian Open Ekaterinburg 2013	LIU Shiwen (CHN)		BIKEEVA Polina (RUS)		WS	Main Draw	R32	4 - 0	11:7 11:4 11:5 11:1	LIU Shiwen	
+2013	World Tour Russian Open Ekaterinburg 2013	DOLGIKH Maria (RUS)		WAKAMIYA Misako (JPN)		WS	Main Draw	R32	0 - 4	7:11 7:11 9:11 7:11	WAKAMIYA Misako	
+2013	World Tour Russian Open Ekaterinburg 2013	MORIZONO Misaki (JPN)		FETUKHINA Margarita (RUS)		WS	Main Draw	R32	4 - 2	12:10 11:4 8:11 11:5 8:11 11:4	MORIZONO Misaki	
+2013	World Tour Russian Open Ekaterinburg 2013	TSUCHIDA Mika (JPN)		PAVLOVICH Viktoria (BLR)		WS	Main Draw	R32	0 - 4	5:11 5:11 4:11 5:11	PAVLOVICH Viktoria	
+2013	World Tour Russian Open Ekaterinburg 2013	WU Yang (CHN)		FUJII Yuko (JPN)		WS	Main Draw	R32	4 - 1	11:4 11:9 11:6 8:11 11:6	WU Yang	
+2013	World Tour Russian Open Ekaterinburg 2013	PRIVALOVA Alexandra (BLR)		ISHIGAKI Yuka (JPN)		WS	Main Draw	R32	2 - 4	12:10 5:11 8:11 13:11 7:11 4:11	ISHIGAKI Yuka	
+2013	World Tour Russian Open Ekaterinburg 2013	NOSKOVA Yana (RUS)		SAKAI Haruka (JPN)		WS	Main Draw	R32	4 - 3	11:8 6:11 6:11 11:4 1:11 12:10 12:10	NOSKOVA Yana	
+2013	World Tour Russian Open Ekaterinburg 2013	HIRANO Miu (JPN)		LI Xiaoxia (CHN)		WS	Main Draw	R32	0 - 4	4:11 2:11 6:11 4:11	LI Xiaoxia	
+2013	World Tour Russian Open Ekaterinburg 2013	ZHU Yuling (MAC)		TASHIRO Saki (JPN)		WS	Main Draw	R32	4 - 1	11:2 11:4 11:4 11:13 11:7	ZHU Yuling	
+2013	World Tour Russian Open Ekaterinburg 2013	ICHIKAWA Azusa (JPN)		HIRANO Sayaka (JPN)		WS	Main Draw	R32	0 - 4	7:11 6:11 3:11 5:11	HIRANO Sayaka	
+2013	World Tour Russian Open Ekaterinburg 2013	MATSUDAIRA Shiho (JPN)		GUSEVA Ekaterina (RUS)		WS	Main Draw	R32	4 - 0	11:9 11:6 11:8 11:7	MATSUDAIRA Shiho	
+2013	World Tour Russian Open Ekaterinburg 2013	DUBKOVA Elena (BLR)		ISHIKAWA Kasumi (JPN)		WS	Main Draw	R32	0 - 4	3:11 6:11 3:11 3:11	ISHIKAWA Kasumi	
+2013	World Tour Russian Open Ekaterinburg 2013	LEE Ho Ching (HKG)		HAMAMOTO Yui (AUT)		WS	Main Draw	R32	4 - 2	5:11 11:3 10:12 11:8 11:8 11:8	LEE Ho Ching	
+2013	World Tour Russian Open Ekaterinburg 2013	WANG Xuan (CHN)		KATO Miyu (JPN)		WS	Main Draw	R32	4 - 0	11:6 11:7 11:8 11:6	WANG Xuan	
+2013	World Tour Russian Open Ekaterinburg 2013	NG Wing Nam (HKG)		FUKUOKA Haruna (JPN)		WS	Main Draw	R32	0 - 4	3:11 4:11 7:11 6:11	FUKUOKA Haruna	
+2013	World Tour Russian Open Ekaterinburg 2013	GORDEEVA Olga (RUS)		DING Ning (CHN)		WS	Main Draw	R32	0 - 4	1:11 5:11 5:11 5:11	DING Ning	
+2013	World Tour Russian Open Ekaterinburg 2013	LIU Shiwen (CHN)		WAKAMIYA Misako (JPN)		WS	Main Draw	R16	4 - 0	11:5 11:7 11:4 11:8	LIU Shiwen	
+2013	World Tour Russian Open Ekaterinburg 2013	MORIZONO Misaki (JPN)		PAVLOVICH Viktoria (BLR)		WS	Main Draw	R16	4 - 2	11:8 11:2 12:10 11:13 8:11 11:9	MORIZONO Misaki	
+2013	World Tour Russian Open Ekaterinburg 2013	WU Yang (CHN)		ISHIGAKI Yuka (JPN)		WS	Main Draw	R16	4 - 1	10:12 11:8 11:9 11:3 16:14	WU Yang	
+2013	World Tour Russian Open Ekaterinburg 2013	NOSKOVA Yana (RUS)		LI Xiaoxia (CHN)		WS	Main Draw	R16	1 - 4	4:11 9:11 11:9 6:11 5:11	LI Xiaoxia	
+2013	World Tour Russian Open Ekaterinburg 2013	ZHU Yuling (MAC)		HIRANO Sayaka (JPN)		WS	Main Draw	R16	4 - 0	11:7 11:7 11:5 11:7	ZHU Yuling	
+2013	World Tour Russian Open Ekaterinburg 2013	MATSUDAIRA Shiho (JPN)		ISHIKAWA Kasumi (JPN)		WS	Main Draw	R16	1 - 4	1:11 11:8 7:11 2:11 3:11	ISHIKAWA Kasumi	
+2013	World Tour Russian Open Ekaterinburg 2013	LEE Ho Ching (HKG)		WANG Xuan (CHN)		WS	Main Draw	R16	3 - 4	6:11 7:11 12:10 11:7 11:6 9:11 3:11	WANG Xuan	
+2013	World Tour Russian Open Ekaterinburg 2013	FUKUOKA Haruna (JPN)		DING Ning (CHN)		WS	Main Draw	R16	3 - 4	11:4 11:4 6:11 5:11 11:8 9:11 6:11	DING Ning	
+2013	World Tour Russian Open Ekaterinburg 2013	LIU Shiwen (CHN)		MORIZONO Misaki (JPN)		WS	Main Draw	QuarterFinal	4 - 1	11:9 11:5 9:11 11:6 11:8	LIU Shiwen	
+2013	World Tour Russian Open Ekaterinburg 2013	WU Yang (CHN)		LI Xiaoxia (CHN)		WS	Main Draw	QuarterFinal	4 - 0	11:2 11:0 11:0 11:0	WU Yang	
+2013	World Tour Russian Open Ekaterinburg 2013	ZHU Yuling (MAC)		ISHIKAWA Kasumi (JPN)		WS	Main Draw	QuarterFinal	4 - 0	11:6 11:7 11:6 11:7	ZHU Yuling	
+2013	World Tour Russian Open Ekaterinburg 2013	WANG Xuan (CHN)		DING Ning (CHN)		WS	Main Draw	QuarterFinal	1 - 4	8:11 11:2 6:11 7:11 1:11	DING Ning	
+2013	World Tour Russian Open Ekaterinburg 2013	LIU Shiwen (CHN)		WU Yang (CHN)		WS	Main Draw	SemiFinal	4 - 1	11:3 12:10 11:5 11:13 11:8	LIU Shiwen	
+2013	World Tour Russian Open Ekaterinburg 2013	ZHU Yuling (MAC)		DING Ning (CHN)		WS	Main Draw	SemiFinal	2 - 4	7:11 8:11 11:13 11:5 13:11 9:11	DING Ning	
+2013	World Tour Russian Open Ekaterinburg 2013	LIU Shiwen (CHN)		DING Ning (CHN)		WS	Main Draw	Final	3 - 4	4:11 4:11 11:6 11:6 12:10 7:11 7:11	DING Ning
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+50
+Total: 12
+
+2013	World Tour Russian Open Ekaterinburg 2013	YIN Hang (CHN)	ZHENG Peifeng (CHN)	BAIBULDIN Andrei (RUS)	KRIVOSHEEV Viacheslav (RUS)	MD	Main Draw	R16	2 - 3	9:11 11:13 11:6 12:10 5:11	BAIBULDIN Andrei	KRIVOSHEEV Viacheslav
+2013	World Tour Russian Open Ekaterinburg 2013	CHENG Jingqi (CHN)	CUI Qinglei (CHN)	GADIEV Vildan (RUS)	SHAMIN Ilya (RUS)	MD	Main Draw	R16	3 - 2	9:11 6:11 11:8 11:9 11:2	CHENG Jingqi	CUI Qinglei
+2013	World Tour Russian Open Ekaterinburg 2013	CHENG Jingqi (CHN)	CUI Qinglei (CHN)	CHAN Kazuhiro (JPN)	MATSUDAIRA Kenji (JPN)	MD	Main Draw	QuarterFinal	2 - 3	8:11 7:11 11:5 11:9 8:11	CHAN Kazuhiro	MATSUDAIRA Kenji
+2013	World Tour Russian Open Ekaterinburg 2013	KARUBE Ryusuke (JPN)	KASAHARA Hiromitsu (JPN)	LORENZOTTI Gonzalo (URU)	SHAMRUK Gleb (BLR)	MD	Main Draw	R16	3 - 0	11:4 11:8 11:4	KARUBE Ryusuke	KASAHARA Hiromitsu
+2013	World Tour Russian Open Ekaterinburg 2013	KARUBE Ryusuke (JPN)	KASAHARA Hiromitsu (JPN)	LIN Gaoyuan (CHN)	WU Jiaji (DOM)	MD	Main Draw	QuarterFinal	3 - 2	11:4 6:11 9:11 11:7 14:12	KARUBE Ryusuke	KASAHARA Hiromitsu
+2013	World Tour Russian Open Ekaterinburg 2013	KARUBE Ryusuke (JPN)	KASAHARA Hiromitsu (JPN)	CHAN Kazuhiro (JPN)	MATSUDAIRA Kenji (JPN)	MD	Main Draw	SemiFinal	2 - 3	8:11 11:3 7:11 12:10 6:11	CHAN Kazuhiro	MATSUDAIRA Kenji
+2013	World Tour Russian Open Ekaterinburg 2013	KUIMOV Philipp (RUS)	MERZLIKIN Taras (RUS)	KHANIN Aleksandr (BLR)	YARASHENKA Vadim (BLR)	MD	Main Draw	R16	3 - 2	11:7 6:11 11:5 6:11 11:6	KUIMOV Philipp	MERZLIKIN Taras
+2013	World Tour Russian Open Ekaterinburg 2013	BUROV Viacheslav (RUS)	LAKEEV Vasily (RUS)	LIN Gaoyuan (CHN)	WU Jiaji (DOM)	MD	Main Draw	R16	0 - 3	9:11 3:11 4:11	LIN Gaoyuan	WU Jiaji
+2013	World Tour Russian Open Ekaterinburg 2013	LIVENTSOV Alexey (RUS)	PAIKOV Mikhail (RUS)	BAIBULDIN Andrei (RUS)	KRIVOSHEEV Viacheslav (RUS)	MD	Main Draw	QuarterFinal	3 - 1	11:6 11:6 8:11 11:5	LIVENTSOV Alexey	PAIKOV Mikhail
+2013	World Tour Russian Open Ekaterinburg 2013	KUIMOV Philipp (RUS)	MERZLIKIN Taras (RUS)	KUZMIN Fedor (RUS)	SHIBAEV Alexander (RUS)	MD	Main Draw	QuarterFinal	2 - 3	11:8 6:11 11:6 4:11 5:11	KUZMIN Fedor	SHIBAEV Alexander
+2013	World Tour Russian Open Ekaterinburg 2013	LIVENTSOV Alexey (RUS)	PAIKOV Mikhail (RUS)	KUZMIN Fedor (RUS)	SHIBAEV Alexander (RUS)	MD	Main Draw	SemiFinal	3 - 0	11:3 13:11 13:11	LIVENTSOV Alexey	PAIKOV Mikhail
+2013	World Tour Russian Open Ekaterinburg 2013	LIVENTSOV Alexey (RUS)	PAIKOV Mikhail (RUS)	CHAN Kazuhiro (JPN)	MATSUDAIRA Kenji (JPN)	MD	Main Draw	Final	3 - 2	11:9 9:11 11:9 6:11 11:9	LIVENTSOV Alexey	PAIKOV Mikhail
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+50
+Total: 12
+
+2013	World Tour Russian Open Ekaterinburg 2013	BARAVOK Katsiaryna (BLR)	KUCHUK Maryia (BLR)	CHERNOVA Daria (RUS)	GUSEVA Ekaterina (RUS)	WD	Main Draw	R16	3 - 0	11:5 11:5 11:7	BARAVOK Katsiaryna	KUCHUK Maryia
+2013	World Tour Russian Open Ekaterinburg 2013	ARLOUSKAYA Alina (BLR)	DUBKOVA Elena (BLR)	SABITOVA Valentina (RUS)	SAVELYEVA Antonina (RUS)	WD	Main Draw	R16	3 - 0	11:6 12:10 11:7	ARLOUSKAYA Alina	DUBKOVA Elena
+2013	World Tour Russian Open Ekaterinburg 2013	ARLOUSKAYA Alina (BLR)	DUBKOVA Elena (BLR)	HIRANO Sayaka (JPN)	ISHIKAWA Kasumi (JPN)	WD	Main Draw	QuarterFinal	1 - 3	6:11 11:9 10:12 9:11	HIRANO Sayaka	ISHIKAWA Kasumi
+2013	World Tour Russian Open Ekaterinburg 2013	LI Xiaoxia (CHN)	ZHU Yuling (MAC)	BARAVOK Katsiaryna (BLR)	KUCHUK Maryia (BLR)	WD	Main Draw	QuarterFinal	3 - 0	11:2 11:2 11:4	LI Xiaoxia	ZHU Yuling
+2013	World Tour Russian Open Ekaterinburg 2013	WANG Xuan (CHN)	WU Yang (CHN)	DING Ning (CHN)	LIU Shiwen (CHN)	WD	Main Draw	QuarterFinal	1 - 3	6:11 11:8 5:11 4:11	DING Ning	LIU Shiwen
+2013	World Tour Russian Open Ekaterinburg 2013	LI Xiaoxia (CHN)	ZHU Yuling (MAC)	HIRANO Sayaka (JPN)	ISHIKAWA Kasumi (JPN)	WD	Main Draw	SemiFinal	3 - 1	14:12 11:8 6:11 11:5	LI Xiaoxia	ZHU Yuling
+2013	World Tour Russian Open Ekaterinburg 2013	LEE Ho Ching (HKG)	NG Wing Nam (HKG)	ICHIKAWA Azusa (JPN)	MORIZONO Misaki (JPN)	WD	Main Draw	QuarterFinal	3 - 1	11:6 12:14 11:8 15:13	LEE Ho Ching	NG Wing Nam
+2013	World Tour Russian Open Ekaterinburg 2013	LEE Ho Ching (HKG)	NG Wing Nam (HKG)	DING Ning (CHN)	LIU Shiwen (CHN)	WD	Main Draw	SemiFinal	0 - 3	2:11 5:11 5:11	DING Ning	LIU Shiwen
+2013	World Tour Russian Open Ekaterinburg 2013	FUJII Yuko (JPN)	TASHIRO Saki (JPN)	DING Ning (CHN)	LIU Shiwen (CHN)	WD	Main Draw	R16	2 - 3	7:11 8:11 11:3 14:12 7:11	DING Ning	LIU Shiwen
+2013	World Tour Russian Open Ekaterinburg 2013	BIKBAEVA Anna (RUS)	MALANINA Maria (RUS)	HIRANO Sayaka (JPN)	ISHIKAWA Kasumi (JPN)	WD	Main Draw	R16	0 - 3	10:12 4:11 10:12	HIRANO Sayaka	ISHIKAWA Kasumi
+2013	World Tour Russian Open Ekaterinburg 2013	SHCHERBATYKH Valeriia (RUS)	TAILAKOVA Mariia (RUS)	ICHIKAWA Azusa (JPN)	MORIZONO Misaki (JPN)	WD	Main Draw	R16	0 - 3	11:13 5:11 10:12	ICHIKAWA Azusa	MORIZONO Misaki
+2013	World Tour Russian Open Ekaterinburg 2013	VOROBEVA Olga (RUS)	FETUKHINA Margarita (RUS)	WANG Xuan (CHN)	WU Yang (CHN)	WD	Main Draw	R16	1 - 3	11:3 7:11 7:11 3:11	WANG Xuan	WU Yang

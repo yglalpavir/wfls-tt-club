@@ -1,0 +1,21 @@
+Year,Name,Event Type,Event Kind,Matches,Start Date,End Date
+2013,World Tour Austrian Open Wels 2013,ITTF World Tour / Pro Tour,Major Series,656,2013-01-23,2013-01-27
+2013,World Tour Kuwait Open Kuwait City 2013,ITTF World Tour / Pro Tour,Super Series,318,2013-02-14,2013-02-18
+2013,World Tour Qatar Open Doha 2013,ITTF World Tour / Pro Tour,Super Series,448,2013-02-20,2013-02-24
+2013,World Tour Korea Open Incheon 2013,ITTF World Tour / Pro Tour,Major Series,411,2013-04-03,2013-04-07
+2013,World Tour China Open Changchun 2013,ITTF World Tour / Pro Tour,Super Series,263,2013-06-12,2013-06-16
+2013,World Tour Japan Open Yokohama 2013,ITTF World Tour / Pro Tour,Super Series,350,2013-06-19,2013-06-23
+2013,World Tour Harmony China Open Suzhou 2013,ITTF World Tour / Pro Tour,--,314,2013-08-14,2013-08-18
+2013,World Tour Czech Open Olomouc 2013,ITTF World Tour / Pro Tour,Major Series,583,2013-08-21,2013-08-25
+2013,World Tour Polish Open Spala 2013,ITTF World Tour / Pro Tour,Major Series,666,2013-11-06,2013-11-10
+2013,World Tour German Open Bremen 2013,ITTF World Tour / Pro Tour,Super Series,787,2013-11-13,2013-11-17
+2013,World Tour Russian Open Ekaterinburg 2013,ITTF World Tour / Pro Tour,Major Series,263,2013-11-20,2013-11-24
+2013,World Tour Swedish Open Stockholm 2013,ITTF World Tour / Pro Tour,Major Series,450,2013-11-27,2013-12-01
+2013,World Tour Grand Finals Dubai 2013,ITTF World Tour / Pro Tour,Grand Finals,76,2014-01-09,2014-01-12
+
+event kind对应event-coefficient.json：
+"ittf公开赛" : 0.42 ,（--）
+
+"ittf白金赛" : 1.15 ,（Super Series）
+
+"ittf常规赛" : 0.48（Major Series）

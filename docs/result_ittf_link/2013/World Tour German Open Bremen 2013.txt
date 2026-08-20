@@ -10,3 +10,295 @@
 ----------------------------------------
 数据来源：ITTF World Tour 2013
 文件生成时间：自动生成
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 5 Total: 417
+
+Start
+Prev
+1
+2
+3
+4
+5
+Next
+End
+2013	World Tour German Open Bremen 2013	ZHANG Jike (CHN)		ASSAR Khalid (EGY)		MS	Main Draw	R64	4 - 0	11:6 11:5 11:6 11:7	ZHANG Jike	
+2013	World Tour German Open Bremen 2013	LI Ahmet (TUR)		GARDOS Robert (AUT)		MS	Main Draw	R64	4 - 3	6:11 6:11 3:11 11:4 11:9 11:9 12:10	LI Ahmet	
+2013	World Tour German Open Bremen 2013	GACINA Andrej (CRO)		GHOSH Soumyajit (IND)		MS	Main Draw	R64	4 - 1	7:11 11:3 12:10 11:6 11:7	GACINA Andrej	
+2013	World Tour German Open Bremen 2013	ELOI Damien (FRA)		CRISAN Adrian (ROU)		MS	Main Draw	R64	3 - 4	5:11 7:11 11:7 5:11 11:7 12:10 9:11	CRISAN Adrian	
+2013	World Tour German Open Bremen 2013	CHEN Chien-An (TPE)		JEVTOVIC Marko (SRB)		MS	Main Draw	R64	4 - 1	14:12 13:11 11:9 3:11 11:9	CHEN Chien-An	
+2013	World Tour German Open Bremen 2013	WANG Eugene (CAN)		APOLONIA Tiago (POR)		MS	Main Draw	R64	1 - 4	11:6 5:11 5:11 9:11 10:12	APOLONIA Tiago	
+2013	World Tour German Open Bremen 2013	CHO Eonrae (KOR)		HABESOHN Daniel (AUT)		MS	Main Draw	R64	1 - 4	4:11 6:11 11:7 7:11 10:12	HABESOHN Daniel	
+2013	World Tour German Open Bremen 2013	SALIFOU Abdel-Kader (BEN)		FAN Zhendong (CHN)		MS	Main Draw	R64	3 - 4	10:12 11:9 4:11 11:9 11:9 8:11 5:11	FAN Zhendong	
+2013	World Tour German Open Bremen 2013	SAMSONOV Vladimir (BLR)		KARLSSON Kristian (SWE)		MS	Main Draw	R64	4 - 1	5:11 11:7 17:15 11:4 11:8	SAMSONOV Vladimir	
+2013	World Tour German Open Bremen 2013	MATSUDAIRA Kenji (JPN)		FRANZISKA Patrick (GER)		MS	Main Draw	R64	4 - 1	11:8 11:6 13:11 9:11 11:7	MATSUDAIRA Kenji	
+2013	World Tour German Open Bremen 2013	ZHOU Yu (CHN)		KATKOV Ivan (UKR)		MS	Main Draw	R64	4 - 0	11:5 11:6 11:8 11:7	ZHOU Yu	
+2013	World Tour German Open Bremen 2013	KIM Junghoon (KOR)		BAUM Patrick (GER)		MS	Main Draw	R64	4 - 1	11:8 11:7 11:5 7:11 11:6	KIM Junghoon	
+2013	World Tour German Open Bremen 2013	FREITAS Marcos (POR)		JEONG Sangeun (KOR)		MS	Main Draw	R64	4 - 0	11:7 11:6 11:5 11:8	FREITAS Marcos	
+2013	World Tour German Open Bremen 2013	SEO Hyundeok (KOR)		SMIRNOV Alexey (RUS)		MS	Main Draw	R64	2 - 4	10:12 7:11 9:11 11:9 11:5 9:11	SMIRNOV Alexey	
+2013	World Tour German Open Bremen 2013	KISHIKAWA Seiya (JPN)		WONG Chun Ting (HKG)		MS	Main Draw	R64	2 - 4	11:9 11:8 9:11 10:12 13:15 6:11	WONG Chun Ting	
+2013	World Tour German Open Bremen 2013	MORIZONO Masataka (JPN)		CHUANG Chih-Yuan (TPE)		MS	Main Draw	R64	2 - 4	7:11 11:8 11:8 12:14 14:16 5:11	CHUANG Chih-Yuan	
+2013	World Tour German Open Bremen 2013	OVTCHAROV Dimitrij (GER)		LIANG Jingkun (CHN)		MS	Main Draw	R64	4 - 2	11:9 11:7 8:11 8:11 11:8 11:6	OVTCHAROV Dimitrij	
+2013	World Tour German Open Bremen 2013	BROSSIER Benjamin (FRA)		JEOUNG Youngsik (KOR)		MS	Main Draw	R64	1 - 4	11:5 10:12 4:11 10:12 11:13	JEOUNG Youngsik	
+2013	World Tour German Open Bremen 2013	SHIONO Masato (JPN)		WALTHER Ricardo (GER)		MS	Main Draw	R64	4 - 3	6:11 10:12 10:12 14:12 11:7 11:4 11:8	SHIONO Masato	
+2013	World Tour German Open Bremen 2013	AKERSTROM Fabian (SWE)		JIANG Tianyi (HKG)		MS	Main Draw	R64	4 - 2	11:8 5:11 6:11 11:9 11:9 11:4	AKERSTROM Fabian	
+2013	World Tour German Open Bremen 2013	KIM Minseok (KOR)		PROKOPCOV Dmitrij (CZE)		MS	Main Draw	R64	4 - 1	6:11 12:10 12:10 11:4 14:12	KIM Minseok	
+2013	World Tour German Open Bremen 2013	KIM Donghyun (KOR)		CHAN Kazuhiro (JPN)		MS	Main Draw	R64	4 - 3	6:11 11:7 3:11 12:10 11:7 2:11 11:9	KIM Donghyun	
+2013	World Tour German Open Bremen 2013	LI Hu (SGP)		CHIANG Hung-Chieh (TPE)		MS	Main Draw	R64	3 - 4	7:11 11:8 2:11 11:13 12:10 11:3 7:11	CHIANG Hung-Chieh	
+2013	World Tour German Open Bremen 2013	LEE Sang Su (KOR)		MIZUTANI Jun (JPN)		MS	Main Draw	R64	1 - 4	10:12 9:11 11:9 7:11 4:11	MIZUTANI Jun	
+2013	World Tour German Open Bremen 2013	GAO Ning (SGP)		VANG Bora (TUR)		MS	Main Draw	R64	4 - 1	11:4 9:11 11:4 12:10 11:9	GAO Ning	
+2013	World Tour German Open Bremen 2013	PITCHFORD Liam (ENG)		OH Sangeun (KOR)		MS	Main Draw	R64	4 - 3	11:9 11:13 5:11 11:5 11:13 11:7 11:3	PITCHFORD Liam	
+2013	World Tour German Open Bremen 2013	YOSHIDA Kaii (JPN)		CHEN Feng (SGP)		MS	Main Draw	R64	4 - 1	8:11 11:9 11:7 11:6 11:6	YOSHIDA Kaii	
+2013	World Tour German Open Bremen 2013	JANCARIK Lubomir (CZE)		MATSUDAIRA Kenta (JPN)		MS	Main Draw	R64	1 - 4	15:13 8:11 11:13 2:11 5:11	MATSUDAIRA Kenta	
+2013	World Tour German Open Bremen 2013	STEGER Bastian (GER)		WU Zhikang (SGP)		MS	Main Draw	R64	4 - 1	11:7 12:10 7:11 11:7 11:7	STEGER Bastian	
+2013	World Tour German Open Bremen 2013	SHETTY Sanil (IND)		TAKAKIWA Taku (JPN)		MS	Main Draw	R64	1 - 4	12:10 11:13 8:11 9:11 9:11	TAKAKIWA Taku	
+2013	World Tour German Open Bremen 2013	LEE Jungwoo (KOR)		MURAMATSU Yuto (JPN)		MS	Main Draw	R64	4 - 2	11:6 8:11 9:11 11:8 11:1 11:6	LEE Jungwoo	
+2013	World Tour German Open Bremen 2013	GERELL Par (SWE)		BOLL Timo (GER)		MS	Main Draw	R64	2 - 4	11:8 8:11 8:11 11:6 9:11 4:11	BOLL Timo	
+2013	World Tour German Open Bremen 2013	ZHANG Jike (CHN)		LI Ahmet (TUR)		MS	Main Draw	R32	4 - 1	11:4 11:6 11:9 7:11 11:8	ZHANG Jike	
+2013	World Tour German Open Bremen 2013	GACINA Andrej (CRO)		CRISAN Adrian (ROU)		MS	Main Draw	R32	4 - 0	13:11 12:10 11:6 11:8	GACINA Andrej	
+2013	World Tour German Open Bremen 2013	CHEN Chien-An (TPE)		APOLONIA Tiago (POR)		MS	Main Draw	R32	2 - 4	14:12 7:11 9:11 11:5 8:11 12:14	APOLONIA Tiago	
+2013	World Tour German Open Bremen 2013	HABESOHN Daniel (AUT)		FAN Zhendong (CHN)		MS	Main Draw	R32	0 - 4	10:12 5:11 9:11 15:17	FAN Zhendong	
+2013	World Tour German Open Bremen 2013	SAMSONOV Vladimir (BLR)		MATSUDAIRA Kenji (JPN)		MS	Main Draw	R32	4 - 1	9:11 11:7 11:7 11:6 11:5	SAMSONOV Vladimir	
+2013	World Tour German Open Bremen 2013	ZHOU Yu (CHN)		KIM Junghoon (KOR)		MS	Main Draw	R32	4 - 2	3:11 11:7 11:6 11:9 10:12 11:9	ZHOU Yu	
+2013	World Tour German Open Bremen 2013	FREITAS Marcos (POR)		SMIRNOV Alexey (RUS)		MS	Main Draw	R32	4 - 0	13:11 11:8 11:5 11:8	FREITAS Marcos	
+2013	World Tour German Open Bremen 2013	WONG Chun Ting (HKG)		CHUANG Chih-Yuan (TPE)		MS	Main Draw	R32	1 - 4	6:11 5:11 9:11 11:9 8:11	CHUANG Chih-Yuan	
+2013	World Tour German Open Bremen 2013	OVTCHAROV Dimitrij (GER)		JEOUNG Youngsik (KOR)		MS	Main Draw	R32	4 - 3	7:11 15:17 11:5 7:11 11:6 11:7 11:7	OVTCHAROV Dimitrij	
+2013	World Tour German Open Bremen 2013	SHIONO Masato (JPN)		AKERSTROM Fabian (SWE)		MS	Main Draw	R32	4 - 2	12:10 6:11 11:7 11:3 7:11 11:7	SHIONO Masato	
+2013	World Tour German Open Bremen 2013	KIM Minseok (KOR)		KIM Donghyun (KOR)		MS	Main Draw	R32	4 - 3	6:11 10:12 11:9 11:9 7:11 11:8 11:7	KIM Minseok	
+2013	World Tour German Open Bremen 2013	CHIANG Hung-Chieh (TPE)		MIZUTANI Jun (JPN)		MS	Main Draw	R32	1 - 4	11:6 6:11 5:11 8:11 11:13	MIZUTANI Jun	
+2013	World Tour German Open Bremen 2013	GAO Ning (SGP)		PITCHFORD Liam (ENG)		MS	Main Draw	R32	1 - 4	11:9 3:11 5:11 3:11 7:11	PITCHFORD Liam	
+2013	World Tour German Open Bremen 2013	YOSHIDA Kaii (JPN)		MATSUDAIRA Kenta (JPN)		MS	Main Draw	R32	0 - 4	10:12 5:11 8:11 10:12	MATSUDAIRA Kenta	
+2013	World Tour German Open Bremen 2013	STEGER Bastian (GER)		TAKAKIWA Taku (JPN)		MS	Main Draw	R32	4 - 0	12:10 15:13 11:7 11:3	STEGER Bastian	
+2013	World Tour German Open Bremen 2013	LEE Jungwoo (KOR)		BOLL Timo (GER)		MS	Main Draw	R32	0 - 4	9:11 8:11 9:11 4:11	BOLL Timo	
+2013	World Tour German Open Bremen 2013	ZHANG Jike (CHN)		GACINA Andrej (CRO)		MS	Main Draw	R16	4 - 2	11:8 14:12 13:15 13:11 3:11 11:8	ZHANG Jike	
+2013	World Tour German Open Bremen 2013	APOLONIA Tiago (POR)		FAN Zhendong (CHN)		MS	Main Draw	R16	1 - 4	8:11 9:11 12:10 7:11 9:11	FAN Zhendong	
+2013	World Tour German Open Bremen 2013	SAMSONOV Vladimir (BLR)		ZHOU Yu (CHN)		MS	Main Draw	R16	4 - 0	11:7 11:9 11:8 14:12	SAMSONOV Vladimir	
+2013	World Tour German Open Bremen 2013	FREITAS Marcos (POR)		CHUANG Chih-Yuan (TPE)		MS	Main Draw	R16	4 - 2	7:11 11:7 8:11 11:7 11:9 11:9	FREITAS Marcos	
+2013	World Tour German Open Bremen 2013	OVTCHAROV Dimitrij (GER)		SHIONO Masato (JPN)		MS	Main Draw	R16	4 - 3	8:11 11:6 11:4 5:11 11:8 7:11 11:9	OVTCHAROV Dimitrij	
+2013	World Tour German Open Bremen 2013	KIM Minseok (KOR)		MIZUTANI Jun (JPN)		MS	Main Draw	R16	0 - 4	7:11 3:11 12:14 10:12	MIZUTANI Jun	
+2013	World Tour German Open Bremen 2013	PITCHFORD Liam (ENG)		MATSUDAIRA Kenta (JPN)		MS	Main Draw	R16	4 - 3	11:6 10:12 11:6 6:11 11:7 5:11 14:12	PITCHFORD Liam	
+2013	World Tour German Open Bremen 2013	STEGER Bastian (GER)		BOLL Timo (GER)		MS	Main Draw	R16	2 - 4	6:11 11:9 4:11 4:11 11:9 7:11	BOLL Timo	
+2013	World Tour German Open Bremen 2013	ZHANG Jike (CHN)		FAN Zhendong (CHN)		MS	Main Draw	QuarterFinal	2 - 4	9:11 7:11 6:11 11:8 12:10 6:11	FAN Zhendong	
+2013	World Tour German Open Bremen 2013	SAMSONOV Vladimir (BLR)		FREITAS Marcos (POR)		MS	Main Draw	QuarterFinal	4 - 3	9:11 9:11 11:8 11:8 11:9 11:13 11:6	SAMSONOV Vladimir	
+2013	World Tour German Open Bremen 2013	OVTCHAROV Dimitrij (GER)		MIZUTANI Jun (JPN)		MS	Main Draw	QuarterFinal	4 - 0	11:5 11:6 11:5 11:8	OVTCHAROV Dimitrij	
+2013	World Tour German Open Bremen 2013	PITCHFORD Liam (ENG)		BOLL Timo (GER)		MS	Main Draw	QuarterFinal	1 - 4	7:11 5:11 11:7 9:11 2:11	BOLL Timo	
+2013	World Tour German Open Bremen 2013	FAN Zhendong (CHN)		SAMSONOV Vladimir (BLR)		MS	Main Draw	SemiFinal	4 - 2	3:11 11:2 4:11 11:8 11:9 11:8	FAN Zhendong	
+2013	World Tour German Open Bremen 2013	OVTCHAROV Dimitrij (GER)		BOLL Timo (GER)		MS	Main Draw	SemiFinal	4 - 2	11:13 11:7 4:11 11:9 11:5 11:9	OVTCHAROV Dimitrij	
+2013	World Tour German Open Bremen 2013	FAN Zhendong (CHN)		OVTCHAROV Dimitrij (GER)		MS	Main Draw	Final	4 - 1	13:11 11:7 6:11 11:1 11:9	FAN Zhendong
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 3 Total: 255
+
+Start
+Prev
+1
+2
+3
+Next
+End
+2013	World Tour German Open Bremen 2013	FENG Tianwei (SGP)		ISHIGAKI Yuka (JPN)		WS	Main Draw	R64	2 - 4	11:4 13:15 9:11 11:8 7:11 6:11	ISHIGAKI Yuka	
+2013	World Tour German Open Bremen 2013	DOO Hoi Kem (HKG)		SOLJA Amelie (AUT)		WS	Main Draw	R64	4 - 0	11:8 13:11 11:9 11:7	DOO Hoi Kem	
+2013	World Tour German Open Bremen 2013	DODEAN Daniela (ROU)		BARTHEL Zhenqi (GER)		WS	Main Draw	R64	4 - 0	11:8 11:3 11:3 11:9	DODEAN Daniela	
+2013	World Tour German Open Bremen 2013	ITO Mima (JPN)		CHENG I-Ching (TPE)		WS	Main Draw	R64	2 - 4	6:11 11:5 11:9 6:11 6:11 5:11	CHENG I-Ching	
+2013	World Tour German Open Bremen 2013	HAN Ying (GER)		SATO Hitomi (JPN)		WS	Main Draw	R64	4 - 0	12:10 11:9 11:7 11:9	HAN Ying	
+2013	World Tour German Open Bremen 2013	ZHOU Yihan (SGP)		IVANCAN Irene (GER)		WS	Main Draw	R64	1 - 4	7:11 11:7 7:11 10:12 12:14	IVANCAN Irene	
+2013	World Tour German Open Bremen 2013	WU Jiaduo (GER)		ZHANG Qiang (CHN)		WS	Main Draw	R64	4 - 3	11:7 13:15 12:10 11:3 13:15 5:11 11:6	WU Jiaduo	
+2013	World Tour German Open Bremen 2013	NG Wing Nam (HKG)		YANG Ha Eun (KOR)		WS	Main Draw	R64	1 - 4	8:11 11:7 9:11 10:12 1:11	YANG Ha Eun	
+2013	World Tour German Open Bremen 2013	FUKUHARA Ai (JPN)		WINTER Sabine (GER)		WS	Main Draw	R64	4 - 0	11:1 16:14 11:7 11:7	FUKUHARA Ai	
+2013	World Tour German Open Bremen 2013	PARK Youngsook (KOR)		WAKAMIYA Misako (JPN)		WS	Main Draw	R64	4 - 1	11:9 8:11 13:11 11:7 14:12	PARK Youngsook	
+2013	World Tour German Open Bremen 2013	POTA Georgina (HUN)		MITTELHAM Nina (GER)		WS	Main Draw	R64	2 - 4	11:7 9:11 14:12 6:11 10:12 9:11	MITTELHAM Nina	
+2013	World Tour German Open Bremen 2013	MATSUDAIRA Shiho (JPN)		SAMARA Elizabeta (ROU)		WS	Main Draw	R64	3 - 4	6:11 4:11 12:10 8:11 13:11 11:3 5:11	SAMARA Elizabeta	
+2013	World Tour German Open Bremen 2013	HIRANO Sayaka (JPN)		NOSKOVA Yana (RUS)		WS	Main Draw	R64	4 - 1	9:11 11:7 12:10 11:3 11:9	HIRANO Sayaka	
+2013	World Tour German Open Bremen 2013	HU Limei (CHN)		SHAN Xiaona (GER)		WS	Main Draw	R64	4 - 1	11:5 11:9 11:6 10:12 11:4	HU Limei	
+2013	World Tour German Open Bremen 2013	LIU Gaoyang (CHN)		SOLJA Petrissa (GER)		WS	Main Draw	R64	4 - 2	6:11 11:9 11:5 11:13 11:9 14:12	LIU Gaoyang	
+2013	World Tour German Open Bremen 2013	SZOCS Bernadette (ROU)		SHEN Yanfei (ESP)		WS	Main Draw	R64	0 - 4	11:13 7:11 5:11 5:11	SHEN Yanfei	
+2013	World Tour German Open Bremen 2013	JIANG Huajun (HKG)		STRBIKOVA Renata (CZE)		WS	Main Draw	R64	4 - 0	11:5 11:5 12:10 11:7	JIANG Huajun	
+2013	World Tour German Open Bremen 2013	ABE Megumi (JPN)		LANG Kristin (GER)		WS	Main Draw	R64	4 - 3	11:8 11:9 11:6 8:11 12:14 5:11 11:7	ABE Megumi	
+2013	World Tour German Open Bremen 2013	HU Melek (TUR)		PERGEL Szandra (HUN)		WS	Main Draw	R64	4 - 0	11:5 11:2 11:9 11:5	HU Melek	
+2013	World Tour German Open Bremen 2013	HIRANO Miu (JPN)		LEE Ho Ching (HKG)		WS	Main Draw	R64	1 - 4	5:11 11:9 10:12 12:14 12:14	LEE Ho Ching	
+2013	World Tour German Open Bremen 2013	YU Mengyu (SGP)		FUKUOKA Haruna (JPN)		WS	Main Draw	R64	4 - 3	10:12 11:8 11:3 11:6 12:14 8:11 11:8	YU Mengyu	
+2013	World Tour German Open Bremen 2013	FUJII Yuko (JPN)		CHEN Szu-Yu (TPE)		WS	Main Draw	R64	1 - 4	7:11 7:11 11:9 8:11 7:11	CHEN Szu-Yu	
+2013	World Tour German Open Bremen 2013	HUANG Yi-Hua (TPE)		PARK Seonghye (KOR)		WS	Main Draw	R64	4 - 2	9:11 11:8 11:7 11:9 5:11 11:4	HUANG Yi-Hua	
+2013	World Tour German Open Bremen 2013	LEE I-Chen (TPE)		PAVLOVICH Viktoria (BLR)		WS	Main Draw	R64	4 - 3	11:8 11:13 4:11 13:11 11:9 10:12 11:8	LEE I-Chen	
+2013	World Tour German Open Bremen 2013	SUH Hyo Won (KOR)		LIN Ye (CAN)		WS	Main Draw	R64	4 - 0	11:9 12:10 11:7 11:4	SUH Hyo Won	
+2013	World Tour German Open Bremen 2013	HAMAMOTO Yui (AUT)		ZHAO Yan (CHN)		WS	Main Draw	R64	2 - 4	11:13 11:8 12:10 8:11 6:11 6:11	ZHAO Yan	
+2013	World Tour German Open Bremen 2013	MORIZONO Misaki (JPN)		BILENKO Tetyana (UKR)		WS	Main Draw	R64	4 - 1	11:7 13:11 5:11 11:8 11:5	MORIZONO Misaki	
+2013	World Tour German Open Bremen 2013	CHOI Moonyoung (KOR)		LIU Jia (AUT)		WS	Main Draw	R64	4 - 1	7:11 11:6 11:6 11:9 11:5	CHOI Moonyoung	
+2013	World Tour German Open Bremen 2013	JEON Jihee (KOR)		KATO Miyu (JPN)		WS	Main Draw	R64	4 - 1	11:5 11:5 12:10 8:11 11:8	JEON Jihee	
+2013	World Tour German Open Bremen 2013	LOVAS Petra (HUN)		WEN Jia (CHN)		WS	Main Draw	R64	1 - 4	14:16 9:11 4:11 11:9 4:11	WEN Jia	
+2013	World Tour German Open Bremen 2013	LI Xue (FRA)		PARTYKA Natalia (POL)		WS	Main Draw	R64	4 - 1	13:11 12:10 6:11 11:4 11:8	LI Xue	
+2013	World Tour German Open Bremen 2013	DVORAK Galia (ESP)		ISHIKAWA Kasumi (JPN)		WS	Main Draw	R64	4 - 3	11:9 8:11 11:8 2:11 6:11 11:9 11:9	DVORAK Galia	
+2013	World Tour German Open Bremen 2013	ISHIGAKI Yuka (JPN)		DOO Hoi Kem (HKG)		WS	Main Draw	R32	4 - 0	11:9 12:10 11:4 11:9	ISHIGAKI Yuka	
+2013	World Tour German Open Bremen 2013	DODEAN Daniela (ROU)		CHENG I-Ching (TPE)		WS	Main Draw	R32	3 - 4	9:11 11:9 8:11 11:6 11:13 11:7 3:11	CHENG I-Ching	
+2013	World Tour German Open Bremen 2013	HAN Ying (GER)		IVANCAN Irene (GER)		WS	Main Draw	R32	4 - 2	11:7 11:5 5:11 8:11 11:6 11:9	HAN Ying	
+2013	World Tour German Open Bremen 2013	WU Jiaduo (GER)		YANG Ha Eun (KOR)		WS	Main Draw	R32	4 - 2	11:4 11:8 10:12 13:11 9:11 11:8	WU Jiaduo	
+2013	World Tour German Open Bremen 2013	FUKUHARA Ai (JPN)		PARK Youngsook (KOR)		WS	Main Draw	R32	4 - 3	11:5 11:3 8:11 9:11 15:13 9:11 11:7	FUKUHARA Ai	
+2013	World Tour German Open Bremen 2013	MITTELHAM Nina (GER)		SAMARA Elizabeta (ROU)		WS	Main Draw	R32	4 - 2	10:12 11:5 11:9 11:3 6:11 12:10	MITTELHAM Nina	
+2013	World Tour German Open Bremen 2013	HIRANO Sayaka (JPN)		HU Limei (CHN)		WS	Main Draw	R32	0 - 4	8:11 8:11 5:11 9:11	HU Limei	
+2013	World Tour German Open Bremen 2013	LIU Gaoyang (CHN)		SHEN Yanfei (ESP)		WS	Main Draw	R32	3 - 4	11:8 10:12 11:6 5:11 12:10 9:11 10:12	SHEN Yanfei	
+2013	World Tour German Open Bremen 2013	JIANG Huajun (HKG)		ABE Megumi (JPN)		WS	Main Draw	R32	4 - 1	11:5 11:6 11:9 6:11 11:7	JIANG Huajun	
+2013	World Tour German Open Bremen 2013	HU Melek (TUR)		LEE Ho Ching (HKG)		WS	Main Draw	R32	3 - 4	11:4 9:11 4:11 11:8 10:12 11:6 8:11	LEE Ho Ching	
+2013	World Tour German Open Bremen 2013	YU Mengyu (SGP)		CHEN Szu-Yu (TPE)		WS	Main Draw	R32	4 - 2	11:8 11:4 8:11 6:11 11:7 11:4	YU Mengyu	
+2013	World Tour German Open Bremen 2013	HUANG Yi-Hua (TPE)		LEE I-Chen (TPE)		WS	Main Draw	R32	4 - 2	11:13 11:6 11:9 10:12 12:10 11:6	HUANG Yi-Hua	
+2013	World Tour German Open Bremen 2013	SUH Hyo Won (KOR)		ZHAO Yan (CHN)		WS	Main Draw	R32	3 - 4	12:14 11:5 4:11 11:9 8:11 11:6 13:15	ZHAO Yan	
+2013	World Tour German Open Bremen 2013	MORIZONO Misaki (JPN)		CHOI Moonyoung (KOR)		WS	Main Draw	R32	4 - 1	11:8 11:8 4:11 11:9 11:9	MORIZONO Misaki	
+2013	World Tour German Open Bremen 2013	JEON Jihee (KOR)		WEN Jia (CHN)		WS	Main Draw	R32	1 - 4	6:11 11:5 1:11 7:11 5:11	WEN Jia	
+2013	World Tour German Open Bremen 2013	LI Xue (FRA)		DVORAK Galia (ESP)		WS	Main Draw	R32	4 - 1	8:11 11:6 11:3 11:9 11:8	LI Xue	
+2013	World Tour German Open Bremen 2013	ISHIGAKI Yuka (JPN)		CHENG I-Ching (TPE)		WS	Main Draw	R16	4 - 1	11:5 9:11 11:6 11:4 11:8	ISHIGAKI Yuka	
+2013	World Tour German Open Bremen 2013	HAN Ying (GER)		WU Jiaduo (GER)		WS	Main Draw	R16	4 - 3	11:6 8:11 11:8 9:11 11:9 5:11 11:7	HAN Ying	
+2013	World Tour German Open Bremen 2013	FUKUHARA Ai (JPN)		MITTELHAM Nina (GER)		WS	Main Draw	R16	4 - 0	11:4 11:5 11:3 11:7	FUKUHARA Ai	
+2013	World Tour German Open Bremen 2013	HU Limei (CHN)		SHEN Yanfei (ESP)		WS	Main Draw	R16	4 - 1	6:11 11:8 11:1 11:5 15:13	HU Limei	
+2013	World Tour German Open Bremen 2013	JIANG Huajun (HKG)		LEE Ho Ching (HKG)		WS	Main Draw	R16	1 - 4	11:4 9:11 4:11 7:11 10:12	LEE Ho Ching	
+2013	World Tour German Open Bremen 2013	YU Mengyu (SGP)		HUANG Yi-Hua (TPE)		WS	Main Draw	R16	4 - 0	11:6 11:6 11:6 13:11	YU Mengyu	
+2013	World Tour German Open Bremen 2013	ZHAO Yan (CHN)		MORIZONO Misaki (JPN)		WS	Main Draw	R16	4 - 0	11:9 11:9 12:10 11:5	ZHAO Yan	
+2013	World Tour German Open Bremen 2013	WEN Jia (CHN)		LI Xue (FRA)		WS	Main Draw	R16	4 - 0	11:4 11:7 11:8 11:9	WEN Jia	
+2013	World Tour German Open Bremen 2013	ISHIGAKI Yuka (JPN)		HAN Ying (GER)		WS	Main Draw	QuarterFinal	2 - 4	5:11 11:3 6:11 9:11 11:5 9:11	HAN Ying	
+2013	World Tour German Open Bremen 2013	FUKUHARA Ai (JPN)		HU Limei (CHN)		WS	Main Draw	QuarterFinal	4 - 2	6:11 11:9 11:4 11:3 6:11 11:9	FUKUHARA Ai	
+2013	World Tour German Open Bremen 2013	LEE Ho Ching (HKG)		YU Mengyu (SGP)		WS	Main Draw	QuarterFinal	4 - 3	11:5 14:12 5:11 6:11 11:3 6:11 11:7	LEE Ho Ching	
+2013	World Tour German Open Bremen 2013	ZHAO Yan (CHN)		WEN Jia (CHN)		WS	Main Draw	QuarterFinal	0 - 4	11:13 6:11 3:11 5:11	WEN Jia	
+2013	World Tour German Open Bremen 2013	HAN Ying (GER)		FUKUHARA Ai (JPN)		WS	Main Draw	SemiFinal	3 - 4	13:11 11:5 10:12 8:11 6:11 11:8 4:11	FUKUHARA Ai	
+2013	World Tour German Open Bremen 2013	LEE Ho Ching (HKG)		WEN Jia (CHN)		WS	Main Draw	SemiFinal	2 - 4	10:12 11:7 10:12 11:9 7:11 5:11	WEN Jia	
+2013	World Tour German Open Bremen 2013	FUKUHARA Ai (JPN)		WEN Jia (CHN)		WS	Main Draw	Final	0 - 4	5:11 6:11 7:11 6:11	WEN Jia
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 69
+
+2013	World Tour German Open Bremen 2013	FENG Xiaoquan (AUT)	LEITGEB Stefan (AUT)	DURANSPAHIC Admir (BIH)	MADRID Marcos (MEX)	MD	Qualification	QR64	0 - 3	5:11 6:11 6:11	DURANSPAHIC Admir	MADRID Marcos
+2013	World Tour German Open Bremen 2013	DEVOS Robin (BEL)	NUYTINCK Cedric (BEL)	CHEN Hongtao (CAN)	THERIAULT Pierre-Luc (CAN)	MD	Qualification	QR64	3 - 0	11:6 11:6 11:6	DEVOS Robin	NUYTINCK Cedric
+2013	World Tour German Open Bremen 2013	DEVOS Robin (BEL)	NUYTINCK Cedric (BEL)	MA Te (CHN)	ZHAI Chao (CHN)	MD	Qualification	QR32	1 - 3	8:11 13:11 9:11 9:11	MA Te	ZHAI Chao
+2013	World Tour German Open Bremen 2013	BARABANOV Kiryl (BLR)	MILOVANOV Andrey (BLR)	KOJIC Frane (CRO)	KOLAREK Tomislav (CRO)	MD	Qualification	QR64	1 - 3	4:11 11:8 3:11 10:12	KOJIC Frane	KOLAREK Tomislav
+2013	World Tour German Open Bremen 2013	ISHIY Vitor (BRA)	JOUTI Eric (BRA)	KIM Donghyun (KOR)	LEE Jungwoo (KOR)	MD	Qualification	QR64	0 - 3	11:13 6:11 11:13	KIM Donghyun	LEE Jungwoo
+2013	World Tour German Open Bremen 2013	MONTEIRO Thiago (BRA)	TSUBOI Gustavo (BRA)	GRAY Lewis (ENG)	WALKER Samuel (ENG)	MD	Qualification	QR64	3 - 1	11:2 9:11 11:7 11:6	MONTEIRO Thiago	TSUBOI Gustavo
+2013	World Tour German Open Bremen 2013	MONTEIRO Thiago (BRA)	TSUBOI Gustavo (BRA)	ANGLES Enzo (FRA)	SALIFOU Abdel-Kader (BEN)	MD	Qualification	QR32	2 - 3	7:11 11:9 11:9 8:11 10:12	ANGLES Enzo	SALIFOU Abdel-Kader
+2013	World Tour German Open Bremen 2013	ZHANG Jike (CHN)	ZHOU Yu (CHN)	JEAN Lauric (BEL)	VOSTES Yannick (BEL)	MD	Qualification	QR64	3 - 0	11:5 11:8 12:10	ZHANG Jike	ZHOU Yu
+2013	World Tour German Open Bremen 2013	MA Te (CHN)	ZHAI Chao (CHN)	LI Ahmet (TUR)	VANG Bora (TUR)	MD	Qualification	QR64	3 - 2	4:11 11:7 11:13 11:7 13:11	MA Te	ZHAI Chao
+2013	World Tour German Open Bremen 2013	ZHANG Jike (CHN)	ZHOU Yu (CHN)	KOJIC Frane (CRO)	KOLAREK Tomislav (CRO)	MD	Qualification	QR32	3 - 0	17:15 12:10 11:9	ZHANG Jike	ZHOU Yu
+2013	World Tour German Open Bremen 2013	FAN Zhendong (CHN)	LIANG Jingkun (CHN)	JEVTOVIC Marko (SRB)	PETO Zsolt (SRB)	MD	Qualification	QR32	3 - 1	11:6 8:11 11:7 11:6	FAN Zhendong	LIANG Jingkun
+2013	World Tour German Open Bremen 2013	ZHANG Jike (CHN)	ZHOU Yu (CHN)	JAKAB Janos (HUN)	KOSIBA Daniel (HUN)	MD	Qualification	QR16	3 - 1	11:6 11:8 6:11 11:6	ZHANG Jike	ZHOU Yu
+2013	World Tour German Open Bremen 2013	FAN Zhendong (CHN)	LIANG Jingkun (CHN)	DESAI Harmeet (IND)	GHOSH Soumyajit (IND)	MD	Qualification	QR16	3 - 1	11:5 11:9 9:11 11:4	FAN Zhendong	LIANG Jingkun
+2013	World Tour German Open Bremen 2013	ZHANG Jike (CHN)	ZHOU Yu (CHN)	CHIANG Hung-Chieh (TPE)	HUANG Sheng-Sheng (TPE)	MD	Main Draw	R16	2 - 3	11:5 7:11 11:13 11:8 12:14	CHIANG Hung-Chieh	HUANG Sheng-Sheng
+2013	World Tour German Open Bremen 2013	FAN Zhendong (CHN)	LIANG Jingkun (CHN)	LIVENTSOV Alexey (RUS)	PAIKOV Mikhail (RUS)	MD	Main Draw	R16	3 - 1	11:6 12:10 7:11 14:12	FAN Zhendong	LIANG Jingkun
+2013	World Tour German Open Bremen 2013	FREITAS Marcos (POR)	GACINA Andrej (CRO)	NIELSEN Claus (DEN)	RASMUSSEN Morten (DEN)	MD	Qualification	QR64	3 - 1	9:11 11:1 11:5 11:6	FREITAS Marcos	GACINA Andrej
+2013	World Tour German Open Bremen 2013	FREITAS Marcos (POR)	GACINA Andrej (CRO)	KARLSSON Kristian (SWE)	OVERSJO Mattias (SWE)	MD	Qualification	QR32	3 - 0	11:9 11:3 11:1	FREITAS Marcos	GACINA Andrej
+2013	World Tour German Open Bremen 2013	GAVLAS Antonin (CZE)	KORBEL Petr (CZE)	APOLONIA Tiago (POR)	GERALDO Joao (POR)	MD	Qualification	QR64	2 - 3	6:11 11:9 11:8 8:11 6:11	APOLONIA Tiago	GERALDO Joao
+2013	World Tour German Open Bremen 2013	COELLO Geovanny (ECU)	PROANO Ivan (ECU)	HAWWASH Ammar (PLE)	HAZOU Jad (PLE)	MD	Qualification	QR2	3 - 0	11:5 11:7 11:2	COELLO Geovanny	PROANO Ivan
+2013	World Tour German Open Bremen 2013	ASSAR Khalid (EGY)	ASSAR Omar (EGY)	KIM Donghyun (KOR)	LEE Jungwoo (KOR)	MD	Qualification	QR32	0 - 3	5:11 6:11 6:11	KIM Donghyun	LEE Jungwoo
+2013	World Tour German Open Bremen 2013	CANTERO Jesus (ESP)	MACHADO Carlos (ESP)	CHEN Feng (SGP)	CHEW Clarence (SGP)	MD	Qualification	QR64	3 - 0	11:7 11:6 11:8	CANTERO Jesus	MACHADO Carlos
+2013	World Tour German Open Bremen 2013	DURAN Marc (ESP)	ROBLES Alvaro (ESP)	JEVTOVIC Marko (SRB)	PETO Zsolt (SRB)	MD	Qualification	QR64	0 - 3	8:11 9:11 4:11	JEVTOVIC Marko	PETO Zsolt
+2013	World Tour German Open Bremen 2013	BENITO Javier (ESP)	FRANCO Carlos (ESP)	HUNG Tzu-Hsiang (TPE)	LEE Chia-Sheng (TPE)	MD	Qualification	QR64	0 - 3	8:11 7:11 2:11	HUNG Tzu-Hsiang	LEE Chia-Sheng
+2013	World Tour German Open Bremen 2013	BOULOUSSA Mehdi (ALG)	ROBINOT Alexandre (FRA)	JIANG Tianyi (HKG)	LEUNG Chu Yan (HKG)	MD	Qualification	QR64	1 - 3	10:12 13:11 5:11 9:11	JIANG Tianyi	LEUNG Chu Yan
+2013	World Tour German Open Bremen 2013	ANGLES Enzo (FRA)	SALIFOU Abdel-Kader (BEN)	DIDUKH Oleksandr (UKR)	PRYSHCHEPA Ievgen (UKR)	MD	Qualification	QR64	3 - 0	12:10 12:10 13:11	ANGLES Enzo	SALIFOU Abdel-Kader
+2013	World Tour German Open Bremen 2013	ANGLES Enzo (FRA)	SALIFOU Abdel-Kader (BEN)	MORIZONO Masataka (JPN)	SAMBE Kohei (JPN)	MD	Qualification	QR16	1 - 3	9:11 11:8 9:11 8:11	MORIZONO Masataka	SAMBE Kohei
+2013	World Tour German Open Bremen 2013	MENGEL Steffen (GER)	WALTHER Ricardo (GER)	BAI He (SVK)	KOBES Kristian (SVK)	MD	Qualification	QR64	3 - 1	15:13 10:12 11:9 12:10	MENGEL Steffen	WALTHER Ricardo
+2013	World Tour German Open Bremen 2013	DUDA Benedikt (GER)	STEGER Bastian (GER)	MUTTI Leonardo (ITA)	RECH DALDOSSO Marco (ITA)	MD	Qualification	QR64	3 - 2	12:14 11:3 8:11 11:7 11:5	DUDA Benedikt	STEGER Bastian
+2013	World Tour German Open Bremen 2013	BAUM Patrick (GER)	OVTCHAROV Dimitrij (GER)	FAN Zhendong (CHN)	LIANG Jingkun (CHN)	MD	Qualification	QR64	1 - 3	8:11 2:11 11:8 7:11	FAN Zhendong	LIANG Jingkun
+2013	World Tour German Open Bremen 2013	MENGEL Steffen (GER)	WALTHER Ricardo (GER)	FERTIKOWSKI Pawel (POL)	FLORAS Robert (POL)	MD	Qualification	QR32	0 - 3	9:11 8:11 6:11	FERTIKOWSKI Pawel	FLORAS Robert
+2013	World Tour German Open Bremen 2013	DUDA Benedikt (GER)	STEGER Bastian (GER)	CANTERO Jesus (ESP)	MACHADO Carlos (ESP)	MD	Qualification	QR32	1 - 3	7:11 11:7 4:11 8:11	CANTERO Jesus	MACHADO Carlos
+2013	World Tour German Open Bremen 2013	ORT Kilian (GER)	QIU Dang (GER)	HUNG Tzu-Hsiang (TPE)	LEE Chia-Sheng (TPE)	MD	Qualification	QR32	3 - 1	11:4 11:9 4:11 11:6	ORT Kilian	QIU Dang
+2013	World Tour German Open Bremen 2013	ORT Kilian (GER)	QIU Dang (GER)	MA Te (CHN)	ZHAI Chao (CHN)	MD	Qualification	QR16	2 - 3	2:11 7:11 11:7 11:7 5:11	MA Te	ZHAI Chao
+2013	World Tour German Open Bremen 2013	BOLL Timo (GER)	FRANZISKA Patrick (GER)	MA Te (CHN)	ZHAI Chao (CHN)	MD	Main Draw	R16	3 - 0	11:8 12:10 11:9	BOLL Timo	FRANZISKA Patrick
+2013	World Tour German Open Bremen 2013	BOLL Timo (GER)	FRANZISKA Patrick (GER)	GAO Ning (SGP)	LI Hu (SGP)	MD	Main Draw	QuarterFinal	3 - 2	11:7 11:9 3:11 7:11 11:7	BOLL Timo	FRANZISKA Patrick
+2013	World Tour German Open Bremen 2013	KONSTANTINOPOULOS Giorgos (GRE)	KONSTANTINOPOULOS Konstantinos (GRE)	FERTIKOWSKI Pawel (POL)	FLORAS Robert (POL)	MD	Qualification	QR64	0 - 3	2:11 3:11 13:15	FERTIKOWSKI Pawel	FLORAS Robert
+2013	World Tour German Open Bremen 2013	JAKAB Janos (HUN)	KOSIBA Daniel (HUN)	OOSTWOUDER Ewout (NED)	TROMER Laurens (NED)	MD	Qualification	QR64	3 - 0	11:5 11:3 15:13	JAKAB Janos	KOSIBA Daniel
+2013	World Tour German Open Bremen 2013	JAKAB Janos (HUN)	KOSIBA Daniel (HUN)	JANCARIK Lubomir (CZE)	PROKOPCOV Dmitrij (CZE)	MD	Qualification	QR32	3 - 0	11:8 11:8 11:7	JAKAB Janos	KOSIBA Daniel
+2013	World Tour German Open Bremen 2013	ANTHONY Amalraj (IND)	VASANTH Nitin (IND)	JANCARIK Lubomir (CZE)	PROKOPCOV Dmitrij (CZE)	MD	Qualification	QR64	0 - 3	8:11 10:12 5:11	JANCARIK Lubomir	PROKOPCOV Dmitrij
+2013	World Tour German Open Bremen 2013	DESAI Harmeet (IND)	GHOSH Soumyajit (IND)	COELLO Geovanny (ECU)	PROANO Ivan (ECU)	MD	Qualification	QR64	3 - 0	11:8 13:11 13:11	DESAI Harmeet	GHOSH Soumyajit
+2013	World Tour German Open Bremen 2013	DESAI Harmeet (IND)	GHOSH Soumyajit (IND)	JIANG Tianyi (HKG)	LEUNG Chu Yan (HKG)	MD	Qualification	QR32	3 - 0	12:10 11:2 11:6	DESAI Harmeet	GHOSH Soumyajit
+2013	World Tour German Open Bremen 2013	BOBOCICA Mihai (ITA)	STOYANOV Niagol (ITA)	MORIZONO Masataka (JPN)	SAMBE Kohei (JPN)	MD	Qualification	QR32	0 - 3	7:11 8:11 10:12	MORIZONO Masataka	SAMBE Kohei
+2013	World Tour German Open Bremen 2013	CHAN Kazuhiro (JPN)	MATSUDAIRA Kenji (JPN)	KIM Donghyun (KOR)	LEE Jungwoo (KOR)	MD	Main Draw	R16	1 - 3	9:11 5:11 11:7 7:11	KIM Donghyun	LEE Jungwoo
+2013	World Tour German Open Bremen 2013	MORIZONO Masataka (JPN)	SAMBE Kohei (JPN)	GARDOS Robert (AUT)	HABESOHN Daniel (AUT)	MD	Main Draw	R16	0 - 3	8:11 5:11 6:11	GARDOS Robert	HABESOHN Daniel
+2013	World Tour German Open Bremen 2013	JEOUNG Youngsik (KOR)	LEE Sang Su (KOR)	GOLOVANOV Stanislav (BUL)	KRASTEV Petyo (BUL)	MD	Qualification	QR64	3 - 1	11:4 9:11 11:5 11:7	JEOUNG Youngsik	LEE Sang Su
+2013	World Tour German Open Bremen 2013	JEOUNG Youngsik (KOR)	LEE Sang Su (KOR)	APOLONIA Tiago (POR)	GERALDO Joao (POR)	MD	Qualification	QR32	3 - 1	11:5 10:12 13:11 11:9	JEOUNG Youngsik	LEE Sang Su
+2013	World Tour German Open Bremen 2013	JEOUNG Youngsik (KOR)	LEE Sang Su (KOR)	CANTERO Jesus (ESP)	MACHADO Carlos (ESP)	MD	Qualification	QR16	3 - 0	11:7 17:15 11:9	JEOUNG Youngsik	LEE Sang Su
+2013	World Tour German Open Bremen 2013	KIM Minseok (KOR)	SEO Hyundeok (KOR)	FREITAS Marcos (POR)	GACINA Andrej (CRO)	MD	Main Draw	R16	3 - 1	11:8 8:11 11:4 11:4	KIM Minseok	SEO Hyundeok
+2013	World Tour German Open Bremen 2013	KIM Donghyun (KOR)	LEE Jungwoo (KOR)	GARDOS Robert (AUT)	HABESOHN Daniel (AUT)	MD	Main Draw	QuarterFinal	3 - 0	11:7 11:6 11:7	KIM Donghyun	LEE Jungwoo
+2013	World Tour German Open Bremen 2013	KIM Minseok (KOR)	SEO Hyundeok (KOR)	FAN Zhendong (CHN)	LIANG Jingkun (CHN)	MD	Main Draw	QuarterFinal	3 - 0	11:2 11:7 11:7	KIM Minseok	SEO Hyundeok
+2013	World Tour German Open Bremen 2013	KIM Minseok (KOR)	SEO Hyundeok (KOR)	BOLL Timo (GER)	FRANZISKA Patrick (GER)	MD	Main Draw	SemiFinal	2 - 3	6:11 11:6 11:6 9:11 7:11	BOLL Timo	FRANZISKA Patrick
+2013	World Tour German Open Bremen 2013	DURANSPAHIC Admir (BIH)	MADRID Marcos (MEX)	CREPULJA Bojan (SRB)	PETKOV Marko (SRB)	MD	Qualification	QR32	0 - 3	4:11 7:11 6:11	CREPULJA Bojan	PETKOV Marko
+2013	World Tour German Open Bremen 2013	GOMMERS Rajko (NED)	HAGERAATS Koen (NED)	MURAMATSU Yuto (JPN)	SAKAI Asuka (JPN)	MD	Qualification	QR64	1 - 3	5:11 3:11 11:2 7:11	MURAMATSU Yuto	SAKAI Asuka
+2013	World Tour German Open Bremen 2013	DYJAS Jakub (POL)	ZATOWKA Patryk (POL)	MORIZONO Masataka (JPN)	SAMBE Kohei (JPN)	MD	Qualification	QR64	0 - 3	6:11 4:11 5:11	MORIZONO Masataka	SAMBE Kohei
+2013	World Tour German Open Bremen 2013	FERTIKOWSKI Pawel (POL)	FLORAS Robert (POL)	GAO Ning (SGP)	LI Hu (SGP)	MD	Main Draw	R16	2 - 3	7:11 11:9 2:11 11:4 7:11	GAO Ning	LI Hu
+2013	World Tour German Open Bremen 2013	IONESCU Ovidiu (ROU)	SZOCS Hunor (ROU)	ORT Kilian (GER)	QIU Dang (GER)	MD	Qualification	QR64	2 - 3	4:11 11:6 8:11 11:8 10:12	ORT Kilian	QIU Dang
+2013	World Tour German Open Bremen 2013	MA Liang (SGP)	PANG Xue Jie (SGP)	HABESOHN Dominik (AUT)	HEIMBERGER Martin (AUT)	MD	Qualification	QR64	3 - 2	8:11 9:11 11:7 11:9 11:7	MA Liang	PANG Xue Jie
+2013	World Tour German Open Bremen 2013	MA Liang (SGP)	PANG Xue Jie (SGP)	MURAMATSU Yuto (JPN)	SAKAI Asuka (JPN)	MD	Qualification	QR32	3 - 0	11:8 11:7 11:8	MA Liang	PANG Xue Jie
+2013	World Tour German Open Bremen 2013	MA Liang (SGP)	PANG Xue Jie (SGP)	KIM Donghyun (KOR)	LEE Jungwoo (KOR)	MD	Qualification	QR16	1 - 3	12:14 4:11 11:8 9:11	KIM Donghyun	LEE Jungwoo
+2013	World Tour German Open Bremen 2013	CREPULJA Bojan (SRB)	PETKOV Marko (SRB)	FREITAS Marcos (POR)	GACINA Andrej (CRO)	MD	Qualification	QR16	0 - 3	6:11 6:11 5:11	FREITAS Marcos	GACINA Andrej
+2013	World Tour German Open Bremen 2013	GERELL Par (SWE)	LUNDQVIST Jens (SWE)	GNANASEKARAN Sathiyan (IND)	SHETTY Sanil (IND)	MD	Qualification	QR64	3 - 0	11:5 11:9 11:6	GERELL Par	LUNDQVIST Jens
+2013	World Tour German Open Bremen 2013	AKERSTROM Fabian (SWE)	ANDERSSON Harald (SWE)	BOBOCICA Mihai (ITA)	STOYANOV Niagol (ITA)	MD	Qualification	QR64	2 - 3	12:10 7:11 6:11 11:5 10:12	BOBOCICA Mihai	STOYANOV Niagol
+2013	World Tour German Open Bremen 2013	GERELL Par (SWE)	LUNDQVIST Jens (SWE)	BAJGER Ondrej (CZE)	SIRUCEK Pavel (CZE)	MD	Qualification	QR32	3 - 0	11:5 11:8 13:11	GERELL Par	LUNDQVIST Jens
+2013	World Tour German Open Bremen 2013	GERELL Par (SWE)	LUNDQVIST Jens (SWE)	FERTIKOWSKI Pawel (POL)	FLORAS Robert (POL)	MD	Qualification	QR16	2 - 3	11:5 11:5 3:11 8:11 10:12	FERTIKOWSKI Pawel	FLORAS Robert
+2013	World Tour German Open Bremen 2013	CHEN Chien-An (TPE)	CHUANG Chih-Yuan (TPE)	JEOUNG Youngsik (KOR)	LEE Sang Su (KOR)	MD	Main Draw	R16	3 - 1	9:11 13:11 11:3 11:9	CHEN Chien-An	CHUANG Chih-Yuan
+2013	World Tour German Open Bremen 2013	CHEN Chien-An (TPE)	CHUANG Chih-Yuan (TPE)	CHIANG Hung-Chieh (TPE)	HUANG Sheng-Sheng (TPE)	MD	Main Draw	QuarterFinal	0 - 3	9:11 9:11 8:11	CHIANG Hung-Chieh	HUANG Sheng-Sheng
+2013	World Tour German Open Bremen 2013	CHIANG Hung-Chieh (TPE)	HUANG Sheng-Sheng (TPE)	KIM Donghyun (KOR)	LEE Jungwoo (KOR)	MD	Main Draw	SemiFinal	3 - 0	11:9 11:9 11:8	CHIANG Hung-Chieh	HUANG Sheng-Sheng
+2013	World Tour German Open Bremen 2013	CHIANG Hung-Chieh (TPE)	HUANG Sheng-Sheng (TPE)	BOLL Timo (GER)	FRANZISKA Patrick (GER)	MD	Main Draw	Final	2 - 3	8:11 11:7 11:8 11:13 10:12	BOLL Timo	FRANZISKA Patrick
+2013	World Tour German Open Bremen 2013	JHA Kanak (USA)	WANG Timothy (USA)	KARLSSON Kristian (SWE)	OVERSJO Mattias (SWE)	MD	Qualification	QR64	1 - 3	11:7 3:11 5:11 3:11	KARLSSON Kristian	OVERSJO Mattias
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 46
+
+2013	World Tour German Open Bremen 2013	POLCANOVA Sofia (AUT)	SOLJA Amelie (AUT)	AGGARWAL Neha (IND)	KUMARESAN Shamini (IND)	WD	Qualification	QR32	3 - 2	11:2 11:7 11:13 5:11 11:7	POLCANOVA Sofia	SOLJA Amelie
+2013	World Tour German Open Bremen 2013	POLCANOVA Sofia (AUT)	SOLJA Amelie (AUT)	GASNIER Laura (FRA)	GRUNDISCH Carole (FRA)	WD	Qualification	QR16	3 - 0	11:3 11:8 11:6	POLCANOVA Sofia	SOLJA Amelie
+2013	World Tour German Open Bremen 2013	POLCANOVA Sofia (AUT)	SOLJA Amelie (AUT)	WEN Jia (CHN)	ZHAO Yan (CHN)	WD	Main Draw	QuarterFinal	0 - 3	10:12 4:11 5:11	WEN Jia	ZHAO Yan
+2013	World Tour German Open Bremen 2013	KUMAHARA Luca (BRA)	YAMADA Jessica (BRA)	JEON Jihee (KOR)	PARK Seonghye (KOR)	WD	Qualification	QR16	0 - 3	7:11 4:11 5:11	JEON Jihee	PARK Seonghye
+2013	World Tour German Open Bremen 2013	LIU Gaoyang (CHN)	ZHANG Qiang (CHN)	DOO Hoi Kem (HKG)	NG Wing Nam (HKG)	WD	Qualification	QR32	2 - 3	11:8 11:7 8:11 10:12 14:16	DOO Hoi Kem	NG Wing Nam
+2013	World Tour German Open Bremen 2013	HU Limei (CHN)	SHENG Dandan (CHN)	DODEAN Daniela (ROU)	SAMARA Elizabeta (ROU)	WD	Qualification	QR32	2 - 3	14:12 2:11 10:12 11:8 8:11	DODEAN Daniela	SAMARA Elizabeta
+2013	World Tour German Open Bremen 2013	WEN Jia (CHN)	ZHAO Yan (CHN)	JO Yujin (KOR)	YOO Eunchong (KOR)	WD	Qualification	QR32	3 - 0	11:6 11:4 11:2	WEN Jia	ZHAO Yan
+2013	World Tour German Open Bremen 2013	WEN Jia (CHN)	ZHAO Yan (CHN)	BARTHEL Zhenqi (GER)	SHAN Xiaona (GER)	WD	Qualification	QR16	3 - 0	11:8 11:4 11:5	WEN Jia	ZHAO Yan
+2013	World Tour German Open Bremen 2013	WEN Jia (CHN)	ZHAO Yan (CHN)	FENG Tianwei (SGP)	YU Mengyu (SGP)	WD	Main Draw	R16	3 - 0	11:9 11:9 11:6	WEN Jia	ZHAO Yan
+2013	World Tour German Open Bremen 2013	VARADY Barbora (SVK)	MATELOVA Hana (CZE)	HU Melek (TUR)	NOSKOVA Yana (RUS)	WD	Qualification	QR32	3 - 1	11:7 11:5 3:11 11:7	VARADY Barbora	MATELOVA Hana
+2013	World Tour German Open Bremen 2013	ELDAWLATLY Nadeen (EGY)	MESHREF Dina (EGY)	PHILLIPS Angharad (WAL)	PHILLIPS Megan (WAL)	WD	Qualification	QR64	3 - 1	6:11 13:11 11:9 11:5	ELDAWLATLY Nadeen	MESHREF Dina
+2013	World Tour German Open Bremen 2013	ELDAWLATLY Nadeen (EGY)	MESHREF Dina (EGY)	GASNIER Laura (FRA)	GRUNDISCH Carole (FRA)	WD	Qualification	QR32	0 - 3	8:11 9:11 10:12	GASNIER Laura	GRUNDISCH Carole
+2013	World Tour German Open Bremen 2013	LENNON Emmanuelle (FRA)	LOEUILLETTE Stephanie (FRA)	HU Limei (CHN)	SHENG Dandan (CHN)	WD	Qualification	QR64	1 - 3	3:11 6:11 11:7 7:11	HU Limei	SHENG Dandan
+2013	World Tour German Open Bremen 2013	MANTZ Chantal (GER)	SCHUH Anja (GER)	BILENKO Tetyana (UKR)	HAPONOVA Hanna (UKR)	WD	Qualification	QR64	0 - 3	9:11 3:11 4:11	BILENKO Tetyana	HAPONOVA Hanna
+2013	World Tour German Open Bremen 2013	KRAFT Theresa (GER)	MITTELHAM Nina (GER)	NECULA Iulia (ROU)	SZOCS Bernadette (ROU)	WD	Qualification	QR64	0 - 3	6:11 4:11 4:11	NECULA Iulia	SZOCS Bernadette
+2013	World Tour German Open Bremen 2013	HAN Ying (GER)	IVANCAN Irene (GER)	DODEAN Daniela (ROU)	SAMARA Elizabeta (ROU)	WD	Qualification	QR16	3 - 1	8:11 14:12 12:10 11:7	HAN Ying	IVANCAN Irene
+2013	World Tour German Open Bremen 2013	SOLJA Petrissa (GER)	WINTER Sabine (GER)	JEON Jihee (KOR)	PARK Seonghye (KOR)	WD	Main Draw	R16	3 - 2	6:11 4:11 11:6 11:3 11:2	SOLJA Petrissa	WINTER Sabine
+2013	World Tour German Open Bremen 2013	LANG Kristin (GER)	WU Jiaduo (GER)	POLCANOVA Sofia (AUT)	SOLJA Amelie (AUT)	WD	Main Draw	R16	2 - 3	7:11 9:11 11:8 11:4 10:12	POLCANOVA Sofia	SOLJA Amelie
+2013	World Tour German Open Bremen 2013	SOLJA Petrissa (GER)	WINTER Sabine (GER)	DOO Hoi Kem (HKG)	NG Wing Nam (HKG)	WD	Main Draw	QuarterFinal	3 - 0	11:6 11:6 11:9	SOLJA Petrissa	WINTER Sabine
+2013	World Tour German Open Bremen 2013	DOO Hoi Kem (HKG)	NG Wing Nam (HKG)	PARK Youngsook (KOR)	YANG Ha Eun (KOR)	WD	Main Draw	R16	3 - 1	5:11 11:9 11:4 11:9	DOO Hoi Kem	NG Wing Nam
+2013	World Tour German Open Bremen 2013	JIANG Huajun (HKG)	LEE Ho Ching (HKG)	HAN Ying (GER)	IVANCAN Irene (GER)	WD	Main Draw	R16	3 - 1	12:10 8:11 11:6 11:7	JIANG Huajun	LEE Ho Ching
+2013	World Tour German Open Bremen 2013	JIANG Huajun (HKG)	LEE Ho Ching (HKG)	NECULA Iulia (ROU)	SZOCS Bernadette (ROU)	WD	Main Draw	QuarterFinal	1 - 3	11:9 11:13 7:11 6:11	NECULA Iulia	SZOCS Bernadette
+2013	World Tour German Open Bremen 2013	LOVAS Petra (HUN)	MADARASZ Dora (HUN)	LIN Ye (CAN)	ZHOU Yihan (SGP)	WD	Qualification	QR32	3 - 0	11:8 11:9 11:8	LOVAS Petra	MADARASZ Dora
+2013	World Tour German Open Bremen 2013	PERGEL Szandra (HUN)	POTA Georgina (HUN)	HIRANO Sayaka (JPN)	ISHIKAWA Kasumi (JPN)	WD	Main Draw	R16	3 - 2	11:9 11:3 9:11 12:14 11:9	PERGEL Szandra	POTA Georgina
+2013	World Tour German Open Bremen 2013	DAS Ankita (IND)	GHATAK Poulomi (IND)	VOROBEVA Olga (RUS)	FETUKHINA Margarita (RUS)	WD	Qualification	QR64	0 - 3	5:11 11:13 8:11	VOROBEVA Olga	FETUKHINA Margarita
+2013	World Tour German Open Bremen 2013	PATKAR Madhurika (IND)	SAHASRABUDHE Pooja (IND)	DIEKER Suzanne (NED)	VAN DUIN Rianne (NED)	WD	Qualification	QR64	3 - 1	11:3 11:8 9:11 12:10	PATKAR Madhurika	SAHASRABUDHE Pooja
+2013	World Tour German Open Bremen 2013	PATKAR Madhurika (IND)	SAHASRABUDHE Pooja (IND)	JEON Jihee (KOR)	PARK Seonghye (KOR)	WD	Qualification	QR32	0 - 3	5:11 6:11 8:11	JEON Jihee	PARK Seonghye
+2013	World Tour German Open Bremen 2013	FUKUHARA Ai (JPN)	WAKAMIYA Misako (JPN)	BILENKO Tetyana (UKR)	HAPONOVA Hanna (UKR)	WD	Qualification	QR32	3 - 1	11:6 11:5 8:11 11:8	FUKUHARA Ai	WAKAMIYA Misako
+2013	World Tour German Open Bremen 2013	HIRANO Miu (JPN)	ITO Mima (JPN)	VOROBEVA Olga (RUS)	FETUKHINA Margarita (RUS)	WD	Qualification	QR32	3 - 1	11:7 9:11 14:12 11:9	HIRANO Miu	ITO Mima
+2013	World Tour German Open Bremen 2013	FUKUHARA Ai (JPN)	WAKAMIYA Misako (JPN)	LOVAS Petra (HUN)	MADARASZ Dora (HUN)	WD	Qualification	QR16	3 - 1	11:6 9:11 11:5 11:5	FUKUHARA Ai	WAKAMIYA Misako
+2013	World Tour German Open Bremen 2013	HIRANO Miu (JPN)	ITO Mima (JPN)	PERGEL Szandra (HUN)	POTA Georgina (HUN)	WD	Qualification	QR16	0 - 3	8:11 7:11 4:11	PERGEL Szandra	POTA Georgina
+2013	World Tour German Open Bremen 2013	FUKUHARA Ai (JPN)	WAKAMIYA Misako (JPN)	PERGEL Szandra (HUN)	POTA Georgina (HUN)	WD	Main Draw	QuarterFinal	3 - 1	13:11 7:11 11:6 11:9	FUKUHARA Ai	WAKAMIYA Misako
+2013	World Tour German Open Bremen 2013	FUKUHARA Ai (JPN)	WAKAMIYA Misako (JPN)	SOLJA Petrissa (GER)	WINTER Sabine (GER)	WD	Main Draw	SemiFinal	3 - 0	11:7 11:7 11:7	FUKUHARA Ai	WAKAMIYA Misako
+2013	World Tour German Open Bremen 2013	FUKUHARA Ai (JPN)	WAKAMIYA Misako (JPN)	WEN Jia (CHN)	ZHAO Yan (CHN)	WD	Main Draw	Final	2 - 3	11:3 11:8 13:15 8:11 7:11	WEN Jia	ZHAO Yan
+2013	World Tour German Open Bremen 2013	KUSINSKA Klaudia (POL)	TIMINA Yana (NED)	CECHOVA Dana (CZE)	STRBIKOVA Renata (CZE)	WD	Qualification	QR64	3 - 1	11:6 12:10 6:11 11:6	KUSINSKA Klaudia	TIMINA Yana
+2013	World Tour German Open Bremen 2013	CREEMERS Linda (NED)	LI Jiao (NED)	NECULA Iulia (ROU)	SZOCS Bernadette (ROU)	WD	Qualification	QR32	0 - 3	9:11 4:11 6:11	NECULA Iulia	SZOCS Bernadette
+2013	World Tour German Open Bremen 2013	STEFANSKA Kinga (POL)	ZALOMSKA Roksana (POL)	AGGARWAL Neha (IND)	KUMARESAN Shamini (IND)	WD	Qualification	QR64	1 - 3	5:11 11:8 10:12 6:11	AGGARWAL Neha	KUMARESAN Shamini
+2013	World Tour German Open Bremen 2013	LIU Yuan (AUT)	IACOB Camelia (ROU)	BARTHEL Zhenqi (GER)	SHAN Xiaona (GER)	WD	Qualification	QR32	2 - 3	11:6 7:11 11:7 10:12 5:11	BARTHEL Zhenqi	SHAN Xiaona
+2013	World Tour German Open Bremen 2013	NECULA Iulia (ROU)	SZOCS Bernadette (ROU)	VARADY Barbora (SVK)	MATELOVA Hana (CZE)	WD	Qualification	QR16	3 - 2	11:9 5:11 9:11 14:12 11:9	NECULA Iulia	SZOCS Bernadette
+2013	World Tour German Open Bremen 2013	NECULA Iulia (ROU)	SZOCS Bernadette (ROU)	GRZYBOWSKA-FRANC Katarzyna (POL)	PARTYKA Natalia (POL)	WD	Main Draw	R16	3 - 1	3:11 11:8 11:8 11:6	NECULA Iulia	SZOCS Bernadette
+2013	World Tour German Open Bremen 2013	NECULA Iulia (ROU)	SZOCS Bernadette (ROU)	WEN Jia (CHN)	ZHAO Yan (CHN)	WD	Main Draw	SemiFinal	1 - 3	7:11 11:9 3:11 7:11	WEN Jia	ZHAO Yan
+2013	World Tour German Open Bremen 2013	KNEZEVIC Monika (SRB)	TODOROVIC Andrea (SRB)	PERGEL Szandra (HUN)	POTA Georgina (HUN)	WD	Qualification	QR32	0 - 3	11:13 3:11 7:11	PERGEL Szandra	POTA Georgina
+2013	World Tour German Open Bremen 2013	HSU Hui-Tsun (TPE)	LEE I-Chen (TPE)	JO Yujin (KOR)	YOO Eunchong (KOR)	WD	Qualification	QR64	2 - 3	7:11 7:11 13:11 11:7 11:13	JO Yujin	YOO Eunchong
+2013	World Tour German Open Bremen 2013	CHENG Hsien-Tzu (TPE)	CHEN Szu-Yu (TPE)	KUSINSKA Klaudia (POL)	TIMINA Yana (NED)	WD	Qualification	QR32	3 - 0	11:8 11:2 11:8	CHENG Hsien-Tzu	CHEN Szu-Yu
+2013	World Tour German Open Bremen 2013	CHENG Hsien-Tzu (TPE)	CHEN Szu-Yu (TPE)	DOO Hoi Kem (HKG)	NG Wing Nam (HKG)	WD	Qualification	QR16	1 - 3	4:11 7:11 11:9 9:11	DOO Hoi Kem	NG Wing Nam
+2013	World Tour German Open Bremen 2013	CHENG I-Ching (TPE)	HUANG Yi-Hua (TPE)	FUKUHARA Ai (JPN)	WAKAMIYA Misako (JPN)	WD	Main Draw	R16	0 - 3	4:11 5:11 9:11	FUKUHARA Ai	WAKAMIYA Misako

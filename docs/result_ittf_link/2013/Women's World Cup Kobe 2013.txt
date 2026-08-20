@@ -1,0 +1,41 @@
+	2013	Women's World Cup Kobe 2013	ITTF World Cup	--	32	2013-09-21	2013-09-23
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+50
+Total: 32
+
+2013	Women's World Cup Kobe 2013	LIU Shiwen (CHN)		YU Mengyu (SGP)		WS	Main Draw	QuarterFinal	4 - 0	11:6 11:4 11:2 11:8	LIU Shiwen	
+2013	Women's World Cup Kobe 2013	JIANG Huajun (HKG)		SHEN Yanfei (ESP)		WS	Main Draw	QuarterFinal	4 - 1	10:12 11:8 11:2 11:7 11:8	JIANG Huajun	
+2013	Women's World Cup Kobe 2013	WU Yang (CHN)		FUKUHARA Ai (JPN)		WS	Main Draw	QuarterFinal	4 - 1	7:11 11:7 11:8 11:9 11:2	WU Yang	
+2013	Women's World Cup Kobe 2013	ISHIKAWA Kasumi (JPN)		FENG Tianwei (SGP)		WS	Main Draw	QuarterFinal	3 - 4	7:11 11:9 11:8 9:11 4:11 11:9 7:11	FENG Tianwei	
+2013	Women's World Cup Kobe 2013	LIU Shiwen (CHN)		JIANG Huajun (HKG)		WS	Main Draw	SemiFinal	4 - 1	4:11 11:3 11:9 11:8 11:7	LIU Shiwen	
+2013	Women's World Cup Kobe 2013	WU Yang (CHN)		FENG Tianwei (SGP)		WS	Main Draw	SemiFinal	4 - 1	11:8 8:11 11:8 11:7 12:10	WU Yang	
+2013	Women's World Cup Kobe 2013	LIU Shiwen (CHN)		WU Yang (CHN)		WS	Main Draw	Final	4 - 0	11:3 11:7 11:7 11:2	LIU Shiwen	
+2013	Women's World Cup Kobe 2013	JIANG Huajun (HKG)		FENG Tianwei (SGP)		WS	Position Draw	2	0 - 4	6:11 11:13 10:12 2:11	FENG Tianwei	
+2013	Women's World Cup Kobe 2013	BILENKO Tetyana (UKR)		HAN Xing (CGO)		WS	Qualification		4 - 0	11:8 11:6 11:7 13:11	BILENKO Tetyana	
+2013	Women's World Cup Kobe 2013	YANG Ha Eun (KOR)		HAN Xing (CGO)		WS	Qualification		2 - 4	11:8 11:7 9:11 6:11 8:11 9:11	HAN Xing	
+2013	Women's World Cup Kobe 2013	YANG Ha Eun (KOR)		BILENKO Tetyana (UKR)		WS	Qualification		4 - 1	11:8 11:7 11:7 9:11 11:2	YANG Ha Eun	
+2013	Women's World Cup Kobe 2013	HSING Ariel (USA)		LI Chunli (NZL)		WS	Qualification		4 - 1	11:4 10:12 11:9 11:4 11:2	HSING Ariel	
+2013	Women's World Cup Kobe 2013	LIU Jia (AUT)		LI Chunli (NZL)		WS	Qualification		4 - 2	11:2 11:9 9:11 9:11 11:9 11:4	LIU Jia	
+2013	Women's World Cup Kobe 2013	LIU Jia (AUT)		HSING Ariel (USA)		WS	Qualification		4 - 2	9:11 12:10 11:6 11:5 6:11 11:7	LIU Jia	
+2013	Women's World Cup Kobe 2013	HU Melek (TUR)		SILVA Yadira (MEX)		WS	Qualification		4 - 0	13:11 11:5 11:8 11:7	HU Melek	
+2013	Women's World Cup Kobe 2013	YU Mengyu (SGP)		SILVA Yadira (MEX)		WS	Qualification		4 - 0	11:8 11:3 11:4 11:8	YU Mengyu	
+2013	Women's World Cup Kobe 2013	YU Mengyu (SGP)		HU Melek (TUR)		WS	Qualification		4 - 1	11:6 11:9 11:5 6:11 14:12	YU Mengyu	
+2013	Women's World Cup Kobe 2013	KOMWONG Nanthana (THA)		MIAO Miao (AUS)		WS	Qualification		4 - 0	11:4 11:3 11:7 11:5	KOMWONG Nanthana	
+2013	Women's World Cup Kobe 2013	HIRANO Sayaka (JPN)		MIAO Miao (AUS)		WS	Qualification		4 - 0	11:6 11:8 11:3 11:4	HIRANO Sayaka	
+2013	Women's World Cup Kobe 2013	HIRANO Sayaka (JPN)		KOMWONG Nanthana (THA)		WS	Qualification		4 - 3	11:8 6:11 11:7 11:6 9:11 8:11 11:1	HIRANO Sayaka	
+2013	Women's World Cup Kobe 2013	LIU Shiwen (CHN)		SEOK Hajung (KOR)		WS	Qualification		4 - 0	11:1 11:6 11:4 13:11	LIU Shiwen	
+2013	Women's World Cup Kobe 2013	LIU Shiwen (CHN)		YU Mengyu (SGP)		WS	Qualification		4 - 3	10:12 8:11 6:11 11:8 11:2 11:4 11:5	LIU Shiwen	
+2013	Women's World Cup Kobe 2013	SEOK Hajung (KOR)		YU Mengyu (SGP)		WS	Qualification		0 - 4	6:11 9:11 6:11 10:12	YU Mengyu	
+2013	Women's World Cup Kobe 2013	FENG Tianwei (SGP)		FUKUHARA Ai (JPN)		WS	Qualification		4 - 2	9:11 7:11 11:3 11:3 11:9 11:5	FENG Tianwei	
+2013	Women's World Cup Kobe 2013	FENG Tianwei (SGP)		LIU Jia (AUT)		WS	Qualification		4 - 1	11:5 11:1 11:9 12:14 11:7	FENG Tianwei	
+2013	Women's World Cup Kobe 2013	FUKUHARA Ai (JPN)		LIU Jia (AUT)		WS	Qualification		4 - 1	12:10 11:13 11:7 17:15 11:9	FUKUHARA Ai	
+2013	Women's World Cup Kobe 2013	WU Yang (CHN)		JIANG Huajun (HKG)		WS	Qualification		4 - 0	11:6 11:8 11:5 11:5	WU Yang	
+2013	Women's World Cup Kobe 2013	WU Yang (CHN)		HIRANO Sayaka (JPN)		WS	Qualification		4 - 1	11:5 11:7 8:11 11:9 11:6	WU Yang	
+2013	Women's World Cup Kobe 2013	JIANG Huajun (HKG)		HIRANO Sayaka (JPN)		WS	Qualification		4 - 2	5:11 7:11 12:10 11:5 11:7 11:7	JIANG Huajun	
+2013	Women's World Cup Kobe 2013	ISHIKAWA Kasumi (JPN)		SHEN Yanfei (ESP)		WS	Qualification		0 - 4	9:11 9:11 9:11 8:11	SHEN Yanfei	
+2013	Women's World Cup Kobe 2013	ISHIKAWA Kasumi (JPN)		BILENKO Tetyana (UKR)		WS	Qualification		4 - 1	11:6 9:11 11:8 11:5 11:6	ISHIKAWA Kasumi	
+2013	Women's World Cup Kobe 2013	SHEN Yanfei (ESP)		BILENKO Tetyana (UKR)		WS	Qualification		4 - 0	11:6 11:4 11:9 11:2	SHEN Yanfei
+

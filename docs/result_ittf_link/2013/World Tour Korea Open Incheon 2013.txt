@@ -10,3 +10,261 @@
 ----------------------------------------
 数据来源：ITTF World Tour 2013
 文件生成时间：自动生成
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 2 Total: 150
+
+Start
+Prev
+1
+2
+Next
+End
+2013	World Tour Korea Open Incheon 2013	MA Long (CHN)		YU Jiaqing (SGP)		MS	Main Draw	R64	4 - 0	11:5 11:2 12:10 12:10	MA Long	
+2013	World Tour Korea Open Incheon 2013	JANG Woojin (KOR)		LI Hu (SGP)		MS	Main Draw	R64	3 - 4	11:9 11:13 11:4 3:11 9:11 11:9 12:14	LI Hu	
+2013	World Tour Korea Open Incheon 2013	LIVENTSOV Alexey (RUS)		CHIANG Hung-Chieh (TPE)		MS	Main Draw	R64	4 - 1	11:8 9:11 11:8 11:4 11:8	LIVENTSOV Alexey	
+2013	World Tour Korea Open Incheon 2013	KIM Donghyun (KOR)		KISHIKAWA Seiya (JPN)		MS	Main Draw	R64	0 - 4	9:11 5:11 6:11 7:11	KISHIKAWA Seiya	
+2013	World Tour Korea Open Incheon 2013	CHAN Kazuhiro (JPN)		CHO Seungmin (KOR)		MS	Main Draw	R64	4 - 1	9:11 11:7 11:2 11:7 12:10	CHAN Kazuhiro	
+2013	World Tour Korea Open Incheon 2013	KANG Dongsoo (KOR)		MURAMATSU Yuto (JPN)		MS	Main Draw	R64	4 - 3	10:12 11:13 11:6 6:11 11:4 11:7 11:4	KANG Dongsoo	
+2013	World Tour Korea Open Incheon 2013	MATSUDAIRA Kenji (JPN)		KANG Donghoon (KOR)		MS	Main Draw	R64	2 - 4	11:4 12:10 11:13 6:11 2:11 7:11	KANG Donghoon	
+2013	World Tour Korea Open Incheon 2013	KUZMIN Fedor (RUS)		RYU Seungmin (KOR)		MS	Main Draw	R64	3 - 4	11:6 11:2 9:11 6:11 8:11 16:14 5:11	RYU Seungmin	
+2013	World Tour Korea Open Incheon 2013	MA Lin (CHN)		MA Liang (SGP)		MS	Main Draw	R64	4 - 1	8:11 11:6 12:10 15:13 11:3	MA Lin	
+2013	World Tour Korea Open Incheon 2013	KEINATH Thomas (SVK)		YANG Zi (SGP)		MS	Main Draw	R64	4 - 3	11:5 8:11 12:10 3:11 8:11 11:9 12:10	KEINATH Thomas	
+2013	World Tour Korea Open Incheon 2013	SEO Hyundeok (KOR)		MORIZONO Masataka (JPN)		MS	Main Draw	R64	2 - 4	6:11 11:7 5:11 11:3 6:11 6:11	MORIZONO Masataka	
+2013	World Tour Korea Open Incheon 2013	SAKAI Asuka (JPN)		LEE Jungwoo (KOR)		MS	Main Draw	R64	1 - 4	11:8 5:11 7:11 6:11 5:11	LEE Jungwoo	
+2013	World Tour Korea Open Incheon 2013	MATTENET Adrien (FRA)		MAK King Ho (HKG)		MS	Main Draw	R64	4 - 1	4:11 11:4 11:8 11:5 11:8	MATTENET Adrien	
+2013	World Tour Korea Open Incheon 2013	GAUZY Simon (FRA)		JEONG Sangeun (KOR)		MS	Main Draw	R64	3 - 4	11:5 2:11 11:5 8:11 8:11 17:15 9:11	JEONG Sangeun	
+2013	World Tour Korea Open Incheon 2013	JEOUNG Youngsik (KOR)		HUNG Tzu-Hsiang (TPE)		MS	Main Draw	R64	4 - 0	11:7 11:5 13:11 11:8	JEOUNG Youngsik	
+2013	World Tour Korea Open Incheon 2013	LEE Seunghyeok (KOR)		WANG Hao (CHN)		MS	Main Draw	R64	0 - 4	3:11 5:11 3:11 4:11	WANG Hao	
+2013	World Tour Korea Open Incheon 2013	ZHANG Jike (CHN)		SEO Junghwa (KOR)		MS	Main Draw	R64	4 - 0	11:8 11:8 11:5 14:12	ZHANG Jike	
+2013	World Tour Korea Open Incheon 2013	YOSHIMURA Maharu (JPN)		VANG Bora (TUR)		MS	Main Draw	R64	4 - 0	11:8 16:14 11:8 11:5	YOSHIMURA Maharu	
+2013	World Tour Korea Open Incheon 2013	LEBESSON Emmanuel (FRA)		CHOI Deokhwa (KOR)		MS	Main Draw	R64	4 - 0	11:8 11:9 11:5 11:6	LEBESSON Emmanuel	
+2013	World Tour Korea Open Incheon 2013	KANG Minho (KOR)		YAN An (CHN)		MS	Main Draw	R64	0 - 4	5:11 5:11 10:12 5:11	YAN An	
+2013	World Tour Korea Open Incheon 2013	TAKAKIWA Taku (JPN)		PARK Chan-Hyeok (KOR)		MS	Main Draw	R64	4 - 1	12:10 12:10 9:11 11:6 11:8	TAKAKIWA Taku	
+2013	World Tour Korea Open Incheon 2013	HIGASHI Yuto (JPN)		CHO Eonrae (KOR)		MS	Main Draw	R64	3 - 4	13:11 12:10 11:13 8:11 11:7 8:11 4:11	CHO Eonrae	
+2013	World Tour Korea Open Incheon 2013	SKACHKOV Kirill (RUS)		KIM Kyungmin (KOR)		MS	Main Draw	R64	2 - 4	9:11 11:9 5:11 3:11 11:5 11:13	KIM Kyungmin	
+2013	World Tour Korea Open Incheon 2013	OYA Hidetoshi (JPN)		OH Sangeun (KOR)		MS	Main Draw	R64	4 - 3	11:13 9:11 11:4 11:7 10:12 11:6 11:4	OYA Hidetoshi	
+2013	World Tour Korea Open Incheon 2013	MIZUTANI Jun (JPN)		BUROV Viacheslav (RUS)		MS	Main Draw	R64	4 - 3	9:11 8:11 8:11 11:8 11:4 11:7 11:4	MIZUTANI Jun	
+2013	World Tour Korea Open Incheon 2013	KASAHARA Hiromitsu (JPN)		TANG Peng (HKG)		MS	Main Draw	R64	1 - 4	4:11 2:11 11:13 11:7 6:11	TANG Peng	
+2013	World Tour Korea Open Incheon 2013	CHEN Feng (SGP)		KIM Minhyeok (KOR)		MS	Main Draw	R64	4 - 0	15:13 11:8 11:5 11:8	CHEN Feng	
+2013	World Tour Korea Open Incheon 2013	MENGE Gencay (TUR)		ZHAN Jian (SGP)		MS	Main Draw	R64	1 - 4	7:11 13:11 2:11 4:11 2:11	ZHAN Jian	
+2013	World Tour Korea Open Incheon 2013	NIWA Koki (JPN)		PAIKOV Mikhail (RUS)		MS	Main Draw	R64	4 - 2	7:11 11:5 11:8 8:11 11:8 11:6	NIWA Koki	
+2013	World Tour Korea Open Incheon 2013	KIM Taehoon (KOR)		CHEUNG Yuk (HKG)		MS	Main Draw	R64	4 - 2	11:8 12:10 2:11 11:7 3:11 11:9	KIM Taehoon	
+2013	World Tour Korea Open Incheon 2013	LEE Sang Su (KOR)		WONG Chun Ting (HKG)		MS	Main Draw	R64	4 - 0	11:6 11:7 11:3 11:5	LEE Sang Su	
+2013	World Tour Korea Open Incheon 2013	WU Chih-Chi (TPE)		XU Xin (CHN)		MS	Main Draw	R64	0 - 4	8:11 8:11 6:11 4:11	XU Xin	
+2013	World Tour Korea Open Incheon 2013	MA Long (CHN)		LI Hu (SGP)		MS	Main Draw	R32	4 - 0	11:5 11:4 11:1 11:4	MA Long	
+2013	World Tour Korea Open Incheon 2013	LIVENTSOV Alexey (RUS)		KISHIKAWA Seiya (JPN)		MS	Main Draw	R32	4 - 1	11:9 11:7 11:2 5:11 12:10	LIVENTSOV Alexey	
+2013	World Tour Korea Open Incheon 2013	CHAN Kazuhiro (JPN)		KANG Dongsoo (KOR)		MS	Main Draw	R32	3 - 4	6:11 3:11 11:7 9:11 12:10 11:6 4:11	KANG Dongsoo	
+2013	World Tour Korea Open Incheon 2013	KANG Donghoon (KOR)		RYU Seungmin (KOR)		MS	Main Draw	R32	2 - 4	4:11 11:5 10:12 11:9 4:11 9:11	RYU Seungmin	
+2013	World Tour Korea Open Incheon 2013	MA Lin (CHN)		KEINATH Thomas (SVK)		MS	Main Draw	R32	4 - 0	11:5 11:8 11:7 11:6	MA Lin	
+2013	World Tour Korea Open Incheon 2013	MORIZONO Masataka (JPN)		LEE Jungwoo (KOR)		MS	Main Draw	R32	0 - 4	7:11 9:11 10:12 6:11	LEE Jungwoo	
+2013	World Tour Korea Open Incheon 2013	MATTENET Adrien (FRA)		JEONG Sangeun (KOR)		MS	Main Draw	R32	4 - 1	11:7 11:2 5:11 11:9 11:9	MATTENET Adrien	
+2013	World Tour Korea Open Incheon 2013	JEOUNG Youngsik (KOR)		WANG Hao (CHN)		MS	Main Draw	R32	2 - 4	7:11 4:11 12:10 11:7 5:11 4:11	WANG Hao	
+2013	World Tour Korea Open Incheon 2013	ZHANG Jike (CHN)		YOSHIMURA Maharu (JPN)		MS	Main Draw	R32	4 - 1	11:9 12:10 12:10 9:11 12:10	ZHANG Jike	
+2013	World Tour Korea Open Incheon 2013	LEBESSON Emmanuel (FRA)		YAN An (CHN)		MS	Main Draw	R32	0 - 4	3:11 8:11 8:11 7:11	YAN An	
+2013	World Tour Korea Open Incheon 2013	TAKAKIWA Taku (JPN)		CHO Eonrae (KOR)		MS	Main Draw	R32	4 - 0	11:6 11:5 11:9 11:5	TAKAKIWA Taku	
+2013	World Tour Korea Open Incheon 2013	KIM Kyungmin (KOR)		OYA Hidetoshi (JPN)		MS	Main Draw	R32	4 - 0	11:7 11:8 11:2 11:9	KIM Kyungmin	
+2013	World Tour Korea Open Incheon 2013	MIZUTANI Jun (JPN)		TANG Peng (HKG)		MS	Main Draw	R32	4 - 0	11:9 12:10 11:9 12:10	MIZUTANI Jun	
+2013	World Tour Korea Open Incheon 2013	CHEN Feng (SGP)		ZHAN Jian (SGP)		MS	Main Draw	R32	1 - 4	4:11 6:11 11:3 8:11 9:11	ZHAN Jian	
+2013	World Tour Korea Open Incheon 2013	NIWA Koki (JPN)		KIM Taehoon (KOR)		MS	Main Draw	R32	4 - 2	11:7 7:11 4:11 11:9 11:6 11:9	NIWA Koki	
+2013	World Tour Korea Open Incheon 2013	LEE Sang Su (KOR)		XU Xin (CHN)		MS	Main Draw	R32	0 - 4	7:11 10:12 8:11 8:11	XU Xin	
+2013	World Tour Korea Open Incheon 2013	MA Long (CHN)		LIVENTSOV Alexey (RUS)		MS	Main Draw	R16	4 - 0	11:4 11:4 11:9 11:1	MA Long	
+2013	World Tour Korea Open Incheon 2013	KANG Dongsoo (KOR)		RYU Seungmin (KOR)		MS	Main Draw	R16	1 - 4	6:11 12:10 6:11 7:11 10:12	RYU Seungmin	
+2013	World Tour Korea Open Incheon 2013	MA Lin (CHN)		LEE Jungwoo (KOR)		MS	Main Draw	R16	4 - 2	12:10 11:9 10:12 11:7 6:11 11:6	MA Lin	
+2013	World Tour Korea Open Incheon 2013	MATTENET Adrien (FRA)		WANG Hao (CHN)		MS	Main Draw	R16	1 - 4	9:11 9:11 11:8 10:12 3:11	WANG Hao	
+2013	World Tour Korea Open Incheon 2013	ZHANG Jike (CHN)		YAN An (CHN)		MS	Main Draw	R16	3 - 4	11:3 13:11 9:11 11:8 8:11 6:11 11:13	YAN An	
+2013	World Tour Korea Open Incheon 2013	TAKAKIWA Taku (JPN)		KIM Kyungmin (KOR)		MS	Main Draw	R16	4 - 2	11:8 5:11 3:11 11:7 12:10 11:9	TAKAKIWA Taku	
+2013	World Tour Korea Open Incheon 2013	MIZUTANI Jun (JPN)		ZHAN Jian (SGP)		MS	Main Draw	R16	4 - 3	6:11 11:2 11:4 11:9 9:11 7:11 11:6	MIZUTANI Jun	
+2013	World Tour Korea Open Incheon 2013	NIWA Koki (JPN)		XU Xin (CHN)		MS	Main Draw	R16	1 - 4	7:11 8:11 12:10 2:11 5:11	XU Xin	
+2013	World Tour Korea Open Incheon 2013	MA Long (CHN)		RYU Seungmin (KOR)		MS	Main Draw	QuarterFinal	4 - 0	11:7 11:5 11:2 11:8	MA Long	
+2013	World Tour Korea Open Incheon 2013	MA Lin (CHN)		WANG Hao (CHN)		MS	Main Draw	QuarterFinal	2 - 4	7:11 11:7 10:12 7:11 11:8 10:12	WANG Hao	
+2013	World Tour Korea Open Incheon 2013	YAN An (CHN)		TAKAKIWA Taku (JPN)		MS	Main Draw	QuarterFinal	4 - 1	11:13 11:5 11:2 11:8 11:4	YAN An	
+2013	World Tour Korea Open Incheon 2013	MIZUTANI Jun (JPN)		XU Xin (CHN)		MS	Main Draw	QuarterFinal	1 - 4	9:11 11:9 4:11 6:11 8:11	XU Xin	
+2013	World Tour Korea Open Incheon 2013	MA Long (CHN)		WANG Hao (CHN)		MS	Main Draw	SemiFinal	4 - 2	11:3 9:11 9:11 11:5 11:4 12:10	MA Long	
+2013	World Tour Korea Open Incheon 2013	YAN An (CHN)		XU Xin (CHN)		MS	Main Draw	SemiFinal	0 - 4	8:11 12:14 3:11 7:11	XU Xin	
+2013	World Tour Korea Open Incheon 2013	MA Long (CHN)		XU Xin (CHN)		MS	Main Draw	Final	2 - 4	3:11 11:7 8:11 11:8 8:11 10:12	XU Xin	
+2013	World Tour Korea Open Incheon 2013	CHEN Feng (SGP)		PARK Chan-Hyeok (KOR)		U21MS	Main Draw	R16	3 - 1	13:11 8:11 11:7 11:7	CHEN Feng	
+2013	World Tour Korea Open Incheon 2013	KIM Minhyeok (KOR)		HUNG Tzu-Hsiang (TPE)		U21MS	Main Draw	R16	0 - 3	8:11 4:11 6:11	HUNG Tzu-Hsiang	
+2013	World Tour Korea Open Incheon 2013	KIM Donghyun (KOR)		LAI Yi-Yao (TPE)		U21MS	Main Draw	R16	3 - 2	7:11 11:5 11:6 6:11 11:7	KIM Donghyun	
+2013	World Tour Korea Open Incheon 2013	YU Jiaqing (SGP)		KANG Dongsoo (KOR)		U21MS	Main Draw	R16	0 - 3	10:12 10:12 6:11	KANG Dongsoo	
+2013	World Tour Korea Open Incheon 2013	GAUZY Simon (FRA)		JANG Woojin (KOR)		U21MS	Main Draw	R16	3 - 2	11:8 10:12 12:10 13:15 11:8	GAUZY Simon	
+2013	World Tour Korea Open Incheon 2013	LEE Seunghyeok (KOR)		MORIZONO Masataka (JPN)		U21MS	Main Draw	R16	0 - 3	8:11 1:11 8:11	MORIZONO Masataka	
+2013	World Tour Korea Open Incheon 2013	ANGLES Enzo (FRA)		SAKAI Asuka (JPN)		U21MS	Main Draw	R16	0 - 3	9:11 10:12 7:11	SAKAI Asuka	
+2013	World Tour Korea Open Incheon 2013	SUN Chia-Hung (TPE)		YOSHIMURA Maharu (JPN)		U21MS	Main Draw	R16	2 - 3	12:14 8:11 11:8 11:9 8:11	YOSHIMURA Maharu	
+2013	World Tour Korea Open Incheon 2013	CHEN Feng (SGP)		HUNG Tzu-Hsiang (TPE)		U21MS	Main Draw	QuarterFinal	2 - 4	11:6 2:11 5:11 8:11 12:10 9:11	HUNG Tzu-Hsiang	
+2013	World Tour Korea Open Incheon 2013	KIM Donghyun (KOR)		KANG Dongsoo (KOR)		U21MS	Main Draw	QuarterFinal	4 - 0	11:5 11:9 11:6 11:8	KIM Donghyun	
+2013	World Tour Korea Open Incheon 2013	GAUZY Simon (FRA)		MORIZONO Masataka (JPN)		U21MS	Main Draw	QuarterFinal	2 - 4	8:11 13:11 8:11 13:11 3:11 1:11	MORIZONO Masataka	
+2013	World Tour Korea Open Incheon 2013	SAKAI Asuka (JPN)		YOSHIMURA Maharu (JPN)		U21MS	Main Draw	QuarterFinal	2 - 4	9:11 11:9 11:4 4:11 11:13 9:11	YOSHIMURA Maharu	
+2013	World Tour Korea Open Incheon 2013	HUNG Tzu-Hsiang (TPE)		KIM Donghyun (KOR)		U21MS	Main Draw	SemiFinal	3 - 4	11:9 11:9 10:12 11:8 6:11 5:11 10:12	KIM Donghyun	
+2013	World Tour Korea Open Incheon 2013	MORIZONO Masataka (JPN)		YOSHIMURA Maharu (JPN)		U21MS	Main Draw	SemiFinal	3 - 4	11:7 8:11 7:11 11:9 5:11 11:4 10:12	YOSHIMURA Maharu	
+2013	World Tour Korea Open Incheon 2013	KIM Donghyun (KOR)		YOSHIMURA Maharu (JPN)		U21MS	Main Draw	Final	1 - 4	11:13 11:13 5:11 15:13 5:11	YOSHIMURA Maharu	
+2013	World Tour Korea Open Incheon 2013	LAI Yi-Yao (TPE)		KIM Doyub (KOR)		U21MS	Qualification		3 - 2	11:13 17:15 5:11 11:9 12:10	LAI Yi-Yao	
+2013	World Tour Korea Open Incheon 2013	HIGASHI Yuto (JPN)		KIM Doyub (KOR)		U21MS	Qualification		3 - 1	11:7 7:11 11:8 11:8	HIGASHI Yuto	
+2013	World Tour Korea Open Incheon 2013	HIGASHI Yuto (JPN)		LAI Yi-Yao (TPE)		U21MS	Qualification		2 - 3	13:11 6:11 11:13 11:3 4:11	LAI Yi-Yao	
+2013	World Tour Korea Open Incheon 2013	HWANG Minha (KOR)		AN Jaehyun (KOR)		U21MS	Qualification		0 - 3	2:11 8:11 9:11	AN Jaehyun	
+2013	World Tour Korea Open Incheon 2013	SAKAI Asuka (JPN)		AN Jaehyun (KOR)		U21MS	Qualification		3 - 0	11:4 11:7 11:8	SAKAI Asuka	
+2013	World Tour Korea Open Incheon 2013	SAKAI Asuka (JPN)		HWANG Minha (KOR)		U21MS	Qualification		3 - 0	11:4 11:6 11:7	SAKAI Asuka	
+2013	World Tour Korea Open Incheon 2013	RYUZAKI Tonin (JPN)		SUN Chia-Hung (TPE)		U21MS	Qualification		3 - 1	11:3 6:11 11:7 11:7	RYUZAKI Tonin	
+2013	World Tour Korea Open Incheon 2013	CHOI Deokhwa (KOR)		SUN Chia-Hung (TPE)		U21MS	Qualification		0 - 3	6:11 6:11 7:11	SUN Chia-Hung	
+2013	World Tour Korea Open Incheon 2013	CHOI Deokhwa (KOR)		RYUZAKI Tonin (JPN)		U21MS	Qualification		3 - 0	11:6 11:7 15:13	CHOI Deokhwa	
+2013	World Tour Korea Open Incheon 2013	MATSUDA Naoki (JPN)		KIM Daewoo (KOR)		U21MS	Qualification		3 - 2	12:10 11:6 9:11 8:11 11:9	MATSUDA Naoki	
+2013	World Tour Korea Open Incheon 2013	YU Jiaqing (SGP)		KIM Daewoo (KOR)		U21MS	Qualification		3 - 1	6:11 11:4 12:10 11:6	YU Jiaqing	
+2013	World Tour Korea Open Incheon 2013	YU Jiaqing (SGP)		MATSUDA Naoki (JPN)		U21MS	Qualification		3 - 2	8:11 5:11 11:2 11:6 13:11	YU Jiaqing	
+2013	World Tour Korea Open Incheon 2013	LU Po-Hsien (TPE)		MAK King Ho (HKG)		U21MS	Qualification		1 - 3	11:5 4:11 6:11 11:13	MAK King Ho	
+2013	World Tour Korea Open Incheon 2013	JANG Woojin (KOR)		MAK King Ho (HKG)		U21MS	Qualification		3 - 0	11:6 12:10 11:9	JANG Woojin	
+2013	World Tour Korea Open Incheon 2013	JANG Woojin (KOR)		LU Po-Hsien (TPE)		U21MS	Qualification		3 - 0	11:7 11:9 11:3	JANG Woojin	
+2013	World Tour Korea Open Incheon 2013	LEE Chun-Lin (TPE)		KIM Minho (KOR)		U21MS	Qualification		2 - 3	11:6 8:11 11:6 3:11 7:11	KIM Minho	
+2013	World Tour Korea Open Incheon 2013	KIM Minhyeok (KOR)		KIM Minho (KOR)		U21MS	Qualification		3 - 1	11:5 11:7 9:11 11:9	KIM Minhyeok	
+2013	World Tour Korea Open Incheon 2013	KIM Minhyeok (KOR)		LEE Chun-Lin (TPE)		U21MS	Qualification		3 - 0	11:2 11:3 11:7	KIM Minhyeok	
+2013	World Tour Korea Open Incheon 2013	KANG Minho (KOR)		LEE Seunghyeok (KOR)		U21MS	Qualification		0 - 3	7:11 7:11 4:11	LEE Seunghyeok	
+2013	World Tour Korea Open Incheon 2013	XIN Zhaoxu (SGP)		LEE Seunghyeok (KOR)		U21MS	Qualification		1 - 3	11:7 6:11 8:11 7:11	LEE Seunghyeok	
+2013	World Tour Korea Open Incheon 2013	XIN Zhaoxu (SGP)		KANG Minho (KOR)		U21MS	Qualification		2 - 3	11:6 8:11 11:6 8:11 14:16	KANG Minho	
+2013	World Tour Korea Open Incheon 2013	PENG Wang-Wei (TPE)		CHO Seungmin (KOR)		U21MS	Qualification		0 - 3	9:11 9:11 7:11	CHO Seungmin	
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 3 Total: 212
+
+Start
+Prev
+1
+2
+3
+Next
+End
+2013	World Tour Korea Open Incheon 2013	FENG Tianwei (SGP)		MATSUMOTO Yuki (JPN)		WS	Main Draw	R64	4 - 0	11:9 11:4 14:12 11:3	FENG Tianwei	
+2013	World Tour Korea Open Incheon 2013	YOO Eunchong (KOR)		LIU Gaoyang (CHN)		WS	Main Draw	R64	1 - 4	6:11 7:11 7:11 11:9 8:11	LIU Gaoyang	
+2013	World Tour Korea Open Incheon 2013	LEE Eunhee (KOR)		LIN Ye (CAN)		WS	Main Draw	R64	3 - 4	9:11 10:12 7:11 11:9 11:7 11:9 8:11	LIN Ye	
+2013	World Tour Korea Open Incheon 2013	ITO Mima (JPN)		SUH Hyo Won (KOR)		WS	Main Draw	R64	1 - 4	6:11 5:11 11:8 6:11 5:11	SUH Hyo Won	
+2013	World Tour Korea Open Incheon 2013	WU Jiaduo (GER)		JI Eunchae (KOR)		WS	Main Draw	R64	4 - 0	12:10 11:8 11:3 12:10	WU Jiaduo	
+2013	World Tour Korea Open Incheon 2013	TASHIRO Saki (JPN)		SOLJA Amelie (AUT)		WS	Main Draw	R64	0 - 4	2:11 4:11 0:11 4:11	SOLJA Amelie	
+2013	World Tour Korea Open Incheon 2013	CHENG I-Ching (TPE)		ONO Shiho (JPN)		WS	Main Draw	R64	4 - 1	18:16 11:7 5:11 11:2 11:6	CHENG I-Ching	
+2013	World Tour Korea Open Incheon 2013	SAKAI Haruka (JPN)		YANG Ha Eun (KOR)		WS	Main Draw	R64	1 - 4	11:7 4:11 3:11 5:11 7:11	YANG Ha Eun	
+2013	World Tour Korea Open Incheon 2013	SAMARA Elizabeta (ROU)		PARK Seonghye (KOR)		WS	Main Draw	R64	4 - 0	11:5 12:10 12:10 11:8	SAMARA Elizabeta	
+2013	World Tour Korea Open Incheon 2013	ZHOU Yihan (SGP)		LEE Ho Ching (HKG)		WS	Main Draw	R64	0 - 4	9:11 5:11 9:11 9:11	LEE Ho Ching	
+2013	World Tour Korea Open Incheon 2013	GU Yuting (CHN)		SONG Maeum (KOR)		WS	Main Draw	R64	4 - 2	7:11 11:4 11:8 9:11 11:6 11:6	GU Yuting	
+2013	World Tour Korea Open Incheon 2013	MORITA Ayane (JPN)		SEOK Hajung (KOR)		WS	Main Draw	R64	2 - 4	6:11 8:11 7:11 11:7 11:7 3:11	SEOK Hajung	
+2013	World Tour Korea Open Incheon 2013	JEON Jihee (KOR)		CHENG Hsien-Tzu (TPE)		WS	Main Draw	R64	4 - 0	13:11 11:7 11:9 11:4	JEON Jihee	
+2013	World Tour Korea Open Incheon 2013	LI Jiayi (CHN)		FUKUOKA Haruna (JPN)		WS	Main Draw	R64	4 - 1	11:8 12:10 6:11 11:9 11:4	LI Jiayi	
+2013	World Tour Korea Open Incheon 2013	WAKAMIYA Misako (JPN)		GUAN Mengyuan (HKG)		WS	Main Draw	R64	1 - 4	8:11 4:11 15:13 9:11 4:11	GUAN Mengyuan	
+2013	World Tour Korea Open Incheon 2013	KUZMINA Elena (RUS)		FUKUHARA Ai (JPN)		WS	Main Draw	R64	0 - 4	6:11 8:11 4:11 12:14	FUKUHARA Ai	
+2013	World Tour Korea Open Incheon 2013	ISHIKAWA Kasumi (JPN)		KIM Byeolnim (KOR)		WS	Main Draw	R64	4 - 0	11:2 11:9 11:8 11:4	ISHIKAWA Kasumi	
+2013	World Tour Korea Open Incheon 2013	YAMANASHI Yuri (JPN)		CHEN Szu-Yu (TPE)		WS	Main Draw	R64	3 - 4	4:11 8:11 11:7 12:10 11:4 9:11 11:13	CHEN Szu-Yu	
+2013	World Tour Korea Open Incheon 2013	MATSUDAIRA Shiho (JPN)		HSING Ariel (USA)		WS	Main Draw	R64	4 - 1	11:9 10:12 11:6 11:7 11:4	MATSUDAIRA Shiho	
+2013	World Tour Korea Open Incheon 2013	LEE Hyun (KOR)		LI Xue (FRA)		WS	Main Draw	R64	1 - 4	9:11 7:11 8:11 12:10 7:11	LI Xue	
+2013	World Tour Korea Open Incheon 2013	HIRANO Sayaka (JPN)		LI Ching Wan (HKG)		WS	Main Draw	R64	4 - 1	11:7 7:11 11:5 11:9 11:6	HIRANO Sayaka	
+2013	World Tour Korea Open Incheon 2013	NOSKOVA Yana (RUS)		NG Wing Nam (HKG)		WS	Main Draw	R64	4 - 3	9:11 11:7 8:11 11:4 7:11 11:7 11:3	NOSKOVA Yana	
+2013	World Tour Korea Open Incheon 2013	ISHIGAKI Yuka (JPN)		HU Melek (TUR)		WS	Main Draw	R64	3 - 4	7:11 11:5 11:3 11:8 6:11 9:11 6:11	HU Melek	
+2013	World Tour Korea Open Incheon 2013	KIM Junghyun (KOR)		TIE Yana (HKG)		WS	Main Draw	R64	4 - 2	4:11 11:13 11:6 11:8 12:10 11:5	KIM Junghyun	
+2013	World Tour Korea Open Incheon 2013	JIANG Huajun (HKG)		LEE I-Chen (TPE)		WS	Main Draw	R64	2 - 4	6:11 12:10 9:11 11:8 4:11 7:11	LEE I-Chen	
+2013	World Tour Korea Open Incheon 2013	AMANO Yu (JPN)		PARK Youngsook (KOR)		WS	Main Draw	R64	3 - 4	7:11 4:11 5:11 12:10 11:6 11:7 5:11	PARK Youngsook	
+2013	World Tour Korea Open Incheon 2013	SOLJA Petrissa (GER)		MAEDA Miyu (JPN)		WS	Main Draw	R64	4 - 0	11:9 12:10 13:11 13:11	SOLJA Petrissa	
+2013	World Tour Korea Open Incheon 2013	ABE Megumi (JPN)		HUANG Yi-Hua (TPE)		WS	Main Draw	R64	1 - 4	11:9 9:11 7:11 10:12 4:11	HUANG Yi-Hua	
+2013	World Tour Korea Open Incheon 2013	YU Mengyu (SGP)		HIRANO Miu (JPN)		WS	Main Draw	R64	4 - 0	11:8 11:5 12:10 13:11	YU Mengyu	
+2013	World Tour Korea Open Incheon 2013	ZHANG Lily (USA)		MORIZONO Misaki (JPN)		WS	Main Draw	R64	0 - 4	9:11 7:11 6:11 10:12	MORIZONO Misaki	
+2013	World Tour Korea Open Incheon 2013	FUJII Hiroko (JPN)		NIE Wei (CHN)		WS	Main Draw	R64	4 - 3	8:11 8:11 11:8 11:8 9:11 11:8 11:9	FUJII Hiroko	
+2013	World Tour Korea Open Incheon 2013	JO Yujin (KOR)		SHEN Yanfei (ESP)		WS	Main Draw	R64	1 - 4	1:11 11:9 9:11 7:11 7:11	SHEN Yanfei	
+2013	World Tour Korea Open Incheon 2013	FENG Tianwei (SGP)		LIU Gaoyang (CHN)		WS	Main Draw	R32	4 - 2	8:11 11:4 11:6 11:5 4:11 11:9	FENG Tianwei	
+2013	World Tour Korea Open Incheon 2013	LIN Ye (CAN)		SUH Hyo Won (KOR)		WS	Main Draw	R32	0 - 4	6:11 6:11 6:11 9:11	SUH Hyo Won	
+2013	World Tour Korea Open Incheon 2013	WU Jiaduo (GER)		SOLJA Amelie (AUT)		WS	Main Draw	R32	4 - 0	11:8 11:9 11:9 11:8	WU Jiaduo	
+2013	World Tour Korea Open Incheon 2013	CHENG I-Ching (TPE)		YANG Ha Eun (KOR)		WS	Main Draw	R32	4 - 3	11:7 7:11 11:5 8:11 11:8 18:20 11:2	CHENG I-Ching	
+2013	World Tour Korea Open Incheon 2013	SAMARA Elizabeta (ROU)		LEE Ho Ching (HKG)		WS	Main Draw	R32	1 - 4	8:11 11:5 9:11 7:11 4:11	LEE Ho Ching	
+2013	World Tour Korea Open Incheon 2013	GU Yuting (CHN)		SEOK Hajung (KOR)		WS	Main Draw	R32	1 - 4	7:11 11:9 8:11 8:11 8:11	SEOK Hajung	
+2013	World Tour Korea Open Incheon 2013	JEON Jihee (KOR)		LI Jiayi (CHN)		WS	Main Draw	R32	4 - 1	6:11 11:3 11:5 11:7 11:4	JEON Jihee	
+2013	World Tour Korea Open Incheon 2013	GUAN Mengyuan (HKG)		FUKUHARA Ai (JPN)		WS	Main Draw	R32	0 - 4	3:11 8:11 7:11 8:11	FUKUHARA Ai	
+2013	World Tour Korea Open Incheon 2013	ISHIKAWA Kasumi (JPN)		CHEN Szu-Yu (TPE)		WS	Main Draw	R32	4 - 1	15:13 11:8 8:11 11:5 11:9	ISHIKAWA Kasumi	
+2013	World Tour Korea Open Incheon 2013	MATSUDAIRA Shiho (JPN)		LI Xue (FRA)		WS	Main Draw	R32	0 - 4	8:11 6:11 6:11 6:11	LI Xue	
+2013	World Tour Korea Open Incheon 2013	HIRANO Sayaka (JPN)		NOSKOVA Yana (RUS)		WS	Main Draw	R32	4 - 1	11:3 4:11 11:5 11:3 11:5	HIRANO Sayaka	
+2013	World Tour Korea Open Incheon 2013	HU Melek (TUR)		KIM Junghyun (KOR)		WS	Main Draw	R32	3 - 4	5:11 11:8 6:11 11:8 11:8 7:11 4:11	KIM Junghyun	
+2013	World Tour Korea Open Incheon 2013	LEE I-Chen (TPE)		PARK Youngsook (KOR)		WS	Main Draw	R32	4 - 3	5:11 11:5 11:5 6:11 10:12 11:8 11:6	LEE I-Chen	
+2013	World Tour Korea Open Incheon 2013	SOLJA Petrissa (GER)		HUANG Yi-Hua (TPE)		WS	Main Draw	R32	2 - 4	7:11 10:12 11:9 9:11 12:10 4:11	HUANG Yi-Hua	
+2013	World Tour Korea Open Incheon 2013	YU Mengyu (SGP)		MORIZONO Misaki (JPN)		WS	Main Draw	R32	3 - 4	11:9 7:11 10:12 11:5 11:8 10:12 9:11	MORIZONO Misaki	
+2013	World Tour Korea Open Incheon 2013	FUJII Hiroko (JPN)		SHEN Yanfei (ESP)		WS	Main Draw	R32	4 - 0	12:10 11:5 11:8 11:6	FUJII Hiroko	
+2013	World Tour Korea Open Incheon 2013	FENG Tianwei (SGP)		SUH Hyo Won (KOR)		WS	Main Draw	R16	1 - 4	14:12 11:13 3:11 10:12 6:11	SUH Hyo Won	
+2013	World Tour Korea Open Incheon 2013	WU Jiaduo (GER)		CHENG I-Ching (TPE)		WS	Main Draw	R16	2 - 4	12:10 9:11 7:11 11:9 7:11 9:11	CHENG I-Ching	
+2013	World Tour Korea Open Incheon 2013	LEE Ho Ching (HKG)		SEOK Hajung (KOR)		WS	Main Draw	R16	4 - 3	11:6 9:11 11:8 11:9 8:11 9:11 12:10	LEE Ho Ching	
+2013	World Tour Korea Open Incheon 2013	JEON Jihee (KOR)		FUKUHARA Ai (JPN)		WS	Main Draw	R16	0 - 4	8:11 6:11 6:11 8:11	FUKUHARA Ai	
+2013	World Tour Korea Open Incheon 2013	ISHIKAWA Kasumi (JPN)		LI Xue (FRA)		WS	Main Draw	R16	4 - 0	11:7 14:12 11:8 11:5	ISHIKAWA Kasumi	
+2013	World Tour Korea Open Incheon 2013	HIRANO Sayaka (JPN)		KIM Junghyun (KOR)		WS	Main Draw	R16	4 - 3	15:17 6:11 7:11 14:12 11:8 11:5 16:14	HIRANO Sayaka	
+2013	World Tour Korea Open Incheon 2013	LEE I-Chen (TPE)		HUANG Yi-Hua (TPE)		WS	Main Draw	R16	0 - 4	8:11 4:11 7:11 10:12	HUANG Yi-Hua	
+2013	World Tour Korea Open Incheon 2013	MORIZONO Misaki (JPN)		FUJII Hiroko (JPN)		WS	Main Draw	R16	2 - 4	11:13 9:11 4:11 11:7 11:8 7:11	FUJII Hiroko	
+2013	World Tour Korea Open Incheon 2013	SUH Hyo Won (KOR)		CHENG I-Ching (TPE)		WS	Main Draw	QuarterFinal	4 - 0	11:9 12:10 11:9 11:8	SUH Hyo Won	
+2013	World Tour Korea Open Incheon 2013	LEE Ho Ching (HKG)		FUKUHARA Ai (JPN)		WS	Main Draw	QuarterFinal	4 - 2	10:12 11:7 11:9 11:8 12:14 11:7	LEE Ho Ching	
+2013	World Tour Korea Open Incheon 2013	ISHIKAWA Kasumi (JPN)		HIRANO Sayaka (JPN)		WS	Main Draw	QuarterFinal	4 - 1	10:12 11:8 11:8 11:7 11:8	ISHIKAWA Kasumi	
+2013	World Tour Korea Open Incheon 2013	HUANG Yi-Hua (TPE)		FUJII Hiroko (JPN)		WS	Main Draw	QuarterFinal	3 - 4	7:11 7:11 16:14 11:8 7:11 11:7 5:11	FUJII Hiroko	
+2013	World Tour Korea Open Incheon 2013	SUH Hyo Won (KOR)		LEE Ho Ching (HKG)		WS	Main Draw	SemiFinal	4 - 2	7:11 11:5 13:11 9:11 11:8 11:8	SUH Hyo Won	
+2013	World Tour Korea Open Incheon 2013	ISHIKAWA Kasumi (JPN)		FUJII Hiroko (JPN)		WS	Main Draw	SemiFinal	4 - 2	9:11 6:11 11:8 12:10 11:2 11:9	ISHIKAWA Kasumi	
+2013	World Tour Korea Open Incheon 2013	SUH Hyo Won (KOR)		ISHIKAWA Kasumi (JPN)		WS	Main Draw	Final	4 - 3	11:8 5:11 11:7 9:11 12:10 5:11 11:9	SUH Hyo Won
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 24
+
+2013	World Tour Korea Open Incheon 2013	SEO Hyundeok (KOR)	ZHANG Jike (CHN)	LIVENTSOV Alexey (RUS)	PAIKOV Mikhail (RUS)	MD	Main Draw	R16	3 - 0	11:7 11:2 11:1	SEO Hyundeok	ZHANG Jike
+2013	World Tour Korea Open Incheon 2013	CHO Eonrae (KOR)	MA Lin (CHN)	CHEN Feng (SGP)	XIN Zhaoxu (SGP)	MD	Main Draw	R16	3 - 0	11:6 11:8 11:3	CHO Eonrae	MA Lin
+2013	World Tour Korea Open Incheon 2013	JEOUNG Youngsik (KOR)	WANG Hao (CHN)	KISHIKAWA Seiya (JPN)	MIZUTANI Jun (JPN)	MD	Main Draw	R16	3 - 0	11:4 11:4 11:4	JEOUNG Youngsik	WANG Hao
+2013	World Tour Korea Open Incheon 2013	LEE Sang Su (KOR)	YAN An (CHN)	CHAN Kazuhiro (JPN)	MATSUDAIRA Kenji (JPN)	MD	Main Draw	R16	3 - 2	9:11 10:12 11:8 11:8 11:9	LEE Sang Su	YAN An
+2013	World Tour Korea Open Incheon 2013	SEO Hyundeok (KOR)	ZHANG Jike (CHN)	KUZMIN Fedor (RUS)	SKACHKOV Kirill (RUS)	MD	Main Draw	QuarterFinal	3 - 0	11:6 11:7 11:4	SEO Hyundeok	ZHANG Jike
+2013	World Tour Korea Open Incheon 2013	CHO Eonrae (KOR)	MA Lin (CHN)	MATTENET Adrien (FRA)	XU Xin (CHN)	MD	Main Draw	QuarterFinal	0 - 3	3:11 8:11 8:11	MATTENET Adrien	XU Xin
+2013	World Tour Korea Open Incheon 2013	JEOUNG Youngsik (KOR)	WANG Hao (CHN)	LEE Sang Su (KOR)	YAN An (CHN)	MD	Main Draw	QuarterFinal	2 - 3	10:12 11:9 5:11 11:8 4:11	LEE Sang Su	YAN An
+2013	World Tour Korea Open Incheon 2013	SEO Hyundeok (KOR)	ZHANG Jike (CHN)	MATTENET Adrien (FRA)	XU Xin (CHN)	MD	Main Draw	SemiFinal	3 - 2	14:12 11:5 7:11 6:11 11:7	SEO Hyundeok	ZHANG Jike
+2013	World Tour Korea Open Incheon 2013	LEE Sang Su (KOR)	YAN An (CHN)	LEE Jungwoo (KOR)	MA Long (CHN)	MD	Main Draw	SemiFinal	0 - 3	6:11 10:12 9:11	LEE Jungwoo	MA Long
+2013	World Tour Korea Open Incheon 2013	SEO Hyundeok (KOR)	ZHANG Jike (CHN)	LEE Jungwoo (KOR)	MA Long (CHN)	MD	Main Draw	Final	3 - 2	11:8 7:11 11:8 7:11 11:8	SEO Hyundeok	ZHANG Jike
+2013	World Tour Korea Open Incheon 2013	TANG Peng (HKG)	WONG Chun Ting (HKG)	MATTENET Adrien (FRA)	XU Xin (CHN)	MD	Main Draw	R16	2 - 3	11:2 9:11 11:9 7:11 10:12	MATTENET Adrien	XU Xin
+2013	World Tour Korea Open Incheon 2013	CHEUNG Yuk (HKG)	MAK King Ho (HKG)	JEONG Sangeun (KOR)	KIM Kyungmin (KOR)	MD	Qualification	QR16	0 - 3	3:11 5:11 6:11	JEONG Sangeun	KIM Kyungmin
+2013	World Tour Korea Open Incheon 2013	KISHIKAWA Seiya (JPN)	MIZUTANI Jun (JPN)	KANG Donghoon (KOR)	SEO Junghwa (KOR)	MD	Qualification	QR16	3 - 1	11:5 4:11 11:9 11:6	KISHIKAWA Seiya	MIZUTANI Jun
+2013	World Tour Korea Open Incheon 2013	JEONG Sangeun (KOR)	KIM Kyungmin (KOR)	LEE Jungwoo (KOR)	MA Long (CHN)	MD	Main Draw	R16	1 - 3	11:9 6:11 9:11 14:16	LEE Jungwoo	MA Long
+2013	World Tour Korea Open Incheon 2013	KIM Donghyun (KOR)	KIM Taehoon (KOR)	TANG Peng (HKG)	WONG Chun Ting (HKG)	MD	Qualification	QR16	0 - 3	5:11 5:11 7:11	TANG Peng	WONG Chun Ting
+2013	World Tour Korea Open Incheon 2013	LIVENTSOV Alexey (RUS)	PAIKOV Mikhail (RUS)	ANGLES Enzo (FRA)	KEINATH Thomas (SVK)	MD	Qualification	QR16	3 - 0	11:9 11:4 11:7	LIVENTSOV Alexey	PAIKOV Mikhail
+2013	World Tour Korea Open Incheon 2013	YANG Zi (SGP)	ZHAN Jian (SGP)	GAUZY Simon (FRA)	LEBESSON Emmanuel (FRA)	MD	Main Draw	R16	3 - 1	8:11 11:6 11:8 11:5	YANG Zi	ZHAN Jian
+2013	World Tour Korea Open Incheon 2013	YANG Zi (SGP)	ZHAN Jian (SGP)	LEE Jungwoo (KOR)	MA Long (CHN)	MD	Main Draw	QuarterFinal	1 - 3	4:11 5:11 11:9 6:11	LEE Jungwoo	MA Long
+2013	World Tour Korea Open Incheon 2013	LI Hu (SGP)	MA Liang (SGP)	KUZMIN Fedor (RUS)	SKACHKOV Kirill (RUS)	MD	Qualification	QR16	0 - 3	7:11 3:11 13:15	KUZMIN Fedor	SKACHKOV Kirill
+2013	World Tour Korea Open Incheon 2013	CHEN Chao-Shun (1977) (TPE)	SUN Chia-Hung (TPE)	KANG Donghoon (KOR)	SEO Junghwa (KOR)	MD	Qualification	QR32	0 - 3	7:11 6:11 6:11	KANG Donghoon	SEO Junghwa
+2013	World Tour Korea Open Incheon 2013	CHIANG Hung-Chieh (TPE)	WU Chih-Chi (TPE)	GAUZY Simon (FRA)	LEBESSON Emmanuel (FRA)	MD	Qualification	QR16	1 - 3	9:11 9:11 11:8 9:11	GAUZY Simon	LEBESSON Emmanuel
+2013	World Tour Korea Open Incheon 2013	HUNG Tzu-Hsiang (TPE)	LU Po-Hsien (TPE)	LEE Sang Su (KOR)	YAN An (CHN)	MD	Qualification	QR16	1 - 3	5:11 11:9 9:11 6:11	LEE Sang Su	YAN An
+2013	World Tour Korea Open Incheon 2013	HACI Halil (TUR)	MENGE Gencay (TUR)	HUNG Tzu-Hsiang (TPE)	LU Po-Hsien (TPE)	MD	Qualification	QR32	0 - 3	4:11 9:11 12:14	HUNG Tzu-Hsiang	LU Po-Hsien
+2013	World Tour Korea Open Incheon 2013	LI Ahmet (TUR)	VANG Bora (TUR)	CHEN Feng (SGP)	XIN Zhaoxu (SGP)	MD	Qualification	QR16	0 - 3	7:11 7:11 7:11	CHEN Feng	XIN Zhaoxu
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 25
+
+2013	World Tour Korea Open Incheon 2013	POLCANOVA Sofia (AUT)	SOLJA Amelie (AUT)	GUNGOR Gokce Nur (TUR)	KARAHAN Ipek (TUR)	WD	Qualification	QR32	3 - 0	11:7 11:8 11:5	POLCANOVA Sofia	SOLJA Amelie
+2013	World Tour Korea Open Incheon 2013	POLCANOVA Sofia (AUT)	SOLJA Amelie (AUT)	GU Yuting (CHN)	LI Jiayi (CHN)	WD	Qualification	QR16	2 - 3	6:11 7:11 11:6 12:10 7:11	GU Yuting	LI Jiayi
+2013	World Tour Korea Open Incheon 2013	LIU Gaoyang (CHN)	NIE Wei (CHN)	JEON Jihee (KOR)	LEE Eunhee (KOR)	WD	Main Draw	QuarterFinal	0 - 3	9:11 9:11 1:11	JEON Jihee	LEE Eunhee
+2013	World Tour Korea Open Incheon 2013	LIU Gaoyang (CHN)	NIE Wei (CHN)	HOU Yu-Ling (TPE)	LIU Yu-Hsin (TPE)	WD	Qualification	QR16	3 - 1	11:8 11:6 6:11 11:9	LIU Gaoyang	NIE Wei
+2013	World Tour Korea Open Incheon 2013	SOLJA Petrissa (GER)	WU Jiaduo (GER)	NOSKOVA Yana (RUS)	SAMARA Elizabeta (ROU)	WD	Main Draw	R16	0 - 3	9:11 11:13 10:12	NOSKOVA Yana	SAMARA Elizabeta
+2013	World Tour Korea Open Incheon 2013	JIANG Huajun (HKG)	TIE Yana (HKG)	LIU Gaoyang (CHN)	NIE Wei (CHN)	WD	Main Draw	R16	1 - 3	13:11 6:11 1:11 6:11	LIU Gaoyang	NIE Wei
+2013	World Tour Korea Open Incheon 2013	LEE Ho Ching (HKG)	NG Wing Nam (HKG)	VOROBEVA Olga (RUS)	KUZMINA Elena (RUS)	WD	Main Draw	R16	3 - 1	9:11 14:12 13:11 11:6	LEE Ho Ching	NG Wing Nam
+2013	World Tour Korea Open Incheon 2013	LEE Ho Ching (HKG)	NG Wing Nam (HKG)	FUJII Hiroko (JPN)	WAKAMIYA Misako (JPN)	WD	Main Draw	QuarterFinal	0 - 3	9:11 6:11 2:11	FUJII Hiroko	WAKAMIYA Misako
+2013	World Tour Korea Open Incheon 2013	FUKUHARA Ai (JPN)	HIRANO Sayaka (JPN)	PARK Youngsook (KOR)	YANG Ha Eun (KOR)	WD	Main Draw	R16	1 - 3	6:11 11:9 14:16 5:11	PARK Youngsook	YANG Ha Eun
+2013	World Tour Korea Open Incheon 2013	FUKUHARA Ai (JPN)	HIRANO Sayaka (JPN)	JO Yujin (KOR)	YOO Eunchong (KOR)	WD	Qualification	QR16	3 - 1	14:12 13:11 8:11 11:1	FUKUHARA Ai	HIRANO Sayaka
+2013	World Tour Korea Open Incheon 2013	PARK Youngsook (KOR)	YANG Ha Eun (KOR)	FENG Tianwei (SGP)	YU Mengyu (SGP)	WD	Main Draw	SemiFinal	3 - 1	11:5 11:13 11:9 11:5	PARK Youngsook	YANG Ha Eun
+2013	World Tour Korea Open Incheon 2013	JEON Jihee (KOR)	LEE Eunhee (KOR)	FUJII Hiroko (JPN)	WAKAMIYA Misako (JPN)	WD	Main Draw	SemiFinal	3 - 1	5:11 11:9 11:9 11:9	JEON Jihee	LEE Eunhee
+2013	World Tour Korea Open Incheon 2013	PARK Youngsook (KOR)	YANG Ha Eun (KOR)	JEON Jihee (KOR)	LEE Eunhee (KOR)	WD	Main Draw	Final	3 - 1	11:9 11:8 9:11 11:8	PARK Youngsook	YANG Ha Eun
+2013	World Tour Korea Open Incheon 2013	JO Yujin (KOR)	YOO Eunchong (KOR)	HU Melek (TUR)	SAHIN Sanem (TUR)	WD	Qualification	QR32	3 - 0	12:10 11:4 11:6	JO Yujin	YOO Eunchong
+2013	World Tour Korea Open Incheon 2013	KIM Junghyun (KOR)	SUH Hyo Won (KOR)	LIN Ye (CAN)	ZHOU Yihan (SGP)	WD	Qualification	QR16	2 - 3	7:11 15:13 11:8 6:11 12:14	LIN Ye	ZHOU Yihan
+2013	World Tour Korea Open Incheon 2013	PARK Seonghye (KOR)	SEOK Hajung (KOR)	HSING Ariel (USA)	ZHANG Lily (USA)	WD	Qualification	QR16	2 - 3	9:11 6:11 11:6 11:9 6:11	HSING Ariel	ZHANG Lily
+2013	World Tour Korea Open Incheon 2013	NOSKOVA Yana (RUS)	SAMARA Elizabeta (ROU)	FENG Tianwei (SGP)	YU Mengyu (SGP)	WD	Main Draw	QuarterFinal	0 - 3	4:11 8:11 9:11	FENG Tianwei	YU Mengyu
+2013	World Tour Korea Open Incheon 2013	NOSKOVA Yana (RUS)	SAMARA Elizabeta (ROU)	LEE Hyun (KOR)	SONG Maeum (KOR)	WD	Qualification	QR16	3 - 1	12:10 6:11 11:7 11:7	NOSKOVA Yana	SAMARA Elizabeta
+2013	World Tour Korea Open Incheon 2013	VOROBEVA Olga (RUS)	KUZMINA Elena (RUS)	HIRANO Miu (JPN)	ITO Mima (JPN)	WD	Qualification	QR16	3 - 0	11:8 13:11 11:8	VOROBEVA Olga	KUZMINA Elena
+2013	World Tour Korea Open Incheon 2013	LIN Ye (CAN)	ZHOU Yihan (SGP)	FUJII Hiroko (JPN)	WAKAMIYA Misako (JPN)	WD	Main Draw	R16	2 - 3	11:0 3:11 11:9 6:11 6:11	FUJII Hiroko	WAKAMIYA Misako
+2013	World Tour Korea Open Incheon 2013	CHENG I-Ching (TPE)	HUANG Yi-Hua (TPE)	GU Yuting (CHN)	LI Jiayi (CHN)	WD	Main Draw	R16	3 - 0	11:6 12:10 12:10	CHENG I-Ching	HUANG Yi-Hua
+2013	World Tour Korea Open Incheon 2013	CHENG Hsien-Tzu (TPE)	CHEN Szu-Yu (TPE)	FENG Tianwei (SGP)	YU Mengyu (SGP)	WD	Main Draw	R16	1 - 3	10:12 11:9 9:11 6:11	FENG Tianwei	YU Mengyu
+2013	World Tour Korea Open Incheon 2013	CHENG I-Ching (TPE)	HUANG Yi-Hua (TPE)	PARK Youngsook (KOR)	YANG Ha Eun (KOR)	WD	Main Draw	QuarterFinal	0 - 3	8:11 9:11 1:11	PARK Youngsook	YANG Ha Eun
+2013	World Tour Korea Open Incheon 2013	CHENG Hsien-Tzu (TPE)	CHEN Szu-Yu (TPE)	DOO Hoi Kem (HKG)	GUAN Mengyuan (HKG)	WD	Qualification	QR16	3 - 0	15:13 11:7 11:8	CHENG Hsien-Tzu	CHEN Szu-Yu
+2013	World Tour Korea Open Incheon 2013	HSING Ariel (USA)	ZHANG Lily (USA)	JEON Jihee (KOR)	LEE Eunhee (KOR)	WD	Main Draw	R16	0 - 3	7:11 7:11 6:11	JEON Jihee	LEE Eunhee
