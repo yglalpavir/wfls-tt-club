@@ -257,7 +257,7 @@ function renderH2hHeatmap(topN) {
             const tip = i18n[currentLang].data_viz_heatmap_cell
                 .replace('{winner}', row).replace('{loser}', col).replace('{n}', wins)
                 + ` | ${i18n[currentLang].data_viz_loss}: ${losses} | ${i18n[currentLang].data_viz_total}: ${meets}`;
-            body += `<td class="h2h-cell" style="background:${bg};" title="${escapeHtml(tip)}">${wins}</td>`;
+            body += `<td class="h2h-cell" data-row="${escapeHtml(row)}" data-col="${escapeHtml(col)}" style="background:${bg};" title="${escapeHtml(tip)}">${wins}</td>`;
         });
         body += '</tr>';
     });
@@ -267,6 +267,27 @@ function renderH2hHeatmap(topN) {
         `<span class="h2h-legend-bar"><i style="background:rgba(128,128,128,0.06);"></i><i style="background:rgba(77,163,255,0.3);"></i><i style="background:rgba(77,163,255,0.6);"></i><i style="background:rgba(77,163,255,0.9);"></i><b>${maxWins}</b></span></div>`;
 
     container.innerHTML = `<div class="h2h-heatmap-wrapper"><table class="h2h-heatmap-table"><thead><tr><th class="h2h-corner"></th>${header}</tr></thead><tbody>${body}</tbody></table>${legend}</div>`;
+
+    // 悬停高亮镜像格：光标停在 A-B 时，B-A 同样突出
+    const tbl = container.querySelector('.h2h-heatmap-table');
+    if (tbl) {
+        const cellMap = {};
+        tbl.querySelectorAll('.h2h-cell[data-row]').forEach(cell => {
+            cellMap[cell.getAttribute('data-row') + '\n' + cell.getAttribute('data-col')] = cell;
+        });
+        const clearMirror = () => {
+            const prev = tbl.querySelector('.h2h-mirror-hover');
+            if (prev) prev.classList.remove('h2h-mirror-hover');
+        };
+        tbl.addEventListener('mouseover', (e) => {
+            clearMirror();
+            const cell = e.target.closest('.h2h-cell[data-row]');
+            if (!cell) return;
+            const mirror = cellMap[(cell.getAttribute('data-col') || '') + '\n' + (cell.getAttribute('data-row') || '')];
+            if (mirror && mirror !== cell) mirror.classList.add('h2h-mirror-hover');
+        });
+        tbl.addEventListener('mouseleave', clearMirror);
+    }
 }
 
 // ============ 比赛频次时间轴 ============
@@ -369,6 +390,29 @@ function renderMatchFrequency(bucketType, count) {
 
 // ============ 积分区间分布 ============
 
+// 柱顶数值标签插件：无需悬停即在每根柱形上方显示人数（0 值不显示）
+const distValueLabelPlugin = {
+    id: 'distValueLabels',
+    afterDatasetsDraw(chart, args, opts) {
+        const meta = chart.getDatasetMeta(0);
+        const data = chart.data.datasets[0] && chart.data.datasets[0].data;
+        if (!meta || !data) return;
+        const isDark = document.body.classList.contains('dark-mode');
+        const ctx = chart.ctx;
+        ctx.save();
+        ctx.fillStyle = isDark ? '#aeb4c2' : '#4a5568';
+        ctx.font = ((opts && opts.fontSize) || 10) + 'px "Poppins", "Microsoft YaHei", sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'bottom';
+        meta.data.forEach((bar, i) => {
+            const v = data[i];
+            if (!v) return;
+            ctx.fillText(String(v), bar.x, bar.y - 3);
+        });
+        ctx.restore();
+    }
+};
+
 function renderScoreDistribution(bins) {
     const canvas = document.getElementById('scoreDistributionChart');
     if (!canvas) return;
@@ -408,14 +452,16 @@ function renderScoreDistribution(bins) {
             options: {
                 responsive: true, maintainAspectRatio: false,
                 plugins: {
+                    distValueLabels: { fontSize: isMobile ? 9 : 10 },
                     legend: { display: false },
                     tooltip: { backgroundColor: 'rgba(26,29,40,0.9)', titleFont: { size: isMobile ? 12 : 13 }, bodyFont: { size: isMobile ? 11 : 12 }, padding: isMobile ? 8 : 12, cornerRadius: 8, callbacks: { label: ctx => i18n[currentLang].data_viz_axis_count + ': ' + ctx.raw } }
                 },
                 scales: {
                     x: { grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 10 : 11 }, maxRotation: isMobile ? 45 : 0 } },
-                    y: { beginAtZero: true, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 10 : 11 } }, title: { display: true, text: i18n[currentLang].data_viz_axis_count, font: { size: isMobile ? 11 : 12 } } }
+                    y: { beginAtZero: true, grace: '12%', grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 10 : 11 } }, title: { display: true, text: i18n[currentLang].data_viz_axis_count, font: { size: isMobile ? 11 : 12 } } }
                 }
-            }
+            },
+            plugins: [distValueLabelPlugin]
         });
     } catch (err) { console.error('积分区间分布失败', err); }
 }

@@ -189,69 +189,57 @@ function wttRenderScoreDetail() {
     setTimeout(wttAdjustModalSize, 150);
 }
 
-// 加载并渲染（异步分块计算，不阻塞 UI）
+// 加载并渲染（异步分块计算，不阻塞 UI；骨架屏 + 进度条 + 已用时）
 async function wttLoadRankingData() {
     if (wttInitialized) return;
     wttInitialized = true;
     const tb = document.getElementById('rankingFullBody');
     if (!tb) return;
 
-    // 更新进度文字的工具函数
-    function updateProgress(msg) {
-        const pe = document.querySelector('#rankingFullBody .wtt-progress-text');
-        if (pe) pe.textContent = msg;
-    }
+    // 骨架屏占位行（与表头 7 列一致）
+    tb.innerHTML = wttSkeletonRowsHtml(8, 7);
 
-    // 在 tbody 中显示加载状态（保留表格结构）
-    tb.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:40px;">
-        <div class="wtt-spinner" style="width:36px;height:36px;border:3px solid var(--border-color);border-top-color:var(--accent-blue);border-radius:50%;animation:wttSpin 0.8s linear infinite;margin:0 auto 12px;"></div>
-        <p style="color:var(--text-secondary);">${i18n[currentLang].wtt_loading}</p>
-        <p class="wtt-progress-text" style="font-size:0.8rem;color:var(--text-tertiary);margin-top:4px;">${i18n[currentLang].wtt_prepare}</p>
-    </td></tr>`;
+    // 表格上方插入紧凑进度条行（进度 + 百分比 + 详情 + 已用时）
+    let prog = document.getElementById('wttRankingLoadProgress');
+    if (!prog) {
+        const table = tb.closest('table');
+        if (table && table.parentNode) {
+            prog = document.createElement('div');
+            prog.id = 'wttRankingLoadProgress';
+            table.parentNode.insertBefore(prog, table);
+        }
+    }
+    if (prog) {
+        prog.innerHTML = wttLoadingBlockHtml(i18n[currentLang].wtt_loading, { compact: true });
+        wttStartLoadingTimer(prog);
+    }
+    const setP = (pct, detail, main) => { if (prog) wttSetLoadingProgress(prog, pct, detail, main); };
 
     try {
-        // 🔥 逐个加载数据文件，显示详细进度（而非一次性 Promise.all）
-        // 先加载 settings.json 以判断是否需要 initial-scores
-        updateProgress(`${i18n[currentLang].wtt_downloading.replace('{label}', i18n[currentLang].wtt_file_settings).replace('{i}', '1').replace('{total}', '5').replace('{file}', 'settings.json')}`);
+        setP(wttLoadPhasePct('download', 0, 1), i18n[currentLang].wtt_prepare);
         await new Promise(r => setTimeout(r, 0));
-        await wttLoadSettings();
 
-        // flat1300 模式下跳过 initial-scores 加载
-        const needsInitScores = !wttSettings || wttSettings.scoreMode !== 'flat1300';
-
-        const dataFiles = [
-            { name: 'score-log (按赛季)',   loader: wttLoadScoreLog,          label: i18n[currentLang].wtt_file_matches },
-        ];
-        if (needsInitScores) {
-            dataFiles.push({ name: 'initial-scores.json', loader: wttLoadInitialScores, label: i18n[currentLang].wtt_file_initial });
-        }
-        dataFiles.push(
-            { name: 'event-coefficient.json',loader: wttLoadEventCoefficients, label: i18n[currentLang].wtt_file_event },
-            { name: 'seasons.json',          loader: wttLoadSeasons,           label: i18n[currentLang].wtt_file_season },
-            { name: 'assoc.json',            loader: wttLoadPlayerAssoc,       label: i18n[currentLang].wtt_pp_assoc }
-        );
-
-        for (let i = 0; i < dataFiles.length; i++) {
-            const f = dataFiles[i];
-            const total = dataFiles.length;
-            updateProgress(i18n[currentLang].wtt_downloading.replace('{label}', f.label).replace('{i}', String(i + 1)).replace('{total}', String(total)).replace('{file}', f.name));
-            // yield 到浏览器，确保 UI 更新
-            await new Promise(r => setTimeout(r, 0));
-            await f.loader();
-        }
+        // settings 先行，其余数据文件并行下载（每个文件完成即推进进度条）
+        await wttLoadSettingsAndFiles(true, (done, total, label) => {
+            setP(wttLoadPhasePct('download', done + 1, total + 1),
+                 i18n[currentLang].wtt_downloading.replace('{label}', label).replace('{i}', String(done + 1)).replace('{total}', String(total + 1)).replace('{file}', label));
+        });
 
         // flat1300 模式不需要 initialScoresData
         const isFlat = wttSettings && wttSettings.scoreMode === 'flat1300';
         if (!isFlat && !wttInitialScoresData) throw new Error('WTT initial-scores 加载失败');
         if (!wttEventCoefficients || !wttSeasonsData) throw new Error('WTT数据加载失败');
 
-        // 更新加载文字
-        updateProgress(i18n[currentLang].wtt_calculating);
-
-        // 异步分块计算（每 2 个快照 yield 到浏览器，保持 UI 响应）
+        // 异步分块计算（每快照 yield 到浏览器，保持 UI 响应）
+        setP(wttLoadPhasePct('calc', 0, 1), '', i18n[currentLang].wtt_calculating);
         wttRankingTimeline = await wttCalculateAllRankingsAsync((current, total, label) => {
-            updateProgress((label || '') + ' · ' + i18n[currentLang].wtt_snapshot.replace('{current}', current).replace('{total}', total));
+            setP(wttLoadPhasePct('calc', current, total),
+                 (label ? label + ' · ' : '') + i18n[currentLang].wtt_snapshot.replace('{current}', current).replace('{total}', total));
         });
+
+        // 移除进度条并渲染真实数据（骨架屏随之被真实行替换）
+        wttStopLoadingTimer(prog);
+        if (prog) prog.remove();
 
         wttCurrentTimeIndex = wttRankingTimeline.length - 1;
         wttCurrentSortKey = '当前积分';
@@ -262,6 +250,8 @@ async function wttLoadRankingData() {
         wttSetupSortListeners();
     } catch (e) {
         console.error('WTT排名计算失败', e);
+        wttStopLoadingTimer(prog);
+        if (prog) prog.remove();
         if (tb) tb.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;color:var(--accent-red);">' + i18n[currentLang].wtt_cant_compute + '</td></tr>';
     }
 }

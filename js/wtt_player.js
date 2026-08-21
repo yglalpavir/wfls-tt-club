@@ -10,51 +10,34 @@ let wttPpOrderedPlayers = [];     // 按当前积分降序的球员列表（上/
 // ============ 数据加载 ============
 
 function wttPpShowProgress(msg) {
-    const el = document.getElementById('wttPlayerDetailContent');
-    if (!el) return;
-    el.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;color:var(--text-secondary);">
-        <div class="wtt-spinner" style="width:32px;height:32px;border:3px solid var(--border-color);border-top-color:var(--accent-blue);border-radius:50%;animation:wttSpin 0.8s linear infinite;margin-bottom:12px;"></div>
-        <p style="font-size:0.9rem;margin:0;">${msg || i18n[currentLang].wtt_pp_loading}</p>
-    </div>`;
+    wttMountLoading('wttPlayerDetailContent', msg);
 }
 
 async function wttLoadRankingDataForPlayer() {
+    const containerId = 'wttPlayerDetailContent';
+    const setP = (pct, detail, main) => wttSetLoadingProgress(containerId, pct, detail, main);
+
     wttPpShowProgress(i18n[currentLang].wtt_prepare);
+    setP(wttLoadPhasePct('download', 0, 1), i18n[currentLang].wtt_prepare);
+    await new Promise(r => setTimeout(r, 0));
 
     try {
-        await wttLoadSettings();
-
-        // flat1300 模式下跳过 initial-scores 加载
-        const needsInitScores = !wttSettings || wttSettings.scoreMode !== 'flat1300';
-
-        const dataFiles = [
-            { name: 'score-log (按赛季)',   loader: wttLoadScoreLog,          label: i18n[currentLang].wtt_file_matches },
-        ];
-        if (needsInitScores) {
-            dataFiles.push({ name: 'initial-scores.json', loader: wttLoadInitialScores, label: i18n[currentLang].wtt_file_initial });
-        }
-        dataFiles.push(
-            { name: 'event-coefficient.json',loader: wttLoadEventCoefficients, label: i18n[currentLang].wtt_file_event },
-            { name: 'seasons.json',          loader: wttLoadSeasons,           label: i18n[currentLang].wtt_file_season },
-            { name: 'assoc.json',            loader: wttLoadPlayerAssoc,       label: i18n[currentLang].wtt_pp_assoc }
-        );
-
-        for (let i = 0; i < dataFiles.length; i++) {
-            const f = dataFiles[i];
-            wttPpShowProgress(i18n[currentLang].wtt_downloading.replace('{label}', f.label).replace('{i}', i + 1).replace('{total}', dataFiles.length).replace('{file}', f.name));
-            await new Promise(r => setTimeout(r, 0));
-            await f.loader();
-        }
+        // settings 先行，其余数据文件并行下载（每个文件完成即推进进度条）
+        await wttLoadSettingsAndFiles(true, (done, total, label) => {
+            setP(wttLoadPhasePct('download', done + 1, total + 1),
+                 i18n[currentLang].wtt_downloading.replace('{label}', label).replace('{i}', String(done + 1)).replace('{total}', String(total + 1)).replace('{file}', label));
+        });
 
         // flat1300 模式不需要 initialScoresData
         const isFlat = wttSettings && wttSettings.scoreMode === 'flat1300';
         if (!isFlat && !wttInitialScoresData) throw new Error('WTT initial-scores 加载失败');
         if (!wttEventCoefficients || !wttSeasonsData) throw new Error('WTT数据加载失败');
 
-        wttPpShowProgress(i18n[currentLang].wtt_calculating);
-
+        // 异步分块计算（带进度回调）
+        setP(wttLoadPhasePct('calc', 0, 1), '', i18n[currentLang].wtt_calculating);
         wttRankingTimeline = await wttCalculateAllRankingsAsync((current, total, label) => {
-            wttPpShowProgress(i18n[currentLang].wtt_snapshot.replace('{current}', current).replace('{total}', total));
+            setP(wttLoadPhasePct('calc', current, total),
+                 (label ? label + ' · ' : '') + i18n[currentLang].wtt_snapshot.replace('{current}', current).replace('{total}', total));
         });
 
         return true;
@@ -257,7 +240,7 @@ async function initWttPlayerPage() {
         wttPpRenderHeader(playerName);
 
         content.innerHTML += '<div id="wttPpStatsBody"></div><div id="wttPpMatchTable"></div>';
-        wttRenderPersonalStats(playerName, 'wttPpStatsBody', false);
+        wttRenderPersonalStats(playerName, 'wttPpStatsBody');
         wttPpRenderMatchTable(playerName);
         console.log('[WttPlayerPage] 初始化完成:', playerName);
     } catch (e) {
@@ -282,7 +265,7 @@ function wttReapplyI18n() {
     wttPpRenderNavSwitch(wttCurrentPlayer);
     wttPpRenderHeader(wttCurrentPlayer);
     content.innerHTML += '<div id="wttPpStatsBody"></div><div id="wttPpMatchTable"></div>';
-    wttRenderPersonalStats(wttCurrentPlayer, 'wttPpStatsBody', false);
+    wttRenderPersonalStats(wttCurrentPlayer, 'wttPpStatsBody');
     wttPpRenderMatchTable(wttCurrentPlayer);
 }
 

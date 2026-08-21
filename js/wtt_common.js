@@ -1045,30 +1045,185 @@ function wttCalculateAllRankings() {
     });
 }
 
-// ============ 加载状态 UI ============
+// ============ 加载状态 UI（进度条 + 百分比 + 已用时） ============
+
+const _wttLoadTimers = new WeakMap();
+
+function _wttLpEl(target) { return typeof target === 'string' ? document.getElementById(target) : target; }
+
+function _wttLpLang() {
+    return (typeof i18n !== 'undefined' && typeof currentLang !== 'undefined' && i18n[currentLang]) ? i18n[currentLang] : {};
+}
 
 /**
- * 在指定容器中显示加载动画
+ * 构建标准加载块 HTML：spinner + 主文案 + 进度条 + 百分比 + 详情 + 已用时
+ * @param {string} message - 主文案
+ * @param {object} [opts] - { compact: boolean } 紧凑横向布局（表格上方等窄空间）
+ */
+function wttLoadingBlockHtml(message, opts) {
+    const lang = _wttLpLang();
+    const txt = message || lang.wtt_loading || '加载数据中...';
+    const elapsed0 = lang.wtt_elapsed ? lang.wtt_elapsed.replace('{s}', 0) : '0s';
+    const spin = (size, bw) => `<div class="wtt-spinner" style="width:${size}px;height:${size}px;border:${bw}px solid var(--border-color);border-top-color:var(--accent-blue);border-radius:50%;animation:wttSpin 0.8s linear infinite;flex-shrink:0;"></div>`;
+    if (opts && opts.compact) {
+        return `<div style="display:flex;align-items:center;gap:12px;padding:6px 2px;color:var(--text-secondary);">${spin(18, 2)}
+            <div style="flex:1;min-width:0;">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;">
+                    <span class="wtt-lp-main" style="font-size:0.85rem;">${txt}</span>
+                    <span class="wtt-lp-pct" style="font-size:0.75rem;color:var(--text-muted);">0%</span>
+                </div>
+                <div class="wtt-lp-track" style="margin-top:8px;"><div class="wtt-lp-fill"></div></div>
+                <div class="wtt-progress-meta" style="justify-content:flex-start;"><span class="wtt-lp-detail"></span><span class="wtt-lp-elapsed">${elapsed0}</span></div>
+            </div>
+        </div>`;
+    }
+    return `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 20px;color:var(--text-secondary);">
+        ${spin(40, 3)}
+        <p class="wtt-lp-main" style="font-size:0.95rem;margin:0;">${txt}</p>
+        <div class="wtt-lp-pct" style="font-size:0.85rem;margin-top:10px;">0%</div>
+        <div class="wtt-lp-track"><div class="wtt-lp-fill"></div></div>
+        <div class="wtt-progress-meta"><span class="wtt-lp-detail"></span><span class="wtt-lp-elapsed">${elapsed0}</span></div>
+    </div>`;
+}
+
+/**
+ * 启动已用时计时器（每秒更新 .wtt-lp-elapsed；元素脱离文档时自清理）
+ */
+function wttStartLoadingTimer(el) {
+    wttStopLoadingTimer(el);
+    const t0 = Date.now();
+    const id = setInterval(() => {
+        if (!document.contains(el)) { clearInterval(id); _wttLoadTimers.delete(el); return; }
+        const span = el.querySelector('.wtt-lp-elapsed');
+        if (span) {
+            const s = Math.floor((Date.now() - t0) / 1000);
+            const lang = _wttLpLang();
+            span.textContent = lang.wtt_elapsed ? lang.wtt_elapsed.replace('{s}', s) : (s + 's');
+        }
+    }, 1000);
+    _wttLoadTimers.set(el, id);
+}
+
+/**
+ * 停止已用时计时器
+ * @param {string|HTMLElement} target
+ */
+function wttStopLoadingTimer(target) {
+    const el = _wttLpEl(target);
+    if (el && _wttLoadTimers.has(el)) {
+        clearInterval(_wttLoadTimers.get(el));
+        _wttLoadTimers.delete(el);
+    }
+}
+
+/**
+ * 挂载加载块（已挂载则只更新主文案，不重置计时器）
+ * @param {string|HTMLElement} target
+ * @param {string} message
+ * @param {object} [opts]
+ */
+function wttMountLoading(target, message, opts) {
+    const el = _wttLpEl(target);
+    if (!el) return null;
+    if (!el.querySelector('.wtt-lp-fill')) {
+        el.innerHTML = wttLoadingBlockHtml(message, opts);
+        wttStartLoadingTimer(el);
+    } else if (message) {
+        const mainEl = el.querySelector('.wtt-lp-main');
+        if (mainEl) mainEl.textContent = message;
+    }
+    return el;
+}
+
+/**
+ * 更新进度：百分比 + 进度条宽度 + 详情文字（可选更新主文案）
+ * @param {string|HTMLElement} target
+ * @param {number} pct 0-100（自动 clamp）
+ * @param {string} [detailText] 详情行（如"正在下载 xx (1/5)"）
+ * @param {string} [mainText] 可选，替换主文案
+ */
+function wttSetLoadingProgress(target, pct, detailText, mainText) {
+    const el = _wttLpEl(target);
+    if (!el) return;
+    const p = Math.max(0, Math.min(100, Math.round(pct)));
+    const fill = el.querySelector('.wtt-lp-fill');
+    const pctEl = el.querySelector('.wtt-lp-pct');
+    const detEl = el.querySelector('.wtt-lp-detail');
+    const mainEl = el.querySelector('.wtt-lp-main');
+    if (fill) fill.style.width = p + '%';
+    if (pctEl) pctEl.textContent = p + '%';
+    if (detEl && detailText != null) detEl.textContent = detailText;
+    if (mainEl && mainText) mainEl.textContent = mainText;
+}
+
+/**
+ * 在指定容器中强制挂载加载块（兼容旧调用：整体替换内容）
  * @param {string} containerId - 容器元素 ID
  * @param {string} message - 加载提示文字
  */
 function wttShowLoading(containerId, message) {
     const el = document.getElementById(containerId);
     if (!el) return;
-    const txt = message || ((typeof i18n !== 'undefined' && typeof currentLang !== 'undefined' && i18n[currentLang] && i18n[currentLang].wtt_loading) ? i18n[currentLang].wtt_loading : '加载数据中...');
-    el.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 20px;color:var(--text-secondary);">
-        <div class="wtt-spinner" style="width:40px;height:40px;border:3px solid var(--border-color);border-top-color:var(--accent-blue);border-radius:50%;animation:wttSpin 0.8s linear infinite;margin-bottom:16px;"></div>
-        <p style="font-size:0.95rem;">${txt}</p>
-        <p class="wtt-progress-text" style="font-size:0.8rem;margin-top:4px;color:var(--text-tertiary);"></p>
-    </div>`;
+    el.innerHTML = wttLoadingBlockHtml(message);
+    wttStartLoadingTimer(el);
 }
 
 /**
- * 更新加载进度文字
+ * 骨架屏占位表格行
+ * @param {number} rows 行数
+ * @param {number} cols 列数
  */
-function wttUpdateProgress(containerId, text) {
-    const el = document.querySelector(`#${containerId} .wtt-progress-text`);
-    if (el) el.textContent = text;
+function wttSkeletonRowsHtml(rows, cols) {
+    let html = '';
+    for (let r = 0; r < rows; r++) {
+        html += '<tr>';
+        for (let c = 0; c < cols; c++) {
+            const w = c === 0 ? 55 : ((r + c) % 3 === 0 ? 70 : 85);
+            html += `<td><div class="wtt-skel" style="height:14px;width:${w}%"></div></td>`;
+        }
+        html += '</tr>';
+    }
+    return html;
+}
+
+// ============ 数据加载编排（并行 + 统一进度映射） ============
+
+/**
+ * 统一加载阶段进度映射：
+ *   download: done/total ∈ [0,1] → [5%, 40%]
+ *   calc:     done/total ∈ [0,1] → [40%, 98%]
+ *   realtime: 固定 98%
+ */
+function wttLoadPhasePct(phase, done, total) {
+    total = Math.max(1, total || 1);
+    if (phase === 'download') return 5 + (done / total) * 35;
+    if (phase === 'calc') return 40 + (Math.min(done, total) / total) * 58;
+    return 98;
+}
+
+/**
+ * settings 先行 → score-log 与其余数据文件并行加载。
+ * 所有 loader 内部已容错不抛错；单个任务异常不影响其它任务。
+ * @param {boolean} includeAssoc - 是否加载 assoc.json
+ * @param {function} [onFileDone] - 每个文件完成时回调 (done, total, label)
+ *   注意：settings 完成为第 1 步（不含在此回调内），调用方按 (done+1)/(total+1) 计入总进度
+ */
+async function wttLoadSettingsAndFiles(includeAssoc, onFileDone) {
+    await wttLoadSettings();
+    const needsInitScores = !wttSettings || wttSettings.scoreMode !== 'flat1300';
+    const tasks = [
+        { loader: wttLoadScoreLog,          label: i18n[currentLang].wtt_file_matches },
+        { loader: wttLoadEventCoefficients, label: i18n[currentLang].wtt_file_event },
+        { loader: wttLoadSeasons,           label: i18n[currentLang].wtt_file_season }
+    ];
+    if (needsInitScores) tasks.unshift({ loader: wttLoadInitialScores, label: i18n[currentLang].wtt_file_initial });
+    if (includeAssoc !== false) tasks.push({ loader: wttLoadPlayerAssoc, label: i18n[currentLang].wtt_pp_assoc });
+    const total = tasks.length;
+    let done = 0;
+    await Promise.all(tasks.map(t => Promise.resolve(t.loader()).then(() => {
+        done++;
+        if (onFileDone) { try { onFileDone(done, total, t.label); } catch (e) { /* 回调异常不阻断 */ } }
+    }).catch(e => console.error('[WTT] 数据文件加载失败:', t.label, e))));
 }
 
 /**

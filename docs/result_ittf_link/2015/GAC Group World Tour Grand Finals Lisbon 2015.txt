@@ -5,14 +5,6 @@
 参赛人数：74
 开始日期：2015-12-10
 结束日期：2015-12-13
-
-Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
-Display #
-
-
-100
-Total: 30
-
 2015	GAC Group World Tour Grand Finals Lisbon 2015	JANG Woojin (KOR)		BROSSIER Benjamin (FRA)		U21MS	Qualification		4 - 3	11:7 8:11 5:11 9:11 11:7 12:10 11:8	JANG Woojin	
 2015	GAC Group World Tour Grand Finals Lisbon 2015	OSHIMA Yuya (JPN)		GERALDO Joao (POR)		U21MS	Qualification		4 - 1	11:7 11:9 7:11 11:2 11:7	OSHIMA Yuya	
 2015	GAC Group World Tour Grand Finals Lisbon 2015	JANG Woojin (KOR)		OSHIMA Yuya (JPN)		U21MS	Qualification		0 - 4	4:11 8:11 3:11 6:11	OSHIMA Yuya	

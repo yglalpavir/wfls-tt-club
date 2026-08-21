@@ -65,7 +65,7 @@ function initPage() {
     if (document.getElementById('qaFullGrid') || document.getElementById('qaList') || document.getElementById('detailContent')) loadQaData();
     if (document.getElementById('changelogTimeline') || document.getElementById('changelogList')) loadChangelogData();
     initCommon();
-    const isRanking = !!document.getElementById('rankingFullBody'), isDataViz = !!document.getElementById('pointsTrendChart'), isWttDataViz = !!document.getElementById('wttPointsTrendChart'), isPersonalStats = !!document.getElementById('personalResult'), isPlayerPage = !!document.getElementById('playerDetailContent'), isWttPersonalStats = !!document.getElementById('wttPersonalPlayerSelect') && !document.getElementById('wttPointsTrendChart');
+    const isRanking = !!document.getElementById('rankingFullBody'), isDataViz = !!document.getElementById('pointsTrendChart'), isWttDataViz = !!document.getElementById('wttPointsTrendChart'), isPersonalStats = !!document.getElementById('personalResult'), isPlayerPage = !!document.getElementById('playerDetailContent'), isWttPersonalStats = !!document.getElementById('wttPersonalPlayerSearchContainer') && !document.getElementById('wttPointsTrendChart');
     if (isRanking) { loadRankingData(); }
     if (isDataViz) { loadRankingDataForViz().then(() => { if (rankingTimeline.length) { initDataViz(); if (typeof initDataVizExtra === 'function') initDataVizExtra(); } }).catch(err => console.error('DataViz: 初始化失败', err)); }
     if (isPersonalStats) { loadRankingDataForViz().then(() => initPersonalStats()).catch(err => console.error('PersonalStats: 初始化失败', err)); }

@@ -42,107 +42,72 @@ async function wttLoadDataVizSettings() {
 // ============ WTT 数据加载 ============
 
 /**
- * 在加载过程中显示进度提示
+ * 兼容保留：在指定容器挂载标准进度块
  * @param {string} containerId - 显示加载进度的容器 ID
  * @param {string} msg - 进度文字
  */
 function wttVizShowProgress(containerId, msg) {
-    const el = document.getElementById(containerId);
-    if (!el) return;
-    el.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;color:var(--text-secondary);">
-        <div class="wtt-spinner" style="width:32px;height:32px;border:3px solid var(--border-color);border-top-color:var(--accent-blue);border-radius:50%;animation:wttSpin 0.8s linear infinite;margin-bottom:12px;"></div>
-        <p style="font-size:0.9rem;margin:0;">${msg || i18n[currentLang].wtt_loading}</p>
-    </div>`;
+    wttMountLoading(containerId, msg);
 }
 
 async function wttLoadRankingDataForViz() {
-    // 🔥 同时在球员列表和图表区域显示加载进度
-    const progressContainer = document.getElementById('wttPlayerCheckboxList');
-    const chartContainer = document.querySelector('#wttPointsTrendChart')?.parentElement;
+    // 🔥 进度显示在首屏可见位置：排名竞速舞台覆盖层（打开页面即见）+ 积分趋势球员列表区
+    const raceStage = document.querySelector('.viz-race-stage');
+    let raceOverlay = null;
 
-    function showProgress(msg) {
-        // 球员列表区域
-        if (progressContainer) {
-            wttVizShowProgress('wttPlayerCheckboxList', msg);
-        }
-        // 图表区域也显示（双重保障）
-        if (chartContainer && !chartContainer.querySelector('.wtt-loading-overlay')) {
-            const overlay = document.createElement('div');
-            overlay.className = 'wtt-loading-overlay';
-            overlay.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;min-height:300px;color:var(--text-secondary);">
-                <div class="wtt-spinner" style="width:36px;height:36px;border:3px solid var(--border-color);border-top-color:var(--accent-blue);border-radius:50%;animation:wttSpin 0.8s linear infinite;margin-bottom:12px;"></div>
-                <p style="font-size:0.95rem;margin:0;" class="wtt-chart-progress-text">${msg || i18n[currentLang].wtt_loading}</p>
-            </div>`;
-            overlay.style.cssText = 'position:absolute;top:0;left:0;right:0;bottom:0;z-index:10;display:flex;';
-            chartContainer.style.position = 'relative';
-            chartContainer.appendChild(overlay);
-        } else if (chartContainer) {
-            const textEl = chartContainer.querySelector('.wtt-chart-progress-text');
-            if (textEl) textEl.textContent = msg;
-        }
+    function mountRaceOverlay(msg) {
+        if (!raceStage || raceStage.querySelector('.wtt-loading-overlay')) return;
+        raceOverlay = document.createElement('div');
+        raceOverlay.className = 'wtt-loading-overlay';
+        raceOverlay.innerHTML = wttLoadingBlockHtml(msg || i18n[currentLang].wtt_loading);
+        raceOverlay.style.cssText = 'position:absolute;top:0;left:0;right:0;bottom:0;z-index:10;display:flex;';
+        raceStage.appendChild(raceOverlay);
     }
 
-    function hideChartOverlay() {
-        if (chartContainer) {
-            const overlay = chartContainer.querySelector('.wtt-loading-overlay');
-            if (overlay) overlay.remove();
-        }
+    function setP(pct, detail, main) {
+        wttSetLoadingProgress(raceOverlay, pct, detail, main);
+        wttSetLoadingProgress('wttPlayerCheckboxList', pct, detail, main);
     }
 
-    showProgress(i18n[currentLang].wtt_prepare);
+    function hideRaceOverlay() {
+        wttStopLoadingTimer(raceOverlay);
+        if (raceOverlay) { raceOverlay.remove(); raceOverlay = null; }
+    }
+
+    wttMountLoading('wttPlayerCheckboxList', i18n[currentLang].wtt_prepare);
+    mountRaceOverlay();
+    setP(wttLoadPhasePct('download', 0, 1), i18n[currentLang].wtt_prepare);
     console.log('[WttDataViz] 开始加载数据...');
 
     try {
-        // 🔥 逐个加载数据文件，显示详细进度
-        // 先加载 settings.json 以判断是否需要 initial-scores
-        showProgress(i18n[currentLang].wtt_downloading.replace('{label}', 'settings').replace('{i}', '1').replace('{total}', '6').replace('{file}', 'settings.json'));
         await new Promise(r => setTimeout(r, 0));
-        await wttLoadSettings();
 
-        // flat1300 模式下跳过 initial-scores 加载
-        const needsInitScores = !wttSettings || wttSettings.scoreMode !== 'flat1300';
-
-        const dataFiles = [
-            { name: 'score-log (按赛季)',   loader: wttLoadScoreLog,          label: i18n[currentLang].wtt_file_matches },
-        ];
-        if (needsInitScores) {
-            dataFiles.push({ name: 'initial-scores.json', loader: wttLoadInitialScores, label: i18n[currentLang].wtt_file_initial });
-        }
-        dataFiles.push(
-            { name: 'event-coefficient.json',loader: wttLoadEventCoefficients, label: i18n[currentLang].wtt_file_event },
-            { name: 'seasons.json',          loader: wttLoadSeasons,           label: i18n[currentLang].wtt_file_season },
-            { name: 'assoc.json',            loader: wttLoadPlayerAssoc,       label: i18n[currentLang].wtt_pp_assoc }
-        );
-
-        for (let i = 0; i < dataFiles.length; i++) {
-            const f = dataFiles[i];
-            const total = dataFiles.length;
-            showProgress(i18n[currentLang].wtt_downloading.replace('{label}', f.label).replace('{i}', i + 1).replace('{total}', total).replace('{file}', f.name));
-            // yield 到浏览器，确保 UI 更新
-            await new Promise(r => setTimeout(r, 0));
-            await f.loader();
-        }
+        // settings 先行，其余数据文件并行下载（每个文件完成即推进进度条）
+        await wttLoadSettingsAndFiles(true, (done, total, label) => {
+            setP(wttLoadPhasePct('download', done + 1, total + 1),
+                 i18n[currentLang].wtt_downloading.replace('{label}', label).replace('{i}', String(done + 1)).replace('{total}', String(total + 1)).replace('{file}', label));
+        });
 
         // flat1300 模式不需要 initialScoresData
         const isFlat = wttSettings && wttSettings.scoreMode === 'flat1300';
         if (!isFlat && !wttInitialScoresData) throw new Error('WTT initial-scores 加载失败');
         if (!wttEventCoefficients || !wttSeasonsData) throw new Error('WTT数据加载失败');
 
-        // 更新进度为计算排名
-        showProgress(i18n[currentLang].wtt_calculating);
-
         // 异步分块计算（带进度回调）
+        setP(wttLoadPhasePct('calc', 0, 1), '', i18n[currentLang].wtt_calculating);
         wttRankingTimeline = await wttCalculateAllRankingsAsync((current, total, label) => {
-            showProgress(i18n[currentLang].wtt_snapshot.replace('{current}', current).replace('{total}', total));
+            setP(wttLoadPhasePct('calc', current, total),
+                 (label ? label + ' · ' : '') + i18n[currentLang].wtt_snapshot.replace('{current}', current).replace('{total}', total));
         });
 
-        // 加载完成，清理图表区的 loading overlay
-        hideChartOverlay();
+        // 加载完成，移除首屏覆盖层与计时器（竞速图随后正常渲染）
+        hideRaceOverlay();
         return true;
     } catch(e) {
         console.error('WttDataViz: 排名计算失败', e);
         wttRankingTimeline = [];
-        hideChartOverlay();
+        hideRaceOverlay();
+        const progressContainer = document.getElementById('wttPlayerCheckboxList');
         if (progressContainer) {
             progressContainer.innerHTML = '<div style="padding:20px;color:var(--accent-red);">❌ ' + i18n[currentLang].wtt_error_fail + '</div>';
         }

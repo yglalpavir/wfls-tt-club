@@ -8,18 +8,6 @@
 
 Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
 Display #
-
-
-100
-Page 1 of 3 Total: 222
-
-Start
-Prev
-1
-2
-3
-Next
-End
 2015	GAC Group World Tour Swedish Open Stockholm 2015	XU Xin (CHN)		DEVOS Robin (BEL)		MS	Main Draw	R64	4 - 1	4:11 11:8 11:9 11:8 11:5	XU Xin	
 2015	GAC Group World Tour Swedish Open Stockholm 2015	KARLSSON Mattias (SWE)		GORAK Daniel (POL)		MS	Main Draw	R64	4 - 0	11:6 11:9 11:7 11:9	KARLSSON Mattias	
 2015	GAC Group World Tour Swedish Open Stockholm 2015	BAUM Patrick (GER)		BROSSIER Benjamin (FRA)		MS	Main Draw	R64	1 - 4	9:11 10:12 9:11 11:9 9:11	BROSSIER Benjamin	
