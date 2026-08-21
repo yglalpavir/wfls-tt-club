@@ -1,5 +1,6 @@
 {
   "scoreFiles": [
+    "score-log-2015-wtt.json",
     "score-log-2014-wtt.json",
     "score-log-2013-wtt.json",
     "score-log-2005-wtt.json",
@@ -7,7 +8,6 @@
     "score-log-2003-wtt.json",
     "score-log-2002-wtt.json",
     "score-log-2001-wtt.json",
-    "score-log-2015-wtt.json",
     "score-log-2016-wtt.json",
     "score-log-2017-wtt.json",
     "score-log-2018-wtt.json",

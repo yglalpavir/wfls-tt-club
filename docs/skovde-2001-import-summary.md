@@ -1019,3 +1019,125 @@ ITTF WTTC 团体 → 世乒赛团体（1.21）
 
 - `tools/import_2014.py`：十四站导入脚本（复用 2013 逻辑，新增 `pro6/team8` 模板、`wc3` 增 R16、`CHEN Szu-YU` 特例、去重追加、manifest 首位注册）。
 - `tools/add_assoc_2014.py`：补充 assoc.json 脚本（复用 import_2014 的 NAME_MAP，扩充 COUNTRY_MAP 增 8 新代码及补全 6 既有代码）。
+
+---
+
+# 第十一部分：2015 年赛事导入
+
+## 1. 概述
+
+2015 年共导入 16 站 ITTF 赛事。沿用 2013/2014 全部规则：`U21MS/U21WS` 并入 ms/ws；团体世界杯 Dubai 的 MT/WT 单打并入 ms/ws、团队双打并入 md/wd；世乒赛 Suzhou 为个人赛（含 XD）；人名格式遵循 `wtt_data/player-name-format.md` 与 `wtt_data/mixed-team-guide.md`。
+
+```python
+# 事件类型映射（按原始文件页眉「赛事种类」判定）
+Super Series   → ittf白金赛（1.15）
+Major Series   → ittf常规赛（0.48）
+Grand Finals   → 总决赛（1.35）
+World Cup      → 世界杯（1.62）
+Team World Cup → 世界杯团体（1.05）
+ITTF WTTC 个人 → 世乒赛（1.83）
+```
+
+## 2. 数据来源与导入结果
+
+原始数据位于 `docs/result_ittf_link/2015/`（16 个 txt + `import2015.py` 元数据生成脚本）。tab 分隔行结构同 2014，无断行续行问题。
+
+| 类别 | 目标文件 | 新增 |
+| --- | --- | --- |
+| MS | `wtt_data/ms/score-log-2015-wtt.json` | 1650 |
+| WS | `wtt_data/ws/score-log-2015-ws.json` | 1265 |
+| MD | `wtt_data/md/score-log-2015-wtt.json` | 613 |
+| WD | `wtt_data/wd/score-log-2015-wtt.json` | 477 |
+| XD | `wtt_data/xd/score-log-2015-wtt.json` | 100 |
+| 合计 | | 4105 条 |
+
+> 现有 `ms/score-log-2015-wtt.json` 原已有 7 条洲杯赛记录（2015-02-21~23），去重追加无冲突；文件当前总计 1657 条。
+
+五个分类的 `manifest.json` 已将 `score-log-2015-*` 注册到 scoreFiles 首位。
+
+分站明细（按解析后实际入库行数）：
+
+| 站 | 类型 | MS | WS | MD | WD | XD |
+| --- | --- | --- | --- | --- | --- | --- |
+| Team World Cup Dubai | 世界杯团体 | 44 | 48 | 19 | 19 | - |
+| Kuwait Open | 白金 | 146 | 54 | 43 | 29 | - |
+| Qatar Open | 白金 | 34 | 86 | 38 | 25 | - |
+| German Open Bremen | 白金 | 244 | 154 | 60 | 38 | - |
+| Spanish Open Almeria | 常规 | 93 | 93 | 48 | 36 | - |
+| WTTC Suzhou | 世乒赛 | 350 | 200 | 100 | 99 | 100 |
+| Japan Open Kobe | 白金 | 100 | 96 | 27 | 24 | - |
+| Korea Open Incheon | 白金 | 96 | 67 | 18 | 10 | - |
+| China Open Chengdu | 白金 | 100 | 98 | 23 | 21 | - |
+| Czech Open Olomouc | 常规 | 54 | 35 | 59 | 43 | - |
+| Austrian Open Wels | 常规 | 193 | 120 | 55 | 41 | - |
+| Men's World Cup Halmstad | 世界杯 | 28 | - | - | - | - |
+| Polish Open Warsaw | 常规 | 93 | 94 | 60 | 44 | - |
+| Women's World Cup Sendai | 世界杯 | - | 28 | - | - | - |
+| Swedish Open Stockholm | 常规 | 94 | 63 | 56 | 41 | - |
+| Grand Finals Lisbon | 总决赛 | 30 | 30 | 7 | 7 | - |
+
+> 缺失说明：各站均为部分页导出（按要求忽略数量差）；Kuwait MS 源文件重复粘贴两页，去重后正确；Team World Cup Dubai 有 2 条未赛行（Result `0 - 0` 且无胜者），自动跳过；German Bremen 资格赛 Round 列为「256」等数字编号，按 Qualification 阶段统一映射第 1 天。
+
+## 3. 日期映射
+
+沿用既有模板（复用 2013 的 `teamwc4/wttc8`、2014 的 `pro6/wc3(含R16)`），无新增模板：
+
+- Pro Tour 5 天站（`pro5`，10 站）：资格赛 → 第 1 天，R64/R32 → 第 2 天，R16/1/4 决赛 → 第 3 天，半决赛 → 第 4 天，决赛 → 第 5 天。
+- Qatar Open（`pro6`，2015-02-17~22）：资格赛 → 02-17，R64 → 02-18，R32 → 02-19，R16 → 02-20，1/4 决赛 → 02-21，半决赛/决赛 → 02-22。
+- Grand Finals（`grandfinals4`，Lisbon 2015-12-10~13）：R16 → 12-11，1/4 决赛 → 12-12，半决赛/决赛 → 12-13。
+- 男/女世界杯（`wc3`，各 3 天）：资格赛 → 第 1 天，R16/1/4 决赛 → 第 2 天，半决赛/决赛/排位赛 → 第 3 天。
+- Team World Cup（`teamwc4`，Dubai 2015-01-08~11）：资格赛 → 01-08，主赛（Main Draw）→ 01-11。
+- WTTC（`wttc8`，Suzhou 2015-04-26~05-03）：资格赛 → 04-26，R128 → 04-27，R64 → 04-28，R32 → 04-29，R16 → 04-30，1/4 决赛 → 05-01，半决赛 → 05-02，决赛 → 05-03。
+
+## 4. 姓名规范化说明
+
+遵循 `wtt_data/player-name-format.md`，`tools/import_2015.py` 自动生成标准名映射（复用 2013/2014 规则）。
+
+- 中/港/台/新/韩/朝：`姓 名` 保持原文；日本/欧美：`名 姓` 交换（如 `Jun MIZUTANI`、`Tomokazu HARIMOTO`、`Dimitrij OVTCHAROV`）。
+- 复用既有特例：`KIM Minhee (YOB=1991)` → `KIM Minhee (1991)`（Korea/Kuwait/Qatar 2015 出现）；`LANG Kristin` → `Kristin LANG`；`NI Xia Lian` → `Xia Lian NI`；`LI Qian` → `Qian LI`；`SCHOPP Jie` 保持原文；`THOMAS WU ZHANG Chloe Anna` (WAL) 按欧洲规则处理（Suzhou 资格赛再现）。
+- `CHOE Hyon Hwa (1992)` (PRK)：DB 无同名球员，按默认规则剥离年份后缀为 `CHOE Hyon Hwa`。
+
+全部 4105 条无缺失名字、无胜者不匹配、无重复录入、无双打胜者=负者。
+
+## 5. 协会籍补充（assoc.json）
+
+| 文件 | 本次新增 | 合计 |
+| --- | --- | --- |
+| `wtt_data/ms/assoc.json` | 130 | 2160 |
+| `wtt_data/ws/assoc.json` | 57 | 1967 |
+
+2015 全部 MS/WS 球员（含 U21MS/U21WS/MT/WT 单打）identity 命中率 100%。新增国家映射仅 1 个：`DJI`（吉布提，Austrian Open U21MS）。
+
+## 6. 关键场次验证
+
+| 场次 | 结果 |
+| --- | --- |
+| 世乒赛 MS 决赛 | `MA Long` 胜 `FANG Bo`（2015-05-03） |
+| 世乒赛 WS 决赛 | `DING Ning` 胜 `LIU Shiwen`（2015-05-03） |
+| 世乒赛 MD 决赛 | `XU Xin/ZHANG Jike` 胜 `FAN Zhendong/ZHOU Yu`（2015-05-03） |
+| 世乒赛 WD 决赛 | `LIU Shiwen/ZHU Yuling` 胜 `DING Ning/LI Xiaoxia`（2015-05-03） |
+| 世乒赛 XD 决赛 | `XU Xin/YANG Ha Eun` 胜 `Maharu YOSHIMURA/Kasumi ISHIKAWA`（2015-05-03） |
+| 团体世界杯 MT 决赛 | 中国 3-0 奥地利（双打 `XU Xin/ZHANG Jike` 胜 `Daniel HABESOHN/Stefan FEGERL`，2015-01-11） |
+| 团体世界杯 WT 决赛 | 中国 3-0 朝鲜（双打 `DING Ning/LIU Shiwen` 胜 `KIM Hye Song/RI Mi Gyong`，2015-01-11） |
+| 男世界杯决赛 | `MA Long` 胜 `FAN Zhendong`（2015-10-18） |
+| 女世界杯决赛 | `LIU Shiwen` 胜 `Kasumi ISHIKAWA`（2015-11-01） |
+| 总决赛 MS 决赛 | `MA Long` 胜 `FAN Zhendong`（2015-12-13） |
+| 总决赛 WS 决赛 | `DING Ning` 胜 `CHEN Meng`（2015-12-13） |
+| 总决赛 MD 决赛 | `Masataka MORIZONO/Yuya OSHIMA` 胜 `Joao MONTEIRO/Tiago APOLONIA`（2015-12-13） |
+| 总决赛 WD 决赛 | `DING Ning/ZHU Yuling` 胜 `Mima ITO/Miu HIRANO`（2015-12-13） |
+| Kuwait MS/WS 决赛 | `MA Long` / `LI Xiaoxia` |
+| Qatar MS/WS 决赛 | `Vladimir SAMSONOV` / `Elizabeta SAMARA` |
+| German MS/WS 决赛 | `MA Long` / `Mima ITO` |
+| Spanish MS/WS 决赛 | `Maharu YOSHIMURA` / `JEON Jihee` |
+| Japan MS/WS 决赛 | `XU Xin` / `CHEN Meng` |
+| Korea MS/WS 决赛 | `Youngsik JEOUNG` / `Ai FUKUHARA` |
+| Chengdu MS/WS 决赛 | `MA Long` / `ZHU Yuling` |
+| Czech MS/WS 决赛 | `WONG Chun Ting` / `Ai FUKUHARA` |
+| Austrian MS/WS 决赛 | `Jun MIZUTANI` / `Ying HAN` |
+| Polish MS/WS 决赛 | `FAN Zhendong` / `LIU Shiwen` |
+| Swedish MS/WS 决赛 | `FAN Zhendong` / `MU Zi` |
+
+## 7. 相关脚本
+
+- `tools/import_2015.py`：十六站导入脚本（复用 2013/2014 逻辑与全部模板 `pro5/pro6/grandfinals4/wc3/teamwc4/wttc8`，未赛行自动跳过、去重追加、manifest 首位注册）。
+- `tools/add_assoc_2015.py`：补充 assoc.json 脚本（复用 import_2015 的 NAME_MAP，COUNTRY_MAP 增 `DJI`）。
