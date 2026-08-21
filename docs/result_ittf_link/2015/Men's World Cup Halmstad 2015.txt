@@ -5,3 +5,32 @@
 参赛人数：28
 开始日期：2015-10-16
 结束日期：2015-10-18
+
+2015	Men's World Cup Halmstad 2015	GAO Ning (SGP)		HENZELL William (AUS)		MS	Qualification		4 - 0	11:5 11:9 11:3 11:7	GAO Ning	
+2015	Men's World Cup Halmstad 2015	GAO Ning (SGP)		KARLSSON Kristian (SWE)		MS	Qualification		1 - 4	4:11 11:5 6:11 11:13 7:11	KARLSSON Kristian	
+2015	Men's World Cup Halmstad 2015	KARLSSON Kristian (SWE)		HENZELL William (AUS)		MS	Qualification		4 - 1	11:8 11:5 9:11 11:3 11:8	KARLSSON Kristian	
+2015	Men's World Cup Halmstad 2015	APOLONIA Tiago (POR)		TSUBOI Gustavo (BRA)		MS	Qualification		3 - 4	11:8 11:5 9:11 11:8 7:11 4:11 8:11	TSUBOI Gustavo	
+2015	Men's World Cup Halmstad 2015	APOLONIA Tiago (POR)		ASSAR Omar (EGY)		MS	Qualification		4 - 3	6:11 11:6 11:5 11:8 7:11 4:11 11:8	APOLONIA Tiago	
+2015	Men's World Cup Halmstad 2015	ASSAR Omar (EGY)		TSUBOI Gustavo (BRA)		MS	Qualification		4 - 3	11:13 11:9 11:8 7:11 6:11 11:8 11:6	ASSAR Omar	
+2015	Men's World Cup Halmstad 2015	GIONIS Panagiotis (GRE)		BUTLER Jimmy (USA)		MS	Qualification		4 - 0	11:4 11:9 11:3 11:9	GIONIS Panagiotis	
+2015	Men's World Cup Halmstad 2015	GIONIS Panagiotis (GRE)		GAUZY Simon (FRA)		MS	Qualification		4 - 1	11:6 11:9 11:9 9:11 11:8	GIONIS Panagiotis	
+2015	Men's World Cup Halmstad 2015	GAUZY Simon (FRA)		BUTLER Jimmy (USA)		MS	Qualification		4 - 0	12:10 11:8 11:7 11:8	GAUZY Simon	
+2015	Men's World Cup Halmstad 2015	GARDOS Robert (AUT)		KALLBERG Anton (SWE)		MS	Qualification		4 - 0	11:8 12:10 11:8 11:9	GARDOS Robert	
+2015	Men's World Cup Halmstad 2015	GARDOS Robert (AUT)		ACHANTA Sharath (IND)		MS	Qualification		4 - 0	11:7 11:9 11:7 11:5	GARDOS Robert	
+2015	Men's World Cup Halmstad 2015	ACHANTA Sharath (IND)		KALLBERG Anton (SWE)		MS	Qualification		0 - 4	5:11 6:11 1:11 8:11	KALLBERG Anton	
+2015	Men's World Cup Halmstad 2015	MA Long (CHN)		ASSAR Omar (EGY)		MS	Main Draw	R16	4 - 1	10:12 11:9 11:7 11:5 11:8	MA Long	
+2015	Men's World Cup Halmstad 2015	GIONIS Panagiotis (GRE)		FREITAS Marcos (POR)		MS	Main Draw	R16	2 - 4	12:10 9:11 12:10 13:15 3:11 0:11	FREITAS Marcos	
+2015	Men's World Cup Halmstad 2015	NIWA Koki (JPN)		GARDOS Robert (AUT)		MS	Main Draw	R16	4 - 2	11:7 7:11 11:6 8:11 11:4 11:5	NIWA Koki	
+2015	Men's World Cup Halmstad 2015	GAO Ning (SGP)		OVTCHAROV Dimitrij (GER)		MS	Main Draw	R16	0 - 4	4:11 7:11 7:11 6:11	OVTCHAROV Dimitrij	
+2015	Men's World Cup Halmstad 2015	MIZUTANI Jun (JPN)		KALLBERG Anton (SWE)		MS	Main Draw	R16	4 - 1	6:11 11:6 11:8 11:7 11:8	MIZUTANI Jun	
+2015	Men's World Cup Halmstad 2015	TSUBOI Gustavo (BRA)		TANG Peng (HKG)		MS	Main Draw	R16	4 - 3	12:10 11:9 10:12 6:11 11:9 6:11 14:12	TSUBOI Gustavo	
+2015	Men's World Cup Halmstad 2015	CHUANG Chih-Yuan (TPE)		KARLSSON Kristian (SWE)		MS	Main Draw	R16	4 - 1	11:9 10:12 11:8 11:9 13:11	CHUANG Chih-Yuan	
+2015	Men's World Cup Halmstad 2015	GAUZY Simon (FRA)		FAN Zhendong (CHN)		MS	Main Draw	R16	0 - 4	7:11 5:11 10:12 3:11	FAN Zhendong	
+2015	Men's World Cup Halmstad 2015	MA Long (CHN)		FREITAS Marcos (POR)		MS	Main Draw	QuarterFinal	4 - 0	12:10 11:4 11:6 11:6	MA Long	
+2015	Men's World Cup Halmstad 2015	NIWA Koki (JPN)		OVTCHAROV Dimitrij (GER)		MS	Main Draw	QuarterFinal	1 - 4	12:10 6:11 3:11 8:11 5:11	OVTCHAROV Dimitrij	
+2015	Men's World Cup Halmstad 2015	MIZUTANI Jun (JPN)		TSUBOI Gustavo (BRA)		MS	Main Draw	QuarterFinal	4 - 0	11:2 11:6 11:5 11:7	MIZUTANI Jun	
+2015	Men's World Cup Halmstad 2015	CHUANG Chih-Yuan (TPE)		FAN Zhendong (CHN)		MS	Main Draw	QuarterFinal	1 - 4	11:4 3:11 7:11 5:11 12:14	FAN Zhendong	
+2015	Men's World Cup Halmstad 2015	MA Long (CHN)		OVTCHAROV Dimitrij (GER)		MS	Main Draw	SemiFinal	4 - 0	11:4 11:2 11:7 11:4	MA Long	
+2015	Men's World Cup Halmstad 2015	MIZUTANI Jun (JPN)		FAN Zhendong (CHN)		MS	Main Draw	SemiFinal	1 - 4	11:8 5:11 5:11 5:11 7:11	FAN Zhendong	
+2015	Men's World Cup Halmstad 2015	MA Long (CHN)		FAN Zhendong (CHN)		MS	Main Draw	Final	4 - 0	11:7 11:6 11:8 11:8	MA Long	
+2015	Men's World Cup Halmstad 2015	OVTCHAROV Dimitrij (GER)		MIZUTANI Jun (JPN)		MS	Position Draw	2	4 - 2	11:9 9:11 11:9 7:11 11:9 11:9	OVTCHAROV Dimitrij	

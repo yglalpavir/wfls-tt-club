@@ -5,3 +5,998 @@
 参赛人数：1018
 开始日期：2015-04-26
 结束日期：2015-05-03
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 4 Total: 350
+
+Start
+Prev
+1
+2
+3
+4
+Next
+End
+2015	World Table Tennis Championships Suzhou 2015	MA Long (CHN)		ALAMIYAN Noshad (IRI)		MS	Main Draw	R128	4 - 0	11:7 11:1 11:3 12:10	MA Long	
+2015	World Table Tennis Championships Suzhou 2015	KARLSSON Mattias (SWE)		LEBESSON Emmanuel (FRA)		MS	Main Draw	R128	2 - 4	9:11 7:11 15:13 6:11 11:9 6:11	LEBESSON Emmanuel	
+2015	World Table Tennis Championships Suzhou 2015	VLASOV Grigory (RUS)		NUYTINCK Cedric (BEL)		MS	Main Draw	R128	4 - 2	11:6 7:11 11:6 6:11 11:2 11:8	VLASOV Grigory	
+2015	World Table Tennis Championships Suzhou 2015	PISTEJ Lubomir (SVK)		GIONIS Panagiotis (GRE)		MS	Main Draw	R128	0 - 4	9:11 10:12 5:11 6:11	GIONIS Panagiotis	
+2015	World Table Tennis Championships Suzhou 2015	APOLONIA Tiago (POR)		ALTO Gaston (ARG)		MS	Main Draw	R128	4 - 1	7:11 11:3 11:6 11:6 11:6	APOLONIA Tiago	
+2015	World Table Tennis Championships Suzhou 2015	KREANGA Kalinikos (GRE)		PITCHFORD Liam (ENG)		MS	Main Draw	R128	2 - 4	11:7 5:11 5:11 12:10 7:11 7:11	PITCHFORD Liam	
+2015	World Table Tennis Championships Suzhou 2015	HABESOHN Daniel (AUT)		ELBEIALI Mohamed (EGY)		MS	Main Draw	R128	4 - 1	7:11 11:9 12:10 11:8 11:7	HABESOHN Daniel	
+2015	World Table Tennis Championships Suzhou 2015	LAKATOS Tamas (HUN)		JOO Saehyuk (KOR)		MS	Main Draw	R128	2 - 4	8:11 9:11 13:11 2:11 11:7 3:11	JOO Saehyuk	
+2015	World Table Tennis Championships Suzhou 2015	TANG Peng (HKG)		AGUIRRE Marcelo (PAR)		MS	Main Draw	R128	4 - 0	11:5 11:6 11:3 11:6	TANG Peng	
+2015	World Table Tennis Championships Suzhou 2015	KOLAREK Tomislav (CRO)		BOBOCICA Mihai (ITA)		MS	Main Draw	R128	2 - 4	4:11 12:10 8:11 11:8 5:11 2:11	BOBOCICA Mihai	
+2015	World Table Tennis Championships Suzhou 2015	FEGERL Stefan (AUT)		BURGIS Matiss (LAT)		MS	Main Draw	R128	4 - 0	13:11 11:8 11:3 11:6	FEGERL Stefan	
+2015	World Table Tennis Championships Suzhou 2015	NOROOZI Afshin (IRI)		GARDOS Robert (AUT)		MS	Main Draw	R128	1 - 4	11:6 3:11 6:11 8:11 8:11	GARDOS Robert	
+2015	World Table Tennis Championships Suzhou 2015	ASSAR Omar (EGY)		CHEW Clarence (SGP)		MS	Main Draw	R128	4 - 2	11:6 11:8 8:11 8:11 11:5 11:4	ASSAR Omar	
+2015	World Table Tennis Championships Suzhou 2015	TORIOLA Segun (NGR)		HUANG Sheng-Sheng (TPE)		MS	Main Draw	R128	3 - 4	8:11 7:11 1:11 11:9 11:7 11:6 6:11	HUANG Sheng-Sheng	
+2015	World Table Tennis Championships Suzhou 2015	LEE Sang Su (KOR)		KENJAEV Zokhid (UZB)		MS	Main Draw	R128	4 - 0	11:1 11:5 11:4 11:7	LEE Sang Su	
+2015	World Table Tennis Championships Suzhou 2015	TANVIRIYAVECHAKUL Padasak (THA)		OVTCHAROV Dimitrij (GER)		MS	Main Draw	R128	1 - 4	6:11 2:11 5:11 13:11 3:11	OVTCHAROV Dimitrij	
+2015	World Table Tennis Championships Suzhou 2015	BOLL Timo (GER)		MACHADO Carlos (ESP)		MS	Main Draw	R128	4 - 0	11:7 11:7 11:5 11:3	BOLL Timo	
+2015	World Table Tennis Championships Suzhou 2015	DYJAS Jakub (POL)		HE Zhiwen (ESP)		MS	Main Draw	R128	4 - 3	11:8 11:6 8:11 10:12 12:10 8:11 11:5	DYJAS Jakub	
+2015	World Table Tennis Championships Suzhou 2015	KARLSSON Kristian (SWE)		STOYANOV Niagol (ITA)		MS	Main Draw	R128	4 - 0	11:7 11:8 11:5 11:7	KARLSSON Kristian	
+2015	World Table Tennis Championships Suzhou 2015	RECH DALDOSSO Marco (ITA)		MONTEIRO Joao (POR)		MS	Main Draw	R128	2 - 4	11:5 11:6 9:11 7:11 4:11 8:11	MONTEIRO Joao	
+2015	World Table Tennis Championships Suzhou 2015	MATSUDAIRA Kenta (JPN)		GROTH Jonathan (DEN)		MS	Main Draw	R128	3 - 4	8:11 11:8 11:7 6:11 12:14 11:3 5:11	GROTH Jonathan	
+2015	World Table Tennis Championships Suzhou 2015	JANCARIK Lubomir (CZE)		TOKIC Bojan (SLO)		MS	Main Draw	R128	4 - 0	11:8 11:8 13:11 11:9	JANCARIK Lubomir	
+2015	World Table Tennis Championships Suzhou 2015	DRINKHALL Paul (ENG)		SCHMID Elia (SUI)		MS	Main Draw	R128	4 - 0	11:1 11:4 11:1 11:1	DRINKHALL Paul	
+2015	World Table Tennis Championships Suzhou 2015	BEN ARI Omri (ISR)		WONG Chun Ting (HKG)		MS	Main Draw	R128	0 - 4	2:11 9:11 7:11 1:11	WONG Chun Ting	
+2015	World Table Tennis Championships Suzhou 2015	NIWA Koki (JPN)		JAKAB Janos (HUN)		MS	Main Draw	R128	4 - 0	11:4 11:2 11:8 11:7	NIWA Koki	
+2015	World Table Tennis Championships Suzhou 2015	KARAKASEVIC Aleksandar (SRB)		WANG Zengyi (POL)		MS	Main Draw	R128	3 - 4	13:11 14:12 8:11 12:10 7:11 9:11 7:11	WANG Zengyi	
+2015	World Table Tennis Championships Suzhou 2015	JIANG Tianyi (HKG)		PETO Zsolt (SRB)		MS	Main Draw	R128	4 - 0	11:4 11:8 11:2 11:7	JIANG Tianyi	
+2015	World Table Tennis Championships Suzhou 2015	DEVOS Robin (BEL)		CHEN Chien-An (TPE)		MS	Main Draw	R128	1 - 4	7:11 11:13 6:11 11:8 7:11	CHEN Chien-An	
+2015	World Table Tennis Championships Suzhou 2015	KIM Minseok (KOR)		ALAMIAN Nima (IRI)		MS	Main Draw	R128	4 - 1	9:11 11:6 11:9 11:5 11:2	KIM Minseok	
+2015	World Table Tennis Championships Suzhou 2015	TAUBER Michael (ISR)		GORAK Daniel (POL)		MS	Main Draw	R128	2 - 4	11:5 7:11 11:3 7:11 14:16 5:11	GORAK Daniel	
+2015	World Table Tennis Championships Suzhou 2015	CHIANG Hung-Chieh (TPE)		POWELL David (AUS)		MS	Main Draw	R128	4 - 1	11:3 11:9 9:11 11:6 11:5	CHIANG Hung-Chieh	
+2015	World Table Tennis Championships Suzhou 2015	CIOTI Constantin (ROU)		FAN Zhendong (CHN)		MS	Main Draw	R128	0 - 4	10:12 5:11 9:11 4:11	FAN Zhendong	
+2015	World Table Tennis Championships Suzhou 2015	ZHANG Jike (CHN)		IONESCU Ovidiu (ROU)		MS	Main Draw	R128	4 - 1	11:5 11:8 11:3 4:11 11:8	ZHANG Jike	
+2015	World Table Tennis Championships Suzhou 2015	SEO Hyundeok (KOR)		KIM Hyok Bong (PRK)		MS	Main Draw	R128	4 - 3	7:11 8:11 11:9 11:8 9:11 11:7 11:6	SEO Hyundeok	
+2015	World Table Tennis Championships Suzhou 2015	LIVENTSOV Alexey (RUS)		MATSUMOTO Cazuo (BRA)		MS	Main Draw	R128	4 - 3	11:4 9:11 7:11 11:9 11:1 9:11 11:8	LIVENTSOV Alexey	
+2015	World Table Tennis Championships Suzhou 2015	KOSIBA Daniel (HUN)		LIANG Jingkun (CHN)		MS	Main Draw	R128	1 - 4	11:13 3:11 11:5 7:11 8:11	LIANG Jingkun	
+2015	World Table Tennis Championships Suzhou 2015	MATTENET Adrien (FRA)		GERALDO Joao (POR)		MS	Main Draw	R128	2 - 4	1:11 11:7 7:11 8:11 11:8 9:11	GERALDO Joao	
+2015	World Table Tennis Championships Suzhou 2015	MADRID Marcos (MEX)		HO Kwan Kit (HKG)		MS	Main Draw	R128	0 - 4	8:11 15:17 6:11 6:11	HO Kwan Kit	
+2015	World Table Tennis Championships Suzhou 2015	TAN Ruiwu (CRO)		OLAH Benedek (FIN)		MS	Main Draw	R128	3 - 4	12:14 8:11 11:2 9:11 11:8 15:13 6:11	OLAH Benedek	
+2015	World Table Tennis Championships Suzhou 2015	JEVTOVIC Marko (SRB)		SAMSONOV Vladimir (BLR)		MS	Main Draw	R128	1 - 4	8:11 5:11 8:11 11:8 9:11	SAMSONOV Vladimir	
+2015	World Table Tennis Championships Suzhou 2015	GAO Ning (SGP)		SAIVE Jean-Michel (BEL)		MS	Main Draw	R128	4 - 1	11:5 6:11 11:7 11:7 11:8	GAO Ning	
+2015	World Table Tennis Championships Suzhou 2015	CHEN Diogo (POR)		TSUBOI Gustavo (BRA)		MS	Main Draw	R128	1 - 4	6:11 11:5 7:11 3:11 6:11	TSUBOI Gustavo	
+2015	World Table Tennis Championships Suzhou 2015	CHEN Weixing (AUT)		FERTIKOWSKI Pawel (POL)		MS	Main Draw	R128	4 - 0	12:10 11:8 11:4 11:3	CHEN Weixing	
+2015	World Table Tennis Championships Suzhou 2015	MONTEIRO Thiago (BRA)		MURAMATSU Yuto (JPN)		MS	Main Draw	R128	0 - 4	8:11 9:11 10:12 7:11	MURAMATSU Yuto	
+2015	World Table Tennis Championships Suzhou 2015	JEOUNG Youngsik (KOR)		SALIFOU Abdel-Kader (BEN)		MS	Main Draw	R128	4 - 0	11:7 11:3 11:9 11:5	JEOUNG Youngsik	
+2015	World Table Tennis Championships Suzhou 2015	ROBLES Alvaro (ESP)		PERSSON Jon (SWE)		MS	Main Draw	R128	0 - 4	8:11 7:11 10:12 8:11	PERSSON Jon	
+2015	World Table Tennis Championships Suzhou 2015	CALDERANO Hugo (BRA)		STERNBERG Kasper (DEN)		MS	Main Draw	R128	4 - 2	15:13 11:8 11:8 12:14 6:11 11:7	CALDERANO Hugo	
+2015	World Table Tennis Championships Suzhou 2015	PLATONOV Pavel (BLR)		MIZUTANI Jun (JPN)		MS	Main Draw	R128	0 - 4	11:13 9:11 3:11 4:11	MIZUTANI Jun	
+2015	World Table Tennis Championships Suzhou 2015	FREITAS Marcos (POR)		PEREIRA Andy (CUB)		MS	Main Draw	R128	4 - 1	7:11 11:1 11:9 11:9 11:9	FREITAS Marcos	
+2015	World Table Tennis Championships Suzhou 2015	ZIBRAT Jan (SLO)		YOSHIDA Masaki (JPN)		MS	Main Draw	R128	2 - 4	7:11 11:4 6:11 8:11 11:7 3:11	YOSHIDA Masaki	
+2015	World Table Tennis Championships Suzhou 2015	FRANZISKA Patrick (GER)		LASHIN Elsayed (EGY)		MS	Main Draw	R128	4 - 0	11:8 11:9 17:15 11:5	FRANZISKA Patrick	
+2015	World Table Tennis Championships Suzhou 2015	KATKOV Ivan (UKR)		MENGEL Steffen (GER)		MS	Main Draw	R128	3 - 4	11:3 11:7 5:11 5:11 11:13 11:7 7:11	MENGEL Steffen	
+2015	World Table Tennis Championships Suzhou 2015	STEGER Bastian (GER)		DURAN Marc (ESP)		MS	Main Draw	R128	4 - 2	11:9 6:11 11:7 6:11 11:9 11:5	STEGER Bastian	
+2015	World Table Tennis Championships Suzhou 2015	MINO Alberto (ECU)		KOU Lei (UKR)		MS	Main Draw	R128	0 - 4	4:11 7:11 7:11 8:11	KOU Lei	
+2015	World Table Tennis Championships Suzhou 2015	CRISAN Adrian (ROU)		PAPAGEORGIOU Konstantinos (GRE)		MS	Main Draw	R128	4 - 0	11:9 13:11 13:11 11:6	CRISAN Adrian	
+2015	World Table Tennis Championships Suzhou 2015	PATTANTYUS Adam (HUN)		CHUANG Chih-Yuan (TPE)		MS	Main Draw	R128	4 - 3	6:11 11:8 11:6 11:1 7:11 10:12 11:9	PATTANTYUS Adam	
+2015	World Table Tennis Championships Suzhou 2015	FANG Bo (KAZ)		KONECNY Tomas (CZE)		MS	Main Draw	R128	4 - 1	10:12 11:5 11:4 11:9 11:6	FANG Bo	
+2015	World Table Tennis Championships Suzhou 2015	GNANASEKARAN Sathiyan (IND)		GERELL Par (SWE)		MS	Main Draw	R128	4 - 1	11:5 11:8 8:11 11:4 11:7	GNANASEKARAN Sathiyan	
+2015	World Table Tennis Championships Suzhou 2015	ACHANTA Sharath (IND)		PAK Sin Hyok (PRK)		MS	Main Draw	R128	4 - 2	12:14 12:10 12:10 11:9 5:11 11:7	ACHANTA Sharath	
+2015	World Table Tennis Championships Suzhou 2015	FILIMON Andrei (ROU)		GAUZY Simon (FRA)		MS	Main Draw	R128	0 - 4	6:11 7:11 9:11 5:11	GAUZY Simon	
+2015	World Table Tennis Championships Suzhou 2015	ARUNA Quadri (NGR)		GHOSH Soumyajit (IND)		MS	Main Draw	R128	1 - 4	6:11 10:12 12:14 11:6 5:11	GHOSH Soumyajit	
+2015	World Table Tennis Championships Suzhou 2015	SEREDA Peter (SVK)		SHIBAEV Alexander (RUS)		MS	Main Draw	R128	1 - 4	3:11 9:11 7:11 21:19 5:11	SHIBAEV Alexander	
+2015	World Table Tennis Championships Suzhou 2015	SKACHKOV Kirill (RUS)		CHOE Il (PRK)		MS	Main Draw	R128	3 - 4	10:12 11:8 10:12 12:10 11:7 8:11 9:11	CHOE Il	
+2015	World Table Tennis Championships Suzhou 2015	YANG Zi (SGP)		XU Xin (CHN)		MS	Main Draw	R128	1 - 4	11:9 5:11 8:11 6:11 10:12	XU Xin	
+2015	World Table Tennis Championships Suzhou 2015	MA Long (CHN)		LEBESSON Emmanuel (FRA)		MS	Main Draw	R64	4 - 1	11:8 11:8 7:11 11:9 11:6	MA Long	
+2015	World Table Tennis Championships Suzhou 2015	VLASOV Grigory (RUS)		GIONIS Panagiotis (GRE)		MS	Main Draw	R64	1 - 4	5:11 8:11 11:9 9:11 7:11	GIONIS Panagiotis	
+2015	World Table Tennis Championships Suzhou 2015	APOLONIA Tiago (POR)		PITCHFORD Liam (ENG)		MS	Main Draw	R64	2 - 4	8:11 11:8 12:10 4:11 6:11 9:11	PITCHFORD Liam	
+2015	World Table Tennis Championships Suzhou 2015	HABESOHN Daniel (AUT)		JOO Saehyuk (KOR)		MS	Main Draw	R64	0 - 4	8:11 6:11 7:11 5:11	JOO Saehyuk	
+2015	World Table Tennis Championships Suzhou 2015	TANG Peng (HKG)		BOBOCICA Mihai (ITA)		MS	Main Draw	R64	4 - 0	12:10 11:6 11:4 11:7	TANG Peng	
+2015	World Table Tennis Championships Suzhou 2015	FEGERL Stefan (AUT)		GARDOS Robert (AUT)		MS	Main Draw	R64	4 - 2	6:11 13:11 11:9 11:8 9:11 11:9	FEGERL Stefan	
+2015	World Table Tennis Championships Suzhou 2015	ASSAR Omar (EGY)		HUANG Sheng-Sheng (TPE)		MS	Main Draw	R64	4 - 1	10:12 11:2 11:9 11:7 11:7	ASSAR Omar	
+2015	World Table Tennis Championships Suzhou 2015	LEE Sang Su (KOR)		OVTCHAROV Dimitrij (GER)		MS	Main Draw	R64	4 - 3	11:6 11:9 4:11 8:11 11:6 3:11 11:6	LEE Sang Su	
+2015	World Table Tennis Championships Suzhou 2015	BOLL Timo (GER)		DYJAS Jakub (POL)		MS	Main Draw	R64	4 - 2	11:9 7:11 6:11 11:5 11:7 15:13	BOLL Timo	
+2015	World Table Tennis Championships Suzhou 2015	KARLSSON Kristian (SWE)		MONTEIRO Joao (POR)		MS	Main Draw	R64	0 - 4	5:11 4:11 7:11 5:11	MONTEIRO Joao	
+2015	World Table Tennis Championships Suzhou 2015	GROTH Jonathan (DEN)		JANCARIK Lubomir (CZE)		MS	Main Draw	R64	4 - 2	11:13 11:7 11:9 10:12 13:11 11:4	GROTH Jonathan	
+2015	World Table Tennis Championships Suzhou 2015	DRINKHALL Paul (ENG)		WONG Chun Ting (HKG)		MS	Main Draw	R64	1 - 4	10:12 11:9 8:11 9:11 6:11	WONG Chun Ting	
+2015	World Table Tennis Championships Suzhou 2015	NIWA Koki (JPN)		WANG Zengyi (POL)		MS	Main Draw	R64	4 - 2	9:11 11:2 11:6 9:11 11:3 11:2	NIWA Koki	
+2015	World Table Tennis Championships Suzhou 2015	JIANG Tianyi (HKG)		CHEN Chien-An (TPE)		MS	Main Draw	R64	4 - 0	11:5 11:7 11:7 12:10	JIANG Tianyi	
+2015	World Table Tennis Championships Suzhou 2015	KIM Minseok (KOR)		GORAK Daniel (POL)		MS	Main Draw	R64	4 - 0	11:5 11:7 11:4 11:4	KIM Minseok	
+2015	World Table Tennis Championships Suzhou 2015	CHIANG Hung-Chieh (TPE)		FAN Zhendong (CHN)		MS	Main Draw	R64	1 - 4	5:11 4:11 5:11 11:9 7:11	FAN Zhendong	
+2015	World Table Tennis Championships Suzhou 2015	ZHANG Jike (CHN)		SEO Hyundeok (KOR)		MS	Main Draw	R64	4 - 0	11:3 11:7 11:5 11:4	ZHANG Jike	
+2015	World Table Tennis Championships Suzhou 2015	LIVENTSOV Alexey (RUS)		LIANG Jingkun (CHN)		MS	Main Draw	R64	0 - 4	3:11 9:11 3:11 10:12	LIANG Jingkun	
+2015	World Table Tennis Championships Suzhou 2015	GERALDO Joao (POR)		HO Kwan Kit (HKG)		MS	Main Draw	R64	4 - 3	11:4 11:13 10:12 11:8 8:11 11:9 15:13	GERALDO Joao	
+2015	World Table Tennis Championships Suzhou 2015	OLAH Benedek (FIN)		SAMSONOV Vladimir (BLR)		MS	Main Draw	R64	1 - 4	10:12 1:11 5:11 11:6 4:11	SAMSONOV Vladimir	
+2015	World Table Tennis Championships Suzhou 2015	GAO Ning (SGP)		TSUBOI Gustavo (BRA)		MS	Main Draw	R64	4 - 1	3:11 11:4 11:5 11:2 11:5	GAO Ning	
+2015	World Table Tennis Championships Suzhou 2015	CHEN Weixing (AUT)		MURAMATSU Yuto (JPN)		MS	Main Draw	R64	4 - 0	11:3 13:11 11:7 11:5	CHEN Weixing	
+2015	World Table Tennis Championships Suzhou 2015	JEOUNG Youngsik (KOR)		PERSSON Jon (SWE)		MS	Main Draw	R64	4 - 3	9:11 11:8 9:11 11:9 11:4 10:12 11:7	JEOUNG Youngsik	
+2015	World Table Tennis Championships Suzhou 2015	CALDERANO Hugo (BRA)		MIZUTANI Jun (JPN)		MS	Main Draw	R64	2 - 4	3:11 11:5 11:4 10:12 12:14 7:11	MIZUTANI Jun	
+2015	World Table Tennis Championships Suzhou 2015	FREITAS Marcos (POR)		YOSHIDA Masaki (JPN)		MS	Main Draw	R64	4 - 2	11:8 6:11 11:4 13:11 9:11 11:7	FREITAS Marcos	
+2015	World Table Tennis Championships Suzhou 2015	FRANZISKA Patrick (GER)		MENGEL Steffen (GER)		MS	Main Draw	R64	4 - 1	11:9 9:11 11:6 11:3 11:6	FRANZISKA Patrick	
+2015	World Table Tennis Championships Suzhou 2015	STEGER Bastian (GER)		KOU Lei (UKR)		MS	Main Draw	R64	2 - 4	11:4 14:12 8:11 9:11 8:11 4:11	KOU Lei	
+2015	World Table Tennis Championships Suzhou 2015	CRISAN Adrian (ROU)		PATTANTYUS Adam (HUN)		MS	Main Draw	R64	2 - 4	6:11 13:15 13:11 9:11 11:9 6:11	PATTANTYUS Adam	
+2015	World Table Tennis Championships Suzhou 2015	FANG Bo (KAZ)		GNANASEKARAN Sathiyan (IND)		MS	Main Draw	R64	4 - 1	9:11 11:4 11:8 11:5 11:7	FANG Bo	
+2015	World Table Tennis Championships Suzhou 2015	ACHANTA Sharath (IND)		GAUZY Simon (FRA)		MS	Main Draw	R64	4 - 1	11:4 11:5 11:7 8:11 11:8	ACHANTA Sharath	
+2015	World Table Tennis Championships Suzhou 2015	GHOSH Soumyajit (IND)		SHIBAEV Alexander (RUS)		MS	Main Draw	R64	1 - 4	7:12 12:14 11:4 10:12 9:11	SHIBAEV Alexander	
+2015	World Table Tennis Championships Suzhou 2015	CHOE Il (PRK)		XU Xin (CHN)		MS	Main Draw	R64	0 - 4	4:11 3:11 8:11 8:11	XU Xin	
+2015	World Table Tennis Championships Suzhou 2015	MA Long (CHN)		GIONIS Panagiotis (GRE)		MS	Main Draw	R32	4 - 0	14:12 11:5 11:5 11:4	MA Long	
+2015	World Table Tennis Championships Suzhou 2015	PITCHFORD Liam (ENG)		JOO Saehyuk (KOR)		MS	Main Draw	R32	1 - 4	10:12 11:9 5:11 4:11 8:11	JOO Saehyuk	
+2015	World Table Tennis Championships Suzhou 2015	TANG Peng (HKG)		FEGERL Stefan (AUT)		MS	Main Draw	R32	4 - 2	11:7 6:11 11:7 9:11 11:8 11:6	TANG Peng	
+2015	World Table Tennis Championships Suzhou 2015	ASSAR Omar (EGY)		LEE Sang Su (KOR)		MS	Main Draw	R32	1 - 4	2:11 9:11 11:8 9:11 6:11	LEE Sang Su
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 2 of 7 Total: 647
+
+Start
+Prev
+1
+2
+3
+4
+5
+6
+7
+Next
+End
+2015	World Table Tennis Championships Suzhou 2015	BOLL Timo (GER)		MONTEIRO Joao (POR)		MS	Main Draw	R32	4 - 3	11:5 7:11 10:12 14:12 11:7 3:11 12:10	BOLL Timo	
+2015	World Table Tennis Championships Suzhou 2015	GROTH Jonathan (DEN)		WONG Chun Ting (HKG)		MS	Main Draw	R32	0 - 4	8:11 7:11 6:11 7:11	WONG Chun Ting	
+2015	World Table Tennis Championships Suzhou 2015	NIWA Koki (JPN)		JIANG Tianyi (HKG)		MS	Main Draw	R32	4 - 2	8:11 2:11 11:7 11:3 11:6 11:3	NIWA Koki	
+2015	World Table Tennis Championships Suzhou 2015	KIM Minseok (KOR)		FAN Zhendong (CHN)		MS	Main Draw	R32	0 - 4	7:11 9:11 10:12 12:14	FAN Zhendong	
+2015	World Table Tennis Championships Suzhou 2015	ZHANG Jike (CHN)		LIANG Jingkun (CHN)		MS	Main Draw	R32	4 - 1	11:7 7:11 11:7 11:7 11:5	ZHANG Jike	
+2015	World Table Tennis Championships Suzhou 2015	GERALDO Joao (POR)		SAMSONOV Vladimir (BLR)		MS	Main Draw	R32	0 - 4	5:11 6:11 10:12 8:11	SAMSONOV Vladimir	
+2015	World Table Tennis Championships Suzhou 2015	GAO Ning (SGP)		CHEN Weixing (AUT)		MS	Main Draw	R32	4 - 1	11:6 11:9 13:11 5:11 11:4	GAO Ning	
+2015	World Table Tennis Championships Suzhou 2015	JEOUNG Youngsik (KOR)		MIZUTANI Jun (JPN)		MS	Main Draw	R32	3 - 4	11:4 11:9 6:11 4:11 12:10 9:11 11:13	MIZUTANI Jun	
+2015	World Table Tennis Championships Suzhou 2015	FREITAS Marcos (POR)		FRANZISKA Patrick (GER)		MS	Main Draw	R32	1 - 4	11:13 7:11 10:12 11:5 6:11	FRANZISKA Patrick	
+2015	World Table Tennis Championships Suzhou 2015	KOU Lei (UKR)		PATTANTYUS Adam (HUN)		MS	Main Draw	R32	4 - 0	11:5 11:9 11:8 16:14	KOU Lei	
+2015	World Table Tennis Championships Suzhou 2015	FANG Bo (KAZ)		ACHANTA Sharath (IND)		MS	Main Draw	R32	4 - 0		FANG Bo	
+2015	World Table Tennis Championships Suzhou 2015	SHIBAEV Alexander (RUS)		XU Xin (CHN)		MS	Main Draw	R32	2 - 4	11:5 11:8 2:11 9:11 5:11 7:11	XU Xin	
+2015	World Table Tennis Championships Suzhou 2015	MA Long (CHN)		JOO Saehyuk (KOR)		MS	Main Draw	R16	4 - 1	11:4 11:3 11:9 10:12 11:6	MA Long	
+2015	World Table Tennis Championships Suzhou 2015	TANG Peng (HKG)		LEE Sang Su (KOR)		MS	Main Draw	R16	4 - 1	1:11 11:7 11:8 14:12 11:9	TANG Peng	
+2015	World Table Tennis Championships Suzhou 2015	BOLL Timo (GER)		WONG Chun Ting (HKG)		MS	Main Draw	R16	4 - 1	11:9 11:8 3:11 12:10 15:13	BOLL Timo	
+2015	World Table Tennis Championships Suzhou 2015	NIWA Koki (JPN)		FAN Zhendong (CHN)		MS	Main Draw	R16	1 - 4	5:11 14:12 2:11 2:11 9:11	FAN Zhendong	
+2015	World Table Tennis Championships Suzhou 2015	ZHANG Jike (CHN)		SAMSONOV Vladimir (BLR)		MS	Main Draw	R16	4 - 1	16:14 11:8 11:6 5:11 11:3	ZHANG Jike	
+2015	World Table Tennis Championships Suzhou 2015	GAO Ning (SGP)		MIZUTANI Jun (JPN)		MS	Main Draw	R16	2 - 4	11:8 7:11 7:11 11:8 3:11 3:11	MIZUTANI Jun	
+2015	World Table Tennis Championships Suzhou 2015	FRANZISKA Patrick (GER)		KOU Lei (UKR)		MS	Main Draw	R16	4 - 2	7:11 8:11 11:8 11:6 11:9 11:8	FRANZISKA Patrick	
+2015	World Table Tennis Championships Suzhou 2015	FANG Bo (KAZ)		XU Xin (CHN)		MS	Main Draw	R16	4 - 3	10:12 7:11 11:8 11:2 8:11 11:9 13:11	FANG Bo	
+2015	World Table Tennis Championships Suzhou 2015	MA Long (CHN)		TANG Peng (HKG)		MS	Main Draw	QuarterFinal	4 - 0	11:7 11:9 11:6 11:1	MA Long	
+2015	World Table Tennis Championships Suzhou 2015	BOLL Timo (GER)		FAN Zhendong (CHN)		MS	Main Draw	QuarterFinal	2 - 4	10:12 9:11 11:8 7:11 15:13 7:11	FAN Zhendong	
+2015	World Table Tennis Championships Suzhou 2015	ZHANG Jike (CHN)		MIZUTANI Jun (JPN)		MS	Main Draw	QuarterFinal	4 - 1	11:4 11:6 10:12 11:5 11:9	ZHANG Jike	
+2015	World Table Tennis Championships Suzhou 2015	FRANZISKA Patrick (GER)		FANG Bo (KAZ)		MS	Main Draw	QuarterFinal	1 - 4	5:11 9:11 11:8 5:11 5:11	FANG Bo	
+2015	World Table Tennis Championships Suzhou 2015	MA Long (CHN)		FAN Zhendong (CHN)		MS	Main Draw	SemiFinal	4 - 1	11:1 11:7 11:8 7:11 11:5	MA Long	
+2015	World Table Tennis Championships Suzhou 2015	ZHANG Jike (CHN)		FANG Bo (KAZ)		MS	Main Draw	SemiFinal	1 - 4	5:11 7:11 11:5 9:11 10:12	FANG Bo	
+2015	World Table Tennis Championships Suzhou 2015	MA Long (CHN)		FANG Bo (KAZ)		MS	Main Draw	Final	4 - 2	11:7 7:11 11:4 11:8 11:13 11:4	MA Long	
+2015	World Table Tennis Championships Suzhou 2015	TORIOLA Segun (NGR)		WEBER Lionel (SUI)		MS	Qualification	QR64	4 - 3	11:9 11:4 4:11 9:11 11:8 4:11 11:3	TORIOLA Segun	
+2015	World Table Tennis Championships Suzhou 2015	DURAN Marc (ESP)		CEKIC Irfan (MNE)		MS	Qualification	QR64	4 - 0	11:9 11:5 11:7 11:9	DURAN Marc	
+2015	World Table Tennis Championships Suzhou 2015	MONTEIRO Thiago (BRA)		BEISENOV Samat (KAZ)		MS	Qualification	QR64	4 - 1	11:6 6:11 11:4 11:5 12:10	MONTEIRO Thiago	
+2015	World Table Tennis Championships Suzhou 2015	FILIMON Andrei (ROU)		ASSAR Khalid (EGY)		MS	Qualification	QR64	4 - 3	11:8 11:8 6:11 9:11 8:11 11:7 11:3	FILIMON Andrei	
+2015	World Table Tennis Championships Suzhou 2015	PAK Sin Hyok (PRK)		RABINOVICH Shimon (ISR)		MS	Qualification	QR64	4 - 2	9:11 5:11 11:6 11:7 15:13 11:6	PAK Sin Hyok	
+2015	World Table Tennis Championships Suzhou 2015	TREGLER Tomas (CZE)		POWELL David (AUS)		MS	Qualification	QR64	3 - 4	5:11 8:11 11:13 11:2 11:2 11:5 9:11	POWELL David	
+2015	World Table Tennis Championships Suzhou 2015	FERTIKOWSKI Pawel (POL)		GERASSIMENKO Kirill (KAZ)		MS	Qualification	QR64	4 - 0	12:10 11:6 11:5 11:9	FERTIKOWSKI Pawel	
+2015	World Table Tennis Championships Suzhou 2015	KATKOV Ivan (UKR)		GOLOVANOV Stanislav (BUL)		MS	Qualification	QR64	4 - 3	11:3 5:11 11:6 12:14 12:10 6:11 11:7	KATKOV Ivan	
+2015	World Table Tennis Championships Suzhou 2015	DEVOS Robin (BEL)		YIANGOU Marios (CYP)		MS	Qualification	QR64	4 - 2	11:3 9:11 11:6 7:11 12:10 11:4	DEVOS Robin	
+2015	World Table Tennis Championships Suzhou 2015	PEREIRA Andy (CUB)		KANG Wi Hun (PRK)		MS	Qualification	QR64	4 - 1	11:9 13:11 5:11 11:7 11:7	PEREIRA Andy	
+2015	World Table Tennis Championships Suzhou 2015	SEREDA Peter (SVK)		AL-JADAI Naif (KSA)		MS	Qualification	QR64	4 - 0	11:8 11:8 13:11 11:9	SEREDA Peter	
+2015	World Table Tennis Championships Suzhou 2015	ELBEIALI Mohamed (EGY)		KHANIN Aleksandr (BLR)		MS	Qualification	QR64	4 - 1	11:7 11:4 11:7 6:11 11:6	ELBEIALI Mohamed	
+2015	World Table Tennis Championships Suzhou 2015	CHEN Diogo (POR)		TABACHNIK Pablo (ARG)		MS	Qualification	QR64	4 - 0	11:5 11:5 11:4 12:10	CHEN Diogo	
+2015	World Table Tennis Championships Suzhou 2015	ROBLES Alvaro (ESP)		TROMER Laurens (NED)		MS	Qualification	QR64	4 - 1	11:5 11:6 12:10 11:13 11:7	ROBLES Alvaro	
+2015	World Table Tennis Championships Suzhou 2015	GNANASEKARAN Sathiyan (IND)		OLIVARES Felipe (CHI)		MS	Qualification	QR64	4 - 0	11:7 11:8 11:8 11:4	GNANASEKARAN Sathiyan	
+2015	World Table Tennis Championships Suzhou 2015	CHEW Clarence (SGP)		AL-ABBAD Abdulaziz (KSA)		MS	Qualification	QR64	4 - 1	11:8 3:11 12:10 11:8 11:9	CHEW Clarence	
+2015	World Table Tennis Championships Suzhou 2015	OLAH Benedek (FIN)		UDRA Alfredas (LTU)		MS	Qualification	QR64	4 - 1	8:11 11:5 11:7 11:5 11:6	OLAH Benedek	
+2015	World Table Tennis Championships Suzhou 2015	KENJAEV Zokhid (UZB)		SAKA Suraju (CGO)		MS	Qualification	QR64	4 - 2	12:10 10:12 11:8 11:7 10:12 11:7	KENJAEV Zokhid	
+2015	World Table Tennis Championships Suzhou 2015	ALAMIAN Nima (IRI)		GILABERT Rodrigo (ARG)		MS	Qualification	QR64	4 - 2	4:11 13:11 11:7 11:5 3:11 11:4	ALAMIAN Nima	
+2015	World Table Tennis Championships Suzhou 2015	NOROOZI Afshin (IRI)		LI Hon Ming (HKG)		MS	Qualification	QR64	4 - 2	11:9 12:14 11:9 11:8 7:11 11:5	NOROOZI Afshin	
+2015	World Table Tennis Championships Suzhou 2015	LAKATOS Tamas (HUN)		JORGIC Darko (SLO)		MS	Qualification	QR64	4 - 0	11:9 11:9 11:2 11:7	LAKATOS Tamas	
+2015	World Table Tennis Championships Suzhou 2015	CHOE Il (PRK)		IDOWU Saheed (CGO)		MS	Qualification	QR64	4 - 2	12:10 9:11 13:11 7:11 11:6 11:8	CHOE Il	
+2015	World Table Tennis Championships Suzhou 2015	YANG Tzu-Yi (TPE)		BEN ARI Omri (ISR)		MS	Qualification	QR64	1 - 4	8:11 8:11 9:11 11:9 13:15	BEN ARI Omri	
+2015	World Table Tennis Championships Suzhou 2015	AGUIRRE Marcelo (PAR)		GUNDUZ Ibrahim (TUR)		MS	Qualification	QR64	4 - 3	9:11 8:11 11:4 11:13 11:8 11:7 11:8	AGUIRRE Marcelo	
+2015	World Table Tennis Championships Suzhou 2015	MUTTI Leonardo (ITA)		TAUBER Michael (ISR)		MS	Qualification	QR64	3 - 4	11:6 8:11 10:12 9:11 11:4 12:10 4:11	TAUBER Michael	
+2015	World Table Tennis Championships Suzhou 2015	RECH DALDOSSO Marco (ITA)		PUCAR Tomislav (CRO)		MS	Qualification	QR64	4 - 2	11:7 8:11 11:7 10:12 11:7 11:8	RECH DALDOSSO Marco	
+2015	World Table Tennis Championships Suzhou 2015	MINO Alberto (ECU)		GOMEZ Gustavo (CHI)		MS	Qualification	QR64	4 - 1	11:6 8:11 11:8 11:5 11:6	MINO Alberto	
+2015	World Table Tennis Championships Suzhou 2015	TANVIRIYAVECHAKUL Padasak (THA)		JHA Kanak (USA)		MS	Qualification	QR64	4 - 3	11:4 11:9 7:11 10:12 11:4 4:11 11:1	TANVIRIYAVECHAKUL Padasak	
+2015	World Table Tennis Championships Suzhou 2015	ZIBRAT Jan (SLO)		MENGE Gencay (TUR)		MS	Qualification	QR64	4 - 3	11:7 9:11 14:12 10:12 2:11 11:7 16:14	ZIBRAT Jan	
+2015	World Table Tennis Championships Suzhou 2015	ALTO Gaston (ARG)		RUMGAY Gavin (SCO)		MS	Qualification	QR64	4 - 1	7:11 13:11 11:8 11:7 12:10	ALTO Gaston	
+2015	World Table Tennis Championships Suzhou 2015	SHETTY Sanil (IND)		SCHMID Elia (SUI)		MS	Qualification	QR64	3 - 4	12:10 13:15 11:9 6:11 11:7 13:15 9:11	SCHMID Elia	
+2015	World Table Tennis Championships Suzhou 2015	BAJADA Daniel (MLT)		YIGENLER Abdullah (TUR)		MS	Qualification		2 - 4	5:11 3:11 11:5 7:11 13:11 5:11	YIGENLER Abdullah	
+2015	World Table Tennis Championships Suzhou 2015	MADRID Marcos (MEX)		YIGENLER Abdullah (TUR)		MS	Qualification		4 - 0	11:7 11:5 11:3 11:2	MADRID Marcos	
+2015	World Table Tennis Championships Suzhou 2015	MADRID Marcos (MEX)		BAJADA Daniel (MLT)		MS	Qualification		4 - 0	11:4 11:6 11:4 11:4	MADRID Marcos	
+2015	World Table Tennis Championships Suzhou 2015	ABDULWAHHAB Mohammed (QAT)		BELKADI Aissa (ALG)		MS	Qualification		4 - 1	11:7 13:11 11:8 7:11 11:6	ABDULWAHHAB Mohammed	
+2015	World Table Tennis Championships Suzhou 2015	TORIOLA Segun (NGR)		BELKADI Aissa (ALG)		MS	Qualification		4 - 0	11:7 11:5 11:3 11:7	TORIOLA Segun	
+2015	World Table Tennis Championships Suzhou 2015	TORIOLA Segun (NGR)		ABDULWAHHAB Mohammed (QAT)		MS	Qualification		4 - 2	9:11 11:5 11:4 5:11 11:6 11:7	TORIOLA Segun	
+2015	World Table Tennis Championships Suzhou 2015	BALDACCHINO Edward (MLT)		O'CONNELL Daniel (WAL)		MS	Qualification		0 - 4	4:11 2:11 5:11 7:11	O'CONNELL Daniel	
+2015	World Table Tennis Championships Suzhou 2015	DURAN Marc (ESP)		O'CONNELL Daniel (WAL)		MS	Qualification		4 - 0	11:1 11:4 11:8 11:4	DURAN Marc	
+2015	World Table Tennis Championships Suzhou 2015	DURAN Marc (ESP)		BALDACCHINO Edward (MLT)		MS	Qualification		4 - 0	11:4 11:3 11:2 11:2	DURAN Marc	
+2015	World Table Tennis Championships Suzhou 2015	BEN YAHIA Kerem (TUN)		LEVCHENKO Gennadiy (UZB)		MS	Qualification		2 - 4	9:11 11:4 7:11 9:11 11:9 8:11	LEVCHENKO Gennadiy	
+2015	World Table Tennis Championships Suzhou 2015	MONTEIRO Thiago (BRA)		LEVCHENKO Gennadiy (UZB)		MS	Qualification		4 - 0	11:9 11:9 11:5 11:3	MONTEIRO Thiago	
+2015	World Table Tennis Championships Suzhou 2015	MONTEIRO Thiago (BRA)		BEN YAHIA Kerem (TUN)		MS	Qualification		4 - 1	11:5 15:13 10:12 12:10 18:16	MONTEIRO Thiago	
+2015	World Table Tennis Championships Suzhou 2015	LARA Miguel (MEX)		RASHED Rashed (BRN)		MS	Qualification		4 - 3	7:11 7:11 11:9 1:11 11:7 11:7 12:10	LARA Miguel	
+2015	World Table Tennis Championships Suzhou 2015	FILIMON Andrei (ROU)		RASHED Rashed (BRN)		MS	Qualification		4 - 0	11:7 11:6 11:4 11:5	FILIMON Andrei	
+2015	World Table Tennis Championships Suzhou 2015	FILIMON Andrei (ROU)		LARA Miguel (MEX)		MS	Qualification		4 - 1	11:4 11:4 8:11 11:6 11:9	FILIMON Andrei	
+2015	World Table Tennis Championships Suzhou 2015	GLOD Eric (LUX)		ALBALOOSHI Abdulla (UAE)		MS	Qualification		4 - 3	9:14 11:5 11:6 8:11 8:11 11:9 11:9	GLOD Eric	
+2015	World Table Tennis Championships Suzhou 2015	PAK Sin Hyok (PRK)		ALBALOOSHI Abdulla (UAE)		MS	Qualification		4 - 0	11:7 11:5 11:3 11:4	PAK Sin Hyok	
+2015	World Table Tennis Championships Suzhou 2015	PAK Sin Hyok (PRK)		GLOD Eric (LUX)		MS	Qualification		4 - 0	11:6 11:7 11:9 11:6	PAK Sin Hyok	
+2015	World Table Tennis Championships Suzhou 2015	STANKEVICIUS Medardas (LTU)		HAMIE Mohamad (LBN)		MS	Qualification		4 - 1	11:8 12:10 11:13 11:3 11:8	STANKEVICIUS Medardas	
+2015	World Table Tennis Championships Suzhou 2015	TREGLER Tomas (CZE)		HAMIE Mohamad (LBN)		MS	Qualification		4 - 0	11:1 11:5 11:2 11:5	TREGLER Tomas	
+2015	World Table Tennis Championships Suzhou 2015	TREGLER Tomas (CZE)		STANKEVICIUS Medardas (LTU)		MS	Qualification		4 - 0	11:4 11:1 11:5 11:9	TREGLER Tomas	
+2015	World Table Tennis Championships Suzhou 2015	LAWSON-GAIZER Fessou (TOG)		OCONNOR Miikka (FIN)		MS	Qualification		0 - 4	5:11 8:11 8:11 9:11	OCONNOR Miikka	
+2015	World Table Tennis Championships Suzhou 2015	FERTIKOWSKI Pawel (POL)		OCONNOR Miikka (FIN)		MS	Qualification		4 - 0	11:4 11:6 11:6 11:1	FERTIKOWSKI Pawel	
+2015	World Table Tennis Championships Suzhou 2015	FERTIKOWSKI Pawel (POL)		LAWSON-GAIZER Fessou (TOG)		MS	Qualification		4 - 2	7:11 11:3 11:1 11:8 5:11 11:3	FERTIKOWSKI Pawel	
+2015	World Table Tennis Championships Suzhou 2015	ULUCAK Batuhan (TUR)		BOUZOUBAA Mohamed (MAR)		MS	Qualification		4 - 0	12:10 11:3 11:4 11:2	ULUCAK Batuhan	
+2015	World Table Tennis Championships Suzhou 2015	KATKOV Ivan (UKR)		BOUZOUBAA Mohamed (MAR)		MS	Qualification		4 - 0	11:5 11:7 11:3 11:3	KATKOV Ivan	
+2015	World Table Tennis Championships Suzhou 2015	KATKOV Ivan (UKR)		ULUCAK Batuhan (TUR)		MS	Qualification		4 - 0	11:3 11:7 12:10 11:1	KATKOV Ivan	
+2015	World Table Tennis Championships Suzhou 2015	BARRETO Danilo (VEN)		GUIGANFODE Olouwachehoun (BEN)		MS	Qualification		4 - 1	11:9 16:14 11:7 9:11 11:6	BARRETO Danilo	
+2015	World Table Tennis Championships Suzhou 2015	DEVOS Robin (BEL)		GUIGANFODE Olouwachehoun (BEN)		MS	Qualification		4 - 0	11:5 11:5 11:3 11:5	DEVOS Robin	
+2015	World Table Tennis Championships Suzhou 2015	DEVOS Robin (BEL)		BARRETO Danilo (VEN)		MS	Qualification		4 - 0	11:3 11:3 11:2 12:10	DEVOS Robin	
+2015	World Table Tennis Championships Suzhou 2015	JAFAROV Ramil (AZE)		JONSSON David (ISL)		MS	Qualification		4 - 0	12:10 11:6 11:2 11:6	JAFAROV Ramil	
+2015	World Table Tennis Championships Suzhou 2015	PEREIRA Andy (CUB)		JONSSON David (ISL)		MS	Qualification		4 - 0	11:2 11:5 11:3 11:8	PEREIRA Andy	
+2015	World Table Tennis Championships Suzhou 2015	PEREIRA Andy (CUB)		JAFAROV Ramil (AZE)		MS	Qualification		4 - 0	11:6 11:8 11:1 11:5	PEREIRA Andy	
+2015	World Table Tennis Championships Suzhou 2015	LUPERDI Juan (PER)		BERNADET Antoine (CAN)		MS	Qualification		4 - 0	12:10 11:6 11:9 11:8	LUPERDI Juan	
+2015	World Table Tennis Championships Suzhou 2015	SEREDA Peter (SVK)		BERNADET Antoine (CAN)		MS	Qualification		4 - 0	11:2 11:2 11:2 11:5	SEREDA Peter	
+2015	World Table Tennis Championships Suzhou 2015	SEREDA Peter (SVK)		LUPERDI Juan (PER)		MS	Qualification		4 - 1	5:11 11:6 11:9 11:2 11:9	SEREDA Peter	
+2015	World Table Tennis Championships Suzhou 2015	KHEROUF Sami (ALG)		ALYASSI Alyas (BRN)		MS	Qualification		4 - 1	8:11 11:4 11:7 11:9 11:5	KHEROUF Sami	
+2015	World Table Tennis Championships Suzhou 2015	ELBEIALI Mohamed (EGY)		ALYASSI Alyas (BRN)		MS	Qualification		4 - 0	11:6 11:2 12:10 11:2	ELBEIALI Mohamed	
+2015	World Table Tennis Championships Suzhou 2015	ELBEIALI Mohamed (EGY)		KHEROUF Sami (ALG)		MS	Qualification		4 - 0	11:7 11:4 12:10 11:4	ELBEIALI Mohamed	
+2015	World Table Tennis Championships Suzhou 2015	KHOLIKOV Elmurod (UZB)		MOHED Osama (SUD)		MS	Qualification		4 - 0	11:3 11:4 11:3 11:4	KHOLIKOV Elmurod	
+2015	World Table Tennis Championships Suzhou 2015	CHEN Diogo (POR)		MOHED Osama (SUD)		MS	Qualification		4 - 0	11:4 11:2 11:3 11:2	CHEN Diogo	
+2015	World Table Tennis Championships Suzhou 2015	CHEN Diogo (POR)		KHOLIKOV Elmurod (UZB)		MS	Qualification		4 - 0	12:10 11:6 11:8 11:4	CHEN Diogo
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 3 of 7 Total: 647
+
+Start
+Prev
+1
+2
+3
+4
+5
+6
+7
+Next
+End
+2015	World Table Tennis Championships Suzhou 2015	PHATHAPHONE Thavisack (LAO)		HASHIMLI Khayal (AZE)		MS	Qualification		4 - 0	11:4 11:2 11:3 11:5	PHATHAPHONE Thavisack	
+2015	World Table Tennis Championships Suzhou 2015	ROBLES Alvaro (ESP)		HASHIMLI Khayal (AZE)		MS	Qualification		4 - 0	11:1 11:3 11:5 11:8	ROBLES Alvaro	
+2015	World Table Tennis Championships Suzhou 2015	ROBLES Alvaro (ESP)		PHATHAPHONE Thavisack (LAO)		MS	Qualification		4 - 0	11:6 11:3 11:4 11:9	ROBLES Alvaro	
+2015	World Table Tennis Championships Suzhou 2015	ALKHADRAWI Ali (KSA)		ALMOHAISENI Abdulla (UAE)		MS	Qualification		4 - 1	11:2 11:7 11:8 7:11 11:7	ALKHADRAWI Ali	
+2015	World Table Tennis Championships Suzhou 2015	GNANASEKARAN Sathiyan (IND)		ALMOHAISENI Abdulla (UAE)		MS	Qualification		4 - 0	11:5 11:6 11:4 11:2	GNANASEKARAN Sathiyan	
+2015	World Table Tennis Championships Suzhou 2015	GNANASEKARAN Sathiyan (IND)		ALKHADRAWI Ali (KSA)		MS	Qualification		4 - 1	11:8 11:5 11:2 9:11 11:2	GNANASEKARAN Sathiyan	
+2015	World Table Tennis Championships Suzhou 2015	CALVO Allan (CRC)		ALBLOOSHI Essa (UAE)		MS	Qualification		4 - 2	9:11 11:3 11:6 11:6 8:11 11:6	CALVO Allan	
+2015	World Table Tennis Championships Suzhou 2015	CHEW Clarence (SGP)		ALBLOOSHI Essa (UAE)		MS	Qualification		4 - 0	11:5 11:2 11:1 11:6	CHEW Clarence	
+2015	World Table Tennis Championships Suzhou 2015	CHEW Clarence (SGP)		CALVO Allan (CRC)		MS	Qualification		4 - 0	11:4 11:4 11:3 11:6	CHEW Clarence	
+2015	World Table Tennis Championships Suzhou 2015	CHE Long Lam (MAC)		SALAH Mohamed (SUD)		MS	Qualification		4 - 0	11:7 11:6 11:4 11:5	CHE Long Lam	
+2015	World Table Tennis Championships Suzhou 2015	OLAH Benedek (FIN)		SALAH Mohamed (SUD)		MS	Qualification		4 - 0	11:5 11:3 13:11 11:3	OLAH Benedek	
+2015	World Table Tennis Championships Suzhou 2015	OLAH Benedek (FIN)		CHE Long Lam (MAC)		MS	Qualification		4 - 0	11:9 11:5 11:1 11:4	OLAH Benedek	
+2015	World Table Tennis Championships Suzhou 2015	ISMAYILOV Farhad (AZE)		KENJAEV Zokhid (UZB)		MS	Qualification		0 - 4	8:11 5:11 8:11 5:11	KENJAEV Zokhid	
+2015	World Table Tennis Championships Suzhou 2015	ZELJKO Filip (CRO)		KENJAEV Zokhid (UZB)		MS	Qualification		2 - 4	9:11 9:11 9:11 11:4 11:3 9:11	KENJAEV Zokhid	
+2015	World Table Tennis Championships Suzhou 2015	ZELJKO Filip (CRO)		ISMAYILOV Farhad (AZE)		MS	Qualification		4 - 0	11:3 11:6 11:8 11:7	ZELJKO Filip	
+2015	World Table Tennis Championships Suzhou 2015	LORENZOTTI Gonzalo (URU)		LI Grant (USA)		MS	Qualification		1 - 4	5:11 11:7 8:11 6:11 7:11	LI Grant	
+2015	World Table Tennis Championships Suzhou 2015	ALAMIAN Nima (IRI)		LI Grant (USA)		MS	Qualification		4 - 3	14:12 11:7 6:11 9:11 14:12 3:11 11:9	ALAMIAN Nima	
+2015	World Table Tennis Championships Suzhou 2015	ALAMIAN Nima (IRI)		LORENZOTTI Gonzalo (URU)		MS	Qualification		4 - 1	15:13 9:11 11:6 11:4 11:6	ALAMIAN Nima	
+2015	World Table Tennis Championships Suzhou 2015	AL-NAGGAR Abdulrahman (QAT)		ZHMUDENKO Yaroslav (UKR)		MS	Qualification		0 - 4	3:11 6:11 7:11 7:11	ZHMUDENKO Yaroslav	
+2015	World Table Tennis Championships Suzhou 2015	NOROOZI Afshin (IRI)		ZHMUDENKO Yaroslav (UKR)		MS	Qualification		4 - 1	11:4 11:8 9:11 11:6 11:6	NOROOZI Afshin	
+2015	World Table Tennis Championships Suzhou 2015	NOROOZI Afshin (IRI)		AL-NAGGAR Abdulrahman (QAT)		MS	Qualification		4 - 2	9:11 11:8 5:11 11:3 11:2 11:6	NOROOZI Afshin	
+2015	World Table Tennis Championships Suzhou 2015	ABBAS Saleem (PAK)		ABDELRAHMAN Farah (SUD)		MS	Qualification		4 - 0	11:5 11:5 11:6 11:6	ABBAS Saleem	
+2015	World Table Tennis Championships Suzhou 2015	LAKATOS Tamas (HUN)		ABDELRAHMAN Farah (SUD)		MS	Qualification		4 - 0	11:3 11:6 11:3 11:1	LAKATOS Tamas	
+2015	World Table Tennis Championships Suzhou 2015	LAKATOS Tamas (HUN)		ABBAS Saleem (PAK)		MS	Qualification		4 - 0	11:7 11:3 11:3 11:6	LAKATOS Tamas	
+2015	World Table Tennis Championships Suzhou 2015	MAGUIRE Gavin (IRL)		PANG Xue Jie (SGP)		MS	Qualification		3 - 4	11:7 6:11 1:11 11:7 12:10 7:11 6:11	PANG Xue Jie	
+2015	World Table Tennis Championships Suzhou 2015	CHOE Il (PRK)		PANG Xue Jie (SGP)		MS	Qualification		4 - 1	11:7 13:15 11:3 11:7 11:2	CHOE Il	
+2015	World Table Tennis Championships Suzhou 2015	CHOE Il (PRK)		MAGUIRE Gavin (IRL)		MS	Qualification		4 - 1	11:5 12:10 9:11 11:4 11:5	CHOE Il	
+2015	World Table Tennis Championships Suzhou 2015	CHANG Hoi Wa (MAC)		DE SILVA Jayasanka (SRI)		MS	Qualification		4 - 0	11:2 11:5 11:5 11:8	CHANG Hoi Wa	
+2015	World Table Tennis Championships Suzhou 2015	YANG Tzu-Yi (TPE)		DE SILVA Jayasanka (SRI)		MS	Qualification		4 - 0	11:5 11:4 11:3 11:3	YANG Tzu-Yi	
+2015	World Table Tennis Championships Suzhou 2015	YANG Tzu-Yi (TPE)		CHANG Hoi Wa (MAC)		MS	Qualification		4 - 0	11:6 11:8 11:3 11:6	YANG Tzu-Yi	
+2015	World Table Tennis Championships Suzhou 2015	GATICA Hector (GUA)		PITAKGULSIRI Suchat (THA)		MS	Qualification		0 - 4	6:11 4:11 5:11 4:11	PITAKGULSIRI Suchat	
+2015	World Table Tennis Championships Suzhou 2015	AGUIRRE Marcelo (PAR)		PITAKGULSIRI Suchat (THA)		MS	Qualification		4 - 1	9:11 12:10 11:8 11:6 11:8	AGUIRRE Marcelo	
+2015	World Table Tennis Championships Suzhou 2015	AGUIRRE Marcelo (PAR)		GATICA Hector (GUA)		MS	Qualification		4 - 1	9:11 11:7 11:7 11:5 11:6	AGUIRRE Marcelo	
+2015	World Table Tennis Championships Suzhou 2015	ENKHBAT Lkhagvasuren (MGL)		OYLER Ryan (WAL)		MS	Qualification		4 - 2	8:11 12:14 16:14 11:8 11:9 11:5	ENKHBAT Lkhagvasuren	
+2015	World Table Tennis Championships Suzhou 2015	MUTTI Leonardo (ITA)		OYLER Ryan (WAL)		MS	Qualification		4 - 1	11:6 3:11 11:8 11:7 11:8	MUTTI Leonardo	
+2015	World Table Tennis Championships Suzhou 2015	MUTTI Leonardo (ITA)		ENKHBAT Lkhagvasuren (MGL)		MS	Qualification		4 - 0	11:8 11:9 11:9 11:9	MUTTI Leonardo	
+2015	World Table Tennis Championships Suzhou 2015	MOSCOSO Heber (GUA)		JAYASINGHA Nirmala (SRI)		MS	Qualification		4 - 3	10:12 11:4 11:7 6:11 7:11 11:9 11:5	MOSCOSO Heber	
+2015	World Table Tennis Championships Suzhou 2015	RECH DALDOSSO Marco (ITA)		JAYASINGHA Nirmala (SRI)		MS	Qualification		4 - 0	11:4 11:2 11:7 11:3	RECH DALDOSSO Marco	
+2015	World Table Tennis Championships Suzhou 2015	RECH DALDOSSO Marco (ITA)		MOSCOSO Heber (GUA)		MS	Qualification		4 - 0	11:5 11:6 11:5 11:2	RECH DALDOSSO Marco	
+2015	World Table Tennis Championships Suzhou 2015	ALHAJJAI Waled Nasser (QAT)		CHAITAT Chaisit (THA)		MS	Qualification		4 - 0	12:10 12:10 14:12 11:8	ALHAJJAI Waled Nasser	
+2015	World Table Tennis Championships Suzhou 2015	MINO Alberto (ECU)		CHAITAT Chaisit (THA)		MS	Qualification		4 - 0	11:5 11:7 11:6 11:7	MINO Alberto	
+2015	World Table Tennis Championships Suzhou 2015	MINO Alberto (ECU)		ALHAJJAI Waled Nasser (QAT)		MS	Qualification		4 - 0	11:4 11:4 11:4 11:6	MINO Alberto	
+2015	World Table Tennis Championships Suzhou 2015	BATKHISHIG Bilegt (MGL)		EVANS Callum (WAL)		MS	Qualification		4 - 3	5:11 11:7 6:11 11:7 11:2 10:12 11:5	BATKHISHIG Bilegt	
+2015	World Table Tennis Championships Suzhou 2015	TANVIRIYAVECHAKUL Padasak (THA)		EVANS Callum (WAL)		MS	Qualification		4 - 0	11:7 11:8 11:6 11:1	TANVIRIYAVECHAKUL Padasak	
+2015	World Table Tennis Championships Suzhou 2015	TANVIRIYAVECHAKUL Padasak (THA)		BATKHISHIG Bilegt (MGL)		MS	Qualification		4 - 0	11:5 11:4 11:9 11:4	TANVIRIYAVECHAKUL Padasak	
+2015	World Table Tennis Championships Suzhou 2015	HU Heming (AUS)		CORREA Cecilio (VEN)		MS	Qualification		4 - 2	12:14 11:9 8:11 11:7 11:9 11:6	HU Heming	
+2015	World Table Tennis Championships Suzhou 2015	ZIBRAT Jan (SLO)		CORREA Cecilio (VEN)		MS	Qualification		4 - 0	11:5 11:6 11:3 11:8	ZIBRAT Jan	
+2015	World Table Tennis Championships Suzhou 2015	ZIBRAT Jan (SLO)		HU Heming (AUS)		MS	Qualification		4 - 1	9:11 11:8 11:9 11:1 11:6	ZIBRAT Jan	
+2015	World Table Tennis Championships Suzhou 2015	ROBINSON Ashley (IRL)		HMAM Adam (TUN)		MS	Qualification		1 - 4	11:3 8:11 12:14 9:11 3:11	HMAM Adam	
+2015	World Table Tennis Championships Suzhou 2015	ALTO Gaston (ARG)		HMAM Adam (TUN)		MS	Qualification		4 - 2	11:8 11:7 11:8 4:11 7:11 14:12	ALTO Gaston	
+2015	World Table Tennis Championships Suzhou 2015	ALTO Gaston (ARG)		ROBINSON Ashley (IRL)		MS	Qualification		4 - 0	11:8 11:6 11:6 12:10	ALTO Gaston	
+2015	World Table Tennis Championships Suzhou 2015	VILLA Ricardo (MEX)		SALEH Mohamed (BRN)		MS	Qualification		1 - 4	15:13 7:11 6:11 7:11 5:11	SALEH Mohamed	
+2015	World Table Tennis Championships Suzhou 2015	SHETTY Sanil (IND)		SALEH Mohamed (BRN)		MS	Qualification		4 - 2	11:5 11:7 10:12 11:13 11:1 11:5	SHETTY Sanil	
+2015	World Table Tennis Championships Suzhou 2015	SHETTY Sanil (IND)		VILLA Ricardo (MEX)		MS	Qualification		4 - 0	11:7 11:2 11:4 11:7	SHETTY Sanil	
+2015	World Table Tennis Championships Suzhou 2015	LAWAL Abiodun (CGO)		AGONNOUDE Modeste (BEN)		MS	Qualification		4 - 0	11:7 11:2 11:4 11:7	LAWAL Abiodun	
+2015	World Table Tennis Championships Suzhou 2015	PUCAR Tomislav (CRO)		AGONNOUDE Modeste (BEN)		MS	Qualification		4 - 0	11:2 11:5 11:2 11:4	PUCAR Tomislav	
+2015	World Table Tennis Championships Suzhou 2015	PUCAR Tomislav (CRO)		LAWAL Abiodun (CGO)		MS	Qualification		4 - 0	11:5 12:10 11:6 11:6	PUCAR Tomislav	
+2015	World Table Tennis Championships Suzhou 2015	SIRISENA Rohan (SRI)		HERRA Steve (CRC)		MS	Qualification		4 - 2	11:6 9:11 11:9 4:11 11:7 11:9	SIRISENA Rohan	
+2015	World Table Tennis Championships Suzhou 2015	RUMGAY Gavin (SCO)		HERRA Steve (CRC)		MS	Qualification		4 - 0	11:1 11:3 11:5 11:6	RUMGAY Gavin	
+2015	World Table Tennis Championships Suzhou 2015	RUMGAY Gavin (SCO)		SIRISENA Rohan (SRI)		MS	Qualification		4 - 0	11:3 11:7 11:8 11:5	RUMGAY Gavin	
+2015	World Table Tennis Championships Suzhou 2015	LUSIN Aleksandr (EST)		GUDMUNDSSON Dadi Freyr (ISL)		MS	Qualification		4 - 0	11:3 11:8 11:8 11:1	LUSIN Aleksandr	
+2015	World Table Tennis Championships Suzhou 2015	SAKA Suraju (CGO)		GUDMUNDSSON Dadi Freyr (ISL)		MS	Qualification		4 - 0	11:7 11:3 11:2 11:9	SAKA Suraju	
+2015	World Table Tennis Championships Suzhou 2015	SAKA Suraju (CGO)		LUSIN Aleksandr (EST)		MS	Qualification		4 - 3	9:11 8:11 11:9 11:8 11:3 4:11 11:8	SAKA Suraju	
+2015	World Table Tennis Championships Suzhou 2015	LEONG Chee Feng (MAS)		MURPHY John (IRL)		MS	Qualification		4 - 0		LEONG Chee Feng	
+2015	World Table Tennis Championships Suzhou 2015	GOLOVANOV Stanislav (BUL)		MURPHY John (IRL)		MS	Qualification		4 - 0		GOLOVANOV Stanislav	
+2015	World Table Tennis Championships Suzhou 2015	GOLOVANOV Stanislav (BUL)		LEONG Chee Feng (MAS)		MS	Qualification		4 - 2	8:11 11:3 11:6 9:11 11:4 11:9	GOLOVANOV Stanislav	
+2015	World Table Tennis Championships Suzhou 2015	KELBUGANOV Timur (KAZ)		SHAH Harshil (KEN)		MS	Qualification		4 - 0	11:3 11:8 11:8 11:7	KELBUGANOV Timur	
+2015	World Table Tennis Championships Suzhou 2015	ASSAR Khalid (EGY)		SHAH Harshil (KEN)		MS	Qualification		4 - 0	11:4 11:5 11:2 11:4	ASSAR Khalid	
+2015	World Table Tennis Championships Suzhou 2015	ASSAR Khalid (EGY)		KELBUGANOV Timur (KAZ)		MS	Qualification		4 - 1	9:11 11:5 11:6 11:7 11:5	ASSAR Khalid	
+2015	World Table Tennis Championships Suzhou 2015	HAIQAL Muhamad Ashraf (MAS)		CITAKU Linor (KOS)		MS	Qualification		4 - 3	12:10 10:12 11:2 6:11 11:7 14:16 11:4	HAIQAL Muhamad Ashraf	
+2015	World Table Tennis Championships Suzhou 2015	GERASSIMENKO Kirill (KAZ)		CITAKU Linor (KOS)		MS	Qualification		4 - 0	11:6 11:4 11:2 11:4	GERASSIMENKO Kirill	
+2015	World Table Tennis Championships Suzhou 2015	GERASSIMENKO Kirill (KAZ)		HAIQAL Muhamad Ashraf (MAS)		MS	Qualification		4 - 0	16:14 11:6 12:10 11:8	GERASSIMENKO Kirill	
+2015	World Table Tennis Championships Suzhou 2015	BAKIC Luka (MNE)		BEISENOV Samat (KAZ)		MS	Qualification		2 - 4	6:11 11:3 9:11 8:11 11:6 7:11	BEISENOV Samat	
+2015	World Table Tennis Championships Suzhou 2015	WANG Timothy (USA)		BEISENOV Samat (KAZ)		MS	Qualification		1 - 4	8:11 11:4 7:11 9:11 8:11	BEISENOV Samat	
+2015	World Table Tennis Championships Suzhou 2015	WANG Timothy (USA)		BAKIC Luka (MNE)		MS	Qualification		4 - 2	11:8 9:11 13:11 11:4 9:11 12:10	WANG Timothy	
+2015	World Table Tennis Championships Suzhou 2015	GOMEZ Gustavo (CHI)		MALDE Mihir (KEN)		MS	Qualification		4 - 0	11:2 11:5 11:4 11:8	GOMEZ Gustavo	
+2015	World Table Tennis Championships Suzhou 2015	RAMIREZ Jose Miguel (GUA)		MALDE Mihir (KEN)		MS	Qualification		4 - 0	11:3 11:4 11:4 11:2	RAMIREZ Jose Miguel	
+2015	World Table Tennis Championships Suzhou 2015	RAMIREZ Jose Miguel (GUA)		GOMEZ Gustavo (CHI)		MS	Qualification		2 - 4	8:11 9:11 11:6 11:6 7:11 7:11	GOMEZ Gustavo	
+2015	World Table Tennis Championships Suzhou 2015	GUNDUZ Ibrahim (TUR)		CITAKU Baton (KOS)		MS	Qualification		4 - 0	11:9 11:2 11:8 14:12	GUNDUZ Ibrahim	
+2015	World Table Tennis Championships Suzhou 2015	THERIAULT Pierre-Luc (CAN)		CITAKU Baton (KOS)		MS	Qualification		4 - 0	11:2 11:5 11:2 11:3	THERIAULT Pierre-Luc	
+2015	World Table Tennis Championships Suzhou 2015	THERIAULT Pierre-Luc (CAN)		GUNDUZ Ibrahim (TUR)		MS	Qualification		3 - 4	11:5 10:12 13:11 11:8 8:11 4:11 4:11	GUNDUZ Ibrahim	
+2015	World Table Tennis Championships Suzhou 2015	EL BOUBOU Rachid (LBN)		AHMED Mohamed (MDV)		MS	Qualification		4 - 0		EL BOUBOU Rachid	
+2015	World Table Tennis Championships Suzhou 2015	POWELL David (AUS)		AHMED Mohamed (MDV)		MS	Qualification		4 - 0		POWELL David	
+2015	World Table Tennis Championships Suzhou 2015	POWELL David (AUS)		EL BOUBOU Rachid (LBN)		MS	Qualification		4 - 1	11:9 11:4 19:17 7:11 11:8	POWELL David	
+2015	World Table Tennis Championships Suzhou 2015	DIAZ Luis (VEN)		REDA Abdellah (MAR)		MS	Qualification		4 - 0	11:4 11:2 11:4 11:2	DIAZ Luis	
+2015	World Table Tennis Championships Suzhou 2015	RABINOVICH Shimon (ISR)		REDA Abdellah (MAR)		MS	Qualification		4 - 0		RABINOVICH Shimon	
+2015	World Table Tennis Championships Suzhou 2015	RABINOVICH Shimon (ISR)		DIAZ Luis (VEN)		MS	Qualification		4 - 3	11:6 6:11 11:6 11:5 10:12 10:12 11:5	RABINOVICH Shimon	
+2015	World Table Tennis Championships Suzhou 2015	OMRANI Seyed Pourya (IRI)		WANG Chun (MAC)		MS	Qualification		4 - 0	11:5 11:2 11:5 11:9	OMRANI Seyed Pourya	
+2015	World Table Tennis Championships Suzhou 2015	OLIVARES Felipe (CHI)		WANG Chun (MAC)		MS	Qualification		4 - 0	11:5 11:5 11:4 11:7	OLIVARES Felipe	
+2015	World Table Tennis Championships Suzhou 2015	OLIVARES Felipe (CHI)		OMRANI Seyed Pourya (IRI)		MS	Qualification		4 - 1	16:14 11:4 8:11 11:8 11:8	OLIVARES Felipe	
+2015	World Table Tennis Championships Suzhou 2015	TOWNSEND Kane (AUS)		BASSERI Aymane (MAR)		MS	Qualification		4 - 0	11:3 11:5 11:1 11:5	TOWNSEND Kane	
+2015	World Table Tennis Championships Suzhou 2015	YIANGOU Marios (CYP)		BASSERI Aymane (MAR)		MS	Qualification		4 - 0	11:6 11:2 11:1 12:10	YIANGOU Marios	
+2015	World Table Tennis Championships Suzhou 2015	YIANGOU Marios (CYP)		TOWNSEND Kane (AUS)		MS	Qualification		4 - 3	7:11 11:4 10:12 8:11 12:10 11:6 11:2	YIANGOU Marios	
+2015	World Table Tennis Championships Suzhou 2015	QURESHI Asim (PAK)		YADMAA Begz (MGL)		MS	Qualification		1 - 4	11:8 9:11 8:11 8:11 4:11	YADMAA Begz	
+2015	World Table Tennis Championships Suzhou 2015	BEN ARI Omri (ISR)		YADMAA Begz (MGL)		MS	Qualification		4 - 0	11:8 11:7 11:9 11:3	BEN ARI Omri	
+2015	World Table Tennis Championships Suzhou 2015	BEN ARI Omri (ISR)		QURESHI Asim (PAK)		MS	Qualification		4 - 1	11:2 11:7 11:9 8:11 11:7	BEN ARI Omri	
+2015	World Table Tennis Championships Suzhou 2015	KAZEEM Makanjuola (NGR)		AHMED Moosa (MDV)		MS	Qualification		4 - 0	11:2 11:9 15:13 11:8	KAZEEM Makanjuola	
+2015	World Table Tennis Championships Suzhou 2015	TABACHNIK Pablo (ARG)		AHMED Moosa (MDV)		MS	Qualification		4 - 0	11:5 11:5 11:5 11:3	TABACHNIK Pablo	
+2015	World Table Tennis Championships Suzhou 2015	TABACHNIK Pablo (ARG)		KAZEEM Makanjuola (NGR)		MS	Qualification		4 - 3	11:7 11:4 6:11 13:11 11:13 9:11 11:6	TABACHNIK Pablo	
+2015	World Table Tennis Championships Suzhou 2015	HOWIESON Craig (SCO)		PRESTRESHI Ylli (KOS)		MS	Qualification		4 - 0	11:3 11:3 11:4 12:10	HOWIESON Craig
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 4 of 7 Total: 647
+
+Start
+Prev
+1
+2
+3
+4
+5
+6
+7
+Next
+End
+2015	World Table Tennis Championships Suzhou 2015	LI Hon Ming (HKG)		PRESTRESHI Ylli (KOS)		MS	Qualification		4 - 0	11:1 11:3 11:5 11:5	LI Hon Ming	
+2015	World Table Tennis Championships Suzhou 2015	LI Hon Ming (HKG)		HOWIESON Craig (SCO)		MS	Qualification		4 - 0	17:15 11:9 11:6 11:9	LI Hon Ming	
+2015	World Table Tennis Championships Suzhou 2015	KRASTEV Petyo (BUL)		MARTINKUS Valdas (LTU)		MS	Qualification		4 - 1	11:8 11:7 8:11 11:9 11:5	KRASTEV Petyo	
+2015	World Table Tennis Championships Suzhou 2015	IDOWU Saheed (CGO)		MARTINKUS Valdas (LTU)		MS	Qualification		4 - 3	3:11 11:7 9:11 11:9 11:4 7:11 11:5	IDOWU Saheed	
+2015	World Table Tennis Championships Suzhou 2015	IDOWU Saheed (CGO)		KRASTEV Petyo (BUL)		MS	Qualification		4 - 2	10:12 5:11 11:8 12:10 11:9 11:3	IDOWU Saheed	
+2015	World Table Tennis Championships Suzhou 2015	VASILJEVS Sandijs (LAT)		CHEAIB Dauud (LBN)		MS	Qualification		4 - 0		VASILJEVS Sandijs	
+2015	World Table Tennis Championships Suzhou 2015	AL-JADAI Naif (KSA)		CHEAIB Dauud (LBN)		MS	Qualification		4 - 0		AL-JADAI Naif	
+2015	World Table Tennis Championships Suzhou 2015	AL-JADAI Naif (KSA)		VASILJEVS Sandijs (LAT)		MS	Qualification		4 - 0	11:6 11:5 14:12 11:9	AL-JADAI Naif	
+2015	World Table Tennis Championships Suzhou 2015	HYATT Michael (JAM)		SIDOROVS Igors (LAT)		MS	Qualification		4 - 3	7:11 11:7 5:11 12:10 11:7 9:11 11:9	HYATT Michael	
+2015	World Table Tennis Championships Suzhou 2015	GILABERT Rodrigo (ARG)		SIDOROVS Igors (LAT)		MS	Qualification		4 - 2	11:9 10:12 9:11 11:7 11:3 11:8	GILABERT Rodrigo	
+2015	World Table Tennis Championships Suzhou 2015	GILABERT Rodrigo (ARG)		HYATT Michael (JAM)		MS	Qualification		4 - 1	11:6 11:7 10:12 11:6 11:8	GILABERT Rodrigo	
+2015	World Table Tennis Championships Suzhou 2015	MOYA Manuel (CHI)		OLIYAVONG Phonepaseud (LAO)		MS	Qualification		4 - 0	11:1 11:4 11:6 11:4	MOYA Manuel	
+2015	World Table Tennis Championships Suzhou 2015	JORGIC Darko (SLO)		OLIYAVONG Phonepaseud (LAO)		MS	Qualification		4 - 0	11:6 11:5 11:1 11:4	JORGIC Darko	
+2015	World Table Tennis Championships Suzhou 2015	JORGIC Darko (SLO)		MOYA Manuel (CHI)		MS	Qualification		4 - 2	11:7 10:12 7:11 11:4 11:7 11:6	JORGIC Darko	
+2015	World Table Tennis Championships Suzhou 2015	SCHMID Elia (SUI)		GAMBINA Andrew (MLT)		MS	Qualification		4 - 0	11:1 11:4 11:4 12:10	SCHMID Elia	
+2015	World Table Tennis Championships Suzhou 2015	IBRAHIM Muhd Shakirin (MAS)		GAMBINA Andrew (MLT)		MS	Qualification		4 - 0	11:5 11:1 11:6 11:3	IBRAHIM Muhd Shakirin	
+2015	World Table Tennis Championships Suzhou 2015	IBRAHIM Muhd Shakirin (MAS)		SCHMID Elia (SUI)		MS	Qualification		1 - 4	4:11 7:11 7:11 11:7 6:11	SCHMID Elia	
+2015	World Table Tennis Championships Suzhou 2015	CHAMPOD Nicolas (SUI)		BULATOVIC Dusan (MNE)		MS	Qualification		4 - 0	11:6 11:6 11:7 11:4	CHAMPOD Nicolas	
+2015	World Table Tennis Championships Suzhou 2015	AL-ABBAD Abdulaziz (KSA)		BULATOVIC Dusan (MNE)		MS	Qualification		4 - 0	11:6 11:7 11:8 11:6	AL-ABBAD Abdulaziz	
+2015	World Table Tennis Championships Suzhou 2015	AL-ABBAD Abdulaziz (KSA)		CHAMPOD Nicolas (SUI)		MS	Qualification		4 - 2	7:11 11:5 11:7 8:11 11:9 15:13	AL-ABBAD Abdulaziz	
+2015	World Table Tennis Championships Suzhou 2015	ALEXANDROV Teodor (BUL)		LIN Yi-Sien (NZL)		MS	Qualification		4 - 1	8:11 11:7 11:4 11:4 11:7	ALEXANDROV Teodor	
+2015	World Table Tennis Championships Suzhou 2015	MENGE Gencay (TUR)		LIN Yi-Sien (NZL)		MS	Qualification		4 - 1	8:11 11:5 11:5 11:6 11:8	MENGE Gencay	
+2015	World Table Tennis Championships Suzhou 2015	MENGE Gencay (TUR)		ALEXANDROV Teodor (BUL)		MS	Qualification		4 - 2	6:11 13:11 11:7 11:4 3:11 11:5	MENGE Gencay	
+2015	World Table Tennis Championships Suzhou 2015	TROMER Laurens (NED)		SAUN Deep (NEP)		MS	Qualification		4 - 0	11:4 11:3 11:3 11:2	TROMER Laurens	
+2015	World Table Tennis Championships Suzhou 2015	ONAOLAPO Ojo (NGR)		SAUN Deep (NEP)		MS	Qualification		0 - 4		SAUN Deep	
+2015	World Table Tennis Championships Suzhou 2015	ONAOLAPO Ojo (NGR)		TROMER Laurens (NED)		MS	Qualification		0 - 4		TROMER Laurens	
+2015	World Table Tennis Championships Suzhou 2015	RODRIGUEZ Diego (PER)		ALBASHAR Ahmad (PLE)		MS	Qualification		4 - 0	11:4 11:5 11:9 13:11	RODRIGUEZ Diego	
+2015	World Table Tennis Championships Suzhou 2015	CEKIC Irfan (MNE)		ALBASHAR Ahmad (PLE)		MS	Qualification		4 - 1	11:4 11:6 11:1 9:11 11:4	CEKIC Irfan	
+2015	World Table Tennis Championships Suzhou 2015	CEKIC Irfan (MNE)		RODRIGUEZ Diego (PER)		MS	Qualification		4 - 0	11:3 19:17 13:11 11:5	CEKIC Irfan	
+2015	World Table Tennis Championships Suzhou 2015	WEBER Lionel (SUI)		BAJRACHARYA Purshottam (NEP)		MS	Qualification		4 - 0	11:8 11:8 11:7 11:9	WEBER Lionel	
+2015	World Table Tennis Championships Suzhou 2015	VAINULA Vallot (EST)		BAJRACHARYA Purshottam (NEP)		MS	Qualification		4 - 0	11:5 11:4 11:5 11:3	VAINULA Vallot	
+2015	World Table Tennis Championships Suzhou 2015	VAINULA Vallot (EST)		WEBER Lionel (SUI)		MS	Qualification		3 - 4	4:11 11:8 12:10 4:11 11:8 4:11 9:11	WEBER Lionel	
+2015	World Table Tennis Championships Suzhou 2015	KARTUZOVS Olegs (LAT)		KANG Wi Hun (PRK)		MS	Qualification		0 - 4	5:11 7:11 4:11 6:11	KANG Wi Hun	
+2015	World Table Tennis Championships Suzhou 2015	OOSTWOUDER Ewout (NED)		KANG Wi Hun (PRK)		MS	Qualification		1 - 4	7:11 11:6 10:12 10:12 5:11	KANG Wi Hun	
+2015	World Table Tennis Championships Suzhou 2015	OOSTWOUDER Ewout (NED)		KARTUZOVS Olegs (LAT)		MS	Qualification		4 - 0	11:9 11:8 11:7 11:9	OOSTWOUDER Ewout	
+2015	World Table Tennis Championships Suzhou 2015	TAUBER Michael (ISR)		WHEELER Christopher (SCO)		MS	Qualification		4 - 0	11:6 14:12 11:5 11:4	TAUBER Michael	
+2015	World Table Tennis Championships Suzhou 2015	VALUCH Alexander (SVK)		WHEELER Christopher (SCO)		MS	Qualification		4 - 0	12:10 11:8 12:10 11:5	VALUCH Alexander	
+2015	World Table Tennis Championships Suzhou 2015	VALUCH Alexander (SVK)		TAUBER Michael (ISR)		MS	Qualification		2 - 4	7:11 12:10 8:11 11:9 4:11 9:11	TAUBER Michael	
+2015	World Table Tennis Championships Suzhou 2015	KHANIN Aleksandr (BLR)		LI Julio (PER)		MS	Qualification		4 - 1	11:4 15:13 11:2 5:11 11:9	KHANIN Aleksandr	
+2015	World Table Tennis Championships Suzhou 2015	SMIRNOV Aleksandr (EST)		LI Julio (PER)		MS	Qualification		4 - 0	11:2 11:5 11:5 11:6	SMIRNOV Aleksandr	
+2015	World Table Tennis Championships Suzhou 2015	SMIRNOV Aleksandr (EST)		KHANIN Aleksandr (BLR)		MS	Qualification		1 - 4	3:11 10:12 7:11 11:4 8:11	KHANIN Aleksandr	
+2015	World Table Tennis Championships Suzhou 2015	UDRA Alfredas (LTU)		MALLA Amar (NEP)		MS	Qualification		4 - 0	11:4 11:4 11:6 11:5	UDRA Alfredas	
+2015	World Table Tennis Championships Suzhou 2015	GOMMERS Rajko (NED)		MALLA Amar (NEP)		MS	Qualification		4 - 1	11:4 11:8 11:6 6:11 11:4	GOMMERS Rajko	
+2015	World Table Tennis Championships Suzhou 2015	GOMMERS Rajko (NED)		UDRA Alfredas (LTU)		MS	Qualification		2 - 4	8:11 7:11 7:11 11:4 11:9 6:11	UDRA Alfredas	
+2015	World Table Tennis Championships Suzhou 2015	AGBETOGLO Mawussi (TOG)		DOUFESH Husam (PLE)		MS	Qualification		4 - 0	11:7 11:4 11:6 11:5	AGBETOGLO Mawussi	
+2015	World Table Tennis Championships Suzhou 2015	JHA Kanak (USA)		ALI Syed Shujat (PAK)		MS	Qualification		4 - 0	11:7 11:6 11:7 11:2	JHA Kanak	
+2015	World Table Tennis Championships Suzhou 2015	JHA Kanak (USA)		DOUFESH Husam (PLE)		MS	Qualification		4 - 0	11:5 11:3 11:6 11:7	JHA Kanak	
+2015	World Table Tennis Championships Suzhou 2015	AGBETOGLO Mawussi (TOG)		ALI Syed Shujat (PAK)		MS	Qualification		4 - 0	11:1 14:12 11:4 11:6	AGBETOGLO Mawussi	
+2015	World Table Tennis Championships Suzhou 2015	JHA Kanak (USA)		AGBETOGLO Mawussi (TOG)		MS	Qualification		4 - 1	12:10 5:11 11:3 11:5 11:5	JHA Kanak	
+2015	World Table Tennis Championships Suzhou 2015	DOUFESH Husam (PLE)		ALI Syed Shujat (PAK)		MS	Qualification		4 - 1	11:6 11:8 11:8 6:11 11:5	DOUFESH Husam	
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 4 Total: 307
+
+Start
+Prev
+1
+2
+3
+4
+Next
+End
+2015	World Table Tennis Championships Suzhou 2015	DING Ning (CHN)		OSHONAIKE Olufunke (NGR)		WS	Main Draw	R128	4 - 0	11:2 11:3 11:4 11:7	DING Ning	
+2015	World Table Tennis Championships Suzhou 2015	PERGEL Szandra (HUN)		PARTYKA Natalia (POL)		WS	Main Draw	R128	2 - 4	9:11 5:11 11:4 5:11 11:8 6:11	PARTYKA Natalia	
+2015	World Table Tennis Championships Suzhou 2015	KIM Jong (PRK)		MORET Rachel (SUI)		WS	Main Draw	R128	4 - 0	11:8 11:3 11:8 11:1	KIM Jong	
+2015	World Table Tennis Championships Suzhou 2015	BATRA Manika (IND)		HIRANO Miu (JPN)		WS	Main Draw	R128	1 - 4	11:7 7:11 8:11 7:11 4:11	HIRANO Miu	
+2015	World Table Tennis Championships Suzhou 2015	IVANCAN Irene (GER)		GUAN Angela (USA)		WS	Main Draw	R128	4 - 0	11:7 12:10 11:4 11:9	IVANCAN Irene	
+2015	World Table Tennis Championships Suzhou 2015	FAJMUT Manca (SLO)		PROKHOROVA Yulia (RUS)		WS	Main Draw	R128	4 - 2	6:11 11:7 11:9 4:11 11:4 13:11	FAJMUT Manca	
+2015	World Table Tennis Championships Suzhou 2015	PARK Youngsook (KOR)		YEE Herng Hwee (SGP)		WS	Main Draw	R128	4 - 0	11:5 11:1 11:5 11:3	PARK Youngsook	
+2015	World Table Tennis Championships Suzhou 2015	JHA Prachi (USA)		SUH Hyo Won (KOR)		WS	Main Draw	R128	0 - 4	5:11 1:11 5:11 8:11	SUH Hyo Won	
+2015	World Table Tennis Championships Suzhou 2015	SAMARA Elizabeta (ROU)		ARLOUSKAYA Alina (BLR)		WS	Main Draw	R128	4 - 0	11:7 11:9 11:5 11:7	SAMARA Elizabeta	
+2015	World Table Tennis Championships Suzhou 2015	JONSSON Jennifer (SWE)		MITTELHAM Nina (GER)		WS	Main Draw	R128	0 - 4	7:11 8:11 6:11 7:11	MITTELHAM Nina	
+2015	World Table Tennis Championships Suzhou 2015	TIAN Yuan (CRO)		SAMET Maryam (IRI)		WS	Main Draw	R128	4 - 0	11:4 11:7 11:6 11:9	TIAN Yuan	
+2015	World Table Tennis Championships Suzhou 2015	DIAZ Adriana (PUR)		CHENG I-Ching (TPE)		WS	Main Draw	R128	0 - 4	7:11 5:11 7:11 7:11	CHENG I-Ching	
+2015	World Table Tennis Championships Suzhou 2015	LEE I-Chen (TPE)		NG Sock Khim (MAS)		WS	Main Draw	R128	4 - 2	11:4 11:7 11:6 5:11 10:12 11:7	LEE I-Chen	
+2015	World Table Tennis Championships Suzhou 2015	RIOS Daniely (PUR)		HAPONOVA Hanna (UKR)		WS	Main Draw	R128	0 - 4	7:11 6:11 8:11 5:11	HAPONOVA Hanna	
+2015	World Table Tennis Championships Suzhou 2015	VARADY Barbora (SVK)		VEGA Paulina (CHI)		WS	Main Draw	R128	4 - 0	11:8 11:6 16:14 11:3	VARADY Barbora	
+2015	World Table Tennis Championships Suzhou 2015	DE NUTTE Sarah (LUX)		WU Yang (CHN)		WS	Main Draw	R128	0 - 4	4:11 2:11 3:11 4:11	WU Yang	
+2015	World Table Tennis Championships Suzhou 2015	ISHIKAWA Kasumi (JPN)		SLADKOVA Nataliya (KAZ)		WS	Main Draw	R128	4 - 0	11:6 11:6 11:6 11:5	ISHIKAWA Kasumi	
+2015	World Table Tennis Championships Suzhou 2015	KUMARESAN Shamini (IND)		PASKAUSKIENE Ruta (LTU)		WS	Main Draw	R128	0 - 4	2:11 5:11 4:11 9:11	PASKAUSKIENE Ruta	
+2015	World Table Tennis Championships Suzhou 2015	STRBIKOVA Renata (CZE)		KUMAHARA Luca (BRA)		WS	Main Draw	R128	4 - 1	11:9 13:11 7:11 11:7 11:5	STRBIKOVA Renata	
+2015	World Table Tennis Championships Suzhou 2015	MU Zi (CHN)		LANG Kristin (GER)		WS	Main Draw	R128	4 - 1	11:2 12:10 14:12 7:11 16:14	MU Zi	
+2015	World Table Tennis Championships Suzhou 2015	HU Melek (TUR)		KAROVA Anelia (BUL)		WS	Main Draw	R128	4 - 0	11:5 11:3 11:8 11:7	HU Melek	
+2015	World Table Tennis Championships Suzhou 2015	GUI Lin (BRA)		PESOTSKA Margaryta (UKR)		WS	Main Draw	R128	1 - 4	1:11 5:11 11:9 6:11 8:11	PESOTSKA Margaryta	
+2015	World Table Tennis Championships Suzhou 2015	EKHOLM Matilda (SWE)		LUO Anqi (CAN)		WS	Main Draw	R128	4 - 0	11:6 11:8 11:3 11:9	EKHOLM Matilda	
+2015	World Table Tennis Championships Suzhou 2015	LEE Zion (KOR)		LIU Jia (AUT)		WS	Main Draw	R128	4 - 2	3:11 4:11 11:8 11:7 11:8 11:7	LEE Zion	
+2015	World Table Tennis Championships Suzhou 2015	YU Mengyu (SGP)		LI Ching Wan (HKG)		WS	Main Draw	R128	4 - 1	13:11 11:4 7:11 11:2 11:5	YU Mengyu	
+2015	World Table Tennis Championships Suzhou 2015	OLIVEIRA Leila (POR)		MESHREF Dina (EGY)		WS	Main Draw	R128	4 - 1	11:9 2:11 11:6 12:10 11:9	OLIVEIRA Leila	
+2015	World Table Tennis Championships Suzhou 2015	RAMIREZ Sara (ESP)		ODOROVA Eva (SVK)		WS	Main Draw	R128	0 - 4	6:11 10:12 7:11 11:13	ODOROVA Eva	
+2015	World Table Tennis Championships Suzhou 2015	GATS Yuliya (KAZ)		LI Qian (POL)		WS	Main Draw	R128	0 - 4	6:11 1:11 4:11 1:11	LI Qian	
+2015	World Table Tennis Championships Suzhou 2015	SOLJA Petrissa (GER)		LEE Rou You (MAS)		WS	Main Draw	R128	4 - 0	11:3 11:9 11:4 11:6	SOLJA Petrissa	
+2015	World Table Tennis Championships Suzhou 2015	PENKAVOVA Katerina (CZE)		GRZYBOWSKA-FRANC Katarzyna (POL)		WS	Main Draw	R128	1 - 4	11:7 10:12 2:11 5:11 7:11	GRZYBOWSKA-FRANC Katarzyna	
+2015	World Table Tennis Championships Suzhou 2015	WINTER Sabine (GER)		RUANO Lady (COL)		WS	Main Draw	R128	4 - 0	11:9 11:3 11:2 11:7	WINTER Sabine	
+2015	World Table Tennis Championships Suzhou 2015	HIRICI Cristina (ROU)		FENG Tianwei (SGP)		WS	Main Draw	R128	0 - 4	6:11 3:11 7:11 6:11	FENG Tianwei	
+2015	World Table Tennis Championships Suzhou 2015	LI Xiaoxia (CHN)		HWANG Jina (KOR)		WS	Main Draw	R128	4 - 0	11:2 11:9 11:8 11:6	LI Xiaoxia	
+2015	World Table Tennis Championships Suzhou 2015	ELDAWLATLY Nadeen (EGY)		ZHANG Mo (CAN)		WS	Main Draw	R128	1 - 4	8:11 3:11 11:5 6:11 3:11	ZHANG Mo	
+2015	World Table Tennis Championships Suzhou 2015	MIKHAILOVA Polina (RUS)		DAS Mouma (IND)		WS	Main Draw	R128	4 - 1	11:6 7:11 13:11 11:6 11:6	MIKHAILOVA Polina	
+2015	World Table Tennis Championships Suzhou 2015	PAVCNIK Tamara (SLO)		RI Myong Sun (PRK)		WS	Main Draw	R128	0 - 4	5:11 3:11 7:11 3:11	RI Myong Sun	
+2015	World Table Tennis Championships Suzhou 2015	JIANG Huajun (HKG)		KHETKHUAN Tamolwan (THA)		WS	Main Draw	R128	4 - 3	7:11 8:11 9:11 11:9 11:5 11:7 11:8	JIANG Huajun	
+2015	World Table Tennis Championships Suzhou 2015	TROSMAN Nicole (ISR)		NI Xia Lian (LUX)		WS	Main Draw	R128	0 - 4	5:11 9:11 5:11 4:11	NI Xia Lian	
+2015	World Table Tennis Championships Suzhou 2015	KOMWONG Nanthana (THA)		MATELOVA Hana (CZE)		WS	Main Draw	R128	3 - 4	8:11 11:5 11:9 8:11 11:4 11:13 9:11	MATELOVA Hana	
+2015	World Table Tennis Championships Suzhou 2015	SILVA Ligia (BRA)		HIRANO Sayaka (JPN)		WS	Main Draw	R128	1 - 4	7:11 7:11 12:10 8:11 4:11	HIRANO Sayaka	
+2015	World Table Tennis Championships Suzhou 2015	ITO Mima (JPN)		MEDINA Paula (COL)		WS	Main Draw	R128	4 - 1	11:7 11:2 10:12 11:6 11:8	ITO Mima	
+2015	World Table Tennis Championships Suzhou 2015	LAY Jian Fang (AUS)		LI Isabelle Siyun (SGP)		WS	Main Draw	R128	4 - 0	12:10 11:6 15:13 11:4	LAY Jian Fang	
+2015	World Table Tennis Championships Suzhou 2015	NOSKOVA Yana (RUS)		SILVA Yadira (MEX)		WS	Main Draw	R128	4 - 3	6:11 11:9 4:11 11:4 10:12 11:5 11:7	NOSKOVA Yana	
+2015	World Table Tennis Championships Suzhou 2015	TOLIOU Aikaterini (GRE)		CHEN Szu-Yu (TPE)		WS	Main Draw	R128	2 - 4	7:11 11:9 11:6 8:11 8:11 10:12	CHEN Szu-Yu	
+2015	World Table Tennis Championships Suzhou 2015	LEE Ho Ching (HKG)		GALIC Alex (SLO)		WS	Main Draw	R128	4 - 0	16:14 11:3 16:14 11:8	LEE Ho Ching	
+2015	World Table Tennis Championships Suzhou 2015	HUGH Judy (USA)		DOLGIKH Maria (RUS)		WS	Main Draw	R128	0 - 4	8:11 4:11 2:11 7:11	DOLGIKH Maria	
+2015	World Table Tennis Championships Suzhou 2015	BILENKO Tetyana (UKR)		STUCKYTE Egle (LTU)		WS	Main Draw	R128	4 - 0	11:4 12:10 11:8 11:9	BILENKO Tetyana	
+2015	World Table Tennis Championships Suzhou 2015	FEHER Gabriela (SRB)		FUKUHARA Ai (JPN)		WS	Main Draw	R128	0 - 4	6:11 7:11 9:11 8:11	FUKUHARA Ai	
+2015	World Table Tennis Championships Suzhou 2015	ZHU Yuling (MAC)		LIU Hsing-Yin (TPE)		WS	Main Draw	R128	4 - 0	11:7 11:6 11:1 11:3	ZHU Yuling	
+2015	World Table Tennis Championships Suzhou 2015	HAN Xing (CGO)		VACENOVSKA Iveta (CZE)		WS	Main Draw	R128	2 - 4	6:11 15:13 8:11 11:6 3:11 6:11	VACENOVSKA Iveta	
+2015	World Table Tennis Championships Suzhou 2015	EERLAND Britt (NED)		TODOROVIC Andrea (SRB)		WS	Main Draw	R128	4 - 1	11:6 12:10 11:4 2:11 11:4	EERLAND Britt	
+2015	World Table Tennis Championships Suzhou 2015	PAPADAKI Angeliki (GRE)		TIE Yana (HKG)		WS	Main Draw	R128	0 - 4	5:11 6:11 7:11 7:11	TIE Yana	
+2015	World Table Tennis Championships Suzhou 2015	LI Jie (NED)		VIVARELLI Debora (ITA)		WS	Main Draw	R128	4 - 0	11:7 14:12 11:4 11:4	LI Jie	
+2015	World Table Tennis Championships Suzhou 2015	LI Qiangbing (AUT)		DVORAK Galia (ESP)		WS	Main Draw	R128	2 - 4	6:11 11:9 7:11 10:12 11:8 7:11	DVORAK Galia	
+2015	World Table Tennis Championships Suzhou 2015	RI Mi Gyong (PRK)		LORENZOTTI Maria (URU)		WS	Main Draw	R128	4 - 1	11:3 9:11 11:5 11:4 12:10	RI Mi Gyong	
+2015	World Table Tennis Championships Suzhou 2015	KIM Hye Song (PRK)		DOO Hoi Kem (HKG)		WS	Main Draw	R128	2 - 4	5:11 13:11 11:6 6:11 7:11 8:11	DOO Hoi Kem	
+2015	World Table Tennis Championships Suzhou 2015	YANG Ha Eun (KOR)		PICCOLIN Giorgia (ITA)		WS	Main Draw	R128	4 - 1	15:17 11:2 11:7 11:8 11:5	YANG Ha Eun	
+2015	World Table Tennis Championships Suzhou 2015	GELMAN Shelli (ISR)		GRUNDISCH Carole (FRA)		WS	Main Draw	R128	1 - 4	11:6 3:11 7:11 5:11 3:11	GRUNDISCH Carole	
+2015	World Table Tennis Championships Suzhou 2015	IACOB Camelia (ROU)		ERDELJI Anamaria (SRB)		WS	Main Draw	R128	4 - 0	11:7 11:8 11:8 11:1	IACOB Camelia	
+2015	World Table Tennis Championships Suzhou 2015	SAWETTABUT Suthasini (THA)		SHEN Yanfei (ESP)		WS	Main Draw	R128	3 - 4	11:4 11:7 11:6 5:11 9:11 5:11 6:11	SHEN Yanfei	
+2015	World Table Tennis Championships Suzhou 2015	LI Jiao (NED)		RAKOVAC Lea (CRO)		WS	Main Draw	R128	4 - 2	9:11 11:9 9:11 11:6 11:7 11:6	LI Jiao	
+2015	World Table Tennis Championships Suzhou 2015	HANFFOU Sarah (CMR)		XIAN Yifang (FRA)		WS	Main Draw	R128	0 - 4	5:11 6:11 2:11 10:12	XIAN Yifang	
+2015	World Table Tennis Championships Suzhou 2015	SZOCS Bernadette (ROU)		UMBACIA Angie (COL)		WS	Main Draw	R128	4 - 0	11:2 11:3 11:3 11:3	SZOCS Bernadette	
+2015	World Table Tennis Championships Suzhou 2015	PETEK Petra (CRO)		LIU Shiwen (CHN)		WS	Main Draw	R128	0 - 4	2:11 2:11 1:11 8:11	LIU Shiwen	
+2015	World Table Tennis Championships Suzhou 2015	DING Ning (CHN)		PARTYKA Natalia (POL)		WS	Main Draw	R64	4 - 0	11:8 11:1 11:2 11:6	DING Ning	
+2015	World Table Tennis Championships Suzhou 2015	KIM Jong (PRK)		HIRANO Miu (JPN)		WS	Main Draw	R64	1 - 4	9:11 9:11 11:7 9:11 13:15	HIRANO Miu	
+2015	World Table Tennis Championships Suzhou 2015	IVANCAN Irene (GER)		FAJMUT Manca (SLO)		WS	Main Draw	R64	4 - 0	11:5 11:8 11:2 11:5	IVANCAN Irene	
+2015	World Table Tennis Championships Suzhou 2015	PARK Youngsook (KOR)		SUH Hyo Won (KOR)		WS	Main Draw	R64	4 - 2	11:4 3:11 10:12 11:8 11:6 11:8	PARK Youngsook	
+2015	World Table Tennis Championships Suzhou 2015	SAMARA Elizabeta (ROU)		MITTELHAM Nina (GER)		WS	Main Draw	R64	4 - 2	13:11 13:15 11:3 11:7 9:11 11:9	SAMARA Elizabeta	
+2015	World Table Tennis Championships Suzhou 2015	TIAN Yuan (CRO)		CHENG I-Ching (TPE)		WS	Main Draw	R64	1 - 4	6:11 8:11 4:11 11:9 4:11	CHENG I-Ching	
+2015	World Table Tennis Championships Suzhou 2015	LEE I-Chen (TPE)		HAPONOVA Hanna (UKR)		WS	Main Draw	R64	1 - 4	9:11 9:11 6:11 11:8 8:11	HAPONOVA Hanna	
+2015	World Table Tennis Championships Suzhou 2015	VARADY Barbora (SVK)		WU Yang (CHN)		WS	Main Draw	R64	0 - 4	7:11 6:11 2:11 11:13	WU Yang	
+2015	World Table Tennis Championships Suzhou 2015	ISHIKAWA Kasumi (JPN)		PASKAUSKIENE Ruta (LTU)		WS	Main Draw	R64	4 - 0	11:5 11:8 11:8 12:10	ISHIKAWA Kasumi	
+2015	World Table Tennis Championships Suzhou 2015	STRBIKOVA Renata (CZE)		MU Zi (CHN)		WS	Main Draw	R64	0 - 4	8:11 12:14 4:11 4:11	MU Zi	
+2015	World Table Tennis Championships Suzhou 2015	HU Melek (TUR)		PESOTSKA Margaryta (UKR)		WS	Main Draw	R64	0 - 4	4:11 3:11 2:11 7:11	PESOTSKA Margaryta	
+2015	World Table Tennis Championships Suzhou 2015	EKHOLM Matilda (SWE)		LEE Zion (KOR)		WS	Main Draw	R64	4 - 1	11:9 11:7 7:11 11:2 12:10	EKHOLM Matilda	
+2015	World Table Tennis Championships Suzhou 2015	YU Mengyu (SGP)		OLIVEIRA Leila (POR)		WS	Main Draw	R64	4 - 0	11:3 11:2 13:11 11:5	YU Mengyu	
+2015	World Table Tennis Championships Suzhou 2015	ODOROVA Eva (SVK)		LI Qian (POL)		WS	Main Draw	R64	0 - 4	6:11 9:11 9:11 3:11	LI Qian	
+2015	World Table Tennis Championships Suzhou 2015	SOLJA Petrissa (GER)		GRZYBOWSKA-FRANC Katarzyna (POL)		WS	Main Draw	R64	3 - 4	3:11 11:7 11:8 8:11 3:11 11:8 5:11	GRZYBOWSKA-FRANC Katarzyna	
+2015	World Table Tennis Championships Suzhou 2015	WINTER Sabine (GER)		FENG Tianwei (SGP)		WS	Main Draw	R64	0 - 4	9:11 2:11 6:11 8:11	FENG Tianwei	
+2015	World Table Tennis Championships Suzhou 2015	LI Xiaoxia (CHN)		ZHANG Mo (CAN)		WS	Main Draw	R64	4 - 0	11:6 11:6 11:6 12:10	LI Xiaoxia	
+2015	World Table Tennis Championships Suzhou 2015	MIKHAILOVA Polina (RUS)		RI Myong Sun (PRK)		WS	Main Draw	R64	2 - 4	4:11 11:8 9:11 10:12 11:8 8:11	RI Myong Sun	
+2015	World Table Tennis Championships Suzhou 2015	JIANG Huajun (HKG)		NI Xia Lian (LUX)		WS	Main Draw	R64	4 - 2	11:5 7:11 6:11 12:10 14:12 11:9	JIANG Huajun	
+2015	World Table Tennis Championships Suzhou 2015	MATELOVA Hana (CZE)		HIRANO Sayaka (JPN)		WS	Main Draw	R64	4 - 3	11:9 11:13 4:11 12:14 11:6 11:9 11:6	MATELOVA Hana	
+2015	World Table Tennis Championships Suzhou 2015	ITO Mima (JPN)		LAY Jian Fang (AUS)		WS	Main Draw	R64	4 - 0	11:7 13:11 11:6 11:6	ITO Mima	
+2015	World Table Tennis Championships Suzhou 2015	NOSKOVA Yana (RUS)		CHEN Szu-Yu (TPE)		WS	Main Draw	R64	0 - 4	6:11 7:11 7:11 6:11	CHEN Szu-Yu	
+2015	World Table Tennis Championships Suzhou 2015	LEE Ho Ching (HKG)		DOLGIKH Maria (RUS)		WS	Main Draw	R64	3 - 4	8:11 11:9 5:11 11:3 11:6 9:11 10:12	DOLGIKH Maria	
+2015	World Table Tennis Championships Suzhou 2015	BILENKO Tetyana (UKR)		FUKUHARA Ai (JPN)		WS	Main Draw	R64	4 - 2	3:11 11:7 6:11 11:9 11:3 12:10	BILENKO Tetyana	
+2015	World Table Tennis Championships Suzhou 2015	ZHU Yuling (MAC)		VACENOVSKA Iveta (CZE)		WS	Main Draw	R64	4 - 1	11:6 11:5 11:7 6:11 11:8	ZHU Yuling	
+2015	World Table Tennis Championships Suzhou 2015	EERLAND Britt (NED)		TIE Yana (HKG)		WS	Main Draw	R64	1 - 4	11:9 11:13 7:11 10:12 10:12	TIE Yana	
+2015	World Table Tennis Championships Suzhou 2015	LI Jie (NED)		DVORAK Galia (ESP)		WS	Main Draw	R64	4 - 0	11:2 15:13 11:8 11:6	LI Jie	
+2015	World Table Tennis Championships Suzhou 2015	RI Mi Gyong (PRK)		DOO Hoi Kem (HKG)		WS	Main Draw	R64	3 - 4	8:11 11:6 6:11 6:11 11:8 12:10 7:11	DOO Hoi Kem	
+2015	World Table Tennis Championships Suzhou 2015	YANG Ha Eun (KOR)		GRUNDISCH Carole (FRA)		WS	Main Draw	R64	4 - 2	11:5 9:11 9:11 11:9 11:8 11:5	YANG Ha Eun	
+2015	World Table Tennis Championships Suzhou 2015	IACOB Camelia (ROU)		SHEN Yanfei (ESP)		WS	Main Draw	R64	0 - 4	9:11 9:11 6:11 2:11	SHEN Yanfei	
+2015	World Table Tennis Championships Suzhou 2015	LI Jiao (NED)		XIAN Yifang (FRA)		WS	Main Draw	R64	4 - 1	11:5 12:10 6:11 11:8 11:9	LI Jiao	
+2015	World Table Tennis Championships Suzhou 2015	SZOCS Bernadette (ROU)		LIU Shiwen (CHN)		WS	Main Draw	R64	0 - 4	6:11 8:11 3:11 6:11	LIU Shiwen	
+2015	World Table Tennis Championships Suzhou 2015	DING Ning (CHN)		HIRANO Miu (JPN)		WS	Main Draw	R32	4 - 0	11:5 11:6 11:1 11:6	DING Ning	
+2015	World Table Tennis Championships Suzhou 2015	IVANCAN Irene (GER)		PARK Youngsook (KOR)		WS	Main Draw	R32	4 - 3	11:7 7:11 9:11 11:7 11:9 8:11 11:8	IVANCAN Irene	
+2015	World Table Tennis Championships Suzhou 2015	SAMARA Elizabeta (ROU)		CHENG I-Ching (TPE)		WS	Main Draw	R32	1 - 4	7:11 12:10 9:11 8:11 6:11	CHENG I-Ching	
+2015	World Table Tennis Championships Suzhou 2015	HAPONOVA Hanna (UKR)		WU Yang (CHN)		WS	Main Draw	R32	0 - 4	4:11 5:11 5:11 6:11	WU Yang
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 2 of 6 Total: 527
+
+Start
+Prev
+1
+2
+3
+4
+5
+6
+Next
+End
+2015	World Table Tennis Championships Suzhou 2015	ISHIKAWA Kasumi (JPN)		MU Zi (CHN)		WS	Main Draw	R32	0 - 4	7:11 10:12 10:12 4:11	MU Zi	
+2015	World Table Tennis Championships Suzhou 2015	PESOTSKA Margaryta (UKR)		EKHOLM Matilda (SWE)		WS	Main Draw	R32	1 - 4	14:16 5:11 11:13 11:5 9:11	EKHOLM Matilda	
+2015	World Table Tennis Championships Suzhou 2015	YU Mengyu (SGP)		LI Qian (POL)		WS	Main Draw	R32	4 - 0	15:13 11:8 11:3 11:5	YU Mengyu	
+2015	World Table Tennis Championships Suzhou 2015	GRZYBOWSKA-FRANC Katarzyna (POL)		FENG Tianwei (SGP)		WS	Main Draw	R32	1 - 4	5:11 4:11 9:11 11:6 4:11	FENG Tianwei	
+2015	World Table Tennis Championships Suzhou 2015	LI Xiaoxia (CHN)		RI Myong Sun (PRK)		WS	Main Draw	R32	4 - 0	11:4 11:8 11:5 11:1	LI Xiaoxia	
+2015	World Table Tennis Championships Suzhou 2015	JIANG Huajun (HKG)		MATELOVA Hana (CZE)		WS	Main Draw	R32	4 - 2	9:11 11:7 12:10 11:8 14:16 11:7	JIANG Huajun	
+2015	World Table Tennis Championships Suzhou 2015	ITO Mima (JPN)		CHEN Szu-Yu (TPE)		WS	Main Draw	R32	4 - 1	11:4 7:11 11:8 11:2 12:10	ITO Mima	
+2015	World Table Tennis Championships Suzhou 2015	DOLGIKH Maria (RUS)		BILENKO Tetyana (UKR)		WS	Main Draw	R32	1 - 4	7:11 8:11 12:14 11:6 7:11	BILENKO Tetyana	
+2015	World Table Tennis Championships Suzhou 2015	ZHU Yuling (MAC)		TIE Yana (HKG)		WS	Main Draw	R32	4 - 1	8:11 11:5 11:9 11:9 11:2	ZHU Yuling	
+2015	World Table Tennis Championships Suzhou 2015	LI Jie (NED)		DOO Hoi Kem (HKG)		WS	Main Draw	R32	4 - 0	11:7 11:7 11:9 11:5	LI Jie	
+2015	World Table Tennis Championships Suzhou 2015	YANG Ha Eun (KOR)		SHEN Yanfei (ESP)		WS	Main Draw	R32	4 - 2	7:11 11:9 6:11 11:7 14:12 14:12	YANG Ha Eun	
+2015	World Table Tennis Championships Suzhou 2015	LI Jiao (NED)		LIU Shiwen (CHN)		WS	Main Draw	R32	0 - 4	3:11 5:11 7:11 5:11	LIU Shiwen	
+2015	World Table Tennis Championships Suzhou 2015	DING Ning (CHN)		IVANCAN Irene (GER)		WS	Main Draw	R16	4 - 0	11:4 11:7 11:9 11:8	DING Ning	
+2015	World Table Tennis Championships Suzhou 2015	CHENG I-Ching (TPE)		WU Yang (CHN)		WS	Main Draw	R16	1 - 4	9:11 11:9 4:11 3:11 1:11	WU Yang	
+2015	World Table Tennis Championships Suzhou 2015	MU Zi (CHN)		EKHOLM Matilda (SWE)		WS	Main Draw	R16	4 - 0	12:10 13:11 11:5 11:3	MU Zi	
+2015	World Table Tennis Championships Suzhou 2015	YU Mengyu (SGP)		FENG Tianwei (SGP)		WS	Main Draw	R16	1 - 4	9:11 9:11 11:9 10:12 9:11	FENG Tianwei	
+2015	World Table Tennis Championships Suzhou 2015	LI Xiaoxia (CHN)		JIANG Huajun (HKG)		WS	Main Draw	R16	4 - 0	11:6 11:3 11:6 12:10	LI Xiaoxia	
+2015	World Table Tennis Championships Suzhou 2015	ITO Mima (JPN)		BILENKO Tetyana (UKR)		WS	Main Draw	R16	4 - 1	11:5 11:8 10:12 11:9 12:10	ITO Mima	
+2015	World Table Tennis Championships Suzhou 2015	ZHU Yuling (MAC)		LI Jie (NED)		WS	Main Draw	R16	4 - 0	11:5 11:3 11:6 11:2	ZHU Yuling	
+2015	World Table Tennis Championships Suzhou 2015	YANG Ha Eun (KOR)		LIU Shiwen (CHN)		WS	Main Draw	R16	0 - 4	5:11 4:11 6:11 3:11	LIU Shiwen	
+2015	World Table Tennis Championships Suzhou 2015	DING Ning (CHN)		WU Yang (CHN)		WS	Main Draw	QuarterFinal	4 - 3	11:8 11:7 11:5 7:11 6:11 8:11 11:8	DING Ning	
+2015	World Table Tennis Championships Suzhou 2015	MU Zi (CHN)		FENG Tianwei (SGP)		WS	Main Draw	QuarterFinal	4 - 0	11:5 11:2 11:9 11:5	MU Zi	
+2015	World Table Tennis Championships Suzhou 2015	LI Xiaoxia (CHN)		ITO Mima (JPN)		WS	Main Draw	QuarterFinal	4 - 2	9:11 14:16 11:2 11:7 13:11 11:2	LI Xiaoxia	
+2015	World Table Tennis Championships Suzhou 2015	ZHU Yuling (MAC)		LIU Shiwen (CHN)		WS	Main Draw	QuarterFinal	1 - 4	3:11 11:8 5:11 7:11 3:11	LIU Shiwen	
+2015	World Table Tennis Championships Suzhou 2015	DING Ning (CHN)		MU Zi (CHN)		WS	Main Draw	SemiFinal	4 - 3	9:11 11:6 12:10 5:11 11:6 1:11 11:6	DING Ning	
+2015	World Table Tennis Championships Suzhou 2015	LI Xiaoxia (CHN)		LIU Shiwen (CHN)		WS	Main Draw	SemiFinal	1 - 4	6:11 11:8 9:11 7:11 8:11	LIU Shiwen	
+2015	World Table Tennis Championships Suzhou 2015	DING Ning (CHN)		LIU Shiwen (CHN)		WS	Main Draw	Final	4 - 3	7:11 15:13 11:7 11:9 9:11 4:11 11:8	DING Ning	
+2015	World Table Tennis Championships Suzhou 2015	SHOIFER Neli (ISR)		AVAMERI Airi (EST)		WS	Qualification		3 - 4	7:11 5:11 12:10 11:5 11:6 9:11 4:11	AVAMERI Airi	
+2015	World Table Tennis Championships Suzhou 2015	LUO Anqi (CAN)		AVAMERI Airi (EST)		WS	Qualification		4 - 1	11:5 12:10 8:11 11:9 11:8	LUO Anqi	
+2015	World Table Tennis Championships Suzhou 2015	LUO Anqi (CAN)		SHOIFER Neli (ISR)		WS	Qualification		4 - 1	6:11 11:9 11:7 11:9 13:11	LUO Anqi	
+2015	World Table Tennis Championships Suzhou 2015	NWACHUKWU Onyinyechi (CGO)		LAID Islem (ALG)		WS	Qualification		1 - 4	4:11 6:11 12:10 9:11 6:11	LAID Islem	
+2015	World Table Tennis Championships Suzhou 2015	TROSMAN Nicole (ISR)		LAID Islem (ALG)		WS	Qualification		4 - 0		TROSMAN Nicole	
+2015	World Table Tennis Championships Suzhou 2015	TROSMAN Nicole (ISR)		NWACHUKWU Onyinyechi (CGO)		WS	Qualification		4 - 0	11:5 11:8 11:6 11:8	TROSMAN Nicole	
+2015	World Table Tennis Championships Suzhou 2015	WARUSAWITHANA Erandi (SRI)		BILAL Shabnam (PAK)		WS	Qualification		4 - 2	11:8 7:11 11:7 10:12 11:3 13:11	WARUSAWITHANA Erandi	
+2015	World Table Tennis Championships Suzhou 2015	ARLOUSKAYA Alina (BLR)		BILAL Shabnam (PAK)		WS	Qualification		4 - 0	11:5 11:9 11:7 11:5	ARLOUSKAYA Alina	
+2015	World Table Tennis Championships Suzhou 2015	ARLOUSKAYA Alina (BLR)		WARUSAWITHANA Erandi (SRI)		WS	Qualification		4 - 0	11:3 11:5 11:3 11:6	ARLOUSKAYA Alina	
+2015	World Table Tennis Championships Suzhou 2015	NINO Neridee (VEN)		EDWARDS Gillian (SCO)		WS	Qualification		4 - 3	11:5 9:11 5:11 11:3 4:11 11:6 11:8	NINO Neridee	
+2015	World Table Tennis Championships Suzhou 2015	KUMARESAN Shamini (IND)		EDWARDS Gillian (SCO)		WS	Qualification		4 - 2	11:7 9:11 11:3 13:11 8:11 11:6	KUMARESAN Shamini	
+2015	World Table Tennis Championships Suzhou 2015	KUMARESAN Shamini (IND)		NINO Neridee (VEN)		WS	Qualification		4 - 2	11:7 11:3 8:11 11:3 7:11 11:8	KUMARESAN Shamini	
+2015	World Table Tennis Championships Suzhou 2015	SAIDANI Safa (TUN)		MADRID Mercedes (MEX)		WS	Qualification		2 - 4	11:6 10:12 8:11 4:11 13:11 4:11	MADRID Mercedes	
+2015	World Table Tennis Championships Suzhou 2015	OSHONAIKE Olufunke (NGR)		MARTINEZ Cynthia (CRC)		WS	Qualification		4 - 0	11:1 11:3 11:3 11:3	OSHONAIKE Olufunke	
+2015	World Table Tennis Championships Suzhou 2015	OSHONAIKE Olufunke (NGR)		MADRID Mercedes (MEX)		WS	Qualification		4 - 0	11:7 11:4 17:15 11:7	OSHONAIKE Olufunke	
+2015	World Table Tennis Championships Suzhou 2015	SAIDANI Safa (TUN)		MARTINEZ Cynthia (CRC)		WS	Qualification		4 - 0	11:4 11:5 11:2 11:6	SAIDANI Safa	
+2015	World Table Tennis Championships Suzhou 2015	OSHONAIKE Olufunke (NGR)		SAIDANI Safa (TUN)		WS	Qualification		4 - 3	11:5 11:8 8:11 11:9 9:11 10:12 12:10	OSHONAIKE Olufunke	
+2015	World Table Tennis Championships Suzhou 2015	MADRID Mercedes (MEX)		MARTINEZ Cynthia (CRC)		WS	Qualification		4 - 0	11:3 11:4 11:8 11:5	MADRID Mercedes	
+2015	World Table Tennis Championships Suzhou 2015	GELMAN Shelli (ISR)		THOMAS WU ZHANG Chloe Anna (WAL)		WS	Qualification		4 - 3	3:11 8:11 11:6 11:7 9:11 12:10 11:8	GELMAN Shelli	
+2015	World Table Tennis Championships Suzhou 2015	ARVELO Gremlis (VEN)		LARUSDOTTIR Aldis Run (ISL)		WS	Qualification		0 - 4		LARUSDOTTIR Aldis Run	
+2015	World Table Tennis Championships Suzhou 2015	ARVELO Gremlis (VEN)		THOMAS WU ZHANG Chloe Anna (WAL)		WS	Qualification		0 - 4		THOMAS WU ZHANG Chloe Anna	
+2015	World Table Tennis Championships Suzhou 2015	GELMAN Shelli (ISR)		LARUSDOTTIR Aldis Run (ISL)		WS	Qualification		4 - 0	11:4 11:3 11:7 12:10	GELMAN Shelli	
+2015	World Table Tennis Championships Suzhou 2015	ARVELO Gremlis (VEN)		GELMAN Shelli (ISR)		WS	Qualification		0 - 4		GELMAN Shelli	
+2015	World Table Tennis Championships Suzhou 2015	THOMAS WU ZHANG Chloe Anna (WAL)		LARUSDOTTIR Aldis Run (ISL)		WS	Qualification		4 - 0	11:0 11:2 11:9 11:2	THOMAS WU ZHANG Chloe Anna	
+2015	World Table Tennis Championships Suzhou 2015	WANG Amy (USA)		COTE Alicia (CAN)		WS	Qualification		4 - 0	11:8 11:7 11:2 11:6	WANG Amy	
+2015	World Table Tennis Championships Suzhou 2015	HANFFOU Sarah (CMR)		OMRANI Mahjobeh (IRI)		WS	Qualification		4 - 1	11:8 11:8 11:6 9:11 11:9	HANFFOU Sarah	
+2015	World Table Tennis Championships Suzhou 2015	HANFFOU Sarah (CMR)		COTE Alicia (CAN)		WS	Qualification		4 - 1	11:5 10:12 11:2 11:4 11:4	HANFFOU Sarah	
+2015	World Table Tennis Championships Suzhou 2015	WANG Amy (USA)		OMRANI Mahjobeh (IRI)		WS	Qualification		4 - 1	8:11 11:5 11:5 11:7 11:6	WANG Amy	
+2015	World Table Tennis Championships Suzhou 2015	HANFFOU Sarah (CMR)		WANG Amy (USA)		WS	Qualification		4 - 0	11:8 11:7 11:7 11:9	HANFFOU Sarah	
+2015	World Table Tennis Championships Suzhou 2015	COTE Alicia (CAN)		OMRANI Mahjobeh (IRI)		WS	Qualification		1 - 4	8:11 6:11 11:7 5:11 9:11	OMRANI Mahjobeh	
+2015	World Table Tennis Championships Suzhou 2015	BATBAYAR Doljinzuu (MGL)		MALOKU Vlona (KOS)		WS	Qualification		4 - 2	11:7 5:11 12:14 11:6 11:6 11:7	BATBAYAR Doljinzuu	
+2015	World Table Tennis Championships Suzhou 2015	TOLIOU Aikaterini (GRE)		BJORNSDOTTIR Gudrun (ISL)		WS	Qualification		4 - 0	11:1 11:5 11:3 11:4	TOLIOU Aikaterini	
+2015	World Table Tennis Championships Suzhou 2015	TOLIOU Aikaterini (GRE)		MALOKU Vlona (KOS)		WS	Qualification		4 - 0	11:5 11:3 11:8 11:3	TOLIOU Aikaterini	
+2015	World Table Tennis Championships Suzhou 2015	BATBAYAR Doljinzuu (MGL)		BJORNSDOTTIR Gudrun (ISL)		WS	Qualification		4 - 0	11:4 11:3 11:6 11:6	BATBAYAR Doljinzuu	
+2015	World Table Tennis Championships Suzhou 2015	TOLIOU Aikaterini (GRE)		BATBAYAR Doljinzuu (MGL)		WS	Qualification		4 - 0	11:9 11:6 11:7 11:5	TOLIOU Aikaterini	
+2015	World Table Tennis Championships Suzhou 2015	MALOKU Vlona (KOS)		BJORNSDOTTIR Gudrun (ISL)		WS	Qualification		4 - 0	11:7 11:9 11:7 11:7	MALOKU Vlona	
+2015	World Table Tennis Championships Suzhou 2015	UMBACIA Angie (COL)		OZKAYA Gul Pembe (TUR)		WS	Qualification		4 - 0	11:7 11:5 11:2 11:6	UMBACIA Angie	
+2015	World Table Tennis Championships Suzhou 2015	CAREY Charlotte (WAL)		MOSSEMBA Thomie (CGO)		WS	Qualification		4 - 0	11:7 11:6 11:7 11:8	CAREY Charlotte	
+2015	World Table Tennis Championships Suzhou 2015	CAREY Charlotte (WAL)		OZKAYA Gul Pembe (TUR)		WS	Qualification		2 - 4	10:12 11:8 8:11 6:11 11:7 8:11	OZKAYA Gul Pembe	
+2015	World Table Tennis Championships Suzhou 2015	UMBACIA Angie (COL)		MOSSEMBA Thomie (CGO)		WS	Qualification		4 - 0	11:8 11:7 11:7 11:5	UMBACIA Angie	
+2015	World Table Tennis Championships Suzhou 2015	CAREY Charlotte (WAL)		UMBACIA Angie (COL)		WS	Qualification		4 - 1	11:3 11:7 15:13 6:11 11:5	CAREY Charlotte	
+2015	World Table Tennis Championships Suzhou 2015	OZKAYA Gul Pembe (TUR)		MOSSEMBA Thomie (CGO)		WS	Qualification		4 - 0	11:2 11:5 11:7 12:10	OZKAYA Gul Pembe	
+2015	World Table Tennis Championships Suzhou 2015	PHILLIPS Megan (WAL)		WHITAKER Corinna (SCO)		WS	Qualification		4 - 0	11:7 11:4 11:6 11:5	PHILLIPS Megan	
+2015	World Table Tennis Championships Suzhou 2015	ASCHWANDEN Rahel (SUI)		MU Zi (CHN)		WS	Qualification		0 - 4	5:11 3:11 8:11 6:11	MU Zi	
+2015	World Table Tennis Championships Suzhou 2015	ASCHWANDEN Rahel (SUI)		WHITAKER Corinna (SCO)		WS	Qualification		4 - 0	11:4 11:4 11:6 11:3	ASCHWANDEN Rahel	
+2015	World Table Tennis Championships Suzhou 2015	PHILLIPS Megan (WAL)		MU Zi (CHN)		WS	Qualification		0 - 4	7:11 3:11 3:11 5:11	MU Zi	
+2015	World Table Tennis Championships Suzhou 2015	ASCHWANDEN Rahel (SUI)		PHILLIPS Megan (WAL)		WS	Qualification		4 - 1	11:5 11:9 11:5 9:11 11:6	ASCHWANDEN Rahel	
+2015	World Table Tennis Championships Suzhou 2015	WHITAKER Corinna (SCO)		MU Zi (CHN)		WS	Qualification		0 - 4	4:11 3:11 1:11 2:11	MU Zi	
+2015	World Table Tennis Championships Suzhou 2015	KARAHAN Ipek (TUR)		MONTUFAR Andrea (GUA)		WS	Qualification		4 - 1	11:5 11:8 11:4 11:13 11:9	KARAHAN Ipek	
+2015	World Table Tennis Championships Suzhou 2015	EDEM Offiong (NGR)		SAMET Maryam (IRI)		WS	Qualification		0 - 4		SAMET Maryam	
+2015	World Table Tennis Championships Suzhou 2015	EDEM Offiong (NGR)		MONTUFAR Andrea (GUA)		WS	Qualification		0 - 4		MONTUFAR Andrea	
+2015	World Table Tennis Championships Suzhou 2015	KARAHAN Ipek (TUR)		SAMET Maryam (IRI)		WS	Qualification		2 - 4	12:10 5:11 10:12 11:8 8:11 6:11	SAMET Maryam	
+2015	World Table Tennis Championships Suzhou 2015	EDEM Offiong (NGR)		KARAHAN Ipek (TUR)		WS	Qualification		0 - 4		KARAHAN Ipek	
+2015	World Table Tennis Championships Suzhou 2015	MONTUFAR Andrea (GUA)		SAMET Maryam (IRI)		WS	Qualification		1 - 4	5:11 4:11 11:7 13:15 8:11	SAMET Maryam	
+2015	World Table Tennis Championships Suzhou 2015	SERRANO Monica (MEX)		MOHAMED Aia (QAT)		WS	Qualification		4 - 0	11:3 12:10 11:3 11:4	SERRANO Monica	
+2015	World Table Tennis Championships Suzhou 2015	VIVARELLI Debora (ITA)		DASANI Shital (KEN)		WS	Qualification		4 - 0	11:3 11:4 11:3 11:6	VIVARELLI Debora	
+2015	World Table Tennis Championships Suzhou 2015	VIVARELLI Debora (ITA)		MOHAMED Aia (QAT)		WS	Qualification		4 - 1	11:4 7:11 11:9 11:4 11:8	VIVARELLI Debora	
+2015	World Table Tennis Championships Suzhou 2015	SERRANO Monica (MEX)		DASANI Shital (KEN)		WS	Qualification		4 - 0	11:5 11:2 11:3 11:4	SERRANO Monica	
+2015	World Table Tennis Championships Suzhou 2015	VIVARELLI Debora (ITA)		SERRANO Monica (MEX)		WS	Qualification		4 - 1	5:11 11:5 11:8 11:6 11:7	VIVARELLI Debora	
+2015	World Table Tennis Championships Suzhou 2015	MOHAMED Aia (QAT)		DASANI Shital (KEN)		WS	Qualification		4 - 0	11:2 11:4 11:3 11:6	MOHAMED Aia	
+2015	World Table Tennis Championships Suzhou 2015	MACAITE Aiste (LTU)		DOUANGPANYA Seangdavieng (LAO)		WS	Qualification		4 - 2	7:11 11:7 6:11 13:11 11:4 16:14	MACAITE Aiste	
+2015	World Table Tennis Championships Suzhou 2015	VEGA Paulina (CHI)		KUOK Cheng I (MAC)		WS	Qualification		4 - 0	11:7 11:7 12:10 11:6	VEGA Paulina	
+2015	World Table Tennis Championships Suzhou 2015	VEGA Paulina (CHI)		DOUANGPANYA Seangdavieng (LAO)		WS	Qualification		4 - 1	12:10 12:10 11:8 4:11 11:8	VEGA Paulina	
+2015	World Table Tennis Championships Suzhou 2015	MACAITE Aiste (LTU)		KUOK Cheng I (MAC)		WS	Qualification		3 - 4	11:9 10:12 7:11 11:5 11:2 11:13 6:11	KUOK Cheng I	
+2015	World Table Tennis Championships Suzhou 2015	VEGA Paulina (CHI)		MACAITE Aiste (LTU)		WS	Qualification		4 - 2	11:5 11:13 11:5 11:9 6:11 11:8	VEGA Paulina	
+2015	World Table Tennis Championships Suzhou 2015	DOUANGPANYA Seangdavieng (LAO)		KUOK Cheng I (MAC)		WS	Qualification		4 - 2	11:2 7:11 7:11 11:3 11:6 11:3	DOUANGPANYA Seangdavieng	
+2015	World Table Tennis Championships Suzhou 2015	NIETO Janina (PER)		IMANOVA Maryam (AZE)		WS	Qualification		4 - 0	11:5 11:9 11:5 11:9	NIETO Janina	
+2015	World Table Tennis Championships Suzhou 2015	BARAVOK Katsiaryna (BLR)		SLADKOVA Nataliya (KAZ)		WS	Qualification		3 - 4	12:14 6:11 9:11 11:5 13:11 11:6 8:11	SLADKOVA Nataliya	
+2015	World Table Tennis Championships Suzhou 2015	BARAVOK Katsiaryna (BLR)		IMANOVA Maryam (AZE)		WS	Qualification		4 - 1	11:5 11:8 9:11 11:6 11:9	BARAVOK Katsiaryna	
+2015	World Table Tennis Championships Suzhou 2015	NIETO Janina (PER)		SLADKOVA Nataliya (KAZ)		WS	Qualification		0 - 4	4:11 2:11 9:11 4:11	SLADKOVA Nataliya	
+2015	World Table Tennis Championships Suzhou 2015	BARAVOK Katsiaryna (BLR)		NIETO Janina (PER)		WS	Qualification		4 - 1	5:11 11:8 11:6 11:6 11:6	BARAVOK Katsiaryna	
+2015	World Table Tennis Championships Suzhou 2015	IMANOVA Maryam (AZE)		SLADKOVA Nataliya (KAZ)		WS	Qualification		0 - 4	8:11 5:11 13:15 3:11	SLADKOVA Nataliya	
+2015	World Table Tennis Championships Suzhou 2015	GATS Yuliya (KAZ)		GULIYEVA Rufat (AZE)		WS	Qualification		4 - 2	11:6 11:7 11:7 6:11 8:11 11:7	GATS Yuliya
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 2 Total: 126
+
+Start
+Prev
+1
+2
+Next
+End
+2015	World Table Tennis Championships Suzhou 2015	BELKADI Aissa (ALG)	KHEROUF Sami (ALG)	CHOE Il (PRK)	KANG Wi Hun (PRK)	MD	Qualification	QR64	0 - 3	10:12 9:11 6:11	CHOE Il	KANG Wi Hun
+2015	World Table Tennis Championships Suzhou 2015	AGUIRRE Marcelo (PAR)	GILABERT Rodrigo (ARG)	XU Xin (CHN)	ZHANG Jike (CHN)	MD	Main Draw	R64	0 - 4	7:11 4:11 9:11 4:11	XU Xin	ZHANG Jike
+2015	World Table Tennis Championships Suzhou 2015	ALTO Gaston (ARG)	TABACHNIK Pablo (ARG)	GIONIS Panagiotis (GRE)	PAPAGEORGIOU Konstantinos (GRE)	MD	Main Draw	R64	2 - 4	11:7 9:11 11:5 5:11 9:11 8:11	GIONIS Panagiotis	PAPAGEORGIOU Konstantinos
+2015	World Table Tennis Championships Suzhou 2015	GARDOS Robert (AUT)	HABESOHN Daniel (AUT)	MUTTI Leonardo (ITA)	RECH DALDOSSO Marco (ITA)	MD	Main Draw	R64	4 - 0	11:4 11:8 11:6 11:8	GARDOS Robert	HABESOHN Daniel
+2015	World Table Tennis Championships Suzhou 2015	GARDOS Robert (AUT)	HABESOHN Daniel (AUT)	DURAN Marc (ESP)	ROBLES Alvaro (ESP)	MD	Main Draw	R32	4 - 0	11:7 11:6 11:9 11:8	GARDOS Robert	HABESOHN Daniel
+2015	World Table Tennis Championships Suzhou 2015	GARDOS Robert (AUT)	HABESOHN Daniel (AUT)	LEE Sang Su (KOR)	SEO Hyundeok (KOR)	MD	Main Draw	R16	2 - 4	9:11 9:11 4:11 12:10 11:8 9:11	LEE Sang Su	SEO Hyundeok
+2015	World Table Tennis Championships Suzhou 2015	AGONNOUDE Modeste (BEN)	GUIGANFODE Olouwachehoun (BEN)	JHA Kanak (USA)	WANG Timothy (USA)	MD	Qualification	QR64	0 - 3		JHA Kanak	WANG Timothy
+2015	World Table Tennis Championships Suzhou 2015	PLATONOV Pavel (BLR)	SAMSONOV Vladimir (BLR)	LEE Sang Su (KOR)	SEO Hyundeok (KOR)	MD	Main Draw	R64	0 - 4	7:11 10:12 5:11 4:11	LEE Sang Su	SEO Hyundeok
+2015	World Table Tennis Championships Suzhou 2015	MATSUMOTO Cazuo (BRA)	MONTEIRO Thiago (BRA)	GOMEZ Gustavo (CHI)	MOYA Manuel (CHI)	MD	Main Draw	R64	4 - 0	11:5 11:3 11:9 11:9	MATSUMOTO Cazuo	MONTEIRO Thiago
+2015	World Table Tennis Championships Suzhou 2015	CALDERANO Hugo (BRA)	TSUBOI Gustavo (BRA)	BEN ARI Omri (ISR)	RABINOVICH Shimon (ISR)	MD	Main Draw	R64	4 - 2	11:3 7:11 11:7 11:8 9:11 11:8	CALDERANO Hugo	TSUBOI Gustavo
+2015	World Table Tennis Championships Suzhou 2015	CALDERANO Hugo (BRA)	TSUBOI Gustavo (BRA)	KUZMIN Fedor (RUS)	VLASOV Grigory (RUS)	MD	Main Draw	R32	4 - 2	9:11 11:8 11:8 11:6 4:11 11:3	CALDERANO Hugo	TSUBOI Gustavo
+2015	World Table Tennis Championships Suzhou 2015	MATSUMOTO Cazuo (BRA)	MONTEIRO Thiago (BRA)	GAUZY Simon (FRA)	LEBESSON Emmanuel (FRA)	MD	Main Draw	R16	4 - 3	11:4 7:11 8:11 12:10 6:11 11:9 11:7	MATSUMOTO Cazuo	MONTEIRO Thiago
+2015	World Table Tennis Championships Suzhou 2015	BERNADET Antoine (CAN)	THERIAULT Pierre-Luc (CAN)	NOROOZI Afshin (IRI)	OMRANI Seyed Pourya (IRI)	MD	Qualification	QR64	2 - 3	11:8 10:12 6:11 11:9 5:11	NOROOZI Afshin	OMRANI Seyed Pourya
+2015	World Table Tennis Championships Suzhou 2015	IDOWU Saheed (CGO)	SAKA Suraju (CGO)	KUZMIN Fedor (RUS)	VLASOV Grigory (RUS)	MD	Main Draw	R64	2 - 4	2:11 11:8 9:11 4:11 11:9 2:11	KUZMIN Fedor	VLASOV Grigory
+2015	World Table Tennis Championships Suzhou 2015	BOLL Timo (GER)	MA Long (CHN)	GUNDUZ Ibrahim (TUR)	MENGE Gencay (TUR)	MD	Main Draw	R64	4 - 0	11:4 11:9 11:3 11:5	BOLL Timo	MA Long
+2015	World Table Tennis Championships Suzhou 2015	BOLL Timo (GER)	MA Long (CHN)	XU Xin (CHN)	ZHANG Jike (CHN)	MD	Main Draw	R32	2 - 4	11:9 11:7 6:11 4:11 8:11 9:11	XU Xin	ZHANG Jike
+2015	World Table Tennis Championships Suzhou 2015	FAN Zhendong (CHN)	ZHOU Yu (CHN)	JEOUNG Youngsik (KOR)	KIM Minseok (KOR)	MD	Main Draw	QuarterFinal	4 - 0	15:13 13:11 11:5 11:8	FAN Zhendong	ZHOU Yu
+2015	World Table Tennis Championships Suzhou 2015	XU Xin (CHN)	ZHANG Jike (CHN)	LEE Sang Su (KOR)	SEO Hyundeok (KOR)	MD	Main Draw	SemiFinal	4 - 2	9:11 11:6 11:9 11:6 4:11 11:3	XU Xin	ZHANG Jike
+2015	World Table Tennis Championships Suzhou 2015	FAN Zhendong (CHN)	ZHOU Yu (CHN)	MATSUDAIRA Kenta (JPN)	NIWA Koki (JPN)	MD	Main Draw	SemiFinal	4 - 0	11:6 11:7 11:6 11:6	FAN Zhendong	ZHOU Yu
+2015	World Table Tennis Championships Suzhou 2015	XU Xin (CHN)	ZHANG Jike (CHN)	FAN Zhendong (CHN)	ZHOU Yu (CHN)	MD	Main Draw	Final	4 - 2	12:14 11:7 11:9 9:11 11:7 11:9	XU Xin	ZHANG Jike
+2015	World Table Tennis Championships Suzhou 2015	KOLAREK Tomislav (CRO)	ZELJKO Filip (CRO)	CHEAIB Dauud (LBN)	EL BOUBOU Rachid (LBN)	MD	Qualification	QR64	3 - 0		KOLAREK Tomislav	ZELJKO Filip
+2015	World Table Tennis Championships Suzhou 2015	KOLAREK Tomislav (CRO)	ZELJKO Filip (CRO)	BEN ARI Omri (ISR)	RABINOVICH Shimon (ISR)	MD	Qualification	QR32	0 - 3	7:11 9:11 3:11	BEN ARI Omri	RABINOVICH Shimon
+2015	World Table Tennis Championships Suzhou 2015	KONECNY Tomas (CZE)	TREGLER Tomas (CZE)	POWELL David (AUS)	TOWNSEND Kane (AUS)	MD	Main Draw	R64	4 - 0	11:6 14:12 11:4 11:6	KONECNY Tomas	TREGLER Tomas
+2015	World Table Tennis Championships Suzhou 2015	ASSAR Khalid (EGY)	ASSAR Omar (EGY)	BOBOCICA Mihai (ITA)	STOYANOV Niagol (ITA)	MD	Main Draw	R64	4 - 1	11:9 9:11 11:7 11:9 11:6	ASSAR Khalid	ASSAR Omar
+2015	World Table Tennis Championships Suzhou 2015	ASSAR Khalid (EGY)	ASSAR Omar (EGY)	MATSUDAIRA Kenta (JPN)	NIWA Koki (JPN)	MD	Main Draw	R32	0 - 4	10:12 5:11 6:11 7:11	MATSUDAIRA Kenta	NIWA Koki
+2015	World Table Tennis Championships Suzhou 2015	DURAN Marc (ESP)	ROBLES Alvaro (ESP)	HO Kwan Kit (HKG)	LI Hon Ming (HKG)	MD	Main Draw	R64	4 - 1	11:8 9:11 11:8 12:10 11:5	DURAN Marc	ROBLES Alvaro
+2015	World Table Tennis Championships Suzhou 2015	SMIRNOV Aleksandr (EST)	VAINULA Vallot (EST)	BABEKIDIO Grace (CGO)	LAWAL Abiodun (CGO)	MD	Qualification	QR64	3 - 0	12:10 11:7 11:7	SMIRNOV Aleksandr	VAINULA Vallot
+2015	World Table Tennis Championships Suzhou 2015	OCONNOR Miikka (FIN)	OLAH Benedek (FIN)	LORENZOTTI Gonzalo (URU)	LUPERDI Juan (PER)	MD	Qualification	QR64	3 - 0	11:6 11:7 11:8	OCONNOR Miikka	OLAH Benedek
+2015	World Table Tennis Championships Suzhou 2015	OCONNOR Miikka (FIN)	OLAH Benedek (FIN)	JAKAB Janos (HUN)	KOSIBA Daniel (HUN)	MD	Qualification	QR32	3 - 2	11:8 13:11 3:11 4:11 11:9	OCONNOR Miikka	OLAH Benedek
+2015	World Table Tennis Championships Suzhou 2015	GAUZY Simon (FRA)	LEBESSON Emmanuel (FRA)	DEVOS Robin (BEL)	NUYTINCK Cedric (BEL)	MD	Main Draw	R64	4 - 3	7:11 11:4 9:11 11:5 9:11 11:7 11:6	GAUZY Simon	LEBESSON Emmanuel
+2015	World Table Tennis Championships Suzhou 2015	GAUZY Simon (FRA)	LEBESSON Emmanuel (FRA)	CHEN Chien-An (TPE)	CHUANG Chih-Yuan (TPE)	MD	Main Draw	R32	4 - 0	11:7 12:10 11:4 11:9	GAUZY Simon	LEBESSON Emmanuel
+2015	World Table Tennis Championships Suzhou 2015	FRANZISKA Patrick (GER)	STEGER Bastian (GER)	OCONNOR Miikka (FIN)	OLAH Benedek (FIN)	MD	Main Draw	R64	4 - 1	11:3 11:5 9:11 11:6 11:7	FRANZISKA Patrick	STEGER Bastian
+2015	World Table Tennis Championships Suzhou 2015	FRANZISKA Patrick (GER)	STEGER Bastian (GER)	MORIZONO Masataka (JPN)	OSHIMA Yuya (JPN)	MD	Main Draw	R32	2 - 4	13:11 9:11 6:11 2:11 11:9 3:11	MORIZONO Masataka	OSHIMA Yuya
+2015	World Table Tennis Championships Suzhou 2015	GIONIS Panagiotis (GRE)	PAPAGEORGIOU Konstantinos (GRE)	LEE Sang Su (KOR)	SEO Hyundeok (KOR)	MD	Main Draw	R32	0 - 4	10:12 5:11 8:11 4:11	LEE Sang Su	SEO Hyundeok
+2015	World Table Tennis Championships Suzhou 2015	MADRID Marcos (MEX)	RAMIREZ Jose Miguel (GUA)	FAN Zhendong (CHN)	ZHOU Yu (CHN)	MD	Main Draw	R64	0 - 4	9:11 5:11 7:11 4:11	FAN Zhendong	ZHOU Yu
+2015	World Table Tennis Championships Suzhou 2015	GATICA Hector (GUA)	MOSCOSO Heber (GUA)	GOLOVANOV Stanislav (BUL)	KRASTEV Petyo (BUL)	MD	Qualification	QR128	1 - 3	4:11 12:14 13:11 5:11	GOLOVANOV Stanislav	KRASTEV Petyo
+2015	World Table Tennis Championships Suzhou 2015	TANG Peng (HKG)	WONG Chun Ting (HKG)	GLOD Eric (LUX)	RUMGAY Gavin (SCO)	MD	Main Draw	R64	4 - 0	11:9 11:8 11:2 11:8	TANG Peng	WONG Chun Ting
+2015	World Table Tennis Championships Suzhou 2015	TANG Peng (HKG)	WONG Chun Ting (HKG)	GAO Ning (SGP)	YANG Zi (SGP)	MD	Main Draw	R32	4 - 0	11:6 13:11 14:12 13:11	TANG Peng	WONG Chun Ting
+2015	World Table Tennis Championships Suzhou 2015	TANG Peng (HKG)	WONG Chun Ting (HKG)	FAN Zhendong (CHN)	ZHOU Yu (CHN)	MD	Main Draw	R16	1 - 4	6:11 10:12 9:11 11:9 3:11	FAN Zhendong	ZHOU Yu
+2015	World Table Tennis Championships Suzhou 2015	LAKATOS Tamas (HUN)	PATTANTYUS Adam (HUN)	ALI Syed Shujat (PAK)	O'CONNELL Daniel (WAL)	MD	Qualification	QR128	3 - 0	11:3 11:2 11:6	LAKATOS Tamas	PATTANTYUS Adam
+2015	World Table Tennis Championships Suzhou 2015	LAKATOS Tamas (HUN)	PATTANTYUS Adam (HUN)	GERASSIMENKO Kirill (KAZ)	KENJAEV Zokhid (UZB)	MD	Qualification	QR64	3 - 1	11:9 20:18 9:11 11:7	LAKATOS Tamas	PATTANTYUS Adam
+2015	World Table Tennis Championships Suzhou 2015	ACHANTA Sharath (IND)	GNANASEKARAN Sathiyan (IND)	MORIZONO Masataka (JPN)	OSHIMA Yuya (JPN)	MD	Main Draw	R64	1 - 4	4:11 11:9 6:11 4:11 5:11	MORIZONO Masataka	OSHIMA Yuya
+2015	World Table Tennis Championships Suzhou 2015	ACHANTA Sharath (IND)	GNANASEKARAN Sathiyan (IND)	ALYASSI Alyas (BRN)	SALEH Mohamed (BRN)	MD	Qualification	QR64	3 - 0	11:4 11:3 11:8	ACHANTA Sharath	GNANASEKARAN Sathiyan
+2015	World Table Tennis Championships Suzhou 2015	ACHANTA Sharath (IND)	GNANASEKARAN Sathiyan (IND)	KATKOV Ivan (UKR)	KOU Lei (UKR)	MD	Qualification	QR32	3 - 2	5:11 11:9 10:12 11:7 11:7	ACHANTA Sharath	GNANASEKARAN Sathiyan
+2015	World Table Tennis Championships Suzhou 2015	NOROOZI Afshin (IRI)	OMRANI Seyed Pourya (IRI)	CHEN Diogo (POR)	FREITAS Marcos (POR)	MD	Main Draw	R64	0 - 4	11:13 5:11 6:11 7:11	CHEN Diogo	FREITAS Marcos
+2015	World Table Tennis Championships Suzhou 2015	ALAMIAN Nima (IRI)	ALAMIYAN Noshad (IRI)	GUDMUNDSSON Dadi Freyr (ISL)	JONSSON David (ISL)	MD	Qualification	QR64	3 - 0	11:2 11:6 11:7	ALAMIAN Nima	ALAMIYAN Noshad
+2015	World Table Tennis Championships Suzhou 2015	ALAMIAN Nima (IRI)	ALAMIYAN Noshad (IRI)	LARA Miguel (MEX)	VILLA Ricardo (MEX)	MD	Qualification	QR32	3 - 1	11:7 11:6 9:11 11:8	ALAMIAN Nima	ALAMIYAN Noshad
+2015	World Table Tennis Championships Suzhou 2015	MAGUIRE Gavin (IRL)	ROBINSON Ashley (IRL)	PITAKGULSIRI Suchat (THA)	POUNGSRI Max (THA)	MD	Qualification	QR128	0 - 3	10:12 6:11 7:11	PITAKGULSIRI Suchat	POUNGSRI Max
+2015	World Table Tennis Championships Suzhou 2015	BEN ARI Omri (ISR)	RABINOVICH Shimon (ISR)	ISMAYILOV Farhad (AZE)	JAFAROV Ramil (AZE)	MD	Qualification	QR128	3 - 0	11:2 11:4 11:9	BEN ARI Omri	RABINOVICH Shimon
+2015	World Table Tennis Championships Suzhou 2015	BEN ARI Omri (ISR)	RABINOVICH Shimon (ISR)	MOHED Osama (SUD)	SALAH Mohamed (SUD)	MD	Qualification	QR64	3 - 0		BEN ARI Omri	RABINOVICH Shimon
+2015	World Table Tennis Championships Suzhou 2015	LIN Yi-Sien (NZL)	TAUBER Michael (ISR)	GLOD Eric (LUX)	RUMGAY Gavin (SCO)	MD	Qualification	QR32	0 - 3	5:11 6:11 8:11	GLOD Eric	RUMGAY Gavin
+2015	World Table Tennis Championships Suzhou 2015	MUTTI Leonardo (ITA)	RECH DALDOSSO Marco (ITA)	BAJRACHARYA Purshottam (NEP)	CHE Long Lam (MAC)	MD	Qualification	QR64	3 - 0	11:5 11:9 11:3	MUTTI Leonardo	RECH DALDOSSO Marco
+2015	World Table Tennis Championships Suzhou 2015	MORIZONO Masataka (JPN)	OSHIMA Yuya (JPN)	XU Xin (CHN)	ZHANG Jike (CHN)	MD	Main Draw	QuarterFinal	3 - 4	11:9 8:11 7:11 11:9 12:10 9:11 10:12	XU Xin	ZHANG Jike
+2015	World Table Tennis Championships Suzhou 2015	JEOUNG Youngsik (KOR)	KIM Minseok (KOR)	DRINKHALL Paul (ENG)	PITCHFORD Liam (ENG)	MD	Main Draw	R64	4 - 2	11:7 11:6 4:11 7:11 11:8 11:8	JEOUNG Youngsik	KIM Minseok
+2015	World Table Tennis Championships Suzhou 2015	JEOUNG Youngsik (KOR)	KIM Minseok (KOR)	KONECNY Tomas (CZE)	TREGLER Tomas (CZE)	MD	Main Draw	R32	4 - 0	11:9 11:9 11:5 11:7	JEOUNG Youngsik	KIM Minseok
+2015	World Table Tennis Championships Suzhou 2015	JEOUNG Youngsik (KOR)	KIM Minseok (KOR)	CALDERANO Hugo (BRA)	TSUBOI Gustavo (BRA)	MD	Main Draw	R16	4 - 2	7:11 11:8 11:8 8:11 11:8 11:3	JEOUNG Youngsik	KIM Minseok
+2015	World Table Tennis Championships Suzhou 2015	LEE Sang Su (KOR)	SEO Hyundeok (KOR)	MATSUMOTO Cazuo (BRA)	MONTEIRO Thiago (BRA)	MD	Main Draw	QuarterFinal	4 - 3	11:6 6:11 6:11 11:5 11:7 6:11 11:7	LEE Sang Su	SEO Hyundeok
+2015	World Table Tennis Championships Suzhou 2015	CITAKU Baton (KOS)	CITAKU Linor (KOS)	GOMMERS Rajko (NED)	TROMER Laurens (NED)	MD	Qualification	QR128	0 - 3	6:11 8:11 3:11	GOMMERS Rajko	TROMER Laurens
+2015	World Table Tennis Championships Suzhou 2015	CHAMPOD Nicolas (SUI)	PRESTRESHI Ylli (KOS)	ALKHADRAWI Ali (KSA)	BU SHULAYBI Abdulaziz (KSA)	MD	Qualification	QR64	0 - 3	2:11 10:12 9:11	ALKHADRAWI Ali	BU SHULAYBI Abdulaziz
+2015	World Table Tennis Championships Suzhou 2015	AL-ABBAD Abdulaziz (KSA)	AL-JADAI Naif (KSA)	LIN Yi-Sien (NZL)	TAUBER Michael (ISR)	MD	Qualification	QR64	0 - 3		LIN Yi-Sien	TAUBER Michael
+2015	World Table Tennis Championships Suzhou 2015	ALKHADRAWI Ali (KSA)	BU SHULAYBI Abdulaziz (KSA)	SMIRNOV Aleksandr (EST)	VAINULA Vallot (EST)	MD	Qualification	QR32	3 - 1	9:11 11:4 11:7 11:6	ALKHADRAWI Ali	BU SHULAYBI Abdulaziz
+2015	World Table Tennis Championships Suzhou 2015	KARTUZOVS Olegs (LAT)	VASILJEVS Sandijs (LAT)	AGBETOGLO Mawussi (TOG)	LAWSON-GAIZER Fessou (TOG)	MD	Qualification	QR128	3 - 0	11:6 11:6 11:6	KARTUZOVS Olegs	VASILJEVS Sandijs
+2015	World Table Tennis Championships Suzhou 2015	KARTUZOVS Olegs (LAT)	VASILJEVS Sandijs (LAT)	JAKAB Janos (HUN)	KOSIBA Daniel (HUN)	MD	Qualification	QR64	0 - 3	13:15 3:11 2:11	JAKAB Janos	KOSIBA Daniel
+2015	World Table Tennis Championships Suzhou 2015	LUSIN Aleksandr (EST)	MARTINKUS Valdas (LTU)	KHOLIKOV Elmurod (UZB)	LEVCHENKO Gennadiy (UZB)	MD	Qualification	QR128	3 - 0	11:5 11:8 11:9	LUSIN Aleksandr	MARTINKUS Valdas
+2015	World Table Tennis Championships Suzhou 2015	LUSIN Aleksandr (EST)	MARTINKUS Valdas (LTU)	MATSUMOTO Cazuo (BRA)	MONTEIRO Thiago (BRA)	MD	Qualification	QR64	0 - 3	6:11 9:11 5:11	MATSUMOTO Cazuo	MONTEIRO Thiago
+2015	World Table Tennis Championships Suzhou 2015	CHANG Hoi Wa (MAC)	WANG Chun (MAC)	LARA Miguel (MEX)	VILLA Ricardo (MEX)	MD	Qualification	QR64	0 - 3	9:11 7:11 7:11	LARA Miguel	VILLA Ricardo
+2015	World Table Tennis Championships Suzhou 2015	AHMED Mohamed (MDV)	AHMED Moosa (MDV)	LARA Miguel (MEX)	VILLA Ricardo (MEX)	MD	Qualification	QR128	0 - 3		LARA Miguel	VILLA Ricardo
+2015	World Table Tennis Championships Suzhou 2015	ENKHBAT Lkhagvasuren (MGL)	YADMAA Begz (MGL)	GLOD Eric (LUX)	RUMGAY Gavin (SCO)	MD	Qualification	QR64	1 - 3	5:11 11:13 18:16 6:11	GLOD Eric	RUMGAY Gavin
+2015	World Table Tennis Championships Suzhou 2015	BAJADA Daniel (MLT)	GAMBINA Andrew (MLT)	PITAKGULSIRI Suchat (THA)	POUNGSRI Max (THA)	MD	Qualification	QR64	0 - 3	6:11 5:11 3:11	PITAKGULSIRI Suchat	POUNGSRI Max
+2015	World Table Tennis Championships Suzhou 2015	BAKIC Luka (MNE)	CEKIC Irfan (MNE)	BEN YAHIA Kerem (TUN)	HMAM Adam (TUN)	MD	Qualification	QR64	3 - 1	11:5 11:4 13:15 11:6	BAKIC Luka	CEKIC Irfan
+2015	World Table Tennis Championships Suzhou 2015	GOMMERS Rajko (NED)	TROMER Laurens (NED)	BAKIC Luka (MNE)	CEKIC Irfan (MNE)	MD	Qualification	QR32	3 - 1	11:7 8:11 11:9 11:4	GOMMERS Rajko	TROMER Laurens
+2015	World Table Tennis Championships Suzhou 2015	MALLA Amar (NEP)	SAUN Deep (NEP)	DYJAS Jakub (POL)	GORAK Daniel (POL)	MD	Qualification	QR64	0 - 3	3:11 7:11 8:11	DYJAS Jakub	GORAK Daniel
+2015	World Table Tennis Championships Suzhou 2015	ARUNA Quadri (NGR)	KAZEEM Makanjuola (NGR)	ALKHADRAWI Ali (KSA)	BU SHULAYBI Abdulaziz (KSA)	MD	Main Draw	R64	4 - 1	11:6 11:6 11:4 9:11 11:4	ARUNA Quadri	KAZEEM Makanjuola
+2015	World Table Tennis Championships Suzhou 2015	ONAOLAPO Ojo (NGR)	TORIOLA Segun (NGR)	MATSUDAIRA Kenta (JPN)	NIWA Koki (JPN)	MD	Main Draw	R64	0 - 4		MATSUDAIRA Kenta	NIWA Koki
+2015	World Table Tennis Championships Suzhou 2015	ARUNA Quadri (NGR)	KAZEEM Makanjuola (NGR)	MATSUMOTO Cazuo (BRA)	MONTEIRO Thiago (BRA)	MD	Main Draw	R32	1 - 4	11:7 7:11 5:11 6:11 5:11	MATSUMOTO Cazuo	MONTEIRO Thiago
+2015	World Table Tennis Championships Suzhou 2015	LI Julio (PER)	RODRIGUEZ Diego (PER)	GUNDUZ Ibrahim (TUR)	MENGE Gencay (TUR)	MD	Qualification	QR64	1 - 3	13:11 7:11 7:11 6:11	GUNDUZ Ibrahim	MENGE Gencay
+2015	World Table Tennis Championships Suzhou 2015	DYJAS Jakub (POL)	GORAK Daniel (POL)	MATTENET Adrien (FRA)	SALIFOU Abdel-Kader (BEN)	MD	Main Draw	R64	4 - 1	11:8 11:9 11:2 7:11 11:9	DYJAS Jakub	GORAK Daniel
+2015	World Table Tennis Championships Suzhou 2015	TAN Ruiwu (CRO)	WANG Zengyi (POL)	BURGIS Matiss (LAT)	JANCARIK Lubomir (CZE)	MD	Main Draw	R64	4 - 1	11:8 9:11 11:8 13:11 11:5	TAN Ruiwu	WANG Zengyi
+2015	World Table Tennis Championships Suzhou 2015	TAN Ruiwu (CRO)	WANG Zengyi (POL)	APOLONIA Tiago (POR)	MONTEIRO Joao (POR)	MD	Main Draw	R32	1 - 4	2:11 7:11 11:6 9:11 8:11	APOLONIA Tiago	MONTEIRO Joao
+2015	World Table Tennis Championships Suzhou 2015	DYJAS Jakub (POL)	GORAK Daniel (POL)	MORIZONO Masataka (JPN)	OSHIMA Yuya (JPN)	MD	Main Draw	R16	0 - 4	7:11 6:11 7:11 10:12	MORIZONO Masataka	OSHIMA Yuya
+2015	World Table Tennis Championships Suzhou 2015	CHEN Diogo (POR)	FREITAS Marcos (POR)	KIM Hyok Bong (PRK)	PAK Sin Hyok (PRK)	MD	Main Draw	R16	2 - 4	6:11 11:9 10:12 11:9 12:14 5:11	KIM Hyok Bong	PAK Sin Hyok
+2015	World Table Tennis Championships Suzhou 2015	APOLONIA Tiago (POR)	MONTEIRO Joao (POR)	MATSUDAIRA Kenta (JPN)	NIWA Koki (JPN)	MD	Main Draw	R16	2 - 4	8:11 11:9 9:11 11:3 6:11 5:11	MATSUDAIRA Kenta	NIWA Koki
+2015	World Table Tennis Championships Suzhou 2015	KIM Hyok Bong (PRK)	PAK Sin Hyok (PRK)	GROTH Jonathan (DEN)	STERNBERG Kasper (DEN)	MD	Main Draw	R64	4 - 2	11:8 3:11 11:9 11:9 11:13 13:11	KIM Hyok Bong	PAK Sin Hyok
+2015	World Table Tennis Championships Suzhou 2015	KIM Hyok Bong (PRK)	PAK Sin Hyok (PRK)	HE Zhiwen (ESP)	MACHADO Carlos (ESP)	MD	Main Draw	R32	4 - 2	10:12 11:1 8:11 11:5 11:5 11:6	KIM Hyok Bong	PAK Sin Hyok
+2015	World Table Tennis Championships Suzhou 2015	KIM Hyok Bong (PRK)	PAK Sin Hyok (PRK)	MATSUDAIRA Kenta (JPN)	NIWA Koki (JPN)	MD	Main Draw	QuarterFinal	0 - 4	3:11 7:11 10:12 14:16	MATSUDAIRA Kenta	NIWA Koki
+2015	World Table Tennis Championships Suzhou 2015	CHOE Il (PRK)	KANG Wi Hun (PRK)	HOWIESON Craig (SCO)	WHEELER Christopher (SCO)	MD	Qualification	QR128	3 - 2	11:3 11:5 7:11 6:11 11:4	CHOE Il	KANG Wi Hun
+2015	World Table Tennis Championships Suzhou 2015	CHOE Il (PRK)	KANG Wi Hun (PRK)	DYJAS Jakub (POL)	GORAK Daniel (POL)	MD	Qualification	QR32	1 - 3	9:11 8:11 11:5 8:11	DYJAS Jakub	GORAK Daniel
+2015	World Table Tennis Championships Suzhou 2015	ABDULWAHHAB Mohammed (QAT)	AL-NAGGAR Abdulrahman (QAT)	ABBAS Saleem (PAK)	QURESHI Asim (PAK)	MD	Qualification	QR64	3 - 2	6:11 11:6 11:4 11:13 14:12	ABDULWAHHAB Mohammed	AL-NAGGAR Abdulrahman
+2015	World Table Tennis Championships Suzhou 2015	FILIMON Andrei (ROU)	IONESCU Ovidiu (ROU)	APOLONIA Tiago (POR)	MONTEIRO Joao (POR)	MD	Main Draw	R64	2 - 4	10:12 4:11 13:11 11:8 8:11 2:11	APOLONIA Tiago	MONTEIRO Joao
+2015	World Table Tennis Championships Suzhou 2015	LIVENTSOV Alexey (RUS)	PAIKOV Mikhail (RUS)	ALAMIAN Nima (IRI)	ALAMIYAN Noshad (IRI)	MD	Main Draw	R64	4 - 3	8:11 12:14 11:7 6:11 11:2 11:7 11:8	LIVENTSOV Alexey	PAIKOV Mikhail
+2015	World Table Tennis Championships Suzhou 2015	LIVENTSOV Alexey (RUS)	PAIKOV Mikhail (RUS)	CHEN Diogo (POR)	FREITAS Marcos (POR)	MD	Main Draw	R32	3 - 4	8:11 11:8 9:11 11:13 14:12 11:5 4:11	CHEN Diogo	FREITAS Marcos
+2015	World Table Tennis Championships Suzhou 2015	CHEW Clarence (SGP)	PANG Xue Jie (SGP)	ALBALOOSHI Abdulla (UAE)	ALMOHAISENI Abdulla (UAE)	MD	Qualification	QR64	3 - 0	11:3 11:7 11:2	CHEW Clarence	PANG Xue Jie
+2015	World Table Tennis Championships Suzhou 2015	CHEW Clarence (SGP)	PANG Xue Jie (SGP)	ALEXANDROV Teodor (BUL)	VALUCH Alexander (SVK)	MD	Qualification	QR32	0 - 3	10:12 8:11 10:12	ALEXANDROV Teodor	VALUCH Alexander
+2015	World Table Tennis Championships Suzhou 2015	JORGIC Darko (SLO)	ZIBRAT Jan (SLO)	CHEN Chien-An (TPE)	CHUANG Chih-Yuan (TPE)	MD	Main Draw	R64	0 - 4	4:11 2:11 2:11 6:11	CHEN Chien-An	CHUANG Chih-Yuan
+2015	World Table Tennis Championships Suzhou 2015	JORGIC Darko (SLO)	ZIBRAT Jan (SLO)	ALBASHAR Ahmad (PLE)	DOUFESH Husam (PLE)	MD	Qualification	QR128	3 - 0	11:4 11:3 11:6	JORGIC Darko	ZIBRAT Jan
+2015	World Table Tennis Championships Suzhou 2015	JORGIC Darko (SLO)	ZIBRAT Jan (SLO)	MALDE Mihir (KEN)	SHAH Harshil (KEN)	MD	Qualification	QR64	3 - 0	11:3 11:1 11:2	JORGIC Darko	ZIBRAT Jan
+2015	World Table Tennis Championships Suzhou 2015	KARAKASEVIC Aleksandar (SRB)	TOKIC Bojan (SLO)	KELBUGANOV Timur (KAZ)	SARSEMBAYEV Dias (KAZ)	MD	Qualification	QR64	3 - 0	11:4 11:3 11:4	KARAKASEVIC Aleksandar	TOKIC Bojan
+2015	World Table Tennis Championships Suzhou 2015	JORGIC Darko (SLO)	ZIBRAT Jan (SLO)	ABDULWAHHAB Mohammed (QAT)	AL-NAGGAR Abdulrahman (QAT)	MD	Qualification	QR32	3 - 0	11:8 11:5 13:11	JORGIC Darko	ZIBRAT Jan
+2015	World Table Tennis Championships Suzhou 2015	KARAKASEVIC Aleksandar (SRB)	TOKIC Bojan (SLO)	LAKATOS Tamas (HUN)	PATTANTYUS Adam (HUN)	MD	Qualification	QR32	3 - 0	11:7 11:7 11:6	KARAKASEVIC Aleksandar	TOKIC Bojan
+2015	World Table Tennis Championships Suzhou 2015	JEVTOVIC Marko (SRB)	PETO Zsolt (SRB)	GOMMERS Rajko (NED)	TROMER Laurens (NED)	MD	Main Draw	R64	4 - 2	10:12 11:5 11:5 12:10 12:14 11:9	JEVTOVIC Marko	PETO Zsolt
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 99
+
+2015	World Table Tennis Championships Suzhou 2015	LAID Islem (ALG)	LOGHRAIBI Lynda (ALG)	BILENKO Tetyana (UKR)	HAPONOVA Hanna (UKR)	WD	Main Draw	R64	0 - 4	4:11 5:11 6:11 5:11	BILENKO Tetyana	HAPONOVA Hanna
+2015	World Table Tennis Championships Suzhou 2015	BATRA Manika (IND)	LAY Jian Fang (AUS)	FINS Rita (POR)	TRIGOLOS Daria (BLR)	WD	Qualification	QR32	0 - 3		FINS Rita	TRIGOLOS Daria
+2015	World Table Tennis Championships Suzhou 2015	FINS Rita (POR)	TRIGOLOS Daria (BLR)	DVORAK Galia (ESP)	RAMIREZ Sara (ESP)	WD	Main Draw	R64	0 - 4	9:11 9:11 7:11 9:11	DVORAK Galia	RAMIREZ Sara
+2015	World Table Tennis Championships Suzhou 2015	FINS Rita (POR)	TRIGOLOS Daria (BLR)	BATBAYAR Doljinzuu (MGL)	MERGEN Delgermaa (MGL)	WD	Qualification	QR64	3 - 0	11:5 11:3 11:6	FINS Rita	TRIGOLOS Daria
+2015	World Table Tennis Championships Suzhou 2015	GUI Lin (BRA)	KUMAHARA Luca (BRA)	SUN Yang (NZL)	YANG Annie (NZL)	WD	Main Draw	R64	4 - 2	11:13 11:5 11:7 2:11 11:4 11:6	GUI Lin	KUMAHARA Luca
+2015	World Table Tennis Championships Suzhou 2015	GUI Lin (BRA)	KUMAHARA Luca (BRA)	GRZYBOWSKA-FRANC Katarzyna (POL)	PARTYKA Natalia (POL)	WD	Main Draw	R32	0 - 4	9:11 9:11 5:11 4:11	GRZYBOWSKA-FRANC Katarzyna	PARTYKA Natalia
+2015	World Table Tennis Championships Suzhou 2015	KAROVA Anelia (BUL)	ZAMFIROVA Elitsa (BUL)	AVAMERI Airi (EST)	LATT Katlin (EST)	WD	Qualification	QR64	0 - 3	5:11 7:11 8:11	AVAMERI Airi	LATT Katlin
+2015	World Table Tennis Championships Suzhou 2015	LUO Anqi (CAN)	ZHANG Mo (CAN)	DOLGIKH Maria (RUS)	MIKHAILOVA Polina (RUS)	WD	Main Draw	R64	2 - 4	7:11 4:11 14:12 2:11 11:8 3:11	DOLGIKH Maria	MIKHAILOVA Polina
+2015	World Table Tennis Championships Suzhou 2015	COTE Alicia (CAN)	YEUNG Justina (CAN)	HAJ SALAH Abir (TUN)	SAIDANI Safa (TUN)	WD	Qualification	QR64	3 - 0	11:6 11:8 15:13	COTE Alicia	YEUNG Justina
+2015	World Table Tennis Championships Suzhou 2015	LUO Anqi (CAN)	ZHANG Mo (CAN)	ELZIBAG Kauther (SUD)	HUSSEIN Habab (SUD)	WD	Qualification	QR64	3 - 0	11:1 11:1 11:3	LUO Anqi	ZHANG Mo
+2015	World Table Tennis Championships Suzhou 2015	LUO Anqi (CAN)	ZHANG Mo (CAN)	HO Ying (MAS)	LEE Rou You (MAS)	WD	Qualification	QR32	3 - 1	11:7 11:9 7:11 15:13	LUO Anqi	ZHANG Mo
+2015	World Table Tennis Championships Suzhou 2015	HAN Xing (CGO)	NWACHUKWU Onyinyechi (CGO)	MADURANGI Ishara (SRI)	SHASHINI Tharunnya (SRI)	WD	Main Draw	R64	4 - 0	11:7 11:5 11:3 12:10	HAN Xing	NWACHUKWU Onyinyechi
+2015	World Table Tennis Championships Suzhou 2015	HAN Xing (CGO)	NWACHUKWU Onyinyechi (CGO)	KIM Hye Song (PRK)	KIM Jong (PRK)	WD	Main Draw	R32	0 - 4	3:11 5:11 5:11 6:11	KIM Hye Song	KIM Jong
+2015	World Table Tennis Championships Suzhou 2015	IWASA Agustina (ARG)	LOW Katherine (CHI)	PENKAVOVA Katerina (CZE)	STRBIKOVA Renata (CZE)	WD	Main Draw	R64	0 - 4	8:11 8:11 4:11 12:14	PENKAVOVA Katerina	STRBIKOVA Renata
+2015	World Table Tennis Championships Suzhou 2015	CASTELLANO Natalia (CHI)	VEGA Paulina (CHI)	PETEK Petra (CRO)	TIAN Yuan (CRO)	WD	Main Draw	R64	4 - 3	15:13 5:11 11:9 11:9 10:12 15:17 11:2	CASTELLANO Natalia	VEGA Paulina
+2015	World Table Tennis Championships Suzhou 2015	CASTELLANO Natalia (CHI)	VEGA Paulina (CHI)	LIU Jia (AUT)	VACENOVSKA Iveta (CZE)	WD	Main Draw	R32	0 - 4	9:11 4:11 6:11 3:11	LIU Jia	VACENOVSKA Iveta
+2015	World Table Tennis Championships Suzhou 2015	LIU Shiwen (CHN)	ZHU Yuling (MAC)	KHETKHUAN Tamolwan (THA)	PARANANG Orawan (THA)	WD	Main Draw	R64	4 - 1	11:7 11:4 10:12 11:8 11:7	LIU Shiwen	ZHU Yuling
+2015	World Table Tennis Championships Suzhou 2015	LIU Shiwen (CHN)	ZHU Yuling (MAC)	KOMWONG Nanthana (THA)	LI Xiaodan (CHN)	WD	Main Draw	R32	4 - 0	11:7 13:11 11:3 11:5	LIU Shiwen	ZHU Yuling
+2015	World Table Tennis Championships Suzhou 2015	LIU Shiwen (CHN)	ZHU Yuling (MAC)	DOLGIKH Maria (RUS)	MIKHAILOVA Polina (RUS)	WD	Main Draw	R16	4 - 0	13:11 12:10 11:2 11:5	LIU Shiwen	ZHU Yuling
+2015	World Table Tennis Championships Suzhou 2015	LIU Shiwen (CHN)	ZHU Yuling (MAC)	CHENG I-Ching (TPE)	LEE I-Chen (TPE)	WD	Main Draw	QuarterFinal	4 - 0	11:9 11:8 11:5 11:3	LIU Shiwen	ZHU Yuling
+2015	World Table Tennis Championships Suzhou 2015	DING Ning (CHN)	LI Xiaoxia (CHN)	LI Jie (NED)	LI Qian (POL)	WD	Main Draw	SemiFinal	4 - 0	11:5 11:2 11:7 11:6	DING Ning	LI Xiaoxia
+2015	World Table Tennis Championships Suzhou 2015	LIU Shiwen (CHN)	ZHU Yuling (MAC)	FENG Tianwei (SGP)	YU Mengyu (SGP)	WD	Main Draw	SemiFinal	4 - 1	9:11 11:9 11:6 11:7 11:4	LIU Shiwen	ZHU Yuling
+2015	World Table Tennis Championships Suzhou 2015	DING Ning (CHN)	LI Xiaoxia (CHN)	LIU Shiwen (CHN)	ZHU Yuling (MAC)	WD	Main Draw	Final	3 - 4	11:8 8:11 11:3 8:11 13:11 8:11 8:11	LIU Shiwen	ZHU Yuling
+2015	World Table Tennis Championships Suzhou 2015	SERRANO Monica (MEX)	UMBACIA Angie (COL)	AVAMERI Airi (EST)	LATT Katlin (EST)	WD	Qualification	QR32	3 - 1	11:8 9:11 11:2 11:7	SERRANO Monica	UMBACIA Angie
+2015	World Table Tennis Championships Suzhou 2015	EKHOLM Matilda (SWE)	RAKOVAC Lea (CRO)	EERLAND Britt (NED)	LI Jiao (NED)	WD	Main Draw	R64	4 - 2	11:9 11:7 8:11 6:11 11:9 11:1	EKHOLM Matilda	RAKOVAC Lea
+2015	World Table Tennis Championships Suzhou 2015	EKHOLM Matilda (SWE)	RAKOVAC Lea (CRO)	FENG Tianwei (SGP)	YU Mengyu (SGP)	WD	Main Draw	R32	2 - 4	11:7 7:11 5:11 9:11 11:3 3:11	FENG Tianwei	YU Mengyu
+2015	World Table Tennis Championships Suzhou 2015	HU Melek (TUR)	SHEN Yanfei (ESP)	DE NUTTE Sarah (LUX)	NI Xia Lian (LUX)	WD	Main Draw	R64	4 - 0	11:8 12:10 14:12 11:6	HU Melek	SHEN Yanfei
+2015	World Table Tennis Championships Suzhou 2015	HU Melek (TUR)	SHEN Yanfei (ESP)	HANFFOU Sarah (CMR)	OSHONAIKE Olufunke (NGR)	WD	Main Draw	R32	4 - 1	13:11 8:11 11:6 11:6 11:3	HU Melek	SHEN Yanfei
+2015	World Table Tennis Championships Suzhou 2015	HU Melek (TUR)	SHEN Yanfei (ESP)	LI Jie (NED)	LI Qian (POL)	WD	Main Draw	QuarterFinal	0 - 4	2:11 6:11 9:11 4:11	LI Jie	LI Qian
+2015	World Table Tennis Championships Suzhou 2015	MITTELHAM Nina (GER)	SOLJA Petrissa (GER)	GUFRANOVA Rimma (UZB)	KIM Regina (UZB)	WD	Main Draw	R64	4 - 1	10:12 11:6 11:1 11:7 11:7	MITTELHAM Nina	SOLJA Petrissa
+2015	World Table Tennis Championships Suzhou 2015	MITTELHAM Nina (GER)	SOLJA Petrissa (GER)	BILENKO Tetyana (UKR)	HAPONOVA Hanna (UKR)	WD	Main Draw	R32	4 - 1	12:10 11:9 11:9 11:13 11:8	MITTELHAM Nina	SOLJA Petrissa
+2015	World Table Tennis Championships Suzhou 2015	MITTELHAM Nina (GER)	SOLJA Petrissa (GER)	DING Ning (CHN)	LI Xiaoxia (CHN)	WD	Main Draw	R16	0 - 4	9:11 2:11 2:11 3:11	DING Ning	LI Xiaoxia
+2015	World Table Tennis Championships Suzhou 2015	HELMY Yousra (EGY)	MONTUFAR Andrea (GUA)	HIRANO Miu (JPN)	ITO Mima (JPN)	WD	Main Draw	R64	0 - 4	6:11 3:11 4:11 2:11	HIRANO Miu	ITO Mima
+2015	World Table Tennis Championships Suzhou 2015	ENRIQUEZ Mabelyn (GUA)	ESTRADA Andrea (GUA)	GRZYBOWSKA-FRANC Katarzyna (POL)	PARTYKA Natalia (POL)	WD	Main Draw	R64	0 - 4	9:11 7:11 3:11 3:11	GRZYBOWSKA-FRANC Katarzyna	PARTYKA Natalia
+2015	World Table Tennis Championships Suzhou 2015	DOO Hoi Kem (HKG)	LEE Ho Ching (HKG)	SERRANO Monica (MEX)	UMBACIA Angie (COL)	WD	Main Draw	R64	4 - 0	11:2 11:5 11:3 11:5	DOO Hoi Kem	LEE Ho Ching
+2015	World Table Tennis Championships Suzhou 2015	JIANG Huajun (HKG)	TIE Yana (HKG)	ARLOUSKAYA Alina (BLR)	BARAVOK Katsiaryna (BLR)	WD	Main Draw	R64	4 - 0	11:4 11:5 11:6 11:6	JIANG Huajun	TIE Yana
+2015	World Table Tennis Championships Suzhou 2015	DOO Hoi Kem (HKG)	LEE Ho Ching (HKG)	DVORAK Galia (ESP)	RAMIREZ Sara (ESP)	WD	Main Draw	R32	4 - 2	9:11 11:6 11:2 11:3 9:11 11:6	DOO Hoi Kem	LEE Ho Ching
+2015	World Table Tennis Championships Suzhou 2015	JIANG Huajun (HKG)	TIE Yana (HKG)	ERDELJI Anamaria (SRB)	FEHER Gabriela (SRB)	WD	Main Draw	R32	4 - 2	11:9 11:5 11:6 6:11 8:11 15:13	JIANG Huajun	TIE Yana
+2015	World Table Tennis Championships Suzhou 2015	DOO Hoi Kem (HKG)	LEE Ho Ching (HKG)	HU Melek (TUR)	SHEN Yanfei (ESP)	WD	Main Draw	R16	0 - 4	8:11 8:11 10:12 7:11	HU Melek	SHEN Yanfei
+2015	World Table Tennis Championships Suzhou 2015	JIANG Huajun (HKG)	TIE Yana (HKG)	FENG Tianwei (SGP)	YU Mengyu (SGP)	WD	Main Draw	R16	1 - 4	11:8 7:11 10:12 7:11 8:11	FENG Tianwei	YU Mengyu
+2015	World Table Tennis Championships Suzhou 2015	DAS Mouma (IND)	KUMARESAN Shamini (IND)	KOMWONG Nanthana (THA)	LI Xiaodan (CHN)	WD	Main Draw	R64	1 - 4	11:7 6:11 1:11 8:11 7:11	KOMWONG Nanthana	LI Xiaodan
+2015	World Table Tennis Championships Suzhou 2015	DAS Mouma (IND)	KUMARESAN Shamini (IND)	MOHAMED Mueena (MDV)	NIMAL Fathimath (MDV)	WD	Qualification	QR64	3 - 0	11:4 11:3 11:3	DAS Mouma	KUMARESAN Shamini
+2015	World Table Tennis Championships Suzhou 2015	DAS Mouma (IND)	KUMARESAN Shamini (IND)	COTE Alicia (CAN)	YEUNG Justina (CAN)	WD	Qualification	QR32	3 - 0	15:13 11:4 11:6	DAS Mouma	KUMARESAN Shamini
+2015	World Table Tennis Championships Suzhou 2015	OMRANI Mahjobeh (IRI)	SHAHSAVARI Neda (IRI)	FENG Tianwei (SGP)	YU Mengyu (SGP)	WD	Main Draw	R64	0 - 4	5:11 1:11 5:11 8:11	FENG Tianwei	YU Mengyu
+2015	World Table Tennis Championships Suzhou 2015	OMRANI Mahjobeh (IRI)	SHAHSAVARI Neda (IRI)	BILAL Shabnam (PAK)	KHURSHID Maliha (PAK)	WD	Qualification	QR64	3 - 0	11:1 11:6 12:10	OMRANI Mahjobeh	SHAHSAVARI Neda
+2015	World Table Tennis Championships Suzhou 2015	PHILLIPS Megan (WAL)	SAMET Maryam (IRI)	IWASA Agustina (ARG)	LOW Katherine (CHI)	WD	Qualification	QR32	2 - 3	6:11 12:10 12:14 13:11 7:11	IWASA Agustina	LOW Katherine
+2015	World Table Tennis Championships Suzhou 2015	BJORNSDOTTIR Gudrun (ISL)	LARUSDOTTIR Aldis Run (ISL)	GUFRANOVA Rimma (UZB)	KIM Regina (UZB)	WD	Qualification	QR32	0 - 3	1:11 3:11 4:11	GUFRANOVA Rimma	KIM Regina
+2015	World Table Tennis Championships Suzhou 2015	TODOROVIC Andrea (SRB)	TROSMAN Nicole (ISR)	DING Ning (CHN)	LI Xiaoxia (CHN)	WD	Main Draw	R64	0 - 4	3:11 9:11 7:11 1:11	DING Ning	LI Xiaoxia
+2015	World Table Tennis Championships Suzhou 2015	TODOROVIC Andrea (SRB)	TROSMAN Nicole (ISR)	JURKOVA Eva (SVK)	PAVCNIK Tamara (SLO)	WD	Qualification	QR64	3 - 0	11:8 12:10 11:8	TODOROVIC Andrea	TROSMAN Nicole
+2015	World Table Tennis Championships Suzhou 2015	TODOROVIC Andrea (SRB)	TROSMAN Nicole (ISR)	ARVELO Gremlis (VEN)	NINO Neridee (VEN)	WD	Qualification	QR32	3 - 0		TODOROVIC Andrea	TROSMAN Nicole
+2015	World Table Tennis Championships Suzhou 2015	PICCOLIN Giorgia (ITA)	VIVARELLI Debora (ITA)	KHETKHUAN Tamolwan (THA)	PARANANG Orawan (THA)	WD	Qualification	QR32	0 - 3	9:11 5:11 6:11	KHETKHUAN Tamolwan	PARANANG Orawan
+2015	World Table Tennis Championships Suzhou 2015	FUKUHARA Ai (JPN)	WAKAMIYA Misako (JPN)	HUGH Judy (USA)	JHA Prachi (USA)	WD	Main Draw	R64	4 - 0	11:8 11:4 11:8 11:3	FUKUHARA Ai	WAKAMIYA Misako
+2015	World Table Tennis Championships Suzhou 2015	FUKUHARA Ai (JPN)	WAKAMIYA Misako (JPN)	RI Mi Gyong (PRK)	RI Myong Sun (PRK)	WD	Main Draw	R32	4 - 1	8:11 13:11 11:2 11:5 11:4	FUKUHARA Ai	WAKAMIYA Misako
+2015	World Table Tennis Championships Suzhou 2015	FUKUHARA Ai (JPN)	WAKAMIYA Misako (JPN)	LANG Kristin (GER)	WINTER Sabine (GER)	WD	Main Draw	R16	4 - 1	12:10 11:4 7:11 12:10 11:4	FUKUHARA Ai	WAKAMIYA Misako
+2015	World Table Tennis Championships Suzhou 2015	FUKUHARA Ai (JPN)	WAKAMIYA Misako (JPN)	DING Ning (CHN)	LI Xiaoxia (CHN)	WD	Main Draw	QuarterFinal	0 - 4	8:11 10:12 5:11 9:11	DING Ning	LI Xiaoxia
+2015	World Table Tennis Championships Suzhou 2015	KHUSSEINOVA Gulchekhra (KAZ)	LAVROVA Anastassiya (KAZ)	GUAN Angela (USA)	WANG Amy (USA)	WD	Qualification	QR64	3 - 2	11:9 11:6 5:11 5:11 14:12	KHUSSEINOVA Gulchekhra	LAVROVA Anastassiya
+2015	World Table Tennis Championships Suzhou 2015	GATS Yuliya (KAZ)	SLADKOVA Nataliya (KAZ)	FAJMUT Manca (SLO)	GALIC Alex (SLO)	WD	Qualification	QR64	2 - 3	8:11 8:11 13:11 11:9 10:12	FAJMUT Manca	GALIC Alex
+2015	World Table Tennis Championships Suzhou 2015	KHUSSEINOVA Gulchekhra (KAZ)	LAVROVA Anastassiya (KAZ)	LI Isabelle Siyun (SGP)	LIM Eunice (SGP)	WD	Qualification	QR32	0 - 3	7:11 11:13 6:11	LI Isabelle Siyun	LIM Eunice
+2015	World Table Tennis Championships Suzhou 2015	DASANI Shital (KEN)	THAKKAR Sejal (KEN)	MADURANGI Ishara (SRI)	SHASHINI Tharunnya (SRI)	WD	Qualification	QR64	0 - 3	7:11 2:11 9:11	MADURANGI Ishara	SHASHINI Tharunnya
+2015	World Table Tennis Championships Suzhou 2015	PARK Youngsook (KOR)	YANG Ha Eun (KOR)	PASKAUSKIENE Ruta (LTU)	PESOTSKA Margaryta (UKR)	WD	Main Draw	R64	4 - 1	11:6 13:11 4:11 11:9 11:7	PARK Youngsook	YANG Ha Eun
+2015	World Table Tennis Championships Suzhou 2015	PARK Youngsook (KOR)	YANG Ha Eun (KOR)	PENKAVOVA Katerina (CZE)	STRBIKOVA Renata (CZE)	WD	Main Draw	R32	4 - 0	11:7 11:1 11:3 11:7	PARK Youngsook	YANG Ha Eun
+2015	World Table Tennis Championships Suzhou 2015	PARK Youngsook (KOR)	YANG Ha Eun (KOR)	LIU Jia (AUT)	VACENOVSKA Iveta (CZE)	WD	Main Draw	R16	4 - 2	8:11 6:11 11:6 13:11 13:11 12:10	PARK Youngsook	YANG Ha Eun
+2015	World Table Tennis Championships Suzhou 2015	PARK Youngsook (KOR)	YANG Ha Eun (KOR)	FENG Tianwei (SGP)	YU Mengyu (SGP)	WD	Main Draw	QuarterFinal	1 - 4	8:11 5:11 7:11 11:6 9:11	FENG Tianwei	YU Mengyu
+2015	World Table Tennis Championships Suzhou 2015	MAJOROVA Viktorija (LAT)	VOLDINA Laura (LAT)	MARTINS Catia (POR)	OLIVEIRA Leila (POR)	WD	Qualification	QR32	0 - 3	2:11 8:11 5:11	MARTINS Catia	OLIVEIRA Leila
+2015	World Table Tennis Championships Suzhou 2015	MACAITE Aiste (LTU)	STUCKYTE Egle (LTU)	HUGH Judy (USA)	JHA Prachi (USA)	WD	Qualification	QR32	1 - 3	12:10 9:11 3:11 11:13	HUGH Judy	JHA Prachi
+2015	World Table Tennis Championships Suzhou 2015	HALITI Ilirjana (KOS)	TAM Sut Fei (MAC)	BJORNSDOTTIR Gudrun (ISL)	LARUSDOTTIR Aldis Run (ISL)	WD	Qualification	QR64	1 - 3	11:5 6:11 6:11 14:16	BJORNSDOTTIR Gudrun	LARUSDOTTIR Aldis Run
+2015	World Table Tennis Championships Suzhou 2015	KUOK Cheng I (MAC)	WONG Choi Chi (MAC)	PICCOLIN Giorgia (ITA)	VIVARELLI Debora (ITA)	WD	Qualification	QR64	0 - 3	6:11 5:11 7:11	PICCOLIN Giorgia	VIVARELLI Debora
+2015	World Table Tennis Championships Suzhou 2015	MADRID Mercedes (MEX)	SILVA Yadira (MEX)	ARGUELLES Camila (ARG)	CODINA Ana (ARG)	WD	Main Draw	R64	4 - 0		MADRID Mercedes	SILVA Yadira
+2015	World Table Tennis Championships Suzhou 2015	ANSARI Aisha (PAK)	MAHARJAN Rabina (NEP)	PHILLIPS Megan (WAL)	SAMET Maryam (IRI)	WD	Qualification	QR64	0 - 3	9:11 3:11 5:11	PHILLIPS Megan	SAMET Maryam
+2015	World Table Tennis Championships Suzhou 2015	MAHARJAN Elina (NEP)	SHRESTHA Nabita (NEP)	PAPADAKI Angeliki (GRE)	TOLIOU Aikaterini (GRE)	WD	Qualification	QR64	0 - 3	4:11 10:12 6:11	PAPADAKI Angeliki	TOLIOU Aikaterini
+2015	World Table Tennis Championships Suzhou 2015	HANFFOU Sarah (CMR)	OSHONAIKE Olufunke (NGR)	ELDAWLATLY Nadeen (EGY)	MESHREF Dina (EGY)	WD	Main Draw	R64	4 - 1	11:7 14:16 11:7 11:6 11:4	HANFFOU Sarah	OSHONAIKE Olufunke
+2015	World Table Tennis Championships Suzhou 2015	EDEM Offiong (NGR)	EFFIOM Janet (NGR)	LIU Jia (AUT)	VACENOVSKA Iveta (CZE)	WD	Main Draw	R64	0 - 4		LIU Jia	VACENOVSKA Iveta
+2015	World Table Tennis Championships Suzhou 2015	CUBA Valeria (PER)	NIETO Janina (PER)	SUN Yang (NZL)	YANG Annie (NZL)	WD	Qualification	QR64	2 - 3	11:3 6:11 11:7 7:11 8:11	SUN Yang	YANG Annie
+2015	World Table Tennis Championships Suzhou 2015	LI Jie (NED)	LI Qian (POL)	HIRANO Miu (JPN)	ITO Mima (JPN)	WD	Main Draw	R32	4 - 3	11:8 6:11 11:8 11:8 9:11 4:11 11:9	LI Jie	LI Qian
+2015	World Table Tennis Championships Suzhou 2015	MARTINS Catia (POR)	OLIVEIRA Leila (POR)	KIM Hye Song (PRK)	KIM Jong (PRK)	WD	Main Draw	R64	0 - 4	2:11 10:12 4:11 6:11	KIM Hye Song	KIM Jong
+2015	World Table Tennis Championships Suzhou 2015	RI Mi Gyong (PRK)	RI Myong Sun (PRK)	GRUNDISCH Carole (FRA)	XIAN Yifang (FRA)	WD	Main Draw	R64	4 - 0	11:5 11:5 13:11 11:7	RI Mi Gyong	RI Myong Sun
+2015	World Table Tennis Championships Suzhou 2015	KIM Hye Song (PRK)	KIM Jong (PRK)	LI Jie (NED)	LI Qian (POL)	WD	Main Draw	R16	0 - 4	6:11 7:11 6:11 10:12	LI Jie	LI Qian
+2015	World Table Tennis Championships Suzhou 2015	DIAZ Adriana (PUR)	DIAZ Melanie (PUR)	ASCHWANDEN Rahel (SUI)	MORET Rachel (SUI)	WD	Main Draw	R64	4 - 3	4:11 11:7 7:11 11:8 5:11 11:7 11:4	DIAZ Adriana	DIAZ Melanie
+2015	World Table Tennis Championships Suzhou 2015	DIAZ Adriana (PUR)	DIAZ Melanie (PUR)	DOLGIKH Maria (RUS)	MIKHAILOVA Polina (RUS)	WD	Main Draw	R32	1 - 4	11:3 6:11 3:11 4:11 2:11	DOLGIKH Maria	MIKHAILOVA Polina
+2015	World Table Tennis Championships Suzhou 2015	AL ABRI Noora (QAT)	MOHAMED Aia (QAT)	MADURANGI Ishara (SRI)	SHASHINI Tharunnya (SRI)	WD	Qualification	QR32	1 - 3	11:5 5:11 11:13 5:11	MADURANGI Ishara	SHASHINI Tharunnya
+2015	World Table Tennis Championships Suzhou 2015	IACOB Camelia (ROU)	SZOCS Bernadette (ROU)	LI Jie (NED)	LI Qian (POL)	WD	Main Draw	R64	0 - 4	5:11 9:11 7:11 5:11	LI Jie	LI Qian
+2015	World Table Tennis Championships Suzhou 2015	NOSKOVA Yana (RUS)	PROKHOROVA Yulia (RUS)	LI Isabelle Siyun (SGP)	LIM Eunice (SGP)	WD	Main Draw	R64	4 - 0	11:6 11:9 13:11 11:6	NOSKOVA Yana	PROKHOROVA Yulia
+2015	World Table Tennis Championships Suzhou 2015	NOSKOVA Yana (RUS)	PROKHOROVA Yulia (RUS)	DING Ning (CHN)	LI Xiaoxia (CHN)	WD	Main Draw	R32	0 - 4	5:11 2:11 4:11 10:12	DING Ning	LI Xiaoxia
+2015	World Table Tennis Championships Suzhou 2015	EDWARDS Gillian (SCO)	WHITAKER Corinna (SCO)	JANJEVA Amare (KOS)	MALOKU Vlona (KOS)	WD	Qualification	QR64	3 - 1	11:2 13:11 2:11 11:7	EDWARDS Gillian	WHITAKER Corinna
+2015	World Table Tennis Championships Suzhou 2015	EDWARDS Gillian (SCO)	WHITAKER Corinna (SCO)	SUN Yang (NZL)	YANG Annie (NZL)	WD	Qualification	QR32	0 - 3	9:11 10:12 5:11	SUN Yang	YANG Annie
+2015	World Table Tennis Championships Suzhou 2015	FAJMUT Manca (SLO)	GALIC Alex (SLO)	ASCHWANDEN Rahel (SUI)	MORET Rachel (SUI)	WD	Qualification	QR32	1 - 3	5:11 11:8 5:11 9:11	ASCHWANDEN Rahel	MORET Rachel
+2015	World Table Tennis Championships Suzhou 2015	ERDELJI Anamaria (SRB)	FEHER Gabriela (SRB)	PERGEL Szandra (HUN)	SAMARA Elizabeta (ROU)	WD	Main Draw	R64	4 - 0		ERDELJI Anamaria	FEHER Gabriela
+2015	World Table Tennis Championships Suzhou 2015	VARADY Barbora (SVK)	ODOROVA Eva (SVK)	LANG Kristin (GER)	WINTER Sabine (GER)	WD	Main Draw	R64	2 - 4	12:14 11:5 8:11 7:11 11:9 7:11	LANG Kristin	WINTER Sabine
+2015	World Table Tennis Championships Suzhou 2015	VARADY Barbora (SVK)	ODOROVA Eva (SVK)	PAPADAKI Angeliki (GRE)	TOLIOU Aikaterini (GRE)	WD	Qualification	QR32	3 - 0	11:4 11:8 12:10	VARADY Barbora	ODOROVA Eva
+2015	World Table Tennis Championships Suzhou 2015	CHEN Szu-Yu (TPE)	LIU Hsing-Yin (TPE)	MEDINA Paula (COL)	RUANO Lady (COL)	WD	Main Draw	R64	4 - 0	11:3 11:4 11:7 11:4	CHEN Szu-Yu	LIU Hsing-Yin
+2015	World Table Tennis Championships Suzhou 2015	CHENG I-Ching (TPE)	LEE I-Chen (TPE)	HWANG Jina (KOR)	LEE Zion (KOR)	WD	Main Draw	R64	4 - 0	11:4 11:7 11:9 11:5	CHENG I-Ching	LEE I-Chen
+2015	World Table Tennis Championships Suzhou 2015	CHEN Szu-Yu (TPE)	LIU Hsing-Yin (TPE)	LANG Kristin (GER)	WINTER Sabine (GER)	WD	Main Draw	R32	0 - 4	8:11 8:11 6:11 7:11	LANG Kristin	WINTER Sabine
+2015	World Table Tennis Championships Suzhou 2015	CHENG I-Ching (TPE)	LEE I-Chen (TPE)	MADRID Mercedes (MEX)	SILVA Yadira (MEX)	WD	Main Draw	R32	4 - 0	11:2 11:3 11:6 11:8	CHENG I-Ching	LEE I-Chen
+2015	World Table Tennis Championships Suzhou 2015	CHENG I-Ching (TPE)	LEE I-Chen (TPE)	GRZYBOWSKA-FRANC Katarzyna (POL)	PARTYKA Natalia (POL)	WD	Main Draw	R16	4 - 3	9:11 11:9 11:13 9:11 11:3 11:9 13:11	CHENG I-Ching	LEE I-Chen
+2015	World Table Tennis Championships Suzhou 2015	KULAKCEKEN Simay (TUR)	OZKAYA Gul Pembe (TUR)	OMRANI Mahjobeh (IRI)	SHAHSAVARI Neda (IRI)	WD	Qualification	QR32	1 - 3	10:12 11:7 5:11 8:11	OMRANI Mahjobeh	SHAHSAVARI Neda
+2015	World Table Tennis Championships Suzhou 2015	JONSSON Jennifer (SWE)	LORENZOTTI Maria (URU)	KHETKHUAN Tamolwan (THA)	PARANANG Orawan (THA)	WD	Qualification	QR64	0 - 3	3:11 5:11 3:11	KHETKHUAN Tamolwan	PARANANG Orawan
+2015	World Table Tennis Championships Suzhou 2015	HUGH Judy (USA)	JHA Prachi (USA)	GELMAN Shelli (ISR)	SHOIFER Neli (ISR)	WD	Qualification	QR64	3 - 0	11:8 11:6 11:9	HUGH Judy	JHA Prachi
+2015	World Table Tennis Championships Suzhou 2015	GUFRANOVA Rimma (UZB)	KIM Regina (UZB)	GULIYEVA Rufat (AZE)	IMANOVA Maryam (AZE)	WD	Qualification	QR64	3 - 0	14:12 11:2 11:3	GUFRANOVA Rimma	KIM Regina
+2015	World Table Tennis Championships Suzhou 2015	CAREY Charlotte (WAL)	THOMAS WU ZHANG Chloe Anna (WAL)	MARTINS Catia (POR)	OLIVEIRA Leila (POR)	WD	Qualification	QR64	0 - 3	10:12 12:14 9:11	MARTINS Catia	OLIVEIRA Leila
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 2 Total: 136
+
+Start
+Prev
+1
+2
+Next
+End
+2015	World Table Tennis Championships Suzhou 2015	KHEROUF Sami (ALG)	LOGHRAIBI Lynda (ALG)	SMIRNOV Aleksandr (EST)	LATT Katlin (EST)	XD	Main Draw	R128	4 - 3	11:13 11:5 14:12 9:11 8:11 11:5 11:8	KHEROUF Sami	LOGHRAIBI Lynda
+2015	World Table Tennis Championships Suzhou 2015	KHEROUF Sami (ALG)	LOGHRAIBI Lynda (ALG)	MACHADO Carlos (ESP)	SHEN Yanfei (ESP)	XD	Main Draw	R64	0 - 4	3:11 9:11 4:11 9:11	MACHADO Carlos	SHEN Yanfei
+2015	World Table Tennis Championships Suzhou 2015	ALTO Gaston (ARG)	ARGUELLES Camila (ARG)	RUMGAY Gavin (SCO)	EDWARDS Gillian (SCO)	XD	Main Draw	R128	0 - 4		RUMGAY Gavin	EDWARDS Gillian
+2015	World Table Tennis Championships Suzhou 2015	GILABERT Rodrigo (ARG)	CODINA Ana (ARG)	GUDMUNDSSON Dadi Freyr (ISL)	LARUSDOTTIR Aldis Run (ISL)	XD	Main Draw	R128	4 - 0	11:2 11:9 12:10 11:5	GILABERT Rodrigo	CODINA Ana
+2015	World Table Tennis Championships Suzhou 2015	GILABERT Rodrigo (ARG)	CODINA Ana (ARG)	WONG Chun Ting (HKG)	DOO Hoi Kem (HKG)	XD	Main Draw	R64	2 - 4	11:8 11:5 9:11 4:11 2:11 5:11	WONG Chun Ting	DOO Hoi Kem
+2015	World Table Tennis Championships Suzhou 2015	POWELL David (AUS)	LAY Jian Fang (AUS)	OLAH Benedek (FIN)	JONSSON Jennifer (SWE)	XD	Main Draw	R128	4 - 2	6:11 11:5 11:9 11:6 5:11 11:9	POWELL David	LAY Jian Fang
+2015	World Table Tennis Championships Suzhou 2015	POWELL David (AUS)	LAY Jian Fang (AUS)	MENGE Gencay (TUR)	HU Melek (TUR)	XD	Main Draw	R64	1 - 4	9:11 15:13 8:11 8:11 5:11	MENGE Gencay	HU Melek
+2015	World Table Tennis Championships Suzhou 2015	FEGERL Stefan (AUT)	LI Qiangbing (AUT)	ASSAR Omar (EGY)	MESHREF Dina (EGY)	XD	Main Draw	R128	4 - 2	5:11 11:4 6:11 11:9 11:9 11:7	FEGERL Stefan	LI Qiangbing
+2015	World Table Tennis Championships Suzhou 2015	GARDOS Robert (AUT)	LIU Jia (AUT)	SEREDA Peter (SVK)	ODOROVA Eva (SVK)	XD	Main Draw	R128	4 - 0	11:6 11:8 11:6 11:7	GARDOS Robert	LIU Jia
+2015	World Table Tennis Championships Suzhou 2015	GARDOS Robert (AUT)	LIU Jia (AUT)	PISTEJ Lubomir (SVK)	VARADY Barbora (SVK)	XD	Main Draw	R64	3 - 4	5:11 11:9 12:10 7:11 11:8 2:11 9:11	PISTEJ Lubomir	VARADY Barbora
+2015	World Table Tennis Championships Suzhou 2015	ISMAYILOV Farhad (AZE)	GULIYEVA Rufat (AZE)	ELBEIALI Mohamed (EGY)	ELDAWLATLY Nadeen (EGY)	XD	Main Draw	R128	0 - 4	10:12 5:11 3:11 9:11	ELBEIALI Mohamed	ELDAWLATLY Nadeen
+2015	World Table Tennis Championships Suzhou 2015	JAFAROV Ramil (AZE)	IMANOVA Maryam (AZE)	LUPERDI Juan (PER)	CUBA Valeria (PER)	XD	Qualification	QR32	3 - 1	8:11 11:8 11:9 11:5	JAFAROV Ramil	IMANOVA Maryam
+2015	World Table Tennis Championships Suzhou 2015	TSUBOI Gustavo (BRA)	GUI Lin (BRA)	TAUBER Michael (ISR)	SHOIFER Neli (ISR)	XD	Main Draw	R128	4 - 1	11:8 11:4 11:5 8:11 13:11	TSUBOI Gustavo	GUI Lin
+2015	World Table Tennis Championships Suzhou 2015	TSUBOI Gustavo (BRA)	GUI Lin (BRA)	O'CONNELL Daniel (WAL)	CAREY Charlotte (WAL)	XD	Main Draw	R64	3 - 4	11:4 9:11 11:4 7:11 11:3 5:11 3:11	O'CONNELL Daniel	CAREY Charlotte
+2015	World Table Tennis Championships Suzhou 2015	CALDERANO Hugo (BRA)	KUMAHARA Luca (BRA)	TROMER Laurens (NED)	EERLAND Britt (NED)	XD	Main Draw	R32	2 - 4	11:13 9:11 11:9 6:11 11:9 11:13	TROMER Laurens	EERLAND Britt
+2015	World Table Tennis Championships Suzhou 2015	ALEXANDROV Teodor (BUL)	ZAMFIROVA Elitsa (BUL)	ZHMUDENKO Yaroslav (UKR)	BILENKO Tetyana (UKR)	XD	Main Draw	R128	0 - 4	9:11 6:11 7:11 4:11	ZHMUDENKO Yaroslav	BILENKO Tetyana
+2015	World Table Tennis Championships Suzhou 2015	BERNADET Antoine (CAN)	LUO Anqi (CAN)	HE Zhiwen (ESP)	RAMIREZ Sara (ESP)	XD	Main Draw	R128	0 - 4	4:11 8:11 12:14 8:11	HE Zhiwen	RAMIREZ Sara
+2015	World Table Tennis Championships Suzhou 2015	THERIAULT Pierre-Luc (CAN)	ZHANG Mo (CAN)	HMAM Adam (TUN)	SAIDANI Safa (TUN)	XD	Qualification	QR32	3 - 2	11:6 6:11 11:5 2:11 11:7	THERIAULT Pierre-Luc	ZHANG Mo
+2015	World Table Tennis Championships Suzhou 2015	LEBESSON Emmanuel (FRA)	CHEN Meng (CHN)	ABBAS Saleem (PAK)	ANSARI Aisha (PAK)	XD	Main Draw	R128	4 - 0	11:1 11:1 11:2 11:4	LEBESSON Emmanuel	CHEN Meng
+2015	World Table Tennis Championships Suzhou 2015	LEBESSON Emmanuel (FRA)	CHEN Meng (CHN)	GLOD Eric (LUX)	DE NUTTE Sarah (LUX)	XD	Main Draw	R64	4 - 0	11:3 11:5 11:5 11:2	LEBESSON Emmanuel	CHEN Meng
+2015	World Table Tennis Championships Suzhou 2015	LEBESSON Emmanuel (FRA)	CHEN Meng (CHN)	YAN An (CHN)	WU Yang (CHN)	XD	Main Draw	R32	2 - 4	17:15 11:7 7:11 10:12 11:13 11:13	YAN An	WU Yang
+2015	World Table Tennis Championships Suzhou 2015	YAN An (CHN)	WU Yang (CHN)	JAKAB Janos (HUN)	PERGEL Szandra (HUN)	XD	Main Draw	R16	4 - 1	11:8 11:2 8:11 11:9 11:3	YAN An	WU Yang
+2015	World Table Tennis Championships Suzhou 2015	CALVO Allan (CRC)	MARTINEZ Cynthia (CRC)	PHATHAPHONE Thavisack (LAO)	DOUANGPANYA Seangdavieng (LAO)	XD	Main Draw	R128	1 - 4	8:11 11:7 5:11 9:11 7:11	PHATHAPHONE Thavisack	DOUANGPANYA Seangdavieng
+2015	World Table Tennis Championships Suzhou 2015	PUCAR Tomislav (CRO)	RAKOVAC Lea (CRO)	JHA Kanak (USA)	JHA Prachi (USA)	XD	Main Draw	R128	4 - 1	9:11 11:9 11:7 11:2 11:8	PUCAR Tomislav	RAKOVAC Lea
+2015	World Table Tennis Championships Suzhou 2015	KOLAREK Tomislav (CRO)	TIAN Yuan (CRO)	KRASTEV Petyo (BUL)	KAROVA Anelia (BUL)	XD	Main Draw	R128	4 - 1	11:2 9:11 11:8 13:11 11:7	KOLAREK Tomislav	TIAN Yuan
+2015	World Table Tennis Championships Suzhou 2015	PUCAR Tomislav (CRO)	RAKOVAC Lea (CRO)	YAN An (CHN)	WU Yang (CHN)	XD	Main Draw	R64	2 - 4	11:7 11:2 13:15 8:11 10:12 3:11	YAN An	WU Yang
+2015	World Table Tennis Championships Suzhou 2015	KOLAREK Tomislav (CRO)	TIAN Yuan (CRO)	WANG Zengyi (POL)	PARTYKA Natalia (POL)	XD	Main Draw	R64	4 - 3	5:11 11:3 11:4 2:11 6:11 11:6 17:15	KOLAREK Tomislav	TIAN Yuan
+2015	World Table Tennis Championships Suzhou 2015	JANCARIK Lubomir (CZE)	VACENOVSKA Iveta (CZE)	WANG Timothy (USA)	HUGH Judy (USA)	XD	Main Draw	R128	4 - 2	12:10 14:12 11:7 7:11 8:11 11:4	JANCARIK Lubomir	VACENOVSKA Iveta
+2015	World Table Tennis Championships Suzhou 2015	KONECNY Tomas (CZE)	MATELOVA Hana (CZE)	KHANIN Aleksandr (BLR)	TRIGOLOS Daria (BLR)	XD	Main Draw	R128	4 - 0	11:6 11:6 11:2 11:9	KONECNY Tomas	MATELOVA Hana
+2015	World Table Tennis Championships Suzhou 2015	JANCARIK Lubomir (CZE)	VACENOVSKA Iveta (CZE)	PLATONOV Pavel (BLR)	BARAVOK Katsiaryna (BLR)	XD	Main Draw	R64	4 - 1	11:7 11:5 8:11 11:9 11:4	JANCARIK Lubomir	VACENOVSKA Iveta
+2015	World Table Tennis Championships Suzhou 2015	KONECNY Tomas (CZE)	MATELOVA Hana (CZE)	ELBEIALI Mohamed (EGY)	ELDAWLATLY Nadeen (EGY)	XD	Main Draw	R64	4 - 2	11:7 11:7 12:10 9:11 8:11 11:5	KONECNY Tomas	MATELOVA Hana
+2015	World Table Tennis Championships Suzhou 2015	JANCARIK Lubomir (CZE)	VACENOVSKA Iveta (CZE)	JAKAB Janos (HUN)	PERGEL Szandra (HUN)	XD	Main Draw	R32	1 - 4	11:9 8:11 4:11 8:11 11:13	JAKAB Janos	PERGEL Szandra
+2015	World Table Tennis Championships Suzhou 2015	GAUZY Simon (FRA)	GRUNDISCH Carole (FRA)	CORREA Cecilio (VEN)	MONTERO Winberly (VEN)	XD	Main Draw	R128	4 - 0	11:6 13:11 11:1 11:7	GAUZY Simon	GRUNDISCH Carole
+2015	World Table Tennis Championships Suzhou 2015	GAUZY Simon (FRA)	GRUNDISCH Carole (FRA)	JIANG Tianyi (HKG)	LEE Ho Ching (HKG)	XD	Main Draw	R64	0 - 4	6:11 7:11 7:11 8:11	JIANG Tianyi	LEE Ho Ching
+2015	World Table Tennis Championships Suzhou 2015	MENGEL Steffen (GER)	SOLJA Petrissa (GER)	THERIAULT Pierre-Luc (CAN)	ZHANG Mo (CAN)	XD	Main Draw	R128	4 - 2	11:5 4:11 11:4 11:7 8:11 11:5	MENGEL Steffen	SOLJA Petrissa
+2015	World Table Tennis Championships Suzhou 2015	MENGEL Steffen (GER)	SOLJA Petrissa (GER)	PHATHAPHONE Thavisack (LAO)	DOUANGPANYA Seangdavieng (LAO)	XD	Main Draw	R64	4 - 0		MENGEL Steffen	SOLJA Petrissa
+2015	World Table Tennis Championships Suzhou 2015	MENGEL Steffen (GER)	SOLJA Petrissa (GER)	MACHADO Carlos (ESP)	SHEN Yanfei (ESP)	XD	Main Draw	R32	4 - 1	11:9 7:11 11:7 11:7 11:7	MENGEL Steffen	SOLJA Petrissa
+2015	World Table Tennis Championships Suzhou 2015	MENGEL Steffen (GER)	SOLJA Petrissa (GER)	JIANG Tianyi (HKG)	LEE Ho Ching (HKG)	XD	Main Draw	R16	4 - 1	7:11 13:11 14:12 11:5 11:7	MENGEL Steffen	SOLJA Petrissa
+2015	World Table Tennis Championships Suzhou 2015	KREANGA Kalinikos (GRE)	PAPADAKI Angeliki (GRE)	CHUANG Chih-Yuan (TPE)	CHENG I-Ching (TPE)	XD	Main Draw	R128	0 - 4	4:11 7:11 7:11 7:11	CHUANG Chih-Yuan	CHENG I-Ching
+2015	World Table Tennis Championships Suzhou 2015	GIONIS Panagiotis (GRE)	TOLIOU Aikaterini (GRE)	JIANG Tianyi (HKG)	LEE Ho Ching (HKG)	XD	Main Draw	R128	2 - 4	11:3 7:11 8:11 11:5 6:11 2:11	JIANG Tianyi	LEE Ho Ching
+2015	World Table Tennis Championships Suzhou 2015	GATICA Hector (GUA)	ENRIQUEZ Mabelyn (GUA)	LIN Yi-Sien (NZL)	YANG Annie (NZL)	XD	Main Draw	R128	4 - 3	8:11 12:10 11:5 11:5 8:11 7:11 11:6	GATICA Hector	ENRIQUEZ Mabelyn
+2015	World Table Tennis Championships Suzhou 2015	RAMIREZ Jose Miguel (GUA)	ESTRADA Andrea (GUA)	KARTUZOVS Olegs (LAT)	MAJOROVA Viktorija (LAT)	XD	Main Draw	R128	4 - 3	11:7 11:6 9:11 9:11 11:7 6:11 11:5	RAMIREZ Jose Miguel	ESTRADA Andrea
+2015	World Table Tennis Championships Suzhou 2015	GATICA Hector (GUA)	ENRIQUEZ Mabelyn (GUA)	CHEN Diogo (POR)	OLIVEIRA Leila (POR)	XD	Main Draw	R64	2 - 4	4:11 11:8 11:7 1:11 7:11 7:11	CHEN Diogo	OLIVEIRA Leila
+2015	World Table Tennis Championships Suzhou 2015	RAMIREZ Jose Miguel (GUA)	ESTRADA Andrea (GUA)	LEE Sang Su (KOR)	PARK Youngsook (KOR)	XD	Main Draw	R64	0 - 4	1:11 1:11 3:11 3:11	LEE Sang Su	PARK Youngsook
+2015	World Table Tennis Championships Suzhou 2015	WONG Chun Ting (HKG)	DOO Hoi Kem (HKG)	FERTIKOWSKI Pawel (POL)	GRZYBOWSKA-FRANC Katarzyna (POL)	XD	Main Draw	QuarterFinal	4 - 0	12:10 14:12 11:2 11:5	WONG Chun Ting	DOO Hoi Kem
+2015	World Table Tennis Championships Suzhou 2015	WONG Chun Ting (HKG)	DOO Hoi Kem (HKG)	XU Xin (CHN)	YANG Ha Eun (KOR)	XD	Main Draw	SemiFinal	1 - 4	6:11 5:11 11:9 5:11 9:11	XU Xin	YANG Ha Eun
+2015	World Table Tennis Championships Suzhou 2015	JAKAB Janos (HUN)	PERGEL Szandra (HUN)	BAJRACHARYA Purshottam (NEP)	MAHARJAN Rabina (NEP)	XD	Main Draw	R128	4 - 0	11:3 11:3 11:4 11:1	JAKAB Janos	PERGEL Szandra
+2015	World Table Tennis Championships Suzhou 2015	JAKAB Janos (HUN)	PERGEL Szandra (HUN)	FEGERL Stefan (AUT)	LI Qiangbing (AUT)	XD	Main Draw	R64	4 - 3	12:10 3:11 11:7 7:11 9:11 12:10 11:6	JAKAB Janos	PERGEL Szandra
+2015	World Table Tennis Championships Suzhou 2015	RABINOVICH Shimon (ISR)	TROSMAN Nicole (ISR)	BELKADI Aissa (ALG)	LAID Islem (ALG)	XD	Main Draw	R128	4 - 0		RABINOVICH Shimon	TROSMAN Nicole
+2015	World Table Tennis Championships Suzhou 2015	RABINOVICH Shimon (ISR)	TROSMAN Nicole (ISR)	JAYASINGHA Nirmala (SRI)	WARUSAWITHANA Erandi (SRI)	XD	Qualification	QR32	3 - 0	13:11 11:4 11:6	RABINOVICH Shimon	TROSMAN Nicole
+2015	World Table Tennis Championships Suzhou 2015	RECH DALDOSSO Marco (ITA)	VIVARELLI Debora (ITA)	YANG Zi (SGP)	YU Mengyu (SGP)	XD	Main Draw	R128	1 - 4	1:11 7:11 12:10 4:11 6:11	YANG Zi	YU Mengyu
+2015	World Table Tennis Championships Suzhou 2015	NIWA Koki (JPN)	HIRANO Sayaka (JPN)	CHEW Clarence (SGP)	LI Isabelle Siyun (SGP)	XD	Main Draw	R128	4 - 0	11:4 11:3 11:2 11:6	NIWA Koki	HIRANO Sayaka
+2015	World Table Tennis Championships Suzhou 2015	NIWA Koki (JPN)	HIRANO Sayaka (JPN)	BURGIS Matiss (LAT)	NI Xia Lian (LUX)	XD	Main Draw	R64	4 - 0	11:6 11:9 11:9 11:6	NIWA Koki	HIRANO Sayaka
+2015	World Table Tennis Championships Suzhou 2015	NIWA Koki (JPN)	HIRANO Sayaka (JPN)	KARLSSON Mattias (SWE)	EKHOLM Matilda (SWE)	XD	Main Draw	R32	4 - 1	11:8 11:7 4:11 14:12 11:9	NIWA Koki	HIRANO Sayaka
+2015	World Table Tennis Championships Suzhou 2015	YOSHIMURA Maharu (JPN)	ISHIKAWA Kasumi (JPN)	LEE Sang Su (KOR)	PARK Youngsook (KOR)	XD	Main Draw	R16	4 - 3	8:11 9:11 11:9 9:11 13:11 11:9 11:7	YOSHIMURA Maharu	ISHIKAWA Kasumi
+2015	World Table Tennis Championships Suzhou 2015	NIWA Koki (JPN)	HIRANO Sayaka (JPN)	WONG Chun Ting (HKG)	DOO Hoi Kem (HKG)	XD	Main Draw	R16	0 - 4	7:11 8:11 5:11 6:11	WONG Chun Ting	DOO Hoi Kem
+2015	World Table Tennis Championships Suzhou 2015	YOSHIMURA Maharu (JPN)	ISHIKAWA Kasumi (JPN)	XU Xin (CHN)	YANG Ha Eun (KOR)	XD	Main Draw	Final	0 - 4	7:11 8:11 4:11 6:11	XU Xin	YANG Ha Eun
+2015	World Table Tennis Championships Suzhou 2015	GERASSIMENKO Kirill (KAZ)	LAVROVA Anastassiya (KAZ)	CHAITAT Chaisit (THA)	KOMWONG Nanthana (THA)	XD	Main Draw	R128	0 - 4	7:11 7:11 8:11 9:11	CHAITAT Chaisit	KOMWONG Nanthana
+2015	World Table Tennis Championships Suzhou 2015	KELBUGANOV Timur (KAZ)	GATS Yuliya (KAZ)	BERNADET Antoine (CAN)	LUO Anqi (CAN)	XD	Qualification	QR32	0 - 3	8:11 10:12 8:11	BERNADET Antoine	LUO Anqi
+2015	World Table Tennis Championships Suzhou 2015	XU Xin (CHN)	YANG Ha Eun (KOR)	TOKIC Bojan (SLO)	FAJMUT Manca (SLO)	XD	Main Draw	R128	4 - 0	11:7 11:8 11:6 11:1	XU Xin	YANG Ha Eun
+2015	World Table Tennis Championships Suzhou 2015	XU Xin (CHN)	YANG Ha Eun (KOR)	ZHMUDENKO Yaroslav (UKR)	BILENKO Tetyana (UKR)	XD	Main Draw	R64	4 - 0	11:7 11:5 11:5 11:6	XU Xin	YANG Ha Eun
+2015	World Table Tennis Championships Suzhou 2015	XU Xin (CHN)	YANG Ha Eun (KOR)	VLASOV Grigory (RUS)	NOSKOVA Yana (RUS)	XD	Main Draw	R32	4 - 0	11:9 11:6 11:6 11:7	XU Xin	YANG Ha Eun
+2015	World Table Tennis Championships Suzhou 2015	XU Xin (CHN)	YANG Ha Eun (KOR)	LIVENTSOV Alexey (RUS)	PROKHOROVA Yulia (RUS)	XD	Main Draw	R16	4 - 2	12:14 11:7 10:12 11:2 11:9 11:3	XU Xin	YANG Ha Eun
+2015	World Table Tennis Championships Suzhou 2015	XU Xin (CHN)	YANG Ha Eun (KOR)	MENGEL Steffen (GER)	SOLJA Petrissa (GER)	XD	Main Draw	QuarterFinal	4 - 0	13:11 11:6 11:9 11:7	XU Xin	YANG Ha Eun
+2015	World Table Tennis Championships Suzhou 2015	CITAKU Baton (KOS)	JANJEVA Amare (KOS)	GLOD Eric (LUX)	DE NUTTE Sarah (LUX)	XD	Main Draw	R128	0 - 4	7:11 5:11 5:11 8:11	GLOD Eric	DE NUTTE Sarah
+2015	World Table Tennis Championships Suzhou 2015	CITAKU Linor (KOS)	MALOKU Vlona (KOS)	SHAH Harshil (KEN)	THAKKAR Sejal (KEN)	XD	Qualification	QR32	3 - 0	11:5 11:7 11:3	CITAKU Linor	MALOKU Vlona
+2015	World Table Tennis Championships Suzhou 2015	KARAKASEVIC Aleksandar (SRB)	PASKAUSKIENE Ruta (LTU)	YAN An (CHN)	WU Yang (CHN)	XD	Main Draw	R128	3 - 4	7:11 8:11 11:9 6:11 11:7 11:8 8:11	YAN An	WU Yang
+2015	World Table Tennis Championships Suzhou 2015	STANKEVICIUS Medardas (LTU)	STUCKYTE Egle (LTU)	KARLSSON Mattias (SWE)	EKHOLM Matilda (SWE)	XD	Main Draw	R128	1 - 4	1:11 11:9 6:11 10:12 10:12	KARLSSON Mattias	EKHOLM Matilda
+2015	World Table Tennis Championships Suzhou 2015	CHE Long Lam (MAC)	KUOK Cheng I (MAC)	PLATONOV Pavel (BLR)	BARAVOK Katsiaryna (BLR)	XD	Main Draw	R128	1 - 4	5:11 7:11 10:12 11:9 7:11	PLATONOV Pavel	BARAVOK Katsiaryna
+2015	World Table Tennis Championships Suzhou 2015	CHANG Hoi Wa (MAC)	WONG Choi Chi (MAC)	VLASOV Grigory (RUS)	NOSKOVA Yana (RUS)	XD	Main Draw	R128	0 - 4	3:11 5:11 8:11 7:11	VLASOV Grigory	NOSKOVA Yana
+2015	World Table Tennis Championships Suzhou 2015	LEONG Chee Feng (MAS)	HO Ying (MAS)	LEE Sang Su (KOR)	PARK Youngsook (KOR)	XD	Main Draw	R128	1 - 4	11:6 3:11 3:11 2:11 9:11	LEE Sang Su	PARK Youngsook
+2015	World Table Tennis Championships Suzhou 2015	MADRID Marcos (MEX)	SILVA Yadira (MEX)	SALAH Mohamed (SUD)	ELZIBAG Kauther (SUD)	XD	Main Draw	R128	4 - 0	11:2 11:2 11:3 11:1	MADRID Marcos	SILVA Yadira
+2015	World Table Tennis Championships Suzhou 2015	MADRID Marcos (MEX)	SILVA Yadira (MEX)	RABINOVICH Shimon (ISR)	TROSMAN Nicole (ISR)	XD	Main Draw	R64	4 - 3	11:13 11:13 7:11 11:6 11:8 11:4 11:7	MADRID Marcos	SILVA Yadira
+2015	World Table Tennis Championships Suzhou 2015	MADRID Marcos (MEX)	SILVA Yadira (MEX)	YOSHIMURA Maharu (JPN)	ISHIKAWA Kasumi (JPN)	XD	Main Draw	R32	0 - 4	4:11 5:11 3:11 2:11	YOSHIMURA Maharu	ISHIKAWA Kasumi
+2015	World Table Tennis Championships Suzhou 2015	ENKHBAT Lkhagvasuren (MGL)	BATBAYAR Doljinzuu (MGL)	CALDERANO Hugo (BRA)	KUMAHARA Luca (BRA)	XD	Main Draw	R128	1 - 4	11:6 7:11 4:11 5:11 3:11	CALDERANO Hugo	KUMAHARA Luca
+2015	World Table Tennis Championships Suzhou 2015	BATKHISHIG Bilegt (MGL)	GUNDEGMAA Indra (MGL)	PISTEJ Lubomir (SVK)	VARADY Barbora (SVK)	XD	Main Draw	R128	0 - 4	3:11 4:11 3:11 4:11	PISTEJ Lubomir	VARADY Barbora
+2015	World Table Tennis Championships Suzhou 2015	TROMER Laurens (NED)	EERLAND Britt (NED)	SAKA Suraju (CGO)	HAN Xing (CGO)	XD	Main Draw	R64	4 - 3	11:9 11:9 10:12 11:3 7:11 4:11 11:7	TROMER Laurens	EERLAND Britt
+2015	World Table Tennis Championships Suzhou 2015	OOSTWOUDER Ewout (NED)	LI Jiao (NED)	KARLSSON Mattias (SWE)	EKHOLM Matilda (SWE)	XD	Main Draw	R64	2 - 4	5:11 5:11 8:11 11:6 12:10 13:15	KARLSSON Mattias	EKHOLM Matilda
+2015	World Table Tennis Championships Suzhou 2015	MALLA Amar (NEP)	MAHARJAN Elina (NEP)	WONG Chun Ting (HKG)	DOO Hoi Kem (HKG)	XD	Main Draw	R128	0 - 4	1:11 2:11 1:11 4:11	WONG Chun Ting	DOO Hoi Kem
+2015	World Table Tennis Championships Suzhou 2015	TORIOLA Segun (NGR)	OSHONAIKE Olufunke (NGR)	OOSTWOUDER Ewout (NED)	LI Jiao (NED)	XD	Main Draw	R128	1 - 4	13:15 6:11 8:11 11:8 5:11	OOSTWOUDER Ewout	LI Jiao
+2015	World Table Tennis Championships Suzhou 2015	ALI Syed Shujat (PAK)	KHURSHID Maliha (PAK)	KENJAEV Zokhid (UZB)	KIM Olga (UZB)	XD	Qualification	QR32	0 - 3	3:11 9:11 5:11	KENJAEV Zokhid	KIM Olga
+2015	World Table Tennis Championships Suzhou 2015	RODRIGUEZ Diego (PER)	NIETO Janina (PER)	AHMED Mohamed (MDV)	NIMAL Fathimath (MDV)	XD	Main Draw	R128	4 - 0		RODRIGUEZ Diego	NIETO Janina
+2015	World Table Tennis Championships Suzhou 2015	RODRIGUEZ Diego (PER)	NIETO Janina (PER)	HE Zhiwen (ESP)	RAMIREZ Sara (ESP)	XD	Main Draw	R64	0 - 4	4:11 5:11 5:11 6:11	HE Zhiwen	RAMIREZ Sara
+2015	World Table Tennis Championships Suzhou 2015	FERTIKOWSKI Pawel (POL)	GRZYBOWSKA-FRANC Katarzyna (POL)	MUTTI Leonardo (ITA)	PICCOLIN Giorgia (ITA)	XD	Main Draw	R128	4 - 3	3:11 8:11 11:7 11:7 8:11 11:8 11:7	FERTIKOWSKI Pawel	GRZYBOWSKA-FRANC Katarzyna
+2015	World Table Tennis Championships Suzhou 2015	FERTIKOWSKI Pawel (POL)	GRZYBOWSKA-FRANC Katarzyna (POL)	GOMEZ Gustavo (CHI)	LOW Katherine (CHI)	XD	Main Draw	R64	4 - 1	11:3 10:12 11:7 11:8 11:5	FERTIKOWSKI Pawel	GRZYBOWSKA-FRANC Katarzyna
+2015	World Table Tennis Championships Suzhou 2015	FERTIKOWSKI Pawel (POL)	GRZYBOWSKA-FRANC Katarzyna (POL)	KONECNY Tomas (CZE)	MATELOVA Hana (CZE)	XD	Main Draw	R32	4 - 0	12:10 12:10 11:8 14:12	FERTIKOWSKI Pawel	GRZYBOWSKA-FRANC Katarzyna
+2015	World Table Tennis Championships Suzhou 2015	FERTIKOWSKI Pawel (POL)	GRZYBOWSKA-FRANC Katarzyna (POL)	PISTEJ Lubomir (SVK)	VARADY Barbora (SVK)	XD	Main Draw	R16	4 - 1	12:10 11:8 11:0 8:11 11:9	FERTIKOWSKI Pawel	GRZYBOWSKA-FRANC Katarzyna
+2015	World Table Tennis Championships Suzhou 2015	CHEN Diogo (POR)	OLIVEIRA Leila (POR)	ARUNA Quadri (NGR)	EDEM Offiong (NGR)	XD	Main Draw	R128	4 - 0		CHEN Diogo	OLIVEIRA Leila
+2015	World Table Tennis Championships Suzhou 2015	GERALDO Joao (POR)	FINS Rita (POR)	OLIVARES Felipe (CHI)	CASTELLANO Natalia (CHI)	XD	Main Draw	R128	4 - 0	11:5 11:9 11:5 11:8	GERALDO Joao	FINS Rita
+2015	World Table Tennis Championships Suzhou 2015	KIM Hyok Bong (PRK)	KIM Jong (PRK)	LARA Miguel (MEX)	SERRANO Monica (MEX)	XD	Main Draw	R128	4 - 0	11:3 11:1 11:6 11:1	KIM Hyok Bong	KIM Jong
+2015	World Table Tennis Championships Suzhou 2015	PAK Sin Hyok (PRK)	KIM Hye Song (PRK)	GUNDUZ Ibrahim (TUR)	KARAHAN Ipek (TUR)	XD	Main Draw	R128	4 - 0	11:6 11:6 11:4 11:5	PAK Sin Hyok	KIM Hye Song
+2015	World Table Tennis Championships Suzhou 2015	KIM Hyok Bong (PRK)	KIM Jong (PRK)	GHOSH Soumyajit (IND)	DAS Mouma (IND)	XD	Main Draw	R64	4 - 1	11:7 11:3 5:11 11:7 11:9	KIM Hyok Bong	KIM Jong
+2015	World Table Tennis Championships Suzhou 2015	PAK Sin Hyok (PRK)	KIM Hye Song (PRK)	KOU Lei (UKR)	PESOTSKA Margaryta (UKR)	XD	Main Draw	R64	4 - 0	11:4 11:5 11:6 11:6	PAK Sin Hyok	KIM Hye Song
+2015	World Table Tennis Championships Suzhou 2015	KIM Hyok Bong (PRK)	KIM Jong (PRK)	CHEN Diogo (POR)	OLIVEIRA Leila (POR)	XD	Main Draw	R32	4 - 1	8:11 11:4 12:10 11:8 11:5	KIM Hyok Bong	KIM Jong
+2015	World Table Tennis Championships Suzhou 2015	PAK Sin Hyok (PRK)	KIM Hye Song (PRK)	IONESCU Ovidiu (ROU)	SZOCS Bernadette (ROU)	XD	Main Draw	R32	4 - 0	11:9 12:10 11:7 11:8	PAK Sin Hyok	KIM Hye Song
+2015	World Table Tennis Championships Suzhou 2015	KIM Hyok Bong (PRK)	KIM Jong (PRK)	TROMER Laurens (NED)	EERLAND Britt (NED)	XD	Main Draw	R16	4 - 0	11:8 11:4 11:5 11:8	KIM Hyok Bong	KIM Jong
+2015	World Table Tennis Championships Suzhou 2015	KIM Hyok Bong (PRK)	KIM Jong (PRK)	YAN An (CHN)	WU Yang (CHN)	XD	Main Draw	QuarterFinal	4 - 3	5:11 11:8 11:8 4:11 11:6 7:11 11:7	KIM Hyok Bong	KIM Jong
+2015	World Table Tennis Championships Suzhou 2015	PAK Sin Hyok (PRK)	KIM Hye Song (PRK)	YOSHIMURA Maharu (JPN)	ISHIKAWA Kasumi (JPN)	XD	Main Draw	QuarterFinal	2 - 4	9:11 11:6 12:10 6:11 8:11 9:11	YOSHIMURA Maharu	ISHIKAWA Kasumi
+2015	World Table Tennis Championships Suzhou 2015	KIM Hyok Bong (PRK)	KIM Jong (PRK)	YOSHIMURA Maharu (JPN)	ISHIKAWA Kasumi (JPN)	XD	Main Draw	SemiFinal	2 - 4	8:11 11:5 6:11 12:10 7:11 4:11	YOSHIMURA Maharu	ISHIKAWA Kasumi
+2015	World Table Tennis Championships Suzhou 2015	TOWNSEND Kane (AUS)	DIAZ Adriana (PUR)	WEBER Lionel (SUI)	MORET Rachel (SUI)	XD	Main Draw	R128	4 - 2	11:3 13:11 11:13 11:5 7:11 12:10	TOWNSEND Kane	DIAZ Adriana

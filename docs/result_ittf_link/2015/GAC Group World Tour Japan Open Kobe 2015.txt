@@ -5,3 +5,291 @@
 参赛人数：260
 开始日期：2015-06-24
 结束日期：2015-06-28
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 2 Total: 113
+
+Start
+Prev
+1
+2
+Next
+End
+2015	GAC Group World Tour Japan Open Kobe 2015	MA Long (CHN)		TAN Ruiwu (CRO)		MS	Main Draw	R32	4 - 0	11:5 13:11 11:6 11:7	MA Long	
+2015	GAC Group World Tour Japan Open Kobe 2015	SHANG Kun (CHN)		GARDOS Robert (AUT)		MS	Main Draw	R32	4 - 2	8:11 12:10 12:10 11:7 6:11 11:5	SHANG Kun	
+2015	GAC Group World Tour Japan Open Kobe 2015	MURAMATSU Yuto (JPN)		LI Ping (QAT)		MS	Main Draw	R32	4 - 1	11:6 11:5 11:4 8:11 14:12	MURAMATSU Yuto	
+2015	GAC Group World Tour Japan Open Kobe 2015	WANG Eugene (CAN)		NIWA Koki (JPN)		MS	Main Draw	R32	1 - 4	10:12 9:11 11:7 8:11 4:11	NIWA Koki	
+2015	GAC Group World Tour Japan Open Kobe 2015	TANG Peng (HKG)		LEE Sang Su (KOR)		MS	Main Draw	R32	4 - 1	11:9 12:10 11:7 5:11 14:12	TANG Peng	
+2015	GAC Group World Tour Japan Open Kobe 2015	YOSHIMURA Maharu (JPN)		JEOUNG Youngsik (KOR)		MS	Main Draw	R32	4 - 2	11:9 11:6 6:11 11:5 5:11 11:7	YOSHIMURA Maharu	
+2015	GAC Group World Tour Japan Open Kobe 2015	JOO Saehyuk (KOR)		MATSUDAIRA Kenji (JPN)		MS	Main Draw	R32	4 - 3	7:11 11:7 7:11 11:9 9:11 11:5 11:7	JOO Saehyuk	
+2015	GAC Group World Tour Japan Open Kobe 2015	LIVENTSOV Alexey (RUS)		MIZUTANI Jun (JPN)		MS	Main Draw	R32	0 - 4	7:11 6:11 8:11 3:11	MIZUTANI Jun	
+2015	GAC Group World Tour Japan Open Kobe 2015	FAN Zhendong (CHN)		VLASOV Grigory (RUS)		MS	Main Draw	R32	4 - 0	11:4 11:5 12:10 11:7	FAN Zhendong	
+2015	GAC Group World Tour Japan Open Kobe 2015	JIANG Tianyi (HKG)		STEGER Bastian (GER)		MS	Main Draw	R32	4 - 2	11:5 11:8 9:11 4:11 11:9 11:9	JIANG Tianyi	
+2015	GAC Group World Tour Japan Open Kobe 2015	YAN An (CHN)		CHEN Feng (SGP)		MS	Main Draw	R32	4 - 0	11:9 11:5 11:9 11:6	YAN An	
+2015	GAC Group World Tour Japan Open Kobe 2015	LI Ahmet (TUR)		FANG Bo (KAZ)		MS	Main Draw	R32	1 - 4	10:12 8:11 11:5 3:11 4:11	FANG Bo	
+2015	GAC Group World Tour Japan Open Kobe 2015	CHUANG Chih-Yuan (TPE)		MORIZONO Masataka (JPN)		MS	Main Draw	R32	2 - 4	9:11 11:8 6:11 2:11 11:5 7:11	MORIZONO Masataka	
+2015	GAC Group World Tour Japan Open Kobe 2015	RANEFUR Elias (SWE)		WONG Chun Ting (HKG)		MS	Main Draw	R32	0 - 4	8:11 9:11 2:11 10:12	WONG Chun Ting	
+2015	GAC Group World Tour Japan Open Kobe 2015	APOLONIA Tiago (POR)		LORENTZ Romain (FRA)		MS	Main Draw	R32	4 - 1	11:5 11:7 8:11 11:6 14:12	APOLONIA Tiago	
+2015	GAC Group World Tour Japan Open Kobe 2015	HO Kwan Kit (HKG)		XU Xin (CHN)		MS	Main Draw	R32	0 - 4	8:11 3:11 4:11 4:11	XU Xin	
+2015	GAC Group World Tour Japan Open Kobe 2015	MA Long (CHN)		SHANG Kun (CHN)		MS	Main Draw	R16	1 - 4	8:11 7:11 7:11 11:5 8:11	SHANG Kun	
+2015	GAC Group World Tour Japan Open Kobe 2015	MURAMATSU Yuto (JPN)		NIWA Koki (JPN)		MS	Main Draw	R16	4 - 3	9:11 11:7 10:12 9:11 11:5 11:4 11:7	MURAMATSU Yuto	
+2015	GAC Group World Tour Japan Open Kobe 2015	TANG Peng (HKG)		YOSHIMURA Maharu (JPN)		MS	Main Draw	R16	3 - 4	10:12 10:12 11:7 11:3 7:11 11:7 6:11	YOSHIMURA Maharu	
+2015	GAC Group World Tour Japan Open Kobe 2015	JOO Saehyuk (KOR)		MIZUTANI Jun (JPN)		MS	Main Draw	R16	4 - 2	10:12 11:8 11:8 6:11 11:7 11:6	JOO Saehyuk	
+2015	GAC Group World Tour Japan Open Kobe 2015	FAN Zhendong (CHN)		JIANG Tianyi (HKG)		MS	Main Draw	R16	4 - 1	11:6 11:9 7:11 11:8 11:8	FAN Zhendong	
+2015	GAC Group World Tour Japan Open Kobe 2015	YAN An (CHN)		FANG Bo (KAZ)		MS	Main Draw	R16	4 - 1	9:11 11:8 11:6 13:11 12:10	YAN An	
+2015	GAC Group World Tour Japan Open Kobe 2015	MORIZONO Masataka (JPN)		WONG Chun Ting (HKG)		MS	Main Draw	R16	0 - 4	4:11 4:11 6:11 6:11	WONG Chun Ting	
+2015	GAC Group World Tour Japan Open Kobe 2015	APOLONIA Tiago (POR)		XU Xin (CHN)		MS	Main Draw	R16	2 - 4	11:2 7:11 9:11 8:11 11:8 5:11	XU Xin	
+2015	GAC Group World Tour Japan Open Kobe 2015	SHANG Kun (CHN)		MURAMATSU Yuto (JPN)		MS	Main Draw	QuarterFinal	4 - 1	10:12 11:5 11:8 11:9 11:5	SHANG Kun	
+2015	GAC Group World Tour Japan Open Kobe 2015	YOSHIMURA Maharu (JPN)		JOO Saehyuk (KOR)		MS	Main Draw	QuarterFinal	4 - 2	11:9 6:11 11:3 6:11 11:8 12:10	YOSHIMURA Maharu	
+2015	GAC Group World Tour Japan Open Kobe 2015	FAN Zhendong (CHN)		YAN An (CHN)		MS	Main Draw	QuarterFinal	4 - 3	10:12 18:16 11:7 11:6 5:11 3:11 11:5	FAN Zhendong	
+2015	GAC Group World Tour Japan Open Kobe 2015	WONG Chun Ting (HKG)		XU Xin (CHN)		MS	Main Draw	QuarterFinal	0 - 4	10:12 4:11 9:11 11:13	XU Xin	
+2015	GAC Group World Tour Japan Open Kobe 2015	SHANG Kun (CHN)		YOSHIMURA Maharu (JPN)		MS	Main Draw	SemiFinal	3 - 4	11:7 11:6 6:11 9:11 6:11 11:5 8:11	YOSHIMURA Maharu	
+2015	GAC Group World Tour Japan Open Kobe 2015	FAN Zhendong (CHN)		XU Xin (CHN)		MS	Main Draw	SemiFinal	3 - 4	7:11 8:11 11:3 8:11 11:3 11:4 8:11	XU Xin	
+2015	GAC Group World Tour Japan Open Kobe 2015	YOSHIMURA Maharu (JPN)		XU Xin (CHN)		MS	Main Draw	Final	1 - 4	11:9 2:11 12:14 7:11 7:11	XU Xin	
+2015	GAC Group World Tour Japan Open Kobe 2015	MURAMATSU Yuto (JPN)		KALLBERG Anton (SWE)		U21MS	Main Draw	R16	1 - 3	9:11 12:10 12:14 11:13	KALLBERG Anton	
+2015	GAC Group World Tour Japan Open Kobe 2015	ANGLES Enzo (FRA)		JANG Woojin (KOR)		U21MS	Main Draw	R16	0 - 3	5:11 5:11 5:11	JANG Woojin	
+2015	GAC Group World Tour Japan Open Kobe 2015	HO Kwan Kit (HKG)		OIKAWA Mizuki (JPN)		U21MS	Main Draw	R16	2 - 3	5:11 10:12 11:7 11:9 9:11	OIKAWA Mizuki	
+2015	GAC Group World Tour Japan Open Kobe 2015	CHEW Clarence (SGP)		YOSHIDA Masaki (JPN)		U21MS	Main Draw	R16	1 - 3	8:11 8:11 11:6 8:11	YOSHIDA Masaki	
+2015	GAC Group World Tour Japan Open Kobe 2015	OSHIMA Yuya (JPN)		RANEFUR Elias (SWE)		U21MS	Main Draw	R16	3 - 0	11:8 11:6 11:9	OSHIMA Yuya	
+2015	GAC Group World Tour Japan Open Kobe 2015	KANG Dongsoo (KOR)		MACHI Asuka (JPN)		U21MS	Main Draw	R16	3 - 2	9:11 11:4 9:11 11:7 11:7	KANG Dongsoo	
+2015	GAC Group World Tour Japan Open Kobe 2015	SAMBE Kohei (JPN)		LIAO Cheng-Ting (TPE)		U21MS	Main Draw	R16	3 - 2	11:6 5:11 9:11 13:11 15:13	SAMBE Kohei	
+2015	GAC Group World Tour Japan Open Kobe 2015	SAKANE Shodai (JPN)		KIM Donghyun (KOR)		U21MS	Main Draw	R16	2 - 3	6:11 8:11 11:7 11:2 7:11	KIM Donghyun	
+2015	GAC Group World Tour Japan Open Kobe 2015	KALLBERG Anton (SWE)		JANG Woojin (KOR)		U21MS	Main Draw	QuarterFinal	3 - 0	11:6 11:7 11:8	KALLBERG Anton	
+2015	GAC Group World Tour Japan Open Kobe 2015	OIKAWA Mizuki (JPN)		YOSHIDA Masaki (JPN)		U21MS	Main Draw	QuarterFinal	1 - 3	8:11 5:11 12:10 9:11	YOSHIDA Masaki	
+2015	GAC Group World Tour Japan Open Kobe 2015	OSHIMA Yuya (JPN)		KANG Dongsoo (KOR)		U21MS	Main Draw	QuarterFinal	3 - 1	11:4 9:11 11:7 11:8	OSHIMA Yuya	
+2015	GAC Group World Tour Japan Open Kobe 2015	SAMBE Kohei (JPN)		KIM Donghyun (KOR)		U21MS	Main Draw	QuarterFinal	3 - 1	11:5 6:11 11:9 11:9	SAMBE Kohei	
+2015	GAC Group World Tour Japan Open Kobe 2015	KALLBERG Anton (SWE)		YOSHIDA Masaki (JPN)		U21MS	Main Draw	SemiFinal	1 - 3	11:8 6:11 8:11 11:13	YOSHIDA Masaki	
+2015	GAC Group World Tour Japan Open Kobe 2015	OSHIMA Yuya (JPN)		SAMBE Kohei (JPN)		U21MS	Main Draw	SemiFinal	3 - 0	11:7 11:7 11:7	OSHIMA Yuya	
+2015	GAC Group World Tour Japan Open Kobe 2015	YOSHIDA Masaki (JPN)		OSHIMA Yuya (JPN)		U21MS	Main Draw	Final	1 - 3	4:11 6:11 11:7 6:11	OSHIMA Yuya	
+2015	GAC Group World Tour Japan Open Kobe 2015	KALLBERG Anton (SWE)		MACHI Asuka (JPN)		MS	Qualification	QR64	4 - 0	11:7 11:9 11:7 11:8	KALLBERG Anton	
+2015	GAC Group World Tour Japan Open Kobe 2015	JANG Woojin (KOR)		KARLSSON Mattias (SWE)		MS	Qualification	QR64	1 - 4	11:7 9:11 7:11 15:17 6:11	KARLSSON Mattias	
+2015	GAC Group World Tour Japan Open Kobe 2015	SUN Chia-Hung (TPE)		LI Ping (QAT)		MS	Qualification	QR64	0 - 4	5:11 7:11 7:11 7:11	LI Ping	
+2015	GAC Group World Tour Japan Open Kobe 2015	SHIONO Masato (JPN)		YANG Heng-Wei (TPE)		MS	Qualification	QR64	4 - 1	11:6 7:11 11:8 11:7 11:5	SHIONO Masato	
+2015	GAC Group World Tour Japan Open Kobe 2015	PENG Wang-Wei (TPE)		LORENTZ Romain (FRA)		MS	Qualification	QR64	0 - 4	8:11 4:11 3:11 8:11	LORENTZ Romain	
+2015	GAC Group World Tour Japan Open Kobe 2015	LI Ahmet (TUR)		WANG LI Chung-Yi (TPE)		MS	Qualification	QR64	4 - 1	11:8 11:3 12:14 11:8 11:3	LI Ahmet	
+2015	GAC Group World Tour Japan Open Kobe 2015	LIAO Cheng-Ting (TPE)		CHO Eonrae (KOR)		MS	Qualification	QR64	4 - 3	6:11 11:7 12:14 4:11 11:9 11:9 11:5	LIAO Cheng-Ting	
+2015	GAC Group World Tour Japan Open Kobe 2015	MORIZONO Masataka (JPN)		LEE Chia-Sheng (TPE)		MS	Qualification	QR64	4 - 3	13:11 9:11 6:11 11:8 12:10 5:11 11:5	MORIZONO Masataka	
+2015	GAC Group World Tour Japan Open Kobe 2015	YANG Zi (SGP)		GERELL Par (SWE)		MS	Qualification	QR64	0 - 4	8:11 9:11 8:11 7:11	GERELL Par	
+2015	GAC Group World Tour Japan Open Kobe 2015	WU Zhikang (SGP)		LEE Chun-Lin (TPE)		MS	Qualification	QR64	4 - 3	8:11 11:2 9:11 11:3 6:11 11:4 14:12	WU Zhikang	
+2015	GAC Group World Tour Japan Open Kobe 2015	HUNG Tzu-Hsiang (TPE)		JIANG Tianyi (HKG)		MS	Qualification	QR64	1 - 4	4:11 4:11 12:10 9:11 4:11	JIANG Tianyi	
+2015	GAC Group World Tour Japan Open Kobe 2015	OSHIMA Yuya (JPN)		RANEFUR Elias (SWE)		MS	Qualification	QR64	3 - 4	9:11 8:11 11:5 8:11 11:8 11:4 9:11	RANEFUR Elias	
+2015	GAC Group World Tour Japan Open Kobe 2015	AKERSTROM Fabian (SWE)		KANG Dongsoo (KOR)		MS	Qualification	QR64	4 - 3	7:11 13:11 2:11 11:5 5:11 11:5 11:4	AKERSTROM Fabian	
+2015	GAC Group World Tour Japan Open Kobe 2015	MATSUDAIRA Kenji (JPN)		KARIA Devesh (IND)		MS	Qualification	QR64	4 - 1	9:11 11:8 11:9 11:7 11:8	MATSUDAIRA Kenji	
+2015	GAC Group World Tour Japan Open Kobe 2015	JIN Takuya (JPN)		WANG Eugene (CAN)		MS	Qualification	QR64	2 - 4	11:9 7:11 11:7 12:14 6:11 10:12	WANG Eugene	
+2015	GAC Group World Tour Japan Open Kobe 2015	TAKAKIWA Taku (JPN)		WEN Wei-Chieh (TPE)		MS	Qualification	QR64	4 - 1	11:5 14:12 6:11 12:10 11:9	TAKAKIWA Taku	
+2015	GAC Group World Tour Japan Open Kobe 2015	CHEW Clarence (SGP)		VLASOV Grigory (RUS)		MS	Qualification	QR64	2 - 4	15:13 6:11 11:8 9:11 2:11 4:11	VLASOV Grigory	
+2015	GAC Group World Tour Japan Open Kobe 2015	LIVENTSOV Alexey (RUS)		WALKER Samuel (ENG)		MS	Qualification	QR64	4 - 2	11:7 11:7 11:5 9:11 5:11 11:7	LIVENTSOV Alexey	
+2015	GAC Group World Tour Japan Open Kobe 2015	WANG Tai-Wei (TPE)		GHOSH Soumyajit (IND)		MS	Qualification	QR64	4 - 2	11:4 8:11 8:11 11:2 14:12 11:7	WANG Tai-Wei	
+2015	GAC Group World Tour Japan Open Kobe 2015	HUANG Sheng-Sheng (TPE)		ANGLES Enzo (FRA)		MS	Qualification	QR64	4 - 0	11:8 11:3 17:15 11:7	HUANG Sheng-Sheng	
+2015	GAC Group World Tour Japan Open Kobe 2015	SODERLUND Hampus (SWE)		YOSHIMURA Maharu (JPN)		MS	Qualification	QR64	1 - 4	8:11 13:11 9:11 4:11 8:11	YOSHIMURA Maharu	
+2015	GAC Group World Tour Japan Open Kobe 2015	KIM Donghyun (KOR)		CHEN Feng (SGP)		MS	Qualification	QR64	1 - 4	8:11 11:7 7:11 4:11 3:11	CHEN Feng	
+2015	GAC Group World Tour Japan Open Kobe 2015	WU Chih-Chi (TPE)		BROSSIER Benjamin (FRA)		MS	Qualification	QR64	4 - 0	11:8 11:5 11:1 11:8	WU Chih-Chi	
+2015	GAC Group World Tour Japan Open Kobe 2015	CHIANG Hung-Chieh (TPE)		PARK Jeongwoo (KOR)		MS	Qualification	QR64	4 - 3	9:11 9:11 11:6 11:8 11:7 7:11 11:2	CHIANG Hung-Chieh	
+2015	GAC Group World Tour Japan Open Kobe 2015	SHANG Kun (CHN)		KISHIKAWA Seiya (JPN)		MS	Qualification	QR64	4 - 1	12:10 14:12 11:7 6:11 13:11	SHANG Kun	
+2015	GAC Group World Tour Japan Open Kobe 2015	YOSHIDA Masaki (JPN)		YANG Tzu-Yi (TPE)		MS	Qualification	QR64	2 - 4	5:11 6:11 9:11 11:8 11:9 5:11	YANG Tzu-Yi	
+2015	GAC Group World Tour Japan Open Kobe 2015	HUANG Chien-Tu (TPE)		HO Kwan Kit (HKG)		MS	Qualification	QR64	0 - 4	4:11 6:11 8:11 4:11	HO Kwan Kit	
+2015	GAC Group World Tour Japan Open Kobe 2015	TAN Ruiwu (CRO)		KUZMIN Fedor (RUS)		MS	Qualification	QR64	4 - 0	11:8 12:10 12:10 12:10	TAN Ruiwu	
+2015	GAC Group World Tour Japan Open Kobe 2015	LEE Sang Su (KOR)		KALLBERG Anton (SWE)		MS	Qualification	QR32	4 - 3	11:9 8:11 11:7 11:1 7:11 8:11 11:8	LEE Sang Su	
+2015	GAC Group World Tour Japan Open Kobe 2015	KARLSSON Mattias (SWE)		LI Ping (QAT)		MS	Qualification	QR32	1 - 4	11:6 9:11 7:11 10:12 3:11	LI Ping	
+2015	GAC Group World Tour Japan Open Kobe 2015	SHIONO Masato (JPN)		LORENTZ Romain (FRA)		MS	Qualification	QR32	3 - 4	5:11 8:11 7:11 11:3 14:12 11:8 6:11	LORENTZ Romain	
+2015	GAC Group World Tour Japan Open Kobe 2015	LI Ahmet (TUR)		LIAO Cheng-Ting (TPE)		MS	Qualification	QR32	4 - 0	11:8 11:5 11:4 11:4	LI Ahmet	
+2015	GAC Group World Tour Japan Open Kobe 2015	MORIZONO Masataka (JPN)		GERELL Par (SWE)		MS	Qualification	QR32	4 - 1	6:11 11:8 11:7 11:2 11:9	MORIZONO Masataka	
+2015	GAC Group World Tour Japan Open Kobe 2015	WU Zhikang (SGP)		JIANG Tianyi (HKG)		MS	Qualification	QR32	3 - 4	12:10 7:11 6:11 11:8 8:11 14:12 9:11	JIANG Tianyi	
+2015	GAC Group World Tour Japan Open Kobe 2015	RANEFUR Elias (SWE)		AKERSTROM Fabian (SWE)		MS	Qualification	QR32	4 - 1	2:11 11:9 13:11 12:10 11:6	RANEFUR Elias	
+2015	GAC Group World Tour Japan Open Kobe 2015	MATSUDAIRA Kenji (JPN)		CHEN Chien-An (TPE)		MS	Qualification	QR32	4 - 1	11:8 12:10 10:12 11:7 11:8	MATSUDAIRA Kenji	
+2015	GAC Group World Tour Japan Open Kobe 2015	KIM Minseok (KOR)		WANG Eugene (CAN)		MS	Qualification	QR32	1 - 4	8:11 10:12 8:11 11:9 10:12	WANG Eugene	
+2015	GAC Group World Tour Japan Open Kobe 2015	TAKAKIWA Taku (JPN)		VLASOV Grigory (RUS)		MS	Qualification	QR32	0 - 4	9:11 8:11 9:11 7:11	VLASOV Grigory	
+2015	GAC Group World Tour Japan Open Kobe 2015	LIVENTSOV Alexey (RUS)		WANG Tai-Wei (TPE)		MS	Qualification	QR32	4 - 0	11:5 13:11 11:4 11:9	LIVENTSOV Alexey	
+2015	GAC Group World Tour Japan Open Kobe 2015	HUANG Sheng-Sheng (TPE)		YOSHIMURA Maharu (JPN)		MS	Qualification	QR32	0 - 4	4:11 5:11 8:11 6:11	YOSHIMURA Maharu	
+2015	GAC Group World Tour Japan Open Kobe 2015	CHEN Feng (SGP)		WU Chih-Chi (TPE)		MS	Qualification	QR32	4 - 1	7:11 11:8 11:9 11:7 11:7	CHEN Feng	
+2015	GAC Group World Tour Japan Open Kobe 2015	CHIANG Hung-Chieh (TPE)		SHANG Kun (CHN)		MS	Qualification	QR32	0 - 4	6:11 8:11 3:11 12:14	SHANG Kun	
+2015	GAC Group World Tour Japan Open Kobe 2015	YANG Tzu-Yi (TPE)		HO Kwan Kit (HKG)		MS	Qualification	QR32	2 - 4	9:11 3:11 10:12 11:6 11:5 7:11	HO Kwan Kit	
+2015	GAC Group World Tour Japan Open Kobe 2015	TAN Ruiwu (CRO)		MATSUDAIRA Kenta (JPN)		MS	Qualification	QR32	4 - 3	8:11 8:11 11:9 11:9 10:12 11:6 11:5	TAN Ruiwu	
+2015	GAC Group World Tour Japan Open Kobe 2015	IZUMO Takuto (JPN)		SODERLUND Hampus (SWE)		U21MS	Qualification	QR32	1 - 3	9:11 7:11 11:9 7:11	SODERLUND Hampus	
+2015	GAC Group World Tour Japan Open Kobe 2015	YANG Tzu-Yi (TPE)		MATSUYAMA Yuki (JPN)		U21MS	Qualification	QR32	1 - 3	11:8 11:13 9:11 2:11	MATSUYAMA Yuki	
+2015	GAC Group World Tour Japan Open Kobe 2015	SUN Chia-Hung (TPE)		ANGLES Enzo (FRA)		U21MS	Qualification	QR32	1 - 3	11:6 8:11 8:11 11:13	ANGLES Enzo	
+2015	GAC Group World Tour Japan Open Kobe 2015	KALLBERG Anton (SWE)		PARK Jeongwoo (KOR)		U21MS	Qualification	QR32	3 - 1	9:11 11:9 11:9 11:5	KALLBERG Anton	
+2015	GAC Group World Tour Japan Open Kobe 2015	WEN Wei-Chieh (TPE)		OGATA Ryotaro (JPN)		U21MS	Qualification	QR32	0 - 3	6:11 6:11 7:11	OGATA Ryotaro	
+2015	GAC Group World Tour Japan Open Kobe 2015	LEE Chia-Sheng (TPE)		TANAKA Yuta (JPN)		U21MS	Qualification	QR32	3 - 0	11:5 11:7 11:8	LEE Chia-Sheng	
+2015	GAC Group World Tour Japan Open Kobe 2015	RANEFUR Elias (SWE)		YANG Heng-Wei (TPE)		U21MS	Qualification	QR32	3 - 1	11:8 11:7 5:11 11:8	RANEFUR Elias	
+2015	GAC Group World Tour Japan Open Kobe 2015	LIAO Cheng-Ting (TPE)		HARIMOTO Tomokazu (JPN)		U21MS	Qualification	QR32	3 - 1	11:7 11:6 8:11 11:8	LIAO Cheng-Ting	
+2015	GAC Group World Tour Japan Open Kobe 2015	PENG Wang-Wei (TPE)		KIZUKURI Yuto (JPN)		U21MS	Qualification	QR32	1 - 3	10:12 9:11 11:6 6:11	KIZUKURI Yuto	
+2015	GAC Group World Tour Japan Open Kobe 2015	WALKER Samuel (ENG)		SAKANE Shodai (JPN)		U21MS	Qualification	QR32	2 - 3	7:11 3:11 11:3 11:8 7:11	SAKANE Shodai
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 96
+
+2015	GAC Group World Tour Japan Open Kobe 2015	LIN Ye (CAN)		MATSUDAIRA Shiho (JPN)		U21WS	Main Draw	R16	0 - 3	9:11 8:11 7:11	MATSUDAIRA Shiho	
+2015	GAC Group World Tour Japan Open Kobe 2015	MORI Sakura (JPN)		SZOCS Bernadette (ROU)		U21WS	Main Draw	R16	2 - 3	11:9 11:9 7:11 4:11 8:11	SZOCS Bernadette	
+2015	GAC Group World Tour Japan Open Kobe 2015	MAEDA Miyu (JPN)		ZENG Jian (SGP)		U21WS	Main Draw	R16	2 - 3	11:8 10:12 3:11 11:2 9:11	ZENG Jian	
+2015	GAC Group World Tour Japan Open Kobe 2015	CHOI Jeongmin (KOR)		HAYATA Hina (JPN)		U21WS	Main Draw	R16	2 - 3	13:11 11:8 9:11 6:11 5:11	HAYATA Hina	
+2015	GAC Group World Tour Japan Open Kobe 2015	KATO Miyu (JPN)		LEE Dasom (KOR)		U21WS	Main Draw	R16	3 - 0	14:12 11:7 11:6	KATO Miyu	
+2015	GAC Group World Tour Japan Open Kobe 2015	KIHARA Miyuu (JPN)		ZHOU Yihan (SGP)		U21WS	Main Draw	R16	2 - 3	11:7 11:5 8:11 7:11 4:11	ZHOU Yihan	
+2015	GAC Group World Tour Japan Open Kobe 2015	HAMAMOTO Yui (AUT)		ZHU Chengzhu (HKG)		U21WS	Main Draw	R16	3 - 0	11:4 11:7 11:3	HAMAMOTO Yui	
+2015	GAC Group World Tour Japan Open Kobe 2015	LEE Yu-Peng (TPE)		SATO Hitomi (JPN)		U21WS	Main Draw	R16	1 - 3	2:11 11:2 6:11 5:11	SATO Hitomi	
+2015	GAC Group World Tour Japan Open Kobe 2015	MATSUDAIRA Shiho (JPN)		SZOCS Bernadette (ROU)		U21WS	Main Draw	QuarterFinal	1 - 3	6:11 11:9 7:11 6:11	SZOCS Bernadette	
+2015	GAC Group World Tour Japan Open Kobe 2015	ZENG Jian (SGP)		HAYATA Hina (JPN)		U21WS	Main Draw	QuarterFinal	3 - 0	11:3 11:8 11:6	ZENG Jian	
+2015	GAC Group World Tour Japan Open Kobe 2015	KATO Miyu (JPN)		ZHOU Yihan (SGP)		U21WS	Main Draw	QuarterFinal	0 - 3	8:11 7:11 7:11	ZHOU Yihan	
+2015	GAC Group World Tour Japan Open Kobe 2015	HAMAMOTO Yui (AUT)		SATO Hitomi (JPN)		U21WS	Main Draw	QuarterFinal	1 - 3	11:6 9:11 5:11 9:11	SATO Hitomi	
+2015	GAC Group World Tour Japan Open Kobe 2015	SZOCS Bernadette (ROU)		ZENG Jian (SGP)		U21WS	Main Draw	SemiFinal	2 - 3	11:9 5:11 3:11 11:7 2:11	ZENG Jian	
+2015	GAC Group World Tour Japan Open Kobe 2015	ZHOU Yihan (SGP)		SATO Hitomi (JPN)		U21WS	Main Draw	SemiFinal	1 - 3	17:15 9:11 9:11 8:11	SATO Hitomi	
+2015	GAC Group World Tour Japan Open Kobe 2015	ZENG Jian (SGP)		SATO Hitomi (JPN)		U21WS	Main Draw	Final	1 - 3	9:11 11:8 8:11 9:11	SATO Hitomi	
+2015	GAC Group World Tour Japan Open Kobe 2015	LIU Hsing-Yin (TPE)		KATO Miyu (JPN)		WS	Qualification	QR64	3 - 4	7:11 8:11 11:7 11:7 11:5 9:11 12:14	KATO Miyu	
+2015	GAC Group World Tour Japan Open Kobe 2015	DOLGIKH Maria (RUS)		HSU Hui-Tsun (TPE)		WS	Qualification	QR64	4 - 1	12:10 11:5 9:11 12:10 11:6	DOLGIKH Maria	
+2015	GAC Group World Tour Japan Open Kobe 2015	LEE Yu-Peng (TPE)		WAKAMIYA Misako (JPN)		WS	Qualification	QR64	0 - 4	8:11 5:11 4:11 6:11	WAKAMIYA Misako	
+2015	GAC Group World Tour Japan Open Kobe 2015	DAS Mouma (IND)		YOO Eunchong (KOR)		WS	Qualification	QR64	1 - 4	7:11 7:11 6:11 11:9 4:11	YOO Eunchong	
+2015	GAC Group World Tour Japan Open Kobe 2015	MAEDA Miyu (JPN)		CHENG Hsien-Tzu (TPE)		WS	Qualification	QR64	3 - 4	4:11 11:8 11:5 7:11 11:9 9:11 5:11	CHENG Hsien-Tzu	
+2015	GAC Group World Tour Japan Open Kobe 2015	LAM Yee Lok (HKG)		ZHOU Yihan (SGP)		WS	Qualification	QR64	2 - 4	5:11 11:1 3:11 11:9 7:11 7:11	ZHOU Yihan	
+2015	GAC Group World Tour Japan Open Kobe 2015	MATSUDAIRA Shiho (JPN)		BOLLMEIER Nadine (GER)		WS	Qualification	QR64	1 - 4	9:11 4:11 14:12 3:11 7:11	BOLLMEIER Nadine	
+2015	GAC Group World Tour Japan Open Kobe 2015	LIU Yu-Hsin (TPE)		TIE Yana (HKG)		WS	Qualification	QR64	2 - 4	12:10 4:11 7:11 11:7 4:11 9:11	TIE Yana	
+2015	GAC Group World Tour Japan Open Kobe 2015	WANG Yi-Ju (TPE)		HAMAMOTO Yui (AUT)		WS	Qualification	QR64	4 - 2	11:3 5:11 11:7 15:13 3:11 11:9	WANG Yi-Ju	
+2015	GAC Group World Tour Japan Open Kobe 2015	SZOCS Bernadette (ROU)		HWANG Jina (KOR)		WS	Qualification	QR64	4 - 3	11:6 7:11 5:11 11:7 3:11 11:2 11:9	SZOCS Bernadette	
+2015	GAC Group World Tour Japan Open Kobe 2015	CHOI Jeongmin (KOR)		HAYATA Hina (JPN)		WS	Qualification	QR64	4 - 1	11:8 11:8 11:8 9:11 12:10	CHOI Jeongmin	
+2015	GAC Group World Tour Japan Open Kobe 2015	HUANG Yi-Hua (TPE)		LEE Zion (KOR)		WS	Qualification	QR64	4 - 2	11:4 9:11 11:8 6:11 12:10 11:8	HUANG Yi-Hua	
+2015	GAC Group World Tour Japan Open Kobe 2015	DAS Ankita (IND)		SATO Hitomi (JPN)		WS	Qualification	QR64	0 - 4	9:11 3:11 6:11 1:11	SATO Hitomi	
+2015	GAC Group World Tour Japan Open Kobe 2015	MORIZONO Misaki (JPN)		ZHU Chengzhu (HKG)		WS	Qualification	QR64	4 - 0	11:4 11:7 11:6 11:1	MORIZONO Misaki	
+2015	GAC Group World Tour Japan Open Kobe 2015	TIKHOMIROVA Anna (RUS)		ZENG Jian (SGP)		WS	Qualification	QR64	1 - 4	7:11 4:11 11:6 10:12 7:11	ZENG Jian	
+2015	GAC Group World Tour Japan Open Kobe 2015	MORI Sakura (JPN)		LIN Chia-Hui (TPE)		WS	Qualification	QR64	4 - 3	10:12 11:8 8:11 11:4 11:6 9:11 11:9	MORI Sakura	
+2015	GAC Group World Tour Japan Open Kobe 2015	LEE Seul (KOR)		LEE I-Chen (TPE)		WS	Qualification	QR64	4 - 2	6:11 13:11 9:11 11:6 11:3 11:9	LEE Seul	
+2015	GAC Group World Tour Japan Open Kobe 2015	LEE Dasom (KOR)		NIWA Misato (JPN)		WS	Qualification	QR64	0 - 4	7:11 6:11 10:12 7:11	NIWA Misato	
+2015	GAC Group World Tour Japan Open Kobe 2015	LIN Ye (CAN)		HUANG Yu-Chiao (TPE)		WS	Qualification	QR64	4 - 2	7:11 11:7 11:7 7:11 11:2 11:7	LIN Ye	
+2015	GAC Group World Tour Japan Open Kobe 2015	YU Sora (KOR)		MITTELHAM Nina (GER)		WS	Qualification	QR64	4 - 0	11:7 11:7 11:7 11:0	YU Sora	
+2015	GAC Group World Tour Japan Open Kobe 2015	MIKHAILOVA Polina (RUS)		KITAOKA Eriko (JPN)		WS	Qualification	QR64	4 - 1	16:14 7:11 11:5 11:7 11:8	MIKHAILOVA Polina	
+2015	GAC Group World Tour Japan Open Kobe 2015	LIU Fei (CHN)		KATO Miyu (JPN)		WS	Qualification	QR32	4 - 0	11:9 11:4 11:6 11:6	LIU Fei	
+2015	GAC Group World Tour Japan Open Kobe 2015	DOLGIKH Maria (RUS)		WAKAMIYA Misako (JPN)		WS	Qualification	QR32	1 - 4	11:5 11:13 9:11 7:11 10:12	WAKAMIYA Misako	
+2015	GAC Group World Tour Japan Open Kobe 2015	LI Jiao (NED)		YOO Eunchong (KOR)		WS	Qualification	QR32	4 - 2	11:7 11:5 11:8 4:11 1:11 14:12	LI Jiao	
+2015	GAC Group World Tour Japan Open Kobe 2015	CHENG Hsien-Tzu (TPE)		HU Melek (TUR)		WS	Qualification	QR32	0 - 4	9:11 4:11 5:11 7:11	HU Melek	
+2015	GAC Group World Tour Japan Open Kobe 2015	SHAN Xiaona (GER)		ZHOU Yihan (SGP)		WS	Qualification	QR32	4 - 1	11:6 12:10 11:7 7:11 11:6	SHAN Xiaona	
+2015	GAC Group World Tour Japan Open Kobe 2015	BOLLMEIER Nadine (GER)		TIE Yana (HKG)		WS	Qualification	QR32	0 - 4	10:12 6:11 10:12 3:11	TIE Yana	
+2015	GAC Group World Tour Japan Open Kobe 2015	IVANCAN Irene (GER)		WANG Yi-Ju (TPE)		WS	Qualification	QR32	4 - 1	3:11 12:10 11:4 11:4 11:7	IVANCAN Irene	
+2015	GAC Group World Tour Japan Open Kobe 2015	SZOCS Bernadette (ROU)		JIANG Huajun (HKG)		WS	Qualification	QR32	2 - 4	11:9 10:12 6:11 5:11 11:6 7:11	JIANG Huajun	
+2015	GAC Group World Tour Japan Open Kobe 2015	CHENG I-Ching (TPE)		CHOI Jeongmin (KOR)		WS	Qualification	QR32	4 - 0	11:5 11:9 11:5 11:4	CHENG I-Ching	
+2015	GAC Group World Tour Japan Open Kobe 2015	HUANG Yi-Hua (TPE)		SATO Hitomi (JPN)		WS	Qualification	QR32	1 - 4	7:11 2:11 11:9 8:11 1:11	SATO Hitomi	
+2015	GAC Group World Tour Japan Open Kobe 2015	MORIZONO Misaki (JPN)		ZENG Jian (SGP)		WS	Qualification	QR32	4 - 2	11:8 5:11 14:16 11:7 12:10 11:9	MORIZONO Misaki	
+2015	GAC Group World Tour Japan Open Kobe 2015	MORI Sakura (JPN)		LEE Ho Ching (HKG)		WS	Qualification	QR32	1 - 4	10:12 12:10 10:12 5:11 10:12	LEE Ho Ching	
+2015	GAC Group World Tour Japan Open Kobe 2015	HIRANO Miu (JPN)		LEE Seul (KOR)		WS	Qualification	QR32	4 - 0	11:5 11:3 11:1 11:3	HIRANO Miu	
+2015	GAC Group World Tour Japan Open Kobe 2015	NIWA Misato (JPN)		CHEN Szu-Yu (TPE)		WS	Qualification	QR32	0 - 4	4:11 7:11 9:11 9:11	CHEN Szu-Yu	
+2015	GAC Group World Tour Japan Open Kobe 2015	LIN Ye (CAN)		YU Sora (KOR)		WS	Qualification	QR32	4 - 0	12:10 11:5 11:8 11:6	LIN Ye	
+2015	GAC Group World Tour Japan Open Kobe 2015	MIKHAILOVA Polina (RUS)		JEON Jihee (KOR)		WS	Qualification	QR32	2 - 4	11:8 6:11 11:6 8:11 4:11 6:11	JEON Jihee	
+2015	GAC Group World Tour Japan Open Kobe 2015	LEE Zion (KOR)		BABA Mayu (JPN)		U21WS	Qualification	QR32	1 - 3	9:11 12:10 9:11 9:11	BABA Mayu	
+2015	GAC Group World Tour Japan Open Kobe 2015	KIMURA Kasumi (JPN)		LEE Yu-Peng (TPE)		U21WS	Qualification	QR32	0 - 3	9:11 7:11 14:16	LEE Yu-Peng	
+2015	GAC Group World Tour Japan Open Kobe 2015	HUANG Yu-Chiao (TPE)		SHIOMI Maki (JPN)		U21WS	Qualification	QR32	3 - 0	13:11 11:8 11:6	HUANG Yu-Chiao	
+2015	GAC Group World Tour Japan Open Kobe 2015	LEE Dasom (KOR)		SHOJI Yuki (JPN)		U21WS	Qualification	QR32	3 - 0	12:10 11:3 13:11	LEE Dasom	
+2015	GAC Group World Tour Japan Open Kobe 2015	MINAGAWA Yuka (JPN)		LAM Yee Lok (HKG)		U21WS	Qualification	QR32	0 - 3	10:12 10:12 5:11	LAM Yee Lok	
+2015	GAC Group World Tour Japan Open Kobe 2015	YAMAMOTO Rei (JPN)		WANG Yi-Ju (TPE)		U21WS	Qualification	QR32	3 - 1	9:11 15:13 14:12 11:4	YAMAMOTO Rei	
+2015	GAC Group World Tour Japan Open Kobe 2015	MATSUDAIRA Shiho (JPN)		LEE Seul (KOR)		U21WS	Qualification	QR16	3 - 0	11:7 11:9 11:8	MATSUDAIRA Shiho	
+2015	GAC Group World Tour Japan Open Kobe 2015	NAGASAKI Miyu (JPN)		CHOI Jeongmin (KOR)		U21WS	Qualification	QR16	0 - 3	5:11 3:11 6:11	CHOI Jeongmin	
+2015	GAC Group World Tour Japan Open Kobe 2015	BABA Mayu (JPN)		LEE Yu-Peng (TPE)		U21WS	Qualification	QR16	0 - 3	8:11 5:11 10:12	LEE Yu-Peng	
+2015	GAC Group World Tour Japan Open Kobe 2015	HUANG Yu-Chiao (TPE)		MORI Sakura (JPN)		U21WS	Qualification	QR16	2 - 3	11:7 8:11 11:8 8:11 10:12	MORI Sakura	
+2015	GAC Group World Tour Japan Open Kobe 2015	SHIBATA Saki (JPN)		ZHU Chengzhu (HKG)		U21WS	Qualification	QR16	2 - 3	11:6 9:11 18:16 6:11 7:11	ZHU Chengzhu	
+2015	GAC Group World Tour Japan Open Kobe 2015	LEE Dasom (KOR)		LAM Yee Lok (HKG)		U21WS	Qualification	QR16	3 - 1	11:6 9:11 11:5 11:3	LEE Dasom	
+2015	GAC Group World Tour Japan Open Kobe 2015	YAMAMOTO Rei (JPN)		ZENG Jian (SGP)		U21WS	Qualification	QR16	1 - 3	11:9 4:11 6:11 6:11	ZENG Jian	
+2015	GAC Group World Tour Japan Open Kobe 2015	DING Ning (CHN)		HIRANO Miu (JPN)		WS	Main Draw	R32	4 - 0	11:5 11:5 11:6 11:5	DING Ning	
+2015	GAC Group World Tour Japan Open Kobe 2015	LIU Fei (CHN)		ITO Mima (JPN)		WS	Main Draw	R32	2 - 4	11:7 9:11 7:11 9:11 11:4 12:14	ITO Mima	
+2015	GAC Group World Tour Japan Open Kobe 2015	ISHIGAKI Yuka (JPN)		LI Jiao (NED)		WS	Main Draw	R32	2 - 4	12:10 11:7 9:11 8:11 6:11 7:11	LI Jiao	
+2015	GAC Group World Tour Japan Open Kobe 2015	LIN Ye (CAN)		ISHIKAWA Kasumi (JPN)		WS	Main Draw	R32	3 - 4	11:7 5:11 11:6 11:5 6:11 8:11 8:11	ISHIKAWA Kasumi	
+2015	GAC Group World Tour Japan Open Kobe 2015	CHEN Meng (CHN)		CHENG I-Ching (TPE)		WS	Main Draw	R32	4 - 0	11:8 11:5 11:3 11:2	CHEN Meng	
+2015	GAC Group World Tour Japan Open Kobe 2015	SHAN Xiaona (GER)		YANG Ha Eun (KOR)		WS	Main Draw	R32	4 - 2	11:8 4:11 11:7 11:7 8:11 11:8	SHAN Xiaona	
+2015	GAC Group World Tour Japan Open Kobe 2015	HIRANO Sayaka (JPN)		JEON Jihee (KOR)		WS	Main Draw	R32	0 - 4	11:13 8:11 6:11 3:11	JEON Jihee	
+2015	GAC Group World Tour Japan Open Kobe 2015	WAKAMIYA Misako (JPN)		FENG Tianwei (SGP)		WS	Main Draw	R32	4 - 3	11:7 11:7 11:9 8:11 4:11 7:11 11:9	WAKAMIYA Misako	
+2015	GAC Group World Tour Japan Open Kobe 2015	ZHU Yuling (MAC)		TIE Yana (HKG)		WS	Main Draw	R32	4 - 0	12:10 11:6 11:4 11:1	ZHU Yuling	
+2015	GAC Group World Tour Japan Open Kobe 2015	MORIZONO Misaki (JPN)		DOO Hoi Kem (HKG)		WS	Main Draw	R32	1 - 4	11:9 8:11 4:11 4:11 2:11	DOO Hoi Kem	
+2015	GAC Group World Tour Japan Open Kobe 2015	SUH Hyo Won (KOR)		SATO Hitomi (JPN)		WS	Main Draw	R32	4 - 2	11:13 11:9 11:6 6:11 12:10 13:11	SUH Hyo Won	
+2015	GAC Group World Tour Japan Open Kobe 2015	CHEN Szu-Yu (TPE)		FUKUHARA Ai (JPN)		WS	Main Draw	R32	1 - 4	7:11 4:11 11:9 7:11 8:11	FUKUHARA Ai	
+2015	GAC Group World Tour Japan Open Kobe 2015	WU Yang (CHN)		HU Melek (TUR)		WS	Main Draw	R32	4 - 0	11:9 12:10 11:2 11:7	WU Yang	
+2015	GAC Group World Tour Japan Open Kobe 2015	LEE Ho Ching (HKG)		SAMARA Elizabeta (ROU)		WS	Main Draw	R32	4 - 0	11:9 11:9 11:9 11:5	LEE Ho Ching	
+2015	GAC Group World Tour Japan Open Kobe 2015	YU Mengyu (SGP)		JIANG Huajun (HKG)		WS	Main Draw	R32	0 - 4	10:12 9:11 7:11 5:11	JIANG Huajun	
+2015	GAC Group World Tour Japan Open Kobe 2015	IVANCAN Irene (GER)		LIU Shiwen (CHN)		WS	Main Draw	R32	0 - 4	9:11 6:11 8:11 3:11	LIU Shiwen	
+2015	GAC Group World Tour Japan Open Kobe 2015	DING Ning (CHN)		ITO Mima (JPN)		WS	Main Draw	R16	4 - 1	11:6 11:3 11:5 11:13 11:8	DING Ning	
+2015	GAC Group World Tour Japan Open Kobe 2015	LI Jiao (NED)		ISHIKAWA Kasumi (JPN)		WS	Main Draw	R16	0 - 4	10:12 5:11 10:12 2:11	ISHIKAWA Kasumi	
+2015	GAC Group World Tour Japan Open Kobe 2015	CHEN Meng (CHN)		SHAN Xiaona (GER)		WS	Main Draw	R16	4 - 2	5:11 7:11 11:9 11:8 11:5 11:9	CHEN Meng	
+2015	GAC Group World Tour Japan Open Kobe 2015	JEON Jihee (KOR)		WAKAMIYA Misako (JPN)		WS	Main Draw	R16	2 - 4	11:5 11:5 8:11 7:11 3:11 8:11	WAKAMIYA Misako	
+2015	GAC Group World Tour Japan Open Kobe 2015	ZHU Yuling (MAC)		DOO Hoi Kem (HKG)		WS	Main Draw	R16	4 - 0	11:2 11:7 11:8 12:10	ZHU Yuling	
+2015	GAC Group World Tour Japan Open Kobe 2015	SUH Hyo Won (KOR)		FUKUHARA Ai (JPN)		WS	Main Draw	R16	4 - 2	9:11 11:9 9:11 11:5 11:7 11:5	SUH Hyo Won	
+2015	GAC Group World Tour Japan Open Kobe 2015	WU Yang (CHN)		LEE Ho Ching (HKG)		WS	Main Draw	R16	4 - 0	11:3 11:5 11:5 12:10	WU Yang	
+2015	GAC Group World Tour Japan Open Kobe 2015	JIANG Huajun (HKG)		LIU Shiwen (CHN)		WS	Main Draw	R16	1 - 4	11:5 10:12 9:11 6:11 9:11	LIU Shiwen	
+2015	GAC Group World Tour Japan Open Kobe 2015	DING Ning (CHN)		ISHIKAWA Kasumi (JPN)		WS	Main Draw	QuarterFinal	4 - 1	7:11 11:3 11:4 11:3 11:5	DING Ning	
+2015	GAC Group World Tour Japan Open Kobe 2015	CHEN Meng (CHN)		WAKAMIYA Misako (JPN)		WS	Main Draw	QuarterFinal	4 - 0	11:2 11:7 11:2 11:7	CHEN Meng	
+2015	GAC Group World Tour Japan Open Kobe 2015	ZHU Yuling (MAC)		SUH Hyo Won (KOR)		WS	Main Draw	QuarterFinal	4 - 2	11:4 8:11 11:5 11:4 9:11 11:3	ZHU Yuling	
+2015	GAC Group World Tour Japan Open Kobe 2015	WU Yang (CHN)		LIU Shiwen (CHN)		WS	Main Draw	QuarterFinal	3 - 4	11:6 11:9 13:11 7:11 1:11 7:11 7:11	LIU Shiwen	
+2015	GAC Group World Tour Japan Open Kobe 2015	DING Ning (CHN)		CHEN Meng (CHN)		WS	Main Draw	SemiFinal	1 - 4	7:11 9:11 3:11 11:4 9:11	CHEN Meng	
+2015	GAC Group World Tour Japan Open Kobe 2015	ZHU Yuling (MAC)		LIU Shiwen (CHN)		WS	Main Draw	SemiFinal	4 - 2	11:2 5:11 11:6 11:6 6:11 11:3	ZHU Yuling	
+2015	GAC Group World Tour Japan Open Kobe 2015	CHEN Meng (CHN)		ZHU Yuling (MAC)		WS	Main Draw	Final	4 - 3	13:11 6:11 5:11 11:4 11:5 6:11 11:7	CHEN Meng
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 27
+
+2015	GAC Group World Tour Japan Open Kobe 2015	LI Ahmet (TUR)	WANG Eugene (CAN)	ANGLES Enzo (FRA)	WALKER Samuel (ENG)	MD	Qualification	QR32	3 - 0	11:5 11:8 11:9	LI Ahmet	WANG Eugene
+2015	GAC Group World Tour Japan Open Kobe 2015	LI Ahmet (TUR)	WANG Eugene (CAN)	OIKAWA Mizuki (JPN)	SAMBE Kohei (JPN)	MD	Qualification	QR16	0 - 3	6:11 9:11 5:11	OIKAWA Mizuki	SAMBE Kohei
+2015	GAC Group World Tour Japan Open Kobe 2015	FAN Zhendong (CHN)	SHANG Kun (CHN)	CHO Eonrae (KOR)	KIM Donghyun (KOR)	MD	Main Draw	QuarterFinal	3 - 0	11:6 11:8 11:8	FAN Zhendong	SHANG Kun
+2015	GAC Group World Tour Japan Open Kobe 2015	MA Long (CHN)	XU Xin (CHN)	APOLONIA Tiago (POR)	TAN Ruiwu (CRO)	MD	Main Draw	SemiFinal	3 - 0	11:9 11:6 11:5	MA Long	XU Xin
+2015	GAC Group World Tour Japan Open Kobe 2015	FAN Zhendong (CHN)	SHANG Kun (CHN)	MORIZONO Masataka (JPN)	OSHIMA Yuya (JPN)	MD	Main Draw	SemiFinal	3 - 1	14:12 8:11 11:4 16:14	FAN Zhendong	SHANG Kun
+2015	GAC Group World Tour Japan Open Kobe 2015	MA Long (CHN)	XU Xin (CHN)	FAN Zhendong (CHN)	SHANG Kun (CHN)	MD	Main Draw	Final	3 - 2	11:8 13:11 7:11 10:12 11:8	MA Long	XU Xin
+2015	GAC Group World Tour Japan Open Kobe 2015	FANG Bo (KAZ)	YAN An (CHN)	GHOSH Soumyajit (IND)	KARIA Devesh (IND)	MD	Qualification	QR16	3 - 0	11:6 11:9 13:11	FANG Bo	YAN An
+2015	GAC Group World Tour Japan Open Kobe 2015	APOLONIA Tiago (POR)	TAN Ruiwu (CRO)	KUZMIN Fedor (RUS)	VLASOV Grigory (RUS)	MD	Main Draw	R16	3 - 1	11:3 9:11 11:9 11:9	APOLONIA Tiago	TAN Ruiwu
+2015	GAC Group World Tour Japan Open Kobe 2015	TANG Peng (HKG)	WONG Chun Ting (HKG)	FAN Zhendong (CHN)	SHANG Kun (CHN)	MD	Main Draw	R16	2 - 3	11:9 8:11 11:8 4:11 6:11	FAN Zhendong	SHANG Kun
+2015	GAC Group World Tour Japan Open Kobe 2015	GHOSH Soumyajit (IND)	KARIA Devesh (IND)	BROSSIER Benjamin (FRA)	LORENTZ Romain (FRA)	MD	Qualification	QR32	3 - 2	11:9 9:11 11:6 8:11 11:4	GHOSH Soumyajit	KARIA Devesh
+2015	GAC Group World Tour Japan Open Kobe 2015	MATSUDAIRA Kenta (JPN)	NIWA Koki (JPN)	KALLBERG Anton (SWE)	GERELL Par (SWE)	MD	Main Draw	R16	3 - 1	11:6 11:7 9:11 13:11	MATSUDAIRA Kenta	NIWA Koki
+2015	GAC Group World Tour Japan Open Kobe 2015	OIKAWA Mizuki (JPN)	SAMBE Kohei (JPN)	CHO Eonrae (KOR)	KIM Donghyun (KOR)	MD	Main Draw	R16	2 - 3	8:11 11:5 10:12 11:5 7:11	CHO Eonrae	KIM Donghyun
+2015	GAC Group World Tour Japan Open Kobe 2015	MORIZONO Masataka (JPN)	OSHIMA Yuya (JPN)	FANG Bo (KAZ)	YAN An (CHN)	MD	Main Draw	R16	3 - 1	11:5 6:11 11:5 11:8	MORIZONO Masataka	OSHIMA Yuya
+2015	GAC Group World Tour Japan Open Kobe 2015	MATSUDAIRA Kenta (JPN)	NIWA Koki (JPN)	MA Long (CHN)	XU Xin (CHN)	MD	Main Draw	QuarterFinal	1 - 3	7:11 6:11 11:7 10:12	MA Long	XU Xin
+2015	GAC Group World Tour Japan Open Kobe 2015	MORIZONO Masataka (JPN)	OSHIMA Yuya (JPN)	CHIANG Hung-Chieh (TPE)	HUANG Sheng-Sheng (TPE)	MD	Main Draw	QuarterFinal	3 - 0	11:9 11:6 11:9	MORIZONO Masataka	OSHIMA Yuya
+2015	GAC Group World Tour Japan Open Kobe 2015	JEOUNG Youngsik (KOR)	KIM Minseok (KOR)	HO Kwan Kit (HKG)	LIVENTSOV Alexey (RUS)	MD	Main Draw	R16	3 - 2	11:3 9:11 11:7 7:11 11:6	JEOUNG Youngsik	KIM Minseok
+2015	GAC Group World Tour Japan Open Kobe 2015	JANG Woojin (KOR)	PARK Jeongwoo (KOR)	CHIANG Hung-Chieh (TPE)	HUANG Sheng-Sheng (TPE)	MD	Main Draw	R16	1 - 3	6:11 4:11 11:9 8:11	CHIANG Hung-Chieh	HUANG Sheng-Sheng
+2015	GAC Group World Tour Japan Open Kobe 2015	JIANG Tianyi (HKG)	LI Ping (QAT)	FAN Zhendong (CHN)	SHANG Kun (CHN)	MD	Qualification	QR16	1 - 3	9:11 11:3 8:11 5:11	FAN Zhendong	SHANG Kun
+2015	GAC Group World Tour Japan Open Kobe 2015	HO Kwan Kit (HKG)	LIVENTSOV Alexey (RUS)	MURAMATSU Yuto (JPN)	SHIONO Masato (JPN)	MD	Qualification	QR16	3 - 1	7:11 12:10 11:1 11:7	HO Kwan Kit	LIVENTSOV Alexey
+2015	GAC Group World Tour Japan Open Kobe 2015	WU Zhikang (SGP)	YANG Zi (SGP)	HARIMOTO Tomokazu (JPN)	KIZUKURI Yuto (JPN)	MD	Qualification	QR32	3 - 1	11:5 6:11 11:8 11:5	WU Zhikang	YANG Zi
+2015	GAC Group World Tour Japan Open Kobe 2015	WU Zhikang (SGP)	YANG Zi (SGP)	KALLBERG Anton (SWE)	GERELL Par (SWE)	MD	Qualification	QR16	1 - 3	11:13 7:11 14:12 5:11	KALLBERG Anton	GERELL Par
+2015	GAC Group World Tour Japan Open Kobe 2015	CHEN Feng (SGP)	CHEW Clarence (SGP)	APOLONIA Tiago (POR)	TAN Ruiwu (CRO)	MD	Qualification	QR16	0 - 3	5:11 4:11 8:11	APOLONIA Tiago	TAN Ruiwu
+2015	GAC Group World Tour Japan Open Kobe 2015	AKERSTROM Fabian (SWE)	KARLSSON Mattias (SWE)	MA Long (CHN)	XU Xin (CHN)	MD	Main Draw	R16	0 - 3	11:13 8:11 7:11	MA Long	XU Xin
+2015	GAC Group World Tour Japan Open Kobe 2015	RANEFUR Elias (SWE)	SODERLUND Hampus (SWE)	JANG Woojin (KOR)	PARK Jeongwoo (KOR)	MD	Qualification	QR32	0 - 3	5:11 6:11 7:11	JANG Woojin	PARK Jeongwoo
+2015	GAC Group World Tour Japan Open Kobe 2015	AKERSTROM Fabian (SWE)	KARLSSON Mattias (SWE)	MIZUTANI Jun (JPN)	YOSHIMURA Maharu (JPN)	MD	Qualification	QR16	3 - 1	11:6 11:7 9:11 14:12	AKERSTROM Fabian	KARLSSON Mattias
+2015	GAC Group World Tour Japan Open Kobe 2015	HUANG Chien-Tu (TPE)	YANG Tzu-Yi (TPE)	KALLBERG Anton (SWE)	GERELL Par (SWE)	MD	Qualification	QR32	1 - 3	4:11 11:6 12:14 3:11	KALLBERG Anton	GERELL Par
+2015	GAC Group World Tour Japan Open Kobe 2015	CHUANG Chih-Yuan (TPE)	SUN Chia-Hung (TPE)	JANG Woojin (KOR)	PARK Jeongwoo (KOR)	MD	Qualification	QR16	2 - 3	11:13 11:9 11:4 11:13 6:11	JANG Woojin	PARK Jeongwoo
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 24
+
+2015	GAC Group World Tour Japan Open Kobe 2015	LIU Fei (CHN)	WU Yang (CHN)	JEON Jihee (KOR)	YANG Ha Eun (KOR)	WD	Main Draw	QuarterFinal	3 - 2	11:13 11:2 11:7 5:11 11:9	LIU Fei	WU Yang
+2015	GAC Group World Tour Japan Open Kobe 2015	CHEN Meng (CHN)	ZHU Yuling (MAC)	DING Ning (CHN)	LIU Shiwen (CHN)	WD	Main Draw	QuarterFinal	1 - 3	5:11 8:11 12:10 6:11	DING Ning	LIU Shiwen
+2015	GAC Group World Tour Japan Open Kobe 2015	LIU Fei (CHN)	WU Yang (CHN)	LIN Ye (CAN)	ZHOU Yihan (SGP)	WD	Main Draw	Final	3 - 1	11:6 7:11 11:9 11:5	LIU Fei	WU Yang
+2015	GAC Group World Tour Japan Open Kobe 2015	CHEN Meng (CHN)	ZHU Yuling (MAC)	SAMARA Elizabeta (ROU)	SZOCS Bernadette (ROU)	WD	Qualification	QR16	3 - 0	11:9 11:9 11:8	CHEN Meng	ZHU Yuling
+2015	GAC Group World Tour Japan Open Kobe 2015	LAM Yee Lok (HKG)	ZHU Chengzhu (HKG)	JEON Jihee (KOR)	YANG Ha Eun (KOR)	WD	Main Draw	R16	1 - 3	3:11 11:7 4:11 3:11	JEON Jihee	YANG Ha Eun
+2015	GAC Group World Tour Japan Open Kobe 2015	LEE Ho Ching (HKG)	TIE Yana (HKG)	LEE Seul (KOR)	LEE Zion (KOR)	WD	Main Draw	R16	3 - 2	11:9 10:12 11:7 4:11 11:6	LEE Ho Ching	TIE Yana
+2015	GAC Group World Tour Japan Open Kobe 2015	LEE Ho Ching (HKG)	TIE Yana (HKG)	LIN Ye (CAN)	ZHOU Yihan (SGP)	WD	Main Draw	QuarterFinal	2 - 3	10:12 11:6 11:3 7:11 9:11	LIN Ye	ZHOU Yihan
+2015	GAC Group World Tour Japan Open Kobe 2015	DOO Hoi Kem (HKG)	JIANG Huajun (HKG)	LIU Fei (CHN)	WU Yang (CHN)	WD	Main Draw	SemiFinal	1 - 3	4:11 5:11 11:8 6:11	LIU Fei	WU Yang
+2015	GAC Group World Tour Japan Open Kobe 2015	LAM Yee Lok (HKG)	ZHU Chengzhu (HKG)	MAEDA Miyu (JPN)	MORI Sakura (JPN)	WD	Qualification	QR16	3 - 1	11:3 5:11 11:8 11:8	LAM Yee Lok	ZHU Chengzhu
+2015	GAC Group World Tour Japan Open Kobe 2015	KITAOKA Eriko (JPN)	SHOJI Yuki (JPN)	DOO Hoi Kem (HKG)	JIANG Huajun (HKG)	WD	Main Draw	R16	1 - 3	11:8 3:11 10:12 1:11	DOO Hoi Kem	JIANG Huajun
+2015	GAC Group World Tour Japan Open Kobe 2015	HAMAMOTO Yui (AUT)	KATO Miyu (JPN)	CHEN Meng (CHN)	ZHU Yuling (MAC)	WD	Main Draw	R16	0 - 3	7:11 9:11 7:11	CHEN Meng	ZHU Yuling
+2015	GAC Group World Tour Japan Open Kobe 2015	NIWA Misato (JPN)	YAMAMOTO Rei (JPN)	DAS Ankita (IND)	DAS Mouma (IND)	WD	Qualification	QR32	3 - 1	9:11 11:3 11:9 11:9	NIWA Misato	YAMAMOTO Rei
+2015	GAC Group World Tour Japan Open Kobe 2015	SUH Hyo Won (KOR)	YU Sora (KOR)	HU Melek (TUR)	LI Jiao (NED)	WD	Qualification	QR16	3 - 1	5:11 11:9 11:9 11:4	SUH Hyo Won	YU Sora
+2015	GAC Group World Tour Japan Open Kobe 2015	LEE Seul (KOR)	LEE Zion (KOR)	HAYATA Hina (JPN)	SATO Hitomi (JPN)	WD	Qualification	QR16	3 - 2	11:9 11:6 8:11 5:11 13:11	LEE Seul	LEE Zion
+2015	GAC Group World Tour Japan Open Kobe 2015	BOLLMEIER Nadine (GER)	TIKHOMIROVA Anna (RUS)	DING Ning (CHN)	LIU Shiwen (CHN)	WD	Main Draw	R16	0 - 3	6:11 2:11 3:11	DING Ning	LIU Shiwen
+2015	GAC Group World Tour Japan Open Kobe 2015	BOLLMEIER Nadine (GER)	TIKHOMIROVA Anna (RUS)	MINAGAWA Yuka (JPN)	NAGASAKI Miyu (JPN)	WD	Qualification	QR32	3 - 1	13:11 8:11 11:3 14:12	BOLLMEIER Nadine	TIKHOMIROVA Anna
+2015	GAC Group World Tour Japan Open Kobe 2015	BOLLMEIER Nadine (GER)	TIKHOMIROVA Anna (RUS)	HSU Hui-Tsun (TPE)	LEE I-Chen (TPE)	WD	Qualification	QR16	3 - 1	11:8 8:11 11:8 11:9	BOLLMEIER Nadine	TIKHOMIROVA Anna
+2015	GAC Group World Tour Japan Open Kobe 2015	FENG Tianwei (SGP)	YU Mengyu (SGP)	SUH Hyo Won (KOR)	YU Sora (KOR)	WD	Main Draw	R16	3 - 1	9:11 11:5 11:2 11:7	FENG Tianwei	YU Mengyu
+2015	GAC Group World Tour Japan Open Kobe 2015	LIN Ye (CAN)	ZHOU Yihan (SGP)	DOLGIKH Maria (RUS)	MIKHAILOVA Polina (RUS)	WD	Main Draw	R16	3 - 1	8:11 12:10 17:15 11:3	LIN Ye	ZHOU Yihan
+2015	GAC Group World Tour Japan Open Kobe 2015	FENG Tianwei (SGP)	YU Mengyu (SGP)	DOO Hoi Kem (HKG)	JIANG Huajun (HKG)	WD	Main Draw	QuarterFinal	1 - 3	8:11 9:11 20:18 7:11	DOO Hoi Kem	JIANG Huajun
+2015	GAC Group World Tour Japan Open Kobe 2015	LIN Ye (CAN)	ZHOU Yihan (SGP)	DING Ning (CHN)	LIU Shiwen (CHN)	WD	Main Draw	SemiFinal	3 - 0	11:8 11:6 11:8	LIN Ye	ZHOU Yihan
+2015	GAC Group World Tour Japan Open Kobe 2015	LIN Ye (CAN)	ZHOU Yihan (SGP)	NIWA Misato (JPN)	YAMAMOTO Rei (JPN)	WD	Qualification	QR16	3 - 0	11:8 11:2 11:8	LIN Ye	ZHOU Yihan
+2015	GAC Group World Tour Japan Open Kobe 2015	CHENG I-Ching (TPE)	HUANG Yi-Hua (TPE)	LIU Fei (CHN)	WU Yang (CHN)	WD	Main Draw	R16	1 - 3	14:12 10:12 9:11 4:11	LIU Fei	WU Yang
+2015	GAC Group World Tour Japan Open Kobe 2015	CHENG Hsien-Tzu (TPE)	CHEN Szu-Yu (TPE)	LIU Fei (CHN)	WU Yang (CHN)	WD	Qualification	QR16	0 - 3	9:11 8:11 5:11	LIU Fei	WU Yang

@@ -5,3 +5,39 @@
 参赛人数：28
 开始日期：2015-10-30
 结束日期：2015-11-01
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 28
+
+2015	Women's World Cup Sendai 2015	CHENG I-Ching (TPE)		LAY Jian Fang (AUS)		WS	Qualification		4 - 0	11:8 11:7 11:5 11:5	CHENG I-Ching	
+2015	Women's World Cup Sendai 2015	CHENG I-Ching (TPE)		LIU Jia (AUT)		WS	Qualification		0 - 4	7:11 3:11 7:11 8:11	LIU Jia	
+2015	Women's World Cup Sendai 2015	LIU Jia (AUT)		LAY Jian Fang (AUS)		WS	Qualification		4 - 2	11:6 4:11 11:6 7:11 11:8 11:6	LIU Jia	
+2015	Women's World Cup Sendai 2015	DOO Hoi Kem (HKG)		MESHREF Dina (EGY)		WS	Qualification		2 - 4	12:10 8:11 4:11 5:11 11:4 12:14	MESHREF Dina	
+2015	Women's World Cup Sendai 2015	DOO Hoi Kem (HKG)		LI Jiao (NED)		WS	Qualification		1 - 4	7:11 11:3 13:15 14:16 4:11	LI Jiao	
+2015	Women's World Cup Sendai 2015	LI Jiao (NED)		MESHREF Dina (EGY)		WS	Qualification		4 - 0	11:7 11:5 11:5 11:4	LI Jiao	
+2015	Women's World Cup Sendai 2015	HU Melek (TUR)		ZHANG Mo (CAN)		WS	Qualification		4 - 2	9:11 12:10 11:7 11:9 4:11 12:10	HU Melek	
+2015	Women's World Cup Sendai 2015	HU Melek (TUR)		IVANCAN Irene (GER)		WS	Qualification		4 - 2	11:8 10:12 11:9 11:9 7:11 11:2	HU Melek	
+2015	Women's World Cup Sendai 2015	IVANCAN Irene (GER)		ZHANG Mo (CAN)		WS	Qualification		4 - 1	11:8 11:5 11:13 11:4 11:4	IVANCAN Irene	
+2015	Women's World Cup Sendai 2015	SOLJA Petrissa (GER)		KUMAHARA Luca (BRA)		WS	Qualification		4 - 2	10:12 11:9 11:7 2:11 11:2 11:3	SOLJA Petrissa	
+2015	Women's World Cup Sendai 2015	SOLJA Petrissa (GER)		POTA Georgina (HUN)		WS	Qualification		4 - 0	15:13 11:4 11:7 11:7	SOLJA Petrissa	
+2015	Women's World Cup Sendai 2015	POTA Georgina (HUN)		KUMAHARA Luca (BRA)		WS	Qualification		4 - 1	11:6 11:8 11:5 3:11 11:8	POTA Georgina	
+2015	Women's World Cup Sendai 2015	LIU Shiwen (CHN)		CHENG I-Ching (TPE)		WS	Main Draw	R16	4 - 1	12:10 11:4 8:11 11:3 11:5	LIU Shiwen	
+2015	Women's World Cup Sendai 2015	HU Melek (TUR)		LI Jie (NED)		WS	Main Draw	R16	4 - 0	11:4 13:11 13:11 11:5	HU Melek	
+2015	Women's World Cup Sendai 2015	FENG Tianwei (SGP)		SOLJA Petrissa (GER)		WS	Main Draw	R16	0 - 4	7:11 8:11 4:11 10:12	SOLJA Petrissa	
+2015	Women's World Cup Sendai 2015	MESHREF Dina (EGY)		FUKUHARA Ai (JPN)		WS	Main Draw	R16	1 - 4	4:11 11:6 3:11 13:15 6:11	FUKUHARA Ai	
+2015	Women's World Cup Sendai 2015	ISHIKAWA Kasumi (JPN)		IVANCAN Irene (GER)		WS	Main Draw	R16	4 - 0	11:4 11:6 11:7 11:3	ISHIKAWA Kasumi	
+2015	Women's World Cup Sendai 2015	LIU Jia (AUT)		SUH Hyo Won (KOR)		WS	Main Draw	R16	4 - 1	9:11 11:9 11:9 11:5 11:7	LIU Jia	
+2015	Women's World Cup Sendai 2015	YANG Ha Eun (KOR)		LI Jiao (NED)		WS	Main Draw	R16	1 - 4	12:10 9:11 8:11 7:11 8:11	LI Jiao	
+2015	Women's World Cup Sendai 2015	POTA Georgina (HUN)		ZHU Yuling (MAC)		WS	Main Draw	R16	3 - 4	12:10 12:10 11:8 5:11 8:11 7:11 6:11	ZHU Yuling	
+2015	Women's World Cup Sendai 2015	LIU Shiwen (CHN)		HU Melek (TUR)		WS	Main Draw	QuarterFinal	4 - 1	10:12 11:4 11:3 11:1 11:5	LIU Shiwen	
+2015	Women's World Cup Sendai 2015	SOLJA Petrissa (GER)		FUKUHARA Ai (JPN)		WS	Main Draw	QuarterFinal	4 - 3	8:11 6:11 2:11 14:12 11:5 11:8 11:6	SOLJA Petrissa	
+2015	Women's World Cup Sendai 2015	ISHIKAWA Kasumi (JPN)		LIU Jia (AUT)		WS	Main Draw	QuarterFinal	4 - 2	11:8 6:11 5:11 17:15 11:3 11:7	ISHIKAWA Kasumi	
+2015	Women's World Cup Sendai 2015	LI Jiao (NED)		ZHU Yuling (MAC)		WS	Main Draw	QuarterFinal	4 - 2	11:8 9:11 11:9 11:8 2:11 12:10	LI Jiao	
+2015	Women's World Cup Sendai 2015	LIU Shiwen (CHN)		SOLJA Petrissa (GER)		WS	Main Draw	SemiFinal	4 - 0	11:8 12:10 11:3 11:3	LIU Shiwen	
+2015	Women's World Cup Sendai 2015	ISHIKAWA Kasumi (JPN)		LI Jiao (NED)		WS	Main Draw	SemiFinal	4 - 2	6:11 9:11 11:8 11:6 15:13 11:5	ISHIKAWA Kasumi	
+2015	Women's World Cup Sendai 2015	LIU Shiwen (CHN)		ISHIKAWA Kasumi (JPN)		WS	Main Draw	Final	4 - 0	14:12 11:2 11:9 11:2	LIU Shiwen	
+2015	Women's World Cup Sendai 2015	SOLJA Petrissa (GER)		LI Jiao (NED)		WS	Position Draw	2	4 - 2	7:11 6:11 11:2 11:8 12:10 11:8	SOLJA Petrissa	

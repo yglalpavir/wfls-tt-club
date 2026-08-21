@@ -226,12 +226,6 @@ End
 2015	GAC Group World Tour Polish Open Warsaw 2015	HIRANO Miu (JPN)		SATO Hitomi (JPN)		U21WS	Main Draw	Final	3 - 2	11:7 11:6 6:11 5:11 11:7	HIRANO Miu
 
 
-Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
-Display #
-
-
-100
-Total: 60
 
 2015	GAC Group World Tour Polish Open Warsaw 2015	PFEFFER Simon (AUT)	SERDAROGLU David (AUT)	CHENG Jingqi (CHN)	YAN An (CHN)	MD	Qualification	QR32	0 - 3	9:11 8:11 5:11	CHENG Jingqi	YAN An
 2015	GAC Group World Tour Polish Open Warsaw 2015	ALLEGRO Martin (BEL)	JEAN Lauric (BEL)	FLORE Tristan (FRA)	LEBESSON Emmanuel (FRA)	MD	Qualification	QR32	0 - 3	6:11 9:11 10:12	FLORE Tristan	LEBESSON Emmanuel
@@ -294,13 +288,6 @@ Total: 60
 2015	GAC Group World Tour Polish Open Warsaw 2015	LIAO Cheng-Ting (TPE)	YANG Tzu-Yi (TPE)	KARLSSON Kristian (SWE)	KARLSSON Mattias (SWE)	MD	Qualification	QR32	1 - 3	11:9 5:11 3:11 7:11	KARLSSON Kristian	KARLSSON Mattias
 2015	GAC Group World Tour Polish Open Warsaw 2015	GERASSIMENKO Kirill (KAZ)	LIEVSHYN Vitaliy (UKR)	FLORE Tristan (FRA)	LEBESSON Emmanuel (FRA)	MD	Qualification	QR64	0 - 3	10:12 1:11 7:11	FLORE Tristan	LEBESSON Emmanuel
 
-
-Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
-Display #
-
-
-100
-Total: 44
 
 2015	GAC Group World Tour Polish Open Warsaw 2015	CLARE Shenique (JAM)	TAPPER Melissa (AUS)	MATSUDAIRA Shiho (JPN)	SAKAI Haruka (JPN)	WD	Qualification	QR32	1 - 3	8:11 7:11 12:10 5:11	MATSUDAIRA Shiho	SAKAI Haruka
 2015	GAC Group World Tour Polish Open Warsaw 2015	CHEN Meng (CHN)	WU Yang (CHN)	GUISNEL Oceane (FRA)	MIGOT Marie (FRA)	WD	Qualification	QR32	3 - 1	11:4 8:11 11:6 11:7	CHEN Meng	WU Yang

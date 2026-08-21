@@ -66,6 +66,7 @@ const EVENT_COLORS = {
 // ========================================
 let allData = {};
 let charts = [];
+let lastStats = null;
 
 // ========================================
 // DOM 引用
@@ -94,17 +95,28 @@ function initTheme() {
         $("themeToggle").innerHTML = isDark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
         // 重绘图表以适应暗色主题
         setTimeout(() => destroyCharts(), 100);
-        setTimeout(() => renderCharts(), 200);
+        setTimeout(() => renderCharts(lastStats), 200);
     });
 }
 
 function bindEvents() {
-    $("refreshBtn").addEventListener("click", () => {
+    $("refreshBtn").addEventListener("click", (e) => {
+        const btn = e.currentTarget;
+        if (btn.dataset.busy === "1") return;
+        btn.dataset.busy = "1";
+        btn.disabled = true;
+        btn.querySelector("i").classList.add("spinning");
+        const chips = $("heroChips");
+        if (chips) chips.innerHTML = '<span class="chip"><i class="fa-solid fa-spinner fa-spin"></i>正在重新加载…</span>';
         allData = {};
         destroyCharts();
         $("dashboardContent").style.display = "none";
         $("loadingView").style.display = "";
-        loadAllData();
+        loadAllData().finally(() => {
+            btn.dataset.busy = "0";
+            btn.disabled = false;
+            btn.querySelector("i").classList.remove("spinning");
+        });
     });
 }
 
@@ -452,14 +464,55 @@ function computeStats() {
     // --- 全部 WTT 数据总计（各分项合计即为总数，不再与旧版主表重复计算）---
     s.wttGrandTotal = s.wttDiscTotal;
 
+    // --- 年度 × 分项 记录矩阵（用于历年趋势图）---
+    s.wttYearly = {};
+    s.wttYears = [];
+    const yearly = {};
+
+    // --- 选手出场统计（胜+负，跨分项聚合，用于 TOP 榜）---
+    const playerMap = new Map();
+    for (const disc of discKeys) {
+        const data = allData["disc_" + disc];
+        if (!Array.isArray(data)) continue;
+        for (const r of data) {
+            if (!isRealEntry(r)) continue;
+            const dt = r["日期"];
+            if (typeof dt === "string" && /^\d{4}/.test(dt)) {
+                const y = dt.slice(0, 4);
+                if (!yearly[y]) yearly[y] = { ms:0, ws:0, wd:0, md:0, xd:0 };
+                yearly[y][disc]++;
+            }
+            const w = r["胜者"], l = r["负者"];
+            if (w) {
+                let o = playerMap.get(w);
+                if (!o) { o = { name:w, wins:0, losses:0 }; playerMap.set(w, o); }
+                o.wins++;
+            }
+            if (l) {
+                let o = playerMap.get(l);
+                if (!o) { o = { name:l, wins:0, losses:0 }; playerMap.set(l, o); }
+                o.losses++;
+            }
+        }
+    }
+    s.wttYears = Object.keys(yearly).sort();
+    s.wttYearly = yearly;
+    s.wttTopPlayers = Array.from(playerMap.values())
+        .map(o => ({ name:o.name, wins:o.wins, losses:o.losses, total:o.wins + o.losses }))
+        .sort((a, b) => b.total - a.total)
+        .slice(0, 10);
+
     return s;
 }
 
 // ========================================
 // 仪表盘渲染
 // ========================================
+const DISC_KEYS = ["ms", "ws", "wd", "md", "xd"];
+
 function renderDashboard(loadTime, hiddenVersions) {
     const stats = computeStats();
+    lastStats = stats;
     if (hiddenVersions) {
         stats.coreNewsHiddenVersions = hiddenVersions.news;
         stats.coreCompetitionsHiddenVersions = hiddenVersions.competitions;
@@ -468,383 +521,606 @@ function renderDashboard(loadTime, hiddenVersions) {
     const container = $("dashboardContent");
     container.innerHTML = "";
 
-    // 更新时间
-    const updatedDiv = document.createElement("div");
-    updatedDiv.className = "dash-updated";
-    updatedDiv.textContent = "数据加载完成 · 耗时 "+loadTime+"s · 更新于 "+new Date().toLocaleString("zh-CN");
-    container.appendChild(updatedDiv);
+    // ========== 页头元信息 chips（标题与操作按钮为静态页头）==========
+    updateHeroChips(loadTime, stats);
 
-    // ========== 第一部分：概览卡片 ==========
-    container.appendChild(createSectionTitle("fa-solid fa-gauge-high", "数据总览"));
+    // ========== 第一部分：KPI 概览卡片 ==========
+    container.appendChild(secTitle("fa-solid fa-gauge-high", "数据总览"));
 
     const overviewCards = [
         { icon:"fa-solid fa-table-list", label:"WTT 比赛记录", value:stats.wttGrandTotal, sub:"五单项合计", cls:"accent-blue" },
         { icon:"fa-solid fa-users", label:"WTT 选手总数", value:stats.wttPlayers, sub:"初始积分在册选手", cls:"accent-purple" },
         { icon:"fa-solid fa-calendar-days", label:"WTT 赛季数", value:stats.wttSeasons, sub:"赛季管理", cls:"accent-green" },
-        { icon:"fa-solid fa-weight-scale", label:"WTT 赛事类型", value:stats.wttEventTypes, sub:"不同级别赛事", cls:"accent-warning" },
+        { icon:"fa-solid fa-ranking-star", label:"WTT 赛事类型", value:stats.wttEventTypes, sub:"不同级别赛事", cls:"accent-warning" },
         { icon:"fa-solid fa-id-card", label:"球员档案", value:stats.corePlayers, sub:"统一球员数据", cls:"accent-info" },
-        { icon:"fa-solid fa-newspaper", label:"新闻/赛事", value:(stats.coreNews + stats.coreCompetitions), sub:"新闻:"+stats.coreNews+(stats.coreNewsHidden?"(隐藏"+stats.coreNewsHidden+")":"")+" · 赛事:"+stats.coreCompetitions+(stats.coreCompetitionsHidden?"(隐藏"+stats.coreCompetitionsHidden+")":""), cls:"accent-danger" },
+        { icon:"fa-solid fa-newspaper", label:"新闻 / 赛事", value:(stats.coreNews + stats.coreCompetitions),
+          sub:`新闻 ${stats.coreNews}${stats.coreNewsHidden ? "(隐藏"+stats.coreNewsHidden+")" : ""} · 赛事 ${stats.coreCompetitions}${stats.coreCompetitionsHidden ? "(隐藏"+stats.coreCompetitionsHidden+")" : ""}`, cls:"accent-danger" },
     ];
-    container.appendChild(createCardsRow(overviewCards));
+    container.appendChild(createKpiRow(overviewCards));
 
-    // ========== 第二部分：WTT 分项详情 ==========
-    container.appendChild(createSectionTitle("fa-solid fa-layer-group", "WTT 五项模块数据量", "共 "+stats.wttDiscTotal+" 条"));
+    // ========== 第二部分：WTT 分项卡片（含占比条）==========
+    container.appendChild(secTitle("fa-solid fa-layer-group", "WTT 五项模块数据量",
+        null, `共 ${stats.wttDiscTotal.toLocaleString()} 条记录`));
 
     const discGrid = document.createElement("div");
-    discGrid.className = "dash-discipline-grid";
-
-    const discKeys = ["ms","ws","wd","md","xd"];
-    for (const disc of discKeys) {
+    discGrid.className = "disc-grid";
+    for (const disc of DISC_KEYS) {
         const cfg = DATA_PATHS.wttDisc[disc];
         const st = stats.wttDiscStats[disc];
         const hasRealData = st.entries > 0;
-        const templateNote = (!hasRealData && st.rawEntries > 0) ? '<div style="font-size:0.65rem;color:var(--dash-warning);margin-top:6px;text-align:center;"><i class="fa-solid fa-triangle-exclamation"></i> 仅有模板数据</div>' : '';
+        const share = stats.wttDiscTotal > 0 ? (st.entries / stats.wttDiscTotal) * 100 : 0;
+        const templateNote = (!hasRealData && st.rawEntries > 0)
+            ? '<div class="disc-warn"><i class="fa-solid fa-triangle-exclamation"></i> 仅有模板数据</div>' : "";
         const card = document.createElement("div");
-        card.className = "dash-disc-card";
-        card.style.opacity = hasRealData ? "1" : "0.55";
+        card.className = "disc-card fade-in" + (hasRealData ? "" : " is-empty");
+        card.style.setProperty("--dc", cfg.color);
         card.innerHTML = `
-            <div class="disc-header">
-                <div class="disc-icon" style="background:${cfg.color};">${disc.toUpperCase()}</div>
-                <div class="disc-name">${cfg.label}<small>${hasRealData ? st.dateFrom+' ~ '+st.dateTo : '暂无真实数据'}</small></div>
-            </div>
-            <div class="disc-stats">
-                <div class="disc-stat">
-                    <div class="disc-stat-val">${st.entries.toLocaleString()}</div>
-                    <div class="disc-stat-label">比赛记录</div>
-                </div>
-                <div class="disc-stat">
-                    <div class="disc-stat-val">${st.uniquePlayers}</div>
-                    <div class="disc-stat-label">独特选手</div>
+            <div class="disc-head">
+                <div class="disc-glyph">${disc.toUpperCase()}</div>
+                <div class="disc-name">${escHtml(cfg.label)}
+                    <small>${hasRealData ? escHtml(st.dateFrom) + " ~ " + escHtml(st.dateTo) : "暂无真实数据"}</small>
                 </div>
             </div>
+            <div class="disc-main-val"><b data-count="${st.entries}">${st.entries.toLocaleString()}</b><span>比赛记录</span></div>
+            <div class="disc-meta-row"><span>独特选手 <b>${st.uniquePlayers}</b></span><span>占全部记录 <b>${share.toFixed(1)}%</b></span></div>
+            <div class="disc-share-track"><div class="disc-share-fill" data-w="${share.toFixed(1)}"></div></div>
             ${templateNote}
         `;
         discGrid.appendChild(card);
     }
     container.appendChild(discGrid);
 
-    // ========== 第三部分：分项数据可视化 ==========
-    container.appendChild(createSectionTitle("fa-solid fa-chart-bar", "WTT 数据分布"));
+    // ========== 第三部分：可视化图表 ==========
+    container.appendChild(secTitle("fa-solid fa-chart-line", "WTT 数据分布"));
 
-    const chartsRow = document.createElement("div");
-    chartsRow.className = "dash-charts-row";
-    chartsRow.id = "chartsRow";
-    container.appendChild(chartsRow);
+    // 历年趋势（通栏）
+    const trendPanel = document.createElement("div");
+    trendPanel.className = "panel fade-in";
+    trendPanel.style.marginBottom = "18px";
+    trendPanel.innerHTML = `
+        <div class="panel-header">
+            <span class="panel-title"><i class="fa-solid fa-chart-column"></i> 历年比赛记录趋势（按分项堆叠）</span>
+            <span class="panel-note">${stats.wttYears.length ? stats.wttYears[0] + " – " + stats.wttYears[stats.wttYears.length-1] : ""}</span>
+        </div>
+        <div class="panel-pad"><div class="chart-box tall"><canvas id="chartTrend"></canvas></div></div>`;
+    container.appendChild(trendPanel);
 
-    // ========== 第四部分：赛事类型分布表（聚合所有分项）==========
-    container.appendChild(createSectionTitle("fa-solid fa-list-check", "WTT 赛事类型分布（全部分项）"));
+    // 分项对比 + 赛事类型占比
+    const chartsGrid = document.createElement("div");
+    chartsGrid.className = "grid grid-2";
+    const box1 = document.createElement("div");
+    box1.className = "panel fade-in";
+    box1.innerHTML = `
+        <div class="panel-header">
+            <span class="panel-title"><i class="fa-solid fa-chart-simple"></i> 五单项比赛记录数</span>
+            <span class="panel-note">条</span>
+        </div>
+        <div class="panel-pad"><div class="chart-box"><canvas id="chartDiscBar"></canvas></div></div>`;
+    const box2 = document.createElement("div");
+    box2.className = "panel fade-in";
+    box2.innerHTML = `
+        <div class="panel-header">
+            <span class="panel-title"><i class="fa-solid fa-chart-pie"></i> 赛事类型占比（全部分项）</span>
+        </div>
+        <div class="panel-pad"><div class="chart-box"><canvas id="chartEventPie"></canvas></div></div>`;
+    chartsGrid.appendChild(box1);
+    chartsGrid.appendChild(box2);
+    container.appendChild(chartsGrid);
 
+    // ========== 第四部分：TOP 选手 + 赛事类型明细 ==========
+    container.appendChild(secTitle("fa-solid fa-list-check", "记录构成与活跃选手"));
+
+    const detailGrid = document.createElement("div");
+    detailGrid.className = "grid grid-detail";
+
+    // TOP 选手面板
+    const rankPanel = document.createElement("div");
+    rankPanel.className = "panel fade-in";
+    let rankRows = "";
+    if (stats.wttTopPlayers.length > 0) {
+        const maxVal = stats.wttTopPlayers[0].total || 1;
+        stats.wttTopPlayers.forEach((p, i) => {
+            const pct = ((p.total / maxVal) * 100).toFixed(1);
+            rankRows += `
+                <div class="rank-row">
+                    <div class="rank-no r${i+1}">${i+1}</div>
+                    <div class="rank-body">
+                        <div class="rank-name">${escHtml(p.name)}</div>
+                        <div class="rank-track"><div class="rank-fill" style="width:${pct}%"></div></div>
+                        <div class="rank-sub">胜 ${p.wins.toLocaleString()} · 负 ${p.losses.toLocaleString()}</div>
+                    </div>
+                    <div class="rank-val">${p.total.toLocaleString()}</div>
+                </div>`;
+        });
+    } else {
+        rankRows = '<tr><td colspan="3" class="empty-cell">暂无数据</td></tr>';
+    }
+    rankPanel.innerHTML = `
+        <div class="panel-header">
+            <span class="panel-title"><i class="fa-solid fa-fire"></i> 最活跃选手 TOP ${Math.max(stats.wttTopPlayers.length, 1)}</span>
+            <span class="panel-note">按出场场次（胜+负）</span>
+        </div>
+        <div class="panel-pad">${rankRows.startsWith("<tr") ? `<table class="tbl"><tbody>${rankRows}</tbody></table>` : rankRows}</div>`;
+    detailGrid.appendChild(rankPanel);
+
+    // 赛事类型分布表
     const eventPanel = document.createElement("div");
-    eventPanel.className = "dash-panel";
+    eventPanel.className = "panel fade-in";
     const eventTypes = Object.entries(stats.wttByEvent).sort((a,b) => b[1] - a[1]);
+    const maxEvent = eventTypes.length ? eventTypes[0][1] : 1;
     let eventRows = "";
     eventTypes.forEach(([type, count], i) => {
-        const color = EVENT_COLORS[type] || "#6c757d";
-        const pct = stats.wttDiscTotal > 0 ? ((count / stats.wttDiscTotal) * 100).toFixed(1) : 0;
+        const color = EVENT_COLORS[type] || "#8a97ab";
+        const pct = stats.wttDiscTotal > 0 ? ((count / stats.wttDiscTotal) * 100).toFixed(1) : "0";
+        const barPct = ((count / maxEvent) * 100).toFixed(1);
         eventRows += `<tr>
-            <td>${i+1}</td>
-            <td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${color};margin-right:6px;"></span>${escHtml(type)}</td>
+            <td class="muted mono">${i+1}</td>
+            <td><span class="dot" style="background:${color};"></span>${escHtml(type)}</td>
             <td class="num-cell">${count.toLocaleString()}</td>
             <td class="num-cell">${pct}%</td>
-            <td style="width:120px;"><div style="height:6px;border-radius:3px;background:${color};width:${pct}%;min-width:2px;"></div></td>
+            <td style="width:150px;"><div class="mini-bar"><div class="mini-bar-fill" style="width:${barPct}%;background:${color};"></div></div></td>
         </tr>`;
     });
     eventPanel.innerHTML = `
-        <div class="dash-panel-header">
-            <span class="dash-panel-title"><i class="fa-solid fa-table"></i> 赛事类型明细</span>
-            <span style="font-size:0.78rem;color:var(--dash-text-muted);">总计 ${stats.wttDiscTotal.toLocaleString()} 条</span>
+        <div class="panel-header">
+            <span class="panel-title"><i class="fa-solid fa-table"></i> 赛事类型明细</span>
+            <span class="panel-note">总计 ${stats.wttDiscTotal.toLocaleString()} 条</span>
         </div>
-        <div class="dash-table-wrap">
-            <table class="dash-table">
-                <thead><tr><th style="width:40px;">#</th><th>赛事类型</th><th style="width:100px;">记录数</th><th style="width:80px;">占比</th><th style="width:120px;"></th></tr></thead>
-                <tbody>${eventRows || '<tr><td colspan="5" class="dash-empty">暂无数据</td></tr>'}</tbody>
+        <div class="table-wrap">
+            <table class="tbl">
+                <thead><tr><th style="width:44px;">#</th><th>赛事类型</th><th style="text-align:right;width:90px;">记录数</th><th style="text-align:right;width:80px;">占比</th><th style="width:150px;">分布</th></tr></thead>
+                <tbody>${eventRows || '<tr><td colspan="5" class="empty-cell">暂无数据</td></tr>'}</tbody>
             </table>
         </div>`;
-    container.appendChild(eventPanel);
+    detailGrid.appendChild(eventPanel);
+    container.appendChild(detailGrid);
 
-    // ========== 第五部分：核心数据明细表 ==========
-    container.appendChild(createSectionTitle("fa-solid fa-database", "核心数据文件明细"));
-
-    const corePanel = document.createElement("div");
-    corePanel.className = "dash-panel";
-    const coreRows = [
-        { name:"players.json", icon:"fa-id-card", count:stats.corePlayers, unit:"位球员档案" },
-        { name:"members.json", icon:"fa-users", count:stats.coreMembers, unit:"位成员" },
-        { name:"news/", icon:"fa-newspaper", count:stats.coreNews, unit:"篇新闻（独立文件+index.json）" + (stats.coreNewsHidden ? `，隐藏 ${stats.coreNewsHidden} 篇` : "") + (stats.coreNewsHiddenVersions ? `，隐藏版本 ${stats.coreNewsHiddenVersions} 个` : "") },
-        { name:"competitions/", icon:"fa-trophy", count:stats.coreCompetitions, unit:"场赛事（独立文件+index.json）" + (stats.coreCompetitionsHidden ? `，隐藏 ${stats.coreCompetitionsHidden} 场` : "") + (stats.coreCompetitionsHiddenVersions ? `，隐藏版本 ${stats.coreCompetitionsHiddenVersions} 个` : "") },
-        { name:"score-log.json", icon:"fa-table-list", count:stats.coreScoreLog, unit:"条比赛记录" },
-        { name:"seasons.json", icon:"fa-calendar-days", count:stats.coreSeasons, unit:"个赛季" },
-        { name:"qa/", icon:"fa-circle-question", count:stats.coreQa, unit:"条问答（独立文件+index.json）" + (stats.coreQaHidden ? `，隐藏 ${stats.coreQaHidden} 条` : "") + (stats.coreQaHiddenVersions ? `，隐藏版本 ${stats.coreQaHiddenVersions} 个` : "") },
-        { name:"changelog.json", icon:"fa-clock-rotate-left", count:stats.coreChangelog, unit:"条更新日志" },
-        { name:"draws.json", icon:"fa-diagram-project", count:stats.coreDraws, unit:"张对阵表" },
-        { name:"initial-scores.json", icon:"fa-chart-simple", count:stats.coreInitPlayers, unit:"位球员(legacy)" },
-        { name:"event-coefficient.json", icon:"fa-weight-scale", count:stats.coreEventTypes, unit:"种赛事类型" },
-        { name:"player-tags.json", icon:"fa-tags", count:stats.playerTagCount, unit:"位球员 · "+stats.uniqueTags+" 种标签" },
-        { name:"about.json", icon:"fa-circle-info", count:stats.aboutLastUpdated, unit:"" },
+    // ========== 第五部分：核心数据文件明细（卡片墙）==========
+    const warnPill = txt => `<span class="pill pill-warn">${escHtml(txt)}</span>`;
+    const CORE_FILES = [
+        { name:"players.json", icon:"fa-id-card", count:stats.corePlayers, unit:"位球员档案", cls:"f-blue" },
+        { name:"members.json", icon:"fa-users", count:stats.coreMembers, unit:"位成员", cls:"f-green" },
+        { name:"news/", icon:"fa-newspaper", count:stats.coreNews, unit:"篇新闻", cls:"f-danger",
+          warn:(stats.coreNewsHidden ? warnPill("隐藏 " + stats.coreNewsHidden) : "") + (stats.coreNewsHiddenVersions ? warnPill("隐藏版本 " + stats.coreNewsHiddenVersions) : "") },
+        { name:"competitions/", icon:"fa-trophy", count:stats.coreCompetitions, unit:"场赛事", cls:"f-purple",
+          warn:(stats.coreCompetitionsHidden ? warnPill("隐藏 " + stats.coreCompetitionsHidden) : "") + (stats.coreCompetitionsHiddenVersions ? warnPill("隐藏版本 " + stats.coreCompetitionsHiddenVersions) : "") },
+        { name:"score-log.json", icon:"fa-table-list", count:stats.coreScoreLog, unit:"条比赛记录", cls:"f-info" },
+        { name:"seasons.json", icon:"fa-calendar-days", count:stats.coreSeasons, unit:"个赛季", cls:"f-green" },
+        { name:"qa/", icon:"fa-circle-question", count:stats.coreQa, unit:"条问答", cls:"f-info",
+          warn:(stats.coreQaHidden ? warnPill("隐藏 " + stats.coreQaHidden) : "") + (stats.coreQaHiddenVersions ? warnPill("隐藏版本 " + stats.coreQaHiddenVersions) : "") },
+        { name:"changelog.json", icon:"fa-clock-rotate-left", count:stats.coreChangelog, unit:"条更新日志", cls:"f-green" },
+        { name:"draws.json", icon:"fa-diagram-project", count:stats.coreDraws, unit:"张对阵表", cls:"f-purple" },
+        { name:"initial-scores.json", icon:"fa-chart-simple", count:stats.coreInitPlayers, unit:"位球员 (legacy)", cls:"f-warning" },
+        { name:"event-coefficient.json", icon:"fa-weight-scale", count:stats.coreEventTypes, unit:"种赛事类型", cls:"f-warning" },
+        { name:"player-tags.json", icon:"fa-tags", count:stats.playerTagCount, unit:`位球员 · ${stats.uniqueTags} 种标签`, cls:"f-purple" },
+        { name:"about.json", icon:"fa-circle-info", count:stats.aboutLastUpdated, unit:"最近更新", cls:"f-blue" },
     ];
-    let coreTableRows = "";
-    coreRows.forEach(r => {
-        const val = typeof r.count === "number" ? r.count.toLocaleString() : r.count;
-        coreTableRows += `<tr>
-            <td><i class="fa-solid ${r.icon}" style="color:var(--primary-blue);width:18px;"></i> <span class="mono">${r.name}</span></td>
-            <td class="num-cell">${val}</td>
-            <td style="color:var(--dash-text-muted);">${r.unit}</td>
-        </tr>`;
-    });
-    corePanel.innerHTML = `
-        <div class="dash-panel-header">
-            <span class="dash-panel-title"><i class="fa-solid fa-table"></i> 核心文件清单</span>
-        </div>
-        <div class="dash-table-wrap">
-            <table class="dash-table">
-                <thead><tr><th>文件名</th><th style="width:100px;">数据量</th><th style="width:120px;">单位</th></tr></thead>
-                <tbody>${coreTableRows}</tbody>
-            </table>
-        </div>`;
-    container.appendChild(corePanel);
 
-    // ========== 第六部分：WTT 赛季 & 核心赛季 ==========
-    container.appendChild(createSectionTitle("fa-solid fa-calendar-days", "赛季管理概览"));
+    container.appendChild(secTitle("fa-solid fa-database", "核心数据文件明细",
+        null, `data/ 目录 · ${CORE_FILES.length} 个文件`));
+
+    const maxCount = Math.max(...CORE_FILES.filter(f => typeof f.count === "number").map(f => f.count), 1);
+    const totalCount = CORE_FILES.reduce((a, f) => a + (typeof f.count === "number" ? f.count : 0), 0);
+
+    const fileGrid = document.createElement("div");
+    fileGrid.className = "file-grid";
+    fileGrid.innerHTML = CORE_FILES.map((f, i) => {
+        const isNum = typeof f.count === "number";
+        const relPct = isNum ? Math.max((f.count / maxCount) * 100, 2) : 0;
+        const sharePct = isNum && totalCount > 0 ? ((f.count / totalCount) * 100).toFixed(1) : "";
+        return `
+        <div class="file-card fade-in ${f.cls}" style="animation-delay:${Math.min(i * 40, 320)}ms">
+            <div class="file-head">
+                <span class="file-icon"><i class="fa-solid ${f.icon}"></i></span>
+                <span class="file-name">${escHtml(f.name)}</span>
+            </div>
+            <div class="file-val">${isNum ? f.count.toLocaleString() : `<span class="file-date">${escHtml(String(f.count))}</span>`}<span class="file-unit">${escHtml(f.unit)}</span></div>
+            ${isNum ? `<div class="mini-bar"><div class="mini-bar-fill" style="width:${relPct.toFixed(1)}%;background:var(--fc);"></div></div>
+            <div class="file-foot"><span>占核心总量 ${sharePct}%</span><span>${f.warn || ""}</span></div>`
+            : `<div class="file-foot"><span>元数据文件</span><span>${f.warn || ""}</span></div>`}
+        </div>`;
+    }).join("");
+    container.appendChild(fileGrid);
+
+    // ========== 第六部分：赛季管理概览 ==========
+    container.appendChild(secTitle("fa-solid fa-calendar-days", "赛季管理概览"));
 
     const seasonsGrid = document.createElement("div");
-    seasonsGrid.className = "dash-charts-row";
+    seasonsGrid.className = "grid grid-2";
 
-    // WTT 赛季 - 按分项类型展示
+    // WTT 赛季 - 按分项分组展示
     const wttSeasonPanel = document.createElement("div");
-    wttSeasonPanel.className = "dash-panel";
+    wttSeasonPanel.className = "panel fade-in";
     let wttSeasonBodyHtml = "";
-    const discKeys2 = ["ms","ws","md","wd","xd"];
-    for (const disc of discKeys2) {
+    for (const disc of DISC_KEYS) {
         const cfg = DATA_PATHS.wttDisc[disc];
         const discSeasons = stats.wttSeasonsPerDisc[disc] || [];
         let discRows = "";
-        if (discSeasons.length > 0) {
-            discSeasons.forEach(s => {
-                discRows += `<tr>
-                    <td><span class="mono">${escHtml(s.id||"")}</span></td>
-                    <td>${escHtml(s.label||"")}</td>
-                    <td class="mono">${escHtml(s.startDate||"")} ~ ${escHtml(s.endDate||"")}</td>
-                    <td>${s.visible ? '<span style="color:var(--dash-success);">✅ 可见</span>' : '<span style="color:var(--dash-text-muted);">❌ 隐藏</span>'}</td>
-                </tr>`;
-            });
-        }
-        const discColor = cfg ? cfg.color : "#6c757d";
-        wttSeasonBodyHtml += `<tr style="background:var(--dash-bg);">
-            <td colspan="4" style="padding:8px 14px;font-weight:700;font-size:0.82rem;color:${discColor};font-family:'Poppins',sans-serif;">
-                <i class="fa-solid fa-table-tennis-paddle-ball"></i> ${cfg ? cfg.label : disc.toUpperCase()}
+        discSeasons.forEach(s => {
+            discRows += `<tr>
+                <td><span class="mono">${escHtml(s.id||"")}</span></td>
+                <td>${escHtml(s.label||"")}</td>
+                <td class="mono muted">${escHtml(s.startDate||"")} ~ ${escHtml(s.endDate||"")}</td>
+                <td>${visPill(s.visible)}</td>
+            </tr>`;
+        });
+        wttSeasonBodyHtml += `<tr class="tbl-group">
+            <td colspan="4" style="color:${cfg.color};">
+                <i class="fa-solid fa-table-tennis-paddle-ball"></i> ${escHtml(cfg.label)}
                 <span style="font-weight:400;color:var(--dash-text-muted);font-size:0.7rem;margin-left:6px;">${discSeasons.length} 个赛季</span>
             </td>
         </tr>`;
-        if (discRows) {
-            wttSeasonBodyHtml += discRows;
-        } else {
-            wttSeasonBodyHtml += `<tr><td colspan="4" class="dash-empty">暂无数据</td></tr>`;
-        }
+        wttSeasonBodyHtml += discRows || `<tr><td colspan="4" class="empty-cell">暂无数据</td></tr>`;
     }
     wttSeasonPanel.innerHTML = `
-        <div class="dash-panel-header">
-            <span class="dash-panel-title"><i class="fa-solid fa-globe"></i> WTT 赛季（按分项）</span>
-            <span style="font-size:0.78rem;color:var(--dash-text-muted);">${stats.wttSeasons} 个赛季</span>
+        <div class="panel-header">
+            <span class="panel-title"><i class="fa-solid fa-globe"></i> WTT 赛季（按分项）</span>
+            <span class="panel-note">${stats.wttSeasons} 个赛季</span>
         </div>
-        <div class="dash-table-wrap">
-            <table class="dash-table">
-                <thead><tr><th>ID</th><th>名称</th><th>日期范围</th><th>状态</th></tr></thead>
-                <tbody>${wttSeasonBodyHtml || '<tr><td colspan="4" class="dash-empty">暂无数据</td></tr>'}</tbody>
+        <div class="table-wrap">
+            <table class="tbl">
+                <thead><tr><th>ID</th><th>名称</th><th>日期范围</th><th style="width:88px;">状态</th></tr></thead>
+                <tbody>${wttSeasonBodyHtml || '<tr><td colspan="4" class="empty-cell">暂无数据</td></tr>'}</tbody>
             </table>
         </div>`;
     seasonsGrid.appendChild(wttSeasonPanel);
 
-    // 核心赛季
+    // 社团赛季
     const coreSeasonPanel = document.createElement("div");
-    coreSeasonPanel.className = "dash-panel";
+    coreSeasonPanel.className = "panel fade-in";
     let coreSeasonRows = "";
-    if (Array.isArray(allData.seasons) && allData.seasons.length > 0) {
+    if (Array.isArray(allData.seasons)) {
         allData.seasons.forEach(s => {
             coreSeasonRows += `<tr>
                 <td><span class="mono">${escHtml(s.id||"")}</span></td>
                 <td>${escHtml(s.label||"")}</td>
-                <td class="mono">${escHtml(s.startDate||"")} ~ ${escHtml(s.endDate||"")}</td>
-                <td>${s.visible ? '<span style="color:var(--dash-success);">✅ 可见</span>' : '<span style="color:var(--dash-text-muted);">❌ 隐藏</span>'}</td>
+                <td class="mono muted">${escHtml(s.startDate||"")} ~ ${escHtml(s.endDate||"")}</td>
+                <td>${visPill(s.visible)}</td>
             </tr>`;
         });
     }
     coreSeasonPanel.innerHTML = `
-        <div class="dash-panel-header">
-            <span class="dash-panel-title"><i class="fa-solid fa-school"></i> 社团赛季</span>
-            <span style="font-size:0.78rem;color:var(--dash-text-muted);">${stats.coreSeasons} 个赛季</span>
+        <div class="panel-header">
+            <span class="panel-title"><i class="fa-solid fa-school"></i> 社团赛季</span>
+            <span class="panel-note">${stats.coreSeasons} 个赛季</span>
         </div>
-        <div class="dash-table-wrap">
-            <table class="dash-table">
-                <thead><tr><th>ID</th><th>名称</th><th>日期范围</th><th>状态</th></tr></thead>
-                <tbody>${coreSeasonRows || '<tr><td colspan="4" class="dash-empty">暂无数据</td></tr>'}</tbody>
+        <div class="table-wrap">
+            <table class="tbl">
+                <thead><tr><th>ID</th><th>名称</th><th>日期范围</th><th style="width:88px;">状态</th></tr></thead>
+                <tbody>${coreSeasonRows || '<tr><td colspan="4" class="empty-cell">暂无数据</td></tr>'}</tbody>
             </table>
         </div>`;
     seasonsGrid.appendChild(coreSeasonPanel);
     container.appendChild(seasonsGrid);
 
-    // ========== 渲染图表 ==========
-    setTimeout(() => renderCharts(stats), 100);
+    // ========== 入场动画 & 图表 ==========
+    requestAnimationFrame(() => {
+        animateCountUps(container);
+        growShareBars(container);
+        renderCharts(stats);
+    });
 }
 
-function createSectionTitle(iconClass, text, badge) {
+// ---------- 渲染辅助 ----------
+function updateHeroChips(loadTime, stats) {
+    const box = $("heroChips");
+    if (!box) return;
+    box.innerHTML = `
+        <span class="chip"><i class="fa-solid fa-bolt"></i>加载耗时 ${escHtml(String(loadTime))}s</span>
+        <span class="chip"><i class="fa-regular fa-clock"></i>${escHtml(new Date().toLocaleString("zh-CN"))}</span>
+        <span class="chip"><i class="fa-solid fa-calendar-days"></i>${escHtml(stats.wttDateFrom)} ~ ${escHtml(stats.wttDateTo)}</span>
+        <span class="chip"><i class="fa-solid fa-database"></i>WTT 记录 ${stats.wttGrandTotal.toLocaleString()} 条</span>`;
+}
+
+function secTitle(iconClass, text, badge, sub) {
     const div = document.createElement("div");
-    div.className = "dash-section-title";
-    div.innerHTML = `<i class="${iconClass}"></i> ${text}`;
+    div.className = "sec-title";
+    div.innerHTML = `<i class="${iconClass}" style="color:var(--primary-blue);font-size:0.95rem;"></i>${escHtml(text)}`;
     if (badge) {
         const b = document.createElement("span");
         b.className = "badge";
         b.textContent = badge;
         div.appendChild(b);
     }
+    if (sub) {
+        const s = document.createElement("span");
+        s.className = "sec-sub";
+        s.textContent = sub;
+        div.appendChild(s);
+    }
     return div;
 }
 
-function createCardsRow(cards) {
+function createKpiRow(cards) {
     const row = document.createElement("div");
-    row.className = "dash-cards";
+    row.className = "kpi-grid";
     cards.forEach(c => {
         const card = document.createElement("div");
-        card.className = "dash-card "+c.cls;
+        card.className = "kpi-card " + c.cls;
         card.innerHTML = `
-            <div class="card-accent-bar"></div>
-            <div class="card-icon"><i class="${c.icon}"></i></div>
-            <div class="card-label">${c.label}</div>
-            <div class="card-value">${typeof c.value === "number" ? c.value.toLocaleString() : c.value}</div>
-            <div class="card-sub">${c.sub}</div>
+            <div class="kpi-top">
+                <div class="kpi-icon"><i class="${c.icon}"></i></div>
+            </div>
+            <div class="kpi-label">${escHtml(c.label)}</div>
+            <div class="kpi-value" data-target="${typeof c.value === "number" ? c.value : ""}">${typeof c.value === "number" ? c.value.toLocaleString() : escHtml(c.value)}</div>
+            <div class="kpi-sub"><i class="fa-solid fa-angle-right"></i>${c.sub}</div>
         `;
         row.appendChild(card);
     });
     return row;
 }
 
+// 数字滚动动画
+function animateCountUps(root) {
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    root.querySelectorAll(".kpi-value[data-target]").forEach(el => {
+        const target = parseFloat(el.dataset.target);
+        if (!isFinite(target)) return;
+        if (reduce) { el.textContent = target.toLocaleString(); return; }
+        const dur = 900;
+        const t0 = performance.now();
+        const step = now => {
+            const p = Math.min((now - t0) / dur, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.round(target * eased).toLocaleString();
+            if (p < 1) requestAnimationFrame(step);
+            else el.textContent = target.toLocaleString();
+        };
+        el.textContent = "0";
+        requestAnimationFrame(step);
+    });
+}
+
+// 分项占比条入场动画
+function growShareBars(root) {
+    requestAnimationFrame(() => {
+        root.querySelectorAll(".disc-share-fill[data-w]").forEach(bar => {
+            bar.style.width = bar.dataset.w + "%";
+        });
+    });
+}
+
+// 可见性状态 pill
+function visPill(visible) {
+    return visible
+        ? '<span class="pill pill-on"><i class="fa-solid fa-eye"></i>可见</span>'
+        : '<span class="pill pill-off"><i class="fa-solid fa-eye-slash"></i>隐藏</span>';
+}
+
 // ========================================
 // 图表渲染
 // ========================================
+function chartTheme() {
+    const isDark = document.body.classList.contains("dark-mode");
+    return {
+        isDark,
+        tick: isDark ? "#aab3c5" : "#48566d",
+        muted: isDark ? "#67718a" : "#8a97ab",
+        grid: isDark ? "#262e41" : "#e9eef5",
+        tooltipBg: isDark ? "#1f2534" : "#ffffff",
+        tooltipText: isDark ? "#e6e9f2" : "#16213a",
+        tooltipBorder: isDark ? "#262e41" : "#e5eaf1",
+    };
+}
+
+function baseTooltip(t) {
+    return {
+        backgroundColor: t.tooltipBg,
+        titleColor: t.tooltipText,
+        bodyColor: t.tooltipText,
+        borderColor: t.tooltipBorder,
+        borderWidth: 1,
+        padding: 10,
+        cornerRadius: 10,
+        displayColors: true,
+        boxPadding: 4,
+        titleFont: { family:"'Noto Sans SC',sans-serif", weight:"600" },
+        bodyFont: { family:"'JetBrains Mono','Noto Sans SC',monospace", size:11 },
+    };
+}
+
 function renderCharts(statsOverride) {
     const stats = statsOverride || computeStats();
-    const chartsRow = $("chartsRow");
-    if (!chartsRow) return;
-
-    // 清除旧图表
+    if (!stats) return;
     destroyCharts();
-    chartsRow.innerHTML = "";
+    if (typeof Chart === "undefined") return;
 
-    // --- 图表1: 五项数据量对比柱状图 ---
-    const box1 = document.createElement("div");
-    box1.className = "dash-chart-box";
-    box1.innerHTML = '<div class="dash-panel-title" style="margin-bottom:12px;"><i class="fa-solid fa-chart-column"></i> 五单项比赛记录数</div><canvas id="chartDiscBar"></canvas>';
-    chartsRow.appendChild(box1);
+    const t = chartTheme();
 
-    // --- 图表2: 主表赛事类型分布饼图 ---
-    const box2 = document.createElement("div");
-    box2.className = "dash-chart-box";
-    box2.innerHTML = '<div class="dash-panel-title" style="margin-bottom:12px;"><i class="fa-solid fa-chart-pie"></i> WTT 赛事类型占比（全部分项）</div><canvas id="chartEventPie"></canvas>';
-    chartsRow.appendChild(box2);
-
-    setTimeout(() => {
-        // 柱状图
-        const discKeys = ["ms","ws","wd","md","xd"];
-        const discLabels = discKeys.map(d => DATA_PATHS.wttDisc[d].label);
-        const discData = discKeys.map(d => stats.wttDiscStats[d].entries);
-        const discColors = discKeys.map(d => DATA_PATHS.wttDisc[d].color);
-
-        const ctx1 = document.getElementById("chartDiscBar");
-        if (ctx1) {
-            const isDark = document.body.classList.contains("dark-mode");
-            const chart1 = new Chart(ctx1, {
-                type: "bar",
-                data: {
-                    labels: discLabels,
-                    datasets: [{
-                        label: "比赛记录数",
-                        data: discData,
-                        backgroundColor: discColors.map(c => c+"99"),
-                        borderColor: discColors,
-                        borderWidth: 2,
-                        borderRadius: 8,
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: { callbacks: { label: ctx => ctx.raw.toLocaleString()+" 条" } }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            ticks: { color: isDark ? "#aeb4c2" : "#4a5568" },
-                            grid: { color: isDark ? "#2a2e3d" : "#e2e8f0" }
-                        },
-                        x: {
-                            ticks: { color: isDark ? "#aeb4c2" : "#4a5568" },
-                            grid: { display: false }
+    // --- 图表1: 历年趋势（按分项堆叠柱状图）---
+    const ctxTrend = document.getElementById("chartTrend");
+    if (ctxTrend && stats.wttYears.length > 0) {
+        const datasets = DISC_KEYS.map(d => ({
+            label: DATA_PATHS.wttDisc[d].label,
+            data: stats.wttYears.map(y => (stats.wttYearly[y] || {})[d] || 0),
+            backgroundColor: DATA_PATHS.wttDisc[d].color + "d0",
+            hoverBackgroundColor: DATA_PATHS.wttDisc[d].color,
+            stack: "wtt",
+            borderRadius: 3,
+            maxBarThickness: 36,
+            borderSkipped: false,
+        }));
+        charts.push(new Chart(ctxTrend, {
+            type: "bar",
+            data: { labels: stats.wttYears, datasets },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { mode: "index", intersect: false },
+                animation: { duration: 800, easing: "easeOutQuart" },
+                plugins: {
+                    legend: {
+                        position: "bottom",
+                        labels: {
+                            color: t.tick, usePointStyle: true, pointStyle: "circle",
+                            boxWidth: 7, boxHeight: 7, padding: 16,
+                            font: { size: 11, family: "'Noto Sans SC',sans-serif" }
                         }
+                    },
+                    tooltip: Object.assign(baseTooltip(t), {
+                        callbacks: {
+                            label: c => ` ${c.dataset.label}: ${c.raw.toLocaleString()} 条`,
+                            footer: items => "合计 " + items.reduce((a, b) => a + b.raw, 0).toLocaleString() + " 条"
+                        },
+                        footerColor: t.muted,
+                    })
+                },
+                scales: {
+                    x: {
+                        stacked: true,
+                        ticks: { color: t.tick, font: { family:"'JetBrains Mono',monospace", size:10 }, maxRotation: 60, autoSkip: true },
+                        grid: { display: false }
+                    },
+                    y: {
+                        stacked: true,
+                        beginAtZero: true,
+                        grace: "4%",
+                        ticks: { color: t.tick, font: { family:"'JetBrains Mono',monospace", size:10 } },
+                        grid: { color: t.grid }
                     }
                 }
-            });
-            charts.push(chart1);
-        }
+            }
+        }));
+    }
 
-        // 饼图
-        const ctx2 = document.getElementById("chartEventPie");
-        if (ctx2) {
-            const isDark = document.body.classList.contains("dark-mode");
-            const eventEntries = Object.entries(stats.wttByEvent).sort((a,b) => b[1] - a[1]);
+    // --- 图表2: 五单项对比柱状图 ---
+    const ctx1 = document.getElementById("chartDiscBar");
+    if (ctx1) {
+        const discData = DISC_KEYS.map(d => stats.wttDiscStats[d].entries);
+        const discColors = DISC_KEYS.map(d => DATA_PATHS.wttDisc[d].color);
+        charts.push(new Chart(ctx1, {
+            type: "bar",
+            data: {
+                labels: DISC_KEYS.map(d => DATA_PATHS.wttDisc[d].label.split(" ")[1] || DATA_PATHS.wttDisc[d].label),
+                datasets: [{
+                    label: "比赛记录数",
+                    data: discData,
+                    backgroundColor: discColors.map(c => c + "b3"),
+                    hoverBackgroundColor: discColors,
+                    borderColor: discColors,
+                    borderWidth: 0,
+                    borderRadius: 9,
+                    maxBarThickness: 52,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: { duration: 800, easing: "easeOutQuart" },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: Object.assign(baseTooltip(t), {
+                        displayColors: false,
+                        callbacks: {
+                            label: c => {
+                                const total = stats.wttDiscTotal || 1;
+                                return c.raw.toLocaleString() + " 条 · 占比 " + ((c.raw / total) * 100).toFixed(1) + "%";
+                            }
+                        }
+                    })
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grace: "8%",
+                        ticks: { color: t.tick, font: { family:"'JetBrains Mono',monospace", size:10 } },
+                        grid: { color: t.grid }
+                    },
+                    x: {
+                        ticks: { color: t.tick, font: { family:"'Noto Sans SC',sans-serif", size:11 } },
+                        grid: { display: false }
+                    }
+                }
+            }
+        }));
+    }
+
+    // --- 图表3: 赛事类型占比环形图（中心显示总数）---
+    const ctx2 = document.getElementById("chartEventPie");
+    if (ctx2) {
+        const eventEntries = Object.entries(stats.wttByEvent).sort((a,b) => b[1] - a[1]);
+        if (eventEntries.length > 0) {
             const eventLabels = eventEntries.map(e => e[0]);
             const eventData = eventEntries.map(e => e[1]);
-            const eventColors = eventLabels.map(l => EVENT_COLORS[l] || "#6c757d");
-
-            const chart2 = new Chart(ctx2, {
+            const eventColors = eventLabels.map(l => EVENT_COLORS[l] || "#8a97ab");
+            const grandTotal = eventData.reduce((a,b) => a+b, 0);
+            const centerTotal = {
+                id: "centerTotal",
+                afterDraw(chart) {
+                    const meta = chart.getDatasetMeta(0);
+                    if (!meta.data.length) return;
+                    const { x, y } = meta.data[0];
+                    const ctx = chart.ctx;
+                    ctx.save();
+                    ctx.textAlign = "center";
+                    ctx.textBaseline = "middle";
+                    ctx.font = "800 22px Poppins, sans-serif";
+                    ctx.fillStyle = t.isDark ? "#e6e9f2" : "#16213a";
+                    ctx.fillText(grandTotal.toLocaleString(), x, y - 8);
+                    ctx.font = "500 11px 'Noto Sans SC', sans-serif";
+                    ctx.fillStyle = t.muted;
+                    ctx.fillText("总记录", x, y + 13);
+                    ctx.restore();
+                }
+            };
+            charts.push(new Chart(ctx2, {
                 type: "doughnut",
                 data: {
                     labels: eventLabels,
                     datasets: [{
                         data: eventData,
-                        backgroundColor: eventColors.map(c => c+"cc"),
-                        borderColor: eventColors,
+                        backgroundColor: eventColors.map(c => c + "cc"),
+                        hoverBackgroundColor: eventColors,
+                        borderColor: t.isDark ? "#191e2b" : "#ffffff",
                         borderWidth: 2,
+                        hoverOffset: 8,
                     }]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
+                    cutout: "64%",
+                    animation: { duration: 800, easing: "easeOutQuart" },
                     plugins: {
+                        centerTotal,
                         legend: {
                             position: "bottom",
                             labels: {
-                                color: isDark ? "#aeb4c2" : "#4a5568",
-                                padding: 16,
-                                font: { size: 11, family: "'Noto Sans SC',sans-serif" },
+                                color: t.tick,
+                                padding: 14,
+                                boxWidth: 9,
+                                usePointStyle: true,
+                                pointStyle: "circle",
+                                font: { size: 10.5, family: "'Noto Sans SC',sans-serif" },
                                 generateLabels: function(chart) {
                                     const data = chart.data;
                                     return data.labels.map((label, i) => ({
                                         text: label + " (" + data.datasets[0].data[i].toLocaleString() + ")",
                                         fillStyle: data.datasets[0].backgroundColor[i],
-                                        strokeStyle: data.datasets[0].borderColor[i],
-                                        lineWidth: 1,
+                                        strokeStyle: "transparent",
+                                        lineWidth: 0,
                                         hidden: false,
                                         index: i,
                                     }));
                                 }
                             }
                         },
-                        tooltip: {
+                        tooltip: Object.assign(baseTooltip(t), {
                             callbacks: {
-                                label: ctx => {
-                                    const total = ctx.dataset.data.reduce((a,b) => a+b, 0);
-                                    const pct = ((ctx.raw / total) * 100).toFixed(1);
-                                    return ctx.raw.toLocaleString()+" 条 ("+pct+"%)";
+                                label: c => {
+                                    const total = c.dataset.data.reduce((a,b) => a+b, 0);
+                                    const pct = ((c.raw / total) * 100).toFixed(1);
+                                    return ` ${c.raw.toLocaleString()} 条 (${pct}%)`;
                                 }
                             }
-                        }
+                        })
                     }
                 }
-            });
-            charts.push(chart2);
+            }));
+        } else {
+            ctx2.closest(".chart-box").innerHTML = '<div class="empty-cell">暂无数据</div>';
         }
-    }, 200);
+    }
 }
 
 function destroyCharts() {

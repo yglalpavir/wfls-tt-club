@@ -5,3 +5,243 @@
 参赛人数：600
 开始日期：2015-08-26
 结束日期：2015-08-30
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 3 of 3 Total: 263
+
+Start
+Prev
+1
+2
+3
+Next
+End
+2015	GAC Group World Tour Czech Open Olomouc 2015	WONG Chun Ting (HKG)		OSHIMA Yuya (JPN)		MS	Main Draw	R32	4 - 2	11:6 2:11 11:9 8:11 11:3 11:9	WONG Chun Ting	
+2015	GAC Group World Tour Czech Open Olomouc 2015	HABESOHN Daniel (AUT)		HIELSCHER Lars (GER)		MS	Main Draw	R32	2 - 4	8:11 11:8 11:9 8:11 8:11 10:12	HIELSCHER Lars	
+2015	GAC Group World Tour Czech Open Olomouc 2015	GACINA Andrej (CRO)		ASSAR Omar (EGY)		MS	Main Draw	R32	4 - 3	11:4 4:11 11:9 12:10 8:11 9:11 11:4	GACINA Andrej	
+2015	GAC Group World Tour Czech Open Olomouc 2015	KIM Donghyun (KOR)		LEE Sang Su (KOR)		MS	Main Draw	R32	3 - 4	4:11 11:7 7:11 11:5 11:6 5:11 10:12	LEE Sang Su	
+2015	GAC Group World Tour Czech Open Olomouc 2015	BAUM Patrick (GER)		ARUNA Quadri (NGR)		MS	Main Draw	R32	2 - 4	9:11 11:7 3:11 14:12 6:11 6:11	ARUNA Quadri	
+2015	GAC Group World Tour Czech Open Olomouc 2015	MATSUDAIRA Kenta (JPN)		MORIZONO Masataka (JPN)		MS	Main Draw	R32	0 - 4	5:11 8:11 9:11 5:11	MORIZONO Masataka	
+2015	GAC Group World Tour Czech Open Olomouc 2015	BAGGALEY Andrew (ENG)		CHO Eonrae (KOR)		MS	Main Draw	R32	0 - 4	3:11 7:11 8:11 3:11	CHO Eonrae	
+2015	GAC Group World Tour Czech Open Olomouc 2015	GAUZY Simon (FRA)		TANG Peng (HKG)		MS	Main Draw	R32	4 - 1	11:4 11:8 11:8 7:11 11:8	GAUZY Simon	
+2015	GAC Group World Tour Czech Open Olomouc 2015	FREITAS Marcos (POR)		MURAMATSU Yuto (JPN)		MS	Main Draw	R16	4 - 0	11:8 11:7 11:6 11:9	FREITAS Marcos	
+2015	GAC Group World Tour Czech Open Olomouc 2015	GORAK Daniel (POL)		JEOUNG Youngsik (KOR)		MS	Main Draw	R16	3 - 4	9:11 11:3 8:11 4:11 11:8 11:9 5:11	JEOUNG Youngsik	
+2015	GAC Group World Tour Czech Open Olomouc 2015	YOSHIMURA Maharu (JPN)		KARAKASEVIC Aleksandar (SRB)		MS	Main Draw	R16	4 - 2	3:11 11:5 10:12 11:5 11:5 11:4	YOSHIMURA Maharu	
+2015	GAC Group World Tour Czech Open Olomouc 2015	GERELL Par (SWE)		MATTENET Adrien (FRA)		MS	Main Draw	R16	4 - 3	11:9 7:11 11:9 9:11 13:11 9:11 17:15	GERELL Par	
+2015	GAC Group World Tour Czech Open Olomouc 2015	WONG Chun Ting (HKG)		HIELSCHER Lars (GER)		MS	Main Draw	R16	4 - 1	11:5 11:9 9:11 11:6 11:7	WONG Chun Ting	
+2015	GAC Group World Tour Czech Open Olomouc 2015	GACINA Andrej (CRO)		LEE Sang Su (KOR)		MS	Main Draw	R16	3 - 4	7:11 8:11 11:7 11:7 11:8 6:11 9:11	LEE Sang Su	
+2015	GAC Group World Tour Czech Open Olomouc 2015	ARUNA Quadri (NGR)		MORIZONO Masataka (JPN)		MS	Main Draw	R16	4 - 1	11:8 9:11 11:8 11:7 11:9	ARUNA Quadri	
+2015	GAC Group World Tour Czech Open Olomouc 2015	CHO Eonrae (KOR)		GAUZY Simon (FRA)		MS	Main Draw	R16	2 - 4	4:11 11:9 9:11 11:9 9:11 8:11	GAUZY Simon	
+2015	GAC Group World Tour Czech Open Olomouc 2015	FREITAS Marcos (POR)		JEOUNG Youngsik (KOR)		MS	Main Draw	QuarterFinal	4 - 1	11:8 9:11 11:9 14:12 11:8	FREITAS Marcos	
+2015	GAC Group World Tour Czech Open Olomouc 2015	YOSHIMURA Maharu (JPN)		GERELL Par (SWE)		MS	Main Draw	QuarterFinal	4 - 1	11:7 11:7 11:9 7:11 12:10	YOSHIMURA Maharu	
+2015	GAC Group World Tour Czech Open Olomouc 2015	WONG Chun Ting (HKG)		LEE Sang Su (KOR)		MS	Main Draw	QuarterFinal	4 - 3	2:11 15:13 11:5 11:6 8:11 8:11 11:6	WONG Chun Ting	
+2015	GAC Group World Tour Czech Open Olomouc 2015	ARUNA Quadri (NGR)		GAUZY Simon (FRA)		MS	Main Draw	QuarterFinal	2 - 4	11:6 11:5 3:11 10:12 10:12 7:11	GAUZY Simon	
+2015	GAC Group World Tour Czech Open Olomouc 2015	FREITAS Marcos (POR)		YOSHIMURA Maharu (JPN)		MS	Main Draw	SemiFinal	3 - 4	7:11 11:5 11:8 7:11 9:11 11:3 4:11	YOSHIMURA Maharu	
+2015	GAC Group World Tour Czech Open Olomouc 2015	WONG Chun Ting (HKG)		GAUZY Simon (FRA)		MS	Main Draw	SemiFinal	4 - 1	15:13 12:10 11:7 7:11 11:8	WONG Chun Ting	
+2015	GAC Group World Tour Czech Open Olomouc 2015	YOSHIMURA Maharu (JPN)		WONG Chun Ting (HKG)		MS	Main Draw	Final	2 - 4	3:11 15:13 11:7 9:11 9:11 8:11	WONG Chun Ting	
+2015	GAC Group World Tour Czech Open Olomouc 2015	OSHIMA Yuya (JPN)		BENES Michal (CZE)		U21MS	Main Draw	R32	3 - 0	13:11 11:8 12:10	OSHIMA Yuya	
+2015	GAC Group World Tour Czech Open Olomouc 2015	ALLEGRO Martin (BEL)		WALKER Samuel (ENG)		U21MS	Main Draw	R32	1 - 3	3:11 8:11 11:9 6:11	WALKER Samuel	
+2015	GAC Group World Tour Czech Open Olomouc 2015	DUDA Benedikt (GER)		ZATOWKA Patryk (POL)		U21MS	Main Draw	R32	3 - 0	11:8 11:9 11:8	DUDA Benedikt	
+2015	GAC Group World Tour Czech Open Olomouc 2015	ZELJKO Filip (CRO)		CHEN Feng (SGP)		U21MS	Main Draw	R32	3 - 2	7:11 6:11 11:9 13:11 12:10	ZELJKO Filip	
+2015	GAC Group World Tour Czech Open Olomouc 2015	BROSSIER Benjamin (FRA)		POLANSKY Tomas (CZE)		U21MS	Main Draw	R32	3 - 0	11:9 13:11 11:8	BROSSIER Benjamin	
+2015	GAC Group World Tour Czech Open Olomouc 2015	GERASSIMENKO Kirill (KAZ)		LEE Chia-Sheng (TPE)		U21MS	Main Draw	R32	2 - 3	8:11 12:10 13:11 7:11 7:11	LEE Chia-Sheng	
+2015	GAC Group World Tour Czech Open Olomouc 2015	LAMBIET Florent (BEL)		JORGIC Darko (SLO)		U21MS	Main Draw	R32	3 - 0	11:6 11:7 11:1	LAMBIET Florent	
+2015	GAC Group World Tour Czech Open Olomouc 2015	WISUTMAYTHANGKOON Supanut (THA)		GERALDO Joao (POR)		U21MS	Main Draw	R32	0 - 3	7:11 2:11 9:11	GERALDO Joao	
+2015	GAC Group World Tour Czech Open Olomouc 2015	DYJAS Jakub (POL)		PUCAR Tomislav (CRO)		U21MS	Main Draw	R32	3 - 0	11:3 11:4 11:5	DYJAS Jakub	
+2015	GAC Group World Tour Czech Open Olomouc 2015	JOUTI Eric (BRA)		DEVOS Robin (BEL)		U21MS	Main Draw	R32	3 - 2	11:8 9:11 12:14 11:6 11:7	JOUTI Eric	
+2015	GAC Group World Tour Czech Open Olomouc 2015	BOULOUSSA Mehdi (ALG)		YANG Tzu-Yi (TPE)		U21MS	Main Draw	R32	2 - 3	11:9 13:11 8:11 4:11 6:11	YANG Tzu-Yi	
+2015	GAC Group World Tour Czech Open Olomouc 2015	LAKATOS Tamas (HUN)		LIAO Cheng-Ting (TPE)		U21MS	Main Draw	R32	3 - 1	6:11 11:8 11:8 11:6	LAKATOS Tamas	
+2015	GAC Group World Tour Czech Open Olomouc 2015	KALLBERG Anton (SWE)		PLETEA Cristian (ROU)		U21MS	Main Draw	R32	3 - 2	9:11 6:11 11:6 11:4 11:5	KALLBERG Anton	
+2015	GAC Group World Tour Czech Open Olomouc 2015	KULPA Konrad (POL)		MUTTI Leonardo (ITA)		U21MS	Main Draw	R32	3 - 1	11:8 6:11 11:5 11:5	KULPA Konrad	
+2015	GAC Group World Tour Czech Open Olomouc 2015	FLORE Tristan (FRA)		REITSPIES David (CZE)		U21MS	Main Draw	R32	3 - 1	11:8 8:11 11:7 11:5	FLORE Tristan	
+2015	GAC Group World Tour Czech Open Olomouc 2015	ISMAILOV Sadi (RUS)		JANG Woojin (KOR)		U21MS	Main Draw	R32	1 - 3	8:11 11:8 6:11 7:11	JANG Woojin	
+2015	GAC Group World Tour Czech Open Olomouc 2015	OSHIMA Yuya (JPN)		WALKER Samuel (ENG)		U21MS	Main Draw	R16	3 - 0	11:9 11:7 11:3	OSHIMA Yuya	
+2015	GAC Group World Tour Czech Open Olomouc 2015	DUDA Benedikt (GER)		ZELJKO Filip (CRO)		U21MS	Main Draw	R16	3 - 1	11:3 11:9 5:11 11:7	DUDA Benedikt	
+2015	GAC Group World Tour Czech Open Olomouc 2015	BROSSIER Benjamin (FRA)		LEE Chia-Sheng (TPE)		U21MS	Main Draw	R16	1 - 3	5:11 8:11 11:8 8:11	LEE Chia-Sheng	
+2015	GAC Group World Tour Czech Open Olomouc 2015	LAMBIET Florent (BEL)		GERALDO Joao (POR)		U21MS	Main Draw	R16	3 - 2	11:3 2:11 12:10 4:11 13:11	LAMBIET Florent	
+2015	GAC Group World Tour Czech Open Olomouc 2015	DYJAS Jakub (POL)		JOUTI Eric (BRA)		U21MS	Main Draw	R16	3 - 1	15:17 11:1 11:9 11:9	DYJAS Jakub	
+2015	GAC Group World Tour Czech Open Olomouc 2015	YANG Tzu-Yi (TPE)		LAKATOS Tamas (HUN)		U21MS	Main Draw	R16	3 - 2	3:11 8:11 11:8 11:8 11:6	YANG Tzu-Yi	
+2015	GAC Group World Tour Czech Open Olomouc 2015	KALLBERG Anton (SWE)		KULPA Konrad (POL)		U21MS	Main Draw	R16	3 - 1	11:9 12:10 9:11 11:8	KALLBERG Anton	
+2015	GAC Group World Tour Czech Open Olomouc 2015	FLORE Tristan (FRA)		JANG Woojin (KOR)		U21MS	Main Draw	R16	2 - 3	14:12 11:9 7:11 10:12 4:11	JANG Woojin	
+2015	GAC Group World Tour Czech Open Olomouc 2015	OSHIMA Yuya (JPN)		DUDA Benedikt (GER)		U21MS	Main Draw	QuarterFinal	3 - 2	9:11 9:11 11:6 11:6 11:4	OSHIMA Yuya	
+2015	GAC Group World Tour Czech Open Olomouc 2015	LEE Chia-Sheng (TPE)		LAMBIET Florent (BEL)		U21MS	Main Draw	QuarterFinal	3 - 2	11:5 9:11 5:11 11:5 11:9	LEE Chia-Sheng	
+2015	GAC Group World Tour Czech Open Olomouc 2015	DYJAS Jakub (POL)		YANG Tzu-Yi (TPE)		U21MS	Main Draw	QuarterFinal	3 - 1	12:10 11:9 7:11 11:9	DYJAS Jakub	
+2015	GAC Group World Tour Czech Open Olomouc 2015	KALLBERG Anton (SWE)		JANG Woojin (KOR)		U21MS	Main Draw	QuarterFinal	3 - 0	11:7 11:9 11:8	KALLBERG Anton	
+2015	GAC Group World Tour Czech Open Olomouc 2015	OSHIMA Yuya (JPN)		LEE Chia-Sheng (TPE)		U21MS	Main Draw	SemiFinal	3 - 2	11:9 6:11 7:11 11:7 11:7	OSHIMA Yuya	
+2015	GAC Group World Tour Czech Open Olomouc 2015	DYJAS Jakub (POL)		KALLBERG Anton (SWE)		U21MS	Main Draw	SemiFinal	1 - 3	7:11 11:9 11:13 6:11	KALLBERG Anton	
+2015	GAC Group World Tour Czech Open Olomouc 2015	OSHIMA Yuya (JPN)		KALLBERG Anton (SWE)		U21MS	Main Draw	Final	3 - 2	9:11 9:11 11:9 11:6 11:5	OSHIMA Yuya
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 3 of 3 Total: 235
+
+Start
+Prev
+1
+2
+3
+Next
+End
+2015	GAC Group World Tour Czech Open Olomouc 2015	HAN Ying (GER)		MIKHAILOVA Polina (RUS)		WS	Main Draw	QuarterFinal	4 - 0	11:6 11:6 11:3 11:4	HAN Ying	
+2015	GAC Group World Tour Czech Open Olomouc 2015	TIE Yana (HKG)		JEON Jihee (KOR)		WS	Main Draw	SemiFinal	0 - 4	5:11 5:11 7:11 9:11	JEON Jihee	
+2015	GAC Group World Tour Czech Open Olomouc 2015	FUKUHARA Ai (JPN)		HAN Ying (GER)		WS	Main Draw	SemiFinal	4 - 2	6:11 11:9 4:11 11:7 12:10 11:8	FUKUHARA Ai	
+2015	GAC Group World Tour Czech Open Olomouc 2015	JEON Jihee (KOR)		FUKUHARA Ai (JPN)		WS	Main Draw	Final	0 - 4	7:11 12:14 11:13 8:11	FUKUHARA Ai	
+2015	GAC Group World Tour Czech Open Olomouc 2015	HIRANO Miu (JPN)		WABIK Sandra (POL)		U21WS	Main Draw	R32	3 - 1	11:5 6:11 11:5 11:6	HIRANO Miu	
+2015	GAC Group World Tour Czech Open Olomouc 2015	GALIC Alex (SLO)		ZHOU Yihan (SGP)		U21WS	Main Draw	R32	1 - 3	10:12 11:7 5:11 6:11	ZHOU Yihan	
+2015	GAC Group World Tour Czech Open Olomouc 2015	LEE Zion (KOR)		KHETKHUAN Tamolwan (THA)		U21WS	Main Draw	R32	3 - 2	11:6 6:11 11:13 11:9 14:12	LEE Zion	
+2015	GAC Group World Tour Czech Open Olomouc 2015	TOMANOVSKA Katerina (CZE)		HAYATA Hina (JPN)		U21WS	Main Draw	R32	1 - 3	6:11 7:11 11:9 2:11	HAYATA Hina	
+2015	GAC Group World Tour Czech Open Olomouc 2015	POLCANOVA Sofia (AUT)		KUMAHARA Luca (BRA)		U21WS	Main Draw	R32	3 - 1	11:9 4:11 11:7 11:4	POLCANOVA Sofia	
+2015	GAC Group World Tour Czech Open Olomouc 2015	LEE Seul (KOR)		NOSKOVA Yana (RUS)		U21WS	Main Draw	R32	3 - 2	11:9 11:9 8:11 9:11 13:11	LEE Seul	
+2015	GAC Group World Tour Czech Open Olomouc 2015	KATO Miyu (JPN)		KIM Byeolnim (KOR)		U21WS	Main Draw	R32	3 - 2	8:11 12:14 11:9 11:4 11:7	KATO Miyu	
+2015	GAC Group World Tour Czech Open Olomouc 2015	GUSEVA Ekaterina (RUS)		CHOI Hyojoo (KOR)		U21WS	Main Draw	R32	1 - 3	6:11 11:13 11:8 9:11	CHOI Hyojoo	
+2015	GAC Group World Tour Czech Open Olomouc 2015	LIN Ye (CAN)		STEFCOVA Kristyna (CZE)		U21WS	Main Draw	R32	3 - 0	11:2 11:6 11:3	LIN Ye	
+2015	GAC Group World Tour Czech Open Olomouc 2015	PFEFER Laura (FRA)		HAMAMOTO Yui (AUT)		U21WS	Main Draw	R32	0 - 3	6:11 4:11 9:11	HAMAMOTO Yui	
+2015	GAC Group World Tour Czech Open Olomouc 2015	MITTELHAM Nina (GER)		XIAO Maria (ESP)		U21WS	Main Draw	R32	1 - 3	6:11 6:11 11:5 6:11	XIAO Maria	
+2015	GAC Group World Tour Czech Open Olomouc 2015	LI Ching Wan (HKG)		ZENG Jian (SGP)		U21WS	Main Draw	R32	2 - 3	11:8 11:5 8:11 4:11 7:11	ZENG Jian	
+2015	GAC Group World Tour Czech Open Olomouc 2015	SZOCS Bernadette (ROU)		RAKOVAC Lea (CRO)		U21WS	Main Draw	R32	3 - 0	12:10 11:5 11:7	SZOCS Bernadette	
+2015	GAC Group World Tour Czech Open Olomouc 2015	SOO Wai Yam (HKG)		SHAO Jieni (POR)		U21WS	Main Draw	R32	0 - 3	8:11 6:11 3:11	SHAO Jieni	
+2015	GAC Group World Tour Czech Open Olomouc 2015	EERLAND Britt (NED)		SAWETTABUT Suthasini (THA)		U21WS	Main Draw	R32	1 - 3	11:8 7:11 10:12 6:11	SAWETTABUT Suthasini	
+2015	GAC Group World Tour Czech Open Olomouc 2015	PAVCNIK Tamara (SLO)		SOLJA Petrissa (GER)		U21WS	Main Draw	R32	0 - 3	6:11 9:11 5:11	SOLJA Petrissa	
+2015	GAC Group World Tour Czech Open Olomouc 2015	HIRANO Miu (JPN)		ZHOU Yihan (SGP)		U21WS	Main Draw	R16	2 - 3	7:11 7:11 11:8 11:6 8:11	ZHOU Yihan	
+2015	GAC Group World Tour Czech Open Olomouc 2015	LEE Zion (KOR)		HAYATA Hina (JPN)		U21WS	Main Draw	R16	1 - 3	10:12 13:15 11:7 10:12	HAYATA Hina	
+2015	GAC Group World Tour Czech Open Olomouc 2015	POLCANOVA Sofia (AUT)		LEE Seul (KOR)		U21WS	Main Draw	R16	3 - 2	8:11 11:13 16:14 11:9 11:7	POLCANOVA Sofia	
+2015	GAC Group World Tour Czech Open Olomouc 2015	KATO Miyu (JPN)		CHOI Hyojoo (KOR)		U21WS	Main Draw	R16	0 - 3	3:11 9:11 10:12	CHOI Hyojoo	
+2015	GAC Group World Tour Czech Open Olomouc 2015	LIN Ye (CAN)		HAMAMOTO Yui (AUT)		U21WS	Main Draw	R16	3 - 0	11:8 11:4 15:13	LIN Ye	
+2015	GAC Group World Tour Czech Open Olomouc 2015	XIAO Maria (ESP)		ZENG Jian (SGP)		U21WS	Main Draw	R16	1 - 3	8:11 1:11 13:11 14:16	ZENG Jian	
+2015	GAC Group World Tour Czech Open Olomouc 2015	SZOCS Bernadette (ROU)		SHAO Jieni (POR)		U21WS	Main Draw	R16	1 - 3	11:8 8:11 11:13 6:11	SHAO Jieni	
+2015	GAC Group World Tour Czech Open Olomouc 2015	SAWETTABUT Suthasini (THA)		SOLJA Petrissa (GER)		U21WS	Main Draw	R16	3 - 1	8:11 11:3 11:3 11:9	SAWETTABUT Suthasini	
+2015	GAC Group World Tour Czech Open Olomouc 2015	ZHOU Yihan (SGP)		HAYATA Hina (JPN)		U21WS	Main Draw	QuarterFinal	2 - 3	11:13 4:11 11:9 11:4 6:11	HAYATA Hina	
+2015	GAC Group World Tour Czech Open Olomouc 2015	POLCANOVA Sofia (AUT)		CHOI Hyojoo (KOR)		U21WS	Main Draw	QuarterFinal	2 - 3	11:9 6:11 12:10 3:11 9:11	CHOI Hyojoo	
+2015	GAC Group World Tour Czech Open Olomouc 2015	LIN Ye (CAN)		ZENG Jian (SGP)		U21WS	Main Draw	QuarterFinal	3 - 1	11:5 5:11 11:6 11:9	LIN Ye	
+2015	GAC Group World Tour Czech Open Olomouc 2015	SHAO Jieni (POR)		SAWETTABUT Suthasini (THA)		U21WS	Main Draw	QuarterFinal	2 - 3	6:11 9:11 12:10 11:4 7:11	SAWETTABUT Suthasini	
+2015	GAC Group World Tour Czech Open Olomouc 2015	HAYATA Hina (JPN)		CHOI Hyojoo (KOR)		U21WS	Main Draw	SemiFinal	1 - 3	9:11 11:3 5:11 7:11	CHOI Hyojoo	
+2015	GAC Group World Tour Czech Open Olomouc 2015	LIN Ye (CAN)		SAWETTABUT Suthasini (THA)		U21WS	Main Draw	SemiFinal	3 - 2	6:11 11:8 7:11 11:7 11:7	LIN Ye	
+2015	GAC Group World Tour Czech Open Olomouc 2015	CHOI Hyojoo (KOR)		LIN Ye (CAN)		U21WS	Main Draw	Final	2 - 3	14:12 8:11 8:11 11:6 12:14	LIN Ye
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 59
+
+2015	GAC Group World Tour Czech Open Olomouc 2015	HABESOHN Dominik (AUT)	LEITGEB Stefan (AUT)	KONECNY Tomas (CZE)	TREGLER Tomas (CZE)	MD	Qualification	QR64	2 - 3	4:11 11:8 11:3 4:11 10:12	KONECNY Tomas	TREGLER Tomas
+2015	GAC Group World Tour Czech Open Olomouc 2015	CHEN Alexander (AUT)	SERDAROGLU David (AUT)	ARUNA Quadri (NGR)	GERALDO Joao (POR)	MD	Qualification	QR64	0 - 3	6:11 6:11 6:11	ARUNA Quadri	GERALDO Joao
+2015	GAC Group World Tour Czech Open Olomouc 2015	DEVOS Robin (BEL)	JEAN Lauric (BEL)	PISTEJ Lubomir (SVK)	VALUCH Alexander (SVK)	MD	Qualification	QR64	0 - 3	8:11 9:11 7:11	PISTEJ Lubomir	VALUCH Alexander
+2015	GAC Group World Tour Czech Open Olomouc 2015	ISHIY Vitor (BRA)	JOUTI Eric (BRA)	JEVTOVIC Marko (SRB)	PETO Zsolt (SRB)	MD	Qualification	QR64	3 - 1	11:9 8:11 16:14 11:3	ISHIY Vitor	JOUTI Eric
+2015	GAC Group World Tour Czech Open Olomouc 2015	MATSUMOTO Cazuo (BRA)	MONTEIRO Thiago (BRA)	KULPA Konrad (POL)	ZATOWKA Patryk (POL)	MD	Qualification	QR32	2 - 3	10:12 8:11 13:11 11:4 7:11	KULPA Konrad	ZATOWKA Patryk
+2015	GAC Group World Tour Czech Open Olomouc 2015	CALDERANO Hugo (BRA)	TSUBOI Gustavo (BRA)	GERELL Par (SWE)	PERSSON Jon (SWE)	MD	Main Draw	QuarterFinal	1 - 3	9:11 13:11 9:11 8:11	GERELL Par	PERSSON Jon
+2015	GAC Group World Tour Czech Open Olomouc 2015	PRIMORAC Zoran (CRO)	ZELJKO Filip (CRO)	BOBOCICA Mihai (ITA)	MUTTI Leonardo (ITA)	MD	Qualification	QR64	3 - 1	5:11 11:8 11:7 11:9	PRIMORAC Zoran	ZELJKO Filip
+2015	GAC Group World Tour Czech Open Olomouc 2015	FREITAS Marcos (POR)	GACINA Andrej (CRO)	SUN Chia-Hung (TPE)	YANG Tzu-Yi (TPE)	MD	Qualification	QR32	3 - 1	11:9 11:7 8:11 11:6	FREITAS Marcos	GACINA Andrej
+2015	GAC Group World Tour Czech Open Olomouc 2015	KOLAREK Tomislav (CRO)	PUCAR Tomislav (CRO)	GERELL Par (SWE)	PERSSON Jon (SWE)	MD	Qualification	QR32	0 - 3	2:11 3:11 5:11	GERELL Par	PERSSON Jon
+2015	GAC Group World Tour Czech Open Olomouc 2015	FREITAS Marcos (POR)	GACINA Andrej (CRO)	FLORE Tristan (FRA)	OUAICHE Stephane (ALG)	MD	Qualification	QR16	3 - 2	9:11 14:12 4:11 11:4 11:6	FREITAS Marcos	GACINA Andrej
+2015	GAC Group World Tour Czech Open Olomouc 2015	KLEPRLIK Jakub (CZE)	POLANSKY Tomas (CZE)	DUDA Benedikt (GER)	MENGEL Steffen (GER)	MD	Qualification	QR64	3 - 2	6:11 5:11 11:7 11:5 11:7	KLEPRLIK Jakub	POLANSKY Tomas
+2015	GAC Group World Tour Czech Open Olomouc 2015	KUCERA Stanislav (CZE)	REITSPIES David (CZE)	DIDUKH Oleksandr (UKR)	LI Ping (QAT)	MD	Qualification	QR32	3 - 1	11:9 11:9 6:11 11:1	KUCERA Stanislav	REITSPIES David
+2015	GAC Group World Tour Czech Open Olomouc 2015	KUCERA Stanislav (CZE)	REITSPIES David (CZE)	SHIBAEV Alexander (RUS)	SKACHKOV Kirill (RUS)	MD	Qualification	QR16	0 - 3	7:11 4:11 9:11	SHIBAEV Alexander	SKACHKOV Kirill
+2015	GAC Group World Tour Czech Open Olomouc 2015	KLEPRLIK Jakub (CZE)	POLANSKY Tomas (CZE)	CALDERANO Hugo (BRA)	TSUBOI Gustavo (BRA)	MD	Qualification	QR16	1 - 3	10:12 2:11 11:7 6:11	CALDERANO Hugo	TSUBOI Gustavo
+2015	GAC Group World Tour Czech Open Olomouc 2015	ROBLES Alvaro (ESP)	WALKER Samuel (ENG)	ALLEGRO Martin (BEL)	LAMBIET Florent (BEL)	MD	Qualification	QR64	3 - 2	6:11 11:7 11:9 6:11 12:10	ROBLES Alvaro	WALKER Samuel
+2015	GAC Group World Tour Czech Open Olomouc 2015	ROBLES Alvaro (ESP)	WALKER Samuel (ENG)	KARAKASEVIC Aleksandar (SRB)	TOKIC Bojan (SLO)	MD	Qualification	QR32	1 - 3	9:11 9:11 11:7 5:11	KARAKASEVIC Aleksandar	TOKIC Bojan
+2015	GAC Group World Tour Czech Open Olomouc 2015	CANTERO Jesus (ESP)	DURAN Marc (ESP)	MURAMATSU Yuto (JPN)	SHIONO Masato (JPN)	MD	Qualification	QR64	3 - 1	13:11 11:5 7:11 11:7	CANTERO Jesus	DURAN Marc
+2015	GAC Group World Tour Czech Open Olomouc 2015	HE Zhiwen (ESP)	MACHADO Carlos (ESP)	LI Hu (SGP)	YANG Zi (SGP)	MD	Qualification	QR32	1 - 3	8:11 8:11 11:6 9:11	LI Hu	YANG Zi
+2015	GAC Group World Tour Czech Open Olomouc 2015	CANTERO Jesus (ESP)	DURAN Marc (ESP)	CALDERANO Hugo (BRA)	TSUBOI Gustavo (BRA)	MD	Qualification	QR32	0 - 3	6:11 10:12 2:11	CALDERANO Hugo	TSUBOI Gustavo
+2015	GAC Group World Tour Czech Open Olomouc 2015	FLORE Tristan (FRA)	OUAICHE Stephane (ALG)	MANOLE Alexandru (ROU)	SPELBUS Alin (ROU)	MD	Qualification	QR64	3 - 0	15:13 11:7 11:5	FLORE Tristan	OUAICHE Stephane
+2015	GAC Group World Tour Czech Open Olomouc 2015	FLORE Tristan (FRA)	OUAICHE Stephane (ALG)	KONECNY Tomas (CZE)	TREGLER Tomas (CZE)	MD	Qualification	QR32	3 - 0	12:10 11:3 11:1	FLORE Tristan	OUAICHE Stephane
+2015	GAC Group World Tour Czech Open Olomouc 2015	BAUM Patrick (GER)	FRANZISKA Patrick (GER)	OLAH Benedek (FIN)	SZITA Marton (HUN)	MD	Qualification	QR64	3 - 1	11:8 6:11 11:4 11:7	BAUM Patrick	FRANZISKA Patrick
+2015	GAC Group World Tour Czech Open Olomouc 2015	BAUM Patrick (GER)	FRANZISKA Patrick (GER)	ISHIY Vitor (BRA)	JOUTI Eric (BRA)	MD	Qualification	QR32	3 - 2	11:5 8:11 9:11 11:7 11:2	BAUM Patrick	FRANZISKA Patrick
+2015	GAC Group World Tour Czech Open Olomouc 2015	FILUS Ruwen (GER)	WALTHER Ricardo (GER)	PRIMORAC Zoran (CRO)	ZELJKO Filip (CRO)	MD	Qualification	QR32	3 - 0	11:4 16:14 11:7	FILUS Ruwen	WALTHER Ricardo
+2015	GAC Group World Tour Czech Open Olomouc 2015	BAUM Patrick (GER)	FRANZISKA Patrick (GER)	JORGIC Darko (SLO)	ZIBRAT Jan (SLO)	MD	Qualification	QR16	3 - 0	11:7 11:4 11:9	BAUM Patrick	FRANZISKA Patrick
+2015	GAC Group World Tour Czech Open Olomouc 2015	FILUS Ruwen (GER)	WALTHER Ricardo (GER)	KALLBERG Anton (SWE)	LUNDQVIST Jens (SWE)	MD	Qualification	QR16	3 - 1	7:11 11:3 11:5 11:3	FILUS Ruwen	WALTHER Ricardo
+2015	GAC Group World Tour Czech Open Olomouc 2015	FILUS Ruwen (GER)	WALTHER Ricardo (GER)	LIVENTSOV Alexey (RUS)	PAIKOV Mikhail (RUS)	MD	Main Draw	R16	3 - 0	11:8 11:3 12:10	FILUS Ruwen	WALTHER Ricardo
+2015	GAC Group World Tour Czech Open Olomouc 2015	BAUM Patrick (GER)	FRANZISKA Patrick (GER)	CHIANG Hung-Chieh (TPE)	HUANG Sheng-Sheng (TPE)	MD	Main Draw	R16	3 - 2	11:9 11:2 6:11 9:11 11:8	BAUM Patrick	FRANZISKA Patrick
+2015	GAC Group World Tour Czech Open Olomouc 2015	TANG Peng (HKG)	WONG Chun Ting (HKG)	FREITAS Marcos (POR)	GACINA Andrej (CRO)	MD	Main Draw	R16	3 - 2	11:6 11:6 11:13 10:12 11:7	TANG Peng	WONG Chun Ting
+2015	GAC Group World Tour Czech Open Olomouc 2015	TANG Peng (HKG)	WONG Chun Ting (HKG)	FILUS Ruwen (GER)	WALTHER Ricardo (GER)	MD	Main Draw	QuarterFinal	3 - 1	15:13 9:11 11:4 11:3	TANG Peng	WONG Chun Ting
+2015	GAC Group World Tour Czech Open Olomouc 2015	TANG Peng (HKG)	WONG Chun Ting (HKG)	JEOUNG Youngsik (KOR)	KIM Minseok (KOR)	MD	Main Draw	SemiFinal	2 - 3	11:4 6:11 6:11 11:6 11:13	JEOUNG Youngsik	KIM Minseok
+2015	GAC Group World Tour Czech Open Olomouc 2015	LAKATOS Tamas (HUN)	SZUDI Adam (HUN)	KLEPRLIK Jakub (CZE)	POLANSKY Tomas (CZE)	MD	Qualification	QR32	1 - 3	9:11 11:5 8:11 12:14	KLEPRLIK Jakub	POLANSKY Tomas
+2015	GAC Group World Tour Czech Open Olomouc 2015	RECH DALDOSSO Marco (ITA)	STOYANOV Niagol (ITA)	LI Hu (SGP)	YANG Zi (SGP)	MD	Qualification	QR64	0 - 3	4:11 8:11 9:11	LI Hu	YANG Zi
+2015	GAC Group World Tour Czech Open Olomouc 2015	GERASSIMENKO Kirill (KAZ)	ZHOLUDEV Denis (KAZ)	KULPA Konrad (POL)	ZATOWKA Patryk (POL)	MD	Qualification	QR64	0 - 3	9:11 9:11 8:11	KULPA Konrad	ZATOWKA Patryk
+2015	GAC Group World Tour Czech Open Olomouc 2015	JANG Woojin (KOR)	LEE Sang Su (KOR)	KARLSSON Kristian (SWE)	KARLSSON Mattias (SWE)	MD	Main Draw	R16	1 - 3	10:12 5:11 12:10 2:11	KARLSSON Kristian	KARLSSON Mattias
+2015	GAC Group World Tour Czech Open Olomouc 2015	CHO Eonrae (KOR)	KIM Donghyun (KOR)	KARAKASEVIC Aleksandar (SRB)	TOKIC Bojan (SLO)	MD	Main Draw	R16	2 - 3	11:9 11:1 9:11 8:11 9:11	KARAKASEVIC Aleksandar	TOKIC Bojan
+2015	GAC Group World Tour Czech Open Olomouc 2015	JEOUNG Youngsik (KOR)	KIM Minseok (KOR)	GERELL Par (SWE)	PERSSON Jon (SWE)	MD	Main Draw	Final	0 - 3	7:11 6:11 7:11	GERELL Par	PERSSON Jon
+2015	GAC Group World Tour Czech Open Olomouc 2015	DYJAS Jakub (POL)	WANG Zengyi (POL)	ARUNA Quadri (NGR)	GERALDO Joao (POR)	MD	Qualification	QR32	2 - 3	11:5 8:11 11:6 7:11 11:13	ARUNA Quadri	GERALDO Joao
+2015	GAC Group World Tour Czech Open Olomouc 2015	KULPA Konrad (POL)	ZATOWKA Patryk (POL)	KARAKASEVIC Aleksandar (SRB)	TOKIC Bojan (SLO)	MD	Qualification	QR16	0 - 3	6:11 5:11 8:11	KARAKASEVIC Aleksandar	TOKIC Bojan
+2015	GAC Group World Tour Czech Open Olomouc 2015	APOLONIA Tiago (POR)	MONTEIRO Joao (POR)	LAKATOS Tamas (HUN)	SZUDI Adam (HUN)	MD	Qualification	QR64	2 - 3	7:11 10:12 14:12 11:9 13:15	LAKATOS Tamas	SZUDI Adam
+2015	GAC Group World Tour Czech Open Olomouc 2015	ARUNA Quadri (NGR)	GERALDO Joao (POR)	KARLSSON Kristian (SWE)	KARLSSON Mattias (SWE)	MD	Qualification	QR16	2 - 3	8:11 11:8 4:11 11:7 10:12	KARLSSON Kristian	KARLSSON Mattias
+2015	GAC Group World Tour Czech Open Olomouc 2015	DIDUKH Oleksandr (UKR)	LI Ping (QAT)	BADOWSKI Marek (POL)	GORAK Daniel (POL)	MD	Qualification	QR64	3 - 0	11:8 11:8 11:9	DIDUKH Oleksandr	LI Ping
+2015	GAC Group World Tour Czech Open Olomouc 2015	SHIBAEV Alexander (RUS)	SKACHKOV Kirill (RUS)	JEOUNG Youngsik (KOR)	KIM Minseok (KOR)	MD	Main Draw	R16	2 - 3	11:3 4:11 10:12 11:8 8:11	JEOUNG Youngsik	KIM Minseok
+2015	GAC Group World Tour Czech Open Olomouc 2015	KUZMIN Fedor (RUS)	VLASOV Grigory (RUS)	CALDERANO Hugo (BRA)	TSUBOI Gustavo (BRA)	MD	Main Draw	R16	1 - 3	3:11 11:9 9:11 6:11	CALDERANO Hugo	TSUBOI Gustavo
+2015	GAC Group World Tour Czech Open Olomouc 2015	LI Hu (SGP)	YANG Zi (SGP)	GERELL Par (SWE)	PERSSON Jon (SWE)	MD	Qualification	QR16	0 - 3	10:12 7:11 7:11	GERELL Par	PERSSON Jon
+2015	GAC Group World Tour Czech Open Olomouc 2015	KARAKASEVIC Aleksandar (SRB)	TOKIC Bojan (SLO)	GROTH Jonathan (DEN)	STERNBERG Kasper (DEN)	MD	Qualification	QR64	3 - 2	11:13 12:10 9:11 11:7 11:2	KARAKASEVIC Aleksandar	TOKIC Bojan
+2015	GAC Group World Tour Czech Open Olomouc 2015	JORGIC Darko (SLO)	ZIBRAT Jan (SLO)	BAJGER Ondrej (CZE)	BENES Michal (CZE)	MD	Qualification	QR64	3 - 1	11:4 11:5 8:11 11:1	JORGIC Darko	ZIBRAT Jan
+2015	GAC Group World Tour Czech Open Olomouc 2015	JORGIC Darko (SLO)	ZIBRAT Jan (SLO)	GAUZY Simon (FRA)	LEBESSON Emmanuel (FRA)	MD	Qualification	QR32	3 - 2	12:10 12:10 7:11 12:14 11:7	JORGIC Darko	ZIBRAT Jan
+2015	GAC Group World Tour Czech Open Olomouc 2015	KARAKASEVIC Aleksandar (SRB)	TOKIC Bojan (SLO)	BAUM Patrick (GER)	FRANZISKA Patrick (GER)	MD	Main Draw	QuarterFinal	2 - 3	8:11 9:11 11:9 11:7 8:11	BAUM Patrick	FRANZISKA Patrick
+2015	GAC Group World Tour Czech Open Olomouc 2015	BAI He (SVK)	KOBES Kristian (SVK)	KOLAREK Tomislav (CRO)	PUCAR Tomislav (CRO)	MD	Qualification	QR64	0 - 3	11:13 7:11 10:12	KOLAREK Tomislav	PUCAR Tomislav
+2015	GAC Group World Tour Czech Open Olomouc 2015	PISTEJ Lubomir (SVK)	VALUCH Alexander (SVK)	KARLSSON Kristian (SWE)	KARLSSON Mattias (SWE)	MD	Qualification	QR32	0 - 3	8:11 6:11 6:11	KARLSSON Kristian	KARLSSON Mattias
+2015	GAC Group World Tour Czech Open Olomouc 2015	KALLBERG Anton (SWE)	LUNDQVIST Jens (SWE)	OBESLO Michal (CZE)	SIRUCEK Pavel (CZE)	MD	Qualification	QR64	3 - 1	11:7 11:9 9:11 11:6	KALLBERG Anton	LUNDQVIST Jens
+2015	GAC Group World Tour Czech Open Olomouc 2015	KALLBERG Anton (SWE)	LUNDQVIST Jens (SWE)	LORENTZ Romain (FRA)	ROBINOT Quentin (FRA)	MD	Qualification	QR32	3 - 2	6:11 13:11 7:11 11:7 11:8	KALLBERG Anton	LUNDQVIST Jens
+2015	GAC Group World Tour Czech Open Olomouc 2015	GERELL Par (SWE)	PERSSON Jon (SWE)	JANCARIK Lubomir (CZE)	PROKOPCOV Dmitrij (CZE)	MD	Main Draw	R16	3 - 0	11:6 15:13 16:14	GERELL Par	PERSSON Jon
+2015	GAC Group World Tour Czech Open Olomouc 2015	KARLSSON Kristian (SWE)	KARLSSON Mattias (SWE)	JEOUNG Youngsik (KOR)	KIM Minseok (KOR)	MD	Main Draw	QuarterFinal	1 - 3	6:11 11:13 11:3 4:11	JEOUNG Youngsik	KIM Minseok
+2015	GAC Group World Tour Czech Open Olomouc 2015	GERELL Par (SWE)	PERSSON Jon (SWE)	BAUM Patrick (GER)	FRANZISKA Patrick (GER)	MD	Main Draw	SemiFinal	3 - 2	9:11 11:9 11:4 14:16 11:7	GERELL Par	PERSSON Jon
+2015	GAC Group World Tour Czech Open Olomouc 2015	SUN Chia-Hung (TPE)	YANG Tzu-Yi (TPE)	ECSEKI Nandor (HUN)	KOSIBA Daniel (HUN)	MD	Qualification	QR64	3 - 0	11:7 11:5 11:7	SUN Chia-Hung	YANG Tzu-Yi
+2015	GAC Group World Tour Czech Open Olomouc 2015	LEE Chia-Sheng (TPE)	LIAO Cheng-Ting (TPE)	KELBUGANOV Timur (KAZ)	MILOVANOV Andrey (BLR)	MD	Qualification	QR64	3 - 0	11:3 11:7 11:3	LEE Chia-Sheng	LIAO Cheng-Ting
+2015	GAC Group World Tour Czech Open Olomouc 2015	LEE Chia-Sheng (TPE)	LIAO Cheng-Ting (TPE)	SHIBAEV Alexander (RUS)	SKACHKOV Kirill (RUS)	MD	Qualification	QR32	1 - 3	11:9 9:11 10:12 7:11	SHIBAEV Alexander	SKACHKOV Kirill
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 43
+
+2015	GAC Group World Tour Czech Open Olomouc 2015	GUI Lin (BRA)	KUMAHARA Luca (BRA)	PICCOLIN Giorgia (ITA)	VIVARELLI Debora (ITA)	WD	Qualification	QR64	3 - 0	11:2 11:6 11:4	GUI Lin	KUMAHARA Luca
+2015	GAC Group World Tour Czech Open Olomouc 2015	GUI Lin (BRA)	KUMAHARA Luca (BRA)	KOMWONG Nanthana (THA)	SAWETTABUT Suthasini (THA)	WD	Qualification	QR32	1 - 3	11:4 2:11 8:11 5:11	KOMWONG Nanthana	SAWETTABUT Suthasini
+2015	GAC Group World Tour Czech Open Olomouc 2015	EKHOLM Matilda (SWE)	RAKOVAC Lea (CRO)	BAJOR Natalia (POL)	WABIK Sandra (POL)	WD	Qualification	QR32	3 - 0	11:8 11:4 11:7	EKHOLM Matilda	RAKOVAC Lea
+2015	GAC Group World Tour Czech Open Olomouc 2015	EKHOLM Matilda (SWE)	RAKOVAC Lea (CRO)	POLCANOVA Sofia (AUT)	SOLJA Amelie (AUT)	WD	Qualification	QR16	3 - 1	11:8 11:8 6:11 12:10	EKHOLM Matilda	RAKOVAC Lea
+2015	GAC Group World Tour Czech Open Olomouc 2015	KHETKHUAN Tamolwan (THA)	TIAN Yuan (CRO)	LIN Ye (CAN)	YU Mengyu (SGP)	WD	Qualification	QR16	0 - 3	9:11 4:11 7:11	LIN Ye	YU Mengyu
+2015	GAC Group World Tour Czech Open Olomouc 2015	MYNAROVA Karolina (CZE)	STEFCOVA Kristyna (CZE)	LI Ching Wan (HKG)	SOO Wai Yam (HKG)	WD	Qualification	QR64	1 - 3	9:11 6:11 11:8 3:11	LI Ching Wan	SOO Wai Yam
+2015	GAC Group World Tour Czech Open Olomouc 2015	CECHOVA Dana (CZE)	TOMANOVSKA Katerina (CZE)	KIM Byeolnim (KOR)	LEE Yujin (KOR)	WD	Qualification	QR64	0 - 3	7:11 6:11 9:11	KIM Byeolnim	LEE Yujin
+2015	GAC Group World Tour Czech Open Olomouc 2015	VARADY Barbora (SVK)	MATELOVA Hana (CZE)	HU Melek (TUR)	YANG Xiaoxin (MON)	WD	Qualification	QR32	1 - 3	11:6 10:12 9:11 6:11	HU Melek	YANG Xiaoxin
+2015	GAC Group World Tour Czech Open Olomouc 2015	LIU Jia (AUT)	VACENOVSKA Iveta (CZE)	POTA Georgina (HUN)	SAMARA Elizabeta (ROU)	WD	Main Draw	R16	3 - 2	6:11 13:11 11:9 4:11 11:7	LIU Jia	VACENOVSKA Iveta
+2015	GAC Group World Tour Czech Open Olomouc 2015	LIU Jia (AUT)	VACENOVSKA Iveta (CZE)	CHENG I-Ching (TPE)	HUANG Yi-Hua (TPE)	WD	Main Draw	QuarterFinal	3 - 2	11:7 4:11 11:13 11:5 11:4	LIU Jia	VACENOVSKA Iveta
+2015	GAC Group World Tour Czech Open Olomouc 2015	LI Xue (FRA)	XIAN Yifang (FRA)	POTA Georgina (HUN)	SAMARA Elizabeta (ROU)	WD	Qualification	QR16	0 - 3	8:11 6:11 7:11	POTA Georgina	SAMARA Elizabeta
+2015	GAC Group World Tour Czech Open Olomouc 2015	MITTELHAM Nina (GER)	WINTER Sabine (GER)	PENKAVOVA Katerina (CZE)	TOMANOVA Tamara (CZE)	WD	Qualification	QR32	3 - 0	11:7 11:7 11:7	MITTELHAM Nina	WINTER Sabine
+2015	GAC Group World Tour Czech Open Olomouc 2015	MITTELHAM Nina (GER)	WINTER Sabine (GER)	LEE Seul (KOR)	LEE Zion (KOR)	WD	Qualification	QR16	2 - 3	3:11 11:6 8:11 11:7 3:11	LEE Seul	LEE Zion
+2015	GAC Group World Tour Czech Open Olomouc 2015	DOO Hoi Kem (HKG)	TIE Yana (HKG)	SHAO Jieni (POR)	YU Fu (POR)	WD	Main Draw	R16	3 - 0	11:3 11:8 11:3	DOO Hoi Kem	TIE Yana
+2015	GAC Group World Tour Czech Open Olomouc 2015	DOO Hoi Kem (HKG)	TIE Yana (HKG)	LEE Seul (KOR)	LEE Zion (KOR)	WD	Main Draw	QuarterFinal	3 - 0	11:8 11:6 11:8	DOO Hoi Kem	TIE Yana
+2015	GAC Group World Tour Czech Open Olomouc 2015	DOO Hoi Kem (HKG)	TIE Yana (HKG)	LIU Jia (AUT)	VACENOVSKA Iveta (CZE)	WD	Main Draw	SemiFinal	3 - 1	11:5 6:11 11:6 11:3	DOO Hoi Kem	TIE Yana
+2015	GAC Group World Tour Czech Open Olomouc 2015	AMBRUS Krisztina (HUN)	NAGYVARADI Mercedes (HUN)	LEE Seul (KOR)	LEE Zion (KOR)	WD	Qualification	QR32	0 - 3	2:11 10:12 9:11	LEE Seul	LEE Zion
+2015	GAC Group World Tour Czech Open Olomouc 2015	LE Thi Hong Loan (ITA)	MOSCONI Veronica (ITA)	KHETKHUAN Tamolwan (THA)	TIAN Yuan (CRO)	WD	Qualification	QR64	0 - 3	5:11 6:11 5:11	KHETKHUAN Tamolwan	TIAN Yuan
+2015	GAC Group World Tour Czech Open Olomouc 2015	KIM Byeolnim (KOR)	LEE Yujin (KOR)	POLCANOVA Sofia (AUT)	SOLJA Amelie (AUT)	WD	Qualification	QR32	1 - 3	11:1 9:11 6:11 9:11	POLCANOVA Sofia	SOLJA Amelie
+2015	GAC Group World Tour Czech Open Olomouc 2015	JEON Jihee (KOR)	YANG Ha Eun (KOR)	EKHOLM Matilda (SWE)	RAKOVAC Lea (CRO)	WD	Main Draw	R16	3 - 0	11:7 11:7 11:4	JEON Jihee	YANG Ha Eun
+2015	GAC Group World Tour Czech Open Olomouc 2015	LEE Seul (KOR)	LEE Zion (KOR)	DOLGIKH Maria (RUS)	MIKHAILOVA Polina (RUS)	WD	Main Draw	R16	3 - 2	11:13 11:8 10:12 11:7 11:8	LEE Seul	LEE Zion
+2015	GAC Group World Tour Czech Open Olomouc 2015	JEON Jihee (KOR)	YANG Ha Eun (KOR)	SHAN Xiaona (GER)	SOLJA Petrissa (GER)	WD	Main Draw	QuarterFinal	3 - 2	8:11 11:7 11:7 8:11 11:7	JEON Jihee	YANG Ha Eun
+2015	GAC Group World Tour Czech Open Olomouc 2015	JEON Jihee (KOR)	YANG Ha Eun (KOR)	LI Jie (NED)	LI Qian (POL)	WD	Main Draw	SemiFinal	3 - 1	11:9 6:11 14:12 11:5	JEON Jihee	YANG Ha Eun
+2015	GAC Group World Tour Czech Open Olomouc 2015	JEON Jihee (KOR)	YANG Ha Eun (KOR)	DOO Hoi Kem (HKG)	TIE Yana (HKG)	WD	Main Draw	Final	3 - 1	6:11 11:7 11:8 11:5	JEON Jihee	YANG Ha Eun
+2015	GAC Group World Tour Czech Open Olomouc 2015	EERLAND Britt (NED)	LI Jiao (NED)	GROFOVA Karin (CZE)	SIRUCKOVA Aneta (CZE)	WD	Qualification	QR64	3 - 0	11:8 13:11 11:6	EERLAND Britt	LI Jiao
+2015	GAC Group World Tour Czech Open Olomouc 2015	EERLAND Britt (NED)	LI Jiao (NED)	POTA Georgina (HUN)	SAMARA Elizabeta (ROU)	WD	Qualification	QR32	2 - 3	12:10 6:11 5:11 11:6 10:12	POTA Georgina	SAMARA Elizabeta
+2015	GAC Group World Tour Czech Open Olomouc 2015	LI Jie (NED)	LI Qian (POL)	CHENG Hsien-Tzu (TPE)	CHEN Szu-Yu (TPE)	WD	Main Draw	R16	3 - 1	9:11 11:8 11:6 11:5	LI Jie	LI Qian
+2015	GAC Group World Tour Czech Open Olomouc 2015	LI Jie (NED)	LI Qian (POL)	LIN Ye (CAN)	YU Mengyu (SGP)	WD	Main Draw	QuarterFinal	3 - 1	11:7 11:1 12:14 11:2	LI Jie	LI Qian
+2015	GAC Group World Tour Czech Open Olomouc 2015	SHAO Jieni (POR)	YU Fu (POR)	HU Melek (TUR)	YANG Xiaoxin (MON)	WD	Qualification	QR16	3 - 1	7:11 11:7 12:10 11:9	SHAO Jieni	YU Fu
+2015	GAC Group World Tour Czech Open Olomouc 2015	GUSEVA Ekaterina (RUS)	PROKHOROVA Yulia (RUS)	SHAO Jieni (POR)	YU Fu (POR)	WD	Qualification	QR32	1 - 3	10:7 11:8 8:11 9:11 10:12	SHAO Jieni	YU Fu
+2015	GAC Group World Tour Czech Open Olomouc 2015	NOSKOVA Yana (RUS)	TIKHOMIROVA Anna (RUS)	KHETKHUAN Tamolwan (THA)	TIAN Yuan (CRO)	WD	Qualification	QR32	0 - 3	8:11 9:11 7:11	KHETKHUAN Tamolwan	TIAN Yuan
+2015	GAC Group World Tour Czech Open Olomouc 2015	FENG Tianwei (SGP)	ZHOU Yihan (SGP)	LI Xue (FRA)	XIAN Yifang (FRA)	WD	Qualification	QR32	1 - 3	11:13 9:11 11:9 8:11	LI Xue	XIAN Yifang
+2015	GAC Group World Tour Czech Open Olomouc 2015	LIN Ye (CAN)	YU Mengyu (SGP)	GRZYBOWSKA-FRANC Katarzyna (POL)	PARTYKA Natalia (POL)	WD	Main Draw	R16	3 - 2	17:15 8:11 10:12 11:7 11:7	LIN Ye	YU Mengyu
+2015	GAC Group World Tour Czech Open Olomouc 2015	DE NUTTE Sarah (LUX)	TODOROVIC Andrea (SRB)	LOVAS Petra (HUN)	PERGEL Szandra (HUN)	WD	Qualification	QR32	0 - 3	6:11 10:12 9:11	LOVAS Petra	PERGEL Szandra
+2015	GAC Group World Tour Czech Open Olomouc 2015	ERDELJI Anamaria (SRB)	FEHER Gabriela (SRB)	LIN Ye (CAN)	YU Mengyu (SGP)	WD	Qualification	QR32	2 - 3	5:11 8:11 20:18 11:7 6:11	LIN Ye	YU Mengyu
+2015	GAC Group World Tour Czech Open Olomouc 2015	CHENG Hsien-Tzu (TPE)	CHEN Szu-Yu (TPE)	LI Ching Wan (HKG)	SOO Wai Yam (HKG)	WD	Qualification	QR32	3 - 2	11:7 7:11 11:8 6:11 11:4	CHENG Hsien-Tzu	CHEN Szu-Yu
+2015	GAC Group World Tour Czech Open Olomouc 2015	LEE I-Chen (TPE)	LIU Hsing-Yin (TPE)	FAJMUT Manca (SLO)	GALIC Alex (SLO)	WD	Qualification	QR32	3 - 1	11:6 5:11 11:5 11:4	LEE I-Chen	LIU Hsing-Yin
+2015	GAC Group World Tour Czech Open Olomouc 2015	CHENG I-Ching (TPE)	HUANG Yi-Hua (TPE)	LOEUILLETTE Stephanie (FRA)	PFEFER Laura (FRA)	WD	Qualification	QR32	3 - 1	11:7 9:11 13:11 11:5	CHENG I-Ching	HUANG Yi-Hua
+2015	GAC Group World Tour Czech Open Olomouc 2015	CHENG Hsien-Tzu (TPE)	CHEN Szu-Yu (TPE)	LOVAS Petra (HUN)	PERGEL Szandra (HUN)	WD	Qualification	QR16	3 - 0	11:5 11:6 11:4	CHENG Hsien-Tzu	CHEN Szu-Yu
+2015	GAC Group World Tour Czech Open Olomouc 2015	LEE I-Chen (TPE)	LIU Hsing-Yin (TPE)	HADZIAHMETOVIC Emina (BIH)	KNEZEVIC Monika (SRB)	WD	Qualification	QR16	3 - 0	11:5 11:2 11:6	LEE I-Chen	LIU Hsing-Yin
+2015	GAC Group World Tour Czech Open Olomouc 2015	CHENG I-Ching (TPE)	HUANG Yi-Hua (TPE)	KOMWONG Nanthana (THA)	SAWETTABUT Suthasini (THA)	WD	Qualification	QR16	3 - 0	11:4 11:8 11:6	CHENG I-Ching	HUANG Yi-Hua
+2015	GAC Group World Tour Czech Open Olomouc 2015	LEE I-Chen (TPE)	LIU Hsing-Yin (TPE)	SHAN Xiaona (GER)	SOLJA Petrissa (GER)	WD	Main Draw	R16	1 - 3	3:11 6:11 11:8 6:11	SHAN Xiaona	SOLJA Petrissa
+2015	GAC Group World Tour Czech Open Olomouc 2015	CHENG I-Ching (TPE)	HUANG Yi-Hua (TPE)	JIANG Huajun (HKG)	LEE Ho Ching (HKG)	WD	Main Draw	R16	3 - 2	11:8 3:11 3:11 11:5 11:6	CHENG I-Ching	HUANG Yi-Hua

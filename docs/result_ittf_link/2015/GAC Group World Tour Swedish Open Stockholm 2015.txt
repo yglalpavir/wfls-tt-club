@@ -185,9 +185,6 @@ Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Game
 Display #
 
 
-100
-Total: 56
-
 2015	GAC Group World Tour Swedish Open Stockholm 2015	HU Heming (AUS)	POWELL David (AUS)	BROSSIER Benjamin (FRA)	HACHARD Antoine (FRA)	MD	Qualification	QR64	1 - 3	4:11 7:11 11:7 6:11	BROSSIER Benjamin	HACHARD Antoine
 2015	GAC Group World Tour Swedish Open Stockholm 2015	LEVENKO Andreas (AUT)	SERDAROGLU David (AUT)	GHOSH Soumyajit (IND)	SHETTY Sanil (IND)	MD	Qualification	QR32	1 - 3	13:11 4:11 10:12 4:11	GHOSH Soumyajit	SHETTY Sanil
 2015	GAC Group World Tour Swedish Open Stockholm 2015	ALLEGRO Martin (BEL)	JEAN Lauric (BEL)	SUN Chia-Hung (TPE)	YANG Tzu-Yi (TPE)	MD	Qualification	QR64	1 - 3	11:13 9:11 11:9 7:11	SUN Chia-Hung	YANG Tzu-Yi
@@ -249,8 +246,6 @@ Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Game
 Display #
 
 
-100
-Total: 41
 
 2015	GAC Group World Tour Swedish Open Stockholm 2015	BATRA Manika (IND)	TAPPER Melissa (AUS)	BAJOR Natalia (POL)	KNYSZEWSKA Paulina (POL)	WD	Qualification	QR64	3 - 1	11:6 13:11 10:12 13:11	BATRA Manika	TAPPER Melissa
 2015	GAC Group World Tour Swedish Open Stockholm 2015	BATRA Manika (IND)	TAPPER Melissa (AUS)	ISHIKAWA Kasumi (JPN)	ITO Mima (JPN)	WD	Qualification	QR32	0 - 3	7:11 3:11 6:11	ISHIKAWA Kasumi	ITO Mima

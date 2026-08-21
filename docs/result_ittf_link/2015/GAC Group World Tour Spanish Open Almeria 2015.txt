@@ -5,3 +5,322 @@
 参赛人数：585
 开始日期：2015-03-25
 结束日期：2015-03-29
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 3 Total: 275
+
+Start
+Prev
+1
+2
+3
+Next
+End
+2015	GAC Group World Tour Spanish Open Almeria 2015	SAMSONOV Vladimir (BLR)		ANDERSSON Harald (SWE)		MS	Main Draw	R64	4 - 3	11:6 6:11 11:3 9:11 7:11 11:5 11:3	SAMSONOV Vladimir	
+2015	GAC Group World Tour Spanish Open Almeria 2015	JANG Woojin (KOR)		HE Zhiwen (ESP)		MS	Main Draw	R64	3 - 4	8:11 11:8 11:6 6:11 11:4 9:11 9:11	HE Zhiwen	
+2015	GAC Group World Tour Spanish Open Almeria 2015	KREANGA Kalinikos (GRE)		KUZMIN Fedor (RUS)		MS	Main Draw	R64	4 - 0	13:11 13:11 11:9 11:7	KREANGA Kalinikos	
+2015	GAC Group World Tour Spanish Open Almeria 2015	LEE Chia-Sheng (TPE)		SHIBAEV Alexander (RUS)		MS	Main Draw	R64	3 - 4	11:6 12:10 7:11 11:3 9:11 4:11 11:13	SHIBAEV Alexander	
+2015	GAC Group World Tour Spanish Open Almeria 2015	YOSHIMURA Maharu (JPN)		SALEH Ahmed (EGY)		MS	Main Draw	R64	4 - 1	11:7 11:9 12:10 10:12 11:6	YOSHIMURA Maharu	
+2015	GAC Group World Tour Spanish Open Almeria 2015	BROSSIER Benjamin (FRA)		PATTANTYUS Adam (HUN)		MS	Main Draw	R64	1 - 4	11:7 3:11 6:11 10:12 4:11	PATTANTYUS Adam	
+2015	GAC Group World Tour Spanish Open Almeria 2015	HUANG Sheng-Sheng (TPE)		LASHIN Elsayed (EGY)		MS	Main Draw	R64	4 - 3	12:10 14:12 9:11 7:11 14:12 7:11 13:11	HUANG Sheng-Sheng	
+2015	GAC Group World Tour Spanish Open Almeria 2015	HO Kwan Kit (HKG)		ARUNA Quadri (NGR)		MS	Main Draw	R64	3 - 4	9:11 11:9 12:10 11:9 7:11 8:11 9:11	ARUNA Quadri	
+2015	GAC Group World Tour Spanish Open Almeria 2015	MORIZONO Masataka (JPN)		KARAKASEVIC Aleksandar (SRB)		MS	Main Draw	R64	4 - 2	8:11 11:2 11:7 9:11 11:7 11:3	MORIZONO Masataka	
+2015	GAC Group World Tour Spanish Open Almeria 2015	KOSIBA Daniel (HUN)		LI Ahmet (TUR)		MS	Main Draw	R64	1 - 4	11:9 9:11 7:11 4:11 9:11	LI Ahmet	
+2015	GAC Group World Tour Spanish Open Almeria 2015	LIVENTSOV Alexey (RUS)		ANGLES Enzo (FRA)		MS	Main Draw	R64	4 - 2	11:7 12:14 11:7 11:5 6:11 12:10	LIVENTSOV Alexey	
+2015	GAC Group World Tour Spanish Open Almeria 2015	LIM Jonghoon (KOR)		GERELL Par (SWE)		MS	Main Draw	R64	4 - 0	11:9 11:9 11:5 11:3	LIM Jonghoon	
+2015	GAC Group World Tour Spanish Open Almeria 2015	CHIANG Hung-Chieh (TPE)		AKERSTROM Fabian (SWE)		MS	Main Draw	R64	4 - 1	7:11 11:8 11:9 11:6 11:8	CHIANG Hung-Chieh	
+2015	GAC Group World Tour Spanish Open Almeria 2015	MATSUDAIRA Kenji (JPN)		KIM Donghyun (KOR)		MS	Main Draw	R64	0 - 4	7:11 5:11 6:11 9:11	KIM Donghyun	
+2015	GAC Group World Tour Spanish Open Almeria 2015	FEGERL Stefan (AUT)		KARLSSON Mattias (SWE)		MS	Main Draw	R64	2 - 4	12:14 7:11 12:10 12:10 4:11 7:11	KARLSSON Mattias	
+2015	GAC Group World Tour Spanish Open Almeria 2015	ELBEIALI Mohamed (EGY)		CHO Eonrae (KOR)		MS	Main Draw	R64	3 - 4	11:4 11:8 13:15 9:11 5:11 11:9 6:11	CHO Eonrae	
+2015	GAC Group World Tour Spanish Open Almeria 2015	MATSUDAIRA Kenta (JPN)		SALIFOU Abdel-Kader (BEN)		MS	Main Draw	R64	4 - 2	11:2 8:11 13:11 11:6 9:11 12:10	MATSUDAIRA Kenta	
+2015	GAC Group World Tour Spanish Open Almeria 2015	WANG Zhixu (CHN)		WANG Eugene (CAN)		MS	Main Draw	R64	1 - 4	11:7 7:11 9:11 9:11 7:11	WANG Eugene	
+2015	GAC Group World Tour Spanish Open Almeria 2015	YOSHIDA Masaki (JPN)		KONECNY Tomas (CZE)		MS	Main Draw	R64	4 - 1	9:11 11:8 11:5 11:9 11:3	YOSHIDA Masaki	
+2015	GAC Group World Tour Spanish Open Almeria 2015	LORENTZ Romain (FRA)		VLASOV Grigory (RUS)		MS	Main Draw	R64	1 - 4	10:12 8:11 9:11 11:9 7:11	VLASOV Grigory	
+2015	GAC Group World Tour Spanish Open Almeria 2015	ASSAR Omar (EGY)		GHOSH Soumyajit (IND)		MS	Main Draw	R64	3 - 4	11:9 11:6 8:11 8:11 7:11 11:8 6:11	GHOSH Soumyajit	
+2015	GAC Group World Tour Spanish Open Almeria 2015	STOYANOV Niagol (ITA)		LUNDQVIST Jens (SWE)		MS	Main Draw	R64	4 - 2	11:9 8:11 11:6 11:9 9:11 11:6	STOYANOV Niagol	
+2015	GAC Group World Tour Spanish Open Almeria 2015	PROKOPCOV Dmitrij (CZE)		OIKAWA Mizuki (JPN)		MS	Main Draw	R64	4 - 1	11:13 11:8 11:9 11:8 11:7	PROKOPCOV Dmitrij	
+2015	GAC Group World Tour Spanish Open Almeria 2015	ROBINOT Quentin (FRA)		DRINKHALL Paul (ENG)		MS	Main Draw	R64	0 - 4	10:12 5:11 8:11 6:11	DRINKHALL Paul	
+2015	GAC Group World Tour Spanish Open Almeria 2015	MURAMATSU Yuto (JPN)		KIM Minhyeok (KOR)		MS	Main Draw	R64	2 - 4	21:19 8:11 11:6 5:11 5:11 10:12	KIM Minhyeok	
+2015	GAC Group World Tour Spanish Open Almeria 2015	BOULOUSSA Mehdi (ALG)		MACHADO Carlos (ESP)		MS	Main Draw	R64	4 - 2	11:8 11:5 8:11 6:11 12:10 11:9	BOULOUSSA Mehdi	
+2015	GAC Group World Tour Spanish Open Almeria 2015	SMIRNOV Alexey (RUS)		SAMBE Kohei (JPN)		MS	Main Draw	R64	4 - 2	11:8 4:11 11:7 4:11 11:6 11:7	SMIRNOV Alexey	
+2015	GAC Group World Tour Spanish Open Almeria 2015	SAKAI Asuka (JPN)		WONG Chun Ting (HKG)		MS	Main Draw	R64	0 - 4	7:11 8:11 9:11 6:11	WONG Chun Ting	
+2015	GAC Group World Tour Spanish Open Almeria 2015	OSHIMA Yuya (JPN)		PARK Ganghyeon (KOR)		MS	Main Draw	R64	4 - 1	11:2 8:11 11:3 11:4 11:7	OSHIMA Yuya	
+2015	GAC Group World Tour Spanish Open Almeria 2015	PERSSON Jon (SWE)		LI Ping (QAT)		MS	Main Draw	R64	0 - 4	8:11 8:11 7:11 16:18	LI Ping	
+2015	GAC Group World Tour Spanish Open Almeria 2015	HABESOHN Daniel (AUT)		JANCARIK Lubomir (CZE)		MS	Main Draw	R64	4 - 3	9:11 11:5 12:10 13:11 1:11 10:12 11:9	HABESOHN Daniel	
+2015	GAC Group World Tour Spanish Open Almeria 2015	SAIVE Jean-Michel (BEL)		NIWA Koki (JPN)		MS	Main Draw	R64	1 - 4	9:11 2:11 11:5 6:11 6:11	NIWA Koki	
+2015	GAC Group World Tour Spanish Open Almeria 2015	SAMSONOV Vladimir (BLR)		HE Zhiwen (ESP)		MS	Main Draw	R32	4 - 0	11:6 11:8 11:8 16:14	SAMSONOV Vladimir	
+2015	GAC Group World Tour Spanish Open Almeria 2015	KREANGA Kalinikos (GRE)		SHIBAEV Alexander (RUS)		MS	Main Draw	R32	1 - 4	12:10 7:11 6:11 7:11 7:11	SHIBAEV Alexander	
+2015	GAC Group World Tour Spanish Open Almeria 2015	YOSHIMURA Maharu (JPN)		PATTANTYUS Adam (HUN)		MS	Main Draw	R32	4 - 0	11:9 11:6 11:5 11:8	YOSHIMURA Maharu	
+2015	GAC Group World Tour Spanish Open Almeria 2015	HUANG Sheng-Sheng (TPE)		ARUNA Quadri (NGR)		MS	Main Draw	R32	4 - 1	11:4 3:11 11:8 11:5 11:9	HUANG Sheng-Sheng	
+2015	GAC Group World Tour Spanish Open Almeria 2015	MORIZONO Masataka (JPN)		LI Ahmet (TUR)		MS	Main Draw	R32	4 - 1	10:12 11:9 11:4 11:6 11:9	MORIZONO Masataka	
+2015	GAC Group World Tour Spanish Open Almeria 2015	LIVENTSOV Alexey (RUS)		LIM Jonghoon (KOR)		MS	Main Draw	R32	2 - 4	6:11 11:5 8:11 6:11 12:10 12:14	LIM Jonghoon	
+2015	GAC Group World Tour Spanish Open Almeria 2015	CHIANG Hung-Chieh (TPE)		KIM Donghyun (KOR)		MS	Main Draw	R32	2 - 4	11:9 11:6 10:12 8:11 5:11 4:11	KIM Donghyun	
+2015	GAC Group World Tour Spanish Open Almeria 2015	KARLSSON Mattias (SWE)		CHO Eonrae (KOR)		MS	Main Draw	R32	4 - 2	7:11 11:9 10:12 11:8 11:8 11:8	KARLSSON Mattias	
+2015	GAC Group World Tour Spanish Open Almeria 2015	MATSUDAIRA Kenta (JPN)		WANG Eugene (CAN)		MS	Main Draw	R32	4 - 3	11:9 10:12 12:10 11:6 7:11 11:13 13:11	MATSUDAIRA Kenta	
+2015	GAC Group World Tour Spanish Open Almeria 2015	YOSHIDA Masaki (JPN)		VLASOV Grigory (RUS)		MS	Main Draw	R32	4 - 1	6:11 11:6 12:10 11:6 11:9	YOSHIDA Masaki	
+2015	GAC Group World Tour Spanish Open Almeria 2015	GHOSH Soumyajit (IND)		STOYANOV Niagol (ITA)		MS	Main Draw	R32	4 - 3	9:11 11:7 6:11 11:4 11:4 11:13 11:3	GHOSH Soumyajit	
+2015	GAC Group World Tour Spanish Open Almeria 2015	PROKOPCOV Dmitrij (CZE)		DRINKHALL Paul (ENG)		MS	Main Draw	R32	4 - 2	11:7 11:5 12:10 9:11 8:11 11:5	PROKOPCOV Dmitrij	
+2015	GAC Group World Tour Spanish Open Almeria 2015	KIM Minhyeok (KOR)		BOULOUSSA Mehdi (ALG)		MS	Main Draw	R32	4 - 0	14:12 14:12 11:8 16:14	KIM Minhyeok	
+2015	GAC Group World Tour Spanish Open Almeria 2015	SMIRNOV Alexey (RUS)		WONG Chun Ting (HKG)		MS	Main Draw	R32	2 - 4	12:10 10:12 10:12 11:8 9:11 11:13	WONG Chun Ting	
+2015	GAC Group World Tour Spanish Open Almeria 2015	OSHIMA Yuya (JPN)		LI Ping (QAT)		MS	Main Draw	R32	1 - 4	11:8 5:11 7:11 11:13 6:11	LI Ping	
+2015	GAC Group World Tour Spanish Open Almeria 2015	HABESOHN Daniel (AUT)		NIWA Koki (JPN)		MS	Main Draw	R32	2 - 4	11:7 9:11 11:6 5:11 8:11 9:11	NIWA Koki	
+2015	GAC Group World Tour Spanish Open Almeria 2015	SAMSONOV Vladimir (BLR)		SHIBAEV Alexander (RUS)		MS	Main Draw	R16	2 - 4	11:9 5:11 14:12 5:11 9:11 10:12	SHIBAEV Alexander	
+2015	GAC Group World Tour Spanish Open Almeria 2015	YOSHIMURA Maharu (JPN)		HUANG Sheng-Sheng (TPE)		MS	Main Draw	R16	4 - 2	11:9 11:7 11:9 9:11 4:11 11:4	YOSHIMURA Maharu	
+2015	GAC Group World Tour Spanish Open Almeria 2015	MORIZONO Masataka (JPN)		LIM Jonghoon (KOR)		MS	Main Draw	R16	4 - 0	11:7 11:4 11:7 11:2	MORIZONO Masataka	
+2015	GAC Group World Tour Spanish Open Almeria 2015	KIM Donghyun (KOR)		KARLSSON Mattias (SWE)		MS	Main Draw	R16	4 - 3	11:9 6:11 8:11 7:11 11:7 11:8 11:4	KIM Donghyun	
+2015	GAC Group World Tour Spanish Open Almeria 2015	MATSUDAIRA Kenta (JPN)		YOSHIDA Masaki (JPN)		MS	Main Draw	R16	4 - 0	11:4 11:0 11:0 11:0	MATSUDAIRA Kenta	
+2015	GAC Group World Tour Spanish Open Almeria 2015	GHOSH Soumyajit (IND)		PROKOPCOV Dmitrij (CZE)		MS	Main Draw	R16	1 - 4	7:11 8:11 5:11 11:3 1:11	PROKOPCOV Dmitrij	
+2015	GAC Group World Tour Spanish Open Almeria 2015	KIM Minhyeok (KOR)		WONG Chun Ting (HKG)		MS	Main Draw	R16	0 - 4	7:11 9:11 6:11 3:11	WONG Chun Ting	
+2015	GAC Group World Tour Spanish Open Almeria 2015	LI Ping (QAT)		NIWA Koki (JPN)		MS	Main Draw	R16	2 - 4	5:11 13:11 6:11 12:10 8:11 3:11	NIWA Koki	
+2015	GAC Group World Tour Spanish Open Almeria 2015	SHIBAEV Alexander (RUS)		YOSHIMURA Maharu (JPN)		MS	Main Draw	QuarterFinal	0 - 4	14:16 11:13 6:11 8:11	YOSHIMURA Maharu	
+2015	GAC Group World Tour Spanish Open Almeria 2015	MORIZONO Masataka (JPN)		KIM Donghyun (KOR)		MS	Main Draw	QuarterFinal	1 - 4	9:11 8:11 11:3 8:11 13:15	KIM Donghyun	
+2015	GAC Group World Tour Spanish Open Almeria 2015	MATSUDAIRA Kenta (JPN)		PROKOPCOV Dmitrij (CZE)		MS	Main Draw	QuarterFinal	4 - 1	11:8 8:11 11:8 11:8 11:5	MATSUDAIRA Kenta	
+2015	GAC Group World Tour Spanish Open Almeria 2015	WONG Chun Ting (HKG)		NIWA Koki (JPN)		MS	Main Draw	QuarterFinal	4 - 3	11:6 10:12 11:9 11:6 7:11 7:11 11:9	WONG Chun Ting	
+2015	GAC Group World Tour Spanish Open Almeria 2015	YOSHIMURA Maharu (JPN)		KIM Donghyun (KOR)		MS	Main Draw	SemiFinal	4 - 1	11:5 11:6 3:11 11:7 11:8	YOSHIMURA Maharu	
+2015	GAC Group World Tour Spanish Open Almeria 2015	MATSUDAIRA Kenta (JPN)		WONG Chun Ting (HKG)		MS	Main Draw	SemiFinal	3 - 4	5:11 12:10 7:11 11:4 13:15 11:7 10:12	WONG Chun Ting	
+2015	GAC Group World Tour Spanish Open Almeria 2015	YOSHIMURA Maharu (JPN)		WONG Chun Ting (HKG)		MS	Main Draw	Final	4 - 0	11:8 11:7 11:4 11:6	YOSHIMURA Maharu	
+2015	GAC Group World Tour Spanish Open Almeria 2015	KIM Donghyun (KOR)		BOULOUSSA Mehdi (ALG)		U21MS	Main Draw	R32	3 - 0	12:10 11:6 11:6	KIM Donghyun	
+2015	GAC Group World Tour Spanish Open Almeria 2015	LI Hon Ming (HKG)		ANGLES Enzo (FRA)		U21MS	Main Draw	R32	0 - 3	11:13 9:11 7:11	ANGLES Enzo	
+2015	GAC Group World Tour Spanish Open Almeria 2015	KIZUKURI Yuto (JPN)		LAMBIET Florent (BEL)		U21MS	Main Draw	R32	1 - 3	11:13 7:11 11:6 6:11	LAMBIET Florent	
+2015	GAC Group World Tour Spanish Open Almeria 2015	SODERLUND Hampus (SWE)		BROSSIER Benjamin (FRA)		U21MS	Main Draw	R32	2 - 3	8:11 11:5 11:6 8:11 9:11	BROSSIER Benjamin	
+2015	GAC Group World Tour Spanish Open Almeria 2015	HACHARD Antoine (FRA)		PARK Ganghyeon (KOR)		U21MS	Main Draw	R32	1 - 3	11:5 9:11 9:11 9:11	PARK Ganghyeon	
+2015	GAC Group World Tour Spanish Open Almeria 2015	LAMADRID Juan (CHI)		LEE Chia-Sheng (TPE)		U21MS	Main Draw	R32	1 - 3	9:11 2:11 11:7 2:11	LEE Chia-Sheng	
+2015	GAC Group World Tour Spanish Open Almeria 2015	AKKUZU Can (FRA)		LIM Jonghoon (KOR)		U21MS	Main Draw	R32	3 - 0	11:9 11:9 11:5	AKKUZU Can	
+2015	GAC Group World Tour Spanish Open Almeria 2015	QIU Liang (GER)		SAKAI Asuka (JPN)		U21MS	Main Draw	R32	0 - 3	9:11 4:11 3:11	SAKAI Asuka	
+2015	GAC Group World Tour Spanish Open Almeria 2015	SAMBE Kohei (JPN)		WANG Tai-Wei (TPE)		U21MS	Main Draw	R32	3 - 1	11:7 10:12 11:7 11:4	SAMBE Kohei	
+2015	GAC Group World Tour Spanish Open Almeria 2015	GAUZY Paul (FRA)		DEVOS Robin (BEL)		U21MS	Main Draw	R32	3 - 1	10:12 11:6 11:7 11:9	GAUZY Paul	
+2015	GAC Group World Tour Spanish Open Almeria 2015	ZELJKO Filip (CRO)		HUNG Ka Tak (HKG)		U21MS	Main Draw	R32	1 - 3	9:11 11:8 11:13 7:11	HUNG Ka Tak	
+2015	GAC Group World Tour Spanish Open Almeria 2015	KIM Minhyeok (KOR)		LAKATOS Tamas (HUN)		U21MS	Main Draw	R32	3 - 2	12:10 11:4 9:11 7:11 11:9	KIM Minhyeok	
+2015	GAC Group World Tour Spanish Open Almeria 2015	WANG Zhixu (CHN)		ROBINOT Alexandre (FRA)		U21MS	Main Draw	R32	3 - 2	5:11 11:4 11:7 10:12 12:10	WANG Zhixu	
+2015	GAC Group World Tour Spanish Open Almeria 2015	OIKAWA Mizuki (JPN)		ZHAI Yujia (DEN)		U21MS	Main Draw	R32	3 - 1	9:11 11:3 11:3 11:3	OIKAWA Mizuki	
+2015	GAC Group World Tour Spanish Open Almeria 2015	PUCAR Tomislav (CRO)		JANG Woojin (KOR)		U21MS	Main Draw	R32	1 - 3	10:12 11:6 9:11 12:14	JANG Woojin	
+2015	GAC Group World Tour Spanish Open Almeria 2015	KIM Donghyun (KOR)		ANGLES Enzo (FRA)		U21MS	Main Draw	R16	3 - 1	11:9 5:11 11:5 11:6	KIM Donghyun	
+2015	GAC Group World Tour Spanish Open Almeria 2015	LAMBIET Florent (BEL)		BROSSIER Benjamin (FRA)		U21MS	Main Draw	R16	3 - 2	4:11 5:11 11:7 11:8 11:3	LAMBIET Florent	
+2015	GAC Group World Tour Spanish Open Almeria 2015	PARK Ganghyeon (KOR)		LEE Chia-Sheng (TPE)		U21MS	Main Draw	R16	3 - 0	11:7 11:7 11:5	PARK Ganghyeon	
+2015	GAC Group World Tour Spanish Open Almeria 2015	AKKUZU Can (FRA)		SAKAI Asuka (JPN)		U21MS	Main Draw	R16	1 - 3	12:10 8:11 6:11 9:11	SAKAI Asuka	
+2015	GAC Group World Tour Spanish Open Almeria 2015	SAMBE Kohei (JPN)		GAUZY Paul (FRA)		U21MS	Main Draw	R16	3 - 1	11:8 6:11 11:4 13:11	SAMBE Kohei	
+2015	GAC Group World Tour Spanish Open Almeria 2015	HUNG Ka Tak (HKG)		HO Kwan Kit (HKG)		U21MS	Main Draw	R16	0 - 3	5:11 11:13 5:11	HO Kwan Kit	
+2015	GAC Group World Tour Spanish Open Almeria 2015	KIM Minhyeok (KOR)		WANG Zhixu (CHN)		U21MS	Main Draw	R16	1 - 3	5:11 9:11 11:1 10:12	WANG Zhixu	
+2015	GAC Group World Tour Spanish Open Almeria 2015	OIKAWA Mizuki (JPN)		JANG Woojin (KOR)		U21MS	Main Draw	R16	0 - 3	5:11 8:11 9:11	JANG Woojin	
+2015	GAC Group World Tour Spanish Open Almeria 2015	KIM Donghyun (KOR)		LAMBIET Florent (BEL)		U21MS	Main Draw	QuarterFinal	3 - 0	12:10 11:8 11:8	KIM Donghyun	
+2015	GAC Group World Tour Spanish Open Almeria 2015	PARK Ganghyeon (KOR)		SAKAI Asuka (JPN)		U21MS	Main Draw	QuarterFinal	1 - 3	6:11 11:8 5:11 6:11	SAKAI Asuka	
+2015	GAC Group World Tour Spanish Open Almeria 2015	SAMBE Kohei (JPN)		HO Kwan Kit (HKG)		U21MS	Main Draw	QuarterFinal	3 - 1	12:10 4:11 11:3 11:9	SAMBE Kohei	
+2015	GAC Group World Tour Spanish Open Almeria 2015	WANG Zhixu (CHN)		JANG Woojin (KOR)		U21MS	Main Draw	QuarterFinal	0 - 3	8:11 8:11 6:11	JANG Woojin	
+2015	GAC Group World Tour Spanish Open Almeria 2015	KIM Donghyun (KOR)		SAKAI Asuka (JPN)		U21MS	Main Draw	SemiFinal	3 - 1	11:6 6:11 11:7 12:10	KIM Donghyun	
+2015	GAC Group World Tour Spanish Open Almeria 2015	SAMBE Kohei (JPN)		JANG Woojin (KOR)		U21MS	Main Draw	SemiFinal	3 - 2	11:4 9:11 11:4 3:11 11:5	SAMBE Kohei	
+2015	GAC Group World Tour Spanish Open Almeria 2015	KIM Donghyun (KOR)		SAMBE Kohei (JPN)		U21MS	Main Draw	Final	3 - 1	11:5 11:2 8:11 11:1	KIM Donghyun
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 1 of 3 Total: 226
+
+Start
+Prev
+1
+2
+3
+Next
+End
+2015	GAC Group World Tour Spanish Open Almeria 2015	ISHIKAWA Kasumi (JPN)		WONG Chung Wan (HKG)		WS	Main Draw	R64	4 - 0	11:7 11:4 11:3 11:7	ISHIKAWA Kasumi	
+2015	GAC Group World Tour Spanish Open Almeria 2015	RAKOVAC Lea (CRO)		MATSUZAWA Marina (JPN)		WS	Main Draw	R64	3 - 4	6:11 11:5 8:11 8:11 13:11 11:9 9:11	MATSUZAWA Marina	
+2015	GAC Group World Tour Spanish Open Almeria 2015	MAEDA Miyu (JPN)		VARADY Barbora (SVK)		WS	Main Draw	R64	3 - 4	9:11 3:11 11:4 9:11 11:6 14:12 7:11	VARADY Barbora	
+2015	GAC Group World Tour Spanish Open Almeria 2015	ZHANG Sofia-Xuan (ESP)		DOO Hoi Kem (HKG)		WS	Main Draw	R64	2 - 4	12:10 6:11 11:13 5:11 11:5 3:11	DOO Hoi Kem	
+2015	GAC Group World Tour Spanish Open Almeria 2015	CHEN Szu-Yu (TPE)		TSUCHIDA Mika (JPN)		WS	Main Draw	R64	4 - 0	13:11 13:11 11:9 11:4	CHEN Szu-Yu	
+2015	GAC Group World Tour Spanish Open Almeria 2015	SO Eka (JPN)		WINTER Sabine (GER)		WS	Main Draw	R64	4 - 2	10:12 12:10 11:8 11:8 6:11 13:11	SO Eka	
+2015	GAC Group World Tour Spanish Open Almeria 2015	VACENOVSKA Iveta (CZE)		ZARIF Audrey (FRA)		WS	Main Draw	R64	4 - 0	12:10 11:7 11:8 11:8	VACENOVSKA Iveta	
+2015	GAC Group World Tour Spanish Open Almeria 2015	SHAO Jieni (POR)		ISHIGAKI Yuka (JPN)		WS	Main Draw	R64	0 - 4	1:11 5:11 10:12 1:11	ISHIGAKI Yuka	
+2015	GAC Group World Tour Spanish Open Almeria 2015	POTA Georgina (HUN)		TIAN Yuan (CRO)		WS	Main Draw	R64	4 - 2	6:11 11:6 11:7 11:13 11:5 11:9	POTA Georgina	
+2015	GAC Group World Tour Spanish Open Almeria 2015	MATSUDAIRA Shiho (JPN)		NI Xia Lian (LUX)		WS	Main Draw	R64	4 - 3	7:11 11:7 11:5 7:11 11:7 6:11 11:7	MATSUDAIRA Shiho	
+2015	GAC Group World Tour Spanish Open Almeria 2015	EKHOLM Matilda (SWE)		TASHIRO Saki (JPN)		WS	Main Draw	R64	4 - 3	11:8 6:11 12:10 3:11 11:7 12:14 11:8	EKHOLM Matilda	
+2015	GAC Group World Tour Spanish Open Almeria 2015	LEE Nakyung (KOR)		HIRANO Miu (JPN)		WS	Main Draw	R64	0 - 4	10:12 6:11 7:11 5:11	HIRANO Miu	
+2015	GAC Group World Tour Spanish Open Almeria 2015	JEON Jihee (KOR)		DE NUTTE Sarah (LUX)		WS	Main Draw	R64	4 - 1	11:4 8:11 11:5 11:6 11:6	JEON Jihee	
+2015	GAC Group World Tour Spanish Open Almeria 2015	JO Yujin (KOR)		HUANG Yi-Hua (TPE)		WS	Main Draw	R64	4 - 1	9:11 11:7 11:5 11:9 11:6	JO Yujin	
+2015	GAC Group World Tour Spanish Open Almeria 2015	TIE Yana (HKG)		PROKHOROVA Yulia (RUS)		WS	Main Draw	R64	4 - 3	7:11 11:7 9:11 13:11 12:14 11:8 11:9	TIE Yana	
+2015	GAC Group World Tour Spanish Open Almeria 2015	ALTINKAYA Sibel (TUR)		YU Fu (POR)		WS	Main Draw	R64	1 - 4	3:11 11:8 6:11 6:11 3:11	YU Fu	
+2015	GAC Group World Tour Spanish Open Almeria 2015	BOLLMEIER Nadine (GER)		HAMAMOTO Yui (AUT)		WS	Main Draw	R64	1 - 4	5:11 11:6 11:13 9:11 5:11	HAMAMOTO Yui	
+2015	GAC Group World Tour Spanish Open Almeria 2015	MADARASZ Dora (HUN)		GRUNDISCH Carole (FRA)		WS	Main Draw	R64	1 - 4	15:13 5:11 5:11 6:11 10:12	GRUNDISCH Carole	
+2015	GAC Group World Tour Spanish Open Almeria 2015	HUANG Hsin (TPE)		LI Jie (NED)		WS	Main Draw	R64	0 - 4	3:11 6:11 5:11 6:11	LI Jie	
+2015	GAC Group World Tour Spanish Open Almeria 2015	MORIZONO Misaki (JPN)		MATELOVA Hana (CZE)		WS	Main Draw	R64	4 - 2	11:9 7:11 12:10 9:11 11:5 11:9	MORIZONO Misaki	
+2015	GAC Group World Tour Spanish Open Almeria 2015	CHOI Hyojoo (KOR)		MORI Sakura (JPN)		WS	Main Draw	R64	4 - 0	11:7 11:1 11:8 11:8	CHOI Hyojoo	
+2015	GAC Group World Tour Spanish Open Almeria 2015	RAMIREZ Sara (ESP)		VIVARELLI Debora (ITA)		WS	Main Draw	R64	4 - 0	11:6 11:8 11:5 12:10	RAMIREZ Sara	
+2015	GAC Group World Tour Spanish Open Almeria 2015	FEHER Gabriela (SRB)		SHAN Xiaona (GER)		WS	Main Draw	R64	0 - 4	7:11 5:11 9:11 7:11	SHAN Xiaona	
+2015	GAC Group World Tour Spanish Open Almeria 2015	WAKAMIYA Misako (JPN)		PENKAVOVA Katerina (CZE)		WS	Main Draw	R64	4 - 0	11:6 11:2 11:5 11:1	WAKAMIYA Misako	
+2015	GAC Group World Tour Spanish Open Almeria 2015	PASKAUSKIENE Ruta (LTU)		YANG Xiaoxin (MON)		WS	Main Draw	R64	0 - 4	2:11 1:11 1:11 10:12	YANG Xiaoxin	
+2015	GAC Group World Tour Spanish Open Almeria 2015	MIKHAILOVA Polina (RUS)		BILENKO Tetyana (UKR)		WS	Main Draw	R64	1 - 4	8:11 11:8 3:11 9:11 11:13	BILENKO Tetyana	
+2015	GAC Group World Tour Spanish Open Almeria 2015	LIU Yu-Hsin (TPE)		ITO Mima (JPN)		WS	Main Draw	R64	1 - 4	6:11 11:9 11:13 2:11 7:11	ITO Mima	
+2015	GAC Group World Tour Spanish Open Almeria 2015	JIANG Huajun (HKG)		YOON Hyobin (KOR)		WS	Main Draw	R64	4 - 1	11:7 11:8 12:14 11:9 11:5	JIANG Huajun	
+2015	GAC Group World Tour Spanish Open Almeria 2015	LEE Dasom (KOR)		KATO Miyu (JPN)		WS	Main Draw	R64	4 - 2	7:11 11:7 11:5 9:11 11:8 11:6	LEE Dasom	
+2015	GAC Group World Tour Spanish Open Almeria 2015	DVORAK Galia (ESP)		CHENG Hsien-Tzu (TPE)		WS	Main Draw	R64	4 - 1	11:7 11:6 4:11 11:8 11:8	DVORAK Galia	
+2015	GAC Group World Tour Spanish Open Almeria 2015	PERGEL Szandra (HUN)		FUKUHARA Ai (JPN)		WS	Main Draw	R64	0 - 4	6:11 10:12 1:11 9:11	FUKUHARA Ai	
+2015	GAC Group World Tour Spanish Open Almeria 2015	ISHIKAWA Kasumi (JPN)		MATSUZAWA Marina (JPN)		WS	Main Draw	R32	4 - 2	6:11 11:4 9:11 11:6 11:4 11:8	ISHIKAWA Kasumi	
+2015	GAC Group World Tour Spanish Open Almeria 2015	VARADY Barbora (SVK)		DOO Hoi Kem (HKG)		WS	Main Draw	R32	0 - 4	3:11 0:11 0:11 0:11	DOO Hoi Kem	
+2015	GAC Group World Tour Spanish Open Almeria 2015	CHEN Szu-Yu (TPE)		SO Eka (JPN)		WS	Main Draw	R32	4 - 1	13:11 12:10 11:8 3:11 11:8	CHEN Szu-Yu	
+2015	GAC Group World Tour Spanish Open Almeria 2015	VACENOVSKA Iveta (CZE)		ISHIGAKI Yuka (JPN)		WS	Main Draw	R32	0 - 4	7:11 9:11 7:11 7:11	ISHIGAKI Yuka	
+2015	GAC Group World Tour Spanish Open Almeria 2015	POTA Georgina (HUN)		MATSUDAIRA Shiho (JPN)		WS	Main Draw	R32	4 - 1	13:11 11:8 7:11 11:4 11:8	POTA Georgina	
+2015	GAC Group World Tour Spanish Open Almeria 2015	EKHOLM Matilda (SWE)		HIRANO Miu (JPN)		WS	Main Draw	R32	2 - 4	3:11 13:15 13:11 7:11 11:8 3:11	HIRANO Miu	
+2015	GAC Group World Tour Spanish Open Almeria 2015	JEON Jihee (KOR)		JO Yujin (KOR)		WS	Main Draw	R32	4 - 1	11:5 13:15 11:8 11:4 11:7	JEON Jihee	
+2015	GAC Group World Tour Spanish Open Almeria 2015	TIE Yana (HKG)		YU Fu (POR)		WS	Main Draw	R32	4 - 2	11:7 5:11 11:5 11:13 11:1 11:5	TIE Yana	
+2015	GAC Group World Tour Spanish Open Almeria 2015	HIRANO Sayaka (JPN)		HAMAMOTO Yui (AUT)		WS	Main Draw	R32	4 - 1	11:13 11:9 11:2 11:7 11:7	HIRANO Sayaka	
+2015	GAC Group World Tour Spanish Open Almeria 2015	GRUNDISCH Carole (FRA)		LI Jie (NED)		WS	Main Draw	R32	0 - 4	3:11 6:11 4:11 9:11	LI Jie	
+2015	GAC Group World Tour Spanish Open Almeria 2015	MORIZONO Misaki (JPN)		CHOI Hyojoo (KOR)		WS	Main Draw	R32	4 - 3	9:11 11:4 8:11 11:6 11:3 6:11 11:9	MORIZONO Misaki	
+2015	GAC Group World Tour Spanish Open Almeria 2015	RAMIREZ Sara (ESP)		SHAN Xiaona (GER)		WS	Main Draw	R32	1 - 4	10:12 11:9 3:11 8:11 9:11	SHAN Xiaona	
+2015	GAC Group World Tour Spanish Open Almeria 2015	WAKAMIYA Misako (JPN)		YANG Xiaoxin (MON)		WS	Main Draw	R32	2 - 4	6:11 13:11 4:11 8:11 11:6 6:11	YANG Xiaoxin	
+2015	GAC Group World Tour Spanish Open Almeria 2015	BILENKO Tetyana (UKR)		ITO Mima (JPN)		WS	Main Draw	R32	2 - 4	10:12 8:11 11:9 4:11 11:5 5:11	ITO Mima	
+2015	GAC Group World Tour Spanish Open Almeria 2015	JIANG Huajun (HKG)		LEE Dasom (KOR)		WS	Main Draw	R32	4 - 0	11:7 11:7 11:6 11:9	JIANG Huajun	
+2015	GAC Group World Tour Spanish Open Almeria 2015	DVORAK Galia (ESP)		FUKUHARA Ai (JPN)		WS	Main Draw	R32	0 - 4	2:11 6:11 6:11 6:11	FUKUHARA Ai	
+2015	GAC Group World Tour Spanish Open Almeria 2015	ISHIKAWA Kasumi (JPN)		DOO Hoi Kem (HKG)		WS	Main Draw	R16	2 - 4	7:11 3:11 9:11 11:8 11:7 10:12	DOO Hoi Kem	
+2015	GAC Group World Tour Spanish Open Almeria 2015	CHEN Szu-Yu (TPE)		ISHIGAKI Yuka (JPN)		WS	Main Draw	R16	1 - 4	15:17 11:6 7:11 4:11 9:11	ISHIGAKI Yuka	
+2015	GAC Group World Tour Spanish Open Almeria 2015	POTA Georgina (HUN)		HIRANO Miu (JPN)		WS	Main Draw	R16	4 - 2	11:7 11:9 12:10 7:11 7:11 11:8	POTA Georgina	
+2015	GAC Group World Tour Spanish Open Almeria 2015	JEON Jihee (KOR)		TIE Yana (HKG)		WS	Main Draw	R16	4 - 1	4:11 11:8 11:4 11:4 11:7	JEON Jihee	
+2015	GAC Group World Tour Spanish Open Almeria 2015	HIRANO Sayaka (JPN)		LI Jie (NED)		WS	Main Draw	R16	4 - 0	11:8 11:6 11:5 11:8	HIRANO Sayaka	
+2015	GAC Group World Tour Spanish Open Almeria 2015	MORIZONO Misaki (JPN)		SHAN Xiaona (GER)		WS	Main Draw	R16	4 - 1	11:5 5:11 11:7 11:7 11:8	MORIZONO Misaki	
+2015	GAC Group World Tour Spanish Open Almeria 2015	YANG Xiaoxin (MON)		ITO Mima (JPN)		WS	Main Draw	R16	4 - 2	11:6 11:8 11:2 8:11 9:11 13:11	YANG Xiaoxin	
+2015	GAC Group World Tour Spanish Open Almeria 2015	JIANG Huajun (HKG)		FUKUHARA Ai (JPN)		WS	Main Draw	R16	3 - 4	11:2 11:9 8:11 4:11 4:11 11:7 7:11	FUKUHARA Ai	
+2015	GAC Group World Tour Spanish Open Almeria 2015	DOO Hoi Kem (HKG)		ISHIGAKI Yuka (JPN)		WS	Main Draw	QuarterFinal	0 - 4	10:12 4:11 9:11 11:13	ISHIGAKI Yuka	
+2015	GAC Group World Tour Spanish Open Almeria 2015	POTA Georgina (HUN)		JEON Jihee (KOR)		WS	Main Draw	QuarterFinal	1 - 4	12:10 9:11 7:11 2:11 6:11	JEON Jihee	
+2015	GAC Group World Tour Spanish Open Almeria 2015	HIRANO Sayaka (JPN)		MORIZONO Misaki (JPN)		WS	Main Draw	QuarterFinal	4 - 3	5:11 11:2 11:4 11:6 9:11 9:11 11:9	HIRANO Sayaka	
+2015	GAC Group World Tour Spanish Open Almeria 2015	YANG Xiaoxin (MON)		FUKUHARA Ai (JPN)		WS	Main Draw	QuarterFinal	3 - 4	6:11 7:11 11:8 11:9 6:11 11:5 3:11	FUKUHARA Ai	
+2015	GAC Group World Tour Spanish Open Almeria 2015	ISHIGAKI Yuka (JPN)		JEON Jihee (KOR)		WS	Main Draw	SemiFinal	2 - 4	7:11 11:3 5:11 12:10 8:11 6:11	JEON Jihee	
+2015	GAC Group World Tour Spanish Open Almeria 2015	HIRANO Sayaka (JPN)		FUKUHARA Ai (JPN)		WS	Main Draw	SemiFinal	4 - 1	11:6 11:2 11:5 4:11 11:5	HIRANO Sayaka	
+2015	GAC Group World Tour Spanish Open Almeria 2015	JEON Jihee (KOR)		HIRANO Sayaka (JPN)		WS	Main Draw	Final	4 - 1	11:5 11:9 3:11 11:9 11:5	JEON Jihee	
+2015	GAC Group World Tour Spanish Open Almeria 2015	ITO Mima (JPN)		HELMY Yousra (EGY)		U21WS	Main Draw	R32	3 - 0	11:3 11:7 11:4	ITO Mima	
+2015	GAC Group World Tour Spanish Open Almeria 2015	HUANG Hsin (TPE)		WAN Yuan (GER)		U21WS	Main Draw	R32	0 - 3	3:11 5:11 9:11	WAN Yuan	
+2015	GAC Group World Tour Spanish Open Almeria 2015	SO Eka (JPN)		CHOI Hyojoo (KOR)		U21WS	Main Draw	R32	3 - 1	11:3 11:8 2:11 11:4	SO Eka	
+2015	GAC Group World Tour Spanish Open Almeria 2015	ZHANG Sofia-Xuan (ESP)		HAMAMOTO Yui (AUT)		U21WS	Main Draw	R32	0 - 3	1:11 4:11 7:11	HAMAMOTO Yui	
+2015	GAC Group World Tour Spanish Open Almeria 2015	MORI Sakura (JPN)		KULAKCEKEN Simay (TUR)		U21WS	Main Draw	R32	3 - 0	11:4 11:8 11:5	MORI Sakura	
+2015	GAC Group World Tour Spanish Open Almeria 2015	LEMMER Alena (GER)		LAM Yee Lok (HKG)		U21WS	Main Draw	R32	1 - 3	5:11 11:9 5:11 8:11	LAM Yee Lok	
+2015	GAC Group World Tour Spanish Open Almeria 2015	XIAO Maria (ESP)		LEE Seul (KOR)		U21WS	Main Draw	R32	3 - 1	11:7 12:10 2:11 11:9	XIAO Maria	
+2015	GAC Group World Tour Spanish Open Almeria 2015	MIGOT Marie (FRA)		MAEDA Miyu (JPN)		U21WS	Main Draw	R32	2 - 3	11:9 6:11 11:3 5:11 4:11	MAEDA Miyu	
+2015	GAC Group World Tour Spanish Open Almeria 2015	KATO Miyu (JPN)		LEE Yujin (KOR)		U21WS	Main Draw	R32	3 - 2	5:11 11:9 11:13 11:8 11:5	KATO Miyu	
+2015	GAC Group World Tour Spanish Open Almeria 2015	NAGYVARADI Mercedes (HUN)		LEE Dasom (KOR)		U21WS	Main Draw	R32	0 - 3	5:11 7:11 3:11	LEE Dasom	
+2015	GAC Group World Tour Spanish Open Almeria 2015	TSUI Pao-Wen (TPE)		SHAO Jieni (POR)		U21WS	Main Draw	R32	1 - 3	7:11 11:4 4:11 5:11	SHAO Jieni	
+2015	GAC Group World Tour Spanish Open Almeria 2015	PICCOLIN Giorgia (ITA)		RAKOVAC Lea (CRO)		U21WS	Main Draw	R32	0 - 3	8:11 7:11 6:11	RAKOVAC Lea	
+2015	GAC Group World Tour Spanish Open Almeria 2015	MATSUDAIRA Shiho (JPN)		MARCHETTI Nathalie (BEL)		U21WS	Main Draw	R32	3 - 0	11:5 12:10 11:7	MATSUDAIRA Shiho	
+2015	GAC Group World Tour Spanish Open Almeria 2015	ZARIF Audrey (FRA)		TSUCHIDA Mika (JPN)		U21WS	Main Draw	R32	0 - 3	2:11 5:11 5:11	TSUCHIDA Mika	
+2015	GAC Group World Tour Spanish Open Almeria 2015	KUMAHARA Luca (BRA)		WONG Chung Wan (HKG)		U21WS	Main Draw	R32	2 - 3	11:7 11:4 8:11 9:11 8:11	WONG Chung Wan	
+2015	GAC Group World Tour Spanish Open Almeria 2015	YOON Hyobin (KOR)		HIRANO Miu (JPN)		U21WS	Main Draw	R32	1 - 3	4:11 3:11 11:8 7:11	HIRANO Miu	
+2015	GAC Group World Tour Spanish Open Almeria 2015	ITO Mima (JPN)		WAN Yuan (GER)		U21WS	Main Draw	R16	3 - 1	11:8 11:2 5:11 11:6	ITO Mima	
+2015	GAC Group World Tour Spanish Open Almeria 2015	SO Eka (JPN)		HAMAMOTO Yui (AUT)		U21WS	Main Draw	R16	2 - 3	7:11 11:6 11:13 11:9 8:11	HAMAMOTO Yui	
+2015	GAC Group World Tour Spanish Open Almeria 2015	MORI Sakura (JPN)		LAM Yee Lok (HKG)		U21WS	Main Draw	R16	3 - 2	10:12 11:7 7:12 11:9 11:8	MORI Sakura	
+2015	GAC Group World Tour Spanish Open Almeria 2015	XIAO Maria (ESP)		MAEDA Miyu (JPN)		U21WS	Main Draw	R16	0 - 3	6:11 8:11 6:11	MAEDA Miyu	
+2015	GAC Group World Tour Spanish Open Almeria 2015	KATO Miyu (JPN)		LEE Dasom (KOR)		U21WS	Main Draw	R16	2 - 3	11:8 8:11 7:11 11:8 10:12	LEE Dasom	
+2015	GAC Group World Tour Spanish Open Almeria 2015	SHAO Jieni (POR)		RAKOVAC Lea (CRO)		U21WS	Main Draw	R16	3 - 2	7:11 8:11 11:5 11:4 11:9	SHAO Jieni	
+2015	GAC Group World Tour Spanish Open Almeria 2015	MATSUDAIRA Shiho (JPN)		TSUCHIDA Mika (JPN)		U21WS	Main Draw	R16	1 - 3	9:11 11:8 7:11 8:11	TSUCHIDA Mika	
+2015	GAC Group World Tour Spanish Open Almeria 2015	WONG Chung Wan (HKG)		HIRANO Miu (JPN)		U21WS	Main Draw	R16	0 - 3	3:11 4:11 6:11	HIRANO Miu	
+2015	GAC Group World Tour Spanish Open Almeria 2015	ITO Mima (JPN)		HAMAMOTO Yui (AUT)		U21WS	Main Draw	QuarterFinal	3 - 2	11:5 8:11 11:6 7:11 11:7	ITO Mima	
+2015	GAC Group World Tour Spanish Open Almeria 2015	MORI Sakura (JPN)		MAEDA Miyu (JPN)		U21WS	Main Draw	QuarterFinal	0 - 3	9:11 7:11 4:11	MAEDA Miyu	
+2015	GAC Group World Tour Spanish Open Almeria 2015	LEE Dasom (KOR)		SHAO Jieni (POR)		U21WS	Main Draw	QuarterFinal	0 - 3	8:11 6:11 5:11	SHAO Jieni	
+2015	GAC Group World Tour Spanish Open Almeria 2015	TSUCHIDA Mika (JPN)		HIRANO Miu (JPN)		U21WS	Main Draw	QuarterFinal	0 - 3	8:11 3:11 3:11	HIRANO Miu	
+2015	GAC Group World Tour Spanish Open Almeria 2015	ITO Mima (JPN)		MAEDA Miyu (JPN)		U21WS	Main Draw	SemiFinal	3 - 1	11:8 14:12 9:11 14:12	ITO Mima	
+2015	GAC Group World Tour Spanish Open Almeria 2015	SHAO Jieni (POR)		HIRANO Miu (JPN)		U21WS	Main Draw	SemiFinal	0 - 3	7:11 7:11 6:11	HIRANO Miu	
+2015	GAC Group World Tour Spanish Open Almeria 2015	ITO Mima (JPN)		HIRANO Miu (JPN)		U21WS	Main Draw	Final	2 - 3	11:7 8:11 10:12 11:7 7:11	HIRANO Miu
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 48
+
+2015	GAC Group World Tour Spanish Open Almeria 2015	KOHATSU Massao (BRA)	LAMADRID Juan (CHI)	PICCOLIN Jordy (ITA)	STOYANOV Niagol (ITA)	MD	Qualification	QR64	3 - 0	11:7 11:7 11:9	KOHATSU Massao	LAMADRID Juan
+2015	GAC Group World Tour Spanish Open Almeria 2015	KOHATSU Massao (BRA)	LAMADRID Juan (CHI)	LORENTZ Romain (FRA)	ROBINOT Alexandre (FRA)	MD	Qualification	QR32	1 - 3	5:11 8:11 12:10 10:12	LORENTZ Romain	ROBINOT Alexandre
+2015	GAC Group World Tour Spanish Open Almeria 2015	JANCARIK Lubomir (CZE)	PROKOPCOV Dmitrij (CZE)	SHIBAEV Alexander (RUS)	SMIRNOV Alexey (RUS)	MD	Main Draw	QuarterFinal	0 - 3	8:11 9:11 1:11	SHIBAEV Alexander	SMIRNOV Alexey
+2015	GAC Group World Tour Spanish Open Almeria 2015	LASHIN Elsayed (EGY)	SALEH Ahmed (EGY)	HE Zhiwen (ESP)	MACHADO Carlos (ESP)	MD	Main Draw	QuarterFinal	0 - 3	8:11 4:11 11:13	HE Zhiwen	MACHADO Carlos
+2015	GAC Group World Tour Spanish Open Almeria 2015	LASHIN Elsayed (EGY)	SALEH Ahmed (EGY)	MOHR Julian (GER)	SCHEJA Dominik (GER)	MD	Qualification	QR32	3 - 1	11:7 6:11 12:10 11:2	LASHIN Elsayed	SALEH Ahmed
+2015	GAC Group World Tour Spanish Open Almeria 2015	ASSAR Khalid (EGY)	ASSAR Omar (EGY)	MOAVRO Sebastian (ARG)	VILLANUEVA Nelson (VEN)	MD	Qualification	QR32	3 - 0	11:3 11:3 11:6	ASSAR Khalid	ASSAR Omar
+2015	GAC Group World Tour Spanish Open Almeria 2015	LASHIN Elsayed (EGY)	SALEH Ahmed (EGY)	GERELL Par (SWE)	PERSSON Jon (SWE)	MD	Qualification	QR16	3 - 2	4:11 11:6 8:11 11:8 11:5	LASHIN Elsayed	SALEH Ahmed
+2015	GAC Group World Tour Spanish Open Almeria 2015	BEDAIR Omar (EGY)	ELBEIALI Mohamed (EGY)	LORENTZ Romain (FRA)	ROBINOT Alexandre (FRA)	MD	Qualification	QR16	0 - 3	7:11 10:12 7:11	LORENTZ Romain	ROBINOT Alexandre
+2015	GAC Group World Tour Spanish Open Almeria 2015	ASSAR Khalid (EGY)	ASSAR Omar (EGY)	DRINKHALL Paul (ENG)	MCBEATH David (ENG)	MD	Qualification	QR16	1 - 3	9:11 11:5 8:11 6:11	DRINKHALL Paul	MCBEATH David
+2015	GAC Group World Tour Spanish Open Almeria 2015	DRINKHALL Paul (ENG)	MCBEATH David (ENG)	KUZMIN Fedor (RUS)	VLASOV Grigory (RUS)	MD	Main Draw	QuarterFinal	1 - 3	9:11 6:11 11:6 12:14	KUZMIN Fedor	VLASOV Grigory
+2015	GAC Group World Tour Spanish Open Almeria 2015	HE Zhiwen (ESP)	MACHADO Carlos (ESP)	MATSUDAIRA Kenta (JPN)	NIWA Koki (JPN)	MD	Main Draw	SemiFinal	3 - 2	3:11 6:11 11:5 11:3 11:2	HE Zhiwen	MACHADO Carlos
+2015	GAC Group World Tour Spanish Open Almeria 2015	RUIZ Jose Manuel (ESP)	VILCHEZ Miguel (ESP)	KARLSSON Mattias (SWE)	NORDBERG Hampus (SWE)	MD	Qualification	QR64	2 - 3	11:8 6:11 6:11 11:7 5:11	KARLSSON Mattias	NORDBERG Hampus
+2015	GAC Group World Tour Spanish Open Almeria 2015	CANTERO Jesus (ESP)	DURAN Marc (ESP)	BERNADET Antoine (CAN)	THERIAULT Pierre-Luc (CAN)	MD	Qualification	QR64	3 - 0	11:9 11:9 11:5	CANTERO Jesus	DURAN Marc
+2015	GAC Group World Tour Spanish Open Almeria 2015	CANO Rodrigo (ESP)	VEDRIEL Carlos (ESP)	PUCAR Tomislav (CRO)	ZELJKO Filip (CRO)	MD	Qualification	QR64	1 - 3	5:11 4:11 11:9 2:11	PUCAR Tomislav	ZELJKO Filip
+2015	GAC Group World Tour Spanish Open Almeria 2015	DIEZ Endika (ESP)	ROBLES Alvaro (ESP)	GLOD Eric (LUX)	WAERSTAD Marcus (NOR)	MD	Qualification	QR64	3 - 1	9:11 11:5 11:9 11:4	DIEZ Endika	ROBLES Alvaro
+2015	GAC Group World Tour Spanish Open Almeria 2015	CANTERO Jesus (ESP)	DURAN Marc (ESP)	JANCARIK Lubomir (CZE)	PROKOPCOV Dmitrij (CZE)	MD	Qualification	QR32	1 - 3	8:11 11:8 9:11 10:12	JANCARIK Lubomir	PROKOPCOV Dmitrij
+2015	GAC Group World Tour Spanish Open Almeria 2015	LORENTZ Romain (FRA)	ROBINOT Alexandre (FRA)	MATSUDAIRA Kenta (JPN)	NIWA Koki (JPN)	MD	Main Draw	QuarterFinal	1 - 3	6:11 11:3 5:11 6:11	MATSUDAIRA Kenta	NIWA Koki
+2015	GAC Group World Tour Spanish Open Almeria 2015	ROBINOT Quentin (FRA)	SALIFOU Abdel-Kader (BEN)	KARLSSON Mattias (SWE)	NORDBERG Hampus (SWE)	MD	Qualification	QR32	0 - 3	10:12 18:20 6:11	KARLSSON Mattias	NORDBERG Hampus
+2015	GAC Group World Tour Spanish Open Almeria 2015	MOHR Julian (GER)	SCHEJA Dominik (GER)	CALVO Alejandro (ESP)	FRANCO Carlos (ESP)	MD	Qualification	QR64	3 - 0	15:13 11:8 11:5	MOHR Julian	SCHEJA Dominik
+2015	GAC Group World Tour Spanish Open Almeria 2015	GATICA Hector (GUA)	RAMIREZ Jose Miguel (GUA)	ECSEKI Nandor (HUN)	SZITA Marton (HUN)	MD	Qualification	QR64	0 - 3	9:11 6:11 9:11	ECSEKI Nandor	SZITA Marton
+2015	GAC Group World Tour Spanish Open Almeria 2015	HO Kwan Kit (HKG)	WONG Chun Ting (HKG)	LASHIN Elsayed (EGY)	SALEH Ahmed (EGY)	MD	Main Draw	R16	2 - 3	9:11 11:9 11:6 9:11 8:11	LASHIN Elsayed	SALEH Ahmed
+2015	GAC Group World Tour Spanish Open Almeria 2015	LAKATOS Tamas (HUN)	PATTANTYUS Adam (HUN)	DRINKHALL Paul (ENG)	MCBEATH David (ENG)	MD	Qualification	QR32	0 - 3	4:11 3:11 4:11	DRINKHALL Paul	MCBEATH David
+2015	GAC Group World Tour Spanish Open Almeria 2015	GHOSH Soumyajit (IND)	KUMAR Jubin (IND)	MATSUDAIRA Kenta (JPN)	NIWA Koki (JPN)	MD	Main Draw	R16	1 - 3	11:7 9:11 8:11 8:11	MATSUDAIRA Kenta	NIWA Koki
+2015	GAC Group World Tour Spanish Open Almeria 2015	MORIZONO Masataka (JPN)	OSHIMA Yuya (JPN)	LORENTZ Romain (FRA)	ROBINOT Alexandre (FRA)	MD	Main Draw	R16	1 - 3	7:11 11:9 8:11 7:11	LORENTZ Romain	ROBINOT Alexandre
+2015	GAC Group World Tour Spanish Open Almeria 2015	JANG Woojin (KOR)	LIM Jonghoon (KOR)	KUZMIN Fedor (RUS)	VLASOV Grigory (RUS)	MD	Main Draw	R16	0 - 3	8:11 4:11 7:11	KUZMIN Fedor	VLASOV Grigory
+2015	GAC Group World Tour Spanish Open Almeria 2015	KIM Minhyeok (KOR)	PARK Ganghyeon (KOR)	HE Zhiwen (ESP)	MACHADO Carlos (ESP)	MD	Main Draw	R16	2 - 3	5:11 3:11 11:8 11:9 4:11	HE Zhiwen	MACHADO Carlos
+2015	GAC Group World Tour Spanish Open Almeria 2015	JANG Woojin (KOR)	LIM Jonghoon (KOR)	ECSEKI Nandor (HUN)	SZITA Marton (HUN)	MD	Qualification	QR32	3 - 2	13:15 9:11 12:10 11:2 11:8	JANG Woojin	LIM Jonghoon
+2015	GAC Group World Tour Spanish Open Almeria 2015	KIM Minhyeok (KOR)	PARK Ganghyeon (KOR)	PETER Ingemar (SVK)	VALUCH Alexander (SVK)	MD	Qualification	QR32	3 - 1	11:4 11:7 7:11 11:6	KIM Minhyeok	PARK Ganghyeon
+2015	GAC Group World Tour Spanish Open Almeria 2015	JANG Woojin (KOR)	LIM Jonghoon (KOR)	DIEZ Endika (ESP)	ROBLES Alvaro (ESP)	MD	Qualification	QR16	3 - 1	11:3 5:11 11:5 11:8	JANG Woojin	LIM Jonghoon
+2015	GAC Group World Tour Spanish Open Almeria 2015	KIM Minhyeok (KOR)	PARK Ganghyeon (KOR)	LEE Chia-Sheng (TPE)	WANG LI Chung-Yi (TPE)	MD	Qualification	QR16	3 - 2	9:11 11:13 11:6 11:6 11:8	KIM Minhyeok	PARK Ganghyeon
+2015	GAC Group World Tour Spanish Open Almeria 2015	MOSCOSO Heber (GUA)	SKUCAS Matas (LTU)	HUNG Ka Tak (HKG)	LEITGEB Stefan (AUT)	MD	Qualification	QR64	0 - 3	6:11 4:11 10:12	HUNG Ka Tak	LEITGEB Stefan
+2015	GAC Group World Tour Spanish Open Almeria 2015	ARUNA Quadri (NGR)	KAZEEM Makanjuola (NGR)	HUNG Ka Tak (HKG)	LEITGEB Stefan (AUT)	MD	Qualification	QR32	3 - 0	11:6 11:8 12:10	ARUNA Quadri	KAZEEM Makanjuola
+2015	GAC Group World Tour Spanish Open Almeria 2015	ARUNA Quadri (NGR)	KAZEEM Makanjuola (NGR)	JANCARIK Lubomir (CZE)	PROKOPCOV Dmitrij (CZE)	MD	Qualification	QR16	2 - 3	11:9 3:11 6:11 11:8 7:11	JANCARIK Lubomir	PROKOPCOV Dmitrij
+2015	GAC Group World Tour Spanish Open Almeria 2015	CARVALHO Diogo (POR)	CHEN Diogo (POR)	BEDAIR Omar (EGY)	ELBEIALI Mohamed (EGY)	MD	Qualification	QR64	0 - 3	7:11 8:11 7:11	BEDAIR Omar	ELBEIALI Mohamed
+2015	GAC Group World Tour Spanish Open Almeria 2015	SHIBAEV Alexander (RUS)	SMIRNOV Alexey (RUS)	CHO Eonrae (KOR)	KIM Donghyun (KOR)	MD	Main Draw	R16	3 - 0	11:2 11:9 12:10	SHIBAEV Alexander	SMIRNOV Alexey
+2015	GAC Group World Tour Spanish Open Almeria 2015	BUROV Viacheslav (RUS)	LIVENTSOV Alexey (RUS)	DRINKHALL Paul (ENG)	MCBEATH David (ENG)	MD	Main Draw	R16	0 - 3	7:11 6:11 0:11	DRINKHALL Paul	MCBEATH David
+2015	GAC Group World Tour Spanish Open Almeria 2015	SHIBAEV Alexander (RUS)	SMIRNOV Alexey (RUS)	KUZMIN Fedor (RUS)	VLASOV Grigory (RUS)	MD	Main Draw	SemiFinal	0 - 3	8:11 8:11 6:11	KUZMIN Fedor	VLASOV Grigory
+2015	GAC Group World Tour Spanish Open Almeria 2015	KUZMIN Fedor (RUS)	VLASOV Grigory (RUS)	HE Zhiwen (ESP)	MACHADO Carlos (ESP)	MD	Main Draw	Final	2 - 3	8:11 11:5 8:11 18:16 12:14	HE Zhiwen	MACHADO Carlos
+2015	GAC Group World Tour Spanish Open Almeria 2015	SHIBAEV Alexander (RUS)	SMIRNOV Alexey (RUS)	PUCAR Tomislav (CRO)	ZELJKO Filip (CRO)	MD	Qualification	QR32	3 - 1	11:6 11:4 13:15 11:8	SHIBAEV Alexander	SMIRNOV Alexey
+2015	GAC Group World Tour Spanish Open Almeria 2015	SHIBAEV Alexander (RUS)	SMIRNOV Alexey (RUS)	LI Ping (QAT)	WANG Eugene (CAN)	MD	Qualification	QR16	3 - 0	11:7 13:11 11:7	SHIBAEV Alexander	SMIRNOV Alexey
+2015	GAC Group World Tour Spanish Open Almeria 2015	AKERSTROM Fabian (SWE)	ANDERSSON Harald (SWE)	KWAN Man Ho (HKG)	LI Hon Ming (HKG)	MD	Qualification	QR64	3 - 1	3:11 11:5 11:9 11:3	AKERSTROM Fabian	ANDERSSON Harald
+2015	GAC Group World Tour Spanish Open Almeria 2015	AKERSTROM Fabian (SWE)	ANDERSSON Harald (SWE)	GHOSH Soumyajit (IND)	KUMAR Jubin (IND)	MD	Qualification	QR32	1 - 3	3:11 8:11 11:5 9:11	GHOSH Soumyajit	KUMAR Jubin
+2015	GAC Group World Tour Spanish Open Almeria 2015	KARLSSON Mattias (SWE)	NORDBERG Hampus (SWE)	GHOSH Soumyajit (IND)	KUMAR Jubin (IND)	MD	Qualification	QR16	2 - 3	10:12 11:6 9:11 11:7 4:11	GHOSH Soumyajit	KUMAR Jubin
+2015	GAC Group World Tour Spanish Open Almeria 2015	CHIANG Hung-Chieh (TPE)	HUANG Sheng-Sheng (TPE)	JANCARIK Lubomir (CZE)	PROKOPCOV Dmitrij (CZE)	MD	Main Draw	R16	1 - 3	11:3 6:11 6:11 8:11	JANCARIK Lubomir	PROKOPCOV Dmitrij
+2015	GAC Group World Tour Spanish Open Almeria 2015	LEE Chia-Sheng (TPE)	WANG LI Chung-Yi (TPE)	DEVOS Robin (BEL)	NUYTINCK Cedric (BEL)	MD	Qualification	QR32	3 - 1	12:10 11:9 9:11 11:6	LEE Chia-Sheng	WANG LI Chung-Yi
+2015	GAC Group World Tour Spanish Open Almeria 2015	GUNDUZ Ibrahim (TUR)	YIGENLER Abdullah (TUR)	FLAGLIEN Espen (NOR)	LINDHOLM Eskil (NOR)	MD	Qualification	QR64	3 - 1	9:11 11:4 12:10 11:6	GUNDUZ Ibrahim	YIGENLER Abdullah
+2015	GAC Group World Tour Spanish Open Almeria 2015	GUNDUZ Ibrahim (TUR)	YIGENLER Abdullah (TUR)	GERELL Par (SWE)	PERSSON Jon (SWE)	MD	Qualification	QR32	0 - 3	11:13 8:11 9:11	GERELL Par	PERSSON Jon
+2015	GAC Group World Tour Spanish Open Almeria 2015	LI Ahmet (TUR)	MENGE Gencay (TUR)	BEDAIR Omar (EGY)	ELBEIALI Mohamed (EGY)	MD	Qualification	QR32	0 - 3	7:11 6:11 10:12	BEDAIR Omar	ELBEIALI Mohamed
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 36
+
+2015	GAC Group World Tour Spanish Open Almeria 2015	POTA Georgina (HUN)	TIAN Yuan (CRO)	ABDELAZIZ Farah (EGY)	ENRIQUEZ Mabelyn (GUA)	WD	Qualification	QR32	3 - 0	11:5 11:7 11:9	POTA Georgina	TIAN Yuan
+2015	GAC Group World Tour Spanish Open Almeria 2015	POTA Georgina (HUN)	TIAN Yuan (CRO)	LENNON Emmanuelle (FRA)	LOEUILLETTE Stephanie (FRA)	WD	Qualification	QR16	3 - 1	11:4 1:11 11:8 11:8	POTA Georgina	TIAN Yuan
+2015	GAC Group World Tour Spanish Open Almeria 2015	NECULA Iulia (ROU)	PENKAVOVA Katerina (CZE)	FUKUHARA Ai (JPN)	WAKAMIYA Misako (JPN)	WD	Main Draw	R16	0 - 3	8:11 4:11 6:11	FUKUHARA Ai	WAKAMIYA Misako
+2015	GAC Group World Tour Spanish Open Almeria 2015	NECULA Iulia (ROU)	PENKAVOVA Katerina (CZE)	BRACCO Bianca (ITA)	PICCOLIN Giorgia (ITA)	WD	Qualification	QR32	3 - 0	12:10 11:7 12:10	NECULA Iulia	PENKAVOVA Katerina
+2015	GAC Group World Tour Spanish Open Almeria 2015	NECULA Iulia (ROU)	PENKAVOVA Katerina (CZE)	HELMY Yousra (EGY)	NASSER Galila (EGY)	WD	Qualification	QR16	3 - 0	11:7 11:8 11:4	NECULA Iulia	PENKAVOVA Katerina
+2015	GAC Group World Tour Spanish Open Almeria 2015	HELMY Yousra (EGY)	NASSER Galila (EGY)	BOLLMEIER Nadine (GER)	SCHUH Anja (GER)	WD	Qualification	QR32	3 - 2	12:10 9:11 8:11 11:6 11:9	HELMY Yousra	NASSER Galila
+2015	GAC Group World Tour Spanish Open Almeria 2015	DVORAK Galia (ESP)	XIAO Maria (ESP)	POTA Georgina (HUN)	TIAN Yuan (CRO)	WD	Main Draw	R16	1 - 3	11:1 8:11 6:11 6:11	POTA Georgina	TIAN Yuan
+2015	GAC Group World Tour Spanish Open Almeria 2015	FEHER Gabriela (SRB)	RAMIREZ Sara (ESP)	MADARASZ Dora (HUN)	PERGEL Szandra (HUN)	WD	Main Draw	R16	1 - 3	4:11 11:6 9:11 15:17	MADARASZ Dora	PERGEL Szandra
+2015	GAC Group World Tour Spanish Open Almeria 2015	LOPEZ Elena (ESP)	RAMIREZ Laura (ESP)	AASEBO Anna (NOR)	AASEBO Marte (NOR)	WD	Qualification	QR32	3 - 2	12:14 11:7 11:5 9:11 11:9	LOPEZ Elena	RAMIREZ Laura
+2015	GAC Group World Tour Spanish Open Almeria 2015	BUENO Paula (ESP)	NIGUEZ Marina (ESP)	LENNON Emmanuelle (FRA)	LOEUILLETTE Stephanie (FRA)	WD	Qualification	QR32	0 - 3	5:11 2:11 3:11	LENNON Emmanuelle	LOEUILLETTE Stephanie
+2015	GAC Group World Tour Spanish Open Almeria 2015	FEHER Gabriela (SRB)	RAMIREZ Sara (ESP)	GRUNDISCH Carole (FRA)	YANG Xiaoxin (MON)	WD	Qualification	QR16	3 - 2	12:10 11:8 8:11 7:11 13:11	FEHER Gabriela	RAMIREZ Sara
+2015	GAC Group World Tour Spanish Open Almeria 2015	MIGOT Marie (FRA)	ZARIF Audrey (FRA)	GALONJA Marija (SRB)	KNEZEVIC Monika (SRB)	WD	Qualification	QR32	2 - 3	11:7 7:11 6:11 11:4 11:13	GALONJA Marija	KNEZEVIC Monika
+2015	GAC Group World Tour Spanish Open Almeria 2015	ESCARTIN Nora (ESP)	SOPOSKI Roza (FRA)	EKHOLM Matilda (SWE)	RAKOVAC Lea (CRO)	WD	Qualification	QR32	1 - 3	11:9 2:11 1:11 5:11	EKHOLM Matilda	RAKOVAC Lea
+2015	GAC Group World Tour Spanish Open Almeria 2015	LEMMER Alena (GER)	WAN Yuan (GER)	FEHER Gabriela (SRB)	RAMIREZ Sara (ESP)	WD	Qualification	QR32	1 - 3	6:11 9:11 12:10 5:11	FEHER Gabriela	RAMIREZ Sara
+2015	GAC Group World Tour Spanish Open Almeria 2015	DOO Hoi Kem (HKG)	LEE Ho Ching (HKG)	JEON Jihee (KOR)	LEE Dasom (KOR)	WD	Main Draw	R16	3 - 1	11:5 11:9 8:11 11:7	DOO Hoi Kem	LEE Ho Ching
+2015	GAC Group World Tour Spanish Open Almeria 2015	DOO Hoi Kem (HKG)	LEE Ho Ching (HKG)	MADARASZ Dora (HUN)	PERGEL Szandra (HUN)	WD	Main Draw	QuarterFinal	3 - 0	11:9 11:3 11:3	DOO Hoi Kem	LEE Ho Ching
+2015	GAC Group World Tour Spanish Open Almeria 2015	DOO Hoi Kem (HKG)	LEE Ho Ching (HKG)	FUKUHARA Ai (JPN)	WAKAMIYA Misako (JPN)	WD	Main Draw	SemiFinal	2 - 3	12:10 8:11 13:11 6:11 6:11	FUKUHARA Ai	WAKAMIYA Misako
+2015	GAC Group World Tour Spanish Open Almeria 2015	LAM Yee Lok (HKG)	WONG Chung Wan (HKG)	GRUNDISCH Carole (FRA)	YANG Xiaoxin (MON)	WD	Qualification	QR32	0 - 3	0:11 6:11 7:11	GRUNDISCH Carole	YANG Xiaoxin
+2015	GAC Group World Tour Spanish Open Almeria 2015	AMBRUS Krisztina (HUN)	NAGYVARADI Mercedes (HUN)	SHAO Jieni (POR)	YU Fu (POR)	WD	Qualification	QR32	1 - 3	5:11 5:11 11:9 11:13	SHAO Jieni	YU Fu
+2015	GAC Group World Tour Spanish Open Almeria 2015	HIRANO Miu (JPN)	ITO Mima (JPN)	PROKHOROVA Yulia (RUS)	KUZMINA Elena (RUS)	WD	Main Draw	R16	3 - 0	11:7 11:4 11:5	HIRANO Miu	ITO Mima
+2015	GAC Group World Tour Spanish Open Almeria 2015	HIRANO Miu (JPN)	ITO Mima (JPN)	HUANG Hsin (TPE)	LIU Yu-Hsin (TPE)	WD	Main Draw	QuarterFinal	3 - 1	11:7 11:9 10:12 11:6	HIRANO Miu	ITO Mima
+2015	GAC Group World Tour Spanish Open Almeria 2015	HIRANO Miu (JPN)	ITO Mima (JPN)	JIANG Huajun (HKG)	TIE Yana (HKG)	WD	Main Draw	SemiFinal	3 - 1	11:5 11:8 5:11 11:9	HIRANO Miu	ITO Mima
+2015	GAC Group World Tour Spanish Open Almeria 2015	HIRANO Miu (JPN)	ITO Mima (JPN)	FUKUHARA Ai (JPN)	WAKAMIYA Misako (JPN)	WD	Main Draw	Final	2 - 3	11:8 8:11 12:10 4:11 7:11	FUKUHARA Ai	WAKAMIYA Misako
+2015	GAC Group World Tour Spanish Open Almeria 2015	LEE Nakyung (KOR)	LEE Yujin (KOR)	HUANG Hsin (TPE)	LIU Yu-Hsin (TPE)	WD	Qualification	QR32	0 - 3	8:11 7:11 7:11	HUANG Hsin	LIU Yu-Hsin
+2015	GAC Group World Tour Spanish Open Almeria 2015	JEON Jihee (KOR)	LEE Dasom (KOR)	KULAKCEKEN Simay (TUR)	OZKAYA Gul Pembe (TUR)	WD	Qualification	QR32	3 - 0	16:14 11:4 11:2	JEON Jihee	LEE Dasom
+2015	GAC Group World Tour Spanish Open Almeria 2015	LEE Seul (KOR)	YOON Hyobin (KOR)	SHAO Jieni (POR)	YU Fu (POR)	WD	Qualification	QR16	3 - 1	11:2 7:11 11:5 12:10	LEE Seul	YOON Hyobin
+2015	GAC Group World Tour Spanish Open Almeria 2015	JEON Jihee (KOR)	LEE Dasom (KOR)	EKHOLM Matilda (SWE)	RAKOVAC Lea (CRO)	WD	Qualification	QR16	3 - 0	12:10 11:7 11:4	JEON Jihee	LEE Dasom
+2015	GAC Group World Tour Spanish Open Almeria 2015	DE NUTTE Sarah (LUX)	NI Xia Lian (LUX)	LEE Seul (KOR)	YOON Hyobin (KOR)	WD	Qualification	QR32	2 - 3	11:9 7:11 8:11 11:1 10:12	LEE Seul	YOON Hyobin
+2015	GAC Group World Tour Spanish Open Almeria 2015	BILENKO Tetyana (UKR)	MIKHAILOVA Polina (RUS)	JIANG Huajun (HKG)	TIE Yana (HKG)	WD	Main Draw	R16	1 - 3	4:11 11:6 7:11 9:11	JIANG Huajun	TIE Yana
+2015	GAC Group World Tour Spanish Open Almeria 2015	PROKHOROVA Yulia (RUS)	KUZMINA Elena (RUS)	CAYMEL Claudia (ESP)	ZHANG Sofia-Xuan (ESP)	WD	Qualification	QR32	3 - 0	11:6 12:10 11:4	PROKHOROVA Yulia	KUZMINA Elena
+2015	GAC Group World Tour Spanish Open Almeria 2015	BILENKO Tetyana (UKR)	MIKHAILOVA Polina (RUS)	LOPEZ Elena (ESP)	RAMIREZ Laura (ESP)	WD	Qualification	QR16	3 - 0	12:10 11:6 11:7	BILENKO Tetyana	MIKHAILOVA Polina
+2015	GAC Group World Tour Spanish Open Almeria 2015	PROKHOROVA Yulia (RUS)	KUZMINA Elena (RUS)	GALONJA Marija (SRB)	KNEZEVIC Monika (SRB)	WD	Qualification	QR16	3 - 0	11:3 11:3 11:3	PROKHOROVA Yulia	KUZMINA Elena
+2015	GAC Group World Tour Spanish Open Almeria 2015	CHENG Hsien-Tzu (TPE)	CHEN Szu-Yu (TPE)	LEE Seul (KOR)	YOON Hyobin (KOR)	WD	Main Draw	R16	3 - 2	11:3 8:11 9:11 11:5 11:6	CHENG Hsien-Tzu	CHEN Szu-Yu
+2015	GAC Group World Tour Spanish Open Almeria 2015	CHENG Hsien-Tzu (TPE)	CHEN Szu-Yu (TPE)	FUKUHARA Ai (JPN)	WAKAMIYA Misako (JPN)	WD	Main Draw	QuarterFinal	0 - 3	7:11 3:11 3:11	FUKUHARA Ai	WAKAMIYA Misako
+2015	GAC Group World Tour Spanish Open Almeria 2015	HUANG Hsin (TPE)	LIU Yu-Hsin (TPE)	TOMANOVSKA Katerina (CZE)	VACENOVSKA Iveta (CZE)	WD	Qualification	QR16	3 - 1	7:11 12:10 11:9 11:7	HUANG Hsin	LIU Yu-Hsin
+2015	GAC Group World Tour Spanish Open Almeria 2015	KUMAHARA Luca (BRA)	ALTINKAYA Sibel (TUR)	TOMANOVSKA Katerina (CZE)	VACENOVSKA Iveta (CZE)	WD	Qualification	QR32	2 - 3	7:11 11:5 11:5 2:11 6:11	TOMANOVSKA Katerina	VACENOVSKA Iveta

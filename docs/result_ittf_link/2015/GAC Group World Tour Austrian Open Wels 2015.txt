@@ -5,3 +5,490 @@
 参赛人数：609
 开始日期：2015-09-02
 结束日期：2015-09-06
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 2 of 3 Total: 293
+
+Start
+Prev
+1
+2
+3
+Next
+End
+2015	GAC Group World Tour Austrian Open Wels 2015	ANGLES Enzo (FRA)		SHAH Nishaad (IND)		MS	Qualification		4 - 0	11:5 11:5 11:7 11:6	ANGLES Enzo	
+2015	GAC Group World Tour Austrian Open Wels 2015	DIDUKH Oleksandr (UKR)		SHAH Nishaad (IND)		MS	Qualification		4 - 0	11:8 11:6 11:8 11:6	DIDUKH Oleksandr	
+2015	GAC Group World Tour Austrian Open Wels 2015	DIDUKH Oleksandr (UKR)		ANGLES Enzo (FRA)		MS	Qualification		4 - 1	11:8 9:11 11:8 11:8 11:6	DIDUKH Oleksandr	
+2015	GAC Group World Tour Austrian Open Wels 2015	SODERLUND Hampus (SWE)		BORO Birdie (IND)		MS	Qualification		4 - 1	11:6 11:6 9:11 13:11 11:6	SODERLUND Hampus	
+2015	GAC Group World Tour Austrian Open Wels 2015	JIN Takuya (JPN)		BORO Birdie (IND)		MS	Qualification		4 - 0	11:4 11:2 11:5 13:11	JIN Takuya	
+2015	GAC Group World Tour Austrian Open Wels 2015	JIN Takuya (JPN)		SODERLUND Hampus (SWE)		MS	Qualification		4 - 3	11:9 11:13 11:6 6:11 11:5 10:12 15:13	JIN Takuya	
+2015	GAC Group World Tour Austrian Open Wels 2015	WALKER Samuel (ENG)		WISUTMAYTHANGKOON Supanut (THA)		MS	Qualification		4 - 3	13:11 11:5 2:11 11:7 9:11 8:11 11:5	WALKER Samuel	
+2015	GAC Group World Tour Austrian Open Wels 2015	SAIVE Jean-Michel (BEL)		WISUTMAYTHANGKOON Supanut (THA)		MS	Qualification		4 - 0	11:8 11:9 11:3 11:5	SAIVE Jean-Michel	
+2015	GAC Group World Tour Austrian Open Wels 2015	SAIVE Jean-Michel (BEL)		WALKER Samuel (ENG)		MS	Qualification		4 - 2	11:8 11:5 7:11 14:12 5:11 11:3	SAIVE Jean-Michel	
+2015	GAC Group World Tour Austrian Open Wels 2015	RANEFUR Elias (SWE)		BOCKOVEN Chase (USA)		MS	Qualification		4 - 0	11:5 11:4 12:10 11:4	RANEFUR Elias	
+2015	GAC Group World Tour Austrian Open Wels 2015	PLATONOV Pavel (BLR)		BOCKOVEN Chase (USA)		MS	Qualification		4 - 0	11:2 11:3 12:10 11:2	PLATONOV Pavel	
+2015	GAC Group World Tour Austrian Open Wels 2015	PLATONOV Pavel (BLR)		RANEFUR Elias (SWE)		MS	Qualification		4 - 2	10:12 11:8 10:12 11:3 11:4 11:8	PLATONOV Pavel	
+2015	GAC Group World Tour Austrian Open Wels 2015	GNANASEKARAN Sathiyan (IND)		KARUBE Ryusuke (JPN)		MS	Qualification		4 - 2	13:15 11:6 11:1 8:11 11:6 11:4	GNANASEKARAN Sathiyan	
+2015	GAC Group World Tour Austrian Open Wels 2015	LORENTZ Romain (FRA)		KARUBE Ryusuke (JPN)		MS	Qualification		3 - 4	5:11 3:11 11:9 11:7 13:11 2:11 2:11	KARUBE Ryusuke	
+2015	GAC Group World Tour Austrian Open Wels 2015	LORENTZ Romain (FRA)		GNANASEKARAN Sathiyan (IND)		MS	Qualification		0 - 4	12:14 4:11 9:11 4:11	GNANASEKARAN Sathiyan	
+2015	GAC Group World Tour Austrian Open Wels 2015	IONESCU Ovidiu (ROU)		DESAI Harmeet (IND)		MS	Qualification		1 - 4	9:11 13:15 11:6 10:12 9:11	DESAI Harmeet	
+2015	GAC Group World Tour Austrian Open Wels 2015	ZHAI Yujia (DEN)		REED Daniel (ENG)		MS	Qualification		4 - 2	10:12 11:7 7:11 11:7 11:3 11:4	ZHAI Yujia	
+2015	GAC Group World Tour Austrian Open Wels 2015	JEVTOVIC Marko (SRB)		REED Daniel (ENG)		MS	Qualification		1 - 4	11:2 3:11 8:11 11:13 6:11	REED Daniel	
+2015	GAC Group World Tour Austrian Open Wels 2015	JEVTOVIC Marko (SRB)		ZHAI Yujia (DEN)		MS	Qualification		0 - 4	6:11 4:11 7:11 8:11	ZHAI Yujia	
+2015	GAC Group World Tour Austrian Open Wels 2015	SIRUCEK Pavel (CZE)		VORCNIK David (AUT)		MS	Qualification		4 - 0	12:10 11:9 11:4 11:6	SIRUCEK Pavel	
+2015	GAC Group World Tour Austrian Open Wels 2015	ROBINOT Quentin (FRA)		VORCNIK David (AUT)		MS	Qualification		4 - 0	11:4 14:12 11:3 11:4	ROBINOT Quentin	
+2015	GAC Group World Tour Austrian Open Wels 2015	ROBINOT Quentin (FRA)		SIRUCEK Pavel (CZE)		MS	Qualification		4 - 2	11:8 9:11 11:4 11:5 6:11 11:9	ROBINOT Quentin	
+2015	GAC Group World Tour Austrian Open Wels 2015	KATKOV Ivan (UKR)		SARSEMBAYEV Dias (KAZ)		MS	Qualification		4 - 0	11:5 11:3 11:5 11:5	KATKOV Ivan	
+2015	GAC Group World Tour Austrian Open Wels 2015	JANCARIK Lubomir (CZE)		SARSEMBAYEV Dias (KAZ)		MS	Qualification		4 - 0	11:8 11:6 11:8 14:12	JANCARIK Lubomir	
+2015	GAC Group World Tour Austrian Open Wels 2015	JANCARIK Lubomir (CZE)		KATKOV Ivan (UKR)		MS	Qualification		4 - 0	11:4 11:7 11:7 11:8	JANCARIK Lubomir	
+2015	GAC Group World Tour Austrian Open Wels 2015	FLORE Tristan (FRA)		PLATTNER Dominique (AUT)		MS	Qualification		4 - 0	11:1 11:2 11:8 11:9	FLORE Tristan	
+2015	GAC Group World Tour Austrian Open Wels 2015	MONTEIRO Thiago (BRA)		PLATTNER Dominique (AUT)		MS	Qualification		4 - 1	8:11 11:5 11:7 11:6 11:5	MONTEIRO Thiago	
+2015	GAC Group World Tour Austrian Open Wels 2015	MONTEIRO Thiago (BRA)		FLORE Tristan (FRA)		MS	Qualification		1 - 4	13:11 9:11 6:11 9:11 8:11	FLORE Tristan	
+2015	GAC Group World Tour Austrian Open Wels 2015	KUZMIN Fedor (RUS)		MALEK Tomas (CZE)		MS	Qualification		4 - 1	11:0 11:5 11:1 3:11 11:7	KUZMIN Fedor	
+2015	GAC Group World Tour Austrian Open Wels 2015	SALIFOU Abdel-Kader (BEN)		MALEK Tomas (CZE)		MS	Qualification		4 - 0	11:9 11:5 11:6 11:6	SALIFOU Abdel-Kader	
+2015	GAC Group World Tour Austrian Open Wels 2015	SALIFOU Abdel-Kader (BEN)		KUZMIN Fedor (RUS)		MS	Qualification		4 - 2	11:8 11:8 4:11 12:10 7:11 11:9	SALIFOU Abdel-Kader	
+2015	GAC Group World Tour Austrian Open Wels 2015	KEINATH Thomas (SVK)		VRABLIK Jiri (CZE)		MS	Qualification		0 - 4	7:11 10:12 8:11 3:11	VRABLIK Jiri	
+2015	GAC Group World Tour Austrian Open Wels 2015	BROSSIER Benjamin (FRA)		VRABLIK Jiri (CZE)		MS	Qualification		4 - 2	9:11 2:11 13:11 11:6 12:10 11:9	BROSSIER Benjamin	
+2015	GAC Group World Tour Austrian Open Wels 2015	BROSSIER Benjamin (FRA)		KEINATH Thomas (SVK)		MS	Qualification		4 - 3	10:12 10:12 11:6 11:7 11:7 9:11 11:8	BROSSIER Benjamin	
+2015	GAC Group World Tour Austrian Open Wels 2015	DURAN Marc (ESP)		BAI He (SVK)		MS	Qualification		4 - 3	11:5 11:7 10:12 8:11 12:10 8:11 11:9	DURAN Marc	
+2015	GAC Group World Tour Austrian Open Wels 2015	ZHMUDENKO Yaroslav (UKR)		BAI He (SVK)		MS	Qualification		2 - 4	5:11 11:13 11:7 6:11 11:5 9:11	BAI He	
+2015	GAC Group World Tour Austrian Open Wels 2015	ZHMUDENKO Yaroslav (UKR)		DURAN Marc (ESP)		MS	Qualification		0 - 4	11:13 6:11 9:11 6:11	DURAN Marc	
+2015	GAC Group World Tour Austrian Open Wels 2015	YANG Zi (SGP)		KOSOWSKI Jakub (POL)		MS	Qualification		4 - 0	11:7 13:11 14:12 11:8	YANG Zi	
+2015	GAC Group World Tour Austrian Open Wels 2015	ROBLES Alvaro (ESP)		KOSOWSKI Jakub (POL)		MS	Qualification		4 - 3	8:11 14:12 11:7 14:16 11:6 11:13 12:10	ROBLES Alvaro	
+2015	GAC Group World Tour Austrian Open Wels 2015	ROBLES Alvaro (ESP)		YANG Zi (SGP)		MS	Qualification		4 - 1	11:1 11:6 8:11 11:4 11:8	ROBLES Alvaro	
+2015	GAC Group World Tour Austrian Open Wels 2015	KALUZNY Samuel (SVK)		KLAUS David (AUT)		U21MS	Qualification		3 - 2	10:12 5:11 11:9 11:9 11:8	KALUZNY Samuel	
+2015	GAC Group World Tour Austrian Open Wels 2015	PUCAR Tomislav (CRO)		KLAUS David (AUT)		U21MS	Qualification		3 - 0	12:10 11:7 11:7	PUCAR Tomislav	
+2015	GAC Group World Tour Austrian Open Wels 2015	PUCAR Tomislav (CRO)		KALUZNY Samuel (SVK)		U21MS	Qualification		3 - 2	7:11 11:6 11:9 7:11 11:8	PUCAR Tomislav	
+2015	GAC Group World Tour Austrian Open Wels 2015	KUCERA Stanislav (CZE)		TARUTIN Pavel (RUS)		U21MS	Qualification		3 - 0	15:13 11:5 11:7	KUCERA Stanislav	
+2015	GAC Group World Tour Austrian Open Wels 2015	AN Jaehyun (KOR)		TARUTIN Pavel (RUS)		U21MS	Qualification		3 - 2	11:8 12:14 11:4 6:11 11:6	AN Jaehyun	
+2015	GAC Group World Tour Austrian Open Wels 2015	AN Jaehyun (KOR)		KUCERA Stanislav (CZE)		U21MS	Qualification		3 - 1	9:11 11:4 11:7 11:7	AN Jaehyun	
+2015	GAC Group World Tour Austrian Open Wels 2015	SFILIGOJ Tom (SLO)		TRAN Theodore (USA)		U21MS	Qualification		2 - 3	11:6 11:8 9:11 8:11 12:14	TRAN Theodore	
+2015	GAC Group World Tour Austrian Open Wels 2015	ZATOWKA Patryk (POL)		TRAN Theodore (USA)		U21MS	Qualification		3 - 0	11:4 11:4 11:6	ZATOWKA Patryk	
+2015	GAC Group World Tour Austrian Open Wels 2015	ZATOWKA Patryk (POL)		SFILIGOJ Tom (SLO)		U21MS	Qualification		3 - 2	11:7 9:11 5:11 11:9 11:9	ZATOWKA Patryk	
+2015	GAC Group World Tour Austrian Open Wels 2015	SHAPOSHNIKOV Stepan (RUS)		FRIEDRICH Christian (AUT)		U21MS	Qualification		3 - 1	11:6 9:11 11:9 11:6	SHAPOSHNIKOV Stepan	
+2015	GAC Group World Tour Austrian Open Wels 2015	REITSPIES David (CZE)		FRIEDRICH Christian (AUT)		U21MS	Qualification		3 - 1	11:3 11:6 7:11 11:4	REITSPIES David	
+2015	GAC Group World Tour Austrian Open Wels 2015	REITSPIES David (CZE)		SHAPOSHNIKOV Stepan (RUS)		U21MS	Qualification		3 - 0	11:8 11:4 11:6	REITSPIES David	
+2015	GAC Group World Tour Austrian Open Wels 2015	SERDAROGLU David (AUT)		MASSARO Enrique (CHI)		U21MS	Qualification		3 - 0	11:2 11:3 11:4	SERDAROGLU David	
+2015	GAC Group World Tour Austrian Open Wels 2015	SUN Chia-Hung (TPE)		MASSARO Enrique (CHI)		U21MS	Qualification		3 - 0	11:5 11:8 11:6	SUN Chia-Hung	
+2015	GAC Group World Tour Austrian Open Wels 2015	SUN Chia-Hung (TPE)		SERDAROGLU David (AUT)		U21MS	Qualification		0 - 3	4:11 9:11 11:13	SERDAROGLU David	
+2015	GAC Group World Tour Austrian Open Wels 2015	BACIOCCHI Alessandro (ITA)		FARAH Abdourazack (DJI)		U21MS	Qualification		3 - 0	11:9 11:2 11:5	BACIOCCHI Alessandro	
+2015	GAC Group World Tour Austrian Open Wels 2015	ISHIY Vitor (BRA)		FARAH Abdourazack (DJI)		U21MS	Qualification		3 - 0	11:7 11:4 11:7	ISHIY Vitor	
+2015	GAC Group World Tour Austrian Open Wels 2015	ISHIY Vitor (BRA)		BACIOCCHI Alessandro (ITA)		U21MS	Qualification		3 - 1	11:7 12:14 11:8 13:11	ISHIY Vitor	
+2015	GAC Group World Tour Austrian Open Wels 2015	LEITGEB Stefan (AUT)		WISUTMAYTHANGKOON Supanut (THA)		U21MS	Qualification		0 - 3	7:11 11:13 8:11	WISUTMAYTHANGKOON Supanut	
+2015	GAC Group World Tour Austrian Open Wels 2015	NIELSEN Claus (DEN)		WISUTMAYTHANGKOON Supanut (THA)		U21MS	Qualification		3 - 1	11:6 8:11 11:9 11:4	NIELSEN Claus	
+2015	GAC Group World Tour Austrian Open Wels 2015	NIELSEN Claus (DEN)		LEITGEB Stefan (AUT)		U21MS	Qualification		1 - 3	11:7 8:11 8:11 6:11	LEITGEB Stefan	
+2015	GAC Group World Tour Austrian Open Wels 2015	PFEFFER Simon (AUT)		BOCKOVEN Chase (USA)		U21MS	Qualification		3 - 0	11:7 11:5 11:4	PFEFFER Simon	
+2015	GAC Group World Tour Austrian Open Wels 2015	ECSEKI Nandor (HUN)		BOCKOVEN Chase (USA)		U21MS	Qualification		3 - 0	11:3 11:6 12:10	ECSEKI Nandor	
+2015	GAC Group World Tour Austrian Open Wels 2015	ECSEKI Nandor (HUN)		PFEFFER Simon (AUT)		U21MS	Qualification		2 - 3	8:11 11:9 11:6 8:11 7:11	PFEFFER Simon	
+2015	GAC Group World Tour Austrian Open Wels 2015	VALUCH Alexander (SVK)		YADAV Abhishek (IND)		U21MS	Qualification		1 - 3	5:11 11:3 5:11 7:11	YADAV Abhishek	
+2015	GAC Group World Tour Austrian Open Wels 2015	JORGIC Darko (SLO)		YADAV Abhishek (IND)		U21MS	Qualification		3 - 0	11:5 11:5 11:6	JORGIC Darko	
+2015	GAC Group World Tour Austrian Open Wels 2015	JORGIC Darko (SLO)		VALUCH Alexander (SVK)		U21MS	Qualification		3 - 1	11:3 12:10 4:11 11:6	JORGIC Darko	
+2015	GAC Group World Tour Austrian Open Wels 2015	KIM Daewoo (KOR)		GROVER Sudhanshu (IND)		U21MS	Qualification		3 - 1	11:6 9:11 11:7 11:5	KIM Daewoo	
+2015	GAC Group World Tour Austrian Open Wels 2015	CHERNOV Konstantin (RUS)		GROVER Sudhanshu (IND)		U21MS	Qualification		3 - 2	12:14 8:11 11:5 11:5 11:9	CHERNOV Konstantin	
+2015	GAC Group World Tour Austrian Open Wels 2015	CHERNOV Konstantin (RUS)		KIM Daewoo (KOR)		U21MS	Qualification		3 - 2	13:11 6:11 10:12 11:6 11:6	CHERNOV Konstantin	
+2015	GAC Group World Tour Austrian Open Wels 2015	POLANSKY Tomas (CZE)		SHAH Nishaad (IND)		U21MS	Qualification		3 - 0	11:9 11:8 11:3	POLANSKY Tomas	
+2015	GAC Group World Tour Austrian Open Wels 2015	GAUZY Paul (FRA)		SHAH Nishaad (IND)		U21MS	Qualification		3 - 0	12:10 11:2 11:4	GAUZY Paul	
+2015	GAC Group World Tour Austrian Open Wels 2015	GAUZY Paul (FRA)		POLANSKY Tomas (CZE)		U21MS	Qualification		3 - 2	11:8 12:10 7:11 9:11 11:1	GAUZY Paul	
+2015	GAC Group World Tour Austrian Open Wels 2015	SZITA Marton (HUN)		BORO Birdie (IND)		U21MS	Qualification		3 - 2	7:11 13:11 14:16 11:6 11:3	SZITA Marton	
+2015	GAC Group World Tour Austrian Open Wels 2015	LEVENKO Andreas (AUT)		BORO Birdie (IND)		U21MS	Qualification		3 - 0	11:6 11:6 11:7	LEVENKO Andreas	
+2015	GAC Group World Tour Austrian Open Wels 2015	LEVENKO Andreas (AUT)		SZITA Marton (HUN)		U21MS	Qualification		3 - 1	11:4 11:6 8:11 11:8	LEVENKO Andreas	
+2015	GAC Group World Tour Austrian Open Wels 2015	ISMAILOV Sadi (RUS)		VORCNIK David (AUT)		U21MS	Qualification		3 - 0	11:2 11:7 11:4	ISMAILOV Sadi	
+2015	GAC Group World Tour Austrian Open Wels 2015	JOUTI Eric (BRA)		MALEK Tomas (CZE)		U21MS	Qualification		3 - 0	11:5 11:5 11:9	JOUTI Eric	
+2015	GAC Group World Tour Austrian Open Wels 2015	JOUTI Eric (BRA)		VORCNIK David (AUT)		U21MS	Qualification		3 - 0	11:7 11:5 11:8	JOUTI Eric	
+2015	GAC Group World Tour Austrian Open Wels 2015	ISMAILOV Sadi (RUS)		MALEK Tomas (CZE)		U21MS	Qualification		3 - 0	16:14 11:3 11:8	ISMAILOV Sadi	
+2015	GAC Group World Tour Austrian Open Wels 2015	JOUTI Eric (BRA)		ISMAILOV Sadi (RUS)		U21MS	Qualification		1 - 3	9:11 10:12 11:4 7:11	ISMAILOV Sadi	
+2015	GAC Group World Tour Austrian Open Wels 2015	VORCNIK David (AUT)		MALEK Tomas (CZE)		U21MS	Qualification		3 - 2	11:9 4:11 11:4 9:11 11:7	VORCNIK David	
+2015	GAC Group World Tour Austrian Open Wels 2015	OVTCHAROV Dimitrij (GER)		BROSSIER Benjamin (FRA)		MS	Main Draw	R64	4 - 3	6:11 11:9 11:7 11:8 8:11 9:11 11:6	OVTCHAROV Dimitrij	
+2015	GAC Group World Tour Austrian Open Wels 2015	LUNDQVIST Jens (SWE)		CHO Eonrae (KOR)		MS	Main Draw	R64	0 - 4	7:11 7:11 9:11 7:11	CHO Eonrae	
+2015	GAC Group World Tour Austrian Open Wels 2015	GAUZY Simon (FRA)		LIVENTSOV Alexey (RUS)		MS	Main Draw	R64	4 - 1	11:9 11:8 12:10 10:12 11:3	GAUZY Simon	
+2015	GAC Group World Tour Austrian Open Wels 2015	SALIFOU Abdel-Kader (BEN)		LI Ping (QAT)		MS	Main Draw	R64	0 - 4	3:11 9:11 4:11 9:11	LI Ping	
+2015	GAC Group World Tour Austrian Open Wels 2015	FRANZISKA Patrick (GER)		FLORE Tristan (FRA)		MS	Main Draw	R64	1 - 4	11:13 12:10 4:11 11:13 2:11	FLORE Tristan	
+2015	GAC Group World Tour Austrian Open Wels 2015	SAMBE Kohei (JPN)		FILUS Ruwen (GER)		MS	Main Draw	R64	0 - 4	9:11 8:11 12:14 6:11	FILUS Ruwen	
+2015	GAC Group World Tour Austrian Open Wels 2015	PITCHFORD Liam (ENG)		GORAK Daniel (POL)		MS	Main Draw	R64	4 - 1	12:10 11:8 4:11 11:7 11:9	PITCHFORD Liam	
+2015	GAC Group World Tour Austrian Open Wels 2015	VLASOV Grigory (RUS)		APOLONIA Tiago (POR)		MS	Main Draw	R64	4 - 0	12:10 11:7 11:9 11:5	VLASOV Grigory	
+2015	GAC Group World Tour Austrian Open Wels 2015	JEOUNG Youngsik (KOR)		KARLSSON Mattias (SWE)		MS	Main Draw	R64	1 - 4	9:11 11:5 3:11 6:11 6:11	KARLSSON Mattias	
+2015	GAC Group World Tour Austrian Open Wels 2015	GROTH Jonathan (DEN)		CALDERANO Hugo (BRA)		MS	Main Draw	R64	4 - 2	11:5 11:8 7:11 7:11 11:8 11:9	GROTH Jonathan	
+2015	GAC Group World Tour Austrian Open Wels 2015	MATSUDAIRA Kenta (JPN)		SKACHKOV Kirill (RUS)		MS	Main Draw	R64	4 - 0	12:10 11:9 11:6 11:5	MATSUDAIRA Kenta	
+2015	GAC Group World Tour Austrian Open Wels 2015	KARLSSON Kristian (SWE)		LEE Sang Su (KOR)		MS	Main Draw	R64	0 - 4	7:11 5:11 10:12 9:11	LEE Sang Su	
+2015	GAC Group World Tour Austrian Open Wels 2015	STEGER Bastian (GER)		BOBOCICA Mihai (ITA)		MS	Main Draw	R64	4 - 3	8:11 8:11 11:9 11:5 7:11 11:5 11:6	STEGER Bastian	
+2015	GAC Group World Tour Austrian Open Wels 2015	ZHAI Yujia (DEN)		JANG Woojin (KOR)		MS	Main Draw	R64	1 - 4	11:7 14:16 2:11 9:11 9:11	JANG Woojin	
+2015	GAC Group World Tour Austrian Open Wels 2015	SHIBAEV Alexander (RUS)		WANG Yang (SVK)		MS	Main Draw	R64	4 - 3	12:10 10:12 5:11 11:9 11:7 6:11 11:9	SHIBAEV Alexander	
+2015	GAC Group World Tour Austrian Open Wels 2015	PAIKOV Mikhail (RUS)		NIWA Koki (JPN)		MS	Main Draw	R64	0 - 4	5:11 8:11 9:11 5:11	NIWA Koki	
+2015	GAC Group World Tour Austrian Open Wels 2015	SAMSONOV Vladimir (BLR)		LI Hu (SGP)		MS	Main Draw	R64	4 - 0	11:1 11:8 11:4 11:5	SAMSONOV Vladimir	
+2015	GAC Group World Tour Austrian Open Wels 2015	MATSUDAIRA Kenji (JPN)		GACINA Andrej (CRO)		MS	Main Draw	R64	2 - 4	11:6 4:11 9:11 11:9 4:11 4:11	GACINA Andrej
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 3 of 3 Total: 293
+
+Start
+Prev
+1
+2
+3
+Next
+End
+2015	GAC Group World Tour Austrian Open Wels 2015	FEGERL Stefan (AUT)		DURAN Marc (ESP)		MS	Main Draw	R64	4 - 3	6:11 11:5 11:6 10:12 8:11 11:4 13:11	FEGERL Stefan	
+2015	GAC Group World Tour Austrian Open Wels 2015	OUAICHE Stephane (ALG)		BAUM Patrick (GER)		MS	Main Draw	R64	4 - 3	11:7 8:11 7:11 4:11 11:9 11:8 11:9	OUAICHE Stephane	
+2015	GAC Group World Tour Austrian Open Wels 2015	KIM Minseok (KOR)		GERALDO Joao (POR)		MS	Main Draw	R64	4 - 1	11:6 11:7 11:7 8:11 11:5	KIM Minseok	
+2015	GAC Group World Tour Austrian Open Wels 2015	TSUBOI Yuma (JPN)		MATTENET Adrien (FRA)		MS	Main Draw	R64	1 - 4	11:5 3:11 6:11 6:11 9:11	MATTENET Adrien	
+2015	GAC Group World Tour Austrian Open Wels 2015	TSUBOI Gustavo (BRA)		DESAI Harmeet (IND)		MS	Main Draw	R64	4 - 1	11:9 5:11 11:5 11:6 14:12	TSUBOI Gustavo	
+2015	GAC Group World Tour Austrian Open Wels 2015	LI Ahmet (TUR)		WONG Chun Ting (HKG)		MS	Main Draw	R64	2 - 4	7:11 11:7 5:11 11:9 11:13 3:11	WONG Chun Ting	
+2015	GAC Group World Tour Austrian Open Wels 2015	CHUANG Chih-Yuan (TPE)		PATTANTYUS Adam (HUN)		MS	Main Draw	R64	4 - 0	11:4 11:6 11:7 11:8	CHUANG Chih-Yuan	
+2015	GAC Group World Tour Austrian Open Wels 2015	SUN Chia-Hung (TPE)		MENGEL Steffen (GER)		MS	Main Draw	R64	1 - 4	7:11 11:7 9:11 5:11 6:11	MENGEL Steffen	
+2015	GAC Group World Tour Austrian Open Wels 2015	HABESOHN Daniel (AUT)		PRIMORAC Zoran (CRO)		MS	Main Draw	R64	4 - 1	11:4 11:4 11:8 4:11 11:9	HABESOHN Daniel	
+2015	GAC Group World Tour Austrian Open Wels 2015	TOKIC Bojan (SLO)		MONTEIRO Joao (POR)		MS	Main Draw	R64	4 - 3	11:4 7:11 11:9 11:9 4:11 9:11 11:3	TOKIC Bojan	
+2015	GAC Group World Tour Austrian Open Wels 2015	GIONIS Panagiotis (GRE)		WANG Zengyi (POL)		MS	Main Draw	R64	4 - 1	15:13 11:1 8:11 12:10 11:9	GIONIS Panagiotis	
+2015	GAC Group World Tour Austrian Open Wels 2015	SHIONO Masato (JPN)		KIM Donghyun (KOR)		MS	Main Draw	R64	1 - 4	8:11 6:11 9:11 11:5 8:11	KIM Donghyun	
+2015	GAC Group World Tour Austrian Open Wels 2015	KOU Lei (UKR)		ROBINOT Alexandre (FRA)		MS	Main Draw	R64	4 - 0	11:3 11:8 11:8 11:4	KOU Lei	
+2015	GAC Group World Tour Austrian Open Wels 2015	OLAH Benedek (FIN)		MIZUTANI Jun (JPN)		MS	Main Draw	R64	0 - 4	10:12 5:11 6:11 4:11	MIZUTANI Jun	
+2015	GAC Group World Tour Austrian Open Wels 2015	OVTCHAROV Dimitrij (GER)		CHO Eonrae (KOR)		MS	Main Draw	R32	4 - 0	11:6 11:2 11:3 11:1	OVTCHAROV Dimitrij	
+2015	GAC Group World Tour Austrian Open Wels 2015	GAUZY Simon (FRA)		LI Ping (QAT)		MS	Main Draw	R32	3 - 4	9:11 11:4 8:11 11:6 11:9 8:11 7:11	LI Ping	
+2015	GAC Group World Tour Austrian Open Wels 2015	FLORE Tristan (FRA)		FILUS Ruwen (GER)		MS	Main Draw	R32	0 - 4	5:11 4:11 6:11 9:11	FILUS Ruwen	
+2015	GAC Group World Tour Austrian Open Wels 2015	PITCHFORD Liam (ENG)		VLASOV Grigory (RUS)		MS	Main Draw	R32	4 - 2	8:11 11:6 11:8 9:11 11:4 11:3	PITCHFORD Liam	
+2015	GAC Group World Tour Austrian Open Wels 2015	KARLSSON Mattias (SWE)		GROTH Jonathan (DEN)		MS	Main Draw	R32	4 - 3	11:6 3:11 9:11 6:11 12:10 11:9 11:9	KARLSSON Mattias	
+2015	GAC Group World Tour Austrian Open Wels 2015	MATSUDAIRA Kenta (JPN)		LEE Sang Su (KOR)		MS	Main Draw	R32	4 - 0	12:10 11:8 13:11 15:13	MATSUDAIRA Kenta	
+2015	GAC Group World Tour Austrian Open Wels 2015	STEGER Bastian (GER)		JANG Woojin (KOR)		MS	Main Draw	R32	3 - 4	3:11 7:11 6:11 13:11 11:8 11:9 6:11	JANG Woojin	
+2015	GAC Group World Tour Austrian Open Wels 2015	SHIBAEV Alexander (RUS)		NIWA Koki (JPN)		MS	Main Draw	R32	4 - 2	11:6 9:11 11:5 7:11 11:7 11:7	SHIBAEV Alexander	
+2015	GAC Group World Tour Austrian Open Wels 2015	SAMSONOV Vladimir (BLR)		GACINA Andrej (CRO)		MS	Main Draw	R32	2 - 4	11:9 11:13 11:13 9:11 12:10 10:12	GACINA Andrej	
+2015	GAC Group World Tour Austrian Open Wels 2015	FEGERL Stefan (AUT)		OUAICHE Stephane (ALG)		MS	Main Draw	R32	2 - 4	6:11 11:7 11:8 11:13 10:12 6:11	OUAICHE Stephane	
+2015	GAC Group World Tour Austrian Open Wels 2015	KIM Minseok (KOR)		MATTENET Adrien (FRA)		MS	Main Draw	R32	3 - 4	10:12 12:10 11:13 7:11 13:11 11:4 7:11	MATTENET Adrien	
+2015	GAC Group World Tour Austrian Open Wels 2015	TSUBOI Gustavo (BRA)		WONG Chun Ting (HKG)		MS	Main Draw	R32	0 - 4	7:11 4:11 7:11 6:11	WONG Chun Ting	
+2015	GAC Group World Tour Austrian Open Wels 2015	CHUANG Chih-Yuan (TPE)		MENGEL Steffen (GER)		MS	Main Draw	R32	4 - 1	11:9 8:11 15:13 11:9 11:7	CHUANG Chih-Yuan	
+2015	GAC Group World Tour Austrian Open Wels 2015	HABESOHN Daniel (AUT)		TOKIC Bojan (SLO)		MS	Main Draw	R32	4 - 1	8:11 11:7 11:6 11:9 11:9	HABESOHN Daniel	
+2015	GAC Group World Tour Austrian Open Wels 2015	GIONIS Panagiotis (GRE)		KIM Donghyun (KOR)		MS	Main Draw	R32	2 - 4	9:11 11:7 11:8 7:11 12:14 8:11	KIM Donghyun	
+2015	GAC Group World Tour Austrian Open Wels 2015	KOU Lei (UKR)		MIZUTANI Jun (JPN)		MS	Main Draw	R32	2 - 4	11:9 5:11 7:11 11:9 9:11 3:11	MIZUTANI Jun	
+2015	GAC Group World Tour Austrian Open Wels 2015	OVTCHAROV Dimitrij (GER)		LI Ping (QAT)		MS	Main Draw	R16	4 - 1	12:10 6:11 11:4 11:7 11:4	OVTCHAROV Dimitrij	
+2015	GAC Group World Tour Austrian Open Wels 2015	FILUS Ruwen (GER)		PITCHFORD Liam (ENG)		MS	Main Draw	R16	4 - 2	5:11 11:6 10:12 11:9 11:8 11:9	FILUS Ruwen	
+2015	GAC Group World Tour Austrian Open Wels 2015	KARLSSON Mattias (SWE)		MATSUDAIRA Kenta (JPN)		MS	Main Draw	R16	1 - 4	10:12 12:10 6:11 7:11 8:11	MATSUDAIRA Kenta	
+2015	GAC Group World Tour Austrian Open Wels 2015	JANG Woojin (KOR)		SHIBAEV Alexander (RUS)		MS	Main Draw	R16	4 - 2	11:9 8:11 12:10 6:11 11:7 17:15	JANG Woojin	
+2015	GAC Group World Tour Austrian Open Wels 2015	GACINA Andrej (CRO)		OUAICHE Stephane (ALG)		MS	Main Draw	R16	4 - 1	11:6 11:7 9:11 11:6 11:9	GACINA Andrej	
+2015	GAC Group World Tour Austrian Open Wels 2015	MATTENET Adrien (FRA)		WONG Chun Ting (HKG)		MS	Main Draw	R16	4 - 3	5:11 11:8 7:11 6:11 11:4 11:6 12:10	MATTENET Adrien	
+2015	GAC Group World Tour Austrian Open Wels 2015	CHUANG Chih-Yuan (TPE)		HABESOHN Daniel (AUT)		MS	Main Draw	R16	4 - 1	11:5 11:5 12:10 7:11 11:4	CHUANG Chih-Yuan	
+2015	GAC Group World Tour Austrian Open Wels 2015	KIM Donghyun (KOR)		MIZUTANI Jun (JPN)		MS	Main Draw	R16	0 - 4	7:11 10:12 6:11 7:11	MIZUTANI Jun	
+2015	GAC Group World Tour Austrian Open Wels 2015	OVTCHAROV Dimitrij (GER)		FILUS Ruwen (GER)		MS	Main Draw	QuarterFinal	4 - 3	11:8 11:13 8:11 11:4 11:8 2:11 12:10	OVTCHAROV Dimitrij	
+2015	GAC Group World Tour Austrian Open Wels 2015	MATSUDAIRA Kenta (JPN)		JANG Woojin (KOR)		MS	Main Draw	QuarterFinal	3 - 4	11:4 11:9 11:9 6:11 7:11 9:11 6:11	JANG Woojin	
+2015	GAC Group World Tour Austrian Open Wels 2015	GACINA Andrej (CRO)		MATTENET Adrien (FRA)		MS	Main Draw	QuarterFinal	4 - 2	11:3 14:12 9:11 11:6 6:11 11:6	GACINA Andrej	
+2015	GAC Group World Tour Austrian Open Wels 2015	CHUANG Chih-Yuan (TPE)		MIZUTANI Jun (JPN)		MS	Main Draw	QuarterFinal	2 - 4	4:11 11:9 11:9 8:11 7:11 3:11	MIZUTANI Jun	
+2015	GAC Group World Tour Austrian Open Wels 2015	OVTCHAROV Dimitrij (GER)		JANG Woojin (KOR)		MS	Main Draw	SemiFinal	4 - 1	11:4 9:11 11:6 11:9 11:7	OVTCHAROV Dimitrij	
+2015	GAC Group World Tour Austrian Open Wels 2015	GACINA Andrej (CRO)		MIZUTANI Jun (JPN)		MS	Main Draw	SemiFinal	0 - 4	7:11 4:11 7:11 6:11	MIZUTANI Jun	
+2015	GAC Group World Tour Austrian Open Wels 2015	OVTCHAROV Dimitrij (GER)		MIZUTANI Jun (JPN)		MS	Main Draw	Final	1 - 4	7:11 8:11 13:11 12:14 6:11	MIZUTANI Jun	
+2015	GAC Group World Tour Austrian Open Wels 2015	KIM Donghyun (KOR)		KIM Daewoo (KOR)		U21MS	Main Draw	R32	3 - 1	11:7 9:11 11:8 11:8	KIM Donghyun	
+2015	GAC Group World Tour Austrian Open Wels 2015	PUCAR Tomislav (CRO)		YANG Tzu-Yi (TPE)		U21MS	Main Draw	R32	3 - 0	13:11 15:13 11:7	PUCAR Tomislav	
+2015	GAC Group World Tour Austrian Open Wels 2015	ZHAI Yujia (DEN)		ZATOWKA Patryk (POL)		U21MS	Main Draw	R32	3 - 1	6:11 11:5 11:6 11:8	ZHAI Yujia	
+2015	GAC Group World Tour Austrian Open Wels 2015	SERDAROGLU David (AUT)		FLORE Tristan (FRA)		U21MS	Main Draw	R32	0 - 3	6:11 7:11 8:11	FLORE Tristan	
+2015	GAC Group World Tour Austrian Open Wels 2015	SAMBE Kohei (JPN)		WISUTMAYTHANGKOON Supanut (THA)		U21MS	Main Draw	R32	3 - 1	9:11 11:7 11:6 11:7	SAMBE Kohei	
+2015	GAC Group World Tour Austrian Open Wels 2015	GAUZY Paul (FRA)		SODERLUND Hampus (SWE)		U21MS	Main Draw	R32	1 - 3	11:8 9:11 7:11 5:11	SODERLUND Hampus	
+2015	GAC Group World Tour Austrian Open Wels 2015	RANEFUR Elias (SWE)		CHERNOV Konstantin (RUS)		U21MS	Main Draw	R32	3 - 2	7:11 11:6 6:11 11:6 11:6	RANEFUR Elias	
+2015	GAC Group World Tour Austrian Open Wels 2015	PFEFFER Simon (AUT)		DYJAS Jakub (POL)		U21MS	Main Draw	R32	0 - 3	8:11 8:11 3:11	DYJAS Jakub	
+2015	GAC Group World Tour Austrian Open Wels 2015	GERALDO Joao (POR)		LEVENKO Andreas (AUT)		U21MS	Main Draw	R32	3 - 0	11:7 11:7 11:3	GERALDO Joao	
+2015	GAC Group World Tour Austrian Open Wels 2015	REITSPIES David (CZE)		ANGLES Enzo (FRA)		U21MS	Main Draw	R32	3 - 1	15:13 17:19 11:9 11:3	REITSPIES David	
+2015	GAC Group World Tour Austrian Open Wels 2015	TSUBOI Yuma (JPN)		ISHIY Vitor (BRA)		U21MS	Main Draw	R32	3 - 1	16:14 11:3 7:11 11:4	TSUBOI Yuma	
+2015	GAC Group World Tour Austrian Open Wels 2015	AN Jaehyun (KOR)		OIKAWA Mizuki (JPN)		U21MS	Main Draw	R32	1 - 3	11:8 6:11 2:11 2:11	OIKAWA Mizuki	
+2015	GAC Group World Tour Austrian Open Wels 2015	BROSSIER Benjamin (FRA)		GRININGER Thomas (AUT)		U21MS	Main Draw	R32	3 - 0	11:7 12:10 11:5	BROSSIER Benjamin	
+2015	GAC Group World Tour Austrian Open Wels 2015	JORGIC Darko (SLO)		WALKER Samuel (ENG)		U21MS	Main Draw	R32	2 - 3	11:6 6:11 14:12 7:11 6:11	WALKER Samuel	
+2015	GAC Group World Tour Austrian Open Wels 2015	ROBINOT Alexandre (FRA)		ISMAILOV Sadi (RUS)		U21MS	Main Draw	R32	3 - 0	11:9 12:10 11:6	ROBINOT Alexandre	
+2015	GAC Group World Tour Austrian Open Wels 2015	NIELSEN Claus (DEN)		JANG Woojin (KOR)		U21MS	Main Draw	R32	1 - 3	10:12 11:8 3:11 9:11	JANG Woojin	
+2015	GAC Group World Tour Austrian Open Wels 2015	KIM Donghyun (KOR)		PUCAR Tomislav (CRO)		U21MS	Main Draw	R16	2 - 3	11:6 9:11 11:7 5:11 5:11	PUCAR Tomislav	
+2015	GAC Group World Tour Austrian Open Wels 2015	ZHAI Yujia (DEN)		FLORE Tristan (FRA)		U21MS	Main Draw	R16	3 - 2	11:9 9:11 10:12 11:9 11:8	ZHAI Yujia	
+2015	GAC Group World Tour Austrian Open Wels 2015	SAMBE Kohei (JPN)		SODERLUND Hampus (SWE)		U21MS	Main Draw	R16	3 - 1	11:9 12:10 12:14 12:10	SAMBE Kohei	
+2015	GAC Group World Tour Austrian Open Wels 2015	RANEFUR Elias (SWE)		DYJAS Jakub (POL)		U21MS	Main Draw	R16	3 - 1	23:21 9:11 11:5 11:5	RANEFUR Elias	
+2015	GAC Group World Tour Austrian Open Wels 2015	GERALDO Joao (POR)		REITSPIES David (CZE)		U21MS	Main Draw	R16	3 - 1	6:11 11:9 11:4 11:6	GERALDO Joao	
+2015	GAC Group World Tour Austrian Open Wels 2015	TSUBOI Yuma (JPN)		OIKAWA Mizuki (JPN)		U21MS	Main Draw	R16	3 - 1	13:11 10:12 11:4 11:8	TSUBOI Yuma	
+2015	GAC Group World Tour Austrian Open Wels 2015	BROSSIER Benjamin (FRA)		WALKER Samuel (ENG)		U21MS	Main Draw	R16	0 - 3	10:12 10:12 8:11	WALKER Samuel	
+2015	GAC Group World Tour Austrian Open Wels 2015	ROBINOT Alexandre (FRA)		JANG Woojin (KOR)		U21MS	Main Draw	R16	3 - 2	11:3 6:11 9:11 11:6 11:2	ROBINOT Alexandre	
+2015	GAC Group World Tour Austrian Open Wels 2015	PUCAR Tomislav (CRO)		ZHAI Yujia (DEN)		U21MS	Main Draw	QuarterFinal	0 - 3	6:11 7:11 7:11	ZHAI Yujia	
+2015	GAC Group World Tour Austrian Open Wels 2015	SAMBE Kohei (JPN)		RANEFUR Elias (SWE)		U21MS	Main Draw	QuarterFinal	0 - 3	10:12 6:11 8:11	RANEFUR Elias	
+2015	GAC Group World Tour Austrian Open Wels 2015	GERALDO Joao (POR)		TSUBOI Yuma (JPN)		U21MS	Main Draw	QuarterFinal	3 - 0	11:5 11:5 11:8	GERALDO Joao	
+2015	GAC Group World Tour Austrian Open Wels 2015	WALKER Samuel (ENG)		ROBINOT Alexandre (FRA)		U21MS	Main Draw	QuarterFinal	2 - 3	11:5 8:11 11:6 7:11 5:11	ROBINOT Alexandre	
+2015	GAC Group World Tour Austrian Open Wels 2015	ZHAI Yujia (DEN)		RANEFUR Elias (SWE)		U21MS	Main Draw	SemiFinal	3 - 1	8:11 11:2 11:8 11:4	ZHAI Yujia	
+2015	GAC Group World Tour Austrian Open Wels 2015	GERALDO Joao (POR)		ROBINOT Alexandre (FRA)		U21MS	Main Draw	SemiFinal	3 - 0	14:12 11:6 11:8	GERALDO Joao	
+2015	GAC Group World Tour Austrian Open Wels 2015	ZHAI Yujia (DEN)		GERALDO Joao (POR)		U21MS	Main Draw	Final	3 - 1	11:5 3:11 11:8 11:9	ZHAI Yujia	
+2015	GAC Group World Tour Austrian Open Wels 2015	MATSUDAIRA Kenji (JPN)		ROBLES Alvaro (ESP)		MS	Qualification	QR64	4 - 1	11:9 9:11 11:8 11:7 11:6	MATSUDAIRA Kenji	
+2015	GAC Group World Tour Austrian Open Wels 2015	AN Jaehyun (KOR)		DURAN Marc (ESP)		MS	Qualification	QR64	1 - 4	9:11 5:11 6:11 11:5 10:12	DURAN Marc	
+2015	GAC Group World Tour Austrian Open Wels 2015	DYJAS Jakub (POL)		BROSSIER Benjamin (FRA)		MS	Qualification	QR64	2 - 4	7:11 11:8 9:11 9:11 11:9 6:11	BROSSIER Benjamin	
+2015	GAC Group World Tour Austrian Open Wels 2015	WALTHER Ricardo (GER)		SALIFOU Abdel-Kader (BEN)		MS	Qualification	QR64	1 - 4	11:7 5:11 5:11 5:11 3:11	SALIFOU Abdel-Kader	
+2015	GAC Group World Tour Austrian Open Wels 2015	SAMBE Kohei (JPN)		JANCARIK Lubomir (CZE)		MS	Qualification	QR64	4 - 3	11:8 9:11 9:11 12:10 12:10 7:11 13:11	SAMBE Kohei	
+2015	GAC Group World Tour Austrian Open Wels 2015	KONECNY Tomas (CZE)		FLORE Tristan (FRA)		MS	Qualification	QR64	3 - 4	2:11 11:9 8:11 11:9 11:4 6:11 4:11	FLORE Tristan	
+2015	GAC Group World Tour Austrian Open Wels 2015	LI Ahmet (TUR)		ROBINOT Quentin (FRA)		MS	Qualification	QR64	4 - 2	8:11 11:7 11:2 12:14 11:5 11:7	LI Ahmet	
+2015	GAC Group World Tour Austrian Open Wels 2015	KOJIC Frane (CRO)		ZHAI Yujia (DEN)		MS	Qualification	QR64	2 - 4	5:11 9:11 11:7 11:7 7:11 6:11	ZHAI Yujia	
+2015	GAC Group World Tour Austrian Open Wels 2015	CHIANG Hung-Chieh (TPE)		DESAI Harmeet (IND)		MS	Qualification	QR64	2 - 4	9:11 8:11 9:11 11:9 11:9 11:13	DESAI Harmeet	
+2015	GAC Group World Tour Austrian Open Wels 2015	ROBINOT Alexandre (FRA)		GNANASEKARAN Sathiyan (IND)		MS	Qualification	QR64	4 - 1	12:10 11:9 8:11 11:4 12:10	ROBINOT Alexandre	
+2015	GAC Group World Tour Austrian Open Wels 2015	OUAICHE Stephane (ALG)		PLATONOV Pavel (BLR)		MS	Qualification	QR64	4 - 2	11:13 11:8 12:10 11:13 12:10 11:8	OUAICHE Stephane	
+2015	GAC Group World Tour Austrian Open Wels 2015	TSUBOI Yuma (JPN)		SAIVE Jean-Michel (BEL)		MS	Qualification	QR64	4 - 1	10:12 11:4 12:10 15:13 11:5	TSUBOI Yuma	
+2015	GAC Group World Tour Austrian Open Wels 2015	PAIKOV Mikhail (RUS)		JIN Takuya (JPN)		MS	Qualification	QR64	4 - 1	11:7 8:11 11:1 11:9 11:8	PAIKOV Mikhail	
+2015	GAC Group World Tour Austrian Open Wels 2015	GROTH Jonathan (DEN)		DIDUKH Oleksandr (UKR)		MS	Qualification	QR64	4 - 2	10:12 11:6 12:14 13:11 11:7 11:9	GROTH Jonathan	
+2015	GAC Group World Tour Austrian Open Wels 2015	PETO Zsolt (SRB)		OLAH Benedek (FIN)		MS	Qualification	QR64	2 - 4	11:4 4:11 8:11 11:7 14:16 5:11	OLAH Benedek	
+2015	GAC Group World Tour Austrian Open Wels 2015	OIKAWA Mizuki (JPN)		PRIMORAC Zoran (CRO)		MS	Qualification	QR64	3 - 4	7:11 10:12 11:5 11:9 6:11 11:8 8:11	PRIMORAC Zoran	
+2015	GAC Group World Tour Austrian Open Wels 2015	KARLSSON Mattias (SWE)		SEREDA Peter (SVK)		MS	Qualification	QR64	4 - 1	12:10 11:13 11:2 11:4 11:9	KARLSSON Mattias	
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 3 of 3 Total: 220
+
+Start
+Prev
+1
+2
+3
+Next
+End
+2015	GAC Group World Tour Austrian Open Wels 2015	LEE Seul (KOR)		POLCANOVA Sofia (AUT)		U21WS	Main Draw	R32	3 - 1	10:12 11:8 11:7 11:8	LEE Seul	
+2015	GAC Group World Tour Austrian Open Wels 2015	SZOCS Bernadette (ROU)		BERGSTROM Linda (SWE)		U21WS	Main Draw	R32	2 - 3	7:11 7:11 11:8 11:8 6:11	BERGSTROM Linda	
+2015	GAC Group World Tour Austrian Open Wels 2015	BATRA Manika (IND)		LEE Zion (KOR)		U21WS	Main Draw	R32	2 - 3	11:8 9:11 11:4 12:14 4:11	LEE Zion	
+2015	GAC Group World Tour Austrian Open Wels 2015	KATO Kyoka (JPN)		BIKBAEVA Anna (RUS)		U21WS	Main Draw	R32	3 - 2	11:8 8:11 10:12 12:10 11:8	KATO Kyoka	
+2015	GAC Group World Tour Austrian Open Wels 2015	HADZIAHMETOVIC Emina (BIH)		MAEDA Miyu (JPN)		U21WS	Main Draw	R32	1 - 3	9:11 11:8 6:11 10:12	MAEDA Miyu	
+2015	GAC Group World Tour Austrian Open Wels 2015	CHOI Hyojoo (KOR)		SOO Wai Yam (HKG)		U21WS	Main Draw	R16	0 - 3	4:11 10:12 8:11	SOO Wai Yam	
+2015	GAC Group World Tour Austrian Open Wels 2015	MATSUDAIRA Shiho (JPN)		HAYATA Hina (JPN)		U21WS	Main Draw	R16	0 - 3	9:11 6:11 5:11	HAYATA Hina	
+2015	GAC Group World Tour Austrian Open Wels 2015	ZENG Jian (SGP)		ZHOU Yihan (SGP)		U21WS	Main Draw	R16	2 - 3	11:6 6:11 11:6 7:11 7:11	ZHOU Yihan	
+2015	GAC Group World Tour Austrian Open Wels 2015	SHAO Jieni (POR)		LIN Ye (CAN)		U21WS	Main Draw	R16	3 - 2	7:11 9:11 11:5 12:10 11:8	SHAO Jieni	
+2015	GAC Group World Tour Austrian Open Wels 2015	HAMAMOTO Yui (AUT)		KATO Miyu (JPN)		U21WS	Main Draw	R16	2 - 3	11:6 11:9 6:11 4:11 7:11	KATO Miyu	
+2015	GAC Group World Tour Austrian Open Wels 2015	EERLAND Britt (NED)		LEE Seul (KOR)		U21WS	Main Draw	R16	3 - 2	11:8 6:11 9:11 11:3 11:8	EERLAND Britt	
+2015	GAC Group World Tour Austrian Open Wels 2015	BERGSTROM Linda (SWE)		LEE Zion (KOR)		U21WS	Main Draw	R16	0 - 3	5:11 6:11 3:11	LEE Zion	
+2015	GAC Group World Tour Austrian Open Wels 2015	KATO Kyoka (JPN)		MAEDA Miyu (JPN)		U21WS	Main Draw	R16	0 - 3	10:12 2:11 9:11	MAEDA Miyu	
+2015	GAC Group World Tour Austrian Open Wels 2015	SOO Wai Yam (HKG)		HAYATA Hina (JPN)		U21WS	Main Draw	QuarterFinal	2 - 3	11:6 11:5 10:12 10:12 8:11	HAYATA Hina	
+2015	GAC Group World Tour Austrian Open Wels 2015	ZHOU Yihan (SGP)		SHAO Jieni (POR)		U21WS	Main Draw	QuarterFinal	1 - 3	6:11 11:6 6:11 9:11 0	SHAO Jieni	
+2015	GAC Group World Tour Austrian Open Wels 2015	KATO Miyu (JPN)		EERLAND Britt (NED)		U21WS	Main Draw	QuarterFinal	2 - 3	11:9 2:11 11:8 8:11 9:11	EERLAND Britt	
+2015	GAC Group World Tour Austrian Open Wels 2015	LEE Zion (KOR)		MAEDA Miyu (JPN)		U21WS	Main Draw	QuarterFinal	2 - 3	11:8 9:11 11:6 8:11 8:11	MAEDA Miyu	
+2015	GAC Group World Tour Austrian Open Wels 2015	HAYATA Hina (JPN)		SHAO Jieni (POR)		U21WS	Main Draw	SemiFinal	0 - 3	9:11 6:11 7:11	SHAO Jieni	
+2015	GAC Group World Tour Austrian Open Wels 2015	EERLAND Britt (NED)		MAEDA Miyu (JPN)		U21WS	Main Draw	SemiFinal	2 - 3	9:11 11:4 9:11 11:7 8:11	MAEDA Miyu	
+2015	GAC Group World Tour Austrian Open Wels 2015	SHAO Jieni (POR)		MAEDA Miyu (JPN)		U21WS	Main Draw	Final	3 - 2	11:5 10:12 8:11 11:6 11:4	SHAO Jieni
+
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Page 2 of 3 Total: 220
+
+Start
+Prev
+1
+2
+3
+Next
+End
+2015	GAC Group World Tour Austrian Open Wels 2015	KHETKHUAN Tamolwan (THA)		MOSCONI Veronica (ITA)		U21WS	Qualification		1 - 3	5:11 11:8 5:11 7:11	MOSCONI Veronica	
+2015	GAC Group World Tour Austrian Open Wels 2015	KHETKHUAN Tamolwan (THA)		LIU Qi (HKG)		U21WS	Qualification		1 - 3	11:8 9:11 6:11 9:11	LIU Qi	
+2015	GAC Group World Tour Austrian Open Wels 2015	PICCOLIN Giorgia (ITA)		GATS Yuliya (KAZ)		U21WS	Qualification		0 - 3	9:11 7:11 5:11	GATS Yuliya	
+2015	GAC Group World Tour Austrian Open Wels 2015	BIKBAEVA Anna (RUS)		GATS Yuliya (KAZ)		U21WS	Qualification		3 - 1	10:12 18:16 11:6 11:7	BIKBAEVA Anna	
+2015	GAC Group World Tour Austrian Open Wels 2015	BIKBAEVA Anna (RUS)		PICCOLIN Giorgia (ITA)		U21WS	Qualification		3 - 2	9:11 9:11 11:9 11:8 11:4	BIKBAEVA Anna	
+2015	GAC Group World Tour Austrian Open Wels 2015	HADZIAHMETOVIC Emina (BIH)		LE Thi Hong Loan (ITA)		U21WS	Qualification		3 - 1	11:4 11:4 7:11 11:7	HADZIAHMETOVIC Emina	
+2015	GAC Group World Tour Austrian Open Wels 2015	DIAZ Adriana (PUR)		LE Thi Hong Loan (ITA)		U21WS	Qualification		3 - 0	11:5 14:12 11:5	DIAZ Adriana	
+2015	GAC Group World Tour Austrian Open Wels 2015	DIAZ Adriana (PUR)		HADZIAHMETOVIC Emina (BIH)		U21WS	Qualification		3 - 1	11:8 11:7 4:11 11:4	DIAZ Adriana	
+2015	GAC Group World Tour Austrian Open Wels 2015	TOMANOVSKA Katerina (CZE)		ZLATILOVA Jessica (AUT)		U21WS	Qualification		3 - 1	11:3 10:12 11:9 11:6	TOMANOVSKA Katerina	
+2015	GAC Group World Tour Austrian Open Wels 2015	SOO Wai Yam (HKG)		ZLATILOVA Jessica (AUT)		U21WS	Qualification		3 - 0	11:7 11:3 11:7	SOO Wai Yam	
+2015	GAC Group World Tour Austrian Open Wels 2015	SOO Wai Yam (HKG)		TOMANOVSKA Katerina (CZE)		U21WS	Qualification		3 - 1	7:11 11:5 11:7 11:8	SOO Wai Yam	
+2015	GAC Group World Tour Austrian Open Wels 2015	NAGYVARADI Mercedes (HUN)		KELLERMANN Sophia (AUT)		U21WS	Qualification		3 - 0	11:6 11:7 11:8	NAGYVARADI Mercedes	
+2015	GAC Group World Tour Austrian Open Wels 2015	GUSEVA Ekaterina (RUS)		KELLERMANN Sophia (AUT)		U21WS	Qualification		3 - 2	9:11 11:4 10:12 11:4 11:3	GUSEVA Ekaterina	
+2015	GAC Group World Tour Austrian Open Wels 2015	GUSEVA Ekaterina (RUS)		NAGYVARADI Mercedes (HUN)		U21WS	Qualification		2 - 3	8:11 8:11 12:10 11:8 9:11	NAGYVARADI Mercedes	
+2015	GAC Group World Tour Austrian Open Wels 2015	STEFCOVA Kristyna (CZE)		BATRA Manika (IND)		U21WS	Qualification		0 - 3	3:11 5:11 5:11	BATRA Manika	
+2015	GAC Group World Tour Austrian Open Wels 2015	KIM Byeolnim (KOR)		BATRA Manika (IND)		U21WS	Qualification		3 - 1	11:6 11:9 8:11 11:9	KIM Byeolnim	
+2015	GAC Group World Tour Austrian Open Wels 2015	KIM Byeolnim (KOR)		STEFCOVA Kristyna (CZE)		U21WS	Qualification		1 - 3	11:4 9:11 5:11 7:11	STEFCOVA Kristyna	
+2015	GAC Group World Tour Austrian Open Wels 2015	MAK Tze Wing (HKG)		DSOUZA Senhora (IND)		U21WS	Qualification		3 - 1	11:3 5:11 11:7 11:7	MAK Tze Wing	
+2015	GAC Group World Tour Austrian Open Wels 2015	LEE Seul (KOR)		DSOUZA Senhora (IND)		U21WS	Qualification		3 - 0	11:5 11:6 11:4	LEE Seul	
+2015	GAC Group World Tour Austrian Open Wels 2015	LEE Seul (KOR)		MAK Tze Wing (HKG)		U21WS	Qualification		3 - 2	11:13 11:13 11:6 11:6 11:7	LEE Seul	
+2015	GAC Group World Tour Austrian Open Wels 2015	LEE Yujin (KOR)		TENNISON Reeth (IND)		U21WS	Qualification		3 - 0	12:10 11:8 11:7	LEE Yujin	
+2015	GAC Group World Tour Austrian Open Wels 2015	GALIC Alex (SLO)		TENNISON Reeth (IND)		U21WS	Qualification		3 - 1	9:11 11:6 11:4 11:8	GALIC Alex	
+2015	GAC Group World Tour Austrian Open Wels 2015	GALIC Alex (SLO)		LEE Yujin (KOR)		U21WS	Qualification		2 - 3	3:11 5:11 11:8 11:8 7:11	LEE Yujin	
+2015	GAC Group World Tour Austrian Open Wels 2015	JEGER Mateja (CRO)		BHANDARKAR Mallika (IND)		U21WS	Qualification		3 - 0	11:6 11:8 11:9	JEGER Mateja	
+2015	GAC Group World Tour Austrian Open Wels 2015	BERGSTROM Linda (SWE)		BHANDARKAR Mallika (IND)		U21WS	Qualification		3 - 0	11:6 11:6 11:4	BERGSTROM Linda	
+2015	GAC Group World Tour Austrian Open Wels 2015	BERGSTROM Linda (SWE)		JEGER Mateja (CRO)		U21WS	Qualification		3 - 1	11:13 11:8 12:10 11:8	BERGSTROM Linda	
+2015	GAC Group World Tour Austrian Open Wels 2015	ISHIKAWA Kasumi (JPN)		PROKHOROVA Yulia (RUS)		WS	Main Draw	R64	4 - 1	11:5 9:11 11:6 11:6 11:4	ISHIKAWA Kasumi	
+2015	GAC Group World Tour Austrian Open Wels 2015	KATO Miyu (JPN)		BILENKO Tetyana (UKR)		WS	Main Draw	R64	1 - 4	13:11 4:11 3:11 2:11 3:11	BILENKO Tetyana	
+2015	GAC Group World Tour Austrian Open Wels 2015	YU Fu (POR)		SAWETTABUT Suthasini (THA)		WS	Main Draw	R64	4 - 0	11:9 11:8 11:8 11:8	YU Fu	
+2015	GAC Group World Tour Austrian Open Wels 2015	HAYATA Hina (JPN)		POTA Georgina (HUN)		WS	Main Draw	R64	4 - 1	11:6 5:11 11:8 11:9 11:8	HAYATA Hina	
+2015	GAC Group World Tour Austrian Open Wels 2015	SAMARA Elizabeta (ROU)		ZENG Jian (SGP)		WS	Main Draw	R64	4 - 2	8:11 11:6 11:6 8:11 11:5 11:8	SAMARA Elizabeta	
+2015	GAC Group World Tour Austrian Open Wels 2015	LIN Ye (CAN)		HU Melek (TUR)		WS	Main Draw	R64	1 - 4	8:11 10:12 9:11 11:5 7:11	HU Melek	
+2015	GAC Group World Tour Austrian Open Wels 2015	CHENG I-Ching (TPE)		VACENOVSKA Iveta (CZE)		WS	Main Draw	R64	4 - 1	11:13 11:6 11:7 11:9 11:9	CHENG I-Ching	
+2015	GAC Group World Tour Austrian Open Wels 2015	SZOCS Bernadette (ROU)		DOO Hoi Kem (HKG)		WS	Main Draw	R64	2 - 4	11:3 8:11 11:8 6:11 6:11 5:11	DOO Hoi Kem	
+2015	GAC Group World Tour Austrian Open Wels 2015	YANG Ha Eun (KOR)		HUANG Yi-Hua (TPE)		WS	Main Draw	R64	4 - 2	7:11 11:7 11:5 11:13 13:11 11:7	YANG Ha Eun	
+2015	GAC Group World Tour Austrian Open Wels 2015	ZHOU Yihan (SGP)		PESOTSKA Margaryta (UKR)		WS	Main Draw	R64	4 - 2	11:7 8:11 11:8 5:11 12:10 11:9	ZHOU Yihan	
+2015	GAC Group World Tour Austrian Open Wels 2015	MAEDA Miyu (JPN)		SHAO Jieni (POR)		WS	Main Draw	R64	2 - 4	11:8 11:8 10:12 14:16 5:11 9:11	SHAO Jieni	
+2015	GAC Group World Tour Austrian Open Wels 2015	DIAZ Adriana (PUR)		LI Jie (NED)		WS	Main Draw	R64	0 - 4	7:11 7:11 1:11 8:11	LI Jie	
+2015	GAC Group World Tour Austrian Open Wels 2015	YU Mengyu (SGP)		LEE I-Chen (TPE)		WS	Main Draw	R64	4 - 2	4:11 11:7 11:4 12:10 10:12 11:7	YU Mengyu	
+2015	GAC Group World Tour Austrian Open Wels 2015	LEE Zion (KOR)		YANG Xiaoxin (MON)		WS	Main Draw	R64	4 - 1	11:6 11:9 11:7 5:11 11:5	LEE Zion	
+2015	GAC Group World Tour Austrian Open Wels 2015	POLCANOVA Sofia (AUT)		ONO Shiho (JPN)		WS	Main Draw	R64	4 - 3	11:5 8:11 7:11 11:2 11:9 7:11 11:8	POLCANOVA Sofia	
+2015	GAC Group World Tour Austrian Open Wels 2015	WINTER Sabine (GER)		SUH Hyo Won (KOR)		WS	Main Draw	R64	4 - 1	11:5 9:11 12:10 11:9 11:6	WINTER Sabine	
+2015	GAC Group World Tour Austrian Open Wels 2015	FENG Tianwei (SGP)		MIKHAILOVA Polina (RUS)		WS	Main Draw	R64	4 - 1	11:7 11:7 11:8 5:11 11:6	FENG Tianwei	
+2015	GAC Group World Tour Austrian Open Wels 2015	DE NUTTE Sarah (LUX)		IVANCAN Irene (GER)		WS	Main Draw	R64	0 - 4	3:11 7:11 7:11 7:11	IVANCAN Irene	
+2015	GAC Group World Tour Austrian Open Wels 2015	WU Jiaduo (GER)		HAMAMOTO Yui (AUT)		WS	Main Draw	R64	4 - 1	11:6 0:11 11:4 11:6 11:9	WU Jiaduo	
+2015	GAC Group World Tour Austrian Open Wels 2015	KUMAHARA Luca (BRA)		JIANG Huajun (HKG)		WS	Main Draw	R64	0 - 4	4:11 10:12 3:11 5:11	JIANG Huajun	
+2015	GAC Group World Tour Austrian Open Wels 2015	ISHIGAKI Yuka (JPN)		EERLAND Britt (NED)		WS	Main Draw	R64	4 - 1	6:11 11:8 11:3 11:7 15:13	ISHIGAKI Yuka	
+2015	GAC Group World Tour Austrian Open Wels 2015	DVORAK Galia (ESP)		SOLJA Petrissa (GER)		WS	Main Draw	R64	0 - 4	9:11 7:11 8:11 6:11	SOLJA Petrissa	
+2015	GAC Group World Tour Austrian Open Wels 2015	TIE Yana (HKG)		BIKBAEVA Anna (RUS)		WS	Main Draw	R64	4 - 1	5:11 11:7 11:5 11:1 11:2	TIE Yana	
+2015	GAC Group World Tour Austrian Open Wels 2015	SAKAI Haruka (JPN)		HAN Ying (GER)		WS	Main Draw	R64	1 - 4	10:12 10:12 11:8 5:11 9:11	HAN Ying	
+2015	GAC Group World Tour Austrian Open Wels 2015	SHAN Xiaona (GER)		SOO Wai Yam (HKG)		WS	Main Draw	R64	4 - 0	11:8 12:10 11:7 11:7	SHAN Xiaona	
+2015	GAC Group World Tour Austrian Open Wels 2015	MATSUDAIRA Shiho (JPN)		LEE Ho Ching (HKG)		WS	Main Draw	R64	1 - 4	7:11 9:11 11:7 4:11 14:16	LEE Ho Ching	
+2015	GAC Group World Tour Austrian Open Wels 2015	CHOI Hyojoo (KOR)		VOROBEVA Olga (RUS)		WS	Main Draw	R64	4 - 0	11:5 11:3 11:2 12:10	CHOI Hyojoo	
+2015	GAC Group World Tour Austrian Open Wels 2015	KOMWONG Nanthana (THA)		LIU Jia (AUT)		WS	Main Draw	R64	4 - 2	11:9 7:11 11:9 11:9 9:11 12:10	KOMWONG Nanthana	
+2015	GAC Group World Tour Austrian Open Wels 2015	JEON Jihee (KOR)		KATO Kyoka (JPN)		WS	Main Draw	R64	4 - 0	11:6 11:9 11:8 11:7	JEON Jihee	
+2015	GAC Group World Tour Austrian Open Wels 2015	KIM Byeolnim (KOR)		LI Qian (POL)		WS	Main Draw	R64	0 - 4	1:11 6:11 12:14 3:11	LI Qian	
+2015	GAC Group World Tour Austrian Open Wels 2015	WAKAMIYA Misako (JPN)		GUI Lin (BRA)		WS	Main Draw	R64	4 - 0	13:11 11:5 11:1 14:12	WAKAMIYA Misako	
+2015	GAC Group World Tour Austrian Open Wels 2015	TOMANOVSKA Katerina (CZE)		FUKUHARA Ai (JPN)		WS	Main Draw	R64	0 - 4	4:11 5:11 3:11 4:11	FUKUHARA Ai	
+2015	GAC Group World Tour Austrian Open Wels 2015	ISHIKAWA Kasumi (JPN)		BILENKO Tetyana (UKR)		WS	Main Draw	R32	4 - 0	13:11 11:6 11:7 11:3	ISHIKAWA Kasumi	
+2015	GAC Group World Tour Austrian Open Wels 2015	YU Fu (POR)		HAYATA Hina (JPN)		WS	Main Draw	R32	4 - 0	11:7 12:10 12:10 11:7	YU Fu	
+2015	GAC Group World Tour Austrian Open Wels 2015	SAMARA Elizabeta (ROU)		HU Melek (TUR)		WS	Main Draw	R32	3 - 4	11:4 3:11 6:11 11:7 8:11 11:7 9:11	HU Melek	
+2015	GAC Group World Tour Austrian Open Wels 2015	CHENG I-Ching (TPE)		DOO Hoi Kem (HKG)		WS	Main Draw	R32	4 - 1	6:11 11:9 11:8 11:7 11:8	CHENG I-Ching	
+2015	GAC Group World Tour Austrian Open Wels 2015	YANG Ha Eun (KOR)		ZHOU Yihan (SGP)		WS	Main Draw	R32	0 - 4	7:11 8:11 12:14 8:11	ZHOU Yihan	
+2015	GAC Group World Tour Austrian Open Wels 2015	SHAO Jieni (POR)		LI Jie (NED)		WS	Main Draw	R32	1 - 4	8:11 10:12 11:7 6:11 10:12	LI Jie	
+2015	GAC Group World Tour Austrian Open Wels 2015	YU Mengyu (SGP)		LEE Zion (KOR)		WS	Main Draw	R32	4 - 3	10:12 6:11 11:4 11:9 8:11 13:11 11:9	YU Mengyu	
+2015	GAC Group World Tour Austrian Open Wels 2015	POLCANOVA Sofia (AUT)		WINTER Sabine (GER)		WS	Main Draw	R32	4 - 2	13:11 11:9 8:11 12:10 6:11 11:6	POLCANOVA Sofia	
+2015	GAC Group World Tour Austrian Open Wels 2015	FENG Tianwei (SGP)		IVANCAN Irene (GER)		WS	Main Draw	R32	4 - 3	11:7 9:11 11:13 11:7 11:7 6:11 11:8	FENG Tianwei	
+2015	GAC Group World Tour Austrian Open Wels 2015	WU Jiaduo (GER)		JIANG Huajun (HKG)		WS	Main Draw	R32	2 - 4	7:11 11:4 2:11 11:7 6:11 9:11	JIANG Huajun	
+2015	GAC Group World Tour Austrian Open Wels 2015	ISHIGAKI Yuka (JPN)		SOLJA Petrissa (GER)		WS	Main Draw	R32	2 - 4	8:11 8:11 8:11 11:8 11:8 5:11	SOLJA Petrissa	
+2015	GAC Group World Tour Austrian Open Wels 2015	TIE Yana (HKG)		HAN Ying (GER)		WS	Main Draw	R32	0 - 4	9:11 5:11 10:12 7:11	HAN Ying	
+2015	GAC Group World Tour Austrian Open Wels 2015	SHAN Xiaona (GER)		LEE Ho Ching (HKG)		WS	Main Draw	R32	1 - 4	9:11 10:12 11:5 5:11 5:11	LEE Ho Ching	
+2015	GAC Group World Tour Austrian Open Wels 2015	CHOI Hyojoo (KOR)		KOMWONG Nanthana (THA)		WS	Main Draw	R32	4 - 1	8:11 11:8 11:4 11:6 11:7	CHOI Hyojoo	
+2015	GAC Group World Tour Austrian Open Wels 2015	JEON Jihee (KOR)		LI Qian (POL)		WS	Main Draw	R32	4 - 1	12:10 10:12 11:6 11:9 11:9	JEON Jihee	
+2015	GAC Group World Tour Austrian Open Wels 2015	WAKAMIYA Misako (JPN)		FUKUHARA Ai (JPN)		WS	Main Draw	R32	1 - 4	7:11 7:11 2:11 11:5 16:18	FUKUHARA Ai	
+2015	GAC Group World Tour Austrian Open Wels 2015	ISHIKAWA Kasumi (JPN)		YU Fu (POR)		WS	Main Draw	R16	4 - 1	11:7 11:3 11:13 11:7 11:6	ISHIKAWA Kasumi	
+2015	GAC Group World Tour Austrian Open Wels 2015	HU Melek (TUR)		CHENG I-Ching (TPE)		WS	Main Draw	R16	1 - 4	9:11 9:11 9:11 11:4 6:11	CHENG I-Ching	
+2015	GAC Group World Tour Austrian Open Wels 2015	ZHOU Yihan (SGP)		LI Jie (NED)		WS	Main Draw	R16	0 - 4	8:11 9:11 5:11 5:11	LI Jie	
+2015	GAC Group World Tour Austrian Open Wels 2015	YU Mengyu (SGP)		POLCANOVA Sofia (AUT)		WS	Main Draw	R16	2 - 4	5:11 9:11 6:11 11:9 11:8 16:18	POLCANOVA Sofia	
+2015	GAC Group World Tour Austrian Open Wels 2015	FENG Tianwei (SGP)		JIANG Huajun (HKG)		WS	Main Draw	R16	4 - 2	11:8 11:9 12:10 8:11 7:11 11:7	FENG Tianwei	
+2015	GAC Group World Tour Austrian Open Wels 2015	SOLJA Petrissa (GER)		HAN Ying (GER)		WS	Main Draw	R16	1 - 4	6:11 7:11 11:8 10:12 5:11	HAN Ying	
+2015	GAC Group World Tour Austrian Open Wels 2015	LEE Ho Ching (HKG)		CHOI Hyojoo (KOR)		WS	Main Draw	R16	4 - 0	11:9 11:9 11:8 11:2	LEE Ho Ching	
+2015	GAC Group World Tour Austrian Open Wels 2015	JEON Jihee (KOR)		FUKUHARA Ai (JPN)		WS	Main Draw	R16	1 - 4	2:11 6:11 11:4 5:11 5:11	FUKUHARA Ai	
+2015	GAC Group World Tour Austrian Open Wels 2015	ISHIKAWA Kasumi (JPN)		CHENG I-Ching (TPE)		WS	Main Draw	QuarterFinal	1 - 4	11:4 8:11 10:12 12:14 5:11	CHENG I-Ching	
+2015	GAC Group World Tour Austrian Open Wels 2015	LI Jie (NED)		POLCANOVA Sofia (AUT)		WS	Main Draw	QuarterFinal	4 - 1	11:3 6:11 11:7 11:3 11:6	LI Jie	
+2015	GAC Group World Tour Austrian Open Wels 2015	FENG Tianwei (SGP)		HAN Ying (GER)		WS	Main Draw	QuarterFinal	2 - 4	11:6 7:11 11:2 10:12 9:11 4:11	HAN Ying	
+2015	GAC Group World Tour Austrian Open Wels 2015	LEE Ho Ching (HKG)		FUKUHARA Ai (JPN)		WS	Main Draw	QuarterFinal	3 - 4	8:11 5:11 11:9 7:11 11:9 11:6 5:11	FUKUHARA Ai	
+2015	GAC Group World Tour Austrian Open Wels 2015	CHENG I-Ching (TPE)		LI Jie (NED)		WS	Main Draw	SemiFinal	4 - 2	11:7 11:9 11:8 10:12 9:11 11:9	CHENG I-Ching	
+2015	GAC Group World Tour Austrian Open Wels 2015	HAN Ying (GER)		FUKUHARA Ai (JPN)		WS	Main Draw	SemiFinal	4 - 0	11:4 12:10 11:4 11:9	HAN Ying	
+2015	GAC Group World Tour Austrian Open Wels 2015	CHENG I-Ching (TPE)		HAN Ying (GER)		WS	Main Draw	Final	0 - 4	11:13 7:11 6:11 8:11	HAN Ying	
+2015	GAC Group World Tour Austrian Open Wels 2015	CHOI Hyojoo (KOR)		MAK Tze Wing (HKG)		U21WS	Main Draw	R32	3 - 1	11:2 11:4 8:11 11:8	CHOI Hyojoo	
+2015	GAC Group World Tour Austrian Open Wels 2015	SOO Wai Yam (HKG)		SAWETTABUT Suthasini (THA)		U21WS	Main Draw	R32	3 - 1	11:3 11:4 4:11 11:9	SOO Wai Yam	
+2015	GAC Group World Tour Austrian Open Wels 2015	MATSUDAIRA Shiho (JPN)		LI Ching Wan (HKG)		U21WS	Main Draw	R32	3 - 1	12:10 11:9 8:11 11:8	MATSUDAIRA Shiho	
+2015	GAC Group World Tour Austrian Open Wels 2015	KIM Byeolnim (KOR)		HAYATA Hina (JPN)		U21WS	Main Draw	R32	0 - 3	7:11 6:11 12:14	HAYATA Hina	
+2015	GAC Group World Tour Austrian Open Wels 2015	ZENG Jian (SGP)		LEE Yujin (KOR)		U21WS	Main Draw	R32	3 - 0	11:3 11:8 11:4	ZENG Jian	
+2015	GAC Group World Tour Austrian Open Wels 2015	KUMAHARA Luca (BRA)		ZHOU Yihan (SGP)		U21WS	Main Draw	R32	1 - 3	10:12 2:11 11:6 8:11	ZHOU Yihan	
+2015	GAC Group World Tour Austrian Open Wels 2015	SHAO Jieni (POR)		DIAZ Adriana (PUR)		U21WS	Main Draw	R32	3 - 1	12:14 11:6 11:6 11:9	SHAO Jieni	
+2015	GAC Group World Tour Austrian Open Wels 2015	JEGER Mateja (CRO)		LIN Ye (CAN)		U21WS	Main Draw	R32	0 - 3	4:11 8:11 5:11	LIN Ye	
+2015	GAC Group World Tour Austrian Open Wels 2015	HAMAMOTO Yui (AUT)		GUSEVA Ekaterina (RUS)		U21WS	Main Draw	R32	3 - 1	11:7 7:11 11:7 11:7	HAMAMOTO Yui	
+2015	GAC Group World Tour Austrian Open Wels 2015	LIU Qi (HKG)		KATO Miyu (JPN)		U21WS	Main Draw	R32	1 - 3	8:11 5:11 11:7 6:11	KATO Miyu	
+2015	GAC Group World Tour Austrian Open Wels 2015	EERLAND Britt (NED)		NAGYVARADI Mercedes (HUN)		U21WS	Main Draw	R32	3 - 0	11:8 11:8 11:5	EERLAND Britt
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 55
+
+2015	GAC Group World Tour Austrian Open Wels 2015	HABESOHN Dominik (AUT)	LEITGEB Stefan (AUT)	KARAKASEVIC Aleksandar (SRB)	TOKIC Bojan (SLO)	MD	Qualification	QR64	1 - 3	5:11 9:11 11:5 8:11	KARAKASEVIC Aleksandar	TOKIC Bojan
+2015	GAC Group World Tour Austrian Open Wels 2015	FEGERL Stefan (AUT)	HABESOHN Daniel (AUT)	KOU Lei (UKR)	ZHMUDENKO Yaroslav (UKR)	MD	Qualification	QR32	3 - 1	9:11 11:7 11:8 11:5	FEGERL Stefan	HABESOHN Daniel
+2015	GAC Group World Tour Austrian Open Wels 2015	FEGERL Stefan (AUT)	HABESOHN Daniel (AUT)	FILUS Ruwen (GER)	WALTHER Ricardo (GER)	MD	Qualification	QR16	3 - 2	11:9 11:9 6:11 9:11 11:5	FEGERL Stefan	HABESOHN Daniel
+2015	GAC Group World Tour Austrian Open Wels 2015	FEGERL Stefan (AUT)	HABESOHN Daniel (AUT)	JANG Woojin (KOR)	LEE Sang Su (KOR)	MD	Main Draw	QuarterFinal	0 - 3	6:11 8:11 7:11	JANG Woojin	LEE Sang Su
+2015	GAC Group World Tour Austrian Open Wels 2015	JOUTI Eric (BRA)	ISHIY Vitor (BRA)	DESAI Harmeet (IND)	GNANASEKARAN Sathiyan (IND)	MD	Qualification	QR64	1 - 3	8:11 12:10 3:11 4:11	DESAI Harmeet	GNANASEKARAN Sathiyan
+2015	GAC Group World Tour Austrian Open Wels 2015	MATSUMOTO Cazuo (BRA)	MONTEIRO Thiago (BRA)	DESAI Harmeet (IND)	GNANASEKARAN Sathiyan (IND)	MD	Qualification	QR32	3 - 1	11:5 9:11 11:5 11:5	MATSUMOTO Cazuo	MONTEIRO Thiago
+2015	GAC Group World Tour Austrian Open Wels 2015	MATSUMOTO Cazuo (BRA)	MONTEIRO Thiago (BRA)	LUNDQVIST Jens (SWE)	RANEFUR Elias (SWE)	MD	Qualification	QR16	3 - 0	11:4 11:9 11:9	MATSUMOTO Cazuo	MONTEIRO Thiago
+2015	GAC Group World Tour Austrian Open Wels 2015	MATSUMOTO Cazuo (BRA)	MONTEIRO Thiago (BRA)	JANG Woojin (KOR)	LEE Sang Su (KOR)	MD	Main Draw	R16	0 - 3	8:11 10:12 6:11	JANG Woojin	LEE Sang Su
+2015	GAC Group World Tour Austrian Open Wels 2015	FLORITZ Philipp (BUL)	GOLOVANOV Stanislav (BUL)	PFEFFER Simon (AUT)	SERDAROGLU David (AUT)	MD	Qualification	QR64	3 - 1	11:4 11:9 8:11 11:7	FLORITZ Philipp	GOLOVANOV Stanislav
+2015	GAC Group World Tour Austrian Open Wels 2015	FLORITZ Philipp (BUL)	GOLOVANOV Stanislav (BUL)	FILUS Ruwen (GER)	WALTHER Ricardo (GER)	MD	Qualification	QR32	0 - 3	5:11 11:13 5:11	FILUS Ruwen	WALTHER Ricardo
+2015	GAC Group World Tour Austrian Open Wels 2015	KONECNY Tomas (CZE)	SIRUCEK Pavel (CZE)	DYJAS Jakub (POL)	GERALDO Joao (POR)	MD	Qualification	QR16	2 - 3	8:11 14:12 11:4 9:11 9:11	DYJAS Jakub	GERALDO Joao
+2015	GAC Group World Tour Austrian Open Wels 2015	REED Daniel (ENG)	WALKER Samuel (ENG)	NOVOTA Samuel (SVK)	VALUCH Alexander (SVK)	MD	Qualification	QR64	3 - 1	11:6 11:6 7:11 11:9	REED Daniel	WALKER Samuel
+2015	GAC Group World Tour Austrian Open Wels 2015	REED Daniel (ENG)	WALKER Samuel (ENG)	BOBOCICA Mihai (ITA)	MUTTI Leonardo (ITA)	MD	Qualification	QR16	3 - 0	11:8 11:2 11:6	REED Daniel	WALKER Samuel
+2015	GAC Group World Tour Austrian Open Wels 2015	REED Daniel (ENG)	WALKER Samuel (ENG)	JEOUNG Youngsik (KOR)	KIM Minseok (KOR)	MD	Main Draw	R16	3 - 2	7:11 11:6 4:11 11:9 13:11	REED Daniel	WALKER Samuel
+2015	GAC Group World Tour Austrian Open Wels 2015	DURAN Marc (ESP)	ROBLES Alvaro (ESP)	REED Daniel (ENG)	WALKER Samuel (ENG)	MD	Qualification	QR32	2 - 3	8:11 9:11 11:6 11:8 8:11	REED Daniel	WALKER Samuel
+2015	GAC Group World Tour Austrian Open Wels 2015	FLORE Tristan (FRA)	OUAICHE Stephane (ALG)	ALAMIAN Nima (IRI)	ALAMIYAN Noshad (IRI)	MD	Qualification	QR32	1 - 3	5:11 8:11 11:1 9:11	ALAMIAN Nima	ALAMIYAN Noshad
+2015	GAC Group World Tour Austrian Open Wels 2015	BAUM Patrick (GER)	MENGEL Steffen (GER)	DYJAS Jakub (POL)	GERALDO Joao (POR)	MD	Qualification	QR32	0 - 3	7:11 8:11 8:11	DYJAS Jakub	GERALDO Joao
+2015	GAC Group World Tour Austrian Open Wels 2015	FRANZISKA Patrick (GER)	STEGER Bastian (GER)	REED Daniel (ENG)	WALKER Samuel (ENG)	MD	Main Draw	QuarterFinal	3 - 1	7:11 11:7 11:6 11:5	FRANZISKA Patrick	STEGER Bastian
+2015	GAC Group World Tour Austrian Open Wels 2015	TANG Peng (HKG)	WONG Chun Ting (HKG)	ALAMIAN Nima (IRI)	ALAMIYAN Noshad (IRI)	MD	Main Draw	R16	3 - 0	11:8 11:8 11:5	TANG Peng	WONG Chun Ting
+2015	GAC Group World Tour Austrian Open Wels 2015	TANG Peng (HKG)	WONG Chun Ting (HKG)	CALDERANO Hugo (BRA)	TSUBOI Gustavo (BRA)	MD	Main Draw	QuarterFinal	3 - 0	11:7 11:9 11:6	TANG Peng	WONG Chun Ting
+2015	GAC Group World Tour Austrian Open Wels 2015	TANG Peng (HKG)	WONG Chun Ting (HKG)	JANG Woojin (KOR)	LEE Sang Su (KOR)	MD	Main Draw	SemiFinal	1 - 3	8:11 11:8 7:11 8:11	JANG Woojin	LEE Sang Su
+2015	GAC Group World Tour Austrian Open Wels 2015	ECSEKI Nandor (HUN)	KOSIBA Daniel (HUN)	BORO Birdie (IND)	SHAH Nishaad (IND)	MD	Qualification	QR64	3 - 1	11:6 11:7 11:13 11:5	ECSEKI Nandor	KOSIBA Daniel
+2015	GAC Group World Tour Austrian Open Wels 2015	GIONIS Panagiotis (GRE)	PATTANTYUS Adam (HUN)	MOAVRO Sebastian (ARG)	URIBE Salvador (MEX)	MD	Qualification	QR64	3 - 1	11:5 10:12 11:7 11:7	GIONIS Panagiotis	PATTANTYUS Adam
+2015	GAC Group World Tour Austrian Open Wels 2015	KRISTON Daniel (HUN)	SZITA Marton (HUN)	KONECNY Tomas (CZE)	SIRUCEK Pavel (CZE)	MD	Qualification	QR64	0 - 3	12:14 5:11 3:11	KONECNY Tomas	SIRUCEK Pavel
+2015	GAC Group World Tour Austrian Open Wels 2015	ECSEKI Nandor (HUN)	KOSIBA Daniel (HUN)	FRANZISKA Patrick (GER)	STEGER Bastian (GER)	MD	Qualification	QR32	0 - 3	6:11 9:11 6:11	FRANZISKA Patrick	STEGER Bastian
+2015	GAC Group World Tour Austrian Open Wels 2015	GIONIS Panagiotis (GRE)	PATTANTYUS Adam (HUN)	APOLONIA Tiago (POR)	MONTEIRO Joao (POR)	MD	Qualification	QR32	0 - 3	8:11 10:12 11:13	APOLONIA Tiago	MONTEIRO Joao
+2015	GAC Group World Tour Austrian Open Wels 2015	ALAMIAN Nima (IRI)	ALAMIYAN Noshad (IRI)	APOLONIA Tiago (POR)	MONTEIRO Joao (POR)	MD	Qualification	QR16	3 - 1	11:7 13:11 6:11 11:3	ALAMIAN Nima	ALAMIYAN Noshad
+2015	GAC Group World Tour Austrian Open Wels 2015	BOBOCICA Mihai (ITA)	MUTTI Leonardo (ITA)	DURANSPAHIC Admir (BIH)	MATTENET Adrien (FRA)	MD	Qualification	QR64	3 - 0	11:7 11:6 11:6	BOBOCICA Mihai	MUTTI Leonardo
+2015	GAC Group World Tour Austrian Open Wels 2015	BOBOCICA Mihai (ITA)	MUTTI Leonardo (ITA)	LORENTZ Romain (FRA)	ROBINOT Quentin (FRA)	MD	Qualification	QR32	3 - 1	14:16 11:8 11:6 11:8	BOBOCICA Mihai	MUTTI Leonardo
+2015	GAC Group World Tour Austrian Open Wels 2015	OIKAWA Mizuki (JPN)	SAMBE Kohei (JPN)	KONECNY Tomas (CZE)	SIRUCEK Pavel (CZE)	MD	Qualification	QR32	1 - 3	11:9 2:11 5:11 8:11	KONECNY Tomas	SIRUCEK Pavel
+2015	GAC Group World Tour Austrian Open Wels 2015	CHO Eonrae (KOR)	KIM Donghyun (KOR)	FEGERL Stefan (AUT)	HABESOHN Daniel (AUT)	MD	Main Draw	R16	1 - 3	9:11 5:11 11:5 9:11	FEGERL Stefan	HABESOHN Daniel
+2015	GAC Group World Tour Austrian Open Wels 2015	JANG Woojin (KOR)	LEE Sang Su (KOR)	FRANZISKA Patrick (GER)	STEGER Bastian (GER)	MD	Main Draw	Final	3 - 0	11:6 11:6 11:8	JANG Woojin	LEE Sang Su
+2015	GAC Group World Tour Austrian Open Wels 2015	KOSOWSKI Jakub (POL)	ZATOWKA Patryk (POL)	LORENTZ Romain (FRA)	ROBINOT Quentin (FRA)	MD	Qualification	QR64	2 - 3	7:11 10:12 11:4 11:8 9:11	LORENTZ Romain	ROBINOT Quentin
+2015	GAC Group World Tour Austrian Open Wels 2015	GORAK Daniel (POL)	WANG Zengyi (POL)	DIDUKH Oleksandr (UKR)	KATKOV Ivan (UKR)	MD	Qualification	QR32	1 - 3	15:13 7:11 9:11 9:11	DIDUKH Oleksandr	KATKOV Ivan
+2015	GAC Group World Tour Austrian Open Wels 2015	DYJAS Jakub (POL)	GERALDO Joao (POR)	CALDERANO Hugo (BRA)	TSUBOI Gustavo (BRA)	MD	Main Draw	R16	2 - 3	12:10 11:8 10:12 10:12 9:11	CALDERANO Hugo	TSUBOI Gustavo
+2015	GAC Group World Tour Austrian Open Wels 2015	IONESCU Ovidiu (ROU)	SZOCS Hunor (ROU)	KARAKASEVIC Aleksandar (SRB)	TOKIC Bojan (SLO)	MD	Qualification	QR32	2 - 3	12:10 7:11 5:11 11:7 9:11	KARAKASEVIC Aleksandar	TOKIC Bojan
+2015	GAC Group World Tour Austrian Open Wels 2015	KUZMIN Fedor (RUS)	VLASOV Grigory (RUS)	KARAKASEVIC Aleksandar (SRB)	TOKIC Bojan (SLO)	MD	Main Draw	R16	2 - 3	12:10 8:11 13:11 12:14 6:11	KARAKASEVIC Aleksandar	TOKIC Bojan
+2015	GAC Group World Tour Austrian Open Wels 2015	LI Hu (SGP)	YANG Zi (SGP)	GROVER Sudhanshu (IND)	YADAV Abhishek (IND)	MD	Qualification	QR64	3 - 1	11:4 11:5 4:11 11:5	LI Hu	YANG Zi
+2015	GAC Group World Tour Austrian Open Wels 2015	LI Hu (SGP)	YANG Zi (SGP)	KARLSSON Kristian (SWE)	KARLSSON Mattias (SWE)	MD	Qualification	QR32	1 - 3	10:12 1:11 11:6 9:11	KARLSSON Kristian	KARLSSON Mattias
+2015	GAC Group World Tour Austrian Open Wels 2015	JORGIC Darko (SLO)	ZIBRAT Jan (SLO)	POLANSKY Tomas (CZE)	REITSPIES David (CZE)	MD	Qualification	QR64	3 - 1	11:7 11:6 4:11 11:5	JORGIC Darko	ZIBRAT Jan
+2015	GAC Group World Tour Austrian Open Wels 2015	JORGIC Darko (SLO)	ZIBRAT Jan (SLO)	LUNDQVIST Jens (SWE)	RANEFUR Elias (SWE)	MD	Qualification	QR32	1 - 3	6:11 11:9 5:11 9:11	LUNDQVIST Jens	RANEFUR Elias
+2015	GAC Group World Tour Austrian Open Wels 2015	KARAKASEVIC Aleksandar (SRB)	TOKIC Bojan (SLO)	KARLSSON Kristian (SWE)	KARLSSON Mattias (SWE)	MD	Qualification	QR16	3 - 2	11:8 11:8 9:11 10:12 11:5	KARAKASEVIC Aleksandar	TOKIC Bojan
+2015	GAC Group World Tour Austrian Open Wels 2015	KARAKASEVIC Aleksandar (SRB)	TOKIC Bojan (SLO)	LIVENTSOV Alexey (RUS)	PAIKOV Mikhail (RUS)	MD	Main Draw	QuarterFinal	3 - 1	11:7 6:11 11:4 11:5	KARAKASEVIC Aleksandar	TOKIC Bojan
+2015	GAC Group World Tour Austrian Open Wels 2015	KARAKASEVIC Aleksandar (SRB)	TOKIC Bojan (SLO)	FRANZISKA Patrick (GER)	STEGER Bastian (GER)	MD	Main Draw	SemiFinal	1 - 3	13:11 6:11 8:11 5:11	FRANZISKA Patrick	STEGER Bastian
+2015	GAC Group World Tour Austrian Open Wels 2015	JEVTOVIC Marko (SRB)	PETO Zsolt (SRB)	KELBUGANOV Timur (KAZ)	ZHOLUDEV Denis (KAZ)	MD	Qualification	QR64	3 - 0	11:3 11:9 11:3	JEVTOVIC Marko	PETO Zsolt
+2015	GAC Group World Tour Austrian Open Wels 2015	JEVTOVIC Marko (SRB)	PETO Zsolt (SRB)	JANCARIK Lubomir (CZE)	TREGLER Tomas (CZE)	MD	Qualification	QR32	1 - 3	9:11 10:12 11:6 9:11	JANCARIK Lubomir	TREGLER Tomas
+2015	GAC Group World Tour Austrian Open Wels 2015	PISTEJ Lubomir (SVK)	SEREDA Peter (SVK)	ALAMIAN Nima (IRI)	ALAMIYAN Noshad (IRI)	MD	Qualification	QR64	2 - 3	5:11 14:12 5:11 11:9 7:11	ALAMIAN Nima	ALAMIYAN Noshad
+2015	GAC Group World Tour Austrian Open Wels 2015	BOCKOVEN Chase (USA)	KEINATH Thomas (SVK)	DYJAS Jakub (POL)	GERALDO Joao (POR)	MD	Qualification	QR64	0 - 3	5:11 3:11 5:11	DYJAS Jakub	GERALDO Joao
+2015	GAC Group World Tour Austrian Open Wels 2015	HUANG Sheng-Sheng (TPE)	YANG Tzu-Yi (TPE)	KODJABASHEV Denislav (BUL)	KRASTEV Petyo (BUL)	MD	Qualification	QR32	3 - 2	11:4 9:11 14:12 11:13 11:3	HUANG Sheng-Sheng	YANG Tzu-Yi
+2015	GAC Group World Tour Austrian Open Wels 2015	HUANG Sheng-Sheng (TPE)	YANG Tzu-Yi (TPE)	JANCARIK Lubomir (CZE)	TREGLER Tomas (CZE)	MD	Qualification	QR16	3 - 2	14:16 11:5 11:6 6:11 11:6	HUANG Sheng-Sheng	YANG Tzu-Yi
+2015	GAC Group World Tour Austrian Open Wels 2015	HUANG Sheng-Sheng (TPE)	YANG Tzu-Yi (TPE)	LIVENTSOV Alexey (RUS)	PAIKOV Mikhail (RUS)	MD	Main Draw	R16	1 - 3	9:11 11:9 9:11 8:11	LIVENTSOV Alexey	PAIKOV Mikhail
+2015	GAC Group World Tour Austrian Open Wels 2015	CHIANG Hung-Chieh (TPE)	CHUANG Chih-Yuan (TPE)	FRANZISKA Patrick (GER)	STEGER Bastian (GER)	MD	Main Draw	R16	0 - 3	10:12 9:11 12:14	FRANZISKA Patrick	STEGER Bastian
+2015	GAC Group World Tour Austrian Open Wels 2015	DIDUKH Oleksandr (UKR)	KATKOV Ivan (UKR)	RECH DALDOSSO Marco (ITA)	STOYANOV Niagol (ITA)	MD	Qualification	QR64	3 - 2	13:11 8:11 12:10 11:13 11:6	DIDUKH Oleksandr	KATKOV Ivan
+2015	GAC Group World Tour Austrian Open Wels 2015	KOU Lei (UKR)	ZHMUDENKO Yaroslav (UKR)	GROTH Jonathan (DEN)	ZHAI Yujia (DEN)	MD	Qualification	QR64	3 - 1	11:9 7:11 11:9 11:9	KOU Lei	ZHMUDENKO Yaroslav
+2015	GAC Group World Tour Austrian Open Wels 2015	DIDUKH Oleksandr (UKR)	KATKOV Ivan (UKR)	FRANZISKA Patrick (GER)	STEGER Bastian (GER)	MD	Qualification	QR16	0 - 3	8:11 4:11 10:12	FRANZISKA Patrick	STEGER Bastian
+
+Year	Event	Player A	Player B	Player X	Player Y	Sub-event	Stage	Round	Result	Games	Winner	Winner
+Display #
+
+
+100
+Total: 41
+
+2015	GAC Group World Tour Austrian Open Wels 2015	STEFCOVA Kristyna (CZE)	TOMANOVSKA Katerina (CZE)	BATRA Manika (IND)	DSOUZA Senhora (IND)	WD	Qualification	QR64	3 - 2	11:9 15:17 7:11 11:5 11:6	STEFCOVA Kristyna	TOMANOVSKA Katerina
+2015	GAC Group World Tour Austrian Open Wels 2015	VARADY Barbora (SVK)	MATELOVA Hana (CZE)	TIMINA Yana (NED)	VASYLIEVA Ievgeniia (UKR)	WD	Qualification	QR32	3 - 0	12:10 11:6 11:7	VARADY Barbora	MATELOVA Hana
+2015	GAC Group World Tour Austrian Open Wels 2015	STEFCOVA Kristyna (CZE)	TOMANOVSKA Katerina (CZE)	HAN Ying (GER)	IVANCAN Irene (GER)	WD	Qualification	QR32	1 - 3	12:10 3:11 9:11 2:11	HAN Ying	IVANCAN Irene
+2015	GAC Group World Tour Austrian Open Wels 2015	VARADY Barbora (SVK)	MATELOVA Hana (CZE)	POLCANOVA Sofia (AUT)	SOLJA Amelie (AUT)	WD	Qualification	QR16	2 - 3	11:9 9:11 11:8 7:11 5:11	POLCANOVA Sofia	SOLJA Amelie
+2015	GAC Group World Tour Austrian Open Wels 2015	HAN Ying (GER)	IVANCAN Irene (GER)	JIANG Huajun (HKG)	TIE Yana (HKG)	WD	Main Draw	R16	2 - 3	10:12 14:12 10:12 15:13 6:11	JIANG Huajun	TIE Yana
+2015	GAC Group World Tour Austrian Open Wels 2015	SHAN Xiaona (GER)	SOLJA Petrissa (GER)	POLCANOVA Sofia (AUT)	SOLJA Amelie (AUT)	WD	Main Draw	R16	3 - 0	13:11 11:5 11:6	SHAN Xiaona	SOLJA Petrissa
+2015	GAC Group World Tour Austrian Open Wels 2015	WINTER Sabine (GER)	WU Jiaduo (GER)	DOO Hoi Kem (HKG)	LEE Ho Ching (HKG)	WD	Main Draw	R16	0 - 3	6:11 14:16 5:11	DOO Hoi Kem	LEE Ho Ching
+2015	GAC Group World Tour Austrian Open Wels 2015	SHAN Xiaona (GER)	SOLJA Petrissa (GER)	LIU Jia (AUT)	VACENOVSKA Iveta (CZE)	WD	Main Draw	QuarterFinal	3 - 2	8:11 8:11 11:9 11:7 11:5	SHAN Xiaona	SOLJA Petrissa
+2015	GAC Group World Tour Austrian Open Wels 2015	SHAN Xiaona (GER)	SOLJA Petrissa (GER)	DOO Hoi Kem (HKG)	LEE Ho Ching (HKG)	WD	Main Draw	SemiFinal	3 - 0	11:6 11:9 12:10	SHAN Xiaona	SOLJA Petrissa
+2015	GAC Group World Tour Austrian Open Wels 2015	LIU Qi (HKG)	MAK Tze Wing (HKG)	POTA Georgina (HUN)	SAMARA Elizabeta (ROU)	WD	Qualification	QR16	1 - 3	7:11 11:6 5:11 5:11	POTA Georgina	SAMARA Elizabeta
+2015	GAC Group World Tour Austrian Open Wels 2015	MADARASZ Dora (HUN)	PERGEL Szandra (HUN)	BHANDARKAR Mallika (IND)	TENNISON Reeth (IND)	WD	Qualification	QR32	3 - 0	11:1 11:4 11:5	MADARASZ Dora	PERGEL Szandra
+2015	GAC Group World Tour Austrian Open Wels 2015	MADARASZ Dora (HUN)	PERGEL Szandra (HUN)	GUSEVA Ekaterina (RUS)	PROKHOROVA Yulia (RUS)	WD	Qualification	QR16	2 - 3	11:9 8:11 11:13 11:6 14:16	GUSEVA Ekaterina	PROKHOROVA Yulia
+2015	GAC Group World Tour Austrian Open Wels 2015	BHANDARKAR Mallika (IND)	TENNISON Reeth (IND)	PICCOLIN Giorgia (ITA)	VIVARELLI Debora (ITA)	WD	Qualification	QR64	3 - 0	11:9 12:10 11:9	BHANDARKAR Mallika	TENNISON Reeth
+2015	GAC Group World Tour Austrian Open Wels 2015	LE Thi Hong Loan (ITA)	MOSCONI Veronica (ITA)	POTA Georgina (HUN)	SAMARA Elizabeta (ROU)	WD	Qualification	QR32	0 - 3	7:11 7:11 9:11	POTA Georgina	SAMARA Elizabeta
+2015	GAC Group World Tour Austrian Open Wels 2015	MATSUDAIRA Shiho (JPN)	SAKAI Haruka (JPN)	DVORAK Galia (ESP)	RAMIREZ Sara (ESP)	WD	Qualification	QR32	3 - 2	9:11 11:6 11:8 11:13 11:8	MATSUDAIRA Shiho	SAKAI Haruka
+2015	GAC Group World Tour Austrian Open Wels 2015	LEE Seul (KOR)	LEE Zion (KOR)	MISCHEK-COLUCCI Karoline (AUT)	ZLATILOVA Jessica (AUT)	WD	Qualification	QR32	3 - 1	11:4 11:2 8:11 11:7	LEE Seul	LEE Zion
+2015	GAC Group World Tour Austrian Open Wels 2015	KIM Byeolnim (KOR)	LEE Yujin (KOR)	WINTER Sabine (GER)	WU Jiaduo (GER)	WD	Qualification	QR32	1 - 3	6:11 5:11 12:10 10:12	WINTER Sabine	WU Jiaduo
+2015	GAC Group World Tour Austrian Open Wels 2015	LEE Seul (KOR)	LEE Zion (KOR)	WINTER Sabine (GER)	WU Jiaduo (GER)	WD	Qualification	QR16	2 - 3	11:6 7:11 12:10 9:11 7:11	WINTER Sabine	WU Jiaduo
+2015	GAC Group World Tour Austrian Open Wels 2015	JEON Jihee (KOR)	YANG Ha Eun (KOR)	POTA Georgina (HUN)	SAMARA Elizabeta (ROU)	WD	Main Draw	R16	0 - 3	8:11 11:13 8:11	POTA Georgina	SAMARA Elizabeta
+2015	GAC Group World Tour Austrian Open Wels 2015	LI Jie (NED)	LI Qian (POL)	MENGE Merve (TUR)	ALTINKAYA Sibel (TUR)	WD	Qualification	QR32	3 - 0	11:5 11:7 11:4	LI Jie	LI Qian
+2015	GAC Group World Tour Austrian Open Wels 2015	LI Jie (NED)	LI Qian (POL)	HADZIAHMETOVIC Emina (BIH)	KNEZEVIC Monika (SRB)	WD	Qualification	QR16	3 - 0	11:4 11:6 11:4	LI Jie	LI Qian
+2015	GAC Group World Tour Austrian Open Wels 2015	LI Jie (NED)	LI Qian (POL)	LIN Ye (CAN)	YU Mengyu (SGP)	WD	Main Draw	R16	3 - 0	11:6 11:9 11:9	LI Jie	LI Qian
+2015	GAC Group World Tour Austrian Open Wels 2015	LI Jie (NED)	LI Qian (POL)	FENG Tianwei (SGP)	ZHOU Yihan (SGP)	WD	Main Draw	SemiFinal	3 - 2	11:8 11:7 10:12 8:11 11:6	LI Jie	LI Qian
+2015	GAC Group World Tour Austrian Open Wels 2015	LI Jie (NED)	LI Qian (POL)	SHAN Xiaona (GER)	SOLJA Petrissa (GER)	WD	Main Draw	Final	1 - 3	4:11 11:0 7:11 11:13	SHAN Xiaona	SOLJA Petrissa
+2015	GAC Group World Tour Austrian Open Wels 2015	SHAO Jieni (POR)	YU Fu (POR)	GUSEVA Ekaterina (RUS)	PROKHOROVA Yulia (RUS)	WD	Qualification	QR32	0 - 3	7:11 6:11 7:11	GUSEVA Ekaterina	PROKHOROVA Yulia
+2015	GAC Group World Tour Austrian Open Wels 2015	HIRICI Cristina (ROU)	IACOB Camelia (ROU)	HU Melek (TUR)	YANG Xiaoxin (MON)	WD	Qualification	QR32	0 - 3	3:11 9:11 8:11	HU Melek	YANG Xiaoxin
+2015	GAC Group World Tour Austrian Open Wels 2015	POTA Georgina (HUN)	SAMARA Elizabeta (ROU)	LI Jie (NED)	LI Qian (POL)	WD	Main Draw	QuarterFinal	1 - 3	9:11 11:5 14:16 4:11	LI Jie	LI Qian
+2015	GAC Group World Tour Austrian Open Wels 2015	PROKHOROVA Yulia (RUS)	GUSEVA Ekaterina (RUS)	LIU Jia (AUT)	VACENOVSKA Iveta (CZE)	WD	Main Draw	R16	1 - 3	7:11 9:11 13:11 8:11	LIU Jia	VACENOVSKA Iveta
+2015	GAC Group World Tour Austrian Open Wels 2015	DOLGIKH Maria (RUS)	MIKHAILOVA Polina (RUS)	CHENG I-Ching (TPE)	HUANG Yi-Hua (TPE)	WD	Main Draw	R16	3 - 2	4:11 11:6 12:10 7:11 11:6	DOLGIKH Maria	MIKHAILOVA Polina
+2015	GAC Group World Tour Austrian Open Wels 2015	DOLGIKH Maria (RUS)	MIKHAILOVA Polina (RUS)	DOO Hoi Kem (HKG)	LEE Ho Ching (HKG)	WD	Main Draw	QuarterFinal	2 - 3	8:11 11:3 6:11 14:12 7:11	DOO Hoi Kem	LEE Ho Ching
+2015	GAC Group World Tour Austrian Open Wels 2015	FENG Tianwei (SGP)	ZHOU Yihan (SGP)	BILENKO Tetyana (UKR)	HAPONOVA Hanna (UKR)	WD	Main Draw	R16	3 - 1	8:11 11:6 11:8 11:9	FENG Tianwei	ZHOU Yihan
+2015	GAC Group World Tour Austrian Open Wels 2015	FENG Tianwei (SGP)	ZHOU Yihan (SGP)	JIANG Huajun (HKG)	TIE Yana (HKG)	WD	Main Draw	QuarterFinal	3 - 2	9:11 11:7 3:11 15:13 11:8	FENG Tianwei	ZHOU Yihan
+2015	GAC Group World Tour Austrian Open Wels 2015	HADZIAHMETOVIC Emina (BIH)	KNEZEVIC Monika (SRB)	GUI Lin (BRA)	KUMAHARA Luca (BRA)	WD	Qualification	QR32	3 - 1	5:11 11:9 11:6 15:13	HADZIAHMETOVIC Emina	KNEZEVIC Monika
+2015	GAC Group World Tour Austrian Open Wels 2015	DE NUTTE Sarah (LUX)	TODOROVIC Andrea (SRB)	LIU Qi (HKG)	MAK Tze Wing (HKG)	WD	Qualification	QR32	2 - 3	7:11 13:15 11:8 11:9 7:11	LIU Qi	MAK Tze Wing
+2015	GAC Group World Tour Austrian Open Wels 2015	BERGSTROM Linda (SWE)	JONSSON Jennifer (SWE)	POLCANOVA Sofia (AUT)	SOLJA Amelie (AUT)	WD	Qualification	QR32	1 - 3	10:12 9:11 11:8 8:11	POLCANOVA Sofia	SOLJA Amelie
+2015	GAC Group World Tour Austrian Open Wels 2015	KOMWONG Nanthana (THA)	SAWETTABUT Suthasini (THA)	FAJMUT Manca (SLO)	GALIC Alex (SLO)	WD	Qualification	QR32	3 - 0	11:5 11:6 11:7	KOMWONG Nanthana	SAWETTABUT Suthasini
+2015	GAC Group World Tour Austrian Open Wels 2015	KOMWONG Nanthana (THA)	SAWETTABUT Suthasini (THA)	HAN Ying (GER)	IVANCAN Irene (GER)	WD	Qualification	QR16	2 - 3	5:11 11:7 11:9 9:11 10:12	HAN Ying	IVANCAN Irene
+2015	GAC Group World Tour Austrian Open Wels 2015	CHENG I-Ching (TPE)	HUANG Yi-Hua (TPE)	AMBRUS Krisztina (HUN)	NAGYVARADI Mercedes (HUN)	WD	Qualification	QR32	3 - 0	11:4 11:5 11:8	CHENG I-Ching	HUANG Yi-Hua
+2015	GAC Group World Tour Austrian Open Wels 2015	CHENG I-Ching (TPE)	HUANG Yi-Hua (TPE)	MATSUDAIRA Shiho (JPN)	SAKAI Haruka (JPN)	WD	Qualification	QR16	3 - 2	11:4 9:11 4:11 11:6 11:6	CHENG I-Ching	HUANG Yi-Hua
+2015	GAC Group World Tour Austrian Open Wels 2015	BILENKO Tetyana (UKR)	HAPONOVA Hanna (UKR)	GATS Yuliya (KAZ)	SLADKOVA Nataliya (KAZ)	WD	Qualification	QR32	3 - 0	11:3 11:6 11:7	BILENKO Tetyana	HAPONOVA Hanna
+2015	GAC Group World Tour Austrian Open Wels 2015	BILENKO Tetyana (UKR)	HAPONOVA Hanna (UKR)	HU Melek (TUR)	YANG Xiaoxin (MON)	WD	Qualification	QR16	3 - 2	13:11 9:11 11:9 9:11 11:7	BILENKO Tetyana	HAPONOVA Hanna
