@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <link rel="icon" type="image/svg+xml" href="Assets/files/favicon_4DA3FF.svg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WTT 国际乒联积分排名协会数据：协会实力总榜、球员阵容明细、协会排名变迁与协会对抗矩阵。">
+    <meta name="keywords" content="WTT,世界乒联,乒乓球,协会数据,协会排名,实力榜,对抗矩阵">
+    <meta name="robots" content="noindex, nofollow">
+    <title>WTT 协会数据 🥚 | WFLS Table Tennis Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.5.0/css/flag-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ============ WTT 协会数据页专属样式 ============ */
+        .assoc-stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 4px 0 12px;
+        }
+        .assoc-stat-card {
+            text-align: center;
+            padding: 26px 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        .assoc-stat-value {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-family: var(--font-en);
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            line-height: 1.2;
+            min-height: 44px;
+        }
+        .assoc-stat-value .player-flag { width: 1.45em; height: 1.05em; font-size: 1.15rem; }
+        .assoc-stat-sub { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; max-width: 220px; margin-left: auto; margin-right: auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .assoc-stat-label {
+            margin-top: 8px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            font-family: var(--font-en);
+        }
+
+        /* 实力总榜表格 */
+        .wta-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 10px 22px;
+            margin-bottom: 18px;
+        }
+        .wta-table-card { padding: 6px 14px 14px; }
+        .wta-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .wta-table-wrap table { min-width: 780px; }
+        .wta-table-wrap tbody tr.main-row { cursor: pointer; transition: background var(--transition-fast); }
+        .wta-table-wrap tbody tr.main-row:hover { background: var(--bg-lighter); }
+        .wta-table-wrap tbody tr.main-row.expanded { background: var(--primary-pale); }
+        tr.wta-detail-row > td { background: var(--bg-lighter); padding: 0 !important; }
+        .wta-squad-box { padding: 16px 18px; animation: wtaFadeIn 0.25s ease; }
+        @keyframes wtaFadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+        .wta-squad-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .wta-squad-scroll { max-height: 340px; overflow-y: auto; border: 1px solid var(--border-color); border-radius: var(--radius-sm); }
+        table.wta-squad-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+        table.wta-squad-table th, table.wta-squad-table td {
+            padding: 8px 12px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            white-space: nowrap;
+        }
+        table.wta-squad-table thead th {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            background: var(--primary-pale);
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        table.wta-squad-table tbody tr:hover { background: var(--bg-lighter); }
+        table.wta-squad-table td.name-cell { text-align: left; min-width: 160px; }
+
+        /* 对抗矩阵 */
+        .wta-matrix-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; padding: 8px 4px 4px; }
+        table.wta-matrix { border-collapse: separate; border-spacing: 3px; margin: 0 auto; font-size: 0.75rem; }
+        table.wta-matrix th, table.wta-matrix td {
+            width: 64px;
+            height: 40px;
+            min-width: 64px;
+            text-align: center;
+            vertical-align: middle;
+            border-radius: 6px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        table.wta-matrix thead th {
+            background: transparent;
+            color: var(--text-secondary);
+            font-size: 0.7rem;
+            height: auto;
+            padding-bottom: 2px;
+        }
+        table.wta-matrix tbody th {
+            background: transparent;
+            color: var(--text-secondary);
+            font-size: 0.7rem;
+            text-align: right;
+            padding-right: 6px;
+            white-space: nowrap;
+            width: auto;
+            min-width: 0;
+        }
+        table.wta-matrix td.diag { background: var(--bg-lighter); color: var(--text-muted); }
+        table.wta-matrix td.cell-empty { background: var(--bg-lighter); color: var(--text-muted); opacity: 0.55; font-weight: 400; }
+        table.wta-matrix td.cell-val { color: var(--text-primary); cursor: default; transition: transform var(--transition-fast); }
+        table.wta-matrix td.cell-val:hover { transform: scale(1.06); }
+        .wta-matrix-legend {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 14px;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+        }
+        .wta-matrix-legend .lg-block { width: 22px; height: 12px; border-radius: 3px; display: inline-block; }
+
+        @media (max-width: 768px) {
+            .assoc-stat-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .assoc-stat-card { padding: 18px 10px; }
+            .assoc-stat-value { font-size: 1.25rem; }
+            .wta-table-card { padding: 4px 8px 10px; }
+            table.wta-matrix th, table.wta-matrix td { width: 52px; min-width: 52px; height: 34px; font-size: 0.68rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航（与全站一致） -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon"><i class="fa-solid fa-table-tennis-paddle-ball"></i></span>
+                <span class="logo-text">WFLS TT Club</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
+                <li class="nav-item"><a href="competitions.html" class="nav-link">Competitions</a></li>
+                <li class="nav-item"><a href="ranking.html" class="nav-link">Ranking <span class="beta-tag">Beta</span></a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active" id="moreDropdown">More... <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu" id="dropdownMenu">
+                        <li><a href="members.html" class="dropdown-link">社团骨干</a></li>
+                        <li><a href="data_viz.html" class="dropdown-link">Data Viz <span class="beta-tag">Beta</span></a></li>
+                        <li><a href="personal_stats.html" class="dropdown-link">个人数据</a></li>
+                        <li><a href="qa.html" class="dropdown-link">Q&A</a></li>
+                        <li><a href="changelog.html" class="dropdown-link">更新日志</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="切换主题"><i class="fa-solid fa-moon"></i></button>
+                <button class="lang-toggle" id="langToggle" aria-label="切换语言"><span data-i18n="lang_btn">EN</span></button>
+            </div>
+            <button class="hamburger" id="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+        </div>
+    </nav>
+
+    <!-- 页面头部 -->
+    <section class="page-hero viz-page-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-content">
+            <span class="section-tag wtt-easter-egg-tag">🥚 WTT Association Data</span>
+            <h1>WTT <span id="wttCatName">协会数据</span></h1>
+            <p data-i18n="wtt_assoc_desc">协会实力总榜 · 排名变迁 · 协会对抗</p>
+        </div>
+    </section>
+
+    <!-- 左侧定位条 -->
+    <nav class="side-nav" id="sideNav">
+        <ul class="side-nav-list">
+            <li class="side-nav-item"><a href="#wtt-assoc-overview" class="side-nav-link active" data-section="wtt-assoc-overview" data-i18n="wtt_assoc_overview_title">数据概览</a></li>
+            <li class="side-nav-item"><a href="#wtt-assoc-ranking" class="side-nav-link" data-section="wtt-assoc-ranking" data-i18n="wtt_assoc_rank_title">协会实力总榜</a></li>
+            <li class="side-nav-item"><a href="#wtt-assoc-bump" class="side-nav-link" data-section="wtt-assoc-bump" data-i18n="wtt_assoc_bump_title">协会排名变迁</a></li>
+            <li class="side-nav-item"><a href="#wtt-assoc-matrix" class="side-nav-link" data-section="wtt-assoc-matrix" data-i18n="wtt_assoc_matrix_title">协会对抗矩阵</a></li>
+        </ul>
+    </nav>
+
+    <section class="section viz-main-section">
+        <div class="container">
+
+            <!-- ① 数据概览 -->
+            <div class="viz-section-header" id="wtt-assoc-overview">
+                <span class="section-tag">Overview</span>
+                <h2 class="section-title" data-i18n="wtt_assoc_overview_title">数据概览</h2>
+            </div>
+            <div class="assoc-stat-grid">
+                <div class="glass-card assoc-stat-card">
+                    <div class="assoc-stat-value" id="wtaStatAssocs">-</div>
+                    <div class="assoc-stat-label" data-i18n="wtt_assoc_stat_assocs">收录协会</div>
+                </div>
+                <div class="glass-card assoc-stat-card">
+                    <div class="assoc-stat-value" id="wtaStatPlayers">-</div>
+                    <div class="assoc-stat-label" data-i18n="wtt_assoc_stat_players">登记球员</div>
+                </div>
+                <div class="glass-card assoc-stat-card">
+                    <div class="assoc-stat-value" id="wtaStatCountries">-</div>
+                    <div class="assoc-stat-label" data-i18n="wtt_assoc_stat_countries">国家/地区</div>
+                </div>
+                <div class="glass-card assoc-stat-card">
+                    <div class="assoc-stat-value" id="wtaStatLeader">-</div>
+                    <div class="assoc-stat-sub" id="wtaStatLeaderSub"></div>
+                    <div class="assoc-stat-label" data-i18n="wtt_assoc_stat_leader">当前领跑</div>
+                </div>
+            </div>
+
+            <!-- ② 协会实力总榜 -->
+            <div class="viz-section-header" id="wtt-assoc-ranking" style="margin-top:48px;">
+                <span class="section-tag">Standings</span>
+                <h2 class="section-title" data-i18n="wtt_assoc_rank_title">协会实力总榜</h2>
+                <p class="section-desc" data-i18n="wtt_assoc_rank_desc">按前五加权实力分排序，点击行查看协会球员明细</p>
+                <div class="wta-toolbar">
+                    <div class="viz-topn-selector" style="margin-top:0;">
+                        <i class="fa-regular fa-clock"></i>
+                        <span data-i18n="wtt_assoc_snapshot_label">时点</span>
+                        <select id="wttAssocSnapshotSelect" disabled></select>
+                    </div>
+                    <div class="viz-topn-selector" style="margin-top:0;">
+                        <span data-i18n="wtt_top_n">显示前</span>
+                        <input type="number" id="wttAssocTopNInput" value="50" min="5" max="500" step="5" title="统计全球 TOP-N 人数，填写 5-500 的正整数">
+                        <span data-i18n="wtt_players">名球员</span>
+                    </div>
+                </div>
+            </div>
+            <div id="wttAssocLoading" style="min-height:60px;"></div>
+            <div class="viz-chart-container glass-card wta-table-card" style="min-height:auto;">
+                <div class="wta-table-wrap" style="width:100%;">
+                    <table class="ranking-table-full">
+                        <thead>
+                            <tr>
+                                <th style="width:52px;">#</th>
+                                <th style="text-align:left;" data-i18n="rank_col_name">姓名</th>
+                                <th data-i18n="wtt_assoc_col_strength">实力分</th>
+                                <th data-i18n="wtt_assoc_col_trend">较上期</th>
+                                <th data-i18n="wtt_assoc_col_players">球员数</th>
+                                <th style="text-align:left;" data-i18n="wtt_assoc_col_leader">领军球员</th>
+                                <th id="wtaColInTop">TOP50</th>
+                            </tr>
+                        </thead>
+                        <tbody id="wttAssocRankBody">
+                            <tr><td colspan="7" style="text-align:center;padding:36px;color:var(--text-muted);" data-i18n="data_viz_loading">Loading data...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ③ 协会排名变迁 -->
+            <div class="viz-section-header" id="wtt-assoc-bump" style="margin-top:48px;">
+                <span class="section-tag">Rank Movement</span>
+                <h2 class="section-title" data-i18n="wtt_assoc_bump_title">协会排名变迁</h2>
+                <p class="section-desc" data-i18n="wtt_assoc_bump_desc">各协会按实力分的位次随时间的变化</p>
+                <div class="viz-topn-selector">
+                    <span data-i18n="wtt_recent_label">最近</span>
+                    <input type="number" id="wttAssocBumpCount" value="30" min="2" max="500" title="显示最近N个数据点">
+                    <span data-i18n="wtt_data_points">个数据点</span>
+                </div>
+            </div>
+            <div class="viz-grid-2col">
+                <div class="viz-player-selector glass-card" style="display:flex;flex-direction:column;">
+                    <h4 data-i18n="wtt_select_assocs">选择协会（最多8个）</h4>
+                    <div class="player-checkbox-list" id="wttAssocBumpList" style="flex:1;overflow-y:auto;min-height:0;margin-bottom:0;"></div>
+                    <button class="btn btn-sm btn-primary" id="wttAssocBumpApply" style="margin-top:12px;flex-shrink:0;" data-i18n="data_viz_apply">应用</button>
+                </div>
+                <div class="viz-chart-container glass-card">
+                    <canvas id="wttAssocBumpChart"></canvas>
+                </div>
+            </div>
+
+            <!-- ④ 协会对抗矩阵 -->
+            <div class="viz-section-header" id="wtt-assoc-matrix" style="margin-top:48px;">
+                <span class="section-tag">Head-to-Head Matrix</span>
+                <h2 class="section-title" data-i18n="wtt_assoc_matrix_title">协会对抗矩阵</h2>
+                <p class="section-desc" data-i18n="wtt_assoc_matrix_hint">行协会对列协会的历史交手胜率（仅统计跨协会对阵）· 颜色越深胜率越高</p>
+                <div class="viz-topn-selector">
+                    <span data-i18n="wtt_assoc_matrix_size">矩阵规模</span>
+                    <input type="number" id="wttAssocMatrixTopN" value="10" min="3" max="25" title="取实力榜前 N 个协会构建矩阵，填写 3-25 的正整数">
+                </div>
+            </div>
+            <div class="viz-chart-container glass-card" style="min-height:auto;">
+                <div class="wta-matrix-wrap" id="wttAssocMatrixWrap" style="width:100%;">
+                    <div class="compare-placeholder"><p data-i18n="data_viz_loading">Loading data...</p></div>
+                </div>
+                <div class="wta-matrix-legend" id="wttAssocMatrixLegend" style="display:none;">
+                    <span>0%</span>
+                    <span class="lg-block" style="background:rgba(77,163,255,0.08);"></span>
+                    <span class="lg-block" style="background:rgba(77,163,255,0.28);"></span>
+                    <span class="lg-block" style="background:rgba(77,163,255,0.5);"></span>
+                    <span class="lg-block" style="background:rgba(77,163,255,0.72);"></span>
+                    <span>100%</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="wtt-back-link" style="text-align:center;margin-top:40px;">
+            <a href="wtt_hub.html" class="btn btn-secondary btn-sm">
+                <i class="fa-solid fa-arrow-left"></i> <span data-i18n="wtt_back_hub">返回 WTT Hub</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><h4>WFLS Table Tennis Club</h4><p>武汉外国语学校乒乓球社团</p><p class="footer-motto">挥拍逐梦，旋转青春</p></div>
+                <div class="footer-links"><h4>快速导航</h4><a href="index.html">Home</a><a href="news.html">News</a><a href="competitions.html">Competitions</a><a href="members.html">社团骨干</a><a href="ranking.html">Ranking</a><a href="data_viz.html">Data Viz</a>
+                    <a href="personal_stats.html">个人数据</a><a href="qa.html">Q&A</a><a href="changelog.html">更新日志</a><a href="contact.html">Contact</a></div>
+                <div class="footer-school"><h4>学校信息</h4><p>武汉外国语学校</p><p>Wuhan Foreign Languages School</p><p>湖北省武汉市</p></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 WFLS Table Tennis Club. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/score-engine.js"></script>
+    <script src="js/wtt_common.js"></script>
+    <script src="js/wtt_assoc.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

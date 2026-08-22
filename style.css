@@ -1601,6 +1601,25 @@ body.dark-mode .score-detail-table tbody tr:nth-child(even) td { background-colo
     background: var(--primary-pale);
     box-shadow: 0 0 0 3px var(--primary-pale);
 }
+.viz-topn-selector input[type="number"]:disabled { opacity: 0.45; cursor: not-allowed; }
+.viz-topn-selector input[type="date"] {
+    padding: 4px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    background: var(--bg-white);
+    color: var(--text-primary);
+    font-family: var(--font-en);
+    font-size: 0.85rem;
+    outline: none;
+    cursor: pointer;
+    transition: border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+}
+.viz-topn-selector input[type="date"]:hover { border-color: var(--primary-light); }
+.viz-topn-selector input[type="date"]:focus {
+    border-color: var(--primary-blue);
+    background: var(--primary-pale);
+    box-shadow: 0 0 0 3px var(--primary-pale);
+}
 /* Bar Chart Race（排名动态竞速，视频级舞台） */
 .viz-race-stage { position: relative; padding: 26px 28px 16px; min-height: 720px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 .viz-race-clock { position: absolute; top: 14px; right: 22px; z-index: 5; font-family: var(--font-en); font-size: 1.9rem; font-weight: 700; color: var(--text-primary); opacity: 0.9; letter-spacing: 0.5px; background: var(--glass-bg); padding: 2px 12px; border-radius: 10px; }
@@ -2061,6 +2080,7 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
     .viz-topn-selector { font-size: 0.78rem; flex-wrap: wrap; justify-content: center; margin-left: 0 !important; }
     .viz-topn-selector select { font-size: 0.78rem; padding: 5px 10px; }
     .viz-topn-selector input[type="number"] { font-size: 0.78rem; padding: 5px 10px; }
+    .viz-topn-selector input[type="date"] { font-size: 0.78rem; padding: 5px 10px; }
     .h2h-heatmap-wrapper, .compare-h2h-wrapper { position: relative; }
     .h2h-heatmap-wrapper::after, .compare-h2h-wrapper::after {
         content: '';
@@ -2197,6 +2217,7 @@ body.dark-mode .personal-honor-badge { color: #f5c542; background: linear-gradie
     .compare-player-name { font-size: 0.95rem; }
     .viz-topn-selector select { font-size: 0.78rem; padding: 5px 10px; }
     .viz-topn-selector input[type="number"] { font-size: 0.78rem; padding: 5px 10px; width: 58px; }
+    .viz-topn-selector input[type="date"] { font-size: 0.78rem; padding: 5px 10px; }
     .viz-race-stage { min-height: 580px; padding: 16px 12px 10px; }
     .viz-race-clock { font-size: 1.15rem; top: 8px; right: 10px; }
     .viz-bar-race-wrap { padding-top: 24px; }

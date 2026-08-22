@@ -368,6 +368,9 @@
                         <span class="hub-card-link" data-href="wtt_personal_stats.html?cat=${cat.id}">
                             <i class="fa-solid fa-user-chart"></i> ${i18n[currentLang].wtt_link_personal}
                         </span>
+                        <span class="hub-card-link" data-href="wtt_assoc.html?cat=${cat.id}">
+                            <i class="fa-solid fa-earth-asia"></i> ${i18n[currentLang].wtt_link_assoc}
+                        </span>
                     </div>
                 `;
 
@@ -463,10 +466,11 @@
                         updateStatus(statusEl, cat.id, hubStatuses[cat.id]);
                     }
                     const linkEls = card.querySelectorAll('.hub-card-link');
-                    if (linkEls.length >= 3) {
+                    if (linkEls.length >= 4) {
                         linkEls[0].innerHTML = '<i class="fa-solid fa-list-ol"></i> ' + i18n[currentLang].wtt_link_rank;
                         linkEls[1].innerHTML = '<i class="fa-solid fa-chart-line"></i> ' + i18n[currentLang].wtt_link_dataviz;
                         linkEls[2].innerHTML = '<i class="fa-solid fa-user-chart"></i> ' + i18n[currentLang].wtt_link_personal;
+                        linkEls[3].innerHTML = '<i class="fa-solid fa-earth-asia"></i> ' + i18n[currentLang].wtt_link_assoc;
                     }
                 });
             }

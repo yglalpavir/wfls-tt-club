@@ -5,7 +5,7 @@
 
 let wttRecordBarChart = null, wttEfficiencyScatterChart = null, wttMatchFrequencyChart = null, wttScoreDistributionChart = null;
 let wttAssocTrendChart = null, wttAssocTop5Chart = null;
-let wttDataVizExtraState = { recordTopN: 10, efficiencyTopN: 15, heatmapTopN: 8, freqBucket: 'week', freqCount: 24, distBins: 10, assocTrendCount: 20, assocTop5TopN: 8, raceFrameIndex: 0 };
+let wttDataVizExtraState = { recordTopN: 10, efficiencyTopN: 15, heatmapTopN: 8, freqBucket: 'week', freqCount: 24, distBins: 10, assocTrendCount: 20, assocTrendStart: '', assocTrendEnd: '', assocTop5TopN: 8, raceFrameIndex: 0 };
 
 // ============ 通用辅助（WTT 页未加载 data-viz-extra.js，需自带） ============
 
@@ -210,11 +210,12 @@ function wttBuildAssocPlayerMap() {
 }
 
 // 由某时刻的完整积分映射计算各协会实力分，返回按分数降序的列表
-function wttComputeAssocStrengthList(scoreMap) {
+// season 可选：历史快照传入其所属赛季；缺省时保持现状用当前赛季
+function wttComputeAssocStrengthList(scoreMap, season) {
     const assocPlayers = wttBuildAssocPlayerMap();
     const countryMap = wttBuildAssocCountryMap();
-    // 不计算本赛季无比赛数据的球员
-    const activeThisSeason = wttGetSeasonActivePlayers(wttGetCurrentSeason());
+    // 不计算该赛季无比赛数据的球员
+    const activeThisSeason = wttGetSeasonActivePlayers(season !== undefined ? season : wttGetCurrentSeason());
     const filterActive = activeThisSeason && activeThisSeason.size > 0
         ? name => activeThisSeason.has(name)
         : () => true;
@@ -258,6 +259,8 @@ function initWttDataVizExtra() {
     wttDataVizExtraState.heatmapTopN = parseInt(document.getElementById('wttHeatmapTopN')?.value) || 8;
     wttDataVizExtraState.distBins = parseInt(document.getElementById('wttDistBinCount')?.value) || 10;
     wttDataVizExtraState.assocTrendCount = parseInt(document.getElementById('wttAssocTrendCount')?.value) || 20;
+    wttDataVizExtraState.assocTrendStart = document.getElementById('wttAssocTrendStart')?.value || '';
+    wttDataVizExtraState.assocTrendEnd = document.getElementById('wttAssocTrendEnd')?.value || '';
     wttDataVizExtraState.assocTop5TopN = parseInt(document.getElementById('wttAssocTop5TopN')?.value) || 8;
     wttRenderRecordBar(wttDataVizExtraState.recordTopN);
     wttRenderEfficiencyScatter(wttDataVizExtraState.efficiencyTopN);
@@ -265,7 +268,7 @@ function initWttDataVizExtra() {
     wttRenderMatchFrequency(wttDataVizExtraState.freqBucket, wttDataVizExtraState.freqCount);
     wttRenderScoreDistribution(wttDataVizExtraState.distBins);
     wttRenderAssocCheckboxes();
-    wttRenderAssocTrend(wttGetSelectedAssocs(), wttDataVizExtraState.assocTrendCount);
+    wttRenderAssocTrend(wttGetSelectedAssocs(), wttDataVizExtraState.assocTrendCount, wttDataVizExtraState.assocTrendStart, wttDataVizExtraState.assocTrendEnd);
     wttRenderAssocTop5(wttDataVizExtraState.assocTop5TopN);
 
     document.getElementById('wttRecordTopN')?.addEventListener('change', () => {
@@ -308,14 +311,31 @@ function initWttDataVizExtra() {
         if (sel.length > 8) { alert(i18n[currentLang].wtt_alert_max_assoc); return; }
         const dc = parseInt(document.getElementById('wttAssocTrendCount')?.value) || 20;
         wttDataVizExtraState.assocTrendCount = dc;
-        wttRenderAssocTrend(sel, dc);
+        wttRenderAssocTrend(sel, dc, wttDataVizExtraState.assocTrendStart, wttDataVizExtraState.assocTrendEnd);
     });
     document.getElementById('wttAssocTrendCount')?.addEventListener('change', () => {
         const sel = wttGetSelectedAssocs();
         const dc = parseInt(document.getElementById('wttAssocTrendCount')?.value) || 20;
         wttDataVizExtraState.assocTrendCount = dc;
-        if (sel.length) wttRenderAssocTrend(sel, dc);
+        if (sel.length) wttRenderAssocTrend(sel, dc, wttDataVizExtraState.assocTrendStart, wttDataVizExtraState.assocTrendEnd);
     });
+    const syncTrendRangeMode = () => {
+        const cnt = document.getElementById('wttAssocTrendCount');
+        if (cnt) cnt.disabled = !!(wttDataVizExtraState.assocTrendStart || wttDataVizExtraState.assocTrendEnd);
+    };
+    const trFirst = wttRankingTimeline[0]?.time || '', trLast = wttRankingTimeline[wttRankingTimeline.length - 1]?.time || '';
+    ['wttAssocTrendStart', 'wttAssocTrendEnd'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el && trFirst) { el.min = trFirst; el.max = trLast; }
+        el?.addEventListener('change', () => {
+            wttDataVizExtraState.assocTrendStart = document.getElementById('wttAssocTrendStart')?.value || '';
+            wttDataVizExtraState.assocTrendEnd = document.getElementById('wttAssocTrendEnd')?.value || '';
+            syncTrendRangeMode();
+            const sel = wttGetSelectedAssocs();
+            if (sel.length) wttRenderAssocTrend(sel, wttDataVizExtraState.assocTrendCount, wttDataVizExtraState.assocTrendStart, wttDataVizExtraState.assocTrendEnd);
+        });
+    });
+    syncTrendRangeMode();
     document.getElementById('wttAssocTop5TopN')?.addEventListener('change', () => {
         const v = wttClampInt(document.getElementById('wttAssocTop5TopN').value, 1, 66);
         document.getElementById('wttAssocTop5TopN').value = v;
@@ -1086,14 +1106,22 @@ function wttGetSelectedAssocs() {
     return Array.from(document.querySelectorAll('#wttAssocCheckboxList input[type="checkbox"]:checked')).map(cb => cb.value);
 }
 
-function wttRenderAssocTrend(assocCodes, dataCount) {
+function wttRenderAssocTrend(assocCodes, dataCount, startDate, endDate) {
     const canvas = document.getElementById('wttAssocTrendChart');
     if (!canvas || !wttRankingTimeline.length) return;
     if (wttAssocTrendChart) { wttAssocTrendChart.destroy(); wttAssocTrendChart = null; }
     if (!assocCodes || !assocCodes.length) return;
 
-    dataCount = Math.max(2, Math.min(dataCount || 20, wttRankingTimeline.length));
-    const sliced = wttRankingTimeline.slice(-dataCount);
+    let sliced;
+    if (startDate && endDate && startDate > endDate) { const tmp = startDate; startDate = endDate; endDate = tmp; }
+    if (startDate || endDate) {
+        sliced = wttRankingTimeline.filter(t => t.time &&
+            (!startDate || t.time >= startDate) && (!endDate || t.time <= endDate));
+    } else {
+        dataCount = Math.max(2, Math.min(dataCount || 20, wttRankingTimeline.length));
+        sliced = wttRankingTimeline.slice(-dataCount);
+    }
+    if (!sliced.length) return;
     const isMobile = window.innerWidth <= 768;
     const countryMap = wttBuildAssocCountryMap();
 
@@ -1102,7 +1130,7 @@ function wttRenderAssocTrend(assocCodes, dataCount) {
     for (const code of assocCodes) strengthByAssoc[code] = [];
     for (const t of sliced) {
         const scoreMap = wttBuildSnapshotScoreMap(t);
-        const list = wttComputeAssocStrengthList(scoreMap);
+        const list = wttComputeAssocStrengthList(scoreMap, wttGetSeasonByLabel(t.season));
         const m = {};
         for (const a of list) m[a.assoc] = a.score;
         for (const code of assocCodes) strengthByAssoc[code].push(m[code] != null ? m[code] : null);
@@ -1212,7 +1240,7 @@ function wttReapplyDataVizExtra() {
     wttRenderMatchFrequency(wttDataVizExtraState.freqBucket, wttDataVizExtraState.freqCount);
     wttRenderScoreDistribution(wttDataVizExtraState.distBins);
     const assocSel = wttGetSelectedAssocs();
-    if (assocSel.length) wttRenderAssocTrend(assocSel, wttDataVizExtraState.assocTrendCount);
+    if (assocSel.length) wttRenderAssocTrend(assocSel, wttDataVizExtraState.assocTrendCount, wttDataVizExtraState.assocTrendStart, wttDataVizExtraState.assocTrendEnd);
     wttRenderAssocTop5(wttDataVizExtraState.assocTop5TopN);
     if (wttBarRace.initialized) {
         wttBarRace.assocColors = wttBuildBarRaceAssocColors();
