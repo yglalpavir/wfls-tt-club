@@ -61,6 +61,13 @@
             gap: 10px 22px;
             margin-bottom: 18px;
         }
+        /* 前三名奖牌配色（与全站排名表一致）；本表每协会含隐藏明细行，
+           nth-child 会错位，故用显式类标注并抵消通用规则对明细行的影响 */
+        table.ranking-table tr.wta-rank-1 td:first-child { color: var(--accent-gold); font-weight: 700; font-size: 1.1rem; }
+        table.ranking-table tr.wta-rank-2 td:first-child { color: #8899aa; font-weight: 700; }
+        table.ranking-table tr.wta-rank-3 td:first-child { color: #b87351; font-weight: 700; }
+        table.ranking-table tr.wta-detail-row > td:first-child { color: inherit; }
+        table.ranking-table tbody tr.main-row td:first-child { color: var(--text-primary); }
         .wta-table-card { padding: 6px 14px 14px; }
         .wta-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
         .wta-table-wrap table { min-width: 780px; }
@@ -258,11 +265,11 @@
             <div id="wttAssocLoading" style="min-height:60px;"></div>
             <div class="viz-chart-container glass-card wta-table-card" style="min-height:auto;">
                 <div class="wta-table-wrap" style="width:100%;">
-                    <table class="ranking-table-full">
+                    <table class="ranking-table ranking-table-full">
                         <thead>
                             <tr>
                                 <th style="width:52px;">#</th>
-                                <th style="text-align:left;" data-i18n="rank_col_name">姓名</th>
+                                <th style="text-align:left;" data-i18n="wtt_assoc_col_name">协会</th>
                                 <th data-i18n="wtt_assoc_col_strength">实力分</th>
                                 <th data-i18n="wtt_assoc_col_trend">较上期</th>
                                 <th data-i18n="wtt_assoc_col_players">球员数</th>
