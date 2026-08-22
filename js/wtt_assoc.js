@@ -166,10 +166,13 @@ function wtaComputeListAt(idx) {
         const filterActive = activeThisSeason && activeThisSeason.size > 0
             ? name => activeThisSeason.has(name)
             : () => true;
+        // flat1300 模式下，尚未出场的组合概念上持有基础分（引擎首战时懒赋值 DEFAULT_INITIAL_SCORE）
+        const fallbackScore = (wttSettings && wttSettings.scoreMode === 'flat1300')
+            ? DEFAULT_INITIAL_SCORE : 0;
         for (const [code, players] of Object.entries(assocPlayers)) {
             const scored = players
                 .filter(filterActive)
-                .map(name => ({ name, score: (scoreMap[name] != null) ? scoreMap[name] : 0 }))
+                .map(name => ({ name, score: (scoreMap[name] != null) ? scoreMap[name] : fallbackScore }))
                 .sort((a, b) => b.score - a.score);
             list.push({
                 assoc: code,
