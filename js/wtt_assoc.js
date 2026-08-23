@@ -183,6 +183,8 @@ function wtaComputeListAt(idx) {
                 count: scored.length
             });
         }
+        // 隐去该时间节点下实力分为 0 的协会（无活跃球员或全员零分）
+        list = list.filter(a => a.score > 0);
         list.sort((a, b) => b.score - a.score);
     }
     wtaListCache.set(idx, list);
