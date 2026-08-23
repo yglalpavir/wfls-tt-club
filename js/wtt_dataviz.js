@@ -7,7 +7,6 @@ let wttPointsTrendChart = null, wttRankStreamChart = null;
 let wttCurrentCompare = null;  // 当前对比的球员对（语言切换时重渲染用）
 let wttDataVizSettings = null;  // 折线图设置（从 data/data_viz-settings.json 加载）
 const WTT_CHART_COLORS = ['#4da3ff','#ff6b6b','#52c41a','#f5c542','#ff9f43','#a55eea','#26de81','#fd79a8','#45b7d1','#f78fb3','#3dc1d3','#e66767','#778beb','#f5cd79','#cf6a87','#786fa6','#f8a5c2','#63cdda','#ea8685','#596275'];
-const WTT_STREAM_COLORS = ['#3b82f6','#f97316','#10b981','#ec4899','#8b5cf6','#facc15','#06b6d4','#e11d48','#14b8a6','#c084fc','#4ade80','#fb7185','#6366f1','#fb923c','#38bdf8','#d946ef','#a3e635','#b45309','#94a3b8','#fbbf24'];
 const WTT_MOBILE_STREAM_POINTS_MAX = 12;
 
 /**
@@ -613,15 +612,14 @@ function wttRenderRankStream(topN, dataCount) {
     const textColor = getComputedStyle(document.body).getPropertyValue('--text-primary').trim() || '#1a1a2e';
     const datasets = topPlayers.map((name, idx) => {
         const data = slicedTimeline.map(t => wttGetPlayerRankAtSnapshot(name, t));
-        const color = WTT_STREAM_COLORS[idx % WTT_STREAM_COLORS.length];
+        const color = WTT_CHART_COLORS[idx % WTT_CHART_COLORS.length];
         return {
             label: name, data,
-            borderColor: color, backgroundColor: color + '38',
+            borderColor: color,
             borderWidth: isMobile ? 1.5 : 2,
             pointRadius: isMobile ? 2 : 3,
             pointHoverRadius: isMobile ? 4 : 6,
-            pointBackgroundColor: color, pointHoverBackgroundColor: color,
-            tension: 0.4, fill: idx === 0 ? 'origin' : '-1', spanGaps: true
+            tension: 0.4, fill: false, spanGaps: true
         };
     });
 
