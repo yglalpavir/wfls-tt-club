@@ -189,11 +189,17 @@ function wtaComputeListAt(idx) {
     return list;
 }
 
-// 某快照的全球排名映射（姓名 -> 名次，含继承积分的球员）
+// 某快照的全球排名映射（姓名 -> 名次）
+// 仅统计该时间节点下活跃的球员（当季有比赛记录），已退役的不活跃球员不占排名席位
 function wtaGlobalRankMapAt(idx) {
     if (wtaRankMapCache.has(idx)) return wtaRankMapCache.get(idx);
-    const scoreMap = wtaBuildSnapshotScoreMap(wttRankingTimeline[idx]);
-    const arr = Object.keys(scoreMap).map(n => ({ name: n, score: scoreMap[n] }));
+    const entry = wttRankingTimeline[idx];
+    const scoreMap = wtaBuildSnapshotScoreMap(entry);
+    const season = entry && entry.season ? wtaSeasonByLabel(entry.season) : null;
+    const active = wtaSeasonActivePlayers(season);
+    let names = Object.keys(scoreMap);
+    if (active && active.size > 0) names = names.filter(n => active.has(n));
+    const arr = names.map(n => ({ name: n, score: scoreMap[n] }));
     arr.sort((a, b) => b.score - a.score);
     const m = new Map();
     arr.forEach((p, i) => m.set(p.name, i + 1));
