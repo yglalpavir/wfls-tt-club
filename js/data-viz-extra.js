@@ -4,7 +4,7 @@
    ======================================== */
 
 let recordBarChart = null, efficiencyScatterChart = null, matchFrequencyChart = null, scoreDistributionChart = null;
-let dataVizExtraState = { recordTopN: 10, efficiencyTopN: 15, heatmapTopN: 8, freqBucket: 'week', freqCount: 24, distBins: 10 };
+let dataVizExtraState = { recordTopN: 10, efficiencyTopN: 15, heatmapTopN: 8, heatmapMode: 'wins', freqBucket: 'week', freqCount: 24, distBins: 10, raceFrameIndex: 0 };
 
 const RECORD_WIN_COLOR = '#52c41a';
 const RECORD_LOSS_COLOR = '#ff6b6b';
@@ -37,14 +37,20 @@ function initDataVizExtra() {
     dataVizExtraState.recordTopN = parseInt(document.getElementById('recordTopN')?.value) || 10;
     dataVizExtraState.efficiencyTopN = parseInt(document.getElementById('efficiencyTopN')?.value) || 15;
     dataVizExtraState.heatmapTopN = parseInt(document.getElementById('heatmapTopN')?.value) || 8;
+    dataVizExtraState.heatmapMode = document.getElementById('heatmapModeSelect')?.value === 'rate' ? 'rate' : 'wins';
     dataVizExtraState.distBins = parseInt(document.getElementById('distBinCount')?.value) || 10;
     renderRecordBar(dataVizExtraState.recordTopN);
     renderEfficiencyScatter(dataVizExtraState.efficiencyTopN);
     renderH2hHeatmap(dataVizExtraState.heatmapTopN);
     renderMatchFrequency(dataVizExtraState.freqBucket, dataVizExtraState.freqCount);
     renderScoreDistribution(dataVizExtraState.distBins);
+    initClubBarRace();
 
     // 事件监听
+    document.getElementById('heatmapModeSelect')?.addEventListener('change', e => {
+        dataVizExtraState.heatmapMode = e.target.value === 'rate' ? 'rate' : 'wins';
+        renderH2hHeatmap(dataVizExtraState.heatmapTopN);
+    });
     document.getElementById('recordTopN')?.addEventListener('change', () => {
         const v = clampInt(document.getElementById('recordTopN').value, 1, 50);
         document.getElementById('recordTopN').value = v;
@@ -238,6 +244,7 @@ function renderH2hHeatmap(topN) {
         return;
     }
     maxWins = maxWins || 1;
+    const rateMode = dataVizExtraState.heatmapMode === 'rate';
 
     // 列头：正立缩短名，避免竖排导致错位
     const header = sortedPlayers.map(n => `<th class="h2h-col-label" title="${escapeHtml(n)}">${escapeHtml(shortenPlayerName(n))}</th>`).join('');
@@ -252,19 +259,44 @@ function renderH2hHeatmap(topN) {
             const wins = matrix[row][col] || 0;
             const losses = matrix[col][row] || 0;
             const meets = wins + losses;
-            const alpha = wins / maxWins;
-            const bg = wins > 0 ? `rgba(77,163,255,${(0.12 + alpha * 0.88).toFixed(2)})` : 'rgba(128,128,128,0.06)';
-            const tip = i18n[currentLang].data_viz_heatmap_cell
-                .replace('{winner}', row).replace('{loser}', col).replace('{n}', wins)
-                + ` | ${i18n[currentLang].data_viz_loss}: ${losses} | ${i18n[currentLang].data_viz_total}: ${meets}`;
-            body += `<td class="h2h-cell" data-row="${escapeHtml(row)}" data-col="${escapeHtml(col)}" style="background:${bg};" title="${escapeHtml(tip)}">${wins}</td>`;
+            let bg, text, tip;
+            if (rateMode) {
+                // 胜率模式：以 50% 为分界的红蓝双色标度（蓝=占优，红=劣势）
+                if (!meets) {
+                    bg = 'rgba(128,128,128,0.06)';
+                    text = '-';
+                    tip = `${row} → ${col} | ${i18n[currentLang].data_viz_total}: 0`;
+                } else {
+                    const rate = (wins / meets) * 100;
+                    text = Math.round(rate) + '%';
+                    if (rate >= 50) {
+                        bg = `rgba(77,163,255,${(0.12 + ((rate - 50) / 50) * 0.88).toFixed(2)})`;
+                    } else {
+                        bg = `rgba(255,107,107,${(0.12 + ((50 - rate) / 50) * 0.88).toFixed(2)})`;
+                    }
+                    tip = i18n[currentLang].data_viz_heatmap_cell_rate
+                        .replace('{winner}', row).replace('{loser}', col).replace('{r}', rate.toFixed(1)).replace('{n}', meets)
+                        + ` | ${i18n[currentLang].data_viz_win}: ${wins} | ${i18n[currentLang].data_viz_loss}: ${losses}`;
+                }
+            } else {
+                const alpha = wins / maxWins;
+                bg = wins > 0 ? `rgba(77,163,255,${(0.12 + alpha * 0.88).toFixed(2)})` : 'rgba(128,128,128,0.06)';
+                text = wins;
+                tip = i18n[currentLang].data_viz_heatmap_cell
+                    .replace('{winner}', row).replace('{loser}', col).replace('{n}', wins)
+                    + ` | ${i18n[currentLang].data_viz_loss}: ${losses} | ${i18n[currentLang].data_viz_total}: ${meets}`;
+            }
+            body += `<td class="h2h-cell" data-row="${escapeHtml(row)}" data-col="${escapeHtml(col)}" style="background:${bg};" title="${escapeHtml(tip)}">${text}</td>`;
         });
         body += '</tr>';
     });
 
     // 颜色说明
-    const legend = `<div class="h2h-legend"><span class="h2h-legend-label">${escapeHtml(i18n[currentLang].data_viz_heatmap_hint)}</span>` +
-        `<span class="h2h-legend-bar"><i style="background:rgba(128,128,128,0.06);"></i><i style="background:rgba(77,163,255,0.3);"></i><i style="background:rgba(77,163,255,0.6);"></i><i style="background:rgba(77,163,255,0.9);"></i><b>${maxWins}</b></span></div>`;
+    const legend = rateMode
+        ? `<div class="h2h-legend"><span class="h2h-legend-label">${escapeHtml(i18n[currentLang].data_viz_heatmap_hint_rate)}</span>` +
+          `<span class="h2h-legend-bar"><b style="margin-left:0;margin-right:4px;">0%</b><i style="background:rgba(255,107,107,0.9);"></i><i style="background:rgba(255,107,107,0.35);"></i><i style="background:rgba(128,128,128,0.10);"></i><i style="background:rgba(77,163,255,0.35);"></i><i style="background:rgba(77,163,255,0.9);"></i><b>100%</b></span></div>`
+        : `<div class="h2h-legend"><span class="h2h-legend-label">${escapeHtml(i18n[currentLang].data_viz_heatmap_hint)}</span>` +
+          `<span class="h2h-legend-bar"><i style="background:rgba(128,128,128,0.06);"></i><i style="background:rgba(77,163,255,0.3);"></i><i style="background:rgba(77,163,255,0.6);"></i><i style="background:rgba(77,163,255,0.9);"></i><b>${maxWins}</b></span></div>`;
 
     container.innerHTML = `<div class="h2h-heatmap-wrapper"><table class="h2h-heatmap-table"><thead><tr><th class="h2h-corner"></th>${header}</tr></thead><tbody>${body}</tbody></table>${legend}</div>`;
 
@@ -475,6 +507,11 @@ function dataVizReapplyI18n() {
     renderH2hHeatmap(dataVizExtraState.heatmapTopN);
     renderMatchFrequency(dataVizExtraState.freqBucket, dataVizExtraState.freqCount);
     renderScoreDistribution(dataVizExtraState.distBins);
+    if (typeof clubBarRace !== 'undefined' && clubBarRace.initialized) {
+        clubBarRace.playerColors = clubBuildRacePlayerColors();
+        clubRaceSyncPlayButton();
+        clubSetRaceFrame(dataVizExtraState.raceFrameIndex, false);
+    }
 }
 
 // ============ 辅助 ============

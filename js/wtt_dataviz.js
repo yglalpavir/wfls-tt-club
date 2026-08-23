@@ -7,7 +7,8 @@ let wttPointsTrendChart = null, wttRankStreamChart = null;
 let wttCurrentCompare = null;  // 当前对比的球员对（语言切换时重渲染用）
 let wttDataVizSettings = null;  // 折线图设置（从 data/data_viz-settings.json 加载）
 const WTT_CHART_COLORS = ['#4da3ff','#ff6b6b','#52c41a','#f5c542','#ff9f43','#a55eea','#26de81','#fd79a8','#45b7d1','#f78fb3','#3dc1d3','#e66767','#778beb','#f5cd79','#cf6a87','#786fa6','#f8a5c2','#63cdda','#ea8685','#596275'];
-const WTT_STREAM_COLORS = ['#4da3ff','#52c41a','#ff9f43','#a55eea','#26de81','#ff6b6b','#45b7d1','#f5c542','#778beb','#fd79a8','#3dc1d3','#f78fb3','#63cdda','#e66767','#f5cd79','#cf6a87','#786fa6','#f8a5c2','#ea8685','#596275'];
+const WTT_STREAM_COLORS = ['#3b82f6','#f97316','#10b981','#ec4899','#8b5cf6','#facc15','#06b6d4','#e11d48','#14b8a6','#c084fc','#4ade80','#fb7185','#6366f1','#fb923c','#38bdf8','#d946ef','#a3e635','#b45309','#94a3b8','#fbbf24'];
+const WTT_MOBILE_STREAM_POINTS_MAX = 12;
 
 /**
  * 根据数据点数量从 settings tiers 中匹配最佳参数档位
@@ -159,7 +160,12 @@ function initWttDataViz() {
         const dp = players.slice(0, Math.min(8, players.length));
         const defaultDataCount = parseInt(document.getElementById('wttPointsTrendDataCount')?.value) || 20;
         wttRenderPointsTrend(dp, defaultDataCount);
-        const defaultStreamCount = parseInt(document.getElementById('wttStreamDataCount')?.value) || 20;
+        let defaultStreamCount = parseInt(document.getElementById('wttStreamDataCount')?.value) || 20;
+        if (window.innerWidth <= 768 && defaultStreamCount > WTT_MOBILE_STREAM_POINTS_MAX) {
+            defaultStreamCount = WTT_MOBILE_STREAM_POINTS_MAX;
+            const scInput = document.getElementById('wttStreamDataCount');
+            if (scInput) scInput.value = String(WTT_MOBILE_STREAM_POINTS_MAX);
+        }
         wttRenderRankStream(Math.min(10, players.length), defaultStreamCount);
 
         // 事件监听
@@ -214,6 +220,12 @@ function initWttDataViz() {
                 const topN = parseInt(document.getElementById('wttTopNSelect')?.value) || 10;
                 const sdc = parseInt(document.getElementById('wttStreamDataCount')?.value) || 20;
                 if (wttRankStreamChart) wttRenderRankStream(topN, sdc);
+                if (typeof wttAssocTrendChart !== 'undefined' && wttAssocTrendChart && typeof wttGetSelectedAssocs === 'function') {
+                    wttRenderAssocTrend(wttGetSelectedAssocs(),
+                        parseInt(document.getElementById('wttAssocTrendCount')?.value) || 20,
+                        (typeof wttDataVizExtraState !== 'undefined') ? wttDataVizExtraState.assocTrendStart : '',
+                        (typeof wttDataVizExtraState !== 'undefined') ? wttDataVizExtraState.assocTrendEnd : '');
+                }
             } else {
                 try { wttPointsTrendChart?.resize(); } catch(e) {}
                 try { wttRankStreamChart?.resize(); } catch(e) {}
@@ -551,6 +563,7 @@ function wttRenderPointsTrend(playerNames, dataCount) {
                 plugins: {
                     legend: {
                         position: 'bottom',
+                        display: !isMobile,
                         labels: { usePointStyle: true, padding: isMobile ? 12 : 20, font: { size: isMobile ? 11 : 12, family: "'Poppins', sans-serif" }, boxWidth: isMobile ? 11 : 12 }
                     },
                     tooltip: { backgroundColor: 'rgba(26,29,40,0.9)', titleFont: { size: isMobile ? 12 : 13 }, bodyFont: { size: isMobile ? 11 : 12 }, padding: isMobile ? 8 : 12, cornerRadius: 8, itemSort: (a, b) => (b.parsed.y ?? -Infinity) - (a.parsed.y ?? -Infinity), callbacks: { label: ctx => `${ctx.dataset.label}: ${ctx.raw.toFixed(1)}` } }
@@ -603,11 +616,12 @@ function wttRenderRankStream(topN, dataCount) {
         const color = WTT_STREAM_COLORS[idx % WTT_STREAM_COLORS.length];
         return {
             label: name, data,
-            borderColor: color, backgroundColor: color + '25',
+            borderColor: color, backgroundColor: color + '38',
             borderWidth: isMobile ? 1.5 : 2,
             pointRadius: isMobile ? 2 : 3,
             pointHoverRadius: isMobile ? 4 : 6,
-            tension: 0.4, fill: true, spanGaps: true
+            pointBackgroundColor: color, pointHoverBackgroundColor: color,
+            tension: 0.4, fill: idx === 0 ? 'origin' : '-1', spanGaps: true
         };
     });
 
@@ -620,6 +634,7 @@ function wttRenderRankStream(topN, dataCount) {
                 plugins: {
                     legend: {
                         position: 'bottom',
+                        display: !isMobile,
                         labels: { usePointStyle: true, padding: isMobile ? 10 : 16, font: { size: isMobile ? 10 : 11, family: "'Poppins', sans-serif" }, color: textColor, boxWidth: isMobile ? 11 : 12 }
                     },
                     tooltip: {

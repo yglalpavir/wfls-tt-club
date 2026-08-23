@@ -5,7 +5,7 @@
 
 let wttRecordBarChart = null, wttEfficiencyScatterChart = null, wttMatchFrequencyChart = null, wttScoreDistributionChart = null;
 let wttAssocTrendChart = null, wttAssocTop5Chart = null;
-let wttDataVizExtraState = { recordTopN: 10, efficiencyTopN: 15, heatmapTopN: 8, freqBucket: 'week', freqCount: 24, distBins: 10, assocTrendCount: 20, assocTrendStart: '', assocTrendEnd: '', assocTop5TopN: 8, raceFrameIndex: 0 };
+let wttDataVizExtraState = { recordTopN: 10, efficiencyTopN: 15, heatmapTopN: 8, heatmapMode: 'wins', freqBucket: 'week', freqCount: 24, distBins: 10, assocTrendCount: 20, assocTrendStart: '', assocTrendEnd: '', assocTop5TopN: 8, raceFrameIndex: 0 };
 
 // ============ 通用辅助（WTT 页未加载 data-viz-extra.js，需自带） ============
 
@@ -257,6 +257,7 @@ function initWttDataVizExtra() {
     wttDataVizExtraState.recordTopN = parseInt(document.getElementById('wttRecordTopN')?.value) || 10;
     wttDataVizExtraState.efficiencyTopN = parseInt(document.getElementById('wttEfficiencyTopN')?.value) || 15;
     wttDataVizExtraState.heatmapTopN = parseInt(document.getElementById('wttHeatmapTopN')?.value) || 8;
+    wttDataVizExtraState.heatmapMode = document.getElementById('wttHeatmapModeSelect')?.value === 'rate' ? 'rate' : 'wins';
     wttDataVizExtraState.distBins = parseInt(document.getElementById('wttDistBinCount')?.value) || 10;
     wttDataVizExtraState.assocTrendCount = parseInt(document.getElementById('wttAssocTrendCount')?.value) || 20;
     wttDataVizExtraState.assocTrendStart = document.getElementById('wttAssocTrendStart')?.value || '';
@@ -282,6 +283,10 @@ function initWttDataVizExtra() {
         document.getElementById('wttEfficiencyTopN').value = v;
         wttDataVizExtraState.efficiencyTopN = v;
         wttRenderEfficiencyScatter(v);
+    });
+    document.getElementById('wttHeatmapModeSelect')?.addEventListener('change', e => {
+        wttDataVizExtraState.heatmapMode = e.target.value === 'rate' ? 'rate' : 'wins';
+        wttRenderH2hHeatmap(wttDataVizExtraState.heatmapTopN);
     });
     document.getElementById('wttHeatmapTopN')?.addEventListener('change', () => {
         const v = wttClampInt(document.getElementById('wttHeatmapTopN').value, 2, 20);
@@ -884,6 +889,7 @@ function wttRenderH2hHeatmap(topN) {
         return;
     }
     maxWins = maxWins || 1;
+    const rateMode = wttDataVizExtraState.heatmapMode === 'rate';
 
     // 列头：正立缩短名，避免竖排导致错位
     const header = sortedPlayers.map(n => `<th class="h2h-col-label" title="${escapeHtml(n)}">${escapeHtml(shortenPlayerName(n))}</th>`).join('');
@@ -898,19 +904,44 @@ function wttRenderH2hHeatmap(topN) {
             const wins = matrix[row][col] || 0;
             const losses = matrix[col][row] || 0;
             const meets = wins + losses;
-            const alpha = wins / maxWins;
-            const bg = wins > 0 ? `rgba(77,163,255,${(0.12 + alpha * 0.88).toFixed(2)})` : 'rgba(128,128,128,0.06)';
-            const tip = i18n[currentLang].wtt_heatmap_cell
-                .replace('{winner}', row).replace('{loser}', col).replace('{n}', wins)
-                + ` | ${i18n[currentLang].wtt_loss}: ${losses} | ${i18n[currentLang].wtt_total}: ${meets}`;
-            body += `<td class="h2h-cell" data-row="${escapeHtml(row)}" data-col="${escapeHtml(col)}" style="background:${bg};" title="${escapeHtml(tip)}">${wins}</td>`;
+            let bg, text, tip;
+            if (rateMode) {
+                // 胜率模式：以 50% 为分界的红蓝双色标度（蓝=占优，红=劣势）
+                if (!meets) {
+                    bg = 'rgba(128,128,128,0.06)';
+                    text = '-';
+                    tip = `${row} → ${col} | ${i18n[currentLang].wtt_total}: 0`;
+                } else {
+                    const rate = (wins / meets) * 100;
+                    text = Math.round(rate) + '%';
+                    if (rate >= 50) {
+                        bg = `rgba(77,163,255,${(0.12 + ((rate - 50) / 50) * 0.88).toFixed(2)})`;
+                    } else {
+                        bg = `rgba(255,107,107,${(0.12 + ((50 - rate) / 50) * 0.88).toFixed(2)})`;
+                    }
+                    tip = i18n[currentLang].wtt_heatmap_cell_rate
+                        .replace('{winner}', row).replace('{loser}', col).replace('{r}', rate.toFixed(1)).replace('{n}', meets)
+                        + ` | ${i18n[currentLang].wtt_win || i18n[currentLang].data_viz_win}: ${wins} | ${i18n[currentLang].wtt_loss}: ${losses}`;
+                }
+            } else {
+                const alpha = wins / maxWins;
+                bg = wins > 0 ? `rgba(77,163,255,${(0.12 + alpha * 0.88).toFixed(2)})` : 'rgba(128,128,128,0.06)';
+                text = wins;
+                tip = i18n[currentLang].wtt_heatmap_cell
+                    .replace('{winner}', row).replace('{loser}', col).replace('{n}', wins)
+                    + ` | ${i18n[currentLang].wtt_loss}: ${losses} | ${i18n[currentLang].wtt_total}: ${meets}`;
+            }
+            body += `<td class="h2h-cell" data-row="${escapeHtml(row)}" data-col="${escapeHtml(col)}" style="background:${bg};" title="${escapeHtml(tip)}">${text}</td>`;
         });
         body += '</tr>';
     });
 
     // 颜色说明
-    const legend = `<div class="h2h-legend"><span class="h2h-legend-label">${escapeHtml(i18n[currentLang].wtt_heatmap_hint)}</span>` +
-        `<span class="h2h-legend-bar"><i style="background:rgba(128,128,128,0.06);"></i><i style="background:rgba(77,163,255,0.3);"></i><i style="background:rgba(77,163,255,0.6);"></i><i style="background:rgba(77,163,255,0.9);"></i><b>${maxWins}</b></span></div>`;
+    const legend = rateMode
+        ? `<div class="h2h-legend"><span class="h2h-legend-label">${escapeHtml(i18n[currentLang].wtt_heatmap_hint_rate)}</span>` +
+          `<span class="h2h-legend-bar"><b style="margin-left:0;margin-right:4px;">0%</b><i style="background:rgba(255,107,107,0.9);"></i><i style="background:rgba(255,107,107,0.35);"></i><i style="background:rgba(128,128,128,0.10);"></i><i style="background:rgba(77,163,255,0.35);"></i><i style="background:rgba(77,163,255,0.9);"></i><b>100%</b></span></div>`
+        : `<div class="h2h-legend"><span class="h2h-legend-label">${escapeHtml(i18n[currentLang].wtt_heatmap_hint)}</span>` +
+          `<span class="h2h-legend-bar"><i style="background:rgba(128,128,128,0.06);"></i><i style="background:rgba(77,163,255,0.3);"></i><i style="background:rgba(77,163,255,0.6);"></i><i style="background:rgba(77,163,255,0.9);"></i><b>${maxWins}</b></span></div>`;
 
     container.innerHTML = `<div class="h2h-heatmap-wrapper"><table class="h2h-heatmap-table"><thead><tr><th class="h2h-corner"></th>${header}</tr></thead><tbody>${body}</tbody></table>${legend}</div>`;
 
@@ -1154,7 +1185,7 @@ function wttRenderAssocTrend(assocCodes, dataCount, startDate, endDate) {
                 responsive: true, maintainAspectRatio: false,
                 interaction: { intersect: false, mode: 'index' },
                 plugins: {
-                    legend: { position: 'bottom', labels: { usePointStyle: true, padding: isMobile ? 10 : 16, font: { size: isMobile ? 10 : 11, family: "'Poppins', sans-serif" }, boxWidth: isMobile ? 11 : 12 } },
+                    legend: { position: 'bottom', display: !isMobile, labels: { usePointStyle: true, padding: isMobile ? 10 : 16, font: { size: isMobile ? 10 : 11, family: "'Poppins', sans-serif" }, boxWidth: isMobile ? 11 : 12 } },
                     tooltip: { backgroundColor: 'rgba(26,29,40,0.9)', titleFont: { size: isMobile ? 12 : 13 }, bodyFont: { size: isMobile ? 11 : 12 }, padding: isMobile ? 8 : 12, cornerRadius: 8, itemSort: (a, b) => (b.parsed.y ?? -Infinity) - (a.parsed.y ?? -Infinity), callbacks: { label: ctx => `${ctx.dataset.label}: ${ctx.raw == null ? '-' : ctx.raw.toFixed(1)}` } }
                 },
                 scales: {

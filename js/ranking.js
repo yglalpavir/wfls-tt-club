@@ -146,6 +146,8 @@ async function loadRankingData() {
         renderTimeNodeList();
         updateRankingDisplay();
         setupSortListeners();
+        setupMobileSortControls();
+        setupRankTableExport();
     } catch(e) {
         console.error('排名计算失败', e);
         tb.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;color:var(--accent-red);">无法计算排名数据</td></tr>';
@@ -187,8 +189,58 @@ function renderTimeNodeList() { const list = document.getElementById('timeNodeLi
     if (lbl && rankingTimeline[currentTimeIndex]) lbl.textContent = rankingTimeline[currentTimeIndex].label;
 }
 function calculateRankChanges(cd, pd, isInitial) { if (!pd || isInitial) return cd.map((p, i) => ({ ...p, rank: i+1, change: 0, changeType: 'new', pointsChange: 0, pointsChangeType: 'new' })); const prm = {}, ppm = {}; pd.forEach((p, i) => { prm[p['姓名']] = i+1; ppm[p['姓名']] = p['当前积分'] || 0; }); return cd.map((p, i) => { const cr = i+1, pr = prm[p['姓名']], pp = ppm[p['姓名']], cp = p['当前积分'] || 0; let rc = 0, rct = 'new'; if (pr === undefined) rct = 'new'; else { rc = pr - cr; if (rc > 0) rct = 'up'; else if (rc < 0) rct = 'down'; else rct = 'same'; } let pc = 0, pct = 'new'; if (pp === undefined) pct = 'new'; else { pc = cp - pp; if (pc > 0.05) pct = 'up'; else if (pc < -0.05) pct = 'down'; else pct = 'same'; } return { ...p, rank: cr, change: rc, changeType: rct, pointsChange: pc, pointsChangeType: pct }; }); }
-function updateRankingDisplay() { if (!rankingTimeline.length || !rankingTimeline[currentTimeIndex]) return; const cn = rankingTimeline[currentTimeIndex], pn = currentTimeIndex > 0 ? rankingTimeline[currentTimeIndex-1] : null; currentDisplayData = calculateRankChanges(cn.data, pn ? pn.data : null, cn.isInitial); currentDisplayData = sortDisplayData(currentSortKey, currentSortDir); renderRankingTable(currentDisplayData); const ind = document.getElementById('sortIndicator'); if (ind) ind.textContent = `${currentSortKey}${currentSortDir==='desc'?'降序':'升序'}`; updateSortHeaderHighlight(); const lbl = document.getElementById('currentTimeLabel'); if (lbl) lbl.textContent = cn.label; }
+function updateRankingDisplay() { if (!rankingTimeline.length || !rankingTimeline[currentTimeIndex]) return; const cn = rankingTimeline[currentTimeIndex], pn = currentTimeIndex > 0 ? rankingTimeline[currentTimeIndex-1] : null; currentDisplayData = calculateRankChanges(cn.data, pn ? pn.data : null, cn.isInitial); currentDisplayData = sortDisplayData(currentSortKey, currentSortDir); renderRankingTable(currentDisplayData); const ind = document.getElementById('sortIndicator'); if (ind) ind.textContent = `${currentSortKey}${currentSortDir==='desc'?'降序':'升序'}`; updateSortHeaderHighlight(); const lbl = document.getElementById('currentTimeLabel'); if (lbl) lbl.textContent = cn.label; syncMobileSortControls(false); }
 function sortDisplayData(key, dir) { return [...currentDisplayData].sort((a, b) => { let va, vb; if (key === '胜率') { va = parseWinRate(a['胜率']); vb = parseWinRate(b['胜率']); } else if (key === '姓名') return dir === 'asc' ? (a['姓名']||'').localeCompare(b['姓名']||'', 'zh') : (b['姓名']||'').localeCompare(a['姓名']||'', 'zh'); else if (key === 'rank') { va = a.rank || 0; vb = b.rank || 0; } else if (key === '变化') { va = a.change || 0; vb = b.change || 0; } else if (key === '积分变化') { va = a.pointsChange || 0; vb = b.pointsChange || 0; } else { va = a[key] || 0; vb = b[key] || 0; } return va < vb ? (dir === 'asc' ? -1 : 1) : va > vb ? (dir === 'asc' ? 1 : -1) : 0; }); }
-function renderRankingTable(data) { const tb = document.getElementById('rankingFullBody'); if (!tb) return; if (!data || !data.length) { tb.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;">暂无排名数据</td></tr>'; return; } tb.innerHTML = ''; const currentSnapshotDate = rankingTimeline[currentTimeIndex]?.time || ''; data.forEach((p, i) => { const tr = document.createElement('tr'); const wr = p['胜率'] || '0%', wd = wr === '#DIV/0!' || wr === '-' ? '0%' : wr; let ch = '', pch = ''; if (p.changeType === 'up') ch = `<span class="rank-change rank-up">▲${Math.abs(p.change)}</span>`; else if (p.changeType === 'down') ch = `<span class="rank-change rank-down">▼${Math.abs(p.change)}</span>`; else if (p.changeType === 'new') ch = '<span class="rank-new">NEW</span>'; else ch = '<span class="rank-same">-</span>'; if (p.pointsChangeType === 'up') pch = `<span class="rank-change rank-up">▲${Math.abs(p.pointsChange).toFixed(1)}</span>`; else if (p.pointsChangeType === 'down') pch = `<span class="rank-change rank-down">▼${Math.abs(p.pointsChange).toFixed(1)}</span>`; else if (p.pointsChangeType === 'new') pch = '<span class="rank-new">NEW</span>'; else pch = '<span class="rank-same">-</span>'; const pn = String(p['姓名'] || '-'); const pnSafe = escapeHtml(pn); const sds = escapeHtml(currentSnapshotDate || ''); const uid = getUidForPlayerName(pn); let nc = pnSafe; if (uid != null) { nc = `<a class="player-name-link" href="player.html?uid=${uid}" title="查看个人数据页">${pnSafe}</a>`; } else if (scoreLogData.length > 0) { nc = `<span class="player-name-link" onclick="showScoreDetail('${pnSafe}','${sds}')" title="点击查看积分明细">${pnSafe}</span>`; } if (scoreLogData.length > 0) nc += ` <button class="score-detail-icon" onclick="showScoreDetail('${pnSafe}','${sds}')" title="积分明细"><i class="fa-solid fa-receipt"></i></button>`; tr.innerHTML = `<td>${i+1}</td><td>${nc}</td><td><strong>${(p['当前积分'] || 0).toFixed(1)}</strong></td><td>${pch}</td><td>${ch}</td><td>${p['总场次'] || 0}</td><td>${wd}</td>`; tb.appendChild(tr); }); }
+function renderRankingTable(data) { const tb = document.getElementById('rankingFullBody'); if (!tb) return; if (!data || !data.length) { tb.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;">暂无排名数据</td></tr>'; return; } tb.innerHTML = ''; const currentSnapshotDate = rankingTimeline[currentTimeIndex]?.time || ''; data.forEach((p, i) => { const tr = document.createElement('tr'); const wr = p['胜率'] || '0%', wd = wr === '#DIV/0!' || wr === '-' ? '0%' : wr; let ch = '', pch = ''; if (p.changeType === 'up') ch = `<span class="rank-change rank-up">▲${Math.abs(p.change)}</span>`; else if (p.changeType === 'down') ch = `<span class="rank-change rank-down">▼${Math.abs(p.change)}</span>`; else if (p.changeType === 'new') ch = '<span class="rank-new">NEW</span>'; else ch = '<span class="rank-same">-</span>'; if (p.pointsChangeType === 'up') pch = `<span class="rank-change rank-up">▲${Math.abs(p.pointsChange).toFixed(1)}</span>`; else if (p.pointsChangeType === 'down') pch = `<span class="rank-change rank-down">▼${Math.abs(p.pointsChange).toFixed(1)}</span>`; else if (p.pointsChangeType === 'new') pch = '<span class="rank-new">NEW</span>'; else pch = '<span class="rank-same">-</span>'; const pn = String(p['姓名'] || '-'); const pnSafe = escapeHtml(pn); const sds = escapeHtml(currentSnapshotDate || ''); const uid = getUidForPlayerName(pn); let nc = pnSafe; if (uid != null) { nc = `<a class="player-name-link" href="player.html?uid=${uid}" title="查看个人数据页">${pnSafe}</a>`; } else if (scoreLogData.length > 0) { nc = `<span class="player-name-link" onclick="showScoreDetail('${pnSafe}','${sds}')" title="点击查看积分明细">${pnSafe}</span>`; } if (scoreLogData.length > 0) nc += ` <button class="score-detail-icon" onclick="showScoreDetail('${pnSafe}','${sds}')" title="积分明细"><i class="fa-solid fa-receipt"></i></button>`; tr.innerHTML = `<td>${i+1}</td><td>${nc}</td><td><strong>${(p['当前积分'] || 0).toFixed(1)}</strong></td><td data-label="${i18n[currentLang].rank_col_points_change}">${pch}</td><td data-label="${i18n[currentLang].rank_col_change}">${ch}</td><td data-label="${i18n[currentLang].rank_col_matches}">${p['总场次'] || 0}</td><td data-label="${i18n[currentLang].rank_col_winrate}">${wd}</td>`; tb.appendChild(tr); }); }
 function updateSortHeaderHighlight() { document.querySelectorAll('.ranking-table-full th.sortable').forEach(th => { th.classList.remove('active-sort'); if (th.getAttribute('data-sort') === currentSortKey) th.classList.add('active-sort'); }); }
-function setupSortListeners() { document.querySelectorAll('.ranking-table-full th.sortable').forEach(th => { const nt = th.cloneNode(true); th.parentNode.replaceChild(nt, th); nt.addEventListener('click', () => { const key = nt.getAttribute('data-sort'); currentSortDir = key === currentSortKey ? (currentSortDir === 'desc' ? 'asc' : 'desc') : 'desc'; currentSortKey = key; currentDisplayData = sortDisplayData(key, currentSortDir); renderRankingTable(currentDisplayData); updateSortHeaderHighlight(); document.querySelectorAll('.ranking-table-full th.sortable').forEach(h => { const a = h.querySelector('.sort-arrow'); if (a) a.innerHTML = ''; }); const ar = nt.querySelector('.sort-arrow'); if (ar) ar.innerHTML = currentSortDir === 'desc' ? '&#9660;' : '&#9650;'; nt.classList.add('active-sort'); document.getElementById('sortIndicator').textContent = `${key}${currentSortDir === 'desc' ? '降序' : '升序'}`; }); }); }
+function setupSortListeners() { document.querySelectorAll('.ranking-table-full th.sortable').forEach(th => { const nt = th.cloneNode(true); th.parentNode.replaceChild(nt, th); nt.addEventListener('click', () => { const key = nt.getAttribute('data-sort'); currentSortDir = key === currentSortKey ? (currentSortDir === 'desc' ? 'asc' : 'desc') : 'desc'; currentSortKey = key; currentDisplayData = sortDisplayData(key, currentSortDir); renderRankingTable(currentDisplayData); updateSortHeaderHighlight(); document.querySelectorAll('.ranking-table-full th.sortable').forEach(h => { const a = h.querySelector('.sort-arrow'); if (a) a.innerHTML = ''; }); const ar = nt.querySelector('.sort-arrow'); if (ar) ar.innerHTML = currentSortDir === 'desc' ? '&#9660;' : '&#9650;'; nt.classList.add('active-sort'); document.getElementById('sortIndicator').textContent = `${key}${currentSortDir === 'desc' ? '降序' : '升序'}`; syncMobileSortControls(false); }); }); }
+
+/* ---- 移动端排序控件（卡片视图下替代表头排序）---- */
+const MOBILE_SORT_KEYS = [['rank', 'rank_col_rank'], ['姓名', 'rank_col_name'], ['当前积分', 'rank_col_points'], ['积分变化', 'rank_col_points_change'], ['变化', 'rank_col_change'], ['总场次', 'rank_col_matches'], ['胜率', 'rank_col_winrate']];
+function syncMobileSortControls(rebuild) {
+    const sel = document.getElementById('mobileSortSelect'), dir = document.getElementById('mobileSortDir');
+    if (!sel || !dir) return;
+    if (rebuild !== false) sel.innerHTML = MOBILE_SORT_KEYS.map(([v, k]) => `<option value="${v}">${i18n[currentLang][k]}</option>`).join('');
+    if ([...sel.options].some(o => o.value === currentSortKey)) sel.value = currentSortKey;
+    dir.innerHTML = currentSortDir === 'desc' ? '&#9660;' : '&#9650;';
+}
+function applyMobileSort() {
+    currentDisplayData = sortDisplayData(currentSortKey, currentSortDir);
+    renderRankingTable(currentDisplayData);
+    updateSortHeaderHighlight();
+    const ind = document.getElementById('sortIndicator');
+    if (ind) ind.textContent = `${currentSortKey}${currentSortDir === 'desc' ? '降序' : '升序'}`;
+}
+function setupMobileSortControls() {
+    const sel = document.getElementById('mobileSortSelect'), dir = document.getElementById('mobileSortDir');
+    if (!sel || !dir) return;
+    syncMobileSortControls();
+    sel.addEventListener('change', () => { currentSortKey = sel.value; applyMobileSort(); syncMobileSortControls(false); });
+    dir.addEventListener('click', () => {
+        currentSortDir = currentSortDir === 'desc' ? 'asc' : 'desc';
+        applyMobileSort();
+        document.querySelectorAll('.ranking-table-full th.sortable .sort-arrow').forEach(a => { a.innerHTML = ''; });
+        const active = document.querySelector(`.ranking-table-full th.sortable[data-sort="${currentSortKey}"]`);
+        if (active) { const ar = active.querySelector('.sort-arrow'); if (ar) ar.innerHTML = currentSortDir === 'desc' ? '&#9660;' : '&#9650;'; }
+        syncMobileSortControls(false);
+    });
+}
+/* ---- 积分数据表导出为图片（跨平台） ---- */
+function setupRankTableExport() {
+    const btn = document.getElementById('exportRankBtn');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+        if (!currentDisplayData || !currentDisplayData.length || !rankingTimeline.length) return;
+        const cn = rankingTimeline[currentTimeIndex];
+        exportRankTableAsImage(currentDisplayData, {
+            title: i18n[currentLang].rank_title,
+            subtitle: `${cn?.label || ''} · ${document.getElementById('sortIndicator')?.textContent || ''}`.replace(/^ · /, ''),
+            filenameBase: 'wfls-points-table'
+        });
+    });
+}
+/* 语言切换时同步下拉文案与卡片标签 */
+if (typeof updateRankingHeaders === 'function') {
+    const _origUpdateRankingHeaders = updateRankingHeaders;
+    updateRankingHeaders = function () { _origUpdateRankingHeaders(); if (typeof currentDisplayData !== 'undefined' && currentDisplayData && currentDisplayData.length && rankingTimeline[currentTimeIndex]) renderRankingTable(currentDisplayData); syncMobileSortControls(); };
+}

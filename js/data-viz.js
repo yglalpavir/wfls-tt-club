@@ -5,7 +5,8 @@
 let pointsTrendChart = null, rankStreamChart = null;
 let dataVizSettings = null;  // 折线图设置（从 data/data_viz-settings.json 加载）
 const CHART_COLORS = ['#4da3ff','#ff6b6b','#52c41a','#f5c542','#ff9f43','#a55eea','#26de81','#fd79a8','#45b7d1','#f78fb3','#3dc1d3','#e66767','#778beb','#f5cd79','#cf6a87','#786fa6','#f8a5c2','#63cdda','#ea8685','#596275'];
-const STREAM_COLORS = ['#4da3ff','#52c41a','#ff9f43','#a55eea','#26de81','#ff6b6b','#45b7d1','#f5c542','#778beb','#fd79a8','#3dc1d3','#f78fb3','#63cdda','#e66767','#f5cd79','#cf6a87','#786fa6','#f8a5c2','#ea8685','#596275'];
+const STREAM_COLORS = ['#4da3ff','#f97316','#2dd4bf','#e11d48','#a78bfa','#84cc16','#22d3ee','#db2777','#4ade80','#d97706','#2563eb','#ff9f43','#0d9488','#fb7185','#7c3aed','#a3e635','#0891b2','#f472b6','#16a34a','#fbbf24'];
+const MOBILE_STREAM_POINTS_MAX = 12;
 
 /**
  * 根据数据点数量从 settings tiers 中匹配最佳参数档位
@@ -75,7 +76,12 @@ function initDataViz() {
         const dp = players.slice(0, Math.min(8, players.length));
         const defaultDataCount = parseInt(document.getElementById('pointsTrendDataCount')?.value) || 20;
         renderPointsTrend(dp, defaultDataCount); 
-        const defaultStreamCount = parseInt(document.getElementById('streamDataCount')?.value) || 20;
+        let defaultStreamCount = parseInt(document.getElementById('streamDataCount')?.value) || 20;
+        if (window.innerWidth <= 768 && defaultStreamCount > MOBILE_STREAM_POINTS_MAX) {
+            defaultStreamCount = MOBILE_STREAM_POINTS_MAX;
+            const scInput = document.getElementById('streamDataCount');
+            if (scInput) scInput.value = String(MOBILE_STREAM_POINTS_MAX);
+        }
         renderRankStream(Math.min(10, players.length), defaultStreamCount);
         
         // 事件监听
@@ -374,6 +380,7 @@ function renderPointsTrend(playerNames, dataCount) {
                 plugins: {
                     legend: {
                         position: 'bottom',
+                        display: !isMobile,
                         labels: { usePointStyle: true, padding: isMobile ? 12 : 20, font: { size: isMobile ? 11 : 12, family: "'Poppins', sans-serif" }, boxWidth: isMobile ? 11 : 12 }
                     },
                     tooltip: { backgroundColor: 'rgba(26,29,40,0.9)', titleFont: { size: isMobile ? 12 : 13 }, bodyFont: { size: isMobile ? 11 : 12 }, padding: isMobile ? 8 : 12, cornerRadius: 8, itemSort: (a, b) => (b.parsed.y ?? -Infinity) - (a.parsed.y ?? -Infinity), callbacks: { label: ctx => `${ctx.dataset.label}: ${ctx.raw.toFixed(1)}` } }
@@ -423,8 +430,8 @@ function renderRankStream(topN, dataCount) {
     const datasets = topPlayers.map((name, idx) => {
         const data = slicedTimeline.map(t => getPlayerRankAtSnapshot(name, t));
         const color = STREAM_COLORS[idx%STREAM_COLORS.length];
-        return { label:name, data, borderColor:color, backgroundColor:color+'25', borderWidth:isMobile?1.5:2, pointRadius:isMobile?2:3, pointHoverRadius:isMobile?4:6, tension:0.4, fill:true, spanGaps:true };
-    }); try { rankStreamChart = new Chart(canvas, { type:'line', data:{labels,datasets}, options:{ responsive:true, maintainAspectRatio:false, interaction:{ intersect:false, mode:'index' }, plugins:{ legend:{ position:'bottom', labels:{ usePointStyle:true, padding:isMobile?10:16, font:{ size:isMobile?10:11, family:"'Poppins', sans-serif" }, color:textColor, boxWidth:isMobile?11:12 } }, tooltip:{ backgroundColor:'rgba(26,29,40,0.9)', titleFont:{ size:isMobile?12:13 }, bodyFont:{ size:isMobile?11:12 }, padding:isMobile?8:12, cornerRadius:8, itemSort:(a,b)=>(a.parsed.y ?? Infinity)-(b.parsed.y ?? Infinity), callbacks:{ label:ctx => `${ctx.dataset.label}: ${i18n[currentLang].data_viz_rank_suffix.replace('{n}', ctx.raw)}` } } }, scales:{ x:{ grid:{ color:'rgba(128,128,128,0.1)' }, ticks:{ font:{ size:isMobile?10:11 }, maxRotation:isMobile?45:0 } }, y:{ reverse:true, min:1, max:topN, grid:{ color:'rgba(128,128,128,0.1)' }, ticks:{ font:{ size:isMobile?10:11 }, stepSize:1 }, title:{ display:true, text:i18n[currentLang].data_viz_axis_rank, font:{ size:isMobile?11:12 } } } } } }); } catch(err) { console.error('排名河流图失败', err); } }
+        return { label:name, data, borderColor:color, backgroundColor:color+'38', borderWidth:isMobile?1.5:2, pointRadius:isMobile?2:3, pointHoverRadius:isMobile?4:6, pointBackgroundColor:color, pointHoverBackgroundColor:color, tension:0.4, fill:idx===0?'origin':'-1', spanGaps:true };
+    }); try { rankStreamChart = new Chart(canvas, { type:'line', data:{labels,datasets}, options:{ responsive:true, maintainAspectRatio:false, interaction:{ intersect:false, mode:'index' }, plugins:{ legend:{ position:'bottom', display:!isMobile, labels:{ usePointStyle:true, padding:isMobile?10:16, font:{ size:isMobile?10:11, family:"'Poppins', sans-serif" }, color:textColor, boxWidth:isMobile?11:12 } }, tooltip:{ backgroundColor:'rgba(26,29,40,0.9)', titleFont:{ size:isMobile?12:13 }, bodyFont:{ size:isMobile?11:12 }, padding:isMobile?8:12, cornerRadius:8, itemSort:(a,b)=>(a.parsed.y ?? Infinity)-(b.parsed.y ?? Infinity), callbacks:{ label:ctx => `${ctx.dataset.label}: ${i18n[currentLang].data_viz_rank_suffix.replace('{n}', ctx.raw)}` } } }, scales:{ x:{ grid:{ color:'rgba(128,128,128,0.1)' }, ticks:{ font:{ size:isMobile?10:11 }, maxRotation:isMobile?45:0 } }, y:{ reverse:true, min:1, max:topN, grid:{ color:'rgba(128,128,128,0.1)' }, ticks:{ font:{ size:isMobile?10:11 }, stepSize:1 }, title:{ display:true, text:i18n[currentLang].data_viz_axis_rank, font:{ size:isMobile?11:12 } } } } } }); } catch(err) { console.error('排名河流图失败', err); } }
 
 // 计算球员近期状态分（最近10场比赛的积分变化总和）
 function calcFormScore(playerName) {

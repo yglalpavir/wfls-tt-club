@@ -67,6 +67,7 @@
     <!-- 左侧定位条 -->
     <nav class="side-nav" id="sideNav">
         <ul class="side-nav-list">
+            <li class="side-nav-item"><a href="#viz-race" class="side-nav-link" data-section="viz-race" data-i18n="data_viz_race_title">排名动态竞速 Top 15</a></li>
             <li class="side-nav-item"><a href="#viz-points" class="side-nav-link active" data-section="viz-points" data-i18n="data_viz_points_trend">积分趋势</a></li>
             <li class="side-nav-item"><a href="#viz-stream" class="side-nav-link" data-section="viz-stream" data-i18n="data_viz_rank_stream">排名变化河流图</a></li>
             <li class="side-nav-item"><a href="#viz-compare" class="side-nav-link" data-section="viz-compare" data-i18n="data_viz_player_compare">球员对比</a></li>
@@ -80,6 +81,34 @@
 
     <section class="section viz-main-section">
         <div class="container">
+            <div class="viz-section-header" id="viz-race">
+                <span class="section-tag">Bar Chart Race</span>
+                <h2 class="section-title" data-i18n="data_viz_race_title">排名动态竞速 Top 15</h2>
+                <p class="viz-race-hint" data-i18n="data_viz_race_hint">拖动滑块或播放，查看排名随时间变化</p>
+            </div>
+            <div class="viz-race-stage glass-card">
+                <div class="viz-race-clock" id="clubRaceDateLabel"></div>
+                <div class="viz-bar-race-wrap">
+                    <div id="clubBarRaceContainer" class="viz-bar-race"></div>
+                    <div class="bar-race-scale" id="clubRaceScaleLabel"></div>
+                </div>
+            </div>
+            <div class="viz-race-controls">
+                <button class="btn btn-sm btn-primary" id="clubRacePlayBtn" aria-label="播放/暂停">
+                    <i class="fa-solid fa-play"></i> <span data-i18n="data_viz_race_play">播放</span>
+                </button>
+                <input type="range" id="clubRaceSlider" class="viz-race-slider" min="0" max="0" value="0" step="1">
+                <label class="viz-race-speed">
+                    <span data-i18n="data_viz_race_speed">速度</span>
+                    <select id="clubRaceSpeedSelect">
+                        <option value="0.5">0.5×</option>
+                        <option value="1" selected>1×</option>
+                        <option value="1.5">1.5×</option>
+                        <option value="2">2×</option>
+                    </select>
+                </label>
+            </div>
+
             <div class="viz-section-header" id="viz-points">
                 <span class="section-tag">Line Chart</span>
                 <h2 class="section-title" data-i18n="data_viz_points_trend">积分趋势</h2>
@@ -177,6 +206,13 @@
                     <input type="number" id="heatmapTopN" value="8" min="2" max="20" data-i18n-title="data_viz_topn_select_title">
                     <span data-i18n="data_viz_top_n_suffix">名球员</span>
                 </div>
+                <div class="viz-topn-selector" style="margin-left:16px;">
+                    <span data-i18n="data_viz_heatmap_mode">显示模式</span>
+                    <select id="heatmapModeSelect">
+                        <option value="wins" selected data-i18n="data_viz_heatmap_mode_wins">胜场数</option>
+                        <option value="rate" data-i18n="data_viz_heatmap_mode_rate">胜率</option>
+                    </select>
+                </div>
             </div>
             <div class="viz-chart-container glass-card" id="h2hHeatmapContainer" style="min-height:400px;">
                 <div class="compare-placeholder"><i class="fa-solid fa-border-all"></i><p data-i18n="data_viz_no_data">暂无数据</p></div>
@@ -245,6 +281,7 @@
     <script src="js/score-engine.js"></script>
     <script src="js/data-viz.js"></script>
     <script src="js/data-viz-extra.js"></script>
+    <script src="js/club_race.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

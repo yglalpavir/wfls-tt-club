@@ -62,12 +62,11 @@
             margin-bottom: 18px;
         }
         /* 前三名奖牌配色（与全站排名表一致）；本表每协会含隐藏明细行，
-           nth-child 会错位，故用显式类标注并抵消通用规则对明细行的影响 */
-        table.ranking-table tr.wta-rank-1 td:first-child { color: var(--accent-gold); font-weight: 700; font-size: 1.1rem; }
-        table.ranking-table tr.wta-rank-2 td:first-child { color: #8899aa; font-weight: 700; }
-        table.ranking-table tr.wta-rank-3 td:first-child { color: #b87351; font-weight: 700; }
-        table.ranking-table tr.wta-detail-row > td:first-child { color: inherit; }
-        table.ranking-table tbody tr.main-row td:first-child { color: var(--text-primary); }
+           style.css 的 nth-child 规则会错位，故按显式类标注（ID 选择器确保覆盖） */
+        #wttAssocRankBody tr.wta-rank-1 td:first-child { color: var(--accent-gold); font-weight: 700; font-size: 1.1rem; }
+        #wttAssocRankBody tr.wta-rank-2 td:first-child { color: #8899aa; font-weight: 700; }
+        #wttAssocRankBody tr.wta-rank-3 td:first-child { color: #b87351; font-weight: 700; }
+        #wttAssocRankBody tr.wta-detail-row > td { color: var(--text-primary); font-weight: 400; font-size: 1rem; }
         .wta-table-card { padding: 6px 14px 14px; }
         .wta-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
         .wta-table-wrap table { min-width: 780px; }
@@ -159,6 +158,8 @@
             .assoc-stat-value { font-size: 1.25rem; }
             .wta-table-card { padding: 4px 8px 10px; }
             table.wta-matrix th, table.wta-matrix td { width: 52px; min-width: 52px; height: 34px; font-size: 0.68rem; }
+            /* 抵消全站移动端首列冻结对整行明细单元格的影响 */
+            #wttAssocRankBody tr.wta-detail-row > td { position: static; background: var(--bg-lighter); box-shadow: none; }
         }
     </style>
 </head>

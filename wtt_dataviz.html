@@ -181,6 +181,13 @@
                     <input type="number" id="wttHeatmapTopN" value="8" min="2" max="20" title="填写2-20的任意正整数">
                     <span data-i18n="wtt_players">名球员</span>
                 </div>
+                <div class="viz-topn-selector" style="margin-left:16px;">
+                    <span data-i18n="wtt_heatmap_mode">显示模式</span>
+                    <select id="wttHeatmapModeSelect">
+                        <option value="wins" selected data-i18n="wtt_heatmap_mode_wins">胜场数</option>
+                        <option value="rate" data-i18n="wtt_heatmap_mode_rate">胜率</option>
+                    </select>
+                </div>
             </div>
             <div class="viz-chart-container glass-card" id="wttH2hHeatmapContainer" style="min-height:400px;">
                 <div class="compare-placeholder"><i class="fa-solid fa-border-all"></i><p data-i18n="wtt_no_data">暂无数据</p></div>

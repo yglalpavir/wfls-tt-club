@@ -356,6 +356,7 @@ function wttUpdateRankingDisplay() {
     wttUpdateSortHeaderHighlight();
     const lbl = document.getElementById('currentTimeLabel');
     if (lbl) lbl.textContent = cn.label;
+    wttSyncMobileSortControls(false);
 }
 
 function wttSortDisplayData(key, dir) {
@@ -410,7 +411,7 @@ function wttRenderRankingTable(data) {
             ? flagHtml + wttLinkPlayerName(pn) + ` <button class="score-detail-icon" onclick="wttShowScoreDetail('${pnSafe}','${sds}')" title="${escapeHtml(i18n[currentLang].wtt_click_detail)}"><i class="fa-solid fa-receipt"></i></button>`
             : flagHtml + pnSafe;
 
-        tr.innerHTML = `<td>${i + 1}</td><td>${nc}</td><td><strong>${(p['当前积分'] || 0).toFixed(1)}</strong></td><td>${pch}</td><td>${ch}</td><td>${p['总场次'] || 0}</td><td>${wd}</td>`;
+        tr.innerHTML = `<td>${i + 1}</td><td>${nc}</td><td><strong>${(p['当前积分'] || 0).toFixed(1)}</strong></td><td data-label="${i18n[currentLang].rank_col_points_change}">${pch}</td><td data-label="${i18n[currentLang].rank_col_change}">${ch}</td><td data-label="${i18n[currentLang].rank_col_matches}">${p['总场次'] || 0}</td><td data-label="${i18n[currentLang].rank_col_winrate}">${wd}</td>`;
         tb.appendChild(tr);
     });
 }
@@ -442,7 +443,39 @@ function wttSetupSortListeners() {
             nt.classList.add('active-sort');
             const ind = document.getElementById('sortIndicator');
             if (ind) ind.textContent = `${wttSortKeyLabel(key)}${wttCurrentSortDir === 'desc' ? i18n[currentLang].sort_desc : i18n[currentLang].sort_asc}`;
+            wttSyncMobileSortControls(false);
         });
+    });
+}
+
+/* ---- 移动端排序控件（卡片视图下替代表头排序）---- */
+const WTT_MOBILE_SORT_KEYS = [['rank', 'rank_col_rank'], ['姓名', 'rank_col_name'], ['当前积分', 'rank_col_points'], ['积分变化', 'rank_col_points_change'], ['变化', 'rank_col_change'], ['总场次', 'rank_col_matches'], ['胜率', 'rank_col_winrate']];
+function wttSyncMobileSortControls(rebuild) {
+    const sel = document.getElementById('mobileSortSelect'), dir = document.getElementById('mobileSortDir');
+    if (!sel || !dir) return;
+    if (rebuild !== false) sel.innerHTML = WTT_MOBILE_SORT_KEYS.map(([v, k]) => `<option value="${v}">${i18n[currentLang][k]}</option>`).join('');
+    if ([...sel.options].some(o => o.value === wttCurrentSortKey)) sel.value = wttCurrentSortKey;
+    dir.innerHTML = wttCurrentSortDir === 'desc' ? '&#9660;' : '&#9650;';
+}
+function wttApplyMobileSort() {
+    wttCurrentDisplayData = wttSortDisplayData(wttCurrentSortKey, wttCurrentSortDir);
+    wttRenderRankingTable(wttCurrentDisplayData);
+    wttUpdateSortHeaderHighlight();
+    const ind = document.getElementById('sortIndicator');
+    if (ind) ind.textContent = `${wttSortKeyLabel(wttCurrentSortKey)}${wttCurrentSortDir === 'desc' ? i18n[currentLang].sort_desc : i18n[currentLang].sort_asc}`;
+}
+function wttSetupMobileSortControls() {
+    const sel = document.getElementById('mobileSortSelect'), dir = document.getElementById('mobileSortDir');
+    if (!sel || !dir) return;
+    wttSyncMobileSortControls();
+    sel.addEventListener('change', () => { wttCurrentSortKey = sel.value; wttApplyMobileSort(); wttSyncMobileSortControls(false); });
+    dir.addEventListener('click', () => {
+        wttCurrentSortDir = wttCurrentSortDir === 'desc' ? 'asc' : 'desc';
+        wttApplyMobileSort();
+        document.querySelectorAll('.ranking-table-full th.sortable .sort-arrow').forEach(a => { a.innerHTML = ''; });
+        const active = document.querySelector(`.ranking-table-full th.sortable[data-sort="${wttCurrentSortKey}"]`);
+        if (active) { const ar = active.querySelector('.sort-arrow'); if (ar) ar.innerHTML = wttCurrentSortDir === 'desc' ? '&#9660;' : '&#9650;'; }
+        wttSyncMobileSortControls(false);
     });
 }
 
@@ -462,6 +495,19 @@ function wttInitRankingPage() {
         if (e.key === 'Escape' && scoreDetailModal && scoreDetailModal.classList.contains('active')) {
             closeModal(scoreDetailModal);
         }
+    });
+
+    wttSetupMobileSortControls();
+
+    const exportBtn = document.getElementById('exportRankBtn');
+    if (exportBtn) exportBtn.addEventListener('click', () => {
+        if (!wttCurrentDisplayData || !wttCurrentDisplayData.length || !wttRankingTimeline.length) return;
+        const cn = wttRankingTimeline[wttCurrentTimeIndex];
+        exportRankTableAsImage(wttCurrentDisplayData, {
+            title: i18n[currentLang].wtt_table_title,
+            subtitle: `${cn?.label || ''} · ${i18n[currentLang].rank_sort_hint}${wttSortKeyLabel(wttCurrentSortKey)}${wttCurrentSortDir === 'desc' ? i18n[currentLang].sort_desc : i18n[currentLang].sort_asc}`,
+            filenameBase: 'wtt-points-table'
+        });
     });
 
     wttLoadRankingData();

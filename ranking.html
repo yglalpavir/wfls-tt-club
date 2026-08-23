@@ -75,7 +75,7 @@
                 </aside>
                 
                 <div class="ranking-content">
-                    <div class="section-header" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+                    <div class="section-header" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:24px;">
                         <div>
                             <span class="section-tag" data-i18n="rank_tag">Data Table</span>
                             <h2 class="section-title" data-i18n="rank_title">积分数据表</h2>
@@ -89,6 +89,11 @@
                     <div class="ranking-controls">
                         <span class="sort-hint"><span data-i18n="rank_sort_hint">当前排序：</span><strong id="sortIndicator">积分降序</strong></span>
                         <span class="update-info" id="currentTimeLabel">加载中...</span>
+                        <button type="button" class="table-export-btn" id="exportRankBtn"><i class="fa-solid fa-image"></i><span data-i18n="rank_export_btn">导出图片</span></button>
+                        <div class="mobile-sort-bar">
+                            <select class="mobile-sort-select" id="mobileSortSelect" aria-label="排序字段"></select>
+                            <button type="button" class="mobile-sort-dir" id="mobileSortDir" aria-label="切换升序/降序">&#9660;</button>
+                        </div>
                     </div>
                     
                     <div class="ranking-full-table-wrapper glass-card">

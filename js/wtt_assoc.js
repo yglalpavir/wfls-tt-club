@@ -339,10 +339,11 @@ function wtaRenderRankingTable() {
         const inTop = a.players.filter(p => (rankMap.get(p.name) || Infinity) <= topLimit).length;
         const leader = a.top5[0];
         const leaderHtml = leader
-            ? `${escapeHtml(wtaShorten(leader.name))}<span class="rank-same" style="margin-left:6px;">${leader.score.toFixed(1)}</span>`
+            ? `${wttLinkPlayerName(wtaShorten(leader.name))}<span class="rank-same" style="margin-left:6px;">${leader.score.toFixed(1)}</span>`
             : '<span class="rank-same">-</span>';
+        const medalCls = i < 3 ? ` wta-rank-${i + 1}` : '';
         return `
-        <tr class="main-row" data-assoc="${escapeHtml(a.assoc)}">
+        <tr class="main-row${medalCls}" data-assoc="${escapeHtml(a.assoc)}">
             <td>${i + 1}</td>
             <td style="text-align:left;">${wtaFlagSpan(a.assoc, a.assoc)}<strong>${escapeHtml(a.country)}</strong> <span class="rank-same">${escapeHtml(a.assoc)}</span></td>
             <td><strong>${a.score.toFixed(1)}</strong></td>
