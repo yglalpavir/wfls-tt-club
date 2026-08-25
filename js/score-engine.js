@@ -10,18 +10,32 @@ function getBaseScore(gap) { const ag = Math.abs(gap); if (gap >= 0) { if (ag <=
 let DECAY_HALF_LIFE_DAYS = 180;
 // ===== 赛制系数（bo3/bo5/bo7，仅社团积分生效；WTT 模式恒为 1）=====
 // 由 event-coefficient.json 的保留键解析：
-//   "赛制系数": { "bo3": 0.8, "bo5": 1.1, "bo7": 1.5 }  —— 全局统一倍率
-//   "默认赛制": { "普通": "bo3", ... }                  —— 各类型 default 对应的赛制映射
-let matchFormats = null;        // { bo3: 0.8, ... } 或 null（未配置）
+//   "赛制系数": {
+//       "bo3": 0.8, "bo5": 1.1, "bo7": 1.5,   —— 数值条目：全局统一倍率（兜底）
+//       "普通": { "bo3": 0.7, "bo5": 1.2 }     —— 对象条目：该赛事类型专属倍率表，
+//                                                仅覆盖列出的赛制，未列出的回退全局
+//   }
+//   "默认赛制": { "普通": "bo3", ... }         —— 各类型 default 对应的赛制映射
+let matchFormats = null;        // { bo3: 0.8, ... } 全局统一倍率，或 null（未配置）
+let typeFormatCoeffs = null;    // { 类型: { bo3: x, ... } } 类型专属倍率表，或 null（未配置）
 let typeDefaultFormats = null;  // { 类型: 'bo3', ... } 或 null（未配置）
 function parseFormatConfig(cfg) {
-    matchFormats = null; typeDefaultFormats = null;
+    matchFormats = null; typeFormatCoeffs = null; typeDefaultFormats = null;
     if (!cfg || typeof cfg !== 'object') return;
     const f = cfg['赛制系数'];
     if (f && typeof f === 'object' && !Array.isArray(f)) {
-        const m = {};
-        for (const k in f) if (typeof f[k] === 'number' && isFinite(f[k]) && f[k] > 0) m[String(k).toLowerCase()] = f[k];
+        const m = {}, tm = {};
+        for (const k in f) {
+            const v = f[k];
+            if (typeof v === 'number' && isFinite(v) && v > 0) m[String(k).toLowerCase()] = v;
+            else if (v && typeof v === 'object' && !Array.isArray(v)) {
+                const t = {}; let has = false;
+                for (const fk in v) if (typeof v[fk] === 'number' && isFinite(v[fk]) && v[fk] > 0) { t[String(fk).toLowerCase()] = v[fk]; has = true; }
+                if (has) tm[k] = t;
+            }
+        }
         if (Object.keys(m).length) matchFormats = m;
+        if (Object.keys(tm).length) typeFormatCoeffs = tm;
     }
     const d = cfg['默认赛制'];
     if (d && typeof d === 'object' && !Array.isArray(d)) {
@@ -31,9 +45,10 @@ function parseFormatConfig(cfg) {
     }
 }
 /**
- * 计算某场比赛的赛制倍率：
- * - 显式赛制（如 bo3/bo5/bo7）：直接取「赛制系数」中的全局统一倍率；未登记取值按 1。
- * - 缺省 / "default"：查「默认赛制」中该类型的映射再取系数；未配置映射按 1。
+ * 计算某场比赛的赛制倍率（优先级：类型专属 > 全局统一 > 1）：
+ * - 显式赛制（如 bo3/bo5/bo7）：先查该类型在「赛制系数」中的专属对象条目，
+ *   未命中再查全局数值条目；都未登记按 1。
+ * - 缺省 / "default"：先经「默认赛制」映射到具体赛制，再按上述规则取倍率。
  * - WTT 模式（SCORE_TIME_DECAY_ENABLED=false）恒为 1，不影响 WTT 积分。
  */
 function getFormatMultiplier(eventType, matchFormat) {
@@ -44,7 +59,9 @@ function getFormatMultiplier(eventType, matchFormat) {
         f = typeDefaultFormats[eventType];
         if (!f || f === 'default') return 1;
     }
-    const mult = matchFormats ? matchFormats[f] : undefined;
+    const t = typeFormatCoeffs ? typeFormatCoeffs[eventType] : null;
+    if (t && typeof t[f] === 'number' && t[f] > 0) return t[f];   // 类型专属倍率
+    const mult = matchFormats ? matchFormats[f] : undefined;      // 全局统一倍率兜底
     return (typeof mult === 'number' && mult > 0) ? mult : 1;
 }
 function getEventCoefficient(et) { if (!eventCoefficients) return 0.2; const v = eventCoefficients[et]; return (typeof v === 'number') ? v : 0.2; }

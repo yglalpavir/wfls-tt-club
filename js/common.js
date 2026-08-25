@@ -691,7 +691,7 @@ function linkPlayerName(name) {
 // 名称规范化：按 players.json（含别名）把赛果中的名字归一到规范名
 function normalizePlayerName(raw) { if (raw == null) return raw; const p = nameIndex[raw]; return p && p.name ? p.name : raw; }
 function normalizeScoreLog(log) { if (!Array.isArray(log)) return log; for (const r of log) { if (r['胜者']) r['胜者'] = normalizePlayerName(r['胜者']); if (r['负者']) r['负者'] = normalizePlayerName(r['负者']); if (r['对象']) r['对象'] = normalizePlayerName(r['对象']); } return log; }
-let _newsLoadSettled = false, _compLoadSettled = false, _detailRetryCount = 0;
+let _newsLoadSettled = false, _compLoadSettled = false, _detailRetryCount = 0, _detailLastSig = '';
 function markContentLoaded(which) {
     if (which === 'news') _newsLoadSettled = true;
     else if (which === 'competition') _compLoadSettled = true;
@@ -793,6 +793,8 @@ async function updateDetailPage() {
         return;
     }
     if (Array.isArray(hist) && hist.length) item.history = hist;
+    // 兜底：数据文件缺失 id 时用 URL 参数回填，保证历史快照/赛程等依赖 item.id 的功能可用
+    if (item && item.id == null) item.id = id;
     detailState = { type, item };
     await renderDetailItem(type, item);
 }
