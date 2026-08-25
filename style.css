@@ -833,6 +833,8 @@ html:lang(en) .hero-title {
 .competitions-page-hero { background: linear-gradient(135deg, #0a1628 0%, #1a0505 50%, #0d2a45 100%); }
 .dark-mode .competitions-page-hero { background: linear-gradient(135deg, #0d1117 0%, #1a1010 50%, #161b22 100%); }
 .detail-page-hero { background: linear-gradient(135deg, #0a1628 0%, #112233 100%); }
+/* 详情页 hero 不裁剪溢出：版本下拉菜单需伸出 hero 底边（背景为纯渐变，无溢出副作用） */
+.detail-page-hero { overflow: visible; }
 .dark-mode .detail-page-hero { background: linear-gradient(135deg, #0d1117 0%, #161b22 100%); }
 .viz-page-hero { background: linear-gradient(135deg, #0a1628 0%, #0d1f35 40%, #0f2b4a 70%, #0a1e3d 100%); }
 .dark-mode .viz-page-hero { background: linear-gradient(135deg, #0d1117 0%, #111d2b 40%, #161b22 70%, #0d1117 100%); }
