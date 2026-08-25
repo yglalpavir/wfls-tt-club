@@ -164,14 +164,16 @@ function clubRenderRaceAxis(axisEl, minScore, maxScore) {
 }
 
 // 根据当前显示分数排序并定位所有行（每帧调用，直接设置 transform/width，无 CSS 过渡）
+// 升入行从榜单底端之外上滑入场；离场行从原位向下滑过底端后移除（层级压低避免与活跃行交叠突兀）
 function clubRenderRacePositions() {
     const container = document.getElementById('clubBarRaceContainer');
     if (!container) return;
 
-    const active = Array.from(clubBarRace.rowMap.values()).filter(st => !st.leaving);
+    const rowH = clubBarRace.rowHeight || 32;
+    const all = Array.from(clubBarRace.rowMap.values());
+    const active = all.filter(st => !st.leaving);
     active.sort((a, b) => b.score - a.score);
 
-    const rowH = clubBarRace.rowHeight || 32;
     container.style.height = (active.length * rowH) + 'px';
 
     const minScore = active.length ? active[active.length - 1].score : 0;
@@ -182,18 +184,36 @@ function clubRenderRacePositions() {
         else axisEl.innerHTML = '';
     }
 
-    active.forEach((st, i) => {
-        const offset = st.enterOffset || 0;
-        st.row.style.transform = 'translateY(' + ((i + offset) * rowH) + 'px)';
+    const exitBaseY = (active.length + 1) * rowH;
+    for (const st of all) {
+        if (!st.leaving) continue;
+        const startY = st.exitStartY != null ? st.exitStartY : (st.lastY != null ? st.lastY : exitBaseY);
+        const targetY = Math.max(startY, exitBaseY);
+        const t = st.exitProgress * st.exitProgress; // ease-in，模拟下坠加速
+        const y = startY + (targetY - startY) * t;
+        st.lastY = y;
+        st.row.style.transform = 'translateY(' + y + 'px)';
         st.row.style.opacity = st.opacity;
-        clubUpdateRaceRow(st.row, { name: st.name, score: st.score }, i, maxScore, minScore);
-    });
+        st.row.style.zIndex = '1';
+    }
+
+    let rankIndex = 0;
+    for (const st of active) {
+        const offset = st.enterOffset || 0;
+        const y = (rankIndex + offset) * rowH;
+        st.lastY = y;
+        st.row.style.transform = 'translateY(' + y + 'px)';
+        st.row.style.opacity = st.opacity;
+        st.row.style.zIndex = '2';
+        clubUpdateRaceRow(st.row, { name: st.name, score: st.score }, rankIndex, maxScore, minScore);
+        rankIndex++;
+    }
 }
 
-// 移除已经淡出的离场行
+// 移除已经滑出榜单底端的离场行
 function clubRaceRemoveLeftovers() {
     for (const [name, st] of Array.from(clubBarRace.rowMap)) {
-        if (st.leaving && st.opacity <= 0.01) {
+        if (st.leaving && st.exitProgress >= 1 && st.opacity <= 0.01) {
             st.row.remove();
             clubBarRace.rowMap.delete(name);
         }
@@ -216,10 +236,14 @@ function clubSetRaceFrame(frameIndex, animate = true) {
 
     clubReadRaceRowHeight();
 
+    const rowCount = frame.items.length;
+    const rowH = clubBarRace.rowHeight || 32;
     const activeNames = new Set();
+    let itemIndex = 0;
     for (const item of frame.items) {
         activeNames.add(item.name);
         let st = clubBarRace.rowMap.get(item.name);
+        const wasLeaving = st ? st.leaving : false;
         if (!st) {
             const row = clubCreateRaceRow(item);
             container.appendChild(row);
@@ -230,24 +254,46 @@ function clubSetRaceFrame(frameIndex, animate = true) {
                 targetScore: item.score,
                 opacity: 0,
                 leaving: false,
-                enterOffset: animate ? 1.2 : 0
+                // 从榜单底端之外升入：初始偏移 = 底边到目标槽位的行距（固定时长滑入）
+                enterOffset: animate ? Math.max(1, rowCount - itemIndex) : 0,
+                enterTotal: 0,
+                exitProgress: 0,
+                exitStartY: null,
+                lastY: null
             };
+            st.enterTotal = st.enterOffset;
             clubBarRace.rowMap.set(item.name, st);
+        } else if (wasLeaving) {
+            // 离场途中被重新激活：从当前位置平滑归位，避免瞬移
+            st.exitProgress = 0;
+            st.exitStartY = null;
+            if (animate && st.lastY != null) {
+                st.enterOffset = Math.max(0, st.lastY / rowH - itemIndex);
+            } else {
+                st.enterOffset = 0;
+            }
+            st.enterTotal = st.enterOffset;
         }
         st.targetScore = item.score;
         st.leaving = false;
+        itemIndex++;
     }
 
     for (const [name, st] of clubBarRace.rowMap) {
         if (!activeNames.has(name) && !st.leaving) {
             st.leaving = true;
             st.targetScore = st.score;
+            st.exitProgress = 0;
+            st.exitStartY = st.lastY;   // 从当前所在位置开始下滑
         }
     }
 
     if (!animate) {
         for (const st of clubBarRace.rowMap.values()) {
             st.score = st.targetScore;
+            st.enterOffset = 0;
+            st.enterTotal = 0;
+            st.exitProgress = 1;
             st.opacity = st.leaving ? 0 : 1;
             st.row.style.opacity = st.opacity;
         }
@@ -274,13 +320,15 @@ function clubRaceTick(ts) {
 
     const scoreSmoothing = 1 - Math.exp(-dt / 220);   // 时间常数 ~220ms，分数过渡更绵长顺滑
     const fadeInRate = dt / 180;
-    const fadeOutRate = dt / 220;
+    const fadeOutRate = dt / 300;                     // 与下滑时长同步的轻微淡出
+    const exitStep = dt / 320;                        // 掉出榜单底端的下滑进度
 
     for (const st of clubBarRace.rowMap.values()) {
         if (st.leaving) {
+            st.exitProgress = Math.min(1, st.exitProgress + exitStep);
             st.opacity = Math.max(0, st.opacity - fadeOutRate);
             st.row.style.opacity = st.opacity;
-            if (st.opacity > 0.01) needsAnotherFrame = true;
+            if (st.exitProgress < 1 || st.opacity > 0.01) needsAnotherFrame = true;
         } else {
             if (st.opacity < 1) {
                 st.opacity = Math.min(1, st.opacity + fadeInRate);
@@ -288,7 +336,9 @@ function clubRaceTick(ts) {
                 if (st.opacity < 1) needsAnotherFrame = true;
             }
             if (st.enterOffset > 0) {
-                st.enterOffset = Math.max(0, st.enterOffset - dt / 260);
+                // 固定时长滑入：无论从底端攀爬多少行，入场耗时一致
+                const step = Math.max(1, st.enterTotal) * dt / 360;
+                st.enterOffset = Math.max(0, st.enterOffset - step);
                 needsAnotherFrame = true;
             }
             const diff = st.targetScore - st.score;

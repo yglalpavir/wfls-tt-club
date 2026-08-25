@@ -949,13 +949,11 @@ function computeWttDailyScoreHistory(playerName, sortedLog, startScores) {
     // 🔥 性能重写：
     // 旧实现从球员首秀日起逐日"克隆千人大对象 + 全量重放所有比赛"，O(天数 × 记录数)，
     // 对 ms 类目（2002 年起）约等于上亿次迭代，页面明显卡顿。
-    // 现在：日粒度仅渲染最近 MAX_DAILY_WINDOW_DAYS 天；窗口之前的状态通过一次快进建立；
-    // 窗口内逐日推进时，比赛/加分指针单调前进、赛季指针单调切换（跨赛季时按该赛季继承积分重置后快进）。
-    // 注：窗口内的每日数值与旧算法一致；窗口之前的早期趋势请用"快照/周"粒度查看。
-    const MAX_DAILY_WINDOW_DAYS = 730;
+    // 现在：从首秀日起逐日推进，比赛/加分指针单调前进、赛季指针单调切换
+    // （跨赛季时按该赛季继承积分重置后快进），O(天数 + 记录数)，展示完整历史。
     const endTime = new Date(today + 'T00:00:00').getTime();
     const startTime = new Date(startDate + 'T00:00:00').getTime();
-    const winStartTime = Math.max(startTime, endTime - MAX_DAILY_WINDOW_DAYS * 86400000);
+    const winStartTime = startTime;   // 从首秀日起完整渲染（按日/按周）
 
     let curTime = winStartTime;
     let curDateStr = new Date(curTime).toISOString().slice(0, 10);

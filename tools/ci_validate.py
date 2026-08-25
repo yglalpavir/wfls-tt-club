@@ -107,7 +107,8 @@ if not (baddate or future):
 # ---- 3) 类型白名单 ----
 print("[3] 比赛类型 ∈ event-coefficient.json")
 coeff = load(os.path.join(ROOT, "data", "event-coefficient.json")) or {}
-bad_types = sorted({r.get("类型") for r in scorelog if r.get("胜者") and r.get("类型") not in coeff})
+coeff_types = {k for k, v in coeff.items() if isinstance(v, (int, float))}  # 排除「赛制系数」「默认赛制」等保留键
+bad_types = sorted({r.get("类型") for r in scorelog if r.get("胜者") and r.get("类型") not in coeff_types})
 if bad_types:
     err(f"score-log 中存在未定义系数的类型: {bad_types}")
 else:

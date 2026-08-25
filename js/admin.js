@@ -347,9 +347,9 @@ function computeStats() {
         s.coreInitPlayers = 0;
     }
 
-    // event-coefficient 统计
+    // event-coefficient 统计（仅统计数值型键，排除「赛制系数」「默认赛制」等保留键）
     if (allData.eventCoeff && typeof allData.eventCoeff === "object") {
-        s.coreEventTypes = Object.keys(allData.eventCoeff).length;
+        s.coreEventTypes = Object.keys(allData.eventCoeff).filter(function (k) { return typeof allData.eventCoeff[k] === "number"; }).length;
     } else {
         s.coreEventTypes = 0;
     }

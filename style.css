@@ -1658,7 +1658,7 @@ html:lang(en) .hero-title {
 .viz-race-clock { position: absolute; top: 14px; right: 22px; z-index: 5; font-family: var(--font-en); font-size: 1.9rem; font-weight: 700; color: var(--text-primary); opacity: 0.9; letter-spacing: 0.5px; background: var(--glass-bg); padding: 2px 12px; border-radius: 10px; }
 .viz-race-hint { margin-top: 8px; font-size: 0.8rem; color: var(--text-muted); }
 .viz-bar-race-wrap { width: 100%; max-width: 920px; margin: 0 auto; padding-top: 38px; }
-.viz-bar-race { --bar-race-row-h: 32px; position: relative; width: 100%; height: 0; }
+.viz-bar-race { --bar-race-row-h: 32px; position: relative; width: 100%; height: 0; overflow: hidden; }
 .bar-race-scale { position: relative; height: 26px; margin-top: 8px; margin-left: 238px; margin-right: 84px; font-family: var(--font-en); font-size: 0.7rem; font-weight: 500; color: var(--text-muted); }
 .bar-race-scale::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--border-color); }
 .bar-race-tick { position: absolute; top: 0; transform: translateX(-50%); font-variant-numeric: tabular-nums; white-space: nowrap; }

@@ -279,7 +279,7 @@ function wttRenderTimeNodeList() {
     realtimeNodes.forEach(n => {
         const rli = document.createElement('li');
         rli.className = 'realtime-group';
-        rli.innerHTML = `<div class="realtime-header"><i class="fa-solid fa-clock"></i><span class="realtime-label">${i18n[currentLang].rank_realtime_header}</span></div><ul class="season-node-list"><li class="time-node-item realtime-node" role="button" tabindex="0" ${n.index === wttCurrentTimeIndex ? 'active' : ''}" data-index="${n.index}"><span class="node-dot"></span>${getNodeDisplayLabel(n)}<span class="node-count">${i18n[currentLang].wtt_ppl.replace('{n}', n.data.length)}</span></li></ul>`;
+        rli.innerHTML = `<div class="realtime-header"><i class="fa-solid fa-clock"></i><span class="realtime-label">${i18n[currentLang].rank_realtime_header}</span></div><ul class="season-node-list"><li class="time-node-item realtime-node${n.index === wttCurrentTimeIndex ? ' active' : ''}" role="button" tabindex="0" data-index="${n.index}"><span class="node-dot"></span>${getNodeDisplayLabel(n)}<span class="node-count">${i18n[currentLang].wtt_ppl.replace('{n}', n.data.length)}</span></li></ul>`;
         list.appendChild(rli);
         rli.querySelector('.time-node-item').addEventListener('click', () => {
             wttCurrentTimeIndex = parseInt(rli.querySelector('.time-node-item').getAttribute('data-index'));
@@ -299,7 +299,7 @@ function wttRenderTimeNodeList() {
     Object.entries(seasons).forEach(([season, nodes]) => {
         const sli = document.createElement('li');
         sli.className = 'season-group';
-        sli.innerHTML = `<div class="season-header"><i class="fa-solid fa-chevron-down season-arrow"></i><span class="season-label">${season}</span><span class="season-count">${i18n[currentLang].wtt_node_count.replace('{n}', nodes.length)}</span></div><ul class="season-node-list">${nodes.map(n => `<li class="time-node-item" role="button" tabindex="0" ${n.index === wttCurrentTimeIndex ? 'active' : ''} ${n.isInitial ? 'initial-node' : ''}" data-index="${n.index}"><span class="node-dot"></span>${getNodeDisplayLabel(n)}<span class="node-count">${i18n[currentLang].wtt_ppl.replace('{n}', n.data.length)}</span></li>`).join('')}</ul>`;
+        sli.innerHTML = `<div class="season-header"><i class="fa-solid fa-chevron-down season-arrow"></i><span class="season-label">${season}</span><span class="season-count">${i18n[currentLang].wtt_node_count.replace('{n}', nodes.length)}</span></div><ul class="season-node-list">${nodes.map(n => `<li class="time-node-item${n.index === wttCurrentTimeIndex ? ' active' : ''}${n.isInitial ? ' initial-node' : ''}" role="button" tabindex="0" data-index="${n.index}"><span class="node-dot"></span>${getNodeDisplayLabel(n)}<span class="node-count">${i18n[currentLang].wtt_ppl.replace('{n}', n.data.length)}</span></li>`).join('')}</ul>`;
         list.appendChild(sli);
         sli.querySelector('.season-header').addEventListener('click', () => sli.classList.toggle('collapsed'));
         sli.querySelectorAll('.time-node-item').forEach(item => {

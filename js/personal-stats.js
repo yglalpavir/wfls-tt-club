@@ -376,7 +376,7 @@ function getApproxScoreAtDate(playerName, targetDate, sortedLog, startScores, be
             const w = r['胜者'], l = r['负者'];
             if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE;
             if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
-            const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], sc);
+            const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], sc, r['赛制']);
             sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
             sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * 0.8);
         } else if (isBonusRecord(r)) {
@@ -545,7 +545,7 @@ function renderPersonalStats(playerName, containerId) {
         const w = r['胜者'], l = r['负者'];
         if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
         if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
-        const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], scores);
+        const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], scores, r['赛制']);
         if (w === playerName) {
             oppPointsGained[l] = (oppPointsGained[l] || 0) + wg;
             oppPointsLost[l] = (oppPointsLost[l] || 0) + wg * 0.8;
@@ -786,13 +786,13 @@ function computeDailyScoreHistory(playerName, sortedLog, startScores) {
     const getDecay = (dayDiff) => dayDiff < DECAY_LUT_MAX ? decayLUT[dayDiff] : Math.pow(2, -dayDiff / HALF_LIFE_DAYS);
 
     // ---- 预解析赛事记录和加分记录 ----
-    const matchRecs = [];   // { time, date, winner, loser, type }
+    const matchRecs = [];   // { time, date, winner, loser, type, format }
     const bonusRecs = [];   // { time, date, target, amount }
 
     for (const r of sortedLog) {
         const time = new Date(r['日期'] + 'T00:00:00').getTime();
         if (isMatchRecord(r)) {
-            matchRecs.push({ time, date: r['日期'], winner: r['胜者'], loser: r['负者'], type: r['类型'] });
+            matchRecs.push({ time, date: r['日期'], winner: r['胜者'], loser: r['负者'], type: r['类型'], format: r['赛制'] });
         } else if (isBonusRecord(r)) {
             bonusRecs.push({ time, date: r['日期'], target: r['对象'], amount: parseFloat(r['分数']) || 0 });
         }
@@ -867,7 +867,7 @@ function computeDailyScoreHistory(playerName, sortedLog, startScores) {
             if (sc[l] === undefined) sc[l] = DEFAULT_INITIAL_SCORE;
 
             const base = getBaseScore((sc[w] || DEFAULT_INITIAL_SCORE) - (sc[l] || DEFAULT_INITIAL_SCORE));
-            const coeff = getEventCoefficient(m.type);
+            const coeff = getEventCoefficient(m.type) * getFormatMultiplier(m.type, m.format);
             const tw = getFreezeWeight(w, m.type, m.date, dateStr);
             const wg = base * coeff * tw;
 

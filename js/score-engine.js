@@ -8,7 +8,46 @@ function isBonusRecord(record) { return record['类型'] === '比赛结果加分
 function getBaseScore(gap) { const ag = Math.abs(gap); if (gap >= 0) { if (ag <= 49) return 30; if (ag <= 99) return 24; if (ag <= 149) return 20; if (ag <= 199) return 16; if (ag <= 299) return 12; if (ag <= 399) return 8; return 4; } if (ag <= 49) return 30; if (ag <= 99) return 36; if (ag <= 149) return 42; if (ag <= 199) return 48; if (ag <= 299) return 54; if (ag <= 399) return 60; return 66; }
 // 可配置的时间衰减半衰期 t（单位：天），默认 180，可由 data/decay-config.json 的 "t" 覆盖
 let DECAY_HALF_LIFE_DAYS = 180;
-function getEventCoefficient(et) { if (!eventCoefficients) return 0.2; return eventCoefficients[et] || 0.2; }
+// ===== 赛制系数（bo3/bo5/bo7，仅社团积分生效；WTT 模式恒为 1）=====
+// 由 event-coefficient.json 的保留键解析：
+//   "赛制系数": { "bo3": 0.8, "bo5": 1.1, "bo7": 1.5 }  —— 全局统一倍率
+//   "默认赛制": { "普通": "bo3", ... }                  —— 各类型 default 对应的赛制映射
+let matchFormats = null;        // { bo3: 0.8, ... } 或 null（未配置）
+let typeDefaultFormats = null;  // { 类型: 'bo3', ... } 或 null（未配置）
+function parseFormatConfig(cfg) {
+    matchFormats = null; typeDefaultFormats = null;
+    if (!cfg || typeof cfg !== 'object') return;
+    const f = cfg['赛制系数'];
+    if (f && typeof f === 'object' && !Array.isArray(f)) {
+        const m = {};
+        for (const k in f) if (typeof f[k] === 'number' && isFinite(f[k]) && f[k] > 0) m[String(k).toLowerCase()] = f[k];
+        if (Object.keys(m).length) matchFormats = m;
+    }
+    const d = cfg['默认赛制'];
+    if (d && typeof d === 'object' && !Array.isArray(d)) {
+        const m = {};
+        for (const k in d) if (typeof d[k] === 'string' && d[k]) m[k] = String(d[k]).toLowerCase();
+        if (Object.keys(m).length) typeDefaultFormats = m;
+    }
+}
+/**
+ * 计算某场比赛的赛制倍率：
+ * - 显式赛制（如 bo3/bo5/bo7）：直接取「赛制系数」中的全局统一倍率；未登记取值按 1。
+ * - 缺省 / "default"：查「默认赛制」中该类型的映射再取系数；未配置映射按 1。
+ * - WTT 模式（SCORE_TIME_DECAY_ENABLED=false）恒为 1，不影响 WTT 积分。
+ */
+function getFormatMultiplier(eventType, matchFormat) {
+    if (SCORE_TIME_DECAY_ENABLED === false) return 1;   // WTT / 非衰减模式不启用赛制系数
+    let f = (matchFormat == null || matchFormat === '') ? 'default' : String(matchFormat).trim().toLowerCase();
+    if (f === 'default') {
+        if (!typeDefaultFormats) return 1;
+        f = typeDefaultFormats[eventType];
+        if (!f || f === 'default') return 1;
+    }
+    const mult = matchFormats ? matchFormats[f] : undefined;
+    return (typeof mult === 'number' && mult > 0) ? mult : 1;
+}
+function getEventCoefficient(et) { if (!eventCoefficients) return 0.2; const v = eventCoefficients[et]; return (typeof v === 'number') ? v : 0.2; }
 function getTimeWeight(matchDate, snapshotDate) { const mt = new Date(matchDate + 'T00:00:00').getTime(), st = new Date(snapshotDate + 'T00:00:00').getTime(); const dd = (st - mt) / 86400000; if (dd < 0) return 0; return Math.pow(2, -dd / DECAY_HALF_LIFE_DAYS); }
 
 // ===== 类型刷新·定格衰减：批次索引 =====
@@ -78,16 +117,16 @@ function getFreezeWeight(player, et, matchDate, snapshotDate) {
     return Math.pow(2, -_dayDiffNum(batches[idx].date, freezeDate) / DECAY_HALF_LIFE_DAYS);
 }
 
-function calcMatchPoints(winner, loser, eventType, matchDate, snapshotDate, currentScores) {
+function calcMatchPoints(winner, loser, eventType, matchDate, snapshotDate, currentScores, matchFormat) {
     const wScore = currentScores[winner] || DEFAULT_INITIAL_SCORE, lScore = currentScores[loser] || DEFAULT_INITIAL_SCORE;
     if (SCORE_TIME_DECAY_ENABLED === false) {
-        // WTT / 非衰减模式：维持原语义（权重 1）
+        // WTT / 非衰减模式：维持原语义（权重 1，无赛制系数）
         return getBaseScore(wScore - lScore) * getEventCoefficient(eventType) * getTimeWeight(matchDate, snapshotDate);
     }
-    // 俱乐部模式：类型刷新·定格衰减
-    return getBaseScore(wScore - lScore) * getEventCoefficient(eventType) * getFreezeWeight(winner, eventType, matchDate, snapshotDate);
+    // 俱乐部模式：类型刷新·定格衰减 × 赛制系数
+    return getBaseScore(wScore - lScore) * getEventCoefficient(eventType) * getFormatMultiplier(eventType, matchFormat) * getFreezeWeight(winner, eventType, matchDate, snapshotDate);
 }
-function calcRawPoints(winner, loser, eventType, currentScores) { const wScore = currentScores[winner] || DEFAULT_INITIAL_SCORE, lScore = currentScores[loser] || DEFAULT_INITIAL_SCORE; return getBaseScore(wScore - lScore) * getEventCoefficient(eventType); }
+function calcRawPoints(winner, loser, eventType, currentScores, matchFormat) { const wScore = currentScores[winner] || DEFAULT_INITIAL_SCORE, lScore = currentScores[loser] || DEFAULT_INITIAL_SCORE; return getBaseScore(wScore - lScore) * getEventCoefficient(eventType) * getFormatMultiplier(eventType, matchFormat); }
 
 function getActivePlayers(sortedLog, startDate, endDate) { const ap = new Set(); sortedLog.forEach(r => { if (r['日期'] < startDate || r['日期'] > endDate) return; if (isMatchRecord(r)) { ap.add(r['胜者']); ap.add(r['负者']); } else if (isBonusRecord(r)) { ap.add(r['对象']); } }); return ap; }
 
@@ -243,7 +282,7 @@ function calculateAllRankingsWithSeasons(scoreLog, initialScores, seasons) {
                     const w = r['胜者'], l = r['负者'];
                     if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE;
                     if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
-                    const wg = calcMatchPoints(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? sd : r['日期'], sc);
+                    const wg = calcMatchPoints(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? sd : r['日期'], sc, r['赛制']);
                     sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
                     sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
                 } else if (isBonusRecord(r)) {
@@ -360,7 +399,7 @@ async function calculateAllRankingsWithSeasonsAsync(scoreLog, initialScores, sea
                     const w = r['胜者'], l = r['负者'];
                     if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE;
                     if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
-                    const wg = calcMatchPoints(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? sd : r['日期'], sc);
+                    const wg = calcMatchPoints(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? sd : r['日期'], sc, r['赛制']);
                     sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
                     sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
                 } else if (isBonusRecord(r)) {
@@ -426,7 +465,7 @@ function calculateEndScores(sl, ss, sst, sen) {
             const w = r['胜者'], l = r['负者'];
             if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE;
             if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
-            const wg = calcMatchPoints(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? sen : r['日期'], sc);
+            const wg = calcMatchPoints(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? sen : r['日期'], sc, r['赛制']);
             sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
             sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
         } else if (isBonusRecord(r)) {
@@ -525,7 +564,7 @@ function calculateRealtimeRanking() {
         if (isMatchRecord(r)) {
             const w = r['胜者'], l = r['负者'];
             if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE; if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
-            const wg = calcMatchPoints(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? effectiveEnd : r['日期'], sc);
+                const wg = calcMatchPoints(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? effectiveEnd : r['日期'], sc, r['赛制']);
             sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
             sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
         } else if (isBonusRecord(r)) {
@@ -607,7 +646,7 @@ async function calculateRealtimeRankingAsync(onProgress) {
             if (isMatchRecord(r)) {
                 const w = r['胜者'], l = r['负者'];
                 if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE; if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
-                const wg = calcMatchPoints(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? effectiveEnd : r['日期'], sc);
+            const wg = calcMatchPoints(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? effectiveEnd : r['日期'], sc, r['赛制']);
                 sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
                 sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
             } else if (isBonusRecord(r)) {
@@ -645,7 +684,7 @@ async function loadInitialScores() {
     }
     try { const resp = await fetch('data/_legacy/initial-scores.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); initialScoresData = await resp.json(); return true; } catch(e) { console.error('initial-scores.json 加载失败', e); return false; }
 }
-async function loadEventCoefficients() { try { const resp = await fetch('data/event-coefficient.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); eventCoefficients = await resp.json(); return true; } catch(e) { console.error('event-coefficient.json 加载失败', e); return false; } }
+async function loadEventCoefficients() { try { const resp = await fetch('data/event-coefficient.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); eventCoefficients = await resp.json(); parseFormatConfig(eventCoefficients); return true; } catch(e) { console.error('event-coefficient.json 加载失败', e); return false; } }
 async function loadDecayConfig() { try { const resp = await fetch('data/decay-config.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); decayConfig = await resp.json() || {}; } catch(e) { console.error('decay-config.json 加载失败（使用默认配置）', e); decayConfig = { noDecayTypes: ['校乒赛单打', '校乒赛团体'] }; } if (typeof decayConfig.t === 'number' && decayConfig.t > 0) DECAY_HALF_LIFE_DAYS = decayConfig.t; }
 
 /**

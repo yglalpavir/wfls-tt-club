@@ -454,6 +454,12 @@
                 <div class="se-row" id="seMatchRow">
                     <div><label>日期</label><input type="date" id="seDate"></div>
                     <div><label>类型</label><select id="seType"></select></div>
+                    <div><label>赛制</label><select id="seFormat">
+                        <option value="default">default</option>
+                        <option value="bo3">bo3</option>
+                        <option value="bo5">bo5</option>
+                        <option value="bo7">bo7</option>
+                    </select></div>
                     <div><label>胜者</label><select id="seWinner"></select></div>
                     <div><label>负者</label><select id="seLoser"></select></div>
                     <button type="button" class="se-add" id="seAddMatch">添加记录</button>
@@ -483,7 +489,7 @@
             function fillSelect(sel, arr, placeholder) { sel.innerHTML = '<option value="">' + placeholder + "</option>" + arr.map(function (n) { return '<option value="' + n.replace(/&/g, "&amp;").replace(/"/g, "&quot;") + '">' + n.replace(/&/g, "&amp;").replace(/</g, "&lt;") + "</option>"; }).join(""); }
             function renderQueue() {
                 $("seQueue").innerHTML = queue.map(function (q, i) {
-                    var txt = q["胜者"] ? (q["日期"] + " · " + q["类型"] + " · " + q["胜者"] + " 胜 " + q["负者"]) : (q["日期"] + " · 调整 · " + q["对象"] + " " + q["分数"]);
+                    var txt = q["胜者"] ? (q["日期"] + " · " + q["类型"] + " · 赛制 " + (q["赛制"] || "default") + " · " + q["胜者"] + " 胜 " + q["负者"]) : (q["日期"] + " · 调整 · " + q["对象"] + " " + q["分数"]);
                     return "<li><span>" + txt + '</span><span><a href="#" data-i="' + i + '" style="color:#dc3545;">移除</a></span></li>';
                 }).join("");
                 $("seActions").hidden = !queue.length;
@@ -492,7 +498,7 @@
                 });
             }
             fetch(TYPES_URL).then(function (r) { return r.json(); }).then(function (t) {
-                $("seType").innerHTML = Object.keys(t).map(function (k) { return '<option value="' + k + '">' + k + "</option>"; }).join("");
+                $("seType").innerHTML = Object.keys(t).filter(function (k) { return typeof t[k] === "number"; }).map(function (k) { return '<option value="' + k + '">' + k + "</option>"; }).join("");
             }).catch(function () { msg("赛事系数加载失败", true); });
             fetch(PLAYERS_URL).then(function (r) { return r.json(); }).then(function (p) {
                 players = ((p && p.players) || []).filter(function (x) { return x.name; }).map(function (x) { return x.name; });
@@ -504,7 +510,9 @@
             $("seModeMatch").addEventListener("click", function () { mode = "match"; this.classList.add("active"); $("seModeBonus").classList.remove("active"); $("seMatchRow").style.display = ""; $("seBonusRow").style.display = "none"; });
             $("seModeBonus").addEventListener("click", function () { mode = "bonus"; this.classList.add("active"); $("seModeMatch").classList.remove("active"); $("seBonusRow").style.display = ""; $("seMatchRow").style.display = "none"; });
             $("seAddMatch").addEventListener("click", function () {
-                var rec = { "日期": $("seDate").value, "类型": $("seType").value, "胜者": $("seWinner").value, "负者": $("seLoser").value };
+                var fmt = $("seFormat").value;
+                if (["default", "bo3", "bo5", "bo7"].indexOf(fmt) === -1) return msg("赛制仅支持 default / bo3 / bo5 / bo7", true);
+                var rec = { "日期": $("seDate").value, "类型": $("seType").value, "赛制": fmt, "胜者": $("seWinner").value, "负者": $("seLoser").value };
                 if (!rec["日期"] || !rec["类型"] || !rec["胜者"] || !rec["负者"]) return msg("请完整填写日期 / 类型 / 胜者 / 负者", true);
                 if (rec["胜者"] === rec["负者"]) return msg("胜者与负者不能相同", true);
                 if (!/^\d{4}-\d{2}-\d{2}$/.test(rec["日期"])) return msg("日期格式需为 YYYY-MM-DD", true);
