@@ -232,8 +232,8 @@ async function wtaLoadData() {
 
         // 异步分块计算排名时间线
         setP(wttLoadPhasePct('calc', 0, 1), '', i18n[currentLang].wtt_calculating);
-        wttRankingTimeline = await wttCalculateAllRankingsAsync((current, total, label) => {
-            setP(wttLoadPhasePct('calc', current, total),
+        wttRankingTimeline = await wttCalculateAllRankingsAsync((current, total, label, phase) => {
+            setP(wttLoadPhasePct(phase || 'calc', current, total),
                 (label ? label + ' · ' : '') + i18n[currentLang].wtt_snapshot.replace('{current}', current).replace('{total}', total));
         });
         if (!wttRankingTimeline || !wttRankingTimeline.length) throw new Error('排名计算结果为空');

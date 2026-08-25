@@ -546,6 +546,96 @@ function calculateRealtimeRanking() {
     return { time: today, label: i18n[currentLang].rank_realtime_label, season: activeSeason.label, isInitial: false, isRealtime: true, data: sp };
 }
 
+/**
+ * 异步分块版实时排名计算 — 每 N 条记录 yield 一次，保持 UI 响应
+ * @param {function} [onProgress] - 进度回调 (processed, total)
+ */
+async function calculateRealtimeRankingAsync(onProgress) {
+    if (!scoreLogData || !initialScoresData || !seasonsData || !seasonsData.length) return null;
+    const d = new Date();
+    const today = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+    const sortedLog = [...scoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
+    playerTypeBatches = buildPlayerTypeBatches(sortedLog);
+
+    let activeSeason = null, seasonIndex = -1;
+    for (let i = 0; i < seasonsData.length; i++) {
+        if (today >= seasonsData[i].startDate && today <= seasonsData[i].endDate) {
+            activeSeason = seasonsData[i]; seasonIndex = i; break;
+        }
+    }
+    if (!activeSeason) {
+        activeSeason = seasonsData[seasonsData.length - 1];
+        seasonIndex = seasonsData.length - 1;
+    }
+
+    // 计算赛季起始积分（逐赛季 yield）
+    let currentScores = { ...initialScoresData.initialScores };
+    let seasonStartScores = { ...initialScoresData.initialScores };
+    for (let i = 0; i <= seasonIndex; i++) {
+        const season = seasonsData[i];
+        if (i > 0) {
+            const prevSeason = seasonsData[i - 1];
+            const prevEndScores = calculateEndScores(sortedLog, seasonStartScores, prevSeason.startDate, prevSeason.endDate);
+            const inherited = {};
+            const allPrevRt = new Set([...Object.keys(seasonStartScores), ...Object.keys(prevEndScores)]);
+            for (const n of allPrevRt) { const ss = seasonStartScores[n] || DEFAULT_INITIAL_SCORE; const es = prevEndScores[n] || ss; inherited[n] = ss + (es - ss) * 0.5; }
+            for (const n in initialScoresData.initialScores) { if (!inherited[n]) inherited[n] = initialScoresData.initialScores[n]; }
+            currentScores = inherited; seasonStartScores = { ...inherited };
+        }
+        if (i < seasonIndex) {
+            currentScores = calculateEndScores(sortedLog, currentScores, season.startDate, season.endDate);
+        }
+        if (onProgress && seasonIndex > 1) {
+            onProgress(i + 1, seasonIndex + 1);
+        }
+        await new Promise(r => setTimeout(r, 0));
+    }
+
+    const sc = { ...currentScores };
+    const effectiveEnd = today < activeSeason.startDate ? activeSeason.startDate : today;
+    playerTypeBatches = buildPlayerTypeBatches(sortedLog.filter(r => r['日期'] >= activeSeason.startDate && r['日期'] <= effectiveEnd));
+
+    // 分块处理比赛记录，每块后 yield
+    const totalRecords = sortedLog.length;
+    const chunkSize = Math.max(1000, Math.floor(totalRecords / 10));
+    const totalSteps = 2 + (seasonIndex > 1 ? seasonIndex + 1 : 0);
+    let step = 0;
+
+    for (let i = 0; i < sortedLog.length; i++) {
+        const r = sortedLog[i];
+        if (r['日期'] >= activeSeason.startDate && r['日期'] <= effectiveEnd) {
+            if (isMatchRecord(r)) {
+                const w = r['胜者'], l = r['负者'];
+                if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE; if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
+                const wg = calcMatchPoints(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? effectiveEnd : r['日期'], sc);
+                sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
+                sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
+            } else if (isBonusRecord(r)) {
+                const t = r['对象']; const b = parseFloat(r['分数']) || 0;
+                if (!sc[t]) sc[t] = DEFAULT_INITIAL_SCORE;
+                sc[t] = Math.max(SCORE_FLOOR, sc[t] + b);
+            }
+        }
+        if (onProgress && i > 0 && i % chunkSize === 0) {
+            step++;
+            onProgress(step, totalSteps);
+            await new Promise(r => setTimeout(r, 0));
+        }
+    }
+    if (onProgress) { step++; onProgress(step, totalSteps); }
+    await new Promise(r => setTimeout(r, 0));
+
+    const activeStart = activeSeason.startDate;
+    const sap = getActivePlayers(sortedLog, activeStart, effectiveEnd);
+    const sp = Object.entries(sc).filter(([n]) => sap.size === 0 || sap.has(n)).sort((a, b) => b[1] - a[1]).map(([n, pt]) => ({
+        '姓名': n, '当前积分': Math.round(pt * 10) / 10,
+        '总场次': sortedLog.filter(r => isMatchRecord(r) && r['日期'] >= activeStart && r['日期'] <= effectiveEnd && (r['胜者'] === n || r['负者'] === n)).length,
+        '胜率': (() => { const ms = sortedLog.filter(r => isMatchRecord(r) && r['日期'] >= activeStart && r['日期'] <= effectiveEnd && (r['胜者'] === n || r['负者'] === n)); if (!ms.length) return '0%'; return Math.round((ms.filter(r => r['胜者'] === n).length / ms.length) * 100) + '%'; })()
+    }));
+
+    return { time: today, label: i18n[currentLang].rank_realtime_label, season: activeSeason.label, isInitial: false, isRealtime: true, data: sp };
+}
+
 async function loadInitialScores() {
     if (playersData && Array.isArray(playersData.players)) {
         const is = {};

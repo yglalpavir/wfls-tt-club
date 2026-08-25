@@ -1005,7 +1005,8 @@ async function wttWithDataContextAsync(fn) {
  * 异步分块计算 WTT 排名时间线（🔥 性能优化版）
  * 使用 score-engine.js 的 calculateAllRankingsWithSeasonsAsync
  * 每个快照 yield 到浏览器，保持 UI 流畅响应
- * @param {function} onProgress - 进度回调 (current, total, message)
+ * @param {function} onProgress - 进度回调 (current, total, message, phase)
+ *   phase 为 'calc' 或 'realtime'，调用方据此选择 wttLoadPhasePct 阶段
  */
 async function wttCalculateAllRankingsAsync(onProgress) {
     wttApplyNameNormalization();
@@ -1015,17 +1016,18 @@ async function wttCalculateAllRankingsAsync(onProgress) {
             wttScoreLogData,
             effScores,
             wttSeasonsData,
-            onProgress,
-            1  // 🔥 每个快照后都 yield（之前是 2，导致 UI 长时间冻结）
+            (current, total, label) => {
+                if (onProgress) onProgress(current, total, label, 'calc');
+            },
+            1
         );
-        // 🔥 实时排名计算前先 yield 并报告进度
-        if (onProgress) {
-            const totalSnapshots = wttSeasonsData.reduce((sum, s) => sum + s.snapshotDates.filter(d => d > s.startDate).length, wttSeasonsData.length);
-            onProgress(totalSnapshots + 1, totalSnapshots + 1, '实时积分');
-        }
+        // 实时排名计算前先 yield，让计时器有机会更新
+        if (onProgress) onProgress(0, 1, '实时积分', 'realtime');
         await new Promise(r => setTimeout(r, 0));
-        // 实时排名
-        const rt = calculateRealtimeRanking();
+        // 异步分块实时排名（带进度回调）
+        const rt = await calculateRealtimeRankingAsync((current, total) => {
+            if (onProgress) onProgress(current, total, '实时积分', 'realtime');
+        });
         if (rt) timeline.push(rt);
         return timeline;
     });
@@ -1195,14 +1197,15 @@ function wttSkeletonRowsHtml(rows, cols) {
 /**
  * 统一加载阶段进度映射：
  *   download: done/total ∈ [0,1] → [5%, 40%]
- *   calc:     done/total ∈ [0,1] → [40%, 98%]
- *   realtime: 固定 98%
+ *   calc:     done/total ∈ [0,1] → [40%, 95%]
+ *   realtime: done/total ∈ [0,1] → [95%, 100%]
  */
 function wttLoadPhasePct(phase, done, total) {
     total = Math.max(1, total || 1);
     if (phase === 'download') return 5 + (done / total) * 35;
-    if (phase === 'calc') return 40 + (Math.min(done, total) / total) * 58;
-    return 98;
+    if (phase === 'calc') return 40 + (Math.min(done, total) / total) * 55;
+    if (phase === 'realtime') return 95 + (Math.min(done, total) / total) * 5;
+    return 100;
 }
 
 /**
