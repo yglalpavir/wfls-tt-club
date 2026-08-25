@@ -74,7 +74,7 @@ ws_matches = [
     ("2026-05-17", "LI Yu-Jhun", "Tin-Tin HO"),
     ("2026-05-17", "Natalia BAJOR", "Jieni SHAO"),
     ("2026-05-17", "Asuka SASAO", "LI Yu-Jhun"),
-    ("2026-05-17", "NatalIA BAJOR", "Asuka SASAO"),
+    ("2026-05-17", "Natalia BAJOR", "Asuka SASAO"),
 ]
 
 md_matches = [
@@ -101,7 +101,7 @@ wd_matches = [
     ("2026-05-17", "Victoria STRASSBURGER/Valentina RIOS", "Eva BRITO/Esmerlyn CASTRO"),
     ("2026-05-17", "Rachel MORET/Tin-Tin HO", "Beatriz PINTO/Mariana SANTA"),
     ("2026-05-17", "Elvira RAD/Eugenia SASTRE", "Matilde PINTO/Ines MATOS"),
-    ("2026-05-17", "PENG Yu-Han/CHENG Hsien-Tzu", "NatalIA BAJOR/Katarzyna WEGRZYN"),
+    ("2026-05-17", "PENG Yu-Han/CHENG Hsien-Tzu", "Natalia BAJOR/Katarzyna WEGRZYN"),
     ("2026-05-17", "Veronika MATIUNINA/Anastasiya DYMYTRENKO", "Alexia NODIN/Elinor DAVIDOV"),
     ("2026-05-17", "Asuka SASAO/Kaho AKAE", "Jieni SHAO/Julia LEAL"),
     ("2026-05-18", "CHIEN Tung-Chuan/LI Yu-Jhun", "Lucia CORDERO/Nathaly PAREDES"),
@@ -115,21 +115,43 @@ wd_matches = [
 
 xd_matches = [
     ("2026-05-17", "Guilherme TEODORO/Giulia TAKAHASHI", "Ramon VILA/Eva BRITO"),
-    ("2026-05-17", "Vincent PICARD/Claire PICARD", "CLEMENT LAINE/Matilde PINTO"),
-    ("2026-05-17", "Mattias KARLSSON/NatalIA BAJOR", "Martin FROSETH/Alexia NODIN"),
+    ("2026-05-17", "Vincent PICARD/Claire PICARD", "Clement LAINE/Matilde PINTO"),
+    ("2026-05-17", "Mattias KARLSSON/Natalia BAJOR", "Martin FROSETH/Alexia NODIN"),
     ("2026-05-17", "Joao GERALDO/Mariana SANTA", "Mael VAN DESSEL/Rachel MORET"),
     ("2026-05-17", "HSU Hsien-Chia/CHEN Min-Hsin", "Tiago ABIODUN/Julia LEAL"),
     ("2026-05-17", "Alexis KOURAICHI/Audrey ZARIF", "Edward LY/Mo ZHANG"),
     ("2026-05-17", "Samuel WALKER/Tin-Tin HO", "Andrii GREBENIUK/Anastasiya DYMYTRENKO"),
     ("2026-05-17", "Nazar TRETIAK/Veronika MATIUNINA", "Gustavo GOMEZ/Valentina RIOS"),
     ("2026-05-17", "Guilherme TEODORO/Giulia TAKAHASHI", "Vincent PICARD/Claire PICARD"),
-    ("2026-05-17", "Mattias KARLSSON/NatalIA BAJOR", "Joao GERALDO/Mariana SANTA"),
+    ("2026-05-17", "Mattias KARLSSON/Natalia BAJOR", "Joao GERALDO/Mariana SANTA"),
     ("2026-05-17", "HSU Hsien-Chia/CHEN Min-Hsin", "Alexis KOURAICHI/Audrey ZARIF"),
     ("2026-05-17", "Samuel WALKER/Tin-Tin HO", "Nazar TRETIAK/Veronika MATIUNINA"),
-    ("2026-05-17", "Guilherme TEODORO/Giulia TAKAHASHI", "Mattias KARLSSON/NatalIA BAJOR"),
+    ("2026-05-17", "Guilherme TEODORO/Giulia TAKAHASHI", "Mattias KARLSSON/Natalia BAJOR"),
     ("2026-05-17", "HSU Hsien-Chia/CHEN Min-Hsin", "Samuel WALKER/Tin-Tin HO"),
     ("2026-05-17", "HSU Hsien-Chia/CHEN Min-Hsin", "Guilherme TEODORO/Giulia TAKAHASHI"),
 ]
+
+
+def normalize_name(name):
+    """统一姓名内的混合大小写异常（如 NatalIA -> Natalia、PaulINE -> Pauline），
+    防止同一球员因录入笔误被拆成多个档案。
+    处理单位：按空格分词、连字符再分段；全大写姓氏（BAJOR）、正常首字母大写词
+    （Natalia / Tung-Chuan / Tin-Tin / DE NUTTE 的 DE）原样通过。
+    注意：不调整姓氏与名字的先后顺序；整词全大写的名字（如 CLEMENT LAINE）无法自动识别，需人工核对。"""
+    def fix_part(p):
+        if len(p) < 2 or p.isupper() or p.islower():
+            return p
+        if p[0].isupper() and p[1:].islower():
+            return p
+        fixed = p[0].upper() + p[1:].lower()
+        print(f"  [normalize] {p} -> {fixed}")
+        return fixed
+
+    def fix_word(w):
+        return "-".join(fix_part(part) for part in w.split("-"))
+
+    return "/".join(" ".join(fix_word(w) for w in team.split())
+                    for team in name.split("/"))
 
 
 def append_to_scorelog(category, matches):
@@ -143,6 +165,8 @@ def append_to_scorelog(category, matches):
     existing_keys = set((r["日期"], r["类型"], r["胜者"], r["负者"]) for r in existing)
     new_records = []
     for date, winner, loser in matches:
+        winner = normalize_name(winner)
+        loser = normalize_name(loser)
         key = (date, EVENT_TYPE, winner, loser)
         if key not in existing_keys:
             new_records.append({"日期": date, "类型": EVENT_TYPE, "胜者": winner, "负者": loser})

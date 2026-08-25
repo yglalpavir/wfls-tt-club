@@ -24,3 +24,9 @@ tools/tleague_all.json
 tools/tleague_matches.json
 tools/doha_doubles_raw.txt
 tools/mixedteams2024playerlist copy.txt
+tools/_*_raw.txt
+tools/*.migrated.bak
+
+# ===== 原始研究资料（仅本地留存，不随站点发布）=====
+docs/result_ittf_link/
+*.tmp

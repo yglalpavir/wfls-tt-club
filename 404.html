@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function(){try{var t=localStorage.getItem("wfls-tt-theme");var d=t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark-mode");}catch(e){}})()</script>
     <meta name="description" content="WFLS Table Tennis Club - 页面未找到">
     <meta name="robots" content="noindex, follow">
     <link rel="canonical" href="https://yglalpavir.github.io/wfls-tt-club/404.html">
     <title>404 - 页面未找到 | WFLS Table Tennis Club</title>
+    <link rel="icon" type="image/svg+xml" href="Assets/files/favicon_4DA3FF.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -327,13 +330,13 @@
             <!-- 猜你想找 -->
             <p class="guess-label">猜你想找</p>
             <div class="quick-links">
-                <a href="index.html" class="quick-link primary">
+                <a href="/wfls-tt-club/" class="quick-link primary">
                     <i class="fa-solid fa-house"></i> 返回首页
                 </a>
-                <a href="news.html" class="quick-link outline">
+                <a href="/wfls-tt-club/news.html" class="quick-link outline">
                     <i class="fa-solid fa-newspaper"></i> 新闻
                 </a>
-                <a href="ranking.html" class="quick-link outline">
+                <a href="/wfls-tt-club/ranking.html" class="quick-link outline">
                     <i class="fa-solid fa-trophy"></i> 排名
                 </a>
             </div>
@@ -354,7 +357,7 @@
                 seconds--;
                 if (seconds <= 0) {
                     clearInterval(timer);
-                    window.location.href = 'index.html';
+                    window.location.href = '/wfls-tt-club/';
                     return;
                 }
                 countdownEl.textContent = seconds;

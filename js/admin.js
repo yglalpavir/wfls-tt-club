@@ -83,15 +83,20 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function initTheme() {
-    const st = localStorage.getItem("wfls-tt-theme");
+    // admin 页不加载 common.js，这里内置同款安全垫片（Safari 隐私模式兜底）
+    const store = {
+        get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+        set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* 忽略 */ } }
+    };
+    const st = store.get("wfls-tt-theme");
     if (st === "dark") {
-        document.body.classList.add("dark-mode");
+        document.documentElement.classList.add("dark-mode");
         $("themeToggle").innerHTML = '<i class="fa-solid fa-sun"></i>';
     }
     $("themeToggle").addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
-        const isDark = document.body.classList.contains("dark-mode");
-        localStorage.setItem("wfls-tt-theme", isDark ? "dark" : "light");
+        document.documentElement.classList.toggle("dark-mode");
+        const isDark = document.documentElement.classList.contains("dark-mode");
+        store.set("wfls-tt-theme", isDark ? "dark" : "light");
         $("themeToggle").innerHTML = isDark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
         // 重绘图表以适应暗色主题
         setTimeout(() => destroyCharts(), 100);
@@ -891,7 +896,7 @@ function visPill(visible) {
 // 图表渲染
 // ========================================
 function chartTheme() {
-    const isDark = document.body.classList.contains("dark-mode");
+    const isDark = document.documentElement.classList.contains("dark-mode");
     return {
         isDark,
         tick: isDark ? "#aab3c5" : "#48566d",

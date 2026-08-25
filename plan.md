@@ -149,38 +149,38 @@ manifest.webmanifest + theme-color + apple-touch-icon + Service Worker（静态�
 
 ### Phase 0 — 急救（目标：当天完成）
 
-- [ ] 根目录添加空 `.nojekyll`
-- [ ] `js/common.js:1214` escapeHtml 补引号转义；`ranking.js:194`、`wtt_ranking.js:411` 及同类内联 onclick 改事件委托 + data-* 传参
+- [x] 根目录添加空 `.nojekyll`
+- [x] escapeHtml 补引号转义；内联 onclick 全部改事件委托 + data-* 传参（含 wtt_dataviz/wtt_personal_stats 的未转义注入点）
 - [ ] 修正 `NatalIA BAJOR`（含 `NATALIA BAJOR` 全大写、`BAJOR Natalia` 倒序变体）/ `CLEMENT LAINE` 数据拼写（wd/xd/ws score-log-2026）；importer 加大小写/词序归一化防复发
-- [ ] 删除 `test_harness.html`；`about.json` 移除 adminKey 及 `common.js:415-427` 对应逻辑
+- [x] 已删除 test_harness.html；已移除 adminKey 及对应搜索框后门逻辑
 
 ### Phase 1 — Bug 清理
 
-- [ ] 静默失败治理：`score-engine.js:577` 返回 false；`main.js:38`、`ranking.js:134` 校验补 scoreLogData
-- [ ] 详情页初始化重构：Promise.allSettled 门控 + 运行令牌防重入 + 轮询上限指数退避
-- [ ] 明细弹窗改用 `LOSER_POINT_MULTIPLIER`
-- [ ] localStorage 安全垫片（5 处访问点）+ 存储键加版本号
-- [ ] i18n 补齐：缺失 key 新增、排名页硬编码中文接入词典、时间线标签渲染时解析、删除重复 `wtt_no_data`、修 title 布尔赋值
-- [ ] sync_content.py：exit code 修复、problems 标志传递恢复幂等、原子写入（temp+rename）、strptime 日期校验、BOM 兼容读取
-- [ ] SEO：robots.txt 放开 /data/、sitemap 移除 noindex 页加入 player/detail、锁定 marked CDN 版本
-- [ ] 暴露面收缩：git rm --cached `tools/tleague_data/`、`tools/__pycache__/`、`tools/backup_wd/`、乱码 zip；docs/result_ittf_link 移出部署分支
-- [ ] 2001 孤儿数据口径统一（补赛季定义或一致排除）
-- [ ] score-log 重复记录业务裁决后去重或标注说明
-- [ ] `data/seasons.json` 新增 `2026-autumn`（startDate 2026-09-01，snapshotDates 骨架）；可选：当前日期超出最后赛季时排名页顶部提示（P1-11）
-- [ ] WTT：8 处全局 swap 改走 `wttWithDataContext`；hub 探测改读 manifest；删除死代码 `wttCheckCategoryStatus`/`wttUpdateCategoryDisplay`/`wttLoadRankingDataLegacy`
+- [x] 静默失败治理（loader 返回 false + 两处校验）
+- [x] 详情页初始化重构（落定门控 markContentLoaded + 运行令牌 + 重试上限 8 次退避）
+- [x] 明细弹窗改用 `LOSER_POINT_MULTIPLIER`
+- [x] safeStorage 垫片 + wfls-lang.v1 版本键（含 admin 页独立垫片）
+- [x] i18n 补齐（新增 16 键×2 语言、排名页全部接入、getNodeDisplayLabel 渲染期解析覆盖 6 个消费文件、title 布尔修复；复核确认 wtt_no_data 并无重复定义，系审计误报）
+- [x] sync_content.py 修复（exit code / problems 传递恢复幂等 / 原子写入 / 严格日期校验 / utf-8-sig / media 根路径 / 迁移 .bak），双跑幂等验证通过
+- [x] SEO 三项完成（robots 重写 / sitemap 12 URL / marked@12 锁定×6 页）
+- [x] 暴露面收缩：git rm --cached 共 1168 文件（tleague_data/__pycache__/backup_wd/_archive/raw txt/result_ittf_link/.tmp），跟踪树 1508→342 文件
+- [x] ms/ws 各补 2001 赛季定义（537/369 条记录纳入排名口径，消除排名页与个人页计数不一致）
+- [x] 按默认方案保留并在 README 补充口径说明（同日多局属正常录入）
+- [x] 新增 2026-autumn 赛季 + 排名页过期提示横幅（i18n 双语）+ CI 过期守卫
+- [x] WTT 全部完成（dataviz 6 处 + personal_stats 2 处改异常安全上下文；hub 探测 ~100 请求→每类目 1 次 manifest 读取；三个死函数已删；硬编码赛季回退表更新并加警告；docstring 键名修正）
 
 ### Phase 2 — 体验优化
 
-- [ ] 主题+语言 `<head>` 内联预应用；CSS 增加 prefers-color-scheme 默认；选择器迁 html.dark-mode
-- [ ] 性能：字体子集化+swap、非关键脚本 defer、preconnect、9 页补 favicon、详情页缩略图+宽高、OG image 全站接入
-- [ ] 可访问性批次：模态框 dialog 三件套、图标按钮 aria-label、时间节点/成员卡片键盘化、汉堡 aria-expanded、标题层级、对比度变量调标
-- [ ] 交互：404 绝对路径、分页窗口化、navbar 标注跨页统一
-- [ ] WTT 个人页增量重放算法替换逐日全量重放
+- [x] 暗色防闪完成：20 页 `<head>` 内联 bootstrap（存储值优先、其次跟随系统偏好）；style.css 92 处 `body.dark-mode`→`.dark-mode` 迁移至根元素；JS 主题状态迁移 documentElement + isDarkTheme() 统一判断。语言预应用受限于纯前端 i18n 架构（词典在 common.js 内），维持现状并记录
+- [x] preconnect×20 页（jsdelivr/cdnjs）；favicon 补齐 8 页；og:image+twitter:image×12 页 + 生成 Assets/images/og-cover.png(45KB)；marked 锁版本。字体裁剪经复核放弃——11 个字重全部在用（300×1/400×3/500×26/600×60/700×50/800×11/900×1），裁剪会破坏样式，记录为决策；defer/缩略图涉及资源重制，列为后续
+- [x] 全部完成：openModal/closeModal 焦点管理三件套+Tab 焦点陷阱；18 页按钮标注（theme/lang/searchToggle/searchClose/searchClear/hamburger aria-expanded）；排名页与 WTT 排名页时间节点 role=button+tabindex+Enter/Space 委托；新闻/赛事/QA/成员卡片 makeCardClickable 键盘化；player 页补 h1、sidebar-title h3→h2、全站页脚 h4→h3（CSS 同步）、contact 层级修正、修复 4 处原有 <h4>…</h3> 错配标签；--text-muted 双模式调至 WCAG AA
+- [x] 404 三链接+定时跳转改 /wfls-tt-club/ 绝对基准；分页窗口化（≤7 页全显，否则 1…n…last）+.pagination-gap 样式；navbar 标注已随 a11y 批次统一
+- [x] computeWttDailyScoreHistory 重写：日粒度限定最近 730 天窗口 + 单调事件指针 + 单调赛季切换（跨赛季按继承积分重置），消除 O(天数×记录数) 主线程卡顿；wttGetApproxScoreAtDate 加同批次记忆化。注：窗口内早期事件的后续衰减为冻结近似，精确值见快照粒度（代码注释已说明）
 
 ### Phase 3 — 功能建设（按决策点 5 取舍）
 
 - [ ] GitHub Actions 构建管线（预计算快照 + 预渲染 + sitemap + cache-bust + 赛季过期检查 + 数据校验门禁）
-- [ ] Web 记分录入工具
+- [x] admin.html 记分录入面板：比赛结果/积分调整双模式、players.json 与类型白名单联动下拉、逐条校验（必填/胜≠负/日期格式）、队列管理、复制 JSON 片段或下载合并后的 score-log.json
 - [ ] （可选）对战预测器卡片
 - [ ] （可选）PWA manifest + SW
 - [ ] （可选）RSS feed

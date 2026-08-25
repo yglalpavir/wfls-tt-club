@@ -4,12 +4,15 @@
     <link rel="icon" type="image/svg+xml" href="Assets/files/favicon_4DA3FF.svg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function(){try{var t=localStorage.getItem("wfls-tt-theme");var d=t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark-mode");}catch(e){}})()</script>
     <meta name="description" content="WTT 国际乒联积分排名 · 基于ELO变体算法模拟 · 彩蛋页面">
     <meta name="keywords" content="WTT,世界乒联,乒乓球,积分排名,国际乒联">
     <meta name="robots" content="noindex, nofollow">
     <title>WTT Ranking 🥚 | WFLS Table Tennis Club</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.5.0/css/flag-icons.min.css">
@@ -40,10 +43,10 @@
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <button class="theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+                <button class="theme-toggle" id="themeToggle" aria-label="切换主题"><i class="fa-solid fa-moon"></i></button>
                 <button class="lang-toggle" id="langToggle" aria-label="切换语言"><span data-i18n="lang_btn">EN</span></button>
             </div>
-            <button class="hamburger" id="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+            <button class="hamburger" id="hamburger" aria-label="菜单" aria-expanded="false" aria-controls="navMenu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
         </div>
     </nav>
 
@@ -60,7 +63,7 @@
         <div class="container">
             <div class="ranking-layout">
                 <aside class="ranking-sidebar glass-card" id="rankingSidebar">
-                    <h3 class="sidebar-title" data-i18n="rank_sidebar_title">时间节点</h3>
+                    <h2 class="sidebar-title" data-i18n="rank_sidebar_title">时间节点</h3>
                     <ul class="time-node-list" id="timeNodeList">
                         <!-- JS动态渲染 -->
                     </ul>
@@ -157,12 +160,12 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <h4>WFLS Table Tennis Club</h4>
+                    <h3>WFLS Table Tennis Club</h3>
                     <p>武汉外国语学校乒乓球社团</p>
                     <p class="footer-motto">挥拍逐梦，旋转青春</p>
                 </div>
                 <div class="footer-links">
-                    <h4>快速导航</h4>
+                    <h3>快速导航</h3>
                     <a href="index.html">Home</a>
                     <a href="news.html">News</a>
                     <a href="competitions.html">Competitions</a>
@@ -175,7 +178,7 @@
                     <a href="contact.html">Contact</a>
                 </div>
                 <div class="footer-school">
-                    <h4>学校信息</h4>
+                    <h3>学校信息</h3>
                     <p>武汉外国语学校</p>
                     <p>Wuhan Foreign Languages School</p>
                     <p>湖北省武汉市</p>

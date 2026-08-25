@@ -573,5 +573,5 @@ function isFreezeEligible(et) {
     return FREEZE_ON_REPEAT && !isNoDecayType(et);
 }
 async function loadSeasons() { try { seasonsData = (await (await fetch('data/seasons.json')).json()).filter(s => s.visible !== false); return true; } catch(e) { console.error('seasons.json 加载失败', e); seasonsData = []; return false; } }
-async function loadScoreLogData() { try { scoreLogData = normalizeScoreLog(await (await fetch('data/score-log.json')).json()); clearFirstAppearanceCache(); } catch(e) { scoreLogData = []; } }
-async function loadScoreLogForViz() { try { scoreLogData = normalizeScoreLog(await (await fetch('data/score-log.json')).json()); clearFirstAppearanceCache(); return true; } catch(e) { scoreLogData = []; return true; } }
+async function loadScoreLogData() { try { scoreLogData = normalizeScoreLog(await (await fetch('data/score-log.json')).json()); clearFirstAppearanceCache(); return true; } catch(e) { console.error('score-log.json 加载失败', e); scoreLogData = []; return false; } }
+async function loadScoreLogForViz() { try { scoreLogData = normalizeScoreLog(await (await fetch('data/score-log.json')).json()); clearFirstAppearanceCache(); return true; } catch(e) { console.error('score-log.json 加载失败', e); scoreLogData = []; return false; } }

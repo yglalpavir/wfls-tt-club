@@ -4,12 +4,14 @@
     <link rel="icon" type="image/svg+xml" href="Assets/files/favicon_4DA3FF.svg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function(){try{var t=localStorage.getItem("wfls-tt-theme");var d=t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark-mode");}catch(e){}})()</script>
     <meta name="description" content="WTT 国际乒联积分排名中心 · 男子单打 / 女子单打 / 男子双打 / 女子双打 / 混合双打">
     <meta name="keywords" content="WTT,世界乒联,乒乓球,积分排名,男子单打,女子单打,男子双打,女子双打,混合双打">
     <meta name="robots" content="noindex, nofollow">
     <title>WTT Ranking Hub | WFLS Table Tennis Club</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -264,7 +266,7 @@
                 <button class="theme-toggle" id="themeToggle" aria-label="切换主题"><i class="fa-solid fa-moon"></i></button>
                 <button class="lang-toggle" id="langToggle" aria-label="切换语言"><span data-i18n="lang_btn">EN</span></button>
             </div>
-            <button class="hamburger" id="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+            <button class="hamburger" id="hamburger" aria-label="菜单" aria-expanded="false" aria-controls="navMenu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
         </div>
     </nav>
 
@@ -389,47 +391,18 @@
                 grid.appendChild(card);
             });
 
-            // 异步检查每个项目的数据状态
+            // 异步检查每个项目的数据状态（仅读取 manifest.json，每类目 1 个请求；
+            // 旧版逐文件探测会产生约 100 个串行请求，且首个命中即下整份 JSON 只为数计数）
             const hubStatuses = {};
             categories.forEach(async cat => {
                 const statusEl = document.getElementById('status-' + cat.id);
                 try {
-                    // 先尝试加载 score-log.json
-                    let resp = await fetch(`wtt_data/${cat.id}/score-log.json`);
-                    if (!resp.ok) {
-                        // 回退：尝试按赛季文件检测
-                        const probes = ['2021', '2022', '2023', '2024', '2025', '2026', '2009', '2008'];
-                        let suffixes;
-                        if (cat.id === 'ms') {
-                            suffixes = ['wtt', 'ittf'];
-                        } else if (cat.id === 'ws') {
-                            suffixes = ['ws', 'ittf'];
-                        } else {
-                            suffixes = ['wtt', cat.id, 'ittf'];
-                        }
-                        let found = false;
-                        for (const year of probes) {
-                            for (const suffix of suffixes) {
-                                resp = await fetch(`wtt_data/${cat.id}/score-log-${year}-${suffix}.json`);
-                                if (resp.ok) { found = true; break; }
-                            }
-                            if (found) break;
-                        }
-                        if (!found) {
-                            for (const suffix of ['tts', 'unmatched']) {
-                                resp = await fetch(`wtt_data/${cat.id}/score-log-${suffix}.json`);
-                                if (resp.ok) { found = true; break; }
-                            }
-                        }
-                        if (!found) { updateStatus(statusEl, cat.id, 'empty'); return; }
-                    }
-                    const data = await resp.json();
-                    const realRecords = data.filter(wttIsValidRecord);
-                    if (realRecords.length > 0) {
-                        updateStatus(statusEl, cat.id, 'ready');
-                    } else {
-                        updateStatus(statusEl, cat.id, 'template');
-                    }
+                    const resp = await fetch(`wtt_data/${cat.id}/manifest.json`);
+                    if (!resp.ok) { updateStatus(statusEl, cat.id, 'empty'); return; }
+                    const manifest = await resp.json();
+                    const files = (manifest && Array.isArray(manifest.scoreFiles)) ? manifest.scoreFiles : [];
+                    const usable = files.filter(f => typeof f === 'string' && f.indexOf('score-log-') === 0);
+                    updateStatus(statusEl, cat.id, usable.length > 0 ? 'ready' : 'empty');
                 } catch (e) {
                     updateStatus(statusEl, cat.id, 'empty');
                 }

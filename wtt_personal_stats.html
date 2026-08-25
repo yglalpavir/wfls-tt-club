@@ -4,12 +4,15 @@
     <link rel="icon" type="image/svg+xml" href="Assets/files/favicon_4DA3FF.svg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function(){try{var t=localStorage.getItem("wfls-tt-theme");var d=t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark-mode");}catch(e){}})()</script>
     <meta name="description" content="WTT 国际乒联积分排名 · 个人数据 · 对手分析">
     <meta name="keywords" content="WTT,世界乒联,乒乓球,个人数据,球员数据,战绩分析">
     <meta name="robots" content="noindex, nofollow">
     <title>WTT 个人数据 🥚 | WFLS Table Tennis Club</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.5.0/css/flag-icons.min.css">
@@ -40,10 +43,10 @@
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <button class="theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+                <button class="theme-toggle" id="themeToggle" aria-label="切换主题"><i class="fa-solid fa-moon"></i></button>
                 <button class="lang-toggle" id="langToggle" aria-label="切换语言"><span data-i18n="lang_btn">EN</span></button>
             </div>
-            <button class="hamburger" id="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+            <button class="hamburger" id="hamburger" aria-label="菜单" aria-expanded="false" aria-controls="navMenu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
         </div>
     </nav>
 
@@ -99,10 +102,10 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-brand"><h4>WFLS Table Tennis Club</h4><p>武汉外国语学校乒乓球社团</p><p class="footer-motto">挥拍逐梦，旋转青春</p></div>
-                <div class="footer-links"><h4>快速导航</h4><a href="index.html">Home</a><a href="news.html">News</a><a href="competitions.html">Competitions</a><a href="members.html">社团骨干</a><a href="ranking.html">Ranking</a><a href="data_viz.html">Data Viz</a>
+                <div class="footer-brand"><h3>WFLS Table Tennis Club</h3><p>武汉外国语学校乒乓球社团</p><p class="footer-motto">挥拍逐梦，旋转青春</p></div>
+                <div class="footer-links"><h3>快速导航</h3><a href="index.html">Home</a><a href="news.html">News</a><a href="competitions.html">Competitions</a><a href="members.html">社团骨干</a><a href="ranking.html">Ranking</a><a href="data_viz.html">Data Viz</a>
                     <a href="personal_stats.html">个人数据</a><a href="qa.html">Q&A</a><a href="changelog.html">更新日志</a><a href="contact.html">Contact</a></div>
-                <div class="footer-school"><h4>学校信息</h4><p>武汉外国语学校</p><p>Wuhan Foreign Languages School</p><p>湖北省武汉市</p></div>
+                <div class="footer-school"><h3>学校信息</h3><p>武汉外国语学校</p><p>Wuhan Foreign Languages School</p><p>湖北省武汉市</p></div>
             </div>
             <div class="footer-bottom"><p>&copy; 2026 WFLS Table Tennis Club. All rights reserved.</p></div>
         </div>

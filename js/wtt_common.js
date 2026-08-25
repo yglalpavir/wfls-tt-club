@@ -623,9 +623,13 @@ function wttApplyLoadedLog(records) {
 /**
  * 根据当前 category 构建可能的赛季 ID 列表（无 manifest 时的回退用）
  * MS/WS 各自使用 "wtt"/"ws" 后缀，MD/WD/XD 统一使用 "wtt" 后缀
+ * ⚠️ 此列表为硬编码快照，可能落后于实际数据（如缺 2001-2005/2018/2020）。
+ *    manifest.json 加载失败时仅作兜底并输出警告，提示数据可能不完整。
  */
 function wttBuildSeasonIds() {
-    const wttYears = ['2021', '2022', '2023', '2024', '2025', '2026'];
+    console.warn('[wtt] manifest.json 不可用，回退到硬编码赛季列表——加载的赛季可能不完整');
+    const wttYears = ['2001', '2002', '2003', '2004', '2005', '2013', '2014', '2015', '2018',
+                      '2021', '2022', '2023', '2024', '2025', '2026'];
     const ittfYears = ['2008', '2009', '2011', '2013', '2015', '2017', '2019'];
     let seasonIds;
     if (wttCurrentCategory === 'ms') {
@@ -642,7 +646,7 @@ function wttBuildSeasonIds() {
 
 /**
  * 尝试从 manifest.json 读取该分项真实存在的赛季文件名，并行加载。
- * manifest.json 格式: { "scoreLogs": ["score-log-2024-wtt.json", ...] }
+ * manifest.json 格式: { "scoreFiles": ["score-log-2024-wtt.json", ...] }
  * 成功并加载到数据时返回 true。
  */
 async function wttTryLoadFromManifest() {
@@ -1243,24 +1247,8 @@ function wttGetCategoryInfo() {
     return WTT_CATEGORIES[wttCurrentCategory] || WTT_CATEGORIES['ms'];
 }
 
-/**
- * 获取所有有数据的项目列表（用于 hub 页面判断哪些项目已就绪）
- */
-async function wttCheckCategoryStatus() {
-    const statuses = {};
-    for (const [id, info] of Object.entries(WTT_CATEGORIES)) {
-        try {
-            const resp = await fetch(`wtt_data/${id}/score-log.json`);
-            if (!resp.ok) { statuses[id] = 'empty'; continue; }
-            const data = await resp.json();
-            const realRecords = data.filter(wttIsValidRecord);
-            statuses[id] = realRecords.length > 0 ? 'ready' : 'template';
-        } catch (e) {
-            statuses[id] = 'empty';
-        }
-    }
-    return statuses;
-}
+// （hub 页数据状态检测已改为直接读取 manifest.json，见 wtt_hub.html；
+//   旧版 wttCheckCategoryStatus 因探测不存在的 score-log.json 路径已删除）
 
 // ============ 向后兼容的桥接函数 ============
 // 保留旧函数名以确保现有代码不报错
@@ -1277,11 +1265,6 @@ function loadRankingData() {
         }
         return wttRankingTimeline;
     });
-}
-
-// 供其他模块使用的旧函数名（回退版本，通常被 wtt_ranking.js 覆盖）
-function wttLoadRankingDataLegacy() {
-    return loadRankingData();
 }
 
 // ============ 初始化 ============

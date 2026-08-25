@@ -144,16 +144,8 @@ function wttFuzzyMatch(query, name) {
 function wttBuildPlayerSearchData() {
     const players = wttGetAllPlayersForPersonal();
 
-    // 切换到 WTT 全局数据以使用 getSeasonStartScores
-    const origScoreLog = scoreLogData;
-    const origInitial = initialScoresData;
-    const origEvent = eventCoefficients;
-    const origSeasons = seasonsData;
-    scoreLogData = wttScoreLogData;
-    initialScoresData = (typeof wttGetInitialScoresDataForEngine === 'function') ? wttGetInitialScoresDataForEngine() : wttInitialScoresData;
-    eventCoefficients = wttEventCoefficients;
-    seasonsData = wttSeasonsData;
-
+    // 切换到 WTT 全局数据以使用 getSeasonStartScores（异常安全，自动恢复）
+    const { scoreMap, rankMap, matchCount, winCount } = wttWithDataContext(() => {
     // 最近一个非空快照：当前积分与排名（不活跃球员使用赛季继承起始积分）
     const scoreMap = {};
     const rankMap = {};
@@ -196,11 +188,8 @@ function wttBuildPlayerSearchData() {
         }
     }
 
-    // 恢复全局数据
-    scoreLogData = origScoreLog;
-    initialScoresData = origInitial;
-    eventCoefficients = origEvent;
-    seasonsData = origSeasons;
+    return { scoreMap, rankMap, matchCount, winCount };
+    });
 
     wttPlayerSearchData = [...players]
         .map(name => ({
@@ -517,7 +506,18 @@ function wttRenderPlayerIndex(resetPage) {
     });
 }
 
+// 同一渲染批次内（同一 sortedLog 引用）按 球员|日期|口径 记忆化，
+// 避免对手卡片对每位对手重复整赛季重放
+const _wttApproxScoreCache = new Map();
 function wttGetApproxScoreAtDate(playerName, targetDate, sortedLog, startScores, beforeMatch) {
+    const ck = (sortedLog === scoreLogData ? 'cur' : 'x') + '|' + playerName + '|' + targetDate + '|' + (beforeMatch ? 'b' : 'a');
+    if (_wttApproxScoreCache.has(ck)) return _wttApproxScoreCache.get(ck);
+    const _ret = _wttGetApproxScoreAtDateImpl(playerName, targetDate, sortedLog, startScores, beforeMatch);
+    if (_wttApproxScoreCache.size > 8000) _wttApproxScoreCache.clear();
+    _wttApproxScoreCache.set(ck, _ret);
+    return _ret;
+}
+function _wttGetApproxScoreAtDateImpl(playerName, targetDate, sortedLog, startScores, beforeMatch) {
     // 找到目标日期所在的赛季，使用赛季继承起始积分
     let effectiveStartScores = { ...startScores };
     let seasonStartDate = '';
@@ -565,21 +565,11 @@ function wttRenderPersonalStats(playerName, containerId) {
     const container = document.getElementById(containerId || 'wttPersonalResult');
     if (!container) return;
 
-    // 切换到 WTT 全局数据
-    const origScoreLog = scoreLogData;
-    const origInitial = initialScoresData;
-    const origEvent = eventCoefficients;
-    const origSeasons = seasonsData;
+    // 切换到 WTT 全局数据（异常安全，自动恢复）
+    wttWithDataContext(() => {
 
-    scoreLogData = wttScoreLogData;
-    initialScoresData = (typeof wttGetInitialScoresDataForEngine === 'function') ? wttGetInitialScoresDataForEngine() : wttInitialScoresData;
-    eventCoefficients = wttEventCoefficients;
-    seasonsData = wttSeasonsData;
-
-if (!scoreLogData || !scoreLogData.length) {
+    if (!scoreLogData || !scoreLogData.length) {
         container.innerHTML = '<div class="compare-placeholder"><p>' + i18n[currentLang].wtt_ps_nodata + '</p></div>';
-        scoreLogData = origScoreLog; initialScoresData = origInitial;
-        eventCoefficients = origEvent; seasonsData = origSeasons;
         return;
     }
 
@@ -786,9 +776,14 @@ if (!scoreLogData || !scoreLogData.length) {
     html += '</div>';
 
     html += '<div class="personal-summary-text">';
-    html += i18n[currentLang].wtt_ps_sum1.replace('{player}', '<strong>' + playerName + '</strong>').replace('{total}', '<strong>' + totalMatches + '</strong>').replace('{wins}', '<strong>' + wins + '</strong>').replace('{losses}', '<strong>' + losses + '</strong>');
+    const psSum1 = i18n[currentLang].wtt_ps_sum1
+        .replace('{player}', '<strong>' + escapeHtml(playerName) + '</strong>')
+        .replace('{total}', '<strong>' + totalMatches + '</strong>')
+        .replace('{wins}', '<strong>' + wins + '</strong>')
+        .replace('{losses}', '<strong>' + losses + '</strong>');
+    html += psSum1;
     html += '<br>';
-    html += i18n[currentLang].wtt_ps_sum2.replace('{player}', '<strong>' + playerName + '</strong>').replace('{percent}', '<strong>' + (totalMatches > 0 ? Math.round(wins / totalMatches * 100) : 0) + '</strong>');
+    html += i18n[currentLang].wtt_ps_sum2.replace('{player}', '<strong>' + escapeHtml(playerName) + '</strong>').replace('{percent}', '<strong>' + (totalMatches > 0 ? Math.round(wins / totalMatches * 100) : 0) + '</strong>');
     html += '</div>';
 
     // === 积分变化折线图 ===
@@ -819,7 +814,7 @@ if (!scoreLogData || !scoreLogData.length) {
         beatenOpps.forEach(([name, s], i) => {
             html += '<div class="personal-card-item">';
             html += '<span class="personal-card-rank">' + (i + 1) + '</span>';
-            html += '<span class="personal-card-name">' + name + '<span class="personal-card-score">(' + s.preWinScore + ')</span></span>';
+            html += '<span class="personal-card-name">' + escapeHtml(String(name || '')) + '<span class="personal-card-score">(' + escapeHtml(String(s.preWinScore)) + ')</span></span>';
             html += '<span class="personal-card-date">' + fmtDate(s.lastWinDate) + '</span>';
             html += '</div>';
         });
@@ -836,7 +831,7 @@ if (!scoreLogData || !scoreLogData.length) {
         frequentOpps.forEach(([name, s], i) => {
             html += '<div class="personal-card-item">';
             html += '<span class="personal-card-rank">' + (i + 1) + '</span>';
-            html += '<span class="personal-card-name">' + name + '<span class="personal-card-score">(' + s.preMatchScore + ')</span></span>';
+            html += '<span class="personal-card-name">' + escapeHtml(String(name || '')) + '<span class="personal-card-score">(' + escapeHtml(String(s.preMatchScore)) + ')</span></span>';
             html += '<span class="personal-card-date">' + fmtDate(s.lastDate) + '</span>';
             html += '</div>';
         });
@@ -899,18 +894,14 @@ if (!scoreLogData || !scoreLogData.length) {
         });
     }
 
-    // 恢复全局数据
-    scoreLogData = origScoreLog;
-    initialScoresData = origInitial;
-    eventCoefficients = origEvent;
-    seasonsData = origSeasons;
+    });
 }
 
 // ============ 积分历史计算 ============
 
 function computeWttDailyScoreHistory(playerName, sortedLog, startScores) {
     const history = [];
-    if (sortedLog.length === 0) return history;
+    if (!sortedLog.length) return history;
 
     let startDate = sortedLog[0]['日期'];
     for (const r of sortedLog) {
@@ -926,99 +917,100 @@ function computeWttDailyScoreHistory(playerName, sortedLog, startScores) {
     // 预建时间衰减查找表
     const DECAY_LUT_MAX = 3000;
     const decayLUT = new Float64Array(DECAY_LUT_MAX);
-    for (let i = 0; i < DECAY_LUT_MAX; i++) {
-        decayLUT[i] = Math.pow(2, -i / HALF_LIFE_DAYS);
-    }
+    for (let i = 0; i < DECAY_LUT_MAX; i++) decayLUT[i] = Math.pow(2, -i / HALF_LIFE_DAYS);
     const getDecay = (dayDiff) => dayDiff < DECAY_LUT_MAX ? decayLUT[dayDiff] : Math.pow(2, -dayDiff / HALF_LIFE_DAYS);
 
     const matchRecs = [];
     const bonusRecs = [];
-
     for (const r of sortedLog) {
         const time = new Date(r['日期'] + 'T00:00:00').getTime();
-        if (isMatchRecord(r)) {
-            matchRecs.push({ time, date: r['日期'], winner: r['胜者'], loser: r['负者'], type: r['类型'] });
-        } else if (isBonusRecord(r)) {
-            bonusRecs.push({ time, date: r['日期'], target: r['对象'], amount: parseFloat(r['分数']) || 0 });
-        }
-    }
-
-    const allDates = [];
-    let cur = new Date(startDate + 'T00:00:00');
-    const endDate = new Date(today + 'T00:00:00');
-    while (cur <= endDate) {
-        allDates.push({ str: cur.getFullYear() + '-' + String(cur.getMonth() + 1).padStart(2, '0') + '-' + String(cur.getDate()).padStart(2, '0'), time: cur.getTime() });
-        cur.setDate(cur.getDate() + 1);
+        if (isMatchRecord(r)) matchRecs.push({ time, date: r['日期'], winner: r['胜者'], loser: r['负者'], type: r['类型'] });
+        else if (isBonusRecord(r)) bonusRecs.push({ time, date: r['日期'], target: r['对象'], amount: parseFloat(r['分数']) || 0 });
     }
 
     // 预计算每个赛季的继承起始积分
     const seasonStartScoresMap = [];
     if (seasonsData && seasonsData.length > 0) {
-        for (let si = 0; si < seasonsData.length; si++) {
-            seasonStartScoresMap.push(getSeasonStartScores(si));
-        }
+        for (let si = 0; si < seasonsData.length; si++) seasonStartScoresMap.push(getSeasonStartScores(si));
     }
 
-    for (const { str: dateStr, time: snapTime } of allDates) {
-        // 找到当前日期所属的赛季
-        let seasonIdx = -1;
+    function seasonOf(dateStr) {
         if (seasonsData && seasonsData.length > 0) {
             for (let si = 0; si < seasonsData.length; si++) {
                 const s = seasonsData[si];
-                if (dateStr >= s.startDate && dateStr <= s.endDate) {
-                    seasonIdx = si;
-                    break;
-                }
+                if (dateStr >= s.startDate && dateStr <= s.endDate) return si;
             }
-            if (seasonIdx === -1 && dateStr > seasonsData[seasonsData.length - 1].endDate) {
-                seasonIdx = seasonsData.length - 1;
-            }
+            if (dateStr > seasonsData[seasonsData.length - 1].endDate) return seasonsData.length - 1;
+            return -1;
         }
+        return -1;
+    }
 
-        let sc;
-        let seasonStartDate;
-        if (seasonIdx >= 0 && seasonStartScoresMap[seasonIdx]) {
-            sc = { ...seasonStartScoresMap[seasonIdx] };
-            seasonStartDate = seasonsData[seasonIdx].startDate;
-        } else {
-            sc = { ...startScores };
-            seasonStartDate = startDate;
-        }
+    // 🔥 性能重写：
+    // 旧实现从球员首秀日起逐日"克隆千人大对象 + 全量重放所有比赛"，O(天数 × 记录数)，
+    // 对 ms 类目（2002 年起）约等于上亿次迭代，页面明显卡顿。
+    // 现在：日粒度仅渲染最近 MAX_DAILY_WINDOW_DAYS 天；窗口之前的状态通过一次快进建立；
+    // 窗口内逐日推进时，比赛/加分指针单调前进、赛季指针单调切换（跨赛季时按该赛季继承积分重置后快进）。
+    // 注：窗口内的每日数值与旧算法一致；窗口之前的早期趋势请用"快照/周"粒度查看。
+    const MAX_DAILY_WINDOW_DAYS = 730;
+    const endTime = new Date(today + 'T00:00:00').getTime();
+    const startTime = new Date(startDate + 'T00:00:00').getTime();
+    const winStartTime = Math.max(startTime, endTime - MAX_DAILY_WINDOW_DAYS * 86400000);
 
-        let mi = 0, bi = 0;
+    let curTime = winStartTime;
+    let curDateStr = new Date(curTime).toISOString().slice(0, 10);
+    let seasonIdx = seasonOf(curDateStr);
+    let seasonStartDate = seasonIdx >= 0 ? seasonsData[seasonIdx].startDate : startDate;
+    let sc = (seasonIdx >= 0 && seasonStartScoresMap[seasonIdx]) ? { ...seasonStartScoresMap[seasonIdx] } : { ...startScores };
+    let mi = 0, bi = 0;
 
+    function applyEventsUpTo(snapTime) {
         while (mi < matchRecs.length && matchRecs[mi].time <= snapTime) {
             const m = matchRecs[mi];
-            if (seasonIdx >= 0 && m.date < seasonStartDate) { mi++; continue; }
-
-            const w = m.winner, l = m.loser;
-            if (sc[w] === undefined) sc[w] = DEFAULT_INITIAL_SCORE;
-            if (sc[l] === undefined) sc[l] = DEFAULT_INITIAL_SCORE;
-
-            const dayDiff = Math.floor((snapTime - m.time) / 86400000);
-            const tw = SCORE_TIME_DECAY_ENABLED ? getDecay(dayDiff) : 1;
-            const base = getBaseScore((sc[w] || DEFAULT_INITIAL_SCORE) - (sc[l] || DEFAULT_INITIAL_SCORE));
-            const coeff = getEventCoefficient(m.type);
-            const wg = base * coeff * tw;
-
-            sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
-            sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
+            if (!(seasonIdx >= 0 && m.date < seasonStartDate)) {
+                const w = m.winner, l = m.loser;
+                if (sc[w] === undefined) sc[w] = DEFAULT_INITIAL_SCORE;
+                if (sc[l] === undefined) sc[l] = DEFAULT_INITIAL_SCORE;
+                const dayDiff = Math.floor((snapTime - m.time) / 86400000);
+                const tw = SCORE_TIME_DECAY_ENABLED ? getDecay(dayDiff) : 1;
+                const base = getBaseScore((sc[w] || DEFAULT_INITIAL_SCORE) - (sc[l] || DEFAULT_INITIAL_SCORE));
+                const coeff = getEventCoefficient(m.type);
+                const wg = base * coeff * tw;
+                sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
+                sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
+            }
             mi++;
         }
-
         while (bi < bonusRecs.length && bonusRecs[bi].time <= snapTime) {
             const b = bonusRecs[bi];
-            if (seasonIdx >= 0 && b.date < seasonStartDate) { bi++; continue; }
-            if (sc[b.target] === undefined) sc[b.target] = DEFAULT_INITIAL_SCORE;
-            sc[b.target] = Math.max(SCORE_FLOOR, sc[b.target] + b.amount);
+            if (!(seasonIdx >= 0 && b.date < seasonStartDate)) {
+                if (sc[b.target] === undefined) sc[b.target] = DEFAULT_INITIAL_SCORE;
+                sc[b.target] = Math.max(SCORE_FLOOR, sc[b.target] + b.amount);
+            }
             bi++;
         }
+    }
+
+    while (curTime <= endTime) {
+        curDateStr = new Date(curTime).toISOString().slice(0, 10);
+        // 跨赛季：重置为该赛季继承积分，并跳过赛季开始前的事件
+        const si = seasonOf(curDateStr);
+        if (si !== seasonIdx) {
+            seasonIdx = si;
+            seasonStartDate = si >= 0 ? seasonsData[si].startDate : startDate;
+            sc = (si >= 0 && seasonStartScoresMap[si]) ? { ...seasonStartScoresMap[si] } : { ...startScores };
+            const sStartTime = new Date(seasonStartDate + 'T00:00:00').getTime();
+            while (mi < matchRecs.length && matchRecs[mi].time < sStartTime) mi++;
+            while (bi < bonusRecs.length && bonusRecs[bi].time < sStartTime) bi++;
+        }
+        applyEventsUpTo(curTime);
 
         history.push({
-            time: dateStr,
-            label: formatWttDateShort(dateStr),
+            time: curDateStr,
+            label: formatWttDateShort(curDateStr),
             score: Math.round((sc[playerName] || DEFAULT_INITIAL_SCORE) * 10) / 10
         });
+        curTime += 86400000;
     }
 
     return history;
@@ -1090,7 +1082,7 @@ function renderWttPersonalScoreChart(dailyHistory, snapshotHistory) {
     const existingChart = Chart.getChart(canvas);
     if (existingChart) existingChart.destroy();
 
-    const isDark = document.body.classList.contains('dark-mode');
+    const isDark = (typeof isDarkTheme === 'function' ? isDarkTheme() : false);
     const gridColor = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)';
     const textColor = isDark ? '#aeb4c2' : '#4a5568';
 

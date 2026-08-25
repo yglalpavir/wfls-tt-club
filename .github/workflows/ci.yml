@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Node syntax check (all js/)
+        run: |
+          fail=0
+          for f in js/*.js; do
+            node --check "$f" || fail=1
+          done
+          exit $fail
+
+      - name: Content sync dry-run (news/competitions/qa)
+        run: python tools/sync_content.py --check
+
+      - name: Data integrity gate + season expiry guard
+        run: python tools/ci_validate.py

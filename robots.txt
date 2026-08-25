@@ -1,15 +1,17 @@
 User-agent: *
 Allow: /
 
-# 公开页面资源
+# 图片目录不参与图片索引（校内社团，优先隐私）
 Disallow: /Assets/
 
-# 数据文件（JSON）与生成目录无需被抓取
-Disallow: /data/
+# WTT 彩蛋数据体量大且页面 noindex，节省抓取预算
 Disallow: /wtt_data/
-Disallow: /ittf_data/
-Disallow: /ittf-pingpong_api/
+
+# 内部工具与依赖（不应出现在部署分支；此处兜底声明）
 Disallow: /tools/
 Disallow: /node_modules/
+
+# 注意：不再 Disallow /data/ —— 本站内容全部由前端 fetch data/*.json 渲染，
+# 屏蔽数据源等于让搜索引擎只能看到空壳页面。
 
 Sitemap: https://yglalpavir.github.io/wfls-tt-club/sitemap.xml

@@ -1033,7 +1033,7 @@ const wttDistValueLabelPlugin = {
         const meta = chart.getDatasetMeta(0);
         const data = chart.data.datasets[0] && chart.data.datasets[0].data;
         if (!meta || !data) return;
-        const isDark = document.body.classList.contains('dark-mode');
+        const isDark = (typeof isDarkTheme === 'function' ? isDarkTheme() : false);
         const ctx = chart.ctx;
         ctx.save();
         ctx.fillStyle = isDark ? '#aeb4c2' : '#4a5568';

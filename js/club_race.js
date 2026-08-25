@@ -92,7 +92,7 @@ function clubGetRaceFrame(frameIndex) {
     }
     items.sort((a, b) => b.score - a.score);
 
-    const frame = { label: entry.label || '', items: items.slice(0, CLUB_RACE_TOP_N) };
+    const frame = { label: getNodeDisplayLabel(entry) || '', items: items.slice(0, CLUB_RACE_TOP_N) };
     clubBarRace.cache.set(frameIndex, frame);
     return frame;
 }

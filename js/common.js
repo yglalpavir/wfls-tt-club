@@ -2,6 +2,13 @@
    common.js - 语言包 + 全局变量 + UI + 通用函数
    ======================================== */
 
+// localStorage 安全垫片：Safari 隐私模式 / 禁用存储时静默降级，避免语言与主题切换整体失效
+const safeStorage = {
+    get(key) { try { return window.localStorage.getItem(key); } catch (e) { return null; } },
+    set(key, val) { try { window.localStorage.setItem(key, val); } catch (e) { /* 存储不可用时忽略 */ } },
+    remove(key) { try { window.localStorage.removeItem(key); } catch (e) { /* 忽略 */ } }
+};
+
 // 注入加载动画（供 ranking.js、main.js 等使用 wtt-spinner）
 (function() {
     if (document.getElementById('wtt-spinner-style')) return;
@@ -88,6 +95,11 @@ const i18n = {
         pp_back_index: "返回总览", pp_prev_player: "上一名", pp_next_player: "下一名", pp_no_player: "未找到该球员", pp_all_records: "全部比赛记录", pp_player_id: "球员编号", pp_search_ph: "搜索球员姓名 / 编号 / 标签", pp_total_players: "共 {n} 名球员", pp_role: "职务", pp_match_detail: "积分明细", pp_view_profile: "查看个人数据页",
         pp_loading: "正在加载球员数据...", pp_load_fail: "数据加载失败，请刷新重试", pp_refresh: "刷新页面", pp_status_active: "在校", pp_status_alumni: "已离校", pp_matches_count: "{n} 场", pp_col_before: "赛前", pp_col_change: "调整", pp_col_after: "赛后", pp_tags_label: "标签", pp_honors_label: "荣誉",
         rank_realtime_header: "实时积分", rank_realtime_label: "实时积分",
+        search_input_hint: "输入关键词搜索", search_hint_title: "输入关键词开始搜索", search_hint_info: "支持搜索标题、内容、姓名等",
+        rank_no_data: "暂无排名数据", rank_no_records: "暂无记录", rank_add_short: "加分", rank_ppl: "{n}人", rank_node_count: "{n}个节点",
+        rank_loading: "正在加载排名数据...", rank_prepare: "准备下载数据文件...", rank_download_file: "正在下载 {label} ({i}/{total}): {file}", rank_calculating: "正在计算排名积分（此过程可能较慢，请耐心等待）...", rank_calc_fail: "无法计算排名数据",
+        rank_view_player_page: "查看个人数据页", rank_click_detail: "点击查看积分明细",
+        rank_season_expired: "当前日期已超出最后一个赛季（{date}）：新比赛会暂计入该赛季的延伸区间，但不会触发跨赛季积分继承。请在 data/seasons.json 中创建新赛季。",
         changelog_page_title: "更新日志 | WFLS Table Tennis Club", changelog_hero_tag: "Changelog", changelog_hero_title: "更新日志", changelog_hero_desc: "版本历史 · 功能更新 · 问题修复", changelog_list_tag: "Version History", changelog_list_title: "版本历史", changelog_empty: "暂无更新日志",
         tag_release: "正式发布", tag_feature: "新功能", tag_fix: "修复",
         draws_tab_content: "赛事详情", draws_tab_bracket: "对阵表",
@@ -161,6 +173,11 @@ const i18n = {
         pp_back_index: "Back to Overview", pp_prev_player: "Previous", pp_next_player: "Next", pp_no_player: "Player not found", pp_all_records: "All Match Records", pp_player_id: "Player ID", pp_search_ph: "Search by name / ID / tag", pp_total_players: "{n} players total", pp_role: "Role", pp_match_detail: "Score Details", pp_view_profile: "View Personal Page",
         pp_loading: "Loading player data...", pp_load_fail: "Failed to load data. Please refresh and try again.", pp_refresh: "Refresh", pp_status_active: "Active", pp_status_alumni: "Alumni", pp_matches_count: "{n} matches", pp_col_before: "Before", pp_col_change: "Change", pp_col_after: "After", pp_tags_label: "Tags", pp_honors_label: "Honors",
         rank_realtime_header: "Real-time", rank_realtime_label: "Live Ranking",
+        search_input_hint: "Type keywords to search", search_hint_title: "Start typing to search", search_hint_info: "Searches titles, content and player names",
+        rank_no_data: "No ranking data", rank_no_records: "No records", rank_add_short: "Bonus", rank_ppl: "{n} players", rank_node_count: "{n} nodes",
+        rank_loading: "Loading ranking data...", rank_prepare: "Preparing to download data files...", rank_download_file: "Downloading {label} ({i}/{total}): {file}", rank_calculating: "Calculating ranking points (this may take a while)...", rank_calc_fail: "Unable to compute ranking data",
+        rank_view_player_page: "View personal page", rank_click_detail: "Click for score details",
+        rank_season_expired: "Today is past the last season ({date}): new matches are counted into that season's extension, but cross-season inheritance will not apply. Create a new season in data/seasons.json.",
         changelog_page_title: "Changelog | WFLS Table Tennis Club", changelog_hero_tag: "Changelog", changelog_hero_title: "Changelog", changelog_hero_desc: "Version History · Features · Bug Fixes", changelog_list_tag: "Version History", changelog_list_title: "Version History", changelog_empty: "No changelog entries yet",
         tag_release: "Release", tag_feature: "Feature", tag_fix: "Fix",
         draws_tab_content: "Details", draws_tab_bracket: "Bracket",
@@ -228,10 +245,10 @@ const scoreDetailModal = document.getElementById('scoreDetailModal'), scoreDetai
 const body = document.body;
 
 function setLanguage(lang) {
-    currentLang = lang; localStorage.setItem('wfls-lang', lang);
+    currentLang = lang; safeStorage.set('wfls-lang.v1', lang);
     document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
     document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.getAttribute('data-i18n'); if (i18n[lang] && i18n[lang][key]) el.innerHTML = i18n[lang][key]; });
-    document.querySelectorAll('[data-i18n-title]').forEach(el => { const key = el.getAttribute('data-i18n-title'); if (i18n[lang] && i18n[lang][key]) el.title = el.getAttribute('data-i18n-title') && i18n[lang][key]; });
+    document.querySelectorAll('[data-i18n-title]').forEach(el => { const key = el.getAttribute('data-i18n-title'); if (i18n[lang] && i18n[lang][key]) el.title = i18n[lang][key]; });
     if (langToggle) langToggle.querySelector('span').textContent = lang === 'zh' ? 'EN' : '中文';
     if (searchInput) searchInput.placeholder = i18n[lang].search_placeholder;
     if (typeof renderAllNews === 'function') renderAllNews();
@@ -248,8 +265,26 @@ function setLanguage(lang) {
     if (typeof reapplyPlayerPage === 'function') reapplyPlayerPage();
     if (typeof reapplyPersonalStats === 'function') reapplyPersonalStats();
 }
-async function updateHeroLastUpdated() { const el = document.getElementById('heroLastUpdated'); if (!el) return; const cached = localStorage.getItem('wfls-last-updated'); if (cached) { try { const cd = JSON.parse(cached); if (cd.date && (Date.now() - cd.ts) < 3600000) { el.textContent = currentLang === 'zh' ? `上次更新：${cd.date}` : `Last updated: ${cd.date}`; return; } } catch(e) {} } try { const res = await fetch('https://api.github.com/repos/yglalpavir/wfls-tt-club/commits?per_page=1'); if (res.ok) { const commits = await res.json(); if (commits && commits.length > 0) { const d = new Date(commits[0].commit.committer.date); const ds = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); localStorage.setItem('wfls-last-updated', JSON.stringify({ date: ds, ts: Date.now() })); el.textContent = currentLang === 'zh' ? `上次更新：${ds}` : `Last updated: ${ds}`; return; } } } catch(e) { console.warn('GitHub API failed, fallback to about.json'); } if (aboutData && aboutData.lastUpdated) { el.textContent = currentLang === 'zh' ? `上次更新：${aboutData.lastUpdated}` : `Last updated: ${aboutData.lastUpdated}`; } }
+async function updateHeroLastUpdated() { const el = document.getElementById('heroLastUpdated'); if (!el) return; const cached = safeStorage.get('wfls-last-updated'); if (cached) { try { const cd = JSON.parse(cached); if (cd.date && (Date.now() - cd.ts) < 3600000) { el.textContent = currentLang === 'zh' ? `上次更新：${cd.date}` : `Last updated: ${cd.date}`; return; } } catch(e) {} } try { const res = await fetch('https://api.github.com/repos/yglalpavir/wfls-tt-club/commits?per_page=1'); if (res.ok) { const commits = await res.json(); if (commits && commits.length > 0) { const d = new Date(commits[0].commit.committer.date); const ds = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); safeStorage.set('wfls-last-updated', JSON.stringify({ date: ds, ts: Date.now() })); el.textContent = currentLang === 'zh' ? `上次更新：${ds}` : `Last updated: ${ds}`; return; } } } catch(e) { console.warn('GitHub API failed, fallback to about.json'); } if (aboutData && aboutData.lastUpdated) { el.textContent = currentLang === 'zh' ? `上次更新：${aboutData.lastUpdated}` : `Last updated: ${aboutData.lastUpdated}`; } }
 function updateRankingHeaders() { document.querySelectorAll('.ranking-table-full th[data-i18n]').forEach(th => { const key = th.getAttribute('data-i18n'); if (i18n[currentLang] && i18n[currentLang][key]) th.innerHTML = i18n[currentLang][key] + ' <span class="sort-arrow"></span>'; }); }
+
+/* 时间线节点标签渲染时解析（替代计算期固化的字符串，语言切换即时生效） */
+const NODE_MONTHS_EN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+function formatNodeDate(ds) {
+    if (!ds) return '';
+    const p = String(ds).split('-');
+    if (p.length < 3 || isNaN(+p[0])) return String(ds);
+    if (currentLang === 'en') return `${NODE_MONTHS_EN[+p[1] - 1] || p[1]} ${+p[2]}, ${p[0]}`;
+    return `${p[0]}年${+p[1]}月${+p[2]}日`;
+}
+function getNodeDisplayLabel(n) {
+    if (!n) return '';
+    if (typeof n === 'string') return n;
+    const L = i18n[currentLang] || {};
+    if (n.isRealtime) return L.rank_realtime_label || n.label || '';
+    if (n.isInitial) return (L.season_initial_label || '{season}初始积分').replace('{season}', n.season || '');
+    return formatNodeDate(n.time) || n.label || '';
+}
 function updatePdfButtons() { const btn = document.getElementById('pdfViewBtn'); if (btn) btn.innerHTML = `<i class="fa-solid fa-eye"></i> ${i18n[currentLang].pdf_preview_btn}`; const down = document.querySelector('.pdf-actions .btn-primary'); if (down) down.innerHTML = `<i class="fa-solid fa-download"></i> ${i18n[currentLang].pdf_download_btn}`; }
 
 /* ---- 积分数据表导出为图片（Canvas 手绘，无外部依赖，全平台可用） ---- */
@@ -388,21 +423,14 @@ function exportRankTableAsImage(rows, opts) {
         const canvas = buildRankTableImageCanvas(rows, opts);
         const blob = _rankImgDataUrlToBlob(canvas.toDataURL('image/png'));
         const name = buildExportFileName(opts.filenameBase || 'points-table');
-        const file = new File([blob], name, { type: 'image/png' });
-        if (navigator.canShare && navigator.canShare({ files: [file] })) {
-            navigator.share({ files: [file], title: opts.title || name }).catch(err => {
-                if (!err || err.name !== 'AbortError') _downloadRankImageBlob(blob, name);
-            });
-        } else {
-            _downloadRankImageBlob(blob, name);
-        }
+        _downloadRankImageBlob(blob, name);
     } catch (err) {
         console.error('导出图片失败', err);
         alert(i18n[currentLang].rank_export_fail);
     }
 }
 
-if (langToggle) { const sl = localStorage.getItem('wfls-lang') || 'zh'; setLanguage(sl); langToggle.addEventListener('click', () => setLanguage(currentLang === 'zh' ? 'en' : 'zh')); }
+if (langToggle) { const sl = safeStorage.get('wfls-lang.v1') || safeStorage.get('wfls-lang') || 'zh'; setLanguage(sl); langToggle.addEventListener('click', () => setLanguage(currentLang === 'zh' ? 'en' : 'zh')); }
 
 function initSearch() {
     if (!searchToggle || !searchOverlay || !searchInput) return;
@@ -412,21 +440,8 @@ function initSearch() {
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && searchOverlay && searchOverlay.classList.contains('active')) cs(); });
     let dt; searchInput.addEventListener('input', () => { const q = searchInput.value.trim(); if (q.length > 0) searchClear.style.display = 'flex'; else { searchClear.style.display = 'none'; showSearchPlaceholder(); return; } clearTimeout(dt); dt = setTimeout(() => performSearch(q), 200); });
     searchClear.addEventListener('click', () => { searchInput.value = ''; searchClear.style.display = 'none'; showSearchPlaceholder(); searchInput.focus(); });
-    // 管理员密钥检测：在搜索框按回车时检查
-    searchInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-            const q = searchInput.value.trim();
-            if (q && aboutData && aboutData.adminKey && q === aboutData.adminKey) {
-                searchOverlay.classList.remove('active');
-                body.style.overflow = '';
-                searchInput.value = '';
-                searchClear.style.display = 'none';
-                window.location.href = 'admin.html';
-            }
-        }
-    });
 }
-function showSearchPlaceholder() { if (!searchResults) return; searchResults.innerHTML = `<div class="search-placeholder"><i class="fa-solid fa-magnifying-glass"></i><p>输入关键词开始搜索</p><p class="search-hint">支持搜索标题、内容、姓名等</p></div>`; }
+function showSearchPlaceholder() { if (!searchResults) return; const L = i18n[currentLang] || {}; searchResults.innerHTML = `<div class="search-placeholder"><i class="fa-solid fa-magnifying-glass"></i><p data-i18n="search_hint_title">${L.search_hint_title || '输入关键词开始搜索'}</p><p class="search-hint" data-i18n="search_hint_info">${L.search_hint_info || '支持搜索标题、内容、姓名等'}</p></div>`; }
 function calcScore(query, ...texts) { const q = query.toLowerCase(); let s = 0; texts.forEach((t, i) => { if (!t) return; const tl = t.toLowerCase(); if (tl === q) s += 100; const w = i === 0 ? 3 : 1; if (tl.includes(q)) s += 20 * w; const cs = q.split(''); let mc = 0; cs.forEach(c => { if (tl.includes(c)) mc++; }); s += (mc / cs.length) * 10 * w; }); return Math.round(s); }
 function hlMatch(text, query) { if (!text || !query) return text || ''; return text.replace(new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi'), '<strong style="color:var(--primary-blue);background:var(--primary-pale);padding:0 2px;border-radius:2px;">$1</strong>'); }
 
@@ -489,9 +504,20 @@ async function performSearch(query) {
         const typeSafe = String(r.type || '').replace(/[^a-zA-Z0-9_-]/g, '');
         const titleSafe = hlMatch(escapeHtml(String(r.title || '')), query);
         const excerptSafe = hlMatch(escapeHtml(String(r.excerpt || '').substring(0, 100)), query);
-        return '<div class="search-result-item" onclick="window.location.href=\'' + linkSafe + '\'"><span class="search-result-type ' + escapeHtml(typeSafe) + '">' + escapeHtml(String(r.typeLabel || '')) + '</span><div class="search-result-title">' + titleSafe + '</div><div class="search-result-excerpt">' + excerptSafe + '</div>' + (r.date ? '<div style="font-size:0.7rem;color:var(--text-muted);margin-top:4px;">' + escapeHtml(String(r.date)) + '</div>' : '') + '</div>';
+        return '<div class="search-result-item" role="button" tabindex="0" data-link="' + linkSafe + '"><span class="search-result-type ' + escapeHtml(typeSafe) + '">' + escapeHtml(String(r.typeLabel || '')) + '</span><div class="search-result-title">' + titleSafe + '</div><div class="search-result-excerpt">' + excerptSafe + '</div>' + (r.date ? '<div style="font-size:0.7rem;color:var(--text-muted);margin-top:4px;">' + escapeHtml(String(r.date)) + '</div>' : '') + '</div>';
     };
     searchResults.innerHTML = '<div class="search-result-list">' + results.map(safeResult).join('') + '</div>';
+}
+if (searchResults) {
+    searchResults.addEventListener('click', e => {
+        const item = e.target.closest('.search-result-item');
+        if (item && item.dataset.link) window.location.href = item.dataset.link;
+    });
+    searchResults.addEventListener('keydown', e => {
+        if (e.key !== 'Enter' && e.key !== ' ') return;
+        const item = e.target.closest('.search-result-item');
+        if (item && item.dataset.link) { e.preventDefault(); window.location.href = item.dataset.link; }
+    });
 }
 if (hamburger && navMenu) {
     // 创建移动端导航遮罩
@@ -508,6 +534,8 @@ if (hamburger && navMenu) {
     hamburger.addEventListener('click', () => {
         const isActive = navMenu.classList.toggle('active');
         hamburger.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+        if (!hamburger.getAttribute('aria-controls')) hamburger.setAttribute('aria-controls', 'navMenu');
         navBackdrop.classList.toggle('active', isActive);
         if (window.innerWidth <= 768) {
             body.style.overflow = isActive ? 'hidden' : '';
@@ -516,6 +544,7 @@ if (hamburger && navMenu) {
     navMenu.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', e => {
         if (!l.classList.contains('dropdown-toggle')) {
             hamburger.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
             navMenu.classList.remove('active');
             navBackdrop.classList.remove('active');
             body.style.overflow = '';
@@ -524,6 +553,7 @@ if (hamburger && navMenu) {
     document.addEventListener('click', e => {
         if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
             hamburger.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
             navMenu.classList.remove('active');
             navBackdrop.classList.remove('active');
             body.style.overflow = '';
@@ -533,10 +563,31 @@ if (hamburger && navMenu) {
 const dtEl = document.getElementById('moreDropdown'), dmEl = document.getElementById('dropdownMenu');
 if (dtEl && dmEl) { dtEl.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); dtEl.classList.toggle('active'); dmEl.classList.toggle('active'); }); dmEl.querySelectorAll('.dropdown-link').forEach(l => l.addEventListener('click', () => { dtEl.classList.remove('active'); dmEl.classList.remove('active'); })); document.addEventListener('click', e => { if (!dtEl.contains(e.target) && !dmEl.contains(e.target)) { dtEl.classList.remove('active'); dmEl.classList.remove('active'); } }); }
 window.addEventListener('scroll', () => { if (window.scrollY > 60) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled'); });
-if (themeToggle) { const st = localStorage.getItem('wfls-tt-theme'); if (st === 'dark') { body.classList.add('dark-mode'); themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>'; } themeToggle.addEventListener('click', () => { body.classList.toggle('dark-mode'); const id = body.classList.contains('dark-mode'); localStorage.setItem('wfls-tt-theme', id ? 'dark' : 'light'); themeToggle.innerHTML = id ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>'; }); }
+if (themeToggle) {
+    const rootEl = document.documentElement;
+    const sun = '<i class="fa-solid fa-sun"></i>', moon = '<i class="fa-solid fa-moon"></i>';
+    // 初始状态可能已由 <head> 内联脚本设置（存储值优先，其次跟随系统偏好）
+    themeToggle.innerHTML = isDarkTheme() ? sun : moon;
+    themeToggle.addEventListener('click', () => {
+        const dark = rootEl.classList.toggle('dark-mode');
+        safeStorage.set('wfls-tt-theme', dark ? 'dark' : 'light');
+        themeToggle.innerHTML = dark ? sun : moon;
+    });
+}
 
-function openModal(m) { if(m) { m.classList.add('active'); body.style.overflow = 'hidden'; } }
-function closeModal(m) { if(m) { m.classList.remove('active'); body.style.overflow = ''; } }
+function openModal(m) { if(m) { m.classList.add('active'); body.style.overflow = 'hidden'; m.setAttribute('role', 'dialog'); m.setAttribute('aria-modal', 'true'); m._lastFocus = document.activeElement; const f = m.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'); if (f) setTimeout(() => f.focus(), 60); } }
+function closeModal(m) { if(m) { m.classList.remove('active'); body.style.overflow = ''; if (m._lastFocus && document.contains(m._lastFocus)) { try { m._lastFocus.focus(); } catch(e) {} } m._lastFocus = null; } }
+/* 焦点陷阱：Tab 循环限制在当前打开的模态框内 */
+document.addEventListener('keydown', e => {
+    if (e.key !== 'Tab') return;
+    const m = document.querySelector('.modal-overlay.active, .search-overlay.active');
+    if (!m) return;
+    const f = m.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    if (!f.length) return;
+    const first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+});
 if (qrTrigger && modalOverlay) qrTrigger.addEventListener('click', () => openModal(modalOverlay));
 if (modalClose && modalOverlay) modalClose.addEventListener('click', () => closeModal(modalOverlay));
 if (modalOverlay) modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) closeModal(modalOverlay); });
@@ -581,13 +632,16 @@ function renderTagFilter(containerId, data, currentFilter, onChangeCallback) {
 
 function setNewsFilter(tag) { newsFilterTag = tag; newsCurrentPage = 1; renderAllNews(); }
 function setCompetitionsFilter(tag) { competitionsFilterTag = tag; competitionsCurrentPage = 1; renderAllCompetitions(); }
-function renderPagination(cid, d, cp) { const c = document.getElementById(cid); if (!c) return; const ep = c.parentElement.querySelector('.pagination'); if (ep) ep.remove(); const tp = getTotalPages(d); if (tp <= 1) return; const pe = document.createElement('div'); pe.className = 'pagination'; const pb = document.createElement('button'); pb.className = 'pagination-btn'; pb.textContent = i18n[currentLang].pagination_prev; pb.disabled = cp <= 1; pb.addEventListener('click', () => { if (cid === 'newsFullGrid') { newsCurrentPage = cp-1; renderAllNews(); } else if (cid === 'competitionsFullGrid') { competitionsCurrentPage = cp-1; renderAllCompetitions(); } else { qaCurrentPage = cp-1; renderAllQa(); } window.scrollTo({ top: c.offsetTop-100, behavior:'smooth' }); }); pe.appendChild(pb); for (let i=1; i<=tp; i++) { const pg = document.createElement('button'); pg.className = 'pagination-btn'; if (i===cp) pg.classList.add('active'); pg.textContent = i; pg.addEventListener('click', () => { if (cid === 'newsFullGrid') { newsCurrentPage = i; renderAllNews(); } else if (cid === 'competitionsFullGrid') { competitionsCurrentPage = i; renderAllCompetitions(); } else { qaCurrentPage = i; renderAllQa(); } window.scrollTo({ top: c.offsetTop-100, behavior:'smooth' }); }); pe.appendChild(pg); } const nb = document.createElement('button'); nb.className = 'pagination-btn'; nb.textContent = i18n[currentLang].pagination_next; nb.disabled = cp >= tp; nb.addEventListener('click', () => { if (cid === 'newsFullGrid') { newsCurrentPage = cp+1; renderAllNews(); } else if (cid === 'competitionsFullGrid') { competitionsCurrentPage = cp+1; renderAllCompetitions(); } else { qaCurrentPage = cp+1; renderAllQa(); } window.scrollTo({ top: c.offsetTop-100, behavior:'smooth' }); }); pe.appendChild(nb); const ie = document.createElement('span'); ie.className = 'pagination-info'; ie.textContent = i18n[currentLang].pagination_info.replace('{current}', cp).replace('{total}', tp); pe.appendChild(ie); c.parentElement.appendChild(pe); }
+function renderPagination(cid, d, cp) { const c = document.getElementById(cid); if (!c) return; const ep = c.parentElement.querySelector('.pagination'); if (ep) ep.remove(); const tp = getTotalPages(d); if (tp <= 1) return; const pe = document.createElement('div'); pe.className = 'pagination'; const pb = document.createElement('button'); pb.className = 'pagination-btn'; pb.textContent = i18n[currentLang].pagination_prev; pb.disabled = cp <= 1; pb.addEventListener('click', () => { if (cid === 'newsFullGrid') { newsCurrentPage = cp-1; renderAllNews(); } else if (cid === 'competitionsFullGrid') { competitionsCurrentPage = cp-1; renderAllCompetitions(); } else { qaCurrentPage = cp-1; renderAllQa(); } window.scrollTo({ top: c.offsetTop-100, behavior:'smooth' }); }); pe.appendChild(pb); const pages = [];
+if (tp <= 7) { for (let i=1; i<=tp; i++) pages.push(i); }
+else { pages.push(1); const s = Math.max(2, cp-1), e = Math.min(tp-1, cp+1); if (s > 2) pages.push('gap'); for (let i=s; i<=e; i++) pages.push(i); if (e < tp-1) pages.push('gap'); pages.push(tp); }
+pages.forEach(p => { if (p === 'gap') { const gp = document.createElement('span'); gp.className = 'pagination-gap'; gp.textContent = '…'; pe.appendChild(gp); return; } const pg = document.createElement('button'); pg.className = 'pagination-btn'; if (p===cp) pg.classList.add('active'); pg.textContent = p; pg.addEventListener('click', () => { if (cid === 'newsFullGrid') { newsCurrentPage = p; renderAllNews(); } else if (cid === 'competitionsFullGrid') { competitionsCurrentPage = p; renderAllCompetitions(); } else { qaCurrentPage = p; renderAllQa(); } window.scrollTo({ top: c.offsetTop-100, behavior:'smooth' }); }); pe.appendChild(pg); }); const nb = document.createElement('button'); nb.className = 'pagination-btn'; nb.textContent = i18n[currentLang].pagination_next; nb.disabled = cp >= tp; nb.addEventListener('click', () => { if (cid === 'newsFullGrid') { newsCurrentPage = cp+1; renderAllNews(); } else if (cid === 'competitionsFullGrid') { competitionsCurrentPage = cp+1; renderAllCompetitions(); } else { qaCurrentPage = cp+1; renderAllQa(); } window.scrollTo({ top: c.offsetTop-100, behavior:'smooth' }); }); pe.appendChild(nb); const ie = document.createElement('span'); ie.className = 'pagination-info'; ie.textContent = i18n[currentLang].pagination_info.replace('{current}', cp).replace('{total}', tp); pe.appendChild(ie); c.parentElement.appendChild(pe); }
 
 async function loadAboutData() { showContentLoading('coreMembersGrid', '加载社团信息...'); try { const resp = await fetch('data/about.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); aboutData = await resp.json(); } catch(e) { aboutData = null; } if (typeof renderAboutSections === 'function') renderAboutSections(); updateHeroLastUpdated(); }
 async function loadMembersData() { showContentLoading('coreMembersGrid', '加载成员数据...'); if (!playersData) await loadPlayers(); if (playersData && Array.isArray(playersData.players)) { membersData = playersData.players.filter(p => p.role).map(p => ({ name: p.name, uid: p.uid, role: p.role, description: p.description, qq: p.qq })); } else { try { const resp = await fetch('data/_legacy/members.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); membersData = await resp.json(); } catch(e) { membersData = []; } } if (typeof renderCoreMembers === 'function') { renderCoreMembers(); if (typeof renderAllMembersPage === 'function') renderAllMembersPage(); } }
-async function loadNewsData() { showContentLoading('newsPreviewGrid', '加载动态...'); showContentLoading('newsFullGrid', '加载动态...'); try { const resp = await fetch('data/news/index.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); newsData = await resp.json(); } catch(e) { newsData = []; } if (typeof renderAllNews === 'function') renderAllNews(); checkAllDataLoaded(); }
-async function loadCompetitionsData() { showContentLoading('competitionsPreviewGrid', '加载赛事...'); showContentLoading('competitionsFullGrid', '加载赛事...'); try { const resp = await fetch('data/competitions/index.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); competitionsData = await resp.json(); } catch(e) { competitionsData = []; } if (typeof renderAllCompetitions === 'function') renderAllCompetitions(); checkAllDataLoaded(); }
-async function loadDrawsData() { try { const resp = await fetch('data/draws.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); drawsData = await resp.json(); } catch(e) { drawsData = []; } checkAllDataLoaded(); }
+async function loadNewsData() { showContentLoading('newsPreviewGrid', '加载动态...'); showContentLoading('newsFullGrid', '加载动态...'); try { const resp = await fetch('data/news/index.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); newsData = await resp.json(); } catch(e) { console.error('news/index.json 加载失败', e); newsData = []; } if (typeof renderAllNews === 'function') renderAllNews(); markContentLoaded('news'); }
+async function loadCompetitionsData() { showContentLoading('competitionsPreviewGrid', '加载赛事...'); showContentLoading('competitionsFullGrid', '加载赛事...'); try { const resp = await fetch('data/competitions/index.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); competitionsData = await resp.json(); } catch(e) { console.error('competitions/index.json 加载失败', e); competitionsData = []; } if (typeof renderAllCompetitions === 'function') renderAllCompetitions(); markContentLoaded('competition'); }
+async function loadDrawsData() { try { const resp = await fetch('data/draws.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); drawsData = await resp.json(); } catch(e) { drawsData = []; } }
 function getDrawsForCompetition(competitionId) { if (!drawsData || !drawsData.length) return null; return drawsData.find(d => d.competitionId === competitionId) || null; }
 async function loadQaData() { try { const resp = await fetch('data/qa/index.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); qaData = await resp.json(); } catch(e) { qaData = []; } if (typeof renderAllQa === 'function') renderAllQa(); }
 async function loadChangelogData() { try { const resp = await fetch('data/changelog.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); changelogData = await resp.json(); } catch(e) { changelogData = []; } if (typeof renderAllChangelog === 'function') renderAllChangelog(); }
@@ -637,15 +691,24 @@ function linkPlayerName(name) {
 // 名称规范化：按 players.json（含别名）把赛果中的名字归一到规范名
 function normalizePlayerName(raw) { if (raw == null) return raw; const p = nameIndex[raw]; return p && p.name ? p.name : raw; }
 function normalizeScoreLog(log) { if (!Array.isArray(log)) return log; for (const r of log) { if (r['胜者']) r['胜者'] = normalizePlayerName(r['胜者']); if (r['负者']) r['负者'] = normalizePlayerName(r['负者']); if (r['对象']) r['对象'] = normalizePlayerName(r['对象']); } return log; }
-function checkAllDataLoaded() { if (newsData && competitionsData) { dataLoaded = true; if (typeof updateDetailPage === 'function' && window.location.pathname.includes('detail.html')) updateDetailPage(); } }
+let _newsLoadSettled = false, _compLoadSettled = false, _detailRetryCount = 0;
+function markContentLoaded(which) {
+    if (which === 'news') _newsLoadSettled = true;
+    else if (which === 'competition') _compLoadSettled = true;
+    // 两个内容源都"落定"（无论成功或失败）后才触发详情页渲染，避免以空数组误判就绪
+    if (_newsLoadSettled && _compLoadSettled && !dataLoaded) {
+        dataLoaded = true;
+        if (typeof updateDetailPage === 'function' && window.location.pathname.includes('detail.html')) updateDetailPage();
+    }
+}
 
 function renderAboutSections() { if (!aboutData) return; const pc = document.getElementById('philosophyContent'); if (pc && aboutData.philosophy) pc.innerHTML = `<div class="markdown-body">${renderMarkdown(aboutData.philosophy.content)}</div>`; const ac = document.getElementById('activitiesContent'); if (ac && aboutData.activities) ac.innerHTML = `<div class="markdown-body">${renderMarkdown(aboutData.activities.content)}</div>`; updateHeroLastUpdated(); }
 function getMemberAvatarHTML(m) { if (m.qq && m.qq.trim()) { const qqUrl = `https://q1.qlogo.cn/g?b=qq&nk=${m.qq.trim()}&s=640`; return `<div class="member-avatar">${escapeHtml(m.name.charAt(0))}<img class="member-avatar-img" src="${escapeHtml(qqUrl)}" alt="${escapeHtml(m.name)}" loading="lazy" onerror="this.style.display='none'"></div>`; } return `<div class="member-avatar text-only">${escapeHtml(m.name.charAt(0))}</div>`; }
-function renderCoreMembers() { document.querySelectorAll('#coreMembersGrid').forEach(g => { if (!g) return; g.innerHTML = ''; membersData.forEach(m => { const el = document.createElement('div'); el.className = 'member-card glass-card'; el.innerHTML = `${getMemberAvatarHTML(m)}<h3>${escapeHtml(m.name)}</h3><span class="member-role">${escapeHtml(m.role)}</span><p class="member-desc">${formatExcerpt(m.description)}</p>`; if (m.uid != null) { el.style.cursor = 'pointer'; el.title = '查看个人数据页'; el.addEventListener('click', () => window.location.href = `player.html?uid=${m.uid}`); } g.appendChild(el); }); }); }
-function renderAllMembersPage() { const g = document.getElementById('allMembersGrid'); if (!g) return; g.innerHTML = ''; membersData.forEach(m => { const el = document.createElement('div'); el.className = 'member-card glass-card'; el.innerHTML = `${getMemberAvatarHTML(m)}<h3>${escapeHtml(m.name)}</h3><span class="member-role">${escapeHtml(m.role)}</span><p class="member-desc">${formatExcerpt(m.description)}</p>`; if (m.uid != null) { el.style.cursor = 'pointer'; el.title = '查看个人数据页'; el.addEventListener('click', () => window.location.href = `player.html?uid=${m.uid}`); } g.appendChild(el); }); }
-function renderAllNews() { const pg = document.getElementById('newsPreviewGrid'); if (pg) { pg.innerHTML = ''; newsData.slice(0,3).forEach(item => { const c = document.createElement('div'); c.className = 'news-card'; c.innerHTML = createNewsCard(item); c.addEventListener('click', () => window.location.href = `detail.html?type=news&id=${item.id}`); pg.appendChild(c); }); } const fg = document.getElementById('newsFullGrid'); if (fg) { const fd = getFilteredNewsData(); fg.innerHTML = ''; getPaginatedData(fd, newsCurrentPage).forEach(item => { const c = document.createElement('div'); c.className = 'news-card'; c.innerHTML = createNewsCard(item); c.addEventListener('click', () => window.location.href = `detail.html?type=news&id=${item.id}`); fg.appendChild(c); }); renderPagination('newsFullGrid', fd, newsCurrentPage); renderTagFilter('newsTagFilter', newsData, newsFilterTag, setNewsFilter); } }
-function renderAllCompetitions() { const pg = document.getElementById('competitionsPreviewGrid'); if (pg) { pg.innerHTML = ''; competitionsData.slice(0,3).forEach(item => { const c = document.createElement('div'); c.className = 'competitions-card'; c.innerHTML = createCompetitionCard(item); c.addEventListener('click', () => window.location.href = `detail.html?type=competition&id=${item.id}`); pg.appendChild(c); }); } const fg = document.getElementById('competitionsFullGrid'); if (fg) { const fd = getFilteredCompetitionsData(); fg.innerHTML = ''; getPaginatedData(fd, competitionsCurrentPage).forEach(item => { const c = document.createElement('div'); c.className = 'competitions-card'; c.innerHTML = createCompetitionCard(item); c.addEventListener('click', () => window.location.href = `detail.html?type=competition&id=${item.id}`); fg.appendChild(c); }); renderPagination('competitionsFullGrid', fd, competitionsCurrentPage); renderTagFilter('competitionsTagFilter', competitionsData, competitionsFilterTag, setCompetitionsFilter); } }
-function renderAllQa() { const fg = document.getElementById('qaFullGrid'); if (fg) { fg.innerHTML = ''; getPaginatedData(qaData, qaCurrentPage).forEach(item => { const c = document.createElement('div'); c.className = 'qa-card'; c.innerHTML = createQaCard(item); c.addEventListener('click', () => window.location.href = `detail.html?type=qa&id=${item.id}`); fg.appendChild(c); }); renderPagination('qaFullGrid', qaData, qaCurrentPage); } }
+function renderCoreMembers() { document.querySelectorAll('#coreMembersGrid').forEach(g => { if (!g) return; g.innerHTML = ''; membersData.forEach(m => { const el = document.createElement('div'); el.className = 'member-card glass-card'; el.innerHTML = `${getMemberAvatarHTML(m)}<h3>${escapeHtml(m.name)}</h3><span class="member-role">${escapeHtml(m.role)}</span><p class="member-desc">${formatExcerpt(m.description)}</p>`; if (m.uid != null) { el.title = i18n[currentLang].rank_view_player_page; makeCardClickable(el, 'player.html?uid=' + m.uid); } g.appendChild(el); }); }); }
+function renderAllMembersPage() { const g = document.getElementById('allMembersGrid'); if (!g) return; g.innerHTML = ''; membersData.forEach(m => { const el = document.createElement('div'); el.className = 'member-card glass-card'; el.innerHTML = `${getMemberAvatarHTML(m)}<h3>${escapeHtml(m.name)}</h3><span class="member-role">${escapeHtml(m.role)}</span><p class="member-desc">${formatExcerpt(m.description)}</p>`; if (m.uid != null) { el.title = i18n[currentLang].rank_view_player_page; makeCardClickable(el, 'player.html?uid=' + m.uid); } g.appendChild(el); }); }
+function renderAllNews() { const pg = document.getElementById('newsPreviewGrid'); if (pg) { pg.innerHTML = ''; newsData.slice(0,3).forEach(item => { const c = document.createElement('div'); c.className = 'news-card'; c.innerHTML = createNewsCard(item); makeCardClickable(c, 'detail.html?type=news&id=' + item.id); pg.appendChild(c); }); } const fg = document.getElementById('newsFullGrid'); if (fg) { const fd = getFilteredNewsData(); fg.innerHTML = ''; getPaginatedData(fd, newsCurrentPage).forEach(item => { const c = document.createElement('div'); c.className = 'news-card'; c.innerHTML = createNewsCard(item); makeCardClickable(c, 'detail.html?type=news&id=' + item.id); fg.appendChild(c); }); renderPagination('newsFullGrid', fd, newsCurrentPage); renderTagFilter('newsTagFilter', newsData, newsFilterTag, setNewsFilter); } }
+function renderAllCompetitions() { const pg = document.getElementById('competitionsPreviewGrid'); if (pg) { pg.innerHTML = ''; competitionsData.slice(0,3).forEach(item => { const c = document.createElement('div'); c.className = 'competitions-card'; c.innerHTML = createCompetitionCard(item); makeCardClickable(c, 'detail.html?type=competition&id=' + item.id); pg.appendChild(c); }); } const fg = document.getElementById('competitionsFullGrid'); if (fg) { const fd = getFilteredCompetitionsData(); fg.innerHTML = ''; getPaginatedData(fd, competitionsCurrentPage).forEach(item => { const c = document.createElement('div'); c.className = 'competitions-card'; c.innerHTML = createCompetitionCard(item); makeCardClickable(c, 'detail.html?type=competition&id=' + item.id); fg.appendChild(c); }); renderPagination('competitionsFullGrid', fd, competitionsCurrentPage); renderTagFilter('competitionsTagFilter', competitionsData, competitionsFilterTag, setCompetitionsFilter); } }
+function renderAllQa() { const fg = document.getElementById('qaFullGrid'); if (fg) { fg.innerHTML = ''; getPaginatedData(qaData, qaCurrentPage).forEach(item => { const c = document.createElement('div'); c.className = 'qa-card'; c.innerHTML = createQaCard(item); makeCardClickable(c, 'detail.html?type=qa&id=' + item.id); fg.appendChild(c); }); renderPagination('qaFullGrid', qaData, qaCurrentPage); } }
 function renderAllChangelog() { const tl = document.getElementById('changelogTimeline'); if (!tl) return; tl.innerHTML = ''; if (!changelogData || !changelogData.length) { tl.innerHTML = '<div class="changelog-empty"><i class="fa-solid fa-clock-rotate-left"></i><p data-i18n="changelog_empty">鏆傛棤鏇存柊鏃ュ織</p></div>'; return; } changelogData.forEach((item, idx) => { const entry = document.createElement('div'); entry.className = 'changelog-entry'; const tagLabel = i18n[currentLang]['tag_' + item.tag] || item.tag; const tagSafe = 'tag-' + String(item.tag || '').replace(/[^a-zA-Z0-9_-]/g, ''); const changesHtml = item.changes && item.changes.length ? '<ul class="changelog-changes">' + item.changes.map(c => '<li>' + renderMarkdown(c) + '</li>').join('') + '</ul>' : ''; entry.innerHTML = `<div class="changelog-entry-marker"><div class="changelog-dot"></div>${idx < changelogData.length - 1 ? '<div class="changelog-line"></div>' : ''}</div><div class="changelog-entry-content glass-card"><div class="changelog-entry-header"><span class="changelog-version">${escapeHtml(item.version)}</span><span class="changelog-tag ${escapeHtml(tagSafe)}">${escapeHtml(tagLabel)}</span><span class="changelog-date">${escapeHtml(item.date)}</span></div><h3 class="changelog-entry-title">${escapeHtml(item.title)}</h3>${changesHtml}</div>`; tl.appendChild(entry); }); }
 // ========================================
 // 详情页：条目文件夹 {type}/{id}/{id}.json（展示）+ {id}.history.json（版本清单）+ {id}.v{n}.json（快照）
@@ -706,14 +769,21 @@ async function loadHistoryManifest(type, id) {
     } catch(e) { /* 清单缺失时按无历史处理 */ }
     return null;
 }
+let _detailRunToken = 0;
 async function updateDetailPage() {
     const params = new URLSearchParams(window.location.search);
     const type = params.get('type'), id = params.get('id');
     if (!type || !id) return;
+    // 运行令牌：并发/重复触发时只让最后一次生效，防止重复 fetch 与 DOM 写入竞态
+    const token = ++_detailRunToken;
+    // 重试计数仅在目标条目变化时归零，避免轮询重试自我重置
+    const sig = type + '|' + id;
+    if (sig !== (_detailLastSig || '')) { _detailRetryCount = 0; _detailLastSig = sig; }
     const [item, hist] = await Promise.all([loadContentItem(type, id), loadHistoryManifest(type, id)]);
+    if (token !== _detailRunToken) return;
     if (!item || item.visible === false) {
         const da = getContentListByType(type);
-        if (!da || !da.length) { setTimeout(updateDetailPage, 200); return; }
+        if ((!da || !da.length) && _detailRetryCount < 8) { _detailRetryCount++; setTimeout(updateDetailPage, 200 * _detailRetryCount); return; }
         document.getElementById('detailTitle').textContent = '未找到内容';
         document.getElementById('detailDate').textContent = '';
         document.getElementById('detailContent').innerHTML = '<p>请求的内容不存在或已被移除。</p>';
@@ -1211,11 +1281,29 @@ function renderSimpleDrawsHTML(draws) {
     return html;
 }
 
+/* 可点击卡片统一键盘可达（Enter/Space 触发，role=link） */
+function makeCardClickable(el, url) {
+    if (!el || !url) return;
+    el.style.cursor = 'pointer';
+    el.tabIndex = 0;
+    el.setAttribute('role', 'link');
+    const nav = () => { window.location.href = url; };
+    el.addEventListener('click', nav);
+    el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); nav(); } });
+}
+
+function isDarkTheme() {
+    return document.documentElement.classList.contains('dark-mode') || document.body.classList.contains('dark-mode');
+}
+
 function escapeHtml(str) {
     if (!str) return '';
-    const div = document.createElement('div');
-    div.textContent = str;
-    return div.innerHTML;
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
 }
 
 function initPdfViewer() { const btn = document.getElementById('pdfViewBtn'), ctr = document.getElementById('pdfPreviewContainer'), ph = document.getElementById('pdfPlaceholder'), vw = document.getElementById('pdfViewer'); if (!btn) return; let loaded = false; btn.addEventListener('click', () => { if (!loaded) { btn.disabled = true; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Loading...'; vw.src = vw.getAttribute('data-src'); loaded = true; vw.onload = () => { btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> ${i18n[currentLang].pdf_preview_btn}`; btn.disabled = false; }; setTimeout(() => { if (btn.disabled) { btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> ${i18n[currentLang].pdf_preview_btn}`; btn.disabled = false; } }, 10000); } if (ctr.style.display === 'none' || !ctr.style.display) { ctr.style.display = 'block'; ph.style.display = 'none'; } else { ctr.style.display = 'none'; ph.style.display = 'flex'; } }); }

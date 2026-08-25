@@ -123,7 +123,7 @@ ws_matches = [
     ("2026-03-05", "Margaryta PESOTSKA", "CHIEN Tung-Chuan"),
     ("2026-03-05", "Yuka KANEYOSHI", "Sabina SURJAN"),
     # Quarter Final - 5 Mar
-    ("2026-03-05", "Anna HURSEY", "NatalIA BAJOR"),
+    ("2026-03-05", "Anna HURSEY", "Natalia BAJOR"),
     ("2026-03-05", "Kotomi OMODA", "LI Yu-Jhun"),
     ("2026-03-05", "YEH Yi-Tian", "Izabela LUPULESKU"),
     ("2026-03-05", "Yuka KANEYOSHI", "Margaryta PESOTSKA"),
@@ -171,17 +171,17 @@ wd_matches = [
     ("2026-03-04", "Veronika MATIUNINA/Anastasiya DYMYTRENKO", "Jasmin WONG/Hannah SILCOCK"),
     ("2026-03-04", "Izabela LUPULESKU/Sabina SURJAN", "Franziska SCHREINER/Sophia KLEE"),
     ("2026-03-04", "Manami IMAEDA/Kotomi OMODA", "Josephina NEUMANN/Lorena MORSCH"),
-    ("2026-03-04", "NatalIA BAJOR/Barbora VARADY", "Xia Lian NI/Sarah DE NUTTE"),
+    ("2026-03-04", "Natalia BAJOR/Barbora VARADY", "Xia Lian NI/Sarah DE NUTTE"),
     # Quarter Final - 5 Mar
     ("2026-03-05", "CHIEN Tung-Chuan/LI Yu-Jhun", "Dora COSIC/Tijana JOKIC"),
     ("2026-03-05", "Tin-Tin HO/Anna HURSEY", "Giulia TAKAHASHI/Karina SHIRAY"),
     ("2026-03-05", "Izabela LUPULESKU/Sabina SURJAN", "Veronika MATIUNINA/Anastasiya DYMYTRENKO"),
-    ("2026-03-05", "NatalIA BAJOR/Barbora VARADY", "Manami IMAEDA/Kotomi OMODA"),
+    ("2026-03-05", "Natalia BAJOR/Barbora VARADY", "Manami IMAEDA/Kotomi OMODA"),
     # Semi Final - 5 Mar
     ("2026-03-05", "CHIEN Tung-Chuan/LI Yu-Jhun", "Tin-Tin HO/Anna HURSEY"),
-    ("2026-03-05", "NatalIA BAJOR/Barbora VARADY", "Izabela LUPULESKU/Sabina SURJAN"),
+    ("2026-03-05", "Natalia BAJOR/Barbora VARADY", "Izabela LUPULESKU/Sabina SURJAN"),
     # Final - 6 Mar
-    ("2026-03-06", "CHIEN Tung-Chuan/LI Yu-Jhun", "NatalIA BAJOR/Barbora VARADY"),
+    ("2026-03-06", "CHIEN Tung-Chuan/LI Yu-Jhun", "Natalia BAJOR/Barbora VARADY"),
 ]
 
 # ============================================================
@@ -195,19 +195,41 @@ xd_matches = [
     ("2026-03-04", "Ivan HENCL/Dora COSIC", "Mael VAN DESSEL/Enisa SADIKOVIC"),
     ("2026-03-04", "Edward LY/Mo ZHANG", "Jann Mari NAYRE/Shuohan MEN"),
     ("2026-03-04", "Tomoki OMODA/Kotomi OMODA", "Iskender KHARKI/Sarvinoz MIRKADIROVA"),
-    ("2026-03-04", "Maciej KUBIK/NATALIA BAJOR", "Dimitrij OVTCHAROV/Annett KAUFMANN"),
+    ("2026-03-04", "Maciej KUBIK/Natalia BAJOR", "Dimitrij OVTCHAROV/Annett KAUFMANN"),
     ("2026-03-04", "Borgar HAUG/Anna HURSEY", "Nandan NARESH/Sophia KLEE"),
     # Quarter Final - 5 Mar
     ("2026-03-05", "Samuel ARPAS/Barbora VARADY", "Wim VERDONSCHOT/Josephina NEUMANN"),
     ("2026-03-05", "Connor GREEN/Tin-Tin HO", "Ivan HENCL/Dora COSIC"),
     ("2026-03-05", "Edward LY/Mo ZHANG", "Tomoki OMODA/Kotomi OMODA"),
-    ("2026-03-05", "Borgar HAUG/Anna HURSEY", "Maciej KUBIK/NATALIA BAJOR"),
+    ("2026-03-05", "Borgar HAUG/Anna HURSEY", "Maciej KUBIK/Natalia BAJOR"),
     # Semi Final - 5 Mar
     ("2026-03-05", "Connor GREEN/Tin-Tin HO", "Samuel ARPAS/Barbora VARADY"),
     ("2026-03-05", "Borgar HAUG/Anna HURSEY", "Edward LY/Mo ZHANG"),
     # Final - 6 Mar
     ("2026-03-06", "Connor GREEN/Tin-Tin HO", "Borgar HAUG/Anna HURSEY"),
 ]
+
+
+def normalize_name(name):
+    """统一姓名内的混合大小写异常（如 NatalIA -> Natalia、PaulINE -> Pauline），
+    防止同一球员因录入笔误被拆成多个档案。
+    处理单位：按空格分词、连字符再分段；全大写姓氏（BAJOR）、正常首字母大写词
+    （Natalia / Tung-Chuan / Tin-Tin / DE NUTTE 的 DE）原样通过。
+    注意：不调整姓氏与名字的先后顺序；整词全大写的名字（如 CLEMENT LAINE）无法自动识别，需人工核对。"""
+    def fix_part(p):
+        if len(p) < 2 or p.isupper() or p.islower():
+            return p
+        if p[0].isupper() and p[1:].islower():
+            return p
+        fixed = p[0].upper() + p[1:].lower()
+        print(f"  [normalize] {p} -> {fixed}")
+        return fixed
+
+    def fix_word(w):
+        return "-".join(fix_part(part) for part in w.split("-"))
+
+    return "/".join(" ".join(fix_word(w) for w in team.split())
+                    for team in name.split("/"))
 
 
 def append_to_scorelog(category, matches):
@@ -241,6 +263,8 @@ def append_to_scorelog(category, matches):
     # Build new records
     new_records = []
     for date, winner, loser in matches:
+        winner = normalize_name(winner)
+        loser = normalize_name(loser)
         key = (date, EVENT_TYPE, winner, loser)
         if key not in existing_keys:
             record = {

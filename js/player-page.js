@@ -11,7 +11,7 @@ function getLatestSnapshotRow(playerName) {
         const t = rankingTimeline[i];
         if (t && t.data && t.data.length) {
             const row = t.data.find(p => p['姓名'] === playerName);
-            if (row) return { row: row, label: t.label, time: t.time };
+            if (row) return { row: row, label: getNodeDisplayLabel(t), time: t.time };
         }
     }
     return null;
@@ -82,7 +82,7 @@ function renderPlayerHeader(player) {
     header.innerHTML = `
         <div class="player-profile-info">
             <div class="player-profile-title">
-                <h2>${escapeHtml(String(player.name))}</h2>
+                <h1>${escapeHtml(String(player.name))}</h1>
                 <span class="player-index-uid">#${escapeHtml(String(player.uid))}</span>
                 ${statusHtml}
             </div>

@@ -291,16 +291,8 @@ function wttRenderPlayerCheckboxes() {
         return;
     }
 
-    // 切换到 WTT 全局数据以使用 getSeasonStartScores
-    const origScoreLog = scoreLogData;
-    const origInitial = initialScoresData;
-    const origEvent = eventCoefficients;
-    const origSeasons = seasonsData;
-    scoreLogData = wttScoreLogData;
-    initialScoresData = (typeof wttGetInitialScoresDataForEngine === 'function') ? wttGetInitialScoresDataForEngine() : wttInitialScoresData;
-    eventCoefficients = wttEventCoefficients;
-    seasonsData = wttSeasonsData;
-
+    // 切换到 WTT 全局数据以使用 getSeasonStartScores（异常安全，自动恢复）
+    const scoreMap = wttWithDataContext(() => {
     // 构建积分查找表（含不活跃球员，使用赛季继承起始积分）
     const scoreMap = {};
     let cd = [];
@@ -331,11 +323,8 @@ function wttRenderPlayerCheckboxes() {
         }
     }
 
-    // 恢复全局数据
-    scoreLogData = origScoreLog;
-    initialScoresData = origInitial;
-    eventCoefficients = origEvent;
-    seasonsData = origSeasons;
+        return scoreMap;
+    });
 
     // 按积分降序排列
     const sortedPlayers = [...players].sort((a, b) => (scoreMap[b] || 0) - (scoreMap[a] || 0));
@@ -360,16 +349,8 @@ function wttRenderCompareSelects() {
     const players = wttGetAllPlayers();
     if (!players.length) return;
 
-    // 切换到 WTT 全局数据
-    const origScoreLog = scoreLogData;
-    const origInitial = initialScoresData;
-    const origEvent = eventCoefficients;
-    const origSeasons = seasonsData;
-    scoreLogData = wttScoreLogData;
-    initialScoresData = (typeof wttGetInitialScoresDataForEngine === 'function') ? wttGetInitialScoresDataForEngine() : wttInitialScoresData;
-    eventCoefficients = wttEventCoefficients;
-    seasonsData = wttSeasonsData;
-
+    // 切换到 WTT 全局数据（异常安全，自动恢复）
+    const scoreMap = wttWithDataContext(() => {
     // 构建积分查找表（含不活跃球员）并排序
     const scoreMap = {};
     let cd = [];
@@ -399,11 +380,8 @@ function wttRenderCompareSelects() {
         }
     }
 
-    // 恢复全局数据
-    scoreLogData = origScoreLog;
-    initialScoresData = origInitial;
-    eventCoefficients = origEvent;
-    seasonsData = origSeasons;
+        return scoreMap;
+    });
 
     const sortedPlayers = [...players].sort((a, b) => (scoreMap[b] || 0) - (scoreMap[a] || 0));
 
@@ -429,16 +407,8 @@ function wttGetPlayerScoreAtSnapshot(playerName, timelineEntry) {
         return null;
     }
 
-    // 切换到 WTT 全局数据，确保 getSeasonStartScores 使用正确的数据源
-    const origScoreLog = scoreLogData;
-    const origInitial = initialScoresData;
-    const origEvent = eventCoefficients;
-    const origSeasons = seasonsData;
-    scoreLogData = wttScoreLogData;
-    initialScoresData = (typeof wttGetInitialScoresDataForEngine === 'function') ? wttGetInitialScoresDataForEngine() : wttInitialScoresData;
-    eventCoefficients = wttEventCoefficients;
-    seasonsData = wttSeasonsData;
-
+    // 切换到 WTT 全局数据（异常安全，自动恢复），计算该快照的起始积分
+    return wttWithDataContext(() => {
     let result = null;
     if (seasonsData && seasonsData.length > 0 && timelineEntry.season) {
         const season = seasonsData.find(s => s.label === timelineEntry.season);
@@ -454,13 +424,8 @@ function wttGetPlayerScoreAtSnapshot(playerName, timelineEntry) {
         result = initialScoresData.initialScores[playerName];
     }
 
-    // 恢复全局数据
-    scoreLogData = origScoreLog;
-    initialScoresData = origInitial;
-    eventCoefficients = origEvent;
-    seasonsData = origSeasons;
-
     return result;
+    });
 }
 
 // 获取球员在某个WTT快照时点的排名（含无比赛记录的球员）
@@ -480,16 +445,8 @@ function wttGetPlayerRankAtSnapshot(playerName, timelineEntry) {
         seen.add(p['姓名']);
     }
 
-    // 切换到 WTT 全局数据，确保 getSeasonStartScores 使用正确的数据源
-    const origScoreLog = scoreLogData;
-    const origInitial = initialScoresData;
-    const origEvent = eventCoefficients;
-    const origSeasons = seasonsData;
-    scoreLogData = wttScoreLogData;
-    initialScoresData = (typeof wttGetInitialScoresDataForEngine === 'function') ? wttGetInitialScoresDataForEngine() : wttInitialScoresData;
-    eventCoefficients = wttEventCoefficients;
-    seasonsData = wttSeasonsData;
-
+    // 切换到 WTT 全局数据（异常安全，自动恢复），补充未上榜球员的起始积分
+    wttWithDataContext(() => {
     if (seasonsData && seasonsData.length > 0 && timelineEntry.season) {
         const season = seasonsData.find(s => s.label === timelineEntry.season);
         if (season) {
@@ -503,11 +460,7 @@ function wttGetPlayerRankAtSnapshot(playerName, timelineEntry) {
         }
     }
 
-    // 恢复全局数据
-    scoreLogData = origScoreLog;
-    initialScoresData = origInitial;
-    eventCoefficients = origEvent;
-    seasonsData = origSeasons;
+    });
 
     allScores.sort((a, b) => b.score - a.score);
     const idx = allScores.findIndex(x => x.name === playerName);
@@ -538,7 +491,7 @@ function wttRenderPointsTrend(playerNames, dataCount) {
         ? tier.borderWidth * (mobileScale.borderWidthScale || 0.8)
         : tier.borderWidth;
 
-    const labels = slicedTimeline.map(t => t.label);
+    const labels = slicedTimeline.map(t => getNodeDisplayLabel(t));
     const datasets = playerNames.map((name, idx) => {
         const data = slicedTimeline.map(t => wttGetPlayerScoreAtSnapshot(name, t));
         return {
@@ -588,7 +541,7 @@ function wttRenderRankStream(topN, dataCount) {
     const slicedTimeline = wttRankingTimeline.slice(-dataCount);
 
     const isMobile = window.innerWidth <= 768;
-    const labels = slicedTimeline.map(t => t.label);
+    const labels = slicedTimeline.map(t => getNodeDisplayLabel(t));
 
     // 使用最后一个切片快照确定 top 球员
     let lastNonEmptySnapshot = null;
@@ -656,24 +609,14 @@ function wttRenderRankStream(topN, dataCount) {
 function wttCalcFormScore(playerName) {
     if (!wttScoreLogData || !wttScoreLogData.length) return 0;
 
-    // 切换到 WTT 全局数据
-    const origScoreLog = scoreLogData;
-    const origInitial = initialScoresData;
-    const origEvent = eventCoefficients;
-    const origSeasons = seasonsData;
-
-    scoreLogData = wttScoreLogData;
-    initialScoresData = (typeof wttGetInitialScoresDataForEngine === 'function') ? wttGetInitialScoresDataForEngine() : wttInitialScoresData;
-    eventCoefficients = wttEventCoefficients;
-    seasonsData = wttSeasonsData;
+    // 切换到 WTT 全局数据（异常安全，自动恢复）
+    return wttWithDataContext(() => {
 
     const playerMatches = scoreLogData
         .filter(r => isMatchRecord(r) && (r['胜者'] === playerName || r['负者'] === playerName))
         .sort((a, b) => a['日期'].localeCompare(b['日期']));
 
     if (!playerMatches.length) {
-        scoreLogData = origScoreLog; initialScoresData = origInitial;
-        eventCoefficients = origEvent; seasonsData = origSeasons;
         return 0;
     }
 
@@ -741,9 +684,8 @@ function wttCalcFormScore(playerName) {
         }
     }
 
-    scoreLogData = origScoreLog; initialScoresData = origInitial;
-    eventCoefficients = origEvent; seasonsData = origSeasons;
     return totalChange;
+    });
 }
 
 function wttCalcPredictedWinRate(rA, rB, aWins, bWins, fA, fB) {
@@ -759,16 +701,8 @@ function wttRenderComparison(playerA, playerB) {
     const container = document.getElementById('wttCompareResult');
     if (!container) return;
 
-    // 切换到 WTT 全局数据
-    const origScoreLog = scoreLogData;
-    const origInitial = initialScoresData;
-    const origEvent = eventCoefficients;
-    const origSeasons = seasonsData;
-
-    scoreLogData = wttScoreLogData;
-    initialScoresData = (typeof wttGetInitialScoresDataForEngine === 'function') ? wttGetInitialScoresDataForEngine() : wttInitialScoresData;
-    eventCoefficients = wttEventCoefficients;
-    seasonsData = wttSeasonsData;
+    // 切换到 WTT 全局数据（异常安全，自动恢复）
+    const html = wttWithDataContext(() => {
 
     let lastNonEmptySnapshot = null;
     for (let i = wttRankingTimeline.length - 1; i >= 0; i--) {
@@ -796,14 +730,14 @@ function wttRenderComparison(playerA, playerB) {
 
     let html = `<div class="compare-summary">
         <div class="compare-player-col">
-            <div class="compare-player-name">${playerA}</div>
+            <div class="compare-player-name">${escapeHtml(playerA)}</div>
             <div class="compare-player-stat">${i18n[currentLang].wtt_cur_score}: <strong>${ad ? ad['当前积分'].toFixed(1) : '-'}</strong></div>
             <div class="compare-player-stat">${i18n[currentLang].wtt_h2h_rate}: <strong>${aWinRate}</strong></div>
             <div class="compare-player-stat">${i18n[currentLang].wtt_pred_rate}: <strong>${predA}%</strong></div>
         </div>
         <div class="compare-divider">VS</div>
         <div class="compare-player-col">
-            <div class="compare-player-name">${playerB}</div>
+            <div class="compare-player-name">${escapeHtml(playerB)}</div>
             <div class="compare-player-stat">${i18n[currentLang].wtt_cur_score}: <strong>${bd ? bd['当前积分'].toFixed(1) : '-'}</strong></div>
             <div class="compare-player-stat">${i18n[currentLang].wtt_h2h_rate}: <strong>${bWinRate}</strong></div>
             <div class="compare-player-stat">${i18n[currentLang].wtt_pred_rate}: <strong>${predB}%</strong></div>
@@ -813,13 +747,13 @@ function wttRenderComparison(playerA, playerB) {
     if (total > 0) {
         html += `<div style="text-align:center;margin-bottom:16px;">
             <span style="font-weight:600;">${i18n[currentLang].wtt_total_h2h.replace('{n}', total)}</span> |
-            <span style="color:#52c41a;">${i18n[currentLang].wtt_wins.replace('{player}', playerA).replace('{n}', aW)}</span> |
-            <span style="color:#52c41a;">${i18n[currentLang].wtt_wins.replace('{player}', playerB).replace('{n}', bW)}</span>
-            ${recent ? ` | ${i18n[currentLang].wtt_recent.replace('{date}', recent['日期']).replace('{winner}', recent['胜者'])}` : ''}
+            <span style="color:#52c41a;">${escapeHtml(i18n[currentLang].wtt_wins.replace('{player}', playerA).replace('{n}', aW))}</span> |
+            <span style="color:#52c41a;">${escapeHtml(i18n[currentLang].wtt_wins.replace('{player}', playerB).replace('{n}', bW))}</span>
+            ${recent ? ` | ${escapeHtml(i18n[currentLang].wtt_recent.replace('{date}', recent['日期']).replace('{winner}', recent['胜者']))}` : ''}
         </div>
         <div class="compare-h2h-wrapper">
             <table class="compare-h2h-table">
-                <thead><tr><th>${i18n[currentLang].score_col_date}</th><th>${i18n[currentLang].score_col_type}</th><th>${i18n[currentLang].wtt_winner}</th><th>${i18n[currentLang].wtt_pts_change.replace('{player}', playerA)}</th><th>${i18n[currentLang].wtt_pts_change.replace('{player}', playerB)}</th></tr></thead>
+                <thead><tr><th>${i18n[currentLang].score_col_date}</th><th>${i18n[currentLang].score_col_type}</th><th>${i18n[currentLang].wtt_winner}</th><th>${escapeHtml(i18n[currentLang].wtt_pts_change.replace('{player}', playerA))}</th><th>${escapeHtml(i18n[currentLang].wtt_pts_change.replace('{player}', playerB))}</th></tr></thead>
                 <tbody>`;
 
         const scores = {};
@@ -863,10 +797,10 @@ function wttRenderComparison(playerA, playerB) {
         html += '<div class="compare-placeholder"><p>' + i18n[currentLang].wtt_no_h2h + '</p></div>';
     }
 
-    container.innerHTML = html;
+    return html;
+    });
 
-    scoreLogData = origScoreLog; initialScoresData = origInitial;
-    eventCoefficients = origEvent; seasonsData = origSeasons;
+    container.innerHTML = html;
 }
 
 // 语言切换时重绘图表（覆盖 wtt_common.js 中的同名函数）

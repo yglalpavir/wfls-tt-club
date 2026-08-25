@@ -29,7 +29,7 @@ async function loadRankingDataForViz() {
             const f = dataFiles[i];
             showProgress(i18n[currentLang].data_viz_downloading.replace('{label}', f.label).replace('{i}', i + 1).replace('{total}', dataFiles.length).replace('{file}', f.name));
             await new Promise(r => setTimeout(r, 0));
-            await f.loader();
+            if (await f.loader() === false) throw new Error(f.name + ' 加载失败');
         }
 
         // 加载球员标签（可选）

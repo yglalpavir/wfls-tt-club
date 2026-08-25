@@ -355,7 +355,7 @@ function renderPointsTrend(playerNames, dataCount) {
         ? tier.borderWidth * (mobileScale.borderWidthScale || 0.8)
         : tier.borderWidth;
 
-    const labels = slicedTimeline.map(t => t.label);
+    const labels = slicedTimeline.map(t => getNodeDisplayLabel(t));
     const datasets = playerNames.map((name, idx) => {
         const data = slicedTimeline.map(t => getPlayerScoreAtSnapshot(name, t));
         return {
@@ -400,7 +400,7 @@ function renderRankStream(topN, dataCount) {
     dataCount = Math.max(2, Math.min(dataCount || 20, rankingTimeline.length));
     const slicedTimeline = rankingTimeline.slice(-dataCount);
     const isMobile = window.innerWidth <= 768;
-    const labels = slicedTimeline.map(t => t.label); 
+    const labels = slicedTimeline.map(t => getNodeDisplayLabel(t)); 
     
     // 查找最后一个非空快照来获取顶级球员
     let lastNonEmptySnapshot = null;

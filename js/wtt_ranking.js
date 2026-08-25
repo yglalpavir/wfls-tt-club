@@ -60,6 +60,13 @@ function wttShowScoreDetail(playerName, snapshotDate) {
     openModal(modal);
 }
 
+/* 积分明细入口统一走事件委托（避免内联 onclick 拼接球员名） */
+document.addEventListener('click', e => {
+    const el = e.target.closest('[data-player][data-snapshot]');
+    if (!el || el.tagName === 'A' || !el.classList.contains('score-detail-icon')) return;
+    wttShowScoreDetail(el.dataset.player, el.dataset.snapshot);
+});
+
 function wttAdjustModalSize() {
     const modal = document.getElementById('scoreDetailModal');
     if (!modal) return;
@@ -272,7 +279,7 @@ function wttRenderTimeNodeList() {
     realtimeNodes.forEach(n => {
         const rli = document.createElement('li');
         rli.className = 'realtime-group';
-        rli.innerHTML = `<div class="realtime-header"><i class="fa-solid fa-clock"></i><span class="realtime-label">${i18n[currentLang].rank_realtime_header}</span></div><ul class="season-node-list"><li class="time-node-item realtime-node ${n.index === wttCurrentTimeIndex ? 'active' : ''}" data-index="${n.index}"><span class="node-dot"></span>${n.label}<span class="node-count">${i18n[currentLang].wtt_ppl.replace('{n}', n.data.length)}</span></li></ul>`;
+        rli.innerHTML = `<div class="realtime-header"><i class="fa-solid fa-clock"></i><span class="realtime-label">${i18n[currentLang].rank_realtime_header}</span></div><ul class="season-node-list"><li class="time-node-item realtime-node" role="button" tabindex="0" ${n.index === wttCurrentTimeIndex ? 'active' : ''}" data-index="${n.index}"><span class="node-dot"></span>${getNodeDisplayLabel(n)}<span class="node-count">${i18n[currentLang].wtt_ppl.replace('{n}', n.data.length)}</span></li></ul>`;
         list.appendChild(rli);
         rli.querySelector('.time-node-item').addEventListener('click', () => {
             wttCurrentTimeIndex = parseInt(rli.querySelector('.time-node-item').getAttribute('data-index'));
@@ -292,7 +299,7 @@ function wttRenderTimeNodeList() {
     Object.entries(seasons).forEach(([season, nodes]) => {
         const sli = document.createElement('li');
         sli.className = 'season-group';
-        sli.innerHTML = `<div class="season-header"><i class="fa-solid fa-chevron-down season-arrow"></i><span class="season-label">${season}</span><span class="season-count">${i18n[currentLang].wtt_node_count.replace('{n}', nodes.length)}</span></div><ul class="season-node-list">${nodes.map(n => `<li class="time-node-item ${n.index === wttCurrentTimeIndex ? 'active' : ''} ${n.isInitial ? 'initial-node' : ''}" data-index="${n.index}"><span class="node-dot"></span>${n.label}<span class="node-count">${i18n[currentLang].wtt_ppl.replace('{n}', n.data.length)}</span></li>`).join('')}</ul>`;
+        sli.innerHTML = `<div class="season-header"><i class="fa-solid fa-chevron-down season-arrow"></i><span class="season-label">${season}</span><span class="season-count">${i18n[currentLang].wtt_node_count.replace('{n}', nodes.length)}</span></div><ul class="season-node-list">${nodes.map(n => `<li class="time-node-item" role="button" tabindex="0" ${n.index === wttCurrentTimeIndex ? 'active' : ''} ${n.isInitial ? 'initial-node' : ''}" data-index="${n.index}"><span class="node-dot"></span>${getNodeDisplayLabel(n)}<span class="node-count">${i18n[currentLang].wtt_ppl.replace('{n}', n.data.length)}</span></li>`).join('')}</ul>`;
         list.appendChild(sli);
         sli.querySelector('.season-header').addEventListener('click', () => sli.classList.toggle('collapsed'));
         sli.querySelectorAll('.time-node-item').forEach(item => {
@@ -303,6 +310,19 @@ function wttRenderTimeNodeList() {
             });
         });
     });
+
+    if (!list._kbdBound) {
+        list._kbdBound = true;
+        list.addEventListener('keydown', e => {
+            if (e.key !== 'Enter' && e.key !== ' ') return;
+            const item = e.target.closest('.time-node-item');
+            if (!item) return;
+            e.preventDefault();
+            wttCurrentTimeIndex = parseInt(item.getAttribute('data-index'));
+            wttCurrentSortKey = '当前积分'; wttCurrentSortDir = 'desc';
+            wttUpdateRankingDisplay(); wttRenderTimeNodeList();
+        });
+    }
 
     // 折叠非当前赛季的时间节点
     const curSeason = wttRankingTimeline[wttCurrentTimeIndex]?.season;
@@ -408,7 +428,7 @@ function wttRenderRankingTable(data) {
             return `<span class="player-flag ${cls}" title="${escapeHtml(a.assoc)}${a.country ? ' · ' + escapeHtml(a.country) : ''}"></span> `;
         })();
         const nc = (wttScoreLogData.length > 0)
-            ? flagHtml + wttLinkPlayerName(pn) + ` <button class="score-detail-icon" onclick="wttShowScoreDetail('${pnSafe}','${sds}')" title="${escapeHtml(i18n[currentLang].wtt_click_detail)}"><i class="fa-solid fa-receipt"></i></button>`
+            ? flagHtml + wttLinkPlayerName(pn) + ` <button class="score-detail-icon" type="button" data-player="${pnSafe}" data-snapshot="${sds}" title="${escapeHtml(i18n[currentLang].wtt_click_detail)}"><i class="fa-solid fa-receipt"></i></button>`
             : flagHtml + pnSafe;
 
         tr.innerHTML = `<td>${i + 1}</td><td>${nc}</td><td><strong>${(p['当前积分'] || 0).toFixed(1)}</strong></td><td data-label="${i18n[currentLang].rank_col_points_change}">${pch}</td><td data-label="${i18n[currentLang].rank_col_change}">${ch}</td><td data-label="${i18n[currentLang].rank_col_matches}">${p['总场次'] || 0}</td><td data-label="${i18n[currentLang].rank_col_winrate}">${wd}</td>`;
@@ -522,14 +542,7 @@ function wttReapplyI18n() {
     wttUpdateScoreDetailIfOpen();
 }
 
-function wttUpdateCategoryDisplay() {
-    const catEl = document.getElementById('wttCatName');
-    if (catEl) {
-        const info = wttGetCategoryInfo();
-        catEl.textContent = (typeof currentLang !== 'undefined' && currentLang === 'en' && info.nameEn) ? info.nameEn : info.name;
-        catEl.style.color = info.color;
-    }
-}
+// （旧版 wttUpdateCategoryDisplay 与 wtt_common.js 的同名函数重复且从未被调用，已删除）
 
 function wttUpdateScoreDetailIfOpen() {
     const modal = document.getElementById('scoreDetailModal');

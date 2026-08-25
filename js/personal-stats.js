@@ -444,7 +444,7 @@ function renderPersonalStats(playerName, containerId) {
             }
             if (!t.isInitial && rank < bestRank) bestRank = rank;
             scoreHistory.push({
-                label: t.label || t.time,
+                label: getNodeDisplayLabel(t),
                 time: t.time,
                 score: score,
                 rank: rank
@@ -967,7 +967,7 @@ function renderPersonalScoreChart(dailyHistory, snapshotHistory) {
     const existingChart = Chart.getChart(canvas);
     if (existingChart) existingChart.destroy();
 
-    const isDark = document.body.classList.contains('dark-mode');
+    const isDark = (typeof isDarkTheme === 'function' ? isDarkTheme() : false);
     const gridColor = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)';
     const textColor = isDark ? '#aeb4c2' : '#4a5568';
 

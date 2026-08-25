@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function(){try{var t=localStorage.getItem("wfls-tt-theme");var d=t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark-mode");}catch(e){}})()</script>
     <meta name="robots" content="noindex, nofollow">
     <title>Admin Dashboard | WFLS Table Tennis Club</title>
+    <link rel="icon" type="image/svg+xml" href="Assets/files/favicon_4DA3FF.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -420,6 +424,118 @@
         </header>
 
         <div class="hero-chips" id="heroChips" aria-live="polite"></div>
+
+        <!-- ===== Web 记分录入工具（生成 score-log.json 片段 / 合并导出）===== -->
+        <section id="scoreEntry" style="max-width:1100px;margin:18px auto 0;padding:0 20px;">
+            <style>
+                #scoreEntry .se-card { background:var(--card-bg,#fff); border:1px solid var(--border-color,#e3e8ef); border-radius:12px; padding:16px 18px; margin-bottom:14px; }
+                #scoreEntry h2 { font-size:1.05rem; margin:0 0 10px; display:flex; align-items:center; gap:8px; }
+                #scoreEntry .se-row { display:flex; flex-wrap:wrap; gap:10px; align-items:flex-end; }
+                #scoreEntry label { font-size:.78rem; color:var(--text-secondary,#667); display:block; margin-bottom:3px; }
+                #scoreEntry select, #scoreEntry input { padding:7px 9px; border:1px solid var(--border-color,#ccd); border-radius:8px; background:var(--bg-color,#fff); color:var(--text-primary,#223); font-size:.85rem; }
+                #scoreEntry button { cursor:pointer; border:none; border-radius:8px; padding:8px 14px; font-size:.82rem; font-weight:600; }
+                #scoreEntry .se-add { background:var(--primary-blue,#007bff); color:#fff; }
+                #scoreEntry .se-mode { background:transparent; color:var(--text-secondary,#667); border:1px solid var(--border-color,#ccd); }
+                #scoreEntry .se-mode.active { background:#17a2b8; color:#fff; border-color:#17a2b8; }
+                #scoreEntry .se-export { background:#28a745; color:#fff; }
+                #scoreEntry .se-copy { background:#6c757d; color:#fff; }
+                #scoreEntry .se-clear { background:#dc3545; color:#fff; }
+                #scoreEntry .se-list { list-style:none; margin:10px 0 0; padding:0; font-size:.82rem; }
+                #scoreEntry .se-list li { padding:5px 8px; border-bottom:1px dashed var(--border-color,#eef); display:flex; justify-content:space-between; gap:8px; }
+                #scoreEntry .se-msg { font-size:.78rem; margin-top:8px; min-height:1em; }
+                #scoreEntry .se-msg.err { color:#dc3545; } #scoreEntry .se-msg.ok { color:#28a745; }
+            </style>
+            <div class="se-card">
+                <h2><i class="fa-solid fa-pen-to-square"></i> 记分录入</h2>
+                <div class="se-row" style="margin-bottom:10px;">
+                    <button type="button" class="se-mode active" id="seModeMatch"><i class="fa-solid fa-table-tennis-paddle-ball"></i> 比赛结果</button>
+                    <button type="button" class="se-mode" id="seModeBonus"><i class="fa-solid fa-plus-minus"></i> 积分调整</button>
+                </div>
+                <div class="se-row" id="seMatchRow">
+                    <div><label>日期</label><input type="date" id="seDate"></div>
+                    <div><label>类型</label><select id="seType"></select></div>
+                    <div><label>胜者</label><select id="seWinner"></select></div>
+                    <div><label>负者</label><select id="seLoser"></select></div>
+                    <button type="button" class="se-add" id="seAddMatch">添加记录</button>
+                </div>
+                <div class="se-row" id="seBonusRow" style="display:none;">
+                    <div><label>日期</label><input type="date" id="seBDate"></div>
+                    <div><label>对象</label><select id="seTarget"></select></div>
+                    <div><label>分数（如 +100 / -30）</label><input type="text" id="seAmount" size="8" placeholder="+100"></div>
+                    <button type="button" class="se-add" id="seAddBonus">添加调整</button>
+                </div>
+                <div class="se-msg" id="seMsg"></div>
+                <ul class="se-list" id="seQueue"></ul>
+                <div class="se-row" style="margin-top:12px;" id="seActions" hidden>
+                    <button type="button" class="se-copy" id="seCopy"><i class="fa-solid fa-clipboard"></i> 复制 JSON</button>
+                    <button type="button" class="se-export" id="seExport"><i class="fa-solid fa-download"></i> 下载合并后的 score-log.json</button>
+                    <button type="button" class="se-clear" id="seClear">清空队列</button>
+                </div>
+            </div>
+        </section>
+        <script>
+        (function () {
+            var $ = function (id) { return document.getElementById(id); };
+            var TYPES_URL = "data/event-coefficient.json", PLAYERS_URL = "data/players.json", LOG_URL = "data/score-log.json";
+            var mode = "match", queue = [], players = [];
+            function msg(text, isErr) { var el = $("seMsg"); el.textContent = text; el.className = "se-msg " + (isErr ? "err" : "ok"); }
+            function todayStr() { var d = new Date(); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
+            function fillSelect(sel, arr, placeholder) { sel.innerHTML = '<option value="">' + placeholder + "</option>" + arr.map(function (n) { return '<option value="' + n.replace(/&/g, "&amp;").replace(/"/g, "&quot;") + '">' + n.replace(/&/g, "&amp;").replace(/</g, "&lt;") + "</option>"; }).join(""); }
+            function renderQueue() {
+                $("seQueue").innerHTML = queue.map(function (q, i) {
+                    var txt = q["胜者"] ? (q["日期"] + " · " + q["类型"] + " · " + q["胜者"] + " 胜 " + q["负者"]) : (q["日期"] + " · 调整 · " + q["对象"] + " " + q["分数"]);
+                    return "<li><span>" + txt + '</span><span><a href="#" data-i="' + i + '" style="color:#dc3545;">移除</a></span></li>';
+                }).join("");
+                $("seActions").hidden = !queue.length;
+                $("seQueue").querySelectorAll("a[data-i]").forEach(function (a) {
+                    a.addEventListener("click", function (e) { e.preventDefault(); queue.splice(+a.dataset.i, 1); renderQueue(); });
+                });
+            }
+            fetch(TYPES_URL).then(function (r) { return r.json(); }).then(function (t) {
+                $("seType").innerHTML = Object.keys(t).map(function (k) { return '<option value="' + k + '">' + k + "</option>"; }).join("");
+            }).catch(function () { msg("赛事系数加载失败", true); });
+            fetch(PLAYERS_URL).then(function (r) { return r.json(); }).then(function (p) {
+                players = ((p && p.players) || []).filter(function (x) { return x.name; }).map(function (x) { return x.name; });
+                fillSelect($("seWinner"), players, "-- 选择胜者 --");
+                fillSelect($("seLoser"), players, "-- 选择负者 --");
+                fillSelect($("seTarget"), players, "-- 选择球员 --");
+            }).catch(function () { msg("players.json 加载失败", true); });
+            ["seDate", "seBDate"].forEach(function (id) { $(id).value = todayStr(); });
+            $("seModeMatch").addEventListener("click", function () { mode = "match"; this.classList.add("active"); $("seModeBonus").classList.remove("active"); $("seMatchRow").style.display = ""; $("seBonusRow").style.display = "none"; });
+            $("seModeBonus").addEventListener("click", function () { mode = "bonus"; this.classList.add("active"); $("seModeMatch").classList.remove("active"); $("seBonusRow").style.display = ""; $("seMatchRow").style.display = "none"; });
+            $("seAddMatch").addEventListener("click", function () {
+                var rec = { "日期": $("seDate").value, "类型": $("seType").value, "胜者": $("seWinner").value, "负者": $("seLoser").value };
+                if (!rec["日期"] || !rec["类型"] || !rec["胜者"] || !rec["负者"]) return msg("请完整填写日期 / 类型 / 胜者 / 负者", true);
+                if (rec["胜者"] === rec["负者"]) return msg("胜者与负者不能相同", true);
+                if (!/^\d{4}-\d{2}-\d{2}$/.test(rec["日期"])) return msg("日期格式需为 YYYY-MM-DD", true);
+                queue.push(rec); renderQueue(); msg("已添加 1 条比赛记录", false);
+            });
+            $("seAddBonus").addEventListener("click", function () {
+                var amt = $("seAmount").value.trim();
+                var num = parseFloat(amt);
+                var rec = { "日期": $("seBDate").value, "类型": "比赛结果加分", "对象": $("seTarget").value, "分数": /^[+-]?\d+(\.\d+)?$/.test(amt) ? (num > 0 ? "+" + num : String(num)) : amt };
+                if (!rec["日期"] || !rec["对象"] || !amt || isNaN(num)) return msg("请完整填写日期 / 对象 / 分数（数字）", true);
+                queue.push(rec); renderQueue(); $("seAmount").value = ""; msg("已添加 1 条积分调整", false);
+            });
+            $("seClear").addEventListener("click", function () { queue = []; renderQueue(); msg("队列已清空", false); });
+            $("seCopy").addEventListener("click", function () {
+                var json = JSON.stringify(queue, null, 2).split("\n").map(function (l) { return "  " + l; }).join("\n");
+                navigator.clipboard.writeText(json).then(function () { msg("已复制到剪贴板，可粘贴进 data/score-log.json 数组末尾", false); }, function () { msg("复制失败，请手动选择文本", true); });
+            });
+            $("seExport").addEventListener("click", function () {
+                fetch(LOG_URL).then(function (r) { return r.json(); }).then(function (log) {
+                    var merged = log.concat(queue);
+                    var blob = new Blob([JSON.stringify(merged, null, 2) + "\n"], { type: "application/json" });
+                    var a = document.createElement("a");
+                    a.href = URL.createObjectURL(blob);
+                    a.download = "score-log.json";
+                    document.body.appendChild(a); a.click(); a.remove();
+                    setTimeout(function () { URL.revokeObjectURL(a.href); }, 2000);
+                    msg("已下载合并文件（原 " + log.length + " 条 + 新增 " + queue.length + " 条）。请用下载的文件替换 data/score-log.json 并提交。", false);
+                }).catch(function () { msg("当前 score-log.json 加载失败，无法合并导出", true); });
+            });
+        })();
+        </script>
 
         <div class="loading-view" id="loadingView">
             <div class="loading-ring"></div>

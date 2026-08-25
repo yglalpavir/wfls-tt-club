@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function(){try{var t=localStorage.getItem("wfls-tt-theme");var d=t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark-mode");}catch(e){}})()</script>
     <meta name="description" content="武汉外国语学校乒乓球社团官方网站。了解社团理念、活动，查看最新动态和赛事信息。">
     <meta name="keywords" content="武汉外国语学校,乒乓球,社团,WFLS,Table Tennis,排名,积分">
     <meta name="author" content="WFLS Table Tennis Club">
@@ -10,6 +11,8 @@
     <meta property="og:title" content="武汉外国语学校乒乓球社团">
     <meta property="og:description" content="WFLS Table Tennis Club - 挥拍逐梦，旋转青春">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://yglalpavir.github.io/wfls-tt-club/Assets/images/og-cover.png">
+    <meta name="twitter:image" content="https://yglalpavir.github.io/wfls-tt-club/Assets/images/og-cover.png">
     <meta property="og:url" content="https://yglalpavir.github.io/wfls-tt-club/">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="武汉外国语学校乒乓球社团">
@@ -40,8 +43,11 @@
     }
     </script>
     <title data-i18n="site_title">武汉外国语学校乒乓球社团 | WFLS Table Tennis Club</title>
+    <link rel="icon" type="image/svg+xml" href="Assets/files/favicon_4DA3FF.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -97,11 +103,11 @@
                 <div class="search-input-wrapper">
                     <i class="fa-solid fa-magnifying-glass search-input-icon"></i>
                     <input type="text" class="search-input" id="searchInput" placeholder="搜索新闻、赛事、成员、排名..." autocomplete="off">
-                    <button class="search-clear" id="searchClear" style="display:none;">
+                    <button class="search-clear" id="searchClear" style="display:none;" aria-label="清空搜索词">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
-                <button class="search-close-btn" id="searchClose">
+                <button class="search-close-btn" id="searchClose" aria-label="关闭搜索">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
@@ -243,12 +249,12 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <h4>WFLS Table Tennis Club</h4>
+                    <h3>WFLS Table Tennis Club</h3>
                     <p data-i18n="footer_brand">武汉外国语学校乒乓球社团</p>
                     <p class="footer-motto" data-i18n="footer_motto">挥拍逐梦，旋转青春</p>
                 </div>
                 <div class="footer-links">
-                    <h4 data-i18n="footer_nav">快速导航</h4>
+                    <h3 data-i18n="footer_nav">快速导航</h3>
                     <a href="index.html" data-i18n="nav_home">Home</a>
                     <a href="news.html" data-i18n="nav_news">News</a>
                     <a href="competitions.html" data-i18n="nav_competitions">Competitions</a>
@@ -259,7 +265,7 @@
                     <a href="contact.html" data-i18n="nav_contact">Contact</a>
                 </div>
                 <div class="footer-school">
-                    <h4 data-i18n="footer_school">学校信息</h4>
+                    <h3 data-i18n="footer_school">学校信息</h3>
                     <p data-i18n="footer_school_name">武汉外国语学校</p>
                     <p>Wuhan Foreign Languages School</p>
                     <p data-i18n="footer_location">湖北省武汉市</p>
@@ -284,7 +290,7 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
     <script src="js/common.js"></script>
     <script src="js/main.js"></script>
 </body>

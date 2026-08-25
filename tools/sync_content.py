@@ -81,7 +81,7 @@ SNAPSHOT_KEYS = ["date", "title", "excerpt", "content", "tag", "media"]
 # 清单字段
 MANIFEST_KEYS = ["version", "updatedAt", "title", "visible", "file"]
 
-DATE_RE = re.compile(r"\d{4}-\d{2}-\d{2}")
+DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 TODAY = date.today().isoformat()
 
@@ -95,12 +95,15 @@ def log_warn(msg):
 
 
 def log_error(msg):
+    global warnings
+    warnings += 1
     print("  [错误] " + msg)
 
 
 def load_json(path, quiet=False):
     try:
-        with open(path, "r", encoding="utf-8") as f:
+        # utf-8-sig：兼容带 BOM 的文件（Windows 编辑器常见），读取时剥离 BOM
+        with open(path, "r", encoding="utf-8-sig") as f:
             return json.load(f)
     except Exception as e:
         if not quiet:
@@ -109,15 +112,24 @@ def load_json(path, quiet=False):
 
 
 def write_json(path, data):
-    with open(path, "w", encoding="utf-8") as f:
+    # 先写临时文件再原子替换，避免进程中断留下截断的 JSON
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
         f.write("\n")
+    os.replace(tmp, path)
 
 
 def date_key(item):
-    d = str(item.get("date") or "")
-    m = DATE_RE.search(d)
-    return m.group(0) if m else ""
+    """返回条目的规范化 YYYY-MM-DD 日期；非严格合法日期返回空串（并触发校验警告）"""
+    d = str(item.get("date") or "").strip()
+    if not DATE_RE.match(d):
+        return ""
+    try:
+        date.fromisoformat(d)
+    except ValueError:
+        return ""
+    return d
 
 
 def entry_dir_path(type_name, item_id):
@@ -159,11 +171,13 @@ def validate_item(type_name, item, filename):
         log_warn("{}: tag \"{}\" 不在 {}.{} 白名单中".format(filename, tag, type_name, TAG_WHITELIST.get(type_name)))
 
     if not date_key(item):
-        log_warn("{}: date \"{}\" 不含 YYYY-MM-DD，将排在索引末尾".format(filename, item.get("date")))
+        log_warn("{}: date \"{}\" 不是合法的 YYYY-MM-DD（如 9999-99-99），将排在索引末尾".format(filename, item.get("date")))
 
     for m in item.get("media") or []:
         if isinstance(m, dict) and m.get("src"):
-            path = os.path.normpath(os.path.join(ROOT, m["src"]))
+            # 与 contentFile 一致：允许以 "/" 开头的根相对路径，避免 Windows 下解析到盘根
+            src_norm = str(m["src"]).replace("\\", "/").lstrip("/")
+            path = os.path.normpath(os.path.join(ROOT, src_norm))
             if not os.path.exists(path):
                 log_warn("{}: media 文件不存在 {}".format(filename, m["src"]))
 
@@ -434,7 +448,8 @@ def migrate_flat_entry(type_name, fpath):
     manifest.sort(key=lambda m: snapshot_version(m), reverse=True)
     write_json(manifest_file_path(type_name, item_id), manifest)
     write_json(entry_file_path(type_name, item_id), item)
-    os.remove(fpath)
+    # 改名留备份而非直接删除：中断后重跑可人工比对，且 .bak 不再被当作扁平条目扫描
+    os.replace(fpath, fpath + ".migrated.bak")
     print("  [迁移] {} -> {}/{}（快照 {} 个）".format(
         os.path.basename(fpath), type_name, item_id, len(manifest)))
     return True
@@ -527,9 +542,16 @@ def sync_type(type_name):
         seen_ids.add(item_id)
 
         content = read_effective_content(type_name, item)
-        manifest, snapshots, _ = load_history(type_name, item_id)
+        manifest, snapshots, hist_problems = load_history(type_name, item_id)
         before = len(manifest)
         new_manifest, new_snap, changed = maintain_history(type_name, item, manifest, snapshots, content)
+        if new_snap is not None and hist_problems:
+            # 历史结构有问题（如最新快照文件缺失/损坏）时拒绝追加新快照，
+            # 否则每次运行都会误判"内容有变化"而无限新增版本，破坏幂等承诺
+            log_error("{}: 版本历史结构有问题，已跳过新增快照（请先修复清单/快照文件后重跑）".format(item_id))
+            new_snap = None
+            new_manifest = manifest
+            changed = False
         if new_snap is not None:
             v, snap = new_snap
             write_json(snapshot_file_path(type_name, item_id, v), snap)
@@ -635,4 +657,6 @@ def main():
 
 
 if __name__ == "__main__":
-    sys.exit(0 if main() is None or warnings == 0 else 1)
+    main()
+    # 退出码真实反映校验结果：有警告/错误时非 0，供 CI 与脚本消费方感知失败
+    sys.exit(0 if warnings == 0 else 1)
