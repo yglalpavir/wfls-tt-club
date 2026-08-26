@@ -370,19 +370,38 @@ const WTT_RACE_UNKNOWN_COLOR = '#94a3b8';
 const WTT_RACE_FRAME_MS = 700;
 const WTT_RACE_BAR_MIN_PCT = 8;  // 横轴最低刻度对应的条形宽度（%），使横轴不从 0 开始
 
+const WTT_RACE_TICK_PCTS = [8, 31, 54, 77, 100];
+
 let wttBarRace = {
     initialized: false,
     playing: false,
-    timer: null,
     rafId: null,
     frameIndex: 0,
+    playClock: 0,          // 当前帧段内累计时长（ms，已含速度倍率）；达到 FRAME_MS 即段完成
     speed: 1,
+    enterMs: 400,          // 入场滑入时长（随速度档缩放）
+    fadeInMs: 200,         // 入场淡入时长
+    fadeOutMs: 350,        // 离场淡出时长
+    exitMs: 550,           // 离场下滑时长
     cache: new Map(),
     assocColors: {},
     rowMap: new Map(),
     rowHeight: 32,
-    lastTs: null
+    lastTs: null,
+    axisTicks: null,       // 复用的坐标轴刻度 span，避免每帧重建 innerHTML
+    activeCount: -1        // 上次渲染的活跃行数，避免每帧写容器高度
 };
+
+function wttRaceClampNum(v, lo, hi) { return v < lo ? lo : (v > hi ? hi : v); }
+
+// 按当前速度档推导进出场时长，保证各速度档下过渡节奏一致
+function wttRaceComputeDurations() {
+    const seg = WTT_RACE_FRAME_MS / Math.max(0.01, wttBarRace.speed);
+    wttBarRace.enterMs = wttRaceClampNum(seg * 0.7, 180, 600);
+    wttBarRace.fadeInMs = wttRaceClampNum(seg * 0.4, 120, 320);
+    wttBarRace.fadeOutMs = wttRaceClampNum(seg * 0.6, 160, 480);
+    wttBarRace.exitMs = wttRaceClampNum(seg * 0.85, 240, 700);
+}
 
 // HSL -> 十六进制颜色（h: 0-360, s/l: 0-100）
 function wttHslToHex(h, s, l) {
@@ -420,6 +439,7 @@ function wttBuildBarRaceAssocColors() {
 
 // 懒缓存：按需计算某一帧的 Top 20 数据（含积分、协会、旗帜）
 // 该帧所属赛季无比赛数据的球员自动隐去，有比赛数据的赛季正常显示
+// byName 保存未截断前的全部分数，供新晋行从「榜外分数」平滑生长
 function wttGetBarRaceFrame(frameIndex) {
     if (wttBarRace.cache.has(frameIndex)) return wttBarRace.cache.get(frameIndex);
     const entry = wttRankingTimeline[frameIndex];
@@ -430,7 +450,7 @@ function wttGetBarRaceFrame(frameIndex) {
         ? name => seasonActive.has(name)
         : () => true;
     const scoreMap = wttBuildSnapshotScoreMap(entry);
-    const items = Object.keys(scoreMap)
+    const sorted = Object.keys(scoreMap)
         .filter(filterActive)
         .map(name => {
             const a = wttGetPlayerAssoc(name);
@@ -443,9 +463,10 @@ function wttGetBarRaceFrame(frameIndex) {
                 flagClass: code ? wttAssocFlagClass(code) : ''
             };
         })
-        .sort((a, b) => b.score - a.score)
-        .slice(0, WTT_RACE_TOP_N);
-    const frame = { label: entry.label || '', items };
+        .sort((a, b) => b.score - a.score);
+    const byName = new Map();
+    for (const it of sorted) byName.set(it.name, it.score);
+    const frame = { label: entry.label || '', items: sorted.slice(0, WTT_RACE_TOP_N), byName };
     wttBarRace.cache.set(frameIndex, frame);
     return frame;
 }
@@ -465,36 +486,44 @@ function wttCreateBarRaceRow(item) {
             '<span class="bar-race-value"></span>' +
         '</span>';
     row.style.opacity = '0';
+    row.style.zIndex = '2';
     return row;
 }
 
-function wttUpdateBarRaceRow(row, item, rank, maxScore, minScore) {
-    const rankEl = row.querySelector('.bar-race-rank');
-    const fillEl = row.querySelector('.bar-race-fill');
-    const valueEl = row.querySelector('.bar-race-value');
-    const nameTextEl = row.querySelector('.bar-race-name-text');
-    if (rankEl) {
-        rankEl.textContent = rank + 1;
-        rankEl.classList.toggle('top1', rank === 0);
-        rankEl.classList.toggle('top2', rank === 1);
-        rankEl.classList.toggle('top3', rank === 2);
+// 行颜色仅在映射变化时写入（初始化或主题/语言重载后刷新一次）
+function wttApplyBarRaceRowColor(st) {
+    const color = wttBarRace.assocColors[st.colorKey] || WTT_RACE_UNKNOWN_COLOR;
+    if (color === st.lastColor) return;
+    st.lastColor = color;
+    st.fillEl.style.background = color;
+    st.valueEl.style.color = color;
+}
+
+// 更新行内容（脏检查：仅写发生变化的 DOM 属性，元素引用已在创建时缓存）
+function wttUpdateBarRaceRow(st, rank, maxScore, minScore) {
+    if (st.lastRank !== rank) {
+        st.lastRank = rank;
+        st.rankEl.textContent = rank + 1;
+        st.rankEl.classList.toggle('top1', rank === 0);
+        st.rankEl.classList.toggle('top2', rank === 1);
+        st.rankEl.classList.toggle('top3', rank === 2);
     }
-    if (nameTextEl) nameTextEl.textContent = item.name;
-    if (fillEl) {
-        let pct;
-        if (maxScore > minScore) {
-            pct = WTT_RACE_BAR_MIN_PCT + (item.score - minScore) / (maxScore - minScore) * (100 - WTT_RACE_BAR_MIN_PCT);
-        } else {
-            pct = 100;
-        }
-        const color = wttBarRace.assocColors[item.assoc] || WTT_RACE_UNKNOWN_COLOR;
-        fillEl.style.width = pct.toFixed(2) + '%';
-        fillEl.style.background = color;
-        if (valueEl) {
-            valueEl.textContent = item.score.toFixed(1);
-            valueEl.style.left = pct.toFixed(2) + '%';
-            valueEl.style.color = color;
-        }
+    let pct;
+    if (maxScore > minScore) {
+        pct = WTT_RACE_BAR_MIN_PCT + (st.score - minScore) / (maxScore - minScore) * (100 - WTT_RACE_BAR_MIN_PCT);
+    } else {
+        pct = 100;
+    }
+    if (!(Math.abs(pct - st.lastPct) < 0.03)) {
+        st.lastPct = pct;
+        const s = pct.toFixed(2) + '%';
+        st.fillEl.style.width = s;
+        st.valueEl.style.left = s;
+    }
+    const txt = st.score.toFixed(1);
+    if (txt !== st.lastTxt) {
+        st.lastTxt = txt;
+        st.valueEl.textContent = txt;
     }
 }
 
@@ -507,19 +536,43 @@ function wttReadBarRaceRowHeight() {
     if (n > 0) wttBarRace.rowHeight = n;
 }
 
+// 坐标轴刻度只创建一次，之后仅更新文本（位置固定不变）
+function wttEnsureBarRaceTicks(axisEl) {
+    let t = wttBarRace.axisTicks;
+    if (t && t.axisEl === axisEl && t.spans[0] && t.spans[0].isConnected) return t;
+    axisEl.textContent = '';
+    const frag = document.createDocumentFragment();
+    const spans = WTT_RACE_TICK_PCTS.map(p => {
+        const s = document.createElement('span');
+        s.className = 'bar-race-tick';
+        s.style.left = p + '%';
+        frag.appendChild(s);
+        return s;
+    });
+    axisEl.appendChild(frag);
+    t = { axisEl, spans, vals: new Array(WTT_RACE_TICK_PCTS.length).fill(null) };
+    wttBarRace.axisTicks = t;
+    return t;
+}
+
 // 渲染横坐标轴刻度（按当前显示分数范围，在 8%–100% 条宽区间内取 5 个刻度）
 function wttRenderBarRaceAxis(axisEl, minScore, maxScore) {
     if (!axisEl) return;
-    const tickPcts = [8, 31, 54, 77, 100];
-    axisEl.innerHTML = tickPcts.map(pct => {
+    const t = wttEnsureBarRaceTicks(axisEl);
+    for (let i = 0; i < WTT_RACE_TICK_PCTS.length; i++) {
+        const pct = WTT_RACE_TICK_PCTS[i];
         const value = maxScore > minScore
             ? minScore + (pct - WTT_RACE_BAR_MIN_PCT) / (100 - WTT_RACE_BAR_MIN_PCT) * (maxScore - minScore)
             : maxScore;
-        return '<span class="bar-race-tick" style="left:' + pct + '%;">' + value.toFixed(0) + '</span>';
-    }).join('');
+        const txt = value.toFixed(0);
+        if (txt !== t.vals[i]) {
+            t.vals[i] = txt;
+            t.spans[i].textContent = txt;
+        }
+    }
 }
 
-// 根据当前显示分数排序并定位所有行（每帧调用，直接设置 transform/width，无 CSS 过渡）
+// 根据当前显示分数排序并定位所有行（仅写发生变化的样式，无 CSS 过渡）
 // 升入行从榜单底端之外上滑入场；离场行从原位向下滑过底端后移除（层级压低避免与活跃行交叠突兀）
 function wttRenderBarRacePositions() {
     const container = document.getElementById('wttBarRaceContainer');
@@ -530,14 +583,17 @@ function wttRenderBarRacePositions() {
     const active = all.filter(st => !st.leaving);
     active.sort((a, b) => b.score - a.score);
 
-    container.style.height = (active.length * rowH) + 'px';
+    if (active.length !== wttBarRace.activeCount) {
+        wttBarRace.activeCount = active.length;
+        container.style.height = (active.length * rowH) + 'px';
+    }
 
     const minScore = active.length ? active[active.length - 1].score : 0;
     const maxScore = active.length ? active[0].score : 0;
     const axisEl = document.getElementById('wttRaceScaleLabel');
     if (axisEl) {
         if (active.length) wttRenderBarRaceAxis(axisEl, minScore, maxScore);
-        else axisEl.innerHTML = '';
+        else if (wttBarRace.axisTicks) { axisEl.textContent = ''; wttBarRace.axisTicks = null; }
     }
 
     const exitBaseY = (active.length + 1) * rowH;
@@ -548,20 +604,30 @@ function wttRenderBarRacePositions() {
         const t = st.exitProgress * st.exitProgress; // ease-in，模拟下坠加速
         const y = startY + (targetY - startY) * t;
         st.lastY = y;
-        st.row.style.transform = 'translateY(' + y + 'px)';
-        st.row.style.opacity = st.opacity;
-        st.row.style.zIndex = '1';
+        if (st.lastWriteY == null || !(Math.abs(y - st.lastWriteY) < 0.02)) {
+            st.lastWriteY = y;
+            st.row.style.transform = 'translate3d(0,' + y.toFixed(2) + 'px,0)';
+        }
+        if (Math.abs(st.opacity - st.lastWriteOpacity) > 0.004) {
+            st.lastWriteOpacity = st.opacity;
+            st.row.style.opacity = st.opacity.toFixed(3);
+        }
     }
 
     let rankIndex = 0;
     for (const st of active) {
-        const offset = st.enterOffset || 0;
-        const y = (rankIndex + offset) * rowH;
+        const y = (rankIndex + (st.enterOffset || 0)) * rowH;
         st.lastY = y;
-        st.row.style.transform = 'translateY(' + y + 'px)';
-        st.row.style.opacity = st.opacity;
-        st.row.style.zIndex = '2';
-        wttUpdateBarRaceRow(st.row, { name: st.name, score: st.score, assoc: st.assoc }, rankIndex, maxScore, minScore);
+        if (st.lastWriteY == null || !(Math.abs(y - st.lastWriteY) < 0.02)) {
+            st.lastWriteY = y;
+            st.row.style.transform = 'translate3d(0,' + y.toFixed(2) + 'px,0)';
+        }
+        if (Math.abs(st.opacity - st.lastWriteOpacity) > 0.004) {
+            st.lastWriteOpacity = st.opacity;
+            st.row.style.opacity = st.opacity.toFixed(3);
+        }
+        wttApplyBarRaceRowColor(st);
+        wttUpdateBarRaceRow(st, rankIndex, maxScore, minScore);
         rankIndex++;
     }
 }
@@ -576,12 +642,18 @@ function wttBarRaceRemoveLeftovers() {
     }
 }
 
-// 设置目标帧：更新每个球员的目标分数，并启动连续插值动画
-function wttSetBarRaceFrame(frameIndex, animate = true) {
+// 将榜单成员同步到目标帧：
+// 新晋行创建/复活并从底端滑入（起点分数取上一帧的榜外分数，使条长随之生长）；
+// 掉榜行标记离场；已有行的本段起点固定为其当前显示分数，被打断也不跳变
+function wttApplyBarRaceMembership(frameIndex, animate, prevIndex) {
     const container = document.getElementById('wttBarRaceContainer');
-    if (!container || !wttRankingTimeline.length) return;
+    if (!container) return false;
+
+    wttReadBarRaceRowHeight();
     const frame = wttGetBarRaceFrame(frameIndex);
-    if (!frame) return;
+    if (!frame) return false;
+    const prevFrame = (animate && prevIndex != null && prevIndex !== frameIndex)
+        ? wttGetBarRaceFrame(prevIndex) : null;
 
     wttBarRace.frameIndex = frameIndex;
     wttDataVizExtraState.raceFrameIndex = frameIndex;
@@ -589,8 +661,6 @@ function wttSetBarRaceFrame(frameIndex, animate = true) {
     if (slider) slider.value = frameIndex;
     const dateLabel = document.getElementById('wttRaceDateLabel');
     if (dateLabel) dateLabel.textContent = frame.label;
-
-    wttReadBarRaceRowHeight();
 
     const rowCount = frame.items.length;
     const rowH = wttBarRace.rowHeight || 32;
@@ -600,28 +670,41 @@ function wttSetBarRaceFrame(frameIndex, animate = true) {
         activeNames.add(item.name);
         let st = wttBarRace.rowMap.get(item.name);
         const wasLeaving = st ? st.leaving : false;
-        if (!st) {
+        const isNew = !st;
+        if (isNew) {
             const row = wttCreateBarRaceRow(item);
             container.appendChild(row);
             st = {
                 name: item.name,
                 row,
+                rankEl: row.querySelector('.bar-race-rank'),
+                fillEl: row.querySelector('.bar-race-fill'),
+                valueEl: row.querySelector('.bar-race-value'),
+                colorKey: item.assoc,
+                lastRank: -1,
+                lastPct: -99,
+                lastTxt: '',
+                lastColor: '',
+                startScore: item.score,
+                endScore: item.score,
                 score: item.score,
-                targetScore: item.score,
                 opacity: 0,
+                lastWriteOpacity: -1,
                 leaving: false,
-                assoc: item.assoc,
                 // 从榜单底端之外升入：初始偏移 = 底边到目标槽位的行距（固定时长滑入）
                 enterOffset: animate ? Math.max(1, rowCount - itemIndex) : 0,
                 enterTotal: 0,
                 exitProgress: 0,
                 exitStartY: null,
-                lastY: null
+                lastY: null,
+                lastWriteY: null
             };
             st.enterTotal = st.enterOffset;
+            wttApplyBarRaceRowColor(st);
             wttBarRace.rowMap.set(item.name, st);
         } else if (wasLeaving) {
             // 离场途中被重新激活：从当前位置平滑归位，避免瞬移
+            st.leaving = false;
             st.exitProgress = 0;
             st.exitStartY = null;
             if (animate && st.lastY != null) {
@@ -630,90 +713,157 @@ function wttSetBarRaceFrame(frameIndex, animate = true) {
                 st.enterOffset = 0;
             }
             st.enterTotal = st.enterOffset;
+            st.row.style.zIndex = '2';
         }
-        st.targetScore = item.score;
-        st.leaving = false;
+        st.endScore = item.score;
+        if (isNew) {
+            st.startScore = (prevFrame && prevFrame.byName.has(item.name))
+                ? prevFrame.byName.get(item.name)
+                : item.score;
+            st.score = st.startScore;
+        } else {
+            // 起点 = 当前显示分数：无论在何处打断都无缝衔接
+            st.startScore = st.score;
+        }
         itemIndex++;
     }
 
     for (const [name, st] of wttBarRace.rowMap) {
         if (!activeNames.has(name) && !st.leaving) {
             st.leaving = true;
-            st.targetScore = st.score;
             st.exitProgress = 0;
             st.exitStartY = st.lastY;   // 从当前所在位置开始下滑
+            st.row.style.zIndex = '1';
         }
     }
+    return true;
+}
 
-    if (!animate) {
-        for (const st of wttBarRace.rowMap.values()) {
-            st.score = st.targetScore;
-            st.enterOffset = 0;
-            st.enterTotal = 0;
-            st.exitProgress = 1;
-            st.opacity = st.leaving ? 0 : 1;
-            st.row.style.opacity = st.opacity;
-        }
-        wttRenderBarRacePositions();
-        wttBarRaceRemoveLeftovers();
-        return;
-    }
-
+function wttBarRaceEnsureRaf() {
     if (wttBarRace.rafId == null) {
         wttBarRace.lastTs = null;
         wttBarRace.rafId = requestAnimationFrame(wttBarRaceTick);
     }
 }
 
-// 连续动画循环：分数指数趋近目标，排名/条长随每帧重算
-function wttBarRaceTick(ts) {
-    let needsAnotherFrame = false;
-    if (wttBarRace.lastTs == null) {
-        wttBarRace.lastTs = ts;
-        needsAnotherFrame = true;
+function wttBarRaceCancelRaf() {
+    if (wttBarRace.rafId != null) {
+        cancelAnimationFrame(wttBarRace.rafId);
+        wttBarRace.rafId = null;
     }
-    const dt = Math.min(64, Math.max(0, ts - wttBarRace.lastTs));
-    wttBarRace.lastTs = ts;
+    wttBarRace.lastTs = null;
+}
 
-    const scoreSmoothing = 1 - Math.exp(-dt / 220);   // 时间常数 ~220ms，分数过渡更绵长顺滑
-    const fadeInRate = dt / 180;
-    const fadeOutRate = dt / 300;                     // 与下滑时长同步的轻微淡出
-    const exitStep = dt / 320;                        // 掉出榜单底端的下滑进度
+// 设置目标帧（手动拖动滑块与外部调用入口）：
+// 以当前画面为起点，在一段时长内匀速过渡到该帧
+function wttSetBarRaceFrame(frameIndex, animate = true) {
+    const B = wttBarRace;
+    if (!wttRankingTimeline.length) return;
 
-    for (const st of wttBarRace.rowMap.values()) {
+    if (!animate) {
+        B.playing = false;
+        if (wttApplyBarRaceMembership(frameIndex, false, frameIndex)) {
+            B.playClock = WTT_RACE_FRAME_MS;   // 段完成态，画面静止在该帧
+            const frame = wttGetBarRaceFrame(frameIndex);
+            for (const st of B.rowMap.values()) {
+                st.enterOffset = 0;
+                st.enterTotal = 0;
+                st.lastWriteOpacity = -1;      // 强制重写透明度
+                if (st.leaving) {
+                    st.exitProgress = 1;
+                    st.opacity = 0;
+                } else {
+                    const target = frame.byName.has(st.name) ? frame.byName.get(st.name) : st.score;
+                    st.startScore = target;
+                    st.endScore = target;
+                    st.score = target;
+                    st.opacity = 1;
+                }
+            }
+            wttRenderBarRacePositions();
+            wttBarRaceRemoveLeftovers();
+        }
+        wttBarRaceCancelRaf();
+        return;
+    }
+
+    const prevIndex = B.frameIndex;
+    B.playing = false;
+    B.playClock = 0;
+    wttApplyBarRaceMembership(frameIndex, true, prevIndex);
+    wttBarRaceSyncPlayButton();
+    wttBarRaceEnsureRaf();
+}
+
+// 连续动画循环：playClock 按 dt×speed 推进，跨过整帧时切换目标并处理进出场；
+// 行分数在段内线性插值 —— 全程匀速运动，无「冲刺-停滞」节奏
+function wttBarRaceTick(ts) {
+    const B = wttBarRace;
+    let busy = false;
+
+    if (B.lastTs == null) B.lastTs = ts;
+    const dt = Math.min(64, Math.max(0, ts - B.lastTs));
+    B.lastTs = ts;
+
+    // ---- 时间线时钟推进 ----
+    if (B.playing || B.playClock < WTT_RACE_FRAME_MS) {
+        B.playClock += dt * B.speed;
+        let guard = 0;
+        while (B.playClock >= WTT_RACE_FRAME_MS && guard++ < 6) {
+            if (!B.playing) { B.playClock = WTT_RACE_FRAME_MS; break; } // 暂停后把当前段收尾
+            if (B.frameIndex >= wttRankingTimeline.length - 1) {
+                // 循环回绕：硬切回第 0 帧（如视频循环）
+                B.frameIndex = 0;
+                B.playClock = WTT_RACE_FRAME_MS;
+                wttApplyBarRaceMembership(0, true, wttRankingTimeline.length - 1);
+                break;
+            }
+            const prevIndex = B.frameIndex;
+            B.frameIndex += 1;
+            B.playClock -= WTT_RACE_FRAME_MS;
+            wttApplyBarRaceMembership(B.frameIndex, true, prevIndex);
+        }
+        busy = true;
+    }
+
+    const blend = Math.min(1, B.playClock / WTT_RACE_FRAME_MS);
+    const fadeInStep = dt / B.fadeInMs;
+    const fadeOutStep = dt / B.fadeOutMs;
+    const exitStep = dt / B.exitMs;
+
+    for (const st of B.rowMap.values()) {
         if (st.leaving) {
             st.exitProgress = Math.min(1, st.exitProgress + exitStep);
-            st.opacity = Math.max(0, st.opacity - fadeOutRate);
-            st.row.style.opacity = st.opacity;
-            if (st.exitProgress < 1 || st.opacity > 0.01) needsAnotherFrame = true;
+            st.opacity = Math.max(0, st.opacity - fadeOutStep);
+            if (st.exitProgress < 1 || st.opacity > 0.01) busy = true;
+            continue;
+        }
+        if (st.opacity < 1) {
+            st.opacity = Math.min(1, st.opacity + fadeInStep);
+            if (st.opacity < 1) busy = true;
+        }
+        if (st.enterOffset > 0) {
+            // 固定时长滑入：无论从底端攀爬多少行，入场耗时一致
+            const step = Math.max(1, st.enterTotal) * dt / B.enterMs;
+            st.enterOffset = Math.max(0, st.enterOffset - step);
+            busy = true;
+        }
+        if (blend >= 1) {
+            if (st.score !== st.endScore) st.score = st.endScore;
         } else {
-            if (st.opacity < 1) {
-                st.opacity = Math.min(1, st.opacity + fadeInRate);
-                st.row.style.opacity = st.opacity;
-                if (st.opacity < 1) needsAnotherFrame = true;
-            }
-            if (st.enterOffset > 0) {
-                // 固定时长滑入：无论从底端攀爬多少行，入场耗时一致
-                const step = Math.max(1, st.enterTotal) * dt / 360;
-                st.enterOffset = Math.max(0, st.enterOffset - step);
-                needsAnotherFrame = true;
-            }
-            const diff = st.targetScore - st.score;
-            if (Math.abs(diff) > 0.05) {
-                st.score += diff * scoreSmoothing;
-                if (Math.abs(st.targetScore - st.score) < 0.05) st.score = st.targetScore;
-                needsAnotherFrame = true;
-            }
+            st.score = st.startScore + (st.endScore - st.startScore) * blend;
+            busy = true;
         }
     }
 
     wttRenderBarRacePositions();
     wttBarRaceRemoveLeftovers();
 
-    if (needsAnotherFrame) {
-        wttBarRace.rafId = requestAnimationFrame(wttBarRaceTick);
+    if (busy || B.playing) {
+        B.rafId = requestAnimationFrame(wttBarRaceTick);
     } else {
-        wttBarRace.rafId = null;
+        B.rafId = null;
+        B.lastTs = null;
     }
 }
 
@@ -725,28 +875,31 @@ function wttBarRaceSyncPlayButton() {
     btn.innerHTML = '<i class="fa-solid ' + icon + '"></i> <span data-i18n="' + key + '">' + escapeHtml(i18n[currentLang][key]) + '</span>';
 }
 
-function wttBarRaceAdvance() {
-    const max = wttRankingTimeline.length - 1;
-    wttBarRace.frameIndex = wttBarRace.frameIndex >= max ? 0 : wttBarRace.frameIndex + 1;
-    wttSetBarRaceFrame(wttBarRace.frameIndex, true);
-}
-
-function wttBarRaceStartTimer() {
-    if (wttBarRace.timer) { clearInterval(wttBarRace.timer); wttBarRace.timer = null; }
-    wttBarRace.timer = setInterval(wttBarRaceAdvance, Math.max(120, WTT_RACE_FRAME_MS / wttBarRace.speed));
-}
-
 function wttBarRaceStartPlay() {
-    if (wttBarRace.playing) return;
-    wttBarRace.playing = true;
+    const B = wttBarRace;
+    if (B.playing) return;
+    B.playing = true;
+    if (B.playClock >= WTT_RACE_FRAME_MS) {
+        // 从静止开播：立即进入下一段（处于末尾则回绕到第 0 帧）
+        const prevIndex = B.frameIndex;
+        if (prevIndex >= wttRankingTimeline.length - 1) {
+            B.frameIndex = 0;
+            B.playClock = WTT_RACE_FRAME_MS;
+            wttApplyBarRaceMembership(0, true, prevIndex);
+        } else {
+            B.frameIndex = prevIndex + 1;
+            B.playClock = 0;
+            wttApplyBarRaceMembership(B.frameIndex, true, prevIndex);
+        }
+    }
     wttBarRaceSyncPlayButton();
-    wttBarRaceStartTimer();
+    wttBarRaceEnsureRaf();
 }
 
+// 暂停不打断动画：当前段继续播完，画面自然停在整帧上
 function wttBarRaceStopPlay() {
-    if (!wttBarRace.playing && !wttBarRace.timer) return;
+    if (!wttBarRace.playing) return;
     wttBarRace.playing = false;
-    if (wttBarRace.timer) { clearInterval(wttBarRace.timer); wttBarRace.timer = null; }
     wttBarRaceSyncPlayButton();
 }
 
@@ -761,6 +914,7 @@ function wttInitBarRace() {
     wttBarRace.initialized = true;
     wttBarRace.assocColors = wttBuildBarRaceAssocColors();
     wttBarRace.speed = parseFloat(speedSelect && speedSelect.value) || 1;
+    wttRaceComputeDurations();
     wttBarRace.frameIndex = (wttDataVizExtraState.raceFrameIndex > 0)
         ? Math.min(wttDataVizExtraState.raceFrameIndex, wttRankingTimeline.length - 1)
         : wttRankingTimeline.length - 1;
@@ -769,8 +923,7 @@ function wttInitBarRace() {
 
     slider.addEventListener('input', () => {
         wttBarRaceStopPlay();
-        wttBarRace.frameIndex = wttClampInt(slider.value, 0, wttRankingTimeline.length - 1);
-        wttSetBarRaceFrame(wttBarRace.frameIndex, true);
+        wttSetBarRaceFrame(wttClampInt(slider.value, 0, wttRankingTimeline.length - 1), true);
     });
     playBtn.addEventListener('click', () => {
         if (wttBarRace.playing) wttBarRaceStopPlay();
@@ -778,7 +931,7 @@ function wttInitBarRace() {
     });
     speedSelect?.addEventListener('change', () => {
         wttBarRace.speed = parseFloat(speedSelect.value) || 1;
-        if (wttBarRace.playing) wttBarRaceStartTimer();
+        wttRaceComputeDurations();
     });
 
     // 响应窗口大小变化：行高由 CSS 变量控制，变化后重新读取并重排
@@ -789,6 +942,11 @@ function wttInitBarRace() {
             wttReadBarRaceRowHeight();
             wttRenderBarRacePositions();
         }, 150);
+    });
+
+    // 回到前台时重置时间戳，避免后台节流产生大步进跳变
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) wttBarRace.lastTs = null;
     });
 
     wttSetBarRaceFrame(wttBarRace.frameIndex, false);

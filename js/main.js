@@ -56,6 +56,12 @@ async function loadRankingDataForViz() {
 }
 
 function initPage() {
+    // detail 页：直接加载目标内容，跳过全量索引，加载更快、反馈更及时
+    if (window.location.pathname.includes('detail.html')) {
+        initCommon();
+        if (typeof initDetailPageDirect === 'function') initDetailPageDirect();
+        return;
+    }
     // 按页面 DOM 标记按需加载数据，避免每个页面都下载全部数据
     if (document.getElementById('aboutSections') || document.getElementById('heroLastUpdated') || document.getElementById('coreMembersGrid')) loadAboutData();
     if (document.getElementById('coreMembersGrid') || document.getElementById('allMembersGrid')) loadMembersData();
@@ -73,7 +79,6 @@ function initPage() {
     if (isWttDataViz) { wttLoadRankingDataForViz().then(() => { if (wttRankingTimeline.length) { initWttDataViz(); if (typeof initWttDataVizExtra === 'function') initWttDataVizExtra(); } }).catch(err => console.error('WttDataViz: 初始化失败', err)); }
     if (isWttPersonalStats) { wttLoadRankingDataForPersonal().then(() => { if (wttRankingTimeline.length) initWttPersonalStats(); }).catch(err => console.error('WttPersonalStats: 初始化失败', err)); }
     initPdfViewer();
-    if (window.location.pathname.includes('detail.html') && (newsData.length > 0 || competitionsData.length > 0 || qaData.length > 0)) updateDetailPage();
 }
 
 document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', e => { const href = a.getAttribute('href'); if (href === '#') return; const t = document.querySelector(href); if (t) { e.preventDefault(); t.scrollIntoView({ behavior:'smooth' }); } }); });

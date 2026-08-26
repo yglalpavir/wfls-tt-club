@@ -755,23 +755,18 @@ html:lang(en) .hero-title {
    WTT 彩蛋入口
    ======================================== */
 .wtt-easter-egg-section { background: var(--bg-white); padding: 48px 0; }
+.dark-mode .wtt-easter-egg-section { background: var(--bg-light); }
 .wtt-easter-egg-card { display: flex; align-items: center; gap: 24px; max-width: 700px; margin: 0 auto; padding: 28px 36px; cursor: default; flex-wrap: wrap; }
 .wtt-egg-visual { display: flex; flex-direction: column; align-items: center; gap: 8px; flex-shrink: 0; }
-.wtt-egg-icon-ring { width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, #fff7e6, #ffe7ba); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(245,197,66,0.3); animation: eggPulse 2.5s ease-in-out infinite; }
-.wtt-egg-icon { font-size: 2rem; }
-@keyframes eggPulse { 0%,100% { box-shadow: 0 4px 16px rgba(245,197,66,0.3); } 50% { box-shadow: 0 4px 28px rgba(245,197,66,0.55); } }
-.wtt-egg-badge { font-family: var(--font-en); font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; background: linear-gradient(135deg, #f5c542, #e0a800); color: #fff; padding: 4px 12px; border-radius: 12px; }
+.wtt-egg-icon-ring { width: 72px; height: 72px; border-radius: 50%; background: var(--bg-lighter); background: color-mix(in srgb, var(--accent-gold) 16%, var(--bg-white)); color: var(--accent-gold); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px color-mix(in srgb, var(--accent-gold) 30%, transparent); animation: eggPulse 2.5s ease-in-out infinite; }
+.wtt-egg-icon { font-size: 1.5rem; }
+@keyframes eggPulse { 0%,100% { box-shadow: 0 4px 16px color-mix(in srgb, var(--accent-gold) 30%, transparent); } 50% { box-shadow: 0 4px 28px color-mix(in srgb, var(--accent-gold) 55%, transparent); } }
+.wtt-egg-badge { font-family: var(--font-en); font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-gold); border: 1px solid color-mix(in srgb, var(--accent-gold) 45%, transparent); background: transparent; padding: 4px 12px; border-radius: 12px; }
 .wtt-egg-body { flex: 1; min-width: 200px; }
 .wtt-egg-title { font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
 .wtt-egg-desc { font-size: 0.9rem; color: var(--text-secondary); }
-.wtt-egg-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 24px; background: linear-gradient(135deg, #f5c542, #e0a800); color: #fff; font-family: var(--font-en); font-weight: 600; font-size: 0.9rem; transition: all var(--transition-base); white-space: nowrap; flex-shrink: 0; }
-.wtt-egg-btn:hover { background: linear-gradient(135deg, #e0a800, #c89200); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245,197,66,0.4); color: #fff; }
-
-/* 暗色模式 WTT 彩蛋 */
-.dark-mode .wtt-easter-egg-section { background: var(--bg-light); }
-.dark-mode .wtt-egg-icon-ring { background: linear-gradient(135deg, #3d3520, #4a3a1e); box-shadow: 0 4px 16px rgba(245,197,66,0.2); }
-.dark-mode .wtt-egg-btn { background: linear-gradient(135deg, #c89200, #a07800); }
-.dark-mode .wtt-egg-btn:hover { background: linear-gradient(135deg, #a07800, #805e00); }
+.wtt-egg-btn { background: var(--accent-gold); color: #fff; font-size: 0.9rem; flex-shrink: 0; }
+.wtt-egg-btn:hover { background: var(--accent-gold); color: #fff; filter: brightness(0.94); box-shadow: 0 6px 20px color-mix(in srgb, var(--accent-gold) 40%, transparent); }
 
 /* 新闻/赛事列表 */
 .news-list-section { background: var(--bg-light); }
@@ -843,6 +838,12 @@ html:lang(en) .hero-title {
 /* 详情页 */
 .detail-content-section { background: var(--bg-white); padding: 60px 0; }
 .detail-body { font-size: 1.05rem; line-height: 1.9; margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto; padding: 36px 40px; color: var(--text-primary); background: var(--glass-bg); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); box-shadow: var(--glass-shadow); }
+.detail-error { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 48px 24px; gap: 8px; }
+.detail-error i { font-size: 2.4rem; color: var(--text-muted); margin-bottom: 8px; }
+.detail-error p { margin: 0; font-size: 1rem; color: var(--text-secondary); }
+.detail-error .detail-error-hint { font-size: 0.85rem; color: var(--text-muted); }
+.detail-retry-btn { margin-top: 12px; display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border: none; border-radius: var(--radius-md); background: var(--primary-blue); color: #fff; font-size: 0.95rem; cursor: pointer; transition: opacity var(--transition-fast); }
+.detail-retry-btn:hover { opacity: 0.85; }
 
 /* ========================================
    Draws v2 — 网格吸附抽签表查看器
@@ -2246,6 +2247,16 @@ body.dark .player-search-item.selected { background: rgba(77, 163, 255, 0.15); }
     .ranking-table-full tbody tr td:nth-child(7):not([colspan]) { grid-row: 3; grid-column: 4; justify-self: end; }
     /* 明细按钮加大触控区 */
     .ranking-table-full .score-detail-icon { padding: 4px 6px; font-size: 0.95rem; }
+}
+
+/* WTT 彩蛋入口：小屏纵排 */
+@media (max-width: 480px) {
+    .wtt-easter-egg-section { padding: 36px 0; }
+    .wtt-easter-egg-card { flex-direction: column; text-align: center; gap: 18px; padding: 24px 18px; }
+    .wtt-egg-icon-ring { width: 56px; height: 56px; }
+    .wtt-egg-icon { font-size: 1.2rem; }
+    .wtt-egg-body { min-width: 0; }
+    .wtt-egg-btn { width: 100%; justify-content: center; }
 }
 
 /* 超小屏卡片微调（iPhone SE 等） */

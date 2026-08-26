@@ -80,7 +80,7 @@ const i18n = {
         score_detail_title: "积分明细", score_col_date: "日期", score_col_type: "类型", score_col_opponent: "对手", score_col_result: "结果", score_col_score_before: "赛前积分", score_col_change: "积分变动", score_col_score_after: "赛后积分", score_result_win: "胜", score_result_loss: "负",
         tag_match: "赛事", tag_training: "训练", tag_notice: "公告", tag_event: "活动", tag_daily: "日常", tag_upcoming: "即将开始", tag_result: "比赛结果", tag_live: "进行中",
         filter_all: "全部",
-        detail_page_title: "详情 | WFLS Table Tennis Club", detail_back: "返回列表", detail_version_updated: "更新于 {date}", detail_version_list: "历史版本", detail_version_view: "查看", detail_version_viewing: "正在查看 v{version}（更新于 {date}）", detail_version_back: "返回 v{version}", pdf_preview_btn: "预览PDF", pdf_download_btn: "下载PDF",
+        detail_page_title: "详情 | WFLS Table Tennis Club", detail_back: "返回列表", detail_version_updated: "更新于 {date}", detail_version_list: "历史版本", detail_version_view: "查看", detail_version_viewing: "正在查看 v{version}（更新于 {date}）", detail_version_back: "返回 v{version}", pdf_preview_btn: "预览PDF", pdf_download_btn: "下载PDF", detail_loading: "内容加载中…", detail_not_found: "未找到内容", detail_load_fail: "加载失败，请稍后重试", detail_load_fail_hint: "内容可能已被移除，或网络出现异常。", detail_retry: "重试",
         search_placeholder: "搜索新闻、赛事、成员、排名、更新日志...", search_no_results: "未找到相关结果", search_type_news: "新闻", search_type_competition: "赛事", search_type_member: "成员", search_type_ranking: "排名", search_type_qa: "问答", search_type_changelog: "更新日志",
         qa_page_title: "常见问题 | WFLS Table Tennis Club", qa_hero_tag: "Q&A", qa_hero_title: "常见问题", qa_hero_desc: "加入社团 / 活动安排 / 积分系统 / 比赛报名", qa_list_tag: "All Q&A", qa_list_title: "全部问答",
         pagination_prev: "上一页", pagination_next: "下一页", pagination_info: "第 {current} 页，共 {total} 页",
@@ -158,7 +158,7 @@ const i18n = {
         score_detail_title: "Score Details", score_col_date: "Date", score_col_type: "Type", score_col_opponent: "Opponent", score_col_result: "Result", score_col_score_before: "Before", score_col_change: "Change", score_col_score_after: "After", score_result_win: "Win", score_result_loss: "Loss",
         tag_match: "Match", tag_training: "Training", tag_notice: "Notice", tag_event: "Event", tag_daily: "Daily", tag_upcoming: "Upcoming", tag_result: "Result", tag_live: "Live",
         filter_all: "All",
-        detail_page_title: "Details | WFLS Table Tennis Club", detail_back: "Back to List", detail_version_updated: "Updated {date}", detail_version_list: "Version History", detail_version_view: "View", detail_version_viewing: "Viewing v{version} (updated {date})", detail_version_back: "Back to v{version}", pdf_preview_btn: "Preview PDF", pdf_download_btn: "Download PDF",
+        detail_page_title: "Details | WFLS Table Tennis Club", detail_back: "Back to List", detail_version_updated: "Updated {date}", detail_version_list: "Version History", detail_version_view: "View", detail_version_viewing: "Viewing v{version} (updated {date})", detail_version_back: "Back to v{version}", pdf_preview_btn: "Preview PDF", pdf_download_btn: "Download PDF", detail_loading: "Loading content…", detail_not_found: "Content not found", detail_load_fail: "Failed to load. Please try again.", detail_load_fail_hint: "The content may have been removed, or a network error occurred.", detail_retry: "Retry",
         search_placeholder: "Search news, competitions, members, rankings, changelog...", search_no_results: "No results found", search_type_news: "News", search_type_competition: "Competition", search_type_member: "Member", search_type_ranking: "Ranking", search_type_qa: "Q&A", search_type_changelog: "Changelog",
         qa_page_title: "Q&A | WFLS Table Tennis Club", qa_hero_tag: "Q&A", qa_hero_title: "Q&A", qa_hero_desc: "Join / Schedule / Ranking / Registration", qa_list_tag: "All Q&A", qa_list_title: "All Q&A",
         pagination_prev: "Previous", pagination_next: "Next", pagination_info: "Page {current} of {total}",
@@ -642,6 +642,12 @@ async function loadMembersData() { showContentLoading('coreMembersGrid', '加载
 async function loadNewsData() { showContentLoading('newsPreviewGrid', '加载动态...'); showContentLoading('newsFullGrid', '加载动态...'); try { const resp = await fetch('data/news/index.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); newsData = await resp.json(); } catch(e) { console.error('news/index.json 加载失败', e); newsData = []; } if (typeof renderAllNews === 'function') renderAllNews(); markContentLoaded('news'); }
 async function loadCompetitionsData() { showContentLoading('competitionsPreviewGrid', '加载赛事...'); showContentLoading('competitionsFullGrid', '加载赛事...'); try { const resp = await fetch('data/competitions/index.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); competitionsData = await resp.json(); } catch(e) { console.error('competitions/index.json 加载失败', e); competitionsData = []; } if (typeof renderAllCompetitions === 'function') renderAllCompetitions(); markContentLoaded('competition'); }
 async function loadDrawsData() { try { const resp = await fetch('data/draws.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); drawsData = await resp.json(); } catch(e) { drawsData = []; } }
+let _drawsLoadPromise = null;
+function ensureDrawsData() {
+    if (drawsData && drawsData.length) return Promise.resolve();
+    if (!_drawsLoadPromise) _drawsLoadPromise = loadDrawsData().then(() => { _drawsLoadPromise = null; }, () => { _drawsLoadPromise = null; });
+    return _drawsLoadPromise;
+}
 function getDrawsForCompetition(competitionId) { if (!drawsData || !drawsData.length) return null; return drawsData.find(d => d.competitionId === competitionId) || null; }
 async function loadQaData() { try { const resp = await fetch('data/qa/index.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); qaData = await resp.json(); } catch(e) { qaData = []; } if (typeof renderAllQa === 'function') renderAllQa(); }
 async function loadChangelogData() { try { const resp = await fetch('data/changelog.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); changelogData = await resp.json(); } catch(e) { changelogData = []; } if (typeof renderAllChangelog === 'function') renderAllChangelog(); }
@@ -691,7 +697,7 @@ function linkPlayerName(name) {
 // 名称规范化：按 players.json（含别名）把赛果中的名字归一到规范名
 function normalizePlayerName(raw) { if (raw == null) return raw; const p = nameIndex[raw]; return p && p.name ? p.name : raw; }
 function normalizeScoreLog(log) { if (!Array.isArray(log)) return log; for (const r of log) { if (r['胜者']) r['胜者'] = normalizePlayerName(r['胜者']); if (r['负者']) r['负者'] = normalizePlayerName(r['负者']); if (r['对象']) r['对象'] = normalizePlayerName(r['对象']); } return log; }
-let _newsLoadSettled = false, _compLoadSettled = false, _detailRetryCount = 0, _detailLastSig = '';
+let _newsLoadSettled = false, _compLoadSettled = false;
 function markContentLoaded(which) {
     if (which === 'news') _newsLoadSettled = true;
     else if (which === 'competition') _compLoadSettled = true;
@@ -770,33 +776,85 @@ async function loadHistoryManifest(type, id) {
     return null;
 }
 let _detailRunToken = 0;
-async function updateDetailPage() {
+async function ensureContentList(type) {
+    if (getContentListByType(type).length) return;
+    const dir = getContentDirByType(type);
+    try {
+        const resp = await fetch(`data/${dir}/index.json`);
+        if (resp.ok) {
+            const arr = await resp.json();
+            if (Array.isArray(arr)) {
+                if (type === 'news') newsData = arr;
+                else if (type === 'competition') competitionsData = arr;
+                else qaData = arr;
+            }
+        }
+    } catch(e) { /* 索引缺失时按无回退处理 */ }
+}
+function renderDetailMessage(title, bodyHtml) {
+    const tEl = document.getElementById('detailTitle');
+    const dEl = document.getElementById('detailDate');
+    const cEl = document.getElementById('detailContent');
+    const mEl = document.getElementById('detailMedia');
+    const hEl = document.getElementById('detailVersion');
+    if (tEl) tEl.textContent = title;
+    if (dEl) dEl.textContent = '';
+    if (cEl) { cEl.innerHTML = bodyHtml; cEl.style.display = ''; }
+    if (mEl) mEl.innerHTML = '';
+    if (hEl) hEl.style.display = 'none';
+}
+function renderDetailNotFound() {
+    const t = Object.assign({}, VERSION_I18N_DEFAULTS, i18n[currentLang] || {});
+    renderDetailMessage(t.detail_not_found || '未找到内容', `<div class="detail-error"><i class="fa-solid fa-circle-exclamation"></i><p>${escapeHtml(t.detail_not_found || '未找到内容')}</p><p class="detail-error-hint">${escapeHtml(t.detail_load_fail_hint || '')}</p><button class="detail-retry-btn" type="button" onclick="location.reload()"><i class="fa-solid fa-rotate-right"></i> ${escapeHtml(t.detail_retry || '重试')}</button></div>`);
+}
+function renderDetailLoadFail() {
+    const t = Object.assign({}, VERSION_I18N_DEFAULTS, i18n[currentLang] || {});
+    renderDetailMessage(t.detail_load_fail || '加载失败', `<div class="detail-error"><i class="fa-solid fa-triangle-exclamation"></i><p>${escapeHtml(t.detail_load_fail || '加载失败')}</p><p class="detail-error-hint">${escapeHtml(t.detail_load_fail_hint || '')}</p><button class="detail-retry-btn" type="button" onclick="location.reload()"><i class="fa-solid fa-rotate-right"></i> ${escapeHtml(t.detail_retry || '重试')}</button></div>`);
+}
+async function renderDetailBySig(type, id) {
+    // 直读目标条目（{id}.json）+ 历史清单，无需全量索引
+    const [item, hist] = await Promise.all([loadContentItem(type, id), loadHistoryManifest(type, id)]);
+    if (item && item.visible !== false) {
+        if (Array.isArray(hist) && hist.length) item.history = hist;
+        // 兜底：数据文件缺失 id 时用 URL 参数回填，保证历史快照/赛程等依赖 item.id 的功能可用
+        if (item.id == null) item.id = id;
+        detailState = { type, item };
+        await renderDetailItem(type, item);
+        return true;
+    }
+    return false;
+}
+async function initDetailPageDirect() {
     const params = new URLSearchParams(window.location.search);
     const type = params.get('type'), id = params.get('id');
-    if (!type || !id) return;
+    const contentEl = document.getElementById('detailContent');
+    const t = Object.assign({}, VERSION_I18N_DEFAULTS, i18n[currentLang] || {});
+    // 立即显示加载提示，避免访问者面对空白卡片
+    if (contentEl) showContentLoading('detailContent', t.detail_loading || '加载中...');
+    if (!type || !id) { renderDetailNotFound(); return; }
     // 运行令牌：并发/重复触发时只让最后一次生效，防止重复 fetch 与 DOM 写入竞态
     const token = ++_detailRunToken;
-    // 重试计数仅在目标条目变化时归零，避免轮询重试自我重置
-    const sig = type + '|' + id;
-    if (sig !== (_detailLastSig || '')) { _detailRetryCount = 0; _detailLastSig = sig; }
-    const [item, hist] = await Promise.all([loadContentItem(type, id), loadHistoryManifest(type, id)]);
-    if (token !== _detailRunToken) return;
-    if (!item || item.visible === false) {
-        const da = getContentListByType(type);
-        if ((!da || !da.length) && _detailRetryCount < 8) { _detailRetryCount++; setTimeout(updateDetailPage, 200 * _detailRetryCount); return; }
-        document.getElementById('detailTitle').textContent = '未找到内容';
-        document.getElementById('detailDate').textContent = '';
-        document.getElementById('detailContent').innerHTML = '<p>请求的内容不存在或已被移除。</p>';
-        document.getElementById('detailMedia').innerHTML = '';
-        const hc = document.getElementById('detailVersion');
-        if (hc) hc.style.display = 'none';
+    let ok;
+    try {
+        ok = await renderDetailBySig(type, id);
+        if (token !== _detailRunToken) return;
+        if (!ok) {
+            // 直读失败：按需补拉索引后再重试一次（替代原先的轮询重试）
+            await ensureContentList(type);
+            if (token !== _detailRunToken) return;
+            ok = await renderDetailBySig(type, id);
+            if (token !== _detailRunToken) return;
+        }
+    } catch(e) {
+        console.error('Detail: 渲染失败', e);
+        if (token === _detailRunToken) renderDetailLoadFail();
         return;
     }
-    if (Array.isArray(hist) && hist.length) item.history = hist;
-    // 兜底：数据文件缺失 id 时用 URL 参数回填，保证历史快照/赛程等依赖 item.id 的功能可用
-    if (item && item.id == null) item.id = id;
-    detailState = { type, item };
-    await renderDetailItem(type, item);
+    if (!ok) { renderDetailNotFound(); return; }
+    dataLoaded = true;
+}
+async function updateDetailPage() {
+    await initDetailPageDirect();
 }
 
 async function renderDetailItem(type, item) {
@@ -808,7 +866,7 @@ async function renderDetailItem(type, item) {
     const contentSection = document.getElementById('detailContent');
     if (contentSection) contentSection.style.display = '';
     renderDetailMedia(item);
-    renderDetailDrawsSection(type, item);
+    await renderDetailDrawsSection(type, item);
     renderDetailVersion(type, item);
 }
 
@@ -886,11 +944,13 @@ function renderDetailMedia(item) {
     }
 }
 
-function renderDetailDrawsSection(type, item) {
+async function renderDetailDrawsSection(type, item) {
     const drawsToggleContainer = document.getElementById('detailDrawsToggle');
     const drawsContainer = document.getElementById('detailDraws');
     if (drawsToggleContainer && drawsContainer) {
         if (type === 'competition') {
+            // 懒加载：仅在查看赛事详情时才拉取 draws.json（detail 页不再急切下载）
+            await ensureDrawsData();
             const draws = getDrawsForCompetition(item.id);
             if (draws) {
                 drawsToggleContainer.style.display = 'flex';
