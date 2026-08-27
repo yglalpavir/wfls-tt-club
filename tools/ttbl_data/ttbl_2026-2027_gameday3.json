@@ -1,0 +1,2611 @@
+{
+  "source": "ttbl.de",
+  "league": "Bundesliga",
+  "season": "2026-2027",
+  "gameday": 3,
+  "gamedayName": "3. Spieltag (2026/2027)",
+  "fetchedAt": "2026-08-27T13:45:53.722236+00:00",
+  "matchCount": 6,
+  "matches": [
+    {
+      "id": "e3c76dad-f3fb-40c8-8db6-71ded0a3a811",
+      "url": "https://www.ttbl.de/bundesliga/gameday/2026-2027/3/e3c76dad-f3fb-40c8-8db6-71ded0a3a811",
+      "state": "Finished",
+      "kickoffUtc": "2026-08-25T17:00:00+00:00",
+      "spectators": 275,
+      "venue": {
+        "name": "Dr.-Hans-Liebherr-Sporthalle ",
+        "address": "Riedstrasse 44 ",
+        "zipCode": "88416 ",
+        "place": "Ochsenhausen",
+        "imageUrl": "/uploads/venue/imageUrl/496bb3ed-8cec-4551-90a1-76727b42a269.png"
+      },
+      "livestreamUrl": "https://www.dyn.sport/sport_tabletennis",
+      "ticketshopUrl": "https://www.ttbl.de/tickets",
+      "homeTeam": {
+        "id": "966eb2c4-9970-41a8-93e9-b235eb5b2a14",
+        "seasonTeamId": "5f1ab5cb-850a-466a-8290-bca768743707",
+        "name": "TTF Liebherr Ochsenhausen",
+        "logoPngUrl": "/uploads/team/logoPngUrl/4ae224dc-dd52-48c3-8143-cdb40c8ded5a.png"
+      },
+      "awayTeam": {
+        "id": "368d37d9-46a2-43a3-9d29-eb783e0de592",
+        "seasonTeamId": "a6660fba-6776-4886-9ca0-ae4416f7a3b5",
+        "name": "TTC Zugbrücke Grenzau",
+        "logoPngUrl": "/uploads/team/logoPngUrl/a232d8c7-7739-48f6-a0d4-98d2eb79e4f1.png"
+      },
+      "score": {
+        "games": [
+          3,
+          1
+        ],
+        "sets": [
+          11,
+          4
+        ]
+      },
+      "lineups": {
+        "home": [
+          {
+            "id": "84a1718d-d662-4aa1-91d9-94ab0410a88d",
+            "name": "Shunsuke Togami",
+            "imageUrl": "/uploads/player/imageUrl/de85cb66-3443-4fdc-8c52-eab7626bae72.png"
+          },
+          {
+            "id": "4915c031-4775-41ec-97af-fbf1d8ac8a1a",
+            "name": "Darius Movileanu",
+            "imageUrl": "/uploads/player/imageUrl/b9b197c4-9e73-45f2-bbe2-c83f83aa4da2.png"
+          },
+          {
+            "id": "54373d1a-263c-4a06-941d-fff23f86d5e7",
+            "name": "Iulian Chirita",
+            "imageUrl": "/uploads/player/imageUrl/94eb1a1e-810a-4387-a14f-faca12b373c2.png"
+          },
+          {
+            "id": "591bd4e3-1ea4-439c-ab08-c9fe04aed00c",
+            "name": "Tiago Abiodun",
+            "imageUrl": "/uploads/player/imageUrl/71426e04-672c-4092-ae33-848037396853.png"
+          }
+        ],
+        "away": [
+          {
+            "id": "409703e4-97b8-4a9d-a287-73d8e313c826",
+            "name": "Samuel Walker",
+            "imageUrl": "/uploads/player/imageUrl/260a487d-da2d-423c-acfe-b85df3c15d8e.png"
+          },
+          {
+            "id": "0edcb9fe-5c33-4688-a3d2-417425043f73",
+            "name": "Maciej Kubik",
+            "imageUrl": "/uploads/player/imageUrl/cf9596ff-892e-4864-94a9-69442a5cd5b4.png"
+          },
+          {
+            "id": "14840b3d-f243-44d7-9308-328451f829a8",
+            "name": "Martin Allegro",
+            "imageUrl": "/uploads/player/imageUrl/9b7bf1d3-8f26-458a-b0b7-c1b226262fd4.png"
+          }
+        ]
+      },
+      "games": [
+        {
+          "index": 1,
+          "state": "Finished",
+          "winner": "Away",
+          "type": "singles",
+          "homePlayer": {
+            "id": "84a1718d-d662-4aa1-91d9-94ab0410a88d",
+            "name": "Shunsuke Togami",
+            "imageUrl": "/uploads/player/imageUrl/de85cb66-3443-4fdc-8c52-eab7626bae72.png"
+          },
+          "awayPlayer": {
+            "id": "0edcb9fe-5c33-4688-a3d2-417425043f73",
+            "name": "Maciej Kubik",
+            "imageUrl": "/uploads/player/imageUrl/cf9596ff-892e-4864-94a9-69442a5cd5b4.png"
+          },
+          "homeDouble": null,
+          "awayDouble": null,
+          "setsHome": 2,
+          "setsAway": 3,
+          "sets": [
+            [
+              5,
+              11
+            ],
+            [
+              11,
+              7
+            ],
+            [
+              11,
+              8
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              10,
+              12
+            ]
+          ],
+          "timeoutsUsed": {
+            "home": 1,
+            "away": 1
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              26,
+              26
+            ],
+            "pointsOnReturn": [
+              19,
+              23
+            ],
+            "pointsInARow": [
+              8,
+              5
+            ],
+            "luckyPoints": [
+              1,
+              1
+            ],
+            "highestLead": [
+              4,
+              6
+            ],
+            "matchPoints": [
+              5,
+              4
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "state": "Finished",
+          "winner": "Home",
+          "type": "singles",
+          "homePlayer": {
+            "id": "4915c031-4775-41ec-97af-fbf1d8ac8a1a",
+            "name": "Darius Movileanu",
+            "imageUrl": "/uploads/player/imageUrl/b9b197c4-9e73-45f2-bbe2-c83f83aa4da2.png"
+          },
+          "awayPlayer": {
+            "id": "409703e4-97b8-4a9d-a287-73d8e313c826",
+            "name": "Samuel Walker",
+            "imageUrl": "/uploads/player/imageUrl/260a487d-da2d-423c-acfe-b85df3c15d8e.png"
+          },
+          "homeDouble": null,
+          "awayDouble": null,
+          "setsHome": 3,
+          "setsAway": 0,
+          "sets": [
+            [
+              11,
+              3
+            ],
+            [
+              11,
+              4
+            ],
+            [
+              11,
+              2
+            ]
+          ],
+          "timeoutsUsed": {
+            "home": 0,
+            "away": 1
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              16,
+              6
+            ],
+            "pointsOnReturn": [
+              17,
+              3
+            ],
+            "pointsInARow": [
+              9,
+              2
+            ],
+            "luckyPoints": [
+              4,
+              1
+            ],
+            "highestLead": [
+              9,
+              8
+            ],
+            "matchPoints": [
+              5,
+              0
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "state": "Finished",
+          "winner": "Home",
+          "type": "singles",
+          "homePlayer": {
+            "id": "54373d1a-263c-4a06-941d-fff23f86d5e7",
+            "name": "Iulian Chirita",
+            "imageUrl": "/uploads/player/imageUrl/94eb1a1e-810a-4387-a14f-faca12b373c2.png"
+          },
+          "awayPlayer": {
+            "id": "14840b3d-f243-44d7-9308-328451f829a8",
+            "name": "Martin Allegro",
+            "imageUrl": "/uploads/player/imageUrl/9b7bf1d3-8f26-458a-b0b7-c1b226262fd4.png"
+          },
+          "homeDouble": null,
+          "awayDouble": null,
+          "setsHome": 3,
+          "setsAway": 1,
+          "sets": [
+            [
+              11,
+              5
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              11,
+              5
+            ],
+            [
+              11,
+              5
+            ]
+          ],
+          "timeoutsUsed": {
+            "home": 0,
+            "away": 1
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              21,
+              13
+            ],
+            "pointsOnReturn": [
+              21,
+              13
+            ],
+            "pointsInARow": [
+              10,
+              7
+            ],
+            "luckyPoints": [
+              1,
+              2
+            ],
+            "highestLead": [
+              6,
+              4
+            ],
+            "matchPoints": [
+              5,
+              5
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "state": "Finished",
+          "winner": "Home",
+          "type": "singles",
+          "homePlayer": {
+            "id": "591bd4e3-1ea4-439c-ab08-c9fe04aed00c",
+            "name": "Tiago Abiodun",
+            "imageUrl": "/uploads/player/imageUrl/71426e04-672c-4092-ae33-848037396853.png"
+          },
+          "awayPlayer": {
+            "id": "409703e4-97b8-4a9d-a287-73d8e313c826",
+            "name": "Samuel Walker",
+            "imageUrl": "/uploads/player/imageUrl/260a487d-da2d-423c-acfe-b85df3c15d8e.png"
+          },
+          "homeDouble": null,
+          "awayDouble": null,
+          "setsHome": 3,
+          "setsAway": 0,
+          "sets": [
+            [
+              11,
+              8
+            ],
+            [
+              16,
+              14
+            ],
+            [
+              11,
+              4
+            ]
+          ],
+          "timeoutsUsed": {
+            "home": 0,
+            "away": 0
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              21,
+              14
+            ],
+            "pointsOnReturn": [
+              17,
+              12
+            ],
+            "pointsInARow": [
+              6,
+              3
+            ],
+            "luckyPoints": [
+              1,
+              2
+            ],
+            "highestLead": [
+              7,
+              6
+            ],
+            "matchPoints": [
+              12,
+              1
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "state": "Inactive",
+          "winner": null,
+          "type": "double",
+          "homePlayer": null,
+          "awayPlayer": null,
+          "homeDouble": {
+            "id": "54373d1a-263c-4a06-941d-fff23f86d5e7|591bd4e3-1ea4-439c-ab08-c9fe04aed00c",
+            "players": [
+              {
+                "id": "54373d1a-263c-4a06-941d-fff23f86d5e7",
+                "name": "Iulian Chirita",
+                "imageUrl": "/uploads/player/imageUrl/94eb1a1e-810a-4387-a14f-faca12b373c2.png"
+              },
+              {
+                "id": "591bd4e3-1ea4-439c-ab08-c9fe04aed00c",
+                "name": "Tiago Abiodun",
+                "imageUrl": "/uploads/player/imageUrl/71426e04-672c-4092-ae33-848037396853.png"
+              }
+            ]
+          },
+          "awayDouble": {
+            "id": "0edcb9fe-5c33-4688-a3d2-417425043f73|14840b3d-f243-44d7-9308-328451f829a8",
+            "players": [
+              {
+                "id": "0edcb9fe-5c33-4688-a3d2-417425043f73",
+                "name": "Maciej Kubik",
+                "imageUrl": "/uploads/player/imageUrl/cf9596ff-892e-4864-94a9-69442a5cd5b4.png"
+              },
+              {
+                "id": "14840b3d-f243-44d7-9308-328451f829a8",
+                "name": "Martin Allegro",
+                "imageUrl": "/uploads/player/imageUrl/9b7bf1d3-8f26-458a-b0b7-c1b226262fd4.png"
+              }
+            ]
+          },
+          "setsHome": 0,
+          "setsAway": 0,
+          "sets": [],
+          "timeoutsUsed": {
+            "home": 0,
+            "away": 0
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              0,
+              0
+            ],
+            "pointsOnReturn": [
+              0,
+              0
+            ],
+            "pointsInARow": [
+              0,
+              0
+            ],
+            "luckyPoints": [
+              0,
+              0
+            ],
+            "highestLead": [
+              0,
+              0
+            ],
+            "matchPoints": [
+              0,
+              0
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "4620b55b-a58e-4c0a-9862-d7068e6a82ed",
+      "url": "https://www.ttbl.de/bundesliga/gameday/2026-2027/3/4620b55b-a58e-4c0a-9862-d7068e6a82ed",
+      "state": "Finished",
+      "kickoffUtc": "2026-08-25T17:30:00+00:00",
+      "spectators": 200,
+      "venue": {
+        "name": "Burstenhalle ",
+        "address": "Burstenweg 11a ",
+        "zipCode": "51702",
+        "place": "Bergneustadt",
+        "imageUrl": "/uploads/venue/imageUrl/8e25fbb3-d45f-4d64-ac71-4c1ae4425375.png"
+      },
+      "livestreamUrl": "https://www.dyn.sport/sport_tabletennis",
+      "ticketshopUrl": "https://www.ttbl.de/tickets",
+      "homeTeam": {
+        "id": "53d1dd63-865b-4d7e-aa62-49ea1c2d361b",
+        "seasonTeamId": "1c145bcd-c0b4-4cb2-935f-0191c71c4a03",
+        "name": "TTC Schwalbe Bergneustadt",
+        "logoPngUrl": "/uploads/team/logoPngUrl/e650cfca-7d6b-4702-b18b-5c0284bbda7e.png"
+      },
+      "awayTeam": {
+        "id": "5f1971dd-48d5-4810-9fdf-d817005ec9b0",
+        "seasonTeamId": "36f56478-5108-4a2c-9602-d64b4a20905e",
+        "name": "TTC RhönSprudel Fulda-Maberzell",
+        "logoPngUrl": "/uploads/team/logoPngUrl/09bdd311-acf6-4ec5-9134-56de7fa53852.png"
+      },
+      "score": {
+        "games": [
+          3,
+          2
+        ],
+        "sets": [
+          12,
+          7
+        ]
+      },
+      "lineups": {
+        "home": [
+          {
+            "id": "4dd371a6-069b-44af-9ef8-daa68859ec38",
+            "name": "Benedikt Duda",
+            "imageUrl": "/uploads/player/imageUrl/3e252318-35ef-428b-81c9-87672df0a99f.png"
+          },
+          {
+            "id": "4ba9f696-b0ef-433e-8dcf-67eb038b6c2d",
+            "name": "Cedric Meissner",
+            "imageUrl": "/uploads/player/imageUrl/bcf61744-81a2-4f76-bc4b-925b4dcc8293.png"
+          },
+          {
+            "id": "bf27aef6-c42c-4b73-9492-d8024f3c9480",
+            "name": "Adrien Rassenfosse",
+            "imageUrl": "/uploads/player/imageUrl/f913464f-2197-4e5e-a9ad-a28806ff8ac1.png"
+          },
+          {
+            "id": "34ce8464-e000-492a-a813-14098e70c32f",
+            "name": "Romain Ruiz",
+            "imageUrl": "/uploads/player/imageUrl/ff2fde3b-fd2a-4dcd-9377-f2e7538e93a7.png"
+          },
+          {
+            "id": "5ddd3cfe-24db-41a7-a76e-cbfe895c6509",
+            "name": "Frederik Duda",
+            "imageUrl": "/uploads/player/imageUrl/6d878fe4-bd41-412b-a85f-ceaaf290a9bc.png"
+          }
+        ],
+        "away": [
+          {
+            "id": "b8b6a84b-01cb-41b7-9da7-124f90f6b390",
+            "name": "Fanbo Meng",
+            "imageUrl": "/uploads/player/imageUrl/10290dd6-cf88-48be-b583-fc18607dd077.png"
+          },
+          {
+            "id": "a7cbfec9-699a-426d-9b99-329c3839a811",
+            "name": "Andrei Istrate",
+            "imageUrl": "/uploads/player/imageUrl/9c101249-6a74-4762-988a-6fa2c780f1c2.png"
+          },
+          {
+            "id": "db515eba-cba1-4bbd-b51e-4466b2fae150",
+            "name": "Ruwen Filus",
+            "imageUrl": "/uploads/player/imageUrl/1a4aaf4b-cb98-4a5a-9572-825904161180.png"
+          },
+          {
+            "id": "1add1fa4-22f2-4494-9826-18d9c51a22db",
+            "name": "Qing Yu Meng",
+            "imageUrl": "/uploads/player/imageUrl/f6716d0c-74ed-448f-8a8d-4dc9728bbd56.png"
+          }
+        ]
+      },
+      "games": [
+        {
+          "index": 1,
+          "state": "Finished",
+          "winner": "Home",
+          "type": "singles",
+          "homePlayer": {
+            "id": "4dd371a6-069b-44af-9ef8-daa68859ec38",
+            "name": "Benedikt Duda",
+            "imageUrl": "/uploads/player/imageUrl/3e252318-35ef-428b-81c9-87672df0a99f.png"
+          },
+          "awayPlayer": {
+            "id": "a7cbfec9-699a-426d-9b99-329c3839a811",
+            "name": "Andrei Istrate",
+            "imageUrl": "/uploads/player/imageUrl/9c101249-6a74-4762-988a-6fa2c780f1c2.png"
+          },
+          "homeDouble": null,
+          "awayDouble": null,
+          "setsHome": 3,
+          "setsAway": 0,
+          "sets": [
+            [
+              11,
+              4
+            ],
+            [
+              11,
+              0
+            ],
+            [
+              12,
+              10
+            ]
+          ],
+          "timeoutsUsed": {
+            "home": 0,
+            "away": 1
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              18,
+              9
+            ],
+            "pointsOnReturn": [
+              16,
+              5
+            ],
+            "pointsInARow": [
+              16,
+              2
+            ],
+            "luckyPoints": [
+              0,
+              1
+            ],
+            "highestLead": [
+              11,
+              3
+            ],
+            "matchPoints": [
+              3,
+              1
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "state": "Finished",
+          "winner": "Home",
+          "type": "singles",
+          "homePlayer": {
+            "id": "4ba9f696-b0ef-433e-8dcf-67eb038b6c2d",
+            "name": "Cedric Meissner",
+            "imageUrl": "/uploads/player/imageUrl/bcf61744-81a2-4f76-bc4b-925b4dcc8293.png"
+          },
+          "awayPlayer": {
+            "id": "b8b6a84b-01cb-41b7-9da7-124f90f6b390",
+            "name": "Fanbo Meng",
+            "imageUrl": "/uploads/player/imageUrl/10290dd6-cf88-48be-b583-fc18607dd077.png"
+          },
+          "homeDouble": null,
+          "awayDouble": null,
+          "setsHome": 3,
+          "setsAway": 0,
+          "sets": [
+            [
+              12,
+              10
+            ],
+            [
+              11,
+              9
+            ],
+            [
+              11,
+              8
+            ]
+          ],
+          "timeoutsUsed": {
+            "home": 1,
+            "away": 1
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              14,
+              11
+            ],
+            "pointsOnReturn": [
+              20,
+              16
+            ],
+            "pointsInARow": [
+              7,
+              4
+            ],
+            "luckyPoints": [
+              2,
+              0
+            ],
+            "highestLead": [
+              4,
+              5
+            ],
+            "matchPoints": [
+              6,
+              0
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "state": "Finished",
+          "winner": "Away",
+          "type": "singles",
+          "homePlayer": {
+            "id": "bf27aef6-c42c-4b73-9492-d8024f3c9480",
+            "name": "Adrien Rassenfosse",
+            "imageUrl": "/uploads/player/imageUrl/f913464f-2197-4e5e-a9ad-a28806ff8ac1.png"
+          },
+          "awayPlayer": {
+            "id": "db515eba-cba1-4bbd-b51e-4466b2fae150",
+            "name": "Ruwen Filus",
+            "imageUrl": "/uploads/player/imageUrl/1a4aaf4b-cb98-4a5a-9572-825904161180.png"
+          },
+          "homeDouble": null,
+          "awayDouble": null,
+          "setsHome": 1,
+          "setsAway": 3,
+          "sets": [
+            [
+              11,
+              13
+            ],
+            [
+              7,
+              11
+            ],
+            [
+              11,
+              4
+            ],
+            [
+              10,
+              12
+            ]
+          ],
+          "timeoutsUsed": {
+            "home": 1,
+            "away": 0
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              21,
+              20
+            ],
+            "pointsOnReturn": [
+              18,
+              20
+            ],
+            "pointsInARow": [
+              5,
+              7
+            ],
+            "luckyPoints": [
+              1,
+              0
+            ],
+            "highestLead": [
+              7,
+              6
+            ],
+            "matchPoints": [
+              5,
+              5
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "state": "Finished",
+          "winner": "Away",
+          "type": "singles",
+          "homePlayer": {
+            "id": "4dd371a6-069b-44af-9ef8-daa68859ec38",
+            "name": "Benedikt Duda",
+            "imageUrl": "/uploads/player/imageUrl/3e252318-35ef-428b-81c9-87672df0a99f.png"
+          },
+          "awayPlayer": {
+            "id": "b8b6a84b-01cb-41b7-9da7-124f90f6b390",
+            "name": "Fanbo Meng",
+            "imageUrl": "/uploads/player/imageUrl/10290dd6-cf88-48be-b583-fc18607dd077.png"
+          },
+          "homeDouble": null,
+          "awayDouble": null,
+          "setsHome": 2,
+          "setsAway": 3,
+          "sets": [
+            [
+              10,
+              12
+            ],
+            [
+              11,
+              5
+            ],
+            [
+              10,
+              12
+            ],
+            [
+              11,
+              6
+            ],
+            [
+              11,
+              13
+            ]
+          ],
+          "timeoutsUsed": {
+            "home": 1,
+            "away": 1
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              26,
+              23
+            ],
+            "pointsOnReturn": [
+              27,
+              24
+            ],
+            "pointsInARow": [
+              6,
+              7
+            ],
+            "luckyPoints": [
+              6,
+              3
+            ],
+            "highestLead": [
+              6,
+              6
+            ],
+            "matchPoints": [
+              5,
+              8
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "state": "Finished",
+          "winner": "Home",
+          "type": "double",
+          "homePlayer": null,
+          "awayPlayer": null,
+          "homeDouble": {
+            "id": "4ba9f696-b0ef-433e-8dcf-67eb038b6c2d|bf27aef6-c42c-4b73-9492-d8024f3c9480",
+            "players": [
+              {
+                "id": "4ba9f696-b0ef-433e-8dcf-67eb038b6c2d",
+                "name": "Cedric Meissner",
+                "imageUrl": "/uploads/player/imageUrl/bcf61744-81a2-4f76-bc4b-925b4dcc8293.png"
+              },
+              {
+                "id": "bf27aef6-c42c-4b73-9492-d8024f3c9480",
+                "name": "Adrien Rassenfosse",
+                "imageUrl": "/uploads/player/imageUrl/f913464f-2197-4e5e-a9ad-a28806ff8ac1.png"
+              }
+            ]
+          },
+          "awayDouble": {
+            "id": "a7cbfec9-699a-426d-9b99-329c3839a811|db515eba-cba1-4bbd-b51e-4466b2fae150",
+            "players": [
+              {
+                "id": "a7cbfec9-699a-426d-9b99-329c3839a811",
+                "name": "Andrei Istrate",
+                "imageUrl": "/uploads/player/imageUrl/9c101249-6a74-4762-988a-6fa2c780f1c2.png"
+              },
+              {
+                "id": "db515eba-cba1-4bbd-b51e-4466b2fae150",
+                "name": "Ruwen Filus",
+                "imageUrl": "/uploads/player/imageUrl/1a4aaf4b-cb98-4a5a-9572-825904161180.png"
+              }
+            ]
+          },
+          "setsHome": 3,
+          "setsAway": 1,
+          "sets": [
+            [
+              11,
+              5
+            ],
+            [
+              3,
+              11
+            ],
+            [
+              11,
+              6
+            ],
+            [
+              11,
+              7
+            ]
+          ],
+          "timeoutsUsed": {
+            "home": 1,
+            "away": 1
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              17,
+              16
+            ],
+            "pointsOnReturn": [
+              19,
+              13
+            ],
+            "pointsInARow": [
+              7,
+              8
+            ],
+            "luckyPoints": [
+              0,
+              1
+            ],
+            "highestLead": [
+              6,
+              8
+            ],
+            "matchPoints": [
+              3,
+              1
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "c71be078-69c5-4182-a76b-871c4fa205fc",
+      "url": "https://www.ttbl.de/bundesliga/gameday/2026-2027/3/c71be078-69c5-4182-a76b-871c4fa205fc",
+      "state": "Finished",
+      "kickoffUtc": "2026-08-26T16:30:00+00:00",
+      "spectators": 700,
+      "venue": {
+        "name": "Klaus-Dieter-Fischer-Halle",
+        "address": " Hermine-Berthold-Straße 20",
+        "zipCode": " 28205",
+        "place": "Bremen",
+        "imageUrl": "/uploads/venue/imageUrl/abaa3a13-61b7-472f-ae1a-7f6ce9f09936.png"
+      },
+      "livestreamUrl": "https://www.dyn.sport/sport_tabletennis",
+      "ticketshopUrl": "https://www.ttbl.de/tickets",
+      "homeTeam": {
+        "id": "7b035960-6002-4e57-94e6-f73a057a3fe4",
+        "seasonTeamId": "d78a04c3-2acd-4ee4-a247-45f796f20801",
+        "name": "SV Werder Bremen",
+        "logoPngUrl": "/uploads/team/logoPngUrl/7384833d-5e00-44b4-a129-562cfab42ad5.png"
+      },
+      "awayTeam": {
+        "id": "51a2bbfe-4158-447c-8515-53c830df44a8",
+        "seasonTeamId": "87d7a43a-217a-4ce4-a6ef-24185a069660",
+        "name": "Borussia Düsseldorf",
+        "logoPngUrl": "/uploads/team/logoPngUrl/a5dfd114-33cb-406a-8db3-c34815a6e486.png"
+      },
+      "score": {
+        "games": [
+          0,
+          3
+        ],
+        "sets": [
+          1,
+          9
+        ]
+      },
+      "lineups": {
+        "home": [
+          {
+            "id": "f2820e5d-308c-4e82-8eaf-7dab16cfa255",
+            "name": "Kirill Gerassimenko",
+            "imageUrl": "/uploads/player/imageUrl/a1feefdf-3c58-4b17-ae12-595ee7f0eca7.png"
+          },
+          {
+            "id": "1751d0b7-610a-4e84-923b-a3a2c9bb6a30",
+            "name": "Irvin Bertrand",
+            "imageUrl": "/uploads/player/imageUrl/1aa579c9-b8e3-493f-9f48-6f46a62b91b7.png"
+          },
+          {
+            "id": "9a733a63-55df-4923-91ad-d30cd3181084",
+            "name": "Mattias Karlsson",
+            "imageUrl": "/uploads/player/imageUrl/172d16a0-cbf5-44b6-b1f6-d41f9f5d23a5.png"
+          },
+          {
+            "id": "f47f422b-6f09-4c1c-bb74-d6cec570f84a",
+            "name": "Marcelo Aguirre",
+            "imageUrl": "/uploads/player/imageUrl/8b7bca47-0061-4f04-a32f-e8fb6e1d1629.png"
+          },
+          {
+            "id": "84e0493b-f15c-4968-8763-367370d0164d",
+            "name": "Cristian Tamas",
+            "imageUrl": "/uploads/player/imageUrl/33443f65-ed1e-4d21-8b35-24275057a54f.png"
+          }
+        ],
+        "away": [
+          {
+            "id": "bc154694-5ffc-4d35-9619-ff68a8a66825",
+            "name": "Zhendong Fan",
+            "imageUrl": "/uploads/player/imageUrl/d8417e39-62d0-4fb2-b5ea-e60a59aee227.png"
+          },
+          {
+            "id": "2f994d56-f609-49f8-a20b-1bb85c6c36b0",
+            "name": "Anton Källberg",
+            "imageUrl": "/uploads/player/imageUrl/77165bec-dc03-4142-8b19-543af4646889.png"
+          },
+          {
+            "id": "f60beb21-ba70-4f64-858c-54bac50c8df9",
+            "name": "Dang Qiu",
+            "imageUrl": "/uploads/player/imageUrl/9970892a-3d86-472e-a567-c6ee60f87d06.png"
+          },
+          {
+            "id": "f637b06d-358f-402a-a7fc-1b3e4543dac1",
+            "name": "Danny Heister",
+            "imageUrl": "/uploads/player/imageUrl/86440ee9-3132-4b70-9684-4b191d364c4b.png"
+          }
+        ]
+      },
+      "games": [
+        {
+          "index": 1,
+          "state": "Finished",
+          "winner": "Away",
+          "type": "singles",
+          "homePlayer": {
+            "id": "f2820e5d-308c-4e82-8eaf-7dab16cfa255",
+            "name": "Kirill Gerassimenko",
+            "imageUrl": "/uploads/player/imageUrl/a1feefdf-3c58-4b17-ae12-595ee7f0eca7.png"
+          },
+          "awayPlayer": {
+            "id": "2f994d56-f609-49f8-a20b-1bb85c6c36b0",
+            "name": "Anton Källberg",
+            "imageUrl": "/uploads/player/imageUrl/77165bec-dc03-4142-8b19-543af4646889.png"
+          },
+          "homeDouble": null,
+          "awayDouble": null,
+          "setsHome": 0,
+          "setsAway": 3,
+          "sets": [
+            [
+              5,
+              11
+            ],
+            [
+              2,
+              11
+            ],
+            [
+              7,
+              11
+            ]
+          ],
+          "timeoutsUsed": {
+            "home": 1,
+            "away": 0
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              10,
+              18
+            ],
+            "pointsOnReturn": [
+              4,
+              15
+            ],
+            "pointsInARow": [
+              3,
+              5
+            ],
+            "luckyPoints": [
+              1,
+              0
+            ],
+            "highestLead": [
+              5,
+              9
+            ],
+            "matchPoints": [
+              0,
+              4
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "state": "Finished",
+          "winner": "Away",
+          "type": "singles",
+          "homePlayer": {
+            "id": "1751d0b7-610a-4e84-923b-a3a2c9bb6a30",
+            "name": "Irvin Bertrand",
+            "imageUrl": "/uploads/player/imageUrl/1aa579c9-b8e3-493f-9f48-6f46a62b91b7.png"
+          },
+          "awayPlayer": {
+            "id": "bc154694-5ffc-4d35-9619-ff68a8a66825",
+            "name": "Zhendong Fan",
+            "imageUrl": "/uploads/player/imageUrl/d8417e39-62d0-4fb2-b5ea-e60a59aee227.png"
+          },
+          "homeDouble": null,
+          "awayDouble": null,
+          "setsHome": 0,
+          "setsAway": 3,
+          "sets": [
+            [
+              4,
+              11
+            ],
+            [
+              4,
+              11
+            ],
+            [
+              4,
+              11
+            ]
+          ],
+          "timeoutsUsed": {
+            "home": 1,
+            "away": 0
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              5,
+              17
+            ],
+            "pointsOnReturn": [
+              7,
+              16
+            ],
+            "pointsInARow": [
+              3,
+              10
+            ],
+            "luckyPoints": [
+              0,
+              3
+            ],
+            "highestLead": [
+              3,
+              7
+            ],
+            "matchPoints": [
+              0,
+              3
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "state": "Finished",
+          "winner": "Away",
+          "type": "singles",
+          "homePlayer": {
+            "id": "9a733a63-55df-4923-91ad-d30cd3181084",
+            "name": "Mattias Karlsson",
+            "imageUrl": "/uploads/player/imageUrl/172d16a0-cbf5-44b6-b1f6-d41f9f5d23a5.png"
+          },
+          "awayPlayer": {
+            "id": "f60beb21-ba70-4f64-858c-54bac50c8df9",
+            "name": "Dang Qiu",
+            "imageUrl": "/uploads/player/imageUrl/9970892a-3d86-472e-a567-c6ee60f87d06.png"
+          },
+          "homeDouble": null,
+          "awayDouble": null,
+          "setsHome": 1,
+          "setsAway": 3,
+          "sets": [
+            [
+              10,
+              12
+            ],
+            [
+              12,
+              10
+            ],
+            [
+              11,
+              13
+            ],
+            [
+              6,
+              11
+            ]
+          ],
+          "timeoutsUsed": {
+            "home": 1,
+            "away": 1
+          },
+          "cards": [
+            {
+              "id": 160474,
+              "playerId": "9a733a63-55df-4923-91ad-d30cd3181084",
+              "type": "Yellow"
+            }
+          ],
+          "stats": {
+            "pointsOnServe": [
+              15,
+              17
+            ],
+            "pointsOnReturn": [
+              24,
+              28
+            ],
+            "pointsInARow": [
+              4,
+              5
+            ],
+            "luckyPoints": [
+              0,
+              1
+            ],
+            "highestLead": [
+              4,
+              5
+            ],
+            "matchPoints": [
+              1,
+              8
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "state": "Inactive",
+          "winner": null,
+          "type": "singles",
+          "homePlayer": {
+            "id": "f2820e5d-308c-4e82-8eaf-7dab16cfa255",
+            "name": "Kirill Gerassimenko",
+            "imageUrl": "/uploads/player/imageUrl/a1feefdf-3c58-4b17-ae12-595ee7f0eca7.png"
+          },
+          "awayPlayer": {
+            "id": "bc154694-5ffc-4d35-9619-ff68a8a66825",
+            "name": "Zhendong Fan",
+            "imageUrl": "/uploads/player/imageUrl/d8417e39-62d0-4fb2-b5ea-e60a59aee227.png"
+          },
+          "homeDouble": null,
+          "awayDouble": null,
+          "setsHome": 0,
+          "setsAway": 0,
+          "sets": [],
+          "timeoutsUsed": {
+            "home": 0,
+            "away": 0
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              0,
+              0
+            ],
+            "pointsOnReturn": [
+              0,
+              0
+            ],
+            "pointsInARow": [
+              0,
+              0
+            ],
+            "luckyPoints": [
+              0,
+              0
+            ],
+            "highestLead": [
+              0,
+              0
+            ],
+            "matchPoints": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "state": "Inactive",
+          "winner": null,
+          "type": "double",
+          "homePlayer": null,
+          "awayPlayer": null,
+          "homeDouble": {
+            "id": "1751d0b7-610a-4e84-923b-a3a2c9bb6a30|9a733a63-55df-4923-91ad-d30cd3181084",
+            "players": [
+              {
+                "id": "1751d0b7-610a-4e84-923b-a3a2c9bb6a30",
+                "name": "Irvin Bertrand",
+                "imageUrl": "/uploads/player/imageUrl/1aa579c9-b8e3-493f-9f48-6f46a62b91b7.png"
+              },
+              {
+                "id": "9a733a63-55df-4923-91ad-d30cd3181084",
+                "name": "Mattias Karlsson",
+                "imageUrl": "/uploads/player/imageUrl/172d16a0-cbf5-44b6-b1f6-d41f9f5d23a5.png"
+              }
+            ]
+          },
+          "awayDouble": {
+            "id": "2f994d56-f609-49f8-a20b-1bb85c6c36b0|f60beb21-ba70-4f64-858c-54bac50c8df9",
+            "players": [
+              {
+                "id": "2f994d56-f609-49f8-a20b-1bb85c6c36b0",
+                "name": "Anton Källberg",
+                "imageUrl": "/uploads/player/imageUrl/77165bec-dc03-4142-8b19-543af4646889.png"
+              },
+              {
+                "id": "f60beb21-ba70-4f64-858c-54bac50c8df9",
+                "name": "Dang Qiu",
+                "imageUrl": "/uploads/player/imageUrl/9970892a-3d86-472e-a567-c6ee60f87d06.png"
+              }
+            ]
+          },
+          "setsHome": 0,
+          "setsAway": 0,
+          "sets": [],
+          "timeoutsUsed": {
+            "home": 0,
+            "away": 0
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              0,
+              0
+            ],
+            "pointsOnReturn": [
+              0,
+              0
+            ],
+            "pointsInARow": [
+              0,
+              0
+            ],
+            "luckyPoints": [
+              0,
+              0
+            ],
+            "highestLead": [
+              0,
+              0
+            ],
+            "matchPoints": [
+              0,
+              0
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "18fc5344-0ffe-436c-a388-fa7071d688b4",
+      "url": "https://www.ttbl.de/bundesliga/gameday/2026-2027/3/18fc5344-0ffe-436c-a388-fa7071d688b4",
+      "state": "Finished",
+      "kickoffUtc": "2026-08-26T16:45:00+00:00",
+      "spectators": 250,
+      "venue": {
+        "name": "Brügmann Sporthalle",
+        "address": "Brügmannstr. 20",
+        "zipCode": "44135",
+        "place": "Dortmund",
+        "imageUrl": "/uploads/venue/imageUrl/ddbfd244-1e9e-4888-b03c-9d1ad70f5385.png"
+      },
+      "livestreamUrl": "https://www.dyn.sport/sport_tabletennis",
+      "ticketshopUrl": "https://www.ttbl.de/tickets",
+      "homeTeam": {
+        "id": "55803118-289f-416c-92cc-61c1b5cfcd3f",
+        "seasonTeamId": "68c6cf86-c4f4-43b9-bc8a-de273e7d1941",
+        "name": "BV Borussia 09 Dortmund",
+        "logoPngUrl": "/uploads/team/logoPngUrl/6b64523d-17f6-4a5d-a352-10c279861bfc.png"
+      },
+      "awayTeam": {
+        "id": "8eb9b359-8255-4e48-b543-ab5b243d6c51",
+        "seasonTeamId": "1de97d75-6f3e-41ff-8039-7dcf53543179",
+        "name": "ASC Grünwettersbach",
+        "logoPngUrl": "/uploads/team/logoPngUrl/d0b3947e-35f8-41d8-858a-1acc89e42abf.png"
+      },
+      "score": {
+        "games": [
+          3,
+          0
+        ],
+        "sets": [
+          9,
+          1
+        ]
+      },
+      "lineups": {
+        "home": [
+          {
+            "id": "27a42deb-0efc-42da-a30f-d7fce139c6dd",
+            "name": "Joao Geraldo",
+            "imageUrl": "/uploads/player/imageUrl/96cc4a1d-90d2-4abb-8a83-dff64db0d6ce.png"
+          },
+          {
+            "id": "c827a6b0-6ce3-48a4-aedf-b6f2828669cb",
+            "name": "Wim Verdonschot",
+            "imageUrl": "/uploads/player/imageUrl/698d8cb2-fd0b-4cc5-b73b-6735c431bb56.png"
+          },
+          {
+            "id": "a80c16b9-cf45-40c2-b636-8a3ab053862e",
+            "name": "Kristian Karlsson",
+            "imageUrl": "/uploads/player/imageUrl/3f5c9bc2-2b96-4741-8988-83f4c2ab4ee3.png"
+          },
+          {
+            "id": "77eae380-ae01-4391-9023-9a083cc444d6",
+            "name": "Adam Szudi",
+            "imageUrl": "/uploads/player/imageUrl/1cf83a8f-ffab-4cd4-95d8-0822967974e0.png"
+          },
+          {
+            "id": "dc041082-86c6-49f4-bc4b-19ecf698b987",
+            "name": "Cedric Nuytinck",
+            "imageUrl": "/uploads/player/imageUrl/3f65fc5d-0c68-49be-a1e9-da5f8e04b8ba.png"
+          },
+          {
+            "id": "8ebee8e9-528b-466b-af59-fba21fabe7c1",
+            "name": "Erik Bottroff",
+            "imageUrl": "/uploads/player/imageUrl/9fac2972-6dc5-48b6-970d-132088dbfaae.png"
+          }
+        ],
+        "away": [
+          {
+            "id": "48f974f1-243d-4c44-b00b-7d87611e3bc3",
+            "name": "Tom Jarvis",
+            "imageUrl": "/uploads/player/imageUrl/24ef2270-8a8d-44ea-8091-cb1e08fc12c7.png"
+          },
+          {
+            "id": "c3f42375-c24c-435d-93f9-97c8da75f5c0",
+            "name": "Ricardo Walther",
+            "imageUrl": "/uploads/player/imageUrl/5db7e9ef-8f56-4b3f-8d03-0430916833e0.png"
+          },
+          {
+            "id": "78ce3d8b-8fd6-43e9-89be-cdc84a804f22",
+            "name": "Florian Bluhm",
+            "imageUrl": "/uploads/player/imageUrl/0ed07d40-c39e-4cbf-a6bc-c6c49f215cea.png"
+          },
+          {
+            "id": "6d5d47d7-99d1-45a1-9816-cd3a95eba38c",
+            "name": "Tobias Hippler",
+            "imageUrl": "/uploads/player/imageUrl/19189b1d-f69f-4ee4-9893-2ed2bab43551.png"
+          },
+          {
+            "id": "1702b6d8-143d-49ca-a9d8-17578526de27",
+            "name": "Kilian Ort",
+            "imageUrl": "/uploads/player/imageUrl/c518d1df-3ec8-4963-926c-7c64bf8b49c3.png"
+          }
+        ]
+      },
+      "games": [
+        {
+          "index": 1,
+          "state": "Finished",
+          "winner": "Home",
+          "type": "singles",
+          "homePlayer": {
+            "id": "27a42deb-0efc-42da-a30f-d7fce139c6dd",
+            "name": "Joao Geraldo",
+            "imageUrl": "/uploads/player/imageUrl/96cc4a1d-90d2-4abb-8a83-dff64db0d6ce.png"
+          },
+          "awayPlayer": {
+            "id": "c3f42375-c24c-435d-93f9-97c8da75f5c0",
+            "name": "Ricardo Walther",
+            "imageUrl": "/uploads/player/imageUrl/5db7e9ef-8f56-4b3f-8d03-0430916833e0.png"
+          },
+          "homeDouble": null,
+          "awayDouble": null,
+          "setsHome": 3,
+          "setsAway": 1,
+          "sets": [
+            [
+              9,
+              11
+            ],
+            [
+              11,
+              8
+            ],
+            [
+              11,
+              6
+            ],
+            [
+              11,
+              6
+            ]
+          ],
+          "timeoutsUsed": {
+            "home": 0,
+            "away": 0
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              22,
+              15
+            ],
+            "pointsOnReturn": [
+              20,
+              16
+            ],
+            "pointsInARow": [
+              9,
+              7
+            ],
+            "luckyPoints": [
+              1,
+              0
+            ],
+            "highestLead": [
+              6,
+              7
+            ],
+            "matchPoints": [
+              5,
+              3
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "state": "Finished",
+          "winner": "Home",
+          "type": "singles",
+          "homePlayer": {
+            "id": "c827a6b0-6ce3-48a4-aedf-b6f2828669cb",
+            "name": "Wim Verdonschot",
+            "imageUrl": "/uploads/player/imageUrl/698d8cb2-fd0b-4cc5-b73b-6735c431bb56.png"
+          },
+          "awayPlayer": {
+            "id": "48f974f1-243d-4c44-b00b-7d87611e3bc3",
+            "name": "Tom Jarvis",
+            "imageUrl": "/uploads/player/imageUrl/24ef2270-8a8d-44ea-8091-cb1e08fc12c7.png"
+          },
+          "homeDouble": null,
+          "awayDouble": null,
+          "setsHome": 3,
+          "setsAway": 0,
+          "sets": [
+            [
+              11,
+              5
+            ],
+            [
+              11,
+              6
+            ],
+            [
+              11,
+              9
+            ]
+          ],
+          "timeoutsUsed": {
+            "home": 0,
+            "away": 1
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              20,
+              13
+            ],
+            "pointsOnReturn": [
+              13,
+              7
+            ],
+            "pointsInARow": [
+              5,
+              4
+            ],
+            "luckyPoints": [
+              1,
+              0
+            ],
+            "highestLead": [
+              6,
+              5
+            ],
+            "matchPoints": [
+              8,
+              0
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "state": "Finished",
+          "winner": "Home",
+          "type": "singles",
+          "homePlayer": {
+            "id": "a80c16b9-cf45-40c2-b636-8a3ab053862e",
+            "name": "Kristian Karlsson",
+            "imageUrl": "/uploads/player/imageUrl/3f5c9bc2-2b96-4741-8988-83f4c2ab4ee3.png"
+          },
+          "awayPlayer": {
+            "id": "78ce3d8b-8fd6-43e9-89be-cdc84a804f22",
+            "name": "Florian Bluhm",
+            "imageUrl": "/uploads/player/imageUrl/0ed07d40-c39e-4cbf-a6bc-c6c49f215cea.png"
+          },
+          "homeDouble": null,
+          "awayDouble": null,
+          "setsHome": 3,
+          "setsAway": 0,
+          "sets": [
+            [
+              11,
+              5
+            ],
+            [
+              11,
+              9
+            ],
+            [
+              11,
+              7
+            ]
+          ],
+          "timeoutsUsed": {
+            "home": 1,
+            "away": 1
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              19,
+              14
+            ],
+            "pointsOnReturn": [
+              14,
+              7
+            ],
+            "pointsInARow": [
+              6,
+              2
+            ],
+            "luckyPoints": [
+              1,
+              2
+            ],
+            "highestLead": [
+              6,
+              4
+            ],
+            "matchPoints": [
+              4,
+              0
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "state": "Inactive",
+          "winner": null,
+          "type": "singles",
+          "homePlayer": {
+            "id": "27a42deb-0efc-42da-a30f-d7fce139c6dd",
+            "name": "Joao Geraldo",
+            "imageUrl": "/uploads/player/imageUrl/96cc4a1d-90d2-4abb-8a83-dff64db0d6ce.png"
+          },
+          "awayPlayer": {
+            "id": "48f974f1-243d-4c44-b00b-7d87611e3bc3",
+            "name": "Tom Jarvis",
+            "imageUrl": "/uploads/player/imageUrl/24ef2270-8a8d-44ea-8091-cb1e08fc12c7.png"
+          },
+          "homeDouble": null,
+          "awayDouble": null,
+          "setsHome": 0,
+          "setsAway": 0,
+          "sets": [],
+          "timeoutsUsed": {
+            "home": 0,
+            "away": 0
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              0,
+              0
+            ],
+            "pointsOnReturn": [
+              0,
+              0
+            ],
+            "pointsInARow": [
+              0,
+              0
+            ],
+            "luckyPoints": [
+              0,
+              0
+            ],
+            "highestLead": [
+              0,
+              0
+            ],
+            "matchPoints": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "state": "Inactive",
+          "winner": null,
+          "type": "double",
+          "homePlayer": null,
+          "awayPlayer": null,
+          "homeDouble": {
+            "id": "77eae380-ae01-4391-9023-9a083cc444d6|a80c16b9-cf45-40c2-b636-8a3ab053862e",
+            "players": [
+              {
+                "id": "77eae380-ae01-4391-9023-9a083cc444d6",
+                "name": "Adam Szudi",
+                "imageUrl": "/uploads/player/imageUrl/1cf83a8f-ffab-4cd4-95d8-0822967974e0.png"
+              },
+              {
+                "id": "a80c16b9-cf45-40c2-b636-8a3ab053862e",
+                "name": "Kristian Karlsson",
+                "imageUrl": "/uploads/player/imageUrl/3f5c9bc2-2b96-4741-8988-83f4c2ab4ee3.png"
+              }
+            ]
+          },
+          "awayDouble": {
+            "id": "6d5d47d7-99d1-45a1-9816-cd3a95eba38c|c3f42375-c24c-435d-93f9-97c8da75f5c0",
+            "players": [
+              {
+                "id": "6d5d47d7-99d1-45a1-9816-cd3a95eba38c",
+                "name": "Tobias Hippler",
+                "imageUrl": "/uploads/player/imageUrl/19189b1d-f69f-4ee4-9893-2ed2bab43551.png"
+              },
+              {
+                "id": "c3f42375-c24c-435d-93f9-97c8da75f5c0",
+                "name": "Ricardo Walther",
+                "imageUrl": "/uploads/player/imageUrl/5db7e9ef-8f56-4b3f-8d03-0430916833e0.png"
+              }
+            ]
+          },
+          "setsHome": 0,
+          "setsAway": 0,
+          "sets": [],
+          "timeoutsUsed": {
+            "home": 0,
+            "away": 0
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              0,
+              0
+            ],
+            "pointsOnReturn": [
+              0,
+              0
+            ],
+            "pointsInARow": [
+              0,
+              0
+            ],
+            "luckyPoints": [
+              0,
+              0
+            ],
+            "highestLead": [
+              0,
+              0
+            ],
+            "matchPoints": [
+              0,
+              0
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "a441aadf-cdaf-4ad2-b390-eaed7d610a71",
+      "url": "https://www.ttbl.de/bundesliga/gameday/2026-2027/3/a441aadf-cdaf-4ad2-b390-eaed7d610a71",
+      "state": "Finished",
+      "kickoffUtc": "2026-08-26T17:00:00+00:00",
+      "spectators": 250,
+      "venue": {
+        "name": "LOTTO Thüringen Center Court",
+        "address": "Kristanplatz 10 ",
+        "zipCode": "99974",
+        "place": "Mühlhausen",
+        "imageUrl": "/uploads/venue/imageUrl/8e2f32a2-4355-47ce-94a5-2628ac845844.png"
+      },
+      "livestreamUrl": "https://www.dyn.sport/sport_tabletennis",
+      "ticketshopUrl": "https://www.ttbl.de/tickets",
+      "homeTeam": {
+        "id": "0f6444ae-5f99-4ab3-bd1d-22fd80721530",
+        "seasonTeamId": "0f695a49-e0a3-4117-8291-5c9469dd3b13",
+        "name": "Post SV Mühlhausen",
+        "logoPngUrl": "/uploads/team/logoPngUrl/49ea5dd6-b517-4cca-bfa9-bbdc0302f085.png"
+      },
+      "awayTeam": {
+        "id": "a5251614-e7fb-4ef0-8645-8d6005d9c6e1",
+        "seasonTeamId": "12021ad2-9426-4846-aed1-af0d8dd62da1",
+        "name": "TSV Bad Königshofen",
+        "logoPngUrl": "/uploads/team/logoPngUrl/d6c72eee-c171-4840-9d90-48a223f8d2b8.png"
+      },
+      "score": {
+        "games": [
+          1,
+          3
+        ],
+        "sets": [
+          7,
+          10
+        ]
+      },
+      "lineups": {
+        "home": [
+          {
+            "id": "b35f0372-55a0-4c96-8def-1e4f04eb5ca3",
+            "name": "Kay Stumper",
+            "imageUrl": "/uploads/player/imageUrl/b8ea1ec5-89b9-4694-9a34-370601c24978.png"
+          },
+          {
+            "id": "9d8a8996-95ef-4ff5-962a-00af867c302f",
+            "name": "Marcos Freitas",
+            "imageUrl": "/uploads/player/imageUrl/d995eb25-8b22-4187-a816-2c385a9a3e58.png"
+          },
+          {
+            "id": "b2f62f92-c157-4e23-aa6b-921b977f190d",
+            "name": "Steffen Mengel",
+            "imageUrl": "/uploads/player/imageUrl/9bf7de33-a56a-4436-8baf-a2bdc3d7f4e4.png"
+          },
+          {
+            "id": "73600efd-fca8-4ece-a81c-b609839ef040",
+            "name": "Ovidiu Ionescu",
+            "imageUrl": "/uploads/player/imageUrl/8b406b5f-5985-440f-b626-bcaf01de050c.png"
+          },
+          {
+            "id": "3fad424e-5608-442e-9fd4-2a44d7577912",
+            "name": "Erik Schreyer",
+            "imageUrl": "/uploads/player/imageUrl/34f0cbfe-5493-4d90-a42c-1e1aa4dad068.png"
+          }
+        ],
+        "away": [
+          {
+            "id": "f6bfff75-ede3-4983-901c-563a3edc290d",
+            "name": "Bastian Steger",
+            "imageUrl": "/uploads/player/imageUrl/3f867fcb-1ca5-4fa5-926d-592bc2954e60.png"
+          },
+          {
+            "id": "0a08e722-bf03-4c83-a950-7319012ea306",
+            "name": "Andre Bertelsmeier",
+            "imageUrl": "/uploads/player/imageUrl/075d72ec-bb46-4457-a4d6-7fb23d760196.png"
+          },
+          {
+            "id": "ed114556-bd46-4e73-9998-765b3db8cd9b",
+            "name": "Daniel Habesohn",
+            "imageUrl": "/uploads/player/imageUrl/cdd1dc77-2509-4569-a48d-a9650eeb2a4c.png"
+          },
+          {
+            "id": "4184214a-3466-4bcc-957f-0080a4b019f1",
+            "name": "Cheng-Ting Liao",
+            "imageUrl": "/uploads/player/imageUrl/b91e0a39-f9fd-4838-adae-0f1e0cbda5c6.png"
+          }
+        ]
+      },
+      "games": [
+        {
+          "index": 1,
+          "state": "Finished",
+          "winner": "Home",
+          "type": "singles",
+          "homePlayer": {
+            "id": "b35f0372-55a0-4c96-8def-1e4f04eb5ca3",
+            "name": "Kay Stumper",
+            "imageUrl": "/uploads/player/imageUrl/b8ea1ec5-89b9-4694-9a34-370601c24978.png"
+          },
+          "awayPlayer": {
+            "id": "0a08e722-bf03-4c83-a950-7319012ea306",
+            "name": "Andre Bertelsmeier",
+            "imageUrl": "/uploads/player/imageUrl/075d72ec-bb46-4457-a4d6-7fb23d760196.png"
+          },
+          "homeDouble": null,
+          "awayDouble": null,
+          "setsHome": 3,
+          "setsAway": 1,
+          "sets": [
+            [
+              11,
+              7
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              11,
+              5
+            ],
+            [
+              11,
+              9
+            ]
+          ],
+          "timeoutsUsed": {
+            "home": 0,
+            "away": 1
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              23,
+              19
+            ],
+            "pointsOnReturn": [
+              19,
+              13
+            ],
+            "pointsInARow": [
+              5,
+              3
+            ],
+            "luckyPoints": [
+              0,
+              0
+            ],
+            "highestLead": [
+              6,
+              4
+            ],
+            "matchPoints": [
+              4,
+              1
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "state": "Finished",
+          "winner": "Away",
+          "type": "singles",
+          "homePlayer": {
+            "id": "9d8a8996-95ef-4ff5-962a-00af867c302f",
+            "name": "Marcos Freitas",
+            "imageUrl": "/uploads/player/imageUrl/d995eb25-8b22-4187-a816-2c385a9a3e58.png"
+          },
+          "awayPlayer": {
+            "id": "f6bfff75-ede3-4983-901c-563a3edc290d",
+            "name": "Bastian Steger",
+            "imageUrl": "/uploads/player/imageUrl/3f867fcb-1ca5-4fa5-926d-592bc2954e60.png"
+          },
+          "homeDouble": null,
+          "awayDouble": null,
+          "setsHome": 1,
+          "setsAway": 3,
+          "sets": [
+            [
+              9,
+              11
+            ],
+            [
+              11,
+              9
+            ],
+            [
+              6,
+              11
+            ],
+            [
+              8,
+              11
+            ]
+          ],
+          "timeoutsUsed": {
+            "home": 1,
+            "away": 0
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              15,
+              18
+            ],
+            "pointsOnReturn": [
+              19,
+              24
+            ],
+            "pointsInARow": [
+              6,
+              5
+            ],
+            "luckyPoints": [
+              1,
+              5
+            ],
+            "highestLead": [
+              6,
+              7
+            ],
+            "matchPoints": [
+              1,
+              9
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "state": "Finished",
+          "winner": "Away",
+          "type": "singles",
+          "homePlayer": {
+            "id": "b2f62f92-c157-4e23-aa6b-921b977f190d",
+            "name": "Steffen Mengel",
+            "imageUrl": "/uploads/player/imageUrl/9bf7de33-a56a-4436-8baf-a2bdc3d7f4e4.png"
+          },
+          "awayPlayer": {
+            "id": "ed114556-bd46-4e73-9998-765b3db8cd9b",
+            "name": "Daniel Habesohn",
+            "imageUrl": "/uploads/player/imageUrl/cdd1dc77-2509-4569-a48d-a9650eeb2a4c.png"
+          },
+          "homeDouble": null,
+          "awayDouble": null,
+          "setsHome": 1,
+          "setsAway": 3,
+          "sets": [
+            [
+              11,
+              13
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              11,
+              9
+            ],
+            [
+              9,
+              11
+            ]
+          ],
+          "timeoutsUsed": {
+            "home": 1,
+            "away": 0
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              21,
+              22
+            ],
+            "pointsOnReturn": [
+              18,
+              21
+            ],
+            "pointsInARow": [
+              3,
+              6
+            ],
+            "luckyPoints": [
+              1,
+              2
+            ],
+            "highestLead": [
+              5,
+              6
+            ],
+            "matchPoints": [
+              2,
+              7
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "state": "Finished",
+          "winner": "Away",
+          "type": "singles",
+          "homePlayer": {
+            "id": "b35f0372-55a0-4c96-8def-1e4f04eb5ca3",
+            "name": "Kay Stumper",
+            "imageUrl": "/uploads/player/imageUrl/b8ea1ec5-89b9-4694-9a34-370601c24978.png"
+          },
+          "awayPlayer": {
+            "id": "f6bfff75-ede3-4983-901c-563a3edc290d",
+            "name": "Bastian Steger",
+            "imageUrl": "/uploads/player/imageUrl/3f867fcb-1ca5-4fa5-926d-592bc2954e60.png"
+          },
+          "homeDouble": null,
+          "awayDouble": null,
+          "setsHome": 2,
+          "setsAway": 3,
+          "sets": [
+            [
+              11,
+              8
+            ],
+            [
+              11,
+              5
+            ],
+            [
+              10,
+              12
+            ],
+            [
+              6,
+              11
+            ],
+            [
+              8,
+              11
+            ]
+          ],
+          "timeoutsUsed": {
+            "home": 1,
+            "away": 1
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              20,
+              22
+            ],
+            "pointsOnReturn": [
+              26,
+              25
+            ],
+            "pointsInARow": [
+              7,
+              6
+            ],
+            "luckyPoints": [
+              1,
+              3
+            ],
+            "highestLead": [
+              7,
+              6
+            ],
+            "matchPoints": [
+              4,
+              3
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "state": "Inactive",
+          "winner": null,
+          "type": "double",
+          "homePlayer": null,
+          "awayPlayer": null,
+          "homeDouble": {
+            "id": "9d8a8996-95ef-4ff5-962a-00af867c302f|b2f62f92-c157-4e23-aa6b-921b977f190d",
+            "players": [
+              {
+                "id": "9d8a8996-95ef-4ff5-962a-00af867c302f",
+                "name": "Marcos Freitas",
+                "imageUrl": "/uploads/player/imageUrl/d995eb25-8b22-4187-a816-2c385a9a3e58.png"
+              },
+              {
+                "id": "b2f62f92-c157-4e23-aa6b-921b977f190d",
+                "name": "Steffen Mengel",
+                "imageUrl": "/uploads/player/imageUrl/9bf7de33-a56a-4436-8baf-a2bdc3d7f4e4.png"
+              }
+            ]
+          },
+          "awayDouble": {
+            "id": "0a08e722-bf03-4c83-a950-7319012ea306|ed114556-bd46-4e73-9998-765b3db8cd9b",
+            "players": [
+              {
+                "id": "0a08e722-bf03-4c83-a950-7319012ea306",
+                "name": "Andre Bertelsmeier",
+                "imageUrl": "/uploads/player/imageUrl/075d72ec-bb46-4457-a4d6-7fb23d760196.png"
+              },
+              {
+                "id": "ed114556-bd46-4e73-9998-765b3db8cd9b",
+                "name": "Daniel Habesohn",
+                "imageUrl": "/uploads/player/imageUrl/cdd1dc77-2509-4569-a48d-a9650eeb2a4c.png"
+              }
+            ]
+          },
+          "setsHome": 0,
+          "setsAway": 0,
+          "sets": [],
+          "timeoutsUsed": {
+            "home": 0,
+            "away": 0
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              0,
+              0
+            ],
+            "pointsOnReturn": [
+              0,
+              0
+            ],
+            "pointsInARow": [
+              0,
+              0
+            ],
+            "luckyPoints": [
+              0,
+              0
+            ],
+            "highestLead": [
+              0,
+              0
+            ],
+            "matchPoints": [
+              0,
+              0
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "df72e01e-0b3d-4b6b-87da-47da0ab31644",
+      "url": "https://www.ttbl.de/bundesliga/gameday/2026-2027/3/df72e01e-0b3d-4b6b-87da-47da0ab31644",
+      "state": "Finished",
+      "kickoffUtc": "2026-08-26T17:15:00+00:00",
+      "spectators": 274,
+      "venue": {
+        "name": "Wingert Sporthalle",
+        "address": "Seulberger Str. 79",
+        "zipCode": "61352",
+        "place": "Bad Homburg",
+        "imageUrl": ""
+      },
+      "livestreamUrl": "https://www.dyn.sport/sport_tabletennis",
+      "ticketshopUrl": "https://www.ttbl.de/tickets",
+      "homeTeam": {
+        "id": "3df1bc6d-0f85-42a4-8438-624359e5e479",
+        "seasonTeamId": "13cabd72-da9d-4fa1-b602-168bb376ef51",
+        "name": "TTC OE Clarity-Tel.Syst.Bad Homburg",
+        "logoPngUrl": "/uploads/team/logoPngUrl/e910843f-6089-48e3-bc1e-fb8e887fe396.png"
+      },
+      "awayTeam": {
+        "id": "3146fcf3-b731-4639-9b3a-d24f010ad613",
+        "seasonTeamId": "90862269-0f89-4be5-a526-0372f8820025",
+        "name": "1. FC Saarbrücken-TT",
+        "logoPngUrl": "/uploads/team/logoPngUrl/6f7c17cd-efba-43d3-9fe8-fe902851a536.png"
+      },
+      "score": {
+        "games": [
+          1,
+          3
+        ],
+        "sets": [
+          5,
+          10
+        ]
+      },
+      "lineups": {
+        "home": [
+          {
+            "id": "d45cb381-5187-482b-939b-40759d0a3dec",
+            "name": "Csaba Andras",
+            "imageUrl": "/uploads/player/imageUrl/e304cd55-c69c-42c5-8c07-6095f34c4743.png"
+          },
+          {
+            "id": "2ada71e7-47da-4365-a652-be2e1fdbbcfa",
+            "name": "Benno Oehme",
+            "imageUrl": "/uploads/player/imageUrl/c03c6e27-8a92-4517-a972-f6dbd60e2419.png"
+          },
+          {
+            "id": "3c81fe4d-d7fa-40e7-883e-5fe73657dded",
+            "name": "Ivor Ban",
+            "imageUrl": "/uploads/player/imageUrl/55bee23f-1416-4fdd-8d62-9eb926387080.png"
+          },
+          {
+            "id": "a00a449c-6c28-448c-b557-3062e02bd285",
+            "name": "Max Lante",
+            "imageUrl": "/uploads/player/imageUrl/bc965ee9-417b-4071-a952-177c0940a7cf.png"
+          }
+        ],
+        "away": [
+          {
+            "id": "b1954d01-ee19-4cb7-97b1-f131ac9f6929",
+            "name": "Hugo Calderano",
+            "imageUrl": "/uploads/player/imageUrl/d00e8e50-941b-4ac4-b1fd-0f0bf5ff11b1.png"
+          },
+          {
+            "id": "bdd2e070-fe59-467a-976d-db06d6a3a3c5",
+            "name": "Danilo Faso",
+            "imageUrl": "/uploads/player/imageUrl/d0b87c8b-8c46-426b-9363-1fabb142908e.png"
+          },
+          {
+            "id": "28c22cac-7210-4261-92a3-a7f38922c626",
+            "name": "Alvaro Robles",
+            "imageUrl": "/uploads/player/imageUrl/2bfbda4f-489b-45d2-8b4c-ae46ebdc0625.png"
+          },
+          {
+            "id": "91a78dbe-1e00-4bb8-8946-1a1f4ccd2c15",
+            "name": "Eduard Ionescu",
+            "imageUrl": "/uploads/player/imageUrl/deaf0550-4e7a-45f9-adaa-d95ec5e4500e.png"
+          }
+        ]
+      },
+      "games": [
+        {
+          "index": 1,
+          "state": "Finished",
+          "winner": "Home",
+          "type": "singles",
+          "homePlayer": {
+            "id": "d45cb381-5187-482b-939b-40759d0a3dec",
+            "name": "Csaba Andras",
+            "imageUrl": "/uploads/player/imageUrl/e304cd55-c69c-42c5-8c07-6095f34c4743.png"
+          },
+          "awayPlayer": {
+            "id": "bdd2e070-fe59-467a-976d-db06d6a3a3c5",
+            "name": "Danilo Faso",
+            "imageUrl": "/uploads/player/imageUrl/d0b87c8b-8c46-426b-9363-1fabb142908e.png"
+          },
+          "homeDouble": null,
+          "awayDouble": null,
+          "setsHome": 3,
+          "setsAway": 1,
+          "sets": [
+            [
+              11,
+              9
+            ],
+            [
+              4,
+              11
+            ],
+            [
+              11,
+              6
+            ],
+            [
+              12,
+              10
+            ]
+          ],
+          "timeoutsUsed": {
+            "home": 0,
+            "away": 1
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              21,
+              19
+            ],
+            "pointsOnReturn": [
+              17,
+              17
+            ],
+            "pointsInARow": [
+              7,
+              6
+            ],
+            "luckyPoints": [
+              4,
+              3
+            ],
+            "highestLead": [
+              7,
+              7
+            ],
+            "matchPoints": [
+              9,
+              2
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "state": "Finished",
+          "winner": "Away",
+          "type": "singles",
+          "homePlayer": {
+            "id": "2ada71e7-47da-4365-a652-be2e1fdbbcfa",
+            "name": "Benno Oehme",
+            "imageUrl": "/uploads/player/imageUrl/c03c6e27-8a92-4517-a972-f6dbd60e2419.png"
+          },
+          "awayPlayer": {
+            "id": "b1954d01-ee19-4cb7-97b1-f131ac9f6929",
+            "name": "Hugo Calderano",
+            "imageUrl": "/uploads/player/imageUrl/d00e8e50-941b-4ac4-b1fd-0f0bf5ff11b1.png"
+          },
+          "homeDouble": null,
+          "awayDouble": null,
+          "setsHome": 0,
+          "setsAway": 3,
+          "sets": [
+            [
+              8,
+              11
+            ],
+            [
+              4,
+              11
+            ],
+            [
+              6,
+              11
+            ]
+          ],
+          "timeoutsUsed": {
+            "home": 1,
+            "away": 0
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              8,
+              17
+            ],
+            "pointsOnReturn": [
+              10,
+              16
+            ],
+            "pointsInARow": [
+              4,
+              7
+            ],
+            "luckyPoints": [
+              1,
+              1
+            ],
+            "highestLead": [
+              4,
+              7
+            ],
+            "matchPoints": [
+              0,
+              4
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "state": "Finished",
+          "winner": "Away",
+          "type": "singles",
+          "homePlayer": {
+            "id": "3c81fe4d-d7fa-40e7-883e-5fe73657dded",
+            "name": "Ivor Ban",
+            "imageUrl": "/uploads/player/imageUrl/55bee23f-1416-4fdd-8d62-9eb926387080.png"
+          },
+          "awayPlayer": {
+            "id": "28c22cac-7210-4261-92a3-a7f38922c626",
+            "name": "Alvaro Robles",
+            "imageUrl": "/uploads/player/imageUrl/2bfbda4f-489b-45d2-8b4c-ae46ebdc0625.png"
+          },
+          "homeDouble": null,
+          "awayDouble": null,
+          "setsHome": 0,
+          "setsAway": 3,
+          "sets": [
+            [
+              6,
+              11
+            ],
+            [
+              4,
+              11
+            ],
+            [
+              8,
+              11
+            ]
+          ],
+          "timeoutsUsed": {
+            "home": 1,
+            "away": 0
+          },
+          "cards": [
+            {
+              "id": 160660,
+              "playerId": "3c81fe4d-d7fa-40e7-883e-5fe73657dded",
+              "type": "Yellow"
+            }
+          ],
+          "stats": {
+            "pointsOnServe": [
+              12,
+              18
+            ],
+            "pointsOnReturn": [
+              6,
+              15
+            ],
+            "pointsInARow": [
+              2,
+              6
+            ],
+            "luckyPoints": [
+              1,
+              2
+            ],
+            "highestLead": [
+              6,
+              7
+            ],
+            "matchPoints": [
+              0,
+              4
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "state": "Finished",
+          "winner": "Away",
+          "type": "singles",
+          "homePlayer": {
+            "id": "d45cb381-5187-482b-939b-40759d0a3dec",
+            "name": "Csaba Andras",
+            "imageUrl": "/uploads/player/imageUrl/e304cd55-c69c-42c5-8c07-6095f34c4743.png"
+          },
+          "awayPlayer": {
+            "id": "b1954d01-ee19-4cb7-97b1-f131ac9f6929",
+            "name": "Hugo Calderano",
+            "imageUrl": "/uploads/player/imageUrl/d00e8e50-941b-4ac4-b1fd-0f0bf5ff11b1.png"
+          },
+          "homeDouble": null,
+          "awayDouble": null,
+          "setsHome": 2,
+          "setsAway": 3,
+          "sets": [
+            [
+              11,
+              7
+            ],
+            [
+              11,
+              4
+            ],
+            [
+              7,
+              11
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              5,
+              11
+            ]
+          ],
+          "timeoutsUsed": {
+            "home": 1,
+            "away": 1
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              18,
+              21
+            ],
+            "pointsOnReturn": [
+              25,
+              23
+            ],
+            "pointsInARow": [
+              10,
+              7
+            ],
+            "luckyPoints": [
+              3,
+              4
+            ],
+            "highestLead": [
+              7,
+              7
+            ],
+            "matchPoints": [
+              2,
+              4
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "state": "Inactive",
+          "winner": null,
+          "type": "double",
+          "homePlayer": null,
+          "awayPlayer": null,
+          "homeDouble": {
+            "id": "2ada71e7-47da-4365-a652-be2e1fdbbcfa|3c81fe4d-d7fa-40e7-883e-5fe73657dded",
+            "players": [
+              {
+                "id": "2ada71e7-47da-4365-a652-be2e1fdbbcfa",
+                "name": "Benno Oehme",
+                "imageUrl": "/uploads/player/imageUrl/c03c6e27-8a92-4517-a972-f6dbd60e2419.png"
+              },
+              {
+                "id": "3c81fe4d-d7fa-40e7-883e-5fe73657dded",
+                "name": "Ivor Ban",
+                "imageUrl": "/uploads/player/imageUrl/55bee23f-1416-4fdd-8d62-9eb926387080.png"
+              }
+            ]
+          },
+          "awayDouble": {
+            "id": "28c22cac-7210-4261-92a3-a7f38922c626|91a78dbe-1e00-4bb8-8946-1a1f4ccd2c15",
+            "players": [
+              {
+                "id": "28c22cac-7210-4261-92a3-a7f38922c626",
+                "name": "Alvaro Robles",
+                "imageUrl": "/uploads/player/imageUrl/2bfbda4f-489b-45d2-8b4c-ae46ebdc0625.png"
+              },
+              {
+                "id": "91a78dbe-1e00-4bb8-8946-1a1f4ccd2c15",
+                "name": "Eduard Ionescu",
+                "imageUrl": "/uploads/player/imageUrl/deaf0550-4e7a-45f9-adaa-d95ec5e4500e.png"
+              }
+            ]
+          },
+          "setsHome": 0,
+          "setsAway": 0,
+          "sets": [],
+          "timeoutsUsed": {
+            "home": 0,
+            "away": 0
+          },
+          "cards": [],
+          "stats": {
+            "pointsOnServe": [
+              0,
+              0
+            ],
+            "pointsOnReturn": [
+              0,
+              0
+            ],
+            "pointsInARow": [
+              0,
+              0
+            ],
+            "luckyPoints": [
+              0,
+              0
+            ],
+            "highestLead": [
+              0,
+              0
+            ],
+            "matchPoints": [
+              0,
+              0
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

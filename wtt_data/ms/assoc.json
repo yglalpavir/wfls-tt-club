@@ -10798,5 +10798,45 @@
     "assoc": "CHN",
     "country": "China",
     "source": "user-confirmed"
+  },
+  "BERTRAND Irvin": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "user-confirmed"
+  },
+  "ABIODUN Tiago": {
+    "assoc": "POR",
+    "country": "Portugal",
+    "source": "user-confirmed"
+  },
+  "LI Yongyin": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "user-confirmed"
+  },
+  "OEHME Benno": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "user-confirmed"
+  },
+  "FASO Danilo": {
+    "assoc": "ITA",
+    "country": "Italy",
+    "source": "user-confirmed"
+  },
+  "BLUHM Florian": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "user-confirmed"
+  },
+  "QUETT Ivo": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "user-confirmed"
+  },
+  "YEH Yi-En": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "user-confirmed"
   }
 }
