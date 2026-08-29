@@ -578,6 +578,18 @@
       "qq": "",
       "description": "",
       "status": "active"
+    },
+    {
+      "uid": 10043,
+      "name": "王天森",
+      "aliases": [],
+      "initialScore": 2000,
+      "tags": [],
+      "honors": ["校乒赛2026团体季军"],
+      "role": "",
+      "qq": "",
+      "description": "",
+      "status": "active"
     }
   ]
 }
