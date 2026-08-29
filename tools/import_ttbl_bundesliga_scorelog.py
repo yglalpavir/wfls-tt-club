@@ -28,6 +28,20 @@ EVENT_TYPE = "德甲联赛"
 NAME_MAP = {
     "Adrien Rassenfosse": "Adrien RASSENFOSSE",
     "Albert Vilardell": "Albert VILARDELL",
+    "Adrian Gossow": "Adrian GOSSOW",
+    "Anders Lind": "Anders LIND",
+    "Anton Limonov": "Anton LIMONOV",
+    "Borgar Haug": "Borgar HAUG",
+    "Damian Floro": "Damian FLORO",
+    "Jonathan Gaiser": "Jonathan GAISER",
+    "Karl Walter": "Karl WALTER",
+    "Matej Haspel": "Matej HASPEL",
+    "Michael Engelhardt": "Michael ENGELHARDT",
+    "Noah Hersel": "Noah HERSEL",
+    "Rogelio Castro": "Rogelio CASTRO",
+    "Timotius Köchling": "Timotius KÖCHLING",
+    "Tobias Hippler": "Tobias HIPPLER",
+    "Yoan Velichkov": "Yoan VELICHKOV",
     "Alvaro Robles": "Alvaro ROBLES",
     "Andre Bertelsmeier": "Andre BERTELSMEIER",
     "Andrei Istrate": "Andrei ISTRATE",
@@ -132,8 +146,7 @@ def collect_records(ttbl_json_path):
     return ms, md
 
 
-def append_to_scorelog(category, matches):
-    year = "2026"
+def append_to_scorelog(category, matches, event_type, year):
     filename = f"score-log-{year}-wtt.json"
     filepath = os.path.join(WTT_DIR, category, filename)
 
@@ -146,11 +159,11 @@ def append_to_scorelog(category, matches):
 
     new_records = []
     for date, winner, loser in matches:
-        key = (date, EVENT_TYPE, winner, loser)
+        key = (date, event_type, winner, loser)
         if key not in existing_keys:
             new_records.append({
                 "日期": date,
-                "类型": EVENT_TYPE,
+                "类型": event_type,
                 "胜者": winner,
                 "负者": loser,
             })
@@ -165,8 +178,7 @@ def append_to_scorelog(category, matches):
     return len(new_records)
 
 
-def verify_dedup(category):
-    year = "2026"
+def verify_dedup(category, year):
     filename = f"score-log-{year}-wtt.json"
     filepath = os.path.join(WTT_DIR, category, filename)
     with open(filepath, encoding="utf-8-sig") as f:
@@ -183,10 +195,15 @@ def verify_dedup(category):
 
 def main():
     import argparse
-    parser = argparse.ArgumentParser(description="TTBL 德甲 -> WTT score-log 录入")
+    parser = argparse.ArgumentParser(description="TTBL（德甲/德国杯）-> WTT score-log 录入")
     parser.add_argument("--season", default="2026-2027")
+    parser.add_argument("--year", default="2026", help="目标 score-log 年份")
+    parser.add_argument("--league", default="bundesliga", choices=["bundesliga", "pokal"],
+                        help="数据来源：bundesliga（德甲联赛，默认）或 pokal（德国杯）")
+    parser.add_argument("--event-type", default=None,
+                        help="写入的赛事类型；默认 bundesliga=德甲联赛，pokal=德国杯")
     parser.add_argument("--gameday", nargs="+", type=int, required=True,
-                        help="一个或多个轮次，如 --gameday 2 3（也可用范围 2-3）")
+                        help="一个或多个轮次，如 --gameday 1 2")
     args = parser.parse_args()
 
     gamedays = []
@@ -196,26 +213,30 @@ def main():
         gamedays.append(g)
     gamedays = sorted(set(gamedays))
 
+    event_type = args.event_type or ("德国杯" if args.league == "pokal" else EVENT_TYPE)
+    file_prefix = f"ttbl_{args.league}_" if args.league != "bundesliga" else "ttbl_"
+    title = "德国杯" if args.league == "pokal" else "德甲联赛"
+
     print("=" * 60)
-    print(f"TTBL 德甲联赛 -> WTT score-log 录入（{args.season} 轮次 {gamedays}）")
+    print(f"TTBL {title} -> WTT score-log 录入（{args.season} 轮次 {gamedays}，类型「{event_type}」）")
     print("=" * 60)
 
     grand_total = 0
     for gameday in gamedays:
-        ttbl_json = os.path.join(TTBL_DIR, f"ttbl_{args.season}_gameday{gameday}.json")
+        ttbl_json = os.path.join(TTBL_DIR, f"{file_prefix}{args.season}_gameday{gameday}.json")
         if not os.path.exists(ttbl_json):
             sys.exit(f"缺少 TTBL 数据文件: {ttbl_json}（请先用 import_ttbl_gameday.py 抓取）")
 
         ms, md = collect_records(ttbl_json)
         print(f"\n  --- 第 {gameday} 轮 ---  单打 {len(ms)} 条，双打 {len(md)} 条")
-        grand_total += append_to_scorelog("ms", ms)
-        grand_total += append_to_scorelog("md", md)
+        grand_total += append_to_scorelog("ms", ms, event_type, args.year)
+        grand_total += append_to_scorelog("md", md, event_type, args.year)
 
     print(f"\n  新增合计: {grand_total}")
 
     print("\n  去重校验：")
     for cat in ("ms", "md"):
-        dupes = verify_dedup(cat)
+        dupes = verify_dedup(cat, args.year)
         status = f"{dupes} 条重复" if dupes else "无重复"
         print(f"    {cat.upper()}: {status}")
 

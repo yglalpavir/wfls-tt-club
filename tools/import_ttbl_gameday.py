@@ -122,7 +122,7 @@ def clean_game(g: dict, include_events: bool) -> dict:
     return game
 
 
-def clean_match(sm: dict, season: str, gameday, include_events: bool) -> dict:
+def clean_match(sm: dict, season: str, gameday, include_events: bool, league: str = "bundesliga") -> dict:
     ts = sm.get("timeStamp")
     kickoff_utc = (
         datetime.fromtimestamp(ts, tz=timezone.utc).isoformat() if ts else None
@@ -142,7 +142,7 @@ def clean_match(sm: dict, season: str, gameday, include_events: bool) -> dict:
 
     return {
         "id": sm.get("id"),
-        "url": f"{BASE_URL}/bundesliga/gameday/{season}/{gameday}/{sm.get('id')}",
+        "url": f"{BASE_URL}/{league}/gameday/{season}/{gameday}/{sm.get('id')}",
         "state": sm.get("matchState"),
         "kickoffUtc": kickoff_utc,
         "spectators": sm.get("spectators"),
@@ -166,32 +166,36 @@ def clean_match(sm: dict, season: str, gameday, include_events: bool) -> dict:
     }
 
 
-def fetch_gameday(season: str, gameday: int, include_events: bool) -> dict:
-    schedule_url = f"{BASE_URL}/bundesliga/gameschedule/{season}/{gameday}/all"
+def fetch_gameday(season: str, gameday: int, include_events: bool, league: str = "bundesliga") -> dict:
+    schedule_url = f"{BASE_URL}/{league}/gameschedule/{season}/{gameday}/all"
     print(f"[1/2] Fetching gameday overview: {schedule_url}")
     page_props = fetch_next_data(schedule_url)
     matches = page_props.get("matches") or []
     if not matches:
         raise RuntimeError(f"No matches found for {season} gameday {gameday}")
-    match_ids = [m["id"] for m in matches]
+    # Pokal rounds return matches from several rounds in one page; resolve each
+    # match to its own gameday index so the correct /gameday/{index}/{id} URL is hit.
+    gd_by_id = {g["id"]: g.get("index") for g in (page_props.get("gamedays") or [])}
+    match_ids = [(m["id"], gd_by_id.get(m.get("gamedayId"), gameday)) for m in matches]
     gd_meta = page_props.get("selectedGameday") or page_props.get("gameday") or {}
     print(f"      Found {len(match_ids)} matches")
 
     results = []
     total = len(match_ids)
-    for i, mid in enumerate(match_ids, 1):
-        url = f"{BASE_URL}/bundesliga/gameday/{season}/{gameday}/{mid}"
-        print(f"[2/2] Fetching match {i}/{total}: {mid}")
+    for i, (mid, m_gd) in enumerate(match_ids, 1):
+        url = f"{BASE_URL}/{league}/gameday/{season}/{m_gd}/{mid}"
+        print(f"[2/2] Fetching match {i}/{total}: {mid} (gameday {m_gd})")
         sm = fetch_next_data(url).get("selectedMatch")
         if not sm:
             raise RuntimeError(f"selectedMatch missing for {url}")
-        results.append(clean_match(sm, season, gameday, include_events))
+        results.append(clean_match(sm, season, m_gd, include_events, league))
         if i < total:
             time.sleep(0.5)
 
+    league_label = gd_meta.get("league") or league.capitalize()
     return {
         "source": "ttbl.de",
-        "league": gd_meta.get("league", "Bundesliga"),
+        "league": league_label,
         "season": season,
         "gameday": gd_meta.get("index", gameday),
         "gamedayName": gd_meta.get("name"),
@@ -205,6 +209,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--season", required=True, help="e.g. 2026-2027")
     parser.add_argument("--gameday", required=True, type=int, help="e.g. 1")
+    parser.add_argument("--league", default="bundesliga", choices=["bundesliga", "pokal"],
+                        help="competition: bundesliga (default) or pokal (German Cup)")
     parser.add_argument("--out-dir", default=str(DEFAULT_OUT_DIR))
     parser.add_argument(
         "--with-events",
@@ -213,11 +219,12 @@ def main():
     )
     args = parser.parse_args()
 
-    data = fetch_gameday(args.season, args.gameday, args.with_events)
+    data = fetch_gameday(args.season, args.gameday, args.with_events, args.league)
 
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
-    out_file = out_dir / f"ttbl_{args.season}_gameday{args.gameday}.json"
+    prefix = f"ttbl_{args.league}_" if args.league != "bundesliga" else "ttbl_"
+    out_file = out_dir / f"{prefix}{args.season}_gameday{args.gameday}.json"
     out_file.write_text(
         json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8"
     )

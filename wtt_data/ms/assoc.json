@@ -10838,5 +10838,60 @@
     "assoc": "TPE",
     "country": "Chinese Taipei",
     "source": "user-confirmed"
+  },
+  "GOSSOW Adrian": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "user-confirmed"
+  },
+  "LIMONOV Anton": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "user-confirmed"
+  },
+  "FLORO Damian": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "user-confirmed"
+  },
+  "GAISER Jonathan": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "user-confirmed"
+  },
+  "WALTER Karl": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "user-confirmed"
+  },
+  "HASPEL Matej": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "user-confirmed"
+  },
+  "ENGELHARDT Michael": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "user-confirmed"
+  },
+  "HERSEL Noah": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "user-confirmed"
+  },
+  "KÖCHLING Timotius": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "user-confirmed"
+  },
+  "HIPPLER Tobias": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "user-confirmed"
+  },
+  "VELICHKOV Yoan": {
+    "assoc": "BUL",
+    "country": "Bulgaria",
+    "source": "user-confirmed"
   }
 }
