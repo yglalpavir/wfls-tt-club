@@ -26,6 +26,14 @@ tools/doha_doubles_raw.txt
 tools/mixedteams2024playerlist copy.txt
 tools/_*_raw.txt
 tools/*.migrated.bak
+# results.ittf.link 抓取临时产物（HTML 原文/结构报告/中间 JSON）
+tools/_probe_out/
+tools/_ittf_2012_work/
+tools/_*_raw.html
+tools/_home_raw.html
+# 站点凭据（绝不入库）
+tools/.ittf_creds.json
+.env
 
 # ===== 原始研究资料（仅本地留存，不随站点发布）=====
 docs/result_ittf_link/
