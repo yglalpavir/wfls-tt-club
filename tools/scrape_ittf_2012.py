@@ -34,7 +34,7 @@ import time
 from bs4 import BeautifulSoup
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from ittf_client import BASE, GATE_MARKER, IttfClient
+from ittf_client import BASE, GATE_MARKER, LOGIN_DENIED_MARKERS, IttfClient, _is_blocked_or_error
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_DIR = os.path.join(ROOT, "docs", "result_ittf_link", "2012")
@@ -61,7 +61,7 @@ def safe_name(s):
 
 
 def is_gated(html):
-    return (not html) or GATE_MARKER in html or "com-users-login" in html
+    return _is_blocked_or_error(html)
 
 
 def match_types(t):

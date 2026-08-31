@@ -32,7 +32,18 @@ DEFAULT_HEADERS = {
 }
 
 GATE_MARKER = "Click here to register"
+LOGIN_DENIED_MARKERS = ("Login denied!", "account has either been blocked", "not activated it yet")
 CF_MARKER = "One moment, please"
+
+
+def _is_blocked_or_error(html):
+    """页面是否要求登录、提示被禁、或提示账号未激活。"""
+    if not html:
+        return True
+    hl = html.lower()
+    return (GATE_MARKER in html
+            or "com-users-login" in hl
+            or any(m.lower() in hl for m in LOGIN_DENIED_MARKERS))
 
 
 def _log(msg, verbose=True):
@@ -156,9 +167,14 @@ class IttfClient:
             tok: "1",
         })
         body = r.text or ""
-        ok = GATE_MARKER not in body
+        ok = not _is_blocked_or_error(body)
         _log("  <- status=%s final=%s len=%d logged_in=%s"
              % (r.status_code, r.url, len(body), ok), self.verbose)
+        if not ok:
+            _log("  !! 登录失败，页面提示：%s" % (
+                next((m for m in LOGIN_DENIED_MARKERS if m.lower() in body.lower()),
+                     GATE_MARKER if GATE_MARKER in body else "(未知)")),
+                 self.verbose)
         return ok
 
     def login_with_cookie(self, cookie_str):
@@ -176,10 +192,9 @@ class IttfClient:
         except Exception as e:
             _log("  is_logged_in 探测失败: %s" % e, self.verbose)
             return False
-        return GATE_MARKER not in (r.text or "")
+        return not _is_blocked_or_error(r.text)
 
 
 def find_login_gated(r):
-    """该响应是否是被重定向到登录页。"""
-    body = r.text or ""
-    return ("view-login" in body) or (GATE_MARKER in body) or ("com-users-login" in body)
+    """该响应是否是被重定向到登录页，或提示账号被禁/未激活。"""
+    return _is_blocked_or_error(r.text)
