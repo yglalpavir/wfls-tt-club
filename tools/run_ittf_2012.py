@@ -2,7 +2,8 @@
 """results.ittf.link 2012 抓取启动器：自动等待 Cloudflare 冷却结束后，用最小请求量执行全量抓取。
 
 - 循环探测 /login：200 → 解除；429 → 打印剩余倒计时并按 retry-after 睡眠
-- 解除后带 --resume --csv --wait --pause 调用 scrape_ittf_2012.py
+- 探测间隔 = max(剩余秒/6, 120) 秒，避免在冷却期内持续打请求把封禁拉满
+- 解除后带 --resume --pause 4.5 调用 scrape_ittf_2012.py
 - 全程 flush 实时输出
 
 用法：
@@ -44,13 +45,22 @@ def remaining_hhmm(sec):
 
 def main():
     check = "--check" in sys.argv
+    started = time.time()
     while True:
         status, wait = probe()
+        elapsed = int(time.time() - started)
         if status == 429:
-            print("  冷却中，剩余 %s" % remaining_hhmm(wait), flush=True)
+            # 冷却期探测要稀疏：>60min 剩每 10min 一次，>10min 每 2min，否则每 45s
+            if wait > 3600:
+                chunk = 600
+            elif wait > 600:
+                chunk = 120
+            else:
+                chunk = 45
+            print("  冷却中，剩余 %s（已等 %s，下次 %ds 后探测）" %
+                  (remaining_hhmm(wait), remaining_hhmm(elapsed), chunk), flush=True)
             if check:
                 return 75
-            chunk = min(wait or 300, 300)
             time.sleep(chunk)
             continue
         if status == 200:
@@ -59,7 +69,8 @@ def main():
                 print("OK")
                 return 0
             p = subprocess.run([sys.executable, "-u", SCRAPER,
-                                "--all", "--resume", "--csv", "--wait", "--pause", "4.0"])
+                                "--all", "--resume", "--offline-events",
+                                "--pause", "4.5"])
             return p.returncode
         # 网络异常：短暂等待后重试
         print("  探测异常 status=%s，60s 后重试" % status, flush=True)
