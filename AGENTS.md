@@ -22,8 +22,8 @@ No npm/lint/typecheck commands exist — there are no build tools or test suites
 ## Content system (news / competitions / QA)
 
 - **One folder per entry**: `data/{type}/{id}/{id}.json` is the single source of truth
-- `index.json` and `search.json` are **generated** — never edit manually
-- Version snapshots (`{id}.v{n}.json`) and history manifests (`{id}.history.json`) are auto-maintained by `sync_content.py`
+- `index.json` and `search.json` are **generated** — never edit manually (`sync_content.py --check` diffs them against regenerated output and fails CI on mismatch)
+- Version snapshots (`{id}.v{n}.json`) and history manifests (`{id}.history.json`) are auto-maintained by `sync_content.py` — and they are **fetched at runtime by detail pages** (version-history UI), so they must stay tracked and deployed
 - Setting `"visible": false` hides an entry without deleting it
 - Tag values are whitelisted (see README for exact lists)
 - Date format: `YYYY-MM-DD` (used for sort order)
@@ -39,11 +39,13 @@ No npm/lint/typecheck commands exist — there are no build tools or test suites
 ## Architecture gotchas
 
 - **No build step**: all JS loads via `<script>` tags; modules are global scope, not ES modules
+- **Shared page chrome**: navbar / footer / QR modal are injected from `js/shared-partials.js` (`<script src="js/shared-partials.js" data-partial="nav|footer|qr-modal">`) — edit the template there, NOT per page. Active-link highlighting is applied at runtime by `highlightNavByPath()`; `wtt_hub.html` (custom chrome) is the only page exempt
 - **Dual pipelines**: club ranking (js/score-engine.js) and WTT ranking (js/wtt_common.js) are ~40% cloned code that has drifted — changes to scoring logic may need both
-- **Global mutable state**: ~15 shared global variables (`scoreLogData`, `initialScoresData`, etc.) across 5+ scripts; WTT pages use manual save/swap/restore for data context
-- **innerHTML everywhere**: `escapeHtml` in `js/common.js` does NOT escape quotes — inline `onclick` handlers with player names are an XSS vector (mitigated with data-* attributes in recent fixes)
+- **Global mutable state**: ~15 shared global variables (`scoreLogData`, `initialScoresData`, etc.) across 5+ scripts; WTT pages should use `wttWithDataContext()` (try/finally-safe swap in `js/wtt_common.js`) — never hand-roll save/swap/restore
+- **innerHTML everywhere**: `escapeHtml` in `js/common.js` escapes `& < > " '` — inline `onclick` handlers built from player names are gone (event delegation + `data-*` attributes). Keep it that way; don't reintroduce interpolated inline handlers
 - **Content loading**: pages use `fetch()` to load JSON at runtime; `robots.txt` must NOT block `/data/` or SEO gets empty shells
 - **Season expiration**: if `seasons.json` last endDate passes, new matches silently extend the old season (no crash, but wrong data scope). Check with `ci_validate.py`
+- **Same-day duplicate match records are legit**: identical `(日期, 类型, 胜者, 负者)` rows in `score-log.json` are real multiple games (README has the convention) — do NOT dedupe, and `ci_validate.py` intentionally has no duplicate detector
 
 ## i18n
 
@@ -69,9 +71,11 @@ No npm/lint/typecheck commands exist — there are no build tools or test suites
 
 ## Common mistakes to avoid
 
-1. Editing `index.json` or `search.json` directly — they get overwritten by `sync_content.py`
+1. Editing `index.json` or `search.json` directly — they get overwritten by `sync_content.py` (and `--check` now fails CI on drift)
 2. Adding a news/competition/QA entry without running `sync_content.py`
 3. Forgetting that `event-coefficient.json` has reserved object keys (`赛制系数`, `默认赛制`) mixed with numeric coefficient keys
 4. Not checking season coverage after adding new matches — run `ci_validate.py`
-5. Using `innerHTML` with unescaped player names containing quotes
-6. Changing scoring logic in only one pipeline (club vs WTT) — they're separate implementations
+5. Building inline `onclick` handlers from data — use event delegation + `data-*` attributes
+6. Changing scoring logic in only one pipeline (club vs WTT) — they're separate implementations; reuse `LOSER_POINT_MULTIPLIER` / `DECAY_HALF_LIFE_DAYS` instead of hardcoding coefficients
+7. Editing nav/footer markup in individual HTML pages — it lives in `js/shared-partials.js`
+8. Deduplicating same-day repeated match records — they are intentional (multiple games per day)

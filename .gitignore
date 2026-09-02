@@ -38,3 +38,15 @@ tools/.ittf_creds.json
 # ===== 原始研究资料（仅本地留存，不随站点发布）=====
 docs/result_ittf_link/
 *.tmp
+
+# ===== 部署面收缩（2026-09）：爬虫/导入器与内部审计只在本地留存，不随站点发布 =====
+# tools/ 仅保留 CI 使用的工具
+tools/*
+!tools/sync_content.py
+!tools/ci_validate.py
+!tools/generate_meta.py
+# 内部审计与一次性导入记录
+docs/audit-2026-08-implementation.md
+docs/skovde-2001-import-summary.md
+# 旧版数据兜底（前端仅作 players.json 失效时的回退，线上无用）
+data/_legacy/

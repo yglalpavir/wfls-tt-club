@@ -135,7 +135,8 @@ function getFreezeWeight(player, et, matchDate, snapshotDate) {
 }
 
 function calcMatchPoints(winner, loser, eventType, matchDate, snapshotDate, currentScores, matchFormat) {
-    const wScore = currentScores[winner] || DEFAULT_INITIAL_SCORE, lScore = currentScores[loser] || DEFAULT_INITIAL_SCORE;
+    const wScore = (typeof currentScores[winner] === 'number') ? currentScores[winner] : DEFAULT_INITIAL_SCORE;
+    const lScore = (typeof currentScores[loser] === 'number') ? currentScores[loser] : DEFAULT_INITIAL_SCORE;
     if (SCORE_TIME_DECAY_ENABLED === false) {
         // WTT / 非衰减模式：维持原语义（权重 1，无赛制系数）
         return getBaseScore(wScore - lScore) * getEventCoefficient(eventType) * getTimeWeight(matchDate, snapshotDate);
@@ -143,7 +144,10 @@ function calcMatchPoints(winner, loser, eventType, matchDate, snapshotDate, curr
     // 俱乐部模式：类型刷新·定格衰减 × 赛制系数
     return getBaseScore(wScore - lScore) * getEventCoefficient(eventType) * getFormatMultiplier(eventType, matchFormat) * getFreezeWeight(winner, eventType, matchDate, snapshotDate);
 }
-function calcRawPoints(winner, loser, eventType, currentScores, matchFormat) { const wScore = currentScores[winner] || DEFAULT_INITIAL_SCORE, lScore = currentScores[loser] || DEFAULT_INITIAL_SCORE; return getBaseScore(wScore - lScore) * getEventCoefficient(eventType) * getFormatMultiplier(eventType, matchFormat); }
+function calcRawPoints(winner, loser, eventType, currentScores, matchFormat) {
+    const wScore = (typeof currentScores[winner] === 'number') ? currentScores[winner] : DEFAULT_INITIAL_SCORE;
+    const lScore = (typeof currentScores[loser] === 'number') ? currentScores[loser] : DEFAULT_INITIAL_SCORE;
+    return getBaseScore(wScore - lScore) * getEventCoefficient(eventType) * getFormatMultiplier(eventType, matchFormat); }
 
 function getActivePlayers(sortedLog, startDate, endDate) { const ap = new Set(); sortedLog.forEach(r => { if (r['日期'] < startDate || r['日期'] > endDate) return; if (isMatchRecord(r)) { ap.add(r['胜者']); ap.add(r['负者']); } else if (isBonusRecord(r)) { ap.add(r['对象']); } }); return ap; }
 
@@ -495,6 +499,8 @@ function calculateEndScores(sl, ss, sst, sen) {
     return sc;
 }
 function formatSnapshotLabel(ds) { const d = new Date(ds + 'T00:00:00'); return `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日`; }
+// 今日日期（YYYY-MM-DD）：重放类计算把衰减基准统一到"现在"，与实时排名口径一致
+function getTodayStr() { const n = new Date(); return n.getFullYear() + '-' + String(n.getMonth()+1).padStart(2, '0') + '-' + String(n.getDate()).padStart(2, '0'); }
 
 // 获取快照日期所在的赛季
 function getSeasonForDate(snapshotDate) {
@@ -502,7 +508,9 @@ function getSeasonForDate(snapshotDate) {
     for (const season of seasonsData) {
         if (snapshotDate >= season.startDate && snapshotDate <= season.endDate) return season;
     }
-    return seasonsData.length > 0 ? seasonsData[seasonsData.length-1] : null;
+    if (seasonsData.length === 0) return null;
+    // 赛季开始之前 → 归入第一个赛季；赛季结束后 → 延伸最后一个赛季
+    return snapshotDate < seasonsData[0].startDate ? seasonsData[0] : seasonsData[seasonsData.length-1];
 }
 
 // 获取某赛季的初始积分（考虑继承）
@@ -695,7 +703,11 @@ async function calculateRealtimeRankingAsync(onProgress) {
 async function loadInitialScores() {
     if (playersData && Array.isArray(playersData.players)) {
         const is = {};
-        for (const p of playersData.players) if (p && p.name) is[p.name] = (p.initialScore != null ? p.initialScore : DEFAULT_INITIAL_SCORE);
+        for (const p of playersData.players) {
+            if (!p || !p.name) continue;
+            const n = Number(p.initialScore);
+            is[p.name] = Number.isFinite(n) ? n : DEFAULT_INITIAL_SCORE;
+        }
         initialScoresData = { baseDate: playersData.baseDate || '2026-03-01', initialScores: is };
         return true;
     }
@@ -718,6 +730,6 @@ function isNoDecayType(et) {
 function isFreezeEligible(et) {
     return FREEZE_ON_REPEAT && !isNoDecayType(et);
 }
-async function loadSeasons() { try { seasonsData = (await (await fetch('data/seasons.json')).json()).filter(s => s.visible !== false); return true; } catch(e) { console.error('seasons.json 加载失败', e); seasonsData = []; return false; } }
-async function loadScoreLogData() { try { scoreLogData = normalizeScoreLog(await (await fetch('data/score-log.json')).json()); clearFirstAppearanceCache(); return true; } catch(e) { console.error('score-log.json 加载失败', e); scoreLogData = []; return false; } }
-async function loadScoreLogForViz() { try { scoreLogData = normalizeScoreLog(await (await fetch('data/score-log.json')).json()); clearFirstAppearanceCache(); return true; } catch(e) { console.error('score-log.json 加载失败', e); scoreLogData = []; return false; } }
+async function loadSeasons() { try { const resp = await fetch('data/seasons.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); seasonsData = (await resp.json()).filter(s => s.visible !== false); return true; } catch(e) { console.error('seasons.json 加载失败', e); seasonsData = []; return false; } }
+async function loadScoreLogData() { try { const resp = await fetch('data/score-log.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); scoreLogData = normalizeScoreLog(await resp.json()); clearFirstAppearanceCache(); return true; } catch(e) { console.error('score-log.json 加载失败', e); scoreLogData = []; return false; } }
+async function loadScoreLogForViz() { try { const resp = await fetch('data/score-log.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); scoreLogData = normalizeScoreLog(await resp.json()); clearFirstAppearanceCache(); return true; } catch(e) { console.error('score-log.json 加载失败', e); scoreLogData = []; return false; } }

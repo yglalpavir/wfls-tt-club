@@ -29,3 +29,6 @@ jobs:
 
       - name: Data integrity gate + season expiry guard
         run: python tools/ci_validate.py
+
+      - name: Sitemap / RSS freshness gate
+        run: python tools/generate_meta.py --check

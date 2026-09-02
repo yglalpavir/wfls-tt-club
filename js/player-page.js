@@ -73,7 +73,7 @@ function renderPlayerHeader(player) {
     const row = snap ? snap.row : null;
     const curScore = row && row['当前积分'] != null ? (typeof row['当前积分'] === 'number' ? row['当前积分'].toFixed(1) : row['当前积分']) : '-';
     const roleHtml = player.role ? `<span class="player-role-chip"><i class="fa-solid fa-user-tie"></i> ${escapeHtml(String(player.role))}</span>` : '';
-    const statusHtml = currentLang === 'en' ? `<span class="player-status-chip ${player.status === 'active' ? 'active' : 'alumni'}"><i class="fa-solid fa-circle"></i> ${player.status === 'active' ? i18n[currentLang].pp_status_active : i18n[currentLang].pp_status_alumni}</span>` : '';
+    const statusHtml = `<span class="player-status-chip ${player.status === 'active' ? 'active' : 'alumni'}"><i class="fa-solid fa-circle"></i> ${player.status === 'active' ? i18n[currentLang].pp_status_active : i18n[currentLang].pp_status_alumni}</span>`;
     const tagsHtml = (player.tags || []).map(t => `<span class="personal-tag-badge">${escapeHtml(String(t))}</span>`).join('');
     const honorsHtml = (player.honors || []).map(h => `<span class="personal-honor-badge"><i class="fa-solid fa-medal"></i> ${escapeHtml(String(h))}</span>`).join('');
 
@@ -123,7 +123,7 @@ function computePlayerMatchRecords(playerName) {
                 const w = r['胜者'], l = r['负者'];
                 if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
                 if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
-                const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], scores, r['赛制']);
+                const wg = calcMatchPoints(w, l, r['类型'], r['日期'], getTodayStr(), scores, r['赛制']);
                 const rawGain = calcRawPoints(w, l, r['类型'], scores, r['赛制']);
                 if (w === playerName || l === playerName) {
                     const isWin = w === playerName;
@@ -152,7 +152,7 @@ function renderPlayerMatchTable(playerName) {
         if (r.isBonus) {
             const cc = r.change >= 0 ? 'score-change-positive' : 'score-change-negative';
             const sign = r.change >= 0 ? '+' : '';
-            return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(r.type)}</td><td>-</td><td class="result-win">${i18n[currentLang].wtt_bonus}</td><td>${r.pre.toFixed(1)}</td><td class="${cc}">${sign}${r.change.toFixed(1)}</td><td>${r.post.toFixed(1)}</td></tr>`;
+            return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(r.type)}</td><td>-</td><td class="result-win">${i18n[currentLang].score_type_bonus}</td><td>${r.pre.toFixed(1)}</td><td class="${cc}">${sign}${r.change.toFixed(1)}</td><td>${r.post.toFixed(1)}</td></tr>`;
         }
         const res = r.isWin ? '<td class="result-win">' + i18n[currentLang].score_result_win + '</td>' : '<td class="result-loss">' + i18n[currentLang].score_result_loss + '</td>';
         const signRaw = r.rawChange >= 0 ? '+' : '';

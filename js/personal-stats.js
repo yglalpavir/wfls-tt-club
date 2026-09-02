@@ -376,9 +376,9 @@ function getApproxScoreAtDate(playerName, targetDate, sortedLog, startScores, be
             const w = r['胜者'], l = r['负者'];
             if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE;
             if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
-            const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], sc, r['赛制']);
+            const wg = calcMatchPoints(w, l, r['类型'], r['日期'], targetDate, sc, r['赛制']);
             sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
-            sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * 0.8);
+            sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
         } else if (isBonusRecord(r)) {
             const t = r['对象'];
             const b = parseFloat(r['分数']) || 0;
@@ -545,16 +545,16 @@ function renderPersonalStats(playerName, containerId) {
         const w = r['胜者'], l = r['负者'];
         if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
         if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
-        const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], scores, r['赛制']);
+        const wg = calcMatchPoints(w, l, r['类型'], r['日期'], getTodayStr(), scores, r['赛制']);
         if (w === playerName) {
             oppPointsGained[l] = (oppPointsGained[l] || 0) + wg;
-            oppPointsLost[l] = (oppPointsLost[l] || 0) + wg * 0.8;
+            oppPointsLost[l] = (oppPointsLost[l] || 0) + wg * LOSER_POINT_MULTIPLIER;
         } else if (l === playerName) {
             oppPointsLost[w] = (oppPointsLost[w] || 0) + wg;
-            oppPointsGained[w] = (oppPointsGained[w] || 0) + wg * 0.8;
+            oppPointsGained[w] = (oppPointsGained[w] || 0) + wg * LOSER_POINT_MULTIPLIER;
         }
         scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg);
-        scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * 0.8);
+        scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * LOSER_POINT_MULTIPLIER);
     }
 
     const beatenOpps = Object.entries(oppStats)
@@ -777,14 +777,6 @@ function computeDailyScoreHistory(playerName, sortedLog, startScores) {
     const now = new Date();
     const today = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
 
-    // ---- 预建时间衰减查找表 (dayDiff → timeWeight) ----
-    const DECAY_LUT_MAX = 3000;
-    const decayLUT = new Float64Array(DECAY_LUT_MAX);
-    for (let i = 0; i < DECAY_LUT_MAX; i++) {
-        decayLUT[i] = Math.pow(2, -i / HALF_LIFE_DAYS);
-    }
-    const getDecay = (dayDiff) => dayDiff < DECAY_LUT_MAX ? decayLUT[dayDiff] : Math.pow(2, -dayDiff / HALF_LIFE_DAYS);
-
     // ---- 预解析赛事记录和加分记录 ----
     const matchRecs = [];   // { time, date, winner, loser, type, format }
     const bonusRecs = [];   // { time, date, target, amount }
@@ -872,7 +864,7 @@ function computeDailyScoreHistory(playerName, sortedLog, startScores) {
             const wg = base * coeff * tw;
 
             sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
-            sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * 0.8);
+            sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
             mi++;
         }
 

@@ -55,6 +55,13 @@ async function loadRankingDataForViz() {
     }
 }
 
+// 数据加载失败时的统一错误占位（替代永久转圈的"加载中"）
+function showRankingLoadFail(containerId) {
+    const el = document.getElementById(containerId);
+    if (!el) return;
+    el.innerHTML = '<div class="compare-placeholder"><i class="fa-solid fa-triangle-exclamation"></i><p style="color:var(--accent-red);">' + i18n[currentLang].rank_calc_fail + '</p><button class="btn btn-sm btn-primary" style="margin-top:14px;" onclick="location.reload()">' + (i18n[currentLang].pp_refresh || '刷新') + '</button></div>';
+}
+
 function initPage() {
     // detail 页：直接加载目标内容，跳过全量索引，加载更快、反馈更及时
     if (window.location.pathname.includes('detail.html')) {
@@ -74,9 +81,9 @@ function initPage() {
     const isRanking = !!document.getElementById('rankingFullBody'), isDataViz = !!document.getElementById('pointsTrendChart'), isWttDataViz = !!document.getElementById('wttPointsTrendChart'), isPersonalStats = !!document.getElementById('personalResult'), isPlayerPage = !!document.getElementById('playerDetailContent'), isWttPersonalStats = !!document.getElementById('wttPersonalPlayerSearchContainer') && !document.getElementById('wttPointsTrendChart');
     if (isRanking) { loadRankingData(); }
     if (isDataViz) { loadRankingDataForViz().then(() => { if (rankingTimeline.length) { initDataViz(); if (typeof initDataVizExtra === 'function') initDataVizExtra(); } }).catch(err => console.error('DataViz: 初始化失败', err)); }
-    if (isPersonalStats) { loadRankingDataForViz().then(() => initPersonalStats()).catch(err => console.error('PersonalStats: 初始化失败', err)); }
-    if (isPlayerPage) { loadRankingDataForViz().then(() => initPlayerPage()).catch(err => console.error('PlayerPage: 初始化失败', err)); }
-    if (isWttDataViz) { wttLoadRankingDataForViz().then(() => { if (wttRankingTimeline.length) { initWttDataViz(); if (typeof initWttDataVizExtra === 'function') initWttDataVizExtra(); } }).catch(err => console.error('WttDataViz: 初始化失败', err)); }
+    if (isPersonalStats) { loadRankingDataForViz().then(ok => { ok ? initPersonalStats() : showRankingLoadFail('personalResult'); }).catch(err => { console.error('PersonalStats: 初始化失败', err); showRankingLoadFail('personalResult'); }); }
+    if (isPlayerPage) { loadRankingDataForViz().then(ok => { ok ? initPlayerPage() : showRankingLoadFail('playerDetailContent'); }).catch(err => { console.error('PlayerPage: 初始化失败', err); showRankingLoadFail('playerDetailContent'); }); }
+    if (isWttDataViz) { wttLoadRankingDataForViz().then(() => { if (wttRankingTimeline.length) { initWttDataViz(); if (typeof initWttDataVizExtra === 'function') initWttDataVizExtra(); } else showRankingLoadFail('wttPlayerCheckboxList'); }).catch(err => { console.error('WttViz: 初始化失败', err); showRankingLoadFail('wttPlayerCheckboxList'); }); }
     if (isWttPersonalStats) { wttLoadRankingDataForPersonal().then(() => { if (wttRankingTimeline.length) initWttPersonalStats(); }).catch(err => console.error('WttPersonalStats: 初始化失败', err)); }
     initPdfViewer();
 }

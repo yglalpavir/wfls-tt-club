@@ -83,17 +83,18 @@ function renderGridViewer(container, draws) {
 
     // Title bar — only zoom tools, no size controls
     if (draws.title) {
+        const _L = (typeof i18n !== 'undefined' && i18n[currentLang]) || {};
         const titleBar = document.createElement('div');
         titleBar.className = 'draws-viewer-title-bar';
         titleBar.innerHTML = `
             <h2 class="draws-viewer-title">${escapeHtml(draws.title)}</h2>
             <div class="draws-viewer-tools">
-                <button class="dv-tool-btn" id="dvFullscreen" title="全屏显示 (网页内)"><i class="fa-solid fa-maximize"></i></button>
+                <button class="dv-tool-btn" id="dvFullscreen" title="${_L.dv_fullscreen || '全屏显示 (网页内)'}"><i class="fa-solid fa-maximize"></i></button>
                 <span class="dv-tool-sep">|</span>
-                <button class="dv-tool-btn" id="dvZoomOut" title="缩小"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
-                <button class="dv-tool-btn" id="dvZoomIn" title="放大"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
-                <button class="dv-tool-btn" id="dvZoomFit" title="适应内容"><i class="fa-solid fa-expand"></i></button>
-                <button class="dv-tool-btn" id="dvZoomReset" title="重置视图"><i class="fa-solid fa-arrows-to-circle"></i></button>
+                <button class="dv-tool-btn" id="dvZoomOut" title="${_L.dv_zoom_out || '缩小'}"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
+                <button class="dv-tool-btn" id="dvZoomIn" title="${_L.dv_zoom_in || '放大'}"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+                <button class="dv-tool-btn" id="dvZoomFit" title="${_L.dv_zoom_fit || '适应内容'}"><i class="fa-solid fa-expand"></i></button>
+                <button class="dv-tool-btn" id="dvZoomReset" title="${_L.dv_zoom_reset || '重置视图'}"><i class="fa-solid fa-arrows-to-circle"></i></button>
             </div>
         `;
         wrapper.appendChild(titleBar);

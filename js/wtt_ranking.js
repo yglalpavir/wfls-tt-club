@@ -54,7 +54,7 @@ function wttShowScoreDetail(playerName, snapshotDate) {
         player: playerName,
         snapshotDate: snapshotDate || (wttRankingTimeline[wttCurrentTimeIndex]?.time || '')
     };
-    title.textContent = `${playerName} - ${i18n[currentLang].score_detail_title}（${wttRankingTimeline[wttCurrentTimeIndex]?.label || ''}）`;
+    title.textContent = `${playerName} - ${i18n[currentLang].score_detail_title}（${wttRankingTimeline[wttCurrentTimeIndex] ? getNodeDisplayLabel(wttRankingTimeline[wttCurrentTimeIndex]) : ''}）`;
     wttRenderScoreDetail();
     wttAdjustModalSize();
     openModal(modal);
@@ -88,25 +88,20 @@ function wttRenderScoreDetail() {
     const snapshotDate = wttCurrentScoreContext.snapshotDate;
     if (!player || !snapshotDate) return;
 
-    // 切换全局数据
-    const origScoreLog = scoreLogData;
-    const origInitial = initialScoresData;
-    const origEvent = eventCoefficients;
-    const origSeasons = seasonsData;
+    // 在 WTT 数据上下文中计算（自动切换/恢复引擎全局，异常安全）
+    wttWithDataContext(() => wttRenderScoreDetailInContext(player, snapshotDate, body));
 
-    scoreLogData = wttScoreLogData;
-    initialScoresData = (typeof wttGetInitialScoresDataForEngine === 'function') ? wttGetInitialScoresDataForEngine() : wttInitialScoresData;
-    eventCoefficients = wttEventCoefficients;
-    seasonsData = wttSeasonsData;
+    setTimeout(wttAdjustModalSize, 150);
+}
+
+function wttRenderScoreDetailInContext(player, snapshotDate, body) {
+    const noRecordsHtml = '<tr><td colspan="7" style="text-align:center;padding:20px;">' + i18n[currentLang].wtt_no_records + '</td></tr>';
 
     // 找到快照日期所在的赛季
     const currentSeason = getSeasonForDate(snapshotDate);
-    const noRecordsHtml = '<tr><td colspan="7" style="text-align:center;padding:20px;">' + i18n[currentLang].wtt_no_records + '</td></tr>';
     if (!currentSeason) {
         body.innerHTML = noRecordsHtml;
         setTimeout(() => { const m = document.getElementById('scoreDetailModal'); if (m) m.classList.add('content-fit'); }, 100);
-        scoreLogData = origScoreLog; initialScoresData = origInitial;
-        eventCoefficients = origEvent; seasonsData = origSeasons;
         return;
     }
 
@@ -124,8 +119,6 @@ function wttRenderScoreDetail() {
     if (!records.length) {
         body.innerHTML = noRecordsHtml;
         setTimeout(() => { const m = document.getElementById('scoreDetailModal'); if (m) m.classList.add('content-fit'); }, 100);
-        scoreLogData = origScoreLog; initialScoresData = origInitial;
-        eventCoefficients = origEvent; seasonsData = origSeasons;
         return;
     }
 
@@ -139,8 +132,8 @@ function wttRenderScoreDetail() {
         if (isMatchRecord(record)) {
             const w = record['胜者'], l = record['负者'];
             if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE; if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
-            const decayedGain = calcMatchPoints(w, l, record['类型'], record['日期'], record['日期'], scores);
-            const rawGain = calcRawPoints(w, l, record['类型'], scores);
+            const decayedGain = calcMatchPoints(w, l, record['类型'], record['日期'], record['日期'], scores, record['赛制']);
+            const rawGain = calcRawPoints(w, l, record['类型'], scores, record['赛制']);
             if (record['胜者'] === player || record['负者'] === player) {
                 const isWinner = record['胜者'] === player;
                 const rawChange = isWinner ? rawGain : -(rawGain * LOSER_POINT_MULTIPLIER);
@@ -189,11 +182,6 @@ function wttRenderScoreDetail() {
         const changeDisplay = `${signRaw}${r.rawChange.toFixed(1)}（${signDecayed}${r.decayedChange.toFixed(1)}）`;
         return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(r.type)}</td><td>${escapeHtml(r.opponent)}</td><td class="${rc}">${res}</td><td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${changeDisplay}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
     }).join('');
-
-    scoreLogData = origScoreLog; initialScoresData = origInitial;
-    eventCoefficients = origEvent; seasonsData = origSeasons;
-
-    setTimeout(wttAdjustModalSize, 150);
 }
 
 // 加载并渲染（异步分块计算，不阻塞 UI；骨架屏 + 进度条 + 已用时）
@@ -257,6 +245,7 @@ async function wttLoadRankingData() {
         wttSetupSortListeners();
     } catch (e) {
         console.error('WTT排名计算失败', e);
+        wttInitialized = false;   // 允许用户重试（否则只能刷新页面）
         wttStopLoadingTimer(prog);
         if (prog) prog.remove();
         if (tb) tb.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;color:var(--accent-red);">' + i18n[currentLang].wtt_cant_compute + '</td></tr>';
@@ -335,7 +324,7 @@ function wttRenderTimeNodeList() {
     }
 
     if (lbl && wttRankingTimeline[wttCurrentTimeIndex]) {
-        lbl.textContent = wttRankingTimeline[wttCurrentTimeIndex].label;
+        lbl.textContent = getNodeDisplayLabel(wttRankingTimeline[wttCurrentTimeIndex]);
     }
 }
 
@@ -375,7 +364,7 @@ function wttUpdateRankingDisplay() {
     if (ind) ind.textContent = `${wttSortKeyLabel(wttCurrentSortKey)}${wttCurrentSortDir === 'desc' ? i18n[currentLang].sort_desc : i18n[currentLang].sort_asc}`;
     wttUpdateSortHeaderHighlight();
     const lbl = document.getElementById('currentTimeLabel');
-    if (lbl) lbl.textContent = cn.label;
+    if (lbl) lbl.textContent = getNodeDisplayLabel(cn);
     wttSyncMobileSortControls(false);
 }
 
@@ -525,7 +514,7 @@ function wttInitRankingPage() {
         const cn = wttRankingTimeline[wttCurrentTimeIndex];
         exportRankTableAsImage(wttCurrentDisplayData, {
             title: i18n[currentLang].wtt_table_title,
-            subtitle: `${cn?.label || ''} · ${i18n[currentLang].rank_sort_hint}${wttSortKeyLabel(wttCurrentSortKey)}${wttCurrentSortDir === 'desc' ? i18n[currentLang].sort_desc : i18n[currentLang].sort_asc}`,
+            subtitle: `${cn ? getNodeDisplayLabel(cn) : ''} · ${i18n[currentLang].rank_sort_hint}${wttSortKeyLabel(wttCurrentSortKey)}${wttCurrentSortDir === 'desc' ? i18n[currentLang].sort_desc : i18n[currentLang].sort_asc}`,
             filenameBase: 'wtt-points-table'
         });
     });

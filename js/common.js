@@ -55,7 +55,7 @@ function showContentLoading(containerId, msg) {
         if (existing) existing.remove();
         return;
     }
-    el.innerHTML = '<div class="content-loading-spinner" style="display:flex;align-items:center;justify-content:center;padding:40px 20px;color:var(--text-secondary);min-height:120px;"><div style="text-align:center;"><div class="wtt-spinner" style="width:28px;height:28px;border:3px solid var(--border-color);border-top-color:var(--accent-blue);border-radius:50%;animation:wttSpin 0.8s linear infinite;margin:0 auto 10px;"></div><p style="font-size:0.85rem;margin:0;">' + (msg || '加载中...') + '</p></div></div>';
+    el.innerHTML = '<div class="content-loading-spinner" style="display:flex;align-items:center;justify-content:center;padding:40px 20px;color:var(--text-secondary);min-height:120px;"><div style="text-align:center;"><div class="wtt-spinner" style="width:28px;height:28px;border:3px solid var(--border-color);border-top-color:var(--accent-blue);border-radius:50%;animation:wttSpin 0.8s linear infinite;margin:0 auto 10px;"></div><p style="font-size:0.85rem;margin:0;">' + (msg || (i18n[currentLang] || {}).content_loading || '加载中...') + '</p></div></div>';
 }
 
 const i18n = {
@@ -96,6 +96,10 @@ const i18n = {
         pp_loading: "正在加载球员数据...", pp_load_fail: "数据加载失败，请刷新重试", pp_refresh: "刷新页面", pp_status_active: "在校", pp_status_alumni: "已离校", pp_matches_count: "{n} 场", pp_col_before: "赛前", pp_col_change: "调整", pp_col_after: "赛后", pp_tags_label: "标签", pp_honors_label: "荣誉",
         rank_realtime_header: "实时积分", rank_realtime_label: "实时积分",
         search_input_hint: "输入关键词搜索", search_hint_title: "输入关键词开始搜索", search_hint_info: "支持搜索标题、内容、姓名等",
+        search_rank_tpl: "排名：{rank} | 胜率：{rate}",
+        content_loading: "加载中...", loading_about: "加载社团信息...", loading_members: "加载成员数据...", loading_news: "加载动态...", loading_competitions: "加载赛事...",
+        chart_matches_suffix: " 场", chart_axis_ym_tpl: "{y}年{m}月",
+        dv_fullscreen: "全屏显示 (网页内)", dv_zoom_out: "缩小", dv_zoom_in: "放大", dv_zoom_fit: "适应内容", dv_zoom_reset: "重置视图",
         rank_no_data: "暂无排名数据", rank_no_records: "暂无记录", rank_add_short: "加分", rank_ppl: "{n}人", rank_node_count: "{n}个节点",
         rank_loading: "正在加载排名数据...", rank_prepare: "准备下载数据文件...", rank_download_file: "正在下载 {label} ({i}/{total}): {file}", rank_calculating: "正在计算排名积分（此过程可能较慢，请耐心等待）...", rank_calc_fail: "无法计算排名数据",
         rank_view_player_page: "查看个人数据页", rank_click_detail: "点击查看积分明细",
@@ -174,6 +178,10 @@ const i18n = {
         pp_loading: "Loading player data...", pp_load_fail: "Failed to load data. Please refresh and try again.", pp_refresh: "Refresh", pp_status_active: "Active", pp_status_alumni: "Alumni", pp_matches_count: "{n} matches", pp_col_before: "Before", pp_col_change: "Change", pp_col_after: "After", pp_tags_label: "Tags", pp_honors_label: "Honors",
         rank_realtime_header: "Real-time", rank_realtime_label: "Live Ranking",
         search_input_hint: "Type keywords to search", search_hint_title: "Start typing to search", search_hint_info: "Searches titles, content and player names",
+        search_rank_tpl: "Rank {rank} | Win rate {rate}",
+        content_loading: "Loading...", loading_about: "Loading club info...", loading_members: "Loading members...", loading_news: "Loading news...", loading_competitions: "Loading competitions...",
+        chart_matches_suffix: " matches", chart_axis_ym_tpl: "{m}/{y}",
+        dv_fullscreen: "Fullscreen (in page)", dv_zoom_out: "Zoom out", dv_zoom_in: "Zoom in", dv_zoom_fit: "Fit content", dv_zoom_reset: "Reset view",
         rank_no_data: "No ranking data", rank_no_records: "No records", rank_add_short: "Bonus", rank_ppl: "{n} players", rank_node_count: "{n} nodes",
         rank_loading: "Loading ranking data...", rank_prepare: "Preparing to download data files...", rank_download_file: "Downloading {label} ({i}/{total}): {file}", rank_calculating: "Calculating ranking points (this may take a while)...", rank_calc_fail: "Unable to compute ranking data",
         rank_view_player_page: "View personal page", rank_click_detail: "Click for score details",
@@ -251,6 +259,8 @@ function setLanguage(lang) {
     document.querySelectorAll('[data-i18n-title]').forEach(el => { const key = el.getAttribute('data-i18n-title'); if (i18n[lang] && i18n[lang][key]) el.title = i18n[lang][key]; });
     if (langToggle) langToggle.querySelector('span').textContent = lang === 'zh' ? 'EN' : '中文';
     if (searchInput) searchInput.placeholder = i18n[lang].search_placeholder;
+    const _ovInput = document.querySelector('#searchOverlay .search-input');
+    if (_ovInput) _ovInput.placeholder = i18n[lang].search_placeholder;
     if (typeof renderAllNews === 'function') renderAllNews();
     if (typeof renderAllCompetitions === 'function') renderAllCompetitions();
     if (typeof renderAllQa === 'function') renderAllQa();
@@ -484,7 +494,8 @@ async function performSearch(query) {
         const s = calcScore(query, p['姓名'], String(p['当前积分'] || ''), '');
         if (s > 0) {
             const uid = getUidForPlayerName(p['姓名']);
-            const tpl = '排名：' + (p.rank || '-') + ' | 胜率：' + (p['胜率'] || '0%');
+            const _L = i18n[currentLang] || {};
+            const tpl = (_L.search_rank_tpl || '排名：{rank} | 胜率：{rate}').replace('{rank}', String(p.rank || '-')).replace('{rate}', String(p['胜率'] || '0%'));
             results.push({ type: 'ranking', typeLabel: i18n[currentLang].search_type_ranking, title: p['姓名'] + ' - ' + (p['当前积分'] || 0).toFixed(1) + '分', excerpt: tpl, date: '', link: uid != null ? ('player.html?uid=' + uid) : 'ranking.html', score: s + (uid != null ? 5 : 0) });
         }
     });
@@ -637,10 +648,10 @@ if (tp <= 7) { for (let i=1; i<=tp; i++) pages.push(i); }
 else { pages.push(1); const s = Math.max(2, cp-1), e = Math.min(tp-1, cp+1); if (s > 2) pages.push('gap'); for (let i=s; i<=e; i++) pages.push(i); if (e < tp-1) pages.push('gap'); pages.push(tp); }
 pages.forEach(p => { if (p === 'gap') { const gp = document.createElement('span'); gp.className = 'pagination-gap'; gp.textContent = '…'; pe.appendChild(gp); return; } const pg = document.createElement('button'); pg.className = 'pagination-btn'; if (p===cp) pg.classList.add('active'); pg.textContent = p; pg.addEventListener('click', () => { if (cid === 'newsFullGrid') { newsCurrentPage = p; renderAllNews(); } else if (cid === 'competitionsFullGrid') { competitionsCurrentPage = p; renderAllCompetitions(); } else { qaCurrentPage = p; renderAllQa(); } window.scrollTo({ top: c.offsetTop-100, behavior:'smooth' }); }); pe.appendChild(pg); }); const nb = document.createElement('button'); nb.className = 'pagination-btn'; nb.textContent = i18n[currentLang].pagination_next; nb.disabled = cp >= tp; nb.addEventListener('click', () => { if (cid === 'newsFullGrid') { newsCurrentPage = cp+1; renderAllNews(); } else if (cid === 'competitionsFullGrid') { competitionsCurrentPage = cp+1; renderAllCompetitions(); } else { qaCurrentPage = cp+1; renderAllQa(); } window.scrollTo({ top: c.offsetTop-100, behavior:'smooth' }); }); pe.appendChild(nb); const ie = document.createElement('span'); ie.className = 'pagination-info'; ie.textContent = i18n[currentLang].pagination_info.replace('{current}', cp).replace('{total}', tp); pe.appendChild(ie); c.parentElement.appendChild(pe); }
 
-async function loadAboutData() { showContentLoading('coreMembersGrid', '加载社团信息...'); try { const resp = await fetch('data/about.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); aboutData = await resp.json(); } catch(e) { aboutData = null; } if (typeof renderAboutSections === 'function') renderAboutSections(); updateHeroLastUpdated(); }
-async function loadMembersData() { showContentLoading('coreMembersGrid', '加载成员数据...'); if (!playersData) await loadPlayers(); if (playersData && Array.isArray(playersData.players)) { membersData = playersData.players.filter(p => p.role).map(p => ({ name: p.name, uid: p.uid, role: p.role, description: p.description, qq: p.qq })); } else { try { const resp = await fetch('data/_legacy/members.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); membersData = await resp.json(); } catch(e) { membersData = []; } } if (typeof renderCoreMembers === 'function') { renderCoreMembers(); if (typeof renderAllMembersPage === 'function') renderAllMembersPage(); } }
-async function loadNewsData() { showContentLoading('newsPreviewGrid', '加载动态...'); showContentLoading('newsFullGrid', '加载动态...'); try { const resp = await fetch('data/news/index.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); newsData = await resp.json(); } catch(e) { console.error('news/index.json 加载失败', e); newsData = []; } if (typeof renderAllNews === 'function') renderAllNews(); markContentLoaded('news'); }
-async function loadCompetitionsData() { showContentLoading('competitionsPreviewGrid', '加载赛事...'); showContentLoading('competitionsFullGrid', '加载赛事...'); try { const resp = await fetch('data/competitions/index.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); competitionsData = await resp.json(); } catch(e) { console.error('competitions/index.json 加载失败', e); competitionsData = []; } if (typeof renderAllCompetitions === 'function') renderAllCompetitions(); markContentLoaded('competition'); }
+async function loadAboutData() { showContentLoading('coreMembersGrid', i18n[currentLang].loading_about); try { const resp = await fetch('data/about.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); aboutData = await resp.json(); } catch(e) { aboutData = null; } if (typeof renderAboutSections === 'function') renderAboutSections(); updateHeroLastUpdated(); }
+async function loadMembersData() { showContentLoading('coreMembersGrid', i18n[currentLang].loading_members); if (!playersData) await loadPlayers(); if (playersData && Array.isArray(playersData.players)) { membersData = playersData.players.filter(p => p.role).map(p => ({ name: p.name, uid: p.uid, role: p.role, description: p.description, qq: p.qq })); } else { try { const resp = await fetch('data/_legacy/members.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); membersData = await resp.json(); } catch(e) { membersData = []; } } if (typeof renderCoreMembers === 'function') { renderCoreMembers(); if (typeof renderAllMembersPage === 'function') renderAllMembersPage(); } }
+async function loadNewsData() { showContentLoading('newsPreviewGrid', i18n[currentLang].loading_news); showContentLoading('newsFullGrid', i18n[currentLang].loading_news); try { const resp = await fetch('data/news/index.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); newsData = await resp.json(); } catch(e) { console.error('news/index.json 加载失败', e); newsData = []; } if (typeof renderAllNews === 'function') renderAllNews(); markContentLoaded('news'); }
+async function loadCompetitionsData() { showContentLoading('competitionsPreviewGrid', i18n[currentLang].loading_competitions); showContentLoading('competitionsFullGrid', i18n[currentLang].loading_competitions); try { const resp = await fetch('data/competitions/index.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); competitionsData = await resp.json(); } catch(e) { console.error('competitions/index.json 加载失败', e); competitionsData = []; } if (typeof renderAllCompetitions === 'function') renderAllCompetitions(); markContentLoaded('competition'); }
 async function loadDrawsData() { try { const resp = await fetch('data/draws.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); drawsData = await resp.json(); } catch(e) { drawsData = []; } }
 let _drawsLoadPromise = null;
 function ensureDrawsData() {
@@ -696,7 +707,20 @@ function linkPlayerName(name) {
 }
 // 名称规范化：按 players.json（含别名）把赛果中的名字归一到规范名
 function normalizePlayerName(raw) { if (raw == null) return raw; const p = nameIndex[raw]; return p && p.name ? p.name : raw; }
-function normalizeScoreLog(log) { if (!Array.isArray(log)) return log; for (const r of log) { if (r['胜者']) r['胜者'] = normalizePlayerName(r['胜者']); if (r['负者']) r['负者'] = normalizePlayerName(r['负者']); if (r['对象']) r['对象'] = normalizePlayerName(r['对象']); } return log; }
+const _ISO_DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+function normalizeScoreLog(log) {
+    if (!Array.isArray(log)) return log;
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    for (const r of log) {
+        if (r['胜者']) r['胜者'] = normalizePlayerName(r['胜者']);
+        if (r['负者']) r['负者'] = normalizePlayerName(r['负者']);
+        if (r['对象']) r['对象'] = normalizePlayerName(r['对象']);
+        const d = r['日期'];
+        if (d && !_ISO_DATE_RE.test(d)) console.warn('[score-log] 日期格式非 YYYY-MM-DD，衰减/赛季归档可能错位:', d, r);
+        else if (d && r['胜者'] && new Date(d + 'T00:00:00') > today) console.warn('[score-log] 记录日期在未来，当前按零权重处理:', d, r['胜者'], '→', r['负者']);
+    }
+    return log;
+}
 let _newsLoadSettled = false, _compLoadSettled = false;
 function markContentLoaded(which) {
     if (which === 'news') _newsLoadSettled = true;
@@ -1006,6 +1030,8 @@ async function renderDetailDrawsSection(type, item) {
     }
 }
 
+let _detailVersionCloseHandler = null;   // 防止重复渲染时 document 级 handler 叠加泄漏
+
 function renderDetailVersion(type, item) {
     const container = document.getElementById('detailVersion');
     if (!container) return;
@@ -1042,7 +1068,9 @@ function renderDetailVersion(type, item) {
     dropdown.appendChild(list);
     container.appendChild(dropdown);
     entry.addEventListener('click', () => { dropdown.style.display = dropdown.style.display === 'none' ? '' : 'none'; });
-    const closeHandler = (e) => { if (!container.contains(e.target)) { dropdown.style.display = 'none'; document.removeEventListener('click', closeHandler); } };
+    if (_detailVersionCloseHandler) document.removeEventListener('click', _detailVersionCloseHandler);
+    const closeHandler = (e) => { if (!container.contains(e.target)) { dropdown.style.display = 'none'; document.removeEventListener('click', closeHandler); _detailVersionCloseHandler = null; } };
+    _detailVersionCloseHandler = closeHandler;
     document.addEventListener('click', closeHandler);
 }
 

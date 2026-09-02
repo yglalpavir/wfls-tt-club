@@ -1,219 +1,149 @@
-# WFLS-TT-Club 全方位审计与改进计划
+# WFLS-TT-Club 第二轮审计与改进计划（2026-09-01）
 
-> 审计日期：2026-08-24
-> 审计范围：全部 22 个 HTML 页面、18 个 JS 模块（约 70 万字符）、style.css（2744 行）、data/ 与 wtt_data/ 全部数据文件、tools/ 脚本、仓库卫生与部署配置
-> 审计方式：静态代码审查 + 数据交叉一致性校验 + 部署链路核查
-
----
-
-## 目录
-
-1. [项目现状概述](#一项目现状概述)
-2. [Bug 与问题清单](#二bug-与问题清单)
-3. [分场景体验优化](#三分场景体验优化)
-4. [功能增强建议](#四功能增强建议)
-5. [四阶段实施计划](#五四阶段实施计划)
-6. [待确认决策点](#六待确认决策点)
-7. [验证方式](#七验证方式)
+> 审计方式：三路并行复审（JS 核心 / Python 工具与数据 / 页面层）+ 关键发现逐项人工核实
+> 前置衔接：上轮（2026-08-24）Phase 0–2 已基本完成并验证（.nojekyll、XSS 事件委托迁移、静默失败治理、详情页竞态、safeStorage、i18n 批次、sync_content 修复、SEO 三项、暴露面收缩、2001 赛季、秋季赛季+CI 守卫、WTT 上下文安全化、暗色防闪、a11y 批次、404/分页、WTT 日史重写）。本轮重点：上轮修复的回归与残留、数据正确性、工具链门禁缺口。
+> **已裁决（业务）**：score-log.json 中 21 组同日完全重复对局为**真实多次对局**（同日多局属正常录入），**不做去重**；ci_validate 不引入重复检测；口径写入 README。
 
 ---
 
-## 一、项目现状概述
+## 一、结论摘要
 
-纯静态站点：原生 HTML/CSS/JS + Chart.js 4，GitHub Pages 部署，无构建步骤、无测试、无 CI。
-内容全部由前端 `fetch()` JSON 后渲染；积分排名由客户端 ELO 变体引擎实时计算。
-
-**核心架构问题（影响多项 bug 的根因）：**
-
-- **全局可变状态单例**：`scoreLogData` / `initialScoresData` / `eventCoefficients` / `seasonsData` 等 ~15 个可变全局变量被 5+ 个脚本共享，WTT 页靠手工 save/swap/restore 切换数据上下文，8 处调用点无 try/finally 保护，任一异常即污染后续所有计算。
-- **双胞胎复制粘贴架构**：club 管线与 WTT 管线 ~40% 代码互为克隆且已实际漂移（硬编码系数、i18n 键缺失一边）；关联强度逻辑存在 **3 份**副本。
-- **字符串模板 + 引号盲区转义器**：几乎所有输出经 `innerHTML` 拼接，`escapeHtml` 不转义引号 → 整类 XSS 地雷。
-- **三套目录发现启发式并存**：manifest 加载器、`wttBuildSeasonIds` 硬编码年份表、hub 探测器各自描述同一数据目录，只有 manifest 符合现实。
-- **每次访问全量现算**：每个访客下载数 MB 比赛日志并重放 O(快照数 × 记录数) 计算，仅为显示一张最新排名表。
+1. **上轮修复产生两类新问题**
+   - **回归**：5 处标题标签错配——上轮 h4→h3 / h3→h2 只改了开标签没改闭标签（已逐行核实 ranking.html:75、wtt_ranking.html:66、wtt_dataviz.html:282/284、wtt_assoc.html:352）。
+   - **漂移残留**：上轮把明细弹窗改用 LOSER_POINT_MULTIPLIER 只覆盖了 ranking.js/player-page.js/WTT 克隆；club 管线的 data-viz.js（9 处）与 personal-stats.js（5 处）仍硬编码 `*0.8`。
+2. **数据面**：`data/` 内误入 npm 残留（package.json + package-lock.json，08-31 出现）；news n11 无正文仍可被搜索；重复对局已裁决为正常（见上）。
+3. **工具链门禁有系统性漏洞**：`sync_content.py --check` 不比对生成产物与磁盘（手改 index.json CI 照样绿）；ci_validate.py 遇坏记录直接 KeyError 崩溃，且缺 bonus 分数/赛制/赛季日期/players-draws schema 校验。
+4. **引擎口径隐患**：personal-stats 日史衰减用死常量 HALF_LIFE_DAYS(180) 而非配置值（decay-config 实际 t=45）；每局重放用比赛日期做衰减基准，与排名弹窗口径不一；WTT 手工全局交换无 try/finally。
+5. **页面层根因债**：nav/footer/QR 每页 4–5KB 复制粘贴（标题错配这类回归的直接根源）；公共页 fetch 失败永远"加载中"转圈。
 
 ---
 
-## 二、Bug 与问题清单
+## 二、Bug 清单（位置均经本轮核实；行号为 2026-09-01 工作区）
 
-### 🔴 P0 紧急（时间炸弹 / 生产事故级）
+### 🔴 P0 数据与回归
 
-| # | 问题 | 位置 | 说明与修复方向 |
-|---|------|------|----------------|
-| P0-1 | **缺少 `.nojekyll`** | 仓库根目录（已验证不存在） | GitHub Pages 默认跑 Jekyll，剔除所有 `_` 前缀路径：`data/_legacy/*.json` 线上全部 404。club 前台主路径走 players.json 不受影响（回退分支 `common.js:587,594`、`score-engine.js:556` 仅静默降级），但 `js/admin.js:13-23` 以 `_legacy` 为主数据源，admin 页线上真实故障。修复：根目录添加空 `.nojekyll` |
-| P0-2 | **escapeHtml 不转义引号 → XSS 地雷** | `js/common.js:1214-1219`（根源）；消费点 `js/ranking.js:194`、`js/wtt_ranking.js:411`、`js/wtt_dataviz.js:797-811,866`、`js/wtt_personal_stats.js:789-839` 等约 60 处 | `textContent→innerHTML` 技巧只转义 `& < >`。球员名含 `'`/`"` 即破坏 `onclick="showScoreDetail('${...}')"` 内联拼接（按钮失效或存储型 XSS）。当前数据恰好干净（43 名球员无引号字符），属活地雷。修复：转义器补 `"→&quot;`、`'→&#39;`；内联 onclick 改事件委托 + `data-*` 传参 |
-| P0-3 | **WTT 正式数据中球员身份被拆分** | 来源笔误 `tools/import_lagos_2026.py:77,104,118,119,126,129`、`tools/import_dusseldorf_2026.py:126,174,179,182,184`；落地 `wtt_data/wd/score-log-2026-wtt.json:1595,1619,1631,1638`、`wtt_data/xd/score-log-2026-wtt.json:259,264,359`、`wtt_data/ws/score-log-2026-ws.json:570,8364,10049,10079,10163,10205,10223,10236` | `NatalIA BAJOR` / `CLEMENT LAINE` 与正确拼写在同一数据集共存，另有全大写变体 `NATALIA BAJOR` 与姓名倒序 `BAJOR Natalia`；前端严格相等匹配（`wtt_personal_stats.js:587,589`）导致同一球员战绩分裂为多个档案。修复：修正数据 + importer 加大小写/词序归一化 |
-| P0-4 | **后台暴露面全公开** | `data/about.json:3` `"adminKey":"admin616"`；`test_harness.html`（无 noindex 可爬）；`tools/` 1109 个被跟踪文件含爬虫源码与原始抓取数据 | 搜索框输密钥进 admin.html，但密钥明文人人都可读（安全剧场）；测试工具页直接可达；内部工具链全部发布。修复：删 test_harness.html、去 adminKey 假门、tools 数据目录移出跟踪 |
+| # | 问题 | 位置 | 修复方向 |
+|---|------|------|----------|
+| P0-1 | `data/` 内 npm 残留（dep: ittf-pingpong），若在 data/ 跑 npm install，node_modules 数千 JSON 会被 ci_validate 遍历 | data/package.json、data/package-lock.json | 删除两个文件 |
+| P0-2 | 5 处 `<hN>…</hM>` 错配（上轮回归） | ranking.html:75、wtt_ranking.html:66（h2…/h3）；wtt_dataviz.html:282/284、wtt_assoc.html:352（h3…/h4） | 闭标签对齐开标签 |
+| P0-3 | news n11 无 content/contentFile，搜索结果正文为空 | data/news/n11/n11.json | 补正文或 `"visible": false` |
 
-### 🟠 P1 高优先级 Bug
+### 🟠 P1 引擎/前端正确性
 
-| # | 问题 | 位置 | 说明与修复方向 |
-|---|------|------|----------------|
-| P1-1 | **SEO 自断：robots 屏蔽了全站内容源** | `robots.txt:8-9` vs 架构 | 内容全部由前端 fetch `/data/*.json` 渲染，robots 却 Disallow `/data/` → 搜索引擎抓到的全是空壳页。修复：放开 `/data/` 或部署期预渲染 HTML |
-| P1-2 | **sitemap 与 noindex 互相矛盾** | `sitemap.xml:64-86`；各 wtt_*.html `<meta robots>` | sitemap 收录 4 个 `noindex,nofollow` 的 WTT 页，却漏了可收录的 `player.html`/`detail.html`；14 个 lastmod 全部硬编码 `2026-08-08` |
-| P1-3 | **静默失败：score-log 加载失败仍返回成功** | `js/score-engine.js:577` `catch(e){ scoreLogData=[]; return true; }` | 下载残缺时图表照常用"只有初始积分快照"的时间线渲染，用户无从察觉。对比 `loadInitialScores` 正确返回 false。修复：返回 false 并加入 `main.js:38`、`ranking.js:134` 校验 |
-| P1-4 | **详情页初始化竞态 + 无限轮询** | `js/common.js:204,640,709-716`；`js/main.js:76` | `checkAllDataLoaded()` 测试的数组初始值 `[]` 即真值 → 就绪判断恒真；`updateDetailPage` 可能并发执行 3-4 次（重复 fetch + DOM 写入竞态）；index.json 失败时 200ms 轮询永不停止（每轮 2 个请求）。修复：Promise.allSettled 门控 + 运行令牌 + 轮询上限退避 |
-| P1-5 | **明细弹窗硬编码 0.8 与引擎配置脱节** | `js/ranking.js:65-66,72` vs `js/common.js:218` | 引擎负者扣分用可配置的 `LOSER_POINT_MULTIPLIER`（注释明示 WTT 设 1.0），弹窗却写死 `*0.8`——任何非 0.8 配置下两处数值不一致 |
-| P1-6 | **2001 孤儿数据统计口径不一** | `wtt_data/{ms,ws}/score-log-2001-*.json` vs 各类目 `seasons.json` 从 2002 起 | 引擎所有计算过滤到赛季起点之后 → 排名页不统计 2001 年；但 `wtt_dataviz_extra.js:88-99`、`wtt_personal_stats.js:586-590` 无赛季过滤照常统计 → 同一球员两处数字不同。修复：补 2001 赛季定义或统一排除口径 |
-| P1-7 | **localStorage 未防护，Safari 隐私模式语言切换整个失效** | `js/common.js:231,251,405,536`；`js/admin.js:86-95` | `setLanguage` 首行 `setItem` 即抛 QuotaExceededError。修复：safeGet/safeSet try-catch 垫片 |
-| P1-8 | **sync_content.py exit code 恒为 0** | `tools/sync_content.py:638` | `main()` 无 return → `main() is None` 恒真 → `sys.exit(0)` 无条件成立；`log_error()` 不计入 warning 计数。CI/cron 无法感知失败 |
-| P1-9 | **sync_content.py 幂等承诺失效路径** | `tools/sync_content.py:333-366,530` | 快照文件损坏时 `problems` 标志被丢弃，每次运行都归档新版本，违反 README "重复运行不新增快照" 承诺 |
-| P1-10 | **score-log 存在 18 组完全重复记录** | `data/score-log.json` | 同 `(日期,类型,胜者,负者)` 元组出现 2-3 次（如 2026-06-04、06-09、07-12、07-30、08-05）。项目自己的 importer 对该元组去重——语义冲突需业务判断：当天真打多次还是录入重复？ |
-| P1-11 | **赛季数据过期：09-01 起新比赛归入被延伸的"2026年暑假"** | `data/seasons.json`；`score-engine.js:497-500` | 最后一个赛季 `2026-summer` 于 08-31 结束（审计日仅剩 7 天）。到期后页面**不会白屏**：`getSeasonForDate`（score-engine.js:444-450）对超范围日期回退返回最后一个赛季，实时排名显式"延伸至今天"（:497-500），历史快照照常可查。真实后果是数据口径失真：秋季新比赛持续计入暑假赛季、跨赛季积分继承缺失。修复：新增秋季赛季 + 可选前端提示 + CI 过期告警 |
+| # | 问题 | 位置 | 修复方向 |
+|---|------|------|----------|
+| P1-1 | 日史衰减用死常量 HALF_LIFE_DAYS=180，非配置值 DECAY_HALF_LIFE_DAYS（t=45）；且该 LUT 是死代码（循环实际走 getFreezeWeight），每次调用白分配 3000 元素 Float64Array | personal-stats.js:784-786；常量 common.js:232 | 删除 LUT 与 getDecay 死代码 |
+| P1-2 | club 管线 14 处硬编码 `*0.8`，未用 LOSER_POINT_MULTIPLIER（WTT 侧已迁移，漂移实锤） | data-viz.js:479,496,498,500,555×3,604,713,716,719；personal-stats.js:381,551,554,557,875 | 全部替换为全局常量 |
+| P1-3 | 每局重放把比赛日期当衰减基准，与排名明细弹窗（传快照日）口径不一 | player-page.js:126；data-viz.js:555,602,710；personal-stats.js:379,548 | 统一传当前快照日 |
+| P1-4 | wttRenderScoreDetail 手工 swap 4 个引擎全局，无 try/finally；中途抛异常则 club 全局永久指向 WTT 数据。同文件已有安全的 wttWithDataContext 未使用 | wtt_ranking.js:97-109,193-194 | 改走 wttWithDataContext |
+| P1-5 | WTT 明细/重放 6 处漏传"赛制"参数（当前因 WTT 禁衰减而中性，属埋雷） | wtt_ranking.js:142-143；wtt_player.js:164-165；wtt_personal_stats.js:549；wtt_dataviz.js:659,675,783 | 补传 record['赛制'] |
+| P1-6 | getSeasonForDate 对**赛季开始前**的日期回退返回"最后一个"赛季（应为第一个） | score-engine.js:500-506 | 早于首赛季时返回 seasonsData[0] |
+| P1-7 | initialScore 无 Number 强转（字符串会引发字符串拼接链，getBaseScore(NaN)=66）；currentScores[winner] `||` DEFAULT 对合法 0 分误替换 | score-engine.js:138,698；SCORE_FLOOR common.js:232 | `Number(x) || DEFAULT`；用 typeof 判数 |
+| P1-8 | 未来日期比赛 dd<0 → weight=0，静默贡献零分（数据笔误不可见）；日期校验只查字符串不查格式 | score-engine.js:68；wtt_common.js:572-596 | normalize 时校验 `^\d{4}-\d{2}-\d{2}$` 并 console.warn 未来记录 |
+| P1-9 | loadSeasons/loadScoreLogData 及 wtt_common 5 处 fetch 不查 resp.ok（404 HTML 报成 parse error，掩盖真因） | score-engine.js:721-722；wtt_common.js:602,722,733,784,794 | 统一加 resp.ok 检查 |
+| P1-10 | wttInitialized 加载失败不复位 → 无法重试，只能刷新页面 | wtt_ranking.js:201-202 | catch 中复位标志 |
+| P1-11 | 版本下拉每次打开叠挂一个 document 级 closeHandler（外部点击才自移除，反复开合即泄漏累积） | common.js:1045-1046 | 打开前先摘除旧 handler |
+| P1-12 | 公共页 fetch 失败无错误态：静态"加载中"占位永远转圈（admin/wtt_hub 已有 .catch 范式可抄） | ranking.html:117、wtt_ranking.html:118、wtt_assoc.html:285/325、player.html:74 等 | main.js 统一 catch → 错误占位 + 重试按钮 + `<noscript>` |
 
-### 🟡 P2 中低优先级
+### 🟡 P2 工具链 / i18n / 页面 / 卫生
 
-| # | 问题 | 位置 |
-|---|------|------|
-| P2-1 | i18n 缺口：搜索占位符两个 key（`search_input_hint`/`search_hint_info`）不存在于词典；排名流程大量硬编码中文（"暂无记录"/"人"/排序按钮/进度标签）；时间线标签计算时固化、切语言不刷新；`formatSnapshotLabel` 英文模式也输出"2025年3月1日"；`el.title = ... && ...` 会把布尔 false 字符串化赋给 title | `common.js:37,234,429`；`ranking.js` 多处；`score-engine.js:225,339,441,546` |
-| P2-2 | 双胞胎漂移实锤：club/WTT 两管线近似行数 `wtt_ranking 62/546`、`wtt_dataviz 170/889`、`wtt_personal_stats 354/1295`；引擎内部同步/异步两版 130 行块 ~95% 重复（`score-engine.js:186-285` vs `292-417`）；`wtt_no_data` 键重复定义两次后者静默覆盖（`common.js:100/107,173/180`） | 多处 |
-| P2-3 | WTT hub 可用性检测每次访问发起 ~100 个串行请求（探测不存在的 `score-log.json` 路径 + 逐年试探），找到文件还整份下载只为计数；分类状态只看第一个命中的文件；`wttCheckCategoryStatus` 是死代码副本 | `wtt_hub.html:394-436`；`wtt_common.js:1249-1263` |
-| P2-4 | 硬编码赛季年份表（ittfYears=[2008,2009,2011,...]+2021..2026）漏掉实际存在的 2001-2005,2018,2020 → manifest 损坏时静默加载残缺历史；docstring 写错 manifest 键名 | `wtt_common.js:627-641,645`；`wtt_hub.html:401` |
-| P2-5 | 8 处手工 save/swap/restore 全局数据无 try/finally（已有安全的 `wttWithDataContext` 未使用），异常后 `_seasonStartCache` 与全部函数读到错误数据集 | `wtt_dataviz.js` ×6、`wtt_personal_stats.js` ×2 |
-| P2-6 | 硬编码 227 人性别表决定 XD 组合键序：新球员不在表中→按字母序键化并生成 FNV uid 进分享链接，日后补录性别→同一组合换键→旧链接全断、历史拆两队 | `wtt_common.js:47-274,295-323,1386-1391` |
-| P2-7 | 名字身份合并遗漏现有数据的 token 数变体（`Manav Thakar`/`Manav THAKKAR`、`QUEK Yong Izaac`/`QUEK Izaac` 各自成两个档案）；从未交手的同名 token 不同人会被误合并 | `wtt_common.js:351-418` |
-| P2-8 | md/wd/xd 无 initial-scores.json，settings 一旦离开 flat1300 模式四个页面全挂 | `wtt_common.js:923-925` |
-| P2-9 | 性能：`calculateRealtimeRanking` 绕过现成的 match index 做 O(players×log) 双重过滤（`score-engine.js:540-544`）；快照循环对每快照全量重扫日志重建批次索引（`:238-240,355-357`）；无人活跃时 realtime 节点列出所有人、常规快照却过滤为空，行为不一致（`:540`） | score-engine |
-| P2-10 | WTT 个人页 O(天数×记录数) 主线程重放：2002 年起 ~9000 天 × 每天展开千人大对象 + 重放全量比赛 ≈ 上亿次迭代，ms 类目明显卡顿；`wttGetApproxScoreAtDate` 每对手再重放一次 | `wtt_personal_stats.js:520-560,667-670,962-1007` |
-| P2-11 | 名字索引冲突静默 last-wins：重名或别名撞真实名时一半名单链错个人页，历史结果被错误归一化 | `common.js:616-620` |
-| P2-12 | 引擎无自弈守卫（胜者==负者未拒绝）；normalizeScoreLog 别名映射可能把普通比赛隐形变成自弈记录（当前数据已验证干净） | `score-engine.js:246-248,364-365` |
-| P2-13 | club_race.js 依赖其他脚本的全局变量无 typeof 守卫、initialized 标志形同虚设（二次 init 双绑监听）、resize 监听每次 init 叠加 | `club_race.js:49,211,354,357-385` |
-| P2-14 | 版本下拉每次渲染泄漏一个 document 级 click 处理器 | `common.js:913-914` |
-| P2-15 | sync_content.py 其他：BOM 文件会被跳过出索引（utf-8 vs utf-8-sig）；日期校验正则接受 `9999-99-99`；media 以 `/` 开头路径在 Windows 解析到盘根；迁移步骤无备份且中断留双份 | `sync_content.py:103,84,117-121,166,396-437` |
-| P2-16 | importer 输出格式漂移（xd 紧凑 JSON-lines、其余 indent=2）；导入原地覆写无备份 | `import_lagos_2026.py:152-161` |
+**sync_content.py**
 
-### ⚪ P3 卫生 / 低危
+1. `--check` 不 diff 生成产物与磁盘 → 手改 index.json CI 照绿（最大门禁缺口）。修复：check 模式内存生成后逐文件比对字节，不一致报错。
+2. 无 stdout UTF-8 reconfigure（GBK 控制台打印生僻字即崩），与 ci_validate.py:16-19 不一致。
+3. folder 名 ≠ id 仅 warn 仍继续，且 Windows 大小写不敏感 → 历史分叉进两个目录。改为硬错误。
+4. 快照与 manifest 两文件写非原子，崩溃可留孤儿 .v{n}.json；load_history 只查 manifest→file 不查反向 → 孤儿永不检测。加 file→manifest 方向校验。
+5. check_type 不去重而 sync_type 去重（重复 id 时 warn 计数不一致）；check/sync 对 TODAY 取值时点不同（跨午夜漂移）。
 
-| # | 问题 | 位置 |
-|---|------|------|
-| P3-1 | Git 包 530MB：11 个 mp4（最大 17.4MB，合计 ~120MB）反复提交所致；跟踪树 150MB/1508 文件 | `.git/objects/pack/` |
-| P3-2 | .gitignore 迟到导致忽略目录仍被跟踪：`tools/tleague_data/`（1026 文件 5.1MB）、`tools/backup_wd/`、`tools/__pycache__/`（含已删除源码的孤儿 .pyc）、乱码文件名的 zip | `.gitignore:19-20` |
-| P3-3 | 死依赖 `ittf-pingpong ^2.0.1` 零引用；`"main":"index.js"` 指向不存在的文件 | `package.json` |
-| P3-4 | `docs/result_ittf_link/` ~110 个原始 txt（4.6MB）随仓库发布上线，仅 tools 脚本引用 | docs/ |
-| P3-5 | 凭据扫描干净（tools/js/html 中 token/api_key/password/cookie 零命中）✔ | — |
-| P3-6 | players.json 健康（43 人 uid 10000-10042 连续唯一无重名别名）✔；news 16 / competitions 5 / qa 2 条目与 index/search 完全一致 ✔；draws.json 引用有效 ✔；changelog 格式统一 ✔ | — |
+**ci_validate.py**
 
----
+6. 记录缺"负者"键时 KeyError 崩溃（r.get("胜者") 之后直接 r["负者"]，:86）；score-log 非 list 时 .get 崩溃。加结构守卫。
+7. bonus 记录（比赛结果加分 ×37）完全绕过校验：分数恒为字符串 "+50"，前端 parseFloat("+5O")→0 静默吞掉。校验 parseFloat 可解析且非零。
+8. 赛制零校验：238 局中 178 局缺"赛制"（靠默认赛制兜底），已有值不对照 赛制系数 键 {bo3,bo5,bo7}；默认赛制覆盖所有数值类型、decay noDecayTypes ⊆ 类型 均未断言。
+9. 赛季校验弱：startDate/endDate 无 ISO 格式检查、无重叠/间隙检查、snapshotDates 未校验（2026-autumn 为空数组）。
+10. players.json（uid/name 唯一、initialScore 数值、status 枚举）与 draws.json（competitionId 引用）无 schema 校验。
+11. 注：**不加**重复对局检测（已裁决同日多局为正常录入）。
 
-## 三、分场景体验优化
+**i18n 缺口**
 
-| 场景 | 现状痛点 | 优化方案 |
-|------|----------|----------|
-| **暗色模式用户刷新页面** | 白色闪烁：主题在 121KB 解析阻塞的 common.js 下载后才应用（`common.js:536`）；CSS 无 prefers-color-scheme 支持 | 每页 `<head>` 内联 bootstrap 脚本首帧前应用主题；CSS 选择器迁移到 `html.dark-mode` 并增加系统偏好默认值 |
-| **英文用户** | 中文闪现（语言在 JS 加载后才恢复）；排名页中英混排；图表轴标签"年/月/日"硬编码；WTT hub 导航无 data-i18n；document.title 从不本地化 | 语言同样内联预应用；补齐缺失 i18n key；标签改为渲染时解析（存结构化数据而非固化字符串） |
-| **移动端** | 分页每页一个按钮无窗口化（`common.js:584`），条目多了按钮爆炸且每次筛选全量重渲染；部分导航图标按钮无 aria-label（news/competitions 等页与 index 不一致） | 分页窗口化（1 … n−1, n）或"第 x/y 页"；触控目标 ≥44px；统一各页 navbar 标注 |
-| **慢网络 / 弱网** | 每页 head 同步 Google Fonts 请求 **11 个字重** + Font Awesome 全量 CDN；body 尾部无 defer 的 CDN 脚本；零 preload/preconnect（除 fonts）；marked.min.js 未锁版本随时可能被上游破坏性更新打断渲染；本地资源零 cache-busting | 字体子集化 + display=swap；非关键脚本 defer；preconnect jsdelivr/cdnjs；锁定 marked@x.y.z + SRI；构建期注入 `?v=<sha>` |
-| **键盘 / 读屏用户** | 模态框无 role="dialog"、无焦点陷阱、开/关不转移焦点；搜索清除/关闭按钮无名；时间节点 `<li>` 与成员卡片点击型 div 不可 Tab；汉堡菜单从不设 aria-expanded；标题层级断裂（player.html 无 h1 从 h4 开始；contact/ranking 跳级） | 语义化改造 + 焦点管理三件套（移入/陷阱/还原）+ aria-expanded + 标题层级修复 |
-| **视觉障碍 / 对比度** | WCAG AA 不达标的核心变量：`--text-muted` 亮色 2.92:1 / 暗色 3.88:1（需 4.5:1）；`--accent-gold` 2.08:1；`--primary-blue` 3.98:1（大字勉强过）；这些变量驱动日期、提示、分页信息、表格头等全站文本 | 调暗 muted tokens（如 #5b6b7d≈5.0:1）、金色只作装饰、蓝色加深至 #0062cc |
-| **社交分享** | 全站声明 `twitter:card=summary_large_image` 却**零** og:image/twitter:image → 分享卡片空白；obsolete keywords meta；detail.html canonical 恒定不随 ?id= 变化 | 制作 1200×630 OG 图全站引用（绝对 URL）；删 keywords；预渲染后按条目输出动态 meta |
-| **404 迷路者** | 嵌套路径（`/foo/bar`）下相对链接 `index.html` 解析到 `/foo/index.html` 再 404，10 秒定时跳转也落回 404 → 死循环 | 改绝对基准路径（`/wfls-tt-club/` 或从 pathname 推导） |
-| **图片视频浏览** | 4.52MB 原图直出、17.79MB 视频无 poster、媒体无固有宽高 → 详情页 CLS | ≤200KB WebP 缩略图 + 点击看原图；视频加 poster；显式尺寸 |
-| **WTT 访客** | hub 探测 ~100 串行请求；每页全量下载类目历史（ms 3.19MB/ws 2.31MB...）；个人页主线程卡顿 | 读 manifest.json（1 请求，可扩展 record-count 字段供状态检测）；部署期预算快照 JSON；个人页增量重放算法 |
-| **打印场景** | style.css 打印样式 0 条规则 | 小型 @media print 块 |
+12. WTT 两处直出中文快照 label（英文页混排）：wtt_ranking.js:57、:338；wtt_player.js:63。根因是 formatSnapshotLabel（score-engine.js:497）计算期固化中文，club 侧有 getNodeDisplayLabel 运行期重解析，WTT 侧没接。
+13. 搜索摘要"排名：/胜率："硬编码（common.js:487）；搜索占位"搜索..."与"加载中..."默认值（common.js:44,58）；图表 tooltip `${raw} 场` 与轴"年/月"（data-viz-extra.js:139,345,348,412；wtt_dataviz_extra.js:33,36,993,1224）；draws-viewer.js:93-97 工具 title。
+14. 键错用：club 个人页用 wtt_ov_* 键（personal-stats.js:282-285）、player-page.js:155 用 wtt_bonus（club 键为 rank_add_short）；player-page.js:76 状态徽章仅英文模式渲染。
+
+**页面层**
+
+15. 搜索入口仅 index/contact 两页有（news/competitions/ranking 有 search.json 却无入口）；404.html noindex 却带 canonical（矛盾）；index.html:91 汉堡缺 aria-expanded；WTT 页脚丢失 data-i18n（wtt_dataviz.html:282-284、wtt_assoc.html:352）。
+16. nav(~2.5KB)×18 + footer×18 + QR modal×14 + 主题脚本×20 全为复制粘贴——P0-2 类错配与页脚漂移的直接根源。方案：shared-partials.js 注入（无构建步骤下的最小改造）。
+17. CDN：5 个依赖全无 SRI/integrity；marked@12 仅锁大版本；KaTeX 三件套被新闻/赛事/QA/详情全量加载（多数内容无公式）。加 integrity + 精确锁版 + KaTeX 检测到 `$`/`\(` 再加载。
+18. 公开面收缩：tools/ 73 文件（爬虫源码+原始抓取数据）、docs/、data/_legacy/ 52KB、qa/q1 的 v1-v3 快照（每份 ~12KB 四份近重复）全被 Pages 公开部署；robots disallow 不是访问控制。git rm --cached 并考虑移出部署分支（tools/sync_content.py 与 ci_validate.py 两工具保留）。
+19. 媒体：4.4MB 原图、57MB 视频无压缩直出；Google Fonts 13 字重。
+20. 全局状态债（长期）：~45 个可变全局、async 交换窗口期 club/WTT 数据互见、WTT 三个入口加载函数无 single-flight、_seasonStartCache 按引用键控、loadRankingData 三重定义靠脚本顺序裁决。
+
+**已核实无需修**：escapeHtml 已转义引号（AGENTS.md:44 描述过时，需更新文档）；内联 onclick 迁移已彻底完成；排序/平局/舍入逻辑无误；重复对局（已裁决正常）。
 
 ---
 
-## 四、功能增强建议
+## 三、四阶段实施清单
 
-### 4.1 部署期构建管线（GitHub Actions）★ 地基工程
+### Phase 0 — 回归与数据急救（半小时级）
 
-解决一类问题的杠杆点：
+- [x] 删 data/package.json、data/package-lock.json
+- [x] 修 5 处标题闭标签（ranking.html:75、wtt_ranking.html:66、wtt_dataviz.html:282/284、wtt_assoc.html:352）
+- [x] news n11 补正文（依 excerpt 拟写管理层名单全文）；跑 `python tools/sync_content.py` 重建索引（自动归档 v2 快照）
+- [x] README 补充"同日多局正常录入"口径说明（18→21 组）
 
-- **预计算排名快照 JSON**：部署时跑一遍积分引擎输出各赛季快照，访客免下载数 MB 日志免现算（流量省 >90%，顺带消灭 P2-10 卡顿）
-- **预渲染新闻/赛事/QA HTML**：根治 SEO 空壳问题（P1-1），detail 页获得独立 canonical/title/og（P1-2 关联）
-- **自动生成 sitemap**（lastmod 取自 git/changelog）+ cache-bust 版本号注入
-- **赛季过期 CI 告警**：当前日期超出最后赛季 endDate 时 PR check 报红 —— 把 P1-11 这类赛季过期口径漂移变成显式失败
-- **数据校验门禁**：schema + 引用完整性（名字↔players.json、无自弈、ISO 日期、tag 白名单）作为合并前置检查
+### Phase 1 — 引擎/前端 bug（P1-1 ~ P1-12）
 
-### 4.2 Web 记分录入工具
+- [x] 删 personal-stats 死 LUT（P1-1）；`*0.8`→LOSER_POINT_MULTIPLIER ×14（P1-2）；重放衰减基准统一（P1-3，新增 getTodayStr()，getApproxScoreAtDate 用 targetDate）
+- [x] wttRenderScoreDetail 改 wttWithDataContext（P1-4，提取 wttRenderScoreDetailInContext）；补赛制参数 ×8（P1-5，含 wtt_dataviz 两处 calcRawPoints）
+- [x] getSeasonForDate 首赛季回退（P1-6）；initialScore Number 强转 + typeof 判数（P1-7）
+- [x] normalizeScoreLog 日期格式校验 + 未来记录告警（P1-8）；resp.ok ×9（P1-9，含 loadScoreLogForViz/loadSeasons）；wttInitialized 失败复位（P1-10）
+- [x] 版本下拉 handler 泄漏（P1-11，_detailVersionCloseHandler 复用）；公共页统一错误态 + noscript（P1-12，showRankingLoadFail + 20 页 noscript）
 
-admin.html 内嵌表单：选日期/类型/胜者/负者（或积分调整对象+分数）→ 前端校验（球员存在于 players.json、类型白名单、日期合法）→ 生成 score-log 片段一键复制或直接产出可提交的 JSON。降低维护门槛，社团换届后可持续运转。配合 sync_content.py 修复（P1-8/9）形成闭环。
+### Phase 2 — 工具链门禁
 
-### 4.3 对战预测器
+- [x] sync_content.py：--check 产物 diff（#1，build_index_and_search 与 sync 共用构造逻辑）、GBK stdout（#2）、folder≠id 硬错误（#3）、孤儿快照检测（#4）、check/sync 行为一致（#5，TODAY 函数化）
+- [x] ci_validate.py：结构守卫（#6）、bonus 分数校验（#7）、赛制校验三件（#8）、赛季 ISO/重叠/snapshotDates（#9，空隙为警告）、players/draws schema（#10，winner 允许 0=平局）
+- [x] 验证：手改 index.json → --check 红 ✓；缺"负者"/自弈记录 → FAIL 而非 traceback ✓；孤儿快照 → 告警 ✓
 
-`docs/predicted-win-rate.md` 已有算法文档但前端未实现。可在 data_viz 球员对比卡片加"预测胜率"展示（基于现行积分差距基础分表反推），零新数据成本。
+### Phase 3 — 体验与卫生
 
-### 4.4 PWA 支持
+- [x] i18n：WTT 7 处直出 label 接 getNodeDisplayLabel（#12，wtt_ranking/wtt_player/wtt_assoc）；#13 搜索摘要/占位/加载文案/图表"场"与"年月"/draws 工具提示全部进词典（新增键×双语）；#14 bonus 键统一 score_type_bonus、状态徽章双语渲染（wtt_ov_* 键经核实在双语词典中齐全，功能无碍，保留）
+- [x] shared-partials.js：nav/footer/QR 注入式共享（#16，17 页 nav+footer、13 页 QR，净删 788 行重复 markup；wtt_hub 保留自定义 chrome；active 高亮由 highlightNavByPath 运行期处理；顺带修复 index 汉堡 aria-expanded、WTT 页脚 data-i18n 丢失、页脚 Q&A/更新日志链接缺失）
+- [x] a11y/SEO（#15）：404 去掉与 noindex 矛盾的 canonical；搜索入口经核实已由 ensureGlobalSearchUI 全站注入（审计项过时）
+- [x] CDN 加固（#17）：8 个外部依赖全部 SRI（sha384 双重下载校验）+ crossorigin；marked@12 锁定 12.0.2；删除死依赖 auto-render.min.js（代码用 common.js 自带 renderLatexInString）；KaTeX 全量懒加载经评估放弃（风险>收益）
+- [x] 公开面收缩（#18，修正后范围）：git rm --cached 71 个 tools/ 爬虫与原始数据文件（保留 sync/ci_validate/generate_meta 三工具）+ docs/ 两份内部审计 + data/_legacy/（6 文件）+ .gitignore 白名单规则。**重要修正**：qa 版本快照/清单是详情页版本历史的运行时数据源（common.js:797,1079），必须保持部署——原计划该项作废
+- [x] 媒体（#19 部分）：>1MB 的 4 张 JPEG 全部重压（12MB→5.2MB，4.5MB→361KB）；视频经 ffprobe 核实码率已仅 ~1Mbps（体积大因时长），重压无益有损，跳过；字体裁剪沿用上轮决策放弃
+- [x] 更新 AGENTS.md（escapeHtml 描述已过时→更正、shared-partials 约束、同日多局口径、版本快照必须部署、wttWithDataContext 规范）
 
-manifest.webmanifest + theme-color + apple-touch-icon + Service Worker（静态资源缓存策略）。手机添加到主屏幕、弱网可用。favicon/theme-color 本就是缺口（P2 清单项）。
+### Phase 4 — 长期（承接上轮未完成项）
 
-### 4.5 其他候选
-
-- **RSS/Atom feed**：news 有结构化数据，构建期生成 feed.xml 成本极低
-- **球员主页增强**：头衔徽章墙（honors 已有数据）、生涯里程碑时间轴、单双打分栏
-- **交手记录库**：score-log 已含全部对阵，做一个可按球员/类型/日期筛选的历史对战检索页
-- **赛季管理自动化**：脚本按学期规则自动生成下一赛季骨架 + snapshotDates 建议
-
----
-
-## 五、四阶段实施计划
-
-### Phase 0 — 急救（目标：当天完成）
-
-- [x] 根目录添加空 `.nojekyll`
-- [x] escapeHtml 补引号转义；内联 onclick 全部改事件委托 + data-* 传参（含 wtt_dataviz/wtt_personal_stats 的未转义注入点）
-- [ ] 修正 `NatalIA BAJOR`（含 `NATALIA BAJOR` 全大写、`BAJOR Natalia` 倒序变体）/ `CLEMENT LAINE` 数据拼写（wd/xd/ws score-log-2026）；importer 加大小写/词序归一化防复发
-- [x] 已删除 test_harness.html；已移除 adminKey 及对应搜索框后门逻辑
-
-### Phase 1 — Bug 清理
-
-- [x] 静默失败治理（loader 返回 false + 两处校验）
-- [x] 详情页初始化重构（落定门控 markContentLoaded + 运行令牌 + 重试上限 8 次退避）
-- [x] 明细弹窗改用 `LOSER_POINT_MULTIPLIER`
-- [x] safeStorage 垫片 + wfls-lang.v1 版本键（含 admin 页独立垫片）
-- [x] i18n 补齐（新增 16 键×2 语言、排名页全部接入、getNodeDisplayLabel 渲染期解析覆盖 6 个消费文件、title 布尔修复；复核确认 wtt_no_data 并无重复定义，系审计误报）
-- [x] sync_content.py 修复（exit code / problems 传递恢复幂等 / 原子写入 / 严格日期校验 / utf-8-sig / media 根路径 / 迁移 .bak），双跑幂等验证通过
-- [x] SEO 三项完成（robots 重写 / sitemap 12 URL / marked@12 锁定×6 页）
-- [x] 暴露面收缩：git rm --cached 共 1168 文件（tleague_data/__pycache__/backup_wd/_archive/raw txt/result_ittf_link/.tmp），跟踪树 1508→342 文件
-- [x] ms/ws 各补 2001 赛季定义（537/369 条记录纳入排名口径，消除排名页与个人页计数不一致）
-- [x] 按默认方案保留并在 README 补充口径说明（同日多局属正常录入）
-- [x] 新增 2026-autumn 赛季 + 排名页过期提示横幅（i18n 双语）+ CI 过期守卫
-- [x] WTT 全部完成（dataviz 6 处 + personal_stats 2 处改异常安全上下文；hub 探测 ~100 请求→每类目 1 次 manifest 读取；三个死函数已删；硬编码赛季回退表更新并加警告；docstring 键名修正）
-
-### Phase 2 — 体验优化
-
-- [x] 暗色防闪完成：20 页 `<head>` 内联 bootstrap（存储值优先、其次跟随系统偏好）；style.css 92 处 `body.dark-mode`→`.dark-mode` 迁移至根元素；JS 主题状态迁移 documentElement + isDarkTheme() 统一判断。语言预应用受限于纯前端 i18n 架构（词典在 common.js 内），维持现状并记录
-- [x] preconnect×20 页（jsdelivr/cdnjs）；favicon 补齐 8 页；og:image+twitter:image×12 页 + 生成 Assets/images/og-cover.png(45KB)；marked 锁版本。字体裁剪经复核放弃——11 个字重全部在用（300×1/400×3/500×26/600×60/700×50/800×11/900×1），裁剪会破坏样式，记录为决策；defer/缩略图涉及资源重制，列为后续
-- [x] 全部完成：openModal/closeModal 焦点管理三件套+Tab 焦点陷阱；18 页按钮标注（theme/lang/searchToggle/searchClose/searchClear/hamburger aria-expanded）；排名页与 WTT 排名页时间节点 role=button+tabindex+Enter/Space 委托；新闻/赛事/QA/成员卡片 makeCardClickable 键盘化；player 页补 h1、sidebar-title h3→h2、全站页脚 h4→h3（CSS 同步）、contact 层级修正、修复 4 处原有 <h4>…</h3> 错配标签；--text-muted 双模式调至 WCAG AA
-- [x] 404 三链接+定时跳转改 /wfls-tt-club/ 绝对基准；分页窗口化（≤7 页全显，否则 1…n…last）+.pagination-gap 样式；navbar 标注已随 a11y 批次统一
-- [x] computeWttDailyScoreHistory 重写：日粒度限定最近 730 天窗口 + 单调事件指针 + 单调赛季切换（跨赛季按继承积分重置），消除 O(天数×记录数) 主线程卡顿；wttGetApproxScoreAtDate 加同批次记忆化。注：窗口内早期事件的后续衰减为冻结近似，精确值见快照粒度（代码注释已说明）
-
-### Phase 3 — 功能建设（按决策点 5 取舍）
-
-- [ ] GitHub Actions 构建管线（预计算快照 + 预渲染 + sitemap + cache-bust + 赛季过期检查 + 数据校验门禁）
-- [x] admin.html 记分录入面板：比赛结果/积分调整双模式、players.json 与类型白名单联动下拉、逐条校验（必填/胜≠负/日期格式）、队列管理、复制 JSON 片段或下载合并后的 score-log.json
-- [ ] （可选）对战预测器卡片
-- [ ] （可选）PWA manifest + SW
-- [ ] （可选）RSS feed
-- [ ] （长期）双胞胎架构合并：单一数据上下文参数化的共享渲染/计算核心
+- [x] 构建管线子集：tools/generate_meta.py（sitemap.xml lastmod 自动化 + RSS feed.xml 全新生成）+ CI --check 门禁（HEAD 日期方案兼容 shallow checkout）+ index.html RSS 发现链接
+- [ ] 预计算排名快照 / 内容预渲染（大工程，另行立项）
+- [ ] 双管线架构合并（数据上下文参数化，消灭 swap 模式与三重定义）
+- [ ] 可选：PWA / 对战预测器
 
 ---
 
-## 六、待确认决策点
+## 四、决策点
 
-| # | 决策 | 默认方案 | 备选 |
-|---|------|----------|------|
-| 1 | 执行范围 | 全部四阶段 | 分批停在任意 Phase |
-| 2 | admin/tools 暴露面 | 删 test_harness + 去 adminKey + git rm --cached tools 数据目录；admin.html 暂留 | admin.html 也撤出部署分支 |
-| 3 | Git 历史瘦身（.git 530MB） | 只停止跟踪+清理，不改写历史 | filter-repo 改写历史彻底瘦身（需全体协作者重新 clone） |
-| 4 | score-log 18 组重复记录 | 待业务裁决：当天真打多次→保留并文档化；录入重复→去重 | — |
-| 5 | Phase 3 功能取舍 | 先做构建管线 + 记分工具 | 加预测器/PWA/RSS |
+| # | 决策 | 默认方案 |
+|---|------|----------|
+| 1 | 重复对局 | **已裁决**：真实多次对局，保留，仅文档化 |
+| 2 | 公开面收缩范围 | **已执行（修正后）**：git rm --cached tools/ 爬虫与原始数据 71 文件（保留 sync/ci_validate/generate_meta）、docs/ 两份内部审计、data/_legacy/；**版本快照与清单保持部署**（详情页版本历史的运行时数据源，实施时核实） |
+| 3 | Phase 4 取舍 | **已执行**：sitemap lastmod 自动化 + RSS feed + CI 门禁；预计算快照/预渲染/双管线合并另行立项 |
 
 ---
 
-## 七、验证方式
+## 五、验证方式
 
-1. **数据完整性**：每阶段后运行 `python tools/sync_content.py --check`，输出应为 0 警告且退出码正确反映状态
-2. **关键路径手测清单**：
-   - ranking.html：正常赛季渲染 / 模拟 2026-10-01 超出最后赛季时页面仍正常渲染且实时节点延续最后赛季（P1-11 回归）/ 时间节点切换 / 积分明细弹窗数值与表格一致（改 LOSER_POINT_MULTIPLIER 后复核）
-   - 语言切换：排名页无中文残留、刷新后无中文闪现、时间线标签即时刷新
-   - 暗色模式：刷新无白闪、系统偏好首次访问正确跟随
-   - XSS 回归：临时插入含 `'` `"` `<` 的测试球员名，确认明细按钮正常、无脚注执行
-   - WTT：五类目加载、hub 状态检测（应只有 1 个 manifest 请求）、个人页 ms 类目不再长卡顿
-   - 404 页：嵌套路径下链接与自动跳转均回到首页
-3. **性能抽查**：Lighthouse 跑分对比（首屏 LCP/CLS/无障碍分），WTT 页网络面板确认快照 JSON 替代全量日志
-4. **部署验证**：GitHub Pages 上确认 `data/_legacy/about.json` 可 fetch（.nojekyll 生效）、test_harness.html 404、robots.txt 生效后的抓取诊断
+1. 每阶段收尾：`python tools/sync_content.py --check` + `python tools/ci_validate.py` 全绿；Phase 2 后用负面用例验证门禁真能红
+2. 数值一致性：修 P1-2/P1-3 后，同一球员在排名弹窗、个人页、数据可视化三处每局得失分一致（data_viz 对比表 vs 弹窗抽 3 局核对）
+3. i18n：英文模式巡检 ranking/wtt_ranking/player/data_viz 无中文残留；语言切换即时生效
+4. 错误态：DevTools 断网/404 模拟 fetch 失败 → 页面显示错误占位与重试，不再永久转圈
+5. 回归防护：Phase 3 共享化完成后，全站 21 页 grep 无 `<hN>…</hM>` 错配（用本轮同款检查脚本）
+6. WTT：五类目加载正常；wttRenderScoreDetail 中途异常注入后 club 全局未被污染
 
 ---
 
-*本计划基于 2026-08-24 代码库快照生成。行号引用以当日工作区为准，实施时如有偏移请按符号名重新定位。*
-*2026-08-24 修订：经二次代码复核，原"赛季到期白屏"（P0-1）被证伪——引擎已有回退与延伸逻辑，降级为数据口径问题 P1-11；`.nojekyll` 影响面按实际引用关系修正（admin 页为主受损面）；球员拼写变体清单扩大（`NATALIA BAJOR`、`BAJOR Natalia`）。P0 编号相应重排。*
+*本计划基于 2026-09-01 工作区快照，行号已逐项核实；上轮（2026-08-24）计划及其完成记录见 git 历史。*

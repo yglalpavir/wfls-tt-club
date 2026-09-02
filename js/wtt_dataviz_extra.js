@@ -30,7 +30,8 @@ function buildFrequencyBuckets(records, bucketType) {
     function labelOf(key) {
         if (bucketType === 'month') {
             const [y, m] = key.split('-');
-            return y + '年' + parseInt(m) + '月';
+            const _L = i18n[currentLang] || {};
+            return (_L.chart_axis_ym_tpl || '{y}年{m}月').replace('{y}', y).replace('{m}', String(parseInt(m)));
         }
         const d = new Date(key + 'T00:00:00');
         return (d.getMonth() + 1) + '月' + d.getDate() + '日';
@@ -990,7 +991,7 @@ function wttRenderRecordBar(topN) {
                     legend: { position: 'bottom', labels: { usePointStyle: true, padding: isMobile ? 10 : 16, font: { size: isMobile ? 10 : 11, family: "'Poppins', sans-serif" }, boxWidth: isMobile ? 11 : 12 } },
                     tooltip: {
                         backgroundColor: 'rgba(26,29,40,0.9)', titleFont: { size: isMobile ? 12 : 13 }, bodyFont: { size: isMobile ? 11 : 12 }, padding: isMobile ? 8 : 12, cornerRadius: 8,
-                        callbacks: { title: items => fullNames[items[0]?.dataIndex] || '', label: ctx => `${ctx.dataset.label}: ${ctx.raw} 场` }
+                        callbacks: { title: items => fullNames[items[0]?.dataIndex] || '', label: ctx => `${ctx.dataset.label}: ${ctx.raw}${(i18n[currentLang] || {}).chart_matches_suffix || ' 场'}` }
                     }
                 },
                 scales: {
@@ -1221,7 +1222,7 @@ function wttRenderMatchFrequency(bucketType, count) {
                 responsive: true, maintainAspectRatio: false,
                 plugins: {
                     legend: { position: 'bottom', labels: { usePointStyle: true, padding: isMobile ? 10 : 16, font: { size: isMobile ? 10 : 11, family: "'Poppins', sans-serif" }, boxWidth: isMobile ? 11 : 12 } },
-                    tooltip: { backgroundColor: 'rgba(26,29,40,0.9)', titleFont: { size: isMobile ? 12 : 13 }, bodyFont: { size: isMobile ? 11 : 12 }, padding: isMobile ? 8 : 12, cornerRadius: 8, callbacks: { label: ctx => `${ctx.dataset.label}: ${ctx.raw} 场` } }
+                    tooltip: { backgroundColor: 'rgba(26,29,40,0.9)', titleFont: { size: isMobile ? 12 : 13 }, bodyFont: { size: isMobile ? 11 : 12 }, padding: isMobile ? 8 : 12, cornerRadius: 8, callbacks: { label: ctx => `${ctx.dataset.label}: ${ctx.raw}${(i18n[currentLang] || {}).chart_matches_suffix || ' 场'}` } }
                 },
                 scales: {
                     x: { stacked: true, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 10 : 11 }, maxRotation: isMobile ? 45 : 0 } },

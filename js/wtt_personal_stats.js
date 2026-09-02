@@ -546,7 +546,7 @@ function _wttGetApproxScoreAtDateImpl(playerName, targetDate, sortedLog, startSc
             const w = r['胜者'], l = r['负者'];
             if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE;
             if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
-            const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], sc);
+            const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], sc, r['赛制']);
             sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
             sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
         } else if (isBonusRecord(r)) {
@@ -713,7 +713,7 @@ function wttRenderPersonalStats(playerName, containerId) {
         const w = r['胜者'], l = r['负者'];
         if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
         if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
-        const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], scores);
+        const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], scores, r['赛制']);
         if (w === playerName) {
             oppPointsGained[l] = (oppPointsGained[l] || 0) + wg;
             oppPointsLost[l] = (oppPointsLost[l] || 0) + wg * LOSER_POINT_MULTIPLIER;

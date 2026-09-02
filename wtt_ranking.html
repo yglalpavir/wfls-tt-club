@@ -14,41 +14,13 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.5.0/css/flag-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.5.0/css/flag-icons.min.css" integrity="sha384-8olrmTcwXL3OYMeB+2ok8jx9/U/FZxeLnoRWdu1Pyi+lakrkqoI7hfysfQF5Q1Xx" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <span class="logo-icon"><i class="fa-solid fa-table-tennis-paddle-ball"></i></span>
-                <span class="logo-text">WFLS TT Club</span>
-            </a>
-            <ul class="nav-menu" id="navMenu">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
-                <li class="nav-item"><a href="competitions.html" class="nav-link">Competitions</a></li>
-                <li class="nav-item"><a href="ranking.html" class="nav-link">Ranking <span class="beta-tag">Beta</span></a></li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" id="moreDropdown">More... <i class="fa-solid fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu" id="dropdownMenu">
-                        <li><a href="members.html" class="dropdown-link">社团骨干</a></li>
-                        <li><a href="data_viz.html" class="dropdown-link">Data Viz <span class="beta-tag">Beta</span></a></li>
-                        <li><a href="personal_stats.html" class="dropdown-link">个人数据</a></li>
-                        <li><a href="qa.html" class="dropdown-link">Q&A</a></li>
-                        <li><a href="changelog.html" class="dropdown-link">更新日志</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="nav-actions">
-                <button class="theme-toggle" id="themeToggle" aria-label="切换主题"><i class="fa-solid fa-moon"></i></button>
-                <button class="lang-toggle" id="langToggle" aria-label="切换语言"><span data-i18n="lang_btn">EN</span></button>
-            </div>
-            <button class="hamburger" id="hamburger" aria-label="菜单" aria-expanded="false" aria-controls="navMenu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
-        </div>
-    </nav>
+<noscript><div style="padding:10px;text-align:center;background:#b91c1c;color:#fff;font-size:0.9rem;">本站需要启用 JavaScript 才能加载排名与内容数据。This site requires JavaScript to load data.</div></noscript>
+    <script src="js/shared-partials.js" data-partial="nav"></script>
 
     <section class="page-hero wtt-ranking-hero">
         <div class="page-hero-overlay"></div>
@@ -63,7 +35,7 @@
         <div class="container">
             <div class="ranking-layout">
                 <aside class="ranking-sidebar glass-card" id="rankingSidebar">
-                    <h2 class="sidebar-title" data-i18n="rank_sidebar_title">时间节点</h3>
+                    <h2 class="sidebar-title" data-i18n="rank_sidebar_title">时间节点</h2>
                     <ul class="time-node-list" id="timeNodeList">
                         <!-- JS动态渲染 -->
                     </ul>
@@ -156,37 +128,7 @@
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h3>WFLS Table Tennis Club</h3>
-                    <p>武汉外国语学校乒乓球社团</p>
-                    <p class="footer-motto">挥拍逐梦，旋转青春</p>
-                </div>
-                <div class="footer-links">
-                    <h3>快速导航</h3>
-                    <a href="index.html">Home</a>
-                    <a href="news.html">News</a>
-                    <a href="competitions.html">Competitions</a>
-                    <a href="members.html">社团骨干</a>
-                    <a href="ranking.html">Ranking</a>
-                    <a href="data_viz.html">Data Viz</a>
-                    <a href="personal_stats.html">个人数据</a>
-                    <a href="qa.html">Q&A</a>
-                    <a href="changelog.html">更新日志</a>
-                    <a href="contact.html">Contact</a>
-                </div>
-                <div class="footer-school">
-                    <h3>学校信息</h3>
-                    <p>武汉外国语学校</p>
-                    <p>Wuhan Foreign Languages School</p>
-                    <p>湖北省武汉市</p>
-                </div>
-            </div>
-            <div class="footer-bottom"><p>&copy; 2026 WFLS Table Tennis Club. All rights reserved.</p></div>
-        </div>
-    </footer>
+    <script src="js/shared-partials.js" data-partial="footer"></script>
 
     <script src="js/common.js"></script>
     <script src="js/score-engine.js"></script>

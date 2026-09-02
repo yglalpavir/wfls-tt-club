@@ -295,7 +295,7 @@ function wtaFillSnapshotSelect() {
     for (let i = wttRankingTimeline.length - 1; i >= 0; i--) {
         const opt = document.createElement('option');
         opt.value = String(i);
-        opt.textContent = wttRankingTimeline[i].label;
+        opt.textContent = getNodeDisplayLabel(wttRankingTimeline[i]);
         sel.appendChild(opt);
     }
     sel.disabled = false;
@@ -491,7 +491,7 @@ function wtaRenderBumpChart() {
     codes.forEach(c => { rankByCode[c] = []; });
     for (let i = start; i < total; i++) {
         const order = wtaComputeListAt(i).map(a => a.assoc);
-        labels.push(wttRankingTimeline[i].label);
+        labels.push(getNodeDisplayLabel(wttRankingTimeline[i]));
         const pos = {};
         order.forEach((c, j) => { pos[c] = j + 1; });
         for (const c of codes) rankByCode[c].push(pos[c] != null ? pos[c] : null);

@@ -60,7 +60,7 @@ function wttPpLatestSnapshotRow(playerName) {
         const t = wttRankingTimeline[i];
         if (t && t.data && t.data.length) {
             const row = t.data.find(p => p['姓名'] === playerName);
-            if (row) return { row: row, label: t.label, time: t.time };
+            if (row) return { row: row, label: getNodeDisplayLabel(t), time: t.time };
         }
     }
     return null;
@@ -161,8 +161,8 @@ function wttPpComputeMatchRecords(playerName) {
                     const w = r['胜者'], l = r['负者'];
                     if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
                     if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
-                    const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], scores);
-                    const rawGain = calcRawPoints(w, l, r['类型'], scores);
+                    const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], scores, r['赛制']);
+                    const rawGain = calcRawPoints(w, l, r['类型'], scores, r['赛制']);
                     if (w === playerName || l === playerName) {
                         const isWin = w === playerName;
                         const pre = scores[playerName];

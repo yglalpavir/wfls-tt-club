@@ -61,6 +61,12 @@ from datetime import date
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(ROOT, "data")
 
+# Windows GBK 控制台兜底：输出统一走 UTF-8（与 ci_validate.py 一致，CI Linux 环境不受影响）
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 # news: 对应的条目目录（三类通用）
 TYPES = ["news", "competitions", "qa"]
 
@@ -83,7 +89,11 @@ MANIFEST_KEYS = ["version", "updatedAt", "title", "visible", "file"]
 
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
-TODAY = date.today().isoformat()
+
+def today_str():
+    """运行时取当天（而非导入时固化），避免 --check 与正式同步跨午夜时口径漂移"""
+    return date.today().isoformat()
+
 
 warnings = 0
 
@@ -308,6 +318,22 @@ def load_history(type_name, item_id):
             problems = True
         prev_v = v
 
+    # 反向校验：目录里存在清单未引用的孤儿快照文件（正常只查 manifest→file，孤儿永不被发现）
+    entry_dir = entry_dir_path(type_name, item_id)
+    if os.path.isdir(entry_dir):
+        referenced = {m.get("file") for m in manifest}
+        prefix = "{}.v".format(item_id)
+        for fn in sorted(os.listdir(entry_dir)):
+            if not (fn.startswith(prefix) and fn.endswith(".json")):
+                continue
+            stem = fn[:-len(".json")]
+            if not stem[len(prefix):].isdigit():
+                continue
+            if fn not in referenced:
+                log_warn("{}: 存在未被清单引用的孤儿快照文件 {}（请核对 {}）".format(
+                    item_id, fn, item_id + ".history.json"))
+                problems = True
+
     for v, snap in snapshots.items():
         validate_snapshot(type_name, snap, item_id)
 
@@ -334,7 +360,7 @@ def maintain_history(type_name, item, manifest, snapshots, content=None):
     if not manifest:
         snap = dict(cur)
         snap["version"] = 1
-        snap["updatedAt"] = str(item.get("date") or TODAY)
+        snap["updatedAt"] = str(item.get("date") or today_str())
         entry = {
             "version": 1,
             "updatedAt": snap["updatedAt"],
@@ -369,10 +395,10 @@ def maintain_history(type_name, item, manifest, snapshots, content=None):
     v = top_v + 1
     snap = dict(cur)
     snap["version"] = v
-    snap["updatedAt"] = TODAY
+    snap["updatedAt"] = today_str()
     entry = {
         "version": v,
-        "updatedAt": TODAY,
+        "updatedAt": today_str(),
         "title": snap.get("title") or "",
         "visible": None,
         "file": "{}.v{}.json".format(item_id, v),
@@ -435,7 +461,7 @@ def migrate_flat_entry(type_name, fpath):
     else:
         snap = snapshot_of(item)
         snap["version"] = 1
-        snap["updatedAt"] = str(item.get("date") or TODAY)
+        snap["updatedAt"] = str(item.get("date") or today_str())
         write_json(snapshot_file_path(type_name, item_id, 1), snap)
         manifest.append({
             "version": 1,
@@ -532,10 +558,14 @@ def sync_type(type_name):
     new_snapshots = 0
     total_snaps = 0
     hidden_snaps = 0
-    for item_id, item in entries:
-        if not validate_item(type_name, item, item_id):
+    for folder_id, item in entries:
+        if not validate_item(type_name, item, folder_id):
             continue
         item_id = str(item["id"])
+        if item_id != folder_id:
+            # Windows 文件系统大小写不敏感，不一致时会静默把历史分叉进第二个目录 —— 必须硬错误
+            log_error("{}: 文件夹名与 id（{}）不一致，已跳过（请统一文件夹名或 id 后重跑）".format(folder_id, item_id))
+            continue
         if item_id in seen_ids:
             log_warn("{}: id \"{}\" 重复，只保留第一个".format(type_name, item_id))
             continue
@@ -564,21 +594,8 @@ def sync_type(type_name):
         hidden_snaps += sum(1 for m in new_manifest if m.get("visible") is False)
         items.append(item)
 
-    items.sort(key=lambda i: (date_key(i), str(i.get("id") or "")), reverse=True)
-
-    # index.json：元数据（供列表/详情兜底，不含 content/history）
-    index_data = []
-    for it in items:
-        meta = {k: it.get(k) for k in ("id", "date", "title", "excerpt", "tag", "media", "visible")}
-        index_data.append(meta)
+    index_data, search_data = build_index_and_search(type_name, items)
     write_json(os.path.join(dir_path, "index.json"), index_data)
-
-    # search.json：搜索索引（含 content，不含 history；前端过滤 visible）
-    search_data = []
-    for it in items:
-        entry = {k: it.get(k) for k in ("id", "date", "title", "excerpt", "content")}
-        entry["content"] = read_effective_content(type_name, it, quiet=True)
-        search_data.append(entry)
     write_json(os.path.join(dir_path, "search.json"), search_data)
 
     hidden = sum(1 for i in items if i.get("visible") is False)
@@ -586,8 +603,39 @@ def sync_type(type_name):
         type_name, len(items), hidden, total_snaps, hidden_snaps, rewritten, new_snapshots))
 
 
+def canonical_json_text(data):
+    """与 write_json 完全一致的序列化文本（用于 --check 与磁盘产物逐字节比对）"""
+    return json.dumps(data, ensure_ascii=False, indent=2) + "\n"
+
+
+def generated_matches_disk(path, data):
+    if not os.path.exists(path):
+        return False
+    try:
+        with open(path, "r", encoding="utf-8-sig") as f:
+            return f.read() == canonical_json_text(data)
+    except Exception:
+        return False
+
+
+def build_index_and_search(type_name, items):
+    """与 sync_type 相同的产物构造逻辑（排序 + content 内联），供正式写入与 --check 比对共用"""
+    items = sorted(items, key=lambda i: (date_key(i), str(i.get("id") or "")), reverse=True)
+    index_data = []
+    for it in items:
+        meta = {k: it.get(k) for k in ("id", "date", "title", "excerpt", "tag", "media", "visible")}
+        index_data.append(meta)
+    search_data = []
+    for it in items:
+        entry = {k: it.get(k) for k in ("id", "date", "title", "excerpt", "content")}
+        entry["content"] = read_effective_content(type_name, it, quiet=True)
+        search_data.append(entry)
+    return index_data, search_data
+
+
 def check_type(type_name):
-    """仅校验：模拟历史维护（含迁移检测），不写入任何文件。"""
+    """仅校验：模拟历史维护（含迁移检测），并把内存重新生成的 index.json/search.json
+    与磁盘上的提交版本逐字节比对 —— 手改生成文件或忘记重跑同步时 CI 应当报红。"""
     dir_path = os.path.join(DATA_DIR, type_name)
     if not os.path.isdir(dir_path):
         return
@@ -602,11 +650,21 @@ def check_type(type_name):
     planned = 0
     hidden = 0
     total_snaps = 0
-    for item_id, item in scan_entries(type_name):
+    items = []           # 与 sync_type 相同口径的去重收集，用于比对生成产物
+    seen_ids = set()
+    for folder_id, item in scan_entries(type_name):
         if item is None or not isinstance(item, dict):
             continue
-        if not validate_item(type_name, item, item_id):
+        if not validate_item(type_name, item, folder_id):
             continue
+        item_id = str(item["id"])
+        if item_id != folder_id:
+            log_error("{}: 文件夹名与 id（{}）不一致（与正式同步同样会跳过）".format(folder_id, item_id))
+            continue
+        if item_id in seen_ids:
+            log_warn("{}: id \"{}\" 重复，只保留第一个".format(type_name, item_id))
+            continue
+        seen_ids.add(item_id)
         manifest, snapshots, _ = load_history(type_name, item_id)
         if item.get("visible") is False:
             hidden += 1
@@ -617,6 +675,7 @@ def check_type(type_name):
         if new_snap is not None:
             planned += 1
         total_snaps += len(sim_manifest)
+        items.append(item)
     # 模拟旧版扁平文件的迁移结果（不写文件）
     for f in flat_entry_files(type_name):
         item = load_json(f)
@@ -635,6 +694,16 @@ def check_type(type_name):
         if new_snap is not None:
             planned += 1
         total_snaps += len(sim_manifest)
+
+    # 生成产物比对：磁盘上的 index.json/search.json 必须与重新生成结果一致
+    if items and not flat:
+        index_data, search_data = build_index_and_search(type_name, items)
+        for name, data in (("index.json", index_data), ("search.json", search_data)):
+            path = os.path.join(dir_path, name)
+            if not generated_matches_disk(path, data):
+                log_error("[{}] 提交的 {} 与重新生成结果不一致（内容被手改或忘记重跑同步；请运行 python tools/sync_content.py）".format(
+                    type_name, name))
+
     print("[{}] 校验完成 · 预计新增 {} 个快照 · 隐藏 {} 条 · 快照共 {} 个".format(
         type_name, planned, hidden, total_snaps))
 

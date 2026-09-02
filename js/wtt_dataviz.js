@@ -656,7 +656,7 @@ function wttCalcFormScore(playerName) {
             const w = m['胜者'], l = m['负者'];
             if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
             if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
-            const wg = calcRawPoints(w, l, m['类型'], scores);
+            const wg = calcRawPoints(w, l, m['类型'], scores, m['赛制']);
             scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg);
             scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * LOSER_POINT_MULTIPLIER);
         } else if (isBonusRecord(m)) {
@@ -672,7 +672,7 @@ function wttCalcFormScore(playerName) {
         const w = m['胜者'], l = m['负者'];
         if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
         if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
-        const rawPoints = calcRawPoints(w, l, m['类型'], scores);
+        const rawPoints = calcRawPoints(w, l, m['类型'], scores, m['赛制']);
         if (w === playerName) {
             totalChange += rawPoints;
             scores[w] = Math.max(SCORE_FLOOR, scores[w] + rawPoints);
@@ -780,7 +780,7 @@ function wttRenderComparison(playerA, playerB) {
             if ((w !== playerA || l !== playerB) && (w !== playerB || l !== playerA)) continue;
             if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
             if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
-            const wg = calcMatchPoints(w, l, m['类型'], m['日期'], m['日期'], scores);
+            const wg = calcMatchPoints(w, l, m['类型'], m['日期'], m['日期'], scores, m['赛制']);
             const aIsW = w === playerA;
             const aChange = aIsW ? wg : -(wg * LOSER_POINT_MULTIPLIER);
             const bChange = aIsW ? -(wg * LOSER_POINT_MULTIPLIER) : wg;
