@@ -4,127 +4,74 @@
 <meta charset="UTF-8">
 <title>2026 招新海报 · 竖版 | 武汉外国语学校乒乓球社团</title>
 <!--
-  竖版海报（1240×1754，A4 @150dpi 比例）· 海报式排版 v3
-  结构：通栏排头(600) → 咬合数据带(140) → 编号理由区(380) → 深蓝信息色带(320) → FAQ(190) → 通栏排尾(184)
+  竖版海报（1240×1754，A4 @150dpi 比例）· v6：白底纯排版（参照武外之声海报版式）+ 社团蓝身份元素
+  结构：品牌行 → 巨字双行标题 → 社团名/口号 → 官网介绍 → 加粗引导语 → 01-04 模块 → QA+虚线框 → 底部二维码+群号
   导出：Chrome 打开 → F12 → Ctrl+Shift+P → Capture full size screenshot；或打印 A4 · 边距无 · 勾选背景图形
   二维码读取 ../Assets/images/qr-code.jpg，缺失时显示占位框；印刷前确认为最新群码。
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
   :root {
-      --blue: #007bff; --dark: #0056b3; --deeper: #003e80; --light: #4da3ff;
-      --pale: #e6f2ff; --gold: #ffd76e; --gold-deep: #f0a500;
-      --ink: #1a1a2e; --ink2: #4a5568; --muted: #5b6b7d;
-      --line: #e2e8f0; --bg: #f8fafc;
+      --blue: #000000; --dark: #000000; --deeper: #000000; --light: #444444;
+      --ink: #1a1a2e; --ink2: #3f4a5a; --muted: #6b7c93;
+      --line: #d8e2ee;
       --en: 'Poppins', sans-serif; --cn: 'Noto Sans SC', sans-serif;
   }
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: var(--cn); color: var(--ink); background: #d9e2ec; }
+  body { font-family: var(--cn); color: var(--ink); background: #e3e9f1; }
 
-  .poster { position: relative; width: 1240px; height: 1754px; overflow: hidden; background: var(--bg); display: flex; flex-direction: column; }
+  .poster { position: relative; width: 1240px; height: 1754px; overflow: hidden; background: #fff; padding: 56px 64px 0; filter: grayscale(1); }
 
-  /* 蓝色区域的点阵纹理（站内 hero 同款） */
-  .dots::before {
-    content: ""; position: absolute; inset: 0; pointer-events: none;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.13) 1px, transparent 1.5px);
-    background-size: 28px 28px;
-    mask-image: radial-gradient(ellipse 75% 65% at 50% 40%, #000 0%, transparent 78%);
-    -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 40%, #000 0%, transparent 78%);
+  /* 品牌行 */
+  .brandbar { display: flex; align-items: center; gap: 12px; }
+  .brandbar .dot { width: 22px; height: 22px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #9aa1ad 0 40%, #000 100%); }
+  .brandbar .bt { font-family: var(--en); font-size: 17px; font-weight: 700; letter-spacing: 3px; color: var(--ink); }
+
+  /* 巨字双行标题（黑白打印：纯黑） */
+  .t1, .t2 { line-height: 1.08; letter-spacing: 11px; white-space: nowrap; }
+  .t1 { margin-top: 26px; font-size: 202px; font-weight: 900; color: #000; }
+  .t2 { font-size: 202px; font-weight: 300; color: #000; margin-top: 6px; }
+
+  .names { margin-top: 22px; font-size: 15.5px; letter-spacing: 2px; color: var(--muted); }
+  .sloganline { margin-top: 12px; display: flex; align-items: center; gap: 16px; }
+  .sloganline .s { font-size: 20px; font-weight: 700; letter-spacing: 6px; color: var(--ink); }
+  .sloganline .rule { width: 150px; height: 2px; background: #9aa1ad; }
+
+  /* 模块通用（照搬参考海报：加粗小标题 + 小字正文） */
+  .h3 { font-size: 26px; font-weight: 900; letter-spacing: 2px; color: var(--ink); margin-bottom: 12px; }
+  .h3 i { display: inline-block; width: 11px; height: 11px; border-radius: 50%; background: var(--blue); margin-right: 13px; vertical-align: 2px; }
+  .web { margin-top: 44px; max-width: 980px; }
+  .web p { font-size: 16.5px; line-height: 1.88; color: var(--ink2); }
+  .web p b { color: var(--dark); font-weight: 700; }
+  .web .url { font-family: var(--en); font-weight: 600; font-size: 16px; color: var(--blue); }
+
+  .headline { margin-top: 52px; font-size: 36px; font-weight: 900; letter-spacing: 3px; color: var(--blue); }
+
+  .you-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px 60px; margin-top: 34px; max-width: 950px; }
+  .you-grid .item { display: flex; gap: 17px; }
+  .you-grid .num {
+    flex: 0 0 58px; font-family: var(--en); font-size: 48px; font-weight: 800; line-height: 0.95;
+    color: transparent; -webkit-text-stroke: 2px rgba(0, 0, 0, 0.45);
   }
-  .grad { background: linear-gradient(135deg, var(--deeper) 0%, var(--dark) 46%, var(--blue) 100%); color: #fff; }
-  .ball { position: absolute; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff 0 55%, #dbe9ff 100%); box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25); }
+  .you-grid h4 { font-size: 22px; font-weight: 900; letter-spacing: 1px; color: var(--ink); margin-bottom: 8px; }
+  .you-grid p { font-size: 16px; line-height: 1.85; color: var(--ink2); }
+  .you-grid p b { color: var(--dark); font-weight: 700; }
 
-  /* ===== 排头（通栏 600px） ===== */
-  .hero { position: relative; height: 600px; overflow: hidden; padding: 46px 56px 0; }
-  .hero .b1 { width: 210px; height: 210px; right: -60px; top: 130px; opacity: .9; }
-  .hero .b2 { width: 74px; height: 74px; right: 190px; top: 96px; opacity: .55; }
-  .hero .b3 { width: 34px; height: 34px; right: 320px; top: 210px; opacity: .4; }
-  .seal {
-    position: absolute; top: 40px; right: 56px; width: 150px; height: 150px; border-radius: 50%;
-    border: 3px solid var(--gold); display: flex; flex-direction: column; justify-content: center; align-items: center;
-    background: rgba(255, 255, 255, 0.08); transform: rotate(8deg); box-shadow: 0 0 0 7px rgba(255, 215, 110, 0.15); z-index: 3;
-  }
-  .seal-y { font-family: var(--en); font-size: 38px; font-weight: 800; color: var(--gold); line-height: 1; }
-  .seal-t { font-size: 19px; font-weight: 900; margin-top: 5px; letter-spacing: 2px; }
-  .seal-e { font-family: var(--en); font-size: 9px; letter-spacing: 3px; color: #9cc8ff; margin-top: 4px; }
-  .kicker { font-family: var(--en); font-size: 13px; font-weight: 600; letter-spacing: 5px; color: #9cc8ff; margin-bottom: 26px; }
-  .hero .t1 { font-size: 66px; font-weight: 900; letter-spacing: 6px; color: #fff; line-height: 1.1; }
-  .hero .t2 { font-size: 124px; font-weight: 900; letter-spacing: 10px; color: #fff; line-height: 1.08; margin-left: -4px; }
-  .slogan { margin-top: 22px; font-size: 31px; font-weight: 700; letter-spacing: 12px; color: var(--gold); }
-  .chips { position: absolute; left: 56px; bottom: 118px; display: flex; gap: 14px; }
-  .chips span {
-    font-size: 14.5px; letter-spacing: 2px; color: #eaf4ff; background: rgba(255, 255, 255, 0.13);
-    border: 1px solid rgba(255, 255, 255, 0.38); border-radius: 999px; padding: 8px 20px;
-  }
+  /* QA */
+  .qa { margin-top: 42px; max-width: 950px; display: flex; align-items: center; gap: 44px; }
+  .qa-main { flex: 1; }
+  .qa .q { font-size: 22px; font-weight: 900; letter-spacing: 1px; color: var(--ink); margin-bottom: 11px; }
+  .qa .q::before { content: "Q"; font-family: var(--en); font-weight: 800; color: var(--blue); margin-right: 12px; }
+  .qa .a { font-size: 18px; line-height: 1.9; color: var(--ink2); }
+  .qa .a .num { font-family: var(--en); font-weight: 800; font-size: 28px; color: var(--blue); letter-spacing: 1px; padding: 0 4px; }
 
-  /* ===== 数据带（嵌入排头 60px） ===== */
-  .stats {
-    position: relative; z-index: 2; height: 140px; margin-top: -60px;
-    background: #fff; box-shadow: 0 14px 34px rgba(0, 40, 90, 0.14);
-    display: grid; grid-template-columns: repeat(4, 1fr);
-  }
-  .stat { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; }
-  .stat + .stat { border-left: 1px solid var(--line); }
-  .stat .n { font-family: var(--en); font-size: 54px; font-weight: 800; color: var(--blue); line-height: 1; }
-  .stat .l { font-size: 14.5px; color: var(--ink2); letter-spacing: 1px; }
-
-  /* ===== 区块标题（左对齐编辑式） ===== */
-  .sec-head { display: flex; align-items: baseline; gap: 18px; }
-  .sec-head h2 { font-size: 31px; font-weight: 900; color: var(--ink); letter-spacing: 2px; white-space: nowrap; }
-  .sec-head .rule { flex: 1; height: 3px; background: var(--ink); opacity: .9; }
-  .sec-head .en { font-family: var(--en); font-size: 12px; font-weight: 700; letter-spacing: 3px; color: var(--blue); white-space: nowrap; }
-
-  /* ===== 理由区（编号编辑排版） ===== */
-  .why { height: 380px; padding: 40px 56px 0; }
-  .why .sec-head { margin-bottom: 26px; }
-  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 44px; }
-  .why-grid .item { display: flex; gap: 18px; border-top: 1px solid #d4dde8; padding-top: 16px; }
-  .why-grid .num {
-    flex: 0 0 64px; font-family: var(--en); font-size: 50px; font-weight: 800; line-height: 0.9;
-    color: transparent; -webkit-text-stroke: 2px rgba(0, 86, 179, 0.4);
-  }
-  .why-grid h3 { font-size: 18.5px; font-weight: 900; color: var(--ink); margin-bottom: 7px; letter-spacing: 1px; }
-  .why-grid p { font-size: 14.5px; line-height: 1.72; color: var(--ink2); }
-  .why-grid b { color: var(--dark); font-weight: 700; }
-
-  /* ===== 深蓝信息色带（时间 + 荣誉） ===== */
-  .band { position: relative; height: 320px; overflow: hidden; padding: 36px 56px; display: grid; grid-template-columns: 46fr 54fr; gap: 56px; }
-  .band .b1 { width: 150px; height: 150px; right: -50px; bottom: -55px; opacity: .35; }
-  .band .label { font-family: var(--en); font-size: 12px; font-weight: 700; letter-spacing: 4px; color: var(--gold); margin-bottom: 12px; }
-  .band .cn-label { font-size: 21px; font-weight: 900; letter-spacing: 2px; margin-bottom: 16px; }
-  .sched .row { display: flex; align-items: baseline; gap: 16px; padding: 11px 0; font-size: 15px; }
-  .sched .row + .row { border-top: 1px solid rgba(255, 255, 255, 0.22); }
-  .sched .k { flex: 0 0 128px; font-weight: 700; color: #fff; }
-  .sched .v { color: rgba(255, 255, 255, 0.88); }
-  .sched .v b { color: var(--gold); font-weight: 700; }
-  .sched .note { margin-top: 14px; font-size: 13px; color: var(--gold); letter-spacing: 0.5px; }
-  .honors { list-style: none; }
-  .honors li { padding: 11px 0 11px 16px; border-left: 3px solid var(--gold); margin-bottom: 12px; background: rgba(255, 255, 255, 0.06); }
-  .honors b { font-size: 15.5px; font-weight: 700; color: #fff; }
-  .honors .sub { display: block; font-size: 12.5px; color: rgba(255, 255, 255, 0.66); margin-top: 3px; }
-
-  /* ===== FAQ（单行四栏） ===== */
-  .faq { height: 190px; padding: 26px 56px 0; }
-  .faq .sec-head { margin-bottom: 18px; }
-  .faq .sec-head h2 { font-size: 24px; }
-  .faq-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
-  .faq-grid .cell { padding: 2px 22px 0; }
-  .faq-grid .cell:first-child { padding-left: 0; }
-  .faq-grid .cell + .cell { border-left: 1px solid #d4dde8; }
-  .faq-grid .q { font-size: 14.5px; font-weight: 900; color: var(--ink); margin-bottom: 6px; line-height: 1.4; }
-  .faq-grid .q::before { content: "Q"; font-family: var(--en); font-weight: 800; color: var(--blue); margin-right: 7px; }
-  .faq-grid .a { font-size: 13px; line-height: 1.6; color: var(--ink2); }
-  .faq-grid .a b { color: var(--dark); }
-
-  /* ===== 排尾（通栏渐变） ===== */
-  .join { position: relative; flex: 1; overflow: hidden; display: flex; align-items: center; gap: 34px; padding: 0 56px; }
-  .join .b1 { width: 110px; height: 110px; left: 42%; top: -42px; opacity: .16; }
-  .join .b2 { width: 48px; height: 48px; right: 300px; bottom: -18px; opacity: .18; }
+  /* 底部：二维码 + 群号（白底） */
+  .join { display: flex; align-items: center; gap: 32px; margin-top: 42px; }
   .qr-box {
-    flex: 0 0 152px; height: 152px; background: #fff; border-radius: 14px; padding: 9px;
-    display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 26px rgba(0, 0, 0, 0.32); z-index: 2;
+    flex: 0 0 206px; height: 206px; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 11px;
+    display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 22px rgba(0, 0, 0, 0.14);
   }
   .qr-box img { width: 100%; height: 100%; object-fit: contain; display: block; }
   .qr-fallback {
@@ -132,21 +79,26 @@
     flex-direction: column; align-items: center; justify-content: center; text-align: center;
     font-size: 11px; color: var(--muted); line-height: 1.5;
   }
-  .join-main { z-index: 2; }
-  .join-main .t { font-size: 30px; font-weight: 900; letter-spacing: 3px; }
-  .join-main .s { font-size: 14px; color: #c8ddff; margin-top: 8px; letter-spacing: 1px; }
-  .join-main .url {
-    display: inline-block; margin-top: 14px; background: rgba(255, 255, 255, 0.13);
-    border: 1px solid rgba(255, 255, 255, 0.42); border-radius: 999px; padding: 8px 22px;
-    font-family: var(--en); font-size: 16px; font-weight: 700; letter-spacing: 1px;
+  .join-info .t { font-size: 28px; font-weight: 900; letter-spacing: 2px; color: var(--deeper); }
+  .join-info .s { font-size: 15px; color: var(--ink2); margin-top: 10px; }
+  .join-info .gnum { margin-top: 10px; font-size: 16px; color: var(--ink); }
+  .join-info .gnum b { font-family: var(--en); font-weight: 800; font-size: 33px; color: var(--blue); letter-spacing: 1px; margin-left: 10px; }
+  .sign { margin-left: auto; text-align: right; font-size: 12.5px; line-height: 1.9; color: var(--muted); align-self: flex-end; }
+  .sign b { color: var(--ink2); font-weight: 700; }
+  .copy { margin-top: 16px; text-align: center; font-family: var(--en); font-size: 10.5px; letter-spacing: 3px; color: #a6b4c6; }
+
+  /* 右侧：竖排 RECRUITMENT + 虚线框（仅此一处定义） */
+  .rail-vert {
+    position: absolute; top: 262px; right: 58px; z-index: 1;
+    writing-mode: vertical-rl; text-orientation: upright;
+    font-family: var(--en); font-weight: 800; font-size: 52px; letter-spacing: 14px;
+    color: transparent; -webkit-text-stroke: 3px #9aa1ad; line-height: 1;
   }
-  .sign {
-    margin-left: auto; z-index: 2; background: rgba(255, 255, 255, 0.09);
-    border: 1px solid rgba(255, 255, 255, 0.24); border-radius: 14px; padding: 16px 22px; max-width: 420px;
+  .dashed-box {
+    flex: 0 0 234px; border: 2.5px dashed #7d8492; border-radius: 4px; padding: 24px 16px; text-align: center; background: #fff;
   }
-  .sign-t { font-size: 16px; font-weight: 900; letter-spacing: 1px; margin-bottom: 8px; color: var(--gold); }
-  .sign p { font-size: 12.2px; line-height: 1.8; color: #dce9ff; }
-  .copy { position: absolute; bottom: 14px; left: 0; right: 0; text-align: center; font-family: var(--en); font-size: 10px; letter-spacing: 3px; color: rgba(255, 255, 255, 0.55); z-index: 2; }
+  .dashed-box .d1 { font-size: 19px; font-weight: 900; color: var(--dark); letter-spacing: 1px; line-height: 1.6; }
+  .dashed-box .d2 { font-size: 13.5px; color: var(--ink2); margin-top: 8px; letter-spacing: 2px; }
 
   @media print {
     @page { size: A4 portrait; margin: 0; }
@@ -157,116 +109,74 @@
 <body>
 <div class="poster">
 
-  <!-- 排头 -->
-  <header class="hero grad dots">
-    <i class="ball b1"></i><i class="ball b2"></i><i class="ball b3"></i>
-    <div class="seal">
-      <div class="seal-y">2026</div>
-      <div class="seal-t">秋季招新</div>
-      <div class="seal-e">RECRUITING</div>
-    </div>
-    <div class="kicker">WFLS TABLE TENNIS CLUB</div>
-    <div class="t1">武汉外国语学校</div>
-    <div class="t2">乒乓球社团</div>
-    <div class="slogan">挥拍逐梦 · 旋转青春</div>
-    <div class="chips">
-      <span>小球转动大世界</span><span>以球会友，以技强身</span><span>球台见！</span>
-    </div>
-  </header>
+  <div class="brandbar"><span class="dot"></span><span class="bt">WFLS TABLE TENNIS CLUB</span></div>
 
-  <!-- 数据带 -->
-  <div class="stats">
-    <div class="stat"><div class="n">44</div><div class="l">名注册社员</div></div>
-    <div class="stat"><div class="n">244+</div><div class="l">场正式对局</div></div>
-    <div class="stat"><div class="n">ELO</div><div class="l">官方积分排名</div></div>
-    <div class="stat"><div class="n">1</div><div class="l">个社团官网</div></div>
+  <div class="t1">武外乒乓</div>
+  <div class="t2">正在招新</div>
+
+  <div class="names">武汉外国语学校乒乓球社团 · WFLS TABLE TENNIS CLUB</div>
+  <div class="sloganline"><span class="s">挥拍逐梦，旋转青春</span><span class="rule"></span></div>
+
+  <!-- 官网介绍 -->
+  <div class="web">
+    <div class="h3"><i></i>官网介绍</div>
+    <p><b>148 名社员</b>（QQ 群人数）· <b>244+ 场正式对局</b> · <b>ELO 官方积分排名</b>——每一局比赛都被记录、被计算、被看见。</p>
+    <p>社团官网：<span class="url">yglalpavir.github.io/wfls-tt-club</span>（赛程、新闻与对阵表实时更新）</p>
   </div>
 
-  <!-- 理由区 -->
-  <section class="why">
-    <div class="sec-head"><h2>在这里，你可以</h2><div class="rule"></div><span class="en">WHY JOIN US</span></div>
-    <div class="why-grid">
-      <div class="item">
-        <div class="num">01</div>
-        <div><h3>随时开打</h3><p>友谊赛想打就打，<b>体育馆二楼乒乓球馆</b>就是大本营，每一场对局都计入官方积分。</p></div>
-      </div>
-      <div class="item">
-        <div class="num">02</div>
-        <div><h3>拥有官方排名</h3><p>自研 <b>ELO 积分系统</b>：初始分 1300，人人同一起跑线；爆冷取胜加分更多，赛季积分部分继承。</p></div>
-      </div>
-      <div class="item">
-        <div class="num">03</div>
-        <div><h3>登上全校大赛</h3><p>校乒赛<b>团体赛</b>（3–4 月）与<b>单打赛</b>（4–6 月），<b>全校学生均可报名</b>。</p></div>
-      </div>
-      <div class="item">
-        <div class="num">04</div>
-        <div><h3>冲击校队</h3><p>表现优异者进入<b>校队选拔通道</b>，代表武外出征校际联赛，现有 11 名校队成员。</p></div>
-      </div>
-    </div>
-  </section>
+  <div class="headline">加入武外乒乓，你可以 ——</div>
 
-  <!-- 深蓝信息色带 -->
-  <section class="band grad dots">
-    <i class="ball b1"></i>
-    <div class="sched">
-      <div class="label">SCHEDULE</div>
-      <div class="cn-label">活动安排</div>
-      <div class="row"><span class="k">官方赛事</span><span class="v">每周四社团课 · <b>体育馆 2 张球台</b></span></div>
-      <div class="row"><span class="k">日常对局</span><span class="v"><b>体育馆二楼</b>乒乓球馆</span></div>
-      <div class="row"><span class="k">校乒赛</span><span class="v">学校体育馆<b>三楼</b></span></div>
-      <div class="note">2026/27 秋季赛季已于 9 月 1 日开打，现在加入正好赶上新赛季。</div>
+  <div class="you-grid">
+    <div class="item">
+      <div class="num">01</div>
+      <div><h4>随时开打</h4><p>放松身心，也能精进球技。</p></div>
     </div>
-    <div class="honors-col">
-      <div class="label">HONORS</div>
-      <div class="cn-label">荣誉墙</div>
-      <ul class="honors">
-        <li><b>2026 三校联赛亚军</b><span class="sub">校队队史最佳对外战绩</span></li>
-        <li><b>校乒赛单打冠军</b> 任峻贤（2026）· 陈瑜萱（2025）<span class="sub">2026 团体冠军 ×2 · 场地今夏全新升级</span></li>
-      </ul>
+    <div class="item">
+      <div class="num">02</div>
+      <div><h4>拥有自己的积分与排名</h4><p>社团自研 <b>ELO 变体积分系统</b>，长期稳定运营维护。官网实时可查你的<b>积分走势、排名变化与交手记录</b>，进步一目了然。</p></div>
     </div>
-  </section>
+    <div class="item">
+      <div class="num">03</div>
+      <div><h4>登上全校大赛舞台</h4><p>校乒赛团体赛：<b>3–4 人组队出战</b>，2026 年共 <b>20 支队伍</b>参赛，团队氛围拉满；校乒赛单打赛：小组循环 + 淘汰赛制，2026 年共 <b>58 名同学</b>参加。</p></div>
+    </div>
+    <div class="item">
+      <div class="num">04</div>
+      <div><h4>冲击校队</h4><p>表现优异者将进入<b>校队选拔通道</b>，代表武外出征校际联赛。校队现有 <b>11 名成员</b>，每一场比赛，都是为校而战。</p></div>
+    </div>
+  </div>
 
-  <!-- FAQ -->
-  <section class="faq">
-    <div class="sec-head"><h2>常见问题</h2><div class="rule"></div><span class="en">Q&amp;A</span></div>
-    <div class="faq-grid">
-      <div class="cell">
-        <div class="q">零基础可以加入吗？</div>
-        <div class="a">可以。初始分 <b>1300</b> 一视同仁，友谊赛随时可打、照样计分。</div>
-      </div>
-      <div class="cell">
-        <div class="q">积分对新手友好吗？</div>
-        <div class="a">输球只按胜者得分的 <b>0.8 倍</b>扣分，并有 <b>1200 分保底</b>。</div>
-      </div>
-      <div class="cell">
-        <div class="q">在哪看排名和记录？</div>
-        <div class="a">官网 <b>Ranking 页</b>看实时排名，个人页看积分走势与对局。</div>
-      </div>
-          <div class="cell">
-            <div class="q">没有球拍怎么办？</div>
-            <div class="a">欢迎入群咨询，学长学姐支招。</div>
-          </div>
+  <!-- QA -->
+  <div class="qa">
+    <div class="qa-main">
+      <div class="q">如何加入社团</div>
+      <div class="a">我用最直白，最不绕弯子，最一针见血的方式告诉你：群号<span class="num">760667083</span>，即可加入武外乒乓球社 QQ 群，欢迎在教学楼一楼和食堂三楼打乒乓球~</div>
     </div>
-  </section>
+    <div class="dashed-box">
+      <div class="d1">教学楼一楼<br>食堂三楼</div>
+      <div class="d2">球台随时开打</div>
+    </div>
+  </div>
 
-  <!-- 排尾 -->
-  <footer class="join grad dots">
-    <i class="ball b1"></i><i class="ball b2"></i>
+  <!-- 底部二维码 -->
+  <div class="join">
     <div class="qr-box">
       <img class="qr" src="../Assets/images/qr-code.jpg" alt="社团QQ群二维码">
       <div class="qr-fallback">二维码占位<br>Assets/images/qr-code.jpg</div>
     </div>
-    <div class="join-main">
+    <div class="join-info">
       <div class="t">扫码加入社团 QQ 群</div>
-      <div class="s">与我们一起挥拍逐梦 · 赛事报名与活动通知都在群内</div>
-      <div class="url">yglalpavir.github.io/wfls-tt-club</div>
+      <div class="s">与我们一起挥拍逐梦 · 赛事报名与活动通知都在群内，欢迎进群聊天</div>
+      <div class="gnum">群号<b>760667083</b></div>
     </div>
     <div class="sign">
-      <div class="sign-t">武汉外国语学校乒乓球社团</div>
-      <p>社长 龚雨煊（高二·9班）<br>副社长 任安喆 · 梅哲宇 · 谷子易<br>官网 / 积分系统 任峻贤</p>
+      社长 <b>龚雨煊</b>（高二·9班）<br>
+      副社长 <b>任安喆 · 梅哲宇 · 谷子易</b><br>
+      官网 / 积分系统 <b>任峻贤</b>
     </div>
-    <div class="copy">© 2026 WFLS TABLE TENNIS CLUB · 球台见！</div>
-  </footer>
+  </div>
+  <div class="copy">© 2026 WFLS TABLE TENNIS CLUB</div>
+
+  <div class="rail-vert">RECRUITMENT</div>
 
 </div>
 <script>

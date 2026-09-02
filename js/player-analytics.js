@@ -126,12 +126,12 @@ const PA_GAP_BANDS = [
 function paGapBandLabel(key) {
     const L = i18n[currentLang];
     switch (key) {
-        case 'lead100': return L.pa_gap_leading + ' ≥100';
-        case 'lead50': return L.pa_gap_leading + ' 50–99';
-        case 'lead1': return L.pa_gap_leading + ' 1–49';
-        case 'behind1': return L.pa_gap_behind + ' 0–49';
-        case 'behind50': return L.pa_gap_behind + ' 50–99';
-        case 'behind100': return L.pa_gap_behind + ' ≥100';
+        case 'lead100': return L.pa_gap_self_strong + ' ≥100';
+        case 'lead50': return L.pa_gap_self_strong + ' 50–99';
+        case 'lead1': return L.pa_gap_self_slight + ' 1–49';
+        case 'behind1': return L.pa_gap_opp_slight + ' 0–49';
+        case 'behind50': return L.pa_gap_opp_strong + ' 50–99';
+        case 'behind100': return L.pa_gap_opp_strong + ' ≥100';
     }
     return key;
 }
@@ -838,6 +838,22 @@ function paRenderSourceChart(source, boundaries) {
         tension: 0.15,
         fill: k === 0 ? 'origin' : k - 1
     }));
+    // 叠加积分变化曲线（粗黑线）：与积分趋势图同源的权威参照，
+    // 各层堆叠的顶层轮廓应与其完全重合，肉眼即可校验"堆叠总和 = 积分曲线"
+    const scoreIdx = datasets.length;
+    datasets.push({
+        label: i18n[currentLang].pa_source_total,
+        data: snapshots.map(s => s.score || 0),
+        borderColor: t.isDark ? '#e4e6ed' : '#1a1a2e',
+        backgroundColor: 'transparent',
+        borderWidth: 3.5,
+        pointRadius: 0,
+        pointHoverRadius: 3,
+        tension: 0.15,
+        fill: false,
+        // 更小的 order = 绘制在最上层，且图例中排在首位
+        order: -1
+    });
     paTrackChart(new Chart(canvas, {
         type: 'line',
         data: {
@@ -856,10 +872,15 @@ function paRenderSourceChart(source, boundaries) {
                 },
                 tooltip: Object.assign({}, t.tooltip, {
                     displayColors: true,
+                    // 积分总曲线不在逐层明细中重复展示，另见 afterBody
+                    filter: function(item) { return item.datasetIndex < scoreIdx; },
                     callbacks: {
                         title: items => paShortDate(snapshots[items[0].dataIndex].time),
                         label: function(item) {
                             const k = item.datasetIndex;
+                            if (k >= layers.length) {
+                                return i18n[currentLang].pa_source_total + ': ' + (snapshots[item.dataIndex].score || 0).toFixed(1);
+                            }
                             // 显示该层自身的贡献 = 累计值 − 上一层累计值
                             const v = k === 0 ? item.parsed.y : cum[k][item.dataIndex] - cum[k - 1][item.dataIndex];
                             const sign = v >= 0 ? '+' : '';
