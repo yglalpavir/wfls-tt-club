@@ -46,16 +46,60 @@ const safeStorage = {
 })();
 
 // 通用内容区加载提示（用于 news/competitions/home 等页面）
+// 返回进度更新器 { setLabel, setProgress, setMeta }；容器不可用时返回 null。
+// setProgress 传数字（0-100）为确定进度，传 null 切换为不定进度（流动动画）。
 function showContentLoading(containerId, msg) {
     var el = document.getElementById(containerId);
-    if (!el) return;
+    if (!el) return null;
     // 只在容器为空或显示默认占位内容时显示加载动画
     if (el.children.length > 0 && !el.querySelector('.content-loading-placeholder')) {
         var existing = el.querySelector('.content-loading-spinner');
         if (existing) existing.remove();
-        return;
+        return null;
     }
-    el.innerHTML = '<div class="content-loading-spinner" style="display:flex;align-items:center;justify-content:center;padding:40px 20px;color:var(--text-secondary);min-height:120px;"><div style="text-align:center;"><div class="wtt-spinner" style="width:28px;height:28px;border:3px solid var(--border-color);border-top-color:var(--accent-blue);border-radius:50%;animation:wttSpin 0.8s linear infinite;margin:0 auto 10px;"></div><p style="font-size:0.85rem;margin:0;">' + (msg || (i18n[currentLang] || {}).content_loading || '加载中...') + '</p></div></div>';
+    el.innerHTML = '<div class="content-loading-spinner" style="display:flex;align-items:center;justify-content:center;padding:40px 20px;color:var(--text-secondary);min-height:120px;"><div class="content-loading-box"><div class="wtt-spinner" style="width:28px;height:28px;border:3px solid var(--border-color);border-top-color:var(--accent-blue);border-radius:50%;animation:wttSpin 0.8s linear infinite;margin:0 auto 10px;"></div><p class="content-loading-label" style="font-size:0.85rem;margin:0;">' + (msg || (i18n[currentLang] || {}).content_loading || '加载中...') + '</p><div class="content-progress-track"><div class="content-progress-fill indeterminate"></div></div><p class="content-progress-meta">&nbsp;</p></div></div>';
+    var root = el.querySelector('.content-loading-spinner');
+    var fill = root.querySelector('.content-progress-fill');
+    var labelEl = root.querySelector('.content-loading-label');
+    var metaEl = root.querySelector('.content-progress-meta');
+    return {
+        setLabel: function (t) { if (labelEl && t) labelEl.textContent = t; },
+        setMeta: function (t) { if (metaEl) metaEl.textContent = t || '\u00a0'; },
+        setProgress: function (pct) {
+            if (!fill) return;
+            if (pct == null) {
+                fill.classList.add('indeterminate');
+                fill.style.width = '';
+                this.setMeta('\u00a0');
+                return;
+            }
+            fill.classList.remove('indeterminate');
+            fill.style.width = Math.max(0, Math.min(100, pct)) + '%';
+        }
+    };
+}
+
+// 带下载进度回调的 JSON 加载：能拿到 Content-Length 时回调确定百分比，
+// 否则回调 null（调用方切换为不定进度动画）。gzip/brotli 下 content-length 为压缩字节数，
+// 解压后 received 可能超过它，百分比夹取到 99%，流结束后再补 100%。
+async function fetchJsonWithProgress(url, onProgress) {
+    var resp = await fetch(url);
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    if (!resp.body || typeof resp.body.getReader !== 'function' || typeof onProgress !== 'function') return await resp.json();
+    var total = parseInt(resp.headers.get('Content-Length') || '0', 10) || 0;
+    var reader = resp.body.getReader();
+    var decoder = new TextDecoder('utf-8');
+    var text = '', received = 0;
+    for (;;) {
+        var r = await reader.read();
+        if (r.done) break;
+        received += r.value.length;
+        text += decoder.decode(r.value, { stream: true });
+        onProgress(total ? Math.min(99, (received / total) * 100) : null, received, total);
+    }
+    text += decoder.decode();
+    onProgress(100, received, total);
+    return JSON.parse(text);
 }
 
 const i18n = {
@@ -94,6 +138,12 @@ const i18n = {
         personal_stats_page_title: "个人数据 | WFLS Table Tennis Club", personal_stats_tag: "Personal Stats", personal_stats_title: "个人数据", personal_stats_desc: "个人比赛数据统计", personal_stats_filter_label: "按标签筛选", personal_stats_search_label: "搜索球员", personal_stats_search_ph: "搜索球员姓名 / 编号 / 标签（支持拼音）", personal_stats_placeholder: "位球员，选择一名查看个人数据页", personal_stats_no_tags: "暂无标签数据", personal_stats_tag_count: "{n}人", personal_stats_player_count: "{shown} / {total}", personal_stats_player_count_total: "{total}", personal_stats_no_match: "未找到匹配球员", personal_stats_no_data: "暂无比赛数据", personal_stats_load_fail: "数据加载失败，请刷新重试",
         pp_back_index: "返回总览", pp_prev_player: "上一名", pp_next_player: "下一名", pp_no_player: "未找到该球员", pp_all_records: "全部比赛记录", pp_player_id: "球员编号", pp_search_ph: "搜索球员姓名 / 编号 / 标签", pp_total_players: "共 {n} 名球员", pp_role: "职务", pp_match_detail: "积分明细", pp_view_profile: "查看个人数据页",
         pp_loading: "正在加载球员数据...", pp_load_fail: "数据加载失败，请刷新重试", pp_refresh: "刷新页面", pp_status_active: "在校", pp_status_alumni: "已离校", pp_matches_count: "{n} 场", pp_col_before: "赛前", pp_col_change: "调整", pp_col_after: "赛后", pp_tags_label: "标签", pp_honors_label: "荣誉",
+        pa_section_title: "深度数据分析", pa_rank_title: "排名走势", pa_type_title: "赛事类型分布", pa_gap_title: "实力差胜负分析", pa_monthly_title: "月度活跃度", pa_form_title: "竞技状态", pa_season_title: "赛季对比", pa_source_title: "积分来源构成",
+        pa_rank_axis: "排名", pa_no_rank: "暂无排名数据", pa_no_matches: "暂无对局数据", pa_monthly_matches: "场次数", pa_monthly_winrate: "胜率", pa_type_center_unit: "场", pa_type_wr: "胜率 {r}%",
+        pa_gap_leading: "领先", pa_gap_behind: "落后", pa_gap_wins: "胜场", pa_gap_losses: "负场", pa_gap_wr: "胜率 {r}%", pa_gap_hint: "对手赛前分 − 我方赛前分",
+        pa_form_now_w: "当前 {n} 连胜", pa_form_now_l: "当前 {n} 连败", pa_form_max_w: "最长连胜", pa_form_max_l: "最长连败", pa_form_last10: "近 10 场", pa_form_rolling: "滚动 10 场胜率", pa_form_overall: "生涯胜率",
+        pa_season_col: "赛季", pa_season_matches: "场次", pa_season_wl: "胜负", pa_season_rate: "胜率", pa_season_net: "净积分", pa_season_peak: "最高分", pa_season_total: "总计",
+        pa_source_axis: "累计积分变化", pa_source_hint: "按赛事类型累计的实际积分变化（含时间衰减）",
         rank_realtime_header: "实时积分", rank_realtime_label: "实时积分",
         search_input_hint: "输入关键词搜索", search_hint_title: "输入关键词开始搜索", search_hint_info: "支持搜索标题、内容、姓名等",
         search_rank_tpl: "排名：{rank} | 胜率：{rate}",
@@ -176,6 +226,12 @@ const i18n = {
         personal_stats_page_title: "Personal Stats | WFLS Table Tennis Club", personal_stats_tag: "Personal Stats", personal_stats_title: "Personal Stats", personal_stats_desc: "Personal Match Statistics", personal_stats_filter_label: "Filter by Tags", personal_stats_search_label: "Search Players", personal_stats_search_ph: "Search by name / ID / tag (pinyin supported)", personal_stats_placeholder: "players total, select to view personal stats", personal_stats_no_tags: "No tags available", personal_stats_tag_count: "{n} players", personal_stats_player_count: "{shown} / {total}", personal_stats_player_count_total: "{total}", personal_stats_no_match: "No matching players", personal_stats_no_data: "No match data yet", personal_stats_load_fail: "Failed to load data. Please refresh and try again.",
         pp_back_index: "Back to Overview", pp_prev_player: "Previous", pp_next_player: "Next", pp_no_player: "Player not found", pp_all_records: "All Match Records", pp_player_id: "Player ID", pp_search_ph: "Search by name / ID / tag", pp_total_players: "{n} players total", pp_role: "Role", pp_match_detail: "Score Details", pp_view_profile: "View Personal Page",
         pp_loading: "Loading player data...", pp_load_fail: "Failed to load data. Please refresh and try again.", pp_refresh: "Refresh", pp_status_active: "Active", pp_status_alumni: "Alumni", pp_matches_count: "{n} matches", pp_col_before: "Before", pp_col_change: "Change", pp_col_after: "After", pp_tags_label: "Tags", pp_honors_label: "Honors",
+        pa_section_title: "Deep Analytics", pa_rank_title: "Rank Trend", pa_type_title: "Event Type Mix", pa_gap_title: "Results by Rating Gap", pa_monthly_title: "Monthly Activity", pa_form_title: "Current Form", pa_season_title: "Season Comparison", pa_source_title: "Score Sources",
+        pa_rank_axis: "Rank", pa_no_rank: "No ranking data", pa_no_matches: "No match data", pa_monthly_matches: "Matches", pa_monthly_winrate: "Win rate", pa_type_center_unit: "games", pa_type_wr: "Win rate {r}%",
+        pa_gap_leading: "Leading", pa_gap_behind: "Trailing", pa_gap_wins: "Wins", pa_gap_losses: "Losses", pa_gap_wr: "Win rate {r}%", pa_gap_hint: "X-axis: opponent's pre-match score − player's",
+        pa_form_now_w: "{n}-match win streak", pa_form_now_l: "{n}-match losing streak", pa_form_max_w: "Best win streak", pa_form_max_l: "Worst losing streak", pa_form_last10: "Last 10", pa_form_rolling: "Rolling 10-match win rate", pa_form_overall: "Career win rate",
+        pa_season_col: "Season", pa_season_matches: "Matches", pa_season_wl: "W-L", pa_season_rate: "Win rate", pa_season_net: "Net points", pa_season_peak: "Peak", pa_season_total: "Total",
+        pa_source_axis: "Cumulative points change", pa_source_hint: "Actual cumulative points change by event type (with decay)",
         rank_realtime_header: "Real-time", rank_realtime_label: "Live Ranking",
         search_input_hint: "Type keywords to search", search_hint_title: "Start typing to search", search_hint_info: "Searches titles, content and player names",
         search_rank_tpl: "Rank {rank} | Win rate {rate}",
@@ -650,8 +706,8 @@ pages.forEach(p => { if (p === 'gap') { const gp = document.createElement('span'
 
 async function loadAboutData() { showContentLoading('coreMembersGrid', i18n[currentLang].loading_about); try { const resp = await fetch('data/about.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); aboutData = await resp.json(); } catch(e) { aboutData = null; } if (typeof renderAboutSections === 'function') renderAboutSections(); updateHeroLastUpdated(); }
 async function loadMembersData() { showContentLoading('coreMembersGrid', i18n[currentLang].loading_members); if (!playersData) await loadPlayers(); if (playersData && Array.isArray(playersData.players)) { membersData = playersData.players.filter(p => p.role).map(p => ({ name: p.name, uid: p.uid, role: p.role, description: p.description, qq: p.qq })); } else { try { const resp = await fetch('data/_legacy/members.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); membersData = await resp.json(); } catch(e) { membersData = []; } } if (typeof renderCoreMembers === 'function') { renderCoreMembers(); if (typeof renderAllMembersPage === 'function') renderAllMembersPage(); } }
-async function loadNewsData() { showContentLoading('newsPreviewGrid', i18n[currentLang].loading_news); showContentLoading('newsFullGrid', i18n[currentLang].loading_news); try { const resp = await fetch('data/news/index.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); newsData = await resp.json(); } catch(e) { console.error('news/index.json 加载失败', e); newsData = []; } if (typeof renderAllNews === 'function') renderAllNews(); markContentLoaded('news'); }
-async function loadCompetitionsData() { showContentLoading('competitionsPreviewGrid', i18n[currentLang].loading_competitions); showContentLoading('competitionsFullGrid', i18n[currentLang].loading_competitions); try { const resp = await fetch('data/competitions/index.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); competitionsData = await resp.json(); } catch(e) { console.error('competitions/index.json 加载失败', e); competitionsData = []; } if (typeof renderAllCompetitions === 'function') renderAllCompetitions(); markContentLoaded('competition'); }
+async function loadNewsData() { const prgs = [showContentLoading('newsPreviewGrid', i18n[currentLang].loading_news), showContentLoading('newsFullGrid', i18n[currentLang].loading_news)]; try { newsData = await fetchJsonWithProgress('data/news/index.json', pct => { prgs.forEach(p => { if (p) { p.setProgress(pct); p.setMeta('data/news/index.json' + (pct == null ? '' : ' · ' + Math.round(pct) + '%')); } }); }); } catch(e) { console.error('news/index.json 加载失败', e); newsData = []; } if (typeof renderAllNews === 'function') renderAllNews(); markContentLoaded('news'); }
+async function loadCompetitionsData() { const prgs = [showContentLoading('competitionsPreviewGrid', i18n[currentLang].loading_competitions), showContentLoading('competitionsFullGrid', i18n[currentLang].loading_competitions)]; try { competitionsData = await fetchJsonWithProgress('data/competitions/index.json', pct => { prgs.forEach(p => { if (p) { p.setProgress(pct); p.setMeta('data/competitions/index.json' + (pct == null ? '' : ' · ' + Math.round(pct) + '%')); } }); }); } catch(e) { console.error('competitions/index.json 加载失败', e); competitionsData = []; } if (typeof renderAllCompetitions === 'function') renderAllCompetitions(); markContentLoaded('competition'); }
 async function loadDrawsData() { try { const resp = await fetch('data/draws.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); drawsData = await resp.json(); } catch(e) { drawsData = []; } }
 let _drawsLoadPromise = null;
 function ensureDrawsData() {

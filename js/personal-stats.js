@@ -935,6 +935,68 @@ function formatWeekLabel(ds) {
     return (monday.getMonth() + 1) + '/' + monday.getDate() + '-' + (sunday.getMonth() + 1) + '/' + sunday.getDate();
 }
 
+/**
+ * 构建赛季分界标注插件（虚线 + 下赛季标签），供个人页各折线图复用
+ * @param {Array} dataPoints 含 time 字段、按时间升序的数据点
+ * @param {boolean} isDark 是否深色主题
+ */
+function createSeasonBoundaryPlugin(dataPoints, isDark) {
+    const seasonBoundaries = [];
+    if (seasonsData && seasonsData.length > 1 && dataPoints && dataPoints.length) {
+        for (let i = 0; i < seasonsData.length - 1; i++) {
+            const boundaryDate = seasonsData[i].endDate;
+            // 找到边界日期所在的最后一个数据点索引
+            let idx = -1;
+            for (let j = 0; j < dataPoints.length; j++) {
+                if (dataPoints[j].time <= boundaryDate) idx = j;
+                else break;
+            }
+            if (idx >= 0 && idx < dataPoints.length - 1) {
+                seasonBoundaries.push({
+                    idx: idx,
+                    label: seasonsData[i + 1].label
+                });
+            }
+        }
+    }
+    return {
+        id: 'seasonBoundaries',
+        afterDraw: function(chart) {
+            if (!seasonBoundaries.length) return;
+            const ctx = chart.ctx;
+            const meta = chart.getDatasetMeta(0);
+            const chartArea = chart.chartArea;
+            const topY = chartArea.top;
+            const bottomY = chartArea.bottom;
+
+            ctx.save();
+            for (const b of seasonBoundaries) {
+                const point = meta.data[b.idx];
+                if (!point) continue;
+                const x = point.x;
+                if (x < chartArea.left || x > chartArea.right) continue;
+
+                // 虚线
+                ctx.beginPath();
+                ctx.setLineDash([6, 4]);
+                ctx.strokeStyle = isDark ? 'rgba(200,200,200,0.45)' : 'rgba(100,100,100,0.4)';
+                ctx.lineWidth = 1;
+                ctx.moveTo(x, topY);
+                ctx.lineTo(x, bottomY);
+                ctx.stroke();
+
+                // 赛季标签
+                ctx.setLineDash([]);
+                ctx.fillStyle = isDark ? 'rgba(200,200,200,0.7)' : 'rgba(80,80,80,0.7)';
+                ctx.font = '10px "Poppins", "Microsoft YaHei", sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText(b.label, x, topY + 12);
+            }
+            ctx.restore();
+        }
+    };
+}
+
 function renderPersonalScoreChart(dailyHistory, snapshotHistory) {
     const canvas = document.getElementById('personalScoreChart');
     if (!canvas) return;
@@ -1004,24 +1066,7 @@ function renderPersonalScoreChart(dailyHistory, snapshotHistory) {
     const ptBorderWidth = colors.pointBorderWidth != null ? colors.pointBorderWidth : 0;
 
     // === 构建赛季边界虚线标注 ===
-    const seasonBoundaries = [];
-    if (seasonsData && seasonsData.length > 1) {
-        for (let i = 0; i < seasonsData.length - 1; i++) {
-            const boundaryDate = seasonsData[i].endDate;
-            // 找到边界日期所在的最后一个数据点索引
-            let idx = -1;
-            for (let j = 0; j < dataPoints.length; j++) {
-                if (dataPoints[j].time <= boundaryDate) idx = j;
-                else break;
-            }
-            if (idx >= 0 && idx < dataPoints.length - 1) {
-                seasonBoundaries.push({
-                    idx: idx,
-                    label: seasonsData[i + 1].label
-                });
-            }
-        }
-    }
+    const seasonPlugin = createSeasonBoundaryPlugin(dataPoints, isDark);
 
     new Chart(canvas, {
         type: 'line',
@@ -1088,42 +1133,7 @@ function renderPersonalScoreChart(dailyHistory, snapshotHistory) {
                 }
             }
         },
-        plugins: [{
-            id: 'seasonBoundaries',
-            afterDraw: function(chart) {
-                if (!seasonBoundaries.length) return;
-                const ctx = chart.ctx;
-                const meta = chart.getDatasetMeta(0);
-                const chartArea = chart.chartArea;
-                const topY = chartArea.top;
-                const bottomY = chartArea.bottom;
-
-                ctx.save();
-                for (const b of seasonBoundaries) {
-                    const point = meta.data[b.idx];
-                    if (!point) continue;
-                    const x = point.x;
-                    if (x < chartArea.left || x > chartArea.right) continue;
-
-                    // 虚线
-                    ctx.beginPath();
-                    ctx.setLineDash([6, 4]);
-                    ctx.strokeStyle = isDark ? 'rgba(200,200,200,0.45)' : 'rgba(100,100,100,0.4)';
-                    ctx.lineWidth = 1;
-                    ctx.moveTo(x, topY);
-                    ctx.lineTo(x, bottomY);
-                    ctx.stroke();
-
-                    // 赛季标签
-                    ctx.setLineDash([]);
-                    ctx.fillStyle = isDark ? 'rgba(200,200,200,0.7)' : 'rgba(80,80,80,0.7)';
-                    ctx.font = '10px "Poppins", "Microsoft YaHei", sans-serif';
-                    ctx.textAlign = 'center';
-                    ctx.fillText(b.label, x, topY + 12);
-                }
-                ctx.restore();
-            }
-        }]
+        plugins: [seasonPlugin]
     });
 }
 

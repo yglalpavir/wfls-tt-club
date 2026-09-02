@@ -128,9 +128,10 @@ function computePlayerMatchRecords(playerName) {
                 if (w === playerName || l === playerName) {
                     const isWin = w === playerName;
                     const pre = scores[playerName];
+                    const oppPre = scores[isWin ? l : w];
                     const rawChange = isWin ? rawGain : -rawGain * LOSER_POINT_MULTIPLIER;
                     const change = isWin ? wg : -wg * LOSER_POINT_MULTIPLIER;
-                    rows.push({ date: r['日期'], type: r['类型'], opp: isWin ? l : w, isWin: isWin, isBonus: false, pre: pre, rawChange: rawChange, change: change, post: pre + change });
+                    rows.push({ date: r['日期'], type: r['类型'], opp: isWin ? l : w, isWin: isWin, isBonus: false, pre: pre, oppPre: oppPre, rawChange: rawChange, change: change, post: pre + change });
                 }
                 scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg);
                 scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * LOSER_POINT_MULTIPLIER);
@@ -142,10 +143,12 @@ function computePlayerMatchRecords(playerName) {
     return rows;
 }
 
-function renderPlayerMatchTable(playerName) {
+// 计算球员全部比赛记录（逐赛季回放，含赛季继承），返回按日期倒序 rows
+// records 可选传入已算好的结果，避免同一页内重复回放
+function renderPlayerMatchTable(playerName, records) {
     const container = document.getElementById('playerMatchTable');
     if (!container) return;
-    const rows = computePlayerMatchRecords(playerName);
+    const rows = records || computePlayerMatchRecords(playerName);
     if (!rows.length) { container.innerHTML = ''; return; }
 
     const rowsHtml = rows.map(r => {
@@ -193,9 +196,11 @@ async function initPlayerPage() {
         renderPlayerNavSwitch(player);
         renderPlayerHeader(player);
 
-        content.innerHTML += '<div id="playerStatsBody"></div><div id="playerMatchTable"></div>';
+        content.innerHTML += '<div id="playerStatsBody"></div><div id="playerAnalyticsBody"></div><div id="playerMatchTable"></div>';
+        const matchRecords = computePlayerMatchRecords(player.name);
         renderPersonalStats(player.name, 'playerStatsBody');
-        renderPlayerMatchTable(player.name);
+        renderPlayerAnalytics(player.name, matchRecords);
+        renderPlayerMatchTable(player.name, matchRecords);
         console.log('[PlayerPage] 初始化完成:', player.name, '#' + player.uid);
     } catch (e) {
         console.error('[PlayerPage] 初始化失败', e);
@@ -212,11 +217,14 @@ function reapplyPlayerPage() {
         const existing = Chart.getChart(canvas);
         if (existing) existing.destroy();
     }
+    destroyPlayerAnalytics();
     document.title = ppCurrentPlayer.name + ' - ' + i18n[currentLang].personal_stats_page_title;
     content.innerHTML = '';
     renderPlayerNavSwitch(ppCurrentPlayer);
     renderPlayerHeader(ppCurrentPlayer);
-    content.innerHTML += '<div id="playerStatsBody"></div><div id="playerMatchTable"></div>';
+    content.innerHTML += '<div id="playerStatsBody"></div><div id="playerAnalyticsBody"></div><div id="playerMatchTable"></div>';
+    const matchRecords = computePlayerMatchRecords(ppCurrentPlayer.name);
     renderPersonalStats(ppCurrentPlayer.name, 'playerStatsBody');
-    renderPlayerMatchTable(ppCurrentPlayer.name);
+    renderPlayerAnalytics(ppCurrentPlayer.name, matchRecords);
+    renderPlayerMatchTable(ppCurrentPlayer.name, matchRecords);
 }

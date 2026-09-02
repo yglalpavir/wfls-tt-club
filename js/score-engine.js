@@ -151,6 +151,17 @@ function calcRawPoints(winner, loser, eventType, currentScores, matchFormat) {
 
 function getActivePlayers(sortedLog, startDate, endDate) { const ap = new Set(); sortedLog.forEach(r => { if (r['日期'] < startDate || r['日期'] > endDate) return; if (isMatchRecord(r)) { ap.add(r['胜者']); ap.add(r['负者']); } else if (isBonusRecord(r)) { ap.add(r['对象']); } }); return ap; }
 
+// ===== 排名表显示口径：players.json 档案活跃状态 =====
+// 档案 status === 'active'（在校）的球员始终进入排名表，不再只看"当前赛季有没有比赛记录"；
+// 窗口内有比赛记录的球员（含已离校者，用于历史快照回溯）仍然显示。
+// 仅在球员档案（playersData）已加载时生效 —— WTT 管线不加载档案，自动回退到纯比赛记录口径。
+function isProfileActivePlayer(name) {
+    if (typeof playersData === 'undefined' || !playersData || !Array.isArray(playersData.players)) return false;
+    const p = (typeof getPlayerByName === 'function') ? getPlayerByName(name) : null;
+    if (!p) return false;
+    return !p.status || p.status === 'active';
+}
+
 // ============ 🔥 性能优化：球员比赛预索引 ============
 
 /**
@@ -318,7 +329,7 @@ function calculateAllRankingsWithSeasons(scoreLog, initialScores, seasons) {
 
             // 🔥 使用预建索引快速获取球员统计，不再 filter 全量数据
             const sp = Object.entries(sc)
-                .filter(([n]) => sap.has(n))
+                .filter(([n]) => sap.has(n) || isProfileActivePlayer(n))
                 .sort((a, b) => b[1] - a[1])
                 .map(([n, pt]) => {
                     const stats = getPlayerStatsFromIndex(playerMatches, n, season.startDate, sd);
@@ -435,7 +446,7 @@ async function calculateAllRankingsWithSeasonsAsync(scoreLog, initialScores, sea
 
             // 使用预建索引
             const sp = Object.entries(sc)
-                .filter(([n]) => sap.has(n))
+                .filter(([n]) => sap.has(n) || isProfileActivePlayer(n))
                 .sort((a, b) => b[1] - a[1])
                 .map(([n, pt]) => {
                     const stats = getPlayerStatsFromIndex(playerMatches, n, season.startDate, sd);
@@ -601,7 +612,7 @@ function calculateRealtimeRanking() {
 
     const activeStart = activeSeason.startDate;
     const sap = getActivePlayers(sortedLog, activeStart, effectiveEnd);
-    const sp = Object.entries(sc).filter(([n]) => sap.size === 0 || sap.has(n)).sort((a, b) => b[1] - a[1]).map(([n, pt]) => ({
+    const sp = Object.entries(sc).filter(([n]) => sap.size === 0 || sap.has(n) || isProfileActivePlayer(n)).sort((a, b) => b[1] - a[1]).map(([n, pt]) => ({
         '姓名': n, '当前积分': Math.round(pt * 10) / 10,
         '总场次': sortedLog.filter(r => isMatchRecord(r) && r['日期'] >= activeStart && r['日期'] <= effectiveEnd && (r['胜者'] === n || r['负者'] === n)).length,
         '胜率': (() => { const ms = sortedLog.filter(r => isMatchRecord(r) && r['日期'] >= activeStart && r['日期'] <= effectiveEnd && (r['胜者'] === n || r['负者'] === n)); if (!ms.length) return '0%'; return Math.round((ms.filter(r => r['胜者'] === n).length / ms.length) * 100) + '%'; })()
@@ -691,7 +702,7 @@ async function calculateRealtimeRankingAsync(onProgress) {
 
     const activeStart = activeSeason.startDate;
     const sap = getActivePlayers(sortedLog, activeStart, effectiveEnd);
-    const sp = Object.entries(sc).filter(([n]) => sap.size === 0 || sap.has(n)).sort((a, b) => b[1] - a[1]).map(([n, pt]) => ({
+    const sp = Object.entries(sc).filter(([n]) => sap.size === 0 || sap.has(n) || isProfileActivePlayer(n)).sort((a, b) => b[1] - a[1]).map(([n, pt]) => ({
         '姓名': n, '当前积分': Math.round(pt * 10) / 10,
         '总场次': sortedLog.filter(r => isMatchRecord(r) && r['日期'] >= activeStart && r['日期'] <= effectiveEnd && (r['胜者'] === n || r['负者'] === n)).length,
         '胜率': (() => { const ms = sortedLog.filter(r => isMatchRecord(r) && r['日期'] >= activeStart && r['日期'] <= effectiveEnd && (r['胜者'] === n || r['负者'] === n)); if (!ms.length) return '0%'; return Math.round((ms.filter(r => r['胜者'] === n).length / ms.length) * 100) + '%'; })()
