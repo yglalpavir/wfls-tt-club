@@ -955,11 +955,11 @@ function formatWeekLabel(ds) {
 }
 
 /**
- * 构建赛季分界标注插件（虚线 + 下赛季标签），供个人页各折线图复用
+ * 计算赛季分界标注数据（虚线位置 + 下赛季标签），供个人页各折线图复用
  * @param {Array} dataPoints 含 time 字段、按时间升序的数据点
- * @param {boolean} isDark 是否深色主题
+ * @returns {Array} boundaries: [{ idx, label }]
  */
-function createSeasonBoundaryPlugin(dataPoints, isDark) {
+function paFindSeasonBoundaries(dataPoints) {
     const seasonBoundaries = [];
     if (seasonsData && seasonsData.length > 1 && dataPoints && dataPoints.length) {
         for (let i = 0; i < seasonsData.length - 1; i++) {
@@ -978,6 +978,17 @@ function createSeasonBoundaryPlugin(dataPoints, isDark) {
             }
         }
     }
+    return seasonBoundaries;
+}
+
+/**
+ * 构建赛季分界标注插件（虚线 + 下赛季标签），供个人页各折线图复用
+ * @param {Array} dataPoints 含 time 字段、按时间升序的数据点
+ * @param {boolean} isDark 是否深色主题
+ * @param {Array} boundaries 可选，预先算好的分界数据（跨管线复用时避免重算）
+ */
+function createSeasonBoundaryPlugin(dataPoints, isDark, boundaries) {
+    const seasonBoundaries = boundaries || paFindSeasonBoundaries(dataPoints);
     return {
         id: 'seasonBoundaries',
         afterDraw: function(chart) {

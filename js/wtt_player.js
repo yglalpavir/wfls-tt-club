@@ -6,6 +6,8 @@
 
 let wttCurrentPlayer = null;      // 当前球员名（语言切换时重渲染用）
 let wttPpOrderedPlayers = [];     // 按当前积分降序的球员列表（上/下一名导航）
+let wttPpMatchRecordsCache = null; // 球员比赛记录缓存（语言切换时复用，避免重放全量日志）
+let wttPpAnalyticsData = null;    // 深度数据分析缓存（语言无关，语言切换仅重绘）
 
 // ============ 数据加载 ============
 
@@ -166,9 +168,10 @@ function wttPpComputeMatchRecords(playerName) {
                     if (w === playerName || l === playerName) {
                         const isWin = w === playerName;
                         const pre = scores[playerName];
+                        const oppPre = scores[isWin ? l : w];
                         const rawChange = isWin ? rawGain : -rawGain * LOSER_POINT_MULTIPLIER;
                         const change = isWin ? wg : -wg * LOSER_POINT_MULTIPLIER;
-                        rows.push({ date: r['日期'], type: r['类型'], opp: isWin ? l : w, isWin: isWin, isBonus: false, pre: pre, rawChange: rawChange, change: change, post: pre + change });
+                        rows.push({ date: r['日期'], type: r['类型'], opp: isWin ? l : w, isWin: isWin, isBonus: false, pre: pre, oppPre: oppPre, rawChange: rawChange, change: change, post: pre + change });
                     }
                     scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg);
                     scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * LOSER_POINT_MULTIPLIER);
@@ -180,10 +183,11 @@ function wttPpComputeMatchRecords(playerName) {
     });
 }
 
-function wttPpRenderMatchTable(playerName) {
+// records 可选传入已算好的结果，避免同一页内重复回放
+function wttPpRenderMatchTable(playerName, records) {
     const container = document.getElementById('wttPpMatchTable');
     if (!container) return;
-    const rows = wttPpComputeMatchRecords(playerName);
+    const rows = records || wttPpComputeMatchRecords(playerName);
     if (!rows.length) { container.innerHTML = ''; return; }
 
     const rowsHtml = rows.map(r => {
@@ -239,9 +243,15 @@ async function initWttPlayerPage() {
         wttPpRenderNavSwitch(playerName);
         wttPpRenderHeader(playerName);
 
-        content.innerHTML += '<div id="wttPpStatsBody"></div><div id="wttPpMatchTable"></div>';
+        content.innerHTML += '<div id="wttPpStatsBody"></div><div id="playerAnalyticsBody"></div><div id="wttPpMatchTable"></div>';
+        const matchRecords = wttPpComputeMatchRecords(playerName);
+        wttPpMatchRecordsCache = matchRecords;
+        // 深度数据分析：在 WTT 数据上下文中复用俱乐部分析模块（排名走势用 WTT 时间线）
+        // 数据计算语言无关且耗时较长，只在初始化时算一次并缓存，语言切换仅重绘
+        wttPpAnalyticsData = wttWithDataContext(() => paComputeAnalyticsData(playerName, matchRecords, { timeline: wttRankingTimeline }));
         wttRenderPersonalStats(playerName, 'wttPpStatsBody');
-        wttPpRenderMatchTable(playerName);
+        renderPlayerAnalytics(playerName, matchRecords, { timeline: wttRankingTimeline, data: wttPpAnalyticsData });
+        wttPpRenderMatchTable(playerName, matchRecords);
         console.log('[WttPlayerPage] 初始化完成:', playerName);
     } catch (e) {
         console.error('[WttPlayerPage] 初始化失败', e);
@@ -260,13 +270,15 @@ function wttReapplyI18n() {
         const existing = Chart.getChart(canvas);
         if (existing) existing.destroy();
     }
+    destroyPlayerAnalytics();
     document.title = wttCurrentPlayer + ' · ' + wttGetCategoryDisplayName() + ' | WFLS Table Tennis Club';
     content.innerHTML = '';
     wttPpRenderNavSwitch(wttCurrentPlayer);
     wttPpRenderHeader(wttCurrentPlayer);
-    content.innerHTML += '<div id="wttPpStatsBody"></div><div id="wttPpMatchTable"></div>';
+    content.innerHTML += '<div id="wttPpStatsBody"></div><div id="playerAnalyticsBody"></div><div id="wttPpMatchTable"></div>';
     wttRenderPersonalStats(wttCurrentPlayer, 'wttPpStatsBody');
-    wttPpRenderMatchTable(wttCurrentPlayer);
+    renderPlayerAnalytics(wttCurrentPlayer, null, { timeline: wttRankingTimeline, data: wttPpAnalyticsData });
+    wttPpRenderMatchTable(wttCurrentPlayer, wttPpMatchRecordsCache);
 }
 
 if (document.readyState === 'loading') {

@@ -85,11 +85,13 @@ function paShortDate(ds) {
 
 // ---------- 数据计算 ----------
 
-// 排名历史：遍历 rankingTimeline 每个节点重算排名（与 getCurrentRank 同口径）
-function paBuildRankSeries(playerName) {
+// 排名历史：遍历排名时间线每个节点重算排名
+// timeline 可选：WTT 页传入 wttRankingTimeline，缺省用俱乐部全局 rankingTimeline
+function paBuildRankSeries(playerName, timeline) {
+    const tl = timeline || (typeof rankingTimeline !== 'undefined' ? rankingTimeline : []);
     const series = [];
-    if (!Array.isArray(rankingTimeline)) return series;
-    for (const t of rankingTimeline) {
+    if (!Array.isArray(tl)) return series;
+    for (const t of tl) {
         if (!t || !t.data || !t.data.length) continue;
         const sorted = [...t.data].sort((a, b) => (b['当前积分'] || 0) - (a['当前积分'] || 0));
         const idx = sorted.findIndex(p => p['姓名'] === playerName);
@@ -278,27 +280,47 @@ function paBuildSourceFromDaily(dailyFull) {
 
 // ---------- HTML 构建 ----------
 
-function renderPlayerAnalytics(playerName, records) {
-    const container = document.getElementById('playerAnalyticsBody');
-    if (!container) return;
-    destroyPlayerAnalytics();
+// ---------- 数据计算 ----------
 
+// 计算全部分析数据（语言无关，可缓存复用；WTT 页需在 wttWithDataContext 内调用）
+function paComputeAnalyticsData(playerName, records, opts) {
+    opts = opts || {};
     const all = records || computePlayerMatchRecords(playerName);
     const matches = all.filter(r => !r.isBonus).sort((a, b) => a.date.localeCompare(b.date));
-    if (!matches.length && !all.length) { container.innerHTML = ''; return; }
-
-    const rankSeries = paBuildRankSeries(playerName);
-    const typeStats = paBuildTypeStats(matches);
-    const gapBands = paBuildGapStats(matches);
-    const gapTotal = gapBands.reduce((s, b) => s + b.wins + b.losses, 0);
-    const monthly = paBuildMonthlyStats(matches);
-    const form = paBuildFormStats(matches);
-    const seasonRows = paBuildSeasonStats(all);
+    const rankSeries = paBuildRankSeries(playerName, opts.timeline);
     // 积分来源构成：与积分趋势图同口径的每日回放（带类型分解）
     const sortedLogDaily = [...scoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
     const startScoresDaily = initialScoresData ? { ...initialScoresData.initialScores } : {};
     const dailyFull = computeDailyScoreHistory(playerName, sortedLogDaily, startScoresDaily, true);
     const source = paBuildSourceFromDaily(dailyFull);
+    const gapBands = paBuildGapStats(matches);
+    return {
+        all: all,
+        matches: matches,
+        rankSeries: rankSeries,
+        rankBoundaries: paFindSeasonBoundaries(rankSeries),
+        typeStats: paBuildTypeStats(matches),
+        gapBands: gapBands,
+        gapTotal: gapBands.reduce((s, b) => s + b.wins + b.losses, 0),
+        monthly: paBuildMonthlyStats(matches),
+        form: paBuildFormStats(matches),
+        seasonRows: paBuildSeasonStats(all),
+        source: source,
+        sourceBoundaries: paFindSeasonBoundaries(source.snapshots)
+    };
+}
+
+function renderPlayerAnalytics(playerName, records, opts) {
+    const container = document.getElementById('playerAnalyticsBody');
+    if (!container) return;
+    destroyPlayerAnalytics();
+    opts = opts || {};
+    // opts.data 可传入缓存的计算结果（语言切换重渲时避免重复重型计算）
+    const data = opts.data || paComputeAnalyticsData(playerName, records, opts);
+    const all = data.all, matches = data.matches;
+    if (!matches.length && !all.length) { container.innerHTML = ''; return; }
+
+    const { rankSeries, typeStats, gapBands, gapTotal, monthly, form, seasonRows, source } = data;
 
     const L = i18n[currentLang];
     let html = '';
@@ -439,21 +461,25 @@ function renderPlayerAnalytics(playerName, records) {
     container.innerHTML = html;
 
     // 渲染图表
-    if (rankSeries.length >= 2) paRenderRankChart(rankSeries);
+    if (rankSeries.length >= 2) paRenderRankChart(rankSeries, data.rankBoundaries);
     if (typeStats.length) paRenderTypeChart(typeStats);
     if (gapTotal > 0) paRenderGapChart(gapBands);
     if (monthly && monthly.totals.length) paRenderMonthlyChart(monthly);
     if (matches.length && form.rolling.length >= 2) paRenderFormChart(form);
-    if (source.snapshots.length >= 2) paRenderSourceChart(source);
+    if (source.snapshots.length >= 2) paRenderSourceChart(source, data.sourceBoundaries);
 }
 
 // ---------- 图表渲染 ----------
 
-function paRenderRankChart(series) {
+function paRenderRankChart(series, boundaries) {
     const canvas = document.getElementById('paRankChart');
     if (!canvas) return;
     const t = paChartTheme();
-    const lineColor = (personalChartSettings && personalChartSettings.colors && personalChartSettings.colors.line) || '#4da3ff';
+    // WTT 页优先用 WTT 图表设置，俱乐部页用 club 设置，均未加载时用默认色
+    const chartCfg = (typeof wttPersonalChartSettings !== 'undefined' && wttPersonalChartSettings)
+        ? wttPersonalChartSettings
+        : (typeof personalChartSettings !== 'undefined' ? personalChartSettings : null);
+    const lineColor = (chartCfg && chartCfg.colors && chartCfg.colors.line) || '#4da3ff';
     paTrackChart(new Chart(canvas, {
         type: 'line',
         data: {
@@ -499,7 +525,7 @@ function paRenderRankChart(series) {
                 }
             }
         },
-        plugins: [createSeasonBoundaryPlugin(series, t.isDark)]
+        plugins: [createSeasonBoundaryPlugin(series, t.isDark, boundaries)]
     }));
 }
 
@@ -766,7 +792,7 @@ function paRenderFormChart(form) {
 // 积分来源构成中基准分层的固定颜色
 const PA_BASELINE_COLOR = '#8a90a0';
 
-function paRenderSourceChart(source) {
+function paRenderSourceChart(source, boundaries) {
     const canvas = document.getElementById('paSourceChart');
     if (!canvas) return;
     const t = paChartTheme();
@@ -858,6 +884,6 @@ function paRenderSourceChart(source) {
                 }
             }
         },
-        plugins: [createSeasonBoundaryPlugin(snapshots, t.isDark)]
+        plugins: [createSeasonBoundaryPlugin(snapshots, t.isDark, boundaries)]
     }));
 }
