@@ -761,7 +761,7 @@ function renderPersonalStats(playerName, containerId) {
  * - 预建时间衰减查找表 (LUT)，避免循环内重复 Math.pow()
  * - 分离赛事记录和加分记录，各自独立索引推进
  */
-function computeDailyScoreHistory(playerName, sortedLog, startScores) {
+function computeDailyScoreHistory(playerName, sortedLog, startScores, collectTypes) {
     const history = [];
     if (sortedLog.length === 0) return history;
 
@@ -843,6 +843,15 @@ function computeDailyScoreHistory(playerName, sortedLog, startScores) {
 
         let mi = 0, bi = 0;
 
+        // 类型分解追踪（可选）：赛季基准 + 当季各类型贡献（每日按当日衰减重算），总和恒等于当日积分
+        let daySums = null, baselineVal = 0;
+        if (collectTypes) {
+            daySums = {};
+            baselineVal = (seasonIdx >= 0 && seasonStartScoresMap[seasonIdx])
+                ? (seasonStartScoresMap[seasonIdx][playerName] != null ? seasonStartScoresMap[seasonIdx][playerName] : DEFAULT_INITIAL_SCORE)
+                : (startScores[playerName] != null ? startScores[playerName] : DEFAULT_INITIAL_SCORE);
+        }
+
         // 构建赛季内 [seasonStartDate, dateStr] 的批次定格索引（每赛季清零 + 时间截断定格）
         playerTypeBatches = buildPlayerTypeBatches(matchRecs
             .filter(r => (!seasonStartDate || r.date >= seasonStartDate) && r.date <= dateStr)
@@ -863,6 +872,11 @@ function computeDailyScoreHistory(playerName, sortedLog, startScores) {
             const tw = getFreezeWeight(w, m.type, m.date, dateStr);
             const wg = base * coeff * tw;
 
+            if (collectTypes) {
+                if (w === playerName) daySums[m.type] = (daySums[m.type] || 0) + wg;
+                else if (l === playerName) daySums[m.type] = (daySums[m.type] || 0) - wg * LOSER_POINT_MULTIPLIER;
+            }
+
             sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
             sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
             mi++;
@@ -874,6 +888,7 @@ function computeDailyScoreHistory(playerName, sortedLog, startScores) {
             // 跳过赛季开始前的记录
             if (seasonIdx >= 0 && b.date < seasonStartDate) { bi++; continue; }
             if (sc[b.target] === undefined) sc[b.target] = DEFAULT_INITIAL_SCORE;
+            if (collectTypes && b.target === playerName) daySums['__bonus'] = (daySums['__bonus'] || 0) + b.amount;
             sc[b.target] = Math.max(SCORE_FLOOR, sc[b.target] + b.amount);
             bi++;
         }
@@ -883,6 +898,10 @@ function computeDailyScoreHistory(playerName, sortedLog, startScores) {
             label: formatDateShort(dateStr),
             score: Math.round((sc[playerName] || DEFAULT_INITIAL_SCORE) * 10) / 10
         });
+        if (collectTypes) {
+            history[history.length - 1].baseline = baselineVal;
+            history[history.length - 1].typeSums = daySums;
+        }
     }
 
     return history;

@@ -273,15 +273,22 @@ function setupMobileSortControls() {
 function setupRankTableExport() {
     const btn = document.getElementById('exportRankBtn');
     if (!btn) return;
-    btn.addEventListener('click', () => {
+    const doExport = limit => {
         if (!currentDisplayData || !currentDisplayData.length || !rankingTimeline.length) return;
         const cn = rankingTimeline[currentTimeIndex];
-        exportRankTableAsImage(currentDisplayData, {
-            title: i18n[currentLang].rank_title,
-            subtitle: `${cn?.label || ''} · ${document.getElementById('sortIndicator')?.textContent || ''}`.replace(/^ · /, ''),
-            filenameBase: 'wfls-points-table'
-        });
-    });
+        let rows = currentDisplayData;
+        let subtitle = `${cn?.label || ''} · ${document.getElementById('sortIndicator')?.textContent || ''}`.replace(/^ · /, '');
+        let filenameBase = 'wfls-points-table';
+        if (limit) {
+            /* 按实际名次截取，保证导出图片中 # 列与真实排名一致 */
+            rows = [...currentDisplayData].sort((a, b) => (a.rank || 0) - (b.rank || 0)).slice(0, limit);
+            subtitle += ` · ${i18n[currentLang].rank_export_top_sub.replace('{n}', limit)}`;
+            filenameBase += `-top${limit}`;
+        }
+        exportRankTableAsImage(rows, { title: i18n[currentLang].rank_title, subtitle, filenameBase });
+    };
+    btn.addEventListener('click', () => doExport(null));
+    attachRankExportMenu(btn, doExport);
 }
 /* 语言切换时同步下拉文案与卡片标签 */
 if (typeof updateRankingHeaders === 'function') {

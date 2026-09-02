@@ -52,8 +52,10 @@ const PA_TYPE_COLORS = {
     '校乒赛单打': '#2fbf71'
 };
 const PA_FALLBACK_COLORS = ['#4da3ff', '#9b6dff', '#ff9f43', '#2dd4bf', '#f472b6', '#fbbf24', '#2fbf71'];
-// 积分来源构成中 bonus 记录的固定 key（渲染时再取本地化文案）
-const PA_BONUS_KEY = '\u0000bonus';
+// 每日类型分解中加分记录的固定 key（渲染时再取本地化文案）
+const PA_BONUS_KEY = '__bonus';
+// 摘要条中赛季继承残差的固定颜色
+const PA_INHERIT_COLOR = '#52525b';
 
 function paTypeColor(key, idx) {
     if (key === PA_BONUS_KEY) return '#eab308';
@@ -222,7 +224,9 @@ function paBuildSeasonStats(allRecords) {
             if (r.pre != null && r.pre > peak) peak = r.pre;
             if (r.post != null && r.post > peak) peak = r.post;
         }
-        const first = recs[0], last = recs[recs.length - 1];
+        // allRecords 按日期倒序，改用时间正序确定赛季首末条目
+        const chrono = [...recs].sort((a, b) => a.date.localeCompare(b.date));
+        const first = chrono[0], last = chrono[chrono.length - 1];
         const net = (last.post || 0) - (first.pre || 0);
         rows.push({
             label: season.label,
@@ -237,27 +241,39 @@ function paBuildSeasonStats(allRecords) {
     return rows;
 }
 
-// 积分来源构成：按类型累计实际积分变化（含 bonus，含衰减）
-function paBuildSourceSeries(allRecords) {
-    const chronological = [...allRecords].sort((a, b) => a.date.localeCompare(b.date));
-    const types = [];
-    const cum = new Map();
-    const snapshots = [];
-    for (let i = 0; i < chronological.length; i++) {
-        const r = chronological[i];
-        const key = r.isBonus ? PA_BONUS_KEY : r.type;
-        if (!cum.has(key)) { cum.set(key, 0); types.push(key); }
-        cum.set(key, cum.get(key) + r.change);
-        const next = chronological[i + 1];
-        if (!next || next.date !== r.date) {
-            const vals = {};
-            for (const t of types) vals[t] = cum.get(t);
-            snapshots.push({ date: r.date, vals: vals });
+// 积分来源构成：基于每日积分历史的类型分解
+// 图表每个数据点 = 赛季基准分（含继承）+ 当季各类型贡献（按当日衰减），堆叠总和恒等于当日积分
+// 摘要条 = 生涯口径：初始分 + 各类型生涯累计（各赛季末衰减值求和）+ 赛季继承残差 = 总积分
+function paBuildSourceFromDaily(dailyFull) {
+    const typeSet = new Set();
+    let hasBonus = false;
+    for (const d of dailyFull) {
+        for (const k of Object.keys(d.typeSums || {})) {
+            if (k === PA_BONUS_KEY) { hasBonus = true; continue; }
+            typeSet.add(k);
         }
     }
-    // 累计变化幅度大的类型排在栈底
-    types.sort((a, b) => Math.abs(cum.get(b)) - Math.abs(cum.get(a)));
-    return { types: types, snapshots: snapshots };
+    // 累计贡献幅度大的类型排在栈底
+    const last = dailyFull[dailyFull.length - 1];
+    const types = [...typeSet].sort((a, b) => Math.abs((last.typeSums[b] || 0)) - Math.abs((last.typeSums[a] || 0)));
+    // 生涯累计：每个赛季结束时（基准分变化的前一天）冻结当季各类型贡献
+    const initial = dailyFull[0].baseline || 0;
+    const lifetime = {};
+    let prev = null;
+    for (const d of dailyFull) {
+        if (prev && d.baseline !== prev.baseline) {
+            for (const k in prev.typeSums) lifetime[k] = (lifetime[k] || 0) + prev.typeSums[k];
+        }
+        prev = d;
+    }
+    if (prev) {
+        for (const k in prev.typeSums) lifetime[k] = (lifetime[k] || 0) + prev.typeSums[k];
+    }
+    // 赛季继承残差：保证 初始分 + 各项累计 = 当前积分
+    let sumAll = initial;
+    for (const k in lifetime) sumAll += lifetime[k];
+    const inherit = (last.score || 0) - sumAll;
+    return { types: types, hasBonus: hasBonus, snapshots: dailyFull, initial: initial, lifetime: lifetime, inherit: inherit };
 }
 
 // ---------- HTML 构建 ----------
@@ -278,7 +294,11 @@ function renderPlayerAnalytics(playerName, records) {
     const monthly = paBuildMonthlyStats(matches);
     const form = paBuildFormStats(matches);
     const seasonRows = paBuildSeasonStats(all);
-    const source = paBuildSourceSeries(all);
+    // 积分来源构成：与积分趋势图同口径的每日回放（带类型分解）
+    const sortedLogDaily = [...scoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
+    const startScoresDaily = initialScoresData ? { ...initialScoresData.initialScores } : {};
+    const dailyFull = computeDailyScoreHistory(playerName, sortedLogDaily, startScoresDaily, true);
+    const source = paBuildSourceFromDaily(dailyFull);
 
     const L = i18n[currentLang];
     let html = '';
@@ -350,7 +370,7 @@ function renderPlayerAnalytics(playerName, records) {
         html += '<div class="pa-form-last10"><span class="pa-form-label">' + L.pa_form_last10 + '</span><span class="pa-form-dots">';
         if (form.last10.length) {
             for (const isWin of form.last10) {
-                html += '<span class="pa-form-dot ' + (isWin ? 'w' : 'l') + '">' + (isWin ? '胜' : '负') + '</span>';
+                html += '<span class="pa-form-dot ' + (isWin ? 'w' : 'l') + '">' + (isWin ? i18n[currentLang].score_result_win : i18n[currentLang].score_result_loss) + '</span>';
             }
         } else {
             html += '<span class="pa-card-empty">' + L.wtt_empty + '</span>';
@@ -381,30 +401,35 @@ function renderPlayerAnalytics(playerName, records) {
         const tRate = tTotal ? Math.round(tWins / tTotal * 100) : null;
         html += '<tr class="pa-season-total"><td>' + L.pa_season_total + '</td><td>' + tTotal + '</td><td>' + tWins + '-' + tLosses + '</td><td>' + (tRate == null ? '-' : tRate + '%') + '</td><td>-</td><td>-</td></tr>';
         html += '</tbody></table></div>';
+        html += '<div class="pa-card-hint">' + L.pa_season_hint + '</div>';
         html += '</div>';
     }
 
-    // 7. 积分来源构成（通栏）
-    if (source.snapshots.length >= 2 && source.types.length) {
-        const lastVals = source.snapshots[source.snapshots.length - 1].vals;
-        let sourceTotal = 0;
-        const sourceSummary = source.types.map((key, i) => {
-            const net = lastVals[key] || 0;
-            sourceTotal += net;
-            return { key: key, idx: i, net: net };
-        });
+    // 7. 积分来源构成（通栏）：堆叠面积图，总和 = 积分曲线
+    if (source.snapshots.length >= 2) {
+        const lastDay = source.snapshots[source.snapshots.length - 1];
         html += '<div class="pa-card glass-card pa-span-2">';
         html += '<div class="personal-card-header">' + L.pa_source_title + '</div>';
         html += '<div class="pa-chart-box"><canvas id="paSourceChart"></canvas></div>';
         html += '<div class="pa-source-strip">';
-        for (const item of sourceSummary) {
-            const cls = item.net >= 0 ? 'pa-text-win' : 'pa-text-loss';
-            const sign = item.net >= 0 ? '+' : '';
-            html += '<span class="pa-source-chip"><span class="pa-dot" style="background:' + paTypeColor(item.key, item.idx) + '"></span><span class="pa-source-name">' + escapeHtml(paTypeLabel(item.key)) + '</span><span class="' + cls + '">' + sign + item.net.toFixed(1) + '</span></span>';
+        html += '<span class="pa-source-chip"><span class="pa-dot" style="background:' + PA_BASELINE_COLOR + '"></span><span class="pa-source-name">' + L.pa_source_initial + '</span><span>' + source.initial.toFixed(1) + '</span></span>';
+        for (let i = 0; i < source.types.length; i++) {
+            const key = source.types[i];
+            const net = source.lifetime[key] || 0;
+            const cls = net >= 0 ? 'pa-text-win' : 'pa-text-loss';
+            const sign = net >= 0 ? '+' : '';
+            html += '<span class="pa-source-chip"><span class="pa-dot" style="background:' + paTypeColor(key, i) + '"></span><span class="pa-source-name">' + escapeHtml(paTypeLabel(key)) + '</span><span class="' + cls + '">' + sign + net.toFixed(1) + '</span></span>';
         }
-        const totCls = sourceTotal >= 0 ? 'pa-text-win' : 'pa-text-loss';
-        const totSign = sourceTotal >= 0 ? '+' : '';
-        html += '<span class="pa-source-chip pa-source-total">' + L.pa_season_total + '<span class="' + totCls + '">' + totSign + sourceTotal.toFixed(1) + '</span></span>';
+        if (source.hasBonus) {
+            const bonus = source.lifetime[PA_BONUS_KEY] || 0;
+            const cls = bonus >= 0 ? 'pa-text-win' : 'pa-text-loss';
+            const sign = bonus >= 0 ? '+' : '';
+            html += '<span class="pa-source-chip"><span class="pa-dot" style="background:' + paTypeColor(PA_BONUS_KEY, 0) + '"></span><span class="pa-source-name">' + escapeHtml(paTypeLabel(PA_BONUS_KEY)) + '</span><span class="' + cls + '">' + sign + bonus.toFixed(1) + '</span></span>';
+        }
+        if (Math.abs(source.inherit) >= 0.05) {
+            html += '<span class="pa-source-chip"><span class="pa-dot" style="background:' + PA_INHERIT_COLOR + '"></span><span class="pa-source-name">' + L.pa_source_inherit + '</span><span>' + source.inherit.toFixed(1) + '</span></span>';
+        }
+        html += '<span class="pa-source-chip pa-source-total">' + L.pa_source_total + '<span>' + (lastDay.score || 0).toFixed(1) + '</span></span>';
         html += '</div>';
         html += '<div class="pa-card-hint">' + L.pa_source_hint + '</div>';
         html += '</div>';
@@ -419,7 +444,7 @@ function renderPlayerAnalytics(playerName, records) {
     if (gapTotal > 0) paRenderGapChart(gapBands);
     if (monthly && monthly.totals.length) paRenderMonthlyChart(monthly);
     if (matches.length && form.rolling.length >= 2) paRenderFormChart(form);
-    if (source.snapshots.length >= 2 && source.types.length) paRenderSourceChart(source);
+    if (source.snapshots.length >= 2) paRenderSourceChart(source);
 }
 
 // ---------- 图表渲染 ----------
@@ -738,28 +763,59 @@ function paRenderFormChart(form) {
     }));
 }
 
+// 积分来源构成中基准分层的固定颜色
+const PA_BASELINE_COLOR = '#8a90a0';
+
 function paRenderSourceChart(source) {
     const canvas = document.getElementById('paSourceChart');
     if (!canvas) return;
     const t = paChartTheme();
-    const L = i18n[currentLang];
-    // 各类型累计净积分的堆叠柱状图：每根柱 = 截至该日的累计构成，正值向上、负值向下
-    const datasets = source.types.map((key, i) => {
-        const color = paTypeColor(key, i);
-        return {
+    // 堆叠面积图：Chart.js 原生 stacked 对负值层会分堆到零轴以下，无法保证堆顶 = 积分曲线，
+    // 因此这里自行计算累计堆叠位置：数据集 k 直接存「前 k 层之和」，fill 指向上一层。
+    // 各层线条自下而上相加，顶层恒等于当日积分，与衰减/赛季继承/负值无关。
+    const snapshots = source.snapshots;
+    const layers = [{
+        label: i18n[currentLang].pa_source_baseline,
+        color: PA_BASELINE_COLOR,
+        alpha: 0.30,
+        values: snapshots.map(s => s.baseline || 0)
+    }];
+    source.types.forEach((key, i) => {
+        layers.push({
             label: paTypeLabel(key),
-            data: source.snapshots.map(s => s.vals[key] != null ? s.vals[key] : 0),
-            backgroundColor: color,
-            borderColor: t.isDark ? '#1e2230' : '#ffffff',
-            borderWidth: 1,
-            borderRadius: 2,
-            maxBarThickness: 26
-        };
+            color: paTypeColor(key, i),
+            alpha: 0.45,
+            values: snapshots.map(s => s.typeSums[key] != null ? s.typeSums[key] : 0)
+        });
     });
+    if (source.hasBonus) {
+        layers.push({
+            label: paTypeLabel(PA_BONUS_KEY),
+            color: paTypeColor(PA_BONUS_KEY, 0),
+            alpha: 0.45,
+            values: snapshots.map(s => s.typeSums[PA_BONUS_KEY] != null ? s.typeSums[PA_BONUS_KEY] : 0)
+        });
+    }
+    const cum = [];
+    layers.forEach((layer, k) => {
+        if (k === 0) { cum.push(layer.values.slice()); return; }
+        cum.push(layer.values.map((v, i) => cum[k - 1][i] + v));
+    });
+    const datasets = layers.map((layer, k) => ({
+        label: layer.label,
+        data: cum[k],
+        borderColor: layer.color,
+        backgroundColor: paAlpha(layer.color, layer.alpha),
+        borderWidth: 1,
+        pointRadius: 0,
+        pointHoverRadius: 0,
+        tension: 0.15,
+        fill: k === 0 ? 'origin' : k - 1
+    }));
     paTrackChart(new Chart(canvas, {
-        type: 'bar',
+        type: 'line',
         data: {
-            labels: source.snapshots.map(s => s.date),
+            labels: snapshots.map(s => s.label || s.time),
             datasets: datasets
         },
         options: {
@@ -775,31 +831,33 @@ function paRenderSourceChart(source) {
                 tooltip: Object.assign({}, t.tooltip, {
                     displayColors: true,
                     callbacks: {
-                        title: items => paShortDate(source.snapshots[items[0].dataIndex].date),
+                        title: items => paShortDate(snapshots[items[0].dataIndex].time),
                         label: function(item) {
-                            const v = item.parsed.y;
-                            return item.dataset.label + ': ' + (v >= 0 ? '+' : '') + v.toFixed(1);
+                            const k = item.datasetIndex;
+                            // 显示该层自身的贡献 = 累计值 − 上一层累计值
+                            const v = k === 0 ? item.parsed.y : cum[k][item.dataIndex] - cum[k - 1][item.dataIndex];
+                            const sign = v >= 0 ? '+' : '';
+                            return item.dataset.label + ': ' + (k === 0 ? '' : sign) + v.toFixed(1);
+                        },
+                        afterBody: function(items) {
+                            const day = snapshots[items[0].dataIndex];
+                            return i18n[currentLang].pa_source_total + ': ' + (day.score || 0).toFixed(1);
                         }
                     }
                 })
             },
             scales: {
                 x: {
-                    stacked: true,
                     grid: { color: t.grid },
-                    ticks: { color: t.text, font: { size: 10 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 12, callback: function(v) { return paShortDate(this.getLabelForValue(v)); } }
+                    ticks: { color: t.text, font: { size: 10 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 12 }
                 },
                 y: {
-                    stacked: true,
-                    grid: {
-                        color: ctx => (ctx.tick && ctx.tick.value === 0)
-                            ? (t.isDark ? 'rgba(255,255,255,0.28)' : 'rgba(0,0,0,0.22)')
-                            : t.grid,
-                        lineWidth: ctx => (ctx.tick && ctx.tick.value === 0) ? 1.5 : 1
-                    },
+                    beginAtZero: false,
+                    grid: { color: t.grid },
                     ticks: { color: t.text, font: { size: 10 } }
                 }
             }
-        }
+        },
+        plugins: [createSeasonBoundaryPlugin(snapshots, t.isDark)]
     }));
 }

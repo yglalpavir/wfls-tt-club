@@ -121,6 +121,7 @@ const i18n = {
         rank_page_title: "Ranking Beta | WFLS Table Tennis Club", rank_hero_desc: "社团积分排名系统 · 支持多时间节点对比 · 点击姓名查看积分明细", rank_tag: "Data Table", rank_title: "积分数据表", rank_sort_hint: "当前排序：", rank_sidebar_title: "时间节点", rank_qa_btn: "积分计算规则",
         rank_col_rank: "#", rank_col_name: "姓名", rank_col_points: "当前积分", rank_col_points_change: "积分变化", rank_col_change: "排名变化", rank_col_matches: "总场次", rank_col_winrate: "胜率",
         rank_export_btn: "导出图片", rank_export_gen: "生成于", rank_export_fail: "图片导出失败，请重试",
+        rank_export_menu_all: "导出全部", rank_export_menu_top12: "导出前12名", rank_export_top_sub: "前{n}名", rank_export_topn_prefix: "导出前", rank_export_topn_suffix: "名", rank_export_menu_go: "导出", rank_export_menu_invalid: "请输入有效的名次（正整数）",
         score_detail_title: "积分明细", score_col_date: "日期", score_col_type: "类型", score_col_opponent: "对手", score_col_result: "结果", score_col_score_before: "赛前积分", score_col_change: "积分变动", score_col_score_after: "赛后积分", score_result_win: "胜", score_result_loss: "负",
         tag_match: "赛事", tag_training: "训练", tag_notice: "公告", tag_event: "活动", tag_daily: "日常", tag_upcoming: "即将开始", tag_result: "比赛结果", tag_live: "进行中",
         filter_all: "全部",
@@ -142,8 +143,8 @@ const i18n = {
         pa_rank_axis: "排名", pa_no_rank: "暂无排名数据", pa_no_matches: "暂无对局数据", pa_monthly_matches: "场次数", pa_monthly_winrate: "胜率", pa_type_center_unit: "场", pa_type_wr: "胜率 {r}%",
         pa_gap_leading: "领先", pa_gap_behind: "落后", pa_gap_wins: "胜场", pa_gap_losses: "负场", pa_gap_wr: "胜率 {r}%", pa_gap_hint: "对手赛前分 − 我方赛前分",
         pa_form_now_w: "当前 {n} 连胜", pa_form_now_l: "当前 {n} 连败", pa_form_max_w: "最长连胜", pa_form_max_l: "最长连败", pa_form_last10: "近 10 场", pa_form_rolling: "滚动 10 场胜率", pa_form_overall: "生涯胜率",
-        pa_season_col: "赛季", pa_season_matches: "场次", pa_season_wl: "胜负", pa_season_rate: "胜率", pa_season_net: "净积分", pa_season_peak: "最高分", pa_season_total: "总计",
-        pa_source_axis: "累计积分变化", pa_source_hint: "按赛事类型累计的实际积分变化（含时间衰减）",
+        pa_season_col: "赛季", pa_season_matches: "场次", pa_season_wl: "胜负", pa_season_rate: "胜率", pa_season_net: "积分变化", pa_season_peak: "最高分", pa_season_total: "总计", pa_season_hint: "积分变化 = 该赛季末积分 − 赛季初积分（含比赛结果加分，不含跨赛季继承调整）",
+        pa_source_axis: "累计积分变化", pa_source_baseline: "赛季基准分", pa_source_initial: "初始分", pa_source_inherit: "赛季继承", pa_source_total: "总积分", pa_source_hint: "按赛事类型分解的当季积分构成，堆叠总和即积分变化曲线（含时间衰减与赛季继承）",
         rank_realtime_header: "实时积分", rank_realtime_label: "实时积分",
         search_input_hint: "输入关键词搜索", search_hint_title: "输入关键词开始搜索", search_hint_info: "支持搜索标题、内容、姓名等",
         search_rank_tpl: "排名：{rank} | 胜率：{rate}",
@@ -209,6 +210,7 @@ const i18n = {
         rank_page_title: "Ranking Beta | WFLS Table Tennis Club", rank_hero_desc: "Club ranking system · Auto-calculated · Season inheritance", rank_tag: "Data Table", rank_title: "Points Table", rank_sort_hint: "Current sorting: ", rank_sidebar_title: "Time Periods", rank_qa_btn: "Scoring Rules",
         rank_col_rank: "#", rank_col_name: "Name", rank_col_points: "Points", rank_col_points_change: "Score Δ", rank_col_change: "Rank Δ", rank_col_matches: "Matches", rank_col_winrate: "Win Rate",
         rank_export_btn: "Save Image", rank_export_gen: "Generated", rank_export_fail: "Image export failed. Please try again.",
+        rank_export_menu_all: "Export All", rank_export_menu_top12: "Export Top 12", rank_export_top_sub: "Top {n}", rank_export_topn_prefix: "Top", rank_export_topn_suffix: "", rank_export_menu_go: "Export", rank_export_menu_invalid: "Please enter a valid rank (positive integer)",
         score_detail_title: "Score Details", score_col_date: "Date", score_col_type: "Type", score_col_opponent: "Opponent", score_col_result: "Result", score_col_score_before: "Before", score_col_change: "Change", score_col_score_after: "After", score_result_win: "Win", score_result_loss: "Loss",
         tag_match: "Match", tag_training: "Training", tag_notice: "Notice", tag_event: "Event", tag_daily: "Daily", tag_upcoming: "Upcoming", tag_result: "Result", tag_live: "Live",
         filter_all: "All",
@@ -230,8 +232,8 @@ const i18n = {
         pa_rank_axis: "Rank", pa_no_rank: "No ranking data", pa_no_matches: "No match data", pa_monthly_matches: "Matches", pa_monthly_winrate: "Win rate", pa_type_center_unit: "games", pa_type_wr: "Win rate {r}%",
         pa_gap_leading: "Leading", pa_gap_behind: "Trailing", pa_gap_wins: "Wins", pa_gap_losses: "Losses", pa_gap_wr: "Win rate {r}%", pa_gap_hint: "X-axis: opponent's pre-match score − player's",
         pa_form_now_w: "{n}-match win streak", pa_form_now_l: "{n}-match losing streak", pa_form_max_w: "Best win streak", pa_form_max_l: "Worst losing streak", pa_form_last10: "Last 10", pa_form_rolling: "Rolling 10-match win rate", pa_form_overall: "Career win rate",
-        pa_season_col: "Season", pa_season_matches: "Matches", pa_season_wl: "W-L", pa_season_rate: "Win rate", pa_season_net: "Net points", pa_season_peak: "Peak", pa_season_total: "Total",
-        pa_source_axis: "Cumulative points change", pa_source_hint: "Actual cumulative points change by event type (with decay)",
+        pa_season_col: "Season", pa_season_matches: "Matches", pa_season_wl: "W-L", pa_season_rate: "Win rate", pa_season_net: "Points change", pa_season_peak: "Peak", pa_season_total: "Total", pa_season_hint: "Points change = season-end score − season-start score (incl. bonus points, excl. cross-season carryover)",
+        pa_source_axis: "Cumulative points change", pa_source_baseline: "Season baseline", pa_source_initial: "Initial", pa_source_inherit: "Season carryover", pa_source_total: "Total", pa_source_hint: "Score composition by event type — the stacked total equals the score trend (with decay and season carryover)",
         rank_realtime_header: "Real-time", rank_realtime_label: "Live Ranking",
         search_input_hint: "Type keywords to search", search_hint_title: "Start typing to search", search_hint_info: "Searches titles, content and player names",
         search_rank_tpl: "Rank {rank} | Win rate {rate}",
@@ -311,7 +313,7 @@ const body = document.body;
 function setLanguage(lang) {
     currentLang = lang; safeStorage.set('wfls-lang.v1', lang);
     document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-    document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.getAttribute('data-i18n'); if (i18n[lang] && i18n[lang][key]) el.innerHTML = i18n[lang][key]; });
+    document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.getAttribute('data-i18n'); if (i18n[lang] && i18n[lang][key] != null) el.innerHTML = i18n[lang][key]; });
     document.querySelectorAll('[data-i18n-title]').forEach(el => { const key = el.getAttribute('data-i18n-title'); if (i18n[lang] && i18n[lang][key]) el.title = i18n[lang][key]; });
     if (langToggle) langToggle.querySelector('span').textContent = lang === 'zh' ? 'EN' : '中文';
     if (searchInput) searchInput.placeholder = i18n[lang].search_placeholder;
@@ -494,6 +496,58 @@ function exportRankTableAsImage(rows, opts) {
         console.error('导出图片失败', err);
         alert(i18n[currentLang].rank_export_fail);
     }
+}
+/* 为主导出按钮附加"全部 / 前12名 / 前N名"下拉菜单（doExport(limit)，limit 为 null 表示全部） */
+function attachRankExportMenu(btn, doExport) {
+    if (!btn || btn._exportMenuAttached) return;
+    btn._exportMenuAttached = true;
+    const L = i18n[currentLang] || {};
+    const wrap = document.createElement('div');
+    wrap.className = 'export-split';
+    btn.parentNode.insertBefore(wrap, btn);
+    wrap.appendChild(btn);
+
+    const toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'table-export-btn export-menu-toggle';
+    toggle.setAttribute('aria-haspopup', 'true');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.title = L.rank_export_btn || '';
+    toggle.innerHTML = '<i class="fa-solid fa-chevron-down" aria-hidden="true"></i>';
+    wrap.appendChild(toggle);
+
+    const menu = document.createElement('div');
+    menu.className = 'export-menu';
+    menu.hidden = true;
+    menu.innerHTML = `
+        <button type="button" class="export-menu-item" data-export-limit="all" data-i18n="rank_export_menu_all">${L.rank_export_menu_all || '导出全部'}</button>
+        <button type="button" class="export-menu-item" data-export-limit="12" data-i18n="rank_export_menu_top12">${L.rank_export_menu_top12 || '导出前12名'}</button>
+        <div class="export-menu-custom">
+            <span class="export-menu-label"><span data-i18n="rank_export_topn_prefix">${L.rank_export_topn_prefix || '导出前'}</span><input type="number" class="export-menu-input" min="1" step="1" placeholder="N" aria-label="N"><span data-i18n="rank_export_topn_suffix">${L.rank_export_topn_suffix || '名'}</span></span>
+            <button type="button" class="export-menu-item export-menu-go" data-export-limit="custom" data-i18n="rank_export_menu_go">${L.rank_export_menu_go || '导出'}</button>
+        </div>`;
+    wrap.appendChild(menu);
+
+    const input = menu.querySelector('.export-menu-input');
+    const setOpen = open => { menu.hidden = !open; toggle.setAttribute('aria-expanded', open ? 'true' : 'false'); if (open) setTimeout(() => input.focus(), 0); };
+    toggle.addEventListener('click', e => { e.stopPropagation(); setOpen(menu.hidden); });
+    menu.addEventListener('click', e => e.stopPropagation());
+    document.addEventListener('click', () => setOpen(false));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !menu.hidden) setOpen(false); });
+
+    const exportWith = limit => { setOpen(false); doExport(limit); };
+    menu.querySelectorAll('.export-menu-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const mode = item.getAttribute('data-export-limit');
+            if (mode === 'custom') {
+                const n = Math.floor(Number(input.value));
+                if (!input.value.trim() || !Number.isFinite(n) || n < 1) { alert(i18n[currentLang].rank_export_menu_invalid); input.focus(); return; }
+                exportWith(n);
+            } else if (mode === 'all') exportWith(null);
+            else exportWith(parseInt(mode, 10));
+        });
+    });
+    input.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); menu.querySelector('.export-menu-go').click(); } });
 }
 
 if (langToggle) { const sl = safeStorage.get('wfls-lang.v1') || safeStorage.get('wfls-lang') || 'zh'; setLanguage(sl); langToggle.addEventListener('click', () => setLanguage(currentLang === 'zh' ? 'en' : 'zh')); }

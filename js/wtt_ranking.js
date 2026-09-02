@@ -509,15 +509,28 @@ function wttInitRankingPage() {
     wttSetupMobileSortControls();
 
     const exportBtn = document.getElementById('exportRankBtn');
-    if (exportBtn) exportBtn.addEventListener('click', () => {
-        if (!wttCurrentDisplayData || !wttCurrentDisplayData.length || !wttRankingTimeline.length) return;
-        const cn = wttRankingTimeline[wttCurrentTimeIndex];
-        exportRankTableAsImage(wttCurrentDisplayData, {
-            title: i18n[currentLang].wtt_table_title,
-            subtitle: `${cn ? getNodeDisplayLabel(cn) : ''} · ${i18n[currentLang].rank_sort_hint}${wttSortKeyLabel(wttCurrentSortKey)}${wttCurrentSortDir === 'desc' ? i18n[currentLang].sort_desc : i18n[currentLang].sort_asc}`,
-            filenameBase: 'wtt-points-table'
-        });
-    });
+    if (exportBtn) {
+        const doExport = limit => {
+            if (!wttCurrentDisplayData || !wttCurrentDisplayData.length || !wttRankingTimeline.length) return;
+            const cn = wttRankingTimeline[wttCurrentTimeIndex];
+            let rows = wttCurrentDisplayData;
+            let subtitle = `${cn ? getNodeDisplayLabel(cn) : ''} · ${i18n[currentLang].rank_sort_hint}${wttSortKeyLabel(wttCurrentSortKey)}${wttCurrentSortDir === 'desc' ? i18n[currentLang].sort_desc : i18n[currentLang].sort_asc}`;
+            let filenameBase = 'wtt-points-table';
+            if (limit) {
+                /* 按实际名次截取，保证导出图片中 # 列与真实排名一致 */
+                rows = [...wttCurrentDisplayData].sort((a, b) => (a.rank || 0) - (b.rank || 0)).slice(0, limit);
+                subtitle += ` · ${i18n[currentLang].rank_export_top_sub.replace('{n}', limit)}`;
+                filenameBase += `-top${limit}`;
+            }
+            exportRankTableAsImage(rows, {
+                title: i18n[currentLang].wtt_table_title,
+                subtitle,
+                filenameBase
+            });
+        };
+        exportBtn.addEventListener('click', () => doExport(null));
+        attachRankExportMenu(exportBtn, doExport);
+    }
 
     wttLoadRankingData();
 }

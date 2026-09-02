@@ -1541,6 +1541,50 @@ html:lang(en) .hero-title {
 .table-export-btn:focus-visible { box-shadow: 0 0 0 3px rgba(77,163,255,0.25); }
 .table-export-btn:disabled { opacity: 0.6; cursor: wait; transform: none; }
 
+/* 导出图片下拉菜单（全部 / 前12名 / 前N名） */
+.export-split { position: relative; display: inline-flex; flex-shrink: 0; }
+.export-split .table-export-btn:first-child { border-radius: 999px 0 0 999px; }
+.export-split .export-menu-toggle { border-radius: 0 999px 999px 0; margin-left: -1px; padding: 7px 10px; gap: 0; }
+.export-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    min-width: 150px;
+    padding: 6px;
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.export-menu[hidden] { display: none; }
+.export-menu-item {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    border: none;
+    background: transparent;
+    border-radius: 8px;
+    font-family: var(--font-cn);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: left;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background var(--transition-fast), color var(--transition-fast);
+}
+.export-menu-item:hover,
+.export-menu-item:focus-visible { background: var(--primary-pale); color: var(--primary-blue); outline: none; }
+.export-menu-custom { display: flex; align-items: center; gap: 6px; padding: 8px 6px 2px; border-top: 1px solid var(--border-color); margin-top: 4px; }
+.export-menu-label { display: inline-flex; align-items: center; gap: 5px; font-family: var(--font-cn); font-size: 0.78rem; font-weight: 600; color: var(--text-primary); white-space: nowrap; }
+.export-menu-input { width: 52px; padding: 4px 6px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-white); color: var(--text-primary); font-family: var(--font-en); font-size: 0.78rem; text-align: center; }
+.export-menu-input:focus { outline: none; border-color: var(--primary-light); box-shadow: 0 0 0 3px rgba(77,163,255,0.15); }
+.export-menu-go { width: auto; flex-shrink: 0; padding: 6px 10px; background: var(--primary-pale); color: var(--primary-blue); }
+
 /* 积分明细模态框 */
 .modal-content.score-detail-modal { max-width: 80vw !important; width: 80vw !important; max-height: 80vh !important; height: 80vh !important; min-width: 800px; min-height: 500px; text-align: left; padding: 0 !important; overflow: hidden; display: flex; flex-direction: column; background: linear-gradient(145deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.92) 30%, rgba(240,245,255,0.9) 70%, rgba(230,240,255,0.88) 100%); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border: 1px solid rgba(255,255,255,0.6); border-radius: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.04), 0 10px 30px rgba(0,0,0,0.06), 0 20px 60px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.8); }
 .dark-mode .modal-content.score-detail-modal { background: linear-gradient(145deg, rgba(30,35,48,0.98) 0%, rgba(26,30,42,0.96) 30%, rgba(22,26,38,0.95) 70%, rgba(20,24,35,0.94) 100%); border: 1px solid rgba(255,255,255,0.06); box-shadow: 0 4px 6px rgba(0,0,0,0.2), 0 10px 30px rgba(0,0,0,0.3), 0 20px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04); }
