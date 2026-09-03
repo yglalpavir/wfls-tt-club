@@ -203,14 +203,21 @@ function dcAnchorPoint(pos, cardW, cardH, side) {
 }
 
 function dcConnectionPath(a, b, fromSide, toSide) {
-    const dirX = s => (s === 'left' ? -1 : s === 'right' ? 1 : 0);
-    const dirY = s => (s === 'top' ? -1 : s === 'bottom' ? 1 : 0);
-    const d1x = dirX(fromSide), d1y = dirY(fromSide);
-    const d2x = dirX(toSide), d2y = dirY(toSide);
-    const dist = Math.max(36, Math.abs(b.x - a.x) * 0.5, Math.abs(b.y - a.y) * 0.5);
-    const c1 = { x: a.x + d1x * dist, y: a.y + d1y * dist };
-    const c2 = { x: b.x + d2x * dist, y: b.y + d2y * dist };
-    return 'M ' + a.x + ' ' + a.y + ' C ' + c1.x + ' ' + c1.y + ', ' + c2.x + ' ' + c2.y + ', ' + b.x + ' ' + b.y;
+    const horizFrom = fromSide === 'left' || fromSide === 'right';
+    const horizTo = toSide === 'left' || toSide === 'right';
+    if (horizFrom && horizTo) {
+        // 经典 S 曲线：两端水平出发，在中点完成垂直过渡（扇入/扇出时收束干净）
+        const midX = (a.x + b.x) / 2;
+        return 'M ' + a.x + ' ' + a.y + ' C ' + midX + ' ' + a.y + ', ' + midX + ' ' + b.y + ', ' + b.x + ' ' + b.y;
+    }
+    if (!horizFrom && !horizTo) {
+        const midY = (a.y + b.y) / 2;
+        return 'M ' + a.x + ' ' + a.y + ' C ' + a.x + ' ' + midY + ', ' + b.x + ' ' + midY + ', ' + b.x + ' ' + b.y;
+    }
+    // 混合方向：各端沿自身方向延伸到对方的中线
+    const d1 = horizFrom ? { x: (a.x + b.x) / 2, y: a.y } : { x: a.x, y: (a.y + b.y) / 2 };
+    const d2 = horizTo ? { x: (a.x + b.x) / 2, y: b.y } : { x: b.x, y: (a.y + b.y) / 2 };
+    return 'M ' + a.x + ' ' + a.y + ' C ' + d1.x + ' ' + d1.y + ', ' + d2.x + ' ' + d2.y + ', ' + b.x + ' ' + b.y;
 }
 
 // 连线在 SVG 上的箭头（指向目标端点）

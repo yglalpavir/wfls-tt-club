@@ -73,6 +73,12 @@ function afterChange() {
     updateStatus();
     markDirty();
     scheduleAutosave();
+    updateSelectionButtons();
+}
+
+// 依据选中态切换「删除选中」按钮可用性
+function updateSelectionButtons() {
+    $('btnDeleteCard').disabled = !edSelected;
 }
 
 function markDirty() {
@@ -291,6 +297,7 @@ function renderCanvas() {
     inner.className = 'de-inner';
     inner.style.width = layout.canvasW + 'px';
     inner.style.height = layout.canvasH + 'px';
+    inner.style.transform = 'scale(' + edZoom + ')';
 
     // 网格底纹
     const bg = document.createElement('div');
@@ -613,6 +620,7 @@ function onCardClick(id) {
     edSelected = id;
     renderCanvas();
     renderInspector();
+    updateSelectionButtons();
 }
 
 function addCard(type) {
@@ -1200,4 +1208,5 @@ function renderAll() {
     renderSettings();
     updateStatus();
     updateUndoButtons();
+    updateSelectionButtons();
 }
