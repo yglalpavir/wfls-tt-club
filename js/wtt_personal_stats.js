@@ -315,28 +315,22 @@ function wttInitPersonalPlayerSearch() {
 
         clearBtn.style.display = 'flex';
 
-        // 模糊匹配过滤
-        const results = [];
-        for (const p of wttPlayerSearchData) {
-            const m = wttFuzzyMatch(q, p.name);
-            if (m.matched) {
-                results.push({ name: p.name, score: p.score, matchScore: m.score, matchType: m.matchType });
-            }
-        }
-        // 按匹配度降序 → 积分降序
-        results.sort((a, b) => {
-            if (b.matchScore !== a.matchScore) return b.matchScore - a.matchScore;
-            return b.score - a.score;
-        });
-        currentFiltered = results;
+        // 与卡片栅格共用同一次全量模糊匹配（见 wttFuzzyFilterAll）
+        const matches = wttFuzzyFilterAll(q);
+        currentFiltered = matches.map(x => ({ name: x.p.name, score: x.p.score, matchScore: x.matchScore, matchType: x.matchType }));
         highlightedIndex = currentFiltered.length > 0 ? 0 : -1;
         wttRenderPlayerDropdown(currentFiltered, q);
     }
 
-    // 输入事件 → 实时过滤下拉 + 卡片栅格
+    // 输入事件 → 防抖后过滤下拉 + 卡片栅格
+    // （全量模糊匹配 + 栅格重建在低性能设备上开销大，逐键触发会明显卡顿）
+    let wttSearchDebounce = null;
     searchInput.addEventListener('input', function () {
-        doFilter();
-        wttRenderPlayerIndex(true);
+        clearTimeout(wttSearchDebounce);
+        wttSearchDebounce = setTimeout(function () {
+            doFilter();
+            wttRenderPlayerIndex(true);
+        }, 200);
     });
 
     // 聚焦事件 → 展开下拉
@@ -417,6 +411,21 @@ const WTT_INDEX_PAGE_SIZE = 200;
 let wttIndexShown = WTT_INDEX_PAGE_SIZE;
 
 /**
+ * 对全部球员做一次模糊匹配并按（匹配度 → 积分）排序。
+ * 搜索下拉与卡片栅格共用同一份结果，避免同一次输入重复全量匹配。
+ * @returns [{ p, matchScore, matchType }]
+ */
+function wttFuzzyFilterAll(q) {
+    const matches = [];
+    for (const p of wttPlayerSearchData) {
+        const m = wttFuzzyMatch(q, p.name);
+        if (m.matched) matches.push({ p, matchScore: m.score, matchType: m.matchType });
+    }
+    matches.sort((a, b) => (b.matchScore - a.matchScore) || (b.p.score - a.p.score));
+    return matches;
+}
+
+/**
  * 渲染单张球员卡片（协会旗标 + 积分/排名/场次/胜率）
  */
 function wttPlayerIndexCardHtml(p) {
@@ -459,16 +468,10 @@ function wttRenderPlayerIndex(resetPage) {
     const q = (searchInput ? searchInput.value : '').trim();
     const lang = i18n[currentLang] || i18n.zh;
 
-    // 过滤 + 排序（匹配度 → 积分），与下拉搜索一致
+    // 过滤 + 排序（匹配度 → 积分），与下拉搜索共用 wttFuzzyFilterAll 的单次匹配
     let list;
     if (q) {
-        list = [];
-        for (const p of wttPlayerSearchData) {
-            const m = wttFuzzyMatch(q, p.name);
-            if (m.matched) list.push({ p, matchScore: m.score });
-        }
-        list.sort((a, b) => (b.matchScore - a.matchScore) || (b.p.score - a.p.score));
-        list = list.map(x => x.p);
+        list = wttFuzzyFilterAll(q).map(x => x.p);
     } else {
         list = wttPlayerSearchData;
     }

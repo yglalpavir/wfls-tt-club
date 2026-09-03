@@ -256,7 +256,7 @@ function clearFirstAppearanceCache() {
  */
 function calculateAllRankingsWithSeasons(scoreLog, initialScores, seasons) {
     const { sortedLog, playerMatches } = buildPlayerMatchIndex(scoreLog);
-    playerTypeBatches = buildPlayerTypeBatches(sortedLog);
+    if (SCORE_TIME_DECAY_ENABLED !== false) playerTypeBatches = buildPlayerTypeBatches(sortedLog);
     const allRankings = [];
     let seasonStartScores = { ...initialScores };
     let currentScores = { ...initialScores };
@@ -306,8 +306,11 @@ function calculateAllRankingsWithSeasons(scoreLog, initialScores, seasons) {
             // 计算积分（这部分仍需遍历全量 log，但只需一次）
             const sc = { ...currentScores };
             // 按"赛季内 [赛季开始日, 快照日]"构建批次索引，实现每赛季清零 + 时间截断定格
-            const windowLog = sortedLog.filter(r => r['日期'] >= season.startDate && r['日期'] <= sd);
-            playerTypeBatches = buildPlayerTypeBatches(windowLog);
+            // （WTT 非衰减模式：getFreezeWeight/getFormatMultiplier 恒返回 1，批次索引不被消费，跳过构建）
+            if (SCORE_TIME_DECAY_ENABLED !== false) {
+                const windowLog = sortedLog.filter(r => r['日期'] >= season.startDate && r['日期'] <= sd);
+                playerTypeBatches = buildPlayerTypeBatches(windowLog);
+            }
             sortedLog.forEach(r => {
                 if (r['日期'] < season.startDate || r['日期'] > sd) return;
                 if (isMatchRecord(r)) {
@@ -363,7 +366,7 @@ function calculateAllRankingsWithSeasons(scoreLog, initialScores, seasons) {
 async function calculateAllRankingsWithSeasonsAsync(scoreLog, initialScores, seasons, onProgress, chunkSize) {
     chunkSize = chunkSize || 3;
     const { sortedLog, playerMatches } = buildPlayerMatchIndex(scoreLog);
-    playerTypeBatches = buildPlayerTypeBatches(sortedLog);
+    if (SCORE_TIME_DECAY_ENABLED !== false) playerTypeBatches = buildPlayerTypeBatches(sortedLog);
     const allRankings = [];
     let seasonStartScores = { ...initialScores };
     let currentScores = { ...initialScores };
@@ -417,59 +420,71 @@ async function calculateAllRankingsWithSeasonsAsync(scoreLog, initialScores, sea
 
         // 每个快照日期（分块处理）
         const validSnapshots = season.snapshotDates.filter(d => d > season.startDate);
-        for (let i = 0; i < validSnapshots.length; i++) {
-            const sd = validSnapshots[i];
+        if (SCORE_TIME_DECAY_ENABLED === false && validSnapshots.length) {
+            // 🔥 WTT 非衰减快路径：快照结果是前缀一致的（每个快照 = 赛季起始分 + 按日期重放至快照日），
+            //    因此按日期单次增量重放即可得到与逐快照全量重放完全相同的结果。
+            //    复杂度 O(快照数 × 记录数) → O(记录数 + 快照数 × 球员数)。
+            processedSnapshots += await replaySnapshotsIncrementalAsync(
+                sortedLog, playerMatches, currentScores, season, validSnapshots,
+                allRankings, onProgress, processedSnapshots, totalSnapshots);
+        } else {
+            for (let i = 0; i < validSnapshots.length; i++) {
+                const sd = validSnapshots[i];
 
-            // 计算积分
-            const sc = { ...currentScores };
-            // 按"赛季内 [赛季开始日, 快照日]"构建批次索引，实现每赛季清零 + 时间截断定格
-            const windowLog = sortedLog.filter(r => r['日期'] >= season.startDate && r['日期'] <= sd);
-            playerTypeBatches = buildPlayerTypeBatches(windowLog);
-            sortedLog.forEach(r => {
-                if (r['日期'] < season.startDate || r['日期'] > sd) return;
-                if (isMatchRecord(r)) {
-                    const w = r['胜者'], l = r['负者'];
-                    if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE;
-                    if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
-                    const wg = calcMatchPoints(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? sd : r['日期'], sc, r['赛制']);
-                    sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
-                    sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
-                } else if (isBonusRecord(r)) {
-                    const t = r['对象'];
-                    const b = parseFloat(r['分数']) || 0;
-                    if (!sc[t]) sc[t] = DEFAULT_INITIAL_SCORE;
-                    sc[t] = Math.max(SCORE_FLOOR, sc[t] + b);
+                // 计算积分
+                const sc = { ...currentScores };
+                // 按"赛季内 [赛季开始日, 快照日]"构建批次索引，实现每赛季清零 + 时间截断定格
+                // （WTT 非衰减模式：getFreezeWeight/getFormatMultiplier 恒返回 1，批次索引不被消费，跳过构建）
+                if (SCORE_TIME_DECAY_ENABLED !== false) {
+                    const windowLog = sortedLog.filter(r => r['日期'] >= season.startDate && r['日期'] <= sd);
+                    playerTypeBatches = buildPlayerTypeBatches(windowLog);
                 }
-            });
-
-            const sap = getActivePlayers(sortedLog, season.startDate, sd);
-
-            // 使用预建索引
-            const sp = Object.entries(sc)
-                .filter(([n]) => sap.has(n) || isProfileActivePlayer(n))
-                .sort((a, b) => b[1] - a[1])
-                .map(([n, pt]) => {
-                    const stats = getPlayerStatsFromIndex(playerMatches, n, season.startDate, sd);
-                    return {
-                        '姓名': n,
-                        '当前积分': Math.round(pt * 10) / 10,
-                        '总场次': stats.totalMatches,
-                        '胜率': stats.winRate
-                    };
+                sortedLog.forEach(r => {
+                    if (r['日期'] < season.startDate || r['日期'] > sd) return;
+                    if (isMatchRecord(r)) {
+                        const w = r['胜者'], l = r['负者'];
+                        if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE;
+                        if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
+                        const wg = calcMatchPoints(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? sd : r['日期'], sc, r['赛制']);
+                        sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
+                        sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
+                    } else if (isBonusRecord(r)) {
+                        const t = r['对象'];
+                        const b = parseFloat(r['分数']) || 0;
+                        if (!sc[t]) sc[t] = DEFAULT_INITIAL_SCORE;
+                        sc[t] = Math.max(SCORE_FLOOR, sc[t] + b);
+                    }
                 });
-            allRankings.push({
-                time: sd,
-                label: formatSnapshotLabel(sd),
-                season: season.label,
-                isInitial: false,
-                data: sp
-            });
-            processedSnapshots++;
-            if (onProgress) onProgress(processedSnapshots, totalSnapshots, season.label);
 
-            // 🔥 每个快照后都 yield 到浏览器，保持 UI 响应
-            if (i < validSnapshots.length - 1) {
-                await new Promise(r => setTimeout(r, 0));
+                const sap = getActivePlayers(sortedLog, season.startDate, sd);
+
+                // 使用预建索引
+                const sp = Object.entries(sc)
+                    .filter(([n]) => sap.has(n) || isProfileActivePlayer(n))
+                    .sort((a, b) => b[1] - a[1])
+                    .map(([n, pt]) => {
+                        const stats = getPlayerStatsFromIndex(playerMatches, n, season.startDate, sd);
+                        return {
+                            '姓名': n,
+                            '当前积分': Math.round(pt * 10) / 10,
+                            '总场次': stats.totalMatches,
+                            '胜率': stats.winRate
+                        };
+                    });
+                allRankings.push({
+                    time: sd,
+                    label: formatSnapshotLabel(sd),
+                    season: season.label,
+                    isInitial: false,
+                    data: sp
+                });
+                processedSnapshots++;
+                if (onProgress) onProgress(processedSnapshots, totalSnapshots, season.label);
+
+                // 🔥 每个快照后都 yield 到浏览器，保持 UI 响应
+                if (i < validSnapshots.length - 1) {
+                    await new Promise(r => setTimeout(r, 0));
+                }
             }
         }
 
@@ -487,9 +502,86 @@ async function calculateAllRankingsWithSeasonsAsync(scoreLog, initialScores, sea
     return allRankings;
 }
 
+/**
+ * 🔥 WTT 非衰减快路径：按日期单次增量重放生成整个赛季的快照排名。
+ * 语义与逐快照全量重放完全一致（快照窗口 [赛季开始日, 快照日] 含当日记录），
+ * 仅在 SCORE_TIME_DECAY_ENABLED === false 时使用。
+ * @returns 实际生成的快照数
+ */
+async function replaySnapshotsIncrementalAsync(sortedLog, playerMatches, startScores, season, validSnapshots, allRankings, onProgress, processedBase, totalSnapshots) {
+    // 快照按日期升序处理（与逐快照重放的积分结果一致）
+    const snaps = [...validSnapshots].sort();
+    const lastSd = snaps[snaps.length - 1];
+    const sc = { ...startScores };   // 增量累积到当前快照日的积分（startScores 保持赛季初值，不改动）
+    const active = new Set();        // 增量维护的参赛球员集（对应 getActivePlayers(…, sd)）
+    let processed = processedBase;
+    let snapIdx = 0;
+
+    const captureSnapshot = async (sd) => {
+        const sp = Object.entries(sc)
+            .filter(([n]) => active.has(n) || isProfileActivePlayer(n))
+            .sort((a, b) => b[1] - a[1])
+            .map(([n, pt]) => {
+                const stats = getPlayerStatsFromIndex(playerMatches, n, season.startDate, sd);
+                return {
+                    '姓名': n,
+                    '当前积分': Math.round(pt * 10) / 10,
+                    '总场次': stats.totalMatches,
+                    '胜率': stats.winRate
+                };
+            });
+        allRankings.push({
+            time: sd,
+            label: formatSnapshotLabel(sd),
+            season: season.label,
+            isInitial: false,
+            data: sp
+        });
+        processed++;
+        if (onProgress) onProgress(processed, totalSnapshots, season.label);
+        // 快照计算本身已很快，无需每快照 yield（浏览器 setTimeout 会被钳到 ~4ms，
+        // 数百个快照逐个 yield 会白白增加秒级等待）；每 10 个快照让出一次主线程即可
+        if (processed % 10 === 0) await new Promise(r => setTimeout(r, 0));
+    };
+
+    for (let i = 0; i < sortedLog.length; i++) {
+        const r = sortedLog[i];
+        if (r['日期'] < season.startDate) continue;
+        if (r['日期'] > lastSd) break;   // 最后一个快照之后的记录不影响任何快照（赛季末另算）
+        // 先捕获早于本条记录日期的快照；等于本条日期的快照待本条处理后捕获（窗口含当日）
+        while (snapIdx < snaps.length && snaps[snapIdx] < r['日期']) {
+            await captureSnapshot(snaps[snapIdx++]);
+        }
+        if (isMatchRecord(r)) {
+            const w = r['胜者'], l = r['负者'];
+            if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE;
+            if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
+            const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], sc, r['赛制']);
+            sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
+            sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
+            active.add(w); active.add(l);
+        } else if (isBonusRecord(r)) {
+            const t = r['对象'];
+            const b = parseFloat(r['分数']) || 0;
+            if (!sc[t]) sc[t] = DEFAULT_INITIAL_SCORE;
+            sc[t] = Math.max(SCORE_FLOOR, sc[t] + b);
+            active.add(t);
+        }
+        // 定期 yield，保持 UI 响应
+        if (i % 5000 === 4999) await new Promise(rs => setTimeout(rs, 0));
+    }
+    while (snapIdx < snaps.length) {
+        await captureSnapshot(snaps[snapIdx++]);
+    }
+    return processed - processedBase;
+}
+
 function calculateEndScores(sl, ss, sst, sen) {
     // 批次索引按"赛季内 [sst, sen]"构建，实现每赛季清零
-    playerTypeBatches = buildPlayerTypeBatches(sl.filter(r => r['日期'] >= sst && r['日期'] <= sen));
+    // （WTT 非衰减模式：getFreezeWeight 恒返回 1，批次索引不被消费，跳过构建）
+    if (SCORE_TIME_DECAY_ENABLED !== false) {
+        playerTypeBatches = buildPlayerTypeBatches(sl.filter(r => r['日期'] >= sst && r['日期'] <= sen));
+    }
     const sc = { ...ss };
     sl.forEach(r => {
         if (r['日期'] < sst || r['日期'] > sen) return;
@@ -560,7 +652,7 @@ function calculateRealtimeRanking() {
     const d = new Date();
     const today = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
     const sortedLog = [...scoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
-    playerTypeBatches = buildPlayerTypeBatches(sortedLog);
+    if (SCORE_TIME_DECAY_ENABLED !== false) playerTypeBatches = buildPlayerTypeBatches(sortedLog);
 
     // 找到今天所在的赛季（若今天已超出所有赛季，使用最后一个赛季并延伸至今天）
     let activeSeason = null, seasonIndex = -1;
@@ -594,7 +686,9 @@ function calculateRealtimeRanking() {
     // 从当前赛季初计算到今天的积分
     const sc = { ...currentScores };
     const effectiveEnd = today < activeSeason.startDate ? activeSeason.startDate : today;
-    playerTypeBatches = buildPlayerTypeBatches(sortedLog.filter(r => r['日期'] >= activeSeason.startDate && r['日期'] <= effectiveEnd));
+    if (SCORE_TIME_DECAY_ENABLED !== false) {
+        playerTypeBatches = buildPlayerTypeBatches(sortedLog.filter(r => r['日期'] >= activeSeason.startDate && r['日期'] <= effectiveEnd));
+    }
     sortedLog.forEach(r => {
         if (r['日期'] < activeSeason.startDate || r['日期'] > effectiveEnd) return;
         if (isMatchRecord(r)) {
@@ -612,11 +706,24 @@ function calculateRealtimeRanking() {
 
     const activeStart = activeSeason.startDate;
     const sap = getActivePlayers(sortedLog, activeStart, effectiveEnd);
-    const sp = Object.entries(sc).filter(([n]) => sap.size === 0 || sap.has(n) || isProfileActivePlayer(n)).sort((a, b) => b[1] - a[1]).map(([n, pt]) => ({
-        '姓名': n, '当前积分': Math.round(pt * 10) / 10,
-        '总场次': sortedLog.filter(r => isMatchRecord(r) && r['日期'] >= activeStart && r['日期'] <= effectiveEnd && (r['胜者'] === n || r['负者'] === n)).length,
-        '胜率': (() => { const ms = sortedLog.filter(r => isMatchRecord(r) && r['日期'] >= activeStart && r['日期'] <= effectiveEnd && (r['胜者'] === n || r['负者'] === n)); if (!ms.length) return '0%'; return Math.round((ms.filter(r => r['胜者'] === n).length / ms.length) * 100) + '%'; })()
-    }));
+    // 🔥 单次遍历窗口内记录统计每名球员的场次/胜场（原实现为每球员两次全量 filter，O(球员数×记录数)）
+    const matchStats = {};   // player -> { total, wins }
+    sortedLog.forEach(r => {
+        if (!isMatchRecord(r) || r['日期'] < activeStart || r['日期'] > effectiveEnd) return;
+        const w = r['胜者'], l = r['负者'];
+        if (!matchStats[w]) matchStats[w] = { total: 0, wins: 0 };
+        if (!matchStats[l]) matchStats[l] = { total: 0, wins: 0 };
+        matchStats[w].total++; matchStats[w].wins++;
+        matchStats[l].total++;
+    });
+    const sp = Object.entries(sc).filter(([n]) => sap.size === 0 || sap.has(n) || isProfileActivePlayer(n)).sort((a, b) => b[1] - a[1]).map(([n, pt]) => {
+        const ms = matchStats[n];
+        return {
+            '姓名': n, '当前积分': Math.round(pt * 10) / 10,
+            '总场次': ms ? ms.total : 0,
+            '胜率': (ms && ms.total) ? Math.round((ms.wins / ms.total) * 100) + '%' : '0%'
+        };
+    });
 
     return { time: today, label: i18n[currentLang].rank_realtime_label, season: activeSeason.label, isInitial: false, isRealtime: true, data: sp };
 }
@@ -630,7 +737,7 @@ async function calculateRealtimeRankingAsync(onProgress) {
     const d = new Date();
     const today = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
     const sortedLog = [...scoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
-    playerTypeBatches = buildPlayerTypeBatches(sortedLog);
+    if (SCORE_TIME_DECAY_ENABLED !== false) playerTypeBatches = buildPlayerTypeBatches(sortedLog);
 
     let activeSeason = null, seasonIndex = -1;
     for (let i = 0; i < seasonsData.length; i++) {
@@ -668,7 +775,9 @@ async function calculateRealtimeRankingAsync(onProgress) {
 
     const sc = { ...currentScores };
     const effectiveEnd = today < activeSeason.startDate ? activeSeason.startDate : today;
-    playerTypeBatches = buildPlayerTypeBatches(sortedLog.filter(r => r['日期'] >= activeSeason.startDate && r['日期'] <= effectiveEnd));
+    if (SCORE_TIME_DECAY_ENABLED !== false) {
+        playerTypeBatches = buildPlayerTypeBatches(sortedLog.filter(r => r['日期'] >= activeSeason.startDate && r['日期'] <= effectiveEnd));
+    }
 
     // 分块处理比赛记录，每块后 yield
     const totalRecords = sortedLog.length;
@@ -702,11 +811,24 @@ async function calculateRealtimeRankingAsync(onProgress) {
 
     const activeStart = activeSeason.startDate;
     const sap = getActivePlayers(sortedLog, activeStart, effectiveEnd);
-    const sp = Object.entries(sc).filter(([n]) => sap.size === 0 || sap.has(n) || isProfileActivePlayer(n)).sort((a, b) => b[1] - a[1]).map(([n, pt]) => ({
-        '姓名': n, '当前积分': Math.round(pt * 10) / 10,
-        '总场次': sortedLog.filter(r => isMatchRecord(r) && r['日期'] >= activeStart && r['日期'] <= effectiveEnd && (r['胜者'] === n || r['负者'] === n)).length,
-        '胜率': (() => { const ms = sortedLog.filter(r => isMatchRecord(r) && r['日期'] >= activeStart && r['日期'] <= effectiveEnd && (r['胜者'] === n || r['负者'] === n)); if (!ms.length) return '0%'; return Math.round((ms.filter(r => r['胜者'] === n).length / ms.length) * 100) + '%'; })()
-    }));
+    // 🔥 单次遍历窗口内记录统计每名球员的场次/胜场（原实现为每球员两次全量 filter，O(球员数×记录数)）
+    const matchStats = {};   // player -> { total, wins }
+    sortedLog.forEach(r => {
+        if (!isMatchRecord(r) || r['日期'] < activeStart || r['日期'] > effectiveEnd) return;
+        const w = r['胜者'], l = r['负者'];
+        if (!matchStats[w]) matchStats[w] = { total: 0, wins: 0 };
+        if (!matchStats[l]) matchStats[l] = { total: 0, wins: 0 };
+        matchStats[w].total++; matchStats[w].wins++;
+        matchStats[l].total++;
+    });
+    const sp = Object.entries(sc).filter(([n]) => sap.size === 0 || sap.has(n) || isProfileActivePlayer(n)).sort((a, b) => b[1] - a[1]).map(([n, pt]) => {
+        const ms = matchStats[n];
+        return {
+            '姓名': n, '当前积分': Math.round(pt * 10) / 10,
+            '总场次': ms ? ms.total : 0,
+            '胜率': (ms && ms.total) ? Math.round((ms.wins / ms.total) * 100) + '%' : '0%'
+        };
+    });
 
     return { time: today, label: i18n[currentLang].rank_realtime_label, season: activeSeason.label, isInitial: false, isRealtime: true, data: sp };
 }

@@ -861,18 +861,29 @@ async function wttLoadPlayerAssoc() {
  * @param {string} name - 球员/组合名（自动按身份归一化匹配）
  * @returns {{ assoc: string, country: string }|null} 未加载/未匹配时返回 null
  */
+// 🔥 性能：排名表/卡片栅格逐行调用，按球员名缓存结果（assoc 数据引用变化时自动失效）
+let _wttPlayerAssocCache = { data: null, map: new Map() };
 function wttGetPlayerAssoc(name) {
     if (!wttPlayerAssocData || !name) return null;
+    if (_wttPlayerAssocCache.data !== wttPlayerAssocData) {
+        _wttPlayerAssocCache = { data: wttPlayerAssocData, map: new Map() };
+    }
+    const cached = _wttPlayerAssocCache.map.get(name);
+    if (cached !== undefined) return cached;
     const single = wttPlayerAssocData[wttNameIdentity(name)];
-    if (single) return single;
-    if (String(name).indexOf('/') === -1) return null;
-    const parts = wttSplitPlayerNames(name);
-    if (parts.length < 2) return null;
-    const a1 = wttPlayerAssocData[wttNameIdentity(parts[0])];
-    const a2 = wttPlayerAssocData[wttNameIdentity(parts[1])];
-    if (!a1 || !a2 || !a1.assoc || !a2.assoc) return null;
-    if (String(a1.assoc).toUpperCase() !== String(a2.assoc).toUpperCase()) return null;
-    return { assoc: a1.assoc, country: a1.country || a2.country || '' };
+    let result = single || null;
+    if (!result && String(name).indexOf('/') !== -1) {
+        const parts = wttSplitPlayerNames(name);
+        if (parts.length >= 2) {
+            const a1 = wttPlayerAssocData[wttNameIdentity(parts[0])];
+            const a2 = wttPlayerAssocData[wttNameIdentity(parts[1])];
+            if (a1 && a2 && a1.assoc && a2.assoc && String(a1.assoc).toUpperCase() === String(a2.assoc).toUpperCase()) {
+                result = { assoc: a1.assoc, country: a1.country || a2.country || '' };
+            }
+        }
+    }
+    _wttPlayerAssocCache.map.set(name, result);
+    return result;
 }
 
 /**
@@ -1458,8 +1469,15 @@ function wttPlayerPageUrl(name) {
  * @param {string} name
  * @returns {string}
  */
+// 🔥 性能：排名表逐行调用（含转义 + uid 哈希），按 类目|语言|球员名 缓存
+const _wttLinkPlayerNameCache = new Map();
 function wttLinkPlayerName(name) {
     if (!name) return '';
+    const key = (wttCurrentCategory || '') + '\u0000' + currentLang + '\u0000' + name;
+    const hit = _wttLinkPlayerNameCache.get(key);
+    if (hit !== undefined) return hit;
     const safe = escapeHtml(String(name));
-    return '<a href="' + wttPlayerPageUrl(name) + '" class="player-name-link" title="' + escapeHtml(i18n[currentLang].wtt_pp_open) + '">' + safe + '</a>';
+    const html = '<a href="' + wttPlayerPageUrl(name) + '" class="player-name-link" title="' + escapeHtml(i18n[currentLang].wtt_pp_open) + '">' + safe + '</a>';
+    _wttLinkPlayerNameCache.set(key, html);
+    return html;
 }

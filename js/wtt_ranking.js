@@ -359,6 +359,7 @@ function wttUpdateRankingDisplay() {
     const pn = wttCurrentTimeIndex > 0 ? wttRankingTimeline[wttCurrentTimeIndex - 1] : null;
     wttCurrentDisplayData = wttCalculateRankChanges(cn.data, pn ? pn.data : null, cn.isInitial);
     wttCurrentDisplayData = wttSortDisplayData(wttCurrentSortKey, wttCurrentSortDir);
+    wttRankingShown = WTT_RANKING_PAGE_SIZE;   // 切换时间节点/语言时重置分页
     wttRenderRankingTable(wttCurrentDisplayData);
     const ind = document.getElementById('sortIndicator');
     if (ind) ind.textContent = `${wttSortKeyLabel(wttCurrentSortKey)}${wttCurrentSortDir === 'desc' ? i18n[currentLang].sort_desc : i18n[currentLang].sort_asc}`;
@@ -381,6 +382,11 @@ function wttSortDisplayData(key, dir) {
     });
 }
 
+/* ---- 排名表分页：移动端一次渲染 1256+ 行 DOM 开销过大，先渲染前 N 行，"显示更多"逐步追加 ----
+   （复用个人统计页 WTT_INDEX_PAGE_SIZE 的分页模式；切换时间节点时重置，排序保持已展开行数） */
+const WTT_RANKING_PAGE_SIZE = 200;
+let wttRankingShown = WTT_RANKING_PAGE_SIZE;
+
 function wttRenderRankingTable(data) {
     const tb = document.getElementById('rankingFullBody');
     if (!tb) return;
@@ -390,8 +396,9 @@ function wttRenderRankingTable(data) {
     }
     tb.innerHTML = '';
     const currentSnapshotDate = wttRankingTimeline[wttCurrentTimeIndex]?.time || '';
+    const shown = data.slice(0, wttRankingShown);
 
-    data.forEach((p, i) => {
+    shown.forEach((p, i) => {
         const tr = document.createElement('tr');
         const wr = p['胜率'] || '0%';
         const wd = wr === '#DIV/0!' || wr === '-' ? '0%' : wr;
@@ -423,6 +430,16 @@ function wttRenderRankingTable(data) {
         tr.innerHTML = `<td>${i + 1}</td><td>${nc}</td><td><strong>${(p['当前积分'] || 0).toFixed(1)}</strong></td><td data-label="${i18n[currentLang].rank_col_points_change}">${pch}</td><td data-label="${i18n[currentLang].rank_col_change}">${ch}</td><td data-label="${i18n[currentLang].rank_col_matches}">${p['总场次'] || 0}</td><td data-label="${i18n[currentLang].rank_col_winrate}">${wd}</td>`;
         tb.appendChild(tr);
     });
+
+    if (data.length > shown.length) {
+        const more = document.createElement('tr');
+        more.innerHTML = `<td colspan="7" style="text-align:center;padding:14px;"><button type="button" class="btn btn-secondary btn-sm" id="wttRankingLoadMore"><i class="fa-solid fa-chevron-down"></i> ${escapeHtml(i18n[currentLang].wtt_ps_load_more)}（${shown.length}/${data.length}）</button></td>`;
+        tb.appendChild(more);
+        more.querySelector('button').addEventListener('click', () => {
+            wttRankingShown += WTT_RANKING_PAGE_SIZE;
+            wttRenderRankingTable(wttCurrentDisplayData);
+        });
+    }
 }
 
 function wttUpdateSortHeaderHighlight() {
