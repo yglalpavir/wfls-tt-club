@@ -193,6 +193,59 @@
       { "from": "m29", "to": "m31", "fromSide": "right", "toSide": "left" },
       { "from": "m30", "to": "m31", "fromSide": "right", "toSide": "left" }
     ]
+  },
+  {
+    "id": "d3",
+    "competitionId": "c6",
+    "title": "十二强争冠赛暨2026社团表演赛",
+    "version": 2,
+    "roundLabels": {
+      "0": "A组循环赛",
+      "1": "B组循环赛",
+      "2": "C组循环赛",
+      "3": "D组循环赛",
+      "4": "半决赛",
+      "5": "决赛"
+    },
+    "grid": {
+      "cols": 6,
+      "rows": 14,
+      "cellWidth": 180,
+      "cellHeight": 64
+    },
+    "cards": [
+      { "id": "m1", "col": 0, "row": 0, "player1": "任峻贤(1)", "player2": "任安喆(5)", "score": "", "winner": 0 },
+      { "id": "m2", "col": 0, "row": 2, "player1": "任峻贤(1)", "player2": "彭瀚明(9)", "score": "", "winner": 0 },
+      { "id": "m3", "col": 0, "row": 4, "player1": "任安喆(5)", "player2": "彭瀚明(9)", "score": "", "winner": 0 },
+      { "id": "m4", "col": 1, "row": 0, "player1": "龚雨煊(3)", "player2": "陶锦源(7)", "score": "", "winner": 0 },
+      { "id": "m5", "col": 1, "row": 2, "player1": "龚雨煊(3)", "player2": "叶孟恒(12)", "score": "", "winner": 0 },
+      { "id": "m6", "col": 1, "row": 4, "player1": "陶锦源(7)", "player2": "叶孟恒(12)", "score": "", "winner": 0 },
+      { "id": "m7", "col": 2, "row": 8, "player1": "付大卫(2)", "player2": "姜子润(6)", "score": "", "winner": 0 },
+      { "id": "m8", "col": 2, "row": 10, "player1": "付大卫(2)", "player2": "汪宁轩(10)", "score": "", "winner": 0 },
+      { "id": "m9", "col": 2, "row": 12, "player1": "姜子润(6)", "player2": "汪宁轩(10)", "score": "", "winner": 0 },
+      { "id": "m10", "col": 3, "row": 8, "player1": "谷子易(4)", "player2": "刘冠羽(8)", "score": "", "winner": 0 },
+      { "id": "m11", "col": 3, "row": 10, "player1": "谷子易(4)", "player2": "王思博(11)", "score": "", "winner": 0 },
+      { "id": "m12", "col": 3, "row": 12, "player1": "刘冠羽(8)", "player2": "王思博(11)", "score": "", "winner": 0 },
+      { "id": "m13", "col": 4, "row": 2, "player1": "A组第1", "player2": "B组第1", "score": "", "winner": 0 },
+      { "id": "m14", "col": 4, "row": 10, "player1": "C组第1", "player2": "D组第1", "score": "", "winner": 0 },
+      { "id": "m15", "col": 5, "row": 6, "player1": "半决赛1胜者", "player2": "半决赛2胜者", "score": "", "winner": 0 }
+    ],
+    "connections": [
+      { "from": "m1", "to": "m13", "fromSide": "right", "toSide": "left" },
+      { "from": "m2", "to": "m13", "fromSide": "right", "toSide": "left" },
+      { "from": "m3", "to": "m13", "fromSide": "right", "toSide": "left" },
+      { "from": "m4", "to": "m13", "fromSide": "right", "toSide": "left" },
+      { "from": "m5", "to": "m13", "fromSide": "right", "toSide": "left" },
+      { "from": "m6", "to": "m13", "fromSide": "right", "toSide": "left" },
+      { "from": "m7", "to": "m14", "fromSide": "right", "toSide": "left" },
+      { "from": "m8", "to": "m14", "fromSide": "right", "toSide": "left" },
+      { "from": "m9", "to": "m14", "fromSide": "right", "toSide": "left" },
+      { "from": "m10", "to": "m14", "fromSide": "right", "toSide": "left" },
+      { "from": "m11", "to": "m14", "fromSide": "right", "toSide": "left" },
+      { "from": "m12", "to": "m14", "fromSide": "right", "toSide": "left" },
+      { "from": "m13", "to": "m15", "fromSide": "right", "toSide": "left" },
+      { "from": "m14", "to": "m15", "fromSide": "right", "toSide": "left" }
+    ]
   }
 ]
 
