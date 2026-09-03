@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "title": "乒乓球裁判特训",
+    "version": 1,
+    "passScore": 60,
+    "description": "观看发球视频，判断抛球角度是否合规。视频文件存放于 assets/videos/umpire/，按题目 id 命名。"
+  },
+  "questions": [
+    {
+      "id": "toss-001",
+      "type": "video-choice",
+      "topic": "toss-angle",
+      "video": "assets/videos/umpire/toss-001.mp4",
+      "prompt": "观察这次发球的抛球动作，从镜头视角判断：抛球是否接近垂直？",
+      "options": [
+        { "id": "a", "label": "近乎垂直上抛 —— 合规" },
+        { "id": "b", "label": "明显斜抛（偏离垂直线过大）—— 违例" }
+      ],
+      "answer": "a",
+      "explanation": "规则要求球应被近乎垂直地向上抛起，不得旋转，且升起后不得触碰任何物体。本球抛球轨迹接近垂直，合规。",
+      "ruleRef": "ITTF Handbook 2.6.2"
+    },
+    {
+      "id": "toss-002",
+      "type": "video-choice",
+      "topic": "toss-angle",
+      "video": "assets/videos/umpire/toss-002.mp4",
+      "prompt": "这次发球中，抛球角度是否存在问题？",
+      "options": [
+        { "id": "a", "label": "近乎垂直上抛 —— 合规" },
+        { "id": "b", "label": "明显斜抛（偏离垂直线过大）—— 违例" }
+      ],
+      "answer": "b",
+      "explanation": "抛球明显向身体方向斜抛，偏离垂直线，属于违规发球，应判发球方失分（正式比赛中首次通常警告）。",
+      "ruleRef": "ITTF Handbook 2.6.2"
+    },
+    {
+      "id": "toss-003",
+      "type": "video-choice",
+      "topic": "toss-angle",
+      "video": "assets/videos/umpire/toss-003.mp4",
+      "prompt": "综合抛球轨迹与出手动作，这次发球是否合规？",
+      "options": [
+        { "id": "a", "label": "近乎垂直上抛 —— 合规" },
+        { "id": "b", "label": "明显斜抛（偏离垂直线过大）—— 违例" }
+      ],
+      "answer": "a",
+      "explanation": "虽然引拍动作较大，但抛球本身近乎垂直且高度足够（≥16cm），不构成违例。",
+      "ruleRef": "ITTF Handbook 2.6.1 / 2.6.2"
+    }
+  ]
+}

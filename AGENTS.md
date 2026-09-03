@@ -62,6 +62,7 @@ No npm/lint/typecheck commands exist — there are no build tools or test suites
 | `data/seasons.json` | Season definitions (must cover current date) |
 | `data/event-coefficient.json` | Event type coefficients |
 | `data/decay-config.json` | Time decay config |
+| `data/umpire-quiz.json` | Umpire-training easter-egg quiz (questions → videos in `assets/videos/umpire/`) |
 | `data/draws.json` | Tournament bracket data |
 | `js/score-engine.js` | Club ranking calculation core |
 | `js/wtt_common.js` | WTT data loading + ranking |

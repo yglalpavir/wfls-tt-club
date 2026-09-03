@@ -150,7 +150,7 @@ const i18n = {
         search_rank_tpl: "排名：{rank} | 胜率：{rate}",
         content_loading: "加载中...", loading_about: "加载社团信息...", loading_members: "加载成员数据...", loading_news: "加载动态...", loading_competitions: "加载赛事...",
         chart_matches_suffix: " 场", chart_axis_ym_tpl: "{y}年{m}月",
-        dv_fullscreen: "全屏显示 (网页内)", dv_zoom_out: "缩小", dv_zoom_in: "放大", dv_zoom_fit: "适应内容", dv_zoom_reset: "重置视图",
+        dv_fullscreen: "全屏显示 (网页内)", dv_zoom_out: "缩小", dv_zoom_in: "放大", dv_zoom_fit: "适应内容", dv_zoom_reset: "重置视图", dv_search_placeholder: "搜索选手 / 队伍，高亮晋级路径", dv_champion: "冠军", dv_status_scheduled: "待赛", dv_status_live: "比赛进行中", dv_tbd: "待定", dv_total_score: "总比分", dv_round_1: "第一轮", dv_round_2: "第二轮", dv_semis: "半决赛", dv_final: "决赛", dv_round_n: "第{n}轮", dv_legend_win: "胜者", dv_legend_loss: "负者", dv_legend_live: "进行中", dv_legend_pending: "待赛", dv_legend_path: "晋级路径",
         rank_no_data: "暂无排名数据", rank_no_records: "暂无记录", rank_add_short: "加分", rank_ppl: "{n}人", rank_node_count: "{n}个节点",
         rank_loading: "正在加载排名数据...", rank_prepare: "准备下载数据文件...", rank_download_file: "正在下载 {label} ({i}/{total}): {file}", rank_calculating: "正在计算排名积分（此过程可能较慢，请耐心等待）...", rank_calc_fail: "无法计算排名数据",
         rank_view_player_page: "查看个人数据页", rank_click_detail: "点击查看积分明细",
@@ -239,7 +239,7 @@ const i18n = {
         search_rank_tpl: "Rank {rank} | Win rate {rate}",
         content_loading: "Loading...", loading_about: "Loading club info...", loading_members: "Loading members...", loading_news: "Loading news...", loading_competitions: "Loading competitions...",
         chart_matches_suffix: " matches", chart_axis_ym_tpl: "{m}/{y}",
-        dv_fullscreen: "Fullscreen (in page)", dv_zoom_out: "Zoom out", dv_zoom_in: "Zoom in", dv_zoom_fit: "Fit content", dv_zoom_reset: "Reset view",
+        dv_fullscreen: "Fullscreen (in page)", dv_zoom_out: "Zoom out", dv_zoom_in: "Zoom in", dv_zoom_fit: "Fit content", dv_zoom_reset: "Reset view", dv_search_placeholder: "Search player / team, highlight path", dv_champion: "Champion", dv_status_scheduled: "Scheduled", dv_status_live: "Live", dv_tbd: "TBD", dv_total_score: "Total", dv_round_1: "Round 1", dv_round_2: "Round 2", dv_semis: "Semifinals", dv_final: "Final", dv_round_n: "Round {n}", dv_legend_win: "Winner", dv_legend_loss: "Loser", dv_legend_live: "Live", dv_legend_pending: "Scheduled", dv_legend_path: "Path",
         rank_no_data: "No ranking data", rank_no_records: "No records", rank_add_short: "Bonus", rank_ppl: "{n} players", rank_node_count: "{n} nodes",
         rank_loading: "Loading ranking data...", rank_prepare: "Preparing to download data files...", rank_download_file: "Downloading {label} ({i}/{total}): {file}", rank_calculating: "Calculating ranking points (this may take a while)...", rank_calc_fail: "Unable to compute ranking data",
         rank_view_player_page: "View personal page", rank_click_detail: "Click for score details",
@@ -1110,7 +1110,7 @@ async function renderDetailDrawsSection(type, item) {
                         }
                     });
                 });
-                if (draws.version === 2 && typeof initDrawsViewer === 'function') {
+                if (draws.version >= 2 && typeof initDrawsViewer === 'function') {
                     drawsContainer.innerHTML = '';
                     drawsContainer.style.display = 'none';
                     let viewerInitialized = false;
@@ -1511,11 +1511,64 @@ function initPdfViewer() { const btn = document.getElementById('pdfViewBtn'), ct
 function updateSideNavHighlight() { const links = document.querySelectorAll('.side-nav-link, .viz-tab-link'); if (!links.length) return; const pos = window.scrollY + 150; let cur = null; links.forEach(l => { const el = document.querySelector(l.getAttribute('href')); if (!el) return; const top = el.getBoundingClientRect().top + window.scrollY; if (pos >= top) cur = l.getAttribute('data-section'); }); if (!cur) cur = links[0].getAttribute('data-section'); links.forEach(l => l.classList.toggle('active', l.getAttribute('data-section') === cur)); const activeTab = document.querySelector('.viz-tab-link.active'); const tabNav = document.getElementById('vizMobileNav'); if (activeTab && tabNav) { const tl = tabNav.querySelector('.viz-tab-list'); if (tl) tl.scrollTo({ left: Math.max(0, activeTab.offsetLeft - tl.offsetLeft - 12), behavior: 'smooth' }); } }
 function highlightNavByPath() { const cp = window.location.pathname.split('/').pop() || 'index.html'; const anl = document.querySelectorAll('.nav-link:not(.dropdown-toggle)'), dl = document.querySelectorAll('.dropdown-link'); anl.forEach(l => l.classList.remove('active')); dl.forEach(l => l.classList.remove('active')); const dt2 = document.getElementById('moreDropdown'); if (dt2) dt2.classList.remove('active'); anl.forEach(link => { const h = link.getAttribute('href'); if (!h) return; if (h === cp || (cp === '' && h === 'index.html') || (cp === 'index.html' && h === 'index.html') || (cp === 'contact.html' && h === 'contact.html')) link.classList.add('active'); }); if (cp === 'members.html' || cp === 'data_viz.html' || cp === 'personal_stats.html' || cp === 'player.html' || cp === 'qa.html' || cp === 'changelog.html') { if (dt2) dt2.classList.add('active'); dl.forEach(link => { const h = link.getAttribute('href'); if (h === cp || (cp === 'player.html' && h === 'personal_stats.html')) link.classList.add('active'); }); } }
 
+/* Chart.js 全局现代化默认样式（字体 / 图例 / 提示框 / 网格线） */
+function applyChartDefaults() {
+    Chart.defaults.devicePixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+    const cs = getComputedStyle(document.documentElement);
+    const textMuted = (cs.getPropertyValue('--text-muted') || '').trim() || '#5b6b7d';
+    const borderCol = (cs.getPropertyValue('--border-color') || '').trim() || '#e2e8f0';
+    Chart.defaults.font.family = "'Poppins', 'Noto Sans SC', sans-serif";
+    Chart.defaults.font.size = 11.5;
+    Chart.defaults.color = textMuted;
+    Chart.defaults.borderColor = borderCol;
+    Chart.defaults.animation.duration = 700;
+    Chart.defaults.animation.easing = 'easeOutQuart';
+    /* 图例：小圆点样式 */
+    Chart.defaults.plugins.legend.labels.usePointStyle = true;
+    Chart.defaults.plugins.legend.labels.pointStyle = 'circle';
+    Chart.defaults.plugins.legend.labels.boxWidth = 7;
+    Chart.defaults.plugins.legend.labels.boxHeight = 7;
+    Chart.defaults.plugins.legend.labels.padding = 16;
+    /* 提示框：深色圆角卡片 */
+    Object.assign(Chart.defaults.plugins.tooltip, {
+        backgroundColor: 'rgba(15, 23, 42, 0.92)',
+        titleColor: '#fff',
+        bodyColor: 'rgba(255, 255, 255, 0.85)',
+        footerColor: 'rgba(255, 255, 255, 0.6)',
+        padding: 12,
+        cornerRadius: 10,
+        boxPadding: 6,
+        usePointStyle: true,
+        titleFont: { weight: '700', size: 12.5 },
+        bodyFont: { size: 12 }
+    });
+    /* 坐标轴：浅网格 + 留白 */
+    Chart.defaults.scale.grid.color = borderCol;
+    Chart.defaults.scale.grid.drawTicks = false;
+    Chart.defaults.scale.ticks.padding = 8;
+    Chart.defaults.scale.border.display = false;
+    /* 折线 / 柱状元素默认更精致 */
+    Chart.defaults.elements.line.borderWidth = 2.5;
+    Chart.defaults.elements.line.tension = 0.35;
+    Chart.defaults.elements.point.radius = 3;
+    Chart.defaults.elements.point.hoverRadius = 5.5;
+    Chart.defaults.elements.point.borderWidth = 2;
+    Chart.defaults.elements.bar.borderRadius = 6;
+    Chart.defaults.elements.arc.borderWidth = 2;
+}
+
 function initCommon() {
     initSearch();
     highlightNavByPath();
     initVizMobileNav();
-    if (typeof Chart !== 'undefined') Chart.defaults.devicePixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+    if (typeof Chart !== 'undefined') applyChartDefaults();
+    /* 竞速滑块：同步轨道填充进度（webkit 用 --fill 渐变，Firefox 用 range-progress） */
+    document.addEventListener('input', e => {
+        const s = e.target;
+        if (!s.classList || !s.classList.contains('viz-race-slider')) return;
+        const max = parseFloat(s.max) || 0;
+        s.style.setProperty('--fill', (max > 0 ? (parseFloat(s.value) / max * 100) : 0) + '%');
+    });
     window.addEventListener('scroll', updateSideNavHighlight);
     updateSideNavHighlight();
 }

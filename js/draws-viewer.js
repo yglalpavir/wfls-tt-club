@@ -1,433 +1,381 @@
 /* ========================================
-   draws-viewer.js - 网格吸附抽签表观众端渲染引擎
+   draws-viewer.js - 对阵表观众端渲染引擎 (v3)
+   特性: 网格/自动布局 · 状态徽标(进行中/待赛) · 逐局比分弹窗
+         选手搜索与晋级路径高亮 · 悬停连线高亮 · 缩放/平移/全屏 · 触屏支持
+   数据模型见 js/draws-core.js；v2 旧数据在内存中自动升级渲染。
    ======================================== */
 
 let currentDrawsData = null;
 let viewerZoom = 1;
-let viewerMinZoom = 0.3;         // 最小缩放 = 恰好展示所有卡片列
+let viewerMinZoom = 0.2;
 let viewerPanX = 0, viewerPanY = 0;
 let isPanning = false, panStart = { x: 0, y: 0 };
-let viewerGrid = null;
-let viewerRafId = null;          // requestAnimationFrame ID for smooth updates
+let viewerRafId = null;
+let _dvSearchToken = 0;   // 防止异步渲染竞态
 
 /**
- * 解析比分字符串, 返回 { p1Score, p2Score }
- */
-function parseScore(scoreStr) {
-    if (!scoreStr) return { p1Score: null, p2Score: null };
-    const parts = scoreStr.split('-');
-    if (parts.length === 2) {
-        return { p1Score: parseInt(parts[0]) || 0, p2Score: parseInt(parts[1]) || 0 };
-    }
-    return { p1Score: null, p2Score: null };
-}
-
-/**
- * 根据球员姓名长度自动计算最佳 cellWidth
- */
-function calcAutoCellWidth(cards, minW, maxW) {
-    let maxLen = 3;
-    cards.forEach(c => {
-        if (c.player1 && c.player1.length > maxLen) maxLen = c.player1.length;
-        if (c.player2 && c.player2.length > maxLen) maxLen = c.player2.length;
-    });
-    // 中文字符约占 14px，英文约占 8px，取混合估算 ~11px/char + padding
-    const estW = maxLen * 11 + 56;
-    return Math.max(minW, Math.min(maxW, Math.round(estW / 5) * 5));
-}
-
-/**
- * 初始化抽签表查看器
+ * 初始化对阵表查看器（对外入口，保持与旧版一致的签名）
  */
 function initDrawsViewer(containerId, draws) {
-    currentDrawsData = draws;
     const container = document.getElementById(containerId);
-    if (!container || !draws) return;
-
-    if (draws.version !== 2) {
-        container.innerHTML = renderLegacyBracket(draws);
-        return;
-    }
-
-    // Auto-size if grid.autoSize is true
-    const grid = draws.grid || {};
-    if (grid.autoSize) {
-        grid.cellWidth = calcAutoCellWidth(draws.cards || [], 120, 300);
-        grid.cellHeight = Math.max(56, Math.round(grid.cellWidth * 0.38));
-        draws.grid = grid;
-    }
-
-    renderGridViewer(container, draws);
+    const model = dcNormalizeDraw(draws);
+    if (!container || !model) return;
+    currentDrawsData = model;
+    renderGridViewer(container, model);
 }
 
-/**
- * 渲染网格视图
- */
-function renderGridViewer(container, draws) {
-    const grid = draws.grid || { cols: 7, rows: 20, cellWidth: 180, cellHeight: 64 };
-    viewerGrid = grid;
-    const cards = draws.cards || [];
-    const connections = draws.connections || [];
+// ---------- 卡片 DOM ----------
 
-    // Calculate canvas size
-    const canvasWidth = grid.cols * grid.cellWidth + 160;
-    const canvasHeight = grid.rows * grid.cellHeight + 80;
-    const paddingX = 80;
-    const paddingY = 40;
+function dvBuildCardEl(card, pos, layout, draws) {
+    const theme = draws.theme || {};
+    const el = document.createElement('div');
+    el.className = 'dv-card dv-type-' + (card.type || 'match');
+    el.dataset.cardId = card.id;
+    el.style.left = pos.x + 'px';
+    el.style.top = pos.y + 'px';
+    el.style.width = pos.w + 'px';
+    el.style.minHeight = pos.h + 'px';
 
-    container.innerHTML = '';
+    if (theme.accent) el.style.setProperty('--dv-accent', theme.accent);
 
-    // Wrapper
-    const wrapper = document.createElement('div');
-    wrapper.className = 'draws-viewer-wrapper';
-
-    // Title bar — only zoom tools, no size controls
-    if (draws.title) {
-        const _L = (typeof i18n !== 'undefined' && i18n[currentLang]) || {};
-        const titleBar = document.createElement('div');
-        titleBar.className = 'draws-viewer-title-bar';
-        titleBar.innerHTML = `
-            <h2 class="draws-viewer-title">${escapeHtml(draws.title)}</h2>
-            <div class="draws-viewer-tools">
-                <button class="dv-tool-btn" id="dvFullscreen" title="${_L.dv_fullscreen || '全屏显示 (网页内)'}"><i class="fa-solid fa-maximize"></i></button>
-                <span class="dv-tool-sep">|</span>
-                <button class="dv-tool-btn" id="dvZoomOut" title="${_L.dv_zoom_out || '缩小'}"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
-                <button class="dv-tool-btn" id="dvZoomIn" title="${_L.dv_zoom_in || '放大'}"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
-                <button class="dv-tool-btn" id="dvZoomFit" title="${_L.dv_zoom_fit || '适应内容'}"><i class="fa-solid fa-expand"></i></button>
-                <button class="dv-tool-btn" id="dvZoomReset" title="${_L.dv_zoom_reset || '重置视图'}"><i class="fa-solid fa-arrows-to-circle"></i></button>
-            </div>
-        `;
-        wrapper.appendChild(titleBar);
+    if (card.type === 'note') {
+        el.classList.add('dv-card-note');
+        el.innerHTML = '<div class="dv-card-note-text">' + dcEsc(card.text || '') + '</div>';
+        return el;
     }
 
-    // Canvas viewport (scrollable area)
-    const viewport = document.createElement('div');
-    viewport.className = 'draws-viewer-viewport';
-    viewport.id = 'dvViewport';
+    if (card.type === 'champion') {
+        el.classList.add('dv-card-champion');
+        const p = card.player1;
+        el.innerHTML =
+            '<div class="dv-card-champion-icon"><i class="fa-solid fa-crown"></i></div>' +
+            '<div class="dv-card-player dv-card-winner-name">' + dvPlayerHtml(p) + '</div>' +
+            '<div class="dv-card-champion-label">' + dcEsc(card.label || dcT('dv_champion', '冠军')) + '</div>';
+        return el;
+    }
 
-    // Transform layer
-    const transformLayer = document.createElement('div');
-    transformLayer.className = 'draws-viewer-transform';
-    transformLayer.id = 'dvTransform';
+    const status = dcMatchStatus(card);
+    if (status === 'live') el.classList.add('dv-card-live');
+    else if (status === 'scheduled') el.classList.add('dv-card-scheduled');
 
-    // SVG connections layer
-    const svgNS = 'http://www.w3.org/2000/svg';
-    const svg = document.createElementNS(svgNS, 'svg');
-    svg.setAttribute('class', 'draws-viewer-svg');
-    svg.setAttribute('width', canvasWidth + paddingX * 2);
-    svg.setAttribute('height', canvasHeight + paddingY * 2);
-    svg.style.position = 'absolute';
-    svg.style.top = '0';
-    svg.style.left = '0';
-    svg.style.pointerEvents = 'none';
-    svg.style.zIndex = '1';
-    svg.style.overflow = 'visible';
+    const p1 = card.player1, p2 = card.player2;
+    const scores = dcParseScore(card.score) || [null, null];
+    const winner = card.winner;
+    const p1Won = winner === 1, p2Won = winner === 2;
+    const isBye = !p2;
 
-    // Draw connection lines
+    let html = '';
+    if (isBye) {
+        html += '<div class="dv-card-player ' + (p1Won ? 'dv-winner' : '') + '">' + dvPlayerHtml(p1, scores[0], p1Won) + '</div>';
+        html += '<div class="dv-card-bye">— BYE —</div>';
+    } else {
+        html += '<div class="dv-card-player ' + (p1Won ? 'dv-winner' : (p2Won ? 'dv-loser' : '')) + '">' + dvPlayerHtml(p1, scores[0], p1Won) + '</div>';
+        html += '<div class="dv-card-vs"></div>';
+        html += '<div class="dv-card-player ' + (p2Won ? 'dv-winner' : (p1Won ? 'dv-loser' : '')) + '">' + dvPlayerHtml(p2, scores[1], p2Won) + '</div>';
+    }
+    // 状态徽标
+    if (status === 'live') html += '<div class="dv-status-badge dv-status-live"><span class="dv-live-dot"></span>LIVE</div>';
+    else if (status === 'scheduled') html += '<div class="dv-status-badge dv-status-scheduled"><i class="fa-regular fa-clock"></i>' + dcT('dv_status_scheduled', '待赛') + '</div>';
+    // 总比分角标
+    else if (card.score && !isBye) html += '<div class="dv-card-score-tag">' + dcEsc(card.score) + '</div>';
+
+    el.innerHTML = html;
+
+    // 可点击展开详情（有附加信息或逐局比分时）
+    if (card.games && card.games.length) el.classList.add('dv-has-detail');
+    return el;
+}
+
+function dvPlayerHtml(p, score, won) {
+    if (!p) return '<span class="dv-player-name dv-tbd">' + dcT('dv_tbd', '待定') + '</span>' + (score != null ? '<span class="dv-player-score ' + (won ? 'dv-score-win' : 'dv-score-loss') + '">' + score + '</span>' : '');
+    let html = '<span class="dv-player-name">' + dcEsc(p.name) + '</span>';
+    if (p.seed != null && p.seed !== '') {
+        html = '<span class="dv-player-seed">' + dcEsc(String(p.seed)) + '</span>' + html;
+    }
+    if (p.note) html += '<span class="dv-player-note" title="' + dcEsc(p.note) + '">' + dcEsc(p.note) + '</span>';
+    if (score != null) html += '<span class="dv-player-score ' + (won ? 'dv-score-win' : 'dv-score-loss') + '">' + score + '</span>';
+    return html;
+}
+
+// ---------- 详情弹窗 ----------
+
+function dvShowCardPopover(card, anchorEl, container, layout, draws) {
+    dvHideCardPopover();
+    const pop = document.createElement('div');
+    pop.className = 'dv-popover';
+    pop.id = 'dvPopover';
+
+    let html = '';
+    if (card.type === 'champion') {
+        html += '<div class="dv-popover-title"><i class="fa-solid fa-crown"></i> ' + dcEsc(card.label || '冠军') + '</div>';
+        html += '<div class="dv-popover-champ">' + dcEsc(dcPlayerName(card.player1)) + '</div>';
+    } else if (card.type === 'note') {
+        html += '<div class="dv-popover-note">' + dcEsc(card.text || '') + '</div>';
+    } else {
+        const p1 = dcPlayerName(card.player1) || dcT('dv_tbd', '待定');
+        const p2 = dcPlayerName(card.player2);
+        html += '<div class="dv-popover-title">' + dcEsc(p1) + (p2 ? ' <span class="dv-popover-vs">vs</span> ' + dcEsc(p2) : ' <span class="dv-popover-vs">· BYE</span>') + '</div>';
+        const status = dcMatchStatus(card);
+        if (status === 'live') html += '<div class="dv-popover-status dv-status-live"><span class="dv-live-dot"></span>' + dcT('dv_status_live', '比赛进行中') + '</div>';
+        else if (status === 'scheduled') html += '<div class="dv-popover-status dv-status-scheduled"><i class="fa-regular fa-clock"></i> ' + dcT('dv_status_scheduled', '待赛') + '</div>';
+        if (card.games && card.games.length) {
+            html += '<div class="dv-popover-games">';
+            card.games.forEach((g, i) => {
+                const s = dcParseScore(g);
+                let cls = '';
+                if (s && card.winner) cls = ((card.winner === 1) === (s[0] > s[1])) ? 'dv-g-win' : 'dv-g-loss';
+                html += '<span class="dv-popover-game ' + cls + '">' + dcEsc(g) + '</span>';
+            });
+            html += '</div>';
+        }
+        if (card.score) html += '<div class="dv-popover-score">' + dcT('dv_total_score', '总比分') + '：' + dcEsc(card.score) + '</div>';
+        const metas = [];
+        if (card.time) metas.push('<span><i class="fa-regular fa-clock"></i> ' + dcEsc(card.time) + '</span>');
+        if (card.venue) metas.push('<span><i class="fa-solid fa-location-dot"></i> ' + dcEsc(card.venue) + '</span>');
+        if (metas.length) html += '<div class="dv-popover-meta">' + metas.join('') + '</div>';
+        if (card.note) html += '<div class="dv-popover-note">' + dcEsc(card.note) + '</div>';
+        if (!card.games && !card.time && !card.venue && !card.note && status !== 'scheduled' && status !== 'live') {
+            pop.classList.add('dv-popover-min');
+        }
+    }
+    pop.innerHTML = html + '<button class="dv-popover-close" aria-label="close"><i class="fa-solid fa-xmark"></i></button>';
+
+    container.appendChild(pop);
+    // 定位：锚点卡片右下方，越界则翻转
+    const vw = container.clientWidth, vh = container.clientHeight;
+    const rect = anchorEl.getBoundingClientRect();
+    const base = container.getBoundingClientRect();
+    let left = rect.right - base.left + 10, top = rect.top - base.top;
+    requestAnimationFrame(() => {
+        const pw = pop.offsetWidth, ph = pop.offsetHeight;
+        if (left + pw > vw - 8) left = Math.max(8, rect.left - base.left - pw - 10);
+        if (top + ph > vh - 8) top = Math.max(8, vh - ph - 8);
+        pop.style.left = left + 'px';
+        pop.style.top = top + 'px';
+        pop.classList.add('dv-popover-show');
+    });
+    pop.querySelector('.dv-popover-close').addEventListener('click', e => { e.stopPropagation(); dvHideCardPopover(); });
+}
+
+function dvHideCardPopover() {
+    const old = document.getElementById('dvPopover');
+    if (old) old.remove();
+}
+
+// ---------- 主渲染 ----------
+
+function renderGridViewer(container, draws) {
+    const layout = dcComputeLayout(draws);
+    const cards = draws.cards || [];
+    const connections = draws.connections || [];
     const cardMap = {};
     cards.forEach(c => { cardMap[c.id] = c; });
 
-    connections.forEach(conn => {
-        const fromCard = cardMap[conn.from];
-        const toCard = cardMap[conn.to];
-        if (!fromCard || !toCard) return;
+    container.innerHTML = '';
 
-        const fromX = paddingX + fromCard.col * grid.cellWidth + grid.cellWidth;
-        const fromY = paddingY + fromCard.row * grid.cellHeight + grid.cellHeight / 2;
-        const toX = paddingX + toCard.col * grid.cellWidth;
-        const toY = paddingY + toCard.row * grid.cellHeight + grid.cellHeight / 2;
+    const wrapper = document.createElement('div');
+    wrapper.className = 'draws-viewer-wrapper';
 
+    // ---- 工具栏 ----
+    const titleBar = document.createElement('div');
+    titleBar.className = 'draws-viewer-title-bar';
+    const tools = [];
+    tools.push('<div class="dv-search-box">' +
+        '<i class="fa-solid fa-magnifying-glass"></i>' +
+        '<input type="text" id="dvSearch" placeholder="' + dcT('dv_search_placeholder', '搜索选手 / 队伍，高亮晋级路径') + '">' +
+        '<button id="dvSearchClear" class="dv-search-clear" style="display:none;"><i class="fa-solid fa-xmark"></i></button></div>');
+    tools.push('<span class="dv-tool-sep">|</span>' +
+        '<button class="dv-tool-btn" id="dvZoomOut" title="' + dcT('dv_zoom_out', '缩小') + '"><i class="fa-solid fa-magnifying-glass-minus"></i></button>' +
+        '<button class="dv-tool-btn" id="dvZoomIn" title="' + dcT('dv_zoom_in', '放大') + '"><i class="fa-solid fa-magnifying-glass-plus"></i></button>' +
+        '<button class="dv-tool-btn" id="dvZoomFit" title="' + dcT('dv_zoom_fit', '适应内容') + '"><i class="fa-solid fa-expand"></i></button>' +
+        '<button class="dv-tool-btn" id="dvZoomReset" title="' + dcT('dv_zoom_reset', '重置视图') + '"><i class="fa-solid fa-arrows-to-circle"></i></button>' +
+        '<button class="dv-tool-btn" id="dvFullscreen" title="' + dcT('dv_fullscreen', '全屏显示 (网页内)') + '"><i class="fa-solid fa-maximize"></i></button>');
+    titleBar.innerHTML =
+        '<div class="dv-title-main">' +
+        (draws.title ? '<h2 class="draws-viewer-title">' + dcEsc(draws.title) + '</h2>' : '') +
+        (draws.subtitle ? '<p class="draws-viewer-subtitle">' + dcEsc(draws.subtitle) + '</p>' : '') +
+        '</div>' +
+        '<div class="draws-viewer-tools">' + tools.join('') + '</div>';
+    wrapper.appendChild(titleBar);
+
+    // ---- 画布 ----
+    const viewport = document.createElement('div');
+    viewport.className = 'draws-viewer-viewport';
+    viewport.id = 'dvViewport';
+    viewport.tabIndex = 0;
+
+    const transformLayer = document.createElement('div');
+    transformLayer.className = 'draws-viewer-transform';
+    transformLayer.id = 'dvTransform';
+    transformLayer.style.willChange = 'transform';
+
+    const svgNS = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(svgNS, 'svg');
+    svg.setAttribute('class', 'draws-viewer-svg');
+    svg.setAttribute('width', layout.canvasW);
+    svg.setAttribute('height', layout.canvasH);
+    svg.style.overflow = 'visible';
+
+    const connGroup = document.createElementNS(svgNS, 'g');
+    connGroup.setAttribute('class', 'dv-conn-group');
+    connections.forEach((conn, idx) => {
+        const fromCard = cardMap[conn.from], toCard = cardMap[conn.to];
+        const fp = layout.positions[conn.from], tp = layout.positions[conn.to];
+        if (!fromCard || !toCard || !fp || !tp) return;
+        const a = dcAnchorPoint(fp, layout.cardW, layout.cardH, conn.fromSide || 'right');
+        const b = dcAnchorPoint(tp, layout.cardW, layout.cardH, conn.toSide || 'left');
         const path = document.createElementNS(svgNS, 'path');
-        const midX = (fromX + toX) / 2;
-        const d = `M ${fromX} ${fromY} C ${midX} ${fromY}, ${midX} ${toY}, ${toX} ${toY}`;
-        path.setAttribute('d', d);
+        path.setAttribute('d', dcConnectionPath(a, b, conn.fromSide || 'right', conn.toSide || 'left'));
         path.setAttribute('class', 'dv-connection-line');
-        svg.appendChild(path);
-
-        // Arrow at destination
-        const arrowSize = 7;
+        path.dataset.connIndex = idx;
+        connGroup.appendChild(path);
         const arrow = document.createElementNS(svgNS, 'polygon');
-        arrow.setAttribute('points', `${toX - 1},${toY - arrowSize} ${toX + arrowSize * 2},${toY} ${toX - 1},${toY + arrowSize}`);
+        arrow.setAttribute('points', dcArrowPoints(b, conn.toSide || 'left'));
         arrow.setAttribute('class', 'dv-connection-arrow');
-        svg.appendChild(arrow);
+        arrow.dataset.connIndex = idx;
+        connGroup.appendChild(arrow);
     });
-
+    svg.appendChild(connGroup);
     transformLayer.appendChild(svg);
 
-    // Grid background — very subtle
+    // 网格底纹
     const gridBg = document.createElement('div');
     gridBg.className = 'draws-viewer-grid-bg';
-    gridBg.style.width = (canvasWidth + paddingX * 2) + 'px';
-    gridBg.style.height = (canvasHeight + paddingY * 2) + 'px';
-    gridBg.style.position = 'absolute';
-    gridBg.style.top = '0';
-    gridBg.style.left = '0';
-    gridBg.style.zIndex = '0';
-    gridBg.style.backgroundImage = `
-        linear-gradient(rgba(128,128,128,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(128,128,128,0.025) 1px, transparent 1px)
-    `;
-    gridBg.style.backgroundSize = `${grid.cellWidth}px ${grid.cellHeight}px`;
-    gridBg.style.backgroundPosition = `${paddingX}px ${paddingY}px`;
+    gridBg.style.width = layout.canvasW + 'px';
+    gridBg.style.height = layout.canvasH + 'px';
+    gridBg.style.backgroundSize = layout.cellW + 'px ' + layout.cellH + 'px';
+    gridBg.style.backgroundPosition = layout.padX + 'px ' + layout.padY + 'px';
     transformLayer.appendChild(gridBg);
 
-    // Cards layer
+    // 卡片层
     const cardsLayer = document.createElement('div');
     cardsLayer.className = 'draws-viewer-cards-layer';
-    cardsLayer.style.position = 'absolute';
-    cardsLayer.style.top = '0';
-    cardsLayer.style.left = '0';
-    cardsLayer.style.width = (canvasWidth + paddingX * 2) + 'px';
-    cardsLayer.style.height = (canvasHeight + paddingY * 2) + 'px';
-    cardsLayer.style.zIndex = '2';
-
+    cardsLayer.style.width = layout.canvasW + 'px';
+    cardsLayer.style.height = layout.canvasH + 'px';
     cards.forEach(card => {
-        const cardEl = document.createElement('div');
-        cardEl.className = 'dv-card';
-        if (card.isChampion) cardEl.classList.add('dv-card-champion');
-
-        const x = paddingX + card.col * grid.cellWidth + 4;
-        const y = paddingY + card.row * grid.cellHeight + 4;
-        const w = grid.cellWidth - 8;
-        const h = grid.cellHeight - 8;
-
-        cardEl.style.left = x + 'px';
-        cardEl.style.top = y + 'px';
-        cardEl.style.width = w + 'px';
-        cardEl.style.minHeight = h + 'px';
-
-        const p1Name = card.player1 || '—';
-        const p2Name = card.player2 || '';
-        const score = card.score || '';
-        const winner = card.winner;
-        const p1Won = winner === 1;
-        const p2Won = winner === 2;
-        const scores = parseScore(score);
-
-        if (card.isChampion) {
-            cardEl.innerHTML = `
-                <div class="dv-card-champion-icon"><i class="fa-solid fa-crown"></i></div>
-                <div class="dv-card-player dv-card-winner-name">${escapeHtml(p1Name)}</div>
-                <div class="dv-card-champion-label">CHAMPION</div>
-            `;
-        } else if (!p2Name || p2Name === '轮空') {
-            cardEl.innerHTML = `
-                <div class="dv-card-player ${p1Won ? 'dv-winner' : ''}">
-                    <span class="dv-player-name">${escapeHtml(p1Name)}</span>
-                    ${scores.p1Score !== null ? `<span class="dv-player-score ${p1Won ? 'dv-score-win' : 'dv-score-loss'}">${scores.p1Score}</span>` : ''}
-                </div>
-                <div class="dv-card-bye">— BYE —</div>
-            `;
-        } else {
-            cardEl.innerHTML = `
-                <div class="dv-card-player ${p1Won ? 'dv-winner' : (p2Won ? 'dv-loser' : '')}">
-                    <span class="dv-player-name">${escapeHtml(p1Name)}</span>
-                    ${scores.p1Score !== null ? `<span class="dv-player-score ${p1Won ? 'dv-score-win' : 'dv-score-loss'}">${scores.p1Score}</span>` : ''}
-                </div>
-                <div class="dv-card-vs"></div>
-                <div class="dv-card-player ${p2Won ? 'dv-winner' : (p1Won ? 'dv-loser' : '')}">
-                    <span class="dv-player-name">${escapeHtml(p2Name)}</span>
-                    ${scores.p2Score !== null ? `<span class="dv-player-score ${p2Won ? 'dv-score-win' : 'dv-score-loss'}">${scores.p2Score}</span>` : ''}
-                </div>
-            `;
-        }
-
-        // Subtle total score badge (bottom-right)
-        if (score && !card.isChampion && p2Name && p2Name !== '轮空') {
-            const scoreTag = document.createElement('div');
-            scoreTag.className = 'dv-card-score-tag';
-            scoreTag.textContent = score;
-            cardEl.appendChild(scoreTag);
-        }
-
-        cardsLayer.appendChild(cardEl);
+        const pos = layout.positions[card.id];
+        if (!pos) return;
+        const el = dvBuildCardEl(card, { x: pos.x, y: pos.y, w: layout.cardW, h: layout.cardH }, layout, draws);
+        el.dataset.cardId = card.id;
+        cardsLayer.appendChild(el);
     });
-
     transformLayer.appendChild(cardsLayer);
 
-    // Round labels
+    // 轮次标签
     const roundsMap = {};
     cards.forEach(card => {
-        if (!roundsMap[card.col]) roundsMap[card.col] = { col: card.col, minRow: card.row, maxRow: card.row, cards: [] };
-        const r = roundsMap[card.col];
-        r.minRow = Math.min(r.minRow, card.row);
-        r.maxRow = Math.max(r.maxRow, card.row);
-        r.cards.push(card);
+        const col = card.col != null ? card.col : (card.round != null ? card.round : 0);
+        if (!roundsMap[col]) roundsMap[col] = true;
     });
-
-    const defaultRoundLabels = ['第一轮', '第二轮', '1/4决赛', '半决赛', '决赛', '冠军'];
     const customLabels = draws.roundLabels || {};
-    Object.values(roundsMap).forEach((r, i) => {
+    const defaultRoundLabels = [dcT('dv_round_1', '第一轮'), dcT('dv_round_2', '第二轮'), '1/4决赛', dcT('dv_semis', '半决赛'), dcT('dv_final', '决赛')];
+    Object.keys(roundsMap).map(Number).sort((a, b) => a - b).forEach((col, i) => {
         const label = document.createElement('div');
         label.className = 'dv-round-label';
-        // 优先使用自定义表头（按列索引），否则使用默认表头
-        const colKey = String(r.col);
-        label.textContent = customLabels[colKey] || defaultRoundLabels[i] || `第${i + 1}轮`;
-        label.style.position = 'absolute';
-        label.style.left = (paddingX + r.col * grid.cellWidth + grid.cellWidth / 2) + 'px';
-        label.style.top = (paddingY - 28) + 'px';
-        label.style.transform = 'translateX(-50%)';
-        label.style.zIndex = '3';
+        label.textContent = customLabels[String(col)] || defaultRoundLabels[i] || (dcT('dv_round_n', '第{n}轮').replace('{n}', i + 1));
+        label.style.left = (layout.padX + col * layout.cellW + layout.cellW / 2) + 'px';
+        label.style.top = (layout.padY - 30) + 'px';
         transformLayer.appendChild(label);
     });
 
     viewport.appendChild(transformLayer);
     wrapper.appendChild(viewport);
+
+    // 图例
+    if ((draws.theme || {}).showLegend !== false) {
+        const legend = document.createElement('div');
+        legend.className = 'dv-legend';
+        legend.innerHTML =
+            '<span class="dv-legend-item"><span class="dv-legend-dot dv-legend-win"></span> ' + dcT('dv_legend_win', '胜者') + '</span>' +
+            '<span class="dv-legend-item"><span class="dv-legend-dot dv-legend-loss"></span> ' + dcT('dv_legend_loss', '负者') + '</span>' +
+            '<span class="dv-legend-item"><span class="dv-legend-dot dv-legend-live"></span> ' + dcT('dv_legend_live', '进行中') + '</span>' +
+            '<span class="dv-legend-item"><span class="dv-legend-dot dv-legend-pending"></span> ' + dcT('dv_legend_pending', '待赛') + '</span>' +
+            '<span class="dv-legend-item"><span class="dv-legend-line"></span> ' + dcT('dv_legend_path', '晋级路径') + '</span>';
+        wrapper.appendChild(legend);
+    }
+
     container.appendChild(wrapper);
 
-    // Legend
-    const legend = document.createElement('div');
-    legend.className = 'dv-legend';
-    legend.innerHTML = `
-        <span class="dv-legend-item"><span class="dv-legend-dot dv-legend-win"></span> 胜者</span>
-        <span class="dv-legend-item"><span class="dv-legend-dot dv-legend-loss"></span> 负者</span>
-        <span class="dv-legend-item"><span class="dv-legend-line"></span> 晋级路径</span>
-    `;
-    container.appendChild(legend);
-
-    // Bind zoom/pan controls
-    bindViewerControls(viewport, transformLayer, draws);
+    bindViewerControls(viewport, transformLayer, draws, layout);
+    bindViewerSearch(wrapper, draws);
+    bindCardInteractions(cardsLayer, viewport, draws);
 }
 
-/**
- * 计算"恰好展示所有卡片列"的最小缩放
- */
-function calcMinZoom(viewport, draws) {
-    const cards = draws.cards || [];
-    const grid = draws.grid || { cellWidth: 180, cols: 7 };
-    const paddingX = 80;
-    let maxCol = 0;
-    cards.forEach(c => { if (c.col > maxCol) maxCol = c.col; });
-    const contentW = (maxCol + 1) * grid.cellWidth + paddingX * 2 + 20;
-    const vw = viewport.clientWidth;
-    return Math.min(1.0, (vw - 16) / contentW);
-}
+// ---------- 交互：缩放 / 平移 ----------
 
-/**
- * 绑定查看器缩放/平移控件
- */
-function bindViewerControls(viewport, transformLayer, draws) {
-    // --- 计算并锁定最小缩放 ---
-    viewerMinZoom = calcMinZoom(viewport, draws);
+function bindViewerControls(viewport, transformLayer, draws, layout) {
+    viewerMinZoom = Math.min(1.0, (viewport.clientWidth - 16) / Math.max(layout.canvasW, 1));
+    viewerMinZoom = Math.max(viewerMinZoom, 0.15);
     viewerZoom = viewerMinZoom;
-    viewerPanX = 0;
-    viewerPanY = 0;
-
-    const zoomIn = document.getElementById('dvZoomIn');
-    const zoomOut = document.getElementById('dvZoomOut');
-    const zoomFit = document.getElementById('dvZoomFit');
-    const zoomReset = document.getElementById('dvZoomReset');
-    const fullscreenBtn = document.getElementById('dvFullscreen');
-
-    // --- Fullscreen toggle ---
-    if (fullscreenBtn) {
-        fullscreenBtn.addEventListener('click', () => {
-            const wrapper = viewport.closest('.draws-viewer-container') || viewport.closest('.draws-viewer-wrapper')?.parentElement;
-            if (!wrapper) return;
-            const isFS = wrapper.classList.toggle('dv-fullscreen');
-            fullscreenBtn.innerHTML = isFS
-                ? '<i class="fa-solid fa-minimize"></i>'
-                : '<i class="fa-solid fa-maximize"></i>';
-            if (isFS) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
-            setTimeout(() => { if (zoomFit) zoomFit.click(); }, 200);
-        });
-    }
-
-    // GPU 加速
-    transformLayer.style.willChange = 'transform';
+    viewerPanX = 0; viewerPanY = 0;
+    _dvSearchToken++;
 
     function applyTransform() {
-        if (viewerRafId) return; // debounce via rAF
+        if (viewerRafId) return;
         viewerRafId = requestAnimationFrame(() => {
             viewerRafId = null;
-            transformLayer.style.transform = `translate(${viewerPanX}px, ${viewerPanY}px) scale(${viewerZoom})`;
             transformLayer.style.transformOrigin = '0 0';
+            transformLayer.style.transform = 'translate(' + viewerPanX + 'px, ' + viewerPanY + 'px) scale(' + viewerZoom + ')';
         });
     }
+    function clampZoom(z) { return Math.max(viewerMinZoom, Math.min(2.5, z)); }
 
-    function clampZoom(z) {
-        return Math.max(viewerMinZoom, Math.min(2.5, z));
-    }
-
-    // --- 初始适应 ---
     function doFit() {
-        const cards = draws.cards || [];
-        const grid = draws.grid || { cellWidth: 180, cellHeight: 64, cols: 7 };
-        const paddingX = 80;
-        let maxCol = 0, maxRow = 0;
-        cards.forEach(c => { if (c.col > maxCol) maxCol = c.col; if (c.row > maxRow) maxRow = c.row; });
-        const contentW = (maxCol + 1) * grid.cellWidth + paddingX * 2 + 40;
-        const contentH = (maxRow + 1) * grid.cellHeight + 100;
-
-        const vw = viewport.clientWidth;
-        const vh = viewport.clientHeight;
-        const scaleX = (vw - 16) / contentW;
-        const scaleY = (vh - 16) / contentH;
-        viewerZoom = clampZoom(Math.min(scaleX, scaleY));
-        viewerPanX = Math.max(0, (vw - contentW * viewerZoom) / 2);
-        viewerPanY = Math.max(0, (vh - contentH * viewerZoom) / 2);
+        const vw = viewport.clientWidth, vh = viewport.clientHeight;
+        const scale = clampZoom(Math.min((vw - 16) / Math.max(layout.canvasW, 1), (vh - 16) / Math.max(layout.canvasH, 1)));
+        viewerZoom = scale;
+        viewerPanX = Math.max(0, (vw - layout.canvasW * scale) / 2);
+        viewerPanY = Math.max(0, (vh - layout.canvasH * scale) / 2);
         applyTransform();
     }
-
-    // 初始 fit
     doFit();
 
-    // --- 按钮 ---
-    if (zoomIn) zoomIn.addEventListener('click', () => {
-        viewerZoom = clampZoom(viewerZoom * 1.25);
-        applyTransform();
-    });
-    if (zoomOut) zoomOut.addEventListener('click', () => {
-        viewerZoom = clampZoom(viewerZoom / 1.25);
-        applyTransform();
-    });
-    if (zoomFit) zoomFit.addEventListener('click', doFit);
-    if (zoomReset) zoomReset.addEventListener('click', () => {
-        viewerZoom = viewerMinZoom;
-        viewerPanX = 0;
-        viewerPanY = 0;
-        applyTransform();
-    });
+    const $id = id => document.getElementById(id);
+    const zoomIn = $id('dvZoomIn'), zoomOut = $id('dvZoomOut'), zoomFit = $id('dvZoomFit'),
+        zoomReset = $id('dvZoomReset'), fullscreenBtn = $id('dvFullscreen');
 
-    // --- 滚轮缩放 (流畅) ---
+    if (fullscreenBtn) fullscreenBtn.addEventListener('click', () => {
+        const wrap = viewport.closest('.draws-viewer-wrapper');
+        if (!wrap) return;
+        const isFS = wrap.classList.toggle('dv-fullscreen');
+        fullscreenBtn.innerHTML = isFS ? '<i class="fa-solid fa-minimize"></i>' : '<i class="fa-solid fa-maximize"></i>';
+        document.body.style.overflow = isFS ? 'hidden' : '';
+        setTimeout(() => { doFit(); }, 200);
+    });
+    if (zoomIn) zoomIn.addEventListener('click', () => { viewerZoom = clampZoom(viewerZoom * 1.25); applyTransform(); });
+    if (zoomOut) zoomOut.addEventListener('click', () => { viewerZoom = clampZoom(viewerZoom / 1.25); applyTransform(); });
+    if (zoomFit) zoomFit.addEventListener('click', doFit);
+    if (zoomReset) zoomReset.addEventListener('click', () => { viewerZoom = viewerMinZoom; viewerPanX = 0; viewerPanY = 0; applyTransform(); });
+
+    // 滚轮缩放（指向光标）
     viewport.addEventListener('wheel', (e) => {
         e.preventDefault();
         const rect = viewport.getBoundingClientRect();
-        const mx = e.clientX - rect.left;
-        const my = e.clientY - rect.top;
-
+        const mx = e.clientX - rect.left, my = e.clientY - rect.top;
         const factor = e.deltaY > 0 ? 0.9 : 1.1;
         const newZoom = clampZoom(viewerZoom * factor);
-
-        // Zoom toward cursor
-        const scaleChange = newZoom / viewerZoom;
-        viewerPanX = mx - scaleChange * (mx - viewerPanX);
-        viewerPanY = my - scaleChange * (my - viewerPanY);
+        const sc = newZoom / viewerZoom;
+        viewerPanX = mx - sc * (mx - viewerPanX);
+        viewerPanY = my - sc * (my - viewerPanY);
         viewerZoom = newZoom;
         applyTransform();
     }, { passive: false });
 
-    // --- 拖拽平移 (无黏着感) ---
+    // 拖拽平移
     viewport.addEventListener('mousedown', (e) => {
-        if (e.target.closest('.dv-card') || e.target.closest('.dv-tool-btn')) return;
+        if (e.target.closest('.dv-card') || e.target.closest('.dv-popover') || e.target.closest('.dv-tool-btn')) return;
         e.preventDefault();
         isPanning = true;
         panStart = { x: e.clientX - viewerPanX, y: e.clientY - viewerPanY };
         viewport.style.cursor = 'grabbing';
         viewport.style.userSelect = 'none';
     });
-
     window.addEventListener('mousemove', (e) => {
         if (!isPanning) return;
         viewerPanX = e.clientX - panStart.x;
         viewerPanY = e.clientY - panStart.y;
         applyTransform();
     });
-
     window.addEventListener('mouseup', () => {
         if (!isPanning) return;
         isPanning = false;
@@ -435,7 +383,7 @@ function bindViewerControls(viewport, transformLayer, draws) {
         viewport.style.userSelect = '';
     });
 
-    // --- 触摸支持 ---
+    // 触屏：单指平移 / 双指缩放
     let touchStartDist = 0, touchStartZoom = 1;
     viewport.addEventListener('touchstart', (e) => {
         if (e.touches.length === 2) {
@@ -448,7 +396,6 @@ function bindViewerControls(viewport, transformLayer, draws) {
             panStart = { x: e.touches[0].clientX - viewerPanX, y: e.touches[0].clientY - viewerPanY };
         }
     }, { passive: false });
-
     viewport.addEventListener('touchmove', (e) => {
         if (e.touches.length === 2) {
             const dx = e.touches[0].clientX - e.touches[1].clientX;
@@ -464,54 +411,167 @@ function bindViewerControls(viewport, transformLayer, draws) {
             applyTransform();
         }
     }, { passive: false });
+    viewport.addEventListener('touchend', () => { isPanning = false; touchStartDist = 0; });
 
-    viewport.addEventListener('touchend', () => {
-        isPanning = false;
-        touchStartDist = 0;
+    // 键盘: +/- 缩放, 0 适应, 方向键平移
+    viewport.addEventListener('keydown', (e) => {
+        const step = 60;
+        if (e.key === '+' || e.key === '=') { viewerZoom = clampZoom(viewerZoom * 1.2); applyTransform(); }
+        else if (e.key === '-' || e.key === '_') { viewerZoom = clampZoom(viewerZoom / 1.2); applyTransform(); }
+        else if (e.key === '0') { doFit(); }
+        else if (e.key === 'ArrowLeft') { viewerPanX += step; applyTransform(); }
+        else if (e.key === 'ArrowRight') { viewerPanX -= step; applyTransform(); }
+        else if (e.key === 'ArrowUp') { viewerPanY += step; applyTransform(); }
+        else if (e.key === 'ArrowDown') { viewerPanY -= step; applyTransform(); }
+        else return;
+        e.preventDefault();
     });
 }
 
-/**
- * 兼容旧版数据渲染（fallback）
- */
-function renderLegacyBracket(draws) {
-    if (!draws || !draws.rounds || !draws.rounds.length) return '<p class="draws-empty">暂无对阵数据</p>';
+// ---------- 交互：搜索与路径高亮 ----------
 
-    let html = '';
-    if (draws.title) {
-        html += `<h3 class="draws-title">${escapeHtml(draws.title)}</h3>`;
+function bindViewerSearch(wrapper, draws) {
+    const input = wrapper.querySelector('#dvSearch');
+    const clearBtn = wrapper.querySelector('#dvSearchClear');
+    if (!input) return;
+    let timer = null;
+    input.addEventListener('input', () => {
+        clearTimeout(timer);
+        timer = setTimeout(() => applyViewerHighlight(wrapper, draws, input.value.trim()), 160);
+    });
+    input.addEventListener('keydown', e => {
+        if (e.key === 'Escape') { input.value = ''; applyViewerHighlight(wrapper, draws, ''); input.blur(); }
+        e.stopPropagation();
+    });
+    if (clearBtn) clearBtn.addEventListener('click', () => { input.value = ''; applyViewerHighlight(wrapper, draws, ''); input.focus(); });
+}
+
+function applyViewerHighlight(wrapper, draws, query) {
+    const token = ++_dvSearchToken;
+    const clearBtn = wrapper.querySelector('#dvSearchClear');
+    if (clearBtn) clearBtn.style.display = query ? '' : 'none';
+
+    const cardsLayer = wrapper.querySelector('.draws-viewer-cards-layer');
+    const svg = wrapper.querySelector('.draws-viewer-svg');
+    if (!cardsLayer || !svg) return;
+    const cardEls = {};
+    cardsLayer.querySelectorAll('.dv-card').forEach(el => { cardEls[el.dataset.cardId] = el; });
+    const connEls = {};
+    svg.querySelectorAll('[data-conn-index]').forEach(el => {
+        const i = el.dataset.connIndex;
+        (connEls[i] = connEls[i] || []).push(el);
+    });
+    const connections = draws.connections || [];
+
+    cardsLayer.querySelectorAll('.dv-card').forEach(el => el.classList.remove('dv-hl', 'dv-hl-path', 'dv-dim'));
+    svg.querySelectorAll('.dv-connection-line').forEach(el => el.classList.remove('dv-hl', 'dv-hl-path', 'dv-dim'));
+    svg.querySelectorAll('.dv-connection-arrow').forEach(el => el.classList.remove('dv-hl', 'dv-hl-path', 'dv-dim'));
+
+    if (!query) return;
+
+    const q = query.toLowerCase();
+    // 命中的卡片
+    const hitIds = new Set();
+    (draws.cards || []).forEach(c => {
+        const names = [dcPlayerName(c.player1), dcPlayerName(c.player2), c.text || '', c.note || ''].join(' ').toLowerCase();
+        if (names.includes(q)) hitIds.add(c.id);
+    });
+    if (!hitIds.size) return;
+
+    // 晋级路径：从命中卡片沿连线向后传播
+    const pathIds = new Set(hitIds);
+    let grew = true;
+    while (grew) {
+        grew = false;
+        connections.forEach((cn, idx) => {
+            if (pathIds.has(cn.from) && !pathIds.has(cn.to)) { pathIds.add(cn.to); grew = true; }
+        });
+    }
+    // 相关连线：两端都在路径中
+    const relConns = new Set();
+    connections.forEach((cn, idx) => {
+        if (pathIds.has(cn.from) && pathIds.has(cn.to)) relConns.add(String(idx));
+    });
+
+    requestAnimationFrame(() => {
+        if (token !== _dvSearchToken) return; // 已被更新的搜索覆盖
+        (draws.cards || []).forEach(c => {
+            const el = cardEls[c.id];
+            if (!el) return;
+            if (hitIds.has(c.id)) el.classList.add('dv-hl');
+            else if (pathIds.has(c.id)) el.classList.add('dv-hl-path');
+            else el.classList.add('dv-dim');
+        });
+        connections.forEach((cn, idx) => {
+            const els = connEls[String(idx)];
+            if (!els) return;
+            if (relConns.has(String(idx))) els.forEach(el => el.classList.add('dv-hl-path'));
+            else els.forEach(el => el.classList.add('dv-dim'));
+        });
+    });
+}
+
+// ---------- 交互：卡片点击详情 / 悬停连线高亮 ----------
+
+function bindCardInteractions(cardsLayer, viewport, draws) {
+    const svg = viewport.querySelector('.draws-viewer-svg');
+    const connIndexByCards = new Map();
+    (draws.connections || []).forEach((cn, idx) => {
+        if (!connIndexByCards.has(cn.from)) connIndexByCards.set(cn.from, []);
+        if (!connIndexByCards.has(cn.to)) connIndexByCards.set(cn.to, []);
+        connIndexByCards.get(cn.from).push(idx);
+        connIndexByCards.get(cn.to).push(idx);
+    });
+
+    const cardMap = {};
+    (draws.cards || []).forEach(c => { cardMap[c.id] = c; });
+
+    let hoverCardId = null;
+
+    function highlightConns(cardId, on) {
+        if (!svg) return;
+        const idxs = connIndexByCards.get(cardId) || [];
+        idxs.forEach(i => {
+            svg.querySelectorAll('[data-conn-index="' + i + '"]').forEach(el => el.classList.toggle('dv-hl', !!on));
+        });
+        if (on && cardId) {
+            const el = cardsLayer.querySelector('.dv-card[data-card-id="' + cardId + '"]');
+            if (el) el.classList.add('dv-hover');
+        } else if (cardId) {
+            const el = cardsLayer.querySelector('.dv-card[data-card-id="' + cardId + '"]');
+            if (el) el.classList.remove('dv-hover');
+        }
     }
 
-    draws.rounds.forEach((round) => {
-        html += `<div class="draws-round">`;
-        html += `<h4 class="draws-round-name">${escapeHtml(round.name)}</h4>`;
-        if (round.matches && round.matches.length) {
-            html += `<div class="draws-matches">`;
-            round.matches.forEach(m => {
-                const p1 = m.player1 && typeof m.player1 === 'object' ? m.player1.name : (m.player1 || '—');
-                const p2 = m.player2 && typeof m.player2 === 'object' ? m.player2.name : (m.player2 || '—');
-                const p1Won = m.winner === 1;
-                const p2Won = m.winner === 2;
-                html += `<div class="draws-match glass-card">`;
-                html += `<div class="draws-match-players">`;
-                html += `<span class="draws-player ${p1Won ? 'draws-winner' : ''}">${escapeHtml(p1)}</span>`;
-                if (p2 && p2 !== '—') {
-                    html += `<span class="draws-vs">VS</span>`;
-                    html += `<span class="draws-player ${p2Won ? 'draws-winner' : ''}">${escapeHtml(p2)}</span>`;
-                }
-                html += `</div>`;
-                if (m.score) {
-                    html += `<div class="draws-match-score">${escapeHtml(m.score)}</div>`;
-                }
-                html += `</div>`;
-            });
-            html += `</div>`;
-        }
-        html += `</div>`;
+    cardsLayer.addEventListener('mouseover', (e) => {
+        const cardEl = e.target.closest('.dv-card');
+        const id = cardEl ? cardEl.dataset.cardId : null;
+        if (id === hoverCardId) return;
+        if (hoverCardId) highlightConns(hoverCardId, false);
+        hoverCardId = id;
+        if (id) highlightConns(id, true);
+    });
+    cardsLayer.addEventListener('mouseleave', () => {
+        if (hoverCardId) { highlightConns(hoverCardId, false); hoverCardId = null; }
     });
 
-    return html;
+    cardsLayer.addEventListener('click', (e) => {
+        const cardEl = e.target.closest('.dv-card');
+        if (!cardEl) { dvHideCardPopover(); return; }
+        const card = cardMap[cardEl.dataset.cardId];
+        if (!card) return;
+        const pop = document.getElementById('dvPopover');
+        if (pop && pop.dataset.cardId === card.id) { dvHideCardPopover(); return; }
+        dvHideCardPopover();
+        dvShowCardPopover(card, cardEl, viewport);
+        const newPop = document.getElementById('dvPopover');
+        if (newPop) newPop.dataset.cardId = card.id;
+    });
+
+    // 点击空白处关闭弹窗
+    viewport.addEventListener('mousedown', (e) => {
+        if (!e.target.closest('.dv-card') && !e.target.closest('.dv-popover')) dvHideCardPopover();
+    });
 }
 
-// Export for direct page usage
 window.initDrawsViewer = initDrawsViewer;

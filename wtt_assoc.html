@@ -27,9 +27,31 @@
         }
         .assoc-stat-card {
             text-align: center;
-            padding: 26px 16px;
+            padding: 30px 16px 26px;
             position: relative;
             overflow: hidden;
+            border-radius: var(--radius-lg);
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+        }
+        .assoc-stat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        /* 顶部渐变装饰条 */
+        .assoc-stat-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-light), var(--primary-blue), var(--primary-light));
+            opacity: 0.85;
+        }
+        /* 角落柔光 */
+        .assoc-stat-card::after {
+            content: "";
+            position: absolute;
+            top: -40px; right: -40px;
+            width: 120px; height: 120px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--primary-pale) 0%, transparent 70%);
+            pointer-events: none;
         }
         .assoc-stat-value {
             display: flex;
@@ -37,9 +59,12 @@
             justify-content: center;
             gap: 10px;
             font-family: var(--font-en);
-            font-size: 1.65rem;
+            font-size: 1.8rem;
             font-weight: 800;
-            color: var(--primary-blue);
+            background: linear-gradient(120deg, var(--primary-blue), var(--primary-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
             line-height: 1.2;
             min-height: 44px;
         }
@@ -142,8 +167,8 @@
         }
         table.wta-matrix td.diag { background: var(--bg-lighter); color: var(--text-muted); }
         table.wta-matrix td.cell-empty { background: var(--bg-lighter); color: var(--text-muted); opacity: 0.55; font-weight: 400; }
-        table.wta-matrix td.cell-val { color: var(--text-primary); cursor: default; transition: transform var(--transition-fast); }
-        table.wta-matrix td.cell-val:hover { transform: scale(1.06); }
+        table.wta-matrix td.cell-val { color: var(--text-primary); cursor: default; transition: transform var(--transition-fast), box-shadow var(--transition-fast); }
+        table.wta-matrix td.cell-val:hover { transform: scale(1.08); box-shadow: 0 4px 12px rgba(0, 123, 255, 0.25); }
         .wta-matrix-legend {
             display: flex;
             align-items: center;

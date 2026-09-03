@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function(){try{var t=localStorage.getItem("wfls-tt-theme");var d=t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark-mode");}catch(e){}})()</script>
+    <meta name="robots" content="noindex, nofollow">
+    <title>对阵表编辑器 | WFLS Table Tennis Club</title>
+    <link rel="icon" type="image/svg+xml" href="Assets/files/favicon_4DA3FF.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== 页面骨架（编辑器专用，通用控件样式复用 style.css 的 .de-* 体系）===== */
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family:"Noto Sans SC",sans-serif; color:var(--text-primary);
+            background:var(--bg-light); min-height:100vh; display:flex; flex-direction:column;
+        }
+        /* ---- 顶栏 ---- */
+        .ed-topbar {
+            display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+            padding:10px 18px; background:var(--bg-white);
+            border-bottom:1px solid var(--border-color); position:sticky; top:0; z-index:100;
+        }
+        .ed-brand { display:flex; align-items:center; gap:12px; min-width:0; }
+        .ed-logo {
+            width:38px; height:38px; border-radius:11px; flex:none; display:flex; align-items:center; justify-content:center;
+            background:linear-gradient(135deg, var(--primary-blue), #6f42c1); color:#fff; font-size:0.95rem;
+            text-decoration:none; box-shadow:0 4px 12px -3px rgba(0,123,255,0.5);
+        }
+        .ed-titles h1 { font-family:"Poppins","Noto Sans SC",sans-serif; font-size:1.02rem; font-weight:700; letter-spacing:-0.01em; white-space:nowrap; }
+        .ed-titles p { font-size:0.7rem; color:var(--text-muted); }
+        .ed-topbar-right { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+        .ed-draw-picker { display:flex; align-items:center; gap:6px; }
+        .ed-draw-picker select {
+            padding:7px 10px; border:1px solid var(--border-color); border-radius:8px; font-size:0.82rem;
+            background:var(--bg-white); color:var(--text-primary); outline:none; max-width:300px; cursor:pointer;
+            font-family:"Noto Sans SC",sans-serif;
+        }
+        .ed-draw-picker select:focus { border-color:var(--primary-blue); }
+        .ed-icon-btn {
+            width:34px; height:34px; border:1px solid var(--border-color); border-radius:8px; flex:none;
+            background:var(--bg-white); color:var(--text-secondary); cursor:pointer;
+            display:inline-flex; align-items:center; justify-content:center; font-size:0.82rem; transition:all 0.15s;
+        }
+        .ed-icon-btn:hover { border-color:var(--primary-blue); color:var(--primary-blue); background:var(--primary-pale); }
+        .ed-icon-btn:disabled { opacity:0.4; cursor:not-allowed; pointer-events:none; }
+        /* ---- 三栏布局 ---- */
+        .ed-layout {
+            flex:1; display:grid; grid-template-columns:270px minmax(0,1fr) 300px;
+            gap:12px; padding:12px 14px 16px; align-items:start;
+        }
+        @media (max-width:1280px) { .ed-layout { grid-template-columns:250px minmax(0,1fr); } .ed-panel-right { grid-column:1 / -1; } }
+        @media (max-width:900px)  { .ed-layout { grid-template-columns:1fr; } }
+        .ed-panel {
+            background:var(--bg-white); border:1px solid var(--border-color); border-radius:var(--radius-sm);
+            padding:14px 15px; max-height:calc(100vh - 150px); overflow-y:auto;
+        }
+        .ed-panel h3 {
+            font-size:0.8rem; font-weight:700; color:var(--text-secondary); margin:0 0 10px;
+            display:flex; align-items:center; gap:7px; text-transform:none;
+        }
+        .ed-panel h3 i { color:var(--primary-blue); font-size:0.76rem; }
+        .ed-panel h3:not(:first-child) { margin-top:18px; padding-top:14px; border-top:1px dashed var(--border-color); }
+        .ed-field { display:flex; flex-direction:column; gap:3px; margin-bottom:9px; }
+        .ed-field label { font-size:0.72rem; font-weight:600; color:var(--text-muted); }
+        .ed-field input, .ed-field select, .ed-field textarea {
+            padding:7px 9px; border:1px solid var(--border-color); border-radius:7px; font-size:0.8rem;
+            font-family:"Noto Sans SC",sans-serif; color:var(--text-primary); background:var(--bg-white);
+            outline:none; width:100%; transition:border-color 0.15s;
+        }
+        .ed-field textarea { font-family:"JetBrains Mono","Noto Sans SC",monospace; resize:vertical; min-height:60px; }
+        .ed-field input:focus, .ed-field select:focus, .ed-field textarea:focus { border-color:var(--primary-blue); }
+        .ed-field-row { display:flex; gap:8px; }
+        .ed-field-row .ed-field { flex:1; min-width:0; }
+        .ed-check { display:flex; align-items:center; gap:6px; font-size:0.78rem; color:var(--text-secondary); cursor:pointer; margin-bottom:7px; }
+        .ed-check input { accent-color:var(--primary-blue); }
+        .ed-hint { font-size:0.68rem; color:var(--text-muted); line-height:1.5; margin-top:4px; }
+        .ed-round-row { display:flex; gap:6px; align-items:center; margin-bottom:6px; }
+        .ed-round-row .col-no {
+            font-family:"JetBrains Mono",monospace; font-size:0.72rem; color:var(--text-muted);
+            min-width:34px; text-align:right; flex:none;
+        }
+        .ed-round-row input { flex:1; padding:5px 8px; border:1px solid var(--border-color); border-radius:6px; font-size:0.76rem; background:var(--bg-white); color:var(--text-primary); outline:none; }
+        .ed-round-row input:focus { border-color:var(--primary-blue); }
+        .ed-round-del { border:none; background:transparent; color:var(--text-muted); cursor:pointer; font-size:0.72rem; padding:2px 4px; }
+        .ed-round-del:hover { color:var(--accent-red); }
+        /* ---- 中央画布区 ---- */
+        .ed-center { display:flex; flex-direction:column; min-width:0; }
+        .ed-center .de-canvas-wrapper { flex:1; }
+        .de-transform-layer { position:relative; }
+        .de-inner { position:relative; transform-origin:0 0; background:var(--bg-white); }
+        .de-svg { overflow:visible; }
+        .de-grid-bg {
+            background-image:
+                linear-gradient(rgba(128,128,128,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(128,128,128,0.05) 1px, transparent 1px);
+            pointer-events:none;
+        }
+        /* 编辑器卡片补充形态 */
+        .de-card-note { background:var(--primary-pale); border-style:dashed; align-items:center; justify-content:center; }
+        .de-card-note-text {
+            font-size:0.78rem; font-weight:700; color:var(--primary-blue); text-align:center; width:100%;
+            overflow:hidden; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;
+        }
+        .de-card-scheduled { border-style:dashed; }
+        .de-card-live { border-color:rgba(230,67,64,0.65) !important; }
+        .dark-mode .de-grid-bg { opacity:0.7; }
+        .dark-mode .de-inner { background:var(--bg-light); }
+        .dark-mode .de-card-note { background:rgba(77,163,255,0.08); }
+        .dark-mode .de-card-note-text { color:var(--primary-light); }
+        /* ---- 右侧检查器 ---- */
+        .ed-inspector-empty { text-align:center; color:var(--text-muted); font-size:0.78rem; padding:28px 8px; line-height:1.7; }
+        .ed-inspector-empty i { font-size:1.6rem; display:block; margin-bottom:10px; opacity:0.4; }
+        .ed-type-switch { display:flex; gap:4px; margin-bottom:10px; flex-wrap:wrap; }
+        .ed-type-switch button {
+            padding:5px 10px; border:1px solid var(--border-color); border-radius:14px; font-size:0.72rem;
+            background:var(--bg-white); color:var(--text-secondary); cursor:pointer; transition:all 0.15s;
+        }
+        .ed-type-switch button.active { background:var(--primary-blue); color:#fff; border-color:var(--primary-blue); }
+        .ed-winner-switch { display:flex; gap:4px; }
+        .ed-winner-switch button {
+            flex:1; padding:6px 4px; border:1px solid var(--border-color); border-radius:7px; font-size:0.74rem;
+            background:var(--bg-white); color:var(--text-secondary); cursor:pointer; transition:all 0.15s;
+        }
+        .ed-winner-switch button.active-w1 { background:var(--primary-blue); color:#fff; border-color:var(--primary-blue); }
+        .ed-winner-switch button.active-w2 { background:#16a34a; color:#fff; border-color:#16a34a; }
+        .ed-winner-switch button.active-w0 { background:#f0a500; color:#fff; border-color:#f0a500; }
+        .ed-conn-list { list-style:none; font-size:0.76rem; }
+        .ed-conn-list li {
+            display:flex; align-items:center; justify-content:space-between; gap:6px;
+            padding:5px 2px; border-bottom:1px dashed var(--border-color); color:var(--text-secondary);
+        }
+        .ed-conn-list li:last-child { border-bottom:none; }
+        .ed-conn-del { border:none; background:transparent; color:var(--text-muted); cursor:pointer; font-size:0.72rem; }
+        .ed-conn-del:hover { color:var(--accent-red); }
+        .ed-mini-btn {
+            display:inline-flex; align-items:center; gap:5px; padding:6px 10px; border-radius:7px;
+            border:1px solid var(--border-color); background:var(--bg-white); color:var(--text-secondary);
+            cursor:pointer; font-size:0.74rem; transition:all 0.15s; font-family:"Noto Sans SC",sans-serif;
+        }
+        .ed-mini-btn:hover { border-color:var(--primary-blue); color:var(--primary-blue); }
+        .ed-mini-btn.danger { color:var(--accent-red); }
+        .ed-mini-btn.danger:hover { background:rgba(255,77,79,0.08); border-color:var(--accent-red); }
+        .ed-btn-row { display:flex; gap:6px; flex-wrap:wrap; margin-top:4px; }
+    </style>
+</head>
+<body>
+<noscript><div style="padding:10px;text-align:center;background:#b91c1c;color:#fff;">本编辑器需要启用 JavaScript。This editor requires JavaScript.</div></noscript>
+
+    <!-- ===== 顶栏 ===== -->
+    <header class="ed-topbar">
+        <div class="ed-brand">
+            <a href="admin.html" class="ed-logo" title="返回数据仪表盘"><i class="fa-solid fa-table-tennis-paddle-ball"></i></a>
+            <div class="ed-titles">
+                <h1>对阵表编辑器</h1>
+                <p>可视化编辑 · 模板生成 · 导出 draws.json</p>
+            </div>
+            <div class="ed-draw-picker">
+                <select id="drawSelect" title="选择要编辑的对阵表"></select>
+                <button class="ed-icon-btn" id="btnNewDraw" title="新建空白对阵表"><i class="fa-solid fa-plus"></i></button>
+                <button class="ed-icon-btn" id="btnDuplicateDraw" title="复制当前对阵表"><i class="fa-regular fa-copy"></i></button>
+                <button class="ed-icon-btn" id="btnDeleteDraw" title="删除当前对阵表"><i class="fa-solid fa-trash"></i></button>
+                <button class="ed-icon-btn" id="btnTemplate" title="从模板生成"><i class="fa-solid fa-wand-magic-sparkles"></i></button>
+            </div>
+        </div>
+        <div class="ed-topbar-right">
+            <button class="ed-icon-btn" id="btnUndo" title="撤销 (Ctrl+Z)" disabled><i class="fa-solid fa-rotate-left"></i></button>
+            <button class="ed-icon-btn" id="btnRedo" title="重做 (Ctrl+Y)" disabled><i class="fa-solid fa-rotate-right"></i></button>
+            <button class="ed-icon-btn" id="btnValidate" title="校验数据"><i class="fa-solid fa-clipboard-check"></i></button>
+            <span class="de-separator">|</span>
+            <button class="de-btn" id="btnImport"><i class="fa-solid fa-file-import"></i> 导入</button>
+            <button class="de-btn" id="btnJson"><i class="fa-solid fa-code"></i> JSON</button>
+            <button class="de-btn de-btn-primary" id="btnDownload"><i class="fa-solid fa-download"></i> 下载 draws.json</button>
+            <button class="ed-icon-btn" id="btnCopyAll" title="复制全部 draws.json 到剪贴板"><i class="fa-regular fa-clipboard"></i></button>
+            <button class="ed-icon-btn" id="themeToggle" title="切换主题"><i class="fa-solid fa-moon"></i></button>
+        </div>
+    </header>
+
+    <!-- ===== 三栏主体 ===== -->
+    <main class="ed-layout">
+
+        <!-- 左：抽签表设置 -->
+        <aside class="ed-panel ed-panel-left" id="drawSettings">
+            <h3><i class="fa-solid fa-circle-info"></i> 基本信息</h3>
+            <div class="ed-field"><label>ID</label><input type="text" id="fDrawId" placeholder="d1"></div>
+            <div class="ed-field"><label>标题</label><input type="text" id="fTitle" placeholder="2026乒乓球单打淘汰赛"></div>
+            <div class="ed-field"><label>副标题（可选）</label><input type="text" id="fSubtitle" placeholder="例如：12 名选手 · 单败淘汰"></div>
+            <div class="ed-field"><label>关联赛事（competitionId）</label><select id="fCompetition"><option value="">（不关联）</option></select></div>
+
+            <h3><i class="fa-solid fa-table-cells-large"></i> 布局与网格</h3>
+            <div class="ed-field"><label>布局模式</label>
+                <select id="fLayout">
+                    <option value="grid">手动网格（卡片 col/row）</option>
+                    <option value="auto">自动堆叠（按轮次/序号）</option>
+                </select>
+            </div>
+            <div class="ed-field-row">
+                <div class="ed-field"><label>卡宽 cellWidth</label><input type="number" id="fCellW" min="90" max="500" step="5"></div>
+                <div class="ed-field"><label>卡高 cellHeight</label><input type="number" id="fCellH" min="40" max="200" step="2"></div>
+            </div>
+            <div class="ed-field-row">
+                <div class="ed-field"><label>留白 gap</label><input type="number" id="fGap" min="0" max="40"></div>
+                <div class="ed-field"><label>水平边距 padX</label><input type="number" id="fPadX" min="0" max="300" step="10"></div>
+                <div class="ed-field"><label>垂直边距 padY</label><input type="number" id="fPadY" min="0" max="300" step="10"></div>
+            </div>
+            <div class="ed-btn-row">
+                <button class="ed-mini-btn" id="btnAutoArrange"><i class="fa-solid fa-table-cells-large"></i> 规整排布</button>
+            </div>
+            <p class="ed-hint">规整排布会依据每张卡的「轮次 col」与「列内序号 row」重排成标准淘汰赛树形。</p>
+
+            <h3><i class="fa-solid fa-tags"></i> 轮次标签（按列）</h3>
+            <div id="roundLabelsBox"></div>
+            <button class="ed-mini-btn" id="btnAddRoundLabel"><i class="fa-solid fa-plus"></i> 添加列标签</button>
+
+            <h3><i class="fa-solid fa-palette"></i> 外观</h3>
+            <div class="ed-field"><label>主题色（留空用默认）</label><input type="color" id="fAccent" style="height:34px;padding:3px;cursor:pointer;"></div>
+            <label class="ed-check"><input type="checkbox" id="fShowSeeds"> 显示种子号角标</label>
+            <label class="ed-check"><input type="checkbox" id="fShowLegend"> 显示图例</label>
+            <div class="ed-btn-row" style="margin-top:8px;">
+                <button class="ed-mini-btn" id="btnResetTheme"><i class="fa-solid fa-rotate-left"></i> 恢复默认外观</button>
+            </div>
+        </aside>
+
+        <!-- 中：工具栏 + 画布 + 状态栏 -->
+        <section class="ed-center">
+            <div class="de-toolbar">
+                <div class="de-toolbar-left">
+                    <button class="de-btn de-btn-active" id="modeSelect"><i class="fa-solid fa-arrow-pointer"></i> 选择</button>
+                    <button class="de-btn" id="modeConnect"><i class="fa-solid fa-arrows-left-right-to-line"></i> 连线</button>
+                    <span class="de-mode-indicator" id="modeIndicator">选择模式</span>
+                </div>
+                <div class="de-toolbar-center">
+                    <button class="de-btn" id="btnAddMatch"><i class="fa-solid fa-plus"></i> 比赛卡</button>
+                    <button class="de-btn" id="btnAddBye"><i class="fa-solid fa-forward"></i> 轮空卡</button>
+                    <button class="de-btn" id="btnAddChampion"><i class="fa-solid fa-crown"></i> 冠军卡</button>
+                    <button class="de-btn" id="btnAddNote"><i class="fa-solid fa-comment"></i> 备注卡</button>
+                    <button class="de-btn de-btn-danger" id="btnDeleteCard" disabled><i class="fa-solid fa-trash"></i> 删除选中</button>
+                </div>
+                <div class="de-toolbar-right">
+                    <button class="de-btn" id="btnPropagate" title="依据已完赛卡片的胜者与连线，自动填充下一轮选手"><i class="fa-solid fa-wand-sparkles"></i> 填充胜者</button>
+                    <span class="de-separator">|</span>
+                    <button class="ed-icon-btn" id="btnZoomOut" title="缩小"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
+                    <span class="de-zoom-val" id="zoomVal">100%</span>
+                    <button class="ed-icon-btn" id="btnZoomIn" title="放大"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+                    <button class="ed-icon-btn" id="btnZoomFit" title="适应画布"><i class="fa-solid fa-expand"></i></button>
+                </div>
+            </div>
+            <div class="de-area">
+                <div class="de-canvas-wrapper" id="canvasWrapper">
+                    <div class="de-transform-layer" id="canvasLayer"></div>
+                </div>
+            </div>
+            <div class="de-statusbar">
+                <span id="statCardCount">0 卡片</span>
+                <span id="statConnCount">0 连线</span>
+                <span id="statProgress"></span>
+                <span id="statDirty" class="de-dirty-indicator" style="display:none;"><i class="fa-solid fa-circle-dot"></i> 有未导出的修改</span>
+                <span id="statMsg" style="margin-left:auto;"></span>
+            </div>
+        </section>
+
+        <!-- 右：卡片检查器 -->
+        <aside class="ed-panel ed-panel-right" id="inspector">
+            <div class="ed-inspector-empty" id="inspectorEmpty">
+                <i class="fa-solid fa-arrow-left-long"></i>
+                在画布上点击一张卡片开始编辑。<br>
+                拖拽移动 · 连线模式连接晋级关系<br>
+                Ctrl+Z 撤销 · Delete 删除选中
+            </div>
+            <div id="inspectorBody" style="display:none;">
+                <h3 style="margin-top:0;border-top:none;padding-top:0;"><i class="fa-solid fa-pen"></i> 卡片 <span class="de-zoom-val" id="insCardId"></span></h3>
+                <div class="ed-type-switch" id="typeSwitch">
+                    <button data-type="match">比赛</button>
+                    <button data-type="bye">轮空</button>
+                    <button data-type="champion">冠军</button>
+                    <button data-type="note">备注</button>
+                </div>
+
+                <div id="fieldsMatch">
+                    <div class="ed-field"><label>选手 1</label><input type="text" id="fP1" list="playerList" placeholder="姓名 / 队伍"></div>
+                    <div class="ed-field-row">
+                        <div class="ed-field"><label>种子号</label><input type="number" id="fP1Seed" min="1" placeholder="如 1"></div>
+                        <div class="ed-field"><label>附注（弃赛等）</label><input type="text" id="fP1Note" placeholder="可选"></div>
+                    </div>
+                    <div class="ed-field"><label>选手 2</label><input type="text" id="fP2" list="playerList" placeholder="姓名 / 队伍"></div>
+                    <div class="ed-field-row">
+                        <div class="ed-field"><label>种子号</label><input type="number" id="fP2Seed" min="1"></div>
+                        <div class="ed-field"><label>附注</label><input type="text" id="fP2Note"></div>
+                    </div>
+                    <div class="ed-field"><label>总比分（如 3-1）</label><input type="text" id="fScore" placeholder="3-1"></div>
+                    <div class="ed-field"><label>逐局比分（每局一行，如 11-9）</label><textarea id="fGames" rows="3" placeholder="11-9&#10;8-11&#10;11-7"></textarea></div>
+                    <div class="ed-field"><label>胜者</label>
+                        <div class="ed-winner-switch" id="winnerSwitch">
+                            <button data-w="1">选手 1 胜</button>
+                            <button data-w="0">平</button>
+                            <button data-w="2">选手 2 胜</button>
+                        </div>
+                    </div>
+                    <div class="ed-field"><label>状态</label>
+                        <select id="fStatus">
+                            <option value="">自动（依据比分判断）</option>
+                            <option value="scheduled">待赛</option>
+                            <option value="live">进行中</option>
+                            <option value="final">已完赛</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="fieldsChampion" style="display:none;">
+                    <div class="ed-field"><label>冠军选手</label><input type="text" id="fChampPlayer" list="playerList"></div>
+                    <div class="ed-field"><label>标签文字</label><input type="text" id="fChampLabel" placeholder="冠军"></div>
+                </div>
+
+                <div id="fieldsNote" style="display:none;">
+                    <div class="ed-field"><label>备注文字</label><input type="text" id="fNoteText" placeholder="A组（单循环）"></div>
+                </div>
+
+                <div class="ed-field-row">
+                    <div class="ed-field"><label>列 col（轮次）</label><input type="number" id="fCol" min="0"></div>
+                    <div class="ed-field"><label>行 row</label><input type="number" id="fRow" min="0"></div>
+                </div>
+                <div id="fieldsMeta">
+                    <div class="ed-field"><label>时间（可选）</label><input type="text" id="fTime" placeholder="09-04 14:00"></div>
+                    <div class="ed-field"><label>场地（可选）</label><input type="text" id="fVenue" placeholder="1号球台"></div>
+                    <div class="ed-field"><label>备注（可选）</label><input type="text" id="fCardNote" placeholder="弃赛 / 因雨顺延"></div>
+                </div>
+
+                <h3><i class="fa-solid fa-arrows-left-right-to-line"></i> 连线关系</h3>
+                <ul class="ed-conn-list" id="connList"></ul>
+                <div class="ed-btn-row">
+                    <button class="ed-mini-btn" id="btnDupCard"><i class="fa-regular fa-copy"></i> 复制卡片</button>
+                </div>
+
+                <datalist id="playerList"></datalist>
+            </div>
+        </aside>
+    </main>
+
+    <!-- ===== 模板弹窗 ===== -->
+    <div class="de-modal-overlay" id="templateModal" style="display:none;">
+        <div class="de-modal">
+            <div class="de-modal-title"><i class="fa-solid fa-wand-magic-sparkles"></i> 从模板生成对阵表</div>
+            <div class="de-modal-body">
+                <div class="de-form-row">
+                    <label class="de-form-label">模板类型</label>
+                    <select id="tplType" class="de-form-input">
+                        <option value="single">单败淘汰赛（含种子排位 / 轮空 / 季军赛）</option>
+                        <option value="groups">小组循环 + 淘汰赛</option>
+                    </select>
+                </div>
+                <div class="de-form-row">
+                    <label class="de-form-label">标题</label>
+                    <input type="text" id="tplTitle" class="de-form-input" placeholder="2026乒乓球单打淘汰赛">
+                </div>
+                <div class="de-form-row">
+                    <label class="de-form-label">关联赛事</label>
+                    <select id="tplCompetition" class="de-form-input"><option value="">（不关联）</option></select>
+                </div>
+                <div class="de-form-row" id="tplEntriesRow">
+                    <label class="de-form-label">参赛名单（每行一位，按种子顺序排列；人数自动补齐到 2 的幂，多余位轮空）</label>
+                    <textarea id="tplEntries" class="de-form-input" rows="6" placeholder="祁子傲&#10;陈瑜萱&#10;任峻贤&#10;..."></textarea>
+                </div>
+                <div class="de-form-row de-form-check" id="tplThirdRow">
+                    <label class="de-check-label"><input type="checkbox" id="tplThird"> 附加季军赛（半决赛负者互赛）</label>
+                </div>
+                <div class="de-form-row" id="tplGroupsRow" style="display:none;">
+                    <label class="de-form-label">分组（每组一行：「组名: 选手1、选手2、选手3」）</label>
+                    <textarea id="tplGroups" class="de-form-input" rows="5" placeholder="A组: 张三、李四、王五&#10;B组: 赵六、钱七&#10;C组: ...&#10;D组: ..."></textarea>
+                </div>
+                <div class="de-form-row de-form-check" id="tplKoRow" style="display:none;">
+                    <label class="de-check-label"><input type="checkbox" id="tplKo" checked> 生成淘汰赛阶段（组首位晋级）</label>
+                </div>
+            </div>
+            <div class="de-modal-footer">
+                <button class="de-btn" id="tplCancel">取消</button>
+                <button class="de-btn de-btn-primary" id="tplGenerate"><i class="fa-solid fa-wand-magic-sparkles"></i> 生成</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== JSON 抽屉 ===== -->
+    <div class="de-modal-overlay" id="jsonModal" style="display:none;">
+        <div class="de-modal" style="max-width:760px;">
+            <div class="de-modal-title"><i class="fa-solid fa-code"></i> 当前对阵表 JSON（保存时自动清理默认值）</div>
+            <div class="de-modal-body">
+                <textarea id="jsonText" class="de-form-input" rows="18" style="font-family:'JetBrains Mono',monospace;font-size:0.74rem;white-space:pre;"></textarea>
+                <p class="ed-hint">「应用修改」会以这里的内容替换当前对阵表（可粘贴单个对象或整个 draws.json 数组，粘贴数组会整体替换所有对阵表）。</p>
+            </div>
+            <div class="de-modal-footer">
+                <button class="de-btn" id="jsonCopy"><i class="fa-regular fa-clipboard"></i> 复制</button>
+                <button class="de-btn de-btn-primary" id="jsonApply"><i class="fa-solid fa-check"></i> 应用修改</button>
+                <button class="de-btn" id="jsonClose">关闭</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 导入弹窗 ===== -->
+    <div class="de-modal-overlay" id="importModal" style="display:none;">
+        <div class="de-modal">
+            <div class="de-modal-title"><i class="fa-solid fa-file-import"></i> 导入 JSON</div>
+            <div class="de-modal-body">
+                <div class="de-form-row">
+                    <label class="de-form-label">粘贴 draws.json（数组 = 整体替换；单个对象 = 追加为一张新表）</label>
+                    <textarea id="importText" class="de-form-input" rows="10" style="font-family:'JetBrains Mono',monospace;font-size:0.74rem;"></textarea>
+                </div>
+                <div class="de-form-row">
+                    <label class="de-check-label"><input type="checkbox" id="importFile"> 或从本地文件导入（覆盖粘贴内容）</label>
+                    <input type="file" id="importFileInput" accept=".json,application/json" style="display:none;">
+                </div>
+                <div class="de-form-row">
+                    <label class="de-check-label"><input type="checkbox" id="importUpgrade" checked> 自动把 v2 旧格式升级为 v3</label>
+                </div>
+            </div>
+            <div class="de-modal-footer">
+                <button class="de-btn" id="importCancel">取消</button>
+                <button class="de-btn de-btn-primary" id="importApply"><i class="fa-solid fa-check"></i> 导入</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/draws-core.js"></script>
+    <script src="js/draws-editor.js"></script>
+</body>
+</html>
