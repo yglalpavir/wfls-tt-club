@@ -13,7 +13,8 @@ wfls-tt-club/
 ├── ranking.html                # Ranking Beta 排名系统（自动计算 + 赛季继承 + 积分明细）
 ├── data_viz.html               # 数据可视化（积分趋势 + 排名河流图 + 球员对比）
 ├── personal_stats.html         # 个人数据页面（积分趋势 + 荣誉成就）
-├── detail.html                 # 新闻/赛事/Q&A 详情页（支持图片、视频、文件附件）
+├── detail.html                 # 新闻/赛事/Q&A 详情页（支持图片、视频、文件附件 + 对阵表查看）
+├── draws-editor.html           # 对阵表可视化编辑器（admin.html 入口；模板生成/拖拽编辑/导出 draws.json）
 ├── qa.html                     # 常见问题（Q&A）页面
 ├── changelog.html              # 更新日志页面
 ├── contact.html                # 联系我们页面（社团QQ群二维码）
@@ -34,7 +35,9 @@ wfls-tt-club/
 │   ├── data-viz.js             # 数据可视化（Chart.js）
 │   ├── personal-stats.js       # 个人数据页面
 │   ├── player-page.js          # 球员个人主页（player.html）
-│   ├── draws-viewer.js         # 对阵表（Draws）渲染器
+│   ├── draws-core.js           # 对阵表共享核心库（v3 数据模型/布局/校验/模板/序列化）
+│   ├── draws-viewer.js         # 对阵表观众端渲染器（搜索高亮/详情弹窗/状态徽标）
+│   ├── draws-editor.js         # 对阵表可视化编辑器逻辑
 │   ├── admin.js                # 后台数据概览仪表盘
 │   ├── main.js                 # 入口初始化
 │   ├── wtt_common.js           # WTT 通用数据加载 + 积分计算
@@ -49,7 +52,7 @@ wfls-tt-club/
 │   ├── competitions/           # 赛事信息（条目文件夹 {id}/ + 生成的 index/search.json）
 │   ├── qa/                     # 常见问题（条目文件夹 {id}/ + 生成的 index/search.json）
 │   ├── changelog.json          # 更新日志数据
-│   ├── draws.json              # 对阵表数据
+│   ├── draws.json              # 对阵表数据（v3：卡片+连线+结构化选手，见下文「对阵表系统」）
 │   ├── event-coefficient.json  # 赛事系数配置
 │   ├── seasons.json            # 赛季定义（含继承规则）
 │   ├── decay-config.json       # 时间衰减配置（半衰期 & 保值类型）
@@ -124,6 +127,13 @@ git push -u origin main
 - 赛事详情页（支持正文、图片、视频、文件附件）
 - 支持 `\n` 换行和 `**加粗**` 格式
 - 分页显示（每页10条，2列布局）
+- 赛事详情页内嵌**对阵表查看器**（`draws.json` 中 `competitionId` 关联的布表），支持缩放/平移/全屏、选手搜索与晋级路径高亮、比赛状态徽标（待赛/进行中）与逐局比分弹窗
+
+### 对阵表编辑器（draws-editor.html）
+
+- 入口在 `admin.html` 顶栏「对阵表编辑器」，纯前端工作流：加载 `data/draws.json` → 可视化编辑 → 下载/复制 JSON → 替换仓库文件并提交
+- 功能：卡片增删/拖拽（网格吸附）、连线模式、模板生成（单败淘汰含种子排位/轮空/季军赛；小组循环+淘汰）、胜者自动传播、规整排布、撤销/重做、数据校验、JSON 导入导出、localStorage 自动保存（未导出内容下次打开自动恢复）
+- 修改数据模型 / 几何规则请改共享核心库 `js/draws-core.js`，观众端与编辑端共用
 
 ### 排名系统（Ranking Beta）
 
@@ -420,6 +430,31 @@ python tools/sync_content.py --check    # 仅校验（含预计新增快照数�
 > **注意**：积分调整记录不需要 `胜者` 和 `负者` 字段。
 
 > **关于同日重复记录**：数据中存在 `(日期, 类型, 胜者, 负者)` 完全相同的条目（截至 2026-09 共 21 组）。业务口径为**同一天确实进行了多场对局**（如三局两胜的多局较量），每场独立计分，属正常录入，请勿去重。WTT 数据导入脚本（tools/import_*.py）对该元组去重仅用于防止同一事件重复导入，与校内 score-log 语义不同。
+
+---
+
+### `draws.json` - 对阵表（v3）
+
+顶层数组，每张布表一个对象：
+
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| `id` | string | 布表 ID（`d1`、`d2`…） |
+| `version` | number | 固定为 `3`（查看器兼容渲染 v2 旧数据） |
+| `competitionId` | string | 关联赛事文件夹（`ci_validate.py` 校验引用有效） |
+| `title` / `subtitle` | string | 标题 / 可选副标题 |
+| `layout` | string | `grid`（默认，按 col/row）或 `auto`（按轮次自动堆叠） |
+| `grid` | object | `cols/rows/cellWidth/cellHeight/gap/padX/padY`（gap/pad 有默认值可省略） |
+| `roundLabels` | object | 按列的轮次标签，如 `{"0":"A组循环赛","4":"半决赛"}` |
+| `theme` | object | 可选外观：`accent` 主题色 / `showSeeds` / `showLegend` |
+| `cards` | array | 卡片（见下） |
+| `connections` | array | 晋级连线 `{from, to, fromSide?, toSide?, kind?}`，方向默认 `right→left` |
+
+卡片类型（`type`）：`match`（默认，可省略）/ `bye`（轮空）/ `champion`（冠军）/ `note`（备注）。
+
+`match` 卡字段：`player1`/`player2`（纯姓名字符串，或 `{name, seed?, note?, desc?}` 结构化对象；`desc` 用于「A组第1」类占位）、`score`（总比分 `"3-1"`）、`games`（逐局比分数组 `["11-9","8-11"]`）、`winner`（`0` 平局 / `1` / `2`）、`status`（`scheduled`/`live`/`final`，缺省按比分自动推断）、`time`/`venue`/`note` 可选元信息、`col`/`row` 网格坐标。
+
+编辑方式：直接改 JSON，或用 `draws-editor.html` 可视化编辑后导出。改完运行 `python tools/ci_validate.py` 校验。v2 旧数据可用 `python tools/migrate_draws_v3.py` 升级。
 
 ---
 

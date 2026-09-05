@@ -270,6 +270,22 @@ function refreshPlayerList() {
     $('playerList').innerHTML = edPlayers.map(n => '<option value="' + dcEsc(n) + '"></option>').join('');
 }
 
+// 导入/应用后兜底：布表 id 冲突会破坏 competitionId 关联查找，重复者自动改号
+function edEnsureUniqueIds() {
+    const seen = new Set(), renamed = [];
+    edDraws.forEach(d => {
+        if (!d.id || seen.has(d.id)) {
+            const old = d.id || '（空）';
+            let i = 1;
+            while (seen.has('d' + i)) i++;
+            d.id = 'd' + i;
+            renamed.push(old + '→' + d.id);
+        }
+        seen.add(d.id);
+    });
+    return renamed;
+}
+
 // ===== 画布渲染 =====
 
 function svgEl(tag, attrs) {
@@ -1022,6 +1038,8 @@ function bindModals() {
             pushUndo();
             if (Array.isArray(parsed)) {
                 edDraws = parsed.map(dcNormalizeDraw).filter(Boolean);
+                const renamed = edEnsureUniqueIds();
+                if (renamed.length) edToast('重复布表 ID 已自动改号：' + renamed.join('、'));
                 edCurrent = 0;
                 edToast('已替换全部 ' + edDraws.length + ' 张对阵表');
             } else {
@@ -1029,6 +1047,8 @@ function bindModals() {
                 if (!nd) throw new Error('无效对象');
                 if (edCurrent < 0) { edDraws.push(nd); edCurrent = edDraws.length - 1; }
                 else edDraws[edCurrent] = nd;
+                const renamed = edEnsureUniqueIds();
+                if (renamed.length) edToast('与现有布表 ID 冲突，已自动改号：' + renamed.join('、'));
                 edToast('已应用当前对阵表');
             }
             edSelected = null;
@@ -1059,6 +1079,8 @@ function bindModals() {
             pushUndo();
             if (Array.isArray(parsed)) {
                 edDraws = parsed.map(dcNormalizeDraw).filter(Boolean);
+                const renamed = edEnsureUniqueIds();
+                if (renamed.length) edToast('重复布表 ID 已自动改号：' + renamed.join('、'));
                 edCurrent = 0;
                 edToast('已导入 ' + edDraws.length + ' 张对阵表');
             } else {

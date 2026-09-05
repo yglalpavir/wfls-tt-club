@@ -204,7 +204,7 @@ function renderEfficiencyScatter(topN) {
                     }
                 },
                 scales: {
-                    x: { title: { display: true, text: i18n[currentLang].data_viz_axis_matches, font: { size: isMobile ? 11 : 12 } }, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 10 : 11 } } },
+                    x: { type: 'logarithmic', title: { display: true, text: i18n[currentLang].data_viz_axis_matches, font: { size: isMobile ? 11 : 12 } }, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 10 : 11 }, callback: value => Number.isInteger(value) ? value : '' } },
                     y: { title: { display: true, text: i18n[currentLang].data_viz_pts_norm, font: { size: isMobile ? 11 : 12 } }, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 10 : 11 } } }
                 }
             }

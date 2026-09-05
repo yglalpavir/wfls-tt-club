@@ -11,15 +11,14 @@
       "3": "决赛/铜牌赛"
     },
     "grid": {
-      "cols": 5,
-      "rows": 40,
+      "cols": 4,
+      "rows": 11,
       "cellWidth": 400,
       "cellHeight": 80
     },
     "cards": [
       {
         "id": "m1",
-        "type": "match",
         "col": 0,
         "row": 0,
         "player1": "高一9班 梅哲宇、龚雨煊、王天森",
@@ -32,7 +31,6 @@
       },
       {
         "id": "m2",
-        "type": "match",
         "col": 0,
         "row": 2,
         "player1": "高二4班、高二10班 魏罗瑞、陈瑜萱、王成悦",
@@ -42,7 +40,6 @@
       },
       {
         "id": "m3",
-        "type": "match",
         "col": 0,
         "row": 4,
         "player1": {
@@ -55,9 +52,9 @@
       },
       {
         "id": "m4",
-        "type": "match",
-        "col": 1,
-        "row": 8,
+        "col": 0,
+        "row": 7,
+        "round": 1,
         "player1": {
           "name": "高二6班、高二5班 祁子傲、李南熠、丁瑞、张书行",
           "note": "替补"
@@ -68,9 +65,9 @@
       },
       {
         "id": "m5",
-        "type": "match",
-        "col": 1,
-        "row": 9,
+        "col": 0,
+        "row": 8,
+        "round": 1,
         "player1": "高二4班、高二9班、高一5班 付大卫、孙钰鑫、叶泓鑫",
         "player2": "高一6班 谷子易、彭一和、姜子润",
         "score": "8-5",
@@ -78,9 +75,9 @@
       },
       {
         "id": "m6",
-        "type": "match",
-        "col": 1,
-        "row": 10,
+        "col": 0,
+        "row": 9,
+        "round": 1,
         "player1": {
           "name": "高二6班、高二5班 祁子傲、李南熠、丁瑞、张书行",
           "note": "替补"
@@ -91,7 +88,6 @@
       },
       {
         "id": "m7",
-        "type": "match",
         "col": 2,
         "row": 1,
         "player1": "高一9班 梅哲宇、龚雨煊、王天森",
@@ -101,7 +97,6 @@
       },
       {
         "id": "m8",
-        "type": "match",
         "col": 2,
         "row": 7,
         "player1": {
@@ -117,7 +112,6 @@
       },
       {
         "id": "m9",
-        "type": "match",
         "col": 3,
         "row": 5,
         "player1": "高二4班、高二10班 魏罗瑞、陈瑜萱、王成悦",
@@ -130,7 +124,6 @@
       },
       {
         "id": "m10",
-        "type": "match",
         "col": 3,
         "row": 10,
         "player1": "高一9班 梅哲宇、龚雨煊、王天森",
@@ -734,15 +727,14 @@
       "5": "决赛"
     },
     "grid": {
-      "cols": 6,
-      "rows": 14,
+      "cols": 3,
+      "rows": 16,
       "cellWidth": 180,
       "cellHeight": 64
     },
     "cards": [
       {
         "id": "m1",
-        "type": "match",
         "col": 0,
         "row": 0,
         "player1": {
@@ -757,9 +749,8 @@
       },
       {
         "id": "m2",
-        "type": "match",
         "col": 0,
-        "row": 2,
+        "row": 1,
         "player1": {
           "name": "任峻贤",
           "seed": 1
@@ -772,9 +763,8 @@
       },
       {
         "id": "m3",
-        "type": "match",
         "col": 0,
-        "row": 4,
+        "row": 2,
         "player1": {
           "name": "任安喆",
           "seed": 5
@@ -787,9 +777,9 @@
       },
       {
         "id": "m4",
-        "type": "match",
-        "col": 1,
-        "row": 0,
+        "col": 0,
+        "row": 6,
+        "round": 1,
         "player1": {
           "name": "龚雨煊",
           "seed": 3
@@ -802,9 +792,9 @@
       },
       {
         "id": "m5",
-        "type": "match",
-        "col": 1,
-        "row": 2,
+        "col": 0,
+        "row": 4,
+        "round": 1,
         "player1": {
           "name": "龚雨煊",
           "seed": 3
@@ -817,9 +807,9 @@
       },
       {
         "id": "m6",
-        "type": "match",
-        "col": 1,
-        "row": 4,
+        "col": 0,
+        "row": 5,
+        "round": 1,
         "player1": {
           "name": "陶锦源",
           "seed": 7
@@ -832,9 +822,9 @@
       },
       {
         "id": "m7",
-        "type": "match",
-        "col": 2,
+        "col": 0,
         "row": 8,
+        "round": 2,
         "player1": {
           "name": "付大卫",
           "seed": 2
@@ -847,9 +837,9 @@
       },
       {
         "id": "m8",
-        "type": "match",
-        "col": 2,
-        "row": 10,
+        "col": 0,
+        "row": 9,
+        "round": 2,
         "player1": {
           "name": "付大卫",
           "seed": 2
@@ -862,9 +852,9 @@
       },
       {
         "id": "m9",
-        "type": "match",
-        "col": 2,
-        "row": 12,
+        "col": 0,
+        "row": 10,
+        "round": 2,
         "player1": {
           "name": "姜子润",
           "seed": 6
@@ -877,9 +867,9 @@
       },
       {
         "id": "m10",
-        "type": "match",
-        "col": 3,
-        "row": 8,
+        "col": 0,
+        "row": 13,
+        "round": 3,
         "player1": {
           "name": "谷子易",
           "seed": 4
@@ -892,9 +882,9 @@
       },
       {
         "id": "m11",
-        "type": "match",
-        "col": 3,
-        "row": 10,
+        "col": 0,
+        "row": 14,
+        "round": 3,
         "player1": {
           "name": "谷子易",
           "seed": 4
@@ -907,9 +897,9 @@
       },
       {
         "id": "m12",
-        "type": "match",
-        "col": 3,
-        "row": 12,
+        "col": 0,
+        "row": 15,
+        "round": 3,
         "player1": {
           "name": "刘冠羽",
           "seed": 8
@@ -922,27 +912,27 @@
       },
       {
         "id": "m13",
-        "type": "match",
-        "col": 4,
-        "row": 2,
+        "col": 1,
+        "row": 3,
+        "round": 4,
         "player1": "A组第1",
         "player2": "B组第1",
         "winner": 0
       },
       {
         "id": "m14",
-        "type": "match",
-        "col": 4,
-        "row": 10,
+        "col": 1,
+        "row": 12,
+        "round": 4,
         "player1": "C组第1",
         "player2": "D组第1",
         "winner": 0
       },
       {
         "id": "m15",
-        "type": "match",
-        "col": 5,
-        "row": 6,
+        "col": 2,
+        "row": 7,
+        "round": 5,
         "player1": "半决赛1胜者",
         "player2": "半决赛2胜者",
         "winner": 0

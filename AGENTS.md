@@ -35,6 +35,7 @@ No npm/lint/typecheck commands exist — there are no build tools or test suites
 - `data/event-coefficient.json` → event type coefficients; reserved keys `赛制系数` and `默认赛制` are objects, not numbers — filter by `typeof v === 'number'` when iterating
 - `data/seasons.json` → season definitions; **CI fails if current date exceeds last endDate** (must create new season)
 - `data/decay-config.json` → half-life and no-decay types
+- `data/draws.json` → tournament brackets (v3), rendered by `js/draws-viewer.js`, edited via `draws-editor.html`
 
 ## Architecture gotchas
 
@@ -46,6 +47,8 @@ No npm/lint/typecheck commands exist — there are no build tools or test suites
 - **Content loading**: pages use `fetch()` to load JSON at runtime; `robots.txt` must NOT block `/data/` or SEO gets empty shells
 - **Season expiration**: if `seasons.json` last endDate passes, new matches silently extend the old season (no crash, but wrong data scope). Check with `ci_validate.py`
 - **Same-day duplicate match records are legit**: identical `(日期, 类型, 胜者, 负者)` rows in `score-log.json` are real multiple games (README has the convention) — do NOT dedupe, and `ci_validate.py` intentionally has no duplicate detector
+- **Draws shared core**: bracket data model / layout geometry / validation / templates / serialization all live in `js/draws-core.js`, shared by the spectator viewer (`js/draws-viewer.js`, used by `detail.html`) and the visual editor (`js/draws-editor.js` + `draws-editor.html`, entry in `admin.html`). Change geometry or the v3 schema THERE, not in either consumer. `detail.html` must load `draws-core.js` before `draws-viewer.js`
+- **Draws v2 backward compat**: the viewer normalizes v2 data in memory (`dcNormalizeDraw`) — don't assume `draws.json` cards always have `type` or structured player objects; `winner` values 0/1/2 and card id uniqueness are enforced by `ci_validate.py`
 
 ## i18n
 
@@ -63,12 +66,16 @@ No npm/lint/typecheck commands exist — there are no build tools or test suites
 | `data/event-coefficient.json` | Event type coefficients |
 | `data/decay-config.json` | Time decay config |
 | `data/umpire-quiz.json` | Umpire-training easter-egg quiz (questions → videos in `assets/videos/umpire/`) |
-| `data/draws.json` | Tournament bracket data |
+| `data/draws.json` | Tournament bracket data (v3: cards + connections + structured players) |
 | `js/score-engine.js` | Club ranking calculation core |
 | `js/wtt_common.js` | WTT data loading + ranking |
 | `js/common.js` | i18n, global state, shared UI |
+| `js/draws-core.js` | Draws shared core (v3 model, layout, validation, templates, serialization) |
+| `js/draws-viewer.js` | Bracket spectator renderer (detail.html) |
+| `js/draws-editor.js` | Bracket visual editor logic (draws-editor.html) |
 | `tools/sync_content.py` | Content index generator (run after any content edit) |
 | `tools/ci_validate.py` | Data integrity validator |
+| `tools/migrate_draws_v3.py` | One-shot draws.json v2 → v3 migration |
 
 ## Common mistakes to avoid
 

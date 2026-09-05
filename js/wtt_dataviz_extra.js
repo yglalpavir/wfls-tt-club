@@ -1058,7 +1058,7 @@ function wttRenderEfficiencyScatter(topN) {
                     }
                 },
                 scales: {
-                    x: { title: { display: true, text: i18n[currentLang].wtt_axis_matches || i18n[currentLang].wtt_axis_points, font: { size: isMobile ? 11 : 12 } }, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 10 : 11 } } },
+                    x: { type: 'logarithmic', title: { display: true, text: i18n[currentLang].wtt_axis_matches || i18n[currentLang].wtt_axis_points, font: { size: isMobile ? 11 : 12 } }, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 10 : 11 }, callback: value => Number.isInteger(value) ? value : '' } },
                     y: { title: { display: true, text: i18n[currentLang].wtt_pts_norm || i18n[currentLang].wtt_axis_points, font: { size: isMobile ? 11 : 12 } }, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 10 : 11 } } }
                 }
             }
