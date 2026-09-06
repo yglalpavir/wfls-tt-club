@@ -30,72 +30,78 @@
   .brandbar .bt { font-family: var(--en); font-size: 17px; font-weight: 700; letter-spacing: 3px; color: var(--ink); }
 
   /* 巨字双行标题 */
-  .t1, .t2 { line-height: 1.1; letter-spacing: 9px; white-space: nowrap; }
-  .t1 { margin-top: 20px; font-size: 152px; font-weight: 900; color: #000; font-family: var(--serif); }
-  .t2 { font-size: 152px; font-weight: 500; color: #000; margin-top: 4px; font-family: var(--serif); letter-spacing: 14px; }
+  .t1, .t2 { line-height: 1.08; letter-spacing: 2px; white-space: nowrap; }
+  .t1 { margin-top: 18px; font-size: 178px; font-weight: 900; color: #000; font-family: var(--serif); letter-spacing: 2px; }
+  .t2 { font-size: 178px; font-weight: 500; color: #000; margin-top: 2px; font-family: var(--serif); letter-spacing: 2px; }
 
-  .names { margin-top: 18px; font-size: 21px; font-weight: 700; letter-spacing: 3px; color: var(--ink2); }
+  .names { margin-top: 18px; font-size: 22px; font-weight: 700; letter-spacing: 3px; color: var(--ink2); }
   .sloganline { margin-top: 10px; display: flex; align-items: center; gap: 16px; }
   .sloganline .s { font-size: 19px; font-weight: 700; letter-spacing: 6px; color: var(--ink); }
   .sloganline .rule { width: 150px; height: 2px; background: #9aa1ad; }
 
   /* 模块通用 */
-  .h3 { font-size: 24px; font-weight: 900; letter-spacing: 2px; color: var(--ink); margin-bottom: 10px; font-family: var(--serif); }
+  .h3 { font-size: 27px; font-weight: 900; letter-spacing: 2px; color: var(--ink); margin-bottom: 10px; font-family: var(--serif); }
   .h3 i { display: inline-block; width: 11px; height: 11px; border-radius: 50%; background: var(--blue); margin-right: 13px; vertical-align: 2px; }
 
   /* 大字信息栏：时间 / 地点 / 赛台 */
-  .inforow { display: flex; align-items: stretch; gap: 26px; margin-top: 24px; }
+  .inforow { display: flex; align-items: stretch; gap: 26px; margin-top: 26px; }
   .inforow .info { flex: 1; }
-  .inforow .k { font-family: var(--en); font-size: 12px; font-weight: 700; letter-spacing: 3px; color: var(--muted); margin-bottom: 7px; }
-  .inforow .v { font-family: var(--serif); font-size: 26px; font-weight: 900; color: var(--ink); letter-spacing: 1px; line-height: 1.3; }
+  .inforow .k { font-family: var(--en); font-size: 12.5px; font-weight: 700; letter-spacing: 3px; color: var(--muted); margin-bottom: 7px; }
+  .inforow .v { font-family: var(--serif); font-size: 29px; font-weight: 900; color: var(--ink); letter-spacing: 1px; line-height: 1.3; }
   .inforow .v b { font-family: var(--en); font-weight: 800; letter-spacing: 0; }
   .inforow .sep { flex: 0 0 1px; background: var(--line); }
 
-  .you-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px 40px; margin-top: 22px; max-width: 1112px; }
+  .you-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px 40px; margin-top: 24px; max-width: 1112px; }
   .you-grid .item { display: flex; gap: 15px; }
   .you-grid .num {
     flex: 0 0 52px; font-family: var(--en); font-size: 42px; font-weight: 800; line-height: 0.95;
     color: transparent; -webkit-text-stroke: 2px rgba(0, 0, 0, 0.45);
   }
-  .you-grid h4 { font-size: 20px; font-weight: 900; letter-spacing: 1px; color: var(--ink); margin-bottom: 5px; }
-  .you-grid p { font-size: 15px; line-height: 1.7; color: var(--ink2); }
+  .you-grid h4 { font-size: 22px; font-weight: 900; letter-spacing: 1px; color: var(--ink); margin-bottom: 6px; }
+  .you-grid p { font-size: 16.5px; line-height: 1.7; color: var(--ink2); }
   .you-grid p b { color: var(--dark); font-weight: 700; }
 
   /* 分组 */
   .groups { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 16px; }
-  .gcard { border: 1.5px solid var(--line); border-radius: 10px; padding: 18px 16px; background: #fff; }
-  .gcard .g { font-family: var(--en); font-size: 30px; font-weight: 800; color: var(--blue); line-height: 1; }
+  .gcard { border: 1.5px solid var(--line); border-radius: 10px; padding: 16px 16px; background: #fff; }
+  .gcard .g { font-family: var(--en); font-size: 34px; font-weight: 800; color: var(--blue); line-height: 1; }
   .gcard .g small { font-family: var(--cn); font-size: 15px; font-weight: 700; color: var(--muted); letter-spacing: 2px; margin-left: 6px; }
   .gcard ul { list-style: none; margin-top: 10px; }
-  .gcard li { font-size: 15.5px; font-weight: 500; color: var(--ink); line-height: 1.85; }
+  .gcard li { font-size: 17px; font-weight: 500; color: var(--ink); line-height: 1.9; }
   .gcard li b { font-family: var(--en); font-weight: 700; color: var(--blue); font-size: 13.5px; }
-  .gcard li .sc { margin-left: 9px; font-family: var(--en); font-weight: 700; font-size: 14px; color: var(--blue); letter-spacing: 0.5px; }
+  .gcard li .sc { margin-left: 9px; font-family: var(--en); font-weight: 700; font-size: 15px; color: var(--blue); letter-spacing: 0.5px; }
 
   /* 赛程表 */
-  .sched { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 20px; }
-  .sched .tbl h5 { font-size: 18px; font-weight: 900; letter-spacing: 1px; color: var(--ink); margin-bottom: 8px; }
+  .sched { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 18px; }
+  .sched .tbl { border: 1.5px solid var(--line); border-radius: 10px; padding: 14px 14px 12px; background: #fff; }
+  .sched .tbl.tbl1 { border-top: 7px solid #000; }
+  .sched .tbl.tbl2 { border-top: 7px solid #9aa1ad; }
+  .sched .tbl.tbl1 th { background: #000; color: #fff; border-color: #000; }
+  .sched .tbl.tbl2 th { background: #fff; color: var(--ink); border-bottom: 2px solid #000; }
+  .sched table tr:nth-child(2n+3) td { background: #f4f7fa; }
+  .sched .tbl h5 { font-size: 20px; font-weight: 900; letter-spacing: 1px; color: var(--ink); margin-bottom: 8px; }
   .sched .tbl h5 span { font-family: var(--en); font-weight: 800; color: var(--blue); margin-right: 8px; }
   table { width: 100%; border-collapse: collapse; }
-  th, td { border: 1px solid var(--line); padding: 5px 8px; font-size: 13px; line-height: 1.45; text-align: left; color: var(--ink2); }
+  th, td { border: 1px solid var(--line); padding: 4px 8px; font-size: 14.5px; line-height: 1.45; text-align: left; color: var(--ink2); }
   th { background: #f2f5f9; font-weight: 700; color: var(--ink); letter-spacing: 1px; white-space: nowrap; }
   td.t { font-family: var(--en); font-weight: 600; white-space: nowrap; color: var(--ink); }
   td b { color: var(--ink); font-weight: 700; }
 
   /* 温馨提示 */
-  .notice { margin-top: 18px; max-width: 1112px; }
-  .notice p { font-size: 14.5px; line-height: 1.8; color: var(--ink2); }
+  .notice { margin-top: 10px; max-width: 1112px; }
+  .notice p { font-size: 16px; line-height: 1.8; color: var(--ink2); }
   .notice p b { color: var(--dark); font-weight: 700; }
 
   /* 咨询 */
-  .qa { margin-top: 20px; max-width: 1112px; display: flex; align-items: center; gap: 40px; }
+  .qa { margin-top: 10px; max-width: 1112px; display: flex; align-items: center; gap: 40px; }
   .qa-main { flex: 1; }
-  .qa .q { font-size: 20px; font-weight: 900; letter-spacing: 1px; color: var(--ink); margin-bottom: 9px; }
+  .qa .q { font-size: 22px; font-weight: 900; letter-spacing: 1px; color: var(--ink); margin-bottom: 9px; }
   .qa .q::before { content: "Q"; font-family: var(--en); font-weight: 800; color: var(--blue); margin-right: 12px; }
-  .qa .a { font-size: 15px; line-height: 1.85; color: var(--ink2); }
+  .qa .a { font-size: 16.5px; line-height: 1.85; color: var(--ink2); }
   .qa .a b { color: var(--ink); font-weight: 700; }
 
   /* 底部：二维码 + 群号 */
-  .join { display: flex; align-items: center; gap: 32px; margin-top: 34px; }
+  .join { display: flex; align-items: center; gap: 32px; margin-top: 6px; }
   .qr-box {
     flex: 0 0 178px; height: 178px; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 10px;
     display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 22px rgba(0, 0, 0, 0.14);
@@ -106,10 +112,10 @@
     flex-direction: column; align-items: center; justify-content: center; text-align: center;
     font-size: 11px; color: var(--muted); line-height: 1.5;
   }
-  .join-info .t { font-size: 25px; font-weight: 900; letter-spacing: 2px; color: var(--deeper); }
-  .join-info .s { font-size: 14px; color: var(--ink2); margin-top: 8px; }
-  .join-info .gnum { margin-top: 8px; font-size: 15px; color: var(--ink); }
-  .join-info .gnum b { font-family: var(--en); font-weight: 800; font-size: 30px; color: var(--blue); letter-spacing: 1px; margin-left: 10px; }
+  .join-info .t { font-size: 27px; font-weight: 900; letter-spacing: 2px; color: var(--deeper); }
+  .join-info .s { font-size: 15.5px; color: var(--ink2); margin-top: 8px; }
+  .join-info .gnum { margin-top: 8px; font-size: 16.5px; color: var(--ink); }
+  .join-info .gnum b { font-family: var(--en); font-weight: 800; font-size: 33px; color: var(--blue); letter-spacing: 1px; margin-left: 10px; }
   .sign { margin-left: auto; text-align: right; font-size: 12.5px; line-height: 1.9; color: var(--muted); align-self: flex-end; }
   .sign b { color: var(--ink2); font-weight: 700; }
   .copy { margin-top: 12px; text-align: center; font-family: var(--en); font-size: 10.5px; letter-spacing: 3px; color: #a6b4c6; }
@@ -137,13 +143,12 @@
   <div class="t2">暨社团表演赛</div>
 
   <div class="names">武汉外国语学校乒乓球社团 · WFLS TABLE TENNIS CLUB</div>
-  <div class="sloganline"><span class="s">挥拍逐梦，旋转青春</span><span class="rule"></span></div>
 
   <!-- 赛制要点 -->
   <div class="inforow">
     <div class="info"><div class="k">DATE · 比赛时间</div><div class="v"><b>9.10</b> 周四 16:30–18:30</div></div>
     <div class="sep"></div>
-    <div class="info"><div class="k">VENUE · 比赛地点</div><div class="v">教学楼一楼 · 食堂三楼球台</div></div>
+    <div class="info"><div class="k">VENUE · 比赛地点</div><div class="v">体育馆三楼乒乓球台</div></div>
     <div class="sep"></div>
     <div class="info"><div class="k">TABLES · 比赛赛台</div><div class="v">1号台 · 2号台</div></div>
   </div>
@@ -164,7 +169,7 @@
   </div>
 
   <!-- 分组 -->
-  <div class="h3" style="margin-top:20px;"><i></i>分组 · 括号内为种子号，其后为当前实时积分</div>
+  <div class="h3" style="margin-top:20px;"><i></i>分组</div>
   <div class="groups">
     <div class="gcard"><div class="g">A<small>组</small></div><ul>
       <li>任峻贤 <b><b>(1)</b></b><span class="sc">2082</span></li><li>任安喆 <b><b>(5)</b></b><span class="sc">2013</span></li><li>彭瀚明 <b><b>(9)</b></b><span class="sc">1699</span></li>
@@ -181,30 +186,30 @@
   </div>
 
   <!-- 赛程表 -->
-  <div class="h3" style="margin-top:24px;"><i></i>小组赛赛程 · 1号台 / 2号台</div>
+  <div class="h3" style="margin-top:16px;"><i></i>小组赛赛程</div>
   <div class="sched">
-    <div class="tbl">
+    <div class="tbl tbl1">
       <h5><span>TABLE 1</span>1号台</h5>
       <table>
         <tr><th>时间</th><th>小组</th><th>轮次</th><th>选手</th><th>裁判</th></tr>
-        <tr><td class="t">16:30</td><td>A</td><td>1</td><td><b>任峻贤</b>-彭瀚明</td><td>姜子润</td></tr>
-        <tr><td class="t">16:50</td><td>C</td><td>1</td><td><b>付大卫</b>-姜子润</td><td>任峻贤</td></tr>
-        <tr><td class="t">17:10</td><td>A</td><td>2</td><td><b>任安喆</b>-彭瀚明</td><td>姜子润</td></tr>
-        <tr><td class="t">17:30</td><td>D</td><td>2</td><td><b>刘冠羽</b>-王思博</td><td>叶孟恒</td></tr>
-        <tr><td class="t">17:50</td><td>B</td><td>2</td><td><b>龚雨煊</b>-陶锦源</td><td>梅哲宇</td></tr>
-        <tr><td class="t">18:10</td><td>D</td><td>3</td><td><b>谷子易</b>-刘冠羽</td><td>彭瀚明</td></tr>
+        <tr><td class="t">16:30</td><td>A</td><td>1</td><td><b>任峻贤</b> vs 彭瀚明</td><td>姜子润</td></tr>
+        <tr><td class="t">16:50</td><td>C</td><td>1</td><td><b>付大卫</b> vs 姜子润</td><td>任峻贤</td></tr>
+        <tr><td class="t">17:10</td><td>A</td><td>2</td><td><b>任安喆</b> vs 彭瀚明</td><td>姜子润</td></tr>
+        <tr><td class="t">17:30</td><td>D</td><td>2</td><td><b>刘冠羽</b> vs 王思博</td><td>叶孟恒</td></tr>
+        <tr><td class="t">17:50</td><td>B</td><td>2</td><td><b>龚雨煊</b> vs 陶锦源</td><td>梅哲宇</td></tr>
+        <tr><td class="t">18:10</td><td>D</td><td>3</td><td><b>谷子易</b> vs 刘冠羽</td><td>彭瀚明</td></tr>
       </table>
     </div>
-    <div class="tbl">
+    <div class="tbl tbl2">
       <h5><span>TABLE 2</span>2号台</h5>
       <table>
         <tr><th>时间</th><th>小组</th><th>轮次</th><th>选手</th><th>裁判</th></tr>
-        <tr><td class="t">16:30</td><td>B</td><td>1</td><td><b>龚雨煊</b>-叶孟恒</td><td>任安喆</td></tr>
-        <tr><td class="t">16:50</td><td>D</td><td>1</td><td><b>谷子易</b>-王思博</td><td>叶孟恒</td></tr>
-        <tr><td class="t">17:10</td><td>B</td><td>2</td><td><b>陶锦源</b>-叶孟恒</td><td>任峻贤</td></tr>
-        <tr><td class="t">17:30</td><td>C</td><td>2</td><td><b>付大卫</b>-汪宁轩</td><td>彭瀚明</td></tr>
-        <tr><td class="t">17:50</td><td>A</td><td>3</td><td><b>任峻贤</b>-任安喆</td><td>刘冠羽</td></tr>
-        <tr><td class="t">18:10</td><td>C</td><td>3</td><td><b>姜子润</b>-汪宁轩</td><td>叶孟恒</td></tr>
+        <tr><td class="t">16:30</td><td>B</td><td>1</td><td><b>龚雨煊</b> vs 叶孟恒</td><td>任安喆</td></tr>
+        <tr><td class="t">16:50</td><td>D</td><td>1</td><td><b>谷子易</b> vs 王思博</td><td>叶孟恒</td></tr>
+        <tr><td class="t">17:10</td><td>B</td><td>2</td><td><b>陶锦源</b> vs 叶孟恒</td><td>任峻贤</td></tr>
+        <tr><td class="t">17:30</td><td>C</td><td>2</td><td><b>付大卫</b> vs 汪宁轩</td><td>彭瀚明</td></tr>
+        <tr><td class="t">17:50</td><td>A</td><td>3</td><td><b>任峻贤</b> vs 任安喆</td><td>刘冠羽</td></tr>
+        <tr><td class="t">18:10</td><td>C</td><td>3</td><td><b>姜子润</b> vs 汪宁轩</td><td>叶孟恒</td></tr>
       </table>
     </div>
   </div>
@@ -219,7 +224,7 @@
   <div class="qa">
     <div class="qa-main">
       <div class="q">赛事咨询</div>
-      <div class="a">社长 <b>龚雨煊</b>（高二·9班）｜ 副社长 <b>谷子易</b>（高二·6班）、<b>任安喆</b>（高二·7班）、<b>梅哲宇</b>（高二·9班）<br>线下负责人 · 活动部部长 <b>姜子润</b>（高二·6班）　——　排表：任安喆 · 姜子润</div>
+      <div class="a">社长 <b>龚雨煊</b>（高二9班）｜ 副社长 <b>谷子易</b>（高二6班）、<b>任安喆</b>（高二7班）、<b>梅哲宇</b>（高二9班）<br>线下负责人 · 活动部部长 <b>姜子润</b>（高二6班）　——　排表：任安喆 · 姜子润</div>
     </div>
   </div>
 
@@ -234,14 +239,8 @@
       <div class="s">赛程、对阵表与积分排名实时更新 · 欢迎扫码进群观赛与交流</div>
       <div class="gnum">yglalpavir.github.io/wfls-tt-club　群号<b>760667083</b></div>
     </div>
-    <div class="sign">
-      武汉外国语学校乒乓球社团<br>
-      WFLS TABLE TENNIS CLUB<br>
-      © 2026
-    </div>
   </div>
 
-  <div class="rail-vert">TOP 12</div>
 
 </div>
 <script>

@@ -154,6 +154,7 @@ const i18n = {
         rank_page_title: "Ranking Beta | WFLS Table Tennis Club", rank_hero_desc: "社团积分排名系统 · 支持多时间节点对比 · 点击姓名查看积分明细", rank_tag: "Data Table", rank_title: "积分数据表", rank_sort_hint: "当前排序：", rank_sidebar_title: "时间节点", rank_qa_btn: "积分计算规则",
         rank_col_rank: "#", rank_col_name: "姓名", rank_col_points: "当前积分", rank_col_points_change: "积分变化", rank_col_change: "排名变化", rank_col_matches: "总场次", rank_col_winrate: "胜率",
         rank_export_btn: "导出图片", rank_export_gen: "生成于", rank_export_fail: "图片导出失败，请重试",
+        export_gen: "生成于", img_export_fail: "图片导出失败，请重试", detail_export_btn: "导出图片", pp_export_btn: "导出图片", pp_card_title: "个人战绩卡", pp_card_cur_rank: "当前排名", pp_export_fail: "战绩卡导出失败，请重试",
         rank_export_menu_all: "导出全部", rank_export_menu_top12: "导出前12名", rank_export_top_sub: "前{n}名", rank_export_topn_prefix: "导出前", rank_export_topn_suffix: "名", rank_export_menu_go: "导出", rank_export_menu_invalid: "请输入有效的名次（正整数）",
         score_detail_title: "积分明细", score_col_date: "日期", score_col_type: "类型", score_col_opponent: "对手", score_col_result: "结果", score_col_score_before: "赛前积分", score_col_change: "积分变动", score_col_score_after: "赛后积分", score_result_win: "胜", score_result_loss: "负",
         tag_match: "赛事", tag_training: "训练", tag_notice: "公告", tag_event: "活动", tag_daily: "日常", tag_upcoming: "即将开始", tag_result: "比赛结果", tag_live: "进行中",
@@ -251,6 +252,7 @@ const i18n = {
         rank_page_title: "Ranking Beta | WFLS Table Tennis Club", rank_hero_desc: "Club ranking system · Auto-calculated · Season inheritance", rank_tag: "Data Table", rank_title: "Points Table", rank_sort_hint: "Current sorting: ", rank_sidebar_title: "Time Periods", rank_qa_btn: "Scoring Rules",
         rank_col_rank: "#", rank_col_name: "Name", rank_col_points: "Points", rank_col_points_change: "Score Δ", rank_col_change: "Rank Δ", rank_col_matches: "Matches", rank_col_winrate: "Win Rate",
         rank_export_btn: "Save Image", rank_export_gen: "Generated", rank_export_fail: "Image export failed. Please try again.",
+        export_gen: "Generated", img_export_fail: "Image export failed. Please try again.", detail_export_btn: "Save Image", pp_export_btn: "Save Image", pp_card_title: "Player Stats Card", pp_card_cur_rank: "Rank", pp_export_fail: "Card export failed. Please try again.",
         rank_export_menu_all: "Export All", rank_export_menu_top12: "Export Top 12", rank_export_top_sub: "Top {n}", rank_export_topn_prefix: "Top", rank_export_topn_suffix: "", rank_export_menu_go: "Export", rank_export_menu_invalid: "Please enter a valid rank (positive integer)",
         score_detail_title: "Score Details", score_col_date: "Date", score_col_type: "Type", score_col_opponent: "Opponent", score_col_result: "Result", score_col_score_before: "Before", score_col_change: "Change", score_col_score_after: "After", score_result_win: "Win", score_result_loss: "Loss",
         tag_match: "Match", tag_training: "Training", tag_notice: "Notice", tag_event: "Event", tag_daily: "Daily", tag_upcoming: "Upcoming", tag_result: "Result", tag_live: "Live",
@@ -596,6 +598,17 @@ function attachRankExportMenu(btn, doExport) {
         });
     });
     input.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); menu.querySelector('.export-menu-go').click(); } });
+}
+
+/* ---- DOM 节点导出为图片（html2canvas；detail 页 n/c/q 内容卡使用） ---- */
+async function exportDomNodeAsImage(node, opts) {
+    opts = opts || {};
+    if (typeof html2canvas === 'undefined') throw new Error('html2canvas 未加载');
+    if (document.fonts && document.fonts.ready) { try { await document.fonts.ready; } catch (e) { /* 字体就绪探测失败时直接渲染 */ } }
+    const scale = Math.min(3, Math.max(2, window.devicePixelRatio || 2));
+    const canvas = await html2canvas(node, { scale: scale, backgroundColor: null, useCORS: true, logging: false });
+    const blob = _rankImgDataUrlToBlob(canvas.toDataURL('image/png'));
+    _downloadRankImageBlob(blob, buildExportFileName(opts.filenameBase || 'wfls-export'));
 }
 
 if (langToggle) { const sl = safeStorage.get('wfls-lang.v1') || safeStorage.get('wfls-lang') || 'zh'; setLanguage(sl); langToggle.addEventListener('click', () => setLanguage(currentLang === 'zh' ? 'en' : 'zh')); }
@@ -994,6 +1007,8 @@ function renderDetailMessage(title, bodyHtml) {
     const cEl = document.getElementById('detailContent');
     const mEl = document.getElementById('detailMedia');
     const hEl = document.getElementById('detailVersion');
+    const aEl = document.getElementById('detailActions');
+    if (aEl) { aEl.style.display = 'none'; aEl.innerHTML = ''; }
     if (tEl) tEl.textContent = title;
     if (dEl) dEl.textContent = '';
     if (cEl) { cEl.innerHTML = bodyHtml; cEl.style.display = ''; }
@@ -1071,6 +1086,7 @@ async function renderDetailItem(type, item) {
     renderDetailVersion(type, item);
     try { await ensureContentList(type); } catch (e) { /* 列表不可用时只省略上下篇，不影响正文 */ }
     renderDetailNav(type, item);
+    renderDetailExportButton();
 }
 
 // 详情页底部导航：返回列表 + 上一篇/下一篇（按 index.json 日期倒序位置，上一篇=更新的一条；
@@ -1110,6 +1126,116 @@ function renderDetailNav(type, item) {
     wrap.appendChild(mkNeighbor(list[idx - 1], (L.detail_prev || '') + '：', L.detail_no_prev || '', true));
     wrap.appendChild(mkNeighbor(list[idx + 1], (L.detail_next || '') + '：', L.detail_no_next || '', false));
     host.appendChild(wrap);
+}
+
+/* ---- 详情内容导出为图片（html2canvas 截取已渲染的 markdown/KaTeX 成品） ---- */
+function renderDetailExportButton() {
+    const host = document.getElementById('detailActions');
+    if (!host) return;
+    host.innerHTML = '';
+    if (!detailState || !detailState.item) { host.style.display = 'none'; return; }
+    host.style.display = '';
+    const L = i18n[currentLang] || {};
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'detail-export-btn';
+    btn.innerHTML = '<i class="fa-solid fa-image" aria-hidden="true"></i><span data-i18n="detail_export_btn">' + escapeHtml(L.detail_export_btn || '导出图片') + '</span>';
+    btn.addEventListener('click', () => exportDetailAsImage(btn));
+    host.appendChild(btn);
+}
+
+// 离屏导出节点：头部类型标签 + 标题/日期 + 正文（含 KaTeX/表格）+ 配图 + 页脚链接
+// 不含赛程签表（交互式）与视频/文件附件
+function buildDetailExportNode(type, item) {
+    const contentEl = document.getElementById('detailContent');
+    const mediaEl = document.getElementById('detailMedia');
+    if (!contentEl || !contentEl.innerHTML.trim()) return null;
+    const L = i18n[currentLang] || {};
+    const wrap = document.createElement('div');
+    wrap.setAttribute('aria-hidden', 'true');
+    wrap.style.cssText = 'position:fixed;left:-10000px;top:0;z-index:-1;width:820px;box-sizing:border-box;padding:36px 42px 28px;background:var(--bg-white);border:1px solid var(--border-color);border-radius:18px;color:var(--text-primary);font-family:"Poppins","Noto Sans SC","Microsoft YaHei",sans-serif;';
+
+    const head = document.createElement('div');
+    head.style.cssText = 'display:flex;justify-content:space-between;align-items:center;';
+    const tagKey = type === 'news' ? 'news_hero_tag' : (type === 'competition' ? 'comp_hero_tag' : 'qa_hero_tag');
+    const tagText = L[tagKey] || type;
+    head.innerHTML = '<span style="display:inline-block;padding:4px 14px;border-radius:14px;background:var(--primary-pale);color:var(--primary-blue);font-size:12px;font-weight:700;">' + escapeHtml(tagText) + '</span>'
+        + '<span style="font-size:13px;font-weight:600;color:var(--text-muted);">WFLS TT Club</span>';
+    wrap.appendChild(head);
+
+    const title = document.createElement('h1');
+    title.style.cssText = 'margin:18px 0 6px;font-size:26px;line-height:1.35;color:var(--text-primary);';
+    title.textContent = String(item.title || '');
+    wrap.appendChild(title);
+
+    const dateEl = document.createElement('div');
+    dateEl.style.cssText = 'font-size:13px;color:var(--text-muted);margin-bottom:18px;';
+    dateEl.textContent = String(item.date || '');
+    wrap.appendChild(dateEl);
+
+    const body = document.createElement('div');
+    body.className = 'detail-body';
+    // 中和 .detail-body 的卡片外观（离屏节点自带卡片底），只保留排版样式
+    body.style.cssText = 'background:transparent;border:none;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;padding:0;margin:0;max-width:none;';
+    body.innerHTML = contentEl.innerHTML;
+    body.querySelectorAll('.katex-display').forEach(el => { el.style.overflowX = 'visible'; el.style.overflowY = 'visible'; });
+    wrap.appendChild(body);
+
+    if (mediaEl) {
+        mediaEl.querySelectorAll('.media-item img').forEach(img => {
+            const box = document.createElement('div');
+            box.style.cssText = 'margin-top:16px;';
+            const c = document.createElement('img');
+            c.src = img.currentSrc || img.src;
+            c.alt = img.alt || '';
+            c.loading = 'eager';
+            c.style.cssText = 'display:block;width:100%;border-radius:10px;';
+            box.appendChild(c);
+            wrap.appendChild(box);
+        });
+    }
+
+    const url = location.origin + location.pathname.replace(/[^/]*$/, '') + 'detail.html?type=' + type + '&id=' + encodeURIComponent(String(item.id == null ? '' : item.id));
+    const d = new Date(); const pd = n => String(n).padStart(2, '0');
+    const stamp = `${d.getFullYear()}-${pd(d.getMonth() + 1)}-${pd(d.getDate())} ${pd(d.getHours())}:${pd(d.getMinutes())}`;
+    const foot = document.createElement('div');
+    foot.style.cssText = 'display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:26px;padding-top:14px;border-top:1px solid var(--border-color);font-size:11px;color:var(--text-muted);';
+    foot.innerHTML = '<span style="color:var(--primary-blue);font-weight:600;word-break:break-all;">' + escapeHtml(url) + '</span>'
+        + '<span style="white-space:nowrap;">' + escapeHtml(L.export_gen || '') + ' ' + stamp + '</span>';
+    wrap.appendChild(foot);
+    return wrap;
+}
+
+function _waitExportImages(root) {
+    const imgs = Array.from(root.querySelectorAll('img'));
+    return Promise.all(imgs.map(img => {
+        if (img.complete) return Promise.resolve();
+        return new Promise(resolve => {
+            img.onload = () => resolve();
+            img.onerror = () => resolve();
+            setTimeout(resolve, 8000);
+        });
+    }));
+}
+
+async function exportDetailAsImage(btn) {
+    const L = i18n[currentLang] || {};
+    if (!detailState || !detailState.item) return;
+    const node = buildDetailExportNode(detailState.type, detailState.item);
+    if (!node) return;
+    const origHtml = btn ? btn.innerHTML : '';
+    if (btn) { btn.disabled = true; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i><span>' + escapeHtml(L.detail_export_btn || '') + '</span>'; }
+    try {
+        document.body.appendChild(node);
+        await _waitExportImages(node);
+        await exportDomNodeAsImage(node, { filenameBase: 'wfls-detail-' + detailState.type + '-' + String(detailState.item.id == null ? 'export' : detailState.item.id) });
+    } catch (err) {
+        console.error('详情导出失败', err);
+        alert(L.img_export_fail || '图片导出失败，请重试');
+    } finally {
+        if (node.parentNode) node.parentNode.removeChild(node);
+        if (btn) { btn.disabled = false; btn.innerHTML = origHtml; }
+    }
 }
 
 function renderDetailMedia(item) {
@@ -1713,6 +1839,9 @@ function initVizMobileNav() {
     });
     nav.appendChild(inner);
     const target = document.querySelector('.viz-main-section');
-    if (target) target.before(nav);
-    else document.body.insertBefore(nav, document.body.firstChild);
+    if (target) { target.before(nav); return; }
+    // 首页全屏 hero：pill 导航放到 hero 之后，避免在 ≤1200px 时把 hero 顶下去导致首屏占不满
+    const hero = document.querySelector('.hero');
+    if (hero && hero.parentNode === document.body) { hero.after(nav); return; }
+    document.body.insertBefore(nav, document.body.firstChild);
 }

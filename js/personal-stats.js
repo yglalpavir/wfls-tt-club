@@ -389,15 +389,9 @@ function getApproxScoreAtDate(playerName, targetDate, sortedLog, startScores, be
     return Math.round(sc[playerName] || DEFAULT_INITIAL_SCORE);
 }
 
-function renderPersonalStats(playerName, containerId) {
-    const container = document.getElementById(containerId || 'personalResult');
-    if (!container) return;
-
-    if (!scoreLogData || !scoreLogData.length) {
-        container.innerHTML = `<div class="compare-placeholder"><p>${i18n[currentLang].personal_stats_no_data}</p></div>`;
-        return;
-    }
-
+// 计算个人总览数据（renderPersonalStats 与 player.html 战绩卡导出共用，避免口径漂移）
+function computePersonalStatsData(playerName) {
+    if (!scoreLogData || !scoreLogData.length) return null;
     const sortedLog = [...scoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
     const allMatches = sortedLog.filter(r => isMatchRecord(r) && (r['胜者'] === playerName || r['负者'] === playerName));
     const totalMatches = allMatches.length;
@@ -455,6 +449,37 @@ function renderPersonalStats(playerName, containerId) {
     }
 
     const startScores = initialScoresData ? { ...initialScoresData.initialScores } : {};
+
+    // 当前积分（最后一个非空快照）
+    let currentCd = [];
+    for (let i = rankingTimeline.length - 1; i >= 0; i--) {
+        if (rankingTimeline[i].data && rankingTimeline[i].data.length > 0) {
+            currentCd = rankingTimeline[i].data;
+            break;
+        }
+    }
+    const curMine = currentCd.find(p => p['姓名'] === playerName);
+    const curScoreDisp = curMine && curMine['当前积分'] != null ? (typeof curMine['当前积分'] === 'number' ? curMine['当前积分'].toFixed(1) : curMine['当前积分']) : '-';
+
+    const dailyScoreHistory = computeDailyScoreHistory(playerName, sortedLog, startScores);
+
+    return { sortedLog, allMatches, startScores, currentCd, totalMatches, wins, losses, percentile, maxScore, bestRank, scoreHistory, curScoreDisp, dailyScoreHistory };
+}
+
+function renderPersonalStats(playerName, containerId) {
+    const container = document.getElementById(containerId || 'personalResult');
+    if (!container) return;
+
+    if (!scoreLogData || !scoreLogData.length) {
+        container.innerHTML = `<div class="compare-placeholder"><p>${i18n[currentLang].personal_stats_no_data}</p></div>`;
+        return;
+    }
+
+    const stats = computePersonalStatsData(playerName);
+    const { sortedLog, allMatches, startScores, currentCd, scoreHistory, dailyScoreHistory } = stats;
+    const totalMatches = stats.totalMatches, wins = stats.wins, losses = stats.losses;
+    const maxScore = stats.maxScore, bestRank = stats.bestRank, curScoreDisp = stats.curScoreDisp;
+
     const oppStats = {};
     for (const r of allMatches) {
         const opp = r['胜者'] === playerName ? r['负者'] : r['胜者'];
@@ -468,18 +493,6 @@ function renderPersonalStats(playerName, containerId) {
             oppStats[opp].lastDate = r['日期'];
         }
     }
-
-    // 获取最后一个非空快照的数据，用于获取对手当前积分
-    let currentCd = [];
-    for (let i = rankingTimeline.length - 1; i >= 0; i--) {
-        if (rankingTimeline[i].data && rankingTimeline[i].data.length > 0) {
-            currentCd = rankingTimeline[i].data;
-            break;
-        }
-    }
-
-    const curMine = currentCd.find(p => p['姓名'] === playerName);
-    const curScoreDisp = curMine && curMine['当前积分'] != null ? (typeof curMine['当前积分'] === 'number' ? curMine['当前积分'].toFixed(1) : curMine['当前积分']) : '-';
 
     // 计算对手各项分数（已通过 getApproxScoreAtDate 处理赛季继承）
     for (const opp in oppStats) {
@@ -617,9 +630,6 @@ function renderPersonalStats(playerName, containerId) {
     html += '</div>';
 
     // === 积分变化折线图 ===
-    // 计算每日积分历史
-    const dailyScoreHistory = computeDailyScoreHistory(playerName, sortedLog, startScores);
-
     if (dailyScoreHistory.length > 1 || scoreHistory.length > 1) {
         html += '<div class="personal-chart-section">';
         html += '<div class="personal-chart-header">';
