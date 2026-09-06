@@ -961,6 +961,8 @@ function wttWithDataContext(fn) {
     const origEvent = (typeof eventCoefficients !== 'undefined') ? eventCoefficients : undefined;
     const origSeasons = (typeof seasonsData !== 'undefined') ? seasonsData : undefined;
     const origDefaultScore = DEFAULT_INITIAL_SCORE;
+    const origLoserMult = LOSER_POINT_MULTIPLIER;
+    const origDecayEnabled = SCORE_TIME_DECAY_ENABLED;
 
     // 切换到 WTT 数据
     if (typeof scoreLogData !== 'undefined') scoreLogData = wttScoreLogData;
@@ -974,12 +976,17 @@ function wttWithDataContext(fn) {
         result = fn();
     } finally {
         // 恢复原数据（如果 fn 返回 Promise，这里恢复可能过早；异步版本见下方）
+        if (result && typeof result.then === 'function') {
+            console.warn('[wttWithDataContext] fn 返回了 Promise，数据上下文无法安全恢复——请改用 wttWithDataContextAsync');
+        }
         if (!(result && typeof result.then === 'function')) {
             if (origScoreLog !== undefined) scoreLogData = origScoreLog;
             if (origInitial !== undefined) initialScoresData = origInitial;
             if (origEvent !== undefined) eventCoefficients = origEvent;
             if (origSeasons !== undefined) seasonsData = origSeasons;
             DEFAULT_INITIAL_SCORE = origDefaultScore;
+            LOSER_POINT_MULTIPLIER = origLoserMult;
+            SCORE_TIME_DECAY_ENABLED = origDecayEnabled;
         }
     }
     return result;
@@ -994,6 +1001,8 @@ async function wttWithDataContextAsync(fn) {
     const origEvent = (typeof eventCoefficients !== 'undefined') ? eventCoefficients : undefined;
     const origSeasons = (typeof seasonsData !== 'undefined') ? seasonsData : undefined;
     const origDefaultScore = DEFAULT_INITIAL_SCORE;
+    const origLoserMult = LOSER_POINT_MULTIPLIER;
+    const origDecayEnabled = SCORE_TIME_DECAY_ENABLED;
 
     if (typeof scoreLogData !== 'undefined') scoreLogData = wttScoreLogData;
     // flat1300 模式：使用空的 initialScores，DEFAULT_INITIAL_SCORE 已在 wttLoadSettings 中设置
@@ -1009,6 +1018,8 @@ async function wttWithDataContextAsync(fn) {
         if (origEvent !== undefined) eventCoefficients = origEvent;
         if (origSeasons !== undefined) seasonsData = origSeasons;
         DEFAULT_INITIAL_SCORE = origDefaultScore;
+        LOSER_POINT_MULTIPLIER = origLoserMult;
+        SCORE_TIME_DECAY_ENABLED = origDecayEnabled;
     }
 }
 

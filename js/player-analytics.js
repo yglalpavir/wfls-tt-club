@@ -93,6 +93,8 @@ function paBuildRankSeries(playerName, timeline) {
     if (!Array.isArray(tl)) return series;
     for (const t of tl) {
         if (!t || !t.data || !t.data.length) continue;
+        // 赛季初始积分节点非比赛产生，不进入排名走势
+        if (t.isInitial) continue;
         const sorted = [...t.data].sort((a, b) => (b['当前积分'] || 0) - (a['当前积分'] || 0));
         const idx = sorted.findIndex(p => p['姓名'] === playerName);
         if (idx < 0) continue;

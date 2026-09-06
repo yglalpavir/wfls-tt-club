@@ -536,35 +536,45 @@ function wttRenderRankStream(topN, dataCount) {
     if (!canvas || !wttRankingTimeline.length) return;
     if (wttRankStreamChart) { wttRankStreamChart.destroy(); wttRankStreamChart = null; }
 
+    // 排名变化河流图不展示赛季初始积分节点（该节点非比赛产生，画入会在赛季边界形成假平台）
+    const timelineNoInitial = wttRankingTimeline.filter(t => !t.isInitial);
     // 取最近 dataCount 个数据点
-    dataCount = Math.max(2, Math.min(dataCount || 20, wttRankingTimeline.length));
-    const slicedTimeline = wttRankingTimeline.slice(-dataCount);
+    dataCount = Math.max(2, Math.min(dataCount || 20, timelineNoInitial.length));
+    const slicedTimeline = timelineNoInitial.slice(-dataCount);
 
     const isMobile = window.innerWidth <= 768;
     const labels = slicedTimeline.map(t => getNodeDisplayLabel(t));
 
-    // 使用最后一个切片快照确定 top 球员
-    let lastNonEmptySnapshot = null;
-    for (let i = slicedTimeline.length - 1; i >= 0; i--) {
-        if (slicedTimeline[i].data && slicedTimeline[i].data.length > 0) {
-            lastNonEmptySnapshot = slicedTimeline[i];
-            break;
+    // 每个节点各自的并列名次表（1,2,2,4 式，与排行榜显示口径一致）
+    const nodeRankMaps = slicedTimeline.map(t => {
+        const m = new Map();
+        assignTiedRanks(t.data || []).forEach(p => m.set(p['姓名'], p.rank));
+        return m;
+    });
+
+    // 展示"每个节点当时的前 topN 名"：任一节点进入过前 topN 的球员并入数据集，
+    // 每条曲线只在该节点排名 ≤ topN 时有点，其余节点为 null（spanGaps 断开不连线）
+    const inTop = new Map();
+    slicedTimeline.forEach((t, i) => {
+        for (const [name, r] of nodeRankMaps[i]) {
+            if (r <= topN) {
+                const rec = inTop.get(name) || { lastIdx: -1, last: Infinity };
+                rec.lastIdx = i; rec.last = r;
+                inTop.set(name, rec);
+            }
         }
-    }
-    if (!lastNonEmptySnapshot) return;
+    });
+    topN = Math.max(1, Math.min(topN || 10, 20));
+    const streamPlayers = [...inTop.entries()]
+        .sort((a, b) => a[1].lastIdx - b[1].lastIdx || a[1].last - b[1].last)
+        .map(([name]) => name);
+    if (!streamPlayers.length) return;
 
-    // 获取所有球员（含不活跃的）在最后一个快照的排名来确定 top N
-    const allWttPlayers = wttGetAllPlayers();
-    const lastSnapshotRanks = allWttPlayers.map(name => ({
-        name,
-        rank: wttGetPlayerRankAtSnapshot(name, lastNonEmptySnapshot)
-    })).filter(x => x.rank !== null).sort((a, b) => a.rank - b.rank);
-
-    topN = Math.max(1, Math.min(topN, 20, allWttPlayers.length));
-    const topPlayers = lastSnapshotRanks.slice(0, topN).map(p => p.name);
-    const textColor = getComputedStyle(document.body).getPropertyValue('--text-primary').trim() || '#1a1a2e';
-    const datasets = topPlayers.map((name, idx) => {
-        const data = slicedTimeline.map(t => wttGetPlayerRankAtSnapshot(name, t));
+    const datasets = streamPlayers.map((name, idx) => {
+        const data = slicedTimeline.map((t, i) => {
+            const r = nodeRankMaps[i].get(name);
+            return (r !== undefined && r <= topN) ? r : null;
+        });
         const color = WTT_CHART_COLORS[idx % WTT_CHART_COLORS.length];
         return {
             label: name, data,
@@ -572,7 +582,9 @@ function wttRenderRankStream(topN, dataCount) {
             borderWidth: isMobile ? 1.5 : 2,
             pointRadius: isMobile ? 2 : 3,
             pointHoverRadius: isMobile ? 4 : 6,
-            tension: 0.4, fill: false, spanGaps: true
+            pointBackgroundColor: color,
+            pointHoverBackgroundColor: color,
+            tension: 0.4, fill: false, spanGaps: false
         };
     });
 
@@ -583,11 +595,7 @@ function wttRenderRankStream(topN, dataCount) {
                 responsive: true, maintainAspectRatio: false,
                 interaction: { intersect: false, mode: 'index' },
                 plugins: {
-                    legend: {
-                        position: 'bottom',
-                        display: !isMobile,
-                        labels: { usePointStyle: true, padding: isMobile ? 10 : 16, font: { size: isMobile ? 10 : 11, family: "'Poppins', sans-serif" }, color: textColor, boxWidth: isMobile ? 11 : 12 }
-                    },
+                    legend: { display: false },
                     tooltip: {
                         backgroundColor: 'rgba(26,29,40,0.9)', titleFont: { size: isMobile ? 12 : 13 }, bodyFont: { size: isMobile ? 11 : 12 }, padding: isMobile ? 8 : 12, cornerRadius: 8,
                         itemSort: (a, b) => (a.parsed.y ?? Infinity) - (b.parsed.y ?? Infinity),

@@ -12,8 +12,8 @@
     <meta property="og:title" content="武汉外国语学校乒乓球社团">
     <meta property="og:description" content="WFLS Table Tennis Club - 挥拍逐梦，旋转青春">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://yglalpavir.github.io/wfls-tt-club/Assets/images/og-cover.png">
-    <meta name="twitter:image" content="https://yglalpavir.github.io/wfls-tt-club/Assets/images/og-cover.png">
+    <meta property="og:image" content="https://yglalpavir.github.io/wfls-tt-club/images/og-cover.png">
+    <meta name="twitter:image" content="https://yglalpavir.github.io/wfls-tt-club/images/og-cover.png">
     <meta property="og:url" content="https://yglalpavir.github.io/wfls-tt-club/">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="武汉外国语学校乒乓球社团">
@@ -90,6 +90,12 @@
                 <a href="#home" class="side-nav-link active" data-section="home" data-i18n="side_home">首页</a>
             </li>
             <li class="side-nav-item">
+                <a href="#news" class="side-nav-link" data-section="news" data-i18n="side_news">最新动态</a>
+            </li>
+            <li class="side-nav-item">
+                <a href="#competitions" class="side-nav-link" data-section="competitions" data-i18n="side_competitions">赛事信息</a>
+            </li>
+            <li class="side-nav-item">
                 <a href="#philosophy" class="side-nav-link" data-section="philosophy" data-i18n="side_philosophy">社团理念</a>
             </li>
             <li class="side-nav-item">
@@ -97,12 +103,6 @@
             </li>
             <li class="side-nav-item">
                 <a href="#core-members" class="side-nav-link" data-section="core-members" data-i18n="side_members">社团骨干</a>
-            </li>
-            <li class="side-nav-item">
-                <a href="#news" class="side-nav-link" data-section="news" data-i18n="side_news">最新动态</a>
-            </li>
-            <li class="side-nav-item">
-                <a href="#competitions" class="side-nav-link" data-section="competitions" data-i18n="side_competitions">赛事信息</a>
             </li>
         </ul>
     </nav>
@@ -133,6 +133,39 @@
         <div class="hero-scroll-indicator">
             <span data-i18n="scroll">Scroll</span>
             <div class="scroll-mouse"><span class="scroll-mouse-dot"></span></div>
+        </div>
+    </section>
+
+    <!-- 最新快报：动态 + 赛事（首屏之后立即可见） -->
+    <section class="section home-highlights-section" id="news">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="hl_tag">Highlights</span>
+                <h2 class="section-title" data-i18n="hl_title">最新快报</h2>
+                <p class="section-desc" data-i18n="hl_desc">社团最新动态与赛事信息一览</p>
+            </div>
+            <div class="home-highlights-grid">
+                <div class="home-hl-panel glass-card">
+                    <div class="home-hl-panel-head">
+                        <span class="home-hl-panel-icon home-hl-icon-news"><i class="fa-solid fa-newspaper"></i></span>
+                        <h3 data-i18n="news_title">最新动态</h3>
+                        <a href="news.html" class="home-hl-more"><span data-i18n="news_all">查看全部动态</span><i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="home-hl-list" id="homeNewsList">
+                        <!-- JS动态渲染 -->
+                    </div>
+                </div>
+                <div class="home-hl-panel glass-card" id="competitions">
+                    <div class="home-hl-panel-head">
+                        <span class="home-hl-panel-icon home-hl-icon-comp"><i class="fa-solid fa-trophy"></i></span>
+                        <h3 data-i18n="comp_title">赛事信息</h3>
+                        <a href="competitions.html" class="home-hl-more"><span data-i18n="comp_all">查看全部赛事</span><i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="home-hl-list" id="homeCompList">
+                        <!-- JS动态渲染 -->
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -178,40 +211,6 @@
             </div>
             <div class="core-members-grid" id="coreMembersGrid">
                 <!-- JS动态渲染 -->
-            </div>
-        </div>
-    </section>
-
-    <!-- 最近新闻 -->
-    <section class="section news-preview-section" id="news">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag" data-i18n="news_tag">Latest News</span>
-                <h2 class="section-title" data-i18n="news_title">最新动态</h2>
-                <p class="section-desc" data-i18n="news_desc">关注社团最新活动与公告</p>
-            </div>
-            <div class="news-preview-grid" id="newsPreviewGrid">
-                <!-- JS动态渲染 -->
-            </div>
-            <div class="section-footer-link">
-                <a href="news.html" class="btn btn-secondary" data-i18n="news_all">查看全部动态 <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 赛事信息 -->
-    <section class="section competitions-preview-section" id="competitions">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag" data-i18n="comp_tag">Competitions</span>
-                <h2 class="section-title" data-i18n="comp_title">赛事信息</h2>
-                <p class="section-desc" data-i18n="comp_desc">近期比赛安排与成绩</p>
-            </div>
-            <div class="competitions-preview-grid" id="competitionsPreviewGrid">
-                <!-- JS动态渲染 -->
-            </div>
-            <div class="section-footer-link">
-                <a href="competitions.html" class="btn btn-secondary" data-i18n="comp_all">查看全部赛事 <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
     </section>

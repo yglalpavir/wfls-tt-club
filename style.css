@@ -445,7 +445,7 @@ ul, ol {
    ======================================== */
 .hero {
     position: relative;
-    min-height: 100vh;
+    min-height: 92vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -870,6 +870,36 @@ html:lang(en) .hero-title {
 .tag-upcoming { background: rgba(77,163,255,0.12); color: var(--primary-blue); }
 .tag-result { background: rgba(255,107,107,0.12); color: var(--accent-red); }
 .tag-live { background: rgba(82,196,26,0.12); color: #52c41a; }
+
+/* ===== 首页快报区：最新动态 + 赛事信息（紧随 hero，双栏列表式） ===== */
+.home-highlights-section { background: var(--bg-white); }
+.home-highlights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
+.home-hl-panel { display: flex; flex-direction: column; padding: 24px 24px 16px; }
+.home-hl-panel-head { display: flex; align-items: center; gap: 12px; padding-bottom: 14px; margin-bottom: 4px; border-bottom: 1px solid var(--border-color); }
+.home-hl-panel-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; flex-shrink: 0; }
+.home-hl-icon-news { background: var(--primary-pale); color: var(--primary-blue); }
+.home-hl-icon-comp { background: rgba(240,165,0,0.14); color: var(--accent-gold); }
+.home-hl-panel-head h3 { font-size: 1.12rem; color: var(--text-primary); margin: 0; }
+.home-hl-more { margin-left: auto; font-size: 0.8rem; color: var(--primary-blue); display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
+.home-hl-more i { font-size: 0.72rem; transition: transform var(--transition-fast); }
+.home-hl-more:hover i { transform: translateX(3px); }
+.home-hl-list { display: flex; flex-direction: column; flex: 1; }
+.home-hl-item { display: flex; align-items: flex-start; gap: 14px; padding: 13px 10px; border-radius: var(--radius-sm); border-left: 3px solid transparent; cursor: pointer; transition: background var(--transition-fast), transform var(--transition-fast), border-color var(--transition-fast); }
+.home-hl-item + .home-hl-item { border-top: 1px solid var(--border-color); }
+.home-hl-item:hover { background: var(--primary-pale); transform: translateX(4px); }
+.home-hl-item:focus-visible { outline: 2px solid var(--primary-blue); outline-offset: -2px; }
+/* 即将开始的赛事：红色左边条 + 淡红底，视觉优先级最高 */
+.home-hl-item.is-upcoming { border-left-color: var(--accent-red); background: rgba(255,77,79,0.05); }
+.dark-mode .home-hl-item.is-upcoming { background: rgba(255,107,107,0.07); }
+.home-hl-item.is-upcoming:hover { background: rgba(255,77,79,0.1); }
+.home-hl-date { flex-shrink: 0; width: 54px; text-align: center; padding: 6px 4px; border-radius: var(--radius-sm); background: var(--primary-pale); color: var(--primary-blue); line-height: 1.25; }
+.home-hl-item.is-upcoming .home-hl-date { background: rgba(255,77,79,0.1); color: var(--accent-red); }
+.home-hl-date-md { display: block; font-family: var(--font-en); font-size: 0.88rem; font-weight: 700; }
+.home-hl-date-y { display: block; font-family: var(--font-en); font-size: 0.62rem; opacity: 0.75; letter-spacing: 0.5px; }
+.home-hl-body { flex: 1; min-width: 0; }
+.home-hl-body h4 { font-family: var(--font-cn); font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-bottom: 3px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.home-hl-body p { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.home-hl-tag { flex-shrink: 0; font-size: 0.68rem; padding: 3px 9px; border-radius: 10px; font-weight: 500; margin-top: 5px; }
 
 /* Q&A 卡片 */
 .qa-card { background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 24px; transition: all var(--transition-base); cursor: pointer; }
@@ -2396,6 +2426,8 @@ body.dark .player-search-item.selected { background: rgba(77, 163, 255, 0.15); }
     .realtime-node.active { border-bottom-color: var(--accent-green) !important; }
     /* 排名控件竖排 */
     .ranking-controls { flex-direction: column; align-items: flex-start; gap: 8px; }
+    /* 首页快报区单栏堆叠 */
+    .home-highlights-grid { grid-template-columns: 1fr; }
 }
 
 /* 手机横屏 / 小平板 */
@@ -2645,6 +2677,18 @@ body.dark .player-search-item.selected { background: rgba(77, 163, 255, 0.15); }
     .hero-last-updated { right: 10px; bottom: 76px; font-size: 0.55rem; padding: 5px 10px; }
     .hero-ball { width: 32px; height: 32px; top: 14%; right: 6%; }
     .hero-ring-1 { width: 340px; height: 340px; margin: -170px 0 0 -170px; }
+
+    /* ---- 首页快报区 ---- */
+    .home-hl-panel { padding: 18px 14px 12px; }
+    .home-hl-panel-head h3 { font-size: 1rem; }
+    .home-hl-more { font-size: 0.72rem; }
+    .home-hl-item { gap: 10px; padding: 11px 6px; }
+    .home-hl-item:hover { transform: none; }
+    .home-hl-date { width: 46px; padding: 5px 2px; }
+    .home-hl-date-md { font-size: 0.76rem; }
+    .home-hl-body h4 { font-size: 0.86rem; }
+    .home-hl-body p { font-size: 0.74rem; -webkit-line-clamp: 1; line-clamp: 1; }
+    .home-hl-tag { display: none; }
 
     /* ---- Page Hero ---- */
     .page-hero { min-height: 180px; padding: 70px 16px 30px; }
@@ -3367,3 +3411,12 @@ a.hero-ball::before {
 @media (prefers-reduced-motion: reduce) {
     a.hero-ball::before, .ut-welcome-icon, .ut-option.wrong, .ut-verdict-inner { animation: none !important; }
 }
+
+/* ===== 详情页底部导航（返回列表 + 上一篇/下一篇）===== */
+.detail-nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+.detail-nav-links { display: flex; gap: 10px; flex-wrap: wrap; min-width: 0; }
+.detail-nav-item { display: inline-flex; align-items: center; gap: 6px; max-width: 320px; overflow: hidden; font-size: 0.85rem; color: var(--text-secondary); padding: 8px 14px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--card-bg, rgba(255,255,255,0.03)); transition: color .2s, border-color .2s; }
+.detail-nav-item span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.detail-nav-item:hover { color: var(--primary-blue); border-color: var(--primary-blue); }
+@media (max-width: 640px) { .detail-nav-item { max-width: 44vw; } }
+.detail-nav-item.disabled { opacity: .45; cursor: not-allowed; pointer-events: none; color: var(--text-muted); }

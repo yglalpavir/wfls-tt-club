@@ -306,7 +306,7 @@ function initWttDataVizExtra() {
         wttRenderMatchFrequency(wttDataVizExtraState.freqBucket, v);
     });
     document.getElementById('wttDistBinCount')?.addEventListener('change', () => {
-        const v = wttClampInt(document.getElementById('wttDistBinCount').value, 4, 30);
+        const v = wttClampInt(document.getElementById('wttDistBinCount').value, 4, 100);
         document.getElementById('wttDistBinCount').value = v;
         wttDataVizExtraState.distBins = v;
         wttRenderScoreDistribution(v);
@@ -1189,30 +1189,17 @@ function wttRenderMatchFrequency(bucketType, count) {
     let buckets = buildFrequencyBuckets(records, bucketType);
     if (buckets.length > count) buckets = buckets.slice(-count);
 
+    // 展示所有赛事类型（按总场次降序着色，不再把长尾类型折叠进"其他"）
     const typeTotals = {};
     for (const b of buckets) {
         for (const [t, c] of Object.entries(b.types)) typeTotals[t] = (typeTotals[t] || 0) + c;
     }
     const sortedTypes = Object.entries(typeTotals).sort((a, b) => b[1] - a[1]);
-    const mainTypes = sortedTypes.slice(0, 4).map(x => x[0]);
-    const otherLabel = i18n[currentLang].wtt_other;
 
     const labels = buckets.map(b => b.label);
-    const datasets = mainTypes.map((t, idx) => {
+    const datasets = sortedTypes.map(([t], idx) => {
         return { label: t, data: buckets.map(b => b.types[t] || 0), backgroundColor: WTT_CHART_COLORS[idx % WTT_CHART_COLORS.length], stack: 'freq' };
     });
-    if (sortedTypes.length > 4) {
-        datasets.push({
-            label: otherLabel,
-            data: buckets.map(b => {
-                let sum = 0;
-                for (const [t, c] of Object.entries(b.types)) if (!mainTypes.includes(t)) sum += c;
-                return sum;
-            }),
-            backgroundColor: WTT_CHART_COLORS[6 % WTT_CHART_COLORS.length],
-            stack: 'freq'
-        });
-    }
 
     try {
         wttMatchFrequencyChart = new Chart(canvas, {
@@ -1269,7 +1256,7 @@ function wttRenderScoreDistribution(bins) {
 
     let min = Math.min(...scores), max = Math.max(...scores);
     if (min === max) { min -= 50; max += 50; }
-    bins = wttClampInt(bins, 4, 30);
+    bins = wttClampInt(bins, 4, 100);
     const rawStep = (max - min) / bins;
     const mag = Math.pow(10, Math.floor(Math.log10(rawStep)));
     let step = Math.ceil(rawStep / mag) * mag;

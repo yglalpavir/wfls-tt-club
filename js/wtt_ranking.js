@@ -19,19 +19,8 @@ function getWttActiveData() {
     };
 }
 
-// 封装计算：使用 wttWithDataContext 自动切换全局数据 → 计算 → 恢复
-// 覆盖 wtt_common.js 中的同名函数
-function wttCalculateAllRankings() {
-    wttApplyNameNormalization();
-    return wttWithDataContext(() => {
-        const effScores = wttGetEffectiveInitialScores();
-        console.log(`[WTT Ranking] 计算模式: ${wttSettings?.scoreMode || 'initial'}, initialScores 键数: ${Object.keys(effScores).length}`);
-        const timeline = calculateAllRankingsWithSeasons(wttScoreLogData, effScores, wttSeasonsData);
-        const rt = calculateRealtimeRanking();
-        if (rt) timeline.push(rt);
-        return timeline;
-    });
-}
+// 封装计算统一使用 wtt_common.js 的 wttCalculateAllRankings / wttCalculateAllRankingsAsync
+// （原此处曾重复定义同步版 wttCalculateAllRankings 并靠加载顺序覆盖，已删除以避免漂移）
 
 function wttCalculateRealtimeRanking() {
     wttApplyNameNormalization();
@@ -223,7 +212,9 @@ async function wttLoadRankingData() {
         // flat1300 模式不需要 initialScoresData
         const isFlat = wttSettings && wttSettings.scoreMode === 'flat1300';
         if (!isFlat && !wttInitialScoresData) throw new Error('WTT initial-scores 加载失败');
-        if (!wttEventCoefficients || !wttSeasonsData) throw new Error('WTT数据加载失败');
+        // seasons.json 加载失败时 wttSeasonsData 为 []（truthy），必须显式判空，
+        // 否则空时间线会让骨架屏永久挂起、无任何错误提示
+        if (!wttEventCoefficients || !Array.isArray(wttSeasonsData) || !wttSeasonsData.length) throw new Error('WTT数据加载失败');
 
         // 异步分块计算（每快照 yield 到浏览器，保持 UI 响应）
         setP(wttLoadPhasePct('calc', 0, 1), '', i18n[currentLang].wtt_calculating);
@@ -329,16 +320,19 @@ function wttRenderTimeNodeList() {
 }
 
 function wttCalculateRankChanges(cd, pd, isInitial) {
+    // 同分并列名次（1,2,2,4 式），与 club 管线口径一致（assignTiedRanks 定义于 common.js）：
+    // 消除同分球员跨快照互换顺序导致的假▲▼
+    const withRanks = assignTiedRanks(cd);
     if (!pd || isInitial) {
-        return cd.map((p, i) => ({
-            ...p, rank: i + 1, change: 0, changeType: 'new',
+        return withRanks.map(p => ({
+            ...p, change: 0, changeType: 'new',
             pointsChange: 0, pointsChangeType: 'new'
         }));
     }
     const prm = {}, ppm = {};
-    pd.forEach((p, i) => { prm[p['姓名']] = i + 1; ppm[p['姓名']] = p['当前积分'] || 0; });
-    return cd.map((p, i) => {
-        const cr = i + 1, pr = prm[p['姓名']], pp = ppm[p['姓名']], cp = p['当前积分'] || 0;
+    assignTiedRanks(pd).forEach(p => { prm[p['姓名']] = p.rank; ppm[p['姓名']] = p['当前积分'] || 0; });
+    return withRanks.map(p => {
+        const cr = p.rank, pr = prm[p['姓名']], pp = ppm[p['姓名']], cp = p['当前积分'] || 0;
         let rc = 0, rct = 'new';
         if (pr === undefined) rct = 'new';
         else { rc = pr - cr; if (rc > 0) rct = 'up'; else if (rc < 0) rct = 'down'; else rct = 'same'; }
@@ -427,7 +421,7 @@ function wttRenderRankingTable(data) {
             ? flagHtml + wttLinkPlayerName(pn) + ` <button class="score-detail-icon" type="button" data-player="${pnSafe}" data-snapshot="${sds}" title="${escapeHtml(i18n[currentLang].wtt_click_detail)}"><i class="fa-solid fa-receipt"></i></button>`
             : flagHtml + pnSafe;
 
-        tr.innerHTML = `<td>${i + 1}</td><td>${nc}</td><td><strong>${(p['当前积分'] || 0).toFixed(1)}</strong></td><td data-label="${i18n[currentLang].rank_col_points_change}">${pch}</td><td data-label="${i18n[currentLang].rank_col_change}">${ch}</td><td data-label="${i18n[currentLang].rank_col_matches}">${p['总场次'] || 0}</td><td data-label="${i18n[currentLang].rank_col_winrate}">${wd}</td>`;
+        tr.innerHTML = `<td>${p.rank || i + 1}</td><td>${nc}</td><td><strong>${(p['当前积分'] || 0).toFixed(1)}</strong></td><td data-label="${i18n[currentLang].rank_col_points_change}">${pch}</td><td data-label="${i18n[currentLang].rank_col_change}">${ch}</td><td data-label="${i18n[currentLang].rank_col_matches}">${p['总场次'] || 0}</td><td data-label="${i18n[currentLang].rank_col_winrate}">${wd}</td>`;
         tb.appendChild(tr);
     });
 

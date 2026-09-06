@@ -125,23 +125,34 @@ async function loadRankingData() {
     updateProgress(i18n[currentLang].rank_prepare);
 
     try {
-        // 逐个加载数据文件，显示详细进度
+        // 两波并行下载（替代原 6 文件纯串行 await，省去叠加的请求往返）：
+        // 波1：players / event-coefficient / decay-config / seasons 互不依赖，全部并行；
+        // 波2：score-log（normalizeScoreLog 依赖 players 建立的 nameIndex 做别名归一）
+        //      与 initial-scores（loadInitialScores 读取 playersData）都依赖波1的 players，
+        //      但两者之间无依赖，可并行。
         const L = i18n[currentLang];
-        const dataFiles = [
-            { name: 'players.json',         loader: loadPlayers,           label: L.data_viz_file_players },
-            { name: 'score-log.json',        loader: loadScoreLogData,      label: L.data_viz_file_matches },
-            { name: 'initial-scores.json',   loader: loadInitialScores,     label: L.data_viz_file_initial },
+        const wave1 = [
+            { name: 'players.json',          loader: loadPlayers,           label: L.data_viz_file_players },
             { name: 'event-coefficient.json',loader: loadEventCoefficients, label: L.data_viz_file_event },
             { name: 'decay-config.json',     loader: loadDecayConfig,       label: L.data_viz_file_decay },
             { name: 'seasons.json',          loader: loadSeasons,           label: L.data_viz_file_season }
         ];
-
-        for (let i = 0; i < dataFiles.length; i++) {
-            const f = dataFiles[i];
-            updateProgress(i18n[currentLang].rank_download_file.replace('{label}', f.label).replace('{i}', i + 1).replace('{total}', dataFiles.length).replace('{file}', f.name));
-            await new Promise(r => setTimeout(r, 0));
-            if (await f.loader() === false) throw new Error(`${f.label}（${f.name}）加载失败`);
-        }
+        const wave2 = [
+            { name: 'score-log.json',        loader: loadScoreLogData,      label: L.data_viz_file_matches },
+            { name: 'initial-scores.json',   loader: loadInitialScores,     label: L.data_viz_file_initial }
+        ];
+        const totalFiles = wave1.length + wave2.length;
+        let doneFiles = 0;
+        const runWave = wave => Promise.all(wave.map(async f => {
+            const ok = await f.loader();
+            doneFiles++;
+            updateProgress(i18n[currentLang].rank_download_file.replace('{label}', f.label).replace('{i}', doneFiles).replace('{total}', totalFiles).replace('{file}', f.name));
+            return { f, ok };
+        }));
+        const r1 = await runWave(wave1);
+        const r2 = await runWave(wave2);
+        const failed = r1.concat(r2).find(r => r.ok === false);
+        if (failed) throw new Error(`${failed.f.label}（${failed.f.name}）加载失败`);
 
         if (!initialScoresData || !eventCoefficients || !seasonsData) throw new Error('数据加载失败');
 
@@ -163,7 +174,21 @@ async function loadRankingData() {
         renderSeasonExpiryNotice();
     } catch(e) {
         console.error('排名计算失败', e);
-        tb.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:40px;color:var(--accent-red);">${i18n[currentLang].rank_calc_fail}</td></tr>`;
+        // 错误 + 重试按钮（原来只有一行红字，访客只能手动刷新页面）
+        tb.innerHTML = '';
+        const tr = document.createElement('tr');
+        const td = document.createElement('td');
+        td.colSpan = 7;
+        td.style.cssText = 'text-align:center;padding:40px;';
+        td.innerHTML = `<p style="color:var(--accent-red);font-weight:600;">${i18n[currentLang].rank_calc_fail}</p>`;
+        const btn = document.createElement('button');
+        btn.className = 'btn btn-sm btn-primary';
+        btn.style.marginTop = '12px';
+        btn.textContent = i18n[currentLang].detail_retry;
+        btn.addEventListener('click', () => loadRankingData());
+        td.appendChild(btn);
+        tr.appendChild(td);
+        tb.appendChild(tr);
     }
 }
 
@@ -213,7 +238,22 @@ function renderTimeNodeList() { const list = document.getElementById('timeNodeLi
         });
     }
 }
-function calculateRankChanges(cd, pd, isInitial) { if (!pd || isInitial) return cd.map((p, i) => ({ ...p, rank: i+1, change: 0, changeType: 'new', pointsChange: 0, pointsChangeType: 'new' })); const prm = {}, ppm = {}; pd.forEach((p, i) => { prm[p['姓名']] = i+1; ppm[p['姓名']] = p['当前积分'] || 0; }); return cd.map((p, i) => { const cr = i+1, pr = prm[p['姓名']], pp = ppm[p['姓名']], cp = p['当前积分'] || 0; let rc = 0, rct = 'new'; if (pr === undefined) rct = 'new'; else { rc = pr - cr; if (rc > 0) rct = 'up'; else if (rc < 0) rct = 'down'; else rct = 'same'; } let pc = 0, pct = 'new'; if (pp === undefined) pct = 'new'; else { pc = cp - pp; if (pc > 0.05) pct = 'up'; else if (pc < -0.05) pct = 'down'; else pct = 'same'; } return { ...p, rank: cr, change: rc, changeType: rct, pointsChange: pc, pointsChangeType: pct }; }); }
+function calculateRankChanges(cd, pd, isInitial) {
+    const cur = assignTiedRanks(cd);
+    if (!pd || isInitial) return cur.map(p => ({ ...p, change: 0, changeType: 'new', pointsChange: 0, pointsChangeType: 'new' }));
+    const prm = {}, ppm = {};
+    assignTiedRanks(pd).forEach(p => { prm[p['姓名']] = p.rank; ppm[p['姓名']] = p['当前积分'] || 0; });
+    return cur.map(p => {
+        const cr = p.rank, pr = prm[p['姓名']], pp = ppm[p['姓名']], cp = p['当前积分'] || 0;
+        let rc = 0, rct = 'new';
+        if (pr === undefined) rct = 'new';
+        else { rc = pr - cr; if (rc > 0) rct = 'up'; else if (rc < 0) rct = 'down'; else rct = 'same'; }
+        let pc = 0, pct = 'new';
+        if (pp === undefined) pct = 'new';
+        else { pc = cp - pp; if (pc > 0.05) pct = 'up'; else if (pc < -0.05) pct = 'down'; else pct = 'same'; }
+        return { ...p, rank: cr, change: rc, changeType: rct, pointsChange: pc, pointsChangeType: pct };
+    });
+}
 
 /* 当前日期超出最后赛季时显示口径提示（引擎会把超范围日期回退到最后赛季） */
 function renderSeasonExpiryNotice() {
@@ -233,14 +273,16 @@ function renderSeasonExpiryNotice() {
     div.textContent = i18n[currentLang].rank_season_expired.replace('{date}', last.endDate);
     host.parentNode.insertBefore(div, host);
 }
-function updateRankingDisplay() { if (!rankingTimeline.length || !rankingTimeline[currentTimeIndex]) return; const cn = rankingTimeline[currentTimeIndex], pn = currentTimeIndex > 0 ? rankingTimeline[currentTimeIndex-1] : null; currentDisplayData = calculateRankChanges(cn.data, pn ? pn.data : null, cn.isInitial); currentDisplayData = sortDisplayData(currentSortKey, currentSortDir); renderRankingTable(currentDisplayData); const ind = document.getElementById('sortIndicator'); if (ind) ind.textContent = `${currentSortKey} ${currentSortDir==='desc'?i18n[currentLang].sort_desc:i18n[currentLang].sort_asc}`; updateSortHeaderHighlight(); const lbl = document.getElementById('currentTimeLabel'); if (lbl) lbl.textContent = getNodeDisplayLabel(cn); syncMobileSortControls(false); }
+function updateRankingDisplay() { if (!rankingTimeline.length || !rankingTimeline[currentTimeIndex]) return; const cn = rankingTimeline[currentTimeIndex], pn = currentTimeIndex > 0 ? rankingTimeline[currentTimeIndex-1] : null; currentDisplayData = calculateRankChanges(cn.data, pn ? pn.data : null, cn.isInitial); currentDisplayData = sortDisplayData(currentSortKey, currentSortDir); renderRankingTable(currentDisplayData); const ind = document.getElementById('sortIndicator'); if (ind) ind.textContent = `${sortKeyLabel(currentSortKey)} ${currentSortDir==='desc'?i18n[currentLang].sort_desc:i18n[currentLang].sort_asc}`; updateSortHeaderHighlight(); const lbl = document.getElementById('currentTimeLabel'); if (lbl) lbl.textContent = getNodeDisplayLabel(cn); syncMobileSortControls(false); }
 function sortDisplayData(key, dir) { return [...currentDisplayData].sort((a, b) => { let va, vb; if (key === '胜率') { va = parseWinRate(a['胜率']); vb = parseWinRate(b['胜率']); } else if (key === '姓名') return dir === 'asc' ? (a['姓名']||'').localeCompare(b['姓名']||'', 'zh') : (b['姓名']||'').localeCompare(a['姓名']||'', 'zh'); else if (key === 'rank') { va = a.rank || 0; vb = b.rank || 0; } else if (key === '变化') { va = a.change || 0; vb = b.change || 0; } else if (key === '积分变化') { va = a.pointsChange || 0; vb = b.pointsChange || 0; } else { va = a[key] || 0; vb = b[key] || 0; } return va < vb ? (dir === 'asc' ? -1 : 1) : va > vb ? (dir === 'asc' ? 1 : -1) : 0; }); }
-function renderRankingTable(data) { const tb = document.getElementById('rankingFullBody'); if (!tb) return; const L = i18n[currentLang] || {}; if (!data || !data.length) { tb.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:40px;">${i18n[currentLang].rank_no_data}</td></tr>`; return; } tb.innerHTML = ''; const currentSnapshotDate = rankingTimeline[currentTimeIndex]?.time || ''; data.forEach((p, i) => { const tr = document.createElement('tr'); const wr = p['胜率'] || '0%', wd = wr === '#DIV/0!' || wr === '-' ? '0%' : wr; let ch = '', pch = ''; if (p.changeType === 'up') ch = `<span class="rank-change rank-up">▲${Math.abs(p.change)}</span>`; else if (p.changeType === 'down') ch = `<span class="rank-change rank-down">▼${Math.abs(p.change)}</span>`; else if (p.changeType === 'new') ch = '<span class="rank-new">NEW</span>'; else ch = '<span class="rank-same">-</span>'; if (p.pointsChangeType === 'up') pch = `<span class="rank-change rank-up">▲${Math.abs(p.pointsChange).toFixed(1)}</span>`; else if (p.pointsChangeType === 'down') pch = `<span class="rank-change rank-down">▼${Math.abs(p.pointsChange).toFixed(1)}</span>`; else if (p.pointsChangeType === 'new') pch = '<span class="rank-new">NEW</span>'; else pch = '<span class="rank-same">-</span>'; const pn = String(p['姓名'] || '-'); const pnSafe = escapeHtml(pn); const sds = escapeHtml(currentSnapshotDate || ''); const uid = getUidForPlayerName(pn); let nc = pnSafe; if (uid != null) { nc = `<a class="player-name-link" href="player.html?uid=${uid}" title="${L.rank_view_player_page}">${pnSafe}</a>`; } else if (scoreLogData.length > 0) { nc = `<span class="player-name-link" role="button" tabindex="0" data-player="${pnSafe}" data-snapshot="${sds}" title="${L.rank_click_detail}">${pnSafe}</span>`; } if (scoreLogData.length > 0) nc += ` <button class="score-detail-icon" type="button" data-player="${pnSafe}" data-snapshot="${sds}" title="${L.score_detail_title}"><i class="fa-solid fa-receipt"></i></button>`; tr.innerHTML = `<td>${i+1}</td><td>${nc}</td><td><strong>${(p['当前积分'] || 0).toFixed(1)}</strong></td><td data-label="${i18n[currentLang].rank_col_points_change}">${pch}</td><td data-label="${i18n[currentLang].rank_col_change}">${ch}</td><td data-label="${i18n[currentLang].rank_col_matches}">${p['总场次'] || 0}</td><td data-label="${i18n[currentLang].rank_col_winrate}">${wd}</td>`; tb.appendChild(tr); }); }
+function renderRankingTable(data) { const tb = document.getElementById('rankingFullBody'); if (!tb) return; const L = i18n[currentLang] || {}; if (!data || !data.length) { tb.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:40px;">${i18n[currentLang].rank_no_data}</td></tr>`; return; } tb.innerHTML = ''; const currentSnapshotDate = rankingTimeline[currentTimeIndex]?.time || ''; data.forEach((p, i) => { const tr = document.createElement('tr'); const wr = p['胜率'] || '0%', wd = wr === '#DIV/0!' || wr === '-' ? '0%' : wr; let ch = '', pch = ''; if (p.changeType === 'up') ch = `<span class="rank-change rank-up">▲${Math.abs(p.change)}</span>`; else if (p.changeType === 'down') ch = `<span class="rank-change rank-down">▼${Math.abs(p.change)}</span>`; else if (p.changeType === 'new') ch = '<span class="rank-new">NEW</span>'; else ch = '<span class="rank-same">-</span>'; if (p.pointsChangeType === 'up') pch = `<span class="rank-change rank-up">▲${Math.abs(p.pointsChange).toFixed(1)}</span>`; else if (p.pointsChangeType === 'down') pch = `<span class="rank-change rank-down">▼${Math.abs(p.pointsChange).toFixed(1)}</span>`; else if (p.pointsChangeType === 'new') pch = '<span class="rank-new">NEW</span>'; else pch = '<span class="rank-same">-</span>'; const pn = String(p['姓名'] || '-'); const pnSafe = escapeHtml(pn); const sds = escapeHtml(currentSnapshotDate || ''); const uid = getUidForPlayerName(pn); let nc = pnSafe; if (uid != null) { nc = `<a class="player-name-link" href="player.html?uid=${uid}" title="${L.rank_view_player_page}">${pnSafe}</a>`; } else if (scoreLogData.length > 0) { nc = `<span class="player-name-link" role="button" tabindex="0" data-player="${pnSafe}" data-snapshot="${sds}" title="${L.rank_click_detail}">${pnSafe}</span>`; } if (scoreLogData.length > 0) nc += ` <button class="score-detail-icon" type="button" data-player="${pnSafe}" data-snapshot="${sds}" title="${L.score_detail_title}"><i class="fa-solid fa-receipt"></i></button>`; tr.innerHTML = `<td>${p.rank || i + 1}</td><td>${nc}</td><td><strong>${(p['当前积分'] || 0).toFixed(1)}</strong></td><td data-label="${i18n[currentLang].rank_col_points_change}">${pch}</td><td data-label="${i18n[currentLang].rank_col_change}">${ch}</td><td data-label="${i18n[currentLang].rank_col_matches}">${p['总场次'] || 0}</td><td data-label="${i18n[currentLang].rank_col_winrate}">${wd}</td>`; tb.appendChild(tr); }); }
 function updateSortHeaderHighlight() { document.querySelectorAll('.ranking-table-full th.sortable').forEach(th => { th.classList.remove('active-sort'); if (th.getAttribute('data-sort') === currentSortKey) th.classList.add('active-sort'); }); }
-function setupSortListeners() { document.querySelectorAll('.ranking-table-full th.sortable').forEach(th => { const nt = th.cloneNode(true); th.parentNode.replaceChild(nt, th); nt.addEventListener('click', () => { const key = nt.getAttribute('data-sort'); currentSortDir = key === currentSortKey ? (currentSortDir === 'desc' ? 'asc' : 'desc') : 'desc'; currentSortKey = key; currentDisplayData = sortDisplayData(key, currentSortDir); renderRankingTable(currentDisplayData); updateSortHeaderHighlight(); document.querySelectorAll('.ranking-table-full th.sortable').forEach(h => { const a = h.querySelector('.sort-arrow'); if (a) a.innerHTML = ''; }); const ar = nt.querySelector('.sort-arrow'); if (ar) ar.innerHTML = currentSortDir === 'desc' ? '&#9660;' : '&#9650;'; nt.classList.add('active-sort'); document.getElementById('sortIndicator').textContent = `${key} ${currentSortDir === 'desc' ? i18n[currentLang].sort_desc : i18n[currentLang].sort_asc}`; syncMobileSortControls(false); }); }); }
+function setupSortListeners() { document.querySelectorAll('.ranking-table-full th.sortable').forEach(th => { const nt = th.cloneNode(true); th.parentNode.replaceChild(nt, th); nt.addEventListener('click', () => { const key = nt.getAttribute('data-sort'); currentSortDir = key === currentSortKey ? (currentSortDir === 'desc' ? 'asc' : 'desc') : 'desc'; currentSortKey = key; currentDisplayData = sortDisplayData(key, currentSortDir); renderRankingTable(currentDisplayData); updateSortHeaderHighlight(); document.querySelectorAll('.ranking-table-full th.sortable').forEach(h => { const a = h.querySelector('.sort-arrow'); if (a) a.innerHTML = ''; }); const ar = nt.querySelector('.sort-arrow'); if (ar) ar.innerHTML = currentSortDir === 'desc' ? '&#9660;' : '&#9650;'; nt.classList.add('active-sort'); document.getElementById('sortIndicator').textContent = `${sortKeyLabel(key)} ${currentSortDir === 'desc' ? i18n[currentLang].sort_desc : i18n[currentLang].sort_asc}`; syncMobileSortControls(false); }); }); }
 
 /* ---- 移动端排序控件（卡片视图下替代表头排序）---- */
 const MOBILE_SORT_KEYS = [['rank', 'rank_col_rank'], ['姓名', 'rank_col_name'], ['当前积分', 'rank_col_points'], ['积分变化', 'rank_col_points_change'], ['变化', 'rank_col_change'], ['总场次', 'rank_col_matches'], ['胜率', 'rank_col_winrate']];
+/* 排序字段 → i18n 显示名（排序指示符等处不能直接显示原始字段键） */
+function sortKeyLabel(key) { const m = MOBILE_SORT_KEYS.find(([v]) => v === key); return m ? (i18n[currentLang][m[1]] || key) : key; }
 function syncMobileSortControls(rebuild) {
     const sel = document.getElementById('mobileSortSelect'), dir = document.getElementById('mobileSortDir');
     if (!sel || !dir) return;
@@ -253,7 +295,7 @@ function applyMobileSort() {
     renderRankingTable(currentDisplayData);
     updateSortHeaderHighlight();
     const ind = document.getElementById('sortIndicator');
-    if (ind) ind.textContent = `${currentSortKey} ${currentSortDir === 'desc' ? i18n[currentLang].sort_desc : i18n[currentLang].sort_asc}`;
+    if (ind) ind.textContent = `${sortKeyLabel(currentSortKey)} ${currentSortDir === 'desc' ? i18n[currentLang].sort_desc : i18n[currentLang].sort_asc}`;
 }
 function setupMobileSortControls() {
     const sel = document.getElementById('mobileSortSelect'), dir = document.getElementById('mobileSortDir');
@@ -280,8 +322,8 @@ function setupRankTableExport() {
         let subtitle = `${cn?.label || ''} · ${document.getElementById('sortIndicator')?.textContent || ''}`.replace(/^ · /, '');
         let filenameBase = 'wfls-points-table';
         if (limit) {
-            /* 按实际名次截取，保证导出图片中 # 列与真实排名一致 */
-            rows = [...currentDisplayData].sort((a, b) => (a.rank || 0) - (b.rank || 0)).slice(0, limit);
+            /* 按实际名次截取（同分并列者一并保留），保证导出图片中 # 列与真实排名一致 */
+            rows = [...currentDisplayData].filter(p => p.rank && p.rank <= limit).sort((a, b) => (a.rank || 0) - (b.rank || 0));
             subtitle += ` · ${i18n[currentLang].rank_export_top_sub.replace('{n}', limit)}`;
             filenameBase += `-top${limit}`;
         }
@@ -293,5 +335,5 @@ function setupRankTableExport() {
 /* 语言切换时同步下拉文案与卡片标签 */
 if (typeof updateRankingHeaders === 'function') {
     const _origUpdateRankingHeaders = updateRankingHeaders;
-    updateRankingHeaders = function () { _origUpdateRankingHeaders(); if (typeof currentDisplayData !== 'undefined' && currentDisplayData && currentDisplayData.length && rankingTimeline[currentTimeIndex]) renderRankingTable(currentDisplayData); syncMobileSortControls(); };
+    updateRankingHeaders = function () { _origUpdateRankingHeaders(); if (typeof currentDisplayData !== 'undefined' && currentDisplayData && currentDisplayData.length && rankingTimeline[currentTimeIndex]) renderRankingTable(currentDisplayData); syncMobileSortControls(); const ind = document.getElementById('sortIndicator'); if (ind) ind.textContent = `${sortKeyLabel(currentSortKey)} ${currentSortDir === 'desc' ? i18n[currentLang].sort_desc : i18n[currentLang].sort_asc}`; };
 }

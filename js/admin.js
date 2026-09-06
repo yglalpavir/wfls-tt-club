@@ -23,13 +23,13 @@ const DATA_PATHS = {
         initialScores:"data/_legacy/initial-scores.json",
         eventCoeff:   "data/event-coefficient.json",
     },
-    // WTT 各分项
+    // WTT 各分项（按年分文件存储，记录经 manifest.json 清单聚合加载，此处 path 为分项目录）
     wttDisc: {
-        ms: { label:"男单 MS", color:"#007bff", path:"wtt_data/ms/score-log.json" },
-        ws: { label:"女单 WS", color:"#e83e8c", path:"wtt_data/ws/score-log.json" },
-        wd: { label:"女双 WD", color:"#6f42c1", path:"wtt_data/wd/score-log.json" },
-        md: { label:"男双 MD", color:"#28a745", path:"wtt_data/md/score-log.json" },
-        xd: { label:"混双 XD", color:"#fd7e14", path:"wtt_data/xd/score-log.json" },
+        ms: { label:"男单 MS", color:"#007bff", path:"wtt_data/ms/" },
+        ws: { label:"女单 WS", color:"#e83e8c", path:"wtt_data/ws/" },
+        wd: { label:"女双 WD", color:"#6f42c1", path:"wtt_data/wd/" },
+        md: { label:"男双 MD", color:"#28a745", path:"wtt_data/md/" },
+        xd: { label:"混双 XD", color:"#fd7e14", path:"wtt_data/xd/" },
     }
 };
 
@@ -139,10 +139,9 @@ async function loadAllData() {
         promises.push(fetchJson(path).then(d => ({ key, data:d, group:"core" })).catch(() => ({ key, data:null, group:"core" })));
     }
 
-    // WTT 分项数据 - 加载主文件 + 年度分文件 + 辅助数据（seasons/initial-scores/event-coefficient）
-    // 为每个分项加载全部数据文件
+    // WTT 分项辅助数据（seasons/initial-scores/event-coefficient，各分项目录下）
     for (const [disc, cfg] of Object.entries(DATA_PATHS.wttDisc)) {
-        const baseDir = cfg.path.replace("/score-log.json", "");
+        const baseDir = cfg.path.replace(/\/+$/, "");
         // 加载 seasons.json
         promises.push(
             fetchJson(baseDir + "/seasons.json")
@@ -173,10 +172,8 @@ async function loadAllData() {
         xd: ["2021-wtt","2023-wtt","2024-wtt","2025-wtt","2026-wtt"],
     };
     for (const [disc, cfg] of Object.entries(DATA_PATHS.wttDisc)) {
-        // 加载主 score-log.json
-        promises.push(fetchJson(cfg.path).then(d => ({ key:"disc_"+disc, data:d, group:"wttDisc", disc })).catch(() => ({ key:"disc_"+disc, data:[], group:"wttDisc", disc })));
         // 依据 manifest.json 解析该分项真实存在的年度文件并加载；manifest 不可用时回退到内置后缀
-        const baseDir = cfg.path.replace("/score-log.json", "");
+        const baseDir = cfg.path.replace(/\/+$/, "");
         const manifestPromise = fetchJson(baseDir + "/manifest.json")
             .then(manifest => {
                 const names = Array.isArray(manifest) ? manifest
@@ -202,13 +199,7 @@ async function loadAllData() {
 
     for (const r of results) {
         if (!r) continue;
-        if (r.group === "wttDisc") {
-            allData[r.key] = r.data;
-            // 合并主数据
-            if (Array.isArray(r.data)) {
-                discData[r.disc] = discData[r.disc].concat(r.data);
-            }
-        } else if (r.group === "wttDiscYear") {
+        if (r.group === "wttDiscYear") {
             // 合并年度分文件
             if (Array.isArray(r.data)) {
                 discData[r.disc] = discData[r.disc].concat(r.data);

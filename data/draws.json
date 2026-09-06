@@ -716,6 +716,7 @@
   {
     "id": "d3",
     "version": 3,
+    "visible": false,
     "competitionId": "c6",
     "title": "十二强争冠赛暨2026社团表演赛",
     "roundLabels": {

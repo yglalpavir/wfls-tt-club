@@ -97,6 +97,24 @@
                 </div>
             </div>
 
+            <div class="viz-section-header" id="viz-wtt-stream" style="margin-top:48px;">
+                <span class="section-tag">Stream Graph</span>
+                <h2 class="section-title" data-i18n="data_viz_rank_stream">排名变化河流图</h2>
+                <div class="viz-topn-selector">
+                    <span data-i18n="data_viz_top_n">显示前</span>
+                    <input type="number" id="wttTopNSelect" value="10" min="1" max="20" data-i18n-title="data_viz_topn_select_title">
+                    <span data-i18n="data_viz_top_n_suffix">名球员</span>
+                </div>
+                <div class="viz-topn-selector" style="margin-left:16px;">
+                    <span data-i18n="data_viz_recent">最近</span>
+                    <input type="number" id="wttStreamDataCount" value="20" min="2" max="200" data-i18n-title="data_viz_stream_title">
+                    <span data-i18n="data_viz_data_points">个数据点</span>
+                </div>
+            </div>
+            <div class="viz-chart-container glass-card" style="min-height:450px;">
+                <canvas id="wttRankStreamChart"></canvas>
+            </div>
+
             <div class="viz-section-header" id="viz-compare" style="margin-top:48px;">
                 <span class="section-tag">Comparison</span>
                 <h2 class="section-title" data-i18n="data_viz_player_compare">球员对比</h2>
@@ -193,7 +211,7 @@
                 <h2 class="section-title" data-i18n="wtt_dist_title">积分区间分布</h2>
                 <div class="viz-topn-selector">
                     <span data-i18n="wtt_bins">分档数</span>
-                    <input type="number" id="wttDistBinCount" value="10" min="4" max="30" title="填写4-30的任意正整数">
+                    <input type="number" id="wttDistBinCount" value="10" min="4" max="100" data-i18n-title="data_viz_bins_title">
                 </div>
             </div>
             <div class="viz-chart-container glass-card" style="min-height:420px;">

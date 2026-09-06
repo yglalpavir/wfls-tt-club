@@ -392,45 +392,53 @@ function renderPointsTrend(playerNames, dataCount) {
         });
     } catch(err) { console.error('积分趋势图失败', err); }
 }
-function renderRankStream(topN, dataCount) { 
-    const canvas = document.getElementById('rankStreamChart'); 
-    if (!canvas || !rankingTimeline.length) return; 
-    if (rankStreamChart) { rankStreamChart.destroy(); rankStreamChart = null; } 
-    
-    dataCount = Math.max(2, Math.min(dataCount || 20, rankingTimeline.length));
-    const slicedTimeline = rankingTimeline.slice(-dataCount);
+function renderRankStream(topN, dataCount) {
+    const canvas = document.getElementById('rankStreamChart');
+    if (!canvas || !rankingTimeline.length) return;
+    if (rankStreamChart) { rankStreamChart.destroy(); rankStreamChart = null; }
+
+    // 排名变化河流图不展示赛季初始积分节点（该节点非比赛产生，画入会在赛季边界形成假平台）
+    const timelineNoInitial = rankingTimeline.filter(t => !t.isInitial);
+    dataCount = Math.max(2, Math.min(dataCount || 20, timelineNoInitial.length));
+    const slicedTimeline = timelineNoInitial.slice(-dataCount);
     const isMobile = window.innerWidth <= 768;
-    const labels = slicedTimeline.map(t => getNodeDisplayLabel(t)); 
-    
-    // 查找最后一个非空快照来获取顶级球员
-    let lastNonEmptySnapshot = null;
-    for (let i = slicedTimeline.length - 1; i >= 0; i--) {
-        if (slicedTimeline[i].data && slicedTimeline[i].data.length > 0) {
-            lastNonEmptySnapshot = slicedTimeline[i];
-            break;
+    const labels = slicedTimeline.map(t => getNodeDisplayLabel(t));
+
+    // 每个节点各自的并列名次表（1,2,2,4 式，与排行榜显示口径一致）
+    const nodeRankMaps = slicedTimeline.map(t => {
+        const m = new Map();
+        assignTiedRanks(t.data || []).forEach(p => m.set(p['姓名'], p.rank));
+        return m;
+    });
+
+    // 展示"每个节点当时的前 topN 名"：任一节点进入过前 topN 的球员并入数据集，
+    // 每条曲线只在该节点排名 ≤ topN 时有点，其余节点为 null（spanGaps 断开不连线）
+    const inTop = new Map();   // 姓名 -> { lastIdx, last } 最后一次进入前十的节点序与名次（用于排序/着色）
+    slicedTimeline.forEach((t, i) => {
+        for (const [name, r] of nodeRankMaps[i]) {
+            if (r <= topN) {
+                const rec = inTop.get(name) || { lastIdx: -1, last: Infinity };
+                rec.lastIdx = i; rec.last = r;
+                inTop.set(name, rec);
+            }
         }
-    }
-    
-    if (!lastNonEmptySnapshot) {
+    });
+    topN = Math.max(1, Math.min(topN || 10, 20));
+    const streamPlayers = [...inTop.entries()]
+        .sort((a, b) => a[1].lastIdx - b[1].lastIdx || a[1].last - b[1].last)
+        .map(([name]) => name);
+    if (!streamPlayers.length) {
         console.error('[DataViz] renderRankStream: 没有找到非空快照');
         return;
     }
-    
-    // 获取所有球员（含不活跃的）在最后一个快照的排名来确定 top N
-    const allPlayers = getAllPlayers();
-    const lastSnapshotRanks = allPlayers.map(name => ({
-        name,
-        rank: getPlayerRankAtSnapshot(name, lastNonEmptySnapshot)
-    })).filter(x => x.rank !== null).sort((a, b) => a.rank - b.rank);
-    
-    topN = Math.max(1, Math.min(topN, 20, allPlayers.length));
-    const topPlayers = lastSnapshotRanks.slice(0, topN).map(p => p.name);
-    const textColor = getComputedStyle(document.body).getPropertyValue('--text-primary').trim() || '#1a1a2e';
-    const datasets = topPlayers.map((name, idx) => {
-        const data = slicedTimeline.map(t => getPlayerRankAtSnapshot(name, t));
+    const datasets = streamPlayers.map((name, idx) => {
+        const data = slicedTimeline.map((t, i) => {
+            const r = nodeRankMaps[i].get(name);
+            return (r !== undefined && r <= topN) ? r : null;
+        });
         const color = CHART_COLORS[idx%CHART_COLORS.length];
-        return { label:name, data, borderColor:color, borderWidth:isMobile?1.5:2, pointRadius:isMobile?2:3, pointHoverRadius:isMobile?4:6, pointBackgroundColor:color, pointHoverBackgroundColor:color, tension:0.4, fill:false, spanGaps:true };
-    }); try { rankStreamChart = new Chart(canvas, { type:'line', data:{labels,datasets}, options:{ responsive:true, maintainAspectRatio:false, interaction:{ intersect:false, mode:'index' }, plugins:{ legend:{ position:'bottom', display:!isMobile, labels:{ usePointStyle:true, padding:isMobile?10:16, font:{ size:isMobile?10:11, family:"'Poppins', sans-serif" }, color:textColor, boxWidth:isMobile?11:12 } }, tooltip:{ backgroundColor:'rgba(26,29,40,0.9)', titleFont:{ size:isMobile?12:13 }, bodyFont:{ size:isMobile?11:12 }, padding:isMobile?8:12, cornerRadius:8, itemSort:(a,b)=>(a.parsed.y ?? Infinity)-(b.parsed.y ?? Infinity), callbacks:{ label:ctx => `${ctx.dataset.label}: ${i18n[currentLang].data_viz_rank_suffix.replace('{n}', ctx.raw)}` } } }, scales:{ x:{ grid:{ color:'rgba(128,128,128,0.1)' }, ticks:{ font:{ size:isMobile?10:11 }, maxRotation:isMobile?45:0 } }, y:{ reverse:true, min:1, max:topN, grid:{ color:'rgba(128,128,128,0.1)' }, ticks:{ font:{ size:isMobile?10:11 }, stepSize:1 }, title:{ display:true, text:i18n[currentLang].data_viz_axis_rank, font:{ size:isMobile?11:12 } } } } } }); } catch(err) { console.error('排名河流图失败', err); } }
+        return { label:name, data, borderColor:color, borderWidth:isMobile?1.5:2, pointRadius:isMobile?2:3, pointHoverRadius:isMobile?4:6, pointBackgroundColor:color, pointHoverBackgroundColor:color, tension:0.4, fill:false, spanGaps:false };
+    }); try { rankStreamChart = new Chart(canvas, { type:'line', data:{labels,datasets}, options:{ responsive:true, maintainAspectRatio:false, interaction:{ intersect:false, mode:'index' }, plugins:{ legend:{ display:false }, tooltip:{ backgroundColor:'rgba(26,29,40,0.9)', titleFont:{ size:isMobile?12:13 }, bodyFont:{ size:isMobile?11:12 }, padding:isMobile?8:12, cornerRadius:8, itemSort:(a,b)=>(a.parsed.y ?? Infinity)-(b.parsed.y ?? Infinity), callbacks:{ label:ctx => `${ctx.dataset.label}: ${i18n[currentLang].data_viz_rank_suffix.replace('{n}', ctx.raw)}` } } }, scales:{ x:{ grid:{ color:'rgba(128,128,128,0.1)' }, ticks:{ font:{ size:isMobile?10:11 }, maxRotation:isMobile?45:0 } }, y:{ reverse:true, min:1, max:topN, grid:{ color:'rgba(128,128,128,0.1)' }, ticks:{ font:{ size:isMobile?10:11 }, stepSize:1 }, title:{ display:true, text:i18n[currentLang].data_viz_axis_rank, font:{ size:isMobile?11:12 } } } } } }); } catch(err) { console.error('排名河流图失败', err); } }
 
 // 计算球员近期状态分（最近10场比赛的积分变化总和）
 function calcFormScore(playerName) {
@@ -750,21 +758,22 @@ function renderPersonalStats(playerName) {
 
     function fmtDate(ds) {
         const d = new Date(ds + 'T00:00:00');
-        return d.getFullYear() + '年' + (d.getMonth()+1) + '月' + d.getDate() + '日';
+        return i18n[currentLang].ps_date_ymd.replace('{y}', d.getFullYear()).replace('{m}', d.getMonth()+1).replace('{d}', d.getDate());
     }
 
     let html = '';
     html += '<div class="personal-overview">';
-    html += '<div class="personal-overview-item"><span class="personal-overview-num">' + totalMatches + '</span><span class="personal-overview-label">总场次</span></div>';
-    html += '<div class="personal-overview-item win"><span class="personal-overview-num">' + wins + '</span><span class="personal-overview-label">获胜</span></div>';
-    html += '<div class="personal-overview-item loss"><span class="personal-overview-num">' + losses + '</span><span class="personal-overview-label">失利</span></div>';
-    html += '<div class="personal-overview-item"><span class="personal-overview-num">' + (totalMatches > 0 ? Math.round(wins / totalMatches * 100) : 0) + '%</span><span class="personal-overview-label">胜率</span></div>';
-    html += '<div class="personal-overview-item"><span class="personal-overview-num">' + curScoreDisp + '</span><span class="personal-overview-label">当前积分</span></div>';
+    html += '<div class="personal-overview-item"><span class="personal-overview-num">' + totalMatches + '</span><span class="personal-overview-label">' + i18n[currentLang].ps_ov_total + '</span></div>';
+    html += '<div class="personal-overview-item win"><span class="personal-overview-num">' + wins + '</span><span class="personal-overview-label">' + i18n[currentLang].ps_ov_wins + '</span></div>';
+    html += '<div class="personal-overview-item loss"><span class="personal-overview-num">' + losses + '</span><span class="personal-overview-label">' + i18n[currentLang].ps_ov_losses + '</span></div>';
+    html += '<div class="personal-overview-item"><span class="personal-overview-num">' + (totalMatches > 0 ? Math.round(wins / totalMatches * 100) : 0) + '%</span><span class="personal-overview-label">' + i18n[currentLang].ps_ov_rate + '</span></div>';
+    html += '<div class="personal-overview-item"><span class="personal-overview-num">' + curScoreDisp + '</span><span class="personal-overview-label">' + i18n[currentLang].ps_ov_points + '</span></div>';
     html += '</div>';
 
     html += '<div class="personal-summary-text">';
-    html += '<strong>' + playerName + '</strong>共进行了<strong>' + totalMatches + '</strong>盘单打比赛，其中获胜<strong>' + wins + '</strong>盘，失利<strong>' + losses + '</strong>盘。';
-    html += '<strong>' + playerName + '</strong>的胜率为<strong>' + (totalMatches > 0 ? Math.round(wins / totalMatches * 100) : 0) + '%</strong>。';
+    html += i18n[currentLang].ps_sum1.replace('{player}', '<strong>' + escapeHtml(playerName) + '</strong>').replace('{total}', '<strong>' + totalMatches + '</strong>').replace('{wins}', '<strong>' + wins + '</strong>').replace('{losses}', '<strong>' + losses + '</strong>');
+    html += '<br>';
+    html += i18n[currentLang].ps_sum2.replace('{player}', '<strong>' + escapeHtml(playerName) + '</strong>').replace('{percent}', '<strong>' + (totalMatches > 0 ? Math.round(wins / totalMatches * 100) : 0) + '</strong>');
     html += '</div>';
 
     // === 自定义标签和荣誉 ===
@@ -775,19 +784,19 @@ function renderPersonalStats(playerName) {
         html += '<div class="personal-tags-honors">';
         if (playerTags.length > 0) {
             html += '<div class="personal-tags-section">';
-            html += '<span class="personal-tags-label"><i class="fa-solid fa-tags"></i> 标签</span>';
+            html += '<span class="personal-tags-label"><i class="fa-solid fa-tags"></i> ' + i18n[currentLang].ps_tags_label + '</span>';
             playerTags.forEach(tag => {
-                html += '<span class="personal-tag-badge">' + tag + '</span>';
+                html += '<span class="personal-tag-badge">' + escapeHtml(tag) + '</span>';
             });
             html += '</div>';
         }
         if (playerHonors.length > 0) {
             html += '<div class="personal-honors-section">';
-            html += '<span class="personal-honors-label"><i class="fa-solid fa-medal"></i> 荣誉</span>';
+            html += '<span class="personal-honors-label"><i class="fa-solid fa-medal"></i> ' + i18n[currentLang].ps_honors_label + '</span>';
             playerHonors.forEach((honor, i) => {
                 html += '<span class="personal-honor-badge">';
                 if (i === 0) html += '<i class="fa-solid fa-crown"></i> ';
-                html += honor + '</span>';
+                html += escapeHtml(honor) + '</span>';
             });
             html += '</div>';
         }
@@ -797,15 +806,15 @@ function renderPersonalStats(playerName) {
     html += '<div class="personal-cards-grid">';
 
     html += '<div class="personal-card victory-card">';
-    html += '<div class="personal-card-header"><i class="fa-solid fa-trophy"></i> 胜利 · 曾战胜的前三名</div>';
+    html += '<div class="personal-card-header"><i class="fa-solid fa-trophy"></i> ' + i18n[currentLang].ps_card_victory + '</div>';
     if (beatenOpps.length === 0) {
-        html += '<div class="personal-card-empty">暂无</div>';
+        html += '<div class="personal-card-empty">' + i18n[currentLang].ps_none + '</div>';
     } else {
         html += '<div class="personal-card-list">';
         beatenOpps.forEach(([name, s], i) => {
             html += '<div class="personal-card-item">';
             html += '<span class="personal-card-rank">' + (i+1) + '</span>';
-            html += '<span class="personal-card-name">' + name + '<span class="personal-card-score">(' + s.preWinScore + ')</span></span>';
+            html += '<span class="personal-card-name">' + escapeHtml(name) + '<span class="personal-card-score">(' + s.preWinScore + ')</span></span>';
             html += '<span class="personal-card-date">' + fmtDate(s.lastWinDate) + '</span>';
             html += '</div>';
         });
@@ -814,15 +823,15 @@ function renderPersonalStats(playerName) {
     html += '</div>';
 
     html += '<div class="personal-card pk-card">';
-    html += '<div class="personal-card-header"><i class="fa-solid fa-hand-fist"></i> PK · 曾交手的前三名</div>';
+    html += '<div class="personal-card-header"><i class="fa-solid fa-hand-fist"></i> ' + i18n[currentLang].ps_card_pk + '</div>';
     if (frequentOpps.length === 0) {
-        html += '<div class="personal-card-empty">暂无</div>';
+        html += '<div class="personal-card-empty">' + i18n[currentLang].ps_none + '</div>';
     } else {
         html += '<div class="personal-card-list">';
         frequentOpps.forEach(([name, s], i) => {
             html += '<div class="personal-card-item">';
             html += '<span class="personal-card-rank">' + (i+1) + '</span>';
-            html += '<span class="personal-card-name">' + name + '<span class="personal-card-score">(' + s.preMatchScore + ')</span></span>';
+            html += '<span class="personal-card-name">' + escapeHtml(name) + '<span class="personal-card-score">(' + s.preMatchScore + ')</span></span>';
             html += '<span class="personal-card-date">' + fmtDate(s.lastDate) + '</span>';
             html += '</div>';
         });
@@ -831,9 +840,9 @@ function renderPersonalStats(playerName) {
     html += '</div>';
 
     html += '<div class="personal-card lucky-card">';
-    html += '<div class="personal-card-header"><i class="fa-solid fa-star"></i> 拿捏</div>';
+    html += '<div class="personal-card-header"><i class="fa-solid fa-star"></i> ' + i18n[currentLang].ps_card_lucky + '</div>';
     if (luckyStars.length === 0) {
-        html += '<div class="personal-card-empty">暂无</div>';
+        html += '<div class="personal-card-empty">' + i18n[currentLang].ps_none + '</div>';
     } else {
         html += '<div class="personal-card-list">';
         luckyStars.forEach((x, i) => {
@@ -841,8 +850,8 @@ function renderPersonalStats(playerName) {
             const wr = totalGames > 0 ? ((x.wins / totalGames) * 100).toFixed(0) : 0;
             html += '<div class="personal-card-item">';
             html += '<span class="personal-card-rank">' + (i+1) + '</span>';
-            html += '<span class="personal-card-name">' + x.name + '<span class="personal-card-score">(' + x.curScore + ')</span></span>';
-            html += '<span class="personal-card-sub">' + x.wins + '胜' + x.losses + '负 胜率:' + wr + '%</span>';
+            html += '<span class="personal-card-name">' + escapeHtml(x.name) + '<span class="personal-card-score">(' + x.curScore + ')</span></span>';
+            html += '<span class="personal-card-sub">' + i18n[currentLang].ps_card_sub.replace('{w}', x.wins).replace('{l}', x.losses).replace('{wr}', wr) + '</span>';
             html += '</div>';
         });
         html += '</div>';
@@ -850,9 +859,9 @@ function renderPersonalStats(playerName) {
     html += '</div>';
 
     html += '<div class="personal-card nemesis-card">';
-    html += '<div class="personal-card-header"><i class="fa-solid fa-skull"></i> 克星</div>';
+    html += '<div class="personal-card-header"><i class="fa-solid fa-skull"></i> ' + i18n[currentLang].ps_card_nemesis + '</div>';
     if (nemeses.length === 0) {
-        html += '<div class="personal-card-empty">暂无</div>';
+        html += '<div class="personal-card-empty">' + i18n[currentLang].ps_none + '</div>';
     } else {
         html += '<div class="personal-card-list">';
         nemeses.forEach((x, i) => {
@@ -860,8 +869,8 @@ function renderPersonalStats(playerName) {
             const wr = totalGames > 0 ? ((x.wins / totalGames) * 100).toFixed(0) : 0;
             html += '<div class="personal-card-item">';
             html += '<span class="personal-card-rank">' + (i+1) + '</span>';
-            html += '<span class="personal-card-name">' + x.name + '<span class="personal-card-score">(' + x.curScore + ')</span></span>';
-            html += '<span class="personal-card-sub">' + x.wins + '胜' + x.losses + '负 胜率:' + wr + '%</span>';
+            html += '<span class="personal-card-name">' + escapeHtml(x.name) + '<span class="personal-card-score">(' + x.curScore + ')</span></span>';
+            html += '<span class="personal-card-sub">' + i18n[currentLang].ps_card_sub.replace('{w}', x.wins).replace('{l}', x.losses).replace('{wr}', wr) + '</span>';
             html += '</div>';
         });
         html += '</div>';

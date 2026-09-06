@@ -21,28 +21,32 @@ const safeStorage = {
 // 全局搜索：为所有加载 common.js 的页面注入搜索按钮 + 遮罩层（若页面未内置）
 (function ensureGlobalSearchUI() {
     if (window.__WFLS_DISABLE_SEARCH__) return;  // 页面可设置此标志以禁用注入（如 wtt_hub.html）
-    if (document.getElementById('searchToggle')) return;
     // 搜索按钮：插入到 nav-actions 最前面
     var actions = document.querySelector('.nav-actions');
-    var toggle = document.createElement('button');
-    toggle.className = 'search-toggle';
-    toggle.id = 'searchToggle';
-    toggle.setAttribute('aria-label', '搜索');
-    toggle.innerHTML = '<i class="fa-solid fa-magnifying-glass"></i>';
-    if (actions) {
-        actions.insertBefore(toggle, actions.firstChild);
-    } else {
-        // 无导航栏的页面（如 wtt_hub）：固定在右上角
-        toggle.style.cssText = 'position:fixed;top:16px;right:16px;z-index:1200;margin-left:auto;';
-        toggle.classList.add('lang-toggle', 'search-toggle-hub');
-        document.body.appendChild(toggle);
+    if (!document.getElementById('searchToggle')) {
+        var toggle = document.createElement('button');
+        toggle.className = 'search-toggle';
+        toggle.id = 'searchToggle';
+        toggle.setAttribute('aria-label', '搜索');
+        toggle.innerHTML = '<i class="fa-solid fa-magnifying-glass"></i>';
+        if (actions) {
+            actions.insertBefore(toggle, actions.firstChild);
+        } else {
+            // 无导航栏的页面（如 wtt_hub）：固定在右上角
+            toggle.style.cssText = 'position:fixed;top:16px;right:16px;z-index:1200;margin-left:auto;';
+            toggle.classList.add('lang-toggle', 'search-toggle-hub');
+            document.body.appendChild(toggle);
+        }
     }
-    // 搜索遮罩层
-    var overlay = document.createElement('div');
-    overlay.className = 'search-overlay';
-    overlay.id = 'searchOverlay';
-    overlay.innerHTML = '<div class="search-modal glass-card"><div class="search-header"><div class="search-input-wrapper"><i class="fa-solid fa-magnifying-glass search-input-icon"></i><input type="text" class="search-input" id="searchInput" placeholder="搜索..." autocomplete="off"><button class="search-clear" id="searchClear" style="display:none;"><i class="fa-solid fa-xmark"></i></button></div><button class="search-close-btn" id="searchClose"><i class="fa-solid fa-xmark"></i></button></div><div class="search-results" id="searchResults"><div class="search-placeholder"><i class="fa-solid fa-magnifying-glass"></i><p data-i18n="search_input_hint">输入关键词开始搜索</p><p class="search-hint" data-i18n="search_hint_info">支持搜索标题、内容、姓名等</p></div></div></div></div>';
-    document.body.appendChild(overlay);
+    // 搜索遮罩层：与按钮分开补齐 —— 共享导航自带按钮的页面此前会在这里整体跳过，
+    // 导致遮罩缺失、搜索按钮点了没反应（此前仅 index/contact 静态内置遮罩的页面搜索可用）
+    if (!document.getElementById('searchOverlay')) {
+        var overlay = document.createElement('div');
+        overlay.className = 'search-overlay';
+        overlay.id = 'searchOverlay';
+        overlay.innerHTML = '<div class="search-modal glass-card"><div class="search-header"><div class="search-input-wrapper"><i class="fa-solid fa-magnifying-glass search-input-icon"></i><input type="text" class="search-input" id="searchInput" placeholder="搜索..." autocomplete="off"><button class="search-clear" id="searchClear" style="display:none;"><i class="fa-solid fa-xmark"></i></button></div><button class="search-close-btn" id="searchClose"><i class="fa-solid fa-xmark"></i></button></div><div class="search-results" id="searchResults"><div class="search-placeholder"><i class="fa-solid fa-magnifying-glass"></i><p data-i18n="search_input_hint">输入关键词开始搜索</p><p class="search-hint" data-i18n="search_hint_info">支持搜索标题、内容、姓名等</p></div></div></div></div>';
+        document.body.appendChild(overlay);
+    }
 })();
 
 // 通用内容区加载提示（用于 news/competitions/home 等页面）
@@ -79,6 +83,34 @@ function showContentLoading(containerId, msg) {
     };
 }
 
+// 内容列表加载失败时的错误占位 + 重试按钮（替代静默渲染空白网格）
+function showContentLoadFail(containerId, retryFn) {
+    var el = document.getElementById(containerId);
+    if (!el) return;
+    el.innerHTML = '';
+    var box = document.createElement('div');
+    box.style.cssText = 'grid-column:1/-1;text-align:center;padding:48px 20px;';
+    box.innerHTML = '<i class="fa-solid fa-triangle-exclamation" style="font-size:1.8rem;color:var(--accent-red);"></i>'
+        + '<p style="margin:12px 0 2px;color:var(--accent-red);font-weight:600;">' + escapeHtml(i18n[currentLang].content_load_fail) + '</p>'
+        + '<p style="font-size:0.85rem;margin:0 0 16px;color:var(--text-tertiary);">' + escapeHtml(i18n[currentLang].content_load_fail_hint) + '</p>';
+    var btn = document.createElement('button');
+    btn.className = 'btn btn-sm btn-primary';
+    btn.textContent = i18n[currentLang].detail_retry;
+    btn.addEventListener('click', () => { if (typeof retryFn === 'function') retryFn(); });
+    box.appendChild(btn);
+    el.appendChild(box);
+}
+
+// 内容列表为空时的占位提示
+function showContentEmptyState(containerId) {
+    var el = document.getElementById(containerId);
+    if (!el) return;
+    var box = document.createElement('div');
+    box.style.cssText = 'grid-column:1/-1;text-align:center;padding:48px 20px;color:var(--text-tertiary);';
+    box.innerHTML = '<i class="fa-solid fa-inbox" style="font-size:1.6rem;display:block;margin-bottom:10px;opacity:.6;"></i><p data-i18n="content_empty">' + escapeHtml(i18n[currentLang].content_empty) + '</p>';
+    el.appendChild(box);
+}
+
 // 带下载进度回调的 JSON 加载：能拿到 Content-Length 时回调确定百分比，
 // 否则回调 null（调用方切换为不定进度动画）。gzip/brotli 下 content-length 为压缩字节数，
 // 解压后 received 可能超过它，百分比夹取到 99%，流结束后再补 100%。
@@ -104,7 +136,7 @@ async function fetchJsonWithProgress(url, onProgress) {
 
 const i18n = {
     zh: {
-        site_title: "武汉外国语学校乒乓球社团 | WFLS Table Tennis Club", nav_home: "Home", nav_news: "News", nav_competitions: "Competitions", nav_contact: "Contact", nav_more: "More...", nav_members: "社团骨干", nav_qa: "Q&A", lang_btn: "EN",
+        site_title: "武汉外国语学校乒乓球社团 | WFLS Table Tennis Club", nav_home: "Home", nav_news: "News", nav_competitions: "Competitions", nav_contact: "Contact", nav_more: "More...", nav_members: "社团骨干", nav_personal: "个人数据", nav_qa: "Q&A", nav_changelog: "更新日志", lang_btn: "EN",
         hero_title: "武汉外国语学校<br><span class='hero-title-accent'>乒乓球社团</span>", hero_slogan: "挥拍逐梦，旋转青春", hero_btn_about: "了解社团 <i class='fa-solid fa-arrow-right'></i>", hero_btn_join: "加入我们 <i class='fa-solid fa-plus'></i>", scroll: "Scroll",
         side_home: "首页", side_philosophy: "社团理念", side_activities: "社团活动", side_members: "社团骨干", side_news: "最新动态", side_competitions: "赛事信息",
         philosophy_tag: "Philosophy", philosophy_title: "社团理念", philosophy_desc: "我们的核心价值观与指导思想",
@@ -112,6 +144,7 @@ const i18n = {
         members_tag: "Core Members", members_title: "社团骨干", members_desc: "引领社团发展的核心力量",
         news_tag: "Latest News", news_title: "最新动态", news_desc: "关注社团最新活动与公告", news_all: "查看全部动态",
         comp_tag: "Competitions", comp_title: "赛事信息", comp_desc: "近期比赛安排与成绩", comp_all: "查看全部赛事",
+        hl_tag: "Highlights", hl_title: "最新快报", hl_desc: "社团最新动态与赛事信息一览",
         contact_page_title: "联系我们 | WFLS Table Tennis Club", contact_tag: "Contact", contact_title: "加入我们", contact_desc: "扫描二维码加入社团QQ群", contact_text: "扫码加入社团QQ群，与我们一起挥拍逐梦", contact_btn: "扫描二维码加入社团群", contact_qr_title: "社团QQ群二维码", contact_qr_desc: "扫码加入社团QQ群，与我们一起挥拍逐梦",
         footer_brand: "武汉外国语学校乒乓球社团", footer_motto: "挥拍逐梦，旋转青春", footer_nav: "快速导航", footer_school: "学校信息", footer_school_name: "武汉外国语学校", footer_location: "湖北省武汉市",
         modal_title: "社团QQ群二维码", modal_desc: "扫描下方二维码加入社团QQ群", modal_note: "二维码定期更新，如有问题请联系社团管理员",
@@ -131,7 +164,14 @@ const i18n = {
         pagination_prev: "上一页", pagination_next: "下一页", pagination_info: "第 {current} 页，共 {total} 页",
         data_viz_page_title: "数据可视化 | WFLS Table Tennis Club", data_viz_tag: "Data Visualization", data_viz_title: "数据可视化", data_viz_desc: "积分趋势 · 排名变化 · 球员对比",
         data_viz_points_trend: "积分趋势", data_viz_rank_stream: "排名变化河流图", data_viz_player_compare: "球员对比", data_viz_select_players: "选择球员（最多8人）", data_viz_select_player_a: "球员 A", data_viz_select_player_b: "球员 B", data_viz_apply: "应用", data_viz_top_n: "显示前", data_viz_head_to_head: "历史交手记录",
-        data_viz_recent: "最近", data_viz_data_points: "个数据点", data_viz_top_n_suffix: "名球员", data_viz_compare_btn: "对比", data_viz_compare_placeholder: "选择两名球员进行对比分析", data_viz_no_players: "暂无球员数据", data_viz_alert_select_one: "请至少选择一名球员", data_viz_alert_max: "最多选择15名球员", data_viz_alert_two: "请选择两名球员", data_viz_alert_diff: "请选择不同的球员", data_viz_select_player_ph: "-- 选择球员 --", data_viz_win: "胜", data_viz_total_h2h: "总交手: {n} 场", data_viz_recent_match: "最近: {date} (胜者: {winner})", data_viz_pts_change: "{player} 积分变动", data_viz_no_h2h: "暂无交手记录", data_viz_col_date: "日期", data_viz_col_type: "类型", data_viz_col_winner: "胜者", data_viz_axis_points: "积分", data_viz_axis_rank: "排名", data_viz_rank_suffix: "第{n}名", data_viz_topn_select_title: "填写1-20的任意正整数", data_viz_cur_score: "当前积分", data_viz_h2h_rate: "交手胜率", data_viz_pred_rate: "预测胜率", data_viz_prepare: "准备下载数据文件...", data_viz_topn_title: "显示最近N个数据点", data_viz_stream_title: "显示最近N个数据点", data_viz_loading: "加载数据中...", data_viz_downloading: "正在下载 {label} ({i}/{total}): {file}", data_viz_calculating: "正在计算排名积分...", data_viz_load_fail: "❌ 排名数据加载失败，请刷新页面重试", data_viz_file_players: "球员档案", data_viz_file_matches: "比赛记录", data_viz_file_initial: "初始积分", data_viz_file_event: "赛事系数", data_viz_file_decay: "衰减配置", data_viz_file_season: "赛季配置", data_viz_no_player_list: "❌ 无法获取球员列表",
+        data_viz_recent: "最近", data_viz_data_points: "个数据点", data_viz_top_n_suffix: "名球员", data_viz_compare_btn: "对比", data_viz_compare_placeholder: "选择两名球员进行对比分析", data_viz_no_players: "暂无球员数据", data_viz_alert_select_one: "请至少选择一名球员", data_viz_alert_max: "最多选择15名球员", data_viz_alert_two: "请选择两名球员", data_viz_alert_diff: "请选择不同的球员", data_viz_select_player_ph: "-- 选择球员 --", data_viz_win: "胜", data_viz_total_h2h: "总交手: {n} 场", data_viz_recent_match: "最近: {date} (胜者: {winner})", data_viz_pts_change: "{player} 积分变动", data_viz_no_h2h: "暂无交手记录", data_viz_col_date: "日期", data_viz_col_type: "类型", data_viz_col_winner: "胜者", data_viz_axis_points: "积分", data_viz_axis_rank: "排名", data_viz_rank_suffix: "第{n}名", data_viz_topn_select_title: "填写1-20的任意正整数", data_viz_bins_title: "填写4-100的任意正整数", data_viz_cur_score: "当前积分", data_viz_h2h_rate: "交手胜率", data_viz_pred_rate: "预测胜率", data_viz_prepare: "准备下载数据文件...", data_viz_topn_title: "显示最近N个数据点", data_viz_stream_title: "显示最近N个数据点", data_viz_loading: "加载数据中...", data_viz_downloading: "正在下载 {label} ({i}/{total}): {file}", data_viz_calculating: "正在计算排名积分...", data_viz_load_fail: "❌ 排名数据加载失败，请刷新页面重试", data_viz_file_players: "球员档案", data_viz_file_matches: "比赛记录", data_viz_file_initial: "初始积分", data_viz_file_event: "赛事系数", data_viz_file_decay: "衰减配置", data_viz_file_season: "赛季配置", data_viz_no_player_list: "❌ 无法获取球员列表",
+        ps_ov_total: "总场次", ps_ov_wins: "获胜", ps_ov_losses: "失利", ps_ov_rate: "胜率", ps_ov_points: "当前积分",
+        ps_sum1: "{player}共进行了{total}盘单打比赛，其中获胜{wins}盘，失利{losses}盘。", ps_sum2: "{player}的胜率为{percent}%。",
+        ps_tags_label: "标签", ps_honors_label: "荣誉", ps_date_ymd: "{y}年{m}月{d}日",
+        ps_card_victory: "胜利 · 曾战胜的前三名", ps_card_pk: "PK · 曾交手的前三名", ps_card_lucky: "拿捏", ps_card_nemesis: "克星",
+        ps_none: "暂无", ps_card_sub: "{w}胜{l}负 胜率:{wr}%",
+        content_load_fail: "内容加载失败", content_load_fail_hint: "网络异常或数据暂时不可用，请稍后重试。", content_empty: "暂无内容",
+        detail_prev: "上一篇", detail_next: "下一篇", detail_no_prev: "没有上一篇了", detail_no_next: "没有下一篇了",
         data_viz_race_title: "排名动态竞速 Top 15", data_viz_race_play: "播放", data_viz_race_pause: "暂停", data_viz_race_speed: "速度", data_viz_race_hint: "拖动滑块或播放，查看排名随时间变化",
         data_viz_record_title: "战绩统计", data_viz_efficiency_title: "场次×积分效率", data_viz_heatmap_title: "交手热力矩阵", data_viz_freq_title: "比赛频次时间轴", data_viz_dist_title: "积分区间分布", data_viz_loss: "负", data_viz_total: "总场次", data_viz_winrate: "胜率", data_viz_form: "状态分", data_viz_pts_norm: "积分", data_viz_bucket_week: "按周", data_viz_bucket_month: "按月", data_viz_bins: "分档数", data_viz_no_data: "暂无数据", data_viz_heatmap_cell: "{winner} 对 {loser} 胜 {n} 场", data_viz_heatmap_hint: "行球员对列球员的胜场 · 颜色越深胜场越多", data_viz_axis_matches: "场次", data_viz_axis_players: "球员", data_viz_axis_count: "人数", data_viz_bucket_label: "时间粒度", data_viz_other: "其他",
         data_viz_heatmap_mode: "显示模式", data_viz_heatmap_mode_wins: "胜场数", data_viz_heatmap_mode_rate: "胜率", data_viz_heatmap_cell_rate: "{winner} 对 {loser} 胜率 {r}%（{n} 场）", data_viz_heatmap_hint_rate: "行球员对列球员的交手胜率 · 蓝色越深胜率越高，红色越深胜率越低",
@@ -150,7 +190,7 @@ const i18n = {
         search_rank_tpl: "排名：{rank} | 胜率：{rate}",
         content_loading: "加载中...", loading_about: "加载社团信息...", loading_members: "加载成员数据...", loading_news: "加载动态...", loading_competitions: "加载赛事...",
         chart_matches_suffix: " 场", chart_axis_ym_tpl: "{y}年{m}月",
-        dv_fullscreen: "全屏显示 (网页内)", dv_zoom_out: "缩小", dv_zoom_in: "放大", dv_zoom_fit: "适应内容", dv_zoom_reset: "重置视图", dv_search_placeholder: "搜索选手 / 队伍，高亮晋级路径", dv_champion: "冠军", dv_status_scheduled: "待赛", dv_status_live: "比赛进行中", dv_tbd: "待定", dv_total_score: "总比分", dv_round_1: "第一轮", dv_round_2: "第二轮", dv_semis: "半决赛", dv_final: "决赛", dv_round_n: "第{n}轮", dv_legend_win: "胜者", dv_legend_loss: "负者", dv_legend_live: "进行中", dv_legend_pending: "待赛", dv_legend_path: "晋级路径",
+        dv_fullscreen: "全屏显示 (网页内)", dv_zoom_out: "缩小", dv_zoom_in: "放大", dv_zoom_fit: "适应内容", dv_zoom_reset: "重置视图", dv_search_placeholder: "搜索选手 / 队伍，高亮晋级路径", dv_champion: "冠军", dv_status_scheduled: "待赛", dv_status_live: "比赛进行中", dv_tbd: "待定", dv_total_score: "总比分", dv_round_1: "第一轮", dv_round_2: "第二轮", dv_quarters: "1/4决赛", dv_semis: "半决赛", dv_final: "决赛", dv_round_n: "第{n}轮", dv_legend_win: "胜者", dv_legend_loss: "负者", dv_legend_live: "进行中", dv_legend_pending: "待赛", dv_legend_path: "晋级路径",
         rank_no_data: "暂无排名数据", rank_no_records: "暂无记录", rank_add_short: "加分", rank_ppl: "{n}人", rank_node_count: "{n}个节点",
         rank_loading: "正在加载排名数据...", rank_prepare: "准备下载数据文件...", rank_download_file: "正在下载 {label} ({i}/{total}): {file}", rank_calculating: "正在计算排名积分（此过程可能较慢，请耐心等待）...", rank_calc_fail: "无法计算排名数据",
         rank_view_player_page: "查看个人数据页", rank_click_detail: "点击查看积分明细",
@@ -193,7 +233,7 @@ const i18n = {
         wtt_cat_ms: "男子单打", wtt_cat_ws: "女子单打", wtt_cat_md: "男子双打", wtt_cat_wd: "女子双打", wtt_cat_xd: "混合双打"
     },
     en: {
-        site_title: "WFLS Table Tennis Club | Wuhan Foreign Languages School", nav_home: "Home", nav_news: "News", nav_competitions: "Competitions", nav_contact: "Contact", nav_more: "More...", nav_members: "Core Members", nav_qa: "Q&A", lang_btn: "中文",
+        site_title: "WFLS Table Tennis Club | Wuhan Foreign Languages School", nav_home: "Home", nav_news: "News", nav_competitions: "Competitions", nav_contact: "Contact", nav_more: "More...", nav_members: "Core Members", nav_personal: "Personal Stats", nav_qa: "Q&A", nav_changelog: "Changelog", lang_btn: "中文",
         hero_title: "Wuhan Foreign Languages School<br><span class='hero-title-accent'>Table Tennis Club</span>", hero_slogan: "Swing for dreams, spin for youth", hero_btn_about: "About Us <i class='fa-solid fa-arrow-right'></i>", hero_btn_join: "Join Us <i class='fa-solid fa-plus'></i>", scroll: "Scroll",
         side_home: "Home", side_philosophy: "Philosophy", side_activities: "Activities", side_members: "Members", side_news: "News", side_competitions: "Competitions",
         philosophy_tag: "Philosophy", philosophy_title: "Philosophy", philosophy_desc: "Our core values and guiding principles",
@@ -201,6 +241,7 @@ const i18n = {
         members_tag: "Core Members", members_title: "Core Members", members_desc: "The driving force behind the club",
         news_tag: "Latest News", news_title: "Latest News", news_desc: "Stay updated with club activities and announcements", news_all: "View All News",
         comp_tag: "Competitions", comp_title: "Competitions", comp_desc: "Upcoming matches and results", comp_all: "View All Competitions",
+        hl_tag: "Highlights", hl_title: "Highlights", hl_desc: "The latest club news and competition updates at a glance",
         contact_page_title: "Contact | WFLS Table Tennis Club", contact_tag: "Contact", contact_title: "Join Us", contact_desc: "Scan the QR code to join the club QQ group and receive notifications", contact_text: "Scan to join the club QQ group and swing with us", contact_btn: "Scan QR Code to Join", contact_qr_title: "Club QQ Group QR Code", contact_qr_desc: "Scan to join the club QQ group and swing with us",
         footer_brand: "WFLS Table Tennis Club", footer_motto: "Swing for dreams, spin for youth", footer_nav: "Quick Links", footer_school: "School Info", footer_school_name: "Wuhan Foreign Languages School", footer_location: "Wuhan, Hubei, China",
         modal_title: "Club QQ Group QR Code", modal_desc: "Scan the QR code below to join the club QQ group", modal_note: "QR code updates periodically.",
@@ -220,7 +261,14 @@ const i18n = {
         pagination_prev: "Previous", pagination_next: "Next", pagination_info: "Page {current} of {total}",
         data_viz_page_title: "Data Visualization | WFLS Table Tennis Club", data_viz_tag: "Data Visualization", data_viz_title: "Data Visualization", data_viz_desc: "Points Trend · Rank Flow · Player Compare",
         data_viz_points_trend: "Points Trend", data_viz_rank_stream: "Rank Flow", data_viz_player_compare: "Player Comparison", data_viz_select_players: "Select Players (max 8)", data_viz_select_player_a: "Player A", data_viz_select_player_b: "Player B", data_viz_apply: "Apply", data_viz_top_n: "Top", data_viz_head_to_head: "Head to Head",
-        data_viz_recent: "Recent", data_viz_data_points: "data points", data_viz_top_n_suffix: "players", data_viz_compare_btn: "Compare", data_viz_compare_placeholder: "Select two players to compare", data_viz_no_players: "No players yet", data_viz_alert_select_one: "Please select at least one player", data_viz_alert_max: "Maximum of 15 players", data_viz_alert_two: "Please select two players", data_viz_alert_diff: "Please select two different players", data_viz_select_player_ph: "-- Select Player --", data_viz_win: "wins", data_viz_total_h2h: "Total H2H: {n} matches", data_viz_recent_match: "Recent: {date} (Winner: {winner})", data_viz_pts_change: "{player} point change", data_viz_no_h2h: "No head-to-head records", data_viz_col_date: "Date", data_viz_col_type: "Type", data_viz_col_winner: "Winner", data_viz_axis_points: "Points", data_viz_axis_rank: "Rank", data_viz_rank_suffix: "Rank #{n}", data_viz_topn_select_title: "Enter any positive integer from 1 to 20", data_viz_cur_score: "Current Points", data_viz_h2h_rate: "H2H Win Rate", data_viz_pred_rate: "Predicted Win Rate", data_viz_prepare: "Preparing data files...", data_viz_topn_title: "Show recent N data points", data_viz_stream_title: "Show recent N data points", data_viz_loading: "Loading data...", data_viz_downloading: "Downloading {label} ({i}/{total}): {file}", data_viz_calculating: "Calculating rankings...", data_viz_load_fail: "❌ Failed to load ranking data. Please refresh and try again.", data_viz_file_players: "Players", data_viz_file_matches: "Match Records", data_viz_file_initial: "Initial Scores", data_viz_file_event: "Event Coefficients", data_viz_file_decay: "Decay Config", data_viz_file_season: "Season Config", data_viz_no_player_list: "❌ Could not fetch player list",
+        data_viz_recent: "Recent", data_viz_data_points: "data points", data_viz_top_n_suffix: "players", data_viz_compare_btn: "Compare", data_viz_compare_placeholder: "Select two players to compare", data_viz_no_players: "No players yet", data_viz_alert_select_one: "Please select at least one player", data_viz_alert_max: "Maximum of 15 players", data_viz_alert_two: "Please select two players", data_viz_alert_diff: "Please select two different players", data_viz_select_player_ph: "-- Select Player --", data_viz_win: "wins", data_viz_total_h2h: "Total H2H: {n} matches", data_viz_recent_match: "Recent: {date} (Winner: {winner})", data_viz_pts_change: "{player} point change", data_viz_no_h2h: "No head-to-head records", data_viz_col_date: "Date", data_viz_col_type: "Type", data_viz_col_winner: "Winner", data_viz_axis_points: "Points", data_viz_axis_rank: "Rank", data_viz_rank_suffix: "Rank #{n}", data_viz_topn_select_title: "Enter any positive integer from 1 to 20", data_viz_bins_title: "Enter any integer from 4 to 100", data_viz_cur_score: "Current Points", data_viz_h2h_rate: "H2H Win Rate", data_viz_pred_rate: "Predicted Win Rate", data_viz_prepare: "Preparing data files...", data_viz_topn_title: "Show recent N data points", data_viz_stream_title: "Show recent N data points", data_viz_loading: "Loading data...", data_viz_downloading: "Downloading {label} ({i}/{total}): {file}", data_viz_calculating: "Calculating rankings...", data_viz_load_fail: "❌ Failed to load ranking data. Please refresh and try again.", data_viz_file_players: "Players", data_viz_file_matches: "Match Records", data_viz_file_initial: "Initial Scores", data_viz_file_event: "Event Coefficients", data_viz_file_decay: "Decay Config", data_viz_file_season: "Season Config", data_viz_no_player_list: "❌ Could not fetch player list",
+        ps_ov_total: "Matches", ps_ov_wins: "Wins", ps_ov_losses: "Losses", ps_ov_rate: "Win Rate", ps_ov_points: "Points",
+        ps_sum1: "{player} has played {total} singles matches, winning {wins} and losing {losses}.", ps_sum2: "{player}'s win rate is {percent}%.",
+        ps_tags_label: "Tags", ps_honors_label: "Honors", ps_date_ymd: "{m}/{d}/{y}",
+        ps_card_victory: "Wins · Top 3 Beaten", ps_card_pk: "Head-to-Head · Top 3", ps_card_lucky: "Dominates", ps_card_nemesis: "Nemeses",
+        ps_none: "None yet", ps_card_sub: "{w}W {l}L · {wr}%",
+        content_load_fail: "Failed to load content", content_load_fail_hint: "Network error or data temporarily unavailable. Please try again later.", content_empty: "Nothing here yet",
+        detail_prev: "Previous", detail_next: "Next", detail_no_prev: "No newer post", detail_no_next: "No older post",
         data_viz_record_title: "Match Records", data_viz_efficiency_title: "Matches × Points", data_viz_heatmap_title: "Head-to-Head Matrix", data_viz_freq_title: "Match Frequency Timeline", data_viz_dist_title: "Score Distribution", data_viz_loss: "Losses", data_viz_total: "Matches", data_viz_winrate: "Win Rate", data_viz_form: "Form", data_viz_pts_norm: "Points", data_viz_bucket_week: "Weekly", data_viz_bucket_month: "Monthly", data_viz_bins: "Bins", data_viz_no_data: "No data", data_viz_heatmap_cell: "{winner} beats {loser} {n} times", data_viz_heatmap_hint: "Row player wins vs column player · darker = more wins", data_viz_axis_matches: "Matches", data_viz_axis_players: "Players", data_viz_axis_count: "Players", data_viz_bucket_label: "Granularity", data_viz_other: "Other",
         data_viz_race_title: "Bar Chart Race Top 15", data_viz_race_play: "Play", data_viz_race_pause: "Pause", data_viz_race_speed: "Speed", data_viz_race_hint: "Drag the slider or press play to see the top 15 evolve",
         data_viz_heatmap_mode: "Display Mode", data_viz_heatmap_mode_wins: "Win Counts", data_viz_heatmap_mode_rate: "Win Rate", data_viz_heatmap_cell_rate: "{winner} vs {loser}: win rate {r}% ({n} matches)", data_viz_heatmap_hint_rate: "Row player win rate vs column player · bluer = higher rate, redder = lower",
@@ -239,7 +287,7 @@ const i18n = {
         search_rank_tpl: "Rank {rank} | Win rate {rate}",
         content_loading: "Loading...", loading_about: "Loading club info...", loading_members: "Loading members...", loading_news: "Loading news...", loading_competitions: "Loading competitions...",
         chart_matches_suffix: " matches", chart_axis_ym_tpl: "{m}/{y}",
-        dv_fullscreen: "Fullscreen (in page)", dv_zoom_out: "Zoom out", dv_zoom_in: "Zoom in", dv_zoom_fit: "Fit content", dv_zoom_reset: "Reset view", dv_search_placeholder: "Search player / team, highlight path", dv_champion: "Champion", dv_status_scheduled: "Scheduled", dv_status_live: "Live", dv_tbd: "TBD", dv_total_score: "Total", dv_round_1: "Round 1", dv_round_2: "Round 2", dv_semis: "Semifinals", dv_final: "Final", dv_round_n: "Round {n}", dv_legend_win: "Winner", dv_legend_loss: "Loser", dv_legend_live: "Live", dv_legend_pending: "Scheduled", dv_legend_path: "Path",
+        dv_fullscreen: "Fullscreen (in page)", dv_zoom_out: "Zoom out", dv_zoom_in: "Zoom in", dv_zoom_fit: "Fit content", dv_zoom_reset: "Reset view", dv_search_placeholder: "Search player / team, highlight path", dv_champion: "Champion", dv_status_scheduled: "Scheduled", dv_status_live: "Live", dv_tbd: "TBD", dv_total_score: "Total", dv_round_1: "Round 1", dv_round_2: "Round 2", dv_quarters: "Quarterfinals", dv_semis: "Semifinals", dv_final: "Final", dv_round_n: "Round {n}", dv_legend_win: "Winner", dv_legend_loss: "Loser", dv_legend_live: "Live", dv_legend_pending: "Scheduled", dv_legend_path: "Path",
         rank_no_data: "No ranking data", rank_no_records: "No records", rank_add_short: "Bonus", rank_ppl: "{n} players", rank_node_count: "{n} nodes",
         rank_loading: "Loading ranking data...", rank_prepare: "Preparing to download data files...", rank_download_file: "Downloading {label} ({i}/{total}): {file}", rank_calculating: "Calculating ranking points (this may take a while)...", rank_calc_fail: "Unable to compute ranking data",
         rank_view_player_page: "View personal page", rank_click_detail: "Click for score details",
@@ -400,7 +448,7 @@ function buildRankTableImageCanvas(rows, opts) {
         return { text: '-', color: C.muted, weight: 400 };
     };
     const cols = [
-        { align: 'center', minW: 40, cell: (p, i) => ({ text: String(i + 1), color: i === 0 ? C.gold : i === 1 ? C.silver : i === 2 ? C.bronze : C.sub, weight: i < 3 ? 700 : 500 }) },
+        { align: 'center', minW: 40, cell: (p, i) => { const r = p.rank || (i + 1); return { text: String(r), color: r === 1 ? C.gold : r === 2 ? C.silver : r === 3 ? C.bronze : C.sub, weight: r <= 3 ? 700 : 500 }; } },
         { label: L.rank_col_name, align: 'left', minW: 88, cell: p => ({ text: String(p['姓名'] || '-'), color: C.text, weight: 600 }) },
         { label: L.rank_col_points, align: 'right', minW: 78, cell: p => ({ text: (p['当前积分'] || 0).toFixed(1), color: C.text, weight: 700 }) },
         { label: L.rank_col_points_change, align: 'center', minW: 76, cell: p => changeCell(p, 'pointsChange', 'pointsChangeType', 1) },
@@ -589,11 +637,11 @@ async function performSearch(query) {
     const qaItems = qaList.length ? qaList : (qaData || []);
     const results = [];
     if (newsItems.length) newsItems.forEach(item => {
-        const s = calcScore(query, item.title, item.excerpt || '', item.content || '');
+        const s = calcScore(query, item.title, item.excerpt || '', item.content || '', item.tag || '', i18n[currentLang]['tag_' + item.tag] || '');
         if (s > 0) results.push({ type: 'news', typeLabel: i18n[currentLang].search_type_news, title: item.title, excerpt: item.excerpt || item.content || '', date: item.date, link: 'detail.html?type=news&id=' + item.id, score: s });
     });
     if (compItems.length) compItems.forEach(item => {
-        const s = calcScore(query, item.title, item.excerpt || '', item.content || '');
+        const s = calcScore(query, item.title, item.excerpt || '', item.content || '', item.tag || '', i18n[currentLang]['tag_' + item.tag] || '');
         if (s > 0) results.push({ type: 'competition', typeLabel: i18n[currentLang].search_type_competition, title: item.title, excerpt: item.excerpt || item.content || '', date: item.date, link: 'detail.html?type=competition&id=' + item.id, score: s });
     });
     if (membersData && membersData.length) membersData.forEach(m => {
@@ -610,7 +658,7 @@ async function performSearch(query) {
         }
     });
     if (qaItems.length) qaItems.forEach(item => {
-        const s = calcScore(query, item.title, item.excerpt || '', item.content || '');
+        const s = calcScore(query, item.title, item.excerpt || '', item.content || '', item.tag || '', i18n[currentLang]['tag_' + item.tag] || '');
         if (s > 0) results.push({ type: 'qa', typeLabel: i18n[currentLang].search_type_qa, title: item.title, excerpt: item.excerpt || item.content || '', date: item.date, link: 'detail.html?type=qa&id=' + item.id, score: s });
     });
     if (changelogData && changelogData.length) changelogData.forEach(item => {
@@ -720,8 +768,23 @@ function protectLatex(text) { var blocks = []; var p = text; p = p.replace(/\$\$
 function restoreLatex(html, blocks) { if (!blocks || !blocks.length) return html; for (var i = 0; i < blocks.length; i++) { var b = blocks[i]; var ph = (b.t === 'd' ? '\uE000LD' : '\uE000LI') + i + '\uE000'; var idx = html.indexOf(ph); if (idx === -1) { html = html.replace(new RegExp('LD' + i + '(?=[^' + '\uE000' + ']|$)|LI' + i + '(?=[^' + '\uE000' + ']|$)', 'g'), b.t === 'd' ? '$$' + b.f + '$$' : '$' + b.f + '$'); continue; } try { var rendered = katex.renderToString(b.f, { displayMode: b.t === 'd', throwOnError: false, strict: false }); html = html.split(ph).join(rendered); } catch(e) { html = html.split(ph).join(b.t === 'd' ? '$$' + b.f + '$$' : '$' + b.f + '$'); } } return html; }
 function renderMarkdown(text) { if (!text) return ''; const hasKatex = typeof katex !== 'undefined'; let blocks = []; let toProcess = escapeHtml(text); if (hasKatex) { const r = protectLatex(toProcess); toProcess = r.text; blocks = r.blocks; } let html; if (typeof marked !== 'undefined' && marked.parse) { try { marked.setOptions({ breaks: true, gfm: true }); html = marked.parse(toProcess); } catch(e) { console.warn('Markdown parse failed, fallback to formatExcerpt', e); html = formatExcerpt(toProcess); } } else { html = formatExcerpt(toProcess); } if (hasKatex && blocks.length) html = restoreLatex(html, blocks); return html; }
 function parseWinRate(s) { return parseFloat((s || '0%').replace('%', '')) || 0; }
+// 对（引擎输出、已按积分降序）的排名数据赋予同分并列名次（1,2,2,4 式）。
+// club / WTT 两管线共用（calculateRankChanges / wttCalculateRankChanges）：
+// 积分相同者名次相同，既消除"同分球员跨快照互换顺序导致的假▲▼"，
+// 也让 # 列对访客如实反映并列（两人并列第3时下一名为第5）。
+function assignTiedRanks(rows) {
+    let lastScore = null, lastRank = 0;
+    return rows.map((p, i) => {
+        const score = p['当前积分'] || 0;
+        const rank = (i > 0 && score === lastScore) ? lastRank : (i + 1);
+        lastScore = score; lastRank = rank;
+        return Object.assign({}, p, { rank });
+    });
+}
 function createNewsCard(item) { const tt = i18n[currentLang]['tag_' + item.tag] || item.tag; return `<div class="news-card-date">${escapeHtml(item.date)}</div><h3>${escapeHtml(item.title)}</h3><p>${formatExcerpt(item.excerpt)}</p><span class="news-card-tag tag-${item.tag}">${tt}</span>`; }
 function createCompetitionCard(item) { const tt = i18n[currentLang]['tag_' + item.tag] || item.tag; return `<div class="competitions-card-date">${escapeHtml(item.date)}</div><h3>${escapeHtml(item.title)}</h3><p>${formatExcerpt(item.excerpt)}</p><span class="competitions-card-tag tag-${item.tag}">${tt}</span>`; }
+/* 首页快报列表项：日期徽章 + 标题/摘要 + 标签，比卡片更紧凑、信息密度更高 */
+function createHomeHlItem(item) { const tt = i18n[currentLang]['tag_' + item.tag] || item.tag; const parts = (item.date || '').split('-'); const badge = parts.length === 3 ? `<div class="home-hl-date"><span class="home-hl-date-md">${escapeHtml(parts[1])}-${escapeHtml(parts[2])}</span><span class="home-hl-date-y">${escapeHtml(parts[0])}</span></div>` : `<div class="home-hl-date"><span class="home-hl-date-md">${escapeHtml(item.date || '')}</span></div>`; return `${badge}<div class="home-hl-body"><h4>${escapeHtml(item.title)}</h4><p>${formatExcerpt(item.excerpt)}</p></div><span class="home-hl-tag tag-${item.tag}">${tt}</span>`; }
 function createQaCard(item) { const tt = i18n[currentLang]['tag_' + item.tag] || item.tag; return `<div class="qa-card-date">${escapeHtml(item.date)}</div><h3>${escapeHtml(item.title)}</h3><p>${formatExcerpt(item.excerpt)}</p><span class="qa-card-tag tag-${item.tag}">${tt}</span>`; }
 function getPaginatedData(d, p) { return d.slice((p-1)*ITEMS_PER_PAGE, p*ITEMS_PER_PAGE); }
 function getTotalPages(d) { return Math.ceil(d.length/ITEMS_PER_PAGE); }
@@ -760,8 +823,8 @@ pages.forEach(p => { if (p === 'gap') { const gp = document.createElement('span'
 
 async function loadAboutData() { showContentLoading('coreMembersGrid', i18n[currentLang].loading_about); try { const resp = await fetch('data/about.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); aboutData = await resp.json(); } catch(e) { aboutData = null; } if (typeof renderAboutSections === 'function') renderAboutSections(); updateHeroLastUpdated(); }
 async function loadMembersData() { showContentLoading('coreMembersGrid', i18n[currentLang].loading_members); if (!playersData) await loadPlayers(); if (playersData && Array.isArray(playersData.players)) { membersData = playersData.players.filter(p => p.role).map(p => ({ name: p.name, uid: p.uid, role: p.role, description: p.description, qq: p.qq })); } else { try { const resp = await fetch('data/_legacy/members.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); membersData = await resp.json(); } catch(e) { membersData = []; } } if (typeof renderCoreMembers === 'function') { renderCoreMembers(); if (typeof renderAllMembersPage === 'function') renderAllMembersPage(); } }
-async function loadNewsData() { const prgs = [showContentLoading('newsPreviewGrid', i18n[currentLang].loading_news), showContentLoading('newsFullGrid', i18n[currentLang].loading_news)]; try { newsData = await fetchJsonWithProgress('data/news/index.json', pct => { prgs.forEach(p => { if (p) { p.setProgress(pct); p.setMeta('data/news/index.json' + (pct == null ? '' : ' · ' + Math.round(pct) + '%')); } }); }); } catch(e) { console.error('news/index.json 加载失败', e); newsData = []; } if (typeof renderAllNews === 'function') renderAllNews(); markContentLoaded('news'); }
-async function loadCompetitionsData() { const prgs = [showContentLoading('competitionsPreviewGrid', i18n[currentLang].loading_competitions), showContentLoading('competitionsFullGrid', i18n[currentLang].loading_competitions)]; try { competitionsData = await fetchJsonWithProgress('data/competitions/index.json', pct => { prgs.forEach(p => { if (p) { p.setProgress(pct); p.setMeta('data/competitions/index.json' + (pct == null ? '' : ' · ' + Math.round(pct) + '%')); } }); }); } catch(e) { console.error('competitions/index.json 加载失败', e); competitionsData = []; } if (typeof renderAllCompetitions === 'function') renderAllCompetitions(); markContentLoaded('competition'); }
+async function loadNewsData() { const prgs = [showContentLoading('newsPreviewGrid', i18n[currentLang].loading_news), showContentLoading('newsFullGrid', i18n[currentLang].loading_news), showContentLoading('homeNewsList', i18n[currentLang].loading_news)]; try { newsData = await fetchJsonWithProgress('data/news/index.json', pct => { prgs.forEach(p => { if (p) { p.setProgress(pct); p.setMeta('data/news/index.json' + (pct == null ? '' : ' · ' + Math.round(pct) + '%')); } }); }); } catch(e) { console.error('news/index.json 加载失败', e); newsData = []; showContentLoadFail('newsPreviewGrid', loadNewsData); showContentLoadFail('newsFullGrid', loadNewsData); showContentLoadFail('homeNewsList', loadNewsData); markContentLoaded('news'); return; } if (typeof renderAllNews === 'function') renderAllNews(); markContentLoaded('news'); }
+async function loadCompetitionsData() { const prgs = [showContentLoading('competitionsPreviewGrid', i18n[currentLang].loading_competitions), showContentLoading('competitionsFullGrid', i18n[currentLang].loading_competitions), showContentLoading('homeCompList', i18n[currentLang].loading_competitions)]; try { competitionsData = await fetchJsonWithProgress('data/competitions/index.json', pct => { prgs.forEach(p => { if (p) { p.setProgress(pct); p.setMeta('data/competitions/index.json' + (pct == null ? '' : ' · ' + Math.round(pct) + '%')); } }); }); } catch(e) { console.error('competitions/index.json 加载失败', e); competitionsData = []; showContentLoadFail('competitionsPreviewGrid', loadCompetitionsData); showContentLoadFail('competitionsFullGrid', loadCompetitionsData); showContentLoadFail('homeCompList', loadCompetitionsData); markContentLoaded('competition'); return; } if (typeof renderAllCompetitions === 'function') renderAllCompetitions(); markContentLoaded('competition'); }
 async function loadDrawsData() { try { const resp = await fetch('data/draws.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); drawsData = await resp.json(); } catch(e) { drawsData = []; } }
 let _drawsLoadPromise = null;
 function ensureDrawsData() {
@@ -769,9 +832,9 @@ function ensureDrawsData() {
     if (!_drawsLoadPromise) _drawsLoadPromise = loadDrawsData().then(() => { _drawsLoadPromise = null; }, () => { _drawsLoadPromise = null; });
     return _drawsLoadPromise;
 }
-function getDrawsForCompetition(competitionId) { if (!drawsData || !drawsData.length) return null; return drawsData.find(d => d.competitionId === competitionId) || null; }
-async function loadQaData() { try { const resp = await fetch('data/qa/index.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); qaData = await resp.json(); } catch(e) { qaData = []; } if (typeof renderAllQa === 'function') renderAllQa(); }
-async function loadChangelogData() { try { const resp = await fetch('data/changelog.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); changelogData = await resp.json(); } catch(e) { changelogData = []; } if (typeof renderAllChangelog === 'function') renderAllChangelog(); }
+function getDrawsForCompetition(competitionId) { if (!drawsData || !drawsData.length) return null; return drawsData.find(d => d.competitionId === competitionId && d.visible !== false) || null; }
+async function loadQaData() { try { const resp = await fetch('data/qa/index.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); qaData = await resp.json(); } catch(e) { console.error('qa/index.json 加载失败', e); qaData = []; showContentLoadFail('qaFullGrid', loadQaData); showContentLoadFail('qaList', loadQaData); return; } if (typeof renderAllQa === 'function') renderAllQa(); }
+async function loadChangelogData() { try { const resp = await fetch('data/changelog.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); changelogData = await resp.json(); } catch(e) { console.error('changelog.json 加载失败', e); changelogData = []; showContentLoadFail('changelogTimeline', loadChangelogData); showContentLoadFail('changelogList', loadChangelogData); return; } if (typeof renderAllChangelog === 'function') renderAllChangelog(); }
 async function loadPlayerTagsData() { if (!playersData) await loadPlayers(); if (playersData && Array.isArray(playersData.players)) { const map = {}; for (const p of playersData.players) map[p.name] = { tags: p.tags || [], honors: p.honors || [] }; playerTagsData = { players: map }; return; } try { const resp = await fetch('data/_legacy/player-tags.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); playerTagsData = await resp.json(); } catch(e) { playerTagsData = null; } }
 
 // ===== 统一球员档案加载（data/players.json，兼容回退 data/_legacy/）=====
@@ -846,10 +909,10 @@ function renderAboutSections() { if (!aboutData) return; const pc = document.get
 function getMemberAvatarHTML(m) { if (m.qq && m.qq.trim()) { const qqUrl = `https://q1.qlogo.cn/g?b=qq&nk=${m.qq.trim()}&s=640`; return `<div class="member-avatar">${escapeHtml(m.name.charAt(0))}<img class="member-avatar-img" src="${escapeHtml(qqUrl)}" alt="${escapeHtml(m.name)}" loading="lazy" onerror="this.style.display='none'"></div>`; } return `<div class="member-avatar text-only">${escapeHtml(m.name.charAt(0))}</div>`; }
 function renderCoreMembers() { document.querySelectorAll('#coreMembersGrid').forEach(g => { if (!g) return; g.innerHTML = ''; membersData.forEach(m => { const el = document.createElement('div'); el.className = 'member-card glass-card'; el.innerHTML = `${getMemberAvatarHTML(m)}<h3>${escapeHtml(m.name)}</h3><span class="member-role">${escapeHtml(m.role)}</span><p class="member-desc">${formatExcerpt(m.description)}</p>`; if (m.uid != null) { el.title = i18n[currentLang].rank_view_player_page; makeCardClickable(el, 'player.html?uid=' + m.uid); } g.appendChild(el); }); }); }
 function renderAllMembersPage() { const g = document.getElementById('allMembersGrid'); if (!g) return; g.innerHTML = ''; membersData.forEach(m => { const el = document.createElement('div'); el.className = 'member-card glass-card'; el.innerHTML = `${getMemberAvatarHTML(m)}<h3>${escapeHtml(m.name)}</h3><span class="member-role">${escapeHtml(m.role)}</span><p class="member-desc">${formatExcerpt(m.description)}</p>`; if (m.uid != null) { el.title = i18n[currentLang].rank_view_player_page; makeCardClickable(el, 'player.html?uid=' + m.uid); } g.appendChild(el); }); }
-function renderAllNews() { const pg = document.getElementById('newsPreviewGrid'); if (pg) { pg.innerHTML = ''; newsData.slice(0,3).forEach(item => { const c = document.createElement('div'); c.className = 'news-card'; c.innerHTML = createNewsCard(item); makeCardClickable(c, 'detail.html?type=news&id=' + item.id); pg.appendChild(c); }); } const fg = document.getElementById('newsFullGrid'); if (fg) { const fd = getFilteredNewsData(); fg.innerHTML = ''; getPaginatedData(fd, newsCurrentPage).forEach(item => { const c = document.createElement('div'); c.className = 'news-card'; c.innerHTML = createNewsCard(item); makeCardClickable(c, 'detail.html?type=news&id=' + item.id); fg.appendChild(c); }); renderPagination('newsFullGrid', fd, newsCurrentPage); renderTagFilter('newsTagFilter', newsData, newsFilterTag, setNewsFilter); } }
-function renderAllCompetitions() { const pg = document.getElementById('competitionsPreviewGrid'); if (pg) { pg.innerHTML = ''; competitionsData.slice(0,3).forEach(item => { const c = document.createElement('div'); c.className = 'competitions-card'; c.innerHTML = createCompetitionCard(item); makeCardClickable(c, 'detail.html?type=competition&id=' + item.id); pg.appendChild(c); }); } const fg = document.getElementById('competitionsFullGrid'); if (fg) { const fd = getFilteredCompetitionsData(); fg.innerHTML = ''; getPaginatedData(fd, competitionsCurrentPage).forEach(item => { const c = document.createElement('div'); c.className = 'competitions-card'; c.innerHTML = createCompetitionCard(item); makeCardClickable(c, 'detail.html?type=competition&id=' + item.id); fg.appendChild(c); }); renderPagination('competitionsFullGrid', fd, competitionsCurrentPage); renderTagFilter('competitionsTagFilter', competitionsData, competitionsFilterTag, setCompetitionsFilter); } }
-function renderAllQa() { const fg = document.getElementById('qaFullGrid'); if (fg) { fg.innerHTML = ''; getPaginatedData(qaData, qaCurrentPage).forEach(item => { const c = document.createElement('div'); c.className = 'qa-card'; c.innerHTML = createQaCard(item); makeCardClickable(c, 'detail.html?type=qa&id=' + item.id); fg.appendChild(c); }); renderPagination('qaFullGrid', qaData, qaCurrentPage); } }
-function renderAllChangelog() { const tl = document.getElementById('changelogTimeline'); if (!tl) return; tl.innerHTML = ''; if (!changelogData || !changelogData.length) { tl.innerHTML = '<div class="changelog-empty"><i class="fa-solid fa-clock-rotate-left"></i><p data-i18n="changelog_empty">鏆傛棤鏇存柊鏃ュ織</p></div>'; return; } changelogData.forEach((item, idx) => { const entry = document.createElement('div'); entry.className = 'changelog-entry'; const tagLabel = i18n[currentLang]['tag_' + item.tag] || item.tag; const tagSafe = 'tag-' + String(item.tag || '').replace(/[^a-zA-Z0-9_-]/g, ''); const changesHtml = item.changes && item.changes.length ? '<ul class="changelog-changes">' + item.changes.map(c => '<li>' + renderMarkdown(c) + '</li>').join('') + '</ul>' : ''; entry.innerHTML = `<div class="changelog-entry-marker"><div class="changelog-dot"></div>${idx < changelogData.length - 1 ? '<div class="changelog-line"></div>' : ''}</div><div class="changelog-entry-content glass-card"><div class="changelog-entry-header"><span class="changelog-version">${escapeHtml(item.version)}</span><span class="changelog-tag ${escapeHtml(tagSafe)}">${escapeHtml(tagLabel)}</span><span class="changelog-date">${escapeHtml(item.date)}</span></div><h3 class="changelog-entry-title">${escapeHtml(item.title)}</h3>${changesHtml}</div>`; tl.appendChild(entry); }); }
+function renderAllNews() { const pg = document.getElementById('newsPreviewGrid'); if (pg) { pg.innerHTML = ''; newsData.slice(0,3).forEach(item => { const c = document.createElement('div'); c.className = 'news-card'; c.innerHTML = createNewsCard(item); makeCardClickable(c, 'detail.html?type=news&id=' + item.id); pg.appendChild(c); }); } const hl = document.getElementById('homeNewsList'); if (hl) { hl.innerHTML = ''; const items = newsData.slice(0,4); if (!items.length) showContentEmptyState('homeNewsList'); items.forEach(item => { const c = document.createElement('div'); c.className = 'home-hl-item'; c.innerHTML = createHomeHlItem(item); makeCardClickable(c, 'detail.html?type=news&id=' + item.id); hl.appendChild(c); }); } const fg = document.getElementById('newsFullGrid'); if (fg) { const fd = getFilteredNewsData(); fg.innerHTML = ''; if (!fd.length) showContentEmptyState('newsFullGrid'); getPaginatedData(fd, newsCurrentPage).forEach(item => { const c = document.createElement('div'); c.className = 'news-card'; c.innerHTML = createNewsCard(item); makeCardClickable(c, 'detail.html?type=news&id=' + item.id); fg.appendChild(c); }); renderPagination('newsFullGrid', fd, newsCurrentPage); renderTagFilter('newsTagFilter', newsData, newsFilterTag, setNewsFilter); } }
+function renderAllCompetitions() { const pg = document.getElementById('competitionsPreviewGrid'); if (pg) { pg.innerHTML = ''; competitionsData.slice(0,3).forEach(item => { const c = document.createElement('div'); c.className = 'competitions-card'; c.innerHTML = createCompetitionCard(item); makeCardClickable(c, 'detail.html?type=competition&id=' + item.id); pg.appendChild(c); }); } const hl = document.getElementById('homeCompList'); if (hl) { hl.innerHTML = ''; const upcoming = competitionsData.filter(it => it.tag === 'upcoming'); const items = upcoming.concat(competitionsData.filter(it => it.tag !== 'upcoming')).slice(0,4); if (!items.length) showContentEmptyState('homeCompList'); items.forEach(item => { const c = document.createElement('div'); c.className = 'home-hl-item' + (item.tag === 'upcoming' ? ' is-upcoming' : ''); c.innerHTML = createHomeHlItem(item); makeCardClickable(c, 'detail.html?type=competition&id=' + item.id); hl.appendChild(c); }); } const fg = document.getElementById('competitionsFullGrid'); if (fg) { const fd = getFilteredCompetitionsData(); fg.innerHTML = ''; if (!fd.length) showContentEmptyState('competitionsFullGrid'); getPaginatedData(fd, competitionsCurrentPage).forEach(item => { const c = document.createElement('div'); c.className = 'competitions-card'; c.innerHTML = createCompetitionCard(item); makeCardClickable(c, 'detail.html?type=competition&id=' + item.id); fg.appendChild(c); }); renderPagination('competitionsFullGrid', fd, competitionsCurrentPage); renderTagFilter('competitionsTagFilter', competitionsData, competitionsFilterTag, setCompetitionsFilter); } }
+function renderAllQa() { const fg = document.getElementById('qaFullGrid'); if (fg) { fg.innerHTML = ''; if (!qaData.length) showContentEmptyState('qaFullGrid'); getPaginatedData(qaData, qaCurrentPage).forEach(item => { const c = document.createElement('div'); c.className = 'qa-card'; c.innerHTML = createQaCard(item); makeCardClickable(c, 'detail.html?type=qa&id=' + item.id); fg.appendChild(c); }); renderPagination('qaFullGrid', qaData, qaCurrentPage); } }
+function renderAllChangelog() { const tl = document.getElementById('changelogTimeline'); if (!tl) return; tl.innerHTML = ''; if (!changelogData || !changelogData.length) { tl.innerHTML = '<div class="changelog-empty"><i class="fa-solid fa-clock-rotate-left"></i><p data-i18n="changelog_empty">暂无更新日志</p></div>'; return; } changelogData.forEach((item, idx) => { const entry = document.createElement('div'); entry.className = 'changelog-entry'; const tagLabel = i18n[currentLang]['tag_' + item.tag] || item.tag; const tagSafe = 'tag-' + String(item.tag || '').replace(/[^a-zA-Z0-9_-]/g, ''); const changesHtml = item.changes && item.changes.length ? '<ul class="changelog-changes">' + item.changes.map(c => '<li>' + renderMarkdown(c) + '</li>').join('') + '</ul>' : ''; entry.innerHTML = `<div class="changelog-entry-marker"><div class="changelog-dot"></div>${idx < changelogData.length - 1 ? '<div class="changelog-line"></div>' : ''}</div><div class="changelog-entry-content glass-card"><div class="changelog-entry-header"><span class="changelog-version">${escapeHtml(item.version)}</span><span class="changelog-tag ${escapeHtml(tagSafe)}">${escapeHtml(tagLabel)}</span><span class="changelog-date">${escapeHtml(item.date)}</span></div><h3 class="changelog-entry-title">${escapeHtml(item.title)}</h3>${changesHtml}</div>`; tl.appendChild(entry); }); }
 // ========================================
 // 详情页：条目文件夹 {type}/{id}/{id}.json（展示）+ {id}.history.json（版本清单）+ {id}.v{n}.json（快照）
 // ========================================
@@ -992,6 +1055,10 @@ async function updateDetailPage() {
 }
 
 async function renderDetailItem(type, item) {
+    // 动态标题与描述：浏览器标签页/分享卡片/搜索结果如实反映当前条目（player.html 同款做法）
+    document.title = (item.title || '') + ' | WFLS Table Tennis Club';
+    const descMeta = document.querySelector('meta[name="description"]');
+    if (descMeta && item.excerpt) descMeta.setAttribute('content', String(item.excerpt));
     document.getElementById('detailTypeTag').textContent = i18n[currentLang][type === 'news' ? 'news_hero_tag' : (type === 'competition' ? 'comp_hero_tag' : 'qa_hero_tag')];
     document.getElementById('detailTitle').textContent = item.title;
     document.getElementById('detailDate').textContent = item.date;
@@ -1002,6 +1069,47 @@ async function renderDetailItem(type, item) {
     renderDetailMedia(item);
     await renderDetailDrawsSection(type, item);
     renderDetailVersion(type, item);
+    try { await ensureContentList(type); } catch (e) { /* 列表不可用时只省略上下篇，不影响正文 */ }
+    renderDetailNav(type, item);
+}
+
+// 详情页底部导航：返回列表 + 上一篇/下一篇（按 index.json 日期倒序位置，上一篇=更新的一条；
+// 到达边界时显示灰色禁用的"没有上一篇了/没有下一篇了"占位，而非隐藏）
+function renderDetailNav(type, item) {
+    const host = document.getElementById('detailNav');
+    if (!host) return;
+    host.innerHTML = '';
+    host.className = 'detail-nav';
+    const L = i18n[currentLang] || {};
+    const listHref = type === 'news' ? 'news.html' : (type === 'competition' ? 'competitions.html' : 'qa.html');
+    const back = document.createElement('a');
+    back.className = 'btn btn-sm btn-secondary';
+    back.href = listHref;
+    back.innerHTML = '<i class="fa-solid fa-arrow-left"></i> ' + escapeHtml(L.detail_back || '');
+    host.appendChild(back);
+    const list = getContentListByType(type).filter(x => x && x.visible !== false);
+    const idx = list.findIndex(x => x && String(x.id) === String(item.id));
+    const mkNeighbor = (entry, label, noneText, arrowLeft) => {
+        const wrapText = text => (arrowLeft ? '<i class="fa-solid fa-chevron-left"></i>' : '') + '<span>' + escapeHtml(text) + '</span>' + (arrowLeft ? '' : '<i class="fa-solid fa-chevron-right"></i>');
+        if (!entry) {
+            const s = document.createElement('span');
+            s.className = 'detail-nav-item disabled';
+            s.setAttribute('aria-disabled', 'true');
+            s.innerHTML = wrapText(noneText);
+            return s;
+        }
+        const a = document.createElement('a');
+        a.className = 'detail-nav-item';
+        a.href = 'detail.html?type=' + type + '&id=' + encodeURIComponent(String(entry.id));
+        a.title = String(entry.title || '');
+        a.innerHTML = wrapText(label + String(entry.title || ''));
+        return a;
+    };
+    const wrap = document.createElement('div');
+    wrap.className = 'detail-nav-links';
+    wrap.appendChild(mkNeighbor(list[idx - 1], (L.detail_prev || '') + '：', L.detail_no_prev || '', true));
+    wrap.appendChild(mkNeighbor(list[idx + 1], (L.detail_next || '') + '：', L.detail_no_next || '', false));
+    host.appendChild(wrap);
 }
 
 function renderDetailMedia(item) {

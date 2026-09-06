@@ -50,7 +50,7 @@ function dvBuildCardEl(card, pos, layout, draws) {
         el.innerHTML =
             '<div class="dv-card-champion-icon"><i class="fa-solid fa-crown"></i></div>' +
             '<div class="dv-card-player dv-card-winner-name">' + dvPlayerHtml(p) + '</div>' +
-            '<div class="dv-card-champion-label">' + dcEsc(card.label || dcT('dv_champion', '冠军')) + '</div>';
+            '<div class="dv-card-champion-label">' + dcEsc(card.label && card.label !== '冠军' ? card.label : dcT('dv_champion', '冠军')) + '</div>';
         return el;
     }
 
@@ -107,7 +107,7 @@ function dvShowCardPopover(card, anchorEl, container, layout, draws) {
 
     let html = '';
     if (card.type === 'champion') {
-        html += '<div class="dv-popover-title"><i class="fa-solid fa-crown"></i> ' + dcEsc(card.label || '冠军') + '</div>';
+        html += '<div class="dv-popover-title"><i class="fa-solid fa-crown"></i> ' + dcEsc(card.label && card.label !== '冠军' ? card.label : dcT('dv_champion', '冠军')) + '</div>';
         html += '<div class="dv-popover-champ">' + dcEsc(dcPlayerName(card.player1)) + '</div>';
     } else if (card.type === 'note') {
         html += '<div class="dv-popover-note">' + dcEsc(card.text || '') + '</div>';
@@ -268,7 +268,7 @@ function renderGridViewer(container, draws) {
         if (!roundsMap[col]) roundsMap[col] = true;
     });
     const customLabels = draws.roundLabels || {};
-    const defaultRoundLabels = [dcT('dv_round_1', '第一轮'), dcT('dv_round_2', '第二轮'), '1/4决赛', dcT('dv_semis', '半决赛'), dcT('dv_final', '决赛')];
+    const defaultRoundLabels = [dcT('dv_round_1', '第一轮'), dcT('dv_round_2', '第二轮'), dcT('dv_quarters', '1/4决赛'), dcT('dv_semis', '半决赛'), dcT('dv_final', '决赛')];
     Object.keys(roundsMap).map(Number).sort((a, b) => a - b).forEach((col, i) => {
         const label = document.createElement('div');
         label.className = 'dv-round-label';

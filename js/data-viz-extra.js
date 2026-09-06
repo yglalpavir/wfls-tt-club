@@ -80,7 +80,7 @@ function initDataVizExtra() {
         renderMatchFrequency(dataVizExtraState.freqBucket, v);
     });
     document.getElementById('distBinCount')?.addEventListener('change', () => {
-        const v = clampInt(document.getElementById('distBinCount').value, 4, 30);
+        const v = clampInt(document.getElementById('distBinCount').value, 4, 100);
         document.getElementById('distBinCount').value = v;
         dataVizExtraState.distBins = v;
         renderScoreDistribution(v);
@@ -371,17 +371,15 @@ function renderMatchFrequency(bucketType, count) {
     let buckets = buildFrequencyBuckets(records, bucketType);
     if (buckets.length > count) buckets = buckets.slice(-count);
 
-    // 按总场次取前 4 类，其余归为"其他"
+    // 展示所有比赛类型（按总场次降序着色，不再把长尾类型折叠进"其他"）
     const typeTotals = {};
     for (const b of buckets) {
         for (const [t, c] of Object.entries(b.types)) typeTotals[t] = (typeTotals[t] || 0) + c;
     }
     const sortedTypes = Object.entries(typeTotals).sort((a, b) => b[1] - a[1]);
-    const mainTypes = sortedTypes.slice(0, 4).map(x => x[0]);
-    const otherLabel = i18n[currentLang].data_viz_other;
 
     const labels = buckets.map(b => b.label);
-    const datasets = mainTypes.map((t, idx) => {
+    const datasets = sortedTypes.map(([t], idx) => {
         return {
             label: t,
             data: buckets.map(b => b.types[t] || 0),
@@ -389,18 +387,6 @@ function renderMatchFrequency(bucketType, count) {
             stack: 'freq'
         };
     });
-    if (sortedTypes.length > 4) {
-        datasets.push({
-            label: otherLabel,
-            data: buckets.map(b => {
-                let sum = 0;
-                for (const [t, c] of Object.entries(b.types)) if (!mainTypes.includes(t)) sum += c;
-                return sum;
-            }),
-            backgroundColor: CHART_COLORS[6 % CHART_COLORS.length],
-            stack: 'freq'
-        });
-    }
 
     try {
         matchFrequencyChart = new Chart(canvas, {
@@ -457,7 +443,7 @@ function renderScoreDistribution(bins) {
 
     let min = Math.min(...scores), max = Math.max(...scores);
     if (min === max) { min -= 50; max += 50; }
-    bins = clampInt(bins, 4, 30);
+    bins = clampInt(bins, 4, 100);
     const rawStep = (max - min) / bins;
     const mag = Math.pow(10, Math.floor(Math.log10(rawStep)));
     let step = Math.ceil(rawStep / mag) * mag;

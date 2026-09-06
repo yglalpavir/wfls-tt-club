@@ -627,7 +627,7 @@ def build_index_and_search(type_name, items):
         index_data.append(meta)
     search_data = []
     for it in items:
-        entry = {k: it.get(k) for k in ("id", "date", "title", "excerpt", "content")}
+        entry = {k: it.get(k) for k in ("id", "date", "title", "excerpt", "tag", "content")}
         entry["content"] = read_effective_content(type_name, it, quiet=True)
         search_data.append(entry)
     return index_data, search_data

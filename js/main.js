@@ -18,7 +18,7 @@ async function loadRankingDataForViz() {
     try {
         const dataFiles = [
             { name: 'players.json',         loader: loadPlayers,           label: i18n[currentLang].data_viz_file_players },
-            { name: 'score-log.json',        loader: loadScoreLogForViz,    label: i18n[currentLang].data_viz_file_matches },
+            { name: 'score-log.json',        loader: loadScoreLogData,      label: i18n[currentLang].data_viz_file_matches },
             { name: 'initial-scores.json',   loader: loadInitialScores,     label: i18n[currentLang].data_viz_file_initial },
             { name: 'event-coefficient.json',loader: loadEventCoefficients,   label: i18n[currentLang].data_viz_file_event },
             { name: 'decay-config.json',     loader: loadDecayConfig,         label: i18n[currentLang].data_viz_file_decay },
@@ -72,8 +72,8 @@ function initPage() {
     // 按页面 DOM 标记按需加载数据，避免每个页面都下载全部数据
     if (document.getElementById('aboutSections') || document.getElementById('heroLastUpdated') || document.getElementById('coreMembersGrid')) loadAboutData();
     if (document.getElementById('coreMembersGrid') || document.getElementById('allMembersGrid')) loadMembersData();
-    if (document.getElementById('newsPreviewGrid') || document.getElementById('newsFullGrid') || document.getElementById('detailContent')) loadNewsData();
-    if (document.getElementById('competitionsPreviewGrid') || document.getElementById('competitionsFullGrid') || document.getElementById('detailContent')) loadCompetitionsData();
+    if (document.getElementById('newsPreviewGrid') || document.getElementById('newsFullGrid') || document.getElementById('homeNewsList') || document.getElementById('detailContent')) loadNewsData();
+    if (document.getElementById('competitionsPreviewGrid') || document.getElementById('competitionsFullGrid') || document.getElementById('homeCompList') || document.getElementById('detailContent')) loadCompetitionsData();
     if (document.getElementById('detailDraws') || document.getElementById('drawsContainer') || document.getElementById('drawsSection')) loadDrawsData();
     if (document.getElementById('qaFullGrid') || document.getElementById('qaList') || document.getElementById('detailContent')) loadQaData();
     if (document.getElementById('changelogTimeline') || document.getElementById('changelogList')) loadChangelogData();

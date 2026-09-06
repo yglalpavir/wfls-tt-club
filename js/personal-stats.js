@@ -429,6 +429,8 @@ function renderPersonalStats(playerName, containerId) {
         const playerFirstDate = firstAppearance[playerName] || '';
         for (const t of rankingTimeline) {
             if (!t.data || !t.data.length) continue;
+            // 赛季初始积分节点非比赛产生，不进入走势/最高分统计
+            if (t.isInitial) continue;
             // 跳过球员首次参赛前的快照
             if (playerFirstDate && t.time && t.time < playerFirstDate) continue;
             const me = t.data.find(p => p['姓名'] === playerName);

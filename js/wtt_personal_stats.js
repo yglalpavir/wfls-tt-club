@@ -606,6 +606,8 @@ function wttRenderPersonalStats(playerName, containerId) {
         const playerFirstDate = firstAppearance[playerName] || '';
         for (const t of wttRankingTimeline) {
             if (!t.data || !t.data.length) continue;
+            // 赛季初始积分节点非比赛产生，不进入走势/最高分统计
+            if (t.isInitial) continue;
             // 跳过球员首次参赛前的快照
             if (playerFirstDate && t.time && t.time < playerFirstDate) continue;
             const me = t.data.find(p => p['姓名'] === playerName);
@@ -902,6 +904,10 @@ function wttRenderPersonalStats(playerName, containerId) {
 
 // ============ 积分历史计算 ============
 
+// 本地时区 YYYY-MM-DD（时间戳→日期串必须走本地时区；toISOString 是 UTC，
+// 在 UTC+8 会把"本地午夜"标成前一天，导致日线图整体偏移、跨赛季切换晚一天）
+function wttLocalDateStr(t) { const d = new Date(t); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
+
 function computeWttDailyScoreHistory(playerName, sortedLog, startScores) {
     const history = [];
     if (!sortedLog.length) return history;
@@ -959,7 +965,7 @@ function computeWttDailyScoreHistory(playerName, sortedLog, startScores) {
     const winStartTime = startTime;   // 从首秀日起完整渲染（按日/按周）
 
     let curTime = winStartTime;
-    let curDateStr = new Date(curTime).toISOString().slice(0, 10);
+    let curDateStr = wttLocalDateStr(curTime);
     let seasonIdx = seasonOf(curDateStr);
     let seasonStartDate = seasonIdx >= 0 ? seasonsData[seasonIdx].startDate : startDate;
     let sc = (seasonIdx >= 0 && seasonStartScoresMap[seasonIdx]) ? { ...seasonStartScoresMap[seasonIdx] } : { ...startScores };
@@ -993,7 +999,7 @@ function computeWttDailyScoreHistory(playerName, sortedLog, startScores) {
     }
 
     while (curTime <= endTime) {
-        curDateStr = new Date(curTime).toISOString().slice(0, 10);
+        curDateStr = wttLocalDateStr(curTime);
         // 跨赛季：重置为该赛季继承积分，并跳过赛季开始前的事件
         const si = seasonOf(curDateStr);
         if (si !== seasonIdx) {
