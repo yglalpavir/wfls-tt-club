@@ -878,10 +878,12 @@ html:lang(en) .hero-title {
 .home-hl-panel { display: flex; flex-direction: column; padding: 24px 24px 16px; }
 .home-hl-panel-head { display: flex; align-items: center; gap: 12px; padding-bottom: 14px; margin-bottom: 4px; border-bottom: 1px solid var(--border-color); }
 .home-hl-panel-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; flex-shrink: 0; }
-.home-hl-icon-news { background: var(--primary-pale); color: var(--primary-blue); }
+.home-hl-icon-news { background: rgba(77,163,255,0.12); color: var(--primary-blue); }
 .home-hl-icon-comp { background: rgba(240,165,0,0.14); color: var(--accent-gold); }
 .home-hl-panel-head h3 { font-size: 1.12rem; color: var(--text-primary); margin: 0; }
-.home-hl-more { margin-left: auto; font-size: 0.8rem; color: var(--primary-blue); display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
+/* 查看全部：小号 btn-secondary 药丸按钮 */
+.home-hl-more { margin-left: auto; font-size: 0.78rem; font-weight: 500; color: var(--primary-blue); display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; padding: 5px 14px; border-radius: 999px; background: var(--bg-white); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); transition: all var(--transition-base); }
+.home-hl-more:hover { border-color: var(--primary-blue); box-shadow: var(--shadow-md); transform: translateY(-2px); }
 .home-hl-more i { font-size: 0.72rem; transition: transform var(--transition-fast); }
 .home-hl-more:hover i { transform: translateX(3px); }
 .home-hl-list { display: flex; flex-direction: column; flex: 1; }
@@ -893,14 +895,15 @@ html:lang(en) .hero-title {
 .home-hl-item.is-upcoming { border-left-color: var(--accent-red); background: rgba(255,77,79,0.05); }
 .dark-mode .home-hl-item.is-upcoming { background: rgba(255,107,107,0.07); }
 .home-hl-item.is-upcoming:hover { background: rgba(255,77,79,0.1); }
-.home-hl-date { flex-shrink: 0; width: 54px; text-align: center; padding: 6px 4px; border-radius: var(--radius-sm); background: var(--primary-pale); color: var(--primary-blue); line-height: 1.25; }
-.home-hl-item.is-upcoming .home-hl-date { background: rgba(255,77,79,0.1); color: var(--accent-red); }
+/* 日期徽章：与标签一致的半透明彩色药丸 */
+.home-hl-date { flex-shrink: 0; width: 54px; text-align: center; padding: 6px 4px; border-radius: 10px; background: rgba(77,163,255,0.12); color: var(--primary-blue); line-height: 1.25; }
+.home-hl-item.is-upcoming .home-hl-date { background: rgba(255,107,107,0.12); color: var(--accent-red); }
 .home-hl-date-md { display: block; font-family: var(--font-en); font-size: 0.88rem; font-weight: 700; }
 .home-hl-date-y { display: block; font-family: var(--font-en); font-size: 0.62rem; opacity: 0.75; letter-spacing: 0.5px; }
 .home-hl-body { flex: 1; min-width: 0; }
-.home-hl-body h4 { font-family: var(--font-cn); font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-bottom: 3px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.home-hl-body p { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.home-hl-tag { flex-shrink: 0; font-size: 0.68rem; padding: 3px 9px; border-radius: 10px; font-weight: 500; margin-top: 5px; }
+.home-hl-body h4 { font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-bottom: 3px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.home-hl-body p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.home-hl-tag { flex-shrink: 0; font-size: 0.7rem; padding: 3px 10px; border-radius: 10px; font-weight: 500; margin-top: 5px; }
 
 /* Q&A 卡片 */
 .qa-card { background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 24px; transition: all var(--transition-base); cursor: pointer; }
@@ -2686,13 +2689,13 @@ body.dark .player-search-item.selected { background: rgba(77, 163, 255, 0.15); }
     /* ---- 首页快报区 ---- */
     .home-hl-panel { padding: 18px 14px 12px; }
     .home-hl-panel-head h3 { font-size: 1rem; }
-    .home-hl-more { font-size: 0.72rem; }
+    .home-hl-more { font-size: 0.72rem; padding: 4px 10px; }
     .home-hl-item { gap: 10px; padding: 11px 6px; }
     .home-hl-item:hover { transform: none; }
     .home-hl-date { width: 46px; padding: 5px 2px; }
     .home-hl-date-md { font-size: 0.76rem; }
     .home-hl-body h4 { font-size: 0.86rem; }
-    .home-hl-body p { font-size: 0.74rem; -webkit-line-clamp: 1; line-clamp: 1; }
+    .home-hl-body p { font-size: 0.78rem; -webkit-line-clamp: 1; line-clamp: 1; }
     .home-hl-tag { display: none; }
 
     /* ---- Page Hero ---- */

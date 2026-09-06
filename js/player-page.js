@@ -231,242 +231,107 @@ function reapplyPlayerPage() {
     renderPlayerMatchTable(ppCurrentPlayer.name, matchRecords);
 }
 
-/* ---- 战绩卡导出（Canvas 手绘，复用 common.js 的排行导出工具函数） ---- */
+/* ---- 战绩卡导出（foreignObject 截取整页可视化内容，复用 common.js 的导出工具函数） ---- */
 
-function ppAlpha(hex, a) {
-    const h = String(hex || '').replace('#', '');
-    if (h.length !== 6) return hex;
-    return 'rgba(' + parseInt(h.slice(0, 2), 16) + ',' + parseInt(h.slice(2, 4), 16) + ',' + parseInt(h.slice(4, 6), 16) + ',' + a + ')';
-}
+// 构建离屏导出节点：资料卡 + 总览/走势/对手卡 + 全部分析图表（不含比赛明细表与交互控件）
+function buildPlayerExportNode(player) {
+    const profileEl = document.querySelector('#playerDetailContent .player-profile');
+    const statsEl = document.getElementById('playerStatsBody');
+    const analyticsEl = document.getElementById('playerAnalyticsBody');
+    if (!profileEl || !statsEl || !statsEl.innerHTML.trim()) return null;
+    const L = i18n[currentLang] || {};
 
-function ppChipStyle(C, kind) {
-    if (kind === 'tag') return { bg: C.pale, fg: C.accent };
-    if (kind === 'honor' || kind === 'role') return { bg: ppAlpha(C.gold, 0.14), fg: C.gold };
-    if (kind === 'status-active') return { bg: ppAlpha(C.green, 0.14), fg: C.green };
-    return { bg: ppAlpha(C.muted, 0.14), fg: C.sub };
-}
+    const wrap = document.createElement('div');
+    wrap.setAttribute('aria-hidden', 'true');
+    wrap.style.cssText = 'position:fixed;left:0;top:0;z-index:-1;width:900px;box-sizing:border-box;padding:30px 34px 24px;background:var(--bg-white);border:1px solid var(--border-color);border-radius:18px;color:var(--text-primary);font-family:"Poppins","Noto Sans SC","Microsoft YaHei",sans-serif;';
 
-// chips 按宽度折行；返回 [{text, kind, w}] 二维数组
-function ppChipRows(ctx, chips, maxW, gap) {
-    const rows = [];
-    let row = [], x = 0;
-    for (const c of chips) {
-        const w = Math.ceil(ctx.measureText(c.text).width) + 20;
-        if (row.length && x + gap + w > maxW) { rows.push(row); row = []; x = 0; }
-        if (row.length) x += gap;
-        row.push({ text: c.text, kind: c.kind, w: w });
-        x += w;
-    }
-    if (row.length) rows.push(row);
-    return rows;
-}
+    const head = document.createElement('div');
+    head.style.cssText = 'display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;';
+    head.innerHTML = '<span style="font-size:18px;font-weight:700;color:var(--primary-blue);">' + escapeHtml(L.pp_card_title || '个人战绩卡') + '</span>'
+        + '<span style="font-size:13px;font-weight:600;color:var(--text-muted);">WFLS TT Club</span>';
+    wrap.appendChild(head);
 
-function buildPlayerShareCardCanvas(player, data) {
-    const cs = getComputedStyle(document.body);
-    const v = n => (cs.getPropertyValue(n) || '').trim();
-    const C = {
-        bg: v('--bg-white') || '#ffffff',
-        soft: v('--bg-lighter') || '#f1f5f9',
-        pale: v('--primary-pale') || '#e6f2ff',
-        accent: v('--primary-blue') || '#007bff',
-        text: v('--text-primary') || '#1a1a2e',
-        sub: v('--text-secondary') || '#4a5568',
-        muted: v('--text-muted') || '#8899aa',
-        border: v('--border-color') || '#e2e8f0',
-        green: v('--accent-green') || '#52c41a',
-        gold: v('--accent-gold') || '#f0a500'
-    };
-    const L = i18n[currentLang];
-    const FONT = "'Poppins','Noto Sans SC','Microsoft YaHei',sans-serif";
-
-    const W = 720, pad = 36, inset = 6, innerW = W - pad * 2;
-
-    // ---- 数据 ----
-    const wr = data.totalMatches > 0 ? Math.round(data.wins / data.totalMatches * 100) + '%' : '0%';
-    const lastSnap = data.scoreHistory.length ? data.scoreHistory[data.scoreHistory.length - 1] : null;
-    const curRank = lastSnap ? lastSnap.rank : null;
-    const cells = [
-        { label: L.wtt_ov_current, value: String(data.curScoreDisp), color: C.accent },
-        { label: L.pp_card_cur_rank, value: curRank ? '#' + curRank : '-', color: C.gold },
-        { label: L.wtt_ov_total, value: String(data.totalMatches), color: C.text },
-        { label: L.wtt_ov_percentile, value: wr, color: C.green },
-        { label: L.wtt_ov_max, value: String(data.maxScore), color: C.text },
-        { label: L.wtt_ov_bestrank, value: data.bestRank === Infinity ? '-' : '#' + data.bestRank, color: C.gold }
-    ];
-
-    // 走势序列：优先每日积分，不足时回退快照序列
-    let series = data.dailyScoreHistory.map(p => ({ label: p.label, score: p.score }));
-    if (series.length < 2) series = data.scoreHistory.map(p => ({ label: p.label, score: p.score }));
-    const hasChart = series.length >= 2;
-    if (series.length > 80) {
-        const step = Math.ceil(series.length / 80);
-        const ds = [];
-        for (let i = 0; i < series.length; i += step) ds.push(series[i]);
-        if (ds[ds.length - 1] !== series[series.length - 1]) ds.push(series[series.length - 1]);
-        series = ds;
-    }
-
-    // chips：状态 / 角色 / 标签 / 荣誉（超出一行自动折行，最多两行）
-    const chips = [{ text: player.status === 'active' ? L.pp_status_active : L.pp_status_alumni, kind: player.status === 'active' ? 'status-active' : 'status-alumni' }];
-    if (player.role) chips.push({ text: String(player.role), kind: 'role' });
-    (player.tags || []).forEach(t => chips.push({ text: String(t), kind: 'tag' }));
-    (player.honors || []).forEach(h => chips.push({ text: String(h), kind: 'honor' }));
-    if (chips.length > 10) {
-        const rest = chips.length - 9;
-        chips.length = 9;
-        chips.push({ text: '+' + rest, kind: 'tag' });
-    }
-
-    // ---- 布局测量 ----
-    const mctx = document.createElement('canvas').getContext('2d');
-    mctx.font = `600 12px ${FONT}`;
-    const chipGap = 8, chipH = 24, chipRowGap = 8;
-    const chipRows = ppChipRows(mctx, chips, innerW - inset * 2, chipGap);
-
-    const headH = 26, divGap = 20, nameRowH = 40;
-    const chipBlockH = chipRows.length ? chipRows.length * chipH + (chipRows.length - 1) * chipRowGap + 14 : 0;
-    const gridCellH = 74, gridGap = 8, gridH = gridCellH * 2 + gridGap;
-    const chartBlockH = hasChart ? 20 + 84 + 22 : 0;
-    const footBlockH = 14 + 18 + 16;
-    const H = pad + headH + divGap + nameRowH + chipBlockH + gridH + chartBlockH + footBlockH + pad;
-
-    // ---- 绘制 ----
-    const scale = Math.min(3, Math.max(2, window.devicePixelRatio || 2));
-    const canvas = document.createElement('canvas');
-    canvas.width = Math.round(W * scale); canvas.height = Math.round(H * scale);
-    const ctx = canvas.getContext('2d');
-    ctx.scale(scale, scale);
-    ctx.textBaseline = 'middle';
-
-    _rankImgRoundRect(ctx, 0.5, 0.5, W - 1, H - 1, 20);
-    ctx.fillStyle = C.bg; ctx.fill();
-    ctx.strokeStyle = C.border; ctx.lineWidth = 1; ctx.stroke();
-
-    let y = pad;
-
-    // 头部
-    ctx.font = `700 18px ${FONT}`; ctx.fillStyle = C.accent; ctx.textAlign = 'left';
-    ctx.fillText(L.pp_card_title || '个人战绩卡', pad + inset, y + 13);
-    ctx.font = `600 12px ${FONT}`; ctx.fillStyle = C.muted; ctx.textAlign = 'right';
-    ctx.fillText('WFLS TT Club', W - pad - inset, y + 13);
-    y += headH;
-    ctx.strokeStyle = C.border;
-    ctx.beginPath(); ctx.moveTo(pad, y + 6.5); ctx.lineTo(W - pad, y + 6.5); ctx.stroke();
-    y += divGap;
-
-    // 姓名 + UID
-    ctx.textAlign = 'left';
-    ctx.font = `800 26px ${FONT}`; ctx.fillStyle = C.text;
-    const nameText = String(player.name || '-');
-    ctx.fillText(nameText, pad + inset, y + nameRowH / 2);
-    const nameW = Math.ceil(ctx.measureText(nameText).width);
-    ctx.font = `600 13px ${FONT}`; ctx.fillStyle = C.muted;
-    ctx.fillText('#' + String(player.uid), pad + inset + nameW + 10, y + nameRowH / 2 + 2);
-    y += nameRowH;
-
-    // chips
-    if (chipRows.length) {
-        y += 4;
-        chipRows.forEach((row, ri) => {
-            let x = pad + inset;
-            for (const c of row) {
-                const st = ppChipStyle(C, c.kind);
-                _rankImgRoundRect(ctx, x, y, c.w, chipH, chipH / 2);
-                ctx.fillStyle = st.bg; ctx.fill();
-                ctx.font = `600 12px ${FONT}`; ctx.fillStyle = st.fg; ctx.textAlign = 'left';
-                ctx.fillText(c.text, x + 10, y + chipH / 2 + 0.5);
-                x += c.w + chipGap;
-            }
-            y += chipH;
-            if (ri < chipRows.length - 1) y += chipRowGap;
-        });
-        y += 14;
-    }
-
-    // 数据格 2×3
-    const gridTop = y;
-    const colW = (innerW - inset * 2 - gridGap * 2) / 3;
-    cells.forEach((cell, i) => {
-        const r = Math.floor(i / 3), c = i % 3;
-        const x = pad + inset + c * (colW + gridGap);
-        const cy = gridTop + r * (gridCellH + gridGap);
-        _rankImgRoundRect(ctx, x, cy, colW, gridCellH, 12);
-        ctx.fillStyle = C.soft; ctx.fill();
-        ctx.font = `800 22px ${FONT}`; ctx.fillStyle = cell.color; ctx.textAlign = 'center';
-        ctx.fillText(cell.value, x + colW / 2, cy + gridCellH / 2 - 8);
-        ctx.font = `500 11px ${FONT}`; ctx.fillStyle = C.muted;
-        ctx.fillText(cell.label, x + colW / 2, cy + gridCellH / 2 + 16);
+    const content = document.createElement('div');
+    content.innerHTML = profileEl.innerHTML + (statsEl.innerHTML || '') + (analyticsEl ? analyticsEl.innerHTML : '');
+    // 中和 glass-card 的毛玻璃外观（离屏节点自带卡片底），只保留卡片边框
+    content.querySelectorAll('.glass-card').forEach(el => {
+        el.style.background = 'transparent';
+        el.style.backdropFilter = 'none';
+        el.style.webkitBackdropFilter = 'none';
+        el.style.boxShadow = 'none';
     });
-    y = gridTop + gridH;
+    // 粒度切换等交互控件不进入导出图
+    content.querySelectorAll('.personal-chart-granularity').forEach(el => el.remove());
+    // html2canvas 会把 flex 居中的小圆点文字画到容器左下角——导出前用 canvas 预渲染成图片绕开
+    content.querySelectorAll('.pa-form-dot').forEach(dot => {
+        try {
+            const cs = getComputedStyle(dot);
+            const size = Math.round(parseFloat(cs.width)) || 22;
+            const cv = document.createElement('canvas');
+            cv.width = size * 3; cv.height = size * 3;
+            const c2 = cv.getContext('2d');
+            c2.scale(3, 3);
+            c2.beginPath(); c2.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
+            c2.fillStyle = cs.backgroundColor && cs.backgroundColor !== 'rgba(0, 0, 0, 0)' ? cs.backgroundColor : '#52c41a';
+            c2.fill();
+            c2.fillStyle = cs.color || '#fff';
+            c2.font = `${cs.fontWeight} ${parseFloat(cs.fontSize)}px ${cs.fontFamily}`;
+            c2.textAlign = 'center'; c2.textBaseline = 'middle';
+            c2.fillText(dot.textContent.trim(), size / 2, size / 2 + 0.5);
+            const img = document.createElement('img');
+            img.src = cv.toDataURL('image/png');
+            img.style.cssText = `display:inline-block;width:${size}px;height:${size}px;`;
+            dot.replaceWith(img);
+        } catch (e) { /* 替换失败时保留原节点 */ }
+    });
+    // 图表容器定高会裁剪克隆出的图片，改为随内容自适应
+    content.querySelectorAll('.pa-chart-box, .pa-donut-box, .pa-spark-box, .personal-chart-wrapper').forEach(el => { el.style.height = 'auto'; el.style.maxHeight = 'none'; });
+    // Chart.js 画布位图无法随 innerHTML 克隆，逐个转为 <img>（与源文档顺序一一对应）
+    // 后台标签页 rAF 会被节流导致图表尚未绘制，导出前先强制同步重绘
+    const srcCanvases = Array.from(document.querySelectorAll('#playerStatsBody canvas, #playerAnalyticsBody canvas'));
+    const dstCanvases = content.querySelectorAll('canvas');
+    srcCanvases.forEach((src, i) => {
+        const dst = dstCanvases[i];
+        if (!dst) return;
+        try {
+            const ch = (window.Chart && Chart.getChart) ? Chart.getChart(src) : null;
+            if (ch) { try { ch.update('none'); } catch (e) { /* 已销毁的实例忽略 */ } try { if (typeof ch.draw === 'function') ch.draw(); } catch (e) { /* 已由 update 同步绘制 */ } }
+            const img = document.createElement('img');
+            img.src = src.toDataURL('image/png');
+            img.style.cssText = 'display:block;width:100%;height:auto;';
+            dst.replaceWith(img);
+        } catch (e) { /* 画布已被销毁等异常时跳过该图 */ }
+    });
+    wrap.appendChild(content);
 
-    // 积分走势
-    if (hasChart) {
-        y += 20;
-        const plotH = 84;
-        const x0 = pad + inset + 2, x1 = W - pad - inset - 2;
-        const vals = series.map(p => p.score);
-        const vmin = Math.min.apply(null, vals), vmax = Math.max.apply(null, vals);
-        const span = (vmax - vmin) || 1;
-        const px = i => x0 + (x1 - x0) * (i / (series.length - 1));
-        const py = s => (y + plotH - 6) - (plotH - 18) * ((s - vmin) / span);
-        ctx.beginPath();
-        series.forEach((p, i) => { const X = px(i), Y = py(p.score); i ? ctx.lineTo(X, Y) : ctx.moveTo(X, Y); });
-        ctx.lineTo(px(series.length - 1), y + plotH); ctx.lineTo(x0, y + plotH); ctx.closePath();
-        ctx.fillStyle = ppAlpha(C.accent, 0.12); ctx.fill();
-        ctx.beginPath();
-        series.forEach((p, i) => { const X = px(i), Y = py(p.score); i ? ctx.lineTo(X, Y) : ctx.moveTo(X, Y); });
-        ctx.strokeStyle = C.accent; ctx.lineWidth = 2; ctx.lineJoin = 'round'; ctx.stroke();
-        const lx = px(series.length - 1), ly = py(series[series.length - 1].score);
-        ctx.beginPath(); ctx.arc(lx, ly, 3.5, 0, Math.PI * 2);
-        ctx.fillStyle = C.accent; ctx.fill();
-        ctx.beginPath(); ctx.arc(lx, ly, 3.5, 0, Math.PI * 2);
-        ctx.strokeStyle = C.bg; ctx.lineWidth = 1.5; ctx.stroke();
-        ctx.font = `500 10px ${FONT}`; ctx.fillStyle = C.muted;
-        ctx.textAlign = 'left';
-        ctx.fillText(String(Math.round(vmax)), x0, y + 8);
-        ctx.fillText(String(Math.round(vmin)), x0, y + plotH - 8);
-        ctx.fillText(series[0].label, x0, y + plotH + 14);
-        ctx.textAlign = 'right';
-        ctx.fillText(series[series.length - 1].label, x1, y + plotH + 14);
-        y += 84 + 22;
-    }
-
-    // 页脚
     const url = location.origin + location.pathname.replace(/[^/]*$/, '') + 'player.html?uid=' + encodeURIComponent(String(player.uid));
     const d = new Date(); const pd = n => String(n).padStart(2, '0');
     const stamp = `${d.getFullYear()}-${pd(d.getMonth() + 1)}-${pd(d.getDate())} ${pd(d.getHours())}:${pd(d.getMinutes())}`;
-    y += 14;
-    ctx.strokeStyle = C.border;
-    ctx.beginPath(); ctx.moveTo(pad, y + 0.5); ctx.lineTo(W - pad, y + 0.5); ctx.stroke();
-    y += 18;
-    ctx.font = `500 11px ${FONT}`; ctx.textAlign = 'left'; ctx.fillStyle = C.accent;
-    ctx.fillText(url, pad, y + 6);
-    ctx.textAlign = 'right'; ctx.fillStyle = C.muted;
-    ctx.fillText(`${L.export_gen || ''} ${stamp}`.trim(), W - pad, y + 6);
-
-    return canvas;
+    const foot = document.createElement('div');
+    foot.style.cssText = 'display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:24px;padding-top:14px;border-top:1px solid var(--border-color);font-size:11px;color:var(--text-muted);';
+    foot.innerHTML = '<span style="color:var(--primary-blue);font-weight:600;word-break:break-all;">' + escapeHtml(url) + '</span>'
+        + '<span style="white-space:nowrap;">' + escapeHtml(L.export_gen || '') + ' ' + stamp + '</span>';
+    wrap.appendChild(foot);
+    return wrap;
 }
 
 async function exportPlayerShareCard() {
     const player = ppCurrentPlayer;
     if (!player) return;
-    const data = computePersonalStatsData(player.name);
-    if (!data) { alert(i18n[currentLang].personal_stats_no_data || ''); return; }
+    const node = buildPlayerExportNode(player);
+    if (!node) return;
     const btn = document.getElementById('playerExportBtn');
     const L = i18n[currentLang] || {};
     const origHtml = btn ? btn.innerHTML : '';
     if (btn) { btn.disabled = true; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>' + escapeHtml(L.pp_export_btn || '') + '</span>'; }
     try {
-        if (document.fonts && document.fonts.ready) { try { await document.fonts.ready; } catch (e) { /* 字体就绪探测失败时直接渲染 */ } }
-        // 让按钮的 loading 态先绘制
-        await new Promise(r => setTimeout(r, 30));
-        const canvas = buildPlayerShareCardCanvas(player, data);
-        const blob = _rankImgDataUrlToBlob(canvas.toDataURL('image/png'));
-        _downloadRankImageBlob(blob, buildExportFileName('wfls-player-' + player.uid));
+        document.body.appendChild(node);
+        await exportDomNodeAsImage(node, { filenameBase: 'wfls-player-' + player.uid });
     } catch (err) {
         console.error('[PlayerPage] 战绩卡导出失败', err);
         alert(L.pp_export_fail || L.img_export_fail || '图片导出失败，请重试');
     } finally {
+        if (node.parentNode) node.parentNode.removeChild(node);
         if (btn) { btn.disabled = false; btn.innerHTML = origHtml; }
     }
 }

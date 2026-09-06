@@ -154,7 +154,7 @@ const i18n = {
         rank_page_title: "Ranking Beta | WFLS Table Tennis Club", rank_hero_desc: "社团积分排名系统 · 支持多时间节点对比 · 点击姓名查看积分明细", rank_tag: "Data Table", rank_title: "积分数据表", rank_sort_hint: "当前排序：", rank_sidebar_title: "时间节点", rank_qa_btn: "积分计算规则",
         rank_col_rank: "#", rank_col_name: "姓名", rank_col_points: "当前积分", rank_col_points_change: "积分变化", rank_col_change: "排名变化", rank_col_matches: "总场次", rank_col_winrate: "胜率",
         rank_export_btn: "导出图片", rank_export_gen: "生成于", rank_export_fail: "图片导出失败，请重试",
-        export_gen: "生成于", img_export_fail: "图片导出失败，请重试", detail_export_btn: "导出图片", pp_export_btn: "导出图片", pp_card_title: "个人战绩卡", pp_card_cur_rank: "当前排名", pp_export_fail: "战绩卡导出失败，请重试",
+        export_gen: "生成于", img_export_fail: "图片导出失败，请重试", detail_export_btn: "导出图片", pp_export_btn: "导出图片", pp_card_title: "个人战绩卡", pp_export_fail: "战绩卡导出失败，请重试",
         rank_export_menu_all: "导出全部", rank_export_menu_top12: "导出前12名", rank_export_top_sub: "前{n}名", rank_export_topn_prefix: "导出前", rank_export_topn_suffix: "名", rank_export_menu_go: "导出", rank_export_menu_invalid: "请输入有效的名次（正整数）",
         score_detail_title: "积分明细", score_col_date: "日期", score_col_type: "类型", score_col_opponent: "对手", score_col_result: "结果", score_col_score_before: "赛前积分", score_col_change: "积分变动", score_col_score_after: "赛后积分", score_result_win: "胜", score_result_loss: "负",
         tag_match: "赛事", tag_training: "训练", tag_notice: "公告", tag_event: "活动", tag_daily: "日常", tag_upcoming: "即将开始", tag_result: "比赛结果", tag_live: "进行中",
@@ -252,7 +252,7 @@ const i18n = {
         rank_page_title: "Ranking Beta | WFLS Table Tennis Club", rank_hero_desc: "Club ranking system · Auto-calculated · Season inheritance", rank_tag: "Data Table", rank_title: "Points Table", rank_sort_hint: "Current sorting: ", rank_sidebar_title: "Time Periods", rank_qa_btn: "Scoring Rules",
         rank_col_rank: "#", rank_col_name: "Name", rank_col_points: "Points", rank_col_points_change: "Score Δ", rank_col_change: "Rank Δ", rank_col_matches: "Matches", rank_col_winrate: "Win Rate",
         rank_export_btn: "Save Image", rank_export_gen: "Generated", rank_export_fail: "Image export failed. Please try again.",
-        export_gen: "Generated", img_export_fail: "Image export failed. Please try again.", detail_export_btn: "Save Image", pp_export_btn: "Save Image", pp_card_title: "Player Stats Card", pp_card_cur_rank: "Rank", pp_export_fail: "Card export failed. Please try again.",
+        export_gen: "Generated", img_export_fail: "Image export failed. Please try again.", detail_export_btn: "Save Image", pp_export_btn: "Save Image", pp_card_title: "Player Stats Card", pp_export_fail: "Card export failed. Please try again.",
         rank_export_menu_all: "Export All", rank_export_menu_top12: "Export Top 12", rank_export_top_sub: "Top {n}", rank_export_topn_prefix: "Top", rank_export_topn_suffix: "", rank_export_menu_go: "Export", rank_export_menu_invalid: "Please enter a valid rank (positive integer)",
         score_detail_title: "Score Details", score_col_date: "Date", score_col_type: "Type", score_col_opponent: "Opponent", score_col_result: "Result", score_col_score_before: "Before", score_col_change: "Change", score_col_score_after: "After", score_result_win: "Win", score_result_loss: "Loss",
         tag_match: "Match", tag_training: "Training", tag_notice: "Notice", tag_event: "Event", tag_daily: "Daily", tag_upcoming: "Upcoming", tag_result: "Result", tag_live: "Live",
@@ -606,9 +606,28 @@ async function exportDomNodeAsImage(node, opts) {
     if (typeof html2canvas === 'undefined') throw new Error('html2canvas 未加载');
     if (document.fonts && document.fonts.ready) { try { await document.fonts.ready; } catch (e) { /* 字体就绪探测失败时直接渲染 */ } }
     const scale = Math.min(3, Math.max(2, window.devicePixelRatio || 2));
-    const canvas = await html2canvas(node, { scale: scale, backgroundColor: null, useCORS: true, logging: false });
-    const blob = _rankImgDataUrlToBlob(canvas.toDataURL('image/png'));
-    _downloadRankImageBlob(blob, buildExportFileName(opts.filenameBase || 'wfls-export'));
+    // Chrome 128+ 默认对中西文混排自动加间隙（text-autospace），html2canvas 的画布绘制不含该间隙，
+    // 量宽与绘制不一致会导致全部文字错位——导出节点上显式关闭，同时关闭连字
+    node.style.textAutospace = 'no-autospace';
+    node.style.fontKerning = 'none';
+    // 页面被施加非 100% 的 CSS zoom 时（浏览器缩放策略/扩展注入），html2canvas 的文字坐标
+    // 会整体错位——在导出节点内做反向抵消，保证输出为节点的原始布局
+    let counterZoom = '';
+    try {
+        let v = parseFloat(getComputedStyle(document.documentElement).zoom);
+        if (!Number.isFinite(v) || !v) v = parseFloat(getComputedStyle(document.body).zoom);
+        if (Number.isFinite(v) && v > 0 && Math.abs(v - 1) > 0.001) counterZoom = String(1 / v);
+    } catch (e) { /* 读取失败时按无 zoom 处理 */ }
+    if (counterZoom) node.style.zoom = counterZoom;
+    try {
+        const canvas = await html2canvas(node, { scale: scale, backgroundColor: null, useCORS: true, logging: false });
+        const blob = _rankImgDataUrlToBlob(canvas.toDataURL('image/png'));
+        _downloadRankImageBlob(blob, buildExportFileName(opts.filenameBase || 'wfls-export'));
+    } finally {
+        if (counterZoom) node.style.zoom = '';
+        node.style.textAutospace = '';
+        node.style.fontKerning = '';
+    }
 }
 
 if (langToggle) { const sl = safeStorage.get('wfls-lang.v1') || safeStorage.get('wfls-lang') || 'zh'; setLanguage(sl); langToggle.addEventListener('click', () => setLanguage(currentLang === 'zh' ? 'en' : 'zh')); }
@@ -1128,7 +1147,7 @@ function renderDetailNav(type, item) {
     host.appendChild(wrap);
 }
 
-/* ---- 详情内容导出为图片（html2canvas 截取已渲染的 markdown/KaTeX 成品） ---- */
+/* ---- 详情内容导出为图片（foreignObject 截取已渲染的 markdown/KaTeX 成品） ---- */
 function renderDetailExportButton() {
     const host = document.getElementById('detailActions');
     if (!host) return;
@@ -1153,7 +1172,7 @@ function buildDetailExportNode(type, item) {
     const L = i18n[currentLang] || {};
     const wrap = document.createElement('div');
     wrap.setAttribute('aria-hidden', 'true');
-    wrap.style.cssText = 'position:fixed;left:-10000px;top:0;z-index:-1;width:820px;box-sizing:border-box;padding:36px 42px 28px;background:var(--bg-white);border:1px solid var(--border-color);border-radius:18px;color:var(--text-primary);font-family:"Poppins","Noto Sans SC","Microsoft YaHei",sans-serif;';
+    wrap.style.cssText = 'position:fixed;left:0;top:0;z-index:-1;width:820px;box-sizing:border-box;padding:36px 42px 28px;background:var(--bg-white);border:1px solid var(--border-color);border-radius:18px;color:var(--text-primary);font-family:"Poppins","Noto Sans SC","Microsoft YaHei",sans-serif;';
 
     const head = document.createElement('div');
     head.style.cssText = 'display:flex;justify-content:space-between;align-items:center;';
