@@ -1692,6 +1692,15 @@ html:lang(en) .hero-title {
 .media-item a.file-link:hover { background: var(--primary-pale); color: var(--primary-dark); }
 .media-item a.file-link i { font-size: 1.2rem; }
 
+/* ---- 文中媒体嵌入（{{media:N}} 占位符渲染） ---- */
+.detail-body .media-embed, .markdown-body .media-embed { margin: 1.5em auto; max-width: 100%; }
+.media-caption { padding: 10px 18px 12px; font-size: 0.85rem; line-height: 1.6; color: var(--text-muted); text-align: center; border-top: 1px solid var(--border-color); background: var(--bg-lighter); }
+.media-inline-img { display: inline-block; vertical-align: middle; max-width: 100%; max-height: 200px; height: auto; border-radius: var(--radius-sm); margin: 0.25em 0.35em; box-shadow: var(--shadow-sm); border: 1px solid var(--border-color); }
+.media-inline-img-error { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; margin: 0.25em 0.35em; border: 1px dashed var(--border-color); border-radius: var(--radius-sm); color: var(--text-muted); background: var(--bg-lighter); vertical-align: middle; }
+.media-ref-error { display: inline-flex; align-items: center; gap: 7px; padding: 4px 13px; border: 1px dashed rgba(220, 38, 38, 0.55); color: #dc2626; background: rgba(220, 38, 38, 0.07); border-radius: 999px; font-size: 0.8rem; font-family: 'Consolas', 'Courier New', monospace; vertical-align: middle; }
+.media-ref-error.block { display: flex; width: fit-content; margin: 1.3em auto; padding: 9px 18px; }
+.dark-mode .media-ref-error { color: #f87171; border-color: rgba(248, 113, 113, 0.5); background: rgba(248, 113, 113, 0.1); }
+
 /* ========================================
    排名页面 - 赛季折叠侧边栏
    ======================================== */

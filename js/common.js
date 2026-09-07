@@ -670,11 +670,11 @@ async function performSearch(query) {
     const results = [];
     if (newsItems.length) newsItems.forEach(item => {
         const s = calcScore(query, item.title, item.excerpt || '', item.content || '', item.tag || '', i18n[currentLang]['tag_' + item.tag] || '');
-        if (s > 0) results.push({ type: 'news', typeLabel: i18n[currentLang].search_type_news, title: item.title, excerpt: item.excerpt || item.content || '', date: item.date, link: 'detail.html?type=news&id=' + item.id, score: s });
+        if (s > 0) results.push({ type: 'news', typeLabel: i18n[currentLang].search_type_news, title: item.title, excerpt: stripMediaMarkers(item.excerpt || item.content || ''), date: item.date, link: 'detail.html?type=news&id=' + item.id, score: s });
     });
     if (compItems.length) compItems.forEach(item => {
         const s = calcScore(query, item.title, item.excerpt || '', item.content || '', item.tag || '', i18n[currentLang]['tag_' + item.tag] || '');
-        if (s > 0) results.push({ type: 'competition', typeLabel: i18n[currentLang].search_type_competition, title: item.title, excerpt: item.excerpt || item.content || '', date: item.date, link: 'detail.html?type=competition&id=' + item.id, score: s });
+        if (s > 0) results.push({ type: 'competition', typeLabel: i18n[currentLang].search_type_competition, title: item.title, excerpt: stripMediaMarkers(item.excerpt || item.content || ''), date: item.date, link: 'detail.html?type=competition&id=' + item.id, score: s });
     });
     if (membersData && membersData.length) membersData.forEach(m => {
         const s = calcScore(query, m.name, m.role, m.description);
@@ -691,7 +691,7 @@ async function performSearch(query) {
     });
     if (qaItems.length) qaItems.forEach(item => {
         const s = calcScore(query, item.title, item.excerpt || '', item.content || '', item.tag || '', i18n[currentLang]['tag_' + item.tag] || '');
-        if (s > 0) results.push({ type: 'qa', typeLabel: i18n[currentLang].search_type_qa, title: item.title, excerpt: item.excerpt || item.content || '', date: item.date, link: 'detail.html?type=qa&id=' + item.id, score: s });
+        if (s > 0) results.push({ type: 'qa', typeLabel: i18n[currentLang].search_type_qa, title: item.title, excerpt: stripMediaMarkers(item.excerpt || item.content || ''), date: item.date, link: 'detail.html?type=qa&id=' + item.id, score: s });
     });
     if (changelogData && changelogData.length) changelogData.forEach(item => {
         const changesText = item.changes ? item.changes.join(' ') : '';
@@ -1097,10 +1097,10 @@ async function renderDetailItem(type, item) {
     document.getElementById('detailTitle').textContent = item.title;
     document.getElementById('detailDate').textContent = item.date;
     const bodyText = await resolveItemContent(type, item);
-    document.getElementById('detailContent').innerHTML = renderMarkdown(bodyText);
     const contentSection = document.getElementById('detailContent');
+    const usedMediaRefs = contentSection ? renderDetailBody(contentSection, bodyText, item.media) : null;
     if (contentSection) contentSection.style.display = '';
-    renderDetailMedia(item);
+    renderDetailMedia(item, usedMediaRefs);
     await renderDetailDrawsSection(type, item);
     renderDetailVersion(type, item);
     try { await ensureContentList(type); } catch (e) { /* 列表不可用时只省略上下篇，不影响正文 */ }
@@ -1197,6 +1197,9 @@ function buildDetailExportNode(type, item) {
     // 中和 .detail-body 的卡片外观（离屏节点自带卡片底），只保留排版样式
     body.style.cssText = 'background:transparent;border:none;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;padding:0;margin:0;max-width:none;';
     body.innerHTML = contentEl.innerHTML;
+    // 导出为静态图片：交互式视频/文件附件无法呈现，内嵌块整块移除（与底部媒体区导出口径一致）；图片强制立即加载
+    body.querySelectorAll('.media-embed[data-media-type="video"], .media-embed[data-media-type="file"]').forEach(el => el.remove());
+    body.querySelectorAll('img').forEach(img => { img.loading = 'eager'; });
     body.querySelectorAll('.katex-display').forEach(el => { el.style.overflowX = 'visible'; el.style.overflowY = 'visible'; });
     wrap.appendChild(body);
 
@@ -1257,78 +1260,283 @@ async function exportDetailAsImage(btn) {
     }
 }
 
-function renderDetailMedia(item) {
-    const mc = document.getElementById('detailMedia');
-    mc.innerHTML = '';
-    if (item.media && Array.isArray(item.media) && item.media.length) {
-        item.media.forEach(m => {
-            if (!m || !m.type || !m.src) return;
-            const mi = document.createElement('div');
-            mi.className = 'media-item';
-            if (m.type === 'image') {
-                const img = document.createElement('img');
-                img.src = m.src;
-                img.alt = m.alt || '图片';
-                img.loading = 'lazy';
-                img.onerror = () => { img.style.display = 'none'; const srcSafe = escapeHtml(m.src); mi.innerHTML = '<div class="media-error"><i class="fa-solid fa-image"></i><p>图片加载失败</p><a href="' + srcSafe + '" download class="media-download-link"><i class="fa-solid fa-download"></i> 下载图片</a></div>'; };
-                mi.appendChild(img);
-            } else if (m.type === 'video') {
-                const wrapper = document.createElement('div');
-                wrapper.className = 'video-wrapper';
-                const v = document.createElement('video');
-                v.controls = true;
-                v.playsInline = true;
-                v.preload = 'metadata';
-                v.style.width = '100%';
-                const source = document.createElement('source');
-                source.src = m.src;
-                const ext = (m.src || '').split('.').pop().toLowerCase();
-                const mimeMap = { mp4: 'video/mp4', webm: 'video/webm', ogg: 'video/ogg', ogv: 'video/ogg', mov: 'video/quicktime', mkv: 'video/x-matroska', avi: 'video/x-msvideo' };
-                source.type = mimeMap[ext] || 'video/mp4';
-                v.appendChild(source);
-                const loadingEl = document.createElement('div');
-                loadingEl.className = 'video-loading';
-                loadingEl.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i><p>视频加载中...</p>';
-                let videoLoaded = false, videoError = false;
-                const hideLoading = () => { if (!videoLoaded && !videoError) { videoLoaded = true; loadingEl.style.display = 'none'; } };
-                const showLoading = () => { if (videoLoaded && !videoError) { videoLoaded = false; loadingEl.style.display = 'flex'; } };
-                v.addEventListener('loadedmetadata', hideLoading);
-                v.addEventListener('canplay', hideLoading);
-                v.addEventListener('canplaythrough', hideLoading);
-                v.addEventListener('playing', hideLoading);
-                v.addEventListener('waiting', showLoading);
-                v.addEventListener('seeking', showLoading);
-                v.addEventListener('seeked', hideLoading);
-                const handleVideoError = () => {
-                    if (videoError) return;
-                    videoError = true;
-                    loadingEl.style.display = 'none';
-                    const srcSafe = escapeHtml(m.src);
-                    mi.innerHTML = '<div class="media-error"><i class="fa-solid fa-video"></i><p>视频加载失败</p><p class="media-error-hint">（文件较大，网络不稳定时可能加载较慢）</p><a href="' + srcSafe + '" download class="media-download-link"><i class="fa-solid fa-download"></i> 下载视频</a></div>';
-                };
-                v.onerror = handleVideoError;
-                source.onerror = handleVideoError;
-                const dlBtn = document.createElement('a');
-                dlBtn.href = m.src;
-                dlBtn.download = '';
-                dlBtn.className = 'video-dl-btn';
-                dlBtn.title = '下载视频';
-                dlBtn.innerHTML = '<i class="fa-solid fa-download"></i>';
-                wrapper.appendChild(v);
-                wrapper.appendChild(loadingEl);
-                wrapper.appendChild(dlBtn);
-                mi.appendChild(wrapper);
-            } else if (m.type === 'file') {
-                const a = document.createElement('a');
-                a.href = m.src;
-                a.className = 'file-link';
-                a.download = '';
-                a.innerHTML = '<i class="fa-solid fa-download"></i> ' + escapeHtml(String(m.name || '下载文件'));
-                mi.appendChild(a);
-            }
-            mc.appendChild(mi);
-        });
+/* ---- 文中媒体嵌入：content 里用 {{media:N}} / {{media:标识}} 把 media 数组中的附件插到正文该位置 ----
+   约定：
+   - media 数组仍是附件的唯一来源（sync_content.py 校验文件存在性、占位符引用合法性），占位符只决定"放哪里"；
+   - {{media:N}} 按第 N 项（1 起）引用；{{media:标识}} 按附件的 mid 字段引用（mid 匹配优先于序号）；
+   - 未被任何占位符引用的附件仍渲染在详情页底部媒体区 —— 旧条目不写占位符即保持原样，零迁移；
+   - 占位符先替换为私有区字符（\uE007，避开正文可输入字符与 KaTeX 的 \uE000 占位），markdown 渲染后再
+     在 DOM 层换回媒体元素：块级插入用 Range 拆段，保证 innerHTML 往返时 DOM 合法。 */
+const MEDIA_REF_RE = /\{\{\s*media\s*:\s*([^{}]+?)\s*\}\}/g;
+const MEDIA_PH = '\uE007';
+const MEDIA_PH_RE = new RegExp(MEDIA_PH + 'M(\\d+)' + MEDIA_PH);
+const MEDIA_PH_RE_G = new RegExp(MEDIA_PH + 'M(\\d+)' + MEDIA_PH, 'g');
+const MEDIA_INLINE_OK = /^(STRONG|EM|B|I|CODE|A|SPAN|BR|DEL|S|U|MARK|SUB|SUP|SMALL|CITE|Q)$/i;
+
+function applyMediaPlaceholders(rawText) {
+    const refs = [];
+    const text = String(rawText || '');
+    if (text.indexOf('{{') === -1) return { text, refs };
+    return { text: text.replace(MEDIA_REF_RE, (m, ref) => { refs.push(String(ref).trim()); return MEDIA_PH + 'M' + (refs.length - 1) + MEDIA_PH; }), refs };
+}
+
+function stripMediaMarkers(text) { return text ? String(text).replace(MEDIA_REF_RE, ' ') : ''; }
+
+function resolveMediaRef(ref, mediaList) {
+    const list = Array.isArray(mediaList) ? mediaList : [];
+    if (ref == null || ref === '') return null;
+    // mid 匹配优先于序号（与 sync_content.py 的校验口径一致）
+    for (let i = 0; i < list.length; i++) {
+        const m = list[i];
+        if (m && typeof m === 'object' && m.mid != null && String(m.mid).trim() === ref) return { item: m, index: i };
     }
+    if (/^[0-9]+$/.test(ref)) {
+        const n = parseInt(ref, 10);
+        if (n >= 1 && n <= list.length) return { item: list[n - 1], index: n - 1 };
+    }
+    return null;
+}
+
+// 单个附件 → 媒体卡片元素；embed=true 时用于正文内嵌（附加 media-embed 类）。无法识别的类型返回 null。
+function buildMediaItem(m, embed) {
+    if (!m || !m.type || !m.src) return null;
+    const mi = document.createElement('div');
+    mi.className = 'media-item' + (embed ? ' media-embed' : '');
+    mi.dataset.mediaType = String(m.type);
+    if (m.type === 'image') {
+        const img = document.createElement('img');
+        img.src = m.src;
+        img.alt = m.alt || '图片';
+        img.loading = 'lazy';
+        img.onerror = () => { img.style.display = 'none'; const srcSafe = escapeHtml(m.src); mi.innerHTML = '<div class="media-error"><i class="fa-solid fa-image"></i><p>图片加载失败</p><a href="' + srcSafe + '" download class="media-download-link"><i class="fa-solid fa-download"></i> 下载图片</a></div>'; };
+        mi.appendChild(img);
+    } else if (m.type === 'video') {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'video-wrapper';
+        const v = document.createElement('video');
+        v.controls = true;
+        v.playsInline = true;
+        v.preload = 'metadata';
+        v.style.width = '100%';
+        const source = document.createElement('source');
+        source.src = m.src;
+        const ext = (m.src || '').split('.').pop().toLowerCase();
+        const mimeMap = { mp4: 'video/mp4', webm: 'video/webm', ogg: 'video/ogg', ogv: 'video/ogg', mov: 'video/quicktime', mkv: 'video/x-matroska', avi: 'video/x-msvideo' };
+        source.type = mimeMap[ext] || 'video/mp4';
+        v.appendChild(source);
+        const loadingEl = document.createElement('div');
+        loadingEl.className = 'video-loading';
+        loadingEl.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i><p>视频加载中...</p>';
+        let videoLoaded = false, videoError = false;
+        const hideLoading = () => { if (!videoLoaded && !videoError) { videoLoaded = true; loadingEl.style.display = 'none'; } };
+        const showLoading = () => { if (videoLoaded && !videoError) { videoLoaded = false; loadingEl.style.display = 'flex'; } };
+        v.addEventListener('loadedmetadata', hideLoading);
+        v.addEventListener('canplay', hideLoading);
+        v.addEventListener('canplaythrough', hideLoading);
+        v.addEventListener('playing', hideLoading);
+        v.addEventListener('waiting', showLoading);
+        v.addEventListener('seeking', showLoading);
+        v.addEventListener('seeked', hideLoading);
+        const handleVideoError = () => {
+            if (videoError) return;
+            videoError = true;
+            loadingEl.style.display = 'none';
+            const srcSafe = escapeHtml(m.src);
+            mi.innerHTML = '<div class="media-error"><i class="fa-solid fa-video"></i><p>视频加载失败</p><p class="media-error-hint">（文件较大，网络不稳定时可能加载较慢）</p><a href="' + srcSafe + '" download class="media-download-link"><i class="fa-solid fa-download"></i> 下载视频</a></div>';
+        };
+        v.onerror = handleVideoError;
+        source.onerror = handleVideoError;
+        const dlBtn = document.createElement('a');
+        dlBtn.href = m.src;
+        dlBtn.download = '';
+        dlBtn.className = 'video-dl-btn';
+        dlBtn.title = '下载视频';
+        dlBtn.innerHTML = '<i class="fa-solid fa-download"></i>';
+        wrapper.appendChild(v);
+        wrapper.appendChild(loadingEl);
+        wrapper.appendChild(dlBtn);
+        mi.appendChild(wrapper);
+    } else if (m.type === 'file') {
+        const a = document.createElement('a');
+        a.href = m.src;
+        a.className = 'file-link';
+        a.download = '';
+        a.innerHTML = '<i class="fa-solid fa-download"></i> ' + escapeHtml(String(m.name || '下载文件'));
+        mi.appendChild(a);
+    } else {
+        return null;
+    }
+    const caption = m.caption == null ? '' : String(m.caption).trim();
+    if (caption) {
+        const cap = document.createElement('div');
+        cap.className = 'media-caption';
+        cap.textContent = caption;
+        mi.appendChild(cap);
+    }
+    return mi;
+}
+
+// 无效引用占位提示（前台可见的虚线胶囊，便于维护者发现；sync --check 会提前告警）
+function buildMediaRefError(ref, block) {
+    const el = document.createElement(block ? 'div' : 'span');
+    el.className = 'media-ref-error' + (block ? ' block' : '');
+    el.title = 'media 引用无效：请核对 media 数组的序号（1 起）或 mid 标识';
+    const icon = document.createElement('i');
+    icon.className = 'fa-solid fa-triangle-exclamation';
+    el.appendChild(icon);
+    el.appendChild(document.createTextNode('{{media:' + ref + '}}'));
+    return el;
+}
+
+// markdown 渲染 + 占位符回填：返回被内嵌引用的 media 下标集合（底部媒体区据此跳过）
+function renderDetailBody(el, rawText, mediaList) {
+    const { text, refs } = applyMediaPlaceholders(rawText);
+    el.innerHTML = renderMarkdown(text);
+    return embedDetailMedia(el, refs, mediaList);
+}
+
+// 在正文 DOM 中把占位符替换为媒体元素；返回已使用的 media 数组下标集合
+function embedDetailMedia(rootEl, refs, mediaList) {
+    const used = new Set();
+    if (!rootEl || !refs || !refs.length) return used;
+    // 收集所有占位符出现位置（TreeWalker 天然按文档序）
+    const occurrences = [];
+    const walker = document.createTreeWalker(rootEl, NodeFilter.SHOW_TEXT, null);
+    let tn;
+    while ((tn = walker.nextNode())) {
+        const re = new RegExp(MEDIA_PH_RE.source, 'g');
+        let m;
+        while ((m = re.exec(tn.nodeValue))) {
+            occurrences.push({ idx: parseInt(m[1], 10), node: tn, start: m.index, end: m.index + m[0].length });
+        }
+    }
+    if (!occurrences.length) return used;
+
+    const inCode = node => { let el = node.parentElement; while (el && el !== rootEl) { if (el.tagName === 'PRE' || el.tagName === 'CODE') return true; el = el.parentElement; } return false; };
+    const hostOf = node => {
+        let el = node.parentElement;
+        while (el && el !== rootEl) {
+            if (/^(P|LI|TD|TH|H[1-6])$/i.test(el.tagName)) return el;
+            el = el.parentElement;
+        }
+        return null;
+    };
+    // 整块独占占位符（无其他可见文字、无块级子元素）→ 块级媒体整体替换
+    const isMarkerOnlyHost = host => {
+        if (!host || host === rootEl) return false;
+        if ((host.textContent || '').replace(MEDIA_PH_RE_G, '').trim() !== '') return false;
+        return Array.from(host.querySelectorAll('*')).every(el => MEDIA_INLINE_OK.test(el.tagName));
+    };
+    const blockSplitNeeded = host => host && /^(P|H[1-6])$/i.test(host.tagName); // p/h 系只允许 phrasing 内容，需拆段；li/td/th 可直接容纳块级媒体
+
+    const replaceRange = (occ, build) => {
+        const r = document.createRange();
+        r.setStart(occ.node, occ.start);
+        r.setEnd(occ.node, Math.min(occ.end, occ.node.nodeValue.length));
+        r.deleteContents();
+        r.insertNode(build());
+    };
+    // 块级媒体插进 p/h 前先把占位符所在的段落拆开：占位符前文字留在原段落，
+    // 媒体块插到原段落之后，其余内容包进同标签新段落 —— 避免 p>div 非法嵌套
+    // （innerHTML 往返时解析器会重排非法嵌套，导致导出图片与所见不一致）
+    const cleanupEmptyInline = root => {
+        root.querySelectorAll('*').forEach(el => {
+            if (!MEDIA_INLINE_OK.test(el.tagName) || el.tagName === 'BR') return;
+            if (!el.textContent.trim() && !el.querySelector('img,video')) el.remove();
+        });
+    };
+    const insertBlockSplit = (occ, mediaEl) => {
+        const host = hostOf(occ.node);
+        if (!blockSplitNeeded(host)) { replaceRange(occ, () => mediaEl); return; }
+        const ph = document.createRange();
+        ph.setStart(occ.node, occ.start);
+        ph.setEnd(occ.node, Math.min(occ.end, occ.node.nodeValue.length));
+        ph.deleteContents(); // 占位符移除后其前后文字在同/相邻文本节点中自然衔接
+        const tail = document.createRange();
+        tail.setStart(occ.node, occ.start);
+        tail.setEnd(host, host.childNodes.length);
+        const moved = tail.extractContents(); // 跨行内元素（strong 等）时自动拆分克隆
+        cleanupEmptyInline(host);
+        host.after(mediaEl);
+        if (moved.childNodes.length && (moved.textContent.trim() || moved.querySelector('img,video'))) {
+            const rest = document.createElement(host.tagName);
+            rest.appendChild(moved);
+            cleanupEmptyInline(rest);
+            if (rest.textContent.trim() || rest.querySelector('img,video')) mediaEl.after(rest);
+        }
+    };
+    const handleOccurrence = (occ) => {
+        const ref = refs[occ.idx] != null ? refs[occ.idx] : '';
+        if (inCode(occ.node)) {
+            // 代码上下文不渲染媒体，按字面还原占位符原文
+            replaceRange(occ, () => document.createTextNode('{{media:' + ref + '}}'));
+            return;
+        }
+        const resolved = resolveMediaRef(ref, mediaList);
+        const el = resolved ? buildMediaItem(resolved.item, true) : null;
+        if (!resolved || !el) { replaceRange(occ, () => buildMediaRefError(ref, false)); return; }
+        used.add(resolved.index);
+        if (String(resolved.item.type) === 'image') {
+            // 行内图片：作为 phrasing 内容原位插入，无需拆段
+            const img = document.createElement('img');
+            img.src = resolved.item.src;
+            img.alt = resolved.item.alt || '图片';
+            img.loading = 'lazy';
+            img.className = 'media-inline-img';
+            img.onerror = () => {
+                const err = document.createElement('a');
+                err.className = 'media-inline-img-error';
+                err.href = resolved.item.src;
+                err.download = '';
+                err.title = '图片加载失败，点击下载';
+                err.innerHTML = '<i class="fa-solid fa-image"></i>';
+                img.replaceWith(err);
+            };
+            replaceRange(occ, () => img);
+        } else {
+            insertBlockSplit(occ, el);
+        }
+    };
+
+    // 第一遍：整块独占的宿主（可含多个占位符，如相邻两行各一个）按文档序整体替换
+    const hostGroups = new Map();
+    const rest = [];
+    for (const occ of occurrences) {
+        const host = hostOf(occ.node);
+        if (host && isMarkerOnlyHost(host)) {
+            if (!hostGroups.has(host)) hostGroups.set(host, []);
+            hostGroups.get(host).push(occ);
+        } else {
+            rest.push(occ);
+        }
+    }
+    for (const [host, occs] of hostGroups) {
+        const frag = document.createDocumentFragment();
+        occs.forEach(occ => {
+            const ref = refs[occ.idx] != null ? refs[occ.idx] : '';
+            const resolved = resolveMediaRef(ref, mediaList);
+            const el = resolved ? buildMediaItem(resolved.item, true) : null;
+            if (el) { frag.appendChild(el); used.add(resolved.index); }
+            else frag.appendChild(buildMediaRefError(ref, true));
+        });
+        if (/^(P|H[1-6])$/i.test(host.tagName)) host.replaceWith(frag);
+        else { host.innerHTML = ''; host.appendChild(frag); } // li/td/th 保留宿主（维持列表编号/表格结构）
+    }
+    // 第二遍：行内出现（可能同段混排文字）从后往前处理，保证已记录的节点/偏移不因前方拆段而失效
+    for (let i = rest.length - 1; i >= 0; i--) handleOccurrence(rest[i]);
+    return used;
+}
+
+function renderDetailMedia(item, skip) {
+    const mc = document.getElementById('detailMedia');
+    if (!mc) return;
+    mc.innerHTML = '';
+    const list = item.media && Array.isArray(item.media) ? item.media : [];
+    list.forEach((m, i) => {
+        if (skip && skip.has(i)) return; // 已在正文中内嵌的附件不再重复出现在底部媒体区
+        const mi = buildMediaItem(m, false);
+        if (mi) mc.appendChild(mi);
+    });
 }
 
 async function renderDetailDrawsSection(type, item) {
@@ -1454,10 +1662,10 @@ async function viewHistoryVersion(snap) {
     const bodyText = await resolveItemContent(type, snap);
     document.getElementById('detailTitle').textContent = snap.title || '';
     document.getElementById('detailDate').textContent = snap.date || '';
-    document.getElementById('detailContent').innerHTML = renderMarkdown(bodyText);
     const contentSection = document.getElementById('detailContent');
+    const usedMediaRefs = contentSection ? renderDetailBody(contentSection, bodyText, snap.media) : null;
     if (contentSection) contentSection.style.display = '';
-    renderDetailMedia(snap);
+    renderDetailMedia(snap, usedMediaRefs);
     renderDetailDrawsSection(type, item);
     const container = document.getElementById('detailVersion');
     if (!container) return;

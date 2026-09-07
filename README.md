@@ -13,37 +13,49 @@ wfls-tt-club/
 ├── ranking.html                # Ranking Beta 排名系统（自动计算 + 赛季继承 + 积分明细）
 ├── data_viz.html               # 数据可视化（积分趋势 + 排名河流图 + 球员对比）
 ├── personal_stats.html         # 个人数据页面（积分趋势 + 荣誉成就）
+├── player.html                 # 球员个人主页（按 uid 访问：战绩/胜率/积分趋势/对手分析）
 ├── detail.html                 # 新闻/赛事/Q&A 详情页（支持图片、视频、文件附件 + 对阵表查看）
 ├── draws-editor.html           # 对阵表可视化编辑器（admin.html 入口；模板生成/拖拽编辑/导出 draws.json）
 ├── qa.html                     # 常见问题（Q&A）页面
 ├── changelog.html              # 更新日志页面
 ├── contact.html                # 联系我们页面（社团QQ群二维码）
 ├── admin.html                  # 后台数据概览仪表盘
+├── umpire-training.html        # 裁判特训彩蛋页（题库 data/umpire-quiz.json）
 ├── 404.html                    # 404 页面
 │
 ├── wtt_hub.html                # WTT 彩蛋入口（男/女单打、双打、混双）
 ├── wtt_ranking.html            # WTT 排名页面
 ├── wtt_dataviz.html            # WTT 数据可视化
 ├── wtt_personal_stats.html     # WTT 个人数据
+├── wtt_player.html             # WTT 球员个人主页（一人一页）
+├── wtt_assoc.html              # WTT 协会数据（实力总榜/排名变迁/对抗矩阵）
 │
 ├── style.css                   # 全局样式表（玻璃拟态 + 暗色模式 + 响应式）
 │
 ├── js/                         # JavaScript 模块（按页面拆分）
 │   ├── common.js               # 语言包 + 全局变量 + UI交互 + 通用渲染/搜索
+│   ├── shared-partials.js      # 全站共享导航/页脚/二维码模态注入
 │   ├── score-engine.js         # 积分计算核心引擎
 │   ├── ranking.js              # 排名系统 + 积分明细模态框
+│   ├── club_race.js            # 排名动态竞速图（Bar Chart Race）
 │   ├── data-viz.js             # 数据可视化（Chart.js）
+│   ├── data-viz-extra.js       # 数据可视化扩展（战绩统计/效率散点/交手热力矩阵等）
 │   ├── personal-stats.js       # 个人数据页面
 │   ├── player-page.js          # 球员个人主页（player.html）
+│   ├── player-analytics.js     # 球员个人页深度数据分析
 │   ├── draws-core.js           # 对阵表共享核心库（v3 数据模型/布局/校验/模板/序列化）
 │   ├── draws-viewer.js         # 对阵表观众端渲染器（搜索高亮/详情弹窗/状态徽标）
 │   ├── draws-editor.js         # 对阵表可视化编辑器逻辑
 │   ├── admin.js                # 后台数据概览仪表盘
+│   ├── umpire-training.js      # 裁判特训彩蛋逻辑
 │   ├── main.js                 # 入口初始化
 │   ├── wtt_common.js           # WTT 通用数据加载 + 积分计算
 │   ├── wtt_ranking.js          # WTT 排名
 │   ├── wtt_dataviz.js          # WTT 数据可视化
-│   └── wtt_personal_stats.js   # WTT 个人数据
+│   ├── wtt_dataviz_extra.js    # WTT 数据可视化扩展
+│   ├── wtt_personal_stats.js   # WTT 个人数据
+│   ├── wtt_player.js           # WTT 球员个人主页（一人一页）
+│   └── wtt_assoc.js            # WTT 协会数据页
 │
 ├── data/                       # 站内数据（JSON）
 │   ├── about.json              # 社团简介数据（历史、理念、活动）
@@ -57,20 +69,21 @@ wfls-tt-club/
 │   ├── seasons.json            # 赛季定义（含继承规则）
 │   ├── decay-config.json       # 时间衰减配置（半衰期 & 保值类型）
 │   ├── score-log.json          # 比赛记录 + 积分调整记录
+│   ├── umpire-quiz.json        # 裁判特训彩蛋题库
 │   ├── data_viz-settings.json  # 数据可视化设置
 │   ├── personal-stats-chart-settings.json  # 个人数据图表设置
-│   └── _legacy/                # 旧版/备份数据（members / player-tags / initial-scores / 合并版 news/competitions/qa）
+│   └── _legacy/                # 旧版/备份数据（members / player-tags / initial-scores / 合并版 news/competitions/qa；已 gitignore，仅本地留存）
 │
 ├── wtt_data/                   # WTT 彩蛋数据（ms/ws/md/wd/xd，按赛季拆分 + manifest.json）
-├── ittf_data/                  # ITTF 历史数据（ms / ws）
-├── ittf-pingpong_api/          # ittf-pingpong API 原始抓取数据
-├── tools/                       # 数据抓取/生成脚本（Python / Node）
+├── docs/                       # 设计文档 / 数据格式说明 / 海报源文件
+├── tools/                      # 内容同步/校验脚本（仓库仅保留 sync_content.py / ci_validate.py / generate_meta.py，其余脚本仅本地留存）
 │
 ├── Assets/
 │   ├── images/                 # 图片资源
 │   ├── videos/                 # 视频资源
 │   └── files/                  # PDF、Excel等文件资源
 │
+├── images/                     # 站点级图片（og-cover.png）
 └── README.md                   # 项目说明文档
 ```
 
@@ -80,6 +93,7 @@ wfls-tt-club/
 - CSS3（CSS变量主题系统 / 玻璃拟态 / Grid+Flex布局 / 响应式设计）
 - 原生 JavaScript（ES6+，按页面模块化拆分）
 - Chart.js 4.4（数据可视化图表）
+- marked（Markdown 正文渲染）+ KaTeX（数学公式渲染）
 - Google Fonts（Poppins + Noto Sans SC）
 - Font Awesome 6 图标
 - 中英文双语切换
@@ -117,7 +131,7 @@ git push -u origin main
 
 - 新闻列表展示（主页预览前3条 + 独立列表页）
 - 新闻详情页（支持正文、图片、视频、文件附件）
-- 支持 `\n` 换行和 `**加粗**` 格式
+- 详情页正文支持 Markdown 渲染（`\n` 换行、`**加粗**`、KaTeX 公式等）
 - 分页显示（每页10条，2列布局）
 - 便捷的 JSON 数据管理
 
@@ -125,7 +139,7 @@ git push -u origin main
 
 - 赛事列表展示（主页预览前3条 + 独立列表页）
 - 赛事详情页（支持正文、图片、视频、文件附件）
-- 支持 `\n` 换行和 `**加粗**` 格式
+- 详情页正文支持 Markdown 渲染（`\n` 换行、`**加粗**`、KaTeX 公式等）
 - 分页显示（每页10条，2列布局）
 - 赛事详情页内嵌**对阵表查看器**（`draws.json` 中 `competitionId` 关联的布表），支持缩放/平移/全屏、选手搜索与晋级路径高亮、比赛状态徽标（待赛/进行中）与逐局比分弹窗
 
@@ -174,13 +188,15 @@ git push -u origin main
 - **WTT 排名**（`wtt_ranking.html`）：基于真实 WTT 比赛记录的积分模拟排名，支持时间节点切换、排序、积分明细
 - **WTT 数据可视化**（`wtt_dataviz.html`）：积分趋势、排名河流图、球员对比
 - **WTT 个人数据**（`wtt_personal_stats.html`）：单名球员的战绩、对手分析、积分变化趋势
+- **WTT 协会数据**（`wtt_assoc.html`）：协会实力总榜、排名变迁、协会对抗矩阵
+- **WTT 球员页**（`wtt_player.html`）：一人一页的球员个人数据（`wtt_player.html?cat=ms&uid=…` 或 `?cat=ms&player=姓名`）
 - 数据存放于 `wtt_data/{分类}/`（ms 男单 / ws 女单 / md 男双 / wd 女双 / xd 混双）
 - 全站支持中英文双语切换，WTT 页面动态内容（图表、进度、统计）随语言实时刷新
 
 ### 社团信息
 
 - 社团简介（历史、理念、活动，数据源自 `about.json`）
-- 社团骨干展示（头像自动取姓氏首字）
+- 社团骨干展示（优先 QQ 头像，无 `qq` 字段时退化为姓氏首字）
 - 二维码模态框（加入社团QQ群）
 - 首页 Hero 区右下角显示网站最后更新时间
 
@@ -272,6 +288,48 @@ data/news/               data/competitions/     data/qa/
     {"type": "image", "src": "Assets/images/example.jpg"},
     {"type": "video", "src": "Assets/videos/example.mp4"},
     {"type": "file", "src": "Assets/files/example.pdf", "name": "文件名"}
+  ]
+}
+```
+
+#### 正文内嵌媒体（`{{media:...}}` 占位符）
+
+默认情况下，`media` 中的附件统一展示在详情页**底部媒体区**。若希望把图片/视频/文件插到正文中间，在 `content`（或 `contentFile` 指向的 Markdown）中写占位符，渲染时会原位嵌入：
+
+```
+第一段文字……
+
+{{media:1}}
+
+第二段文字……
+```
+
+- `{{media:N}}`：引用 `media` 数组第 **N** 项（**从 1 起**，即 `{{media:1}}` 是第一项）
+- `{{media:标识}}`：引用 `mid` 为该标识的附件。`media` 项可加可选字段 `"mid"`（非空字符串，条目内不可重复）作为稳定引用名——**推荐用 mid**，因为按序号引用在调整 `media` 顺序后会静默指向别的附件
+- 占位符**独占一行**（前后空行分隔）时渲染为块级媒体卡片；写在某句文字中间且附件是图片时，渲染为随文的行内小图（视频/文件则拆段嵌入）
+- 已被占位符引用的附件**不会**再出现在底部媒体区；未引用的附件仍显示在底部——旧条目不写占位符即保持原样，无需迁移
+- `media` 项可选字段 `"caption"`（字符串）：在图片/视频下方显示说明文字（底部媒体区与内嵌块均生效）
+- 引用无效（序号越界、mid 不存在）时：前台在原位显示虚线警告胶囊便于发现；`sync_content.py` 会输出警告
+- 注意事项：`excerpt` 是纯文本摘要，占位符写在那里会被判为警告；占位符出现在代码块（```）中时按字面显示、不渲染媒体；导出详情为图片时，内嵌图片会包含在内，视频/文件块不进导出（与底部媒体区口径一致）
+
+示例（`{{media:scores}}` 用 mid 引用、`{{media:2}}` 按序号引用）：
+
+```json
+{
+  "id": "n1",
+  "content": "比赛圆满结束！
+
+{{media:1}}
+
+获奖名单如下，完整成绩表见附件：
+
+{{media:scores}}
+
+感谢各位参与！",
+  "media": [
+    {"type": "image", "src": "Assets/images/venue.jpg", "alt": "比赛场地", "caption": "图 1：比赛现场"},
+    {"type": "video", "src": "Assets/videos/final.mp4", "mid": "final-video", "caption": "决赛最后一分"},
+    {"type": "file", "src": "Assets/files/scores.pdf", "name": "完整成绩表 (PDF)", "mid": "scores"}
   ]
 }
 ```
@@ -368,8 +426,20 @@ python tools/sync_content.py --check    # 仅校验（含预计新增快照数�
   "十二强赛": 0.7,
   "校乒赛团体": 0.8,
   "校乒赛单打": 1.0,
-  "赛制系数": {},
-  "默认赛制": {}
+  "赛制系数": {
+    "bo3": 0.8,
+    "bo5": 1.0,
+    "bo7": 1.5
+  },
+  "默认赛制": {
+    "普通": "bo3",
+    "排位赛": "bo3",
+    "挑战赛": "bo3",
+    "校乒联赛": "bo5",
+    "十二强赛": "bo5",
+    "校乒赛团体": "bo5",
+    "校乒赛单打": "bo5"
+  }
 }
 ```
 
@@ -429,7 +499,7 @@ python tools/sync_content.py --check    # 仅校验（含预计新增快照数�
 
 > **注意**：积分调整记录不需要 `胜者` 和 `负者` 字段。
 
-> **关于同日重复记录**：数据中存在 `(日期, 类型, 胜者, 负者)` 完全相同的条目（截至 2026-09 共 21 组）。业务口径为**同一天确实进行了多场对局**（如三局两胜的多局较量），每场独立计分，属正常录入，请勿去重。WTT 数据导入脚本（tools/import_*.py）对该元组去重仅用于防止同一事件重复导入，与校内 score-log 语义不同。
+> **关于同日重复记录**：数据中存在 `(日期, 类型, 胜者, 负者)` 完全相同的条目（截至 2026-09 共 24 组）。业务口径为**同一天确实进行了多场对局**（如三局两胜的多局较量），每场独立计分，属正常录入，请勿去重。WTT 数据导入脚本（tools/import_*.py）对该元组去重仅用于防止同一事件重复导入，与校内 score-log 语义不同。
 
 ---
 

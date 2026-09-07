@@ -27,6 +27,7 @@ No npm/lint/typecheck commands exist — there are no build tools or test suites
 - Setting `"visible": false` hides an entry without deleting it
 - Tag values are whitelisted (see README for exact lists)
 - Date format: `YYYY-MM-DD` (used for sort order)
+- **Inline media markers**: `{{media:N}}` / `{{media:mid}}` in `content` embed an item from that entry's `media` array at that spot; the `media` array stays the single source of attachment files and is validated by `sync_content.py` (dangling refs warn). Unreferenced media still renders in the bottom gallery — old entries need no migration. Marker rendering lives in `js/common.js` (`renderDetailBody` / `embedDetailMedia`); keep the JS regex and the Python `MEDIA_REF_RE` in sync
 
 ## Data flow
 

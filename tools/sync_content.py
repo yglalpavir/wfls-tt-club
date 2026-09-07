@@ -89,6 +89,11 @@ MANIFEST_KEYS = ["version", "updatedAt", "title", "visible", "file"]
 
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
+# 正文内嵌媒体占位符：{{media:N}}（media 数组第 N 项，1 起）或 {{media:标识}}（附件的 mid 字段）
+# 与 js/common.js 的 MEDIA_REF_RE 保持同一匹配口径
+MEDIA_REF_RE = re.compile(r"\{\{\s*media\s*:\s*([^{}]+?)\s*\}\}")
+MEDIA_TYPE_WHITELIST = {"image", "video", "file"}
+
 
 def today_str():
     """运行时取当天（而非导入时固化），避免 --check 与正式同步跨午夜时口径漂移"""
@@ -192,6 +197,55 @@ def validate_item(type_name, item, filename):
                 log_warn("{}: media 文件不存在 {}".format(filename, m["src"]))
 
     return True
+
+
+def validate_media_refs(type_name, item, content, filename):
+    """校验正文中的 {{media:...}} 占位符（内嵌媒体）与 media 数组的对应关系：
+      - 引用必须命中某项 mid 或落在 1..len(media) 序号范围内（mid 匹配优先，与前端一致）
+      - media 项的 type 应在白名单内（前端会静默忽略未知类型）
+      - mid 应为非空字符串且不重复（重复时占位符只会命中第一项）
+      - excerpt 是纯文本摘要，出现占位符视为误用
+    """
+    media = item.get("media")
+    if media is None:
+        media = []
+    if not isinstance(media, list):
+        log_warn("{}: media 需为数组，忽略占位符校验".format(filename))
+        return
+
+    mids = {}
+    for i, m in enumerate(media):
+        if not isinstance(m, dict):
+            log_warn("{}: media 第 {} 项不是对象".format(filename, i + 1))
+            continue
+        mtype = m.get("type")
+        if mtype and mtype not in MEDIA_TYPE_WHITELIST:
+            log_warn('{}: media 第 {} 项 type "{}" 不在 {} 中（前台会忽略该项）'.format(
+                filename, i + 1, mtype, sorted(MEDIA_TYPE_WHITELIST)))
+        mid = m.get("mid")
+        if mid is not None:
+            if not isinstance(mid, str) or not mid.strip():
+                log_warn("{}: media 第 {} 项 mid 需为非空字符串".format(filename, i + 1))
+            elif mid.strip() in mids:
+                log_warn('{}: media 第 {} 项 mid "{}" 重复（{{{{media:{}}}}} 只会命中第一项）'.format(
+                    filename, i + 1, mid.strip(), mid.strip()))
+            else:
+                mids[mid.strip()] = i
+
+    refs = MEDIA_REF_RE.findall(content or "")
+    for ref in refs:
+        if ref in mids:
+            continue
+        if re.fullmatch(r"[0-9]+", ref):
+            n = int(ref)
+            if not (1 <= n <= len(media)):
+                log_warn("{}: {{{{media:{}}}}} 超出 media 范围（共 {} 项）".format(filename, ref, len(media)))
+        else:
+            log_warn('{}: {{{{media:{}}}}} 没有匹配到任何 media 项的 mid'.format(filename, ref))
+
+    excerpt = item.get("excerpt")
+    if excerpt and MEDIA_REF_RE.search(str(excerpt)):
+        log_warn("{}: excerpt 中出现 {{media:...}} 占位符（摘要为纯文本，请移到 content 中使用）".format(filename))
 
 
 def content_file_path(type_name, item_id, content_file):
@@ -572,6 +626,7 @@ def sync_type(type_name):
         seen_ids.add(item_id)
 
         content = read_effective_content(type_name, item)
+        validate_media_refs(type_name, item, content, folder_id)
         manifest, snapshots, hist_problems = load_history(type_name, item_id)
         before = len(manifest)
         new_manifest, new_snap, changed = maintain_history(type_name, item, manifest, snapshots, content)
@@ -666,6 +721,7 @@ def check_type(type_name):
             continue
         seen_ids.add(item_id)
         manifest, snapshots, _ = load_history(type_name, item_id)
+        validate_media_refs(type_name, item, read_effective_content(type_name, item), folder_id)
         if item.get("visible") is False:
             hidden += 1
         sim_item = copy.deepcopy(item)
