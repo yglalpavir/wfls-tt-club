@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>十二强争冠赛暨2026社团表演赛 · 大字版海报（竖版） | 武汉外国语学校乒乓球社团</title>
+<!--
+  极简大字版赛事海报（1240×1754，A4 @150dpi 比例）· 只保留核心信息，大字号高冲击
+  结构：品牌行 → 巨字标题（十二强/争冠赛）→ 副标题 → 黑底横幅（时间+地点）→ 三大数字要点 → 红色迟到警示 → 十二强名单 → 群号/官网/二维码
+  导出：Chrome 无头 --force-device-scale-factor=3 --window-size=1240,1754
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+      --ink: #101018; --ink2: #3a4250; --muted: #6b7c93;
+      --accent: #d43a2f; --line: #d8e2ee;
+      --en: 'Poppins', sans-serif; --cn: 'Noto Sans SC', sans-serif; --serif: 'Noto Serif SC', serif;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--cn); color: var(--ink); background: #e3e9f1; }
+
+  .poster { position: relative; width: 1240px; height: 1754px; overflow: hidden; background: #fff; padding: 46px 64px 0; }
+
+  .brandbar { display: flex; align-items: center; gap: 12px; }
+  .brandbar .dot { width: 22px; height: 22px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #9aa1ad 0 40%, #000 100%); }
+  .brandbar .bt { font-family: var(--en); font-size: 17px; font-weight: 700; letter-spacing: 3px; color: var(--ink); }
+
+  /* 巨字标题 */
+  .t1 { margin-top: 26px; font-family: var(--serif); font-size: 268px; font-weight: 900; line-height: 1.02; letter-spacing: 4px; color: #000; white-space: nowrap; }
+  .t2 { font-family: var(--serif); font-size: 268px; font-weight: 500; line-height: 1.02; letter-spacing: 6px; color: #000; white-space: nowrap; }
+  .t3 { margin-top: 24px; font-family: var(--serif); font-size: 58px; font-weight: 700; letter-spacing: 6px; color: var(--ink2); }
+  .t3 b { font-family: var(--en); font-weight: 800; color: var(--ink); }
+
+  /* 黑底横幅：时间 + 地点 */
+  .banner { margin-top: 40px; background: #000; color: #fff; border-radius: 26px; padding: 30px 40px 34px; }
+  .banner .row1 { display: flex; align-items: baseline; gap: 26px; }
+  .banner .row1 .date { font-family: var(--en); font-size: 78px; font-weight: 900; letter-spacing: 2px; line-height: 1; }
+  .banner .row1 .time { font-family: var(--serif); font-size: 52px; font-weight: 700; letter-spacing: 2px; line-height: 1; }
+  .banner .row2 { margin-top: 20px; display: flex; align-items: center; gap: 18px; }
+  .banner .row2 .lab { font-family: var(--en); font-size: 22px; font-weight: 700; letter-spacing: 3px; color: #b9c6d6; }
+  .banner .row2 .ven { font-family: var(--serif); font-size: 52px; font-weight: 700; letter-spacing: 2px; line-height: 1; }
+
+  /* 分组标题 */
+  .gh { margin-top: 46px; display: flex; align-items: baseline; gap: 20px; }
+  .gh .t { font-family: var(--serif); font-size: 34px; font-weight: 900; letter-spacing: 3px; color: var(--ink); }
+  .gh .s { font-size: 20px; color: var(--muted); letter-spacing: 2px; }
+  .gh .rule { flex: 1; height: 2px; background: var(--line); align-self: center; }
+
+  /* 四组对阵卡片 */
+  .groups { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
+  .gcard { display: flex; gap: 26px; border: 2.5px solid var(--line); border-radius: 20px; padding: 30px 32px; align-items: flex-start; }
+  .gcard .gl { font-family: var(--serif); font-size: 128px; font-weight: 900; line-height: 1; color: var(--ink); flex: 0 0 auto; }
+  .gcard .gd { flex: 1; padding-top: 8px; }
+  .gcard .gt { font-size: 24px; font-weight: 900; letter-spacing: 4px; color: var(--muted); margin-bottom: 12px; }
+  .gcard .p { font-family: var(--serif); font-size: 30px; font-weight: 700; color: var(--ink); line-height: 1.75; letter-spacing: 2px; }
+  .gcard .p i { font-family: var(--en); font-style: normal; font-weight: 700; font-size: 22px; color: var(--muted); margin-left: 8px; }
+
+  /* 底部：群号 + 官网 + 二维码 */
+  .join { display: flex; align-items: center; gap: 34px; margin-top: 26px; }
+  .qr-box {
+    flex: 0 0 200px; height: 200px; background: #fff; border: 1.5px solid var(--line); border-radius: 14px; padding: 11px;
+    display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 26px rgba(0, 0, 0, 0.16);
+  }
+  .qr-box img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .qr-fallback { display: none; width: 100%; height: 100%; border: 2px dashed #b9c6d6; border-radius: 10px; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-size: 11px; color: var(--muted); line-height: 1.5; }
+  .join-info .t { font-size: 22px; font-weight: 900; letter-spacing: 4px; color: var(--ink); }
+  .join-info .gnum { margin-top: 6px; font-size: 17px; color: var(--ink2); }
+  .join-info .gnum b { font-family: var(--en); font-weight: 900; font-size: 56px; color: var(--ink); letter-spacing: 2px; margin-left: 12px; }
+  .join-info .url { margin-top: 10px; font-family: var(--en); font-size: 21px; font-weight: 600; letter-spacing: 0.5px; color: var(--muted); }
+  .join-info .s { margin-top: 4px; font-size: 15px; color: var(--muted); }
+
+  @media print {
+    @page { size: A4 portrait; margin: 0; }
+    body { background: #fff; }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <div class="brandbar"><span class="dot"></span><span class="bt">WFLS TABLE TENNIS CLUB</span></div>
+
+  <div class="t1">十二强</div>
+  <div class="t2">争冠赛</div>
+  <div class="t3">暨 <b>2026</b> 社团表演赛</div>
+
+  <div class="banner">
+    <div class="row1"><span class="date">9.10 THU</span><span class="time">16:30 – 18:30</span></div>
+    <div class="row2"><span class="lab">VENUE</span><span class="ven">体育馆三楼乒乓球台</span></div>
+  </div>
+
+  <div class="gh"><span class="t">分组对阵</span><span class="s">组内单循环 · 括号内为种子号</span><span class="rule"></span></div>
+
+  <div class="groups">
+    <div class="gcard"><div class="gl">A</div><div class="gd"><div class="gt">A 组</div>
+      <div class="p">任峻贤<i>(1)</i></div><div class="p">任安喆<i>(5)</i></div><div class="p">彭瀚明<i>(9)</i></div></div></div>
+    <div class="gcard"><div class="gl">B</div><div class="gd"><div class="gt">B 组</div>
+      <div class="p">龚雨煊<i>(3)</i></div><div class="p">陶锦源<i>(7)</i></div><div class="p">叶孟恒<i>(12)</i></div></div></div>
+    <div class="gcard"><div class="gl">C</div><div class="gd"><div class="gt">C 组</div>
+      <div class="p">付大卫<i>(2)</i></div><div class="p">姜子润<i>(6)</i></div><div class="p">汪宁轩<i>(10)</i></div></div></div>
+    <div class="gcard"><div class="gl">D</div><div class="gd"><div class="gt">D 组</div>
+      <div class="p">谷子易<i>(4)</i></div><div class="p">刘冠羽<i>(8)</i></div><div class="p">王思博<i>(11)</i></div></div></div>
+  </div>
+
+  <div class="join">
+    <div class="qr-box">
+      <img class="qr" src="../Assets/images/qr-code.jpg" alt="社团QQ群二维码">
+      <div class="qr-fallback">二维码占位<br>Assets/images/qr-code.jpg</div>
+    </div>
+    <div class="join-info">
+      <div class="t">加入社团 · 观赛交流</div>
+      <div class="gnum">群号<b>760667083</b></div>
+      <div class="url">yglalpavir.github.io/wfls-tt-club</div>
+      <div class="s">武汉外国语学校乒乓球社团</div>
+    </div>
+  </div>
+
+</div>
+<script>
+  document.querySelectorAll('img.qr').forEach(function (im) {
+    im.onerror = function () {
+      im.style.display = 'none';
+      var f = im.parentElement.querySelector('.qr-fallback');
+      if (f) f.style.display = 'flex';
+    };
+  });
+</script>
+</body>
+</html>

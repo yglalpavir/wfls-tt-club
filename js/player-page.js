@@ -231,13 +231,13 @@ function reapplyPlayerPage() {
     renderPlayerMatchTable(ppCurrentPlayer.name, matchRecords);
 }
 
-/* ---- 战绩卡导出（foreignObject 截取整页可视化内容，复用 common.js 的导出工具函数） ---- */
+/* ---- 战绩卡导出（html2canvas 截取精选可视化区段，复用 common.js 的导出工具函数） ---- */
 
-// 构建离屏导出节点：资料卡 + 总览/走势/对手卡 + 全部分析图表（不含比赛明细表与交互控件）
+// 构建离屏导出节点（精简卡）：资料头 + 总览 + 积分走势 + 对手四卡 + 竞技状态卡
+// 不含：深度分析区重型图表、摘要句、比赛明细表与交互控件
 function buildPlayerExportNode(player) {
     const profileEl = document.querySelector('#playerDetailContent .player-profile');
     const statsEl = document.getElementById('playerStatsBody');
-    const analyticsEl = document.getElementById('playerAnalyticsBody');
     if (!profileEl || !statsEl || !statsEl.innerHTML.trim()) return null;
     const L = i18n[currentLang] || {};
 
@@ -252,7 +252,20 @@ function buildPlayerExportNode(player) {
     wrap.appendChild(head);
 
     const content = document.createElement('div');
-    content.innerHTML = profileEl.innerHTML + (statsEl.innerHTML || '') + (analyticsEl ? analyticsEl.innerHTML : '');
+    // 资料头（姓名/UID/状态/积分/排名/标签/荣誉）
+    const prof = document.createElement('div');
+    prof.innerHTML = profileEl.innerHTML;
+    content.appendChild(prof);
+    // 总览 7 项数字 + 积分走势图 + 对手分析四卡；摘要句与标签荣誉区与资料头重复，不进入导出
+    const pick = sel => { const el = statsEl.querySelector(sel); if (el) content.appendChild(el.cloneNode(true)); };
+    pick('.personal-overview');
+    pick('.personal-chart-section');
+    pick('.personal-cards-grid');
+    // 竞技状态卡（当前连胜/最长连胜连败/近10场圆点/7日滚动小图），无比赛数据时跳过
+    const analyticsEl = document.getElementById('playerAnalyticsBody');
+    const formBody = analyticsEl && analyticsEl.querySelector('.pa-form-body');
+    const formCard = formBody && formBody.closest('.pa-card');
+    if (formCard) content.appendChild(formCard.cloneNode(true));
     // 中和 glass-card 的毛玻璃外观（离屏节点自带卡片底），只保留卡片边框
     content.querySelectorAll('.glass-card').forEach(el => {
         el.style.background = 'transparent';
@@ -286,13 +299,11 @@ function buildPlayerExportNode(player) {
     });
     // 图表容器定高会裁剪克隆出的图片，改为随内容自适应
     content.querySelectorAll('.pa-chart-box, .pa-donut-box, .pa-spark-box, .personal-chart-wrapper').forEach(el => { el.style.height = 'auto'; el.style.maxHeight = 'none'; });
-    // Chart.js 画布位图无法随 innerHTML 克隆，逐个转为 <img>（与源文档顺序一一对应）
+    // Chart.js 画布位图无法随克隆保留——按 canvas id 找源画布逐个转为 <img>
     // 后台标签页 rAF 会被节流导致图表尚未绘制，导出前先强制同步重绘
-    const srcCanvases = Array.from(document.querySelectorAll('#playerStatsBody canvas, #playerAnalyticsBody canvas'));
-    const dstCanvases = content.querySelectorAll('canvas');
-    srcCanvases.forEach((src, i) => {
-        const dst = dstCanvases[i];
-        if (!dst) return;
+    content.querySelectorAll('canvas').forEach(dst => {
+        const src = dst.id ? document.getElementById(dst.id) : null;
+        if (!src) { dst.remove(); return; }
         try {
             const ch = (window.Chart && Chart.getChart) ? Chart.getChart(src) : null;
             if (ch) { try { ch.update('none'); } catch (e) { /* 已销毁的实例忽略 */ } try { if (typeof ch.draw === 'function') ch.draw(); } catch (e) { /* 已由 update 同步绘制 */ } }
