@@ -1,0 +1,622 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.mac-os #write{
+    caret-color: AccentColor;
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>c6-prediction-2026-09-10</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='十二强争冠赛暨2026社团表演赛c6）赛前预测报告'><span>十二强争冠赛暨2026社团表演赛（c6）赛前预测报告</span></h1><p><strong><span>赛事</span></strong><span>：十二强争冠赛暨2026社团表演赛 · </span><code>data/competitions/c6/c6.json</code>
+<strong><span>日期</span></strong><span>：2026-09-10（星期四）16:30–18:30，1 号台 / 2 号台</span>
+<strong><span>报告基准日</span></strong><span>：2026-09-07（赛前 3 天）</span>
+<strong><span>数据基础</span></strong><span>：</span><code>data/score-log.json</code><span> 全部 300 场比赛记录（2026-03-03 ~ 2026-09-07）</span>
+<strong><span>赛制</span></strong><span>：组内单循环 </span><strong><span>bo5</span></strong><span>，每组出线 </span><strong><span>2 人</span></strong><span>；四分之一决赛交叉配对 </span><strong><span>A1-B2 / B1-A2 / C1-D2 / D1-C2</span></strong><span>，半决赛与决赛均为 </span><strong><span>bo7</span></strong><span>；</span><strong><span>不计弃权</span></strong></p><blockquote><p><span>赛制说明：初版报告按 c6.json 文案写的&quot;每组第 1 名晋级 → 半决赛 A1-B1 / C1-D1&quot;建模，与实际赛制不符，本版已按&quot;出线 2 人 + 交叉配对 + 淘汰赛 bo7&quot;完全重算。所有蒙特卡洛数字都是新版结果，不可与初版混用。</span></p></blockquote><hr /><h2 id='一结论摘要'><span>一、结论摘要</span></h2><figure class='table-figure'><table><thead><tr><th><span>项目</span></th><th><span>预测</span></th></tr></thead><tbody><tr><td><strong><span>冠军</span></strong></td><td><strong><span>任峻贤（1 号种子）58.8%</span></strong></td></tr><tr><td><span>第二名概率区间</span></td><td><span>任安喆 11.1% / 谷子易 10.6% / 姜子润 8.9% / 龚雨煊 6.9%</span></td></tr><tr><td><span>最可能的四分之一决赛</span></td><td><span>龚雨煊 – 任安喆 </span><strong><span>37.7%</span></strong><span>；任峻贤 – 陶锦源 </span><strong><span>34.5%</span></strong></td></tr><tr><td><span>最可能的半决赛</span></td><td><strong><span>任峻贤 – 任安喆 47.5%</span></strong><span>（A 组内战）</span></td></tr><tr><td><span>最可能的决赛</span></td><td><span>任峻贤 – 谷子易 27.2%；任峻贤 – 姜子润 24.3%</span></td></tr><tr><td><span>规则敏感度</span></td><td><span>15.4% 的组出现 1-1-1 循环，1、2 名都要比净胜局 / 净胜球 / 抽签</span></td></tr></tbody></table></figure><p><span>一句话：</span><strong><span>任峻贤仍然是明显的头号热门，而且比初版判断更强（58.8% vs 43.2%）——因为他不再需要拿 A 组第 1，只要进前 2（95.5%）就能出场，且首轮对手是 B 组第 2 而不是 B 组第 1。但&quot;第二热门&quot;的位置大幅易主：任安喆（11.1%）取代龚雨煊成为最可能的亚军，因为这套交叉配对让同组两人必定在半区分道而行、再在半区半决赛汇合，A 组半决赛有 51.5% 的概率是任峻贤内战任安喆。</span></strong></p><hr /><h2 id='二赛制按实际赛制）'><span>二、赛制（按实际赛制）</span></h2><ul><li><p><span>12 人按当前积分排种子（1–12），分 A/B/C/D 四组、每组 3 人，组内单循环、每人 2 场，</span><strong><span>五局三胜</span></strong></p></li><li><p><strong><span>每组出线 2 人</span></strong><span>，共 8 人进入淘汰赛</span></p></li><li><p><span>组内排名判定顺序：</span><strong><span>积分 → 净胜局 → 净胜球 → 抽签</span></strong></p></li><li><p><strong><span>四分之一决赛交叉配对</span></strong><span>：A1-B2、B1-A2、C1-D2、D1-C2（</span><strong><span>七局四胜</span></strong><span>）</span></p></li><li><p><span>半决赛：上半区 = QF1 胜者 vs QF2 胜者；下半区 = QF3 胜者 vs QF4 胜者（七局四胜）</span></p></li><li><p><span>决赛七局四胜</span></p></li><li><p><span>全程 12 + 4 + 2 + 1 = </span><strong><span>19 场</span></strong><span>；冠军最多打 5 场</span></p></li></ul><figure class='table-figure'><table><thead><tr><th><span>组</span></th><th><span>选手（种子）</span></th></tr></thead><tbody><tr><td><span>A</span></td><td><span>任峻贤(1)、任安喆(5)、彭瀚明(9)</span></td></tr><tr><td><span>B</span></td><td><span>龚雨煊(3)、陶锦源(7)、叶孟恒(12)</span></td></tr><tr><td><span>C</span></td><td><span>付大卫(2)、姜子润(6)、汪宁轩(10)</span></td></tr><tr><td><span>D</span></td><td><span>谷子易(4)、刘冠羽(8)、王思博(11)</span></td></tr></tbody></table></figure><p><strong><span>关于种子口径</span></strong><span>：本次 12 人并非俱乐部积分前 12——整体排名第 2 的魏罗瑞（2104.3）、第 4 的陈瑜萱（2061.5）、第 5 的祁子傲（2054.2）、第 13 的梅哲宇（1962.3）均未报名。种子号是</span><strong><span>报名 12 人内部的相对名次</span></strong><span>。</span></p><p><strong><span>⚠️ 种子 9/10/11 已过期</span></strong><span>：按 2026-09-07 的实时积分，12 人内部名次应为 9 = 汪宁轩（1691.8）、10 = 王思博（1683.2）、11 = 彭瀚明（1676.4），而 c6.json 写的是 9 = 彭瀚明、10 = 汪宁轩、11 = 王思博。分组按人名排定、不受影响。</span></p><p><strong><span>⚠️ 站点数据与实际赛制不一致，需要修两处</span></strong><span>：</span></p><ol start='' ><li><p><code>data/competitions/c6/c6.json</code><span> 正文写的是&quot;每组积分第 1 名晋级下一阶段&quot;，实际是出线 2 人。</span></p></li><li><p><code>data/draws.json</code><span> 的 </span><code>d3</code><span> 只有 15 张卡：</span><code>m13 = A组第1 vs B组第1</code><span>、</span><code>m14 = C组第1 vs D组第1</code><span>（</span><code>roundLabels</code><span> 标为&quot;半决赛&quot;），加 </span><code>m15</code><span> 决赛——这是 4 人淘汰赛结构。实际赛制需要 4 场四分之一决赛 + 2 场半决赛 + 1 场决赛共 7 张淘汰轮卡。</span></p></li></ol><p><span>这两处我都没有改（改的是站点已发布内容），只在此标出。本文按实际赛制预测。</span></p><hr /><h2 id='三信源与方法'><span>三、信源与方法</span></h2><p><span>用了 4 个相互独立的信源，并对前 3 个做了样本外检验。</span></p><figure class='table-figure'><table><thead><tr><th><span>编号</span></th><th><span>信源</span></th><th><span>口径</span></th><th><span>时间序 3 折交叉验证（命中率 / Brier）</span></th><th><span>融合权重</span></th></tr></thead><tbody><tr><td><span>M1</span></td><td><span>Elo（从零重放 300 场，K=24，初始 1500）</span></td><td><span>纯战绩结果</span></td><td><span>59.8% / 0.2651</span></td><td><span>33.1%</span></td></tr><tr><td><span>M2</span></td><td><span>官方俱乐部积分（复现 </span><code>js/score-engine.js</code><span>）</span></td><td><span>官方排名</span></td><td><strong><span>60.3% / 0.2278</span></strong><span>（最优）</span></td><td><span>38.5%</span></td></tr><tr><td><span>M3</span></td><td><span>Bradley-Terry（log-强度梯度上升 MLE + 高斯先验）</span></td><td><span>纯相对强度</span></td><td><span>51.7% / 0.3081</span></td><td><span>28.5%</span></td></tr><tr><td><span>M4</span></td><td><span>官网三因子模型（</span><code>js/data-viz.js:444-522</code><span>）</span></td><td><span>官网既有模型</span></td><td><span>未纳入（积分输入为单点快照，无法按折重算）</span></td><td><span>仅做对照</span></td></tr><tr><td><span>—</span></td><td><span>随机猜胜方</span></td><td><span>基准</span></td><td><span>50.0% / 0.2500</span></td><td><span>—</span></td></tr></tbody></table></figure><p><span>要点：</span></p><ol start='' ><li><p><strong><span>M1 与 M2 明显优于随机猜测</span></strong><span>；</span><strong><span>M3 基本没有预测力</span></strong><span>（51.7%、Brier 0.3081，劣于随机猜）。融合权重取各模型交叉验证 Brier 的倒数归一化，只用历史表现定权、不使用被评估的样本，所以 M3 只拿到 28.5%。</span></p></li><li><p><strong><span>官方积分口径经过双重校验</span></strong><span>：先用 Python 完整复现 </span><code>js/score-engine.js</code><span>（含 45 天半衰期、类型刷新·定格衰减、bo3=0.8 / bo5=1.0 赛制系数、50% 赛季继承），再用 Node 直接加载真实 </span><code>js/score-engine.js</code><span> 执行同一套重放，两者对 45 名球员的 2026-09-07 积分</span><strong><span>逐位一致</span></strong><span>（任峻贤 2110.9、付大卫 2067.1、龚雨煊 2038.4 …）。</span></p></li><li><p><strong><span>M2 的积分→胜率尺度 S=209 分</span></strong><span>（logit 温度，MLE 拟合），比 Elo 400 分尺度更平缓。</span></p></li><li><p><strong><span>单局胜率 → 系列赛胜率的转换用解析式</span></strong><span>，不逐局抽样：</span></p><ul><li><p><span>bo5（需 3 胜）：$P=p^3(1+3q+6q^2)$，局分分布 3-0 / 3-1 / 3-2 系数 1 / 3 / 6</span></p></li><li><p><span>bo7（需 4 胜）：$P=p^4(1+4q+10q^2+20q^3)$，局分分布 4-0 / 4-1 / 4-2 / 4-3 系数 1 / 4 / 10 / 20</span></p></li></ul></li><li><p><strong><span>蒙特卡洛 N=200,000</span></strong><span>（随机种子 20260910）：组内 12 场 bo5 → 每组取前 2 → 4 场 QF bo7 → 2 场 SF bo7 → 决赛 bo7。局分条件分布解析求出，与逐局模拟等价。</span></p></li><li><p><strong><span>本版模拟做过三重数值校验</span></strong><span>：① 系列赛胜率与上式解析解误差 0.00e+00；② 局分分布（bo5 与 bo7）实测与解析误差 ≤0.0004；③ A 组前两名分布与对 6³ 种局分组合的</span><strong><span>精确枚举</span></strong><span>对照，6 个组合全部落在蒙特卡洛噪声内（0.6031 vs 0.6052 等），积分形态分布 0.9225 vs 0.9217。</span></p></li></ol><hr /><h2 id='四关键数据发现'><span>四、关键数据发现</span></h2><h3 id='41-十二强实力对照四信源）'><span>4.1 十二强实力对照（四信源）</span></h3><figure class='table-figure'><table><thead><tr><th style='text-align:right;' ><span>种子</span></th><th><span>选手</span></th><th style='text-align:right;' ><span>官方积分</span></th><th style='text-align:right;' ><span>M1 Elo 全量</span></th><th style='text-align:right;' ><span>M1 Elo 近 90 天</span></th><th style='text-align:right;' ><span>M3 BT（Elo 当量）</span></th></tr></thead><tbody><tr><td style='text-align:right;' ><span>1</span></td><td><span>任峻贤</span></td><td style='text-align:right;' ><span>2110.9</span></td><td style='text-align:right;' ><span>1588.9</span></td><td style='text-align:right;' ><span>1511.7</span></td><td style='text-align:right;' ><span>1738.9</span></td></tr><tr><td style='text-align:right;' ><span>2</span></td><td><span>付大卫</span></td><td style='text-align:right;' ><span>2067.1</span></td><td style='text-align:right;' ><strong><span>1260.0</span></strong></td><td style='text-align:right;' ><span>1400.0</span></td><td style='text-align:right;' ><strong><span>1369.7</span></strong></td></tr><tr><td style='text-align:right;' ><span>3</span></td><td><span>龚雨煊</span></td><td style='text-align:right;' ><span>2038.4</span></td><td style='text-align:right;' ><span>1506.6</span></td><td style='text-align:right;' ><span>1462.1</span></td><td style='text-align:right;' ><span>1521.7</span></td></tr><tr><td style='text-align:right;' ><span>4</span></td><td><span>谷子易</span></td><td style='text-align:right;' ><span>2013.8</span></td><td style='text-align:right;' ><span>1501.4</span></td><td style='text-align:right;' ><span>1468.4</span></td><td style='text-align:right;' ><span>1510.9</span></td></tr><tr><td style='text-align:right;' ><span>5</span></td><td><span>任安喆</span></td><td style='text-align:right;' ><span>2012.8</span></td><td style='text-align:right;' ><span>1547.5</span></td><td style='text-align:right;' ><span>1533.0</span></td><td style='text-align:right;' ><span>1554.3</span></td></tr><tr><td style='text-align:right;' ><span>6</span></td><td><span>姜子润</span></td><td style='text-align:right;' ><span>1998.9</span></td><td style='text-align:right;' ><span>1493.2</span></td><td style='text-align:right;' ><span>1488.4</span></td><td style='text-align:right;' ><span>1510.9</span></td></tr><tr><td style='text-align:right;' ><span>7</span></td><td><span>陶锦源</span></td><td style='text-align:right;' ><span>1819.8</span></td><td style='text-align:right;' ><span>1500.0</span></td><td style='text-align:right;' ><span>1500.0</span></td><td style='text-align:right;' ><span>1510.9</span></td></tr><tr><td style='text-align:right;' ><span>8</span></td><td><span>刘冠羽</span></td><td style='text-align:right;' ><span>1720.9</span></td><td style='text-align:right;' ><span>1513.3</span></td><td style='text-align:right;' ><span>1500.0</span></td><td style='text-align:right;' ><span>1521.7</span></td></tr><tr><td style='text-align:right;' ><span>9</span></td><td><span>彭瀚明</span></td><td style='text-align:right;' ><span>1676.4</span></td><td style='text-align:right;' ><span>1462.4</span></td><td style='text-align:right;' ><span>1488.4</span></td><td style='text-align:right;' ><span>1478.3</span></td></tr><tr><td style='text-align:right;' ><span>10</span></td><td><span>汪宁轩</span></td><td style='text-align:right;' ><span>1691.8</span></td><td style='text-align:right;' ><span>1442.4</span></td><td style='text-align:right;' ><span>1494.7</span></td><td style='text-align:right;' ><span>1456.6</span></td></tr><tr><td style='text-align:right;' ><span>11</span></td><td><span>王思博</span></td><td style='text-align:right;' ><span>1683.2</span></td><td style='text-align:right;' ><span>1477.3</span></td><td style='text-align:right;' ><span>1500.0</span></td><td style='text-align:right;' ><span>1489.1</span></td></tr><tr><td style='text-align:right;' ><span>12</span></td><td><span>叶孟恒</span></td><td style='text-align:right;' ><span>1600.6</span></td><td style='text-align:right;' ><span>1461.1</span></td><td style='text-align:right;' ><span>1500.0</span></td><td style='text-align:right;' ><span>1478.3</span></td></tr></tbody></table></figure><p><span>排序分歧：</span></p><ul><li><p><span>官方积分：任峻贤 &gt; 付大卫 &gt; 龚雨煊 &gt; 谷子易 &gt; 任安喆 &gt; 姜子润 &gt; 陶锦源 &gt; 刘冠羽 &gt; 汪宁轩 &gt; 王思博 &gt; 彭瀚明 &gt; 叶孟恒</span></p></li><li><p><span>M1 Elo 全量：任峻贤 &gt; 任安喆 &gt; 刘冠羽 &gt; 龚雨煊 &gt; 谷子易 &gt; 陶锦源 &gt; 姜子润 &gt; 王思博 &gt; 彭瀚明 &gt; 叶孟恒 &gt; 汪宁轩 &gt; </span><strong><span>付大卫</span></strong></p></li><li><p><span>M1 Elo 近 90 天：任安喆 &gt; 任峻贤 &gt; 陶锦源 &gt; 叶孟恒 &gt; 刘冠羽 &gt; 王思博 &gt; 汪宁轩 &gt; 姜子润 &gt; 彭瀚明 &gt; 谷子易 &gt; 龚雨煊 &gt; 付大卫</span></p></li><li><p><span>M3 BT：任峻贤 &gt; 任安喆 &gt; 龚雨煊 &gt; 刘冠羽 &gt; 陶锦源 &gt; 姜子润 &gt; 谷子易 &gt; 王思博 &gt; 彭瀚明 &gt; 叶孟恒 &gt; 汪宁轩 &gt; </span><strong><span>付大卫</span></strong></p></li></ul><p><strong><span>付大卫是四个信源里唯一&quot;官方第 2、纯战绩垫底&quot;的选手</span></strong><span>（M1 Elo 1260.0、BT Elo 当量 1369.7，均为 12 人最低），这也是他在本版里夺冠概率继续跌到 0.71% 的全部原因。</span></p><h3 id='42-最强单一信源校乒赛-2026-单打赛事系数-10单败淘汰）'><span>4.2 最强单一信源：校乒赛 2026 单打（赛事系数 1.0，单败淘汰）</span></h3><figure class='table-figure'><table><thead><tr><th><span>名次</span></th><th><span>选手</span></th><th><span>出局对手 / 日期</span></th></tr></thead><tbody><tr><td><span>🥇 冠军</span></td><td><span>任峻贤</span></td><td><span>6-02 决赛胜付大卫</span></td></tr><tr><td><span>🥈 亚军</span></td><td><span>付大卫</span></td><td><span>决赛负任峻贤</span></td></tr><tr><td><span>🥉 季军</span></td><td><span>谷子易</span></td><td><span>5-29 半决赛负付大卫</span></td></tr><tr><td><span>4th</span></td><td><span>梅哲宇（未报名）</span></td><td><span>5-29 半决赛负任峻贤</span></td></tr><tr><td><span>8 强</span></td><td><span>姜子润</span></td><td><span>5-21 负任峻贤（负于最终冠军）</span></td></tr><tr><td><span>8 强</span></td><td><span>陶锦源</span></td><td><span>5-21 负梅哲宇</span></td></tr><tr><td><span>16 强</span></td><td><span>龚雨煊</span></td><td><span>5-18 负付大卫</span></td></tr><tr><td><span>16 强</span></td><td><span>任安喆</span></td><td><span>5-18 负王成悦</span></td></tr><tr><td><span>32 强</span></td><td><span>刘冠羽</span></td><td><span>5-07 负胡朗诚</span></td></tr><tr><td><span>32 强</span></td><td><span>叶孟恒</span></td><td><span>5-07 负姜子润</span></td></tr><tr><td><span>预选</span></td><td><span>汪宁轩</span></td><td><span>4-24 小组循环负王成悦 / 彭一和</span></td></tr><tr><td><span>预选</span></td><td><span>彭瀚明</span></td><td><span>4-24 小组循环 0-2（负龚雨煊 / 负曹高畅）</span></td></tr><tr><td><span>预选</span></td><td><span>王思博</span></td><td><span>4-07 小组循环负吴慈航 / 负谷子易</span></td></tr></tbody></table></figure><p><strong><span>彭瀚明是 12 人中唯一&quot;参加过校乒赛但预选就出局&quot;的人</span></strong><span>——他 4-24 在一个三人小组里两战皆负，连 5-07 的 32 强轮都没走到；他全期只有 3 场记录、0-3，是 12 人中仅有的三名零胜选手之一（另两名王思博、叶孟恒分别只有 2 场、3 场）。这也是 A 组彭瀚明-任峻贤那场只有 20.2% 单局胜率的直接来源。</span></p><p><span>这份官方名次与官方积分名次（付大卫 2 &gt; 龚雨煊 3 &gt; 谷子易 4 &gt; 任安喆 5 &gt; 姜子润 6 &gt; 陶锦源 7）不一致：</span><strong><span>谷子易、姜子润、陶锦源在校乒赛的实际表现明显高于其积分名次，而龚雨煊、任安喆则偏低</span></strong><span>。</span></p><h3 id='43-状态冷启动12-人中-5-人-75-天以上未出场'><span>4.3 状态冷启动：12 人中 5 人 75 天以上未出场</span></h3><figure class='table-figure'><table><thead><tr><th style='text-align:right;' ><span>种子</span></th><th><span>选手</span></th><th><span>最近出场</span></th><th style='text-align:right;' ><span>距今天数</span></th><th><span>全期战绩</span></th><th><span>本学期战绩</span></th></tr></thead><tbody><tr><td style='text-align:right;' ><span>11</span></td><td><span>王思博</span></td><td><span>2026-04-07</span></td><td style='text-align:right;' ><span>153</span></td><td><span>0-2</span></td><td><span>0-0</span></td></tr><tr><td style='text-align:right;' ><span>12</span></td><td><span>叶孟恒</span></td><td><span>2026-05-07</span></td><td style='text-align:right;' ><span>123</span></td><td><span>0-3</span></td><td><span>0-0</span></td></tr><tr><td style='text-align:right;' ><span>7</span></td><td><span>陶锦源</span></td><td><span>2026-05-21</span></td><td style='text-align:right;' ><span>109</span></td><td><span>3-3</span></td><td><span>0-0</span></td></tr><tr><td style='text-align:right;' ><span>8</span></td><td><span>刘冠羽</span></td><td><span>2026-06-06</span></td><td style='text-align:right;' ><span>93</span></td><td><span>2-1</span></td><td><span>0-0</span></td></tr><tr><td style='text-align:right;' ><span>4</span></td><td><span>谷子易</span></td><td><span>2026-06-24</span></td><td style='text-align:right;' ><span>75</span></td><td><span>8-8</span></td><td><span>0-0</span></td></tr><tr><td style='text-align:right;' ><span>9</span></td><td><span>彭瀚明</span></td><td><span>2026-09-03</span></td><td style='text-align:right;' ><span>4</span></td><td><span>0-3</span></td><td><span>0-1</span></td></tr><tr><td style='text-align:right;' ><span>10</span></td><td><span>汪宁轩</span></td><td><span>2026-09-02</span></td><td style='text-align:right;' ><span>5</span></td><td><span>1-6（14%）</span></td><td><span>0-2</span></td></tr><tr><td style='text-align:right;' ><span>3</span></td><td><span>龚雨煊</span></td><td><span>2026-09-05</span></td><td style='text-align:right;' ><span>2</span></td><td><span>8-7</span></td><td><span>1-1</span></td></tr><tr><td style='text-align:right;' ><span>5</span></td><td><span>任安喆</span></td><td><span>2026-09-01</span></td><td style='text-align:right;' ><span>6</span></td><td><span>6-2</span></td><td><span>1-0</span></td></tr><tr><td style='text-align:right;' ><span>2</span></td><td><span>付大卫</span></td><td><span>2026-09-07</span></td><td style='text-align:right;' ><span>0</span></td><td><span>26-39</span></td><td><span>7-2</span></td></tr><tr><td style='text-align:right;' ><span>6</span></td><td><span>姜子润</span></td><td><span>2026-09-07</span></td><td style='text-align:right;' ><span>0</span></td><td><span>7-7</span></td><td><span>1-1</span></td></tr><tr><td style='text-align:right;' ><span>1</span></td><td><span>任峻贤</span></td><td><span>2026-09-07</span></td><td style='text-align:right;' ><span>0</span></td><td><span>79-58</span></td><td><span>11-7</span></td></tr></tbody></table></figure><p><span>值得注意的是 </span><strong><span>4 号种子谷子易——校乒赛季军、积分第 4——已经 75 天没打正式记录赛</span></strong><span>。M4 的&quot;近 10 场状态分&quot;把他排到全组第一（</span><strong><span>+74.8</span></strong><span>），但那完全来自 5–6 月校乒赛的余温，</span><strong><span>该指标不随时间衰减</span></strong><span>，这是官网模型的一个已知弱点。</span></p><p><span>M4 近 10 场净积分（官网模型输入之一，完整排序）：谷子易 +74.8 · 刘冠羽 +32.6 · 任峻贤 +18.5 · 付大卫 +14.2 · 陶锦源 +1.4 · 任安喆 -6.4 · 叶孟恒 -8.3 · 汪宁轩 -13.7 · 姜子润 -17.3 · 王思博 -33.6 · 龚雨煊 -33.7 · 彭瀚明 -46.1。</span></p><h3 id='44-交手记录12-场组内赛里-9-场历史上从未交手'><span>4.4 交手记录：12 场组内赛里 9 场历史上从未交手</span></h3><p><span>本届 4 组各 3 场、共 12 场组内赛中，</span><strong><span>只有 3 场存在历史交手</span></strong><span>：</span></p><figure class='table-figure'><table><thead><tr><th><span>场次</span></th><th><span>全期交手</span></th><th><span>最近一次</span></th></tr></thead><tbody><tr><td><span>A 组 任峻贤 – 任安喆</span></td><td><strong><span>任安喆 1-0</span></strong></td><td><span>2026-09-01 普通(bo3) 任安喆胜</span></td></tr><tr><td><span>C 组 付大卫 – 汪宁轩</span></td><td><span>付大卫 2-1</span></td><td><span>2026-09-02 付大卫胜（6-08 付胜 / 6-12 汪胜）</span></td></tr><tr><td><span>D 组 谷子易 – 王思博</span></td><td><span>谷子易 1-0</span></td><td><span>2026-04-07 校乒赛单打</span></td></tr></tbody></table></figure><p><span>其余 9 场（含 A 组彭瀚明-任峻贤、彭瀚明-任安喆、B 组全部 3 场、C 组付大卫-姜子润、D 组谷子易-刘冠羽）为</span><strong><span>首次交手</span></strong><span>——这也是整份报告不确定度的主要来源。</span></p><p><strong><span>淘汰赛阶段的交手证据比组内更薄</span></strong><span>：任峻贤与任安喆全期只有 1 场（09-01，任安喆胜），而本版预测他们 47.5% 的概率打半决赛（bo7）；谷子易与姜子润</span><strong><span>从未交手过</span></strong><span>，却 31.7% 的概率打四分之一决赛。</span></p><p><strong><span>付大卫 vs 任峻贤（虽不同组，但最能说明信源分歧）</span></strong><span>：全期 33-9（任峻贤 79%），拆开看分布是 3 月 7-0、5 月 2-1、</span><strong><span>6 月 16-2</span></strong><span>、7 月 3-2、8 月 3-0、9 月 2-4。任峻贤的账面优势主要来自 6 月那次密集对练，而 </span><strong><span>7 月以后 8-6、近 40 天 7-5、近 14 天 5-4，9 月单月付大卫 4-2 领先</span></strong><span>。45 天半衰期把 3 月那段 7-0 的权重压到加权总分的 6.0%（6 月的 16-2 仍占 30.0%），这解释了为什么官方积分把付大卫排在第 2、而 M1/M3 把他排到垫底。</span></p><h3 id='45-荣誉与校队身份'><span>4.5 荣誉与校队身份</span></h3><figure class='table-figure'><table><thead><tr><th style='text-align:right;' ><span>种子</span></th><th><span>选手</span></th><th><span>荣誉</span></th><th><span>校队/职务</span></th></tr></thead><tbody><tr><td style='text-align:right;' ><span>1</span></td><td><span>任峻贤</span></td><td><span>校乒赛2026单打冠军、团体季军</span></td><td><span>校队成员 · 官网负责人</span></td></tr><tr><td style='text-align:right;' ><span>2</span></td><td><span>付大卫</span></td><td><span>校乒赛2026单打亚军</span></td><td><span>—</span></td></tr><tr><td style='text-align:right;' ><span>3</span></td><td><span>龚雨煊</span></td><td><span>校乒赛2026团体亚军</span></td><td><span>26-27 社长 · 校队成员</span></td></tr><tr><td style='text-align:right;' ><span>4</span></td><td><span>谷子易</span></td><td><span>校乒赛2026单打季军</span></td><td><span>26-27 副社长 · 校队成员</span></td></tr><tr><td style='text-align:right;' ><span>5</span></td><td><span>任安喆</span></td><td><span>—</span></td><td><span>26-27 副社长 · 新高二校队</span></td></tr><tr><td style='text-align:right;' ><span>6</span></td><td><span>姜子润</span></td><td><span>—</span></td><td><span>校队成员 · 活动部部长（c6 线下负责人）</span></td></tr><tr><td style='text-align:right;' ><span>7–12</span></td><td><span>陶锦源、刘冠羽、彭瀚明、汪宁轩、王思博、叶孟恒</span></td><td><span>—</span></td><td><span>无</span></td></tr></tbody></table></figure><p><span>前 6 号种子全部为校队成员（或新任校队），7 号以后无人带校队标签。</span></p><h3 id='46-赛制维度本届淘汰赛是-bo7但-12-人几乎没有-bo7-记录'><span>4.6 赛制维度：本届淘汰赛是 bo7，但 12 人几乎没有 bo7 记录</span></h3><figure class='table-figure'><table><thead><tr><th style='text-align:right;' ><span>种子</span></th><th><span>选手</span></th><th><span>bo5 战绩</span></th><th style='text-align:right;' ><span>bo5 胜率</span></th><th><span>bo7 战绩</span></th><th><span>bo3 战绩</span></th></tr></thead><tbody><tr><td style='text-align:right;' ><span>1</span></td><td><span>任峻贤</span></td><td><span>43-26</span></td><td style='text-align:right;' ><span>62.4%</span></td><td><strong><span>3-0</span></strong></td><td><span>33-32</span></td></tr><tr><td style='text-align:right;' ><span>2</span></td><td><span>付大卫</span></td><td><strong><span>17-34</span></strong></td><td style='text-align:right;' ><strong><span>33.3%</span></strong></td><td><span>1-1</span></td><td><span>8-4</span></td></tr><tr><td style='text-align:right;' ><span>3</span></td><td><span>龚雨煊</span></td><td><span>6-2</span></td><td style='text-align:right;' ><span>75.0%</span></td><td><span>—</span></td><td><span>2-5</span></td></tr><tr><td style='text-align:right;' ><span>4</span></td><td><span>谷子易</span></td><td><span>6-6</span></td><td style='text-align:right;' ><span>50.0%</span></td><td><span>0-1</span></td><td><span>2-1</span></td></tr><tr><td style='text-align:right;' ><span>5</span></td><td><span>任安喆</span></td><td><span>3-2</span></td><td style='text-align:right;' ><span>60.0%</span></td><td><span>—</span></td><td><span>3-0</span></td></tr><tr><td style='text-align:right;' ><span>6</span></td><td><span>姜子润</span></td><td><span>6-3</span></td><td style='text-align:right;' ><span>66.7%</span></td><td><span>—</span></td><td><span>1-4</span></td></tr><tr><td style='text-align:right;' ><span>7</span></td><td><span>陶锦源</span></td><td><span>3-3</span></td><td style='text-align:right;' ><span>50.0%</span></td><td><span>—</span></td><td><span>—</span></td></tr><tr><td style='text-align:right;' ><span>8</span></td><td><span>刘冠羽</span></td><td><span>1-1</span></td><td style='text-align:right;' ><span>50.0%</span></td><td><span>—</span></td><td><span>1-0</span></td></tr><tr><td style='text-align:right;' ><span>9</span></td><td><span>彭瀚明</span></td><td><span>0-3</span></td><td style='text-align:right;' ><span>0%</span></td><td><span>—</span></td><td><span>—</span></td></tr><tr><td style='text-align:right;' ><span>10</span></td><td><span>汪宁轩</span></td><td><span>0-2</span></td><td style='text-align:right;' ><span>0%</span></td><td><span>—</span></td><td><span>1-4</span></td></tr><tr><td style='text-align:right;' ><span>11</span></td><td><span>王思博</span></td><td><span>0-2</span></td><td style='text-align:right;' ><span>0%</span></td><td><span>—</span></td><td><span>—</span></td></tr><tr><td style='text-align:right;' ><span>12</span></td><td><span>叶孟恒</span></td><td><span>0-3</span></td><td style='text-align:right;' ><span>0%</span></td><td><span>—</span></td><td><span>—</span></td></tr></tbody></table></figure><blockquote><p><strong><span>记录口径提示</span></strong><span>：3 场校乒赛决赛轮（5-29 付大卫胜谷子易、5-29 任峻贤胜梅哲宇、6-02 任峻贤胜付大卫）标为 </span><code>赛制: &quot;bo7&quot;</code><span>，其余校乒赛单打默认 bo5，所以它们不计入 bo5 分母（若按 bo5 计入，任峻贤 45-26、付大卫 18-35）。</span><strong><span>这是数据标注问题，不是战绩变化。</span></strong></p></blockquote><p><strong><span>淘汰赛打 bo7，但 12 人里只有 3 人打过 bo7</span></strong><span>：任峻贤 3-0、付大卫 1-1、谷子易 0-1，其余 9 人零记录。全部 300 场里 bo7 一共只有 4 场。</span><strong><span>这意味着 4 场 QF + 2 场 SF + 1 场决赛（7 场，占全程 19 场的 36.8%）几乎完全靠&quot;单局胜率 × bo7 解析式&quot;外推，没有任何长盘直接证据。</span></strong><span> 本报告因此额外做了&quot;组内也改 bo7&quot;的对照（见 5.7），用它检验结论对赛制假设的敏感度。</span></p><p><strong><span>bo5 与 bo3 的反差仍然值得注意</span></strong><span>：付大卫 bo5 17-34（33.3%）是全组最差、bo3 却是 8-4（66.7%）；任峻贤 bo5 62.4% 高于 bo3 的 50.8%；姜子润 bo5 66.7% 远高于 bo3 的 20.0%。bo7 比 bo5 方差更小、更利于实力强者，这方向上进一步压低付大卫。</span></p><h3 id='47-赛程负担已逐条与-c6json-排表原文核对）'><span>4.7 赛程负担（已逐条与 c6.json 排表原文核对）</span></h3><p><span>规则是&quot;迟到 5 分钟判 0:3 负&quot;，而全程只有 2 小时、12 场组内赛、2 张台，12 名选手中有 7 人兼职裁判。</span><strong><span>本节只做现场观赛参考，不计入主预测</span></strong><span>（按你的要求，主预测不含弃权）。</span></p><figure class='table-figure'><table><thead><tr><th style='text-align:right;' ><span>种子</span></th><th><span>选手</span></th><th style='text-align:right;' ><span>任务数</span></th><th style='text-align:right;' ><span>跨台零间隔</span></th><th style='text-align:right;' ><span>判定的弃权风险</span></th></tr></thead><tbody><tr><td style='text-align:right;' ><span>12</span></td><td><span>叶孟恒</span></td><td style='text-align:right;' ><strong><span>5</span></strong></td><td style='text-align:right;' ><span>1</span></td><td style='text-align:right;' ><span>4.4%</span></td></tr><tr><td style='text-align:right;' ><span>8</span></td><td><span>刘冠羽</span></td><td style='text-align:right;' ><span>3</span></td><td style='text-align:right;' ><strong><span>2</span></strong></td><td style='text-align:right;' ><span>3.8%</span></td></tr><tr><td style='text-align:right;' ><span>1</span></td><td><span>任峻贤</span></td><td style='text-align:right;' ><span>4</span></td><td style='text-align:right;' ><span>1</span></td><td style='text-align:right;' ><span>3.6%</span></td></tr><tr><td style='text-align:right;' ><span>9</span></td><td><span>彭瀚明</span></td><td style='text-align:right;' ><span>4</span></td><td style='text-align:right;' ><span>1</span></td><td style='text-align:right;' ><span>3.6%</span></td></tr><tr><td style='text-align:right;' ><span>6</span></td><td><span>姜子润</span></td><td style='text-align:right;' ><span>4</span></td><td style='text-align:right;' ><span>0</span></td><td style='text-align:right;' ><span>2.6%</span></td></tr><tr><td style='text-align:right;' ><span>5</span></td><td><span>任安喆</span></td><td style='text-align:right;' ><span>3</span></td><td style='text-align:right;' ><span>0</span></td><td style='text-align:right;' ><span>1.8%</span></td></tr><tr><td style='text-align:right;' ><span>2/3/4/7/10/11</span></td><td><span>付大卫、龚雨煊、谷子易、陶锦源、汪宁轩、王思博</span></td><td style='text-align:right;' ><span>2</span></td><td style='text-align:right;' ><span>0</span></td><td style='text-align:right;' ><span>1.0%</span></td></tr></tbody></table></figure><ul><li><p><strong><span>刘冠羽</span></strong><span>最极端：17:30 台1 打（刘冠羽-王思博）→ 17:50 台2 当裁判（龚雨煊-陶锦源）→ 18:10 台1 再打（谷子易-刘冠羽），三段全零间隔、两次跨台。</span></p></li><li><p><strong><span>叶孟恒</span></strong><span>任务最多（2 场打 + 3 场裁判），好在 16:30–17:10 三场都在 2 号台不用跑，只有 17:10 那次需要跨到 1 号台。</span></p></li><li><p><strong><span>任峻贤</span></strong><span> 16:30 在台 1 打完第一战后立刻就地当裁判（16:50 付大卫-姜子润），17:10 又要跨到 2 号台继续当裁判（陶锦源-叶孟恒）；</span><strong><span>彭瀚明</span></strong><span> 17:10 在台 1 打完（任安喆-彭瀚明）后立刻跨到 2 号台当裁判（17:30 付大卫-汪宁轩）。</span></p></li><li><p><span>风险参数为判断性设定（基准 1.0% + 超额任务 0.8%/项 + 跨台零间隔 1.0%/处，上限 10%），</span><strong><span>不是估计出来的</span></strong><span>。</span></p></li><li><p><span>注意：</span><strong><span>淘汰赛在组内赛之后进行</span></strong><span>，这 12 场排表只覆盖组内阶段。</span></p></li></ul><hr /><h2 id='五预测结果'><span>五、预测结果</span></h2><p><span>以下全部为 N=200,000 蒙特卡洛（随机种子 20260910），融合权重 M1 33% / M2 38% / M3 29%，组内 bo5、淘汰赛 bo7，不计弃权。</span></p><h3 id='51-本届必打的-12-场组内赛bo5）'><span>5.1 本届必打的 12 场组内赛（bo5）</span></h3><figure class='table-figure'><table><thead><tr><th><span>场次</span></th><th style='text-align:right;' ><span>融合单局</span></th><th style='text-align:right;' ><span>融合 bo5</span></th><th style='text-align:right;' ><span>M1 Elo</span></th><th style='text-align:right;' ><span>M2 官方</span></th><th style='text-align:right;' ><span>M3 BT</span></th><th style='text-align:right;' ><span>M4 官网</span></th></tr></thead><tbody><tr><td><span>A 任峻贤 – 任安喆</span></td><td style='text-align:right;' ><span>63.3%</span></td><td style='text-align:right;' ><span>73.8%</span></td><td style='text-align:right;' ><span>56%</span></td><td style='text-align:right;' ><span>62%</span></td><td style='text-align:right;' ><span>74%</span></td><td style='text-align:right;' ><span>59%</span></td></tr><tr><td><span>A 任安喆 – 彭瀚明</span></td><td style='text-align:right;' ><span>69.9%</span></td><td style='text-align:right;' ><span>83.5%</span></td><td style='text-align:right;' ><span>62%</span></td><td style='text-align:right;' ><span>83%</span></td><td style='text-align:right;' ><span>61%</span></td><td style='text-align:right;' ><span>82%</span></td></tr><tr><td><span>A 彭瀚明 – 任峻贤</span></td><td style='text-align:right;' ><span>20.2%</span></td><td style='text-align:right;' ><strong><span>6.0%</span></strong></td><td style='text-align:right;' ><span>33%</span></td><td style='text-align:right;' ><span>11%</span></td><td style='text-align:right;' ><span>18%</span></td><td style='text-align:right;' ><span>12%</span></td></tr><tr><td><span>B 龚雨煊 – 陶锦源</span></td><td style='text-align:right;' ><span>60.0%</span></td><td style='text-align:right;' ><span>68.2%</span></td><td style='text-align:right;' ><span>51%</span></td><td style='text-align:right;' ><span>74%</span></td><td style='text-align:right;' ><span>52%</span></td><td style='text-align:right;' ><span>64%</span></td></tr><tr><td><span>B 陶锦源 – 叶孟恒</span></td><td style='text-align:right;' ><span>62.4%</span></td><td style='text-align:right;' ><span>72.4%</span></td><td style='text-align:right;' ><span>56%</span></td><td style='text-align:right;' ><span>74%</span></td><td style='text-align:right;' ><span>55%</span></td><td style='text-align:right;' ><span>71%</span></td></tr><tr><td><span>B 叶孟恒 – 龚雨煊</span></td><td style='text-align:right;' ><span>31.1%</span></td><td style='text-align:right;' ><span>17.7%</span></td><td style='text-align:right;' ><span>43%</span></td><td style='text-align:right;' ><span>11%</span></td><td style='text-align:right;' ><span>44%</span></td><td style='text-align:right;' ><span>24%</span></td></tr><tr><td><span>C </span><strong><span>付大卫 – 姜子润</span></strong></td><td style='text-align:right;' ><strong><span>37.9%</span></strong></td><td style='text-align:right;' ><strong><span>28.3%</span></strong></td><td style='text-align:right;' ><strong><span>21%</span></strong></td><td style='text-align:right;' ><strong><span>58%</span></strong></td><td style='text-align:right;' ><strong><span>31%</span></strong></td><td style='text-align:right;' ><strong><span>61%</span></strong></td></tr><tr><td><span>C 姜子润 – 汪宁轩</span></td><td style='text-align:right;' ><span>66.6%</span></td><td style='text-align:right;' ><span>79.0%</span></td><td style='text-align:right;' ><span>57%</span></td><td style='text-align:right;' ><span>81%</span></td><td style='text-align:right;' ><span>58%</span></td><td style='text-align:right;' ><span>74%</span></td></tr><tr><td><span>C </span><strong><span>汪宁轩 – 付大卫</span></strong></td><td style='text-align:right;' ><strong><span>47.7%</span></strong></td><td style='text-align:right;' ><strong><span>45.7%</span></strong></td><td style='text-align:right;' ><strong><span>74%</span></strong></td><td style='text-align:right;' ><strong><span>14%</span></strong></td><td style='text-align:right;' ><strong><span>62%</span></strong></td><td style='text-align:right;' ><strong><span>22%</span></strong></td></tr><tr><td><span>D 谷子易 – 刘冠羽</span></td><td style='text-align:right;' ><span>60.6%</span></td><td style='text-align:right;' ><span>69.3%</span></td><td style='text-align:right;' ><span>48%</span></td><td style='text-align:right;' ><span>80%</span></td><td style='text-align:right;' ><span>48%</span></td><td style='text-align:right;' ><span>80%</span></td></tr><tr><td><span>D 刘冠羽 – 王思博</span></td><td style='text-align:right;' ><span>54.8%</span></td><td style='text-align:right;' ><span>58.9%</span></td><td style='text-align:right;' ><span>55%</span></td><td style='text-align:right;' ><span>54%</span></td><td style='text-align:right;' ><span>55%</span></td><td style='text-align:right;' ><span>62%</span></td></tr><tr><td><span>D 王思博 – 谷子易</span></td><td style='text-align:right;' ><span>35.3%</span></td><td style='text-align:right;' ><span>24.0%</span></td><td style='text-align:right;' ><span>47%</span></td><td style='text-align:right;' ><span>17%</span></td><td style='text-align:right;' ><span>47%</span></td><td style='text-align:right;' ><span>18%</span></td></tr></tbody></table></figure><p><span>两处需要单独看：</span></p><ul><li><p><strong><span>C 组付大卫–姜子润（37.9%）</span></strong><span>：四个信源给出 21% / 58% / 31% / 61%，跨度 40 个百分点。M2/M4 押付大卫（积分高 68 分 + M4 状态分 +14.2 对 -17.3），M1/M3 押姜子润（姜子润校乒赛 8 强、5-21 只输给最终冠军；付大卫全期 40% 胜率、bo5 仅 17-34）。</span><strong><span>这场在新赛制下更重要了</span></strong><span>——它决定 C 组的第 1 和第 2 名，而这两个名额都会出线。</span></p></li><li><p><strong><span>C 组汪宁轩–付大卫（47.7%）</span></strong><span>：M1 给 74%、M3 给 62%，而 M2 只有 14%、M4 只有 22%。融合值 47.7% 基本应读作&quot;信息量不足，接近抛硬币&quot;。</span></p></li></ul><h3 id='52-各组第-1--第-2-名是谁'><span>5.2 各组第 1 / 第 2 名是谁</span></h3><figure class='table-figure'><table><thead><tr><th><span>组</span></th><th><span>第 1 名</span></th><th><span>第 2 名</span></th></tr></thead><tbody><tr><td><span>A 任峻贤/任安喆/彭瀚明</span></td><td><span>任峻贤 </span><strong><span>71.8%</span></strong><span> · 任安喆 24.4% · 彭瀚明 3.8%</span></td><td><span>任安喆 </span><strong><span>61.3%</span></strong><span> · 任峻贤 23.6% · 彭瀚明 15.1%</span></td></tr><tr><td><span>B 龚雨煊/陶锦源/叶孟恒</span></td><td><span>龚雨煊 </span><strong><span>61.5%</span></strong><span> · 陶锦源 28.1% · 叶孟恒 10.4%</span></td><td><span>陶锦源 </span><strong><span>48.1%</span></strong><span> · 龚雨煊 27.2% · 叶孟恒 24.7%</span></td></tr><tr><td><span>C 付大卫/姜子润/汪宁轩</span></td><td><span>姜子润 </span><strong><span>63.0%</span></strong><span> · 付大卫 21.7% · 汪宁轩 15.3%</span></td><td><span>付大卫 </span><strong><span>40.0%</span></strong><span> · 汪宁轩 35.1% · 姜子润 25.0%</span></td></tr><tr><td><span>D 谷子易/刘冠羽/王思博</span></td><td><span>谷子易 </span><strong><span>58.9%</span></strong><span> · 刘冠羽 24.6% · 王思博 16.5%</span></td><td><span>刘冠羽 </span><strong><span>40.5%</span></strong><span> · 谷子易 27.0% · 王思博 32.6%</span></td></tr></tbody></table></figure><p><strong><span>3 人单循环一共 3 分，只有 {2,1,0} 与 {1,1,1} 两种积分形态</span></strong><span>——不存在&quot;2-1-1&quot;。模拟中 </span><strong><span>15.4% 的组出现 1-1-1 循环</span></strong><span>，这时第 1 和第 2 名都要比净胜局 → 净胜球 → 抽签。由于第 1、2 名的去向决定 QF 配对（1 名打别的组的 2 名），这个 15.4% 不是小概率噪音，而是会实质改变赛道的变量。</span></p><h3 id='53-小组出线前-2-名）'><span>5.3 小组出线（前 2 名）</span></h3><figure class='table-figure'><table><thead><tr><th><span>选手</span></th><th style='text-align:right;' ><span>出线概率</span></th><th style='text-align:right;' ><span>其中当第 1 名</span></th></tr></thead><tbody><tr><td><span>任峻贤 (1)</span></td><td style='text-align:right;' ><strong><span>95.5%</span></strong></td><td style='text-align:right;' ><span>71.8%</span></td></tr><tr><td><span>龚雨煊 (3)</span></td><td style='text-align:right;' ><span>88.7%</span></td><td style='text-align:right;' ><span>61.5%</span></td></tr><tr><td><span>姜子润 (6)</span></td><td style='text-align:right;' ><span>88.0%</span></td><td style='text-align:right;' ><span>63.0%</span></td></tr><tr><td><span>谷子易 (4)</span></td><td style='text-align:right;' ><span>85.9%</span></td><td style='text-align:right;' ><span>58.9%</span></td></tr><tr><td><span>任安喆 (5)</span></td><td style='text-align:right;' ><span>85.7%</span></td><td style='text-align:right;' ><span>24.4%</span></td></tr><tr><td><span>陶锦源 (7)</span></td><td style='text-align:right;' ><span>76.2%</span></td><td style='text-align:right;' ><span>28.1%</span></td></tr><tr><td><span>刘冠羽 (8)</span></td><td style='text-align:right;' ><span>65.1%</span></td><td style='text-align:right;' ><span>24.6%</span></td></tr><tr><td><span>付大卫 (2)</span></td><td style='text-align:right;' ><span>61.6%</span></td><td style='text-align:right;' ><span>21.7%</span></td></tr><tr><td><span>汪宁轩 (10)</span></td><td style='text-align:right;' ><span>50.4%</span></td><td style='text-align:right;' ><span>15.3%</span></td></tr><tr><td><span>王思博 (11)</span></td><td style='text-align:right;' ><span>49.0%</span></td><td style='text-align:right;' ><span>16.5%</span></td></tr><tr><td><span>叶孟恒 (12)</span></td><td style='text-align:right;' ><span>35.1%</span></td><td style='text-align:right;' ><span>10.4%</span></td></tr><tr><td><span>彭瀚明 (9)</span></td><td style='text-align:right;' ><span>18.9%</span></td><td style='text-align:right;' ><span>3.8%</span></td></tr></tbody></table></figure><p><span>出线门槛从&quot;必须组内第 1&quot;放宽到&quot;进前 2&quot;后，任峻贤从 67.8% 涨到 95.5%；</span><strong><span>任安喆的相对收益最大</span></strong><span>（26.4% → 85.7%），因为 A 组另外两人是他和彭瀚明，他只要不输给彭瀚明就出线。</span></p><h3 id='54-四分之一决赛配对交叉配对bo7）'><span>5.4 四分之一决赛配对（交叉配对，bo7）</span></h3><p><span>规则是 A1-B2 / B1-A2 / C1-D2 / D1-C2，所以具体配对取决于小组名次：</span></p><figure class='table-figure'><table><thead><tr><th><span>QF 配对</span></th><th style='text-align:right;' ><span>出现概率</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>龚雨煊 – 任安喆</span></td><td style='text-align:right;' ><strong><span>37.7%</span></strong></td><td><span>B1 vs A2，最可能的一场</span></td></tr><tr><td><span>任峻贤 – 陶锦源</span></td><td style='text-align:right;' ><strong><span>34.5%</span></strong></td><td><span>A1 vs B2</span></td></tr><tr><td><span>姜子润 – 刘冠羽</span></td><td style='text-align:right;' ><span>25.5%</span></td><td><span>C1 vs D2</span></td></tr><tr><td><span>谷子易 – 付大卫</span></td><td style='text-align:right;' ><span>23.5%</span></td><td><span>D1 vs C2</span></td></tr><tr><td><span>谷子易 – 汪宁轩</span></td><td style='text-align:right;' ><span>20.7%</span></td><td><span>D1 vs C2</span></td></tr><tr><td><span>姜子润 – 王思博</span></td><td style='text-align:right;' ><span>20.5%</span></td><td><span>C1 vs D2</span></td></tr><tr><td><span>任峻贤 – 龚雨煊</span></td><td style='text-align:right;' ><span>19.5%</span></td><td><span>A1 vs B2（B2 是龚雨煊时）</span></td></tr><tr><td><span>任峻贤 – 叶孟恒</span></td><td style='text-align:right;' ><span>17.7%</span></td><td><span>A1 vs B2</span></td></tr><tr><td><span>陶锦源 – 任安喆</span></td><td style='text-align:right;' ><span>17.2%</span></td><td><span>B1 vs A2</span></td></tr><tr><td><span>姜子润 – 谷子易</span></td><td style='text-align:right;' ><span>17.0% + 谷子易 – 姜子润 14.7% = </span><strong><span>31.7%</span></strong></td><td><span>C/D 两名头交叉，从未交手</span></td></tr></tbody></table></figure><p><span>值得注意的是 </span><strong><span>初版预测里&quot;最可能决赛&quot;的 任峻贤 – 龚雨煊 组合，在新赛制下只可能出现在四分之一决赛（合计 34.1%），且不可能成为决赛</span></strong><span>——因为 A 组和 B 组同属上半区。</span></p><h3 id='55-半决赛决赛夺冠'><span>5.5 半决赛、决赛、夺冠</span></h3><figure class='table-figure'><table><thead><tr><th><span>选手</span></th><th style='text-align:right;' ><span>出线</span></th><th style='text-align:right;' ><span>进四强</span></th><th style='text-align:right;' ><span>进决赛</span></th><th style='text-align:right;' ><span>夺冠</span></th></tr></thead><tbody><tr><td><span>任峻贤 (1)</span></td><td style='text-align:right;' ><span>95.5%</span></td><td style='text-align:right;' ><span>84.8%</span></td><td style='text-align:right;' ><span>68.3%</span></td><td style='text-align:right;' ><strong><span>58.8%</span></strong></td></tr><tr><td><span>任安喆 (5)</span></td><td style='text-align:right;' ><span>85.7%</span></td><td style='text-align:right;' ><span>57.2%</span></td><td style='text-align:right;' ><span>17.1%</span></td><td style='text-align:right;' ><strong><span>11.1%</span></strong></td></tr><tr><td><span>谷子易 (4)</span></td><td style='text-align:right;' ><span>85.9%</span></td><td style='text-align:right;' ><span>60.2%</span></td><td style='text-align:right;' ><span>39.8%</span></td><td style='text-align:right;' ><span>10.6%</span></td></tr><tr><td><span>姜子润 (6)</span></td><td style='text-align:right;' ><span>88.0%</span></td><td style='text-align:right;' ><span>56.7%</span></td><td style='text-align:right;' ><span>35.6%</span></td><td style='text-align:right;' ><span>8.9%</span></td></tr><tr><td><span>龚雨煊 (3)</span></td><td style='text-align:right;' ><span>88.7%</span></td><td style='text-align:right;' ><span>35.4%</span></td><td style='text-align:right;' ><span>11.4%</span></td><td style='text-align:right;' ><span>6.9%</span></td></tr><tr><td><span>刘冠羽 (8)</span></td><td style='text-align:right;' ><span>65.1%</span></td><td style='text-align:right;' ><span>29.5%</span></td><td style='text-align:right;' ><span>10.2%</span></td><td style='text-align:right;' ><span>1.3%</span></td></tr><tr><td><span>陶锦源 (7)</span></td><td style='text-align:right;' ><span>76.2%</span></td><td style='text-align:right;' ><span>14.7%</span></td><td style='text-align:right;' ><span>2.6%</span></td><td style='text-align:right;' ><span>1.1%</span></td></tr><tr><td><span>付大卫 (2)</span></td><td style='text-align:right;' ><span>61.6%</span></td><td style='text-align:right;' ><span>21.7%</span></td><td style='text-align:right;' ><span>6.4%</span></td><td style='text-align:right;' ><span>0.7%</span></td></tr><tr><td><span>王思博 (11)</span></td><td style='text-align:right;' ><span>49.0%</span></td><td style='text-align:right;' ><span>18.2%</span></td><td style='text-align:right;' ><span>4.9%</span></td><td style='text-align:right;' ><span>0.4%</span></td></tr><tr><td><span>汪宁轩 (10)</span></td><td style='text-align:right;' ><span>50.4%</span></td><td style='text-align:right;' ><span>13.8%</span></td><td style='text-align:right;' ><span>3.1%</span></td><td style='text-align:right;' ><span>0.2%</span></td></tr><tr><td><span>彭瀚明 (9)</span></td><td style='text-align:right;' ><span>18.9%</span></td><td style='text-align:right;' ><span>5.0%</span></td><td style='text-align:right;' ><span>0.4%</span></td><td style='text-align:right;' ><span>0.1%</span></td></tr><tr><td><span>叶孟恒 (12)</span></td><td style='text-align:right;' ><span>35.1%</span></td><td style='text-align:right;' ><span>3.0%</span></td><td style='text-align:right;' ><span>0.3%</span></td><td style='text-align:right;' ><span>0.05%</span></td></tr></tbody></table></figure><p><strong><span>最可能的半决赛（Top 5）</span></strong><span>：任峻贤 – 任安喆 33.9% · 姜子润 – 谷子易 22.1% · 任峻贤 – 龚雨煊 21.5% · 任安喆 – 任峻贤 13.6% · 刘冠羽 – 谷子易 9.7%</span>
+<span>（任峻贤 – 任安喆 两个方向合计 </span><strong><span>47.5%</span></strong><span>）</span></p><p><strong><span>最可能的决赛（Top 5）</span></strong><span>：任峻贤 – 谷子易 27.2% · 任峻贤 – 姜子润 24.3% · 任峻贤 – 刘冠羽 7.0% · 任安喆 – 谷子易 6.8% · 任安喆 – 姜子润 6.1%</span></p><p><span>分区胜负：</span></p><figure class='table-figure'><table><thead><tr><th><span>半区</span></th><th><span>胜者概率</span></th></tr></thead><tbody><tr><td><span>上半区（QF1 胜 – QF2 胜）</span></td><td><span>任峻贤 68.3% · 任安喆 17.1% · 龚雨煊 11.4% · 陶锦源 2.6% · 彭瀚明 0.4% · 叶孟恒 0.3%</span></td></tr><tr><td><span>下半区（QF3 胜 – QF4 胜）</span></td><td><span>谷子易 39.8% · 姜子润 35.6% · 刘冠羽 10.2% · 付大卫 6.4% · 王思博 4.9% · 汪宁轩 3.1%</span></td></tr></tbody></table></figure><h3 id='56-同组内战这套赛制最大的结构性特征'><span>5.6 同组内战：这套赛制最大的结构性特征</span></h3><p><span>交叉配对意味着</span><strong><span>同组的第 1、2 名分进两场 QF，但同属一个半区</span></strong><span>——所以同组两人只可能碰在半决赛、</span><strong><span>不可能进决赛</span></strong><span>：</span></p><figure class='table-figure'><table><thead><tr><th><span>组</span></th><th style='text-align:right;' ><span>半决赛是同组内战的概率</span></th></tr></thead><tbody><tr><td><span>A</span></td><td style='text-align:right;' ><strong><span>51.5%</span></strong></td></tr><tr><td><span>D</span></td><td style='text-align:right;' ><span>25.9%</span></td></tr><tr><td><span>C</span></td><td style='text-align:right;' ><span>18.0%</span></td></tr><tr><td><span>B</span></td><td style='text-align:right;' ><span>4.5%</span></td></tr></tbody></table></figure><p><span>也就是说 </span><strong><span>超过一半的对局，上半区半决赛就是 A 组内战</span></strong><span>，其中 47.5% 是任峻贤 vs 任安喆（bo7）。这是初版赛制下不可能出现的情形，也是本版&quot;任安喆成为第二热门&quot;的机制来源。</span></p><h3 id='57-完整路径与敏感性'><span>5.7 完整路径与敏感性</span></h3><p><strong><span>最可能的完整路径</span></strong><span>（出线 8 人 → 4 场 QF 胜者 → 2 场 SF 胜者 → 冠军）：</span></p><figure class='table-figure'><table><thead><tr><th style='text-align:right;' ><span>概率</span></th><th><span>路径</span></th></tr></thead><tbody><tr><td style='text-align:right;' ><strong><span>0.25%</span></strong></td><td><span>任峻贤+任安喆 / 龚雨煊+陶锦源 / 姜子润+付大卫 / 谷子易+刘冠羽 出线 → 四强 任峻贤、谷子易 → </span><strong><span>任峻贤</span></strong></td></tr><tr><td style='text-align:right;' ><span>0.25%</span></td><td><span>任峻贤+任安喆 / 龚雨煊+陶锦源 / 姜子润+汪宁轩 / 谷子易+刘冠羽 出线 → 四强 任峻贤、姜子润 → </span><strong><span>任峻贤</span></strong></td></tr><tr><td style='text-align:right;' ><span>0.25%</span></td><td><span>任峻贤+任安喆 / 龚雨煊+陶锦源 / 姜子润+付大卫 / 谷子易+刘冠羽 出线 → 四强 任峻贤、姜子润 → </span><strong><span>任峻贤</span></strong></td></tr><tr><td style='text-align:right;' ><span>0.25%</span></td><td><span>任峻贤+任安喆 / 龚雨煊+陶锦源 / 姜子润+付大卫 / 谷子易+刘冠羽 出线 → 四强 任峻贤、姜子润 → </span><strong><span>任峻贤</span></strong></td></tr><tr><td style='text-align:right;' ><span>0.24%</span></td><td><span>任峻贤+任安喆 / 龚雨煊+陶锦源 / 姜子润+汪宁轩 / 谷子易+刘冠羽 出线 → 四强 任峻贤、谷子易 → </span><strong><span>任峻贤</span></strong></td></tr></tbody></table></figure><p><span>出线门槛放宽后路径空间大幅增加，</span><strong><span>没有任何一条完整路径超过 0.25%</span></strong><span>——比初版的 4.5% 分散得多。冠军归属集中，但通往冠军的具体路线极度分散。</span></p><p><strong><span>单一信源下的夺冠概率</span></strong><span>：</span></p><figure class='table-figure'><table><thead><tr><th><span>信源</span></th><th><span>夺冠概率分布（&gt;2%）</span></th></tr></thead><tbody><tr><td><span>M1 Elo</span></td><td><span>任峻贤 38.8% · 任安喆 16.6% · 谷子易 11.0% · 刘冠羽 9.9% · 姜子润 6.9%</span></td></tr><tr><td><span>M2 官方积分</span></td><td><span>任峻贤 43.3% · 付大卫 16.8% · 姜子润 10.6% · 龚雨煊 10.6% · 谷子易 10.2%</span></td></tr><tr><td><span>M3 BT</span></td><td><strong><span>任峻贤 82.8%</span></strong><span> · 任安喆 4.5% · 谷子易 2.9%</span></td></tr><tr><td><span>M4 官网三因子</span></td><td><span>任峻贤 41.5% · 谷子易 25.2% · 付大卫 14.0% · 任安喆 8.4%</span></td></tr><tr><td><span>四信源等权</span></td><td><span>任峻贤 56.8% · 谷子易 13.9% · 任安喆 10.9% · 姜子润 7.9% · 龚雨煊 6.4%</span></td></tr><tr><td><strong><span>融合（Brier 倒数）</span></strong></td><td><strong><span>任峻贤 58.8%</span></strong><span> · 任安喆 11.1% · 谷子易 10.6% · 姜子润 8.9%</span></td></tr></tbody></table></figure><p><span>四个信源对冠军的共识是&quot;任峻贤最可能&quot;，但概率从 38.8% 到 82.8% 不等。融合版 58.8% 偏上限，主要因为 M2（权重最大）和 M3 都强烈偏向任峻贤。</span></p><p><strong><span>更严格的读法</span></strong><span>：M3 的交叉验证表现劣于随机猜测，如果只保留有预测力的 M1/M2 重新归一化（M1 46.2% / M2 53.8%），</span><strong><span>任峻贤 45.2% · 谷子易 14.6% · 任安喆 14.3% · 姜子润 12.0% · 龚雨煊 10.3%</span></strong><span>——冠军概率下移约 13.6 个百分点，第二热门从任安喆变成谷子易。</span><strong><span>所以 58.8% 是&quot;按 Brier 倒数加权&quot;的读数，45% 是&quot;只信交叉验证通过的信源&quot;的读数，两者之间的差就是 M3 那点权重带来的。</span></strong></p><p><strong><span>赛制假设的敏感度</span></strong><span>：若组内也按 bo7 打（把口径统一到 bo7），夺冠分布为 任峻贤 59.4% · 任安喆 10.9% · 谷子易 10.6% · 姜子润 8.9% —— 与主结果</span><strong><span>几乎完全一致</span></strong><span>。说明结论对&quot;组内 bo5 / 淘汰赛 bo7&quot;这个区分不敏感，主要来自实力差本身。</span></p><hr /><h2 id='六四个值得现场关注的点'><span>六、四个值得现场关注的点</span></h2><ol start='' ><li><p><strong><span>上半区半决赛大概率是 A 组内战。</span></strong><span> 51.5% 的概率出现，其中 47.5% 是任峻贤 vs 任安喆（bo7）。任安喆全期只和任峻贤打过 1 场、且赢了（09-01 普通 bo3），任峻贤在这对组合的融合单局胜率只有 63.3%、bo7 约 77%——是任峻贤夺冠路上最实质的对手。</span></p></li><li><p><strong><span>龚雨煊是这套赛制变化的最大受害者。</span></strong><span> 他 61.5% 是 B 组第 1，那他就去打 A2（37.7% 的概率对上任安喆）。初版赛制下 B1 直接打 A1（即半决赛对阵任峻贤），只需赢 1 场进决赛；新赛制下 B1 要先赢一场 QF（对 A2）再赢一场半区半决赛，</span><strong><span>要多赢一场才能进决赛</span></strong><span>，夺冠概率从 12.7% 掉到 6.9%。</span></p></li><li><p><strong><span>1-1-1 循环会实质改变赛道（15.4%）。</span></strong><span> 3 人单循环只有 {2,1,0} 与 {1,1,1} 两种积分形态，循环时第 1、2 名都要比净胜局 → 净胜球 → 抽签。而&quot;谁是第 1、谁是第 2&quot;直接决定 QF 配对（1 名打别的组第 2 名），所以一场组内赛的局分差距就可能改变后续两场 QF 的对阵。</span></p></li><li><p><strong><span>淘汰赛阶段几乎没有历史证据。</span></strong><span> 12 人里只有任峻贤（bo7 3-0）、付大卫（1-1）、谷子易（0-1）打过 bo7，其余 9 人零记录；全部 300 场里 bo7 只有 4 场。QF/SF/决赛共 7 场占全程 19 场的 36.8%，却全靠单局胜率外推。这是本版预测最大的不确定来源——比四个信源之间的分歧（38.8%–82.8%）更根本。</span></p></li></ol><hr /><h2 id='七局限与免责'><span>七、局限与免责</span></h2><ul><li><p><strong><span>样本小</span></strong><span>：全量仅 300 场。12 人中彭瀚明、叶孟恒、刘冠羽各 3 场，王思博 2 场，Bradley-Terry 和 Elo 对他们的估计几乎不可识别（已用高斯先验与伪计数收缩压制，但仍是估计）。</span></p></li><li><p><strong><span>bo7 样本近乎为零</span></strong><span>：12 人里 9 人从未打过 bo7。淘汰赛全部 7 场都用&quot;单局胜率 → bo7 解析式&quot;外推，没有长盘直接证据。已用&quot;组内也改 bo7&quot;的对照（5.7）检验，夺冠分布变化 ≤0.6 个百分点。</span></p></li><li><p><strong><span>首次交手占多数</span></strong><span>：12 场组内赛里 9 场无任何历史交手；淘汰赛更甚——任峻贤-任安喆只有 1 场历史交手（47.5% 概率打半决赛），谷子易-姜子润从未交手（31.7% 概率打 QF）。</span></p></li><li><p><strong><span>M3 基本没有预测力，但它的权重影响被这套赛制放大了</span></strong><span>：交叉验证命中率 51.7%、Brier 0.3081 均劣于随机猜测，却仍占 28.5% 权重（Brier 倒数归一化在 3 个模型时不会压到 0）。</span><strong><span>已实测：去掉 M3（仅 M1 46.2% / M2 53.8%）重跑同一随机种子，任峻贤夺冠从 58.8% 掉到 45.2%、任安喆从 11.1% 升到 14.3%</span></strong><span>——13.6 个百分点的摆动。原因：M3 是最集中的信源（它单独给任峻贤 82.8%），而&quot;出线 2 人 + 交叉配对&quot;让强者的路径更稳，放大了这种集中度的作用。在初版赛制下同一个替换几乎不改变结果，所以这一点是新版赛制特有的。</span><strong><span>如果只信交叉验证表现好的 M1/M2，冠军概率应读作 45% 左右而不是 59%。</span></strong></p></li><li><p><strong><span>M4 未纳入交叉验证加权</span></strong><span>：官网模型的积分输入是单点快照，无法按时间折重算，因此只作为第 4 个独立信源做对照。</span></p></li><li><p><strong><span>净胜球为近似值</span></strong><span>：数据里没有逐球比分，模拟用&quot;局数 × 11 + 0–3 随机&quot;作为净胜球的代理，仅用于 1-1-1 循环的判平。这层近似只影响 15.4% 的循环局面。</span></p></li><li><p><strong><span>单局胜率口径假设</span></strong><span>：三个模型的输出被统一当作&quot;单局胜率&quot;，再分别转 bo5 / bo7。历史战绩里 bo3、bo5、bo7 混用（bo5 系数 1.0、bo3 系数 0.8），这一近似没有做赛制分层重估。</span></p></li><li><p><strong><span>赛制标注不一致</span></strong><span>：3 场校乒赛决赛轮标为 bo7，其余校乒赛单打默认 bo5，导致 bo5 样本表（4.6）少了 3 场。若按 bo5 统一计数，任峻贤为 45-26、付大卫为 18-35。</span></p></li><li><p><strong><span>成绩记录本身可能含对练</span></strong><span>：3–5 月存在大量同日重复记录（README 已说明同日多场为真实多次比赛，不做去重），其中 任峻贤–付大卫 42 场里有 18 场集中在 2026-06-02 至 2026-06-26 这 24 天里。</span></p></li><li><p><strong><span>赛制信息来源</span></strong><span>：本文赛制（出线 2 人、交叉配对、淘汰赛 bo7、不计弃权）按实际执行规则填写，与 </span><code>c6.json</code><span> 文案和 </span><code>draws.json</code><span> 的 d3 布表结构不符，两处数据建议修正（见第二节）。</span></p></li><li><p><strong><span>本报告写完后数据被回填</span></strong><span>：新增的 2 条 2026-04-24 记录改变了彭瀚明（0-1 → 0-3）、龚雨煊（7-7 → 8-7）与 9/10/11 号种子的排序。本文已按新数据重算，但 c6.json 里的种子号尚未同步更新。</span></p></li><li><p><span>本报告为赛前统计预测，不构成对实际结果的断言；比赛结果请以 </span><code>data/score-log.json</code><span> 赛后更新为准。</span></p></li></ul><hr /><h2 id='附可复现的分析脚本'><span>附：可复现的分析脚本</span></h2><figure class='table-figure'><table><thead><tr><th><span>文件</span></th><th><span>作用</span></th></tr></thead><tbody><tr><td><code>tools/_c6_predict.py</code></td><td><span>复现官方积分引擎 + 多信源数据提取（战绩/H2H/含金量/赛制/出场新鲜度）</span></td></tr><tr><td><code>tools/_c6_nodecheck.js</code></td><td><span>加载</span><strong><span>真实</span></strong><span> </span><code>js/score-engine.js</code><span> 在 Node 下重算积分，与 Python 复现逐位比对</span></td></tr><tr><td><code>tools/_c6_model.py</code></td><td><span>M1/M2/M3 建模 + 时间序 3 折交叉验证 + 权重确定（概率表来源）</span></td></tr><tr><td><code>tools/_c6_m4.js</code></td><td><span>调用</span><strong><span>真实</span></strong><span> </span><code>js/data-viz.js</code><span> 的 </span><code>calcFormScore</code><span> / </span><code>calcPredictedWinRate</code><span> 计算 M4</span></td></tr><tr><td><code>tools/_c6_bracket.py</code></td><td><strong><span>本版蒙特卡洛</span></strong><span>：组内 bo5 出线 2 人 → 交叉 QF/SF/决赛 bo7，含完整路径与敏感性</span></td></tr><tr><td><code>tools/_c6_cache.json</code></td><td><span>积分快照中间产物（由 </span><code>_c6_predict.py</code><span> 生成，被上面两个脚本引用）</span></td></tr></tbody></table></figure><p><span>这 6 个文件均为本次预测的一次性工作产物（</span><code>_</code><span> 前缀），被 </span><code>.gitignore</code><span> 的 </span><code>tools/*</code><span> 规则覆盖、不会随站点发布；如不需要可整体删除，不影响 </span><code>python tools/sync_content.py --check</code><span> 与 </span><code>python tools/ci_validate.py</code><span>。</span></p></div></div>
+</body>
+</html>
