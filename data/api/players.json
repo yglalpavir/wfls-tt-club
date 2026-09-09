@@ -40,7 +40,7 @@
       "status": "active",
       "initialScore": 2000,
       "current": {
-        "points": 2053.4,
+        "points": 2053.5,
         "rank": 5,
         "matches": 13,
         "wins": 7,
@@ -63,7 +63,7 @@
       "status": "active",
       "initialScore": 2000,
       "current": {
-        "points": 2038.3,
+        "points": 2038.2,
         "rank": 6,
         "matches": 2,
         "wins": 1,
@@ -86,7 +86,7 @@
       "status": "active",
       "initialScore": 2000,
       "current": {
-        "points": 2020.5,
+        "points": 2020.4,
         "rank": 9,
         "matches": 1,
         "wins": 1,
@@ -142,7 +142,7 @@
       "status": "active",
       "initialScore": 2000,
       "current": {
-        "points": 1939.1,
+        "points": 1939.2,
         "rank": 13,
         "matches": 1,
         "wins": 0,
@@ -210,7 +210,7 @@
       "status": "active",
       "initialScore": 2000,
       "current": {
-        "points": 2117.2,
+        "points": 2117.3,
         "rank": 1,
         "matches": 25,
         "wins": 16,
