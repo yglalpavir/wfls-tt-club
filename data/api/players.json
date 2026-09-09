@@ -1,0 +1,874 @@
+{
+  "version": 1,
+  "baseDate": "2026-03-01",
+  "generatedAt": "2026-09-09T15:10:19.688Z",
+  "count": 45,
+  "players": [
+    {
+      "uid": 10000,
+      "name": "陈瑜萱",
+      "aliases": [],
+      "tags": [
+        "25-26年副社长",
+        "校队成员",
+        "大满贯"
+      ],
+      "honors": [
+        "校乒赛2025单打冠军",
+        "校乒赛2026团体冠军"
+      ],
+      "role": "",
+      "status": "active",
+      "initialScore": 2000,
+      "current": {
+        "points": 2061.5,
+        "rank": 3,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10001,
+      "name": "付大卫",
+      "aliases": [],
+      "tags": [],
+      "honors": [
+        "校乒赛2026单打亚军"
+      ],
+      "role": "",
+      "status": "active",
+      "initialScore": 2000,
+      "current": {
+        "points": 2053.4,
+        "rank": 5,
+        "matches": 13,
+        "wins": 7,
+        "losses": 6,
+        "winRate": "54%"
+      }
+    },
+    {
+      "uid": 10002,
+      "name": "龚雨煊",
+      "aliases": [],
+      "tags": [
+        "26-27年社长",
+        "校队成员"
+      ],
+      "honors": [
+        "校乒赛2026团体亚军"
+      ],
+      "role": "社长&新高二校队成员",
+      "status": "active",
+      "initialScore": 2000,
+      "current": {
+        "points": 2038.3,
+        "rank": 6,
+        "matches": 2,
+        "wins": 1,
+        "losses": 1,
+        "winRate": "50%"
+      }
+    },
+    {
+      "uid": 10003,
+      "name": "谷子易",
+      "aliases": [],
+      "tags": [
+        "26-27年副社长",
+        "校队成员"
+      ],
+      "honors": [
+        "校乒赛2026单打季军"
+      ],
+      "role": "副社长&新高二校队成员",
+      "status": "active",
+      "initialScore": 2000,
+      "current": {
+        "points": 2020.5,
+        "rank": 9,
+        "matches": 1,
+        "wins": 1,
+        "losses": 0,
+        "winRate": "100%"
+      }
+    },
+    {
+      "uid": 10004,
+      "name": "姜子润",
+      "aliases": [],
+      "tags": [
+        "校队成员"
+      ],
+      "honors": [],
+      "role": "活动部部长&器械部部长&新高二校队成员",
+      "status": "active",
+      "initialScore": 2000,
+      "current": {
+        "points": 2002.7,
+        "rank": 10,
+        "matches": 3,
+        "wins": 2,
+        "losses": 1,
+        "winRate": "67%"
+      }
+    },
+    {
+      "uid": 10005,
+      "name": "李南熠",
+      "aliases": [],
+      "tags": [
+        "校队成员",
+        "校一直板"
+      ],
+      "honors": [
+        "校乒赛2026团体冠军"
+      ],
+      "role": "",
+      "status": "alumni",
+      "initialScore": 2000,
+      "current": null
+    },
+    {
+      "uid": 10006,
+      "name": "彭一和",
+      "aliases": [],
+      "tags": [
+        "校队成员"
+      ],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 2000,
+      "current": {
+        "points": 1939.1,
+        "rank": 13,
+        "matches": 1,
+        "wins": 0,
+        "losses": 1,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10007,
+      "name": "祁子傲",
+      "aliases": [],
+      "tags": [
+        "25-26年社长",
+        "24-25年副社长",
+        "校队成员"
+      ],
+      "honors": [
+        "校乒赛2026团体冠军"
+      ],
+      "role": "",
+      "status": "active",
+      "initialScore": 2000,
+      "current": {
+        "points": 2054.2,
+        "rank": 4,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10008,
+      "name": "任安喆",
+      "aliases": [],
+      "tags": [
+        "26-27年副社长",
+        "校队成员"
+      ],
+      "honors": [],
+      "role": "副社长&新高二校队成员",
+      "status": "active",
+      "initialScore": 2000,
+      "current": {
+        "points": 2025.8,
+        "rank": 8,
+        "matches": 3,
+        "wins": 3,
+        "losses": 0,
+        "winRate": "100%"
+      }
+    },
+    {
+      "uid": 10009,
+      "name": "任峻贤",
+      "aliases": [],
+      "tags": [
+        "校队成员"
+      ],
+      "honors": [
+        "校乒赛2026单打冠军",
+        "校乒赛2026团体季军"
+      ],
+      "role": "官网负责人",
+      "status": "active",
+      "initialScore": 2000,
+      "current": {
+        "points": 2117.2,
+        "rank": 1,
+        "matches": 25,
+        "wins": 16,
+        "losses": 9,
+        "winRate": "64%"
+      }
+    },
+    {
+      "uid": 10010,
+      "name": "魏罗瑞",
+      "aliases": [],
+      "tags": [
+        "25-26年副社长",
+        "校队成员"
+      ],
+      "honors": [
+        "校乒赛2026团体冠军"
+      ],
+      "role": "",
+      "status": "active",
+      "initialScore": 2000,
+      "current": {
+        "points": 2104.3,
+        "rank": 2,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10011,
+      "name": "梅哲宇",
+      "aliases": [],
+      "tags": [
+        "26-27年副社长",
+        "校队成员"
+      ],
+      "honors": [
+        "校乒赛2026团体亚军",
+        "校乒赛2026单打季军"
+      ],
+      "role": "副社长",
+      "status": "active",
+      "initialScore": 1900,
+      "current": {
+        "points": 1962.3,
+        "rank": 12,
+        "matches": 2,
+        "wins": 0,
+        "losses": 2,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10012,
+      "name": "王成悦",
+      "aliases": [],
+      "tags": [],
+      "honors": [
+        "校乒赛2026团体冠军"
+      ],
+      "role": "",
+      "status": "active",
+      "initialScore": 1900,
+      "current": {
+        "points": 1992.7,
+        "rank": 11,
+        "matches": 6,
+        "wins": 1,
+        "losses": 5,
+        "winRate": "17%"
+      }
+    },
+    {
+      "uid": 10013,
+      "name": "胡朗诚",
+      "aliases": [],
+      "tags": [],
+      "honors": [
+        "校乒赛2025团体季军"
+      ],
+      "role": "",
+      "status": "active",
+      "initialScore": 1800,
+      "current": {
+        "points": 1814.6,
+        "rank": 16,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10014,
+      "name": "孙钰鑫",
+      "aliases": [],
+      "tags": [
+        "校二直板"
+      ],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1800,
+      "current": {
+        "points": 1797.9,
+        "rank": 17,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10015,
+      "name": "陶锦源",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1800,
+      "current": {
+        "points": 1819.8,
+        "rank": 15,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10016,
+      "name": "张宸瑞1",
+      "aliases": [],
+      "tags": [],
+      "honors": [
+        "校乒赛2026团体季军"
+      ],
+      "role": "",
+      "status": "active",
+      "initialScore": 1800,
+      "current": {
+        "points": 1822.2,
+        "rank": 14,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10017,
+      "name": "李全景",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1700,
+      "current": {
+        "points": 1710.6,
+        "rank": 20,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10018,
+      "name": "刘冠羽",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1700,
+      "current": {
+        "points": 1720.9,
+        "rank": 19,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10019,
+      "name": "汪宁轩",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1700,
+      "current": {
+        "points": 1691.6,
+        "rank": 22,
+        "matches": 3,
+        "wins": 0,
+        "losses": 3,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10020,
+      "name": "王思博",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1700,
+      "current": {
+        "points": 1683.2,
+        "rank": 23,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10021,
+      "name": "吴慈航",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1700,
+      "current": {
+        "points": 1742.5,
+        "rank": 18,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10022,
+      "name": "杨苏旭",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1700,
+      "current": {
+        "points": 1705.1,
+        "rank": 21,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10023,
+      "name": "陈知勉",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1600,
+      "current": {
+        "points": 1600,
+        "rank": 27,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10024,
+      "name": "丁胜怀",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1600,
+      "current": {
+        "points": 1587.6,
+        "rank": 31,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10025,
+      "name": "何子涵",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1600,
+      "current": {
+        "points": 1600,
+        "rank": 27,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10026,
+      "name": "胡永轩",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1600,
+      "current": {
+        "points": 1600,
+        "rank": 27,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10027,
+      "name": "王子一",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1600,
+      "current": {
+        "points": 1601.2,
+        "rank": 26,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10028,
+      "name": "叶泓鑫",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1600,
+      "current": {
+        "points": 1605.8,
+        "rank": 25,
+        "matches": 2,
+        "wins": 0,
+        "losses": 2,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10029,
+      "name": "叶孟恒",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "宣传部部长",
+      "status": "active",
+      "initialScore": 1600,
+      "current": {
+        "points": 1599,
+        "rank": 30,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10030,
+      "name": "曹高畅",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1500,
+      "current": {
+        "points": 1526.8,
+        "rank": 34,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10031,
+      "name": "邓以清",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1500,
+      "current": {
+        "points": 1517.8,
+        "rank": 36,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10032,
+      "name": "何齐烨",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1500,
+      "current": {
+        "points": 1535.9,
+        "rank": 32,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10033,
+      "name": "刘天齐",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1500,
+      "current": {
+        "points": 1519,
+        "rank": 35,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10034,
+      "name": "刘彧铭",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1500,
+      "current": {
+        "points": 1498,
+        "rank": 38,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10035,
+      "name": "宁悦辛",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1500,
+      "current": {
+        "points": 1500,
+        "rank": 37,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10036,
+      "name": "肖辰宇",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1500,
+      "current": {
+        "points": 1531,
+        "rank": 33,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10037,
+      "name": "张宸瑞2",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1500,
+      "current": {
+        "points": 1486.4,
+        "rank": 39,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10038,
+      "name": "刘浩扬",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1400,
+      "current": {
+        "points": 1400,
+        "rank": 40,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10039,
+      "name": "吕曜而",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1400,
+      "current": {
+        "points": 1396.4,
+        "rank": 42,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10040,
+      "name": "王玥涵",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1400,
+      "current": {
+        "points": 1388.4,
+        "rank": 43,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10041,
+      "name": "熊子乐",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1400,
+      "current": {
+        "points": 1399.8,
+        "rank": 41,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10042,
+      "name": "俞睿哲",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1300,
+      "current": {
+        "points": 1300,
+        "rank": 44,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10043,
+      "name": "王天森",
+      "aliases": [],
+      "tags": [],
+      "honors": [
+        "校乒赛2026团体季军"
+      ],
+      "role": "",
+      "status": "active",
+      "initialScore": 2000,
+      "current": {
+        "points": 2029.5,
+        "rank": 7,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "winRate": "0%"
+      }
+    },
+    {
+      "uid": 10044,
+      "name": "彭瀚明",
+      "aliases": [],
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "status": "active",
+      "initialScore": 1700,
+      "current": {
+        "points": 1676.4,
+        "rank": 24,
+        "matches": 1,
+        "wins": 0,
+        "losses": 1,
+        "winRate": "0%"
+      }
+    }
+  ]
+}

@@ -45,6 +45,7 @@ tools/*
 !tools/sync_content.py
 !tools/ci_validate.py
 !tools/generate_meta.py
+!tools/recompute_rankings.js
 # 内部审计与一次性导入记录
 docs/audit-2026-08-implementation.md
 docs/skovde-2001-import-summary.md
