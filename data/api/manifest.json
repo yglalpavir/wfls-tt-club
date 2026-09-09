@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "description": "WFLS 乒乓球社官网只读数据 API（由 tools/recompute_rankings.js 生成，请勿手动编辑）",
-  "generatedAt": "2026-09-09T15:15:10.270Z",
-  "commit": "6ee5ffc",
+  "generatedAt": "2026-09-09T15:20:56.368Z",
+  "commit": "568b175",
   "realtimeAsOf": "2026-09-09",
   "endpoints": {
     "rankings/current.json": {

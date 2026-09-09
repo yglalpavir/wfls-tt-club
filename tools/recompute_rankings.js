@@ -176,9 +176,9 @@ function tallyWindow(rawLog, seasons, today) {
   const floor = built.floor;
 
   // 比赛记录：原样保留 score-log.json（含 胜者/负者 为赛果，含 对象/分数 为加分）
+  // 生成时间只写在 manifest.json，数据文件保持字节稳定（利于 CDN 缓存与最小 diff）
   const matchesPayload = {
     version: 1,
-    generatedAt: null,
     count: rawLog.length,
     records: rawLog
   };
@@ -190,7 +190,6 @@ function tallyWindow(rawLog, seasons, today) {
   const playersPayload = {
     version: 1,
     baseDate: playersData.baseDate,
-    generatedAt: null,
     count: playersData.players.length,
     players: playersData.players.map(p => {
       const cur = currentByName[p.name];
@@ -210,8 +209,6 @@ function tallyWindow(rawLog, seasons, today) {
   };
 
   const generatedAt = new Date().toISOString();
-  playersPayload.generatedAt = generatedAt;
-  matchesPayload.generatedAt = generatedAt;
 
   const manifest = {
     schemaVersion: 1,
