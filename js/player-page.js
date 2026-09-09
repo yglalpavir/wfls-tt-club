@@ -233,6 +233,76 @@ function reapplyPlayerPage() {
 
 /* ---- 战绩卡导出（html2canvas 截取精选可视化区段，复用 common.js 的导出工具函数） ---- */
 
+// html2canvas 会把 flex 居中小徽章/圆点的文字画到容器左下角或贴底，
+// 且对未挂载克隆节点的 getComputedStyle 返回空值——导出前在**原页面元素**上读样式，
+// 用 canvas 按实测尺寸重绘成图片再替换克隆中的对应节点（位置与颜色都精确）。
+const EXPORT_PILL_SEL = '.player-status-chip,.player-score-chip,.player-role-chip,.personal-tag-badge,.personal-honor-badge,.pa-form-streak,.pa-form-dot';
+function _expPillToImage(el) {
+    const cs = getComputedStyle(el);
+    const w = Math.ceil(el.offsetWidth), h = Math.ceil(el.offsetHeight);
+    if (!w || !h) return null;
+    const scale = 3;
+    const cv = document.createElement('canvas');
+    cv.width = w * scale; cv.height = h * scale;
+    const ctx = cv.getContext('2d');
+    ctx.scale(scale, scale);
+    const r = Math.min(parseFloat(cs.borderRadius) || 0, h / 2);
+    const bg = cs.backgroundColor;
+    if (bg && bg !== 'rgba(0, 0, 0, 0)' && bg !== 'transparent') { _rankImgRoundRect(ctx, 0, 0, w, h, r); ctx.fillStyle = bg; ctx.fill(); }
+    const bw = parseFloat(cs.borderTopWidth) || 0;
+    if (bw > 0 && cs.borderTopColor && cs.borderTopColor !== 'rgba(0, 0, 0, 0)') {
+        _rankImgRoundRect(ctx, bw / 2, bw / 2, w - bw, h - bw, Math.max(0, r - bw / 2));
+        ctx.strokeStyle = cs.borderTopColor; ctx.lineWidth = bw; ctx.stroke();
+    }
+    const iconEl = el.querySelector('i');
+    const iconText = iconEl ? (getComputedStyle(iconEl, '::before').content || '').replace(/^["']|["']$/g, '') : '';
+    const text = el.textContent.trim();
+    const font = `${cs.fontWeight} ${parseFloat(cs.fontSize)}px ${cs.fontFamily}`;
+    ctx.textBaseline = 'middle'; ctx.textAlign = 'left';
+    ctx.font = font;
+    const textW = ctx.measureText(text).width;
+    let iconW = 0, gapW = 0;
+    const ics = iconEl ? getComputedStyle(iconEl) : null;
+    if (iconText) {
+        const iconFont = `900 ${parseFloat(ics.fontSize || cs.fontSize)}px "Font Awesome 6 Free","Font Awesome 6 Pro","FontAwesome"`;
+        ctx.font = iconFont;
+        iconW = ctx.measureText(iconText).width;
+        gapW = parseFloat(cs.columnGap) || 6;
+        ctx._iconFont = iconFont;
+    }
+    const padL = parseFloat(cs.paddingLeft) || 0;
+    const padR = parseFloat(cs.paddingRight) || 0;
+    const totalW = iconW + (iconW ? gapW : 0) + textW;
+    let x = padL + Math.max(0, (w - padL - padR - totalW) / 2);
+    const cy = h / 2;
+    if (iconText) {
+        ctx.font = ctx._iconFont; ctx.fillStyle = ics.color || cs.color;
+        ctx.fillText(iconText, x, cy + 0.5);
+        x += iconW + gapW;
+    }
+    ctx.font = font; ctx.fillStyle = cs.color;
+    ctx.fillText(text, x, cy + 0.5);
+    const img = document.createElement('img');
+    img.src = cv.toDataURL('image/png');
+    img.style.cssText = `display:inline-block;width:${w}px;height:${h}px;vertical-align:middle;`;
+    img.setAttribute('aria-hidden', 'true');
+    return img;
+}
+// 给原页面目标元素打标并预渲染；克隆后按标替换。返回是否处理过（供 finally 清理打标）
+function _expPrepPills() {
+    const images = new Map();
+    Array.from(document.querySelectorAll(EXPORT_PILL_SEL)).forEach((el, i) => {
+        const img = _expPillToImage(el);
+        if (!img) return;
+        el.setAttribute('data-exp-pill', String(i));
+        images.set(String(i), img);
+    });
+    return images;
+}
+function _expCleanupPillMarks() {
+    document.querySelectorAll('[data-exp-pill]').forEach(el => el.removeAttribute('data-exp-pill'));
+}
+
 // 构建离屏导出节点（精简卡）：资料头 + 总览 + 积分走势 + 对手四卡 + 竞技状态卡
 // 不含：深度分析区重型图表、摘要句、比赛明细表与交互控件
 function buildPlayerExportNode(player) {
@@ -252,20 +322,32 @@ function buildPlayerExportNode(player) {
     wrap.appendChild(head);
 
     const content = document.createElement('div');
-    // 资料头（姓名/UID/状态/积分/排名/标签/荣誉）
-    const prof = document.createElement('div');
-    prof.innerHTML = profileEl.innerHTML;
-    content.appendChild(prof);
-    // 总览 7 项数字 + 积分走势图 + 对手分析四卡；摘要句与标签荣誉区与资料头重复，不进入导出
-    const pick = sel => { const el = statsEl.querySelector(sel); if (el) content.appendChild(el.cloneNode(true)); };
-    pick('.personal-overview');
-    pick('.personal-chart-section');
-    pick('.personal-cards-grid');
-    // 竞技状态卡（当前连胜/最长连胜连败/近10场圆点/7日滚动小图），无比赛数据时跳过
-    const analyticsEl = document.getElementById('playerAnalyticsBody');
-    const formBody = analyticsEl && analyticsEl.querySelector('.pa-form-body');
-    const formCard = formBody && formBody.closest('.pa-card');
-    if (formCard) content.appendChild(formCard.cloneNode(true));
+    // 徽章/圆点在克隆前先打标并预渲染（属性随克隆带入导出节点）
+    const pillImages = _expPrepPills();
+    try {
+        // 资料头（姓名/UID/状态/积分/排名/标签/荣誉）
+        const prof = document.createElement('div');
+        prof.innerHTML = profileEl.innerHTML;
+        content.appendChild(prof);
+        // 总览 7 项数字 + 积分走势图 + 对手分析四卡；摘要句与标签荣誉区与资料头重复，不进入导出
+        const pick = sel => { const el = statsEl.querySelector(sel); if (el) content.appendChild(el.cloneNode(true)); };
+        pick('.personal-overview');
+        pick('.personal-chart-section');
+        pick('.personal-cards-grid');
+        // 竞技状态卡（当前连胜/最长连胜连败/近10场圆点/7日滚动小图），无比赛数据时跳过
+        const analyticsEl = document.getElementById('playerAnalyticsBody');
+        const formBody = analyticsEl && analyticsEl.querySelector('.pa-form-body');
+        const formCard = formBody && formBody.closest('.pa-card');
+        if (formCard) content.appendChild(formCard.cloneNode(true));
+    } finally {
+        _expCleanupPillMarks();
+    }
+    // 预渲染图片替换克隆中的徽章/圆点（颜色与居中均由 canvas 精确绘制）
+    content.querySelectorAll('[data-exp-pill]').forEach(el => {
+        const img = pillImages.get(el.getAttribute('data-exp-pill'));
+        if (img) el.replaceWith(img);
+        el.removeAttribute('data-exp-pill');
+    });
     // 中和 glass-card 的毛玻璃外观（离屏节点自带卡片底），只保留卡片边框
     content.querySelectorAll('.glass-card').forEach(el => {
         el.style.background = 'transparent';
@@ -275,28 +357,6 @@ function buildPlayerExportNode(player) {
     });
     // 粒度切换等交互控件不进入导出图
     content.querySelectorAll('.personal-chart-granularity').forEach(el => el.remove());
-    // html2canvas 会把 flex 居中的小圆点文字画到容器左下角——导出前用 canvas 预渲染成图片绕开
-    content.querySelectorAll('.pa-form-dot').forEach(dot => {
-        try {
-            const cs = getComputedStyle(dot);
-            const size = Math.round(parseFloat(cs.width)) || 22;
-            const cv = document.createElement('canvas');
-            cv.width = size * 3; cv.height = size * 3;
-            const c2 = cv.getContext('2d');
-            c2.scale(3, 3);
-            c2.beginPath(); c2.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
-            c2.fillStyle = cs.backgroundColor && cs.backgroundColor !== 'rgba(0, 0, 0, 0)' ? cs.backgroundColor : '#52c41a';
-            c2.fill();
-            c2.fillStyle = cs.color || '#fff';
-            c2.font = `${cs.fontWeight} ${parseFloat(cs.fontSize)}px ${cs.fontFamily}`;
-            c2.textAlign = 'center'; c2.textBaseline = 'middle';
-            c2.fillText(dot.textContent.trim(), size / 2, size / 2 + 0.5);
-            const img = document.createElement('img');
-            img.src = cv.toDataURL('image/png');
-            img.style.cssText = `display:inline-block;width:${size}px;height:${size}px;`;
-            dot.replaceWith(img);
-        } catch (e) { /* 替换失败时保留原节点 */ }
-    });
     // 图表容器定高会裁剪克隆出的图片，改为随内容自适应
     content.querySelectorAll('.pa-chart-box, .pa-donut-box, .pa-spark-box, .personal-chart-wrapper').forEach(el => { el.style.height = 'auto'; el.style.maxHeight = 'none'; });
     // Chart.js 画布位图无法随克隆保留——按 canvas id 找源画布逐个转为 <img>
