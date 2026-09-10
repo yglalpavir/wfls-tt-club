@@ -5,7 +5,20 @@
     "title": "十二强争冠赛暨2026社团表演赛",
     "excerpt": "表演赛小组赛于9月10日（星期四）16:30–18:30进行，12名选手分四组单循环（五局三胜，胜场计1分），迟到5分钟判0:3负（点击查看更多详情）",
     "tag": "upcoming",
-    "media": [],
+    "media": [
+      {
+        "type": "image",
+        "src": "Assets/images/2026-09-10-001.png",
+        "mid": "poster-bold",
+        "title": "十二强争冠赛海报 · 大字版（A4 竖版）"
+      },
+      {
+        "type": "image",
+        "src": "Assets/images/2026-09-10-002.png",
+        "mid": "poster-full",
+        "title": "十二强争冠赛海报 · 信息完整版（A4 竖版）"
+      }
+    ],
     "visible": null
   },
   {

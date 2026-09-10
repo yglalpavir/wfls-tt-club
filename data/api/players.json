@@ -40,12 +40,12 @@
       "status": "active",
       "initialScore": 2000,
       "current": {
-        "points": 2053.4,
-        "rank": 5,
-        "matches": 13,
+        "points": 2033.3,
+        "rank": 7,
+        "matches": 14,
         "wins": 7,
-        "losses": 6,
-        "winRate": "54%"
+        "losses": 7,
+        "winRate": "50%"
       }
     },
     {
@@ -63,12 +63,12 @@
       "status": "active",
       "initialScore": 2000,
       "current": {
-        "points": 2038.3,
+        "points": 2049.4,
         "rank": 6,
-        "matches": 2,
-        "wins": 1,
+        "matches": 4,
+        "wins": 3,
         "losses": 1,
-        "winRate": "50%"
+        "winRate": "75%"
       }
     },
     {
@@ -86,10 +86,10 @@
       "status": "active",
       "initialScore": 2000,
       "current": {
-        "points": 2020.5,
-        "rank": 9,
-        "matches": 1,
-        "wins": 1,
+        "points": 2031.6,
+        "rank": 8,
+        "matches": 3,
+        "wins": 3,
         "losses": 0,
         "winRate": "100%"
       }
@@ -106,12 +106,12 @@
       "status": "active",
       "initialScore": 2000,
       "current": {
-        "points": 2002.7,
+        "points": 2027.9,
         "rank": 10,
-        "matches": 3,
-        "wins": 2,
+        "matches": 4,
+        "wins": 3,
         "losses": 1,
-        "winRate": "67%"
+        "winRate": "75%"
       }
     },
     {
@@ -142,7 +142,7 @@
       "status": "active",
       "initialScore": 2000,
       "current": {
-        "points": 1939.1,
+        "points": 1939.2,
         "rank": 13,
         "matches": 1,
         "wins": 0,
@@ -167,7 +167,7 @@
       "initialScore": 2000,
       "current": {
         "points": 2054.2,
-        "rank": 4,
+        "rank": 5,
         "matches": 0,
         "wins": 0,
         "losses": 0,
@@ -187,10 +187,10 @@
       "status": "active",
       "initialScore": 2000,
       "current": {
-        "points": 2025.8,
-        "rank": 8,
-        "matches": 3,
-        "wins": 3,
+        "points": 2056.6,
+        "rank": 4,
+        "matches": 5,
+        "wins": 5,
         "losses": 0,
         "winRate": "100%"
       }
@@ -210,12 +210,12 @@
       "status": "active",
       "initialScore": 2000,
       "current": {
-        "points": 2117.2,
-        "rank": 1,
-        "matches": 25,
-        "wins": 16,
-        "losses": 9,
-        "winRate": "64%"
+        "points": 2099.9,
+        "rank": 2,
+        "matches": 27,
+        "wins": 17,
+        "losses": 10,
+        "winRate": "63%"
       }
     },
     {
@@ -234,7 +234,7 @@
       "initialScore": 2000,
       "current": {
         "points": 2104.3,
-        "rank": 2,
+        "rank": 1,
         "matches": 0,
         "wins": 0,
         "losses": 0,
@@ -335,12 +335,12 @@
       "status": "active",
       "initialScore": 1800,
       "current": {
-        "points": 1819.8,
+        "points": 1821.5,
         "rank": 15,
-        "matches": 0,
-        "wins": 0,
-        "losses": 0,
-        "winRate": "0%"
+        "matches": 2,
+        "wins": 1,
+        "losses": 1,
+        "winRate": "50%"
       }
     },
     {
@@ -374,7 +374,7 @@
       "initialScore": 1700,
       "current": {
         "points": 1710.6,
-        "rank": 20,
+        "rank": 19,
         "matches": 0,
         "wins": 0,
         "losses": 0,
@@ -391,11 +391,11 @@
       "status": "active",
       "initialScore": 1700,
       "current": {
-        "points": 1720.9,
-        "rank": 19,
-        "matches": 0,
+        "points": 1699.6,
+        "rank": 22,
+        "matches": 2,
         "wins": 0,
-        "losses": 0,
+        "losses": 2,
         "winRate": "0%"
       }
     },
@@ -410,7 +410,7 @@
       "initialScore": 1700,
       "current": {
         "points": 1691.6,
-        "rank": 22,
+        "rank": 23,
         "matches": 3,
         "wins": 0,
         "losses": 3,
@@ -427,12 +427,12 @@
       "status": "active",
       "initialScore": 1700,
       "current": {
-        "points": 1683.2,
-        "rank": 23,
-        "matches": 0,
-        "wins": 0,
-        "losses": 0,
-        "winRate": "0%"
+        "points": 1699.7,
+        "rank": 21,
+        "matches": 2,
+        "wins": 1,
+        "losses": 1,
+        "winRate": "50%"
       }
     },
     {
@@ -464,7 +464,7 @@
       "initialScore": 1700,
       "current": {
         "points": 1705.1,
-        "rank": 21,
+        "rank": 20,
         "matches": 0,
         "wins": 0,
         "losses": 0,
@@ -589,11 +589,11 @@
       "status": "active",
       "initialScore": 1600,
       "current": {
-        "points": 1599,
+        "points": 1590,
         "rank": 30,
-        "matches": 0,
+        "matches": 2,
         "wins": 0,
-        "losses": 0,
+        "losses": 2,
         "winRate": "0%"
       }
     },
@@ -844,7 +844,7 @@
       "initialScore": 2000,
       "current": {
         "points": 2029.5,
-        "rank": 7,
+        "rank": 9,
         "matches": 0,
         "wins": 0,
         "losses": 0,
@@ -861,11 +861,11 @@
       "status": "active",
       "initialScore": 1700,
       "current": {
-        "points": 1676.4,
+        "points": 1669.7,
         "rank": 24,
-        "matches": 1,
+        "matches": 3,
         "wins": 0,
-        "losses": 1,
+        "losses": 3,
         "winRate": "0%"
       }
     }
