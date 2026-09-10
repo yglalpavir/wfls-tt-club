@@ -1,5 +1,5 @@
 {
-  "time": "2026-09-10",
+  "time": "2026-09-11",
   "label": "实时积分",
   "season": "2026年秋季学期",
   "isInitial": false,
@@ -55,26 +55,26 @@
     },
     {
       "姓名": "付大卫",
-      "当前积分": 2053.5,
+      "当前积分": 2053.6,
       "总场次": 13,
       "胜率": "54%",
       "rank": 5,
       "uid": 10001,
       "change": -2,
       "changeType": "down",
-      "pointsChange": -15.3,
+      "pointsChange": -15.2,
       "pointsChangeType": "down"
     },
     {
       "姓名": "龚雨煊",
-      "当前积分": 2038.2,
+      "当前积分": 2038.1,
       "总场次": 2,
       "胜率": "50%",
       "rank": 6,
       "uid": 10002,
       "change": 0,
       "changeType": "same",
-      "pointsChange": -0.2,
+      "pointsChange": -0.3,
       "pointsChangeType": "down"
     },
     {
@@ -91,38 +91,38 @@
     },
     {
       "姓名": "任安喆",
-      "当前积分": 2025.8,
+      "当前积分": 2025.7,
       "总场次": 3,
       "胜率": "100%",
       "rank": 8,
       "uid": 10008,
       "change": 1,
       "changeType": "up",
-      "pointsChange": 13,
+      "pointsChange": 12.9,
       "pointsChangeType": "up"
     },
     {
       "姓名": "谷子易",
-      "当前积分": 2020.4,
+      "当前积分": 2020.3,
       "总场次": 1,
       "胜率": "100%",
       "rank": 9,
       "uid": 10003,
       "change": -1,
       "changeType": "down",
-      "pointsChange": 6.6,
+      "pointsChange": 6.5,
       "pointsChangeType": "up"
     },
     {
       "姓名": "姜子润",
-      "当前积分": 2002.7,
+      "当前积分": 2002.6,
       "总场次": 3,
       "胜率": "67%",
       "rank": 10,
       "uid": 10004,
       "change": 0,
       "changeType": "same",
-      "pointsChange": 3.8,
+      "pointsChange": 3.7,
       "pointsChangeType": "up"
     },
     {
@@ -259,14 +259,14 @@
     },
     {
       "姓名": "汪宁轩",
-      "当前积分": 1691.6,
+      "当前积分": 1691.7,
       "总场次": 3,
       "胜率": "0%",
       "rank": 22,
       "uid": 10019,
       "change": 0,
       "changeType": "same",
-      "pointsChange": -0.7,
+      "pointsChange": -0.6,
       "pointsChangeType": "down"
     },
     {
