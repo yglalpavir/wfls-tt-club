@@ -51,3 +51,9 @@ docs/audit-2026-08-implementation.md
 docs/skovde-2001-import-summary.md
 # 旧版数据兜底（前端仅作 players.json 失效时的回退，线上无用）
 data/_legacy/
+
+# ===== 部署时生成的产物（2026-09-11 起）：不进 git，避免与部署机器人冲突 =====
+# data/api/ 由 deploy 工作流在部署时运行 tools/recompute_rankings.js 现场生成
+data/api/
+# 本地海报调试预览图，不随站点发布
+.poster-preview/

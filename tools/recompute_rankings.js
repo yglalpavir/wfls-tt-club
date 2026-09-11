@@ -133,6 +133,47 @@ function readJson(rel) {
   return JSON.parse(fs.readFileSync(path.join(ROOT, rel), 'utf-8'));
 }
 
+/** 端点目录页：浏览器打开 /data/api/ 时不再 404，兼作接口说明 */
+function writeIndexHtml(file, m) {
+  const rows = Object.entries(m.endpoints).map(([p, e]) =>
+    '      <tr><td><a href="' + p + '">' + p + '</a></td><td>' + e.records + '</td><td>' + e.description + '</td></tr>'
+  ).join('\n');
+  const html = [
+    '<!DOCTYPE html>',
+    '<html lang="zh-CN">',
+    '<head>',
+    '<meta charset="utf-8">',
+    '<meta name="viewport" content="width=device-width, initial-scale=1">',
+    '<title>WFLS 乒乓球社 · 数据 API</title>',
+    '<style>',
+    '  body { font-family: system-ui, -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; max-width: 860px; margin: 40px auto; padding: 0 20px; color: #222; line-height: 1.6; }',
+    '  h1 { font-size: 1.4rem; } .meta { color: #666; font-size: .9rem; }',
+    '  table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: .95rem; }',
+    '  th, td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; }',
+    '  th { background: #f5f5f5; }',
+    '  code { background: #f5f5f5; padding: 1px 6px; border-radius: 4px; font-size: .9em; word-break: break-all; }',
+    '  .note { color: #555; font-size: .9rem; }',
+    '</style>',
+    '</head>',
+    '<body>',
+    '<h1>WFLS 乒乓球社 · 官网数据 API</h1>',
+    '<p class="meta">生成时间 ' + m.generatedAt + ' · 数据来源 commit <code>' + (m.commit || '-') + '</code> · 实时口径 ' + m.realtimeAsOf + ' · <a href="manifest.json">manifest.json</a></p>',
+    '<table>',
+    '  <thead><tr><th>端点</th><th>条数</th><th>说明</th></tr></thead>',
+    '<tbody>',
+    rows,
+    '</tbody>',
+    '</table>',
+    '<p>本页与各 JSON 由 <code>tools/recompute_rankings.js</code> 自动生成，每日北京时间 04:00 更新（数据提交时也会即时重算），请勿手动编辑。</p>',
+    '<p class="note">跨域已开放（<code>Access-Control-Allow-Origin: *</code>），第三方页面可直接 fetch。示例：</p>',
+    '<p><code>fetch(\'https://yglalpavir.github.io/wfls-tt-club/data/api/rankings/current.json\')</code></p>',
+    '</body>',
+    '</html>',
+    ''
+  ].join('\n');
+  fs.writeFileSync(file, html, 'utf8');
+}
+
 function headSha() {
   try {
     return execFileSync('git', ['rev-parse', '--short', 'HEAD'], { cwd: ROOT, encoding: 'utf-8' }).trim();
@@ -229,6 +270,7 @@ function tallyWindow(rawLog, seasons, today) {
   writeJson(path.join(OUT_DIR, 'players.json'), playersPayload);
   writeJson(path.join(OUT_DIR, 'matches.json'), matchesPayload);
   writeJson(path.join(OUT_DIR, 'manifest.json'), manifest);
+  writeIndexHtml(path.join(OUT_DIR, 'index.html'), manifest);
 
   /* ---------- 自检：不满足则退出非零，阻止提交坏产物 ---------- */
   if (!current.isRealtime) { console.error('缺少实时节点'); process.exit(1); }

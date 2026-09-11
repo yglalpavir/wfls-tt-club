@@ -1,0 +1,60 @@
+name: deploy
+
+# 部署 GitHub Pages（源 = GitHub Actions）。
+# data/api 由 tools/recompute_rankings.js 在部署时现场生成，不提交进仓库（见 .gitignore），
+# 因此不再有"机器人提交 vs 本地提交"的合并冲突。
+# 触发：任何 push 到 main + 每日北京时间 04:00 定时重算 + 手动触发。
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 20 * * *' # UTC 20:00 = 北京时间（Asia/Shanghai）次日 04:00
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-pages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      # runner 默认 UTC；getTodayStr / calculateRealtimeRanking 用本地日期，
+      # 不设 TZ 会使"实时积分"口径晚 8 小时
+      TZ: Asia/Shanghai
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # 生成器只需 HEAD 短 sha（manifest.commit）
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Generate data/api
+        run: node tools/recompute_rankings.js
+      - name: Assemble site
+        run: |
+          mkdir _site
+          rsync -a --exclude='.git' --exclude='_site' ./ _site/
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -37,6 +37,7 @@ No npm/lint/typecheck commands exist — there are no build tools or test suites
 - `data/seasons.json` → season definitions; **CI fails if current date exceeds last endDate** (must create new season)
 - `data/decay-config.json` → half-life and no-decay types
 - `data/draws.json` → tournament brackets (v3), rendered by `js/draws-viewer.js`, edited via `draws-editor.html`
+- `data/api/` → **read-only public data API (rankings / snapshots / players / matches), generated at deploy time** by `tools/recompute_rankings.js` inside the `deploy` workflow — gitignored, NOT committed (no merge conflicts with the deploy bot). Endpoints are documented by `data/api/index.html`, itself generated. Local runs of the script are safe but produce ignored files.
 
 ## Architecture gotchas
 
@@ -68,6 +69,7 @@ No npm/lint/typecheck commands exist — there are no build tools or test suites
 | `data/decay-config.json` | Time decay config |
 | `data/umpire-quiz.json` | Umpire-training easter-egg quiz (questions → videos in `assets/videos/umpire/`) |
 | `data/draws.json` | Tournament bracket data (v3: cards + connections + structured players) |
+| `data/api/` | Generated read-only data API (deploy-time only, gitignored) |
 | `js/score-engine.js` | Club ranking calculation core |
 | `js/wtt_common.js` | WTT data loading + ranking |
 | `js/common.js` | i18n, global state, shared UI |
@@ -76,6 +78,7 @@ No npm/lint/typecheck commands exist — there are no build tools or test suites
 | `js/draws-editor.js` | Bracket visual editor logic (draws-editor.html) |
 | `tools/sync_content.py` | Content index generator (run after any content edit) |
 | `tools/ci_validate.py` | Data integrity validator |
+| `tools/recompute_rankings.js` | Generates `data/api/` (runs the real score engine headless in a Node vm) |
 | `tools/migrate_draws_v3.py` | One-shot draws.json v2 → v3 migration |
 
 ## Common mistakes to avoid
@@ -88,3 +91,4 @@ No npm/lint/typecheck commands exist — there are no build tools or test suites
 6. Changing scoring logic in only one pipeline (club vs WTT) — they're separate implementations; reuse `LOSER_POINT_MULTIPLIER` / `DECAY_HALF_LIFE_DAYS` instead of hardcoding coefficients
 7. Editing nav/footer markup in individual HTML pages — it lives in `js/shared-partials.js`
 8. Deduplicating same-day repeated match records — they are intentional (multiple games per day)
+9. Committing `data/api/` — it is generated at deploy time by the `deploy` workflow and gitignored; committing it recreates merge conflicts with deployments
