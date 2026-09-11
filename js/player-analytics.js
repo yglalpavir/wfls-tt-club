@@ -392,8 +392,9 @@ function renderPlayerAnalytics(playerName, records, opts) {
         html += '<span>' + L.pa_form_max_l + ' <strong class="pa-text-loss">' + form.maxL + '</strong></span>';
         html += '</div>';
         html += '<div class="pa-form-last10"><span class="pa-form-label">' + L.pa_form_last10 + '</span><span class="pa-form-dots">';
+        // 最新一场排在最左：与连胜口径（自最新一场回溯）及下方比赛明细的倒序一致
         if (form.last10.length) {
-            for (const isWin of form.last10) {
+            for (const isWin of [...form.last10].reverse()) {
                 html += '<span class="pa-form-dot ' + (isWin ? 'w' : 'l') + '">' + (isWin ? i18n[currentLang].score_result_win : i18n[currentLang].score_result_loss) + '</span>';
             }
         } else {

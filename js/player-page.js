@@ -236,7 +236,7 @@ function reapplyPlayerPage() {
 // html2canvas 会把 flex 居中小徽章/圆点的文字画到容器左下角或贴底，
 // 且对未挂载克隆节点的 getComputedStyle 返回空值——导出前在**原页面元素**上读样式，
 // 用 canvas 按实测尺寸重绘成图片再替换克隆中的对应节点（位置与颜色都精确）。
-const EXPORT_PILL_SEL = '.player-status-chip,.player-score-chip,.player-role-chip,.personal-tag-badge,.personal-honor-badge,.pa-form-streak,.pa-form-dot';
+const EXPORT_PILL_SEL = '.player-status-chip,.player-score-chip,.player-role-chip,.personal-tag-badge,.personal-honor-badge,.personal-card-rank,.pa-form-streak,.pa-form-dot';
 function _expPillToImage(el) {
     const cs = getComputedStyle(el);
     const w = Math.ceil(el.offsetWidth), h = Math.ceil(el.offsetHeight);
@@ -274,14 +274,26 @@ function _expPillToImage(el) {
     const padR = parseFloat(cs.paddingRight) || 0;
     const totalW = iconW + (iconW ? gapW : 0) + textW;
     let x = padL + Math.max(0, (w - padL - padR - totalW) / 2);
-    const cy = h / 2;
+    // 垂直锚点取字形墨迹盒中心：middle 基线在部分字体下偏 0.5–1px，小徽章上文字会看出贴底；
+    // 取不到实测墨迹时退回 middle 基线居中
+    const inkY = (str, fnt) => {
+        ctx.font = fnt;
+        const m = ctx.measureText(str);
+        const a = m.actualBoundingBoxAscent, d = m.actualBoundingBoxDescent;
+        if (typeof a === 'number' && typeof d === 'number') {
+            ctx.textBaseline = 'alphabetic';
+            return h / 2 + (a - d) / 2;
+        }
+        ctx.textBaseline = 'middle';
+        return h / 2;
+    };
     if (iconText) {
-        ctx.font = ctx._iconFont; ctx.fillStyle = ics.color || cs.color;
-        ctx.fillText(iconText, x, cy + 0.5);
+        ctx.fillStyle = ics.color || cs.color;
+        ctx.fillText(iconText, x, inkY(iconText, ctx._iconFont));
         x += iconW + gapW;
     }
-    ctx.font = font; ctx.fillStyle = cs.color;
-    ctx.fillText(text, x, cy + 0.5);
+    ctx.fillStyle = cs.color;
+    ctx.fillText(text, x, inkY(text, font));
     const img = document.createElement('img');
     img.src = cv.toDataURL('image/png');
     img.style.cssText = `display:inline-block;width:${w}px;height:${h}px;vertical-align:middle;`;
