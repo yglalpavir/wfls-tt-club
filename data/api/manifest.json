@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "description": "WFLS 乒乓球社官网只读数据 API（由 tools/recompute_rankings.js 生成，请勿手动编辑）",
-  "generatedAt": "2026-09-10T15:56:42.830Z",
-  "commit": "435ba7f",
-  "realtimeAsOf": "2026-09-10",
+  "generatedAt": "2026-09-11T16:00:07.600Z",
+  "commit": "7dc2bbd",
+  "realtimeAsOf": "2026-09-12",
   "endpoints": {
     "rankings/current.json": {
       "records": 44,
@@ -19,7 +19,7 @@
       "description": "成员个人数据（档案 + 当前积分/排名/胜负）"
     },
     "matches.json": {
-      "records": 320,
+      "records": 324,
       "description": "比赛记录与加分记录（与 score-log.json 一致）"
     }
   }
