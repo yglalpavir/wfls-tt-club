@@ -27,7 +27,6 @@
         '                        <li><a href="members.html" class="dropdown-link" data-i18n="nav_members">社团骨干</a></li>',
         '                        <li><a href="data_viz.html" class="dropdown-link">Data Viz <span class="beta-tag">Beta</span></a></li>',
         '                        <li><a href="personal_stats.html" class="dropdown-link" data-i18n="nav_personal">个人数据</a></li>',
-        '                        <li><a href="submit.html" class="dropdown-link" data-i18n="nav_submit">提交战绩</a></li>',
         '                        <li><a href="qa.html" class="dropdown-link" data-i18n="nav_qa">Q&A</a></li>',
         '                        <li><a href="changelog.html" class="dropdown-link" data-i18n="nav_changelog">更新日志</a></li>',
         '                    </ul>',

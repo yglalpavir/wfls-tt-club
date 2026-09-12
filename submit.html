@@ -38,6 +38,14 @@
         <style>
             #submitSection { padding-top: 30px; }
             #submitSection .sb-card { max-width: 900px; margin: 0 auto 16px; background: var(--bg-white, #fff); border: 1px solid var(--border-color, #e3e8ef); border-radius: 12px; padding: 20px 22px; }
+            #submitSection .sb-quick { text-align: center; max-width: 640px; padding: 36px 28px 32px; margin: 6px auto 22px; }
+            #submitSection .sb-quick-icon { width: 66px; height: 66px; margin: 0 auto 14px; border-radius: 50%; background: var(--primary-pale, rgba(0, 123, 255, .1)); display: flex; align-items: center; justify-content: center; font-size: 1.7rem; color: var(--primary-blue, #007bff); }
+            #submitSection .sb-quick h2 { justify-content: center; font-size: 1.3rem; margin: 0 0 8px; }
+            #submitSection .sb-quick-desc { font-size: .88rem; color: var(--text-secondary, #667); margin: 0 auto 18px; max-width: 460px; }
+            #submitSection .sb-steps { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; margin-bottom: 22px; }
+            #submitSection .sb-step { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border: 1px solid var(--border-color, #ccd); border-radius: 999px; font-size: .78rem; color: var(--text-secondary, #667); }
+            #submitSection .sb-step b { width: 18px; height: 18px; border-radius: 50%; background: var(--primary-blue, #007bff); color: #fff; font-size: .7rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+            #submitSection .sb-steps > i { color: var(--text-muted, #99a); font-size: .72rem; }
             #submitSection h2 { font-size: 1.1rem; margin: 0 0 12px; display: flex; align-items: center; gap: 8px; color: var(--text-primary, #223); }
             #submitSection .sb-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
             #submitSection label { font-size: .8rem; color: var(--text-secondary, #667); display: block; margin-bottom: 4px; }
@@ -59,19 +67,29 @@
             #submitSection .sb-msg.ok { color: #28a745; }
             #submitSection .sb-hints { max-width: 900px; margin: 0 auto; font-size: .8rem; color: var(--text-secondary, #667); line-height: 1.7; }
             #submitSection .sb-hints i { margin-right: 4px; }
-            #submitSection .sb-quick { border: 1.5px solid var(--primary-blue, #007bff); }
-            #submitSection .sb-quick-desc { font-size: .85rem; color: var(--text-secondary, #667); margin: 0 0 12px; }
-            #submitSection .sb-formbtn { display: inline-flex; align-items: center; gap: 8px; background: var(--primary-blue, #007bff); color: #fff; text-decoration: none; border-radius: 8px; padding: 10px 18px; font-size: .9rem; font-weight: 600; transition: filter .2s; }
-            #submitSection .sb-formbtn:hover { filter: brightness(1.1); }
+            #submitSection .sb-quick { border: 1px solid var(--border-color, #e3e8ef); box-shadow: var(--shadow-md, 0 4px 16px rgba(0, 0, 0, .08)); }
+            #submitSection .sb-quick-desc { font-size: .88rem; color: var(--text-secondary, #667); margin: 0 auto 18px; max-width: 460px; }
+            #submitSection .sb-formbtn { display: inline-flex; align-items: center; gap: 9px; background: var(--primary-blue, #007bff); color: #fff; text-decoration: none; border-radius: 999px; padding: 12px 30px; font-size: .95rem; font-weight: 600; transition: filter .2s, transform .2s; }
+            #submitSection .sb-formbtn:hover { filter: brightness(1.1); transform: translateY(-1px); }
             #submitSection .sb-quick-missing { font-size: .8rem; color: var(--text-secondary, #667); margin: 0; }
         </style>
-        <div class="sb-card sb-quick">
-            <h2><i class="fa-solid fa-bolt"></i><span data-i18n="sb_quick_title">免账号提交（推荐）</span></h2>
+        <div class="sb-card sb-quick" id="sbQuickCard">
+            <div class="sb-quick-icon"><i class="fa-solid fa-table-tennis-paddle-ball" aria-hidden="true"></i></div>
+            <h2 data-i18n="sb_quick_title">在线提交比赛战绩</h2>
             <p class="sb-quick-desc" data-i18n="sb_quick_desc">无需 GitHub：点击下方按钮，在腾讯文档表单里填写比赛结果，管理员审核后统一计入排名。</p>
+            <div class="sb-steps">
+                <span class="sb-step"><b>1</b><span data-i18n="sb_step1">在线填写结果</span></span>
+                <i class="fa-solid fa-angles-right" aria-hidden="true"></i>
+                <span class="sb-step"><b>2</b><span data-i18n="sb_step2">管理员审核</span></span>
+                <i class="fa-solid fa-angles-right" aria-hidden="true"></i>
+                <span class="sb-step"><b>3</b><span data-i18n="sb_step3">计入积分排名</span></span>
+            </div>
             <a id="sbFormLink" class="sb-formbtn" href="#" target="_blank" rel="noopener" hidden><i class="fa-solid fa-file-pen"></i> <span data-i18n="sb_quick_btn">打开提交表单</span></a>
             <p class="sb-quick-missing" id="sbFormMissing" data-i18n="sb_quick_missing" hidden>提交表单链接尚未配置（管理员：把收集表链接填入本页 TENCENT_FORM_URL）。</p>
         </div>
-        <div class="sb-card">
+        <!-- 本地录入工具（表单 → 队列 → GitHub issue / 复制 JSON 发 QQ 群）：
+             收集表上线后整卡隐藏（ENABLE_MANUAL_ENTRY=false）；恢复时把它与 ENABLE_GITHUB_SUBMIT 都改回 true -->
+        <div class="sb-card" id="sbEntryCard">
             <h2><i class="fa-solid fa-pen-to-square"></i><span data-i18n="sb_form_title">记录录入</span></h2>
             <div class="sb-row">
                 <div><label data-i18n="sb_date">日期</label><input type="date" id="sbDate"></div>
@@ -103,12 +121,14 @@
             <div class="sb-msg" id="sbMsg"></div>
             <ul class="sb-list" id="sbQueue"></ul>
             <div class="sb-actions" id="sbActions" hidden>
+                <!-- 「通过 GitHub 提交」按钮：受脚本顶部 ENABLE_GITHUB_SUBMIT 开关控制显隐（复制 JSON 走 QQ 群兜底，始终保留） -->
                 <button type="button" class="sb-gh" id="sbGh"><i class="fa-brands fa-github"></i> <span data-i18n="sb_btn_github">通过 GitHub 提交</span></button>
                 <button type="button" class="sb-copy" id="sbCopy"><i class="fa-solid fa-clipboard"></i> <span data-i18n="sb_btn_copy">复制 JSON</span></button>
                 <button type="button" class="sb-clear" id="sbClear" data-i18n="sb_btn_clear">清空</button>
             </div>
         </div>
-        <div class="sb-hints">
+        <!-- GitHub 通道相关提示（ENABLE_GITHUB_SUBMIT=false 时整块隐藏） -->
+        <div class="sb-hints" id="sbHints">
             <p><i class="fa-brands fa-github"></i><span data-i18n="sb_hint_github">跳转 GitHub 需登录 GitHub 账号；提交后可在 issue 中查看审核进度。</span></p>
             <p><i class="fa-solid fa-eye"></i><span data-i18n="sb_hint_public">提交内容公开可见，请勿填写联系方式。</span></p>
             <p><i class="fa-solid fa-circle-info"></i><span data-i18n="sb_hint_paste">若跳转后输入框为空，请点「复制 JSON」后手动粘贴。</span></p>
@@ -124,8 +144,15 @@
     (function () {
         var $ = function (id) { return document.getElementById(id); };
         var GH_ISSUES_URL = "https://github.com/yglalpavir/wfls-tt-club/issues/new";
-        // 免账号提交：腾讯文档收集表链接（建好表后把分享链接填在这里，留空则隐藏该入口）
-        var TENCENT_FORM_URL = "";
+        // 免账号提交：腾讯文档收集表链接（留空则隐藏该入口）
+        var TENCENT_FORM_URL = "https://docs.qq.com/form/page/DVWNqcFpqRU96WmJa";
+        // GitHub 提交入口开关：当前访客几乎都没有 GitHub 账号，页面临时隐藏 GitHub 通道
+        // （issue 审核流水线仍在线运行，入口只是不再展示；要恢复改成 true 即可）。
+        // 隐藏范围：「通过 GitHub 提交」按钮 + 页面底部三条 GitHub 相关提示。
+        var ENABLE_GITHUB_SUBMIT = false;
+        // 本地录入工具整卡开关（表单/队列/复制 JSON/清空）：收集表成为唯一入口后隐藏。
+        // 恢复本地录入时，把本开关与 ENABLE_GITHUB_SUBMIT 都改回 true。
+        var ENABLE_MANUAL_ENTRY = false;
         var DRAFT_KEY = "wfls-submit-draft.v1";
         var T = function (key) { return (typeof i18n !== "undefined" && i18n[currentLang] && i18n[currentLang][key]) || key; };
         var queue = [], aliasMap = {}, knownNames = {}, coeffData = null;
@@ -188,8 +215,18 @@
         renderQueue();
 
         var quickLink = $("sbFormLink");
-        if (TENCENT_FORM_URL) { quickLink.href = TENCENT_FORM_URL; }
+        if (TENCENT_FORM_URL) { quickLink.href = TENCENT_FORM_URL; quickLink.hidden = false; }
         else { quickLink.hidden = true; $("sbFormMissing").hidden = false; }
+
+        // GitHub 通道开关（见文件顶部 ENABLE_GITHUB_SUBMIT 注释）
+        if (!ENABLE_GITHUB_SUBMIT) {
+            $("sbGh").hidden = true;
+            $("sbHints").hidden = true;
+        }
+        // 本地录入工具整卡开关（见文件顶部 ENABLE_MANUAL_ENTRY 注释）
+        if (!ENABLE_MANUAL_ENTRY) {
+            $("sbEntryCard").hidden = true;
+        }
 
         $("sbScoreToggle").addEventListener("change", function () { $("sbScoreBox").classList.toggle("open", this.checked); });
 

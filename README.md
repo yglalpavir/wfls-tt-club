@@ -611,7 +611,7 @@ python tools/sync_content.py --check    # 仅校验（含预计新增快照数�
 
 ### 访客提交比赛记录（三条通道）
 
-访客可通过网站 `submit.html`「提交战绩」页提交比赛记录。三条通道并存，最终都汇入 `data/score-log.json`：
+访客可通过 `submit.html`「提交战绩」页提交比赛记录。**入口在 Ranking 页「积分计算规则」按钮下方**（同款玻璃按钮，见 `ranking.html`），页面本体只保留在线表单入口。三条通道并存，最终都汇入 `data/score-log.json`：
 
 **通道一：腾讯文档收集表（免账号，面向 99% 无 GitHub 的同学，推荐）**
 
@@ -631,6 +631,8 @@ python tools/sync_content.py --check    # 仅校验（含预计新增快照数�
 
 **通道二：GitHub Issue（适合有 GitHub 账号的提交者，全自动）**
 
+> 当前 `submit.html` 通过脚本顶部的 `ENABLE_GITHUB_SUBMIT = false` 与 `ENABLE_MANUAL_ENTRY = false` 两个开关**隐藏了本通道与「本地录入工具」（表单/队列/复制 JSON）的页面入口**（访客几乎都没有 GitHub 账号；收集表为唯一入口）。issue 审核流水线本身仍在线运行（admin.html 待审卡片可用），恢复入口把对应开关改回 `true` 即可（恢复本地录入需两个开关都开）。
+
 ```
 访客: submit.html 填表（客户端校验）→ 跳转 GitHub 创建预填 issue（自动打「提交」标签）
 管理员: 审阅 issue → 打「审核通过」标签
@@ -645,7 +647,7 @@ python tools/sync_content.py --check    # 仅校验（含预计新增快照数�
 
 **通道三：QQ 群兜底（上述都不方便时）**
 
-提交页「复制 JSON」→ 发到社团 QQ 群 → 管理员代录：替其发 issue 走通道二，或用 admin.html 的记分录入工具导出合并。
+提交页「复制 JSON」→ 发到社团 QQ 群 → 管理员代录。「复制 JSON」入口目前随本地录入工具一起被 `ENABLE_MANUAL_ENTRY` 开关隐藏；管理员代录也可直接用 admin.html 的记分录入工具导出合并。
 
 **通用约定**
 

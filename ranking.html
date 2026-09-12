@@ -56,10 +56,17 @@
                             <span class="section-tag" data-i18n="rank_tag">Data Table</span>
                             <h2 class="section-title" data-i18n="rank_title">积分数据表</h2>
                         </div>
-                        <a href="detail.html?type=qa&id=q1" class="qa-link-btn" aria-label="Ranking scoring rules">
-                            <i class="fa-solid fa-circle-question" aria-hidden="true"></i>
-                            <span data-i18n="rank_qa_btn">积分计算规则</span>
-                        </a>
+                        <div class="rank-header-actions" style="display:flex;flex-direction:column;gap:8px;align-items:flex-end;">
+                            <a href="detail.html?type=qa&id=q1" class="qa-link-btn" aria-label="Ranking scoring rules">
+                                <i class="fa-solid fa-circle-question" aria-hidden="true"></i>
+                                <span data-i18n="rank_qa_btn">积分计算规则</span>
+                            </a>
+                            <!-- 访客提交战绩入口（与积分计算规则同款玻璃按钮，见 README「访客提交比赛记录」） -->
+                            <a href="submit.html" class="qa-link-btn" aria-label="提交比赛战绩">
+                                <i class="fa-solid fa-table-tennis-paddle-ball" aria-hidden="true"></i>
+                                <span data-i18n="nav_submit">提交战绩</span>
+                            </a>
+                        </div>
                     </div>
                     
                     <div class="ranking-controls">

@@ -245,9 +245,10 @@ const i18n = {
         sb_err_date: "日期格式需为 YYYY-MM-DD", sb_err_future: "日期不能是未来",
         sb_err_score: "总比分需为胜方局数大于负方局数（如 3-1）", sb_err_games: "逐局分数格式应为 11-9，且无平局",
         sb_err_mismatch: "逐局分数与总比分不一致", sb_ok_added: "已加入队列", sb_err_empty: "队列为空",
-        sb_ok_copied: "已复制，可粘贴到 GitHub issue 或发给管理员", sb_err_copy: "复制失败，请手动选择文本",
+        sb_ok_copied: "已复制，可发到社团 QQ 群由管理员代录", sb_err_copy: "复制失败，请手动选择文本",
         sb_err_types: "赛事类型加载失败", sb_err_players: "球员数据加载失败",
-        sb_quick_title: "免账号提交（推荐）", sb_quick_btn: "打开提交表单",
+        sb_quick_title: "在线提交比赛战绩", sb_quick_btn: "打开提交表单",
+        sb_step1: "在线填写结果", sb_step2: "管理员审核", sb_step3: "计入积分排名",
         sb_quick_desc: "无需 GitHub：点击下方按钮，在腾讯文档表单里填写比赛结果，管理员审核后统一计入排名。",
         sb_quick_missing: "提交表单链接尚未配置（管理员：把收集表链接填入本页 TENCENT_FORM_URL）。"
     },
@@ -361,9 +362,10 @@ const i18n = {
         sb_err_date: "Date must be YYYY-MM-DD", sb_err_future: "Date cannot be in the future",
         sb_err_score: "Winner games must exceed loser games (e.g. 3-1)", sb_err_games: "Game scores look like 11-9; no draws allowed",
         sb_err_mismatch: "Game scores do not match the total", sb_ok_added: "Added to queue", sb_err_empty: "Queue is empty",
-        sb_ok_copied: "Copied — paste into the GitHub issue or send to an admin", sb_err_copy: "Copy failed; please select the text manually",
+        sb_ok_copied: "Copied — send it to the club QQ group for manual entry", sb_err_copy: "Copy failed; please select the text manually",
         sb_err_types: "Failed to load event types", sb_err_players: "Failed to load players",
-        sb_quick_title: "Submit without an account (recommended)", sb_quick_btn: "Open the submission form",
+        sb_quick_title: "Submit Your Match Results", sb_quick_btn: "Open the submission form",
+        sb_step1: "Fill in the form", sb_step2: "Admin review", sb_step3: "Counted into rankings",
         sb_quick_desc: "No GitHub needed: click below and fill in the Tencent Docs form. Results are reviewed and batched into the rankings.",
         sb_quick_missing: "The form link is not configured yet (admin: fill in TENCENT_FORM_URL on this page)."
     }
@@ -2006,7 +2008,7 @@ function escapeHtml(str) {
 function initPdfViewer() { const btn = document.getElementById('pdfViewBtn'), ctr = document.getElementById('pdfPreviewContainer'), ph = document.getElementById('pdfPlaceholder'), vw = document.getElementById('pdfViewer'); if (!btn) return; let loaded = false; btn.addEventListener('click', () => { if (!loaded) { btn.disabled = true; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Loading...'; vw.src = vw.getAttribute('data-src'); loaded = true; vw.onload = () => { btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> ${i18n[currentLang].pdf_preview_btn}`; btn.disabled = false; }; setTimeout(() => { if (btn.disabled) { btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> ${i18n[currentLang].pdf_preview_btn}`; btn.disabled = false; } }, 10000); } if (ctr.style.display === 'none' || !ctr.style.display) { ctr.style.display = 'block'; ph.style.display = 'none'; } else { ctr.style.display = 'none'; ph.style.display = 'flex'; } }); }
 
 function updateSideNavHighlight() { const links = document.querySelectorAll('.side-nav-link, .viz-tab-link'); if (!links.length) return; const pos = window.scrollY + 150; let cur = null; links.forEach(l => { const el = document.querySelector(l.getAttribute('href')); if (!el) return; const top = el.getBoundingClientRect().top + window.scrollY; if (pos >= top) cur = l.getAttribute('data-section'); }); if (!cur) cur = links[0].getAttribute('data-section'); links.forEach(l => l.classList.toggle('active', l.getAttribute('data-section') === cur)); const activeTab = document.querySelector('.viz-tab-link.active'); const tabNav = document.getElementById('vizMobileNav'); if (activeTab && tabNav) { const tl = tabNav.querySelector('.viz-tab-list'); if (tl) tl.scrollTo({ left: Math.max(0, activeTab.offsetLeft - tl.offsetLeft - 12), behavior: 'smooth' }); } }
-function highlightNavByPath() { const cp = window.location.pathname.split('/').pop() || 'index.html'; const anl = document.querySelectorAll('.nav-link:not(.dropdown-toggle)'), dl = document.querySelectorAll('.dropdown-link'); anl.forEach(l => l.classList.remove('active')); dl.forEach(l => l.classList.remove('active')); const dt2 = document.getElementById('moreDropdown'); if (dt2) dt2.classList.remove('active'); anl.forEach(link => { const h = link.getAttribute('href'); if (!h) return; if (h === cp || (cp === '' && h === 'index.html') || (cp === 'index.html' && h === 'index.html') || (cp === 'contact.html' && h === 'contact.html')) link.classList.add('active'); }); if (cp === 'members.html' || cp === 'data_viz.html' || cp === 'personal_stats.html' || cp === 'player.html' || cp === 'qa.html' || cp === 'submit.html' || cp === 'changelog.html') { if (dt2) dt2.classList.add('active'); dl.forEach(link => { const h = link.getAttribute('href'); if (h === cp || (cp === 'player.html' && h === 'personal_stats.html')) link.classList.add('active'); }); } }
+function highlightNavByPath() { const cp = window.location.pathname.split('/').pop() || 'index.html'; const anl = document.querySelectorAll('.nav-link:not(.dropdown-toggle)'), dl = document.querySelectorAll('.dropdown-link'); anl.forEach(l => l.classList.remove('active')); dl.forEach(l => l.classList.remove('active')); const dt2 = document.getElementById('moreDropdown'); if (dt2) dt2.classList.remove('active'); anl.forEach(link => { const h = link.getAttribute('href'); if (!h) return; if (h === cp || (cp === '' && h === 'index.html') || (cp === 'index.html' && h === 'index.html') || (cp === 'contact.html' && h === 'contact.html')) link.classList.add('active'); }); if (cp === 'members.html' || cp === 'data_viz.html' || cp === 'personal_stats.html' || cp === 'player.html' || cp === 'qa.html' || cp === 'changelog.html') { if (dt2) dt2.classList.add('active'); dl.forEach(link => { const h = link.getAttribute('href'); if (h === cp || (cp === 'player.html' && h === 'personal_stats.html')) link.classList.add('active'); }); } }
 
 /* Chart.js 全局现代化默认样式（字体 / 图例 / 提示框 / 网格线） */
 function applyChartDefaults() {
