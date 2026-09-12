@@ -38,6 +38,7 @@ No npm/lint/typecheck commands exist — there are no build tools or test suites
 - `data/decay-config.json` → half-life and no-decay types
 - `data/draws.json` → tournament brackets (v3), rendered by `js/draws-viewer.js`, edited via `draws-editor.html`
 - `data/api/` → **read-only public data API (rankings / snapshots / players / matches), generated at deploy time** by `tools/recompute_rankings.js` inside the `deploy` workflow — gitignored, NOT committed (no merge conflicts with the deploy bot). Endpoints are documented by `data/api/index.html`, itself generated. Local runs of the script are safe but produce ignored files.
+- **Visitor submission pipeline (3 channels)** → ① Tencent Docs form (no account needed): owner marks an 审核 column, exports CSV, `tools/import_submissions_csv.py` validates + appends locally (dedup state in gitignored `tools/.import-state.json`); ② GitHub Issues: `submit.html` builds a prefilled issue (label `提交`), a maintainer applies `审核通过`, `.github/workflows/submission-review.yml` parses it via `tools/append_submission.py` and opens a **PR** — never push bot commits directly to `main`; ③ QQ group fallback (copy JSON). All channels share the same validity rules (via `append_submission.py`'s functions) and `ci_validate.py` stays the final gate. Score records may carry optional `比分` ("3-1") / `局分` (["11-9", ...], winner-perspective) fields; the engine ignores unknown fields.
 
 ## Architecture gotchas
 
@@ -80,6 +81,11 @@ No npm/lint/typecheck commands exist — there are no build tools or test suites
 | `tools/ci_validate.py` | Data integrity validator |
 | `tools/recompute_rankings.js` | Generates `data/api/` (runs the real score engine headless in a Node vm) |
 | `tools/migrate_draws_v3.py` | One-shot draws.json v2 → v3 migration |
+| `submit.html` | Visitor match-record submission page (builds a prefilled GitHub issue) |
+| `.github/ISSUE_TEMPLATE/match-record.yml` | Issue form for submissions (auto-labels `提交`) |
+| `.github/workflows/submission-review.yml` | Turns `审核通过`-labeled submission issues into PRs |
+| `tools/append_submission.py` | Parses/validates issue-submitted records, appends to `score-log.json` |
+| `tools/import_submissions_csv.py` | Imports Tencent Docs CSV exports into `score-log.json` (same validation rules) |
 
 ## Common mistakes to avoid
 
@@ -92,3 +98,4 @@ No npm/lint/typecheck commands exist — there are no build tools or test suites
 7. Editing nav/footer markup in individual HTML pages — it lives in `js/shared-partials.js`
 8. Deduplicating same-day repeated match records — they are intentional (multiple games per day)
 9. Committing `data/api/` — it is generated at deploy time by the `deploy` workflow and gitignored; committing it recreates merge conflicts with deployments
+10. Letting the submission bot push to `main` directly, or editing `submit.html` / `append_submission.py` validation without keeping it in sync with `ci_validate.py` — the three must agree on what a valid record is; PRs are the only ingest path (the retired `recompute.yml` bot-commit workflow is the cautionary tale)

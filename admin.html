@@ -429,6 +429,46 @@
 
         <div class="hero-chips" id="heroChips" aria-live="polite"></div>
 
+        <!-- ===== 待审核提交（实时读取 GitHub Issues 中带「提交」标签的开放 issue）===== -->
+        <section id="pendingSubs" style="max-width:1100px;margin:18px auto 0;padding:0 20px;">
+            <style>
+                #pendingSubs .ps-card { background:var(--card-bg,#fff); border:1px solid var(--border-color,#e3e8ef); border-radius:12px; padding:16px 18px; margin-bottom:14px; }
+                #pendingSubs h2 { font-size:1.05rem; margin:0 0 10px; display:flex; align-items:center; gap:8px; }
+                #pendingSubs .ps-badge { font-size:.72rem; background:#dc3545; color:#fff; border-radius:10px; padding:1px 8px; }
+                #pendingSubs ul { list-style:none; margin:0; padding:0; font-size:.85rem; }
+                #pendingSubs li { padding:6px 8px; border-bottom:1px dashed var(--border-color,#eef); display:flex; justify-content:space-between; gap:8px; }
+                #pendingSubs a { color:#007bff; text-decoration:none; white-space:nowrap; }
+            </style>
+            <div class="ps-card">
+                <h2><i class="fa-solid fa-inbox"></i>待审核提交 <span class="ps-badge" id="psCount" hidden>0</span></h2>
+                <ul id="psList"><li><span>加载中…</span></li></ul>
+            </div>
+        </section>
+        <script>
+        (function () {
+            var $ = function (id) { return document.getElementById(id); };
+            function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+            var API = "https://api.github.com/repos/yglalpavir/wfls-tt-club/issues?labels=" + encodeURIComponent("提交") + "&state=open&per_page=30";
+            fetch(API, { headers: { "Accept": "application/vnd.github+json" } })
+                .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+                .then(function (list) {
+                    var items = (list || []).filter(function (i) { return !i.pull_request; });
+                    var el = $("psList");
+                    $("psCount").textContent = String(items.length);
+                    $("psCount").hidden = !items.length;
+                    if (!items.length) { el.innerHTML = '<li><span>暂无待审核提交</span></li>'; return; }
+                    el.innerHTML = items.map(function (it) {
+                        var d = (it.created_at || "").slice(0, 10);
+                        return '<li><span>#' + it.number + " · " + esc(it.title) + ' <span style="color:#99a;">(' + esc(d) + ")</span></span>" +
+                            '<span><a href="' + esc(it.html_url) + '" target="_blank" rel="noopener">去审核 →</a></span></li>';
+                    }).join("");
+                })
+                .catch(function () {
+                    $("psList").innerHTML = '<li><span style="color:#dc3545;">读取失败（GitHub 匿名 API 限流为 60 次/时/IP，请稍后刷新重试）</span></li>';
+                });
+        })();
+        </script>
+
         <!-- ===== Web 记分录入工具（生成 score-log.json 片段 / 合并导出）===== -->
         <section id="scoreEntry" style="max-width:1100px;margin:18px auto 0;padding:0 20px;">
             <style>

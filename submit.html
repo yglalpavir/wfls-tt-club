@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function(){try{var t=localStorage.getItem("wfls-tt-theme");var d=t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark-mode");}catch(e){}})()</script>
+    <meta name="description" content="提交 WFLS 乒乓球社团比赛战绩。填写比赛结果，管理员审核通过后自动计入积分排名。">
+    <meta name="keywords" content="武汉外国语学校,WFLS,乒乓球,提交战绩,比赛记录,积分">
+    <meta name="author" content="WFLS Table Tennis Club">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="提交战绩 | WFLS Table Tennis Club">
+    <meta property="og:description" content="填写比赛结果，管理员审核通过后自动计入积分排名。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://yglalpavir.github.io/wfls-tt-club/images/og-cover.png">
+    <meta name="twitter:image" content="https://yglalpavir.github.io/wfls-tt-club/images/og-cover.png">
+    <meta property="og:url" content="https://yglalpavir.github.io/wfls-tt-club/submit.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="提交战绩 | WFLS Table Tennis Club">
+    <meta name="twitter:description" content="填写比赛结果，管理员审核通过后自动计入积分排名。">
+    <link rel="canonical" href="https://yglalpavir.github.io/wfls-tt-club/submit.html">
+    <title data-i18n="submit_page_title">提交战绩 | WFLS Table Tennis Club</title>
+    <link rel="icon" type="image/svg+xml" href="Assets/files/favicon_4DA3FF.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<noscript><div style="padding:10px;text-align:center;background:#b91c1c;color:#fff;font-size:0.9rem;">本站需要启用 JavaScript 才能加载数据。This site requires JavaScript to load data.</div></noscript>
+    <script src="js/shared-partials.js" data-partial="nav"></script>
+
+    <section class="page-hero"><div class="page-hero-overlay"></div><div class="page-hero-content"><span class="section-tag" data-i18n="sb_hero_tag">Submit</span><h1 data-i18n="sb_hero_title">提交战绩</h1><p data-i18n="sb_hero_desc">比赛结果 / 审核通过后自动计入排名</p></div></section>
+
+    <section class="section" id="submitSection">
+        <style>
+            #submitSection { padding-top: 30px; }
+            #submitSection .sb-card { max-width: 900px; margin: 0 auto 16px; background: var(--bg-white, #fff); border: 1px solid var(--border-color, #e3e8ef); border-radius: 12px; padding: 20px 22px; }
+            #submitSection h2 { font-size: 1.1rem; margin: 0 0 12px; display: flex; align-items: center; gap: 8px; color: var(--text-primary, #223); }
+            #submitSection .sb-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+            #submitSection label { font-size: .8rem; color: var(--text-secondary, #667); display: block; margin-bottom: 4px; }
+            #submitSection input, #submitSection select { padding: 8px 10px; border: 1px solid var(--border-color, #ccd); border-radius: 8px; background: var(--bg-white, #fff); color: var(--text-primary, #223); font-size: .88rem; }
+            #submitSection input[type="text"], #submitSection input:not([type]) { min-width: 150px; }
+            #submitSection .sb-scorebox { display: none; margin-top: 12px; padding: 12px 14px; border: 1px dashed var(--border-color, #ccd); border-radius: 10px; }
+            #submitSection .sb-scorebox.open { display: block; }
+            #submitSection button { cursor: pointer; border: none; border-radius: 8px; padding: 9px 16px; font-size: .85rem; font-weight: 600; }
+            #submitSection .sb-add { background: var(--primary-blue, #007bff); color: #fff; }
+            #submitSection .sb-gh { background: #24292f; color: #fff; }
+            #submitSection .sb-copy { background: #6c757d; color: #fff; }
+            #submitSection .sb-clear { background: #dc3545; color: #fff; }
+            #submitSection .sb-actions { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 10px; }
+            #submitSection .sb-list { list-style: none; margin: 10px 0 0; padding: 0; font-size: .85rem; color: var(--text-primary, #223); }
+            #submitSection .sb-list li { padding: 7px 10px; border-bottom: 1px dashed var(--border-color, #eef); display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+            #submitSection .sb-warn { font-size: .72rem; color: #b45309; background: rgba(245, 158, 11, .15); border-radius: 6px; padding: 1px 6px; margin-left: 6px; white-space: nowrap; }
+            #submitSection .sb-msg { font-size: .8rem; margin-top: 8px; min-height: 1.2em; }
+            #submitSection .sb-msg.err { color: #dc3545; }
+            #submitSection .sb-msg.ok { color: #28a745; }
+            #submitSection .sb-hints { max-width: 900px; margin: 0 auto; font-size: .8rem; color: var(--text-secondary, #667); line-height: 1.7; }
+            #submitSection .sb-hints i { margin-right: 4px; }
+            #submitSection .sb-quick { border: 1.5px solid var(--primary-blue, #007bff); }
+            #submitSection .sb-quick-desc { font-size: .85rem; color: var(--text-secondary, #667); margin: 0 0 12px; }
+            #submitSection .sb-formbtn { display: inline-flex; align-items: center; gap: 8px; background: var(--primary-blue, #007bff); color: #fff; text-decoration: none; border-radius: 8px; padding: 10px 18px; font-size: .9rem; font-weight: 600; transition: filter .2s; }
+            #submitSection .sb-formbtn:hover { filter: brightness(1.1); }
+            #submitSection .sb-quick-missing { font-size: .8rem; color: var(--text-secondary, #667); margin: 0; }
+        </style>
+        <div class="sb-card sb-quick">
+            <h2><i class="fa-solid fa-bolt"></i><span data-i18n="sb_quick_title">免账号提交（推荐）</span></h2>
+            <p class="sb-quick-desc" data-i18n="sb_quick_desc">无需 GitHub：点击下方按钮，在腾讯文档表单里填写比赛结果，管理员审核后统一计入排名。</p>
+            <a id="sbFormLink" class="sb-formbtn" href="#" target="_blank" rel="noopener" hidden><i class="fa-solid fa-file-pen"></i> <span data-i18n="sb_quick_btn">打开提交表单</span></a>
+            <p class="sb-quick-missing" id="sbFormMissing" data-i18n="sb_quick_missing" hidden>提交表单链接尚未配置（管理员：把收集表链接填入本页 TENCENT_FORM_URL）。</p>
+        </div>
+        <div class="sb-card">
+            <h2><i class="fa-solid fa-pen-to-square"></i><span data-i18n="sb_form_title">记录录入</span></h2>
+            <div class="sb-row">
+                <div><label data-i18n="sb_date">日期</label><input type="date" id="sbDate"></div>
+                <div><label data-i18n="sb_type">类型</label><select id="sbType"></select></div>
+                <div><label data-i18n="sb_format">赛制</label><select id="sbFormat">
+                    <option value="default">default</option>
+                    <option value="bo3">bo3</option>
+                    <option value="bo5">bo5</option>
+                    <option value="bo7">bo7</option>
+                </select></div>
+                <div><label data-i18n="sb_winner">胜者</label><input type="text" id="sbWinner" list="sbPlayerList" autocomplete="off"></div>
+                <div><label data-i18n="sb_loser">负者</label><input type="text" id="sbLoser" list="sbPlayerList" autocomplete="off"></div>
+                <button type="button" class="sb-add" id="sbAdd" data-i18n="sb_add">添加到队列</button>
+            </div>
+            <datalist id="sbPlayerList"></datalist>
+            <div class="sb-scorebox" id="sbScoreBox">
+                <div class="sb-row">
+                    <div><label data-i18n="sb_score_total">总比分（胜-负）</label>
+                        <span><input type="number" id="sbScoreW" min="0" max="4" style="width:64px;"> : <input type="number" id="sbScoreL" min="0" max="4" style="width:64px;"></span>
+                    </div>
+                    <div style="flex:1;min-width:220px;"><label data-i18n="sb_games">逐局分数（胜者视角，逗号分隔）</label><input type="text" id="sbGames" style="width:100%;" title="如 11-9, 8-11, 11-7" placeholder="11-9, 8-11, 11-7"></div>
+                </div>
+            </div>
+            <div class="sb-row" style="margin-top:12px;">
+                <div style="flex:1;min-width:200px;"><label data-i18n="sb_note">备注（可选）</label><input type="text" id="sbNote" style="width:100%;"></div>
+                <div style="flex:1;min-width:200px;"><label data-i18n="sb_submitter">你的昵称（可选，公开可见）</label><input type="text" id="sbSubmitter" style="width:100%;"></div>
+                <div><label>&nbsp;</label><input type="checkbox" id="sbScoreToggle"><span data-i18n="sb_score_toggle" style="font-size:.8rem;"> 记录比分（可选）</span></div>
+            </div>
+            <div class="sb-msg" id="sbMsg"></div>
+            <ul class="sb-list" id="sbQueue"></ul>
+            <div class="sb-actions" id="sbActions" hidden>
+                <button type="button" class="sb-gh" id="sbGh"><i class="fa-brands fa-github"></i> <span data-i18n="sb_btn_github">通过 GitHub 提交</span></button>
+                <button type="button" class="sb-copy" id="sbCopy"><i class="fa-solid fa-clipboard"></i> <span data-i18n="sb_btn_copy">复制 JSON</span></button>
+                <button type="button" class="sb-clear" id="sbClear" data-i18n="sb_btn_clear">清空</button>
+            </div>
+        </div>
+        <div class="sb-hints">
+            <p><i class="fa-brands fa-github"></i><span data-i18n="sb_hint_github">跳转 GitHub 需登录 GitHub 账号；提交后可在 issue 中查看审核进度。</span></p>
+            <p><i class="fa-solid fa-eye"></i><span data-i18n="sb_hint_public">提交内容公开可见，请勿填写联系方式。</span></p>
+            <p><i class="fa-solid fa-circle-info"></i><span data-i18n="sb_hint_paste">若跳转后输入框为空，请点「复制 JSON」后手动粘贴。</span></p>
+        </div>
+    </section>
+
+    <script src="js/shared-partials.js" data-partial="footer"></script>
+
+    <script src="js/shared-partials.js" data-partial="qr-modal"></script>
+    <script src="js/common.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+    (function () {
+        var $ = function (id) { return document.getElementById(id); };
+        var GH_ISSUES_URL = "https://github.com/yglalpavir/wfls-tt-club/issues/new";
+        // 免账号提交：腾讯文档收集表链接（建好表后把分享链接填在这里，留空则隐藏该入口）
+        var TENCENT_FORM_URL = "";
+        var DRAFT_KEY = "wfls-submit-draft.v1";
+        var T = function (key) { return (typeof i18n !== "undefined" && i18n[currentLang] && i18n[currentLang][key]) || key; };
+        var queue = [], aliasMap = {}, knownNames = {}, coeffData = null;
+        function msg(text, isErr) { var el = $("sbMsg"); el.textContent = text; el.className = "sb-msg " + (isErr ? "err" : "ok"); }
+        function todayStr() { var d = new Date(); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
+        function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+        function canonical(input) {
+            var name = String(input || "").trim();
+            return aliasMap[name] || name;
+        }
+        function saveDraft() { try { safeStorage.set(DRAFT_KEY, JSON.stringify({ records: queue, note: $("sbNote").value, submitter: $("sbSubmitter").value })); } catch (e) {} }
+        function loadDraft() {
+            try {
+                var raw = safeStorage.get(DRAFT_KEY);
+                if (!raw) return;
+                var d = JSON.parse(raw);
+                if (Array.isArray(d.records)) queue = d.records;
+                if (d.note) $("sbNote").value = d.note;
+                if (d.submitter) $("sbSubmitter").value = d.submitter;
+            } catch (e) {}
+        }
+        function renderQueue() {
+            var ul = $("sbQueue");
+            ul.innerHTML = queue.map(function (r, i) {
+                var warn = "";
+                if (r["胜者"] && (!knownNames[r["胜者"]] || !knownNames[r["负者"]])) {
+                    warn = '<span class="sb-warn">' + esc(T("sb_warn_unknown")) + "</span>";
+                }
+                var txt = r["胜者"]
+                    ? esc(r["日期"]) + " · " + esc(r["类型"]) + " · " + esc(r["赛制"]) + " · " + esc(r["胜者"]) + " " + esc(T("score_result_win")) + " " + esc(r["负者"])
+                      + (r["比分"] ? " · " + esc(r["比分"]) + (r["局分"] ? "（" + r["局分"].join(" ") + "）" : "") : "")
+                    : esc(r["日期"]) + " · " + esc(T("score_type_bonus")) + " · " + esc(r["对象"]) + " " + esc(r["分数"]);
+                return "<li><span>" + txt + warn + '</span><span><a href="#" data-i="' + i + '" style="color:#dc3545;">' + esc(T("sb_remove")) + "</a></span></li>";
+            }).join("");
+            $("sbActions").hidden = !queue.length;
+            ul.querySelectorAll("a[data-i]").forEach(function (a) {
+                a.addEventListener("click", function (e) { e.preventDefault(); queue.splice(+a.dataset.i, 1); renderQueue(); saveDraft(); });
+            });
+        }
+
+        fetch("data/event-coefficient.json").then(function (r) { return r.json(); }).then(function (t) {
+            coeffData = t;
+            $("sbType").innerHTML = Object.keys(t).filter(function (k) { return typeof t[k] === "number"; })
+                .map(function (k) { return '<option value="' + esc(k) + '">' + esc(k) + "</option>"; }).join("");
+        }).catch(function () { msg(T("sb_err_types"), true); });
+        fetch("data/players.json").then(function (r) { return r.json(); }).then(function (p) {
+            ((p && p.players) || []).forEach(function (x) {
+                if (!x.name) return;
+                knownNames[x.name] = true;
+                (x.aliases || []).forEach(function (a) { aliasMap[a] = x.name; knownNames[a] = true; });
+            });
+            $("sbPlayerList").innerHTML = ((p && p.players) || []).filter(function (x) { return x.name; }).map(function (x) {
+                return '<option value="' + esc(x.name) + '"></option>' + (x.aliases || []).map(function (a) { return '<option value="' + esc(a) + '"></option>'; }).join("");
+            }).join("");
+            renderQueue();
+        }).catch(function () { msg(T("sb_err_players"), true); });
+
+        $("sbDate").value = todayStr();
+        loadDraft();
+        renderQueue();
+
+        var quickLink = $("sbFormLink");
+        if (TENCENT_FORM_URL) { quickLink.href = TENCENT_FORM_URL; }
+        else { quickLink.hidden = true; $("sbFormMissing").hidden = false; }
+
+        $("sbScoreToggle").addEventListener("change", function () { $("sbScoreBox").classList.toggle("open", this.checked); });
+
+        function parseGames(raw) {
+            var list = raw.split(/[,，、\s]+/).filter(Boolean);
+            for (var i = 0; i < list.length; i++) {
+                var m = /^(\d{1,2})-(\d{1,2})$/.exec(list[i]);
+                if (!m || +m[1] === +m[2]) return null;
+                list[i] = m[1] + "-" + m[2];
+            }
+            return list;
+        }
+        function winsIn(list) {
+            return list.filter(function (g) { return +g.split("-")[0] > +g.split("-")[1]; }).length;
+        }
+        function neededWins(type, fmt) {
+            if (fmt === "bo3" || fmt === "bo5" || fmt === "bo7") return { bo3: 2, bo5: 3, bo7: 4 }[fmt];
+            var d = coeffData && coeffData["默认赛制"];
+            var f = d && d[type];
+            return f ? { bo3: 2, bo5: 3, bo7: 4 }[f] : null;
+        }
+
+        $("sbAdd").addEventListener("click", function () {
+            var rec = { "日期": $("sbDate").value, "类型": $("sbType").value, "赛制": $("sbFormat").value };
+            var winner = canonical($("sbWinner").value), loser = canonical($("sbLoser").value);
+            if (!rec["日期"] || !rec["类型"] || !winner || !loser) return msg(T("sb_err_fill"), true);
+            if (!/^\d{4}-\d{2}-\d{2}$/.test(rec["日期"])) return msg(T("sb_err_date"), true);
+            if (rec["日期"] > todayStr()) return msg(T("sb_err_future"), true);
+            if (winner === loser) return msg(T("sb_err_same"), true);
+            rec["胜者"] = winner; rec["负者"] = loser;
+
+            var useScore = $("sbScoreToggle").checked;
+            var wStr = $("sbScoreW").value, lStr = $("sbScoreL").value;
+            var gameList = useScore && $("sbGames").value.trim() ? parseGames($("sbGames").value.trim()) : [];
+            if (gameList === null) return msg(T("sb_err_games"), true);
+            if (useScore && wStr !== "" && lStr !== "") {
+                var w = +wStr, l = +lStr;
+                var need = neededWins(rec["类型"], rec["赛制"]);
+                if (!(w > l && w <= 4) || (need !== null && w !== need)) return msg(T("sb_err_score"), true);
+                if (gameList.length && (winsIn(gameList) !== w || gameList.length !== w + l)) return msg(T("sb_err_mismatch"), true);
+                rec["比分"] = w + "-" + l;
+                if (gameList.length) rec["局分"] = gameList;
+            } else if (useScore && gameList.length) {
+                var wins = winsIn(gameList);
+                var need2 = neededWins(rec["类型"], rec["赛制"]);
+                if (wins <= gameList.length - wins || (need2 !== null && wins !== need2)) return msg(T("sb_err_score"), true);
+                rec["比分"] = wins + "-" + (gameList.length - wins);
+                rec["局分"] = gameList;
+            }
+
+            queue.push(rec); renderQueue(); saveDraft();
+            $("sbWinner").value = ""; $("sbLoser").value = ""; $("sbScoreW").value = ""; $("sbScoreL").value = ""; $("sbGames").value = "";
+            msg(T("sb_ok_added"), false);
+        });
+
+        $("sbClear").addEventListener("click", function () { queue = []; renderQueue(); saveDraft(); msg("", false); });
+
+        function buildIssueParts() {
+            var json = JSON.stringify(queue, null, 2);
+            var title;
+            if (queue.length === 1) {
+                var r0 = queue[0];
+                title = r0["胜者"]
+                    ? "比赛记录提交：" + r0["日期"] + " " + r0["胜者"] + " 胜 " + r0["负者"] + "（" + r0["类型"] + "·" + r0["赛制"] + "）"
+                    : "积分调整提交：" + r0["日期"];
+            } else {
+                title = "比赛记录提交：" + queue.length + " 条（" + queue[0]["日期"] + " 等）";
+            }
+            return { title: title, json: json };
+        }
+
+        $("sbGh").addEventListener("click", function () {
+            if (!queue.length) return msg(T("sb_err_empty"), true);
+            var parts = buildIssueParts();
+            var note = $("sbNote").value.trim(), submitter = $("sbSubmitter").value.trim();
+            var notes = [];
+            if (note) notes.push("备注/Notes: " + note);
+            if (submitter) notes.push("提交人/Submitter: " + submitter);
+            var url = GH_ISSUES_URL + "?template=match-record.yml"
+                + "&title=" + encodeURIComponent(parts.title)
+                + "&record=" + encodeURIComponent("```json\n" + parts.json + "\n```");
+            if (notes.length) url += "&notes=" + encodeURIComponent(notes.join("\n"));
+            window.open(url, "_blank", "noopener");
+            msg(T("sb_hint_paste"), false);
+        });
+
+        $("sbCopy").addEventListener("click", function () {
+            if (!queue.length) return msg(T("sb_err_empty"), true);
+            var json = buildIssueParts().json;
+            navigator.clipboard.writeText(json).then(function () { msg(T("sb_ok_copied"), false); }, function () { msg(T("sb_err_copy"), true); });
+        });
+
+        var langToggle = $("langToggle");
+        if (langToggle) langToggle.addEventListener("click", renderQueue);
+    })();
+    </script>
+</body>
+</html>

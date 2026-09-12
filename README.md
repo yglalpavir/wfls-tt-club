@@ -609,6 +609,49 @@ python tools/sync_content.py --check    # 仅校验（含预计新增快照数�
 - 编辑 `score-log.json`，在数组末尾追加新记录
 - 系统自动计算积分，无需手动计算
 
+### 访客提交比赛记录（三条通道）
+
+访客可通过网站 `submit.html`「提交战绩」页提交比赛记录。三条通道并存，最终都汇入 `data/score-log.json`：
+
+**通道一：腾讯文档收集表（免账号，面向 99% 无 GitHub 的同学，推荐）**
+
+```
+同学: 打开腾讯文档收集表链接，免账号填写 → 数据自动进在线表格
+管理员: 在表格里标记「审核」列（通过/拒绝）→ 文件 → 导出为 CSV
+      python tools/import_submissions_csv.py 导出.csv --dry-run   # 先预览
+      python tools/import_submissions_csv.py 导出.csv --status-column 审核
+      python tools/ci_validate.py && git 提交
+```
+
+- **收集表题目清单**（建表时照抄，导入器按这些列名模糊匹配）：`日期`（必填）、`比赛类型`（单选：普通/排位赛/挑战赛/校乒联赛/十二强赛/校乒赛团体/校乒赛单打，与 `event-coefficient.json` 同步维护）、`赛制`（单选：default/bo3/bo5/bo7）、`胜者`（必填）、`负者`（必填）、`总比分`（选填，如 3-1）、`逐局分数`（选填，如 11-9, 8-11, 11-7，胜者视角）、`备注`、`你的昵称`
+- 分享设置尽量选「免登录可填」；链接填入 `submit.html` 的 `TENCENT_FORM_URL` 常量
+- 导入器：编码自动探测（UTF-8/GBK）、日期规范化（2026/9/12 等均可）、选手别名自动转正式姓名、全套 `ci_validate` 口径校验；校验不过的行不写入并逐条报告原因（如选手不在册——先在 `players.json` 建档后重跑同一份 CSV 即可补上）
+- 去重：已导入行按整行内容指纹记录在 `tools/.import-state.json`（gitignored），同一表格重复导出重跑自动跳过；**注意**：导入后若在表格里修改了已导入行的内容，重跑会按新内容重复导入，建议把已入库行的审核列改成「已入库」并始终配合 `--status-column` 使用
+- `--dry-run` 只预览不写入，首次对接真实导出文件时先用它确认列名/编码识别正确
+
+**通道二：GitHub Issue（适合有 GitHub 账号的提交者，全自动）**
+
+```
+访客: submit.html 填表（客户端校验）→ 跳转 GitHub 创建预填 issue（自动打「提交」标签）
+管理员: 审阅 issue → 打「审核通过」标签
+机器人: submission-review.yml 自动校验（选手名/类型白名单/日期/比分自洽）→ 追加记录 → 跑 ci_validate → 开 PR
+管理员: 合并 PR → 记录计入排名，issue 自动关闭；拒绝 = 直接关闭 issue（不打标签）
+```
+
+- **一次性配置**：在仓库 Settings → Labels 创建 `提交` 与 `审核通过` 两个标签
+- **修正提交**：issue 机器人评论校验失败原因后，直接编辑 issue 正文里的 JSON，把「审核通过」标签移除再重新打上即可重新校验
+- **防重复**：同一 issue 的入库分支 `submission-<编号>` 已存在时自动跳过；需重新处理则关闭对应 PR 并删除该分支后再打标签
+- GITHUB_TOKEN 开出的 PR 不会触发 ci.yml（平台限制），因此工作流内部先跑 `tools/ci_validate.py` 兜底；人工合并 PR 归属本人 push，CI 与部署正常触发
+
+**通道三：QQ 群兜底（上述都不方便时）**
+
+提交页「复制 JSON」→ 发到社团 QQ 群 → 管理员代录：替其发 issue 走通道二，或用 admin.html 的记分录入工具导出合并。
+
+**通用约定**
+
+- 提交的记录可携带可选比分字段 `比分`（如 "3-1"）与 `局分`（如 ["11-9","8-11"]，胜者视角）；积分引擎忽略未知字段，完全向后兼容
+- `tools/append_submission.py`（issue 路径）与 `tools/import_submissions_csv.py`（CSV 路径）共用同一套校验函数，修改校验口径时两处一起生效；`ci_validate.py` 仍是最终门禁
+
 ### 调整快照日期
 
 - 编辑 `players.json` 中的 `baseDate`（初始积分基准日）

@@ -1,0 +1,26 @@
+name: 比赛记录提交
+description: 提交比赛结果，管理员审核通过后自动计入积分排名（推荐从网站「提交战绩」页发起，表单会自动填好）
+title: "比赛记录提交"
+labels: ["提交"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        在下方粘贴比赛记录 JSON。**推荐从网站的 [提交战绩页](https://yglalpavir.github.io/wfls-tt-club/submit.html) 发起**——会自动填好本表单并预校验。
+        管理员审核（打「审核通过」标签）后，机器人会自动校验并开 PR 入库。
+  - type: textarea
+    id: record
+    attributes:
+      label: 比赛记录 JSON
+      description: 一条记录或记录数组。字段：日期 / 类型 / 赛制 / 胜者 / 负者，可选 比分 / 局分（胜者视角，如 "11-9"）
+      placeholder: |
+        ```json
+        [ { "日期": "2026-09-12", "类型": "普通", "赛制": "bo5", "胜者": "张三", "负者": "李四" } ]
+        ```
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: 备注 / 提交人
+      description: 可选。比赛说明或你的昵称。注意：issue 公开可见，请勿填写 QQ 号等联系方式。

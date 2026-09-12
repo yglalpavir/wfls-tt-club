@@ -40,12 +40,16 @@ docs/result_ittf_link/
 *.tmp
 
 # ===== 部署面收缩（2026-09）：爬虫/导入器与内部审计只在本地留存，不随站点发布 =====
-# tools/ 仅保留 CI 使用的工具
+# tools/ 仅保留 CI 使用的工具与访客提交流水线工具
 tools/*
 !tools/sync_content.py
 !tools/ci_validate.py
 !tools/generate_meta.py
 !tools/recompute_rankings.js
+!tools/append_submission.py
+!tools/import_submissions_csv.py
+# import_submissions_csv.py 的去重状态（tools/* 规则已默认忽略，此处显式声明意图）
+tools/.import-state.json
 # 内部审计与一次性导入记录
 docs/audit-2026-08-implementation.md
 docs/skovde-2001-import-summary.md

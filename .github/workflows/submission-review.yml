@@ -1,0 +1,113 @@
+# 比赛记录提交审核流水线
+#
+# 触发：issue 被打上「审核通过」标签（且带模板自动打的「提交」标签、issue 处于开启状态）。
+# 行为：解析 issue 正文中的记录 JSON → tools/append_submission.py 校验并追加进
+#       data/score-log.json → 跑 ci_validate.py 复核 → 开 PR（合并后即上线并自动关闭 issue）。
+# 校验失败时不入库，失败原因会自动评论到 issue；修正正文后移除再重新打上标签即可重试。
+# 注意：本工作流绝不直接推送 main——入库以 PR 合并为唯一入口，避免与手动提交冲突。
+name: submission-review
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: submission-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    if: >-
+      github.event.label.name == '审核通过' &&
+      contains(github.event.issue.labels.*.name, '提交') &&
+      github.event.issue.state == 'open'
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Shanghai
+      ISSUE_NUMBER: ${{ github.event.issue.number }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 防重复触发（分支已存在说明已处理过）
+        id: dup
+        run: |
+          if git ls-remote --exit-code --heads origin "refs/heads/submission-${ISSUE_NUMBER}" >/dev/null 2>&1; then
+            echo "submission-${ISSUE_NUMBER} 分支已存在，判定为重复触发，跳过"
+            echo "already=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "already=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 解析并校验提交，追加到 score-log.json
+        id: ingest
+        if: steps.dup.outputs.already != 'true'
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: |
+          printf '%s' "$ISSUE_BODY" > /tmp/issue-body.md
+          set +e
+          python tools/append_submission.py /tmp/issue-body.md > /tmp/ingest.log 2>&1
+          code=$?
+          echo "exitcode=$code" >> "$GITHUB_OUTPUT"
+          cat /tmp/ingest.log
+          exit 0
+
+      - name: 校验失败 → 评论 issue 并失败退出
+        if: steps.dup.outputs.already != 'true' && steps.ingest.outputs.exitcode != '0'
+        run: |
+          {
+            echo "❌ **自动校验未通过，本次未入库。**原因："
+            echo ""
+            echo '```'
+            cat /tmp/ingest.log
+            echo '```'
+            echo ""
+            echo "修正方式：直接编辑本 issue 正文中的 JSON（使用正式姓名或已登记的别名均可），然后**移除「审核通过」标签再重新打上**，会自动重新校验。"
+          } > /tmp/comment.md
+          gh issue comment "$ISSUE_NUMBER" --body-file /tmp/comment.md
+          exit 1
+
+      - name: CI 数据校验复核
+        if: steps.dup.outputs.already != 'true' && steps.ingest.outputs.exitcode == '0'
+        run: python tools/ci_validate.py
+
+      - name: 创建分支并提交
+        if: steps.dup.outputs.already != 'true' && steps.ingest.outputs.exitcode == '0'
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+        run: |
+          git config user.name "wfls-submission-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          BRANCH="submission-${ISSUE_NUMBER}"
+          git checkout -b "$BRANCH"
+          git add data/score-log.json
+          git commit -m "score-log: 审核通过 issue #${ISSUE_NUMBER}（${ISSUE_TITLE}）"
+          git push origin "HEAD:refs/heads/${BRANCH}"
+          echo "branch=${BRANCH}" >> "$GITHUB_ENV"
+
+      - name: 创建 PR
+        if: steps.dup.outputs.already != 'true' && steps.ingest.outputs.exitcode == '0'
+        run: |
+          PR_URL=$(gh pr create --base main --head "$BRANCH" \
+            --title "入库：比赛记录提交 #$ISSUE_NUMBER" \
+            --body "审核通过 issue #$ISSUE_NUMBER，由 submission-review 工作流自动创建。合并后触发部署并重新生成排名 API。
+
+          Closes #$ISSUE_NUMBER")
+          echo "pr_url=$PR_URL" >> "$GITHUB_ENV"
+
+      - name: 成功 → 评论 issue
+        if: steps.dup.outputs.already != 'true' && steps.ingest.outputs.exitcode == '0'
+        run: |
+          gh issue comment "$ISSUE_NUMBER" --body "✅ 校验通过，已创建合并请求 ${PR_URL}。**PR 合并后记录即计入排名**，届时本 issue 将自动关闭。"
+
+      - name: 重复触发提示
+        if: steps.dup.outputs.already == 'true'
+        run: |
+          gh issue comment "$ISSUE_NUMBER" --body "ℹ️ 检测到重复触发：该提交已生成过分支 \`submission-${ISSUE_NUMBER}\`，本次已忽略。若需重新处理，请先关闭对应 PR 并删除该分支，再重新打「审核通过」标签。"
