@@ -8,9 +8,9 @@
 // ========================================
 const DATA_PATHS = {
     // 核心数据
+    // members / playerTags / initialScores 已退役 data/_legacy/ 扁平文件，由 players.json 派生（见 loadAllData）
     core: {
         players:      "data/players.json",
-        members:      "data/_legacy/members.json",
         news:         "data/news/index.json",
         competitions: "data/competitions/index.json",
         scoreLog:     "data/score-log.json",
@@ -18,9 +18,7 @@ const DATA_PATHS = {
         qa:           "data/qa/index.json",
         changelog:    "data/changelog.json",
         draws:        "data/draws.json",
-        playerTags:   "data/_legacy/player-tags.json",
         about:        "data/about.json",
-        initialScores:"data/_legacy/initial-scores.json",
         eventCoeff:   "data/event-coefficient.json",
     },
     // WTT 各分项（按年分文件存储，记录经 manifest.json 清单聚合加载，此处 path 为分项目录）
@@ -224,6 +222,25 @@ async function loadAllData() {
         allData["disc_"+disc] = deduped;
     }
 
+    // 旧版扁平文件（data/_legacy/）已退役：members / playerTags / initialScores 由 players.json 派生
+    if (allData.players && Array.isArray(allData.players.players)) {
+        const players = allData.players.players;
+        allData.members = players.filter(p => p && p.role).map(p => ({ name: p.name, uid: p.uid, role: p.role, description: p.description, qq: p.qq }));
+        const tagMap = {};
+        for (const p of players) {
+            if (!p || !p.name) continue;
+            if ((p.tags && p.tags.length) || (p.honors && p.honors.length)) tagMap[p.name] = p.tags || [];
+        }
+        allData.playerTags = tagMap;
+        const initScores = {};
+        for (const p of players) {
+            if (!p || !p.name) continue;
+            const n = Number(p.initialScore);
+            initScores[p.name] = Number.isFinite(n) ? n : 1300;  // 与 common.js 的 DEFAULT_INITIAL_SCORE 一致
+        }
+        allData.initialScores = { baseDate: allData.players.baseDate || '2026-03-01', initialScores: initScores };
+    }
+
     const elapsed = ((performance.now() - startTime) / 1000).toFixed(1);
 
     // 隐藏历史版本计数（index.json 为元数据，需读各条目 history 清单）
@@ -331,7 +348,7 @@ function computeStats() {
         s.uniqueTags = 0;
     }
 
-    // initial-scores 统计 (core - key is "initialScores" from DATA_PATHS.core)
+    // initial-scores 统计（由 players.json 派生，见 loadAllData）
     if (allData.initialScores && allData.initialScores.initialScores && typeof allData.initialScores.initialScores === "object") {
         s.coreInitPlayers = Object.keys(allData.initialScores.initialScores).length;
     } else {
@@ -675,7 +692,7 @@ function renderDashboard(loadTime, hiddenVersions) {
     const warnPill = txt => `<span class="pill pill-warn">${escHtml(txt)}</span>`;
     const CORE_FILES = [
         { name:"players.json", icon:"fa-id-card", count:stats.corePlayers, unit:"位球员档案", cls:"f-blue" },
-        { name:"members.json", icon:"fa-users", count:stats.coreMembers, unit:"位成员", cls:"f-green" },
+        { name:"members（派生）", icon:"fa-users", count:stats.coreMembers, unit:"位成员", cls:"f-green" },
         { name:"news/", icon:"fa-newspaper", count:stats.coreNews, unit:"篇新闻", cls:"f-danger",
           warn:(stats.coreNewsHidden ? warnPill("隐藏 " + stats.coreNewsHidden) : "") + (stats.coreNewsHiddenVersions ? warnPill("隐藏版本 " + stats.coreNewsHiddenVersions) : "") },
         { name:"competitions/", icon:"fa-trophy", count:stats.coreCompetitions, unit:"场赛事", cls:"f-purple",
@@ -686,9 +703,9 @@ function renderDashboard(loadTime, hiddenVersions) {
           warn:(stats.coreQaHidden ? warnPill("隐藏 " + stats.coreQaHidden) : "") + (stats.coreQaHiddenVersions ? warnPill("隐藏版本 " + stats.coreQaHiddenVersions) : "") },
         { name:"changelog.json", icon:"fa-clock-rotate-left", count:stats.coreChangelog, unit:"条更新日志", cls:"f-green" },
         { name:"draws.json", icon:"fa-diagram-project", count:stats.coreDraws, unit:"张对阵表", cls:"f-purple" },
-        { name:"initial-scores.json", icon:"fa-chart-simple", count:stats.coreInitPlayers, unit:"位球员 (legacy)", cls:"f-warning" },
+        { name:"initial-scores（派生）", icon:"fa-chart-simple", count:stats.coreInitPlayers, unit:"位球员", cls:"f-warning" },
         { name:"event-coefficient.json", icon:"fa-weight-scale", count:stats.coreEventTypes, unit:"种赛事类型", cls:"f-warning" },
-        { name:"player-tags.json", icon:"fa-tags", count:stats.playerTagCount, unit:`位球员 · ${stats.uniqueTags} 种标签`, cls:"f-purple" },
+        { name:"player-tags（派生）", icon:"fa-tags", count:stats.playerTagCount, unit:`位球员 · ${stats.uniqueTags} 种标签`, cls:"f-purple" },
         { name:"about.json", icon:"fa-circle-info", count:stats.aboutLastUpdated, unit:"最近更新", cls:"f-blue" },
     ];
 

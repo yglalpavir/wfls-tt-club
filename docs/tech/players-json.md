@@ -7,7 +7,7 @@
 ## 1. 文件位置与加载方式
 
 - 路径：`data/players.json`
-- 加载：`js/common.js` 中的 `loadPlayers()` 负责读取，失败时回退到旧版 `data/_legacy/*`。
+- 加载：`js/common.js` 中的 `loadPlayers()` 负责读取（唯一数据源，无回退文件；失败时页面显式报错）。
 - 其余数据文件会**以本文件为事实来源**派生：
   - `initialScoresData`：由每位球员的 `initialScore` + 顶层 `baseDate` 生成（见 `js/score-engine.js` 的 `loadInitialScores()`）。
   - `playerTagsData`：由每位球员的 `tags` / `honors` 生成（见 `js/common.js` 的 `loadPlayerTagsData()`）。
@@ -66,7 +66,7 @@
 | 项 | 值 |
 | --- | --- |
 | 类型 | `string` |
-| 约束 | 全站唯一；唯一用于跨文件关联（`score-log.json`、`initial-scores.json`、`player-tags.json` 中的姓名都要与其一致）。 |
+| 约束 | 全站唯一；唯一用于跨文件关联（`score-log.json` 中的姓名都要与其一致）。 |
 | 用途 | 排名数据 `'姓名'` 字段的规范名；`nameIndex` 主键；比赛记录归一化基准（`normalizePlayerName()`）；积分计算/统计的匹配键。 |
 
 > 注意：`name` 是全站积分系统的"事实来源"。`score-log.json` 中出现且不在 `players.json` 的姓名会被视为"无档案球员"（无 uid、无初始积分），`loadInitialScores()` 会给其赋予 `DEFAULT_INITIAL_SCORE`（默认 1300）。
@@ -91,7 +91,7 @@
 | 约束 | 无数据时默认取 `DEFAULT_INITIAL_SCORE`（默认 1300）；积分地板 `SCORE_FLOOR` 为 1200。 |
 | 用途 | 构建 `initialScoresData.initialScores`（姓名 → 分）映射，是积分引擎所有赛季计算的基准（见 `js/score-engine.js` 的 `getSeasonStartScores()`、`js/personal-stats.js` 的 `getApproxScoreAtDate()` / `computeDailyScoreHistory()` 等）。 |
 
-> 说明：`tools/build_players.js` 会读取 `data/_legacy/initial-scores.json` 迁移该字段；旧文件仅作兼容回退保留。
+> 说明：该字段由一次性迁移脚本 `tools/build_players.js` 从旧版初始积分表写入（迁移已完成）；旧版扁平文件已退役。
 
 ### 3.5 `tags` — 标签数组（可选）
 
@@ -151,8 +151,7 @@
 ## 4. 数据结构与上游/下游依赖
 
 ```
-data/_legacy/initial-scores.json ──► data/players.json ◄── data/_legacy/player-tags.json
-data/_legacy/members.json      ──►        │                 data/_legacy/members.json
+                data/players.json（唯一数据源；旧版扁平文件已于 2026-09 退役）
                                           │
                     ┌─────────────────────┼─────────────────────┐
                     ▼                     ▼                     ▼
@@ -165,12 +164,8 @@ data/_legacy/members.json      ──►        │                 data/_legacy
 
 ## 5. 兼容与回退
 
-- `loadPlayers()` 优先读取新版 `players.json`；若解析失败或结构异常（`!Array.isArray(players.players)`），会置空 `playersData` 并返回 `false`。
-- 在 `players.json` 缺失/失败时，下游数据会各自回退到 `data/_legacy/` 旧文件：
-  - `initial-scores.json` → `loadInitialScores()` 回退使用（生成 `initialScoresData`）。
-  - `player-tags.json` → `loadPlayerTagsData()` 回退使用（生成 `playerTagsData`）。
-  - `members.json` → `loadMembersData()` 回退使用（生成 `membersData`）。
-- 推荐始终以 `data/players.json` 为唯一事实来源进行维护；旧文件仅作兼容回退保留。
+- `loadPlayers()` 读取 `players.json`；若解析失败或结构异常（`!Array.isArray(players.players)`），会置空 `playersData` 并返回 `false`，调用方显示可见错误。
+- `players.json` 是唯一数据源，**没有回退文件**：`initialScoresData` / `playerTagsData` / `membersData` 全部由它派生（旧版 `data/_legacy/` 回退分支已于 2026-09-13 从前端移除）。
 
 ---
 

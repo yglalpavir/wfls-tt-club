@@ -776,7 +776,8 @@ async function loadInitialScores() {
         initialScoresData = { baseDate: playersData.baseDate || '2026-03-01', initialScores: is };
         return true;
     }
-    try { const resp = await fetch('data/_legacy/initial-scores.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); initialScoresData = await resp.json(); return true; } catch(e) { console.error('initial-scores.json 加载失败', e); return false; }
+    console.error('初始积分加载失败：players.json 未就绪（旧版 data/_legacy/ 回退已退役）');
+    return false;
 }
 async function loadEventCoefficients() { try { const resp = await fetch('data/event-coefficient.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); eventCoefficients = await resp.json(); parseFormatConfig(eventCoefficients); return true; } catch(e) { console.error('event-coefficient.json 加载失败', e); return false; } }
 // 保值类型默认值：decay-config.json 加载失败时的兜底（与 data/decay-config.json 保持一致）

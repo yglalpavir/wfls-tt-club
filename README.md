@@ -76,7 +76,7 @@ wfls-tt-club/
 │   ├── umpire-quiz.json        # 裁判特训彩蛋题库
 │   ├── data_viz-settings.json  # 数据可视化设置
 │   ├── personal-stats-chart-settings.json  # 个人数据图表设置
-│   └── _legacy/                # 旧版/备份数据（members / player-tags / initial-scores / 合并版 news/competitions/qa；已 gitignore，仅本地留存）
+│
 │
 ├── wtt_data/                   # WTT 彩蛋数据（ms/ws/md/wd/xd，按赛季拆分 + manifest.json）
 ├── docs/                       # 文档（tech/ 长期技术文档 · reports/ 一次性预测报告与审计 · posters/ 海报源文件）
@@ -268,7 +268,7 @@ git push -u origin main
 }
 ```
 
-> 角色字段非空的球员会自动出现在社团骨干页（members.html）。每名球员拥有唯一 5 位 uid（10000 起），用于个人主页地址 `player.html?uid=xxxxx`。旧版 `members.json` / `player-tags.json` / `initial-scores.json` 已移入 `data/_legacy/` 仅作兼容回退。各字段的详细取值形式、用途与维护约束见 [docs/tech/players-json.md](docs/tech/players-json.md)。
+> 角色字段非空的球员会自动出现在社团骨干页（members.html）。每名球员拥有唯一 5 位 uid（10000 起），用于个人主页地址 `player.html?uid=xxxxx`。旧版 `members.json` / `player-tags.json` / `initial-scores.json` 已退役（2026-09-13），上述数据一律由 `players.json` 派生。各字段的详细取值形式、用途与维护约束见 [docs/tech/players-json.md](docs/tech/players-json.md)。
 
 ### `news/` `competitions/` `qa/` - 新闻动态 / 赛事信息 / 常见问题
 
@@ -414,27 +414,11 @@ python tools/sync_content.py --check    # 仅校验（含预计新增快照数�
 - 旧版扁平文件（`data/{type}/{id}.json`，含内嵌 history）：运行脚本时自动一次性迁移为文件夹结构（快照从内嵌 history 抽取，平铺文件删除）
 - 脚本会校验：文件名 == 条目 id、必填字段、tag 白名单、日期格式、media 文件是否存在、id 唯一、清单与快照结构（版本号递减、字段齐全）。输出中会显示各类型隐藏数与快照总数。
 
-> 原合并版 `data/news.json` / `data/competitions.json` / `data/qa.json` 已备份至 `data/_legacy/`，仅作历史存档，代码不再读取。
+> 原合并版 `data/news.json` / `data/competitions.json` / `data/qa.json` 已删除（曾临时存于 `data/_legacy/`，该目录已整体退役），代码不再读取。
 
-### `_legacy/initial-scores.json` - 初始积分配置（旧版）
+### 初始积分（原 `_legacy/initial-scores.json`，已退役）
 
-> 已迁移至 `data/players.json` 的 `initialScore` 字段。旧文件仅作为兼容回退保留：
-
-```json
-{
-  "baseDate": "2026-03-01",
-  "initialScores": {
-    "陈瑜萱": 2019,
-    "祁子傲": 2029,
-    "任峻贤": 2100
-  },
-  "snapshotDates": [
-    "2026-03-15",
-    "2026-03-31",
-    "2026-04-15"
-  ]
-}
-```
+> 初始积分已迁移至 `data/players.json` 的 `initialScore` 字段（+ 顶层 `baseDate` 基准日），由 `js/score-engine.js` 的 `loadInitialScores()` 派生 `initialScoresData`。旧版扁平文件已删除。
 
 ### `event-coefficient.json` - 赛事系数
 
