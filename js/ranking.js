@@ -4,6 +4,9 @@
 
 let currentScoreContext = { player: '', snapshotDate: '' };
 
+/* 比分列仅在该球员窗口内存在含「比分/局分」的记录时显示（存量旧数据无比分，避免空列） */
+function toggleScoreDetailScoreCol(show) { const th = document.getElementById('scoreDetailScoreHead'); if (th) th.style.display = show ? '' : 'none'; }
+
 if (scoreDetailClose && scoreDetailModal) { scoreDetailClose.addEventListener('click', () => closeModal(scoreDetailModal)); scoreDetailModal.addEventListener('click', e => { if (e.target === scoreDetailModal) closeModal(scoreDetailModal); }); }
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && scoreDetailModal && scoreDetailModal.classList.contains('active')) closeModal(scoreDetailModal); });
 
@@ -53,7 +56,7 @@ function renderScoreDetail() {
     );
     records.sort((a, b) => a['日期'].localeCompare(b['日期']));
 
-    if (!records.length) { scoreDetailBody.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:20px;">${i18n[currentLang].rank_no_records}</td></tr>`; setTimeout(() => { if (scoreDetailModal) scoreDetailModal.classList.add('content-fit'); }, 100); return; }
+    if (!records.length) { toggleScoreDetailScoreCol(false); scoreDetailBody.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:20px;">${i18n[currentLang].rank_no_records}</td></tr>`; setTimeout(() => { if (scoreDetailModal) scoreDetailModal.classList.add('content-fit'); }, 100); return; }
 
     // 从赛季初始积分开始计算
     const scores = { ...seasonStartScores };
@@ -77,7 +80,7 @@ function renderScoreDetail() {
                 const decayedChange = isWinner ? decayedGain : -(decayedGain * LOSER_POINT_MULTIPLIER);
                 const scoreBefore = scores[player];
                 const scoreAfter = scoreBefore + decayedChange;
-                recordsWithScores.push({ date: record['日期'], type: record['类型'], opponent: isWinner ? record['负者'] : record['胜者'], isWinner, isBonus: false, scoreBefore, rawChange, decayedChange, scoreAfter });
+                recordsWithScores.push({ date: record['日期'], type: record['类型'], opponent: isWinner ? record['负者'] : record['胜者'], isWinner, isBonus: false, scoreBefore, rawChange, decayedChange, scoreAfter, score: record['比分'] || null, games: Array.isArray(record['局分']) ? record['局分'] : null });
             }
             scores[w] = Math.max(SCORE_FLOOR, scores[w] + decayedGain);
             scores[l] = Math.max(SCORE_FLOOR, scores[l] - decayedGain * LOSER_POINT_MULTIPLIER);
@@ -94,15 +97,18 @@ function renderScoreDetail() {
     }
 
     recordsWithScores.reverse();
+    const hasScore = recordsWithScores.some(r => !r.isBonus && (r.score || (r.games && r.games.length)));
+    toggleScoreDetailScoreCol(hasScore);
     scoreDetailBody.innerHTML = recordsWithScores.map(r => {
-        if (r.isBonus) { const cc = r.decayedChange >= 0 ? 'score-change-positive' : 'score-change-negative'; const sign = r.decayedChange >= 0 ? '+' : ''; return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(r.type)}</td><td>-</td><td class="result-win">${i18n[currentLang].rank_add_short}</td><td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${sign}${r.decayedChange.toFixed(1)}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`; }
+        if (r.isBonus) { const cc = r.decayedChange >= 0 ? 'score-change-positive' : 'score-change-negative'; const sign = r.decayedChange >= 0 ? '+' : ''; return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(r.type)}</td><td>-</td><td class="result-win">${i18n[currentLang].rank_add_short}</td>${hasScore ? '<td></td>' : ''}<td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${sign}${r.decayedChange.toFixed(1)}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`; }
         const res = r.isWinner ? i18n[currentLang].score_result_win : i18n[currentLang].score_result_loss;
         const rc = r.isWinner ? 'result-win' : 'result-loss';
         const cc = r.decayedChange >= 0 ? 'score-change-positive' : 'score-change-negative';
         const signRaw = r.rawChange >= 0 ? '+' : '';
         const signDecayed = r.decayedChange >= 0 ? '+' : '';
         const changeDisplay = `${signRaw}${r.rawChange.toFixed(1)}（${signDecayed}${r.decayedChange.toFixed(1)}）`;
-        return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(r.type)}</td><td>${escapeHtml(r.opponent)}</td><td class="${rc}">${res}</td><td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${changeDisplay}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
+        const scoreCell = hasScore ? `<td${r.games && r.games.length ? ` title="${i18n[currentLang].sb_games_label || '局分'}：${escapeHtml(r.games.join(' '))}"` : ''}>${r.score ? escapeHtml(r.score) : '-'}</td>` : '';
+        return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(r.type)}</td><td>${escapeHtml(r.opponent)}</td><td class="${rc}">${res}</td>${scoreCell}<td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${changeDisplay}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
     }).join('');
     setTimeout(adjustModalSize, 150);
 }

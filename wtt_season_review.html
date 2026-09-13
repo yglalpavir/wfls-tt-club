@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function(){try{var t=localStorage.getItem("wfls-tt-theme");var d=t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark-mode");}catch(e){}})()</script>
+    <meta name="description" content="WTT 赛季总结：积分变化、连胜榜、出勤榜、单场之最与月度快照回顾（彩蛋玩法，口径同 WTT 排名）。">
+    <meta name="robots" content="noindex, follow">
+    <title data-i18n="wtt_sr_page_title">WTT 赛季总结 | WFLS Table Tennis Club</title>
+    <link rel="icon" type="image/svg+xml" href="Assets/files/favicon_4DA3FF.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .sr-toolbar { display:flex; flex-wrap:wrap; align-items:center; gap:12px; padding:14px 18px; margin-bottom:18px; }
+        .sr-toolbar label { font-size:.85rem; color:var(--text-secondary); white-space:nowrap; }
+        .sr-toolbar select { padding:8px 12px; border:1px solid var(--border-color); border-radius:8px; background:var(--bg-color,var(--card-bg)); color:var(--text-primary); font-size:.88rem; }
+        .sr-season-meta { font-size:.82rem; color:var(--text-tertiary); }
+        .sr-ongoing-badge { display:inline-flex; align-items:center; gap:4px; padding:2px 8px; border-radius:999px; font-size:.72rem; font-weight:600; color:#16a34a; background:rgba(34,197,94,.12); border:1px solid rgba(34,197,94,.35); }
+        .sr-kpi-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:14px; margin-bottom:16px; }
+        .sr-kpi { padding:16px 18px; display:flex; align-items:center; gap:14px; }
+        .sr-kpi i { font-size:1.4rem; color:var(--accent-blue,#3b82f6); width:44px; height:44px; display:flex; align-items:center; justify-content:center; border-radius:12px; background:rgba(59,130,246,.1); flex:none; }
+        .sr-kpi-value { font-size:1.35rem; font-weight:700; color:var(--text-primary); line-height:1.2; }
+        .sr-kpi-label { font-size:.78rem; color:var(--text-secondary); }
+        .sr-types { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px; }
+        .sr-type-badge { padding:4px 12px; border-radius:999px; font-size:.78rem; color:var(--text-secondary); background:var(--card-bg); border:1px solid var(--border-color); }
+        .sr-type-badge strong { color:var(--text-primary); }
+        .sr-grid-2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:16px; margin-bottom:16px; }
+        .sr-card { padding:18px 20px; margin-bottom:16px; }
+        .sr-grid-2 .sr-card { margin-bottom:0; }
+        .sr-card-header { display:flex; align-items:baseline; gap:10px; margin-bottom:6px; flex-wrap:wrap; }
+        .sr-card-header h3 { margin:0; font-size:1rem; color:var(--text-primary); }
+        .sr-card-header i { color:var(--accent-blue,#3b82f6); margin-right:4px; }
+        .sr-card-desc { font-size:.78rem; color:var(--text-tertiary); margin:0 0 12px; }
+        .sr-scroll { max-height:360px; overflow:auto; }
+        .sr-placeholder { text-align:center; padding:26px 10px; color:var(--text-tertiary); font-size:.85rem; }
+        .sr-best-line { display:flex; flex-wrap:wrap; align-items:center; gap:10px 18px; padding:8px 0; font-size:.92rem; }
+        .sr-best-score { font-size:1.6rem; font-weight:700; color:var(--accent-gold,#f0a500); }
+        .sr-best-meta { color:var(--text-secondary); font-size:.82rem; }
+        .sr-games-stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; margin-bottom:12px; }
+        .sr-game-stat { padding:10px 12px; border:1px solid var(--border-color); border-radius:10px; text-align:center; }
+        .sr-game-stat b { display:block; font-size:1.2rem; color:var(--text-primary); }
+        .sr-game-stat span { font-size:.74rem; color:var(--text-tertiary); }
+        .sr-bonus-summary { font-size:.84rem; color:var(--text-secondary); margin-bottom:10px; }
+        .sr-delta-pos { color:#16a34a; font-weight:600; }
+        .sr-delta-neg { color:#dc2626; font-weight:600; }
+        .sr-chart-box { position:relative; height:300px; margin-top:12px; }
+        .wtt-easter-egg-note { font-size:.78rem; color:var(--text-tertiary); text-align:center; margin-top:28px; }
+        @media (max-width:640px) { .sr-kpi-row { grid-template-columns:repeat(2,1fr); } .sr-chart-box { height:260px; } }
+    </style>
+</head>
+<body>
+<noscript><div style="padding:10px;text-align:center;background:#b91c1c;color:#fff;font-size:0.9rem;">本站需要启用 JavaScript 才能加载排名与内容数据。This site requires JavaScript to load data.</div></noscript>
+    <script>window.SR_WTT_MODE = true;</script>
+    <script src="js/shared-partials.js" data-partial="nav"></script>
+
+    <section class="page-hero"><div class="page-hero-overlay"></div><div class="page-hero-content"><span class="section-tag" data-i18n="wtt_sr_hero_tag">WTT Season Review</span><h1 data-i18n="wtt_sr_hero_title">WTT 赛季总结</h1><p data-i18n="sr_hero_desc">胜负 · 积分 · 连胜 · 赛季之最</p></div></section>
+
+    <section class="section">
+        <div class="container">
+            <div class="sr-toolbar glass-card">
+                <label for="srSeasonSelect" data-i18n="sr_season_label">选择赛季</label>
+                <select id="srSeasonSelect" aria-label="选择赛季"></select>
+                <span class="sr-season-meta" id="srSeasonMeta"></span>
+            </div>
+            <div id="seasonReviewBody">
+                <!-- JS 动态渲染（此 id 同时是 main.js 的页面派发标记） -->
+            </div>
+            <p class="wtt-easter-egg-note">🥚 <span data-i18n="wtt_sr_footnote">WTT 彩蛋玩法：数据口径与 WTT 排名一致（零和积分、无时间衰减）。</span></p>
+        </div>
+    </section>
+
+    <script src="js/shared-partials.js" data-partial="footer"></script>
+
+    <script src="js/shared-partials.js" data-partial="qr-modal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" integrity="sha384-e6nUZLBkQ86NJ6TVVKAeSaK8jWa3NhkYWZFomE39AvDbQWeie9PlQqM3pmYW5d1g" crossorigin="anonymous"></script>
+    <script src="js/common.js"></script>
+    <script src="js/score-engine.js"></script>
+    <script src="js/wtt_common.js"></script>
+    <script src="js/season-review.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

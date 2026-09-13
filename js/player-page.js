@@ -131,7 +131,7 @@ function computePlayerMatchRecords(playerName) {
                     const oppPre = scores[isWin ? l : w];
                     const rawChange = isWin ? rawGain : -rawGain * LOSER_POINT_MULTIPLIER;
                     const change = isWin ? wg : -wg * LOSER_POINT_MULTIPLIER;
-                    rows.push({ date: r['日期'], type: r['类型'], opp: isWin ? l : w, isWin: isWin, isBonus: false, pre: pre, oppPre: oppPre, rawChange: rawChange, change: change, post: pre + change });
+                    rows.push({ date: r['日期'], type: r['类型'], opp: isWin ? l : w, isWin: isWin, isBonus: false, pre: pre, oppPre: oppPre, rawChange: rawChange, change: change, post: pre + change, score: r['比分'] || null, games: Array.isArray(r['局分']) ? r['局分'] : null });
                 }
                 scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg);
                 scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * LOSER_POINT_MULTIPLIER);
@@ -150,18 +150,20 @@ function renderPlayerMatchTable(playerName, records) {
     if (!container) return;
     const rows = records || computePlayerMatchRecords(playerName);
     if (!rows.length) { container.innerHTML = ''; return; }
+    const hasScore = rows.some(r => !r.isBonus && (r.score || (r.games && r.games.length)));
 
     const rowsHtml = rows.map(r => {
         if (r.isBonus) {
             const cc = r.change >= 0 ? 'score-change-positive' : 'score-change-negative';
             const sign = r.change >= 0 ? '+' : '';
-            return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(r.type)}</td><td>-</td><td class="result-win">${i18n[currentLang].score_type_bonus}</td><td>${r.pre.toFixed(1)}</td><td class="${cc}">${sign}${r.change.toFixed(1)}</td><td>${r.post.toFixed(1)}</td></tr>`;
+            return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(r.type)}</td><td>-</td><td class="result-win">${i18n[currentLang].score_type_bonus}</td>${hasScore ? '<td></td>' : ''}<td>${r.pre.toFixed(1)}</td><td class="${cc}">${sign}${r.change.toFixed(1)}</td><td>${r.post.toFixed(1)}</td></tr>`;
         }
         const res = r.isWin ? '<td class="result-win">' + i18n[currentLang].score_result_win + '</td>' : '<td class="result-loss">' + i18n[currentLang].score_result_loss + '</td>';
         const signRaw = r.rawChange >= 0 ? '+' : '';
         const signDec = r.change >= 0 ? '+' : '';
         const cc = r.change >= 0 ? 'score-change-positive' : 'score-change-negative';
-        return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(r.type)}</td><td>${linkPlayerName(r.opp)}</td>${res}<td>${r.pre.toFixed(1)}</td><td class="${cc}">${signRaw}${r.rawChange.toFixed(1)}<span class="decayed-note">（${signDec}${r.change.toFixed(1)}）</span></td><td>${r.post.toFixed(1)}</td></tr>`;
+        const scoreCell = hasScore ? `<td${r.games && r.games.length ? ` title="${i18n[currentLang].sb_games_label || '局分'}：${escapeHtml(r.games.join(' '))}"` : ''}>${r.score ? escapeHtml(r.score) : '-'}</td>` : '';
+        return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(r.type)}</td><td>${linkPlayerName(r.opp)}</td>${res}${scoreCell}<td>${r.pre.toFixed(1)}</td><td class="${cc}">${signRaw}${r.rawChange.toFixed(1)}<span class="decayed-note">（${signDec}${r.change.toFixed(1)}）</span></td><td>${r.post.toFixed(1)}</td></tr>`;
     }).join('');
 
     container.innerHTML = `
@@ -169,7 +171,7 @@ function renderPlayerMatchTable(playerName, records) {
             <div class="personal-card-header"><i class="fa-solid fa-table-list"></i> ${i18n[currentLang].pp_all_records} <span class="tag-match-count">${i18n[currentLang].pp_matches_count.replace('{n}', rows.length)}</span></div>
             <div class="score-detail-table-wrapper" style="max-height:420px;">
                 <table class="score-detail-table">
-                    <thead><tr><th>${i18n[currentLang].score_col_date}</th><th>${i18n[currentLang].score_col_type}</th><th>${i18n[currentLang].score_col_opponent}</th><th>${i18n[currentLang].score_col_result}</th><th>${i18n[currentLang].pp_col_before}</th><th>${i18n[currentLang].pp_col_change}</th><th>${i18n[currentLang].pp_col_after}</th></tr></thead>
+                    <thead><tr><th>${i18n[currentLang].score_col_date}</th><th>${i18n[currentLang].score_col_type}</th><th>${i18n[currentLang].score_col_opponent}</th><th>${i18n[currentLang].score_col_result}</th>${hasScore ? `<th>${i18n[currentLang].score_col_score || '比分'}</th>` : ''}<th>${i18n[currentLang].pp_col_before}</th><th>${i18n[currentLang].pp_col_change}</th><th>${i18n[currentLang].pp_col_after}</th></tr></thead>
                     <tbody>${rowsHtml}</tbody>
                 </table>
             </div>

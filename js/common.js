@@ -136,7 +136,7 @@ async function fetchJsonWithProgress(url, onProgress) {
 
 const i18n = {
     zh: {
-        site_title: "武汉外国语学校乒乓球社团 | WFLS Table Tennis Club", nav_home: "Home", nav_news: "News", nav_competitions: "Competitions", nav_contact: "Contact", nav_more: "More...", nav_members: "社团骨干", nav_personal: "个人数据", nav_qa: "Q&A", nav_changelog: "更新日志", lang_btn: "EN",
+        site_title: "武汉外国语学校乒乓球社团 | WFLS Table Tennis Club", nav_home: "Home", nav_news: "News", nav_competitions: "Competitions", nav_contact: "Contact", nav_more: "More...", nav_members: "社团骨干", nav_season_review: "赛季总结", nav_personal: "个人数据", nav_qa: "Q&A", nav_changelog: "更新日志", lang_btn: "EN",
         hero_title: "武汉外国语学校<br><span class='hero-title-accent'>乒乓球社团</span>", hero_slogan: "挥拍逐梦，旋转青春", hero_btn_about: "了解社团 <i class='fa-solid fa-arrow-right'></i>", hero_btn_join: "加入我们 <i class='fa-solid fa-plus'></i>", scroll: "Scroll",
         side_home: "首页", side_philosophy: "社团理念", side_activities: "社团活动", side_members: "社团骨干", side_news: "最新动态", side_competitions: "赛事信息",
         philosophy_tag: "Philosophy", philosophy_title: "社团理念", philosophy_desc: "我们的核心价值观与指导思想",
@@ -156,7 +156,7 @@ const i18n = {
         rank_export_btn: "导出图片", rank_export_gen: "生成于", rank_export_fail: "图片导出失败，请重试",
         export_gen: "生成于", img_export_fail: "图片导出失败，请重试", detail_export_btn: "导出图片",
         rank_export_menu_all: "导出全部", rank_export_menu_top12: "导出前12名", rank_export_top_sub: "前{n}名", rank_export_topn_prefix: "导出前", rank_export_topn_suffix: "名", rank_export_menu_go: "导出", rank_export_menu_invalid: "请输入有效的名次（正整数）",
-        score_detail_title: "积分明细", score_col_date: "日期", score_col_type: "类型", score_col_opponent: "对手", score_col_result: "结果", score_col_score_before: "赛前积分", score_col_change: "积分变动", score_col_score_after: "赛后积分", score_result_win: "胜", score_result_loss: "负",
+        score_detail_title: "积分明细", score_col_date: "日期", score_col_type: "类型", score_col_opponent: "对手", score_col_result: "结果", score_col_score: "比分", score_col_score_before: "赛前积分", score_col_change: "积分变动", score_col_score_after: "赛后积分", score_result_win: "胜", score_result_loss: "负",
         tag_match: "赛事", tag_training: "训练", tag_notice: "公告", tag_event: "活动", tag_daily: "日常", tag_upcoming: "即将开始", tag_result: "比赛结果", tag_live: "进行中",
         filter_all: "全部",
         detail_page_title: "详情 | WFLS Table Tennis Club", detail_back: "返回列表", detail_version_updated: "更新于 {date}", detail_version_list: "历史版本", detail_version_view: "查看", detail_version_viewing: "正在查看 v{version}（更新于 {date}）", detail_version_back: "返回 v{version}", pdf_preview_btn: "预览PDF", pdf_download_btn: "下载PDF", detail_loading: "内容加载中…", detail_not_found: "未找到内容", detail_load_fail: "加载失败，请稍后重试", detail_load_fail_hint: "内容可能已被移除，或网络出现异常。", detail_retry: "重试",
@@ -235,7 +235,7 @@ const i18n = {
         nav_submit: "提交战绩", submit_page_title: "提交战绩 | WFLS Table Tennis Club",
         sb_hero_tag: "Submit", sb_hero_title: "提交战绩", sb_hero_desc: "比赛结果 / 审核通过后自动计入排名", sb_form_title: "记录录入",
         sb_date: "日期", sb_type: "类型", sb_format: "赛制", sb_winner: "胜者", sb_loser: "负者", sb_add: "添加到队列",
-        sb_score_toggle: "记录比分（可选）", sb_score_total: "总比分（胜-负）", sb_games: "逐局分数（胜者视角，逗号分隔）",
+        sb_score_toggle: "记录比分（可选）", sb_score_total: "总比分（胜-负）", sb_games: "逐局分数（胜者视角，逗号分隔）", sb_games_label: "局分",
         sb_note: "备注（可选）", sb_submitter: "你的昵称（可选，公开可见）", sb_remove: "移除", sb_warn_unknown: "不在册",
         sb_btn_github: "通过 GitHub 提交", sb_btn_copy: "复制 JSON", sb_btn_clear: "清空",
         sb_hint_github: "跳转 GitHub 需登录 GitHub 账号；提交后可在 issue 中查看审核进度。",
@@ -250,10 +250,33 @@ const i18n = {
         sb_quick_title: "在线提交比赛战绩", sb_quick_btn: "打开提交表单",
         sb_step1: "在线填写结果", sb_step2: "管理员审核", sb_step3: "计入积分排名",
         sb_quick_desc: "无需 GitHub：点击下方按钮，在腾讯文档表单里填写比赛结果，管理员审核后统一计入排名。",
-        sb_quick_missing: "提交表单链接尚未配置（管理员：把收集表链接填入本页 TENCENT_FORM_URL）。"
+        sb_quick_missing: "提交表单链接尚未配置（管理员：把收集表链接填入本页 TENCENT_FORM_URL）。",
+        /* ---- 赛季总结页 ---- */
+        sr_page_title: "赛季总结 | WFLS Table Tennis Club",
+        sr_hero_tag: "Season Review", sr_hero_title: "赛季总结", sr_hero_desc: "胜负 · 积分 · 连胜 · 赛季之最",
+        sr_season_label: "选择赛季", sr_ongoing_badge: "进行中", sr_realtime_note: "截至今天",
+        sr_entry_btn: "查看赛季总结", sr_kpi_events: "赛事数", sr_kpi_snapshots: "月度快照",
+        sr_loading: "正在加载赛季数据...",
+        sr_kpi_matches: "总场次", sr_kpi_players: "参与人数", sr_kpi_bonus: "积分调整", sr_kpi_types: "赛事类型",
+        sr_types_none: "本季暂无对局",
+        sr_points_title: "积分变化榜", sr_points_desc: "赛季初始 vs 最新快照（仅含当季有对局的球员）",
+        sr_col_delta: "积分变化", sr_col_rank_delta: "名次变化", sr_col_end_points: "最新积分",
+        sr_streak_title: "连胜榜", sr_col_max_streak: "最长连胜", sr_col_cur: "当前状态", sr_cur_streak: "{n} 连胜", sr_cur_loss: "上场告负", sr_col_record: "当季战绩",
+        sr_attend_title: "出勤榜", sr_col_matches: "场次", sr_col_wins: "胜", sr_col_losses: "负", sr_col_winrate: "胜率",
+        sr_best_title: "单场得分之最", sr_best_desc: "当季原始得分（未衰减）最高的一场", sr_best_none: "本季暂无对局", sr_best_gap: "赛前分差",
+        sr_games_title: "局分亮点", sr_games_none: "本季暂无含局分的对局——录入战绩时可附带总比分与逐局分数",
+        sr_games_count: "含局分对局", sr_deciding: "打满决胜局", sr_comeback: "逆转翻盘", sr_max_margin: "最大单局分差", sr_games_list: "对局明细",
+        sr_bonus_title: "积分调整审计", sr_bonus_desc: "当季「比赛结果加分」全部记录，调整前积分公开可查",
+        sr_col_target: "对象", sr_col_amount: "分数", sr_col_pre: "调整前积分",
+        sr_bonus_none: "本季暂无积分调整记录", sr_bonus_summary: "{n} 次调整 · 净 {net} 分 · 涉及 {m} 人", sr_bonus_total: "合计",
+        sr_no_data: "该赛季还没有任何对局记录",
+        /* ---- WTT 赛季总结 ---- */
+        wtt_sr_page_title: "WTT 赛季总结 | WFLS TT Club",
+        wtt_sr_hero_tag: "WTT Season Review", wtt_sr_hero_title: "WTT 赛季总结", wtt_sr_hero_desc: "胜负 · 积分 · 连胜 · 赛季之最",
+        wtt_sr_footnote: "WTT 彩蛋玩法：数据口径与 WTT 排名一致（零和积分、无时间衰减）。"
     },
     en: {
-        site_title: "WFLS Table Tennis Club | Wuhan Foreign Languages School", nav_home: "Home", nav_news: "News", nav_competitions: "Competitions", nav_contact: "Contact", nav_more: "More...", nav_members: "Core Members", nav_personal: "Personal Stats", nav_qa: "Q&A", nav_changelog: "Changelog", lang_btn: "中文",
+        site_title: "WFLS Table Tennis Club | Wuhan Foreign Languages School", nav_home: "Home", nav_news: "News", nav_competitions: "Competitions", nav_contact: "Contact", nav_more: "More...", nav_members: "Core Members", nav_season_review: "Season Review", nav_personal: "Personal Stats", nav_qa: "Q&A", nav_changelog: "Changelog", lang_btn: "中文",
         hero_title: "Wuhan Foreign Languages School<br><span class='hero-title-accent'>Table Tennis Club</span>", hero_slogan: "Swing for dreams, spin for youth", hero_btn_about: "About Us <i class='fa-solid fa-arrow-right'></i>", hero_btn_join: "Join Us <i class='fa-solid fa-plus'></i>", scroll: "Scroll",
         side_home: "Home", side_philosophy: "Philosophy", side_activities: "Activities", side_members: "Members", side_news: "News", side_competitions: "Competitions",
         philosophy_tag: "Philosophy", philosophy_title: "Philosophy", philosophy_desc: "Our core values and guiding principles",
@@ -273,7 +296,7 @@ const i18n = {
         rank_export_btn: "Save Image", rank_export_gen: "Generated", rank_export_fail: "Image export failed. Please try again.",
         export_gen: "Generated", img_export_fail: "Image export failed. Please try again.", detail_export_btn: "Save Image",
         rank_export_menu_all: "Export All", rank_export_menu_top12: "Export Top 12", rank_export_top_sub: "Top {n}", rank_export_topn_prefix: "Top", rank_export_topn_suffix: "", rank_export_menu_go: "Export", rank_export_menu_invalid: "Please enter a valid rank (positive integer)",
-        score_detail_title: "Score Details", score_col_date: "Date", score_col_type: "Type", score_col_opponent: "Opponent", score_col_result: "Result", score_col_score_before: "Before", score_col_change: "Change", score_col_score_after: "After", score_result_win: "Win", score_result_loss: "Loss",
+        score_detail_title: "Score Details", score_col_date: "Date", score_col_type: "Type", score_col_opponent: "Opponent", score_col_result: "Result", score_col_score: "Score", score_col_score_before: "Before", score_col_change: "Change", score_col_score_after: "After", score_result_win: "Win", score_result_loss: "Loss",
         tag_match: "Match", tag_training: "Training", tag_notice: "Notice", tag_event: "Event", tag_daily: "Daily", tag_upcoming: "Upcoming", tag_result: "Result", tag_live: "Live",
         filter_all: "All",
         detail_page_title: "Details | WFLS Table Tennis Club", detail_back: "Back to List", detail_version_updated: "Updated {date}", detail_version_list: "Version History", detail_version_view: "View", detail_version_viewing: "Viewing v{version} (updated {date})", detail_version_back: "Back to v{version}", pdf_preview_btn: "Preview PDF", pdf_download_btn: "Download PDF", detail_loading: "Loading content…", detail_not_found: "Content not found", detail_load_fail: "Failed to load. Please try again.", detail_load_fail_hint: "The content may have been removed, or a network error occurred.", detail_retry: "Retry",
@@ -352,7 +375,7 @@ const i18n = {
         nav_submit: "Submit Results", submit_page_title: "Submit Results | WFLS Table Tennis Club",
         sb_hero_tag: "Submit", sb_hero_title: "Submit Results", sb_hero_desc: "Match results / Counted into rankings after review", sb_form_title: "Record Entry",
         sb_date: "Date", sb_type: "Type", sb_format: "Format", sb_winner: "Winner", sb_loser: "Loser", sb_add: "Add to Queue",
-        sb_score_toggle: "Include game scores (optional)", sb_score_total: "Total (W-L)", sb_games: "Game scores (winner-first, comma separated)",
+        sb_score_toggle: "Include game scores (optional)", sb_score_total: "Total (W-L)", sb_games: "Game scores (winner-first, comma separated)", sb_games_label: "Games",
         sb_note: "Notes (optional)", sb_submitter: "Your nickname (optional, public)", sb_remove: "Remove", sb_warn_unknown: "unregistered",
         sb_btn_github: "Submit via GitHub", sb_btn_copy: "Copy JSON", sb_btn_clear: "Clear",
         sb_hint_github: "Signing in to GitHub is required; track review progress in the issue afterwards.",
@@ -367,7 +390,30 @@ const i18n = {
         sb_quick_title: "Submit Your Match Results", sb_quick_btn: "Open the submission form",
         sb_step1: "Fill in the form", sb_step2: "Admin review", sb_step3: "Counted into rankings",
         sb_quick_desc: "No GitHub needed: click below and fill in the Tencent Docs form. Results are reviewed and batched into the rankings.",
-        sb_quick_missing: "The form link is not configured yet (admin: fill in TENCENT_FORM_URL on this page)."
+        sb_quick_missing: "The form link is not configured yet (admin: fill in TENCENT_FORM_URL on this page).",
+        /* ---- Season review ---- */
+        sr_page_title: "Season Review | WFLS Table Tennis Club",
+        sr_hero_tag: "Season Review", sr_hero_title: "Season Review", sr_hero_desc: "Matches · Points · Streaks · Season Bests",
+        sr_season_label: "Season", sr_ongoing_badge: "Ongoing", sr_realtime_note: "as of today",
+        sr_entry_btn: "View Season Review", sr_kpi_events: "Events", sr_kpi_snapshots: "Monthly Snapshots",
+        sr_loading: "Loading season data...",
+        sr_kpi_matches: "Total Matches", sr_kpi_players: "Players", sr_kpi_bonus: "Adjustments", sr_kpi_types: "Event Types",
+        sr_types_none: "No matches this season",
+        sr_points_title: "Points Change", sr_points_desc: "Season start vs latest snapshot (players with matches this season only)",
+        sr_col_delta: "Points Δ", sr_col_rank_delta: "Rank Δ", sr_col_end_points: "Latest Points",
+        sr_streak_title: "Win Streaks", sr_col_max_streak: "Best Streak", sr_col_cur: "Current", sr_cur_streak: "{n}-win streak", sr_cur_loss: "Lost last match", sr_col_record: "Record (W-L)",
+        sr_attend_title: "Attendance", sr_col_matches: "Matches", sr_col_wins: "W", sr_col_losses: "L", sr_col_winrate: "Win Rate",
+        sr_best_title: "Biggest Single Match", sr_best_desc: "Highest raw (undecayed) points gained this season", sr_best_none: "No matches this season", sr_best_gap: "Pre-match gap",
+        sr_games_title: "Game Score Highlights", sr_games_none: "No games with per-game scores this season — attach them when submitting results",
+        sr_games_count: "Games recorded", sr_deciding: "Full-distance", sr_comeback: "Comebacks", sr_max_margin: "Biggest single-game margin", sr_games_list: "Matches",
+        sr_bonus_title: "Points Adjustment Audit", sr_bonus_desc: "Every bonus adjustment this season, with points before/after",
+        sr_col_target: "Player", sr_col_amount: "Points", sr_col_pre: "Points Before",
+        sr_bonus_none: "No adjustments this season", sr_bonus_summary: "{n} adjustments · net {net} pts · {m} players", sr_bonus_total: "Total",
+        sr_no_data: "No match records for this season yet",
+        /* ---- WTT season review ---- */
+        wtt_sr_page_title: "WTT Season Review | WFLS TT Club",
+        wtt_sr_hero_tag: "WTT Season Review", wtt_sr_hero_title: "WTT Season Review", wtt_sr_hero_desc: "Matches · Points · Streaks · Season Bests",
+        wtt_sr_footnote: "WTT easter-egg: same rules as the WTT rankings (zero-sum points, no time decay)."
     }
 };
 
@@ -420,6 +466,7 @@ function setLanguage(lang) {
     if (typeof dataVizReapplyI18n === 'function') dataVizReapplyI18n();
     if (typeof reapplyPlayerPage === 'function') reapplyPlayerPage();
     if (typeof reapplyPersonalStats === 'function') reapplyPersonalStats();
+    if (typeof seasonReviewReapplyI18n === 'function') seasonReviewReapplyI18n();
 }
 async function updateHeroLastUpdated() { const el = document.getElementById('heroLastUpdated'); if (!el) return; const cached = safeStorage.get('wfls-last-updated'); if (cached) { try { const cd = JSON.parse(cached); if (cd.date && (Date.now() - cd.ts) < 3600000) { el.textContent = currentLang === 'zh' ? `上次更新：${cd.date}` : `Last updated: ${cd.date}`; return; } } catch(e) {} } try { const res = await fetch('https://api.github.com/repos/yglalpavir/wfls-tt-club/commits?per_page=1'); if (res.ok) { const commits = await res.json(); if (commits && commits.length > 0) { const d = new Date(commits[0].commit.committer.date); const ds = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); safeStorage.set('wfls-last-updated', JSON.stringify({ date: ds, ts: Date.now() })); el.textContent = currentLang === 'zh' ? `上次更新：${ds}` : `Last updated: ${ds}`; return; } } } catch(e) { console.warn('GitHub API failed, fallback to about.json'); } if (aboutData && aboutData.lastUpdated) { el.textContent = currentLang === 'zh' ? `上次更新：${aboutData.lastUpdated}` : `Last updated: ${aboutData.lastUpdated}`; } }
 function updateRankingHeaders() { document.querySelectorAll('.ranking-table-full th[data-i18n]').forEach(th => { const key = th.getAttribute('data-i18n'); if (i18n[currentLang] && i18n[currentLang][key]) th.innerHTML = i18n[currentLang][key] + ' <span class="sort-arrow"></span>'; }); }

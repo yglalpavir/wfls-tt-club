@@ -28,7 +28,7 @@ SITE = "https://yglalpavir.github.io/wfls-tt-club/"
 
 PAGES = [
     "index.html", "news.html", "competitions.html", "ranking.html",
-    "data_viz.html", "personal_stats.html", "player.html", "detail.html",
+    "data_viz.html", "season-review.html", "personal_stats.html", "player.html", "detail.html",
     "members.html", "qa.html", "changelog.html", "contact.html",
 ]
 FEED_BASE = "news"      # feed 的内容类型

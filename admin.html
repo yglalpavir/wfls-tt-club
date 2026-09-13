@@ -477,6 +477,7 @@
                 #scoreEntry .se-row { display:flex; flex-wrap:wrap; gap:10px; align-items:flex-end; }
                 #scoreEntry label { font-size:.78rem; color:var(--text-secondary,#667); display:block; margin-bottom:3px; }
                 #scoreEntry select, #scoreEntry input { padding:7px 9px; border:1px solid var(--border-color,#ccd); border-radius:8px; background:var(--bg-color,#fff); color:var(--text-primary,#223); font-size:.85rem; }
+                #scoreEntry input[type="checkbox"] { padding:0; width:auto; accent-color:#007bff; }
                 #scoreEntry button { cursor:pointer; border:none; border-radius:8px; padding:8px 14px; font-size:.82rem; font-weight:600; }
                 #scoreEntry .se-add { background:var(--primary-blue,#007bff); color:#fff; }
                 #scoreEntry .se-mode { background:transparent; color:var(--text-secondary,#667); border:1px solid var(--border-color,#ccd); }
@@ -506,6 +507,9 @@
                     </select></div>
                     <div><label>胜者</label><select id="seWinner"></select></div>
                     <div><label>负者</label><select id="seLoser"></select></div>
+                    <div style="align-self:center;"><label style="margin-bottom:0;cursor:pointer;"><input type="checkbox" id="seScoreToggle" style="margin-right:4px;vertical-align:-2px;">记录比分（可选）</label></div>
+                    <div><label>总比分（胜-负）</label><input type="text" id="seScoreTotal" size="6" placeholder="3-1" disabled></div>
+                    <div style="flex:1;min-width:210px;"><label>逐局分数（胜者视角，逗号分隔）</label><input type="text" id="seScoreGames" style="width:100%;" placeholder="11-9, 8-11, 11-7" disabled title="如 11-9, 8-11, 11-7"></div>
                     <button type="button" class="se-add" id="seAddMatch">添加记录</button>
                 </div>
                 <div class="se-row" id="seBonusRow" style="display:none;">
@@ -527,13 +531,14 @@
         (function () {
             var $ = function (id) { return document.getElementById(id); };
             var TYPES_URL = "data/event-coefficient.json", PLAYERS_URL = "data/players.json", LOG_URL = "data/score-log.json";
-            var mode = "match", queue = [], players = [];
+            var mode = "match", queue = [], players = [], defaultFormats = {};
             function msg(text, isErr) { var el = $("seMsg"); el.textContent = text; el.className = "se-msg " + (isErr ? "err" : "ok"); }
             function todayStr() { var d = new Date(); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
             function fillSelect(sel, arr, placeholder) { sel.innerHTML = '<option value="">' + placeholder + "</option>" + arr.map(function (n) { return '<option value="' + n.replace(/&/g, "&amp;").replace(/"/g, "&quot;") + '">' + n.replace(/&/g, "&amp;").replace(/</g, "&lt;") + "</option>"; }).join(""); }
             function renderQueue() {
                 $("seQueue").innerHTML = queue.map(function (q, i) {
-                    var txt = q["胜者"] ? (q["日期"] + " · " + q["类型"] + " · 赛制 " + (q["赛制"] || "default") + " · " + q["胜者"] + " 胜 " + q["负者"]) : (q["日期"] + " · 调整 · " + q["对象"] + " " + q["分数"]);
+                    var txt = q["胜者"] ? (q["日期"] + " · " + q["类型"] + " · 赛制 " + (q["赛制"] || "default") + " · " + q["胜者"] + " 胜 " + q["负者"]
+                        + (q["比分"] ? " · " + q["比分"] + (q["局分"] ? "（" + q["局分"].join(" ") + "）" : "") : "")) : (q["日期"] + " · 调整 · " + q["对象"] + " " + q["分数"]);
                     return "<li><span>" + txt + '</span><span><a href="#" data-i="' + i + '" style="color:#dc3545;">移除</a></span></li>';
                 }).join("");
                 $("seActions").hidden = !queue.length;
@@ -542,6 +547,7 @@
                 });
             }
             fetch(TYPES_URL).then(function (r) { return r.json(); }).then(function (t) {
+                defaultFormats = (t && t["默认赛制"]) || {};
                 $("seType").innerHTML = Object.keys(t).filter(function (k) { return typeof t[k] === "number"; }).map(function (k) { return '<option value="' + k + '">' + k + "</option>"; }).join("");
             }).catch(function () { msg("赛事系数加载失败", true); });
             fetch(PLAYERS_URL).then(function (r) { return r.json(); }).then(function (p) {
@@ -553,15 +559,55 @@
             ["seDate", "seBDate"].forEach(function (id) { $(id).value = todayStr(); });
             $("seModeMatch").addEventListener("click", function () { mode = "match"; this.classList.add("active"); $("seModeBonus").classList.remove("active"); $("seMatchRow").style.display = ""; $("seBonusRow").style.display = "none"; });
             $("seModeBonus").addEventListener("click", function () { mode = "bonus"; this.classList.add("active"); $("seModeMatch").classList.remove("active"); $("seBonusRow").style.display = ""; $("seMatchRow").style.display = "none"; });
-            $("seAddMatch").addEventListener("click", function () {
-                var fmt = $("seFormat").value;
-                if (["default", "bo3", "bo5", "bo7"].indexOf(fmt) === -1) return msg("赛制仅支持 default / bo3 / bo5 / bo7", true);
-                var rec = { "日期": $("seDate").value, "类型": $("seType").value, "赛制": fmt, "胜者": $("seWinner").value, "负者": $("seLoser").value };
-                if (!rec["日期"] || !rec["类型"] || !rec["胜者"] || !rec["负者"]) return msg("请完整填写日期 / 类型 / 胜者 / 负者", true);
-                if (rec["胜者"] === rec["负者"]) return msg("胜者与负者不能相同", true);
-                if (!/^\d{4}-\d{2}-\d{2}$/.test(rec["日期"])) return msg("日期格式需为 YYYY-MM-DD", true);
-                queue.push(rec); renderQueue(); msg("已添加 1 条比赛记录", false);
-            });
+                $("seMatchRow").addEventListener("change", function (e) {
+                    if (e.target && e.target.id === "seScoreToggle") {
+                        var on = e.target.checked;
+                        $("seScoreTotal").disabled = !on; $("seScoreGames").disabled = !on;
+                        if (!on) { $("seScoreTotal").value = ""; $("seScoreGames").value = ""; }
+                    }
+                });
+                $("seAddMatch").addEventListener("click", function () {
+                    var fmt = $("seFormat").value;
+                    if (["default", "bo3", "bo5", "bo7"].indexOf(fmt) === -1) return msg("赛制仅支持 default / bo3 / bo5 / bo7", true);
+                    var rec = { "日期": $("seDate").value, "类型": $("seType").value, "赛制": fmt, "胜者": $("seWinner").value, "负者": $("seLoser").value };
+                    if (!rec["日期"] || !rec["类型"] || !rec["胜者"] || !rec["负者"]) return msg("请完整填写日期 / 类型 / 胜者 / 负者", true);
+                    if (rec["胜者"] === rec["负者"]) return msg("胜者与负者不能相同", true);
+                    if (!/^\d{4}-\d{2}-\d{2}$/.test(rec["日期"])) return msg("日期格式需为 YYYY-MM-DD", true);
+                    if ($("seScoreToggle").checked) {
+                        var WINS = { bo3: 2, bo5: 3, bo7: 4 }, reT = /^(\d{1,2})\s*[-:：]\s*(\d{1,2})$/;
+                        var eff = fmt === "default" ? (defaultFormats[rec["类型"]] || "") : fmt;
+                        var needed = WINS[eff] || 0;
+                        var total = $("seScoreTotal").value.trim(), gamesRaw = $("seScoreGames").value.trim();
+                        if (!total && !gamesRaw) return msg("已勾选记录比分，请填写总比分或逐局分数", true);
+                        var w = null, l = null, m = total ? reT.exec(total) : null;
+                        if (total) {
+                            if (!m) return msg("总比分格式应为「胜者局数-负者局数」，如 3-1", true);
+                            w = +m[1]; l = +m[2];
+                            if (w <= l) return msg("总比分 " + w + "-" + l + "：胜方局数必须大于负方（胜者在前的口径）", true);
+                            if (w > 4) return msg("总比分 " + w + "-" + l + "：单打最多 bo7（胜方最多 4 局）", true);
+                            if (needed && w !== needed) return msg("总比分 " + w + "-" + l + " 与赛制 " + eff + " 不符（需胜 " + needed + " 局）", true);
+                            rec["比分"] = w + "-" + l;
+                        }
+                        if (gamesRaw) {
+                            var parts = gamesRaw.split(/[,，、;；\s]+/).filter(Boolean), gs = [], bad = false, wins = 0;
+                            for (var gi = 0; gi < parts.length; gi++) {
+                                var gm = reT.exec(parts[gi]);
+                                if (!gm || gm[1] === gm[2]) { bad = true; break; }
+                                if (+gm[1] > +gm[2]) wins++;
+                                gs.push(+gm[1] + "-" + +gm[2]);
+                            }
+                            if (bad) return msg("逐局分数格式应为 11-9，且无平局", true);
+                            if (w !== null) {
+                                if (wins !== w || gs.length !== w + l) return msg("逐局分数与总比分 " + w + "-" + l + " 不自洽（应共 " + (w + l) + " 局、胜方赢 " + w + " 局）", true);
+                            } else {
+                                if (wins <= gs.length - wins) return msg("逐局分数推不出胜方（胜者视角，胜方赢的局须更多）", true);
+                                rec["比分"] = wins + "-" + (gs.length - wins);
+                            }
+                            rec["局分"] = gs;
+                        }
+                    }
+                    queue.push(rec); renderQueue(); msg("已添加 1 条比赛记录", false);
+                });
             $("seAddBonus").addEventListener("click", function () {
                 var amt = $("seAmount").value.trim();
                 var num = parseFloat(amt);
