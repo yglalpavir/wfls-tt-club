@@ -308,7 +308,9 @@ def validate_snapshot(type_name, snap, item_id):
         log_warn("{}: 版本快照版本号非法（{}）".format(item_id, snap.get("version")))
     if not snap.get("updatedAt"):
         log_warn("{}: 版本快照缺少 updatedAt（v{}）".format(item_id, v))
-    missing = [k for k in REQUIRED_FIELDS if k != "id" and not snap.get(k)]
+    # 结构校验：只要求键齐全。null/空值是"当时就是空的"的合法历史（快照只增不改），
+    # 与源条目的业务校验（tag 必须为非空白名单值）口径不同
+    missing = [k for k in REQUIRED_FIELDS if k != "id" and k not in snap]
     if missing:
         log_warn("{}: 版本快照缺少字段 {}".format(item_id, missing))
     if "visible" in snap and not isinstance(snap.get("visible"), bool):
