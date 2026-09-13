@@ -12,6 +12,7 @@ wfls-tt-club/
 ├── members.html                # 社团骨干页面
 ├── ranking.html                # Ranking Beta 排名系统（自动计算 + 赛季继承 + 积分明细）
 ├── data_viz.html               # 数据可视化（积分趋势 + 排名河流图 + 球员对比）
+├── season-review.html          # 赛季总结（KPI/积分变化榜/连胜出勤/单局之最/积分调整审计）
 ├── personal_stats.html         # 个人数据页面（积分趋势 + 荣誉成就）
 ├── player.html                 # 球员个人主页（按 uid 访问：战绩/胜率/积分趋势/对手分析）
 ├── detail.html                 # 新闻/赛事/Q&A 详情页（支持图片、视频、文件附件 + 对阵表查看）
@@ -21,6 +22,7 @@ wfls-tt-club/
 ├── contact.html                # 联系我们页面（社团QQ群二维码）
 ├── admin.html                  # 后台数据概览仪表盘
 ├── umpire-training.html        # 裁判特训彩蛋页（题库 data/umpire-quiz.json）
+├── submit.html                 # 访客比赛记录提交页（腾讯文档表单 / GitHub Issue / QQ 群三通道）
 ├── 404.html                    # 404 页面
 │
 ├── wtt_hub.html                # WTT 彩蛋入口（男/女单打、双打、混双）
@@ -29,6 +31,7 @@ wfls-tt-club/
 ├── wtt_personal_stats.html     # WTT 个人数据
 ├── wtt_player.html             # WTT 球员个人主页（一人一页）
 ├── wtt_assoc.html              # WTT 协会数据（实力总榜/排名变迁/对抗矩阵）
+├── wtt_season_review.html      # WTT 赛季总结（noindex，从 wtt_hub.html 卡片进入）
 │
 ├── style.css                   # 全局样式表（玻璃拟态 + 暗色模式 + 响应式）
 │
@@ -48,6 +51,7 @@ wfls-tt-club/
 │   ├── draws-editor.js         # 对阵表可视化编辑器逻辑
 │   ├── admin.js                # 后台数据概览仪表盘
 │   ├── umpire-training.js      # 裁判特训彩蛋逻辑
+│   ├── season-review.js        # 赛季总结（俱乐部 + WTT 双模式，window.SR_WTT_MODE 切换）
 │   ├── main.js                 # 入口初始化
 │   ├── wtt_common.js           # WTT 通用数据加载 + 积分计算
 │   ├── wtt_ranking.js          # WTT 排名
@@ -75,7 +79,7 @@ wfls-tt-club/
 │   └── _legacy/                # 旧版/备份数据（members / player-tags / initial-scores / 合并版 news/competitions/qa；已 gitignore，仅本地留存）
 │
 ├── wtt_data/                   # WTT 彩蛋数据（ms/ws/md/wd/xd，按赛季拆分 + manifest.json）
-├── docs/                       # 设计文档 / 数据格式说明 / 海报源文件
+├── docs/                       # 文档（tech/ 长期技术文档 · reports/ 一次性预测报告与审计 · posters/ 海报源文件）
 ├── tools/                      # 内容同步/校验脚本（仓库仅保留 sync_content.py / ci_validate.py / generate_meta.py，其余脚本仅本地留存）
 │
 ├── Assets/
@@ -84,7 +88,8 @@ wfls-tt-club/
 │   └── files/                  # PDF、Excel等文件资源
 │
 ├── images/                     # 站点级图片（og-cover.png）
-└── README.md                   # 项目说明文档
+├── README.md                   # 项目说明文档
+└── AGENTS.md                   # AI 助手协作指引（关键命令与架构约定）
 ```
 
 ## 技术栈
@@ -263,7 +268,7 @@ git push -u origin main
 }
 ```
 
-> 角色字段非空的球员会自动出现在社团骨干页（members.html）。每名球员拥有唯一 5 位 uid（10000 起），用于个人主页地址 `player.html?uid=xxxxx`。旧版 `members.json` / `player-tags.json` / `initial-scores.json` 已移入 `data/_legacy/` 仅作兼容回退。各字段的详细取值形式、用途与维护约束见 [docs/players-json.md](docs/players-json.md)。
+> 角色字段非空的球员会自动出现在社团骨干页（members.html）。每名球员拥有唯一 5 位 uid（10000 起），用于个人主页地址 `player.html?uid=xxxxx`。旧版 `members.json` / `player-tags.json` / `initial-scores.json` 已移入 `data/_legacy/` 仅作兼容回退。各字段的详细取值形式、用途与维护约束见 [docs/tech/players-json.md](docs/tech/players-json.md)。
 
 ### `news/` `competitions/` `qa/` - 新闻动态 / 赛事信息 / 常见问题
 

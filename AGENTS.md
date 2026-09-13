@@ -68,7 +68,7 @@ No npm/lint/typecheck commands exist — there are no build tools or test suites
 | `data/seasons.json` | Season definitions (must cover current date) |
 | `data/event-coefficient.json` | Event type coefficients |
 | `data/decay-config.json` | Time decay config |
-| `data/umpire-quiz.json` | Umpire-training easter-egg quiz (questions → videos in `assets/videos/umpire/`) |
+| `data/umpire-quiz.json` | Umpire-training easter-egg quiz (questions → videos in `Assets/videos/umpire/`) |
 | `data/draws.json` | Tournament bracket data (v3: cards + connections + structured players) |
 | `data/api/` | Generated read-only data API (deploy-time only, gitignored) |
 | `js/score-engine.js` | Club ranking calculation core |
@@ -80,12 +80,16 @@ No npm/lint/typecheck commands exist — there are no build tools or test suites
 | `tools/sync_content.py` | Content index generator (run after any content edit) |
 | `tools/ci_validate.py` | Data integrity validator |
 | `tools/recompute_rankings.js` | Generates `data/api/` (runs the real score engine headless in a Node vm) |
-| `tools/migrate_draws_v3.py` | One-shot draws.json v2 → v3 migration |
+| `tools/migrate_draws_v3.py` | One-shot draws.json v2 → v3 migration (finished; kept locally only, gitignored) |
+| `js/season-review.js` | Season review page logic (club + WTT dual mode, switched by `window.SR_WTT_MODE`) |
+| `docs/` | `tech/` long-lived technical docs · `reports/` one-off prediction/audit reports · `posters/` poster HTML sources |
 | `submit.html` | Visitor match-record submission page (builds a prefilled GitHub issue) |
 | `.github/ISSUE_TEMPLATE/match-record.yml` | Issue form for submissions (auto-labels `提交`) |
 | `.github/workflows/submission-review.yml` | Turns `审核通过`-labeled submission issues into PRs |
 | `tools/append_submission.py` | Parses/validates issue-submitted records, appends to `score-log.json` |
 | `tools/import_submissions_csv.py` | Imports Tencent Docs CSV exports into `score-log.json` (same validation rules) |
+
+Tracked tree is deploy-facing only: `.zcode/` / `.opencode/` (AI session plans), `.vscode/`, `.poster-preview/`, one-off `tools/` scripts and raw research data are all gitignored and exist only on local disks — never commit them.
 
 ## Common mistakes to avoid
 

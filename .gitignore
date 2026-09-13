@@ -15,6 +15,10 @@ venv/
 *.swp
 *.swo
 
+# ===== AI 助手会话产物（仅本地留存，不入库）=====
+.zcode/
+.opencode/
+
 # ===== 临时/一次性脚本数据（tools/）=====
 tools/tleague_data/
 tools/backup_wd/

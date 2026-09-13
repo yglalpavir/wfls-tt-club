@@ -146,7 +146,7 @@ $$P(\text{胜系列})=\sum_{j=0}^{n-1}\binom{n-1+j}{j}p^{n}(1-p)^{j},\quad n=3$$
 | Elo-赛制 | 赛制感知 Elo：系列按 `series_prob` 的 pdf 更新 | 与"bo5 赢一局和 bo7 赢一局价值不同"这一事实一致 |
 | Elo-赛制（H=180d / 近 12 月 / 近 24 月） | 赛制 Elo + 指数时间衰减 H=180 天 / 日期截窗 | 近期表现加权 |
 | 官方积分-全期 / 本赛季 | **复现 `js/score-engine.js` 的 WTT 口径** | `SCORE_TIME_DECAY_ENABLED=false`、`LOSER_POINT_MULTIPLIER=1.0`、`DEFAULT_INITIAL_SCORE=1500`、`SCORE_FLOOR=1200`、`getBaseScore` 分档、按赛事系数（冠军赛 0.83）逐场滚动 |
-| 三因子（站点口径） | 0.7·Elo + 0.3·近况，或 0.6·Elo + 0.2·H2H + 0.2·近况 | 沿用 `docs/predicted-win-rate.md` 的口径；H2H 用 Laplace 平滑 (w+2)/(n+4)，近况为最近 10 场积分净变化经 k=0.02 sigmoid |
+| 三因子（站点口径） | 0.7·Elo + 0.3·近况，或 0.6·Elo + 0.2·H2H + 0.2·近况 | 沿用 `docs/tech/predicted-win-rate.md` 的口径；H2H 用 Laplace 平滑 (w+2)/(n+4)，近况为最近 10 场积分净变化经 k=0.02 sigmoid |
 
 "官方积分"这一路是把本站点排行榜的真实算法在本地重算——因为本环境无法访问 world-table-tennis.com（DNS 解析失败，详见第六节），只有本站点自己的实现可作为"官方口径"的代理。
 
