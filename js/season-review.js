@@ -174,10 +174,224 @@ function srReplaySeason(si, end, sortedWindow) {
     return { best, bonusRows };
 }
 
+/* ---- 按日积分走势：逐比赛日取「截至当日的实时口径」积分作折线。
+   俱乐部模式逐日重放（复用 replaySeasonWindowToSnapshot，衰减/定格随当日窗口）；
+   WTT/非衰减模式权重恒 1，单趟增量重放（与引擎 incremental 快照路径同口径）。
+   结果矩阵在渲染期（WTT 数据上下文内）一次算好，选人交互只读、不再触碰引擎全局。 ---- */
+const SR_DAILY_COLORS = ['#4da3ff', '#ff6b6b', '#52c41a', '#f5c542', '#ff9f43', '#a55eea', '#26de81', '#fd79a8', '#45b7d1', '#f78fb3'];
+const SR_DAILY_MAX = 10;
+let srDailyData = null;
+let srDailySelected = null;   // 姓名数组；换赛季重置，语言切换保留
+let srDailySeasonKey = '';
+let srDailyHintTimer = null;
+let srDailyChartInstance = null;
+
+function srComputeDailySeries(si, season, end, sortedWindow) {
+    if (!sortedWindow.length) return null;
+    const startScores = getSeasonStartScores(si);
+    const baseline = {};
+    for (const n in startScores) baseline[n] = Math.round(startScores[n] * 10) / 10;
+    const baseOf = n => (baseline[n] != null ? baseline[n] : DEFAULT_INITIAL_SCORE);
+
+    const dates = [...new Set(sortedWindow.map(r => r['日期']))].sort();
+    const labels = [i18n[currentLang].sr_daily_start, ...dates];
+    const activeNames = [...getActivePlayers(sortedWindow, season.startDate, end)];
+    if (!activeNames.length) return null;
+    const series = {};
+    // 序列长度与 labels 对齐：第 0 位是「赛季初」锚点（赛季初即有积分者取其起始分，中途加入者为 null）
+    activeNames.forEach(n => {
+        series[n] = new Array(labels.length).fill(null);
+        if (baseline[n] != null) series[n][0] = baseline[n];
+    });
+    const fill = (name, k, score) => { series[name][k + 1] = Math.round(score * 10) / 10; };
+
+    if (SCORE_TIME_DECAY_ENABLED === false) {
+        const sc = { ...startScores }, seen = new Set();
+        let k = 0;
+        const capture = () => { for (const n of seen) fill(n, k, sc[n]); };
+        for (const r of sortedWindow) {
+            while (k < dates.length && dates[k] < r['日期']) { capture(); k++; }
+            if (isMatchRecord(r)) {
+                const w = r['胜者'], l = r['负者'];
+                if (sc[w] == null) sc[w] = DEFAULT_INITIAL_SCORE;
+                if (sc[l] == null) sc[l] = DEFAULT_INITIAL_SCORE;
+                const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], sc, r['赛制']);
+                sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
+                sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
+                seen.add(w); seen.add(l);
+            } else if (isBonusRecord(r)) {
+                const t = r['对象'], b = parseFloat(r['分数']) || 0;
+                if (sc[t] == null) sc[t] = DEFAULT_INITIAL_SCORE;
+                sc[t] = Math.max(SCORE_FLOOR, sc[t] + b);
+                seen.add(t);
+            }
+        }
+        while (k < dates.length) { capture(); k++; }
+    } else {
+        const prevBatches = playerTypeBatches;
+        for (let k = 0; k < dates.length; k++) {
+            const rows = replaySeasonWindowToSnapshot(sortedWindow, startScores, season, dates[k], {});
+            const rowMap = {};
+            for (const p of rows) rowMap[p['姓名']] = p['当前积分'];
+            for (const n of activeNames) if (rowMap[n] != null) fill(n, k, rowMap[n]);
+        }
+        playerTypeBatches = prevBatches;
+    }
+
+    // 排序：期末相对赛季初的 |Δ| 降序（默认勾选与选人列表顺序都依赖它）
+    const finalDelta = n => { const a = series[n]; for (let i = a.length - 1; i >= 0; i--) if (a[i] != null) return Math.round((a[i] - baseOf(n)) * 10) / 10; return 0; };
+    const order = activeNames.sort((a, b) => Math.abs(finalDelta(b)) - Math.abs(finalDelta(a)) || finalDelta(b) - finalDelta(a) || String(a).localeCompare(String(b), 'zh'));
+    return { labels, series, order, finalDelta };
+}
+
+function srBuildDailyCardHtml(data) {
+    if (!data || typeof Chart === 'undefined' || !data.order.length) return '';
+    const L = i18n[currentLang];
+    const chips = data.order.map(n => `<button type="button" class="sr-chip" data-name="${escapeHtml(n)}" aria-pressed="false"><span class="sr-chip-dot"></span>${escapeHtml(n)}</button>`).join('');
+    return `
+        <div class="personal-card glass-card sr-card">
+            <div class="sr-card-header"><i class="fa-solid fa-chart-line"></i><h3>${L.sr_daily_title}</h3><span class="sr-daily-count" id="srDailyCount"></span></div>
+            <p class="sr-card-desc">${L.sr_daily_desc}</p>
+            <div class="sr-daily-toolbar">
+                ${data.order.length > 20 ? `<input type="text" id="srDailySearch" class="sr-daily-search" placeholder="${L.sr_daily_search}" autocomplete="off">` : ''}
+                <button type="button" id="srDailyClear" class="sr-daily-clear">${L.sr_daily_clear}</button>
+            </div>
+            <div class="sr-daily-chips" id="srDailyChips">${chips}</div>
+            <p class="sr-daily-hint" id="srDailyHint" hidden>${L.sr_daily_max}</p>
+            <div class="sr-placeholder" id="srDailyEmpty" hidden>${L.sr_daily_empty}</div>
+            <div class="sr-chart-box" id="srDailyChartBox"><canvas id="srDailyChart" aria-label="${L.sr_daily_title}"></canvas></div>
+        </div>`;
+}
+
+function srShowDailyHint() {
+    const el = document.getElementById('srDailyHint');
+    if (!el) return;
+    el.hidden = false;
+    clearTimeout(srDailyHintTimer);
+    srDailyHintTimer = setTimeout(() => { el.hidden = true; }, 2200);
+}
+
+function srToggleDailyPlayer(name) {
+    if (!srDailyData || !name) return;
+    if (!Array.isArray(srDailySelected)) srDailySelected = [];
+    const i = srDailySelected.indexOf(name);
+    if (i >= 0) srDailySelected.splice(i, 1);
+    else {
+        if (srDailySelected.length >= SR_DAILY_MAX) { srShowDailyHint(); return; }
+        srDailySelected.push(name);
+    }
+    srUpdateDailyUI();
+}
+
+function srUpdateDailyUI() {
+    if (!srDailyData) return;
+    const chipsEl = document.getElementById('srDailyChips');
+    if (!chipsEl) return;
+    const sel = Array.isArray(srDailySelected) ? srDailySelected : [];
+    const selSet = new Set(sel);
+    // chip 选中态与配色跟随曲线颜色，方便与图例对照
+    chipsEl.querySelectorAll('.sr-chip').forEach(btn => {
+        const name = btn.dataset.name, on = selSet.has(name);
+        btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+        const dot = btn.querySelector('.sr-chip-dot');
+        if (on) {
+            const c = SR_DAILY_COLORS[sel.indexOf(name) % SR_DAILY_COLORS.length];
+            if (dot) dot.style.background = c;
+            btn.style.borderColor = c;
+            btn.style.background = c + '1a';
+        } else {
+            if (dot) dot.style.background = '';
+            btn.style.borderColor = '';
+            btn.style.background = '';
+        }
+    });
+    const countEl = document.getElementById('srDailyCount');
+    if (countEl) countEl.textContent = `${sel.length}/${SR_DAILY_MAX}`;
+    const emptyEl = document.getElementById('srDailyEmpty');
+    const box = document.getElementById('srDailyChartBox');
+    if (emptyEl && box) { emptyEl.hidden = sel.length > 0; box.style.display = sel.length > 0 ? '' : 'none'; }
+    srRenderDailyChart();
+}
+
+function srRenderDailyChart() {
+    const canvas = document.getElementById('srDailyChart');
+    if (!canvas || typeof Chart === 'undefined' || !srDailyData) return;
+    if (srDailyChartInstance) { try { srDailyChartInstance.destroy(); } catch (e) {} srDailyChartInstance = null; }
+    if (window.Chart && Chart.getChart) { const c = Chart.getChart(canvas); if (c) c.destroy(); }
+    const sel = Array.isArray(srDailySelected) ? srDailySelected : [];
+    if (!sel.length) return;
+    const L = i18n[currentLang];
+    const datasets = sel.map((name, idx) => {
+        const c = SR_DAILY_COLORS[idx % SR_DAILY_COLORS.length];
+        return {
+            label: name,
+            data: srDailyData.series[name] || [],
+            borderColor: c, backgroundColor: c + '20',
+            borderWidth: 2, pointRadius: 0, pointHoverRadius: 4,
+            tension: 0, spanGaps: true, fill: false
+        };
+    });
+    new Chart(canvas, {
+        type: 'line',
+        data: { labels: srDailyData.labels, datasets },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            interaction: { intersect: false, mode: 'index' },
+            plugins: {
+                legend: { position: 'bottom', labels: { usePointStyle: true, boxWidth: 8, padding: 12, font: { size: 11 } } },
+                tooltip: {
+                    filter: item => item.raw != null,
+                    callbacks: {
+                        label: ctx => (ctx.parsed.y == null) ? null : ` ${ctx.dataset.label}: ${ctx.parsed.y.toFixed(1)}`
+                    }
+                }
+            },
+            scales: {
+                x: { grid: { color: 'rgba(128,128,128,.1)' }, ticks: { maxRotation: 45, autoSkip: true, maxTicksLimit: 12, font: { size: 10 } } },
+                y: {
+                    beginAtZero: false,
+                    grid: { color: 'rgba(128,128,128,.1)' },
+                    ticks: { font: { size: 10 }, callback: v => Math.round(v) },
+                    title: { display: true, text: L.sr_daily_axis, font: { size: 11 } }
+                }
+            }
+        }
+    });
+    srDailyChartInstance = Chart.getChart(canvas);
+}
+
+function srInitDailyUI(data) {
+    srDailyData = data;
+    const chipsEl = document.getElementById('srDailyChips');
+    if (!chipsEl || !data) return;
+    if (!Array.isArray(srDailySelected) || !srDailySelected.length) srDailySelected = data.order.slice(0, 5);
+    srDailySelected = srDailySelected.filter(n => data.series[n]);
+    if (!srDailySelected.length) srDailySelected = data.order.slice(0, Math.min(5, data.order.length));
+    chipsEl.addEventListener('click', e => {
+        const btn = e.target.closest('.sr-chip');
+        if (btn) srToggleDailyPlayer(btn.dataset.name);
+    });
+    const searchEl = document.getElementById('srDailySearch');
+    if (searchEl) searchEl.addEventListener('input', () => {
+        const q = searchEl.value.trim().toLowerCase();
+        chipsEl.querySelectorAll('.sr-chip').forEach(btn => {
+            btn.style.display = (!q || btn.dataset.name.toLowerCase().includes(q)) ? '' : 'none';
+        });
+    });
+    const clearEl = document.getElementById('srDailyClear');
+    if (clearEl) clearEl.addEventListener('click', () => { srDailySelected = []; srUpdateDailyUI(); });
+    srUpdateDailyUI();
+}
+
 function destroySrChart() {
+    /* srChart / srDailyChartInstance 持有实例引用：body.innerHTML 重建后旧 canvas 已脱离
+       文档，按 id 反查会漏掉旧实例，这里先用引用销毁，再兜底反查当前文档里的画布 */
+    if (srChart) { try { srChart.destroy(); } catch (e) {} srChart = null; }
+    if (srDailyChartInstance) { try { srDailyChartInstance.destroy(); } catch (e) {} srDailyChartInstance = null; }
     const canvas = document.getElementById('srDeltaChart');
     if (canvas && window.Chart && Chart.getChart) { const c = Chart.getChart(canvas); if (c) c.destroy(); }
-    srChart = null;
+    const dailyCanvas = document.getElementById('srDailyChart');
+    if (dailyCanvas && window.Chart && Chart.getChart) { const c = Chart.getChart(dailyCanvas); if (c) c.destroy(); }
 }
 
 function renderSrDeltaChart(deltaRows) {
@@ -210,6 +424,9 @@ function renderSeasonReview(si) {
     const season = seasonsData[si];
     if (!body || !season) return;
     srState.seasonIndex = si;
+    // 按日图表的选人状态：换赛季重置，同赛季重渲染（如语言切换）保留
+    const srSeasonKey = String(season.id || season.label || si);
+    if (srDailySeasonKey !== srSeasonKey) { srDailySeasonKey = srSeasonKey; srDailySelected = null; }
     const L = i18n[currentLang];
     document.title = SR_WTT ? L.wtt_sr_page_title : L.sr_page_title;
 
@@ -225,6 +442,7 @@ function renderSeasonReview(si) {
 
     if (!windowMatches.length && !windowBonus.length) {
         destroySrChart();
+        srDailyData = null;
         body.innerHTML = `<div class="compare-placeholder glass-card"><i class="fa-solid fa-table-tennis-paddle-ball"></i><p>${L.sr_no_data}</p></div>`;
         return;
     }
@@ -258,6 +476,7 @@ function renderSeasonReview(si) {
     const streaks = srComputeStreaks(windowMatches);
     const bestBonus = srReplaySeason(si, end, sortedWindow);
     const gameStats = srComputeGameStats(windowMatches);
+    const srDaily = srComputeDailySeries(si, season, end, sortedWindow);
 
     /* --- 积分变化榜 --- */
     let pointsHtml = '';
@@ -377,6 +596,7 @@ function renderSeasonReview(si) {
             </div>
             ${Object.keys(typeCount).length ? `<div class="sr-types">${Object.entries(typeCount).sort((a, b) => b[1] - a[1]).map(([t, n]) => `<span class="sr-type-badge">${escapeHtml(t)} <strong>×${n}</strong></span>`).join('')}</div>` : ''}
             ${pointsHtml}
+            ${srBuildDailyCardHtml(srDaily)}
             <div class="sr-grid-2">${streakHtml}${attendHtml}</div>
             ${bestHtml}
             ${gamesHtml}
@@ -384,4 +604,5 @@ function renderSeasonReview(si) {
         </div>`;
 
     renderSrDeltaChart(deltaRows);
+    srInitDailyUI(srDaily);
 }

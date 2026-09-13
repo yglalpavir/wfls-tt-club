@@ -149,6 +149,88 @@ function calcRawPoints(winner, loser, eventType, currentScores, matchFormat) {
     const lScore = (typeof currentScores[loser] === 'number') ? currentScores[loser] : DEFAULT_INITIAL_SCORE;
     return getBaseScore(wScore - lScore) * getEventCoefficient(eventType) * getFormatMultiplier(eventType, matchFormat); }
 
+// 计算球员近期状态分（最近10场比赛的积分变化总和）
+// beforeDate 可选：传入时只统计该日期之前的比赛（YYYY-MM-DD 字符串比较），用于"赛前状态"口径；不传行为不变
+function calcFormScore(playerName, beforeDate) {
+    if (!scoreLogData || !scoreLogData.length) return 0;
+    const playerMatches = scoreLogData
+        .filter(r => isMatchRecord(r) && (r['胜者'] === playerName || r['负者'] === playerName) && (!beforeDate || r['日期'] < beforeDate))
+        .sort((a, b) => a['日期'].localeCompare(b['日期']));
+    if (!playerMatches.length) return 0;
+    const recentMatches = playerMatches.slice(-10);
+    const firstRecentDate = recentMatches[0]['日期'];
+
+    // 使用赛季感知的起始积分
+    const scores = {};
+    let seasonStartDate = '';
+    if (seasonsData && seasonsData.length > 0) {
+        let seasonIdx = -1;
+        for (let si = 0; si < seasonsData.length; si++) {
+            if (firstRecentDate >= seasonsData[si].startDate && firstRecentDate <= seasonsData[si].endDate) {
+                seasonIdx = si; break;
+            }
+        }
+        if (seasonIdx === -1 && firstRecentDate > seasonsData[seasonsData.length - 1].endDate) {
+            seasonIdx = seasonsData.length - 1;
+        }
+        if (seasonIdx >= 0) {
+            const inheritedScores = getSeasonStartScores(seasonIdx);
+            Object.assign(scores, inheritedScores);
+            seasonStartDate = seasonsData[seasonIdx].startDate;
+        }
+    }
+    if (Object.keys(scores).length === 0 && initialScoresData) {
+        Object.assign(scores, initialScoresData.initialScores);
+    }
+
+    const sortedLog = [...scoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
+    for (const m of sortedLog) {
+        if (m['日期'] >= firstRecentDate) break;
+        // 跳过赛季开始前的记录
+        if (seasonStartDate && m['日期'] < seasonStartDate) continue;
+        if (isMatchRecord(m)) {
+            const w = m['胜者'], l = m['负者'];
+            if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
+            if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
+            const wg = calcRawPoints(w, l, m['类型'], scores, m['赛制']);
+            scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg);
+            scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * LOSER_POINT_MULTIPLIER);
+        } else if (isBonusRecord(m)) {
+            const target = m['对象'];
+            const bonus = parseFloat(m['分数']) || 0;
+            if (!scores[target]) scores[target] = DEFAULT_INITIAL_SCORE;
+            scores[target] = Math.max(SCORE_FLOOR, scores[target] + bonus);
+        }
+    }
+    let totalChange = 0;
+    for (const m of recentMatches) {
+        const w = m['胜者'], l = m['负者'];
+        if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
+        if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
+        const rawPoints = calcRawPoints(w, l, m['类型'], scores, m['赛制']);
+        if (w === playerName) {
+            totalChange += rawPoints;
+            scores[w] = Math.max(SCORE_FLOOR, scores[w] + rawPoints);
+            scores[l] = Math.max(SCORE_FLOOR, scores[l] - rawPoints * LOSER_POINT_MULTIPLIER);
+        } else {
+            totalChange -= rawPoints * LOSER_POINT_MULTIPLIER;
+            scores[w] = Math.max(SCORE_FLOOR, scores[w] + rawPoints);
+            scores[l] = Math.max(SCORE_FLOOR, scores[l] - rawPoints * LOSER_POINT_MULTIPLIER);
+        }
+    }
+    return totalChange;
+}
+
+// 计算预测胜率（基于Elo + 交手 + 状态的三因子模型，无交手时退化为二因子）
+function calcPredictedWinRate(rA, rB, aWins, bWins, fA, fB) {
+    const pElo = 1 / (1 + Math.pow(10, (rB - rA) / 400));
+    const k = 0.02;
+    const pForm = 1 / (1 + Math.exp(-k * (fA - fB)));
+    if (aWins + bWins === 0) return 0.7 * pElo + 0.3 * pForm;
+    const pH2H = (aWins + 2) / (aWins + bWins + 4);
+    return 0.6 * pElo + 0.2 * pH2H + 0.2 * pForm;
+}
+
 function getActivePlayers(sortedLog, startDate, endDate) { const ap = new Set(); sortedLog.forEach(r => { if (r['日期'] < startDate || r['日期'] > endDate) return; if (isMatchRecord(r)) { ap.add(r['胜者']); ap.add(r['负者']); } else if (isBonusRecord(r)) { ap.add(r['对象']); } }); return ap; }
 
 // ===== 排名表显示口径：players.json 档案活跃状态 =====

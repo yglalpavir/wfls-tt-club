@@ -270,10 +270,44 @@ const i18n = {
         sr_col_target: "对象", sr_col_amount: "分数", sr_col_pre: "调整前积分",
         sr_bonus_none: "本季暂无积分调整记录", sr_bonus_summary: "{n} 次调整 · 净 {net} 分 · 涉及 {m} 人", sr_bonus_total: "合计",
         sr_no_data: "该赛季还没有任何对局记录",
+        sr_daily_title: "按日积分走势", sr_daily_desc: "点选球员查看其本赛季积分的逐日走势（至多 10 人）；各日取截至当日的实时口径，俱乐部模式含时间衰减。",
+        sr_daily_search: "搜索球员…", sr_daily_clear: "清空", sr_daily_max: "最多同时显示 10 人",
+        sr_daily_empty: "请点选上方球员绘制曲线", sr_daily_start: "赛季初", sr_daily_axis: "积分",
         /* ---- WTT 赛季总结 ---- */
         wtt_sr_page_title: "WTT 赛季总结 | WFLS TT Club",
         wtt_sr_hero_tag: "WTT Season Review", wtt_sr_hero_title: "WTT 赛季总结", wtt_sr_hero_desc: "胜负 · 积分 · 连胜 · 赛季之最",
-        wtt_sr_footnote: "WTT 彩蛋玩法：数据口径与 WTT 排名一致（零和积分、无时间衰减）。"
+        wtt_sr_footnote: "WTT 彩蛋玩法：数据口径与 WTT 排名一致（零和积分、无时间衰减）。",
+        /* ---- 比赛详情页 ---- */
+        md_page_title: "比赛详情 | WFLS Table Tennis Club",
+        md_hero_tag: "Match Detail", md_hero_title: "比赛详情", md_hero_desc: "比分 · 积分 · 胜率 · 交锋",
+        md_back_ranking: "返回排名",
+        md_winner_badge: "胜", md_loser_badge: "负",
+        md_pre_score: "赛前积分", md_post_score: "赛后积分", md_change: "本场变化", md_eff_now: "当前计入",
+        md_score_title: "大比分", md_games_title: "小比分（局分）",
+        md_score_none: "未记录比分",
+        md_score_none_hint: "该场比赛没有比分数据。提交赛果时填写比分/局分即可在此展示。",
+        md_games_note: "局分为胜者视角：每局前者为胜者得分。",
+        md_format_label: "赛制", md_season_label: "赛季",
+        md_breakdown_title: "积分产生明细",
+        md_breakdown_base: "基础分", md_breakdown_gap: "赛前分差",
+        md_breakdown_base_lead: "胜者积分领先", md_breakdown_base_upset: "胜者以低打高（逆袭加成）",
+        md_breakdown_event: "赛事系数", md_breakdown_format: "赛制系数",
+        md_breakdown_decay: "时间权重（含定格）", md_breakdown_decay_off: "不衰减",
+        md_breakdown_result: "产生积分",
+        md_breakdown_loser_note: "负者按 {n} 倍扣除：−{val}",
+        md_pred_title: "赛前胜率预测",
+        md_pred_hit: "预测命中", md_pred_upset: "冷门!",
+        md_pred_model_note: "三因子模型：Elo 积分 60% · 历史交锋 20% · 近期状态 20%（无交锋时 Elo 70% · 状态 30%）",
+        md_pred_form: "近期状态",
+        md_h2h_title: "历史交锋",
+        md_h2h_summary: "赛前共交锋 {n} 场：{a} {aw} 胜 · {b} {bw} 胜",
+        md_h2h_none: "赛前两人（队）没有交手记录",
+        md_col_score: "比分",
+        md_not_found_title: "未找到该比赛记录",
+        md_not_found_hint: "链接可能已失效（记录被修改或参数不完整）。请从排名页或球员页重新进入。",
+        md_load_fail: "数据加载失败",
+        md_retry: "重试",
+        md_early_date: "该比赛日期早于最早赛季，无法回放积分。"
     },
     en: {
         site_title: "WFLS Table Tennis Club | Wuhan Foreign Languages School", nav_home: "Home", nav_news: "News", nav_competitions: "Competitions", nav_contact: "Contact", nav_more: "More...", nav_members: "Core Members", nav_season_review: "Season Review", nav_personal: "Personal Stats", nav_qa: "Q&A", nav_changelog: "Changelog", lang_btn: "中文",
@@ -410,10 +444,44 @@ const i18n = {
         sr_col_target: "Player", sr_col_amount: "Points", sr_col_pre: "Points Before",
         sr_bonus_none: "No adjustments this season", sr_bonus_summary: "{n} adjustments · net {net} pts · {m} players", sr_bonus_total: "Total",
         sr_no_data: "No match records for this season yet",
+        sr_daily_title: "Daily Points Timeline", sr_daily_desc: "Pick players (up to 10) to chart their daily points through the season; each day uses the realtime basis as of that day (club mode includes time decay).",
+        sr_daily_search: "Search players…", sr_daily_clear: "Clear", sr_daily_max: "Up to 10 players at a time",
+        sr_daily_empty: "Select players above to draw their curves", sr_daily_start: "Start", sr_daily_axis: "Points",
         /* ---- WTT season review ---- */
         wtt_sr_page_title: "WTT Season Review | WFLS TT Club",
         wtt_sr_hero_tag: "WTT Season Review", wtt_sr_hero_title: "WTT Season Review", wtt_sr_hero_desc: "Matches · Points · Streaks · Season Bests",
-        wtt_sr_footnote: "WTT easter-egg: same rules as the WTT rankings (zero-sum points, no time decay)."
+        wtt_sr_footnote: "WTT easter-egg: same rules as the WTT rankings (zero-sum points, no time decay).",
+        /* ---- Match detail ---- */
+        md_page_title: "Match Detail | WFLS Table Tennis Club",
+        md_hero_tag: "Match Detail", md_hero_title: "Match Detail", md_hero_desc: "Scores · Points · Win Rate · H2H",
+        md_back_ranking: "Back to Rankings",
+        md_winner_badge: "W", md_loser_badge: "L",
+        md_pre_score: "Points Before", md_post_score: "Points After", md_change: "Match Δ", md_eff_now: "effective now",
+        md_score_title: "Match Score", md_games_title: "Game Scores",
+        md_score_none: "No score recorded",
+        md_score_none_hint: "No score data for this match. Include scores when submitting results to show them here.",
+        md_games_note: "Game scores are winner-perspective: the first number in each game is the winner's points.",
+        md_format_label: "Format", md_season_label: "Season",
+        md_breakdown_title: "Points Breakdown",
+        md_breakdown_base: "Base Points", md_breakdown_gap: "Pre-match gap",
+        md_breakdown_base_lead: "Winner ranked higher", md_breakdown_base_upset: "Underdog upset bonus",
+        md_breakdown_event: "Event Coefficient", md_breakdown_format: "Format Coefficient",
+        md_breakdown_decay: "Time Weight (incl. freeze)", md_breakdown_decay_off: "No decay",
+        md_breakdown_result: "Points Generated",
+        md_breakdown_loser_note: "Loser deducted ×{n}: −{val}",
+        md_pred_title: "Pre-match Win Probability",
+        md_pred_hit: "Prediction hit", md_pred_upset: "Upset!",
+        md_pred_model_note: "Three-factor model: Elo 60% · H2H 20% · Recent form 20% (no H2H: Elo 70% · form 30%)",
+        md_pred_form: "Recent form",
+        md_h2h_title: "Head-to-Head",
+        md_h2h_summary: "{n} meetings before this match: {a} {aw}W · {b} {bw}W",
+        md_h2h_none: "No previous meetings before this match",
+        md_col_score: "Score",
+        md_not_found_title: "Match record not found",
+        md_not_found_hint: "This link may be broken (record changed or incomplete params). Re-enter from the rankings or player page.",
+        md_load_fail: "Failed to load data",
+        md_retry: "Retry",
+        md_early_date: "This match predates the earliest season; points cannot be replayed."
     }
 };
 
@@ -467,6 +535,7 @@ function setLanguage(lang) {
     if (typeof reapplyPlayerPage === 'function') reapplyPlayerPage();
     if (typeof reapplyPersonalStats === 'function') reapplyPersonalStats();
     if (typeof seasonReviewReapplyI18n === 'function') seasonReviewReapplyI18n();
+    if (typeof matchDetailReapplyI18n === 'function') matchDetailReapplyI18n();
 }
 async function updateHeroLastUpdated() { const el = document.getElementById('heroLastUpdated'); if (!el) return; const cached = safeStorage.get('wfls-last-updated'); if (cached) { try { const cd = JSON.parse(cached); if (cd.date && (Date.now() - cd.ts) < 3600000) { el.textContent = currentLang === 'zh' ? `上次更新：${cd.date}` : `Last updated: ${cd.date}`; return; } } catch(e) {} } try { const res = await fetch('https://api.github.com/repos/yglalpavir/wfls-tt-club/commits?per_page=1'); if (res.ok) { const commits = await res.json(); if (commits && commits.length > 0) { const d = new Date(commits[0].commit.committer.date); const ds = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); safeStorage.set('wfls-last-updated', JSON.stringify({ date: ds, ts: Date.now() })); el.textContent = currentLang === 'zh' ? `上次更新：${ds}` : `Last updated: ${ds}`; return; } } } catch(e) { console.warn('GitHub API failed, fallback to about.json'); } if (aboutData && aboutData.lastUpdated) { el.textContent = currentLang === 'zh' ? `上次更新：${aboutData.lastUpdated}` : `Last updated: ${aboutData.lastUpdated}`; } }
 function updateRankingHeaders() { document.querySelectorAll('.ranking-table-full th[data-i18n]').forEach(th => { const key = th.getAttribute('data-i18n'); if (i18n[currentLang] && i18n[currentLang][key]) th.innerHTML = i18n[currentLang][key] + ' <span class="sort-arrow"></span>'; }); }
@@ -994,6 +1063,18 @@ function linkPlayerName(name) {
     const p = getPlayerByName(name);
     if (p && p.uid != null) return `<a href="player.html?uid=${escapeHtml(String(p.uid))}" class="player-name-link">${escapeHtml(String(name))}</a>`;
     return escapeHtml(String(name));
+}
+// ===== 比赛详情页（match.html / wtt_match.html）URL 构造 =====
+// score-log 无 ID 字段且同日重复记录合法：用 (日期,类型,胜者,负者) + 当日次序 n 定位一条记录
+function buildMatchDetailUrl(date, type, winner, loser, n, cat) {
+    let url = (cat ? 'wtt_match.html' : 'match.html') +
+        '?date=' + encodeURIComponent(date) +
+        '&type=' + encodeURIComponent(type) +
+        '&w=' + encodeURIComponent(winner) +
+        '&l=' + encodeURIComponent(loser);
+    if (cat) url += '&cat=' + encodeURIComponent(cat);
+    if (n && n > 1) url += '&n=' + n;
+    return url;
 }
 // 名称规范化：按 players.json（含别名）把赛果中的名字归一到规范名
 function normalizePlayerName(raw) { if (raw == null) return raw; const p = nameIndex[raw]; return p && p.name ? p.name : raw; }
