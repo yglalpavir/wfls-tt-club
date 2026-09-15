@@ -86,6 +86,7 @@ No npm/lint/typecheck commands exist — there are no build tools or test suites
 | `js/match-detail.js` | Match-detail logic: 比分/局分, pre/post-match points, points breakdown, predicted win rate, H2H (club + WTT dual mode) |
 | `docs/` | `tech/` long-lived technical docs · `reports/` one-off prediction/audit reports · `posters/` poster HTML sources |
 | `submit.html` | Visitor match-record submission page (builds a prefilled GitHub issue) |
+| `tt_game/` | 3D table-tennis game easter egg (Three.js; UI reskinned with the site's design system). Homepage hero-ball routes here and to `umpire-training.html` in rotation (inline script in `index.html`, `wfls-egg-last` in localStorage prevents immediate repeats — don't "fix" the ball's href back to a single target). `tt_game/js/` is an active training workspace (weight `.bak`s, logs) — game runtime files are the ones referenced by `tt_game/index.html` script tags |
 | `.github/ISSUE_TEMPLATE/match-record.yml` | Issue form for submissions (auto-labels `提交`) |
 | `.github/workflows/submission-review.yml` | Turns `审核通过`-labeled submission issues into PRs |
 | `tools/append_submission.py` | Parses/validates issue-submitted records, appends to `score-log.json` |
@@ -105,4 +106,4 @@ Tracked tree is deploy-facing only: `.zcode/` / `.opencode/` (AI session plans),
 8. Deduplicating same-day repeated match records — they are intentional (multiple games per day)
 9. Committing `data/api/` — it is generated at deploy time by the `deploy` workflow and gitignored; committing it recreates merge conflicts with deployments
 10. Letting the submission bot push to `main` directly, or editing `submit.html` / `append_submission.py` validation without keeping it in sync with `ci_validate.py` — the three must agree on what a valid record is; PRs are the only ingest path (the retired `recompute.yml` bot-commit workflow is the cautionary tale)
-11. Hand-building match-detail URLs from raw score-log names — links must go through `buildMatchDetailUrl()` with the in-memory (alias-normalized; WTT doubles pairs alphabetically re-sorted) names, tuple + same-day occurrence `n`; raw-file pair order won't match the normalized log
+11. Hand-building match-detail URLs from raw score-log names — links must go through `buildMatchDetailUrl()` with the in-memory (alias-normalized; WTT doubles pairs alphabetically re-sorted) names, tuple + same-day occurrence `n`; raw-file pair order won't match the normalized log. Get `n` from `computeMatchOccurrenceMap(localLog)` (common.js, keyed by record object, same ordering as `mdCompute`) — every list page (ranking / player-page / data-viz / wtt_*) must pass it, or same-day duplicate matchups all open the first game

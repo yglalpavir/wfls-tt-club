@@ -117,8 +117,8 @@
             <div class="hero-ring hero-ring-1"></div>
             <div class="hero-ring hero-ring-2"></div>
         </div>
-        <!-- 彩蛋入口：悬浮乒乓球（移出 aria-hidden 装饰层以保证可访问） -->
-        <a class="hero-ball" href="umpire-training.html" title="🌟 彩蛋：乒乓球裁判特训" aria-label="彩蛋：乒乓球裁判特训" data-i18n-aria-label="egg_umpire_aria"></a>
+        <!-- 彩蛋入口：悬浮乒乓球（移出 aria-hidden 装饰层以保证可访问）；点击轮换导航到不同彩蛋 -->
+        <a class="hero-ball" href="umpire-training.html" title="🌟 彩蛋：随机惊喜" aria-label="彩蛋：随机惊喜"></a>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <span class="hero-kicker"><span class="hero-kicker-line"></span>WFLS Table Tennis Club<span class="hero-kicker-line"></span></span>
@@ -223,5 +223,20 @@
     <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js" integrity="sha384-/TQbtLCAerC3jgaim+N78RZSDYV7ryeoBCVqTuzRrFec2akfBkHS7ACQ3PQhvMVi" crossorigin="anonymous"></script>
     <script src="js/common.js"></script>
     <script src="js/main.js"></script>
+    <script>
+    /* 彩蛋入口：hero 悬浮乒乓球每次点击导航到不同的彩蛋（localStorage 记住上次，避免连续重复）；无 JS 时退回 href 的裁判特训页 */
+    (function(){
+        var ball=document.querySelector('a.hero-ball');if(!ball)return;
+        var EGGS=['umpire-training.html','tt_game/index.html'];
+        ball.addEventListener('click',function(e){
+            e.preventDefault();
+            var last=null;try{last=localStorage.getItem('wfls-egg-last');}catch(_){}
+            var pool=EGGS.filter(function(u){return u!==last;});
+            var next=pool[Math.floor(Math.random()*pool.length)];
+            try{localStorage.setItem('wfls-egg-last',next);}catch(_){}
+            location.href=next;
+        });
+    })();
+    </script>
 </body>
 </html>

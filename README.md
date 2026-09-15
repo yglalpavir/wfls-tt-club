@@ -22,6 +22,7 @@ wfls-tt-club/
 ├── contact.html                # 联系我们页面（社团QQ群二维码）
 ├── admin.html                  # 后台数据概览仪表盘
 ├── umpire-training.html        # 裁判特训彩蛋页（题库 data/umpire-quiz.json）
+├── tt_game/                    # 3D 乒乓球对决彩蛋（Three.js；首页悬浮乒乓球入口轮换导航到不同彩蛋）
 ├── submit.html                 # 访客比赛记录提交页（腾讯文档表单 / GitHub Issue / QQ 群三通道）
 ├── 404.html                    # 404 页面
 │

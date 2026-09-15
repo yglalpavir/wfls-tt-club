@@ -133,7 +133,7 @@ function updateWindupUI(){
 }
 function spawnConfetti(){
   const c = $('confetti'); c.innerHTML = '';
-  const cols = ['#e03443','#f2b64c','#2f7fe0','#f4f7fc','#37c978'];
+  const cols = ['#ff4d4f','#f0a500','#007bff','#52c41a','#4da3ff'];
   for(let i=0;i<90;i++){
     const d = document.createElement('i');
     d.style.left = Math.random()*100+'%';
