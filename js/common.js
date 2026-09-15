@@ -284,6 +284,7 @@ const i18n = {
         md_winner_badge: "胜", md_loser_badge: "负",
         md_pre_score: "赛前积分", md_post_score: "赛后积分", md_change: "本场变化", md_eff_now: "当前计入",
         md_score_title: "大比分", md_games_title: "小比分（局分）",
+        md_score_persp: "（胜者视角）",
         md_score_none: "未记录比分",
         md_score_none_hint: "该场比赛没有比分数据。提交赛果时填写比分/局分即可在此展示。",
         md_games_note: "局分为胜者视角：每局前者为胜者得分。",
@@ -307,7 +308,10 @@ const i18n = {
         md_not_found_hint: "链接可能已失效（记录被修改或参数不完整）。请从排名页或球员页重新进入。",
         md_load_fail: "数据加载失败",
         md_retry: "重试",
-        md_early_date: "该比赛日期早于最早赛季，无法回放积分。"
+        md_early_date: "该比赛日期早于最早赛季，无法回放积分。",
+        md_status_ft: "已结束", md_sets_col: "局", md_pts_total: "总得分",
+        md_copy_link: "复制链接", md_copied: "已复制",
+        md_occurrence: "当日第 {n} 场"
     },
     en: {
         site_title: "WFLS Table Tennis Club | Wuhan Foreign Languages School", nav_home: "Home", nav_news: "News", nav_competitions: "Competitions", nav_contact: "Contact", nav_more: "More...", nav_members: "Core Members", nav_season_review: "Season Review", nav_personal: "Personal Stats", nav_qa: "Q&A", nav_changelog: "Changelog", lang_btn: "中文",
@@ -458,6 +462,7 @@ const i18n = {
         md_winner_badge: "W", md_loser_badge: "L",
         md_pre_score: "Points Before", md_post_score: "Points After", md_change: "Match Δ", md_eff_now: "effective now",
         md_score_title: "Match Score", md_games_title: "Game Scores",
+        md_score_persp: " (winner's perspective)",
         md_score_none: "No score recorded",
         md_score_none_hint: "No score data for this match. Include scores when submitting results to show them here.",
         md_games_note: "Game scores are winner-perspective: the first number in each game is the winner's points.",
@@ -481,7 +486,10 @@ const i18n = {
         md_not_found_hint: "This link may be broken (record changed or incomplete params). Re-enter from the rankings or player page.",
         md_load_fail: "Failed to load data",
         md_retry: "Retry",
-        md_early_date: "This match predates the earliest season; points cannot be replayed."
+        md_early_date: "This match predates the earliest season; points cannot be replayed.",
+        md_status_ft: "Full Time", md_sets_col: "Sets", md_pts_total: "Total points",
+        md_copy_link: "Copy link", md_copied: "Copied",
+        md_occurrence: "Game #{n} that day"
     }
 };
 

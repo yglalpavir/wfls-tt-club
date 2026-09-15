@@ -162,8 +162,9 @@ function renderPlayerMatchTable(playerName, records) {
         const signRaw = r.rawChange >= 0 ? '+' : '';
         const signDec = r.change >= 0 ? '+' : '';
         const cc = r.change >= 0 ? 'score-change-positive' : 'score-change-negative';
+        const mdUrl = escapeHtml(buildMatchDetailUrl(r.date, r.type, r.isWin ? playerName : r.opp, r.isWin ? r.opp : playerName));
         const scoreCell = hasScore ? `<td${r.games && r.games.length ? ` title="${i18n[currentLang].sb_games_label || '局分'}：${escapeHtml(r.games.join(' '))}"` : ''}>${r.score ? escapeHtml(r.score) : '-'}</td>` : '';
-        return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(r.type)}</td><td>${linkPlayerName(r.opp)}</td>${res}${scoreCell}<td>${r.pre.toFixed(1)}</td><td class="${cc}">${signRaw}${r.rawChange.toFixed(1)}<span class="decayed-note">（${signDec}${r.change.toFixed(1)}）</span></td><td>${r.post.toFixed(1)}</td></tr>`;
+        return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(r.type)}</td><td>${linkPlayerName(r.opp)}</td>${res}${scoreCell}<td>${r.pre.toFixed(1)}</td><td class="${cc}">${signRaw}${r.rawChange.toFixed(1)}<span class="decayed-note">（${signDec}${r.change.toFixed(1)}）</span></td><td>${r.post.toFixed(1)}</td></tr>`;
     }).join('');
 
     container.innerHTML = `

@@ -82,6 +82,8 @@ No npm/lint/typecheck commands exist — there are no build tools or test suites
 | `tools/recompute_rankings.js` | Generates `data/api/` (runs the real score engine headless in a Node vm) |
 | `tools/migrate_draws_v3.py` | One-shot draws.json v2 → v3 migration (finished; kept locally only, gitignored) |
 | `js/season-review.js` | Season review page logic (club + WTT dual mode, switched by `window.SR_WTT_MODE`) |
+| `match.html` / `wtt_match.html` | Match-detail page for a single score-log record (WTT wrapper sets `window.MD_WTT_MODE`) |
+| `js/match-detail.js` | Match-detail logic: 比分/局分, pre/post-match points, points breakdown, predicted win rate, H2H (club + WTT dual mode) |
 | `docs/` | `tech/` long-lived technical docs · `reports/` one-off prediction/audit reports · `posters/` poster HTML sources |
 | `submit.html` | Visitor match-record submission page (builds a prefilled GitHub issue) |
 | `.github/ISSUE_TEMPLATE/match-record.yml` | Issue form for submissions (auto-labels `提交`) |
@@ -103,3 +105,4 @@ Tracked tree is deploy-facing only: `.zcode/` / `.opencode/` (AI session plans),
 8. Deduplicating same-day repeated match records — they are intentional (multiple games per day)
 9. Committing `data/api/` — it is generated at deploy time by the `deploy` workflow and gitignored; committing it recreates merge conflicts with deployments
 10. Letting the submission bot push to `main` directly, or editing `submit.html` / `append_submission.py` validation without keeping it in sync with `ci_validate.py` — the three must agree on what a valid record is; PRs are the only ingest path (the retired `recompute.yml` bot-commit workflow is the cautionary tale)
+11. Hand-building match-detail URLs from raw score-log names — links must go through `buildMatchDetailUrl()` with the in-memory (alias-normalized; WTT doubles pairs alphabetically re-sorted) names, tuple + same-day occurrence `n`; raw-file pair order won't match the normalized log

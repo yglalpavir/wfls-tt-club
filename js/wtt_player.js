@@ -199,7 +199,8 @@ function wttPpRenderMatchTable(playerName, records) {
         const res = r.isWin ? '<td class="result-win">' + i18n[currentLang].score_result_win + '</td>' : '<td class="result-loss">' + i18n[currentLang].score_result_loss + '</td>';
         const signRaw = r.rawChange >= 0 ? '+' : '';
         const cc = r.change >= 0 ? 'score-change-positive' : 'score-change-negative';
-        return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(r.type)}</td><td>${wttLinkPlayerName(r.opp)}</td>${res}<td>${r.pre.toFixed(1)}</td><td class="${cc}">${signRaw}${r.rawChange.toFixed(1)}</td><td>${r.post.toFixed(1)}</td></tr>`;
+        const mdUrl = escapeHtml(buildMatchDetailUrl(r.date, r.type, r.isWin ? playerName : r.opp, r.isWin ? r.opp : playerName, undefined, wttCurrentCategory));
+        return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(r.type)}</td><td>${wttLinkPlayerName(r.opp)}</td>${res}<td>${r.pre.toFixed(1)}</td><td class="${cc}">${signRaw}${r.rawChange.toFixed(1)}</td><td>${r.post.toFixed(1)}</td></tr>`;
     }).join('');
 
     container.innerHTML = `

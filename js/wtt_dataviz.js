@@ -793,7 +793,7 @@ function wttRenderComparison(playerA, playerB) {
             const aChange = aIsW ? wg : -(wg * LOSER_POINT_MULTIPLIER);
             const bChange = aIsW ? -(wg * LOSER_POINT_MULTIPLIER) : wg;
             html += `<tr>
-                <td>${escapeHtml(m['日期'])}</td><td>${escapeHtml(m['类型'])}</td><td>${escapeHtml(w)}</td>
+                <td><a class="player-name-link" href="${escapeHtml(buildMatchDetailUrl(m['日期'], m['类型'], w, l, undefined, wttCurrentCategory))}">${escapeHtml(m['日期'])}</a></td><td>${escapeHtml(m['类型'])}</td><td>${escapeHtml(w)}</td>
                 <td class="${aIsW ? 'win-highlight' : 'loss-highlight'}">${aChange > 0 ? '+' : ''}${aChange.toFixed(1)}</td>
                 <td class="${!aIsW ? 'win-highlight' : 'loss-highlight'}">${bChange > 0 ? '+' : ''}${bChange.toFixed(1)}</td>
             </tr>`;

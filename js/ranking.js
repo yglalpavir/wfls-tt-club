@@ -107,8 +107,9 @@ function renderScoreDetail() {
         const signRaw = r.rawChange >= 0 ? '+' : '';
         const signDecayed = r.decayedChange >= 0 ? '+' : '';
         const changeDisplay = `${signRaw}${r.rawChange.toFixed(1)}（${signDecayed}${r.decayedChange.toFixed(1)}）`;
+        const mdUrl = escapeHtml(buildMatchDetailUrl(r.date, r.type, r.isWinner ? player : r.opponent, r.isWinner ? r.opponent : player));
         const scoreCell = hasScore ? `<td${r.games && r.games.length ? ` title="${i18n[currentLang].sb_games_label || '局分'}：${escapeHtml(r.games.join(' '))}"` : ''}>${r.score ? escapeHtml(r.score) : '-'}</td>` : '';
-        return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(r.type)}</td><td>${escapeHtml(r.opponent)}</td><td class="${rc}">${res}</td>${scoreCell}<td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${changeDisplay}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
+        return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(r.type)}</td><td>${escapeHtml(r.opponent)}</td><td class="${rc}">${res}</td>${scoreCell}<td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${changeDisplay}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
     }).join('');
     setTimeout(adjustModalSize, 150);
 }
