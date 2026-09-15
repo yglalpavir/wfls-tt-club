@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>乒乓·对决 — Three.js 3D 乒乓球（重旋对轰版）</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/hud.css">
+<link rel="stylesheet" href="css/overlay.css">
+</head>
+<body>
+
+<div id="hud">
+  <div id="liveChip"><i></i>LIVE · 乒乓竞技场</div>
+  <div id="ttStatsChip" class="hidden"></div>
+  <div id="scorebug">
+    <div class="team you"><span class="gp" id="gpYou">局点</span>
+      <div class="inner"><span class="name" id="nameYou">你 YOU</span><span class="pts" id="ptsYou">0</span><span class="dot" id="dotYou"></span></div>
+    </div>
+    <div class="mid"><div class="inner" style="flex-direction:column;gap:0">
+      <span id="midLabel">11分制 · ITTF 规则</span>
+      <span id="rallyChip">RALLY <b id="rallyN">0</b></span>
+    </div></div>
+    <div class="team ai"><span class="gp" id="gpAi">局点</span>
+      <div class="inner"><span class="dot" id="dotAi"></span><span class="pts" id="ptsAi">0</span><span class="name" id="nameAi">AI 电脑</span></div>
+    </div>
+  </div>
+  <div id="statusLine">AI 演示对局 · 按任意键开始</div>
+  <div id="toast"><div id="toastBig"></div><div id="toastSub"></div></div>
+  <div id="counterHint">◎ 重旋来球 · 反手快撕借力反击!</div>
+  <div id="pushHint">◎ 下旋来球 · 按住 Ctrl 搓球</div>
+  <div id="deck">
+    <div id="serveChip"><b id="serveChipTxt">▲ 上旋发球</b><span id="serveChipSide">无侧旋</span></div>
+    <div id="stanceChip" class="forehand">
+      <i class="rubber"></i>
+      <div class="sc-txt"><b id="stanceTxt">正手 FOREHAND</b><span id="stanceSub">极重上旋 · 重炮 · 几乎不漏球</span></div>
+    </div>
+    <div id="spinMeter">
+      <span class="sm-label">挥拍</span>
+      <div class="sm-track"><div class="sm-fill" id="smFill"></div><i class="sm-notch"></i></div>
+      <span class="sm-val" id="smVal">横向滑动蓄力</span>
+    </div>
+  </div>
+  <div id="bottomBar">
+    <div id="hints">
+      <span><kbd>鼠标左右</kbd>移动 + 瞄准</span>
+      <span><kbd>鼠标上下</kbd>压深/摆短 · 弧线（上平下高）</span>
+      <span><kbd>快速横滑</kbd>强力侧旋</span>
+      <span><kbd>自动换面</kbd>反手快撕</span>
+      <span><kbd>R</kbd>重置</span>
+      <span class="assistTag">◎ 正手重旋 · 反手快撕 对轰</span>
+    </div>
+    <div id="btns">
+      <button class="btn" id="btnHelp"><span>帮助 ?</span></button>
+      <button class="btn" id="btnSound"><span>音效：开</span></button>
+      <button class="btn" id="btnReset"><span>重置比分</span></button>
+    </div>
+  </div>
+  <!-- 触屏操作控件：仅触屏设备显示（html.touch） -->
+  <div id="touchCtl">
+    <button class="tc-btn" id="btnExitWatch"><span>✕ 退出观看</span></button>
+    <div id="touchServe">
+      <button class="tc-btn tc-hold" id="btnSpinL"><span>◀ 左旋</span></button>
+      <button class="tc-btn tc-hold" id="btnSpinR"><span>右旋 ▶</span></button>
+      <button class="tc-btn" id="btnPowMinus"><span>强 −</span></button>
+      <button class="tc-btn" id="btnPowPlus"><span>强 ＋</span></button>
+    </div>
+    <button class="tc-btn tc-hold" id="btnPush"><span>搓</span></button>
+  </div>
+  <div id="vig"></div>
+  <div id="flash"></div>
+  <div id="hitMarker"></div>
+</div>
+
+<div id="startOverlay" class="overlay">
+  <div class="ov-kicker">THREE.JS · 3D 模拟 · 重旋对轰版</div>
+  <h1 class="ov-title">乒乓·对决</h1>
+  <div class="ov-sub">TABLE TENNIS ARENA · 11分制 · 净胜两球 · ITTF 规则</div>
+  <div class="ov-controls">
+    <div class="oc-group mouse-only">
+      <h3>移动与瞄准</h3>
+      <div><kbd>鼠标左右</kbd><span>移动球拍 · 控制落点左右</span></div>
+      <div><kbd>鼠标上下</kbd><span>压深/摆短 · 上推压平快攻 · 下拉拉高弧圈</span></div>
+      <div><kbd>红色准星</kbd><span>瞄准落点（反手时更宽）</span></div>
+    </div>
+    <div class="oc-group mouse-only">
+      <h3>击球技术</h3>
+      <div><kbd>横向滑动</kbd><span>强力侧旋 · 空中拐弯</span></div>
+      <div><kbd>自动换面</kbd><span>按球位自动选正/反手 · 反手位快撕中等以上旋转来球</span></div>
+      <div><kbd>Ctrl</kbd><span>搓球（拍面放平）· 不按=拉球 · 抢点易下网</span></div>
+    </div>
+    <div class="oc-group mouse-only">
+      <h3>发球</h3>
+      <div><kbd>点击 / 空格</kbd><span>垂直抛球≥16cm → 自动击球（先落本半台）</span></div>
+      <div><kbd>S / D</kbd><span>左 / 右侧旋（发球恒定上旋 · 深发球两跳落对方半台）</span></div>
+      <div><kbd>Q / E</kbd><span>旋转强度 弱 / 强（发球前调）</span></div>
+    </div>
+    <div class="oc-group touch-only">
+      <h3>移动与瞄准</h3>
+      <div><kbd>手指拖动</kbd><span>移动球拍 · 控制落点左右与深浅</span></div>
+      <div><kbd>上推 / 下拉</kbd><span>上推压平快攻 · 下拉拉高弧圈（球拍悬于手指上方）</span></div>
+      <div><kbd>红色准星</kbd><span>瞄准落点（反手时更宽）</span></div>
+    </div>
+    <div class="oc-group touch-only">
+      <h3>击球技术</h3>
+      <div><kbd>快速横滑</kbd><span>强力侧旋 · 空中拐弯 · 爆冲爆扣</span></div>
+      <div><kbd>自动换面</kbd><span>按球位自动选正/反手 · 反手位快撕中等以上旋转来球</span></div>
+      <div><kbd>「搓」钮</kbd><span>按住搓球（拍面放平）· 不按=拉球 · 抢点易下网</span></div>
+    </div>
+    <div class="oc-group touch-only">
+      <h3>发球</h3>
+      <div><kbd>轻点屏幕</kbd><span>垂直抛球≥16cm → 自动击球（先落本半台）</span></div>
+      <div><kbd>◀ / ▶ 钮</kbd><span>按住 = 左 / 右侧旋（发球恒定上旋 · 两跳落对方半台）</span></div>
+      <div><kbd>− / ＋ 钮</kbd><span>旋转强度 弱 / 强（发球前调）</span></div>
+    </div>
+    <div class="oc-group oc-diff">
+      <h3>选择对战模型</h3>
+      <div class="model-row">
+        <button class="model-btn" data-model="standard">普通 AI</button>
+        <button class="model-btn" data-model="hell">地狱 AI</button>
+        <button class="model-btn" data-model="grandslam">大满贯预备种子</button>
+        <button class="model-btn" data-model="ttmouse">鼠标上的tt玩家</button>
+        <button class="model-btn" data-model="extreme">极端对手</button>
+        <button class="model-btn" data-model="extreme-max">极端·满档</button>
+      </div>
+      <div class="diff-hint" id="modelHint">普通 AI：标准水平 · 攻守平衡</div>
+    </div>
+    <div class="oc-group oc-diff">
+      <h3>AI 斗蛐蛐 · 五局三胜</h3>
+      <div class="fight-row">
+        <label>左 AI</label>
+        <select id="fightL">
+          <option value="standard">普通 AI</option>
+          <option value="hell" selected>地狱 AI</option>
+          <option value="grandslam">大满贯预备种子</option>
+          <option value="ttmouse">鼠标上的tt玩家</option>
+          <option value="extreme">极端对手</option>
+          <option value="extreme-max">极端·满档</option>
+        </select>
+        <span class="vs">VS</span>
+        <select id="fightR">
+          <option value="standard">普通 AI</option>
+          <option value="hell" selected>地狱 AI</option>
+          <option value="grandslam">大满贯预备种子</option>
+          <option value="ttmouse">鼠标上的tt玩家</option>
+          <option value="extreme">极端对手</option>
+          <option value="extreme-max">极端·满档</option>
+        </select>
+        <label>右 AI</label>
+      </div>
+      <div class="diff-hint" id="fightHint">可选相同/不同 AI · 不换边 · 先赢 3 大局者胜</div>
+    </div>
+  </div>
+  <button class="btn primary" id="btnStart"><span>开始比赛 ▶</span></button>
+  <button class="btn" id="btnWatch"><span>AI 斗蛐蛐 ▶</span></button>
+  <div class="ov-hint mouse-only">你与 AI 同样掌握正手重旋与反手快撕：看红黑胶面翻转预判来球——<br>
+  AI 正手爆冲（红面 · 橙色拖尾 · 极重上旋）最好用反手快撕回敬；AI 快撕回来时可连环快撕对轰，或切正手重旋压制；<br>
+  AI 冒高的机会球，正手快挥直接扣杀。正手更转、反手更快：正手快速横滑+前推=正手爆冲（旋转暴增·但还原慢、落点难控）；半高球快速横滑=正手爆扣 / 反手爆抽（几乎一招制胜）；快速横滑也能甩出强烈侧旋（落台后大幅拐弯）。<br>
+  发球恒定上旋深发球（先落本半台再两跳过网 · 二跳靠近对方端线且过网低平，可搭 S / D 左右旋，Q / E 调强度）；对方下旋球：按住 Ctrl 搓球（鼠标控制深浅），不按则需拉球起下旋（节奏稍慢、抢点易下网）。<br>
+  背后是 AI 演示对局 · 点击「开始比赛 / AI 斗蛐蛐」按钮或按任意键开始</div>
+  <div class="ov-hint touch-only">手指拖动移动球拍：快速横滑 = 强力侧旋 / 爆冲爆扣，上推压平快攻、下拉拉高弧圈；<br>
+  对方下旋来球：按住右下「搓」钮搓球（拖动控制深浅），不按则需拉球起下旋（节奏稍慢、抢点易下网）；<br>
+  轮到你发球：先拖动选站位，按住 ◀ / ▶ 加侧旋、− / ＋ 调强度，再轻点屏幕抛球（恒定上旋深发球 · 两跳落对方半台）。<br>
+  背后是 AI 演示对局 · 点击「开始比赛 / AI 斗蛐蛐」按钮开始</div>
+</div>
+
+<div id="endOverlay" class="overlay hidden">
+  <div class="ov-kicker" id="endKicker">比赛结束</div>
+  <h1 class="ov-title" id="endTitle">胜利!</h1>
+  <div class="ov-score" id="endScore">11 : 7</div>
+  <div class="ov-sub" id="endStats"></div>
+  <div class="ov-btns">
+    <button class="btn primary" id="btnAgain"><span>再来一局 ▶</span></button>
+    <button class="btn" id="btnMenu"><span>主菜单</span></button>
+  </div>
+  <div id="confetti"></div>
+</div>
+
+<div id="helpOverlay" class="overlay hidden">
+  <div class="ov-kicker">操作指南 · CONTROLS</div>
+  <h2 class="ov-title ov-title-sm">完整键位与技巧</h2>
+  <div class="ov-controls">
+    <div class="oc-group mouse-only">
+      <h3>移动与瞄准</h3>
+      <div><kbd>鼠标左右</kbd><span>移动球拍 · 控制落点左右</span></div>
+      <div><kbd>鼠标上下</kbd><span>压深/摆短 · 上推压平快攻 · 下拉拉高弧圈</span></div>
+      <div><kbd>红色准星</kbd><span>瞄准落点（反手时更宽）</span></div>
+    </div>
+    <div class="oc-group mouse-only">
+      <h3>击球技术</h3>
+      <div><kbd>横向滑动</kbd><span>强力侧旋 · 空中拐弯</span></div>
+      <div><kbd>自动换面</kbd><span>按球位自动选正/反手 · 反手位快撕中等以上旋转来球</span></div>
+      <div><kbd>Ctrl</kbd><span>搓球（拍面放平）· 不按=拉球 · 抢点易下网</span></div>
+      <div><kbd>点击 / 空格</kbd><span>发球 · 高球正手可扣杀</span></div>
+    </div>
+    <div class="oc-group mouse-only">
+      <h3>发球与系统</h3>
+      <div><kbd>S / D</kbd><span>左 / 右侧旋（发球恒定上旋 · 深发球两跳落对方半台）</span></div>
+      <div><kbd>Q / E</kbd><span>旋转强度 弱 / 强（发球前调）</span></div>
+      <div><kbd>R</kbd><span>重置比分</span></div>
+      <div><kbd>M</kbd><span>音效开关</span></div>
+    </div>
+    <div class="oc-group touch-only">
+      <h3>移动与瞄准</h3>
+      <div><kbd>手指拖动</kbd><span>移动球拍 · 控制落点左右与深浅</span></div>
+      <div><kbd>上推 / 下拉</kbd><span>上推压平快攻 · 下拉拉高弧圈（球拍悬于手指上方）</span></div>
+      <div><kbd>红色准星</kbd><span>瞄准落点（反手时更宽）</span></div>
+    </div>
+    <div class="oc-group touch-only">
+      <h3>击球技术</h3>
+      <div><kbd>快速横滑</kbd><span>强力侧旋 · 空中拐弯 · 爆冲爆扣</span></div>
+      <div><kbd>自动换面</kbd><span>按球位自动选正/反手 · 反手位快撕中等以上旋转来球</span></div>
+      <div><kbd>「搓」钮</kbd><span>按住搓球（拍面放平）· 不按=拉球 · 抢点易下网</span></div>
+      <div><kbd>轻点屏幕</kbd><span>发球 · 高球正手可扣杀</span></div>
+    </div>
+    <div class="oc-group touch-only">
+      <h3>发球与系统</h3>
+      <div><kbd>◀ / ▶ 钮</kbd><span>按住 = 左 / 右侧旋（发球恒定上旋 · 两跳落对方半台）</span></div>
+      <div><kbd>− / ＋ 钮</kbd><span>旋转强度 弱 / 强（发球前调）</span></div>
+      <div><kbd>右上按钮</kbd><span>重置比分 · 音效开关</span></div>
+      <div><kbd>✕ 钮</kbd><span>观看模式退出</span></div>
+    </div>
+  </div>
+  <button class="btn primary" id="btnHelpClose"><span>关闭 ✕</span></button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/constants.js"></script>
+<script src="js/simcore.js"></script>
+<script src="js/policy.js"></script>
+<script src="js/opponent-ladder.js"></script>
+<script src="js/learned-policy.js"></script>
+<script src="js/learned-policy-grandslam.js"></script>
+<script src="js/dqn.js"></script>
+<script src="js/input-agent.js"></script>
+<script src="js/input-weights.js"></script>
+<script src="js/scene.js"></script>
+
+<script src="js/entities.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/state.js"></script>
+<script src="js/tt-stats.js"></script>
+<script src="js/player-log.js"></script>
+
+<script src="js/ui.js"></script>
+<script src="js/rules.js"></script>
+
+<script src="js/physics.js"></script>
+<script src="js/ai.js"></script>
+<script src="js/tt-player.js"></script>
+<script src="js/input.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+[
+  {
+    "ep": 20,
+    "phase": "elite",
+    "trainW": 35,
+    "evalPhase": 33,
+    "evalTop": 35.1,
+    "evalDef": 29.3,
+    "best": 33,
+    "bestTop": 35.1,
+    "eps": 0.15
+  },
+  {
+    "ep": 40,
+    "phase": "extreme-max",
+    "trainW": 35,
+    "evalPhase": 40.2,
+    "evalTop": 40.4,
+    "evalDef": 54,
+    "best": 43.7,
+    "bestTop": 40.4,
+    "eps": 0.15
+  }
+]

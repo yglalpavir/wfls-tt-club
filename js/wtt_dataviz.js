@@ -777,6 +777,7 @@ function wttRenderComparison(playerA, playerB) {
         }
         if (Object.keys(scores).length === 0 && initialScoresData) Object.assign(scores, initialScoresData.initialScores);
         const sortedLog = [...scoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
+        const matchOccMap = computeMatchOccurrenceMap(sortedLog);
 
         // 确定赛季起始日期，跳过之前的记录
         const h2hSeasonStart = (seasonsData && seasonsData.length > 0 && h2h.length > 0) ? (() => { const d = h2h[0]['日期']; for (const s of seasonsData) { if (d >= s.startDate && d <= s.endDate) return s.startDate; } return seasonsData[seasonsData.length - 1].startDate; })() : '';
@@ -793,7 +794,7 @@ function wttRenderComparison(playerA, playerB) {
             const aChange = aIsW ? wg : -(wg * LOSER_POINT_MULTIPLIER);
             const bChange = aIsW ? -(wg * LOSER_POINT_MULTIPLIER) : wg;
             html += `<tr>
-                <td><a class="player-name-link" href="${escapeHtml(buildMatchDetailUrl(m['日期'], m['类型'], w, l, undefined, wttCurrentCategory))}">${escapeHtml(m['日期'])}</a></td><td>${escapeHtml(m['类型'])}</td><td>${escapeHtml(w)}</td>
+                <td><a class="player-name-link" href="${escapeHtml(buildMatchDetailUrl(m['日期'], m['类型'], w, l, matchOccMap.get(m), wttCurrentCategory))}">${escapeHtml(m['日期'])}</a></td><td>${escapeHtml(m['类型'])}</td><td>${escapeHtml(w)}</td>
                 <td class="${aIsW ? 'win-highlight' : 'loss-highlight'}">${aChange > 0 ? '+' : ''}${aChange.toFixed(1)}</td>
                 <td class="${!aIsW ? 'win-highlight' : 'loss-highlight'}">${bChange > 0 ? '+' : ''}${bChange.toFixed(1)}</td>
             </tr>`;

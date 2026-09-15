@@ -1,0 +1,57 @@
+/* ============================================================
+ *  base.css — 全局基础样式（重做版 · AURORA ARENA 设计系统）
+ *  设计语言：深色空间底 + 玻璃拟态面板 + 圆角胶囊 + 精致霓虹点缀
+ * ============================================================ */
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  /* 字体：展示数字用 Rajdhani（无网络时回退 Impact 系），正文用系统栈 */
+  --disp:'Rajdhani','Haettenschweiler','Impact','Arial Narrow Bold','Microsoft YaHei',sans-serif;
+  --body:'Rajdhani','Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',system-ui,sans-serif;
+  --mono:'JetBrains Mono','Consolas','SFMono-Regular',monospace;
+
+  /* 阵营色 */
+  --you:#ff4d61;  --you-soft:#ff8a94;  --you-dim:rgba(255,77,97,.14);
+  --ai:#4d9fff;   --ai-soft:#8fc4ff;   --ai-dim:rgba(77,159,255,.14);
+  --gold:#ffc95c; --gold-soft:#ffe1a3; --gold-dim:rgba(255,201,92,.12);
+  --mint:#5eead4; --cyan:#67e8f9;
+
+  /* 玻璃面板 */
+  --glass:rgba(15,20,32,.55);
+  --glass-hi:rgba(23,30,46,.62);
+  --glass-lo:rgba(9,12,20,.6);
+  --line:rgba(255,255,255,.09);
+  --line-hi:rgba(255,255,255,.18);
+  --blur:blur(16px) saturate(1.5);
+
+  /* 文本 */
+  --t-dim:#828da3; --t-mid:#a9b3c7; --t-hi:#f2f5fb;
+
+  /* 圆角与阴影 */
+  --r-lg:20px; --r-md:14px; --r-pill:999px;
+  --shadow-lg:0 20px 60px rgba(0,0,0,.55);
+  --shadow-md:0 10px 30px rgba(0,0,0,.45);
+}
+
+html,body{height:100%;overflow:hidden;color:var(--t-hi);
+  background:
+    radial-gradient(1200px 700px at 18% -10%,rgba(77,159,255,.07),transparent 60%),
+    radial-gradient(1000px 700px at 85% 110%,rgba(255,77,97,.06),transparent 60%),
+    #05070d;
+  font-family:var(--body);user-select:none;-webkit-user-select:none;
+  overscroll-behavior:none;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;
+  cursor:crosshair}
+
+canvas{position:fixed;inset:0;z-index:0;display:block;touch-action:none}
+
+#hud{position:fixed;inset:0;z-index:5;pointer-events:none;touch-action:none}
+button{pointer-events:auto;cursor:pointer;font-family:var(--body);touch-action:manipulation}
+
+::selection{background:rgba(255,201,92,.3)}
+
+/* 全局通用：隐藏类（JS 依赖） */
+.hidden{display:none !important}
+
+/* 通用玻璃面板 mixin（以类形式复用） */
+.glass{background:var(--glass);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
+  border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow-md)}

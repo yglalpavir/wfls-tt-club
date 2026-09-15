@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>乒乓·训练控制台 — Web UI 可视化训练</title>
+<link rel="stylesheet" href="css/train.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+/* CDN 容错：cdnjs 主源不可达时同步回退 jsdelivr（document.write 在解析期执行，
+   保证 train-ui.js 加载时 Chart 已就绪，不会误判为离线）。 */
+if(typeof Chart === 'undefined'){
+  document.write('<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"><\/script>');
+}
+</script>
+</head>
+<body>
+<div class="app">
+
+  <header class="topbar">
+    <div class="brand">
+      <b>乒乓·训练控制台</b>
+      <span>TT ARENA / TRAIN LAB</span>
+    </div>
+    <span class="dot" id="srvDot"></span><span class="hint" id="srvHint">连接中…</span>
+    <div class="spacer"></div>
+    <span class="hint" id="nodeHint"></span>
+    <button class="btn ghost" id="btnRefresh"><span>↻ 刷新</span></button>
+    <a class="btn ghost" href="/"><span>← 返回游戏</span></a>
+  </header>
+
+  <div class="banner" id="banner"></div>
+
+  <section class="cards" id="cards"></section>
+
+  <main class="workspace">
+
+    <aside class="panel">
+      <div class="hd"><span id="cfgTitle">配置</span><span class="tag" id="cfgScript"></span></div>
+      <div class="body" id="cfgBody">
+        <div class="sec-t">预设</div>
+        <div class="presets" id="presets"></div>
+
+        <label class="chk" style="margin-bottom:10px">
+          <input type="checkbox" id="chkDry" checked>
+          <span>实验模式 · 不覆盖生产权重</span>
+          <span class="k">dryRun</span>
+        </label>
+
+        <div class="sec-t">参数</div>
+        <div class="fields" id="fields"></div>
+
+        <div class="divider"></div>
+        <div class="sec-t">开关</div>
+        <div class="chks" id="flags"></div>
+
+        <div class="divider"></div>
+        <div class="sec-t">额外命令行</div>
+        <div class="rawrow">
+          <input id="rawArgs" type="text" placeholder="--extra --flags" spellcheck="false">
+          <button class="btn sm" id="btnApplyRaw">应用</button>
+        </div>
+
+        <div class="cmdbox" id="cmdbox">尚未生成命令</div>
+        <div class="warn ok" id="warnBox"><b>实验模式</b>：不覆盖生产权重</div>
+      </div>
+      <div class="runbar">
+        <button class="btn go" id="btnRun"><span>▶ 启动训练</span></button>
+        <button class="btn stop" id="btnStop" disabled><span>■ 停止</span></button>
+        <span class="status"><span class="dot" id="runDot"></span><span id="runStatus">空闲</span></span>
+      </div>
+    </aside>
+
+    <section class="stage">
+
+      <div class="panel chartbox">
+        <div class="hd">
+          <span id="chartTitle">训练曲线</span>
+          <span class="tag" id="chartTag"></span>
+          <span class="spacer" style="flex:1"></span>
+          <label class="chk" style="font-size:11px"><input type="checkbox" id="chkNorm">x 轴归一化</label>
+        </div>
+        <div class="chartwrap"><canvas id="chart"></canvas></div>
+        <div class="legend" id="legend"></div>
+        <div class="readout" id="readout"></div>
+      </div>
+
+      <div class="panel tabs">
+        <div class="tabbar">
+          <button data-tab="log" class="on">实时日志</button>
+          <button data-tab="runs">运行历史</button>
+          <button data-tab="curves">曲线历史</button>
+          <button data-tab="logs">训练日志文件</button>
+          <div class="side">
+            <label class="chk" style="font-size:11px"><input type="checkbox" id="chkAuto" checked>自动滚动</label>
+            <button class="btn sm ghost" id="btnClear">清空</button>
+          </div>
+        </div>
+
+        <div class="tabpane on" id="tab-log">
+          <div class="logbox" id="logbox"></div>
+        </div>
+
+        <div class="tabpane" id="tab-runs">
+          <div class="panescroll">
+            <table id="runsTable">
+              <thead><tr>
+                <th>时间</th><th>模型</th><th>命令</th><th>状态</th><th>时长</th>
+                <th>点数</th><th>最佳</th><th>结果</th>
+              </tr></thead>
+              <tbody></tbody>
+            </table>
+            <div class="empty" id="runsEmpty" style="display:none">暂无运行记录</div>
+          </div>
+        </div>
+
+        <div class="tabpane" id="tab-curves">
+          <div class="panescroll">
+            <table id="curvesTable">
+              <thead><tr>
+                <th>文件</th><th>模型</th><th>点数</th><th>大小</th><th>修改时间</th>
+              </tr></thead>
+              <tbody></tbody>
+            </table>
+            <div class="empty" id="curvesEmpty" style="display:none">未发现曲线文件</div>
+          </div>
+        </div>
+
+        <div class="tabpane" id="tab-logs">
+          <div class="panescroll">
+            <table id="logsTable">
+              <thead><tr><th>文件</th><th>大小</th><th>修改时间</th><th>预览</th></tr></thead>
+              <tbody></tbody>
+            </table>
+            <div class="empty" id="logsEmpty" style="display:none">根目录没有 .log / .err 文件</div>
+            <div class="logbox" id="logFileView" style="display:none; margin-top:8px; max-height:260px"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="js/train-ui.js"></script>
+</body>
+</html>

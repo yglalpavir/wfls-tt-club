@@ -1,0 +1,38 @@
+输入级 AI 极端对手课程续训（v3）
+  起点权重：data\tmp-arm-adam-llr.json
+  网络形状：128×88 → 192×128 → 128×192 → 952×128（952 动作 = 34×14×2）
+  课程：hell=20% → elite=28% → extreme=30% → extreme-max=22%
+  games=1000 eval=16 step=200 jitter=0.06 seed=20260911
+  优化器：adam+layerlr
+BC 保鲜池 2120 条（120 局追球监督 · 在线混入 6% → 压到 6% · 周期性重锚 0 pass/100局）
+基线（起点权重）：default=38.2%  hell=39.9%  elite=36.7%  extreme=35.9%  extreme-max=38.5%
+选优基线：best=38.9（vs默认=38.2%，护栏下限 33.2%）
+预填回放 200 回合 → 回放 3778 条样本（贪心当前策略 · 课程对手 · 胜率 42% · 2s）
+
+—— 课程进入第 1/4 阶段：对手=hell（占 20%，第 0-200 局）——
+ep   200 [hell]  train=40%  vs本档=38.7%  vsextreme-max=42.2%  vs默认=36.0%  best=39.6  eps=0.16  [343s]
+
+—— 课程进入第 2/4 阶段：对手=elite（占 28%，第 200-480 局）——
+ep   400 [elite]  train=40%  vs本档=39.7%  vsextreme-max=38.6%  vs默认=47.3%  best=41.1  eps=0.15  [596s]
+
+—— 课程进入第 3/4 阶段：对手=extreme（占 30%，第 480-780 局）——
+ep   600 [extreme]  train=42%  vs本档=43.7%  vsextreme-max=47.2%  vs默认=37.3%  best=41.1  eps=0.15  [942s]
+
+—— 课程进入第 4/4 阶段：对手=extreme-max（占 22%，第 780-1000 局）——
+ep   800 [extreme-max]  train=43%  vs本档=49.3%  vsextreme-max=45.5%  vs默认=38.8%  best=41.1  eps=0.15  [1237s]
+  ↻ ε 循环：注入探索脉冲（第 1000 局，ε→0.48）
+ep  1000 [extreme-max]  train=43%  vs本档=45.2%  vsextreme-max=47.2%  vs默认=44.7%  best=45.9  eps=0.15  [1491s]
+
+=== 最佳权重最终评估（80 局/档）===
+  对手            新权重        起点权重
+  default         42.1%    38.2%  +4.0
+  hell            41.7%    39.9%  +1.8
+  elite           41.7%    36.7%  +5.0
+  extreme         46.5%    35.9%  +10.6
+  extreme-max     48.3%    38.5%  +9.7
+已写 tools\input-curve-cont-1000.json
+✅ 采纳：已保存 data\tmp-cont-1000.json（vs extreme-max 48.3% ← 基线 38.5%）
+
+下一步：
+  1) 烘焙进实机：  node tools/bake-input.js data/tmp-cont-1000.json 0.482 0.421
+  2) 继续加压续训：node tools/train-input3.js --from data/tmp-cont-1000.json --games 3000 --eval 32 --step 75

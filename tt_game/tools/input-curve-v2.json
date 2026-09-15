@@ -1,0 +1,514 @@
+[
+  {
+    "ep": 25,
+    "trainW": "24.0",
+    "evalHell": "64.9",
+    "evalDef": "78.2",
+    "bestH": "64.9",
+    "eps": 0.99
+  },
+  {
+    "ep": 50,
+    "trainW": "22.0",
+    "evalHell": "66.2",
+    "evalDef": "83.5",
+    "bestH": "66.2",
+    "eps": 0.99
+  },
+  {
+    "ep": 75,
+    "trainW": "22.7",
+    "evalHell": "64.9",
+    "evalDef": "80.3",
+    "bestH": "66.2",
+    "eps": 0.98
+  },
+  {
+    "ep": 100,
+    "trainW": "29.0",
+    "evalHell": "62.4",
+    "evalDef": "82.6",
+    "bestH": "66.2",
+    "eps": 0.97
+  },
+  {
+    "ep": 125,
+    "trainW": "29.6",
+    "evalHell": "64.4",
+    "evalDef": "83.3",
+    "bestH": "66.2",
+    "eps": 0.97
+  },
+  {
+    "ep": 150,
+    "trainW": "30.0",
+    "evalHell": "67.2",
+    "evalDef": "83.7",
+    "bestH": "67.2",
+    "eps": 0.96
+  },
+  {
+    "ep": 175,
+    "trainW": "28.6",
+    "evalHell": "67.6",
+    "evalDef": "83.7",
+    "bestH": "67.6",
+    "eps": 0.96
+  },
+  {
+    "ep": 200,
+    "trainW": "30.5",
+    "evalHell": "62.4",
+    "evalDef": "86.8",
+    "bestH": "67.6",
+    "eps": 0.95
+  },
+  {
+    "ep": 225,
+    "trainW": "30.2",
+    "evalHell": "60.9",
+    "evalDef": "82.7",
+    "bestH": "67.6",
+    "eps": 0.94
+  },
+  {
+    "ep": 250,
+    "trainW": "30.8",
+    "evalHell": "62.6",
+    "evalDef": "83.2",
+    "bestH": "67.6",
+    "eps": 0.94
+  },
+  {
+    "ep": 275,
+    "trainW": "31.3",
+    "evalHell": "60.9",
+    "evalDef": "85.6",
+    "bestH": "67.6",
+    "eps": 0.93
+  },
+  {
+    "ep": 300,
+    "trainW": "31.3",
+    "evalHell": "61.8",
+    "evalDef": "84.8",
+    "bestH": "67.6",
+    "eps": 0.92
+  },
+  {
+    "ep": 325,
+    "trainW": "32.6",
+    "evalHell": "62.9",
+    "evalDef": "85.3",
+    "bestH": "67.6",
+    "eps": 0.92
+  },
+  {
+    "ep": 350,
+    "trainW": "31.7",
+    "evalHell": "64.1",
+    "evalDef": "84.9",
+    "bestH": "67.6",
+    "eps": 0.91
+  },
+  {
+    "ep": 375,
+    "trainW": "32.5",
+    "evalHell": "63.5",
+    "evalDef": "83.7",
+    "bestH": "67.6",
+    "eps": 0.9
+  },
+  {
+    "ep": 400,
+    "trainW": "32.8",
+    "evalHell": "63.1",
+    "evalDef": "85.6",
+    "bestH": "67.6",
+    "eps": 0.9
+  },
+  {
+    "ep": 425,
+    "trainW": "33.4",
+    "evalHell": "61.9",
+    "evalDef": "84.3",
+    "bestH": "67.6",
+    "eps": 0.89
+  },
+  {
+    "ep": 450,
+    "trainW": "33.8",
+    "evalHell": "61.4",
+    "evalDef": "85.9",
+    "bestH": "67.6",
+    "eps": 0.89
+  },
+  {
+    "ep": 475,
+    "trainW": "33.9",
+    "evalHell": "56.2",
+    "evalDef": "80.9",
+    "bestH": "67.6",
+    "eps": 0.88
+  },
+  {
+    "ep": 500,
+    "trainW": "34.4",
+    "evalHell": "64.6",
+    "evalDef": "85.3",
+    "bestH": "67.6",
+    "eps": 0.55
+  },
+  {
+    "ep": 525,
+    "trainW": "35.2",
+    "evalHell": "62.0",
+    "evalDef": "84.1",
+    "bestH": "67.6",
+    "eps": 0.54
+  },
+  {
+    "ep": 550,
+    "trainW": "36.0",
+    "evalHell": "63.9",
+    "evalDef": "85.4",
+    "bestH": "67.6",
+    "eps": 0.54
+  },
+  {
+    "ep": 575,
+    "trainW": "36.9",
+    "evalHell": "59.9",
+    "evalDef": "86.3",
+    "bestH": "67.6",
+    "eps": 0.53
+  },
+  {
+    "ep": 600,
+    "trainW": "37.7",
+    "evalHell": "61.5",
+    "evalDef": "81.9",
+    "bestH": "67.6",
+    "eps": 0.52
+  },
+  {
+    "ep": 625,
+    "trainW": "37.9",
+    "evalHell": "61.8",
+    "evalDef": "88.0",
+    "bestH": "67.6",
+    "eps": 0.52
+  },
+  {
+    "ep": 650,
+    "trainW": "38.9",
+    "evalHell": "59.1",
+    "evalDef": "86.6",
+    "bestH": "67.6",
+    "eps": 0.51
+  },
+  {
+    "ep": 675,
+    "trainW": "39.6",
+    "evalHell": "62.6",
+    "evalDef": "85.1",
+    "bestH": "67.6",
+    "eps": 0.51
+  },
+  {
+    "ep": 700,
+    "trainW": "40.0",
+    "evalHell": "62.2",
+    "evalDef": "80.3",
+    "bestH": "67.6",
+    "eps": 0.5
+  },
+  {
+    "ep": 725,
+    "trainW": "40.3",
+    "evalHell": "65.8",
+    "evalDef": "86.6",
+    "bestH": "67.6",
+    "eps": 0.49
+  },
+  {
+    "ep": 750,
+    "trainW": "40.9",
+    "evalHell": "63.3",
+    "evalDef": "85.4",
+    "bestH": "67.6",
+    "eps": 0.49
+  },
+  {
+    "ep": 775,
+    "trainW": "41.2",
+    "evalHell": "61.9",
+    "evalDef": "85.1",
+    "bestH": "67.6",
+    "eps": 0.48
+  },
+  {
+    "ep": 800,
+    "trainW": "41.6",
+    "evalHell": "63.3",
+    "evalDef": "85.9",
+    "bestH": "67.6",
+    "eps": 0.47
+  },
+  {
+    "ep": 825,
+    "trainW": "42.5",
+    "evalHell": "62.7",
+    "evalDef": "85.6",
+    "bestH": "67.6",
+    "eps": 0.47
+  },
+  {
+    "ep": 850,
+    "trainW": "42.9",
+    "evalHell": "66.8",
+    "evalDef": "86.1",
+    "bestH": "67.6",
+    "eps": 0.46
+  },
+  {
+    "ep": 875,
+    "trainW": "43.7",
+    "evalHell": "61.9",
+    "evalDef": "85.8",
+    "bestH": "67.6",
+    "eps": 0.45
+  },
+  {
+    "ep": 900,
+    "trainW": "44.4",
+    "evalHell": "61.6",
+    "evalDef": "84.1",
+    "bestH": "67.6",
+    "eps": 0.45
+  },
+  {
+    "ep": 925,
+    "trainW": "45.4",
+    "evalHell": "63.1",
+    "evalDef": "86.6",
+    "bestH": "67.6",
+    "eps": 0.44
+  },
+  {
+    "ep": 950,
+    "trainW": "45.8",
+    "evalHell": "61.9",
+    "evalDef": "84.3",
+    "bestH": "67.6",
+    "eps": 0.44
+  },
+  {
+    "ep": 975,
+    "trainW": "46.5",
+    "evalHell": "59.1",
+    "evalDef": "88.0",
+    "bestH": "67.6",
+    "eps": 0.43
+  },
+  {
+    "ep": 1000,
+    "trainW": "46.9",
+    "evalHell": "60.3",
+    "evalDef": "85.9",
+    "bestH": "67.6",
+    "eps": 0.55
+  },
+  {
+    "ep": 1025,
+    "trainW": "47.4",
+    "evalHell": "60.8",
+    "evalDef": "84.3",
+    "bestH": "67.6",
+    "eps": 0.54
+  },
+  {
+    "ep": 1050,
+    "trainW": "47.6",
+    "evalHell": "58.8",
+    "evalDef": "86.8",
+    "bestH": "67.6",
+    "eps": 0.54
+  },
+  {
+    "ep": 1075,
+    "trainW": "47.5",
+    "evalHell": "64.2",
+    "evalDef": "86.4",
+    "bestH": "67.6",
+    "eps": 0.53
+  },
+  {
+    "ep": 1100,
+    "trainW": "47.8",
+    "evalHell": "60.8",
+    "evalDef": "86.4",
+    "bestH": "67.6",
+    "eps": 0.52
+  },
+  {
+    "ep": 1125,
+    "trainW": "48.3",
+    "evalHell": "63.7",
+    "evalDef": "83.8",
+    "bestH": "67.6",
+    "eps": 0.52
+  },
+  {
+    "ep": 1150,
+    "trainW": "49.0",
+    "evalHell": "63.1",
+    "evalDef": "88.4",
+    "bestH": "67.6",
+    "eps": 0.51
+  },
+  {
+    "ep": 1175,
+    "trainW": "49.2",
+    "evalHell": "63.3",
+    "evalDef": "86.1",
+    "bestH": "67.6",
+    "eps": 0.51
+  },
+  {
+    "ep": 1200,
+    "trainW": "49.5",
+    "evalHell": "64.8",
+    "evalDef": "85.4",
+    "bestH": "67.6",
+    "eps": 0.5
+  },
+  {
+    "ep": 1225,
+    "trainW": "49.6",
+    "evalHell": "61.2",
+    "evalDef": "83.5",
+    "bestH": "67.6",
+    "eps": 0.49
+  },
+  {
+    "ep": 1250,
+    "trainW": "49.6",
+    "evalHell": "60.9",
+    "evalDef": "82.7",
+    "bestH": "67.6",
+    "eps": 0.49
+  },
+  {
+    "ep": 1275,
+    "trainW": "49.8",
+    "evalHell": "62.0",
+    "evalDef": "87.5",
+    "bestH": "67.6",
+    "eps": 0.48
+  },
+  {
+    "ep": 1300,
+    "trainW": "50.3",
+    "evalHell": "61.0",
+    "evalDef": "82.5",
+    "bestH": "67.6",
+    "eps": 0.47
+  },
+  {
+    "ep": 1325,
+    "trainW": "50.4",
+    "evalHell": "62.5",
+    "evalDef": "87.5",
+    "bestH": "67.6",
+    "eps": 0.47
+  },
+  {
+    "ep": 1350,
+    "trainW": "50.3",
+    "evalHell": "61.5",
+    "evalDef": "86.1",
+    "bestH": "67.6",
+    "eps": 0.46
+  },
+  {
+    "ep": 1375,
+    "trainW": "50.5",
+    "evalHell": "61.6",
+    "evalDef": "81.9",
+    "bestH": "67.6",
+    "eps": 0.45
+  },
+  {
+    "ep": 1400,
+    "trainW": "50.6",
+    "evalHell": "62.3",
+    "evalDef": "85.3",
+    "bestH": "67.6",
+    "eps": 0.45
+  },
+  {
+    "ep": 1425,
+    "trainW": "50.7",
+    "evalHell": "61.0",
+    "evalDef": "85.9",
+    "bestH": "67.6",
+    "eps": 0.44
+  },
+  {
+    "ep": 1450,
+    "trainW": "50.5",
+    "evalHell": "57.3",
+    "evalDef": "84.5",
+    "bestH": "67.6",
+    "eps": 0.44
+  },
+  {
+    "ep": 1475,
+    "trainW": "50.6",
+    "evalHell": "60.5",
+    "evalDef": "82.9",
+    "bestH": "67.6",
+    "eps": 0.43
+  },
+  {
+    "ep": 1500,
+    "trainW": "50.6",
+    "evalHell": "63.5",
+    "evalDef": "83.7",
+    "bestH": "67.6",
+    "eps": 0.55
+  },
+  {
+    "ep": 1525,
+    "trainW": "50.6",
+    "evalHell": "64.3",
+    "evalDef": "83.3",
+    "bestH": "67.6",
+    "eps": 0.54
+  },
+  {
+    "ep": 1550,
+    "trainW": "50.9",
+    "evalHell": "60.9",
+    "evalDef": "86.3",
+    "bestH": "67.6",
+    "eps": 0.54
+  },
+  {
+    "ep": 1575,
+    "trainW": "50.9",
+    "evalHell": "63.8",
+    "evalDef": "84.9",
+    "bestH": "67.6",
+    "eps": 0.53
+  },
+  {
+    "ep": 1600,
+    "trainW": "51.2",
+    "evalHell": "62.3",
+    "evalDef": "84.1",
+    "bestH": "67.6",
+    "eps": 0.52
+  }
+]

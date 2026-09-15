@@ -1,0 +1,35 @@
+输入级 AI 极端对手课程续训（v3）
+  起点权重：data\input-ai-extreme.json
+  网络形状：128×88 → 192×128 → 128×192 → 952×128（952 动作 = 34×14×2）
+  课程：hell=20% → elite=28% → extreme=30% → extreme-max=22%
+  games=300 eval=8 step=100 jitter=0.06 seed=20260910
+  优化器：adam
+BC 保鲜池 2120 条（120 局追球监督 · 在线混入 6% → 压到 6% · 周期性重锚 0 pass/100局）
+基线（起点权重）：default=34.9%  hell=30.6%  elite=27.0%  extreme=25.7%  extreme-max=25.4%
+选优基线：best=29.3（vs默认=34.9%，护栏下限 29.9%）
+预填回放 100 回合 → 回放 1956 条样本（贪心当前策略 · 课程对手 · 胜率 28% · 1s）
+
+—— 课程进入第 1/4 阶段：对手=hell（占 20%，第 0-60 局）——
+
+—— 课程进入第 2/4 阶段：对手=elite（占 28%，第 60-144 局）——
+ep   100 [elite]  train=31%  vs本档=28.5%  vsextreme-max=30.2%  vs默认=30.9%  best=29.8  eps=0.15  [153s]
+
+—— 课程进入第 3/4 阶段：对手=extreme（占 30%，第 144-234 局）——
+ep   200 [extreme]  train=38%  vs本档=33.3%  vsextreme-max=24.8%  vs默认=34.1%  best=29.8  eps=0.15  [308s]
+
+—— 课程进入第 4/4 阶段：对手=extreme-max（占 22%，第 234-300 局）——
+ep   300 [extreme-max]  train=37%  vs本档=34.6%  vsextreme-max=25.4%  vs默认=30.7%  best=29.8  eps=0.15  [483s]
+
+=== 最佳权重最终评估（80 局/档）===
+  对手            新权重        起点权重
+  default         33.7%    34.9%  -1.2
+  hell            34.5%    30.6%  +4.0
+  elite           31.6%    27.0%  +4.6
+  extreme         35.5%    25.7%  +9.8
+  extreme-max     31.7%    25.4%  +6.2
+已写 tools\input-curve-arm-adam.json
+✅ 采纳：已保存 data\tmp-arm-adam.json（vs extreme-max 31.7% ← 基线 25.4%）
+
+下一步：
+  1) 烘焙进实机：  node tools/bake-input.js data/tmp-arm-adam.json 0.317 0.337
+  2) 继续加压续训：node tools/train-input3.js --from data/tmp-arm-adam.json --games 3000 --eval 32 --step 75

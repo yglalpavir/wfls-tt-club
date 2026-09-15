@@ -61,6 +61,7 @@ function renderScoreDetail() {
     // 从赛季初始积分开始计算
     const scores = { ...seasonStartScores };
     const allRecords = [...scoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
+    const matchOccMap = computeMatchOccurrenceMap(allRecords);
     const recordsWithScores = [];
     // 构建赛季内 [赛季开始日, 快照日] 的批次定格索引
     playerTypeBatches = buildPlayerTypeBatches(allRecords.filter(r => r['日期'] >= currentSeason.startDate && r['日期'] <= snapshotDate));
@@ -80,7 +81,7 @@ function renderScoreDetail() {
                 const decayedChange = isWinner ? decayedGain : -(decayedGain * LOSER_POINT_MULTIPLIER);
                 const scoreBefore = scores[player];
                 const scoreAfter = scoreBefore + decayedChange;
-                recordsWithScores.push({ date: record['日期'], type: record['类型'], opponent: isWinner ? record['负者'] : record['胜者'], isWinner, isBonus: false, scoreBefore, rawChange, decayedChange, scoreAfter, score: record['比分'] || null, games: Array.isArray(record['局分']) ? record['局分'] : null });
+                recordsWithScores.push({ date: record['日期'], type: record['类型'], opponent: isWinner ? record['负者'] : record['胜者'], isWinner, isBonus: false, scoreBefore, rawChange, decayedChange, scoreAfter, score: record['比分'] || null, games: Array.isArray(record['局分']) ? record['局分'] : null, n: matchOccMap.get(record) || 1 });
             }
             scores[w] = Math.max(SCORE_FLOOR, scores[w] + decayedGain);
             scores[l] = Math.max(SCORE_FLOOR, scores[l] - decayedGain * LOSER_POINT_MULTIPLIER);
@@ -107,7 +108,7 @@ function renderScoreDetail() {
         const signRaw = r.rawChange >= 0 ? '+' : '';
         const signDecayed = r.decayedChange >= 0 ? '+' : '';
         const changeDisplay = `${signRaw}${r.rawChange.toFixed(1)}（${signDecayed}${r.decayedChange.toFixed(1)}）`;
-        const mdUrl = escapeHtml(buildMatchDetailUrl(r.date, r.type, r.isWinner ? player : r.opponent, r.isWinner ? r.opponent : player));
+        const mdUrl = escapeHtml(buildMatchDetailUrl(r.date, r.type, r.isWinner ? player : r.opponent, r.isWinner ? r.opponent : player, r.n));
         const scoreCell = hasScore ? `<td${r.games && r.games.length ? ` title="${i18n[currentLang].sb_games_label || '局分'}：${escapeHtml(r.games.join(' '))}"` : ''}>${r.score ? escapeHtml(r.score) : '-'}</td>` : '';
         return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(r.type)}</td><td>${escapeHtml(r.opponent)}</td><td class="${rc}">${res}</td>${scoreCell}<td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${changeDisplay}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
     }).join('');

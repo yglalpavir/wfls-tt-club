@@ -1,0 +1,68 @@
+[
+  {
+    "ep": 150,
+    "phase": "hell",
+    "trainW": 69.3,
+    "evalPhase": 49,
+    "evalTop": 53.2,
+    "evalDef": 53.8,
+    "best": 66.4,
+    "bestTop": 59.9,
+    "eps": 0.16
+  },
+  {
+    "ep": 300,
+    "phase": "elite",
+    "trainW": 69.7,
+    "evalPhase": 48.3,
+    "evalTop": 45.1,
+    "evalDef": 52.4,
+    "best": 66.4,
+    "bestTop": 59.9,
+    "eps": 0.15
+  },
+  {
+    "ep": 450,
+    "phase": "extreme",
+    "trainW": 67.6,
+    "evalPhase": 53.1,
+    "evalTop": 54.2,
+    "evalDef": 59.1,
+    "best": 66.4,
+    "bestTop": 59.9,
+    "eps": 0.15
+  },
+  {
+    "ep": 600,
+    "phase": "extreme",
+    "trainW": 65.7,
+    "evalPhase": 61.5,
+    "evalTop": 65.7,
+    "evalDef": 65.2,
+    "best": 66.4,
+    "bestTop": 59.9,
+    "eps": 0.25
+  },
+  {
+    "ep": 750,
+    "phase": "extreme-max",
+    "trainW": 66,
+    "evalPhase": 58.4,
+    "evalTop": 58.3,
+    "evalDef": 67.1,
+    "best": 66.4,
+    "bestTop": 59.9,
+    "eps": 0.16
+  },
+  {
+    "ep": 900,
+    "phase": "extreme-max",
+    "trainW": 66.4,
+    "evalPhase": 74.7,
+    "evalTop": 74.4,
+    "evalDef": 74.5,
+    "best": 74.5,
+    "bestTop": 74.4,
+    "eps": 0.15
+  }
+]

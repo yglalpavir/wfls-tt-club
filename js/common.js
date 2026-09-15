@@ -1084,6 +1084,23 @@ function buildMatchDetailUrl(date, type, winner, loser, n, cat) {
     if (n && n > 1) url += '&n=' + n;
     return url;
 }
+// 同日同 (日期,类型,胜者,负者) 重复记录合法：返回 记录对象 → 当日第几次出现 的 Map。
+// 排序口径与 match-detail.js mdCompute() 完全一致（日期升序稳定排序，同日保持文件序），
+// 各列表页生成详情链接时必须带上该 n，否则同日重复对阵的 URL 会撞车、全都打开第 1 场。
+// Map 键为记录对象本身：请传入调用点本地正在遍历的那个数组（或其展开排序副本）。
+function computeMatchOccurrenceMap(log) {
+    const map = new Map();
+    if (!Array.isArray(log)) return map;
+    const sorted = [...log].sort((a, b) => String(a['日期'] || '').localeCompare(String(b['日期'] || '')));
+    const count = Object.create(null);
+    for (const r of sorted) {
+        if (!r || r['日期'] == null || r['胜者'] == null || r['负者'] == null) continue;
+        const key = r['日期'] + '|' + r['类型'] + '|' + r['胜者'] + '|' + r['负者'];
+        count[key] = (count[key] || 0) + 1;
+        map.set(r, count[key]);
+    }
+    return map;
+}
 // 名称规范化：按 players.json（含别名）把赛果中的名字归一到规范名
 function normalizePlayerName(raw) { if (raw == null) return raw; const p = nameIndex[raw]; return p && p.name ? p.name : raw; }
 const _ISO_DATE_RE = /^\d{4}-\d{2}-\d{2}$/;

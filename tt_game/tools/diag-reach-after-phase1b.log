@@ -1,0 +1,23 @@
+起点权重：L:\tt_game\data\input-ai-extreme.json
+  形状：128×88 → 192×128 → 128×192 → 952×128
+  每档 300 局
+
+  对手         仿真胜率    对手够不着占胜率    reach失败率(分/次)   失败类型
+  default      31.3%       1.1%        1.0%            ch-pos:1
+      玩家输球原因（共 206 次）：recv-out-recv:206
+  hell         31.7%       1.1%        1.0%            ch-pos:1
+      玩家输球原因（共 205 次）：recv-out-recv:205
+  elite        24.7%       0.0%        0.0%            
+      玩家输球原因（共 226 次）：recv-out-recv:226
+  extreme      24.0%       0.0%        0.0%            
+      玩家输球原因（共 228 次）：recv-out-recv:228
+  extreme-max  33.0%       0.0%        0.0%            
+      玩家输球原因（共 201 次）：recv-out-recv:201
+
+—— 同一批种子，对手换成「必达」（= 实机对手语义）——
+  对手         常规胜率    必达胜率    差值
+  default      31.3%      33.7%      -2.3pp
+  hell         31.7%      31.7%    +   0.0pp
+  elite        24.7%      26.0%      -1.3pp
+  extreme      24.0%      25.7%      -1.7pp
+  extreme-max  33.0%      33.0%    +   0.0pp

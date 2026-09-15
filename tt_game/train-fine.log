@@ -1,0 +1,121 @@
+输入级 AI 稳定化训练（v2 · endReward=1.5）· games=1800 · eval=40
+BC 样本 18032 条 · 单点监督拟合（长轮数抬上限）…
+  BC pass=2 eval=34.2%
+  BC pass=4 eval=35.9%
+  BC pass=6 eval=35.7%
+  BC pass=8 eval=36.1%
+  BC pass=10 eval=30.9%
+  BC pass=12 eval=34.4%
+  BC pass=14 eval=37.0%
+  BC pass=16 eval=36.9%
+  BC pass=18 eval=40.4%
+  BC pass=20 eval=42.8%
+  BC pass=22 eval=43.5%
+  BC pass=24 eval=49.6%
+  BC pass=26 eval=51.3%
+  BC pass=28 eval=52.6%
+  BC pass=30 eval=55.3%
+  BC pass=32 eval=58.4%
+  BC pass=34 eval=59.8%
+  BC pass=36 eval=60.9%
+  BC pass=38 eval=60.4%
+  BC pass=40 eval=63.1%
+  BC pass=42 eval=60.1%
+  BC pass=44 eval=63.5%
+  BC pass=46 eval=62.6%
+  BC pass=48 eval=64.3%
+  BC pass=50 eval=65.6%
+  BC pass=52 eval=65.9%
+  BC pass=54 eval=65.1%
+  BC pass=56 eval=66.0%
+  BC pass=58 eval=62.2%
+  BC pass=60 eval=69.4%
+  BC pass=62 eval=64.0%
+  BC pass=64 eval=64.7%
+  BC pass=66 eval=65.8%
+  BC pass=68 eval=62.7%
+  BC pass=70 eval=63.2%
+  BC pass=72 eval=60.8%
+  BC pass=74 eval=64.5%
+  BC pass=76 eval=54.4%
+  BC pass=78 eval=36.5%
+  BC pass=80 eval=42.7%
+BC 阶段完成 · 上限=42.7% · 进入 RL
+RL 训练开始 · opp=hell · games=1800 · eval=40
+ep   25  train=56%  evalHell=12.4%  evalDef=39.1%  bestH=12.4%  eps=0.99  [1692s]
+ep   50  train=48%  evalHell=5.4%  evalDef=32.3%  bestH=12.4%  eps=0.99  [1746s]
+ep   75  train=43%  evalHell=6.6%  evalDef=38.4%  bestH=12.4%  eps=0.98  [1800s]
+ep  100  train=44%  evalHell=14.2%  evalDef=40.8%  bestH=14.2%  eps=0.98  [1921s]
+ep  125  train=42%  evalHell=6.6%  evalDef=32.6%  bestH=14.2%  eps=0.97  [1974s]
+ep  150  train=43%  evalHell=13.0%  evalDef=41.2%  bestH=14.2%  eps=0.96  [2030s]
+ep  175  train=41%  evalHell=14.6%  evalDef=39.9%  bestH=14.6%  eps=0.96  [2087s]
+ep  200  train=40%  evalHell=15.4%  evalDef=35.3%  bestH=15.4%  eps=0.95  [2206s]
+ep  225  train=40%  evalHell=16.2%  evalDef=42.4%  bestH=16.2%  eps=0.94  [2263s]
+ep  250  train=40%  evalHell=13.7%  evalDef=39.3%  bestH=16.2%  eps=0.94  [2319s]
+ep  275  train=38%  evalHell=7.0%  evalDef=36.4%  bestH=16.2%  eps=0.93  [2374s]
+ep  300  train=38%  evalHell=11.8%  evalDef=40.9%  bestH=16.2%  eps=0.92  [2493s]
+ep  325  train=38%  evalHell=12.5%  evalDef=38.8%  bestH=16.2%  eps=0.92  [2548s]
+ep  350  train=37%  evalHell=13.4%  evalDef=40.8%  bestH=16.2%  eps=0.91  [2604s]
+ep  375  train=37%  evalHell=12.0%  evalDef=40.7%  bestH=16.2%  eps=0.90  [2660s]
+ep  400  train=37%  evalHell=14.9%  evalDef=43.4%  bestH=16.2%  eps=0.90  [2778s]
+ep  425  train=36%  evalHell=16.7%  evalDef=41.8%  bestH=16.7%  eps=0.89  [2834s]
+ep  450  train=36%  evalHell=18.2%  evalDef=48.5%  bestH=18.2%  eps=0.89  [2892s]
+ep  475  train=36%  evalHell=15.1%  evalDef=42.3%  bestH=18.2%  eps=0.88  [2948s]
+ep  500  train=36%  evalHell=10.0%  evalDef=39.3%  bestH=18.2%  eps=0.55  [3067s]
+ep  525  train=36%  evalHell=25.1%  evalDef=53.6%  bestH=25.1%  eps=0.54  [3124s]
+ep  550  train=36%  evalHell=22.4%  evalDef=58.0%  bestH=25.1%  eps=0.54  [3181s]
+ep  575  train=35%  evalHell=20.4%  evalDef=51.9%  bestH=25.1%  eps=0.53  [3237s]
+ep  600  train=34%  evalHell=11.6%  evalDef=38.3%  bestH=25.1%  eps=0.52  [3356s]
+ep  625  train=34%  evalHell=16.0%  evalDef=43.2%  bestH=25.1%  eps=0.52  [3411s]
+ep  650  train=34%  evalHell=20.1%  evalDef=52.4%  bestH=25.1%  eps=0.51  [3468s]
+ep  675  train=34%  evalHell=16.8%  evalDef=42.6%  bestH=25.1%  eps=0.51  [3524s]
+ep  700  train=34%  evalHell=10.9%  evalDef=39.8%  bestH=25.1%  eps=0.50  [3642s]
+ep  725  train=34%  evalHell=19.6%  evalDef=53.4%  bestH=25.1%  eps=0.49  [3699s]
+ep  750  train=35%  evalHell=10.9%  evalDef=41.7%  bestH=25.1%  eps=0.49  [3754s]
+ep  775  train=35%  evalHell=7.9%  evalDef=41.0%  bestH=25.1%  eps=0.48  [3809s]
+ep  800  train=34%  evalHell=8.1%  evalDef=39.4%  bestH=25.1%  eps=0.47  [3927s]
+ep  825  train=34%  evalHell=10.6%  evalDef=44.7%  bestH=25.1%  eps=0.47  [3983s]
+ep  850  train=34%  evalHell=17.0%  evalDef=49.5%  bestH=25.1%  eps=0.46  [4041s]
+ep  875  train=34%  evalHell=20.9%  evalDef=53.0%  bestH=25.1%  eps=0.45  [4099s]
+ep  900  train=34%  evalHell=9.3%  evalDef=37.0%  bestH=25.1%  eps=0.45  [4218s]
+ep  925  train=34%  evalHell=11.1%  evalDef=39.7%  bestH=25.1%  eps=0.44  [4274s]
+ep  950  train=34%  evalHell=10.9%  evalDef=42.3%  bestH=25.1%  eps=0.44  [4331s]
+ep  975  train=34%  evalHell=9.8%  evalDef=36.7%  bestH=25.1%  eps=0.43  [4387s]
+ep 1000  train=34%  evalHell=11.3%  evalDef=39.3%  bestH=25.1%  eps=0.55  [4506s]
+ep 1025  train=34%  evalHell=14.1%  evalDef=43.2%  bestH=25.1%  eps=0.54  [4563s]
+ep 1050  train=34%  evalHell=20.4%  evalDef=52.8%  bestH=25.1%  eps=0.54  [4620s]
+ep 1075  train=34%  evalHell=14.7%  evalDef=46.7%  bestH=25.1%  eps=0.53  [4676s]
+ep 1100  train=34%  evalHell=7.4%  evalDef=39.3%  bestH=25.1%  eps=0.52  [4794s]
+ep 1125  train=34%  evalHell=16.3%  evalDef=44.3%  bestH=25.1%  eps=0.52  [4851s]
+ep 1150  train=34%  evalHell=54.9%  evalDef=73.4%  bestH=54.9%  eps=0.51  [4910s]
+ep 1175  train=34%  evalHell=14.7%  evalDef=45.1%  bestH=54.9%  eps=0.51  [4967s]
+ep 1200  train=34%  evalHell=10.4%  evalDef=39.4%  bestH=54.9%  eps=0.50  [5086s]
+ep 1225  train=34%  evalHell=10.8%  evalDef=40.6%  bestH=54.9%  eps=0.49  [5142s]
+ep 1250  train=34%  evalHell=5.0%  evalDef=34.6%  bestH=54.9%  eps=0.49  [5196s]
+ep 1275  train=34%  evalHell=7.2%  evalDef=40.9%  bestH=54.9%  eps=0.48  [5252s]
+ep 1300  train=34%  evalHell=10.9%  evalDef=42.3%  bestH=54.9%  eps=0.47  [5372s]
+ep 1325  train=34%  evalHell=11.5%  evalDef=43.0%  bestH=54.9%  eps=0.47  [5429s]
+ep 1350  train=34%  evalHell=9.3%  evalDef=34.4%  bestH=54.9%  eps=0.46  [5485s]
+ep 1375  train=34%  evalHell=18.1%  evalDef=48.5%  bestH=54.9%  eps=0.45  [5542s]
+ep 1400  train=34%  evalHell=13.0%  evalDef=46.0%  bestH=54.9%  eps=0.45  [5663s]
+ep 1425  train=33%  evalHell=7.6%  evalDef=38.0%  bestH=54.9%  eps=0.44  [5718s]
+ep 1450  train=33%  evalHell=18.1%  evalDef=43.0%  bestH=54.9%  eps=0.44  [5775s]
+ep 1475  train=33%  evalHell=14.2%  evalDef=45.0%  bestH=54.9%  eps=0.43  [5832s]
+ep 1500  train=33%  evalHell=12.7%  evalDef=43.1%  bestH=54.9%  eps=0.55  [5952s]
+ep 1525  train=33%  evalHell=19.7%  evalDef=44.7%  bestH=54.9%  eps=0.54  [6008s]
+ep 1550  train=33%  evalHell=20.0%  evalDef=47.8%  bestH=54.9%  eps=0.54  [6066s]
+ep 1575  train=33%  evalHell=32.9%  evalDef=52.2%  bestH=54.9%  eps=0.53  [6124s]
+ep 1600  train=33%  evalHell=16.3%  evalDef=46.5%  bestH=54.9%  eps=0.52  [6243s]
+ep 1625  train=33%  evalHell=12.5%  evalDef=34.3%  bestH=54.9%  eps=0.52  [6297s]
+ep 1650  train=33%  evalHell=30.6%  evalDef=51.8%  bestH=54.9%  eps=0.51  [6356s]
+ep 1675  train=33%  evalHell=40.1%  evalDef=59.8%  bestH=54.9%  eps=0.51  [6415s]
+ep 1700  train=33%  evalHell=32.2%  evalDef=52.0%  bestH=54.9%  eps=0.50  [6536s]
+ep 1725  train=33%  evalHell=21.1%  evalDef=44.0%  bestH=54.9%  eps=0.49  [6593s]
+ep 1750  train=33%  evalHell=29.5%  evalDef=50.5%  bestH=54.9%  eps=0.49  [6651s]
+ep 1775  train=33%  evalHell=11.1%  evalDef=38.5%  bestH=54.9%  eps=0.48  [6705s]
+ep 1800  train=33%  evalHell=32.1%  evalDef=51.8%  bestH=54.9%  eps=0.47  [6826s]
+
+=== v2 最佳权重最终评估 ===
+vs 地狱策略：55.0%  (792-648)
+vs 默认策略：71.5%  (876-349)
+✅ v2 权重已保存：data/input-ai-a952.json

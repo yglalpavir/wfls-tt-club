@@ -1,0 +1,800 @@
+[
+  {
+    "id": "r1-mtt1d9h7",
+    "model": "input3",
+    "modelName": "输入级 DQN (v3 极端对手课程)",
+    "cmd": "\"node tools/train-input3.js --from data/input-ai-extreme.json --save data/input-ai-extreme.json --curve tools/input-curve-v3-smoke.json --games 150 --eval 20 --step 50 --bcpairs 40 --bcmix 0.06 --bcpass 0 --preload 150 --learnp 2 --ckpt 120 --eps-reset 200 --jitter 0.06 --seed 20260909 --phases hell:0.20,elite:0.28,extreme:0.30,extreme-max:0.22 --no-save\"",
+    "dryRun": true,
+    "status": "done",
+    "code": 0,
+    "startedAt": 1788894115395,
+    "endedAt": 1788894391325,
+    "ticks": 7,
+    "last": {
+      "t": "done",
+      "mode": "input-extreme-curriculum",
+      "adopted": false,
+      "noWrite": true,
+      "vsTop": 0.7781,
+      "vsTopBase": 0.7118,
+      "vsDefault": 0.8103,
+      "games": 150,
+      "sec": 275.8
+    },
+    "best": {
+      "evalTop": 77.5,
+      "bestTop": 77.5,
+      "evalPhase": 81.5,
+      "evalDef": 82.1,
+      "best": 79.8,
+      "trainW": 60,
+      "eps": 0.15
+    },
+    "pts": [
+      {
+        "t": "verify",
+        "stage": "baseline",
+        "vsDefault": 0.732,
+        "vsTop": 0.7118,
+        "vsStartOpp": 0.7049,
+        "ladder": "default:0.732,hell:0.705,elite:0.668,extreme:0.699,extreme-max:0.712"
+      },
+      {
+        "t": "preload",
+        "games": 150,
+        "replay": 7627,
+        "winRate": 0.6,
+        "sec": 2.7
+      },
+      {
+        "t": "ep",
+        "sec": 100.3,
+        "ep": 50,
+        "phase": "elite",
+        "trainW": 60,
+        "evalPhase": 66.8,
+        "evalTop": 62.6,
+        "evalDef": 66,
+        "best": 71.5,
+        "bestTop": 71.2,
+        "eps": 0.15
+      },
+      {
+        "t": "ep",
+        "sec": 144.9,
+        "ep": 100,
+        "phase": "extreme",
+        "trainW": 59,
+        "evalPhase": 53.6,
+        "evalTop": 51.8,
+        "evalDef": 54.1,
+        "best": 71.5,
+        "bestTop": 71.2,
+        "eps": 0.15
+      },
+      {
+        "t": "ep",
+        "sec": 183.3,
+        "ep": 150,
+        "phase": "extreme-max",
+        "trainW": 60,
+        "evalPhase": 81.5,
+        "evalTop": 77.5,
+        "evalDef": 82.1,
+        "best": 79.8,
+        "bestTop": 77.5,
+        "eps": 0.15
+      },
+      {
+        "t": "verify",
+        "stage": "final",
+        "vsDefault": 0.8103,
+        "vsDefaultBase": 0.732,
+        "vsTop": 0.7781,
+        "vsTopBase": 0.7118,
+        "vsStartOpp": 0.8081,
+        "ladder": "default:0.810,hell:0.808,elite:0.834,extreme:0.748,extreme-max:0.778"
+      },
+      {
+        "t": "done",
+        "mode": "input-extreme-curriculum",
+        "adopted": false,
+        "noWrite": true,
+        "vsTop": 0.7781,
+        "vsTopBase": 0.7118,
+        "vsDefault": 0.8103,
+        "games": 150,
+        "sec": 275.8
+      }
+    ]
+  },
+  {
+    "id": "r6-mtrkska1",
+    "model": "selfplay",
+    "modelName": "自对弈 GA",
+    "cmd": "\"node tools/train.js --gens 5 --games 4 --pop 8 --smoke --no-write\"",
+    "dryRun": true,
+    "status": "done",
+    "code": 0,
+    "startedAt": 1788805809583,
+    "endedAt": 1788805809986,
+    "ticks": 3,
+    "last": {
+      "t": "smoke",
+      "tag": "默认 vs 玩家模型",
+      "winRate": 0.2281,
+      "winsA": 13,
+      "winsB": 44,
+      "games": 4,
+      "shots": 162
+    },
+    "best": {},
+    "pts": [
+      {
+        "t": "smoke",
+        "tag": "默认 vs 默认",
+        "winRate": 0.3857,
+        "winsA": 27,
+        "winsB": 43,
+        "games": 4,
+        "shots": 181
+      },
+      {
+        "t": "smoke",
+        "tag": "默认 vs 弱",
+        "winRate": 0.5181,
+        "winsA": 43,
+        "winsB": 40,
+        "games": 4,
+        "shots": 195
+      },
+      {
+        "t": "smoke",
+        "tag": "默认 vs 玩家模型",
+        "winRate": 0.2281,
+        "winsA": 13,
+        "winsB": 44,
+        "games": 4,
+        "shots": 162
+      }
+    ]
+  },
+  {
+    "id": "r5-mtrksjsx",
+    "model": "selfplay",
+    "modelName": "自对弈 GA",
+    "cmd": "\"node tools/train.js --gens 2 --games 3 --pop 4\"",
+    "dryRun": false,
+    "status": "error",
+    "code": null,
+    "startedAt": 1788805808967,
+    "endedAt": 1788805809589,
+    "ticks": 0,
+    "last": null,
+    "best": {},
+    "pts": []
+  },
+  {
+    "id": "r2-mtrksjsc",
+    "model": "hell",
+    "modelName": "地狱 AI 续训",
+    "cmd": "\"node tools/train-hell.js --gens 3 --games 8 --pop 6 --workers 4 --no-write\"",
+    "dryRun": true,
+    "status": "error",
+    "code": null,
+    "startedAt": 1788805808947,
+    "endedAt": 1788805809588,
+    "ticks": 0,
+    "last": null,
+    "best": {},
+    "pts": []
+  },
+  {
+    "id": "r3-mtrksjsk",
+    "model": "input",
+    "modelName": "输入级 DQN (v1)",
+    "cmd": "\"node tools/train-input.js --games 100 --eval 8 --step 25 --pret 20 --no-bake --no-save\"",
+    "dryRun": true,
+    "status": "error",
+    "code": null,
+    "startedAt": 1788805808953,
+    "endedAt": 1788805809586,
+    "ticks": 0,
+    "last": null,
+    "best": {},
+    "pts": []
+  },
+  {
+    "id": "r4-mtrksjsq",
+    "model": "input2",
+    "modelName": "输入级 DQN (v2 稳定化)",
+    "cmd": "\"node tools/train-input2.js --games 400 --eval 16 --step 50 --pret 40 --no-save\"",
+    "dryRun": true,
+    "status": "error",
+    "code": null,
+    "startedAt": 1788805808960,
+    "endedAt": 1788805809585,
+    "ticks": 0,
+    "last": null,
+    "best": {},
+    "pts": []
+  },
+  {
+    "id": "r1-mtrksjs0",
+    "model": "selfplay",
+    "modelName": "自对弈 GA",
+    "cmd": "\"node tools/train.js --gens 6 --games 4 --pop 4 --no-write\"",
+    "dryRun": true,
+    "status": "error",
+    "code": null,
+    "startedAt": 1788805808935,
+    "endedAt": 1788805809584,
+    "ticks": 0,
+    "last": null,
+    "best": {},
+    "pts": []
+  },
+  {
+    "id": "r4-mtrkit0e",
+    "model": "input",
+    "modelName": "输入级 DQN (v1)",
+    "cmd": "\"node tools/train-input.js --games 30 --eval 4 --step 10 --pret 0 --no-bake --no-save\"",
+    "dryRun": true,
+    "status": "error",
+    "code": null,
+    "startedAt": 1788805354341,
+    "endedAt": 1788805484872,
+    "ticks": 1,
+    "last": {
+      "t": "ep",
+      "lr": 0.00043,
+      "sec": 57,
+      "ep": 10,
+      "trainW": "60.0",
+      "evalW": "37.1",
+      "bestW": "37.1",
+      "eps": 1
+    },
+    "best": {
+      "evalW": 37.1,
+      "bestW": 37.1,
+      "trainW": 60,
+      "eps": 1
+    },
+    "pts": [
+      {
+        "t": "ep",
+        "lr": 0.00043,
+        "sec": 57,
+        "ep": 10,
+        "trainW": "60.0",
+        "evalW": "37.1",
+        "bestW": "37.1",
+        "eps": 1
+      }
+    ]
+  },
+  {
+    "id": "r3-mtrki84y",
+    "model": "input2",
+    "modelName": "输入级 DQN (v2 稳定化)",
+    "cmd": "\"node tools/train-input2.js --games 60 --eval 4 --step 20 --pret 1 --no-save\"",
+    "dryRun": true,
+    "status": "error",
+    "code": null,
+    "startedAt": 1788805327289,
+    "endedAt": 1788805352829,
+    "ticks": 2,
+    "last": {
+      "t": "bc",
+      "pass": 4,
+      "ep": 4,
+      "evalW": 46.1
+    },
+    "best": {},
+    "pts": [
+      {
+        "t": "bc",
+        "pass": 2,
+        "ep": 2,
+        "evalW": 36.8
+      },
+      {
+        "t": "bc",
+        "pass": 4,
+        "ep": 4,
+        "evalW": 46.1
+      }
+    ]
+  },
+  {
+    "id": "r2-mtrkfr3u",
+    "model": "selfplay",
+    "modelName": "自对弈 GA",
+    "cmd": "\"node tools/train.js --gens 400 --games 4 --pop 8 --seed 20260802 --no-write\"",
+    "dryRun": true,
+    "status": "error",
+    "code": null,
+    "startedAt": 1788805211905,
+    "endedAt": 1788805216908,
+    "ticks": 1,
+    "last": {
+      "t": "gen",
+      "evals": 32,
+      "sec": 3.4,
+      "gen": 0,
+      "fit": 0.4566,
+      "fDef": 0.4156,
+      "fPush": 0.4571,
+      "fPlayer": 0.4051,
+      "best": 0.5
+    },
+    "best": {
+      "fit": 0.4566,
+      "best": 0.5,
+      "fDef": 0.4156,
+      "fPush": 0.4571,
+      "fPlayer": 0.4051
+    },
+    "pts": [
+      {
+        "t": "gen",
+        "evals": 32,
+        "sec": 3.4,
+        "gen": 0,
+        "fit": 0.4566,
+        "fDef": 0.4156,
+        "fPush": 0.4571,
+        "fPlayer": 0.4051,
+        "best": 0.5
+      }
+    ]
+  },
+  {
+    "id": "r1-mtrkb2gj",
+    "model": "selfplay",
+    "modelName": "自对弈 GA",
+    "cmd": "\"node tools/train.js --gens 4 --games 4 --pop 8 --seed 20260802 --no-write\"",
+    "dryRun": true,
+    "status": "done",
+    "code": 0,
+    "startedAt": 1788804993340,
+    "endedAt": 1788805008451,
+    "ticks": 5,
+    "last": {
+      "t": "done",
+      "mode": "selfplay",
+      "fitness": 0.5853,
+      "vsDefault": 0.6099,
+      "vsPlayer": 0.461,
+      "vsPusher": 0.5828,
+      "winsVsDefault": 86,
+      "lossesVsDefault": 55,
+      "generations": 4,
+      "seed": 20260802,
+      "evals": 128,
+      "adopted": false,
+      "sec": 15.1
+    },
+    "best": {
+      "fit": 0.5853,
+      "best": 0.5853,
+      "fDef": 0.6197,
+      "fPush": 0.5634,
+      "fPlayer": 0.56
+    },
+    "pts": [
+      {
+        "t": "gen",
+        "evals": 32,
+        "sec": 3.5,
+        "gen": 0,
+        "fit": 0.5042,
+        "fDef": 0.5238,
+        "fPush": 0.5634,
+        "fPlayer": 0.4324,
+        "best": 0.5042
+      },
+      {
+        "t": "gen",
+        "evals": 64,
+        "sec": 7,
+        "gen": 1,
+        "fit": 0.5101,
+        "fDef": 0.494,
+        "fPush": 0.5,
+        "fPlayer": 0.5,
+        "best": 0.5101
+      },
+      {
+        "t": "gen",
+        "evals": 96,
+        "sec": 10.7,
+        "gen": 2,
+        "fit": 0.5441,
+        "fDef": 0.5857,
+        "fPush": 0.4231,
+        "fPlayer": 0.4419,
+        "best": 0.5441
+      },
+      {
+        "t": "gen",
+        "evals": 128,
+        "sec": 14.4,
+        "gen": 3,
+        "fit": 0.5853,
+        "fDef": 0.6197,
+        "fPush": 0.5395,
+        "fPlayer": 0.56,
+        "best": 0.5853
+      },
+      {
+        "t": "done",
+        "mode": "selfplay",
+        "fitness": 0.5853,
+        "vsDefault": 0.6099,
+        "vsPlayer": 0.461,
+        "vsPusher": 0.5828,
+        "winsVsDefault": 86,
+        "lossesVsDefault": 55,
+        "generations": 4,
+        "seed": 20260802,
+        "evals": 128,
+        "adopted": false,
+        "sec": 15.1
+      }
+    ]
+  },
+  {
+    "id": "r4-mtrk5mc9",
+    "model": "selfplay",
+    "modelName": "自对弈 GA",
+    "cmd": "\"node tools/train.js --gens 6 --games 4 --pop 16 --seed 20260802 --no-write\"",
+    "dryRun": true,
+    "status": "done",
+    "code": 0,
+    "startedAt": 1788804739169,
+    "endedAt": 1788804782682,
+    "ticks": 7,
+    "last": {
+      "t": "done",
+      "mode": "selfplay",
+      "fitness": 0.6604,
+      "vsDefault": 0.6294,
+      "vsPlayer": 0.6183,
+      "vsPusher": 0.5929,
+      "winsVsDefault": 90,
+      "lossesVsDefault": 53,
+      "generations": 6,
+      "seed": 20260802,
+      "evals": 384,
+      "adopted": false,
+      "sec": 43.5
+    },
+    "best": {
+      "fit": 0.6604,
+      "best": 0.6604,
+      "fDef": 0.8148,
+      "fPush": 0.7097,
+      "fPlayer": 0.5857
+    },
+    "pts": [
+      {
+        "t": "gen",
+        "evals": 64,
+        "sec": 6.9,
+        "gen": 0,
+        "fit": 0.6086,
+        "fDef": 0.6567,
+        "fPush": 0.6133,
+        "fPlayer": 0.506,
+        "best": 0.6086
+      },
+      {
+        "t": "gen",
+        "evals": 128,
+        "sec": 14,
+        "gen": 1,
+        "fit": 0.65,
+        "fDef": 0.6923,
+        "fPush": 0.6471,
+        "fPlayer": 0.5417,
+        "best": 0.65
+      },
+      {
+        "t": "gen",
+        "evals": 192,
+        "sec": 21.1,
+        "gen": 2,
+        "fit": 0.5885,
+        "fDef": 0.5942,
+        "fPush": 0.6567,
+        "fPlayer": 0.5857,
+        "best": 0.65
+      },
+      {
+        "t": "gen",
+        "evals": 256,
+        "sec": 28.4,
+        "gen": 3,
+        "fit": 0.6154,
+        "fDef": 0.7333,
+        "fPush": 0.7097,
+        "fPlayer": 0.4154,
+        "best": 0.65
+      },
+      {
+        "t": "gen",
+        "evals": 320,
+        "sec": 35.6,
+        "gen": 4,
+        "fit": 0.6604,
+        "fDef": 0.7333,
+        "fPush": 0.6389,
+        "fPlayer": 0.5455,
+        "best": 0.6604
+      },
+      {
+        "t": "gen",
+        "evals": 384,
+        "sec": 42.8,
+        "gen": 5,
+        "fit": 0.6569,
+        "fDef": 0.8148,
+        "fPush": 0.6769,
+        "fPlayer": 0.5,
+        "best": 0.6604
+      },
+      {
+        "t": "done",
+        "mode": "selfplay",
+        "fitness": 0.6604,
+        "vsDefault": 0.6294,
+        "vsPlayer": 0.6183,
+        "vsPusher": 0.5929,
+        "winsVsDefault": 90,
+        "lossesVsDefault": 53,
+        "generations": 6,
+        "seed": 20260802,
+        "evals": 384,
+        "adopted": false,
+        "sec": 43.5
+      }
+    ]
+  },
+  {
+    "id": "r3-mtrjvhvx",
+    "model": "selfplay",
+    "modelName": "自对弈 GA",
+    "cmd": "\"node tools/train.js --gens 300 --games 5 --pop 8 --no-write\"",
+    "dryRun": true,
+    "status": "error",
+    "code": null,
+    "startedAt": 1788804266836,
+    "endedAt": 1788804269848,
+    "ticks": 0,
+    "last": null,
+    "best": {},
+    "pts": []
+  },
+  {
+    "id": "r2-mtrjuuq3",
+    "model": "selfplay",
+    "modelName": "自对弈 GA",
+    "cmd": "\"node tools/train.js --gens 6 --games 4 --pop 4 --no-write\"",
+    "dryRun": true,
+    "status": "done",
+    "code": 0,
+    "startedAt": 1788804236817,
+    "endedAt": 1788804248535,
+    "ticks": 7,
+    "last": {
+      "t": "done",
+      "mode": "selfplay",
+      "fitness": 0.5397,
+      "vsDefault": 0.4528,
+      "vsPlayer": 0.3846,
+      "vsPusher": 0.4323,
+      "winsVsDefault": 72,
+      "lossesVsDefault": 87,
+      "generations": 6,
+      "seed": 20260802,
+      "evals": 96,
+      "adopted": false,
+      "sec": 11.7
+    },
+    "best": {
+      "fit": 0.5397,
+      "best": 0.5397,
+      "fDef": 0.5915,
+      "fPush": 0.5169,
+      "fPlayer": 0.4286
+    },
+    "pts": [
+      {
+        "t": "gen",
+        "evals": 16,
+        "sec": 1.8,
+        "gen": 0,
+        "fit": 0.5008,
+        "fDef": 0.5571,
+        "fPush": 0.5,
+        "fPlayer": 0.3333,
+        "best": 0.5008
+      },
+      {
+        "t": "gen",
+        "evals": 32,
+        "sec": 3.6,
+        "gen": 1,
+        "fit": 0.5071,
+        "fDef": 0.5441,
+        "fPush": 0.3529,
+        "fPlayer": 0.3976,
+        "best": 0.5071
+      },
+      {
+        "t": "gen",
+        "evals": 48,
+        "sec": 5.5,
+        "gen": 2,
+        "fit": 0.5397,
+        "fDef": 0.5915,
+        "fPush": 0.4783,
+        "fPlayer": 0.4286,
+        "best": 0.5397
+      },
+      {
+        "t": "gen",
+        "evals": 64,
+        "sec": 7.3,
+        "gen": 3,
+        "fit": 0.4658,
+        "fDef": 0.4177,
+        "fPush": 0.5169,
+        "fPlayer": 0.3529,
+        "best": 0.5397
+      },
+      {
+        "t": "gen",
+        "evals": 80,
+        "sec": 9.1,
+        "gen": 4,
+        "fit": 0.525,
+        "fDef": 0.5676,
+        "fPush": 0.5065,
+        "fPlayer": 0.3492,
+        "best": 0.5397
+      },
+      {
+        "t": "gen",
+        "evals": 96,
+        "sec": 11,
+        "gen": 5,
+        "fit": 0.4728,
+        "fDef": 0.5844,
+        "fPush": 0.4935,
+        "fPlayer": 0.2414,
+        "best": 0.5397
+      },
+      {
+        "t": "done",
+        "mode": "selfplay",
+        "fitness": 0.5397,
+        "vsDefault": 0.4528,
+        "vsPlayer": 0.3846,
+        "vsPusher": 0.4323,
+        "winsVsDefault": 72,
+        "lossesVsDefault": 87,
+        "generations": 6,
+        "seed": 20260802,
+        "evals": 96,
+        "adopted": false,
+        "sec": 11.7
+      }
+    ]
+  },
+  {
+    "id": "r1-mtrjtyx4",
+    "model": "selfplay",
+    "modelName": "自对弈 GA",
+    "cmd": "\"node tools/train.js --gens 2 --games 3 --pop 4 --no-write\"",
+    "dryRun": true,
+    "status": "done",
+    "code": 0,
+    "startedAt": 1788804195599,
+    "endedAt": 1788804198887,
+    "ticks": 3,
+    "last": {
+      "t": "done",
+      "mode": "selfplay",
+      "fitness": 0.5008,
+      "vsDefault": 0.4685,
+      "vsPlayer": 0.3619,
+      "vsPusher": 0.5,
+      "winsVsDefault": 52,
+      "lossesVsDefault": 59,
+      "generations": 2,
+      "seed": 20260802,
+      "evals": 32,
+      "adopted": false,
+      "sec": 3.2
+    },
+    "best": {
+      "fit": 0.5008,
+      "best": 0.5008,
+      "fDef": 0.5538,
+      "fPush": 0.431,
+      "fPlayer": 0.5294
+    },
+    "pts": [
+      {
+        "t": "gen",
+        "evals": 16,
+        "sec": 1.4,
+        "gen": 0,
+        "fit": 0.5008,
+        "fDef": 0.5263,
+        "fPush": 0.4151,
+        "fPlayer": 0.4286,
+        "best": 0.5008
+      },
+      {
+        "t": "gen",
+        "evals": 32,
+        "sec": 2.8,
+        "gen": 1,
+        "fit": 0.4882,
+        "fDef": 0.5538,
+        "fPush": 0.431,
+        "fPlayer": 0.5294,
+        "best": 0.5008
+      },
+      {
+        "t": "done",
+        "mode": "selfplay",
+        "fitness": 0.5008,
+        "vsDefault": 0.4685,
+        "vsPlayer": 0.3619,
+        "vsPusher": 0.5,
+        "winsVsDefault": 52,
+        "lossesVsDefault": 59,
+        "generations": 2,
+        "seed": 20260802,
+        "evals": 32,
+        "adopted": false,
+        "sec": 3.2
+      }
+    ]
+  },
+  {
+    "id": "r2-mtrjs2vn",
+    "model": "selfplay",
+    "modelName": "自对弈 GA",
+    "cmd": "\"node tools\\tools\\train.js --gens 400 --games 4 --pop 6 --no-write\"",
+    "dryRun": true,
+    "status": "error",
+    "code": 1,
+    "startedAt": 1788804107418,
+    "endedAt": 1788804107452,
+    "ticks": 0,
+    "last": null,
+    "best": {},
+    "pts": []
+  },
+  {
+    "id": "r1-mtrjrjkk",
+    "model": "selfplay",
+    "modelName": "自对弈 GA",
+    "cmd": "\"node tools\\tools\\train.js --gens 6 --games 4 --pop 4 --no-write\"",
+    "dryRun": true,
+    "status": "error",
+    "code": 1,
+    "startedAt": 1788804082396,
+    "endedAt": 1788804082430,
+    "ticks": 0,
+    "last": null,
+    "best": {},
+    "pts": []
+  }
+]

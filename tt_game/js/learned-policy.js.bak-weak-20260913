@@ -1,0 +1,62 @@
+/* =====================================================================
+ *  learned-policy.js — 自动生成：node tools/train.js
+ *  自对弈学习到的 AI 策略（partial policy，未设字段回落 POLICY_DEFAULT）
+ * ===================================================================== */
+'use strict';
+const LEARNED_POLICY = {
+  "moveSpeed": 2.45,
+  "moveErr": 0.06,
+  "moveZ": 2,
+  "push": {
+    "prob": 0.62,
+    "forceThresh": 40
+  },
+  "counter": {
+    "prob": 0.8
+  },
+  "smash": {
+    "prob": 0.6
+  },
+  "loop": {
+    "prob": 0.7
+  },
+  "awayProb": 0.72,
+  "txMin": 0.22,
+  "txRange": 0.42,
+  "tzBase": 0.85,
+  "tzRange": 0.45,
+  "txWideProb": 0.055,
+  "serve": {
+    "topProb": 1,
+    "sideProb": 0.6
+  },
+  "loopPace": 1,
+  "loopSpin": 1,
+  "loopArc": 1,
+  "smashPace": 1,
+  "smashSpin": 1,
+  "liftPace": 1,
+  "defPace": 1,
+  "counterPace": 1,
+  "txWideMag": 0.5,
+  "fwdBoost": 1,
+  "pushSide": 1,
+  "pushDepth": 1,
+  "servePace": 1,
+  "serveSpin": 1
+};
+const LEARNED_META = {
+  "fitness": 0.5295,
+  "pointRateVsDefault": 0.4872,
+  "winsVsDefault": 57,
+  "lossesVsDefault": 60,
+  "pointRateVsPusher": 0.4138,
+  "pointRateVsPlayer": 0.3529,
+  "generations": 2,
+  "seed": 20260802,
+  "evals": 32,
+  "mode": "selfplay",
+  "trainedAt": "2026-09-07"
+};
+/* Node 训练器/诊断可 require */
+if(typeof module !== 'undefined' && module.exports) module.exports = { LEARNED_POLICY, LEARNED_META };

@@ -1,0 +1,80 @@
+/* ============================================================
+ *  overlay.css — 开始/结束遮罩层、主按钮、彩带
+ * ============================================================ */
+.overlay{position:fixed;inset:0;z-index:20;display:flex;flex-direction:column;align-items:center;
+  justify-content:flex-start;gap:16px;text-align:center;padding:20px;
+  background:radial-gradient(ellipse at 50% 28%,rgba(16,22,38,.5),rgba(4,6,10,.86));
+  backdrop-filter:blur(2px);transition:opacity .55s,visibility .55s;
+  overflow-y:auto;touch-action:pan-y;-webkit-overflow-scrolling:touch;
+  padding-top:max(20px,env(safe-area-inset-top));padding-bottom:max(20px,env(safe-area-inset-bottom))}
+/* 内容超出小屏时可滚动：伪元素 auto-margin 在有空间时居中，溢出时归零→顶端可达可滚 */
+.overlay::before,.overlay::after{content:'';display:block}
+.overlay::before{margin-top:auto}
+.overlay::after{margin-bottom:auto}
+.overlay>*{flex-shrink:0}
+.overlay::-webkit-scrollbar{width:6px}
+.overlay::-webkit-scrollbar-thumb{background:#2a3242;border-radius:3px}
+.overlay.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.ov-kicker{font-size:12px;letter-spacing:8px;color:var(--gold);animation:kickerIn .8s .1s ease both}
+@keyframes kickerIn{from{opacity:0;letter-spacing:14px}to{opacity:1;letter-spacing:8px}}
+.ov-title{font-family:var(--disp);font-size:clamp(56px,10vw,100px);letter-spacing:10px;line-height:1;
+  color:#f5f8fd;text-shadow:5px 0 0 rgba(224,52,67,.5),-5px 0 0 rgba(47,127,224,.5),0 18px 60px rgba(0,0,0,.7);
+  animation:titleIn .9s cubic-bezier(.2,.9,.25,1) both}
+.ov-title-sm{font-size:clamp(28px,5vw,44px);letter-spacing:6px}
+@keyframes titleIn{0%{opacity:0;transform:translateY(26px) scale(.92)}100%{opacity:1;transform:none}}
+.ov-sub{font-size:13px;letter-spacing:4px;color:#93a0b6;animation:fadeUp .8s .25s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.ov-controls{display:flex;gap:30px;margin:10px 0 6px;flex-wrap:wrap;justify-content:center;
+  font-size:13px;color:#c6cfdf;text-align:left;align-items:flex-start}
+.oc-group{display:flex;flex-direction:column;gap:8px;min-width:200px}
+.oc-group h3{font-size:11px;letter-spacing:4px;color:var(--gold);border-bottom:1px solid rgba(242,182,76,.35);
+  padding-bottom:5px;margin-bottom:2px}
+.oc-group div{display:flex;align-items:center;gap:10px;font-size:12.5px;color:#c6cfdf}
+/* AI 对战模型 / 斗蛐蛐选择 */
+.oc-diff .diff-hint{display:block;font-size:10.5px;color:#5c6579;line-height:1.6;letter-spacing:1px}
+.oc-diff .fight-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:11px}
+.oc-diff .fight-row label{color:#6d7890;letter-spacing:1px}
+.oc-diff .fight-row select{flex:1;min-width:108px;padding:7px 6px;border:1px solid #33405c;border-radius:8px;background:#161d2c;color:#cdd6e6;font-size:11px;letter-spacing:1px;cursor:pointer;outline:none}
+.oc-diff .fight-row select:hover,.oc-diff .fight-row select:focus{border-color:var(--gold);color:var(--gold)}
+.oc-diff .fight-row .vs{color:var(--gold);letter-spacing:1px;font-weight:700}
+.oc-diff .model-row{display:flex;gap:8px;flex-wrap:wrap}
+.oc-diff .model-btn{flex:1;min-width:96px;padding:8px 6px;border:1px solid #33405c;border-radius:8px;background:#161d2c;color:#cdd6e6;font-size:11px;letter-spacing:1px;cursor:pointer;transition:.15s}
+.oc-diff .model-btn:hover{border-color:var(--gold);color:var(--gold)}
+.oc-diff .model-btn.active{border-color:var(--gold);background:rgba(255,184,92,.12);color:var(--gold);box-shadow:0 0 8px rgba(255,184,92,.25)}
+.ov-hint{font-size:11px;letter-spacing:2px;color:#6d7890;margin-top:4px;max-width:700px;line-height:1.9;
+  animation:fadeUp .8s .3s ease both}
+.ov-score{font-family:var(--disp);font-size:clamp(50px,8vw,84px);color:var(--gold);letter-spacing:8px;
+  text-shadow:0 0 40px rgba(242,182,76,.35)}
+#endTitle.win{color:#ffd98c;text-shadow:0 0 60px rgba(242,182,76,.55),4px 0 0 rgba(224,52,67,.4),-4px 0 0 rgba(47,127,224,.4)}
+#endTitle.lose{color:#9fb4d8}
+#endTitle{animation:titleIn .7s cubic-bezier(.2,.9,.25,1) both}
+#endScore{animation:scoreIn 1s .2s cubic-bezier(.2,.9,.25,1) both}
+@keyframes scoreIn{0%{opacity:0;transform:scale(1.7)}55%{opacity:1;transform:scale(1)}100%{opacity:1;transform:scale(1)}}
+.ov-btns{display:flex;gap:14px;align-items:center;justify-content:center}
+#helpOverlay{z-index:30}
+#confetti{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+#confetti i{position:absolute;top:-24px;width:8px;height:14px;animation-name:confFall;
+  animation-timing-function:linear;animation-fill-mode:forwards}
+@keyframes confFall{to{transform:translateY(108vh) rotate(700deg)}}
+
+/* ---------- 键鼠 / 触屏说明双版本（html.touch 切换） ---------- */
+.touch-only{display:none}
+html.touch .touch-only{display:flex}
+html.touch .ov-hint.touch-only{display:block}
+html.touch .mouse-only{display:none}
+
+/* ---------- 小屏：排版收紧 ---------- */
+@media (max-width:820px), (max-height:600px){
+  .overlay{gap:10px;padding-left:14px;padding-right:14px}
+  .ov-title{letter-spacing:4px}
+  .ov-title-sm{letter-spacing:3px}
+  .ov-sub{font-size:11px;letter-spacing:2px}
+  .ov-controls{gap:14px;margin:6px 0 2px}
+  .oc-group{min-width:150px;gap:6px}
+  .oc-group div{font-size:11.5px;gap:7px}
+  .oc-diff .model-btn{min-height:40px}
+  .oc-diff .fight-row select{min-height:40px}
+  .ov-hint{font-size:10px;letter-spacing:1px;line-height:1.75;max-width:92vw}
+  .btn.primary{font-size:18px;padding:12px 36px}
+  .ov-btns{flex-wrap:wrap}
+}

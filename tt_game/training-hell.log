@@ -1,0 +1,51 @@
+地狱 AI 续训 · gens=400 games=24 pop=24 seed=20260810 workers=24
+续训起点(当前地狱策略)：2.99,0.00,3.20,0.69,10.00,0.68,0.38,0.82,0.95,0.27,0.10,0.68,0.32,0.10,0.14,1.00,1.06,1.07,0.86,1.04,0.80,0.92,1.12,0.85,0.24,0.70,1.38,1.44,1.02,0.86
+gen   0  top.fit=0.6580 (vsDef=0.776 vsPB=0.673 vsPush=0.725 vsSelf=0.485)  best=0.6580(续训)   [6.862s]
+gen  10  top.fit=0.6738 (vsDef=0.778 vsPB=0.705 vsPush=0.734 vsSelf=0.497)  best=0.6738  [82.008s]
+gen  20  top.fit=0.6713 (vsDef=0.797 vsPB=0.676 vsPush=0.757 vsSelf=0.493)  best=0.6744  [159.705s]
+gen  30  top.fit=0.6759 (vsDef=0.797 vsPB=0.707 vsPush=0.769 vsSelf=0.464)  best=0.6808  [234.046s]
+gen  40  top.fit=0.6787 (vsDef=0.793 vsPB=0.676 vsPush=0.747 vsSelf=0.532)  best=0.6825  [309.112s]
+gen  50  top.fit=0.6741 (vsDef=0.800 vsPB=0.685 vsPush=0.761 vsSelf=0.487)  best=0.6839  [385.078s]
+gen  60  top.fit=0.6768 (vsDef=0.800 vsPB=0.692 vsPush=0.760 vsSelf=0.489)  best=0.6894  [460.206s]
+gen  70  top.fit=0.6799 (vsDef=0.799 vsPB=0.692 vsPush=0.747 vsSelf=0.509)  best=0.6894  [534.558s]
+gen  80  top.fit=0.6839 (vsDef=0.802 vsPB=0.709 vsPush=0.739 vsSelf=0.504)  best=0.6907  [608.835s]
+gen  90  top.fit=0.6823 (vsDef=0.810 vsPB=0.707 vsPush=0.754 vsSelf=0.484)  best=0.6944  [683.575s]
+gen 100  top.fit=0.6867 (vsDef=0.801 vsPB=0.695 vsPush=0.783 vsSelf=0.511)  best=0.6944  [758.553s]
+gen 110  top.fit=0.6904 (vsDef=0.777 vsPB=0.730 vsPush=0.783 vsSelf=0.502)  best=0.6944  [833.789s]
+gen 120  top.fit=0.6900 (vsDef=0.771 vsPB=0.723 vsPush=0.751 vsSelf=0.533)  best=0.7018  [908.848s]
+gen 130  top.fit=0.6965 (vsDef=0.806 vsPB=0.715 vsPush=0.777 vsSelf=0.520)  best=0.7018  [984.964s]
+gen 140  top.fit=0.6820 (vsDef=0.796 vsPB=0.695 vsPush=0.782 vsSelf=0.497)  best=0.7018  [1060.81s]
+gen 150  top.fit=0.6872 (vsDef=0.806 vsPB=0.695 vsPush=0.757 vsSelf=0.521)  best=0.7018  [1136.915s]
+gen 160  top.fit=0.6860 (vsDef=0.793 vsPB=0.689 vsPush=0.794 vsSelf=0.517)  best=0.7031  [1213.678s]
+gen 170  top.fit=0.6943 (vsDef=0.804 vsPB=0.729 vsPush=0.761 vsSelf=0.503)  best=0.7031  [1289.604s]
+gen 180  top.fit=0.6901 (vsDef=0.806 vsPB=0.699 vsPush=0.793 vsSelf=0.508)  best=0.7031  [1365.571s]
+gen 190  top.fit=0.6884 (vsDef=0.811 vsPB=0.696 vsPush=0.778 vsSelf=0.507)  best=0.7031  [1441.638s]
+gen 200  top.fit=0.6700 (vsDef=0.799 vsPB=0.676 vsPush=0.762 vsSelf=0.484)  best=0.7031  [1517.816s]
+gen 210  top.fit=0.6909 (vsDef=0.830 vsPB=0.703 vsPush=0.779 vsSelf=0.488)  best=0.7031  [1593.839s]
+gen 220  top.fit=0.6788 (vsDef=0.790 vsPB=0.701 vsPush=0.769 vsSelf=0.491)  best=0.7031  [1669.843s]
+gen 230  top.fit=0.6751 (vsDef=0.774 vsPB=0.677 vsPush=0.799 vsSelf=0.507)  best=0.7031  [1746.115s]
+gen 240  top.fit=0.6774 (vsDef=0.794 vsPB=0.667 vsPush=0.786 vsSelf=0.516)  best=0.7031  [1822.269s]
+gen 250  top.fit=0.6921 (vsDef=0.827 vsPB=0.702 vsPush=0.770 vsSelf=0.502)  best=0.7031  [1898.275s]
+gen 260  top.fit=0.6864 (vsDef=0.810 vsPB=0.685 vsPush=0.773 vsSelf=0.518)  best=0.7031  [1974.503s]
+gen 270  top.fit=0.6890 (vsDef=0.788 vsPB=0.710 vsPush=0.765 vsSelf=0.522)  best=0.7031  [2050.781s]
+gen 280  top.fit=0.6882 (vsDef=0.809 vsPB=0.692 vsPush=0.793 vsSelf=0.507)  best=0.7031  [2126.335s]
+gen 290  top.fit=0.6892 (vsDef=0.789 vsPB=0.710 vsPush=0.771 vsSelf=0.519)  best=0.7031  [2202.321s]
+gen 300  top.fit=0.6841 (vsDef=0.811 vsPB=0.689 vsPush=0.771 vsSelf=0.504)  best=0.7031  [2278.537s]
+gen 310  top.fit=0.6889 (vsDef=0.797 vsPB=0.714 vsPush=0.771 vsSelf=0.504)  best=0.7031  [2354.888s]
+gen 320  top.fit=0.6819 (vsDef=0.797 vsPB=0.684 vsPush=0.774 vsSelf=0.515)  best=0.7031  [2430.399s]
+gen 330  top.fit=0.7016 (vsDef=0.805 vsPB=0.726 vsPush=0.782 vsSelf=0.524)  best=0.7031  [2506.289s]
+gen 340  top.fit=0.6797 (vsDef=0.805 vsPB=0.681 vsPush=0.750 vsSelf=0.514)  best=0.7031  [2582.233s]
+gen 350  top.fit=0.6975 (vsDef=0.789 vsPB=0.722 vsPush=0.796 vsSelf=0.521)  best=0.7031  [2658.085s]
+gen 360  top.fit=0.6970 (vsDef=0.829 vsPB=0.697 vsPush=0.787 vsSelf=0.517)  best=0.7031  [2734.607s]
+gen 370  top.fit=0.6782 (vsDef=0.789 vsPB=0.684 vsPush=0.781 vsSelf=0.504)  best=0.7031  [2810.939s]
+gen 380  top.fit=0.6842 (vsDef=0.793 vsPB=0.690 vsPush=0.798 vsSelf=0.507)  best=0.7031  [2887.439s]
+gen 390  top.fit=0.6811 (vsDef=0.804 vsPB=0.695 vsPush=0.790 vsSelf=0.482)  best=0.7031  [2963.586s]
+gen 399  top.fit=0.6769 (vsDef=0.793 vsPB=0.685 vsPush=0.775 vsSelf=0.497)  best=0.7031  [3032.328s]
+
+=== 独立最终验证（4 种子 × 40 局均值）===
+新策略 vs 默认        ：79.4%   （旧=76.6%）
+新策略 vs 加强玩家模型：69.1%   （旧=66.4%）
+新策略 vs 旧地狱策略  ：53.1%（>50% = 明显更强）
+旧地狱策略 vs 默认    ：76.6%
+已写 tools/train-hell-curve.json
+✅ 已采纳新策略并覆盖 js/learned-policy.js（原文件备份：js/learned-policy.js.bak-20260810）

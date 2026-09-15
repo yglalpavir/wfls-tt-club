@@ -1,0 +1,35 @@
+[
+  {
+    "ep": 100,
+    "phase": "elite",
+    "trainW": 33,
+    "evalPhase": 18.5,
+    "evalTop": 27.6,
+    "evalDef": 28.9,
+    "best": 29.3,
+    "bestTop": 25.4,
+    "eps": 0.15
+  },
+  {
+    "ep": 200,
+    "phase": "extreme",
+    "trainW": 39,
+    "evalPhase": 36.8,
+    "evalTop": 25.4,
+    "evalDef": 40.7,
+    "best": 32.7,
+    "bestTop": 25.4,
+    "eps": 0.15
+  },
+  {
+    "ep": 300,
+    "phase": "extreme-max",
+    "trainW": 36.3,
+    "evalPhase": 37.7,
+    "evalTop": 33.1,
+    "evalDef": 45.2,
+    "best": 37.5,
+    "bestTop": 33.1,
+    "eps": 0.15
+  }
+]

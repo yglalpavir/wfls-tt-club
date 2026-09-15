@@ -1,0 +1,20 @@
+/* ============================================================
+ *  base.css — 全局基础样式：重置 / 变量 / body / 画布 / HUD 容器
+ * ============================================================ */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --disp:'Haettenschweiler','Impact','Arial Narrow Bold','Microsoft YaHei',sans-serif;
+  --body:'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',system-ui,sans-serif;
+  --red:#e03443; --blue:#2f7fe0; --gold:#f2b64c;
+  --cyan:#7fd8ff; --mint:#8fe8c8;
+  --panel:rgba(13,16,23,.86);
+  --panel-border:rgba(255,255,255,.1);
+  --text-dim:#8b94a7; --text-mid:#9aa3b5; --text-bright:#eef2f8;
+}
+html,body{height:100%;overflow:hidden;background:#0a0d14;color:#eef2f8;
+  font-family:var(--body);user-select:none;-webkit-user-select:none;
+  overscroll-behavior:none;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;
+  cursor:crosshair}
+canvas{position:fixed;inset:0;z-index:0;display:block;touch-action:none}
+#hud{position:fixed;inset:0;z-index:5;pointer-events:none;touch-action:none}
+button{pointer-events:auto;cursor:pointer;font-family:var(--body);touch-action:manipulation}

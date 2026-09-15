@@ -174,15 +174,12 @@ function mdCompute() {
 
 /* ---- 渲染 ---- */
 // 头像：club 模式优先 QQ 头像（与 members 页同一图源，失败回退名字首字符）；WTT 无本站档案，恒为首字符
-function mdAvatarHtml(name, isW, T) {
+// 扁平圆形：胜者描边强调即可，不用发光环/脉冲圈/角标这类"头像框"装饰
+function mdAvatarHtml(name, isW) {
     const p = (!MD_WTT && typeof getPlayerByName === 'function') ? getPlayerByName(name) : null;
     const qq = p && p.qq && String(p.qq).trim() ? String(p.qq).trim() : '';
     const img = qq ? `<img class="md-avatar-img" src="https://q1.qlogo.cn/g?b=qq&nk=${encodeURIComponent(qq)}&s=640" alt="" loading="lazy" onerror="this.style.display='none'">` : '';
-    return `<div class="md-avatar-wrap">
-        <div class="md-avatar">${escapeHtml(name.charAt(0))}${img}</div>
-        <span class="md-result-badge ${isW ? 'md-badge-w' : 'md-badge-l'}">${isW ? T.md_winner_badge : T.md_loser_badge}</span>
-        ${isW ? '<span class="md-winner-ring" aria-hidden="true"></span>' : ''}
-    </div>`;
+    return `<div class="md-avatar ${isW ? 'md-avatar-w' : ''}">${escapeHtml(name.charAt(0))}${img}</div>`;
 }
 
 // 复制链接（clipboard API，拒绝时回退 textarea + execCommand）
@@ -216,7 +213,7 @@ function mdDeltaPillHtml(raw, decayed, withDecayed) {
     return `<div class="md-delta-pill ${pos ? 'md-delta-pos' : 'md-delta-neg'}"><i class="fa-solid fa-caret-${pos ? 'up' : 'down'}"></i> ${pos ? '+' : ''}${raw.toFixed(1)}${note}</div>`;
 }
 
-// 记分牌一侧（胜者/负者）：头像 + 结果角标 + 名字 + 赛前→赛后积分 + 变动胶囊
+// 记分牌一侧（胜者/负者）：头像 + 名字（带胜/负小标签）+ 赛前→赛后积分一行 + 变动胶囊
 function mdArenaSideHtml(m, side, T) {
     const isW = side === 'w';
     const name = isW ? m.w : m.l;
@@ -225,12 +222,12 @@ function mdArenaSideHtml(m, side, T) {
     const clubDelta = !MD_WTT;   // WTT 无衰减：raw 与 decayed 相同，只显示一个
     const deltaPill = isW ? mdDeltaPillHtml(m.rawW, m.deltaW, clubDelta) : mdDeltaPillHtml(m.rawL, m.deltaL, clubDelta);
     return `<div class="md-side ${isW ? 'md-side-w' : 'md-side-l'}">
-        ${mdAvatarHtml(name, isW, T)}
-        <div class="md-player-name">${isW ? '<i class="fa-solid fa-trophy md-trophy" aria-hidden="true"></i>' : ''}${mdPlayerLink(name)}</div>
-        <div class="md-pts-row">
-            <div class="md-pts"><div class="md-pts-num">${pre.toFixed(1)}</div><div class="md-pts-label">${T.md_pre_score}</div></div>
-            <i class="fa-solid fa-arrow-right md-pts-arrow"></i>
-            <div class="md-pts"><div class="md-pts-num md-pts-post">${post.toFixed(1)}</div><div class="md-pts-label">${T.md_post_score}</div></div>
+        ${mdAvatarHtml(name, isW)}
+        <div class="md-player-name">${mdPlayerLink(name)}<span class="md-side-tag ${isW ? 'md-tag-w' : 'md-tag-l'}">${isW ? T.md_winner_badge : T.md_loser_badge}</span></div>
+        <div class="md-pts-line">
+            <span class="md-pts-one"><em>${T.md_pre_score}</em>${pre.toFixed(1)}</span>
+            <i class="fa-solid fa-arrow-right md-pts-arrow" aria-hidden="true"></i>
+            <span class="md-pts-one md-pts-post"><em>${T.md_post_score}</em>${post.toFixed(1)}</span>
         </div>
         ${deltaPill}
     </div>`;

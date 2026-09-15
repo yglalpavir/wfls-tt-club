@@ -1,0 +1,52 @@
+输入级 AI 极端对手课程续训（v3）
+  起点权重：data\input-ai-a952.json
+  网络形状：128×88 → 192×128 → 128×192 → 952×128（952 动作 = 34×14×2）
+  课程：hell=20% → elite=28% → extreme=30% → extreme-max=22%
+  games=300 eval=24 step=60 jitter=0.06 seed=20260909
+##TT##{"t":"phase","phase":"train","msg":"极端对手课程续训开始 games=300 课程=hell=0.20,elite=0.28,extreme=0.30,extreme-max=0.22"}
+BC 保鲜池 2866 条（60 局追球监督 · 在线混入 35% → 压到 6% · 周期性重锚 0 pass/100局）
+基线（起点权重）：default=71.3%  hell=72.0%  elite=63.1%  extreme=59.6%  extreme-max=60.3%
+选优基线：best=66.6（vs默认=71.3%，护栏下限 66.3%）
+##TT##{"t":"verify","stage":"baseline","vsDefault":0.7133,"vsTop":0.6026,"vsStartOpp":0.7203,"ladder":"default:0.713,hell:0.720,elite:0.631,extreme:0.596,extreme-max:0.603"}
+预填回放 300 回合 → 回放 15458 条样本（贪心当前策略 · 课程对手 · 胜率 64% · 7s）
+##TT##{"t":"preload","games":300,"replay":15458,"winRate":0.6367,"sec":7.3}
+
+—— 课程进入第 1/4 阶段：对手=hell（占 20%，第 0-60 局）——
+##TT##{"t":"phase","phase":"curriculum","msg":"hell"}
+##TT##{"t":"phase","ep":1,"phase":"hell","idx":1,"share":0.2}
+ep    60 [hell]  train=68%  vs本档=67.5%  vsextreme-max=53.1%  vs默认=66.3%  best=66.6  eps=0.16  [179s]
+##TT##{"t":"ep","sec":179,"ep":60,"phase":"hell","trainW":68.3,"evalPhase":67.5,"evalTop":53.1,"evalDef":66.3,"best":66.6,"bestTop":60.3,"eps":0.16}
+
+—— 课程进入第 2/4 阶段：对手=elite（占 28%，第 60-144 局）——
+##TT##{"t":"phase","phase":"curriculum","msg":"elite"}
+##TT##{"t":"phase","ep":61,"phase":"elite","idx":2,"share":0.28}
+ep   120 [elite]  train=66%  vs本档=61.0%  vsextreme-max=49.7%  vs默认=63.4%  best=66.6  eps=0.15  [252s]
+##TT##{"t":"ep","sec":251.7,"ep":120,"phase":"elite","trainW":65.8,"evalPhase":61,"evalTop":49.7,"evalDef":63.4,"best":66.6,"bestTop":60.3,"eps":0.15}
+
+—— 课程进入第 3/4 阶段：对手=extreme（占 30%，第 144-234 局）——
+##TT##{"t":"phase","phase":"curriculum","msg":"extreme"}
+##TT##{"t":"phase","ep":145,"phase":"extreme","idx":3,"share":0.3}
+ep   180 [extreme]  train=67%  vs本档=80.7%  vsextreme-max=77.4%  vs默认=81.5%  best=79.4  eps=0.15  [318s]
+##TT##{"t":"ep","sec":318,"ep":180,"phase":"extreme","trainW":67.2,"evalPhase":80.7,"evalTop":77.4,"evalDef":81.5,"best":79.4,"bestTop":77.4,"eps":0.15}
+
+—— 课程进入第 4/4 阶段：对手=extreme-max（占 22%，第 234-300 局）——
+##TT##{"t":"phase","phase":"curriculum","msg":"extreme-max"}
+##TT##{"t":"phase","ep":235,"phase":"extreme-max","idx":4,"share":0.22}
+ep   240 [extreme-max]  train=69%  vs本档=61.7%  vsextreme-max=58.8%  vs默认=64.3%  best=79.4  eps=0.15  [391s]
+##TT##{"t":"ep","sec":390.9,"ep":240,"phase":"extreme-max","trainW":68.8,"evalPhase":61.7,"evalTop":58.8,"evalDef":64.3,"best":79.4,"bestTop":77.4,"eps":0.15}
+ep   300 [extreme-max]  train=68%  vs本档=77.4%  vsextreme-max=78.3%  vs默认=81.2%  best=79.4  eps=0.15  [451s]
+##TT##{"t":"ep","sec":450.8,"ep":300,"phase":"extreme-max","trainW":68,"evalPhase":77.4,"evalTop":78.3,"evalDef":81.2,"best":79.4,"bestTop":77.4,"eps":0.15}
+
+=== 最佳权重最终评估（80 局/档）===
+  对手            新权重        起点权重
+  default         80.7%    71.3%  +9.4
+  hell            80.8%    72.0%  +8.8
+  elite           78.7%    63.1%  +15.6
+  extreme         78.4%    59.6%  +18.7
+  extreme-max     76.3%    60.3%  +16.0
+##TT##{"t":"phase","phase":"verify","msg":"最终阶梯评估完成"}
+##TT##{"t":"verify","stage":"final","vsDefault":0.8073,"vsDefaultBase":0.7133,"vsTop":0.7627,"vsTopBase":0.6026,"vsStartOpp":0.8079,"ladder":"default:0.807,hell:0.808,elite:0.787,extreme:0.784,extreme-max:0.763"}
+已写 tools\input-curve-v3-smoke.json
+
+⚠ --no-save：实验模式，不写入 data\input-ai-extreme.json
+##TT##{"t":"done","mode":"input-extreme-curriculum","adopted":false,"noWrite":true,"vsTop":0.7627,"vsTopBase":0.6026,"vsDefault":0.8073,"games":300,"sec":570.7}

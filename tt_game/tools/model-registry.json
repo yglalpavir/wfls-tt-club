@@ -1,0 +1,816 @@
+{
+  "port": 8123,
+  "models": [
+    {
+      "id": "selfplay",
+      "name": "自对弈 GA",
+      "tag": "普通 AI",
+      "color": "#4cc9f0",
+      "desc": "(μ+λ) 进化 + 高斯变异，对手=默认策略/当前最优/搓球狂/加强玩家模型，产出 js/learned-policy.js。",
+      "script": "tools/train.js",
+      "curve": "tools/train-curve.json",
+      "weightFile": "js/learned-policy.js",
+      "metaConst": "LEARNED_META",
+      "xKey": "gen",
+      "yUnit": "rate",
+      "series": [
+        {
+          "key": "fit",
+          "label": "适应度 fit",
+          "color": "#4cc9f0"
+        },
+        {
+          "key": "best",
+          "label": "历史最优 best",
+          "color": "#80ed99"
+        },
+        {
+          "key": "fDef",
+          "label": "vs 默认策略",
+          "color": "#ffd166"
+        },
+        {
+          "key": "fPush",
+          "label": "vs 搓球狂",
+          "color": "#f78c6b"
+        },
+        {
+          "key": "fPlayer",
+          "label": "vs 玩家模型",
+          "color": "#c77dff"
+        }
+      ],
+      "params": [
+        {
+          "name": "gens",
+          "label": "代数 gens",
+          "type": "int",
+          "default": 100,
+          "min": 1,
+          "max": 3000,
+          "step": 1
+        },
+        {
+          "name": "games",
+          "label": "每次评估局数 games",
+          "type": "int",
+          "default": 10,
+          "min": 2,
+          "max": 200,
+          "step": 1
+        },
+        {
+          "name": "pop",
+          "label": "种群大小 pop",
+          "type": "int",
+          "default": 16,
+          "min": 4,
+          "max": 64,
+          "step": 1
+        },
+        {
+          "name": "seed",
+          "label": "随机种子 seed",
+          "type": "int",
+          "default": 20260802,
+          "min": 0,
+          "max": 2000000000,
+          "step": 1
+        }
+      ],
+      "flags": [
+        {
+          "name": "grandslam",
+          "label": "大满贯档（以加强玩家模型为主对手）",
+          "default": false
+        },
+        {
+          "name": "smoke",
+          "label": "冒烟自检（不训练，只验证自对弈可跑）",
+          "default": false
+        }
+      ],
+      "presets": [
+        {
+          "name": "冒烟",
+          "args": {
+            "gens": 3,
+            "games": 4,
+            "pop": 4
+          }
+        },
+        {
+          "name": "快速",
+          "args": {
+            "gens": 25,
+            "games": 6,
+            "pop": 8
+          }
+        },
+        {
+          "name": "标准",
+          "args": {
+            "gens": 100,
+            "games": 10,
+            "pop": 16
+          }
+        }
+      ],
+      "dryRunArgs": [
+        "--no-write"
+      ],
+      "writes": [
+        "js/learned-policy.js",
+        "tools/train-curve.json"
+      ]
+    },
+    {
+      "id": "hell",
+      "name": "地狱 AI 续训",
+      "tag": "地狱 AI",
+      "color": "#f72585",
+      "desc": "接续 js/learned-policy.js 多核并行续训；多种子降噪 + 独立种子最终验证，未稳定取胜则拒绝覆盖（自动回滚）。",
+      "script": "tools/train-hell.js",
+      "curve": "tools/train-hell-curve.json",
+      "weightFile": "js/learned-policy.js",
+      "metaConst": "LEARNED_META",
+      "xKey": "gen",
+      "yUnit": "rate",
+      "series": [
+        {
+          "key": "fit",
+          "label": "冠军 fit",
+          "color": "#f72585"
+        },
+        {
+          "key": "best",
+          "label": "历史最优",
+          "color": "#80ed99"
+        },
+        {
+          "key": "min",
+          "label": "种群最差",
+          "color": "#6c757d"
+        },
+        {
+          "key": "fPB",
+          "label": "vs 玩家模型",
+          "color": "#c77dff"
+        },
+        {
+          "key": "fDef",
+          "label": "vs 默认策略",
+          "color": "#ffd166"
+        },
+        {
+          "key": "fSelf",
+          "label": "vs 当前最优(自对弈)",
+          "color": "#4cc9f0"
+        },
+        {
+          "key": "fPush",
+          "label": "vs 搓球狂",
+          "color": "#f78c6b"
+        }
+      ],
+      "params": [
+        {
+          "name": "gens",
+          "label": "代数 gens",
+          "type": "int",
+          "default": 400,
+          "min": 1,
+          "max": 8000,
+          "step": 1
+        },
+        {
+          "name": "games",
+          "label": "每次评估局数 games",
+          "type": "int",
+          "default": 24,
+          "min": 4,
+          "max": 200,
+          "step": 1
+        },
+        {
+          "name": "pop",
+          "label": "种群大小 pop",
+          "type": "int",
+          "default": 24,
+          "min": 4,
+          "max": 64,
+          "step": 1
+        },
+        {
+          "name": "seed",
+          "label": "随机种子 seed",
+          "type": "int",
+          "default": 20260810,
+          "min": 0,
+          "max": 2000000000,
+          "step": 1
+        },
+        {
+          "name": "workers",
+          "label": "并行 worker 数",
+          "type": "int",
+          "default": 8,
+          "min": 1,
+          "max": 32,
+          "step": 1
+        }
+      ],
+      "flags": [
+        {
+          "name": "smoke",
+          "label": "冒烟自检（并行 worker 环境验证）",
+          "default": false
+        }
+      ],
+      "presets": [
+        {
+          "name": "冒烟",
+          "args": {
+            "gens": 3,
+            "games": 8,
+            "pop": 6,
+            "workers": 4
+          }
+        },
+        {
+          "name": "快速",
+          "args": {
+            "gens": 20,
+            "games": 12,
+            "pop": 12,
+            "workers": 8
+          }
+        },
+        {
+          "name": "标准",
+          "args": {
+            "gens": 200,
+            "games": 24,
+            "pop": 24,
+            "workers": 12
+          }
+        }
+      ],
+      "dryRunArgs": [
+        "--no-write"
+      ],
+      "writes": [
+        "js/learned-policy.js",
+        "tools/train-hell-curve.json"
+      ]
+    },
+    {
+      "id": "input",
+      "name": "输入级 DQN (v1)",
+      "tag": "鼠标上的 tt 玩家",
+      "color": "#80ed99",
+      "desc": "88 维观测 / 238 动作，智能体只输出鼠标X×鼠标Y×Ctrl，走实机同款玩家管线。BC 暖启动 + 在线 BC 混入。",
+      "script": "tools/train-input.js",
+      "curve": "tools/input-curve.json",
+      "weightFile": "js/input-weights.js",
+      "metaConst": "INPUT_AI_META",
+      "xKey": "ep",
+      "yUnit": "pct",
+      "series": [
+        {
+          "key": "evalW",
+          "label": "评估胜率 eval",
+          "color": "#80ed99"
+        },
+        {
+          "key": "bestW",
+          "label": "历史最佳 best",
+          "color": "#4cc9f0"
+        },
+        {
+          "key": "trainW",
+          "label": "训练胜率 train",
+          "color": "#6c757d"
+        },
+        {
+          "key": "eps",
+          "label": "探索 ε",
+          "color": "#ffd166",
+          "axis": "right"
+        }
+      ],
+      "params": [
+        {
+          "name": "games",
+          "label": "训练局数 games",
+          "type": "int",
+          "default": 400,
+          "min": 50,
+          "max": 2000,
+          "step": 50
+        },
+        {
+          "name": "eval",
+          "label": "评估局数 eval",
+          "type": "int",
+          "default": 16,
+          "min": 4,
+          "max": 96,
+          "step": 4
+        },
+        {
+          "name": "step",
+          "label": "评估间隔 step(局)",
+          "type": "int",
+          "default": 50,
+          "min": 5,
+          "max": 400,
+          "step": 5
+        },
+        {
+          "name": "pret",
+          "label": "BC 暖启动局数",
+          "type": "int",
+          "default": 40,
+          "min": 0,
+          "max": 400,
+          "step": 10
+        }
+      ],
+      "flags": [
+        {
+          "name": "smoke",
+          "label": "冒烟自检",
+          "default": false
+        },
+        {
+          "name": "eval-only",
+          "label": "仅评估已存档权重",
+          "default": false
+        },
+        {
+          "name": "no-bake",
+          "label": "不烘焙 js/input-weights.js",
+          "default": true
+        },
+        {
+          "name": "no-save",
+          "label": "不覆盖 data/input-ai.json",
+          "default": true
+        },
+        {
+          "name": "no-mix",
+          "label": "关闭对手混合池",
+          "default": false
+        }
+      ],
+      "presets": [
+        {
+          "name": "冒烟",
+          "args": {
+            "games": 100,
+            "eval": 8,
+            "step": 25,
+            "pret": 20
+          }
+        },
+        {
+          "name": "快速",
+          "args": {
+            "games": 400,
+            "eval": 16,
+            "step": 50,
+            "pret": 40
+          }
+        },
+        {
+          "name": "标准",
+          "args": {
+            "games": 1200,
+            "eval": 32,
+            "step": 100,
+            "pret": 100
+          }
+        }
+      ],
+      "extraArgs": {
+        "opp": "hell"
+      },
+      "dryRunArgs": [
+        "--no-bake",
+        "--no-save"
+      ],
+      "writes": [
+        "data/input-ai.json",
+        "js/input-weights.js",
+        "tools/input-curve.json"
+      ]
+    },
+    {
+      "id": "input2",
+      "name": "输入级 DQN (v2 稳定化)",
+      "tag": "稳定化对照",
+      "color": "#b5179e",
+      "desc": "v1 的稳定化变体：终局奖励 ±1.5、lr 0.00022、每 500 局检查点 + ε 循环重锚，双评估（地狱+默认）。",
+      "script": "tools/train-input2.js",
+      "curve": "tools/input-curve-v2.json",
+      "weightFile": "data/input-ai-v2.json",
+      "metaConst": null,
+      "xKey": "ep",
+      "yUnit": "pct",
+      "series": [
+        {
+          "key": "evalHell",
+          "label": "vs 地狱 AI",
+          "color": "#f72585"
+        },
+        {
+          "key": "evalDef",
+          "label": "vs 默认 AI",
+          "color": "#ffd166"
+        },
+        {
+          "key": "bestH",
+          "label": "最佳 vs 地狱",
+          "color": "#80ed99"
+        },
+        {
+          "key": "trainW",
+          "label": "训练胜率",
+          "color": "#6c757d"
+        },
+        {
+          "key": "eps",
+          "label": "探索 ε",
+          "color": "#4cc9f0",
+          "axis": "right"
+        }
+      ],
+      "params": [
+        {
+          "name": "games",
+          "label": "训练局数 games",
+          "type": "int",
+          "default": 400,
+          "min": 50,
+          "max": 2000,
+          "step": 50
+        },
+        {
+          "name": "eval",
+          "label": "评估局数 eval",
+          "type": "int",
+          "default": 16,
+          "min": 4,
+          "max": 96,
+          "step": 4
+        },
+        {
+          "name": "step",
+          "label": "评估间隔 step(局)",
+          "type": "int",
+          "default": 50,
+          "min": 5,
+          "max": 400,
+          "step": 5
+        },
+        {
+          "name": "pret",
+          "label": "BC 暖启动局数",
+          "type": "int",
+          "default": 40,
+          "min": 0,
+          "max": 400,
+          "step": 10
+        }
+      ],
+      "flags": [
+        {
+          "name": "no-save",
+          "label": "不覆盖 data/input-ai-v2.json",
+          "default": true
+        }
+      ],
+      "presets": [
+        {
+          "name": "快速",
+          "args": {
+            "games": 400,
+            "eval": 16,
+            "step": 50,
+            "pret": 40
+          }
+        },
+        {
+          "name": "标准",
+          "args": {
+            "games": 1600,
+            "eval": 40,
+            "step": 50,
+            "pret": 100
+          }
+        }
+      ],
+      "dryRunArgs": [
+        "--no-save"
+      ],
+      "writes": [
+        "data/input-ai-v2.json",
+        "tools/input-curve-v2.json"
+      ]
+    },
+    {
+      "id": "input3",
+      "name": "输入级 DQN (v3 极端对手课程)",
+      "tag": "鼠标上的 tt 玩家 · 加压",
+      "color": "#06d6a0",
+      "desc": "从 data/input-ai-a952.json（952 动作）续训，对手按课程从 hell 逐级推到 extreme-max（js/opponent-ladder.js），每局随机亚型防过拟合；三路评估（本档/顶档/默认护栏）选最佳权重，未过采纳线不覆盖。2026-09-10 起优化器默认 adam+分层lr（输出层3x）：400局实测 vs 起点 +13.5pp，已采纳进 data/input-ai-extreme.json（备份 input-ai-extreme.pre-phase2.json）。",
+      "script": "tools/train-input3.js",
+      "curve": "tools/input-curve-v3.json",
+      "weightFile": "data/input-ai-extreme.json",
+      "metaConst": null,
+      "xKey": "ep",
+      "yUnit": "pct",
+      "series": [
+        {
+          "key": "evalTop",
+          "label": "vs 极端·满档",
+          "color": "#06d6a0"
+        },
+        {
+          "key": "bestTop",
+          "label": "最佳 vs 满档",
+          "color": "#80ed99"
+        },
+        {
+          "key": "evalPhase",
+          "label": "vs 当前阶段对手",
+          "color": "#c77dff"
+        },
+        {
+          "key": "evalDef",
+          "label": "vs 默认 AI（护栏）",
+          "color": "#ffd166"
+        },
+        {
+          "key": "best",
+          "label": "选优分 best",
+          "color": "#4cc9f0"
+        },
+        {
+          "key": "trainW",
+          "label": "训练胜率",
+          "color": "#6c757d"
+        },
+        {
+          "key": "eps",
+          "label": "探索 ε",
+          "color": "#f72585",
+          "axis": "right"
+        }
+      ],
+      "params": [
+        {
+          "name": "from",
+          "label": "续训起点权重 from",
+          "type": "text",
+          "default": "data/input-ai-extreme.json",
+          "desc": "相对仓库根的路径。护栏基线就是这份权重：必须打赢它才采纳。"
+        },
+        {
+          "name": "save",
+          "label": "采纳后写入 save",
+          "type": "text",
+          "default": "data/input-ai-extreme.json",
+          "desc": "同 from 即可就地晋升最佳；留别的名字可保留旧权重对比。"
+        },
+        {
+          "name": "curve",
+          "label": "曲线文件 curve",
+          "type": "text",
+          "default": "tools/input-curve-v3.json",
+          "desc": "无论是否采纳都会写这份曲线；冒烟预设已指向 -smoke，不会覆盖正式曲线。"
+        },
+        {
+          "name": "games",
+          "label": "训练局数 games",
+          "type": "int",
+          "default": 600,
+          "min": 50,
+          "max": 12000,
+          "step": 50
+        },
+        {
+          "name": "eval",
+          "label": "评估局数 eval",
+          "type": "int",
+          "default": 40,
+          "min": 4,
+          "max": 120,
+          "step": 4
+        },
+        {
+          "name": "step",
+          "label": "评估间隔 step(局)",
+          "type": "int",
+          "default": 50,
+          "min": 5,
+          "max": 400,
+          "step": 5
+        },
+        {
+          "name": "pret",
+          "label": "BC 暖启动局数（0=跳过）",
+          "type": "int",
+          "default": 0,
+          "min": 0,
+          "max": 400,
+          "step": 10
+        },
+        {
+          "name": "bcpairs",
+          "label": "BC 保鲜池局数",
+          "type": "int",
+          "default": 120,
+          "min": 0,
+          "max": 800,
+          "step": 20
+        },
+        {
+          "name": "bcmix",
+          "label": "BC 在线混入比例",
+          "type": "number",
+          "default": 0.06,
+          "min": 0,
+          "max": 0.5,
+          "step": 0.01
+        },
+        {
+          "name": "bcpass",
+          "label": "每100局重锚 pass 数（0=关）",
+          "type": "int",
+          "default": 0,
+          "min": 0,
+          "max": 6,
+          "step": 1
+        },
+        {
+          "name": "preload",
+          "label": "回放预填局数 preload",
+          "type": "int",
+          "default": 500,
+          "min": 0,
+          "max": 2000,
+          "step": 50,
+          "desc": "用当前策略贪心跑若干局填满经验回放。续训必须 >0，否则空回放 + 高更新率会打崩 Q 值。"
+        },
+        {
+          "name": "learnp",
+          "label": "每回合梯度更新次数 learnp",
+          "type": "int",
+          "default": 2,
+          "min": 1,
+          "max": 6,
+          "step": 1,
+          "desc": "续训要压低（2）。存档里烤过的 6 会让 ~4.6 万次更新锤爆 <2000 样本，实测 60 局 vs 默认 71%→40%。"
+        },
+        {
+          "name": "optimizer",
+          "label": "优化器 optimizer",
+          "type": "text",
+          "default": "adam",
+          "desc": "sgd = 改动前的旧路径（逐位不变）。adam = 手写 Adam（dqn.js#mlpTrainEnh）。400局实测：单换 adam 反而略差，要配 layer-lr。"
+        },
+        {
+          "name": "layer-lr",
+          "label": "分层学习率 lrScale",
+          "type": "text",
+          "default": "1,1,1,3",
+          "desc": "逗号分隔、长度=层数，末位=952维输出层。梯度实测输出层范数是隐层1/10，末位3x后 300局 +10.0pp（三臂全胜）。"
+        },
+        {
+          "name": "grad-clip",
+          "label": "梯度范数裁剪 gradClip",
+          "type": "number",
+          "default": 0,
+          "min": 0,
+          "max": 20,
+          "step": 0.5,
+          "desc": "全网络梯度2-范数上限。安全阀不是提速手段：实测单独开 clip2.0 把拟合从 76.2% 降到 47.0%。默认关。"
+        },
+        {
+          "name": "ckpt",
+          "label": "检查点间隔(局)",
+          "type": "int",
+          "default": 400,
+          "min": 50,
+          "max": 4000,
+          "step": 50
+        },
+        {
+          "name": "eps-reset",
+          "label": "ε 循环间隔(局)",
+          "type": "int",
+          "default": 500,
+          "min": 50,
+          "max": 4000,
+          "step": 50
+        },
+        {
+          "name": "jitter",
+          "label": "对手亚型抖动",
+          "type": "number",
+          "default": 0.06,
+          "min": 0,
+          "max": 0.15,
+          "step": 0.01
+        },
+        {
+          "name": "seed",
+          "label": "随机种子 seed",
+          "type": "int",
+          "default": 20260909,
+          "min": 0,
+          "max": 2000000000,
+          "step": 1
+        },
+        {
+          "name": "phases",
+          "label": "课程配比 tag:share,tag:share",
+          "type": "text",
+          "default": "hell:0.20,elite:0.28,extreme:0.30,extreme-max:0.22",
+          "min": 0,
+          "max": 0,
+          "step": 1
+        }
+      ],
+      "flags": [
+        {
+          "name": "no-save",
+          "label": "不覆盖 data/input-ai-extreme.json",
+          "default": true
+        },
+        {
+          "name": "eval-only",
+          "label": "只标定不训练（量整条阶梯胜率）",
+          "default": false
+        }
+      ],
+      "presets": [
+        {
+          "name": "标定",
+          "args": {},
+          "flags": [
+            "eval-only"
+          ]
+        },
+        {
+          "name": "冒烟",
+          "args": {
+            "games": 150,
+            "eval": 20,
+            "step": 50,
+            "bcpairs": 40,
+            "eps-reset": 200,
+            "preload": 150,
+            "learnp": 2,
+            "curve": "tools/input-curve-v3-smoke.json",
+            "optimizer": "adam",
+            "layer-lr": "1,1,1,3"
+          }
+        },
+        {
+          "name": "快速",
+          "args": {
+            "games": 600,
+            "eval": 40,
+            "step": 50,
+            "eps-reset": 500,
+            "optimizer": "adam",
+            "layer-lr": "1,1,1,3",
+            "seed": 20260912
+          }
+        },
+        {
+          "name": "标准",
+          "args": {
+            "games": 3000,
+            "eval": 40,
+            "step": 50,
+            "eps-reset": 500,
+            "optimizer": "adam",
+            "layer-lr": "1,1,1,3",
+            "seed": 20260911
+          }
+        }
+      ],
+      "dryRunArgs": [
+        "--no-save"
+      ],
+      "writes": [
+        "data/input-ai-extreme.json",
+        "tools/input-curve-v3.json"
+      ]
+    }
+  ]
+}

@@ -113,6 +113,7 @@ function wttRenderScoreDetailInContext(player, snapshotDate, body) {
 
     const scores = { ...seasonStartScores };
     const allRecords = [...scoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
+    const matchOccMap = computeMatchOccurrenceMap(allRecords);
     const recordsWithScores = [];
 
     for (const record of allRecords) {
@@ -133,7 +134,8 @@ function wttRenderScoreDetailInContext(player, snapshotDate, body) {
                     date: record['日期'], type: record['类型'],
                     opponent: isWinner ? record['负者'] : record['胜者'],
                     isWinner, isBonus: false,
-                    scoreBefore, rawChange, decayedChange, scoreAfter
+                    scoreBefore, rawChange, decayedChange, scoreAfter,
+                    n: matchOccMap.get(record) || 1
                 });
             }
             scores[w] = Math.max(SCORE_FLOOR, scores[w] + decayedGain);
@@ -169,7 +171,7 @@ function wttRenderScoreDetailInContext(player, snapshotDate, body) {
         const signRaw = r.rawChange >= 0 ? '+' : '';
         const signDecayed = r.decayedChange >= 0 ? '+' : '';
         const changeDisplay = `${signRaw}${r.rawChange.toFixed(1)}（${signDecayed}${r.decayedChange.toFixed(1)}）`;
-        const mdUrl = escapeHtml(buildMatchDetailUrl(r.date, r.type, r.isWinner ? player : r.opponent, r.isWinner ? r.opponent : player, undefined, wttCurrentCategory));
+        const mdUrl = escapeHtml(buildMatchDetailUrl(r.date, r.type, r.isWinner ? player : r.opponent, r.isWinner ? r.opponent : player, r.n, wttCurrentCategory));
         return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(r.type)}</td><td>${escapeHtml(r.opponent)}</td><td class="${rc}">${res}</td><td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${changeDisplay}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
     }).join('');
 }

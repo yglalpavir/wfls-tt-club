@@ -144,6 +144,7 @@ function wttPpRenderHeader(playerName) {
 function wttPpComputeMatchRecords(playerName) {
     return wttWithDataContext(() => {
         const sortedLog = [...wttScoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
+        const matchOccMap = computeMatchOccurrenceMap(sortedLog);
         const rows = [];
         const seasons = (wttSeasonsData && wttSeasonsData.length) ? wttSeasonsData : [];
         for (let si = 0; si < seasons.length; si++) {
@@ -171,7 +172,7 @@ function wttPpComputeMatchRecords(playerName) {
                         const oppPre = scores[isWin ? l : w];
                         const rawChange = isWin ? rawGain : -rawGain * LOSER_POINT_MULTIPLIER;
                         const change = isWin ? wg : -wg * LOSER_POINT_MULTIPLIER;
-                        rows.push({ date: r['日期'], type: r['类型'], opp: isWin ? l : w, isWin: isWin, isBonus: false, pre: pre, oppPre: oppPre, rawChange: rawChange, change: change, post: pre + change });
+                        rows.push({ date: r['日期'], type: r['类型'], opp: isWin ? l : w, isWin: isWin, isBonus: false, pre: pre, oppPre: oppPre, rawChange: rawChange, change: change, post: pre + change, n: matchOccMap.get(r) || 1 });
                     }
                     scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg);
                     scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * LOSER_POINT_MULTIPLIER);
@@ -199,7 +200,7 @@ function wttPpRenderMatchTable(playerName, records) {
         const res = r.isWin ? '<td class="result-win">' + i18n[currentLang].score_result_win + '</td>' : '<td class="result-loss">' + i18n[currentLang].score_result_loss + '</td>';
         const signRaw = r.rawChange >= 0 ? '+' : '';
         const cc = r.change >= 0 ? 'score-change-positive' : 'score-change-negative';
-        const mdUrl = escapeHtml(buildMatchDetailUrl(r.date, r.type, r.isWin ? playerName : r.opp, r.isWin ? r.opp : playerName, undefined, wttCurrentCategory));
+        const mdUrl = escapeHtml(buildMatchDetailUrl(r.date, r.type, r.isWin ? playerName : r.opp, r.isWin ? r.opp : playerName, r.n, wttCurrentCategory));
         return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(r.type)}</td><td>${wttLinkPlayerName(r.opp)}</td>${res}<td>${r.pre.toFixed(1)}</td><td class="${cc}">${signRaw}${r.rawChange.toFixed(1)}</td><td>${r.post.toFixed(1)}</td></tr>`;
     }).join('');
 

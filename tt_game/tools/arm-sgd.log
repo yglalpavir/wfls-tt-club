@@ -1,0 +1,35 @@
+输入级 AI 极端对手课程续训（v3）
+  起点权重：data\input-ai-extreme.json
+  网络形状：128×88 → 192×128 → 128×192 → 952×128（952 动作 = 34×14×2）
+  课程：hell=20% → elite=28% → extreme=30% → extreme-max=22%
+  games=300 eval=8 step=100 jitter=0.06 seed=20260910
+  优化器：sgd（默认，未改动）
+BC 保鲜池 2120 条（120 局追球监督 · 在线混入 6% → 压到 6% · 周期性重锚 0 pass/100局）
+基线（起点权重）：default=34.9%  hell=30.6%  elite=27.0%  extreme=25.7%  extreme-max=25.4%
+选优基线：best=29.3（vs默认=34.9%，护栏下限 29.9%）
+预填回放 100 回合 → 回放 1956 条样本（贪心当前策略 · 课程对手 · 胜率 28% · 1s）
+
+—— 课程进入第 1/4 阶段：对手=hell（占 20%，第 0-60 局）——
+
+—— 课程进入第 2/4 阶段：对手=elite（占 28%，第 60-144 局）——
+ep   100 [elite]  train=33%  vs本档=18.5%  vsextreme-max=27.6%  vs默认=28.9%  best=29.3  eps=0.15  [75s]
+
+—— 课程进入第 3/4 阶段：对手=extreme（占 30%，第 144-234 局）——
+ep   200 [extreme]  train=39%  vs本档=36.8%  vsextreme-max=25.4%  vs默认=40.7%  best=32.7  eps=0.15  [143s]
+
+—— 课程进入第 4/4 阶段：对手=extreme-max（占 22%，第 234-300 局）——
+ep   300 [extreme-max]  train=36%  vs本档=37.7%  vsextreme-max=33.1%  vs默认=45.2%  best=37.5  eps=0.15  [209s]
+
+=== 最佳权重最终评估（80 局/档）===
+  对手            新权重        起点权重
+  default         35.8%    34.9%  +0.9
+  hell            36.6%    30.6%  +6.0
+  elite           34.1%    27.0%  +7.1
+  extreme         38.2%    25.7%  +12.5
+  extreme-max     34.0%    25.4%  +8.6
+已写 tools\input-curve-arm-sgd.json
+✅ 采纳：已保存 data\tmp-arm-sgd.json（vs extreme-max 34.0% ← 基线 25.4%）
+
+下一步：
+  1) 烘焙进实机：  node tools/bake-input.js data/tmp-arm-sgd.json 0.340 0.358
+  2) 继续加压续训：node tools/train-input3.js --from data/tmp-arm-sgd.json --games 3000 --eval 32 --step 75

@@ -1,0 +1,63 @@
+输入级 AI 极端对手课程续训（v3）
+  起点权重：data\input-ai-a952.json
+  网络形状：128×88 → 192×128 → 128×192 → 952×128（952 动作 = 34×14×2）
+  课程：hell=20% → elite=28% → extreme=30% → extreme-max=22%
+  games=900 eval=40 step=150 jitter=0.06 seed=20260909
+##TT##{"t":"phase","phase":"train","msg":"极端对手课程续训开始 games=900 课程=hell=0.20,elite=0.28,extreme=0.30,extreme-max=0.22"}
+BC 保鲜池 4586 条（100 局追球监督 · 在线混入 35% → 压到 6% · 周期性重锚 0 pass/100局）
+基线（起点权重）：default=71.8%  hell=71.6%  elite=63.4%  extreme=60.3%  extreme-max=59.9%
+选优基线：best=66.4（vs默认=71.8%，护栏下限 66.8%）
+##TT##{"t":"verify","stage":"baseline","vsDefault":0.7178,"vsTop":0.5988,"vsStartOpp":0.7158,"ladder":"default:0.718,hell:0.716,elite:0.634,extreme:0.603,extreme-max:0.599"}
+预填回放 600 回合 → 回放 31058 条样本（贪心当前策略 · 课程对手 · 胜率 61% · 17s）
+##TT##{"t":"preload","games":600,"replay":31058,"winRate":0.6133,"sec":16.6}
+
+—— 课程进入第 1/4 阶段：对手=hell（占 20%，第 0-180 局）——
+##TT##{"t":"phase","phase":"curriculum","msg":"hell"}
+##TT##{"t":"phase","ep":1,"phase":"hell","idx":1,"share":0.2}
+  ⚠ 评估远低于基线（vs默认 53.8% vs 基线 71.8%；vsextreme-max 53.2% vs 基线 59.9%）· 退化 1/4
+ep   150 [hell]  train=69%  vs本档=49.0%  vsextreme-max=53.2%  vs默认=53.8%  best=66.4  eps=0.16  [316s]
+##TT##{"t":"ep","sec":316.1,"ep":150,"phase":"hell","trainW":69.3,"evalPhase":49,"evalTop":53.2,"evalDef":53.8,"best":66.4,"bestTop":59.9,"eps":0.16}
+
+—— 课程进入第 2/4 阶段：对手=elite（占 28%，第 180-432 局）——
+##TT##{"t":"phase","phase":"curriculum","msg":"elite"}
+##TT##{"t":"phase","ep":181,"phase":"elite","idx":2,"share":0.28}
+  ⚠ 评估远低于基线（vs默认 52.4% vs 基线 71.8%；vsextreme-max 45.1% vs 基线 59.9%）· 退化 2/4
+ep   300 [elite]  train=70%  vs本档=48.3%  vsextreme-max=45.1%  vs默认=52.4%  best=66.4  eps=0.15  [481s]
+##TT##{"t":"ep","sec":480.6,"ep":300,"phase":"elite","trainW":69.7,"evalPhase":48.3,"evalTop":45.1,"evalDef":52.4,"best":66.4,"bestTop":59.9,"eps":0.15}
+
+—— 课程进入第 3/4 阶段：对手=extreme（占 30%，第 432-702 局）——
+##TT##{"t":"phase","phase":"curriculum","msg":"extreme"}
+##TT##{"t":"phase","ep":434,"phase":"extreme","idx":3,"share":0.3}
+  ↻ ε 循环：注入探索脉冲（第 450 局，ε→0.48）
+##TT##{"t":"eps-reset","ep":450,"eps":0.15}
+ep   450 [extreme]  train=68%  vs本档=53.1%  vsextreme-max=54.2%  vs默认=59.1%  best=66.4  eps=0.15  [670s]
+##TT##{"t":"ep","sec":669.5,"ep":450,"phase":"extreme","trainW":67.6,"evalPhase":53.1,"evalTop":54.2,"evalDef":59.1,"best":66.4,"bestTop":59.9,"eps":0.15}
+ep   600 [extreme]  train=66%  vs本档=61.5%  vsextreme-max=65.7%  vs默认=65.2%  best=66.4  eps=0.25  [819s]
+##TT##{"t":"ep","sec":819.2,"ep":600,"phase":"extreme","trainW":65.7,"evalPhase":61.5,"evalTop":65.7,"evalDef":65.2,"best":66.4,"bestTop":59.9,"eps":0.25}
+
+—— 课程进入第 4/4 阶段：对手=extreme-max（占 22%，第 702-900 局）——
+##TT##{"t":"phase","phase":"curriculum","msg":"extreme-max"}
+##TT##{"t":"phase","ep":703,"phase":"extreme-max","idx":4,"share":0.22}
+ep   750 [extreme-max]  train=66%  vs本档=58.4%  vsextreme-max=58.3%  vs默认=67.1%  best=66.4  eps=0.16  [969s]
+##TT##{"t":"ep","sec":969.1,"ep":750,"phase":"extreme-max","trainW":66,"evalPhase":58.4,"evalTop":58.3,"evalDef":67.1,"best":66.4,"bestTop":59.9,"eps":0.16}
+  ↻ ε 循环：注入探索脉冲（第 900 局，ε→0.48）
+##TT##{"t":"eps-reset","ep":900,"eps":0.15}
+ep   900 [extreme-max]  train=66%  vs本档=74.7%  vsextreme-max=74.4%  vs默认=74.5%  best=74.5  eps=0.15  [1144s]
+##TT##{"t":"ep","sec":1143.8,"ep":900,"phase":"extreme-max","trainW":66.4,"evalPhase":74.7,"evalTop":74.4,"evalDef":74.5,"best":74.5,"bestTop":74.4,"eps":0.15}
+
+=== 最佳权重最终评估（80 局/档）===
+  对手            新权重        起点权重
+  default         74.4%    71.8%  +2.6
+  hell            75.3%    71.6%  +3.7
+  elite           68.1%    63.4%  +4.7
+  extreme         68.6%    60.3%  +8.3
+  extreme-max     73.2%    59.9%  +13.3
+##TT##{"t":"phase","phase":"verify","msg":"最终阶梯评估完成"}
+##TT##{"t":"verify","stage":"final","vsDefault":0.7437,"vsDefaultBase":0.7178,"vsTop":0.7323,"vsTopBase":0.5988,"vsStartOpp":0.7528,"ladder":"default:0.744,hell:0.753,elite:0.681,extreme:0.686,extreme-max:0.732"}
+已写 tools\input-curve-v3.json
+✅ 采纳：已保存 data\input-ai-extreme.json（vs extreme-max 73.2% ← 基线 59.9%）
+
+下一步：
+  1) 烘焙进实机：  node tools/bake-input.js data/input-ai-extreme.json 0.732 0.744
+  2) 继续加压续训：node tools/train-input3.js --from data/input-ai-extreme.json --games 3000 --eval 32 --step 75
+##TT##{"t":"done","mode":"input-extreme-curriculum","adopted":true,"vsTop":0.7323,"vsTopBase":0.5988,"vsDefault":0.7437,"games":900,"sec":1303.7,"save":"data\\input-ai-extreme.json"}

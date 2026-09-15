@@ -102,6 +102,7 @@ function renderPlayerHeader(player) {
 // 计算球员全部比赛记录（逐赛季回放，含赛季继承），返回按日期倒序 rows
 function computePlayerMatchRecords(playerName) {
     const sortedLog = [...scoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
+    const matchOccMap = computeMatchOccurrenceMap(sortedLog);
     const rows = [];
     const seasons = (seasonsData && seasonsData.length) ? seasonsData : [];
     for (let si = 0; si < seasons.length; si++) {
@@ -131,7 +132,7 @@ function computePlayerMatchRecords(playerName) {
                     const oppPre = scores[isWin ? l : w];
                     const rawChange = isWin ? rawGain : -rawGain * LOSER_POINT_MULTIPLIER;
                     const change = isWin ? wg : -wg * LOSER_POINT_MULTIPLIER;
-                    rows.push({ date: r['日期'], type: r['类型'], opp: isWin ? l : w, isWin: isWin, isBonus: false, pre: pre, oppPre: oppPre, rawChange: rawChange, change: change, post: pre + change, score: r['比分'] || null, games: Array.isArray(r['局分']) ? r['局分'] : null });
+                    rows.push({ date: r['日期'], type: r['类型'], opp: isWin ? l : w, isWin: isWin, isBonus: false, pre: pre, oppPre: oppPre, rawChange: rawChange, change: change, post: pre + change, score: r['比分'] || null, games: Array.isArray(r['局分']) ? r['局分'] : null, n: matchOccMap.get(r) || 1 });
                 }
                 scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg);
                 scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * LOSER_POINT_MULTIPLIER);
@@ -162,7 +163,7 @@ function renderPlayerMatchTable(playerName, records) {
         const signRaw = r.rawChange >= 0 ? '+' : '';
         const signDec = r.change >= 0 ? '+' : '';
         const cc = r.change >= 0 ? 'score-change-positive' : 'score-change-negative';
-        const mdUrl = escapeHtml(buildMatchDetailUrl(r.date, r.type, r.isWin ? playerName : r.opp, r.isWin ? r.opp : playerName));
+        const mdUrl = escapeHtml(buildMatchDetailUrl(r.date, r.type, r.isWin ? playerName : r.opp, r.isWin ? r.opp : playerName, r.n));
         const scoreCell = hasScore ? `<td${r.games && r.games.length ? ` title="${i18n[currentLang].sb_games_label || '局分'}：${escapeHtml(r.games.join(' '))}"` : ''}>${r.score ? escapeHtml(r.score) : '-'}</td>` : '';
         return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(r.type)}</td><td>${linkPlayerName(r.opp)}</td>${res}${scoreCell}<td>${r.pre.toFixed(1)}</td><td class="${cc}">${signRaw}${r.rawChange.toFixed(1)}<span class="decayed-note">（${signDec}${r.change.toFixed(1)}）</span></td><td>${r.post.toFixed(1)}</td></tr>`;
     }).join('');
