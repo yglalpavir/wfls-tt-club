@@ -148,6 +148,23 @@ function calcRawPoints(winner, loser, eventType, currentScores, matchFormat) {
     const wScore = (typeof currentScores[winner] === 'number') ? currentScores[winner] : DEFAULT_INITIAL_SCORE;
     const lScore = (typeof currentScores[loser] === 'number') ? currentScores[loser] : DEFAULT_INITIAL_SCORE;
     return getBaseScore(wScore - lScore) * getEventCoefficient(eventType) * getFormatMultiplier(eventType, matchFormat); }
+/**
+ * 单场双方衰减后变动（俱乐部口径：胜负各自按自己的 球员×类型 批次定格/衰减，
+ * 禁止用胜者权重推负者——两人的批次/定格日不同，衰减权重一般不同）。
+ * 返回 { wGain, lLoss }：wGain 为胜者加分，lLoss 为负者扣分幅值（正数）。
+ * WTT / 非衰减模式：权重恒 1，退化为 calcMatchPoints × LOSER_POINT_MULTIPLIER 的原语义。
+ */
+function calcMatchPointsDual(winner, loser, eventType, matchDate, snapshotDate, currentScores, matchFormat) {
+    if (SCORE_TIME_DECAY_ENABLED === false) {
+        const wg = calcMatchPoints(winner, loser, eventType, matchDate, snapshotDate, currentScores, matchFormat);
+        return { wGain: wg, lLoss: wg * LOSER_POINT_MULTIPLIER };
+    }
+    const raw = calcRawPoints(winner, loser, eventType, currentScores, matchFormat);
+    return {
+        wGain: raw * getFreezeWeight(winner, eventType, matchDate, snapshotDate),
+        lLoss: raw * LOSER_POINT_MULTIPLIER * getFreezeWeight(loser, eventType, matchDate, snapshotDate)
+    };
+}
 
 // 计算球员近期状态分（最近10场比赛的积分变化总和）
 // beforeDate 可选：传入时只统计该日期之前的比赛（YYYY-MM-DD 字符串比较），用于"赛前状态"口径；不传行为不变
@@ -504,9 +521,9 @@ async function replaySnapshotsIncrementalAsync(sortedLog, playerMatches, startSc
             const w = r['胜者'], l = r['负者'];
             if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE;
             if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
-            const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], sc, r['赛制']);
-            sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
-            sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
+            const { wGain, lLoss } = calcMatchPointsDual(w, l, r['类型'], r['日期'], r['日期'], sc, r['赛制']);
+            sc[w] = Math.max(SCORE_FLOOR, sc[w] + wGain);
+            sc[l] = Math.max(SCORE_FLOOR, sc[l] - lLoss);
             active.add(w); active.add(l);
         } else if (isBonusRecord(r)) {
             const t = r['对象'];
@@ -537,9 +554,9 @@ function calculateEndScores(sl, ss, sst, sen) {
             const w = r['胜者'], l = r['负者'];
             if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE;
             if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
-            const wg = calcMatchPoints(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? sen : r['日期'], sc, r['赛制']);
-            sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
-            sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
+            const { wGain, lLoss } = calcMatchPointsDual(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? sen : r['日期'], sc, r['赛制']);
+            sc[w] = Math.max(SCORE_FLOOR, sc[w] + wGain);
+            sc[l] = Math.max(SCORE_FLOOR, sc[l] - lLoss);
         } else if (isBonusRecord(r)) {
             const t = r['对象'];
             const b = parseFloat(r['分数']) || 0;
@@ -619,9 +636,9 @@ function replaySeasonWindowToSnapshot(sortedLog, startScores, season, sd, player
             const w = r['胜者'], l = r['负者'];
             if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE;
             if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
-            const wg = calcMatchPoints(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? sd : r['日期'], sc, r['赛制']);
-            sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
-            sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
+            const { wGain, lLoss } = calcMatchPointsDual(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? sd : r['日期'], sc, r['赛制']);
+            sc[w] = Math.max(SCORE_FLOOR, sc[w] + wGain);
+            sc[l] = Math.max(SCORE_FLOOR, sc[l] - lLoss);
         } else if (isBonusRecord(r)) {
             const t = r['对象'];
             const b = parseFloat(r['分数']) || 0;
@@ -713,9 +730,9 @@ function calculateRealtimeRanking() {
         if (isMatchRecord(r)) {
             const w = r['胜者'], l = r['负者'];
             if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE; if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
-                const wg = calcMatchPoints(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? effectiveEnd : r['日期'], sc, r['赛制']);
-            sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
-            sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
+                const { wGain, lLoss } = calcMatchPointsDual(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? effectiveEnd : r['日期'], sc, r['赛制']);
+            sc[w] = Math.max(SCORE_FLOOR, sc[w] + wGain);
+            sc[l] = Math.max(SCORE_FLOOR, sc[l] - lLoss);
         } else if (isBonusRecord(r)) {
             const t = r['对象']; const b = parseFloat(r['分数']) || 0;
             if (!sc[t]) sc[t] = DEFAULT_INITIAL_SCORE;
@@ -805,9 +822,9 @@ async function calculateRealtimeRankingAsync(onProgress) {
             if (isMatchRecord(r)) {
                 const w = r['胜者'], l = r['负者'];
                 if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE; if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
-            const wg = calcMatchPoints(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? effectiveEnd : r['日期'], sc, r['赛制']);
-                sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
-                sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
+            const { wGain, lLoss } = calcMatchPointsDual(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? effectiveEnd : r['日期'], sc, r['赛制']);
+                sc[w] = Math.max(SCORE_FLOOR, sc[w] + wGain);
+                sc[l] = Math.max(SCORE_FLOOR, sc[l] - lLoss);
             } else if (isBonusRecord(r)) {
                 const t = r['对象']; const b = parseFloat(r['分数']) || 0;
                 if (!sc[t]) sc[t] = DEFAULT_INITIAL_SCORE;

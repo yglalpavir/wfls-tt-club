@@ -124,18 +124,19 @@ function computePlayerMatchRecords(playerName) {
                 const w = r['胜者'], l = r['负者'];
                 if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
                 if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
-                const wg = calcMatchPoints(w, l, r['类型'], r['日期'], getTodayStr(), scores, r['赛制']);
+                const wgDual = calcMatchPointsDual(w, l, r['类型'], r['日期'], getTodayStr(), scores, r['赛制']);
+                const wg = wgDual.wGain, wl = wgDual.lLoss;
                 const rawGain = calcRawPoints(w, l, r['类型'], scores, r['赛制']);
                 if (w === playerName || l === playerName) {
                     const isWin = w === playerName;
                     const pre = scores[playerName];
                     const oppPre = scores[isWin ? l : w];
                     const rawChange = isWin ? rawGain : -rawGain * LOSER_POINT_MULTIPLIER;
-                    const change = isWin ? wg : -wg * LOSER_POINT_MULTIPLIER;
+                    const change = isWin ? wg : -wl;
                     rows.push({ date: r['日期'], type: r['类型'], opp: isWin ? l : w, isWin: isWin, isBonus: false, pre: pre, oppPre: oppPre, rawChange: rawChange, change: change, post: pre + change, score: r['比分'] || null, games: Array.isArray(r['局分']) ? r['局分'] : null, n: matchOccMap.get(r) || 1 });
                 }
                 scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg);
-                scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * LOSER_POINT_MULTIPLIER);
+                scores[l] = Math.max(SCORE_FLOOR, scores[l] - wl);
             }
         }
         playerTypeBatches = prevBatches;

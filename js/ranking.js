@@ -73,18 +73,19 @@ function renderScoreDetail() {
         if (isMatchRecord(record)) {
             const w = record['胜者'], l = record['负者'];
             if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE; if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
-            const decayedGain = calcMatchPoints(w, l, record['类型'], record['日期'], snapshotDate, scores, record['赛制']);
+            const decayedDual = calcMatchPointsDual(w, l, record['类型'], record['日期'], snapshotDate, scores, record['赛制']);
+            const decayedGain = decayedDual.wGain, decayedLoss = decayedDual.lLoss;
             const rawGain = calcRawPoints(w, l, record['类型'], scores, record['赛制']);
             if (record['胜者'] === player || record['负者'] === player) {
                 const isWinner = record['胜者'] === player;
                 const rawChange = isWinner ? rawGain : -(rawGain * LOSER_POINT_MULTIPLIER);
-                const decayedChange = isWinner ? decayedGain : -(decayedGain * LOSER_POINT_MULTIPLIER);
+                const decayedChange = isWinner ? decayedGain : -decayedLoss;
                 const scoreBefore = scores[player];
                 const scoreAfter = scoreBefore + decayedChange;
                 recordsWithScores.push({ date: record['日期'], type: record['类型'], opponent: isWinner ? record['负者'] : record['胜者'], isWinner, isBonus: false, scoreBefore, rawChange, decayedChange, scoreAfter, score: record['比分'] || null, games: Array.isArray(record['局分']) ? record['局分'] : null, n: matchOccMap.get(record) || 1 });
             }
             scores[w] = Math.max(SCORE_FLOOR, scores[w] + decayedGain);
-            scores[l] = Math.max(SCORE_FLOOR, scores[l] - decayedGain * LOSER_POINT_MULTIPLIER);
+            scores[l] = Math.max(SCORE_FLOOR, scores[l] - decayedLoss);
         } else if (isBonusRecord(record) && record['对象'] === player) {
             const bonus = parseFloat(record['分数']) || 0;
             if (!scores[player]) scores[player] = DEFAULT_INITIAL_SCORE;

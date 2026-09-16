@@ -3588,9 +3588,9 @@ a.hero-ball::before {
 .md-f-node b { font-family: var(--font-en); font-size: 1rem; font-weight: 700; color: var(--text-primary); font-variant-numeric: tabular-nums; }
 .md-f-node i { font-style: normal; font-size: .62rem; letter-spacing: 1px; text-transform: uppercase; color: var(--text-tertiary, var(--text-muted)); white-space: nowrap; }
 .md-f-arrow { color: var(--text-tertiary, var(--text-muted)); font-size: .68rem; }
-.md-f-node.md-f-res { background: linear-gradient(135deg, var(--primary-light), var(--primary-dark)); border-color: transparent; }
-.md-f-node.md-f-res b { color: #fff; }
-.md-f-node.md-f-res i { color: rgba(255,255,255,.8); }
+.md-f-node.md-f-res { background: var(--primary-pale); border-color: var(--primary-light); }
+.md-f-node.md-f-res b { color: var(--accent-blue); }
+.md-f-node.md-f-res i { color: var(--text-tertiary, var(--text-muted)); }
 
 /* ---- 积分产生明细 ---- */
 .md-bd-list { display: flex; flex-direction: column; }
