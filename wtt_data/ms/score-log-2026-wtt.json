@@ -16450,7 +16450,7 @@
     "类型": "冠军赛",
     "胜者": "Truls MOREGARD",
     "负者": "Tomokazu HARIMOTO"
-  },  
+  },
   {
     "日期": "2026-09-13",
     "类型": "冠军赛",
@@ -16462,5 +16462,214 @@
     "类型": "冠军赛",
     "胜者": "Truls MOREGARD",
     "负者": "Hugo CALDERANO"
-  }  
+  },
+  {
+    "日期": "2026-09-10",
+    "类型": "常规挑战赛",
+    "胜者": "Thibault PORET",
+    "负者": "Tiago APOLONIA"
+  },
+  {
+    "日期": "2026-09-10",
+    "类型": "常规挑战赛",
+    "胜者": "Ricardo WALTHER",
+    "负者": "Wim VERDONSCHOT"
+  },
+  {
+    "日期": "2026-09-10",
+    "类型": "常规挑战赛",
+    "胜者": "Alvaro ROBLES",
+    "负者": "Fanbo MENG"
+  },
+  {
+    "日期": "2026-09-10",
+    "类型": "常规挑战赛",
+    "胜者": "Kristian KARLSSON",
+    "负者": "Alex NAUMI"
+  },
+  {
+    "日期": "2026-09-10",
+    "类型": "常规挑战赛",
+    "胜者": "Elias RANEFUR",
+    "负者": "Petyo KRASTEV"
+  },
+  {
+    "日期": "2026-09-10",
+    "类型": "常规挑战赛",
+    "胜者": "Andrej GACINA",
+    "负者": "Maciej KUBIK"
+  },
+  {
+    "日期": "2026-09-10",
+    "类型": "常规挑战赛",
+    "胜者": "Milosz REDZIMSKI",
+    "负者": "Yuhi SAKAI"
+  },
+  {
+    "日期": "2026-09-10",
+    "类型": "常规挑战赛",
+    "胜者": "Joe SEYFRIED",
+    "负者": "Abdullah YIGENLER"
+  },
+  {
+    "日期": "2026-09-10",
+    "类型": "常规挑战赛",
+    "胜者": "Jules ROLLAND",
+    "负者": "Lubomir JANCARIK"
+  },
+  {
+    "日期": "2026-09-10",
+    "类型": "常规挑战赛",
+    "胜者": "Cedric NUYTINCK",
+    "负者": "Yoan VELICHKOV"
+  },
+  {
+    "日期": "2026-09-10",
+    "类型": "常规挑战赛",
+    "胜者": "Andre BERTELSMEIER",
+    "负者": "Leo DE NODREST"
+  },
+  {
+    "日期": "2026-09-10",
+    "类型": "常规挑战赛",
+    "胜者": "Ryoichi YOSHIYAMA",
+    "负者": "Jonathan GROTH"
+  },
+  {
+    "日期": "2026-09-10",
+    "类型": "常规挑战赛",
+    "胜者": "Romain BRARD",
+    "负者": "Kazuki HAMADA"
+  },
+  {
+    "日期": "2026-09-10",
+    "类型": "常规挑战赛",
+    "胜者": "Ryuusei KAWAKAMI",
+    "负者": "Marcos FREITAS"
+  },
+  {
+    "日期": "2026-09-10",
+    "类型": "常规挑战赛",
+    "胜者": "Yuto KIZUKURI",
+    "负者": "John OYEBODE"
+  },
+  {
+    "日期": "2026-09-10",
+    "类型": "常规挑战赛",
+    "胜者": "Dimitrij OVTCHAROV",
+    "负者": "Florian BOURRASSAUD"
+  },
+  {
+    "日期": "2026-09-11",
+    "类型": "常规挑战赛",
+    "胜者": "Thibault PORET",
+    "负者": "Ricardo WALTHER"
+  },
+  {
+    "日期": "2026-09-11",
+    "类型": "常规挑战赛",
+    "胜者": "Kristian KARLSSON",
+    "负者": "Alvaro ROBLES"
+  },
+  {
+    "日期": "2026-09-11",
+    "类型": "常规挑战赛",
+    "胜者": "Elias RANEFUR",
+    "负者": "Andrej GACINA"
+  },
+  {
+    "日期": "2026-09-11",
+    "类型": "常规挑战赛",
+    "胜者": "Milosz REDZIMSKI",
+    "负者": "Joe SEYFRIED"
+  },
+  {
+    "日期": "2026-09-11",
+    "类型": "常规挑战赛",
+    "胜者": "Cedric NUYTINCK",
+    "负者": "Jules ROLLAND"
+  },
+  {
+    "日期": "2026-09-11",
+    "类型": "常规挑战赛",
+    "胜者": "Andre BERTELSMEIER",
+    "负者": "Ryoichi YOSHIYAMA"
+  },
+  {
+    "日期": "2026-09-11",
+    "类型": "常规挑战赛",
+    "胜者": "Ryuusei KAWAKAMI",
+    "负者": "Romain BRARD"
+  },
+  {
+    "日期": "2026-09-11",
+    "类型": "常规挑战赛",
+    "胜者": "Dimitrij OVTCHAROV",
+    "负者": "Yuto KIZUKURI"
+  },
+  {
+    "日期": "2026-09-12",
+    "类型": "常规挑战赛",
+    "胜者": "Kristian KARLSSON",
+    "负者": "Thibault PORET"
+  },
+  {
+    "日期": "2026-09-12",
+    "类型": "常规挑战赛",
+    "胜者": "Elias RANEFUR",
+    "负者": "Milosz REDZIMSKI"
+  },
+  {
+    "日期": "2026-09-12",
+    "类型": "常规挑战赛",
+    "胜者": "Cedric NUYTINCK",
+    "负者": "Andre BERTELSMEIER"
+  },
+  {
+    "日期": "2026-09-12",
+    "类型": "常规挑战赛",
+    "胜者": "Dimitrij OVTCHAROV",
+    "负者": "Ryuusei KAWAKAMI"
+  },
+  {
+    "日期": "2026-09-12",
+    "类型": "常规挑战赛",
+    "胜者": "Elias RANEFUR",
+    "负者": "Kristian KARLSSON",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-7",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2026-09-12",
+    "类型": "常规挑战赛",
+    "胜者": "Dimitrij OVTCHAROV",
+    "负者": "Cedric NUYTINCK",
+    "比分": "3-2",
+    "局分": [
+      "11-9",
+      "9-11",
+      "11-8",
+      "7-11",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2026-09-13",
+    "类型": "常规挑战赛",
+    "胜者": "Elias RANEFUR",
+    "负者": "Dimitrij OVTCHAROV",
+    "比分": "4-2",
+    "局分": [
+      "11-7",
+      "8-11",
+      "11-9",
+      "6-11",
+      "11-5",
+      "11-8"
+    ]
+  }
 ]

@@ -7,8 +7,9 @@
 3. 加分记录（对象/分数 形态）的分数必须可解析为非零数值
 4. 赛制校验：显式赛制 ∈ 赛制系数键 ∪ {default}；缺省赛制依赖的「默认赛制」必须覆盖该类型；
    decay-config 的 noDecayTypes ⊆ 已定义类型
-5. 比分/局分自洽性（可选字段，口径与 tools/append_submission.py 一致）：总比分格式/胜方局数更大
-   且 ≤4/与赛制匹配；局分逐条合法、无平局、与总比分自洽；仅有局分时须能推出胜方
+5. 比分/局分自洽性（可选字段，口径与 tools/append_submission.py 一致；覆盖 data/score-log.json
+   与 wtt_data/*/score-log-*.json）：总比分格式/胜方局数更大且 ≤4/与赛制匹配（WTT 记录无赛制字段，
+   跳过局数匹配）；局分逐条合法、无平局、与总比分自洽；仅有局分时须能推出胜方
 6. 比赛类型都在 event-coefficient.json 中有定义
 7. 赛季：ISO 日期、start<=end、不重叠、snapshotDates 合法且落在赛季内
 8. players.json：uid/姓名唯一、initialScore 为数值、status 枚举
@@ -18,6 +19,7 @@
 注：同日 (日期,类型,胜者,负者) 完全重复的记录属正常多次对局（README 有口径说明），不做去重检测。
 用法: python tools/ci_validate.py
 """
+import glob
 import json
 import os
 import re
@@ -193,63 +195,84 @@ if isinstance(no_decay, list):
 print("[5] 比分/局分自洽性")
 WINS_NEEDED = {"bo3": 2, "bo5": 3, "bo7": 4}
 TOTAL_SCORE_RE = re.compile(r"^(\d{1,2})\s*[-:：]\s*(\d{1,2})$")
-score_errs = []
-score_records = 0
-for idx, r in enumerate(scorelog, 1):
-    if not r.get("胜者"):
-        continue  # 加分记录无比分概念
-    total = r.get("比分")
-    games = r.get("局分")
-    if total is None and games is None:
-        continue
-    score_records += 1
-    # 有效赛制：显式赛制 > 默认赛制映射；两者皆无则跳过局数匹配（[4] 已单独把关覆盖性）
-    fmt = r.get("赛制")
-    fmt_l = str(fmt).lower() if fmt not in (None, "") else None
-    if fmt_l is None:
-        df = (default_formats or {}).get(r.get("类型")) if isinstance(default_formats, dict) else None
-        eff = str(df).lower() if df else None
-    else:
-        eff = fmt_l
-    needed = WINS_NEEDED.get(eff) if eff and eff != "default" else None
 
-    w = l = None
-    if total is not None:
-        m = TOTAL_SCORE_RE.match(str(total).strip())
-        if not m:
-            score_errs.append(f"第 {idx} 条: 总比分 {total!r} 格式应为「胜者局数-负者局数」，如 3-1")
+def check_score_fields(records, label, fmt_defaults):
+    """校验一组比赛记录的可选 比分/局分 字段，返回 (错误列表, 含比分记录数)。
+    label 为错误消息前缀（区分 data 与 wtt_data 各文件）；fmt_defaults 为「默认赛制」映射，
+    传 None 时跳过局数与赛制的匹配检查（WTT 记录无赛制字段）。"""
+    errs = []
+    n_scored = 0
+    for idx, r in enumerate(records, 1):
+        if not isinstance(r, dict) or not r.get("胜者"):
+            continue  # 加分记录无比分概念
+        total = r.get("比分")
+        games = r.get("局分")
+        if total is None and games is None:
+            continue
+        n_scored += 1
+        where = f"{label} 第 {idx} 条"
+        # 有效赛制：显式赛制 > 默认赛制映射；两者皆无则跳过局数匹配（[4] 已单独把关俱乐部覆盖性）
+        fmt = r.get("赛制")
+        fmt_l = str(fmt).lower() if fmt not in (None, "") else None
+        if fmt_l is None:
+            df = fmt_defaults.get(r.get("类型")) if isinstance(fmt_defaults, dict) else None
+            eff = str(df).lower() if df else None
         else:
-            w, l = int(m.group(1)), int(m.group(2))
-            if w <= l:
-                score_errs.append(f"第 {idx} 条: 总比分 {w}-{l} 胜方局数必须大于负方（胜者在前的口径）")
-            elif w > 4:
-                score_errs.append(f"第 {idx} 条: 总比分 {w}-{l} 单打最多 bo7（胜方最多 4 局）")
-            elif needed is not None and w != needed:
-                score_errs.append(f"第 {idx} 条: 总比分 {w}-{l} 与赛制 {eff} 不符（需胜 {needed} 局）")
-    if games is not None:
-        if not isinstance(games, list) or not games:
-            score_errs.append(f"第 {idx} 条: 「局分」应为逐局比分数组，如 [\"11-9\", \"8-11\", \"11-7\"]")
-        else:
-            parsed, bad, wins = [], 0, 0
-            for g in games:
-                m = TOTAL_SCORE_RE.match(str(g).strip())
-                if not m or m.group(1) == m.group(2):
-                    bad += 1
-                    continue
-                a, b = int(m.group(1)), int(m.group(2))
-                wins += 1 if a > b else 0
-                parsed.append(f"{a}-{b}")
-            if bad:
-                score_errs.append(f"第 {idx} 条: 局分含 {bad} 个非法条目（格式应为「11-9」，且无平局）")
-            elif w is not None:
-                if wins != w or len(parsed) != w + l:
-                    score_errs.append(f"第 {idx} 条: 局分与总比分 {w}-{l} 不自洽（应共 {w + l} 局、胜方赢 {w} 局）")
-            elif wins <= len(parsed) - wins:
-                score_errs.append(f"第 {idx} 条: 局分推不出胜方（按胜者视角记分，胜方赢的局须更多）")
+            eff = fmt_l
+        needed = WINS_NEEDED.get(eff) if eff and eff != "default" else None
+
+        w = l = None
+        if total is not None:
+            m = TOTAL_SCORE_RE.match(str(total).strip())
+            if not m:
+                errs.append(f"{where}: 总比分 {total!r} 格式应为「胜者局数-负者局数」，如 3-1")
+            else:
+                w, l = int(m.group(1)), int(m.group(2))
+                if w <= l:
+                    errs.append(f"{where}: 总比分 {w}-{l} 胜方局数必须大于负方（胜者在前的口径）")
+                elif w > 4:
+                    errs.append(f"{where}: 总比分 {w}-{l} 胜方最多 4 局（bo7 上限）")
+                elif needed is not None and w != needed:
+                    errs.append(f"{where}: 总比分 {w}-{l} 与赛制 {eff} 不符（需胜 {needed} 局）")
+        if games is not None:
+            if not isinstance(games, list) or not games:
+                errs.append(f"{where}: 「局分」应为逐局比分数组，如 [\"11-9\", \"8-11\", \"11-7\"]")
+            else:
+                parsed, bad, wins = [], 0, 0
+                for g in games:
+                    m = TOTAL_SCORE_RE.match(str(g).strip())
+                    if not m or m.group(1) == m.group(2):
+                        bad += 1
+                        continue
+                    a, b = int(m.group(1)), int(m.group(2))
+                    wins += 1 if a > b else 0
+                    parsed.append(f"{a}-{b}")
+                if bad:
+                    errs.append(f"{where}: 局分含 {bad} 个非法条目（格式应为「11-9」，且无平局）")
+                elif w is not None:
+                    if wins != w or len(parsed) != w + l:
+                        errs.append(f"{where}: 局分与总比分 {w}-{l} 不自洽（应共 {w + l} 局、胜方赢 {w} 局）")
+                elif wins <= len(parsed) - wins:
+                    errs.append(f"{where}: 局分推不出胜方（按胜者视角记分，胜方赢的局须更多）")
+    return errs, n_scored
+
+score_errs, club_scored = check_score_fields(scorelog, "data/score-log.json", default_formats)
+
+# WTT 各项目 score-log 同口径校验（WTT 记录无赛制字段且其系数文件无「默认赛制」→ 跳过局数匹配）
+wtt_scored = 0
+for wf in sorted(glob.glob(os.path.join(ROOT, "wtt_data", "*", "score-log-*.json"))):
+    wlog = load(wf)
+    if not isinstance(wlog, list):
+        continue  # 解析失败已在 [1] 报错
+    werrs, wn = check_score_fields(wlog, os.path.relpath(wf, ROOT), None)
+    score_errs.extend(werrs)
+    wtt_scored += wn
+
 for e in score_errs:
     err(e)
 if not score_errs:
-    ok(f"比分/局分自洽（{score_records} 条含比分记录）" if score_records else "存量记录暂无比分/局分字段（可选字段）")
+    total_scored = club_scored + wtt_scored
+    ok(f"比分/局分自洽（俱乐部 {club_scored} 条、WTT {wtt_scored} 条含比分记录）" if total_scored else "存量记录暂无比分/局分字段（可选字段）")
 
 # ---- 6) 类型白名单 ----
 print("[6] 比赛类型 ∈ event-coefficient.json")

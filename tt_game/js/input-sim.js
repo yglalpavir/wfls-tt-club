@@ -37,7 +37,8 @@ const INPUTSIM = (() => {
   /* ==== 玩家拍对象 ==== */
   function padInit(z){
     return { x: 0, z: z || PLAYER_Z, svx: 0, svz: 0, recover: 0, ctrl: false, my: 0.5,
-             stance: 'forehand', stanceT: -9 };   // 姿态状态跨板保持（= 实机 playerPad）
+             stance: 'forehand', stanceT: -9,   // 姿态状态跨板保持（= 实机 playerPad）
+             _nz: { v: 0, t: -1 } };            // OU 决策噪声盒（resolveStance v2.3，原地更新）
   }
 
   /* ==== 鼠标输入 → 拍面缓动（main.js#playerControl 同公式）====
@@ -65,14 +66,16 @@ const INPUTSIM = (() => {
     pad.svz += (svz - pad.svz) * Math.min(1, dt * 12);
   }
 
-  /* 玩家侧自动正/反手（SIM.resolveStance 单一逻辑源，实机 physics.js#autoStance 同款状态机）：
+  /* 玩家侧自动正/反手（SIM.resolveStance 单一逻辑源，实机 physics.js#autoStance 同款状态机 v2.3）：
      姿态与切换时刻记录在 pad 上跨子步/跨板保持（旧版每板重置 'forehand'，与实机不一致）；
      切换时刻写 pad.stanceT 供 magnetPull 的磁吸过渡成本使用。
      bx = 整板预测击球点 x（调用方在 playerReceive 开头用 predictXAtZ 算一次）；
-     commit = 触球承诺（球到拍面 TTC < commitT，与实机同窗口）。 */
-  function stanceOf(pad, bx, now, rng, commit){
+     commit = 触球承诺（SIM.commitTOf 分姿态×球速窗口，与实机同公式）；
+     bvx = 来球横向速度（趋势预判项）；pad._nz = OU 平滑噪声盒（每板开头由 playerReceive 重启）。 */
+  function stanceOf(pad, bx, now, rng, commit, bvx){
     const st = SIM.resolveStance({ bx, gx: pad.x, gz: pad.z, cur: pad.stance,
-      lastSwitch: pad.stanceT, now, inbound: true, commit: !!commit, rng });
+      lastSwitch: pad.stanceT, now, inbound: true, commit: !!commit, rng,
+      bvx, noiseBox: pad._nz });
     if(st !== pad.stance){ pad.stance = st; pad.stanceT = now; }
     return st;
   }
@@ -121,8 +124,9 @@ const INPUTSIM = (() => {
     return pushSt;
   }
 
-  /* 触球 → 出球核心（physics.js#hitPlayer → SIM.resolveHit；正反手由内部推演） */
-  function hitShot(b, v, s, pad, mouseNy, rng){
+  /* 触球 → 出球核心（physics.js#hitPlayer → SIM.resolveHit；正反手由内部推演）
+     receive = 接发球板（第一板）：无法触发爆冲（与实机 hitPlayer 同一门控） */
+  function hitShot(b, v, s, pad, mouseNy, rng, receive){
     const CV = C.AIM || { xFromPos: 0.55, xFromSwipe: 0.30, zDeep: -1.24, zShort: -0.50 };
     const aimX = cl(pad.x * CV.xFromPos + pad.svx * CV.xFromSwipe, -0.9, 0.9);
     const ny = cl(mouseNy != null ? mouseNy : 0.5, 0, 1);
@@ -139,6 +143,7 @@ const INPUTSIM = (() => {
       ctrlHold: !!pad.ctrl,
       dir: -1,
       applyArcAdj: true,
+      receive: !!receive,
       rng,
     });
   }
@@ -148,11 +153,14 @@ const INPUTSIM = (() => {
    * brain 每 freq 帧调用一次（调用方不传时取 SIM.C.DECIDE_SKIP=3，即 15Hz 决策），
    * 中间复用上一个动作——既贴近真人"鼠标不是每帧抖"的习惯，也让 DQN 时间粒度更干净。
    * ⚠ freq 必须与实机 tt-player.js 的 DECIDE_SKIP 一致，否则训练/实机决策频率漂移。
+   * isReceive：接发球板（第一板）标记 → 出球核心不判爆冲（= 实机 hitPlayer 的 receive 门控）。
    * 返回 { hit:true, out:{pos, vel, spin}, mode } | { hit:false, loss:'double'|'out'|'timeout' } */
-  function playerReceive(from, vel, spin, pad, brain, rng, freq){
+  function playerReceive(from, vel, spin, pad, brain, rng, freq, isReceive){
     const p = { x: from.x, y: from.y, z: from.z };
     const v = { x: vel.x, y: vel.y, z: vel.z };
     const s = { x: spin ? spin.x : 0, y: spin ? spin.y : 0, z: 0 };
+    // 每板重启 OU 决策噪声盒（不带着上一板的犹豫；now 为本板内局部时钟）
+    if(pad._nz){ pad._nz.v = 0; pad._nz.t = -1; }
     // 整板预测击球点（来球起点 → 拍面 z 平面的 x）：与实机 autoStance 同为"预测决策"，
     // 且不随磁吸拉球漂移——姿态决策稳定，不会出现"磁吸改变球位→改变姿态"的反馈震荡
     let predBX = from.x;
@@ -216,14 +224,14 @@ const INPUTSIM = (() => {
       if(ended) return { hit:false, loss: ended };
       if(bounced && v.z > 0.02){
         // 每帧一次姿态决策（旧版磁吸/拟合各调一次且噪声重复抽签）；now=帧数×DT；
-        // TTC 承诺窗口与实机 autoStance 同款
+        // TTC 承诺窗口与实机 autoStance 同公式（SIM.commitTOf：分姿态 × 来球速度自适应）
         const ttc = (pad.z - p.z) / v.z;
-        stance = stanceOf(pad, predBX, i * DT, rng, ttc > 0 && ttc < C.STANCE.commitT);
+        stance = stanceOf(pad, predBX, i * DT, rng, ttc > 0 && ttc < SIM.commitTOf(pad.stance, v.z), v.x);
         magnetPull(p, v, s, pad, stance, pad.ctrl, true, i * DT);
         const fitSt = tryPlayerFit(p.x, p.y, p.z, pzPrev, v, s, pad, stance, pad.ctrl);
         if(fitSt !== null){
           p.z = pad.z - PAD_HD - C.BALL_R;
-          const d = hitShot(p, v, s, pad, pad._my != null ? pad._my : 0.5, rng);
+          const d = hitShot(p, v, s, pad, pad._my != null ? pad._my : 0.5, rng, isReceive);
           if(HITDBG_SIM){
             const fs2 = SIM.simulateFull(p, d.outVel, 'player', { x: d.spin.x, y: d.spin.y, z: 0 }, rng);
             HITDBG.hits++; HITDBG.svz += pad.svz; HITDBG.fwd += (-pad.svz / 7) > 0 ? Math.min(1, -pad.svz / 7) : 0;
@@ -268,8 +276,10 @@ const INPUTSIM = (() => {
     return { from, vel: sv.vel, spin: sv.spin };
   }
 
-  /* ==== AI 接发/回球（simmatch.returnShot 同构）==== */
-  function aiReturn(meetState, pol, rng, ownX, oppX){
+  /* ==== AI 接发/回球（simmatch.returnShot 同构）====
+     isReceive：接发球板（第一板）——此前训练侧从不传 receive，receive.pushProb/attackProb
+     与爆冲门控在训练里从未生效（simmatch.js 一直传），此处对齐实机/ simmatch。 */
+  function aiReturn(meetState, pol, rng, ownX, oppX, isReceive){
     const stroke = meetState.pos.x < ownX ? 'forehand' : 'backhand';
     const d = P.aiDecision({
       stroke, dir: 1,
@@ -277,6 +287,7 @@ const INPUTSIM = (() => {
       vx: meetState.vel.x, vy: meetState.vel.y, vz: meetState.vel.z,
       sx: meetState.spin.x, sy: meetState.spin.y,
       aiX: ownX, playerX: oppX, rng,
+      receive: !!isReceive,
     }, pol);
     return { outVel: d.outVel, fx: d.fx, fy: d.fy, mode: d.mode };
   }
@@ -324,11 +335,12 @@ const INPUTSIM = (() => {
 
     let hitter = null;
     /* 接发用发球接触点状态整程模拟（playerReceive/aiReach 自会检测二跳落玩家侧→
-       浮出台面；与实机 aiMoveShared/ttTick 一致——深发球按全程反应时间判定够到球） */
+       浮出台面；与实机 aiMoveShared/ttTick 一致——深发球按全程反应时间判定够到球）。
+       接发球板（第一板）：isReceive=true → 两侧都无法触发爆冲。 */
     let state = { pos: srv.from, vel: srv.vel, spin: srv.spin };
     const receiver0 = firstServer === 'player' ? 'ai' : 'player';
     if(receiver0 === 'player'){
-      const r0 = playerReceive(state.pos, state.vel, state.spin, pad, agent, rng, skip);
+      const r0 = playerReceive(state.pos, state.vel, state.spin, pad, agent, rng, skip, true);
       if(!r0.hit){ winner = 'ai'; reason = 'recv-' + r0.loss; credit(-0.2); return { winner, shots, reason, pReturns }; }
       state = { pos: r0.out.pos, vel: r0.out.vel, spin: r0.out.spin }; hitter = 'player'; shots++; pReturns++;
       credit(0.08);
@@ -336,7 +348,7 @@ const INPUTSIM = (() => {
       const r0 = aiReach(state, aiP.z, aiP.x);
       if(!r0.reach){ winner = 'player'; reason = 'ai-' + r0.why; credit(0.3); return { winner, shots, reason, pReturns }; }
       aiP.x = r0.newX; aiP.z = r0.newZ;
-      const hit0 = aiReturn(r0.meet.state, pA, rng, aiP.x, pad.x);
+      const hit0 = aiReturn(r0.meet.state, pA, rng, aiP.x, pad.x, true);
       state = { pos: r0.meet.state.pos, vel: hit0.outVel, spin: { x: hit0.fx, y: hit0.fy, z: 0 } };
       hitter = 'ai'; shots++;
     }

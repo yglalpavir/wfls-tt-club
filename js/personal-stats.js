@@ -376,9 +376,9 @@ function getApproxScoreAtDate(playerName, targetDate, sortedLog, startScores, be
             const w = r['胜者'], l = r['负者'];
             if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE;
             if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
-            const wg = calcMatchPoints(w, l, r['类型'], r['日期'], targetDate, sc, r['赛制']);
+            const { wGain: wg, lLoss: wl } = calcMatchPointsDual(w, l, r['类型'], r['日期'], targetDate, sc, r['赛制']);
             sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
-            sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
+            sc[l] = Math.max(SCORE_FLOOR, sc[l] - wl);
         } else if (isBonusRecord(r)) {
             const t = r['对象'];
             const b = parseFloat(r['分数']) || 0;
@@ -560,16 +560,16 @@ function renderPersonalStats(playerName, containerId) {
         const w = r['胜者'], l = r['负者'];
         if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
         if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
-        const wg = calcMatchPoints(w, l, r['类型'], r['日期'], getTodayStr(), scores, r['赛制']);
+        const { wGain: wg, lLoss: wl } = calcMatchPointsDual(w, l, r['类型'], r['日期'], getTodayStr(), scores, r['赛制']);
         if (w === playerName) {
             oppPointsGained[l] = (oppPointsGained[l] || 0) + wg;
-            oppPointsLost[l] = (oppPointsLost[l] || 0) + wg * LOSER_POINT_MULTIPLIER;
+            oppPointsLost[l] = (oppPointsLost[l] || 0) + wl;
         } else if (l === playerName) {
             oppPointsLost[w] = (oppPointsLost[w] || 0) + wg;
-            oppPointsGained[w] = (oppPointsGained[w] || 0) + wg * LOSER_POINT_MULTIPLIER;
+            oppPointsGained[w] = (oppPointsGained[w] || 0) + wl;
         }
         scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg);
-        scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * LOSER_POINT_MULTIPLIER);
+        scores[l] = Math.max(SCORE_FLOOR, scores[l] - wl);
     }
 
     const beatenOpps = Object.entries(oppStats)
@@ -881,16 +881,17 @@ function computeDailyScoreHistory(playerName, sortedLog, startScores, collectTyp
 
             const base = getBaseScore((sc[w] || DEFAULT_INITIAL_SCORE) - (sc[l] || DEFAULT_INITIAL_SCORE));
             const coeff = getEventCoefficient(m.type) * getFormatMultiplier(m.type, m.format);
-            const tw = getFreezeWeight(w, m.type, m.date, dateStr);
-            const wg = base * coeff * tw;
+            // 胜负双方衰减权重分开：各按自己的 球员×类型 批次定格/衰减
+            const wg = base * coeff * getFreezeWeight(w, m.type, m.date, dateStr);
+            const wl = base * coeff * LOSER_POINT_MULTIPLIER * getFreezeWeight(l, m.type, m.date, dateStr);
 
             if (collectTypes) {
                 if (w === playerName) daySums[m.type] = (daySums[m.type] || 0) + wg;
-                else if (l === playerName) daySums[m.type] = (daySums[m.type] || 0) - wg * LOSER_POINT_MULTIPLIER;
+                else if (l === playerName) daySums[m.type] = (daySums[m.type] || 0) - wl;
             }
 
             sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
-            sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
+            sc[l] = Math.max(SCORE_FLOOR, sc[l] - wl);
             mi++;
         }
 

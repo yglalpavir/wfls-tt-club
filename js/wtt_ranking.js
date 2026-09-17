@@ -6,6 +6,9 @@
 // 注意：wttScoreLogData、wttInitialScoresData 等共享变量由 wtt_common.js 声明
 // 本文件仅声明 wtt_ranking.js 独有的局部变量
 
+/* 比分列仅在该球员窗口内存在含「比分/局分」的记录时显示（存量旧数据无比分，避免空列） */
+function toggleScoreDetailScoreCol(show) { const th = document.getElementById('scoreDetailScoreHead'); if (th) th.style.display = show ? '' : 'none'; }
+
 // 桥接：让 main.js 中的 initPage() 调用 WTT 版本的加载（覆盖 wtt_common.js 中的版本）
 function loadRankingData() { return wttLoadRankingData(); }
 
@@ -89,6 +92,7 @@ function wttRenderScoreDetailInContext(player, snapshotDate, body) {
     // 找到快照日期所在的赛季
     const currentSeason = getSeasonForDate(snapshotDate);
     if (!currentSeason) {
+        toggleScoreDetailScoreCol(false);
         body.innerHTML = noRecordsHtml;
         setTimeout(() => { const m = document.getElementById('scoreDetailModal'); if (m) m.classList.add('content-fit'); }, 100);
         return;
@@ -106,6 +110,7 @@ function wttRenderScoreDetailInContext(player, snapshotDate, body) {
     records.sort((a, b) => a['日期'].localeCompare(b['日期']));
 
     if (!records.length) {
+        toggleScoreDetailScoreCol(false);
         body.innerHTML = noRecordsHtml;
         setTimeout(() => { const m = document.getElementById('scoreDetailModal'); if (m) m.classList.add('content-fit'); }, 100);
         return;
@@ -135,6 +140,8 @@ function wttRenderScoreDetailInContext(player, snapshotDate, body) {
                     opponent: isWinner ? record['负者'] : record['胜者'],
                     isWinner, isBonus: false,
                     scoreBefore, rawChange, decayedChange, scoreAfter,
+                    score: record['比分'] || null,
+                    games: Array.isArray(record['局分']) ? record['局分'] : null,
                     n: matchOccMap.get(record) || 1
                 });
             }
@@ -159,11 +166,13 @@ function wttRenderScoreDetailInContext(player, snapshotDate, body) {
     }
 
     recordsWithScores.reverse();
+    const hasScore = recordsWithScores.some(r => !r.isBonus && (r.score || (r.games && r.games.length)));
+    toggleScoreDetailScoreCol(hasScore);
     body.innerHTML = recordsWithScores.map(r => {
         if (r.isBonus) {
             const cc = r.decayedChange >= 0 ? 'score-change-positive' : 'score-change-negative';
             const sign = r.decayedChange >= 0 ? '+' : '';
-            return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(r.type)}</td><td>-</td><td class="result-win">${escapeHtml(i18n[currentLang].wtt_bonus)}</td><td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${sign}${r.decayedChange.toFixed(1)}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
+            return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(r.type)}</td><td>-</td><td class="result-win">${escapeHtml(i18n[currentLang].wtt_bonus)}</td>${hasScore ? '<td></td>' : ''}<td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${sign}${r.decayedChange.toFixed(1)}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
         }
         const res = r.isWinner ? i18n[currentLang].score_result_win : i18n[currentLang].score_result_loss;
         const rc = r.isWinner ? 'result-win' : 'result-loss';
@@ -172,7 +181,8 @@ function wttRenderScoreDetailInContext(player, snapshotDate, body) {
         const signDecayed = r.decayedChange >= 0 ? '+' : '';
         const changeDisplay = `${signRaw}${r.rawChange.toFixed(1)}（${signDecayed}${r.decayedChange.toFixed(1)}）`;
         const mdUrl = escapeHtml(buildMatchDetailUrl(r.date, r.type, r.isWinner ? player : r.opponent, r.isWinner ? r.opponent : player, r.n, wttCurrentCategory));
-        return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(r.type)}</td><td>${escapeHtml(r.opponent)}</td><td class="${rc}">${res}</td><td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${changeDisplay}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
+        const scoreCell = hasScore ? `<td${r.games && r.games.length ? ` title="${i18n[currentLang].sb_games_label || '局分'}：${escapeHtml(r.games.join(' '))}"` : ''}>${r.score ? escapeHtml(r.score) : '-'}</td>` : '';
+        return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(r.type)}</td><td>${escapeHtml(r.opponent)}</td><td class="${rc}">${res}</td>${scoreCell}<td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${changeDisplay}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
     }).join('');
 }
 

@@ -116,7 +116,8 @@ function aiDecision(ctx, policy, forceMode){
     const pushP = cclamp(pushBase + (inBack > get(p, 'push.forceThresh', 40) ? 0.3 : 0) - (highUnder ? 0.45 : 0), 0.05, 0.95);
     intent = rng() < pushP ? 'push' : 'lift';
   }else if(ctx.receive && rng() < get(p, 'receive.attackProb', 0)){
-    // 接发抢攻（对上旋发球）：正手直接拉冲 / 反手快撕
+    // 接发抢攻（对上旋发球）：正手抢冲意图 / 反手快撕——
+    // 接发板 resolveHit 不判爆冲（receive 门控），正手大挥拍涌现为强快带（低平快、收敛旋转）
     intent = stroke === 'forehand' ? 'loop' : 'counter';
   }else if(stroke === 'backhand' && inTop > C_COUNTER.spinThresh && rng() < get(p, 'counter.prob', 0.8)){
     intent = 'counter';
@@ -169,6 +170,7 @@ function aiDecision(ctx, policy, forceMode){
     ctrlHold: intent === 'push',
     dir: outDir,
     applyArcAdj: true,
+    receive: !!ctx.receive,   // 接发球板（第一板）无法触发爆冲（物理门控的唯一所有者）
     q: {
       loopPace: get(p, 'loopPace', 1.0), loopSpin: get(p, 'loopSpin', 1.0), loopArc: get(p, 'loopArc', 1.0),
       smashPace: get(p, 'smashPace', 1.0), smashSpin: get(p, 'smashSpin', 1.0),

@@ -53,16 +53,21 @@ function afterHit(side){
    注：出球核心封装在 SIM.resolveHit（玩家与 AI 共用 strokePowerOf 逻辑），
        本文件不再需要独立的 strokePower。 */
 function relTop(){ return ball.spin.x * Math.sign(ball.vel.z || 1); }
-/* 玩家正/反手自动选择 v2.2：触球时刻几何 + 情境偏置 + 不确定度自适应（算法核心在
-   simcore.js#resolveStance，实机/训练器/AI 单一逻辑源；本函数只做预测缓存与状态写入）。
+/* 玩家正/反手自动选择 v2.3：触球时刻几何 + 横向趋势预判 + 情境偏置 + 方向不对称滞回
+   + OU 平滑噪声 + minHold 软坡 + 不确定度自适应（算法核心在 simcore.js#resolveStance，
+   实机/训练器/AI 单一逻辑源；本函数只做预测缓存与状态写入）。
    玩家姿态的唯一所有者：menu/play/watch 全模式都经此更新 playerStance 与 playerPad.stance。
    预测击球点缓存随 TTC 自适应（远球省 CPU / 贴脸逐帧精判，predictXAtZ 是前向模拟 CPU 热点）；
-   无来球（还原期）时 resolveStance 直接保持当前姿态——真人回中还原，不跟远处球位乱切。
-   触球前 commitT 秒内锁姿态（挥拍已启动）；引拍期间不锁——磁吸会提前引拍，
+   无来球（还原期）时 resolveStance 保持当前姿态，死球超过 resetHold 秒回正手基准握法
+   ——真人回中还原，不跟远处球位乱切。
+   触球前按"当前姿态×来球速度"的承诺窗口（SIM.commitTOf：正手锁得早、快球锁得早）锁姿态
+   （挥拍已启动）；引拍期间不锁——磁吸会提前引拍，
    逐帧重估才能在球掠过体线时跟随切换（翻面动画逐帧插值，视觉自然）。
    gvx 传平滑拍速（main.js#playerControl 维护 playerPad.svx）：对触球瞬间的拍球
-   相对位置决策，拍子追球不再把信号扫过分界线。 */
+   相对位置决策，拍子追球不再把信号扫过分界线；bvx 传来球横向速度：趋势外推半个
+   挥拍时间，"球往怀里钻"提前倒反手、贴线球由趋势定方向。 */
 let _spBX = 0, _spT = -1;   // 预测击球点缓存
+const _spNoise = { v: 0, t: -1 };   // OU 平滑噪声状态（resolveStance 原地更新）
 function autoStance(){
   const g = playerPad.group.position;
   let inbound = false, commit = false, bx = ball.pos.x, ttc = null;
@@ -75,14 +80,16 @@ function autoStance(){
       _spBX = SIM.predictXAtZ(ball.pos, ball.vel, ball.spin, g.z);
     }
     bx = _spBX;
-    commit = ttc > 0 && ttc < STANCE.commitT;
+    commit = ttc > 0 && ttc < SIM.commitTOf(playerStance, ball.vel.z);
   }
   const st = SIM.resolveStance({ bx, gx: g.x, gz: g.z, cur: playerStance,
     lastSwitch: playerPad.stanceT, now: elapsed, inbound, commit,
-    gvx: playerPad.svx || 0, ttc, ballY: ball.pos.y, spinY: ball.spin.y });
+    idle: !ball.active || ballDead,
+    gvx: playerPad.svx || 0, bvx: ball.vel.x, ttc, ballY: ball.pos.y, spinY: ball.spin.y,
+    noiseBox: _spNoise });
   if(st !== playerStance){
     playerStance = st;
-    playerPad.stance = st;      // stanceT：供磁吸过渡成本（stanceRampOf）与 minHold 读取
+    playerPad.stance = st;      // stanceT：供磁吸过渡成本（stanceRampOf）与 minHold 软坡读取
     playerPad.stanceT = elapsed;
   }
   return st;
@@ -101,9 +108,11 @@ function hitPlayer(){
   const g = playerPad.group.position;
   // 保存来球状态（行为记录用）
   const inVx = ball.vel.x, inVy = ball.vel.y, inVz = ball.vel.z, inSpinX = ball.spin.x, inSpinY = ball.spin.y;
+  // 接发球板（第一板）：对方刚发完球、本板为回合第一次回球 → 无法触发爆冲（resolveHit 内压制）
+  const receive = rallyCount<=1 && lastHitter!=='player';
   // 前冲力度：0=挡拍 1=前冲（menu 演示强制 0.75）——与 AI 共用同一公式
   const fwd = mode==='menu' ? 0.75 : clamp(-playerPad.svz/7, 0, 1);
-  // 调用共享出球核心（与 AI 完全相同）——含爆扣/爆抽/爆冲/快撕/搓球/拉球全部判定
+  // 调用共享出球核心（与 AI 完全相同）——含爆扣/爆抽/爆冲(非接发)/快撕/搓球/拉球全部判定
   const r = SIM.resolveHit({
     stroke: playerStance,
     pos: { x: ball.pos.x, y: ball.pos.y, z: ball.pos.z },
@@ -116,6 +125,7 @@ function hitPlayer(){
     ctrlHold,
     dir: -1,
     applyArcAdj: mode==='play',
+    receive,
   });
   const isPush = r.mode==='push', isSmash = r.mode==='smash', isCounter = r.mode==='counter', isLoop = r.mode==='loop', isBack = r.mode==='lift';
   const { pace, topMag, side, ax, aimZ, outVel, spin } = r;
@@ -147,7 +157,8 @@ function hitPlayer(){
   }
   else if(isLoop){ toast('正手爆冲!', 'POWER LOOP · '+rpm+' RPM', 'you', 900); shake = Math.max(shake, 0.05); fovKick = Math.max(fovKick, 3.2); }
   else if(Math.abs(side)>SPIN.toastThresh){ toast('强侧旋!', playerPad.svx<0?'左拐 LEFT CURVE':'右拐 RIGHT CURVE', 'gold', 800); playSwipe(clamp(Math.abs(side)/SPIN.sideCap,0.5,1)); }
-  else if(r.stroke==='forehand' && pace>4.6 && topMag>140){ toast('正手爆冲!', 'POWER LOOP · '+rpm+' RPM', 'you', 800); fovKick = Math.max(fovKick, 2.2); }
+  else if(!receive && r.stroke==='forehand' && pace>4.6 && topMag>140){ toast('正手爆冲!', 'POWER LOOP · '+rpm+' RPM', 'you', 800); fovKick = Math.max(fovKick, 2.2); }
+  else if(receive && r.stroke==='forehand' && pace>4.2){ toast('正手快带!', 'QUICK DRIVE · '+Math.round(pace*3.6)+' km/h', 'you', 700); }   // 接发第一板无爆冲，强回球涌现为快带
   else if(r.stroke==='backhand' && pace>4.3) toast('反手快撕!', 'BACKHAND SNAP', 'you', 800);
   else if(r.stroke==='backhand' && Math.abs(ax)>0.68) toast('大角度!', 'WIDE ANGLE', 'gold', 700);
   smEl.classList.remove('pop'); void smEl.offsetWidth; smEl.classList.add('pop');

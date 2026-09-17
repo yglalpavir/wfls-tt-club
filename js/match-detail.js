@@ -87,7 +87,7 @@ function mdCompute() {
     if (SCORE_TIME_DECAY_ENABLED !== false) playerTypeBatches = buildPlayerTypeBatches(sortedLog.filter(r => r['日期'] >= windowStart && r['日期'] <= season.endDate));
 
     const today = getTodayStr();
-    let preW = null, preL = null, wg = 0, rawGain = 0, timeW = 1;
+    let preW = null, preL = null, wg = 0, wl = 0, rawGain = 0, timeWW = 1, timeWL = 1;
     try {
         for (let i = 0; i < sortedLog.length; i++) {
             const r = sortedLog[i];
@@ -102,14 +102,17 @@ function mdCompute() {
                 if (i === targetIdx) {
                     preW = scores[rw];
                     preL = scores[rl];
-                    wg = calcMatchPoints(rw, rl, r['类型'], r['日期'], snap, scores, r['赛制']);
+                    const dual = calcMatchPointsDual(rw, rl, r['类型'], r['日期'], snap, scores, r['赛制']);
+                    wg = dual.wGain; wl = dual.lLoss;
                     rawGain = calcRawPoints(rw, rl, r['类型'], scores, r['赛制']);
-                    timeW = getFreezeWeight(rw, r['类型'], r['日期'], snap);
+                    // 胜负双方衰减权重不同：各按自己的 球员×类型 批次定格/衰减
+                    timeWW = getFreezeWeight(rw, r['类型'], r['日期'], snap);
+                    timeWL = getFreezeWeight(rl, r['类型'], r['日期'], snap);
                     break;
                 }
-                const g = calcMatchPoints(rw, rl, r['类型'], r['日期'], snap, scores, r['赛制']);
-                scores[rw] = Math.max(SCORE_FLOOR, scores[rw] + g);
-                scores[rl] = Math.max(SCORE_FLOOR, scores[rl] - g * LOSER_POINT_MULTIPLIER);
+                const gd = calcMatchPointsDual(rw, rl, r['类型'], r['日期'], snap, scores, r['赛制']);
+                scores[rw] = Math.max(SCORE_FLOOR, scores[rw] + gd.wGain);
+                scores[rl] = Math.max(SCORE_FLOOR, scores[rl] - gd.lLoss);
             } else if (isBonusRecord(r)) {
                 const t = r['对象'], b = parseFloat(r['分数']) || 0;
                 if (!scores[t]) scores[t] = DEFAULT_INITIAL_SCORE;
@@ -136,6 +139,10 @@ function mdCompute() {
             if (rw === w) h2hWWins++; else h2hLWins++;
         }
     }
+    // 交锋表倒序展示（最近在前）。在计算阶段倒序而非渲染阶段：语言切换会重复调用
+    // renderMatchDetail(mdModel)，若在渲染时 reverse 会导致顺序随重渲染来回翻转。
+    // n（当日发生次序）在升序遍历时已赋好，倒序显示不影响详情页定位。
+    h2hList.reverse();
 
     // 赛前状态分与三因子预测（两方向之和恒为 1）
     const fW = calcFormScore(w, target['日期']);
@@ -143,12 +150,12 @@ function mdCompute() {
     const predW = calcPredictedWinRate(preW, preL, h2hWWins, h2hLWins, fW, fL);
     const predL = calcPredictedWinRate(preL, preW, h2hLWins, h2hWWins, fL, fW);
 
-    // 积分产生明细（各项即 calcMatchPoints 的乘数；最终以 calcMatchPoints 结果为准）
+    // 积分产生明细（各项即 calcMatchPoints 的乘数；最终以 calcMatchPointsDual 结果为准）
     const gap = preW - preL;
     const base = getBaseScore(gap);
     const eventC = getEventCoefficient(target['类型']);
     const fmtMult = getFormatMultiplier(target['类型'], target['赛制']);
-    if (MD_WTT) timeW = 1;
+    if (MD_WTT) { timeWW = 1; timeWL = 1; }
 
     return {
         cat,
@@ -160,12 +167,12 @@ function mdCompute() {
         seasonLabel: season.label || season.id || (season.startDate + ' ~ ' + season.endDate),
         preW, preL,
         postW: preW + wg,
-        postL: preL - wg * LOSER_POINT_MULTIPLIER,
+        postL: preL - wl,
         deltaW: wg,
-        deltaL: -wg * LOSER_POINT_MULTIPLIER,
+        deltaL: -wl,
         rawW: rawGain,
         rawL: -rawGain * LOSER_POINT_MULTIPLIER,
-        breakdown: { gap, base, eventC, fmtMult, timeW },
+        breakdown: { gap, base, eventC, fmtMult, timeWW, timeWL },
         h2h: { list: h2hList, wWins: h2hWWins, lWins: h2hLWins },
         form: { w: fW, l: fL },
         pred: { w: predW, l: predL }
@@ -299,7 +306,7 @@ function renderMatchDetail(m) {
             gamesHtml = `<div class="md-games">${chipsHtml}</div><div class="md-note"><i class="fa-solid fa-circle-info"></i> ${T.md_games_note}</div>`;
         }
     } else {
-        gamesHtml = `<div class="md-placeholder"><i class="fa-solid fa-circle-info"></i> ${T.md_score_none}<div class="md-note">${T.md_score_none_hint}</div></div>`;
+        gamesHtml = `<div class="md-placeholder"><i class="fa-solid fa-circle-info"></i> ${T.md_score_none}<div class="md-note">${(MD_WTT && T.md_score_none_hint_wtt) ? T.md_score_none_hint_wtt : T.md_score_none_hint}</div></div>`;
     }
 
     // 积分产生明细：基础分×系数 = 本场产生（未衰减）；时间权重后 = 当前计入
@@ -322,7 +329,11 @@ function renderMatchDetail(m) {
     if (MD_WTT) {
         bdRows.push(bdRow('fa-clock', T.md_breakdown_decay, '', T.md_breakdown_decay_off));
     } else {
-        bdRows.push(bdRow('fa-clock', T.md_breakdown_decay, '', `×${bd.timeW.toFixed(3)}`));
+        // 胜负双方衰减权重一般不同（各自 球员×类型 批次的定格日不同）：不同则分开展示
+        const decayVal = Math.abs(bd.timeWW - bd.timeWL) < 1e-9
+            ? `×${bd.timeWW.toFixed(3)}`
+            : `${T.md_winner_badge} ×${bd.timeWW.toFixed(3)} · ${T.md_loser_badge} ×${bd.timeWL.toFixed(3)}`;
+        bdRows.push(bdRow('fa-clock', T.md_breakdown_decay, '', decayVal));
         bdRows.push(bdRow('fa-check-double', T.md_eff_now, loserNote(Math.abs(m.deltaL).toFixed(1)), mdDeltaHtml(m.deltaW, m.deltaW, false), 'md-bd-total'));
     }
 

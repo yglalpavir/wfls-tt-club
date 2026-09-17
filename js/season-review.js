@@ -138,6 +138,13 @@ function srComputeGameStats(windowMatches) {
             if (m && m[1] !== m[2]) parsed.push([+m[1], +m[2]]);
         }
         if (needed && parsed.length === needed * 2 - 1) deciding++;
+        else if (!needed && parsed.length) {
+            // 无赛制信息（WTT 记录无赛制字段、类型无默认赛制映射）：
+            // 回退为「胜方恰多赢一局」判定打满，bo3/bo5/bo7 均成立
+            let gw = 0, gl = 0;
+            for (const [a, b] of parsed) { if (a > b) gw++; else gl++; }
+            if (gw === gl + 1) deciding++;
+        }
         let w = 0, l = 0, trail2 = false;
         for (const [a, b] of parsed) { if (a > b) w++; else l++; if (l - w >= 2) { trail2 = true; break; } }
         if (trail2) comeback++;
@@ -165,9 +172,9 @@ function srReplaySeason(si, end, sortedWindow) {
             if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
             const rawGain = calcRawPoints(w, l, r['类型'], scores, r['赛制']);
             if (!best || rawGain > best.rawGain) best = { rawGain, w, l, type: r['类型'], date: r['日期'], gap: Math.round(Math.abs(scores[w] - scores[l])) };
-            const wg = calcMatchPoints(w, l, r['类型'], r['日期'], end, scores, r['赛制']);
+            const { wGain: wg, lLoss: wl } = calcMatchPointsDual(w, l, r['类型'], r['日期'], end, scores, r['赛制']);
             scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg);
-            scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * LOSER_POINT_MULTIPLIER);
+            scores[l] = Math.max(SCORE_FLOOR, scores[l] - wl);
         }
     }
     playerTypeBatches = prevBatches;
@@ -215,9 +222,9 @@ function srComputeDailySeries(si, season, end, sortedWindow) {
                 const w = r['胜者'], l = r['负者'];
                 if (sc[w] == null) sc[w] = DEFAULT_INITIAL_SCORE;
                 if (sc[l] == null) sc[l] = DEFAULT_INITIAL_SCORE;
-                const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], sc, r['赛制']);
+                const { wGain: wg, lLoss: wl } = calcMatchPointsDual(w, l, r['类型'], r['日期'], r['日期'], sc, r['赛制']);
                 sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
-                sc[l] = Math.max(SCORE_FLOOR, sc[l] - wg * LOSER_POINT_MULTIPLIER);
+                sc[l] = Math.max(SCORE_FLOOR, sc[l] - wl);
                 seen.add(w); seen.add(l);
             } else if (isBonusRecord(r)) {
                 const t = r['对象'], b = parseFloat(r['分数']) || 0;

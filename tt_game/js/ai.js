@@ -29,6 +29,7 @@ function aiMoveShared(dt, pad, side, zHome, zLo, zHi, policy, precModel){
       pad._xErr  = gauss() * (base + amp);
       pad._wrapDone = false; pad._wrapOn = false;    // 侧身判定每板重置
       pad._strokeSwitches = 0;                       // 一板一次切换预算（AI 承诺机制）
+      if(pad._nz){ pad._nz.v = 0; pad._nz.t = -1; }  // OU 决策噪声每板重启（不带着上一板的犹豫）
     }
     const ttc0 = (g.z - ball.pos.z) / ball.vel.z;   // 球到拍面平面时间（分子分母同号）
     if(elapsed-pad.predT > clamp(ttc0 > 0 ? ttc0*0.25 : 0.09, 0.016, 0.09)){   // 缓存随 TTC 自适应
@@ -39,17 +40,18 @@ function aiMoveShared(dt, pad, side, zHome, zLo, zHi, policy, precModel){
     }
     targetX = pad.predX;
     targetZ = pad.predZ;
-    /* 正/反手姿态（仅 AI 侧）：用 predX 预测击球点决策，触球时刻几何/情境偏置/软承诺
-       全在 SIM.resolveStance（v2.2）。玩家侧姿态由 autoStance 唯一所有——watch 模式本函数
-       也驱动 playerPad，但不得碰它的姿态。 */
+    /* 正/反手姿态（仅 AI 侧）：用 predX 预测击球点决策，触球时刻几何/横向趋势/方向
+       不对称滞回/OU 平滑噪声/软承诺全在 SIM.resolveStance（v2.3）。玩家侧姿态由
+       autoStance 唯一所有——watch 模式本函数也驱动 playerPad，但不得碰它的姿态。 */
     if(side === 'ai' && !pad._wrapOn){
       const ttc = ttc0;                             // 球到拍面平面时间（上面已算）
       const fhPref = get(policy, 'fhPref', 1);        // 策略可下调正手偏好（均衡型选手）
       const st = SIM.resolveStance({ bx: pad.predX, gx: g.x, gz: g.z, cur: pad.stance,
         lastSwitch: pad.stanceT, now: elapsed, inbound: true,
-        commit: ttc > 0 && ttc < STANCE.commitT,
+        commit: ttc > 0 && ttc < SIM.commitTOf(pad.stance, ball.vel.z),
         strokeSwitches: pad._strokeSwitches || 0,
-        gvx: pad.svx || 0, ttc, ballY: ball.pos.y, spinY: ball.spin.y, fhPref });
+        gvx: pad.svx || 0, bvx: ball.vel.x, ttc, ballY: ball.pos.y, spinY: ball.spin.y, fhPref,
+        noiseBox: (pad._nz || (pad._nz = { v: 0, t: -1 })) });
       if(st !== pad.stance){ pad.stance = st; pad.stanceT = elapsed; pad._strokeSwitches = (pad._strokeSwitches || 0) + 1; }
       // 侧身正手（wrap around）：反手位球、距离适中 → 每板一次评估（v2.2：SIM.wrapProb
       // 按"侧身可行性×来球速度"调制概率，替代静态抽签）。本板锁定（_wrapOn），跳过后续逐帧重评估。
@@ -72,6 +74,14 @@ function aiMoveShared(dt, pad, side, zHome, zLo, zHi, policy, precModel){
       }
     }
   }else if(ball.active && !ballDead){ targetX = g.x*0.9; targetZ = zHome; }
+  /* 一分之间（无活球）超过 resetHold 秒 → AI 也回正手基准握法（v2.3 还原归位，
+     与玩家侧 autoStance 同源；仅 AI 侧——watch 模式 playerPad 姿态归 autoStance 所有） */
+  if(side === 'ai' && !inbound){
+    const st0 = SIM.resolveStance({ bx: g.x, gx: g.x, gz: g.z, cur: pad.stance,
+      lastSwitch: pad.stanceT, now: elapsed, inbound: false,
+      idle: !ball.active || ballDead });
+    if(st0 !== pad.stance){ pad.stance = st0; pad.stanceT = elapsed; }
+  }
   if(!Number.isFinite(targetX)) targetX = 0;                 // NaN 护栏
   if(!Number.isFinite(targetZ)) targetZ = zHome;
   targetX = clamp(targetX + (pad._xErr || 0), -X_CLAMP, X_CLAMP);   // 含本板落点预测偏差

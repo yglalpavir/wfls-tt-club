@@ -143,12 +143,12 @@ const TT_PLAYER = (() => {
       ctrlHold = vp.ctrl;
     }
     /* 正/反手姿态（仅 AI 侧；玩家侧由 autoStance 唯一所有，勿双写）。
-       mirrorState 只镜像 z——x 语义两侧一致，直接用真实坐标。
-       与 aiMoveShared 同款 90ms 预测缓存 + SIM.resolveStance（真滞回/TTC 承诺/
-       还原保持/磁吸过渡成本与实机 AI、玩家完全同源）。 */
+       mirrorState 只镜像 z——x 语义两侧一致，bvx 直接用真实坐标的 ball.vel.x。
+       与 aiMoveShared 同款 90ms 预测缓存 + SIM.resolveStance（v2.3：触球时刻几何/
+       横向趋势/方向不对称滞回/OU 平滑噪声/软承诺/磁吸过渡成本与实机 AI、玩家完全同源）。 */
     if(side === 'ai'){
       const inboundSt = typeof ball !== 'undefined' && ball.active && !ballDead && ball.vel.z * mir > 0.15;
-      if(inboundSt && !vp._wasInbound) vp._stSw = 0;            // 新一板：重置切换预算
+      if(inboundSt && !vp._wasInbound){ vp._stSw = 0; if(vp._nz){ vp._nz.v = 0; vp._nz.t = -1; } }   // 新一板：重置切换预算与决策噪声
       vp._wasInbound = inboundSt;
       if(inboundSt && elapsed - (vp._spT != null ? vp._spT : -9) > 0.09){
         vp._spT = elapsed;
@@ -157,8 +157,11 @@ const TT_PLAYER = (() => {
       const ttc = (g.z - ball.pos.z) / ball.vel.z;   // 球到拍面平面时间（分子分母同号）
       const st = SIM.resolveStance({ bx: inboundSt ? vp._spBX : ball.pos.x, gx: g.x, gz: g.z,
         cur: realPad.stance, lastSwitch: realPad.stanceT, now: elapsed,
-        inbound: inboundSt, commit: inboundSt && ttc > 0 && ttc < STANCE.commitT,
-        strokeSwitches: vp._stSw || 0 });
+        inbound: inboundSt, idle: !ball.active || ballDead,
+        commit: inboundSt && ttc > 0 && ttc < SIM.commitTOf(realPad.stance, ball.vel.z),
+        strokeSwitches: vp._stSw || 0, bvx: ball.vel.x, gvx: realPad.svx || 0,
+        ttc: inboundSt ? ttc : null, ballY: ball.pos.y, spinY: ball.spin.y,
+        noiseBox: (vp._nz || (vp._nz = { v: 0, t: -1 })) });
       if(st !== realPad.stance){ realPad.stance = st; realPad.stanceT = elapsed; vp._stSw = (vp._stSw || 0) + 1; }
     }
     /* 引拍预告（与 aiMoveShared 同窗口）：在玩家侧坐标系看球接近虚拟拍时引拍 */
@@ -191,6 +194,9 @@ const TT_PLAYER = (() => {
       ctrlHold: !!realPad.ctrl,
       dir: -1,
       applyArcAdj: (typeof mode !== 'undefined') ? mode === 'play' : true,
+      // 接发球板（第一板）无法触发爆冲——与实机玩家/AI 同一限制
+      receive: (typeof rallyCount !== 'undefined' && typeof lastHitter !== 'undefined')
+               ? (rallyCount <= 1 && lastHitter !== side) : false,
     });
     if(!r || !r.outVel) return false;
     /* 镜像回真坐标（AI 侧：vz/sx/sy 反号） */
@@ -210,6 +216,8 @@ const TT_PLAYER = (() => {
       vp.x = 0; vp.z = PLAYER_Z; vp.svx = 0; vp.svz = 0;
       vp.ctrl = false; vp.my = 0.5;
       vp.cur = { tx: 0, my: 0.5, ctrl: false };
+      vp._stSw = 0;                            // 切换预算
+      if(vp._nz){ vp._nz.v = 0; vp._nz.t = -1; }   // OU 决策噪声
     }
   }
 

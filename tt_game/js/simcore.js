@@ -63,6 +63,13 @@ const SIM = (() => {
               highY0: 0.13, highYR: 0.12, highBias: 0.30,   // 半高球起偏阈值(相对台面)/渐变区间/高球正手倾向
               uncT: 0.6, noiseMin: 0.4, spinNoiseK: 0.0008, // 不确定度饱和 TTC / 贴脸噪声保有比例 / 侧旋附加噪声
               enterLate: 0.7, escStep: 0.30,        // 贴脸滞回系数（远球=1.0）/ 每已切换一次追加的滞回（软承诺）
+              // v2.3 灵动化（缺省 = v2.2 行为）
+              trendT: 0.10, trendVCap: 3.0,         // 挥拍空间外推 (s)：来球横向趋势并入决策位移 / 趋势速度钳制
+              toBhLateK: 0.8, toFhLateK: 1.25,      // 贴脸切换方向不对称：反手敢换 / 转正手需更高置信
+              noiseTau: 0.09,                       // 噪声 OU 平滑时间 (s)（调用方传 noiseBox 时生效）
+              escCap: 2,                            // 软承诺滞回追加叠加上限（次）
+              commitTFh: 0.18, commitTBh: 0.12, commitSpdK: 0.3,  // 分姿态承诺窗口 + 球速自适应放宽
+              resetHold: 1.2,                       // 无活球超过此秒数回到正手基准握法（需 idle:true）
               wrap: { vzMax: 2.6, distMin: 0.15, distMax: 0.55, prob: 0.55, wrapSpeed: 1.5 } },
   };
   const clamp = (v, a, b) => v < a ? a : (v > b ? b : v);
@@ -460,6 +467,9 @@ const SIM = (() => {
    *   ctrlHold  是否主动搓球（下旋来球时）
    *   dir       1=向 +Z 回球（AI 侧） · -1=向 -Z 回球（玩家侧/watch 左 AI）
    *   applyArcAdj  是否应用鼠标弧线控制（玩家 play=true；AI 由策略）
+   *   receive   接发球板（第一板）：true 时不判爆冲——发球低平带旋、反应时间最短，
+   *             真人第一板以快带/抢点/搓摆为主，不可能从容引拍爆冲
+   *             （isLoop 压制后大挥拍涌现为强快带：低弧线、收敛旋转、快还原）
    * 返回：{ outVel:{x,y,z}, spin:{x,y}, netOut, mode,
    *         pace, arc, topMag, side, relOut, ax, aimZ, power, recover, swingType }
    * 注意：此函数无 DOM/音效/HUD 副作用，纯物理 —— 玩家与 AI 保证 100% 对称。
@@ -486,7 +496,9 @@ const SIM = (() => {
     const isCounter = !isBack && a.stroke === 'backhand' && inTop > C.COUNTER.spinThresh;
     const isHigh = a.pos.y > C.TABLE_TOP + 0.13;                    // 半高球阈值（与玩家一致）
     const isSmash = !isBack && isHigh && sAbs > 1.5;
-    const isLoop = !isBack && !isSmash && a.stroke === 'forehand' && sAbs > 1.1 && fwd > 0.35;
+    // 接发球第一板无法爆冲：发球低平带旋、反应最短，真人第一板以快带/抢点为主——
+    // 大挥拍在接发板上涌现为强快带（mode 'block'：平弧线、收敛旋转、快还原），不是从容爆冲
+    const isLoop = !a.receive && !isBack && !isSmash && a.stroke === 'forehand' && sAbs > 1.1 && fwd > 0.35;
     const isPush = isBack && a.ctrlHold;
     const stroke = isPush ? ((a.pos.x >= gx) ? 'backhand' : 'forehand') : a.stroke;
     const stk = C.STROKE[stroke];
@@ -582,22 +594,33 @@ const SIM = (() => {
     };
   }
 
-  /* ★ 玩家/AI 正/反手自动选择 v2.2（单一逻辑源：实机 physics.js#autoStance、
+  /* 触球承诺窗口（v2.3）：当前姿态引拍越长锁得越早（正手 0.18s / 反手 0.12s），
+     来球越快锁得越早（|vz| 4→8 m/s 线性放宽至多 +commitSpdK）——快球当前不敢换握，真人同理。
+     stance = 当前姿态（要中止的挥拍）；vz 可缺省（= 基准窗口）。 */
+  function commitTOf(stance, vz){
+    const S = C.STANCE;
+    const base = stance === 'backhand' ? (S.commitTBh || S.commitT) : (S.commitTFh || S.commitT);
+    const spd = (vz != null && Number.isFinite(vz)) ? Math.abs(vz) : 0;
+    return base * (1 + clamp((spd - 4) / 4, 0, 1) * (S.commitSpdK || 0));
+  }
+
+  /* ★ 玩家/AI 正/反手自动选择 v2.3（单一逻辑源：实机 physics.js#autoStance、
    * ai.js#aiMoveShared、tt-player.js、训练器 input-sim.js#stanceOf 全部走这里）
    * 输入 o = {
    *   bx         决策参考点 x：来球时 = 预测击球点 x（调用方用 predictXAtZ 算好）；
-   *              无来球时任意（本函数直接保持）
+   *              无来球时任意（本函数直接保持/还原）
    *   gx, gz     拍位置
    *   cur        当前姿态 'forehand' | 'backhand'
    *   lastSwitch 上次姿态切换时刻（秒，调用方在 pad.stanceT 维护）
    *   now        当前时刻（秒）
-   *   inbound    是否有来球朝本方飞（vel.z>0.15 且球活着）；false = 还原期直接保持
-   *   commit     触球承诺：球到拍面 TTC < commitT 时传 true（挥拍已启动，锁姿态）——
-   *              由调用方按 ttc=(拍z-球z)/球vz 计算。引拍期间不锁：翻面动画逐帧插值
-   *              跟随姿态，中途改握视觉自然（v2.0 的 phase 硬锁因磁吸提前引拍把自由
-   *              窗口压到≈0，切换僵死，已改）
-   *   strokeSwitches 本板已切换次数（v2.2 软承诺：每次切换把滞回抬高 escStep，
-   *              被骗后仍可用更强信号纠正，连切链自然指数衰减；玩家侧传 0）
+   *   inbound    是否有来球朝本方飞（vel.z>0.15 且球活着）；false = 还原期
+   *   idle       完全无活球（一分之间/死球）：与 inbound:false 叠加且超过 resetHold 秒
+   *              未切换 → 回到正手基准握法（真人还原准备姿；不传 = v2.2 保持到底）
+   *   commit     触球承诺：TTC < commitTOf(cur,vz) 时传 true（挥拍已启动，锁姿态）。
+   *              引拍期间不锁：翻面动画逐帧插值跟随姿态，中途改握视觉自然
+   *   strokeSwitches 本板已切换次数（软承诺：每次切换把滞回抬高 escStep，
+   *              最多叠 escCap 次——被骗后仍可用更强信号纠正，且不会被无限垒高的滞回锁死；
+   *              玩家侧传 0）
    *   rng        可选随机源
    *   —— v2.2 可选情境输入（缺省 = v2.1 行为，全兼容旧调用方）——
    *   gvx        平滑拍速 x（m/s）：推算触球时刻拍位，消除"拍追球扫过分界线"的自激抖
@@ -605,15 +628,18 @@ const SIM = (() => {
    *   ballY      来球高度（m）：半高/高球 → 正手扣杀倾向
    *   spinY      来球侧旋（rad/s）：拐球 → 附加预测不确定度（噪声）
    *   fhPref     正手偏好风格系数（缺省 1；策略可下调=均衡型选手）
+   *   —— v2.3 可选输入（缺省 = v2.2 行为）——
+   *   bvx        来球横向速度（m/s，全局 x）：趋势项——球-拍相对横移 × trendT 并入决策位移，
+   *              "球往怀里钻"提前倒反手，"球走向正手位"迎正手（贴线球不再来回翻面）
+   *   noiseBox   调用方持有的噪声状态 {v, t}（原地更新）：OU 平滑噪声替代逐帧白噪抽签，
+   *              犹豫是连贯的"倾向摇摆"（tau = noiseTau），贴线信号不再高频抖动
    * }
    * 返回 'forehand' | 'backhand'；是否发生切换由调用方比对 cur 判定并记录 stanceT。
    *
    * 侧向信号全轨迹连续：|球-拍|>relNear 用满强度 relFar；追身区按球偏离体线的比例
    * 渐变（贴体线→0，relNear→±bodyBias），与远区同号衔接（-X 侧→正手/+X 侧→反手）。
-   * v2.0 的"拍在哪半台"半台粗判在磁吸游戏里（拍总贴着球）几乎是唯一有效信号，
-   * 叠加 enter=0.5 的 0.05 窄缝导致几乎不切换，已弃用。
    *
-   * v2.2 三处情境化（全部连续、可叠加，无新硬边界）：
+   * v2.2 三处情境化（连续、可叠加，无新硬边界）：
    *  ① 触球时刻几何：gxMeet = gx + clamp(gvx)×min(ttc, meetTCap)——对"触球瞬间的
    *     相对位置"决策，而不是当前瞬时值；拍子移动不再把信号扫过分界线。
    *  ② 时间偏置：fhBias×clamp(ttc/fhBiasT)×fhPref——时间充裕分界线向反手侧移
@@ -621,17 +647,39 @@ const SIM = (() => {
    *     高球偏置：球高于台面+highY0 起渐变 +highBias（半高球找正手扣杀）。
    *  ③ 不确定度自适应：unc=clamp(ttc/uncT)——远球噪声大、滞回大（不提前下结论），
    *     贴脸球噪声×noiseMin、滞回×enterLate（干脆）；侧旋再附加噪声。
-   *  v2.1 的硬性"一板一次"承诺删除 → 递增滞回软承诺（escStep×已切次数）。 */
+   *
+   * v2.3 灵动化（同样全连续）：
+   *  ④ 趋势预判：dist += clamp(bvx−gvx)×trendT——按"球-拍相对横移趋势"提前半步倒板；
+   *     贴线球由趋势定方向，不再骑线反复翻面。
+   *  ⑤ 方向不对称滞回：贴脸转反手置信 ×toBhLateK（反手快拨随时敢换）、转正手
+   *     ×toFhLateK（正手引拍大，临近触球不乱改）；远球（unc→1）渐回对称。
+   *  ⑥ OU 平滑噪声（noiseBox）：连贯的"倾向摇摆"，人味儿来自犹豫的连续性而非抽签。
+   *  ⑦ minHold 软坡：切换后瞬时需 urgent 级信号，置信需求随时间线性滑落到 enter——
+   *     没有硬墙，真紧急情况随时能改，假抖动也翻不动拍。
+   *  ⑧ 软承诺封顶：escStep 最多叠 escCap 次，连切链指数衰减但不锁死。
+   *  ⑨ 分姿态+球速承诺窗口（commitTOf，调用方算 commit 用）：正手锁得早、快球锁得早。
+   *  ⑩ 还原归位：idle 超过 resetHold 秒回正手基准握法（一分之间的真人还原）。 */
   function resolveStance(o){
     const S = C.STANCE;
     if(o.commit) return o.cur;                                        // 触球在即：挥拍已启动
-    if(!o.inbound) return o.cur;                                      // 还原期：保持当前握法
+    if(!o.inbound){                                                   // 还原期
+      if(o.idle && S.resetHold > 0 && o.cur !== 'forehand'
+         && (o.now - o.lastSwitch) > S.resetHold) return 'forehand';  // 一分之间：回基准握法
+      return o.cur;
+    }
     // ① 触球时刻几何：外推拍到触球瞬间的位置（无 ttc/gvx → 退化为当前拍位）
     const ttc = (o.ttc != null && Number.isFinite(o.ttc) && o.ttc > 0) ? o.ttc : null;
+    const gvx = o.gvx || 0;
     const gxMeet = (ttc != null && o.gvx)
       ? o.gx + clamp(o.gvx, -S.meetVCap, S.meetVCap) * Math.min(ttc, S.meetTCap)
       : o.gx;
-    const dist = o.bx - gxMeet;
+    // ④ 趋势预判：球-拍相对横移速度 × 挥拍空间时间并入决策位移（钳制 ±relNear：
+    //    只决定贴线球的方向，不淹没远区几何信号；侧旋拐球的瞬时 vx 再钳 trendVCap）
+    let dist = o.bx - gxMeet;
+    if(o.bvx != null && Number.isFinite(o.bvx)){
+      const vRel = clamp(o.bvx - gvx, -(S.trendVCap || 3), S.trendVCap || 3);
+      dist += clamp(vRel * (S.trendT || 0), -S.relNear, S.relNear);
+    }
     const rel = dist < -S.relNear ? S.relFar
               : (dist > S.relNear ? -S.relFar
               : -(dist / S.relNear) * S.bodyBias);                    // 追身区：比例渐变
@@ -648,15 +696,36 @@ const SIM = (() => {
       ? S.noiseAmp * (S.noiseMin + (1 - S.noiseMin) * unc) + (o.spinY ? Math.abs(o.spinY) * S.spinNoiseK : 0)
       : S.noiseAmp;
     const rng = o.rng || Math.random;
-    const score = rel + bias + (rng() - 0.5) * noiseEff;
+    // ⑥ OU 平滑噪声（有 noiseBox 时）：连贯摇摆；无 → 旧版逐帧白噪
+    let noise;
+    if(o.noiseBox){
+      const nb = o.noiseBox, tau = S.noiseTau || 0.09;
+      const dtN = (nb.t != null && o.now > nb.t) ? o.now - nb.t : 0;
+      const d = Math.exp(-dtN / tau);
+      nb.v = (nb.v || 0) * d + (rng() - 0.5) * Math.sqrt(Math.max(0, 1 - d * d));
+      nb.t = o.now;
+      noise = nb.v;                    // 平稳方差 = 旧白噪 U(-½,½)，功率不变、低频连贯（倾向摇摆）
+    }else{
+      noise = rng() - 0.5;
+    }
+    const score = rel + bias + noise * noiseEff;
     const want = score > 0 ? 'forehand' : 'backhand';
     if(want === o.cur) return o.cur;
-    // 真滞回：远球需更高置信（unc 大）；软承诺：每已切一次门槛 +escStep（v2.1 硬性
-    // 一板一次的软化——被骗后允许用更强信号纠正，连切链自然衰减）
-    const enterEff = S.enter * (ttc != null ? S.enterLate + (1 - S.enterLate) * unc : 1)
-                   + S.escStep * (o.strokeSwitches || 0);
-    if(Math.abs(score) < enterEff) return o.cur;                      // 置信不足：保持
-    if(o.now - o.lastSwitch < S.minHold && Math.abs(score) < S.urgent) return o.cur;  // 刚切换：保持
+    // ⑤ 方向不对称滞回：贴脸（unc→0）转反手更敢、转正手更慎重；远球渐回对称
+    let dirK = 1;
+    if(ttc != null){
+      const late = 1 - unc;
+      dirK = want === 'forehand'
+        ? 1 + ((S.toFhLateK || 1) - 1) * late
+        : 1 + ((S.toBhLateK || 1) - 1) * late;
+    }
+    // 真滞回：远球需更高置信（unc 大）；软承诺：每已切一次门槛 +escStep，封顶 escCap 次
+    const enterEff = (S.enter * (ttc != null ? S.enterLate + (1 - S.enterLate) * unc : 1)
+                   + S.escStep * Math.min(o.strokeSwitches || 0, S.escCap != null ? S.escCap : Infinity)) * dirK;
+    // ⑦ minHold 软坡：刚切换需 urgent 级信号，随时间线性滑落到 enterEff（无硬墙）
+    const holdT = clamp((o.now - o.lastSwitch) / S.minHold, 0, 1);
+    const req = Math.max(enterEff, S.urgent + (enterEff - S.urgent) * holdT);
+    if(Math.abs(score) < req) return o.cur;                           // 置信不足：保持
     return want;
   }
 
@@ -706,7 +775,7 @@ const SIM = (() => {
   }
 
   const api = { C, clamp, v, vcopy, solveShot, simulateShot, simulateFull, simulateServeFull, tableBounce, predictXAtZ, predictLanding, predictZAtY, predictMeetZ, serveShot, makeNetShot,
-                relTopOf, gaussOf, strokePowerOf, resolveHit, resolveStance, stanceRampOf, wrapProb };
+                relTopOf, gaussOf, strokePowerOf, resolveHit, resolveStance, stanceRampOf, wrapProb, commitTOf };
   if(typeof module !== 'undefined' && module.exports) module.exports = api;
   return api;
 })();
