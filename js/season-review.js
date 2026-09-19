@@ -21,6 +21,8 @@ function srPlayerLink(name) {
     if (SR_WTT) { return (typeof wttLinkPlayerName === 'function') ? wttLinkPlayerName(name) : escapeHtml(String(name)); }
     return linkPlayerName(name);
 }
+/* 展示名：club 模式切英文时用 players.json 拼音；WTT 球员不在此档案体系，保持原名 */
+function srPlayerDisplayName(name) { return SR_WTT ? name : playerDisplayName(name); }
 
 /* 渲染统一入口：WTT 模式下在数据上下文内同步渲染（swap 集合内的全局指向 WTT 数据） */
 function srRenderInContext(si) {
@@ -254,7 +256,7 @@ function srComputeDailySeries(si, season, end, sortedWindow) {
 function srBuildDailyCardHtml(data) {
     if (!data || typeof Chart === 'undefined' || !data.order.length) return '';
     const L = i18n[currentLang];
-    const chips = data.order.map(n => `<button type="button" class="sr-chip" data-name="${escapeHtml(n)}" aria-pressed="false"><span class="sr-chip-dot"></span>${escapeHtml(n)}</button>`).join('');
+    const chips = data.order.map(n => `<button type="button" class="sr-chip" data-name="${escapeHtml(n)}" aria-pressed="false"><span class="sr-chip-dot"></span>${escapeHtml(srPlayerDisplayName(n))}</button>`).join('');
     return `
         <div class="personal-card glass-card sr-card">
             <div class="sr-card-header"><i class="fa-solid fa-chart-line"></i><h3>${L.sr_daily_title}</h3><span class="sr-daily-count" id="srDailyCount"></span></div>
@@ -331,7 +333,7 @@ function srRenderDailyChart() {
     const datasets = sel.map((name, idx) => {
         const c = SR_DAILY_COLORS[idx % SR_DAILY_COLORS.length];
         return {
-            label: name,
+            label: srPlayerDisplayName(name),
             data: srDailyData.series[name] || [],
             borderColor: c, backgroundColor: c + '20',
             borderWidth: 2, pointRadius: 0, pointHoverRadius: 4,
@@ -382,7 +384,8 @@ function srInitDailyUI(data) {
     if (searchEl) searchEl.addEventListener('input', () => {
         const q = searchEl.value.trim().toLowerCase();
         chipsEl.querySelectorAll('.sr-chip').forEach(btn => {
-            btn.style.display = (!q || btn.dataset.name.toLowerCase().includes(q)) ? '' : 'none';
+            const hit = btn.dataset.name.toLowerCase().includes(q) || srPlayerDisplayName(btn.dataset.name).toLowerCase().includes(q);
+            btn.style.display = (!q || hit) ? '' : 'none';
         });
     });
     const clearEl = document.getElementById('srDailyClear');
@@ -410,7 +413,7 @@ function renderSrDeltaChart(deltaRows) {
     srChart = new Chart(canvas, {
         type: 'bar',
         data: {
-            labels: top.map(r => r.name),
+            labels: top.map(r => srPlayerDisplayName(r.name)),
             datasets: [{
                 data: top.map(r => r.delta),
                 backgroundColor: top.map(r => r.delta >= 0 ? 'rgba(34,197,94,.55)' : 'rgba(239,68,68,.55)'),

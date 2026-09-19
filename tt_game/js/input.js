@@ -127,15 +127,15 @@ $('btnStart').onclick = e=>{ e.stopPropagation(); startGame(); };
 // 只有「开始比赛 / AI 斗蛐蛐」按钮或按任意键才启动
 $('btnWatch').onclick = e=>{ e.stopPropagation(); startFight(); };
 
-/* ---- 对战模型选择（普通AI / 地狱AI / 大满贯预备种子 / 鼠标上的tt玩家 / 极端对手）---- */
-const MODEL_NAMES = { standard: '普通 AI', hell: '地狱 AI', grandslam: '大满贯预备种子', ttmouse: '鼠标上的tt玩家', extreme: '极端对手', 'extreme-max': '极端·满档' };
+/* ---- 对战模型选择（普通AI / 地狱AI / 大满贯预备种子 / 鼠标上的tt玩家 / 地狱AI克星）----
+ * 极端对手 / 极端·满档已取消可选（opponent-ladder.js 仍保留，供 train-input3.js 课程训练用） */
+const MODEL_NAMES = { standard: '普通 AI', hell: '地狱 AI', grandslam: '大满贯预备种子', ttmouse: '鼠标上的tt玩家', nemesis: '地狱AI克星' };
 const MODEL_HINTS = {
   standard: '普通 AI：标准水平 · 攻守平衡',
   hell: '地狱 AI：自对弈打法 · 会搓球/快撕/爆冲',
   grandslam: '大满贯预备种子：以你的打法为模板训练 · 攻守全能',
   ttmouse: '鼠标上的tt玩家：输入级 DQN 训练 · 用鼠标X/Y/Ctrl 三个原始输入打出真人手感',
-  extreme: '极端对手：跑位近上限 · 落点误差减半 · 速度/旋转 ×1.22 —— 就是拿来压tt玩家的那一档',
-  'extreme-max': '极端·满档：跑位与纵深顶格 · 落点误差近零 · 速度 ×1.30 旋转 ×1.34 —— 训练课程的天花板',
+  nemesis: '地狱AI克星：只针对地狱AI特训的克制打法 · 对地狱AI胜球率 59.0%（内战基线 49.5%）',
 };
 /* ---- 「鼠标上的tt玩家」权重懒加载：涉及该模型时提前注入，开赛时若未就绪则等待 ---- */
 function maybePreloadTtWeights(){

@@ -14,7 +14,7 @@ let canHit = { player:false, ai:false };
 let netLet = false, lastNetBy = null, ballDead = true;
 let scoreYou = 0, scoreAi = 0, rallyCount = 0, longestRally = 0;
 let shake = 0, aiPosErr = 0, demoServer = 'ai', lastZone = '';
-let aiModel = 'standard';                              // 对战模型：standard(普通AI) | hell(地狱AI) | grandslam(大满贯预备种子) | ttmouse(鼠标上的tt玩家·输入级DQN)
+let aiModel = 'standard';                              // 对战模型：standard(普通AI) | hell(地狱AI) | grandslam(大满贯预备种子) | ttmouse(鼠标上的tt玩家·输入级DQN) | nemesis(地狱AI克星)
 let fightL = 'hell', fightR = 'hell';                 // AI 斗蛐蛐双方模型（左=近侧/原玩家 · 右=远侧/原AI）
 let seriesWinsL = 0, seriesWinsR = 0;                // 5局三胜系列胜场
 const BEST_OF = 5, NEED_WINS = 3;                    // 五局三胜

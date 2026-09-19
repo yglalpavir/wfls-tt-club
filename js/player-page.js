@@ -60,9 +60,9 @@ function renderPlayerNavSwitch(player) {
     const prev = idx > 0 ? getPlayerByName(ordered[idx - 1]) : null;
     const next = idx >= 0 && idx < ordered.length - 1 ? getPlayerByName(ordered[idx + 1]) : null;
     let html = '';
-    if (prev) html += `<a class="btn btn-sm player-nav-btn" href="player.html?uid=${prev.uid}" title="${escapeHtml(String(prev.name))}"><i class="fa-solid fa-chevron-left"></i> ${i18n[currentLang].pp_prev_player}</a>`;
+    if (prev) html += `<a class="btn btn-sm player-nav-btn" href="player.html?uid=${prev.uid}" title="${escapeHtml(playerDisplayName(prev.name))}"><i class="fa-solid fa-chevron-left"></i> ${i18n[currentLang].pp_prev_player}</a>`;
     html += `<span class="player-nav-count">${idx >= 0 ? idx + 1 : '-'} / ${ordered.length}</span>`;
-    if (next) html += `<a class="btn btn-sm player-nav-btn" href="player.html?uid=${next.uid}" title="${escapeHtml(String(next.name))}">${i18n[currentLang].pp_next_player} <i class="fa-solid fa-chevron-right"></i></a>`;
+    if (next) html += `<a class="btn btn-sm player-nav-btn" href="player.html?uid=${next.uid}" title="${escapeHtml(playerDisplayName(next.name))}">${i18n[currentLang].pp_next_player} <i class="fa-solid fa-chevron-right"></i></a>`;
     container.innerHTML = html;
 }
 
@@ -82,7 +82,7 @@ function renderPlayerHeader(player) {
     header.innerHTML = `
         <div class="player-profile-info">
             <div class="player-profile-title">
-                <h1>${escapeHtml(String(player.name))}</h1>
+                <h1>${escapeHtml(playerDisplayName(player.name))}</h1>
                 <span class="player-index-uid">#${escapeHtml(String(player.uid))}</span>
                 ${statusHtml}
             </div>
@@ -194,7 +194,7 @@ async function initPlayerPage() {
             return;
         }
 
-        document.title = player.name + ' - ' + i18n[currentLang].personal_stats_page_title;
+        document.title = playerDisplayName(player.name) + ' - ' + i18n[currentLang].personal_stats_page_title;
 
         ppCurrentPlayer = player;
         content.innerHTML = '';
@@ -223,7 +223,7 @@ function reapplyPlayerPage() {
         if (existing) existing.destroy();
     }
     destroyPlayerAnalytics();
-    document.title = ppCurrentPlayer.name + ' - ' + i18n[currentLang].personal_stats_page_title;
+    document.title = playerDisplayName(ppCurrentPlayer.name) + ' - ' + i18n[currentLang].personal_stats_page_title;
     content.innerHTML = '';
     renderPlayerNavSwitch(ppCurrentPlayer);
     renderPlayerHeader(ppCurrentPlayer);

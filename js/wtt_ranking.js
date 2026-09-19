@@ -546,6 +546,9 @@ function wttInitRankingPage() {
                 subtitle += ` · ${i18n[currentLang].rank_export_top_sub.replace('{n}', limit)}`;
                 filenameBase += `-top${limit}`;
             }
+            /* 积分/排名变化列的对比基准 = 时间线上前一节点；赛季初始节点或首节点无基准（变化列全 NEW），不附日期 */
+            const prevNode = (cn && wttCurrentTimeIndex > 0 && !cn.isInitial) ? wttRankingTimeline[wttCurrentTimeIndex - 1] : null;
+            if (prevNode) subtitle += ` · ${i18n[currentLang].rank_export_delta_ref.replace('{date}', getNodeDisplayLabel(prevNode))}`;
             exportRankTableAsImage(rows, {
                 title: i18n[currentLang].wtt_table_title,
                 subtitle,

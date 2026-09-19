@@ -64,7 +64,7 @@ wfls-tt-club/
 │
 ├── data/                       # 站内数据（JSON）
 │   ├── about.json              # 社团简介数据（历史、理念、活动）
-│   ├── players.json            # 统一球员档案（uid/初始积分/标签/荣誉/职务）
+│   ├── players.json            # 统一球员档案（uid/拼音/初始积分/标签/荣誉/职务）
 │   ├── news/                   # 新闻动态（条目文件夹 {id}/ + 生成的 index/search.json）
 │   ├── competitions/           # 赛事信息（条目文件夹 {id}/ + 生成的 index/search.json）
 │   ├── qa/                     # 常见问题（条目文件夹 {id}/ + 生成的 index/search.json）
@@ -257,6 +257,7 @@ git push -u origin main
     {
       "uid": 10000,
       "name": "姓名",
+      "pinyin": "ZHANG San",
       "aliases": [],
       "initialScore": 2000,
       "tags": ["校队成员"],

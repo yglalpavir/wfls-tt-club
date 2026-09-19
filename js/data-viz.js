@@ -4,6 +4,7 @@
 
 let pointsTrendChart = null, rankStreamChart = null;
 let dataVizSettings = null;  // 折线图设置（从 data/data_viz-settings.json 加载）
+let lastVizComparePair = null;  // 最近一次对比的两名球员（语言切换重绘用，存原始中文姓名）
 const CHART_COLORS = ['#4da3ff','#ff6b6b','#52c41a','#f5c542','#ff9f43','#a55eea','#26de81','#fd79a8','#45b7d1','#f78fb3','#3dc1d3','#e66767','#778beb','#f5cd79','#cf6a87','#786fa6','#f8a5c2','#63cdda','#ea8685','#596275'];
 const MOBILE_STREAM_POINTS_MAX = 12;
 
@@ -115,6 +116,7 @@ function initDataViz() {
         const pa = document.getElementById('playerASelect')?.value, pb = document.getElementById('playerBSelect')?.value; 
         if (!pa || !pb) { alert(i18n[currentLang].data_viz_alert_two); return; } 
         if (pa === pb) { alert(i18n[currentLang].data_viz_alert_diff); return; } 
+        lastVizComparePair = [pa, pb];
         renderComparison(pa, pb); 
     });
     console.log('[DataViz] 初始化完成');
@@ -200,7 +202,7 @@ function renderPlayerCheckboxes() {
     container.innerHTML = sortedPlayers.map((name, i) => { 
         const checked = i < 8 ? 'checked' : ''; 
         const pts = scoreMap[name] !== undefined ? scoreMap[name].toFixed(1) : '-'; 
-        return `<label class="player-checkbox-item ${i<5?'checked':''}"><input type="checkbox" value="${escapeHtml(String(name))}" ${checked}><span>${escapeHtml(String(name))}</span><span class="player-rank">${pts}</span></label>`; 
+        return `<label class="player-checkbox-item ${i<5?'checked':''}"><input type="checkbox" value="${escapeHtml(String(name))}" ${checked}><span>${escapeHtml(playerDisplayName(String(name)))}</span><span class="player-rank">${pts}</span></label>`; 
     }).join(''); 
     
     container.querySelectorAll('.player-checkbox-item').forEach(item => { 
@@ -223,7 +225,7 @@ function renderCompareSelects() {
     const scoreMap = getCurrentSeasonFallbackScores();
     const sortedPlayers = [...players].sort((a, b) => (scoreMap[b] || 0) - (scoreMap[a] || 0));
     
-    const opts = sortedPlayers.map(p => `<option value="${escapeHtml(String(p))}">${escapeHtml(String(p))}</option>`).join(''); 
+    const opts = sortedPlayers.map(p => `<option value="${escapeHtml(String(p))}">${escapeHtml(playerDisplayName(String(p)))}</option>`).join(''); 
     const sa = document.getElementById('playerASelect'), 
           sb = document.getElementById('playerBSelect'); 
     if (sa) sa.innerHTML = `<option value="">${escapeHtml(i18n[currentLang].data_viz_select_player_ph)}</option>` + opts; 
@@ -359,7 +361,7 @@ function renderPointsTrend(playerNames, dataCount) {
     const datasets = playerNames.map((name, idx) => {
         const data = slicedTimeline.map(t => getPlayerScoreAtSnapshot(name, t));
         return {
-            label: name, data,
+            label: playerDisplayName(name), data,
             borderColor: CHART_COLORS[idx % CHART_COLORS.length],
             backgroundColor: CHART_COLORS[idx % CHART_COLORS.length] + '20',
             borderWidth: borderWidth,
@@ -437,7 +439,7 @@ function renderRankStream(topN, dataCount) {
             return (r !== undefined && r <= topN) ? r : null;
         });
         const color = CHART_COLORS[idx%CHART_COLORS.length];
-        return { label:name, data, borderColor:color, borderWidth:isMobile?1.5:2, pointRadius:isMobile?2:3, pointHoverRadius:isMobile?4:6, pointBackgroundColor:color, pointHoverBackgroundColor:color, tension:0.4, fill:false, spanGaps:false };
+        return { label:playerDisplayName(name), data, borderColor:color, borderWidth:isMobile?1.5:2, pointRadius:isMobile?2:3, pointHoverRadius:isMobile?4:6, pointBackgroundColor:color, pointHoverBackgroundColor:color, tension:0.4, fill:false, spanGaps:false };
     }); try { rankStreamChart = new Chart(canvas, { type:'line', data:{labels,datasets}, options:{ responsive:true, maintainAspectRatio:false, interaction:{ intersect:false, mode:'index' }, plugins:{ legend:{ display:false }, tooltip:{ backgroundColor:'rgba(26,29,40,0.9)', titleFont:{ size:isMobile?12:13 }, bodyFont:{ size:isMobile?11:12 }, padding:isMobile?8:12, cornerRadius:8, itemSort:(a,b)=>(a.parsed.y ?? Infinity)-(b.parsed.y ?? Infinity), callbacks:{ label:ctx => `${ctx.dataset.label}: ${i18n[currentLang].data_viz_rank_suffix.replace('{n}', ctx.raw)}` } } }, scales:{ x:{ grid:{ color:'rgba(128,128,128,0.1)' }, ticks:{ font:{ size:isMobile?10:11 }, maxRotation:isMobile?45:0 } }, y:{ reverse:true, min:1, max:topN, grid:{ color:'rgba(128,128,128,0.1)' }, ticks:{ font:{ size:isMobile?10:11 }, stepSize:1 }, title:{ display:true, text:i18n[currentLang].data_viz_axis_rank, font:{ size:isMobile?11:12 } } } } } }); } catch(err) { console.error('排名河流图失败', err); } }
 
 function renderComparison(playerA, playerB) { 
@@ -493,7 +495,7 @@ function renderPersonalPlayerSelect() {
     const scoreMap = getCurrentSeasonFallbackScores();
     const sortedPlayers = [...players].sort((a, b) => (scoreMap[b] || 0) - (scoreMap[a] || 0));
 
-    const opts = sortedPlayers.map(p => `<option value="${escapeHtml(String(p))}">${escapeHtml(String(p))}</option>`).join('');
+    const opts = sortedPlayers.map(p => `<option value="${escapeHtml(String(p))}">${escapeHtml(playerDisplayName(String(p)))}</option>`).join('');
     sel.innerHTML = '<option value="">-- 选择球员 --</option>' + opts;
 }
 
@@ -690,9 +692,9 @@ function renderPersonalStats(playerName) {
     html += '</div>';
 
     html += '<div class="personal-summary-text">';
-    html += i18n[currentLang].ps_sum1.replace('{player}', '<strong>' + escapeHtml(playerName) + '</strong>').replace('{total}', '<strong>' + totalMatches + '</strong>').replace('{wins}', '<strong>' + wins + '</strong>').replace('{losses}', '<strong>' + losses + '</strong>');
+    html += i18n[currentLang].ps_sum1.replace('{player}', '<strong>' + escapeHtml(playerDisplayName(playerName)) + '</strong>').replace('{total}', '<strong>' + totalMatches + '</strong>').replace('{wins}', '<strong>' + wins + '</strong>').replace('{losses}', '<strong>' + losses + '</strong>');
     html += '<br>';
-    html += i18n[currentLang].ps_sum2.replace('{player}', '<strong>' + escapeHtml(playerName) + '</strong>').replace('{percent}', '<strong>' + (totalMatches > 0 ? Math.round(wins / totalMatches * 100) : 0) + '</strong>');
+    html += i18n[currentLang].ps_sum2.replace('{player}', '<strong>' + escapeHtml(playerDisplayName(playerName)) + '</strong>').replace('{percent}', '<strong>' + (totalMatches > 0 ? Math.round(wins / totalMatches * 100) : 0) + '</strong>');
     html += '</div>';
 
     // === 自定义标签和荣誉 ===
@@ -733,7 +735,7 @@ function renderPersonalStats(playerName) {
         beatenOpps.forEach(([name, s], i) => {
             html += '<div class="personal-card-item">';
             html += '<span class="personal-card-rank">' + (i+1) + '</span>';
-            html += '<span class="personal-card-name">' + escapeHtml(name) + '<span class="personal-card-score">(' + s.preWinScore + ')</span></span>';
+            html += '<span class="personal-card-name">' + escapeHtml(playerDisplayName(name)) + '<span class="personal-card-score">(' + s.preWinScore + ')</span></span>';
             html += '<span class="personal-card-date">' + fmtDate(s.lastWinDate) + '</span>';
             html += '</div>';
         });
@@ -750,7 +752,7 @@ function renderPersonalStats(playerName) {
         frequentOpps.forEach(([name, s], i) => {
             html += '<div class="personal-card-item">';
             html += '<span class="personal-card-rank">' + (i+1) + '</span>';
-            html += '<span class="personal-card-name">' + escapeHtml(name) + '<span class="personal-card-score">(' + s.preMatchScore + ')</span></span>';
+            html += '<span class="personal-card-name">' + escapeHtml(playerDisplayName(name)) + '<span class="personal-card-score">(' + s.preMatchScore + ')</span></span>';
             html += '<span class="personal-card-date">' + fmtDate(s.lastDate) + '</span>';
             html += '</div>';
         });
@@ -769,7 +771,7 @@ function renderPersonalStats(playerName) {
             const wr = totalGames > 0 ? ((x.wins / totalGames) * 100).toFixed(0) : 0;
             html += '<div class="personal-card-item">';
             html += '<span class="personal-card-rank">' + (i+1) + '</span>';
-            html += '<span class="personal-card-name">' + escapeHtml(x.name) + '<span class="personal-card-score">(' + x.curScore + ')</span></span>';
+            html += '<span class="personal-card-name">' + escapeHtml(playerDisplayName(x.name)) + '<span class="personal-card-score">(' + x.curScore + ')</span></span>';
             html += '<span class="personal-card-sub">' + i18n[currentLang].ps_card_sub.replace('{w}', x.wins).replace('{l}', x.losses).replace('{wr}', wr) + '</span>';
             html += '</div>';
         });
@@ -788,7 +790,7 @@ function renderPersonalStats(playerName) {
             const wr = totalGames > 0 ? ((x.wins / totalGames) * 100).toFixed(0) : 0;
             html += '<div class="personal-card-item">';
             html += '<span class="personal-card-rank">' + (i+1) + '</span>';
-            html += '<span class="personal-card-name">' + escapeHtml(x.name) + '<span class="personal-card-score">(' + x.curScore + ')</span></span>';
+            html += '<span class="personal-card-name">' + escapeHtml(playerDisplayName(x.name)) + '<span class="personal-card-score">(' + x.curScore + ')</span></span>';
             html += '<span class="personal-card-sub">' + i18n[currentLang].ps_card_sub.replace('{w}', x.wins).replace('{l}', x.losses).replace('{wr}', wr) + '</span>';
             html += '</div>';
         });
@@ -798,4 +800,32 @@ function renderPersonalStats(playerName) {
 
     html += '</div>';
     container.innerHTML = html;
+}
+
+/* 语言切换重绘（setLanguage 探测）：原地刷新姓名标签，按当前控件状态重建图表与对比区 */
+function refreshDataVizNameLabels() {
+    document.querySelectorAll('#playerCheckboxList input[type="checkbox"]').forEach(cb => {
+        const span = cb.parentElement.querySelector('span');
+        if (span) span.textContent = playerDisplayName(cb.value);
+    });
+    ['playerASelect', 'playerBSelect', 'personalPlayerSelect'].forEach(id => {
+        const sel = document.getElementById(id);
+        if (!sel) return;
+        const keep = sel.value;
+        Array.from(sel.options).forEach(op => { if (op.value) op.textContent = playerDisplayName(op.value); });
+        sel.value = keep;
+    });
+}
+function dataVizMainReapplyI18n() {
+    if (!document.getElementById('pointsTrendChart')) return;
+    refreshDataVizNameLabels();
+    const sel = getSelectedPlayers();
+    const dc = parseInt(document.getElementById('pointsTrendDataCount')?.value) || 20;
+    if (sel.length && pointsTrendChart) renderPointsTrend(sel, dc);
+    const topN = parseInt(document.getElementById('topNSelect')?.value) || 10;
+    const sdc = parseInt(document.getElementById('streamDataCount')?.value) || 20;
+    if (rankStreamChart) renderRankStream(topN, sdc);
+    if (lastVizComparePair) renderComparison(lastVizComparePair[0], lastVizComparePair[1]);
+    const psel = document.getElementById('personalPlayerSelect');
+    if (psel && psel.value) renderPersonalStats(psel.value);
 }

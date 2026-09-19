@@ -225,6 +225,11 @@
           "name": "smoke",
           "label": "冒烟自检（并行 worker 环境验证）",
           "default": false
+        },
+        {
+          "name": "nice",
+          "label": "低优先级运行（不占满CPU，交互自动让位）",
+          "default": false
         }
       ],
       "presets": [
@@ -262,6 +267,143 @@
       "writes": [
         "js/learned-policy.js",
         "tools/train-hell-curve.json"
+      ]
+    },
+    {
+      "id": "nemesis",
+      "name": "地狱AI克星",
+      "tag": "地狱AI克星",
+      "color": "#ff9f1c",
+      "desc": "只针对地狱AI（learned-policy+护栏，实机同口径）特训的克制策略：GA(μ+λ)，适应度=双向对评对地狱AI胜球率（正反坐庄各一遍，抵消 simmatch 参数位先手偏差，50%=无偏克制基线）；独立验证（4新种子×40局）对地狱AI胜球率**高于前代现役**（同种子同对手配对对照，--force-write 跳过该条）才覆盖 js/learned-policy-nemesis.js，无现役时须 >50%，候选始终落盘可 --from 续训。CLI 自带 ANSI 实时面板（FORCE_TTY=1 可在管道强制启用）。",
+      "script": "tools/train-nemesis.js",
+      "curve": "tools/train-nemesis-curve.json",
+      "weightFile": "js/learned-policy-nemesis.js",
+      "metaConst": "NEMESIS_META",
+      "xKey": "gen",
+      "yUnit": "rate",
+      "series": [
+        {
+          "key": "fit",
+          "label": "冠军 vs 地狱AI",
+          "color": "#ff9f1c"
+        },
+        {
+          "key": "best",
+          "label": "历史最优",
+          "color": "#80ed99"
+        },
+        {
+          "key": "p50",
+          "label": "种群中位",
+          "color": "#4cc9f0"
+        },
+        {
+          "key": "worst",
+          "label": "种群最差",
+          "color": "#6c757d"
+        }
+      ],
+      "params": [
+        {
+          "name": "from",
+          "label": "续训起点 from",
+          "type": "text",
+          "default": "tools/train-nemesis-best.json",
+          "desc": "相对 tt_game/ 的路径。tools/train-nemesis-best.json=上次运行每10代落盘的最优检查点；tools/train-nemesis-candidate.json=上次运行最终候选；留空=从地狱AI本身（50%基线）重新开始。"
+        },
+        {
+          "name": "gens",
+          "label": "代数 gens",
+          "type": "int",
+          "default": 150,
+          "min": 1,
+          "max": 8000,
+          "step": 1
+        },
+        {
+          "name": "games",
+          "label": "每次评估局数 games",
+          "type": "int",
+          "default": 24,
+          "min": 4,
+          "max": 200,
+          "step": 1
+        },
+        {
+          "name": "pop",
+          "label": "种群大小 pop",
+          "type": "int",
+          "default": 24,
+          "min": 4,
+          "max": 64,
+          "step": 1
+        },
+        {
+          "name": "seed",
+          "label": "随机种子 seed",
+          "type": "int",
+          "default": 20260919,
+          "min": 0,
+          "max": 2000000000,
+          "step": 1
+        },
+        {
+          "name": "workers",
+          "label": "并行 worker 数",
+          "type": "int",
+          "default": 8,
+          "min": 1,
+          "max": 32,
+          "step": 1
+        }
+      ],
+      "flags": [
+        {
+          "name": "smoke",
+          "label": "冒烟自检（并行 worker 环境验证）",
+          "default": false
+        },
+        {
+          "name": "nice",
+          "label": "低优先级运行（不占满CPU，交互自动让位）",
+          "default": false
+        }
+      ],
+      "presets": [
+        {
+          "name": "冒烟",
+          "args": {
+            "gens": 3,
+            "games": 8,
+            "pop": 6,
+            "workers": 4
+          }
+        },
+        {
+          "name": "快速",
+          "args": {
+            "gens": 30,
+            "games": 12,
+            "pop": 16,
+            "workers": 12
+          }
+        },
+        {
+          "name": "标准",
+          "args": {
+            "gens": 150,
+            "games": 24,
+            "pop": 24,
+            "workers": 24
+          }
+        }
+      ],
+      "dryRunArgs": [
+        "--no-write"
+      ],
+      "writes": [
+        "js/learned-policy-nemesis.js",
+        "tools/train-nemesis-curve.json"
       ]
     },
     {

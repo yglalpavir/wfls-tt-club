@@ -5,6 +5,7 @@
     {
       "uid": 10000,
       "name": "陈瑜萱",
+      "pinyin": "CHEN Yuxuan",
       "aliases": [],
       "initialScore": 2000,
       "tags": [
@@ -24,6 +25,7 @@
     {
       "uid": 10001,
       "name": "付大卫",
+      "pinyin": "FU Dawei",
       "aliases": [],
       "initialScore": 2000,
       "tags": [],
@@ -38,6 +40,7 @@
     {
       "uid": 10002,
       "name": "龚雨煊",
+      "pinyin": "GONG Yuxuan",
       "aliases": [],
       "initialScore": 2000,
       "tags": [
@@ -55,6 +58,7 @@
     {
       "uid": 10003,
       "name": "谷子易",
+      "pinyin": "GU Ziyi",
       "aliases": [],
       "initialScore": 2000,
       "tags": [
@@ -72,6 +76,7 @@
     {
       "uid": 10004,
       "name": "姜子润",
+      "pinyin": "JIANG Zirun",
       "aliases": [],
       "initialScore": 2000,
       "tags": [
@@ -86,6 +91,7 @@
     {
       "uid": 10005,
       "name": "李南熠",
+      "pinyin": "LI Nanyi",
       "aliases": [],
       "initialScore": 2000,
       "tags": [
@@ -103,6 +109,7 @@
     {
       "uid": 10006,
       "name": "彭一和",
+      "pinyin": "PENG Yihe",
       "aliases": [],
       "initialScore": 2000,
       "tags": [
@@ -117,6 +124,7 @@
     {
       "uid": 10007,
       "name": "祁子傲",
+      "pinyin": "QI Ziao",
       "aliases": [],
       "initialScore": 2000,
       "tags": [
@@ -135,6 +143,7 @@
     {
       "uid": 10008,
       "name": "任安喆",
+      "pinyin": "REN Anzhe",
       "aliases": [],
       "initialScore": 2000,
       "tags": [
@@ -150,6 +159,7 @@
     {
       "uid": 10009,
       "name": "任峻贤",
+      "pinyin": "REN Junxian",
       "aliases": [],
       "initialScore": 2000,
       "tags": [
@@ -167,6 +177,7 @@
     {
       "uid": 10010,
       "name": "魏罗瑞",
+      "pinyin": "WEI Luorui",
       "aliases": [],
       "initialScore": 2000,
       "tags": [
@@ -184,6 +195,7 @@
     {
       "uid": 10011,
       "name": "梅哲宇",
+      "pinyin": "MEI Zheyu",
       "aliases": [],
       "initialScore": 1900,
       "tags": [
@@ -202,6 +214,7 @@
     {
       "uid": 10012,
       "name": "王成悦",
+      "pinyin": "WANG Chengyue",
       "aliases": [],
       "initialScore": 1900,
       "tags": [],
@@ -216,6 +229,7 @@
     {
       "uid": 10013,
       "name": "胡朗诚",
+      "pinyin": "HU Langcheng",
       "aliases": [],
       "initialScore": 1800,
       "tags": [],
@@ -230,6 +244,7 @@
     {
       "uid": 10014,
       "name": "孙钰鑫",
+      "pinyin": "SUN Yuxin",
       "aliases": [],
       "initialScore": 1800,
       "tags": [
@@ -244,6 +259,7 @@
     {
       "uid": 10015,
       "name": "陶锦源",
+      "pinyin": "TAO Jinyuan",
       "aliases": [],
       "initialScore": 1800,
       "tags": [],
@@ -256,6 +272,7 @@
     {
       "uid": 10016,
       "name": "张宸瑞1",
+      "pinyin": "ZHANG Chenrui",
       "aliases": [],
       "initialScore": 1800,
       "tags": [],
@@ -270,6 +287,7 @@
     {
       "uid": 10017,
       "name": "李全景",
+      "pinyin": "LI Quanjing",
       "aliases": [],
       "initialScore": 1700,
       "tags": [],
@@ -282,6 +300,7 @@
     {
       "uid": 10018,
       "name": "刘冠羽",
+      "pinyin": "LIU Guanyu",
       "aliases": [],
       "initialScore": 1700,
       "tags": [],
@@ -294,6 +313,7 @@
     {
       "uid": 10019,
       "name": "汪宁轩",
+      "pinyin": "WANG Ningxuan",
       "aliases": [],
       "initialScore": 1700,
       "tags": [],
@@ -306,6 +326,7 @@
     {
       "uid": 10020,
       "name": "王思博",
+      "pinyin": "WANG Sibo",
       "aliases": [],
       "initialScore": 1700,
       "tags": [],
@@ -318,6 +339,7 @@
     {
       "uid": 10021,
       "name": "吴慈航",
+      "pinyin": "WU Cihang",
       "aliases": [],
       "initialScore": 1700,
       "tags": [],
@@ -330,6 +352,7 @@
     {
       "uid": 10022,
       "name": "杨苏旭",
+      "pinyin": "YANG Suxu",
       "aliases": [],
       "initialScore": 1700,
       "tags": [],
@@ -342,6 +365,7 @@
     {
       "uid": 10023,
       "name": "陈知勉",
+      "pinyin": "CHEN Zhimian",
       "aliases": [],
       "initialScore": 1600,
       "tags": [],
@@ -354,6 +378,7 @@
     {
       "uid": 10024,
       "name": "丁胜怀",
+      "pinyin": "DING Shenghuai",
       "aliases": [],
       "initialScore": 1600,
       "tags": [],
@@ -366,6 +391,7 @@
     {
       "uid": 10025,
       "name": "何子涵",
+      "pinyin": "HE Zihan",
       "aliases": [],
       "initialScore": 1600,
       "tags": [],
@@ -378,6 +404,7 @@
     {
       "uid": 10026,
       "name": "胡永轩",
+      "pinyin": "HU Yongxuan",
       "aliases": [],
       "initialScore": 1600,
       "tags": [],
@@ -390,6 +417,7 @@
     {
       "uid": 10027,
       "name": "王子一",
+      "pinyin": "WANG Ziyi",
       "aliases": [],
       "initialScore": 1600,
       "tags": [],
@@ -402,6 +430,7 @@
     {
       "uid": 10028,
       "name": "叶泓鑫",
+      "pinyin": "YE Hongxin",
       "aliases": [],
       "initialScore": 1600,
       "tags": [],
@@ -414,6 +443,7 @@
     {
       "uid": 10029,
       "name": "叶孟恒",
+      "pinyin": "YE Mengheng",
       "aliases": [],
       "initialScore": 1600,
       "tags": [],
@@ -426,6 +456,7 @@
     {
       "uid": 10030,
       "name": "曹高畅",
+      "pinyin": "CAO Gaochang",
       "aliases": [],
       "initialScore": 1500,
       "tags": [],
@@ -438,6 +469,7 @@
     {
       "uid": 10031,
       "name": "邓以清",
+      "pinyin": "DENG Yiqing",
       "aliases": [],
       "initialScore": 1500,
       "tags": [],
@@ -450,6 +482,7 @@
     {
       "uid": 10032,
       "name": "何齐烨",
+      "pinyin": "HE Qiye",
       "aliases": [],
       "initialScore": 1500,
       "tags": [],
@@ -462,6 +495,7 @@
     {
       "uid": 10033,
       "name": "刘天齐",
+      "pinyin": "LIU Tianqi",
       "aliases": [],
       "initialScore": 1500,
       "tags": [],
@@ -474,6 +508,7 @@
     {
       "uid": 10034,
       "name": "刘彧铭",
+      "pinyin": "LIU Yuming",
       "aliases": [],
       "initialScore": 1500,
       "tags": [],
@@ -486,6 +521,7 @@
     {
       "uid": 10035,
       "name": "宁悦辛",
+      "pinyin": "NING Yuexin",
       "aliases": [],
       "initialScore": 1500,
       "tags": [],
@@ -498,6 +534,7 @@
     {
       "uid": 10036,
       "name": "肖辰宇",
+      "pinyin": "XIAO Chenyu",
       "aliases": [],
       "initialScore": 1500,
       "tags": [],
@@ -510,6 +547,7 @@
     {
       "uid": 10037,
       "name": "张宸瑞2",
+      "pinyin": "ZHANG Chenrui",
       "aliases": [],
       "initialScore": 1500,
       "tags": [],
@@ -522,6 +560,7 @@
     {
       "uid": 10038,
       "name": "刘浩扬",
+      "pinyin": "LIU Haoyang",
       "aliases": [],
       "initialScore": 1400,
       "tags": [],
@@ -534,6 +573,7 @@
     {
       "uid": 10039,
       "name": "吕曜而",
+      "pinyin": "LÜ Yao'er",
       "aliases": [],
       "initialScore": 1400,
       "tags": [],
@@ -546,6 +586,7 @@
     {
       "uid": 10040,
       "name": "王玥涵",
+      "pinyin": "WANG Yuehan",
       "aliases": [],
       "initialScore": 1400,
       "tags": [],
@@ -558,6 +599,7 @@
     {
       "uid": 10041,
       "name": "熊子乐",
+      "pinyin": "XIONG Zile",
       "aliases": [],
       "initialScore": 1400,
       "tags": [],
@@ -570,6 +612,7 @@
     {
       "uid": 10042,
       "name": "俞睿哲",
+      "pinyin": "YU Ruizhe",
       "aliases": [],
       "initialScore": 1300,
       "tags": [],
@@ -582,6 +625,7 @@
     {
       "uid": 10043,
       "name": "王天森",
+      "pinyin": "WANG Tiansen",
       "aliases": [],
       "initialScore": 2000,
       "tags": [],
@@ -594,6 +638,7 @@
     {
       "uid": 10044,
       "name": "彭瀚明",
+      "pinyin": "PENG Hanming",
       "aliases": [],
       "initialScore": 1700,
       "tags": [],

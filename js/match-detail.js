@@ -185,8 +185,9 @@ function mdCompute() {
 function mdAvatarHtml(name, isW) {
     const p = (!MD_WTT && typeof getPlayerByName === 'function') ? getPlayerByName(name) : null;
     const qq = p && p.qq && String(p.qq).trim() ? String(p.qq).trim() : '';
+    const shown = (!MD_WTT && typeof playerDisplayName === 'function') ? playerDisplayName(name) : name;
     const img = qq ? `<img class="md-avatar-img" src="https://q1.qlogo.cn/g?b=qq&nk=${encodeURIComponent(qq)}&s=640" alt="" loading="lazy" onerror="this.style.display='none'">` : '';
-    return `<div class="md-avatar ${isW ? 'md-avatar-w' : ''}">${escapeHtml(name.charAt(0))}${img}</div>`;
+    return `<div class="md-avatar ${isW ? 'md-avatar-w' : ''}">${escapeHtml(shown.charAt(0))}${img}</div>`;
 }
 
 // 复制链接（clipboard API，拒绝时回退 textarea + execCommand）
@@ -391,7 +392,7 @@ function renderMatchDetail(m) {
                     <div class="md-pred-side md-pred-side-r"><div class="md-pred-pct md-pred-pct-l">${predLpct.toFixed(1)}<small>%</small></div><div class="md-pred-name">${mdPlayerLink(m.l)}</div></div>
                 </div>
                 <div class="md-pred-track"><div class="md-pred-seg md-seg-w" style="width:${predWpct.toFixed(1)}%;"></div><div class="md-pred-seg md-seg-l" style="width:${predLpct.toFixed(1)}%;"></div></div>
-                <div class="md-note"><i class="fa-solid fa-chart-line"></i> ${T.md_pred_form}：${escapeHtml(m.w)} ${fmtForm(m.form.w)} · ${escapeHtml(m.l)} ${fmtForm(m.form.l)}</div>
+                <div class="md-note"><i class="fa-solid fa-chart-line"></i> ${T.md_pred_form}：${mdPlayerLink(m.w)} ${fmtForm(m.form.w)} · ${mdPlayerLink(m.l)} ${fmtForm(m.form.l)}</div>
                 <div class="md-note"><i class="fa-solid fa-handshake"></i> ${h2hSummary}</div>
                 <div class="md-note"><i class="fa-solid fa-circle-info"></i> ${T.md_pred_model_note}</div>
             </div>

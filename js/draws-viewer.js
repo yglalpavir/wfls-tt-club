@@ -86,9 +86,15 @@ function dvBuildCardEl(card, pos, layout, draws) {
     return el;
 }
 
+/* 展示名：英文界面下显示 players.json 拼音（社团签表球员）；占位/未知姓名原样返回 */
+function dvDisplayName(name) {
+    if (!name) return name;
+    return (typeof playerDisplayName === 'function') ? playerDisplayName(name) : name;
+}
+
 function dvPlayerHtml(p, score, won) {
     if (!p) return '<span class="dv-player-name dv-tbd">' + dcT('dv_tbd', '待定') + '</span>' + (score != null ? '<span class="dv-player-score ' + (won ? 'dv-score-win' : 'dv-score-loss') + '">' + score + '</span>' : '');
-    let html = '<span class="dv-player-name">' + dcEsc(p.name) + '</span>';
+    let html = '<span class="dv-player-name">' + dcEsc(dvDisplayName(p.name)) + '</span>';
     if (p.seed != null && p.seed !== '') {
         html = '<span class="dv-player-seed">' + dcEsc(String(p.seed)) + '</span>' + html;
     }
@@ -108,12 +114,12 @@ function dvShowCardPopover(card, anchorEl, container, layout, draws) {
     let html = '';
     if (card.type === 'champion') {
         html += '<div class="dv-popover-title"><i class="fa-solid fa-crown"></i> ' + dcEsc(card.label && card.label !== '冠军' ? card.label : dcT('dv_champion', '冠军')) + '</div>';
-        html += '<div class="dv-popover-champ">' + dcEsc(dcPlayerName(card.player1)) + '</div>';
+        html += '<div class="dv-popover-champ">' + dcEsc(dvDisplayName(dcPlayerName(card.player1))) + '</div>';
     } else if (card.type === 'note') {
         html += '<div class="dv-popover-note">' + dcEsc(card.text || '') + '</div>';
     } else {
-        const p1 = dcPlayerName(card.player1) || dcT('dv_tbd', '待定');
-        const p2 = dcPlayerName(card.player2);
+        const p1 = dvDisplayName(dcPlayerName(card.player1)) || dcT('dv_tbd', '待定');
+        const p2 = dvDisplayName(dcPlayerName(card.player2));
         html += '<div class="dv-popover-title">' + dcEsc(p1) + (p2 ? ' <span class="dv-popover-vs">vs</span> ' + dcEsc(p2) : ' <span class="dv-popover-vs">· BYE</span>') + '</div>';
         const status = dcMatchStatus(card);
         if (status === 'live') html += '<div class="dv-popover-status dv-status-live"><span class="dv-live-dot"></span>' + dcT('dv_status_live', '比赛进行中') + '</div>';
@@ -473,7 +479,9 @@ function applyViewerHighlight(wrapper, draws, query) {
     // 命中的卡片
     const hitIds = new Set();
     (draws.cards || []).forEach(c => {
-        const names = [dcPlayerName(c.player1), dcPlayerName(c.player2), c.text || '', c.note || ''].join(' ').toLowerCase();
+        const n1 = dcPlayerName(c.player1), n2 = dcPlayerName(c.player2);
+        // 原始姓名 + 拼音展示名都可命中（英文界面按拼音搜索）
+        const names = [n1, n2, dvDisplayName(n1), dvDisplayName(n2), c.text || '', c.note || ''].join(' ').toLowerCase();
         if (names.includes(q)) hitIds.add(c.id);
     });
     if (!hitIds.size) return;

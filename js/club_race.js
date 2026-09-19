@@ -127,8 +127,8 @@ function clubCreateRaceRow(item) {
     row.setAttribute('data-name', item.name);
     row.innerHTML =
         '<span class="bar-race-rank"></span>' +
-        '<span class="bar-race-name" title="' + escapeHtml(item.name) + '">' +
-            '<span class="bar-race-name-text">' + escapeHtml(item.name) + '</span>' +
+        '<span class="bar-race-name" title="' + escapeHtml(playerDisplayName(item.name)) + '">' +
+            '<span class="bar-race-name-text">' + escapeHtml(playerDisplayName(item.name)) + '</span>' +
         '</span>' +
         '<span class="bar-race-track">' +
             '<span class="bar-race-fill"></span>' +
@@ -513,6 +513,19 @@ function clubRaceTick(ts) {
     } else {
         B.rafId = null;
         B.lastTs = null;
+    }
+}
+
+/* 语言切换刷新行内姓名标签（行 DOM 按 name 缓存复用，切语言时须原地更新） */
+function clubRaceRefreshNameLabels() {
+    const B = clubBarRace;
+    if (!B || !B.rowMap) return;
+    for (const st of B.rowMap.values()) {
+        const nameEl = st.row && st.row.querySelector('.bar-race-name');
+        if (!nameEl) continue;
+        nameEl.title = playerDisplayName(st.name);
+        const txtEl = nameEl.querySelector('.bar-race-name-text');
+        if (txtEl) txtEl.textContent = playerDisplayName(st.name);
     }
 }
 

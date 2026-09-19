@@ -10,6 +10,10 @@
  *      node tools/train-hell.js --smoke
  *      node tools/train-hell.js
  *      node tools/train-hell.js --gens 100 --pop 16 --games 12 --seed 20260810 --workers 12
+ *      node tools/train-hell.js --nice   （低优先级：不占满CPU，交互操作自动让位）
+ *  · CPU 占用：--workers N 硬性限制并行核数（默认=核数）；--nice 整体降到
+ *    BelowNormal 优先级（全速用空闲核，一有交互 OS 自动让位），两者可叠加；
+ *    父包装进程被杀（如 Web 训练台停止）时子进程经 IPC 心跳看门狗 6s 自动退出。
  * ===================================================================== */
 'use strict';
 const path = require('path');
@@ -36,6 +40,35 @@ for(let i = 0; i < args.length; i++){
   else if(args[i] === '--write') opt.write = true;
   else if(args[i] === '--no-write') opt.noWrite = true;   // 实验模式：保留 curve/打点，绝不覆盖 js/learned-policy.js
   else if(args[i] === '--from'){ opt.from = args[++i]; }  // 从候选文件续训（train-hell-candidate.json 的 .vec）
+  else if(args[i] === '--nice') opt.nice = true;          // 低优先级重启自身（不占满 CPU，交互自动让位）
+}
+
+/* ---- --nice：以低于正常的优先级重启自身（机制详见 train-nemesis.js 同名块）----
+ * Windows=PowerShell 设 BelowNormal / POSIX=nice -n 10；IPC 心跳看门狗防孤儿。 */
+if(opt.nice && !process.env.TT_NICE_CHILD){
+  const { spawn } = require('child_process');
+  const script = path.resolve(process.argv[1]);
+  const childArgs = [script, ...process.argv.slice(2).filter(a => a !== '--nice')];
+  const childEnv = Object.assign({}, process.env, { TT_NICE_CHILD: '1' });
+  const child = process.platform === 'win32'
+    ? spawn(process.execPath, childArgs, { stdio: ['inherit', 'inherit', 'inherit', 'ipc'], env: childEnv })
+    : spawn('nice', ['-n', '10', process.execPath, ...childArgs], { stdio: ['inherit', 'inherit', 'inherit', 'ipc'], env: childEnv });
+  if(process.platform === 'win32')
+    spawn('powershell', ['-NoProfile', '-Command', `(Get-Process -Id ${child.pid}).PriorityClass = 'BelowNormal'`], { stdio: 'ignore' });
+  console.log('[nice] 已以' + (process.platform === 'win32' ? ' BelowNormal' : ' nice 10') + ' 优先级启动训练子进程 PID=' + child.pid);
+  const ping = setInterval(() => { try{ child.send({ t: 'nice-ping' }); }catch(e){} }, 2000);
+  child.on('exit', (code) => { clearInterval(ping); process.exit(code == null ? 1 : code); });
+  return;
+}
+if(process.env.TT_NICE_CHILD){
+  let lastPing = Date.now();
+  process.on('message', () => { lastPing = Date.now(); });
+  setInterval(() => {
+    if(Date.now() - lastPing > 6000){
+      console.error('\n[nice] 父包装进程已退出，训练随之终止');
+      process.exit(130);
+    }
+  }, 2000).unref();
 }
 const KEYS = P.POLICY_KEYS;
 const range = s => s.max - s.min;

@@ -308,13 +308,21 @@ function policyForDifficulty(d){
   return pol;
 }
 function policyMoveZ(){ return get(resolvedPolicy(), 'moveZ', 2.0); }
-/* 模型精度系数（AI 误差缩放）：普通=1.0 · 地狱=0.5 · 大满贯=0.3（更精准）
+/* 模型精度系数（AI 误差缩放）：普通=1.0 · 地狱=0.5 · 大满贯=0.3（更精准） · 克星=1.0
  *   extreme / extreme-max 保持 1.0：难度已全部编码进策略自身的 moveErr
- *   （0.009 / 0.004），再乘系数会让实机比训练对手更难、两边不再同源。 */
+ *   （0.009 / 0.004），再乘系数会让实机比训练对手更难、两边不再同源。
+ *   地狱AI克星同理=1.0：难度编码在自身学习策略里，训练评估口径即实机口径。 */
 function diffPrecision(model){
   if(model === 'grandslam') return 0.3;
   if(model === 'hell') return 0.5;
   return 1.0;
+}
+/* 地狱AI克星：只针对地狱AI特训的克制策略（learned-policy-nemesis.js，未训练回落地狱AI）。
+ * 注意：返回原始学习策略、不加护栏 —— 训练器评估的就是原始向量（对手=带护栏的地狱AI），
+ * 若在此叠加护栏会破坏训练/实机一致性。 */
+function nemesisPolicy(){
+  if(typeof NEMESIS_POLICY === 'undefined') return policyForModel('hell');
+  return unflattenPolicy(_vecOf(NEMESIS_POLICY));
 }
 /* 大满贯预备种子：以加强玩家模型为模板训练（learned-policy-grandslam.js），未训练回落地狱 */
 function grandSlamPolicy(){
@@ -328,10 +336,12 @@ function grandSlamPolicy(){
 }
 /* 按所选对战模型解析策略：普通=默认 · 地狱=学习策略 · 大满贯=预备种子 ·
  *   extreme / extreme-max=极端对手阶梯（opponent-ladder.js，与训练器同源）·
+ *   nemesis=地狱AI克星（只针对地狱AI特训）·
  *   鼠标上的tt玩家=默认(仅发球决策用，回球由 DQN 驱动) */
 function policyForModel(model){
   if(model === 'hell') return unflattenPolicy(strongVec());
   if(model === 'grandslam') return grandSlamPolicy();
+  if(model === 'nemesis') return nemesisPolicy();
   if(model === 'extreme' || model === 'extreme-max'){
     if(typeof OPP_LADDER !== 'undefined') return OPP_LADDER.at(model);
     if(typeof module !== 'undefined' && module.exports) return require('./opponent-ladder.js').at(model);

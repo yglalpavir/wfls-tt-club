@@ -274,7 +274,7 @@ function playerIndexCardHtml(entry) {
     const linked = player && player.uid != null;
     return `<div class="player-index-card glass-card${linked ? ' clickable' : ''}" data-uid="${player ? escapeHtml(String(player.uid)) : ''}" data-name="${escapeHtml(String(name))}">
         <div class="player-index-head">
-            <h3 class="player-index-name">${escapeHtml(String(name))}</h3>
+            <h3 class="player-index-name">${escapeHtml(playerDisplayName(name))}</h3>
             ${player && player.uid != null ? `<span class="player-index-uid">#${escapeHtml(String(player.uid))}</span>` : ''}
         </div>
         <div class="player-index-tags">${tagHtml}${tagMore}</div>

@@ -130,8 +130,7 @@
         <button class="model-btn" data-model="hell">地狱 AI</button>
         <button class="model-btn" data-model="grandslam">大满贯预备种子</button>
         <button class="model-btn" data-model="ttmouse">鼠标上的tt玩家</button>
-        <button class="model-btn" data-model="extreme">极端对手</button>
-        <button class="model-btn" data-model="extreme-max">极端·满档</button>
+        <button class="model-btn" data-model="nemesis">地狱AI克星</button>
       </div>
       <div class="diff-hint" id="modelHint">普通 AI：标准水平 · 攻守平衡</div>
     </div>
@@ -144,8 +143,7 @@
           <option value="hell" selected>地狱 AI</option>
           <option value="grandslam">大满贯预备种子</option>
           <option value="ttmouse">鼠标上的tt玩家</option>
-          <option value="extreme">极端对手</option>
-          <option value="extreme-max">极端·满档</option>
+          <option value="nemesis">地狱AI克星</option>
         </select>
         <span class="vs">VS</span>
         <select id="fightR">
@@ -153,8 +151,7 @@
           <option value="hell" selected>地狱 AI</option>
           <option value="grandslam">大满贯预备种子</option>
           <option value="ttmouse">鼠标上的tt玩家</option>
-          <option value="extreme">极端对手</option>
-          <option value="extreme-max">极端·满档</option>
+          <option value="nemesis">地狱AI克星</option>
         </select>
         <label>右 AI</label>
       </div>
@@ -242,6 +239,7 @@
 <script src="js/opponent-ladder.js"></script>
 <script src="js/learned-policy.js"></script>
 <script src="js/learned-policy-grandslam.js"></script>
+<script src="js/learned-policy-nemesis.js"></script>
 <script src="js/dqn.js"></script>
 <script src="js/input-agent.js"></script>
 <!-- input-weights.js(3.8MB)已改为按需懒加载:仅对战模型选中「鼠标上的tt玩家」时注入,

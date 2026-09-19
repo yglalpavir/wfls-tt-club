@@ -155,7 +155,7 @@ const i18n = {
         rank_col_rank: "#", rank_col_name: "姓名", rank_col_points: "当前积分", rank_col_points_change: "积分变化", rank_col_change: "排名变化", rank_col_matches: "总场次", rank_col_winrate: "胜率",
         rank_export_btn: "导出图片", rank_export_gen: "生成于", rank_export_fail: "图片导出失败，请重试",
         export_gen: "生成于", img_export_fail: "图片导出失败，请重试", detail_export_btn: "导出图片",
-        rank_export_menu_all: "导出全部", rank_export_menu_top12: "导出前12名", rank_export_top_sub: "前{n}名", rank_export_topn_prefix: "导出前", rank_export_topn_suffix: "名", rank_export_menu_go: "导出", rank_export_menu_invalid: "请输入有效的名次（正整数）",
+        rank_export_delta_ref: "积分/排名变化对比：{date}", rank_export_menu_all: "导出全部", rank_export_menu_top12: "导出前12名", rank_export_top_sub: "前{n}名", rank_export_topn_prefix: "导出前", rank_export_topn_suffix: "名", rank_export_menu_go: "导出", rank_export_menu_invalid: "请输入有效的名次（正整数）",
         score_detail_title: "积分明细", score_col_date: "日期", score_col_type: "类型", score_col_opponent: "对手", score_col_result: "结果", score_col_score: "比分", score_col_score_before: "赛前积分", score_col_change: "积分变动", score_col_score_after: "赛后积分", score_result_win: "胜", score_result_loss: "负",
         tag_match: "赛事", tag_training: "训练", tag_notice: "公告", tag_event: "活动", tag_daily: "日常", tag_upcoming: "即将开始", tag_result: "比赛结果", tag_live: "进行中",
         filter_all: "全部",
@@ -334,7 +334,7 @@ const i18n = {
         rank_col_rank: "#", rank_col_name: "Name", rank_col_points: "Points", rank_col_points_change: "Score Δ", rank_col_change: "Rank Δ", rank_col_matches: "Matches", rank_col_winrate: "Win Rate",
         rank_export_btn: "Save Image", rank_export_gen: "Generated", rank_export_fail: "Image export failed. Please try again.",
         export_gen: "Generated", img_export_fail: "Image export failed. Please try again.", detail_export_btn: "Save Image",
-        rank_export_menu_all: "Export All", rank_export_menu_top12: "Export Top 12", rank_export_top_sub: "Top {n}", rank_export_topn_prefix: "Top", rank_export_topn_suffix: "", rank_export_menu_go: "Export", rank_export_menu_invalid: "Please enter a valid rank (positive integer)",
+        rank_export_delta_ref: "Point/rank changes vs. {date}", rank_export_menu_all: "Export All", rank_export_menu_top12: "Export Top 12", rank_export_top_sub: "Top {n}", rank_export_topn_prefix: "Top", rank_export_topn_suffix: "", rank_export_menu_go: "Export", rank_export_menu_invalid: "Please enter a valid rank (positive integer)",
         score_detail_title: "Score Details", score_col_date: "Date", score_col_type: "Type", score_col_opponent: "Opponent", score_col_result: "Result", score_col_score: "Score", score_col_score_before: "Before", score_col_change: "Change", score_col_score_after: "After", score_result_win: "Win", score_result_loss: "Loss",
         tag_match: "Match", tag_training: "Training", tag_notice: "Notice", tag_event: "Event", tag_daily: "Daily", tag_upcoming: "Upcoming", tag_result: "Result", tag_live: "Live",
         filter_all: "All",
@@ -542,6 +542,8 @@ function setLanguage(lang) {
     if (dataLoaded && typeof updateDetailPage === 'function') updateDetailPage();
     if (typeof wttReapplyI18n === 'function') wttReapplyI18n();
     if (typeof dataVizReapplyI18n === 'function') dataVizReapplyI18n();
+    if (typeof dataVizMainReapplyI18n === 'function') dataVizMainReapplyI18n();
+    if (typeof rankingReapplyI18n === 'function') rankingReapplyI18n();
     if (typeof reapplyPlayerPage === 'function') reapplyPlayerPage();
     if (typeof reapplyPersonalStats === 'function') reapplyPersonalStats();
     if (typeof seasonReviewReapplyI18n === 'function') seasonReviewReapplyI18n();
@@ -657,8 +659,13 @@ function buildRankTableImageCanvas(rows, opts) {
     ctx.fillText(opts.brand || 'WFLS TT Club', W - inset - 6, y + titleH / 2);
     y += titleH;
 
-    ctx.font = `400 12px ${FONT}`; ctx.fillStyle = C.sub; ctx.textAlign = 'left';
-    ctx.fillText(opts.subtitle || '', inset + 6, y + subH / 2 - 2);
+    /* 副标题自适应：超宽时先缩字号（12→9px），仍超宽由 fillText maxWidth 水平压缩兜底 */
+    const subAvail = W - (inset + 6) * 2;
+    let subFont = 12;
+    ctx.font = `400 ${subFont}px ${FONT}`;
+    while (subFont > 9 && ctx.measureText(opts.subtitle || '').width > subAvail) { subFont -= 0.5; ctx.font = `400 ${subFont}px ${FONT}`; }
+    ctx.fillStyle = C.sub; ctx.textAlign = 'left';
+    ctx.fillText(opts.subtitle || '', inset + 6, y + subH / 2 - 2, subAvail);
     y += subH;
 
     ctx.strokeStyle = C.border;
@@ -841,16 +848,18 @@ async function performSearch(query) {
         if (s > 0) results.push({ type: 'competition', typeLabel: i18n[currentLang].search_type_competition, title: item.title, excerpt: stripMediaMarkers(item.excerpt || item.content || ''), date: item.date, link: 'detail.html?type=competition&id=' + item.id, score: s });
     });
     if (membersData && membersData.length) membersData.forEach(m => {
-        const s = calcScore(query, m.name, m.role, m.description);
-        if (s > 0) results.push({ type: 'member', typeLabel: i18n[currentLang].search_type_member, title: m.name + ' - ' + m.role, excerpt: m.description || '', date: '', link: 'members.html', score: s });
+        const shown = playerDisplayName(m.name);
+        const s = Math.max(calcScore(query, m.name, m.role, m.description), calcScore(query, shown, '', ''));
+        if (s > 0) results.push({ type: 'member', typeLabel: i18n[currentLang].search_type_member, title: shown + ' - ' + m.role, excerpt: m.description || '', date: '', link: 'members.html', score: s });
     });
     if (currentDisplayData && currentDisplayData.length) currentDisplayData.forEach(p => {
-        const s = calcScore(query, p['姓名'], String(p['当前积分'] || ''), '');
+        const shown = playerDisplayName(p['姓名']);
+        const s = Math.max(calcScore(query, p['姓名'], String(p['当前积分'] || ''), ''), calcScore(query, shown, '', ''));
         if (s > 0) {
             const uid = getUidForPlayerName(p['姓名']);
             const _L = i18n[currentLang] || {};
             const tpl = (_L.search_rank_tpl || '排名：{rank} | 胜率：{rate}').replace('{rank}', String(p.rank || '-')).replace('{rate}', String(p['胜率'] || '0%'));
-            results.push({ type: 'ranking', typeLabel: i18n[currentLang].search_type_ranking, title: p['姓名'] + ' - ' + (p['当前积分'] || 0).toFixed(1) + '分', excerpt: tpl, date: '', link: uid != null ? ('player.html?uid=' + uid) : 'ranking.html', score: s + (uid != null ? 5 : 0) });
+            results.push({ type: 'ranking', typeLabel: i18n[currentLang].search_type_ranking, title: shown + ' - ' + (p['当前积分'] || 0).toFixed(1) + '分', excerpt: tpl, date: '', link: uid != null ? ('player.html?uid=' + uid) : 'ranking.html', score: s + (uid != null ? 5 : 0) });
         }
     });
     if (qaItems.length) qaItems.forEach(item => {
@@ -1068,11 +1077,18 @@ function getPlayerProfileUrl(playerOrUidOrName) {
     const p = uidIndex[String(playerOrUidOrName)] || nameIndex[playerOrUidOrName];
     return p ? ('player.html?uid=' + p.uid) : '#';
 }
+// 英文界面下返回球员拼音人名（players.json 的 pinyin 字段）；无档案或无拼音时原样返回。
+// 仅用于展示层：数据键、URL 参数、data-* 属性一律保持原始中文姓名
+function playerDisplayName(name) {
+    if (name == null || currentLang !== 'en') return name;
+    const p = getPlayerByName(String(name));
+    return (p && p.pinyin) ? p.pinyin : String(name);
+}
 // 姓名 → 个人页链接（无档案时纯文本）
 function linkPlayerName(name) {
     const p = getPlayerByName(name);
-    if (p && p.uid != null) return `<a href="player.html?uid=${escapeHtml(String(p.uid))}" class="player-name-link">${escapeHtml(String(name))}</a>`;
-    return escapeHtml(String(name));
+    if (p && p.uid != null) return `<a href="player.html?uid=${escapeHtml(String(p.uid))}" class="player-name-link">${escapeHtml(playerDisplayName(name))}</a>`;
+    return escapeHtml(playerDisplayName(name));
 }
 // ===== 比赛详情页（match.html / wtt_match.html）URL 构造 =====
 // score-log 无 ID 字段且同日重复记录合法：用 (日期,类型,胜者,负者) + 当日次序 n 定位一条记录
@@ -1131,9 +1147,9 @@ function markContentLoaded(which) {
 }
 
 function renderAboutSections() { if (!aboutData) return; const pc = document.getElementById('philosophyContent'); if (pc && aboutData.philosophy) pc.innerHTML = `<div class="markdown-body">${renderMarkdown(aboutData.philosophy.content)}</div>`; const ac = document.getElementById('activitiesContent'); if (ac && aboutData.activities) ac.innerHTML = `<div class="markdown-body">${renderMarkdown(aboutData.activities.content)}</div>`; updateHeroLastUpdated(); }
-function getMemberAvatarHTML(m) { if (m.qq && m.qq.trim()) { const qqUrl = `https://q1.qlogo.cn/g?b=qq&nk=${m.qq.trim()}&s=640`; return `<div class="member-avatar">${escapeHtml(m.name.charAt(0))}<img class="member-avatar-img" src="${escapeHtml(qqUrl)}" alt="${escapeHtml(m.name)}" loading="lazy" onerror="this.style.display='none'"></div>`; } return `<div class="member-avatar text-only">${escapeHtml(m.name.charAt(0))}</div>`; }
-function renderCoreMembers() { document.querySelectorAll('#coreMembersGrid').forEach(g => { if (!g) return; g.innerHTML = ''; membersData.forEach(m => { const el = document.createElement('div'); el.className = 'member-card glass-card'; el.innerHTML = `${getMemberAvatarHTML(m)}<h3>${escapeHtml(m.name)}</h3><span class="member-role">${escapeHtml(m.role)}</span><p class="member-desc">${formatExcerpt(m.description)}</p>`; if (m.uid != null) { el.title = i18n[currentLang].rank_view_player_page; makeCardClickable(el, 'player.html?uid=' + m.uid); } g.appendChild(el); }); }); }
-function renderAllMembersPage() { const g = document.getElementById('allMembersGrid'); if (!g) return; g.innerHTML = ''; membersData.forEach(m => { const el = document.createElement('div'); el.className = 'member-card glass-card'; el.innerHTML = `${getMemberAvatarHTML(m)}<h3>${escapeHtml(m.name)}</h3><span class="member-role">${escapeHtml(m.role)}</span><p class="member-desc">${formatExcerpt(m.description)}</p>`; if (m.uid != null) { el.title = i18n[currentLang].rank_view_player_page; makeCardClickable(el, 'player.html?uid=' + m.uid); } g.appendChild(el); }); }
+function getMemberAvatarHTML(m) { const nm = playerDisplayName(m.name); if (m.qq && m.qq.trim()) { const qqUrl = `https://q1.qlogo.cn/g?b=qq&nk=${m.qq.trim()}&s=640`; return `<div class="member-avatar">${escapeHtml(nm.charAt(0))}<img class="member-avatar-img" src="${escapeHtml(qqUrl)}" alt="${escapeHtml(nm)}" loading="lazy" onerror="this.style.display='none'"></div>`; } return `<div class="member-avatar text-only">${escapeHtml(nm.charAt(0))}</div>`; }
+function renderCoreMembers() { document.querySelectorAll('#coreMembersGrid').forEach(g => { if (!g) return; g.innerHTML = ''; membersData.forEach(m => { const el = document.createElement('div'); el.className = 'member-card glass-card'; el.innerHTML = `${getMemberAvatarHTML(m)}<h3>${escapeHtml(playerDisplayName(m.name))}</h3><span class="member-role">${escapeHtml(m.role)}</span><p class="member-desc">${formatExcerpt(m.description)}</p>`; if (m.uid != null) { el.title = i18n[currentLang].rank_view_player_page; makeCardClickable(el, 'player.html?uid=' + m.uid); } g.appendChild(el); }); }); }
+function renderAllMembersPage() { const g = document.getElementById('allMembersGrid'); if (!g) return; g.innerHTML = ''; membersData.forEach(m => { const el = document.createElement('div'); el.className = 'member-card glass-card'; el.innerHTML = `${getMemberAvatarHTML(m)}<h3>${escapeHtml(playerDisplayName(m.name))}</h3><span class="member-role">${escapeHtml(m.role)}</span><p class="member-desc">${formatExcerpt(m.description)}</p>`; if (m.uid != null) { el.title = i18n[currentLang].rank_view_player_page; makeCardClickable(el, 'player.html?uid=' + m.uid); } g.appendChild(el); }); }
 function renderAllNews() { const pg = document.getElementById('newsPreviewGrid'); if (pg) { pg.innerHTML = ''; newsData.slice(0,3).forEach(item => { const c = document.createElement('div'); c.className = 'news-card'; c.innerHTML = createNewsCard(item); makeCardClickable(c, 'detail.html?type=news&id=' + item.id); pg.appendChild(c); }); } const hl = document.getElementById('homeNewsList'); if (hl) { hl.innerHTML = ''; const items = newsData.slice(0,4); if (!items.length) showContentEmptyState('homeNewsList'); items.forEach(item => { const c = document.createElement('div'); c.className = 'home-hl-item'; c.innerHTML = createHomeHlItem(item); makeCardClickable(c, 'detail.html?type=news&id=' + item.id); hl.appendChild(c); }); } const fg = document.getElementById('newsFullGrid'); if (fg) { const fd = getFilteredNewsData(); fg.innerHTML = ''; if (!fd.length) showContentEmptyState('newsFullGrid'); getPaginatedData(fd, newsCurrentPage).forEach(item => { const c = document.createElement('div'); c.className = 'news-card'; c.innerHTML = createNewsCard(item); makeCardClickable(c, 'detail.html?type=news&id=' + item.id); fg.appendChild(c); }); renderPagination('newsFullGrid', fd, newsCurrentPage); renderTagFilter('newsTagFilter', newsData, newsFilterTag, setNewsFilter); } }
 function renderAllCompetitions() { const pg = document.getElementById('competitionsPreviewGrid'); if (pg) { pg.innerHTML = ''; competitionsData.slice(0,3).forEach(item => { const c = document.createElement('div'); c.className = 'competitions-card'; c.innerHTML = createCompetitionCard(item); makeCardClickable(c, 'detail.html?type=competition&id=' + item.id); pg.appendChild(c); }); } const hl = document.getElementById('homeCompList'); if (hl) { hl.innerHTML = ''; const upcoming = competitionsData.filter(it => it.tag === 'upcoming'); const items = upcoming.concat(competitionsData.filter(it => it.tag !== 'upcoming')).slice(0,4); if (!items.length) showContentEmptyState('homeCompList'); items.forEach(item => { const c = document.createElement('div'); c.className = 'home-hl-item' + (item.tag === 'upcoming' ? ' is-upcoming' : ''); c.innerHTML = createHomeHlItem(item); makeCardClickable(c, 'detail.html?type=competition&id=' + item.id); hl.appendChild(c); }); } const fg = document.getElementById('competitionsFullGrid'); if (fg) { const fd = getFilteredCompetitionsData(); fg.innerHTML = ''; if (!fd.length) showContentEmptyState('competitionsFullGrid'); getPaginatedData(fd, competitionsCurrentPage).forEach(item => { const c = document.createElement('div'); c.className = 'competitions-card'; c.innerHTML = createCompetitionCard(item); makeCardClickable(c, 'detail.html?type=competition&id=' + item.id); fg.appendChild(c); }); renderPagination('competitionsFullGrid', fd, competitionsCurrentPage); renderTagFilter('competitionsTagFilter', competitionsData, competitionsFilterTag, setCompetitionsFilter); } }
 function renderAllQa() { const fg = document.getElementById('qaFullGrid'); if (fg) { fg.innerHTML = ''; if (!qaData.length) showContentEmptyState('qaFullGrid'); getPaginatedData(qaData, qaCurrentPage).forEach(item => { const c = document.createElement('div'); c.className = 'qa-card'; c.innerHTML = createQaCard(item); makeCardClickable(c, 'detail.html?type=qa&id=' + item.id); fg.appendChild(c); }); renderPagination('qaFullGrid', qaData, qaCurrentPage); } }
@@ -2213,6 +2229,9 @@ function applyChartDefaults() {
 
 function initCommon() {
     initSearch();
+    // 全站预载球员档案：nameIndex 供姓名链接（getUidForPlayerName）与英文拼音显示（playerDisplayName）使用，
+    // detail.html 等不主动加载 players.json 的页面也依赖它
+    if (!playersData && typeof loadPlayers === 'function') loadPlayers();
     highlightNavByPath();
     initVizMobileNav();
     if (typeof Chart !== 'undefined') applyChartDefaults();

@@ -110,7 +110,7 @@ function renderRecordBar(topN) {
         .slice(0, topN);
     if (!sorted.length) return;
 
-    const labels = sorted.map(n => shortenPlayerName(n));
+    const labels = sorted.map(n => shortenPlayerName(playerDisplayName(n)));
     const wins = sorted.map(n => stats[n].wins);
     const losses = sorted.map(n => stats[n].losses);
     const totals = sorted.map(n => stats[n].total);
@@ -247,13 +247,13 @@ function renderH2hHeatmap(topN) {
     const rateMode = dataVizExtraState.heatmapMode === 'rate';
 
     // 列头：正立缩短名，避免竖排导致错位
-    const header = sortedPlayers.map(n => `<th class="h2h-col-label" title="${escapeHtml(n)}">${escapeHtml(shortenPlayerName(n))}</th>`).join('');
+    const header = sortedPlayers.map(n => `<th class="h2h-col-label" title="${escapeHtml(playerDisplayName(n))}">${escapeHtml(shortenPlayerName(playerDisplayName(n)))}</th>`).join('');
     let body = '';
     sortedPlayers.forEach(row => {
-        body += `<tr><td class="h2h-row-label" title="${escapeHtml(row)}">${escapeHtml(shortenPlayerName(row))}</td>`;
+        body += `<tr><td class="h2h-row-label" title="${escapeHtml(playerDisplayName(row))}">${escapeHtml(shortenPlayerName(playerDisplayName(row)))}</td>`;
         sortedPlayers.forEach(col => {
             if (row === col) {
-                body += `<td class="h2h-cell h2h-diag" title="${escapeHtml(row)}"></td>`;
+                body += `<td class="h2h-cell h2h-diag" title="${escapeHtml(playerDisplayName(row))}"></td>`;
                 return;
             }
             const wins = matrix[row][col] || 0;
@@ -496,6 +496,7 @@ function dataVizReapplyI18n() {
     renderScoreDistribution(dataVizExtraState.distBins);
     if (typeof clubBarRace !== 'undefined' && clubBarRace.initialized) {
         clubBarRace.playerColors = clubBuildRacePlayerColors();
+        if (typeof clubRaceRefreshNameLabels === 'function') clubRaceRefreshNameLabels();
         clubRaceSyncPlayButton();
         clubSetRaceFrame(dataVizExtraState.raceFrameIndex, false);
     }
