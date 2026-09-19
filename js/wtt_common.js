@@ -705,25 +705,21 @@ async function wttLoadScoreLogFromSeasonFiles() {
     if (await wttTryLoadFromManifest()) return;
 
     const seasonIds = wttBuildSeasonIds();
-    const allRecords = [];
-    let foundAny = false;
-
-    for (const seasonId of seasonIds) {
+    // 🔥 并行探测（原实现逐个 await，manifest 缺失时 ~25 次串行往返；
+    // Promise.all 保持 seasonIds 顺序拼接，语义与旧串行版一致）
+    const settled = await Promise.all(seasonIds.map(async seasonId => {
         try {
             const resp = await fetch(wttGetDataPath(`score-log-${seasonId}.json`));
-            if (resp.ok) {
-                const data = await resp.json();
-                if (Array.isArray(data) && data.length > 0) {
-                    allRecords.push(...data);
-                    foundAny = true;
-                }
-            }
+            if (!resp.ok) return [];
+            const data = await resp.json();
+            return Array.isArray(data) ? data : [];
         } catch (e) {
             // 该赛季文件不存在，跳过
+            return [];
         }
-    }
-
-    if (!foundAny) {
+    }));
+    const allRecords = settled.flat();
+    if (!allRecords.length) {
         throw new Error('No season files found, fall back to single file');
     }
 
@@ -831,10 +827,17 @@ async function wttLoadPlayerAssoc() {
             ? (WTT_ASSOC_SINGLES_SOURCE[wttCurrentCategory] || [])
             : [wttCurrentCategory];
 
-        for (const src of sources) {
-            const resp = await fetch(`wtt_data/${src}/assoc.json`);
-            if (!resp.ok) continue;
-            const d = await resp.json();
+        // 🔥 多来源并行拉取（xd 需 ms+ws 两份，原实现逐个 await 串行）
+        const payloads = await Promise.all(sources.map(async src => {
+            try {
+                const resp = await fetch(`wtt_data/${src}/assoc.json`);
+                if (!resp.ok) return null;
+                return await resp.json();
+            } catch (e) {
+                return null;
+            }
+        }));
+        for (const d of payloads) {
             if (!d) continue;
 
             const rows = Array.isArray(d) ? d : (d.rows && Array.isArray(d.rows) ? d.rows : null);
@@ -1244,28 +1247,37 @@ function wttLoadPhasePct(phase, done, total) {
 }
 
 /**
- * settings 先行 → score-log 与其余数据文件并行加载。
+ * settings 与 score-log 及其余数据文件并行加载（🔥 settings 不再独占阻塞第一棒）。
+ * 仅 initial-scores 需等 settings 的 scoreMode 判定（flat1300 时无需加载）；
+ * score-log 内部为 manifest→并行文件，与 settings 同时起步后，
+ * 关键路径从 settings→manifest→文件 三段瀑布降为 max(settings, manifest→文件)。
  * 所有 loader 内部已容错不抛错；单个任务异常不影响其它任务。
  * @param {boolean} includeAssoc - 是否加载 assoc.json
  * @param {function} [onFileDone] - 每个文件完成时回调 (done, total, label)
- *   注意：settings 完成为第 1 步（不含在此回调内），调用方按 (done+1)/(total+1) 计入总进度
+ *   注意：口径与旧版一致——settings 由调用方按第 1 步计入总进度，不计入此回调
  */
 async function wttLoadSettingsAndFiles(includeAssoc, onFileDone) {
-    await wttLoadSettings();
-    const needsInitScores = !wttSettings || wttSettings.scoreMode !== 'flat1300';
+    const settingsP = wttLoadSettings();
     const tasks = [
         { loader: wttLoadScoreLog,          label: i18n[currentLang].wtt_file_matches },
         { loader: wttLoadEventCoefficients, label: i18n[currentLang].wtt_file_event },
         { loader: wttLoadSeasons,           label: i18n[currentLang].wtt_file_season }
     ];
-    if (needsInitScores) tasks.unshift({ loader: wttLoadInitialScores, label: i18n[currentLang].wtt_file_initial });
     if (includeAssoc !== false) tasks.push({ loader: wttLoadPlayerAssoc, label: i18n[currentLang].wtt_pp_assoc });
     const total = tasks.length;
     let done = 0;
-    await Promise.all(tasks.map(t => Promise.resolve(t.loader()).then(() => {
-        done++;
-        if (onFileDone) { try { onFileDone(done, total, t.label); } catch (e) { /* 回调异常不阻断 */ } }
-    }).catch(e => console.error('[WTT] 数据文件加载失败:', t.label, e))));
+    const initialScoresTask = settingsP.then(() => {
+        const needsInitScores = !wttSettings || wttSettings.scoreMode !== 'flat1300';
+        return needsInitScores ? wttLoadInitialScores() : null;
+    });
+    await Promise.all([
+        settingsP.catch(e => console.error('[WTT] settings 加载失败:', e)),
+        initialScoresTask.catch(e => console.error('[WTT] 数据文件加载失败:', i18n[currentLang].wtt_file_initial, e)),
+        ...tasks.map(t => Promise.resolve(t.loader()).then(() => {
+            done++;
+            if (onFileDone) { try { onFileDone(done, total, t.label); } catch (e) { /* 回调异常不阻断 */ } }
+        }).catch(e => console.error('[WTT] 数据文件加载失败:', t.label, e)))
+    ]);
 }
 
 /**

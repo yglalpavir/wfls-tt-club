@@ -17,6 +17,12 @@ Validate data integrity (score-log references, season coverage, JSON parse):
 python tools/ci_validate.py
 ```
 
+Regenerate the Assets manifest for the docs.html asset browser (auto-generated at deploy time; run manually for local dev, otherwise docs.html shows a load error):
+
+```bash
+python tools/gen_assets_manifest.py
+```
+
 No npm/lint/typecheck commands exist — there are no build tools or test suites.
 
 ## Content system (news / competitions / QA)
@@ -80,13 +86,17 @@ No npm/lint/typecheck commands exist — there are no build tools or test suites
 | `tools/sync_content.py` | Content index generator (run after any content edit) |
 | `tools/ci_validate.py` | Data integrity validator |
 | `tools/recompute_rankings.js` | Generates `data/api/` (runs the real score engine headless in a Node vm) |
+| `tools/gen_assets_manifest.py` | Scans `Assets/` into `Assets/manifest.json` (deploy-time generated, gitignored — same pattern as `data/api/`; run manually for local dev) |
+| `docs.html` | 素材库：read-only file-manager view over `Assets/` (breadcrumb nav, grid/list, type filter, search; previews image/svg/video/audio/pdf/text/code/markdown via modal) — data comes from `Assets/manifest.json`, entry button on `admin.html` |
+| `js/docs-browser.js` | docs.html logic: manifest-tree path validation (hash routes are never used to build URLs directly), event delegation, hash routing `#/dir` / `#/dir/file`, lazy marked.js load for Markdown preview |
 | `tools/migrate_draws_v3.py` | One-shot draws.json v2 → v3 migration (finished; kept locally only, gitignored) |
 | `js/season-review.js` | Season review page logic (club + WTT dual mode, switched by `window.SR_WTT_MODE`) |
 | `match.html` / `wtt_match.html` | Match-detail page for a single score-log record (WTT wrapper sets `window.MD_WTT_MODE`) |
 | `js/match-detail.js` | Match-detail logic: 比分/局分, pre/post-match points, points breakdown, predicted win rate, H2H (club + WTT dual mode) |
 | `docs/` | `tech/` long-lived technical docs · `reports/` one-off prediction/audit reports · `posters/` poster HTML sources |
 | `submit.html` | Visitor match-record submission page (builds a prefilled GitHub issue) |
-| `tt_game/` | 3D table-tennis game easter egg (Three.js; UI reskinned with the site's design system). Homepage hero-ball routes here and to `umpire-training.html` in rotation (inline script in `index.html`, `wfls-egg-last` in localStorage prevents immediate repeats — don't "fix" the ball's href back to a single target). `tt_game/js/` is an active training workspace (weight `.bak`s, logs) — game runtime files are the ones referenced by `tt_game/index.html` script tags. Selectable models live in `js/input.js` `MODEL_NAMES` + hardcoded buttons/options in `index.html`（极端对手/极端·满档 unselectable since 2026-09-19, but `opponent-ladder.js` levels stay — `tools/train-input3.js` curriculum depends on them）; 「地狱AI克星」 is trained by `tools/train-nemesis.js` (GA, fitness = dual-orientation unbiased point-rate vs hell, ANSI live CLI panel) writing `js/learned-policy-nemesis.js`. The hell-AI guardrail口径 (moveSpeed 2.8/moveErr 0.03/moveZ 2.6) is intentionally duplicated in THREE places — `policy.js strongVec`, `train-nemesis.js HELL_GUARD`, `train-nemesis-worker.js hellOpponent` — keep them in sync or training/实机 drift apart |
+| `Assets/manifest.json` | **Generated at deploy time** by `tools/gen_assets_manifest.py` inside the `deploy` workflow — gitignored, NOT committed. docs.html fetches it; if missing (local dev), the page shows a hint to run the script |
+| `tt_game/` | 3D table-tennis game easter egg (Three.js; UI reskinned with the site's design system). Homepage hero-ball links straight here (plain `<a href>` in `index.html`; the tt_game/umpire-training rotation script and its `wfls-egg-last` localStorage key were removed 2026-09-19 — umpire-training as a homepage egg is deferred, not deleted). `tt_game/js/` is an active training workspace (weight `.bak`s, logs) — game runtime files are the ones referenced by `tt_game/index.html` script tags. Selectable models live in `js/input.js` `MODEL_NAMES` + hardcoded buttons/options in `index.html`（极端对手/极端·满档 unselectable since 2026-09-19, but `opponent-ladder.js` levels stay — `tools/train-input3.js` curriculum depends on them）; 「地狱AI克星」 is trained by `tools/train-nemesis.js` (GA, fitness = dual-orientation unbiased point-rate vs hell, ANSI live CLI panel) writing `js/learned-policy-nemesis.js`. The hell-AI guardrail口径 (moveSpeed 2.8/moveErr 0.03/moveZ 2.6) is intentionally duplicated in THREE places — `policy.js strongVec`, `train-nemesis.js HELL_GUARD`, `train-nemesis-worker.js hellOpponent` — keep them in sync or training/实机 drift apart |
 | `.github/ISSUE_TEMPLATE/match-record.yml` | Issue form for submissions (auto-labels `提交`) |
 | `.github/workflows/submission-review.yml` | Turns `审核通过`-labeled submission issues into PRs |
 | `tools/append_submission.py` | Parses/validates issue-submitted records, appends to `score-log.json` |

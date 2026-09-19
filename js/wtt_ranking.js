@@ -390,9 +390,73 @@ function wttSortDisplayData(key, dir) {
 }
 
 /* ---- 排名表分页：移动端一次渲染 1256+ 行 DOM 开销过大，先渲染前 N 行，"显示更多"逐步追加 ----
-   （复用个人统计页 WTT_INDEX_PAGE_SIZE 的分页模式；切换时间节点时重置，排序保持已展开行数） */
+   （复用个人统计页 WTT_INDEX_PAGE_SIZE 的分页模式；切换时间节点时重置，排序保持已展开行数）
+   🔥 "显示更多"只追加新行（DocumentFragment），不再从头重建全部已显示行（旧实现 O(n²)） */
 const WTT_RANKING_PAGE_SIZE = 200;
 let wttRankingShown = WTT_RANKING_PAGE_SIZE;
+
+function wttBuildRankingRow(p, i, currentSnapshotDate) {
+    const tr = document.createElement('tr');
+    const wr = p['胜率'] || '0%';
+    const wd = wr === '#DIV/0!' || wr === '-' ? '0%' : wr;
+
+    let ch = '', pch = '';
+    if (p.changeType === 'up') ch = `<span class="rank-change rank-up">▲${Math.abs(p.change)}</span>`;
+    else if (p.changeType === 'down') ch = `<span class="rank-change rank-down">▼${Math.abs(p.change)}</span>`;
+    else if (p.changeType === 'new') ch = '<span class="rank-new">NEW</span>';
+    else ch = '<span class="rank-same">-</span>';
+
+    if (p.pointsChangeType === 'up') pch = `<span class="rank-change rank-up">▲${Math.abs(p.pointsChange).toFixed(1)}</span>`;
+    else if (p.pointsChangeType === 'down') pch = `<span class="rank-change rank-down">▼${Math.abs(p.pointsChange).toFixed(1)}</span>`;
+    else if (p.pointsChangeType === 'new') pch = '<span class="rank-new">NEW</span>';
+    else pch = '<span class="rank-same">-</span>';
+
+    const pn = String(p['姓名'] || '-');
+    const pnSafe = escapeHtml(pn);
+    const sds = escapeHtml(currentSnapshotDate || '');
+    const flagHtml = (function () {
+        const a = wttGetPlayerAssoc(pn);
+        const cls = a ? wttAssocFlagClass(a.assoc) : '';
+        if (!cls) return '';
+        return `<span class="player-flag ${cls}" title="${escapeHtml(a.assoc)}${a.country ? ' · ' + escapeHtml(a.country) : ''}"></span> `;
+    })();
+    const nc = (wttScoreLogData.length > 0)
+        ? flagHtml + wttLinkPlayerName(pn) + ` <button class="score-detail-icon" type="button" data-player="${pnSafe}" data-snapshot="${sds}" title="${escapeHtml(i18n[currentLang].wtt_click_detail)}"><i class="fa-solid fa-receipt"></i></button>`
+        : flagHtml + pnSafe;
+
+    tr.innerHTML = `<td>${p.rank || i + 1}</td><td>${nc}</td><td><strong>${(p['当前积分'] || 0).toFixed(1)}</strong></td><td data-label="${i18n[currentLang].rank_col_points_change}">${pch}</td><td data-label="${i18n[currentLang].rank_col_change}">${ch}</td><td data-label="${i18n[currentLang].rank_col_matches}">${p['总场次'] || 0}</td><td data-label="${i18n[currentLang].rank_col_winrate}">${wd}</td>`;
+    return tr;
+}
+
+function wttAppendRankingRows(data, from, to, currentSnapshotDate) {
+    const tb = document.getElementById('rankingFullBody');
+    if (!tb) return;
+    const frag = document.createDocumentFragment();
+    for (let i = from; i < to && i < data.length; i++) {
+        frag.appendChild(wttBuildRankingRow(data[i], i, currentSnapshotDate));
+    }
+    tb.appendChild(frag);
+}
+
+function wttRenderLoadMoreRow(data, shown) {
+    const tb = document.getElementById('rankingFullBody');
+    if (!tb) return;
+    const old = document.getElementById('wttRankingLoadMoreRow');
+    if (old) old.remove();
+    if (data.length <= shown) return;
+    const more = document.createElement('tr');
+    more.id = 'wttRankingLoadMoreRow';
+    more.innerHTML = `<td colspan="7" style="text-align:center;padding:14px;"><button type="button" class="btn btn-secondary btn-sm" id="wttRankingLoadMore"><i class="fa-solid fa-chevron-down"></i> ${escapeHtml(i18n[currentLang].wtt_ps_load_more)}（${shown}/${data.length}）</button></td>`;
+    tb.appendChild(more);
+    more.querySelector('button').addEventListener('click', () => {
+        const d = (wttCurrentDisplayData && wttCurrentDisplayData.length) ? wttCurrentDisplayData : data;
+        const from = Math.min(wttRankingShown, d.length);
+        wttRankingShown += WTT_RANKING_PAGE_SIZE;
+        const to = Math.min(wttRankingShown, d.length);
+        wttAppendRankingRows(d, from, to, wttRankingTimeline[wttCurrentTimeIndex]?.time || '');
+        wttRenderLoadMoreRow(d, to);
+    });
+}
 
 function wttRenderRankingTable(data) {
     const tb = document.getElementById('rankingFullBody');
@@ -403,50 +467,9 @@ function wttRenderRankingTable(data) {
     }
     tb.innerHTML = '';
     const currentSnapshotDate = wttRankingTimeline[wttCurrentTimeIndex]?.time || '';
-    const shown = data.slice(0, wttRankingShown);
-
-    shown.forEach((p, i) => {
-        const tr = document.createElement('tr');
-        const wr = p['胜率'] || '0%';
-        const wd = wr === '#DIV/0!' || wr === '-' ? '0%' : wr;
-
-        let ch = '', pch = '';
-        if (p.changeType === 'up') ch = `<span class="rank-change rank-up">▲${Math.abs(p.change)}</span>`;
-        else if (p.changeType === 'down') ch = `<span class="rank-change rank-down">▼${Math.abs(p.change)}</span>`;
-        else if (p.changeType === 'new') ch = '<span class="rank-new">NEW</span>';
-        else ch = '<span class="rank-same">-</span>';
-
-        if (p.pointsChangeType === 'up') pch = `<span class="rank-change rank-up">▲${Math.abs(p.pointsChange).toFixed(1)}</span>`;
-        else if (p.pointsChangeType === 'down') pch = `<span class="rank-change rank-down">▼${Math.abs(p.pointsChange).toFixed(1)}</span>`;
-        else if (p.pointsChangeType === 'new') pch = '<span class="rank-new">NEW</span>';
-        else pch = '<span class="rank-same">-</span>';
-
-        const pn = String(p['姓名'] || '-');
-        const pnSafe = escapeHtml(pn);
-        const sds = escapeHtml(currentSnapshotDate || '');
-        const flagHtml = (function () {
-            const a = wttGetPlayerAssoc(pn);
-            const cls = a ? wttAssocFlagClass(a.assoc) : '';
-            if (!cls) return '';
-            return `<span class="player-flag ${cls}" title="${escapeHtml(a.assoc)}${a.country ? ' · ' + escapeHtml(a.country) : ''}"></span> `;
-        })();
-        const nc = (wttScoreLogData.length > 0)
-            ? flagHtml + wttLinkPlayerName(pn) + ` <button class="score-detail-icon" type="button" data-player="${pnSafe}" data-snapshot="${sds}" title="${escapeHtml(i18n[currentLang].wtt_click_detail)}"><i class="fa-solid fa-receipt"></i></button>`
-            : flagHtml + pnSafe;
-
-        tr.innerHTML = `<td>${p.rank || i + 1}</td><td>${nc}</td><td><strong>${(p['当前积分'] || 0).toFixed(1)}</strong></td><td data-label="${i18n[currentLang].rank_col_points_change}">${pch}</td><td data-label="${i18n[currentLang].rank_col_change}">${ch}</td><td data-label="${i18n[currentLang].rank_col_matches}">${p['总场次'] || 0}</td><td data-label="${i18n[currentLang].rank_col_winrate}">${wd}</td>`;
-        tb.appendChild(tr);
-    });
-
-    if (data.length > shown.length) {
-        const more = document.createElement('tr');
-        more.innerHTML = `<td colspan="7" style="text-align:center;padding:14px;"><button type="button" class="btn btn-secondary btn-sm" id="wttRankingLoadMore"><i class="fa-solid fa-chevron-down"></i> ${escapeHtml(i18n[currentLang].wtt_ps_load_more)}（${shown.length}/${data.length}）</button></td>`;
-        tb.appendChild(more);
-        more.querySelector('button').addEventListener('click', () => {
-            wttRankingShown += WTT_RANKING_PAGE_SIZE;
-            wttRenderRankingTable(wttCurrentDisplayData);
-        });
-    }
+    const shown = Math.min(wttRankingShown, data.length);
+    wttAppendRankingRows(data, 0, shown, currentSnapshotDate);
+    wttRenderLoadMoreRow(data, shown);
 }
 
 function wttUpdateSortHeaderHighlight() {

@@ -143,40 +143,52 @@ function wttPpRenderHeader(playerName) {
 // 计算球员全部比赛记录（逐赛季回放，含赛季继承），返回按日期倒序 rows
 function wttPpComputeMatchRecords(playerName) {
     return wttWithDataContext(() => {
-        const sortedLog = [...wttScoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
+        const sortedLog = getSortedScoreLog(wttScoreLogData);
         const matchOccMap = computeMatchOccurrenceMap(sortedLog);
         const rows = [];
         const seasons = (wttSeasonsData && wttSeasonsData.length) ? wttSeasonsData : [];
-        for (let si = 0; si < seasons.length; si++) {
-            const season = seasons[si];
-            const startScores = getSeasonStartScores(si);
-            const scores = { ...startScores };
-            const windowLog = sortedLog.filter(r => r['日期'] >= season.startDate && r['日期'] <= season.endDate);
-            for (const r of windowLog) {
-                if (isBonusRecord(r)) {
-                    const t = r['对象'], b = parseFloat(r['分数']) || 0;
-                    if (!scores[t]) scores[t] = DEFAULT_INITIAL_SCORE;
-                    if (t === playerName) {
-                        rows.push({ date: r['日期'], type: i18n[currentLang].score_type_bonus, opp: '-', isWin: true, isBonus: true, pre: scores[t], change: b, post: scores[t] + b });
-                    }
-                    scores[t] = Math.max(SCORE_FLOOR, scores[t] + b);
-                } else if (isMatchRecord(r)) {
-                    const w = r['胜者'], l = r['负者'];
-                    if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
-                    if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
-                    const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], scores, r['赛制']);
-                    const rawGain = calcRawPoints(w, l, r['类型'], scores, r['赛制']);
-                    if (w === playerName || l === playerName) {
-                        const isWin = w === playerName;
-                        const pre = scores[playerName];
-                        const oppPre = scores[isWin ? l : w];
-                        const rawChange = isWin ? rawGain : -rawGain * LOSER_POINT_MULTIPLIER;
-                        const change = isWin ? wg : -wg * LOSER_POINT_MULTIPLIER;
-                        rows.push({ date: r['日期'], type: r['类型'], opp: isWin ? l : w, isWin: isWin, isBonus: false, pre: pre, oppPre: oppPre, rawChange: rawChange, change: change, post: pre + change, score: r['比分'] || null, games: Array.isArray(r['局分']) ? r['局分'] : null, n: matchOccMap.get(r) || 1 });
-                    }
-                    scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg);
-                    scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * LOSER_POINT_MULTIPLIER);
+        // 🔥 单次遍历代替逐赛季 filter 全量扫描：赛季指针随日期单调前进，
+        // 进入新赛季时用该赛季继承起始分重置积分状态（与逐赛季窗口过滤完全等价：
+        // 赛季外/空赛季不产生行，仅跨入赛季首条记录前初始化 scores）
+        let si = -1;
+        let scores = null;
+        for (const r of sortedLog) {
+            const d = r['日期'];
+            if (si >= 0 && d > seasons[si].endDate) {
+                si = -1;
+                scores = null;
+            }
+            if (si < 0 && seasons.length && d >= seasons[0].startDate) {
+                while (si + 1 < seasons.length && d > seasons[si + 1].endDate) si++;
+                if (si + 1 < seasons.length && d >= seasons[si + 1].startDate) {
+                    si++;
+                    scores = { ...getSeasonStartScores(si) };
                 }
+            }
+            if (si < 0 || !scores) continue;
+            if (isBonusRecord(r)) {
+                const t = r['对象'], b = parseFloat(r['分数']) || 0;
+                if (!scores[t]) scores[t] = DEFAULT_INITIAL_SCORE;
+                if (t === playerName) {
+                    rows.push({ date: r['日期'], type: i18n[currentLang].score_type_bonus, opp: '-', isWin: true, isBonus: true, pre: scores[t], change: b, post: scores[t] + b });
+                }
+                scores[t] = Math.max(SCORE_FLOOR, scores[t] + b);
+            } else if (isMatchRecord(r)) {
+                const w = r['胜者'], l = r['负者'];
+                if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
+                if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
+                const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], scores, r['赛制']);
+                const rawGain = calcRawPoints(w, l, r['类型'], scores, r['赛制']);
+                if (w === playerName || l === playerName) {
+                    const isWin = w === playerName;
+                    const pre = scores[playerName];
+                    const oppPre = scores[isWin ? l : w];
+                    const rawChange = isWin ? rawGain : -rawGain * LOSER_POINT_MULTIPLIER;
+                    const change = isWin ? wg : -wg * LOSER_POINT_MULTIPLIER;
+                    rows.push({ date: r['日期'], type: r['类型'], opp: isWin ? l : w, isWin: isWin, isBonus: false, pre: pre, oppPre: oppPre, rawChange: rawChange, change: change, post: pre + change, score: r['比分'] || null, games: Array.isArray(r['局分']) ? r['局分'] : null, n: matchOccMap.get(r) || 1 });
+                }
+                scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg);
+                scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * LOSER_POINT_MULTIPLIER);
             }
         }
         rows.sort((a, b) => b.date.localeCompare(a.date));

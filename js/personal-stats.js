@@ -581,7 +581,7 @@ function renderPersonalStats(playerName, containerId) {
         .sort((a, b) => b[1].preMatchScore - a[1].preMatchScore)
         .slice(0, 3);
 
-    // 福星：胜率最高的对手（玩家对其战绩最好）
+    // 福星：胜率最高的对手（玩家对其战绩最好）；交手>=4次的选手优先展示
     const luckyStars = Object.entries(oppStats)
         .map(([name, s]) => {
             const total = s.wins + s.losses;
@@ -589,10 +589,10 @@ function renderPersonalStats(playerName, containerId) {
             return { name, wins: s.wins, losses: s.losses, curScore: s.curScore, winRate: wr, total };
         })
         .filter(x => x.total > 0 && x.wins > 0)
-        .sort((a, b) => b.winRate - a.winRate || b.total - a.total)
+        .sort((a, b) => ((b.total >= 4) - (a.total >= 4)) || b.winRate - a.winRate || b.total - a.total)
         .slice(0, 3);
 
-    // 苦主：胜率最低的对手（玩家对其战绩最差）
+    // 苦主：胜率最低的对手（玩家对其战绩最差）；交手>=4次的选手优先展示
     const nemeses = Object.entries(oppStats)
         .map(([name, s]) => {
             const total = s.wins + s.losses;
@@ -600,7 +600,7 @@ function renderPersonalStats(playerName, containerId) {
             return { name, wins: s.wins, losses: s.losses, curScore: s.curScore, winRate: wr, total };
         })
         .filter(x => x.total > 0 && x.losses > 0)
-        .sort((a, b) => a.winRate - b.winRate || b.total - a.total)
+        .sort((a, b) => ((b.total >= 4) - (a.total >= 4)) || a.winRate - b.winRate || b.total - a.total)
         .slice(0, 3);
 
     function fmtDate(ds) {

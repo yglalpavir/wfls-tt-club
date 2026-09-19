@@ -288,20 +288,26 @@ function mutate(vec, sigma, rng){
 /* ---- 主训练 ---- */
 (async () => {
   const rng0 = mulberry32(opt.seed);
-  const pop = [];
-  pop.push({ v: hellVec.slice(), tag: 'hell' });                     // 内战 50% 基线
-  pop.push({ v: P.flattenPolicy(P.POLICY_DEFAULT).slice(), tag: 'base' });
-  try{                                                                // 大满贯/加强玩家模型作为额外强种子
+  /* ---- 种子种群：起点 + 现役克星热启动 + 地狱/默认/大满贯/玩家模型 + 随机体 ----
+   * 现役克星(champ)自动入池：续训不必依赖检查点文件，GA 直接从已部署的 59% 冠军
+   * 继续进化，而不是从 50% 内战基线重新爬。内容去重防止 --from=现役时重复占位。 */
+  const seeds = [];
+  const addSeed = (v, tag) => { if(!seeds.some(s => s.v.every((x, i) => x === v[i]))) seeds.push({ v: v.slice(), tag }); };
+  addSeed(curVec, opt.from ? 'from' : 'hell');                          // 起点：--from 向量或地狱本体
+  if(curNemVec) addSeed(curNemVec, 'champ');                            // 现役克星（部署版本）
+  addSeed(hellVec, 'hell');                                             // 地狱本体（50% 内战基线）
+  addSeed(P.flattenPolicy(P.POLICY_DEFAULT), 'base');
+  try{                                                                  // 大满贯/加强玩家模型作为额外强种子
     const G = require(path.join(__dirname, '..', 'js', 'learned-policy-grandslam.js'));
-    if(G && G.GRANDSLAM_POLICY) pop.push({ v: P.flattenPolicy(G.GRANDSLAM_POLICY).slice(), tag: 'gs' });
+    if(G && G.GRANDSLAM_POLICY) addSeed(P.flattenPolicy(G.GRANDSLAM_POLICY), 'gs');
   }catch(e){}
   try{
     const PM = require(path.join(__dirname, '..', 'js', 'player-model.js'));
     const pb = PM.currentBoost ? PM.currentBoost() : PM.PLAYER_MODEL_BOOST;
-    if(pb) pop.push({ v: P.flattenPolicy(pb).slice(), tag: 'pb' });
+    if(pb) addSeed(P.flattenPolicy(pb), 'pb');
   }catch(e){}
-  while(pop.length < opt.pop) pop.push({ v: KEYS.map(s => s.min + rng0() * range(s)), tag: 'rand' });
-  pop.length = opt.pop;
+  while(seeds.length < opt.pop) addSeed(KEYS.map(s => s.min + rng0() * range(s)), 'rand');
+  const pop = seeds.slice(0, opt.pop);
 
   let best = { v: curVec.slice(), fit: 0, gen: -1, tag: 'from' };
   let evals = 0;

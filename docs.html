@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function(){try{var t=localStorage.getItem("wfls-tt-theme");var d=t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark-mode");}catch(e){}})()</script>
+    <meta name="robots" content="noindex, nofollow">
+    <title>素材库 · Assets 文件管理 | WFLS Table Tennis Club</title>
+    <link rel="icon" type="image/svg+xml" href="Assets/files/favicon_4DA3FF.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ========================================
+           素材库文件管理器（docs.html）
+           配色沿用 style.css 的 CSS 变量主题系统，暗色模式自动跟随 .dark-mode
+           ======================================== */
+        * { margin:0; padding:0; box-sizing:border-box; }
+        [hidden] { display:none !important; }
+        body {
+            font-family:"Noto Sans SC","Poppins",sans-serif;
+            background:
+                radial-gradient(1100px 480px at 85% -180px, rgba(0,123,255,0.07), transparent 60%),
+                radial-gradient(900px 420px at -10% -160px, rgba(111,66,193,0.05), transparent 60%),
+                var(--bg-light);
+            color:var(--text-primary); min-height:100vh;
+        }
+        .dark-mode body { background:
+            radial-gradient(1100px 480px at 85% -180px, rgba(77,163,255,0.09), transparent 60%),
+            radial-gradient(900px 420px at -10% -160px, rgba(150,100,255,0.07), transparent 60%),
+            var(--bg-light); }
+        .fm-page { max-width:1280px; margin:0 auto; padding:28px clamp(14px, 3vw, 32px) 72px; }
+
+        /* ---------- 页头 ---------- */
+        .fm-head { display:flex; align-items:center; gap:15px; flex-wrap:wrap; }
+        .fm-logo {
+            width:46px; height:46px; border-radius:14px; flex:none;
+            display:flex; align-items:center; justify-content:center;
+            background:linear-gradient(135deg, var(--primary-blue), #6f42c1);
+            color:#fff; font-size:1.15rem; text-decoration:none;
+            box-shadow:0 6px 16px -4px rgba(0,123,255,0.5);
+            transition:transform 0.2s cubic-bezier(0.4,0,0.2,1);
+        }
+        .fm-logo:hover { transform:translateY(-2px) rotate(-6deg); color:#fff; }
+        .fm-titles { flex:1; min-width:200px; }
+        .fm-titles h1 {
+            font-family:"Poppins","Noto Sans SC",sans-serif; font-weight:800;
+            font-size:clamp(1.3rem, 3vw, 1.65rem); letter-spacing:-0.02em;
+            display:flex; align-items:center; gap:10px; line-height:1.25;
+        }
+        .h1-dot {
+            width:9px; height:9px; border-radius:50%; flex:none;
+            background:linear-gradient(135deg, var(--primary-blue), #6f42c1);
+            box-shadow:0 0 0 4px rgba(0,123,255,0.14);
+        }
+        .fm-titles .fm-sub {
+            font-size:0.72rem; font-weight:600; color:var(--primary-blue);
+            background:var(--primary-pale); padding:3px 10px; border-radius:999px;
+            font-family:"JetBrains Mono",monospace; letter-spacing:0;
+        }
+        .fm-desc { color:var(--text-muted); font-size:0.84rem; margin-top:4px; }
+        .fm-actions { display:flex; align-items:center; gap:9px; flex-wrap:wrap; }
+
+        .fm-btn {
+            display:inline-flex; align-items:center; gap:7px;
+            padding:9px 15px; border-radius:11px; border:1px solid var(--border-color);
+            background:var(--bg-white); color:var(--text-secondary);
+            cursor:pointer; font-size:0.82rem; font-weight:500; text-decoration:none;
+            font-family:"Noto Sans SC",sans-serif; white-space:nowrap;
+            transition:all 0.2s cubic-bezier(0.4,0,0.2,1);
+        }
+        .fm-btn:hover { border-color:var(--primary-blue); color:var(--primary-blue); transform:translateY(-1px); box-shadow:0 4px 12px -4px rgba(0,123,255,0.35); }
+        .fm-btn.icon-only { padding:9px 11px; }
+        .fm-btn.primary {
+            background:linear-gradient(135deg, var(--primary-blue), #339dff);
+            color:#fff; border-color:transparent; box-shadow:0 4px 14px -3px rgba(0,123,255,0.5);
+        }
+        .fm-btn.primary:hover { color:#fff; filter:brightness(1.06); }
+        .fm-btn i.spinning { animation:fmSpin 0.9s linear infinite; }
+        @keyframes fmSpin { to { transform:rotate(360deg); } }
+
+        .fm-search { position:relative; }
+        .fm-search i { position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--text-muted); font-size:0.78rem; pointer-events:none; }
+        .fm-search input {
+            width:210px; padding:9px 12px 9px 32px; border-radius:11px;
+            border:1px solid var(--border-color); background:var(--bg-white); color:var(--text-primary);
+            font-size:0.82rem; font-family:"Noto Sans SC",sans-serif; outline:none;
+            transition:border-color 0.2s, box-shadow 0.2s;
+        }
+        .fm-search input:focus { border-color:var(--primary-blue); box-shadow:0 0 0 3px var(--primary-pale); }
+        .fm-search input::-webkit-search-cancel-button { cursor:pointer; }
+
+        /* ---------- 工具栏：面包屑 + 统计 + 类型筛选 ---------- */
+        .fm-toolbar {
+            margin-top:20px; background:var(--bg-white); border:1px solid var(--border-color);
+            border-radius:16px; box-shadow:var(--shadow-sm); padding:13px 18px;
+            display:flex; flex-direction:column; gap:11px;
+        }
+        .fm-crumbs-row { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+        .fm-crumbs { display:flex; align-items:center; gap:7px; flex-wrap:wrap; min-width:0; }
+        .crumb {
+            border:none; background:transparent; cursor:pointer; padding:5px 9px; border-radius:8px;
+            font-family:"JetBrains Mono","Noto Sans SC",monospace; font-size:0.82rem; font-weight:500;
+            color:var(--text-muted); text-decoration:none; transition:all 0.15s; white-space:nowrap;
+        }
+        .crumb:hover { color:var(--primary-blue); background:var(--primary-pale); }
+        .crumb.current { color:var(--text-primary); font-weight:600; cursor:default; }
+        .crumb.current:hover { background:transparent; color:var(--text-primary); }
+        .crumb i.fa-cube { font-size:0.72rem; margin-right:4px; }
+        .crumb-sep { color:var(--border-color); font-size:0.62rem; }
+        .dark-mode .crumb-sep { color:var(--text-muted); opacity:0.55; }
+        .fm-stats { font-size:0.74rem; color:var(--text-muted); font-family:"JetBrains Mono","Noto Sans SC",monospace; white-space:nowrap; }
+        .fm-chips { display:flex; gap:7px; flex-wrap:wrap; }
+        .chip {
+            display:inline-flex; align-items:center; gap:6px; cursor:pointer;
+            padding:5px 12px; border-radius:999px; font-size:0.75rem; font-weight:500;
+            border:1px solid var(--border-color); background:var(--bg-light); color:var(--text-secondary);
+            font-family:"Noto Sans SC",sans-serif; transition:all 0.15s;
+        }
+        .chip b { font-family:"JetBrains Mono",monospace; font-size:0.68rem; font-weight:600; opacity:0.75; }
+        .chip:hover:not(:disabled) { border-color:var(--primary-blue); color:var(--primary-blue); }
+        .chip.active { background:var(--primary-blue); border-color:var(--primary-blue); color:#fff; box-shadow:0 3px 10px -2px rgba(0,123,255,0.45); }
+        .chip.active b { opacity:0.9; }
+        .chip:disabled { opacity:0.4; cursor:not-allowed; }
+
+        /* ---------- 列表主体 ---------- */
+        .fm-main { margin-top:18px; }
+        .fm-state { text-align:center; padding:96px 20px; color:var(--text-muted); }
+        .fm-state > i { font-size:2.1rem; margin-bottom:16px; display:block; opacity:0.55; }
+        .fm-state p { font-size:0.9rem; margin-bottom:8px; }
+        .fm-state .loading-ring {
+            width:50px; height:50px; margin:0 auto 18px; border-radius:50%;
+            border:3px solid var(--border-color); border-top-color:var(--primary-blue);
+            animation:fmSpin 0.85s linear infinite;
+        }
+        .fm-err-hint { font-size:0.8rem; color:var(--text-muted); }
+        .fm-err-hint code {
+            font-family:"JetBrains Mono",monospace; font-size:0.76rem; color:var(--primary-blue);
+            background:var(--primary-pale); padding:2px 7px; border-radius:6px;
+        }
+        .fm-state .fm-btn { margin-top:12px; }
+
+        .fm-empty { text-align:center; padding:70px 20px; color:var(--text-muted); }
+        .fm-empty i { font-size:1.9rem; margin-bottom:14px; display:block; opacity:0.5; }
+        .fm-empty p { font-size:0.86rem; }
+
+        .fm-grid {
+            display:grid; gap:14px;
+            grid-template-columns:repeat(auto-fill, minmax(172px, 1fr));
+        }
+        .fm-item {
+            background:var(--bg-white); border:1px solid var(--border-color); border-radius:15px;
+            overflow:hidden; cursor:pointer; box-shadow:var(--shadow-sm);
+            transition:transform 0.22s cubic-bezier(0.4,0,0.2,1), box-shadow 0.22s, border-color 0.22s;
+        }
+        .fm-item:hover, .fm-item:focus-visible {
+            transform:translateY(-3px); box-shadow:var(--shadow-md);
+            border-color:var(--primary-blue); outline:none;
+        }
+        .fm-thumb {
+            height:116px; display:flex; align-items:center; justify-content:center;
+            background:
+                repeating-conic-gradient(var(--bg-lighter) 0 25%, var(--bg-white) 0 50%) 0 0 / 18px 18px;
+            border-bottom:1px solid var(--border-color); position:relative; overflow:hidden;
+        }
+        .fm-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+        .fm-thumb > i { font-size:2rem; opacity:0.9; }
+        .fm-item.is-folder .fm-thumb > i { color:var(--primary-blue); opacity:0.85; filter:drop-shadow(0 4px 8px rgba(0,123,255,0.25)); }
+        .fm-item.is-folder .fm-thumb {
+            background:linear-gradient(145deg, var(--primary-pale), transparent 70%),
+                repeating-conic-gradient(var(--bg-lighter) 0 25%, var(--bg-white) 0 50%) 0 0 / 18px 18px;
+        }
+        .fm-ext {
+            position:absolute; right:7px; bottom:7px; font-family:"JetBrains Mono",monospace;
+            font-size:0.6rem; font-weight:600; letter-spacing:0.04em;
+            background:rgba(0,0,0,0.55); color:#fff; padding:2px 6px; border-radius:6px;
+        }
+        .thumb-broken > i { color:var(--text-muted); opacity:0.5; }
+        .fm-name {
+            padding:9px 12px 2px; font-family:"JetBrains Mono","Noto Sans SC",monospace;
+            font-size:0.75rem; font-weight:600; color:var(--text-primary); line-height:1.4;
+            word-break:break-all;
+            display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+            min-height:2.6em;
+        }
+        .fm-meta { padding:0 12px 11px; font-size:0.68rem; color:var(--text-muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+        .fm-list { background:var(--bg-white); border:1px solid var(--border-color); border-radius:15px; box-shadow:var(--shadow-sm); overflow:hidden; }
+        .fm-row {
+            display:grid; grid-template-columns:38px minmax(0,1fr) 110px 130px 20px;
+            align-items:center; gap:10px; padding:10px 16px; cursor:pointer;
+            border-bottom:1px solid var(--border-color); transition:background 0.15s;
+        }
+        .fm-row:last-child { border-bottom:none; }
+        .fm-row:hover, .fm-row:focus-visible { background:var(--primary-pale); outline:none; }
+        .fm-row-icon { width:30px; height:30px; border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:0.82rem; }
+        .fm-row-name { font-family:"JetBrains Mono","Noto Sans SC",monospace; font-size:0.78rem; font-weight:600; color:var(--text-primary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+        .fm-row-kind { font-size:0.72rem; color:var(--text-secondary); }
+        .fm-row-size { font-size:0.72rem; color:var(--text-muted); font-family:"JetBrains Mono","Noto Sans SC",monospace; text-align:right; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+        .fm-row-go { color:var(--text-muted); font-size:0.66rem; opacity:0; transition:opacity 0.15s; }
+        .fm-row:hover .fm-row-go { opacity:1; }
+
+        /* ---------- 类型配色 ---------- */
+        .t-folder  { color:var(--primary-blue); background:var(--primary-pale); }
+        .t-image   { color:#16a34a; background:rgba(22,163,74,0.1); }
+        .t-svg     { color:#8b5cf6; background:rgba(139,92,246,0.12); }
+        .t-video   { color:#e11d63; background:rgba(225,29,99,0.1); }
+        .t-audio   { color:#a855f7; background:rgba(168,85,247,0.12); }
+        .t-pdf     { color:#dc2626; background:rgba(220,38,38,0.1); }
+        .t-md      { color:var(--text-primary); background:var(--bg-lighter); }
+        .t-text    { color:var(--primary-blue); background:var(--primary-pale); }
+        .t-sheet   { color:#15803d; background:rgba(21,128,61,0.1); }
+        .t-doc     { color:#1d4ed8; background:rgba(29,78,216,0.1); }
+        .t-ppt     { color:#ea580c; background:rgba(234,88,12,0.1); }
+        .t-archive { color:#b45309; background:rgba(180,83,9,0.12); }
+        .t-other   { color:var(--text-muted); background:var(--bg-lighter); }
+        .dark-mode .t-image   { color:#4ade80; } .dark-mode .t-video   { color:#fb7185; }
+        .dark-mode .t-pdf     { color:#f87171; } .dark-mode .t-sheet   { color:#4ade80; }
+        .dark-mode .t-doc     { color:#93b4ff; } .dark-mode .t-ppt     { color:#fdba74; }
+        .dark-mode .t-archive { color:#fbbf24; } .dark-mode .t-svg     { color:#c4b5fd; }
+        .dark-mode .t-audio   { color:#d8b4fe; }
+
+        /* ---------- 预览模态 ---------- */
+        .pv-overlay {
+            position:fixed; inset:0; z-index:1000; display:flex; align-items:center; justify-content:center;
+            background:rgba(10,14,25,0.62); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+            padding:18px; animation:pvFade 0.2s ease;
+        }
+        @keyframes pvFade { from { opacity:0; } to { opacity:1; } }
+        .pv-dialog {
+            width:min(1160px, 96vw); height:min(880px, 94vh);
+            background:var(--bg-white); border:1px solid var(--border-color); border-radius:18px;
+            box-shadow:var(--shadow-xl); display:flex; flex-direction:column; overflow:hidden;
+        }
+        .pv-head { display:flex; align-items:center; gap:12px; padding:12px 16px; border-bottom:1px solid var(--border-color); flex:none; }
+        .pv-fileicon {
+            width:38px; height:38px; border-radius:11px; flex:none;
+            display:flex; align-items:center; justify-content:center; font-size:0.95rem;
+        }
+        .pv-titles { flex:1; min-width:0; }
+        .pv-name {
+            font-family:"JetBrains Mono","Noto Sans SC",monospace; font-size:0.86rem; font-weight:600;
+            color:var(--text-primary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+        }
+        .pv-sub { font-size:0.7rem; color:var(--text-muted); margin-top:2px; font-family:"JetBrains Mono","Noto Sans SC",monospace; }
+        .pv-actions { display:flex; align-items:center; gap:7px; flex:none; }
+        .pv-close {
+            width:34px; height:34px; border-radius:10px; border:1px solid var(--border-color);
+            background:var(--bg-light); color:var(--text-secondary); cursor:pointer; font-size:0.9rem;
+            transition:all 0.15s;
+        }
+        .pv-close:hover { background:rgba(220,38,38,0.1); border-color:#dc2626; color:#dc2626; }
+
+        .pv-body { flex:1; position:relative; min-height:0; }
+        .pv-body.mode-media { display:flex; align-items:center; justify-content:center; overflow:hidden; background:var(--bg-lighter); }
+        .pv-body.mode-text { display:block; overflow:auto; background:var(--bg-white); }
+        .pv-body.mode-fallback { display:flex; align-items:center; justify-content:center; overflow:auto; background:var(--bg-lighter); }
+
+        /* 图片（滚轮缩放 + 拖动平移） */
+        .pv-imgwrap {
+            position:absolute; inset:0; overflow:hidden; cursor:grab; touch-action:none;
+            background:
+                repeating-conic-gradient(var(--bg-lighter) 0 25%, var(--bg-white) 0 50%) 0 0 / 22px 22px;
+        }
+        .pv-imgwrap.grabbing { cursor:grabbing; }
+        .pv-img {
+            position:absolute; inset:0; margin:auto; max-width:96%; max-height:96%;
+            transform-origin:center center; will-change:transform;
+            opacity:0; transition:opacity 0.25s ease; user-select:none; -webkit-user-drag:none;
+        }
+        .pv-imgwrap.loaded .pv-img { opacity:1; }
+        .pv-zoombadge {
+            position:absolute; top:12px; right:12px; z-index:5; pointer-events:none;
+            font-family:"JetBrains Mono",monospace; font-size:0.7rem; font-weight:600;
+            background:rgba(10,14,25,0.55); color:#fff; padding:4px 10px; border-radius:999px;
+        }
+
+        /* 视频 / 音频 */
+        .pv-body video { max-width:98%; max-height:96%; background:#000; border-radius:8px; outline:none; }
+        .pv-audio {
+            display:flex; flex-direction:column; align-items:center; gap:16px; padding:30px;
+            background:var(--bg-white); border-radius:16px; box-shadow:var(--shadow-md);
+        }
+        .pv-audio > i { font-size:2.6rem; color:var(--primary-blue); }
+        .pv-audio-name { font-family:"JetBrains Mono",monospace; font-size:0.8rem; font-weight:600; color:var(--text-secondary); word-break:break-all; text-align:center; }
+        .pv-audio audio { width:min(520px, 80vw); }
+
+        .pv-iframe { position:absolute; inset:0; width:100%; height:100%; border:0; background:var(--bg-white); }
+
+        /* 文本 / 代码 */
+        .pv-pre {
+            margin:0; padding:18px 22px 26px; font-family:"JetBrains Mono",monospace;
+            font-size:0.8rem; line-height:1.6; white-space:pre; color:var(--text-primary);
+            min-height:100%;
+        }
+        .pv-pre.wrap { white-space:pre-wrap; word-break:break-word; }
+        .pv-truncnote {
+            position:sticky; bottom:0; padding:9px 20px; font-size:0.76rem;
+            background:rgba(240,165,0,0.14); color:var(--text-secondary);
+            border-top:1px solid var(--border-color);
+        }
+        .tok-str { color:#16a34a; }
+        .tok-com { color:var(--text-muted); font-style:italic; }
+        .tok-num { color:#7c3aed; }
+        .tok-kw  { color:#db2777; font-weight:600; }
+        .dark-mode .tok-str { color:#4ade80; } .dark-mode .tok-num { color:#c4b5fd; }
+        .dark-mode .tok-kw  { color:#f9a8d4; }
+
+        /* Markdown */
+        .pv-md { max-width:860px; margin:0 auto; padding:28px 32px 40px; font-size:0.9rem; line-height:1.75; color:var(--text-primary); }
+        .pv-md.raw { max-width:none; padding:0; }
+        .pv-md h1, .pv-md h2, .pv-md h3, .pv-md h4 { font-family:"Poppins","Noto Sans SC",sans-serif; font-weight:700; margin:1.4em 0 0.55em; line-height:1.35; }
+        .pv-md h1 { font-size:1.5em; } .pv-md h2 { font-size:1.26em; } .pv-md h3 { font-size:1.1em; }
+        .pv-md h1:first-child, .pv-md h2:first-child, .pv-md h3:first-child { margin-top:0; }
+        .pv-md p { margin:0.65em 0; }
+        .pv-md a { color:var(--primary-blue); }
+        .pv-md ul, .pv-md ol { padding-left:1.5em; margin:0.6em 0; }
+        .pv-md blockquote { border-left:3px solid var(--primary-blue); background:var(--primary-pale); padding:10px 16px; border-radius:0 10px 10px 0; margin:0.9em 0; color:var(--text-secondary); }
+        .pv-md code { font-family:"JetBrains Mono",monospace; font-size:0.84em; background:var(--bg-lighter); padding:2px 6px; border-radius:6px; }
+        .pv-md pre { background:var(--bg-lighter); border:1px solid var(--border-color); border-radius:12px; padding:14px 16px; overflow:auto; margin:0.9em 0; }
+        .pv-md pre code { background:transparent; padding:0; }
+        .pv-md img { max-width:100%; border-radius:10px; }
+        .pv-md table { border-collapse:collapse; margin:0.9em 0; width:100%; font-size:0.85em; }
+        .pv-md th, .pv-md td { border:1px solid var(--border-color); padding:7px 12px; text-align:left; }
+        .pv-md th { background:var(--bg-lighter); }
+        .pv-md hr { border:none; border-top:1px solid var(--border-color); margin:1.4em 0; }
+
+        /* 不支持预览 / 加载失败 */
+        .pv-fallback { text-align:center; padding:44px 30px; color:var(--text-secondary); }
+        .pv-fallback > i { font-size:2.6rem; margin-bottom:18px; display:block; opacity:0.55; }
+        .pv-fallback p { font-size:0.86rem; margin:4px 0; }
+        .pv-fb-name { font-family:"JetBrains Mono",monospace; font-size:0.95rem; font-weight:600; color:var(--text-primary); word-break:break-all; margin-bottom:4px; }
+        .pv-fb-meta { font-size:0.74rem; color:var(--text-muted); font-family:"JetBrains Mono","Noto Sans SC",monospace; margin-bottom:10px; }
+        .pv-fb-btns { display:flex; gap:10px; justify-content:center; margin-top:18px; flex-wrap:wrap; }
+
+        /* 底部导航条 */
+        .pv-foot {
+            display:flex; align-items:center; gap:10px; padding:10px 16px;
+            border-top:1px solid var(--border-color); flex:none; background:var(--bg-white);
+        }
+        .pv-nav-btn {
+            width:34px; height:34px; border-radius:10px; border:1px solid var(--border-color);
+            background:var(--bg-light); color:var(--text-secondary); cursor:pointer; font-size:0.8rem;
+            transition:all 0.15s;
+        }
+        .pv-nav-btn:hover:not(:disabled) { border-color:var(--primary-blue); color:var(--primary-blue); }
+        .pv-nav-btn:disabled { opacity:0.35; cursor:not-allowed; }
+        .pv-pos { font-family:"JetBrains Mono",monospace; font-size:0.75rem; font-weight:600; color:var(--text-secondary); }
+        .pv-hint { margin-left:auto; font-size:0.7rem; color:var(--text-muted); }
+        .pv-hint kbd {
+            font-family:"JetBrains Mono",monospace; font-size:0.64rem; border:1px solid var(--border-color);
+            border-bottom-width:2px; border-radius:5px; padding:1px 5px; background:var(--bg-light); color:var(--text-secondary);
+        }
+
+        /* ---------- 响应式 ---------- */
+        @media (max-width:768px) {
+            .fm-page { padding:20px 12px 56px; }
+            .fm-search { order:10; width:100%; }
+            .fm-search input { width:100%; }
+            .fm-toolbar { padding:11px 13px; }
+            .fm-grid { grid-template-columns:repeat(auto-fill, minmax(138px, 1fr)); gap:10px; }
+            .fm-thumb { height:96px; }
+            .fm-row { grid-template-columns:34px minmax(0,1fr) 84px; padding:9px 12px; }
+            .fm-row-kind, .fm-row-go { display:none; }
+            .fm-row-size { text-align:right; }
+            .pv-overlay { padding:0; }
+            .pv-dialog { width:100vw; height:100dvh; border-radius:0; border:none; }
+            .pv-actions .fm-btn { padding:8px 10px; font-size:0.76rem; }
+            .pv-hint { display:none; }
+        }
+    </style>
+</head>
+<body>
+<noscript><div style="padding:10px;text-align:center;background:#b91c1c;color:#fff;font-size:0.9rem;">本站需要启用 JavaScript 才能加载素材库数据。This site requires JavaScript to load data.</div></noscript>
+
+<div class="fm-page">
+    <header class="fm-head">
+        <a href="admin.html" class="fm-logo" title="返回管理后台">
+            <i class="fa-solid fa-table-tennis-paddle-ball"></i>
+        </a>
+        <div class="fm-titles">
+            <h1><span class="h1-dot"></span>素材库 <span class="fm-sub">Assets/</span></h1>
+            <p class="fm-desc">浏览与预览站点静态资源：图片 · 视频 · 音频 · PDF · 文本代码</p>
+        </div>
+        <div class="fm-actions">
+            <div class="fm-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" id="fmSearch" placeholder="在当前目录筛选…" aria-label="筛选文件">
+            </div>
+            <button type="button" class="fm-btn icon-only" id="viewToggle" title="切换视图"><i class="fa-solid fa-list"></i></button>
+            <button type="button" class="fm-btn icon-only" id="refreshBtn" title="重新扫描 Assets"><i class="fa-solid fa-rotate"></i></button>
+            <button type="button" class="fm-btn icon-only" id="themeToggle" title="切换主题" aria-label="切换主题"><i class="fa-solid fa-moon"></i></button>
+        </div>
+    </header>
+
+    <div class="fm-toolbar">
+        <div class="fm-crumbs-row">
+            <nav class="fm-crumbs" id="fmCrumbs" aria-label="目录路径"></nav>
+            <span class="fm-stats" id="fmStats"></span>
+        </div>
+        <div class="fm-chips" id="fmChips" role="group" aria-label="按类型筛选"></div>
+    </div>
+
+    <main class="fm-main">
+        <div class="fm-state" id="fmLoading">
+            <div class="loading-ring"></div>
+            <p>正在扫描 Assets 目录…</p>
+        </div>
+        <div class="fm-state" id="fmError" hidden></div>
+        <div id="fmListing" hidden>
+            <div class="fm-empty" id="fmEmpty" hidden></div>
+            <div class="fm-grid" id="fmGrid"></div>
+            <div class="fm-list" id="fmList" hidden></div>
+        </div>
+    </main>
+</div>
+
+<!-- 预览模态 -->
+<div class="pv-overlay" id="pvOverlay" hidden>
+    <div class="pv-dialog" role="dialog" aria-modal="true" aria-label="文件预览">
+        <div class="pv-head">
+            <span class="pv-fileicon t-other" id="pvIcon"><i class="fa-solid fa-file"></i></span>
+            <div class="pv-titles">
+                <div class="pv-name" id="pvName"></div>
+                <div class="pv-sub" id="pvSub"></div>
+            </div>
+            <div class="pv-actions">
+                <button type="button" class="fm-btn" id="pvSourceBtn" hidden></button>
+                <button type="button" class="fm-btn" id="pvWrapBtn" hidden></button>
+                <button type="button" class="fm-btn icon-only" id="pvZoomBtn" hidden title="复位缩放（双击图片亦可）"><i class="fa-solid fa-compress"></i></button>
+                <a class="fm-btn icon-only" id="pvOpen" href="#" target="_blank" rel="noopener" title="新窗口打开"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a class="fm-btn icon-only" id="pvDownload" href="#" title="下载"><i class="fa-solid fa-download"></i></a>
+                <button type="button" class="pv-close" id="pvClose" title="关闭（Esc）" aria-label="关闭预览">&times;</button>
+            </div>
+        </div>
+        <div class="pv-body" id="pvBody"></div>
+        <div class="pv-foot">
+            <button type="button" class="pv-nav-btn" id="pvPrev" title="上一个（←）"><i class="fa-solid fa-chevron-left"></i></button>
+            <button type="button" class="pv-nav-btn" id="pvNext" title="下一个（→）"><i class="fa-solid fa-chevron-right"></i></button>
+            <span class="pv-pos" id="pvPos"></span>
+            <span class="pv-hint"><kbd>Esc</kbd> 关闭 · <kbd>←</kbd><kbd>→</kbd> 切换 · 图片支持滚轮缩放 / 拖动平移 / 双击复位</span>
+        </div>
+    </div>
+</div>
+
+<script src="js/docs-browser.js"></script>
+</body>
+</html>

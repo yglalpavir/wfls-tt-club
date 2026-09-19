@@ -65,7 +65,9 @@ function getFormatMultiplier(eventType, matchFormat) {
     return (typeof mult === 'number' && mult > 0) ? mult : 1;
 }
 function getEventCoefficient(et) { if (!eventCoefficients) return 0.2; const v = eventCoefficients[et]; return (typeof v === 'number') ? v : 0.2; }
-function getTimeWeight(matchDate, snapshotDate) { const mt = new Date(matchDate + 'T00:00:00').getTime(), st = new Date(snapshotDate + 'T00:00:00').getTime(); const dd = (st - mt) / 86400000; if (dd < 0) return 0; return Math.pow(2, -dd / DECAY_HALF_LIFE_DAYS); }
+function getTimeWeight(matchDate, snapshotDate) {
+    if (SCORE_TIME_DECAY_ENABLED === false) return 1;   // WTT / 非衰减模式：调用点两参同值、权重恒 1，跳过 Date 构造
+    const mt = new Date(matchDate + 'T00:00:00').getTime(), st = new Date(snapshotDate + 'T00:00:00').getTime(); const dd = (st - mt) / 86400000; if (dd < 0) return 0; return Math.pow(2, -dd / DECAY_HALF_LIFE_DAYS); }
 
 // ===== 类型刷新·定格衰减：批次索引 =====
 // 对每名球员的每种类型，按日期聚簇（BATCH_GROUP_DAYS 内视为同一批）成批次。
@@ -200,7 +202,7 @@ function calcFormScore(playerName, beforeDate) {
         Object.assign(scores, initialScoresData.initialScores);
     }
 
-    const sortedLog = [...scoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
+    const sortedLog = getSortedScoreLog(scoreLogData);
     for (const m of sortedLog) {
         if (m['日期'] >= firstRecentDate) break;
         // 跳过赛季开始前的记录
@@ -263,13 +265,27 @@ function isProfileActivePlayer(name) {
 
 // ============ 🔥 性能优化：球员比赛预索引 ============
 
+// ============ 🔥 性能优化：按日期排序日志的记忆化 ============
+
+// 同一数据源（数组引用不变）在一次页面生命周期内会被多处整段排序
+// （球员索引、实时排名、赛季链、occurrence map、个人统计……），这里按引用缓存排序副本。
+// 数据重载（引用变化）自动失效；名字归一化只改名字字段、不影响日期序，仍可复用。
+// 返回的数组是共享副本，调用方只读；需要改动时自行 slice()。
+let _sortedLogCache = null;   // { src: 原数组引用, sorted: 排序副本 }
+function getSortedScoreLog(scoreLog) {
+    if (_sortedLogCache && _sortedLogCache.src === scoreLog) return _sortedLogCache.sorted;
+    const sorted = [...scoreLog].sort((a, b) => String(a['日期'] || '').localeCompare(String(b['日期'] || '')));
+    _sortedLogCache = { src: scoreLog, sorted };
+    return sorted;
+}
+
 /**
  * 构建球员比赛索引，避免每次快照都对全量数据做 filter
  * 返回 { playerName: [{date, isWin}, ...] }，每个球员的数组按日期排序
  * 同时返回按日期排序的全量日志（避免重复排序）
  */
 function buildPlayerMatchIndex(scoreLog) {
-    const sortedLog = [...scoreLog].sort((a, b) => a['日期'].localeCompare(b['日期']));
+    const sortedLog = getSortedScoreLog(scoreLog);
     const playerMatches = {};  // player -> [{date, isWin}, ...]
 
     for (const r of sortedLog) {
@@ -376,6 +392,7 @@ function calculateAllRankingsWithSeasons(scoreLog, initialScores, seasons) {
         if (seasonIndex > 0) {
             currentScores = computeInheritedScores(sortedLog, seasonStartScores, seasons[seasonIndex - 1], initialScores);
             seasonStartScores = { ...currentScores };
+            _cacheSeasonStartScores(seasonIndex, currentScores, scoreLog, initialScores, seasons);
         }
 
         // 赛季初排名
@@ -395,8 +412,11 @@ function calculateAllRankingsWithSeasons(scoreLog, initialScores, seasons) {
             });
         });
 
-        // 赛季末积分
-        currentScores = calculateEndScores(sortedLog, currentScores, season.startDate, season.endDate);
+        // 赛季末积分（仅衰减模式保留：其结果会被下一轮 computeInheritedScores 重算覆盖，
+        // 但调用顺带重建了 playerTypeBatches；WTT 非衰减模式下是纯死功，跳过）
+        if (SCORE_TIME_DECAY_ENABLED !== false) {
+            currentScores = calculateEndScores(sortedLog, currentScores, season.startDate, season.endDate);
+        }
     });
     return allRankings;
 }
@@ -426,6 +446,7 @@ async function calculateAllRankingsWithSeasonsAsync(scoreLog, initialScores, sea
         if (seasonIndex > 0) {
             currentScores = computeInheritedScores(sortedLog, seasonStartScores, seasons[seasonIndex - 1], initialScores);
             seasonStartScores = { ...currentScores };
+            _cacheSeasonStartScores(seasonIndex, currentScores, scoreLog, initialScores, seasons);
         }
 
         // 赛季初排名
@@ -466,8 +487,11 @@ async function calculateAllRankingsWithSeasonsAsync(scoreLog, initialScores, sea
 
         // 🔥 赛季末计算前先 yield，避免长时间冻结
         await new Promise(r => setTimeout(r, 0));
-        // 赛季末积分
-        currentScores = calculateEndScores(sortedLog, currentScores, season.startDate, season.endDate);
+        // 赛季末积分（仅衰减模式保留：其结果会被下一轮 computeInheritedScores 重算覆盖，
+        // 但调用顺带重建了 playerTypeBatches；WTT 非衰减模式下是纯死功，跳过）
+        if (SCORE_TIME_DECAY_ENABLED !== false) {
+            currentScores = calculateEndScores(sortedLog, currentScores, season.startDate, season.endDate);
+        }
 
         // 🔥 赛季间 yield
         if (seasonIndex < seasons.length - 1) {
@@ -669,6 +693,21 @@ function getSeasonForDate(snapshotDate) {
 // 结果按 seasonIndex 缓存（每次切换数据源时自动失效，见下方 key 设计）
 let _seasonStartCache = null;   // { log: scoreLogData, map: Map<seasonIndex, scores> }
 
+// 时间线算得的赛季起始分回填 getSeasonStartScores 缓存（仅当数据源与全局一致，
+// 供实时排名等后续计算热缓存复用；参数口径不一致时静默跳过，走冷启动链）
+function _cacheSeasonStartScores(seasonIndex, scores, scoreLog, initialScores, seasons) {
+    if (seasonIndex <= 0) return;
+    if (scoreLog !== scoreLogData || seasons !== seasonsData || !initialScoresData) return;
+    const eff = initialScoresData.initialScores;
+    const sameInitial = (initialScores === eff) ||
+        ((!initialScores || Object.keys(initialScores).length === 0) && (!eff || Object.keys(eff).length === 0));
+    if (!sameInitial) return;
+    if (!_seasonStartCache || _seasonStartCache.log !== scoreLogData) {
+        _seasonStartCache = { log: scoreLogData, map: new Map() };
+    }
+    if (!_seasonStartCache.map.has(seasonIndex)) _seasonStartCache.map.set(seasonIndex, { ...scores });
+}
+
 function getSeasonStartScores(seasonIndex) {
     if (!initialScoresData || !seasonsData) return {};
     if (seasonIndex <= 0) return { ...initialScoresData.initialScores };
@@ -678,12 +717,19 @@ function getSeasonStartScores(seasonIndex) {
     }
     const cached = _seasonStartCache.map.get(seasonIndex);
     if (cached) return { ...cached };
-    const sortedLog = [...scoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
+    // 🔥 链式复用：从已缓存的最近赛季起步只补算缺口，链上中间赛季一并入缓存。
+    //    调用方按 0..N-1 顺序预热（如个人统计页）时，整体从 O(N²) 次全量重放降为 O(N) 次。
+    let startIdx = 0;
     let startScores = { ...initialScoresData.initialScores };
-    for (let i = 0; i < seasonIndex; i++) {
-        startScores = computeInheritedScores(sortedLog, startScores, seasonsData[i], initialScoresData.initialScores);
+    for (let j = seasonIndex - 1; j >= 1; j--) {
+        const lower = _seasonStartCache.map.get(j);
+        if (lower) { startIdx = j; startScores = { ...lower }; break; }
     }
-    _seasonStartCache.map.set(seasonIndex, { ...startScores });
+    const sortedLog = getSortedScoreLog(scoreLogData);
+    for (let i = startIdx; i < seasonIndex; i++) {
+        startScores = computeInheritedScores(sortedLog, startScores, seasonsData[i], initialScoresData.initialScores);
+        if (!_seasonStartCache.map.has(i + 1)) _seasonStartCache.map.set(i + 1, { ...startScores });
+    }
     return { ...startScores };
 }
 
@@ -692,7 +738,7 @@ function calculateRealtimeRanking() {
     if (!scoreLogData || !initialScoresData || !seasonsData || !seasonsData.length) return null;
     const d = new Date();
     const today = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
-    const sortedLog = [...scoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
+    const sortedLog = getSortedScoreLog(scoreLogData);
     if (SCORE_TIME_DECAY_ENABLED !== false) playerTypeBatches = buildPlayerTypeBatches(sortedLog);
 
     // 找到今天所在的赛季（若今天已超出所有赛季，使用最后一个赛季并延伸至今天）
@@ -707,17 +753,9 @@ function calculateRealtimeRanking() {
         seasonIndex = seasonsData.length - 1;
     }
 
-    // 计算赛季起始积分（含继承）
-    let currentScores = { ...initialScoresData.initialScores };
-    let seasonStartScores = { ...initialScoresData.initialScores };
-    for (let i = 0; i <= seasonIndex; i++) {
-        const season = seasonsData[i];
-        if (i > 0) {
-            currentScores = computeInheritedScores(sortedLog, seasonStartScores, seasonsData[i - 1], initialScoresData.initialScores);
-            seasonStartScores = { ...currentScores };
-        }
-        if (i < seasonIndex) { currentScores = calculateEndScores(sortedLog, currentScores, season.startDate, season.endDate); }
-    }
+    // 🔥 赛季起始积分：该链（computeInheritedScores 逐季推进）与 getSeasonStartScores 逐字等价，
+    //    时间线计算时已回填缓存，直接取用；原实现为 2×(N-1) 次全量重放
+    const currentScores = getSeasonStartScores(seasonIndex);
 
     // 从当前赛季初计算到今天的积分
     const sc = { ...currentScores };
@@ -772,7 +810,7 @@ async function calculateRealtimeRankingAsync(onProgress) {
     if (!scoreLogData || !initialScoresData || !seasonsData || !seasonsData.length) return null;
     const d = new Date();
     const today = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
-    const sortedLog = [...scoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
+    const sortedLog = getSortedScoreLog(scoreLogData);
     if (SCORE_TIME_DECAY_ENABLED !== false) playerTypeBatches = buildPlayerTypeBatches(sortedLog);
 
     let activeSeason = null, seasonIndex = -1;
@@ -786,23 +824,13 @@ async function calculateRealtimeRankingAsync(onProgress) {
         seasonIndex = seasonsData.length - 1;
     }
 
-    // 计算赛季起始积分（逐赛季 yield）
-    let currentScores = { ...initialScoresData.initialScores };
-    let seasonStartScores = { ...initialScoresData.initialScores };
-    for (let i = 0; i <= seasonIndex; i++) {
-        const season = seasonsData[i];
-        if (i > 0) {
-            currentScores = computeInheritedScores(sortedLog, seasonStartScores, seasonsData[i - 1], initialScoresData.initialScores);
-            seasonStartScores = { ...currentScores };
-        }
-        if (i < seasonIndex) {
-            currentScores = calculateEndScores(sortedLog, currentScores, season.startDate, season.endDate);
-        }
-        if (onProgress && seasonIndex > 1) {
-            onProgress(i + 1, seasonIndex + 1);
-        }
-        await new Promise(r => setTimeout(r, 0));
+    // 🔥 赛季起始积分：该链（computeInheritedScores 逐季推进）与 getSeasonStartScores 逐字等价，
+    //    时间线计算时已回填缓存，直接取用；原实现为 2×(N-1) 次全量重放（收尾 yield 保留）
+    let currentScores = getSeasonStartScores(seasonIndex);
+    if (onProgress && seasonIndex > 1) {
+        onProgress(seasonIndex + 1, seasonIndex + 1);
     }
+    await new Promise(r => setTimeout(r, 0));
 
     const sc = { ...currentScores };
     const effectiveEnd = today < activeSeason.startDate ? activeSeason.startDate : today;

@@ -512,7 +512,12 @@ function wttRenderPlayerIndex(resetPage) {
 // 同一渲染批次内（同一 sortedLog 引用）按 球员|日期|口径 记忆化，
 // 避免对手卡片对每位对手重复整赛季重放
 const _wttApproxScoreCache = new Map();
+let _wttApproxScoreLogRef = null;   // sortedLog 引用变化（数据重载）时整体失效，杜绝跨数据残留
 function wttGetApproxScoreAtDate(playerName, targetDate, sortedLog, startScores, beforeMatch) {
+    if (_wttApproxScoreLogRef !== sortedLog) {
+        _wttApproxScoreLogRef = sortedLog;
+        _wttApproxScoreCache.clear();
+    }
     const ck = (sortedLog === scoreLogData ? 'cur' : 'x') + '|' + playerName + '|' + targetDate + '|' + (beforeMatch ? 'b' : 'a');
     if (_wttApproxScoreCache.has(ck)) return _wttApproxScoreCache.get(ck);
     const _ret = _wttGetApproxScoreAtDateImpl(playerName, targetDate, sortedLog, startScores, beforeMatch);
@@ -576,7 +581,7 @@ function wttRenderPersonalStats(playerName, containerId) {
         return;
     }
 
-    const sortedLog = [...scoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
+    const sortedLog = getSortedScoreLog(scoreLogData);
     const allMatches = sortedLog.filter(r => isMatchRecord(r) && (r['胜者'] === playerName || r['负者'] === playerName));
     const totalMatches = allMatches.length;
     const wins = allMatches.filter(r => r['胜者'] === playerName).length;
@@ -614,11 +619,11 @@ function wttRenderPersonalStats(playerName, containerId) {
             if (!me) continue;
             const score = Math.round(me['当前积分']);
             if (score > maxScore) maxScore = score;
-            const sorted = [...t.data].sort((a, b) => b['当前积分'] - a['当前积分']);
+            // 🔥 rank = 1 + 严格高于我分的人数（O(n) 扫描）；
+            // 与旧的逐节点全量排序口径一致（tools/_wtt_perf_check.js rankCheck 已验证等价）
             let rank = 1;
-            for (let i = 0; i < sorted.length; i++) {
-                if (i > 0 && sorted[i]['当前积分'] < sorted[i - 1]['当前积分']) rank = i + 1;
-                if (sorted[i]['姓名'] === playerName) break;
+            for (const p of t.data) {
+                if (p['当前积分'] > me['当前积分']) rank++;
             }
             if (!t.isInitial && rank < bestRank) bestRank = rank;
             scoreHistory.push({
@@ -665,70 +670,10 @@ function wttRenderPersonalStats(playerName, containerId) {
         s.curScore = oppCur ? oppCur['当前积分'] : wttGetApproxScoreAtDate(opp, s.lastDate, sortedLog, startScores, false);
     }
 
-    // 使用赛季感知的积分状态来计算对手得分/失分
-    const scores = {};
-    let currentSeasonIdx = -1;
-    if (seasonsData && seasonsData.length > 0 && allMatches.length > 0) {
-        const firstMatchDate = allMatches[0]['日期'];
-        for (let si = 0; si < seasonsData.length; si++) {
-            if (firstMatchDate >= seasonsData[si].startDate && firstMatchDate <= seasonsData[si].endDate) {
-                currentSeasonIdx = si; break;
-            }
-        }
-        if (currentSeasonIdx === -1 && firstMatchDate > seasonsData[seasonsData.length - 1].endDate) {
-            currentSeasonIdx = seasonsData.length - 1;
-        }
-        if (currentSeasonIdx >= 0) {
-            const inheritedScores = getSeasonStartScores(currentSeasonIdx);
-            Object.assign(scores, inheritedScores);
-        }
-    }
-    if (Object.keys(scores).length === 0) {
-        Object.assign(scores, startScores);
-    }
-
-    const oppPointsGained = {};
-    const oppPointsLost = {};
-    for (const r of sortedLog) {
-        // 检查是否跨越赛季边界，应用50%继承
-        if (seasonsData && seasonsData.length > 0 && currentSeasonIdx >= 0) {
-            const nextSeasonIdx = currentSeasonIdx + 1;
-            if (nextSeasonIdx < seasonsData.length && r['日期'] >= seasonsData[nextSeasonIdx].startDate) {
-                const seasonEnd = seasonsData[currentSeasonIdx].endDate;
-                const endScores = calculateEndScores(sortedLog, getSeasonStartScores(currentSeasonIdx), seasonsData[currentSeasonIdx].startDate, seasonEnd);
-                const inherited = {};
-                const ss = getSeasonStartScores(currentSeasonIdx);
-                for (const n in ss) { const es = endScores[n] || ss[n]; inherited[n] = ss[n] + (es - ss[n]) * 0.5; }
-                for (const n in initialScoresData.initialScores) { if (!inherited[n]) inherited[n] = initialScoresData.initialScores[n]; }
-                for (const n in scores) { scores[n] = inherited[n] || scores[n]; }
-                for (const n in inherited) { if (!(n in scores)) scores[n] = inherited[n]; }
-                currentSeasonIdx = nextSeasonIdx;
-            }
-        }
-
-        if (!isMatchRecord(r)) {
-            if (isBonusRecord(r)) {
-                const t = r['对象'];
-                const b = parseFloat(r['分数']) || 0;
-                if (!scores[t]) scores[t] = DEFAULT_INITIAL_SCORE;
-                scores[t] = Math.max(SCORE_FLOOR, scores[t] + b);
-            }
-            continue;
-        }
-        const w = r['胜者'], l = r['负者'];
-        if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
-        if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
-        const wg = calcMatchPoints(w, l, r['类型'], r['日期'], r['日期'], scores, r['赛制']);
-        if (w === playerName) {
-            oppPointsGained[l] = (oppPointsGained[l] || 0) + wg;
-            oppPointsLost[l] = (oppPointsLost[l] || 0) + wg * LOSER_POINT_MULTIPLIER;
-        } else if (l === playerName) {
-            oppPointsLost[w] = (oppPointsLost[w] || 0) + wg;
-            oppPointsGained[w] = (oppPointsGained[w] || 0) + wg * LOSER_POINT_MULTIPLIER;
-        }
-        scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg);
-        scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * LOSER_POINT_MULTIPLIER);
-    }
+    // 🔥 对手卡片所展示的 preWinScore / preMatchScore / curScore 全部来自下方的
+    // wttGetApproxScoreAtDate 计算；此处历史上曾维护一份全局重放积分状态用于
+    // 对手得分/失分统计，7/25 重构后其产出（oppPointsGained/oppPointsLost）已无任何
+    // 消费点——整段重放为纯死功（含每赛季边界的一次全量 calculateEndScores），已删除。
 
     const beatenOpps = Object.entries(oppStats)
         .filter(([_, s]) => s.wins > 0)
@@ -739,7 +684,7 @@ function wttRenderPersonalStats(playerName, containerId) {
         .sort((a, b) => b[1].preMatchScore - a[1].preMatchScore)
         .slice(0, 3);
 
-    // 福星：胜率最高的对手（玩家对其战绩最好）
+    // 福星：胜率最高的对手（玩家对其战绩最好）；交手>=4次的选手优先展示
     const luckyStars = Object.entries(oppStats)
         .map(([name, s]) => {
             const total = s.wins + s.losses;
@@ -747,10 +692,10 @@ function wttRenderPersonalStats(playerName, containerId) {
             return { name, wins: s.wins, losses: s.losses, curScore: s.curScore, winRate: wr, total };
         })
         .filter(x => x.total > 0 && x.wins > 0)
-        .sort((a, b) => b.winRate - a.winRate || b.total - a.total)
+        .sort((a, b) => ((b.total >= 4) - (a.total >= 4)) || b.winRate - a.winRate || b.total - a.total)
         .slice(0, 3);
 
-    // 苦主：胜率最低的对手（玩家对其战绩最差）
+    // 苦主：胜率最低的对手（玩家对其战绩最差）；交手>=4次的选手优先展示
     const nemeses = Object.entries(oppStats)
         .map(([name, s]) => {
             const total = s.wins + s.losses;
@@ -758,7 +703,7 @@ function wttRenderPersonalStats(playerName, containerId) {
             return { name, wins: s.wins, losses: s.losses, curScore: s.curScore, winRate: wr, total };
         })
         .filter(x => x.total > 0 && x.losses > 0)
-        .sort((a, b) => a.winRate - b.winRate || b.total - a.total)
+        .sort((a, b) => ((b.total >= 4) - (a.total >= 4)) || a.winRate - b.winRate || b.total - a.total)
         .slice(0, 3);
 
     function fmtDate(ds) {
@@ -819,7 +764,7 @@ function wttRenderPersonalStats(playerName, containerId) {
         beatenOpps.forEach(([name, s], i) => {
             html += '<div class="personal-card-item">';
             html += '<span class="personal-card-rank">' + (i + 1) + '</span>';
-            html += '<span class="personal-card-name">' + escapeHtml(String(name || '')) + '<span class="personal-card-score">(' + escapeHtml(String(s.preWinScore)) + ')</span></span>';
+            html += '<span class="personal-card-name">' + wttLinkPlayerName(name) + '<span class="personal-card-score">(' + escapeHtml(String(s.preWinScore)) + ')</span></span>';
             html += '<span class="personal-card-date">' + fmtDate(s.lastWinDate) + '</span>';
             html += '</div>';
         });
@@ -836,7 +781,7 @@ function wttRenderPersonalStats(playerName, containerId) {
         frequentOpps.forEach(([name, s], i) => {
             html += '<div class="personal-card-item">';
             html += '<span class="personal-card-rank">' + (i + 1) + '</span>';
-            html += '<span class="personal-card-name">' + escapeHtml(String(name || '')) + '<span class="personal-card-score">(' + escapeHtml(String(s.preMatchScore)) + ')</span></span>';
+            html += '<span class="personal-card-name">' + wttLinkPlayerName(name) + '<span class="personal-card-score">(' + escapeHtml(String(s.preMatchScore)) + ')</span></span>';
             html += '<span class="personal-card-date">' + fmtDate(s.lastDate) + '</span>';
             html += '</div>';
         });
@@ -855,7 +800,7 @@ function wttRenderPersonalStats(playerName, containerId) {
             const wr = totalGames > 0 ? ((x.wins / totalGames) * 100).toFixed(0) : 0;
             html += '<div class="personal-card-item">';
             html += '<span class="personal-card-rank">' + (i + 1) + '</span>';
-            html += '<span class="personal-card-name">' + escapeHtml(String(x.name || '')) + '<span class="personal-card-score">(' + escapeHtml(String(x.curScore)) + ')</span></span>';
+            html += '<span class="personal-card-name">' + wttLinkPlayerName(x.name) + '<span class="personal-card-score">(' + escapeHtml(String(x.curScore)) + ')</span></span>';
             html += '<span class="personal-card-sub">' + i18n[currentLang].wtt_sub_wl.replace('{wins}', x.wins).replace('{losses}', x.losses).replace('{rate}', wr) + '</span>';
             html += '</div>';
         });
@@ -874,7 +819,7 @@ function wttRenderPersonalStats(playerName, containerId) {
             const wr = totalGames > 0 ? ((x.wins / totalGames) * 100).toFixed(0) : 0;
             html += '<div class="personal-card-item">';
             html += '<span class="personal-card-rank">' + (i + 1) + '</span>';
-            html += '<span class="personal-card-name">' + escapeHtml(String(x.name || '')) + '<span class="personal-card-score">(' + escapeHtml(String(x.curScore)) + ')</span></span>';
+            html += '<span class="personal-card-name">' + wttLinkPlayerName(x.name) + '<span class="personal-card-score">(' + escapeHtml(String(x.curScore)) + ')</span></span>';
             html += '<span class="personal-card-sub">' + i18n[currentLang].wtt_sub_wl.replace('{wins}', x.wins).replace('{losses}', x.losses).replace('{rate}', wr) + '</span>';
             html += '</div>';
         });

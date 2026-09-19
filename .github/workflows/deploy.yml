@@ -38,6 +38,8 @@ jobs:
           node-version: '20'
       - name: Generate data/api
         run: node tools/recompute_rankings.js
+      - name: Generate Assets manifest (docs.html 素材库数据源)
+        run: python3 tools/gen_assets_manifest.py
       - name: Assemble site
         run: |
           mkdir _site

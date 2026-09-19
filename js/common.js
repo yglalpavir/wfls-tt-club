@@ -136,7 +136,7 @@ async function fetchJsonWithProgress(url, onProgress) {
 
 const i18n = {
     zh: {
-        site_title: "武汉外国语学校乒乓球社团 | WFLS Table Tennis Club", nav_home: "Home", nav_news: "News", nav_competitions: "Competitions", nav_contact: "Contact", nav_more: "More...", nav_members: "社团骨干", nav_season_review: "赛季总结", nav_personal: "个人数据", nav_qa: "Q&A", nav_changelog: "更新日志", lang_btn: "EN",
+        site_title: "武汉外国语学校乒乓球社团 | WFLS Table Tennis Club", nav_home: "Home", nav_news: "News", nav_competitions: "Competitions", nav_contact: "Contact", nav_more: "More... <i class='fa-solid fa-chevron-down'></i>", nav_members: "社团骨干", nav_data_viz: "数据可视化 <span class='beta-tag'>Beta</span>", nav_season_review: "赛季总结", nav_personal: "个人数据", nav_qa: "Q&A", nav_changelog: "更新日志", lang_btn: "EN",
         hero_title: "武汉外国语学校<br><span class='hero-title-accent'>乒乓球社团</span>", hero_slogan: "挥拍逐梦，旋转青春", hero_btn_about: "了解社团 <i class='fa-solid fa-arrow-right'></i>", hero_btn_join: "加入我们 <i class='fa-solid fa-plus'></i>", scroll: "Scroll",
         side_home: "首页", side_philosophy: "社团理念", side_activities: "社团活动", side_members: "社团骨干", side_news: "最新动态", side_competitions: "赛事信息",
         philosophy_tag: "Philosophy", philosophy_title: "社团理念", philosophy_desc: "我们的核心价值观与指导思想",
@@ -315,7 +315,7 @@ const i18n = {
         md_occurrence: "当日第 {n} 场"
     },
     en: {
-        site_title: "WFLS Table Tennis Club | Wuhan Foreign Languages School", nav_home: "Home", nav_news: "News", nav_competitions: "Competitions", nav_contact: "Contact", nav_more: "More...", nav_members: "Core Members", nav_season_review: "Season Review", nav_personal: "Personal Stats", nav_qa: "Q&A", nav_changelog: "Changelog", lang_btn: "中文",
+        site_title: "WFLS Table Tennis Club | Wuhan Foreign Languages School", nav_home: "Home", nav_news: "News", nav_competitions: "Competitions", nav_contact: "Contact", nav_more: "More... <i class='fa-solid fa-chevron-down'></i>", nav_members: "Core Members", nav_data_viz: "Data Viz <span class='beta-tag'>Beta</span>", nav_season_review: "Season Review", nav_personal: "Personal Stats", nav_qa: "Q&A", nav_changelog: "Changelog", lang_btn: "中文",
         hero_title: "Wuhan Foreign Languages School<br><span class='hero-title-accent'>Table Tennis Club</span>", hero_slogan: "Swing for dreams, spin for youth", hero_btn_about: "About Us <i class='fa-solid fa-arrow-right'></i>", hero_btn_join: "Join Us <i class='fa-solid fa-plus'></i>", scroll: "Scroll",
         side_home: "Home", side_philosophy: "Philosophy", side_activities: "Activities", side_members: "Members", side_news: "News", side_competitions: "Competitions",
         philosophy_tag: "Philosophy", philosophy_title: "Philosophy", philosophy_desc: "Our core values and guiding principles",
@@ -1109,7 +1109,11 @@ function buildMatchDetailUrl(date, type, winner, loser, n, cat) {
 function computeMatchOccurrenceMap(log) {
     const map = new Map();
     if (!Array.isArray(log)) return map;
-    const sorted = [...log].sort((a, b) => String(a['日期'] || '').localeCompare(String(b['日期'] || '')));
+    // 🔥 复用 score-engine 的排序记忆化（同一数据源一次页面只排一次）；
+    // 返回数组共享只读，Map 仍以记录对象为键（与逐字排序副本同序同对象）
+    const sorted = (typeof getSortedScoreLog === 'function')
+        ? getSortedScoreLog(log)
+        : [...log].sort((a, b) => String(a['日期'] || '').localeCompare(String(b['日期'] || '')));
     const count = Object.create(null);
     for (const r of sorted) {
         if (!r || r['日期'] == null || r['胜者'] == null || r['负者'] == null) continue;

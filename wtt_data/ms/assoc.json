@@ -10893,5 +10893,925 @@
     "assoc": "BUL",
     "country": "Bulgaria",
     "source": "user-confirmed"
+  },
+  "Bode ABIODUN": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "ittf-2016"
+  },
+  "Rashid AHMEDOV": {
+    "assoc": "TKM",
+    "country": "Turkmenistan",
+    "source": "ittf-2016"
+  },
+  "Ravil AHMEDOV": {
+    "assoc": "TKM",
+    "country": "Turkmenistan",
+    "source": "ittf-2016"
+  },
+  "Donny AJI": {
+    "assoc": "INA",
+    "country": "Indonesia",
+    "source": "ittf-2016"
+  },
+  "Akram AL-GHAMDI": {
+    "assoc": "KSA",
+    "country": "Saudi Arabia",
+    "source": "ittf-2016"
+  },
+  "Abdulaziz ALAMRI": {
+    "assoc": "KSA",
+    "country": "Saudi Arabia",
+    "source": "ittf-2016"
+  },
+  "Soudes ALASSANI": {
+    "assoc": "TOG",
+    "country": "Togo",
+    "source": "ittf-2016"
+  },
+  "Salah ALBALUSHI": {
+    "assoc": "UAE",
+    "country": "United Arab Emirates",
+    "source": "ittf-2016"
+  },
+  "Sultan ALKHAMIS": {
+    "assoc": "KSA",
+    "country": "Saudi Arabia",
+    "source": "ittf-2016"
+  },
+  "Ramadan ALZAREBI": {
+    "assoc": "LBA",
+    "country": "Libya",
+    "source": "ittf-2016"
+  },
+  "Antonino AMATO": {
+    "assoc": "ITA",
+    "country": "Italy",
+    "source": "ittf-2016"
+  },
+  "Soroosh AMIRI NIA": {
+    "assoc": "IRI",
+    "country": "Iran",
+    "source": "ittf-2016"
+  },
+  "Konstantinos ANGELAKIS": {
+    "assoc": "GRE",
+    "country": "Greece",
+    "source": "ittf-2016"
+  },
+  "Allan ARNACHELLUM": {
+    "assoc": "MRI",
+    "country": "Mauritius",
+    "source": "ittf-2016"
+  },
+  "BAEK Hogyun": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "ittf-2016"
+  },
+  "Daniel BAK": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "ittf-2016"
+  },
+  "Matthew BALL": {
+    "assoc": "NZL",
+    "country": "New Zealand",
+    "source": "ittf-2016"
+  },
+  "Michal BANKOSZ": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "ittf-2016"
+  },
+  "Denis BEKIR": {
+    "assoc": "BUL",
+    "country": "Bulgaria",
+    "source": "ittf-2016"
+  },
+  "Yavor BELAKOV": {
+    "assoc": "BUL",
+    "country": "Bulgaria",
+    "source": "ittf-2016"
+  },
+  "Dhiaeddine BEN HAMOUDA": {
+    "assoc": "TUN",
+    "country": "Tunisia",
+    "source": "ittf-2016"
+  },
+  "Svetlin BEROV": {
+    "assoc": "BUL",
+    "country": "Bulgaria",
+    "source": "ittf-2016"
+  },
+  "Christ BIENATIKI": {
+    "assoc": "CGO",
+    "country": "Congo",
+    "source": "ittf-2016"
+  },
+  "Larbi BOURIAH": {
+    "assoc": "ALG",
+    "country": "Algeria",
+    "source": "ittf-2016"
+  },
+  "Adam BRAT": {
+    "assoc": "SVK",
+    "country": "Slovak Republic",
+    "source": "ittf-2016"
+  },
+  "Vlastimil BUBEN": {
+    "assoc": "CZE",
+    "country": "Czechia",
+    "source": "ittf-2016"
+  },
+  "Jorge CAMPOS": {
+    "assoc": "CUB",
+    "country": "Cuba",
+    "source": "ittf-2016"
+  },
+  "Benjy CAPELLO": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "ittf-2016"
+  },
+  "Owen CATHCART": {
+    "assoc": "IRL",
+    "country": "Ireland",
+    "source": "ittf-2016"
+  },
+  "Alexandru CAZACU": {
+    "assoc": "ROU",
+    "country": "Romania",
+    "source": "ittf-2016"
+  },
+  "CHE Chi Pan": {
+    "assoc": "MAC",
+    "country": "Macau, China",
+    "source": "ittf-2016"
+  },
+  "CHENG Pak Hei": {
+    "assoc": "HKG",
+    "country": "Hong Kong, China",
+    "source": "ittf-2016"
+  },
+  "Erdenebayar CHINBAT": {
+    "assoc": "MGL",
+    "country": "Mongolia",
+    "source": "ittf-2016"
+  },
+  "Patryk CHOJNOWSKI": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "ittf-2016"
+  },
+  "Linh DINH Quang": {
+    "assoc": "VIE",
+    "country": "Vietnam",
+    "source": "ittf-2016"
+  },
+  "Adam DOSZ": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "ittf-2016"
+  },
+  "Slawomir DOSZ": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "ittf-2016"
+  },
+  "Craig DYE": {
+    "assoc": "NZL",
+    "country": "New Zealand",
+    "source": "ittf-2016"
+  },
+  "Sebastian ECHEVARRIA": {
+    "assoc": "PUR",
+    "country": "Puerto Rico",
+    "source": "ittf-2016"
+  },
+  "Christoforos EFSTATHIOU": {
+    "assoc": "CYP",
+    "country": "Cyprus",
+    "source": "ittf-2016"
+  },
+  "Sajjad FAISAL Ali": {
+    "assoc": "PAK",
+    "country": "Pakistan",
+    "source": "ittf-2016"
+  },
+  "FANG Yinchi": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "ittf-2016"
+  },
+  "Petr FEDOTOV": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "ittf-2016"
+  },
+  "FENG Yijun": {
+    "assoc": "USA",
+    "country": "USA",
+    "source": "ittf-2016"
+  },
+  "Mathias FERREIRA": {
+    "assoc": "PAR",
+    "country": "Paraguay",
+    "source": "ittf-2016"
+  },
+  "Jakub FOLWARSKI": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "ittf-2016"
+  },
+  "Petko GABROVSKI": {
+    "assoc": "BUL",
+    "country": "Bulgaria",
+    "source": "ittf-2016"
+  },
+  "Aleksandar GALABOV": {
+    "assoc": "BUL",
+    "country": "Bulgaria",
+    "source": "ittf-2016"
+  },
+  "Nicolas GALVANO": {
+    "assoc": "ARG",
+    "country": "Argentina",
+    "source": "ittf-2016"
+  },
+  "Altanshagai GANBAT": {
+    "assoc": "MGL",
+    "country": "Mongolia",
+    "source": "ittf-2016"
+  },
+  "Arjun GHOSH": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "ittf-2016"
+  },
+  "Chameera GINIGE": {
+    "assoc": "SRI",
+    "country": "Sri Lanka",
+    "source": "ittf-2016"
+  },
+  "Mateusz GOLEBIOWSKI": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "ittf-2016"
+  },
+  "Yomar GONZALEZ": {
+    "assoc": "PUR",
+    "country": "Puerto Rico",
+    "source": "ittf-2016"
+  },
+  "Evan GORDON": {
+    "assoc": "USA",
+    "country": "USA",
+    "source": "ittf-2016"
+  },
+  "Alberto GORGONA": {
+    "assoc": "PAN",
+    "country": "Panama",
+    "source": "ittf-2016"
+  },
+  "Stephanos GREGORIOU": {
+    "assoc": "CYP",
+    "country": "Cyprus",
+    "source": "ittf-2016"
+  },
+  "Fahd GUBRAN": {
+    "assoc": "YEM",
+    "country": "Yemen",
+    "source": "ittf-2016"
+  },
+  "Jose GUERRA": {
+    "assoc": "PAN",
+    "country": "Panama",
+    "source": "ittf-2016"
+  },
+  "Nathael HAMDOUN": {
+    "assoc": "TUN",
+    "country": "Tunisia",
+    "source": "ittf-2016"
+  },
+  "Jad HARIZ": {
+    "assoc": "LBA",
+    "country": "Libya",
+    "source": "ittf-2016"
+  },
+  "Nils HOHMEIER": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "ittf-2016"
+  },
+  "Sajad HOSSEINI": {
+    "assoc": "IRI",
+    "country": "Iran",
+    "source": "ittf-2016"
+  },
+  "Hristo HRISTONOV": {
+    "assoc": "CYP",
+    "country": "Cyprus",
+    "source": "ittf-2016"
+  },
+  "Balazs HUTTER": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "ittf-2016"
+  },
+  "Atanas IVANOV": {
+    "assoc": "BUL",
+    "country": "Bulgaria",
+    "source": "ittf-2016"
+  },
+  "Denis IVONIN": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "ittf-2016"
+  },
+  "Rodney JACOLO Ryan": {
+    "assoc": "PHI",
+    "country": "Philippines",
+    "source": "ittf-2016"
+  },
+  "JANG Hanjae": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "ittf-2016"
+  },
+  "Gregoire JEAN": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "ittf-2016"
+  },
+  "Koyo KANAMITSU": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "ittf-2016"
+  },
+  "KANG Jinho": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "ittf-2016"
+  },
+  "Nikolay KAPITANOV": {
+    "assoc": "BUL",
+    "country": "Bulgaria",
+    "source": "ittf-2016"
+  },
+  "Narayan KAPOLNEK": {
+    "assoc": "AUT",
+    "country": "Austria",
+    "source": "ittf-2016"
+  },
+  "Andrej KASSAY": {
+    "assoc": "SVK",
+    "country": "Slovak Republic",
+    "source": "ittf-2016"
+  },
+  "Khaled KHADER": {
+    "assoc": "JOR",
+    "country": "Jordan",
+    "source": "ittf-2016"
+  },
+  "Martin KHATCHANOV": {
+    "assoc": "NED",
+    "country": "Netherlands",
+    "source": "ittf-2016"
+  },
+  "KIM Minseo": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "ittf-2016"
+  },
+  "KIM Woojin": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "ittf-2016"
+  },
+  "Fadi KIWAN": {
+    "assoc": "LBN",
+    "country": "Lebanon",
+    "source": "ittf-2016"
+  },
+  "Patrik KLOS": {
+    "assoc": "CZE",
+    "country": "Czechia",
+    "source": "ittf-2016"
+  },
+  "Denislav KODJABASHEV": {
+    "assoc": "BUL",
+    "country": "Bulgaria",
+    "source": "ittf-2016"
+  },
+  "Maciej KOLODZIEJCZYK": {
+    "assoc": "AUT",
+    "country": "Austria",
+    "source": "ittf-2016"
+  },
+  "David KOSTADINOV": {
+    "assoc": "BUL",
+    "country": "Bulgaria",
+    "source": "ittf-2016"
+  },
+  "Ravindra KOTIYAN": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "ittf-2016"
+  },
+  "Tomasz KOTOWSKI": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "ittf-2016"
+  },
+  "LAI Chi-Chien": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "ittf-2016"
+  },
+  "Andrea LANDRIEU": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "ittf-2016"
+  },
+  "Stefan LAVCHIEV": {
+    "assoc": "BUL",
+    "country": "Bulgaria",
+    "source": "ittf-2016"
+  },
+  "LEE Junsang": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "ittf-2016"
+  },
+  "Matthew LEHMANN": {
+    "assoc": "CAN",
+    "country": "Canada",
+    "source": "ittf-2016"
+  },
+  "Zoltan LELKES": {
+    "assoc": "SVK",
+    "country": "Slovak Republic",
+    "source": "ittf-2016"
+  },
+  "LI Yijie": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "ittf-2016"
+  },
+  "LIM Zheng Jie Edric": {
+    "assoc": "SGP",
+    "country": "Singapore",
+    "source": "ittf-2016"
+  },
+  "LIU Victor": {
+    "assoc": "USA",
+    "country": "USA",
+    "source": "ittf-2016"
+  },
+  "Midya LOTFOLLAH NASABI": {
+    "assoc": "IRI",
+    "country": "Iran",
+    "source": "ittf-2016"
+  },
+  "Christian LUGINGER": {
+    "assoc": "AUT",
+    "country": "Austria",
+    "source": "ittf-2016"
+  },
+  "Sergio LUHR": {
+    "assoc": "CHI",
+    "country": "Chile",
+    "source": "ittf-2016"
+  },
+  "Lorencio LUPULESKU": {
+    "assoc": "SRB",
+    "country": "Serbia",
+    "source": "ittf-2016"
+  },
+  "Shady MAGDY": {
+    "assoc": "EGY",
+    "country": "Egypt",
+    "source": "ittf-2016"
+  },
+  "Calum MAIN": {
+    "assoc": "SCO",
+    "country": "Scotland",
+    "source": "ittf-2016"
+  },
+  "Bence MAJOROS": {
+    "assoc": "HUN",
+    "country": "Hungary",
+    "source": "ittf-2016"
+  },
+  "Romualdo MANNA": {
+    "assoc": "ITA",
+    "country": "Italy",
+    "source": "ittf-2016"
+  },
+  "Alexandru MANOLE": {
+    "assoc": "ROU",
+    "country": "Romania",
+    "source": "ittf-2016"
+  },
+  "Jiri MARTINKO": {
+    "assoc": "CZE",
+    "country": "Czechia",
+    "source": "ittf-2016"
+  },
+  "Jan MEDINA": {
+    "assoc": "VEN",
+    "country": "Venezuela",
+    "source": "ittf-2016"
+  },
+  "Daniel MEMMI": {
+    "assoc": "SUI",
+    "country": "Switzerland",
+    "source": "ittf-2016"
+  },
+  "Andrey MILOVANOV": {
+    "assoc": "BLR",
+    "country": "Belarus",
+    "source": "ittf-2016"
+  },
+  "MIN Byeongchang": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "ittf-2016"
+  },
+  "Amin MIRALMASI": {
+    "assoc": "IRI",
+    "country": "Iran",
+    "source": "ittf-2016"
+  },
+  "Yukinori MIYAMOTO": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "ittf-2016"
+  },
+  "Avo MOUMJOGHLIAN": {
+    "assoc": "LBN",
+    "country": "Lebanon",
+    "source": "ittf-2016"
+  },
+  "Michal MURAWSKI": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "ittf-2016"
+  },
+  "Ramil MUTYGULLIN": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "ittf-2016"
+  },
+  "Valentin NAD NEMEDI": {
+    "assoc": "SRB",
+    "country": "Serbia",
+    "source": "ittf-2016"
+  },
+  "Krisztian NAGY": {
+    "assoc": "HUN",
+    "country": "Hungary",
+    "source": "ittf-2016"
+  },
+  "Mari NAYRE Jann": {
+    "assoc": "PHI",
+    "country": "Philippines",
+    "source": "ittf-2016"
+  },
+  "NG Pak Nam": {
+    "assoc": "HKG",
+    "country": "Hong Kong, China",
+    "source": "ittf-2016"
+  },
+  "Hussein OMAR": {
+    "assoc": "IRQ",
+    "country": "Iraq",
+    "source": "ittf-2016"
+  },
+  "Kilian ORT": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "ittf-2016"
+  },
+  "Kochar OTHMAN": {
+    "assoc": "IRQ",
+    "country": "Iraq",
+    "source": "ittf-2016"
+  },
+  "Yanapong PANAGITGUN": {
+    "assoc": "THA",
+    "country": "Thailand",
+    "source": "ittf-2016"
+  },
+  "Pattaratorn PASSARA": {
+    "assoc": "THA",
+    "country": "Thailand",
+    "source": "ittf-2016"
+  },
+  "Dishanka PATIRANALAGE": {
+    "assoc": "SRI",
+    "country": "Sri Lanka",
+    "source": "ittf-2016"
+  },
+  "Oscar PERMAN": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "ittf-2016"
+  },
+  "Ludvik PERSOLJA": {
+    "assoc": "SLO",
+    "country": "Slovenia",
+    "source": "ittf-2016"
+  },
+  "Ingemar PETER": {
+    "assoc": "SVK",
+    "country": "Slovak Republic",
+    "source": "ittf-2016"
+  },
+  "Vladimir PETKOV": {
+    "assoc": "BUL",
+    "country": "Bulgaria",
+    "source": "ittf-2016"
+  },
+  "POH Ethan": {
+    "assoc": "SGP",
+    "country": "Singapore",
+    "source": "ittf-2016"
+  },
+  "Jason PONTOISE": {
+    "assoc": "MRI",
+    "country": "Mauritius",
+    "source": "ittf-2016"
+  },
+  "Agus PRAMONO": {
+    "assoc": "INA",
+    "country": "Indonesia",
+    "source": "ittf-2016"
+  },
+  "Sirawit PUANGTHIP": {
+    "assoc": "THA",
+    "country": "Thailand",
+    "source": "ittf-2016"
+  },
+  "Abdelrahman RAHMOU": {
+    "assoc": "EGY",
+    "country": "Egypt",
+    "source": "ittf-2016"
+  },
+  "Roman REZETKA": {
+    "assoc": "SVK",
+    "country": "Slovak Republic",
+    "source": "ittf-2016"
+  },
+  "Mahmood RIZBAND": {
+    "assoc": "IRI",
+    "country": "Iran",
+    "source": "ittf-2016"
+  },
+  "Ignacio ROTELA": {
+    "assoc": "PAR",
+    "country": "Paraguay",
+    "source": "ittf-2016"
+  },
+  "Mootezz SAADAOUI": {
+    "assoc": "TUN",
+    "country": "Tunisia",
+    "source": "ittf-2016"
+  },
+  "Per SANDSTROM": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "ittf-2016"
+  },
+  "Ficky SANTOSO": {
+    "assoc": "INA",
+    "country": "Indonesia",
+    "source": "ittf-2016"
+  },
+  "Luke SAVILL": {
+    "assoc": "ENG",
+    "country": "England",
+    "source": "ittf-2016"
+  },
+  "Florian SCHREINER": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "ittf-2016"
+  },
+  "Ioannis SGOUROPOULOS": {
+    "assoc": "GRE",
+    "country": "Greece",
+    "source": "ittf-2016"
+  },
+  "Hussain SHIFNAN": {
+    "assoc": "MDV",
+    "country": "Maldives",
+    "source": "ittf-2016"
+  },
+  "Mathan SIMON": {
+    "assoc": "ISR",
+    "country": "Israel",
+    "source": "ittf-2016"
+  },
+  "Arturo SIU": {
+    "assoc": "PAN",
+    "country": "Panama",
+    "source": "ittf-2016"
+  },
+  "Simon SODERLUND": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "ittf-2016"
+  },
+  "SONG Xu": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "ittf-2016"
+  },
+  "Alin SPELBUS": {
+    "assoc": "ROU",
+    "country": "Romania",
+    "source": "ittf-2016"
+  },
+  "Jonas STENER": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "ittf-2016"
+  },
+  "Svetozar STOYANOV": {
+    "assoc": "BUL",
+    "country": "Bulgaria",
+    "source": "ittf-2016"
+  },
+  "Nikola STRUGAREVIC": {
+    "assoc": "SRB",
+    "country": "Serbia",
+    "source": "ittf-2016"
+  },
+  "Filip SZYMANSKI": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "ittf-2016"
+  },
+  "Mohammed TAHER": {
+    "assoc": "IRQ",
+    "country": "Iraq",
+    "source": "ittf-2016"
+  },
+  "Masaki TAKAMI": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "ittf-2016"
+  },
+  "TAO Wenzhang": {
+    "assoc": "USA",
+    "country": "USA",
+    "source": "ittf-2016"
+  },
+  "TAY Ming Han Maxxe": {
+    "assoc": "SGP",
+    "country": "Singapore",
+    "source": "ittf-2016"
+  },
+  "Zlatin TENEV": {
+    "assoc": "BUL",
+    "country": "Bulgaria",
+    "source": "ittf-2016"
+  },
+  "Stefan TODOROV": {
+    "assoc": "BUL",
+    "country": "Bulgaria",
+    "source": "ittf-2016"
+  },
+  "Tomasz TOMASZUK": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "ittf-2016"
+  },
+  "Michael TRINK": {
+    "assoc": "AUT",
+    "country": "Austria",
+    "source": "ittf-2016"
+  },
+  "TSAI Chun-Yu": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "ittf-2016"
+  },
+  "Erny TSAO": {
+    "assoc": "AUS",
+    "country": "Australia",
+    "source": "ittf-2016"
+  },
+  "Marek TUTURA": {
+    "assoc": "SVK",
+    "country": "Slovak Republic",
+    "source": "ittf-2016"
+  },
+  "Keiya UEMURA": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "ittf-2016"
+  },
+  "Jan VALENTA": {
+    "assoc": "CZE",
+    "country": "Czechia",
+    "source": "ittf-2016"
+  },
+  "Konstantin VATOV": {
+    "assoc": "BUL",
+    "country": "Bulgaria",
+    "source": "ittf-2016"
+  },
+  "Marcus WAERSTAD": {
+    "assoc": "NOR",
+    "country": "Norway",
+    "source": "ittf-2016"
+  },
+  "WANG Allen": {
+    "assoc": "USA",
+    "country": "USA",
+    "source": "ittf-2016"
+  },
+  "WANG Jack": {
+    "assoc": "USA",
+    "country": "USA",
+    "source": "ittf-2016"
+  },
+  "Helshan WEERASINGHE": {
+    "assoc": "ENG",
+    "country": "England",
+    "source": "ittf-2016"
+  },
+  "Adrian WIECEK": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "ittf-2016"
+  },
+  "Davut YAKUBOV": {
+    "assoc": "TKM",
+    "country": "Turkmenistan",
+    "source": "ittf-2016"
+  },
+  "YAN Xin": {
+    "assoc": "AUS",
+    "country": "Australia",
+    "source": "ittf-2016"
+  },
+  "Viktor YANEV": {
+    "assoc": "BUL",
+    "country": "Bulgaria",
+    "source": "ittf-2016"
+  },
+  "Viktor YEFIMOV": {
+    "assoc": "UKR",
+    "country": "Ukraine",
+    "source": "ittf-2016"
+  },
+  "YEH Chih-Wei": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "ittf-2016"
+  },
+  "Ivo YORDANOV": {
+    "assoc": "BUL",
+    "country": "Bulgaria",
+    "source": "ittf-2016"
+  },
+  "Teodor YORDANOV": {
+    "assoc": "BUL",
+    "country": "Bulgaria",
+    "source": "ittf-2016"
+  },
+  "Mohammed ZAIDI": {
+    "assoc": "ALG",
+    "country": "Algeria",
+    "source": "ittf-2016"
+  },
+  "Dmitry ZAKHAROV": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "ittf-2016"
+  },
+  "Mihai ZAMFIR": {
+    "assoc": "ROU",
+    "country": "Romania",
+    "source": "ittf-2016"
+  },
+  "ZHAO Zhaoyan": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "ittf-2016"
+  },
+  "ZHU Cheng": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "ittf-2016"
+  },
+  "Yoshua SHING": {
+    "assoc": "VAN",
+    "country": "Vanuatu",
+    "source": "ittf-2016"
   }
 }

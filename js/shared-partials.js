@@ -25,7 +25,7 @@
         '                    <a href="#" class="nav-link dropdown-toggle" id="moreDropdown" data-i18n="nav_more">More... <i class="fa-solid fa-chevron-down"></i></a>',
         '                    <ul class="dropdown-menu" id="dropdownMenu">',
         '                        <li><a href="members.html" class="dropdown-link" data-i18n="nav_members">社团骨干</a></li>',
-        '                        <li><a href="data_viz.html" class="dropdown-link">Data Viz <span class="beta-tag">Beta</span></a></li>',
+        '                        <li><a href="data_viz.html" class="dropdown-link" data-i18n="nav_data_viz">Data Viz <span class="beta-tag">Beta</span></a></li>',
         '                        <li><a href="personal_stats.html" class="dropdown-link" data-i18n="nav_personal">个人数据</a></li>',
         '                        <li><a href="qa.html" class="dropdown-link" data-i18n="nav_qa">Q&A</a></li>',
         '                        <li><a href="changelog.html" class="dropdown-link" data-i18n="nav_changelog">更新日志</a></li>',

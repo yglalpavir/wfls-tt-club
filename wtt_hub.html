@@ -255,7 +255,7 @@
                     <a href="#" class="nav-link dropdown-toggle" id="moreDropdown" data-i18n="nav_more">More... <i class="fa-solid fa-chevron-down"></i></a>
                     <ul class="dropdown-menu" id="dropdownMenu">
                         <li><a href="members.html" class="dropdown-link" data-i18n="nav_members">社团骨干</a></li>
-                        <li><a href="data_viz.html" class="dropdown-link">Data Viz <span class="beta-tag">Beta</span></a></li>
+                        <li><a href="data_viz.html" class="dropdown-link" data-i18n="nav_data_viz">Data Viz <span class="beta-tag">Beta</span></a></li>
                         <li><a href="personal_stats.html" class="dropdown-link" data-i18n="nav_personal">个人数据</a></li>
                         <li><a href="qa.html" class="dropdown-link" data-i18n="nav_qa">Q&A</a></li>
                         <li><a href="changelog.html" class="dropdown-link" data-i18n="nav_changelog">更新日志</a></li>
@@ -310,9 +310,12 @@
     </div>
 
     <script>window.__WFLS_DISABLE_SEARCH__ = true;</script>
-    <script src="js/common.js"></script>
-    <script src="js/wtt_common.js"></script>
+    <script defer src="js/common.js"></script>
+    <script defer src="js/wtt_common.js"></script>
     <script>
+        // 🔥 上方两个外部脚本已加 defer（DOMContentLoaded 前按序执行完毕）；
+        // 内联脚本无法 defer，故依赖 common.js/wtt_common.js 的初始化统一挂到 DOMContentLoaded。
+        document.addEventListener('DOMContentLoaded', function () {
         // ============ Hero 粒子动画 ============
         (function initParticles() {
             const container = document.getElementById('hubParticles');
@@ -457,6 +460,7 @@
                 refreshHubTexts();
             };
         })();
+        });   // end DOMContentLoaded
     </script>
 </body>
 </html>
