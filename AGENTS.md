@@ -87,8 +87,8 @@ No npm/lint/typecheck commands exist — there are no build tools or test suites
 | `tools/ci_validate.py` | Data integrity validator |
 | `tools/recompute_rankings.js` | Generates `data/api/` (runs the real score engine headless in a Node vm) |
 | `tools/gen_assets_manifest.py` | Scans `Assets/` into `Assets/manifest.json` (deploy-time generated, gitignored — same pattern as `data/api/`; run manually for local dev) |
-| `docs.html` | 素材库：read-only file-manager view over `Assets/` (breadcrumb nav, grid/list, type filter, search; previews image/svg/video/audio/pdf/text/code/markdown via modal) — data comes from `Assets/manifest.json`, entry button on `admin.html` |
-| `js/docs-browser.js` | docs.html logic: manifest-tree path validation (hash routes are never used to build URLs directly), event delegation, hash routing `#/dir` / `#/dir/file`, lazy marked.js load for Markdown preview |
+| `docs.html` | 网站文档/Docs: read-only file-manager view over `Assets/` (breadcrumb nav, grid/list, type filter, search; previews image/svg/video/audio/pdf/text/code/markdown via modal) — data comes from `Assets/manifest.json`; entry lives in the navbar **More…** dropdown (`nav_docs`), page uses shared chrome + `common.js` i18n (`docs_*` keys) |
+| `js/docs-browser.js` | docs.html logic: manifest-tree path validation (hash routes are never used to build URLs directly), event delegation, hash routing `#/dir` / `#/dir/file`, lazy marked.js load for Markdown preview; UI strings resolve via `t()` from `common.js` i18n with zh fallback, re-rendered by `docsBrowserReapplyI18n()` on language switch |
 | `tools/migrate_draws_v3.py` | One-shot draws.json v2 → v3 migration (finished; kept locally only, gitignored) |
 | `js/season-review.js` | Season review page logic (club + WTT dual mode, switched by `window.SR_WTT_MODE`) |
 | `match.html` / `wtt_match.html` | Match-detail page for a single score-log record (WTT wrapper sets `window.MD_WTT_MODE`) |

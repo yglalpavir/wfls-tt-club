@@ -1,5 +1,5 @@
 /* ========================================
-   docs-browser.js — docs.html 素材库文件管理器
+   docs-browser.js — docs.html 网站文档文件管理器
    数据源：Assets/manifest.json（由 tools/gen_assets_manifest.py 生成；部署时由 deploy
    工作流现场重建，本地开发需手动运行一次该脚本）。纯前端只读浏览。
 
@@ -8,11 +8,28 @@
      hash 永远不会直接拼进请求路径（防伪造路径）。
    - 全部渲染经 escapeHtml，交互走事件委托 + data-* 属性（无内联 onclick）。
    - hash 路由：#/目录 → 浏览该目录；#/目录/文件 → 浏览父目录并打开预览。
+   - 文案走 common.js 的 i18n 词典（docs_* 键）；t() 带中文回退，common.js 缺失时
+     页面仍可用。语言切换由 common.js setLanguage 回调 docsBrowserReapplyI18n()。
    ======================================== */
 (function () {
     "use strict";
 
     var $ = function (id) { return document.getElementById(id); };
+
+    /* ---------- i18n ---------- */
+
+    // 词典在 common.js（全局 i18n/currentLang）；zhFallback 保证独立运行时仍有中文文案
+    function t(key, zhFallback) {
+        if (typeof i18n !== "undefined" && typeof currentLang !== "undefined") {
+            var pack = i18n[currentLang];
+            if (pack && pack[key] != null) return pack[key];
+        }
+        return zhFallback !== undefined ? zhFallback : key;
+    }
+    function tpl(key, zhFallback, vars) {
+        var s = t(key, zhFallback);
+        return s.replace(/\{(\w+)\}/g, function (m, k) { return vars[k] != null ? vars[k] : m; });
+    }
 
     /* ---------- 通用工具 ---------- */
 
@@ -59,33 +76,39 @@
         zip: "archive", rar: "archive", "7z": "archive", tar: "archive", gz: "archive", tgz: "archive"
     };
 
+    // lk = common.js i18n 键；label = 中文回退
     var TYPE_META = {
-        folder:   { icon: "fa-solid fa-folder",          cls: "t-folder",  label: "文件夹" },
-        image:    { icon: "fa-solid fa-file-image",      cls: "t-image",   label: "图片" },
-        svg:      { icon: "fa-solid fa-bezier-curve",    cls: "t-svg",     label: "SVG 矢量图" },
-        video:    { icon: "fa-solid fa-file-video",      cls: "t-video",   label: "视频" },
-        audio:    { icon: "fa-solid fa-file-audio",      cls: "t-audio",   label: "音频" },
-        pdf:      { icon: "fa-solid fa-file-pdf",        cls: "t-pdf",     label: "PDF 文档" },
-        markdown: { icon: "fa-brands fa-markdown",       cls: "t-md",      label: "Markdown" },
-        text:     { icon: "fa-solid fa-file-lines",      cls: "t-text",    label: "文本/代码" },
-        sheet:    { icon: "fa-solid fa-file-excel",      cls: "t-sheet",   label: "表格" },
-        doc:      { icon: "fa-solid fa-file-word",       cls: "t-doc",     label: "Word 文档" },
-        ppt:      { icon: "fa-solid fa-file-powerpoint", cls: "t-ppt",     label: "PPT 演示" },
-        archive:  { icon: "fa-solid fa-file-zipper",     cls: "t-archive", label: "压缩包" },
-        other:    { icon: "fa-solid fa-file",            cls: "t-other",   label: "文件" }
+        folder:   { icon: "fa-solid fa-folder",          cls: "t-folder",  lk: "docs_type_folder",   label: "文件夹" },
+        image:    { icon: "fa-solid fa-file-image",      cls: "t-image",   lk: "docs_type_image",    label: "图片" },
+        svg:      { icon: "fa-solid fa-bezier-curve",    cls: "t-svg",     lk: "docs_type_svg",      label: "SVG 矢量图" },
+        video:    { icon: "fa-solid fa-file-video",      cls: "t-video",   lk: "docs_type_video",    label: "视频" },
+        audio:    { icon: "fa-solid fa-file-audio",      cls: "t-audio",   lk: "docs_type_audio",    label: "音频" },
+        pdf:      { icon: "fa-solid fa-file-pdf",        cls: "t-pdf",     lk: "docs_type_pdf",      label: "PDF 文档" },
+        markdown: { icon: "fa-brands fa-markdown",       cls: "t-md",      lk: "docs_type_markdown", label: "Markdown" },
+        text:     { icon: "fa-solid fa-file-lines",      cls: "t-text",    lk: "docs_type_text",     label: "文本/代码" },
+        sheet:    { icon: "fa-solid fa-file-excel",      cls: "t-sheet",   lk: "docs_type_sheet",    label: "表格" },
+        doc:      { icon: "fa-solid fa-file-word",       cls: "t-doc",     lk: "docs_type_doc",      label: "Word 文档" },
+        ppt:      { icon: "fa-solid fa-file-powerpoint", cls: "t-ppt",     lk: "docs_type_ppt",      label: "PPT 演示" },
+        archive:  { icon: "fa-solid fa-file-zipper",     cls: "t-archive", lk: "docs_type_archive",  label: "压缩包" },
+        other:    { icon: "fa-solid fa-file",            cls: "t-other",   lk: "docs_type_other",    label: "文件" }
     };
 
     function typeOf(node) {
         return node.t === "d" ? "folder" : (EXT_TYPE_MAP[node.e] || "other");
     }
 
+    function typeLabel(typeKey) {
+        var meta = TYPE_META[typeKey] || TYPE_META.other;
+        return t(meta.lk, meta.label);
+    }
+
     var FILTER_GROUPS = [
-        { key: "all",   label: "全部",      types: null },
-        { key: "image", label: "图片",      types: ["image", "svg"] },
-        { key: "video", label: "视频",      types: ["video"] },
-        { key: "audio", label: "音频",      types: ["audio"] },
-        { key: "text",  label: "文本/代码", types: ["text", "markdown"] },
-        { key: "doc",   label: "文档",      types: ["pdf", "sheet", "doc", "ppt", "archive"] }
+        { key: "all",   lk: "docs_f_all",   label: "全部",      types: null },
+        { key: "image", lk: "docs_f_image", label: "图片",      types: ["image", "svg"] },
+        { key: "video", lk: "docs_f_video", label: "视频",      types: ["video"] },
+        { key: "audio", lk: "docs_f_audio", label: "音频",      types: ["audio"] },
+        { key: "text",  lk: "docs_f_text",  label: "文本/代码", types: ["text", "markdown"] },
+        { key: "doc",   lk: "docs_f_doc",   label: "文档",      types: ["pdf", "sheet", "doc", "ppt", "archive"] }
     ];
 
     var TEXT_MAX_CHARS = 2 * 1024 * 1024; // 文本预览上限（超出截断）
@@ -212,8 +235,8 @@
         var dir = dirNode();
         if (!dir) { $("fmStats").textContent = ""; return; }
         var parts = [];
-        if (dir.dc > 0) parts.push(dir.dc + " 个子文件夹");
-        parts.push(dir.fc + " 个文件");
+        if (dir.dc > 0) parts.push(tpl("docs_unit_dirs", "{n} 个子文件夹", { n: dir.dc }));
+        parts.push(tpl("docs_unit_files", "{n} 个文件", { n: dir.fc }));
         parts.push(formatSize(dir.sz));
         $("fmStats").textContent = parts.join(" · ");
     }
@@ -228,7 +251,7 @@
             var active = state.chip === g.key;
             var zero = count === 0 && !active;
             return '<button type="button" class="chip' + (active ? " active" : "") + '"' +
-                (zero ? " disabled" : "") + ' data-chip="' + g.key + '">' + g.label +
+                (zero ? " disabled" : "") + ' data-chip="' + g.key + '">' + t(g.lk, g.label) +
                 ' <b>' + count + "</b></button>";
         }).join("");
         // 目录内没有文件（如 Assets 根只有子文件夹）时，类型筛选行没有意义，直接隐藏
@@ -239,8 +262,9 @@
     /* ---------- 渲染：列表 ---------- */
 
     function folderMetaText(n) {
-        if (!n.fc && !n.dc) return "空文件夹 · " + formatSize(n.sz);
-        return n.fc + " 个文件" + (n.dc ? " · " + n.dc + " 个子文件夹" : "") + " · " + formatSize(n.sz);
+        var files = tpl("docs_unit_files", "{n} 个文件", { n: n.fc });
+        if (!n.fc && !n.dc) return t("docs_folder_empty", "空文件夹") + " · " + formatSize(n.sz);
+        return files + (n.dc ? " · " + tpl("docs_unit_dirs", "{n} 个子文件夹", { n: n.dc }) : "") + " · " + formatSize(n.sz);
     }
 
     function gridItemHTML(n, fileIdx) {
@@ -250,24 +274,25 @@
                 '<div class="fm-name" title="' + escapeHtml(n.n) + '">' + escapeHtml(n.n) + "</div>" +
                 '<div class="fm-meta">' + escapeHtml(folderMetaText(n)) + "</div></div>";
         }
-        var t = typeOf(n), meta = TYPE_META[t];
-        var thumb = t === "image"
+        var t2 = typeOf(n), meta = TYPE_META[t2];
+        var thumb = t2 === "image"
             ? '<img src="' + escapeHtml(urlOf(n._p)) + '" alt="" loading="lazy" decoding="async">'
             : '<i class="' + meta.icon + '"></i><span class="fm-ext">' +
               escapeHtml(n.e ? n.e.toUpperCase() : "?") + "</span>";
         return '<div class="fm-item" role="button" tabindex="0" data-file-idx="' + fileIdx + '">' +
             '<div class="fm-thumb ' + meta.cls + '">' + thumb + "</div>" +
             '<div class="fm-name" title="' + escapeHtml(n.n) + '">' + escapeHtml(n.n) + "</div>" +
-            '<div class="fm-meta">' + escapeHtml(meta.label) + " · " + formatSize(n.sz) + "</div></div>";
+            '<div class="fm-meta">' + escapeHtml(typeLabel(t2)) + " · " + formatSize(n.sz) + "</div></div>";
     }
 
     function rowHTML(n, fileIdx) {
-        var t = typeOf(n), meta = TYPE_META[t];
-        var kind = n.t === "d" ? TYPE_META.folder.label : meta.label;
+        var t2 = typeOf(n), meta = TYPE_META[t2];
+        var kind = typeLabel(t2);
         var iconCls = n.t === "d" ? TYPE_META.folder.cls : meta.cls;
+        var icon = n.t === "d" ? TYPE_META.folder.icon : meta.icon;
         return '<div class="fm-row" role="button" tabindex="0" data-' +
             (n.t === "d" ? 'path="' + escapeHtml(n._p) + '"' : 'file-idx="' + fileIdx + '"') + ">" +
-            '<span class="fm-row-icon ' + iconCls + '"><i class="' + meta.icon + '"></i></span>' +
+            '<span class="fm-row-icon ' + iconCls + '"><i class="' + icon + '"></i></span>' +
             '<span class="fm-row-name" title="' + escapeHtml(n.n) + '">' + escapeHtml(n.n) + "</span>" +
             '<span class="fm-row-kind">' + escapeHtml(kind) + "</span>" +
             '<span class="fm-row-size">' + (n.t === "d" ? escapeHtml(folderMetaText(n)) : formatSize(n.sz)) + "</span>" +
@@ -288,8 +313,8 @@
         var empty = $("fmEmpty");
         if (!entries.length) {
             empty.innerHTML = state.q
-                ? '<i class="fa-solid fa-magnifying-glass"></i><p>没有匹配「' + escapeHtml(state.q) + "」的条目</p>"
-                : '<i class="fa-solid fa-folder-open"></i><p>此文件夹为空</p>';
+                ? '<i class="fa-solid fa-magnifying-glass"></i><p>' + escapeHtml(tpl("docs_empty_search", "没有匹配「{q}」的条目", { q: state.q })) + "</p>"
+                : '<i class="fa-solid fa-folder-open"></i><p>' + escapeHtml(t("docs_empty_dir", "此文件夹为空")) + "</p>";
             empty.hidden = false;
         } else {
             empty.hidden = true;
@@ -353,7 +378,7 @@
         var pv = state.preview;
         if (!pv) return;
         var node = pv.files[pv.idx];
-        var t = typeOf(node), meta = TYPE_META[t];
+        var t2 = typeOf(node), meta = TYPE_META[t2];
         var fullPath = node._p;
 
         // 从一个文件切到另一个文件（←/→ 或 hash 路由）时必须清掉上一个预览的媒体元素
@@ -365,7 +390,7 @@
         $("pvIcon").innerHTML = '<i class="' + meta.icon + '"></i>';
         $("pvName").textContent = node.n;
         $("pvName").title = node.n;
-        $("pvSub").textContent = meta.label + " · " + formatSize(node.sz) +
+        $("pvSub").textContent = typeLabel(t2) + " · " + formatSize(node.sz) +
             (node.e ? " · ." + node.e : "");
         $("pvOpen").href = urlOf(fullPath);
         $("pvDownload").href = urlOf(fullPath);
@@ -376,32 +401,32 @@
         $("pvNext").disabled = single;
 
         // 头部动作按钮按类型显隐
-        $("pvSourceBtn").hidden = t !== "svg";
+        $("pvSourceBtn").hidden = t2 !== "svg";
         $("pvSourceBtn").innerHTML = state.pvSource
-            ? '<i class="fa-solid fa-image"></i> 图片预览'
-            : '<i class="fa-solid fa-code"></i> 查看源码';
-        $("pvWrapBtn").hidden = t !== "text" && t !== "markdown";
+            ? '<i class="fa-solid fa-image"></i> ' + escapeHtml(t("docs_pv_rendered", "图片预览"))
+            : '<i class="fa-solid fa-code"></i> ' + escapeHtml(t("docs_pv_source", "查看源码"));
+        $("pvWrapBtn").hidden = t2 !== "text" && t2 !== "markdown";
         $("pvWrapBtn").innerHTML = state.pvWrap
-            ? '<i class="fa-solid fa-arrows-left-right-to-line"></i> 不换行'
-            : '<i class="fa-solid fa-arrows-left-right"></i> 自动换行';
-        $("pvZoomBtn").hidden = (t !== "image" && !(t === "svg" && !state.pvSource));
+            ? '<i class="fa-solid fa-arrows-left-right-to-line"></i> ' + escapeHtml(t("docs_wrap_off", "不换行"))
+            : '<i class="fa-solid fa-arrows-left-right"></i> ' + escapeHtml(t("docs_wrap_on", "自动换行"));
+        $("pvZoomBtn").hidden = (t2 !== "image" && !(t2 === "svg" && !state.pvSource));
 
-        body.className = "pv-body mode-" + (t === "image" || t === "svg" ? (state.pvSource ? "text" : "media")
-            : t === "video" || t === "audio" || t === "pdf" ? "media"
-            : t === "text" || t === "markdown" ? "text" : "fallback");
+        body.className = "pv-body mode-" + (t2 === "image" || t2 === "svg" ? (state.pvSource ? "text" : "media")
+            : t2 === "video" || t2 === "audio" || t2 === "pdf" ? "media"
+            : t2 === "text" || t2 === "markdown" ? "text" : "fallback");
 
         resetZoomFn = function () { };
         var token = ++state.seq;
-        if (t === "image") buildImageView(node, fullPath, body, false);
-        else if (t === "svg") {
+        if (t2 === "image") buildImageView(node, fullPath, body, false);
+        else if (t2 === "svg") {
             if (state.pvSource) buildTextView(node, fullPath, body, token, "xml");
             else buildImageView(node, fullPath, body, true);
         }
-        else if (t === "video") buildVideoView(node, fullPath, body);
-        else if (t === "audio") buildAudioView(node, fullPath, body);
-        else if (t === "pdf") buildPdfView(node, fullPath, body);
-        else if (t === "markdown") buildMarkdownView(node, fullPath, body, token);
-        else if (t === "text") buildTextView(node, fullPath, body, token, node.e);
+        else if (t2 === "video") buildVideoView(node, fullPath, body);
+        else if (t2 === "audio") buildAudioView(node, fullPath, body);
+        else if (t2 === "pdf") buildPdfView(node, fullPath, body);
+        else if (t2 === "markdown") buildMarkdownView(node, fullPath, body, token);
+        else if (t2 === "text") buildTextView(node, fullPath, body, token, node.e);
         else buildFallbackView(node, body);
     }
 
@@ -463,7 +488,7 @@
         img.addEventListener("error", function () {
             body.innerHTML = "";
             body.className = "pv-body mode-fallback";
-            buildErrorView(body, urlOf(fullPath), "图片加载失败");
+            buildErrorView(body, urlOf(fullPath), t("docs_img_fail", "图片加载失败"));
         });
     }
 
@@ -476,7 +501,7 @@
         v.addEventListener("error", function () {
             body.innerHTML = "";
             body.className = "pv-body mode-fallback";
-            buildErrorView(body, urlOf(fullPath), "浏览器不支持直接播放该视频格式（如 MOV），请下载后播放");
+            buildErrorView(body, urlOf(fullPath), t("docs_video_fail", "浏览器不支持直接播放该视频格式（如 MOV），请下载后播放"));
         });
         body.appendChild(v);
     }
@@ -492,7 +517,7 @@
         a.src = urlOf(fullPath);
         a.addEventListener("error", function () {
             box.innerHTML = "";
-            buildErrorView(body, urlOf(fullPath), "浏览器不支持该音频格式");
+            buildErrorView(body, urlOf(fullPath), t("docs_audio_fail", "浏览器不支持该音频格式"));
         });
         box.appendChild(a);
         body.appendChild(box);
@@ -509,7 +534,7 @@
     function buildTextView(node, fullPath, body, token, ext) {
         var pre = document.createElement("pre");
         pre.className = "pv-pre" + (state.pvWrap ? " wrap" : "");
-        pre.textContent = "加载中…";
+        pre.textContent = t("docs_loading_text", "加载中…");
         body.appendChild(pre);
         fetch(urlOf(fullPath)).then(function (r) {
             if (!r.ok) throw new Error("HTTP " + r.status);
@@ -531,7 +556,7 @@
             if (truncated) {
                 var note = document.createElement("div");
                 note.className = "pv-truncnote";
-                note.textContent = "文件较大，仅显示前 " + TEXT_MAX_CHARS / 1024 / 1024 + " MB，完整内容请下载查看。";
+                note.textContent = tpl("docs_trunc_note", "文件较大，仅显示前 {n} MB，完整内容请下载查看。", { n: TEXT_MAX_CHARS / 1024 / 1024 });
                 body.appendChild(note);
             }
         }).catch(function () {
@@ -539,14 +564,14 @@
             pre.textContent = "";
             body.innerHTML = "";
             body.className = "pv-body mode-fallback";
-            buildErrorView(body, urlOf(fullPath), "文本内容加载失败");
+            buildErrorView(body, urlOf(fullPath), t("docs_text_fail", "文本内容加载失败"));
         });
     }
 
     function buildMarkdownView(node, fullPath, body, token) {
         var box = document.createElement("div");
         box.className = "pv-md";
-        box.textContent = "加载中…";
+        box.textContent = t("docs_loading_text", "加载中…");
         body.appendChild(box);
         fetch(urlOf(fullPath)).then(function (r) {
             if (!r.ok) throw new Error("HTTP " + r.status);
@@ -565,7 +590,7 @@
             if (token !== state.seq) return;
             body.innerHTML = "";
             body.className = "pv-body mode-fallback";
-            buildErrorView(body, urlOf(fullPath), "Markdown 加载失败");
+            buildErrorView(body, urlOf(fullPath), t("docs_md_fail", "Markdown 加载失败"));
         });
         function showRaw(el, text) {
             el.innerHTML = "";
@@ -596,17 +621,17 @@
     }
 
     function buildFallbackView(node, body) {
-        var meta = TYPE_META[typeOf(node)];
+        var t2 = typeOf(node), meta = TYPE_META[t2];
         var box = document.createElement("div");
         box.className = "pv-fallback";
         box.innerHTML =
             '<i class="' + meta.icon + '"></i>' +
             '<div class="pv-fb-name"></div>' +
-            '<div class="pv-fb-meta">' + escapeHtml(meta.label) + " · " + formatSize(node.sz) + "</div>" +
-            "<p>该格式暂不支持网页内预览</p>" +
+            '<div class="pv-fb-meta">' + escapeHtml(typeLabel(t2)) + " · " + formatSize(node.sz) + "</div>" +
+            "<p>" + escapeHtml(t("docs_unsupported", "该格式暂不支持网页内预览")) + "</p>" +
             '<div class="pv-fb-btns">' +
-            '<a class="fm-btn primary" href="' + escapeHtml(urlOf(node._p)) + '" download="' + escapeHtml(node.n) + '"><i class="fa-solid fa-download"></i> 下载文件</a>' +
-            '<a class="fm-btn" href="' + escapeHtml(urlOf(node._p)) + '" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> 新窗口打开</a>' +
+            '<a class="fm-btn primary" href="' + escapeHtml(urlOf(node._p)) + '" download="' + escapeHtml(node.n) + '"><i class="fa-solid fa-download"></i> ' + escapeHtml(t("docs_download_file", "下载文件")) + "</a>" +
+            '<a class="fm-btn" href="' + escapeHtml(urlOf(node._p)) + '" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> ' + escapeHtml(t("docs_open_new", "新窗口打开")) + "</a>" +
             "</div>";
         box.querySelector(".pv-fb-name").textContent = node.n;
         body.appendChild(box);
@@ -619,7 +644,7 @@
             '<i class="fa-solid fa-circle-exclamation"></i>' +
             "<p>" + escapeHtml(msg) + "</p>" +
             '<div class="pv-fb-btns">' +
-            '<a class="fm-btn primary" href="' + escapeHtml(url) + '" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> 新窗口打开</a>' +
+            '<a class="fm-btn primary" href="' + escapeHtml(url) + '" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> ' + escapeHtml(t("docs_open_new", "新窗口打开")) + "</a>" +
             "</div>";
         body.appendChild(box);
     }
@@ -670,7 +695,6 @@
             if (!img || img.tagName !== "IMG") return;
             var thumb = img.closest(".fm-thumb");
             if (thumb) {
-                var name = img.getAttribute("src") || "";
                 img.remove();
                 thumb.classList.add("thumb-broken");
                 thumb.innerHTML = '<i class="fa-solid fa-image"></i><span class="fm-ext">?</span>';
@@ -713,13 +737,6 @@
             });
         });
 
-        // 主题切换（与全站 wfls-tt-theme 口径一致）
-        $("themeToggle").addEventListener("click", function () {
-            var dark = document.documentElement.classList.toggle("dark-mode");
-            try { localStorage.setItem("wfls-tt-theme", dark ? "dark" : "light"); } catch (err) { /* 忽略 */ }
-            this.innerHTML = dark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
-        });
-
         // 预览模态
         $("pvOverlay").addEventListener("click", function (e) {
             if (e.target === this) closePreview();
@@ -753,7 +770,9 @@
         $("viewToggle").innerHTML = state.view === "grid"
             ? '<i class="fa-solid fa-list"></i>'
             : '<i class="fa-solid fa-grip"></i>';
-        $("viewToggle").title = state.view === "grid" ? "切换为列表视图" : "切换为网格视图";
+        $("viewToggle").title = state.view === "grid"
+            ? t("docs_view_list", "切换为列表视图")
+            : t("docs_view_grid", "切换为网格视图");
     }
 
     /* ---------- 加载 / 错误态 ---------- */
@@ -774,9 +793,9 @@
         var err = $("fmError");
         err.innerHTML =
             '<i class="fa-solid fa-triangle-exclamation"></i>' +
-            "<p>未能加载 Assets/manifest.json</p>" +
-            '<p class="fm-err-hint">该文件在部署时由 deploy 工作流自动生成；本地开发请先运行：<code>python tools/gen_assets_manifest.py</code></p>' +
-            '<button type="button" class="fm-btn primary" id="fmRetry"><i class="fa-solid fa-rotate-right"></i> 重试</button>';
+            "<p>" + escapeHtml(t("docs_err_title", "未能加载 Assets/manifest.json")) + "</p>" +
+            '<p class="fm-err-hint">' + escapeHtml(t("docs_err_hint", "该文件在部署时由 deploy 工作流自动生成；本地开发请先运行：")) + '<code>python tools/gen_assets_manifest.py</code></p>' +
+            '<button type="button" class="fm-btn primary" id="fmRetry"><i class="fa-solid fa-rotate-right"></i> ' + escapeHtml(t("docs_retry", "重试")) + "</button>";
         err.hidden = false;
         $("fmRetry").addEventListener("click", function () { loadManifest(false); });
     }
@@ -799,14 +818,38 @@
         });
     }
 
+    /* ---------- i18n 重刷（common.js setLanguage 回调 + 初始化时兜底） ---------- */
+
+    function reapplyI18n() {
+        var input = $("fmSearch");
+        if (input) {
+            input.placeholder = t("docs_search_ph", "在当前目录筛选…");
+            input.setAttribute("aria-label", t("docs_search_ph", "在当前目录筛选…"));
+        }
+        var crumbs = $("fmCrumbs");
+        if (crumbs) crumbs.setAttribute("aria-label", t("docs_crumb_aria", "目录路径"));
+        var chips = $("fmChips");
+        if (chips) chips.setAttribute("aria-label", t("docs_filter_aria", "按类型筛选"));
+        var dialog = $("pvDialog");
+        if (dialog) dialog.setAttribute("aria-label", t("docs_pv_dialog", "文件预览"));
+        var loadingP = document.querySelector("#fmLoading p");
+        if (loadingP) loadingP.textContent = t("docs_loading", "正在扫描 Assets 目录…");
+        updateViewToggle();
+        if (state.manifest) renderCurrent();
+        if (state.preview) renderPreview();
+        var err = $("fmError");
+        if (err && !err.hidden) setError();
+    }
+    window.docsBrowserReapplyI18n = reapplyI18n;
+
     /* ---------- 启动 ---------- */
 
     function init() {
-        // 主题图标与 localStorage 口径对齐（页面头部 boot 脚本已先行设置 dark-mode class）
-        var dark = document.documentElement.classList.contains("dark-mode");
-        $("themeToggle").innerHTML = dark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
         updateViewToggle();
         bindEvents();
+        // common.js 的 setLanguage 在 docs-browser.js 加载前已执行过一次，
+        // 这里补一次同步，保证 en 用户的 placeholder / 动态文案就位
+        reapplyI18n();
         loadManifest(false);
     }
 

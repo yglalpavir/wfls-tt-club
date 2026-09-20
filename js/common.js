@@ -136,7 +136,7 @@ async function fetchJsonWithProgress(url, onProgress) {
 
 const i18n = {
     zh: {
-        site_title: "武汉外国语学校乒乓球社团 | WFLS Table Tennis Club", nav_home: "Home", nav_news: "News", nav_competitions: "Competitions", nav_contact: "Contact", nav_more: "More... <i class='fa-solid fa-chevron-down'></i>", nav_members: "社团骨干", nav_data_viz: "数据可视化 <span class='beta-tag'>Beta</span>", nav_season_review: "赛季总结", nav_personal: "个人数据", nav_qa: "Q&A", nav_changelog: "更新日志", lang_btn: "EN",
+        site_title: "武汉外国语学校乒乓球社团 | WFLS Table Tennis Club", nav_home: "Home", nav_news: "News", nav_competitions: "Competitions", nav_contact: "Contact", nav_more: "More... <i class='fa-solid fa-chevron-down'></i>", nav_members: "社团骨干", nav_data_viz: "数据可视化 <span class='beta-tag'>Beta</span>", nav_season_review: "赛季总结", nav_personal: "个人数据", nav_qa: "Q&A", nav_changelog: "更新日志", nav_docs: "网站文档", lang_btn: "EN",
         hero_title: "武汉外国语学校<br><span class='hero-title-accent'>乒乓球社团</span>", hero_slogan: "挥拍逐梦，旋转青春", hero_btn_about: "了解社团 <i class='fa-solid fa-arrow-right'></i>", hero_btn_join: "加入我们 <i class='fa-solid fa-plus'></i>", scroll: "Scroll",
         side_home: "首页", side_philosophy: "社团理念", side_activities: "社团活动", side_members: "社团骨干", side_news: "最新动态", side_competitions: "赛事信息",
         philosophy_tag: "Philosophy", philosophy_title: "社团理念", philosophy_desc: "我们的核心价值观与指导思想",
@@ -197,6 +197,22 @@ const i18n = {
         rank_view_player_page: "查看个人数据页", rank_click_detail: "点击查看积分明细",
         rank_season_expired: "当前日期已超出最后一个赛季（{date}）：新比赛会暂计入该赛季的延伸区间，但不会触发跨赛季积分继承。请在 data/seasons.json 中创建新赛季。",
         changelog_page_title: "更新日志 | WFLS Table Tennis Club", changelog_hero_tag: "Changelog", changelog_hero_title: "更新日志", changelog_hero_desc: "版本历史 · 功能更新 · 问题修复", changelog_list_tag: "Version History", changelog_list_title: "版本历史", changelog_empty: "暂无更新日志",
+        docs_page_title: "网站文档 | WFLS Table Tennis Club", docs_title: "网站文档", docs_desc: "浏览与预览站点文档与静态资源：图片 · 视频 · 音频 · PDF · 文本代码",
+        docs_search_ph: "在当前目录筛选…", docs_loading: "正在扫描 Assets 目录…", docs_retry: "重试",
+        docs_err_title: "未能加载 Assets/manifest.json", docs_err_hint: "该文件在部署时由 deploy 工作流自动生成；本地开发请先运行：",
+        docs_view_list: "切换为列表视图", docs_view_grid: "切换为网格视图", docs_refresh: "重新扫描 Assets",
+        docs_filter_aria: "按类型筛选", docs_crumb_aria: "目录路径", docs_pv_dialog: "文件预览",
+        docs_unit_dirs: "{n} 个子文件夹", docs_unit_files: "{n} 个文件", docs_folder_empty: "空文件夹",
+        docs_empty_dir: "此文件夹为空", docs_empty_search: "没有匹配「{q}」的条目",
+        docs_type_folder: "文件夹", docs_type_image: "图片", docs_type_svg: "SVG 矢量图", docs_type_video: "视频", docs_type_audio: "音频", docs_type_pdf: "PDF 文档", docs_type_markdown: "Markdown", docs_type_text: "文本/代码", docs_type_sheet: "表格", docs_type_doc: "Word 文档", docs_type_ppt: "PPT 演示", docs_type_archive: "压缩包", docs_type_other: "文件",
+        docs_f_all: "全部", docs_f_image: "图片", docs_f_video: "视频", docs_f_audio: "音频", docs_f_text: "文本/代码", docs_f_doc: "文档",
+        docs_pv_source: "查看源码", docs_pv_rendered: "图片预览", docs_wrap_on: "自动换行", docs_wrap_off: "不换行",
+        docs_pv_zoom_reset: "复位缩放（双击图片亦可）", docs_open_new: "新窗口打开", docs_download: "下载", docs_download_file: "下载文件",
+        docs_close: "关闭（Esc）", docs_prev: "上一个（←）", docs_next: "下一个（→）",
+        docs_pv_hint: "<kbd>Esc</kbd> 关闭 · <kbd>←</kbd><kbd>→</kbd> 切换 · 图片支持滚轮缩放 / 拖动平移 / 双击复位",
+        docs_unsupported: "该格式暂不支持网页内预览", docs_loading_text: "加载中…",
+        docs_img_fail: "图片加载失败", docs_video_fail: "浏览器不支持直接播放该视频格式（如 MOV），请下载后播放", docs_audio_fail: "浏览器不支持该音频格式", docs_text_fail: "文本内容加载失败", docs_md_fail: "Markdown 加载失败",
+        docs_trunc_note: "文件较大，仅显示前 {n} MB，完整内容请下载查看。",
         tag_release: "正式发布", tag_feature: "新功能", tag_fix: "修复",
         draws_tab_content: "赛事详情", draws_tab_bracket: "对阵表",
         wtt_hero_desc: "WTT 排名查询 · 点击姓名查看积分明细", wtt_dataviz_title: "WTT 数据可视化", wtt_dataviz_btn: "查看 WTT 数据可视化", wtt_personal_title: "WTT 个人数据", wtt_personal_btn: "查看 WTT 个人数据", wtt_table_title: "WTT 积分数据表", wtt_loading: "正在加载 WTT 数据...", wtt_click_detail: "点击查看积分明细", wtt_error_fail: "WTT排名数据加载失败，请刷新页面重试",
@@ -315,7 +331,7 @@ const i18n = {
         md_occurrence: "当日第 {n} 场"
     },
     en: {
-        site_title: "WFLS Table Tennis Club | Wuhan Foreign Languages School", nav_home: "Home", nav_news: "News", nav_competitions: "Competitions", nav_contact: "Contact", nav_more: "More... <i class='fa-solid fa-chevron-down'></i>", nav_members: "Core Members", nav_data_viz: "Data Viz <span class='beta-tag'>Beta</span>", nav_season_review: "Season Review", nav_personal: "Personal Stats", nav_qa: "Q&A", nav_changelog: "Changelog", lang_btn: "中文",
+        site_title: "WFLS Table Tennis Club | Wuhan Foreign Languages School", nav_home: "Home", nav_news: "News", nav_competitions: "Competitions", nav_contact: "Contact", nav_more: "More... <i class='fa-solid fa-chevron-down'></i>", nav_members: "Core Members", nav_data_viz: "Data Viz <span class='beta-tag'>Beta</span>", nav_season_review: "Season Review", nav_personal: "Personal Stats", nav_qa: "Q&A", nav_changelog: "Changelog", nav_docs: "docs", lang_btn: "中文",
         hero_title: "Wuhan Foreign Languages School<br><span class='hero-title-accent'>Table Tennis Club</span>", hero_slogan: "Swing for dreams, spin for youth", hero_btn_about: "About Us <i class='fa-solid fa-arrow-right'></i>", hero_btn_join: "Join Us <i class='fa-solid fa-plus'></i>", scroll: "Scroll",
         side_home: "Home", side_philosophy: "Philosophy", side_activities: "Activities", side_members: "Members", side_news: "News", side_competitions: "Competitions",
         philosophy_tag: "Philosophy", philosophy_title: "Philosophy", philosophy_desc: "Our core values and guiding principles",
@@ -376,6 +392,22 @@ const i18n = {
         rank_view_player_page: "View personal page", rank_click_detail: "Click for score details",
         rank_season_expired: "Today is past the last season ({date}): new matches are counted into that season's extension, but cross-season inheritance will not apply. Create a new season in data/seasons.json.",
         changelog_page_title: "Changelog | WFLS Table Tennis Club", changelog_hero_tag: "Changelog", changelog_hero_title: "Changelog", changelog_hero_desc: "Version History · Features · Bug Fixes", changelog_list_tag: "Version History", changelog_list_title: "Version History", changelog_empty: "No changelog entries yet",
+        docs_page_title: "Docs | WFLS Table Tennis Club", docs_title: "Docs", docs_desc: "Browse and preview site documents & static assets: images · videos · audio · PDF · text & code",
+        docs_search_ph: "Filter in current folder…", docs_loading: "Scanning Assets…", docs_retry: "Retry",
+        docs_err_title: "Failed to load Assets/manifest.json", docs_err_hint: "This file is generated at deploy time by the deploy workflow; for local dev run:",
+        docs_view_list: "Switch to list view", docs_view_grid: "Switch to grid view", docs_refresh: "Rescan Assets",
+        docs_filter_aria: "Filter by type", docs_crumb_aria: "Folder path", docs_pv_dialog: "File preview",
+        docs_unit_dirs: "{n} folders", docs_unit_files: "{n} files", docs_folder_empty: "Empty folder",
+        docs_empty_dir: "This folder is empty", docs_empty_search: "No items match “{q}”",
+        docs_type_folder: "Folder", docs_type_image: "Image", docs_type_svg: "SVG vector", docs_type_video: "Video", docs_type_audio: "Audio", docs_type_pdf: "PDF", docs_type_markdown: "Markdown", docs_type_text: "Text/Code", docs_type_sheet: "Spreadsheet", docs_type_doc: "Word doc", docs_type_ppt: "Slides", docs_type_archive: "Archive", docs_type_other: "File",
+        docs_f_all: "All", docs_f_image: "Images", docs_f_video: "Videos", docs_f_audio: "Audio", docs_f_text: "Text/Code", docs_f_doc: "Docs",
+        docs_pv_source: "View source", docs_pv_rendered: "Rendered", docs_wrap_on: "Wrap lines", docs_wrap_off: "No wrap",
+        docs_pv_zoom_reset: "Reset zoom (double-click works too)", docs_open_new: "Open in new tab", docs_download: "Download", docs_download_file: "Download file",
+        docs_close: "Close (Esc)", docs_prev: "Previous (←)", docs_next: "Next (→)",
+        docs_pv_hint: "<kbd>Esc</kbd> close · <kbd>←</kbd><kbd>→</kbd> navigate · scroll to zoom / drag to pan / double-click to reset",
+        docs_unsupported: "This format can't be previewed in the browser", docs_loading_text: "Loading…",
+        docs_img_fail: "Failed to load image", docs_video_fail: "This video format (e.g. MOV) can't be played by the browser — please download it", docs_audio_fail: "This audio format isn't supported by the browser", docs_text_fail: "Failed to load text content", docs_md_fail: "Failed to load Markdown",
+        docs_trunc_note: "Large file — only the first {n} MB is shown. Download to view the full content.",
         tag_release: "Release", tag_feature: "Feature", tag_fix: "Fix",
         draws_tab_content: "Details", draws_tab_bracket: "Bracket",
         wtt_hero_desc: "WTT Rankings · Click a name for score details", wtt_dataviz_title: "WTT Data Visualization", wtt_dataviz_btn: "View WTT Data Visualization", wtt_personal_title: "WTT Personal Stats", wtt_personal_btn: "View WTT Personal Stats", wtt_table_title: "WTT Points Table", wtt_loading: "Loading WTT data...", wtt_click_detail: "Click for score details", wtt_error_fail: "Failed to load WTT rankings. Please refresh and try again.",
@@ -548,6 +580,7 @@ function setLanguage(lang) {
     if (typeof reapplyPersonalStats === 'function') reapplyPersonalStats();
     if (typeof seasonReviewReapplyI18n === 'function') seasonReviewReapplyI18n();
     if (typeof matchDetailReapplyI18n === 'function') matchDetailReapplyI18n();
+    if (typeof docsBrowserReapplyI18n === 'function') docsBrowserReapplyI18n();
 }
 async function updateHeroLastUpdated() { const el = document.getElementById('heroLastUpdated'); if (!el) return; const cached = safeStorage.get('wfls-last-updated'); if (cached) { try { const cd = JSON.parse(cached); if (cd.date && (Date.now() - cd.ts) < 3600000) { el.textContent = currentLang === 'zh' ? `上次更新：${cd.date}` : `Last updated: ${cd.date}`; return; } } catch(e) {} } try { const res = await fetch('https://api.github.com/repos/yglalpavir/wfls-tt-club/commits?per_page=1'); if (res.ok) { const commits = await res.json(); if (commits && commits.length > 0) { const d = new Date(commits[0].commit.committer.date); const ds = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); safeStorage.set('wfls-last-updated', JSON.stringify({ date: ds, ts: Date.now() })); el.textContent = currentLang === 'zh' ? `上次更新：${ds}` : `Last updated: ${ds}`; return; } } } catch(e) { console.warn('GitHub API failed, fallback to about.json'); } if (aboutData && aboutData.lastUpdated) { el.textContent = currentLang === 'zh' ? `上次更新：${aboutData.lastUpdated}` : `Last updated: ${aboutData.lastUpdated}`; } }
 function updateRankingHeaders() { document.querySelectorAll('.ranking-table-full th[data-i18n]').forEach(th => { const key = th.getAttribute('data-i18n'); if (i18n[currentLang] && i18n[currentLang][key]) th.innerHTML = i18n[currentLang][key] + ' <span class="sort-arrow"></span>'; }); }
@@ -2183,7 +2216,7 @@ function escapeHtml(str) {
 function initPdfViewer() { const btn = document.getElementById('pdfViewBtn'), ctr = document.getElementById('pdfPreviewContainer'), ph = document.getElementById('pdfPlaceholder'), vw = document.getElementById('pdfViewer'); if (!btn) return; let loaded = false; btn.addEventListener('click', () => { if (!loaded) { btn.disabled = true; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Loading...'; vw.src = vw.getAttribute('data-src'); loaded = true; vw.onload = () => { btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> ${i18n[currentLang].pdf_preview_btn}`; btn.disabled = false; }; setTimeout(() => { if (btn.disabled) { btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> ${i18n[currentLang].pdf_preview_btn}`; btn.disabled = false; } }, 10000); } if (ctr.style.display === 'none' || !ctr.style.display) { ctr.style.display = 'block'; ph.style.display = 'none'; } else { ctr.style.display = 'none'; ph.style.display = 'flex'; } }); }
 
 function updateSideNavHighlight() { const links = document.querySelectorAll('.side-nav-link, .viz-tab-link'); if (!links.length) return; const pos = window.scrollY + 150; let cur = null; links.forEach(l => { const el = document.querySelector(l.getAttribute('href')); if (!el) return; const top = el.getBoundingClientRect().top + window.scrollY; if (pos >= top) cur = l.getAttribute('data-section'); }); if (!cur) cur = links[0].getAttribute('data-section'); links.forEach(l => l.classList.toggle('active', l.getAttribute('data-section') === cur)); const activeTab = document.querySelector('.viz-tab-link.active'); const tabNav = document.getElementById('vizMobileNav'); if (activeTab && tabNav) { const tl = tabNav.querySelector('.viz-tab-list'); if (tl) tl.scrollTo({ left: Math.max(0, activeTab.offsetLeft - tl.offsetLeft - 12), behavior: 'smooth' }); } }
-function highlightNavByPath() { const cp = window.location.pathname.split('/').pop() || 'index.html'; const anl = document.querySelectorAll('.nav-link:not(.dropdown-toggle)'), dl = document.querySelectorAll('.dropdown-link'); anl.forEach(l => l.classList.remove('active')); dl.forEach(l => l.classList.remove('active')); const dt2 = document.getElementById('moreDropdown'); if (dt2) dt2.classList.remove('active'); anl.forEach(link => { const h = link.getAttribute('href'); if (!h) return; if (h === cp || (cp === '' && h === 'index.html') || (cp === 'index.html' && h === 'index.html') || (cp === 'contact.html' && h === 'contact.html')) link.classList.add('active'); }); if (cp === 'members.html' || cp === 'data_viz.html' || cp === 'personal_stats.html' || cp === 'player.html' || cp === 'qa.html' || cp === 'changelog.html') { if (dt2) dt2.classList.add('active'); dl.forEach(link => { const h = link.getAttribute('href'); if (h === cp || (cp === 'player.html' && h === 'personal_stats.html')) link.classList.add('active'); }); } }
+function highlightNavByPath() { const cp = window.location.pathname.split('/').pop() || 'index.html'; const anl = document.querySelectorAll('.nav-link:not(.dropdown-toggle)'), dl = document.querySelectorAll('.dropdown-link'); anl.forEach(l => l.classList.remove('active')); dl.forEach(l => l.classList.remove('active')); const dt2 = document.getElementById('moreDropdown'); if (dt2) dt2.classList.remove('active'); anl.forEach(link => { const h = link.getAttribute('href'); if (!h) return; if (h === cp || (cp === '' && h === 'index.html') || (cp === 'index.html' && h === 'index.html') || (cp === 'contact.html' && h === 'contact.html')) link.classList.add('active'); }); if (cp === 'members.html' || cp === 'data_viz.html' || cp === 'personal_stats.html' || cp === 'player.html' || cp === 'qa.html' || cp === 'changelog.html' || cp === 'docs.html') { if (dt2) dt2.classList.add('active'); dl.forEach(link => { const h = link.getAttribute('href'); if (h === cp || (cp === 'player.html' && h === 'personal_stats.html')) link.classList.add('active'); }); } }
 
 /* Chart.js 全局现代化默认样式（字体 / 图例 / 提示框 / 网格线） */
 function applyChartDefaults() {

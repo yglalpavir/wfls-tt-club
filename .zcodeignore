@@ -1,0 +1,97 @@
+# ===== Node =====
+node_modules/
+npm-debug.log*
+
+# ===== Python =====
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# ===== IDE =====
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===== AI 助手会话产物（仅本地留存，不入库）=====
+.zcode/
+.opencode/
+
+# ===== 临时/一次性脚本数据（tools/）=====
+tools/tleague_data/
+tools/backup_wd/
+tools/_archive*/
+tools/mtc2025_matchcards.json
+tools/tleague_all.json
+tools/tleague_matches.json
+tools/doha_doubles_raw.txt
+tools/mixedteams2024playerlist copy.txt
+tools/_*_raw.txt
+tools/*.migrated.bak
+# results.ittf.link 抓取临时产物（HTML 原文/结构报告/中间 JSON）
+tools/_probe_out/
+tools/_ittf_2012_work/
+tools/_*_raw.html
+tools/_home_raw.html
+# 站点凭据（绝不入库）
+tools/.ittf_creds.json
+.env
+
+# ===== 原始研究资料（仅本地留存，不随站点发布）=====
+docs/result_ittf_link/
+*.tmp
+
+# ===== 部署面收缩（2026-09）：爬虫/导入器与内部审计只在本地留存，不随站点发布 =====
+# tools/ 仅保留 CI 使用的工具与访客提交流水线工具
+tools/*
+!tools/sync_content.py
+!tools/ci_validate.py
+!tools/generate_meta.py
+!tools/recompute_rankings.js
+!tools/append_submission.py
+!tools/import_submissions_csv.py
+!tools/gen_assets_manifest.py
+# import_submissions_csv.py 的去重状态（tools/* 规则已默认忽略，此处显式声明意图）
+tools/.import-state.json
+# 内部审计与一次性导入记录
+docs/audit-2026-08-implementation.md
+docs/skovde-2001-import-summary.md
+
+# ===== 部署时生成的产物（2026-09-11 起）：不进 git，避免与部署机器人冲突 =====
+# data/api/ 由 deploy 工作流在部署时运行 tools/recompute_rankings.js 现场生成
+data/api/
+# Assets/manifest.json 由 deploy 工作流在部署时运行 tools/gen_assets_manifest.py 现场生成
+# （docs.html 素材库数据源；本地开发需手动运行一次该脚本）
+Assets/manifest.json
+# 本地海报调试预览图，不随站点发布
+.poster-preview/
+
+# ===== ↑ 以上同步自 .gitignore（「从 .gitignore 同步」只重写以上部分）=====
+.git/
+.hg/
+.svn/
+bower_components/
+jspm_packages/
+site-packages/
+coverage/
+htmlcov/
+lcov-report/
+cmakefiles/
+cmake-build-*/
+bazel-*/
+pods/
+deriveddata/
+storybook-static/
+playwright-report/
+test-results/
+allure-results/
+allure-report/
+cdk.out/
+*.dist-info/
+eggs/
+pip-wheel-metadata/
+wheels/
+# ----- ↑ 以上为 ZCode 默认排除规则（自定义规则请写在本行下方，不会被同步/恢复改动）-----
+# 自定义规则写在下方（本行提示可删除）

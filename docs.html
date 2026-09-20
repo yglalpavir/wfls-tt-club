@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>(function(){try{var t=localStorage.getItem("wfls-tt-theme");var d=t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark-mode");}catch(e){}})()</script>
     <meta name="robots" content="noindex, nofollow">
-    <title>素材库 · Assets 文件管理 | WFLS Table Tennis Club</title>
+    <title data-i18n="docs_page_title">网站文档 | WFLS Table Tennis Club</title>
     <link rel="icon" type="image/svg+xml" href="Assets/files/favicon_4DA3FF.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,36 +15,25 @@
     <link rel="stylesheet" href="style.css">
     <style>
         /* ========================================
-           素材库文件管理器（docs.html）
+           网站文档文件管理器（docs.html）
            配色沿用 style.css 的 CSS 变量主题系统，暗色模式自动跟随 .dark-mode
            ======================================== */
-        * { margin:0; padding:0; box-sizing:border-box; }
         [hidden] { display:none !important; }
         body {
-            font-family:"Noto Sans SC","Poppins",sans-serif;
             background:
                 radial-gradient(1100px 480px at 85% -180px, rgba(0,123,255,0.07), transparent 60%),
                 radial-gradient(900px 420px at -10% -160px, rgba(111,66,193,0.05), transparent 60%),
                 var(--bg-light);
-            color:var(--text-primary); min-height:100vh;
+            min-height:100vh;
         }
         .dark-mode body { background:
             radial-gradient(1100px 480px at 85% -180px, rgba(77,163,255,0.09), transparent 60%),
             radial-gradient(900px 420px at -10% -160px, rgba(150,100,255,0.07), transparent 60%),
             var(--bg-light); }
-        .fm-page { max-width:1280px; margin:0 auto; padding:28px clamp(14px, 3vw, 32px) 72px; }
+        .fm-page { max-width:1280px; margin:0 auto; padding:calc(var(--nav-height, 64px) + 26px) clamp(14px, 3vw, 32px) 72px; }
 
         /* ---------- 页头 ---------- */
         .fm-head { display:flex; align-items:center; gap:15px; flex-wrap:wrap; }
-        .fm-logo {
-            width:46px; height:46px; border-radius:14px; flex:none;
-            display:flex; align-items:center; justify-content:center;
-            background:linear-gradient(135deg, var(--primary-blue), #6f42c1);
-            color:#fff; font-size:1.15rem; text-decoration:none;
-            box-shadow:0 6px 16px -4px rgba(0,123,255,0.5);
-            transition:transform 0.2s cubic-bezier(0.4,0,0.2,1);
-        }
-        .fm-logo:hover { transform:translateY(-2px) rotate(-6deg); color:#fff; }
         .fm-titles { flex:1; min-width:200px; }
         .fm-titles h1 {
             font-family:"Poppins","Noto Sans SC",sans-serif; font-weight:800;
@@ -62,6 +51,12 @@
             font-family:"JetBrains Mono",monospace; letter-spacing:0;
         }
         .fm-desc { color:var(--text-muted); font-size:0.84rem; margin-top:4px; }
+        .fm-meta-line {
+            margin-top:7px; font-size:0.7rem; color:var(--text-muted);
+            font-family:"JetBrains Mono","Noto Sans SC",monospace;
+            display:inline-flex; align-items:center; gap:6px;
+        }
+        .fm-meta-line i { font-size:0.62rem; opacity:0.7; }
         .fm-actions { display:flex; align-items:center; gap:9px; flex-wrap:wrap; }
 
         .fm-btn {
@@ -83,21 +78,35 @@
         @keyframes fmSpin { to { transform:rotate(360deg); } }
 
         .fm-search { position:relative; }
-        .fm-search i { position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--text-muted); font-size:0.78rem; pointer-events:none; }
+        .fm-search > i { position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--text-muted); font-size:0.78rem; pointer-events:none; }
         .fm-search input {
-            width:210px; padding:9px 12px 9px 32px; border-radius:11px;
+            width:230px; padding:9px 34px 9px 32px; border-radius:11px;
             border:1px solid var(--border-color); background:var(--bg-white); color:var(--text-primary);
             font-size:0.82rem; font-family:"Noto Sans SC",sans-serif; outline:none;
             transition:border-color 0.2s, box-shadow 0.2s;
         }
         .fm-search input:focus { border-color:var(--primary-blue); box-shadow:0 0 0 3px var(--primary-pale); }
         .fm-search input::-webkit-search-cancel-button { cursor:pointer; }
+        .fm-scope {
+            position:absolute; right:5px; top:50%; transform:translateY(-50%);
+            width:25px; height:25px; border:none; border-radius:7px; cursor:pointer;
+            background:transparent; color:var(--text-muted); font-size:0.72rem;
+            display:flex; align-items:center; justify-content:center; transition:all 0.15s;
+        }
+        .fm-scope:hover { color:var(--primary-blue); background:var(--primary-pale); }
+        .fm-scope.on { color:var(--primary-blue); background:var(--primary-pale); box-shadow:inset 0 0 0 1px var(--primary-blue); }
 
-        /* ---------- 工具栏：面包屑 + 统计 + 类型筛选 ---------- */
+        /* ---------- 工具栏：面包屑 + 统计 + 类型筛选（吸顶） ---------- */
         .fm-toolbar {
             margin-top:20px; background:var(--bg-white); border:1px solid var(--border-color);
             border-radius:16px; box-shadow:var(--shadow-sm); padding:13px 18px;
             display:flex; flex-direction:column; gap:11px;
+            position:sticky; top:calc(var(--nav-height, 64px) + 12px); z-index:40;
+            transition:box-shadow 0.25s ease;
+        }
+        .fm-toolbar.is-stuck { box-shadow:var(--shadow-md); }
+        @supports (backdrop-filter: blur(8px)) {
+            .fm-toolbar { background:color-mix(in srgb, var(--bg-white) 86%, transparent); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); }
         }
         .fm-crumbs-row { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
         .fm-crumbs { display:flex; align-items:center; gap:7px; flex-wrap:wrap; min-width:0; }
@@ -113,7 +122,8 @@
         .crumb-sep { color:var(--border-color); font-size:0.62rem; }
         .dark-mode .crumb-sep { color:var(--text-muted); opacity:0.55; }
         .fm-stats { font-size:0.74rem; color:var(--text-muted); font-family:"JetBrains Mono","Noto Sans SC",monospace; white-space:nowrap; }
-        .fm-chips { display:flex; gap:7px; flex-wrap:wrap; }
+        .fm-chips-row { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+        .fm-chips { display:flex; gap:7px; flex-wrap:wrap; flex:1; min-width:0; }
         .chip {
             display:inline-flex; align-items:center; gap:6px; cursor:pointer;
             padding:5px 12px; border-radius:999px; font-size:0.75rem; font-weight:500;
@@ -126,16 +136,51 @@
         .chip.active b { opacity:0.9; }
         .chip:disabled { opacity:0.4; cursor:not-allowed; }
 
+        /* 排序下拉 */
+        .fm-sort { position:relative; flex:none; }
+        .fm-sort > .fm-btn { padding:6px 12px; font-size:0.76rem; border-radius:999px; background:var(--bg-light); }
+        .fm-sort-menu {
+            position:absolute; right:0; top:calc(100% + 6px); z-index:50; min-width:150px;
+            background:var(--bg-white); border:1px solid var(--border-color); border-radius:12px;
+            box-shadow:var(--shadow-lg, 0 12px 32px -8px rgba(15,23,42,0.25)); padding:6px;
+            animation:pvFade 0.15s ease;
+        }
+        .fm-sort-menu button {
+            display:flex; align-items:center; gap:8px; width:100%; text-align:left;
+            border:none; background:transparent; cursor:pointer; padding:7px 10px; border-radius:8px;
+            font-size:0.78rem; font-family:"Noto Sans SC",sans-serif; color:var(--text-secondary);
+            transition:all 0.12s;
+        }
+        .fm-sort-menu button:hover { background:var(--primary-pale); color:var(--primary-blue); }
+        .fm-sort-menu button.sel { color:var(--primary-blue); font-weight:600; }
+        .fm-sort-menu button .fa-check { margin-left:auto; font-size:0.66rem; visibility:hidden; }
+        .fm-sort-menu button.sel .fa-check { visibility:visible; }
+        .fm-sort-sep { height:1px; background:var(--border-color); margin:5px 8px; }
+
         /* ---------- 列表主体 ---------- */
         .fm-main { margin-top:18px; }
         .fm-state { text-align:center; padding:96px 20px; color:var(--text-muted); }
         .fm-state > i { font-size:2.1rem; margin-bottom:16px; display:block; opacity:0.55; }
         .fm-state p { font-size:0.9rem; margin-bottom:8px; }
+        .fm-state.is-skel { padding:6px 0 40px; }
+        .fm-state.is-skel > p { text-align:center; margin-top:22px; }
         .fm-state .loading-ring {
             width:50px; height:50px; margin:0 auto 18px; border-radius:50%;
             border:3px solid var(--border-color); border-top-color:var(--primary-blue);
             animation:fmSpin 0.85s linear infinite;
         }
+        /* 骨架屏 */
+        .fm-skel-grid { display:grid; gap:14px; grid-template-columns:repeat(auto-fill, minmax(172px, 1fr)); text-align:left; }
+        .fm-skel { background:var(--bg-white); border:1px solid var(--border-color); border-radius:15px; overflow:hidden; box-shadow:var(--shadow-sm); }
+        .fm-skel-thumb { height:116px; }
+        .fm-skel-line { height:10px; border-radius:5px; margin:10px 12px 0; }
+        .fm-skel-line.w70 { width:70%; }
+        .fm-skel-line.w45 { width:45%; margin-bottom:13px; }
+        .fm-skel-thumb, .fm-skel-line {
+            background:linear-gradient(100deg, var(--bg-lighter) 38%, var(--bg-white) 50%, var(--bg-lighter) 62%);
+            background-size:220% 100%; animation:fmShimmer 1.5s ease infinite;
+        }
+        @keyframes fmShimmer { from { background-position:135% 0; } to { background-position:-85% 0; } }
         .fm-err-hint { font-size:0.8rem; color:var(--text-muted); }
         .fm-err-hint code {
             font-family:"JetBrains Mono",monospace; font-size:0.76rem; color:var(--primary-blue);
@@ -146,6 +191,14 @@
         .fm-empty { text-align:center; padding:70px 20px; color:var(--text-muted); }
         .fm-empty i { font-size:1.9rem; margin-bottom:14px; display:block; opacity:0.5; }
         .fm-empty p { font-size:0.86rem; }
+        .fm-empty .fm-btn { margin-top:14px; }
+
+        /* 搜索命中高亮 */
+        .fm-hl {
+            background:rgba(240,165,0,0.32); color:inherit; border-radius:3px;
+            padding:0 1px; box-shadow:0 0 0 1px rgba(240,165,0,0.25);
+        }
+        .dark-mode .fm-hl { background:rgba(240,165,0,0.42); color:#fff; }
 
         .fm-grid {
             display:grid; gap:14px;
@@ -160,6 +213,7 @@
             transform:translateY(-3px); box-shadow:var(--shadow-md);
             border-color:var(--primary-blue); outline:none;
         }
+        .fm-item:focus-visible, .fm-row:focus-visible { outline:2px solid var(--primary-blue); outline-offset:2px; }
         .fm-thumb {
             height:116px; display:flex; align-items:center; justify-content:center;
             background:
@@ -167,6 +221,7 @@
             border-bottom:1px solid var(--border-color); position:relative; overflow:hidden;
         }
         .fm-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+        .fm-thumb svg, .fm-thumb video { width:100%; height:100%; object-fit:cover; display:block; }
         .fm-thumb > i { font-size:2rem; opacity:0.9; }
         .fm-item.is-folder .fm-thumb > i { color:var(--primary-blue); opacity:0.85; filter:drop-shadow(0 4px 8px rgba(0,123,255,0.25)); }
         .fm-item.is-folder .fm-thumb {
@@ -196,8 +251,13 @@
         }
         .fm-row:last-child { border-bottom:none; }
         .fm-row:hover, .fm-row:focus-visible { background:var(--primary-pale); outline:none; }
-        .fm-row-icon { width:30px; height:30px; border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:0.82rem; }
+        .fm-row-icon { width:30px; height:30px; border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:0.82rem; flex:none; }
+        .fm-row-namecell { min-width:0; display:flex; flex-direction:column; gap:1px; }
         .fm-row-name { font-family:"JetBrains Mono","Noto Sans SC",monospace; font-size:0.78rem; font-weight:600; color:var(--text-primary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+        .fm-row-path {
+            font-family:"JetBrains Mono",monospace; font-size:0.64rem; color:var(--text-muted);
+            white-space:nowrap; overflow:hidden; text-overflow:ellipsis; opacity:0.85;
+        }
         .fm-row-kind { font-size:0.72rem; color:var(--text-secondary); }
         .fm-row-size { font-size:0.72rem; color:var(--text-muted); font-family:"JetBrains Mono","Noto Sans SC",monospace; text-align:right; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
         .fm-row-go { color:var(--text-muted); font-size:0.66rem; opacity:0; transition:opacity 0.15s; }
@@ -225,7 +285,7 @@
 
         /* ---------- 预览模态 ---------- */
         .pv-overlay {
-            position:fixed; inset:0; z-index:1000; display:flex; align-items:center; justify-content:center;
+            position:fixed; inset:0; z-index:2000; display:flex; align-items:center; justify-content:center;
             background:rgba(10,14,25,0.62); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
             padding:18px; animation:pvFade 0.2s ease;
         }
@@ -348,20 +408,61 @@
         }
         .pv-nav-btn:hover:not(:disabled) { border-color:var(--primary-blue); color:var(--primary-blue); }
         .pv-nav-btn:disabled { opacity:0.35; cursor:not-allowed; }
-        .pv-pos { font-family:"JetBrains Mono",monospace; font-size:0.75rem; font-weight:600; color:var(--text-secondary); }
+        .pv-pos { font-family:"JetBrains Mono",monospace; font-size:0.75rem; font-weight:600; color:var(--text-secondary); white-space:nowrap; }
         .pv-hint { margin-left:auto; font-size:0.7rem; color:var(--text-muted); }
         .pv-hint kbd {
             font-family:"JetBrains Mono",monospace; font-size:0.64rem; border:1px solid var(--border-color);
             border-bottom-width:2px; border-radius:5px; padding:1px 5px; background:var(--bg-light); color:var(--text-secondary);
         }
 
+        /* 预览底部缩略图条 */
+        .pv-strip {
+            flex:1; min-width:0; display:flex; gap:6px; overflow-x:auto; padding:3px 2px;
+            scrollbar-width:thin; scroll-behavior:smooth;
+        }
+        .pv-strip::-webkit-scrollbar { height:4px; }
+        .pv-strip::-webkit-scrollbar-thumb { background:var(--border-color); border-radius:2px; }
+        .pv-thumb {
+            width:38px; height:38px; flex:none; border-radius:9px; cursor:pointer; padding:0;
+            border:2px solid var(--border-color); background:var(--bg-light); color:var(--text-muted);
+            display:flex; align-items:center; justify-content:center; font-size:0.78rem;
+            overflow:hidden; position:relative; transition:border-color 0.15s, transform 0.15s;
+        }
+        .pv-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+        .pv-thumb:hover { border-color:var(--primary-blue); transform:translateY(-1px); }
+        .pv-thumb.active { border-color:var(--primary-blue); box-shadow:0 0 0 2px var(--primary-pale); }
+        .pv-thumb.active::after {
+            content:""; position:absolute; left:0; right:0; bottom:0; height:3px; background:var(--primary-blue);
+        }
+        .pv-thumb.active img + i, .pv-thumb img { pointer-events:none; }
+
+        /* 全局轻提示 */
+        .fm-toast {
+            position:fixed; left:50%; bottom:30px; z-index:3000; transform:translate(-50%, 14px);
+            background:rgba(15,23,42,0.92); color:#fff; font-size:0.8rem; font-weight:500;
+            padding:9px 18px; border-radius:999px; box-shadow:var(--shadow-xl);
+            opacity:0; pointer-events:none; transition:opacity 0.2s ease, transform 0.2s ease;
+            display:flex; align-items:center; gap:8px; max-width:86vw;
+        }
+        .fm-toast i { color:#4ade80; font-size:0.78rem; }
+        .fm-toast.show { opacity:1; transform:translate(-50%, 0); }
+        .dark-mode .fm-toast { background:rgba(241,245,249,0.95); color:#0f172a; }
+        .dark-mode .fm-toast i { color:#16a34a; }
+
         /* ---------- 响应式 ---------- */
         @media (max-width:768px) {
-            .fm-page { padding:20px 12px 56px; }
+            .fm-page { padding:calc(var(--nav-height, 64px) + 16px) 12px 56px; }
             .fm-search { order:10; width:100%; }
             .fm-search input { width:100%; }
-            .fm-toolbar { padding:11px 13px; }
+            .fm-toolbar { padding:11px 13px; top:calc(var(--nav-height, 64px) + 8px); }
+            .fm-crumbs { flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; max-width:100%; }
+            .fm-crumbs::-webkit-scrollbar { display:none; }
+            .fm-chips { flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; padding-bottom:2px; }
+            .fm-chips::-webkit-scrollbar { display:none; }
+            .fm-chips-row { flex-wrap:nowrap; }
             .fm-grid { grid-template-columns:repeat(auto-fill, minmax(138px, 1fr)); gap:10px; }
+            .fm-skel-grid { grid-template-columns:repeat(auto-fill, minmax(138px, 1fr)); gap:10px; }
+            .fm-skel-thumb { height:96px; }
             .fm-thumb { height:96px; }
             .fm-row { grid-template-columns:34px minmax(0,1fr) 84px; padding:9px 12px; }
             .fm-row-kind, .fm-row-go { display:none; }
@@ -370,44 +471,62 @@
             .pv-dialog { width:100vw; height:100dvh; border-radius:0; border:none; }
             .pv-actions .fm-btn { padding:8px 10px; font-size:0.76rem; }
             .pv-hint { display:none; }
+            .pv-thumb { width:34px; height:34px; }
+            .pv-foot { flex-wrap:wrap; }
         }
     </style>
 </head>
 <body>
-<noscript><div style="padding:10px;text-align:center;background:#b91c1c;color:#fff;font-size:0.9rem;">本站需要启用 JavaScript 才能加载素材库数据。This site requires JavaScript to load data.</div></noscript>
+<noscript><div style="padding:10px;text-align:center;background:#b91c1c;color:#fff;font-size:0.9rem;">本站需要启用 JavaScript 才能加载文档数据。This site requires JavaScript to load data.</div></noscript>
+    <script src="js/shared-partials.js" data-partial="nav"></script>
 
 <div class="fm-page">
     <header class="fm-head">
-        <a href="admin.html" class="fm-logo" title="返回管理后台">
-            <i class="fa-solid fa-table-tennis-paddle-ball"></i>
-        </a>
         <div class="fm-titles">
-            <h1><span class="h1-dot"></span>素材库 <span class="fm-sub">Assets/</span></h1>
-            <p class="fm-desc">浏览与预览站点静态资源：图片 · 视频 · 音频 · PDF · 文本代码</p>
+            <h1><span class="h1-dot"></span><span data-i18n="docs_title">网站文档</span> <span class="fm-sub">Assets/</span></h1>
+            <p class="fm-desc" data-i18n="docs_desc">浏览与预览站点文档与静态资源：图片 · 视频 · 音频 · PDF · 文本代码</p>
+            <span class="fm-meta-line" id="fmMeta" hidden></span>
         </div>
         <div class="fm-actions">
             <div class="fm-search">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="search" id="fmSearch" placeholder="在当前目录筛选…" aria-label="筛选文件">
+                <input type="search" id="fmSearch" placeholder="在当前目录筛选…" aria-label="筛选文件" autocomplete="off">
+                <button type="button" class="fm-scope" id="scopeToggle" title="搜索范围：当前目录"><i class="fa-solid fa-folder-tree"></i></button>
             </div>
             <button type="button" class="fm-btn icon-only" id="viewToggle" title="切换视图"><i class="fa-solid fa-list"></i></button>
-            <button type="button" class="fm-btn icon-only" id="refreshBtn" title="重新扫描 Assets"><i class="fa-solid fa-rotate"></i></button>
-            <button type="button" class="fm-btn icon-only" id="themeToggle" title="切换主题" aria-label="切换主题"><i class="fa-solid fa-moon"></i></button>
+            <button type="button" class="fm-btn icon-only" id="refreshBtn" title="重新扫描 Assets" data-i18n-title="docs_refresh"><i class="fa-solid fa-rotate"></i></button>
         </div>
     </header>
 
     <div class="fm-toolbar">
         <div class="fm-crumbs-row">
             <nav class="fm-crumbs" id="fmCrumbs" aria-label="目录路径"></nav>
-            <span class="fm-stats" id="fmStats"></span>
+            <span class="fm-stats" id="fmStats" aria-live="polite"></span>
         </div>
-        <div class="fm-chips" id="fmChips" role="group" aria-label="按类型筛选"></div>
+        <div class="fm-chips-row">
+            <div class="fm-chips" id="fmChips" role="group" aria-label="按类型筛选"></div>
+            <div class="fm-sort" id="fmSort">
+                <button type="button" class="fm-btn" id="sortBtn" aria-haspopup="menu" aria-expanded="false">
+                    <i class="fa-solid fa-arrow-down-a-z" id="sortDirIcon"></i><span id="sortBtnLabel">名称</span>
+                </button>
+                <div class="fm-sort-menu" id="sortMenu" role="menu" hidden></div>
+            </div>
+        </div>
     </div>
 
     <main class="fm-main">
-        <div class="fm-state" id="fmLoading">
-            <div class="loading-ring"></div>
-            <p>正在扫描 Assets 目录…</p>
+        <div class="fm-state is-skel" id="fmLoading">
+            <div class="fm-skel-grid" aria-hidden="true">
+                <div class="fm-skel"><div class="fm-skel-thumb"></div><div class="fm-skel-line w70"></div><div class="fm-skel-line w45"></div></div>
+                <div class="fm-skel"><div class="fm-skel-thumb"></div><div class="fm-skel-line w70"></div><div class="fm-skel-line w45"></div></div>
+                <div class="fm-skel"><div class="fm-skel-thumb"></div><div class="fm-skel-line w70"></div><div class="fm-skel-line w45"></div></div>
+                <div class="fm-skel"><div class="fm-skel-thumb"></div><div class="fm-skel-line w70"></div><div class="fm-skel-line w45"></div></div>
+                <div class="fm-skel"><div class="fm-skel-thumb"></div><div class="fm-skel-line w70"></div><div class="fm-skel-line w45"></div></div>
+                <div class="fm-skel"><div class="fm-skel-thumb"></div><div class="fm-skel-line w70"></div><div class="fm-skel-line w45"></div></div>
+                <div class="fm-skel"><div class="fm-skel-thumb"></div><div class="fm-skel-line w70"></div><div class="fm-skel-line w45"></div></div>
+                <div class="fm-skel"><div class="fm-skel-thumb"></div><div class="fm-skel-line w70"></div><div class="fm-skel-line w45"></div></div>
+            </div>
+            <p data-i18n="docs_loading">正在扫描 Assets 目录…</p>
         </div>
         <div class="fm-state" id="fmError" hidden></div>
         <div id="fmListing" hidden>
@@ -420,7 +539,7 @@
 
 <!-- 预览模态 -->
 <div class="pv-overlay" id="pvOverlay" hidden>
-    <div class="pv-dialog" role="dialog" aria-modal="true" aria-label="文件预览">
+    <div class="pv-dialog" role="dialog" aria-modal="true" aria-label="文件预览" id="pvDialog">
         <div class="pv-head">
             <span class="pv-fileicon t-other" id="pvIcon"><i class="fa-solid fa-file"></i></span>
             <div class="pv-titles">
@@ -430,22 +549,31 @@
             <div class="pv-actions">
                 <button type="button" class="fm-btn" id="pvSourceBtn" hidden></button>
                 <button type="button" class="fm-btn" id="pvWrapBtn" hidden></button>
-                <button type="button" class="fm-btn icon-only" id="pvZoomBtn" hidden title="复位缩放（双击图片亦可）"><i class="fa-solid fa-compress"></i></button>
-                <a class="fm-btn icon-only" id="pvOpen" href="#" target="_blank" rel="noopener" title="新窗口打开"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                <a class="fm-btn icon-only" id="pvDownload" href="#" title="下载"><i class="fa-solid fa-download"></i></a>
-                <button type="button" class="pv-close" id="pvClose" title="关闭（Esc）" aria-label="关闭预览">&times;</button>
+                <button type="button" class="fm-btn icon-only" id="pvCopyText" hidden title="复制全文" data-i18n-title="docs_copy_text"><i class="fa-solid fa-copy"></i></button>
+                <button type="button" class="fm-btn icon-only" id="pvZoomBtn" hidden title="复位缩放（双击图片亦可）" data-i18n-title="docs_pv_zoom_reset"><i class="fa-solid fa-compress"></i></button>
+                <button type="button" class="fm-btn icon-only" id="pvCopyLink" title="复制链接" data-i18n-title="docs_copy_link"><i class="fa-solid fa-link"></i></button>
+                <a class="fm-btn icon-only" id="pvOpen" href="#" target="_blank" rel="noopener" title="新窗口打开" data-i18n-title="docs_open_new"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a class="fm-btn icon-only" id="pvDownload" href="#" title="下载" data-i18n-title="docs_download"><i class="fa-solid fa-download"></i></a>
+                <button type="button" class="pv-close" id="pvClose" title="关闭（Esc）" aria-label="关闭预览" data-i18n-title="docs_close">&times;</button>
             </div>
         </div>
         <div class="pv-body" id="pvBody"></div>
         <div class="pv-foot">
-            <button type="button" class="pv-nav-btn" id="pvPrev" title="上一个（←）"><i class="fa-solid fa-chevron-left"></i></button>
-            <button type="button" class="pv-nav-btn" id="pvNext" title="下一个（→）"><i class="fa-solid fa-chevron-right"></i></button>
+            <button type="button" class="pv-nav-btn" id="pvPrev" title="上一个（←）" data-i18n-title="docs_prev"><i class="fa-solid fa-chevron-left"></i></button>
+            <button type="button" class="pv-nav-btn" id="pvNext" title="下一个（→）" data-i18n-title="docs_next"><i class="fa-solid fa-chevron-right"></i></button>
             <span class="pv-pos" id="pvPos"></span>
-            <span class="pv-hint"><kbd>Esc</kbd> 关闭 · <kbd>←</kbd><kbd>→</kbd> 切换 · 图片支持滚轮缩放 / 拖动平移 / 双击复位</span>
+            <div class="pv-strip" id="pvStrip" hidden></div>
+            <span class="pv-hint" data-i18n="docs_pv_hint"><kbd>Esc</kbd> 关闭 · <kbd>←</kbd><kbd>→</kbd> 切换 · 图片支持滚轮缩放 / 拖动平移 / 双击复位</span>
         </div>
     </div>
 </div>
 
-<script src="js/docs-browser.js"></script>
+<div class="fm-toast" id="fmToast" role="status" aria-live="polite"></div>
+
+    <script src="js/shared-partials.js" data-partial="footer"></script>
+    <script src="js/shared-partials.js" data-partial="qr-modal"></script>
+    <script src="js/common.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/docs-browser.js"></script>
 </body>
 </html>

@@ -6,72 +6,73 @@
 'use strict';
 const NEMESIS_POLICY = {
   "moveSpeed": 3.4,
-  "moveErr": 0.04798132603597076,
-  "moveZ": 2.5041156571358445,
+  "moveErr": 0,
+  "moveZ": 2.2351540813762374,
   "push": {
-    "prob": 0.27941320952128884,
-    "forceThresh": 40.64982920476306
+    "prob": 0.2712110007443097,
+    "forceThresh": 28.59171135716682
   },
   "counter": {
-    "prob": 0.7186506696181052
+    "prob": 0.979926615405416
   },
   "smash": {
-    "prob": 0.042239779871944404
+    "prob": 0.16358343041282333
   },
   "loop": {
-    "prob": 0.9002249895069233
+    "prob": 0.7022149406699708
   },
   "awayProb": 0.95,
-  "txMin": 0.5226128497243242,
-  "txRange": 0.6600855452092651,
-  "tzBase": 0.6637349503792268,
-  "tzRange": 0.07882476881341988,
-  "txWideProb": 0.18255728235986704,
+  "txMin": 0.5998841605992971,
+  "txRange": 0.5145315151384351,
+  "tzBase": 0.6676289248422745,
+  "tzRange": 0.05047261797192439,
+  "txWideProb": 0.049897972939086765,
   "serve": {
     "topProb": 0,
-    "sideProb": 1
+    "sideProb": 0.9050351236348947
   },
-  "loopPace": 1.0262217638535645,
-  "loopSpin": 1.35,
-  "loopArc": 0.8795259660998972,
-  "smashPace": 0.9075163061631748,
-  "smashSpin": 0.9156148321033747,
-  "liftPace": 0.860060111488173,
-  "defPace": 0.8862288712756837,
+  "loopPace": 1.027337158167214,
+  "loopSpin": 1.3050905462865365,
+  "loopArc": 0.8140997090498506,
+  "smashPace": 0.85,
+  "smashSpin": 0.9214847346388082,
+  "liftPace": 0.85,
+  "defPace": 0.9381474522056442,
   "counterPace": 0.85,
-  "txWideMag": 0.3421537738021002,
-  "fwdBoost": 1.2624664576014102,
-  "pushSide": 0.6852016034653158,
-  "pushDepth": 1.5058512601386393,
-  "servePace": 0.9040359863058101,
-  "serveSpin": 1.1917215373739858,
-  "txErrBase": 0.04751818396788206,
-  "txErrSpd": 0.03261571660874059,
-  "txErrBx": 0.08641276601701975,
-  "txErrSide": 0.005113100314024893,
-  "txErrTop": 0.004632273301584267,
-  "txClamp": 0.6260744767642618,
+  "txWideMag": 0.5058999612377133,
+  "fwdBoost": 1.2029654819613484,
+  "pushSide": 1.4193413076420887,
+  "pushDepth": 1.1770102974493057,
+  "servePace": 1.1532096163733283,
+  "serveSpin": 1.2845498256247272,
+  "txErrBase": 0.023688656985759737,
+  "txErrSpd": 0.015520383766751928,
+  "txErrBx": 0.026403210924884485,
+  "txErrSide": 0.0038627901061798822,
+  "txErrTop": 0.0004414016034344719,
+  "txClamp": 0.6052349779690747,
   "wide": {
-    "forehand": 1.5339458575993958,
-    "backhand": 1.421474225250293
+    "forehand": 1.2465737439538316,
+    "backhand": 0.9783264392579948
   },
-  "swipeSide": 0.46138148803713686,
+  "swipeSide": 0.46483459626324475,
   "receive": {
     "pushProb": 0.05,
-    "attackProb": 0.46168274013771066
+    "attackProb": 0.4604635144992756
   },
-  "recoverPace": 9.60411263693729
+  "recoverPace": 9.788434039957853
 };
 const NEMESIS_META = {
-  "fitness": 0.6187,
-  "pointRateVsHell": 0.59,
-  "pointRateVsHellBaseline": 0.4955,
-  "pointRateVsDefault": 0.8799,
-  "generations": 150,
+  "fitness": 0.6426,
+  "pointRateVsHell": 0.6062,
+  "pointRateVsHellPrev": 0.5908,
+  "pointRateVsHellBaseline": 0.4946,
+  "pointRateVsDefault": 0.8627,
+  "generations": 480,
   "seed": 20260919,
-  "evals": 7200,
+  "evals": 46080,
   "mode": "hell-nemesis",
-  "trainedAt": "2026-09-18",
+  "trainedAt": "2026-09-19",
   "adopted": true
 };
 /* Node 训练器/诊断可 require */
