@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Our Software - TT365</title>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-TB4NWPJ6TQ"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-TB4NWPJ6TQ');
+        </script>
+        <meta name="description" content="Table Tennis 365 &#x2014; league management, membership, ranking and website software for table tennis leagues and clubs." />
+            <link rel="canonical" href="https://www.tabletennis365.com" />
+            <meta property="og:url" content="https://www.tabletennis365.com" />
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content="Our Software" />
+            <meta property="og:site_name" content="Table Tennis 365" />
+                <meta property="og:description" content="Table Tennis 365 &#x2014; league management, membership, ranking and website software for table tennis leagues and clubs." />
+            <meta name="twitter:card" content="summary" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+              rel="stylesheet"
+              integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+              crossorigin="anonymous" />
+    <link href="/css/main-site.css?v=m09QOeO4GTtvpOVcK-pbi3p6JnGc2uKd0FKlx_IktqA" rel="stylesheet" />
+    
+</head>
+<body>
+        <div class="tt-topbar">
+            <div class="container d-flex justify-content-between align-items-center">
+                <div class="tt-topbar-auth">
+                        <a href="/login" class="tt-auth-link">Login</a>
+                </div>
+                <div class="tt-topbar-right">
+                    
+
+<button type="button"
+        class="tt-langswitch-trigger"
+        data-bs-toggle="modal"
+        data-bs-target="#ttLangSwitchModal"
+        aria-haspopup="dialog"
+        aria-label="Change language">
+    <svg class="tt-langswitch-globe" xmlns="http://www.w3.org/2000/svg"
+         width="14" height="14" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="2" y1="12" x2="22" y2="12"/>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+    </svg>
+    <span class="tt-langswitch-trigger-label">English</span>
+    <span class="tt-langswitch-trigger-code" aria-hidden="true">EN</span>
+</button>
+
+    <div class="modal fade tt-langswitch-modal"
+         id="ttLangSwitchModal"
+         tabindex="-1"
+         aria-labelledby="ttLangSwitchTitle"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ttLangSwitchTitle">Choose your language</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="tt-langswitch-search-wrap">
+                        <svg class="tt-langswitch-search-icon" xmlns="http://www.w3.org/2000/svg"
+                             width="16" height="16" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2"
+                             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="11" cy="11" r="8"/>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        </svg>
+                        <input type="text"
+                               class="form-control tt-langswitch-search"
+                               id="ttLangSwitchSearch"
+                               placeholder="Search languages"
+                               aria-label="Search languages"
+                               autocomplete="off" />
+                    </div>
+
+                    <div class="tt-langswitch-grid" id="ttLangSwitchGrid" role="listbox" aria-labelledby="ttLangSwitchTitle">
+                            <button type="button"
+                                    class="tt-langswitch-item is-active"
+                                    role="option"
+                                    aria-selected="true"
+                                    lang="en-GB"
+                                    data-culture="en-GB"
+                                    data-search="english english (uk) en-gb"
+                                    onclick="switchLanguage('en-GB'); return false;">
+                                <span class="tt-langswitch-item-native">English</span>
+                                <span class="tt-langswitch-item-display">English (UK)</span>
+                                <span class="tt-langswitch-item-code">en-GB</span>
+                                    <svg class="tt-langswitch-item-check" xmlns="http://www.w3.org/2000/svg"
+                                         width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                         stroke="currentColor" stroke-width="3"
+                                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="fr-FR"
+                                    data-culture="fr-FR"
+                                    data-search="fran&#xE7;ais french fr-fr"
+                                    onclick="switchLanguage('fr-FR'); return false;">
+                                <span class="tt-langswitch-item-native">Fran&#xE7;ais</span>
+                                <span class="tt-langswitch-item-display">French</span>
+                                <span class="tt-langswitch-item-code">fr-FR</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="de-DE"
+                                    data-culture="de-DE"
+                                    data-search="deutsch german de-de"
+                                    onclick="switchLanguage('de-DE'); return false;">
+                                <span class="tt-langswitch-item-native">Deutsch</span>
+                                <span class="tt-langswitch-item-display">German</span>
+                                <span class="tt-langswitch-item-code">de-DE</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="nl-NL"
+                                    data-culture="nl-NL"
+                                    data-search="nederlands dutch nl-nl"
+                                    onclick="switchLanguage('nl-NL'); return false;">
+                                <span class="tt-langswitch-item-native">Nederlands</span>
+                                <span class="tt-langswitch-item-display">Dutch</span>
+                                <span class="tt-langswitch-item-code">nl-NL</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="pt-BR"
+                                    data-culture="pt-BR"
+                                    data-search="portugu&#xEA;s (brasil) portuguese (brazil) pt-br"
+                                    onclick="switchLanguage('pt-BR'); return false;">
+                                <span class="tt-langswitch-item-native">Portugu&#xEA;s (Brasil)</span>
+                                <span class="tt-langswitch-item-display">Portuguese (Brazil)</span>
+                                <span class="tt-langswitch-item-code">pt-BR</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="es-419"
+                                    data-culture="es-419"
+                                    data-search="espa&#xF1;ol (am&#xE9;rica latina) spanish (latin america) es-419"
+                                    onclick="switchLanguage('es-419'); return false;">
+                                <span class="tt-langswitch-item-native">Espa&#xF1;ol (Am&#xE9;rica Latina)</span>
+                                <span class="tt-langswitch-item-display">Spanish (Latin America)</span>
+                                <span class="tt-langswitch-item-code">es-419</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="it-IT"
+                                    data-culture="it-IT"
+                                    data-search="italiano italian it-it"
+                                    onclick="switchLanguage('it-IT'); return false;">
+                                <span class="tt-langswitch-item-native">Italiano</span>
+                                <span class="tt-langswitch-item-display">Italian</span>
+                                <span class="tt-langswitch-item-code">it-IT</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="sv-SE"
+                                    data-culture="sv-SE"
+                                    data-search="svenska swedish sv-se"
+                                    onclick="switchLanguage('sv-SE'); return false;">
+                                <span class="tt-langswitch-item-native">Svenska</span>
+                                <span class="tt-langswitch-item-display">Swedish</span>
+                                <span class="tt-langswitch-item-code">sv-SE</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="da-DK"
+                                    data-culture="da-DK"
+                                    data-search="dansk danish da-dk"
+                                    onclick="switchLanguage('da-DK'); return false;">
+                                <span class="tt-langswitch-item-native">Dansk</span>
+                                <span class="tt-langswitch-item-display">Danish</span>
+                                <span class="tt-langswitch-item-code">da-DK</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="pl-PL"
+                                    data-culture="pl-PL"
+                                    data-search="polski polish pl-pl"
+                                    onclick="switchLanguage('pl-PL'); return false;">
+                                <span class="tt-langswitch-item-native">Polski</span>
+                                <span class="tt-langswitch-item-display">Polish</span>
+                                <span class="tt-langswitch-item-code">pl-PL</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="nb-NO"
+                                    data-culture="nb-NO"
+                                    data-search="norsk bokm&#xE5;l norwegian nb-no"
+                                    onclick="switchLanguage('nb-NO'); return false;">
+                                <span class="tt-langswitch-item-native">Norsk bokm&#xE5;l</span>
+                                <span class="tt-langswitch-item-display">Norwegian</span>
+                                <span class="tt-langswitch-item-code">nb-NO</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="fi-FI"
+                                    data-culture="fi-FI"
+                                    data-search="suomi finnish fi-fi"
+                                    onclick="switchLanguage('fi-FI'); return false;">
+                                <span class="tt-langswitch-item-native">Suomi</span>
+                                <span class="tt-langswitch-item-display">Finnish</span>
+                                <span class="tt-langswitch-item-code">fi-FI</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="sk-SK"
+                                    data-culture="sk-SK"
+                                    data-search="sloven&#x10D;ina slovak sk-sk"
+                                    onclick="switchLanguage('sk-SK'); return false;">
+                                <span class="tt-langswitch-item-native">Sloven&#x10D;ina</span>
+                                <span class="tt-langswitch-item-display">Slovak</span>
+                                <span class="tt-langswitch-item-code">sk-SK</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="cs-CZ"
+                                    data-culture="cs-CZ"
+                                    data-search="&#x10D;e&#x161;tina czech cs-cz"
+                                    onclick="switchLanguage('cs-CZ'); return false;">
+                                <span class="tt-langswitch-item-native">&#x10C;e&#x161;tina</span>
+                                <span class="tt-langswitch-item-display">Czech</span>
+                                <span class="tt-langswitch-item-code">cs-CZ</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="hr-HR"
+                                    data-culture="hr-HR"
+                                    data-search="hrvatski croatian hr-hr"
+                                    onclick="switchLanguage('hr-HR'); return false;">
+                                <span class="tt-langswitch-item-native">Hrvatski</span>
+                                <span class="tt-langswitch-item-display">Croatian</span>
+                                <span class="tt-langswitch-item-code">hr-HR</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="el-GR"
+                                    data-culture="el-GR"
+                                    data-search="&#x3B5;&#x3BB;&#x3BB;&#x3B7;&#x3BD;&#x3B9;&#x3BA;&#x3AC; greek el-gr"
+                                    onclick="switchLanguage('el-GR'); return false;">
+                                <span class="tt-langswitch-item-native">&#x395;&#x3BB;&#x3BB;&#x3B7;&#x3BD;&#x3B9;&#x3BA;&#x3AC;</span>
+                                <span class="tt-langswitch-item-display">Greek</span>
+                                <span class="tt-langswitch-item-code">el-GR</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="hu-HU"
+                                    data-culture="hu-HU"
+                                    data-search="magyar hungarian hu-hu"
+                                    onclick="switchLanguage('hu-HU'); return false;">
+                                <span class="tt-langswitch-item-native">Magyar</span>
+                                <span class="tt-langswitch-item-display">Hungarian</span>
+                                <span class="tt-langswitch-item-code">hu-HU</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="lt-LT"
+                                    data-culture="lt-LT"
+                                    data-search="lietuvi&#x173; lithuanian lt-lt"
+                                    onclick="switchLanguage('lt-LT'); return false;">
+                                <span class="tt-langswitch-item-native">Lietuvi&#x173;</span>
+                                <span class="tt-langswitch-item-display">Lithuanian</span>
+                                <span class="tt-langswitch-item-code">lt-LT</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="lv-LV"
+                                    data-culture="lv-LV"
+                                    data-search="latvie&#x161;u latvian lv-lv"
+                                    onclick="switchLanguage('lv-LV'); return false;">
+                                <span class="tt-langswitch-item-native">Latvie&#x161;u</span>
+                                <span class="tt-langswitch-item-display">Latvian</span>
+                                <span class="tt-langswitch-item-code">lv-LV</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="et-EE"
+                                    data-culture="et-EE"
+                                    data-search="eesti estonian et-ee"
+                                    onclick="switchLanguage('et-EE'); return false;">
+                                <span class="tt-langswitch-item-native">Eesti</span>
+                                <span class="tt-langswitch-item-display">Estonian</span>
+                                <span class="tt-langswitch-item-code">et-EE</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="tr-TR"
+                                    data-culture="tr-TR"
+                                    data-search="t&#xFC;rk&#xE7;e turkish tr-tr"
+                                    onclick="switchLanguage('tr-TR'); return false;">
+                                <span class="tt-langswitch-item-native">T&#xFC;rk&#xE7;e</span>
+                                <span class="tt-langswitch-item-display">Turkish</span>
+                                <span class="tt-langswitch-item-code">tr-TR</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="sl-SI"
+                                    data-culture="sl-SI"
+                                    data-search="sloven&#x161;&#x10D;ina slovenian sl-si"
+                                    onclick="switchLanguage('sl-SI'); return false;">
+                                <span class="tt-langswitch-item-native">Sloven&#x161;&#x10D;ina</span>
+                                <span class="tt-langswitch-item-display">Slovenian</span>
+                                <span class="tt-langswitch-item-code">sl-SI</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="sr-Latn-RS"
+                                    data-culture="sr-Latn-RS"
+                                    data-search="srpski serbian (latin) sr-latn-rs"
+                                    onclick="switchLanguage('sr-Latn-RS'); return false;">
+                                <span class="tt-langswitch-item-native">Srpski</span>
+                                <span class="tt-langswitch-item-display">Serbian (Latin)</span>
+                                <span class="tt-langswitch-item-code">sr-Latn-RS</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="bg-BG"
+                                    data-culture="bg-BG"
+                                    data-search="&#x431;&#x44A;&#x43B;&#x433;&#x430;&#x440;&#x441;&#x43A;&#x438; bulgarian bg-bg"
+                                    onclick="switchLanguage('bg-BG'); return false;">
+                                <span class="tt-langswitch-item-native">&#x411;&#x44A;&#x43B;&#x433;&#x430;&#x440;&#x441;&#x43A;&#x438;</span>
+                                <span class="tt-langswitch-item-display">Bulgarian</span>
+                                <span class="tt-langswitch-item-code">bg-BG</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="is-IS"
+                                    data-culture="is-IS"
+                                    data-search="&#xED;slenska icelandic is-is"
+                                    onclick="switchLanguage('is-IS'); return false;">
+                                <span class="tt-langswitch-item-native">&#xCD;slenska</span>
+                                <span class="tt-langswitch-item-display">Icelandic</span>
+                                <span class="tt-langswitch-item-code">is-IS</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="mt-MT"
+                                    data-culture="mt-MT"
+                                    data-search="malti maltese mt-mt"
+                                    onclick="switchLanguage('mt-MT'); return false;">
+                                <span class="tt-langswitch-item-native">Malti</span>
+                                <span class="tt-langswitch-item-display">Maltese</span>
+                                <span class="tt-langswitch-item-code">mt-MT</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="zh-CN"
+                                    data-culture="zh-CN"
+                                    data-search="&#x4E2D;&#x6587;&#xFF08;&#x7B80;&#x4F53;&#xFF09; chinese (simplified) zh-cn"
+                                    onclick="switchLanguage('zh-CN'); return false;">
+                                <span class="tt-langswitch-item-native">&#x4E2D;&#x6587;&#xFF08;&#x7B80;&#x4F53;&#xFF09;</span>
+                                <span class="tt-langswitch-item-display">Chinese (Simplified)</span>
+                                <span class="tt-langswitch-item-code">zh-CN</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="ja-JP"
+                                    data-culture="ja-JP"
+                                    data-search="&#x65E5;&#x672C;&#x8A9E; japanese ja-jp"
+                                    onclick="switchLanguage('ja-JP'); return false;">
+                                <span class="tt-langswitch-item-native">&#x65E5;&#x672C;&#x8A9E;</span>
+                                <span class="tt-langswitch-item-display">Japanese</span>
+                                <span class="tt-langswitch-item-code">ja-JP</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="ko-KR"
+                                    data-culture="ko-KR"
+                                    data-search="&#xD55C;&#xAD6D;&#xC5B4; korean ko-kr"
+                                    onclick="switchLanguage('ko-KR'); return false;">
+                                <span class="tt-langswitch-item-native">&#xD55C;&#xAD6D;&#xC5B4;</span>
+                                <span class="tt-langswitch-item-display">Korean</span>
+                                <span class="tt-langswitch-item-code">ko-KR</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="vi-VN"
+                                    data-culture="vi-VN"
+                                    data-search="ti&#x1EBF;ng vi&#x1EC7;t vietnamese vi-vn"
+                                    onclick="switchLanguage('vi-VN'); return false;">
+                                <span class="tt-langswitch-item-native">Ti&#x1EBF;ng Vi&#x1EC7;t</span>
+                                <span class="tt-langswitch-item-display">Vietnamese</span>
+                                <span class="tt-langswitch-item-code">vi-VN</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="th-TH"
+                                    data-culture="th-TH"
+                                    data-search="&#xE44;&#xE17;&#xE22; thai th-th"
+                                    onclick="switchLanguage('th-TH'); return false;">
+                                <span class="tt-langswitch-item-native">&#xE44;&#xE17;&#xE22;</span>
+                                <span class="tt-langswitch-item-display">Thai</span>
+                                <span class="tt-langswitch-item-code">th-TH</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="id-ID"
+                                    data-culture="id-ID"
+                                    data-search="bahasa indonesia indonesian id-id"
+                                    onclick="switchLanguage('id-ID'); return false;">
+                                <span class="tt-langswitch-item-native">Bahasa Indonesia</span>
+                                <span class="tt-langswitch-item-display">Indonesian</span>
+                                <span class="tt-langswitch-item-code">id-ID</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="ms-MY"
+                                    data-culture="ms-MY"
+                                    data-search="bahasa melayu malay ms-my"
+                                    onclick="switchLanguage('ms-MY'); return false;">
+                                <span class="tt-langswitch-item-native">Bahasa Melayu</span>
+                                <span class="tt-langswitch-item-display">Malay</span>
+                                <span class="tt-langswitch-item-code">ms-MY</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="fil-PH"
+                                    data-culture="fil-PH"
+                                    data-search="filipino filipino fil-ph"
+                                    onclick="switchLanguage('fil-PH'); return false;">
+                                <span class="tt-langswitch-item-native">Filipino</span>
+                                <span class="tt-langswitch-item-display">Filipino</span>
+                                <span class="tt-langswitch-item-code">fil-PH</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="zh-HK"
+                                    data-culture="zh-HK"
+                                    data-search="&#x5EE3;&#x6771;&#x8A71; cantonese zh-hk"
+                                    onclick="switchLanguage('zh-HK'); return false;">
+                                <span class="tt-langswitch-item-native">&#x5EE3;&#x6771;&#x8A71;</span>
+                                <span class="tt-langswitch-item-display">Cantonese</span>
+                                <span class="tt-langswitch-item-code">zh-HK</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="hi-IN"
+                                    data-culture="hi-IN"
+                                    data-search="&#x939;&#x93F;&#x928;&#x94D;&#x926;&#x940; hindi hi-in"
+                                    onclick="switchLanguage('hi-IN'); return false;">
+                                <span class="tt-langswitch-item-native">&#x939;&#x93F;&#x928;&#x94D;&#x926;&#x940;</span>
+                                <span class="tt-langswitch-item-display">Hindi</span>
+                                <span class="tt-langswitch-item-code">hi-IN</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="bn-BD"
+                                    data-culture="bn-BD"
+                                    data-search="&#x9AC;&#x9BE;&#x982;&#x9B2;&#x9BE; bengali bn-bd"
+                                    onclick="switchLanguage('bn-BD'); return false;">
+                                <span class="tt-langswitch-item-native">&#x9AC;&#x9BE;&#x982;&#x9B2;&#x9BE;</span>
+                                <span class="tt-langswitch-item-display">Bengali</span>
+                                <span class="tt-langswitch-item-code">bn-BD</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="ta-IN"
+                                    data-culture="ta-IN"
+                                    data-search="&#xBA4;&#xBAE;&#xBBF;&#xBB4;&#xBCD; tamil ta-in"
+                                    onclick="switchLanguage('ta-IN'); return false;">
+                                <span class="tt-langswitch-item-native">&#xBA4;&#xBAE;&#xBBF;&#xBB4;&#xBCD;</span>
+                                <span class="tt-langswitch-item-display">Tamil</span>
+                                <span class="tt-langswitch-item-code">ta-IN</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="ur-PK"
+                                    data-culture="ur-PK"
+                                    data-search="&#x627;&#x631;&#x62F;&#x648; urdu ur-pk"
+                                    onclick="switchLanguage('ur-PK'); return false;">
+                                <span class="tt-langswitch-item-native">&#x627;&#x631;&#x62F;&#x648;</span>
+                                <span class="tt-langswitch-item-display">Urdu</span>
+                                <span class="tt-langswitch-item-code">ur-PK</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="ar-SA"
+                                    data-culture="ar-SA"
+                                    data-search="&#x627;&#x644;&#x639;&#x631;&#x628;&#x64A;&#x629; arabic ar-sa"
+                                    onclick="switchLanguage('ar-SA'); return false;">
+                                <span class="tt-langswitch-item-native">&#x627;&#x644;&#x639;&#x631;&#x628;&#x64A;&#x629;</span>
+                                <span class="tt-langswitch-item-display">Arabic</span>
+                                <span class="tt-langswitch-item-code">ar-SA</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="fa-IR"
+                                    data-culture="fa-IR"
+                                    data-search="&#x641;&#x627;&#x631;&#x633;&#x6CC; persian (farsi) fa-ir"
+                                    onclick="switchLanguage('fa-IR'); return false;">
+                                <span class="tt-langswitch-item-native">&#x641;&#x627;&#x631;&#x633;&#x6CC;</span>
+                                <span class="tt-langswitch-item-display">Persian (Farsi)</span>
+                                <span class="tt-langswitch-item-code">fa-IR</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="he-IL"
+                                    data-culture="he-IL"
+                                    data-search="&#x5E2;&#x5D1;&#x5E8;&#x5D9;&#x5EA; hebrew he-il"
+                                    onclick="switchLanguage('he-IL'); return false;">
+                                <span class="tt-langswitch-item-native">&#x5E2;&#x5D1;&#x5E8;&#x5D9;&#x5EA;</span>
+                                <span class="tt-langswitch-item-display">Hebrew</span>
+                                <span class="tt-langswitch-item-code">he-IL</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="sw-KE"
+                                    data-culture="sw-KE"
+                                    data-search="kiswahili swahili sw-ke"
+                                    onclick="switchLanguage('sw-KE'); return false;">
+                                <span class="tt-langswitch-item-native">Kiswahili</span>
+                                <span class="tt-langswitch-item-display">Swahili</span>
+                                <span class="tt-langswitch-item-code">sw-KE</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="am-ET"
+                                    data-culture="am-ET"
+                                    data-search="&#x12A0;&#x121B;&#x122D;&#x129B; amharic am-et"
+                                    onclick="switchLanguage('am-ET'); return false;">
+                                <span class="tt-langswitch-item-native">&#x12A0;&#x121B;&#x122D;&#x129B;</span>
+                                <span class="tt-langswitch-item-display">Amharic</span>
+                                <span class="tt-langswitch-item-code">am-ET</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="ha-NG"
+                                    data-culture="ha-NG"
+                                    data-search="hausa hausa ha-ng"
+                                    onclick="switchLanguage('ha-NG'); return false;">
+                                <span class="tt-langswitch-item-native">Hausa</span>
+                                <span class="tt-langswitch-item-display">Hausa</span>
+                                <span class="tt-langswitch-item-code">ha-NG</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="yo-NG"
+                                    data-culture="yo-NG"
+                                    data-search="yor&#xF9;b&#xE1; yoruba yo-ng"
+                                    onclick="switchLanguage('yo-NG'); return false;">
+                                <span class="tt-langswitch-item-native">Yor&#xF9;b&#xE1;</span>
+                                <span class="tt-langswitch-item-display">Yoruba</span>
+                                <span class="tt-langswitch-item-code">yo-NG</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="zu-ZA"
+                                    data-culture="zu-ZA"
+                                    data-search="isizulu zulu zu-za"
+                                    onclick="switchLanguage('zu-ZA'); return false;">
+                                <span class="tt-langswitch-item-native">isiZulu</span>
+                                <span class="tt-langswitch-item-display">Zulu</span>
+                                <span class="tt-langswitch-item-code">zu-ZA</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="ru-RU"
+                                    data-culture="ru-RU"
+                                    data-search="&#x440;&#x443;&#x441;&#x441;&#x43A;&#x438;&#x439; russian ru-ru"
+                                    onclick="switchLanguage('ru-RU'); return false;">
+                                <span class="tt-langswitch-item-native">&#x420;&#x443;&#x441;&#x441;&#x43A;&#x438;&#x439;</span>
+                                <span class="tt-langswitch-item-display">Russian</span>
+                                <span class="tt-langswitch-item-code">ru-RU</span>
+                            </button>
+                            <button type="button"
+                                    class="tt-langswitch-item "
+                                    role="option"
+                                    aria-selected="false"
+                                    lang="uk-UA"
+                                    data-culture="uk-UA"
+                                    data-search="&#x443;&#x43A;&#x440;&#x430;&#x457;&#x43D;&#x441;&#x44C;&#x43A;&#x430; ukrainian uk-ua"
+                                    onclick="switchLanguage('uk-UA'); return false;">
+                                <span class="tt-langswitch-item-native">&#x423;&#x43A;&#x440;&#x430;&#x457;&#x43D;&#x441;&#x44C;&#x43A;&#x430;</span>
+                                <span class="tt-langswitch-item-display">Ukrainian</span>
+                                <span class="tt-langswitch-item-code">uk-UA</span>
+                            </button>
+                    </div>
+
+                    <p class="tt-langswitch-empty" id="ttLangSwitchEmpty" hidden>No languages match your search.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    (function () {
+        var modalEl = document.getElementById('ttLangSwitchModal');
+        var input = document.getElementById('ttLangSwitchSearch');
+        var grid = document.getElementById('ttLangSwitchGrid');
+        var empty = document.getElementById('ttLangSwitchEmpty');
+        if (!modalEl || !input || !grid) return;
+
+        var items = Array.prototype.slice.call(grid.querySelectorAll('.tt-langswitch-item'));
+
+        function normalise(s) {
+            if (!s) return '';
+            s = s.toLowerCase();
+            // Diacritic-insensitive match (strip combining marks)
+            try { s = s.normalize('NFD').replace(/[̀-ͯ]/g, ''); } catch (e) {}
+            return s;
+        }
+
+        function applyFilter() {
+            var q = normalise(input.value.trim());
+            var anyVisible = false;
+            for (var i = 0; i < items.length; i++) {
+                var hay = normalise(items[i].getAttribute('data-search') || '');
+                var match = q === '' || hay.indexOf(q) !== -1;
+                items[i].hidden = !match;
+                if (match) anyVisible = true;
+            }
+            if (empty) empty.hidden = anyVisible;
+        }
+
+        input.addEventListener('input', applyFilter);
+
+        // Focus search on open, reset filter on close.
+        modalEl.addEventListener('shown.bs.modal', function () {
+            input.value = '';
+            applyFilter();
+            setTimeout(function () { input.focus(); }, 50);
+        });
+
+        // Keyboard navigation: arrow keys cycle through visible items, Enter selects.
+        function visibleItems() {
+            return items.filter(function (el) { return !el.hidden; });
+        }
+        grid.addEventListener('keydown', function (e) {
+            var vis = visibleItems();
+            if (vis.length === 0) return;
+            var idx = vis.indexOf(document.activeElement);
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                e.preventDefault();
+                vis[(idx + 1 + vis.length) % vis.length].focus();
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                vis[(idx - 1 + vis.length) % vis.length].focus();
+            } else if (e.key === 'Home') {
+                e.preventDefault(); vis[0].focus();
+            } else if (e.key === 'End') {
+                e.preventDefault(); vis[vis.length - 1].focus();
+            }
+        });
+        // From search box, ArrowDown jumps into the grid.
+        input.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowDown') {
+                var vis = visibleItems();
+                if (vis.length > 0) { e.preventDefault(); vis[0].focus(); }
+            } else if (e.key === 'Enter') {
+                var vis = visibleItems();
+                if (vis.length === 1) { e.preventDefault(); vis[0].click(); }
+            }
+        });
+    })();
+    </script>
+
+                        <a href="https://old.tabletennis365.com/" class="tt-topbar-legacy d-none d-md-inline">Switch to old site</a>
+                    <small class="tt-topbar-tagline d-none d-md-inline">The UK&#x27;s #1 Table Tennis Platform</small>
+                </div>
+            </div>
+        </div>
+        <header class="tt-header">
+            <div class="container">
+                <a href="/" class="tt-header-brand">
+                    <img src="/images/tt365-logo.png" alt="Table Tennis 365" class="tt-header-logo" />
+                </a>
+            </div>
+        </header>
+        <nav class="navbar navbar-expand-lg navbar-dark tt-main-nav">
+            <div class="container">
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#mainNav"
+                        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/">Our Software</a></li>
+                                <li><a class="dropdown-item" href="/Mission">Our Mission</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.tabletennis365.co.uk/" target="_blank" rel="noopener">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Sites">Sites</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Ranking">Ranking</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Support">Support</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/GDPR">GDPR</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    <main role="main">
+        
+<div class="container py-4 tt-page-content">
+    <h1 class="tt-page-title">Our Software</h1>
+
+    <div class="tt-feature-section">
+        <h2>League Manager</h2>
+        <p>A complete league management system used by over 170 table tennis organisations across the UK. Designed for administrators who need reliable, easy-to-use tools to run their leagues.</p>
+
+        <h3>Benefits</h3>
+        <ul>
+            <li>Reduces administrative workload with automated result processing</li>
+            <li>Provides real-time league tables, averages, and statistics</li>
+            <li>Accessible from any device &#x2014; desktop, tablet, or mobile</li>
+            <li>Fully hosted and maintained &#x2014; no software to install</li>
+        </ul>
+
+        <h3>Current Features</h3>
+        <ul>
+            <li>Automated league tables with 24 scoring systems and 17 ordering methods</li>
+            <li>Online match card submission with approval workflow</li>
+            <li>Individual and doubles player averages</li>
+            <li>Team and player statistics with form guides</li>
+            <li>Results charts (cross-tables)</li>
+            <li>Player of the Match tracking</li>
+            <li>Fixture scheduling with rearrangement support</li>
+            <li>Multi-division, multi-league support per organisation</li>
+            <li>Season archiving with full historical access</li>
+        </ul>
+
+        <h3>Availability</h3>
+        <p>League Manager is available to all table tennis leagues and associations in the UK. To enquire about setting up your league, please <a href="/Support">contact us</a>.</p>
+    </div>
+
+    <div class="tt-feature-section">
+        <h2>Membership Manager</h2>
+        <p>A comprehensive membership system for counties, regions, and national governing bodies to manage registrations, renewals, and member records.</p>
+
+        <h3>Benefits</h3>
+        <ul>
+            <li>Centralised member database with GDPR compliance</li>
+            <li>Online registration and renewal workflows</li>
+            <li>Club affiliation management</li>
+            <li>Privacy controls &#x2014; members manage their own data visibility</li>
+        </ul>
+
+        <h3>Features</h3>
+        <ul>
+            <li>Member profiles with encrypted personal data</li>
+            <li>Subscription management with payment tracking</li>
+            <li>Role-based access for organisation administrators</li>
+            <li>Data export for reporting and compliance</li>
+            <li>Integration with League Manager for unified member records</li>
+        </ul>
+    </div>
+
+    <div class="tt-feature-section">
+        <h2>Other Software</h2>
+        <p>Additional modules available as bolt-ons to enhance your organisation&#x27;s website:</p>
+        <ul>
+            <li><strong>Website Manager</strong> &mdash; CMS pages, news articles, photo galleries, menus</li>
+            <li><strong>Ranking System</strong> &mdash; National and regional ranking calculations</li>
+            <li><strong>Email Manager</strong> &mdash; Bulk email to members and contacts</li>
+            <li><strong>Tournament Module</strong> &mdash; Tournament management and results entry</li>
+            <li><strong>Banner Advertising</strong> &mdash; Sponsor banner management across multiple zones</li>
+            <li><strong>Forum</strong> &mdash; Discussion forums for organisation members</li>
+        </ul>
+    </div>
+
+    <div class="tt-cta-section">
+        <h2>Interested?</h2>
+        <p>Table Tennis 365 provides a complete platform for your organisation. Browse our <a href="/Sites">member sites</a> to see the platform in action, or <a href="/Support">get in touch</a> to discuss your requirements.</p>
+    </div>
+</div>
+
+    </main>
+
+        <footer class="tt-main-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <h5>About Us</h5>
+                        <p>Table Tennis 365 is the UK&#x27;s leading platform for table tennis organisations, providing league management, membership systems, rankings, and website hosting for leagues, clubs, counties, and national governing bodies.</p>
+                        <a href="/">Read more here...</a>
+                    </div>
+
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <h5>Contact Us</h5>
+                        <p>
+                            <strong>Email:</strong>
+                            <a href="mailto:support@tabletennis365.com">support@tabletennis365.com</a>
+                        </p>
+                        <p>
+                            <strong>Website:</strong>
+                            <a href="https://www.tabletennis365.com" target="_blank" rel="noopener">www.tabletennis365.com</a>
+                        </p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5>Follow Us</h5>
+                        <div class="tt-footer-social">
+                            <a href="https://www.facebook.com/tabletennis365" target="_blank" rel="noopener" title="Facebook">
+                                <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            </a>
+                            <a href="https://twitter.com/tabletennis365" target="_blank" rel="noopener" title="Twitter / X">
+                                <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            </a>
+                            <a href="https://www.youtube.com/@tabletennis365" target="_blank" rel="noopener" title="YouTube">
+                                <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                            </a>
+                            <a href="https://www.linkedin.com/company/table-tennis-365" target="_blank" rel="noopener" title="LinkedIn">
+                                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="tt-copyright-bar">
+            <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <span>&copy; Table Tennis 365 Ltd 2026</span>
+                <span>
+                    <a href="/Privacy">Privacy</a>
+                    <span class="mx-1">|</span>
+                    <a href="/GDPR">GDPR</a>
+                </span>
+            </div>
+        </div>
+
+    <div id="cookieConsent" class="tt-cookie-consent" style="display:none">
+    <div class="tt-cookie-consent-inner">
+        <span class="tt-cookie-consent-text">This site uses cookies to help us understand how visitors use our pages.</span>
+        <div class="tt-cookie-consent-actions">
+            <button type="button" class="tt-cookie-consent-btn tt-cookie-consent-accept" onclick="ttCookieConsent('yes')">Accept</button>
+            <button type="button" class="tt-cookie-consent-btn tt-cookie-consent-decline" onclick="ttCookieConsent('no')">Decline</button>
+        </div>
+    </div>
+</div>
+<script>
+(function(){
+    var c = document.cookie.match('(^|;)\\s*tt365\\.consent=([^;]*)');
+    if (!c) document.getElementById('cookieConsent').style.display = '';
+})();
+function ttCookieConsent(v){
+    document.cookie='tt365.consent='+v+';path=/;max-age=31536000;SameSite=Lax;Secure';
+    document.getElementById('cookieConsent').style.display='none';
+    // Announce the change: to this page (tt:consent-changed) and to every other
+    // same-origin tab (BroadcastChannel), e.g. chat docks, which count an
+    // anonymous viewer by the consent-gated tt365.vid visitor cookie (B5209).
+    function announce(){
+        try { window.dispatchEvent(new CustomEvent('tt:consent-changed', { detail: { consent: v } })); } catch (e) { }
+        try { var ch = new BroadcastChannel('tt365.chat.presence'); ch.postMessage({ type: 'consent' }); ch.close(); } catch (e) { }
+    }
+    if (v !== 'yes') { announce(); return; }
+    // On accept, first mint the visitor cookie with ONE request, so that tabs
+    // reacting to the announcement all reconnect with the same id instead of
+    // each minting its own. /health/live is a no-check health endpoint: every
+    // host serves it, it is exempt from entity rewriting and gating, and it
+    // runs through PageTrackingMiddleware (which sets tt365.vid once consent
+    // is yes). Announce either way: a failed mint only costs the dedup.
+    try {
+        fetch('/health/live', { method: 'GET', cache: 'no-store', credentials: 'same-origin' })
+            .then(announce, announce);
+    } catch (e) { announce(); }
+}
+</script>
+
+    <script>
+(function(){
+    try { var ch = new BroadcastChannel('tt365.chat.presence'); ch.postMessage({ type: 'auth', signedIn: false, member: 0 }); ch.close(); } catch (e) { }
+})();
+</script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+                crossorigin="anonymous"></script>
+    <script>function switchLanguage(c){document.cookie='TT365.Culture='+c+';path=/;max-age=31536000;SameSite=Lax;Secure';location.reload();}</script>
+
+
+    
+    
+</body>
+</html>
