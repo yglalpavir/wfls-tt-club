@@ -11813,5 +11813,15 @@
     "assoc": "VAN",
     "country": "Vanuatu",
     "source": "ittf-2016"
+  },
+  "Bodisuren ENKHTAMIRBAYASGALAN": {
+    "assoc": "MGL",
+    "country": "Mongolia",
+    "source": "manual-ag2026"
+  },
+  "Mohammed ALAALI": {
+    "assoc": "BRN",
+    "country": "Bahrain",
+    "source": "manual-ag2026"
   }
 }
