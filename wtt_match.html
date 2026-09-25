@@ -28,15 +28,12 @@
     <script>window.MD_WTT_MODE = true;</script>
     <script src="js/shared-partials.js" data-partial="nav"></script>
 
-    <section class="page-hero"><div class="page-hero-overlay"></div><div class="page-hero-content"><span class="section-tag">WTT Match Detail</span><h1 data-i18n="md_hero_title">比赛详情</h1><p data-i18n="md_hero_desc">比分 · 积分 · 胜率 · 交锋</p></div></section>
-
-    <section class="section">
-        <div class="container">
-            <div id="matchDetailBody">
-                <!-- JS 动态渲染（此 id 同时是 main.js 的页面派发标记） -->
-            </div>
+    <main class="md-page">
+        <h1 class="sr-only" data-i18n="md_hero_title">比赛详情</h1>
+        <div id="matchDetailBody">
+            <!-- JS 动态渲染（此 id 同时是 main.js 的页面派发标记）；深色 hero + 内容层均由 match-detail.js 输出 -->
         </div>
-    </section>
+    </main>
 
     <script src="js/shared-partials.js" data-partial="footer"></script>
 

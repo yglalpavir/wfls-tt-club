@@ -10673,5 +10673,10 @@
     "assoc": "PRK",
     "country": "Korea DPR",
     "source": "manual-ag2023"
+  },
+  "SO Tsz Tung": {
+    "assoc": "HKG",
+    "country": "Hong Kong, China",
+    "source": "manual-ag2026-wt"
   }
 }

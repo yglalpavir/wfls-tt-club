@@ -330,7 +330,10 @@ const i18n = {
         md_early_date: "该比赛日期早于最早赛季，无法回放积分。",
         md_status_ft: "已结束", md_sets_col: "局", md_pts_total: "总得分",
         md_copy_link: "复制链接", md_copied: "已复制",
-        md_occurrence: "当日第 {n} 场"
+        md_occurrence: "当日第 {n} 场",
+        md_official: "Official",
+        md_periods_title: "逐局比分", md_final_col: "赛果", md_game_col: "第 {n} 局",
+        md_tabs_games: "局分", md_tabs_points: "积分明细", md_tabs_pred: "胜率预测", md_tabs_h2h: "历史交锋"
     },
     en: {
         site_title: "WFLS Table Tennis Club | Wuhan Foreign Languages School", nav_home: "Home", nav_news: "News", nav_competitions: "Competitions", nav_contact: "Contact", nav_more: "More... <i class='fa-solid fa-chevron-down'></i>", nav_members: "Core Members", nav_data_viz: "Data Viz <span class='beta-tag'>Beta</span>", nav_season_review: "Season Review", nav_personal: "Personal Stats", nav_qa: "Q&A", nav_changelog: "Changelog", nav_docs: "docs", lang_btn: "中文",
@@ -527,7 +530,10 @@ const i18n = {
         md_early_date: "This match predates the earliest season; points cannot be replayed.",
         md_status_ft: "Full Time", md_sets_col: "Sets", md_pts_total: "Total points",
         md_copy_link: "Copy link", md_copied: "Copied",
-        md_occurrence: "Game #{n} that day"
+        md_occurrence: "Game #{n} that day",
+        md_official: "Official",
+        md_periods_title: "Periods", md_final_col: "Final", md_game_col: "Game {n}",
+        md_tabs_games: "Games", md_tabs_points: "Points", md_tabs_pred: "Win Rate", md_tabs_h2h: "H2H"
     }
 };
 

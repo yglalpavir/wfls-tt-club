@@ -14,6 +14,7 @@ const MD_WTT = typeof window.MD_WTT_MODE !== 'undefined' && !!window.MD_WTT_MODE
 
 let mdModel = null;   // 计算结果缓存（含 error 态），语言切换时据此重渲染
 let mdReady = false;
+let mdTabScrollHandler = null;   // 章节吸顶 tab 的 scrollspy 监听（重渲染前先解绑）
 
 function mdPlayerLink(name) {
     if (MD_WTT && typeof wttLinkPlayerName === 'function') { return wttLinkPlayerName(name); }
@@ -26,7 +27,7 @@ function mdPlayerLink(name) {
 }
 
 function mdLoadingHtml() {
-    return `<div style="text-align:center;padding:60px 0;">
+    return `<div class="md-plain" style="text-align:center;">
         <div class="wtt-spinner" style="width:36px;height:36px;border:3px solid var(--border-color);border-top-color:var(--accent-blue);border-radius:50%;animation:wttSpin 0.8s linear infinite;margin:0 auto 12px;"></div>
         <p style="color:var(--text-secondary);">${i18n[currentLang].data_viz_loading}</p>
     </div>`;
@@ -36,12 +37,12 @@ function mdRenderError(title, hint, showBack) {
     const body = document.getElementById('matchDetailBody');
     if (!body) return;
     const backUrl = MD_WTT ? ('wtt_ranking.html' + (mdModel && mdModel.cat ? '?cat=' + encodeURIComponent(mdModel.cat) : '')) : 'ranking.html';
-    body.innerHTML = `<div class="detail-error" style="text-align:center;padding:48px 20px;">
+    body.innerHTML = `<div class="md-plain"><div class="detail-error" style="text-align:center;padding:48px 20px;">
         <i class="fa-solid fa-circle-question" style="font-size:2.2rem;color:var(--text-tertiary);"></i>
         <h3 style="margin:14px 0 8px;color:var(--text-primary);">${escapeHtml(title)}</h3>
         ${hint ? `<p style="color:var(--text-secondary);font-size:.88rem;margin:0 0 6px;">${escapeHtml(hint)}</p>` : ''}
         ${showBack ? `<a class="btn btn-sm btn-primary" style="margin-top:14px;" href="${backUrl}"><i class="fa-solid fa-arrow-left"></i> ${escapeHtml(i18n[currentLang].md_back_ranking)}</a>` : ''}
-    </div>`;
+    </div></div>`;
 }
 
 /* club 模式数据加载（与 loadRankingDataForViz 同一组文件，但不计算排名时间线） */
@@ -213,6 +214,19 @@ function mdAvatarHtml(name, isW) {
     return `<div class="md-avatar ${isW ? 'md-avatar-w' : ''}">${escapeHtml(shown.charAt(0))}${img}</div>`;
 }
 
+// Periods 表行内的小圆头像（同一图源，尺寸由 .md-mini-avatar 控制；组合为两枚并排）
+function mdMiniAvatarHtml(name) {
+    if (!MD_WTT && typeof splitPairNames === 'function') {
+        const parts = splitPairNames(name);
+        if (parts) return `<span class="md-mini-pair">${parts.map(m => mdMiniAvatarHtml(m)).join('')}</span>`;
+    }
+    const p = (!MD_WTT && typeof getPlayerByName === 'function') ? getPlayerByName(name) : null;
+    const qq = p && p.qq && String(p.qq).trim() ? String(p.qq).trim() : '';
+    const shown = (!MD_WTT && typeof playerDisplayName === 'function') ? playerDisplayName(name) : name;
+    const img = qq ? `<img class="md-avatar-img" src="https://q1.qlogo.cn/g?b=qq&nk=${encodeURIComponent(qq)}&s=640" alt="" loading="lazy" onerror="this.style.display='none'">` : '';
+    return `<span class="md-mini-avatar">${escapeHtml(shown.charAt(0))}${img}</span>`;
+}
+
 // 复制链接（clipboard API，拒绝时回退 textarea + execCommand）
 function mdCopyText(text) {
     const legacy = () => new Promise(resolve => {
@@ -244,7 +258,7 @@ function mdDeltaPillHtml(raw, decayed, withDecayed) {
     return `<div class="md-delta-pill ${pos ? 'md-delta-pos' : 'md-delta-neg'}"><i class="fa-solid fa-caret-${pos ? 'up' : 'down'}"></i> ${pos ? '+' : ''}${raw.toFixed(1)}${note}</div>`;
 }
 
-// 记分牌一侧（胜者/负者）：头像 + 名字（带胜/负小标签）+ 赛前→赛后积分一行 + 变动胶囊
+// hero 一侧（胜者/负者）：头像 + 名字（带胜/负小标签）+ 赛前→赛后积分一行 + 变动胶囊
 function mdArenaSideHtml(m, side, T) {
     const isW = side === 'w';
     const name = isW ? m.w : m.l;
@@ -264,6 +278,76 @@ function mdArenaSideHtml(m, side, T) {
     </div>`;
 }
 
+// 逐局比分表（亚运会 Periods 风格：胜方行高亮在上、列标签行居中夹在两行之间、赢下的局加粗带下点标记）
+function mdPeriodsHtml(m, T) {
+    const parsed = m.games.map(g => {
+        const mt = String(g).match(/^(\d{1,2})\s*[-:：]\s*(\d{1,2})$/);
+        return mt ? { a: parseInt(mt[1], 10), b: parseInt(mt[2], 10) } : null;
+    });
+    if (!parsed.every(p => p)) {
+        // 个别局分无法解析时退回逐局 chip 展示原始字符串
+        const chipsHtml = m.games.map((g, gi) => {
+            const mt = String(g).match(/^(\d{1,2})\s*[-:：]\s*(\d{1,2})$/);
+            const a = mt ? parseInt(mt[1], 10) : null, b = mt ? parseInt(mt[2], 10) : null;
+            const winGame = a != null && b != null && a > b;
+            return `<span class="md-game-chip ${winGame ? 'md-game-w' : 'md-game-l'}"><span class="md-game-idx">G${gi + 1}</span><span class="md-game-score">${escapeHtml(String(g).replace('-', '–'))}</span></span>`;
+        }).join('');
+        return `<div class="md-games">${chipsHtml}</div><div class="md-note"><i class="fa-solid fa-circle-info"></i> ${T.md_games_note}</div>`;
+    }
+    let totA = 0, totB = 0, setsW = 0, setsL = 0;
+    const wCells = [], lCells = [], labelCells = [];
+    parsed.forEach((p, gi) => {
+        totA += p.a; totB += p.b;
+        const wWon = p.a > p.b;   // 局分恒为胜者视角：a 大则胜者赢下该局
+        if (wWon) setsW++; else setsL++;
+        wCells.push(`<td class="md-p-cell"><span class="md-p-pts ${wWon ? 'md-p-pts-win' : ''}">${p.a}</span></td>`);
+        lCells.push(`<td class="md-p-cell"><span class="md-p-pts ${wWon ? '' : 'md-p-pts-win'}">${p.b}</span></td>`);
+        labelCells.push(`<td class="md-p-label">${T.md_game_col.replace('{n}', String(gi + 1))}</td>`);
+    });
+    return `<div class="md-periods-wrap"><table class="md-periods">
+        <tbody>
+            <tr class="md-p-row md-p-row-w">
+                <td class="md-p-name">${mdMiniAvatarHtml(m.w)}<span class="md-p-nametext">${mdPlayerLink(m.w)}</span><i class="fa-solid fa-trophy md-trophy" aria-hidden="true"></i></td>
+                ${wCells.join('')}<td class="md-p-final">${setsW}</td>
+            </tr>
+            <tr class="md-p-labels"><td class="md-p-name"></td>${labelCells.join('')}<td class="md-p-label md-p-label-final">${T.md_final_col}</td></tr>
+            <tr class="md-p-row">
+                <td class="md-p-name">${mdMiniAvatarHtml(m.l)}<span class="md-p-nametext">${mdPlayerLink(m.l)}</span></td>
+                ${lCells.join('')}<td class="md-p-final md-p-final-dim">${setsL}</td>
+            </tr>
+        </tbody></table></div>
+        <div class="md-st-foot"><span class="md-st-total"><i class="fa-solid fa-table-tennis-paddle-ball"></i>${T.md_pts_total} <b>${totA}</b><span class="md-st-total-sep">:</span><b>${totB}</b></span></div>
+        <div class="md-note"><i class="fa-solid fa-circle-info"></i> ${T.md_games_note}</div>`;
+}
+
+/* 章节吸顶 tabs：点击平滑滚动 + 滚动位置 scrollspy（取视口 35% 线穿过的章节；重渲染前解绑旧监听） */
+function mdInitTabs(body) {
+    if (mdTabScrollHandler) { window.removeEventListener('scroll', mdTabScrollHandler); mdTabScrollHandler = null; }
+    const tabs = Array.from(body.querySelectorAll('.md-tab'));
+    if (!tabs.length) return;
+    const secs = tabs.map(b => document.getElementById(b.dataset.target)).filter(Boolean);
+    tabs.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const el = document.getElementById(btn.dataset.target);
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+    const onScroll = () => {
+        const pos = window.scrollY + window.innerHeight * 0.35;
+        let current = secs[0];
+        secs.forEach(s => { if (s.getBoundingClientRect().top + window.scrollY <= pos) current = s; });
+        if (current) tabs.forEach(b => b.classList.toggle('active', b.dataset.target === current.id));
+    };
+    let ticking = false;
+    mdTabScrollHandler = () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => { onScroll(); ticking = false; });
+    };
+    window.addEventListener('scroll', mdTabScrollHandler, { passive: true });
+    onScroll();
+}
+
 function renderMatchDetail(m) {
     const body = document.getElementById('matchDetailBody');
     if (!body) return;
@@ -271,64 +355,36 @@ function renderMatchDetail(m) {
     const T = i18n[currentLang];
     const backUrl = MD_WTT ? ('wtt_ranking.html?cat=' + encodeURIComponent(m.cat || 'ms')) : 'ranking.html';
 
-    // 记分牌顶部信息条：日期/类型/赛制/赛季
-    const chips = [];
-    chips.push(`<span class="md-chip"><i class="fa-solid fa-calendar-day"></i> ${escapeHtml(m.date)}</span>`);
-    chips.push(`<span class="md-chip"><i class="fa-solid fa-trophy"></i> ${escapeHtml(m.type)}</span>`);
-    if (m.format) chips.push(`<span class="md-chip"><i class="fa-solid fa-layer-group"></i> ${escapeHtml(String(m.format).toUpperCase())}</span>`);
-    chips.push(`<span class="md-chip"><i class="fa-solid fa-flag"></i> ${escapeHtml(String(m.seasonLabel))}</span>`);
+    /* ===== 深色 hero（亚运会官网风格：赛事 pill + Official 徽标 + 元信息行 + 大比分盒） ===== */
+    const eventParts = [m.type];
+    if (m.format) eventParts.push(String(m.format).toUpperCase());
+    const metaItems = [
+        `<span class="md-hero-meta-item"><i class="fa-solid fa-calendar-day"></i> ${escapeHtml(m.date)}</span>`,
+        `<span class="md-hero-meta-item"><i class="fa-solid fa-flag"></i> ${escapeHtml(String(m.seasonLabel))}</span>`
+    ];
+    if (m.n > 1) metaItems.push(`<span class="md-hero-meta-item"><i class="fa-solid fa-repeat"></i> ${T.md_occurrence.replace('{n}', String(m.n))}</span>`);
 
-    // 中列：状态 pill + 大比分（"3-1" → 3 : 1 巨型渐变数字，胜方绿色高亮；无比分退回 VS）
+    // 中央：大比分盒（胜方盒高亮；无比分退回 VS）
     let centerHtml;
     if (m.score) {
         const sm = String(m.score).match(/^(\d{1,2})\s*[-:：]\s*(\d{1,2})$/);
-        const big = sm
-            ? (() => {
-                const aWin = parseInt(sm[1], 10) >= parseInt(sm[2], 10);
-                return `<span class="md-digit ${aWin ? 'md-digit-win' : 'md-digit-loss'}">${sm[1]}</span><span class="md-score-sep">:</span><span class="md-digit ${aWin ? 'md-digit-loss' : 'md-digit-win'}">${sm[2]}</span>`;
-            })()
-            : escapeHtml(m.score);
-        centerHtml = `<div class="md-status"><span class="md-status-dot"></span>${T.md_status_ft}</div><div class="md-big-score">${big}</div><div class="md-score-sub">${T.md_score_title}${T.md_score_persp}</div>`;
+        if (sm) {
+            const aWin = parseInt(sm[1], 10) >= parseInt(sm[2], 10);
+            centerHtml = `<div class="md-score-boxes">
+                <span class="md-score-box ${aWin ? 'md-box-win' : ''}">${sm[1]}</span>
+                <span class="md-score-box ${aWin ? '' : 'md-box-win'}">${sm[2]}</span>
+            </div><div class="md-score-sub">${T.md_score_title}${T.md_score_persp}</div>`;
+        } else {
+            centerHtml = `<div class="md-score-boxes"><span class="md-score-box md-box-win md-box-wide">${escapeHtml(m.score)}</span></div>`;
+        }
     } else {
-        centerHtml = `<div class="md-status"><span class="md-status-dot"></span>${T.md_status_ft}</div><div class="md-vs-text">VS</div>`;
+        centerHtml = `<div class="md-vs-text">VS</div>`;
     }
 
-    // 小比分卡：赛况记分明细表（行=双方、列=逐局，局内高分格高亮，末列为大比分；附总得分）
+    // 逐局比分区（无比分时的占位提示也在此分支）
     let gamesHtml;
     if (m.games && m.games.length) {
-        const parsed = m.games.map(g => {
-            const mt = String(g).match(/^(\d{1,2})\s*[-:：]\s*(\d{1,2})$/);
-            return mt ? { a: parseInt(mt[1], 10), b: parseInt(mt[2], 10) } : null;
-        });
-        if (parsed.every(p => p)) {
-            let totA = 0, totB = 0, setsW = 0, setsL = 0;
-            const wCells = [], lCells = [];
-            parsed.forEach(p => {
-                totA += p.a; totB += p.b;
-                const wWon = p.a > p.b;   // 局分恒为胜者视角：a 大则胜者赢下该局
-                if (wWon) setsW++; else setsL++;
-                wCells.push(`<td class="${wWon ? 'md-st-win' : ''}">${p.a}</td>`);
-                lCells.push(`<td class="${wWon ? '' : 'md-st-win'}">${p.b}</td>`);
-            });
-            const headCells = parsed.map((_, gi) => `<th>G${gi + 1}</th>`).join('');
-            gamesHtml = `<div class="md-scoretable-wrap"><table class="md-scoretable">
-                <thead><tr><th class="md-st-name-col"></th>${headCells}<th class="md-st-sets-col">${T.md_sets_col}</th></tr></thead>
-                <tbody>
-                    <tr><td class="md-st-name"><i class="fa-solid fa-trophy md-trophy" aria-hidden="true"></i>${mdPlayerLink(m.w)}</td>${wCells.join('')}<td class="md-st-sets md-st-win">${setsW}</td></tr>
-                    <tr><td class="md-st-name">${mdPlayerLink(m.l)}</td>${lCells.join('')}<td class="md-st-sets">${setsL}</td></tr>
-                </tbody></table></div>
-                <div class="md-st-foot"><span class="md-st-total"><i class="fa-solid fa-table-tennis-paddle-ball"></i>${T.md_pts_total} <b>${totA}</b><span class="md-st-total-sep">:</span><b>${totB}</b></span></div>
-                <div class="md-note"><i class="fa-solid fa-circle-info"></i> ${T.md_games_note}</div>`;
-        } else {
-            // 个别局分无法解析时退回逐局 chip 展示原始字符串
-            const chipsHtml = m.games.map((g, gi) => {
-                const mt = String(g).match(/^(\d{1,2})\s*[-:：]\s*(\d{1,2})$/);
-                const a = mt ? parseInt(mt[1], 10) : null, b = mt ? parseInt(mt[2], 10) : null;
-                const winGame = a != null && b != null && a > b;
-                return `<span class="md-game-chip ${winGame ? 'md-game-w' : 'md-game-l'}"><span class="md-game-idx">G${gi + 1}</span><span class="md-game-score">${escapeHtml(String(g).replace('-', '–'))}</span></span>`;
-            }).join('');
-            gamesHtml = `<div class="md-games">${chipsHtml}</div><div class="md-note"><i class="fa-solid fa-circle-info"></i> ${T.md_games_note}</div>`;
-        }
+        gamesHtml = mdPeriodsHtml(m, T);
     } else {
         gamesHtml = `<div class="md-placeholder"><i class="fa-solid fa-circle-info"></i> ${T.md_score_none}<div class="md-note">${(MD_WTT && T.md_score_none_hint_wtt) ? T.md_score_none_hint_wtt : T.md_score_none_hint}</div></div>`;
     }
@@ -370,57 +426,74 @@ function renderMatchDetail(m) {
         : T.md_h2h_none;
     const fmtForm = v => `<b class="${v >= 0 ? 'md-change-pos' : 'md-change-neg'}">${v >= 0 ? '+' : ''}${v.toFixed(1)}</b>`;
 
-    // 历史交锋表
-    let h2hTable = '';
+    // 历史交锋卡
+    let h2hCard = '';
     if (m.h2h.list.length) {
         const rows = m.h2h.list.map(r => {
             const url = buildMatchDetailUrl(r.date, r.type, r.winner, r.loser, r.n, m.cat);
             return `<tr><td><a class="player-name-link" href="${url}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(r.type)}</td><td>${mdPlayerLink(r.winner)}</td><td>${r.score ? escapeHtml(r.score) : '-'}</td></tr>`;
         }).join('');
-        h2hTable = `<div class="md-card glass-card md-anim"><div class="md-card-title"><i class="fa-solid fa-clock-rotate-left"></i> ${T.md_h2h_title}</div><div class="score-detail-table-wrapper md-h2h-wrap"><table class="score-detail-table"><thead><tr><th>${T.data_viz_col_date}</th><th>${T.data_viz_col_type}</th><th>${T.data_viz_col_winner}</th><th>${T.md_col_score}</th></tr></thead><tbody>${rows}</tbody></table></div></div>`;
+        h2hCard = `<section class="md-card glass-card md-anim md-sec" id="md-sec-h2h"><div class="md-card-title"><i class="fa-solid fa-clock-rotate-left"></i> ${T.md_h2h_title}</div><div class="score-detail-table-wrapper md-h2h-wrap"><table class="score-detail-table"><thead><tr><th>${T.data_viz_col_date}</th><th>${T.data_viz_col_type}</th><th>${T.data_viz_col_winner}</th><th>${T.md_col_score}</th></tr></thead><tbody>${rows}</tbody></table></div></section>`;
     }
 
     document.title = `${m.w} vs ${m.l} · ${T.md_hero_title}`;
 
-    // 头部行：返回 + 右侧工具（同日多场时的场次标记、复制链接）
-    const occChip = m.n > 1 ? `<span class="md-occ"><i class="fa-solid fa-repeat"></i> ${T.md_occurrence.replace('{n}', String(m.n))}</span>` : '';
+    // 吸顶 tabs（h2h 无记录时不给 tab）
+    const tabDefs = [
+        { id: 'md-sec-games', label: T.md_tabs_games },
+        { id: 'md-sec-points', label: T.md_tabs_points },
+        { id: 'md-sec-pred', label: T.md_tabs_pred }
+    ];
+    if (m.h2h.list.length) tabDefs.push({ id: 'md-sec-h2h', label: T.md_tabs_h2h });
+    const tabsHtml = `<nav class="md-tabs" aria-label="match sections">${tabDefs.map((t, i) => `<button type="button" class="md-tab${i === 0 ? ' active' : ''}" data-target="${t.id}">${t.label}</button>`).join('')}</nav>`;
 
     body.innerHTML = `
-        <div class="md-header-row">
-            <a class="btn btn-sm btn-secondary" href="${backUrl}"><i class="fa-solid fa-arrow-left"></i> ${T.md_back_ranking}</a>
-            <div class="md-header-tools">${occChip}<button type="button" class="btn btn-sm btn-secondary md-copy-btn"><i class="fa-solid fa-link"></i> ${T.md_copy_link}</button></div>
-        </div>
-        <div class="md-arena md-anim">
-            <div class="md-arena-meta">${chips.join('')}</div>
-            <div class="md-arena-main">
-                ${mdArenaSideHtml(m, 'w', T)}
-                <div class="md-center">${centerHtml}</div>
-                ${mdArenaSideHtml(m, 'l', T)}
-            </div>
-        </div>
-        <div class="md-card glass-card md-anim">
-            <div class="md-card-title"><i class="fa-solid fa-table-tennis-paddle-ball"></i> ${T.md_games_title}</div>
-            ${gamesHtml}
-        </div>
-        <div class="md-duo">
-            <div class="md-card glass-card md-anim">
-                <div class="md-card-title"><i class="fa-solid fa-calculator"></i> ${T.md_breakdown_title}</div>
-                ${formulaHtml}
-                <div class="md-bd-list">${bdRows.join('')}</div>
-            </div>
-            <div class="md-card glass-card md-anim">
-                <div class="md-card-title"><i class="fa-solid fa-percent"></i> ${T.md_pred_title} ${predBadge}</div>
-                <div class="md-pred-hero">
-                    <div class="md-pred-side"><div class="md-pred-pct md-pred-pct-w">${predWpct.toFixed(1)}<small>%</small></div><div class="md-pred-name">${mdPlayerLink(m.w)}</div></div>
-                    <div class="md-pred-side md-pred-side-r"><div class="md-pred-pct md-pred-pct-l">${predLpct.toFixed(1)}<small>%</small></div><div class="md-pred-name">${mdPlayerLink(m.l)}</div></div>
+        <div class="md-hero">
+            <div class="container">
+                <div class="md-hero-top">
+                    <a class="md-hero-btn" href="${backUrl}"><i class="fa-solid fa-arrow-left"></i> ${T.md_back_ranking}</a>
+                    <button type="button" class="md-hero-btn md-copy-btn"><i class="fa-solid fa-link"></i> ${T.md_copy_link}</button>
                 </div>
-                <div class="md-pred-track"><div class="md-pred-seg md-seg-w" style="width:${predWpct.toFixed(1)}%;"></div><div class="md-pred-seg md-seg-l" style="width:${predLpct.toFixed(1)}%;"></div></div>
-                <div class="md-note"><i class="fa-solid fa-chart-line"></i> ${T.md_pred_form}：${mdPlayerLink(m.w)} ${fmtForm(m.form.w)} · ${mdPlayerLink(m.l)} ${fmtForm(m.form.l)}</div>
-                <div class="md-note"><i class="fa-solid fa-handshake"></i> ${h2hSummary}</div>
-                <div class="md-note"><i class="fa-solid fa-circle-info"></i> ${T.md_pred_model_note}</div>
+                <div class="md-hero-event">
+                    <span class="md-event-pill">${escapeHtml(eventParts.join(' · '))}</span>
+                    <span class="md-official"><i class="fa-solid fa-circle-check"></i> ${T.md_official}</span>
+                </div>
+                <div class="md-hero-meta">${metaItems.join('')}</div>
+                <div class="md-hero-score">
+                    ${mdArenaSideHtml(m, 'w', T)}
+                    <div class="md-center">${centerHtml}</div>
+                    ${mdArenaSideHtml(m, 'l', T)}
+                </div>
             </div>
         </div>
-        ${h2hTable}
+        <div class="md-sheet">
+            <div class="container">
+                ${tabsHtml}
+                <section class="md-card glass-card md-anim md-sec" id="md-sec-games">
+                    <div class="md-card-title md-title-row"><span><i class="fa-solid fa-table-tennis-paddle-ball"></i> ${T.md_periods_title}</span><span class="md-official md-official-card"><i class="fa-solid fa-circle-check"></i> ${T.md_official}</span></div>
+                    ${gamesHtml}
+                </section>
+                <div class="md-duo">
+                    <section class="md-card glass-card md-anim md-sec" id="md-sec-points">
+                        <div class="md-card-title"><i class="fa-solid fa-calculator"></i> ${T.md_breakdown_title}</div>
+                        ${formulaHtml}
+                        <div class="md-bd-list">${bdRows.join('')}</div>
+                    </section>
+                    <section class="md-card glass-card md-anim md-sec" id="md-sec-pred">
+                        <div class="md-card-title"><i class="fa-solid fa-percent"></i> ${T.md_pred_title} ${predBadge}</div>
+                        <div class="md-pred-hero">
+                            <div class="md-pred-side"><div class="md-pred-pct md-pred-pct-w">${predWpct.toFixed(1)}<small>%</small></div><div class="md-pred-name">${mdPlayerLink(m.w)}</div></div>
+                            <div class="md-pred-side md-pred-side-r"><div class="md-pred-pct md-pred-pct-l">${predLpct.toFixed(1)}<small>%</small></div><div class="md-pred-name">${mdPlayerLink(m.l)}</div></div>
+                        </div>
+                        <div class="md-pred-track"><div class="md-pred-seg md-seg-w" style="width:${predWpct.toFixed(1)}%;"></div><div class="md-pred-seg md-seg-l" style="width:${predLpct.toFixed(1)}%;"></div></div>
+                        <div class="md-note"><i class="fa-solid fa-chart-line"></i> ${T.md_pred_form}：${mdPlayerLink(m.w)} ${fmtForm(m.form.w)} · ${mdPlayerLink(m.l)} ${fmtForm(m.form.l)}</div>
+                        <div class="md-note"><i class="fa-solid fa-handshake"></i> ${h2hSummary}</div>
+                        <div class="md-note"><i class="fa-solid fa-circle-info"></i> ${T.md_pred_model_note}</div>
+                    </section>
+                </div>
+                ${h2hCard}
+            </div>
+        </div>
     `;
 
     // 复制链接按钮（事件绑定在渲染后，避免内联 handler）
@@ -436,6 +509,7 @@ function renderMatchDetail(m) {
             });
         });
     }
+    mdInitTabs(body);
 }
 
 /* ---- 入口（main.js 通过 #matchDetailBody 派发）---- */
