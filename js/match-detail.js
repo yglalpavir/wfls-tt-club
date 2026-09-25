@@ -214,7 +214,7 @@ function mdAvatarHtml(name, isW) {
     return `<div class="md-avatar ${isW ? 'md-avatar-w' : ''}">${escapeHtml(shown.charAt(0))}${img}</div>`;
 }
 
-// Periods 表行内的小圆头像（同一图源，尺寸由 .md-mini-avatar 控制；组合为两枚并排）
+// Periods 表行内的小圆头像（同一图源，尺寸由 .md-mini-avatar 控制；组合为两枚并排；仅 club 模式使用）
 function mdMiniAvatarHtml(name) {
     if (!MD_WTT && typeof splitPairNames === 'function') {
         const parts = splitPairNames(name);
@@ -225,6 +225,17 @@ function mdMiniAvatarHtml(name) {
     const shown = (!MD_WTT && typeof playerDisplayName === 'function') ? playerDisplayName(name) : name;
     const img = qq ? `<img class="md-avatar-img" src="https://q1.qlogo.cn/g?b=qq&nk=${encodeURIComponent(qq)}&s=640" alt="" loading="lazy" onerror="this.style.display='none'">` : '';
     return `<span class="md-mini-avatar">${escapeHtml(shown.charAt(0))}${img}</span>`;
+}
+
+// WTT 模式：协会旗帜 + 三位协会代码（复用排名页的 player-flag / flag-icons 约定；无协会数据时返回空串）
+function mdOrgHtml(name) {
+    if (!MD_WTT || typeof wttGetPlayerAssoc !== 'function' || typeof wttAssocFlagClass !== 'function') return '';
+    const a = wttGetPlayerAssoc(name);
+    if (!a || !a.assoc) return '';
+    const cls = wttAssocFlagClass(a.assoc);
+    if (!cls) return '';
+    const title = escapeHtml(a.assoc) + (a.country ? ' · ' + escapeHtml(a.country) : '');
+    return `<span class="player-flag ${cls}" title="${title}"></span><span class="md-org-code">${escapeHtml(a.assoc)}</span>`;
 }
 
 // 复制链接（clipboard API，拒绝时回退 textarea + execCommand）
@@ -251,14 +262,15 @@ function mdDeltaHtml(raw, decayed, withDecayed) {
     return `<span class="${cls}">${sign}${raw.toFixed(1)}</span>${note}`;
 }
 
-// 记分牌两侧的积分变动胶囊（胜绿负红，带趋势箭头）
+// 记分牌两侧的积分变动胶囊（胜紫负灰，只保留本场产生值；
+// 衰减后的实际值已由 赛前→赛后 数字与「积分产生明细」卡表达，不再重复）
 function mdDeltaPillHtml(raw, decayed, withDecayed) {
     const pos = raw >= 0;
-    const note = withDecayed ? `<span class="md-decayed-note">${i18n[currentLang].md_eff_now} ${decayed >= 0 ? '+' : ''}${decayed.toFixed(1)}</span>` : '';
-    return `<div class="md-delta-pill ${pos ? 'md-delta-pos' : 'md-delta-neg'}"><i class="fa-solid fa-caret-${pos ? 'up' : 'down'}"></i> ${pos ? '+' : ''}${raw.toFixed(1)}${note}</div>`;
+    return `<div class="md-delta-pill ${pos ? 'md-delta-pos' : 'md-delta-neg'}"><i class="fa-solid fa-caret-${pos ? 'up' : 'down'}"></i><span>${pos ? '+' : ''}${raw.toFixed(1)}</span></div>`;
 }
 
-// hero 一侧（胜者/负者）：头像 + 名字（带胜/负小标签）+ 赛前→赛后积分一行 + 变动胶囊
+// hero 一侧（胜者/负者）：亚运记分牌布局 —— 姓名块朝中央对齐，头像紧贴大比分。
+// club：QQ 大头像（移动端名字行内退化为小头像）；WTT：不用头像，名字行内展示 协会旗帜+代码。
 function mdArenaSideHtml(m, side, T) {
     const isW = side === 'w';
     const name = isW ? m.w : m.l;
@@ -267,18 +279,21 @@ function mdArenaSideHtml(m, side, T) {
     const clubDelta = !MD_WTT;   // WTT 无衰减：raw 与 decayed 相同，只显示一个
     const deltaPill = isW ? mdDeltaPillHtml(m.rawW, m.deltaW, clubDelta) : mdDeltaPillHtml(m.rawL, m.deltaL, clubDelta);
     return `<div class="md-side ${isW ? 'md-side-w' : 'md-side-l'}">
-        ${mdAvatarHtml(name, isW)}
-        <div class="md-player-name">${mdPlayerLink(name)}<span class="md-side-tag ${isW ? 'md-tag-w' : 'md-tag-l'}">${isW ? T.md_winner_badge : T.md_loser_badge}</span></div>
-        <div class="md-pts-line">
-            <span class="md-pts-one"><em>${T.md_pre_score}</em>${pre.toFixed(1)}</span>
-            <i class="fa-solid fa-arrow-right md-pts-arrow" aria-hidden="true"></i>
-            <span class="md-pts-one md-pts-post"><em>${T.md_post_score}</em>${post.toFixed(1)}</span>
+        <div class="md-side-info">
+            <div class="md-player-name">${MD_WTT ? mdOrgHtml(name) : mdMiniAvatarHtml(name)}${mdPlayerLink(name)}<span class="md-side-tag ${isW ? 'md-tag-w' : 'md-tag-l'}">${isW ? T.md_winner_badge : T.md_loser_badge}</span></div>
+            <div class="md-pts-line">
+                <span class="md-pts-one"><em>${T.md_pre_score}</em>${pre.toFixed(1)}</span>
+                <i class="fa-solid fa-arrow-right md-pts-arrow" aria-hidden="true"></i>
+                <span class="md-pts-one md-pts-post"><em>${T.md_post_score}</em>${post.toFixed(1)}</span>
+            </div>
+            ${deltaPill}
         </div>
-        ${deltaPill}
+        ${MD_WTT ? '' : mdAvatarHtml(name, isW)}
     </div>`;
 }
 
-// 逐局比分表（亚运会 Periods 风格：胜方行高亮在上、列标签行居中夹在两行之间、赢下的局加粗带下点标记）
+// 逐局比分（亚运 .b-h2h-periods 结构：胜方行白→薰衣草渐变在上、灰色列标条带夹中、负方行在下，
+// 赢下的局加粗且底部有 #333 圆点标记，末列为总胜局）
 function mdPeriodsHtml(m, T) {
     const parsed = m.games.map(g => {
         const mt = String(g).match(/^(\d{1,2})\s*[-:：]\s*(\d{1,2})$/);
@@ -300,24 +315,28 @@ function mdPeriodsHtml(m, T) {
         totA += p.a; totB += p.b;
         const wWon = p.a > p.b;   // 局分恒为胜者视角：a 大则胜者赢下该局
         if (wWon) setsW++; else setsL++;
-        wCells.push(`<td class="md-p-cell"><span class="md-p-pts ${wWon ? 'md-p-pts-win' : ''}">${p.a}</span></td>`);
-        lCells.push(`<td class="md-p-cell"><span class="md-p-pts ${wWon ? '' : 'md-p-pts-win'}">${p.b}</span></td>`);
-        labelCells.push(`<td class="md-p-label">${T.md_game_col.replace('{n}', String(gi + 1))}</td>`);
+        wCells.push(`<span class="md-p-split ${wWon ? 'md-p-split-win' : ''}">${p.a}</span>`);
+        lCells.push(`<span class="md-p-split ${wWon ? '' : 'md-p-split-win'}">${p.b}</span>`);
+        labelCells.push(`<span>${T.md_game_col.replace('{n}', String(gi + 1))}</span>`);
     });
-    return `<div class="md-periods-wrap"><table class="md-periods">
-        <tbody>
-            <tr class="md-p-row md-p-row-w">
-                <td class="md-p-name">${mdMiniAvatarHtml(m.w)}<span class="md-p-nametext">${mdPlayerLink(m.w)}</span><i class="fa-solid fa-trophy md-trophy" aria-hidden="true"></i></td>
-                ${wCells.join('')}<td class="md-p-final">${setsW}</td>
-            </tr>
-            <tr class="md-p-labels"><td class="md-p-name"></td>${labelCells.join('')}<td class="md-p-label md-p-label-final">${T.md_final_col}</td></tr>
-            <tr class="md-p-row">
-                <td class="md-p-name">${mdMiniAvatarHtml(m.l)}<span class="md-p-nametext">${mdPlayerLink(m.l)}</span></td>
-                ${lCells.join('')}<td class="md-p-final md-p-final-dim">${setsL}</td>
-            </tr>
-        </tbody></table></div>
-        <div class="md-st-foot"><span class="md-st-total"><i class="fa-solid fa-table-tennis-paddle-ball"></i>${T.md_pts_total} <b>${totA}</b><span class="md-st-total-sep">:</span><b>${totB}</b></span></div>
-        <div class="md-note"><i class="fa-solid fa-circle-info"></i> ${T.md_games_note}</div>`;
+    // 行首标识：WTT 用 协会旗帜+代码（亚运 CHN SUN Y 样式）；club 无头像、纯名字
+    const nameCell = (name) => `<div class="md-p-name">${mdOrgHtml(name)}<span class="md-p-nametext">${mdPlayerLink(name)}</span></div>`;
+    return `<div class="md-periods">
+        <div class="md-p-row md-p-row-w">
+            ${nameCell(m.w)}
+            <div class="md-p-splits">${wCells.join('')}<span class="md-p-total">${setsW}</span></div>
+        </div>
+        <div class="md-p-titles">
+            <div class="md-p-name"></div>
+            <div class="md-p-splits">${labelCells.join('')}<span class="md-p-total-title">${T.md_final_col}</span></div>
+        </div>
+        <div class="md-p-row">
+            ${nameCell(m.l)}
+            <div class="md-p-splits">${lCells.join('')}<span class="md-p-total md-p-total-dim">${setsL}</span></div>
+        </div>
+    </div>
+    <div class="md-st-foot"><span class="md-st-total"><i class="fa-solid fa-table-tennis-paddle-ball"></i>${T.md_pts_total} <b>${totA}</b><span class="md-st-total-sep">:</span><b>${totB}</b></span></div>
+    <div class="md-note"><i class="fa-solid fa-circle-info"></i> ${T.md_games_note}</div>`;
 }
 
 /* 章节吸顶 tabs：点击平滑滚动 + 滚动位置 scrollspy（取视口 35% 线穿过的章节；重渲染前解绑旧监听） */
