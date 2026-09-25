@@ -4,6 +4,16 @@
 
 let currentScoreContext = { player: '', snapshotDate: '' };
 
+/* ===== 单打/双打双口径状态 =====
+   两套时间线一次算好存 modeTimelines，切换零请求；
+   singlesLogData/doublesLogData 为口径过滤后的日志（scoreLogData 全局保持全量，
+   口径内计算一律经 withScoreContext 临时换血，见 renderScoreDetail / loadRankingData） */
+let rankingMode = 'singles';
+const modeTimelines = { singles: [], doubles: [] };
+let singlesLogData = [];
+let doublesLogData = [];
+let doublesInitialScoresData = null;   // { initialScores: {组合串: 首赛日两人单打分平均} }
+
 /* 比分列仅在该球员窗口内存在含「比分/局分」的记录时显示（存量旧数据无比分，避免空列） */
 function toggleScoreDetailScoreCol(show) { const th = document.getElementById('scoreDetailScoreHead'); if (th) th.style.display = show ? '' : 'none'; }
 
@@ -36,7 +46,15 @@ function renderScoreDetail() {
     const player = currentScoreContext.player;
     const snapshotDate = currentScoreContext.snapshotDate;
     if (!player || !snapshotDate) return;
+    // 单双打口径分离：getSeasonStartScores / playerTypeBatches / scoreLogData 都读全局，
+    // 双打明细（组合行）与含双打数据后的单打明细都必须在对应口径上下文中重放
+    const replay = () => renderScoreDetailReplay(player, snapshotDate);
+    if (rankingMode === 'doubles') withScoreContext(doublesLogData, doublesInitialScoresData, replay);
+    else if (doublesLogData.length) withScoreContext(singlesLogData, undefined, replay);
+    else replay();
+}
 
+function renderScoreDetailReplay(player, snapshotDate) {
     // 找到快照日期所在的赛季
     const currentSeason = getSeasonForDate(snapshotDate);
     if (!currentSeason) return;
@@ -110,8 +128,10 @@ function renderScoreDetail() {
         const signDecayed = r.decayedChange >= 0 ? '+' : '';
         const changeDisplay = `${signRaw}${r.rawChange.toFixed(1)}（${signDecayed}${r.decayedChange.toFixed(1)}）`;
         const mdUrl = escapeHtml(buildMatchDetailUrl(r.date, r.type, r.isWinner ? player : r.opponent, r.isWinner ? r.opponent : player, r.n));
-        const scoreCell = hasScore ? `<td${r.games && r.games.length ? ` title="${i18n[currentLang].sb_games_label || '局分'}：${escapeHtml(r.games.join(' '))}"` : ''}>${r.score ? escapeHtml(r.score) : '-'}</td>` : '';
-        return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(r.type)}</td><td>${escapeHtml(playerDisplayName(r.opponent))}</td><td class="${rc}">${res}</td>${scoreCell}<td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${changeDisplay}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
+        /* 比分/局分存储为胜者视角：负行按球员视角展示（对调数字、局序不变）；对手名可点（双打组合逐成员链接） */
+        const gamesView = playerViewGames(r.games, r.isWinner);
+        const scoreCell = hasScore ? `<td${gamesView && gamesView.length ? ` title="${i18n[currentLang].sb_games_label || '局分'}：${escapeHtml(gamesView.join(' '))}"` : ''}>${r.score ? escapeHtml(playerViewScore(r.score, r.isWinner)) : '-'}</td>` : '';
+        return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(r.type)}</td><td>${linkPlayerSide(r.opponent)}</td><td class="${rc}">${res}</td>${scoreCell}<td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${changeDisplay}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
     }).join('');
     setTimeout(adjustModalSize, 150);
 }
@@ -175,18 +195,40 @@ async function loadRankingData() {
         updateProgress(i18n[currentLang].rank_calculating);
         await new Promise(r => setTimeout(r, 0));
 
-        // 同步计算（club数据量小，不需要分块异步）
-        rankingTimeline = calculateAllRankingsWithSeasons(scoreLogData, initialScoresData.initialScores, seasonsData);
-        const rt = calculateRealtimeRanking();
-        if (rt) rankingTimeline.push(rt);
+        // ===== 单打/双打双口径（同步计算，club数据量小，不需要分块异步）=====
+        // 单打口径 = 全量日志减去双打记录（组合串不得混入单打榜）；无双打数据时保持原引用，回归零漂移。
+        // 引擎内部 getSeasonStartScores 读全局 scoreLogData/initialScoresData，口径内计算一律包 withScoreContext。
+        doublesLogData = scoreLogData.filter(isDoublesRecord);
+        singlesLogData = doublesLogData.length ? scoreLogData.filter(r => !isDoublesRecord(r)) : scoreLogData;
+        const computeTimeline = (log, initialScores) => {
+            const t = calculateAllRankingsWithSeasons(log, initialScores, seasonsData);
+            const rt = calculateRealtimeRanking();
+            if (rt) t.push(rt);
+            return t;
+        };
+        modeTimelines.singles = doublesLogData.length
+            ? withScoreContext(singlesLogData, undefined, () => computeTimeline(singlesLogData, initialScoresData.initialScores))
+            : computeTimeline(singlesLogData, initialScoresData.initialScores);
+        if (doublesLogData.length) {
+            // 组合初始分必须在单打上下文中计算（重放到各组合首赛日取两人单打分平均）
+            const pairInitials = withScoreContext(singlesLogData, undefined, () => buildDoublesInitialScores(doublesLogData));
+            doublesInitialScoresData = { initialScores: pairInitials };
+            modeTimelines.doubles = withScoreContext(doublesLogData, doublesInitialScoresData, () => computeTimeline(doublesLogData, pairInitials));
+        } else {
+            modeTimelines.doubles = [];
+        }
+        rankingMode = 'singles';
+        rankingTimeline = modeTimelines.singles;
         currentTimeIndex = rankingTimeline.length - 1;
         currentSortKey = '当前积分';
         currentSortDir = 'desc';
-        renderTimeNodeList();
-        updateRankingDisplay();
         setupSortListeners();
         setupMobileSortControls();
         setupRankTableExport();
+        setupModeToggle();
+        // ?mode=doubles 直达双打榜（setRankingMode 内部会重渲染侧栏 + 表格）
+        if (new URLSearchParams(window.location.search).get('mode') === 'doubles') setRankingMode('doubles', true);
+        else { renderTimeNodeList(); updateRankingDisplay(); }
         renderSeasonExpiryNotice();
     } catch(e) {
         console.error('排名计算失败', e);
@@ -208,7 +250,7 @@ async function loadRankingData() {
     }
 }
 
-function renderTimeNodeList() { const list = document.getElementById('timeNodeList'), lbl = document.getElementById('currentTimeLabel'); if (!list || !rankingTimeline.length) return; list.innerHTML = '';
+function renderTimeNodeList() { const list = document.getElementById('timeNodeList'), lbl = document.getElementById('currentTimeLabel'); if (!list) return; if (!rankingTimeline.length) { list.innerHTML = ''; if (lbl) lbl.textContent = rankingMode === 'doubles' ? i18n[currentLang].rank_mode_doubles : ''; return; } list.innerHTML = '';
 
     // 分离实时积分节点和普通节点
     const realtimeNodes = [], regularNodes = [];
@@ -254,6 +296,40 @@ function renderTimeNodeList() { const list = document.getElementById('timeNodeLi
         });
     }
 }
+/* ===== 单打/双打模式切换 ===== */
+function setRankingMode(mode, force) {
+    if (mode !== 'singles' && mode !== 'doubles') mode = 'singles';
+    if (mode === rankingMode && !force) return;
+    rankingMode = mode;
+    rankingTimeline = modeTimelines[mode] || [];
+    currentTimeIndex = rankingTimeline.length ? rankingTimeline.length - 1 : 0;
+    currentSortKey = '当前积分'; currentSortDir = 'desc';
+    document.querySelectorAll('.ranking-mode-btn').forEach(b => {
+        const on = b.dataset.mode === mode;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    const url = new URL(window.location.href);
+    if (mode === 'doubles') url.searchParams.set('mode', 'doubles'); else url.searchParams.delete('mode');
+    try { history.replaceState(null, '', url); } catch (e) { /* file:// 等受限环境忽略 */ }
+    renderTimeNodeList();
+    updateRankingDisplay();
+}
+function setupModeToggle() {
+    document.querySelectorAll('.ranking-mode-btn').forEach(btn => {
+        if (btn._modeBound) return;
+        btn._modeBound = true;
+        btn.addEventListener('click', () => setRankingMode(btn.dataset.mode));
+    });
+}
+/* 双打模式尚无记录时的空状态（updateRankingDisplay 空时间线兜底，语言切换也会走到） */
+function renderDoublesEmptyState() {
+    const tb = document.getElementById('rankingFullBody');
+    if (!tb || rankingMode !== 'doubles') return;
+    tb.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:48px 20px;color:var(--text-secondary);">${escapeHtml(i18n[currentLang].rank_doubles_empty)}</td></tr>`;
+    const lbl = document.getElementById('currentTimeLabel');
+    if (lbl) lbl.textContent = i18n[currentLang].rank_mode_doubles;
+}
 function calculateRankChanges(cd, pd, isInitial) {
     const cur = assignTiedRanks(cd);
     if (!pd || isInitial) return cur.map(p => ({ ...p, change: 0, changeType: 'new', pointsChange: 0, pointsChangeType: 'new' }));
@@ -289,9 +365,16 @@ function renderSeasonExpiryNotice() {
     div.textContent = i18n[currentLang].rank_season_expired.replace('{date}', last.endDate);
     host.parentNode.insertBefore(div, host);
 }
-function updateRankingDisplay() { if (!rankingTimeline.length || !rankingTimeline[currentTimeIndex]) return; const cn = rankingTimeline[currentTimeIndex], pn = currentTimeIndex > 0 ? rankingTimeline[currentTimeIndex-1] : null; currentDisplayData = calculateRankChanges(cn.data, pn ? pn.data : null, cn.isInitial); currentDisplayData = sortDisplayData(currentSortKey, currentSortDir); renderRankingTable(currentDisplayData); const ind = document.getElementById('sortIndicator'); if (ind) ind.textContent = `${sortKeyLabel(currentSortKey)} ${currentSortDir==='desc'?i18n[currentLang].sort_desc:i18n[currentLang].sort_asc}`; updateSortHeaderHighlight(); const lbl = document.getElementById('currentTimeLabel'); if (lbl) lbl.textContent = getNodeDisplayLabel(cn); syncMobileSortControls(false); }
+function updateRankingDisplay() { if (!rankingTimeline.length || !rankingTimeline[currentTimeIndex]) { renderDoublesEmptyState(); return; } const cn = rankingTimeline[currentTimeIndex], pn = currentTimeIndex > 0 ? rankingTimeline[currentTimeIndex-1] : null; currentDisplayData = calculateRankChanges(cn.data, pn ? pn.data : null, cn.isInitial); currentDisplayData = sortDisplayData(currentSortKey, currentSortDir); renderRankingTable(currentDisplayData); const ind = document.getElementById('sortIndicator'); if (ind) ind.textContent = `${sortKeyLabel(currentSortKey)} ${currentSortDir==='desc'?i18n[currentLang].sort_desc:i18n[currentLang].sort_asc}`; updateSortHeaderHighlight(); const lbl = document.getElementById('currentTimeLabel'); if (lbl) lbl.textContent = getNodeDisplayLabel(cn); syncMobileSortControls(false); }
 function sortDisplayData(key, dir) { return [...currentDisplayData].sort((a, b) => { let va, vb; if (key === '胜率') { va = parseWinRate(a['胜率']); vb = parseWinRate(b['胜率']); } else if (key === '姓名') return dir === 'asc' ? (a['姓名']||'').localeCompare(b['姓名']||'', 'zh') : (b['姓名']||'').localeCompare(a['姓名']||'', 'zh'); else if (key === 'rank') { va = a.rank || 0; vb = b.rank || 0; } else if (key === '变化') { va = a.change || 0; vb = b.change || 0; } else if (key === '积分变化') { va = a.pointsChange || 0; vb = b.pointsChange || 0; } else { va = a[key] || 0; vb = b[key] || 0; } return va < vb ? (dir === 'asc' ? -1 : 1) : va > vb ? (dir === 'asc' ? 1 : -1) : 0; }); }
-function renderRankingTable(data) { const tb = document.getElementById('rankingFullBody'); if (!tb) return; const L = i18n[currentLang] || {}; if (!data || !data.length) { tb.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:40px;">${i18n[currentLang].rank_no_data}</td></tr>`; return; } tb.innerHTML = ''; const currentSnapshotDate = rankingTimeline[currentTimeIndex]?.time || ''; data.forEach((p, i) => { const tr = document.createElement('tr'); const wr = p['胜率'] || '0%', wd = wr === '#DIV/0!' || wr === '-' ? '0%' : wr; let ch = '', pch = ''; if (p.changeType === 'up') ch = `<span class="rank-change rank-up">▲${Math.abs(p.change)}</span>`; else if (p.changeType === 'down') ch = `<span class="rank-change rank-down">▼${Math.abs(p.change)}</span>`; else if (p.changeType === 'new') ch = '<span class="rank-new">NEW</span>'; else ch = '<span class="rank-same">-</span>'; if (p.pointsChangeType === 'up') pch = `<span class="rank-change rank-up">▲${Math.abs(p.pointsChange).toFixed(1)}</span>`; else if (p.pointsChangeType === 'down') pch = `<span class="rank-change rank-down">▼${Math.abs(p.pointsChange).toFixed(1)}</span>`; else if (p.pointsChangeType === 'new') pch = '<span class="rank-new">NEW</span>'; else pch = '<span class="rank-same">-</span>'; const pn = String(p['姓名'] || '-'); const pnSafe = escapeHtml(pn); const pnShow = escapeHtml(playerDisplayName(pn)); const sds = escapeHtml(currentSnapshotDate || ''); const uid = getUidForPlayerName(pn); let nc = pnShow; if (uid != null) { nc = `<a class="player-name-link" href="player.html?uid=${uid}" title="${L.rank_view_player_page}">${pnShow}</a>`; } else if (scoreLogData.length > 0) { nc = `<span class="player-name-link" role="button" tabindex="0" data-player="${pnSafe}" data-snapshot="${sds}" title="${L.rank_click_detail}">${pnShow}</span>`; } if (scoreLogData.length > 0) nc += ` <button class="score-detail-icon" type="button" data-player="${pnSafe}" data-snapshot="${sds}" title="${L.score_detail_title}"><i class="fa-solid fa-receipt"></i></button>`; tr.innerHTML = `<td>${p.rank || i + 1}</td><td>${nc}</td><td><strong>${(p['当前积分'] || 0).toFixed(1)}</strong></td><td data-label="${i18n[currentLang].rank_col_points_change}">${pch}</td><td data-label="${i18n[currentLang].rank_col_change}">${ch}</td><td data-label="${i18n[currentLang].rank_col_matches}">${p['总场次'] || 0}</td><td data-label="${i18n[currentLang].rank_col_winrate}">${wd}</td>`; tb.appendChild(tr); }); }
+function renderRankingTable(data) { const tb = document.getElementById('rankingFullBody'); if (!tb) return; const L = i18n[currentLang] || {}; if (!data || !data.length) { tb.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:40px;">${i18n[currentLang].rank_no_data}</td></tr>`; return; } tb.innerHTML = ''; const currentSnapshotDate = rankingTimeline[currentTimeIndex]?.time || ''; data.forEach((p, i) => { const tr = document.createElement('tr'); const wr = p['胜率'] || '0%', wd = wr === '#DIV/0!' || wr === '-' ? '0%' : wr; let ch = '', pch = ''; if (p.changeType === 'up') ch = `<span class="rank-change rank-up">▲${Math.abs(p.change)}</span>`; else if (p.changeType === 'down') ch = `<span class="rank-change rank-down">▼${Math.abs(p.change)}</span>`; else if (p.changeType === 'new') ch = '<span class="rank-new">NEW</span>'; else ch = '<span class="rank-same">-</span>'; if (p.pointsChangeType === 'up') pch = `<span class="rank-change rank-up">▲${Math.abs(p.pointsChange).toFixed(1)}</span>`; else if (p.pointsChangeType === 'down') pch = `<span class="rank-change rank-down">▼${Math.abs(p.pointsChange).toFixed(1)}</span>`; else if (p.pointsChangeType === 'new') pch = '<span class="rank-new">NEW</span>'; else pch = '<span class="rank-same">-</span>'; const pn = String(p['姓名'] || '-'); const pnSafe = escapeHtml(pn); const pnShow = escapeHtml(playerDisplayName(pn)); const sds = escapeHtml(currentSnapshotDate || ''); const pairParts = splitPairNames(pn); let nc;
+if (pairParts) {
+    /* 双打组合行：逐成员链个人页（组合无独立档案），收据按钮打开组合积分明细 */
+    nc = pairParts.map(m => { const mu = getUidForPlayerName(m); const ms = escapeHtml(playerDisplayName(m)); return mu != null ? `<a class="player-name-link" href="player.html?uid=${mu}" title="${L.rank_view_player_page}">${ms}</a>` : ms; }).join('<span class="pair-name-sep">/</span>');
+} else {
+    const uid = getUidForPlayerName(pn); nc = pnShow; if (uid != null) { nc = `<a class="player-name-link" href="player.html?uid=${uid}" title="${L.rank_view_player_page}">${pnShow}</a>`; } else if (scoreLogData.length > 0) { nc = `<span class="player-name-link" role="button" tabindex="0" data-player="${pnSafe}" data-snapshot="${sds}" title="${L.rank_click_detail}">${pnShow}</span>`; }
+}
+if (scoreLogData.length > 0) nc += ` <button class="score-detail-icon" type="button" data-player="${pnSafe}" data-snapshot="${sds}" title="${L.score_detail_title}"><i class="fa-solid fa-receipt"></i></button>`; tr.innerHTML = `<td>${p.rank || i + 1}</td><td>${nc}</td><td><strong>${(p['当前积分'] || 0).toFixed(1)}</strong></td><td data-label="${i18n[currentLang].rank_col_points_change}">${pch}</td><td data-label="${i18n[currentLang].rank_col_change}">${ch}</td><td data-label="${i18n[currentLang].rank_col_matches}">${p['总场次'] || 0}</td><td data-label="${i18n[currentLang].rank_col_winrate}">${wd}</td>`; tb.appendChild(tr); }); }
 function updateSortHeaderHighlight() { document.querySelectorAll('.ranking-table-full th.sortable').forEach(th => { th.classList.remove('active-sort'); if (th.getAttribute('data-sort') === currentSortKey) th.classList.add('active-sort'); }); }
 function setupSortListeners() { document.querySelectorAll('.ranking-table-full th.sortable').forEach(th => { const nt = th.cloneNode(true); th.parentNode.replaceChild(nt, th); nt.addEventListener('click', () => { const key = nt.getAttribute('data-sort'); currentSortDir = key === currentSortKey ? (currentSortDir === 'desc' ? 'asc' : 'desc') : 'desc'; currentSortKey = key; currentDisplayData = sortDisplayData(key, currentSortDir); renderRankingTable(currentDisplayData); updateSortHeaderHighlight(); document.querySelectorAll('.ranking-table-full th.sortable').forEach(h => { const a = h.querySelector('.sort-arrow'); if (a) a.innerHTML = ''; }); const ar = nt.querySelector('.sort-arrow'); if (ar) ar.innerHTML = currentSortDir === 'desc' ? '&#9660;' : '&#9650;'; nt.classList.add('active-sort'); document.getElementById('sortIndicator').textContent = `${sortKeyLabel(key)} ${currentSortDir === 'desc' ? i18n[currentLang].sort_desc : i18n[currentLang].sort_asc}`; syncMobileSortControls(false); }); }); }
 
@@ -346,7 +429,8 @@ function setupRankTableExport() {
         /* 积分/排名变化列的对比基准 = 时间线上前一节点；赛季初始节点或首节点无基准（变化列全 NEW），不附日期 */
         const prevNode = (cn && currentTimeIndex > 0 && !cn.isInitial) ? rankingTimeline[currentTimeIndex - 1] : null;
         if (prevNode) subtitle += ` · ${i18n[currentLang].rank_export_delta_ref.replace('{date}', getNodeDisplayLabel(prevNode))}`;
-        exportRankTableAsImage(rows, { title: i18n[currentLang].rank_title, subtitle, filenameBase });
+        const isDbl = rankingMode === 'doubles';
+        exportRankTableAsImage(rows, { title: (i18n[currentLang].rank_title || '') + (isDbl ? ` · ${i18n[currentLang].rank_mode_doubles}` : ''), subtitle, filenameBase: isDbl ? 'wfls-points-table-doubles' : 'wfls-points-table' });
     };
     btn.addEventListener('click', () => doExport(null));
     attachRankExportMenu(btn, doExport);

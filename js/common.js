@@ -157,6 +157,8 @@ const i18n = {
         export_gen: "生成于", img_export_fail: "图片导出失败，请重试", detail_export_btn: "导出图片",
         rank_export_delta_ref: "积分/排名变化对比：{date}", rank_export_menu_all: "导出全部", rank_export_menu_top12: "导出前12名", rank_export_top_sub: "前{n}名", rank_export_topn_prefix: "导出前", rank_export_topn_suffix: "名", rank_export_menu_go: "导出", rank_export_menu_invalid: "请输入有效的名次（正整数）",
         score_detail_title: "积分明细", score_col_date: "日期", score_col_type: "类型", score_col_opponent: "对手", score_col_result: "结果", score_col_score: "比分", score_col_score_before: "赛前积分", score_col_change: "积分变动", score_col_score_after: "赛后积分", score_result_win: "胜", score_result_loss: "负",
+        rank_mode_singles: "单打", rank_mode_doubles: "双打", rank_doubles_empty: "暂无双打记录，录入双打比赛后此处将生成组合积分榜",
+        pp_doubles_title: "双打战绩", pp_doubles_partner: "搭档", pp_doubles_summary: "双打共 {n} 场，胜 {w} 场，胜率 {r}%",
         tag_match: "赛事", tag_training: "训练", tag_notice: "公告", tag_event: "活动", tag_daily: "日常", tag_upcoming: "即将开始", tag_result: "比赛结果", tag_live: "进行中",
         filter_all: "全部",
         detail_page_title: "详情 | WFLS Table Tennis Club", detail_back: "返回列表", detail_version_updated: "更新于 {date}", detail_version_list: "历史版本", detail_version_view: "查看", detail_version_viewing: "正在查看 v{version}（更新于 {date}）", detail_version_back: "返回 v{version}", pdf_preview_btn: "预览PDF", pdf_download_btn: "下载PDF", detail_loading: "内容加载中…", detail_not_found: "未找到内容", detail_load_fail: "加载失败，请稍后重试", detail_load_fail_hint: "内容可能已被移除，或网络出现异常。", detail_retry: "重试",
@@ -352,6 +354,8 @@ const i18n = {
         export_gen: "Generated", img_export_fail: "Image export failed. Please try again.", detail_export_btn: "Save Image",
         rank_export_delta_ref: "Point/rank changes vs. {date}", rank_export_menu_all: "Export All", rank_export_menu_top12: "Export Top 12", rank_export_top_sub: "Top {n}", rank_export_topn_prefix: "Top", rank_export_topn_suffix: "", rank_export_menu_go: "Export", rank_export_menu_invalid: "Please enter a valid rank (positive integer)",
         score_detail_title: "Score Details", score_col_date: "Date", score_col_type: "Type", score_col_opponent: "Opponent", score_col_result: "Result", score_col_score: "Score", score_col_score_before: "Before", score_col_change: "Change", score_col_score_after: "After", score_result_win: "Win", score_result_loss: "Loss",
+        rank_mode_singles: "Singles", rank_mode_doubles: "Doubles", rank_doubles_empty: "No doubles matches yet — the doubles standings will appear once matches are recorded",
+        pp_doubles_title: "Doubles Record", pp_doubles_partner: "Partner", pp_doubles_summary: "{n} doubles matches, {w} wins ({r}% win rate)",
         tag_match: "Match", tag_training: "Training", tag_notice: "Notice", tag_event: "Event", tag_daily: "Daily", tag_upcoming: "Upcoming", tag_result: "Result", tag_live: "Live",
         filter_all: "All",
         detail_page_title: "Details | WFLS Table Tennis Club", detail_back: "Back to List", detail_version_updated: "Updated {date}", detail_version_list: "Version History", detail_version_view: "View", detail_version_viewing: "Viewing v{version} (updated {date})", detail_version_back: "Back to v{version}", pdf_preview_btn: "Preview PDF", pdf_download_btn: "Download PDF", detail_loading: "Loading content…", detail_not_found: "Content not found", detail_load_fail: "Failed to load. Please try again.", detail_load_fail_hint: "The content may have been removed, or a network error occurred.", detail_retry: "Retry",
@@ -1114,8 +1118,13 @@ function getPlayerProfileUrl(playerOrUidOrName) {
 // 仅用于展示层：数据键、URL 参数、data-* 属性一律保持原始中文姓名
 function playerDisplayName(name) {
     if (name == null || currentLang !== 'en') return name;
-    const p = getPlayerByName(String(name));
-    return (p && p.pinyin) ? p.pinyin : String(name);
+    const s = String(name);
+    if (s.indexOf('/') >= 0) {
+        const parts = splitPairNames(s);
+        if (parts) return parts.map(n => { const p = getPlayerByName(n); return (p && p.pinyin) ? p.pinyin : n; }).join(' / ');
+    }
+    const p = getPlayerByName(s);
+    return (p && p.pinyin) ? p.pinyin : s;
 }
 // 姓名 → 个人页链接（无档案时纯文本）
 function linkPlayerName(name) {
@@ -1123,6 +1132,23 @@ function linkPlayerName(name) {
     if (p && p.uid != null) return `<a href="player.html?uid=${escapeHtml(String(p.uid))}" class="player-name-link">${escapeHtml(playerDisplayName(name))}</a>`;
     return escapeHtml(playerDisplayName(name));
 }
+// 一侧参赛方（单人或 "A/B" 双打组合）→ 可点名链接：组合逐成员链接（成员无档案回退纯文本）
+function linkPlayerSide(name) {
+    const parts = (typeof name === 'string' && name.indexOf('/') >= 0) ? splitPairNames(name) : null;
+    if (parts) return parts.map(n => linkPlayerName(n)).join('<span class="pair-name-sep">/</span>');
+    return linkPlayerName(name);
+}
+// ===== 比分/局分的球员视角展示 =====
+// 存储口径恒为胜者视角（AGENTS.md「比分/局分」字段说明）。球员视角表格中结果为负的行，
+// 展示时对调两数字（"11-9"→"9-11"）；逐局对调后局序不变（局序是时间顺序）。
+// 解析失败原样返回（fail-safe），调用方必须在翻转之后再 escapeHtml。
+function flipScoreStr(s) {
+    const m = String(s).match(/^(\d{1,2})\s*[-:：]\s*(\d{1,2})$/);
+    return m ? `${m[2]}-${m[1]}` : s;
+}
+// 球员视角总比分 / 局分数组：isWinner 为 false 时逐项翻转
+function playerViewScore(score, isWinner) { return (score == null || isWinner) ? score : flipScoreStr(score); }
+function playerViewGames(games, isWinner) { return (!isWinner && Array.isArray(games)) ? games.map(flipScoreStr) : games; }
 // ===== 比赛详情页（match.html / wtt_match.html）URL 构造 =====
 // score-log 无 ID 字段且同日重复记录合法：用 (日期,类型,胜者,负者) + 当日次序 n 定位一条记录
 function buildMatchDetailUrl(date, type, winner, loser, n, cat) {
@@ -1158,19 +1184,65 @@ function computeMatchOccurrenceMap(log) {
 }
 // 名称规范化：按 players.json（含别名）把赛果中的名字归一到规范名
 function normalizePlayerName(raw) { if (raw == null) return raw; const p = nameIndex[raw]; return p && p.name ? p.name : raw; }
+
+// ===== 双打组合名（胜者/负者 = "A/B"，与 WTT 站 wd/md 同口径）=====
+// club 无性别数据，规范顺序 = 成员 pinyin 升序（无档案回退字符串序），
+// 保证 "A/B" 与 "B/A" 收敛为同一 key；下游 URL / uid / H2H 全用规范形式。
+const DOUBLES_TYPE = '双打';
+function isDoublesRecord(r) { return !!r && !!r['胜者'] && !!r['负者'] && r['类型'] === DOUBLES_TYPE; }
+// 组合拆分：恰好两个非空成员返回 [a, b]，否则 null（单名 / 非法形态）
+function splitPairNames(name) {
+    if (typeof name !== 'string' || name.indexOf('/') < 0) return null;
+    const parts = name.split('/').map(s => s.trim());
+    return (parts.length === 2 && parts[0] && parts[1]) ? parts : null;
+}
+function _pairMemberSortKey(n) { const p = getPlayerByName(n); return (p && p.pinyin) ? String(p.pinyin) : n; }
+function normalizeDoublesPairName(raw) {
+    const parts = splitPairNames(String(raw == null ? '' : raw));
+    if (!parts) return raw;
+    const halves = parts.map(normalizePlayerName);
+    halves.sort((a, b) => { const ka = _pairMemberSortKey(a), kb = _pairMemberSortKey(b); return ka < kb ? -1 : ka > kb ? 1 : 0; });
+    return halves.join('/');
+}
+// score-log 字段级归一：含 "/" 按组合处理（逐半归一 + 规范顺序），非法形态告警并保持原样
+function _normalizeLogName(raw) {
+    if (typeof raw !== 'string' || raw.indexOf('/') < 0) return normalizePlayerName(raw);
+    if (!splitPairNames(raw)) { console.warn('[score-log] 组合名形态非法（应为 "A/B" 两人）:', raw); return raw; }
+    return normalizeDoublesPairName(raw);
+}
 const _ISO_DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 function normalizeScoreLog(log) {
     if (!Array.isArray(log)) return log;
     const today = new Date(); today.setHours(0, 0, 0, 0);
     for (const r of log) {
-        if (r['胜者']) r['胜者'] = normalizePlayerName(r['胜者']);
-        if (r['负者']) r['负者'] = normalizePlayerName(r['负者']);
+        if (r['胜者']) r['胜者'] = _normalizeLogName(r['胜者']);
+        if (r['负者']) r['负者'] = _normalizeLogName(r['负者']);
         if (r['对象']) r['对象'] = normalizePlayerName(r['对象']);
         const d = r['日期'];
         if (d && !_ISO_DATE_RE.test(d)) console.warn('[score-log] 日期格式非 YYYY-MM-DD，衰减/赛季归档可能错位:', d, r);
         else if (d && r['胜者'] && new Date(d + 'T00:00:00') > today) console.warn('[score-log] 记录日期在未来，当前按零权重处理:', d, r['胜者'], '→', r['负者']);
     }
     return log;
+}
+
+// ===== 单打/双打双口径的全局数据源切换（仿 wtt_common.js 的 wttWithDataContext）=====
+// 引擎的赛季起始分缓存(_seasonStartCache)与排序缓存(_sortedLogCache)都按 scoreLogData
+// 数组引用失效：换入新数组引用即天然隔离，两套口径互不串缓存。仅包同步计算段。
+function withScoreContext(log, initialScores, fn) {
+    const prevLog = scoreLogData, prevInit = initialScoresData;
+    scoreLogData = log;
+    if (initialScores !== undefined) initialScoresData = initialScores;
+    if (fn && typeof fn.then === 'function') {
+        console.warn('[withScoreContext] fn 返回 Promise，上下文无法安全恢复——异步段请改用 withScoreContextAsync');
+        return fn;
+    }
+    try { return fn(); } finally { scoreLogData = prevLog; initialScoresData = prevInit; }
+}
+async function withScoreContextAsync(log, initialScores, fn) {
+    const prevLog = scoreLogData, prevInit = initialScoresData;
+    scoreLogData = log;
+    if (initialScores !== undefined) initialScoresData = initialScores;
+    try { return await fn(); } finally { scoreLogData = prevLog; initialScoresData = prevInit; }
 }
 let _newsLoadSettled = false, _compLoadSettled = false;
 function markContentLoaded(which) {

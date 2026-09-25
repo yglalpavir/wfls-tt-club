@@ -69,6 +69,12 @@
                         </div>
                     </div>
                     
+                    <!-- 单打/双打项目切换（?mode=doubles 直达双打榜；两套时间线一次算好，切换零请求） -->
+                    <div class="ranking-mode-toggle" role="tablist" aria-label="积分项目">
+                        <button type="button" class="ranking-mode-btn active" data-mode="singles" data-i18n="rank_mode_singles" aria-selected="true">单打</button>
+                        <button type="button" class="ranking-mode-btn" data-mode="doubles" data-i18n="rank_mode_doubles" aria-selected="false">双打</button>
+                    </div>
+
                     <div class="ranking-controls">
                         <span class="sort-hint"><span data-i18n="rank_sort_hint">当前排序：</span><strong id="sortIndicator">积分降序</strong></span>
                         <span class="update-info" id="currentTimeLabel">加载中...</span>

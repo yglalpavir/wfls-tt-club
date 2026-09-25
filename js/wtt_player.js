@@ -214,7 +214,9 @@ function wttPpRenderMatchTable(playerName, records) {
         const signRaw = r.rawChange >= 0 ? '+' : '';
         const cc = r.change >= 0 ? 'score-change-positive' : 'score-change-negative';
         const mdUrl = escapeHtml(buildMatchDetailUrl(r.date, r.type, r.isWin ? playerName : r.opp, r.isWin ? r.opp : playerName, r.n, wttCurrentCategory));
-        const scoreCell = hasScore ? `<td${r.games && r.games.length ? ` title="${i18n[currentLang].sb_games_label || '局分'}：${escapeHtml(r.games.join(' '))}"` : ''}>${r.score ? escapeHtml(r.score) : '-'}</td>` : '';
+        /* 负行按球员视角展示比分/局分（存储为胜者视角，对调数字、局序不变） */
+        const gamesView = playerViewGames(r.games, r.isWin);
+        const scoreCell = hasScore ? `<td${gamesView && gamesView.length ? ` title="${i18n[currentLang].sb_games_label || '局分'}：${escapeHtml(gamesView.join(' '))}"` : ''}>${r.score ? escapeHtml(playerViewScore(r.score, r.isWin)) : '-'}</td>` : '';
         return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(r.type)}</td><td>${wttLinkPlayerName(r.opp)}</td>${res}${scoreCell}<td>${r.pre.toFixed(1)}</td><td class="${cc}">${signRaw}${r.rawChange.toFixed(1)}</td><td>${r.post.toFixed(1)}</td></tr>`;
     }).join('');
 

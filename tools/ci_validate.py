@@ -3,7 +3,8 @@
 """CI 数据校验门禁：
 1. data/ 与 wtt_data/ 全部 JSON 可解析
 2. score-log 结构与引用完整性：记录必须是对象、胜者/负者成对、球员存在于 players.json、
-   无自弈、日期合法且不晚于今天
+   无自弈、日期合法且不晚于今天；双打记录（类型=双打）胜者/负者必须是 "A/B" 两人组合
+   （拆半逐个查登记，A/B 与 B/A 视为同一组合的自弈判定），其他类型禁用组合名
 3. 加分记录（对象/分数 形态）的分数必须可解析为非零数值
 4. 赛制校验：显式赛制 ∈ 赛制系数键 ∪ {default}；缺省赛制依赖的「默认赛制」必须覆盖该类型；
    decay-config 的 noDecayTypes ⊆ 已定义类型
@@ -69,6 +70,24 @@ def valid_iso(d):
         return False
 
 
+# ---- 双打组合名（与 js/common.js normalizeDoublesPairName 同口径：成员级校验）----
+DOUBLES_TYPE = "双打"
+
+
+def split_pair(name):
+    """组合名拆分："A/B" → [A, B]（恰好两个非空成员），否则 None"""
+    if not isinstance(name, str) or "/" not in name:
+        return None
+    parts = [p.strip() for p in name.split("/")]
+    return parts if len(parts) == 2 and parts[0] and parts[1] else None
+
+
+def pair_canon(name, pair):
+    """组合规范化形态（拆半排序拼接），供自弈判定。任何一致的排序即可——
+    无需复现前端 pinyin 排序，只用于相等比较"""
+    return "/".join(sorted(pair)) if pair else name
+
+
 # ---- 1) 全量 JSON 可解析 ----
 print("[1] JSON 解析检查")
 json_count = 0
@@ -85,11 +104,13 @@ ok(f"{json_count} 个 JSON 文件解析通过" if not errors else f"{json_count}
 print("[2] score-log 与 players.json 引用完整性")
 players = load(os.path.join(ROOT, "data", "players.json")) or {}
 names = set()
+alias_map = {}
 for p in players.get("players", []):
     if p.get("name"):
         names.add(p["name"])
         for a in p.get("aliases") or []:
             names.add(a)
+            alias_map.setdefault(a, p["name"])
 scorelog_path = os.path.join(ROOT, "data", "score-log.json")
 scorelog_raw = load(scorelog_path)
 if scorelog_raw is not None and not isinstance(scorelog_raw, list):
@@ -100,7 +121,7 @@ bad_shape = len(scorelog_raw or []) - len(scorelog)
 if bad_shape:
     err(f"{bad_shape} 条 score-log 记录不是对象")
 today = date.today().isoformat()
-unknown, selfplay, baddate, future, incomplete = set(), 0, 0, 0, 0
+unknown, selfplay, baddate, future, incomplete, badpair = set(), 0, 0, 0, 0, 0
 for r in scorelog:
     d = r.get("日期")
     if not valid_iso(d):
@@ -110,11 +131,29 @@ for r in scorelog:
     if r.get("胜者"):
         if not r.get("负者"):
             incomplete += 1
-        if r["胜者"] not in names:
-            unknown.add(r["胜者"])
-        if r.get("负者") and r["负者"] not in names:
-            unknown.add(r["负者"])
-        if r.get("负者") and r["胜者"] == r["负者"]:
+        w_pair, l_pair = split_pair(r["胜者"]), split_pair(r.get("负者"))
+        # 姓名登记：组合拆半逐个查（含别名）；含 / 但非合法两人组合整体视为未知
+        for name, pair in ((r["胜者"], w_pair), (r.get("负者"), l_pair)):
+            if not name:
+                continue
+            if pair is None:
+                if "/" in str(name) or name not in names:
+                    unknown.add(name)
+            else:
+                for half in pair:
+                    if half not in names:
+                        unknown.add(half)
+                # 同人组合（别名归一后两半相同）同样是形态错误
+                if alias_map.get(pair[0], pair[0]) == alias_map.get(pair[1], pair[1]):
+                    badpair += 1
+        # 类型与形态匹配：双打必须 "A/B" 组合；其他类型禁用组合名
+        if r.get("类型") == DOUBLES_TYPE:
+            if w_pair is None or l_pair is None:
+                badpair += 1
+        elif w_pair is not None or l_pair is not None:
+            badpair += 1
+        # 自弈：组合规范化后比较，"A/B" vs "B/A" 同样拦截（"A/A" 亦命中）
+        if r.get("负者") and pair_canon(r["胜者"], w_pair) == pair_canon(r["负者"], l_pair):
             selfplay += 1
     elif r.get("对象") and r["对象"] not in names:
         unknown.add(r["对象"])
@@ -125,9 +164,13 @@ if unknown:
 else:
     ok("所有姓名均已登记")
 if selfplay:
-    err(f"发现 {selfplay} 条自弈记录（胜者==负者）")
+    err(f"发现 {selfplay} 条自弈记录（胜者==负者，组合按成员集合比较）")
 else:
     ok("无自弈记录")
+if badpair:
+    err(f"{badpair} 条记录的类型与组合形态不匹配（双打类型必须为 \"A/B\" 两人组合，其他类型禁用组合名）")
+else:
+    ok("类型与组合形态匹配")
 if baddate:
     err(f"{baddate} 条日期不是合法 YYYY-MM-DD")
 if future:

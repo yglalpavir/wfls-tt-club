@@ -165,7 +165,9 @@ function renderPlayerMatchTable(playerName, records) {
         const signDec = r.change >= 0 ? '+' : '';
         const cc = r.change >= 0 ? 'score-change-positive' : 'score-change-negative';
         const mdUrl = escapeHtml(buildMatchDetailUrl(r.date, r.type, r.isWin ? playerName : r.opp, r.isWin ? r.opp : playerName, r.n));
-        const scoreCell = hasScore ? `<td${r.games && r.games.length ? ` title="${i18n[currentLang].sb_games_label || '局分'}：${escapeHtml(r.games.join(' '))}"` : ''}>${r.score ? escapeHtml(r.score) : '-'}</td>` : '';
+        /* 负行按球员视角展示比分/局分（存储为胜者视角，对调数字、局序不变） */
+        const gamesView = playerViewGames(r.games, r.isWin);
+        const scoreCell = hasScore ? `<td${gamesView && gamesView.length ? ` title="${i18n[currentLang].sb_games_label || '局分'}：${escapeHtml(gamesView.join(' '))}"` : ''}>${r.score ? escapeHtml(playerViewScore(r.score, r.isWin)) : '-'}</td>` : '';
         return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(r.type)}</td><td>${linkPlayerName(r.opp)}</td>${res}${scoreCell}<td>${r.pre.toFixed(1)}</td><td class="${cc}">${signRaw}${r.rawChange.toFixed(1)}<span class="decayed-note">（${signDec}${r.change.toFixed(1)}）</span></td><td>${r.post.toFixed(1)}</td></tr>`;
     }).join('');
 
@@ -175,6 +177,55 @@ function renderPlayerMatchTable(playerName, records) {
             <div class="score-detail-table-wrapper" style="max-height:420px;">
                 <table class="score-detail-table">
                     <thead><tr><th>${i18n[currentLang].score_col_date}</th><th>${i18n[currentLang].score_col_type}</th><th>${i18n[currentLang].score_col_opponent}</th><th>${i18n[currentLang].score_col_result}</th>${hasScore ? `<th>${i18n[currentLang].score_col_score || '比分'}</th>` : ''}<th>${i18n[currentLang].pp_col_before}</th><th>${i18n[currentLang].pp_col_change}</th><th>${i18n[currentLang].pp_col_after}</th></tr></thead>
+                    <tbody>${rowsHtml}</tbody>
+                </table>
+            </div>
+        </div>`;
+}
+
+// ===== 双打战绩：本人作为成员参与的双打场次（组合 key 天然不进单打台账，此区块单独呈现）=====
+// occurrence n 必须取自全量日志（与 match-detail mdCompute 的搜索口径一致，AGENTS 规则 #11）
+function computePlayerDoublesRecords(playerName) {
+    const occMap = computeMatchOccurrenceMap(scoreLogData);
+    const rows = [];
+    for (const r of scoreLogData) {
+        if (!isDoublesRecord(r)) continue;
+        const wp = splitPairNames(r['胜者']) || [];
+        const lp = splitPairNames(r['负者']) || [];
+        const inW = wp.includes(playerName), inL = lp.includes(playerName);
+        if (!inW && !inL) continue;
+        const isWin = inW;
+        const mates = (isWin ? wp : lp).filter(n => n !== playerName);
+        const opp = isWin ? lp : wp;
+        rows.push({ date: r['日期'], type: r['类型'], partner: mates[0] || '-', opp, isWin, score: r['比分'] || null, games: Array.isArray(r['局分']) ? r['局分'] : null, n: occMap.get(r) || 1, rawW: r['胜者'], rawL: r['负者'] });
+    }
+    rows.sort((a, b) => b.date.localeCompare(a.date));
+    return rows;
+}
+
+function renderPlayerDoublesTable(playerName) {
+    const container = document.getElementById('playerDoublesTable');
+    if (!container) return;
+    const rows = computePlayerDoublesRecords(playerName);
+    if (!rows.length) { container.innerHTML = ''; return; }
+    const wins = rows.filter(r => r.isWin).length;
+    const rate = rows.length ? Math.round(wins / rows.length * 100) : 0;
+    const hasScore = rows.some(r => r.score || (r.games && r.games.length));
+    const rowsHtml = rows.map(r => {
+        const res = r.isWin ? '<td class="result-win">' + i18n[currentLang].score_result_win + '</td>' : '<td class="result-loss">' + i18n[currentLang].score_result_loss + '</td>';
+        const mdUrl = escapeHtml(buildMatchDetailUrl(r.date, r.type, r.rawW, r.rawL, r.n));
+        /* 负行按球员视角展示比分/局分（存储为胜者视角，对调数字、局序不变） */
+        const gamesView = playerViewGames(r.games, r.isWin);
+        const scoreCell = hasScore ? `<td${gamesView && gamesView.length ? ` title="${i18n[currentLang].sb_games_label || '局分'}：${escapeHtml(gamesView.join(' '))}"` : ''}>${r.score ? escapeHtml(playerViewScore(r.score, r.isWin)) : '-'}</td>` : '';
+        const oppHtml = r.opp.map(n => linkPlayerName(n)).join('<span class="pair-name-sep">/</span>');
+        return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(r.type)}</td><td>${linkPlayerName(r.partner)}</td><td>${oppHtml}</td>${res}${scoreCell}</tr>`;
+    }).join('');
+    container.innerHTML = `
+        <div class="personal-card glass-card match-list-card">
+            <div class="personal-card-header"><i class="fa-solid fa-people-group"></i> ${i18n[currentLang].pp_doubles_title} <span class="tag-match-count">${escapeHtml(i18n[currentLang].pp_doubles_summary.replace('{n}', String(rows.length)).replace('{w}', String(wins)).replace('{r}', String(rate)))}</span></div>
+            <div class="score-detail-table-wrapper" style="max-height:420px;">
+                <table class="score-detail-table">
+                    <thead><tr><th>${i18n[currentLang].score_col_date}</th><th>${i18n[currentLang].score_col_type}</th><th>${i18n[currentLang].pp_doubles_partner}</th><th>${i18n[currentLang].score_col_opponent}</th><th>${i18n[currentLang].score_col_result}</th>${hasScore ? `<th>${i18n[currentLang].score_col_score}</th>` : ''}</tr></thead>
                     <tbody>${rowsHtml}</tbody>
                 </table>
             </div>
@@ -201,11 +252,12 @@ async function initPlayerPage() {
         renderPlayerNavSwitch(player);
         renderPlayerHeader(player);
 
-        content.innerHTML += '<div id="playerStatsBody"></div><div id="playerAnalyticsBody"></div><div id="playerMatchTable"></div>';
+        content.innerHTML += '<div id="playerStatsBody"></div><div id="playerAnalyticsBody"></div><div id="playerMatchTable"></div><div id="playerDoublesTable"></div>';
         const matchRecords = computePlayerMatchRecords(player.name);
         renderPersonalStats(player.name, 'playerStatsBody');
         renderPlayerAnalytics(player.name, matchRecords);
         renderPlayerMatchTable(player.name, matchRecords);
+        renderPlayerDoublesTable(player.name);
         console.log('[PlayerPage] 初始化完成:', player.name, '#' + player.uid);
     } catch (e) {
         console.error('[PlayerPage] 初始化失败', e);
@@ -227,9 +279,10 @@ function reapplyPlayerPage() {
     content.innerHTML = '';
     renderPlayerNavSwitch(ppCurrentPlayer);
     renderPlayerHeader(ppCurrentPlayer);
-    content.innerHTML += '<div id="playerStatsBody"></div><div id="playerAnalyticsBody"></div><div id="playerMatchTable"></div>';
+    content.innerHTML += '<div id="playerStatsBody"></div><div id="playerAnalyticsBody"></div><div id="playerMatchTable"></div><div id="playerDoublesTable"></div>';
     const matchRecords = computePlayerMatchRecords(ppCurrentPlayer.name);
     renderPersonalStats(ppCurrentPlayer.name, 'playerStatsBody');
     renderPlayerAnalytics(ppCurrentPlayer.name, matchRecords);
     renderPlayerMatchTable(ppCurrentPlayer.name, matchRecords);
+    renderPlayerDoublesTable(ppCurrentPlayer.name);
 }

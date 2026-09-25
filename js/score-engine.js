@@ -674,6 +674,70 @@ function replaySeasonWindowToSnapshot(sortedLog, startScores, season, sd, player
     return buildRankedSnapshotRows(sc, n => sap.has(n) || isProfileActivePlayer(n), playerMatches, season.startDate, sd);
 }
 
+// 时点分数表：把 [赛季开始日, dateStr] 窗口重放到积分表并返回（不生成排名行）。
+// 供双打组合初始分使用：在单打上下文中调用（读全局 scoreLogData / seasonsData / initialScoresData）。
+// 会改写 playerTypeBatches——引擎各入口每轮都会重建该索引，调用方无需恢复。
+function getScoreMapAsOf(dateStr) {
+    if (!seasonsData || !seasonsData.length) return {};
+    let si = seasonsData.findIndex(s => dateStr >= s.startDate && dateStr <= s.endDate);
+    if (si < 0) si = dateStr > seasonsData[seasonsData.length - 1].endDate ? seasonsData.length - 1 : 0;
+    const season = seasonsData[si];
+    const sc = { ...getSeasonStartScores(si) };
+    const sortedLog = getSortedScoreLog(scoreLogData);
+    if (SCORE_TIME_DECAY_ENABLED !== false) {
+        playerTypeBatches = buildPlayerTypeBatches(sortedLog.filter(r => r['日期'] >= season.startDate && r['日期'] <= dateStr));
+    }
+    sortedLog.forEach(r => {
+        if (r['日期'] < season.startDate || r['日期'] > dateStr) return;
+        if (isMatchRecord(r)) {
+            const w = r['胜者'], l = r['负者'];
+            if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE;
+            if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
+            const { wGain, lLoss } = calcMatchPointsDual(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? dateStr : r['日期'], sc, r['赛制']);
+            sc[w] = Math.max(SCORE_FLOOR, sc[w] + wGain);
+            sc[l] = Math.max(SCORE_FLOOR, sc[l] - lLoss);
+        } else if (isBonusRecord(r)) {
+            const t = r['对象'], b = parseFloat(r['分数']) || 0;
+            if (!sc[t]) sc[t] = DEFAULT_INITIAL_SCORE;
+            sc[t] = Math.max(SCORE_FLOOR, sc[t] + b);
+        }
+    });
+    return sc;
+}
+
+/**
+ * 双打组合初始分表（key: 规范组合串 → value: 首场比赛日（含当日）两人单打分数的平均）。
+ * 必须在单打数据上下文中调用（getScoreMapAsOf 依赖全局 scoreLogData/initialScoresData）；
+ * 组合此后跨赛季的分数由引擎 50% 继承链自然携带（initialScores 兜底注入保证未 formed 赛季也有起点）。
+ */
+function buildDoublesInitialScores(doublesLog) {
+    if (!Array.isArray(doublesLog) || !doublesLog.length || !seasonsData || !seasonsData.length) return {};
+    const firstDate = {};
+    for (const r of doublesLog) {
+        if (!isMatchRecord(r)) continue;
+        for (const side of ['胜者', '负者']) {
+            const pair = r[side];
+            if (!pair) continue;
+            if (firstDate[pair] === undefined || r['日期'] < firstDate[pair]) firstDate[pair] = r['日期'];
+        }
+    }
+    const singlesInitial = (initialScoresData && initialScoresData.initialScores) || {};
+    const dateCache = {};
+    const out = {};
+    for (const pair in firstDate) {
+        const members = splitPairNames(pair);
+        if (!members) continue;
+        const d0 = firstDate[pair];
+        if (!dateCache[d0]) dateCache[d0] = getScoreMapAsOf(d0);
+        const sc = dateCache[d0];
+        const vals = members.map(n =>
+            (typeof sc[n] === 'number') ? sc[n] :
+            (typeof singlesInitial[n] === 'number') ? singlesInitial[n] : DEFAULT_INITIAL_SCORE);
+        out[pair] = (vals[0] + vals[1]) / 2;
+    }
+    return out;
+}
+
 function formatSnapshotLabel(ds) { const d = new Date(ds + 'T00:00:00'); return `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日`; }
 // 今日日期（YYYY-MM-DD）：重放类计算把衰减基准统一到"现在"，与实时排名口径一致
 function getTodayStr() { const n = new Date(); return n.getFullYear() + '-' + String(n.getMonth()+1).padStart(2, '0') + '-' + String(n.getDate()).padStart(2, '0'); }
@@ -908,7 +972,7 @@ async function loadInitialScores() {
 }
 async function loadEventCoefficients() { try { const resp = await fetch('data/event-coefficient.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); eventCoefficients = await resp.json(); parseFormatConfig(eventCoefficients); return true; } catch(e) { console.error('event-coefficient.json 加载失败', e); return false; } }
 // 保值类型默认值：decay-config.json 加载失败时的兜底（与 data/decay-config.json 保持一致）
-const DEFAULT_NO_DECAY_TYPES = ['校乒赛单打', '校乒赛团体'];
+const DEFAULT_NO_DECAY_TYPES = ['校乒赛单打', '校乒赛团体', '双打'];
 // 加载衰减配置。返回 true/false 供调用方判定成败（失败时 ranking 页会显示可见错误，
 // 而不是静默沿用错误的半衰期 180 天继续计算）。
 async function loadDecayConfig() {

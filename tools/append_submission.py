@@ -11,6 +11,8 @@
    - 日期合法且不晚于今天
    - 比赛记录：胜者/负者成对、不自弈、姓名已登记（别名自动规范化为正式姓名）、
      类型 ∈ event-coefficient.json、显式赛制合法
+   - 双打记录（类型=双打）胜者/负者必须是 "甲/乙" 两人组合（拆半逐个查登记，
+     自弈按成员集合比较，A/B 与 B/A 同样拦截）；其他类型禁用组合名
    - 加分记录：对象已登记、分数可解析为非零数值（规范化为带符号字符串）
    - 可选比分：总比分「x-y」（胜者局数在前）与逐局分数互相自洽且与赛制吻合
    - 只接受已知字段（日期/类型/赛制/胜者/负者/对象/分数/比分/局分）
@@ -61,6 +63,18 @@ def valid_iso(d):
         return True
     except (ValueError, TypeError):
         return False
+
+
+# ---- 双打组合名（与 tools/ci_validate.py 的 split_pair/pair_canon 同口径）----
+DOUBLES_TYPE = "双打"
+
+
+def split_pair(name):
+    """组合名拆分："A/B" → [A, B]（恰好两个非空成员），否则 None"""
+    if not isinstance(name, str) or "/" not in name:
+        return None
+    parts = [p.strip() for p in name.split("/")]
+    return parts if len(parts) == 2 and parts[0] and parts[1] else None
 
 
 def extract_records(body):
@@ -170,18 +184,61 @@ def validate_match(rec, today, names, alias_map, coeff_types, format_keys, defau
     else:
         out["赛制"] = "default"
 
+    def resolve_side(raw_name, side):
+        """解析一侧：单名 → 规范名（str）；组合 → 规范名列表（list，保持提交顺序，
+        前端加载时会按 pinyin 重排规范组合）。失败返回 (None, errs)。"""
+        raw_str = str(raw_name).strip()
+        halves = split_pair(raw_str)
+        if halves is None:
+            if "/" in raw_str:
+                return None, [f"{side}「{raw_name}」组合名形态非法（应为「甲/乙」恰好两人）"]
+            name = alias_map.get(raw_str, raw_str)
+            if name not in names:
+                return None, [f"{side}「{raw_name}」未在 players.json 登记（含别名）"]
+            return name, []
+        resolved, es = [], []
+        for half in halves:
+            nm = alias_map.get(half, half)
+            if nm not in names:
+                es.append(f"{side}「{half}」未在 players.json 登记（含别名）")
+            else:
+                resolved.append(nm)
+        if len(resolved) != 2:
+            return None, es
+        if resolved[0] == resolved[1]:
+            es.append(f"{side}「{raw_name}」组合内两名成员相同（含别名归一后比较）")
+            return None, es
+        return resolved, es
+
+    w_val = l_val = None
     for side in ("胜者", "负者"):
         raw_name = rec.get(side)
         if not raw_name:
             errs.append(f"缺少「{side}」")
             continue
-        name = alias_map.get(str(raw_name).strip(), str(raw_name).strip())
-        if name not in names:
-            errs.append(f"{side}「{raw_name}」未在 players.json 登记（含别名）")
+        val, es = resolve_side(raw_name, side)
+        errs.extend(es)
+        if val is None:
+            continue
+        out[side] = "/".join(val) if isinstance(val, list) else val
+        if side == "胜者":
+            w_val = val
         else:
-            out[side] = name
-    if out.get("胜者") and out.get("负者") and out["胜者"] == out["负者"]:
-        errs.append(f"胜者与负者相同（{out['胜者']}）")
+            l_val = val
+
+    # 类型与形态匹配：双打必须 "A/B" 组合；其他类型禁用组合名
+    is_doubles = str(et) == DOUBLES_TYPE
+    if is_doubles and (isinstance(w_val, str) or isinstance(l_val, str)):
+        errs.append("双打记录的胜者/负者必须为「甲/乙」两人组合")
+    if not is_doubles and (isinstance(w_val, list) or isinstance(l_val, list)):
+        errs.append("仅双打记录允许组合名（胜者/负者）")
+    # 自弈：组合按成员集合比较（"A/B" vs "B/A" 同样拦截，"A/A" 同人组合亦命中）
+    if w_val is not None and l_val is not None:
+        w_canon = sorted(w_val) if isinstance(w_val, list) else [w_val]
+        l_canon = sorted(l_val) if isinstance(l_val, list) else [l_val]
+        if w_canon == l_canon:
+            shown = "/".join(w_val) if isinstance(w_val, list) else w_val
+            errs.append(f"胜者与负者相同（{shown}，组合按成员集合比较）")
 
     # 赛制确定后即可知道胜方需要拿几局
     eff_fmt = fmt_l if (fmt_l and fmt_l != "default") else (default_formats or {}).get(et)

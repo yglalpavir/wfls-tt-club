@@ -574,5 +574,396 @@
     "类型": "世乒赛",
     "胜者": "WANG Yidi/CHEN Meng",
     "负者": "JEON Jihee/SHIN Yubin"
+  },
+  {
+    "日期": "2023-10-02",
+    "类型": "亚运会",
+    "比分": "4-1",
+    "局分": [
+      "11-6",
+      "11-4",
+      "10-12",
+      "12-10",
+      "11-3"
+    ],
+    "胜者": "JEON Jihee/SHIN Yubin",
+    "负者": "CHA Su Yong/PAK Su Gyong"
+  },
+  {
+    "日期": "2023-10-02",
+    "类型": "亚运会",
+    "比分": "4-3",
+    "局分": [
+      "7-11",
+      "11-8",
+      "7-11",
+      "11-8",
+      "11-9",
+      "5-11",
+      "11-2"
+    ],
+    "胜者": "CHA Su Yong/PAK Su Gyong",
+    "负者": "Ayhika MUKHERJEE/Sutirtha MUKHERJEE"
+  },
+  {
+    "日期": "2023-10-02",
+    "类型": "亚运会",
+    "比分": "4-1",
+    "局分": [
+      "9-11",
+      "11-8",
+      "11-8",
+      "11-7",
+      "11-7"
+    ],
+    "胜者": "JEON Jihee/SHIN Yubin",
+    "负者": "Miwa HARIMOTO/Miyuu KIHARA"
+  },
+  {
+    "日期": "2023-09-30",
+    "类型": "亚运会",
+    "比分": "3-1",
+    "局分": [
+      "11-5",
+      "11-5",
+      "5-11",
+      "11-9"
+    ],
+    "胜者": "Ayhika MUKHERJEE/Sutirtha MUKHERJEE",
+    "负者": "CHEN Meng/WANG Yidi"
+  },
+  {
+    "日期": "2023-09-30",
+    "类型": "亚运会",
+    "比分": "3-2",
+    "局分": [
+      "12-10",
+      "8-11",
+      "6-11",
+      "11-6",
+      "11-8"
+    ],
+    "胜者": "CHA Su Yong/PAK Su Gyong",
+    "负者": "DOO Hoi Kem/ZHU Chengzhu"
+  },
+  {
+    "日期": "2023-09-30",
+    "类型": "亚运会",
+    "比分": "3-1",
+    "局分": [
+      "11-9",
+      "5-11",
+      "11-7",
+      "11-9"
+    ],
+    "胜者": "Miwa HARIMOTO/Miyuu KIHARA",
+    "负者": "SUN Yingsha/WANG Manyu"
+  },
+  {
+    "日期": "2023-09-30",
+    "类型": "亚运会",
+    "比分": "3-1",
+    "局分": [
+      "9-11",
+      "11-6",
+      "11-6",
+      "11-4"
+    ],
+    "胜者": "JEON Jihee/SHIN Yubin",
+    "负者": "CHEN Szu-Yu/HUANG Yi-Hua"
+  },
+  {
+    "日期": "2023-09-29",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-3",
+      "11-7"
+    ],
+    "胜者": "CHEN Meng/WANG Yidi",
+    "负者": "Miu HIRANO/Miyu NAGASAKI"
+  },
+  {
+    "日期": "2023-09-29",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-7",
+      "11-4"
+    ],
+    "胜者": "Ayhika MUKHERJEE/Sutirtha MUKHERJEE",
+    "负者": "Jinnipa SAWETTABUT/Wanwisa AUEAWIRIYAYOTHIN"
+  },
+  {
+    "日期": "2023-09-29",
+    "类型": "亚运会",
+    "比分": "3-2",
+    "局分": [
+      "3-11",
+      "9-11",
+      "11-3",
+      "11-6",
+      "11-8"
+    ],
+    "胜者": "DOO Hoi Kem/ZHU Chengzhu",
+    "负者": "LEE Eunhye/YANG Ha Eun"
+  },
+  {
+    "日期": "2023-09-29",
+    "类型": "亚运会",
+    "比分": "3-2",
+    "局分": [
+      "6-11",
+      "12-10",
+      "11-8",
+      "8-11",
+      "12-10"
+    ],
+    "胜者": "CHA Su Yong/PAK Su Gyong",
+    "负者": "CHENG I-Ching/LI Yu-Jhun"
+  },
+  {
+    "日期": "2023-09-29",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-2",
+      "11-3",
+      "11-3"
+    ],
+    "胜者": "SUN Yingsha/WANG Manyu",
+    "负者": "LEE Ho Ching/LI Ching Wan"
+  },
+  {
+    "日期": "2023-09-29",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-3",
+      "11-5",
+      "11-8"
+    ],
+    "胜者": "Miwa HARIMOTO/Miyuu KIHARA",
+    "负者": "Diya Parag CHITALE/Sreeja AKULA"
+  },
+  {
+    "日期": "2023-09-29",
+    "类型": "亚运会",
+    "比分": "3-1",
+    "局分": [
+      "11-3",
+      "8-11",
+      "11-3",
+      "11-9"
+    ],
+    "胜者": "CHEN Szu-Yu/HUANG Yi-Hua",
+    "负者": "Angelina ROMANOVSKAYA/Sarvinoz MIRKADIROVA"
+  },
+  {
+    "日期": "2023-09-29",
+    "类型": "亚运会",
+    "比分": "3-1",
+    "局分": [
+      "11-4",
+      "5-11",
+      "11-9",
+      "12-10"
+    ],
+    "胜者": "JEON Jihee/SHIN Yubin",
+    "负者": "KIM Kum Yong/PYON Song Gyong"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-3",
+      "11-4",
+      "11-1"
+    ],
+    "胜者": "CHEN Meng/WANG Yidi",
+    "负者": "Nabita SHRESTHA/Sikka SUWAL SHRESTHA"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-3",
+      "11-5",
+      "11-6"
+    ],
+    "胜者": "Miu HIRANO/Miyu NAGASAKI",
+    "负者": "WONG Xin Ru/ZHOU Jingyi"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-1",
+      "11-7",
+      "11-6"
+    ],
+    "胜者": "Jinnipa SAWETTABUT/Wanwisa AUEAWIRIYAYOTHIN",
+    "负者": "Khanh NGUYEN KHOA DIEU/Thuy Kieu My NGUYEN"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-4",
+      "11-7"
+    ],
+    "胜者": "Ayhika MUKHERJEE/Sutirtha MUKHERJEE",
+    "负者": "Anastassiya LAVROVA/Zauresh AKASHEVA"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-3",
+      "11-0",
+      "11-1"
+    ],
+    "胜者": "DOO Hoi Kem/ZHU Chengzhu",
+    "负者": "KUAN Cheok Lam/LEI Man In"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-2",
+      "11-3",
+      "11-9"
+    ],
+    "胜者": "LEE Eunhye/YANG Ha Eun",
+    "负者": "Amruta Amit PHADKE/Maryam Abdulla Majeed ALAALI"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-4",
+      "11-5"
+    ],
+    "胜者": "CHA Su Yong/PAK Su Gyong",
+    "负者": "Bolorerdene BATMUNKH/Undram MUNKHBAT"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-2",
+      "11-8"
+    ],
+    "胜者": "CHENG I-Ching/LI Yu-Jhun",
+    "负者": "Aishath Rafa NAZIM/Laisa FATHUHULLA ISMAIL"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-1",
+      "11-4",
+      "11-1"
+    ],
+    "胜者": "SUN Yingsha/WANG Manyu",
+    "负者": "Markhabo MAGDIEVA/Rozalina KHADJIEVA"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-7",
+      "11-6"
+    ],
+    "胜者": "LEE Ho Ching/LI Ching Wan",
+    "负者": "CHEONG Chi Hun/SEAK Hui Li"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "15-13",
+      "11-6"
+    ],
+    "胜者": "Diya Parag CHITALE/Sreeja AKULA",
+    "负者": "Nga NGUYEN Thi/Ngoc TRAN MAI"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-5",
+      "11-8"
+    ],
+    "胜者": "Miwa HARIMOTO/Miyuu KIHARA",
+    "负者": "Baljinnyam UVGUNBURGED/Doljinzuu BATBAYAR"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-8",
+      "11-2"
+    ],
+    "胜者": "CHEN Szu-Yu/HUANG Yi-Hua",
+    "负者": "GOI Rui Xuan/SER Lin Qian"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "11-8",
+      "11-8"
+    ],
+    "胜者": "Angelina ROMANOVSKAYA/Sarvinoz MIRKADIROVA",
+    "负者": "Malak KHOURY/Mariana SAHAKIAN"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-0",
+      "11-0",
+      "11-1"
+    ],
+    "胜者": "KIM Kum Yong/PYON Song Gyong",
+    "负者": "Hoor FAWAD/Perniya Zaman KHAN"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-9",
+      "11-7"
+    ],
+    "胜者": "JEON Jihee/SHIN Yubin",
+    "负者": "Orawan PARANANG/Suthasini SAWETTABUT"
   }
 ]

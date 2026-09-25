@@ -163,6 +163,14 @@
             var name = String(input || "").trim();
             return aliasMap[name] || name;
         }
+        // 一侧参赛方的登记检查：单名查档案；"A/B" 组合拆半逐个查（与 ci_validate/append_submission 口径一致）
+        function sbKnownSide(name) {
+            if (knownNames[name]) return true;
+            if (String(name).indexOf("/") >= 0) {
+                return String(name).split("/").every(function (p) { return knownNames[p.trim()]; });
+            }
+            return false;
+        }
         function saveDraft() { try { safeStorage.set(DRAFT_KEY, JSON.stringify({ records: queue, note: $("sbNote").value, submitter: $("sbSubmitter").value })); } catch (e) {} }
         function loadDraft() {
             try {
@@ -178,7 +186,7 @@
             var ul = $("sbQueue");
             ul.innerHTML = queue.map(function (r, i) {
                 var warn = "";
-                if (r["胜者"] && (!knownNames[r["胜者"]] || !knownNames[r["负者"]])) {
+                if (r["胜者"] && (!sbKnownSide(r["胜者"]) || !sbKnownSide(r["负者"]))) {
                     warn = '<span class="sb-warn">' + esc(T("sb_warn_unknown")) + "</span>";
                 }
                 var txt = r["胜者"]

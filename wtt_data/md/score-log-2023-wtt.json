@@ -1264,5 +1264,473 @@
     "类型": "乒超联赛",
     "胜者": "XU Xin/ZHOU Kai",
     "负者": "LIANG Yanning/ZHOU Yu"
+  },
+  {
+    "日期": "2023-10-01",
+    "类型": "亚运会",
+    "比分": "4-0",
+    "局分": [
+      "11-6",
+      "11-8",
+      "11-7",
+      "11-3"
+    ],
+    "胜者": "FAN Zhendong/WANG Chuqin",
+    "负者": "JANG Woojin/LIM Jonghoon"
+  },
+  {
+    "日期": "2023-10-01",
+    "类型": "亚运会",
+    "比分": "4-0",
+    "局分": [
+      "11-4",
+      "11-3",
+      "11-3",
+      "11-6"
+    ],
+    "胜者": "FAN Zhendong/WANG Chuqin",
+    "负者": "Nima ALAMIAN/Noshad ALAMIYAN"
+  },
+  {
+    "日期": "2023-10-01",
+    "类型": "亚运会",
+    "比分": "4-1",
+    "局分": [
+      "11-8",
+      "14-12",
+      "9-11",
+      "11-7",
+      "12-10"
+    ],
+    "胜者": "JANG Woojin/LIM Jonghoon",
+    "负者": "CHUANG Chih-Yuan/LIN Yun-Ju"
+  },
+  {
+    "日期": "2023-09-30",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-2",
+      "11-5",
+      "11-7"
+    ],
+    "胜者": "FAN Zhendong/WANG Chuqin",
+    "负者": "HO Kwan Kit/WONG Chun Ting"
+  },
+  {
+    "日期": "2023-09-30",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-8",
+      "11-5"
+    ],
+    "胜者": "Nima ALAMIAN/Noshad ALAMIYAN",
+    "负者": "Mizuki OIKAWA/Taisei MATSUSHITA"
+  },
+  {
+    "日期": "2023-09-30",
+    "类型": "亚运会",
+    "比分": "3-2",
+    "局分": [
+      "6-11",
+      "7-11",
+      "11-8",
+      "11-6",
+      "11-8"
+    ],
+    "胜者": "CHUANG Chih-Yuan/LIN Yun-Ju",
+    "负者": "LIANG Jingkun/LIN Gaoyuan"
+  },
+  {
+    "日期": "2023-09-30",
+    "类型": "亚运会",
+    "比分": "3-2",
+    "局分": [
+      "11-8",
+      "7-11",
+      "12-10",
+      "6-11",
+      "11-9"
+    ],
+    "胜者": "JANG Woojin/LIM Jonghoon",
+    "负者": "Manav Vikash THAKKAR/Manush Utpalbhai SHAH"
+  },
+  {
+    "日期": "2023-09-29",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-4",
+      "11-7"
+    ],
+    "胜者": "FAN Zhendong/WANG Chuqin",
+    "负者": "Sathiyan GNANASEKARAN/Sharath Kamal ACHANTA"
+  },
+  {
+    "日期": "2023-09-29",
+    "类型": "亚运会",
+    "比分": "3-1",
+    "局分": [
+      "11-8",
+      "11-7",
+      "7-11",
+      "11-1"
+    ],
+    "胜者": "HO Kwan Kit/WONG Chun Ting",
+    "负者": "Afzalkhon MAHMUDOV/Ubaydullo SULTONOV"
+  },
+  {
+    "日期": "2023-09-29",
+    "类型": "亚运会",
+    "比分": "3-2",
+    "局分": [
+      "7-11",
+      "8-11",
+      "11-6",
+      "11-9",
+      "11-4"
+    ],
+    "胜者": "Nima ALAMIAN/Noshad ALAMIYAN",
+    "负者": "HUANG Yan-Cheng/LIAO Cheng-Ting"
+  },
+  {
+    "日期": "2023-09-29",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-8",
+      "11-8"
+    ],
+    "胜者": "Mizuki OIKAWA/Taisei MATSUSHITA",
+    "负者": "AN Jaehyun/PARK Ganghyeon"
+  },
+  {
+    "日期": "2023-09-29",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-2",
+      "11-3",
+      "11-7"
+    ],
+    "胜者": "CHUANG Chih-Yuan/LIN Yun-Ju",
+    "负者": "Azzam Zeeni M ALIM/Khalid Suliman ALSHAREIF"
+  },
+  {
+    "日期": "2023-09-29",
+    "类型": "亚运会",
+    "比分": "3-1",
+    "局分": [
+      "9-11",
+      "11-3",
+      "11-3",
+      "11-9"
+    ],
+    "胜者": "LIANG Jingkun/LIN Gaoyuan",
+    "负者": "HAM Yu Song/RI Jong Sik"
+  },
+  {
+    "日期": "2023-09-29",
+    "类型": "亚运会",
+    "比分": "3-2",
+    "局分": [
+      "3-11",
+      "11-9",
+      "11-6",
+      "5-11",
+      "11-8"
+    ],
+    "胜者": "Manav Vikash THAKKAR/Manush Utpalbhai SHAH",
+    "负者": "PANG Koen/QUEK Izaac"
+  },
+  {
+    "日期": "2023-09-29",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-6",
+      "11-5"
+    ],
+    "胜者": "JANG Woojin/LIM Jonghoon",
+    "负者": "Anh DOAN Ba Tuan/NGUYEN Anh Tu"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-3",
+      "11-3"
+    ],
+    "胜者": "FAN Zhendong/WANG Chuqin",
+    "负者": "Aidos KENZHIGULOV/Vladislav ZAKHAROV"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-3",
+      "11-3"
+    ],
+    "胜者": "Sathiyan GNANASEKARAN/Sharath Kamal ACHANTA",
+    "负者": "Manlaijargal MUNKH-OCHIR/Ser-Od GANKHUYAG"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-1",
+    "局分": [
+      "12-10",
+      "11-4",
+      "4-11",
+      "11-8"
+    ],
+    "胜者": "Afzalkhon MAHMUDOV/Ubaydullo SULTONOV",
+    "负者": "Faizan ZAHOOR/Muhammad Shah KHAN"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-5",
+      "11-8"
+    ],
+    "胜者": "HO Kwan Kit/WONG Chun Ting",
+    "负者": "Alyas Ahmed Mohamed Jasim ALYASSI/Rashed RASHED"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "14-12",
+      "12-10"
+    ],
+    "胜者": "Nima ALAMIAN/Noshad ALAMIYAN",
+    "负者": "Padasak TANVIRIYAVECHAKUL/Sarayut TANCHAROEN"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "13-11",
+      "14-12",
+      "11-7"
+    ],
+    "胜者": "HUANG Yan-Cheng/LIAO Cheng-Ting",
+    "负者": "DINH Anh Hoang/Le DINH Duc"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-1",
+    "局分": [
+      "11-5",
+      "12-10",
+      "9-11",
+      "11-5"
+    ],
+    "胜者": "Mizuki OIKAWA/Taisei MATSUSHITA",
+    "负者": "BEH Kun Ting/CHEW Zhe Yu Clarence"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-1",
+      "11-4"
+    ],
+    "胜者": "AN Jaehyun/PARK Ganghyeon",
+    "负者": "Ali Noor ALKHADRAWI/Turki Lafi ALMUTAIRI"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-3",
+      "11-2",
+      "11-4"
+    ],
+    "胜者": "CHUANG Chih-Yuan/LIN Yun-Ju",
+    "负者": "Ankhbayar BILGUUN/Temuulen MYANDAL"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-2",
+    "局分": [
+      "11-9",
+      "6-11",
+      "11-7",
+      "11-13",
+      "11-6"
+    ],
+    "胜者": "Azzam Zeeni M ALIM/Khalid Suliman ALSHAREIF",
+    "负者": "Magd Ahmed Ali ALDHUBHANI/Omar Ahmed Ahmed ALI"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-1",
+    "局分": [
+      "11-9",
+      "11-9",
+      "4-11",
+      "11-9"
+    ],
+    "胜者": "HAM Yu Song/RI Jong Sik",
+    "负者": "LAM Siu Hang/NG Pak Nam"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-1",
+    "局分": [
+      "2-11",
+      "11-5",
+      "11-9",
+      "11-9"
+    ],
+    "胜者": "LIANG Jingkun/LIN Gaoyuan",
+    "负者": "Maharu YOSHIMURA/Shunsuke TOGAMI"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-8",
+      "11-5"
+    ],
+    "胜者": "PANG Koen/QUEK Izaac",
+    "负者": "Salman Mohamed ABUHAMDA/Sayed Murtadha Husain Ali MAHFOODH"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-1",
+    "局分": [
+      "11-8",
+      "9-11",
+      "11-6",
+      "11-2"
+    ],
+    "胜者": "Manav Vikash THAKKAR/Manush Utpalbhai SHAH",
+    "负者": "Mohamed Shaffan ISMAIL/Moosa Munsif AHMED"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "11-8",
+      "11-4"
+    ],
+    "胜者": "Anh DOAN Ba Tuan/NGUYEN Anh Tu",
+    "负者": "CHEONG Chi Cheng/HE Chon Fai"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-8",
+      "11-7"
+    ],
+    "胜者": "JANG Woojin/LIM Jonghoon",
+    "负者": "Alan KURMANGALIYEV/Kirill GERASSIMENKO"
+  },
+  {
+    "日期": "2023-09-27",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-4",
+      "11-7"
+    ],
+    "胜者": "Faizan ZAHOOR/Muhammad Shah KHAN",
+    "负者": "Rubin MAHARJAN/Sanyog KAPALI"
+  },
+  {
+    "日期": "2023-09-27",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "11-5",
+      "11-9"
+    ],
+    "胜者": "DINH Anh Hoang/Le DINH Duc",
+    "负者": "CHAN Chi In/ZHENG Hong Wai"
+  },
+  {
+    "日期": "2023-09-27",
+    "类型": "亚运会",
+    "比分": "3-1",
+    "局分": [
+      "11-6",
+      "11-2",
+      "7-11",
+      "11-6"
+    ],
+    "胜者": "LAM Siu Hang/NG Pak Nam",
+    "负者": "Abdullah ABDULWAHHAB/Mohammed ABDULWAHHAB"
+  },
+  {
+    "日期": "2023-09-27",
+    "类型": "亚运会",
+    "比分": "3-2",
+    "局分": [
+      "11-8",
+      "8-11",
+      "11-6",
+      "7-11",
+      "12-10"
+    ],
+    "胜者": "Manav Vikash THAKKAR/Manush Utpalbhai SHAH",
+    "负者": "Napat THANMATHIKOM/Sitisak NUCHCHART"
+  },
+  {
+    "日期": "2023-09-28",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "13-11",
+      "14-12",
+      "11-7"
+    ],
+    "胜者": "HUANG Yan-Cheng/LIAO Cheng-Ting",
+    "负者": "DINH Anh Hoang/LE Dinh Duc"
+  },
+  {
+    "日期": "2023-09-27",
+    "类型": "亚运会",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "11-5",
+      "11-9"
+    ],
+    "胜者": "DINH Anh Hoang/LE Dinh Duc",
+    "负者": "CHAN Chi In/ZHENG Hong Wai"
   }
 ]

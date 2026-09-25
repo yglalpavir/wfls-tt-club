@@ -86,10 +86,17 @@ const BUILD_SRC = `
     return JSON.stringify({ ok: false, error: 'score-log/seasons 为空' });
   }
   // 每行装饰 rank/变化/积分变化（移植自 js/ranking.js calculateRankChanges，
-  // 保证与官网表格显示一致；改动时需与 ranking.js:241 同步）
+  // 保证与官网表格显示一致；改动时需与 ranking.js:241 同步）。
+  // 双打组合行无 uid（uid 为 null），附 members 成员 uid 数组供消费者跳转个人页
   function decorateRows(curData, prevData, isInitial) {
     const cur = assignTiedRanks(curData);
-    cur.forEach(p => { p.uid = getUidForPlayerName(p['姓名']); });
+    cur.forEach(p => {
+      p.uid = getUidForPlayerName(p['姓名']);
+      if (p.uid == null) {
+        const parts = splitPairNames(p['姓名']);
+        if (parts) p.members = parts.map(n => getUidForPlayerName(n)).filter(u => u != null);
+      }
+    });
     if (!prevData || isInitial) return cur.map(p => ({ ...p, change: 0, changeType: 'new', pointsChange: 0, pointsChangeType: 'new' }));
     const prm = {}, ppm = {};
     assignTiedRanks(prevData).forEach(p => { prm[p['姓名']] = p.rank; ppm[p['姓名']] = p['当前积分'] || 0; });
@@ -105,10 +112,7 @@ const BUILD_SRC = `
       return { ...p, rank: cr, change: rc, changeType: rct, pointsChange: Math.round(pc * 10) / 10, pointsChangeType: pct };
     });
   }
-  const timeline = calculateAllRankingsWithSeasons(scoreLogData, initialScoresData.initialScores, seasonsData);
-  const rt = calculateRealtimeRanking();
-  if (rt) timeline.push(rt);
-  const nodes = timeline.map((n, i) => {
+  const decorateTimeline = (timeline) => timeline.map((n, i) => {
     const prev = i > 0 ? timeline[i - 1].data : null;
     return {
       time: n.time, label: n.label, season: n.season,
@@ -116,7 +120,31 @@ const BUILD_SRC = `
       data: decorateRows(n.data, prev, n.isInitial)
     };
   });
-  return JSON.stringify({ ok: true, nodes: nodes, floor: SCORE_FLOOR });
+
+  // ===== 单打/双打双口径（与 js/ranking.js loadRankingData 同一结构）=====
+  // 单打口径 = 全量日志减去双打记录（组合串不得混入单打榜）；无双打数据时保持原引用
+  const doublesLog = scoreLogData.filter(isDoublesRecord);
+  const singlesLog = doublesLog.length ? scoreLogData.filter(r => !isDoublesRecord(r)) : scoreLogData;
+  const computeTimeline = (log, initialScores) => {
+    const t = calculateAllRankingsWithSeasons(log, initialScores, seasonsData);
+    const rt = calculateRealtimeRanking();
+    if (rt) t.push(rt);
+    return t;
+  };
+  const timeline = doublesLog.length
+    ? withScoreContext(singlesLog, undefined, () => computeTimeline(singlesLog, initialScoresData.initialScores))
+    : computeTimeline(singlesLog, initialScoresData.initialScores);
+  const nodes = decorateTimeline(timeline);
+
+  // 双打一遍：组合初始分在单打上下文中算（首赛日两人单打分平均），再切双打上下文算时间线
+  let doubles = { hasData: false, nodes: [] };
+  if (doublesLog.length) {
+    const pairInitials = withScoreContext(singlesLog, undefined, () => buildDoublesInitialScores(doublesLog));
+    const doublesInitial = { initialScores: pairInitials };
+    const dtl = withScoreContext(doublesLog, doublesInitial, () => computeTimeline(doublesLog, pairInitials));
+    doubles = { hasData: true, nodes: decorateTimeline(dtl) };
+  }
+  return JSON.stringify({ ok: true, nodes: nodes, doubles: doubles, floor: SCORE_FLOOR });
 })()
 `;
 
@@ -216,6 +244,11 @@ function tallyWindow(rawLog, seasons, today) {
   const current = nodes[nodes.length - 1];
   const floor = built.floor;
 
+  // 双打榜（无双打数据时 current 为 null、timeline 为空数组，端点保持稳定存在）
+  const doublesNodes = (built.doubles && built.doubles.nodes) || [];
+  const doublesHasData = !!(built.doubles && built.doubles.hasData);
+  const doublesCurrent = doublesHasData ? doublesNodes[doublesNodes.length - 1] : null;
+
   // 比赛记录：原样保留 score-log.json（含 胜者/负者 为赛果，含 对象/分数 为加分）
   // 生成时间只写在 manifest.json，数据文件保持字节稳定（利于 CDN 缓存与最小 diff）
   const matchesPayload = {
@@ -260,6 +293,8 @@ function tallyWindow(rawLog, seasons, today) {
     endpoints: {
       'rankings/current.json': { records: current.data.length, isRealtime: true, description: '实时积分排名（当前节点）' },
       'rankings/timeline.json': { records: nodes.length, description: '全部快照时间线（赛季初 + 快照日期 + 实时节点）' },
+      'rankings/doubles-current.json': { records: doublesCurrent ? doublesCurrent.data.length : 0, isRealtime: doublesHasData, description: '双打实时积分榜（组合榜，成员 uid 见 members；无双打数据时为 null）' },
+      'rankings/doubles-timeline.json': { records: doublesNodes.length, description: '双打全部快照时间线（无双打数据时空数组）' },
       'players.json': { records: playersPayload.count, description: '成员个人数据（档案 + 当前积分/排名/胜负）' },
       'matches.json': { records: matchesPayload.count, description: '比赛记录与加分记录（与 score-log.json 一致）' }
     }
@@ -267,6 +302,8 @@ function tallyWindow(rawLog, seasons, today) {
 
   writeJson(path.join(OUT_DIR, 'rankings', 'current.json'), current);
   writeJson(path.join(OUT_DIR, 'rankings', 'timeline.json'), nodes);
+  writeJson(path.join(OUT_DIR, 'rankings', 'doubles-current.json'), doublesCurrent);
+  writeJson(path.join(OUT_DIR, 'rankings', 'doubles-timeline.json'), doublesNodes);
   writeJson(path.join(OUT_DIR, 'players.json'), playersPayload);
   writeJson(path.join(OUT_DIR, 'matches.json'), matchesPayload);
   writeJson(path.join(OUT_DIR, 'manifest.json'), manifest);
@@ -274,13 +311,16 @@ function tallyWindow(rawLog, seasons, today) {
 
   /* ---------- 自检：不满足则退出非零，阻止提交坏产物 ---------- */
   if (!current.isRealtime) { console.error('缺少实时节点'); process.exit(1); }
-  for (const n of nodes) {
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(n.time)) { console.error('非法节点日期：' + n.time); process.exit(1); }
-    for (const p of n.data) {
-      if (!Number.isFinite(p['当前积分']) || p['当前积分'] < floor) {
-        console.error('积分越界：' + n.time + ' ' + p['姓名'] + ' ' + p['当前积分']); process.exit(1);
+  const nodeSets = doublesHasData ? [nodes, doublesNodes] : [nodes];
+  for (const set of nodeSets) {
+    for (const n of set) {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(n.time)) { console.error('非法节点日期：' + n.time); process.exit(1); }
+      for (const p of n.data) {
+        if (!Number.isFinite(p['当前积分']) || p['当前积分'] < floor) {
+          console.error('积分越界：' + n.time + ' ' + p['姓名'] + ' ' + p['当前积分']); process.exit(1);
+        }
+        if (!Number.isInteger(p.rank) || p.rank < 1) { console.error('非法排名：' + n.time + ' ' + p['姓名'] + ' rank=' + p.rank); process.exit(1); }
       }
-      if (!Number.isInteger(p.rank) || p.rank < 1) { console.error('非法排名：' + n.time + ' ' + p['姓名'] + ' rank=' + p.rank); process.exit(1); }
     }
   }
   for (const p of playersPayload.players) {
@@ -295,6 +335,7 @@ function tallyWindow(rawLog, seasons, today) {
   }
   if (matchesPayload.count !== rawLog.length) { console.error('比赛记录条数不一致'); process.exit(1); }
 
-  console.log('OK 时间线 ' + nodes.length + ' 节点（实时: ' + current.time + '）· 当前排名 ' + current.data.length + ' 行 · 球员 ' + playersPayload.count + ' · 记录 ' + matchesPayload.count);
+  console.log('OK 时间线 ' + nodes.length + ' 节点（实时: ' + current.time + '）· 当前排名 ' + current.data.length + ' 行 · 球员 ' + playersPayload.count + ' · 记录 ' + matchesPayload.count
+    + ' · 双打 ' + (doublesHasData ? doublesNodes.length + ' 节点 / ' + doublesCurrent.data.length + ' 组合' : '无数据'));
   console.log('输出目录 ' + path.relative(ROOT, OUT_DIR) + '/');
 })().catch(e => { console.error(e); process.exit(1); });

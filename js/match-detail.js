@@ -17,6 +17,11 @@ let mdReady = false;
 
 function mdPlayerLink(name) {
     if (MD_WTT && typeof wttLinkPlayerName === 'function') { return wttLinkPlayerName(name); }
+    // 双打组合：逐成员链个人页（组合无独立档案；WTT 侧组合由 wttLinkPlayerName 整串处理）
+    if (!MD_WTT && typeof splitPairNames === 'function') {
+        const parts = splitPairNames(name);
+        if (parts) return parts.map(p => linkPlayerName(p)).join('<span class="pair-name-sep">/</span>');
+    }
     return linkPlayerName(name);
 }
 
@@ -77,10 +82,21 @@ function mdCompute() {
     let si = seasonsData.findIndex(s => target['日期'] >= s.startDate && target['日期'] <= s.endDate);
     if (si < 0) si = target['日期'] > seasonsData[seasonsData.length - 1].endDate ? seasonsData.length - 1 : 0;
     const season = seasonsData[si];
+    // 单双打口径分离：双打目标只在双打记录上回放（组合初始分表种子）；单打目标排除双打记录
+    // （组合 key 与个人 key 数学上天然隔离，过滤只为口径纯净）。WTT 管线无「双打」类型，保持原样。
+    const isDbl = !MD_WTT && isDoublesRecord(target);
+    const scopeLog = isDbl ? sortedLog.filter(isDoublesRecord)
+        : (MD_WTT ? sortedLog : sortedLog.filter(r => !isDoublesRecord(r)));
     // 定格批次与 player-page.js 一致：按整个赛季窗口构建。
     // 注意：getSeasonStartScores 内部的继承回放会改写 playerTypeBatches，故原始值要先存，权重也要在批次在位时取
     const prevBatches = playerTypeBatches;
     const scores = { ...getSeasonStartScores(si) };
+    if (isDbl) {
+        // 双打组合种子分 = 首场比赛日两人单打分平均（getScoreMapAsOf 读全局，须在单打口径上计算）
+        const pairInit = withScoreContext(sortedLog.filter(r => !isDoublesRecord(r)), undefined,
+            () => buildDoublesInitialScores(scopeLog));
+        Object.assign(scores, pairInit);
+    }
 
     // 回放窗口：目标早于赛季开始（极端边界）时把窗口下界放宽到比赛日，否则按赛季起点
     const windowStart = target['日期'] < season.startDate ? target['日期'] : season.startDate;
@@ -89,27 +105,29 @@ function mdCompute() {
     const today = getTodayStr();
     let preW = null, preL = null, wg = 0, wl = 0, rawGain = 0, timeWW = 1, timeWL = 1;
     try {
-        for (let i = 0; i < sortedLog.length; i++) {
-            const r = sortedLog[i];
+        for (const r of scopeLog) {
             if (r['日期'] > season.endDate) break;
             if (r['日期'] < windowStart) continue;
             // club：全部按今天口径（实时衰减+定格，同 player-page.js）；WTT：每场用自己的日期当快照（权重恒 1，同 wtt_player.js）
             const snap = MD_WTT ? r['日期'] : today;
+            if (r === target) {
+                const rw = r['胜者'], rl = r['负者'];
+                if (!scores[rw]) scores[rw] = DEFAULT_INITIAL_SCORE;
+                if (!scores[rl]) scores[rl] = DEFAULT_INITIAL_SCORE;
+                preW = scores[rw];
+                preL = scores[rl];
+                const dual = calcMatchPointsDual(rw, rl, r['类型'], r['日期'], snap, scores, r['赛制']);
+                wg = dual.wGain; wl = dual.lLoss;
+                rawGain = calcRawPoints(rw, rl, r['类型'], scores, r['赛制']);
+                // 胜负双方衰减权重不同：各按自己的 球员×类型 批次定格/衰减
+                timeWW = getFreezeWeight(rw, r['类型'], r['日期'], snap);
+                timeWL = getFreezeWeight(rl, r['类型'], r['日期'], snap);
+                break;
+            }
             if (isMatchRecord(r)) {
                 const rw = r['胜者'], rl = r['负者'];
                 if (!scores[rw]) scores[rw] = DEFAULT_INITIAL_SCORE;
                 if (!scores[rl]) scores[rl] = DEFAULT_INITIAL_SCORE;
-                if (i === targetIdx) {
-                    preW = scores[rw];
-                    preL = scores[rl];
-                    const dual = calcMatchPointsDual(rw, rl, r['类型'], r['日期'], snap, scores, r['赛制']);
-                    wg = dual.wGain; wl = dual.lLoss;
-                    rawGain = calcRawPoints(rw, rl, r['类型'], scores, r['赛制']);
-                    // 胜负双方衰减权重不同：各按自己的 球员×类型 批次定格/衰减
-                    timeWW = getFreezeWeight(rw, r['类型'], r['日期'], snap);
-                    timeWL = getFreezeWeight(rl, r['类型'], r['日期'], snap);
-                    break;
-                }
                 const gd = calcMatchPointsDual(rw, rl, r['类型'], r['日期'], snap, scores, r['赛制']);
                 scores[rw] = Math.max(SCORE_FLOOR, scores[rw] + gd.wGain);
                 scores[rl] = Math.max(SCORE_FLOOR, scores[rl] - gd.lLoss);
@@ -183,6 +201,11 @@ function mdCompute() {
 // 头像：club 模式优先 QQ 头像（与 members 页同一图源，失败回退名字首字符）；WTT 无本站档案，恒为首字符
 // 扁平圆形：胜者描边强调即可，不用发光环/脉冲圈/角标这类"头像框"装饰
 function mdAvatarHtml(name, isW) {
+    // 双打组合：两位成员并排各一枚头像（club 模式；WTT 组合整串一名走原逻辑）
+    if (!MD_WTT && typeof splitPairNames === 'function') {
+        const parts = splitPairNames(name);
+        if (parts) return `<span class="md-avatar-pair">${parts.map(m => mdAvatarHtml(m, isW)).join('')}</span>`;
+    }
     const p = (!MD_WTT && typeof getPlayerByName === 'function') ? getPlayerByName(name) : null;
     const qq = p && p.qq && String(p.qq).trim() ? String(p.qq).trim() : '';
     const shown = (!MD_WTT && typeof playerDisplayName === 'function') ? playerDisplayName(name) : name;
