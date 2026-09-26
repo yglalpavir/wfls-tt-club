@@ -60,10 +60,11 @@
                         <p class="mrank-hero-desc" data-i18n="rank_hero_desc">社团积分排名系统 · 支持多时间节点对比 · 点击姓名查看积分明细</p>
                         <!-- 操作行：积分规则 / 提交战绩 / 导出图片（深底半透明药丸；导出带 Top-N 菜单） -->
                         <div class="mrank-hero-actions">
-                            <a href="detail.html?type=qa&id=q1" class="qa-link-btn" aria-label="Ranking scoring rules">
+                            <!-- 积分规则入口：单药丸 + 下拉切换（与桌面同款，attachDocLinkMenu 挂菜单） -->
+                            <button type="button" id="mrankRulesBtn" class="qa-link-btn" aria-haspopup="true">
                                 <i class="fa-solid fa-circle-question" aria-hidden="true"></i>
-                                <span data-i18n="rank_qa_btn">积分计算规则</span>
-                            </a>
+                                <span data-i18n="rank_rules_pill">积分相关规则</span>
+                            </button>
                             <a href="submit.html" class="qa-link-btn" aria-label="提交比赛战绩">
                                 <i class="fa-solid fa-table-tennis-paddle-ball" aria-hidden="true"></i>
                                 <span data-i18n="nav_submit">提交战绩</span>
@@ -78,11 +79,12 @@
                             <h2 class="section-title" data-i18n="rank_title">积分数据表</h2>
                         </div>
                         <div class="rank-header-actions">
-                            <a href="detail.html?type=qa&id=q1" class="qa-link-btn" aria-label="Ranking scoring rules">
+                            <!-- 积分规则入口：单药丸 + 下拉切换（单打 q1 / 双打 q4，attachDocLinkMenu 挂菜单，与导出图片同款交互） -->
+                            <button type="button" id="rankRulesBtn" class="qa-link-btn" aria-haspopup="true">
                                 <i class="fa-solid fa-circle-question" aria-hidden="true"></i>
-                                <span data-i18n="rank_qa_btn">积分计算规则</span>
-                            </a>
-                            <!-- 访客提交战绩入口（与积分计算规则同款玻璃按钮，见 README「访客提交比赛记录」） -->
+                                <span data-i18n="rank_rules_pill">积分相关规则</span>
+                            </button>
+                            <!-- 访客提交战绩入口（与积分相关规则同款玻璃按钮，见 README「访客提交比赛记录」） -->
                             <a href="submit.html" class="qa-link-btn" aria-label="提交比赛战绩">
                                 <i class="fa-solid fa-table-tennis-paddle-ball" aria-hidden="true"></i>
                                 <span data-i18n="nav_submit">提交战绩</span>

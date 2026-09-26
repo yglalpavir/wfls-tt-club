@@ -131,9 +131,7 @@ const BUILD_SRC = `
     if (rt) t.push(rt);
     return t;
   };
-  const timeline = doublesLog.length
-    ? withScoreContext(singlesLog, undefined, () => computeTimeline(singlesLog, initialScoresData.initialScores))
-    : computeTimeline(singlesLog, initialScoresData.initialScores);
+  const timeline = computeSinglesClubTimeline();
   const nodes = decorateTimeline(timeline);
 
   // 双打一遍：组合初始分在单打上下文中算（首赛日两人单打分平均），再切双打上下文算时间线

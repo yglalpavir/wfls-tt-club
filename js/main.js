@@ -40,10 +40,8 @@ async function loadRankingDataForViz() {
         showProgress(i18n[currentLang].data_viz_calculating);
         await new Promise(r => setTimeout(r, 0));
 
-        // 同步计算（club数据量小，不需要分块异步）
-        rankingTimeline = calculateAllRankingsWithSeasons(scoreLogData, initialScoresData.initialScores, seasonsData);
-        const rt = calculateRealtimeRanking();
-        if (rt) rankingTimeline.push(rt);
+        // 同步计算（club数据量小，不需要分块异步）；单打口径：排除双打记录（组合串不得混入单打榜）
+        rankingTimeline = computeSinglesClubTimeline();
         return true;
     } catch(e) {
         console.error('DataViz: 排名计算失败', e);

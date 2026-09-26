@@ -185,8 +185,8 @@ git push -u origin main
 
 - **记录格式**：双打比赛以 `类型: "双打"` 记入 `data/score-log.json`，胜者/负者为 `"甲/乙"` 两人组合串（可选 `赛制`/`比分`/`局分` 与单打口径一致；恰好两名成员，逐个须在 players.json 登记）
 - **组合即积分主体**：组合是独立积分实体，与成员个人分互不影响。前端加载时组合名按成员 pinyin 排序规范化（"A/B" 与 "B/A" 收敛为同一组合），所有链接/明细/H2H 统一使用规范化形式（`js/common.js` `normalizeDoublesPairName`）
-- **组合初始分**：该组合首场比赛当日（含当日单打结算）两名成员单打积分的平均；此后跨赛季按 50% 继承链自然携带（`js/score-engine.js` `buildDoublesInitialScores`）
-- **计分参数**：类型系数 0.2、默认赛制 bo3（`event-coefficient.json`）、不衰减（`noDecayTypes` 含「双打」）、负者扣分 ×0.8——计分公式与单打完全共用
+- **组合初始分**：首场比赛当日（含当日单打结算）两名成员单打积分的平均，再减失衡折扣 `0.25 × 两人分差`（等价于 50% 平均 + 50% 弱侧；系数 `DOUBLES_GAP_DISCOUNT` 可调，规则见 q4）；此后跨赛季按 50% 继承链自然携带（`js/score-engine.js` `buildDoublesInitialScores`）
+- **计分参数**：类型系数 0.8、默认赛制 bo3（`event-coefficient.json`）、不衰减（`noDecayTypes` 含「双打」）、负者扣分 ×0.8——计分公式与单打完全共用
 - **口径分离**：单打榜自动排除双打记录，双打榜只含双打记录（加分记录仅单打口径）；两套时间线靠 `withScoreContext()` 临时切换引擎全局（缓存按数据引用失效），不得手工 save/swap
 - **页面**：ranking.html「单打/双打」切换；match.html 双打详情（双头像/逐成员链接）；player.html「双打战绩」区块
 - **数据 API**：`rankings/doubles-current.json` / `rankings/doubles-timeline.json`（组合行 `uid` 为 null，附 `members` 成员 uid 数组；无双打数据时 current 为 null、timeline 为空数组）

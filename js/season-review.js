@@ -447,7 +447,8 @@ function renderSeasonReview(si) {
     const metaEl = document.getElementById('srSeasonMeta');
     if (metaEl) metaEl.innerHTML = `${escapeHtml(season.startDate)} ~ ${escapeHtml(season.endDate)}${ongoing ? ` <span class="sr-ongoing-badge"><i class="fa-solid fa-circle-play"></i>${L.sr_ongoing_badge}</span>` : ''}`;
 
-    const windowMatches = scoreLogData.filter(r => isMatchRecord(r) && r['日期'] >= season.startDate && r['日期'] <= end);
+    // KPI 窗口只统计单打（双打组合不进单打赛季总结；类型分布同理）
+    const windowMatches = scoreLogData.filter(r => isMatchRecord(r) && !isDoublesRecord(r) && r['日期'] >= season.startDate && r['日期'] <= end);
     const windowBonus = scoreLogData.filter(r => isBonusRecord(r) && r['日期'] >= season.startDate && r['日期'] <= end);
 
     if (!windowMatches.length && !windowBonus.length) {

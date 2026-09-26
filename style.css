@@ -1890,6 +1890,15 @@ html:lang(en) .hero-title {
 .export-split { position: relative; display: inline-flex; flex-shrink: 0; }
 .export-split .table-export-btn:first-child { border-radius: 999px 0 0 999px; }
 .export-split .export-menu-toggle { border-radius: 0 999px 999px 0; margin-left: -1px; padding: 7px 10px; gap: 0; }
+/* 规则入口：qa-link-btn 药丸版分体下拉（与导出图片同款交互） */
+.export-split .qa-link-btn:first-child { border-radius: 999px 0 0 999px; }
+.export-split .qa-link-btn.export-menu-toggle { border-radius: 0 999px 999px 0; margin-left: -1px; padding: 7px 10px; gap: 0; }
+/* 分体药丸 hover/聚焦：主键不上浮（上浮会使拼接错位断开），整组一致高亮（含箭头）；
+   悬停菜单项时主药丸保持高亮。深底 hero 内由 .mrank-hero 的悬停覆盖（同特异性、靠后生效） */
+.export-split .qa-link-btn:hover,
+.export-split:hover .qa-link-btn,
+.export-split .qa-link-btn:focus-visible { transform: none; color: var(--primary-blue); border-color: var(--primary-blue); background: var(--primary-pale); }
+a.export-menu-item { text-decoration: none; }
 .export-menu {
     position: absolute;
     top: calc(100% + 6px);

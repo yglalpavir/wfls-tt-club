@@ -137,9 +137,10 @@ function getAllPlayersForPersonal() {
         }
     }
 
-    // 3. 从 score log 中收集球员
+    // 3. 从 score log 中收集球员（双打组合不进单打球员列表）
     if (scoreLogData && scoreLogData.length) {
         for (const r of scoreLogData) {
+            if (isDoublesRecord(r)) continue;
             if (isMatchRecord(r)) {
                 if (r['胜者']) playerSet.add(r['胜者']);
                 if (r['负者']) playerSet.add(r['负者']);

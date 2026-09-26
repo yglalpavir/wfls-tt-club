@@ -210,9 +210,7 @@ async function loadRankingData() {
             if (rt) t.push(rt);
             return t;
         };
-        modeTimelines.singles = doublesLogData.length
-            ? withScoreContext(singlesLogData, undefined, () => computeTimeline(singlesLogData, initialScoresData.initialScores))
-            : computeTimeline(singlesLogData, initialScoresData.initialScores);
+        modeTimelines.singles = computeSinglesClubTimeline();
         if (doublesLogData.length) {
             // 组合初始分必须在单打上下文中计算（重放到各组合首赛日取两人单打分平均）
             const pairInitials = withScoreContext(singlesLogData, undefined, () => buildDoublesInitialScores(doublesLogData));
@@ -444,6 +442,13 @@ function setupRankTableExport() {
     /* 移动端表头行的第二个导出按钮（图标版）：同一 doExport + 菜单（幂等守卫防重复挂） */
     const mbtn = document.getElementById('mrankExportBtn');
     if (mbtn) { mbtn.addEventListener('click', () => doExport(null)); attachRankExportMenu(mbtn, doExport); }
+    /* 积分规则入口：单药丸 + 下拉切换（单打 q1 / 双打 q4），桌面与移动端 hero 两处 */
+    const rulesLinks = [
+        { key: 'rank_rules_menu_q1', href: 'detail.html?type=qa&id=q1' },
+        { key: 'rank_qa_btn_doubles', href: 'detail.html?type=qa&id=q4' }
+    ];
+    attachDocLinkMenu(document.getElementById('rankRulesBtn'), rulesLinks);
+    attachDocLinkMenu(document.getElementById('mrankRulesBtn'), rulesLinks);
 }
 /* 语言切换时同步下拉文案与卡片标签 */
 if (typeof updateRankingHeaders === 'function') {

@@ -705,8 +705,15 @@ function getScoreMapAsOf(dateStr) {
     return sc;
 }
 
+// ===== 双打组合初始分 =====
+// 失衡折扣率：初始分 = 两人平均 − 0.25 × 两人分差（首赛日时点）。
+// 等价于 50% 权重取两人平均 + 50% 权重取较弱一方（混合权重 γ = 2×0.25 = 0.5：
+// γ=0 纯平均、γ=1 完全由弱者决定）。
+const DOUBLES_GAP_DISCOUNT = 0.25;
+
 /**
- * 双打组合初始分表（key: 规范组合串 → value: 首场比赛日（含当日）两人单打分数的平均）。
+ * 双打组合初始分表（key: 规范组合串 → value: 首场比赛日（含当日）两人单打分数的平均，
+ * 再减失衡折扣 0.25×两人分差）。
  * 必须在单打数据上下文中调用（getScoreMapAsOf 依赖全局 scoreLogData/initialScoresData）；
  * 组合此后跨赛季的分数由引擎 50% 继承链自然携带（initialScores 兜底注入保证未 formed 赛季也有起点）。
  */
@@ -733,7 +740,8 @@ function buildDoublesInitialScores(doublesLog) {
         const vals = members.map(n =>
             (typeof sc[n] === 'number') ? sc[n] :
             (typeof singlesInitial[n] === 'number') ? singlesInitial[n] : DEFAULT_INITIAL_SCORE);
-        out[pair] = (vals[0] + vals[1]) / 2;
+        const avg = (vals[0] + vals[1]) / 2;
+        out[pair] = avg - DOUBLES_GAP_DISCOUNT * Math.abs(vals[0] - vals[1]);
     }
     return out;
 }

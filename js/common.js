@@ -151,7 +151,7 @@ const i18n = {
         news_page_title: "近期动态 | WFLS Table Tennis Club", news_hero_tag: "News & Updates", news_hero_title: "近期动态", news_hero_desc: "社团活动 / 训练安排 / 重要公告", news_list_tag: "All News", news_list_title: "全部动态",
         comp_page_title: "赛事信息 | WFLS Table Tennis Club", comp_hero_tag: "Competitions", comp_hero_title: "赛事信息", comp_hero_desc: "比赛安排 / 成绩记录 / 赛事回顾", comp_list_tag: "All Competitions", comp_list_title: "全部赛事",
         members_page_title: "社团骨干 | WFLS Table Tennis Club",
-        rank_page_title: "Ranking Beta | WFLS Table Tennis Club", rank_hero_desc: "社团积分排名系统 · 支持多时间节点对比 · 点击姓名查看积分明细", rank_tag: "Data Table", rank_title: "积分数据表", rank_sort_hint: "当前排序：", rank_sidebar_title: "时间节点", rank_qa_btn: "积分计算规则",
+        rank_page_title: "Ranking Beta | WFLS Table Tennis Club", rank_hero_desc: "社团积分排名系统 · 支持多时间节点对比 · 点击姓名查看积分明细", rank_tag: "Data Table", rank_title: "积分数据表", rank_sort_hint: "当前排序：", rank_sidebar_title: "时间节点", rank_rules_pill: "积分相关规则", rank_rules_menu_q1: "积分计算方法", rank_qa_btn_doubles: "双打计分规则",
         rank_col_rank: "#", rank_col_name: "姓名", rank_col_points: "当前积分", rank_col_points_change: "积分变化", rank_col_change: "排名变化", rank_col_matches: "总场次", rank_col_winrate: "胜率",
         rank_export_btn: "导出图片", rank_export_gen: "生成于", rank_export_fail: "图片导出失败，请重试",
         export_gen: "生成于", img_export_fail: "图片导出失败，请重试", detail_export_btn: "导出图片",
@@ -352,7 +352,7 @@ const i18n = {
         news_page_title: "News | WFLS Table Tennis Club", news_hero_tag: "News & Updates", news_hero_title: "News", news_hero_desc: "Activities / Training / Announcements", news_list_tag: "All News", news_list_title: "All News",
         comp_page_title: "Competitions | WFLS Table Tennis Club", comp_hero_tag: "Competitions", comp_hero_title: "Competitions", comp_hero_desc: "Schedule / Results / Review", comp_list_tag: "All Competitions", comp_list_title: "All Competitions",
         members_page_title: "Core Members | WFLS Table Tennis Club",
-        rank_page_title: "Ranking Beta | WFLS Table Tennis Club", rank_hero_desc: "Club ranking system · Auto-calculated · Season inheritance", rank_tag: "Data Table", rank_title: "Points Table", rank_sort_hint: "Current sorting: ", rank_sidebar_title: "Time Periods", rank_qa_btn: "Scoring Rules",
+        rank_page_title: "Ranking Beta | WFLS Table Tennis Club", rank_hero_desc: "Club ranking system · Auto-calculated · Season inheritance", rank_tag: "Data Table", rank_title: "Points Table", rank_sort_hint: "Current sorting: ", rank_sidebar_title: "Time Periods", rank_rules_pill: "Scoring Rules", rank_rules_menu_q1: "Singles Scoring Rules", rank_qa_btn_doubles: "Doubles Scoring Rules",
         rank_col_rank: "#", rank_col_name: "Name", rank_col_points: "Points", rank_col_points_change: "Score Δ", rank_col_change: "Rank Δ", rank_col_matches: "Matches", rank_col_winrate: "Win Rate",
         rank_export_btn: "Save Image", rank_export_gen: "Generated", rank_export_fail: "Image export failed. Please try again.",
         export_gen: "Generated", img_export_fail: "Image export failed. Please try again.", detail_export_btn: "Save Image",
@@ -814,6 +814,41 @@ function attachRankExportMenu(btn, doExport) {
         });
     });
     input.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); menu.querySelector('.export-menu-go').click(); } });
+}
+
+/* 规则/文档入口下拉：与导出图片同款「主药丸 + 菜单」交互，菜单项为文档链接。
+   links: [{ key: i18n键, href: 文档地址 }]；主药丸与箭头均可开合，点项跳转后随页面离开。 */
+function attachDocLinkMenu(btn, links) {
+    if (!btn || btn._docMenuAttached) return;
+    btn._docMenuAttached = true;
+    const L = i18n[currentLang] || {};
+    const wrap = document.createElement('div');
+    wrap.className = 'export-split';
+    btn.parentNode.insertBefore(wrap, btn);
+    wrap.appendChild(btn);
+
+    const toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'qa-link-btn export-menu-toggle';
+    toggle.setAttribute('aria-haspopup', 'true');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.title = L.rank_rules_pill || '';
+    toggle.innerHTML = '<i class="fa-solid fa-chevron-down" aria-hidden="true"></i>';
+    wrap.appendChild(toggle);
+
+    const menu = document.createElement('div');
+    menu.className = 'export-menu';
+    menu.hidden = true;
+    menu.innerHTML = links.map(l => `<a class="export-menu-item" href="${escapeHtml(l.href)}" data-i18n="${escapeHtml(l.key)}">${escapeHtml(L[l.key] || l.key)}</a>`).join('');
+    wrap.appendChild(menu);
+
+    const setOpen = open => { menu.hidden = !open; toggle.setAttribute('aria-expanded', open ? 'true' : 'false'); };
+    const flip = e => { e.stopPropagation(); setOpen(menu.hidden); };
+    btn.addEventListener('click', flip);
+    toggle.addEventListener('click', flip);
+    menu.addEventListener('click', e => e.stopPropagation());
+    document.addEventListener('click', () => setOpen(false));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !menu.hidden) setOpen(false); });
 }
 
 /* ---- DOM 节点导出为图片（html2canvas；detail 页 n/c/q 内容卡使用） ---- */
@@ -1327,6 +1362,22 @@ async function withScoreContextAsync(log, initialScores, fn) {
     scoreLogData = log;
     if (initialScores !== undefined) initialScoresData = initialScores;
     try { return await fn(); } finally { scoreLogData = prevLog; initialScoresData = prevInit; }
+}
+
+/* 单打口径积分时间线（含实时节点）：排除双打记录后计算。
+   无双打数据时保持原引用（回归零漂移）；有双打数据时在单打上下文中换血
+   （引擎 getSeasonStartScores 读全局）。ranking.js / main.js(loadRankingDataForViz)
+   / recompute_rankings.js 共用，防止单打口径漂移。 */
+function computeSinglesClubTimeline() {
+    const doublesLog = scoreLogData.filter(isDoublesRecord);
+    const log = doublesLog.length ? scoreLogData.filter(r => !isDoublesRecord(r)) : scoreLogData;
+    const run = () => {
+        const t = calculateAllRankingsWithSeasons(log, initialScoresData.initialScores, seasonsData);
+        const rt = calculateRealtimeRanking();
+        if (rt) t.push(rt);
+        return t;
+    };
+    return doublesLog.length ? withScoreContext(log, undefined, run) : run();
 }
 let _newsLoadSettled = false, _compLoadSettled = false;
 function markContentLoaded(which) {

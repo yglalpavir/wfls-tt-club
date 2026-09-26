@@ -6,15 +6,27 @@
  *      - 对手不再是固定 HELL，而是 js/opponent-ladder.js 的课程阶梯
  *        （hell → elite → extreme → extreme-max），每局随机取一档亚型（抖动），
  *        防止把策略背成"只赢某一个具体配置"。
- *      - 评估改为三路：本阶段对手 / 顶档对手 / 默认策略（防崩回归护栏），
- *        最佳权重按加权和挑选，并单独守护 vs 默认的胜率下限。
- *      - 断点保护：每 --ckpt 局把 bestNet 落盘，进程被杀也不丢成果。
+ *      - 每轮验证跑**整条阶梯**（默认 5 档：default / hell / elite / extreme /
+ *        extreme-max），逐档胜率落进曲线与检查点索引，可视化面板直接画
+ *        "对不同模型的验证胜率"。三路选优（本档 / 顶档 / 默认护栏）仍用其中
+ *        3 档，加权和挑最佳权重，单独守护 vs 默认的胜率下限。
+ *      - 断点备份 + 续训：每 --ckpt 局把 bestNet 落进 data/checkpoints/<run>/
+ *        （权重文件可直接当 --from；index.json 记录 ep / 胜率 / 配置 / 累计耗时），
+ *        环形保留 --keep 份 + 最佳一份；--resume <index.json|权重> 恢复
+ *        ep 偏移、选优状态、累计胜率与曲线，进程被杀 / 关机 / 断电都能接着跑。
+ *      - --hours N：墙钟预算（小时）。0 = 不限时，只用 --games 兜底；
+ *        续训时扣掉断点记录的累计耗时，18h 预算可跨多次中断累计。
  *      - --eval-only：只标定不训练（用来量某份权重打整条阶梯的胜率）。
- *  · 产出：data/input-ai-extreme.json + tools/input-curve-v3.json
+ *  · 产出：data/input-ai-extreme.json（采纳后）+ tools/input-curve-v3.json
+ *        + data/checkpoints/input3-<时间戳>/（检查点，gitignore，本地续训用）
  *  · 用法：
  *      node tools/train-input3.js --eval-only
  *      node tools/train-input3.js --games 600 --eval 40 --no-save          # 冒烟
  *      node tools/train-input3.js --games 3000 --pret 0 --no-save
+ *      node tools/train-input3.js --hours 18 --games 600000 --step 200 \
+ *              --eval 24 --ckpt 200 --run-name input3-18h --no-save        # 18h 长跑
+ *      node tools/train-input3.js --resume data/checkpoints/input3-18h/index.json \
+ *              --hours 18 --no-save                                        # 断点续训
  * ===================================================================== */
 'use strict';
 const path = require('path');
@@ -43,6 +55,16 @@ const opt = {
   start: 'hell', end: 'extreme-max', jitter: 0.06,
   seed: 20260909,
   noSave: false, evalOnly: false,
+  /* ---- 长跑 + 断点续训 ----
+   * hours=0 时用 --games 作唯一终止条件；hours>0 时以墙钟预算为准，
+   * --games 退化成保险上限（避免卡死/死循环把 CPU 占到天荒地老）。
+   * 预算在轮次边界判定，所以每轮（--step）的验证与检查点一定成对落盘。 */
+  hours: 0,
+  /* 每轮验证的对手档位。默认全阶梯 5 档；'default' 强制保留——它是采纳护栏的
+   * 参照（vs默认 不劣于 -5pp 才采纳），拿掉它等于关掉防崩保护。 */
+  vallevels: 'default,hell,elite,extreme,extreme-max',
+  runName: '', ckptDir: '', keep: 12, noCkpt: false,
+  resume: '', resumeBest: false,
   // 课程：每档占比（和 = 1.0）。想换节奏用 --phases hell:0.2,elite:0.28,extreme:0.3,extreme-max:0.22
   phases: 'hell:0.20,elite:0.28,extreme:0.30,extreme-max:0.22',
   /* 优化器（dqn.js#mlpTrainEnh，全部 opt-in；不传任何 flag = 旧 SGD 路径）：
@@ -79,6 +101,14 @@ for(let i = 0; i < args.length; i++){
   else if(args[i] === '--optimizer') opt.optimizer = args[++i];
   else if(args[i] === '--grad-clip') opt.gradClip = parseFloat(args[++i]);
   else if(args[i] === '--layer-lr') opt.layerLr = args[++i];
+  else if(args[i] === '--hours') opt.hours = parseFloat(args[++i]);
+  else if(args[i] === '--vallevels') opt.vallevels = args[++i];
+  else if(args[i] === '--run-name') opt.runName = args[++i];
+  else if(args[i] === '--ckptdir') opt.ckptDir = path.resolve(args[++i]);
+  else if(args[i] === '--keep') opt.keep = parseInt(args[++i], 10);
+  else if(args[i] === '--no-ckpt') opt.noCkpt = true;
+  else if(args[i] === '--resume') opt.resume = args[++i];
+  else if(args[i] === '--resume-best') opt.resumeBest = true;
 }
 
 /* ---- 优化器补丁：只在显式传了 flag 时才应用，默认保持旧 SGD 路径 ---- */
@@ -138,28 +168,50 @@ function loadBase(){
   return { agent: base, shape: widths };
 }
 
-/* ---- 对一份权重做整条阶梯标定 ---- */
-function ladderEval(agent, rngSeed, games){
+/* ---- 每轮验证的对手档位（'default' 强制保留：采纳护栏的参照）---- */
+const VAL_TAGS = (() => {
+  const want = opt.vallevels.split(',').map(s => s.trim()).filter(Boolean);
+  const ok = t => OPP.LEVELS.some(l => l.tag === t);
+  for(const b of want.filter(t => !ok(t)))
+    console.warn('    ⚠ 未知档位已忽略：' + b + '（可用：' + OPP.LEVEL_TAGS.join('/') + '）');
+  const keep = want.filter(ok);
+  if(keep.indexOf('default') < 0){
+    keep.unshift('default');
+    console.warn('    ⚠ 验证档位补入 default——它是采纳护栏（vs默认 不劣于 -5pp）的参照，不能省。');
+  }
+  return keep.map(t => OPP.LEVELS.find(l => l.tag === t));
+})();
+
+/* ---- 对一份权重做整条（或部分）阶梯标定 ---- */
+function ladderEval(agent, rngSeed, games, tags){
   agent.setTraining(false);
   const out = [];
-  for(const lv of OPP.LEVELS){
+  const list = (tags && tags.length) ? tags : OPP.LEVELS;
+  for(const lv of list){
     const r = INPUTSIM.playInputMatch(brainEval(agent), OPP.at(lv.tag), { games, rngFactory: k => mulberry32(rngSeed + lv.id * 977 + k) });
-    out.push({ tag: lv.tag, wr: +r.pointRate.toFixed(4), detail: r.winsA + '-' + r.winsB });
+    out.push({ tag: lv.tag, id: lv.id, wr: +r.pointRate.toFixed(4), games, detail: r.winsA + '-' + r.winsB });
   }
   agent.setTraining(true);
   return out;
+}
+
+/* ---- 胜率结果 → 扁平 series 键（wr<档位名驼峰>）：曲线文件与 UI 图表直接取用 ---- */
+function wrFlat(res){
+  const o = {};
+  for(const r of res) o['wr' + r.tag.split('-').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join('')] = r.wr;
+  return o;
 }
 
 /* ================= --eval-only：只标定不训练 ================= */
 if(opt.evalOnly){
   const G = parseInt(process.env.TT_EVALGAMES || String(opt.eval * 2), 10);
   const { agent } = loadBase();
-  console.log('标定模式：' + opt.from + '（' + OPP.LEVELS.length + ' 档 × ' + G + ' 局）');
-  const res = ladderEval(agent, opt.seed * 31, G);
+  console.log('标定模式：' + opt.from + '（' + VAL_TAGS.length + ' 档 × ' + G + ' 局）');
+  const res = ladderEval(agent, opt.seed * 31, G, VAL_TAGS);
   console.log('  对手'.padEnd(16) + '胜率      局分');
   for(const r of res) console.log('  ' + r.tag.padEnd(14) + (r.wr * 100).toFixed(1).padStart(6) + '%  ' + r.detail);
-  T.tick({ t:'done', mode:'input-ladder-probe', from:opt.from, games:G,
-           ladder: res.map(r => r.tag + ':' + r.wr.toFixed(3)).join(',') });
+  T.tick(Object.assign({ t:'done', mode:'input-ladder-probe', from:opt.from, games:G,
+           ladder: res.map(r => r.tag + ':' + r.wr.toFixed(3)).join(',') }, wrFlat(res)));
   process.exit(0);
 }
 
