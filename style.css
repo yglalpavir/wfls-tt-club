@@ -2566,101 +2566,13 @@ body.dark .player-search-item.selected { background: rgba(77, 163, 255, 0.15); }
     .personal-overview { grid-template-columns: repeat(2, 1fr); }
     .personal-chart-wrapper { height: 240px; }
 
-    /* ---- 排名表格（横向滚动 + 首列冻结）---- */
-    .ranking-full-table-wrapper { padding: 4px; border-radius: var(--radius-md); overflow-x: auto; -webkit-overflow-scrolling: touch; }
-    .ranking-table { font-size: 0.85rem; min-width: 650px; }
-    .ranking-table th, .ranking-table td { padding: 10px 8px; white-space: nowrap; }
-    .ranking-table th { font-size: 0.78rem; letter-spacing: 0; }
-    .ranking-table th:first-child, .ranking-table td:first-child { position: sticky; left: 0; background: var(--bg-white); z-index: 2; box-shadow: 2px 0 4px rgba(0,0,0,0.04); }
-    .ranking-table thead th:first-child { background: var(--primary-pale); z-index: 3; }
-    .dark-mode .ranking-table td:first-child { background: var(--bg-white); }
-    .dark-mode .ranking-table th:first-child { background: var(--primary-pale); }
+    /* ---- 排名表：≤768px 已由移动端排行榜（mrank-*，见文件末尾）整体取代，原横滚+首列冻结规则移除 ---- */
 }
 
 /* ========================================
-   排名表格 - 手机端卡片式布局（≤600px）
-   表头隐藏，每行渲染为一张统计卡片；
-   排序改用顶部下拉控件（mobile-sort-bar）
+   排名表格手机端旧卡片布局已移除：≤768px 由
+   移动端排行榜（mrank-*，见文件末尾「排名页移动端重做」）整体取代
    ======================================== */
-@media (max-width: 600px) {
-    /* 移动端排序控件（替代被隐藏的表头排序） */
-    .mobile-sort-bar { display: flex; align-items: center; gap: 6px; margin-left: auto; }
-    .mobile-sort-select {
-        appearance: none; -webkit-appearance: none;
-        max-width: 46vw;
-        border: 1px solid var(--border-color); border-radius: 8px;
-        background-color: var(--bg-white); color: var(--text-primary);
-        font-size: 0.78rem; padding: 6px 26px 6px 10px;
-        cursor: pointer; outline: none;
-        background-image:
-            linear-gradient(45deg, transparent 50%, var(--text-muted) 50%),
-            linear-gradient(135deg, var(--text-muted) 50%, transparent 50%);
-        background-position: calc(100% - 14px) 55%, calc(100% - 9px) 55%;
-        background-size: 5px 5px;
-        background-repeat: no-repeat;
-    }
-    .mobile-sort-select:focus-visible { border-color: var(--primary-blue); box-shadow: 0 0 0 3px rgba(77,163,255,0.18); }
-    .mobile-sort-dir {
-        width: 32px; height: 32px; flex-shrink: 0;
-        display: inline-flex; align-items: center; justify-content: center;
-        border: 1px solid var(--border-color); border-radius: 8px;
-        background: var(--bg-white); color: var(--primary-blue);
-        font-size: 0.8rem; cursor: pointer;
-    }
-
-    /* 控制区横向流式排列，避免逐行堆叠占用过多纵向空间 */
-    .ranking-controls { flex-direction: row; flex-wrap: wrap; align-items: center; }
-    .update-info { font-size: 0.72rem; }
-
-    /* 表格 → 卡片列表 */
-    .ranking-full-table-wrapper { padding: 10px; overflow-x: visible; }
-    .ranking-table-full { min-width: 0 !important; font-size: 0.88rem; }
-    .ranking-table-full thead { display: none; }
-    .ranking-table-full tbody { display: flex; flex-direction: column; gap: 8px; }
-    .ranking-table-full tbody tr {
-        display: grid;
-        grid-template-columns: 34px minmax(0, 1fr) auto auto;
-        gap: 7px 12px;
-        align-items: center;
-        padding: 11px 13px;
-        border: 1px solid var(--border-color);
-        border-radius: var(--radius-sm);
-        background: var(--bg-white);
-    }
-    .ranking-table-full tbody tr:hover { background: var(--bg-lighter); }
-    .ranking-table-full tbody tr td {
-        display: block; padding: 0; border-bottom: none;
-        text-align: left; white-space: nowrap;
-    }
-    /* 中和首列冻结样式（含暗色模式覆盖） */
-    .ranking-table-full tbody tr td:first-child,
-    .dark-mode .ranking-table-full tbody tr td:first-child {
-        position: static; background: transparent; box-shadow: none; z-index: auto;
-    }
-    /* 加载中 / 空数据等整行提示铺满卡片 */
-    .ranking-table-full tbody tr td[colspan] {
-        grid-column: 1 / -1;
-        text-align: center; padding: 22px 8px; white-space: normal;
-    }
-    /* 第 1 行：名次 | 姓名 | 当前积分 */
-    .ranking-table-full tbody tr:nth-child(-n+3) td:first-child:not([colspan]) { font-size: 1.15rem; }
-    .ranking-table-full tbody tr td:first-child:not([colspan]) { grid-row: 1; grid-column: 1; text-align: center; }
-    .ranking-table-full tbody tr td:nth-child(2):not([colspan]) { grid-row: 1; grid-column: 2; white-space: normal; word-break: break-word; line-height: 1.45; }
-    .ranking-table-full tbody tr td:nth-child(3):not([colspan]) { grid-row: 1; grid-column: 3 / -1; justify-self: end; text-align: right; }
-    .ranking-table-full tbody tr td:nth-child(3) strong { font-size: 1.08rem; }
-    /* 第 2、3 行：四项指标排成 2×2（带 data-label 前缀），避免单行挤压溢出 */
-    .ranking-table-full tbody tr td:nth-child(n+4):not([colspan]) { font-size: 0.78rem; color: var(--text-secondary); min-width: 0; overflow: hidden; text-overflow: ellipsis; }
-    .ranking-table-full tbody tr td:nth-child(n+4):not([colspan])::before {
-        content: attr(data-label);
-        margin-right: 3px; font-size: 0.72em; color: var(--text-muted);
-    }
-    .ranking-table-full tbody tr td:nth-child(4):not([colspan]) { grid-row: 2; grid-column: 2 / 4; }
-    .ranking-table-full tbody tr td:nth-child(5):not([colspan]) { grid-row: 2; grid-column: 4; justify-self: end; }
-    .ranking-table-full tbody tr td:nth-child(6):not([colspan]) { grid-row: 3; grid-column: 2 / 4; }
-    .ranking-table-full tbody tr td:nth-child(7):not([colspan]) { grid-row: 3; grid-column: 4; justify-self: end; }
-    /* 明细按钮加大触控区 */
-    .ranking-table-full .score-detail-icon { padding: 4px 6px; font-size: 0.95rem; }
-}
 
 /* WTT 彩蛋入口：小屏纵排 */
 @media (max-width: 480px) {
@@ -2670,12 +2582,6 @@ body.dark .player-search-item.selected { background: rgba(77, 163, 255, 0.15); }
     .wtt-egg-icon { font-size: 1.2rem; }
     .wtt-egg-body { min-width: 0; }
     .wtt-egg-btn { width: 100%; justify-content: center; }
-}
-
-/* 超小屏卡片微调（iPhone SE 等） */
-@media (max-width: 380px) {
-    .ranking-table-full tbody tr { padding: 10px 10px; gap: 6px 9px; }
-    .ranking-table-full tbody tr td:nth-child(n+4) { font-size: 0.73rem; }
 }
 
 /* 手机竖屏 */
@@ -3462,8 +3368,8 @@ a.hero-ball::before {
 .md-plain { max-width: 1200px; margin: 0 auto; padding: calc(var(--nav-height) + 60px) 24px 90px; }
 
 /* ---- 页面级亚运 accent（取自亚运官网 design token：brand-500 #4f3b95 / brand-100 #d9d4ec / 圆角 13px） ----
-   胜负语义不使用红绿（与紫系冲突）：得分=紫、失分=灰、胜者荣誉=金（亚运 Medal 语言） */
-.md-page { --md-accent: #4f3b95; --md-accent-deep: #291f55; --md-accent-soft: rgba(79, 59, 149, .08); --md-accent-pale: #d9d4ec; --md-dot: #333; --md-pos-ink: #3c2e75; --md-pos-bg: #d9d4ec; --md-neg-ink: #6b6b6b; --md-neg-bg: #ececf0; --md-gold-ink: #9c7c00; --md-gold-bg: #fffbea; }
+   胜负语义不使用红绿（与紫系冲突）：得分=紫、失分=灰、胜者荣誉=金（亚运 Medal 语言） ---- */
+.md-page { --md-accent: #4f3b95; --md-accent-deep: #291f55; --md-accent-soft: rgba(79, 59, 149, .08); --md-accent-pale: #d9d4ec; --md-dot: #333; --md-pos-ink: #3c2e75; --md-pos-bg: #d9d4ec; --md-neg-ink: #6b6b6b; --md-neg-bg: #ececf0; --md-gold-ink: #9c7c00; --md-gold-bg: #fffbea; --md-mono: 'Fira Mono', ui-monospace, 'Courier New', monospace; --md-latin: var(--font-en), var(--font-cn), sans-serif; }
 .dark-mode .md-page { --md-accent: #8c7cc5; --md-accent-deep: #4f3b95; --md-accent-soft: rgba(140, 124, 197, .14); --md-accent-pale: rgba(140, 124, 197, .24); --md-dot: #f4f4f4; --md-pos-ink: #d9d4ec; --md-pos-bg: rgba(140, 124, 197, .26); --md-neg-ink: #a1a1a1; --md-neg-bg: rgba(255, 255, 255, .09); --md-gold-ink: #f3d84a; --md-gold-bg: rgba(209, 177, 0, .16); }
 
 /* ---- 深色 hero：明暗模式恒定（亚运 .b-splash：linear-gradient(0deg,#111,#2a1f51)），底部弧线过渡 ---- */
@@ -3489,13 +3395,13 @@ a.hero-ball::before {
 
 .md-hero-event { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
 /* 亚运玻璃 pill（同 .b-btn-glass 语言：磨砂底 + 上亮下暗白描边） */
-.md-event-pill { display: inline-flex; align-items: center; padding: 9px 26px; border-radius: 999px; border: 1.5px solid rgba(253, 253, 253, .45); border-bottom-color: rgba(253, 253, 253, .28); background: rgba(51, 51, 51, .25); backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px); font-size: clamp(.95rem, 2.2vw, 1.16rem); font-weight: 700; letter-spacing: .5px; color: #fdfdfd; }
+.md-event-pill { display: inline-flex; align-items: center; padding: 9px 26px; border-radius: 999px; border: 1.5px solid rgba(253, 253, 253, .45); border-bottom-color: rgba(253, 253, 253, .28); background: rgba(51, 51, 51, .25); backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px); font-family: var(--md-latin); font-size: clamp(.95rem, 2.2vw, 1.16rem); font-weight: 600; letter-spacing: 1.5px; color: #fdfdfd; }
 /* 亚运 status-tag：无描边实心 pill，Official 绿 / Medal 金 */
 .md-official { display: inline-flex; align-items: center; gap: 6px; height: 1.55rem; padding: .25rem .8rem; border-radius: 20rem; font-family: var(--font-en); font-size: .75rem; font-weight: 500; color: #049669; background: #ecfdf5; }
 .dark-mode .md-official { color: #0eb57e; background: rgba(4, 150, 105, .16); }
 
 .md-hero-meta { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px 24px; margin-bottom: 30px; }
-.md-hero-meta-item { display: inline-flex; align-items: center; gap: 7px; font-size: .86rem; font-weight: 500; color: rgba(253, 253, 253, .8); }
+.md-hero-meta-item { display: inline-flex; align-items: center; gap: 7px; font-size: .84rem; font-weight: 500; color: rgba(253, 253, 253, .8); }
 .md-hero-meta-item i { color: rgba(253, 253, 253, .5); font-size: .8rem; }
 
 /* 亚运记分牌：两侧姓名块朝中央对齐（column-country:nth-child(1) justify-content:end） */
@@ -3510,24 +3416,24 @@ a.hero-ball::before {
 .md-avatar-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .md-avatar-pair { display: flex; flex-shrink: 0; gap: 8px; }
 .md-avatar-pair .md-avatar { width: 58px; height: 58px; font-size: 1.3rem; }
-.md-player-name { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; font-size: 1.18rem; font-weight: 700; word-break: break-all; }
+.md-player-name { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; font-family: var(--md-latin); font-size: 1.22rem; font-weight: 700; word-break: break-all; }
 .md-player-name, .md-player-name a { color: #fdfdfd; }
 .md-player-name a:hover { color: #bfb7df; }
 /* hero 名字里的行内小头像：桌面用大头像故隐藏，≤860px 反转 */
 .md-player-name > .md-mini-avatar, .md-player-name > .md-mini-pair { display: none; }
 /* WTT：协会旗帜 + 代码（hero 名字行内 / Periods 行首；复用全站 player-flag） */
 .md-player-name .player-flag { font-size: 1.45rem; margin-right: 7px; box-shadow: 0 0 0 1px rgba(253, 253, 253, .3); }
-.md-org-code { font-family: var(--font-en); font-size: .68rem; font-weight: 600; letter-spacing: 1px; color: rgba(253, 253, 253, .62); }
+.md-org-code { font-family: var(--md-mono); font-size: .66rem; font-weight: 500; letter-spacing: 1px; color: rgba(253, 253, 253, .62); }
 .md-p-name .player-flag { font-size: .95rem; margin-right: 6px; }
 .md-p-name .md-org-code { color: var(--text-muted); font-weight: 500; }
-.md-side-tag { display: inline-flex; align-items: center; padding: 2px 10px; border-radius: 20rem; font-size: .68rem; font-weight: 700; letter-spacing: 1px; }
+.md-side-tag { display: inline-flex; align-items: center; padding: 2px 10px; border-radius: 20rem; font-size: .66rem; font-weight: 700; letter-spacing: 2px; }
 .md-tag-w { color: var(--md-gold-ink); background: var(--md-gold-bg); }
 .md-tag-l { color: rgba(253, 253, 253, .65); background: rgba(253, 253, 253, .12); }
 .md-trophy { color: #fbbf24; font-size: .88em; }
 .md-pts-line { display: flex; align-items: baseline; justify-content: center; flex-wrap: wrap; gap: 4px 9px; font-family: var(--font-en); font-variant-numeric: tabular-nums; }
-.md-pts-one { font-size: .95rem; font-weight: 600; color: rgba(253, 253, 253, .62); white-space: nowrap; }
-.md-pts-one em { font-style: normal; font-size: .62rem; font-weight: 500; letter-spacing: .5px; color: rgba(253, 253, 253, .4); margin-right: 4px; }
-.md-pts-post { font-size: 1.32rem; font-weight: 800; color: #fff; }
+.md-pts-one { font-size: .98rem; font-weight: 500; color: rgba(253, 253, 253, .55); white-space: nowrap; }
+.md-pts-one em { font-style: normal; font-size: .64rem; font-weight: 500; letter-spacing: 1px; color: rgba(253, 253, 253, .4); margin-right: 4px; }
+.md-pts-post { font-size: 1.38rem; font-weight: 700; color: #fff; }
 .md-pts-arrow { color: rgba(253, 253, 253, .35); font-size: .72rem; align-self: center; }
 .md-delta-pill { display: inline-flex; align-items: center; gap: 6px; width: fit-content; padding: 3px 12px; border-radius: 20rem; font-family: var(--font-en); font-size: .82rem; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .md-side-w .md-delta-pill { align-self: flex-end; }
@@ -3539,11 +3445,11 @@ a.hero-ball::before {
 .md-center { text-align: center; padding: 0 8px; }
 /* 亚运 .scoreboard 玻璃记分格：黑5%磨砂底 + 上2px/下1.4px 白40%描边 + 圆角10px，两格同款 */
 .md-score-boxes { display: grid; grid-template-columns: repeat(2, auto); gap: .35rem; width: fit-content; margin: 0 auto; }
-.md-score-box { min-width: 3.4rem; min-height: 3.3rem; padding: 0 .55rem; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-family: var(--font-en); font-size: 2rem; font-weight: 600; font-variant-numeric: tabular-nums; color: #fdfdfd; background: rgba(0, 0, 0, .16); border-top: 2px solid rgba(253, 253, 253, .4); border-bottom: 1.4px solid rgba(253, 253, 253, .4); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); animation: mdDigitPop .5s cubic-bezier(.2,.9,.3,1.35) both; }
+.md-score-box { min-width: 3.4rem; min-height: 3.3rem; padding: 0 .55rem; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-family: var(--font-en); font-size: 1.9rem; font-weight: 500; letter-spacing: .5px; font-variant-numeric: tabular-nums; color: #fdfdfd; background: rgba(0, 0, 0, .16); border-top: 2px solid rgba(253, 253, 253, .4); border-bottom: 1.4px solid rgba(253, 253, 253, .4); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); animation: mdDigitPop .5s cubic-bezier(.2,.9,.3,1.35) both; }
 .md-score-boxes .md-score-box:last-child { animation-delay: .12s; }
 .md-box-win { background: rgba(0, 0, 0, .3); }
 .md-box-wide { grid-column: span 2; padding: 0 26px; font-size: 1.7rem; }
-.md-score-sub { margin-top: 14px; font-size: .72rem; letter-spacing: 1px; color: rgba(253, 253, 253, .45); }
+.md-score-sub { margin-top: 14px; font-family: var(--md-mono); font-size: .66rem; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(253, 253, 253, .5); }
 .md-vs-text { font-family: var(--font-en); font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 800; letter-spacing: 3px; color: rgba(253, 253, 253, .38); }
 
 /* ---- 内容层（hero 弧线下缘自然过渡，无需自绘圆角） ---- */
@@ -3552,7 +3458,7 @@ a.hero-ball::before {
 /* ---- 吸顶章节 tabs（亚运 Start list / Results / Reports：无容器的独立药丸，间距宽松） ---- */
 .md-tabs { position: sticky; top: calc(var(--nav-height) + 8px); z-index: 30; display: flex; justify-content: center; gap: 12px; width: fit-content; max-width: 100%; margin: 0 auto 28px; padding: 2px 0; background: transparent; overflow-x: auto; scrollbar-width: none; }
 .md-tabs::-webkit-scrollbar { display: none; }
-.md-tab { flex-shrink: 0; padding: 9px 24px; border: 1px solid var(--border-color); border-radius: 999px; background: var(--bg-white); color: var(--md-accent); font-family: inherit; font-size: .92rem; font-weight: 500; cursor: pointer; white-space: nowrap; box-shadow: 0 0 2px 0 rgba(0, 0, 0, .05); transition: all var(--transition-fast); }
+.md-tab { flex-shrink: 0; padding: 9px 24px; border: 1px solid var(--border-color); border-radius: 999px; background: var(--bg-white); color: var(--md-accent); font-family: inherit; font-size: .94rem; font-weight: 500; letter-spacing: .5px; cursor: pointer; white-space: nowrap; box-shadow: 0 0 2px 0 rgba(0, 0, 0, .05); transition: all var(--transition-fast); }
 .md-tab:hover { border-color: var(--md-accent); }
 .md-tab.active { background: var(--md-accent); border-color: var(--md-accent); color: #fdfdfd; font-weight: 600; }
 
@@ -3564,13 +3470,13 @@ a.hero-ball::before {
 
 /* ---- 卡片通用 ---- */
 .md-card { --md-card-px: 22px; padding: 20px var(--md-card-px); margin-bottom: 16px; }
-.md-card-title { display: flex; align-items: center; gap: 8px; font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 14px; flex-wrap: wrap; }
+.md-card-title { display: flex; align-items: center; gap: 8px; font-size: 1.02rem; font-weight: 700; color: var(--text-primary); margin-bottom: 14px; flex-wrap: wrap; }
 .md-card-title i { color: var(--md-accent, var(--accent-blue)); }
 .md-title-row { justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 12px; }
 .md-title-row > span:first-child { display: inline-flex; align-items: center; gap: 8px; }
 .md-official-card { padding: 3px 12px; font-size: .68rem; color: #16a34a; background: rgba(34, 197, 94, .1); border-color: rgba(34, 197, 94, .35); }
 .dark-mode .md-official-card { color: #4ade80; background: rgba(34, 197, 94, .12); }
-.md-note { font-size: .78rem; color: var(--text-tertiary, var(--text-muted)); margin-top: 10px; }
+.md-note { font-size: .76rem; line-height: 1.55; color: var(--text-tertiary, var(--text-muted)); margin-top: 10px; }
 .md-note i { margin-right: 4px; opacity: .7; }
 .md-placeholder { text-align: center; padding: 22px 14px; color: var(--text-tertiary, var(--text-muted)); font-size: .86rem; border: 1px dashed var(--border-color); border-radius: var(--radius-md); }
 
@@ -3578,7 +3484,7 @@ a.hero-ball::before {
 .md-periods { border-top: 1px solid var(--border-color); padding: .45rem 0 .2rem; }
 .md-p-row { display: flex; align-items: stretch; margin: .55rem .4rem; padding: .35rem 0; border-radius: 6px; }
 .md-p-row-w { background: linear-gradient(90deg, var(--bg-white) 0%, var(--md-accent-pale) 100%); }
-.md-p-name { flex: 0 1 46%; display: flex; align-items: center; gap: .55rem; min-width: 0; padding-inline-start: .7rem; font-weight: 600; font-size: .95rem; color: var(--text-primary); }
+.md-p-name { flex: 0 1 46%; display: flex; align-items: center; gap: .55rem; min-width: 0; padding-inline-start: .7rem; font-family: var(--md-latin); font-weight: 600; font-size: .98rem; color: var(--text-primary); }
 .md-p-name a { color: var(--text-primary); }
 .md-p-name a:hover { color: var(--md-accent); }
 .md-p-nametext { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -3587,10 +3493,10 @@ a.hero-ball::before {
 .md-p-split-win { font-weight: 700; color: var(--text-primary); }
 /* 亚运 .results-split.winner:after —— #333 实心圆点，居中，距底 2px */
 .md-p-split-win::after { content: ''; position: absolute; left: 0; right: 0; bottom: 2px; margin: 0 auto; width: 6px; height: 6px; border-radius: 50%; background: var(--md-dot); }
-.md-p-total { flex: 1; min-width: 3rem; display: flex; align-items: center; justify-content: center; font-family: var(--font-en); font-size: 1.3rem; font-weight: 700; color: var(--text-primary); font-variant-numeric: tabular-nums; }
+.md-p-total { flex: 1; min-width: 3rem; display: flex; align-items: center; justify-content: center; font-family: var(--font-en); font-size: 1.35rem; font-weight: 700; color: var(--text-primary); font-variant-numeric: tabular-nums; }
 .md-p-total-dim { font-weight: 500; color: var(--text-secondary); }
 /* 亚运 .periods-title：通栏灰条带（neutral-300），细体小字，赛果列加粗，贴到卡片两缘 */
-.md-p-titles { display: flex; align-items: stretch; margin: 0 calc(-1 * var(--md-card-px)); background: var(--bg-lighter); color: var(--text-secondary); font-size: 64%; font-weight: 300; letter-spacing: 0; padding: .26rem 0; border-radius: 0; }
+.md-p-titles { display: flex; align-items: stretch; margin: 0 calc(-1 * var(--md-card-px)); background: var(--bg-lighter); color: var(--text-secondary); font-size: .66rem; font-weight: 400; letter-spacing: 1px; padding: .26rem 0; border-radius: 0; }
 .md-p-titles .md-p-splits span { white-space: nowrap; padding-inline: 1px; }
 .md-p-titles .md-p-name { padding: 0; }
 .md-p-titles .md-p-splits span { flex: 1; display: flex; align-items: center; justify-content: center; font-family: var(--font-en); }
@@ -3639,7 +3545,7 @@ a.hero-ball::before {
 .md-bd-row:last-child { border-bottom: none; }
 .md-bd-ico { flex-shrink: 0; width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: .85rem; color: var(--md-accent); background: var(--md-accent-pale); }
 .md-bd-text { flex: 1; min-width: 0; }
-.md-bd-label { font-size: .92rem; font-weight: 600; color: var(--text-primary); }
+.md-bd-label { font-size: .9rem; font-weight: 600; color: var(--text-primary); }
 .md-bd-desc { color: var(--text-tertiary, var(--text-muted)); font-size: .75rem; font-weight: 400; margin-top: 1px; }
 .md-bd-val { text-align: right; font-weight: 700; color: var(--text-primary); white-space: nowrap; font-variant-numeric: tabular-nums; font-family: var(--font-en); }
 .md-bd-row.md-bd-total { background: var(--md-accent-pale); border-radius: 12px; border-bottom-color: transparent; margin: 4px 0; padding: 12px 12px; }
@@ -3651,7 +3557,7 @@ a.hero-ball::before {
 .md-pred-hero { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; margin: 4px 0 12px; }
 .md-pred-side { min-width: 0; }
 .md-pred-side-r { text-align: right; }
-.md-pred-pct { font-family: var(--font-en); font-size: 2.1rem; font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; }
+.md-pred-pct { font-family: var(--font-en); font-size: 2rem; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
 .md-pred-pct small { font-size: 1.05rem; font-weight: 700; margin-left: 2px; }
 .md-pred-pct-w { color: var(--md-accent-deep); }
 .md-pred-pct-l { color: var(--text-secondary); }
@@ -3695,7 +3601,7 @@ a.hero-ball::before {
     /* 亚运移动端：pill 与徽标各自成行、元信息一行一条 */
     .md-hero-event { flex-direction: column; gap: 10px; }
     .md-hero-meta { flex-direction: column; gap: 10px; margin-bottom: 24px; }
-    .md-score-box { min-height: 3.1rem; font-size: 1.9rem; }
+    .md-score-box { min-height: 3rem; font-size: 1.6rem; }
     .md-player-name { font-size: 1rem; }
     .md-player-name .player-flag { font-size: 1.1rem; margin-right: 5px; }
     .md-pts-one { font-size: .86rem; }
@@ -3722,4 +3628,208 @@ a.hero-ball::before {
 }
 @media (prefers-reduced-motion: reduce) {
     .md-anim, .md-pred-seg, .md-score-box, .md-hero .container { animation: none !important; }
+}
+
+
+/* ========================================
+   排名页移动端重做（≤768px）— mrank-*
+   结构模仿亚运奖牌榜（深色圆角头卡 / 白底选择条 / 居中副标题 /
+   统一圆角卡行 + 展开箭头 / 表头行），配色保持全站蓝
+   与桌面表格同数据源双渲染（js/ranking.js renderMobileRanking），
+   CSS 控制两套 DOM 显隐；桌面布局（>768px）不受影响
+   ======================================== */
+/* 桌面隐藏移动专属容器 */
+.mrank-deck, .mrank-hero, .mrank-node-bar, .mrank-node-sub, .mrank-list-head, .mrank-board { display: none !important; }
+/* 桌面分区头（原内联样式类化，值不变） */
+.ranking-section-head { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+.rank-header-actions { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
+
+/* ---- 底部抽屉组件（全局：桌面也必须隐藏未激活的抽屉容器，曾因只在 ≤768 定义导致桌面裸露 ---- */
+.sheet-overlay { position: fixed; inset: 0; z-index: 2000; background: rgba(0, 0, 0, 0.5); opacity: 0; visibility: hidden; transition: opacity 0.25s ease, visibility 0.25s ease; }
+.sheet-overlay.active { opacity: 1; visibility: visible; }
+.sheet-panel {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    max-height: 82vh; display: flex; flex-direction: column;
+    background: var(--bg-white);
+    border-radius: 20px 20px 0 0;
+    box-shadow: var(--shadow-xl);
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.32, 0.72, 0.35, 1);
+    padding-bottom: max(14px, env(safe-area-inset-bottom));
+}
+.sheet-overlay.active .sheet-panel { transform: translateY(0); }
+.sheet-handle { width: 40px; height: 4px; border-radius: 2px; background: var(--border-color); margin: 10px auto 2px; flex-shrink: 0; }
+.sheet-head { display: flex; align-items: center; justify-content: space-between; padding: 8px 18px 10px; border-bottom: 1px solid var(--border-color); flex-shrink: 0; }
+.sheet-head h3 { font-size: 1rem; font-weight: 700; color: var(--text-primary); }
+.sheet-close { width: 32px; height: 32px; border: none; border-radius: 50%; background: var(--bg-lighter); color: var(--text-secondary); font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.sheet-body { overflow-y: auto; padding: 12px 18px 18px; -webkit-overflow-scrolling: touch; }
+/* 抽屉内时间线沿用侧栏 season/time-node 结构（button 化） */
+.sheet-body .time-node-item { width: 100%; border: none; border-radius: var(--radius-sm); justify-content: flex-start; text-align: left; padding: 11px 14px; }
+.sheet-body .time-node-item .node-dot { display: inline-block; }
+.sheet-body .season-node-list { display: flex; flex-direction: column; gap: 2px; }
+
+@media (max-width: 768px) {
+    /* ---- 显隐切换 ---- */
+    .mrank-hero, .mrank-node-sub { display: block !important; }
+    .mrank-node-bar { display: flex !important; }
+    .mrank-deck { display: flex !important; flex-direction: column; gap: 12px; margin-bottom: 12px; }
+    .mrank-list-head { display: flex !important; }
+    .mrank-board { display: flex !important; flex-direction: column; gap: 9px; }
+    .ranking-sidebar, .ranking-full-table-wrapper, .mobile-sort-bar, .ranking-controls { display: none !important; }
+    .ranking-page-hero { display: none; }
+
+    /* ---- 深色圆角头卡（亚运奖牌榜同款内嵌卡，站蓝深蓝底） ---- */
+    .mrank-hero {
+        padding: 20px 18px 22px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, #0a1628 0%, #0d2a45 100%);
+        color: #fff;
+        margin-bottom: 18px;
+        box-shadow: var(--shadow-md);
+    }
+    .mrank-hero-tag { display: inline-block; font-family: var(--font-en); font-size: 0.66rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--primary-light); background: rgba(77, 163, 255, 0.16); border: 1px solid rgba(77, 163, 255, 0.35); padding: 3px 10px; border-radius: 999px; margin-bottom: 10px; }
+    .mrank-hero-title { font-family: var(--font-en); font-size: 1.55rem; font-weight: 800; letter-spacing: 1px; color: #fff; margin-bottom: 4px; }
+    .mrank-hero-desc { font-size: 0.72rem; color: rgba(255, 255, 255, 0.6); line-height: 1.5; }
+
+    /* ---- 页面骨架收紧（page-hero 隐藏后须自行让出 fixed 导航的高度） ---- */
+    .ranking-main-section { padding-top: calc(var(--nav-height) + 12px); padding-bottom: 48px; }
+    .ranking-section-head { margin-bottom: 12px; }
+    .section-header .section-title { font-size: 1.3rem; }
+    .ranking-section-head .section-tag { font-size: 0.7rem; padding: 4px 12px; margin-bottom: 8px; }
+    .rank-header-actions { flex-direction: row; flex-wrap: wrap; gap: 6px; }
+    /* 标题行右侧按钮收成圆形图标（保留 aria-label，桌面文字不受影响） */
+    .rank-header-actions .qa-link-btn { padding: 8px; border-radius: 50%; width: 36px; height: 36px; justify-content: center; }
+    .rank-header-actions .qa-link-btn span { display: none; }
+    .rank-header-actions .qa-link-btn i { font-size: 0.85rem; }
+
+    /* ---- 单打/双打分段控件：亚运药丸页签（白底蓝边，激活实蓝） ---- */
+    .ranking-mode-toggle { display: flex; justify-content: center; gap: 10px; padding: 0; margin-bottom: 14px; background: transparent; border: none; backdrop-filter: none; -webkit-backdrop-filter: none; width: 100%; }
+    .ranking-mode-btn { flex: 1; max-width: 170px; padding: 9px 0; border: 1.5px solid var(--primary-blue); border-radius: 999px; background: var(--bg-white); color: var(--primary-blue); font-size: 0.88rem; font-weight: 600; box-shadow: none; }
+    .ranking-mode-btn.active { background: var(--primary-blue); color: #fff; box-shadow: 0 3px 10px rgba(0, 123, 255, 0.3); }
+
+    /* ---- 搜索条（与节点选择条同款白底圆角） ---- */
+    .mrank-search { position: relative; }
+    .mrank-search-ico { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.85rem; pointer-events: none; }
+    .mrank-search input {
+        width: 100%; padding: 12px 40px 12px 38px;
+        border: 1px solid var(--border-color); border-radius: 13px;
+        background: var(--bg-white); color: var(--text-primary);
+        font-family: var(--font-cn); font-size: 0.9rem;
+        outline: none; -webkit-appearance: none; appearance: none;
+        box-shadow: var(--shadow-sm);
+        transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+    .mrank-search input::placeholder { color: var(--text-muted); }
+    .mrank-search input:focus { border-color: var(--primary-blue); box-shadow: 0 0 0 3px rgba(77, 163, 255, 0.15); }
+    .mrank-search input::-webkit-search-cancel-button { display: none; }
+    .mrank-search-clear { display: none; position: absolute; right: 10px; top: 50%; transform: translateY(-50%); width: 26px; height: 26px; border: none; border-radius: 50%; background: var(--bg-lighter); color: var(--text-secondary); font-size: 0.72rem; cursor: pointer; align-items: center; justify-content: center; }
+    .mrank-search input:not(:placeholder-shown) ~ .mrank-search-clear { display: flex; }
+
+    /* ---- 节点选择条（亚运 Select discipline 同款：白底圆角条 + 右箭头） ---- */
+    .mrank-node-bar {
+        display: flex; align-items: center; gap: 10px;
+        width: 100%; padding: 13px 16px;
+        border: 1px solid var(--border-color); border-radius: 13px;
+        background: var(--bg-white); color: var(--text-primary);
+        font-family: var(--font-cn); font-size: 0.92rem; font-weight: 600;
+        cursor: pointer; box-shadow: var(--shadow-sm);
+        transition: border-color var(--transition-fast), background var(--transition-fast);
+    }
+    .mrank-node-bar:active { background: var(--bg-lighter); }
+    .mrank-node-bar:focus-visible { outline: 2px solid var(--accent-blue); outline-offset: 2px; }
+    .mrank-node-bar-label { flex: 1; text-align: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .mrank-node-bar i { color: var(--text-muted); font-size: 0.78rem; transition: transform var(--transition-fast); }
+    .mrank-live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-green); display: none; flex-shrink: 0; }
+    .mrank-node-bar.is-live .mrank-live-dot { display: block; animation: pulse-dot 2s ease-in-out infinite; }
+
+    /* ---- 居中副标题（人数 · 当前排序；右侧导出；亚运 All disciplines 同位） ---- */
+    .mrank-node-sub { position: relative; text-align: center; font-size: 0.76rem; font-weight: 500; color: var(--text-secondary); margin: 10px 0 4px; }
+    .mrank-node-sub .mrank-icon-btn { position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 10px; font-size: 0.78rem; }
+
+    /* ---- 列头行（亚运 Rk / NOC / 奖牌列 同位；列头即排序触发） ---- */
+    .mrank-list-head { padding: 2px 4px 8px; margin-top: 6px; }
+    /* 卡行与列头共用同一网格，保证数字列对齐 */
+    .mrank-lh-grid, .mrank-head { --mrank-cols: 20px minmax(0, 1fr) 30px 38px 46px 50px 14px; display: grid; grid-template-columns: var(--mrank-cols); gap: 0 7px; align-items: center; }
+    .mrank-lh-name { font-family: var(--font-en); font-size: 0.66rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--text-muted); grid-column: 1 / 3; }
+    .mrank-col-sort {
+        padding: 0; border: none; background: transparent;
+        color: var(--text-muted); font-family: var(--font-cn);
+        font-size: 0.64rem; font-weight: 600; cursor: pointer;
+        white-space: nowrap; text-align: right; display: flex; align-items: center; justify-content: flex-end; gap: 2px;
+        transition: color var(--transition-fast);
+    }
+    .mrank-col-sort:hover { color: var(--primary-blue); }
+    .mrank-col-sort.active { color: var(--primary-blue); }
+    .mrank-col-sort i { font-size: 0.6rem; visibility: hidden; }
+    .mrank-col-sort:focus-visible { outline: 2px solid var(--accent-blue); outline-offset: 2px; border-radius: 4px; }
+    .mrank-lh-chev { width: 14px; }
+    .mrank-icon-btn { width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--border-color); border-radius: 10px; background: var(--bg-white); color: var(--primary-blue); font-size: 0.78rem; cursor: pointer; transition: all var(--transition-fast); }
+    .mrank-icon-btn:active { background: var(--primary-pale); }
+    .mrank-icon-btn:focus-visible { outline: 2px solid var(--accent-blue); outline-offset: 2px; }
+    /* 副标题行的导出菜单：向上弹出（贴底会被卡片盖住） */
+    .mrank-node-sub .export-menu { top: auto; bottom: calc(100% + 6px); }
+
+    /* ---- 统一圆角卡行（亚运奖牌榜行式） ---- */
+    .mrank-card {
+        background: var(--bg-white);
+        border: 1px solid var(--border-color);
+        border-radius: 14px;
+        box-shadow: var(--shadow-sm);
+        overflow: hidden;
+        transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+    .mrank-card.open { border-color: var(--primary-light); box-shadow: var(--shadow-md); }
+    .mrank-head {
+        padding: 12px 14px 12px 16px;
+        cursor: pointer; -webkit-tap-highlight-color: transparent; user-select: none;
+    }
+    .mrank-head:active { background: var(--bg-lighter); }
+    .mrank-head:focus-visible { outline: 2px solid var(--accent-blue); outline-offset: -2px; }
+    /* 名次：纯文字粗体；前三名沿用全站金银铜色 */
+    .mrank-rank { font-family: var(--font-en); font-size: 1rem; font-weight: 700; color: var(--text-secondary); font-variant-numeric: tabular-nums; min-width: 1.4em; }
+    .mrank-rank.r1 { color: var(--accent-gold); font-weight: 800; font-size: 1.12rem; }
+    .mrank-rank.r2 { color: #8899aa; font-weight: 800; }
+    .mrank-rank.r3 { color: #b87351; font-weight: 800; }
+    .mrank-name { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 5px; font-family: var(--md-latin, var(--font-en), var(--font-cn)); font-size: 0.96rem; font-weight: 600; color: var(--text-primary); line-height: 1.4; word-break: break-word; min-width: 0; }
+    .mrank-name .player-name-link { border-bottom: none; }
+    /* 统计列（AG 奖牌列同位）：紧凑数字列，右对齐 */
+    .mrank-stat, .mrank-pts { font-family: var(--font-en); font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+    .mrank-pts { font-size: 0.92rem; font-weight: 700; color: var(--text-primary); }
+    .mrank-stat .rank-change, .mrank-stat .rank-new { font-size: 0.68rem; }
+    .mrank-chev { color: var(--text-muted); font-size: 0.7rem; transition: transform var(--transition-base); justify-self: end; }
+    .mrank-card.open .mrank-chev { transform: rotate(180deg); color: var(--primary-blue); }
+
+    /* ---- 展开区：明细入口 ---- */
+    .mrank-x { max-height: 0; overflow: hidden; transition: max-height var(--transition-base); }
+    .mrank-card.open .mrank-x { max-height: 80px; }
+    .mrank-detail-link {
+        display: flex; align-items: center; justify-content: center; gap: 7px;
+        width: calc(100% - 32px); margin: 2px 16px 14px;
+        padding: 10px; border: none; border-radius: 12px;
+        background: var(--primary-pale); color: var(--primary-blue);
+        font-family: var(--font-cn); font-size: 0.85rem; font-weight: 600;
+        cursor: pointer; transition: background var(--transition-fast);
+    }
+    .mrank-detail-link:active { background: rgba(77, 163, 255, 0.3); }
+    .dark-mode .mrank-detail-link { color: var(--primary-light); }
+
+    .mrank-empty {
+        text-align: center; padding: 38px 16px;
+        color: var(--text-secondary); font-size: 0.88rem;
+        border: 1px dashed var(--border-color); border-radius: var(--radius-md);
+        background: var(--bg-white);
+    }
+}
+
+/* 超小屏（≤380px）微调 */
+@media (max-width: 380px) {
+    .mrank-head, .mrank-lh-grid { --mrank-cols: 18px minmax(0, 1fr) 26px 32px 40px 46px 12px; gap: 0 5px; }
+    .mrank-name { font-size: 0.9rem; }
+    .mrank-stat, .mrank-pts { font-size: 0.74rem; }
+    .mrank-pts { font-size: 0.86rem; }
+    .mrank-col-sort { font-size: 0.6rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sheet-overlay, .sheet-panel, .mrank-x { transition: none !important; }
 }

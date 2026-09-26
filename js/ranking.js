@@ -141,6 +141,10 @@ function rankingReapplyI18n() {
     if (!document.getElementById('rankingFullBody')) return;
     if (dataLoaded && rankingTimeline.length) updateRankingDisplay();
     if (scoreDetailModal && scoreDetailModal.classList.contains('active') && currentScoreContext.player) showScoreDetail(currentScoreContext.player, currentScoreContext.snapshotDate);
+    const si = document.getElementById('mrankSearch');
+    if (si) si.placeholder = i18n[currentLang].mrank_search_ph || '';
+    document.querySelectorAll('.sheet-close').forEach(b => b.setAttribute('aria-label', i18n[currentLang].mrank_close || ''));
+    mrankSyncSortBtn();
 }
 
 async function loadRankingData() {
@@ -226,6 +230,7 @@ async function loadRankingData() {
         setupMobileSortControls();
         setupRankTableExport();
         setupModeToggle();
+        setupMobileRanking();
         // ?mode=doubles 直达双打榜（setRankingMode 内部会重渲染侧栏 + 表格）
         if (new URLSearchParams(window.location.search).get('mode') === 'doubles') setRankingMode('doubles', true);
         else { renderTimeNodeList(); updateRankingDisplay(); }
@@ -283,6 +288,7 @@ function renderTimeNodeList() { const list = document.getElementById('timeNodeLi
         });
     }
     if (lbl && rankingTimeline[currentTimeIndex]) lbl.textContent = getNodeDisplayLabel(rankingTimeline[currentTimeIndex]);
+    mrankSyncMeta();
     if (!list._kbdBound) {
         list._kbdBound = true;
         list.addEventListener('keydown', e => {
@@ -329,6 +335,7 @@ function renderDoublesEmptyState() {
     tb.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:48px 20px;color:var(--text-secondary);">${escapeHtml(i18n[currentLang].rank_doubles_empty)}</td></tr>`;
     const lbl = document.getElementById('currentTimeLabel');
     if (lbl) lbl.textContent = i18n[currentLang].rank_mode_doubles;
+    renderMobileRanking(null);
 }
 function calculateRankChanges(cd, pd, isInitial) {
     const cur = assignTiedRanks(cd);
@@ -367,7 +374,7 @@ function renderSeasonExpiryNotice() {
 }
 function updateRankingDisplay() { if (!rankingTimeline.length || !rankingTimeline[currentTimeIndex]) { renderDoublesEmptyState(); return; } const cn = rankingTimeline[currentTimeIndex], pn = currentTimeIndex > 0 ? rankingTimeline[currentTimeIndex-1] : null; currentDisplayData = calculateRankChanges(cn.data, pn ? pn.data : null, cn.isInitial); currentDisplayData = sortDisplayData(currentSortKey, currentSortDir); renderRankingTable(currentDisplayData); const ind = document.getElementById('sortIndicator'); if (ind) ind.textContent = `${sortKeyLabel(currentSortKey)} ${currentSortDir==='desc'?i18n[currentLang].sort_desc:i18n[currentLang].sort_asc}`; updateSortHeaderHighlight(); const lbl = document.getElementById('currentTimeLabel'); if (lbl) lbl.textContent = getNodeDisplayLabel(cn); syncMobileSortControls(false); }
 function sortDisplayData(key, dir) { return [...currentDisplayData].sort((a, b) => { let va, vb; if (key === '胜率') { va = parseWinRate(a['胜率']); vb = parseWinRate(b['胜率']); } else if (key === '姓名') return dir === 'asc' ? (a['姓名']||'').localeCompare(b['姓名']||'', 'zh') : (b['姓名']||'').localeCompare(a['姓名']||'', 'zh'); else if (key === 'rank') { va = a.rank || 0; vb = b.rank || 0; } else if (key === '变化') { va = a.change || 0; vb = b.change || 0; } else if (key === '积分变化') { va = a.pointsChange || 0; vb = b.pointsChange || 0; } else { va = a[key] || 0; vb = b[key] || 0; } return va < vb ? (dir === 'asc' ? -1 : 1) : va > vb ? (dir === 'asc' ? 1 : -1) : 0; }); }
-function renderRankingTable(data) { const tb = document.getElementById('rankingFullBody'); if (!tb) return; const L = i18n[currentLang] || {}; if (!data || !data.length) { tb.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:40px;">${i18n[currentLang].rank_no_data}</td></tr>`; return; } tb.innerHTML = ''; const currentSnapshotDate = rankingTimeline[currentTimeIndex]?.time || ''; data.forEach((p, i) => { const tr = document.createElement('tr'); const wr = p['胜率'] || '0%', wd = wr === '#DIV/0!' || wr === '-' ? '0%' : wr; let ch = '', pch = ''; if (p.changeType === 'up') ch = `<span class="rank-change rank-up">▲${Math.abs(p.change)}</span>`; else if (p.changeType === 'down') ch = `<span class="rank-change rank-down">▼${Math.abs(p.change)}</span>`; else if (p.changeType === 'new') ch = '<span class="rank-new">NEW</span>'; else ch = '<span class="rank-same">-</span>'; if (p.pointsChangeType === 'up') pch = `<span class="rank-change rank-up">▲${Math.abs(p.pointsChange).toFixed(1)}</span>`; else if (p.pointsChangeType === 'down') pch = `<span class="rank-change rank-down">▼${Math.abs(p.pointsChange).toFixed(1)}</span>`; else if (p.pointsChangeType === 'new') pch = '<span class="rank-new">NEW</span>'; else pch = '<span class="rank-same">-</span>'; const pn = String(p['姓名'] || '-'); const pnSafe = escapeHtml(pn); const pnShow = escapeHtml(playerDisplayName(pn)); const sds = escapeHtml(currentSnapshotDate || ''); const pairParts = splitPairNames(pn); let nc;
+function renderRankingTable(data) { const tb = document.getElementById('rankingFullBody'); if (!tb) return; renderMobileRanking(data); mrankSyncMeta(); const L = i18n[currentLang] || {}; if (!data || !data.length) { tb.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:40px;">${i18n[currentLang].rank_no_data}</td></tr>`; return; } tb.innerHTML = ''; const currentSnapshotDate = rankingTimeline[currentTimeIndex]?.time || ''; data.forEach((p, i) => { const tr = document.createElement('tr'); const wr = p['胜率'] || '0%', wd = wr === '#DIV/0!' || wr === '-' ? '0%' : wr; let ch = '', pch = ''; if (p.changeType === 'up') ch = `<span class="rank-change rank-up">▲${Math.abs(p.change)}</span>`; else if (p.changeType === 'down') ch = `<span class="rank-change rank-down">▼${Math.abs(p.change)}</span>`; else if (p.changeType === 'new') ch = '<span class="rank-new">NEW</span>'; else ch = '<span class="rank-same">-</span>'; if (p.pointsChangeType === 'up') pch = `<span class="rank-change rank-up">▲${Math.abs(p.pointsChange).toFixed(1)}</span>`; else if (p.pointsChangeType === 'down') pch = `<span class="rank-change rank-down">▼${Math.abs(p.pointsChange).toFixed(1)}</span>`; else if (p.pointsChangeType === 'new') pch = '<span class="rank-new">NEW</span>'; else pch = '<span class="rank-same">-</span>'; const pn = String(p['姓名'] || '-'); const pnSafe = escapeHtml(pn); const pnShow = escapeHtml(playerDisplayName(pn)); const sds = escapeHtml(currentSnapshotDate || ''); const pairParts = splitPairNames(pn); let nc;
 if (pairParts) {
     /* 双打组合行：逐成员链个人页（组合无独立档案），收据按钮打开组合积分明细 */
     nc = pairParts.map(m => { const mu = getUidForPlayerName(m); const ms = escapeHtml(playerDisplayName(m)); return mu != null ? `<a class="player-name-link" href="player.html?uid=${mu}" title="${L.rank_view_player_page}">${ms}</a>` : ms; }).join('<span class="pair-name-sep">/</span>');
@@ -434,9 +441,220 @@ function setupRankTableExport() {
     };
     btn.addEventListener('click', () => doExport(null));
     attachRankExportMenu(btn, doExport);
+    /* 移动端表头行的第二个导出按钮（图标版）：同一 doExport + 菜单（幂等守卫防重复挂） */
+    const mbtn = document.getElementById('mrankExportBtn');
+    if (mbtn) { mbtn.addEventListener('click', () => doExport(null)); attachRankExportMenu(mbtn, doExport); }
 }
 /* 语言切换时同步下拉文案与卡片标签 */
 if (typeof updateRankingHeaders === 'function') {
     const _origUpdateRankingHeaders = updateRankingHeaders;
     updateRankingHeaders = function () { _origUpdateRankingHeaders(); if (typeof currentDisplayData !== 'undefined' && currentDisplayData && currentDisplayData.length && rankingTimeline[currentTimeIndex]) renderRankingTable(currentDisplayData); syncMobileSortControls(); const ind = document.getElementById('sortIndicator'); if (ind) ind.textContent = `${sortKeyLabel(currentSortKey)} ${currentSortDir === 'desc' ? i18n[currentLang].sort_desc : i18n[currentLang].sort_asc}`; };
+}
+
+/* 语言切换时同步下拉文案与卡片标签 */
+if (typeof updateRankingHeaders === 'function') {
+    const _origUpdateRankingHeaders = updateRankingHeaders;
+    updateRankingHeaders = function () { _origUpdateRankingHeaders(); if (typeof currentDisplayData !== 'undefined' && currentDisplayData && currentDisplayData.length && rankingTimeline[currentTimeIndex]) renderRankingTable(currentDisplayData); syncMobileSortControls(); const ind = document.getElementById('sortIndicator'); if (ind) ind.textContent = `${sortKeyLabel(currentSortKey)} ${currentSortDir === 'desc' ? i18n[currentLang].sort_desc : i18n[currentLang].sort_asc}`; };
+}
+
+/* ===== 移动端排行榜（≤768px；与表格同数据源双渲染，显隐由 CSS 控制）=====
+   卡片 = 名次徽章 + 姓名（组合逐成员链个人页）+ 大积分 + 趋势；
+   整卡点击打开积分明细弹窗（复用 showScoreDetail）；前三名 Podium 特殊卡 */
+let mrankSearchQuery = '';
+const mrankOpenCards = new Set();   // 展开中的卡片（按球员/组合名记忆，重渲染后保持展开态）
+
+function mrankChangeHtml(type, val, isPoints) {
+    if (type === 'up') return `<span class="rank-change rank-up">▲${isPoints ? Math.abs(val).toFixed(1) : Math.abs(val)}</span>`;
+    if (type === 'down') return `<span class="rank-change rank-down">▼${isPoints ? Math.abs(val).toFixed(1) : Math.abs(val)}</span>`;
+    if (type === 'new') return '<span class="rank-new">NEW</span>';
+    return '';
+}
+
+/* 姓名单元格：与表格同逻辑（组合逐成员链个人页 / 单人链档案 / 无档案纯文本）。
+   整卡点击已委托打开明细，名字内不再重复挂 data-player，避免双触发 */
+function mrankNameHtml(pn, L) {
+    const pairParts = splitPairNames(pn);
+    if (pairParts) {
+        return pairParts.map(m => { const mu = getUidForPlayerName(m); const ms = escapeHtml(playerDisplayName(m)); return mu != null ? `<a class="player-name-link" href="player.html?uid=${mu}" title="${L.rank_view_player_page}">${ms}</a>` : ms; }).join('<span class="pair-name-sep">/</span>');
+    }
+    const uid = getUidForPlayerName(pn);
+    const shown = escapeHtml(playerDisplayName(pn));
+    if (uid != null) return `<a class="player-name-link" href="player.html?uid=${uid}" title="${L.rank_view_player_page}">${shown}</a>`;
+    return shown;
+}
+
+function mrankCardHtml(p, sds, L) {
+    const pn = String(p['姓名'] || '-');
+    const wr = p['胜率'] || '0%'; const wd = wr === '#DIV/0!' || wr === '-' ? '0%' : wr;
+    const pch = mrankChangeHtml(p.pointsChangeType, p.pointsChange, true);
+    const pts = (p['当前积分'] || 0).toFixed(1);
+    const rank = p.rank || 0;
+    const rankCls = rank === 1 ? ' r1' : rank === 2 ? ' r2' : rank === 3 ? ' r3' : '';
+    const open = mrankOpenCards.has(pn);
+    const pnSafe = escapeHtml(pn);
+    const aria = `${playerDisplayName(pn)} ${pts}`;
+    return `<div class="mrank-card${open ? ' open' : ''}" data-mrank-player="${pnSafe}" data-mrank-snapshot="${sds}">
+        <div class="mrank-head" role="button" tabindex="0" aria-expanded="${open}" aria-label="${escapeHtml(aria)}">
+            <span class="mrank-rank${rankCls}">${rank || '·'}</span>
+            <span class="mrank-name">${mrankNameHtml(pn, L)}</span>
+            <span class="mrank-stat">${p['总场次'] || 0}</span>
+            <span class="mrank-stat">${wd}</span>
+            <span class="mrank-stat">${pch || '-'}</span>
+            <span class="mrank-pts">${pts}</span>
+            <i class="fa-solid fa-chevron-down mrank-chev" aria-hidden="true"></i>
+        </div>
+        <div class="mrank-x">
+            <button type="button" class="mrank-detail-link" data-player="${pnSafe}" data-snapshot="${sds}"><i class="fa-solid fa-receipt" aria-hidden="true"></i> ${L.mrank_expand_detail}</button>
+        </div>
+    </div>`;
+}
+
+function renderMobileRanking(data) {
+    const board = document.getElementById('mrankBoard');
+    if (!board) return;
+    const L = i18n[currentLang] || {};
+    if (!data || !data.length) {
+        board.innerHTML = `<div class="mrank-empty">${escapeHtml(rankingMode === 'doubles' ? i18n[currentLang].rank_doubles_empty : i18n[currentLang].rank_no_data)}</div>`;
+        return;
+    }
+    const sds = escapeHtml(rankingTimeline[currentTimeIndex]?.time || '');
+    const q = mrankSearchQuery.trim().toLowerCase();
+    const rows = q ? data.filter(p => { const pn = String(p['姓名'] || ''); return pn.toLowerCase().includes(q) || String(playerDisplayName(pn)).toLowerCase().includes(q); }) : data;
+    if (!rows.length) { board.innerHTML = `<div class="mrank-empty">${escapeHtml(i18n[currentLang].mrank_no_result)}</div>`; return; }
+    board.innerHTML = rows.map(p => mrankCardHtml(p, sds, L)).join('');
+}
+
+/* 节点条 + 副标题同步（替代 chips）：bar 显示当前节点名（实时节点带 LIVE 脉冲点），
+   副标题居中显示「n 人 · 当前排序」 */
+function mrankSyncMeta() {
+    const node = rankingTimeline[currentTimeIndex];
+    const barLabel = document.getElementById('mrankNodeBarLabel');
+    const bar = document.getElementById('mrankNodeBar');
+    const subText = document.getElementById('mrankNodeSubText');
+    if (node) {
+        if (barLabel) barLabel.textContent = `${i18n[currentLang].rank_sidebar_title}${currentLang === 'en' ? ': ' : '：'}${getNodeDisplayLabel(node)}`;
+        if (bar) bar.classList.toggle('is-live', !!node.isRealtime);
+        if (subText) {
+            const n = node.data ? node.data.length : 0;
+            subText.textContent = `${i18n[currentLang].rank_ppl.replace('{n}', n)} · ${i18n[currentLang].rank_sort_hint}${sortKeyLabel(currentSortKey)} ${currentSortDir === 'desc' ? i18n[currentLang].sort_desc : i18n[currentLang].sort_asc}`;
+        }
+    }
+    mrankSyncSortBtn();
+}
+
+/* 列头排序状态同步（亚运 Rk ⇅ / Total ⇅ 同款：当前排序列高亮 + 方向箭头） */
+function mrankSyncSortBtn() {
+    document.querySelectorAll('.mrank-col-sort').forEach(btn => {
+        const active = btn.dataset.key === currentSortKey;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-sort', active ? (currentSortDir === 'desc' ? 'descending' : 'ascending') : 'none');
+        const ic = btn.querySelector('i');
+        if (ic) {
+            ic.className = `fa-solid fa-caret-${currentSortDir === 'desc' ? 'down' : 'up'}`;
+            ic.style.visibility = active ? 'visible' : 'hidden';
+        }
+    });
+}
+
+/* 时间线抽屉内容：实时节点置顶 + 赛季分组（非当前赛季折叠），与桌面侧栏同结构 */
+function mrankBuildNodeSheet() {
+    const body = document.getElementById('mrankNodeSheetBody');
+    if (!body) return;
+    const L = i18n[currentLang] || {};
+    if (!rankingTimeline.length) { body.innerHTML = `<div class="mrank-empty">${escapeHtml(i18n[currentLang].rank_no_data)}</div>`; return; }
+    const realtime = [], regular = [];
+    rankingTimeline.forEach((n, i) => (n.isRealtime ? realtime : regular).push({ ...n, index: i }));
+    const nodeBtn = n => `<button type="button" class="time-node-item${n.index === currentTimeIndex ? ' active' : ''}${n.isInitial ? ' initial-node' : ''}" data-index="${n.index}"><span class="node-dot"></span>${escapeHtml(getNodeDisplayLabel(n))}<span class="node-count">${i18n[currentLang].rank_ppl.replace('{n}', n.data.length)}</span></button>`;
+    let html = '';
+    realtime.forEach(n => { html += `<div class="realtime-group"><div class="realtime-header"><i class="fa-solid fa-clock"></i><span class="realtime-label">${L.rank_realtime_header}</span></div><ul class="season-node-list">${nodeBtn(n)}</ul></div>`; });
+    const seasons = {};
+    regular.forEach(n => { const s = n.season || L.wtt_default_season; (seasons[s] = seasons[s] || []).push(n); });
+    const curSeason = rankingTimeline[currentTimeIndex]?.season;
+    Object.entries(seasons).forEach(([season, nodes]) => {
+        const collapsed = season !== curSeason ? ' collapsed' : '';
+        html += `<div class="season-group${collapsed}"><div class="season-header"><i class="fa-solid fa-chevron-down season-arrow"></i><span class="season-label">${escapeHtml(season)}</span><span class="season-count">${L.rank_node_count.replace('{n}', nodes.length)}</span></div><ul class="season-node-list">${nodes.map(nodeBtn).join('')}</ul></div>`;
+    });
+    body.innerHTML = html;
+}
+
+function mrankOpenSheet(ov) { if (!ov) return; ov.classList.add('active'); document.body.style.overflow = 'hidden'; const c = ov.querySelector('.sheet-close'); if (c) try { c.focus(); } catch (e) { /* 忽略 */ } }
+function mrankCloseSheet(ov) {
+    if (!ov) return;
+    ov.classList.remove('active');
+    if (!document.querySelector('.sheet-overlay.active') && !(scoreDetailModal && scoreDetailModal.classList.contains('active'))) document.body.style.overflow = '';
+}
+
+/* 事件绑定（loadRankingData 时一次；DOM 常驻，用 _bound 防重复） */
+function setupMobileRanking() {
+    const search = document.getElementById('mrankSearch');
+    if (search && !search._bound) {
+        search._bound = true;
+        search.addEventListener('input', () => { mrankSearchQuery = search.value || ''; renderMobileRanking(currentDisplayData); });
+    }
+    const searchClear = document.getElementById('mrankSearchClear');
+    if (searchClear && !searchClear._bound) {
+        searchClear._bound = true;
+        searchClear.addEventListener('click', () => { const s = document.getElementById('mrankSearch'); if (s) s.value = ''; mrankSearchQuery = ''; renderMobileRanking(currentDisplayData); });
+    }
+    /* 列头直排（亚运表头同款）：点列 = 按该列排序；同列再点 = 升降切换 */
+    document.querySelectorAll('.mrank-col-sort').forEach(btn => {
+        if (btn._bound) return;
+        btn._bound = true;
+        btn.addEventListener('click', () => {
+            const key = btn.dataset.key;
+            if (currentSortKey === key) currentSortDir = currentSortDir === 'desc' ? 'asc' : 'desc';
+            else { currentSortKey = key; currentSortDir = 'desc'; }
+            applyMobileSort();
+        });
+    });
+    const nodeBar = document.getElementById('mrankNodeBar'), nodeSheet = document.getElementById('mrankNodeSheet');
+    if (nodeBar && nodeSheet && !nodeBar._bound) { nodeBar._bound = true; nodeBar.addEventListener('click', () => { mrankBuildNodeSheet(); mrankOpenSheet(nodeSheet); }); }
+    if (nodeSheet && !nodeSheet._bound) {
+        nodeSheet._bound = true;
+        nodeSheet.addEventListener('click', e => { if (e.target === nodeSheet) mrankCloseSheet(nodeSheet); });
+        nodeSheet.querySelector('.sheet-close')?.addEventListener('click', () => mrankCloseSheet(nodeSheet));
+    }
+    const nodeBody = document.getElementById('mrankNodeSheetBody');
+    if (nodeBody && !nodeBody._bound) {
+        nodeBody._bound = true;
+        nodeBody.addEventListener('click', e => {
+            const hdr = e.target.closest('.season-header');
+            if (hdr) { hdr.closest('.season-group')?.classList.toggle('collapsed'); return; }
+            const item = e.target.closest('.time-node-item');
+            if (!item) return;
+            currentTimeIndex = parseInt(item.getAttribute('data-index'), 10);
+            currentSortKey = '当前积分'; currentSortDir = 'desc';
+            mrankCloseSheet(nodeSheet);
+            updateRankingDisplay(); renderTimeNodeList();
+        });
+    }
+    const board = document.getElementById('mrankBoard');
+    if (board && !board._bound) {
+        board._bound = true;
+        /* 手风琴展开/收起：点卡头切换（a 链接正常跳转；明细按钮走 document 级 data-player 委托） */
+        const toggle = e => {
+            const head = e.target.closest('.mrank-head');
+            if (!head || e.target.closest('a')) return;
+            if (e.type === 'keydown' && e.key !== 'Enter' && e.key !== ' ') return;
+            e.preventDefault();
+            const card = head.closest('.mrank-card');
+            if (!card) return;
+            const pn = card.dataset.mrankPlayer;
+            const willOpen = !card.classList.contains('open');
+            card.classList.toggle('open', willOpen);
+            head.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+            if (willOpen) mrankOpenCards.add(pn); else mrankOpenCards.delete(pn);
+        };
+        board.addEventListener('click', toggle);
+        board.addEventListener('keydown', toggle);
+    }
+    if (!document.body._mrankEsc) {
+        document.body._mrankEsc = true;
+        document.addEventListener('keydown', e => { if (e.key !== 'Escape') return; document.querySelectorAll('.sheet-overlay.active').forEach(ov => mrankCloseSheet(ov)); });
+    }
+    /* 首屏加载即同步移动端文案（setLanguage 仅在切换时触发 reapply，初始化需自行补齐） */
+    const L0 = i18n[currentLang] || {};
+    if (search) search.placeholder = L0.mrank_search_ph || '';
+    document.querySelectorAll('.sheet-close').forEach(b => b.setAttribute('aria-label', L0.mrank_close || ''));
+    mrankSyncSortBtn();
 }

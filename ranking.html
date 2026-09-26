@@ -51,12 +51,19 @@
                 </aside>
                 
                 <div class="ranking-content">
-                    <div class="section-header" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:24px;">
+                    <!-- 移动端深色圆角头卡（亚运奖牌榜同款内嵌卡；桌面由 page-hero 承担，≤768 隐藏） -->
+                    <div class="mrank-hero mrank-only">
+                        <span class="mrank-hero-tag">Beta</span>
+                        <div class="mrank-hero-title">Ranking</div>
+                        <p class="mrank-hero-desc" data-i18n="rank_hero_desc">社团积分排名系统 · 支持多时间节点对比 · 点击姓名查看积分明细</p>
+                    </div>
+
+                    <div class="section-header ranking-section-head">
                         <div>
                             <span class="section-tag" data-i18n="rank_tag">Data Table</span>
                             <h2 class="section-title" data-i18n="rank_title">积分数据表</h2>
                         </div>
-                        <div class="rank-header-actions" style="display:flex;flex-direction:column;gap:8px;align-items:flex-end;">
+                        <div class="rank-header-actions">
                             <a href="detail.html?type=qa&id=q1" class="qa-link-btn" aria-label="Ranking scoring rules">
                                 <i class="fa-solid fa-circle-question" aria-hidden="true"></i>
                                 <span data-i18n="rank_qa_btn">积分计算规则</span>
@@ -68,23 +75,39 @@
                             </a>
                         </div>
                     </div>
-                    
+
                     <!-- 单打/双打项目切换（?mode=doubles 直达双打榜；两套时间线一次算好，切换零请求） -->
                     <div class="ranking-mode-toggle" role="tablist" aria-label="积分项目">
                         <button type="button" class="ranking-mode-btn active" data-mode="singles" data-i18n="rank_mode_singles" aria-selected="true">单打</button>
                         <button type="button" class="ranking-mode-btn" data-mode="doubles" data-i18n="rank_mode_doubles" aria-selected="false">双打</button>
                     </div>
 
+                    <!-- 移动端（≤768px）：搜索舱（CSS 控显隐，见 style.css「排名页移动端」） -->
+                    <div class="mrank-deck mrank-only">
+                        <div class="mrank-search">
+                            <i class="fa-solid fa-magnifying-glass mrank-search-ico" aria-hidden="true"></i>
+                            <input type="search" id="mrankSearch" autocomplete="off" placeholder="搜索成员">
+                            <button type="button" class="mrank-search-clear" id="mrankSearchClear" aria-label="清空搜索"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+
                     <div class="ranking-controls">
                         <span class="sort-hint"><span data-i18n="rank_sort_hint">当前排序：</span><strong id="sortIndicator">积分降序</strong></span>
                         <span class="update-info" id="currentTimeLabel">加载中...</span>
                         <button type="button" class="table-export-btn" id="exportRankBtn"><i class="fa-solid fa-image"></i><span data-i18n="rank_export_btn">导出图片</span></button>
-                        <div class="mobile-sort-bar">
-                            <select class="mobile-sort-select" id="mobileSortSelect" aria-label="排序字段"></select>
-                            <button type="button" class="mobile-sort-dir" id="mobileSortDir" aria-label="切换升序/降序">&#9660;</button>
-                        </div>
                     </div>
-                    
+
+                    <!-- 移动端（≤768px）：亚运「Select discipline」同款节点选择条（点击开时间线抽屉）+ 居中副标题（右侧导出） -->
+                    <button type="button" class="mrank-node-bar mrank-only" id="mrankNodeBar" aria-haspopup="dialog">
+                        <span class="mrank-live-dot" aria-hidden="true"></span>
+                        <span class="mrank-node-bar-label" id="mrankNodeBarLabel">时间节点</span>
+                        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="mrank-node-sub mrank-only">
+                        <span id="mrankNodeSubText"></span>
+                        <button type="button" class="mrank-icon-btn" id="mrankExportBtn" title="导出图片"><i class="fa-solid fa-image" aria-hidden="true"></i></button>
+                    </div>
+
                     <div class="ranking-full-table-wrapper glass-card">
                         <table class="ranking-table ranking-table-full" id="rankingFullTable">
                             <thead>
@@ -102,6 +125,21 @@
                                 <tr><td colspan="7" style="text-align:center;padding:40px;">加载排名数据中...</td></tr>
                             </tbody>
                         </table>
+                    </div>
+
+                    <!-- 移动端（≤768px）：亚运奖牌榜式列头（# · 姓名 | 场次 胜率 变化 积分，列头可点排序） -->
+                    <div class="mrank-list-head mrank-only">
+                        <div class="mrank-lh-grid">
+                            <span class="mrank-lh-name">#&nbsp;·&nbsp;<span data-i18n="rank_col_name">姓名</span></span>
+                            <button type="button" class="mrank-col-sort" data-key="总场次"><span data-i18n="mrank_c_m">场次</span></button>
+                            <button type="button" class="mrank-col-sort" data-key="胜率"><span data-i18n="mrank_c_w">胜率</span></button>
+                            <button type="button" class="mrank-col-sort" data-key="积分变化"><span data-i18n="mrank_c_pc">变化</span></button>
+                            <button type="button" class="mrank-col-sort" data-key="当前积分"><span data-i18n="mrank_c_p">积分</span><i class="fa-solid fa-caret-down" aria-hidden="true"></i></button>
+                            <span class="mrank-lh-chev" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                    <div class="mrank-board mrank-only" id="mrankBoard">
+                        <div class="mrank-empty">加载排名数据中...</div>
                     </div>
                 </div>
             </div>
@@ -132,6 +170,18 @@
                     </tbody>
                 </table>
             </div>
+        </div>
+    </div>
+
+    <!-- 移动端底部抽屉：完整时间线（赛季分组） -->
+    <div class="sheet-overlay" id="mrankNodeSheet" role="dialog" aria-modal="true" aria-labelledby="mrankNodeSheetTitle">
+        <div class="sheet-panel">
+            <div class="sheet-handle" aria-hidden="true"></div>
+            <div class="sheet-head">
+                <h3 id="mrankNodeSheetTitle" data-i18n="rank_sidebar_title">时间节点</h3>
+                <button type="button" class="sheet-close" data-sheet-close aria-label="关闭">&times;</button>
+            </div>
+            <div class="sheet-body" id="mrankNodeSheetBody"></div>
         </div>
     </div>
 

@@ -1,8 +1,9 @@
 /* ========================================
    club_race.js - 排名动态竞速 Bar Chart Race（Top 15）
    复刻 wtt_dataviz_extra.js 中的竞速实现，使用社团系列数据
-   动画核心：单一 RAF 连续时钟在相邻时间点之间匀速插值，
-   消除旧版「定时器跳帧 + 指数趋近」造成的冲刺-停滞脉冲感
+   动画核心：单一 RAF 连续时钟推进时间线；行分数按帧率无关的时间常数 τ
+   指数平滑趋近目标帧值（ease-out，无旧版定时器跳帧造成的冲刺-停滞脉冲感）
+   播放到最后一个节点（实时积分）自动停止，手动重播时再回绕到第 0 帧
    ======================================== */
 
 const CLUB_RACE_TOP_N = 15;
@@ -25,6 +26,7 @@ let clubBarRace = {
     fadeInMs: 200,         // 入场淡入时长
     fadeOutMs: 350,        // 离场淡出时长
     exitMs: 550,           // 离场下滑时长
+    tauMs: 224,            // 指数平滑时间常数 τ（随速度档缩放，帧率无关）
     cache: new Map(),
     playerColors: {},
     rowMap: new Map(),
@@ -36,13 +38,14 @@ let clubBarRace = {
 
 function clubRaceClampNum(v, lo, hi) { return v < lo ? lo : (v > hi ? hi : v); }
 
-// 按当前速度档推导进出场时长，保证各速度档下过渡节奏一致
+// 按当前速度档推导进出场时长与平滑时间常数，保证各速度档下过渡节奏一致
 function clubRaceComputeDurations() {
     const seg = CLUB_RACE_FRAME_MS / Math.max(0.01, clubBarRace.speed);
     clubBarRace.enterMs = clubRaceClampNum(seg * 0.7, 180, 600);
     clubBarRace.fadeInMs = clubRaceClampNum(seg * 0.4, 120, 320);
     clubBarRace.fadeOutMs = clubRaceClampNum(seg * 0.6, 160, 480);
     clubBarRace.exitMs = clubRaceClampNum(seg * 0.85, 240, 700);
+    clubBarRace.tauMs = clubRaceClampNum(seg * 0.32, 80, 320);
 }
 
 // HSL -> 十六进制颜色（h: 0-360, s/l: 0-100）
@@ -445,7 +448,7 @@ function clubSetRaceFrame(frameIndex, animate = true) {
 }
 
 // 连续动画循环：playClock 按 dt×speed 推进，跨过整帧时切换目标并处理进出场；
-// 行分数在段内线性插值 —— 全程匀速运动，无「冲刺-停滞」节奏
+// 行分数按时间常数 τ 指数趋近目标帧值（帧率无关的 ease-out，目标切换处速度连续、无折角）
 function clubRaceTick(ts) {
     const B = clubBarRace;
     let busy = false;
@@ -461,10 +464,10 @@ function clubRaceTick(ts) {
         while (B.playClock >= CLUB_RACE_FRAME_MS && guard++ < 6) {
             if (!B.playing) { B.playClock = CLUB_RACE_FRAME_MS; break; } // 暂停后把当前段收尾
             if (B.frameIndex >= rankingTimeline.length - 1) {
-                // 循环回绕：硬切回第 0 帧（如视频循环）
-                B.frameIndex = 0;
+                // 末帧收尾：自动停止播放（不回绕循环），分数指数收敛到实时积分后静止
+                B.playing = false;
                 B.playClock = CLUB_RACE_FRAME_MS;
-                clubApplyRaceMembership(0, true, rankingTimeline.length - 1);
+                clubRaceSyncPlayButton();
                 break;
             }
             const prevIndex = B.frameIndex;
@@ -475,7 +478,8 @@ function clubRaceTick(ts) {
         busy = true;
     }
 
-    const blend = Math.min(1, B.playClock / CLUB_RACE_FRAME_MS);
+    // 指数平滑系数：1 - e^(-dt/τ)，帧率无关；dt=0 时为 0（同帧双次 rAF 不空转）
+    const smooth = B.tauMs > 0 ? 1 - Math.exp(-dt / B.tauMs) : 1;
     const fadeInStep = dt / B.fadeInMs;
     const fadeOutStep = dt / B.fadeOutMs;
     const exitStep = dt / B.exitMs;
@@ -497,10 +501,12 @@ function clubRaceTick(ts) {
             st.enterOffset = Math.max(0, st.enterOffset - step);
             busy = true;
         }
-        if (blend >= 1) {
+        // 指数趋近目标帧分数；收敛阈值内吸附，避免长尾微动导致 RAF 常驻
+        const diff = st.endScore - st.score;
+        if (Math.abs(diff) < 0.05) {
             if (st.score !== st.endScore) st.score = st.endScore;
         } else {
-            st.score = st.startScore + (st.endScore - st.startScore) * blend;
+            st.score += diff * smooth;
             busy = true;
         }
     }
@@ -542,7 +548,7 @@ function clubRaceStartPlay() {
     if (B.playing) return;
     B.playing = true;
     if (B.playClock >= CLUB_RACE_FRAME_MS) {
-        // 从静止开播：立即进入下一段（处于末尾则回绕到第 0 帧）
+        // 从静止开播：立即进入下一段（处于末尾则回绕到第 0 帧重新播放）
         const prevIndex = B.frameIndex;
         if (prevIndex >= rankingTimeline.length - 1) {
             B.frameIndex = 0;

@@ -392,7 +392,7 @@ function renderMatchDetail(m) {
             centerHtml = `<div class="md-score-boxes">
                 <span class="md-score-box ${aWin ? 'md-box-win' : ''}">${sm[1]}</span>
                 <span class="md-score-box ${aWin ? '' : 'md-box-win'}">${sm[2]}</span>
-            </div><div class="md-score-sub">${T.md_score_title}${T.md_score_persp}</div>`;
+            </div><div class="md-score-sub">${T.md_score_title}</div>`;
         } else {
             centerHtml = `<div class="md-score-boxes"><span class="md-score-box md-box-win md-box-wide">${escapeHtml(m.score)}</span></div>`;
         }
