@@ -25,6 +25,8 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous">
+    <!-- 拼音搜索支持（与 personal_stats.html 同版本/SRI）：移动端排行榜模糊匹配用 -->
+    <script src="https://cdn.jsdelivr.net/npm/pinyin-pro@3.28.2/dist/index.js" integrity="sha384-fKRoVamHNw37Lz4zYk5XK1bazREkud2MC1hSg346MiTDy5z61jdaR9bIEYoNBfIs" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -56,6 +58,18 @@
                         <span class="mrank-hero-tag">Beta</span>
                         <div class="mrank-hero-title">Ranking</div>
                         <p class="mrank-hero-desc" data-i18n="rank_hero_desc">社团积分排名系统 · 支持多时间节点对比 · 点击姓名查看积分明细</p>
+                        <!-- 操作行：积分规则 / 提交战绩 / 导出图片（深底半透明药丸；导出带 Top-N 菜单） -->
+                        <div class="mrank-hero-actions">
+                            <a href="detail.html?type=qa&id=q1" class="qa-link-btn" aria-label="Ranking scoring rules">
+                                <i class="fa-solid fa-circle-question" aria-hidden="true"></i>
+                                <span data-i18n="rank_qa_btn">积分计算规则</span>
+                            </a>
+                            <a href="submit.html" class="qa-link-btn" aria-label="提交比赛战绩">
+                                <i class="fa-solid fa-table-tennis-paddle-ball" aria-hidden="true"></i>
+                                <span data-i18n="nav_submit">提交战绩</span>
+                            </a>
+                            <button type="button" class="table-export-btn" id="mrankExportBtn"><i class="fa-solid fa-image" aria-hidden="true"></i><span data-i18n="rank_export_btn">导出图片</span></button>
+                        </div>
                     </div>
 
                     <div class="section-header ranking-section-head">
@@ -97,16 +111,12 @@
                         <button type="button" class="table-export-btn" id="exportRankBtn"><i class="fa-solid fa-image"></i><span data-i18n="rank_export_btn">导出图片</span></button>
                     </div>
 
-                    <!-- 移动端（≤768px）：亚运「Select discipline」同款节点选择条（点击开时间线抽屉）+ 居中副标题（右侧导出） -->
+                    <!-- 移动端（≤768px）：亚运「Select discipline」同款节点选择条（点击开时间线抽屉；label 内含人数） -->
                     <button type="button" class="mrank-node-bar mrank-only" id="mrankNodeBar" aria-haspopup="dialog">
                         <span class="mrank-live-dot" aria-hidden="true"></span>
                         <span class="mrank-node-bar-label" id="mrankNodeBarLabel">时间节点</span>
                         <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                     </button>
-                    <div class="mrank-node-sub mrank-only">
-                        <span id="mrankNodeSubText"></span>
-                        <button type="button" class="mrank-icon-btn" id="mrankExportBtn" title="导出图片"><i class="fa-solid fa-image" aria-hidden="true"></i></button>
-                    </div>
 
                     <div class="ranking-full-table-wrapper glass-card">
                         <table class="ranking-table ranking-table-full" id="rankingFullTable">

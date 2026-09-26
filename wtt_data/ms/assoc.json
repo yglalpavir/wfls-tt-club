@@ -11948,5 +11948,120 @@
     "assoc": "YEM",
     "country": "Yemen",
     "source": "manual-ag2023"
+  },
+  "AHN Jaehyun": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "manual-ag2026-ms"
+  },
+  "Anane VONGSA": {
+    "assoc": "LAO",
+    "country": "Laos",
+    "source": "manual-ag2026-ms"
+  },
+  "Ankhbayar BILGUUN": {
+    "assoc": "MGL",
+    "country": "Mongolia",
+    "source": "manual-ag2026-ms"
+  },
+  "Atai KASYMOV": {
+    "assoc": "KGZ",
+    "country": "Kyrgyzstan",
+    "source": "manual-ag2026-ms"
+  },
+  "Chanul Dulsen KULAPPUWAWADU": {
+    "assoc": "SRI",
+    "country": "Sri Lanka",
+    "source": "manual-ag2026-ms"
+  },
+  "Diyorbek DILSHODOV": {
+    "assoc": "UZB",
+    "country": "Uzbekistan",
+    "source": "manual-ag2026-ms"
+  },
+  "Ebrahim GUBRAN": {
+    "assoc": "YEM",
+    "country": "Yemen",
+    "source": "manual-ag2026-ms"
+  },
+  "Johan HAGBERG": {
+    "assoc": "LAO",
+    "country": "Laos",
+    "source": "manual-ag2026-ms"
+  },
+  "MAK Tin Ian": {
+    "assoc": "MAC",
+    "country": "Macau, China",
+    "source": "manual-ag2026-ms"
+  },
+  "Mohutasin RIDOY": {
+    "assoc": "BAN",
+    "country": "Bangladesh",
+    "source": "manual-ag2026-ms"
+  },
+  "Muhammad JUNINDRA": {
+    "assoc": "INA",
+    "country": "Indonesia",
+    "source": "manual-ag2026-ms"
+  },
+  "Muhammad NEGARA": {
+    "assoc": "INA",
+    "country": "Indonesia",
+    "source": "manual-ag2026-ms"
+  },
+  "Nuradil TOLOGONOV": {
+    "assoc": "KGZ",
+    "country": "Kyrgyzstan",
+    "source": "manual-ag2026-ms"
+  },
+  "RI Jong Sik": {
+    "assoc": "PRK",
+    "country": "Korea DPR",
+    "source": "manual-ag2026-ms"
+  },
+  "Ramhimlian BAWM": {
+    "assoc": "BAN",
+    "country": "Bangladesh",
+    "source": "manual-ag2026-ms"
+  },
+  "Sanyog KAPALI": {
+    "assoc": "NEP",
+    "country": "Nepal",
+    "source": "manual-ag2026-ms"
+  },
+  "Sarayut TANCHAROEN": {
+    "assoc": "THA",
+    "country": "Thailand",
+    "source": "manual-ag2026-ms"
+  },
+  "Shokhrukh ISKANDAROV": {
+    "assoc": "UZB",
+    "country": "Uzbekistan",
+    "source": "manual-ag2026-ms"
+  },
+  "Taha BILAL": {
+    "assoc": "PAK",
+    "country": "Pakistan",
+    "source": "manual-ag2026-ms"
+  },
+  "Temuulen MYANDAL": {
+    "assoc": "MGL",
+    "country": "Mongolia",
+    "source": "manual-ag2026-ms"
+  },
+  "Thitaphat PREECHAYAN": {
+    "assoc": "THA",
+    "country": "Thailand",
+    "source": "manual-ag2026-ms"
+  },
+  "U Tae Ryong": {
+    "assoc": "PRK",
+    "country": "Korea DPR",
+    "source": "manual-ag2026-ms"
+  },
+  "ZHENG Hong Wai": {
+    "assoc": "MAC",
+    "country": "Macau, China",
+    "source": "manual-ag2026-ms"
   }
 }

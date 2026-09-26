@@ -3639,7 +3639,7 @@ a.hero-ball::before {
    CSS 控制两套 DOM 显隐；桌面布局（>768px）不受影响
    ======================================== */
 /* 桌面隐藏移动专属容器 */
-.mrank-deck, .mrank-hero, .mrank-node-bar, .mrank-node-sub, .mrank-list-head, .mrank-board { display: none !important; }
+.mrank-deck, .mrank-hero, .mrank-node-bar, .mrank-list-head, .mrank-board { display: none !important; }
 /* 桌面分区头（原内联样式类化，值不变） */
 .ranking-section-head { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
 .rank-header-actions { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
@@ -3670,7 +3670,7 @@ a.hero-ball::before {
 
 @media (max-width: 768px) {
     /* ---- 显隐切换 ---- */
-    .mrank-hero, .mrank-node-sub { display: block !important; }
+    .mrank-hero { display: block !important; }
     .mrank-node-bar { display: flex !important; }
     .mrank-deck { display: flex !important; flex-direction: column; gap: 12px; margin-bottom: 12px; }
     .mrank-list-head { display: flex !important; }
@@ -3691,20 +3691,32 @@ a.hero-ball::before {
     .mrank-hero-title { font-family: var(--font-en); font-size: 1.55rem; font-weight: 800; letter-spacing: 1px; color: #fff; margin-bottom: 4px; }
     .mrank-hero-desc { font-size: 0.72rem; color: rgba(255, 255, 255, 0.6); line-height: 1.5; }
 
-    /* ---- 页面骨架收紧（page-hero 隐藏后须自行让出 fixed 导航的高度） ---- */
-    .ranking-main-section { padding-top: calc(var(--nav-height) + 12px); padding-bottom: 48px; }
-    .ranking-section-head { margin-bottom: 12px; }
-    .section-header .section-title { font-size: 1.3rem; }
-    .ranking-section-head .section-tag { font-size: 0.7rem; padding: 4px 12px; margin-bottom: 8px; }
-    .rank-header-actions { flex-direction: row; flex-wrap: wrap; gap: 6px; }
-    /* 标题行右侧按钮收成圆形图标（保留 aria-label，桌面文字不受影响） */
-    .rank-header-actions .qa-link-btn { padding: 8px; border-radius: 50%; width: 36px; height: 36px; justify-content: center; }
-    .rank-header-actions .qa-link-btn span { display: none; }
-    .rank-header-actions .qa-link-btn i { font-size: 0.85rem; }
+    /* ---- hero 操作行：积分规则 / 提交战绩 / 导出图片（深底半透明药丸，AG 头部动作区同位） ---- */
+    .mrank-hero-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .mrank-hero .qa-link-btn, .mrank-hero .table-export-btn {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.25);
+        color: #fff;
+        font-size: 0.74rem;
+        padding: 7px 12px;
+    }
+    .mrank-hero .qa-link-btn i, .mrank-hero .table-export-btn i { color: var(--primary-light); }
+    .mrank-hero .qa-link-btn:hover, .mrank-hero .qa-link-btn:focus-visible,
+    .mrank-hero .table-export-btn:hover, .mrank-hero .table-export-btn:focus-visible {
+        background: rgba(255, 255, 255, 0.22);
+        border-color: rgba(255, 255, 255, 0.45);
+        transform: none;
+    }
+    /* hero 内导出菜单保持浅色（浮层可读性优先），向下弹出 */
+    .mrank-hero .export-menu { top: calc(100% + 6px); bottom: auto; }
 
-    /* ---- 单打/双打分段控件：亚运药丸页签（白底蓝边，激活实蓝） ---- */
-    .ranking-mode-toggle { display: flex; justify-content: center; gap: 10px; padding: 0; margin-bottom: 14px; background: transparent; border: none; backdrop-filter: none; -webkit-backdrop-filter: none; width: 100%; }
-    .ranking-mode-btn { flex: 1; max-width: 170px; padding: 9px 0; border: 1.5px solid var(--primary-blue); border-radius: 999px; background: var(--bg-white); color: var(--primary-blue); font-size: 0.88rem; font-weight: 600; box-shadow: none; }
+    /* ---- 页面骨架收紧（page-hero 隐藏后须自行让出 fixed 导航的高度；section-header 由 hero 承担） ---- */
+    .ranking-main-section { padding-top: calc(var(--nav-height) + 12px); padding-bottom: 48px; }
+    .ranking-section-head { display: none !important; }
+
+    /* ---- 单打/双打分段控件：紧凑居中（亚运药丸页签，白底蓝边/激活实蓝） ---- */
+    .ranking-mode-toggle { display: flex; justify-content: center; gap: 10px; padding: 0; margin: 0 auto 12px; background: transparent; border: none; backdrop-filter: none; -webkit-backdrop-filter: none; width: fit-content; }
+    .ranking-mode-btn { padding: 8px 26px; border: 1.5px solid var(--primary-blue); border-radius: 999px; background: var(--bg-white); color: var(--primary-blue); font-size: 0.86rem; font-weight: 600; box-shadow: none; }
     .ranking-mode-btn.active { background: var(--primary-blue); color: #fff; box-shadow: 0 3px 10px rgba(0, 123, 255, 0.3); }
 
     /* ---- 搜索条（与节点选择条同款白底圆角） ---- */
@@ -3742,20 +3754,19 @@ a.hero-ball::before {
     .mrank-live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-green); display: none; flex-shrink: 0; }
     .mrank-node-bar.is-live .mrank-live-dot { display: block; animation: pulse-dot 2s ease-in-out infinite; }
 
-    /* ---- 居中副标题（人数 · 当前排序；右侧导出；亚运 All disciplines 同位） ---- */
-    .mrank-node-sub { position: relative; text-align: center; font-size: 0.76rem; font-weight: 500; color: var(--text-secondary); margin: 10px 0 4px; }
-    .mrank-node-sub .mrank-icon-btn { position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 10px; font-size: 0.78rem; }
-
     /* ---- 列头行（亚运 Rk / NOC / 奖牌列 同位；列头即排序触发） ---- */
-    .mrank-list-head { padding: 2px 4px 8px; margin-top: 6px; }
+    /* 内边距与卡行（.mrank-head 14/16px）一致，列才能纵向对齐 */
+    .mrank-list-head { padding: 2px 14px 8px 16px; margin-top: 6px; }
     /* 卡行与列头共用同一网格，保证数字列对齐 */
     .mrank-lh-grid, .mrank-head { --mrank-cols: 20px minmax(0, 1fr) 30px 38px 46px 50px 14px; display: grid; grid-template-columns: var(--mrank-cols); gap: 0 7px; align-items: center; }
+    /* list-head 被 .mrank-only 显隐规则强制为 flex，网格须显式拉满宽度，列才能与卡行对齐 */
+    .mrank-lh-grid { width: 100%; }
     .mrank-lh-name { font-family: var(--font-en); font-size: 0.66rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--text-muted); grid-column: 1 / 3; }
     .mrank-col-sort {
         padding: 0; border: none; background: transparent;
         color: var(--text-muted); font-family: var(--font-cn);
         font-size: 0.64rem; font-weight: 600; cursor: pointer;
-        white-space: nowrap; text-align: right; display: flex; align-items: center; justify-content: flex-end; gap: 2px;
+        white-space: nowrap; text-align: center; display: flex; align-items: center; justify-content: center; gap: 2px;
         transition: color var(--transition-fast);
     }
     .mrank-col-sort:hover { color: var(--primary-blue); }
@@ -3763,11 +3774,6 @@ a.hero-ball::before {
     .mrank-col-sort i { font-size: 0.6rem; visibility: hidden; }
     .mrank-col-sort:focus-visible { outline: 2px solid var(--accent-blue); outline-offset: 2px; border-radius: 4px; }
     .mrank-lh-chev { width: 14px; }
-    .mrank-icon-btn { width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--border-color); border-radius: 10px; background: var(--bg-white); color: var(--primary-blue); font-size: 0.78rem; cursor: pointer; transition: all var(--transition-fast); }
-    .mrank-icon-btn:active { background: var(--primary-pale); }
-    .mrank-icon-btn:focus-visible { outline: 2px solid var(--accent-blue); outline-offset: 2px; }
-    /* 副标题行的导出菜单：向上弹出（贴底会被卡片盖住） */
-    .mrank-node-sub .export-menu { top: auto; bottom: calc(100% + 6px); }
 
     /* ---- 统一圆角卡行（亚运奖牌榜行式） ---- */
     .mrank-card {
@@ -3793,7 +3799,7 @@ a.hero-ball::before {
     .mrank-name { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 5px; font-family: var(--md-latin, var(--font-en), var(--font-cn)); font-size: 0.96rem; font-weight: 600; color: var(--text-primary); line-height: 1.4; word-break: break-word; min-width: 0; }
     .mrank-name .player-name-link { border-bottom: none; }
     /* 统计列（AG 奖牌列同位）：紧凑数字列，右对齐 */
-    .mrank-stat, .mrank-pts { font-family: var(--font-en); font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+    .mrank-stat, .mrank-pts { font-family: var(--font-en); font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); font-variant-numeric: tabular-nums; text-align: center; white-space: nowrap; }
     .mrank-pts { font-size: 0.92rem; font-weight: 700; color: var(--text-primary); }
     .mrank-stat .rank-change, .mrank-stat .rank-new { font-size: 0.68rem; }
     .mrank-chev { color: var(--text-muted); font-size: 0.7rem; transition: transform var(--transition-base); justify-self: end; }

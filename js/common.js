@@ -1154,6 +1154,82 @@ function flipScoreStr(s) {
     const m = String(s).match(/^(\d{1,2})\s*[-:：]\s*(\d{1,2})$/);
     return m ? `${m[2]}-${m[1]}` : s;
 }
+// ===== 拼音搜索支持（pinyin-pro + 模糊匹配）=====
+const pinyinCache = {};
+
+function getPlayerPinyin(text) {
+    if (!text) return { full: '', fullSpaced: '', initial: '' };
+    const cacheKey = 'zh:' + text;
+    if (pinyinCache[cacheKey]) return pinyinCache[cacheKey];
+    let full = '', fullSpaced = '', initial = '';
+    if (typeof window.pinyinPro !== 'undefined' && window.pinyinPro.pinyin) {
+        try {
+            const arr = window.pinyinPro.pinyin(text, { toneType: 'none', type: 'array', nonZh: 'consecutive' });
+            const segs = arr.map(s => String(s).trim()).filter(Boolean);
+            full = segs.join('').toLowerCase();
+            fullSpaced = segs.join(' ').toLowerCase();
+            initial = segs.map(s => String(s.charAt(0))).join('').toLowerCase();
+        } catch (e) { /* ignore */ }
+    }
+    const result = { full, fullSpaced, initial };
+    pinyinCache[cacheKey] = result;
+    return result;
+}
+
+function playerSearchKeys(name, p) {
+    const keys = new Set();
+    if (name) keys.add(String(name).trim().toLowerCase());
+    if (p) {
+        if (p.uid != null) keys.add(String(p.uid));
+        (p.aliases || []).forEach(a => { if (a) keys.add(String(a).trim().toLowerCase()); });
+        (p.tags || []).forEach(t => { if (t) keys.add(String(t).trim().toLowerCase()); });
+    }
+    const namesToConvert = [name].concat(p ? (p.aliases || []) : []);
+    for (const n of namesToConvert) {
+        if (!n) continue;
+        const py = getPlayerPinyin(n);
+        if (py.full) keys.add('py:' + py.full);
+        if (py.fullSpaced) keys.add('py:' + py.fullSpaced);
+        if (py.initial) keys.add('pyi:' + py.initial);
+    }
+    return Array.from(keys).filter(Boolean);
+}
+
+function isSubsequenceMatch(a, target) {
+    let qi = 0;
+    for (let ti = 0; ti < target.length && qi < a.length; ti++) {
+        if (a[qi] === target[ti]) qi++;
+    }
+    return qi === a.length;
+}
+
+function playerSearchRawKey(k) {
+    if (k.startsWith('py:')) return k.slice(3);
+    if (k.startsWith('pyi:')) return k.slice(4);
+    return k;
+}
+
+/**
+ * 计算球员搜索匹配分数（0 = 不匹配）。
+ * 支持：姓名/别名/编号/标签 的完全匹配、前缀、包含；拼音全拼/首字母；模糊子序列。
+ */
+function playerSearchScore(name, p, q) {
+    if (!q) return -1;
+    const keys = playerSearchKeys(name, p);
+    const ql = q.toLowerCase();
+    let best = 0;
+    for (const k of keys) {
+        const rawKey = playerSearchRawKey(k);
+        if (!rawKey) continue;
+        if (rawKey === ql) best = Math.max(best, 100);
+        else if (rawKey.startsWith(ql)) best = Math.max(best, 80);
+        else if (rawKey.includes(ql)) best = Math.max(best, 60);
+        else if (rawKey.endsWith(ql)) best = Math.max(best, 45);
+        else if (ql.length >= 2 && isSubsequenceMatch(ql, rawKey)) best = Math.max(best, 25);
+    }
+    return best;
+}
+
 // 球员视角总比分 / 局分数组：isWinner 为 false 时逐项翻转
 function playerViewScore(score, isWinner) { return (score == null || isWinner) ? score : flipScoreStr(score); }
 function playerViewGames(games, isWinner) { return (!isWinner && Array.isArray(games)) ? games.map(flipScoreStr) : games; }

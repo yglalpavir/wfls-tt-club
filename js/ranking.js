@@ -519,7 +519,14 @@ function renderMobileRanking(data) {
     }
     const sds = escapeHtml(rankingTimeline[currentTimeIndex]?.time || '');
     const q = mrankSearchQuery.trim().toLowerCase();
-    const rows = q ? data.filter(p => { const pn = String(p['姓名'] || ''); return pn.toLowerCase().includes(q) || String(playerDisplayName(pn)).toLowerCase().includes(q); }) : data;
+    /* 模糊搜索（与个人数据页同款 playerSearchScore）：姓名/别名/编号/拼音全拼/首字母/字符顺序子序列；
+       双打组合取两名成员的最高分 */
+    const rows = q ? data.filter(p => {
+        const pn = String(p['姓名'] || '');
+        if (playerSearchScore(pn, getPlayerByName(pn), q) > 0) return true;
+        const parts = splitPairNames(pn);
+        return parts ? parts.some(m => playerSearchScore(m, getPlayerByName(m), q) > 0) : false;
+    }) : data;
     if (!rows.length) { board.innerHTML = `<div class="mrank-empty">${escapeHtml(i18n[currentLang].mrank_no_result)}</div>`; return; }
     board.innerHTML = rows.map(p => mrankCardHtml(p, sds, L)).join('');
 }
@@ -530,14 +537,11 @@ function mrankSyncMeta() {
     const node = rankingTimeline[currentTimeIndex];
     const barLabel = document.getElementById('mrankNodeBarLabel');
     const bar = document.getElementById('mrankNodeBar');
-    const subText = document.getElementById('mrankNodeSubText');
     if (node) {
-        if (barLabel) barLabel.textContent = `${i18n[currentLang].rank_sidebar_title}${currentLang === 'en' ? ': ' : '：'}${getNodeDisplayLabel(node)}`;
+        /* 人数并入节点条 label（原独立副标题行已移除）；排序态由列头高亮表达 */
+        const n = node.data ? node.data.length : 0;
+        if (barLabel) barLabel.textContent = `${i18n[currentLang].rank_sidebar_title}${currentLang === 'en' ? ': ' : '：'}${getNodeDisplayLabel(node)} · ${i18n[currentLang].rank_ppl.replace('{n}', n)}`;
         if (bar) bar.classList.toggle('is-live', !!node.isRealtime);
-        if (subText) {
-            const n = node.data ? node.data.length : 0;
-            subText.textContent = `${i18n[currentLang].rank_ppl.replace('{n}', n)} · ${i18n[currentLang].rank_sort_hint}${sortKeyLabel(currentSortKey)} ${currentSortDir === 'desc' ? i18n[currentLang].sort_desc : i18n[currentLang].sort_asc}`;
-        }
     }
     mrankSyncSortBtn();
 }
