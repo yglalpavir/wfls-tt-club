@@ -26,3 +26,11 @@ BC 保鲜池 762 条（40 局追球监督 · 在线混入 6% → 压到 6% · �
 ##TT##{"t":"phase","ep":41,"phase":"elite","idx":2,"share":0.28}
 ##TT##{"t":"hb","ep":47,"lastEp":0,"step":60,"inRound":47,"elapsedSec":114.7,"remainSec":-1,"eps":0.155,"phase":"elite","trainWins":17,"trainTotal":47,"best":0.5255,"bestEp":0}
 ##TT##{"t":"hb","ep":56,"lastEp":0,"step":60,"inRound":56,"elapsedSec":125,"remainSec":-1,"eps":0.15,"phase":"elite","trainWins":23,"trainTotal":56,"best":0.5255,"bestEp":0}
+ep    60 [elite]  train=42%  vsdefault=31.8%  vshell=33.4%  vselite=46.6%  vsextreme=52.1%  vsextreme-max=63.2%  best=52.6@0  eps=0.15  [154s · 验证25s]
+##TT##{"t":"ep","sec":154.3,"elapsedSec":154.3,"bestEp":0,"ep":60,"phase":"elite","trainW":41.7,"evalPhase":46.6,"evalTop":63.2,"evalDef":31.8,"best":52.6,"bestTop":71.7,"eps":0.15,"evSec":24.8,"wrDefault":31.8,"wrHell":33.4,"wrElite":46.6,"wrExtreme":52.1,"wrExtremeMax":63.2,"wrMap":{"default":0.3181,"hell":0.3342,"elite":0.4661,"extreme":0.5206,"extreme-max":0.6318}}
+  ●ckpt ep 60 → data/checkpoints/repro-crash/index.json（best=52.6@0 · 留 1 份）
+##TT##{"t":"ckpt","ep":60,"best":0.5255,"bestEp":0,"ckptDir":"data/checkpoints/repro-crash","ckpts":1}
+##TT##{"t":"hb","ep":61,"lastEp":60,"step":60,"inRound":1,"elapsedSec":155.6,"remainSec":-1,"eps":0.15,"phase":"elite","trainWins":26,"trainTotal":61,"best":0.5255,"bestEp":0}
+##TT##{"t":"hb","ep":70,"lastEp":60,"step":60,"inRound":10,"elapsedSec":166.3,"remainSec":-1,"eps":0.15,"phase":"elite","trainWins":31,"trainTotal":70,"best":0.5255,"bestEp":0}
+##TT##{"t":"hb","ep":78,"lastEp":60,"step":60,"inRound":18,"elapsedSec":177.2,"remainSec":-1,"eps":0.15,"phase":"elite","trainWins":35,"trainTotal":78,"best":0.5255,"bestEp":0}
+##TT##{"t":"hb","ep":86,"lastEp":60,"step":60,"inRound":26,"elapsedSec":187.3,"remainSec":-1,"eps":0.15,"phase":"elite","trainWins":38,"trainTotal":86,"best":0.5255,"bestEp":0}
