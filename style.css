@@ -1178,6 +1178,9 @@ html:lang(en) .hero-title {
 
 /* 回合标签 */
 .dv-round-label {
+    /* 必须绝对定位：draws-viewer.js 按列写入 inline left/top，static 会让这些坐标失效，
+       标签会退化成竖直堆叠并被挤出画布。定位参照 .draws-viewer-transform（position: relative）。 */
+    position: absolute; transform: translateX(-50%);
     font-size: 0.72rem; font-weight: 700; color: var(--primary-blue);
     background: var(--primary-pale); padding: 3px 12px; border-radius: 10px;
     white-space: nowrap; border: 1px solid rgba(0,123,255,0.12); pointer-events: none;

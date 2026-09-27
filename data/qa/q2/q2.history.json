@@ -1,5 +1,12 @@
 [
   {
+    "version": 2,
+    "updatedAt": "2026-09-28",
+    "title": "data_viz中的预测胜率计算方法",
+    "visible": null,
+    "file": "q2.v2.json"
+  },
+  {
     "version": 1,
     "updatedAt": "2026-06-21",
     "title": "data_viz中的预测胜率计算方法",

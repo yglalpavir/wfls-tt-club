@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>(function(){try{var t=localStorage.getItem("wfls-tt-theme");var d=t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark-mode");}catch(e){}})()</script>
     <meta name="robots" content="noindex, nofollow">
-    <title>对阵表编辑器 | WFLS Table Tennis Club</title>
+    <meta name="description" content="WFLS 乒乓球社团对阵表编辑器。可视化编辑对阵表、由模板生成、导出 draws.json。" data-i18n-content="de_meta_desc">
+    <meta name="keywords" content="武汉外国语学校,WFLS,乒乓球,对阵表,淘汰赛,对阵表编辑器,draws.json" data-i18n-content="de_kw">
+    <title data-i18n="de_page_title">对阵表编辑器 | WFLS Table Tennis Club</title>
     <link rel="icon" type="image/svg+xml" href="Assets/files/favicon_4DA3FF.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42rRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <style>
         /* ===== 页面骨架（编辑器专用，通用控件样式复用 style.css 的 .de-* 体系）===== */
@@ -49,6 +51,13 @@
         }
         .ed-icon-btn:hover { border-color:var(--primary-blue); color:var(--primary-blue); background:var(--primary-pale); }
         .ed-icon-btn:disabled { opacity:0.4; cursor:not-allowed; pointer-events:none; }
+        .ed-lang-btn {
+            min-width:44px; height:34px; padding:0 10px; border:1px solid var(--border-color); border-radius:8px; flex:none;
+            background:var(--bg-white); color:var(--text-secondary); cursor:pointer; display:inline-flex;
+            align-items:center; justify-content:center; font-size:0.76rem; font-weight:600;
+            font-family:"Poppins","Noto Sans SC",sans-serif; transition:all 0.15s;
+        }
+        .ed-lang-btn:hover { border-color:var(--primary-blue); color:var(--primary-blue); background:var(--primary-pale); }
         /* ---- 三栏布局 ---- */
         .ed-layout {
             flex:1; display:grid; grid-template-columns:270px minmax(0,1fr) 300px;
@@ -155,29 +164,30 @@
     <!-- ===== 顶栏 ===== -->
     <header class="ed-topbar">
         <div class="ed-brand">
-            <a href="admin.html" class="ed-logo" title="返回数据仪表盘"><i class="fa-solid fa-table-tennis-paddle-ball"></i></a>
+            <a href="admin.html" class="ed-logo" title="返回数据仪表盘" data-i18n-title="de_back_admin"><i class="fa-solid fa-table-tennis-paddle-ball"></i></a>
             <div class="ed-titles">
-                <h1>对阵表编辑器</h1>
-                <p>可视化编辑 · 模板生成 · 导出 draws.json</p>
+                <h1 data-i18n="de_title">对阵表编辑器</h1>
+                <p data-i18n="de_hero_desc">可视化编辑 · 模板生成 · 导出 draws.json</p>
             </div>
             <div class="ed-draw-picker">
-                <select id="drawSelect" title="选择要编辑的对阵表"></select>
-                <button class="ed-icon-btn" id="btnNewDraw" title="新建空白对阵表"><i class="fa-solid fa-plus"></i></button>
-                <button class="ed-icon-btn" id="btnDuplicateDraw" title="复制当前对阵表"><i class="fa-regular fa-copy"></i></button>
-                <button class="ed-icon-btn" id="btnDeleteDraw" title="删除当前对阵表"><i class="fa-solid fa-trash"></i></button>
-                <button class="ed-icon-btn" id="btnTemplate" title="从模板生成"><i class="fa-solid fa-wand-magic-sparkles"></i></button>
+                <select id="drawSelect" title="选择要编辑的对阵表" data-i18n-title="de_sel_draw"></select>
+                <button class="ed-icon-btn" id="btnNewDraw" title="新建空白对阵表" data-i18n-title="de_new_draw"><i class="fa-solid fa-plus"></i></button>
+                <button class="ed-icon-btn" id="btnDuplicateDraw" title="复制当前对阵表" data-i18n-title="de_dup_draw"><i class="fa-regular fa-copy"></i></button>
+                <button class="ed-icon-btn" id="btnDeleteDraw" title="删除当前对阵表" data-i18n-title="de_del_draw"><i class="fa-solid fa-trash"></i></button>
+                <button class="ed-icon-btn" id="btnTemplate" title="从模板生成" data-i18n-title="de_from_tpl"><i class="fa-solid fa-wand-magic-sparkles"></i></button>
             </div>
         </div>
         <div class="ed-topbar-right">
-            <button class="ed-icon-btn" id="btnUndo" title="撤销 (Ctrl+Z)" disabled><i class="fa-solid fa-rotate-left"></i></button>
-            <button class="ed-icon-btn" id="btnRedo" title="重做 (Ctrl+Y)" disabled><i class="fa-solid fa-rotate-right"></i></button>
-            <button class="ed-icon-btn" id="btnValidate" title="校验数据"><i class="fa-solid fa-clipboard-check"></i></button>
+            <button class="ed-icon-btn" id="btnUndo" title="撤销 (Ctrl+Z)" data-i18n-title="de_undo" disabled><i class="fa-solid fa-rotate-left"></i></button>
+            <button class="ed-icon-btn" id="btnRedo" title="重做 (Ctrl+Y)" data-i18n-title="de_redo" disabled><i class="fa-solid fa-rotate-right"></i></button>
+            <button class="ed-icon-btn" id="btnValidate" title="校验数据" data-i18n-title="de_validate"><i class="fa-solid fa-clipboard-check"></i></button>
             <span class="de-separator">|</span>
-            <button class="de-btn" id="btnImport"><i class="fa-solid fa-file-import"></i> 导入</button>
+            <button class="de-btn" id="btnImport"><i class="fa-solid fa-file-import"></i> <span data-i18n="de_import">导入</span></button>
             <button class="de-btn" id="btnJson"><i class="fa-solid fa-code"></i> JSON</button>
-            <button class="de-btn de-btn-primary" id="btnDownload"><i class="fa-solid fa-download"></i> 下载 draws.json</button>
-            <button class="ed-icon-btn" id="btnCopyAll" title="复制全部 draws.json 到剪贴板"><i class="fa-regular fa-clipboard"></i></button>
-            <button class="ed-icon-btn" id="themeToggle" title="切换主题"><i class="fa-solid fa-moon"></i></button>
+            <button class="de-btn de-btn-primary" id="btnDownload"><i class="fa-solid fa-download"></i> <span data-i18n="de_download">下载 draws.json</span></button>
+            <button class="ed-icon-btn" id="btnCopyAll" title="复制全部 draws.json 到剪贴板" data-i18n-title="de_copy_all"><i class="fa-regular fa-clipboard"></i></button>
+            <button class="ed-icon-btn" id="themeToggle" title="切换主题" data-i18n-title="nav_aria_theme"><i class="fa-solid fa-moon"></i></button>
+            <button class="ed-lang-btn" id="langToggle" title="切换语言" aria-label="切换语言" data-i18n-title="nav_aria_lang" data-i18n-aria="nav_aria_lang"><span data-i18n="lang_btn">EN</span></button>
         </div>
     </header>
 
@@ -186,43 +196,43 @@
 
         <!-- 左：抽签表设置 -->
         <aside class="ed-panel ed-panel-left" id="drawSettings">
-            <h3><i class="fa-solid fa-circle-info"></i> 基本信息</h3>
+            <h3><i class="fa-solid fa-circle-info"></i> <span data-i18n="de_sec_basic">基本信息</span></h3>
             <div class="ed-field"><label>ID</label><input type="text" id="fDrawId" placeholder="d1"></div>
-            <div class="ed-field"><label>标题</label><input type="text" id="fTitle" placeholder="2026乒乓球单打淘汰赛"></div>
-            <div class="ed-field"><label>副标题（可选）</label><input type="text" id="fSubtitle" placeholder="例如：12 名选手 · 单败淘汰"></div>
-            <div class="ed-field"><label>关联赛事（competitionId）</label><select id="fCompetition"><option value="">（不关联）</option></select></div>
+            <div class="ed-field"><label data-i18n="de_fld_title">标题</label><input type="text" id="fTitle" placeholder="2026乒乓球单打淘汰赛" data-i18n-placeholder="de_ph_draw_title"></div>
+            <div class="ed-field"><label data-i18n="de_fld_subtitle">副标题（可选）</label><input type="text" id="fSubtitle" placeholder="例如：12 名选手 · 单败淘汰" data-i18n-placeholder="de_ph_subtitle"></div>
+            <div class="ed-field"><label data-i18n="de_fld_comp">关联赛事（competitionId）</label><select id="fCompetition"><option value="" data-i18n="de_opt_none">（不关联）</option></select></div>
 
-            <h3><i class="fa-solid fa-table-cells-large"></i> 布局与网格</h3>
-            <div class="ed-field"><label>布局模式</label>
+            <h3><i class="fa-solid fa-table-cells-large"></i> <span data-i18n="de_sec_layout">布局与网格</span></h3>
+            <div class="ed-field"><label data-i18n="de_fld_layout">布局模式</label>
                 <select id="fLayout">
-                    <option value="grid">手动网格（卡片 col/row）</option>
-                    <option value="auto">自动堆叠（按轮次/序号）</option>
+                    <option value="grid" data-i18n="de_opt_layout_grid">手动网格（卡片 col/row）</option>
+                    <option value="auto" data-i18n="de_opt_layout_auto">自动堆叠（按轮次/序号）</option>
                 </select>
             </div>
             <div class="ed-field-row">
-                <div class="ed-field"><label>卡宽 cellWidth</label><input type="number" id="fCellW" min="90" max="500" step="5"></div>
-                <div class="ed-field"><label>卡高 cellHeight</label><input type="number" id="fCellH" min="40" max="200" step="2"></div>
+                <div class="ed-field"><label data-i18n="de_fld_cellw">卡宽 cellWidth</label><input type="number" id="fCellW" min="90" max="500" step="5"></div>
+                <div class="ed-field"><label data-i18n="de_fld_cellh">卡高 cellHeight</label><input type="number" id="fCellH" min="40" max="200" step="2"></div>
             </div>
             <div class="ed-field-row">
-                <div class="ed-field"><label>留白 gap</label><input type="number" id="fGap" min="0" max="40"></div>
-                <div class="ed-field"><label>水平边距 padX</label><input type="number" id="fPadX" min="0" max="300" step="10"></div>
-                <div class="ed-field"><label>垂直边距 padY</label><input type="number" id="fPadY" min="0" max="300" step="10"></div>
+                <div class="ed-field"><label data-i18n="de_fld_gap">留白 gap</label><input type="number" id="fGap" min="0" max="40"></div>
+                <div class="ed-field"><label data-i18n="de_fld_padx">水平边距 padX</label><input type="number" id="fPadX" min="0" max="300" step="10"></div>
+                <div class="ed-field"><label data-i18n="de_fld_pady">垂直边距 padY</label><input type="number" id="fPadY" min="0" max="300" step="10"></div>
             </div>
             <div class="ed-btn-row">
-                <button class="ed-mini-btn" id="btnAutoArrange"><i class="fa-solid fa-table-cells-large"></i> 规整排布</button>
+                <button class="ed-mini-btn" id="btnAutoArrange"><i class="fa-solid fa-table-cells-large"></i> <span data-i18n="de_btn_arrange">规整排布</span></button>
             </div>
-            <p class="ed-hint">规整排布会依据每张卡的「轮次 col」与「列内序号 row」重排成标准淘汰赛树形。</p>
+            <p class="ed-hint" data-i18n="de_hint_arrange">规整排布会依据每张卡的「轮次 col」与「列内序号 row」重排成标准淘汰赛树形。</p>
 
-            <h3><i class="fa-solid fa-tags"></i> 轮次标签（按列）</h3>
+            <h3><i class="fa-solid fa-tags"></i> <span data-i18n="de_sec_rounds">轮次标签（按列）</span></h3>
             <div id="roundLabelsBox"></div>
-            <button class="ed-mini-btn" id="btnAddRoundLabel"><i class="fa-solid fa-plus"></i> 添加列标签</button>
+            <button class="ed-mini-btn" id="btnAddRoundLabel"><i class="fa-solid fa-plus"></i> <span data-i18n="de_btn_add_round">添加列标签</span></button>
 
-            <h3><i class="fa-solid fa-palette"></i> 外观</h3>
-            <div class="ed-field"><label>主题色（留空用默认）</label><input type="color" id="fAccent" style="height:34px;padding:3px;cursor:pointer;"></div>
-            <label class="ed-check"><input type="checkbox" id="fShowSeeds"> 显示种子号角标</label>
-            <label class="ed-check"><input type="checkbox" id="fShowLegend"> 显示图例</label>
+            <h3><i class="fa-solid fa-palette"></i> <span data-i18n="de_sec_look">外观</span></h3>
+            <div class="ed-field"><label data-i18n="de_fld_accent">主题色（留空用默认）</label><input type="color" id="fAccent" style="height:34px;padding:3px;cursor:pointer;"></div>
+            <label class="ed-check"><input type="checkbox" id="fShowSeeds"> <span data-i18n="de_chk_seeds">显示种子号角标</span></label>
+            <label class="ed-check"><input type="checkbox" id="fShowLegend"> <span data-i18n="de_chk_legend">显示图例</span></label>
             <div class="ed-btn-row" style="margin-top:8px;">
-                <button class="ed-mini-btn" id="btnResetTheme"><i class="fa-solid fa-rotate-left"></i> 恢复默认外观</button>
+                <button class="ed-mini-btn" id="btnResetTheme"><i class="fa-solid fa-rotate-left"></i> <span data-i18n="de_btn_reset_look">恢复默认外观</span></button>
             </div>
         </aside>
 
@@ -230,24 +240,24 @@
         <section class="ed-center">
             <div class="de-toolbar">
                 <div class="de-toolbar-left">
-                    <button class="de-btn de-btn-active" id="modeSelect"><i class="fa-solid fa-arrow-pointer"></i> 选择</button>
-                    <button class="de-btn" id="modeConnect"><i class="fa-solid fa-arrows-left-right-to-line"></i> 连线</button>
-                    <span class="de-mode-indicator" id="modeIndicator">选择模式</span>
+                    <button class="de-btn de-btn-active" id="modeSelect"><i class="fa-solid fa-arrow-pointer"></i> <span data-i18n="de_btn_select">选择</span></button>
+                    <button class="de-btn" id="modeConnect"><i class="fa-solid fa-arrows-left-right-to-line"></i> <span data-i18n="de_btn_connect">连线</span></button>
+                    <span class="de-mode-indicator" id="modeIndicator" data-i18n="de_mode_select">选择模式</span>
                 </div>
                 <div class="de-toolbar-center">
-                    <button class="de-btn" id="btnAddMatch"><i class="fa-solid fa-plus"></i> 比赛卡</button>
-                    <button class="de-btn" id="btnAddBye"><i class="fa-solid fa-forward"></i> 轮空卡</button>
-                    <button class="de-btn" id="btnAddChampion"><i class="fa-solid fa-crown"></i> 冠军卡</button>
-                    <button class="de-btn" id="btnAddNote"><i class="fa-solid fa-comment"></i> 备注卡</button>
-                    <button class="de-btn de-btn-danger" id="btnDeleteCard" disabled><i class="fa-solid fa-trash"></i> 删除选中</button>
+                    <button class="de-btn" id="btnAddMatch"><i class="fa-solid fa-plus"></i> <span data-i18n="de_btn_add_match">比赛卡</span></button>
+                    <button class="de-btn" id="btnAddBye"><i class="fa-solid fa-forward"></i> <span data-i18n="de_btn_add_bye">轮空卡</span></button>
+                    <button class="de-btn" id="btnAddChampion"><i class="fa-solid fa-crown"></i> <span data-i18n="de_btn_add_champion">冠军卡</span></button>
+                    <button class="de-btn" id="btnAddNote"><i class="fa-solid fa-comment"></i> <span data-i18n="de_btn_add_note">备注卡</span></button>
+                    <button class="de-btn de-btn-danger" id="btnDeleteCard" disabled><i class="fa-solid fa-trash"></i> <span data-i18n="de_btn_del_selected">删除选中</span></button>
                 </div>
                 <div class="de-toolbar-right">
-                    <button class="de-btn" id="btnPropagate" title="依据已完赛卡片的胜者与连线，自动填充下一轮选手"><i class="fa-solid fa-wand-sparkles"></i> 填充胜者</button>
+                    <button class="de-btn" id="btnPropagate" title="依据已完赛卡片的胜者与连线，自动填充下一轮选手" data-i18n-title="de_propagate"><i class="fa-solid fa-wand-sparkles"></i> <span data-i18n="de_btn_propagate">填充胜者</span></button>
                     <span class="de-separator">|</span>
-                    <button class="ed-icon-btn" id="btnZoomOut" title="缩小"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
+                    <button class="ed-icon-btn" id="btnZoomOut" title="缩小" data-i18n-title="dv_zoom_out"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
                     <span class="de-zoom-val" id="zoomVal">100%</span>
-                    <button class="ed-icon-btn" id="btnZoomIn" title="放大"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
-                    <button class="ed-icon-btn" id="btnZoomFit" title="适应画布"><i class="fa-solid fa-expand"></i></button>
+                    <button class="ed-icon-btn" id="btnZoomIn" title="放大" data-i18n-title="dv_zoom_in"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+                    <button class="ed-icon-btn" id="btnZoomFit" title="适应画布" data-i18n-title="de_zoom_fit"><i class="fa-solid fa-expand"></i></button>
                 </div>
             </div>
             <div class="de-area">
@@ -256,10 +266,10 @@
                 </div>
             </div>
             <div class="de-statusbar">
-                <span id="statCardCount">0 卡片</span>
-                <span id="statConnCount">0 连线</span>
+                <span id="statCardCount" data-i18n="de_stat_cards">0 卡片</span>
+                <span id="statConnCount" data-i18n="de_stat_conns">0 连线</span>
                 <span id="statProgress"></span>
-                <span id="statDirty" class="de-dirty-indicator" style="display:none;"><i class="fa-solid fa-circle-dot"></i> 有未导出的修改</span>
+                <span id="statDirty" class="de-dirty-indicator" style="display:none;"><i class="fa-solid fa-circle-dot"></i> <span data-i18n="de_stat_dirty">有未导出的修改</span></span>
                 <span id="statMsg" style="margin-left:auto;"></span>
             </div>
         </section>
@@ -268,72 +278,72 @@
         <aside class="ed-panel ed-panel-right" id="inspector">
             <div class="ed-inspector-empty" id="inspectorEmpty">
                 <i class="fa-solid fa-arrow-left-long"></i>
-                在画布上点击一张卡片开始编辑。<br>
-                拖拽移动 · 连线模式连接晋级关系<br>
-                Ctrl+Z 撤销 · Delete 删除选中
+                <span data-i18n="de_ins_empty_1">在画布上点击一张卡片开始编辑。</span><br>
+                <span data-i18n="de_ins_empty_2">拖拽移动 · 连线模式连接晋级关系</span><br>
+                <span data-i18n="de_ins_empty_3">Ctrl+Z 撤销 · Delete 删除选中</span>
             </div>
             <div id="inspectorBody" style="display:none;">
-                <h3 style="margin-top:0;border-top:none;padding-top:0;"><i class="fa-solid fa-pen"></i> 卡片 <span class="de-zoom-val" id="insCardId"></span></h3>
+                <h3 style="margin-top:0;border-top:none;padding-top:0;"><i class="fa-solid fa-pen"></i> <span data-i18n="de_ins_card">卡片</span> <span class="de-zoom-val" id="insCardId"></span></h3>
                 <div class="ed-type-switch" id="typeSwitch">
-                    <button data-type="match">比赛</button>
-                    <button data-type="bye">轮空</button>
-                    <button data-type="champion">冠军</button>
-                    <button data-type="note">备注</button>
+                    <button data-type="match" data-i18n="de_type_match">比赛</button>
+                    <button data-type="bye" data-i18n="de_type_bye">轮空</button>
+                    <button data-type="champion" data-i18n="de_type_champion">冠军</button>
+                    <button data-type="note" data-i18n="de_type_note">备注</button>
                 </div>
 
                 <div id="fieldsMatch">
-                    <div class="ed-field"><label>选手 1</label><input type="text" id="fP1" list="playerList" placeholder="姓名 / 队伍"></div>
+                    <div class="ed-field"><label data-i18n="de_fld_p1">选手 1</label><input type="text" id="fP1" list="playerList" placeholder="姓名 / 队伍" data-i18n-placeholder="de_ph_player"></div>
                     <div class="ed-field-row">
-                        <div class="ed-field"><label>种子号</label><input type="number" id="fP1Seed" min="1" placeholder="如 1"></div>
-                        <div class="ed-field"><label>附注（弃赛等）</label><input type="text" id="fP1Note" placeholder="可选"></div>
+                        <div class="ed-field"><label data-i18n="de_fld_seed">种子号</label><input type="number" id="fP1Seed" min="1" placeholder="如 1" data-i18n-placeholder="de_ph_seed"></div>
+                        <div class="ed-field"><label data-i18n="de_fld_pnote">附注（弃赛等）</label><input type="text" id="fP1Note" placeholder="可选" data-i18n-placeholder="de_ph_optional"></div>
                     </div>
-                    <div class="ed-field"><label>选手 2</label><input type="text" id="fP2" list="playerList" placeholder="姓名 / 队伍"></div>
+                    <div class="ed-field"><label data-i18n="de_fld_p2">选手 2</label><input type="text" id="fP2" list="playerList" placeholder="姓名 / 队伍" data-i18n-placeholder="de_ph_player"></div>
                     <div class="ed-field-row">
-                        <div class="ed-field"><label>种子号</label><input type="number" id="fP2Seed" min="1"></div>
-                        <div class="ed-field"><label>附注</label><input type="text" id="fP2Note"></div>
+                        <div class="ed-field"><label data-i18n="de_fld_seed">种子号</label><input type="number" id="fP2Seed" min="1"></div>
+                        <div class="ed-field"><label data-i18n="de_fld_pnote2">附注</label><input type="text" id="fP2Note"></div>
                     </div>
-                    <div class="ed-field"><label>总比分（如 3-1）</label><input type="text" id="fScore" placeholder="3-1"></div>
-                    <div class="ed-field"><label>逐局比分（每局一行，如 11-9）</label><textarea id="fGames" rows="3" placeholder="11-9&#10;8-11&#10;11-7"></textarea></div>
-                    <div class="ed-field"><label>胜者</label>
+                    <div class="ed-field"><label data-i18n="de_fld_score">总比分（如 3-1）</label><input type="text" id="fScore" placeholder="3-1"></div>
+                    <div class="ed-field"><label data-i18n="de_fld_games">逐局比分（每局一行，如 11-9）</label><textarea id="fGames" rows="3" placeholder="11-9&#10;8-11&#10;11-7"></textarea></div>
+                    <div class="ed-field"><label data-i18n="de_fld_winner">胜者</label>
                         <div class="ed-winner-switch" id="winnerSwitch">
-                            <button data-w="1">选手 1 胜</button>
-                            <button data-w="0">平</button>
-                            <button data-w="2">选手 2 胜</button>
+                            <button data-w="1" data-i18n="de_win_p1">选手 1 胜</button>
+                            <button data-w="0" data-i18n="de_win_draw">平</button>
+                            <button data-w="2" data-i18n="de_win_p2">选手 2 胜</button>
                         </div>
                     </div>
-                    <div class="ed-field"><label>状态</label>
+                    <div class="ed-field"><label data-i18n="de_fld_status">状态</label>
                         <select id="fStatus">
-                            <option value="">自动（依据比分判断）</option>
-                            <option value="scheduled">待赛</option>
-                            <option value="live">进行中</option>
-                            <option value="final">已完赛</option>
+                            <option value="" data-i18n="de_st_auto">自动（依据比分判断）</option>
+                            <option value="scheduled" data-i18n="de_st_scheduled">待赛</option>
+                            <option value="live" data-i18n="de_st_live">进行中</option>
+                            <option value="final" data-i18n="de_st_final">已完赛</option>
                         </select>
                     </div>
                 </div>
 
                 <div id="fieldsChampion" style="display:none;">
-                    <div class="ed-field"><label>冠军选手</label><input type="text" id="fChampPlayer" list="playerList"></div>
-                    <div class="ed-field"><label>标签文字</label><input type="text" id="fChampLabel" placeholder="冠军"></div>
+                    <div class="ed-field"><label data-i18n="de_fld_champ">冠军选手</label><input type="text" id="fChampPlayer" list="playerList"></div>
+                    <div class="ed-field"><label data-i18n="de_fld_label">标签文字</label><input type="text" id="fChampLabel" placeholder="冠军" data-i18n-placeholder="de_ph_champ"></div>
                 </div>
 
                 <div id="fieldsNote" style="display:none;">
-                    <div class="ed-field"><label>备注文字</label><input type="text" id="fNoteText" placeholder="A组（单循环）"></div>
+                    <div class="ed-field"><label data-i18n="de_fld_note_text">备注文字</label><input type="text" id="fNoteText" placeholder="A组（单循环）" data-i18n-placeholder="de_ph_group"></div>
                 </div>
 
                 <div class="ed-field-row">
-                    <div class="ed-field"><label>列 col（轮次）</label><input type="number" id="fCol" min="0"></div>
-                    <div class="ed-field"><label>行 row</label><input type="number" id="fRow" min="0"></div>
+                    <div class="ed-field"><label data-i18n="de_fld_col">列 col（轮次）</label><input type="number" id="fCol" min="0"></div>
+                    <div class="ed-field"><label data-i18n="de_fld_row">行 row</label><input type="number" id="fRow" min="0"></div>
                 </div>
                 <div id="fieldsMeta">
-                    <div class="ed-field"><label>时间（可选）</label><input type="text" id="fTime" placeholder="09-04 14:00"></div>
-                    <div class="ed-field"><label>场地（可选）</label><input type="text" id="fVenue" placeholder="1号球台"></div>
-                    <div class="ed-field"><label>备注（可选）</label><input type="text" id="fCardNote" placeholder="弃赛 / 因雨顺延"></div>
+                    <div class="ed-field"><label data-i18n="de_fld_time">时间（可选）</label><input type="text" id="fTime" placeholder="09-04 14:00"></div>
+                    <div class="ed-field"><label data-i18n="de_fld_venue">场地（可选）</label><input type="text" id="fVenue" placeholder="1号球台" data-i18n-placeholder="de_ph_venue"></div>
+                    <div class="ed-field"><label data-i18n="de_fld_card_note">备注（可选）</label><input type="text" id="fCardNote" placeholder="弃赛 / 因雨顺延" data-i18n-placeholder="de_ph_card_note"></div>
                 </div>
 
-                <h3><i class="fa-solid fa-arrows-left-right-to-line"></i> 连线关系</h3>
+                <h3><i class="fa-solid fa-arrows-left-right-to-line"></i> <span data-i18n="de_sec_conns">连线关系</span></h3>
                 <ul class="ed-conn-list" id="connList"></ul>
                 <div class="ed-btn-row">
-                    <button class="ed-mini-btn" id="btnDupCard"><i class="fa-regular fa-copy"></i> 复制卡片</button>
+                    <button class="ed-mini-btn" id="btnDupCard"><i class="fa-regular fa-copy"></i> <span data-i18n="de_btn_dup_card">复制卡片</span></button>
                 </div>
 
                 <datalist id="playerList"></datalist>
@@ -344,41 +354,41 @@
     <!-- ===== 模板弹窗 ===== -->
     <div class="de-modal-overlay" id="templateModal" style="display:none;">
         <div class="de-modal">
-            <div class="de-modal-title"><i class="fa-solid fa-wand-magic-sparkles"></i> 从模板生成对阵表</div>
+            <div class="de-modal-title"><i class="fa-solid fa-wand-magic-sparkles"></i> <span data-i18n="de_tpl_modal_title">从模板生成对阵表</span></div>
             <div class="de-modal-body">
                 <div class="de-form-row">
-                    <label class="de-form-label">模板类型</label>
+                    <label class="de-form-label" data-i18n="de_fld_tpl_type">模板类型</label>
                     <select id="tplType" class="de-form-input">
-                        <option value="single">单败淘汰赛（含种子排位 / 轮空 / 季军赛）</option>
-                        <option value="groups">小组循环 + 淘汰赛</option>
+                        <option value="single" data-i18n="de_tpl_single">单败淘汰赛（含种子排位 / 轮空 / 季军赛）</option>
+                        <option value="groups" data-i18n="de_tpl_groups">小组循环 + 淘汰赛</option>
                     </select>
                 </div>
                 <div class="de-form-row">
-                    <label class="de-form-label">标题</label>
-                    <input type="text" id="tplTitle" class="de-form-input" placeholder="2026乒乓球单打淘汰赛">
+                    <label class="de-form-label" data-i18n="de_fld_title">标题</label>
+                    <input type="text" id="tplTitle" class="de-form-input" placeholder="2026乒乓球单打淘汰赛" data-i18n-placeholder="de_ph_draw_title">
                 </div>
                 <div class="de-form-row">
-                    <label class="de-form-label">关联赛事</label>
-                    <select id="tplCompetition" class="de-form-input"><option value="">（不关联）</option></select>
+                    <label class="de-form-label" data-i18n="de_fld_tpl_comp">关联赛事</label>
+                    <select id="tplCompetition" class="de-form-input"><option value="" data-i18n="de_opt_none">（不关联）</option></select>
                 </div>
                 <div class="de-form-row" id="tplEntriesRow">
-                    <label class="de-form-label">参赛名单（每行一位，按种子顺序排列；人数自动补齐到 2 的幂，多余位轮空）</label>
-                    <textarea id="tplEntries" class="de-form-input" rows="6" placeholder="祁子傲&#10;陈瑜萱&#10;任峻贤&#10;..."></textarea>
+                    <label class="de-form-label" data-i18n="de_tpl_entries">参赛名单（每行一位，按种子顺序排列；人数自动补齐到 2 的幂，多余位轮空）</label>
+                    <textarea id="tplEntries" class="de-form-input" rows="6" placeholder="祁子傲&#10;陈瑜萱&#10;任峻贤&#10;..." data-i18n-placeholder="de_ph_entries"></textarea>
                 </div>
                 <div class="de-form-row de-form-check" id="tplThirdRow">
-                    <label class="de-check-label"><input type="checkbox" id="tplThird"> 附加季军赛（半决赛负者互赛）</label>
+                    <label class="de-check-label"><input type="checkbox" id="tplThird"> <span data-i18n="de_tpl_third">附加季军赛（半决赛负者互赛）</span></label>
                 </div>
                 <div class="de-form-row" id="tplGroupsRow" style="display:none;">
-                    <label class="de-form-label">分组（每组一行：「组名: 选手1、选手2、选手3」）</label>
-                    <textarea id="tplGroups" class="de-form-input" rows="5" placeholder="A组: 张三、李四、王五&#10;B组: 赵六、钱七&#10;C组: ...&#10;D组: ..."></textarea>
+                    <label class="de-form-label" data-i18n="de_tpl_group_fmt">分组（每组一行：「组名: 选手1、选手2、选手3」）</label>
+                    <textarea id="tplGroups" class="de-form-input" rows="5" placeholder="A组: 张三、李四、王五&#10;B组: 赵六、钱七&#10;C组: ...&#10;D组: ..." data-i18n-placeholder="de_ph_groups"></textarea>
                 </div>
                 <div class="de-form-row de-form-check" id="tplKoRow" style="display:none;">
-                    <label class="de-check-label"><input type="checkbox" id="tplKo" checked> 生成淘汰赛阶段（组首位晋级）</label>
+                    <label class="de-check-label"><input type="checkbox" id="tplKo" checked> <span data-i18n="de_tpl_ko">生成淘汰赛阶段（组首位晋级）</span></label>
                 </div>
             </div>
             <div class="de-modal-footer">
-                <button class="de-btn" id="tplCancel">取消</button>
-                <button class="de-btn de-btn-primary" id="tplGenerate"><i class="fa-solid fa-wand-magic-sparkles"></i> 生成</button>
+                <button class="de-btn" id="tplCancel" data-i18n="de_cancel">取消</button>
+                <button class="de-btn de-btn-primary" id="tplGenerate"><i class="fa-solid fa-wand-magic-sparkles"></i> <span data-i18n="de_generate">生成</span></button>
             </div>
         </div>
     </div>
@@ -386,15 +396,15 @@
     <!-- ===== JSON 抽屉 ===== -->
     <div class="de-modal-overlay" id="jsonModal" style="display:none;">
         <div class="de-modal" style="max-width:760px;">
-            <div class="de-modal-title"><i class="fa-solid fa-code"></i> 当前对阵表 JSON（保存时自动清理默认值）</div>
+            <div class="de-modal-title"><i class="fa-solid fa-code"></i> <span data-i18n="de_json_modal_title">当前对阵表 JSON（保存时自动清理默认值）</span></div>
             <div class="de-modal-body">
                 <textarea id="jsonText" class="de-form-input" rows="18" style="font-family:'JetBrains Mono',monospace;font-size:0.74rem;white-space:pre;"></textarea>
-                <p class="ed-hint">「应用修改」会以这里的内容替换当前对阵表（可粘贴单个对象或整个 draws.json 数组，粘贴数组会整体替换所有对阵表）。</p>
+                <p class="ed-hint" data-i18n="de_json_hint">「应用修改」会以这里的内容替换当前对阵表（可粘贴单个对象或整个 draws.json 数组，粘贴数组会整体替换所有对阵表）。</p>
             </div>
             <div class="de-modal-footer">
-                <button class="de-btn" id="jsonCopy"><i class="fa-regular fa-clipboard"></i> 复制</button>
-                <button class="de-btn de-btn-primary" id="jsonApply"><i class="fa-solid fa-check"></i> 应用修改</button>
-                <button class="de-btn" id="jsonClose">关闭</button>
+                <button class="de-btn" id="jsonCopy"><i class="fa-regular fa-clipboard"></i> <span data-i18n="de_copy">复制</span></button>
+                <button class="de-btn de-btn-primary" id="jsonApply"><i class="fa-solid fa-check"></i> <span data-i18n="de_apply">应用修改</span></button>
+                <button class="de-btn" id="jsonClose" data-i18n="de_close">关闭</button>
             </div>
         </div>
     </div>
@@ -402,27 +412,28 @@
     <!-- ===== 导入弹窗 ===== -->
     <div class="de-modal-overlay" id="importModal" style="display:none;">
         <div class="de-modal">
-            <div class="de-modal-title"><i class="fa-solid fa-file-import"></i> 导入 JSON</div>
+            <div class="de-modal-title"><i class="fa-solid fa-file-import"></i> <span data-i18n="de_import_modal_title">导入 JSON</span></div>
             <div class="de-modal-body">
                 <div class="de-form-row">
-                    <label class="de-form-label">粘贴 draws.json（数组 = 整体替换；单个对象 = 追加为一张新表）</label>
+                    <label class="de-form-label" data-i18n="de_import_hint">粘贴 draws.json（数组 = 整体替换；单个对象 = 追加为一张新表）</label>
                     <textarea id="importText" class="de-form-input" rows="10" style="font-family:'JetBrains Mono',monospace;font-size:0.74rem;"></textarea>
                 </div>
                 <div class="de-form-row">
-                    <label class="de-check-label"><input type="checkbox" id="importFile"> 或从本地文件导入（覆盖粘贴内容）</label>
+                    <label class="de-check-label"><input type="checkbox" id="importFile"> <span data-i18n="de_import_file">或从本地文件导入（覆盖粘贴内容）</span></label>
                     <input type="file" id="importFileInput" accept=".json,application/json" style="display:none;">
                 </div>
                 <div class="de-form-row">
-                    <label class="de-check-label"><input type="checkbox" id="importUpgrade" checked> 自动把 v2 旧格式升级为 v3</label>
+                    <label class="de-check-label"><input type="checkbox" id="importUpgrade" checked> <span data-i18n="de_import_upgrade">自动把 v2 旧格式升级为 v3</span></label>
                 </div>
             </div>
             <div class="de-modal-footer">
-                <button class="de-btn" id="importCancel">取消</button>
-                <button class="de-btn de-btn-primary" id="importApply"><i class="fa-solid fa-check"></i> 导入</button>
+                <button class="de-btn" id="importCancel" data-i18n="de_cancel">取消</button>
+                <button class="de-btn de-btn-primary" id="importApply"><i class="fa-solid fa-check"></i> <span data-i18n="de_import">导入</span></button>
             </div>
         </div>
     </div>
 
+    <script src="js/common.js"></script>
     <script src="js/draws-core.js"></script>
     <script src="js/draws-editor.js"></script>
 </body>

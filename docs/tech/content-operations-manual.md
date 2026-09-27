@@ -27,8 +27,8 @@
 
 ```
 data/qa/
-├── index.json              ← 生成：列表元数据（id/date/title/excerpt/tag/media/visible）
-├── search.json             ← 生成：搜索索引（id/date/title/excerpt/content）
+├── index.json              ← 生成：列表元数据（id/date/title/excerpt/tag/media/visible + *_en）
+├── search.json             ← 生成：搜索索引（id/date/title/excerpt/content + *__en）
 └── q1/                     ← 条目文件夹（一个条目一个文件夹）
     ├── q1.json             ← 手动维护：条目数据（唯一数据源）
     ├── q1.md               ← 手动维护：正文 Markdown（可选，由 contentFile 引用）
@@ -85,7 +85,26 @@ news / competitions 结构与 qa 完全一致。
 | `"content": "正文……"` | 正文很短、无换行/格式时；需要把换行写成 `\n` |
 | `"contentFile": "q1.md"` | **推荐**：正文较长时，直接引用 Markdown 文件（见第 4 章） |
 
-### 3.4 媒体附件（可选）
+### 3.4 英文字段 `_en`（可选，但站点已全量补齐）
+
+站点右上角可切换英文（EN）。正文类内容用**同级 `_en` 字段**承载英文，而不是查字典：
+
+| 字段 | 对应中文 | 说明 |
+| --- | --- | --- |
+| `title_en` | `title` | 英文标题 |
+| `excerpt_en` | `excerpt` | 英文摘要（纯文本，**不能**放 `{{media:...}}` 占位符） |
+| `content_en` | `content` | 英文正文，Markdown 结构与中文版对应 |
+| `contentFile_en` | `contentFile` | 当正文用 `contentFile` 引用 `.md` 文件时，英文正文放在 `*.en.md` 同目录文件 |
+
+规则：
+
+- 字段**可选**。缺失时英文模式自动回退显示中文内容（不会白屏），`sync_content.py` 会 warn 提示漏译。
+- `content_en` 里的 `{{media:N}}` / `{{media:mid}}` 占位符必须与中文版**一一对应**（序号相同），否则英文版会丢图或错位。脚本会校验并 warn。
+- `_en` 字段参与版本快照：修改译文等同于修改内容，会归档出新的历史版本。
+- `index.json` / `search.json` 会带上 `_en` 字段，所以**英文关键词可以搜到英文正文**。
+- 不要给 `tag` 加 `_en`：`tag` 是白名单校验的分类键，界面上的英文分类名走 `js/common.js` 字典（`tag_*`）。
+
+### 3.5 媒体附件（可选）
 
 ```json
 "media": [
@@ -97,7 +116,7 @@ news / competitions 结构与 qa 完全一致。
 
 `src` 为站点根目录相对路径。同步脚本会校验文件真实存在，不存在时输出警告。
 
-### 3.5 生成索引
+### 3.6 生成索引
 
 ```bash
 python tools/sync_content.py

@@ -5,6 +5,12 @@
     "passScore": 60,
     "description": "观看发球视频，判断抛球角度是否合规。视频文件存放于 assets/videos/umpire/，按题目 id 命名。"
   },
+  "meta_en": {
+    "title": "Table Tennis Umpire Training",
+    "version": 1,
+    "passScore": 60,
+    "description": "Watch the serve videos and judge whether the ball toss angle is legal. The video files are stored in assets/videos/umpire/, named after the question id."
+  },
   "questions": [
     {
       "id": "toss-001",
@@ -12,12 +18,14 @@
       "topic": "toss-angle",
       "video": "assets/videos/umpire/toss-001.mp4",
       "prompt": "观察这次发球的抛球动作，从镜头视角判断：抛球是否接近垂直？",
+      "prompt_en": "Watch the ball toss in this serve and judge from the camera angle: is the ball tossed close to vertically?",
       "options": [
-        { "id": "a", "label": "近乎垂直上抛 —— 合规" },
-        { "id": "b", "label": "明显斜抛（偏离垂直线过大）—— 违例" }
+        { "id": "a", "label": "近乎垂直上抛 —— 合规", "label_en": "Near-vertical toss —— legal" },
+        { "id": "b", "label": "明显斜抛（偏离垂直线过大）—— 违例", "label_en": "Clearly angled toss (too far off the vertical) —— fault" }
       ],
       "answer": "a",
       "explanation": "规则要求球应被近乎垂直地向上抛起，不得旋转，且升起后不得触碰任何物体。本球抛球轨迹接近垂直，合规。",
+      "explanation_en": "The rules require the ball to be tossed up close to vertically, without imparting spin, and once it has risen it must not touch any object. The ball here is tossed close to vertically, so it is legal.",
       "ruleRef": "ITTF Handbook 2.6.2"
     },
     {
@@ -26,12 +34,14 @@
       "topic": "toss-angle",
       "video": "assets/videos/umpire/toss-002.mp4",
       "prompt": "这次发球中，抛球角度是否存在问题？",
+      "prompt_en": "In this serve, is there a problem with the ball toss angle?",
       "options": [
-        { "id": "a", "label": "近乎垂直上抛 —— 合规" },
-        { "id": "b", "label": "明显斜抛（偏离垂直线过大）—— 违例" }
+        { "id": "a", "label": "近乎垂直上抛 —— 合规", "label_en": "Near-vertical toss —— legal" },
+        { "id": "b", "label": "明显斜抛（偏离垂直线过大）—— 违例", "label_en": "Clearly angled toss (too far off the vertical) —— fault" }
       ],
       "answer": "b",
       "explanation": "抛球明显向身体方向斜抛，偏离垂直线，属于违规发球，应判发球方失分（正式比赛中首次通常警告）。",
+      "explanation_en": "The ball is clearly tossed at an angle towards the body, away from the vertical line. This is an illegal serve and the server loses the point (in a formal match this is usually a warning first).",
       "ruleRef": "ITTF Handbook 2.6.2"
     },
     {
@@ -40,12 +50,14 @@
       "topic": "toss-angle",
       "video": "assets/videos/umpire/toss-003.mp4",
       "prompt": "综合抛球轨迹与出手动作，这次发球是否合规？",
+      "prompt_en": "Taking both the ball-toss trajectory and the hitting motion into account, is this serve legal?",
       "options": [
-        { "id": "a", "label": "近乎垂直上抛 —— 合规" },
-        { "id": "b", "label": "明显斜抛（偏离垂直线过大）—— 违例" }
+        { "id": "a", "label": "近乎垂直上抛 —— 合规", "label_en": "Near-vertical toss —— legal" },
+        { "id": "b", "label": "明显斜抛（偏离垂直线过大）—— 违例", "label_en": "Clearly angled toss (too far off the vertical) —— fault" }
       ],
       "answer": "a",
       "explanation": "虽然引拍动作较大，但抛球本身近乎垂直且高度足够（≥16cm），不构成违例。",
+      "explanation_en": "Although the backswing is large, the ball itself is tossed close to vertically and high enough (>=16 cm), so it does not constitute an offence.",
       "ruleRef": "ITTF Handbook 2.6.1 / 2.6.2"
     }
   ]

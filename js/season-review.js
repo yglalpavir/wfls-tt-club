@@ -16,6 +16,9 @@ const SR_WTT = typeof window.SR_WTT_MODE !== 'undefined' && !!window.SR_WTT_MODE
 
 function srTimeline() { return SR_WTT ? wttRankingTimeline : rankingTimeline; }
 
+/* 类型展示名：club 走 club 映射、WTT 走 WTT 映射（数据值本身永不改动） */
+function srTypeLabel(v) { return SR_WTT ? wttEventTypeLabel(v) : eventTypeLabel(v); }
+
 function srPlayerLink(name) {
     /* WTT 复用站点规范链接（uid + 缓存；双打对组按站点惯例整体为一个身份） */
     if (SR_WTT) { return (typeof wttLinkPlayerName === 'function') ? wttLinkPlayerName(name) : escapeHtml(String(name)); }
@@ -50,6 +53,16 @@ function srLoadingHtml() {
     </div>`;
 }
 
+/* 赛季下拉：选项文案走 seasonLabel（语言切换时在对应数据上下文内重建，保留当前选中） */
+function srBuildSeasonOptions() {
+    const sel = document.getElementById('srSeasonSelect');
+    if (!sel) return null;
+    const cur = sel.value;
+    sel.innerHTML = seasonsData.map((s, i) => `<option value="${i}">${escapeHtml(seasonLabel(String(s.label || s.id || i)))}</option>`).join('');
+    if (cur !== '' && [...sel.options].some(o => o.value === cur)) sel.value = cur;
+    return sel;
+}
+
 async function initSeasonReview() {
     const body = document.getElementById('seasonReviewBody');
     if (!body || srState.ready || srState.loading) return;
@@ -65,11 +78,10 @@ async function initSeasonReview() {
     let si = -1;
     const want = new URLSearchParams(window.location.search).get('season');
     const srInit = () => {
-        const sel = document.getElementById('srSeasonSelect');
         // 快照当前赛季清单（WTT 模式下 change 触发时 swap 已恢复，不能再引用 seasonsData）
         const seasonIds = seasonsData.map(s => String(s.id || ''));
+        const sel = srBuildSeasonOptions();
         if (sel) {
-            sel.innerHTML = seasonsData.map((s, i) => `<option value="${i}">${escapeHtml(String(s.label || s.id || i))}</option>`).join('');
             sel.addEventListener('change', () => {
                 srRenderInContext(parseInt(sel.value, 10));
                 // 深链同步：?season=<id> 可直接分享某个赛季的总结
@@ -95,6 +107,8 @@ async function initSeasonReview() {
 /* 语言切换整体重渲染（setLanguage 探测 seasonReviewReapplyI18n） */
 function seasonReviewReapplyI18n() {
     if (!srState.ready || srState.seasonIndex < 0) return;
+    if (SR_WTT && typeof wttWithDataContext === 'function') wttWithDataContext(srBuildSeasonOptions);
+    else srBuildSeasonOptions();
     srRenderInContext(srState.seasonIndex);
 }
 
@@ -529,7 +543,7 @@ function renderSeasonReview(si) {
                 <div class="sr-best-line">
                     <span class="sr-best-score">+${b.rawGain.toFixed(1)}</span>
                     <span>${srPlayerLink(b.w)} <i class="fa-solid fa-arrow-right-long" style="color:var(--text-tertiary);"></i> ${srPlayerLink(b.l)}</span>
-                    <span class="sr-best-meta">${escapeHtml(b.date)} · ${escapeHtml(b.type)} · ${L.sr_best_gap} ${b.gap}</span>
+                    <span class="sr-best-meta">${escapeHtml(b.date)} · ${escapeHtml(srTypeLabel(b.type))} · ${L.sr_best_gap} ${b.gap}</span>
                 </div>
             </div>`;
     }
@@ -537,7 +551,7 @@ function renderSeasonReview(si) {
     /* --- 局分亮点 --- */
     let gamesHtml = '';
     if (gameStats.games.length) {
-        const listHtml = [...gameStats.games].reverse().map(r => `<tr><td>${escapeHtml(r['日期'])}</td><td>${escapeHtml(r['类型'])}</td><td>${srPlayerLink(r['胜者'])} ${i18n[currentLang].score_result_win} ${srPlayerLink(r['负者'])}</td><td>${r['比分'] ? escapeHtml(r['比分']) : '-'}</td><td title="${L.sb_games_label}：${escapeHtml(r['局分'].join(' '))}">${escapeHtml(r['局分'].join(' '))}</td></tr>`).join('');
+        const listHtml = [...gameStats.games].reverse().map(r => `<tr><td>${escapeHtml(r['日期'])}</td><td>${escapeHtml(srTypeLabel(r['类型']))}</td><td>${srPlayerLink(r['胜者'])} ${i18n[currentLang].score_result_win} ${srPlayerLink(r['负者'])}</td><td>${r['比分'] ? escapeHtml(r['比分']) : '-'}</td><td title="${L.sb_games_label}：${escapeHtml(r['局分'].join(' '))}">${escapeHtml(r['局分'].join(' '))}</td></tr>`).join('');
         gamesHtml = `
             <div class="personal-card glass-card sr-card">
                 <div class="sr-card-header"><i class="fa-solid fa-table-cells-large"></i><h3>${L.sr_games_title}</h3></div>
@@ -605,7 +619,7 @@ function renderSeasonReview(si) {
                 ${kpiBonus}
                 ${kpiTypes}
             </div>
-            ${Object.keys(typeCount).length ? `<div class="sr-types">${Object.entries(typeCount).sort((a, b) => b[1] - a[1]).map(([t, n]) => `<span class="sr-type-badge">${escapeHtml(t)} <strong>×${n}</strong></span>`).join('')}</div>` : ''}
+            ${Object.keys(typeCount).length ? `<div class="sr-types">${Object.entries(typeCount).sort((a, b) => b[1] - a[1]).map(([t, n]) => `<span class="sr-type-badge">${escapeHtml(srTypeLabel(t))} <strong>×${n}</strong></span>`).join('')}</div>` : ''}
             ${pointsHtml}
             ${srBuildDailyCardHtml(srDaily)}
             <div class="sr-grid-2">${streakHtml}${attendHtml}</div>

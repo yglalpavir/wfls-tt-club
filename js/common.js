@@ -225,7 +225,7 @@ const i18n = {
         wtt_file_matches: "比赛记录", wtt_file_initial: "初始积分", wtt_file_event: "赛事系数", wtt_file_season: "赛季配置",
         wtt_prepare: "准备下载数据文件...", wtt_downloading: "正在下载 {label} ({i}/{total}): {file}", wtt_calculating: "正在计算排名积分...", wtt_snapshot: "快照 {current}/{total}", wtt_elapsed: "已用时 {s}s",
         wtt_default_season: "默认赛季", wtt_node_count: "{n}个节点", wtt_ppl: "{n}人",
-        wtt_no_records: "暂无记录", wtt_no_data: "暂无排名数据", wtt_cant_compute: "无法计算WTT排名数据", wtt_bonus: "加分",
+        wtt_no_records: "暂无记录", wtt_cant_compute: "无法计算WTT排名数据", wtt_bonus: "加分",
         wtt_no_players: "暂无球员数据", wtt_select_player: "-- 选择球员 --", wtt_compare_btn: "对比", wtt_compare_placeholder: "选择两名球员进行对比分析",
         wtt_alert_select_one: "请至少选择一名球员", wtt_alert_max: "最多选择15名球员", wtt_alert_two: "请选择两名球员", wtt_alert_diff: "请选择不同的球员",
         wtt_axis_points: "积分", wtt_axis_rank: "排名", wtt_rank_suffix: "第{n}名",
@@ -334,7 +334,426 @@ const i18n = {
         md_occurrence: "当日第 {n} 场",
         md_official: "Official",
         md_periods_title: "逐局比分", md_final_col: "赛果", md_game_col: "第 {n} 局",
-        md_tabs_games: "局分", md_tabs_points: "积分明细", md_tabs_pred: "胜率预测", md_tabs_h2h: "历史交锋"
+        md_tabs_games: "局分", md_tabs_points: "积分明细", md_tabs_pred: "胜率预测", md_tabs_h2h: "历史交锋",
+        /* ---- docs browser (missing keys) ---- */
+        docs_copy_text: "复制全文", docs_copy_link: "复制链接",
+        nav_aria_search: "搜索", nav_aria_theme: "切换主题", nav_aria_lang: "切换语言", nav_aria_menu: "菜单",
+        wtt_win: "胜",
+        /* ---- 事件类型词典（显示层；数据键保持中文） ---- */
+        ev_normal: "普通", ev_ranked: "排位赛", ev_challenge: "挑战赛", ev_school_league: "校乒联赛", ev_top12: "十二强赛", ev_school_team: "校乒赛团体", ev_school_singles: "校乒赛单打", ev_doubles: "双打",
+        /* ---- WTT 赛事类型词典 ---- */
+        wtt_ev_tleague: "T联赛", wtt_ev_ittf_open: "ittf公开赛", wtt_ev_ittf_regular: "ittf常规赛", wtt_ev_ittf_platinum: "ittf白金赛", wtt_ev_worlds: "世乒赛", wtt_ev_worlds_team: "世乒赛团体", wtt_ev_worldcup: "世界杯", wtt_ev_worldcup_team: "世界杯团体", wtt_ev_csl: "乒超联赛", wtt_ev_asiad: "亚运会", wtt_ev_asiad_team: "亚运会团体", wtt_ev_alljapan: "全日锦", wtt_ev_nationalgames: "全运会", wtt_ev_nationals: "全锦赛", wtt_ev_champions: "冠军赛", wtt_ev_grandsmash: "大满贯", wtt_ev_olympics: "奥运会", wtt_ev_olympics_team: "奥运会团体", wtt_ev_challenge_reg: "常规挑战赛", wtt_ev_dfbpokal: "德国杯", wtt_ev_bundesliga: "德甲联赛", wtt_ev_bundesliga_final: "德甲联赛决赛", wtt_ev_bundesliga_semi: "德甲联赛半决赛", wtt_ev_finals: "总决赛", wtt_ev_feeder: "支线赛", wtt_ev_euroleague_team: "欧冠团体", wtt_ev_continental_cup: "洲杯赛", wtt_ev_continental_champs: "洲锦赛", wtt_ev_continental_team: "洲锦赛团体", wtt_ev_star: "球星挑战赛",
+        /* ---- 赛季标签词典（按 seasons.json id/label 查；label 是引擎 join key 不可改） ---- */
+        season_2026_spring: "2026年春季学期", season_2026_summer: "2026年暑假", season_2026_autumn: "2026年秋季学期",
+        /* ---- 球员标签 / 荣誉词典 ---- */
+        ptag_school_team: "校队成员", ptag_grand_slam: "大满贯", ptag_pres_2627: "26-27年社长", ptag_vp_2627: "26-27年副社长", ptag_pres_2526: "25-26年社长", ptag_vp_2526: "25-26年副社长", ptag_vp_2425: "24-25年副社长", ptag_penholder1: "校一直板", ptag_penholder2: "校二直板",
+        phonor_s25_singles_1: "校乒赛2025单打冠军", phonor_s26_singles_1: "校乒赛2026单打冠军", phonor_s26_singles_2: "校乒赛2026单打亚军", phonor_s26_singles_3: "校乒赛2026单打季军", phonor_s26_team_1: "校乒赛2026团体冠军", phonor_s26_team_2: "校乒赛2026团体亚军", phonor_s26_team_3: "校乒赛2026团体季军", phonor_s25_team_3: "校乒赛2025团体季军",
+        ps_tag_group_leaders: "社长/副社长",
+        /* ---- 通用日期模板 ---- */
+        date_ymd: "{y}年{m}月{d}日", date_ym: "{y}年{m}月", date_md: "{m}月{d}日",
+        /* ---- SEO keywords（<meta name="keywords">） ---- */
+        home_kw: "武汉外国语学校,乒乓球,社团,WFLS,Table Tennis,排名,积分",
+        news_kw: "武汉外国语学校,WFLS,乒乓球,社团动态,训练安排,比赛公告",
+        comp_kw: "武汉外国语学校,WFLS,乒乓球,比赛,赛事,成绩",
+        members_kw: "武汉外国语学校,WFLS,乒乓球,社团成员,骨干",
+        rank_kw: "武汉外国语学校,WFLS,乒乓球,积分排名,ELO,排名系统",
+        data_viz_kw: "武汉外国语学校,WFLS,乒乓球,数据可视化,积分趋势,排名变化",
+        data_viz_meta_desc: "WFLS 乒乓球社团数据可视化。积分趋势图、排名变化河流图、球员对比分析。",
+        data_viz_race_play_aria: "播放/暂停",
+        personal_stats_kw: "武汉外国语学校,WFLS,乒乓球,个人数据,球员数据,战绩分析",
+        personal_stats_meta_desc: "WFLS 乒乓球社团个人数据。查看球员个人战绩、胜率、对手分析等详细数据。",
+        detail_kw: "武汉外国语学校,WFLS,乒乓球,详情",
+        md_kw: "武汉外国语学校,WFLS,乒乓球,比赛详情,比分,局分,积分,胜率,交锋",
+        qa_kw: "武汉外国语学校,WFLS,乒乓球,常见问题,问答,Q&A",
+        changelog_kw: "武汉外国语学校,WFLS,乒乓球,更新日志,Changelog,版本历史",
+        contact_kw: "武汉外国语学校,WFLS,乒乓球,加入社团,QQ群",
+        submit_kw: "武汉外国语学校,WFLS,乒乓球,提交战绩,比赛记录,积分",
+        sr_kw: "武汉外国语学校,WFLS,乒乓球,赛季总结,积分变化,连胜,积分调整",
+        wtt_hub_kw: "WTT,世界乒联,乒乓球,积分排名,男子单打,女子单打,男子双打,女子双打,混合双打",
+        wtt_ranking_kw: "WTT,世界乒联,乒乓球,积分排名,国际乒联",
+        wtt_player_kw: "WTT,世界乒联,乒乓球,个人数据,球员数据,战绩分析",
+        wtt_ps_kw: "WTT,世界乒联,乒乓球,个人数据,球员数据,战绩分析",
+        wtt_dataviz_kw: "WTT,世界乒联,乒乓球,数据可视化,积分趋势,排名变化",
+        wtt_assoc_kw: "WTT,世界乒联,乒乓球,协会数据,协会排名,实力榜,对抗矩阵",
+        /* ---- docs 浏览器静态控件 ---- */
+        docs_filter_ph: "在当前目录筛选…", docs_filter_files_aria: "筛选文件",
+        docs_scope_title: "搜索范围：当前目录", docs_view_toggle_title: "切换视图",
+        docs_breadcrumb_aria: "目录路径", docs_type_filter_aria: "按类型筛选",
+        docs_sort_name: "名称", docs_preview_aria: "文件预览",
+        media_download_file: "下载文件",
+        /* ---- 页面级文案：SEO / 404 / ranking / WTT / admin（补齐 HTML 已引用但字典缺失的 key） ---- */
+        nf_page_title: "404 - 页面未找到 | WFLS Table Tennis Club",
+        nf_meta_desc: "WFLS Table Tennis Club - 页面未找到",
+        nf_title: "这里不存在页面~",
+        nf_desc: "你访问的页面可能已被移除、更名，或暂时不可用。",
+        nf_guess: "猜你想找",
+        nf_home: "返回首页",
+        nf_news: "新闻",
+        nf_ranking: "排名",
+        nf_countdown: "秒后自动跳转回首页",
+        home_meta_desc: "武汉外国语学校乒乓球社团官方网站。了解社团理念、活动，查看最新动态和赛事信息。",
+        home_og_title: "武汉外国语学校乒乓球社团",
+        home_og_desc: "WFLS Table Tennis Club - 挥拍逐梦，旋转青春",
+        home_rss_title: "WFLS Table Tennis Club - 社团动态",
+        news_feed_title: "WFLS Table Tennis Club - 社团动态",
+        home_ball_title: "🌟 彩蛋：3D 乒乓球",
+        home_ball_aria: "彩蛋：3D 乒乓球",
+        home_last_updated: "上次更新：获取中...",
+        home_search_clear_aria: "清空搜索词",
+        home_search_close_aria: "关闭搜索",
+        mrank_search_clear: "清空搜索",
+        news_meta_desc: "WFLS 乒乓球社团最新动态。查看社团活动通知、训练安排、比赛公告等。",
+        comp_meta_desc: "WFLS 乒乓球社团赛事信息。查看比赛安排、成绩记录、赛事回顾。",
+        qa_meta_desc: "WFLS 乒乓球社团常见问题解答。查看加入社团、活动安排、积分系统等常见问题。",
+        changelog_meta_desc: "WFLS 乒乓球社团网站更新日志。记录网站版本更新历史和功能变更。",
+        contact_meta_desc: "加入 WFLS 乒乓球社团。扫描二维码加入社团QQ群。",
+        members_meta_desc: "WFLS 乒乓球社团骨干成员介绍。",
+        detail_meta_desc: "WFLS 乒乓球社团内容详情页。查看新闻、赛事、成员等详细内容。",
+        detail_shell_title: "标题",
+        md_meta_desc: "WFLS 乒乓球社团单场比赛详情：大比分、局分、双方赛前赛后积分、积分产生明细、赛前胜率预测与历史交锋。",
+        player_meta_desc: "WFLS 乒乓球社团球员个人主页。查看球员个人战绩、胜率、积分趋势、对手分析等详细数据。",
+        player_meta_desc_short: "WFLS 乒乓球社团球员个人主页。",
+        player_og_title: "球员个人数据 | WFLS Table Tennis Club",
+        rank_meta_desc: "WFLS 乒乓球社团积分排名系统。基于 ELO 变体算法自动计算，支持多时间节点对比。",
+        sr_meta_desc: "WFLS 乒乓球社团赛季总结：积分变化、连胜榜、出勤榜、单场之最、局分亮点与积分调整审计。",
+        submit_meta_desc: "提交 WFLS 乒乓球社团比赛战绩。填写比赛结果，管理员审核通过后自动计入积分排名。",
+        submit_og_desc: "填写比赛结果，管理员审核通过后自动计入积分排名。",
+        ut_meta_desc: "WFLS 乒乓球社团彩蛋：乒乓球裁判特训。观看发球视频，判断抛球角度是否合规。",
+        ut_title: "🌟乒乓球裁判特训🌟 | WFLS Table Tennis Club",
+        ut_hero_title: "🌟乒乓球裁判特训🌟",
+        ut_hero_sub: "观察发球 · 判断抛球角度 · 练就火眼金睛",
+        rank_submit_aria: "提交比赛战绩",
+        rank_mode_aria: "积分项目",
+        rank_sort_default: "积分降序",
+        rank_loading_hint: "加载排名数据中...",
+        rank_egg_title: "你发现了一个彩蛋",
+        rank_egg_desc: "基于武外乒乓球社积分规则的 WTT排名",
+        rank_egg_btn: "进入查看",
+        sb_games_title: "如 11-9, 8-11, 11-7",
+        wtt_hub_meta_desc: "WTT 国际乒联积分排名中心 · 男子单打 / 女子单打 / 男子双打 / 女子双打 / 混合双打",
+        wtt_ranking_meta_desc: "WTT 国际乒联积分排名 · 基于ELO变体算法模拟 · 彩蛋页面",
+        wtt_match_meta_desc: "WTT 比赛详情（彩蛋页）：双方赛前赛后积分、积分产生明细、赛前胜率预测与历史交锋。",
+        wtt_match_og_title: "WTT 比赛详情 | WFLS TT Club",
+        wtt_ps_meta_desc: "WTT 国际乒联积分排名 · 个人数据 · 对手分析",
+        wtt_ps_page_title: "WTT 个人数据 🥚 | WFLS Table Tennis Club",
+        wtt_player_meta_desc: "WTT 国际乒联积分球员个人主页。查看球员个人战绩、胜率、积分趋势、对手分析等详细数据。",
+        wtt_player_page_title: "WTT 球员个人数据 | WFLS Table Tennis Club",
+        wtt_player_cat_fallback: "个人页",
+        wtt_dataviz_meta_desc: "WTT 国际乒联积分排名数据可视化。积分趋势图、排名变化河流图、球员对比分析。",
+        wtt_dataviz_page_title: "WTT 数据可视化 🥚 | WFLS Table Tennis Club",
+        wtt_assoc_meta_desc: "WTT 国际乒联积分排名协会数据：协会实力总榜、球员阵容明细、协会排名变迁与协会对抗矩阵。",
+        wtt_assoc_page_title: "WTT 协会数据 🥚 | WFLS Table Tennis Club",
+        wtt_assoc_topn_hint: "统计全球 TOP-N 人数，填写 5-500 的正整数",
+        wtt_matrix_size_title: "取实力榜前 N 个协会构建矩阵，填写 3-25 的正整数",
+        wtt_sr_meta_desc: "WTT 赛季总结：积分变化、连胜榜、出勤榜、单场之最与月度快照回顾（彩蛋玩法，口径同 WTT 排名）。",
+        wtt_aria_play_pause: "播放/暂停",
+        wtt_aria_sort_field: "排序字段",
+        wtt_aria_sort_dir: "切换升序/降序",
+        wtt_topn_title_1_20: "填写1-20的任意正整数",
+        wtt_topn_title_1_66: "填写1-66的任意正整数",
+        wtt_topn_title_1_100: "填写1-100的任意正整数",
+        wtt_topn_title_2_20: "填写2-20的任意正整数",
+        wtt_date_start_hint: "起始日期，留空不限",
+        wtt_date_end_hint: "截止日期，留空不限",
+        adm_title: "数据仪表盘",
+        adm_home_title: "返回首页",
+        adm_hero_desc: "全站数据资产一览 · WTT 五项模块与核心数据实时统计",
+        adm_editor_title: "可视化编辑对阵表并导出 draws.json",
+        adm_editor: "对阵表编辑器",
+        adm_refresh_title: "重新加载全站数据",
+        adm_refresh: "刷新",
+        adm_ps_title: "待审核提交",
+        adm_se_title: "记分录入",
+        adm_se_mode_match: "比赛结果",
+        adm_se_mode_bonus: "积分调整",
+        adm_se_games_hint: "如 11-9, 8-11, 11-7",
+        adm_se_add_match: "添加记录",
+        adm_se_amount: "分数（如 +100 / -30）",
+        adm_se_add_bonus: "添加调整",
+        adm_se_export: "下载合并后的 score-log.json",
+        adm_se_clear: "清空队列",
+        adm_loading: "正在加载全站数据...",
+        /* ---- draws editor (de_*) ---- */
+        de_page_title: "对阵表编辑器 | WFLS Table Tennis Club",
+        de_meta_desc: "WFLS 乒乓球社团对阵表编辑器。可视化编辑对阵表、模板生成、导出 draws.json。",
+        de_kw: "武汉外国语学校,WFLS,乒乓球,对阵表,淘汰赛,对阵表编辑器,draws.json",
+        de_title: "对阵表编辑器",
+        de_hero_desc: "可视化编辑 · 模板生成 · 导出 draws.json",
+        de_back_admin: "返回数据仪表盘",
+        de_sel_draw: "选择要编辑的对阵表",
+        de_new_draw: "新建空白对阵表",
+        de_dup_draw: "复制当前对阵表",
+        de_del_draw: "删除当前对阵表",
+        de_from_tpl: "从模板生成",
+        de_undo: "撤销 (Ctrl+Z)",
+        de_redo: "重做 (Ctrl+Y)",
+        de_validate: "校验数据",
+        de_import: "导入",
+        de_download: "下载 draws.json",
+        de_copy_all: "复制全部 draws.json 到剪贴板",
+        de_sec_basic: "基本信息",
+        de_fld_title: "标题",
+        de_ph_draw_title: "2026乒乓球单打淘汰赛",
+        de_fld_subtitle: "副标题（可选）",
+        de_ph_subtitle: "例如：12 名选手 · 单败淘汰",
+        de_fld_comp: "关联赛事（competitionId）",
+        de_opt_none: "（不关联）",
+        de_opt_nodraw: "（无对阵表）",
+        de_sec_layout: "布局与网格",
+        de_fld_layout: "布局模式",
+        de_opt_layout_grid: "手动网格（卡片 col/row）",
+        de_opt_layout_auto: "自动堆叠（按轮次/序号）",
+        de_fld_cellw: "卡宽 cellWidth",
+        de_fld_cellh: "卡高 cellHeight",
+        de_fld_gap: "留白 gap",
+        de_fld_padx: "水平边距 padX",
+        de_fld_pady: "垂直边距 padY",
+        de_btn_arrange: "规整排布",
+        de_hint_arrange: "规整排布会依据每张卡的「轮次 col」与「列内序号 row」重排成标准淘汰赛树形。",
+        de_sec_rounds: "轮次标签（按列）",
+        de_btn_add_round: "添加列标签",
+        de_sec_look: "外观",
+        de_fld_accent: "主题色（留空用默认）",
+        de_chk_seeds: "显示种子号角标",
+        de_chk_legend: "显示图例",
+        de_btn_reset_look: "恢复默认外观",
+        de_col: "列",
+        de_ph_round: "第{n}轮",
+        de_del_short: "删除",
+        de_hint_rounds: "暂无自定义标签，查看器将使用默认轮次名。",
+        de_btn_select: "选择",
+        de_btn_connect: "连线",
+        de_mode_select: "选择模式",
+        de_mode_connect: "连线模式：点起点 → 点终点",
+        de_btn_add_match: "比赛卡",
+        de_btn_add_bye: "轮空卡",
+        de_btn_add_champion: "冠军卡",
+        de_btn_add_note: "备注卡",
+        de_btn_del_selected: "删除选中",
+        de_propagate: "依据已完赛卡片的胜者与连线，自动填充下一轮选手",
+        de_btn_propagate: "填充胜者",
+        de_zoom_fit: "适应画布",
+        de_stat_cards: "0 卡片",
+        de_stat_conns: "0 连线",
+        de_unit_cards: "卡片",
+        de_unit_conns: "连线",
+        de_stat_dirty: "有未导出的修改",
+        de_prog_done: "比赛 {done}/{total} 已完赛",
+        de_prog_live: "{n} 进行中",
+        de_empty_canvas: "没有对阵表。点击顶栏 <i class=\"fa-solid fa-plus\"></i> 新建，或用 <i class=\"fa-solid fa-wand-magic-sparkles\"></i> 从模板生成。",
+        de_ins_empty_1: "在画布上点击一张卡片开始编辑。",
+        de_ins_empty_2: "拖拽移动 · 连线模式连接晋级关系",
+        de_ins_empty_3: "Ctrl+Z 撤销 · Delete 删除选中",
+        de_ins_card: "卡片",
+        de_type_match: "比赛",
+        de_type_bye: "轮空",
+        de_type_champion: "冠军",
+        de_type_note: "备注",
+        de_fld_p1: "选手 1",
+        de_ph_player: "姓名 / 队伍",
+        de_fld_seed: "种子号",
+        de_ph_seed: "如 1",
+        de_fld_pnote: "附注（弃赛等）",
+        de_ph_optional: "可选",
+        de_fld_p2: "选手 2",
+        de_fld_pnote2: "附注",
+        de_fld_score: "总比分（如 3-1）",
+        de_fld_games: "逐局比分（每局一行，如 11-9）",
+        de_fld_winner: "胜者",
+        de_win_p1: "选手 1 胜",
+        de_win_draw: "平",
+        de_win_p2: "选手 2 胜",
+        de_fld_status: "状态",
+        de_st_auto: "自动（依据比分判断）",
+        de_st_scheduled: "待赛",
+        de_st_live: "进行中",
+        de_st_final: "已完赛",
+        de_fld_champ: "冠军选手",
+        de_fld_label: "标签文字",
+        de_ph_champ: "冠军",
+        de_fld_note_text: "备注文字",
+        de_ph_group: "A组（单循环）",
+        de_fld_col: "列 col（轮次）",
+        de_fld_row: "行 row",
+        de_fld_time: "时间（可选）",
+        de_fld_venue: "场地（可选）",
+        de_ph_venue: "1号球台",
+        de_fld_card_note: "备注（可选）",
+        de_ph_card_note: "弃赛 / 因雨顺延",
+        de_sec_conns: "连线关系",
+        de_btn_dup_card: "复制卡片",
+        de_conn_from: "来自",
+        de_conn_to: "去向",
+        de_conn_del: "删除连线",
+        de_conn_none: "无连线 — 可用顶部「连线模式」建立",
+        de_tpl_modal_title: "从模板生成对阵表",
+        de_fld_tpl_type: "模板类型",
+        de_tpl_single: "单败淘汰赛（含种子排位 / 轮空 / 季军赛）",
+        de_tpl_groups: "小组循环 + 淘汰赛",
+        de_fld_tpl_comp: "关联赛事",
+        de_tpl_entries: "参赛名单（每行一位，按种子顺序排列；人数自动补齐到 2 的幂，多余位轮空）",
+        de_ph_entries: "祁子傲\n陈瑜萱\n任峻贤\n...",
+        de_tpl_third: "附加季军赛（半决赛负者互赛）",
+        de_tpl_group_fmt: "分组（每组一行：「组名: 选手1、选手2、选手3」）",
+        de_ph_groups: "A组: 张三、李四、王五\nB组: 赵六、钱七\nC组: ...\nD组: ...",
+        de_tpl_ko: "生成淘汰赛阶段（组首位晋级）",
+        de_cancel: "取消",
+        de_generate: "生成",
+        de_json_modal_title: "当前对阵表 JSON（保存时自动清理默认值）",
+        de_json_hint: "「应用修改」会以这里的内容替换当前对阵表（可粘贴单个对象或整个 draws.json 数组，粘贴数组会整体替换所有对阵表）。",
+        de_copy: "复制",
+        de_apply: "应用修改",
+        de_close: "关闭",
+        de_import_modal_title: "导入 JSON",
+        de_import_hint: "粘贴 draws.json（数组 = 整体替换；单个对象 = 追加为一张新表）",
+        de_import_file: "或从本地文件导入（覆盖粘贴内容）",
+        de_import_upgrade: "自动把 v2 旧格式升级为 v3",
+        de_err_load: "加载 data/draws.json 失败 —— 请通过本地 HTTP 服务器打开（勿用 file://）",
+        de_toast_restore: "已恢复 {when} 未导出的编辑内容；如需仓库版本请用「导入」",
+        de_last: "上次",
+        de_toast_new: "已新建 {id}，可从模板生成或手动添加卡片",
+        de_err_no_draw: "没有可复制的对阵表",
+        de_untitled: "未命名",
+        de_copy_suffix: "（副本）",
+        de_new_draw_title: "新对阵表",
+        de_toast_dup: "已复制为 {id}",
+        de_confirm_del: "确定删除「{title}」？此操作可撤销。",
+        de_toast_undo: "已撤销",
+        de_toast_redo: "已重做",
+        de_id_empty: "（空）",
+        de_err_empty_canvas: "画布为空",
+        de_toast_arranged: "已按轮次规整排布",
+        de_toast_filled: "已填充 {n} 个空位",
+        de_toast_noprop: "没有可传播的胜者（需要已完赛卡片与连线）",
+        de_toast_conflict: "{n} 个目标位冲突，请手动检查",
+        de_err_no_drag: "自动布局模式下不可拖拽，可切换为手动网格",
+        de_confirm_del_conn: "删除连线 {from} → {to} ？",
+        de_toast_src: "已选起点 {id}，点击目标卡片完成连线（再次点击起点取消）",
+        de_err_conn_exists: "连线已存在",
+        de_toast_conn: "已连线 {from} → {to}",
+        de_err_pick_draw: "请先新建或选择一张对阵表",
+        de_confirm_del_card: "删除卡片 {id} 及其连线？",
+        de_hint_no_draw: "当前没有对阵表。",
+        de_ok: "通过",
+        de_lbl_error: "错误：",
+        de_lbl_warn: "警告：",
+        de_val_title: "校验结果（{e} 错误 / {w} 警告）",
+        de_toast_copy_json: "已复制 JSON",
+        de_err_copy: "复制失败，请手动选择文本",
+        de_toast_dup_id: "重复布表 ID 已自动改号：{list}",
+        de_join: "、",
+        de_toast_replaced: "已替换全部 {n} 张对阵表",
+        de_err_invalid: "无效对象",
+        de_toast_conflict_id: "与现有布表 ID 冲突，已自动改号：{list}",
+        de_toast_applied: "已应用当前对阵表",
+        de_err_json: "JSON 解析失败：{msg}",
+        de_toast_imported: "已导入 {n} 张对阵表",
+        de_toast_appended: "已追加为 {id}",
+        de_err_import: "导入失败：{msg}",
+        de_err_entries: "请填写参赛名单",
+        de_err_groups: "请按「组名: 选手1、选手2」格式填写分组",
+        de_err_tpl: "模板生成失败：{msg}",
+        de_toast_tpl: "模板已生成 {id}，可继续微调",
+        de_toast_download: "已下载 draws.json —— 请用它替换仓库中的 data/draws.json 并提交",
+        de_toast_copy_all: "已复制全部 draws.json 到剪贴板",
+        de_err_copy_all: "复制失败，请用 JSON 面板手动复制",
+        de_v_empty: "抽签表为空",
+        de_v_no_id: "缺少 id",
+        de_v_no_title: "缺少标题 title",
+        de_v_no_comp: "competitionId \"{id}\" 不存在",
+        de_v_card_no_id: "存在缺少 id 的卡片",
+        de_v_dup_id: "卡片 id 重复: {id}",
+        de_v_bad_winner: "卡片 {id} 的 winner 取值非法（{w}，应为 0/1/2/null）",
+        de_v_neg_pos: "卡片 {id} 的 col/row 不能为负",
+        de_v_no_players: "比赛卡 {id} 有选手空缺",
+        de_v_winner_no_score: "比赛卡 {id} 未录入比分但已设 winner",
+        de_v_no_champ: "冠军卡 {id} 未填写选手",
+        de_v_conn_from: "连线 from \"{id}\" 不存在",
+        de_v_conn_to: "连线 to \"{id}\" 不存在",
+        de_v_conn_self: "连线不能自连接: {id}",
+
+        /* ---- admin dashboard (adm_*) ---- */
+        /* 分项代号 */
+        adm_disc_ms: "男单 MS", adm_disc_ws: "女单 WS", adm_disc_wd: "女双 WD", adm_disc_md: "男双 MD", adm_disc_xd: "混双 XD",
+        /* 页头 chips */
+        adm_chips_reloading: "正在重新加载…", adm_chip_load: "加载耗时 {t}s", adm_chip_records: "WTT 记录 {n} 条",
+        /* 分区标题 */
+        adm_sec_overview: "数据总览", adm_sec_disc: "WTT 五项模块数据量", adm_sec_charts: "WTT 数据分布",
+        adm_sec_records: "记录构成与活跃选手", adm_sec_files: "核心数据文件明细", adm_sec_seasons: "赛季管理概览",
+        /* KPI 卡片 */
+        adm_kpi_wtt_records: "WTT 比赛记录", adm_kpi_wtt_records_sub: "五单项合计",
+        adm_kpi_wtt_players: "WTT 选手总数", adm_kpi_wtt_players_sub: "初始积分在册选手",
+        adm_kpi_wtt_seasons: "WTT 赛季数", adm_kpi_wtt_seasons_sub: "赛季管理",
+        adm_kpi_wtt_events: "WTT 赛事类型", adm_kpi_wtt_events_sub: "不同级别赛事",
+        adm_kpi_players: "球员档案", adm_kpi_players_sub: "统一球员数据",
+        adm_kpi_news_comp: "新闻 / 赛事", adm_kpi_news_comp_sub: "新闻 {n}{nh} · 赛事 {m}{mh}",
+        adm_hidden_suffix: "(隐藏{n})", adm_total_records: "共 {n} 条记录",
+        /* 分项卡片 */
+        adm_disc_template: "仅有模板数据", adm_disc_no_real: "暂无真实数据",
+        adm_unit_matches: "比赛记录", adm_unique_players: "独特选手", adm_share_of_total: "占全部记录",
+        /* 图表 */
+        adm_chart_trend: "历年比赛记录趋势（按分项堆叠）", adm_chart_disc: "五单项比赛记录数",
+        adm_chart_pie: "赛事类型占比（全部分项）", adm_note_unit: "条", adm_chart_center: "总记录",
+        adm_axis_records: "比赛记录数",
+        adm_tip_records: "{l}: {v} 条", adm_tip_total: "合计 {n} 条",
+        adm_tip_share: "{v} 条 · 占比 {p}%", adm_tip_records_pct: "{v} 条 ({p}%)",
+        /* TOP 选手 */
+        adm_top_players: "最活跃选手 TOP {n}", adm_top_note: "按出场场次（胜+负）", adm_rank_wl: "胜 {w} · 负 {l}",
+        /* 赛事类型明细表 */
+        adm_event_detail: "赛事类型明细", adm_event_total: "总计 {n} 条",
+        adm_th_event: "赛事类型", adm_th_records: "记录数", adm_th_share: "占比", adm_th_dist: "分布",
+        /* 核心数据文件卡片 */
+        adm_derived: "（派生）",
+        adm_unit_player_profiles: "位球员档案", adm_unit_members: "位成员", adm_unit_news: "篇新闻",
+        adm_unit_competitions: "场赛事", adm_unit_match_records: "条比赛记录", adm_unit_seasons: "个赛季",
+        adm_unit_qa: "条问答", adm_unit_changelog: "条更新日志", adm_unit_draws: "张对阵表",
+        adm_unit_players: "位球员", adm_unit_event_types: "种赛事类型", adm_unit_tags: "位球员 · {n} 种标签",
+        adm_unit_updated: "最近更新",
+        adm_pill_hidden: "隐藏 {n}", adm_pill_hidden_versions: "隐藏版本 {n}",
+        adm_share_total: "占核心总量 {p}%", adm_meta_file: "元数据文件",
+        adm_files_sub: "data/ 目录 · {n} 个文件",
+        /* 赛季管理 */
+        adm_wtt_seasons_panel: "WTT 赛季（按分项）", adm_core_seasons_panel: "社团赛季",
+        adm_seasons_count: "{n} 个赛季",
+        adm_th_name: "名称", adm_th_dates: "日期范围", adm_th_status: "状态",
+        adm_vis_on: "可见", adm_vis_off: "隐藏",
+        /* 待审核提交 */
+        adm_ps_empty: "暂无待审核提交", adm_ps_review: "去审核 →",
+        adm_ps_fail: "读取失败（GitHub 匿名 API 限流为 60 次/时/IP，请稍后刷新重试）",
+        /* 记分录入 */
+        adm_se_q_format: "赛制 {f}", adm_se_q_win: "{w} 胜 {l}", adm_se_q_games: "（{g}）", adm_se_q_adjust: "调整",
+        adm_se_pick_winner: "-- 选择胜者 --", adm_se_pick_loser: "-- 选择负者 --", adm_se_pick_player: "-- 选择球员 --",
+        adm_se_err_coef: "赛事系数加载失败", adm_se_err_players: "players.json 加载失败",
+        adm_se_err_format: "赛制仅支持 default / bo3 / bo5 / bo7",
+        adm_se_err_no_score: "已勾选记录比分，请填写总比分或逐局分数",
+        adm_se_err_total_fmt: "总比分格式应为「胜者局数-负者局数」，如 3-1",
+        adm_se_err_total_order: "总比分 {w}-{l}：胜方局数必须大于负方（胜者在前的口径）",
+        adm_se_err_total_max: "总比分 {w}-{l}：单打最多 bo7（胜方最多 4 局）",
+        adm_se_err_total_mismatch: "总比分 {w}-{l} 与赛制 {eff} 不符（需胜 {n} 局）",
+        adm_se_err_games_self: "逐局分数与总比分 {w}-{l} 不自洽（应共 {t} 局、胜方赢 {w} 局）",
+        adm_se_err_games_infer: "逐局分数推不出胜方（胜者视角，胜方赢的局须更多）",
+        adm_se_ok_match: "已添加 1 条比赛记录",
+        adm_se_err_bonus_fill: "请完整填写日期 / 对象 / 分数（数字）", adm_se_ok_bonus: "已添加 1 条积分调整",
+        adm_se_ok_cleared: "队列已清空",
+        adm_se_ok_copied: "已复制到剪贴板，可粘贴进 data/score-log.json 数组末尾",
+        adm_se_ok_downloaded: "已下载合并文件（原 {n} 条 + 新增 {m} 条）。请用下载的文件替换 data/score-log.json 并提交。",
+        adm_se_err_merge: "当前 score-log.json 加载失败，无法合并导出",
+
+        /* ---- 裁判特训彩蛋 (ut_*) ---- */
+        ut_default_title: "乒乓球裁判特训", ut_default_desc: "观看发球视频，判断抛球角度是否合规。",
+        ut_video_missing: "示范视频待补充", ut_options_aria: "选项",
+        ut_best: "历史最佳：{c}/{t}（{p}%）",
+        ut_rule_watch: "观看发球视频", ut_rule_judge: "判断抛球是否近乎垂直", ut_rule_verdict: "做出你的判罚",
+        ut_count: "共 {n} 题", ut_mode_practice: "练习模式", ut_mode_practice_desc: "逐题作答，即时反馈与解析",
+        ut_start: "开始特训", ut_step: "第 {cur} / {total} 题",
+        ut_topic_toss: "抛球角度", ut_topic_general: "综合判罚",
+        ut_verdict_ok: "判罚正确！", ut_verdict_bad: "误判了……",
+        ut_finish: "查看成绩", ut_next: "下一题",
+        ut_rank_intl: "国际级裁判", ut_rank_nat: "国家级裁判", ut_rank_certified: "持证上岗", ut_rank_trainee: "见习裁判",
+        ut_pass_title: "特训通过！", ut_fail_title: "继续加油！",
+        ut_result_detail: "答对 {c} / {t} 题 · 评级：<strong>{rank}</strong>",
+        ut_new_best: "新纪录！", ut_restart: "再来一轮", ut_back_home: "返回首页",
+        ut_load_fail: "题库加载失败，请稍后再试。", ut_reload: "重新加载"
     },
     en: {
         site_title: "WFLS Table Tennis Club | Wuhan Foreign Languages School", nav_home: "Home", nav_news: "News", nav_competitions: "Competitions", nav_contact: "Contact", nav_more: "More... <i class='fa-solid fa-chevron-down'></i>", nav_members: "Core Members", nav_data_viz: "Data Viz <span class='beta-tag'>Beta</span>", nav_season_review: "Season Review", nav_personal: "Personal Stats", nav_qa: "Q&A", nav_changelog: "Changelog", nav_docs: "docs", lang_btn: "中文",
@@ -426,7 +845,7 @@ const i18n = {
         wtt_file_matches: "Match Records", wtt_file_initial: "Initial Scores", wtt_file_event: "Event Coefficients", wtt_file_season: "Season Config",
         wtt_prepare: "Preparing data files...", wtt_downloading: "Downloading {label} ({i}/{total}): {file}", wtt_calculating: "Calculating rankings...", wtt_snapshot: "Snapshot {current}/{total}", wtt_elapsed: "Elapsed {s}s",
         wtt_default_season: "Default Season", wtt_node_count: "{n} nodes", wtt_ppl: "{n} players",
-        wtt_no_records: "No records", wtt_no_data: "No ranking data", wtt_cant_compute: "Could not compute WTT rankings", wtt_bonus: "Bonus",
+        wtt_no_records: "No records", wtt_cant_compute: "Could not compute WTT rankings", wtt_bonus: "Bonus",
         wtt_no_players: "No player data", wtt_select_player: "-- Select Player --", wtt_compare_btn: "Compare", wtt_compare_placeholder: "Select two players to compare",
         wtt_alert_select_one: "Please select at least one player", wtt_alert_max: "Maximum of 15 players", wtt_alert_two: "Please select two players", wtt_alert_diff: "Please select two different players",
         wtt_axis_points: "Points", wtt_axis_rank: "Rank", wtt_rank_suffix: "Rank #{n}",
@@ -535,7 +954,426 @@ const i18n = {
         md_occurrence: "Game #{n} that day",
         md_official: "Official",
         md_periods_title: "Periods", md_final_col: "Final", md_game_col: "Game {n}",
-        md_tabs_games: "Games", md_tabs_points: "Points", md_tabs_pred: "Win Rate", md_tabs_h2h: "H2H"
+        md_tabs_games: "Games", md_tabs_points: "Points", md_tabs_pred: "Win Rate", md_tabs_h2h: "H2H",
+        /* ---- docs browser (missing keys) ---- */
+        docs_copy_text: "Copy full text", docs_copy_link: "Copy link",
+        nav_aria_search: "Search", nav_aria_theme: "Toggle theme", nav_aria_lang: "Switch language", nav_aria_menu: "Menu",
+        wtt_win: "Wins",
+        /* ---- Event type dictionary (display layer; data keys stay Chinese) ---- */
+        ev_normal: "Normal", ev_ranked: "Ranked", ev_challenge: "Challenge", ev_school_league: "School League", ev_top12: "Top-12", ev_school_team: "School Championship · Team", ev_school_singles: "School Championship · Singles", ev_doubles: "Doubles",
+        /* ---- WTT event type dictionary ---- */
+        wtt_ev_tleague: "T.League", wtt_ev_ittf_open: "ITTF Open", wtt_ev_ittf_regular: "ITTF Regular", wtt_ev_ittf_platinum: "ITTF Platinum", wtt_ev_worlds: "World Championships", wtt_ev_worlds_team: "World Team Championships", wtt_ev_worldcup: "World Cup", wtt_ev_worldcup_team: "World Team Cup", wtt_ev_csl: "Chinese Super League", wtt_ev_asiad: "Asian Games", wtt_ev_asiad_team: "Asian Games Team", wtt_ev_alljapan: "All-Japan Championships", wtt_ev_nationalgames: "National Games", wtt_ev_nationals: "National Championships", wtt_ev_champions: "WTT Champions", wtt_ev_grandsmash: "Grand Smash", wtt_ev_olympics: "Olympic Games", wtt_ev_olympics_team: "Olympic Team Event", wtt_ev_challenge_reg: "Regular Challenge", wtt_ev_dfbpokal: "German Cup", wtt_ev_bundesliga: "Bundesliga", wtt_ev_bundesliga_final: "Bundesliga Finals", wtt_ev_bundesliga_semi: "Bundesliga Semifinals", wtt_ev_finals: "WTT Finals", wtt_ev_feeder: "WTT Feeder", wtt_ev_euroleague_team: "European Champions League", wtt_ev_continental_cup: "Continental Cup", wtt_ev_continental_champs: "Continental Championships", wtt_ev_continental_team: "Continental Team Championships", wtt_ev_star: "WTT Star Contender",
+        /* ---- Season label dictionary (keyed by seasons.json id/label; label is a load-bearing join key) ---- */
+        season_2026_spring: "Spring 2026 Semester", season_2026_summer: "Summer 2026", season_2026_autumn: "Autumn 2026 Semester",
+        /* ---- Player tag / honor dictionary ---- */
+        ptag_school_team: "School Team Member", ptag_grand_slam: "Grand Slam", ptag_pres_2627: "2026-27 President", ptag_vp_2627: "2026-27 Vice President", ptag_pres_2526: "2025-26 President", ptag_vp_2526: "2025-26 Vice President", ptag_vp_2425: "2024-25 Vice President", ptag_penholder1: "School No.1 Penholder", ptag_penholder2: "School No.2 Penholder",
+        phonor_s25_singles_1: "2025 School Championship Singles Champion", phonor_s26_singles_1: "2026 School Championship Singles Champion", phonor_s26_singles_2: "2026 School Championship Singles Runner-up", phonor_s26_singles_3: "2026 School Championship Singles Third Place", phonor_s26_team_1: "2026 School Championship Team Champion", phonor_s26_team_2: "2026 School Championship Team Runner-up", phonor_s26_team_3: "2026 School Championship Team Third Place", phonor_s25_team_3: "2025 School Championship Team Third Place",
+        ps_tag_group_leaders: "President / VP",
+        /* ---- Generic date templates ---- */
+        date_ymd: "{m}/{d}/{y}", date_ym: "{y}-{m}", date_md: "{m}/{d}",
+        /* ---- SEO keywords (<meta name="keywords">) ---- */
+        home_kw: "Wuhan Foreign Languages School,Table Tennis,Club,WFLS,Table Tennis,Ranking,Points",
+        news_kw: "Wuhan Foreign Languages School,WFLS,Table Tennis,Club News,Training,Match Announcements",
+        comp_kw: "Wuhan Foreign Languages School,WFLS,Table Tennis,Matches,Tournaments,Results",
+        members_kw: "Wuhan Foreign Languages School,WFLS,Table Tennis,Club Members,Core Team",
+        rank_kw: "Wuhan Foreign Languages School,WFLS,Table Tennis,Points Ranking,ELO,Ranking System",
+        data_viz_kw: "Wuhan Foreign Languages School,WFLS,Table Tennis,Data Visualization,Points Trend,Rank Changes",
+        data_viz_meta_desc: "WFLS Table Tennis Club data visualization: points trend charts, a rank flow river chart, and head-to-head player comparison.",
+        data_viz_race_play_aria: "Play / Pause",
+        personal_stats_kw: "Wuhan Foreign Languages School,WFLS,Table Tennis,Personal Stats,Player Data,Match Analysis",
+        personal_stats_meta_desc: "WFLS Table Tennis Club personal stats: individual records, win rates, opponent analysis and more.",
+        detail_kw: "Wuhan Foreign Languages School,WFLS,Table Tennis,Details",
+        md_kw: "Wuhan Foreign Languages School,WFLS,Table Tennis,Match Detail,Score,Game Scores,Points,Win Rate,Head to Head",
+        qa_kw: "Wuhan Foreign Languages School,WFLS,Table Tennis,FAQ,Q&A",
+        changelog_kw: "Wuhan Foreign Languages School,WFLS,Table Tennis,Changelog,Version History",
+        contact_kw: "Wuhan Foreign Languages School,WFLS,Table Tennis,Join the Club,QQ Group",
+        submit_kw: "Wuhan Foreign Languages School,WFLS,Table Tennis,Submit Results,Match Records,Points",
+        sr_kw: "Wuhan Foreign Languages School,WFLS,Table Tennis,Season Review,Points Change,Win Streaks,Adjustments",
+        wtt_hub_kw: "WTT,World Table Tennis,Table Tennis,Points Ranking,Men's Singles,Women's Singles,Men's Doubles,Women's Doubles,Mixed Doubles",
+        wtt_ranking_kw: "WTT,World Table Tennis,Table Tennis,Points Ranking,ITTF",
+        wtt_player_kw: "WTT,World Table Tennis,Table Tennis,Personal Stats,Player Data,Match Analysis",
+        wtt_ps_kw: "WTT,World Table Tennis,Table Tennis,Personal Stats,Player Data,Match Analysis",
+        wtt_dataviz_kw: "WTT,World Table Tennis,Table Tennis,Data Visualization,Points Trend,Rank Changes",
+        wtt_assoc_kw: "WTT,World Table Tennis,Table Tennis,Association Data,Association Ranking,Strength Rankings,Head to Head Matrix",
+        /* ---- docs browser static controls ---- */
+        docs_filter_ph: "Filter in this folder…", docs_filter_files_aria: "Filter files",
+        docs_scope_title: "Search scope: current folder", docs_view_toggle_title: "Toggle view",
+        docs_breadcrumb_aria: "Folder path", docs_type_filter_aria: "Filter by type",
+        docs_sort_name: "Name", docs_preview_aria: "File preview",
+        media_download_file: "Download file",
+        /* ---- Page-level copy: SEO / 404 / ranking / WTT / admin (keys referenced by HTML but missing from the dictionary) ---- */
+        nf_page_title: "404 - Page Not Found | WFLS Table Tennis Club",
+        nf_meta_desc: "WFLS Table Tennis Club - Page not found",
+        nf_title: "This page doesn't exist~",
+        nf_desc: "The page you visited may have been removed, renamed, or is temporarily unavailable.",
+        nf_guess: "You might be looking for",
+        nf_home: "Back to home",
+        nf_news: "News",
+        nf_ranking: "Ranking",
+        nf_countdown: "seconds until redirecting to the home page",
+        home_meta_desc: "Official site of the WFLS Table Tennis Club. Learn about our philosophy and activities, and follow the latest news and competitions.",
+        home_og_title: "WFLS Table Tennis Club",
+        home_og_desc: "WFLS Table Tennis Club - Swing at dreams, spin through youth",
+        home_rss_title: "WFLS Table Tennis Club - News",
+        news_feed_title: "WFLS Table Tennis Club - News",
+        home_ball_title: "🌟 Easter egg: 3D Table Tennis",
+        home_ball_aria: "Easter egg: 3D Table Tennis",
+        home_last_updated: "Last updated: loading...",
+        home_search_clear_aria: "Clear search",
+        home_search_close_aria: "Close search",
+        mrank_search_clear: "Clear search",
+        news_meta_desc: "Latest WFLS Table Tennis Club news: activity notices, training schedules and match announcements.",
+        comp_meta_desc: "WFLS Table Tennis Club competitions: schedules, results and tournament reviews.",
+        qa_meta_desc: "WFLS Table Tennis Club FAQ: joining the club, schedules, the points system and more.",
+        changelog_meta_desc: "WFLS Table Tennis Club website changelog: version history and feature updates.",
+        contact_meta_desc: "Join the WFLS Table Tennis Club. Scan the QR code to join our QQ group.",
+        members_meta_desc: "Meet the core members of the WFLS Table Tennis Club.",
+        detail_meta_desc: "WFLS Table Tennis Club detail page: news, competitions and member content.",
+        detail_shell_title: "Title",
+        md_meta_desc: "WFLS Table Tennis Club match detail: final score, game scores, points before and after, points breakdown, pre-match win-rate prediction and head-to-head history.",
+        player_meta_desc: "WFLS Table Tennis Club player profile: individual records, win rate, points trend and opponent analysis.",
+        player_meta_desc_short: "WFLS Table Tennis Club player profile.",
+        player_og_title: "Player Stats | WFLS Table Tennis Club",
+        rank_meta_desc: "WFLS Table Tennis Club points ranking, auto-calculated with an ELO-variant algorithm and comparable across time periods.",
+        sr_meta_desc: "WFLS Table Tennis Club season review: points changes, win streaks, attendance, best single results, notable game scores and points adjustments.",
+        submit_meta_desc: "Submit a WFLS Table Tennis Club match result. Once approved by an administrator it counts toward the points ranking.",
+        submit_og_desc: "Fill in a match result; once approved it counts toward the points ranking.",
+        ut_meta_desc: "WFLS Table Tennis Club easter egg: umpire training. Watch serve videos and judge whether the toss is legal.",
+        ut_title: "🌟Umpire Training🌟 | WFLS Table Tennis Club",
+        ut_hero_title: "🌟Umpire Training🌟",
+        ut_hero_sub: "Watch the serve · Judge the toss angle · Train your eye",
+        rank_submit_aria: "Submit a match result",
+        rank_mode_aria: "Points category",
+        rank_sort_default: "Points, descending",
+        rank_loading_hint: "Loading ranking data...",
+        rank_egg_title: "You found an easter egg",
+        rank_egg_desc: "WTT rankings based on the WFLS club points rules",
+        rank_egg_btn: "Enter",
+        sb_games_title: "e.g. 11-9, 8-11, 11-7",
+        wtt_hub_meta_desc: "WTT World Table Tennis ranking hub · Men's Singles / Women's Singles / Men's Doubles / Women's Doubles / Mixed Doubles",
+        wtt_ranking_meta_desc: "WTT ranking, simulated with an ELO-variant algorithm · easter egg page",
+        wtt_match_meta_desc: "WTT match detail (easter egg): points before and after, points breakdown, pre-match win-rate prediction and head-to-head history.",
+        wtt_match_og_title: "WTT Match Detail | WFLS TT Club",
+        wtt_ps_meta_desc: "WTT ranking · personal stats · opponent analysis",
+        wtt_ps_page_title: "WTT Personal Stats 🥚 | WFLS Table Tennis Club",
+        wtt_player_meta_desc: "WTT player profile: individual records, win rate, points trend and opponent analysis.",
+        wtt_player_page_title: "WTT Player Stats | WFLS Table Tennis Club",
+        wtt_player_cat_fallback: "Player page",
+        wtt_dataviz_meta_desc: "WTT ranking data visualization: points trend charts, a rank flow river chart and player comparison.",
+        wtt_dataviz_page_title: "WTT Data Visualization 🥚 | WFLS Table Tennis Club",
+        wtt_assoc_meta_desc: "WTT association data: overall association strength rankings, squad details, ranking changes over time and an association head-to-head matrix.",
+        wtt_assoc_page_title: "WTT Association Data 🥚 | WFLS Table Tennis Club",
+        wtt_assoc_topn_hint: "Number of players in the global TOP-N; enter a positive integer from 5 to 500",
+        wtt_matrix_size_title: "Build the matrix from the top N associations; enter a positive integer from 3 to 25",
+        wtt_sr_meta_desc: "WTT season review: points changes, win streaks, attendance, best single results and monthly snapshots (easter egg, same rules as the WTT ranking).",
+        wtt_aria_play_pause: "Play / Pause",
+        wtt_aria_sort_field: "Sort field",
+        wtt_aria_sort_dir: "Toggle ascending / descending",
+        wtt_topn_title_1_20: "Enter any positive integer from 1 to 20",
+        wtt_topn_title_1_66: "Enter any positive integer from 1 to 66",
+        wtt_topn_title_1_100: "Enter any positive integer from 1 to 100",
+        wtt_topn_title_2_20: "Enter any positive integer from 2 to 20",
+        wtt_date_start_hint: "Start date; leave blank for no limit",
+        wtt_date_end_hint: "End date; leave blank for no limit",
+        adm_title: "Data Dashboard",
+        adm_home_title: "Back to home",
+        adm_hero_desc: "Site-wide data assets at a glance · five WTT modules with live core statistics",
+        adm_editor_title: "Visually edit tournament brackets and export draws.json",
+        adm_editor: "Bracket Editor",
+        adm_refresh_title: "Reload all site data",
+        adm_refresh: "Refresh",
+        adm_ps_title: "Submissions Pending Review",
+        adm_se_title: "Score Entry",
+        adm_se_mode_match: "Match result",
+        adm_se_mode_bonus: "Points adjustment",
+        adm_se_games_hint: "e.g. 11-9, 8-11, 11-7",
+        adm_se_add_match: "Add record",
+        adm_se_amount: "Points (e.g. +100 / -30)",
+        adm_se_add_bonus: "Add adjustment",
+        adm_se_export: "Download the merged score-log.json",
+        adm_se_clear: "Clear queue",
+        adm_loading: "Loading all site data...",
+        /* ---- draws editor (de_*) ---- */
+        de_page_title: "Draws Editor | WFLS Table Tennis Club",
+        de_meta_desc: "WFLS table tennis club draws editor. Edit brackets visually, generate them from templates and export draws.json.",
+        de_kw: "Wuhan Foreign Languages School,WFLS,Table Tennis,Draws,Bracket,Knockout,Draws Editor,draws.json",
+        de_title: "Draws Editor",
+        de_hero_desc: "Visual editing · Templates · Export draws.json",
+        de_back_admin: "Back to the data dashboard",
+        de_sel_draw: "Select the draw to edit",
+        de_new_draw: "New blank draw",
+        de_dup_draw: "Duplicate the current draw",
+        de_del_draw: "Delete the current draw",
+        de_from_tpl: "Generate from a template",
+        de_undo: "Undo (Ctrl+Z)",
+        de_redo: "Redo (Ctrl+Y)",
+        de_validate: "Validate data",
+        de_import: "Import",
+        de_download: "Download draws.json",
+        de_copy_all: "Copy all draws.json to the clipboard",
+        de_sec_basic: "Basic info",
+        de_fld_title: "Title",
+        de_ph_draw_title: "2026 Table Tennis Singles Knockout",
+        de_fld_subtitle: "Subtitle (optional)",
+        de_ph_subtitle: "e.g. 12 players · single elimination",
+        de_fld_comp: "Linked competition (competitionId)",
+        de_opt_none: "(none)",
+        de_opt_nodraw: "(no draws)",
+        de_sec_layout: "Layout & grid",
+        de_fld_layout: "Layout mode",
+        de_opt_layout_grid: "Manual grid (card col/row)",
+        de_opt_layout_auto: "Auto stack (by round / order)",
+        de_fld_cellw: "Card width cellWidth",
+        de_fld_cellh: "Card height cellHeight",
+        de_fld_gap: "Gap gap",
+        de_fld_padx: "Horizontal padding padX",
+        de_fld_pady: "Vertical padding padY",
+        de_btn_arrange: "Auto-arrange",
+        de_hint_arrange: "Auto-arrange reflows every card into a standard knockout tree using its “round col” and “row in column”.",
+        de_sec_rounds: "Round labels (per column)",
+        de_btn_add_round: "Add a column label",
+        de_sec_look: "Appearance",
+        de_fld_accent: "Accent color (blank = default)",
+        de_chk_seeds: "Show seed badges",
+        de_chk_legend: "Show legend",
+        de_btn_reset_look: "Reset appearance",
+        de_col: "Col",
+        de_ph_round: "Round {n}",
+        de_del_short: "Delete",
+        de_hint_rounds: "No custom labels yet — the viewer will use the default round names.",
+        de_btn_select: "Select",
+        de_btn_connect: "Connect",
+        de_mode_select: "Select mode",
+        de_mode_connect: "Connect mode: click the source → click the target",
+        de_btn_add_match: "Match card",
+        de_btn_add_bye: "Bye card",
+        de_btn_add_champion: "Champion card",
+        de_btn_add_note: "Note card",
+        de_btn_del_selected: "Delete selected",
+        de_propagate: "Fill the next round's players from the winners of finished cards and the connections",
+        de_btn_propagate: "Fill winners",
+        de_zoom_fit: "Fit to canvas",
+        de_stat_cards: "0 cards",
+        de_stat_conns: "0 connections",
+        de_unit_cards: "cards",
+        de_unit_conns: "connections",
+        de_stat_dirty: "Unsaved changes",
+        de_prog_done: "Matches {done}/{total} finished",
+        de_prog_live: "{n} live",
+        de_empty_canvas: "No draw yet. Click <i class=\"fa-solid fa-plus\"></i> in the top bar to create one, or <i class=\"fa-solid fa-wand-magic-sparkles\"></i> to generate it from a template.",
+        de_ins_empty_1: "Click a card on the canvas to start editing.",
+        de_ins_empty_2: "Drag to move · use connect mode to link the progression",
+        de_ins_empty_3: "Ctrl+Z to undo · Delete to remove the selection",
+        de_ins_card: "Card",
+        de_type_match: "Match",
+        de_type_bye: "Bye",
+        de_type_champion: "Champion",
+        de_type_note: "Note",
+        de_fld_p1: "Player 1",
+        de_ph_player: "Name / team",
+        de_fld_seed: "Seed",
+        de_ph_seed: "e.g. 1",
+        de_fld_pnote: "Note (e.g. withdrew)",
+        de_ph_optional: "optional",
+        de_fld_p2: "Player 2",
+        de_fld_pnote2: "Note",
+        de_fld_score: "Total score (e.g. 3-1)",
+        de_fld_games: "Game scores (one game per line, e.g. 11-9)",
+        de_fld_winner: "Winner",
+        de_win_p1: "Player 1 wins",
+        de_win_draw: "Draw",
+        de_win_p2: "Player 2 wins",
+        de_fld_status: "Status",
+        de_st_auto: "Auto (derived from the score)",
+        de_st_scheduled: "Scheduled",
+        de_st_live: "Live",
+        de_st_final: "Finished",
+        de_fld_champ: "Champion",
+        de_fld_label: "Label text",
+        de_ph_champ: "Champion",
+        de_fld_note_text: "Note text",
+        de_ph_group: "Group A (round-robin)",
+        de_fld_col: "Column col (round)",
+        de_fld_row: "Row row",
+        de_fld_time: "Time (optional)",
+        de_fld_venue: "Venue (optional)",
+        de_ph_venue: "Table 1",
+        de_fld_card_note: "Note (optional)",
+        de_ph_card_note: "Withdrawn / postponed due to rain",
+        de_sec_conns: "Connections",
+        de_btn_dup_card: "Duplicate card",
+        de_conn_from: "from",
+        de_conn_to: "to",
+        de_conn_del: "Delete connection",
+        de_conn_none: "No connections — use “Connect” in the toolbar to add one",
+        de_tpl_modal_title: "Generate a draw from a template",
+        de_fld_tpl_type: "Template type",
+        de_tpl_single: "Single elimination (with seeded bracket / byes / third-place match)",
+        de_tpl_groups: "Group round-robin + knockout",
+        de_fld_tpl_comp: "Linked competition",
+        de_tpl_entries: "Entrants (one per line, in seed order; the field is padded to a power of two and spare slots become byes)",
+        de_ph_entries: "祁子傲\n陈瑜萱\n任峻贤\n...",
+        de_tpl_third: "Add a third-place match (the semifinal losers play each other)",
+        de_tpl_group_fmt: "Groups (one per line: “Group: Player 1, Player 2, Player 3”)",
+        de_ph_groups: "Group A: Player 1, Player 2, Player 3\nGroup B: Player 4, Player 5\nGroup C: ...\nGroup D: ...",
+        de_tpl_ko: "Generate the knockout stage (group winners advance)",
+        de_cancel: "Cancel",
+        de_generate: "Generate",
+        de_json_modal_title: "Current draw JSON (default values are stripped on save)",
+        de_json_hint: "“Apply changes” replaces the current draw with this content (paste a single object or a whole draws.json array — an array replaces every draw).",
+        de_copy: "Copy",
+        de_apply: "Apply changes",
+        de_close: "Close",
+        de_import_modal_title: "Import JSON",
+        de_import_hint: "Paste draws.json (an array replaces every draw; a single object is appended as a new draw)",
+        de_import_file: "Or import from a local file (overrides the pasted content)",
+        de_import_upgrade: "Auto-upgrade legacy v2 data to v3",
+        de_err_load: "Failed to load data/draws.json — open this page through a local HTTP server (not file://)",
+        de_toast_restore: "Restored the unexported edits from {when}; use “Import” to get the repository version back",
+        de_last: "the last session",
+        de_toast_new: "Created {id} — generate it from a template or add cards by hand",
+        de_err_no_draw: "There is no draw to duplicate",
+        de_untitled: "Untitled",
+        de_copy_suffix: " (copy)",
+        de_new_draw_title: "New draw",
+        de_toast_dup: "Duplicated as {id}",
+        de_confirm_del: "Delete “{title}”? This can be undone.",
+        de_toast_undo: "Undone",
+        de_toast_redo: "Redone",
+        de_id_empty: "(empty)",
+        de_err_empty_canvas: "The canvas is empty",
+        de_toast_arranged: "Cards re-arranged into a proper round tree",
+        de_toast_filled: "Filled {n} empty slots",
+        de_toast_noprop: "No winners to propagate (finished cards and connections are required)",
+        de_toast_conflict: "{n} target slots conflict — please check them manually",
+        de_err_no_drag: "Cards cannot be dragged in auto layout — switch to the manual grid",
+        de_confirm_del_conn: "Delete the connection {from} → {to}?",
+        de_toast_src: "Source {id} selected — click the target card to connect (click the source again to cancel)",
+        de_err_conn_exists: "The connection already exists",
+        de_toast_conn: "Connected {from} → {to}",
+        de_err_pick_draw: "Create or select a draw first",
+        de_confirm_del_card: "Delete card {id} and its connections?",
+        de_hint_no_draw: "There is no draw at the moment.",
+        de_ok: "Passed",
+        de_lbl_error: "Error: ",
+        de_lbl_warn: "Warning: ",
+        de_val_title: "Validation result ({e} errors / {w} warnings)",
+        de_toast_copy_json: "JSON copied",
+        de_err_copy: "Copy failed, please select the text manually",
+        de_toast_dup_id: "Duplicate draw IDs were renumbered: {list}",
+        de_join: ", ",
+        de_toast_replaced: "Replaced all {n} draws",
+        de_err_invalid: "Invalid object",
+        de_toast_conflict_id: "IDs conflicting with the existing draws were renumbered: {list}",
+        de_toast_applied: "Current draw updated",
+        de_err_json: "Failed to parse the JSON: {msg}",
+        de_toast_imported: "Imported {n} draws",
+        de_toast_appended: "Appended as {id}",
+        de_err_import: "Import failed: {msg}",
+        de_err_entries: "Please fill in the entrant list",
+        de_err_groups: "Please enter the groups as “Group: Player 1, Player 2”",
+        de_err_tpl: "Template generation failed: {msg}",
+        de_toast_tpl: "Template generated as {id} — feel free to fine-tune it",
+        de_toast_download: "draws.json downloaded — use it to replace data/draws.json in the repository and commit",
+        de_toast_copy_all: "All of draws.json was copied to the clipboard",
+        de_err_copy_all: "Copy failed, please copy manually from the JSON panel",
+        de_v_empty: "The draw is empty",
+        de_v_no_id: "Missing id",
+        de_v_no_title: "Missing title",
+        de_v_no_comp: "competitionId \"{id}\" does not exist",
+        de_v_card_no_id: "There is a card without an id",
+        de_v_dup_id: "Duplicate card id: {id}",
+        de_v_bad_winner: "Card {id} has an invalid winner ({w}; expected 0/1/2/null)",
+        de_v_neg_pos: "col/row of card {id} cannot be negative",
+        de_v_no_players: "Match card {id} is missing a player",
+        de_v_winner_no_score: "Match card {id} has a winner but no score",
+        de_v_no_champ: "Champion card {id} has no player",
+        de_v_conn_from: "Connection from \"{id}\" does not exist",
+        de_v_conn_to: "Connection to \"{id}\" does not exist",
+        de_v_conn_self: "A card cannot be connected to itself: {id}",
+
+        /* ---- admin dashboard (adm_*) ---- */
+        /* event codes */
+        adm_disc_ms: "Men's Singles MS", adm_disc_ws: "Women's Singles WS", adm_disc_wd: "Women's Doubles WD", adm_disc_md: "Men's Doubles MD", adm_disc_xd: "Mixed Doubles XD",
+        /* header chips */
+        adm_chips_reloading: "Reloading…", adm_chip_load: "Loaded in {t}s", adm_chip_records: "{n} WTT records",
+        /* section titles */
+        adm_sec_overview: "Overview", adm_sec_disc: "WTT five-event module volume", adm_sec_charts: "WTT data distribution",
+        adm_sec_records: "Record composition and active players", adm_sec_files: "Core data files", adm_sec_seasons: "Season management",
+        /* KPI cards */
+        adm_kpi_wtt_records: "WTT match records", adm_kpi_wtt_records_sub: "Sum of the five events",
+        adm_kpi_wtt_players: "Total WTT players", adm_kpi_wtt_players_sub: "Players with an initial score on file",
+        adm_kpi_wtt_seasons: "WTT seasons", adm_kpi_wtt_seasons_sub: "Season management",
+        adm_kpi_wtt_events: "WTT event types", adm_kpi_wtt_events_sub: "Tiers of competition",
+        adm_kpi_players: "Player profiles", adm_kpi_players_sub: "One source of player data",
+        adm_kpi_news_comp: "News / Competitions", adm_kpi_news_comp_sub: "News {n}{nh} · Competitions {m}{mh}",
+        adm_hidden_suffix: " ({n} hidden)", adm_total_records: "{n} records in total",
+        /* discipline cards */
+        adm_disc_template: "Template data only", adm_disc_no_real: "No real data yet",
+        adm_unit_matches: "match records", adm_unique_players: "unique players", adm_share_of_total: "of all records",
+        /* charts */
+        adm_chart_trend: "Yearly match-record trend (stacked by event)", adm_chart_disc: "Match records per event",
+        adm_chart_pie: "Event-type share (all events)", adm_note_unit: "records", adm_chart_center: "Total records",
+        adm_axis_records: "Match records",
+        adm_tip_records: "{l}: {v}", adm_tip_total: "Total {n}",
+        adm_tip_share: "{v} · {p}%", adm_tip_records_pct: "{v} ({p}%)",
+        /* top players */
+        adm_top_players: "Most active players — top {n}", adm_top_note: "By appearances (wins + losses)", adm_rank_wl: "{w} W · {l} L",
+        /* event-type table */
+        adm_event_detail: "Event-type breakdown", adm_event_total: "{n} total",
+        adm_th_event: "Event type", adm_th_records: "Records", adm_th_share: "Share", adm_th_dist: "Distribution",
+        /* core data file cards */
+        adm_derived: " (derived)",
+        adm_unit_player_profiles: "player profiles", adm_unit_members: "members", adm_unit_news: "news items",
+        adm_unit_competitions: "competitions", adm_unit_match_records: "match records", adm_unit_seasons: "seasons",
+        adm_unit_qa: "Q&A entries", adm_unit_changelog: "changelog entries", adm_unit_draws: "brackets",
+        adm_unit_players: "players", adm_unit_event_types: "event types", adm_unit_tags: "players · {n} tags",
+        adm_unit_updated: "last updated",
+        adm_pill_hidden: "{n} hidden", adm_pill_hidden_versions: "{n} hidden versions",
+        adm_share_total: "{p}% of core total", adm_meta_file: "Metadata file",
+        adm_files_sub: "data/ directory · {n} files",
+        /* season management */
+        adm_wtt_seasons_panel: "WTT seasons (by event)", adm_core_seasons_panel: "Club seasons",
+        adm_seasons_count: "{n} seasons",
+        adm_th_name: "Name", adm_th_dates: "Date range", adm_th_status: "Status",
+        adm_vis_on: "Visible", adm_vis_off: "Hidden",
+        /* pending submissions */
+        adm_ps_empty: "No submissions pending review", adm_ps_review: "Review →",
+        adm_ps_fail: "Failed to load (the anonymous GitHub API is rate-limited to 60 requests per hour per IP — please refresh and try again later)",
+        /* score entry */
+        adm_se_q_format: "Format {f}", adm_se_q_win: "{w} beat {l}", adm_se_q_games: " ({g})", adm_se_q_adjust: "Adjustment",
+        adm_se_pick_winner: "-- Select winner --", adm_se_pick_loser: "-- Select loser --", adm_se_pick_player: "-- Select player --",
+        adm_se_err_coef: "Failed to load event-coefficient.json", adm_se_err_players: "Failed to load players.json",
+        adm_se_err_format: "Format must be one of default / bo3 / bo5 / bo7",
+        adm_se_err_no_score: "\"Include game scores\" is checked — please enter the overall score or the per-game scores",
+        adm_se_err_total_fmt: "The overall score must read \"winner games-loser games\", e.g. 3-1",
+        adm_se_err_total_order: "Overall score {w}-{l}: the winner's game count must be greater than the loser's (winner first)",
+        adm_se_err_total_max: "Overall score {w}-{l}: singles go up to bo7 (the winner takes at most 4 games)",
+        adm_se_err_total_mismatch: "Overall score {w}-{l} does not match format {eff} (needs {n} games won)",
+        adm_se_err_games_self: "The per-game scores do not match the overall score {w}-{l} (there should be {t} games, with the winner taking {w})",
+        adm_se_err_games_infer: "The per-game scores do not determine a winner (winner-first: the winner must take more games)",
+        adm_se_ok_match: "Added 1 match record",
+        adm_se_err_bonus_fill: "Please fill in date / target / points (a number)", adm_se_ok_bonus: "Added 1 points adjustment",
+        adm_se_ok_cleared: "Queue cleared",
+        adm_se_ok_copied: "Copied to the clipboard — paste it at the end of the data/score-log.json array",
+        adm_se_ok_downloaded: "Merged file downloaded ({n} existing + {m} new records). Replace data/score-log.json with the downloaded file and commit.",
+        adm_se_err_merge: "The current score-log.json could not be loaded, so it cannot be merged",
+
+        /* ---- umpire training easter egg (ut_*) ---- */
+        ut_default_title: "Umpire Training", ut_default_desc: "Watch serve videos and judge whether the ball toss is legal.",
+        ut_video_missing: "Demo video coming soon", ut_options_aria: "Options",
+        ut_best: "Personal best: {c}/{t} ({p}%)",
+        ut_rule_watch: "Watch the serve video", ut_rule_judge: "Judge whether the toss is near-vertical", ut_rule_verdict: "Make your call",
+        ut_count: "{n} questions", ut_mode_practice: "Practice mode", ut_mode_practice_desc: "Answer one question at a time, with instant feedback and explanations",
+        ut_start: "Start training", ut_step: "Question {cur} / {total}",
+        ut_topic_toss: "Toss angle", ut_topic_general: "General calls",
+        ut_verdict_ok: "Correct call!", ut_verdict_bad: "Wrong call…",
+        ut_finish: "See results", ut_next: "Next question",
+        ut_rank_intl: "International Umpire", ut_rank_nat: "National Umpire", ut_rank_certified: "Certified", ut_rank_trainee: "Trainee Umpire",
+        ut_pass_title: "Training passed!", ut_fail_title: "Keep going!",
+        ut_result_detail: "{c} / {t} correct · Rank: <strong>{rank}</strong>",
+        ut_new_best: "New personal best!", ut_restart: "Play again", ut_back_home: "Back to home",
+        ut_load_fail: "The question bank could not be loaded, please try again later.", ut_reload: "Reload"
     }
 };
 
@@ -569,8 +1407,13 @@ const body = document.body;
 function setLanguage(lang) {
     currentLang = lang; safeStorage.set('wfls-lang.v1', lang);
     document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-    document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.getAttribute('data-i18n'); if (i18n[lang] && i18n[lang][key] != null) el.innerHTML = i18n[lang][key]; });
-    document.querySelectorAll('[data-i18n-title]').forEach(el => { const key = el.getAttribute('data-i18n-title'); if (i18n[lang] && i18n[lang][key]) el.title = i18n[lang][key]; });
+    const _i18n = i18n[lang] || {};
+    document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.getAttribute('data-i18n'); if (_i18n[key] != null) el.innerHTML = _i18n[key]; });
+    document.querySelectorAll('[data-i18n-title]').forEach(el => { const key = el.getAttribute('data-i18n-title'); if (_i18n[key]) el.title = _i18n[key]; });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { const key = el.getAttribute('data-i18n-placeholder'); if (_i18n[key] != null) el.placeholder = _i18n[key]; });
+    document.querySelectorAll('[data-i18n-aria]').forEach(el => { const key = el.getAttribute('data-i18n-aria'); if (_i18n[key] != null) el.setAttribute('aria-label', _i18n[key]); });
+    document.querySelectorAll('[data-i18n-alt]').forEach(el => { const key = el.getAttribute('data-i18n-alt'); if (_i18n[key] != null) el.setAttribute('alt', _i18n[key]); });
+    document.querySelectorAll('[data-i18n-content]').forEach(el => { const key = el.getAttribute('data-i18n-content'); if (_i18n[key] != null) el.setAttribute('content', _i18n[key]); });
     if (langToggle) langToggle.querySelector('span').textContent = lang === 'zh' ? 'EN' : '中文';
     if (searchInput) searchInput.placeholder = i18n[lang].search_placeholder;
     const _ovInput = document.querySelector('#searchOverlay .search-input');
@@ -593,6 +1436,10 @@ function setLanguage(lang) {
     if (typeof seasonReviewReapplyI18n === 'function') seasonReviewReapplyI18n();
     if (typeof matchDetailReapplyI18n === 'function') matchDetailReapplyI18n();
     if (typeof docsBrowserReapplyI18n === 'function') docsBrowserReapplyI18n();
+    if (typeof adminReapplyI18n === 'function') adminReapplyI18n();
+    if (typeof drawsEditorReapplyI18n === 'function') drawsEditorReapplyI18n();
+    if (typeof umpireTrainingReapplyI18n === 'function') umpireTrainingReapplyI18n();
+    if (typeof gameReapplyI18n === 'function') gameReapplyI18n();
 }
 async function updateHeroLastUpdated() { const el = document.getElementById('heroLastUpdated'); if (!el) return; const cached = safeStorage.get('wfls-last-updated'); if (cached) { try { const cd = JSON.parse(cached); if (cd.date && (Date.now() - cd.ts) < 3600000) { el.textContent = currentLang === 'zh' ? `上次更新：${cd.date}` : `Last updated: ${cd.date}`; return; } } catch(e) {} } try { const res = await fetch('https://api.github.com/repos/yglalpavir/wfls-tt-club/commits?per_page=1'); if (res.ok) { const commits = await res.json(); if (commits && commits.length > 0) { const d = new Date(commits[0].commit.committer.date); const ds = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); safeStorage.set('wfls-last-updated', JSON.stringify({ date: ds, ts: Date.now() })); el.textContent = currentLang === 'zh' ? `上次更新：${ds}` : `Last updated: ${ds}`; return; } } } catch(e) { console.warn('GitHub API failed, fallback to about.json'); } if (aboutData && aboutData.lastUpdated) { el.textContent = currentLang === 'zh' ? `上次更新：${aboutData.lastUpdated}` : `Last updated: ${aboutData.lastUpdated}`; } }
 function updateRankingHeaders() { document.querySelectorAll('.ranking-table-full th[data-i18n]').forEach(th => { const key = th.getAttribute('data-i18n'); if (i18n[currentLang] && i18n[currentLang][key]) th.innerHTML = i18n[currentLang][key] + ' <span class="sort-arrow"></span>'; }); }
@@ -611,8 +1458,42 @@ function getNodeDisplayLabel(n) {
     if (typeof n === 'string') return n;
     const L = i18n[currentLang] || {};
     if (n.isRealtime) return L.rank_realtime_label || n.label || '';
-    if (n.isInitial) return (L.season_initial_label || '{season}初始积分').replace('{season}', n.season || '');
+    if (n.isInitial) return (L.season_initial_label || '{season}初始积分').replace('{season}', seasonLabel(n.season || ''));
     return formatNodeDate(n.time) || n.label || '';
+}
+
+/* ===================== i18n 显示层 helper（数据键保持中文，仅显示翻译） ===================== */
+const EVENT_TYPE_KEY_MAP = { '普通': 'ev_normal', '排位赛': 'ev_ranked', '挑战赛': 'ev_challenge', '校乒联赛': 'ev_school_league', '十二强赛': 'ev_top12', '校乒赛团体': 'ev_school_team', '校乒赛单打': 'ev_school_singles', '双打': 'ev_doubles', '比赛结果加分': 'score_type_bonus' };
+const WTT_EVENT_TYPE_KEY_MAP = { 'T联赛': 'wtt_ev_tleague', 'ittf公开赛': 'wtt_ev_ittf_open', 'ittf常规赛': 'wtt_ev_ittf_regular', 'ittf白金赛': 'wtt_ev_ittf_platinum', '世乒赛': 'wtt_ev_worlds', '世乒赛团体': 'wtt_ev_worlds_team', '世界杯': 'wtt_ev_worldcup', '世界杯团体': 'wtt_ev_worldcup_team', '乒超联赛': 'wtt_ev_csl', '亚运会': 'wtt_ev_asiad', '亚运会团体': 'wtt_ev_asiad_team', '全日锦': 'wtt_ev_alljapan', '全运会': 'wtt_ev_nationalgames', '全锦赛': 'wtt_ev_nationals', '冠军赛': 'wtt_ev_champions', '大满贯': 'wtt_ev_grandsmash', '奥运会': 'wtt_ev_olympics', '奥运会团体': 'wtt_ev_olympics_team', '常规挑战赛': 'wtt_ev_challenge_reg', '德国杯': 'wtt_ev_dfbpokal', '德甲联赛': 'wtt_ev_bundesliga', '德甲联赛决赛': 'wtt_ev_bundesliga_final', '德甲联赛半决赛': 'wtt_ev_bundesliga_semi', '总决赛': 'wtt_ev_finals', '支线赛': 'wtt_ev_feeder', '欧冠团体': 'wtt_ev_euroleague_team', '洲杯赛': 'wtt_ev_continental_cup', '洲锦赛': 'wtt_ev_continental_champs', '洲锦赛团体': 'wtt_ev_continental_team', '球星挑战赛': 'wtt_ev_star', '比赛结果加分': 'score_type_bonus' };
+const SEASON_KEY_MAP = { '2026-spring': 'season_2026_spring', '2026-summer': 'season_2026_summer', '2026-autumn': 'season_2026_autumn', '2026年春季学期': 'season_2026_spring', '2026年暑假': 'season_2026_summer', '2026年秋季学期': 'season_2026_autumn' };
+const PLAYER_TAG_KEY_MAP = { '校队成员': 'ptag_school_team', '大满贯': 'ptag_grand_slam', '26-27年社长': 'ptag_pres_2627', '26-27年副社长': 'ptag_vp_2627', '25-26年社长': 'ptag_pres_2526', '25-26年副社长': 'ptag_vp_2526', '24-25年副社长': 'ptag_vp_2425', '校一直板': 'ptag_penholder1', '校二直板': 'ptag_penholder2' };
+const PLAYER_HONOR_KEY_MAP = { '校乒赛2025单打冠军': 'phonor_s25_singles_1', '校乒赛2026单打冠军': 'phonor_s26_singles_1', '校乒赛2026单打亚军': 'phonor_s26_singles_2', '校乒赛2026单打季军': 'phonor_s26_singles_3', '校乒赛2026团体冠军': 'phonor_s26_team_1', '校乒赛2026团体亚军': 'phonor_s26_team_2', '校乒赛2026团体季军': 'phonor_s26_team_3', '校乒赛2025团体季军': 'phonor_s25_team_3' };
+/* 按映射表解析显示文本：英文模式查字典，缺失回退原文（优雅降级，不显示 key） */
+function i18nMapped(map, value) {
+    if (value == null || value === '') return value == null ? value : '';
+    if (currentLang === 'zh') return value;
+    const L = i18n[currentLang] || {};
+    const k = map[value];
+    return (k && L[k] != null) ? L[k] : value;
+}
+function eventTypeLabel(v) { return i18nMapped(EVENT_TYPE_KEY_MAP, v); }
+function wttEventTypeLabel(v) { return i18nMapped(WTT_EVENT_TYPE_KEY_MAP, v); }
+function seasonLabel(v) { return i18nMapped(SEASON_KEY_MAP, v); }
+function playerTagLabel(v) { return i18nMapped(PLAYER_TAG_KEY_MAP, v); }
+function playerHonorLabel(v) { return i18nMapped(PLAYER_HONOR_KEY_MAP, v); }
+/* 球员职务 / 简介：players.json 可带 role_en / description_en 同级字段，英文模式优先 */
+function playerRole(p) { if (!p) return ''; if (currentLang === 'en' && p.role_en) return p.role_en; return p.role || ''; }
+function playerDescription(p) { if (!p) return ''; if (currentLang === 'en' && p.description_en) return p.description_en; return p.description || ''; }
+/* 统一日期格式（英文模式 {m}/{d}/{y}；经 i18n 模板可随时改样式） */
+function fmtDate(y, m, d) {
+    const L = i18n[currentLang] || {};
+    const tpl = L.date_ymd || '{y}年{m}月{d}日';
+    return tpl.replace('{y}', y).replace('{m}', m).replace('{d}', d);
+}
+function fmtDateFrom(ds) {
+    const p = String(ds || '').split('-');
+    if (p.length < 3 || isNaN(+p[0])) return String(ds || '');
+    return fmtDate(p[0], +p[1], +p[2]);
 }
 function updatePdfButtons() { const btn = document.getElementById('pdfViewBtn'); if (btn) btn.innerHTML = `<i class="fa-solid fa-eye"></i> ${i18n[currentLang].pdf_preview_btn}`; const down = document.querySelector('.pdf-actions .btn-primary'); if (down) down.innerHTML = `<i class="fa-solid fa-download"></i> ${i18n[currentLang].pdf_download_btn}`; }
 
@@ -881,7 +1762,11 @@ async function exportDomNodeAsImage(node, opts) {
     }
 }
 
-if (langToggle) { const sl = safeStorage.get('wfls-lang.v1') || safeStorage.get('wfls-lang') || 'zh'; setLanguage(sl); langToggle.addEventListener('click', () => setLanguage(currentLang === 'zh' ? 'en' : 'zh')); }
+{
+    const sl = safeStorage.get('wfls-lang.v1') || safeStorage.get('wfls-lang') || 'zh';
+    setLanguage(sl);
+    if (langToggle) langToggle.addEventListener('click', () => setLanguage(currentLang === 'zh' ? 'en' : 'zh'));
+}
 
 function initSearch() {
     if (!searchToggle || !searchOverlay || !searchInput) return;
@@ -919,18 +1804,23 @@ async function performSearch(query) {
     const compItems = compList.length ? compList : (competitionsData || []);
     const qaItems = qaList.length ? qaList : (qaData || []);
     const results = [];
-    if (newsItems.length) newsItems.forEach(item => {
+    // 英文模式用 *_en 参与匹配与展示，英文关键词才能命中英文正文
+    const sr = it => currentLang === 'en'
+        ? Object.assign({}, it, { title: it.title_en || it.title, excerpt: it.excerpt_en || it.excerpt, content: it.content_en || it.content })
+        : it;
+    if (newsItems.length) newsItems.map(sr).forEach(item => {
         const s = calcScore(query, item.title, item.excerpt || '', item.content || '', item.tag || '', i18n[currentLang]['tag_' + item.tag] || '');
         if (s > 0) results.push({ type: 'news', typeLabel: i18n[currentLang].search_type_news, title: item.title, excerpt: stripMediaMarkers(item.excerpt || item.content || ''), date: item.date, link: 'detail.html?type=news&id=' + item.id, score: s });
     });
-    if (compItems.length) compItems.forEach(item => {
+    if (compItems.length) compItems.map(sr).forEach(item => {
         const s = calcScore(query, item.title, item.excerpt || '', item.content || '', item.tag || '', i18n[currentLang]['tag_' + item.tag] || '');
         if (s > 0) results.push({ type: 'competition', typeLabel: i18n[currentLang].search_type_competition, title: item.title, excerpt: stripMediaMarkers(item.excerpt || item.content || ''), date: item.date, link: 'detail.html?type=competition&id=' + item.id, score: s });
     });
     if (membersData && membersData.length) membersData.forEach(m => {
         const shown = playerDisplayName(m.name);
-        const s = Math.max(calcScore(query, m.name, m.role, m.description), calcScore(query, shown, '', ''));
-        if (s > 0) results.push({ type: 'member', typeLabel: i18n[currentLang].search_type_member, title: shown + ' - ' + m.role, excerpt: m.description || '', date: '', link: 'members.html', score: s });
+        const mRole = playerRole(m), mDesc = playerDescription(m);
+        const s = Math.max(calcScore(query, m.name, mRole, mDesc), calcScore(query, shown, '', ''));
+        if (s > 0) results.push({ type: 'member', typeLabel: i18n[currentLang].search_type_member, title: shown + ' - ' + mRole, excerpt: mDesc || '', date: '', link: 'members.html', score: s });
     });
     if (currentDisplayData && currentDisplayData.length) currentDisplayData.forEach(p => {
         const shown = playerDisplayName(p['姓名']);
@@ -1047,6 +1937,20 @@ if (modalClose && modalOverlay) modalClose.addEventListener('click', () => close
 if (modalOverlay) modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) closeModal(modalOverlay); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && modalOverlay && modalOverlay.classList.contains('active')) closeModal(modalOverlay); });
 
+/* 内容字段取本地化值：英文模式优先 *_en 同级字段，缺失回退中文原文。
+   闭集枚举（tag / 类型 / 赛季 / tags / honors）不走这里——它们是数据键，由 *Label() 查字典。 */
+function contentField(item, field) {
+    if (!item) return '';
+    if (currentLang === 'en') {
+        const en = item[field + '_en'];
+        if (en != null && String(en).trim() !== '') return en;
+    }
+    return item[field] != null ? item[field] : '';
+}
+/* 标题 / 摘要统一入口（内部已 escapeHtml，调用方不要再转义） */
+function contentTitle(item) { return escapeHtml(contentField(item, 'title')); }
+function contentExcerpt(item) { return formatExcerpt(contentField(item, 'excerpt')); }
+
 function formatExcerpt(text) { if (!text) return ''; return renderLatexInString(escapeHtml(text).replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')); }
 function renderLatexInString(html) { if (!html || typeof katex === 'undefined') return html; try { html = html.replace(/\$\$([\s\S]*?)\$\$/g, function(match, formula) { var f = formula.trim(); if (!f) return match; try { var r = katex.renderToString(f, { displayMode: true, throwOnError: false, strict: false }); return r.indexOf('katex-error') !== -1 ? match : r; } catch(e) { return match; } }); html = html.replace(/(^|[^\\$])\$([^\n$]+?)\$/g, function(match, prefix, formula) { var f = formula.trim(); if (!f) return match; try { var r = katex.renderToString(f, { displayMode: false, throwOnError: false, strict: false }); return r.indexOf('katex-error') !== -1 ? match : prefix + r; } catch(e) { return match; } }); } catch(e) { console.warn('LaTeX render failed', e); } return html; }
 function protectLatex(text) { var blocks = []; var p = text; p = p.replace(/\$\$([\s\S]*?)\$\$/g, function(m, f) { var i = blocks.length; blocks.push({ t: 'd', f: f.trim() }); return '\uE000LD' + i + '\uE000'; }); p = p.replace(/\$([^\n]+?)\$/g, function(m, f) { var i = blocks.length; blocks.push({ t: 'i', f: f.trim() }); return '\uE000LI' + i + '\uE000'; }); return { text: p, blocks: blocks }; }
@@ -1066,11 +1970,11 @@ function assignTiedRanks(rows) {
         return Object.assign({}, p, { rank });
     });
 }
-function createNewsCard(item) { const tt = i18n[currentLang]['tag_' + item.tag] || item.tag; return `<div class="news-card-date">${escapeHtml(item.date)}</div><h3>${escapeHtml(item.title)}</h3><p>${formatExcerpt(item.excerpt)}</p><span class="news-card-tag tag-${item.tag}">${tt}</span>`; }
-function createCompetitionCard(item) { const tt = i18n[currentLang]['tag_' + item.tag] || item.tag; return `<div class="competitions-card-date">${escapeHtml(item.date)}</div><h3>${escapeHtml(item.title)}</h3><p>${formatExcerpt(item.excerpt)}</p><span class="competitions-card-tag tag-${item.tag}">${tt}</span>`; }
+function createNewsCard(item) { const tt = i18n[currentLang]['tag_' + item.tag] || item.tag; return `<div class="news-card-date">${escapeHtml(item.date)}</div><h3>${contentTitle(item)}</h3><p>${contentExcerpt(item)}</p><span class="news-card-tag tag-${item.tag}">${tt}</span>`; }
+function createCompetitionCard(item) { const tt = i18n[currentLang]['tag_' + item.tag] || item.tag; return `<div class="competitions-card-date">${escapeHtml(item.date)}</div><h3>${contentTitle(item)}</h3><p>${contentExcerpt(item)}</p><span class="competitions-card-tag tag-${item.tag}">${tt}</span>`; }
 /* 首页快报列表项：日期徽章 + 标题/摘要 + 标签，比卡片更紧凑、信息密度更高 */
-function createHomeHlItem(item) { const tt = i18n[currentLang]['tag_' + item.tag] || item.tag; const parts = (item.date || '').split('-'); const badge = parts.length === 3 ? `<div class="home-hl-date"><span class="home-hl-date-md">${escapeHtml(parts[1])}-${escapeHtml(parts[2])}</span><span class="home-hl-date-y">${escapeHtml(parts[0])}</span></div>` : `<div class="home-hl-date"><span class="home-hl-date-md">${escapeHtml(item.date || '')}</span></div>`; return `${badge}<div class="home-hl-body"><h4>${escapeHtml(item.title)}</h4><p>${formatExcerpt(item.excerpt)}</p></div><span class="home-hl-tag tag-${item.tag}">${tt}</span>`; }
-function createQaCard(item) { const tt = i18n[currentLang]['tag_' + item.tag] || item.tag; return `<div class="qa-card-date">${escapeHtml(item.date)}</div><h3>${escapeHtml(item.title)}</h3><p>${formatExcerpt(item.excerpt)}</p><span class="qa-card-tag tag-${item.tag}">${tt}</span>`; }
+function createHomeHlItem(item) { const tt = i18n[currentLang]['tag_' + item.tag] || item.tag; const parts = (item.date || '').split('-'); const badge = parts.length === 3 ? `<div class="home-hl-date"><span class="home-hl-date-md">${escapeHtml(parts[1])}-${escapeHtml(parts[2])}</span><span class="home-hl-date-y">${escapeHtml(parts[0])}</span></div>` : `<div class="home-hl-date"><span class="home-hl-date-md">${escapeHtml(item.date || '')}</span></div>`; return `${badge}<div class="home-hl-body"><h4>${contentTitle(item)}</h4><p>${contentExcerpt(item)}</p></div><span class="home-hl-tag tag-${item.tag}">${tt}</span>`; }
+function createQaCard(item) { const tt = i18n[currentLang]['tag_' + item.tag] || item.tag; return `<div class="qa-card-date">${escapeHtml(item.date)}</div><h3>${contentTitle(item)}</h3><p>${contentExcerpt(item)}</p><span class="qa-card-tag tag-${item.tag}">${tt}</span>`; }
 function getPaginatedData(d, p) { return d.slice((p-1)*ITEMS_PER_PAGE, p*ITEMS_PER_PAGE); }
 function getTotalPages(d) { return Math.ceil(d.length/ITEMS_PER_PAGE); }
 
@@ -1107,7 +2011,7 @@ else { pages.push(1); const s = Math.max(2, cp-1), e = Math.min(tp-1, cp+1); if 
 pages.forEach(p => { if (p === 'gap') { const gp = document.createElement('span'); gp.className = 'pagination-gap'; gp.textContent = '…'; pe.appendChild(gp); return; } const pg = document.createElement('button'); pg.className = 'pagination-btn'; if (p===cp) pg.classList.add('active'); pg.textContent = p; pg.addEventListener('click', () => { if (cid === 'newsFullGrid') { newsCurrentPage = p; renderAllNews(); } else if (cid === 'competitionsFullGrid') { competitionsCurrentPage = p; renderAllCompetitions(); } else { qaCurrentPage = p; renderAllQa(); } window.scrollTo({ top: c.offsetTop-100, behavior:'smooth' }); }); pe.appendChild(pg); }); const nb = document.createElement('button'); nb.className = 'pagination-btn'; nb.textContent = i18n[currentLang].pagination_next; nb.disabled = cp >= tp; nb.addEventListener('click', () => { if (cid === 'newsFullGrid') { newsCurrentPage = cp+1; renderAllNews(); } else if (cid === 'competitionsFullGrid') { competitionsCurrentPage = cp+1; renderAllCompetitions(); } else { qaCurrentPage = cp+1; renderAllQa(); } window.scrollTo({ top: c.offsetTop-100, behavior:'smooth' }); }); pe.appendChild(nb); const ie = document.createElement('span'); ie.className = 'pagination-info'; ie.textContent = i18n[currentLang].pagination_info.replace('{current}', cp).replace('{total}', tp); pe.appendChild(ie); c.parentElement.appendChild(pe); }
 
 async function loadAboutData() { showContentLoading('coreMembersGrid', i18n[currentLang].loading_about); try { const resp = await fetch('data/about.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); aboutData = await resp.json(); } catch(e) { aboutData = null; } if (typeof renderAboutSections === 'function') renderAboutSections(); updateHeroLastUpdated(); }
-async function loadMembersData() { showContentLoading('coreMembersGrid', i18n[currentLang].loading_members); if (!playersData) await loadPlayers(); if (playersData && Array.isArray(playersData.players)) { membersData = playersData.players.filter(p => p.role).map(p => ({ name: p.name, uid: p.uid, role: p.role, description: p.description, qq: p.qq })); } else { membersData = []; } if (typeof renderCoreMembers === 'function') { renderCoreMembers(); if (typeof renderAllMembersPage === 'function') renderAllMembersPage(); } }
+async function loadMembersData() { showContentLoading('coreMembersGrid', i18n[currentLang].loading_members); if (!playersData) await loadPlayers(); if (playersData && Array.isArray(playersData.players)) { membersData = playersData.players.filter(p => p.role).map(p => ({ name: p.name, uid: p.uid, role: p.role, role_en: p.role_en, description: p.description, description_en: p.description_en, qq: p.qq })); } else { membersData = []; } if (typeof renderCoreMembers === 'function') { renderCoreMembers(); if (typeof renderAllMembersPage === 'function') renderAllMembersPage(); } }
 async function loadNewsData() { const prgs = [showContentLoading('newsPreviewGrid', i18n[currentLang].loading_news), showContentLoading('newsFullGrid', i18n[currentLang].loading_news), showContentLoading('homeNewsList', i18n[currentLang].loading_news)]; try { newsData = await fetchJsonWithProgress('data/news/index.json', pct => { prgs.forEach(p => { if (p) { p.setProgress(pct); p.setMeta('data/news/index.json' + (pct == null ? '' : ' · ' + Math.round(pct) + '%')); } }); }); } catch(e) { console.error('news/index.json 加载失败', e); newsData = []; showContentLoadFail('newsPreviewGrid', loadNewsData); showContentLoadFail('newsFullGrid', loadNewsData); showContentLoadFail('homeNewsList', loadNewsData); markContentLoaded('news'); return; } if (typeof renderAllNews === 'function') renderAllNews(); markContentLoaded('news'); }
 async function loadCompetitionsData() { const prgs = [showContentLoading('competitionsPreviewGrid', i18n[currentLang].loading_competitions), showContentLoading('competitionsFullGrid', i18n[currentLang].loading_competitions), showContentLoading('homeCompList', i18n[currentLang].loading_competitions)]; try { competitionsData = await fetchJsonWithProgress('data/competitions/index.json', pct => { prgs.forEach(p => { if (p) { p.setProgress(pct); p.setMeta('data/competitions/index.json' + (pct == null ? '' : ' · ' + Math.round(pct) + '%')); } }); }); } catch(e) { console.error('competitions/index.json 加载失败', e); competitionsData = []; showContentLoadFail('competitionsPreviewGrid', loadCompetitionsData); showContentLoadFail('competitionsFullGrid', loadCompetitionsData); showContentLoadFail('homeCompList', loadCompetitionsData); markContentLoaded('competition'); return; } if (typeof renderAllCompetitions === 'function') renderAllCompetitions(); markContentLoaded('competition'); }
 async function loadDrawsData() { try { const resp = await fetch('data/draws.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); drawsData = await resp.json(); } catch(e) { drawsData = []; } }
@@ -1390,14 +2294,15 @@ function markContentLoaded(which) {
     }
 }
 
-function renderAboutSections() { if (!aboutData) return; const pc = document.getElementById('philosophyContent'); if (pc && aboutData.philosophy) pc.innerHTML = `<div class="markdown-body">${renderMarkdown(aboutData.philosophy.content)}</div>`; const ac = document.getElementById('activitiesContent'); if (ac && aboutData.activities) ac.innerHTML = `<div class="markdown-body">${renderMarkdown(aboutData.activities.content)}</div>`; updateHeroLastUpdated(); }
+function renderAboutSections() { if (!aboutData) return; const pc = document.getElementById('philosophyContent'); if (pc && aboutData.philosophy) pc.innerHTML = `<div class="markdown-body">${renderMarkdown(contentField(aboutData.philosophy, 'content'))}</div>`; const ac = document.getElementById('activitiesContent'); if (ac && aboutData.activities) ac.innerHTML = `<div class="markdown-body">${renderMarkdown(contentField(aboutData.activities, 'content'))}</div>`; updateHeroLastUpdated(); }
 function getMemberAvatarHTML(m) { const nm = playerDisplayName(m.name); if (m.qq && m.qq.trim()) { const qqUrl = `https://q1.qlogo.cn/g?b=qq&nk=${m.qq.trim()}&s=640`; return `<div class="member-avatar">${escapeHtml(nm.charAt(0))}<img class="member-avatar-img" src="${escapeHtml(qqUrl)}" alt="${escapeHtml(nm)}" loading="lazy" onerror="this.style.display='none'"></div>`; } return `<div class="member-avatar text-only">${escapeHtml(nm.charAt(0))}</div>`; }
-function renderCoreMembers() { document.querySelectorAll('#coreMembersGrid').forEach(g => { if (!g) return; g.innerHTML = ''; membersData.forEach(m => { const el = document.createElement('div'); el.className = 'member-card glass-card'; el.innerHTML = `${getMemberAvatarHTML(m)}<h3>${escapeHtml(playerDisplayName(m.name))}</h3><span class="member-role">${escapeHtml(m.role)}</span><p class="member-desc">${formatExcerpt(m.description)}</p>`; if (m.uid != null) { el.title = i18n[currentLang].rank_view_player_page; makeCardClickable(el, 'player.html?uid=' + m.uid); } g.appendChild(el); }); }); }
-function renderAllMembersPage() { const g = document.getElementById('allMembersGrid'); if (!g) return; g.innerHTML = ''; membersData.forEach(m => { const el = document.createElement('div'); el.className = 'member-card glass-card'; el.innerHTML = `${getMemberAvatarHTML(m)}<h3>${escapeHtml(playerDisplayName(m.name))}</h3><span class="member-role">${escapeHtml(m.role)}</span><p class="member-desc">${formatExcerpt(m.description)}</p>`; if (m.uid != null) { el.title = i18n[currentLang].rank_view_player_page; makeCardClickable(el, 'player.html?uid=' + m.uid); } g.appendChild(el); }); }
+function renderCoreMembers() { document.querySelectorAll('#coreMembersGrid').forEach(g => { if (!g) return; g.innerHTML = ''; membersData.forEach(m => { const el = document.createElement('div'); el.className = 'member-card glass-card'; el.innerHTML = `${getMemberAvatarHTML(m)}<h3>${escapeHtml(playerDisplayName(m.name))}</h3><span class="member-role">${escapeHtml(playerRole(m))}</span><p class="member-desc">${formatExcerpt(playerDescription(m))}</p>`; if (m.uid != null) { el.title = i18n[currentLang].rank_view_player_page; makeCardClickable(el, 'player.html?uid=' + m.uid); } g.appendChild(el); }); }); }
+function renderAllMembersPage() { const g = document.getElementById('allMembersGrid'); if (!g) return; g.innerHTML = ''; membersData.forEach(m => { const el = document.createElement('div'); el.className = 'member-card glass-card'; el.innerHTML = `${getMemberAvatarHTML(m)}<h3>${escapeHtml(playerDisplayName(m.name))}</h3><span class="member-role">${escapeHtml(playerRole(m))}</span><p class="member-desc">${formatExcerpt(playerDescription(m))}</p>`; if (m.uid != null) { el.title = i18n[currentLang].rank_view_player_page; makeCardClickable(el, 'player.html?uid=' + m.uid); } g.appendChild(el); }); }
 function renderAllNews() { const pg = document.getElementById('newsPreviewGrid'); if (pg) { pg.innerHTML = ''; newsData.slice(0,3).forEach(item => { const c = document.createElement('div'); c.className = 'news-card'; c.innerHTML = createNewsCard(item); makeCardClickable(c, 'detail.html?type=news&id=' + item.id); pg.appendChild(c); }); } const hl = document.getElementById('homeNewsList'); if (hl) { hl.innerHTML = ''; const items = newsData.slice(0,4); if (!items.length) showContentEmptyState('homeNewsList'); items.forEach(item => { const c = document.createElement('div'); c.className = 'home-hl-item'; c.innerHTML = createHomeHlItem(item); makeCardClickable(c, 'detail.html?type=news&id=' + item.id); hl.appendChild(c); }); } const fg = document.getElementById('newsFullGrid'); if (fg) { const fd = getFilteredNewsData(); fg.innerHTML = ''; if (!fd.length) showContentEmptyState('newsFullGrid'); getPaginatedData(fd, newsCurrentPage).forEach(item => { const c = document.createElement('div'); c.className = 'news-card'; c.innerHTML = createNewsCard(item); makeCardClickable(c, 'detail.html?type=news&id=' + item.id); fg.appendChild(c); }); renderPagination('newsFullGrid', fd, newsCurrentPage); renderTagFilter('newsTagFilter', newsData, newsFilterTag, setNewsFilter); } }
 function renderAllCompetitions() { const pg = document.getElementById('competitionsPreviewGrid'); if (pg) { pg.innerHTML = ''; competitionsData.slice(0,3).forEach(item => { const c = document.createElement('div'); c.className = 'competitions-card'; c.innerHTML = createCompetitionCard(item); makeCardClickable(c, 'detail.html?type=competition&id=' + item.id); pg.appendChild(c); }); } const hl = document.getElementById('homeCompList'); if (hl) { hl.innerHTML = ''; const upcoming = competitionsData.filter(it => it.tag === 'upcoming'); const items = upcoming.concat(competitionsData.filter(it => it.tag !== 'upcoming')).slice(0,4); if (!items.length) showContentEmptyState('homeCompList'); items.forEach(item => { const c = document.createElement('div'); c.className = 'home-hl-item' + (item.tag === 'upcoming' ? ' is-upcoming' : ''); c.innerHTML = createHomeHlItem(item); makeCardClickable(c, 'detail.html?type=competition&id=' + item.id); hl.appendChild(c); }); } const fg = document.getElementById('competitionsFullGrid'); if (fg) { const fd = getFilteredCompetitionsData(); fg.innerHTML = ''; if (!fd.length) showContentEmptyState('competitionsFullGrid'); getPaginatedData(fd, competitionsCurrentPage).forEach(item => { const c = document.createElement('div'); c.className = 'competitions-card'; c.innerHTML = createCompetitionCard(item); makeCardClickable(c, 'detail.html?type=competition&id=' + item.id); fg.appendChild(c); }); renderPagination('competitionsFullGrid', fd, competitionsCurrentPage); renderTagFilter('competitionsTagFilter', competitionsData, competitionsFilterTag, setCompetitionsFilter); } }
 function renderAllQa() { const fg = document.getElementById('qaFullGrid'); if (fg) { fg.innerHTML = ''; if (!qaData.length) showContentEmptyState('qaFullGrid'); getPaginatedData(qaData, qaCurrentPage).forEach(item => { const c = document.createElement('div'); c.className = 'qa-card'; c.innerHTML = createQaCard(item); makeCardClickable(c, 'detail.html?type=qa&id=' + item.id); fg.appendChild(c); }); renderPagination('qaFullGrid', qaData, qaCurrentPage); } }
-function renderAllChangelog() { const tl = document.getElementById('changelogTimeline'); if (!tl) return; tl.innerHTML = ''; if (!changelogData || !changelogData.length) { tl.innerHTML = '<div class="changelog-empty"><i class="fa-solid fa-clock-rotate-left"></i><p data-i18n="changelog_empty">暂无更新日志</p></div>'; return; } changelogData.forEach((item, idx) => { const entry = document.createElement('div'); entry.className = 'changelog-entry'; const tagLabel = i18n[currentLang]['tag_' + item.tag] || item.tag; const tagSafe = 'tag-' + String(item.tag || '').replace(/[^a-zA-Z0-9_-]/g, ''); const changesHtml = item.changes && item.changes.length ? '<ul class="changelog-changes">' + item.changes.map(c => '<li>' + renderMarkdown(c) + '</li>').join('') + '</ul>' : ''; entry.innerHTML = `<div class="changelog-entry-marker"><div class="changelog-dot"></div>${idx < changelogData.length - 1 ? '<div class="changelog-line"></div>' : ''}</div><div class="changelog-entry-content glass-card"><div class="changelog-entry-header"><span class="changelog-version">${escapeHtml(item.version)}</span><span class="changelog-tag ${escapeHtml(tagSafe)}">${escapeHtml(tagLabel)}</span><span class="changelog-date">${escapeHtml(item.date)}</span></div><h3 class="changelog-entry-title">${escapeHtml(item.title)}</h3>${changesHtml}</div>`; tl.appendChild(entry); }); }
+function renderAllChangelog() { const tl = document.getElementById('changelogTimeline'); if (!tl) return; tl.innerHTML = ''; if (!changelogData || !changelogData.length) { tl.innerHTML = '<div class="changelog-empty"><i class="fa-solid fa-clock-rotate-left"></i><p data-i18n="changelog_empty">暂无更新日志</p></div>'; return; } changelogData.forEach((item, idx) => { const entry = document.createElement('div'); entry.className = 'changelog-entry'; const tagLabel = i18n[currentLang]['tag_' + item.tag] || item.tag; const tagSafe = 'tag-' + String(item.tag || '').replace(/[^a-zA-Z0-9_-]/g, ''); const locChanges = (currentLang === 'en' && item.changes_en && item.changes_en.length ? item.changes_en : item.changes) || [];
+    const changesHtml = locChanges.length ? '<ul class="changelog-changes">' + locChanges.map(c => '<li>' + renderMarkdown(c) + '</li>').join('') + '</ul>' : ''; entry.innerHTML = `<div class="changelog-entry-marker"><div class="changelog-dot"></div>${idx < changelogData.length - 1 ? '<div class="changelog-line"></div>' : ''}</div><div class="changelog-entry-content glass-card"><div class="changelog-entry-header"><span class="changelog-version">${escapeHtml(item.version)}</span><span class="changelog-tag ${escapeHtml(tagSafe)}">${escapeHtml(tagLabel)}</span><span class="changelog-date">${escapeHtml(item.date)}</span></div><h3 class="changelog-entry-title">${escapeHtml(contentField(item, 'title'))}</h3>${changesHtml}</div>`; tl.appendChild(entry); }); }
 // ========================================
 // 详情页：条目文件夹 {type}/{id}/{id}.json（展示）+ {id}.history.json（版本清单）+ {id}.v{n}.json（快照）
 // ========================================
@@ -1405,14 +2310,19 @@ function getContentListByType(type) { return type === 'news' ? newsData : (type 
 function getContentDirByType(type) { return type === 'news' ? 'news' : (type === 'competition' ? 'competitions' : 'qa'); }
 async function resolveItemContent(type, item) {
     if (!item) return '';
-    if (item.contentFile) {
-        const cf = String(item.contentFile).replace(/\\/g, '/').replace(/^\/+/, '');
+    // 英文模式优先 contentFile_en（*.en.md），再退 content_en，最后回退中文正文
+    const inlineKey = currentLang === 'en' ? 'content_en' : 'content';
+    const cf0 = currentLang === 'en' ? (item.contentFile_en || item.contentFile) : item.contentFile;
+    if (cf0) {
+        const cf = String(cf0).replace(/\\/g, '/').replace(/^\/+/, '');
         const url = cf.includes('/') ? cf : `data/${getContentDirByType(type)}/${encodeURIComponent(String(item.id))}/${encodeURIComponent(cf)}`;
         try {
             const resp = await fetch(url);
             if (resp.ok) return await resp.text();
         } catch(e) { /* 拉取失败时回退到内联字段 */ }
     }
+    const localized = item[inlineKey];
+    if (localized != null && String(localized).trim() !== '') return localized;
     return item.content || item.excerpt || '';
 }
 const DETAIL_SNAPSHOT_KEYS = ['date', 'title', 'excerpt', 'content', 'tag', 'media'];
@@ -1543,11 +2453,13 @@ async function updateDetailPage() {
 
 async function renderDetailItem(type, item) {
     // 动态标题与描述：浏览器标签页/分享卡片/搜索结果如实反映当前条目（player.html 同款做法）
-    document.title = (item.title || '') + ' | WFLS Table Tennis Club';
+    const locTitle = contentField(item, 'title');
+    const locExcerpt = contentField(item, 'excerpt');
+    document.title = (locTitle || '') + ' | WFLS Table Tennis Club';
     const descMeta = document.querySelector('meta[name="description"]');
-    if (descMeta && item.excerpt) descMeta.setAttribute('content', String(item.excerpt));
+    if (descMeta && locExcerpt) descMeta.setAttribute('content', String(locExcerpt));
     document.getElementById('detailTypeTag').textContent = i18n[currentLang][type === 'news' ? 'news_hero_tag' : (type === 'competition' ? 'comp_hero_tag' : 'qa_hero_tag')];
-    document.getElementById('detailTitle').textContent = item.title;
+    document.getElementById('detailTitle').textContent = locTitle;
     document.getElementById('detailDate').textContent = item.date;
     const bodyText = await resolveItemContent(type, item);
     const contentSection = document.getElementById('detailContent');
@@ -1589,8 +2501,9 @@ function renderDetailNav(type, item) {
         const a = document.createElement('a');
         a.className = 'detail-nav-item';
         a.href = 'detail.html?type=' + type + '&id=' + encodeURIComponent(String(entry.id));
-        a.title = String(entry.title || '');
-        a.innerHTML = wrapText(label + String(entry.title || ''));
+        const entryTitle = contentField(entry, 'title');
+        a.title = entryTitle;
+        a.innerHTML = wrapText(label + entryTitle);
         return a;
     };
     const wrap = document.createElement('div');
@@ -1814,12 +2727,13 @@ function buildMediaItem(m, embed) {
         a.href = m.src;
         a.className = 'file-link';
         a.download = '';
-        a.innerHTML = '<i class="fa-solid fa-download"></i> ' + escapeHtml(String(m.name || '下载文件'));
+        a.innerHTML = '<i class="fa-solid fa-download"></i> ' + escapeHtml(String((currentLang === 'en' && m.name_en) ? m.name_en : (m.name || i18n[currentLang].media_download_file)));
         mi.appendChild(a);
     } else {
         return null;
     }
-    const caption = m.caption == null ? '' : String(m.caption).trim();
+    const capRaw = (currentLang === 'en' && m.caption_en) ? m.caption_en : m.caption;
+    const caption = capRaw == null ? '' : String(capRaw).trim();
     if (caption) {
         const cap = document.createElement('div');
         cap.className = 'media-caption';

@@ -65,7 +65,8 @@ function paTypeColor(key, idx) {
 
 function paTypeLabel(key) {
     if (key === PA_BONUS_KEY) return i18n[currentLang].score_type_bonus;
-    return key;
+    // 赛事类型是数据键，显示层查 ev_* 词典（颜色映射仍按原中文键工作）
+    return (typeof eventTypeLabel === 'function') ? eventTypeLabel(key) : key;
 }
 
 function paAlpha(hex, a) {
@@ -349,7 +350,7 @@ function renderPlayerAnalytics(playerName, records, opts) {
             const idx = typeStats.indexOf(t);
             html += '<div class="pa-type-legend-item">';
             html += '<span class="pa-dot" style="background:' + paTypeColor(t.type, idx) + '"></span>';
-            html += '<span class="pa-type-name">' + escapeHtml(String(t.type)) + '</span>';
+            html += '<span class="pa-type-name">' + escapeHtml(paTypeLabel(t.type)) + '</span>';
             html += '<span class="pa-type-stat">' + L.wtt_sub_wl.replace('{wins}', t.wins).replace('{losses}', t.total - t.wins).replace('{rate}', rate) + '</span>';
             html += '</div>';
         }
@@ -421,7 +422,7 @@ function renderPlayerAnalytics(playerName, records, opts) {
             tTotal += r.total; tWins += r.wins; tLosses += r.losses;
             const nc = r.net >= 0 ? 'pa-text-win' : 'pa-text-loss';
             const ns = r.net >= 0 ? '+' : '';
-            html += '<tr><td>' + escapeHtml(String(r.label)) + '</td><td>' + r.total + '</td><td>' + r.wins + '-' + r.losses + '</td><td>' + (r.rate == null ? '-' : r.rate + '%') + '</td><td class="' + nc + '">' + ns + r.net.toFixed(1) + '</td><td>' + (r.peak == null ? '-' : r.peak.toFixed(1)) + '</td></tr>';
+            html += '<tr><td>' + escapeHtml((typeof seasonLabel === 'function') ? seasonLabel(r.label) : String(r.label)) + '</td><td>' + r.total + '</td><td>' + r.wins + '-' + r.losses + '</td><td>' + (r.rate == null ? '-' : r.rate + '%') + '</td><td class="' + nc + '">' + ns + r.net.toFixed(1) + '</td><td>' + (r.peak == null ? '-' : r.peak.toFixed(1)) + '</td></tr>';
         }
         const tRate = tTotal ? Math.round(tWins / tTotal * 100) : null;
         html += '<tr class="pa-season-total"><td>' + L.pa_season_total + '</td><td>' + tTotal + '</td><td>' + tWins + '-' + tLosses + '</td><td>' + (tRate == null ? '-' : tRate + '%') + '</td><td>-</td><td>-</td></tr>';

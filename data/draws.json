@@ -4,11 +4,18 @@
     "version": 3,
     "competitionId": "c4",
     "title": "2026乒乓球团体淘汰赛",
+    "title_en": "2026 Table Tennis Team Knockout Bracket",
     "roundLabels": {
       "0": "6进3",
       "1": "复活赛",
       "2": "半决赛",
       "3": "决赛/铜牌赛"
+    },
+    "roundLabels_en": {
+      "0": "Six to Three",
+      "1": "Repechage",
+      "2": "Semifinals",
+      "3": "Final / Bronze Match"
     },
     "grid": {
       "cols": 4,
@@ -22,9 +29,14 @@
         "col": 0,
         "row": 0,
         "player1": "高一9班 梅哲宇、龚雨煊、王天森",
+        "player1_en": "Gr.10 Class 9 MEI Zheyu, GONG Yuxuan, WANG Tiansen",
         "player2": {
           "name": "高二6班、高二5班 祁子傲、李南熠、丁瑞、张书行",
           "note": "替补"
+        },
+        "player2_en": {
+          "name": "Gr.11 Class 6, Gr.11 Class 5 QI Ziao, LI Nanyi, DING Rui, ZHANG Shuxing",
+          "note_en": "Substitute"
         },
         "score": "3-0",
         "winner": 1
@@ -34,7 +46,9 @@
         "col": 0,
         "row": 2,
         "player1": "高二4班、高二10班 魏罗瑞、陈瑜萱、王成悦",
+        "player1_en": "Gr.11 Class 4, Gr.11 Class 10 WEI Luorui, CHEN Yuxuan, WANG Chengyue",
         "player2": "高一6班 谷子易、彭一和、姜子润",
+        "player2_en": "Gr.10 Class 6 GU Ziyi, PENG Yihe, JIANG Zirun",
         "score": "3-2",
         "winner": 1
       },
@@ -46,7 +60,12 @@
           "name": "高二12班、高二3班 张宸瑞、陈项诚、任峻贤、岳镇淳",
           "note": "替补"
         },
+        "player1_en": {
+          "name": "Gr.11 Class 12, Gr.11 Class 3 ZHANG Chenrui, CHEN Xiangcheng, REN Junxian, YUE Zhenchun",
+          "note_en": "Substitute"
+        },
         "player2": "高二4班、高二9班、高一5班 付大卫、孙钰鑫、叶泓鑫",
+        "player2_en": "Gr.11 Class 4, Gr.11 Class 9, Gr.10 Class 5 FU Dawei, SUN Yuxin, YE Hongxin",
         "score": "3-1",
         "winner": 1
       },
@@ -59,7 +78,12 @@
           "name": "高二6班、高二5班 祁子傲、李南熠、丁瑞、张书行",
           "note": "替补"
         },
+        "player1_en": {
+          "name": "Gr.11 Class 6, Gr.11 Class 5 QI Ziao, LI Nanyi, DING Rui, ZHANG Shuxing",
+          "note_en": "Substitute"
+        },
         "player2": "高一6班 谷子易、彭一和、姜子润",
+        "player2_en": "Gr.10 Class 6 GU Ziyi, PENG Yihe, JIANG Zirun",
         "score": "8-5",
         "winner": 1
       },
@@ -69,7 +93,9 @@
         "row": 8,
         "round": 1,
         "player1": "高二4班、高二9班、高一5班 付大卫、孙钰鑫、叶泓鑫",
+        "player1_en": "Gr.11 Class 4, Gr.11 Class 9, Gr.10 Class 5 FU Dawei, SUN Yuxin, YE Hongxin",
         "player2": "高一6班 谷子易、彭一和、姜子润",
+        "player2_en": "Gr.10 Class 6 GU Ziyi, PENG Yihe, JIANG Zirun",
         "score": "8-5",
         "winner": 1
       },
@@ -82,7 +108,12 @@
           "name": "高二6班、高二5班 祁子傲、李南熠、丁瑞、张书行",
           "note": "替补"
         },
+        "player1_en": {
+          "name": "Gr.11 Class 6, Gr.11 Class 5 QI Ziao, LI Nanyi, DING Rui, ZHANG Shuxing",
+          "note_en": "Substitute"
+        },
         "player2": "高二4班、高二9班、高一5班 付大卫、孙钰鑫、叶泓鑫",
+        "player2_en": "Gr.11 Class 4, Gr.11 Class 9, Gr.10 Class 5 FU Dawei, SUN Yuxin, YE Hongxin",
         "score": "8-6",
         "winner": 1
       },
@@ -91,7 +122,9 @@
         "col": 2,
         "row": 1,
         "player1": "高一9班 梅哲宇、龚雨煊、王天森",
+        "player1_en": "Gr.10 Class 9 MEI Zheyu, GONG Yuxuan, WANG Tiansen",
         "player2": "高二4班、高二10班 魏罗瑞、陈瑜萱、王成悦",
+        "player2_en": "Gr.11 Class 4, Gr.11 Class 10 WEI Luorui, CHEN Yuxuan, WANG Chengyue",
         "score": "0-3",
         "winner": 2
       },
@@ -103,9 +136,17 @@
           "name": "高二12班、高二3班 张宸瑞、陈项诚、任峻贤、岳镇淳",
           "note": "替补"
         },
+        "player1_en": {
+          "name": "Gr.11 Class 12, Gr.11 Class 3 ZHANG Chenrui, CHEN Xiangcheng, REN Junxian, YUE Zhenchun",
+          "note_en": "Substitute"
+        },
         "player2": {
           "name": "高二6班、高二5班 祁子傲、李南熠、丁瑞、张书行",
           "note": "替补"
+        },
+        "player2_en": {
+          "name": "Gr.11 Class 6, Gr.11 Class 5 QI Ziao, LI Nanyi, DING Rui, ZHANG Shuxing",
+          "note_en": "Substitute"
         },
         "score": "2-3",
         "winner": 2
@@ -115,9 +156,14 @@
         "col": 3,
         "row": 5,
         "player1": "高二4班、高二10班 魏罗瑞、陈瑜萱、王成悦",
+        "player1_en": "Gr.11 Class 4, Gr.11 Class 10 WEI Luorui, CHEN Yuxuan, WANG Chengyue",
         "player2": {
           "name": "高二6班、高二5班 祁子傲、李南熠、丁瑞、张书行",
           "note": "替补"
+        },
+        "player2_en": {
+          "name": "Gr.11 Class 6, Gr.11 Class 5 QI Ziao, LI Nanyi, DING Rui, ZHANG Shuxing",
+          "note_en": "Substitute"
         },
         "score": "2-2",
         "winner": 0
@@ -127,9 +173,14 @@
         "col": 3,
         "row": 10,
         "player1": "高一9班 梅哲宇、龚雨煊、王天森",
+        "player1_en": "Gr.10 Class 9 MEI Zheyu, GONG Yuxuan, WANG Tiansen",
         "player2": {
           "name": "高二12班、高二3班 张宸瑞、陈项诚、任峻贤、岳镇淳",
           "note": "替补"
+        },
+        "player2_en": {
+          "name": "Gr.11 Class 12, Gr.11 Class 3 ZHANG Chenrui, CHEN Xiangcheng, REN Junxian, YUE Zhenchun",
+          "note_en": "Substitute"
         },
         "score": "3-0",
         "winner": 1
@@ -167,6 +218,14 @@
     "version": 3,
     "competitionId": "c5",
     "title": "2026乒乓球单打淘汰赛",
+    "title_en": "2026 Table Tennis Singles Knockout Bracket",
+    "roundLabels_en": {
+      "0": "Round 1",
+      "1": "Round 2",
+      "2": "Quarterfinals",
+      "3": "Semifinals",
+      "4": "Final"
+    },
     "grid": {
       "cols": 7,
       "rows": 32,
@@ -183,6 +242,10 @@
           "name": "祁子傲",
           "seed": 1
         },
+        "player1_en": {
+          "name": "QI Ziao",
+          "seed": 1
+        },
         "winner": 1
       },
       {
@@ -191,7 +254,9 @@
         "col": 0,
         "row": 2,
         "player1": "夏梓涵",
+        "player1_en": "XIA Zihan",
         "player2": "严嘉翔",
+        "player2_en": "YAN Jiaxiang",
         "score": "1-3",
         "winner": 2
       },
@@ -204,8 +269,16 @@
           "name": "张宸瑞",
           "seed": 11
         },
+        "player1_en": {
+          "name": "ZHANG Chenrui",
+          "seed": 11
+        },
         "player2": {
           "name": "谷子易",
+          "seed": 10
+        },
+        "player2_en": {
+          "name": "GU Ziyi",
           "seed": 10
         },
         "score": "2-3",
@@ -217,7 +290,9 @@
         "col": 0,
         "row": 6,
         "player1": "刘天齐",
+        "player1_en": "LIU Tianqi",
         "player2": "杨苏旭",
+        "player2_en": "YANG Suxu",
         "score": "0-3",
         "winner": 2
       },
@@ -230,7 +305,12 @@
           "name": "付大卫",
           "seed": 6
         },
+        "player1_en": {
+          "name": "FU Dawei",
+          "seed": 6
+        },
         "player2": "叶泓鑫",
+        "player2_en": "YE Hongxin",
         "score": "3-1",
         "winner": 1
       },
@@ -243,7 +323,12 @@
           "name": "龚雨煊",
           "seed": 3
         },
+        "player1_en": {
+          "name": "GONG Yuxuan",
+          "seed": 3
+        },
         "player2": "王子一",
+        "player2_en": "WANG Ziyi",
         "score": "3-0",
         "winner": 1
       },
@@ -256,7 +341,12 @@
           "name": "王成悦",
           "seed": 8
         },
+        "player1_en": {
+          "name": "WANG Chengyue",
+          "seed": 8
+        },
         "player2": "邓以清",
+        "player2_en": "DENG Yiqing",
         "score": "3-0",
         "winner": 1
       },
@@ -269,7 +359,12 @@
           "name": "任安喆",
           "seed": 5
         },
+        "player1_en": {
+          "name": "REN Anzhe",
+          "seed": 5
+        },
         "player2": "曹高畅",
+        "player2_en": "CAO Gaochang",
         "score": "3-0",
         "winner": 1
       },
@@ -279,7 +374,9 @@
         "col": 0,
         "row": 16,
         "player1": "何齐烨",
+        "player1_en": "HE Qiye",
         "player2": "王玥涵",
+        "player2_en": "WANG Yuehan",
         "score": "3-0",
         "winner": 1
       },
@@ -292,7 +389,12 @@
           "name": "姜子润",
           "seed": 7
         },
+        "player1_en": {
+          "name": "JIANG Zirun",
+          "seed": 7
+        },
         "player2": "叶孟恒",
+        "player2_en": "YE Mengheng",
         "score": "3-2",
         "winner": 1
       },
@@ -305,7 +407,12 @@
           "name": "任峻贤",
           "seed": 4
         },
+        "player1_en": {
+          "name": "REN Junxian",
+          "seed": 4
+        },
         "player2": "丁胜怀",
+        "player2_en": "DING Shenghuai",
         "score": "3-0",
         "winner": 1
       },
@@ -318,7 +425,12 @@
           "name": "胡朗诚",
           "seed": 12
         },
+        "player1_en": {
+          "name": "HU Langcheng",
+          "seed": 12
+        },
         "player2": "刘冠羽",
+        "player2_en": "LIU Guanyu",
         "score": "3-2",
         "winner": 1
       },
@@ -328,7 +440,9 @@
         "col": 0,
         "row": 24,
         "player1": "吴慈航",
+        "player1_en": "WU Cihang",
         "player2": "刘彧铭",
+        "player2_en": "LIU Yuming",
         "score": "3-1",
         "winner": 1
       },
@@ -338,7 +452,9 @@
         "col": 0,
         "row": 26,
         "player1": "陶锦源",
+        "player1_en": "TAO Jinyuan",
         "player2": "吕曜而",
+        "player2_en": "LÜ Yao'er",
         "score": "3-0",
         "winner": 1
       },
@@ -351,7 +467,12 @@
           "name": "梅哲宇",
           "seed": 9
         },
+        "player1_en": {
+          "name": "MEI Zheyu",
+          "seed": 9
+        },
         "player2": "肖辰宇",
+        "player2_en": "XIAO Chenyu",
         "score": "3-0",
         "winner": 1
       },
@@ -362,6 +483,10 @@
         "row": 30,
         "player1": {
           "name": "陈瑜萱",
+          "seed": 2
+        },
+        "player1_en": {
+          "name": "CHEN Yuxuan",
           "seed": 2
         },
         "winner": 1
@@ -375,7 +500,12 @@
           "name": "祁子傲",
           "seed": 1
         },
+        "player1_en": {
+          "name": "QI Ziao",
+          "seed": 1
+        },
         "player2": "严嘉翔",
+        "player2_en": "YAN Jiaxiang",
         "score": "3-2",
         "winner": 1
       },
@@ -388,7 +518,12 @@
           "name": "谷子易",
           "seed": 10
         },
+        "player1_en": {
+          "name": "GU Ziyi",
+          "seed": 10
+        },
         "player2": "杨苏旭",
+        "player2_en": "YANG Suxu",
         "score": "3-1",
         "winner": 1
       },
@@ -401,8 +536,16 @@
           "name": "付大卫",
           "seed": 6
         },
+        "player1_en": {
+          "name": "FU Dawei",
+          "seed": 6
+        },
         "player2": {
           "name": "龚雨煊",
+          "seed": 3
+        },
+        "player2_en": {
+          "name": "GONG Yuxuan",
           "seed": 3
         },
         "score": "3-1",
@@ -417,8 +560,16 @@
           "name": "王成悦",
           "seed": 8
         },
+        "player1_en": {
+          "name": "WANG Chengyue",
+          "seed": 8
+        },
         "player2": {
           "name": "任安喆",
+          "seed": 5
+        },
+        "player2_en": {
+          "name": "REN Anzhe",
           "seed": 5
         },
         "score": "3-0",
@@ -430,8 +581,13 @@
         "col": 1,
         "row": 17,
         "player1": "何齐烨",
+        "player1_en": "HE Qiye",
         "player2": {
           "name": "姜子润",
+          "seed": 7
+        },
+        "player2_en": {
+          "name": "JIANG Zirun",
           "seed": 7
         },
         "score": "0-3",
@@ -446,8 +602,16 @@
           "name": "任峻贤",
           "seed": 4
         },
+        "player1_en": {
+          "name": "REN Junxian",
+          "seed": 4
+        },
         "player2": {
           "name": "胡朗诚",
+          "seed": 12
+        },
+        "player2_en": {
+          "name": "HU Langcheng",
           "seed": 12
         },
         "score": "3-0",
@@ -459,7 +623,9 @@
         "col": 1,
         "row": 25,
         "player1": "吴慈航",
+        "player1_en": "WU Cihang",
         "player2": "陶锦源",
+        "player2_en": "TAO Jinyuan",
         "score": "2-3",
         "winner": 2
       },
@@ -472,10 +638,19 @@
           "name": "梅哲宇",
           "seed": 9
         },
+        "player1_en": {
+          "name": "MEI Zheyu",
+          "seed": 9
+        },
         "player2": {
           "name": "陈瑜萱",
           "seed": 2,
           "note": "弃赛"
+        },
+        "player2_en": {
+          "name": "CHEN Yuxuan",
+          "seed": 2,
+          "note_en": "Withdrawal"
         },
         "score": "3-0",
         "winner": 1
@@ -489,8 +664,16 @@
           "name": "祁子傲",
           "seed": 1
         },
+        "player1_en": {
+          "name": "QI Ziao",
+          "seed": 1
+        },
         "player2": {
           "name": "谷子易",
+          "seed": 10
+        },
+        "player2_en": {
+          "name": "GU Ziyi",
           "seed": 10
         },
         "score": "1-3",
@@ -505,8 +688,16 @@
           "name": "付大卫",
           "seed": 6
         },
+        "player1_en": {
+          "name": "FU Dawei",
+          "seed": 6
+        },
         "player2": {
           "name": "王成悦",
+          "seed": 8
+        },
+        "player2_en": {
+          "name": "WANG Chengyue",
           "seed": 8
         },
         "score": "3-1",
@@ -521,8 +712,16 @@
           "name": "姜子润",
           "seed": 7
         },
+        "player1_en": {
+          "name": "JIANG Zirun",
+          "seed": 7
+        },
         "player2": {
           "name": "任峻贤",
+          "seed": 4
+        },
+        "player2_en": {
+          "name": "REN Junxian",
           "seed": 4
         },
         "score": "0-3",
@@ -534,8 +733,13 @@
         "col": 2,
         "row": 27,
         "player1": "陶锦源",
+        "player1_en": "TAO Jinyuan",
         "player2": {
           "name": "梅哲宇",
+          "seed": 9
+        },
+        "player2_en": {
+          "name": "MEI Zheyu",
           "seed": 9
         },
         "score": "0-3",
@@ -550,8 +754,16 @@
           "name": "谷子易",
           "seed": 10
         },
+        "player1_en": {
+          "name": "GU Ziyi",
+          "seed": 10
+        },
         "player2": {
           "name": "付大卫",
+          "seed": 6
+        },
+        "player2_en": {
+          "name": "FU Dawei",
           "seed": 6
         },
         "score": "3-4",
@@ -566,8 +778,16 @@
           "name": "任峻贤",
           "seed": 4
         },
+        "player1_en": {
+          "name": "REN Junxian",
+          "seed": 4
+        },
         "player2": {
           "name": "梅哲宇",
+          "seed": 9
+        },
+        "player2_en": {
+          "name": "MEI Zheyu",
           "seed": 9
         },
         "score": "4-0",
@@ -582,8 +802,16 @@
           "name": "付大卫",
           "seed": 6
         },
+        "player1_en": {
+          "name": "FU Dawei",
+          "seed": 6
+        },
         "player2": {
           "name": "任峻贤",
+          "seed": 4
+        },
+        "player2_en": {
+          "name": "REN Junxian",
           "seed": 4
         },
         "score": "3-4",
@@ -716,285 +944,581 @@
   {
     "id": "d3",
     "version": 3,
-    "visible": false,
     "competitionId": "c6",
     "title": "十二强争冠赛暨2026社团表演赛",
+    "title_en": "Top-12 Championship & 2026 Club Exhibition Tournament",
+    "subtitle": "每组出线 2 人，1/4 决赛交叉配对（A1-B2 / B1-A2 / C1-D2 / D1-C2）",
     "roundLabels": {
-      "0": "A组循环赛",
-      "1": "B组循环赛",
-      "2": "C组循环赛",
-      "3": "D组循环赛",
-      "4": "半决赛",
-      "5": "决赛"
+      "0": "A组",
+      "1": "B组",
+      "2": "C组",
+      "3": "D组",
+      "4": "1/4决赛",
+      "5": "半决赛",
+      "6": "决赛"
+    },
+    "roundLabels_en": {
+      "0": "Group A",
+      "1": "Group B",
+      "2": "Group C",
+      "3": "Group D",
+      "4": "Quarter-finals",
+      "5": "Semifinals",
+      "6": "Final"
     },
     "grid": {
-      "cols": 3,
-      "rows": 16,
+      "cols": 7,
+      "rows": 17,
       "cellWidth": 180,
       "cellHeight": 64
     },
     "cards": [
       {
-        "id": "m1",
+        "id": "n1",
+        "type": "note",
         "col": 0,
         "row": 0,
+        "text": "A组（单循环）"
+      },
+      {
+        "id": "m1",
+        "col": 0,
+        "row": 2,
         "player1": {
           "name": "任峻贤",
+          "seed": 1
+        },
+        "player1_en": {
+          "name": "REN Junxian",
           "seed": 1
         },
         "player2": {
           "name": "任安喆",
           "seed": 5
         },
-        "winner": 0
+        "player2_en": {
+          "name": "REN Anzhe",
+          "seed": 5
+        },
+        "score": "1-3",
+        "games": [
+          "5-11",
+          "11-9",
+          "6-11",
+          "5-11"
+        ],
+        "winner": 2
       },
       {
         "id": "m2",
         "col": 0,
-        "row": 1,
+        "row": 4,
         "player1": {
           "name": "任峻贤",
+          "seed": 1
+        },
+        "player1_en": {
+          "name": "REN Junxian",
           "seed": 1
         },
         "player2": {
           "name": "彭瀚明",
           "seed": 9
         },
-        "winner": 0
+        "player2_en": {
+          "name": "PENG Hanming",
+          "seed": 9
+        },
+        "score": "3-0",
+        "games": [
+          "11-8",
+          "11-6",
+          "11-6"
+        ],
+        "winner": 1
       },
       {
         "id": "m3",
         "col": 0,
-        "row": 2,
+        "row": 6,
         "player1": {
           "name": "任安喆",
+          "seed": 5
+        },
+        "player1_en": {
+          "name": "REN Anzhe",
           "seed": 5
         },
         "player2": {
           "name": "彭瀚明",
           "seed": 9
         },
-        "winner": 0
+        "player2_en": {
+          "name": "PENG Hanming",
+          "seed": 9
+        },
+        "score": "3-0",
+        "games": [
+          "11-3",
+          "11-0",
+          "11-3"
+        ],
+        "winner": 1
+      },
+      {
+        "id": "n2",
+        "type": "note",
+        "col": 1,
+        "row": 0,
+        "text": "B组（单循环）"
       },
       {
         "id": "m4",
-        "col": 0,
-        "row": 6,
-        "round": 1,
+        "col": 1,
+        "row": 2,
         "player1": {
           "name": "龚雨煊",
+          "seed": 3
+        },
+        "player1_en": {
+          "name": "GONG Yuxuan",
           "seed": 3
         },
         "player2": {
           "name": "陶锦源",
           "seed": 7
         },
-        "winner": 0
+        "player2_en": {
+          "name": "TAO Jinyuan",
+          "seed": 7
+        },
+        "score": "3-1",
+        "games": [
+          "12-10",
+          "16-18",
+          "12-10",
+          "11-2"
+        ],
+        "winner": 1
       },
       {
         "id": "m5",
-        "col": 0,
+        "col": 1,
         "row": 4,
-        "round": 1,
         "player1": {
           "name": "龚雨煊",
+          "seed": 3
+        },
+        "player1_en": {
+          "name": "GONG Yuxuan",
           "seed": 3
         },
         "player2": {
           "name": "叶孟恒",
           "seed": 12
         },
-        "winner": 0
+        "player2_en": {
+          "name": "YE Mengheng",
+          "seed": 12
+        },
+        "score": "3-0",
+        "games": [
+          "11-7",
+          "11-2",
+          "11-3"
+        ],
+        "winner": 1
       },
       {
         "id": "m6",
-        "col": 0,
-        "row": 5,
-        "round": 1,
+        "col": 1,
+        "row": 6,
         "player1": {
           "name": "陶锦源",
+          "seed": 7
+        },
+        "player1_en": {
+          "name": "TAO Jinyuan",
           "seed": 7
         },
         "player2": {
           "name": "叶孟恒",
           "seed": 12
         },
-        "winner": 0
+        "player2_en": {
+          "name": "YE Mengheng",
+          "seed": 12
+        },
+        "score": "3-0",
+        "games": [
+          "11-9",
+          "11-2",
+          "11-6"
+        ],
+        "winner": 1
+      },
+      {
+        "id": "n3",
+        "type": "note",
+        "col": 2,
+        "row": 0,
+        "text": "C组（单循环）"
       },
       {
         "id": "m7",
-        "col": 0,
-        "row": 8,
-        "round": 2,
+        "col": 2,
+        "row": 2,
         "player1": {
           "name": "付大卫",
+          "seed": 2
+        },
+        "player1_en": {
+          "name": "FU Dawei",
           "seed": 2
         },
         "player2": {
           "name": "姜子润",
           "seed": 6
         },
-        "winner": 0
+        "player2_en": {
+          "name": "JIANG Zirun",
+          "seed": 6
+        },
+        "score": "2-3",
+        "games": [
+          "11-4",
+          "8-11",
+          "11-9",
+          "9-11",
+          "6-11"
+        ],
+        "winner": 2
       },
       {
         "id": "m8",
-        "col": 0,
-        "row": 9,
-        "round": 2,
+        "col": 2,
+        "row": 4,
         "player1": {
           "name": "付大卫",
+          "seed": 2
+        },
+        "player1_en": {
+          "name": "FU Dawei",
           "seed": 2
         },
         "player2": {
           "name": "汪宁轩",
           "seed": 10
         },
-        "winner": 0
+        "player2_en": {
+          "name": "WANG Ningxuan",
+          "seed": 10
+        },
+        "score": "3-0",
+        "winner": 1,
+        "note": "9/10 汪宁轩弃权不计，9/17 补赛"
       },
       {
         "id": "m9",
-        "col": 0,
-        "row": 10,
-        "round": 2,
+        "col": 2,
+        "row": 6,
         "player1": {
           "name": "姜子润",
+          "seed": 6
+        },
+        "player1_en": {
+          "name": "JIANG Zirun",
           "seed": 6
         },
         "player2": {
           "name": "汪宁轩",
           "seed": 10
         },
-        "winner": 0
+        "player2_en": {
+          "name": "WANG Ningxuan",
+          "seed": 10
+        },
+        "score": "3-1",
+        "winner": 1,
+        "note": "9/11 进行"
+      },
+      {
+        "id": "n4",
+        "type": "note",
+        "col": 3,
+        "row": 0,
+        "text": "D组（单循环）"
       },
       {
         "id": "m10",
-        "col": 0,
-        "row": 13,
-        "round": 3,
+        "col": 3,
+        "row": 2,
         "player1": {
           "name": "谷子易",
+          "seed": 4
+        },
+        "player1_en": {
+          "name": "GU Ziyi",
           "seed": 4
         },
         "player2": {
           "name": "刘冠羽",
           "seed": 8
         },
-        "winner": 0
+        "player2_en": {
+          "name": "LIU Guanyu",
+          "seed": 8
+        },
+        "score": "3-0",
+        "games": [
+          "14-12",
+          "12-10",
+          "11-5"
+        ],
+        "winner": 1
       },
       {
         "id": "m11",
-        "col": 0,
-        "row": 14,
-        "round": 3,
+        "col": 3,
+        "row": 4,
         "player1": {
           "name": "谷子易",
+          "seed": 4
+        },
+        "player1_en": {
+          "name": "GU Ziyi",
           "seed": 4
         },
         "player2": {
           "name": "王思博",
           "seed": 11
         },
-        "winner": 0
+        "player2_en": {
+          "name": "WANG Sibo",
+          "seed": 11
+        },
+        "score": "3-0",
+        "games": [
+          "11-9",
+          "11-3",
+          "11-4"
+        ],
+        "winner": 1
       },
       {
         "id": "m12",
-        "col": 0,
-        "row": 15,
-        "round": 3,
+        "col": 3,
+        "row": 6,
         "player1": {
           "name": "刘冠羽",
+          "seed": 8
+        },
+        "player1_en": {
+          "name": "LIU Guanyu",
           "seed": 8
         },
         "player2": {
           "name": "王思博",
           "seed": 11
         },
-        "winner": 0
+        "player2_en": {
+          "name": "WANG Sibo",
+          "seed": 11
+        },
+        "score": "1-3",
+        "games": [
+          "8-11",
+          "4-11",
+          "11-7",
+          "10-12"
+        ],
+        "winner": 2
       },
       {
         "id": "m13",
-        "col": 1,
+        "col": 4,
         "row": 3,
-        "round": 4,
-        "player1": "A组第1",
-        "player2": "B组第1",
-        "winner": 0
+        "player1": {
+          "name": "任安喆",
+          "seed": 5
+        },
+        "player1_en": {
+          "name": "REN Anzhe",
+          "seed": 5
+        },
+        "player2": {
+          "name": "陶锦源",
+          "seed": 7
+        },
+        "player2_en": {
+          "name": "TAO Jinyuan",
+          "seed": 7
+        },
+        "score": "3-0",
+        "winner": 1,
+        "note": "1/4决赛 A组1 vs B组2 · 9/17"
       },
       {
         "id": "m14",
-        "col": 1,
-        "row": 12,
-        "round": 4,
-        "player1": "C组第1",
-        "player2": "D组第1",
-        "winner": 0
+        "col": 4,
+        "row": 7,
+        "player1": {
+          "name": "龚雨煊",
+          "seed": 3
+        },
+        "player1_en": {
+          "name": "GONG Yuxuan",
+          "seed": 3
+        },
+        "player2": {
+          "name": "任峻贤",
+          "seed": 1
+        },
+        "player2_en": {
+          "name": "REN Junxian",
+          "seed": 1
+        },
+        "score": "2-3",
+        "winner": 2,
+        "note": "1/4决赛 B组1 vs A组2 · 9/24"
       },
       {
         "id": "m15",
-        "col": 2,
-        "row": 7,
-        "round": 5,
+        "col": 4,
+        "row": 11,
+        "player1": {
+          "name": "姜子润",
+          "seed": 6
+        },
+        "player1_en": {
+          "name": "JIANG Zirun",
+          "seed": 6
+        },
+        "player2": {
+          "name": "王思博",
+          "seed": 11
+        },
+        "player2_en": {
+          "name": "WANG Sibo",
+          "seed": 11
+        },
+        "score": "3-2",
+        "winner": 1,
+        "note": "1/4决赛 C组1 vs D组2 · 9/17"
+      },
+      {
+        "id": "m16",
+        "col": 4,
+        "row": 15,
+        "player1": {
+          "name": "谷子易",
+          "seed": 4
+        },
+        "player1_en": {
+          "name": "GU Ziyi",
+          "seed": 4
+        },
+        "player2": {
+          "name": "付大卫",
+          "seed": 2
+        },
+        "player2_en": {
+          "name": "FU Dawei",
+          "seed": 2
+        },
+        "score": "0-3",
+        "games": [
+          "7-11",
+          "7-11",
+          "7-11"
+        ],
+        "winner": 2,
+        "note": "1/4决赛 D组1 vs C组2 · 9/17"
+      },
+      {
+        "id": "m17",
+        "col": 5,
+        "row": 5,
+        "player1": "1/4决赛1胜者",
+        "player1_en": "Quarter-final 1 winner",
+        "player2": "1/4决赛2胜者",
+        "player2_en": "Quarter-final 2 winner"
+      },
+      {
+        "id": "m18",
+        "col": 5,
+        "row": 13,
+        "player1": "1/4决赛3胜者",
+        "player1_en": "Quarter-final 3 winner",
+        "player2": "1/4决赛4胜者",
+        "player2_en": "Quarter-final 4 winner"
+      },
+      {
+        "id": "m19",
+        "col": 6,
+        "row": 9,
         "player1": "半决赛1胜者",
+        "player1_en": "Semi-final 1 winner",
         "player2": "半决赛2胜者",
-        "winner": 0
+        "player2_en": "Semi-final 2 winner"
       }
     ],
     "connections": [
       {
-        "from": "m1",
+        "from": "n1",
         "to": "m13"
       },
       {
-        "from": "m2",
+        "from": "n1",
+        "to": "m14"
+      },
+      {
+        "from": "n2",
         "to": "m13"
       },
       {
-        "from": "m3",
-        "to": "m13"
-      },
-      {
-        "from": "m4",
-        "to": "m13"
-      },
-      {
-        "from": "m5",
-        "to": "m13"
-      },
-      {
-        "from": "m6",
-        "to": "m13"
-      },
-      {
-        "from": "m7",
+        "from": "n2",
         "to": "m14"
       },
       {
-        "from": "m8",
-        "to": "m14"
+        "from": "n3",
+        "to": "m15"
       },
       {
-        "from": "m9",
-        "to": "m14"
+        "from": "n3",
+        "to": "m16"
       },
       {
-        "from": "m10",
-        "to": "m14"
+        "from": "n4",
+        "to": "m15"
       },
       {
-        "from": "m11",
-        "to": "m14"
-      },
-      {
-        "from": "m12",
-        "to": "m14"
+        "from": "n4",
+        "to": "m16"
       },
       {
         "from": "m13",
-        "to": "m15"
+        "to": "m17"
       },
       {
         "from": "m14",
-        "to": "m15"
+        "to": "m17"
+      },
+      {
+        "from": "m15",
+        "to": "m18"
+      },
+      {
+        "from": "m16",
+        "to": "m18"
+      },
+      {
+        "from": "m17",
+        "to": "m19"
+      },
+      {
+        "from": "m18",
+        "to": "m19"
       }
     ]
   }

@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>(function(){try{var t=localStorage.getItem("wfls-tt-theme");var d=t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark-mode");}catch(e){}})()</script>
-    <meta name="description" content="WTT 国际乒联积分排名 · 个人数据 · 对手分析">
-    <meta name="keywords" content="WTT,世界乒联,乒乓球,个人数据,球员数据,战绩分析">
+    <meta name="description" data-i18n-content="wtt_ps_meta_desc" content="WTT 国际乒联积分排名 · 个人数据 · 对手分析">
+    <meta name="keywords" content="WTT,世界乒联,乒乓球,个人数据,球员数据,战绩分析" data-i18n-content="wtt_ps_kw">
     <meta name="robots" content="noindex, nofollow">
-    <title>WTT 个人数据 🥚 | WFLS Table Tennis Club</title>
+    <title data-i18n="wtt_ps_page_title">WTT 个人数据 🥚 | WFLS Table Tennis Club</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -26,7 +26,7 @@
         <div class="page-hero-overlay"></div>
         <div class="page-hero-content">
             <span class="section-tag wtt-easter-egg-tag">🥚 Easter Egg</span>
-            <h1>WTT <span id="wttCatName">个人数据</span></h1>
+            <h1>WTT <span id="wttCatName" data-i18n="personal_stats_title">个人数据</span></h1>
             <p data-i18n="wtt_ps_hero_title">WTT 个人比赛数据统计</p>
         </div>
     </section>
@@ -44,7 +44,7 @@
                         <div class="player-search-container" id="wttPersonalPlayerSearchContainer">
                             <div class="player-search-input-wrapper">
                                 <i class="fa-solid fa-magnifying-glass player-search-icon"></i>
-                                <input type="text" id="wttPersonalPlayerSearch" class="player-search-input" placeholder="搜索球员名称..." autocomplete="off">
+                                <input type="text" id="wttPersonalPlayerSearch" class="player-search-input" data-i18n-placeholder="wtt_ps_search_ph" placeholder="搜索球员名称..." autocomplete="off">
                                 <button class="player-search-clear" id="wttPersonalPlayerSearchClear" style="display:none;">
                                     <i class="fa-solid fa-xmark"></i>
                                 </button>

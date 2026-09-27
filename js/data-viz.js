@@ -708,7 +708,7 @@ function renderPersonalStats(playerName) {
             html += '<div class="personal-tags-section">';
             html += '<span class="personal-tags-label"><i class="fa-solid fa-tags"></i> ' + i18n[currentLang].ps_tags_label + '</span>';
             playerTags.forEach(tag => {
-                html += '<span class="personal-tag-badge">' + escapeHtml(tag) + '</span>';
+                html += '<span class="personal-tag-badge">' + escapeHtml(playerTagLabel(tag)) + '</span>';
             });
             html += '</div>';
         }
@@ -829,4 +829,14 @@ function dataVizMainReapplyI18n() {
     if (lastVizComparePair) renderComparison(lastVizComparePair[0], lastVizComparePair[1]);
     const psel = document.getElementById('personalPlayerSelect');
     if (psel && psel.value) renderPersonalStats(psel.value);
+    // 竞速帧的 label 在建帧时就烤进了 getNodeDisplayLabel() 的结果，
+    // 切语言后缓存里的 label 是旧语言的 —— 清缓存再重画当前帧
+    if (typeof clubApplyRaceMembership === 'function' && typeof clubBarRace === 'object'
+        && clubBarRace && clubBarRace.cache && clubBarRace.cache.clear) {
+        const idx = dataVizExtraState && dataVizExtraState.raceFrameIndex != null
+            ? dataVizExtraState.raceFrameIndex
+            : clubBarRace.frameIndex;
+        clubBarRace.cache.clear();
+        if (idx != null && Number.isFinite(idx)) clubApplyRaceMembership(idx, false, idx);
+    }
 }

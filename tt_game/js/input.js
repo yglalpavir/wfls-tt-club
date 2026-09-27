@@ -105,19 +105,19 @@ window.addEventListener('keyup', e=>{
 function toggleSound(){
   soundOn = !soundOn;
   if(master) master.gain.value = soundOn?0.85:0;
-  $('btnSound').firstElementChild.textContent = '音效：' + (soundOn?'开':'关');
+  $('btnSound').firstElementChild.textContent = gameT(soundOn ? 'g_btn_sound_on' : 'g_btn_sound_off');
 }
 $('btnSound').onclick = e=>{ e.stopPropagation(); ensureAudio(); toggleSound(); };
 /* ---- 画质按钮：自动 → 高 → 中 → 低 循环（localStorage 记忆，刷新后 MSAA 等完全生效） ---- */
 const btnQuality = $('btnQuality');
 if(btnQuality){
-  btnQuality.firstElementChild.textContent = '画质：' + QUALITY.modeLabel();
+  btnQuality.firstElementChild.textContent = gameT('g_btn_quality') + QUALITY.modeLabel();
   btnQuality.onclick = e=>{
     e.stopPropagation();
     QUALITY.cycle();
-    btnQuality.firstElementChild.textContent = '画质：' + QUALITY.modeLabel();
-    toast('画质：' + QUALITY.modeLabel(),
-      QUALITY.mode==='auto' ? '按设备自动档位 + 动态分辨率调节' : '分辨率与阴影已即时应用', 'gold', 1500);
+    btnQuality.firstElementChild.textContent = gameT('g_btn_quality') + QUALITY.modeLabel();
+    toast(gameT('g_btn_quality') + QUALITY.modeLabel(),
+      gameT(QUALITY.mode==='auto' ? 'g_q_auto_sub' : 'g_q_manual_sub'), 'gold', 1500);
   };
 }
 $('btnReset').onclick = e=>{ e.stopPropagation(); if(mode!=='menu') resetMatch(); };
@@ -130,23 +130,27 @@ $('btnWatch').onclick = e=>{ e.stopPropagation(); startFight(); };
 /* ---- 对战模型选择（普通AI / 地狱AI / 大满贯预备种子 / 鼠标上的tt玩家 / 地狱AI克星）----
  * 极端对手 / 极端·满档已取消可选（opponent-ladder.js 仍保留，供 train-input3.js 课程训练用） */
 const MODEL_NAMES = { standard: '普通 AI', hell: '地狱 AI', grandslam: '大满贯预备种子', ttmouse: '鼠标上的tt玩家', nemesis: '地狱AI克星' };
-const MODEL_HINTS = {
-  standard: '普通 AI：标准水平 · 攻守平衡',
-  hell: '地狱 AI：自对弈打法 · 会搓球/快撕/爆冲',
-  grandslam: '大满贯预备种子：以你的打法为模板训练 · 攻守全能',
-  ttmouse: '鼠标上的tt玩家：输入级 DQN 训练 · 用鼠标X/Y/Ctrl 三个原始输入打出真人手感',
-  nemesis: '地狱AI克星：只针对地狱AI特训的克制打法 · 对地狱AI胜球率 60.6%（内战基线 49.5%）',
-};
+const MODEL_KEYS = { standard:'g_model_standard', hell:'g_model_hell', grandslam:'g_model_grandslam', ttmouse:'g_model_ttmouse', nemesis:'g_model_nemesis' };
+const MODEL_HINT_KEYS = { standard:'g_mhint_standard', hell:'g_mhint_hell', grandslam:'g_mhint_grandslam', ttmouse:'g_mhint_ttmouse', nemesis:'g_mhint_nemesis' };
+/* 模型显示名(随语言) —— 所有界面文案都必须走这里,MODEL_NAMES 只作 zh 兜底 */
+function modelLabel(id){
+  const k = MODEL_KEYS[id];
+  return (typeof gameT === 'function' && k) ? gameT(k) : (MODEL_NAMES[id] || String(id));
+}
 /* ---- 「鼠标上的tt玩家」权重懒加载：涉及该模型时提前注入，开赛时若未就绪则等待 ---- */
 function maybePreloadTtWeights(){
   if(typeof TT_PLAYER === 'undefined') return;
   if(aiModel==='ttmouse' || fightL==='ttmouse' || fightR==='ttmouse')
     TT_PLAYER.ensureWeights().catch(err => console.warn('[tt] 权重加载失败：' + err.message));
 }
+function refreshModelHint(){
+  const h = $('modelHint');
+  if(h) h.textContent = (typeof gameT === 'function' && MODEL_HINT_KEYS[aiModel]) ? gameT(MODEL_HINT_KEYS[aiModel]) : '';
+}
 function selectModel(m){
   aiModel = m;
   document.querySelectorAll('.model-btn').forEach(b => b.classList.toggle('active', b.dataset.model === m));
-  const h = $('modelHint'); if(h) h.textContent = MODEL_HINTS[m] || '';
+  refreshModelHint();
   maybePreloadTtWeights();
 }
 document.querySelectorAll('.model-btn').forEach(b => {
@@ -189,9 +193,10 @@ if($('btnExitWatch')) $('btnExitWatch').onclick = e=>{ e.stopPropagation(); toMe
 /* ---- 触屏静态文案替换（"按任意键"等键盘措辞 → 触屏措辞） ---- */
 function applyTouchTexts(){
   const sl = $('statusLine');
-  if(sl && sl.textContent.indexOf('按任意键')>=0) sl.textContent = 'AI 演示对局 · 点击「开始比赛」开始';
+  const slKey = sl ? (sl.getAttribute('data-i18n') || '') : '';
+  if(sl && slKey.indexOf('g_status_demo') === 0){ sl.removeAttribute('data-i18n'); sl.textContent = gameT('g_status_demo_touch'); }
   const ph = $('pushHint');
-  if(ph) ph.textContent = '◎ 下旋来球 · 按住「搓」钮搓球';
+  if(ph && ph.getAttribute('data-i18n')){ ph.removeAttribute('data-i18n'); ph.textContent = gameT('g_push_hint_touch'); }
 }
 if(TOUCH) applyTouchTexts();
 
@@ -228,9 +233,9 @@ function startFight(){
     $('endOverlay').classList.add('hidden'); $('confetti').innerHTML = '';
     setFightNames();
     updateScoreUI();
-    setStatus('AI 斗蛐蛐 · ' + MODEL_NAMES[fightL] + ' vs ' + MODEL_NAMES[fightR] + ' · 5局三胜');
+    setStatus(()=>gameT('g_st_fight_start', {a: modelLabel(fightL), b: modelLabel(fightR)}));
     setupServe();
-    toast('AI 斗蛐蛐', MODEL_NAMES[fightL] + ' vs ' + MODEL_NAMES[fightR] + ' · 5局三胜 · 不换边', 'gold', 1800);
+    toast(gameT('g_fight_title'), gameT('g_toast_fight_sub', {a: modelLabel(fightL), b: modelLabel(fightR)}), 'gold', 1800);
   };
   const needW = (fightL==='ttmouse' || fightR==='ttmouse')
     && typeof INPUT_AI_WEIGHTS === 'undefined' && typeof TT_PLAYER !== 'undefined';
@@ -243,7 +248,7 @@ function resetMatch(){
   $('endOverlay').classList.add('hidden'); $('confetti').innerHTML = '';
   updateScoreUI();
   setupServe(mode==='watch' ? undefined : 'player');
-  toast('比赛开始', '正手重旋 · 反手快撕 · 对轰开始', 'gold', 1600);
+  toast(gameT('g_toast_match_start'), gameT('g_toast_match_start_sub'), 'gold', 1600);
 }
 /* 斗蛐蛐两侧 AI 选择（可相同可不同） */
 const fightSel = document.querySelectorAll('.oc-diff select');
@@ -253,6 +258,14 @@ if($('fightR')) $('fightR').addEventListener('change', e=>{ fightR = e.target.va
 function syncFightHint(){
   const h = $('fightHint'); if(!h) return;
   const same = fightL===fightR;
-  h.textContent = MODEL_NAMES[fightL] + (same ? '（内战）' : ' vs ' + MODEL_NAMES[fightR]) + ' · 不换边 · 先赢3大局者胜';
+  h.textContent = modelLabel(fightL) + (same ? gameT('g_vs_civil') : ' vs ' + modelLabel(fightR)) + gameT('g_fight_tail');
 }
 syncFightHint();
+/* 语言切换钩子:重画本文件负责的动态文案 */
+function inputReapplyI18n(){
+  refreshModelHint();
+  syncFightHint();
+  $('btnSound').firstElementChild.textContent = gameT(soundOn ? 'g_btn_sound_on' : 'g_btn_sound_off');
+  if(btnQuality) btnQuality.firstElementChild.textContent = gameT('g_btn_quality') + QUALITY.modeLabel();
+  if(TOUCH) applyTouchTexts();
+}

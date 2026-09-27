@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>(function(){try{var t=localStorage.getItem("wfls-tt-theme");var d=t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark-mode");}catch(e){}})()</script>
-    <meta name="description" content="WTT 国际乒联积分排名协会数据：协会实力总榜、球员阵容明细、协会排名变迁与协会对抗矩阵。">
-    <meta name="keywords" content="WTT,世界乒联,乒乓球,协会数据,协会排名,实力榜,对抗矩阵">
+    <meta name="description" data-i18n-content="wtt_assoc_meta_desc" content="WTT 国际乒联积分排名协会数据：协会实力总榜、球员阵容明细、协会排名变迁与协会对抗矩阵。">
+    <meta name="keywords" content="WTT,世界乒联,乒乓球,协会数据,协会排名,实力榜,对抗矩阵" data-i18n-content="wtt_assoc_kw">
     <meta name="robots" content="noindex, nofollow">
-    <title>WTT 协会数据 🥚 | WFLS Table Tennis Club</title>
+    <title data-i18n="wtt_assoc_page_title">WTT 协会数据 🥚 | WFLS Table Tennis Club</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -202,7 +202,7 @@
         <div class="page-hero-overlay"></div>
         <div class="page-hero-content">
             <span class="section-tag wtt-easter-egg-tag">🥚 WTT Association Data</span>
-            <h1>WTT <span id="wttCatName">协会数据</span></h1>
+            <h1>WTT <span id="wttCatName" data-i18n="wtt_link_assoc">协会数据</span></h1>
             <p data-i18n="wtt_assoc_desc">协会实力总榜 · 排名变迁 · 协会对抗</p>
         </div>
     </section>
@@ -258,7 +258,7 @@
                     </div>
                     <div class="viz-topn-selector" style="margin-top:0;">
                         <span data-i18n="wtt_top_n">显示前</span>
-                        <input type="number" id="wttAssocTopNInput" value="50" min="5" max="500" step="5" title="统计全球 TOP-N 人数，填写 5-500 的正整数">
+                        <input type="number" id="wttAssocTopNInput" value="50" min="5" max="500" step="5" data-i18n-title="wtt_assoc_topn_hint" title="统计全球 TOP-N 人数，填写 5-500 的正整数">
                         <span data-i18n="wtt_players">名球员</span>
                     </div>
                 </div>
@@ -292,7 +292,7 @@
                 <p class="section-desc" data-i18n="wtt_assoc_bump_desc">各协会按实力分的位次随时间的变化</p>
                 <div class="viz-topn-selector">
                     <span data-i18n="wtt_recent_label">最近</span>
-                    <input type="number" id="wttAssocBumpCount" value="30" min="2" max="500" title="显示最近N个数据点">
+                    <input type="number" id="wttAssocBumpCount" value="30" min="2" max="500" data-i18n-title="data_viz_topn_title" title="显示最近N个数据点">
                     <span data-i18n="wtt_data_points">个数据点</span>
                 </div>
             </div>
@@ -314,7 +314,7 @@
                 <p class="section-desc" data-i18n="wtt_assoc_matrix_hint">行协会对列协会的历史交手胜率（仅统计跨协会对阵）· 颜色越深胜率越高</p>
                 <div class="viz-topn-selector">
                     <span data-i18n="wtt_assoc_matrix_size">矩阵规模</span>
-                    <input type="number" id="wttAssocMatrixTopN" value="10" min="3" max="25" title="取实力榜前 N 个协会构建矩阵，填写 3-25 的正整数">
+                    <input type="number" id="wttAssocMatrixTopN" value="10" min="3" max="25" data-i18n-title="wtt_matrix_size_title" title="取实力榜前 N 个协会构建矩阵，填写 3-25 的正整数">
                 </div>
             </div>
             <div class="viz-chart-container glass-card" style="min-height:auto;flex-direction:column;">

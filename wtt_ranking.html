@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>(function(){try{var t=localStorage.getItem("wfls-tt-theme");var d=t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark-mode");}catch(e){}})()</script>
-    <meta name="description" content="WTT 国际乒联积分排名 · 基于ELO变体算法模拟 · 彩蛋页面">
-    <meta name="keywords" content="WTT,世界乒联,乒乓球,积分排名,国际乒联">
+    <meta name="description" data-i18n-content="wtt_ranking_meta_desc" content="WTT 国际乒联积分排名 · 基于ELO变体算法模拟 · 彩蛋页面">
+    <meta name="keywords" content="WTT,世界乒联,乒乓球,积分排名,国际乒联" data-i18n-content="wtt_ranking_kw">
     <meta name="robots" content="noindex, nofollow">
     <title>WTT Ranking 🥚 | WFLS Table Tennis Club</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,12 +64,12 @@
                     </div>
                     
                     <div class="ranking-controls">
-                        <span class="sort-hint"><span data-i18n="rank_sort_hint">当前排序：</span><strong id="sortIndicator">积分降序</strong></span>
-                        <span class="update-info" id="currentTimeLabel">加载中...</span>
+                        <span class="sort-hint"><span data-i18n="rank_sort_hint">当前排序：</span><strong id="sortIndicator" data-i18n="rank_sort_default">积分降序</strong></span>
+                        <span class="update-info" id="currentTimeLabel" data-i18n="content_loading">加载中...</span>
                         <button type="button" class="table-export-btn" id="exportRankBtn"><i class="fa-solid fa-image"></i><span data-i18n="rank_export_btn">导出图片</span></button>
                         <div class="mobile-sort-bar">
-                            <select class="mobile-sort-select" id="mobileSortSelect" aria-label="排序字段"></select>
-                            <button type="button" class="mobile-sort-dir" id="mobileSortDir" aria-label="切换升序/降序">&#9660;</button>
+                            <select class="mobile-sort-select" id="mobileSortSelect" data-i18n-aria="wtt_aria_sort_field" aria-label="排序字段"></select>
+                            <button type="button" class="mobile-sort-dir" id="mobileSortDir" data-i18n-aria="wtt_aria_sort_dir" aria-label="切换升序/降序">&#9660;</button>
                         </div>
                     </div>
                     
@@ -106,7 +106,7 @@
     <div class="modal-overlay" id="scoreDetailModal">
         <div class="modal-content score-detail-modal glass-card">
             <button class="modal-close" id="scoreDetailClose">&times;</button>
-            <h3 id="scoreDetailTitle">积分明细</h3>
+            <h3 id="scoreDetailTitle" data-i18n="score_detail_title">积分明细</h3>
             <div class="score-detail-table-wrapper">
                 <table class="score-detail-table">
                     <thead>

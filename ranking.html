@@ -5,19 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>(function(){try{var t=localStorage.getItem("wfls-tt-theme");var d=t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark-mode");}catch(e){}})()</script>
-    <meta name="description" content="WFLS 乒乓球社团积分排名系统。基于 ELO 变体算法自动计算，支持多时间节点对比。">
-    <meta name="keywords" content="武汉外国语学校,WFLS,乒乓球,积分排名,ELO,排名系统">
+    <meta name="description" content="WFLS 乒乓球社团积分排名系统。基于 ELO 变体算法自动计算，支持多时间节点对比。" data-i18n-content="rank_meta_desc">
+    <meta name="keywords" content="武汉外国语学校,WFLS,乒乓球,积分排名,ELO,排名系统" data-i18n-content="rank_kw">
     <meta name="author" content="WFLS Table Tennis Club">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Ranking Beta | WFLS Table Tennis Club">
-    <meta property="og:description" content="WFLS 乒乓球社团积分排名系统。基于 ELO 变体算法自动计算，支持多时间节点对比。">
+    <meta property="og:description" content="WFLS 乒乓球社团积分排名系统。基于 ELO 变体算法自动计算，支持多时间节点对比。" data-i18n-content="rank_meta_desc">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://yglalpavir.github.io/wfls-tt-club/images/og-cover.png">
     <meta name="twitter:image" content="https://yglalpavir.github.io/wfls-tt-club/images/og-cover.png">
     <meta property="og:url" content="https://yglalpavir.github.io/wfls-tt-club/ranking.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Ranking Beta | WFLS Table Tennis Club">
-    <meta name="twitter:description" content="WFLS 乒乓球社团积分排名系统。基于 ELO 变体算法自动计算，支持多时间节点对比。">
+    <meta name="twitter:description" content="WFLS 乒乓球社团积分排名系统。基于 ELO 变体算法自动计算，支持多时间节点对比。" data-i18n-content="rank_meta_desc">
     <link rel="canonical" href="https://yglalpavir.github.io/wfls-tt-club/ranking.html">
     <title data-i18n="rank_page_title">Ranking Beta | WFLS Table Tennis Club</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,7 +65,7 @@
                                 <i class="fa-solid fa-circle-question" aria-hidden="true"></i>
                                 <span data-i18n="rank_rules_pill">积分相关规则</span>
                             </button>
-                            <a href="submit.html" class="qa-link-btn" aria-label="提交比赛战绩">
+                            <a href="submit.html" class="qa-link-btn" aria-label="提交比赛战绩" data-i18n-aria="rank_submit_aria">
                                 <i class="fa-solid fa-table-tennis-paddle-ball" aria-hidden="true"></i>
                                 <span data-i18n="nav_submit">提交战绩</span>
                             </a>
@@ -85,7 +85,7 @@
                                 <span data-i18n="rank_rules_pill">积分相关规则</span>
                             </button>
                             <!-- 访客提交战绩入口（与积分相关规则同款玻璃按钮，见 README「访客提交比赛记录」） -->
-                            <a href="submit.html" class="qa-link-btn" aria-label="提交比赛战绩">
+                            <a href="submit.html" class="qa-link-btn" aria-label="提交比赛战绩" data-i18n-aria="rank_submit_aria">
                                 <i class="fa-solid fa-table-tennis-paddle-ball" aria-hidden="true"></i>
                                 <span data-i18n="nav_submit">提交战绩</span>
                             </a>
@@ -93,7 +93,7 @@
                     </div>
 
                     <!-- 单打/双打项目切换（?mode=doubles 直达双打榜；两套时间线一次算好，切换零请求） -->
-                    <div class="ranking-mode-toggle" role="tablist" aria-label="积分项目">
+                    <div class="ranking-mode-toggle" role="tablist" aria-label="积分项目" data-i18n-aria="rank_mode_aria">
                         <button type="button" class="ranking-mode-btn active" data-mode="singles" data-i18n="rank_mode_singles" aria-selected="true">单打</button>
                         <button type="button" class="ranking-mode-btn" data-mode="doubles" data-i18n="rank_mode_doubles" aria-selected="false">双打</button>
                     </div>
@@ -102,21 +102,21 @@
                     <div class="mrank-deck mrank-only">
                         <div class="mrank-search">
                             <i class="fa-solid fa-magnifying-glass mrank-search-ico" aria-hidden="true"></i>
-                            <input type="search" id="mrankSearch" autocomplete="off" placeholder="搜索成员">
-                            <button type="button" class="mrank-search-clear" id="mrankSearchClear" aria-label="清空搜索"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                            <input type="search" id="mrankSearch" autocomplete="off" placeholder="搜索成员" data-i18n-placeholder="mrank_search_ph">
+                            <button type="button" class="mrank-search-clear" id="mrankSearchClear" aria-label="清空搜索" data-i18n-aria="mrank_search_clear"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
                         </div>
                     </div>
 
                     <div class="ranking-controls">
-                        <span class="sort-hint"><span data-i18n="rank_sort_hint">当前排序：</span><strong id="sortIndicator">积分降序</strong></span>
-                        <span class="update-info" id="currentTimeLabel">加载中...</span>
+                        <span class="sort-hint"><span data-i18n="rank_sort_hint">当前排序：</span><strong id="sortIndicator" data-i18n="rank_sort_default">积分降序</strong></span>
+                        <span class="update-info" id="currentTimeLabel" data-i18n="content_loading">加载中...</span>
                         <button type="button" class="table-export-btn" id="exportRankBtn"><i class="fa-solid fa-image"></i><span data-i18n="rank_export_btn">导出图片</span></button>
                     </div>
 
                     <!-- 移动端（≤768px）：亚运「Select discipline」同款节点选择条（点击开时间线抽屉；label 内含人数） -->
                     <button type="button" class="mrank-node-bar mrank-only" id="mrankNodeBar" aria-haspopup="dialog">
                         <span class="mrank-live-dot" aria-hidden="true"></span>
-                        <span class="mrank-node-bar-label" id="mrankNodeBarLabel">时间节点</span>
+                        <span class="mrank-node-bar-label" id="mrankNodeBarLabel" data-i18n="rank_sidebar_title">时间节点</span>
                         <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                     </button>
 
@@ -134,7 +134,7 @@
                                 </tr>
                             </thead>
                             <tbody id="rankingFullBody">
-                                <tr><td colspan="7" style="text-align:center;padding:40px;">加载排名数据中...</td></tr>
+                                <tr><td colspan="7" style="text-align:center;padding:40px;" data-i18n="rank_loading_hint">加载排名数据中...</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -151,7 +151,7 @@
                         </div>
                     </div>
                     <div class="mrank-board mrank-only" id="mrankBoard">
-                        <div class="mrank-empty">加载排名数据中...</div>
+                        <div class="mrank-empty" data-i18n="rank_loading_hint">加载排名数据中...</div>
                     </div>
                 </div>
             </div>
@@ -162,7 +162,7 @@
     <div class="modal-overlay" id="scoreDetailModal">
         <div class="modal-content score-detail-modal glass-card">
             <button class="modal-close" id="scoreDetailClose">&times;</button>
-            <h3 id="scoreDetailTitle">积分明细</h3>
+            <h3 id="scoreDetailTitle" data-i18n="score_detail_title">积分明细</h3>
             <div class="score-detail-table-wrapper">
                 <table class="score-detail-table">
                     <thead>
@@ -191,7 +191,7 @@
             <div class="sheet-handle" aria-hidden="true"></div>
             <div class="sheet-head">
                 <h3 id="mrankNodeSheetTitle" data-i18n="rank_sidebar_title">时间节点</h3>
-                <button type="button" class="sheet-close" data-sheet-close aria-label="关闭">&times;</button>
+                <button type="button" class="sheet-close" data-sheet-close aria-label="关闭" data-i18n-aria="mrank_close">&times;</button>
             </div>
             <div class="sheet-body" id="mrankNodeSheetBody"></div>
         </div>
@@ -208,11 +208,11 @@
                     <span class="wtt-egg-badge">Easter Egg</span>
                 </div>
                 <div class="wtt-egg-body">
-                    <h3 class="wtt-egg-title">你发现了一个彩蛋</h3>
-                    <p class="wtt-egg-desc">基于武外乒乓球社积分规则的 WTT排名</p>
+                    <h3 class="wtt-egg-title" data-i18n="rank_egg_title">你发现了一个彩蛋</h3>
+                    <p class="wtt-egg-desc" data-i18n="rank_egg_desc">基于武外乒乓球社积分规则的 WTT排名</p>
                 </div>
                 <a href="wtt_hub.html" class="btn wtt-egg-btn">
-                    <span>进入查看</span>
+                    <span data-i18n="rank_egg_btn">进入查看</span>
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>

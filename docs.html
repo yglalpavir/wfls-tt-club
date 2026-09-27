@@ -490,24 +490,24 @@
         <div class="fm-actions">
             <div class="fm-search">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="search" id="fmSearch" placeholder="在当前目录筛选…" aria-label="筛选文件" autocomplete="off">
-                <button type="button" class="fm-scope" id="scopeToggle" title="搜索范围：当前目录"><i class="fa-solid fa-folder-tree"></i></button>
+                <input type="search" id="fmSearch" placeholder="在当前目录筛选…" data-i18n-placeholder="docs_filter_ph" aria-label="筛选文件" data-i18n-aria="docs_filter_files_aria" autocomplete="off">
+                <button type="button" class="fm-scope" id="scopeToggle" title="搜索范围：当前目录" data-i18n-title="docs_scope_title"><i class="fa-solid fa-folder-tree"></i></button>
             </div>
-            <button type="button" class="fm-btn icon-only" id="viewToggle" title="切换视图"><i class="fa-solid fa-list"></i></button>
+            <button type="button" class="fm-btn icon-only" id="viewToggle" title="切换视图" data-i18n-title="docs_view_toggle_title"><i class="fa-solid fa-list"></i></button>
             <button type="button" class="fm-btn icon-only" id="refreshBtn" title="重新扫描 Assets" data-i18n-title="docs_refresh"><i class="fa-solid fa-rotate"></i></button>
         </div>
     </header>
 
     <div class="fm-toolbar">
         <div class="fm-crumbs-row">
-            <nav class="fm-crumbs" id="fmCrumbs" aria-label="目录路径"></nav>
+            <nav class="fm-crumbs" id="fmCrumbs" aria-label="目录路径" data-i18n-aria="docs_breadcrumb_aria"></nav>
             <span class="fm-stats" id="fmStats" aria-live="polite"></span>
         </div>
         <div class="fm-chips-row">
-            <div class="fm-chips" id="fmChips" role="group" aria-label="按类型筛选"></div>
+            <div class="fm-chips" id="fmChips" role="group" aria-label="按类型筛选" data-i18n-aria="docs_type_filter_aria"></div>
             <div class="fm-sort" id="fmSort">
                 <button type="button" class="fm-btn" id="sortBtn" aria-haspopup="menu" aria-expanded="false">
-                    <i class="fa-solid fa-arrow-down-a-z" id="sortDirIcon"></i><span id="sortBtnLabel">名称</span>
+                    <i class="fa-solid fa-arrow-down-a-z" id="sortDirIcon"></i><span id="sortBtnLabel" data-i18n="docs_sort_name">名称</span>
                 </button>
                 <div class="fm-sort-menu" id="sortMenu" role="menu" hidden></div>
             </div>
@@ -539,7 +539,7 @@
 
 <!-- 预览模态 -->
 <div class="pv-overlay" id="pvOverlay" hidden>
-    <div class="pv-dialog" role="dialog" aria-modal="true" aria-label="文件预览" id="pvDialog">
+    <div class="pv-dialog" role="dialog" aria-modal="true" aria-label="文件预览" data-i18n-aria="docs_preview_aria" id="pvDialog">
         <div class="pv-head">
             <span class="pv-fileicon t-other" id="pvIcon"><i class="fa-solid fa-file"></i></span>
             <div class="pv-titles">

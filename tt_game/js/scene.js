@@ -91,7 +91,7 @@ const crowdTex = canvasTex(256, 64, (g)=>{
 const ledTex = canvasTex(1024, 128, (g)=>{
   g.fillStyle = '#05080f'; g.fillRect(0,0,1024,128);
   g.font = 'bold 84px Impact,"Microsoft YaHei",sans-serif'; g.textBaseline = 'middle';
-  const txt = '乒乓对决 ★ TABLE TENNIS ARENA ★ PING PONG ★ ';
+  const txt = gameT('g_led_banner');
   const w = g.measureText(txt).width, cols = ['#f2b64c','#e03443','#8fd0ff'];
   let x = 0, i = 0;
   while(x < 1024 + w){ g.fillStyle = cols[i%3]; g.fillText(txt, x, 68); x += w; i++; }

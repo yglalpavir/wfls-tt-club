@@ -66,12 +66,12 @@ function dvBuildCardEl(card, pos, layout, draws) {
 
     let html = '';
     if (isBye) {
-        html += '<div class="dv-card-player ' + (p1Won ? 'dv-winner' : '') + '">' + dvPlayerHtml(p1, scores[0], p1Won) + '</div>';
+        html += '<div class="dv-card-player ' + (p1Won ? 'dv-winner' : '') + '">' + dvPlayerHtml(p1, scores[0], p1Won, card, 'player1_en') + '</div>';
         html += '<div class="dv-card-bye">— BYE —</div>';
     } else {
-        html += '<div class="dv-card-player ' + (p1Won ? 'dv-winner' : (p2Won ? 'dv-loser' : '')) + '">' + dvPlayerHtml(p1, scores[0], p1Won) + '</div>';
+        html += '<div class="dv-card-player ' + (p1Won ? 'dv-winner' : (p2Won ? 'dv-loser' : '')) + '">' + dvPlayerHtml(p1, scores[0], p1Won, card, 'player1_en') + '</div>';
         html += '<div class="dv-card-vs"></div>';
-        html += '<div class="dv-card-player ' + (p2Won ? 'dv-winner' : (p1Won ? 'dv-loser' : '')) + '">' + dvPlayerHtml(p2, scores[1], p2Won) + '</div>';
+        html += '<div class="dv-card-player ' + (p2Won ? 'dv-winner' : (p1Won ? 'dv-loser' : '')) + '">' + dvPlayerHtml(p2, scores[1], p2Won, card, 'player2_en') + '</div>';
     }
     // 状态徽标
     if (status === 'live') html += '<div class="dv-status-badge dv-status-live"><span class="dv-live-dot"></span>LIVE</div>';
@@ -91,14 +91,27 @@ function dvDisplayName(name) {
     if (!name) return name;
     return (typeof playerDisplayName === 'function') ? playerDisplayName(name) : name;
 }
+/* 英文模式下优先取卡片的 *_en 同级字段（draws.json 里可选存在），缺失回退中文 */
+function dvLocalized(card, field) {
+    if (card && typeof currentLang !== 'undefined' && currentLang === 'en') {
+        const v = card[field + '_en'];
+        if (v != null && String(v).trim() !== '') return v;
+    }
+    return card ? card[field] : undefined;
+}
 
-function dvPlayerHtml(p, score, won) {
+function dvPlayerHtml(p, score, won, card, slot) {
     if (!p) return '<span class="dv-player-name dv-tbd">' + dcT('dv_tbd', '待定') + '</span>' + (score != null ? '<span class="dv-player-score ' + (won ? 'dv-score-win' : 'dv-score-loss') + '">' + score + '</span>' : '');
-    let html = '<span class="dv-player-name">' + dcEsc(dvDisplayName(p.name)) + '</span>';
+    const localized = card && slot ? dvLocalized(card, slot) : null;
+    const displayName = (localized && typeof localized === 'object' && localized.name) ? localized.name
+        : (typeof localized === 'string' ? localized : dvDisplayName(p.name));
+    let html = '<span class="dv-player-name">' + dcEsc(displayName) + '</span>';
     if (p.seed != null && p.seed !== '') {
         html = '<span class="dv-player-seed">' + dcEsc(String(p.seed)) + '</span>' + html;
     }
-    if (p.note) html += '<span class="dv-player-note" title="' + dcEsc(p.note) + '">' + dcEsc(p.note) + '</span>';
+    // 英文形态对象里的附注键是 note_en（不是 note）
+    const note = (localized && typeof localized === 'object') ? (localized.note_en || localized.note) : p.note;
+    if (note) html += '<span class="dv-player-note" title="' + dcEsc(note) + '">' + dcEsc(note) + '</span>';
     if (score != null) html += '<span class="dv-player-score ' + (won ? 'dv-score-win' : 'dv-score-loss') + '">' + score + '</span>';
     return html;
 }

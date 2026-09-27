@@ -119,7 +119,7 @@ const TT_STATS = (() => {
       const p = pointsShare(); if(!p || p.total === 0) return '';
       const d = snap()[p.dqnSide];
       return 'DQN ' + p.dqnPts + ':' + p.oppPts + ' (' + p.share + '%)'
-           + ' · ' + d.contacts + ' 触球 / 擦网 ' + (d.netRate || 0) + '% · 对手 ' + p.oppModel;
+           + ' · ' + gameT('g_chip_mid', { n: d.contacts, r: (d.netRate || 0), opp: modelLabel(p.oppModel) });
     },
   };
 })();

@@ -21,12 +21,14 @@ function dcEsc(str) {
     return String(str == null ? '' : str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
-// 读取站点 i18n（common.js），缺失时回退中文
-function dcT(key, fallback) {
+// 读取站点 i18n（common.js），缺失时回退中文；vars 非空时做 {var} 插值
+function dcT(key, fallback, vars) {
+    let s = fallback;
     try {
-        if (typeof i18n !== 'undefined' && typeof currentLang !== 'undefined' && i18n[currentLang] && i18n[currentLang][key]) return i18n[currentLang][key];
+        if (typeof i18n !== 'undefined' && typeof currentLang !== 'undefined' && i18n[currentLang] && i18n[currentLang][key]) s = i18n[currentLang][key];
     } catch (e) { /* ignore */ }
-    return fallback;
+    if (vars) return String(s).replace(/\{(\w+)\}/g, (m, k) => (vars[k] != null ? vars[k] : m));
+    return s;
 }
 
 function dcParseScore(scoreStr) {
@@ -273,37 +275,37 @@ function dcAutoArrange(draw) {
 
 function dcValidateDraw(draw, validCompetitionIds) {
     const errors = [], warnings = [];
-    if (!draw) return { errors: ['抽签表为空'], warnings };
-    if (!draw.id) errors.push('缺少 id');
-    if (!draw.title) warnings.push('缺少标题 title');
+    if (!draw) return { errors: [dcT('de_v_empty', '抽签表为空')], warnings };
+    if (!draw.id) errors.push(dcT('de_v_no_id', '缺少 id'));
+    if (!draw.title) warnings.push(dcT('de_v_no_title', '缺少标题 title'));
     if (draw.competitionId && Array.isArray(validCompetitionIds) && !validCompetitionIds.includes(draw.competitionId)) {
-        errors.push('competitionId "' + draw.competitionId + '" 不存在');
+        errors.push(dcT('de_v_no_comp', 'competitionId "{id}" 不存在', { id: draw.competitionId }));
     }
     const cards = draw.cards || [];
     const ids = new Set();
     cards.forEach(c => {
-        if (!c.id) { errors.push('存在缺少 id 的卡片'); return; }
-        if (ids.has(c.id)) errors.push('卡片 id 重复: ' + c.id);
+        if (!c.id) { errors.push(dcT('de_v_card_no_id', '存在缺少 id 的卡片')); return; }
+        if (ids.has(c.id)) errors.push(dcT('de_v_dup_id', '卡片 id 重复: {id}', { id: c.id }));
         ids.add(c.id);
         if (c.winner != null && c.winner !== 0 && c.winner !== 1 && c.winner !== 2) {
-            errors.push('卡片 ' + c.id + ' 的 winner 取值非法（' + c.winner + '，应为 0/1/2/null）');
+            errors.push(dcT('de_v_bad_winner', '卡片 {id} 的 winner 取值非法（{w}，应为 0/1/2/null）', { id: c.id, w: c.winner }));
         }
         if ((c.col != null && c.col < 0) || (c.row != null && c.row < 0)) {
-            errors.push('卡片 ' + c.id + ' 的 col/row 不能为负');
+            errors.push(dcT('de_v_neg_pos', '卡片 {id} 的 col/row 不能为负', { id: c.id }));
         }
         const st = dcMatchStatus(c);
         if (c.type === 'match') {
-            if (!c.player1 || !c.player2) warnings.push('比赛卡 ' + c.id + ' 有选手空缺');
+            if (!c.player1 || !c.player2) warnings.push(dcT('de_v_no_players', '比赛卡 {id} 有选手空缺', { id: c.id }));
             if (st === 'scheduled' && (c.winner === 1 || c.winner === 2)) {
-                warnings.push('比赛卡 ' + c.id + ' 未录入比分但已设 winner');
+                warnings.push(dcT('de_v_winner_no_score', '比赛卡 {id} 未录入比分但已设 winner', { id: c.id }));
             }
         }
-        if (c.type === 'champion' && !c.player1) warnings.push('冠军卡 ' + c.id + ' 未填写选手');
+        if (c.type === 'champion' && !c.player1) warnings.push(dcT('de_v_no_champ', '冠军卡 {id} 未填写选手', { id: c.id }));
     });
     (draw.connections || []).forEach(cn => {
-        if (!ids.has(cn.from)) errors.push('连线 from "' + cn.from + '" 不存在');
-        if (!ids.has(cn.to)) errors.push('连线 to "' + cn.to + '" 不存在');
-        if (cn.from === cn.to) errors.push('连线不能自连接: ' + cn.from);
+        if (!ids.has(cn.from)) errors.push(dcT('de_v_conn_from', '连线 from "{id}" 不存在', { id: cn.from }));
+        if (!ids.has(cn.to)) errors.push(dcT('de_v_conn_to', '连线 to "{id}" 不存在', { id: cn.to }));
+        if (cn.from === cn.to) errors.push(dcT('de_v_conn_self', '连线不能自连接: {id}', { id: cn.from }));
     });
     return { errors, warnings };
 }
@@ -538,6 +540,7 @@ function _dcCleanPlayer(p) {
     out.name = p.name;
     if (p.seed != null && p.seed !== '') out.seed = p.seed;
     if (p.note) out.note = p.note;
+    if (p.note_en) out.note_en = p.note_en;
     if (p.desc) out.desc = p.desc;
     // 只有 name 时退化为纯字符串，保持数据精简
     if (Object.keys(out).length === 1) return out.name;
@@ -558,14 +561,19 @@ function dcCleanCard(c) {
     if (c.type === 'champion') {
         if (p1) out.player1 = p1;
         if (c.label) out.label = c.label;
+        if (c.label_en) out.label_en = c.label_en;
         return out;
     }
     if (c.type === 'note') {
         if (c.text) out.text = c.text;
+        if (c.text_en) out.text_en = c.text_en;
         return out;
     }
     if (p1) out.player1 = p1;
     if (p2) out.player2 = p2;
+    // 英文同级字段：编辑导出时必须原样带出，否则一次保存就会丢掉全部译文
+    if (c.player1_en) out.player1_en = c.player1_en;
+    if (c.player2_en) out.player2_en = c.player2_en;
     if (c.games && c.games.length) out.games = c.games.slice();
     if (c.score) out.score = c.score;
     if (c.winner === 0 || c.winner === 1 || c.winner === 2) out.winner = c.winner;
@@ -574,6 +582,7 @@ function dcCleanCard(c) {
     if (c.time) out.time = c.time;
     if (c.venue) out.venue = c.venue;
     if (c.note) out.note = c.note;
+    if (c.note_en) out.note_en = c.note_en;
     return out;
 }
 
@@ -582,11 +591,18 @@ function dcCleanDraw(d) {
     const out = { id: d.id, version: DRAWS_VERSION };
     if (d.competitionId) out.competitionId = d.competitionId;
     out.title = d.title || '';
+    if (d.title_en) out.title_en = d.title_en;
     if (d.subtitle) out.subtitle = d.subtitle;
+    if (d.subtitle_en) out.subtitle_en = d.subtitle_en;
     if (d.roundLabels && Object.keys(d.roundLabels).length) {
         const rl = {};
         Object.keys(d.roundLabels).forEach(k => { if (d.roundLabels[k]) rl[k] = d.roundLabels[k]; });
         if (Object.keys(rl).length) out.roundLabels = rl;
+    }
+    if (d.roundLabels_en && Object.keys(d.roundLabels_en).length) {
+        const rle = {};
+        Object.keys(d.roundLabels_en).forEach(k => { if (d.roundLabels_en[k]) rle[k] = d.roundLabels_en[k]; });
+        if (Object.keys(rle).length) out.roundLabels_en = rle;
     }
     if (d.layout && d.layout !== 'grid') out.layout = d.layout;
     const grid = {};

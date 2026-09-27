@@ -90,8 +90,8 @@ async function wttLoadRankingDataForViz() {
 
         // flat1300 模式不需要 initialScoresData
         const isFlat = wttSettings && wttSettings.scoreMode === 'flat1300';
-        if (!isFlat && !wttInitialScoresData) throw new Error('WTT initial-scores 加载失败');
-        if (!wttEventCoefficients || !wttSeasonsData) throw new Error('WTT数据加载失败');
+        if (!isFlat && !wttInitialScoresData) throw new Error(i18n[currentLang].wtt_err_initial);
+        if (!wttEventCoefficients || !wttSeasonsData) throw new Error(i18n[currentLang].wtt_err_data);
 
         // 异步分块计算（带进度回调）
         setP(wttLoadPhasePct('calc', 0, 1), '', i18n[currentLang].wtt_calculating);
@@ -388,8 +388,10 @@ function wttRenderCompareSelects() {
     const opts = sortedPlayers.map(p => `<option value="${escapeHtml(String(p))}">${escapeHtml(String(p))}</option>`).join('');
     const ph = i18n[currentLang].wtt_select_player;
     const sa = document.getElementById('wttPlayerASelect'), sb = document.getElementById('wttPlayerBSelect');
-    if (sa) sa.innerHTML = `<option value="">${ph}</option>` + opts;
-    if (sb) sb.innerHTML = `<option value="">${ph}</option>` + opts;
+    /* 语言切换时重建占位项，保留已选球员（值为球员名，未受影响） */
+    const prevA = sa ? sa.value : '', prevB = sb ? sb.value : '';
+    if (sa) { sa.innerHTML = `<option value="">${ph}</option>` + opts; if (prevA) sa.value = prevA; }
+    if (sb) { sb.innerHTML = `<option value="">${ph}</option>` + opts; if (prevB) sb.value = prevB; }
 }
 
 // ============ 积分趋势图 ============
@@ -794,7 +796,7 @@ function wttRenderComparison(playerA, playerB) {
             const aChange = aIsW ? wg : -(wg * LOSER_POINT_MULTIPLIER);
             const bChange = aIsW ? -(wg * LOSER_POINT_MULTIPLIER) : wg;
             html += `<tr>
-                <td><a class="player-name-link" href="${escapeHtml(buildMatchDetailUrl(m['日期'], m['类型'], w, l, matchOccMap.get(m), wttCurrentCategory))}">${escapeHtml(m['日期'])}</a></td><td>${escapeHtml(m['类型'])}</td><td>${escapeHtml(w)}</td>
+                <td><a class="player-name-link" href="${escapeHtml(buildMatchDetailUrl(m['日期'], m['类型'], w, l, matchOccMap.get(m), wttCurrentCategory))}">${escapeHtml(m['日期'])}</a></td><td>${escapeHtml(wttEventTypeLabel(m['类型']))}</td><td>${escapeHtml(w)}</td>
                 <td class="${aIsW ? 'win-highlight' : 'loss-highlight'}">${aChange > 0 ? '+' : ''}${aChange.toFixed(1)}</td>
                 <td class="${!aIsW ? 'win-highlight' : 'loss-highlight'}">${bChange > 0 ? '+' : ''}${bChange.toFixed(1)}</td>
             </tr>`;
@@ -821,6 +823,7 @@ function wttReapplyI18n() {
     const topN = parseInt(document.getElementById('wttTopNSelect')?.value) || 10;
     const sdc = parseInt(document.getElementById('wttStreamDataCount')?.value) || 20;
     if (wttRankStreamChart) wttRenderRankStream(topN, sdc);
+    wttRenderCompareSelects();
     wttUpdateCompareBox();
     if (typeof wttReapplyDataVizExtra === 'function') wttReapplyDataVizExtra();
 }

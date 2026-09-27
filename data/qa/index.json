@@ -6,7 +6,9 @@
     "excerpt": "双打以组合为独立积分主体：组合初始分 = 两人平均分 − 0.25×两人分差，赛事系数 0.5、不衰减、负者扣 0.8 倍。单打榜与双打榜分开计算互不影响。（点击查看详情）",
     "tag": "notice",
     "media": [],
-    "visible": null
+    "visible": null,
+    "title_en": "Doubles Points Rules",
+    "excerpt_en": "Doubles are scored as an independent entity - the pair: the pair's starting points = the average of the two members' points - 0.25x their points gap; event coefficient 0.5, no decay, and the loser is deducted 0.8x the winner's gain. The singles and doubles rankings are computed separately and do not affect each other. (click for details)"
   },
   {
     "id": "q3",
@@ -15,7 +17,9 @@
     "excerpt": "比赛结果填进腾讯文档的收集表就能提交，不用登录。管理员审过之后自动计入积分和排名。表单进不去就到社团 QQ 群找管理人员代录。（点击查看详情）",
     "tag": "notice",
     "media": [],
-    "visible": null
+    "visible": null,
+    "title_en": "How to Submit Match Results to the Website",
+    "excerpt_en": "You can submit a result by filling in the Tencent Docs collection form - no login needed. Once an administrator has reviewed it, it counts automatically towards the points and the ranking. If you cannot open the form, ask an administrator in the club QQ group to enter it for you. (click for details)"
   },
   {
     "id": "q1",
@@ -24,7 +28,9 @@
     "excerpt": "乒乓球社团积分系统规则书：本积分系统用于武汉外国语学校乒乓球社团的球员排名计算。系统基于 ELO 变体算法，综合考虑比赛结果、积分差距、赛事级别、赛制和时间衰减等因素，自动计算每位球员的实时积分和排名。（点击查看详情）",
     "tag": "notice",
     "media": [],
-    "visible": null
+    "visible": null,
+    "title_en": "How Points Are Calculated on the Ranking Page",
+    "excerpt_en": "WFLS Table Tennis Club points system rulebook: this points system is used to rank the club's players. Built on a variant of the ELO algorithm, it takes match results, points gaps, event level, match format and time decay into account, and automatically computes every player's live points and ranking. (click for details)"
   },
   {
     "id": "q2",
@@ -33,6 +39,8 @@
     "excerpt": "（点击查看详情）",
     "tag": "notice",
     "media": [],
-    "visible": null
+    "visible": null,
+    "title_en": "How Predicted Win Rate Is Calculated in Data Viz",
+    "excerpt_en": "(click for details)"
   }
 ]

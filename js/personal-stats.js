@@ -9,6 +9,14 @@ let personalChartSettings = null;  // 折线图设置（从 data/personal-stats-
 const TAG_MERGE_RULES = {
     '社长/副社长': ['26-27年社长', '26-27年副社长', '25-26年社长', '25-26年副社长', '24-25年副社长']
 };
+/* 合并规则的展示名是合成标签，不在 ptag_* 词典里，单独映射 */
+const TAG_MERGE_LABEL_KEYS = { '社长/副社长': 'ps_tag_group_leaders' };
+/* 标签显示：合成标签走映射，球员标签走 ptag_* 词典（数据键保持中文） */
+function tagDisplayLabel(tag) {
+    const mk = TAG_MERGE_LABEL_KEYS[tag];
+    if (mk) return (i18n[currentLang] || {})[mk] || tag;
+    return typeof playerTagLabel === 'function' ? playerTagLabel(tag) : tag;
+}
 
 function getAllOriginalTags() {
     const tagSet = new Set();
@@ -87,7 +95,7 @@ function renderTagFilters() {
         const isMerged = !!TAG_MERGE_RULES[tag];
         const mergedClass = isMerged ? ' merged' : '';
         return `<span class="tag-filter-badge${isActive ? ' active' : ''}${mergedClass}" data-tag="${escapeHtml(String(tag))}">
-            ${escapeHtml(String(tag))}<span class="tag-filter-count">${count}</span>
+            ${escapeHtml(tagDisplayLabel(tag))}<span class="tag-filter-count">${count}</span>
         </span>`;
     }).join('');
 
@@ -191,7 +199,7 @@ function getRankSnapshotMap() {
 function playerIndexCardHtml(entry) {
     const { name, player, row, rank, matchCount } = entry;
     const tags = (player && player.tags) || [];
-    const tagHtml = tags.slice(0, 3).map(t => `<span class="personal-tag-badge" style="font-size:0.68rem;padding:2px 8px;">${escapeHtml(String(t))}</span>`).join('');
+    const tagHtml = tags.slice(0, 3).map(t => `<span class="personal-tag-badge" style="font-size:0.68rem;padding:2px 8px;">${escapeHtml(tagDisplayLabel(t))}</span>`).join('');
     const tagMore = tags.length > 3 ? `<span class="personal-tag-badge" style="font-size:0.68rem;padding:2px 8px;">+${tags.length - 3}</span>` : '';
     const pts = row && row['当前积分'] != null ? (typeof row['当前积分'] === 'number' ? row['当前积分'].toFixed(1) : row['当前积分']) : '-';
     const matches = row && row['总场次'] != null ? row['总场次'] : matchCount;
@@ -394,6 +402,8 @@ function computePersonalStatsData(playerName) {
 function renderPersonalStats(playerName, containerId) {
     const container = document.getElementById(containerId || 'personalResult');
     if (!container) return;
+    // playerName 是数据键（用于查表），展示一律走 playerDisplayName 拼音
+    const playerDisplay = (typeof playerDisplayName === 'function') ? playerDisplayName(playerName) : playerName;
 
     if (!scoreLogData || !scoreLogData.length) {
         container.innerHTML = `<div class="compare-placeholder"><p>${i18n[currentLang].personal_stats_no_data}</p></div>`;
@@ -550,8 +560,8 @@ function renderPersonalStats(playerName, containerId) {
     html += '</div>';
 
     html += '<div class="personal-summary-text">';
-    html += i18n[currentLang].wtt_ps_sum1.replace('{player}', '<strong>' + playerName + '</strong>').replace('{total}', '<strong>' + totalMatches + '</strong>').replace('{wins}', '<strong>' + wins + '</strong>').replace('{losses}', '<strong>' + losses + '</strong>');
-    html += i18n[currentLang].wtt_ps_sum2.replace('{player}', '<strong>' + playerName + '</strong>').replace('{percent}', '<strong>' + (totalMatches > 0 ? Math.round(wins / totalMatches * 100) : 0) + '</strong>');
+    html += i18n[currentLang].wtt_ps_sum1.replace('{player}', '<strong>' + escapeHtml(playerDisplay) + '</strong>').replace('{total}', '<strong>' + totalMatches + '</strong>').replace('{wins}', '<strong>' + wins + '</strong>').replace('{losses}', '<strong>' + losses + '</strong>');
+    html += i18n[currentLang].wtt_ps_sum2.replace('{player}', '<strong>' + escapeHtml(playerDisplay) + '</strong>').replace('{percent}', '<strong>' + (totalMatches > 0 ? Math.round(wins / totalMatches * 100) : 0) + '</strong>');
     html += '</div>';
 
     // === 积分变化折线图 ===
@@ -579,7 +589,7 @@ function renderPersonalStats(playerName, containerId) {
             html += '<div class="personal-tags-section">';
             html += '<span class="personal-tags-label"><i class="fa-solid fa-tags"></i> ' + i18n[currentLang].pp_tags_label + '</span>';
             playerTags.forEach(tag => {
-                html += '<span class="personal-tag-badge">' + tag + '</span>';
+                html += '<span class="personal-tag-badge">' + escapeHtml(tagDisplayLabel(tag)) + '</span>';
             });
             html += '</div>';
         }
@@ -589,7 +599,7 @@ function renderPersonalStats(playerName, containerId) {
             playerHonors.forEach((honor, i) => {
                 html += '<span class="personal-honor-badge">';
                 if (i === 0) html += '<i class="fa-solid fa-crown"></i> ';
-                html += honor + '</span>';
+                html += (typeof playerHonorLabel === 'function' ? playerHonorLabel(honor) : honor) + '</span>';
             });
             html += '</div>';
         }

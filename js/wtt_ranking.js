@@ -46,7 +46,8 @@ function wttShowScoreDetail(playerName, snapshotDate) {
         player: playerName,
         snapshotDate: snapshotDate || (wttRankingTimeline[wttCurrentTimeIndex]?.time || '')
     };
-    title.textContent = `${playerName} - ${i18n[currentLang].score_detail_title}（${wttRankingTimeline[wttCurrentTimeIndex] ? getNodeDisplayLabel(wttRankingTimeline[wttCurrentTimeIndex]) : ''}）`;
+    const nodeLabel = wttRankingTimeline[wttCurrentTimeIndex] ? getNodeDisplayLabel(wttRankingTimeline[wttCurrentTimeIndex]) : '';
+    title.textContent = `${playerName} - ${i18n[currentLang].score_detail_title}` + (i18n[currentLang].wtt_parens || '（{v}）').replace('{v}', () => nodeLabel);
     wttRenderScoreDetail();
     wttAdjustModalSize();
     openModal(modal);
@@ -172,19 +173,19 @@ function wttRenderScoreDetailInContext(player, snapshotDate, body) {
         if (r.isBonus) {
             const cc = r.decayedChange >= 0 ? 'score-change-positive' : 'score-change-negative';
             const sign = r.decayedChange >= 0 ? '+' : '';
-            return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(r.type)}</td><td>-</td><td class="result-win">${escapeHtml(i18n[currentLang].wtt_bonus)}</td>${hasScore ? '<td></td>' : ''}<td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${sign}${r.decayedChange.toFixed(1)}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
+            return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(wttEventTypeLabel(r.type))}</td><td>-</td><td class="result-win">${escapeHtml(i18n[currentLang].wtt_bonus)}</td>${hasScore ? '<td></td>' : ''}<td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${sign}${r.decayedChange.toFixed(1)}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
         }
         const res = r.isWinner ? i18n[currentLang].score_result_win : i18n[currentLang].score_result_loss;
         const rc = r.isWinner ? 'result-win' : 'result-loss';
         const cc = r.decayedChange >= 0 ? 'score-change-positive' : 'score-change-negative';
         const signRaw = r.rawChange >= 0 ? '+' : '';
         const signDecayed = r.decayedChange >= 0 ? '+' : '';
-        const changeDisplay = `${signRaw}${r.rawChange.toFixed(1)}（${signDecayed}${r.decayedChange.toFixed(1)}）`;
+        const changeDisplay = `${signRaw}${r.rawChange.toFixed(1)}` + (i18n[currentLang].wtt_parens || '（{v}）').replace('{v}', () => `${signDecayed}${r.decayedChange.toFixed(1)}`);
         const mdUrl = escapeHtml(buildMatchDetailUrl(r.date, r.type, r.isWinner ? player : r.opponent, r.isWinner ? r.opponent : player, r.n, wttCurrentCategory));
         /* 比分/局分存储为胜者视角：负行按球员视角展示（对调数字、局序不变）；对手名可点（WTT 组合整串链组合页） */
         const gamesView = playerViewGames(r.games, r.isWinner);
-        const scoreCell = hasScore ? `<td${gamesView && gamesView.length ? ` title="${i18n[currentLang].sb_games_label || '局分'}：${escapeHtml(gamesView.join(' '))}"` : ''}>${r.score ? escapeHtml(playerViewScore(r.score, r.isWinner)) : '-'}</td>` : '';
-        return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(r.type)}</td><td>${wttLinkPlayerName(r.opponent)}</td><td class="${rc}">${res}</td>${scoreCell}<td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${changeDisplay}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
+        const scoreCell = hasScore ? `<td${gamesView && gamesView.length ? ` title="${i18n[currentLang].sb_games_label || '局分'}${i18n[currentLang].wtt_colon || '：'}${escapeHtml(gamesView.join(' '))}"` : ''}>${r.score ? escapeHtml(playerViewScore(r.score, r.isWinner)) : '-'}</td>` : '';
+        return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(wttEventTypeLabel(r.type))}</td><td>${wttLinkPlayerName(r.opponent)}</td><td class="${rc}">${res}</td>${scoreCell}<td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${changeDisplay}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
     }).join('');
 }
 
@@ -226,10 +227,10 @@ async function wttLoadRankingData() {
 
         // flat1300 模式不需要 initialScoresData
         const isFlat = wttSettings && wttSettings.scoreMode === 'flat1300';
-        if (!isFlat && !wttInitialScoresData) throw new Error('WTT initial-scores 加载失败');
+        if (!isFlat && !wttInitialScoresData) throw new Error(i18n[currentLang].wtt_err_initial);
         // seasons.json 加载失败时 wttSeasonsData 为 []（truthy），必须显式判空，
         // 否则空时间线会让骨架屏永久挂起、无任何错误提示
-        if (!wttEventCoefficients || !Array.isArray(wttSeasonsData) || !wttSeasonsData.length) throw new Error('WTT数据加载失败');
+        if (!wttEventCoefficients || !Array.isArray(wttSeasonsData) || !wttSeasonsData.length) throw new Error(i18n[currentLang].wtt_err_data);
 
         // 异步分块计算（每快照 yield 到浏览器，保持 UI 响应）
         setP(wttLoadPhasePct('calc', 0, 1), '', i18n[currentLang].wtt_calculating);
@@ -294,7 +295,7 @@ function wttRenderTimeNodeList() {
     Object.entries(seasons).forEach(([season, nodes]) => {
         const sli = document.createElement('li');
         sli.className = 'season-group';
-        sli.innerHTML = `<div class="season-header"><i class="fa-solid fa-chevron-down season-arrow"></i><span class="season-label">${season}</span><span class="season-count">${i18n[currentLang].wtt_node_count.replace('{n}', nodes.length)}</span></div><ul class="season-node-list">${nodes.map(n => `<li class="time-node-item${n.index === wttCurrentTimeIndex ? ' active' : ''}${n.isInitial ? ' initial-node' : ''}" role="button" tabindex="0" data-index="${n.index}"><span class="node-dot"></span>${getNodeDisplayLabel(n)}<span class="node-count">${i18n[currentLang].wtt_ppl.replace('{n}', n.data.length)}</span></li>`).join('')}</ul>`;
+        sli.innerHTML = `<div class="season-header"><i class="fa-solid fa-chevron-down season-arrow"></i><span class="season-label">${seasonLabel(season)}</span><span class="season-count">${i18n[currentLang].wtt_node_count.replace('{n}', nodes.length)}</span></div><ul class="season-node-list">${nodes.map(n => `<li class="time-node-item${n.index === wttCurrentTimeIndex ? ' active' : ''}${n.isInitial ? ' initial-node' : ''}" role="button" tabindex="0" data-index="${n.index}"><span class="node-dot"></span>${getNodeDisplayLabel(n)}<span class="node-count">${i18n[currentLang].wtt_ppl.replace('{n}', n.data.length)}</span></li>`).join('')}</ul>`;
         list.appendChild(sli);
         sli.querySelector('.season-header').addEventListener('click', () => sli.classList.toggle('collapsed'));
         sli.querySelectorAll('.time-node-item').forEach(item => {
@@ -323,7 +324,7 @@ function wttRenderTimeNodeList() {
     const curSeason = wttRankingTimeline[wttCurrentTimeIndex]?.season;
     if (curSeason) {
         list.querySelectorAll('.season-group').forEach(sg => {
-            if (sg.querySelector('.season-label')?.textContent !== curSeason) {
+            if (sg.querySelector('.season-label')?.textContent !== seasonLabel(curSeason)) {
                 sg.classList.add('collapsed');
             }
         });
@@ -448,7 +449,7 @@ function wttRenderLoadMoreRow(data, shown) {
     if (data.length <= shown) return;
     const more = document.createElement('tr');
     more.id = 'wttRankingLoadMoreRow';
-    more.innerHTML = `<td colspan="7" style="text-align:center;padding:14px;"><button type="button" class="btn btn-secondary btn-sm" id="wttRankingLoadMore"><i class="fa-solid fa-chevron-down"></i> ${escapeHtml(i18n[currentLang].wtt_ps_load_more)}（${shown}/${data.length}）</button></td>`;
+    more.innerHTML = `<td colspan="7" style="text-align:center;padding:14px;"><button type="button" class="btn btn-secondary btn-sm" id="wttRankingLoadMore"><i class="fa-solid fa-chevron-down"></i> ${escapeHtml(i18n[currentLang].wtt_ps_load_more)}${(i18n[currentLang].wtt_parens || '（{v}）').replace('{v}', () => `${shown}/${data.length}`)}</button></td>`;
     tb.appendChild(more);
     more.querySelector('button').addEventListener('click', () => {
         const d = (wttCurrentDisplayData && wttCurrentDisplayData.length) ? wttCurrentDisplayData : data;

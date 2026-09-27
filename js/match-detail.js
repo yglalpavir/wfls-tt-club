@@ -12,6 +12,9 @@
    球员链接（wttLinkPlayerName）；引擎全局由 wttWithDataContext 在计算期临时切换。 */
 const MD_WTT = typeof window.MD_WTT_MODE !== 'undefined' && !!window.MD_WTT_MODE;
 
+/* 类型展示名：club 走 club 映射、WTT 走 WTT 映射（数据值本身永不改动） */
+function mdTypeLabel(v) { return MD_WTT ? wttEventTypeLabel(v) : eventTypeLabel(v); }
+
 let mdModel = null;   // 计算结果缓存（含 error 态），语言切换时据此重渲染
 let mdReady = false;
 let mdTabScrollHandler = null;   // 章节吸顶 tab 的 scrollspy 监听（重渲染前先解绑）
@@ -375,11 +378,11 @@ function renderMatchDetail(m) {
     const backUrl = MD_WTT ? ('wtt_ranking.html?cat=' + encodeURIComponent(m.cat || 'ms')) : 'ranking.html';
 
     /* ===== 深色 hero（亚运会官网风格：赛事 pill + Official 徽标 + 元信息行 + 大比分盒） ===== */
-    const eventParts = [m.type];
+    const eventParts = [mdTypeLabel(m.type)];
     if (m.format) eventParts.push(String(m.format).toUpperCase());
     const metaItems = [
         `<span class="md-hero-meta-item"><i class="fa-solid fa-calendar-day"></i> ${escapeHtml(m.date)}</span>`,
-        `<span class="md-hero-meta-item"><i class="fa-solid fa-flag"></i> ${escapeHtml(String(m.seasonLabel))}</span>`
+        `<span class="md-hero-meta-item"><i class="fa-solid fa-flag"></i> ${escapeHtml(String(seasonLabel(m.seasonLabel)))}</span>`
     ];
     if (m.n > 1) metaItems.push(`<span class="md-hero-meta-item"><i class="fa-solid fa-repeat"></i> ${T.md_occurrence.replace('{n}', String(m.n))}</span>`);
 
@@ -422,7 +425,7 @@ function renderMatchDetail(m) {
     const formulaHtml = `<div class="md-formula">${fNodes.join(arrow)}<span class="md-f-arrow"><i class="fa-solid fa-equals"></i></span><span class="md-f-node md-f-res"><b>${m.rawW >= 0 ? '+' : ''}${m.rawW.toFixed(1)}</b><i>${T.md_breakdown_result}</i></span></div>`;
     const bdRows = [];
     bdRows.push(bdRow('fa-scale-balanced', T.md_breakdown_base, `${T.md_breakdown_gap} ${bd.gap >= 0 ? '+' : ''}${bd.gap.toFixed(1)} · ${bd.gap >= 0 ? T.md_breakdown_base_lead : T.md_breakdown_base_upset}`, bd.base));
-    bdRows.push(bdRow('fa-trophy', T.md_breakdown_event, escapeHtml(m.type), `×${bd.eventC}`));
+    bdRows.push(bdRow('fa-trophy', T.md_breakdown_event, escapeHtml(mdTypeLabel(m.type)), `×${bd.eventC}`));
     if (!MD_WTT) bdRows.push(bdRow('fa-layer-group', T.md_breakdown_format, m.format ? escapeHtml(String(m.format).toUpperCase()) : '', `×${bd.fmtMult}`));
     bdRows.push(bdRow('fa-bolt', `<strong>${T.md_breakdown_result}</strong>`, loserNote(Math.abs(m.rawL).toFixed(1)), mdDeltaHtml(m.rawW, m.deltaW, false), 'md-bd-total'));
     if (MD_WTT) {
@@ -450,7 +453,7 @@ function renderMatchDetail(m) {
     if (m.h2h.list.length) {
         const rows = m.h2h.list.map(r => {
             const url = buildMatchDetailUrl(r.date, r.type, r.winner, r.loser, r.n, m.cat);
-            return `<tr><td><a class="player-name-link" href="${url}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(r.type)}</td><td>${mdPlayerLink(r.winner)}</td><td>${r.score ? escapeHtml(r.score) : '-'}</td></tr>`;
+            return `<tr><td><a class="player-name-link" href="${url}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(mdTypeLabel(r.type))}</td><td>${mdPlayerLink(r.winner)}</td><td>${r.score ? escapeHtml(r.score) : '-'}</td></tr>`;
         }).join('');
         h2hCard = `<section class="md-card glass-card md-anim md-sec" id="md-sec-h2h"><div class="md-card-title"><i class="fa-solid fa-clock-rotate-left"></i> ${T.md_h2h_title}</div><div class="score-detail-table-wrapper md-h2h-wrap"><table class="score-detail-table"><thead><tr><th>${T.data_viz_col_date}</th><th>${T.data_viz_col_type}</th><th>${T.data_viz_col_winner}</th><th>${T.md_col_score}</th></tr></thead><tbody>${rows}</tbody></table></div></section>`;
     }

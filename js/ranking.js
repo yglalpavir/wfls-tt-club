@@ -120,7 +120,7 @@ function renderScoreDetailReplay(player, snapshotDate) {
     const hasScore = recordsWithScores.some(r => !r.isBonus && (r.score || (r.games && r.games.length)));
     toggleScoreDetailScoreCol(hasScore);
     scoreDetailBody.innerHTML = recordsWithScores.map(r => {
-        if (r.isBonus) { const cc = r.decayedChange >= 0 ? 'score-change-positive' : 'score-change-negative'; const sign = r.decayedChange >= 0 ? '+' : ''; return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(r.type)}</td><td>-</td><td class="result-win">${i18n[currentLang].rank_add_short}</td>${hasScore ? '<td></td>' : ''}<td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${sign}${r.decayedChange.toFixed(1)}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`; }
+        if (r.isBonus) { const cc = r.decayedChange >= 0 ? 'score-change-positive' : 'score-change-negative'; const sign = r.decayedChange >= 0 ? '+' : ''; return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(eventTypeLabel(r.type))}</td><td>-</td><td class="result-win">${i18n[currentLang].rank_add_short}</td>${hasScore ? '<td></td>' : ''}<td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${sign}${r.decayedChange.toFixed(1)}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`; }
         const res = r.isWinner ? i18n[currentLang].score_result_win : i18n[currentLang].score_result_loss;
         const rc = r.isWinner ? 'result-win' : 'result-loss';
         const cc = r.decayedChange >= 0 ? 'score-change-positive' : 'score-change-negative';
@@ -131,7 +131,7 @@ function renderScoreDetailReplay(player, snapshotDate) {
         /* 比分/局分存储为胜者视角：负行按球员视角展示（对调数字、局序不变）；对手名可点（双打组合逐成员链接） */
         const gamesView = playerViewGames(r.games, r.isWinner);
         const scoreCell = hasScore ? `<td${gamesView && gamesView.length ? ` title="${i18n[currentLang].sb_games_label || '局分'}：${escapeHtml(gamesView.join(' '))}"` : ''}>${r.score ? escapeHtml(playerViewScore(r.score, r.isWinner)) : '-'}</td>` : '';
-        return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(r.type)}</td><td>${linkPlayerSide(r.opponent)}</td><td class="${rc}">${res}</td>${scoreCell}<td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${changeDisplay}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
+        return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(eventTypeLabel(r.type))}</td><td>${linkPlayerSide(r.opponent)}</td><td class="${rc}">${res}</td>${scoreCell}<td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${changeDisplay}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
     }).join('');
     setTimeout(adjustModalSize, 150);
 }
@@ -139,8 +139,15 @@ function renderScoreDetailReplay(player, snapshotDate) {
 /* 语言切换整体重渲染（setLanguage 探测）：排名表 + 已打开的积分明细弹窗 */
 function rankingReapplyI18n() {
     if (!document.getElementById('rankingFullBody')) return;
-    if (dataLoaded && rankingTimeline.length) updateRankingDisplay();
+    // 以时间线是否就绪为准，不能用 dataLoaded —— 它在 ranking.html 上始终为 false，
+    // 会让整段重渲染被跳过，切语言后时间线侧栏仍留着中文
+    if (rankingTimeline && rankingTimeline.length) {
+        renderTimeNodeList();
+        if (document.querySelector('#rankingFullBody tr')) updateRankingDisplay();
+    }
     if (scoreDetailModal && scoreDetailModal.classList.contains('active') && currentScoreContext.player) showScoreDetail(currentScoreContext.player, currentScoreContext.snapshotDate);
+    const sheet = document.getElementById('mrankNodeSheet');
+    if (sheet && sheet.classList.contains('active')) mrankBuildNodeSheet();
     const si = document.getElementById('mrankSearch');
     if (si) si.placeholder = i18n[currentLang].mrank_search_ph || '';
     document.querySelectorAll('.sheet-close').forEach(b => b.setAttribute('aria-label', i18n[currentLang].mrank_close || ''));
@@ -275,12 +282,12 @@ function renderTimeNodeList() { const list = document.getElementById('timeNodeLi
     // 渲染赛季分组
     const seasons = {};
     regularNodes.forEach((n, i) => { const s = n.season || i18n[currentLang].wtt_default_season; if (!seasons[s]) seasons[s] = []; seasons[s].push({ ...n, index: n.index }); });
-    Object.entries(seasons).forEach(([season, nodes]) => { const sli = document.createElement('li'); sli.className = 'season-group'; sli.innerHTML = `<div class="season-header"><i class="fa-solid fa-chevron-down season-arrow"></i><span class="season-label">${season}</span><span class="season-count">${i18n[currentLang].rank_node_count.replace('{n}', nodes.length)}</span></div><ul class="season-node-list">${nodes.map(n => `<li class="time-node-item${n.index===currentTimeIndex?' active':''}${n.isInitial?' initial-node':''}" role="button" tabindex="0" data-index="${n.index}"><span class="node-dot"></span>${getNodeDisplayLabel(n)}<span class="node-count">${i18n[currentLang].rank_ppl.replace('{n}', n.data.length)}</span></li>`).join('')}</ul>`; list.appendChild(sli); sli.querySelector('.season-header').addEventListener('click', () => sli.classList.toggle('collapsed')); sli.querySelectorAll('.time-node-item').forEach(item => { item.addEventListener('click', () => { currentTimeIndex = parseInt(item.getAttribute('data-index'), 10); currentSortKey = '当前积分'; currentSortDir = 'desc'; updateRankingDisplay(); renderTimeNodeList(); }); }); });
+    Object.entries(seasons).forEach(([season, nodes]) => { const sli = document.createElement('li'); sli.className = 'season-group'; sli.innerHTML = `<div class="season-header"><i class="fa-solid fa-chevron-down season-arrow"></i><span class="season-label">${seasonLabel(season)}</span><span class="season-count">${i18n[currentLang].rank_node_count.replace('{n}', nodes.length)}</span></div><ul class="season-node-list">${nodes.map(n => `<li class="time-node-item${n.index===currentTimeIndex?' active':''}${n.isInitial?' initial-node':''}" role="button" tabindex="0" data-index="${n.index}"><span class="node-dot"></span>${getNodeDisplayLabel(n)}<span class="node-count">${i18n[currentLang].rank_ppl.replace('{n}', n.data.length)}</span></li>`).join('')}</ul>`; list.appendChild(sli); sli.querySelector('.season-header').addEventListener('click', () => sli.classList.toggle('collapsed')); sli.querySelectorAll('.time-node-item').forEach(item => { item.addEventListener('click', () => { currentTimeIndex = parseInt(item.getAttribute('data-index'), 10); currentSortKey = '当前积分'; currentSortDir = 'desc'; updateRankingDisplay(); renderTimeNodeList(); }); }); });
     // 折叠非当前赛季的时间节点
     const curSeason = rankingTimeline[currentTimeIndex]?.season;
     if (curSeason) {
         list.querySelectorAll('.season-group').forEach(sg => {
-            if (sg.querySelector('.season-label')?.textContent !== curSeason) {
+            if (sg.querySelector('.season-label')?.textContent !== seasonLabel(curSeason)) {
                 sg.classList.add('collapsed');
             }
         });
@@ -581,7 +588,7 @@ function mrankBuildNodeSheet() {
     const curSeason = rankingTimeline[currentTimeIndex]?.season;
     Object.entries(seasons).forEach(([season, nodes]) => {
         const collapsed = season !== curSeason ? ' collapsed' : '';
-        html += `<div class="season-group${collapsed}"><div class="season-header"><i class="fa-solid fa-chevron-down season-arrow"></i><span class="season-label">${escapeHtml(season)}</span><span class="season-count">${L.rank_node_count.replace('{n}', nodes.length)}</span></div><ul class="season-node-list">${nodes.map(nodeBtn).join('')}</ul></div>`;
+        html += `<div class="season-group${collapsed}"><div class="season-header"><i class="fa-solid fa-chevron-down season-arrow"></i><span class="season-label">${escapeHtml(seasonLabel(season))}</span><span class="season-count">${L.rank_node_count.replace('{n}', nodes.length)}</span></div><ul class="season-node-list">${nodes.map(nodeBtn).join('')}</ul></div>`;
     });
     body.innerHTML = html;
 }

@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>(function(){try{var t=localStorage.getItem("wfls-tt-theme");var d=t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark-mode");}catch(e){}})()</script>
-    <meta name="description" content="武汉外国语学校乒乓球社团官方网站。了解社团理念、活动，查看最新动态和赛事信息。">
-    <meta name="keywords" content="武汉外国语学校,乒乓球,社团,WFLS,Table Tennis,排名,积分">
+    <meta name="description" content="武汉外国语学校乒乓球社团官方网站。了解社团理念、活动，查看最新动态和赛事信息。" data-i18n-content="home_meta_desc">
+    <meta name="keywords" content="武汉外国语学校,乒乓球,社团,WFLS,Table Tennis,排名,积分" data-i18n-content="home_kw">
     <meta name="author" content="WFLS Table Tennis Club">
     <meta name="robots" content="index, follow">
-    <link rel="alternate" type="application/rss+xml" title="WFLS Table Tennis Club - 社团动态" href="feed.xml">
-    <meta property="og:title" content="武汉外国语学校乒乓球社团">
-    <meta property="og:description" content="WFLS Table Tennis Club - 挥拍逐梦，旋转青春">
+    <link rel="alternate" type="application/rss+xml" title="WFLS Table Tennis Club - 社团动态" data-i18n-title="home_rss_title" href="feed.xml">
+    <meta property="og:title" content="武汉外国语学校乒乓球社团" data-i18n-content="home_og_title">
+    <meta property="og:description" content="WFLS Table Tennis Club - 挥拍逐梦，旋转青春" data-i18n-content="home_og_desc">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://yglalpavir.github.io/wfls-tt-club/images/og-cover.png">
     <meta name="twitter:image" content="https://yglalpavir.github.io/wfls-tt-club/images/og-cover.png">
     <meta property="og:url" content="https://yglalpavir.github.io/wfls-tt-club/">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="武汉外国语学校乒乓球社团">
-    <meta name="twitter:description" content="WFLS Table Tennis Club - 挥拍逐梦，旋转青春">
+    <meta name="twitter:title" content="武汉外国语学校乒乓球社团" data-i18n-content="home_og_title">
+    <meta name="twitter:description" content="WFLS Table Tennis Club - 挥拍逐梦，旋转青春" data-i18n-content="home_og_desc">
     <link rel="canonical" href="https://yglalpavir.github.io/wfls-tt-club/">
     <script type="application/ld+json">
     {
@@ -64,20 +64,20 @@
             <div class="search-header">
                 <div class="search-input-wrapper">
                     <i class="fa-solid fa-magnifying-glass search-input-icon"></i>
-                    <input type="text" class="search-input" id="searchInput" placeholder="搜索新闻、赛事、成员、排名..." autocomplete="off">
-                    <button class="search-clear" id="searchClear" style="display:none;" aria-label="清空搜索词">
+                    <input type="text" class="search-input" id="searchInput" placeholder="搜索新闻、赛事、成员、排名..." data-i18n-placeholder="search_placeholder" autocomplete="off">
+                    <button class="search-clear" id="searchClear" style="display:none;" aria-label="清空搜索词" data-i18n-aria="home_search_clear_aria">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
-                <button class="search-close-btn" id="searchClose" aria-label="关闭搜索">
+                <button class="search-close-btn" id="searchClose" aria-label="关闭搜索" data-i18n-aria="home_search_close_aria">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
             <div class="search-results" id="searchResults">
                 <div class="search-placeholder">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <p>输入关键词开始搜索</p>
-                    <p class="search-hint">支持搜索标题、内容、姓名等</p>
+                    <p data-i18n="search_hint_title">输入关键词开始搜索</p>
+                    <p class="search-hint" data-i18n="search_hint_info">支持搜索标题、内容、姓名等</p>
                 </div>
             </div>
         </div>
@@ -118,7 +118,7 @@
             <div class="hero-ring hero-ring-2"></div>
         </div>
         <!-- 彩蛋入口：悬浮乒乓球（移出 aria-hidden 装饰层以保证可访问）；点击进入 3D 乒乓球游戏 -->
-        <a class="hero-ball" href="tt_game/index.html" title="🌟 彩蛋：3D 乒乓球" aria-label="彩蛋：3D 乒乓球"></a>
+        <a class="hero-ball" href="tt_game/index.html" title="🌟 彩蛋：3D 乒乓球" data-i18n-title="home_ball_title" aria-label="彩蛋：3D 乒乓球" data-i18n-aria="home_ball_aria"></a>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <span class="hero-kicker"><span class="hero-kicker-line"></span>WFLS Table Tennis Club<span class="hero-kicker-line"></span></span>
@@ -129,7 +129,7 @@
                 <a href="contact.html" class="btn btn-outline btn-hero" data-i18n="hero_btn_join">加入我们 <i class="fa-solid fa-plus"></i></a>
             </div>
         </div>
-        <div class="hero-last-updated" id="heroLastUpdated">上次更新：获取中...</div>
+        <div class="hero-last-updated" id="heroLastUpdated" data-i18n="home_last_updated">上次更新：获取中...</div>
         <div class="hero-scroll-indicator">
             <span data-i18n="scroll">Scroll</span>
             <div class="scroll-mouse"><span class="scroll-mouse-dot"></span></div>

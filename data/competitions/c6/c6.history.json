@@ -1,23 +1,30 @@
 [
- {
-  "version": 9,
-  "updatedAt": "2026-09-12",
-  "title": "十二强争冠赛暨2026社团表演赛",
-  "visible": null,
-  "file": "c6.v9.json"
- },
- {
-  "version": 6,
-  "updatedAt": "2026-09-06",
-  "title": "十二强争冠赛暨2026社团表演赛",
-  "visible": null,
-  "file": "c6.v6.json"
- },
- {
-  "version": 1,
-  "updatedAt": "2026-09-04",
-  "title": "十二强争冠赛暨2026社团表演赛",
-  "visible": null,
-  "file": "c6.v1.json"
- }
+  {
+    "version": 10,
+    "updatedAt": "2026-09-28",
+    "title": "十二强争冠赛暨2026社团表演赛",
+    "visible": null,
+    "file": "c6.v10.json"
+  },
+  {
+    "version": 9,
+    "updatedAt": "2026-09-12",
+    "title": "十二强争冠赛暨2026社团表演赛",
+    "visible": null,
+    "file": "c6.v9.json"
+  },
+  {
+    "version": 6,
+    "updatedAt": "2026-09-06",
+    "title": "十二强争冠赛暨2026社团表演赛",
+    "visible": null,
+    "file": "c6.v6.json"
+  },
+  {
+    "version": 1,
+    "updatedAt": "2026-09-04",
+    "title": "十二强争冠赛暨2026社团表演赛",
+    "visible": null,
+    "file": "c6.v1.json"
+  }
 ]

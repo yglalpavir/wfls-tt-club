@@ -1,5 +1,12 @@
 [
   {
+    "version": 2,
+    "updatedAt": "2026-09-28",
+    "title": "双打积分规则",
+    "visible": null,
+    "file": "q4.v2.json"
+  },
+  {
     "version": 1,
     "updatedAt": "2026-09-27",
     "title": "双打积分规则",

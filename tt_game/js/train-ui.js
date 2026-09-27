@@ -59,7 +59,9 @@ function fmtTs(t){
   return p(d.getMonth() + 1) + '-' + p(d.getDate()) + ' ' + p(d.getHours()) + ':' + p(d.getMinutes());
 }
 function fmtBytesShort(n){ return fmtBytes(n); }
-function banner(kind, text){
+/* text 可直接传文案;需要跟随语言切换时再传 i18nKey(可选 i18nData) */
+function banner(kind, text, i18nKey, i18nData){
+  S.bannerKind = kind; S.bannerText = text || ''; S.bannerKey = i18nKey || null; S.bannerData = i18nData || null;
   var b = $('#banner');
   b.className = 'banner ' + (kind === 'err' ? 'err' : 'warn') + (text ? ' show' : '');
   b.textContent = text || '';
@@ -82,15 +84,15 @@ function logLine(text, cls){
 function metaLine(m){
   var e = S.meta[m.id];
   if(!e) return '';
-  if(e.missing) return '<span class="bad">权重缺失</span>';
+  if(e.missing) return '<span class="bad">' + gameT('g_tr_missing') + '</span>';
   var mt = e.meta || {};
   var bits = [];
-  if(mt.trainedAt) bits.push('<span>训练</span> <b>' + esc(mt.trainedAt) + '</b>');
-  if(mt.evalDefault != null) bits.push('<span>vs默认</span> <b class="ok">' + (mt.evalDefault * 100).toFixed(1) + '%</b>');
-  if(mt.evalHell != null) bits.push('<span>vs地狱</span> <b class="ok">' + (mt.evalHell * 100).toFixed(1) + '%</b>');
+  if(mt.trainedAt) bits.push('<span>' + gameT('g_tr_trained') + '</span> <b>' + esc(mt.trainedAt) + '</b>');
+  if(mt.evalDefault != null) bits.push('<span>' + gameT('g_tr_vs_default') + '</span> <b class="ok">' + (mt.evalDefault * 100).toFixed(1) + '%</b>');
+  if(mt.evalHell != null) bits.push('<span>' + gameT('g_tr_vs_hell') + '</span> <b class="ok">' + (mt.evalHell * 100).toFixed(1) + '%</b>');
   if(mt.fitness != null) bits.push('<span>fit</span> <b>' + mt.fitness.toFixed(3) + '</b>');
-  if(mt.pointRateVsDefault != null) bits.push('<span>vs默认</span> <b class="ok">' + (mt.pointRateVsDefault * 100).toFixed(1) + '%</b>');
-  if(mt.pointRateVsPlayer != null) bits.push('<span>vs玩家</span> <b class="ok">' + (mt.pointRateVsPlayer * 100).toFixed(1) + '%</b>');
+  if(mt.pointRateVsDefault != null) bits.push('<span>' + gameT('g_tr_vs_default') + '</span> <b class="ok">' + (mt.pointRateVsDefault * 100).toFixed(1) + '%</b>');
+  if(mt.pointRateVsPlayer != null) bits.push('<span>' + gameT('g_tr_vs_player') + '</span> <b class="ok">' + (mt.pointRateVsPlayer * 100).toFixed(1) + '%</b>');
   if(!bits.length) bits.push('<span>' + esc(e.weightFile) + '</span>');
   return '<div class="mrow">' + bits.join('') + '</div>';
 }
@@ -103,7 +105,7 @@ function renderCards(){
     el.innerHTML =
       '<h3><i></i>' + esc(m.name) + '<em>' + esc(m.tag) + '</em></h3>' +
       '<p>' + esc(m.desc) + '</p>' + metaLine(m) +
-      '<div class="mrow"><span>脚本</span> <b>' + esc(m.script) + '</b></div>';
+      '<div class="mrow"><span>' + gameT('g_tr_script') + '</span> <b>' + esc(m.script) + '</b></div>';
     el.onclick = function(){ selectModel(m.id); };
     box.appendChild(el);
   });
@@ -113,7 +115,7 @@ function renderCards(){
 function paramDefs(m){
   var out = (m.params || []).map(function(p){ return p; });
   if(m.extraArgs) Object.keys(m.extraArgs).forEach(function(k){
-    out.push({ name:k, label:k + ' <small>(额外参数)</small>', type:'text', default:m.extraArgs[k] });
+    out.push({ name:k, label:k + ' <small>' + gameT('g_tr_extra') + '</small>', type:'text', default:m.extraArgs[k] });
   });
   return out;
 }
@@ -157,12 +159,13 @@ function buildFlags(m){
 function buildPresets(m){
   var pb = $('#presets'); pb.innerHTML = '';
   (m.presets || []).forEach(function(pr, i){
-    var b = document.createElement('button'); b.className = 'btn sm'; b.textContent = pr.name;
+    var b = document.createElement('button'); b.className = 'btn sm' + (S.presetOn === pr.name ? ' on' : ''); b.textContent = pr.name;
     b.onclick = function(){
       (m.params || []).forEach(function(p){ S.vals[p.name] = pr.args[p.name] !== undefined ? pr.args[p.name] : p.default; });
       $$('#presets .btn').forEach(function(x){ x.classList.remove('on'); });
       b.classList.add('on');
-      buildFields(m); updateCmd(); logLine('预设「' + pr.name + '」：' + JSON.stringify(pr.args), 'sys');
+      S.presetOn = pr.name;
+      buildFields(m); updateCmd(); logLine(gameT('g_tr_preset_log', { n: pr.name, a: JSON.stringify(pr.args) }), 'sys');
     };
     pb.appendChild(b);
   });
@@ -196,13 +199,12 @@ function updateCmd(){
   var w = $('#warnBox');
   if(payload.dryRun !== false && (m.dryRunArgs || []).length){
     w.className = 'warn ok';
-    w.innerHTML = '<b>实验模式</b>：本次不会覆盖 ' + esc((m.writes || []).join('、'));
+    w.innerHTML = gameT('g_tr_warn_dry1', { w: esc((m.writes || []).join('、')) });
   } else if(payload.dryRun !== false){
-    w.className = 'warn ok'; w.innerHTML = '<b>实验模式</b>：本次不会写入生产权重';
+    w.className = 'warn ok'; w.innerHTML = gameT('g_tr_warn_dry2');
   } else {
     w.className = 'warn';
-    w.innerHTML = '<b>将写入产物</b>：' + esc((m.writes || []).join('、')) +
-      '<br>会替换游戏当前使用的模型，请确认。';
+    w.innerHTML = gameT('g_tr_warn_write', { w: esc((m.writes || []).join('、')) });
   }
 }
 function cur(){ return S.models.filter(function(m){ return m.id === S.sel; })[0] || null; }
@@ -210,17 +212,17 @@ function cur(){ return S.models.filter(function(m){ return m.id === S.sel; })[0]
 function selectModel(id){
   var m = S.models.filter(function(x){ return x.id === id; })[0];
   if(!m) return;
-  S.sel = id; S.vals = {}; S.flags = {};
+  S.sel = id; S.vals = {}; S.flags = {}; S.presetOn = null;
   S.models.forEach(function(x){ if(x.id === id){
     (x.params || []).forEach(function(p){ S.vals[p.name] = p.default; });
     (x.flags || []).forEach(function(f){ S.flags[f.name] = f.default; });
   }});
   renderCards();
-  $('#cfgTitle').textContent = m.name + ' · 配置';
+  $('#cfgTitle').textContent = m.name + gameT('g_tr_cfg_suffix');
   $('#cfgScript').textContent = m.script;
   buildPresets(m); buildFields(m); buildFlags(m); updateCmd();
   $('#rawArgs').value = '';
-  if(!S.runId){ plotModel(m, [], m.name + ' · 未开始训练', ''); }
+  if(!S.runId){ plotModel(m, [], function(){ return m.name + gameT('g_tr_not_started'); }, ''); }
 }
 
 /* ---------------- 验证胜率矩阵 / 进度 ---------------- */
@@ -235,7 +237,7 @@ function fmtH(sec){
   if(n < 60) return Math.round(n) + 's';
   if(n < 3600){ var s = Math.round(n); return Math.floor(s / 60) + 'm' + (s % 60 ? (s % 60) + 's' : ''); }
   if(h < 48) return (h < 10 ? h.toFixed(1) : h.toFixed(0)) + 'h';
-  return (h / 24).toFixed(1) + '天';
+  return (h / 24).toFixed(1) + gameT('g_tr_days');
 }
 /* 从打点序列汇总矩阵：cur=最后有效值 / peak=全程峰值 / base=基线（t:'verify' 带 base）
  * wr* 打点为百分比；wrMap 为小数，仅在缺 wr* 时回退（老版本曲线兼容）。 */
@@ -288,11 +290,11 @@ function renderMatrix(){
       '<div class="lbl"><i></i>' + esc(s.short || s.label) +
         (s.badge ? '<em>' + esc(s.badge) + '</em>' : '') + '</div>' +
       '<div class="val">' + (c === undefined ? '–' : c.toFixed(1)) + '<span>%</span></div>' +
-      '<div class="delta' + cls + '">' + (d === undefined ? (trained ? '基线' : '待训练') : (d >= 0 ? '+' : '') + d.toFixed(1) + 'pp') + '</div>' +
+      '<div class="delta' + cls + '">' + (d === undefined ? (trained ? gameT('g_tr_baseline') : gameT('g_tr_pending')) : (d >= 0 ? '+' : '') + d.toFixed(1) + 'pp') + '</div>' +
       '<div class="track"><i style="width:' + (c === undefined ? 0 : Math.max(0, Math.min(100, c))) + '%"></i>' +
         (b !== undefined ? '<u style="left:' + Math.max(0, Math.min(100, b)) + '%"></u>' : '') + '</div>' +
-      '<div class="sub">峰值 ' + (pk === undefined ? '–' : pk.toFixed(1)) +
-        ' · 基线 ' + (b === undefined ? '–' : b.toFixed(1)) + '</div></div>';
+      '<div class="sub">' + gameT('g_tr_peak') + ' ' + (pk === undefined ? '–' : pk.toFixed(1)) +
+        ' · ' + gameT('g_tr_baseline') + ' ' + (b === undefined ? '–' : b.toFixed(1)) + '</div></div>';
   });
   g.innerHTML = html;
   if(tag) tag.textContent = st.ep !== null ? ('ep ' + st.ep) : '—';
@@ -321,14 +323,14 @@ function updateMeter(){
   if(b && b > 0){
     e = e || 0;
     pct = Math.max(0, Math.min(1, e / b));
-    txt = '已用 ' + fmtH(e) + ' / ' + fmtH(b) + ' · 剩 ' + fmtH(Math.max(0, b - e));
+    txt = gameT('g_tr_elapsed', { a: fmtH(e), b: fmtH(b), c: fmtH(Math.max(0, b - e)) });
   } else if(tot && tot > 0 && ep !== null){
     pct = Math.max(0, Math.min(1, ep / tot));
     txt = 'ep ' + Math.round(ep) + ' / ' + Math.round(tot) + ' · ' + (pct * 100).toFixed(1) + '%';
   }
   if(pct === null){
     bar.style.width = '0'; bar.className = 'bar';
-    if(lab) lab.textContent = S.runId ? '统计中…' : '—';
+    if(lab) lab.textContent = S.runId ? gameT('g_tr_stats_ing') : '—';
     return;
   }
   bar.style.width = (pct * 100).toFixed(1) + '%';
@@ -370,7 +372,7 @@ function mkChart(){
         x: {
           type: 'linear', grid: { color:'rgba(255,255,255,.06)' },
           ticks: { color:'#6d7788', font:{ size:10, family:'Consolas,monospace' }, maxTicksLimit: 12 },
-          title: { display:true, text:'训练进度', color:'#6d7788', font:{ size:10 } }
+          title: { display:true, text: gameT('g_tr_axis_default'), color:'#6d7788', font:{ size:10 } }
         },
         y: {
           min: 0, grid: { color:'rgba(255,255,255,.06)' },
@@ -388,7 +390,7 @@ function mkChart(){
           titleColor:'#eef2f8', bodyColor:'#9aa3b5', padding:8, boxPadding:3,
           titleFont:{ size:11 }, bodyFont:{ size:11, family:'Consolas,monospace' },
           callbacks: {
-            title: function(items){ return S.chartTag || '数据点'; },
+            title: function(items){ return S.chartTag || gameT('g_tr_datapoints'); },
             label: function(c){
               var s = S.chart.model.series.filter(function(x){ return x.key === c.dataset.key; })[0];
               var v = c.parsed.y;
@@ -402,9 +404,12 @@ function mkChart(){
     }
   });
 }
+/* title 可以是字符串或函数——语言切换时按函数重算,图表标题跟着换语言 */
+function resolveTitle(t){ return (typeof t === 'function') ? t() : t; }
 function plotModel(model, points, title, tag){
   if(!S.chart) mkChart();
   S.chart.model = model; S.chart.unit = model.yUnit || 'rate'; S.chartTag = tag || '';
+  S.plotPts = points; S.plotTitle = title; S.plotTag = tag || '';
   var norm = S.norm;
   var mx = 0;
   points.forEach(function(p){ var x = xOf(p, model); if(x > mx) mx = x; });
@@ -430,12 +435,13 @@ function plotModel(model, points, title, tag){
     return model.yUnit === 'rate' ? (v * 100).toFixed(0) + '%' : v + '%';
   };
   S.chart.options.scales.y1.ticks.callback = function(v){ return (+v).toFixed(2); };
-  S.chart.options.scales.x.title.text = norm ? '训练进度 (%)' : (model.xKey === 'gen' ? '代数 gen' : '轮次 ep');
+  S.chart.options.scales.x.title.text = norm ? gameT('g_tr_axis_norm')
+    : (model.xKey === 'gen' ? gameT('g_tr_axis_gen') : gameT('g_tr_axis_ep'));
   S.chart.options.scales.x.min = 0;
   S.chart.options.scales.x.max = norm ? 100 : (mx > 0 ? mx : undefined);
   S.chartTag = tag || '';
-  $('#chartTitle').textContent = title;
-  $('#chartTag').textContent = tag ? (tag + ' · ' + points.length + ' 点') : (points.length + ' 点');
+  $('#chartTitle').textContent = resolveTitle(title);
+  $('#chartTag').textContent = tag ? (tag + ' · ' + points.length + ' ' + gameT('g_tr_points')) : (points.length + ' ' + gameT('g_tr_points'));
   S.hidden = {};
   renderLegend(); S.chart.update('none'); renderReadout(points);
   refreshMatrix(points);
@@ -447,7 +453,7 @@ function renderLegend(){
     var el = document.createElement('span');
     if(S.hidden[s.key]) el.className = 'off';
     el.innerHTML = '<i style="background:' + s.color + '"></i>' + esc(s.label) +
-      (s.axis === 'right' ? ' <small style="color:#6d7788">右轴</small>' : '');
+      (s.axis === 'right' ? ' <small style="color:#6d7788">' + gameT('g_tr_axis_right') + '</small>' : '');
     el.onclick = function(){
       S.hidden[s.key] = !S.hidden[s.key];
       S.chart.data.datasets.forEach(function(d){ d.hidden = !!S.hidden[d.key]; });
@@ -469,12 +475,12 @@ function renderReadout(points){
     });
     var cur2 = last ? num(normalizeTick(last, m)[s.key]) : null;
     var fmt = function(n){ return s.axis === 'right' ? (+n).toFixed(3) : fmtPct(n, m.yUnit); };
-    bits.push('<span>' + esc(s.label) + ' 峰值 <b>' + (v === null ? '–' : fmt(v)) + '</b>' +
-      (cur2 !== null ? ' 当前 <b>' + fmt(cur2) + '</b>' : '') + '</span>');
+    bits.push('<span>' + gameT('g_tr_series_peak', { s: esc(s.label) }) + ' <b>' + (v === null ? '–' : fmt(v)) + '</b>' +
+      (cur2 !== null ? ' ' + gameT('g_tr_current') + ' <b>' + fmt(cur2) + '</b>' : '') + '</span>');
   });
   if(last){
-    bits.push('<span>最新 ' + esc(String(xOf(last, m))) + '</span>');
-    if(last.sec !== undefined) bits.push('<span>耗时 <b>' + fmtDur(last.sec * 1000) + '</b></span>');
+    bits.push('<span>' + gameT('g_tr_latest') + ' ' + esc(String(xOf(last, m))) + '</span>');
+    if(last.sec !== undefined) bits.push('<span>' + gameT('g_tr_time_cost') + ' <b>' + fmtDur(last.sec * 1000) + '</b></span>');
     if(last.lr !== undefined) bits.push('<span>lr <b>' + last.lr + '</b></span>');
     if(last.eps !== undefined) bits.push('<span>eps <b>' + last.eps + '</b></span>');
     if(last.evals !== undefined) bits.push('<span>evals <b>' + last.evals + '</b></span>');
@@ -484,6 +490,7 @@ function renderReadout(points){
 
 /* ---------------- 启动 / 停止 ---------------- */
 function setStatus(text, cls){
+  S.statusText = text; S.statusCls = cls || '';
   $('#runStatus').textContent = text;
   $('#runDot').className = 'dot ' + (cls === 'run' ? 'on' : (cls === 'err' ? 'off' : ''));
 }
@@ -495,7 +502,7 @@ function openSSE(id){
     var msg; try{ msg = JSON.parse(ev.data); }catch(e){ return; }
     onEvent(msg);
   };
-  es.onerror = function(){ setStatus('连接断开', 'err'); };
+  es.onerror = function(){ setStatus(gameT('g_tr_conn_lost'), 'err'); };
 }
 function onEvent(msg){
   var m = S.runModel; if(!m) return;
@@ -515,24 +522,41 @@ function onEvent(msg){
     if(t.t === 'hb'){
       S.hbN = (S.hbN || 0) + 1;
       var wrNow = (t.trainTotal ? Math.round(t.trainWins / t.trainTotal * 100) : 0);
-      S.chartTag = 'ep ' + (t.ep || '') + ' · 本轮 ' + (t.inRound || 0) + '/' + (t.step || '?') +
+      S.chartTag = 'ep ' + (t.ep || '') + ' · ' + gameT('g_tr_this_round') + ' ' + (t.inRound || 0) + '/' + (t.step || '?') +
         ' · vs' + (t.phase || '') + ' ' + wrNow + '%';
-      setChartTag(' · 剩 ' + fmtH(t.remainSec));
+      setChartTag(' · ' + gameT('g_tr_remain') + ' ' + fmtH(t.remainSec));
       if(S.hbN % 6 === 0){
-        logLine('… ep ' + t.ep + ' · 本轮 ' + t.inRound + '/' + t.step +
+        logLine('… ep ' + t.ep + ' · ' + gameT('g_tr_this_round') + ' ' + t.inRound + '/' + t.step +
           ' · vs' + t.phase + ' ' + wrNow + '% · ε ' + t.eps +
           ' · best ' + (num(t.best) !== null ? (t.best * 100).toFixed(1) : '?') + '@' + t.bestEp +
-          ' · 剩 ' + fmtH(t.remainSec), 'hb');
+          ' · ' + gameT('g_tr_remain') + ' ' + fmtH(t.remainSec), 'hb');
       }
       updateMeter();
       return;
     }
+    /* 停止请求已收到：进程还在训完当前回合并落检查点，面板给出明确提示，别让人以为卡死 */
+    if(t.t === 'stop'){
+      S.chartTag = gameT('g_tr_stopping');
+      setChartTag(' · ep ' + (t.ep || '?'));
+      logLine(gameT('g_tr_stop_req', { r: t.reason }), 'sys');
+      updateMeter();
+      return;
+    }
+    /* 优雅暂停完成：wr* 齐全，照常进矩阵和曲线 */
+    if(t.t === 'paused'){
+      logLine(gameT('g_tr_paused_log', { e: t.ep, c: (t.ckpt || ''), n: (t.ckpts || 0) }), 'sys');
+      if(t.best !== undefined){
+        logLine(gameT('g_tr_best_line', {
+          b: (num(t.best) !== null ? (t.best * 100).toFixed(1) : '?'), e: (t.bestEp || 0),
+          t: (t.trained || 0), h: fmtH(t.elapsedSec) }), 'sys');
+      }
+    }
     S.chartTag = (m.xKey === 'gen' ? 'gen ' : 'ep ') + (t[m.xKey] !== undefined ? t[m.xKey] : '');
-    plotModel(m, S.runTicks, m.name + ' · 训练中', S.chartTag);
+    plotModel(m, S.runTicks, function(){ return m.name + gameT('g_tr_training'); }, S.chartTag);
     refreshMatrix(S.runTicks);
     updateMeter();
     if(num(t.remainSec) !== null){
-      setChartTag(' · 剩 ' + fmtH(t.remainSec));
+      setChartTag(' · ' + gameT('g_tr_remain') + ' ' + fmtH(t.remainSec));
     } else {
       var total = S.vals[m.xKey === 'gen' ? 'gens' : 'games'];
       var x = xOf(t, m);
@@ -543,20 +567,23 @@ function onEvent(msg){
     return;
   }
   if(msg.kind === 'exit'){
-    logLine('■ 进程结束 · code=' + msg.code + ' · ' + fmtDur(msg.sec * 1000), 'sys');
+    logLine(gameT('g_tr_exit', { c: msg.code, d: fmtDur(msg.sec * 1000) }), 'sys');
     /* closeRun 会清掉 runModel，先在此刷新一次图表标题与读数，避免停留在「训练中」 */
     if(S.runModel && S.runTicks.length){
-      plotModel(S.runModel, S.runTicks, S.runModel.name + ' · ' + (msg.status === 'done' ? '已完成' : '异常结束'),
-                S.chartTag || (S.runTicks.length + ' 点'));
+      plotModel(S.runModel, S.runTicks, function(){
+        return S.runModel.name + ' · ' + gameT(msg.status === 'done' ? 'g_tr_done' : msg.status === 'stopped' ? 'g_tr_paused' : 'g_tr_abnormal');
+      }, S.chartTag || (S.runTicks.length + ' ' + gameT('g_tr_points')));
     }
+    var stText = gameT(msg.status === 'done' ? 'g_tr_done' : (msg.status === 'stopped' ? 'g_tr_paused' : 'g_tr_abnormal'));
     closeRun(msg.status === 'error' ? 'err' : '');
-    setStatus(msg.status === 'done' ? '已完成' : '异常结束', msg.status === 'done' ? '' : 'err');
+    setStatus(stText, msg.status === 'error' ? 'err' : '');
+    if(msg.status === 'stopped') logLine(gameT('g_tr_paused_hint'), 'sys');
     refreshRuns();
   }
 }
 function startRun(){
   var m = cur(); if(!m) return;
-  if(S.runId){ logLine('已有训练在跑（' + S.runId + '），请先停止', 'sys'); return; }
+  if(S.runId){ logLine(gameT('g_tr_busy', { id: S.runId }), 'sys'); return; }
   var payload = argsFromUI(m);
   post('/api/run', { model:m.id, args:payload.args, flags:payload.flags, rawArgs:payload.rawArgs, dryRun:payload.dryRun })
     .then(function(r){
@@ -565,24 +592,25 @@ function startRun(){
       S.mx = null; S.hbN = 0; renderMatrix(); updateMeter();
       $('#logbox').innerHTML = '';
       logLine('$ ' + r.cmd, 'sys');
-      logLine('runId=' + r.id + (payload.dryRun ? ' · 实验模式' : ' · 将写入产物'), 'sys');
+      logLine('runId=' + r.id + gameT(payload.dryRun ? 'g_tr_dryrun_suffix' : 'g_tr_willwrite_suffix'), 'sys');
       $('#btnRun').disabled = true; $('#btnStop').disabled = false;
-      setStatus('训练中', 'run');
+      setStatus(gameT('g_tr_running'), 'run');
       openSSE(r.id);
     })
-    .catch(function(e){ banner('err', '启动失败：' + e.message); logLine('启动失败：' + e.message, 'err'); });
+    .catch(function(e){ banner('err', gameT('g_tr_start_fail', { e: e.message }), 'g_tr_start_fail', { e: e.message });
+      logLine(gameT('g_tr_start_fail', { e: e.message }), 'err'); });
 }
 function stopRun(){
   if(!S.runId) return;
   post('/api/stop/' + encodeURIComponent(S.runId)).then(function(){
-    logLine('■ 已发送停止信号…', 'sys');
-  }).catch(function(e){ logLine('停止失败：' + e.message, 'err'); });
+    logLine(gameT('g_tr_stop_requested'), 'sys');
+  }).catch(function(e){ logLine(gameT('g_tr_stop_fail', { e: e.message }), 'err'); });
 }
 function closeRun(cls){
   S.runId = null; S.runModel = null;
   if(S.es){ try{ S.es.close(); }catch(e){} S.es = null; }
   $('#btnRun').disabled = false; $('#btnStop').disabled = true;
-  if(cls) setStatus(cls === 'err' ? '异常结束' : '已完成', cls);
+  if(cls) setStatus(gameT(cls === 'err' ? 'g_tr_abnormal' : 'g_tr_done'), cls);
 }
 
 /* ---------------- 历史：运行 ---------------- */
@@ -597,9 +625,10 @@ function refreshRuns(){
       }).join(' ');
       tr.innerHTML =
         '<td>' + fmtTs(r.startedAt) + '</td>' +
-        '<td>' + esc(r.modelName || r.model) + (r.dryRun ? '' : ' <span class="pill error">写入</span>') + '</td>' +
+        '<td>' + esc(r.modelName || r.model) + (r.dryRun ? '' : ' <span class="pill error">' + gameT('g_tr_write_pill') + '</span>') + '</td>' +
         '<td style="max-width:230px;overflow:hidden;text-overflow:ellipsis">' + esc(r.cmd) + '</td>' +
-        '<td><span class="pill ' + (r.status === 'running' ? 'running' : r.status === 'done' ? 'done' : 'error') + '">' + esc(r.status) + '</span></td>' +
+        '<td><span class="pill ' + (r.status === 'running' ? 'running' : r.status === 'done' ? 'done' : r.status === 'stopped' ? 'paused' : 'error') + '">' +
+          esc(r.status === 'running' ? gameT('g_tr_status_running') : r.status === 'done' ? gameT('g_tr_done') : r.status === 'stopped' ? gameT('g_tr_paused') : gameT('g_tr_status_error')) + '</span></td>' +
         '<td>' + fmtDur((r.endedAt || Date.now()) - r.startedAt) + '</td>' +
         '<td>' + (r.ticks || 0) + '</td>' +
         '<td style="max-width:150px;overflow:hidden;text-overflow:ellipsis">' + esc(best) + '</td>' +
@@ -612,9 +641,10 @@ function refreshRuns(){
         tr.classList.add('on');
         if(r.pts && r.pts.length){
           var mdl = S.models.filter(function(x){ return x.id === r.model; })[0];
-          if(mdl) plotModel(mdl, r.pts, (r.modelName || r.model) + ' · 历史回放 ' + r.id, r.cmd);
+          if(mdl) plotModel(mdl, r.pts, (function(rr){ return function(){
+            return (rr.modelName || rr.model) + gameT('g_tr_replay_suffix') + rr.id; }; })(r), r.cmd);
         } else {
-          banner('warn', '该记录没有保留打点数据（可能早于本次改造，或为冒烟自检）');
+          banner('warn', gameT('g_tr_no_ticks'), 'g_tr_no_ticks');
         }
       };
       tb.appendChild(tr);
@@ -644,17 +674,17 @@ function refreshCurves(){
 }
 function loadCurve(path, modelId){
   get('/api/curve?path=' + encodeURIComponent(path)).then(function(d){
-    if(!d || d.error){ banner('err', '读取曲线失败：' + (d && d.error)); return; }
+    if(!d || d.error){ banner('err', gameT('g_tr_curve_fail', { e: (d && d.error) }), 'g_tr_curve_fail', { e: (d && d.error) }); return; }
     var mdl = S.models.filter(function(x){ return x.id === (modelId || d.model); })[0];
     if(!mdl){
-      mdl = { name:'未知模型', xKey: d.xKey || 'gen', yUnit:'rate', color:'#7fd8ff',
+      mdl = { name: gameT('g_tr_unknown_model'), xKey: d.xKey || 'gen', yUnit:'rate', color:'#7fd8ff',
         series: Object.keys(d.points[0] || {}).filter(function(k){ return k !== 'gen' && k !== 'ep'; })
           .map(function(k, i){ return { key:k, label:k, color:['#7fd8ff','#8fe8c8','#f2b64c','#f78c6b','#c77dff','#f72585'][i % 6] }; }) };
     }
     S.curvePoints = d.points;
-    plotModel(mdl, d.points, path + ' · 历史曲线', '');
+    plotModel(mdl, d.points, (function(p){ return function(){ return p + gameT('g_tr_hist_curve'); }; })(path), '');
     $$('#curvesTable tbody tr').forEach(function(x, i){ x.classList.toggle('on', S.curves[i] && S.curves[i].path === path); });
-  }).catch(function(e){ banner('err', '读取曲线失败：' + e.message); });
+  }).catch(function(e){ banner('err', gameT('g_tr_curve_fail', { e: e.message }), 'g_tr_curve_fail', { e: e.message }); });
 }
 
 /* ---------------- 历史：日志文件 ---------------- */
@@ -664,7 +694,7 @@ function refreshLogs(){
     var tb = $('#logsTable tbody'); tb.innerHTML = '';
     S.logs.forEach(function(l){
       var tr = document.createElement('tr');
-      tr.innerHTML = '<td>' + esc(l.name) + '</td><td>' + fmtBytes(l.size) + '</td><td>' + fmtTs(l.mtime) + '</td><td>查看</td>';
+      tr.innerHTML = '<td>' + esc(l.name) + '</td><td>' + fmtBytes(l.size) + '</td><td>' + fmtTs(l.mtime) + '</td><td>' + gameT('g_tr_view') + '</td>';
       tr.onclick = function(){ showLogFile(l.name); };
       tb.appendChild(tr);
     });
@@ -676,7 +706,7 @@ function showLogFile(name){
     if(!d || d.error){ banner('err', d && d.error); return; }
     var box = $('#logFileView');
     box.style.display = 'block';
-    box.innerHTML = '<div class="ln sys">— ' + esc(d.name) + ' · ' + fmtBytes(d.size) + ' · 末尾 2MB —</div>';
+    box.innerHTML = '<div class="ln sys">— ' + esc(d.name) + ' · ' + fmtBytes(d.size) + ' · ' + gameT('g_tr_tail2mb') + ' —</div>';
     d.text.split('\n').slice(-400).forEach(function(line){
       var el = document.createElement('div');
       el.className = 'ln' + (/错误|Error|失败/i.test(line) ? ' err' : '');
@@ -684,7 +714,7 @@ function showLogFile(name){
       box.appendChild(el);
     });
     box.scrollTop = box.scrollHeight;
-  }).catch(function(e){ banner('err', '读取日志失败：' + e.message); });
+  }).catch(function(e){ banner('err', gameT('g_tr_log_fail', { e: e.message }), 'g_tr_log_fail', { e: e.message }); });
 }
 
 /* ---------------- 检查点 / 续训 ---------------- */
@@ -696,12 +726,12 @@ function refreshCkpts(){
     sel.innerHTML = S.ckpts.length
       ? S.ckpts.map(function(c){
           return '<option value="' + esc(c.name) + '"' + (c.name === S.ckSel ? ' selected' : '') + '>' +
-            esc(c.name) + ' · ' + c.count + ' 份' +
+            esc(c.name) + ' · ' + gameT('g_tr_copies', { n: c.count }) +
             (c.status && c.status !== 'running' ? ' · ' + esc(c.status) : '') + '</option>';
         }).join()
-      : '<option value="">（无）</option>';
+      : '<option value="">' + gameT('g_tr_none') + '</option>';
     renderCkpt();
-  }).catch(function(e){ var m = $('#ckMeta'); if(m) m.textContent = '读取失败：' + e.message; });
+  }).catch(function(e){ var m = $('#ckMeta'); if(m) m.textContent = gameT('g_tr_read_fail', { e: e.message }); });
 }
 function renderCkpt(){
   var r = (S.ckpts || []).filter(function(c){ return c.name === S.ckSel; })[0];
@@ -721,10 +751,11 @@ function renderCkpt(){
   }
   collect(r.base); collect(r.final && r.final.wr);
   (r.checks || []).forEach(function(c){ collect(c.wr); });
-  var names = { 'default':'默认', 'hell':'地狱', 'elite':'精英', 'extreme':'极端', 'extreme-max':'满档' };
-  head.innerHTML = '<th>ep</th><th>best</th><th>最佳轮</th>' +
+  var names = { 'default': gameT('g_lvl_default'), 'hell': gameT('g_lvl_hell'), 'elite': gameT('g_lvl_elite'),
+                 'extreme': gameT('g_lvl_extreme'), 'extreme-max': gameT('g_lvl_max') };
+  head.innerHTML = '<th>ep</th><th>best</th><th>' + gameT('g_tr_best_ep') + '</th>' +
     tags.map(function(t){ return '<th>' + esc(names[t] || t) + '</th>'; }).join('') +
-    '<th>训练胜率</th><th>ε</th><th>用时</th><th>文件</th><th></th>';
+    '<th>' + gameT('g_tr_train_wr') + '</th><th>ε</th><th>' + gameT('g_tr_used') + '</th><th>' + gameT('g_tr_file') + '</th><th></th>';
   var rows = '';
   (r.checks || []).slice().reverse().forEach(function(c){
     var best = (c.best != null && c.best !== undefined) ? (+c.best * 100).toFixed(1) : '–';
@@ -738,8 +769,8 @@ function renderCkpt(){
     var tw = (c.trainWins != null && c.trainTotal > 0)
       ? (c.trainWins / c.trainTotal * 100).toFixed(0) + '%' : '–';
     var isBest = !!(r.best && r.best.ep === c.ep);
-    var pill = !c.alive ? '<span class="pill dead">已淘汰</span>'
-      : (isBest ? '<span class="pill best">最佳</span>' : '<span class="pill live">在盘</span>');
+    var pill = !c.alive ? '<span class="pill dead">' + gameT('g_tr_eliminated') + '</span>'
+      : (isBest ? '<span class="pill best">' + gameT('g_tr_best') + '</span>' : '<span class="pill live">' + gameT('g_tr_alive') + '</span>');
     rows += '<tr>' +
       '<td><b>' + (c.ep || 0) + '</b></td>' +
       '<td><b>' + esc(best) + '</b></td>' +
@@ -749,15 +780,14 @@ function renderCkpt(){
       '<td>' + fmtDur((c.sec || 0) * 1000) + '</td>' +
       '<td>' + pill + (c.size ? ' <span class="file">' + esc(fmtBytes(c.size)) + '</span>' : '') + '</td>' +
       '<td><button class="btn sm" data-ep="' + esc(c.ep) + '" data-file="' + esc(c.file || '') +
-        '" data-best="' + (isBest ? '1' : '0') + '">从此续训</button></td></tr>';
+        '" data-best="' + (isBest ? '1' : '0') + '">' + gameT('g_tr_resume_btn') + '</button></td></tr>';
   });
   tb.innerHTML = rows;
   var alive = (r.checks || []).filter(function(c){ return c.alive; }).length;
   if(meta){
-    meta.textContent = '状态 ' + (r.status || '—') +
-      ' · 累计 ' + fmtH(r.elapsedSec) +
-      ' · ' + alive + '/' + (r.checks || []).length + ' 份在盘' +
-      (r.cfg && r.cfg.ckpt ? ' · 每 ' + r.cfg.ckpt + ' 回合' : '');
+    meta.textContent = gameT('g_tr_ck_meta', { st: (r.status || '—'), tot: fmtH(r.elapsedSec),
+        a: alive + '/' + (r.checks || []).length }) +
+      (r.cfg && r.cfg.ckpt ? gameT('g_tr_ck_every', { n: r.cfg.ckpt }) : '');
   }
 }
 /* ---------------- 附着到进行中的训练 ---------------- */
@@ -791,24 +821,48 @@ function attachLive(){
     S.runId = live.id; S.runModel = m; S.runTicks = [];
     S.mx = null; S.hbN = 0; renderMatrix(); updateMeter();
     $('#logbox').innerHTML = '';
-    logLine('▶ 已附着到进行中的训练 ' + live.id + ' · ' + (live.modelName || m.name) +
-      (live.dryRun ? ' · 实验模式' : ' · 将写入产物'), 'sys');
+    logLine(gameT('g_tr_attached', { id: live.id, name: (live.modelName || m.name) }) +
+      gameT(live.dryRun ? 'g_tr_dryrun_suffix' : 'g_tr_willwrite_suffix'), 'sys');
     logLine('$ ' + (live.cmd || ''), 'sys');
     $('#btnRun').disabled = true; $('#btnStop').disabled = false;
-    setStatus('训练中', 'run');
+    setStatus(gameT('g_tr_running'), 'run');
     openSSE(live.id);
   }).catch(function(){});
 }
+/* 语言切换钩子(i18n.js 的 setGameLanguage 调用)：重画本文件负责的动态文案。
+ * 注意:实时日志(logbox)是追加式历史,保留原始语言,不回溯重绘。 */
+window.gameReapplyI18n = function(){
+  try{
+    if(S.models.length){
+      renderCards();
+      var m = cur();
+      if(m){
+        $('#cfgTitle').textContent = m.name + gameT('g_tr_cfg_suffix');
+        buildPresets(m); buildFields(m); buildFlags(m); updateCmd();
+      }
+    }
+    if(S.chart && S.plotPts) plotModel(S.chart.model, S.plotPts, resolveTitle(S.plotTitle), S.plotTag);
+    else { renderMatrix(); updateMeter(); }
+    if(S.ckpts.length) renderCkpt();
+    if(S.tab === 'runs') refreshRuns();
+    if(S.tab === 'curves') refreshCurves();
+    if(S.tab === 'logs') refreshLogs();
+    if(S.bannerText && S.bannerKey) banner(S.bannerKind, gameT(S.bannerKey, S.bannerData), S.bannerKey, S.bannerData);
+    health();
+    if(S.statusText !== undefined) setStatus(S.statusText, S.statusCls);
+  }catch(e){ if(window.console) console.warn(e); }
+};
+
 /* 从检查点填回左侧配置：resume 指该批次 index.json（--resume-best 取最佳一份） */
 function resumeFromCkpt(ep, file, isBest){
   var r = (S.ckpts || []).filter(function(c){ return c.name === S.ckSel; })[0];
-  if(!r){ banner('warn', '没有可选的检查点批次'); return; }
+  if(!r){ banner('warn', gameT('g_tr_no_ckpt'), 'g_tr_no_ckpt'); return; }
   var m = S.models.filter(function(x){ return x.script && x.script === r.script; })[0];
   if(!m){
     var base = String(r.script || '').split('/').pop();
     m = S.models.filter(function(x){ return x.script && x.script.split('/').pop() === base; })[0];
   }
-  if(!m){ banner('warn', '该批次脚本 ' + (r.script || '—') + ' 不在模型清单里'); return; }
+  if(!m){ banner('warn', gameT('g_tr_script_missing', { s: (r.script || '—') }), 'g_tr_script_missing', { s: (r.script || '—') }); return; }
   selectModel(m.id);
   /* 顺带把原批次 cfgSnapshot 里的参数搬回来（cfg 是驼峰、参数是 CLI 名，做个别名映射）。
      关键意义在 --hours：默认 0 = 不限时，直接续训会变成永不结束的长跑；
@@ -833,16 +887,14 @@ function resumeFromCkpt(ep, file, isBest){
   if(S.flags['no-ckpt'] !== undefined) S.flags['no-ckpt'] = !!cfg.noCkpt;
   if(isBest) S.flags['resume-best'] = true;
   buildFields(m); buildFlags(m); updateCmd();
-  logLine('已填续训起点：' + r.idxPath + '（ep ' + ep + ' · ' + (file || '') + '）' +
-    (isBest ? ' · --resume-best 最佳份' : '') +
-    ' —— 确认参数后点「启动训练」', 'sys');
+  logLine(gameT('g_tr_resume_filled', { p: r.idxPath, e: ep, f: (file || ''),
+    b: (isBest ? gameT('g_tr_resume_best') : '') }), 'sys');
   if(got.length){
     var hrs = (typeof S.vals['hours'] === 'number') ? S.vals['hours'] : 0;
-    logLine('  ↳ 继承原批次参数 ' + got.length + ' 项（' + got.slice(0, 8).join(', ') +
-      (got.length > 8 ? ', …' : '') + '）' +
-      ' · 预算 ' + hrs + 'h' + (hrs > 0 ? '（脚本会自动扣掉已训的 ' +
-        ((r.elapsedSec || 0) / 3600).toFixed(2) + 'h）' : ' —— 0 = 不限时，注意会一直训下去') +
-      ' · 写入产物：' + (S.flags['no-save'] ? '否（实验模式）' : '是'), 'sys');
+    logLine(gameT('g_tr_inherit', { n: got.length, l: got.slice(0, 8).join(', ') + (got.length > 8 ? ', …' : '') }) +
+      gameT('g_tr_budget', { h: hrs }) +
+      (hrs > 0 ? gameT('g_tr_budget_note', { t: ((r.elapsedSec || 0) / 3600).toFixed(2) }) : gameT('g_tr_budget_zero')) +
+      gameT('g_tr_writes_label') + (S.flags['no-save'] ? gameT('g_tr_no_dry') : gameT('g_tr_yes')), 'sys');
   }
 }
 
@@ -860,11 +912,11 @@ function health(){
   get('/api/health').then(function(d){
     S.health = d;
     $('#srvDot').className = 'dot on';
-    $('#srvHint').textContent = '服务正常 · ' + d.runs + ' 个 run';
-    $('#nodeHint').textContent = 'Node ' + (S.nodeVer || '') + ' · CPU ' + (S.cpu || '') + ' 核';
+    $('#srvHint').textContent = gameT('g_tr_srv_ok', { n: d.runs });
+    $('#nodeHint').textContent = gameT('g_tr_node', { v: (S.nodeVer || ''), c: (S.cpu || '') });
   }).catch(function(){
     $('#srvDot').className = 'dot off';
-    $('#srvHint').textContent = '服务离线';
+    $('#srvHint').textContent = gameT('g_tr_srv_off');
   });
 }
 
@@ -886,31 +938,31 @@ function bind(){
   $('#chkAuto').onchange = function(e){ S.auto = e.target.checked; if(S.auto) $('#logbox').scrollTop = $('#logbox').scrollHeight; };
   $('#chkNorm').onchange = function(e){
     S.norm = e.target.checked;
-    if(S.runId && S.runTicks.length) plotModel(S.runModel, S.runTicks, S.runModel.name + ' · 训练中', '');
-    else if(S.curvePoints) plotModel(S.chart.model, S.curvePoints, $('#chartTitle').textContent, S.chartTag);
+    if(S.runId && S.runTicks.length) plotModel(S.runModel, S.runTicks, function(){ return S.runModel.name + gameT('g_tr_training'); }, '');
+    else if(S.curvePoints) plotModel(S.chart.model, S.curvePoints, S.plotTitle, S.plotTag);
   };
 }
 function boot(){
   banner(null, '');
   get('/api/models').then(function(d){
     S.models = d.models || []; S.nodeVer = d.node; S.cpu = d.cpus;
-    $('#nodeHint').textContent = 'Node ' + d.node + ' · CPU ' + d.cpus + ' 核 · ' + d.models.length + ' 个模型';
+    $('#nodeHint').textContent = gameT('g_tr_node_models', { v: d.node, c: d.cpus, m: d.models.length });
     return get('/api/meta');
   }).then(function(d){
     S.meta = d.meta || {};
     if(!S.chart) mkChart();
     renderCards();
     if(!S.sel && S.models.length) selectModel(S.models[0].id);
-    logLine('控制台就绪 · ' + S.models.length + ' 个模型可训练', 'sys');
+    logLine(gameT('g_tr_ready', { n: S.models.length }), 'sys');
     health();
     attachLive();
   }).catch(function(e){
-    banner('err', '无法连接服务：' + e.message + ' — 请先运行 node server.js');
+    banner('err', gameT('g_tr_cant_connect', { e: e.message }), 'g_tr_cant_connect', { e: e.message });
   });
 }
 
 if(typeof Chart === 'undefined'){
-  banner('err', 'Chart.js 未加载（CDN 不可达，可能是离线环境）——图表功能不可用，其余 API 仍可通过命令行训练。');
+  banner('err', gameT('g_tr_no_chart'), 'g_tr_no_chart');
 } else {
   bind(); boot();
   setInterval(health, 10000);

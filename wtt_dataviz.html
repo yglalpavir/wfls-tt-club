@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>(function(){try{var t=localStorage.getItem("wfls-tt-theme");var d=t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark-mode");}catch(e){}})()</script>
-    <meta name="description" content="WTT 国际乒联积分排名数据可视化。积分趋势图、排名变化河流图、球员对比分析。">
-    <meta name="keywords" content="WTT,世界乒联,乒乓球,数据可视化,积分趋势,排名变化">
+    <meta name="description" data-i18n-content="wtt_dataviz_meta_desc" content="WTT 国际乒联积分排名数据可视化。积分趋势图、排名变化河流图、球员对比分析。">
+    <meta name="keywords" content="WTT,世界乒联,乒乓球,数据可视化,积分趋势,排名变化" data-i18n-content="wtt_dataviz_kw">
     <meta name="robots" content="noindex, nofollow">
-    <title>WTT 数据可视化 🥚 | WFLS Table Tennis Club</title>
+    <title data-i18n="wtt_dataviz_page_title">WTT 数据可视化 🥚 | WFLS Table Tennis Club</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -26,7 +26,7 @@
         <div class="page-hero-overlay"></div>
         <div class="page-hero-content">
             <span class="section-tag wtt-easter-egg-tag">🥚 WTT Data Visualization</span>
-            <h1>WTT <span id="wttCatName">数据可视化</span></h1>
+            <h1>WTT <span id="wttCatName" data-i18n="data_viz_title">数据可视化</span></h1>
             <p data-i18n="data_viz_desc">积分趋势 · 排名变化 · 球员对比</p>
         </div>
     </section>
@@ -62,7 +62,7 @@
                 </div>
             </div>
             <div class="viz-race-controls">
-                <button class="btn btn-sm btn-primary" id="wttRacePlayBtn" aria-label="播放/暂停">
+                <button class="btn btn-sm btn-primary" id="wttRacePlayBtn" data-i18n-aria="wtt_aria_play_pause" aria-label="播放/暂停">
                     <i class="fa-solid fa-play"></i> <span data-i18n="wtt_race_play">播放</span>
                 </button>
                 <input type="range" id="wttRaceSlider" class="viz-race-slider" min="0" max="0" value="0" step="1">
@@ -81,8 +81,8 @@
                 <span class="section-tag">Line Chart</span>
                 <h2 class="section-title" data-i18n="data_viz_points_trend">积分趋势</h2>
                 <div class="viz-topn-selector">
-                    <span data-i18n="wtt_recent">最近</span>
-                    <input type="number" id="wttPointsTrendDataCount" value="20" min="2" max="200" title="显示最近N个数据点">
+                    <span data-i18n="wtt_recent_label">最近</span>
+                    <input type="number" id="wttPointsTrendDataCount" value="20" min="2" max="200" data-i18n-title="data_viz_topn_title" title="显示最近N个数据点">
                     <span data-i18n="wtt_data_points">个数据点</span>
                 </div>
             </div>
@@ -123,12 +123,12 @@
                 <div class="viz-compare-selectors glass-card">
                     <div class="compare-selector-group">
                         <label data-i18n="wtt_player_a">球员 A</label>
-                        <select id="wttPlayerASelect"><option value="">-- 选择球员 --</option></select>
+                        <select id="wttPlayerASelect"><option value="" data-i18n="wtt_select_player">-- 选择球员 --</option></select>
                     </div>
                     <div class="compare-vs">VS</div>
                     <div class="compare-selector-group">
                         <label data-i18n="wtt_player_b">球员 B</label>
-                        <select id="wttPlayerBSelect"><option value="">-- 选择球员 --</option></select>
+                        <select id="wttPlayerBSelect"><option value="" data-i18n="wtt_select_player">-- 选择球员 --</option></select>
                     </div>
                     <button class="btn btn-sm btn-primary" id="wttApplyCompare" data-i18n="wtt_compare_btn">对比</button>
                 </div>
@@ -145,7 +145,7 @@
                 <h2 class="section-title" data-i18n="wtt_record_title">战绩统计</h2>
                 <div class="viz-topn-selector">
                     <span data-i18n="wtt_top_n">显示前</span>
-                    <input type="number" id="wttRecordTopN" value="10" min="1" max="50" title="填写1-20的任意正整数">
+                    <input type="number" id="wttRecordTopN" value="10" min="1" max="50" data-i18n-title="wtt_topn_title_1_20" title="填写1-20的任意正整数">
                     <span data-i18n="wtt_players">名球员</span>
                 </div>
             </div>
@@ -158,7 +158,7 @@
                 <h2 class="section-title" data-i18n="wtt_efficiency_title">场次×积分效率</h2>
                 <div class="viz-topn-selector">
                     <span data-i18n="wtt_top_n">显示前</span>
-                    <input type="number" id="wttEfficiencyTopN" value="15" min="1" max="100" title="填写1-100的任意正整数">
+                    <input type="number" id="wttEfficiencyTopN" value="15" min="1" max="100" data-i18n-title="wtt_topn_title_1_100" title="填写1-100的任意正整数">
                     <span data-i18n="wtt_players">名球员</span>
                 </div>
             </div>
@@ -171,7 +171,7 @@
                 <h2 class="section-title" data-i18n="wtt_heatmap_title">交手热力矩阵</h2>
                 <div class="viz-topn-selector">
                     <span data-i18n="wtt_top_n">显示前</span>
-                    <input type="number" id="wttHeatmapTopN" value="8" min="2" max="20" title="填写2-20的任意正整数">
+                    <input type="number" id="wttHeatmapTopN" value="8" min="2" max="20" data-i18n-title="wtt_topn_title_2_20" title="填写2-20的任意正整数">
                     <span data-i18n="wtt_players">名球员</span>
                 </div>
                 <div class="viz-topn-selector" style="margin-left:16px;">
@@ -198,7 +198,7 @@
                 </div>
                 <div class="viz-topn-selector" style="margin-left:16px;">
                     <span data-i18n="wtt_recent_label">最近</span>
-                    <input type="number" id="wttFreqDataCount" value="24" min="2" max="200" title="显示最近N个数据点">
+                    <input type="number" id="wttFreqDataCount" value="24" min="2" max="200" data-i18n-title="data_viz_topn_title" title="显示最近N个数据点">
                     <span data-i18n="wtt_data_points">个数据点</span>
                 </div>
             </div>
@@ -222,13 +222,13 @@
                 <span class="section-tag">Association Trend</span>
                 <h2 class="section-title" data-i18n="wtt_assoc_trend_title">协会积分趋势</h2>
                 <div class="viz-topn-selector">
-                    <span data-i18n="wtt_recent">最近</span>
-                    <input type="number" id="wttAssocTrendCount" value="20" min="2" max="200" title="显示最近N个数据点">
+                    <span data-i18n="wtt_recent_label">最近</span>
+                    <input type="number" id="wttAssocTrendCount" value="20" min="2" max="200" data-i18n-title="data_viz_topn_title" title="显示最近N个数据点">
                     <span data-i18n="wtt_data_points">个数据点</span>
                     <span data-i18n="wtt_date_range" style="margin-left:16px;">日期范围</span>
-                    <input type="date" id="wttAssocTrendStart" title="起始日期，留空不限">
+                    <input type="date" id="wttAssocTrendStart" data-i18n-title="wtt_date_start_hint" title="起始日期，留空不限">
                     <span data-i18n="wtt_date_to">至</span>
-                    <input type="date" id="wttAssocTrendEnd" title="截止日期，留空不限">
+                    <input type="date" id="wttAssocTrendEnd" data-i18n-title="wtt_date_end_hint" title="截止日期，留空不限">
                 </div>
             </div>
             <div class="viz-grid-2col">
@@ -247,7 +247,7 @@
                 <h2 class="section-title" data-i18n="wtt_assoc_top5_title">协会前五球员</h2>
                 <div class="viz-topn-selector">
                     <span data-i18n="wtt_top_n">显示前</span>
-                    <input type="number" id="wttAssocTop5TopN" value="8" min="1" max="66" title="填写1-66的任意正整数">
+                    <input type="number" id="wttAssocTop5TopN" value="8" min="1" max="66" data-i18n-title="wtt_topn_title_1_66" title="填写1-66的任意正整数">
                     <span data-i18n="wtt_assocs">个协会</span>
                 </div>
             </div>

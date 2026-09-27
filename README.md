@@ -695,7 +695,43 @@ python tools/sync_content.py --check    # 仅校验（含预计新增快照数�
 
 ### 中英文翻译
 
-编辑 `js/common.js` 中 `i18n` 对象的 `zh` 和 `en` 部分，可自由扩展翻译内容。
+**目标：切到英文后，全站任何可见文本都没有中文**（含 admin / draws-editor / 404 / umpire-training / tt_game）。
+
+翻译分两类，不要混：
+
+| 类型 | 放哪 | 例子 |
+| --- | --- | --- |
+| **界面文案**（按钮、表头、提示、错误） | `js/common.js` → `i18n.zh` / `i18n.en`，HTML 元素挂 `data-i18n*` | `rank_title: "积分数据表"` |
+| **正文内容**（新闻、赛事、问答、社团简介、成员简介） | 数据文件里的 `_en` 同级字段 | `data/news/n1/n1.json` 的 `title_en` / `content_en` |
+
+`tt_game/` 是独立的子站，用自己的字典 `tt_game/js/i18n.js`（`window.GAME_I18N` + `gameT(key)`），但与主站**共用** `wfls-lang.v1` 这个 localStorage 键。
+
+### data-i18n 属性
+
+| 属性 | 作用对象 |
+| --- | --- |
+| `data-i18n` | `innerHTML`（**整棵子树**一起替换，子元素不用再挂属性） |
+| `data-i18n-title` / `-placeholder` / `-aria` / `-alt` | `title` / `placeholder` / `aria-label` / `alt` |
+| `data-i18n-content` | `content`（`<meta>` / `<title>`，含 SEO 与 og） |
+
+`<title data-i18n="rank_page_title">…</title>` 这样写就能同步 `document.title`。
+
+### 由 JS 渲染的页面必须注册语言刷新钩子
+
+`setLanguage()` 末尾是一串 `if (typeof xxxReapplyI18n === 'function')` 调用。**任何用 JS 拼中文的页面/视图，都必须实现自己的钩子**（把上次的渲染参数存到模块级变量里重新渲染），否则切换语言后要刷新页面才生效。已有钩子见 `AGENTS.md` 的 i18n 一节。
+
+### 不要翻译数据键
+
+`类型` 的取值（`普通`/`排位赛`/…）、`胜者`/`负者` 字段名、`seasons.json` 的 `label`、`tags`/`honors` 数组值、颜色映射的键 —— 这些是积分引擎、校验脚本和提交管线的联键，**一律保持中文**，只在显示层用 `eventTypeLabel()` / `wttEventTypeLabel()` / `seasonLabel()` / `playerTagLabel()` / `playerHonorLabel()` 查字典翻译；查不到时回退原值，不会显示成 key。
+
+### 排查英文模式残留
+
+```bash
+python tools/i18n_audit.py           # 扫描 HTML / JS / 数据里的中文残留（warn 模式）
+python tools/i18n_audit.py --strict  # 有残留就退出码 1
+```
+
+静态扫描看不穿 `currentLang === 'en' ? A : B` 这类语言三元，会**多报**。权威检查是用浏览器切到英文逐页看，页面清单见 `docs/reports/plan-2026-09-28-i18n-en.md`。
 
 ---
 

@@ -10678,5 +10678,70 @@
     "assoc": "HKG",
     "country": "Hong Kong, China",
     "source": "manual-ag2026-wt"
+  },
+  "Almaira NEBUCHADNEZZAR": {
+    "assoc": "INA",
+    "country": "Indonesia",
+    "source": "manual-ag2026-ws"
+  },
+  "Bimandee SWARNA": {
+    "assoc": "SRI",
+    "country": "Sri Lanka",
+    "source": "manual-ag2026-ws"
+  },
+  "Bissan CHIRI": {
+    "assoc": "LBN",
+    "country": "Lebanon",
+    "source": "manual-ag2026-ws"
+  },
+  "Burenjargal SANJAA": {
+    "assoc": "MGL",
+    "country": "Mongolia",
+    "source": "manual-ag2026-ws"
+  },
+  "Choutiphone SISOMBOUN": {
+    "assoc": "LAO",
+    "country": "Laos",
+    "source": "manual-ag2026-ws"
+  },
+  "Citra RASMI": {
+    "assoc": "INA",
+    "country": "Indonesia",
+    "source": "manual-ag2026-ws"
+  },
+  "Kalsoom KHAN": {
+    "assoc": "PAK",
+    "country": "Pakistan",
+    "source": "manual-ag2026-ws"
+  },
+  "Nowrin MAHI": {
+    "assoc": "BAN",
+    "country": "Bangladesh",
+    "source": "manual-ag2026-ws"
+  },
+  "Nurkyz AIAZBEKOVA": {
+    "assoc": "KGZ",
+    "country": "Kyrgyzstan",
+    "source": "manual-ag2026-ws"
+  },
+  "Rashel ABBOUD": {
+    "assoc": "SYR",
+    "country": "Syria",
+    "source": "manual-ag2026-ws"
+  },
+  "Setayesh ILOUKHANI": {
+    "assoc": "IRI",
+    "country": "Iran",
+    "source": "manual-ag2026-ws"
+  },
+  "Sonam SOMA": {
+    "assoc": "BAN",
+    "country": "Bangladesh",
+    "source": "manual-ag2026-ws"
+  },
+  "Talia AZAR": {
+    "assoc": "LBN",
+    "country": "Lebanon",
+    "source": "manual-ag2026-ws"
   }
 }

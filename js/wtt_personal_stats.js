@@ -35,8 +35,8 @@ async function wttLoadRankingDataForPersonal() {
 
         // flat1300 模式不需要 initialScoresData
         const isFlat = wttSettings && wttSettings.scoreMode === 'flat1300';
-        if (!isFlat && !wttInitialScoresData) throw new Error('WTT initial-scores 加载失败');
-        if (!wttEventCoefficients || !wttSeasonsData) throw new Error('WTT数据加载失败');
+        if (!isFlat && !wttInitialScoresData) throw new Error(i18n[currentLang].wtt_err_initial);
+        if (!wttEventCoefficients || !wttSeasonsData) throw new Error(i18n[currentLang].wtt_err_data);
 
         // 异步分块计算（带进度回调）
         setP(wttLoadPhasePct('calc', 0, 1), '', i18n[currentLang].wtt_calculating);

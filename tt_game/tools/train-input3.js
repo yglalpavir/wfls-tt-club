@@ -586,7 +586,52 @@ if(BUDGET_SEC > 0 && elapsed() >= BUDGET_SEC){
 /* 心跳计时：一轮 --step 可能长达 20 多分钟，期间若不打点，面板在长跑里只剩
  * 进度条自己慢慢爬，日志和胜率矩阵全静默——看不出"正在训"。每 10 秒报一次。 */
 let tHb = Date.now();
-for(let g = R.ep0; g < opt.games && !budgetExhausted; g++){
+/* ---- 优雅暂停（哨兵文件 + 信号）----
+ * 长跑必须能"停在任意回合而不丢进度"：请求停止后在下一个回合边界落检查点再退，
+ * 跳过最终评估与采纳（那是"跑完"的事，暂停不该动生产权重）。
+ * 主通道是哨兵文件，不是信号：Windows 上 server 的 child.kill('SIGTERM') 走的是
+ * TerminateProcess，信号处理器根本收不到，面板点「停止」等于硬杀、丢光当前回合。
+ * 所以 server.js 改写成先落一个 STOP 文件，这里每局检查一下，发现就停。
+ * 信号（SIGTERM/SIGINT/SIGBREAK）保留：真实终端里 Ctrl+C 也能优雅停。
+ * 哨兵按 run-name 隔离；启动时清掉上次残留，否则新批次会被上一轮的停止请求秒杀。 */
+const STOP_DIR = path.join(ROOT, 'data', '.stop');
+const STOP_NAME = (opt.runName || path.basename(opt.save, '.json') || 'run') + '.stop';
+const STOP_FLAG = path.join(STOP_DIR, STOP_NAME);
+/* 启动阶段要区分"残留"和"正在进行中的停止请求"：本进程从启动到进入训练循环
+ * 要加载权重、标定基线，耗时几十秒（实测约 35s）。这段时间里面板点「停止」，
+ * server 写下的哨兵是真实的请求，不是残留——按文件存在与否一刀切会把它清掉，
+ * 训练就永远停不下来，最后只能等 server 的 SIGKILL 兜底。
+ * 判据用时间：标记的 mtime 早于本进程启动时间 = 上一轮遗留，可以删；
+ * 晚于启动时间 = 新请求，留着让训练循环响应。 */
+const PROCESS_START_MS = Date.now() - process.uptime() * 1000;
+try{
+  fs.mkdirSync(STOP_DIR, { recursive: true });
+  if(fs.existsSync(STOP_FLAG)){
+    if(fs.statSync(STOP_FLAG).mtimeMs < PROCESS_START_MS){
+      fs.unlinkSync(STOP_FLAG);
+      console.log('  清掉本进程启动前的残留停止标记：' + rel(STOP_FLAG));
+    } else {
+      console.log('  ⚠ 启动期间收到停止标记，进入训练循环后立刻响应');
+    }
+  }
+}catch(e){}
+let stopRequested = false, stopSig = null, stopEp = 0;
+function requestStop(reason){
+  if(stopRequested) return;
+  stopRequested = true; stopSig = reason;
+  console.log('\n⏸ 停止请求（' + reason + '）：完成当前回合后落检查点退出，不跑最终评估');
+  T.tick({ t:'stop', reason:reason, ep:lastEp, elapsedSec:+elapsed().toFixed(1) });
+}
+for(const sig of ['SIGTERM', 'SIGINT', 'SIGBREAK']){
+  try{
+    process.on(sig, () => {
+      if(stopRequested){ console.log('\n⏸ 再次收到停止信号：直接退出（检查点已落盘）'); process.exit(0); }
+      requestStop(sig);
+    });
+  }catch(e){ /* 某些信号在当前平台不支持，忽略 */ }
+}
+for(let g = R.ep0; g < opt.games && !budgetExhausted && !stopRequested; g++){ stopEp = g + 1;
+  if(!stopRequested && fs.existsSync(STOP_FLAG)) requestStop('停止标记');
   const phase = evalAtPhase(g);
   if(phase.tag !== curPhaseTag){
     curPhaseTag = phase.tag;
@@ -707,6 +752,31 @@ for(let g = R.ep0; g < opt.games && !budgetExhausted; g++){
     T.tick({ t:'budget', ep:g + 1, hours:opt.hours, elapsedSec:+elapsed().toFixed(1), sec:+elapsed().toFixed(1) });
     break;
   }
+}
+
+/* ---- 暂停收尾：落检查点即退，不跑最终评估、不碰生产权重 ---- */
+if(stopRequested){
+  try{ if(fs.existsSync(STOP_FLAG)) fs.unlinkSync(STOP_FLAG); }catch(e){}
+  if(!opt.noCkpt && stopEp > lastCkpt){
+    writeCheckpoint(stopEp); lastCkpt = stopEp;
+  }
+  fs.writeFileSync(opt.curve, JSON.stringify(curve, null, 2), 'utf8');
+  console.log('\n⏸ 已暂停 —— 进度已保存，生产权重未动');
+  console.log('  进度   ：ep ' + stopEp + '（累计 ' + fmtH(elapsed()) + '，本次训了 ' + (stopEp - R.ep0) + ' 回合）');
+  console.log('  最佳   ：best=' + (bestScore * 100).toFixed(1) + '@' + bestEp +
+              ' · vs' + opt.end + ' ' + (bestMax * 100).toFixed(1) +
+              '% · vs默认 ' + (bestDef * 100).toFixed(1) + '%');
+  console.log('  检查点 ：' + rel(IDX_PATH) + '（' + CIdx.checks.length + ' 份，环形保留 ' + opt.keep + ' 份）');
+  console.log('  继续跑 ：node tools/train-input3.js --resume ' + rel(IDX_PATH) +
+              ' --hours ' + opt.hours + (opt.noSave ? ' --no-save' : ''));
+  /* wr* 口径是百分比（wrMap 才是小数），bestWr 里是小数，这里乘 100 */
+  const paFlat = {};
+  for(const k of Object.keys(bestWr))
+    paFlat['wr' + k.split('-').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join('')] = +(bestWr[k] * 100).toFixed(2);
+  T.tick(Object.assign({ t:'paused', reason:stopSig, ep:stopEp, ckpt:rel(IDX_PATH),
+           ckpts:CIdx.checks.length, best:+bestScore.toFixed(4), bestEp:bestEp,
+           trained:stopEp - R.ep0, elapsedSec:+elapsed().toFixed(1) }, paFlat));
+  process.exit(0);
 }
 
 /* ================= 最终评估：bestNet vs 验证阶梯 ================= */

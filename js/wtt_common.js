@@ -952,10 +952,10 @@ async function wttLoadAllData() {
         // flat1300 模式不需要 initialScoresData
         const isFlat = wttSettings && wttSettings.scoreMode === 'flat1300';
         if (!isFlat && !wttInitialScoresData) {
-            throw new Error('initial-scores.json 加载失败');
+            throw new Error(i18n[currentLang].wtt_err_initial_file);
         }
         if (!wttEventCoefficients || !wttSeasonsData) {
-            throw new Error('核心数据加载失败');
+            throw new Error(i18n[currentLang].wtt_err_core);
         }
         return true;
     } catch (e) {
@@ -1060,11 +1060,11 @@ async function wttCalculateAllRankingsAsync(onProgress) {
             1
         );
         // 实时排名计算前先 yield，让计时器有机会更新
-        if (onProgress) onProgress(0, 1, '实时积分', 'realtime');
+        if (onProgress) onProgress(0, 1, i18n[currentLang].rank_realtime_header, 'realtime');
         await new Promise(r => setTimeout(r, 0));
         // 异步分块实时排名（带进度回调）
         const rt = await calculateRealtimeRankingAsync((current, total) => {
-            if (onProgress) onProgress(current, total, '实时积分', 'realtime');
+            if (onProgress) onProgress(current, total, i18n[currentLang].rank_realtime_header, 'realtime');
         });
         if (rt) timeline.push(rt);
         return timeline;
@@ -1106,14 +1106,14 @@ function _wttLpLang() {
  */
 function wttLoadingBlockHtml(message, opts) {
     const lang = _wttLpLang();
-    const txt = message || lang.wtt_loading || '加载数据中...';
+    const txt = message || lang.wtt_loading || lang.data_viz_loading || 'Loading data...';
     const elapsed0 = lang.wtt_elapsed ? lang.wtt_elapsed.replace('{s}', 0) : '0s';
     const spin = (size, bw) => `<div class="wtt-spinner" style="width:${size}px;height:${size}px;border:${bw}px solid var(--border-color);border-top-color:var(--accent-blue);border-radius:50%;animation:wttSpin 0.8s linear infinite;flex-shrink:0;"></div>`;
     if (opts && opts.compact) {
         return `<div style="display:flex;align-items:center;gap:12px;padding:6px 2px;color:var(--text-secondary);">${spin(18, 2)}
             <div style="flex:1;min-width:0;">
                 <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;">
-                    <span class="wtt-lp-main" style="font-size:0.85rem;">${txt}</span>
+                    <span class="wtt-lp-main" style="font-size:0.85rem;" data-lp-msg="${escapeHtml(String(message || ''))}">${txt}</span>
                     <span class="wtt-lp-pct" style="font-size:0.75rem;color:var(--text-muted);">0%</span>
                 </div>
                 <div class="wtt-lp-track" style="margin-top:8px;"><div class="wtt-lp-fill"></div></div>
@@ -1123,7 +1123,7 @@ function wttLoadingBlockHtml(message, opts) {
     }
     return `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 20px;color:var(--text-secondary);">
         ${spin(40, 3)}
-        <p class="wtt-lp-main" style="font-size:0.95rem;margin:0;">${txt}</p>
+        <p class="wtt-lp-main" style="font-size:0.95rem;margin:0;" data-lp-msg="${escapeHtml(String(message || ''))}">${txt}</p>
         <div class="wtt-lp-pct" style="font-size:0.85rem;margin-top:10px;">0%</div>
         <div class="wtt-lp-track"><div class="wtt-lp-fill"></div></div>
         <div class="wtt-progress-meta"><span class="wtt-lp-detail"></span><span class="wtt-lp-elapsed">${elapsed0}</span></div>
@@ -1352,6 +1352,24 @@ function wttUpdatePageCategoryDisplay() {
 function wttReapplyI18n() {
     wttUpdatePageCategoryDisplay();
     wttPatchInternalLinks();
+    wttRefreshLoadingText();
+}
+
+/* 加载遮罩的文案在生成时就被烤死了：切语言时正在加载的页面会一直显示旧语言。
+   用生成时记下的原始 message 重新取一次文案；带插值的进度文案（已格式化）保持原样。 */
+function wttRefreshLoadingText() {
+    const lang = _wttLpLang();
+    const fallback = lang.wtt_loading || lang.data_viz_loading || 'Loading data...';
+    document.querySelectorAll('.wtt-lp-main[data-lp-msg]').forEach(el => {
+        const raw = el.getAttribute('data-lp-msg') || '';
+        // 空 message → 用默认文案（可随语言重算）；非空 → 已是插值后的成句，不动
+        el.textContent = raw.trim() ? el.textContent : fallback;
+    });
+    const elapsed = lang.wtt_elapsed ? lang.wtt_elapsed : 'Elapsed {s}s';
+    document.querySelectorAll('.wtt-lp-elapsed').forEach(el => {
+        const secs = (el.textContent || '').replace(/[^\d.]/g, '');
+        el.textContent = elapsed.replace('{s}', secs || '0');
+    });
 }
 
 // 页面加载后自动更新显示

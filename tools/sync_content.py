@@ -82,10 +82,12 @@ TAG_WHITELIST = {
 REQUIRED_FIELDS = ["id", "date", "title", "excerpt", "tag"]
 
 # 参与版本快照的内容字段（变动即归档新版本）
-SNAPSHOT_KEYS = ["date", "title", "excerpt", "content", "tag", "media"]
+# *_en 为英文模式的同级正文，译文修订同样要能归档出历史版本
+SNAPSHOT_KEYS = ["date", "title", "excerpt", "content", "tag", "media",
+                 "title_en", "excerpt_en", "content_en"]
 
 # 清单字段
-MANIFEST_KEYS = ["version", "updatedAt", "title", "visible", "file"]
+MANIFEST_KEYS = ["version", "updatedAt", "title", "title_en", "visible", "file"]
 
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
@@ -199,6 +201,45 @@ def validate_item(type_name, item, filename):
     return True
 
 
+EN_FIELDS = ("title_en", "excerpt_en", "content_en")
+
+
+def validate_en_fields(type_name, item, filename):
+    """校验英文同级字段（英文模式正文）：
+      - 有值时必须是字符串（渲染层直接当文本用）
+      - excerpt_en 是纯文本摘要，不允许出现 {{media:...}} 占位符
+      - content_en 的占位符必须能命中 media（漏改序号会让英文版丢图）
+      - 缺失只告警不报错：漏译时前端回退中文，不该阻断内容维护
+    """
+    missing = [f for f in EN_FIELDS if not (item.get(f) or "").strip()]
+    if missing:
+        log_warn("{}: 缺少英文字段 {}（英文模式将回退中文）".format(filename, ", ".join(missing)))
+
+    for field in EN_FIELDS:
+        val = item.get(field)
+        if val is not None and not isinstance(val, str):
+            log_warn("{}: {} 必须是字符串，实际为 {}".format(filename, field, type(val).__name__))
+
+    excerpt_en = item.get("excerpt_en")
+    if excerpt_en and MEDIA_REF_RE.search(str(excerpt_en)):
+        log_warn("{}: excerpt_en 中出现 {{media:...}} 占位符（摘要为纯文本）".format(filename))
+
+    content_en = item.get("content_en")
+    if not content_en:
+        return
+    media = item.get("media") or []
+    mids = {str(m.get("mid")).strip() for m in media if isinstance(m, dict) and m.get("mid")}
+    for ref in MEDIA_REF_RE.findall(content_en):
+        if ref in mids:
+            continue
+        if re.fullmatch(r"[0-9]+", ref):
+            if not (1 <= int(ref) <= len(media)):
+                log_warn("{}: content_en 的 {{{{{media:{}}}}} 超出 media 范围（共 {} 项）".format(
+                    filename, ref, len(media)))
+        else:
+            log_warn('{}: content_en 的 {{{{{media:{}}}}} 没有匹配到任何 media 项的 mid'.format(filename, ref))
+
+
 def validate_media_refs(type_name, item, content, filename):
     """校验正文中的 {{media:...}} 占位符（内嵌媒体）与 media 数组的对应关系：
       - 引用必须命中某项 mid 或落在 1..len(media) 序号范围内（mid 匹配优先，与前端一致）
@@ -259,24 +300,30 @@ def content_file_path(type_name, item_id, content_file):
     return os.path.join(entry_dir_path(type_name, item_id), cf)
 
 
-def read_effective_content(type_name, item, quiet=False):
-    """返回条目有效正文：contentFile 优先（读取 md 文件内联），否则取 content 字段。"""
-    content_file = item.get("contentFile")
+def read_effective_content(type_name, item, quiet=False, en=False):
+    """返回条目有效正文：contentFile 优先（读取 md 文件内联），否则取 content 字段。
+
+    en=True 时取英文同级字段（contentFile_en / content_en）；两者都没有则回退中文，
+    保证英文模式在漏译时仍能显示内容而不是空白。
+    """
+    field = "contentFile_en" if en else "contentFile"
+    inline = "content_en" if en else "content"
+    content_file = item.get(field)
     if content_file:
         item_id = str(item.get("id") or "")
         path = content_file_path(type_name, item_id, content_file)
         if not path or not os.path.exists(path):
             if not quiet:
-                log_warn("{}: contentFile 文件不存在 {}".format(item_id or "?", content_file))
-            return item.get("content")
+                log_warn("{}: {} 文件不存在 {}".format(item_id or "?", field, content_file))
+            return item.get(inline) or item.get("content")
         try:
             with open(path, "r", encoding="utf-8") as f:
                 return f.read()
         except Exception as e:
             if not quiet:
-                log_warn("{}: 无法读取 contentFile {}: {}".format(item_id or "?", content_file, e))
-            return item.get("content")
-    return item.get("content")
+                log_warn("{}: 无法读取 {} {}: {}".format(item_id or "?", field, content_file, e))
+            return item.get(inline) or item.get("content")
+    return item.get(inline) or item.get("content")
 
 
 def snapshot_of(item):
@@ -629,6 +676,7 @@ def sync_type(type_name):
 
         content = read_effective_content(type_name, item)
         validate_media_refs(type_name, item, content, folder_id)
+        validate_en_fields(type_name, item, folder_id)
         manifest, snapshots, hist_problems = load_history(type_name, item_id)
         before = len(manifest)
         new_manifest, new_snap, changed = maintain_history(type_name, item, manifest, snapshots, content)
@@ -680,12 +728,16 @@ def build_index_and_search(type_name, items):
     items = sorted(items, key=lambda i: (date_key(i), str(i.get("id") or "")), reverse=True)
     index_data = []
     for it in items:
-        meta = {k: it.get(k) for k in ("id", "date", "title", "excerpt", "tag", "media", "visible")}
+        meta = {k: it.get(k) for k in ("id", "date", "title", "excerpt", "tag", "media", "visible",
+                                       "title_en", "excerpt_en")}
         index_data.append(meta)
     search_data = []
     for it in items:
-        entry = {k: it.get(k) for k in ("id", "date", "title", "excerpt", "tag", "content")}
+        entry = {k: it.get(k) for k in ("id", "date", "title", "excerpt", "tag", "content",
+                                        "title_en", "excerpt_en", "content_en")}
         entry["content"] = read_effective_content(type_name, it, quiet=True)
+        if entry.get("content_en") is None:
+            entry["content_en"] = read_effective_content(type_name, it, quiet=True, en=True)
         search_data.append(entry)
     return index_data, search_data
 
@@ -724,6 +776,7 @@ def check_type(type_name):
         seen_ids.add(item_id)
         manifest, snapshots, _ = load_history(type_name, item_id)
         validate_media_refs(type_name, item, read_effective_content(type_name, item), folder_id)
+        validate_en_fields(type_name, item, folder_id)
         if item.get("visible") is False:
             hidden += 1
         sim_item = copy.deepcopy(item)

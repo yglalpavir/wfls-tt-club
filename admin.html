@@ -403,25 +403,28 @@
     <main class="dash-main" id="dashMain">
         <header class="page-head fade-in">
             <div class="page-head-left">
-                <a href="index.html" class="logo-badge" title="返回首页">
+                <a href="index.html" class="logo-badge" title="返回首页" data-i18n-title="adm_home_title">
                     <i class="fa-solid fa-table-tennis-paddle-ball"></i>
                 </a>
                 <div class="ph-titles">
-                    <h1><span class="h1-dot"></span>数据仪表盘</h1>
-                    <p class="hero-desc">全站数据资产一览 · WTT 五项模块与核心数据实时统计</p>
+                    <h1><span class="h1-dot"></span><span data-i18n="adm_title">数据仪表盘</span></h1>
+                    <p class="hero-desc" data-i18n="adm_hero_desc">全站数据资产一览 · WTT 五项模块与核心数据实时统计</p>
                 </div>
             </div>
             <div class="ph-actions">
-                <button class="dash-btn icon-only" id="themeToggle" title="切换主题" aria-label="切换主题">
+                <button class="dash-btn icon-only" id="themeToggle" title="切换主题" aria-label="切换主题" data-i18n-title="nav_aria_theme" data-i18n-aria="nav_aria_theme">
                     <i class="fa-solid fa-moon"></i>
                 </button>
-                <a href="draws-editor.html" class="dash-btn primary" title="可视化编辑对阵表并导出 draws.json">
-                    <i class="fa-solid fa-diagram-project"></i>对阵表编辑器
-                </a>
-                <button class="dash-btn primary" id="refreshBtn" title="重新加载全站数据">
-                    <i class="fa-solid fa-rotate"></i>刷新
+                <button class="dash-btn icon-only" id="langToggle" title="切换语言" aria-label="切换语言" data-i18n-title="nav_aria_lang" data-i18n-aria="nav_aria_lang">
+                    <span data-i18n="lang_btn">EN</span>
                 </button>
-                <a href="index.html" class="dash-btn icon-only" title="返回首页" aria-label="返回首页">
+                <a href="draws-editor.html" class="dash-btn primary" title="可视化编辑对阵表并导出 draws.json" data-i18n-title="adm_editor_title">
+                    <i class="fa-solid fa-diagram-project"></i><span data-i18n="adm_editor">对阵表编辑器</span>
+                </a>
+                <button class="dash-btn primary" id="refreshBtn" title="重新加载全站数据" data-i18n-title="adm_refresh_title">
+                    <i class="fa-solid fa-rotate"></i><span data-i18n="adm_refresh">刷新</span>
+                </button>
+                <a href="index.html" class="dash-btn icon-only" title="返回首页" aria-label="返回首页" data-i18n-title="adm_home_title" data-i18n-aria="adm_home_title">
                     <i class="fa-solid fa-house"></i>
                 </a>
             </div>
@@ -440,32 +443,48 @@
                 #pendingSubs a { color:#007bff; text-decoration:none; white-space:nowrap; }
             </style>
             <div class="ps-card">
-                <h2><i class="fa-solid fa-inbox"></i>待审核提交 <span class="ps-badge" id="psCount" hidden>0</span></h2>
-                <ul id="psList"><li><span>加载中…</span></li></ul>
+                <h2><i class="fa-solid fa-inbox"></i><span data-i18n="adm_ps_title">待审核提交</span> <span class="ps-badge" id="psCount" hidden>0</span></h2>
+                <ul id="psList"><li><span data-i18n="docs_loading_text">加载中…</span></li></ul>
             </div>
         </section>
         <script>
         (function () {
             var $ = function (id) { return document.getElementById(id); };
             function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+            function t(key, zh) {
+                try { if (typeof i18n !== "undefined" && typeof currentLang !== "undefined" && i18n[currentLang] && i18n[currentLang][key] != null) return i18n[currentLang][key]; } catch (e) { /* ignore */ }
+                return zh;
+            }
+            function renderPending(items) {
+                var el = $("psList");
+                if (!items.length) { el.innerHTML = '<li><span>' + esc(t("adm_ps_empty", "暂无待审核提交")) + '</span></li>'; return; }
+                el.innerHTML = items.map(function (it) {
+                    var d = (it.created_at || "").slice(0, 10);
+                    return '<li><span>#' + it.number + " · " + esc(it.title) + ' <span style="color:#99a;">(' + esc(d) + ")</span></span>" +
+                        '<span><a href="' + esc(it.html_url) + '" target="_blank" rel="noopener">' + esc(t("adm_ps_review", "去审核 →")) + '</a></span></li>';
+                }).join("");
+            }
+            function renderPendingError() {
+                $("psList").innerHTML = '<li><span style="color:#dc3545;">' + esc(t("adm_ps_fail", "读取失败（GitHub 匿名 API 限流为 60 次/时/IP，请稍后刷新重试）")) + '</span></li>';
+            }
             var API = "https://api.github.com/repos/yglalpavir/wfls-tt-club/issues?labels=" + encodeURIComponent("提交") + "&state=open&per_page=30";
             fetch(API, { headers: { "Accept": "application/vnd.github+json" } })
                 .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
                 .then(function (list) {
                     var items = (list || []).filter(function (i) { return !i.pull_request; });
-                    var el = $("psList");
                     $("psCount").textContent = String(items.length);
                     $("psCount").hidden = !items.length;
-                    if (!items.length) { el.innerHTML = '<li><span>暂无待审核提交</span></li>'; return; }
-                    el.innerHTML = items.map(function (it) {
-                        var d = (it.created_at || "").slice(0, 10);
-                        return '<li><span>#' + it.number + " · " + esc(it.title) + ' <span style="color:#99a;">(' + esc(d) + ")</span></span>" +
-                            '<span><a href="' + esc(it.html_url) + '" target="_blank" rel="noopener">去审核 →</a></span></li>';
-                    }).join("");
+                    window.__admPendingSubs = items;
+                    renderPending(items);
                 })
                 .catch(function () {
-                    $("psList").innerHTML = '<li><span style="color:#dc3545;">读取失败（GitHub 匿名 API 限流为 60 次/时/IP，请稍后刷新重试）</span></li>';
+                    window.__admPendingSubs = null;
+                    renderPendingError();
                 });
+            window.__admReapplyPending = function () {
+                if (window.__admPendingSubs) renderPending(window.__admPendingSubs);
+                else if (window.__admPendingSubs === null) renderPendingError();
+            };
         })();
         </script>
 
@@ -491,39 +510,39 @@
                 #scoreEntry .se-msg.err { color:#dc3545; } #scoreEntry .se-msg.ok { color:#28a745; }
             </style>
             <div class="se-card">
-                <h2><i class="fa-solid fa-pen-to-square"></i> 记分录入</h2>
+                <h2><i class="fa-solid fa-pen-to-square"></i> <span data-i18n="adm_se_title">记分录入</span></h2>
                 <div class="se-row" style="margin-bottom:10px;">
-                    <button type="button" class="se-mode active" id="seModeMatch"><i class="fa-solid fa-table-tennis-paddle-ball"></i> 比赛结果</button>
-                    <button type="button" class="se-mode" id="seModeBonus"><i class="fa-solid fa-plus-minus"></i> 积分调整</button>
+                    <button type="button" class="se-mode active" id="seModeMatch"><i class="fa-solid fa-table-tennis-paddle-ball"></i> <span data-i18n="adm_se_mode_match">比赛结果</span></button>
+                    <button type="button" class="se-mode" id="seModeBonus"><i class="fa-solid fa-plus-minus"></i> <span data-i18n="adm_se_mode_bonus">积分调整</span></button>
                 </div>
                 <div class="se-row" id="seMatchRow">
-                    <div><label>日期</label><input type="date" id="seDate"></div>
-                    <div><label>类型</label><select id="seType"></select></div>
-                    <div><label>赛制</label><select id="seFormat">
+                    <div><label data-i18n="sb_date">日期</label><input type="date" id="seDate"></div>
+                    <div><label data-i18n="sb_type">类型</label><select id="seType"></select></div>
+                    <div><label data-i18n="sb_format">赛制</label><select id="seFormat">
                         <option value="default">default</option>
                         <option value="bo3">bo3</option>
                         <option value="bo5">bo5</option>
                         <option value="bo7">bo7</option>
                     </select></div>
-                    <div><label>胜者</label><select id="seWinner"></select></div>
-                    <div><label>负者</label><select id="seLoser"></select></div>
-                    <div style="align-self:center;"><label style="margin-bottom:0;cursor:pointer;"><input type="checkbox" id="seScoreToggle" style="margin-right:4px;vertical-align:-2px;">记录比分（可选）</label></div>
-                    <div><label>总比分（胜-负）</label><input type="text" id="seScoreTotal" size="6" placeholder="3-1" disabled></div>
-                    <div style="flex:1;min-width:210px;"><label>逐局分数（胜者视角，逗号分隔）</label><input type="text" id="seScoreGames" style="width:100%;" placeholder="11-9, 8-11, 11-7" disabled title="如 11-9, 8-11, 11-7"></div>
-                    <button type="button" class="se-add" id="seAddMatch">添加记录</button>
+                    <div><label data-i18n="sb_winner">胜者</label><select id="seWinner"></select></div>
+                    <div><label data-i18n="sb_loser">负者</label><select id="seLoser"></select></div>
+                    <div style="align-self:center;"><label style="margin-bottom:0;cursor:pointer;"><input type="checkbox" id="seScoreToggle" style="margin-right:4px;vertical-align:-2px;"><span data-i18n="sb_score_toggle">记录比分（可选）</span></label></div>
+                    <div><label data-i18n="sb_score_total">总比分（胜-负）</label><input type="text" id="seScoreTotal" size="6" placeholder="3-1" disabled></div>
+                    <div style="flex:1;min-width:210px;"><label data-i18n="sb_games">逐局分数（胜者视角，逗号分隔）</label><input type="text" id="seScoreGames" style="width:100%;" placeholder="11-9, 8-11, 11-7" disabled title="如 11-9, 8-11, 11-7" data-i18n-title="adm_se_games_hint"></div>
+                    <button type="button" class="se-add" id="seAddMatch" data-i18n="adm_se_add_match">添加记录</button>
                 </div>
                 <div class="se-row" id="seBonusRow" style="display:none;">
-                    <div><label>日期</label><input type="date" id="seBDate"></div>
-                    <div><label>对象</label><select id="seTarget"></select></div>
-                    <div><label>分数（如 +100 / -30）</label><input type="text" id="seAmount" size="8" placeholder="+100"></div>
-                    <button type="button" class="se-add" id="seAddBonus">添加调整</button>
+                    <div><label data-i18n="sb_date">日期</label><input type="date" id="seBDate"></div>
+                    <div><label data-i18n="sr_col_target">对象</label><select id="seTarget"></select></div>
+                    <div><label data-i18n="adm_se_amount">分数（如 +100 / -30）</label><input type="text" id="seAmount" size="8" placeholder="+100"></div>
+                    <button type="button" class="se-add" id="seAddBonus" data-i18n="adm_se_add_bonus">添加调整</button>
                 </div>
                 <div class="se-msg" id="seMsg"></div>
                 <ul class="se-list" id="seQueue"></ul>
                 <div class="se-row" style="margin-top:12px;" id="seActions" hidden>
-                    <button type="button" class="se-copy" id="seCopy"><i class="fa-solid fa-clipboard"></i> 复制 JSON</button>
-                    <button type="button" class="se-export" id="seExport"><i class="fa-solid fa-download"></i> 下载合并后的 score-log.json</button>
-                    <button type="button" class="se-clear" id="seClear">清空队列</button>
+                    <button type="button" class="se-copy" id="seCopy"><i class="fa-solid fa-clipboard"></i> <span data-i18n="sb_btn_copy">复制 JSON</span></button>
+                    <button type="button" class="se-export" id="seExport"><i class="fa-solid fa-download"></i> <span data-i18n="adm_se_export">下载合并后的 score-log.json</span></button>
+                    <button type="button" class="se-clear" id="seClear" data-i18n="adm_se_clear">清空队列</button>
                 </div>
             </div>
         </section>
@@ -531,31 +550,77 @@
         (function () {
             var $ = function (id) { return document.getElementById(id); };
             var TYPES_URL = "data/event-coefficient.json", PLAYERS_URL = "data/players.json", LOG_URL = "data/score-log.json";
-            var mode = "match", queue = [], players = [], defaultFormats = {};
-            function msg(text, isErr) { var el = $("seMsg"); el.textContent = text; el.className = "se-msg " + (isErr ? "err" : "ok"); }
+            var mode = "match", queue = [], players = [], defaultFormats = {}, typeKeys = [];
+            /* i18n：读取站点字典（common.js），未加载时回退中文原文 */
+            function T(key, zh) {
+                try { if (typeof i18n !== "undefined" && typeof currentLang !== "undefined" && i18n[currentLang] && i18n[currentLang][key] != null) return i18n[currentLang][key]; } catch (e) { /* ignore */ }
+                return zh;
+            }
+            function sf(tpl, vars) { return String(tpl == null ? "" : tpl).replace(/\{(\w+)\}/g, function (m, k) { return (vars && vars[k] != null) ? vars[k] : m; }); }
+            function typeLabel(v) { try { if (typeof eventTypeLabel === "function") return eventTypeLabel(v); } catch (e) { /* ignore */ } return v; }
+            /* 显示层：英文模式用拼音人名（common.js playerDisplayName）；数据键仍是原始中文姓名 */
+            function nameLabel(v) { try { if (typeof playerDisplayName === "function") return playerDisplayName(v); } catch (e) { /* ignore */ } return v; }
+            function escText(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+            /* 消息以 {key, zh, vars} 形式缓存，语言切换后可重绘 */
+            var lastMsg = null;
+            function renderMsg() {
+                var el = $("seMsg");
+                if (!lastMsg) { el.textContent = ""; el.className = "se-msg"; return; }
+                el.textContent = sf(T(lastMsg.key, lastMsg.zh), lastMsg.vars);
+                el.className = "se-msg " + (lastMsg.isErr ? "err" : "ok");
+            }
+            function msg(key, zh, vars, isErr) { lastMsg = { key: key, zh: zh, vars: vars || null, isErr: !!isErr }; renderMsg(); }
             function todayStr() { var d = new Date(); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
-            function fillSelect(sel, arr, placeholder) { sel.innerHTML = '<option value="">' + placeholder + "</option>" + arr.map(function (n) { return '<option value="' + n.replace(/&/g, "&amp;").replace(/"/g, "&quot;") + '">' + n.replace(/&/g, "&amp;").replace(/</g, "&lt;") + "</option>"; }).join(""); }
+            var selectMeta = [];
+            function fillSelect(sel, arr, key, zh) {
+                var prev = sel.value;
+                sel.innerHTML = '<option value="">' + escText(T(key, zh)) + "</option>" + arr.map(function (n) { return '<option value="' + n.replace(/&/g, "&amp;").replace(/"/g, "&quot;") + '">' + escText(nameLabel(n)) + "</option>"; }).join("");
+                if (prev) sel.value = prev;
+            }
+            function fillPlayerSelects() {
+                if (!players.length) return;
+                selectMeta.forEach(function (m) { fillSelect(m.el, players, m.key, m.zh); });
+            }
+            function renderTypeOptions() {
+                var sel = $("seType"); if (!sel || !typeKeys.length) return;
+                var prev = sel.value;
+                sel.innerHTML = typeKeys.map(function (k) { return '<option value="' + k + '">' + escText(typeLabel(k)) + "</option>"; }).join("");
+                if (prev) sel.value = prev;
+            }
+            function queueText(q) {
+                if (q["胜者"]) {
+                    var txt = q["日期"] + " · " + typeLabel(q["类型"]) + " · " + sf(T("adm_se_q_format", "赛制 {f}"), { f: q["赛制"] || "default" }) + " · " + sf(T("adm_se_q_win", "{w} 胜 {l}"), { w: nameLabel(q["胜者"]), l: nameLabel(q["负者"]) });
+                    if (q["比分"]) txt += " · " + q["比分"] + (q["局分"] ? sf(T("adm_se_q_games", "（{g}）"), { g: q["局分"].join(" ") }) : "");
+                    return txt;
+                }
+                return q["日期"] + " · " + T("adm_se_q_adjust", "调整") + " · " + nameLabel(q["对象"]) + " " + q["分数"];
+            }
             function renderQueue() {
                 $("seQueue").innerHTML = queue.map(function (q, i) {
-                    var txt = q["胜者"] ? (q["日期"] + " · " + q["类型"] + " · 赛制 " + (q["赛制"] || "default") + " · " + q["胜者"] + " 胜 " + q["负者"]
-                        + (q["比分"] ? " · " + q["比分"] + (q["局分"] ? "（" + q["局分"].join(" ") + "）" : "") : "")) : (q["日期"] + " · 调整 · " + q["对象"] + " " + q["分数"]);
-                    return "<li><span>" + txt + '</span><span><a href="#" data-i="' + i + '" style="color:#dc3545;">移除</a></span></li>';
+                    return "<li><span>" + escText(queueText(q)) + '</span><span><a href="#" data-i="' + i + '" style="color:#dc3545;">' + escText(T("sb_remove", "移除")) + "</a></span></li>";
                 }).join("");
                 $("seActions").hidden = !queue.length;
                 $("seQueue").querySelectorAll("a[data-i]").forEach(function (a) {
                     a.addEventListener("click", function (e) { e.preventDefault(); queue.splice(+a.dataset.i, 1); renderQueue(); });
                 });
             }
-            fetch(TYPES_URL).then(function (r) { return r.json(); }).then(function (t) {
-                defaultFormats = (t && t["默认赛制"]) || {};
-                $("seType").innerHTML = Object.keys(t).filter(function (k) { return typeof t[k] === "number"; }).map(function (k) { return '<option value="' + k + '">' + k + "</option>"; }).join("");
-            }).catch(function () { msg("赛事系数加载失败", true); });
+            /* 语言切换钩子（adminReapplyI18n 调用） */
+            window.__admReapplySe = function () { renderTypeOptions(); fillPlayerSelects(); renderQueue(); renderMsg(); };
+            fetch(TYPES_URL).then(function (r) { return r.json(); }).then(function (tc) {
+                defaultFormats = (tc && tc["默认赛制"]) || {};
+                typeKeys = Object.keys(tc).filter(function (k) { return typeof tc[k] === "number"; });
+                renderTypeOptions();
+            }).catch(function () { msg("adm_se_err_coef", "赛事系数加载失败", null, true); });
             fetch(PLAYERS_URL).then(function (r) { return r.json(); }).then(function (p) {
                 players = ((p && p.players) || []).filter(function (x) { return x.name; }).map(function (x) { return x.name; });
-                fillSelect($("seWinner"), players, "-- 选择胜者 --");
-                fillSelect($("seLoser"), players, "-- 选择负者 --");
-                fillSelect($("seTarget"), players, "-- 选择球员 --");
-            }).catch(function () { msg("players.json 加载失败", true); });
+                selectMeta = [
+                    { el: $("seWinner"), key: "adm_se_pick_winner", zh: "-- 选择胜者 --" },
+                    { el: $("seLoser"), key: "adm_se_pick_loser", zh: "-- 选择负者 --" },
+                    { el: $("seTarget"), key: "adm_se_pick_player", zh: "-- 选择球员 --" }
+                ];
+                // 建立 players.json 姓名索引：英文模式的下拉项与比分行走 playerDisplayName()（拼音人名）
+                if (typeof loadPlayers === "function") return loadPlayers();
+            }).then(function () { fillPlayerSelects(); }).catch(function () { msg("adm_se_err_players", "players.json 加载失败", null, true); });
             ["seDate", "seBDate"].forEach(function (id) { $(id).value = todayStr(); });
             $("seModeMatch").addEventListener("click", function () { mode = "match"; this.classList.add("active"); $("seModeBonus").classList.remove("active"); $("seMatchRow").style.display = ""; $("seBonusRow").style.display = "none"; });
             $("seModeBonus").addEventListener("click", function () { mode = "bonus"; this.classList.add("active"); $("seModeMatch").classList.remove("active"); $("seBonusRow").style.display = ""; $("seMatchRow").style.display = "none"; });
@@ -568,24 +633,24 @@
                 });
                 $("seAddMatch").addEventListener("click", function () {
                     var fmt = $("seFormat").value;
-                    if (["default", "bo3", "bo5", "bo7"].indexOf(fmt) === -1) return msg("赛制仅支持 default / bo3 / bo5 / bo7", true);
+                    if (["default", "bo3", "bo5", "bo7"].indexOf(fmt) === -1) return msg("adm_se_err_format", "赛制仅支持 default / bo3 / bo5 / bo7", null, true);
                     var rec = { "日期": $("seDate").value, "类型": $("seType").value, "赛制": fmt, "胜者": $("seWinner").value, "负者": $("seLoser").value };
-                    if (!rec["日期"] || !rec["类型"] || !rec["胜者"] || !rec["负者"]) return msg("请完整填写日期 / 类型 / 胜者 / 负者", true);
-                    if (rec["胜者"] === rec["负者"]) return msg("胜者与负者不能相同", true);
-                    if (!/^\d{4}-\d{2}-\d{2}$/.test(rec["日期"])) return msg("日期格式需为 YYYY-MM-DD", true);
+                    if (!rec["日期"] || !rec["类型"] || !rec["胜者"] || !rec["负者"]) return msg("sb_err_fill", "请完整填写日期 / 类型 / 胜者 / 负者", null, true);
+                    if (rec["胜者"] === rec["负者"]) return msg("sb_err_same", "胜者与负者不能相同", null, true);
+                    if (!/^\d{4}-\d{2}-\d{2}$/.test(rec["日期"])) return msg("sb_err_date", "日期格式需为 YYYY-MM-DD", null, true);
                     if ($("seScoreToggle").checked) {
                         var WINS = { bo3: 2, bo5: 3, bo7: 4 }, reT = /^(\d{1,2})\s*[-:：]\s*(\d{1,2})$/;
                         var eff = fmt === "default" ? (defaultFormats[rec["类型"]] || "") : fmt;
                         var needed = WINS[eff] || 0;
                         var total = $("seScoreTotal").value.trim(), gamesRaw = $("seScoreGames").value.trim();
-                        if (!total && !gamesRaw) return msg("已勾选记录比分，请填写总比分或逐局分数", true);
+                        if (!total && !gamesRaw) return msg("adm_se_err_no_score", "已勾选记录比分，请填写总比分或逐局分数", null, true);
                         var w = null, l = null, m = total ? reT.exec(total) : null;
                         if (total) {
-                            if (!m) return msg("总比分格式应为「胜者局数-负者局数」，如 3-1", true);
+                            if (!m) return msg("adm_se_err_total_fmt", "总比分格式应为「胜者局数-负者局数」，如 3-1", null, true);
                             w = +m[1]; l = +m[2];
-                            if (w <= l) return msg("总比分 " + w + "-" + l + "：胜方局数必须大于负方（胜者在前的口径）", true);
-                            if (w > 4) return msg("总比分 " + w + "-" + l + "：单打最多 bo7（胜方最多 4 局）", true);
-                            if (needed && w !== needed) return msg("总比分 " + w + "-" + l + " 与赛制 " + eff + " 不符（需胜 " + needed + " 局）", true);
+                            if (w <= l) return msg("adm_se_err_total_order", "总比分 {w}-{l}：胜方局数必须大于负方（胜者在前的口径）", { w: w, l: l }, true);
+                            if (w > 4) return msg("adm_se_err_total_max", "总比分 {w}-{l}：单打最多 bo7（胜方最多 4 局）", { w: w, l: l }, true);
+                            if (needed && w !== needed) return msg("adm_se_err_total_mismatch", "总比分 {w}-{l} 与赛制 {eff} 不符（需胜 {n} 局）", { w: w, l: l, eff: eff, n: needed }, true);
                             rec["比分"] = w + "-" + l;
                         }
                         if (gamesRaw) {
@@ -596,29 +661,29 @@
                                 if (+gm[1] > +gm[2]) wins++;
                                 gs.push(+gm[1] + "-" + +gm[2]);
                             }
-                            if (bad) return msg("逐局分数格式应为 11-9，且无平局", true);
+                            if (bad) return msg("sb_err_games", "逐局分数格式应为 11-9，且无平局", null, true);
                             if (w !== null) {
-                                if (wins !== w || gs.length !== w + l) return msg("逐局分数与总比分 " + w + "-" + l + " 不自洽（应共 " + (w + l) + " 局、胜方赢 " + w + " 局）", true);
+                                if (wins !== w || gs.length !== w + l) return msg("adm_se_err_games_self", "逐局分数与总比分 {w}-{l} 不自洽（应共 {t} 局、胜方赢 {w} 局）", { w: w, l: l, t: w + l }, true);
                             } else {
-                                if (wins <= gs.length - wins) return msg("逐局分数推不出胜方（胜者视角，胜方赢的局须更多）", true);
+                                if (wins <= gs.length - wins) return msg("adm_se_err_games_infer", "逐局分数推不出胜方（胜者视角，胜方赢的局须更多）", null, true);
                                 rec["比分"] = wins + "-" + (gs.length - wins);
                             }
                             rec["局分"] = gs;
                         }
                     }
-                    queue.push(rec); renderQueue(); msg("已添加 1 条比赛记录", false);
+                    queue.push(rec); renderQueue(); msg("adm_se_ok_match", "已添加 1 条比赛记录", null, false);
                 });
             $("seAddBonus").addEventListener("click", function () {
                 var amt = $("seAmount").value.trim();
                 var num = parseFloat(amt);
                 var rec = { "日期": $("seBDate").value, "类型": "比赛结果加分", "对象": $("seTarget").value, "分数": /^[+-]?\d+(\.\d+)?$/.test(amt) ? (num > 0 ? "+" + num : String(num)) : amt };
-                if (!rec["日期"] || !rec["对象"] || !amt || isNaN(num)) return msg("请完整填写日期 / 对象 / 分数（数字）", true);
-                queue.push(rec); renderQueue(); $("seAmount").value = ""; msg("已添加 1 条积分调整", false);
+                if (!rec["日期"] || !rec["对象"] || !amt || isNaN(num)) return msg("adm_se_err_bonus_fill", "请完整填写日期 / 对象 / 分数（数字）", null, true);
+                queue.push(rec); renderQueue(); $("seAmount").value = ""; msg("adm_se_ok_bonus", "已添加 1 条积分调整", null, false);
             });
-            $("seClear").addEventListener("click", function () { queue = []; renderQueue(); msg("队列已清空", false); });
+            $("seClear").addEventListener("click", function () { queue = []; renderQueue(); msg("adm_se_ok_cleared", "队列已清空", null, false); });
             $("seCopy").addEventListener("click", function () {
                 var json = JSON.stringify(queue, null, 2).split("\n").map(function (l) { return "  " + l; }).join("\n");
-                navigator.clipboard.writeText(json).then(function () { msg("已复制到剪贴板，可粘贴进 data/score-log.json 数组末尾", false); }, function () { msg("复制失败，请手动选择文本", true); });
+                navigator.clipboard.writeText(json).then(function () { msg("adm_se_ok_copied", "已复制到剪贴板，可粘贴进 data/score-log.json 数组末尾", null, false); }, function () { msg("sb_err_copy", "复制失败，请手动选择文本", null, true); });
             });
             $("seExport").addEventListener("click", function () {
                 fetch(LOG_URL).then(function (r) { return r.json(); }).then(function (log) {
@@ -629,19 +694,20 @@
                     a.download = "score-log.json";
                     document.body.appendChild(a); a.click(); a.remove();
                     setTimeout(function () { URL.revokeObjectURL(a.href); }, 2000);
-                    msg("已下载合并文件（原 " + log.length + " 条 + 新增 " + queue.length + " 条）。请用下载的文件替换 data/score-log.json 并提交。", false);
-                }).catch(function () { msg("当前 score-log.json 加载失败，无法合并导出", true); });
+                    msg("adm_se_ok_downloaded", "已下载合并文件（原 {n} 条 + 新增 {m} 条）。请用下载的文件替换 data/score-log.json 并提交。", { n: log.length, m: queue.length }, false);
+                }).catch(function () { msg("adm_se_err_merge", "当前 score-log.json 加载失败，无法合并导出", null, true); });
             });
         })();
         </script>
 
         <div class="loading-view" id="loadingView">
             <div class="loading-ring"></div>
-            <p>正在加载全站数据...</p>
+            <p data-i18n="adm_loading">正在加载全站数据...</p>
         </div>
         <div id="dashboardContent" style="display:none;"></div>
     </main>
 
+    <script src="js/common.js"></script>
     <script src="js/admin.js"></script>
 </body>
 </html>

@@ -3,27 +3,39 @@
     "version": "v1.1.7",
     "date": "2026-09-13",
     "title": "赛季总结页",
+    "title_en": "Season Review Page",
     "tag": "feature",
     "changes": [
         "新增**赛季总结**页面（数据可视化页底部入口）",
         "WTT 彩蛋同步上线**赛季总结**，入口在 WTT Hub 类目卡片"
+    ],
+    "changes_en": [
+      "Added a new **Season Review** page (linked from the bottom of the Data Viz page)",
+      "The WTT easter egg also got a **Season Review** page, with its entry point on the category card in WTT Hub"
     ]
   },
   {
     "version": "v1.1.6",
     "date": "2026-09-12",
     "title": "访客提交战绩功能上线",
+    "title_en": "Visitor Match Submission Goes Live",
     "tag": "feature",
     "changes": [
         "新增**提交战绩**页面，访客可在线填写比赛记录（日期、类型、赛制、胜者、负者、比分），管理员审核后计入排名",
         "排名页「积分计算规则」下方新增「提交战绩」入口按钮",
         "界面细节优化：精简首页骨干版块文案，清理废弃的个人页导出代码"
+    ],
+    "changes_en": [
+      "Added a new **Submit Results** page where visitors can fill in match records online (date, event type, format, winner, loser, score); once an administrator has reviewed them they count towards the ranking",
+      "Added a \"Submit Results\" entry button under \"Scoring Rules\" on the Ranking page",
+      "UI polish: trimmed the copy in the core-members block on the home page and removed the dead export code from the personal page"
     ]
   },
   {
     "version": "v1.1.5",
     "date": "2026-09-04",
     "title": "主页面样式优化",
+    "title_en": "Home Page Styling Improvements",
     "tag": "feature",
     "changes": [
         "优化了移动端在wtt积分数据表和wtt个人数据的计算速度",
@@ -32,22 +44,35 @@
         "增加大量ittf在2002-2005, 2013-2015年的公开赛，世界杯，世乒赛的比赛数据",
         "本次更新后，wtt彩蛋的比赛数据总数达到了：**51,425**条"
 
+    ],
+    "changes_en": [
+      "Improved the computation speed of the WTT points table and the WTT personal data on mobile",
+      "Restyled the hero section of the home page",
+      "Improved the display of the **draws** (brackets) on the Competitions page",
+      "Added a large amount of ITTF match data for the open, World Cup and World Championships events of 2002-2005 and 2013-2015",
+      "After this update, the WTT easter egg's match-data total reached **51,425** records"
     ]
   },
   {
     "version": "v1.1.4",
     "date": "2026-08-23",
     "title": "移动端适配优化",
+    "title_en": "Mobile Adaptation Improvements",
     "tag": "feature",
     "changes": [
         "优化了移动端在积分数据表和数据可视化的表现",
         "增加了数据加载的进度条"
+    ],
+    "changes_en": [
+      "Improved how the points table and the data visualisation behave on mobile",
+      "Added a progress bar for data loading"
     ]
   },
   {
     "version": "v1.1.3",
     "date": "2026-08-15",
     "title": "WTT 协会籍：修复排名旗帜显示并新增协会数据可视化",
+    "title_en": "WTT Associations: fixed flag display in the ranking and added association data visualisation",
     "tag": "feature",
     "changes": [
       "在 WTT 单打积分数据表姓名左侧增加了协会旗帜的显示",
@@ -56,189 +81,284 @@
       "定义协会实力分公式：0.4×第1 + 0.3×第2 + 0.15×第3 + 0.1×第4 + 0.05×第5（不足 5 人按已用权重归一化）",
       "本次更新后，wtt彩蛋的比赛数据总数达到了：**21,086**条"
 
+    ],
+    "changes_en": [
+      "Added association flags to the left of player names in the WTT singles points table",
+      "The WTT data visualisation gained a new **Association Points Trend** line chart: pick associations and the most recent N data points to see how association strength scores change over time",
+      "The WTT data visualisation gained a new **Top Five Players per Association** bar chart, showing the points of each association's top five players ordered by association strength score in the latest snapshot",
+      "Defined the association strength score: 0.4x1st + 0.3x2nd + 0.15x3rd + 0.1x4th + 0.05x5th (normalised by the weights used when fewer than 5 players are available)",
+      "After this update, the WTT easter egg's match-data total reached **21,086** records"
     ]
   },
   {
     "version": "v1.1.2",
     "date": "2026-08-13",
     "title": "数据可视化页面:更新多种图表",
+    "title_en": "Data Viz Page: A Batch of New Charts",
     "tag": "feature",
     "changes": [
       "同步在数据可视化页面和wtt数据可视化页面加上了多种新图表"
+    ],
+    "changes_en": [
+      "Added a range of new charts to both the data visualisation page and the WTT data visualisation page"
     ]
   },
   {
     "version": "v1.1.1",
     "date": "2026-08-11",
     "title": "数据更新：增加了2026wtt支线赛、亚洲杯、欧冠等等的比赛数据",
+    "title_en": "Data update: added 2026 WTT feeder events, the Asian Cup, the Champions League and more",
     "tag": "feature",
     "changes": [
       "本次更新后，wtt彩蛋的比赛数据总数达到了：**20,638**条"
+    ],
+    "changes_en": [
+      "After this update, the WTT easter egg's match-data total reached **20,638** records"
     ]
   },
   {
     "version": "v1.1.0",
     "date": "2026-08-09",
     "title": "优化搜索功能，个人数据页",
+    "title_en": "Improved search and the personal data page",
     "tag": "feature",
     "changes": [
       "个人数据页改为总览模式：标签筛选 + 姓名/编号/标签搜索 + 球员卡片列表，点击进入对应个人主页",
       "排名页、全站搜索、数据可视化、社团骨干页的球员姓名均链接到个人主页"
+    ],
+    "changes_en": [
+      "The personal data page is now an overview mode: tag filters, name/number/tag search, and a list of player cards — click one to open that player's page",
+      "Player names on the Ranking page, in site-wide search, in data visualisation and on the core members page now all link to the player's personal page"
     ]
   },
   {
     "version": "v1.0.15",
     "date": "2026-08-08",
     "title": "WTT 彩蛋页面支持中英文双语",
+    "title_en": "WTT Easter-Egg Pages Are Now Bilingual",
     "tag": "feature",
     "changes": [
       "WTT Hub、WTT 排名、WTT 数据可视化、WTT 个人数据页面新增中英文语言切换",
       "WTT 页面的图表标签、加载进度、对比/个人统计等动态内容随语言实时刷新"
+    ],
+    "changes_en": [
+      "WTT Hub, WTT Ranking, WTT Data Viz and the WTT personal data page gained a Chinese/English language switch",
+      "Chart labels, loading progress and comparison/personal statistics on the WTT pages now refresh live when the language changes"
     ]
   },
   {
     "version": "v1.0.14",
     "date": "2026-08-01",
     "title": "微调了积分系统规则",
+    "title_en": "Fine-tuned the points system rules",
     "tag": "feature",
     "changes": [
       "微调了积分系统规则，详细规则见 ***https://yglalpavir.github.io/wfls-tt-club/detail.html?type=qa&id=q1***",
       "改动较小，没有造成排名的变化"
+    ],
+    "changes_en": [
+      "Fine-tuned the points system rules — the full rules are at ***https://yglalpavir.github.io/wfls-tt-club/detail.html?type=qa&id=q1***",
+      "The change was small and did not shift the rankings"
     ]
   },
   {
     "version": "v1.0.13",
     "date": "2026-07-31",
     "title": "数据更新：增加了2025年WTT双打、2018-2024的T联赛、2026全锦赛男双的全部比赛记录",
+    "title_en": "Data update: added all 2025 WTT doubles, 2018-2024 T-League and 2026 National Championships men's doubles match records",
     "tag": "feature",
     "changes": [
       "本次更新后，wtt彩蛋的比赛数据总数达到了：**17,999**条"
+    ],
+    "changes_en": [
+      "After this update, the WTT easter egg's match-data total reached **17,999** records"
     ]
   }, 
   {
     "version": "v1.0.12",
     "date": "2026-07-26",
     "title": "数据更新：增加了2026年WTT的男双，女双，混双的全部比赛记录",
+    "title_en": "Data update: added all 2026 WTT men's doubles, women's doubles and mixed doubles match records",
     "tag": "feature",
     "changes": [
       "本次更新后，wtt彩蛋的比赛数据总数达到了：**14,451**条"
+    ],
+    "changes_en": [
+      "After this update, the WTT easter egg's match-data total reached **14,451** records"
     ]
   },  
   {
     "version": "v1.0.11",
     "date": "2026-07-25",
     "title": "数据更新：增加了部分女单、男双的比赛记录",
+    "title_en": "Data update: added some women's singles and men's doubles match records",
     "tag": "feature",
     "changes": [
       "本次更新后，wtt彩蛋的比赛数据总数达到了：**12,893**条"
+    ],
+    "changes_en": [
+      "After this update, the WTT easter egg's match-data total reached **12,893** records"
     ]
   },
   {
     "version": "v1.0.10",
     "date": "2026-07-19",
     "title": "数据更新：增加了德甲、全运会的比赛记录",
+    "title_en": "Data update: added Bundesliga and National Games match records",
     "tag": "feature",
     "changes": [
       "数据更新：增加了德甲2025/2026赛季的全部比赛记录；增加了全运会的比赛记录",
       "修改彩蛋进入后的页面，为之后可能的女子单打/男子双打/女子双打/混合双打更新留下入口",
       "本次更新后，wtt（指彩蛋，其中的数据包含且不限定于是WTT）的比赛数据总数达到了：**8,296**条"
+    ],
+    "changes_en": [
+      "Data update: added all match records from the 2025/2026 Bundesliga season, plus the National Games match records",
+      "Changed the page you land on after opening the easter egg, leaving room for possible future women's singles / men's doubles / women's doubles / mixed doubles updates",
+      "After this update, the WTT easter egg's match-data total (its data includes, but is not limited to, WTT) reached **8,296** records"
     ]
   },
   {
     "version": "v1.0.9",
     "date": "2026-07-16",
     "title": "数据更新：2021和2022年的wtt男子单打比赛数据",
+    "title_en": "Data update: 2021 and 2022 WTT men's singles match data",
     "tag": "feature",
     "changes": [
       "更新了2021和2022年的wtt比赛数据，目前比赛数据覆盖了wtt创立以来的全部比赛记录，总数据数达到了**7,795**条"
+    ],
+    "changes_en": [
+      "Updated the 2021 and 2022 WTT match data; the data now covers every match since WTT was founded, bringing the total to **7,795** records"
     ]
   },
   {
     "version": "v1.0.8",
     "date": "2026-07-11",
     "title": "Member页优化",
+    "title_en": "Members Page Improvements",
     "tag": "feature",
     "changes": [
       "增加了对显示“核心成员”的**qq头像**的支持"
+    ],
+    "changes_en": [
+      "Added support for showing **QQ avatars** for the \"core members\""
     ]
   },
   {
     "version": "v1.0.7",
     "date": "2026-07-06",
     "title": "Draws样式优化和wtt积分模型优化",
+    "title_en": "Draws Styling and the WTT Points Model",
     "tag": "feature",
     "changes": [
       "在Competitions页增加了对draws的优化，包括：优化页面尺寸，优化网格吸附，优化卡片和晋级线样式等",
       "wtt积分模型优化：调低了各个比赛的比赛系数，避免了积分和名次因一场比赛大幅度波动"
+    ],
+    "changes_en": [
+      "Improved the draws on the Competitions page: page sizing, grid snapping, and the styling of cards and progression lines",
+      "WTT points model: lowered the event coefficients so that points and rankings no longer swing wildly on the back of a single match"
     ]
   },
   {
     "version": "v1.0.6",
     "date": "2026-07-05",
     "title": "Competitions页面的draws支持",
+    "title_en": "Draws Support on the Competitions Page",
     "tag": "feature",
     "changes": [
       "在Competitions页增加了对draws的支持，用户可以查看比赛的签表信息"
+    ],
+    "changes_en": [
+      "Added draws support to the Competitions page, so users can view the bracket for each event"
     ]
   },
   {
     "version": "v1.0.5",
     "date": "2026-07-03",
     "title": "个人积分趋势图更新，同步新增wtt个人数据页",
+    "title_en": "Personal Points Trend Chart Updated, Plus a New WTT Personal Data Page",
     "tag": "feature",
     "changes": [
       "个人数据页面新增**积分变化趋势折线图**，支持按天/按周/快照三种粒度切换查看",
       "个人数据页面新增**最高积分**和**最高排名**统计概览指标",
       "新增了wtt个人数据页面，与个人数据页面对应，展示选手在wtt比赛中的积分变化趋势、最高积分和最高排名",
       "多项表格与组件字体大小微调，响应式布局优化"
+    ],
+    "changes_en": [
+      "The personal data page gained a new **points trend line chart**, switchable between daily, weekly and snapshot granularity",
+      "The personal data page gained **peak points** and **peak ranking** summary stats",
+      "Added a WTT personal data page mirroring the personal data page, showing each player's points trend, peak points and peak ranking across WTT matches",
+      "Fine-tuned font sizes across several tables and components, and improved the responsive layout"
     ]
   },
   {
     "version": "v1.0.4",
     "date": "2026-06-30",
     "title": "个人数据独立页面、选手标签系统与荣誉成就展示",
+    "title_en": "Standalone Personal Data Page, Player Tag System and Honours Display",
     "tag": "feature",
     "changes": [
       "新增**个人数据**独立页面（personal_stats.html），从数据可视化页面中分离出个人数据模块",
       "新增**荣誉成就展示**，在个人数据页面展示球员的获奖记录（如校乒赛单打冠军、团体冠军等）",
       "新增 `data/player-tags.json` 数据文件，管理选手标签与荣誉信息"
+    ],
+    "changes_en": [
+      "Added a standalone **Personal Data** page (personal_stats.html), splitting the personal data module out of the data visualisation page",
+      "Added an **honours display** showing each player's titles and awards (such as School Championship singles and team champions) on the personal data page",
+      "Added the `data/player-tags.json` data file to manage player tags and honours"
     ]
   },
   {
     "version": "v1.0.3",
     "date": "2026-06-28",
     "title": "新增更新wtt数据可视化",
+    "title_en": "New and Updated WTT Data Visualisation",
     "tag": "feature",
     "changes": [
       "新增更新wtt数据可视化（wtt_dataviz）页面，功能与样式同校数据可视化（data_viz）页面",
       "新增了2023年的wtt比赛数据"
+    ],
+    "changes_en": [
+      "Added the new WTT data visualisation (wtt_dataviz) page, with the same features and styling as the club data visualisation (data_viz) page",
+      "Added 2023 WTT match data"
     ]
   },  
   {
     "version": "v1.0.2",
     "date": "2026-06-27",
     "title": "新增更新日志页面",
+    "title_en": "New Changelog Page",
     "tag": "feature",
     "changes": [
       "新增**更新日志（Changelog）**页面，记录网站版本更新历史",
       "在数据可视化（Data Viz Beta）页面，仿照开球网，增加了个人数据分析模块"
+    ],
+    "changes_en": [
+      "Added a **Changelog** page recording the site's version history",
+      "Added a personal data analysis module to the Data Viz Beta page, in the style of the Kaiqiuwang table tennis portal"
     ]
   },
   {
     "version": "v1.0.1",
     "date": "2026-06-24",
     "title": "数据可视化优化、新闻标签扩展与筛选功能新增",
+    "title_en": "Data Visualisation Improvements, a New News Tag and Tag Filtering",
     "tag": "feature",
     "changes": [
       "修改数据可视化（Data Viz Beta）页面中的积分趋势和排名变化河流图，使之使用实时积分的数据作为最近的一个数据（最后的一个数据）",
       "给新闻标签tag类型增加“日常”用于发布一般的消息，设计合适的颜色来适配日间/夜间模式",
       "在news页和competitions页增加按标签筛选要查看的条目的功能"
+    ],
+    "changes_en": [
+      "Changed the points trend and rank change stream graphs on the Data Viz Beta page so that they use live points as the most recent (i.e. final) data point",
+      "Added a \"Daily\" news tag for general notices, with colours chosen to work in both light and dark modes",
+      "Added tag filtering of the entries shown on the News and Competitions pages"
     ]
   },
   {
     "version": "v1.0.0",
     "date": "2026-06-22",
     "title": "社团官网正式上线发布",
+    "title_en": "The Club Website Goes Live",
     "tag": "release",
     "changes": [
       "**武汉外国语学校乒乓球社团官方网站正式对外发布**",
@@ -254,6 +374,21 @@
       "支持日间/夜间模式切换",
       "支持全站搜索功能",
       "响应式设计，适配桌面端与移动端"
+    ],
+    "changes_en": [
+      "**The official website of the WFLS Table Tennis Club is now live**",
+      "Home page: club basics, history, philosophy, activities and core members",
+      "News page: the club's latest notices and daily updates",
+      "Competitions page: match schedules and results",
+      "Ranking Beta page: an Elo-based points and ranking system",
+      "Contact page: the club QQ group QR code and contact details",
+      "Core Members page: the club's management team",
+      "Data Viz Beta page: points trend and rank change charts",
+      "Q&A page: answers to common questions about the club",
+      "Chinese/English language switching",
+      "Light/dark mode switching",
+      "Site-wide search",
+      "Responsive design for desktop and mobile"
     ]
   }
 ]

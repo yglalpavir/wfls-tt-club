@@ -164,8 +164,10 @@ function startRun(payload){
   });
   proc.on('close', code => {
     if(run.status === 'running'){
-      run.status = code === 0 ? 'done' : 'error';
-      run.code = code;
+      /* 主动停止不算异常：哨兵/停止按钮触发的退出记为 stopped，
+       * 否则面板和 history 会把一次计划内的暂停显示成崩溃。 */
+      if(run.stopped){ run.status = 'stopped'; run.code = 0; }
+      else { run.status = code === 0 ? 'done' : 'error'; run.code = code; }
       run.endedAt = Date.now();
     }
     broadcast(run, { kind: 'exit', code, status: run.status, sec: +((run.endedAt - run.startedAt) / 1000).toFixed(1) });
@@ -214,13 +216,54 @@ function broadcast(run, ev){
   }
 }
 
+/* 训练进程要停的是"落检查点后自己退"，不是被杀。Windows 上 child.kill('SIGTERM')
+ * 走 TerminateProcess，进程里的信号处理器收不到——面板点「停止」等于硬杀，
+ * 一个 --step 回合（18h 预设里约 30 分钟）的训练成果直接没了。
+ * 所以先写哨兵文件，trainer 每局检查一次、在下一个回合边界优雅停；
+ * 宽限期内还没退才 SIGKILL 兜底。 */
+const STOP_FLAG_DIR = path.join(__dirname, 'data', '.stop');
+function stopFlagFor(run){
+  let name = null;
+  if(Array.isArray(run.args)){
+    const i = run.args.indexOf('--run-name');
+    if(i >= 0 && run.args[i + 1]) name = run.args[i + 1];
+  }
+  if(!name) return null;
+  return path.join(STOP_FLAG_DIR, name + '.stop');
+}
+
 function stopRun(id){
   const run = runs.get(id);
   if(!run) return false;
   if(run.status !== 'running') return false;
-  try{ run.proc.kill('SIGTERM'); }catch(e){ /* 忽略 */ }
-  const timer = setTimeout(() => { try{ run.proc.kill('SIGKILL'); }catch(e){ /* 忽略 */ } }, 2000);
-  timer.unref && timer.unref();
+
+  let flag = null;
+  try{
+    flag = stopFlagFor(run);
+    if(flag){
+      fs.mkdirSync(STOP_FLAG_DIR, { recursive: true });
+      fs.writeFileSync(flag, 'stop requested ' + new Date().toISOString(), 'utf8');
+    }
+  }catch(e){ /* 写不了哨兵就退化为直接信号 */ }
+
+  const kill = () => { try{ run.proc.kill('SIGKILL'); }catch(e){} };
+  if(!flag){                                        // 不是 input3 长跑：没有哨兵可写
+    try{ run.proc.kill('SIGTERM'); }catch(e){}
+    const t1 = setTimeout(kill, 2000);
+    t1.unref && t1.unref();
+    return true;
+  }
+  /* 有哨兵：给 trainer 时间在回合边界优雅停。宽限 90s（每局都会检查，实际几秒内生效）。 */
+  run.stopping = true; run.stopped = true;
+  run.stopFlag = flag;
+  const t2 = setTimeout(() => {
+    if(run.status === 'running'){
+      try{ run.proc.kill('SIGTERM'); }catch(e){}
+      const t3 = setTimeout(kill, 5000);
+      t3.unref && t3.unref();
+    }
+  }, 90000);
+  t2.unref && t2.unref();
   return true;
 }
 

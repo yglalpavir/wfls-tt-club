@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>(function(){try{var t=localStorage.getItem("wfls-tt-theme");var d=t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark-mode");}catch(e){}})()</script>
-    <meta name="description" content="WTT 国际乒联积分排名中心 · 男子单打 / 女子单打 / 男子双打 / 女子双打 / 混合双打">
-    <meta name="keywords" content="WTT,世界乒联,乒乓球,积分排名,男子单打,女子单打,男子双打,女子双打,混合双打">
+    <meta name="description" data-i18n-content="wtt_hub_meta_desc" content="WTT 国际乒联积分排名中心 · 男子单打 / 女子单打 / 男子双打 / 女子双打 / 混合双打">
+    <meta name="keywords" content="WTT,世界乒联,乒乓球,积分排名,男子单打,女子单打,男子双打,女子双打,混合双打" data-i18n-content="wtt_hub_kw">
     <meta name="robots" content="noindex, nofollow">
     <title>WTT Ranking Hub | WFLS Table Tennis Club</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -264,10 +264,10 @@
                 <li class="nav-item"><a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <button class="theme-toggle" id="themeToggle" aria-label="切换主题"><i class="fa-solid fa-moon"></i></button>
-                <button class="lang-toggle" id="langToggle" aria-label="切换语言"><span data-i18n="lang_btn">EN</span></button>
+                <button class="theme-toggle" id="themeToggle" data-i18n-aria="nav_aria_theme" aria-label="切换主题"><i class="fa-solid fa-moon"></i></button>
+                <button class="lang-toggle" id="langToggle" data-i18n-aria="nav_aria_lang" aria-label="切换语言"><span data-i18n="lang_btn">EN</span></button>
             </div>
-            <button class="hamburger" id="hamburger" aria-label="菜单" aria-expanded="false" aria-controls="navMenu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+            <button class="hamburger" id="hamburger" data-i18n-aria="nav_aria_menu" aria-label="菜单" aria-expanded="false" aria-controls="navMenu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
         </div>
     </nav>
 
@@ -446,11 +446,12 @@
                         updateStatus(statusEl, cat.id, hubStatuses[cat.id]);
                     }
                     const linkEls = card.querySelectorAll('.hub-card-link');
-                    if (linkEls.length >= 4) {
+                    if (linkEls.length >= 5) {
                         linkEls[0].innerHTML = '<i class="fa-solid fa-list-ol"></i> ' + i18n[currentLang].wtt_link_rank;
                         linkEls[1].innerHTML = '<i class="fa-solid fa-chart-line"></i> ' + i18n[currentLang].wtt_link_dataviz;
                         linkEls[2].innerHTML = '<i class="fa-solid fa-user-chart"></i> ' + i18n[currentLang].wtt_link_personal;
                         linkEls[3].innerHTML = '<i class="fa-solid fa-earth-asia"></i> ' + i18n[currentLang].wtt_link_assoc;
+                        linkEls[4].innerHTML = '<i class="fa-solid fa-calendar-week"></i> ' + i18n[currentLang].nav_season_review;
                     }
                 });
             }

@@ -62,9 +62,44 @@ No npm/lint/typecheck commands exist — there are no build tools or test suites
 
 ## i18n
 
-- Translation dictionary: `js/common.js` → `i18n` object with `zh` and `en` keys
-- Language preference stored in localStorage (`wfls-lang.v1`)
-- Some ranking/chart labels are still hardcoded Chinese — verify after edits
+Goal: **EN mode renders zero Chinese** anywhere on the site, including admin / draws-editor / 404 / umpire-training / tt_game.
+
+- Translation dictionary: `js/common.js` → `i18n` object with `zh` and `en` keys. `tt_game/` is a separate sub-site with its own dictionary (`tt_game/js/i18n.js` → `window.GAME_I18N`, `gameT(key, data)`), but it shares the same `wfls-lang.v1` localStorage key.
+- Language preference stored in localStorage (`wfls-lang.v1`); default is `zh`, EN is opt-in via the toggle. `setLanguage()` applies the stored language unconditionally on boot — pages **without** a `#langToggle` still get the stored language, only the button listener is conditional.
+
+### Attribute channels (all walked by `setLanguage()`)
+
+| Attribute | Target | Notes |
+|---|---|---|
+| `data-i18n` | `innerHTML` | Replaces the **whole subtree** — child elements need no attributes of their own |
+| `data-i18n-title` | `title` | |
+| `data-i18n-placeholder` | `placeholder` | |
+| `data-i18n-aria` | `aria-label` | |
+| `data-i18n-alt` | `alt` | |
+| `data-i18n-content` | `content` | `<meta>` / `<title>` (SEO + document.title) |
+
+`<title data-i18n="..._page_title">` works because `innerHTML` on a `<title>` element drives `document.title`.
+
+### Dynamic pages MUST register a re-apply hook
+
+`setLanguage()` ends with a list of guarded `if (typeof xxxReapplyI18n === 'function')` calls. Any page that **renders Chinese from JS** must define its hook (keep the last render args in a module-level variable and re-render), or the page keeps showing the old language until reload. Existing hooks: `wttReapplyI18n`, `dataVizReapplyI18n`, `dataVizMainReapplyI18n`, `rankingReapplyI18n`, `reapplyPlayerPage`, `reapplyPersonalStats`, `seasonReviewReapplyI18n`, `matchDetailReapplyI18n`, `docsBrowserReapplyI18n`, `adminReapplyI18n`, `drawsEditorReapplyI18n`, `umpireTrainingReapplyI18n`, `gameReapplyI18n`. **When you add a page or a JS-rendered view, add its hook in the same change.**
+
+### Display-layer dictionaries (never translate the data key)
+
+`js/common.js` provides `eventTypeLabel()` / `wttEventTypeLabel()` / `seasonLabel()` / `playerTagLabel()` / `playerHonorLabel()` / `playerRole()` / `playerDescription()` / `fmtDate()` / `fmtDateFrom()`, all driven by `*_KEY_MAP` tables + dictionary keys (`ev_*`, `wtt_ev_*`, `season_*`, `ptag_*`, `phonor_*`, `date_*`). Data values stay Chinese — the engine, validators, colour maps and the submission pipeline all key off them. Only the **display** is translated; `i18nMapped()` falls back to the original value when a key is missing.
+
+### Content data uses `_en` sibling fields
+
+Prose content (news / qa / competitions / about / changelog / players `description`+`role` / draws / umpire-quiz) carries `_en` siblings rather than dictionary keys. `sync_content.py` carries them through `index.json`, `search.json` (so English search can hit English body text) and version snapshots; renderers prefer `_en` when `currentLang === 'en'` and fall back to the Chinese value when missing. `tools/i18n_audit.py --data-only` reports entries missing `_en`.
+
+### Auditing
+
+```bash
+python tools/i18n_audit.py            # warn-mode scan of HTML / JS / data residuals
+python tools/i18n_audit.py --strict   # exit 1 on any residual (for CI once clean)
+```
+
+Warn mode by default — it cannot see language ternaries, so it over-reports. The authoritative check is a browser sweep in EN mode (see `docs/reports/plan-2026-09-28-i18n-en.md` for the page checklist).
 
 ## File structure quick reference
 

@@ -227,8 +227,8 @@ async function wtaLoadData() {
         });
 
         const isFlat = wttSettings && wttSettings.scoreMode === 'flat1300';
-        if (!isFlat && !wttInitialScoresData) throw new Error('initial-scores 加载失败');
-        if (!wttEventCoefficients || !wttSeasonsData) throw new Error('核心数据加载失败');
+        if (!isFlat && !wttInitialScoresData) throw new Error(i18n[currentLang].wtt_err_initial_short);
+        if (!wttEventCoefficients || !wttSeasonsData) throw new Error(i18n[currentLang].wtt_err_core);
 
         // 异步分块计算排名时间线
         setP(wttLoadPhasePct('calc', 0, 1), '', i18n[currentLang].wtt_calculating);
@@ -236,7 +236,7 @@ async function wtaLoadData() {
             setP(wttLoadPhasePct(phase || 'calc', current, total),
                 (label ? label + ' · ' : '') + i18n[currentLang].wtt_snapshot.replace('{current}', current).replace('{total}', total));
         });
-        if (!wttRankingTimeline || !wttRankingTimeline.length) throw new Error('排名计算结果为空');
+        if (!wttRankingTimeline || !wttRankingTimeline.length) throw new Error(i18n[currentLang].wtt_err_no_timeline);
 
         wttStopLoadingTimer(mountId);
         const el = document.getElementById(mountId);

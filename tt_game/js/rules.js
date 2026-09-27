@@ -15,9 +15,9 @@ function pointTo(winner, msg){
   state = 'pointPause'; ballDead = true;
   longestRally = Math.max(longestRally, rallyCount);
   if(typeof bandit!=='undefined') bandit.onPointEnded(winner);   // 在线学习：归因本回合打法
-  if(typeof TT_STATS !== 'undefined'){ TT_STATS.sync(); TT_STATS.record(winner, msg); }   // 实机遥测（唯一可信判据）
-  if(winner==='player'){ scoreYou++; flash('you'); toast('得分!', msg, 'you'); playScore(true); }
-  else{ scoreAi++; flash('ai'); toast('失分', msg, 'ai'); playScore(false); }
+  if(typeof TT_STATS !== 'undefined'){ TT_STATS.sync(); TT_STATS.record(winner, gameTzh(msg)); }   // 实机遥测（唯一可信判据 · 内部口径恒为中文）
+  if(winner==='player'){ scoreYou++; flash('you'); toast(gameT('g_toast_point'), gameT(msg), 'you'); playScore(true); }
+  else{ scoreAi++; flash('ai'); toast(gameT('g_toast_lost'), gameT(msg), 'ai'); playScore(false); }
   updateScoreUI();
   if((scoreYou>=11 || scoreAi>=11) && Math.abs(scoreYou-scoreAi)>=2){
     state = 'over';
@@ -38,15 +38,15 @@ function watchRestart(){
   scoreYou = scoreAi = 0; longestRally = 0; ballDead = true;
   $('endOverlay').classList.add('hidden'); $('confetti').innerHTML = '';
   updateScoreUI();
-  setStatus('AI 斗蛐蛐 · '+MODEL_NAMES[fightL]+' vs '+MODEL_NAMES[fightR]+' · 系列 '+seriesWinsL+' : '+seriesWinsR+' · 新一大局');
+  setStatus(()=>gameT('g_st_watch_series', {a: modelLabel(fightL), b: modelLabel(fightR), l: seriesWinsL, r: seriesWinsR}));
   setupServe();
 }
 function resolveOut(){
   if(ballDead) return;
   let winner, msg;
-  if(isServe){ winner = other(server); msg = '发球出界'; }
-  else if(shotBouncedOpp){ winner = lastHitter; msg = '对手未能回球'; }
-  else{ winner = other(lastHitter); msg = (lastNetBy===lastHitter) ? (willNet ? '对下旋抢点 · 下网!' : '下网!') : '出界!'; }
+  if(isServe){ winner = other(server); msg = 'g_msg_serve_out'; }
+  else if(shotBouncedOpp){ winner = lastHitter; msg = 'g_msg_no_return'; }
+  else{ winner = other(lastHitter); msg = (lastNetBy===lastHitter) ? (willNet ? 'g_msg_rush_net' : 'g_msg_net') : 'g_msg_out'; }
   pointTo(winner, msg);
 }
 function rulesOnBounce(side){
@@ -55,27 +55,27 @@ function rulesOnBounce(side){
     const own = server, opp = other(server);
     if(!serveBouncedOwn){                                        // 尚未首跳
       if(side===own){ serveBouncedOwn = true; return; }          // 首跳己方半台 ✓
-      if(netLet){ toast('LET!', '擦网 · 重发球', 'gold', 1200);
+      if(netLet){ toast('LET!', gameT('g_msg_let'), 'gold', 1200);
         ballDead = true; state = 'pointPause';
         setTimeout(()=>{ if(state==='pointPause') setupServe(); }, 1300); return; }
-      pointTo(opp, '发球失误 · 未先落自己半台'); return;          // 首跳落在对方 → 犯规（ITTF 两跳规则的逆转）
+      pointTo(opp, 'g_msg_serve_first'); return;          // 首跳落在对方 → 犯规（ITTF 两跳规则的逆转）
     }
     // 已首跳己方：第二次触台应落在对方半台
     if(side===opp){
-      if(netLet){ toast('LET!', '擦网 · 重发球', 'gold', 1200);
+      if(netLet){ toast('LET!', gameT('g_msg_let'), 'gold', 1200);
         ballDead = true; state = 'pointPause';
         setTimeout(()=>{ if(state==='pointPause') setupServe(); }, 1300); return; }
       isServe = false; shotBouncedOpp = true; canHit[opp] = true;  // 合法发球完成（两跳）
       return;
     }
-    pointTo(opp, '发球失误 · 两跳都在自己半台'); return;
+    pointTo(opp, 'g_msg_serve_twice_own'); return;
   }
   const opp = other(lastHitter);
   if(side===opp){
     if(!shotBouncedOpp){ shotBouncedOpp = true; canHit[side] = true; }
-    else pointTo(lastHitter, '双跳 · 回球失败');
+    else pointTo(lastHitter, 'g_msg_double');
   }else{
-    pointTo(opp, lastNetBy===lastHitter ? '下网!' : '未过网');
+    pointTo(opp, lastNetBy===lastHitter ? 'g_msg_net' : 'g_msg_not_over');
   }
 }
 
@@ -89,9 +89,9 @@ function setupServe(override){
   updateScoreUI();
   const auto = (mode==='menu' || mode==='watch');   // 观看模式：双方都自动发球
   if(server==='player' && !auto){
-    setStatus('你的发球 · A=上旋(默认下旋) S/D=左右旋 Q/E=强度 · 点击发出');
+    setStatus(()=>gameT('g_st_your_serve'));
   }else{
-    setStatus(server==='player' ? '发球!' : 'AI 发球…');
+    setStatus(server==='player' ? (()=>gameT('g_st_serve')) : (()=>gameT('g_st_ai_serve')));
     setTimeout(()=>{ if(state==='awaitServe') startToss(); }, 1000+Math.random()*500);
   }
 }
@@ -125,7 +125,7 @@ function startToss(){
   pad.serveSide = servePlan.side || 0;                       // 侧旋 → 触球横向扫（仅动画，不影响物理）
   beginWindup(pad, 'serveTop', 0.5);
   playServe();
-  setStatus(isP ? '抛球发球!' : 'AI 发球!');
+  setStatus(isP ? (()=>gameT('g_st_toss')) : (()=>gameT('g_st_ai_serve2')));
 }
 /* solveShot 已移至 simcore.js（SIM.solveShot，浏览器/训练器单一物理源） */
 function strikeServe(){
@@ -174,5 +174,5 @@ function strikeServe(){
   strikeSwing(isP?playerPad:aiPad, 0.5);
   state = 'rally';
   playPaddleHit(0.5);
-  setStatus('回合进行中 · 发球先落己方再弹过网 · 看胶面翻转预判 AI 出球');
+  setStatus(()=>gameT('g_st_rally'));
 }

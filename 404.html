@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>(function(){try{var t=localStorage.getItem("wfls-tt-theme");var d=t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark-mode");}catch(e){}})()</script>
-    <meta name="description" content="WFLS Table Tennis Club - 页面未找到">
+    <meta name="description" content="WFLS Table Tennis Club - 页面未找到" data-i18n-content="nf_meta_desc">
     <meta name="robots" content="noindex, follow">
-    <title>404 - 页面未找到 | WFLS Table Tennis Club</title>
+    <title data-i18n="nf_page_title">404 - 页面未找到 | WFLS Table Tennis Club</title>
     <link rel="icon" type="image/svg+xml" href="Assets/files/favicon_4DA3FF.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -321,33 +321,39 @@
             <div class="error-code">404</div>
 
             <!-- 提示文字 -->
-            <h1 class="error-title">这里不存在页面~</h1>
-            <p class="error-desc">你访问的页面可能已被移除、更名，<br>或暂时不可用。</p>
+            <h1 class="error-title" data-i18n="nf_title">这里不存在页面~</h1>
+            <p class="error-desc" data-i18n="nf_desc">你访问的页面可能已被移除、更名，<br>或暂时不可用。</p>
 
             <!-- 分隔线 -->
             <div class="divider"></div>
 
             <!-- 猜你想找 -->
-            <p class="guess-label">猜你想找</p>
+            <p class="guess-label" data-i18n="nf_guess">猜你想找</p>
             <div class="quick-links">
                 <a href="/wfls-tt-club/" class="quick-link primary">
-                    <i class="fa-solid fa-house"></i> 返回首页
+                    <i class="fa-solid fa-house"></i> <span data-i18n="nf_home">返回首页</span>
                 </a>
                 <a href="/wfls-tt-club/news.html" class="quick-link outline">
-                    <i class="fa-solid fa-newspaper"></i> 新闻
+                    <i class="fa-solid fa-newspaper"></i> <span data-i18n="nf_news">新闻</span>
                 </a>
                 <a href="/wfls-tt-club/ranking.html" class="quick-link outline">
-                    <i class="fa-solid fa-trophy"></i> 排名
+                    <i class="fa-solid fa-trophy"></i> <span data-i18n="nf_ranking">排名</span>
                 </a>
             </div>
 
+            <button class="lang-toggle" id="langToggle" type="button" aria-label="切换语言" data-i18n-aria="nav_aria_lang" style="display:block;margin:24px auto 0;padding:6px 18px;border-radius:999px;border:1.5px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.85);font-family:var(--font-en);font-size:0.8rem;font-weight:600;letter-spacing:1px;cursor:pointer;transition:all 0.3s cubic-bezier(0.4,0,0.2,1);"><span data-i18n="lang_btn">EN</span></button>
+
             <!-- 倒计时 -->
             <p class="countdown">
-                <span id="countdownNum">10</span> 秒后自动跳转回首页
+                <span id="countdownNum">10</span> <span data-i18n="nf_countdown" style="color:inherit;font-weight:inherit;font-size:inherit;">秒后自动跳转回首页</span>
             </p>
         </div>
     </div>
 
+    <!-- common.js injects a global search button/overlay, but initSearch() lives in main.js
+         (not loaded here) — disable the injection so 404 doesn't show a dead control. -->
+    <script>window.__WFLS_DISABLE_SEARCH__ = true;</script>
+    <script src="js/common.js"></script>
     <script>
         (function() {
             var seconds = 10;

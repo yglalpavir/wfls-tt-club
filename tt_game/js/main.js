@@ -51,7 +51,7 @@ function updateAimReticle(dt){
   const zone = aim.z < -0.85 ? 'deep' : 'short';
   if(zone!==lastZone && state==='rally'){
     lastZone = zone;
-    setStatus(zone==='deep' ? '回合进行中 · 压深压制' : '回合进行中 · 摆短控制');
+    setStatus(()=>gameT(zone==='deep' ? 'g_st_deep' : 'g_st_short'));
   }
 }
 /* 挥拍条:量化 + 脏检查,值变化才写 style;颜色/发光用 .neg 类切换(见 hud.css) */
@@ -67,7 +67,7 @@ function updateSpinMeter(){
     smFill.style.left = neg ? (50-w)+'%' : '50%';
   }
   if(neg !== smNeg){ smNeg = neg; smFill.classList.toggle('neg', neg); }
-  const txt = Math.abs(playerPad.svx)>0.8 ? (neg?'◀ 左旋蓄力':'右旋蓄力 ▶') : '横向滑动蓄力';
+  const txt = Math.abs(playerPad.svx)>0.8 ? gameT(neg ? 'g_charge_l' : 'g_charge_r') : gameT('g_swipe_charge');
   if(txt !== smTxt){ smTxt = txt; smVal.textContent = txt; }
 }
 let counterOn = null;
@@ -81,8 +81,8 @@ function updatePushHint(){
   const on = mode==='play' && state==='rally' && !ballDead && lastHitter==='ai' && relTop() < -8;
   if(on !== pushOn){ pushOn = on; pushHintEl.classList.toggle('on', on); }
   if(!on) return;
-  const t = ctrlHold ? '◎ 搓球 · 拍面放平'
-    : ('◎ 下旋来球 · ' + (TOUCH ? '按住「搓」钮搓球' : '按住 Ctrl 搓球'));
+  const t = ctrlHold ? gameT('g_push_now')
+    : gameT(TOUCH ? 'g_push_hint_touch' : 'g_push_hint');
   if(t !== pushTxtV){ pushTxtV = t; pushHintEl.textContent = t; }
 }
 /* 挥拍相位：ready(待机) → windup(引拍) → strike(挥拍/随挥) → ready
@@ -305,4 +305,10 @@ updateScoreUI();
 demoServe();
 if(TOUCH) applyTouchTexts();   // demoServe 可能重写状态行，最后再按触屏替换文案
 fitCameraToAspect();
+/* 语言切换总钩子：i18n.js 在 setGameLanguage() 里调用(本文件最后加载 → 钩子已就绪) */
+window.gameReapplyI18n = function(){
+  ['uiReapplyI18n', 'inputReapplyI18n'].forEach(fn=>{
+    if(typeof window[fn] === 'function'){ try{ window[fn](); }catch(e){ if(window.console) console.warn(e); } }
+  });
+};
 animate();

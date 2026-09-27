@@ -32,8 +32,8 @@ async function wttLoadRankingDataForPlayer() {
 
         // flat1300 模式不需要 initialScoresData
         const isFlat = wttSettings && wttSettings.scoreMode === 'flat1300';
-        if (!isFlat && !wttInitialScoresData) throw new Error('WTT initial-scores 加载失败');
-        if (!wttEventCoefficients || !wttSeasonsData) throw new Error('WTT数据加载失败');
+        if (!isFlat && !wttInitialScoresData) throw new Error(i18n[currentLang].wtt_err_initial);
+        if (!wttEventCoefficients || !wttSeasonsData) throw new Error(i18n[currentLang].wtt_err_data);
 
         // 异步分块计算（带进度回调）
         setP(wttLoadPhasePct('calc', 0, 1), '', i18n[currentLang].wtt_calculating);
@@ -208,7 +208,7 @@ function wttPpRenderMatchTable(playerName, records) {
         if (r.isBonus) {
             const cc = r.change >= 0 ? 'score-change-positive' : 'score-change-negative';
             const sign = r.change >= 0 ? '+' : '';
-            return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(r.type)}</td><td>-</td><td class="result-win">${i18n[currentLang].wtt_bonus}</td>${hasScore ? '<td></td>' : ''}<td>${r.pre.toFixed(1)}</td><td class="${cc}">${sign}${r.change.toFixed(1)}</td><td>${r.post.toFixed(1)}</td></tr>`;
+            return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(i18n[currentLang].score_type_bonus)}</td><td>-</td><td class="result-win">${i18n[currentLang].wtt_bonus}</td>${hasScore ? '<td></td>' : ''}<td>${r.pre.toFixed(1)}</td><td class="${cc}">${sign}${r.change.toFixed(1)}</td><td>${r.post.toFixed(1)}</td></tr>`;
         }
         const res = r.isWin ? '<td class="result-win">' + i18n[currentLang].score_result_win + '</td>' : '<td class="result-loss">' + i18n[currentLang].score_result_loss + '</td>';
         const signRaw = r.rawChange >= 0 ? '+' : '';
@@ -216,8 +216,8 @@ function wttPpRenderMatchTable(playerName, records) {
         const mdUrl = escapeHtml(buildMatchDetailUrl(r.date, r.type, r.isWin ? playerName : r.opp, r.isWin ? r.opp : playerName, r.n, wttCurrentCategory));
         /* 负行按球员视角展示比分/局分（存储为胜者视角，对调数字、局序不变） */
         const gamesView = playerViewGames(r.games, r.isWin);
-        const scoreCell = hasScore ? `<td${gamesView && gamesView.length ? ` title="${i18n[currentLang].sb_games_label || '局分'}：${escapeHtml(gamesView.join(' '))}"` : ''}>${r.score ? escapeHtml(playerViewScore(r.score, r.isWin)) : '-'}</td>` : '';
-        return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(r.type)}</td><td>${wttLinkPlayerName(r.opp)}</td>${res}${scoreCell}<td>${r.pre.toFixed(1)}</td><td class="${cc}">${signRaw}${r.rawChange.toFixed(1)}</td><td>${r.post.toFixed(1)}</td></tr>`;
+        const scoreCell = hasScore ? `<td${gamesView && gamesView.length ? ` title="${i18n[currentLang].sb_games_label || '局分'}${i18n[currentLang].wtt_colon || '：'}${escapeHtml(gamesView.join(' '))}"` : ''}>${r.score ? escapeHtml(playerViewScore(r.score, r.isWin)) : '-'}</td>` : '';
+        return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(wttEventTypeLabel(r.type))}</td><td>${wttLinkPlayerName(r.opp)}</td>${res}${scoreCell}<td>${r.pre.toFixed(1)}</td><td class="${cc}">${signRaw}${r.rawChange.toFixed(1)}</td><td>${r.post.toFixed(1)}</td></tr>`;
     }).join('');
 
     container.innerHTML = `

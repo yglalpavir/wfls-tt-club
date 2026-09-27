@@ -22,7 +22,8 @@ const QUALITY = (() => {
     med:  { antialias: false, dprCap: 1.5,  shadow: 1, shadowSize: 1024 },
     low:  { antialias: false, dprCap: 1.25, shadow: 0, shadowSize: 1024 },
   };
-  const MODE_LABEL = { auto: '自动', high: '高', med: '中', low: '低' };
+  const MODE_LABEL = { auto: '自动', high: '高', med: '中', low: '低' };   // zh 兜底
+  const MODE_KEYS  = { auto: 'g_q_auto', high: 'g_q_high', med: 'g_q_med', low: 'g_q_low' };
 
   /* ---- 档位来源:URL 参数 > localStorage > 自动检测 ---- */
   function detectTier(){
@@ -108,7 +109,7 @@ const QUALITY = (() => {
     get shadow(){ return TIERS[tier].shadow; },           // 0=关 1=PCF 2=PCFSoft
     get shadowSize(){ return TIERS[tier].shadowSize; },
     get resScale(){ return SCALES[scaleIdx]; },
-    modeLabel(){ return MODE_LABEL[mode]; },
+    modeLabel(){ return (typeof gameT === 'function') ? gameT(MODE_KEYS[mode]) : MODE_LABEL[mode]; },
     init(r){ renderer = r; appliedShadowType = TIERS[tier].shadow === 2 ? THREE.PCFSoftShadowMap : THREE.PCFShadowMap; applyRes(); },
     tick,
     setMode(m){

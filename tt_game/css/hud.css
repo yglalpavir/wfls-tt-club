@@ -173,7 +173,7 @@ kbd{display:inline-block;border:1px solid var(--line);border-radius:7px;
   box-shadow:0 2px 0 rgba(10,16,30,.25),inset 0 1px 0 rgba(255,255,255,.7)}
 .assistTag{color:var(--gold-l);letter-spacing:2px;font-size:11.5px;font-weight:600;
   text-shadow:0 0 12px rgba(240,165,0,.4)}
-#btns{display:flex;gap:10px}
+#btns{display:flex;gap:10px;flex-wrap:wrap}
 /* 通用按钮：官网 .btn-secondary 白玻璃胶囊 */
 .btn{position:relative;display:inline-flex;align-items:center;justify-content:center;
   background:var(--glass);backdrop-filter:var(--blur);

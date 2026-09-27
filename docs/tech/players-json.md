@@ -130,6 +130,7 @@
 | 类型 | `string` |
 | 约束 | `role` 非空 ⇒ 该球员自动出现在社团骨干页 `members.html`（`loadMembersData()` 筛选 `p.role` 非空者）。 |
 | 用途 | 骨干卡片角色标签、`player.html` 的角色 chip（`player-role-chip`）、搜索摘要。 |
+| 英文 | 同级可选字段 `role_en`（`string`）。英文模式下 `playerRole()` 优先取 `role_en`，缺失回退 `role`（复合职务用 `&` 连接，如 `社长&新高二校队成员` → `President & New Grade-11 School Team Member`）。 |
 
 ### 3.9 `qq` — QQ 号（可选，用于头像）
 
@@ -145,6 +146,9 @@
 | 类型 | `string` |
 | 格式 | 支持 `\n` 换行；也可包含 `**加粗**`（见 `renderAllMembersPage` 使用 `formatExcerpt` 渲染）。 |
 | 用途 | 骨干页卡片描述、全站搜索的匹配文本、`player.html` 档案区。 |
+| 英文 | 同级可选字段 `description_en`（`string`）。英文模式下 `playerDescription()` 优先取 `description_en`，缺失回退 `description`。 |
+
+> **`tags` / `honors` 不要加 `_en`**：这两个数组的值是显示层字典（`ptag_*` / `phonor_*`）的查表键，同时也被标签筛选与 `personal-stats` 的标签合并规则按原值引用。翻译只发生在 `playerTagLabel()` / `playerHonorLabel()` 的显示结果上，数组本身保持中文。
 
 ### 3.11 `status` — 在校状态
 

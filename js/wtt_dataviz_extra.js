@@ -34,7 +34,8 @@ function buildFrequencyBuckets(records, bucketType) {
             return (_L.chart_axis_ym_tpl || '{y}年{m}月').replace('{y}', y).replace('{m}', String(parseInt(m)));
         }
         const d = new Date(key + 'T00:00:00');
-        return (d.getMonth() + 1) + '月' + d.getDate() + '日';
+        const _Ld = i18n[currentLang] || {};
+        return (_Ld.date_md || '{m}月{d}日').replace('{m}', String(d.getMonth() + 1)).replace('{d}', String(d.getDate()));
     }
     for (const r of records) {
         const k = keyOf(r['日期']);
@@ -1203,7 +1204,7 @@ function wttRenderMatchFrequency(bucketType, count) {
 
     const labels = buckets.map(b => b.label);
     const datasets = sortedTypes.map(([t], idx) => {
-        return { label: t, data: buckets.map(b => b.types[t] || 0), backgroundColor: WTT_CHART_COLORS[idx % WTT_CHART_COLORS.length], stack: 'freq' };
+        return { label: wttEventTypeLabel(t), data: buckets.map(b => b.types[t] || 0), backgroundColor: WTT_CHART_COLORS[idx % WTT_CHART_COLORS.length], stack: 'freq' };
     });
 
     try {

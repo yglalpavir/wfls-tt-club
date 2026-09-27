@@ -72,10 +72,10 @@ function renderPlayerHeader(player) {
     const rank = getCurrentRank(player.name);
     const row = snap ? snap.row : null;
     const curScore = row && row['当前积分'] != null ? (typeof row['当前积分'] === 'number' ? row['当前积分'].toFixed(1) : row['当前积分']) : '-';
-    const roleHtml = player.role ? `<span class="player-role-chip"><i class="fa-solid fa-user-tie"></i> ${escapeHtml(String(player.role))}</span>` : '';
+    const roleHtml = player.role ? `<span class="player-role-chip"><i class="fa-solid fa-user-tie"></i> ${escapeHtml(String(playerRole(player)))}</span>` : '';
     const statusHtml = `<span class="player-status-chip ${player.status === 'active' ? 'active' : 'alumni'}"><i class="fa-solid fa-circle"></i> ${player.status === 'active' ? i18n[currentLang].pp_status_active : i18n[currentLang].pp_status_alumni}</span>`;
-    const tagsHtml = (player.tags || []).map(t => `<span class="personal-tag-badge">${escapeHtml(String(t))}</span>`).join('');
-    const honorsHtml = (player.honors || []).map(h => `<span class="personal-honor-badge"><i class="fa-solid fa-medal"></i> ${escapeHtml(String(h))}</span>`).join('');
+    const tagsHtml = (player.tags || []).map(t => `<span class="personal-tag-badge">${escapeHtml(String(playerTagLabel(t)))}</span>`).join('');
+    const honorsHtml = (player.honors || []).map(h => `<span class="personal-honor-badge"><i class="fa-solid fa-medal"></i> ${escapeHtml(String(playerHonorLabel(h)))}</span>`).join('');
 
     const header = document.createElement('div');
     header.className = 'player-profile glass-card';
@@ -158,7 +158,7 @@ function renderPlayerMatchTable(playerName, records) {
         if (r.isBonus) {
             const cc = r.change >= 0 ? 'score-change-positive' : 'score-change-negative';
             const sign = r.change >= 0 ? '+' : '';
-            return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(r.type)}</td><td>-</td><td class="result-win">${i18n[currentLang].score_type_bonus}</td>${hasScore ? '<td></td>' : ''}<td>${r.pre.toFixed(1)}</td><td class="${cc}">${sign}${r.change.toFixed(1)}</td><td>${r.post.toFixed(1)}</td></tr>`;
+            return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(eventTypeLabel(r.type))}</td><td>-</td><td class="result-win">${i18n[currentLang].score_type_bonus}</td>${hasScore ? '<td></td>' : ''}<td>${r.pre.toFixed(1)}</td><td class="${cc}">${sign}${r.change.toFixed(1)}</td><td>${r.post.toFixed(1)}</td></tr>`;
         }
         const res = r.isWin ? '<td class="result-win">' + i18n[currentLang].score_result_win + '</td>' : '<td class="result-loss">' + i18n[currentLang].score_result_loss + '</td>';
         const signRaw = r.rawChange >= 0 ? '+' : '';
@@ -168,7 +168,7 @@ function renderPlayerMatchTable(playerName, records) {
         /* 负行按球员视角展示比分/局分（存储为胜者视角，对调数字、局序不变） */
         const gamesView = playerViewGames(r.games, r.isWin);
         const scoreCell = hasScore ? `<td${gamesView && gamesView.length ? ` title="${i18n[currentLang].sb_games_label || '局分'}：${escapeHtml(gamesView.join(' '))}"` : ''}>${r.score ? escapeHtml(playerViewScore(r.score, r.isWin)) : '-'}</td>` : '';
-        return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(r.type)}</td><td>${linkPlayerName(r.opp)}</td>${res}${scoreCell}<td>${r.pre.toFixed(1)}</td><td class="${cc}">${signRaw}${r.rawChange.toFixed(1)}<span class="decayed-note">（${signDec}${r.change.toFixed(1)}）</span></td><td>${r.post.toFixed(1)}</td></tr>`;
+        return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(eventTypeLabel(r.type))}</td><td>${linkPlayerName(r.opp)}</td>${res}${scoreCell}<td>${r.pre.toFixed(1)}</td><td class="${cc}">${signRaw}${r.rawChange.toFixed(1)}<span class="decayed-note">（${signDec}${r.change.toFixed(1)}）</span></td><td>${r.post.toFixed(1)}</td></tr>`;
     }).join('');
 
     container.innerHTML = `
@@ -218,7 +218,7 @@ function renderPlayerDoublesTable(playerName) {
         const gamesView = playerViewGames(r.games, r.isWin);
         const scoreCell = hasScore ? `<td${gamesView && gamesView.length ? ` title="${i18n[currentLang].sb_games_label || '局分'}：${escapeHtml(gamesView.join(' '))}"` : ''}>${r.score ? escapeHtml(playerViewScore(r.score, r.isWin)) : '-'}</td>` : '';
         const oppHtml = r.opp.map(n => linkPlayerName(n)).join('<span class="pair-name-sep">/</span>');
-        return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(r.type)}</td><td>${linkPlayerName(r.partner)}</td><td>${oppHtml}</td>${res}${scoreCell}</tr>`;
+        return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(eventTypeLabel(r.type))}</td><td>${linkPlayerName(r.partner)}</td><td>${oppHtml}</td>${res}${scoreCell}</tr>`;
     }).join('');
     container.innerHTML = `
         <div class="personal-card glass-card match-list-card">

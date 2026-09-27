@@ -19,7 +19,9 @@
         "title": "十二强争冠赛海报 · 信息完整版（A4 竖版）"
       }
     ],
-    "visible": null
+    "visible": null,
+    "title_en": "Top-12 Championship & 2026 Club Exhibition Tournament",
+    "excerpt_en": "Group stage results:\nGroup A 1. REN Anzhe 2. REN Junxian\nGroup B 1. GONG Yuxuan 2. TAO Jinyuan\nGroup C 1. JIANG Zirun 2. FU Dawei\nGroup D 1. GU Ziyi 2. WANG Sibo (click for more details)"
   },
   {
     "id": "c5",
@@ -37,7 +39,9 @@
         "src": "Assets/videos/2026-06-04-001.mp4"
       }
     ],
-    "visible": null
+    "visible": null,
+    "title_en": "Results: 2026 WFLS Table Tennis Singles",
+    "excerpt_en": "Champion: REN Junxian\nRunner-up: FU Dawei\nBronze: MEI Zheyu, GU Ziyi (joint third) (click for more details)"
   },
   {
     "id": "c4",
@@ -49,15 +53,19 @@
       {
         "type": "file",
         "src": "Assets/files/2026-wflsttmatch-1.pdf",
-        "name": "比赛记录PDF"
+        "name": "比赛记录PDF",
+        "name_en": "Match Records (PDF)"
       },
       {
         "type": "file",
         "src": "Assets/files/2026-wflsttmatch-1.xlsx",
-        "name": "比赛记录Excel"
+        "name": "比赛记录Excel",
+        "name_en": "Match Records (Excel)"
       }
     ],
-    "visible": null
+    "visible": null,
+    "title_en": "Results: 2026 WFLS Table Tennis Team Event",
+    "excerpt_en": "Champions: WEI Luorui, CHEN Yuxuan, WANG Chengyue\nQI Ziao, LI Nanyi, DING Rui, ZHANG Shuxing (substitute)\nRunners-up: MEI Zheyu, GONG Yuxuan, WANG Tiansen\nBronze: ZHANG Chenrui, CHEN Xiangcheng, REN Junxian, YUE Zhenchun (substitute)"
   },
   {
     "id": "c3",
@@ -91,7 +99,9 @@
         "src": "Assets/videos/2026-02-28-005.mp4"
       }
     ],
-    "visible": null
+    "visible": null,
+    "title_en": "WFLS Table Tennis School Team at the Three-School League",
+    "excerpt_en": "School team members QI Ziao, REN Junxian and FU Dawei represented WFLS in the three-school league between Yingzhong, WFLS and the Provincial Experimental School\nThey lost 2:3 to the Provincial Experimental team and beat the Yingzhong team 3:0, finishing as runners-up"
   },
   {
     "id": "c2",
@@ -125,7 +135,9 @@
         "src": "Assets/videos/2025-11-30-005.mp4"
       }
     ],
-    "visible": null
+    "visible": null,
+    "title_en": "WFLS Table Tennis School Team at the Eight-School League",
+    "excerpt_en": "School team members QI Ziao, CHEN Yuxuan, WEI Luorui, LI Nanyi and REN Junxian represented WFLS at the No. 1 High School Attached to Central China Normal University, taking part in the eight-school league organised by that school's table tennis club\n(The No. 1 High School Attached to Central China Normal University, Hubei Provincial Experimental High School, Wuhan Foreign Languages School, Wuhan No. 2 High School, Wuhan High School, Wuhan No. 14 High School, Wuhan Hongshan High School, Wuhan Chengfeng School)\nThey were unfortunately knocked out in the first round"
   },
   {
     "id": "c1",
@@ -151,6 +163,8 @@
         "src": "Assets/images/2025-06-13-004.jpeg"
       }
     ],
-    "visible": null
+    "visible": null,
+    "title_en": "2025 WFLS Table Tennis Tournament Concludes",
+    "excerpt_en": "Team Event \nChampions: Gr.11 (4) Class Team \nRunners-up: Gr.10 (1) \nBronze: combined team of Gr.11 (4) and Gr.10 (10)\n\nSingles Event \nChampion: CHEN Yuxuan, Gr.10 (4) \nRunner-up: WU Fengyu, Gr.11 (10) \nBronze: WAN Yanzhe, Gr.10 (2)"
   }
 ]

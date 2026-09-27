@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>(function(){try{var t=localStorage.getItem("wfls-tt-theme");var d=t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark-mode");}catch(e){}})()</script>
-    <meta name="description" content="提交 WFLS 乒乓球社团比赛战绩。填写比赛结果，管理员审核通过后自动计入积分排名。">
-    <meta name="keywords" content="武汉外国语学校,WFLS,乒乓球,提交战绩,比赛记录,积分">
+    <meta name="description" content="提交 WFLS 乒乓球社团比赛战绩。填写比赛结果，管理员审核通过后自动计入积分排名。" data-i18n-content="submit_meta_desc">
+    <meta name="keywords" content="武汉外国语学校,WFLS,乒乓球,提交战绩,比赛记录,积分" data-i18n-content="submit_kw">
     <meta name="author" content="WFLS Table Tennis Club">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="提交战绩 | WFLS Table Tennis Club">
-    <meta property="og:description" content="填写比赛结果，管理员审核通过后自动计入积分排名。">
+    <meta property="og:title" content="提交战绩 | WFLS Table Tennis Club" data-i18n-content="submit_page_title">
+    <meta property="og:description" content="填写比赛结果，管理员审核通过后自动计入积分排名。" data-i18n-content="submit_og_desc">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://yglalpavir.github.io/wfls-tt-club/images/og-cover.png">
     <meta name="twitter:image" content="https://yglalpavir.github.io/wfls-tt-club/images/og-cover.png">
     <meta property="og:url" content="https://yglalpavir.github.io/wfls-tt-club/submit.html">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="提交战绩 | WFLS Table Tennis Club">
-    <meta name="twitter:description" content="填写比赛结果，管理员审核通过后自动计入积分排名。">
+    <meta name="twitter:title" content="提交战绩 | WFLS Table Tennis Club" data-i18n-content="submit_page_title">
+    <meta name="twitter:description" content="填写比赛结果，管理员审核通过后自动计入积分排名。" data-i18n-content="submit_og_desc">
     <link rel="canonical" href="https://yglalpavir.github.io/wfls-tt-club/submit.html">
     <title data-i18n="submit_page_title">提交战绩 | WFLS Table Tennis Club</title>
     <link rel="icon" type="image/svg+xml" href="Assets/files/favicon_4DA3FF.svg">
@@ -110,7 +110,7 @@
                     <div><label data-i18n="sb_score_total">总比分（胜-负）</label>
                         <span><input type="number" id="sbScoreW" min="0" max="4" style="width:64px;"> : <input type="number" id="sbScoreL" min="0" max="4" style="width:64px;"></span>
                     </div>
-                    <div style="flex:1;min-width:220px;"><label data-i18n="sb_games">逐局分数（胜者视角，逗号分隔）</label><input type="text" id="sbGames" style="width:100%;" title="如 11-9, 8-11, 11-7" placeholder="11-9, 8-11, 11-7"></div>
+                    <div style="flex:1;min-width:220px;"><label data-i18n="sb_games">逐局分数（胜者视角，逗号分隔）</label><input type="text" id="sbGames" style="width:100%;" title="如 11-9, 8-11, 11-7" data-i18n-title="sb_games_title" placeholder="11-9, 8-11, 11-7"></div>
                 </div>
             </div>
             <div class="sb-row" style="margin-top:12px;">
@@ -190,8 +190,8 @@
                     warn = '<span class="sb-warn">' + esc(T("sb_warn_unknown")) + "</span>";
                 }
                 var txt = r["胜者"]
-                    ? esc(r["日期"]) + " · " + esc(r["类型"]) + " · " + esc(r["赛制"]) + " · " + esc(r["胜者"]) + " " + esc(T("score_result_win")) + " " + esc(r["负者"])
-                      + (r["比分"] ? " · " + esc(r["比分"]) + (r["局分"] ? "（" + r["局分"].join(" ") + "）" : "") : "")
+                    ? esc(r["日期"]) + " · " + esc(eventTypeLabel(r["类型"])) + " · " + esc(r["赛制"]) + " · " + esc(r["胜者"]) + " " + esc(T("score_result_win")) + " " + esc(r["负者"])
+                      + (r["比分"] ? " · " + esc(r["比分"]) + (r["局分"] ? T("sb_queue_games").replace("{games}", r["局分"].join(" ")) : "") : "")
                     : esc(r["日期"]) + " · " + esc(T("score_type_bonus")) + " · " + esc(r["对象"]) + " " + esc(r["分数"]);
                 return "<li><span>" + txt + warn + '</span><span><a href="#" data-i="' + i + '" style="color:#dc3545;">' + esc(T("sb_remove")) + "</a></span></li>";
             }).join("");
@@ -201,10 +201,16 @@
             });
         }
 
+        function renderTypeOptions() {
+            if (!coeffData) return;
+            var prev = $("sbType").value;
+            $("sbType").innerHTML = Object.keys(coeffData).filter(function (k) { return typeof coeffData[k] === "number"; })
+                .map(function (k) { return '<option value="' + esc(k) + '">' + esc(eventTypeLabel(k)) + "</option>"; }).join("");
+            if (prev) $("sbType").value = prev;
+        }
         fetch("data/event-coefficient.json").then(function (r) { return r.json(); }).then(function (t) {
             coeffData = t;
-            $("sbType").innerHTML = Object.keys(t).filter(function (k) { return typeof t[k] === "number"; })
-                .map(function (k) { return '<option value="' + esc(k) + '">' + esc(k) + "</option>"; }).join("");
+            renderTypeOptions();
         }).catch(function () { msg(T("sb_err_types"), true); });
         fetch("data/players.json").then(function (r) { return r.json(); }).then(function (p) {
             ((p && p.players) || []).forEach(function (x) {
@@ -298,10 +304,11 @@
             if (queue.length === 1) {
                 var r0 = queue[0];
                 title = r0["胜者"]
-                    ? "比赛记录提交：" + r0["日期"] + " " + r0["胜者"] + " 胜 " + r0["负者"] + "（" + r0["类型"] + "·" + r0["赛制"] + "）"
-                    : "积分调整提交：" + r0["日期"];
+                    ? T("sb_issue_title_match").replace("{date}", r0["日期"]).replace("{winner}", r0["胜者"]).replace("{loser}", r0["负者"])
+                        .replace("{type}", eventTypeLabel(r0["类型"])).replace("{format}", r0["赛制"])
+                    : T("sb_issue_title_bonus").replace("{date}", r0["日期"]);
             } else {
-                title = "比赛记录提交：" + queue.length + " 条（" + queue[0]["日期"] + " 等）";
+                title = T("sb_issue_title_multi").replace("{n}", queue.length).replace("{date}", queue[0]["日期"]);
             }
             return { title: title, json: json };
         }
@@ -328,7 +335,7 @@
         });
 
         var langToggle = $("langToggle");
-        if (langToggle) langToggle.addEventListener("click", renderQueue);
+        if (langToggle) langToggle.addEventListener("click", function () { renderTypeOptions(); renderQueue(); });
     })();
     </script>
 </body>

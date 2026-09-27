@@ -1,5 +1,12 @@
 [
   {
+    "version": 2,
+    "updatedAt": "2026-09-28",
+    "title": "校队选拔",
+    "visible": null,
+    "file": "n3.v2.json"
+  },
+  {
     "version": 1,
     "updatedAt": "2025-10-16",
     "title": "校队选拔",

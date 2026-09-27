@@ -189,6 +189,7 @@ td .pill{padding:0 5px; border-radius:4px; font-size:10px}
 td .pill.done{background:rgba(143,232,200,.15); color:var(--mint)}
 td .pill.error{background:rgba(224,52,67,.15); color:#ff9aa8}
 td .pill.running{background:rgba(127,216,255,.15); color:var(--cyan)}
+td .pill.paused{background:rgba(245,183,79,.16); color:#f5b74f}
 .panescroll{flex:1; overflow:auto; min-height:0}
 .empty{padding:22px; text-align:center; color:var(--dimtx); font-size:12px}
 

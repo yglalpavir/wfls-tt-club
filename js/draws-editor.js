@@ -26,6 +26,19 @@ const LS_KEY = 'wfls-draws-editor.v1';
 
 // ===== 工具 =====
 
+// 文案走 common.js 的 i18n 词典（de_* 键）；缺 common.js 时回退中文原文
+function edT(key, zh) { return dcT(key, zh); }
+function edTpl(key, zh, vars) { return dcT(key, zh, vars); }
+
+// v3 卡片可带 _en 同级字段（title_en / player1_en / note_en …）：英文模式优先取 _en，
+// 字段缺失时回退中文。只用于只读展示层——可编辑输入框仍显示中文原值，避免改写数据。
+function edEnVal(obj, field) {
+    if (!obj) return undefined;
+    if (typeof currentLang === 'undefined' || currentLang !== 'en') return obj[field];
+    const alt = obj[field + '_en'];
+    return (alt == null || alt === '') ? obj[field] : alt;
+}
+
 function edToast(msg, isErr) {
     const el = $('statMsg');
     if (!el) return;
@@ -127,7 +140,7 @@ async function init() {
         edPlayers = ((players && players.players) || []).map(p => p && p.name).filter(Boolean);
         edCompetitions = (Array.isArray(comps) ? comps : []).map(c => ({ id: c.id, title: c.title }));
     } catch (e) {
-        edToast('加载 data/draws.json 失败 —— 请通过本地 HTTP 服务器打开（勿用 file://）', true);
+        edToast(edT('de_err_load', '加载 data/draws.json 失败 —— 请通过本地 HTTP 服务器打开（勿用 file://）'), true);
     }
 
     // 自动恢复上次未导出的编辑内容（静默，导出前可随时用「导入」还原仓库版本）
@@ -140,7 +153,8 @@ async function init() {
                 if (restored.length) {
                     edDraws = restored;
                     const when = (parsed.savedAt || '').replace('T', ' ').slice(0, 16);
-                    setTimeout(() => edToast('已恢复 ' + (when || '上次') + ' 未导出的编辑内容；如需仓库版本请用「导入」'), 300);
+                    setTimeout(() => edToast(edTpl('de_toast_restore', '已恢复 {when} 未导出的编辑内容；如需仓库版本请用「导入」',
+                        { when: when || edT('de_last', '上次') })), 300);
                 }
             }
         }
@@ -156,6 +170,8 @@ async function init() {
 }
 
 function initTheme() {
+    // common.js 已接管主题按钮（读 wfls-tt-theme + 换图标），避免双重 toggle 抵消
+    if (typeof window.setLanguage === 'function') return;
     let dark = false;
     try {
         dark = localStorage.getItem('wfls-tt-theme') === 'dark';
@@ -178,27 +194,27 @@ function bindTopbar() {
     $('btnNewDraw').addEventListener('click', () => {
         pushUndo();
         const id = dcNewId('d', edDraws.map(d => d.id));
-        edDraws.push(dcNormalizeDraw({ id, title: '新对阵表', competitionId: null, cards: [], connections: [] }));
+        edDraws.push(dcNormalizeDraw({ id, title: edT('de_new_draw_title', '新对阵表'), competitionId: null, cards: [], connections: [] }));
         selectDraw(edDraws.length - 1);
         afterChange();
-        edToast('已新建 ' + id + '，可从模板生成或手动添加卡片');
+        edToast(edTpl('de_toast_new', '已新建 {id}，可从模板生成或手动添加卡片', { id: id }));
     });
     $('btnDuplicateDraw').addEventListener('click', () => {
         const d = currentDraw();
-        if (!d) return edToast('没有可复制的对阵表', true);
+        if (!d) return edToast(edT('de_err_no_draw', '没有可复制的对阵表'), true);
         pushUndo();
         const clone = dcNormalizeDraw(JSON.parse(JSON.stringify(dcCleanDraw(d))));
         clone.id = dcNewId('d', edDraws.map(x => x.id));
-        clone.title = (d.title || '未命名') + '（副本）';
+        clone.title = (d.title || edT('de_untitled', '未命名')) + edT('de_copy_suffix', '（副本）');
         edDraws.push(clone);
         selectDraw(edDraws.length - 1);
         afterChange();
-        edToast('已复制为 ' + clone.id);
+        edToast(edTpl('de_toast_dup', '已复制为 {id}', { id: clone.id }));
     });
     $('btnDeleteDraw').addEventListener('click', () => {
         const d = currentDraw();
         if (!d) return;
-        if (!confirm('确定删除「' + (d.title || d.id) + '」？此操作可撤销。')) return;
+        if (!confirm(edTpl('de_confirm_del', '确定删除「{title}」？此操作可撤销。', { title: d.title || d.id }))) return;
         pushUndo();
         edDraws.splice(edCurrent, 1);
         edCurrent = Math.min(edCurrent, edDraws.length - 1);
@@ -220,7 +236,7 @@ function doUndo() {
     edRedoStack.push(dcSerializeDraws(edDraws));
     const snap = edUndoStack.pop();
     applySnapshot(snap);
-    edToast('已撤销');
+    edToast(edT('de_toast_undo', '已撤销'));
 }
 
 function doRedo() {
@@ -228,7 +244,7 @@ function doRedo() {
     edUndoStack.push(dcSerializeDraws(edDraws));
     const snap = edRedoStack.pop();
     applySnapshot(snap);
-    edToast('已重做');
+    edToast(edT('de_toast_redo', '已重做'));
 }
 
 function applySnapshot(json) {
@@ -254,13 +270,13 @@ function selectDraw(idx) {
 function refreshDrawSelect() {
     const sel = $('drawSelect');
     sel.innerHTML = edDraws.map((d, i) =>
-        '<option value="' + i + '"' + (i === edCurrent ? ' selected' : '') + '>' + dcEsc((d.id || '?') + ' · ' + (d.title || '未命名')) + '</option>'
+        '<option value="' + i + '"' + (i === edCurrent ? ' selected' : '') + '>' + dcEsc((d.id || '?') + ' · ' + (edEnVal(d, 'title') || edT('de_untitled', '未命名'))) + '</option>'
     ).join('');
-    if (!edDraws.length) sel.innerHTML = '<option>（无对阵表）</option>';
+    if (!edDraws.length) sel.innerHTML = '<option>' + dcEsc(edT('de_opt_nodraw', '（无对阵表）')) + '</option>';
 }
 
 function refreshCompetitionOptions() {
-    const html = '<option value="">（不关联）</option>' + edCompetitions.map(c =>
+    const html = '<option value="">' + dcEsc(edT('de_opt_none', '（不关联）')) + '</option>' + edCompetitions.map(c =>
         '<option value="' + dcEsc(c.id) + '">' + dcEsc(c.id + ' · ' + (c.title || '')) + '</option>').join('');
     $('fCompetition').innerHTML = html;
     $('tplCompetition').innerHTML = html;
@@ -275,7 +291,7 @@ function edEnsureUniqueIds() {
     const seen = new Set(), renamed = [];
     edDraws.forEach(d => {
         if (!d.id || seen.has(d.id)) {
-            const old = d.id || '（空）';
+            const old = d.id || edT('de_id_empty', '（空）');
             let i = 1;
             while (seen.has('d' + i)) i++;
             d.id = 'd' + i;
@@ -299,7 +315,9 @@ function renderCanvas() {
     const layer = $('canvasLayer');
     layer.innerHTML = '';
     if (!draw) {
-        layer.innerHTML = '<div style="padding:90px 30px;text-align:center;color:var(--text-muted);font-size:0.85rem;">没有对阵表。点击顶栏 <i class="fa-solid fa-plus"></i> 新建，或用 <i class="fa-solid fa-wand-magic-sparkles"></i> 从模板生成。</div>';
+        layer.innerHTML = '<div style="padding:90px 30px;text-align:center;color:var(--text-muted);font-size:0.85rem;">'
+            + edT('de_empty_canvas', '没有对阵表。点击顶栏 <i class="fa-solid fa-plus"></i> 新建，或用 <i class="fa-solid fa-wand-magic-sparkles"></i> 从模板生成。')
+            + '</div>';
         $('zoomVal').textContent = '—';
         return;
     }
@@ -372,7 +390,7 @@ function buildEdCard(card, pos, layout, draw) {
         el.classList.add('de-card-note');
         const t = document.createElement('div');
         t.className = 'de-card-note-text';
-        t.textContent = card.text || '';
+        t.textContent = edEnVal(card, 'text') || '';
         el.appendChild(t);
         return el;
     }
@@ -380,8 +398,8 @@ function buildEdCard(card, pos, layout, draw) {
         el.classList.add('de-card-champion');
         el.innerHTML =
             '<div class="de-card-icon"><i class="fa-solid fa-crown"></i></div>' +
-            '<div class="de-card-pname">' + dcEsc(dcPlayerName(card.player1) || '？') + '</div>' +
-            '<div class="de-card-clabel">' + dcEsc(card.label || '冠军') + '</div>';
+            '<div class="de-card-pname">' + dcEsc(dcPlayerName(edEnVal(card, 'player1')) || '？') + '</div>' +
+            '<div class="de-card-clabel">' + dcEsc(edEnVal(card, 'label') || edT('dv_champion', '冠军')) + '</div>';
         return el;
     }
 
@@ -393,19 +411,24 @@ function buildEdCard(card, pos, layout, draw) {
     const scores = dcParseScore(card.score) || [null, null];
     const w = card.winner;
 
-    function row(p, score, won, lost) {
+    // 英文模式取 player1_en / player2_en（种子号与附注仍读中文原对象，语言无关）
+    function row(p, name, score, won, lost, lp) {
         let html = '';
         if (p && p.seed != null && p.seed !== '') html += '<span class="dv-player-seed">' + dcEsc(String(p.seed)) + '</span>';
-        html += '<span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + dcEsc(p ? p.name : '待定') + '</span>';
-        if (p && p.note) html += '<span class="dv-player-note">' + dcEsc(p.note) + '</span>';
+        html += '<span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + dcEsc(name || edT('dv_tbd', '待定')) + '</span>';
+        // 附注取自本地化后的选手对象（英文形态里键名是 note_en）
+        const noteTxt = lp && (lp.note_en || lp.note) ? (lp.note_en || lp.note) : (p && p.note);
+        if (noteTxt) html += '<span class="dv-player-note">' + dcEsc(noteTxt) + '</span>';
         if (score != null) html += '<span class="de-score" style="' + (won ? '' : 'background:rgba(255,77,79,0.1);color:#cf1322;') + '">' + score + '</span>';
         return html;
     }
+    const lp1 = edEnVal(card, 'player1'), lp2 = edEnVal(card, 'player2');
+    const n1 = dcPlayerName(lp1), n2 = dcPlayerName(lp2);
 
     if (!p2) {
         const r1 = document.createElement('div');
         r1.className = 'de-card-player' + (w === 1 ? ' de-winner' : '');
-        r1.innerHTML = row(p1, scores[0], w === 1, w === 2);
+        r1.innerHTML = row(p1, n1, scores[0], w === 1, w === 2, lp1);
         el.appendChild(r1);
         const bye = document.createElement('div');
         bye.className = 'de-card-bye';
@@ -414,12 +437,12 @@ function buildEdCard(card, pos, layout, draw) {
     } else {
         const r1 = document.createElement('div');
         r1.className = 'de-card-player' + (w === 1 ? ' de-winner' : (w === 2 ? ' de-loser' : ''));
-        r1.innerHTML = row(p1, scores[0], w === 1, w === 2);
+        r1.innerHTML = row(p1, n1, scores[0], w === 1, w === 2, lp1);
         const vs = document.createElement('div');
         vs.className = 'de-card-vs';
         const r2 = document.createElement('div');
         r2.className = 'de-card-player' + (w === 2 ? ' de-winner' : (w === 1 ? ' de-loser' : ''));
-        r2.innerHTML = row(p2, scores[1], w === 2, w === 1);
+        r2.innerHTML = row(p2, n2, scores[1], w === 2, w === 1, lp2);
         el.appendChild(r1); el.appendChild(vs); el.appendChild(r2);
     }
 
@@ -431,7 +454,7 @@ function buildEdCard(card, pos, layout, draw) {
     } else if (status === 'scheduled') {
         const b = document.createElement('span');
         b.className = 'dv-status-badge dv-status-scheduled';
-        b.innerHTML = '<i class="fa-regular fa-clock"></i>待赛';
+        b.innerHTML = '<i class="fa-regular fa-clock"></i>' + dcEsc(edT('dv_status_scheduled', '待赛'));
         el.appendChild(b);
     } else if (card.score && p2) {
         const b = document.createElement('span');
@@ -457,12 +480,12 @@ function bindToolbar() {
     $('btnDupCard').addEventListener('click', duplicateSelectedCard);
     $('btnAutoArrange').addEventListener('click', () => {
         const d = currentDraw();
-        if (!d || !d.cards.length) return edToast('画布为空', true);
+        if (!d || !d.cards.length) return edToast(edT('de_err_empty_canvas', '画布为空'), true);
         pushUndo();
         dcAutoArrange(d);
         renderAll();
         afterChange();
-        edToast('已按轮次规整排布');
+        edToast(edT('de_toast_arranged', '已按轮次规整排布'));
     });
     $('btnPropagate').addEventListener('click', () => {
         const d = currentDraw();
@@ -471,8 +494,8 @@ function bindToolbar() {
         const r = dcPropagateWinners(d);
         renderAll();
         afterChange();
-        edToast(r.assigned ? ('已填充 ' + r.assigned + ' 个空位') : '没有可传播的胜者（需要已完赛卡片与连线）', !r.assigned);
-        if (r.conflicts) edToast(r.conflicts + ' 个目标位冲突，请手动检查', true);
+        edToast(r.assigned ? edTpl('de_toast_filled', '已填充 {n} 个空位', { n: r.assigned }) : edT('de_toast_noprop', '没有可传播的胜者（需要已完赛卡片与连线）'), !r.assigned);
+        if (r.conflicts) edToast(edTpl('de_toast_conflict', '{n} 个目标位冲突，请手动检查', { n: r.conflicts }), true);
     });
     // 缩放
     $('btnZoomIn').addEventListener('click', () => setZoom(edZoom * 1.2));
@@ -487,9 +510,15 @@ function setMode(mode) {
     edConnectFrom = null;
     $('modeSelect').classList.toggle('de-btn-active', mode === 'select');
     $('modeConnect').classList.toggle('de-btn-active', mode === 'connect');
-    $('modeIndicator').textContent = mode === 'select' ? '选择模式' : '连线模式：点起点 → 点终点';
-    $('modeIndicator').classList.toggle('de-mode-connect', mode === 'connect');
+    updateModeIndicator();
     renderCanvas();
+}
+
+function updateModeIndicator() {
+    $('modeIndicator').textContent = edMode === 'select'
+        ? edT('de_mode_select', '选择模式')
+        : edT('de_mode_connect', '连线模式：点起点 → 点终点');
+    $('modeIndicator').classList.toggle('de-mode-connect', edMode === 'connect');
 }
 
 function setZoom(z) {
@@ -578,7 +607,7 @@ function bindCanvas() {
             } else {
                 // 视为点击
                 onCardClick(id, e);
-                if (moved && !canDrag && edMode === 'select') edToast('自动布局模式下不可拖拽，可切换为手动网格', true);
+                if (moved && !canDrag && edMode === 'select') edToast(edT('de_err_no_drag', '自动布局模式下不可拖拽，可切换为手动网格'), true);
                 renderCanvas();
             }
             edDrag = null;
@@ -595,7 +624,7 @@ function bindCanvas() {
         const idx = parseInt(connEl.dataset.connIdx, 10);
         const cn = (draw.connections || [])[idx];
         if (!cn) return;
-        if (!confirm('删除连线 ' + cn.from + ' → ' + cn.to + ' ？')) return;
+        if (!confirm(edTpl('de_confirm_del_conn', '删除连线 {from} → {to} ？', { from: cn.from, to: cn.to }))) return;
         pushUndo();
         draw.connections.splice(idx, 1);
         afterChange();
@@ -609,7 +638,7 @@ function onCardClick(id) {
     if (edMode === 'connect') {
         if (!edConnectFrom) {
             edConnectFrom = id;
-            edToast('已选起点 ' + id + '，点击目标卡片完成连线（再次点击起点取消）');
+            edToast(edTpl('de_toast_src', '已选起点 {id}，点击目标卡片完成连线（再次点击起点取消）', { id: id }));
             renderCanvas();
             return;
         }
@@ -622,10 +651,10 @@ function onCardClick(id) {
         draw.connections = draw.connections || [];
         const exists = draw.connections.some(cn => cn.from === edConnectFrom && cn.to === id);
         if (exists) {
-            edToast('连线已存在', true);
+            edToast(edT('de_err_conn_exists', '连线已存在'), true);
         } else {
             draw.connections.push({ from: edConnectFrom, to: id, fromSide: 'right', toSide: 'left' });
-            edToast('已连线 ' + edConnectFrom + ' → ' + id);
+            edToast(edTpl('de_toast_conn', '已连线 {from} → {to}', { from: edConnectFrom, to: id }));
         }
         edConnectFrom = null;
         edSelected = id;
@@ -641,7 +670,7 @@ function onCardClick(id) {
 
 function addCard(type) {
     const draw = currentDraw();
-    if (!draw) return edToast('请先新建或选择一张对阵表', true);
+    if (!draw) return edToast(edT('de_err_pick_draw', '请先新建或选择一张对阵表'), true);
     pushUndo();
     const id = dcNewId('m', draw.cards.map(c => c.id));
     const card = { id, type: type === 'match' ? 'match' : type, col: 0, row: 0 };
@@ -650,8 +679,8 @@ function addCard(type) {
     card.col = Math.max(0, maxCol);
     const rowsInCol = draw.cards.filter(c => (c.col || 0) === card.col).map(c => c.row || 0);
     card.row = rowsInCol.length ? Math.max.apply(null, rowsInCol) + 2 : 0;
-    if (type === 'champion') card.label = '冠军';
-    if (type === 'note') card.text = '备注';
+    if (type === 'champion') card.label = edT('dv_champion', '冠军');
+    if (type === 'note') card.text = edT('de_type_note', '备注');
     draw.cards.push(card);
     edSelected = id;
     renderAll();
@@ -662,7 +691,7 @@ function deleteSelectedCard() {
     const draw = currentDraw();
     const card = selectedCard();
     if (!draw || !card) return;
-    if (!confirm('删除卡片 ' + card.id + ' 及其连线？')) return;
+    if (!confirm(edTpl('de_confirm_del_card', '删除卡片 {id} 及其连线？', { id: card.id }))) return;
     pushUndo();
     draw.cards = draw.cards.filter(c => c.id !== card.id);
     draw.connections = (draw.connections || []).filter(cn => cn.from !== card.id && cn.to !== card.id);
@@ -731,8 +760,8 @@ function bindInspector() {
         if (!btn || !c) return;
         pushUndo();
         const t = btn.dataset.type;
-        if (t === 'champion' && !c.label) c.label = '冠军';
-        if (t === 'note' && !c.text) c.text = '备注';
+        if (t === 'champion' && !c.label) c.label = edT('dv_champion', '冠军');
+        if (t === 'note' && !c.text) c.text = edT('de_type_note', '备注');
         if (t !== 'champion') delete c.isChampion;
         c.type = t;
         renderAll();
@@ -804,13 +833,14 @@ function renderInspector() {
     const incoming = (draw.connections || []).filter(cn => cn.to === card.id);
     const outgoing = (draw.connections || []).filter(cn => cn.from === card.id);
     let html = '';
+    const delTitle = dcEsc(edT('de_conn_del', '删除连线'));
     incoming.forEach(cn => {
-        html += '<li><span><i class="fa-solid fa-arrow-right-long" style="color:var(--primary-blue);"></i> 来自 ' + dcEsc(cn.from) + '</span><button class="ed-conn-del" data-del-conn="' + dcEsc(cn.from) + '|' + dcEsc(cn.to) + '" title="删除连线"><i class="fa-solid fa-xmark"></i></button></li>';
+        html += '<li><span><i class="fa-solid fa-arrow-right-long" style="color:var(--primary-blue);"></i> ' + dcEsc(edT('de_conn_from', '来自')) + ' ' + dcEsc(cn.from) + '</span><button class="ed-conn-del" data-del-conn="' + dcEsc(cn.from) + '|' + dcEsc(cn.to) + '" title="' + delTitle + '"><i class="fa-solid fa-xmark"></i></button></li>';
     });
     outgoing.forEach(cn => {
-        html += '<li><span>去向 ' + dcEsc(cn.to) + ' <i class="fa-solid fa-arrow-right-long" style="color:var(--text-muted);"></i></span><button class="ed-conn-del" data-del-conn="' + dcEsc(cn.from) + '|' + dcEsc(cn.to) + '" title="删除连线"><i class="fa-solid fa-xmark"></i></button></li>';
+        html += '<li><span>' + dcEsc(edT('de_conn_to', '去向')) + ' ' + dcEsc(cn.to) + ' <i class="fa-solid fa-arrow-right-long" style="color:var(--text-muted);"></i></span><button class="ed-conn-del" data-del-conn="' + dcEsc(cn.from) + '|' + dcEsc(cn.to) + '" title="' + delTitle + '"><i class="fa-solid fa-xmark"></i></button></li>';
     });
-    if (!html) html = '<li style="color:var(--text-muted);">无连线 — 可用顶部「连线模式」建立</li>';
+    if (!html) html = '<li style="color:var(--text-muted);">' + dcEsc(edT('de_conn_none', '无连线 — 可用顶部「连线模式」建立')) + '</li>';
     $('connList').innerHTML = html;
     $('connList').querySelectorAll('[data-del-conn]').forEach(btn => {
         btn.addEventListener('click', () => {
@@ -921,10 +951,10 @@ function renderSettings() {
     const cols = Object.keys(labels).sort((a, b) => (parseInt(a, 10) || 0) - (parseInt(b, 10) || 0));
     box.innerHTML = cols.map(col =>
         '<div class="ed-round-row">' +
-        '<span class="col-no">列 ' + dcEsc(col) + '</span>' +
-        '<input type="text" data-round-col="' + dcEsc(col) + '" value="' + dcEsc(labels[col]) + '" placeholder="第' + (parseInt(col, 10) + 1) + '轮">' +
-        '<button class="ed-round-del" data-round-del="' + dcEsc(col) + '" title="删除"><i class="fa-solid fa-xmark"></i></button>' +
-        '</div>').join('') || '<p class="ed-hint">暂无自定义标签，查看器将使用默认轮次名。</p>';
+        '<span class="col-no">' + dcEsc(edT('de_col', '列')) + ' ' + dcEsc(col) + '</span>' +
+        '<input type="text" data-round-col="' + dcEsc(col) + '" value="' + dcEsc(labels[col]) + '" placeholder="' + dcEsc(edTpl('de_ph_round', '第{n}轮', { n: parseInt(col, 10) + 1 })) + '">' +
+        '<button class="ed-round-del" data-round-del="' + dcEsc(col) + '" title="' + dcEsc(edT('de_del_short', '删除')) + '"><i class="fa-solid fa-xmark"></i></button>' +
+        '</div>').join('') || '<p class="ed-hint">' + dcEsc(edT('de_hint_rounds', '暂无自定义标签，查看器将使用默认轮次名。')) + '</p>';
 
     box.querySelectorAll('input[data-round-col]').forEach(inp => {
         inp.addEventListener('focus', beginInput);
@@ -953,35 +983,37 @@ function renderSettings() {
 
 function updateStatus() {
     const d = currentDraw();
+    const cardUnit = edT('de_unit_cards', '卡片'), connUnit = edT('de_unit_conns', '连线');
     if (!d) {
-        $('statCardCount').textContent = '0 卡片';
-        $('statConnCount').textContent = '0 连线';
+        $('statCardCount').textContent = '0 ' + cardUnit;
+        $('statConnCount').textContent = '0 ' + connUnit;
         $('statProgress').textContent = '';
         return;
     }
     const s = dcDrawStats(d);
-    $('statCardCount').textContent = s.cards + ' 卡片';
-    $('statConnCount').textContent = (d.connections || []).length + ' 连线';
-    $('statProgress').textContent = s.matches ? ('比赛 ' + s.finished + '/' + s.matches + ' 已完赛' + (s.live ? ' · ' + s.live + ' 进行中' : '')) : '';
+    $('statCardCount').textContent = s.cards + ' ' + cardUnit;
+    $('statConnCount').textContent = (d.connections || []).length + ' ' + connUnit;
+    $('statProgress').textContent = s.matches ? (edTpl('de_prog_done', '比赛 {done}/{total} 已完赛', { done: s.finished, total: s.matches })
+        + (s.live ? ' · ' + edTpl('de_prog_live', '{n} 进行中', { n: s.live }) : '')) : '';
 }
 
 function showValidate() {
     const compIds = edCompetitions.map(c => c.id);
     let totalErr = 0, totalWarn = 0;
     let html = '';
-    if (!edDraws.length) html = '<p class="ed-hint">当前没有对阵表。</p>';
+    if (!edDraws.length) html = '<p class="ed-hint">' + dcEsc(edT('de_hint_no_draw', '当前没有对阵表。')) + '</p>';
     edDraws.forEach(d => {
         const v = dcValidateDraw(d, compIds);
         totalErr += v.errors.length;
         totalWarn += v.warnings.length;
-        html += '<div style="margin-bottom:10px;"><b style="font-size:0.84rem;">' + dcEsc((d.id || '?') + ' · ' + (d.title || '')) + '</b>';
-        if (!v.errors.length && !v.warnings.length) html += '<span style="color:#16a34a;font-size:0.78rem;"> ✓ 通过</span>';
+        html += '<div style="margin-bottom:10px;"><b style="font-size:0.84rem;">' + dcEsc((d.id || '?') + ' · ' + (edEnVal(d, 'title') || '')) + '</b>';
+        if (!v.errors.length && !v.warnings.length) html += '<span style="color:#16a34a;font-size:0.78rem;"> ✓ ' + dcEsc(edT('de_ok', '通过')) + '</span>';
         html += '<ul style="margin:6px 0 0 18px;font-size:0.78rem;line-height:1.7;">';
-        v.errors.forEach(e => { html += '<li style="color:var(--accent-red);">错误：' + dcEsc(e) + '</li>'; });
-        v.warnings.forEach(w => { html += '<li style="color:#b45309;">警告：' + dcEsc(w) + '</li>'; });
+        v.errors.forEach(e => { html += '<li style="color:var(--accent-red);">' + dcEsc(edT('de_lbl_error', '错误：')) + dcEsc(e) + '</li>'; });
+        v.warnings.forEach(w => { html += '<li style="color:#b45309;">' + dcEsc(edT('de_lbl_warn', '警告：')) + dcEsc(w) + '</li>'; });
         html += '</ul></div>';
     });
-    openInfoModal('校验结果（' + totalErr + ' 错误 / ' + totalWarn + ' 警告）', html);
+    openInfoModal(edTpl('de_val_title', '校验结果（{e} 错误 / {w} 警告）', { e: totalErr, w: totalWarn }), html);
 }
 
 function openInfoModal(title, bodyHtml) {
@@ -991,11 +1023,12 @@ function openInfoModal(title, bodyHtml) {
         overlay.id = 'infoModal';
         overlay.className = 'de-modal-overlay';
         overlay.style.display = 'none';
-        overlay.innerHTML = '<div class="de-modal"><div class="de-modal-title"><i class="fa-solid fa-clipboard-check"></i> <span id="infoModalTitle"></span></div><div class="de-modal-body" id="infoModalBody"></div><div class="de-modal-footer"><button class="de-btn de-btn-primary" id="infoModalClose">关闭</button></div></div>';
+        overlay.innerHTML = '<div class="de-modal"><div class="de-modal-title"><i class="fa-solid fa-clipboard-check"></i> <span id="infoModalTitle"></span></div><div class="de-modal-body" id="infoModalBody"></div><div class="de-modal-footer"><button class="de-btn de-btn-primary" id="infoModalClose">' + dcEsc(edT('de_close', '关闭')) + '</button></div></div>';
         document.body.appendChild(overlay);
         overlay.addEventListener('click', e => { if (e.target === overlay) overlay.style.display = 'none'; });
         $('infoModalClose').addEventListener('click', () => { overlay.style.display = 'none'; });
     }
+    $('infoModalClose').textContent = edT('de_close', '关闭');
     $('infoModalTitle').textContent = title;
     $('infoModalBody').innerHTML = bodyHtml;
     overlay.style.display = 'flex';
@@ -1029,8 +1062,8 @@ function bindModals() {
     $('jsonClose').addEventListener('click', () => { $('jsonModal').style.display = 'none'; });
     $('jsonCopy').addEventListener('click', () => {
         navigator.clipboard.writeText($('jsonText').value)
-            .then(() => edToast('已复制 JSON'))
-            .catch(() => edToast('复制失败，请手动选择文本', true));
+            .then(() => edToast(edT('de_toast_copy_json', '已复制 JSON')))
+            .catch(() => edToast(edT('de_err_copy', '复制失败，请手动选择文本'), true));
     });
     $('jsonApply').addEventListener('click', () => {
         try {
@@ -1039,17 +1072,17 @@ function bindModals() {
             if (Array.isArray(parsed)) {
                 edDraws = parsed.map(dcNormalizeDraw).filter(Boolean);
                 const renamed = edEnsureUniqueIds();
-                if (renamed.length) edToast('重复布表 ID 已自动改号：' + renamed.join('、'));
+                if (renamed.length) edToast(edTpl('de_toast_dup_id', '重复布表 ID 已自动改号：{list}', { list: renamed.join(edT('de_join', '、')) }));
                 edCurrent = 0;
-                edToast('已替换全部 ' + edDraws.length + ' 张对阵表');
+                edToast(edTpl('de_toast_replaced', '已替换全部 {n} 张对阵表', { n: edDraws.length }));
             } else {
                 const nd = dcNormalizeDraw(parsed);
-                if (!nd) throw new Error('无效对象');
+                if (!nd) throw new Error(edT('de_err_invalid', '无效对象'));
                 if (edCurrent < 0) { edDraws.push(nd); edCurrent = edDraws.length - 1; }
                 else edDraws[edCurrent] = nd;
                 const renamed = edEnsureUniqueIds();
-                if (renamed.length) edToast('与现有布表 ID 冲突，已自动改号：' + renamed.join('、'));
-                edToast('已应用当前对阵表');
+                if (renamed.length) edToast(edTpl('de_toast_conflict_id', '与现有布表 ID 冲突，已自动改号：{list}', { list: renamed.join(edT('de_join', '、')) }));
+                edToast(edT('de_toast_applied', '已应用当前对阵表'));
             }
             edSelected = null;
             refreshDrawSelect();
@@ -1057,7 +1090,7 @@ function bindModals() {
             afterChange();
             $('jsonModal').style.display = 'none';
         } catch (e) {
-            edToast('JSON 解析失败：' + e.message, true);
+            edToast(edTpl('de_err_json', 'JSON 解析失败：{msg}', { msg: e.message }), true);
         }
     });
 
@@ -1080,16 +1113,16 @@ function bindModals() {
             if (Array.isArray(parsed)) {
                 edDraws = parsed.map(dcNormalizeDraw).filter(Boolean);
                 const renamed = edEnsureUniqueIds();
-                if (renamed.length) edToast('重复布表 ID 已自动改号：' + renamed.join('、'));
+                if (renamed.length) edToast(edTpl('de_toast_dup_id', '重复布表 ID 已自动改号：{list}', { list: renamed.join(edT('de_join', '、')) }));
                 edCurrent = 0;
-                edToast('已导入 ' + edDraws.length + ' 张对阵表');
+                edToast(edTpl('de_toast_imported', '已导入 {n} 张对阵表', { n: edDraws.length }));
             } else {
                 const nd = dcNormalizeDraw(parsed);
-                if (!nd) throw new Error('无效对象');
+                if (!nd) throw new Error(edT('de_err_invalid', '无效对象'));
                 nd.id = dcNewId('d', edDraws.map(x => x.id));
                 edDraws.push(nd);
                 edCurrent = edDraws.length - 1;
-                edToast('已追加为 ' + nd.id);
+                edToast(edTpl('de_toast_appended', '已追加为 {id}', { id: nd.id }));
             }
             edSelected = null;
             refreshDrawSelect();
@@ -1097,7 +1130,7 @@ function bindModals() {
             afterChange();
             $('importModal').style.display = 'none';
         } catch (e) {
-            edToast('导入失败：' + e.message, true);
+            edToast(edTpl('de_err_import', '导入失败：{msg}', { msg: e.message }), true);
         }
     });
 }
@@ -1111,14 +1144,14 @@ function templateModalEscapable() {
 
 function generateFromTemplate() {
     const type = $('tplType').value;
-    const title = $('tplTitle').value.trim() || '新对阵表';
+    const title = $('tplTitle').value.trim() || edT('de_new_draw_title', '新对阵表');
     const competitionId = $('tplCompetition').value || null;
     pushUndo();
     let draw = null;
     try {
         if (type === 'single') {
             const entries = $('tplEntries').value.split('\n').map(s => s.trim()).filter(Boolean);
-            if (!entries.length) { edToast('请填写参赛名单', true); edUndoStack.pop(); return; }
+            if (!entries.length) { edToast(edT('de_err_entries', '请填写参赛名单'), true); edUndoStack.pop(); return; }
             draw = dcTemplateSingleElim({
                 title, competitionId, entries,
                 thirdPlace: $('tplThird').checked,
@@ -1132,7 +1165,7 @@ function generateFromTemplate() {
                 const players = m.slice(1).join('：').split(/[、,，]/).map(s => s.trim()).filter(Boolean);
                 return name && players.length ? { name, players } : null;
             }).filter(Boolean);
-            if (!groups.length) { edToast('请按「组名: 选手1、选手2」格式填写分组', true); edUndoStack.pop(); return; }
+            if (!groups.length) { edToast(edT('de_err_groups', '请按「组名: 选手1、选手2」格式填写分组'), true); edUndoStack.pop(); return; }
             draw = dcTemplateGroups({
                 title, competitionId, groups,
                 knockout: $('tplKo').checked,
@@ -1142,7 +1175,7 @@ function generateFromTemplate() {
         }
     } catch (e) {
         edUndoStack.pop();
-        edToast('模板生成失败：' + e.message, true);
+        edToast(edTpl('de_err_tpl', '模板生成失败：{msg}', { msg: e.message }), true);
         return;
     }
     edDraws.push(dcNormalizeDraw(draw));
@@ -1150,7 +1183,7 @@ function generateFromTemplate() {
     afterChange();
     $('templateModal').style.display = 'none';
     setTimeout(zoomFit, 60);
-    edToast('模板已生成 ' + draw.id + '，可继续微调');
+    edToast(edTpl('de_toast_tpl', '模板已生成 {id}，可继续微调', { id: draw.id }));
 }
 
 // ===== 导出 =====
@@ -1180,14 +1213,14 @@ function downloadDraws() {
     setTimeout(() => URL.revokeObjectURL(a.href), 2000);
     edBaseline = json;
     markDirty();
-    edToast('已下载 draws.json —— 请用它替换仓库中的 data/draws.json 并提交');
+    edToast(edT('de_toast_download', '已下载 draws.json —— 请用它替换仓库中的 data/draws.json 并提交'));
 }
 
 function copyAll() {
     const json = buildExport();
     navigator.clipboard.writeText(json)
-        .then(() => { edBaseline = json; markDirty(); edToast('已复制全部 draws.json 到剪贴板'); })
-        .catch(() => edToast('复制失败，请用 JSON 面板手动复制', true));
+        .then(() => { edBaseline = json; markDirty(); edToast(edT('de_toast_copy_all', '已复制全部 draws.json 到剪贴板')); })
+        .catch(() => edToast(edT('de_err_copy_all', '复制失败，请用 JSON 面板手动复制'), true));
 }
 
 // ===== 键盘 =====
@@ -1232,3 +1265,15 @@ function renderAll() {
     updateUndoButtons();
     updateSelectionButtons();
 }
+
+// ===== 语言切换钩子（common.js setLanguage 探测 window.drawsEditorReapplyI18n）=====
+// 静态控件由 setLanguage 的 data-i18n 遍历覆盖，这里重画动态层：
+// 画布卡片、检查器、轮次标签、状态栏、模式指示与校验弹窗。
+window.drawsEditorReapplyI18n = function () {
+    updateModeIndicator();
+    refreshDrawSelect();
+    refreshCompetitionOptions();
+    renderAll();
+    const overlay = $('infoModal');
+    if (overlay && overlay.style.display === 'flex') showValidate();
+};

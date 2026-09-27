@@ -11,8 +11,23 @@ const counterHintEl = $('counterHint'), pushHintEl = $('pushHint');
 const stanceChipEl = $('stanceChip'), stanceTxtEl = $('stanceTxt'), stanceSubEl = $('stanceSub');
 const serveChipEl = $('serveChip'), serveTxtEl = $('serveChipTxt'), serveSideEl = $('serveChipSide');
 const touchServeEl = $('touchServe');
-function setStatus(t){ $('statusLine').textContent = t; }
+
+/* statusLine 文案:直接传字符串(已是当前语言)或传函数,语言切换时按函数重算 */
+let lastStatus = null;
+function setStatus(v){
+  lastStatus = (v === undefined || v === null) ? null : v;
+  $('statusLine').textContent = (typeof v === 'function') ? v() : v;
+}
 function repop(el){ el.classList.remove('pop'); void el.offsetWidth; el.classList.add('pop'); }
+/* 中部横幅(比分板中缝):随模式/局点/平分动态变化 */
+function midLabelText(){
+  if(mode==='watch') return gameT('g_st_series', {a: seriesWinsL, b: seriesWinsR});
+  const gpY = scoreYou>=10 && scoreYou>scoreAi, gpA = scoreAi>=10 && scoreAi>scoreYou;
+  const deuce = scoreYou>=10 && scoreYou===scoreAi;
+  if(deuce) return gameT('g_deuce');
+  if(gpY||gpA) return gameT('g_game_point_state');
+  return gameT('g_mid_label');
+}
 function updateScoreUI(){
   const py=$('ptsYou'), pa=$('ptsAi');
   if(py.textContent != String(scoreYou)){ py.textContent = scoreYou; repop(py); }
@@ -21,10 +36,7 @@ function updateScoreUI(){
   $('dotAi').classList.toggle('on', server==='ai' && state!=='over');
   const gpY = scoreYou>=10 && scoreYou>scoreAi, gpA = scoreAi>=10 && scoreAi>scoreYou;
   $('gpYou').classList.toggle('on', gpY); $('gpAi').classList.toggle('on', gpA);
-  const deuce = scoreYou>=10 && scoreYou===scoreAi;
-  $('midLabel').textContent = mode==='watch'
-    ? ('系列 '+seriesWinsL+' : '+seriesWinsR+' · 5局三胜')
-    : (deuce ? 'DEUCE · 平分' : ((gpY||gpA) ? '局点 GAME POINT' : '11分制 · ITTF 规则'));
+  $('midLabel').textContent = midLabelText();
   /* 实机遥测 chip：仅「鼠标上的tt玩家」参赛时显示（每分刷新一次） */
   if(typeof TT_STATS !== 'undefined'){
     const txt = TT_STATS.chipText(), chip = $('ttStatsChip');
@@ -36,24 +48,26 @@ function updateScoreUI(){
 function setFightNames(){
   if(mode!=='watch') return;
   const nl = $('nameYou'), nr = $('nameAi');
-  if(nl) nl.textContent = '左·'+MODEL_NAMES[fightL];
-  if(nr) nr.textContent = '右·'+MODEL_NAMES[fightR];
+  if(nl) nl.textContent = gameT('g_left_prefix') + modelLabel(fightL);
+  if(nr) nr.textContent = gameT('g_right_prefix') + modelLabel(fightR);
 }
 /* 斗蛐蛐：5局三胜结束 → 系列结果 */
 function fightEnd(){
   if(mode!=='watch') return;
+  lastEndFn = fightEnd;
   const lWin = seriesWinsL > seriesWinsR;
-  const wName = (lWin ? '左·' : '右·') + MODEL_NAMES[lWin ? fightL : fightR];
-  $('endKicker').textContent = 'AI 斗蛐蛐 · 五局三胜 · 决出冠军';
+  const wName = (lWin ? gameT('g_left_prefix') : gameT('g_right_prefix')) + modelLabel(lWin ? fightL : fightR);
+  $('endKicker').textContent = gameT('g_fight_end_kicker');
   const t = $('endTitle');
-  t.textContent = wName + ' 获胜!'; 
+  t.textContent = wName + gameT('g_win_suffix');
   t.className = 'ov-title win';
-  $('endScore').textContent = '系列 ' + seriesWinsL + ' : ' + seriesWinsR;
-  $('endStats').textContent = (MODEL_NAMES[fightL] + ' vs ' + MODEL_NAMES[fightR]) + ' · 不换边 · 最长回合 '+longestRally+' 拍';
+  $('endScore').textContent = gameT('g_series') + ' ' + seriesWinsL + ' : ' + seriesWinsR;
+  $('endStats').textContent = modelLabel(fightL) + ' vs ' + modelLabel(fightR) + gameT('g_fight_stats', {r: longestRally});
   $('endOverlay').classList.remove('hidden');
   spawnConfetti(); playWin();
 }
 let toastT = 0;
+/* toast 为瞬时提示:入参按当前语言即时翻译,切换语言不回溯已消失的提示 */
 function toast(big, sub, cls, dur){
   const el = $('toast');
   el.className = ''; $('toastBig').textContent = big; $('toastSub').textContent = sub||'';
@@ -70,18 +84,23 @@ function updateRallyChip(){
   $('rallyN').textContent = rallyCount;
   $('rallyChip').classList.toggle('hot', rallyCount>=3);
 }
+/* 握法文案(纯写 DOM,不带音效/动画 —— 供 updateStanceChip 与语言切换共用) */
+function writeStanceText(){
+  const fh = playerStance === 'forehand';
+  stanceTxtEl.textContent = gameT(fh ? 'g_stance_fh' : 'g_stance_bh');
+  stanceSubEl.textContent = windupSub ? gameT('g_windup') : gameT(fh ? 'g_stance_fh_sub' : 'g_stance_bh_sub');
+}
 function updateStanceChip(){
   if(chipState === playerStance) return;
   chipState = playerStance;
   stanceChipEl.className = playerStance;
   if(windupOn) stanceChipEl.classList.add('windup');   // className 重写会清掉引拍标记,按当前状态补回
-  stanceTxtEl.textContent = playerStance==='forehand' ? '正手 FOREHAND' : '反手 BACKHAND';
-  stanceSubEl.textContent = playerStance==='forehand' ? '极重上旋 · 重炮 · 几乎不漏球' : '快速 · 大角度 · 快撕中等旋转';
+  writeStanceText();
   void stanceChipEl.offsetWidth; stanceChipEl.classList.add('pop');
   tone(playerStance==='forehand'?340:560, 0, 0.05, 'square', 0.06);
 }
 /* 发球 chip 的红色顶边是静态样式(#serveChip.top),不再每帧 toggle */
-let serveOn = null, serveTxtV = '', serveSideV = '';
+let serveOn = null, serveTxtV = null, serveSideV = null;
 function updateServeUI(){
   if(!serveChipEl) return;
   const on = mode==='play' && (state==='awaitServe'||state==='toss') && server==='player';
@@ -89,12 +108,12 @@ function updateServeUI(){
   if(!on) return;
   // 同步当前按键到 serveCfg（发球前调节：S=左旋 D=右旋）
   serveCfg.side = (serveKeys.s?1:0) - (serveKeys.d?1:0);
-  const sideTxt = serveCfg.side===1 ? '◀ 左侧旋' : (serveCfg.side===-1 ? '▶ 右侧旋' : '直');
-  const pIdx = serveCfg.power<0.4 ? '弱' : (serveCfg.power>0.7 ? '强' : '中');
+  const sideTxt = serveCfg.side===1 ? gameT('g_serve_side_l') : (serveCfg.side===-1 ? gameT('g_serve_side_r') : gameT('g_serve_side_n'));
+  const pIdx = serveCfg.power<0.4 ? gameT('g_pw_weak') : (serveCfg.power>0.7 ? gameT('g_pw_strong') : gameT('g_pw_mid'));
   // 主标签：旋转组合（下旋发球已取消 → 恒定▲上旋 + ◀/▶侧），副标签：强度（值变化才写 DOM）
-  const t1 = '▲上旋' + (serveCfg.side!==0?'·'+sideTxt:'');
+  const t1 = gameT('g_serve_top') + (serveCfg.side!==0 ? '·'+sideTxt : '');
   if(t1 !== serveTxtV){ serveTxtV = t1; serveTxtEl.textContent = t1; }
-  const t2 = '旋转强度' + pIdx;
+  const t2 = gameT('g_serve_pow_fmt', {p: pIdx});
   if(t2 !== serveSideV){ serveSideV = t2; serveSideEl.textContent = t2; }
 }
 /* 触屏控件显隐联动（仅触屏设备生效）：搓球钮=对局中 · 发球簇=玩家发球阶段 · 退出钮=观看模式 */
@@ -125,10 +144,10 @@ function updateWindupUI(){
   }
   if(w && !windupSub){
     windupSub = true;
-    stanceSubEl.textContent = '引拍蓄力中…';
+    stanceSubEl.textContent = gameT('g_windup');
   }else if(!w && windupSub){
     windupSub = false;
-    stanceSubEl.textContent = playerStance==='forehand' ? '极重上旋 · 重炮 · 几乎不漏球' : '快速 · 大角度 · 快撕中等旋转';
+    writeStanceText();
   }
 }
 function spawnConfetti(){
@@ -143,13 +162,30 @@ function spawnConfetti(){
     c.appendChild(d);
   }
 }
+/* 终局面板的渲染器(赢/输/斗蛐蛐),语言切换时若面板可见则重画 */
+let lastEndFn = null;
 function showEnd(win){
-  $('endKicker').textContent = '比赛结束 · GAME OVER';
+  lastEndFn = ()=>showEnd(win);
+  $('endKicker').textContent = gameT('g_end_over');
   const t = $('endTitle');
-  t.textContent = win ? '胜利!' : '惜败';
+  t.textContent = win ? gameT('g_end_win') : gameT('g_lose');
   t.className = 'ov-title ' + (win?'win':'lose');
   $('endScore').textContent = scoreYou + ' : ' + scoreAi;
-  $('endStats').textContent = '最长回合 '+longestRally+' 拍 · 总得分 '+(scoreYou+scoreAi);
+  $('endStats').textContent = gameT('g_end_stats', {r: longestRally, t: scoreYou + scoreAi});
   $('endOverlay').classList.remove('hidden');
   win ? (spawnConfetti(), playWin()) : playLose();
+}
+
+/* 语言切换钩子：重画所有「当前语言」相关的动态文案(toast 等瞬时文案不回溯) */
+function uiReapplyI18n(){
+  windupSub = false;
+  serveTxtV = null; serveSideV = null; serveOn = null;
+  writeStanceText();
+  chipState = playerStance;   // 文案已重写,同步脏标记(避免下一帧重复 pop+音效)
+  if(windupOn){ windupSub = true; stanceSubEl.textContent = gameT('g_windup'); }
+  if(typeof lastStatus === 'function') setStatus(lastStatus);
+  updateServeUI();
+  updateScoreUI();
+  setFightNames();
+  if(lastEndFn && !$('endOverlay').classList.contains('hidden')) lastEndFn();
 }

@@ -10,3 +10,7 @@ data/checkpoints/
 # 本机保留可复算，但没必要进库。
 tools/_probe_*.js
 tools/_smoke_*.py
+
+# ---- 停止哨兵：server 写一个空文件让长跑在回合边界优雅暂停 ----
+# train-input3.js 每局检查一次；暂停完成后自己删掉。
+data/.stop/
