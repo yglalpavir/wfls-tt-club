@@ -1,0 +1,27 @@
+[
+  {
+    "ep": 60,
+    "phase": "elite",
+    "trainW": 41.7,
+    "evalPhase": 46.6,
+    "evalTop": 63.2,
+    "evalDef": 31.8,
+    "best": 52.6,
+    "bestTop": 71.7,
+    "bestEp": 0,
+    "eps": 0.15,
+    "evSec": 24.8,
+    "wrDefault": 31.8,
+    "wrHell": 33.4,
+    "wrElite": 46.6,
+    "wrExtreme": 52.1,
+    "wrExtremeMax": 63.2,
+    "wrMap": {
+      "default": 0.3181,
+      "hell": 0.3342,
+      "elite": 0.4661,
+      "extreme": 0.5206,
+      "extreme-max": 0.6318
+    }
+  }
+]
