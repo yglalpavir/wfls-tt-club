@@ -289,6 +289,12 @@ const resumeWr = (tag) => {
 const RUN_NAME = opt.runName || (RESUME && RESUME.idx && RESUME.idx.run) || ('input3-' + dayStamp());
 const CKPT_DIR = opt.ckptDir || (RESUME && RESUME.dir) || path.join(ROOT, 'data', 'checkpoints', RUN_NAME);
 const IDX_PATH = path.join(CKPT_DIR, 'index.json');
+/* 曲线文件的目录要在这里就建好。18h 预设把曲线放在检查点目录里
+ * （data/checkpoints/input3-18h/curve.json），而那个目录原本只有写检查点时才建；
+ * 可第一轮边界里 curve 的 writeFileSync 排在 writeCheckpoint 之前，
+ * 于是第一轮回调就 ENOENT 崩溃——实测 18h 长跑跑到 ep 1500 死在这里，
+ * 连一份检查点都没留下。 */
+fs.mkdirSync(path.dirname(opt.curve), { recursive: true });
 
 /* ---- 断点状态汇总 ---- */
 const R = {
