@@ -1,0 +1,12 @@
+# ---- 训练断点：每份 ~3.7MB 权重，环形保留 --keep 份 + 最佳一份 ----
+# 18h 长跑共约 50 轮检查点，但环形只留 --keep 12 份 + 最佳一份，磁盘占用封顶 ~50MB。
+# 断点只供本机续训，不入库。
+# server.js 的 /api/checkpoints 直接扫 data/checkpoints/*/index.json，
+# 提交后由使用者本机 node server.js 打开 /train 的「检查点 · 续训」页取用。
+data/checkpoints/
+
+# ---- 本地探针 / 冒烟脚本：不入库 ----
+# _probe_thr.js 是长跑时长估算（约 1.2 回合/秒）的实测来源，registry 参数说明引用它；
+# 本机保留可复算，但没必要进库。
+tools/_probe_*.js
+tools/_smoke_*.py

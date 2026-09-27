@@ -666,7 +666,7 @@
       "name": "输入级 DQN (v3 极端对手课程)",
       "tag": "鼠标上的 tt 玩家 · 加压",
       "color": "#06d6a0",
-      "desc": "从 data/input-ai-a952.json（952 动作）续训，对手按课程从 hell 逐级推到 extreme-max（js/opponent-ladder.js），每局随机亚型防过拟合；三路评估（本档/顶档/默认护栏）选最佳权重，未过采纳线不覆盖。2026-09-10 起优化器默认 adam+分层lr（输出层3x）：400局实测 vs 起点 +13.5pp，已采纳进 data/input-ai-extreme.json（备份 input-ai-extreme.pre-phase2.json）。",
+      "desc": "从 data/input-ai-extreme.json（952 动作）续训，对手按课程从 hell 逐级推到 extreme-max（js/opponent-ladder.js），每局随机亚型防过拟合。**每轮末对整条阶梯逐档标定**（默认 5 档：default/hell/elite/extreme/extreme-max），逐档胜率落进曲线与检查点索引，面板直接画「对不同模型的验证胜率」；选优仍取 3 档（顶档/本档/默认护栏），未过采纳线不覆盖生产权重。**--hours N 墙钟预算 + data/checkpoints/<run>/ 环形检查点 + --resume 断点续训**：恢复 ep 偏移、选优状态、累计胜率、基线与累计耗时，18h 预算可跨多次中断累计。2026-09-10 起优化器默认 adam+分层lr：400 局实测 vs 起点 +13.5pp，已采纳进 data/input-ai-extreme.json。",
       "script": "tools/train-input3.js",
       "curve": "tools/input-curve-v3.json",
       "weightFile": "data/input-ai-extreme.json",
@@ -675,29 +675,46 @@
       "yUnit": "pct",
       "series": [
         {
-          "key": "evalTop",
+          "key": "wrDefault",
+          "label": "vs 默认策略（护栏）",
+          "color": "#ffd166",
+          "tag": "default",
+          "short": "默认",
+          "badge": "护栏"
+        },
+        {
+          "key": "wrHell",
+          "label": "vs 地狱 AI",
+          "color": "#f78c6b",
+          "tag": "hell",
+          "short": "地狱"
+        },
+        {
+          "key": "wrElite",
+          "label": "vs 精英",
+          "color": "#c77dff",
+          "tag": "elite",
+          "short": "精英"
+        },
+        {
+          "key": "wrExtreme",
+          "label": "vs 极端",
+          "color": "#4cc9f0",
+          "tag": "extreme",
+          "short": "极端"
+        },
+        {
+          "key": "wrExtremeMax",
           "label": "vs 极端·满档",
-          "color": "#06d6a0"
-        },
-        {
-          "key": "bestTop",
-          "label": "最佳 vs 满档",
-          "color": "#80ed99"
-        },
-        {
-          "key": "evalPhase",
-          "label": "vs 当前阶段对手",
-          "color": "#c77dff"
-        },
-        {
-          "key": "evalDef",
-          "label": "vs 默认 AI（护栏）",
-          "color": "#ffd166"
+          "color": "#06d6a0",
+          "tag": "extreme-max",
+          "short": "满档",
+          "badge": "采纳线"
         },
         {
           "key": "best",
           "label": "选优分 best",
-          "color": "#4cc9f0"
+          "color": "#8d99ae"
         },
         {
           "key": "trainW",
@@ -712,6 +729,94 @@
         }
       ],
       "params": [
+        {
+          "name": "hours",
+          "label": "墙钟预算 hours（0=不限时）",
+          "type": "number",
+          "default": 0,
+          "min": 0,
+          "max": 96,
+          "step": 0.5,
+          "desc": "墙钟预算：到点在轮次/检查点边界停，可从 --resume 接着跑；续训扣掉断点里已累计的耗时，18h 可跨多次中断累计。按实测吞吐（tools/_probe_thr.js，含梯度更新）约 1.2 回合/秒，18h ≈ 76000 训练回合。"
+        },
+        {
+          "name": "games",
+          "label": "训练回合上限 games",
+          "type": "int",
+          "default": 900000,
+          "min": 50,
+          "max": 5000000,
+          "step": 500,
+          "desc": "ε 与课程衰减的**标尺**（跑到第 games 回合 ε 才满衰减），不是硬回合数——墙钟预算才是真正到点。按 1.2 回合/秒估：18h ≈ 76000。续训起点若已越过 games，脚本按剩余预算自动放宽上限（不会空转）。"
+        },
+        {
+          "name": "eval",
+          "label": "每档验证局数 eval",
+          "type": "int",
+          "default": 40,
+          "min": 4,
+          "max": 120,
+          "step": 4,
+          "desc": "轮末对每一档对手各打这么多局。验证是**纯推理**（约 4.4 局/秒），5 档×24 局≈120 局≈29 秒，只占每轮约 2%——不是瓶颈，可放心给足局数换取统计稳定性。"
+        },
+        {
+          "name": "step",
+          "label": "轮次长度 step(回合)",
+          "type": "int",
+          "default": 500,
+          "min": 50,
+          "max": 20000,
+          "step": 50,
+          "desc": "每 step 个回合做一轮：轮末跑一遍全阶梯验证并落一个曲线点。含梯度的实测吞吐约 1.2 回合/秒，所以 step 1500 ≈ 21 分钟一轮。"
+        },
+        {
+          "name": "ckpt",
+          "label": "检查点间隔 ckpt(回合)",
+          "type": "int",
+          "default": 500,
+          "min": 50,
+          "max": 40000,
+          "step": 50,
+          "desc": "每 ckpt 个回合把最佳权重落进检查点目录（不必整除 step）。长跑建议取 = step：轮边界既是曲线点也是掉线恢复点，最多丢一轮。约 3.7MB/份。"
+        },
+        {
+          "name": "keep",
+          "label": "检查点保留份数 keep",
+          "type": "int",
+          "default": 12,
+          "min": 1,
+          "max": 60,
+          "step": 1,
+          "desc": "环形保留最近 keep 份 + 历史最佳那份（约 3.7MB/份）。长跑不开会写爆磁盘（50 轮 × 3.7MB ≈ 185MB）。"
+        },
+        {
+          "name": "vallevels",
+          "label": "验证档位 vallevels",
+          "type": "text",
+          "default": "default,hell,elite,extreme,extreme-max",
+          "desc": "逗号分隔的 js/opponent-ladder.js 档位。default 与 end（顶档）会被强制保留——它们是采纳护栏的两条判定线。"
+        },
+        {
+          "name": "run-name",
+          "label": "检查点目录名 run-name",
+          "type": "text",
+          "default": "",
+          "desc": "空=自动用时间戳。同名的长跑与其续训共用同一目录，index.json 会追加检查点。"
+        },
+        {
+          "name": "ckptdir",
+          "label": "检查点目录 ckptdir",
+          "type": "text",
+          "default": "",
+          "desc": "相对仓库根的路径。默认 data/checkpoints/<run-name>；续训时沿用上次的目录。"
+        },
+        {
+          "name": "resume",
+          "label": "断点续训 resume",
+          "type": "text",
+          "default": "",
+          "desc": "检查点索引 data/checkpoints/<run>/index.json（推荐：恢复 ep/best/累计胜率/基线/耗时）或任意 ckpt-*.json（只恢复网络）。"
+        },
         {
           "name": "from",
           "label": "续训起点权重 from",
@@ -734,40 +839,14 @@
           "desc": "无论是否采纳都会写这份曲线；冒烟预设已指向 -smoke，不会覆盖正式曲线。"
         },
         {
-          "name": "games",
-          "label": "训练局数 games",
-          "type": "int",
-          "default": 600,
-          "min": 50,
-          "max": 12000,
-          "step": 50
-        },
-        {
-          "name": "eval",
-          "label": "评估局数 eval",
-          "type": "int",
-          "default": 40,
-          "min": 4,
-          "max": 120,
-          "step": 4
-        },
-        {
-          "name": "step",
-          "label": "评估间隔 step(局)",
-          "type": "int",
-          "default": 50,
-          "min": 5,
-          "max": 400,
-          "step": 5
-        },
-        {
           "name": "pret",
           "label": "BC 暖启动局数（0=跳过）",
           "type": "int",
           "default": 0,
           "min": 0,
           "max": 400,
-          "step": 10
+          "step": 10,
+          "desc": "训练前预热局数（旧参数，仅走旧流程时用；长跑用 --preload）。"
         },
         {
           "name": "bcpairs",
@@ -776,7 +855,8 @@
           "default": 120,
           "min": 0,
           "max": 800,
-          "step": 20
+          "step": 20,
+          "desc": "行为克隆监督对条数：贪心策略跑这么多局，把\"追球→动作\"灌进在线 BC 池，防止 RL 把基础接球洗掉。"
         },
         {
           "name": "bcmix",
@@ -785,7 +865,8 @@
           "default": 0.06,
           "min": 0,
           "max": 0.5,
-          "step": 0.01
+          "step": 0.01,
+          "desc": "在线 BC 混入比例。长跑压低到 0.06：起点已是好策略，混太多会把它拉回追球基线。"
         },
         {
           "name": "bcpass",
@@ -794,7 +875,8 @@
           "default": 0,
           "min": 0,
           "max": 6,
-          "step": 1
+          "step": 1,
+          "desc": "周期性重锚 pass 数（每 100 回合把所有 BC 对再过一遍）。实测 3 pass 足以把好策略冲回 naive 水平，长跑必须 0。"
         },
         {
           "name": "preload",
@@ -814,7 +896,7 @@
           "min": 1,
           "max": 6,
           "step": 1,
-          "desc": "续训要压低（2）。存档里烤过的 6 会让 ~4.6 万次更新锤爆 <2000 样本，实测 60 局 vs 默认 71%→40%。"
+          "desc": "每回合触发的梯度更新次数。续训必须压低（2）：存档里烤过的 6 会让 ~4.6 万次更新锤爆 <2000 样本（实测 60 局 vs 默认 71%→40%）。它是吞吐的主开关：learnp 2 ≈ 1.2 回合/秒，learnp 1 ≈ 2.4。"
         },
         {
           "name": "optimizer",
@@ -841,22 +923,14 @@
           "desc": "全网络梯度2-范数上限。安全阀不是提速手段：实测单独开 clip2.0 把拟合从 76.2% 降到 47.0%。默认关。"
         },
         {
-          "name": "ckpt",
-          "label": "检查点间隔(局)",
-          "type": "int",
-          "default": 400,
-          "min": 50,
-          "max": 4000,
-          "step": 50
-        },
-        {
           "name": "eps-reset",
           "label": "ε 循环间隔(局)",
           "type": "int",
           "default": 500,
           "min": 50,
           "max": 4000,
-          "step": 50
+          "step": 50,
+          "desc": "每多少个回合注入一次 ε 脉冲（+0.30，按 0.995/回合衰减）。**必须是 step 的整数倍**，否则脉冲检查挂在轮末块内、实际每 lcm(step,eps-reset) 回合才触发一次（脚本会警告）。"
         },
         {
           "name": "jitter",
@@ -865,7 +939,8 @@
           "default": 0.06,
           "min": 0,
           "max": 0.15,
-          "step": 0.01
+          "step": 0.01,
+          "desc": "同档对手的抖动幅度（0.06）：让\"同一档\"也有若干亚型，降低对单一配置的过拟合。"
         },
         {
           "name": "seed",
@@ -874,7 +949,8 @@
           "default": 20260909,
           "min": 0,
           "max": 2000000000,
-          "step": 1
+          "step": 1,
+          "desc": "随机种子：课程抖动、验证局、RNG 全由此派生，同种子可复现。"
         },
         {
           "name": "phases",
@@ -883,18 +959,29 @@
           "default": "hell:0.20,elite:0.28,extreme:0.30,extreme-max:0.22",
           "min": 0,
           "max": 0,
-          "step": 1
+          "step": 1,
+          "desc": "课程分段 tag:权重（自动归一化）。从弱到强逐级加压，末段是采纳线所在的顶档。"
         }
       ],
       "flags": [
         {
           "name": "no-save",
-          "label": "不覆盖 data/input-ai-extreme.json",
+          "label": "不覆盖 data/input-ai-extreme.json（检查点仍照写）",
           "default": true
+        },
+        {
+          "name": "resume-best",
+          "label": "续训取历史最佳那份（而不是断点最后一份）",
+          "default": false
         },
         {
           "name": "eval-only",
           "label": "只标定不训练（量整条阶梯胜率）",
+          "default": false
+        },
+        {
+          "name": "no-ckpt",
+          "label": "不写检查点（放弃断点续训能力）",
           "default": false
         }
       ],
@@ -904,7 +991,8 @@
           "args": {},
           "flags": [
             "eval-only"
-          ]
+          ],
+          "desc": "只标定不训练：量当前起点权重打整条阶梯的胜率（5 档×60 局 ≈ 2 分钟）。"
         },
         {
           "name": "冒烟",
@@ -919,7 +1007,8 @@
             "curve": "tools/input-curve-v3-smoke.json",
             "optimizer": "adam",
             "layer-lr": "1,1,1,3"
-          }
+          },
+          "desc": "≈90 秒自检：跑通课程、全阶梯验证、检查点与曲线，不碰正式产物。"
         },
         {
           "name": "快速",
@@ -931,7 +1020,8 @@
             "optimizer": "adam",
             "layer-lr": "1,1,1,3",
             "seed": 20260912
-          }
+          },
+          "desc": "≈25 分钟短跑（600 回合 ≈ 8 分钟训练 + 12 轮×40 局验证），看方向。"
         },
         {
           "name": "标准",
@@ -943,15 +1033,70 @@
             "optimizer": "adam",
             "layer-lr": "1,1,1,3",
             "seed": 20260911
-          }
+          },
+          "desc": "≈100 分钟（3000 回合 ≈ 42 分钟训练 + 60 轮验证）。"
+        },
+        {
+          "name": "长跑 18h",
+          "args": {
+            "hours": 18,
+            "games": 76000,
+            "eval": 24,
+            "step": 1500,
+            "ckpt": 1500,
+            "keep": 12,
+            "pret": 0,
+            "bcpairs": 120,
+            "bcmix": 0.06,
+            "bcpass": 0,
+            "preload": 500,
+            "learnp": 2,
+            "optimizer": "adam",
+            "layer-lr": "1,1,1,3",
+            "grad-clip": 0,
+            "eps-reset": 3000,
+            "jitter": 0.06,
+            "seed": 20260927,
+            "run-name": "input3-18h",
+            "curve": "data/checkpoints/input3-18h/curve.json"
+          },
+          "desc": "墙钟 18h：step 1500 ≈ 21 分钟一轮（1500 回合训练 + 5 档×24 局验证≈29s），约 50 轮 / 约 76000 训练回合；每轮一个检查点，环形保留 12 份 + 最佳（≈48MB，已 gitignore）。断线随时用「续训 18h」或 --resume data/checkpoints/input3-18h/index.json 接着跑。"
+        },
+        {
+          "name": "续训 18h",
+          "args": {
+            "hours": 18,
+            "games": 76000,
+            "eval": 24,
+            "step": 1500,
+            "ckpt": 1500,
+            "keep": 12,
+            "pret": 0,
+            "bcpairs": 120,
+            "bcmix": 0.06,
+            "bcpass": 0,
+            "preload": 500,
+            "learnp": 2,
+            "optimizer": "adam",
+            "layer-lr": "1,1,1,3",
+            "grad-clip": 0,
+            "eps-reset": 3000,
+            "jitter": 0.06,
+            "seed": 20260927,
+            "run-name": "input3-18h",
+            "curve": "data/checkpoints/input3-18h/curve.json",
+            "resume": "data/checkpoints/input3-18h/index.json"
+          },
+          "desc": "接上次长跑：同目录、曲线接续、检查点续排；--hours 18 会扣掉断点里已累计的耗时，所以 18h 可跨多次中断累计。起点若已越过 --games，脚本按剩余预算自动放宽上限。"
         }
       ],
       "dryRunArgs": [
         "--no-save"
       ],
       "writes": [
-        "data/input-ai-extreme.json",
-        "tools/input-curve-v3.json"
+        "data/input-ai-extreme.json（仅通过采纳线时）",
+        "data/checkpoints/<run>/（检查点 + index.json，gitignore，本地续训用）",
+        "tools/input-curve-v3.json 或预设指定的曲线"
       ]
     }
   ]

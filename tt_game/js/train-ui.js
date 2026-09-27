@@ -14,6 +14,7 @@ var $$ = function(s){ return Array.prototype.slice.call(document.querySelectorAl
 var S = {
   models: [], meta: {}, sel: null, vals: {}, flags: {},
   chart: null, hidden: {}, es: null, runId: null, runTicks: [], runModel: null,
+  tab: 'log', ckpts: [], ckSel: null, mx: null,
   runs: [], curves: [], logs: [], auto: true, norm: false,
   curvePoints: null, last: null, health: null
 };
@@ -222,6 +223,123 @@ function selectModel(id){
   if(!S.runId){ plotModel(m, [], m.name + ' · 未开始训练', ''); }
 }
 
+/* ---------------- 验证胜率矩阵 / 进度 ---------------- */
+/* wr* 系列带 tag（ladder 档）+ short（矩阵短标签）；矩阵与折线共用同一份数据 */
+function wrSeries(m){
+  return ((m && m.series) || []).filter(function(s){ return typeof s.tag === 'string'; });
+}
+/* 秒数 → 可读时长（打点的 elapsedSec/budgetSec/remainSec 都是秒） */
+function fmtH(sec){
+  var n = num(sec); if(n === null) return '–';
+  var h = n / 3600;
+  if(n < 60) return Math.round(n) + 's';
+  if(n < 3600){ var s = Math.round(n); return Math.floor(s / 60) + 'm' + (s % 60 ? (s % 60) + 's' : ''); }
+  if(h < 48) return (h < 10 ? h.toFixed(1) : h.toFixed(0)) + 'h';
+  return (h / 24).toFixed(1) + '天';
+}
+/* 从打点序列汇总矩阵：cur=最后有效值 / peak=全程峰值 / base=基线（t:'verify' 带 base）
+ * wr* 打点为百分比；wrMap 为小数，仅在缺 wr* 时回退（老版本曲线兼容）。 */
+function refreshMatrix(points){
+  var m = (S.chart && S.chart.model) || cur();
+  var levels = wrSeries(m);
+  var st = { levels: levels, base: {}, cur: {}, peak: {}, ep: null };
+  (points || []).forEach(function(p){
+    var t = normalizeTick(p, m);
+    if(t.base && typeof t.base === 'object'){
+      Object.keys(t.base).forEach(function(tag){
+        var s = levels.filter(function(x){ return x.tag === tag; })[0];
+        if(s){ var n = num(t.base[tag]); if(n !== null) st.base[s.key] = +(n * 100).toFixed(1); }
+      });
+    }
+    levels.forEach(function(s){
+      var n = num(t[s.key]);
+      if(n === null && t.wrMap && t.wrMap[s.tag] !== undefined){
+        var f = num(t.wrMap[s.tag]); n = f === null ? null : f * 100;
+      }
+      if(n === null) return;
+      st.cur[s.key] = +n.toFixed(1);
+      if(st.peak[s.key] === undefined || n > st.peak[s.key]) st.peak[s.key] = +n.toFixed(1);
+      st.ep = xOf(t, m);
+    });
+  });
+  S.mx = st;
+  renderMatrix();
+}
+function renderMatrix(){
+  var g = $('#mxGrid'), tag = $('#mxTag');
+  if(!g) return;
+  var st = S.mx;
+  if(!st || !st.levels.length){
+    if(!g.dataset.empty){ g.dataset.empty = '1'; g.style.display='none'; if(tag) tag.textContent='—'; }
+    return;
+  }
+  delete g.dataset.empty;
+  g.style.display='grid';
+  g.style.gridTemplateColumns='repeat(' + st.levels.length + ',minmax(0,1fr))';
+  var html='';
+  /* 还没跑完一轮训练（st.ep 为 0/空）时这一行就是基线本身，
+     不显示 +0.0pp——那会读成"已经涨了 0.0"。 */
+  var trained = st.ep !== null && st.ep !== undefined && st.ep > 0;
+  st.levels.forEach(function(s){
+    var c = st.cur[s.key], pk = st.peak[s.key], b = st.base[s.key];
+    var d = (trained && c !== undefined && b !== undefined) ? (c - b) : undefined;
+    var cls = d === undefined ? '' : (d > 0.05 ? 'up' : (d < -0.05 ? 'dn' : ''));
+    html += '<div class="mxc' + (c === undefined ? ' dim' : '') + '" style="--c:' + s.color + '">' +
+      '<div class="lbl"><i></i>' + esc(s.short || s.label) +
+        (s.badge ? '<em>' + esc(s.badge) + '</em>' : '') + '</div>' +
+      '<div class="val">' + (c === undefined ? '–' : c.toFixed(1)) + '<span>%</span></div>' +
+      '<div class="delta' + cls + '">' + (d === undefined ? (trained ? '基线' : '待训练') : (d >= 0 ? '+' : '') + d.toFixed(1) + 'pp') + '</div>' +
+      '<div class="track"><i style="width:' + (c === undefined ? 0 : Math.max(0, Math.min(100, c))) + '%"></i>' +
+        (b !== undefined ? '<u style="left:' + Math.max(0, Math.min(100, b)) + '%"></u>' : '') + '</div>' +
+      '<div class="sub">峰值 ' + (pk === undefined ? '–' : pk.toFixed(1)) +
+        ' · 基线 ' + (b === undefined ? '–' : b.toFixed(1)) + '</div></div>';
+  });
+  g.innerHTML = html;
+  if(tag) tag.textContent = st.ep !== null ? ('ep ' + st.ep) : '—';
+}
+/* 时间预算进度：优先 --hours 墙钟预算（elapsedSec/budgetSec），否则回退 ep/games */
+function updateMeter(){
+  var bar = $('#mxBar'), lab = $('#mxMeter');
+  if(!bar) return;
+  /* budgetSec 只在 start / verify / done 打点里出现，elapsedSec 也稀疏
+   * （基线标定那几十秒根本没有打点），所以都取"最新一次见到"的值，
+   * 再按最新一条打点的到达时间往后外推，否则进度条会在打点间隙冻住。 */
+  var b = null, ep = null, sec = 0, lastTs = 0;
+  var ticks = S.runTicks || [];
+  for(var i = 0; i < ticks.length; i++){
+    var t = ticks[i];
+    if((t.ts || 0) > lastTs) lastTs = t.ts || 0;
+    var e0 = num(t.elapsedSec);
+    if(e0 !== null) sec = e0;
+    if(b === null){ var bb = num(t.budgetSec); if(bb !== null) b = bb; }
+    if(ep === null){ var pp = num(t.ep); if(pp !== null) ep = pp; }
+  }
+  if(!lastTs) lastTs = Date.now();
+  var e = sec + Math.max(0, (Date.now() - lastTs) / 1000);
+  var tot = num((S.vals || {})['games']);
+  var pct = null, txt = '';
+  if(b && b > 0){
+    e = e || 0;
+    pct = Math.max(0, Math.min(1, e / b));
+    txt = '已用 ' + fmtH(e) + ' / ' + fmtH(b) + ' · 剩 ' + fmtH(Math.max(0, b - e));
+  } else if(tot && tot > 0 && ep !== null){
+    pct = Math.max(0, Math.min(1, ep / tot));
+    txt = 'ep ' + Math.round(ep) + ' / ' + Math.round(tot) + ' · ' + (pct * 100).toFixed(1) + '%';
+  }
+  if(pct === null){
+    bar.style.width = '0'; bar.className = 'bar';
+    if(lab) lab.textContent = S.runId ? '统计中…' : '—';
+    return;
+  }
+  bar.style.width = (pct * 100).toFixed(1) + '%';
+  bar.className = 'bar' + (pct >= 0.999 ? ' full' : (pct > 0.85 ? ' warn' : ''));
+  if(lab) lab.textContent = txt;
+}
+function setChartTag(extra){
+  var el = $('#chartTag'); if(!el) return;
+  el.textContent = (S.chartTag || '') + extra;
+}
+
 /* ---------------- 图表 ---------------- */
 function xOf(t, model){
   var v = t[model.xKey];
@@ -320,6 +438,7 @@ function plotModel(model, points, title, tag){
   $('#chartTag').textContent = tag ? (tag + ' · ' + points.length + ' 点') : (points.length + ' 点');
   S.hidden = {};
   renderLegend(); S.chart.update('none'); renderReadout(points);
+  refreshMatrix(points);
 }
 function renderLegend(){
   var m = S.chart.model; if(!m) return;
@@ -389,14 +508,37 @@ function onEvent(msg){
     return;
   }
   if(msg.kind === 'tick'){
-    var t = Object.assign({}, msg);
+    var t = Object.assign({}, msg, { ts: msg.ts || Date.now() });
     S.runTicks.push(t);
-    plotModel(m, S.runTicks, m.name + ' · 训练中', 'gen ' + (t[m.xKey] !== undefined ? t[m.xKey] : ''));
-    var total = S.vals[m.xKey === 'gen' ? 'gens' : 'games'];
-    var x = xOf(t, m);
-    if(t.sec !== undefined && total && x > 0){
-      var eta = (total - x) * (t.sec / x);
-      $('#chartTag').textContent += ' · ETA ' + fmtDur(eta * 1000);
+    /* 心跳：长跑里一轮长达 20 多分钟，这是期间唯一的活动信号。
+       只推图表标签 + 限频日志（每 6 次 = 1 分钟一条），不碰矩阵（心跳不带 wr*）。 */
+    if(t.t === 'hb'){
+      S.hbN = (S.hbN || 0) + 1;
+      var wrNow = (t.trainTotal ? Math.round(t.trainWins / t.trainTotal * 100) : 0);
+      S.chartTag = 'ep ' + (t.ep || '') + ' · 本轮 ' + (t.inRound || 0) + '/' + (t.step || '?') +
+        ' · vs' + (t.phase || '') + ' ' + wrNow + '%';
+      setChartTag(' · 剩 ' + fmtH(t.remainSec));
+      if(S.hbN % 6 === 0){
+        logLine('… ep ' + t.ep + ' · 本轮 ' + t.inRound + '/' + t.step +
+          ' · vs' + t.phase + ' ' + wrNow + '% · ε ' + t.eps +
+          ' · best ' + (num(t.best) !== null ? (t.best * 100).toFixed(1) : '?') + '@' + t.bestEp +
+          ' · 剩 ' + fmtH(t.remainSec), 'hb');
+      }
+      updateMeter();
+      return;
+    }
+    S.chartTag = (m.xKey === 'gen' ? 'gen ' : 'ep ') + (t[m.xKey] !== undefined ? t[m.xKey] : '');
+    plotModel(m, S.runTicks, m.name + ' · 训练中', S.chartTag);
+    refreshMatrix(S.runTicks);
+    updateMeter();
+    if(num(t.remainSec) !== null){
+      setChartTag(' · 剩 ' + fmtH(t.remainSec));
+    } else {
+      var total = S.vals[m.xKey === 'gen' ? 'gens' : 'games'];
+      var x = xOf(t, m);
+      if(t.sec !== undefined && total && x > 0){
+        setChartTag(' · ETA ' + fmtDur((total - x) * (t.sec / x) * 1000));
+      }
     }
     return;
   }
@@ -419,6 +561,8 @@ function startRun(){
   post('/api/run', { model:m.id, args:payload.args, flags:payload.flags, rawArgs:payload.rawArgs, dryRun:payload.dryRun })
     .then(function(r){
       S.runId = r.id; S.runTicks = []; S.runModel = m;
+      /* 清掉上一次训练的矩阵读数，否则新一场开始前会挂着旧数字 */
+      S.mx = null; S.hbN = 0; renderMatrix(); updateMeter();
       $('#logbox').innerHTML = '';
       logLine('$ ' + r.cmd, 'sys');
       logLine('runId=' + r.id + (payload.dryRun ? ' · 实验模式' : ' · 将写入产物'), 'sys');
@@ -543,6 +687,165 @@ function showLogFile(name){
   }).catch(function(e){ banner('err', '读取日志失败：' + e.message); });
 }
 
+/* ---------------- 检查点 / 续训 ---------------- */
+function refreshCkpts(){
+  get('/api/checkpoints').then(function(d){
+    S.ckpts = (d && d.checkpoints) || [];
+    var sel = $('#ckRun');
+    if(!S.ckSel && S.ckpts.length) S.ckSel = S.ckpts[0].name;
+    sel.innerHTML = S.ckpts.length
+      ? S.ckpts.map(function(c){
+          return '<option value="' + esc(c.name) + '"' + (c.name === S.ckSel ? ' selected' : '') + '>' +
+            esc(c.name) + ' · ' + c.count + ' 份' +
+            (c.status && c.status !== 'running' ? ' · ' + esc(c.status) : '') + '</option>';
+        }).join()
+      : '<option value="">（无）</option>';
+    renderCkpt();
+  }).catch(function(e){ var m = $('#ckMeta'); if(m) m.textContent = '读取失败：' + e.message; });
+}
+function renderCkpt(){
+  var r = (S.ckpts || []).filter(function(c){ return c.name === S.ckSel; })[0];
+  var head = $('#ckHead'), tb = $('#ckptTable tbody'), meta = $('#ckMeta');
+  if(!r){
+    if(meta) meta.textContent = '—';
+    head.innerHTML = ''; tb.innerHTML = '';
+    $('#ckptEmpty').style.display = 'block';
+    return;
+  }
+  $('#ckptEmpty').style.display = 'none';
+  /* 列 = 该批次实际验证过的档（base / final / 各检查点 wr 的并集） */
+  var tags = [];
+  function collect(wr){
+    if(!wr || typeof wr !== 'object') return;
+    Object.keys(wr).forEach(function(k){ if(tags.indexOf(k) < 0) tags.push(k); });
+  }
+  collect(r.base); collect(r.final && r.final.wr);
+  (r.checks || []).forEach(function(c){ collect(c.wr); });
+  var names = { 'default':'默认', 'hell':'地狱', 'elite':'精英', 'extreme':'极端', 'extreme-max':'满档' };
+  head.innerHTML = '<th>ep</th><th>best</th><th>最佳轮</th>' +
+    tags.map(function(t){ return '<th>' + esc(names[t] || t) + '</th>'; }).join('') +
+    '<th>训练胜率</th><th>ε</th><th>用时</th><th>文件</th><th></th>';
+  var rows = '';
+  (r.checks || []).slice().reverse().forEach(function(c){
+    var best = (c.best != null && c.best !== undefined) ? (+c.best * 100).toFixed(1) : '–';
+    var cells = tags.map(function(t){
+      var v = c.wr && c.wr[t];
+      if(v === undefined || v === null) return '<td>–</td>';
+      var b = r.base && r.base[t];
+      var cls = b === undefined ? 'wr' : (v * 100 > b * 100 + 0.05 ? 'wr up' : (v * 100 < b * 100 - 0.05 ? 'wr dn' : 'wr'));
+      return '<td class="' + cls + '">' + (v * 100).toFixed(1) + '</td>';
+    }).join('');
+    var tw = (c.trainWins != null && c.trainTotal > 0)
+      ? (c.trainWins / c.trainTotal * 100).toFixed(0) + '%' : '–';
+    var isBest = !!(r.best && r.best.ep === c.ep);
+    var pill = !c.alive ? '<span class="pill dead">已淘汰</span>'
+      : (isBest ? '<span class="pill best">最佳</span>' : '<span class="pill live">在盘</span>');
+    rows += '<tr>' +
+      '<td><b>' + (c.ep || 0) + '</b></td>' +
+      '<td><b>' + esc(best) + '</b></td>' +
+      '<td>' + (c.bestEp || '–') + '</td>' + cells +
+      '<td>' + esc(tw) + '</td>' +
+      '<td>' + (c.eps != null ? c.eps : '–') + '</td>' +
+      '<td>' + fmtDur((c.sec || 0) * 1000) + '</td>' +
+      '<td>' + pill + (c.size ? ' <span class="file">' + esc(fmtBytes(c.size)) + '</span>' : '') + '</td>' +
+      '<td><button class="btn sm" data-ep="' + esc(c.ep) + '" data-file="' + esc(c.file || '') +
+        '" data-best="' + (isBest ? '1' : '0') + '">从此续训</button></td></tr>';
+  });
+  tb.innerHTML = rows;
+  var alive = (r.checks || []).filter(function(c){ return c.alive; }).length;
+  if(meta){
+    meta.textContent = '状态 ' + (r.status || '—') +
+      ' · 累计 ' + fmtH(r.elapsedSec) +
+      ' · ' + alive + '/' + (r.checks || []).length + ' 份在盘' +
+      (r.cfg && r.cfg.ckpt ? ' · 每 ' + r.cfg.ckpt + ' 回合' : '');
+  }
+}
+/* ---------------- 附着到进行中的训练 ---------------- */
+/* argv → {键:值} / {键:true}。长跑跨页刷新不应丢进度，所以启动时自动接回 live run。 */
+function argvToMap(argv){
+  var o = {};
+  for(var i = 0; i < (argv || []).length; i++){
+    var a = argv[i];
+    if(typeof a !== 'string' || a.indexOf('--') !== 0) continue;
+    var k = a.slice(2), nxt = argv[i + 1];
+    if(nxt !== undefined && nxt.charAt(0) !== '-') { o[k] = nxt; i++; }
+    else o[k] = true;
+  }
+  return o;
+}
+function attachLive(){
+  get('/api/runs').then(function(d){
+    var live = (d.live || [])[0];
+    if(!live || S.runId) return;
+    var m = S.models.filter(function(x){ return x.id === live.model; })[0];
+    if(!m) return;
+    selectModel(live.model);
+    var fromArgv = argvToMap(live.args);
+    Object.keys(fromArgv).forEach(function(k){
+      var f = (m.flags || []).filter(function(x){ return x.name === k; })[0];
+      if(S.vals[k] !== undefined && fromArgv[k] !== true) S.vals[k] = fromArgv[k];
+      else if(f) S.flags[k] = true;
+    });
+    if(live.dryRun === false && S.flags['no-save'] !== undefined) S.flags['no-save'] = false;
+    buildFields(m); buildFlags(m); updateCmd();
+    S.runId = live.id; S.runModel = m; S.runTicks = [];
+    S.mx = null; S.hbN = 0; renderMatrix(); updateMeter();
+    $('#logbox').innerHTML = '';
+    logLine('▶ 已附着到进行中的训练 ' + live.id + ' · ' + (live.modelName || m.name) +
+      (live.dryRun ? ' · 实验模式' : ' · 将写入产物'), 'sys');
+    logLine('$ ' + (live.cmd || ''), 'sys');
+    $('#btnRun').disabled = true; $('#btnStop').disabled = false;
+    setStatus('训练中', 'run');
+    openSSE(live.id);
+  }).catch(function(){});
+}
+/* 从检查点填回左侧配置：resume 指该批次 index.json（--resume-best 取最佳一份） */
+function resumeFromCkpt(ep, file, isBest){
+  var r = (S.ckpts || []).filter(function(c){ return c.name === S.ckSel; })[0];
+  if(!r){ banner('warn', '没有可选的检查点批次'); return; }
+  var m = S.models.filter(function(x){ return x.script && x.script === r.script; })[0];
+  if(!m){
+    var base = String(r.script || '').split('/').pop();
+    m = S.models.filter(function(x){ return x.script && x.script.split('/').pop() === base; })[0];
+  }
+  if(!m){ banner('warn', '该批次脚本 ' + (r.script || '—') + ' 不在模型清单里'); return; }
+  selectModel(m.id);
+  /* 顺带把原批次 cfgSnapshot 里的参数搬回来（cfg 是驼峰、参数是 CLI 名，做个别名映射）。
+     关键意义在 --hours：默认 0 = 不限时，直接续训会变成永不结束的长跑；
+     原批次的预算照搬，再让训练脚本扣掉已累计耗时，用户只需改一个数字。 */
+  var names = {};
+  (m.params || []).forEach(function(p){ names[p.name] = p; });
+  var ALIAS = { layerLr:'layer-lr', gradClip:'grad-clip', epsReset:'eps-reset', run:'run-name' };
+  var cfg = r.cfg || {}, got = [];
+  Object.keys(cfg).forEach(function(k){
+    if(k === 'noSave' || k === 'noCkpt' || k === 'trainMode') return;
+    var n = ALIAS[k] || k;
+    if(names[n] !== undefined){ S.vals[n] = cfg[k]; got.push(n); }
+  });
+  /* 曲线文件不在 cfg 里（存的是顶层字段）：续训必须在原曲线上接着写，
+     否则脚本会把新点写进默认曲线文件，形成两条互不接续的曲线。 */
+  if(r.curve && names['curve'] !== undefined) S.vals['curve'] = r.curve;
+  if(r.from && names['from'] !== undefined) S.vals['from'] = r.from;
+  if(r.save && names['save'] !== undefined) S.vals['save'] = r.save;
+  if(r.run && names['run-name'] !== undefined) S.vals['run-name'] = r.run;
+  S.vals['resume'] = r.idxPath;
+  if(S.flags['no-save'] !== undefined) S.flags['no-save'] = !!cfg.noSave;
+  if(S.flags['no-ckpt'] !== undefined) S.flags['no-ckpt'] = !!cfg.noCkpt;
+  if(isBest) S.flags['resume-best'] = true;
+  buildFields(m); buildFlags(m); updateCmd();
+  logLine('已填续训起点：' + r.idxPath + '（ep ' + ep + ' · ' + (file || '') + '）' +
+    (isBest ? ' · --resume-best 最佳份' : '') +
+    ' —— 确认参数后点「启动训练」', 'sys');
+  if(got.length){
+    var hrs = (typeof S.vals['hours'] === 'number') ? S.vals['hours'] : 0;
+    logLine('  ↳ 继承原批次参数 ' + got.length + ' 项（' + got.slice(0, 8).join(', ') +
+      (got.length > 8 ? ', …' : '') + '）' +
+      ' · 预算 ' + hrs + 'h' + (hrs > 0 ? '（脚本会自动扣掉已训的 ' +
+        ((r.elapsedSec || 0) / 3600).toFixed(2) + 'h）' : ' —— 0 = 不限时，注意会一直训下去') +
+      ' · 写入产物：' + (S.flags['no-save'] ? '否（实验模式）' : '是'), 'sys');
+  }
+}
+
 /* ---------------- 标签页 / 轮询 ---------------- */
 function setTab(name){
   S.tab = name;
@@ -551,6 +854,7 @@ function setTab(name){
   if(name === 'runs') refreshRuns();
   if(name === 'curves') refreshCurves();
   if(name === 'logs') refreshLogs();
+  if(name === 'ckpt') refreshCkpts();
 }
 function health(){
   get('/api/health').then(function(d){
@@ -571,6 +875,13 @@ function bind(){
   $('#btnRefresh').onclick = function(){ boot(); };
   $('#btnClear').onclick = function(){ $('#logbox').innerHTML = ''; };
   $('#btnApplyRaw').onclick = updateCmd;
+  $('#ckRun').onchange = function(e){ S.ckSel = e.target.value; renderCkpt(); };
+  $('#btnCkRefresh').onclick = function(){ refreshCkpts(); };
+  $('#ckptTable').onclick = function(e){
+    var b = e.target && e.target.closest ? e.target.closest('button[data-ep]') : null;
+    if(!b) return;
+    resumeFromCkpt(Number(b.dataset.ep), b.dataset.file, b.dataset.best === '1');
+  };
   $$('.tabbar button[data-tab]').forEach(function(b){ b.onclick = function(){ setTab(b.dataset.tab); }; });
   $('#chkAuto').onchange = function(e){ S.auto = e.target.checked; if(S.auto) $('#logbox').scrollTop = $('#logbox').scrollHeight; };
   $('#chkNorm').onchange = function(e){
@@ -592,6 +903,7 @@ function boot(){
     if(!S.sel && S.models.length) selectModel(S.models[0].id);
     logLine('控制台就绪 · ' + S.models.length + ' 个模型可训练', 'sys');
     health();
+    attachLive();
   }).catch(function(e){
     banner('err', '无法连接服务：' + e.message + ' — 请先运行 node server.js');
   });
@@ -602,7 +914,9 @@ if(typeof Chart === 'undefined'){
 } else {
   bind(); boot();
   setInterval(health, 10000);
-  setInterval(function(){ if(S.tab === 'runs') refreshRuns(); }, 8000);
+  setInterval(function(){ if(S.tab === 'runs') refreshRuns(); else if(S.tab === 'ckpt') refreshCkpts(); }, 8000);
+  /* 进度条按秒走：两次打点之间也要能动（打点间隔可达一分钟以上） */
+  setInterval(function(){ if(S.runId) updateMeter(); }, 1000);
 }
 
 })();

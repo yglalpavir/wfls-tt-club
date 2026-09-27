@@ -116,9 +116,41 @@ button,input,select{font-family:inherit; color:inherit}
 
 /* ---- 右侧 ---- */
 .stage{display:flex; flex-direction:column; gap:10px; min-height:0}
-.chartbox{flex:1 1 56%; min-height:0; display:flex; flex-direction:column}
+.chartbox{flex:1 1 42%; min-height:150px; display:flex; flex-direction:column}
 .chartwrap{flex:1; position:relative; min-height:0; padding:8px 10px 4px}
 .chartwrap canvas{position:absolute; inset:8px 10px 4px}
+
+/* ---- 验证胜率矩阵 + 进度条 ---- */
+.matrixbox{flex:0 0 auto}
+.matrixbox > .hd{padding:7px 12px}
+.meter{flex:1; max-width:200px; height:5px; background:rgba(255,255,255,.07);
+  border-radius:3px; overflow:hidden; margin:0 2px}
+.meter .bar{height:100%; width:0; background:linear-gradient(90deg,#1d6d8c,var(--cyan)); transition:width .5s ease}
+.meter .bar.warn{background:linear-gradient(90deg,#7a5a12,var(--gold))}
+.meter .bar.full{background:linear-gradient(90deg,#3c8f6d,var(--mint))}
+.mxgrid{display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:1px;
+  background:var(--line); flex:none}
+.mxc{background:var(--panel); padding:8px 11px 9px; min-width:0; position:relative}
+.mxc .lbl{font-size:10.5px; color:var(--mid); display:flex; align-items:center; gap:6px; letter-spacing:.3px}
+.mxc .lbl i{width:8px; height:8px; border-radius:2px; background:var(--c); flex:none; box-shadow:0 0 6px var(--c)}
+.mxc .lbl em{font-style:normal; font-family:var(--mono); font-size:9px; color:var(--dimtx);
+  border:1px solid var(--line2); border-radius:3px; padding:0 4px; margin-left:auto; white-space:nowrap}
+.mxc .val{font-family:var(--mono); font-size:20px; font-weight:600; color:var(--text);
+  line-height:1.15; margin-top:2px; white-space:nowrap}
+.mxc .val span{font-size:11px; color:var(--dimtx); margin-left:1px; font-weight:400}
+.mxc .delta{font-family:var(--mono); font-size:10px; color:var(--dimtx); margin-top:-1px}
+.mxc .delta.up{color:var(--mint)}
+.mxc .delta.dn{color:#ff9aa8}
+.mxc .track{margin-top:5px; height:4px; background:rgba(255,255,255,.07);
+  border-radius:2px; position:relative; overflow:hidden}
+.mxc .track i{position:absolute; left:0; top:0; bottom:0; background:var(--c);
+  opacity:.85; border-radius:2px; transition:width .4s}
+.mxc .track u{position:absolute; top:-3px; bottom:-3px; width:2px; background:#fff;
+  opacity:.8; border-radius:1px}
+.mxc .sub{font-family:var(--mono); font-size:9.5px; color:var(--dimtx); margin-top:4px;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.mxc.dim{opacity:.5}
+.mxempty{padding:14px 12px; color:var(--dimtx); font-size:11.5px; background:var(--panel)}
 .legend{display:flex; flex-wrap:wrap; gap:5px 12px; padding:0 12px 8px; flex:none}
 .legend span{display:flex; align-items:center; gap:5px; font-size:11px; color:var(--mid); cursor:pointer; user-select:none}
 .legend span i{width:11px; height:3px; border-radius:2px; flex:none}
@@ -145,6 +177,7 @@ button,input,select{font-family:inherit; color:inherit}
 .logbox .ln.out{color:#a7b0c2}
 .logbox .ln.sys{color:var(--gold)}
 .logbox .ln.ph{color:var(--violet)}
+.logbox .ln.hb{color:#5c6577; font-size:10px}
 .logbox .ts{color:#4d5769; margin-right:7px}
 table{width:100%; border-collapse:collapse; font-size:11px}
 th,td{padding:4px 8px; text-align:left; border-bottom:1px solid var(--line); font-family:var(--mono); white-space:nowrap}
@@ -158,6 +191,24 @@ td .pill.error{background:rgba(224,52,67,.15); color:#ff9aa8}
 td .pill.running{background:rgba(127,216,255,.15); color:var(--cyan)}
 .panescroll{flex:1; overflow:auto; min-height:0}
 .empty{padding:22px; text-align:center; color:var(--dimtx); font-size:12px}
+
+/* ---- 检查点 tab ---- */
+.cktop{display:flex; align-items:center; gap:8px; padding:7px 10px;
+  border-bottom:1px solid var(--line); flex:none}
+.cktop label{font-size:11px; color:var(--dimtx)}
+.cktop select{background:var(--bg); border:1px solid var(--line2); border-radius:5px;
+  padding:3px 6px; font-size:11px; font-family:var(--mono); min-width:250px}
+.cktop select:focus{outline:none; border-color:var(--cyan)}
+.cktop .spacer{flex:1}
+td .wr{font-weight:600}
+td .wr.up{color:var(--mint)}
+td .wr.dn{color:#ff9aa8}
+td .pill.best{background:rgba(143,232,200,.16); color:var(--mint)}
+td .pill.dead{background:rgba(108,117,125,.16); color:var(--dim)}
+td .pill.live{background:rgba(127,216,255,.14); color:var(--cyan)}
+td .file{color:var(--dimtx); font-size:10px}
+#ckptTable .btn{padding:2px 8px; font-size:10.5px; border-radius:5px}
+#ckptTable tbody tr{cursor:default}
 
 /* ---- 横幅 ---- */
 .banner{padding:8px 14px; border-radius:var(--radius); font-size:12px; display:none}

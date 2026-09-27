@@ -1,0 +1,28 @@
+输入级 AI 极端对手课程续训（v3）
+  起点权重：data/input-ai-extreme.json
+  网络形状：128×88 → 192×128 → 128×192 → 952×128（952 动作 = 34×14×2）
+  课程：hell=20% → elite=28% → extreme=30% → extreme-max=22%
+  每轮验证：5 档 × 24 局 = 120 局/轮（default/hell/elite/extreme/extreme-max）
+  games=200 step=60 ckpt=60 jitter=0.06 seed=20260927
+  优化器：adam+layerlr
+  检查点：data/checkpoints/repro-crash · 每 60 局 · 保留 12 份 + 最佳
+##TT##{"t":"phase","phase":"train","msg":"新起点 · games=200 课程=hell=0.20,elite=0.28,extreme=0.30,extreme-max=0.22"}
+##TT##{"t":"start","run":"repro-crash","resumed":false,"ep0":1,"games":200,"step":60,"vallevels":"default,hell,elite,extreme,extreme-max","valgames":24,"budgetSec":0,"elapsedSec":0,"ckptSec":60,"keep":12,"ckptDir":"data/checkpoints/repro-crash","curve":"tools/repro-curve.json","trainMode":"adam+layerlr"}
+BC 保鲜池 762 条（40 局追球监督 · 在线混入 6% → 压到 6% · 周期性重锚 0 pass/100局）
+基线（起点权重）：default=37.7%  hell=36.3%  elite=45.7%  extreme=51.6%  extreme-max=71.7%
+选优基线：best=52.6（vs默认=37.7%，起点基线 37.7%，护栏下限 32.7%）· vsextreme-max=71.7%）
+##TT##{"t":"verify","stage":"baseline","elapsedSec":62.7,"ep":0,"resumed":false,"base":{"default":0.3768,"hell":0.3629,"elite":0.4567,"extreme":0.5165,"extreme-max":0.7166},"baseBest":0.5255,"bestEp":0,"wrMap":{"default":0.3768,"hell":0.3629,"elite":0.4567,"extreme":0.5165,"extreme-max":0.7166},"ladder":"default:0.377,hell:0.363,elite:0.457,extreme:0.516,extreme-max:0.717","wrDefault":37.7,"wrHell":36.3,"wrElite":45.7,"wrExtreme":51.6,"wrExtremeMax":71.7}
+
+—— 课程进入第 1/4 阶段：对手=hell（占 20%，第 0-40 局）——
+##TT##{"t":"phase","phase":"curriculum","msg":"hell"}
+##TT##{"t":"phase","ep":1,"phase":"hell","idx":1,"share":0.2}
+##TT##{"t":"hb","ep":12,"lastEp":0,"step":60,"inRound":12,"elapsedSec":72.8,"remainSec":-1,"eps":0.174,"phase":"hell","trainWins":2,"trainTotal":12,"best":0.5255,"bestEp":0}
+##TT##{"t":"hb","ep":20,"lastEp":0,"step":60,"inRound":20,"elapsedSec":82.9,"remainSec":-1,"eps":0.169,"phase":"hell","trainWins":4,"trainTotal":20,"best":0.5255,"bestEp":0}
+##TT##{"t":"hb","ep":29,"lastEp":0,"step":60,"inRound":29,"elapsedSec":93.6,"remainSec":-1,"eps":0.165,"phase":"hell","trainWins":7,"trainTotal":29,"best":0.5255,"bestEp":0}
+##TT##{"t":"hb","ep":38,"lastEp":0,"step":60,"inRound":38,"elapsedSec":103.8,"remainSec":-1,"eps":0.16,"phase":"hell","trainWins":11,"trainTotal":38,"best":0.5255,"bestEp":0}
+
+—— 课程进入第 2/4 阶段：对手=elite（占 28%，第 40-96 局）——
+##TT##{"t":"phase","phase":"curriculum","msg":"elite"}
+##TT##{"t":"phase","ep":41,"phase":"elite","idx":2,"share":0.28}
+##TT##{"t":"hb","ep":47,"lastEp":0,"step":60,"inRound":47,"elapsedSec":114.7,"remainSec":-1,"eps":0.155,"phase":"elite","trainWins":17,"trainTotal":47,"best":0.5255,"bestEp":0}
+##TT##{"t":"hb","ep":56,"lastEp":0,"step":60,"inRound":56,"elapsedSec":125,"remainSec":-1,"eps":0.15,"phase":"elite","trainWins":23,"trainTotal":56,"best":0.5255,"bestEp":0}

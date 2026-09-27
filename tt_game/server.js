@@ -317,6 +317,42 @@ function readLog(name){
   return { name, size: st.size, mtime: st.mtimeMs, text: buf.toString('utf8') };
 }
 
+/* ---- 检查点（train-input3.js 的断点备份）----
+ * data/checkpoints/<run>/index.json 是续训入口，同目录的 ckpt-*.json 是可直接
+ * --from 的权重。面板靠这里列检查点、看每份权重打整条阶梯的胜率、一键填 --resume。
+ * 权重文件可能已被 --keep 环形裁剪掉，逐条探一下存活状态再上报。 */
+const CKPT_ROOT = path.join(ROOT, 'data', 'checkpoints');
+function checkpointList(){
+  const out = [];
+  let entries;
+  try{ entries = fs.readdirSync(CKPT_ROOT, { withFileTypes: true }); }catch(e){ return out; }
+  for(const e of entries){
+    if(!e.isDirectory()) continue;
+    const runDir = path.join(CKPT_ROOT, e.name);
+    let idx;
+    try{ idx = JSON.parse(fs.readFileSync(path.join(runDir, 'index.json'), 'utf8')); }
+    catch(err){ continue; }
+    if(!idx || !Array.isArray(idx.checks)) continue;
+    const relDir = path.relative(ROOT, runDir).replace(/\\/g, '/');
+    const checks = idx.checks.map(c => {
+      let alive = false;
+      try{ alive = !!(c && c.file && fs.existsSync(path.join(runDir, c.file))); }catch(err){ alive = false; }
+      return Object.assign({}, c, { alive, path: alive ? relDir + '/' + c.file : null });
+    });
+    out.push({
+      name: e.name, dir: relDir, idxPath: relDir + '/index.json',
+      status: idx.status || null, run: idx.run || e.name,
+      script: idx.script || null, from: idx.from || null, save: idx.save || null,
+      curve: idx.curve || null, created: idx.created || null, updated: idx.updated || null,
+      elapsedSec: idx.elapsedSec || 0, base: idx.base || null, baseBest: idx.baseBest || null,
+      best: idx.best || null, cur: idx.cur || null, final: idx.final || null, cfg: idx.cfg || null,
+      count: checks.length, checks
+    });
+  }
+  out.sort((a, b) => String(b.updated || '').localeCompare(String(a.updated || '')));
+  return out;
+}
+
 /* =====================================================================
  *  SSE
  * ===================================================================== */
@@ -338,7 +374,7 @@ function sseOpen(req, run, res){
   /* 先重放已有内容（刷新页面不丢历史） */
   for(const ph of run.phases) sseSend(res, { kind: 'phase', ts: Date.now(), ...ph });
   for(let i = 0; i < run.log.length; i++) sseSend(res, { kind: 'line', ts: Date.now(), s: run.log[i].s, text: run.log[i].text });
-  for(let i = 0; i < run.ticks.length; i++) sseSend(res, { kind: 'tick', ts: Date.now(), ...run.ticks[i] });
+  for(let i = 0; i < run.ticks.length; i++) sseSend(res, { kind: 'tick', ...run.ticks[i], ts: run.ticks[i].ts || Date.now() });
   if(run.status !== 'running') sseSend(res, { kind: 'exit', code: run.code, status: run.status, sec: runPublic(run).sec });
   const hb = setInterval(() => { try{ res.write(': hb\n\n'); }catch(e){ /* 忽略 */ } }, SSE_HEARTBEAT);
   req.on('close', () => {
@@ -354,7 +390,14 @@ function handleTelemetry(run, line){
   try{ obj = JSON.parse(body); }catch(e){ return false; }
   if(!obj || typeof obj !== 'object') return false;
   if(obj.t === 'phase'){ run.phases.push({ phase: obj.phase, msg: obj.msg }); broadcast(run, { kind: 'phase', phase: obj.phase, msg: obj.msg }); }
-  else { run.ticks.push(obj); broadcast(run, { kind: 'tick', ...obj }); }
+  else {
+    /* ts 必须在入队时记下（打点到达服务器的真实时刻），重连回放时原样送回：
+       否则 attachLive 重放会把 ts 全写成"重放时刻"，面板的时间预算外推锚点就归零，
+       进度条回到 0 再重新爬（--hours 长跑里最疼，几小时白算）。 */
+    const ts = Date.now();
+    run.ticks.push(Object.assign({}, obj, { ts }));
+    broadcast(run, { kind: 'tick', ...obj, ts });
+  }
   return true;
 }
 
@@ -376,6 +419,11 @@ const server = http.createServer(async (req, res) => {
     return sendJSON(res, 200, { live, history: loadHistory().slice(0, 30) });
   }
   if(p === '/api/curves'){ return sendJSON(res, 200, { curves: curveList() }); }
+  if(p === '/api/checkpoints'){
+    const want = u.searchParams.get('run');
+    const all = checkpointList();
+    return sendJSON(res, 200, { checkpoints: want ? all.filter(c => c.name === want || c.dir === want) : all });
+  }
   if(p === '/api/loglist'){ return sendJSON(res, 200, { logs: logList() }); }
 
   /* ---- 实机遥测（tt-stats.js 经 navigator.sendBeacon 上报）----
