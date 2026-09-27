@@ -874,7 +874,9 @@ html:lang(en) .hero-title {
 
 /* ===== 首页快报区：最新动态 + 赛事信息（紧随 hero，双栏列表式） ===== */
 .home-highlights-section { background: var(--bg-white); }
-.home-highlights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
+/* 轨道用 minmax(0,1fr) 而非 1fr：1fr 的自动最小值是 min-content，
+   而标题是 white-space:nowrap，英文长标题会把整栏撑破容器（第二栏溢出到屏幕外） */
+.home-highlights-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: stretch; }
 .home-hl-panel { display: flex; flex-direction: column; padding: 24px 24px 16px; }
 .home-hl-panel-head { display: flex; align-items: center; gap: 12px; padding-bottom: 14px; margin-bottom: 4px; border-bottom: 1px solid var(--border-color); }
 .home-hl-panel-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; flex-shrink: 0; }
@@ -2463,7 +2465,7 @@ body.dark .player-search-item.selected { background: rgba(77, 163, 255, 0.15); }
     /* 排名控件竖排 */
     .ranking-controls { flex-direction: column; align-items: flex-start; gap: 8px; }
     /* 首页快报区单栏堆叠 */
-    .home-highlights-grid { grid-template-columns: 1fr; }
+    .home-highlights-grid { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* 手机横屏 / 小平板 */
