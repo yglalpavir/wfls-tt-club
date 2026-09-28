@@ -1,5 +1,26 @@
 [
   {
+    "version": "v1.2.0",
+    "date": "2026-09-28",
+    "title": "比赛详情页、双打榜单与全站英文化",
+    "title_en": "Match Details, Doubles Rankings and Full English Support",
+    "tag": "feature",
+    "changes": [
+      "新增**比赛详情**页面：记分牌、逐局比分、积分明细、胜率预测与历史交锋",
+      "新增**双打**积分榜：排名页可切换「单打 / 双打」，组合按独立主体计分（赛事系数 0.5、不衰减）",
+      "排名页**移动端**重做为卡片式排行榜，支持拼音搜索与点列头排序",
+      "全站英文适配完成：切到英文后 31 个界面无中文残留，球员显示拼音名",
+      "新增**网站文档**页面（导航栏 More… 入口）；首页彩蛋球改为直达 3D 乒乓球；赛季总结新增按日积分走势图"
+    ],
+    "changes_en": [
+      "Added a new **Match Detail** page: scoreboard, game-by-game scores, points breakdown, win-rate prediction and head-to-head history",
+      "Added a **Doubles** leaderboard: the Ranking page switches between Singles and Doubles, with each pair scored as an independent entity (coefficient 0.5, no decay)",
+      "Rebuilt the **mobile** Ranking page as a card-based leaderboard with pinyin search and tap-to-sort headers",
+      "Finished the full English pass: after switching, all 31 interfaces show no Chinese and players show pinyin names",
+      "Added a **Docs** page (under More… in the navbar); the home page easter-egg ball now links straight to the 3D game; the Season Review page gained a daily points trend chart"
+    ]
+  },
+  {
     "version": "v1.1.7",
     "date": "2026-09-13",
     "title": "赛季总结页",

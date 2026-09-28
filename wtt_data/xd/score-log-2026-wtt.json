@@ -450,5 +450,510 @@
 {"日期": "2026-09-04", "类型": "常规挑战赛", "胜者": "Evgeny TIKHONOV/Maria PANFILOVA", "负者": "Nikita ARTEMENKO/Elizabet ABRAAMIAN"},
 {"日期": "2026-09-04", "类型": "常规挑战赛", "胜者": "Kazuki YOSHIYAMA/Yuna OJIO", "负者": "Kristian KARLSSON/Christina KALLBERG"},
 {"日期": "2026-09-06", "类型": "常规挑战赛", "胜者": "Evgeny TIKHONOV/Maria PANFILOVA", "负者": "Kazuki YOSHIYAMA/Yuna OJIO"}, { "日期": "2026-09-10", "类型": "常规挑战赛", "胜者": "Gustavo GOMEZ/Daniela ORTEGA", "负者": "Thibault PORET/Charlotte LUTZ" }, { "日期": "2026-09-10", "类型": "常规挑战赛", "胜者": "John OYEBODE/Gaia MONFARDINI", "负者": "Ivaylo KOSEV/Sidelya MUTLU" }, { "日期": "2026-09-10", "类型": "常规挑战赛", "胜者": "Marek BADOWSKI/Tatiana KUKULKOVA", "负者": "Adam KLAJBER/Ema LABOSOVA" }, { "日期": "2026-09-10", "类型": "常规挑战赛", "胜者": "Martin FRIIS/Filippa BERGAND", "负者": "Petyo KRASTEV/Maria YOVKOVA" }, { "日期": "2026-09-10", "类型": "常规挑战赛", "胜者": "Andre BERTELSMEIER/Yuan WAN", "负者": "Nicolas BURGOS/Paulina VEGA" }, { "日期": "2026-09-10", "类型": "常规挑战赛", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "Abdullah YIGENLER/Ece HARAC" }, { "日期": "2026-09-10", "类型": "常规挑战赛", "胜者": "Yoan VELICHKOV/Izabela LUPULESKU", "负者": "Leo DE NODREST/Camille LUTZ" }, { "日期": "2026-09-10", "类型": "常规挑战赛", "胜者": "Kristian KARLSSON/Christina KALLBERG", "负者": "Cedric MEISSNER/Tin-Tin HO" }, { "日期": "2026-09-11", "类型": "常规挑战赛", "胜者": "Gustavo GOMEZ/Daniela ORTEGA", "负者": "John OYEBODE/Gaia MONFARDINI" }, { "日期": "2026-09-11", "类型": "常规挑战赛", "胜者": "Marek BADOWSKI/Tatiana KUKULKOVA", "负者": "Martin FRIIS/Filippa BERGAND" }, { "日期": "2026-09-11", "类型": "常规挑战赛", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "Andre BERTELSMEIER/Yuan WAN" }, { "日期": "2026-09-11", "类型": "常规挑战赛", "胜者": "Kristian KARLSSON/Christina KALLBERG", "负者": "Yoan VELICHKOV/Izabela LUPULESKU" }, { "日期": "2026-09-11", "类型": "常规挑战赛", "胜者": "Marek BADOWSKI/Tatiana KUKULKOVA", "负者": "Gustavo GOMEZ/Daniela ORTEGA" }, { "日期": "2026-09-11", "类型": "常规挑战赛", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "Kristian KARLSSON/Christina KALLBERG" }, { "日期": "2026-09-12", "类型": "常规挑战赛", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "Marek BADOWSKI/Tatiana KUKULKOVA" },
-{"日期": "2026-09-17", "类型": "球星挑战赛", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "Benedikt DUDA/Nina MITTELHAM", "比分": "3-0"},{"日期": "2026-09-17", "类型": "球星挑战赛", "胜者": "Hiromu KOBAYASHI/Miyuu KIHARA", "负者": "Maksim GREBNEV/Vlada VORONINA", "比分": "3-0"},{"日期": "2026-09-17", "类型": "球星挑战赛", "胜者": "Evgeny TIKHONOV/Maria PANFILOVA", "负者": "LI Tianyang/ZHU Sibing", "比分": "3-2"},{"日期": "2026-09-17", "类型": "球星挑战赛", "胜者": "PARK Ganghyeon/YOO Siwoo", "负者": "Patrick FRANZISKA/Adriana DIAZ", "比分": "3-2"},{"日期": "2026-09-17", "类型": "球星挑战赛", "胜者": "CHEN Junsong/WANG Yidi", "负者": "Darius MOVILEANU/Andreea DRAGOMAN", "比分": "3-1"},{"日期": "2026-09-17", "类型": "球星挑战赛", "胜者": "Nikita ARTEMENKO/Elizabet ABRAAMIAN", "负者": "Alexis LEBRUN/Charlotte LUTZ", "比分": "3-1"},{"日期": "2026-09-17", "类型": "球星挑战赛", "胜者": "LI Hechen/YAO Ruixuan", "负者": "Abdullah YIGENLER/Ece HARAC", "比分": "3-0"},{"日期": "2026-09-17", "类型": "球星挑战赛", "胜者": "FANG Bo/Jia Nan YUAN", "负者": "Eduard IONESCU/Bernadette SZOCS", "比分": "3-1"},{"日期": "2026-09-18", "类型": "球星挑战赛", "胜者": "Hiromu KOBAYASHI/Miyuu KIHARA", "负者": "Alvaro ROBLES/Maria XIAO", "比分": "3-2"},{"日期": "2026-09-18", "类型": "球星挑战赛", "胜者": "PARK Ganghyeon/YOO Siwoo", "负者": "Evgeny TIKHONOV/Maria PANFILOVA", "比分": "3-1"},{"日期": "2026-09-18", "类型": "球星挑战赛", "胜者": "CHEN Junsong/WANG Yidi", "负者": "Nikita ARTEMENKO/Elizabet ABRAAMIAN", "比分": "3-2"},{"日期": "2026-09-18", "类型": "球星挑战赛", "胜者": "FANG Bo/Jia Nan YUAN", "负者": "LI Hechen/YAO Ruixuan", "比分": "3-2"},{"日期": "2026-09-19", "类型": "球星挑战赛", "胜者": "Hiromu KOBAYASHI/Miyuu KIHARA", "负者": "PARK Ganghyeon/YOO Siwoo", "比分": "3-0"},{"日期": "2026-09-19", "类型": "球星挑战赛", "胜者": "CHEN Junsong/WANG Yidi", "负者": "FANG Bo/Jia Nan YUAN", "比分": "3-0"},{"日期": "2026-09-20", "类型": "球星挑战赛", "胜者": "CHEN Junsong/WANG Yidi", "负者": "Hiromu KOBAYASHI/Miyuu KIHARA", "比分": "3-0"}
+{"日期": "2026-09-17", "类型": "球星挑战赛", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "Benedikt DUDA/Nina MITTELHAM", "比分": "3-0"},{"日期": "2026-09-17", "类型": "球星挑战赛", "胜者": "Hiromu KOBAYASHI/Miyuu KIHARA", "负者": "Maksim GREBNEV/Vlada VORONINA", "比分": "3-0"},{"日期": "2026-09-17", "类型": "球星挑战赛", "胜者": "Evgeny TIKHONOV/Maria PANFILOVA", "负者": "LI Tianyang/ZHU Sibing", "比分": "3-2"},{"日期": "2026-09-17", "类型": "球星挑战赛", "胜者": "PARK Ganghyeon/YOO Siwoo", "负者": "Patrick FRANZISKA/Adriana DIAZ", "比分": "3-2"},{"日期": "2026-09-17", "类型": "球星挑战赛", "胜者": "CHEN Junsong/WANG Yidi", "负者": "Darius MOVILEANU/Andreea DRAGOMAN", "比分": "3-1"},{"日期": "2026-09-17", "类型": "球星挑战赛", "胜者": "Nikita ARTEMENKO/Elizabet ABRAAMIAN", "负者": "Alexis LEBRUN/Charlotte LUTZ", "比分": "3-1"},{"日期": "2026-09-17", "类型": "球星挑战赛", "胜者": "LI Hechen/YAO Ruixuan", "负者": "Abdullah YIGENLER/Ece HARAC", "比分": "3-0"},{"日期": "2026-09-17", "类型": "球星挑战赛", "胜者": "FANG Bo/Jia Nan YUAN", "负者": "Eduard IONESCU/Bernadette SZOCS", "比分": "3-1"},{"日期": "2026-09-18", "类型": "球星挑战赛", "胜者": "Hiromu KOBAYASHI/Miyuu KIHARA", "负者": "Alvaro ROBLES/Maria XIAO", "比分": "3-2"},{"日期": "2026-09-18", "类型": "球星挑战赛", "胜者": "PARK Ganghyeon/YOO Siwoo", "负者": "Evgeny TIKHONOV/Maria PANFILOVA", "比分": "3-1"},{"日期": "2026-09-18", "类型": "球星挑战赛", "胜者": "CHEN Junsong/WANG Yidi", "负者": "Nikita ARTEMENKO/Elizabet ABRAAMIAN", "比分": "3-2"},{"日期": "2026-09-18", "类型": "球星挑战赛", "胜者": "FANG Bo/Jia Nan YUAN", "负者": "LI Hechen/YAO Ruixuan", "比分": "3-2"},{"日期": "2026-09-19", "类型": "球星挑战赛", "胜者": "Hiromu KOBAYASHI/Miyuu KIHARA", "负者": "PARK Ganghyeon/YOO Siwoo", "比分": "3-0"},{"日期": "2026-09-19", "类型": "球星挑战赛", "胜者": "CHEN Junsong/WANG Yidi", "负者": "FANG Bo/Jia Nan YUAN", "比分": "3-0"},{"日期": "2026-09-20", "类型": "球星挑战赛", "胜者": "CHEN Junsong/WANG Yidi", "负者": "Hiromu KOBAYASHI/Miyuu KIHARA", "比分": "3-0"},
+  {
+    "日期": "2026-09-25",
+    "类型": "亚运会",
+    "胜者": "LIN Shidong/KUAI Man",
+    "负者": "LIM Jonghoon/SHIN Yubin",
+    "比分": "3-2",
+    "局分": [
+      "9-11",
+      "11-8",
+      "7-11",
+      "11-9",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2026-09-25",
+    "类型": "亚运会",
+    "胜者": "WANG Chuqin/SUN Yingsha",
+    "负者": "Manush SHAH/Diya CHITALE",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-5",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2026-09-26",
+    "类型": "亚运会",
+    "胜者": "LIN Shidong/KUAI Man",
+    "负者": "WANG Chuqin/SUN Yingsha",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "13-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2026-09-21",
+    "类型": "亚运会",
+    "胜者": "ZHENG Hong Wai/LEONG On Na",
+    "负者": "Temuulen MYANDAL/Bolorerdene BATMUNKH",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "11-8",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2026-09-21",
+    "类型": "亚运会",
+    "胜者": "Hiroto SHINOZUKA/Mima ITO",
+    "负者": "Diyorbek DILSHODOV/Asel ERKEBAEVA",
+    "比分": "3-0",
+    "局分": [
+      "11-3",
+      "11-6",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "亚运会",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "Mohammed ABDULWAHHAB/Aia MOHAMED",
+    "比分": "3-0",
+    "局分": [
+      "11-3",
+      "11-5",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "亚运会",
+    "胜者": "Iskender KHARKI/Sarvinoz MIRKADIROVA",
+    "负者": "ZHENG Hong Wai/LEONG On Na",
+    "比分": "3-2",
+    "局分": [
+      "9-11",
+      "11-8",
+      "8-11",
+      "11-6",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "亚运会",
+    "胜者": "Hiroto SHINOZUKA/Mima ITO",
+    "负者": "PANG Koen/ZENG Jian",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-4",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "亚运会",
+    "胜者": "CHENG I-Ching/LIN Yun-Ju",
+    "负者": "Atai KASYMOV/Nurkyz AIAZBEKOVA",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-4",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "亚运会",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "Iskender KHARKI/Sarvinoz MIRKADIROVA",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-4",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "亚运会",
+    "胜者": "CHENG I-Ching/LIN Yun-Ju",
+    "负者": "Hiroto SHINOZUKA/Mima ITO",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-9",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2026-09-23",
+    "类型": "亚运会",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "CHENG I-Ching/LIN Yun-Ju",
+    "比分": "3-2",
+    "局分": [
+      "11-7",
+      "10-12",
+      "11-7",
+      "5-11",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2026-09-21",
+    "类型": "亚运会",
+    "胜者": "Rubin MAHARJAN/THAPA Evana",
+    "负者": "Muhammad Shah KHAN/Kalsoom KHAN",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-8",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2026-09-21",
+    "类型": "亚运会",
+    "胜者": "Phakpoom SANGUANSIN/Orawan PARANANG",
+    "负者": "Aryan GHAFFARI/Mahshid ASHTARI",
+    "比分": "3-1",
+    "局分": [
+      "13-15",
+      "12-10",
+      "11-5",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "亚运会",
+    "胜者": "Harmeet DESAI/Yashaswini GHORPADE",
+    "负者": "Fathimath ALI/Mohamed Shaffan ISMAIL",
+    "比分": "3-2",
+    "局分": [
+      "9-11",
+      "11-6",
+      "11-7",
+      "9-11",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "亚运会",
+    "胜者": "YIU Kwan To/NG Wing Lam",
+    "负者": "Rubin MAHARJAN/THAPA Evana",
+    "比分": "3-0",
+    "局分": [
+      "11-2",
+      "11-6",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "亚运会",
+    "胜者": "Phakpoom SANGUANSIN/Orawan PARANANG",
+    "负者": "Almaira NEBUCHADNEZZAR/Muhammad JUNINDRA",
+    "比分": "3-0",
+    "局分": [
+      "11-3",
+      "12-10",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "亚运会",
+    "胜者": "LIN Shidong/KUAI Man",
+    "负者": "RI Jong Sik/KIM Kum Yong",
+    "比分": "3-0",
+    "局分": [
+      "11-3",
+      "11-8",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "亚运会",
+    "胜者": "Harmeet DESAI/Yashaswini GHORPADE",
+    "负者": "YIU Kwan To/NG Wing Lam",
+    "比分": "3-1",
+    "局分": [
+      "11-6",
+      "11-5",
+      "10-12",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "亚运会",
+    "胜者": "LIN Shidong/KUAI Man",
+    "负者": "Phakpoom SANGUANSIN/Orawan PARANANG",
+    "比分": "3-1",
+    "局分": [
+      "11-2",
+      "10-12",
+      "11-4",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2026-09-23",
+    "类型": "亚运会",
+    "胜者": "LIN Shidong/KUAI Man",
+    "负者": "Harmeet DESAI/Yashaswini GHORPADE",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "12-10",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2026-09-21",
+    "类型": "亚运会",
+    "胜者": "Mohutasin RIDOY/Nowrin MAHI",
+    "负者": "Choutiphone SISOMBOUN/Xaysana XAYSAVATH",
+    "比分": "3-1",
+    "局分": [
+      "11-6",
+      "9-11",
+      "11-8",
+      "11-2"
+    ]
+  },
+  {
+    "日期": "2026-09-21",
+    "类型": "亚运会",
+    "胜者": "Ankhbayar BILGUUN/Ankhmaa SER-OD",
+    "负者": "Nabita SHRESTHA/Sanyog KAPALI",
+    "比分": "3-1",
+    "局分": [
+      "2-11",
+      "11-6",
+      "11-6",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2026-09-21",
+    "类型": "亚运会",
+    "胜者": "Chanul Dulsen KULAPPUWAWADU/Bimandee SWARNA",
+    "负者": "Abdullah ABDULWAHHAB/Maryam ALI",
+    "比分": "3-1",
+    "局分": [
+      "7-11",
+      "12-10",
+      "11-3",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "亚运会",
+    "胜者": "WONG Chun Ting/DOO Hoi Kem",
+    "负者": "MAK Tin Ian/KUAN Cheok Lam",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-5",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "亚运会",
+    "胜者": "Kulapassr VIJITVIRIYAGUL/Thitaphat PREECHAYAN",
+    "负者": "Mohutasin RIDOY/Nowrin MAHI",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-9",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "亚运会",
+    "胜者": "Moosa AHMED/Aishath NAZIM",
+    "负者": "Ankhbayar BILGUUN/Ankhmaa SER-OD",
+    "比分": "3-2",
+    "局分": [
+      "7-11",
+      "5-11",
+      "11-9",
+      "11-9",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "亚运会",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "Chanul Dulsen KULAPPUWAWADU/Bimandee SWARNA",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "12-10",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "亚运会",
+    "胜者": "WONG Chun Ting/DOO Hoi Kem",
+    "负者": "Kulapassr VIJITVIRIYAGUL/Thitaphat PREECHAYAN",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-7",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "亚运会",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "Moosa AHMED/Aishath NAZIM",
+    "比分": "3-0",
+    "局分": [
+      "11-0",
+      "11-7",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2026-09-23",
+    "类型": "亚运会",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "WONG Chun Ting/DOO Hoi Kem",
+    "比分": "3-1",
+    "局分": [
+      "11-6",
+      "13-15",
+      "11-9",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2026-09-21",
+    "类型": "亚运会",
+    "胜者": "Affan PRATAMA/Cindy PUTRI",
+    "负者": "Benyamin FARAJI/Setayesh ILOUKHANI",
+    "比分": "3-2",
+    "局分": [
+      "12-14",
+      "6-11",
+      "11-5",
+      "11-9",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2026-09-21",
+    "类型": "亚运会",
+    "胜者": "FENG Yi-Hsin/YEH Yi-Tian",
+    "负者": "Kirill GERASSIMENKO/Zauresh AKASHEVA",
+    "比分": "3-1",
+    "局分": [
+      "11-13",
+      "11-5",
+      "11-8",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "亚运会",
+    "胜者": "Sora MATSUSHIMA/Miwa HARIMOTO",
+    "负者": "U Tae Ryong/PYON Song Gyong",
+    "比分": "3-2",
+    "局分": [
+      "11-13",
+      "14-12",
+      "7-11",
+      "12-10",
+      "11-2"
+    ]
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "亚运会",
+    "胜者": "OH Junsung/KIM Nayeong",
+    "负者": "Affan PRATAMA/Cindy PUTRI",
+    "比分": "3-1",
+    "局分": [
+      "11-8",
+      "9-11",
+      "18-16",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "亚运会",
+    "胜者": "FENG Yi-Hsin/YEH Yi-Tian",
+    "负者": "QUEK Izaac/LOY Ming Ying",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-9",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "亚运会",
+    "胜者": "WANG Chuqin/SUN Yingsha",
+    "负者": "Shokhrukh ISKANDAROV/Arujan KAMALOVA",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "14-12",
+      "11-2"
+    ]
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "亚运会",
+    "胜者": "Sora MATSUSHIMA/Miwa HARIMOTO",
+    "负者": "OH Junsung/KIM Nayeong",
+    "比分": "3-2",
+    "局分": [
+      "9-11",
+      "11-5",
+      "9-11",
+      "11-6",
+      "14-12"
+    ]
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "亚运会",
+    "胜者": "WANG Chuqin/SUN Yingsha",
+    "负者": "FENG Yi-Hsin/YEH Yi-Tian",
+    "比分": "3-0",
+    "局分": [
+      "11-1",
+      "11-7",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2026-09-23",
+    "类型": "亚运会",
+    "胜者": "WANG Chuqin/SUN Yingsha",
+    "负者": "Sora MATSUSHIMA/Miwa HARIMOTO",
+    "比分": "3-0",
+    "局分": [
+      "12-10",
+      "13-11",
+      "11-8"
+    ]
+  }
 ]

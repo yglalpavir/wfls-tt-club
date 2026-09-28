@@ -53,6 +53,7 @@ tools/*
 !tools/append_submission.py
 !tools/import_submissions_csv.py
 !tools/gen_assets_manifest.py
+!tools/i18n_audit.py
 # import_submissions_csv.py 的去重状态（tools/* 规则已默认忽略，此处显式声明意图）
 tools/.import-state.json
 # 内部审计与一次性导入记录

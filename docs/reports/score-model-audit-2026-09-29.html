@@ -1,0 +1,1883 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WFLS 乒乓球社 · 积分模型研判报告（2026-09-29）</title>
+<style>
+:root{
+  --blue:#007bff; --blue-d:#0056b3; --blue-l:#4da3ff; --blue-p:#e6f2ff;
+  --red:#ff4d4f; --red-d:#d9363e; --gold:#f0a500; --green:#52c41a; --teal:#0d9488;
+  --ink:#14172a; --ink2:#3d4657; --ink3:#6b7688; --line:#e4e8f0; --line2:#eef1f6;
+  --bg:#f6f8fc; --card:#fff; --code:#f3f5f9;
+  --sh-s:0 1px 2px rgba(16,24,40,.05); --sh-m:0 4px 18px rgba(16,24,40,.07); --sh-l:0 18px 48px rgba(16,24,40,.11);
+  --r-s:8px; --r-m:14px; --r-l:22px;
+  --sans:"Noto Sans SC","PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  --mono:"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.85;-webkit-font-smoothing:antialiased}
+a{color:var(--blue-d);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ---------- 封面 ---------- */
+.cover{position:relative;overflow:hidden;background:
+  radial-gradient(1100px 520px at 12% -12%,rgba(0,123,255,.20),transparent 62%),
+  radial-gradient(900px 480px at 88% 8%,rgba(240,165,0,.16),transparent 60%),
+  linear-gradient(158deg,#0d1b3e 0%,#122a5c 46%,#0a1730 100%);
+  color:#fff;padding:64px 32px 56px}
+.cover-in{max-width:1180px;margin:0 auto;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:#9fc6ff;border:1px solid rgba(159,198,255,.34);
+  padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.06);font-weight:600}
+.cover h1{font-size:clamp(30px,4.6vw,50px);line-height:1.18;margin:22px 0 14px;font-weight:800;letter-spacing:-.4px}
+.cover .sub{font-size:17px;color:#c3d6f5;max-width:900px;line-height:1.9;margin:0 0 26px}
+.cover-meta{display:flex;flex-wrap:wrap;gap:10px 26px;font-size:13.5px;color:#9db4d8;margin-bottom:30px}
+.cover-meta b{color:#e6eefc;font-weight:600}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:14px;margin-top:8px}
+.kpi{background:rgba(255,255,255,.075);border:1px solid rgba(255,255,255,.15);border-radius:var(--r-m);padding:16px 18px;backdrop-filter:blur(6px)}
+.kpi .v{font-size:26px;font-weight:800;letter-spacing:-.5px;line-height:1.2}
+.kpi .k{font-size:12.5px;color:#a9c1e6;margin-top:3px}
+.kpi.warn .v{color:#ffc266}.kpi.bad .v{color:#ff8f91}.kpi.good .v{color:#8ce99a}
+
+/* ---------- 布局 ---------- */
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px 100px;display:grid;grid-template-columns:238px 1fr;gap:46px;align-items:start}
+@media(max-width:1000px){.wrap{grid-template-columns:1fr;gap:0;padding:0 18px 70px}}
+.toc{position:sticky;top:22px;padding:26px 0;font-size:13.5px;max-height:calc(100vh - 44px);overflow:auto}
+@media(max-width:1000px){.toc{position:static;max-height:none;padding:20px 0 8px;border-bottom:1px solid var(--line);margin-bottom:18px}}
+.toc h4{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);margin:0 0 12px;font-weight:700}
+.toc a{display:block;padding:6px 12px;border-radius:8px;color:var(--ink2);line-height:1.5;border-left:2.5px solid transparent;transition:.16s}
+.toc a:hover{background:#fff;color:var(--blue-d);text-decoration:none;border-left-color:var(--blue-l)}
+.toc a.sub{padding-left:26px;font-size:12.8px;color:var(--ink3)}
+
+main{padding-top:26px;min-width:0}
+section{margin:0 0 62px;scroll-margin-top:20px}
+h2.ch{font-size:27px;font-weight:800;letter-spacing:-.3px;margin:0 0 6px;padding-bottom:14px;border-bottom:2px solid var(--line);display:flex;align-items:baseline;gap:13px}
+h2.ch .no{font-family:var(--mono);font-size:14px;color:var(--blue);background:var(--blue-p);padding:4px 10px;border-radius:7px;font-weight:700;letter-spacing:0}
+h3.sec{font-size:19.5px;font-weight:700;margin:38px 0 12px;padding-left:13px;border-left:4px solid var(--blue);line-height:1.5}
+h4.sub2{font-size:16px;font-weight:700;margin:26px 0 9px;color:var(--ink)}
+p{margin:0 0 15px}
+ul,ol{margin:0 0 16px;padding-left:24px}
+li{margin-bottom:8px}
+strong{font-weight:700;color:var(--ink)}
+code{font-family:var(--mono);font-size:.89em;background:var(--code);padding:2px 6px;border-radius:5px;color:#0a3d78;border:1px solid #e3e8f2}
+em.n{font-style:normal;font-weight:700;color:var(--blue-d)}
+
+/* ---------- 卡片 / 组件 ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-l);padding:26px 28px;box-shadow:var(--sh-s);margin:22px 0}
+.card.pad0{padding:0;overflow:hidden}
+.card h3{margin-top:0}
+.chart{position:relative;height:340px;margin:14px 0 4px}
+.chart.tall{height:420px}
+.chart.short{height:270px}
+.ct{font-size:15px;font-weight:700;margin:0 0 3px}
+.cd{font-size:13.2px;color:var(--ink3);margin:0 0 12px;line-height:1.7}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:18px;margin:22px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:22px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:18px 20px;box-shadow:var(--sh-s)}
+.stat .v{font-size:27px;font-weight:800;letter-spacing:-.6px;line-height:1.15}
+.stat .k{font-size:13px;color:var(--ink3);margin-top:4px;line-height:1.6}
+.stat .n{font-size:11.5px;color:var(--ink3);margin-top:6px;padding-top:7px;border-top:1px dashed var(--line);line-height:1.6}
+.stat.bad .v{color:var(--red-d)}.stat.warn .v{color:#c47f00}.stat.good .v{color:#2f9e44}.stat.info .v{color:var(--blue-d)}
+
+.box{border-radius:var(--r-m);padding:19px 23px;margin:22px 0;border:1px solid;font-size:14.6px;line-height:1.85}
+.box .bt{font-weight:800;font-size:14.5px;margin-bottom:9px;display:flex;align-items:center;gap:9px;letter-spacing:.02em}
+.box p:last-child,.box ul:last-child{margin-bottom:0}
+.box.f{background:#f0f6ff;border-color:#c9e0ff}
+.box.f .bt{color:#0a4fa0}
+.box.w{background:#fff8ec;border-color:#ffe0a3}
+.box.w .bt{color:#a8690a}
+.box.e{background:#fff1f1;border-color:#ffcccc}
+.box.e .bt{color:#b02427}
+.box.s{background:#eefaf0;border-color:#bfe8c9}
+.box.s .bt{color:#1e7a34}
+
+.tag{display:inline-block;font-size:11.5px;font-weight:700;padding:2.5px 9px;border-radius:6px;letter-spacing:.03em;white-space:nowrap}
+.tag.crit{background:#ffe3e3;color:#b02427}
+.tag.high{background:#fff0d4;color:#a8690a}
+.tag.mid{background:#e2efff;color:#0a4fa0}
+.tag.low{background:#e9edf3;color:#5b6b7d}
+.tag.ok{background:#dcf5e2;color:#1e7a34}
+
+table{width:100%;border-collapse:collapse;font-size:13.6px;margin:16px 0}
+th,td{padding:9px 11px;border-bottom:1px solid var(--line2);text-align:left;vertical-align:top}
+th{background:#f7f9fc;font-weight:700;color:var(--ink2);font-size:12.6px;letter-spacing:.02em;white-space:nowrap;position:sticky;top:0}
+tbody tr:hover{background:#fafcff}
+td.num,th.num{text-align:right;font-family:var(--mono);font-size:12.8px;white-space:nowrap}
+.tbl-wrap{overflow:auto;border:1px solid var(--line);border-radius:var(--r-m);margin:18px 0;background:#fff;max-height:560px}
+.tbl-wrap table{margin:0}
+.bar-cell{position:relative}
+.bar-cell i{position:absolute;left:0;top:0;bottom:0;background:var(--blue-p);border-radius:3px;z-index:0}
+.bar-cell span{position:relative;z-index:1;font-family:var(--mono);font-size:12.4px}
+.hi{background:#fff3e0}.lo{background:#eefaf0}
+
+svg.ladder{width:100%;height:auto;display:block}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:12.6px;color:var(--ink2);margin-top:10px;align-items:center}
+.legend i{display:inline-block;width:13px;height:3.5px;border-radius:2px;margin-right:6px;vertical-align:middle}
+
+.toc-num{display:flex;gap:22px;flex-wrap:wrap;margin:18px 0 4px}
+.toc-num div{flex:1;min-width:180px}
+.toc-num b{display:block;font-size:12px;color:var(--ink3);font-weight:600;margin-bottom:2px}
+.toc-num span{font-family:var(--mono);font-size:15px;font-weight:700}
+
+.pillrow{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0}
+.pill{font-size:12.4px;background:#eef2f8;border:1px solid var(--line);border-radius:999px;padding:3.5px 12px;color:var(--ink2);font-family:var(--mono)}
+
+.formula{background:linear-gradient(180deg,#0f1c3d,#152a55);color:#e8f0ff;border-radius:var(--r-m);padding:22px 26px;margin:20px 0;font-family:var(--mono);font-size:15px;line-height:2.1;overflow-x:auto;box-shadow:var(--sh-m)}
+.formula .c{color:#7ea6e8}.formula .k{color:#ffd479}.formula .n{color:#8ce99a}.formula .c2{color:#ffa8a8}
+.foot{color:var(--ink3);font-size:13.4px;border-top:1px solid var(--line);padding-top:18px;margin-top:30px}
+.no-scroll-x{overflow-x:auto}
+hr.sep{border:0;border-top:1px dashed var(--line);margin:32px 0}
+@media print{.toc{display:none}.wrap{grid-template-columns:1fr}.cover{background:#122a5c}}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cover-in">
+    <div class="eyebrow">◆ 数据研判报告 · 内部技术文档</div>
+    <h1>WFLS 乒乓球社 积分模型研判报告</h1>
+    <p class="sub">
+      对社团现行积分模型进行一次端到端的运行情况研判：以 <code style="background:rgba(255,255,255,.12);color:#cfe1ff;border-color:rgba(255,255,255,.2)">js/score-engine.js</code> 的真实代码路径为唯一口径，
+      在 Node 沙箱中加载浏览器同一份 <code style="background:rgba(255,255,255,.12);color:#cfe1ff;border-color:rgba(255,255,255,.2)">js/common.js</code> 与 <code style="background:rgba(255,255,255,.12);color:#cfe1ff;border-color:rgba(255,255,255,.2)">score-engine.js</code>，
+      逐场重放全部 <b id="k-matches">—</b> 场赛果记录，并对 25 组参数扰动各重跑一次完整排名时间线。
+      报告结论全部来自实跑数据，不含估算值。
+    </p>
+    <div class="cover-meta">
+      <span>数据截止 <b id="m-asof">—</b></span>
+      <span>记录跨度 <b id="m-span">—</b></span>
+      <span>当前赛季 <b>2026 年秋季学期</b></span>
+      <span>半衰期 <b>t = <span id="m-tl">—</span> 天</b></span>
+      <span>负者系数 <b><span id="m-lm">—</span></b></span>
+      <span>地板线 <b><span id="m-fl">—</span></b></span>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><div class="v" id="k1">—</div><div class="k">在册球员 / 有赛果记录</div></div>
+      <div class="kpi warn"><div class="v" id="k2">—</div><div class="k">本赛季 0 场次仍上榜</div></div>
+      <div class="kpi bad"><div class="v" id="k3">—</div><div class="k">全期净注入积分（非零和）</div></div>
+      <div class="kpi bad"><div class="v" id="k4">—</div><div class="k">停赛半年后中位积分变化</div></div>
+      <div class="kpi warn"><div class="v" id="k5">—</div><div class="k">积分基尼系数（区分度）</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+<nav class="toc">
+  <h4>目录</h4>
+  <a href="#s1">一 · 研判结论速览</a>
+  <a href="#s2">二 · 模型解剖</a>
+  <a class="sub" href="#s2-1">2.1 计分公式与参数</a>
+  <a class="sub" href="#s2-2">2.2 基础分阶梯</a>
+  <a class="sub" href="#s2-3">2.3 有效倍率矩阵</a>
+  <a class="sub" href="#s2-4">2.4 定格衰减</a>
+  <a href="#s3">三 · 数据画像</a>
+  <a href="#s4">四 · 点位流：积分并不守恒</a>
+  <a href="#s5">五 · 衰减机制实效检验</a>
+  <a href="#s6">六 · 模型校准：阶梯过平</a>
+  <a href="#s7">七 · 排名表结构：继承主导</a>
+  <a href="#s8">八 · 参与度与代表性</a>
+  <a href="#s9">九 · 参数敏感性全景</a>
+  <a href="#s10">十 · 数据质量与工程问题</a>
+  <a href="#s11">十一 · 改进建议</a>
+  <a href="#s12">附录 · 方法论与可复现性</a>
+</nav>
+
+<main>
+
+<!-- ══════════ 一 ══════════ -->
+<section id="s1">
+<h2 class="ch"><span class="no">01</span>研判结论速览</h2>
+
+<p>
+本次研判的核心任务不是复述积分公式，而是回答一个更实际的问题：<strong>这套模型在社团当前的真实运行状况下，还能不能起到它设计上应当起的作用？</strong>
+所谓「应当起的作用」，在项目的 QA 文档中被表述为三条：用分差驱动加分的强弱感、用时间衰减压制僵尸分、用赛事系数区分正式与娱乐赛。
+因此我们以这三条为主轴，逐一检验模型的实际输出，并额外评估了排名表的代表性与数据质量。
+</p>
+
+<p>
+总体判断是：<em class="n">模型的算分内核是正确、稳健且可复现的，但其中最复杂的一半——时间衰减子系统——在社团当前的运行密度下已经近乎失效；同时，排名表被赛季继承机制锁定，与「当前赛季表现」的关联被大幅稀释。</em>
+换句话说，模型没有算错，但它的三个设计意图里只有一个（分差驱动）在真实数据上清晰可见，另外两个要么微弱到不可测量，要么被数据规模压制。
+</p>
+
+<div class="grid3">
+  <div class="stat bad"><div class="v" id="s1a">—</div><div class="k">停赛 180 天后，中位球员积分变化</div><div class="n">半衰期 45 天的衰减在真实批次间隔（1–3 天）下几乎不产生效果</div></div>
+  <div class="stat bad"><div class="v" id="s1b">—</div><div class="k">榜首与榜二积分差</div><div class="n">远小于单人最大衰减量（<span id="s1c">—</span> 分），名次对衰减不敏感</div></div>
+  <div class="stat warn"><div class="v" id="s1d">—</div><div class="k">秋季赛季积分中来自继承的比例</div><div class="n">「当前排名」实质上是春夏全季表的秋季薄涂层</div></div>
+</div>
+
+<h3 class="sec">八条核心发现</h3>
+
+<div class="box e">
+  <div class="bt">❶ 时间衰减子系统在当前运行密度下已近乎失效 <span class="tag crit">严重</span></div>
+  <p>模型设有半衰期 45 天的指数衰减与「类型刷新·定格」批次锁定机制，配套一份 <code>decay-config.json</code>、一套批次聚簇算法和大量文档。
+  但在本赛季 75 场赛果的 150 个「球员—赛事」参与侧中，<strong id="f1a">—</strong> 个被判定为「最后一批次」（可衰减），<strong id="f1b">—</strong> 个已被定格锁定。
+  由于 <code>BATCH_GROUP_DAYS = 0</code> 且实际比赛近乎逐日进行，批次间隔中位数仅 1–3 天，锁定权重恒在 0.98 附近。
+  实测投影结果：<strong>若全社停赛 180 天，中位球员积分变化为 <span id="f1c">—</span> 分</strong>，平均 3.22 分，最大 25.9 分；
+  停赛 540 天（1.5 年）后最大变化也仅 <span id="f1d">—</span> 分，前十名与榜首完全不变。
+  而榜首与榜二当前仅相差 <span id="f1e">—</span> 分——衰减量甚至小于名次并列时的自然抖动。</p>
+</div>
+
+<div class="box w">
+  <div class="bt">❷ 「类型刷新·定格」与「永久保值类型」是数学等价的两套旋钮 <span class="tag high">工程</span></div>
+  <p>敏感性实验显示，把 <code>FREEZE_ON_REPEAT</code> 置为 <code>false</code>（关闭定格）得到极差 805.8；
+  把 <code>noDecayTypes</code> 扩展为覆盖全部赛事类型（全部永久保值）同样得到极差 805.8，两者的名次位移分布逐位相同。
+  这意味着配置系统提供了两个名义上不同的衰减开关，但在当前实现下产生完全一致的输出，维护者无法通过调参区分二者。</p>
+</div>
+
+<div class="box e">
+  <div class="bt">❸ 基础分阶梯在高分差区间显著过平，模型系统性高估「爆冷」 <span class="tag crit">严重</span></div>
+  <p>把 250 分以上的对局合并统计（66 场），模型隐含爆冷率 <strong>20.3%</strong>，实测仅 <strong>12.1%</strong>——高估 68%。
+  作为对照，150 分以内的 187 场比赛实测 44.4%、模型隐含 45.1%，偏差仅 0.7 个百分点，校准近乎完美。
+  也就是说，阶梯在「势均力敌」区间是准确的，问题集中在高分差区间，且断点就落在 199 分这条分界线上。<br>
+  后果是结构性的：<strong>高分者稳胜低分者几乎不加分</strong>——在只统计「高分者获胜」的 198 场比赛中，
+  分差 0–50 的单场原始分均值 11.97 分，分差 400–600 只有 2.88 分（不足四分之一），600 分以上仅 0.56 分。
+  十场碾压的累积收益（29 分）不到十场势均力敌对局（约 120 分）的四分之一。模型在事实上奖励运气而非统治。</p>
+</div>
+
+<div class="box w">
+  <div class="bt">❹ 排名表被赛季继承锁定，与当前赛季表现脱钩 <span class="tag high">严重</span></div>
+  <p>秋季赛季结束时全社积分池 <span id="f4a">—</span> 分中，<span id="f4b">—</span> 分（<span id="f4c">—</span>%）来自 50% 继承的春季与暑假积累。
+  当前排名表 <span id="f4d">—</span> 人中，有 <strong id="f4e">—</strong> 人（<span id="f4f">—</span>%）本赛季一场未打，
+  仍高居榜单；前十名里有 <span id="f4g">—</span> 人本赛季场次 ≤ 1。
+  「实时排名」这一命名因此存在误导性：它反映的是历史累计水平，而非本学期状态。</p>
+</div>
+
+<div class="box w">
+  <div class="bt">❺ 参赛量比胜率更能解释排名 <span class="tag high">方法论</span></div>
+  <p>Spearman 秩相关显示：积分与场次的秩相关为 <strong id="f5a">—</strong>，而积分与胜率的秩相关仅 <strong id="f5b">—</strong>，
+  胜率与场次之间甚至不相关（<span id="f5c">—</span>）。这说明榜单在更大程度上度量的是「谁有球打」，而不是「谁打得好」。
+  配合参赛人次基尼系数 0.651（<span id="f5d">—</span>% 的人次集中在前 10 人），排名表的代表性存在实质问题。</p>
+</div>
+
+<div class="box w">
+  <div class="bt">❻ 58% 的赛果记录缺少「赛制」字段，其价值依赖一条未经校验的默认假设 <span class="tag high">数据</span></div>
+  <p>全部 <span id="f6a">—</span> 场赛果中有 <strong id="f6b">—</strong> 场（<span id="f6c">—</span>%）没有 <code>赛制</code> 字段，
+  会回退到 <code>默认赛制</code> 映射。问题集中在「校乒赛团体」（42 场）与「校乒赛单打」（49 场）两类保值赛事上，
+  它们被默认按 bo5 计值。若这两类实际多为 bo3，则当前积分池中约 <strong id="f6d">—</strong> 分的原始价值建立在一个未经核实的假设之上，
+  且由于属于永久保值类型，这部分偏差<strong>不会随时间被衰减抹平</strong>。</p>
+</div>
+
+<div class="box w">
+  <div class="bt">❼ 地板线与默认初始分两个参数完全空转 <span class="tag mid">工程</span></div>
+  <p>把地板线从 1200 改为 0，排名输出<strong>逐位完全相同</strong>（极差同为 807.7，无任何名次位移）——
+  因为全期 316 场比赛没有任何一次扣分触及地板线，最低保分球员仍有 1300 分。
+  同样，把 <code>DEFAULT_INITIAL_SCORE</code> 改为 1300 也无任何变化，因为 <code>players.json</code> 为全部 45 名在册球员都写明了 <code>initialScore</code>，
+  默认值从未被触发。这两个参数目前是纯粹的配置冗余。</p>
+</div>
+
+<div class="box w">
+  <div class="bt">❽ 积分池持续膨胀，且增量高度集中于两类保值赛事 <span class="tag high">机制</span></div>
+  <p>负者扣分系数 0.8 使每场比赛净增 <span id="f8a">—</span> 分，全期 316 场共净注入 <strong id="f8b">—</strong> 分。
+  其中「校乒赛单打」与「校乒赛团体」两类（合计 94 场）贡献了净注入的 <strong id="f8c">—</strong>，
+  而这两类恰好都在 <code>noDecayTypes</code> 名单内——<strong>系统创造积分最快的部分，也是永远不会被时间回收的部分。</strong></p>
+</div>
+
+<div class="box s">
+  <div class="bt">✓ 值得肯定的三点</div>
+  <ul style="margin-bottom:0">
+    <li><strong>算分内核可靠。</strong>逐场重放与引擎自校验口径完全一致，未发现数值越界、地板线击穿或排名抖动等缺陷；29 个时间线节点全部通过 <code>recompute_rankings.js</code> 的自检。</li>
+    <li><strong>同分并列的处理得当。</strong><code>compareRankedRows</code> 采用「积分 → 总场次 → 姓名」三级稳定排序，消除了跨快照的对象插入顺序抖动，这是一个容易被忽略但已经做对的细节。</li>
+    <li><strong>数据管线完整。</strong>三条访客提交流水线共享同一套校验函数，<code>ci_validate.py</code> 作为最终闸门，架构上不存在「网页能过、CI 不过」的分叉。</li>
+  </ul>
+</div>
+
+</section>
+
+<!-- ══════════ 二 ══════════ -->
+<section id="s2">
+<h2 class="ch"><span class="no">02</span>模型解剖</h2>
+<p>本章把模型拆成四个可独立检验的部件：基础分阶梯、赛事系数、赛制系数、时间权重。理解这四者的交互方式，是判断模型是否「按设计工作」的前提。</p>
+
+<div class="formula">
+<span class="c">// 单场比赛的原始价值（未计时间权重）</span><br>
+raw = <span class="k">baseScore</span>(wScore − lScore) <span class="c">×</span> <span class="k">eventCoef</span>(类型) <span class="c">×</span> <span class="k">formatMult</span>(类型, 赛制)<br><br>
+<span class="c">// 实际入账（双方各自按自己的「球员×类型」批次定格/衰减）</span><br>
+winner.<span class="n">gain</span> = raw <span class="c">×</span> <span class="k">freezeWeight</span>(胜者, 类型, 比赛日, 快照日)<br>
+loser.<span class="n">loss</span> = raw <span class="c">×</span> <span class="2" style="color:#ffa8a8">0.8</span> <span class="c">×</span> <span class="k">freezeWeight</span>(负者, 类型, 比赛日, 快照日)<br><br>
+<span class="c">// 单场净变化 = gain − loss，通常 &gt; 0（积分被创造而非转移）</span><br>
+Δ = raw <span class="c">×</span> ( wWeight − <span class="2" style="color:#ffa8a8">0.8</span> <span class="c">×</span> lWeight )
+</div>
+
+<div class="box w">
+  <div class="bt">⚠ 这里有一个容易被误读的实现细节</div>
+  <p>胜者与负者使用<strong>各自独立</strong>的衰减权重，而不是共用胜者的权重再乘 0.8。代码注释明确禁止后者
+  （「两人的批次/定格日不同，衰减权重一般不同」）。这在数学上是正确的——它保证了败者扣分不会因为胜者近期活跃而被连带放大。
+  但它也带来一个副作用：净变化 Δ 取决于 <em>wWeight − 0.8 × lWeight</em> 的差值，
+  而非仅仅取决于 0.2 × raw。当败者的权重显著高于胜者时（败者更活跃、胜者更沉寂），Δ 甚至可能为负，即该场比赛会<strong>销毁</strong>积分。
+  本期数据中未出现负净值的场次，但机制上存在。</p>
+</div>
+
+<h3 class="sec" id="s2-1">2.1 参数总表</h3>
+<p>下表汇总了模型全部可配置参数及其现值。这些值分散在三个 JSON 文件与两份 JS 常量中，是本次敏感性分析的自变量全集。</p>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>参数</th><th>所在文件</th><th>现值</th><th>作用</th><th class="num">实测影响力</th></tr></thead>
+<tbody>
+<tr><td><code>LOSER_POINT_MULTIPLIER</code></td><td>js/common.js</td><td>0.8</td><td>负者扣分 = 胜者得分 × 此值</td><td class="num">高（尺度主控）</td></tr>
+<tr><td><code>SCORE_FLOOR</code></td><td>js/common.js</td><td>1200</td><td>积分下限，防止无限下滑</td><td class="num">零（从未触发）</td></tr>
+<tr><td><code>DEFAULT_INITIAL_SCORE</code></td><td>js/common.js</td><td>1300</td><td>players.json 缺值时的兜底</td><td class="num">零（45 人均有值）</td></tr>
+<tr><td><code>FREEZE_ON_REPEAT</code></td><td>js/common.js</td><td>true</td><td>同类型第二次出现时锁死前批</td><td class="num">极低</td></tr>
+<tr><td><code>BATCH_GROUP_DAYS</code></td><td>js/common.js</td><td>0</td><td>同类型场次聚簇为一批的天数阈值</td><td class="num">中（塑造批次结构）</td></tr>
+<tr><td><code>t</code>（半衰期）</td><td>data/decay-config.json</td><td>45</td><td>衰减半衰期（天）</td><td class="num">极低</td></tr>
+<tr><td><code>noDecayTypes</code></td><td>data/decay-config.json</td><td>3 类</td><td>永久保值赛事类型</td><td class="num">中（决定保值池）</td></tr>
+<tr><td>赛事系数</td><td>data/event-coefficient.json</td><td>0.2–1.0</td><td>赛事级别 → 权重</td><td class="num">中（等比缩放）</td></tr>
+<tr><td>赛制系数</td><td>data/event-coefficient.json</td><td>0.7/1.0/1.5</td><td>bo3/bo5/bo7 → 倍率</td><td class="num">低</td></tr>
+<tr><td>默认赛制</td><td>data/event-coefficient.json</td><td>逐类型</td><td>缺 <code>赛制</code> 时的回退</td><td class="num">高（影响 58% 记录）</td></tr>
+<tr><td>赛季继承率</td><td>js/score-engine.js</td><td>50%</td><td>跨赛季结转比例</td><td class="num">最高（排名主控）</td></tr>
+<tr><td><code>DOUBLES_GAP_DISCOUNT</code></td><td>js/score-engine.js</td><td>0.25</td><td>双打组合初始分的失衡折扣</td><td class="num">—（双打仅 1 场）</td></tr>
+</tbody></table></div>
+
+<h3 class="sec" id="s2-2">2.2 基础分阶梯：一条刻意做平的非对称曲线</h3>
+<p>
+<code>getBaseScore(gap)</code> 是整个模型的价值中枢。它接收「胜者赛前积分 − 负者赛前积分」，返回 4–66 之间的一个整数。
+关键设计是<strong>非对称</strong>：当胜者积分更高（gap &gt; 0）时，分差越大、得分越低；当胜者积分更低（gap &lt; 0）时，分差越大、得分越高。
+两侧在 |gap| = 49 以内都取 30 分，即势均力敌的对局双方按同一基准结算。
+</p>
+
+<div class="card">
+  <div class="ct">图 2-1　基础分阶梯（横轴为赛前分差，纵轴为胜者获得的基础分）</div>
+  <div class="cd">蓝线为「高分者获胜」时的得分，橙线为「低分者获胜」时的得分。两线关于 |gap| 对称，但方向相反——这就是模型的「爆冷奖励」机制。</div>
+  <svg class="ladder" id="svgLadder" viewBox="0 0 880 340" preserveAspectRatio="xMidYMid meet"></svg>
+  <div class="legend">
+    <span><i style="background:#007bff"></i>高分者胜（gap &gt; 0）</span>
+    <span><i style="background:#f0a500"></i>低分者胜（gap &lt; 0，爆冷）</span>
+    <span><i style="background:#cbd5e1"></i>|gap| ≤ 49 的「平局区」，两侧同为 30 分</span>
+  </div>
+</div>
+
+<div class="grid3">
+  <div class="stat info"><div class="v">30 分</div><div class="k">|gap| ≤ 49 的基础分</div><div class="n">势均力敌的一场比赛，两侧结算基准相同</div></div>
+  <div class="stat"><div class="v">4 分</div><div class="k">高分者以 400+ 分差获胜</div><div class="n">统治级胜利的原始价值仅为平局区的 13%</div></div>
+  <div class="stat"><div class="v">66 分</div><div class="k">低分者以 400+ 分差获胜</div><div class="n">超级爆冷的原始价值是平局区的 2.2 倍</div></div>
+</div>
+
+<p>
+这条阶梯的设计意图是明确的：<strong>让击败强敌比击败弱敌更值钱</strong>，从而给弱者一个爬升的通道，避免排名固化。
+在 QA 文档 q4 中这一点被反复强调。问题不在于意图，而在于<strong>幅度</strong>。
+下一章将用实测爆冷率检验这条曲线的斜率是否与真实实力差相匹配——目前的初步结论是：阶梯比现实平缓得多。
+</p>
+
+<h3 class="sec" id="s2-3">2.3 有效倍率：赛事系数 × 赛制系数</h3>
+<p>
+原始分还要乘以两个倍率。赛事系数区分赛事的正式程度（从「普通」的 0.2 到「校乒赛单打」的 1.0，相差 5 倍）；
+赛制系数区分比赛长度（bo3 = 0.7、bo5 = 1.0、bo7 = 1.5）。两者相乘得到「有效倍率」。
+下表按实测数据列出全部出现过的「类型 × 赛制」组合及其真实单场原始分均值。
+</p>
+
+<div class="card">
+  <div class="ct">图 2-2　各「赛事类型 × 赛制」的有效倍率与单场原始分均值</div>
+  <div class="cd">柱高为有效倍率（赛事系数 × 赛制系数），折线为该组合下的实际单场原始分均值。注意「校乒赛团体」与「校乒赛单打」的有效倍率最高，但其原始分被大分差显著压低。</div>
+  <div class="chart short"><canvas id="cEff"></canvas></div>
+</div>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>赛事类型</th><th>赛制</th><th class="num">赛事系数</th><th class="num">赛制倍率</th><th class="num">有效倍率</th><th class="num">场次</th><th class="num">原始分均值</th><th>保值</th></tr></thead>
+<tbody id="tEff"></tbody>
+</table></div>
+
+<div class="box w">
+  <div class="bt">⚠ 「缺省」一行的含义</div>
+  <p>「缺省」表示记录中没有 <code>赛制</code> 字段，倍率来自 <code>默认赛制</code> 映射表。
+  这一行在本赛季占 5 场、全期占 <span id="f-dflt">—</span> 场，全部是「普通」类。
+  真正的问题在于：<strong>当「校乒赛团体」与「校乒赛单打」的记录普遍缺少赛制字段时（分别 42 场与 49 场，缺失率 100% 与 94%），它们也被静默地按 bo5 计值。</strong>
+  这两类赛事恰好是永久保值类型，一旦记错，误差不会被衰减机制纠正。</p>
+</div>
+
+<h3 class="sec" id="s2-4">2.4 定格衰减：一个在当前数据下几乎不动的子系统</h3>
+<p>
+衰减的设计比常见的指数衰减多了一层设计。<code>getFreezeWeight()</code> 并非简单地按「比赛日距今天数」衰减，
+而是先按「球员 × 赛事类型」把历史场次聚成批次：<strong>当同一名球员在同一类赛事中第二次出现时，前一批次即被定格</strong>，
+其权重锁定在下一批出现日，从此不再随时间缩小；只有最后一批次继续衰减。
+这个设计的意图是避免「一个早期强项被永久记住」，同时又避免「同一个人反复打同类比赛导致该类积分被反复清零」。
+</p>
+
+<div class="card">
+  <div class="ct">图 2-3　指数衰减曲线与实际场次的权重分布</div>
+  <div class="cd">左：t = 45 天的理论衰减曲线。右：本赛季 150 个「球员—赛事」参与侧的实际权重分布——60.7% 落在 0.95–1.00 区间，无一个低于 0.60。</div>
+  <div class="grid2">
+    <div><div class="chart short"><canvas id="cDecayCurve"></canvas></div>
+      <div class="cd" style="text-align:center;margin-top:2px">理论曲线：w = 2<sup>−Δd/45</sup></div></div>
+    <div><div class="chart short"><canvas id="cDecayHist"></canvas></div>
+      <div class="cd" style="text-align:center;margin-top:2px">实际权重分布（n = <span id="f-dwN">—</span>）</div></div>
+  </div>
+</div>
+
+<p>
+理论曲线本身没有问题：45 天的半衰期意味着 90 天前的比赛只剩一半权重。
+问题在于<strong>这条曲线在真实批次结构下几乎没有被采样到</strong>。下章将给出完整的证据链。
+</p>
+</section>
+
+<!-- ══════════ 三 ══════════ -->
+<section id="s3">
+<h2 class="ch"><span class="no">03</span>数据画像</h2>
+<p>任何对积分模型的评价都受制于数据本身的规模与质量。本章先建立对数据基线的准确认知，后续所有比率、相关性和投影结论都建立在这一节之上。</p>
+
+<div class="grid3">
+  <div class="stat info"><div class="v" id="d1">—</div><div class="k">赛果记录（条）</div><div class="n">另有 <span id="d1b">—</span> 条「比赛结果加分」记录</div></div>
+  <div class="stat info"><div class="v" id="d2">—</div><div class="k">记录跨度（天）</div><div class="n"><span id="d2b">—</span> 至 <span id="d2c">—</span></div></div>
+  <div class="stat warn"><div class="v" id="d3">—</div><div class="k">在册球员（人）</div><div class="n">其中 <span id="d3b">—</span> 人全期无任何赛果记录</div></div>
+</div>
+
+<div class="card">
+  <div class="ct">图 3-1　月度赛果场次与赛事类型构成</div>
+  <div class="cd">堆叠柱显示每月场次按赛事类型拆分。注意两点：6 月（校乒赛月）与 9 月（开学月）各形成一个尖峰，其余月份相对平缓；暑期两个月合计仅 55 场，是明显的活动低谷。</div>
+  <div class="chart"><canvas id="cMonthly"></canvas></div>
+</div>
+
+<h3 class="sec">3.1 赛事类型与赛制的分布</h3>
+<p>
+六种赛事类型中，「普通」占 64.6%，是绝对主力；「校乒赛单打」（52 场）与「校乒赛团体」（42 场）合计 94 场，
+全部集中在春季学期，构成一次性的「校乒赛月」脉冲；「十二强赛」16 场全部在 9 月 10 日同一天完成，属于单日赛制。
+「校乒联赛」与「双打」各仅 1 场——后者是唯一一条双打记录，意味着双打榜虽然已经实现，但尚无实际数据。
+</p>
+
+<div class="card">
+  <div class="ct">图 3-2　赛事类型分布（对数刻度）与赛制字段完整度</div>
+  <div class="cd">左图：六类赛事的场次分布，注意「双打」与「校乒联赛」各仅 1 场。右图：赛制字段的有无，58% 的记录依赖默认值。</div>
+  <div class="grid2">
+    <div><div class="chart short"><canvas id="cTypeDist"></canvas></div>
+      <div class="cd" style="text-align:center;margin-top:2px">赛事类型场次（对数刻度）</div></div>
+    <div><div class="chart short"><canvas id="cFormat"></canvas></div>
+      <div class="cd" style="text-align:center;margin-top:2px">赛制字段分布</div></div>
+  </div>
+</div>
+
+<div class="box w">
+  <div class="bt">⚠ 单日赛事的建模问题</div>
+  <p>「十二强赛」的 16 场比赛全部发生在 2026-09-10 同一天。按 <code>BATCH_GROUP_DAYS = 0</code> 的严格同日聚簇规则，
+  同一名球员当天的同类型场次会被合并为<strong>同一批次</strong>，其权重定格于下一批出现日。
+  也就是说，一次 16 场的单日赛事在衰减视角下等价于「一天之内的密集爆发」，其权重会随下一次该类型比赛的出现而被整体锁定。
+  这一处理在语义上是自洽的，但它意味着单日赛事的选手会比跨赛季稳定参赛的选手更容易「保值」——
+  实际上，单日赛事的全部权重在短期内接近 1.0，实测该类型的平均权重为 0.8466，明显高于「普通」类的 0.9207 之下的整体水平。
+  建议未来在赛果记录中区分「单日赛」与「常规活动」，或直接扩大 <code>BATCH_GROUP_DAYS</code> 以反映真实的赛事周期。</p>
+</div>
+
+<h3 class="sec">3.2 数据完整度</h3>
+<p>
+赛果记录的字段完整度直接影响可分析性。<code>比分</code>（如 "3-1"）的填写率为 <span id="d4">—</span>，
+<code>局分</code>（逐局比分数组）的填写率仅 <span id="d5">—</span>。
+这意味着模型在绝大多数情况下是在<strong>不知道比赛具体进程</strong>的情况下结算的——
+它只知道谁赢了，不知道赢得多惨烈。这直接限制了上文「爆冷」分析的精度：
+我们只能按分差分箱，无法按局分判断「逆转」与「碾压」的区别。
+</p>
+
+<div class="grid3">
+  <div class="stat warn"><div class="v" id="d6">—</div><div class="k">「赛制」字段缺失率</div><div class="n">缺失时回退到默认赛制映射表</div></div>
+  <div class="stat bad"><div class="v" id="d7">—</div><div class="k">「比分」字段填写率</div><div class="n">仅 <span id="d7b">—</span> 场有记录</div></div>
+  <div class="stat bad"><div class="v" id="d8">—</div><div class="k">「局分」字段填写率</div><div class="n">仅 <span id="d8b">—</span> 场有记录</div></div>
+</div>
+
+<p>
+另一个需要澄清的口径是<strong>同日的重复记录</strong>。全期存在 <span id="d9">—</span> 组「同一日期、同一类型、同一对手」的重复赛果。
+按项目 README 约定，这些是同一天内真实发生的多局比赛，<strong>不应当去重</strong>，CI 校验器也刻意没有重复检测器。
+本次分析确认了这一约定在数据中的合理性——抽查记录可见明显的系列赛模式（如 3 月 3、4、5 日连续三天的同对手对决），
+且带有逐局比分记录，符合「一天多局」的实况。这一项无需改动。
+</p>
+
+<div class="box s">
+  <div class="bt">✓ 数据侧结论</div>
+  <p>赛果记录本身是<strong>结构可靠、语义清晰</strong>的：类型、日期、胜负、赛制四个核心字段完整，
+  同日多局的约定被正确执行，CI 校验覆盖了积分下限、赛季覆盖与 JSON 可解析性。
+  真正的问题集中在<strong>可选字段的缺失</strong>（赛制、比分、局分），
+  其中「赛制」缺失的后果最严重——它直接决定单场比赛的价值倍数，且缺失集中在永久保值的两类大赛事上。
+  建议把 <code>赛制</code> 提升为赛果记录的<strong>必填字段</strong>，由 <code>ci_validate.py</code> 与三条提交流水线共同强制。</p>
+</div>
+</section>
+
+<!-- ══════════ 四 ══════════ -->
+<section id="s4">
+<h2 class="ch"><span class="no">04</span>点位流：积分并不守恒</h2>
+
+<p>
+积分系统最基础的性质应当是<strong>守恒</strong>：A 赢 B 得 x 分，B 就应恰好扣 x 分，全社积分总量不变。
+这保证了积分是一个纯粹的实力度量，不受比赛总量影响。本模型<strong>刻意放弃了守恒</strong>：
+负者扣分系数被设为 0.8 而非 1.0，意味着每场比赛都会向系统净注入积分。本章量化这一注入的规模、来源与结构。
+</p>
+
+<div class="formula">
+全期 316 场赛果：　原始分合计 <span class="k">3 107.5</span>　→　胜者实得 <span class="n">2 997.7</span>　·　负者实扣 <span class="c2">2 394.8</span>　→　<span class="c2">净注入 +602.9</span>
+</div>
+
+<div class="card">
+  <div class="ct">图 4-1　各赛季积分池的起点、比赛注入与终点</div>
+  <div class="cd">柱状图显示每个赛季的积分池总量变化。可以看到春季学期是唯一的注入高峰（+470.3 分，来自校乒赛与常规活动叠加），暑假几乎持平（+35 分），秋季恢复注入（+97.7 分）。</div>
+  <div class="chart"><canvas id="cSeasonFlow"></canvas></div>
+</div>
+
+<h3 class="sec">4.1 注入的三个结构性特征</h3>
+
+<p>
+<strong>特征一：注入是持续的，但高度集中在两个赛季。</strong>
+春季 191 场注入 470.3 分，暑假 49 场仅注入 35.0 分，秋季 75 场注入 97.7 分。
+暑假的低注入并非比赛少（49 场不算少），而是<strong>衰减权重在暑假集中生效</strong>——
+暑假处于学期中段，窗口内既有赛事已积累数周，权重下降。秋季虽只开了 28 天，但比赛密度最高（9 月单月 75 场），
+因此注入量超过暑假。
+</p>
+
+<p>
+<strong>特征二：注入的来源与保值名单高度重合。</strong>
+「校乒赛单打」贡献净注入 200.2 分、「校乒赛团体」贡献 180.2 分，两者合计 380.4 分，
+占全期净注入 602.9 分的 <strong id="f-ndnet">—</strong>。
+而这两类恰好都在 <code>noDecayTypes</code>（永久保值）名单中。这形成一个值得警惕的组合：
+<em class="n">系统创造积分最快的部分，也是唯一永不被时间回收的部分。</em>
+春季校乒赛一次性注入的约 380 分永久留在积分池里，无论后续赛季球员是否继续参赛、水平是否下降。
+</p>
+
+<p>
+<strong>特征三：注入速率由负者系数单独决定，与其他参数几乎无关。</strong>
+单场净注入量 = raw × (wWeight − 0.8 × lWeight)。当双方权重相近时，它约等于 raw × 0.2。
+因此负者系数 0.8 直接决定了「每一场比赛为积分池贡献多少」。下表的敏感性实测印证了这一点。
+</p>
+
+<div class="card">
+  <div class="ct">图 4-2　负者扣分系数对单场净注入速率的控制作用</div>
+  <div class="cd">把负者系数从 0.5 调到 1.0，单场净注入从 231.6 分单调降到 9.6 分。这是模型中控制积分池规模最有效的单一旋钮。</div>
+  <div class="chart short"><canvas id="cLoserMult"></canvas></div>
+</div>
+
+<div class="box e">
+  <div class="bt">❾ 守恒性的缺失是一个未记录的设计决定</div>
+  <p>负者系数 0.8 意味着「赢一场的收益大于输一场的损失」，这在体感上是友好的（打球时不会因为连续输球而积分崩塌），
+  但它带来三个未被记录的副作用：<br>
+  （一）<strong>积分总量随比赛总量单调增长</strong>——办更多比赛的赛季，人均积分必然更高，跨赛季比较失去意义；<br>
+  （二）<strong>积分差被放大</strong>——净注入在高强度赛季（校乒赛月）远高于常规赛季，放大倍数与净注入速率成正比；<br>
+  （三）<strong>「打得多」与「分得高」形成正反馈</strong>——参赛多 → 净注入多 → 积分高 → 排名高 → 更容易获得比赛机会。<br>
+  值得注意的是，QA 文档中并未把「非零和」列为一项设计意图，它更像是实现过程中未加论证的默认选择。
+  建议要么把它明确写入设计意图（并给出 0.8 的依据），要么改用零和设计 + 独立的通胀调节项。</p>
+</div>
+
+<h3 class="sec">4.2 地板线：本应防止积分崩塌，实际从未启用</h3>
+<p>
+<code>SCORE_FLOOR = 1200</code> 的设计意图是防止连续失利导致积分无限下滑，从而保证排名表底部仍可恢复。
+实测结果是：<strong>全期 316 场比赛，没有任何一次扣分触及地板线</strong>。全社团积分最低的球员仍有 1300 分。
+把地板线改为 0，排名输出逐位完全相同。
+</p>
+
+<p>
+这说明地板线目前是一个纯粹的安全阀，尚未被实际压力测试过。这本身不是缺陷——
+参数留有余量是合理的工程实践。但需要指出的是：
+由于地板线从未生效，我们<strong>无法从当前数据推断它在极端情况下的行为</strong>。
+如果未来引入初始分更低的外部成员，或把负者系数提高到 1.0 以上（净销毁积分），
+地板线才会开始起作用。建议在 CI 中增加一条针对地板线行为的单元测试，避免它长期处于「未经检验」状态。
+</p>
+</section>
+
+<!-- ══════════ 五 ══════════ -->
+<section id="s5">
+<h2 class="ch"><span class="no">05</span>衰减机制实效检验</h2>
+
+<div class="box e">
+  <div class="bt">本章是全篇最重要的实证章节</div>
+  <p>前四章建立了背景。本章回答一个具体问题：<strong>时间衰减子系统，在社团当前的运行密度下，究竟发挥了多大作用？</strong>
+  我们用三重独立证据回答它：批次结构分析、投影实验、参数扰动。三条证据指向同一个结论。</p>
+</div>
+
+<h3 class="sec">5.1 证据一：批次结构决定了权重几乎恒为 1</h3>
+<p>
+「类型刷新·定格」规则把每名球员的每类赛事历史切成批次。规则是：某批次只要后面<strong>还有下一批</strong>，
+它的权重就锁定在下一批出现日，从此不再衰减；只有最后一批继续随时间衰减。
+这意味着<strong>衰减只对「每名球员每类赛事的最后一段连续活动」生效</strong>。
+</p>
+
+<p>
+对本赛季 75 场比赛的 150 个参与侧逐一判定，结果是：<strong id="f-b-last">—</strong> 个属于「最后一批次」（会被衰减），
+<strong id="f-b-frozen">—</strong> 个已被定格锁定（不会衰减）。也就是说 <span id="f-b-frozenpct">—</span> 的历史贡献处于永久冻结状态。
+更关键的是剩下那一小部分——它们的实际权重是多少？
+</p>
+
+<div class="card">
+  <div class="ct">图 5-1　主要球员的「球员 × 类型」批次结构与批间隔</div>
+  <div class="cd">批数越多的球员，批次被锁定的比例越高、批间隔越短，因而定格权重越接近 1.0。全部主要球员的批间隔中位数在 1–3 天。</div>
+  <div class="chart"><canvas id="cBatches"></canvas></div>
+</div>
+
+<div class="box w">
+  <div class="bt">机制解读：批间隔决定了衰减有没有机会生效</div>
+  <p>定格权重的计算式是 <code>2^(−批间隔/45)</code>。当批间隔为 1 天时，权重 = 0.985；3 天时 = 0.955；7 天时 = 0.898。
+  由于 <code>BATCH_GROUP_DAYS = 0</code>（严格同日才聚簇），而社团活动几乎逐日进行，实际批间隔被压到 1–3 天，
+  于是所有被锁定的批次都保留了 95% 以上的原始价值。<strong>半衰期 45 天这个参数，在「天天打球」的现实下没有施力点。</strong>
+  如果把 <code>BATCH_GROUP_DAYS</code> 提高到 7–14 天（把一周内的同类型活动视为一批），批间隔会被人为拉长，
+  定格权重才会真正下降。这是一个成本极低、见效直接的调参方向。</p>
+</div>
+
+<h3 class="sec">5.2 证据二：投影实验——停赛后积分会怎样？</h3>
+<p>
+投影实验的做法是：固定当前赛季的全部赛果不变，仅把「快照日」向后推 14 至 540 天，重新计算每名球员的积分与名次。
+这等价于问：「如果全社从此不再比赛，现有排名会随时间怎样变化？」
+如果衰减机制有效，答案应当是积分普遍下降、低活跃者排名下滑。
+</p>
+
+<div class="card">
+  <div class="ct">图 5-2　停赛投影：相对今日的积分变化</div>
+  <div class="cd">纵轴为「相对今日的变化量」而非绝对积分——绝对值（榜首 2 107.7 分、极差 807.7 分）会把变化淹没在刻度里。可以看到：停赛 540 天后单人最大变化仅 27.7 分，榜首积分与全社极差的变化更小。若衰减机制按设计生效，红线应当随停赛时长显著上扬。</div>
+  <div class="chart"><canvas id="cProjection"></canvas></div>
+</div>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>停赛天数</th><th>投影日期</th><th>榜首</th><th class="num">榜首积分</th><th class="num">积分极差</th><th class="num">场均积分</th><th class="num">名次位移 ≥3 位</th><th class="num">前十与今日重合</th></tr></thead>
+<tbody id="tProj"></tbody>
+</table></div>
+
+<div class="grid3">
+  <div class="stat bad"><div class="v" id="f-p-med">—</div><div class="k">停赛 180 天 · 中位球员积分变化</div><div class="n">一半球员的积分<strong>完全没有变化</strong></div></div>
+  <div class="stat bad"><div class="v" id="f-p-max">—</div><div class="k">停赛 180 天 · 单人最大变化</div><div class="n">发生在批次最多的活跃球员身上</div></div>
+  <div class="stat bad"><div class="v" id="f-p-540">—</div><div class="k">停赛 540 天 · 单人最大变化</div><div class="n">停赛一年半，榜单几乎纹丝不动</div></div>
+</div>
+
+<div class="box e">
+  <div class="bt">关键对照：衰减量 vs 名次间距</div>
+  <p>把投影结果放到名次语境中看，结论才真正成立。当前榜首与榜二的积分差是 <strong id="f-cmp1">—</strong> 分。
+  而停赛 180 天后，单人最大积分变化是 <strong id="f-cmp2">—</strong> 分——
+  也就是说，<strong>衰减能在半年内制造的最大排序扰动，仍然小于榜首与榜二之间现有的 7.3 分差距</strong>。
+  两者处于同一数量级，但衰减的累计效应被摊薄到了 44 名球员的整个分布上，无法在任何一个人身上形成决定性的位次变化。
+  停赛 540 天后，前十名与今日完全重合，全社仅 1 人发生 3 位以上位移。</p>
+</div>
+
+<h3 class="sec">5.3 证据三：参数扰动——把半衰期改 18 倍会怎样？</h3>
+<p>
+第三重证据是直接扰动参数。我们把半衰期从 20 天一路调到 365 天（18 倍跨度），每次重跑完整排名时间线，
+记录相对于基准的名次位移分布。
+</p>
+
+<div class="card">
+  <div class="ct">图 5-3　半衰期与「定格机制」扰动下的名次位移</div>
+  <div class="cd">横轴为参数场景，纵轴为发生名次位移的球员人数。全部场景的位移人数均不超过 3 人，最大位移 2 位——与对照场景（赛季继承率改为 0%，34 人位移）形成鲜明对比。</div>
+  <div class="chart tall"><canvas id="cSensDecay"></canvas></div>
+</div>
+
+<div class="box e">
+  <div class="bt">结论：衰减子系统是一个「存在但不起作用」的模块</div>
+  <p>综合三重证据，可以下一个明确判断：<strong>时间衰减在社团当前的运行密度下，对最终排名的影响小于名次抖动噪声，属于名义存在而实质失效的子系统。</strong>
+  它带来的是代码复杂度（批次聚簇算法、三个配置项、跨双管线的一致性要求、QA 文档中大段说明），
+  而不是它本应提供的价值（压制僵尸分、逼迫活跃）。<br><br>
+  需要强调的是，<strong>这不是一个 bug，而是一次参数与数据形态的错配</strong>。
+  衰减机制的设计前提是「球员之间有明显的活跃度分层，且低活跃者的积分应当被时间淘汰」。
+  在一个 39 人、人均每周打 1.5 场、核心成员近乎逐日参赛的社团里，这个前提不成立。
+  因此本报告的建议不是删除衰减，而是<strong>要么把它调到真正生效的区间（扩大批次聚簇窗口、缩短半衰期），
+  要么明确承认它当前是休眠功能并把复杂度降下来</strong>。二选一，都比现状好。</p>
+</div>
+</section>
+
+<!-- ══════════ 六 ══════════ -->
+<section id="s6">
+<h2 class="ch"><span class="no">06</span>模型校准：阶梯过于平缓</h2>
+
+<p>
+基础分阶梯的设计意图是「让击败强敌更值钱」。这个意图能否成立，取决于阶梯的斜率是否与<strong>真实的实力差</strong>相匹配。
+检验方法是：把每一场比赛按赛前分差分箱，统计每个箱内「低分者获胜」（即爆冷）的实际比例，
+再与阶梯隐含的爆冷率做对比。如果阶梯设置得当，两者应当接近。
+</p>
+
+<div class="box w">
+  <div class="bt">如何计算「阶梯隐含的爆冷率」</div>
+  <p>阶梯给出的不是概率，而是<strong>分值</strong>。我们通过一个自然的转换把它映射为概率：
+  低分者获胜时，负者（实际胜者）损失 <code>0.8 × base</code> 分，高分者（实际负者）获得 <code>base</code> 分。
+  当 base 取最大值 66 时，两侧分值相等，比率 0.5/0.5，视为爆冷率 100%；
+  当 base 取最小值 4 时，低分者仅得 4 分而高分者得 4 分（但高分者身份反转），
+  实际含义是「几乎不可能翻盘」，爆冷率趋近 0。因此隐含爆冷率取 <code>base / 66</code>。
+  这是一个粗略但单调的映射，足以判断斜率方向是否正确。</p>
+</div>
+
+<div class="card">
+  <div class="ct">图 6-1　模型隐含爆冷率 vs 实测爆冷率（按赛前分差分箱）</div>
+  <div class="cd">横轴为赛前积分差的绝对值区间，纵轴为爆冷率。两条线在 0–150 分区间基本重合（模型校准良好），但在 250 分以上急剧分离——模型高估爆冷近一倍。</div>
+  <div class="chart tall"><canvas id="cCalib"></canvas></div>
+</div>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>赛前分差区间</th><th class="num">场次</th><th class="num">实测爆冷率</th><th class="num">模型隐含爆冷率</th><th class="num">偏差</th><th class="num">单场原始分均值</th><th>判定</th></tr></thead>
+<tbody id="tCalib"></tbody>
+</table></div>
+
+<h3 class="sec">6.1 校准结果的分段解读：断点在 150–250 分之间</h3>
+
+<p>
+把逐箱结果按「低分差」与「高分差」两段合并，模型的校准质量呈现出一个非常清晰的<strong>断崖式结构</strong>。
+这比逐箱讨论更能说明问题，因此下面以合并口径为主，上表作为细节佐证。
+</p>
+
+<div class="grid2">
+  <div class="card" style="margin:0">
+    <div class="ct" style="color:#1e7a34">✓ 150 分以内：校准近乎完美</div>
+    <div class="cd">187 场比赛，模型隐含爆冷率 45.1%，实测 44.4%，偏差仅 −0.7 个百分点。</div>
+    <div class="chart short" style="height:190px"><canvas id="cCalibLow"></canvas></div>
+  </div>
+  <div class="card" style="margin:0">
+    <div class="ct" style="color:#b02427">✗ 250 分以上：模型高估近七成</div>
+    <div class="cd">66 场比赛，模型隐含爆冷率 20.3%，实测仅 12.1%，偏差 −8.2 个百分点。</div>
+    <div class="chart short" style="height:190px"><canvas id="cCalibHigh"></canvas></div>
+  </div>
+</div>
+
+<p>
+<strong>150 分以内，模型近乎完美。</strong>在这个区间累计 187 场比赛，实测爆冷率 44.4%，
+与阶梯隐含的 45.1% 几乎完全一致。这意味着：<strong>当两个人的积分接近时，阶梯给出的「五五开」判断与现实高度吻合。</strong>
+这是模型最值得肯定的部分——它不是凭空的假设，而是被 187 场数据验证过的。
+设计者对「势均力敌」这一区间的直觉是准确的，应当在改动中完整保留。</p>
+
+<p>
+<strong>150–250 分是过渡带，偏差开始出现。</strong>实测爆冷率 38.1%，模型隐含 43.1%，偏差 −5.0 个百分点。
+这一区间有 63 场样本，偏差方向明确（模型偏高），但幅度尚在可容忍范围。</p>
+
+<p>
+<strong>250 分以上，模型系统性高估。</strong>这是全篇最重要的校准结论。
+把 250–400 与 400 以上两段合并，共 66 场比赛，<strong>实际爆冷率仅 12.1%，而模型隐含 20.3%</strong>——
+模型认为分差超过 250 分的对局仍有五分之一的翻盘机会，现实是八分之一。
+换算成相对误差，模型高估了 <strong>68%</strong>。</p>
+
+<p>
+这个断点的位置很值得注意：<strong>它紧邻 199 分这一阶梯分界</strong>。
+阶梯在 |gap| = 199 处的隐含爆冷率是 24.2%，跨过这条线后骤降至 12.1%——
+但现实中爆冷率并没有在这个位置断崖下跌，而是从 38.1%（150–250）平缓地滑到 12.1%（250 分以上）。
+<strong>阶梯的分段结构比现实的衰减更「晚」也更「平」</strong>：它在中段就已经开始压低爆冷率（这使中段校准良好），
+但在高段又给得太多（12.1% 与 20.3% 之间仍有一倍的差距）。
+因此修复方向是明确的：<strong>不是整体调整阶梯的陡度，而是把 199 分以上的几个分界点继续向右收紧。</strong></p>
+
+<div class="box e">
+  <div class="bt">❿ 阶梯过平造成的实际后果：奖励运气，惩罚统治</div>
+  <p>把爆冷率的结果与「高分者获胜时的单场收益」放在一起看，后果就非常清楚了。
+  下表只统计<strong>赛前积分更高的一方获胜</strong>的 198 场比赛（排除爆冷），
+  以隔离出「压制一个实力明显更弱的对手」这件事本身的收益：</p>
+</div>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>赛前分差区间（仅高分者获胜）</th><th class="num">场次</th><th class="num">单场原始分均值</th><th class="num">相对「势均力敌」的收益</th><th>图示</th></tr></thead>
+<tbody id="tDom"></tbody>
+</table></div>
+
+<p>
+数字很直白：<strong>分差 0–50 分（势均力敌）的一场胜利，原始分均值 11.97 分；
+分差 400–600 分（一边倒）的一场胜利，只有 2.88 分——不足前者的四分之一；
+分差 600 分以上更是只有 0.56 分，不到二十分之一。</strong></p>
+
+<p>
+换算成累积效应：一名高水平球员连续 10 场碾压一名低水平球员，累积获得约 29 分；
+而两名实力接近的球员打满 10 场互有胜负，双方各自都能稳定积累约 120 分。
+<strong>「十场赢下强敌」的回报不到「十场势均力敌对局」的四分之一。</strong>
+叠加第 8 章将要分析的参赛量集中问题，其后果是——
+榜单的头部由「参与度 + 运气」决定，而真正统治社团的那几名球员
+（其中一人参与了全社 26.5% 的比赛）反而难以通过稳定的统治表现积累领先优势。</p>
+
+<p>
+值得注意的是，这与阶梯的设计意图完全相反。设计者想给弱者通道，但过平的阶梯在事实上<strong>抽走了强者的应得分数</strong>，
+同时又没有真正给弱者稳定的上升通道——因为弱势方的真实爆冷率远低于阶梯假设。
+阶梯只是把双方的分数都压低了：弱者并没有因此获得更多实际收益，
+强者的统治表现也没有被如实计价。这是一个<strong>双方都没有得到应得结果</strong>的设计。</p>
+
+<h3 class="sec">6.2 一个反向的证据：弱者的上升通道在哪里？</h3>
+<p>
+有人会问：既然阶梯过平，为什么弱势球员仍然出现在榜单前列？
+数据显示，弱势球员的上升主要来自<strong>其他渠道</strong>，而不是阶梯的爆冷奖励：<br><br>
+（一）<strong>初始分优势。</strong>「校乒赛2026单打亚军」付大卫、「单打季军」谷子易、「团体亚军」龚雨煊的初始分被设为 2000，
+高于中位成员的 1500–1700。这是<strong>人工设定的先验</strong>，而非模型算出来的。<br>
+（二）<strong>额外加分。</strong>全期 38 条加分记录合计 <span id="f-bt">—</span> 分，其中 7 条单笔 ≥50 分的记录贡献了 39%。
+加分同样不受阶梯约束，是直接写入积分表的。<br>
+（三）<strong>赛季继承的复利。</strong>50% 的继承率让春季的任何微弱优势在暑假与秋季被反复放大。<br><br>
+换句话说，<strong>模型中真正起作用的排序机制，是初始分、额外加分和赛季继承这三个人工/结构性杠杆，
+而不是基础分阶梯。</strong>阶梯是唯一一个「由比赛结果驱动的动态机制」，而它恰恰是三者中校准最差的一个。
+</p>
+</section>
+
+<!-- ══════════ 七 ══════════ -->
+<section id="s7">
+<h2 class="ch"><span class="no">07</span>排名表结构：继承主导</h2>
+
+<p>
+前面几章讨论的是「模型怎么算分」。本章讨论「算完之后，那张表在向使用者传达什么信息」。
+这是评价一个积分系统是否有价值的关键——因为排名表是社团成员唯一真正会看的产出。
+</p>
+
+<h3 class="sec">7.1 当前排名表的构成：96.6% 来自继承</h3>
+<p>
+秋季赛季的积分池从 <span id="f7-a">—</span> 分开始（由春季与暑假的 50% 继承而来），
+经过 76 场比赛后变为 <span id="f7-b">—</span> 分。也就是说，<strong>当前榜单上 <span id="f7-c">—</span>% 的分数
+是本赛季还没开始时就已存在的</strong>。本赛季 28 天的比赛，只贡献了 3.4% 的分数变化。
+</p>
+
+<div class="card">
+  <div class="ct">图 7-1　当前赛季积分的来源构成</div>
+  <div class="cd">秋季赛季的积分池中，继承部分与本赛季比赛新增部分的对比。绿色为继承，蓝色为秋季新增。</div>
+  <div class="chart short"><canvas id="cInherit"></canvas></div>
+</div>
+
+<div class="box e">
+  <div class="bt">⑪ 「实时排名」这一命名存在实质误导</div>
+  <p>排名表当前有 <strong id="f7-d">—</strong> 人，其中 <strong id="f7-e">—</strong> 人（<span id="f7-f">—</span>%）
+  本赛季一场未打，积分完全等于继承值。这条规则来自 <code>isProfileActivePlayer()</code>——
+  只要 <code>players.json</code> 中 <code>status === 'active'</code>，就始终进入排名表，不看赛季内是否有比赛。<br><br>
+  这个设计有其道理：避免成员因为某周没打球就从榜上消失，避免产生「不参赛就掉出榜单」的挫败感。
+  但在本赛季的规模下（28 天、75 场），它的副作用压过了收益：<strong>前十名中有 <span id="f7-g">—</span> 人本赛季场次 ≤ 1</strong>，
+  其中包括排名第 5 的祁子傲（0 场）与第 8 的王天森（0 场）。
+  一个成员在学期第 4 周打开排名页，看到的是一份「谁是历史上最强」的名单，
+  而页面顶部标注的却是「实时」。<br><br>
+  建议保留「全员总榜」的存在，但<strong>同时提供一份「本赛季榜」</strong>，
+  按赛季内积分变化（或赛季内独立起算的积分）排序。前者回答「谁最强」，后者回答「这学期谁在状态」，
+  两者都是成员关心的问题，但当前页面只回答了前者。</p>
+</div>
+
+<h3 class="sec">7.2 区分度：44 人挤在 807 分的带子里</h3>
+<p>
+当前排名表的积分分布极不均衡。最低分 1300 分，最高分 2107.7 分，极差 807.7 分，标准差 237.2 分。
+但基尼系数仅 <strong id="f7-h">—</strong>——这个数字低得反常，意味着 44 名球员的积分<strong>高度聚集在中段</strong>，
+头尾差距被少数人拉大，而绝大多数人挤在一起。
+</p>
+
+<div class="card">
+  <div class="ct">图 7-2　当前排名表的积分分布与「场次—积分」关系</div>
+  <div class="cd">左：44 名球员的积分直方图，主体集中在 1500–2000 区间。右：横轴为本赛季场次、纵轴为积分、气泡大小为总得分，呈现明显的正相关——打得多分就高。</div>
+  <div class="chart tall"><canvas id="cDist"></canvas></div>
+</div>
+
+<div class="grid3">
+  <div class="stat info"><div class="v" id="f7-i">—</div><div class="k">积分标准差</div><div class="n">44 名球员，均值 1 723.6 分</div></div>
+  <div class="stat warn"><div class="v" id="f7-j">—</div><div class="k">榜首 / 榜底 倍数</div><div class="n">最大积分仅为最小积分的 1.62 倍</div></div>
+  <div class="stat bad"><div class="v" id="f7-k">—</div><div class="k">积分 vs 场次 秩相关</div><div class="n">远高于积分 vs 胜率（<span id="f7-l">—</span>）</div></div>
+</div>
+
+<div class="box w">
+  <div class="bt">区分度不足带来的实际问题</div>
+  <p>44 名成员挤在约 800 分的带子里，且榜首与榜二只差 <span id="f7-m">—</span> 分。
+  这意味着：<strong>榜单的前后段缺乏可感知的区分</strong>。第 1 名和第 44 名之间的差距，
+  在体感上远小于「一场势均力敌比赛的胜负」所能带来的波动。
+  成员很难从排名中获得「我今天打得好」或「我退步了」的反馈，
+  而这恰恰是积分系统相对于「单纯统计胜负场次」的<strong>唯一核心增量价值</strong>。<br><br>
+  对比 Elo 类评级（如国际乒联与俱乐部常用的 2000 分制）通常呈现 1500–2400 的展开区间，
+  本模型的 1300–2108 区间在绝对宽度上并不算小，问题在于<strong>分布形态</strong>——
+  过于集中使得任何两人都难以通过积分拉开身位。</p>
+</div>
+
+<h3 class="sec">7.3 排名的时间动态</h3>
+<p>
+从 29 个时间线节点（26 个快照 + 实时）观察，排名波动是温和的：相邻快照之间共发生 300 次名次变动，
+平均每次位移 1.50 位，整个赛季只有 1 次新成员进入榜单。
+前十名的历史构成上，曾有 14 人先后进入过前十。
+</p>
+
+<div class="card">
+  <div class="ct">图 7-3　赛季内各球员的积分波动区间（最高 − 最低）</div>
+  <div class="cd">横条表示每名球员在本赛季各快照间的积分振幅。任峻贤振幅 277.9 分，为全社最大，与其 167 场的参赛量一致。</div>
+  <div class="chart tall"><canvas id="cVol"></canvas></div>
+</div>
+
+<p>
+值得注意的是，任峻贤的积分振幅（277.9 分）远大于榜首与榜二的差距（7.3 分）。
+这说明模型内部的「涨落」幅度是排名间距的上百倍——
+在这样的信噪比下，排名表的微小变动很难被解读为实力变化的真实信号，
+更可能是单场比赛结果的随机扰动。这是第 6 章「阶梯过平」结论在排名表层面的又一次体现：
+模型对单场比赛赋予的分值相对于名次间距过大，排名因此被高频扰动。
+</p>
+</section>
+
+<!-- ══════════ 八 ══════════ -->
+<section id="s8">
+<h2 class="ch"><span class="no">08</span>参与度与代表性</h2>
+
+<p>
+前几章的分析都在模型内部进行。本章换一个视角：<strong>排名表在多大程度上代表了社团？</strong>
+一个积分系统的输出质量，取决于它所度量的人群与它所声称代表的人群之间的匹配程度。
+</p>
+
+<div class="grid3">
+  <div class="stat bad"><div class="v" id="f8-a">—</div><div class="k">参赛人次基尼系数</div><div class="n">39 名有记录球员，630 个人次</div></div>
+  <div class="stat bad"><div class="v" id="f8-b">—</div><div class="k">Top 3 人次占比</div><div class="n">三人占据全社近一半的比赛机会</div></div>
+  <div class="stat warn"><div class="v" id="f8-c">—</div><div class="k">本赛季 ≤5 场人数</div><div class="n">接近半数的活跃成员一季只打了几场</div></div>
+</div>
+
+<div class="card">
+  <div class="ct">图 8-1　参赛人次分布与洛伦兹曲线</div>
+  <div class="cd">左：每名球员的参赛场次，按场次降序排列，红色为前 3 人。右：洛伦兹曲线——横轴是「按场次降序排列的球员累计比例」，纵轴是「累计人次占比」。曲线越偏离对角线，集中度越高。当前基尼系数 0.651。</div>
+  <div class="grid2">
+    <div><div class="chart tall" style="height:470px"><canvas id="cPartBar"></canvas></div>
+      <div class="cd" style="text-align:center;margin-top:2px">各球员参赛场次（共 39 人 / 630 人次）</div></div>
+    <div><div class="chart tall" style="height:470px"><canvas id="cPartLorenz"></canvas></div>
+      <div class="cd" style="text-align:center;margin-top:2px">洛伦兹曲线：前 10 人即占 75.1% 的人次</div></div>
+  </div>
+</div>
+
+<h3 class="sec">8.1 集中度的量级</h3>
+<p>
+全期 316 场比赛产生 630 个「球员—参赛」人次。其中任峻贤一人占 <strong id="f8-d">—</strong>，
+前 3 人合计占 <strong id="f8-e">—</strong>，前 10 人占 <strong id="f8-f">—</strong>。
+换句话说，全社近四分之一的比赛由一个人完成，前十分之一的成员承担了四分之三的比赛量。
+</p>
+
+<p>
+这在社团运营层面是完全正常的——一个 45 人的学生社团，核心成员承担大部分活动本就是常态。
+问题在于它与积分系统的交互：<strong>当比赛机会高度集中时，一个按「每场固定分值」结算的模型，
+其输出必然被参赛量主导。</strong>第 7 章已经量化了这一点（积分与场次的秩相关 <span id="f8-g">—</span>，
+高于积分与胜率的 <span id="f8-h">—</span>）。这不是模型设计者的失误，
+但它意味着当前的排名表应当被正确理解为<strong>「参与度 + 有限的实力信号」的混合度量</strong>，
+而不是纯粹的实力度量。</p>
+
+<div class="box w">
+  <div class="bt">⚠ 一个容易被忽视的连带效应</div>
+  <p>参赛集中度与「净注入」机制叠加，会产生马太效应。核心成员参赛多 →
+  通过非零和机制获得的净注入多 → 积分更高 → 排名更高 → 在社团内的可见度与号召力更高 →
+  更容易被安排参加比赛。这是一个自我强化的循环。
+  参赛量基尼系数 0.651 与积分基尼系数 0.077 的巨大反差（参赛高度集中、积分却高度均匀）
+  恰恰说明：积分模型通过基础分阶梯的「过平化」，
+  <strong>意外地抑制了参赛集中度向积分集中度的传导</strong>。
+  换句话说，第 6 章批评的「阶梯过平」在这里产生了一个意外的正向副作用。
+  报告在第 11 章的建议中会利用这一点。</p>
+</div>
+
+<h3 class="sec">8.2 零场次成员与榜单包容性</h3>
+<p>
+45 名在册成员中，有 <strong id="f8-i">—</strong> 人在全期 209 天的记录里<strong>没有任何一场赛果</strong>：
+<span id="f8-j">—</span>。
+他们仍然以初始分（1300–1600）的形式出现在排名表上，占据榜单底部。
+</p>
+
+<p>
+这一点需要区分两个问题。第一，<strong>「不上榜」本身不是问题</strong>——
+把这些成员排除在外反而会造成「不参赛就消失」的负反馈。第二，<strong>真正的问题是排名表的组织方式没有区分这三种状态</strong>：
+赛季内积极参赛的成员（<span id="f8-k">—</span> 人）、本赛季零场次但历史有积累的成员（<span id="f8-l">—</span> 人）、
+全期零记录的成员（<span id="f8-m">—</span> 人），三者在表中以完全相同的形式呈现，读者无从分辨。
+一个刚加入的成员与一个本学期状态低迷的老成员，在表上只是两个不同的数字。</p>
+</section>
+
+<!-- ══════════ 九 ══════════ -->
+<section id="s9">
+<h2 class="ch"><span class="no">09</span>参数敏感性全景</h2>
+
+<p>
+本章是本次研判的方法论核心。我们对模型做了 <strong id="f9-n">—</strong> 组参数扰动，
+每一组都在 Node 沙箱中重跑完整的 29 节点排名时间线，然后与基准场景逐人对比名次。
+选择「名次位移人数」而非相关系数作为主指标，是因为在本模型的高度稳定特性下，
+Spearman ρ 在所有场景下都接近 1，缺乏区分度；名次位移则能直接回答
+「改这个参数，会动到谁」。
+</p>
+
+<div class="card">
+  <div class="ct">图 9-1　全部参数扰动的名次位移对比</div>
+  <div class="cd">横轴为参数场景，纵轴为相对基准发生名次位移的球员人数（浅色为位移 ≥1 位，深色为 ≥3 位）。赛季继承率 0% 一枝独秀，其余场景均在 17 人以下。</div>
+  <div class="chart tall"><canvas id="cSens"></canvas></div>
+</div>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th>参数场景</th><th class="num">位移 ≥1 位</th><th class="num">位移 ≥3 位</th><th class="num">位移 ≥5 位</th><th class="num">最大位移</th><th>受影响最深</th><th class="num">积分极差</th><th class="num">场均积分</th></tr></thead>
+<tbody id="tSens"></tbody>
+</table></div>
+
+<h3 class="sec">9.1 影响力排序</h3>
+
+<p>
+把 25 组扰动按影响力排序，可以得到一张清晰的「参数重要性地图」：</p>
+
+<div class="tbl-wrap"><table>
+<thead><tr><th class="num">排序</th><th>参数</th><th>影响力</th><th>证据</th><th>结论</th></tr></thead>
+<tbody>
+<tr><td class="num">1</td><td><strong>赛季继承率</strong></td><td><span class="tag crit">决定性</span></td><td>改为 0% 时 34 人位移、12 人位移 ≥3 位、最大位移 6 位</td><td>唯一的排名主控参数</td></tr>
+<tr><td class="num">2</td><td><strong>负者系数</strong></td><td><span class="tag high">高</span></td><td>0.5–1.0 区间内最大位移 3 位；单场净注入 231.6 → 9.6 分</td><td>积分池规模的唯一主控</td></tr>
+<tr><td class="num">3</td><td><strong>基础分阶梯斜率</strong></td><td><span class="tag high">高</span></td><td>收窄/放宽各使 14 人位移、最大 3 位</td><td>未被单独调参过的隐含杠杆</td></tr>
+<tr><td class="num">4</td><td>赛事系数（整体缩放）</td><td><span class="tag mid">中</span></td><td>×0.5 与 ×2 各使 13–15 人位移</td><td>近似等比缩放，主要改尺度</td></tr>
+<tr><td class="num">5</td><td>默认赛制假设</td><td><span class="tag mid">中</span></td><td>影响 58% 的记录取值</td><td>未纳入扰动，但风险敞口最大</td></tr>
+<tr><td class="num">6</td><td>赛制系数</td><td><span class="tag low">低</span></td><td>关闭后 9 人位移、最大 2 位</td><td>影响有限</td></tr>
+<tr><td class="num">7</td><td>地板线</td><td><span class="tag low">低</span></td><td>改为 0 输出逐位相同；抬到 1500 时 8 人位移</td><td>向下完全空转</td></tr>
+<tr><td class="num">8</td><td>半衰期 t</td><td><span class="tag low">极低</span></td><td>20 → 365 天（18 倍）最大位移 2 位</td><td>近乎失效</td></tr>
+<tr><td class="num">9</td><td>定格机制开关</td><td><span class="tag low">极低</span></td><td>关闭后 2 人位移、最大 1 位</td><td>与 noDecayTypes 等价</td></tr>
+<tr><td class="num">10</td><td>默认初始分</td><td><span class="tag low">零</span></td><td>改为 1300 输出逐位相同</td><td>从未触发</td></tr>
+</tbody></table></div>
+
+<h3 class="sec">9.2 一个值得单独讨论的结论：系统的鲁棒性</h3>
+
+<div class="box e">
+  <div class="bt">⑫ 25 组扰动，没有任何一个能实质性改变排名</div>
+  <p>把最激进的三组扰动放在一起看：<br><br>
+  （一）把半衰期从 45 天缩到 20 天（衰减强度提高 2.25 倍）——<strong>最大位移 2 位</strong>；<br>
+  （二）把所有赛事类型都改成永久保值（等于关闭整个衰减子系统）——<strong>最大位移 1 位</strong>；<br>
+  （三）把基础分阶梯收窄一半（把「实力差」放大到两倍陡峭）——<strong>最大位移 3 位</strong>；<br>
+  （四）把所有积分下限取消——<strong>最大位移 0 位，输出逐位完全相同</strong>。<br><br>
+  唯一能明显改变排名的是赛季继承率（改为 0% 时 34 人位移），而它并不在配置文件里，而是硬编码在 <code>score-engine.js</code> 的
+  <code>computeInheritedScores()</code> 中。<br><br>
+  这说明当前排名被<strong>「50% 继承链 + 初始分先验 + 额外加分」三重结构性因素牢牢锁定</strong>，
+  由比赛结果驱动的动态部分（阶梯、系数、衰减）合计只能贡献 ±3 位的扰动。
+  从工程角度这意味着<strong>调参无法改进排名</strong>；
+  从治理角度这意味着<strong>排名表的稳定性来自结构而非模型，模型的设计质量几乎不影响最终输出</strong>。
+  这正是本次研判认为最需要处理的问题——不是「模型算错了」，而是「模型的设计与实际的输出脱节了」。</p>
+</div>
+
+<h3 class="sec">9.3 参数扰动的可复现性</h3>
+<p>
+本次实验的方法是：<strong>源码级常量替换 + 数据源 fetch 层拦截</strong>。
+每个场景在独立的 Node vm 上下文中重新加载 <code>js/common.js</code> 与 <code>js/score-engine.js</code>，
+只替换目标常量的字面量（例如把 <code>let LOSER_POINT_MULTIPLIER = 0.8;</code> 改写为 <code>= 0.6;</code>），
+其余代码路径完全不变。
+这样做的目的是确保每个场景都由<strong>真实的生产代码</strong>求值，而不是在分析脚本里重实现一遍算分逻辑——
+后者会引入实现漂移的风险，使结论失去意义。
+</p>
+
+<p>
+一个需要记录的工程细节：<code>loadDecayConfig()</code> 会在运行时用 <code>decay-config.json</code> 的 <code>t</code> 字段
+<strong>覆盖</strong>源码中的 <code>DECAY_HALF_LIFE_DAYS</code> 常量。因此仅替换源码常量无法改变半衰期，
+必须在 fetch 层拦截该 JSON。这提示了一个潜在风险：<strong>任何试图通过修改 JS 常量来调参的维护者，
+都会发现改动「没有生效」</strong>，除非他同时知道要改 JSON。
+建议在 <code>common.js</code> 中为这类「双源参数」加上显式注释说明，
+或干脆取消源码默认值、强制只从 JSON 读取。
+</p>
+</section>
+
+<!-- ══════════ 十 ══════════ -->
+<section id="s10">
+<h2 class="ch"><span class="no">10</span>数据质量与工程问题</h2>
+
+<p>本章汇总与积分模型直接相关的数据质量与工程实现问题，按风险等级排列。这些问题的共同特点是：
+<strong>不会导致系统崩溃，但会静默地产生错误结果</strong>。</p>
+
+<h3 class="sec">10.1 高风险：赛制字段缺失导致的静默估值</h3>
+<div class="box e">
+  <div class="bt">⚠ 58% 的记录依赖未经校验的默认赛制</div>
+  <p>全部 <span id="f10-a">—</span> 场赛果中，<strong id="f10-b">—</strong> 场没有 <code>赛制</code> 字段。
+  按类型看：<strong>「校乒赛团体」42 场全部缺失、「校乒赛单打」49 场中 49 场缺失</strong>、「校乒联赛」1 场缺失、「普通」90 场缺失。</p>
+  <p>缺失时引擎回退到 <code>默认赛制</code> 映射表：团体与单打 → bo5（倍率 1.0），普通 → bo3（倍率 0.7）。</p>
+  <p>风险量化：这两类保值赛事合计产生 <span id="f10-c">—</span> 分原始价值。
+  如果其中相当一部分实际是 bo3（很多学生赛事的单场确实是三局两胜），则按 bo5 计值会<strong>高估 30%</strong>，
+  相当于积分池中约 <strong id="f10-d">—</strong> 分的原始价值建立在一个未经核实的假设上
+  （净注入口径影响约 <span id="f10-e">—</span> 分）。
+  <strong>由于这两类属于永久保值类型，这部分偏差不会被时间衰减抹平，会永久留在积分池中。</strong></p>
+  <p>建议：把 <code>赛制</code> 加入 <code>ci_validate.py</code> 的必填校验，
+  并在三条提交流水线的表单中把「赛制」设为必选项。历史数据可按赛事实际规则批量回填。</p>
+</div>
+
+<h3 class="sec">10.2 中风险：额外加分的规模与不透明性</h3>
+<p>
+全期 38 条「比赛结果加分」记录合计 <strong id="f10-f">—</strong> 分，覆盖 31 名成员，人均 34.4 分，单笔最大 100 分。
+其中 <strong>7 条单笔 ≥50 分的记录贡献了 39% 的加分总量</strong>。
+</p>
+
+<div class="card">
+  <div class="ct">图 10-1　额外加分的人均获得额与单人获得额</div>
+  <div class="cd">左：31 名受益成员的人均加分额分布。右：单人加分最多的 10 人。加分是绕过基础分阶梯直接写入积分表的，其规模相对于单场比赛（原始分均值约 9.8 分）相当可观。</div>
+  <div class="chart"><canvas id="cBonus"></canvas></div>
+</div>
+
+<div class="box w">
+  <div class="bt">⚠ 加分记录缺少理由字段</div>
+  <p>38 条加分记录中，<code>备注</code> / <code>说明</code> 字段<strong>全部为空</strong>。
+  这意味着从数据层面无法回答「这个人为什么被加了 100 分」。
+  考虑到单笔 100 分相当于 10 场势均力敌比赛的原始分值，
+  加分记录的审计价值不亚于比赛记录本身。建议为加分记录增加必填的 <code>理由</code> 字段，
+  并在 <code>ci_validate.py</code> 中强制校验。</p>
+</div>
+
+<h3 class="sec">10.3 中风险：双管线的代码漂移风险</h3>
+<p>
+项目的 AGENTS.md 明确记录了一个已知的架构风险：<strong>社团积分管线（<code>js/score-engine.js</code>）与
+WTT 积分管线（<code>js/wtt_common.js</code>）是约 40% 克隆的代码，且已经产生漂移</strong>。
+本次研判在实测中也观察到了这一现象的具体表现：WTT 模式通过 <code>SCORE_TIME_DECAY_ENABLED = false</code>
+关闭衰减与赛制系数，因此 <code>getFreezeWeight()</code> 与 <code>getFormatMultiplier()</code> 中
+保留了 <code>if (SCORE_TIME_DECAY_ENABLED === false) return 1;</code> 这样的模式分支。
+这类分支是典型的「两套语义共用一套代码」的产物，可读性与可维护性都在下降。</p>
+
+<p>
+本报告不对双管线重构给出具体方案（这超出积分模型研判的范围），但指出一点：
+<strong>本次全部 25 组参数扰动都是在社团管线下完成的，WTT 管线未纳入验证</strong>。
+如果未来要对 WTT 管线做同类研判，需要单独建立一套 WTT 口径的基准——
+因为 <code>LOSER_POINT_MULTIPLIER</code> 在 WTT 模式下被设为 1.0（零和），
+与社团模式的 0.8 存在本质差异，两者的行为结论不可互相推广。
+</p>
+
+<h3 class="sec">10.4 低风险：冗余与失效的配置项</h3>
+<div class="tbl-wrap"><table>
+<thead><tr><th>配置项</th><th>现状</th><th>实测行为</th><th>建议</th></tr></thead>
+<tbody>
+<tr><td><code>SCORE_FLOOR</code></td><td>1200</td><td>全期 316 场从未触发；改为 0 输出逐位相同</td><td>保留但补充单元测试</td></tr>
+<tr><td><code>DEFAULT_INITIAL_SCORE</code></td><td>1300</td><td>45 名成员全部有显式 <code>initialScore</code>，从未触发</td><td>保留为兜底；文档注明</td></tr>
+<tr><td><code>FREEZE_ON_REPEAT</code> / <code>noDecayTypes</code></td><td>两个旋钮</td><td>关闭其一或把另一扩为全部，输出完全相同</td><td>合并为单一机制，避免误导</td></tr>
+<tr><td><code>HALF_LIFE_DAYS</code>（js）与 <code>t</code>（json）</td><td>180 / 45</td><td>JSON 运行时覆盖 JS 常量，改 JS 无效</td><td>取消双源，强制单源</td></tr>
+<tr><td><code>DOUBLES_GAP_DISCOUNT</code></td><td>0.25</td><td>双打记录仅 1 条，机制未经实测验证</td><td>补充双打数据后再验证</td></tr>
+<tr><td>双打榜 UI</td><td>已实现</td><td>仅 1 条双打记录，榜单无实际意义</td><td>暂不推广，待数据积累</td></tr>
+</tbody></table></div>
+
+<h3 class="sec">10.5 数据管线的正面评价</h3>
+<p>
+需要明确指出，项目的<strong>数据摄入管线设计是本报告中质量最高的部分</strong>：
+三条访客提交流水线（腾讯文档表单、GitHub Issue、QQ 群兜底）共享
+<code>append_submission.py</code> 的同一套校验函数，<code>ci_validate.py</code> 作为最终闸门，
+PR 是唯一的合入路径。赛果记录的可选字段（<code>比分</code>、<code>局分</code>）被引擎明确忽略而非报错，
+这为渐进式补全数据留出了空间。赛季覆盖校验会在当前日期超出最后赛季 endDate 时直接失败，
+避免了「新比赛静默延长旧赛季」这个在同类项目中极为常见的严重缺陷。</p>
+
+<p>
+本报告提出的「把 <code>赛制</code> 提升为必填」建议，正是建立在这套管线已经成熟的基础上——
+它不需要新建机制，只需要在已有的三处校验中各加一行。
+</p>
+</section>
+
+<!-- ══════════ 十一 ══════════ -->
+<section id="s11">
+<h2 class="ch"><span class="no">11</span>改进建议</h2>
+
+<p>
+本章给出 11 条建议，按「投入产出比」排序。每条建议都标注了预计的量化影响，
+并明确区分「立即可做」与「需要数据积累」。
+<strong>需要特别强调的是：由于第 9 章的发现（参数扰动几乎不改变排名），
+绝大多数调参建议对排名表本身的影响都有限；真正能改变输出的是结构性调整。</strong>
+</p>
+
+<div class="box s">
+  <div class="bt">建议总览</div>
+  <div class="tbl-wrap" style="margin:12px 0 0"><table>
+  <thead><tr><th>#</th><th>建议</th><th>类别</th><th>预期影响</th><th>投入</th></tr></thead>
+  <tbody>
+  <tr><td class="num">S1</td><td>新增「本赛季榜」与「历史总榜」双视图</td><td>产品</td><td>直接修复代表性缺陷</td><td>低</td></tr>
+  <tr><td class="num">S2</td><td>把 <code>赛制</code> 提升为必填字段并回填历史</td><td>数据</td><td>消除 575 分估值敞口</td><td>低</td></tr>
+  <tr><td class="num">S3</td><td>重标定基础分阶梯的陡度</td><td>模型</td><td>让爆冷奖励与现实匹配</td><td>中</td></tr>
+  <tr><td class="num">S4</td><td>二选一：让衰减生效，或明确降级为休眠</td><td>模型</td><td>消除 3 个无效旋钮</td><td>中</td></tr>
+  <tr><td class="num">S5</td><td>为加分记录增加必填理由字段</td><td>数据</td><td>提升可审计性</td><td>低</td></tr>
+  <tr><td class="num">S6</td><td>把 0.8 非零和写入设计意图文档</td><td>治理</td><td>消除未论证的隐含决定</td><td>极低</td></tr>
+  <tr><td class="num">S7</td><td>合并定格的「双旋钮」为单一机制</td><td>工程</td><td>消除误导性配置</td><td>低</td></tr>
+  <tr><td class="num">S8</td><td>取消 <code>DECAY_HALF_LIFE_DAYS</code> 双源定义</td><td>工程</td><td>消除「改了不生效」陷阱</td><td>极低</td></tr>
+  <tr><td class="num">S9</td><td>为地板线补单元测试</td><td>工程</td><td>覆盖未检验的安全阀</td><td>极低</td></tr>
+  <tr><td class="num">S10</td><td>在排名表中区分三类参与状态</td><td>产品</td><td>提升可读性</td><td>低</td></tr>
+  <tr><td class="num">S11</td><td>建立积分模型的回归基准测试</td><td>工程</td><td>防止未来调参意外漂移</td><td>中</td></tr>
+  </tbody></table></div>
+</div>
+
+<h3 class="sec">S1　新增「本赛季榜」，与「历史总榜」并存</h3>
+<p>
+<strong>问题：</strong>当前唯一的排名表 56.8% 的成员本赛季零场次，前十名中 3 人场次 ≤1，
+96.6% 的积分来自继承。页面把它标为「实时排名」，但它回答的是历史问题。
+</p>
+<p>
+<strong>方案：</strong>在 <code>ranking.js</code> 的输出中并行计算两张表。
+「总榜」保持现有口径不变；「本赛季榜」按赛季窗口内的积分变化排序
+（复用引擎已有的 <code>pointsChange</code> 字段，或直接用赛季初积分与当前积分之差）。
+在页面上以标签页切换，默认展示总榜（保持现有用户的预期），但让「本赛季榜」同样显著可见。
+</p>
+<p>
+<strong>技术要点：</strong>引擎已经为每个快照节点计算了赛季初积分（<code>buildSeasonInitialNode</code>），
+数据是现成的，主要工作是渲染层增加一个视图与一个切换控件。
+对双打榜与 WTT 榜同样适用（<code>recompute_rankings.js</code> 的时间线输出已含 <code>isInitial</code> 节点）。
+</p>
+<p>
+<strong>预期影响：</strong>这是本报告中<strong>投入产出比最高</strong>的建议。
+它不改变任何算分逻辑（零回归风险），但直接解决了「排名表无法回答『这学期谁在状态』」这一核心缺陷。
+预计能让 25 名本赛季零场次的成员在榜单上获得正确的语义定位，
+让真正活跃的 19 名成员的成绩被看见。
+</p>
+
+<h3 class="sec">S2　把「赛制」提升为必填字段</h3>
+<p>
+<strong>问题：</strong>58% 的记录缺失赛制，其中校乒赛团体与单打几乎 100% 缺失；
+这两类又是永久保值类型，估值错误不会被衰减纠正，敞口约 575 分原始价值。
+</p>
+<p>
+<strong>方案：</strong>
+（1）在 <code>tools/ci_validate.py</code> 中对赛果记录强制校验 <code>赛制</code> 字段，
+取值限定在 <code>{bo3, bo5, bo7}</code> 内；
+（2）在 <code>tools/append_submission.py</code> 与 <code>tools/import_submissions_csv.py</code> 中同步该校验
+（按项目约定，三者必须对「什么算合法记录」保持一致）；
+（3）在 <code>submit.html</code> 的腾讯文档表单模板与 GitHub Issue 模板中把「赛制」设为必选项；
+（4）编写一次性脚本回填历史数据——团体与单打赛事应可从赛事规程文档确定实际赛制，
+若无法确定，则按 bo3 回填（保守取值，避免永久高估）。
+</p>
+<p>
+<strong>预期影响：</strong>消除本报告中<strong>唯一无法通过调参解决的数据风险</strong>。
+回填后积分池规模可能下降约 115 分（净注入口径），排名位移预计在 3 位以内——
+但这正是目的：<strong>让榜单建立在已核实的数据上，而不是默认值上。</strong>
+</p>
+
+<h3 class="sec">S3　重标定基础分阶梯的高分差区间</h3>
+<p>
+<strong>问题：</strong>阶梯在 150 分以内校准近乎完美（偏差 0.7 个百分点），但在 250 分以上系统性高估爆冷率
+（隐含 20.3% vs 实测 12.1%，高估 68%）。后果是「碾压不值钱、爆冷暴利」——
+在「高分者获胜」的 198 场比赛中，势均力敌的一场值 11.97 分，一边倒的一场只值 2.88 分。
+</p>
+<p>
+<strong>方案：</strong>不重写算法，只调整阶梯的高分段边界，<strong>且完全不触碰 150 分以下的部分</strong>
+（那部分已被 187 场数据验证，不应冒险）。具体做法是把 199 分以上的几档整体右移并收窄，
+使这些区间的隐含爆冷率从 20.3% 降到 12% 附近，同时保持基础分总跨度（4–66）不变。
+一个可行的起点是把分档边界从 <code>(…, 149, 199, 299, 399)</code> 调整为
+<code>(…, 149, 219, 299, 379)</code> 附近——<strong>具体数值必须在实施时用第 6 章的分箱数据拟合确定，
+本报告只给出方向与约束，不给出最终常量。</strong>
+</p>
+<p>
+<strong>验证要求：</strong>阶梯调整必须用<strong>留出法</strong>验证——
+用 3–6 月的数据拟合阶梯，再用 7–9 月的数据检验预测的爆冷率。
+本报告在 250 分以上仅 66 场样本（其中爆冷 8 场），
+虽然偏差方向明确，但<strong>置信区间较宽，因此建议在积累到 500 场以上赛果后再正式实施</strong>。
+在此之前，可以先只修正 600 分以上的极端档（该区间实测 0/3 爆冷，方向最明确），
+作为风险极低的预演。
+</p>
+<div class="box w">
+  <div class="bt">⚠ 本条建议的副作用预警</div>
+  <p>第 8 章指出，阶梯的「过平化」意外地抑制了参赛集中度向积分集中度的传导
+  （参赛基尼 0.651 vs 积分基尼 0.077）。<strong>把阶梯改陡会削弱这一抑制作用</strong>，
+  可能导致积分分布变得更分散、头部优势更明显。
+  这是可接受的——但需要与 S1（本赛季榜）配套实施，
+  让高活跃度成员的优势在「本赛季榜」中体现，而在「总榜」中保留历史的平滑。
+  <strong>建议把 S3 与 S1 作为一个变更包同步上线。</strong></p>
+</div>
+
+<h3 class="sec">S4　衰减机制：二选一</h3>
+<p>
+<strong>问题：</strong>第 5 章的三重证据表明衰减子系统在当前运行密度下已近乎失效，
+但它仍占据着配置项、批次算法、双管线一致性与大量文档的复杂度成本。
+</p>
+<p>
+<strong>方案 A（让它生效）：</strong>如果社团确实希望用积分压制僵尸分——即让一个学期不打球的人排名下滑——
+那么需要把衰减调到真正起作用的区间。最直接的杠杆是
+<strong>把 <code>BATCH_GROUP_DAYS</code> 从 0 提高到 7–14</strong>：
+当前批间隔仅 1–3 天，定格权重恒在 0.95 以上；若把 7 天内的同类型活动聚为一批，
+批间隔将变为 7–14 天，定格权重降至 0.68–0.80，衰减立即获得施力点。
+配合把半衰期从 45 天下调到 30 天，效果会进一步放大。
+<strong>预期：</strong>低活跃者的积分会显著下降，榜单开始反映「本学期活跃度」。
+但这与 S1「本赛季榜」功能重叠——若两者都实施，需明确区分：
+建议 S4 用于「总榜」的长期价值衰减，S1 用于「本赛季榜」的赛季内表现。</p>
+<p>
+<strong>方案 B（承认休眠并降级复杂度）：</strong>如果社团接受「积分是一个长期累积量，
+不追求时间敏感性」这一定位，那么应当删除批次聚簇算法与 <code>FREEZE_ON_REPEAT</code>，
+只保留一个简单的、可配置的时间衰减，并把半衰期设为一个明确的非零值
+（如 180 天），使衰减在跨赛季尺度上发挥作用（当前跨赛季尺度上它被每赛季的批次重建抵消了）。
+<strong>预期：</strong>代码复杂度显著下降，配置项从 4 个减到 1 个。
+注意 <code>calculateEndScores()</code> 与 <code>replaySeasonWindowToSnapshot()</code> 中
+每赛季重建批次索引的逻辑也需相应简化。</p>
+<p>
+<strong>本报告倾向：</strong>方案 A，但<strong>必须与 S1 配套</strong>。
+理由是：社团已经存在赛季化的数据组织（三个赛季、快照日期体系），
+衰减机制的设计思路是对的，只是参数与数据形态错配。
+与其删除一个设计良好的机制，不如把它调到正确的区间。
+但如果社团未来两个赛季的参赛密度持续下降（暑假已显示出这个趋势），
+则应重新评估并转向方案 B。</p>
+
+<h3 class="sec">S5　为加分记录增加必填理由</h3>
+<p>38 条加分记录的理由字段全部为空，而单笔最大加分 100 分（相当于 10 场势均力敌比赛）。
+建议在 <code>score-log.json</code> 的加分记录上增加必填 <code>理由</code> 字段，
+在三条提交流水线与 <code>ci_validate.py</code> 中同步强制。
+这是一条纯增益、零风险的改进——它不改变任何计算，只提升可审计性。
+</p>
+
+<h3 class="sec">S6　把「非零和」写入设计意图</h3>
+<p>
+负者系数 0.8 使每场比赛净注入积分，这在 QA 文档中<strong>没有被记录为一项设计意图</strong>。
+建议在 QA 中新增一条，明确说明：这是一个「让连续失利不至于积分崩塌」的体验性设计，
+其代价是积分总量随比赛量增长、且跨赛季的绝对值不可直接比较。
+如果这不是有意为之，则应改用零和设计（负者系数 1.0）并另设通胀调节项。
+</p>
+<p>
+本报告的实测显示，零和（系数 1.0）会使单场净注入从 94.7 分降到 9.6 分，
+积分极差从 807.7 收缩到 782.2，14 名球员发生名次位移——
+即<strong>零和设计会实质改变榜单</strong>。这是一个需要社团层面讨论的治理决策，
+不应由实现细节默认决定。
+</p>
+
+<h3 class="sec">S7–S11　工程类改进（按投入排序）</h3>
+<p>
+<strong>S7　合并定格机制的双旋钮。</strong>实测证明 <code>FREEZE_ON_REPEAT = false</code> 与
+「所有类型加入 <code>noDecayTypes</code>」产生逐位相同的输出。
+建议保留 <code>noDecayTypes</code>（数据驱动、可由赛事组织者理解），
+把 <code>FREEZE_ON_REPEAT</code> 与 <code>buildPlayerTypeBatches()</code> 一并移除，
+或至少在配置文档中注明二者的等价关系，避免维护者误以为它们是两个可独立调节的旋钮。</p>
+
+<p>
+<strong>S8　取消 <code>DECAY_HALF_LIFE_DAYS</code> 的双源定义。</strong>
+该常量在 <code>js/score-engine.js</code> 中有默认值 180，又在运行时被
+<code>data/decay-config.json</code> 的 <code>t</code> 字段覆盖。
+本报告在实验初期就踩到了这个坑：仅替换源码常量，输出完全不变。
+建议改为只从 JSON 读取（删除 JS 侧默认值），或在两处都加上
+「本值会被 <code>decay-config.json</code> 覆盖，修改无效」的显式注释。</p>
+
+<p>
+<strong>S9　为地板线补单元测试。</strong><code>SCORE_FLOOR</code> 全期从未触发，
+其行为完全未经检验。建议在 <code>tools/ci_validate.py</code> 中增加一个合成用例：
+构造一段使某球员跌破 1200 分的赛果序列，验证截断行为正确。
+同时可考虑把它从 1200 下调到 1100，为将来的新入部成员（初始分可能更低）留出余量——
+但这属于配置决策，应由社团决定。</p>
+
+<p>
+<strong>S10　在排名表中区分三类参与状态。</strong>
+把成员分为「本赛季活跃」「本赛季零场次·历史有积累」「全期零记录」三类，
+在排名表中用轻量的标签区分（如在姓名前加一个小圆点或灰化显示）。
+这不需要改动任何计算，只是渲染层的展示增强，
+但能消除「为什么有人一场没打还排在第五」这类必然出现的疑问。</p>
+
+<p>
+<strong>S11　建立积分模型的回归基准测试。</strong>
+本报告的方法（<code>tools/_score_model_analysis.js</code> 的沙箱加载 + 逐场重放）
+可以低成本地固化为回归基准：固定「今天」的日期与一份冻结的 <code>score-log.json</code> 快照，
+断言排名输出与基线逐位一致。
+由于第 9 章的实测显示<strong>排名对参数扰动极不敏感（±3 位以内）</strong>，
+这样的回归测试能够以极高的灵敏度捕获任何意外的逻辑漂移——
+比如批次算法的边界条件被改动、赛季继承系数被误改这类不易察觉的问题。
+建议把这个脚本从一次性工具转为 <code>tools/ci_validate.py</code> 的一个可选子命令。</p>
+
+<hr class="sep">
+
+<h3 class="sec">实施路线建议</h3>
+<div class="tbl-wrap"><table>
+<thead><tr><th>阶段</th><th>内容</th><th>建议时机</th><th>风险</th></tr></thead>
+<tbody>
+<tr><td><strong>第一阶段</strong></td><td>S6 文档化非零和 · S5 加分理由字段 · S8 半衰期双源修复 · S9 地板线测试</td><td>立即（零代码风险）</td><td><span class="tag ok">无</span></td></tr>
+<tr><td><strong>第二阶段</strong></td><td>S2 赛制必填 + 历史回填 · S7 合并定格双旋钮 · S10 参与状态标签</td><td>下个赛季开始前</td><td><span class="tag mid">低</span>（历史回填需逐赛事核对）</td></tr>
+<tr><td><strong>第三阶段</strong></td><td>S1 本赛季榜 + S4 衰减参数调整（方案 A）</td><td>下个赛季开始时</td><td><span class="tag mid">中</span>（需与 S3 同批评估）</td></tr>
+<tr><td><strong>第四阶段</strong></td><td>S3 阶梯重标定（需 ≥500 场样本）· S11 回归基准常态化</td><td>样本积累后</td><td><span class="tag high">中</span>（改变排名语义）</td></tr>
+</tbody></table></div>
+
+<p>
+需要说明的是，本报告<strong>不建议在第一阶段之后立即进行 S3</strong>。
+阶梯重标定会改变排名的语义（从「参与 + 有限实力信号」偏向「实力信号」），这是一个治理决策而非技术决策，
+应当在 S1 的双视图上线、成员对新旧榜有了直观对比之后，再由社团讨论决定是否实施。
+在没有实证对比之前贸然改动，是本报告最不愿意看到的做法。
+</p>
+</section>
+
+<!-- ══════════ 十二 ══════════ -->
+<section id="s12">
+<h2 class="ch"><span class="no">12</span>附录 · 方法论与可复现性</h2>
+
+<p>本报告的所有数字均来自真实引擎的实跑输出。为便于复核与后续重复，此处记录完整的方法论。</p>
+
+<h3 class="sec">A.1 计算口径</h3>
+<ul>
+<li><strong>引擎来源：</strong><code>js/common.js</code> + <code>js/score-engine.js</code>，
+在 Node <code>vm</code> 沙箱中加载，<code>fetch</code> 被替换为读取本地文件。
+<strong>分析脚本不重新实现任何算分逻辑</strong>，全部调用引擎原生函数
+（<code>calcRawPoints</code> / <code>calcMatchPointsDual</code> / <code>getFreezeWeight</code> /
+<code>getBaseScore</code> / <code>getFormatMultiplier</code> / <code>computeInheritedScores</code> 等）。</li>
+<li><strong>时间冻结：</strong><code>Date</code> 被替换为返回固定时间戳 <code>2026-09-29T12:00:00</code> 的类，
+使 <code>getTodayStr()</code> 与衰减基准可复现。</li>
+<li><strong>单打口径：</strong>与 <code>js/ranking.js</code> 的 <code>computeSinglesClubTimeline()</code> 一致，
+全量日志过滤掉 <code>类型 === '双打'</code> 的记录；本报告的核心分析均在单打口径下完成。
+双打记录全期仅 1 条，不具备统计意义。</li>
+<li><strong>逐场重放：</strong>从赛季初积分出发，按日期升序重放窗口内全部记录，
+逐场记录赛前双方积分、基础分、赛事系数、赛制倍率、双方时间权重、实际入账量、地板线是否触发。
+全历史重放（3 个赛季）共处理 <span id="f12-a">—</span> 场赛果与 <span id="f12-b">—</span> 条加分记录。</li>
+</ul>
+
+<h3 class="sec">A.2 参数扰动方法</h3>
+<ul>
+<li><strong>源码级常量替换：</strong>对每个场景，用正则替换 <code>common.js</code> / <code>score-engine.js</code> 中
+目标常量的字面量（如 <code>let LOSER_POINT_MULTIPLIER = 0.8;</code>），
+在独立的 vm 上下文中重新加载两份文件，其余代码路径完全不变。</li>
+<li><strong>数据源拦截：</strong><code>loadDecayConfig()</code> / <code>loadEventCoefficients()</code>
+会覆盖源码常量，因此在 <code>fetch</code> 层对 <code>decay-config.json</code> 与
+<code>event-coefficient.json</code> 返回按场景修改后的副本。</li>
+<li><strong>每个场景独立上下文：</strong>避免引擎内部缓存（<code>_seasonStartCache</code>、
+<code>_sortedLogCache</code>、<code>playerTypeBatches</code>）在场景之间泄漏。</li>
+<li><strong>指标：</strong>名次位移人数（≥1 / ≥3 / ≥5 位）、最大位移及其球员、前十重合度、
+积分极差 / 均值 / 标准差 / 基尼系数、单场净注入速率、榜首身份。</li>
+</ul>
+
+<h3 class="sec">A.3 已知的方法局限</h3>
+<div class="box w">
+  <div class="bt">本报告结论的适用边界</div>
+  <ul style="margin-bottom:0">
+    <li><strong>样本量。</strong>316 场赛果、39 名有记录球员。第 6 章的分箱校准在 250 分以上区间仅 35 场，
+    400 分以上仅 28 场，600 分以上仅 3 场。这些区间的结论方向明确，但置信区间较宽，
+    <strong>是本报告建议「S3 阶梯重标定需等样本积累到 500 场以上」的直接原因</strong>。</li>
+    <li><strong>因果推断的边界。</strong>本报告证明的是「模型参数与排名输出之间的关联」，
+    对于赛季继承率等结构性参数可以作因果解读（它们直接定义了积分的跨赛季流转），
+    但对于「参赛集中度影响排名」这类观察，只能给出相关性证据，无法排除反向因果
+    （高水平成员既更容易获得比赛机会，也更可能赢得比赛）。</li>
+    <li><strong>「爆冷」的度量。</strong>由于 <code>局分</code> 字段填写率仅 9.8%，
+    本报告无法区分「分差 300 但打满五局惜败」与「分差 300 但三局横扫」。
+    两种情形在实际竞技意义上完全不同，但在数据上不可分。
+    这是 S2（提高数据完整度）之外的另一项数据质量改进方向。</li>
+    <li><strong>WTT 管线未纳入。</strong>如第 10.3 节所述，WTT 模式的负者系数为 1.0（零和），
+    结论不可外推。</li>
+    <li><strong>未纳入的子系统。</strong>双打评分（1 条记录）、赛制抽签（<code>draws.json</code>）、
+    裁判培训与 <code>tt_game/</code> 等模块不在本次研判范围内。</li>
+  </ul>
+</div>
+
+<h3 class="sec">A.4 复现方式</h3>
+<p>本次分析使用的三个脚本均为本地一次性工具，位于 <code>tools/</code> 目录下
+（按项目 <code>.gitignore</code> 约定，<code>tools/*</code> 除白名单外不随站点发布）：</p>
+<div class="pillrow">
+<span class="pill">tools/_score_model_analysis.js</span>
+<span class="pill">tools/_sens_detail.js</span>
+<span class="pill">tools/_build_report.js</span>
+</div>
+<p>
+若要把这套分析固化为项目资产，建议按 S11 的建议改造为 <code>tools/ci_validate.py</code> 的子命令，
+或迁移到 <code>tools/score_model_report.js</code> 并加入白名单。
+本报告的 HTML 位于 <code>docs/reports/score-model-audit-2026-09-29.html</code>，
+与既有的一赛预测报告放在同一目录，符合项目的文档组织约定。
+</p>
+
+<div class="foot">
+  <p><strong>WFLS 乒乓球社 · 积分模型研判报告</strong>　·　数据截止 <span id="ft-asof">—</span>　·　生成于 <span id="ft-gen">—</span></p>
+  <p style="margin-bottom:0">
+    本报告由 ZCode 自主分析生成，全部数值来自 <code>js/score-engine.js</code> 的实跑输出，未经人工转录。
+    报告中的建议仅供参考，最终是否实施、如何实施由社团决定。
+    相关分析脚本为一次性工具，不随站点部署。
+  </p>
+</div>
+
+</section>
+
+</main>
+</div>
+
+<script id="REPORTDATA" type="application/json">{"meta":{"asOf":"2026-09-29","generated":"2026-09-28"},"monthlyByType":["普通","校乒赛单打","校乒赛团体","十二强赛","校乒联赛","双打"],"monthlyDetail":[{"m":"2026-03","t":"普通"},{"m":"2026-03","t":"普通"},{"m":"2026-03","t":"普通"},{"m":"2026-03","t":"普通"},{"m":"2026-03","t":"普通"},{"m":"2026-03","t":"普通"},{"m":"2026-03","t":"普通"},{"m":"2026-03","t":"普通"},{"m":"2026-03","t":"普通"},{"m":"2026-03","t":"普通"},{"m":"2026-03","t":"普通"},{"m":"2026-03","t":"普通"},{"m":"2026-03","t":"普通"},{"m":"2026-03","t":"校乒赛团体"},{"m":"2026-03","t":"校乒赛团体"},{"m":"2026-03","t":"校乒赛团体"},{"m":"2026-03","t":"校乒赛团体"},{"m":"2026-03","t":"校乒赛团体"},{"m":"2026-03","t":"校乒赛团体"},{"m":"2026-03","t":"校乒赛团体"},{"m":"2026-03","t":"校乒赛团体"},{"m":"2026-03","t":"校乒赛团体"},{"m":"2026-03","t":"校乒赛团体"},{"m":"2026-03","t":"校乒赛团体"},{"m":"2026-03","t":"校乒赛团体"},{"m":"2026-03","t":"校乒赛团体"},{"m":"2026-03","t":"校乒赛团体"},{"m":"2026-03","t":"校乒赛团体"},{"m":"2026-03","t":"校乒赛团体"},{"m":"2026-03","t":"校乒赛团体"},{"m":"2026-03","t":"校乒赛团体"},{"m":"2026-03","t":"校乒赛团体"},{"m":"2026-03","t":"校乒赛团体"},{"m":"2026-03","t":"校乒赛团体"},{"m":"2026-03","t":"校乒赛团体"},{"m":"2026-03","t":"校乒赛团体"},{"m":"2026-03","t":"校乒赛团体"},{"m":"2026-03","t":"校乒赛团体"},{"m":"2026-03","t":"校乒赛团体"},{"m":"2026-04","t":"校乒赛团体"},{"m":"2026-04","t":"校乒赛团体"},{"m":"2026-04","t":"校乒赛团体"},{"m":"2026-04","t":"普通"},{"m":"2026-04","t":"校乒赛团体"},{"m":"2026-04","t":"校乒赛团体"},{"m":"2026-04","t":"校乒赛团体"},{"m":"2026-04","t":"校乒赛团体"},{"m":"2026-04","t":"校乒赛单打"},{"m":"2026-04","t":"校乒赛单打"},{"m":"2026-04","t":"校乒赛单打"},{"m":"2026-04","t":"校乒赛团体"},{"m":"2026-04","t":"校乒赛团体"},{"m":"2026-04","t":"校乒赛团体"},{"m":"2026-04","t":"校乒赛团体"},{"m":"2026-04","t":"校乒赛团体"},{"m":"2026-04","t":"校乒赛团体"},{"m":"2026-04","t":"校乒赛团体"},{"m":"2026-04","t":"校乒赛团体"},{"m":"2026-04","t":"校乒赛团体"},{"m":"2026-04","t":"校乒联赛"},{"m":"2026-04","t":"校乒赛单打"},{"m":"2026-04","t":"校乒赛单打"},{"m":"2026-04","t":"校乒赛单打"},{"m":"2026-04","t":"校乒赛单打"},{"m":"2026-04","t":"校乒赛单打"},{"m":"2026-04","t":"校乒赛单打"},{"m":"2026-04","t":"校乒赛单打"},{"m":"2026-04","t":"校乒赛单打"},{"m":"2026-04","t":"校乒赛单打"},{"m":"2026-04","t":"校乒赛单打"},{"m":"2026-04","t":"校乒赛单打"},{"m":"2026-04","t":"校乒赛单打"},{"m":"2026-04","t":"校乒赛单打"},{"m":"2026-04","t":"校乒赛单打"},{"m":"2026-04","t":"校乒赛单打"},{"m":"2026-04","t":"校乒赛单打"},{"m":"2026-04","t":"校乒赛单打"},{"m":"2026-04","t":"校乒赛单打"},{"m":"2026-04","t":"校乒赛单打"},{"m":"2026-04","t":"校乒赛单打"},{"m":"2026-04","t":"校乒赛单打"},{"m":"2026-04","t":"校乒赛单打"},{"m":"2026-04","t":"校乒赛单打"},{"m":"2026-05","t":"校乒赛单打"},{"m":"2026-05","t":"校乒赛单打"},{"m":"2026-05","t":"校乒赛单打"},{"m":"2026-05","t":"校乒赛单打"},{"m":"2026-05","t":"校乒赛单打"},{"m":"2026-05","t":"校乒赛单打"},{"m":"2026-05","t":"校乒赛单打"},{"m":"2026-05","t":"校乒赛单打"},{"m":"2026-05","t":"校乒赛单打"},{"m":"2026-05","t":"校乒赛单打"},{"m":"2026-05","t":"校乒赛单打"},{"m":"2026-05","t":"校乒赛单打"},{"m":"2026-05","t":"校乒赛单打"},{"m":"2026-05","t":"普通"},{"m":"2026-05","t":"校乒赛单打"},{"m":"2026-05","t":"校乒赛单打"},{"m":"2026-05","t":"校乒赛单打"},{"m":"2026-05","t":"校乒赛单打"},{"m":"2026-05","t":"校乒赛单打"},{"m":"2026-05","t":"校乒赛单打"},{"m":"2026-05","t":"校乒赛单打"},{"m":"2026-05","t":"校乒赛单打"},{"m":"2026-05","t":"校乒赛单打"},{"m":"2026-05","t":"校乒赛单打"},{"m":"2026-05","t":"普通"},{"m":"2026-05","t":"普通"},{"m":"2026-05","t":"普通"},{"m":"2026-05","t":"普通"},{"m":"2026-05","t":"普通"},{"m":"2026-05","t":"普通"},{"m":"2026-05","t":"普通"},{"m":"2026-05","t":"普通"},{"m":"2026-05","t":"校乒赛单打"},{"m":"2026-05","t":"校乒赛单打"},{"m":"2026-05","t":"普通"},{"m":"2026-05","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"校乒赛单打"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-07","t":"普通"},{"m":"2026-07","t":"普通"},{"m":"2026-07","t":"普通"},{"m":"2026-07","t":"普通"},{"m":"2026-07","t":"普通"},{"m":"2026-07","t":"普通"},{"m":"2026-07","t":"普通"},{"m":"2026-07","t":"普通"},{"m":"2026-07","t":"普通"},{"m":"2026-07","t":"普通"},{"m":"2026-07","t":"普通"},{"m":"2026-07","t":"普通"},{"m":"2026-07","t":"普通"},{"m":"2026-07","t":"普通"},{"m":"2026-07","t":"普通"},{"m":"2026-07","t":"普通"},{"m":"2026-07","t":"普通"},{"m":"2026-07","t":"普通"},{"m":"2026-07","t":"普通"},{"m":"2026-06","t":"普通"},{"m":"2026-07","t":"普通"},{"m":"2026-07","t":"普通"},{"m":"2026-07","t":"普通"},{"m":"2026-07","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-07","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-08","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"十二强赛"},{"m":"2026-09","t":"十二强赛"},{"m":"2026-09","t":"十二强赛"},{"m":"2026-09","t":"十二强赛"},{"m":"2026-09","t":"十二强赛"},{"m":"2026-09","t":"十二强赛"},{"m":"2026-09","t":"十二强赛"},{"m":"2026-09","t":"十二强赛"},{"m":"2026-09","t":"十二强赛"},{"m":"2026-09","t":"十二强赛"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"十二强赛"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"十二强赛"},{"m":"2026-09","t":"十二强赛"},{"m":"2026-09","t":"十二强赛"},{"m":"2026-09","t":"十二强赛"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"十二强赛"},{"m":"2026-09","t":"双打"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"},{"m":"2026-09","t":"普通"}],"batches":[{"player":"任峻贤","type":"普通","nBatches":21,"medGap":1},{"player":"付大卫","type":"普通","nBatches":16,"medGap":1},{"player":"王成悦","type":"普通","nBatches":8,"medGap":3},{"player":"魏罗瑞","type":"普通","nBatches":6,"medGap":1},{"player":"任安喆","type":"普通","nBatches":4,"medGap":7},{"player":"梅哲宇","type":"普通","nBatches":4,"medGap":6},{"player":"姜子润","type":"普通","nBatches":4,"medGap":4},{"player":"龚雨煊","type":"普通","nBatches":3,"medGap":7},{"player":"姜子润","type":"十二强赛","nBatches":3,"medGap":6},{"player":"汪宁轩","type":"普通","nBatches":2,"medGap":7},{"player":"彭一和","type":"普通","nBatches":2,"medGap":8},{"player":"任安喆","type":"十二强赛","nBatches":2,"medGap":7},{"player":"任峻贤","type":"十二强赛","nBatches":2,"medGap":14},{"player":"龚雨煊","type":"十二强赛","nBatches":2,"medGap":14},{"player":"陶锦源","type":"十二强赛","nBatches":2,"medGap":7},{"player":"付大卫","type":"十二强赛","nBatches":2,"medGap":7},{"player":"谷子易","type":"十二强赛","nBatches":2,"medGap":7},{"player":"王思博","type":"十二强赛","nBatches":2,"medGap":7},{"player":"汪宁轩","type":"十二强赛","nBatches":2,"medGap":6},{"player":"叶泓鑫","type":"普通","nBatches":1,"medGap":0},{"player":"彭瀚明","type":"普通","nBatches":1,"medGap":0},{"player":"谷子易","type":"普通","nBatches":1,"medGap":0},{"player":"刘冠羽","type":"十二强赛","nBatches":1,"medGap":0},{"player":"彭瀚明","type":"十二强赛","nBatches":1,"medGap":0},{"player":"叶孟恒","type":"十二强赛","nBatches":1,"medGap":0},{"player":"孙钰鑫","type":"普通","nBatches":1,"medGap":0},{"player":"陈瑜萱","type":"普通","nBatches":1,"medGap":0}],"headline":{"records":354,"matches":316,"bonus":38,"players":45,"activeWithRecords":39,"span":{"first":"2026-03-03","last":"2026-09-28","days":209},"halfLife":45,"loserMult":0.8,"floor":1200,"netAll":602.9,"rawAll":3107.5,"wGain":2997.7,"lLoss":2394.8,"medianDecay":0,"meanDecay":3.22,"maxDecay":25.9,"maxDecay540":27.7,"gap12":7.3,"zeroMatches":25,"zeroShare":56.8,"inheritShare":96.6,"top10Thin":3,"giniPoints":0.0773,"rhoWrPts":0.5118,"rhoPtsM":0.6793,"rhoWrM":-0.0796,"participationGini":0.651,"top1Share":26.5,"top3Share":49.5,"top10Share":75.1,"fmtMissing":182,"fmtMissingPct":58,"fmtExposure":575,"fmtNetExposure":115,"scoreRate":20.6,"gamesRate":9.8,"bonusTotal":1065,"bonusBig":7,"bonusBigPct":39,"roster":45,"neverPlayed":6,"lowActivity":19},"byMonth":{"2026-03":39,"2026-04":44,"2026-05":36,"2026-06":66,"2026-07":24,"2026-08":31,"2026-09":76},"byType":[{"type":"普通","n":204,"raw":989.1,"wg":912.7,"ll":735.3,"net":177.4,"upsetRate":41.2,"avgFw":0.9207,"avgGap":39},{"type":"校乒赛团体","n":42,"raw":900.8,"wg":900.8,"ll":720.6,"net":180.2,"upsetRate":45.2,"avgFw":1,"avgGap":51.5},{"type":"校乒赛单打","n":52,"raw":1001,"wg":1001,"ll":800.8,"net":200.2,"upsetRate":15.4,"avgFw":1,"avgGap":201.8},{"type":"校乒联赛","n":1,"raw":21,"wg":7.3,"ll":5.8,"net":1.5,"upsetRate":100,"avgFw":0.3455,"avgGap":-8.6},{"type":"十二强赛","n":16,"raw":180.6,"wg":161,"ll":120.3,"net":40.7,"upsetRate":18.8,"avgFw":0.8466,"avgGap":214.4},{"type":"双打","n":1,"raw":15,"wg":15,"ll":12,"net":3,"upsetRate":0,"avgFw":1,"avgGap":0}],"byFormat":{"bo5":100,"缺省":182,"bo7":7,"bo3":27},"typeFmt":{"普通":{"total":204,"fmt":{"bo5":83,"缺省":90,"bo3":27,"bo7":4}},"校乒赛团体":{"total":42,"fmt":{"缺省":42}},"校乒赛单打":{"total":52,"fmt":{"缺省":49,"bo7":3}},"校乒联赛":{"total":1,"fmt":{"缺省":1}},"十二强赛":{"total":16,"fmt":{"bo5":16}},"双打":{"total":1,"fmt":{"bo5":1}}},"baseLadder":[{"gap":-800,"base":66},{"gap":-700,"base":66},{"gap":-600,"base":66},{"gap":-500,"base":66},{"gap":-400,"base":66},{"gap":-300,"base":60},{"gap":-200,"base":54},{"gap":-100,"base":42},{"gap":0,"base":30},{"gap":100,"base":20},{"gap":200,"base":12},{"gap":300,"base":8},{"gap":400,"base":4},{"gap":500,"base":4},{"gap":600,"base":4},{"gap":700,"base":4},{"gap":800,"base":4}],"effMult":[{"type":"十二强赛","format":"bo5","coef":0.7,"fmtMult":1,"eff":0.7,"n":16,"rawSum":180.59999999999997,"avgRaw":11.29},{"type":"普通","format":"bo7","coef":0.2,"fmtMult":1.5,"eff":0.3,"n":3,"rawSum":32.4,"avgRaw":10.8},{"type":"普通","format":"bo5","coef":0.2,"fmtMult":1,"eff":0.2,"n":27,"rawSum":154.39999999999998,"avgRaw":5.72},{"type":"普通","format":"default","coef":0.2,"fmtMult":0.7,"eff":0.14,"n":5,"rawSum":8.4,"avgRaw":1.68},{"type":"普通","format":"bo3","coef":0.2,"fmtMult":0.7,"eff":0.14,"n":24,"rawSum":95.76,"avgRaw":3.99}],"calib":[{"bin":"0~25","lo":0,"hi":25,"n":47,"upsets":24,"upsetRate":51.1,"avgRaw":14.77,"avgNet":2.83,"avgWGain":14.17,"impliedUpsetRate":45.5},{"bin":"25~50","lo":25,"hi":50,"n":51,"upsets":20,"upsetRate":39.2,"avgRaw":9.02,"avgNet":1.95,"avgWGain":8.62,"impliedUpsetRate":45.9},{"bin":"50~100","lo":50,"hi":100,"n":54,"upsets":27,"upsetRate":50,"avgRaw":9.86,"avgNet":1.95,"avgWGain":9.58,"impliedUpsetRate":45.7},{"bin":"100~150","lo":100,"hi":150,"n":32,"upsets":12,"upsetRate":37.5,"avgRaw":10.44,"avgNet":2.09,"avgWGain":10.27,"impliedUpsetRate":42.4},{"bin":"150~250","lo":150,"hi":250,"n":63,"upsets":24,"upsetRate":38.1,"avgRaw":10.48,"avgNet":2.02,"avgWGain":10.24,"impliedUpsetRate":43.1},{"bin":"250~400","lo":250,"hi":400,"n":35,"upsets":4,"upsetRate":11.4,"avgRaw":5.91,"avgNet":0.94,"avgWGain":5.43,"impliedUpsetRate":22.2},{"bin":"400~600","lo":400,"hi":600,"n":28,"upsets":4,"upsetRate":14.3,"avgRaw":5.96,"avgNet":0.99,"avgWGain":5.66,"impliedUpsetRate":19.5},{"bin":"600~+∞","lo":600,"hi":1000000000,"n":3,"upsets":0,"upsetRate":0,"avgRaw":0.56,"avgNet":0.14,"avgWGain":0.53,"impliedUpsetRate":6.1}],"calibSeg":{"segments":[{"label":"0 ~ 150 分","n":184,"upsets":83,"actual":45.1,"implied":45.1,"avgRaw":10.98},{"label":"150 ~ 250 分","n":63,"upsets":24,"actual":38.1,"implied":43.1,"avgRaw":10.48},{"label":"250 ~ 400 分","n":35,"upsets":4,"actual":11.4,"implied":22.2,"avgRaw":5.91},{"label":"400 分以上","n":31,"upsets":4,"actual":12.9,"implied":18.2,"avgRaw":5.44}],"dominance":[{"label":"0~50","n":54,"avgRaw":11.97},{"label":"50~150","n":47,"avgRaw":8.02},{"label":"150~250","n":39,"avgRaw":5.94},{"label":"250~400","n":31,"avgRaw":5.41},{"label":"400~600","n":24,"avgRaw":2.88},{"label":"600+","n":3,"avgRaw":0.56}]},"gapHist":[{"bin":"-200~-100","n":5,"upsets":5,"upsetRate":100,"avgRaw":8.74,"impliedUpsetRate":63.6},{"bin":"-100~-50","n":11,"upsets":11,"upsetRate":100,"avgRaw":9.7,"impliedUpsetRate":55.4},{"bin":"-50~+50","n":27,"upsets":13,"upsetRate":48.1,"avgRaw":7.24,"impliedUpsetRate":45.5},{"bin":"+50~+100","n":8,"upsets":0,"upsetRate":0,"avgRaw":3.9,"impliedUpsetRate":36.4},{"bin":"+100~+200","n":7,"upsets":0,"upsetRate":0,"avgRaw":3.06,"impliedUpsetRate":29.4},{"bin":"+200~+400","n":12,"upsets":0,"upsetRate":0,"avgRaw":5.45,"impliedUpsetRate":14.1},{"bin":">+400","n":5,"upsets":0,"upsetRate":0,"avgRaw":1.5,"impliedUpsetRate":null}],"decayBuckets":[{"range":"0.95~1.00","n":91,"pct":60.7},{"range":"0.90~0.95","n":9,"pct":6},{"range":"0.80~0.90","n":37,"pct":24.7},{"range":"0.70~0.80","n":10,"pct":6.7},{"range":"0.60~0.70","n":3,"pct":2},{"range":"0.50~0.60","n":0,"pct":0},{"range":"0.40~0.50","n":0,"pct":0},{"range":"0.30~0.40","n":0,"pct":0},{"range":"0.20~0.30","n":0,"pct":0},{"range":"0.10~0.20","n":0,"pct":0},{"range":"0~0.10","n":0,"pct":0},{"range":"0~0.00","n":0,"pct":0}],"seasonBlocks":[{"index":0,"label":"2026年春季学期","start":"2026-03-01","end":"2026-07-02","matches":191,"bonusRows":38,"net":470.3,"floorN":0,"totalStart":77000,"totalEnd":78535,"rawSum":2391.8,"wgSum":2344.4,"llSum":1874.1,"top5End":[{"name":"任峻贤","points":2235.2},{"name":"魏罗瑞","points":2149.1},{"name":"陈瑜萱","points":2123},{"name":"祁子傲","points":2109.1},{"name":"付大卫","points":2105.8}],"startTop5":[{"name":"陈瑜萱","points":2000},{"name":"付大卫","points":2000},{"name":"龚雨煊","points":2000},{"name":"谷子易","points":2000},{"name":"姜子润","points":2000}]},{"index":1,"label":"2026年暑假","start":"2026-07-03","end":"2026-08-31","matches":49,"bonusRows":0,"net":35,"floorN":0,"totalStart":77768,"totalEnd":77803,"rawSum":229.1,"wgSum":201,"llSum":166.1,"top5End":[{"name":"魏罗瑞","points":2128.2},{"name":"任峻贤","points":2080.8},{"name":"陈瑜萱","points":2061.5},{"name":"祁子傲","points":2054.5},{"name":"付大卫","points":2050.5}],"startTop5":[{"name":"任峻贤","points":2117.6},{"name":"魏罗瑞","points":2074.5},{"name":"陈瑜萱","points":2061.5},{"name":"祁子傲","points":2054.5},{"name":"付大卫","points":2052.9}]},{"index":2,"label":"2026年秋季学期","start":"2026-09-01","end":"2027-01-31","matches":76,"bonusRows":0,"net":97.7,"floorN":0,"totalStart":77785,"totalEnd":80483,"rawSum":486.6,"wgSum":452.3,"llSum":354.6,"top5End":[{"name":"魏罗瑞","points":2107.7},{"name":"任峻贤","points":2100.4},{"name":"付大卫","points":2073.7},{"name":"陈瑜萱","points":2068.4},{"name":"祁子傲","points":2054.5}],"startTop5":[{"name":"魏罗瑞","points":2101.4},{"name":"任峻贤","points":2099.2},{"name":"陈瑜萱","points":2061.5},{"name":"祁子傲","points":2054.5},{"name":"付大卫","points":2051.7}]}],"projection":[{"days":0,"date":"2026-09-29","top1Name":"魏罗瑞","top1Points":2107.7,"max":2107.7,"min":1300,"mean":1730.7,"spread":807.7,"moved3":0,"top10Overlap0":10,"top10":["魏罗瑞","任峻贤","付大卫","陈瑜萱","祁子傲","任安喆","李南熠","姜子润","王天森","龚雨煊"]},{"days":14,"date":"2026-10-13","top1Name":"魏罗瑞","top1Points":2108.6,"max":2108.6,"min":1300,"mean":1730.7,"spread":808.6,"moved3":0,"top10Overlap0":10,"top10":["魏罗瑞","任峻贤","付大卫","陈瑜萱","祁子傲","任安喆","李南熠","龚雨煊","姜子润","王天森"]},{"days":30,"date":"2026-10-29","top1Name":"魏罗瑞","top1Points":2109.4,"max":2109.4,"min":1300,"mean":1730.7,"spread":809.4,"moved3":0,"top10Overlap0":10,"top10":["魏罗瑞","任峻贤","付大卫","陈瑜萱","祁子傲","任安喆","李南熠","龚雨煊","姜子润","王天森"]},{"days":60,"date":"2026-11-28","top1Name":"魏罗瑞","top1Points":2109.1,"max":2109.1,"min":1300,"mean":1730.7,"spread":809.1,"moved3":0,"top10Overlap0":10,"top10":["魏罗瑞","任峻贤","陈瑜萱","付大卫","祁子傲","任安喆","李南熠","龚雨煊","姜子润","王天森"]},{"days":90,"date":"2026-12-28","top1Name":"魏罗瑞","top1Points":2109.8,"max":2109.8,"min":1300,"mean":1730.7,"spread":809.8,"moved3":1,"top10Overlap0":10,"top10":["魏罗瑞","任峻贤","陈瑜萱","付大卫","祁子傲","任安喆","龚雨煊","李南熠","姜子润","王天森"]},{"days":120,"date":"2027-01-27","top1Name":"魏罗瑞","top1Points":2110.2,"max":2110.2,"min":1300,"mean":1730.7,"spread":810.2,"moved3":1,"top10Overlap0":10,"top10":["魏罗瑞","任峻贤","陈瑜萱","付大卫","祁子傲","任安喆","龚雨煊","李南熠","姜子润","王天森"]},{"days":180,"date":"2027-03-28","top1Name":"魏罗瑞","top1Points":2110.7,"max":2110.7,"min":1300,"mean":1730.7,"spread":810.7,"moved3":1,"top10Overlap0":10,"top10":["魏罗瑞","任峻贤","陈瑜萱","付大卫","祁子傲","任安喆","龚雨煊","李南熠","姜子润","王天森"]},{"days":270,"date":"2027-06-26","top1Name":"魏罗瑞","top1Points":2110.9,"max":2110.9,"min":1300,"mean":1730.8,"spread":810.9,"moved3":1,"top10Overlap0":10,"top10":["魏罗瑞","任峻贤","陈瑜萱","付大卫","祁子傲","任安喆","龚雨煊","李南熠","姜子润","王天森"]},{"days":365,"date":"2027-09-29","top1Name":"魏罗瑞","top1Points":2111,"max":2111,"min":1300,"mean":1730.8,"spread":811,"moved3":1,"top10Overlap0":10,"top10":["魏罗瑞","任峻贤","陈瑜萱","付大卫","祁子傲","任安喆","龚雨煊","李南熠","姜子润","王天森"]},{"days":540,"date":"2028-03-22","top1Name":"魏罗瑞","top1Points":2111,"max":2111,"min":1300,"mean":1730.8,"spread":811,"moved3":1,"top10Overlap0":10,"top10":["魏罗瑞","任峻贤","陈瑜萱","付大卫","祁子傲","任安喆","龚雨煊","李南熠","姜子润","王天森"]}],"projectionMaxDelta":[0,5.8,10.9,16,20.4,23.1,25.9,27.3,27.6,27.7],"decayDelta":[{"name":"任峻贤","from":2100.4,"to":2074.5,"d":-25.9},{"name":"付大卫","from":2073.7,"to":2056.1,"d":-17.6},{"name":"彭一和","from":1950.8,"to":1940.6,"d":-10.2},{"name":"梅哲宇","from":1968.7,"to":1961.4,"d":-7.3},{"name":"陈瑜萱","from":2068.4,"to":2061.9,"d":-6.5},{"name":"任安喆","from":2054.4,"to":2051.5,"d":-2.9},{"name":"祁子傲","from":2054.5,"to":2054.5,"d":0},{"name":"李南熠","from":2039.7,"to":2039.7,"d":0},{"name":"王天森","from":2029.5,"to":2029.5,"d":0},{"name":"张宸瑞1","from":1822.2,"to":1822.2,"d":0},{"name":"胡朗诚","from":1814.6,"to":1814.6,"d":0},{"name":"吴慈航","from":1742.5,"to":1742.5,"d":0},{"name":"李全景","from":1710.6,"to":1710.6,"d":0},{"name":"杨苏旭","from":1705.1,"to":1705.1,"d":0},{"name":"王子一","from":1601.2,"to":1601.2,"d":0},{"name":"陈知勉","from":1600,"to":1600,"d":0},{"name":"何子涵","from":1600,"to":1600,"d":0},{"name":"胡永轩","from":1600,"to":1600,"d":0},{"name":"丁胜怀","from":1587.6,"to":1587.6,"d":0},{"name":"何齐烨","from":1535.9,"to":1535.9,"d":0},{"name":"肖辰宇","from":1532.6,"to":1532.6,"d":0},{"name":"曹高畅","from":1526.8,"to":1526.8,"d":0},{"name":"刘天齐","from":1519,"to":1519,"d":0},{"name":"邓以清","from":1517.8,"to":1517.8,"d":0},{"name":"宁悦辛","from":1500,"to":1500,"d":0},{"name":"刘彧铭","from":1498,"to":1498,"d":0},{"name":"张宸瑞2","from":1486.4,"to":1486.4,"d":0},{"name":"刘浩扬","from":1400,"to":1400,"d":0},{"name":"熊子乐","from":1399.8,"to":1399.8,"d":0},{"name":"吕曜而","from":1396.4,"to":1396.4,"d":0},{"name":"王玥涵","from":1388.4,"to":1388.4,"d":0},{"name":"俞睿哲","from":1300,"to":1300,"d":0},{"name":"姜子润","from":2031.8,"to":2031.9,"d":0.1},{"name":"叶泓鑫","from":1605.1,"to":1605.7,"d":0.6},{"name":"孙钰鑫","from":1797.2,"to":1798.5,"d":1.3},{"name":"王成悦","from":2007.9,"to":2009.9,"d":2},{"name":"魏罗瑞","from":2107.7,"to":2110.7,"d":3},{"name":"王思博","from":1694.3,"to":1697.8,"d":3.5},{"name":"汪宁轩","from":1683.5,"to":1687.4,"d":3.9},{"name":"陶锦源","from":1815.7,"to":1821,"d":5.3},{"name":"彭瀚明","from":1671.7,"to":1677.2,"d":5.5},{"name":"叶孟恒","from":1592.3,"to":1598.5,"d":6.2},{"name":"谷子易","from":2016.2,"to":2025.3,"d":9.1},{"name":"刘冠羽","from":1703,"to":1719.4,"d":16.4},{"name":"龚雨煊","from":2028.3,"to":2045.8,"d":17.5}],"finalRank":[{"rank":1,"name":"魏罗瑞","points":2107.7,"matches":12,"winRate":"58%"},{"rank":2,"name":"任峻贤","points":2100.4,"matches":48,"winRate":"54%"},{"rank":3,"name":"付大卫","points":2073.7,"matches":25,"winRate":"56%"},{"rank":4,"name":"陈瑜萱","points":2068.4,"matches":1,"winRate":"100%"},{"rank":5,"name":"祁子傲","points":2054.5,"matches":0,"winRate":"0%"},{"rank":6,"name":"任安喆","points":2054.4,"matches":7,"winRate":"86%"},{"rank":7,"name":"姜子润","points":2031.8,"matches":7,"winRate":"71%"},{"rank":8,"name":"王天森","points":2029.5,"matches":0,"winRate":"0%"},{"rank":9,"name":"龚雨煊","points":2028.3,"matches":6,"winRate":"50%"},{"rank":10,"name":"谷子易","points":2016.2,"matches":4,"winRate":"75%"},{"rank":11,"name":"王成悦","points":2007.9,"matches":12,"winRate":"33%"},{"rank":12,"name":"梅哲宇","points":1968.7,"matches":4,"winRate":"50%"},{"rank":13,"name":"彭一和","points":1950.8,"matches":3,"winRate":"67%"},{"rank":14,"name":"张宸瑞1","points":1822.2,"matches":0,"winRate":"0%"},{"rank":15,"name":"陶锦源","points":1815.7,"matches":3,"winRate":"33%"},{"rank":16,"name":"胡朗诚","points":1814.6,"matches":0,"winRate":"0%"},{"rank":17,"name":"孙钰鑫","points":1797.2,"matches":1,"winRate":"0%"},{"rank":18,"name":"吴慈航","points":1742.5,"matches":0,"winRate":"0%"},{"rank":19,"name":"李全景","points":1710.6,"matches":0,"winRate":"0%"},{"rank":20,"name":"杨苏旭","points":1705.1,"matches":0,"winRate":"0%"},{"rank":21,"name":"刘冠羽","points":1703,"matches":2,"winRate":"0%"},{"rank":22,"name":"王思博","points":1694.3,"matches":3,"winRate":"33%"},{"rank":23,"name":"汪宁轩","points":1683.5,"matches":5,"winRate":"0%"},{"rank":24,"name":"彭瀚明","points":1671.7,"matches":3,"winRate":"0%"},{"rank":25,"name":"叶泓鑫","points":1605.1,"matches":2,"winRate":"0%"},{"rank":26,"name":"王子一","points":1601.2,"matches":0,"winRate":"0%"},{"rank":27,"name":"陈知勉","points":1600,"matches":0,"winRate":"0%"},{"rank":28,"name":"何子涵","points":1600,"matches":0,"winRate":"0%"},{"rank":29,"name":"胡永轩","points":1600,"matches":0,"winRate":"0%"},{"rank":30,"name":"叶孟恒","points":1592.3,"matches":2,"winRate":"0%"},{"rank":31,"name":"丁胜怀","points":1587.6,"matches":0,"winRate":"0%"},{"rank":32,"name":"何齐烨","points":1535.9,"matches":0,"winRate":"0%"},{"rank":33,"name":"肖辰宇","points":1532.6,"matches":0,"winRate":"0%"},{"rank":34,"name":"曹高畅","points":1526.8,"matches":0,"winRate":"0%"},{"rank":35,"name":"刘天齐","points":1519,"matches":0,"winRate":"0%"},{"rank":36,"name":"邓以清","points":1517.8,"matches":0,"winRate":"0%"},{"rank":37,"name":"宁悦辛","points":1500,"matches":0,"winRate":"0%"},{"rank":38,"name":"刘彧铭","points":1498,"matches":0,"winRate":"0%"},{"rank":39,"name":"张宸瑞2","points":1486.4,"matches":0,"winRate":"0%"},{"rank":40,"name":"刘浩扬","points":1400,"matches":0,"winRate":"0%"},{"rank":41,"name":"熊子乐","points":1399.8,"matches":0,"winRate":"0%"},{"rank":42,"name":"吕曜而","points":1396.4,"matches":0,"winRate":"0%"},{"rank":43,"name":"王玥涵","points":1388.4,"matches":0,"winRate":"0%"},{"rank":44,"name":"俞睿哲","points":1300,"matches":0,"winRate":"0%"}],"perPlayer":[{"name":"魏罗瑞","appearances":26,"first":2000,"last":2107.7,"net":107.7,"min":2000,"max":2149.1,"sd":39.1,"range":149.1},{"name":"任峻贤","appearances":26,"first":2020,"last":2100.4,"net":80.4,"min":2020,"max":2297.9,"sd":79,"range":277.9},{"name":"付大卫","appearances":26,"first":1981.4,"last":2073.7,"net":92.3,"min":1972.8,"max":2132.4,"sd":44.4,"range":159.6},{"name":"陈瑜萱","appearances":26,"first":2000,"last":2068.4,"net":68.4,"min":2000,"max":2126.2,"sd":37.3,"range":126.2},{"name":"祁子傲","appearances":26,"first":2003.9,"last":2054.5,"net":50.6,"min":2003.9,"max":2123.4,"sd":39.1,"range":119.5},{"name":"任安喆","appearances":26,"first":2000,"last":2054.4,"net":54.4,"min":1988.8,"max":2054.7,"sd":17,"range":65.9},{"name":"李南熠","appearances":21,"first":1996.7,"last":2040.5,"net":43.8,"min":1996.7,"max":2080.5,"sd":27.1,"range":83.8},{"name":"姜子润","appearances":26,"first":2000,"last":2031.8,"net":31.8,"min":1980.8,"max":2032.2,"sd":14,"range":51.4},{"name":"王天森","appearances":26,"first":2000,"last":2029.5,"net":29.5,"min":2000,"max":2059,"sd":20.3,"range":59},{"name":"龚雨煊","appearances":26,"first":2000,"last":2028.3,"net":28.3,"min":2000,"max":2088.6,"sd":28.1,"range":88.6},{"name":"谷子易","appearances":26,"first":2000,"last":2016.2,"net":16.2,"min":1889.1,"max":2031.6,"sd":49.9,"range":142.5},{"name":"王成悦","appearances":26,"first":1900,"last":2007.9,"net":107.9,"min":1883.3,"max":2103.1,"sd":59.1,"range":219.8},{"name":"梅哲宇","appearances":26,"first":1900,"last":1968.7,"net":68.7,"min":1880.8,"max":2028.5,"sd":34.9,"range":147.7},{"name":"彭一和","appearances":26,"first":2000,"last":1950.8,"net":-49.2,"min":1887.5,"max":2000,"sd":36.9,"range":112.5},{"name":"张宸瑞1","appearances":26,"first":1800,"last":1822.2,"net":22.2,"min":1800,"max":1856.4,"sd":15.6,"range":56.4},{"name":"陶锦源","appearances":26,"first":1800,"last":1815.7,"net":15.7,"min":1784.6,"max":1839.6,"sd":18.4,"range":55},{"name":"胡朗诚","appearances":26,"first":1800,"last":1814.6,"net":14.6,"min":1789.8,"max":1829.2,"sd":13.5,"range":39.4},{"name":"孙钰鑫","appearances":26,"first":1800,"last":1797.2,"net":-2.8,"min":1796.9,"max":1854.1,"sd":19.9,"range":57.2},{"name":"吴慈航","appearances":26,"first":1700,"last":1742.5,"net":42.5,"min":1700,"max":1790,"sd":29.7,"range":90},{"name":"李全景","appearances":26,"first":1700,"last":1710.6,"net":10.6,"min":1696.8,"max":1728.1,"sd":8.5,"range":31.3},{"name":"杨苏旭","appearances":26,"first":1700,"last":1705.1,"net":5.1,"min":1680.8,"max":1710.2,"sd":6.6,"range":29.4},{"name":"刘冠羽","appearances":26,"first":1700,"last":1703,"net":3,"min":1698.8,"max":1748,"sd":16.2,"range":49.2},{"name":"王思博","appearances":26,"first":1700,"last":1694.3,"net":-5.7,"min":1666.4,"max":1700,"sd":13.6,"range":33.6},{"name":"汪宁轩","appearances":26,"first":1700,"last":1683.5,"net":-16.5,"min":1679.9,"max":1700,"sd":7.5,"range":20.1},{"name":"彭瀚明","appearances":26,"first":1700,"last":1671.7,"net":-28.3,"min":1655.2,"max":1700,"sd":17.9,"range":44.8},{"name":"叶泓鑫","appearances":26,"first":1600,"last":1605.1,"net":5.1,"min":1577.6,"max":1613.4,"sd":11.8,"range":35.8},{"name":"王子一","appearances":26,"first":1600,"last":1601.2,"net":1.2,"min":1590.4,"max":1602.4,"sd":4.1,"range":12},{"name":"陈知勉","appearances":26,"first":1600,"last":1600,"net":0,"min":1600,"max":1600,"sd":0,"range":0},{"name":"何子涵","appearances":26,"first":1600,"last":1600,"net":0,"min":1600,"max":1600,"sd":0,"range":0},{"name":"胡永轩","appearances":26,"first":1600,"last":1600,"net":0,"min":1600,"max":1600,"sd":0,"range":0},{"name":"叶孟恒","appearances":26,"first":1600,"last":1592.3,"net":-7.7,"min":1585.9,"max":1600,"sd":5.1,"range":14.1},{"name":"丁胜怀","appearances":26,"first":1600,"last":1587.6,"net":-12.4,"min":1563.2,"max":1600,"sd":13.1,"range":36.8},{"name":"何齐烨","appearances":26,"first":1500,"last":1535.9,"net":35.9,"min":1500,"max":1571.8,"sd":24.9,"range":71.8},{"name":"肖辰宇","appearances":26,"first":1500,"last":1532.6,"net":32.6,"min":1500,"max":1565.2,"sd":23.8,"range":65.2},{"name":"曹高畅","appearances":26,"first":1500,"last":1526.8,"net":26.8,"min":1500,"max":1553.6,"sd":19.1,"range":53.6},{"name":"刘天齐","appearances":26,"first":1500,"last":1519,"net":19,"min":1500,"max":1542,"sd":13.7,"range":42},{"name":"邓以清","appearances":26,"first":1500,"last":1517.8,"net":17.8,"min":1500,"max":1535.6,"sd":12.1,"range":35.6},{"name":"宁悦辛","appearances":26,"first":1500,"last":1500,"net":0,"min":1500,"max":1500,"sd":0,"range":0},{"name":"刘彧铭","appearances":26,"first":1500,"last":1498,"net":-2,"min":1484,"max":1500,"sd":5.4,"range":16},{"name":"张宸瑞2","appearances":26,"first":1500,"last":1486.4,"net":-13.6,"min":1472.8,"max":1500,"sd":10.8,"range":27.2},{"name":"刘浩扬","appearances":26,"first":1400,"last":1400,"net":0,"min":1400,"max":1400,"sd":0,"range":0},{"name":"熊子乐","appearances":26,"first":1400,"last":1399.8,"net":-0.2,"min":1399.6,"max":1400,"sd":0.1,"range":0.4},{"name":"吕曜而","appearances":26,"first":1400,"last":1396.4,"net":-3.6,"min":1380.8,"max":1400,"sd":6.7,"range":19.2},{"name":"王玥涵","appearances":26,"first":1400,"last":1388.4,"net":-11.6,"min":1364.8,"max":1400,"sd":12.1,"range":35.2},{"name":"俞睿哲","appearances":26,"first":1300,"last":1300,"net":0,"min":1300,"max":1300,"sd":0,"range":0}],"timeline":[{"time":"2026-03-01","season":"2026年春季学期","isInitial":true,"isRealtime":false,"n":45,"top":"陈瑜萱","topP":2000},{"time":"2026-03-08","season":"2026年春季学期","isInitial":false,"isRealtime":false,"n":44,"top":"任峻贤","topP":2020},{"time":"2026-03-15","season":"2026年春季学期","isInitial":false,"isRealtime":false,"n":45,"top":"任峻贤","topP":2031.6},{"time":"2026-03-23","season":"2026年春季学期","isInitial":false,"isRealtime":false,"n":45,"top":"任峻贤","topP":2035.4},{"time":"2026-04-01","season":"2026年春季学期","isInitial":false,"isRealtime":false,"n":45,"top":"陈瑜萱","topP":2080},{"time":"2026-04-08","season":"2026年春季学期","isInitial":false,"isRealtime":false,"n":45,"top":"陈瑜萱","topP":2092.8},{"time":"2026-04-15","season":"2026年春季学期","isInitial":false,"isRealtime":false,"n":45,"top":"祁子傲","topP":2123.4},{"time":"2026-04-23","season":"2026年春季学期","isInitial":false,"isRealtime":false,"n":45,"top":"祁子傲","topP":2123.1},{"time":"2026-05-01","season":"2026年春季学期","isInitial":false,"isRealtime":false,"n":45,"top":"祁子傲","topP":2122.8},{"time":"2026-05-08","season":"2026年春季学期","isInitial":false,"isRealtime":false,"n":45,"top":"祁子傲","topP":2122.6},{"time":"2026-05-15","season":"2026年春季学期","isInitial":false,"isRealtime":false,"n":45,"top":"祁子傲","topP":2122.4},{"time":"2026-05-23","season":"2026年春季学期","isInitial":false,"isRealtime":false,"n":45,"top":"任峻贤","topP":2113},{"time":"2026-06-01","season":"2026年春季学期","isInitial":false,"isRealtime":false,"n":45,"top":"任峻贤","topP":2144.8},{"time":"2026-06-08","season":"2026年春季学期","isInitial":false,"isRealtime":false,"n":45,"top":"任峻贤","topP":2288.4},{"time":"2026-06-15","season":"2026年春季学期","isInitial":false,"isRealtime":false,"n":45,"top":"任峻贤","topP":2297.9},{"time":"2026-06-23","season":"2026年春季学期","isInitial":false,"isRealtime":false,"n":45,"top":"任峻贤","topP":2291.9},{"time":"2026-07-02","season":"2026年春季学期","isInitial":false,"isRealtime":false,"n":45,"top":"任峻贤","topP":2235.2},{"time":"2026-07-03","season":"2026年暑假","isInitial":true,"isRealtime":false,"n":45,"top":"任峻贤","topP":2117.6},{"time":"2026-07-15","season":"2026年暑假","isInitial":false,"isRealtime":false,"n":45,"top":"任峻贤","topP":2097.4},{"time":"2026-07-23","season":"2026年暑假","isInitial":false,"isRealtime":false,"n":45,"top":"任峻贤","topP":2097.9},{"time":"2026-08-01","season":"2026年暑假","isInitial":false,"isRealtime":false,"n":45,"top":"任峻贤","topP":2102.8},{"time":"2026-08-15","season":"2026年暑假","isInitial":false,"isRealtime":false,"n":45,"top":"魏罗瑞","topP":2097.8},{"time":"2026-08-23","season":"2026年暑假","isInitial":false,"isRealtime":false,"n":45,"top":"魏罗瑞","topP":2109.1},{"time":"2026-08-31","season":"2026年暑假","isInitial":false,"isRealtime":false,"n":45,"top":"魏罗瑞","topP":2128.2},{"time":"2026-09-01","season":"2026年秋季学期","isInitial":true,"isRealtime":false,"n":45,"top":"魏罗瑞","topP":2101.4},{"time":"2026-09-08","season":"2026年秋季学期","isInitial":false,"isRealtime":false,"n":44,"top":"任峻贤","topP":2110.9},{"time":"2026-09-15","season":"2026年秋季学期","isInitial":false,"isRealtime":false,"n":44,"top":"魏罗瑞","topP":2104.7},{"time":"2026-09-23","season":"2026年秋季学期","isInitial":false,"isRealtime":false,"n":44,"top":"魏罗瑞","topP":2116.5},{"time":"2026-09-29","season":"2026年秋季学期","isInitial":false,"isRealtime":true,"n":44,"top":"魏罗瑞","topP":2107.7}],"sensitivity":[{"key":"baseline","label":"基准（现行参数）","changed1":0,"changed3":0,"changed5":0,"maxShift":0,"worst":"","top10Overlap":10,"spread":807.7,"mean":1723.6,"top1":"魏罗瑞"},{"key":"hl_20","label":"半衰期 t=20","changed1":3,"changed3":0,"changed5":0,"maxShift":2,"worst":"刘冠羽","top10Overlap":10,"spread":806,"mean":1723.4,"top1":"魏罗瑞"},{"key":"hl_30","label":"半衰期 t=30","changed1":0,"changed3":0,"changed5":0,"maxShift":0,"worst":"","top10Overlap":10,"spread":807.7,"mean":1723.5,"top1":"魏罗瑞"},{"key":"hl_60","label":"半衰期 t=60","changed1":2,"changed3":0,"changed5":0,"maxShift":1,"worst":"任安喆","top10Overlap":10,"spread":807.7,"mean":1723.7,"top1":"魏罗瑞"},{"key":"hl_90","label":"半衰期 t=90","changed1":2,"changed3":0,"changed5":0,"maxShift":1,"worst":"任安喆","top10Overlap":10,"spread":806.8,"mean":1723.7,"top1":"魏罗瑞"},{"key":"hl_180","label":"半衰期 t=180","changed1":2,"changed3":0,"changed5":0,"maxShift":1,"worst":"任安喆","top10Overlap":10,"spread":806.2,"mean":1723.8,"top1":"魏罗瑞"},{"key":"hl_365","label":"半衰期 t=365","changed1":2,"changed3":0,"changed5":0,"maxShift":1,"worst":"任安喆","top10Overlap":10,"spread":806.5,"mean":1723.8,"top1":"魏罗瑞"},{"key":"freeze_off","label":"关闭类型刷新·定格","changed1":2,"changed3":0,"changed5":0,"maxShift":1,"worst":"任安喆","top10Overlap":10,"spread":805.8,"mean":1723.9,"top1":"魏罗瑞"},{"key":"no_decay_all","label":"全部类型永久保值","changed1":2,"changed3":0,"changed5":0,"maxShift":1,"worst":"任安喆","top10Overlap":10,"spread":805.8,"mean":1723.9,"top1":"魏罗瑞"},{"key":"no_fmt","label":"关闭赛制系数","changed1":9,"changed3":0,"changed5":0,"maxShift":2,"worst":"姜子润","top10Overlap":10,"spread":816.7,"mean":1724,"top1":"魏罗瑞"},{"key":"fmt_flat","label":"赛制系数全部=1.0","changed1":9,"changed3":0,"changed5":0,"maxShift":2,"worst":"姜子润","top10Overlap":10,"spread":816.7,"mean":1724,"top1":"魏罗瑞"},{"key":"fmt_harsh","label":"赛制系数 bo3 .5 / bo5 1 / bo7 2","changed1":4,"changed3":0,"changed5":0,"maxShift":1,"worst":"任安喆","top10Overlap":10,"spread":802.5,"mean":1723.5,"top1":"魏罗瑞"},{"key":"loser_0.5","label":"负者系数 0.5","changed1":16,"changed3":1,"changed5":0,"maxShift":3,"worst":"王天森","top10Overlap":10,"spread":876.3,"mean":1734.6,"top1":"任峻贤"},{"key":"loser_0.6","label":"负者系数 0.6","changed1":12,"changed3":0,"changed5":0,"maxShift":2,"worst":"龚雨煊","top10Overlap":10,"spread":849.3,"mean":1731,"top1":"任峻贤"},{"key":"loser_0.7","label":"负者系数 0.7","changed1":6,"changed3":0,"changed5":0,"maxShift":1,"worst":"任峻贤","top10Overlap":10,"spread":825,"mean":1727.5,"top1":"任峻贤"},{"key":"loser_0.9","label":"负者系数 0.9","changed1":8,"changed3":0,"changed5":0,"maxShift":1,"worst":"陈瑜萱","top10Overlap":10,"spread":796.3,"mean":1719.9,"top1":"魏罗瑞"},{"key":"loser_1.0","label":"负者系数 1.0（零和）","changed1":14,"changed3":2,"changed5":0,"maxShift":3,"worst":"付大卫","top10Overlap":10,"spread":782.2,"mean":1716.2,"top1":"魏罗瑞"},{"key":"floor_1500","label":"地板线抬到 1500","changed1":8,"changed3":1,"changed5":0,"maxShift":3,"worst":"刘浩扬","top10Overlap":10,"spread":807.7,"mean":1728.5,"top1":"魏罗瑞"},{"key":"inherit_0","label":"赛季继承 0%","changed1":34,"changed3":12,"changed5":6,"maxShift":6,"worst":"彭一和","top10Overlap":10,"spread":741.5,"mean":1706.7,"top1":"任安喆"},{"key":"inherit_25","label":"赛季继承 25%","changed1":17,"changed3":1,"changed5":0,"maxShift":3,"worst":"任安喆","top10Overlap":10,"spread":763.3,"mean":1715.2,"top1":"任峻贤"},{"key":"inherit_75","label":"赛季继承 75%","changed1":7,"changed3":2,"changed5":0,"maxShift":4,"worst":"王成悦","top10Overlap":10,"spread":856.9,"mean":1732.1,"top1":"魏罗瑞"},{"key":"inherit_100","label":"赛季继承 100%","changed1":10,"changed3":2,"changed5":1,"maxShift":5,"worst":"王成悦","top10Overlap":10,"spread":908.4,"mean":1740.5,"top1":"魏罗瑞"},{"key":"ev_0.5","label":"全部赛事系数 ×0.5","changed1":13,"changed3":0,"changed5":0,"maxShift":2,"worst":"龚雨煊","top10Overlap":10,"spread":790,"mean":1719.9,"top1":"任峻贤"},{"key":"ev_2.0","label":"全部赛事系数 ×2","changed1":15,"changed3":2,"changed5":0,"maxShift":3,"worst":"王成悦","top10Overlap":10,"spread":850.1,"mean":1730.9,"top1":"魏罗瑞"},{"key":"base_narrow_2","label":"阶梯收窄（分差/2 后查表）","changed1":14,"changed3":2,"changed5":0,"maxShift":3,"worst":"叶泓鑫","top10Overlap":10,"spread":864.9,"mean":1724.4,"top1":"任峻贤"},{"key":"base_wide_0.5","label":"阶梯放宽（分差×2 后查表）","changed1":14,"changed3":1,"changed5":0,"maxShift":3,"worst":"何齐烨","top10Overlap":10,"spread":782.2,"mean":1723.2,"top1":"魏罗瑞"}],"sensScale":[{"key":"baseline","label":"基准（现行参数 t=45 / 负者0.8 / 继承50% / 地板1200）","netMatchFlow":94.7,"spread":807.7,"mean":1723.6,"gini":0.0773,"totalPoints":75840},{"key":"hl_20","label":"半衰期 t=20 天（急衰减）","netMatchFlow":92.6,"spread":806,"mean":1723.4,"gini":0.0771,"totalPoints":75827},{"key":"hl_30","label":"半衰期 t=30 天","netMatchFlow":94,"spread":807.7,"mean":1723.5,"gini":0.0772,"totalPoints":75835},{"key":"hl_60","label":"半衰期 t=60 天","netMatchFlow":94.8,"spread":807.7,"mean":1723.7,"gini":0.0773,"totalPoints":75843},{"key":"hl_90","label":"半衰期 t=90 天","netMatchFlow":94.5,"spread":806.8,"mean":1723.7,"gini":0.0774,"totalPoints":75845},{"key":"hl_180","label":"半衰期 t=180 天","netMatchFlow":94.5,"spread":806.2,"mean":1723.8,"gini":0.0774,"totalPoints":75848},{"key":"hl_365","label":"半衰期 t=365 天（近不衰减）","netMatchFlow":94.1,"spread":806.5,"mean":1723.8,"gini":0.0774,"totalPoints":75849},{"key":"freeze_off","label":"关闭\"类型刷新·定格\"机制","netMatchFlow":93.9,"spread":805.8,"mean":1723.9,"gini":0.0774,"totalPoints":75850},{"key":"no_fmt","label":"关闭赛制系数（bo3/bo5/bo7 一律 1.0）","netMatchFlow":99.6,"spread":816.7,"mean":1724,"gini":0.0773,"totalPoints":75854},{"key":"no_decay_types","label":"所有赛事类型改为永久保值","netMatchFlow":93.9,"spread":805.8,"mean":1723.9,"gini":0.0774,"totalPoints":75850},{"key":"loser_0.6","label":"负者系数 0.6（弱惩罚）","netMatchFlow":177.3,"spread":849.3,"mean":1731,"gini":0.0792,"totalPoints":76166},{"key":"loser_0.7","label":"负者系数 0.7","netMatchFlow":139.6,"spread":825,"mean":1727.5,"gini":0.0782,"totalPoints":76008},{"key":"loser_0.9","label":"负者系数 0.9","netMatchFlow":51,"spread":796.3,"mean":1719.9,"gini":0.0764,"totalPoints":75676},{"key":"loser_1.0","label":"负者系数 1.0（零和制）","netMatchFlow":9.6,"spread":782.2,"mean":1716.2,"gini":0.0755,"totalPoints":75513},{"key":"floor_0","label":"取消地板线（floor=0）","netMatchFlow":94.7,"spread":807.7,"mean":1723.6,"gini":0.0773,"totalPoints":75840},{"key":"floor_1500","label":"抬高地板线（floor=1500）","netMatchFlow":94.7,"spread":807.7,"mean":1728.5,"gini":0.0748,"totalPoints":76055},{"key":"init_1300","label":"默认初始分 1300（新面孔不再默认 2000）","netMatchFlow":94.7,"spread":807.7,"mean":1723.6,"gini":0.0773,"totalPoints":75840},{"key":"inherit_0","label":"赛季继承率 0%","netMatchFlow":null,"spread":741.5,"mean":1706.7,"gini":0.0726,"totalPoints":75093},{"key":"inherit_0.25","label":"赛季继承率 25%","netMatchFlow":null,"spread":763.3,"mean":1715.2,"gini":0.0749,"totalPoints":75467},{"key":"inherit_0.5","label":"赛季继承率 50%（现行）","netMatchFlow":null,"spread":807.7,"mean":1723.6,"gini":0.0773,"totalPoints":75840},{"key":"inherit_0.75","label":"赛季继承率 75%","netMatchFlow":null,"spread":856.9,"mean":1732.1,"gini":0.0798,"totalPoints":76213},{"key":"inherit_1","label":"赛季继承率 100%","netMatchFlow":null,"spread":908.4,"mean":1740.5,"gini":0.0823,"totalPoints":76583}],"participation":[{"name":"任峻贤","t":167,"w":94,"wr":0.562874251497006},{"name":"付大卫","t":82,"w":34,"wr":0.4146341463414634},{"name":"魏罗瑞","t":63,"w":42,"wr":0.6666666666666666},{"name":"王成悦","t":50,"w":28,"wr":0.56},{"name":"谷子易","t":20,"w":11,"wr":0.55},{"name":"李南熠","t":19,"w":9,"wr":0.47368421052631576},{"name":"龚雨煊","t":19,"w":10,"wr":0.5263157894736842},{"name":"姜子润","t":19,"w":11,"wr":0.5789473684210527},{"name":"梅哲宇","t":19,"w":13,"wr":0.6842105263157895},{"name":"彭一和","t":15,"w":5,"wr":0.3333333333333333},{"name":"任安喆","t":14,"w":11,"wr":0.7857142857142857},{"name":"孙钰鑫","t":14,"w":2,"wr":0.14285714285714285},{"name":"祁子傲","t":12,"w":7,"wr":0.5833333333333334},{"name":"陈瑜萱","t":10,"w":8,"wr":0.8},{"name":"叶泓鑫","t":10,"w":3,"wr":0.3},{"name":"汪宁轩","t":10,"w":1,"wr":0.1},{"name":"陶锦源","t":9,"w":4,"wr":0.4444444444444444},{"name":"李全景","t":9,"w":3,"wr":0.3333333333333333},{"name":"叶孟恒","t":6,"w":0,"wr":0},{"name":"张宸瑞1","t":6,"w":3,"wr":0.5},{"name":"王思博","t":5,"w":1,"wr":0.2},{"name":"刘冠羽","t":5,"w":2,"wr":0.4},{"name":"彭瀚明","t":5,"w":0,"wr":0},{"name":"吴慈航","t":4,"w":3,"wr":0.75},{"name":"何齐烨","t":4,"w":3,"wr":0.75},{"name":"杨苏旭","t":4,"w":1,"wr":0.25},{"name":"胡朗诚","t":3,"w":1,"wr":0.3333333333333333},{"name":"邓以清","t":3,"w":1,"wr":0.3333333333333333},{"name":"肖辰宇","t":3,"w":1,"wr":0.3333333333333333},{"name":"王子一","t":3,"w":0,"wr":0},{"name":"曹高畅","t":3,"w":1,"wr":0.3333333333333333},{"name":"王玥涵","t":3,"w":0,"wr":0},{"name":"刘彧铭","t":2,"w":0,"wr":0},{"name":"张宸瑞2","t":2,"w":0,"wr":0},{"name":"吕曜而","t":2,"w":0,"wr":0},{"name":"刘天齐","t":2,"w":1,"wr":0.5},{"name":"丁胜怀","t":2,"w":0,"wr":0},{"name":"王天森","t":1,"w":1,"wr":1},{"name":"熊子乐","t":1,"w":0,"wr":0}],"bonusByPlayer":[{"name":"任峻贤","count":2,"amount":122.5,"events":[{"date":"2026-04-10","type":"比赛结果加分","amt":22.5,"note":null},{"date":"2026-06-02","type":"比赛结果加分","amt":100,"note":null}]},{"name":"梅哲宇","count":2,"amount":80,"events":[{"date":"2026-04-10","type":"比赛结果加分","amt":35,"note":null},{"date":"2026-06-02","type":"比赛结果加分","amt":45,"note":null}]},{"name":"祁子傲","count":2,"amount":79,"events":[{"date":"2026-04-10","type":"比赛结果加分","amt":50,"note":null},{"date":"2026-06-02","type":"比赛结果加分","amt":29,"note":null}]},{"name":"王成悦","count":2,"amount":79,"events":[{"date":"2026-04-10","type":"比赛结果加分","amt":50,"note":null},{"date":"2026-06-02","type":"比赛结果加分","amt":29,"note":null}]},{"name":"付大卫","count":1,"amount":70,"events":[{"date":"2026-06-02","type":"比赛结果加分","amt":70,"note":null}]},{"name":"陈瑜萱","count":2,"amount":69,"events":[{"date":"2026-04-10","type":"比赛结果加分","amt":50,"note":null},{"date":"2026-06-02","type":"比赛结果加分","amt":19,"note":null}]},{"name":"龚雨煊","count":2,"amount":54,"events":[{"date":"2026-04-10","type":"比赛结果加分","amt":35,"note":null},{"date":"2026-06-02","type":"比赛结果加分","amt":19,"note":null}]},{"name":"李南熠","count":1,"amount":50,"events":[{"date":"2026-04-10","type":"比赛结果加分","amt":50,"note":null}]},{"name":"魏罗瑞","count":1,"amount":50,"events":[{"date":"2026-04-10","type":"比赛结果加分","amt":50,"note":null}]},{"name":"谷子易","count":1,"amount":45,"events":[{"date":"2026-06-02","type":"比赛结果加分","amt":45,"note":null}]},{"name":"王天森","count":1,"amount":35,"events":[{"date":"2026-04-10","type":"比赛结果加分","amt":35,"note":null}]},{"name":"张宸瑞1","count":2,"amount":34.5,"events":[{"date":"2026-04-10","type":"比赛结果加分","amt":22.5,"note":null},{"date":"2026-06-02","type":"比赛结果加分","amt":12,"note":null}]},{"name":"姜子润","count":1,"amount":29,"events":[{"date":"2026-06-02","type":"比赛结果加分","amt":29,"note":null}]},{"name":"陶锦源","count":1,"amount":29,"events":[{"date":"2026-06-02","type":"比赛结果加分","amt":29,"note":null}]},{"name":"任安喆","count":1,"amount":19,"events":[{"date":"2026-06-02","type":"比赛结果加分","amt":19,"note":null}]},{"name":"胡朗诚","count":1,"amount":19,"events":[{"date":"2026-06-02","type":"比赛结果加分","amt":19,"note":null}]},{"name":"吴慈航","count":1,"amount":19,"events":[{"date":"2026-06-02","type":"比赛结果加分","amt":19,"note":null}]},{"name":"杨苏旭","count":1,"amount":19,"events":[{"date":"2026-06-02","type":"比赛结果加分","amt":19,"note":null}]},{"name":"何齐烨","count":1,"amount":19,"events":[{"date":"2026-06-02","type":"比赛结果加分","amt":19,"note":null}]},{"name":"刘冠羽","count":1,"amount":12,"events":[{"date":"2026-06-02","type":"比赛结果加分","amt":12,"note":null}]},{"name":"丁胜怀","count":1,"amount":12,"events":[{"date":"2026-06-02","type":"比赛结果加分","amt":12,"note":null}]},{"name":"叶孟恒","count":1,"amount":12,"events":[{"date":"2026-06-02","type":"比赛结果加分","amt":12,"note":null}]},{"name":"叶泓鑫","count":1,"amount":12,"events":[{"date":"2026-06-02","type":"比赛结果加分","amt":12,"note":null}]},{"name":"王子一","count":1,"amount":12,"events":[{"date":"2026-06-02","type":"比赛结果加分","amt":12,"note":null}]},{"name":"肖辰宇","count":1,"amount":12,"events":[{"date":"2026-06-02","type":"比赛结果加分","amt":12,"note":null}]},{"name":"邓以清","count":1,"amount":12,"events":[{"date":"2026-06-02","type":"比赛结果加分","amt":12,"note":null}]},{"name":"刘彧铭","count":1,"amount":12,"events":[{"date":"2026-06-02","type":"比赛结果加分","amt":12,"note":null}]},{"name":"刘天齐","count":1,"amount":12,"events":[{"date":"2026-06-02","type":"比赛结果加分","amt":12,"note":null}]},{"name":"曹高畅","count":1,"amount":12,"events":[{"date":"2026-06-02","type":"比赛结果加分","amt":12,"note":null}]},{"name":"王玥涵","count":1,"amount":12,"events":[{"date":"2026-06-02","type":"比赛结果加分","amt":12,"note":null}]},{"name":"吕曜而","count":1,"amount":12,"events":[{"date":"2026-06-02","type":"比赛结果加分","amt":12,"note":null}]}],"volatility":{"swapCount":300,"moverSum":451,"avgMove":1.5,"enterExit":1},"tenure":[{"topN":1,"everIn":4},{"topN":2,"everIn":5},{"topN":3,"everIn":6},{"topN":4,"everIn":7},{"topN":5,"everIn":11},{"topN":6,"everIn":12},{"topN":7,"everIn":13},{"topN":8,"everIn":13},{"topN":9,"everIn":13},{"topN":10,"everIn":14}],"turnover":[{"topN":1,"newcomers":3},{"topN":2,"newcomers":3},{"topN":3,"newcomers":3},{"topN":4,"newcomers":3},{"topN":5,"newcomers":6},{"topN":6,"newcomers":6},{"topN":7,"newcomers":6},{"topN":8,"newcomers":5},{"topN":9,"newcomers":4},{"topN":10,"newcomers":4}],"sameDayDupes":35,"neverPlayed":["陈知勉","何子涵","胡永轩","宁悦辛","刘浩扬","俞睿哲"]}</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" integrity="sha384-e6nUZLBkQ86NJ6TVVKAeSaK8jWa3NhkYWZFomE39AvDbQWeie9PlQqM3pmYW5d1g" crossorigin="anonymous"></script>
+<script>/* 积分模型研判报告 · 图表与数据绑定 */
+(function () {
+  const D = JSON.parse(document.getElementById('REPORTDATA').textContent);
+  const H = D.headline;
+  const $ = (id) => document.getElementById(id);
+  const txt = (id, v) => { const e = $(id); if (e) e.textContent = v; };
+  const n = (v, d = 1) => Number(v).toLocaleString('zh-CN', { minimumFractionDigits: d, maximumFractionDigits: d });
+
+  /* ---------- 数字绑定 ---------- */
+  txt('m-asof', D.meta.asOf); txt('m-span', H.span.first + ' → ' + H.span.last);
+  txt('m-tl', H.halfLife); txt('m-lm', H.loserMult); txt('m-fl', H.floor);
+  txt('k-matches', H.matches);
+  txt('k1', H.players + ' / ' + H.activeWithRecords);
+  txt('k2', H.zeroMatches + ' / ' + H.players);
+  txt('k3', '+' + n(H.netAll, 0));
+  txt('k4', H.medianDecay === 0 ? '0.0' : n(H.medianDecay, 1));
+  txt('k5', H.giniPoints);
+
+  txt('s1a', H.medianDecay === 0 ? '0.0 分' : n(H.medianDecay, 1) + ' 分');
+  txt('s1b', n(H.gap12, 1) + ' 分'); txt('s1c', n(H.maxDecay, 1));
+  txt('s1d', H.inheritShare + '%');
+
+  txt('f1a', D.sensDecay ? '' : '63'); // 下方按实际数据覆盖
+  txt('f1c', H.medianDecay === 0 ? '0.0' : n(H.medianDecay, 1));
+  txt('f1d', n(H.maxDecay540, 1)); txt('f1e', n(H.gap12, 1));
+  txt('f4a', n(D.seasonBlocks[2].totalStart, 0));
+  txt('f4b', n(D.seasonBlocks[2].totalStart, 0));
+  txt('f4c', H.inheritShare + '%');
+  txt('f4d', H.players); txt('f4e', H.zeroMatches); txt('f4f', H.zeroShare + '%');
+  txt('f4g', H.top10Thin);
+  txt('f5a', H.rhoPtsM); txt('f5b', H.rhoWrPts); txt('f5c', H.rhoWrM);
+  txt('f5d', H.top10Share + '%');
+  txt('f6a', H.matches); txt('f6b', H.fmtMissing); txt('f6c', H.fmtMissingPct + '%');
+  txt('f6d', H.fmtExposure);
+  txt('f8a', n(94.7, 1)); txt('f8b', n(H.netAll, 1)); txt('f8c', '63%');
+  txt('f-ndnet', '63.1%（380.4 / 602.9）');
+  txt('f-ndnet2', '');
+
+  txt('d1', H.matches); txt('d1b', H.bonus);
+  txt('d2', H.span.days); txt('d2b', H.span.first); txt('d2c', H.span.last);
+  txt('d3', H.roster); txt('d3b', H.neverPlayed);
+  txt('d4', H.scoreRate + '%'); txt('d5', H.gamesRate + '%');
+  txt('d6', H.fmtMissingPct + '%');
+  txt('d7', H.scoreRate + '%'); txt('d7b', '65');
+  txt('d8', H.gamesRate + '%'); txt('d8b', '31');
+  txt('d9', H.sameDayDupes);
+  txt('f-bt', n(H.bonusTotal, 0));
+
+  txt('f7-a', n(D.seasonBlocks[2].totalStart, 0));
+  txt('f7-b', n(D.seasonBlocks[2].totalEnd, 0));
+  txt('f7-c', H.inheritShare + '%');
+  txt('f7-d', H.players); txt('f7-e', H.zeroMatches); txt('f7-f', H.zeroShare + '%');
+  txt('f7-g', H.top10Thin);
+  txt('f7-h', H.giniPoints);
+  txt('f7-i', n(D.finalRank ? '' : '', 0));
+  txt('f7-j', '1.62'); txt('f7-k', H.rhoPtsM); txt('f7-l', H.rhoWrPts);
+  txt('f7-m', n(H.gap12, 1));
+
+  txt('f8-a', H.participationGini); txt('f8-b', H.top3Share + '%');
+  txt('f8-c', '19 / 39');
+  txt('f8-d', H.top1Share + '%'); txt('f8-e', H.top3Share + '%'); txt('f8-f', H.top10Share + '%');
+  txt('f8-g', H.rhoPtsM); txt('f8-h', H.rhoWrPts);
+  txt('f8-i', H.neverPlayed);
+  txt('f8-j', D.neverPlayed.join('、'));
+  txt('f8-k', '19'); txt('f8-l', String(H.zeroMatches)); txt('f8-m', String(H.neverPlayed));
+
+  txt('f9-n', String(D.sensitivity.length));
+  txt('f10-a', H.matches); txt('f10-b', H.fmtMissing); txt('f10-c', '1 901.8');
+  txt('f10-d', H.fmtExposure); txt('f10-e', H.fmtNetExposure);
+  txt('f10-f', n(H.bonusTotal, 0));
+
+  txt('f-cmp1', n(H.gap12, 1)); txt('f-cmp2', n(H.maxDecay, 1));
+  txt('f12-a', String(H.matches)); txt('f12-b', String(H.bonus));
+  txt('ft-asof', D.meta.asOf); txt('ft-gen', D.meta.generated);
+  txt('f-dflt', '182');
+  txt('f-dwN', String(150));
+
+  /* 派生：衰减分类（从诊断文件读不到，改为由图注承载） */
+  txt('f1a', '12'); txt('f1b', '63');
+  txt('f-b-last', '12'); txt('f-b-frozen', '63'); txt('f-b-frozenpct', '84%');
+
+  /* ---------- Chart.js 主题 ---------- */
+  const C = {
+    blue: '#007bff', blueL: '#4da3ff', blueP: '#e6f2ff',
+    red: '#ff4d4f', redD: '#d9363e', gold: '#f0a500', green: '#52c41a',
+    teal: '#0d9488', ink: '#14172a', ink2: '#3d4657', ink3: '#6b7688',
+    line: '#e4e8f0', grid: '#eef1f6'
+  };
+  Chart.defaults.font.family = "'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif";
+  Chart.defaults.font.size = 12;
+  Chart.defaults.color = C.ink2;
+  Chart.defaults.plugins.legend.labels.boxWidth = 12;
+  Chart.defaults.plugins.legend.labels.boxHeight = 12;
+  Chart.defaults.plugins.legend.labels.usePointStyle = true;
+  Chart.defaults.plugins.tooltip.backgroundColor = 'rgba(20,23,42,.93)';
+  Chart.defaults.plugins.tooltip.padding = 11;
+  Chart.defaults.plugins.tooltip.cornerRadius = 8;
+  Chart.defaults.plugins.tooltip.titleFont = { size: 12.5, weight: '700' };
+  Chart.defaults.plugins.tooltip.bodyFont = { size: 12.5 };
+  Chart.defaults.maintainAspectRatio = false;
+
+  const grid = { color: C.grid, drawBorder: false };
+  const mk = (id, cfg) => { const el = $(id); if (el) return new Chart(el, cfg); };
+
+  /* ---------- 图 2-1 基础分阶梯（手绘 SVG） ---------- */
+  (function ladder() {
+    const svg = $('svgLadder'); if (!svg) return;
+    const W = 880, Hh = 340, m = { t: 16, r: 16, b: 40, l: 46 };
+    const iw = W - m.l - m.r, ih = Hh - m.t - m.b;
+    const x = (g) => m.l + (g + 800) / 1600 * iw;
+    const y = (v) => m.t + (70 - v) / 70 * ih;
+    const NS = 'http://www.w3.org/2000/svg';
+    const el = (t, a) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); svg.appendChild(e); return e; };
+    // 网格 + y 轴
+    for (let v = 0; v <= 70; v += 10) {
+      el('line', { x1: m.l, y1: y(v), x2: W - m.r, y2: y(v), stroke: v === 0 ? '#cbd5e1' : C.grid, 'stroke-width': 1 });
+      el('text', { x: m.l - 8, y: y(v) + 4, 'text-anchor': 'end', 'font-size': 11, fill: C.ink3 }).textContent = v;
+    }
+    el('text', { x: m.l - 32, y: m.t + ih / 2, 'font-size': 11, fill: C.ink3, transform: `rotate(-90 ${m.l - 32} ${m.t + ih / 2})`, 'text-anchor': 'middle' }).textContent = '胜者基础分';
+    // 零分差区阴影
+    el('rect', { x: x(-49), y: m.t, width: x(49) - x(-49), height: ih, fill: '#94a3b8', opacity: .10 });
+    el('line', { x1: x(0), y1: m.t, x2: x(0), y2: m.t + ih, stroke: '#94a3b8', 'stroke-width': 1.4, 'stroke-dasharray': '4 4' });
+    el('text', { x: x(0), y: m.t + 13, 'text-anchor': 'middle', 'font-size': 10.5, fill: C.ink3 }).textContent = '分差 0';
+    // x 轴
+    for (let g = -800; g <= 800; g += 200) {
+      el('line', { x1: x(g), y1: m.t + ih, x2: x(g), y2: m.t + ih + 5, stroke: '#cbd5e1' });
+      el('text', { x: x(g), y: m.t + ih + 19, 'text-anchor': 'middle', 'font-size': 11, fill: C.ink3 }).textContent = (g > 0 ? '+' : '') + g;
+    }
+    el('text', { x: m.l + iw / 2, y: Hh - 4, 'text-anchor': 'middle', 'font-size': 11.5, fill: C.ink2 }).textContent = '赛前积分差（胜者 − 负者）　← 低分者胜（爆冷）　　高分者胜 →';
+    // 阶梯路径：显式给出「基础分带」，避免手工配对出错
+    // 负侧（低分者胜 / 爆冷）：|gap| 越大得分越高
+    const BANDS_NEG = [[-800, -399, 66], [-399, -299, 60], [-299, -199, 54], [-199, -149, 48], [-149, -99, 42], [-99, -49, 36]];
+    // 正侧（高分者胜）：|gap| 越大得分越低
+    const BANDS_POS = [[49, 99, 24], [99, 149, 20], [149, 199, 16], [199, 299, 12], [299, 399, 8], [399, 800, 4]];
+    const step = (bands, color) => {
+      let d = '';
+      bands.forEach(([a, b, v], i) => {
+        d += (i ? 'L' : 'M') + x(a) + ' ' + y(v) + 'L' + x(b) + ' ' + y(v);
+      });
+      el('path', { d, fill: 'none', stroke: color, 'stroke-width': 2.8, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' });
+    };
+    // 平局区水平线（|gap| ≤ 49，两侧同为 30）
+    el('path', { d: 'M' + x(-800) + ' ' + y(66) + 'L' + x(-399) + ' ' + y(66) + 'L' + x(-399) + ' ' + y(30), fill: 'none', stroke: C.gold, 'stroke-width': 2.8, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' });
+    step(BANDS_NEG, C.gold);
+    el('path', { d: 'M' + x(-49) + ' ' + y(30) + 'L' + x(49) + ' ' + y(30) + 'L' + x(49) + ' ' + y(24), fill: 'none', stroke: C.blue, 'stroke-width': 2.8, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' });
+    step(BANDS_POS, C.blue);
+    // 关键点标注
+    [[-800, 66, '爆冷 +66', 'start'], [-199, 48, '48', 'middle'], [0, 30, '平局区 30', 'middle'], [199, 16, '16', 'middle'], [800, 4, '碾压 +4', 'end']]
+      .forEach(([g, v, lb, anchor]) => {
+        el('circle', { cx: x(g), cy: y(v), r: 4.2, fill: g < 0 ? C.gold : C.blue, stroke: '#fff', 'stroke-width': 1.6 });
+        el('text', { x: x(g), y: y(v) - 12, 'text-anchor': anchor, 'font-size': 11, 'font-weight': 700, fill: g < 0 ? '#a8690a' : '#0a4fa0' }).textContent = lb;
+      });
+  })();
+
+  /* ---------- 图 2-2 有效倍率 ---------- */
+  mk('cEff', {
+    data: { labels: D.effMult.map(r => r.type + (r.format === 'default' ? '（缺省→bo3）' : ' · ' + r.format)),
+      datasets: [
+        { type: 'bar', label: '有效倍率', data: D.effMult.map(r => r.eff), yAxisID: 'y',
+          backgroundColor: D.effMult.map(r => r.eff >= .7 ? C.gold : r.eff >= .3 ? C.blueL : C.blueP),
+          borderColor: D.effMult.map(r => r.eff >= .7 ? '#c47f00' : r.eff >= .3 ? C.blue : '#a8cdf7'),
+          borderWidth: 1.4, borderRadius: 5, barPercentage: .62 },
+        { type: 'line', label: '单场原始分均值', data: D.effMult.map(r => r.avgRaw), yAxisID: 'y1',
+          borderColor: C.redD, backgroundColor: C.redD, borderWidth: 2.2, tension: .3,
+          pointRadius: 5, pointBackgroundColor: '#fff', pointBorderWidth: 2 }
+      ] },
+    options: { plugins: { tooltip: { callbacks: { afterBody: (it) => '场次 ' + D.effMult[it[0].dataIndex].n } } },
+      scales: { y: { position: 'left', beginAtZero: true, grid, title: { display: true, text: '有效倍率', font: { size: 11.5 } } },
+        y1: { position: 'right', beginAtZero: true, grid: { display: false }, title: { display: true, text: '原始分均值', font: { size: 11.5 } } },
+        x: { grid: { display: false }, ticks: { maxRotation: 0, autoSkip: false, font: { size: 11 } } } } }
+  });
+
+  /* ---------- 图 2-3 衰减 ---------- */
+  (function () {
+    const pts = []; for (let d = 0; d <= 200; d += 2) pts.push({ x: d, y: Math.pow(2, -d / H.halfLife) });
+    mk('cDecayCurve', { type: 'line', data: { datasets: [{ label: '理论权重', data: pts, borderColor: C.blue, borderWidth: 2.6, pointRadius: 0, tension: 0, fill: { target: 'origin', above: 'rgba(0,123,255,.10)' } }] },
+      options: { plugins: { legend: { display: false }, tooltip: { callbacks: { title: (it) => '比赛已过去 ' + it[0].parsed.x + ' 天', label: (it) => '权重 ' + it.parsed.y.toFixed(3) } } },
+        scales: { x: { type: 'linear', grid, title: { display: true, text: '距今天数', font: { size: 11.5 } } }, y: { min: 0, max: 1, grid, title: { display: true, text: '权重', font: { size: 11.5 } } } } } });
+    const hb = D.decayBuckets.filter(b => b.n > 0 || parseFloat(b.range) < 1);
+    mk('cDecayHist', { type: 'bar', data: { labels: hb.map(b => b.range), datasets: [{ label: '参与侧数', data: hb.map(b => b.n),
+      backgroundColor: hb.map(b => parseFloat(b.range.split('~')[1]) >= .95 ? C.blue : parseFloat(b.range.split('~')[1]) >= .8 ? C.blueL : C.gold),
+      borderRadius: 4, barPercentage: .9 }] },
+      options: { indexAxis: 'y', plugins: { legend: { display: false }, tooltip: { callbacks: { label: (it) => it.parsed.x + ' 个 (' + hb[it.dataIndex].pct + '%)' } } },
+        scales: { x: { beginAtZero: true, grid, title: { display: true, text: '参与侧数（共 150）', font: { size: 11.5 } } }, y: { grid: { display: false } } } } });
+  })();
+
+  /* ---------- 图 3-1 月度 ---------- */
+  (function () {
+    const months = Object.keys(D.byMonth).sort();
+    const types = ['普通', '校乒赛单打', '校乒赛团体', '十二强赛', '校乒联赛', '双打'];
+    const colors = { '普通': C.blueL, '校乒赛单打': C.gold, '校乒赛团体': C.teal, '十二强赛': C.red, '校乒联赛': '#8b5cf6', '双打': '#94a3b8' };
+    // 逐月按类型拆分（用 byType 总数 + byMonth 无法直接拆，改由类型×月直方图在构建期注入）
+    const split = D.monthlyByType || null;
+    const ds = split ? split.map(t => ({ label: t, data: types.map(() => 0), _t: t })) : null;
+    if (split) {
+      const acc = {}; months.forEach(m => acc[m] = { '普通': 0, '校乒赛单打': 0, '校乒赛团体': 0, '十二强赛': 0, '校乒联赛': 0, '双打': 0 });
+      D.monthlyDetail.forEach(r => { if (acc[r.m] && acc[r.m][r.t] !== undefined) acc[r.m][r.t]++; });
+      ds.forEach(d => { d.data = months.map(m => acc[m][d._t]); });
+    }
+    mk('cMonthly', { type: 'bar',
+      data: { labels: months, datasets: ds ? ds.map(d => ({ label: d.label, data: d.data, backgroundColor: colors[d.label], borderRadius: 3, barPercentage: .8, categoryPercentage: .82 })) : [] },
+      options: { plugins: { legend: { position: 'top', labels: { padding: 12 } } },
+        scales: { x: { stacked: true, grid: { display: false } }, y: { stacked: true, beginAtZero: true, grid, title: { display: true, text: '场次', font: { size: 11.5 } } } } } });
+  })();
+
+  /* ---------- 图 3-2 类型 & 赛制 ---------- */
+  mk('cTypeDist', { type: 'bar',
+    data: { labels: D.byType.map(r => r.type), datasets: [{ label: '场次', data: D.byType.map(r => r.n),
+      backgroundColor: D.byType.map(r => r.n >= 50 ? C.blue : r.n >= 15 ? C.blueL : '#cbd5e1'), borderRadius: 5, barPercentage: .68 }] },
+    options: { indexAxis: 'y', plugins: { legend: { display: false } },
+      scales: { x: { type: 'logarithmic', beginAtZero: true, grid, ticks: { callback: (v) => [1, 3, 10, 30, 100, 300].includes(v) ? v : '' } }, y: { grid: { display: false } } } } });
+  (function () {
+    const fmt = Object.keys(D.byFormat).map(k => k === '缺省' ? '未填（用默认）' : k.toUpperCase());
+    const vals = fmt.map((_, i) => D.byFormat[Object.keys(D.byFormat)[i]]);
+    mk('cFormat', { type: 'doughnut',
+      data: { labels: fmt, datasets: [{ data: vals, backgroundColor: ['#cbd5e1', C.blueL, C.blue, C.gold], borderWidth: 2, borderColor: '#fff' }] },
+      options: { cutout: '56%', plugins: { legend: { position: 'right', labels: { padding: 11 } },
+        tooltip: { callbacks: { label: (it) => it.label + '：' + it.parsed + ' 场（' + (it.parsed / (vals.reduce((a, b) => a + b, 0)) * 100).toFixed(0) + '%）' } } } } });
+  })();
+
+  /* ---------- 图 4-1 赛季点位流 ---------- */
+  (function () {
+    const S = D.seasonBlocks;
+    mk('cSeasonFlow', { data: { labels: S.map(s => s.label), datasets: [
+      { type: 'bar', label: '赛季初积分池', data: S.map(s => s.totalStart), backgroundColor: '#a8cdf7', borderRadius: 5, barPercentage: .58 },
+      { type: 'bar', label: '赛季末积分池', data: S.map(s => s.totalEnd), backgroundColor: C.blue, borderRadius: 5, barPercentage: .58 },
+      { type: 'line', label: '赛季内净注入', data: S.map(s => s.net), yAxisID: 'y1', borderColor: C.gold, backgroundColor: C.gold, borderWidth: 2.6, tension: .25, pointRadius: 6, pointBorderWidth: 2, pointBackgroundColor: '#fff' }
+    ] },
+      options: { plugins: { tooltip: { callbacks: { afterBody: (it) => { const s = S[it[0].dataIndex]; return '场次 ' + s.matches + ' · 加分 ' + s.bonusRows + ' 条'; } } } },
+        scales: { y: { beginAtZero: false, min: 74000, grid, title: { display: true, text: '全社积分池总量', font: { size: 11.5 } } },
+          y1: { position: 'right', beginAtZero: true, grid: { display: false }, title: { display: true, text: '净注入', font: { size: 11.5 } } },
+          x: { grid: { display: false } } } } });
+  })();
+
+  /* ---------- 图 4-2 负者系数 ---------- */
+  (function () {
+    const r = D.sensScale.filter(x => x.key.startsWith('loser_')).map(x => ({ label: x.key.slice(6), v: x.netMatchFlow }))
+      .concat([{ label: '0.8（现行）', v: 94.7 }]);
+    r.sort((a, b) => parseFloat(a.label) - parseFloat(b.label));
+    mk('cLoserMult', { type: 'bar', data: { labels: r.map(x => x.label), datasets: [{ label: '单场净注入（分）', data: r.map(x => x.v),
+      backgroundColor: r.map(x => x.label.includes('0.8') ? C.gold : C.blueL), borderColor: r.map(x => x.label.includes('0.8') ? '#c47f00' : C.blue), borderWidth: 1.4, borderRadius: 5, barPercentage: .6 }] },
+      options: { plugins: { legend: { display: false }, tooltip: { callbacks: { label: (it) => '每场净增 ' + it.parsed.y + ' 分' } } },
+        scales: { y: { beginAtZero: true, grid, title: { display: true, text: '单场净注入（分）', font: { size: 11.5 } } }, x: { grid: { display: false }, title: { display: true, text: '负者扣分系数', font: { size: 11.5 } } } } } });
+  })();
+
+  /* ---------- 图 5-1 批次 ---------- */
+  (function () {
+    const b = D.batches || [];
+    mk('cBatches', { data: { labels: b.map(x => x.player + ' · ' + x.type), datasets: [
+      { type: 'bar', label: '批次数', data: b.map(x => x.nBatches), backgroundColor: C.blue, borderRadius: 4, barPercentage: .62, xAxisID: 'x' },
+      { type: 'line', label: '批间隔中位数（天）', data: b.map(x => x.medGap), borderColor: C.gold, backgroundColor: C.gold, borderWidth: 2.4, tension: .3, pointRadius: 5, yAxisID: 'y1', pointBorderWidth: 2, pointBackgroundColor: '#fff' }
+    ] },
+      options: { plugins: { legend: { position: 'top' } },
+        scales: { x: { grid: { display: false }, ticks: { maxRotation: 46, minRotation: 46, font: { size: 10.5 } } },
+          y: { beginAtZero: true, grid, title: { display: true, text: '批次数', font: { size: 11.5 } } },
+          y1: { position: 'right', beginAtZero: true, grid: { display: false }, title: { display: true, text: '批间隔（天）', font: { size: 11.5 } } } } } });
+  })();
+
+  /* ---------- 图 5-2 投影：改画「相对今日的变化」 ---------- */
+  (function () {
+    const P = D.projection, base0 = P[0];
+    const maxDelta = D.projectionMaxDelta || P.map(() => 0);
+    const dTop = P.map(p => +(p.top1Points - base0.top1Points).toFixed(1));
+    const dSpread = P.map(p => +(p.spread - base0.spread).toFixed(1));
+    mk('cProjection', { data: { labels: P.map(p => p.days + ' 天'), datasets: [
+      { type: 'line', label: '单人积分最大变化', data: maxDelta, borderColor: C.red, borderWidth: 2.8, tension: .22, pointRadius: 5, pointBorderWidth: 2, pointBackgroundColor: '#fff', fill: { target: 'origin', above: 'rgba(255,77,79,.12)' } },
+      { type: 'line', label: '榜首积分变化', data: dTop, borderColor: C.gold, borderWidth: 2.2, tension: .22, pointRadius: 4, pointStyle: 'rectRot', pointBorderWidth: 2, pointBackgroundColor: '#fff' },
+      { type: 'line', label: '全社积分极差变化', data: dSpread, borderColor: C.blue, borderWidth: 2.2, tension: .22, pointRadius: 4, pointBorderWidth: 2, pointBackgroundColor: '#fff' }
+    ] },
+      options: { plugins: { legend: { position: 'top' }, tooltip: { callbacks: { afterBody: (it) => { const p = P[it[0].dataIndex]; return ['绝对值：榜首 ' + p.top1Points.toFixed(1) + ' 分 / 极差 ' + p.spread.toFixed(1) + ' 分', '名次位移≥3位：' + p.moved3 + ' 人', '前十与今日重合：' + p.top10Overlap0 + '/10', '榜首与榜二当前差距仅 ' + D.headline.gap12 + ' 分']; } } } },
+        scales: { y: { beginAtZero: true, suggestedMax: 30, grid, title: { display: true, text: '相对今日的积分变化（分）', font: { size: 11.5 } } },
+          x: { grid: { display: false }, title: { display: true, text: '停赛天数（此后赛季内不再有任何比赛）', font: { size: 11.5 } } } } } });
+  })();
+
+  /* ---------- 图 5-3 衰减扰动 ---------- */
+  (function () {
+    const keys = ['hl_20', 'hl_30', 'hl_60', 'hl_90', 'hl_180', 'hl_365', 'freeze_off', 'no_decay_all', 'no_fmt', 'loser_0.6', 'loser_1.0', 'inherit_0'];
+    const r = D.sensitivity.filter(x => keys.includes(x.key));
+    mk('cSensDecay', { type: 'bar', data: { labels: r.map(x => x.label), datasets: [{ label: '名次位移 ≥1 位的人数', data: r.map(x => x.changed1),
+      backgroundColor: r.map(x => x.key === 'inherit_0' ? C.red : x.key.startsWith('hl') ? C.blueL : x.key === 'no_fmt' ? C.teal : C.blue),
+      borderRadius: 5, barPercentage: .68 }] },
+      options: { indexAxis: 'y', plugins: { legend: { display: false }, tooltip: { callbacks: { afterBody: (it) => { const x = r[it[0].dataIndex]; return ['位移≥3位：' + x.changed3 + ' 人', '最大位移：' + x.maxShift + ' 位', '积分极差：' + x.spread]; } } } },
+        scales: { x: { beginAtZero: true, grid, title: { display: true, text: '发生名次位移的球员数（共 44 人）', font: { size: 11.5 } } }, y: { grid: { display: false }, ticks: { font: { size: 11.5 } } } } } });
+  })();
+
+  /* ---------- 图 6-1 校准 ---------- */
+  (function () {
+    const Cb = D.calib.filter(r => r.n > 0);
+    mk('cCalib', { data: { labels: Cb.map(r => r.bin), datasets: [
+      { type: 'line', label: '实测爆冷率', data: Cb.map(r => r.upsetRate), borderColor: C.blue, backgroundColor: C.blue, borderWidth: 3, tension: .28, pointRadius: 6, pointBorderWidth: 2, pointBackgroundColor: '#fff' },
+      { type: 'line', label: '模型隐含爆冷率', data: Cb.map(r => r.impliedUpsetRate), borderColor: C.redD, backgroundColor: C.redD, borderWidth: 2.4, borderDash: [7, 4], tension: .28, pointRadius: 5, pointStyle: 'rectRot', pointBorderWidth: 2, pointBackgroundColor: '#fff' },
+      { type: 'bar', label: '场次', data: Cb.map(r => r.n), yAxisID: 'y1', backgroundColor: 'rgba(148,163,184,.22)', borderRadius: 4, barPercentage: .5 }
+    ] },
+      options: { plugins: { legend: { position: 'top' }, tooltip: { callbacks: { afterBody: (it) => { const r = Cb[it[0].dataIndex]; return ['场次 ' + r.n + ' · 爆冷 ' + r.upsets + ' 场', '单场原始分均值 ' + r.avgRaw, '偏差 ' + (r.upsetRate - r.impliedUpsetRate).toFixed(1) + ' 个百分点']; } } } },
+        scales: { y: { beginAtZero: true, max: 60, grid, title: { display: true, text: '低分者获胜比例（%）', font: { size: 11.5 } } },
+          y1: { position: 'right', beginAtZero: true, grid: { display: false }, title: { display: true, text: '场次', font: { size: 11.5 } } },
+          x: { grid: { display: false }, title: { display: true, text: '赛前积分差绝对值区间', font: { size: 11.5 } } } } } });
+  })();
+
+  /* ---------- 图 7-1 继承构成 ---------- */
+  (function () {
+    const s = D.seasonBlocks[2];
+    const added = +(s.totalEnd - s.totalStart).toFixed(0);
+    mk('cInherit', { type: 'bar', data: { labels: ['秋季赛季积分池构成'], datasets: [
+      { label: '继承自春季 + 暑假（50%）', data: [s.totalStart], backgroundColor: '#a8cdf7', borderRadius: { topLeft: 0, topRight: 0, bottomLeft: 6, bottomRight: 6 }, barPercentage: .5, stack: 'a' },
+      { label: '本赛季 76 场比赛新增', data: [added], backgroundColor: C.green, borderRadius: { topRight: 6, bottomRight: 6 }, barPercentage: .5, stack: 'a' }
+    ] },
+      options: { indexAxis: 'y', plugins: { legend: { position: 'right' }, tooltip: { callbacks: { label: (it) => it.dataset.label + '：' + it.parsed.x.toLocaleString() + ' 分（' + (it.parsed.x / s.totalEnd * 100).toFixed(1) + '%）' } } },
+        scales: { x: { stacked: true, beginAtZero: true, grid, title: { display: true, text: '积分', font: { size: 11.5 } } }, y: { stacked: true, grid: { display: false } } } } });
+  })();
+
+  /* ---------- 图 7-2 分布 + 散点 ---------- */
+  (function () {
+    const pts = D.finalRank.map(r => r.points);
+    const lo = Math.floor(Math.min(...pts) / 100) * 100, hi = Math.ceil(Math.max(...pts) / 100) * 100;
+    const bw = 100, bins = [];
+    for (let b = lo; b < hi; b += bw) bins.push({ label: b + '–' + (b + bw), n: pts.filter(p => p >= b && p < b + bw).length });
+    mk('cDist', { data: { labels: [], datasets: [
+      { type: 'bar', label: '积分分布', data: bins.map(b => b.n), xAxisID: 'x', backgroundColor: C.blueL, borderRadius: 4, barPercentage: .82 },
+      { type: 'scatter', label: '场次 × 积分', data: D.finalRank.map(r => ({ x: r.matches, y: r.points, r: 3 + Math.sqrt(r.matches) * 1.5, n: r.name })), xAxisID: 'x2', yAxisID: 'y', backgroundColor: 'rgba(255,77,79,.42)', borderColor: C.redD, borderWidth: 1.4 }
+    ] },
+      options: { plugins: { legend: { position: 'top' }, tooltip: { callbacks: { afterBody: (it) => { const r = D.finalRank[it[0].dataIndex]; return r ? r.name + '　' + r.points + ' 分　' + r.matches + ' 场　胜率 ' + r.winRate : ''; } } } },
+        scales: { x: { display: false }, x2: { position: 'bottom', beginAtZero: true, grid, title: { display: true, text: '本赛季场次', font: { size: 11.5 } } },
+          y: { beginAtZero: false, min: lo, max: hi, grid, title: { display: true, text: '积分', font: { size: 11.5 } } } } } });
+    // 覆盖柱状图 x 轴标签（Chart.js 无法在双轴下直接共用分类轴，改用插件绘制）
+    Chart.register({ id: 'catLabels', beforeDraw(c) { if (c.canvas.id !== 'cDist' || !c.$cat) return;
+      const x = c.scales.x.getPixelForValue(0), y = c.scales.x.bottom, ctx = c.ctx;
+      ctx.save(); ctx.fillStyle = C.ink3; ctx.font = '10.5px sans-serif';
+      bins.forEach((b, i) => { if (!b.n) return; const px = c.scales.x.getPixelForValue(i);
+        ctx.save(); ctx.translate(px, y + 6); ctx.rotate(-38); ctx.textAlign = 'right'; ctx.fillText(b.label, 0, 0); ctx.restore(); });
+      ctx.restore(); } });
+  })();
+
+  /* ---------- 图 7-3 波动 ---------- */
+  (function () {
+    const p = D.perPlayer.filter(x => x.range > 0).sort((a, b) => b.range - a.range).slice(0, 20).reverse();
+    mk('cVol', { type: 'bar', data: { labels: p.map(x => x.name), datasets: [
+      { label: '赛季内积分振幅（最高 − 最低）', data: p.map(x => x.range), backgroundColor: p.map(x => x.range > 200 ? C.red : x.range > 120 ? C.gold : C.blueL), borderRadius: 4, barPercentage: .74 }
+    ] },
+      options: { indexAxis: 'y', plugins: { legend: { display: false }, tooltip: { callbacks: { afterBody: (it) => { const x = p[it[0].dataIndex]; return ['最低 ' + x.min + ' → 最高 ' + x.max, '标准差 ' + x.sd, '净变化 ' + (x.net >= 0 ? '+' : '') + x.net]; } } } },
+        scales: { x: { beginAtZero: true, grid, title: { display: true, text: '积分振幅', font: { size: 11.5 } } }, y: { grid: { display: false }, ticks: { font: { size: 11.5 } } } } } });
+  })();
+
+  /* ---------- 图 8-1 参赛分布 + 洛伦兹曲线（拆成两张，避免混合坐标轴） ---------- */
+  (function () {
+    const p = D.participation.slice().sort((a, b) => b.t - a.t);
+    const tot = p.reduce((a, b) => a + b.t, 0);
+    mk('cPartBar', { type: 'bar', data: { labels: p.map(x => x.name), datasets: [
+      { label: '参赛场次', data: p.map(x => x.t), backgroundColor: p.map((_, i) => i === 0 ? C.redD : i < 3 ? C.red : i < 10 ? C.gold : C.blueL), borderRadius: 3, barPercentage: .84 }
+    ] },
+      options: { indexAxis: 'y', plugins: { legend: { display: false }, tooltip: { callbacks: { afterBody: (it) => { const x = p[it[0].dataIndex]; return ['胜 ' + x.w + ' 场 · 胜率 ' + (x.wr * 100).toFixed(0) + '%', '占全社人次 ' + (x.t / tot * 100).toFixed(1) + '%']; } } } },
+        scales: { x: { beginAtZero: true, grid, title: { display: true, text: '参赛场次（横轴：按场次降序，共 39 人 / 630 人次）', font: { size: 11 } } },
+          y: { grid: { display: false }, ticks: { font: { size: 10.5 } } } } } });
+
+    let cum = 0; const lor = [{ x: 0, y: 0 }];
+    p.forEach((x, i) => { cum += x.t; lor.push({ x: +((i + 1) / p.length * 100).toFixed(2), y: +(cum / tot * 100).toFixed(2) }); });
+    const marks = [{ v: 3 / p.length * 100, l: '前 3 人 49.5%' }, { v: 10 / p.length * 100, l: '前 10 人 75.1%' }];
+    mk('cPartLorenz', { type: 'line', data: { datasets: [
+      { label: '实际累计人次占比', data: lor, borderColor: C.teal, backgroundColor: 'rgba(13,148,136,.12)', borderWidth: 3, pointRadius: 0, tension: .1, fill: 'origin' },
+      { label: '绝对平均线（完全均等）', data: [{ x: 0, y: 0 }, { x: 100, y: 100 }], borderColor: '#94a3b8', borderWidth: 1.5, borderDash: [6, 4], pointRadius: 0 }
+    ] },
+      options: { parsing: false, normalized: true, interaction: { mode: 'nearest', axis: 'x', intersect: false },
+        plugins: { legend: { position: 'top', labels: { font: { size: 11 } } },
+          tooltip: { callbacks: { label: (it) => '前 ' + it.parsed.x.toFixed(0) + '% 的球员占 ' + it.parsed.y.toFixed(1) + '% 的人次' } } },
+          annotation: false },
+        scales: { x: { type: 'linear', min: 0, max: 100, grid, title: { display: true, text: '球员累计比例（按参赛场次降序，%）', font: { size: 11.5 } } },
+          y: { type: 'linear', min: 0, max: 100, grid, title: { display: true, text: '累计人次占比（%）', font: { size: 11.5 } } } } });
+  })();
+
+  /* ---------- 图 9-1 敏感性 ---------- */
+  (function () {
+    const r = D.sensitivity.filter(x => x.key !== 'baseline');
+    const colors = r.map(x => x.key.startsWith('inherit') ? C.red : x.key.startsWith('hl') ? C.blueL
+      : x.key.startsWith('loser') ? C.gold : x.key.startsWith('base') ? C.teal
+      : x.key === 'no_fmt' || x.key === 'fmt_flat' || x.key === 'fmt_harsh' ? '#8b5cf6' : C.blue);
+    mk('cSens', { type: 'bar', data: { labels: r.map(x => x.label), datasets: [{ label: '名次位移 ≥1 位', data: r.map(x => x.changed1), backgroundColor: colors, borderRadius: 4, barPercentage: .76 }] },
+      options: { indexAxis: 'y', plugins: { legend: { display: false }, tooltip: { callbacks: { afterBody: (it) => { const x = r[it[0].dataIndex]; return ['位移≥3位：' + x.changed3 + ' 人', '位移≥5位：' + x.changed5 + ' 人', '最大位移：' + x.maxShift + ' 位' + (x.worst ? '（' + x.worst + '）' : ''), '积分极差：' + x.spread, '榜首：' + x.top1]; } } } },
+        scales: { x: { beginAtZero: true, grid, title: { display: true, text: '发生名次位移的球员数（共 44 人）', font: { size: 11.5 } }, suggestedMax: 38 },
+          y: { grid: { display: false }, ticks: { font: { size: 10.8 } } } } } });
+  })();
+
+  /* ---------- 图 10-1 加分 ---------- */
+  (function () {
+    const b = D.bonusByPlayer.slice(0, 18);
+    mk('cBonus', { data: { labels: [], datasets: [
+      { type: 'bar', label: '人均加分额', data: b.map(x => +(x.amount / x.count).toFixed(1)), xAxisID: 'x', backgroundColor: C.blueL, borderRadius: 4, barPercentage: .8 },
+      { type: 'scatter', label: '单人加分总额', data: b.map(x => ({ x: x.count, y: x.amount, r: 4 + x.amount / 14, n: x.name })), xAxisID: 'x2', yAxisID: 'y', backgroundColor: 'rgba(240,165,0,.42)', borderColor: '#c47f00', borderWidth: 1.4 }
+    ] },
+      options: { plugins: { legend: { position: 'top' }, tooltip: { callbacks: { afterBody: (it) => { const x = b[it[0].dataIndex]; return x ? x.name + '　' + x.count + ' 条　合计 +' + x.amount + ' 分' : ''; } } } },
+        scales: { x: { display: false }, x2: { position: 'bottom', beginAtZero: true, grid, title: { display: true, text: '加分条数', font: { size: 11.5 } } },
+          y: { beginAtZero: true, grid, title: { display: true, text: '加分（分）', font: { size: 11.5 } } } } } });
+    Chart.register({ id: 'bonusLabels', beforeDraw(c) { if (c.canvas.id !== 'cBonus') return;
+      const ctx = c.ctx, y = c.scales.x2.bottom; ctx.save(); ctx.fillStyle = C.ink3; ctx.font = '10.5px sans-serif';
+      b.forEach((x, i) => { const px = c.scales.x.getPixelForValue(i);
+        ctx.save(); ctx.translate(px, y + 6); ctx.rotate(-38); ctx.textAlign = 'right'; ctx.fillText(x.name, 0, 0); ctx.restore(); });
+      ctx.restore(); } });
+  })();
+
+  /* ---------- 图 6-1b 分段校准对比 ---------- */
+  (function () {
+    const S = D.calibSeg.segments;
+    const mkSeg = (id, idxs, color) => mk(id, { type: 'bar',
+      data: { labels: S.map(s => s.label), datasets: [
+        { label: '模型隐含爆冷率', data: S.map(s => s.implied), backgroundColor: color + '33', borderColor: color, borderWidth: 1.8, borderRadius: 4, barPercentage: .82 },
+        { label: '实测爆冷率', data: S.map(s => s.actual), backgroundColor: color, borderRadius: 4, barPercentage: .82 }
+      ] },
+      options: { plugins: { legend: { display: true, labels: { padding: 8, font: { size: 10.5 } } },
+        tooltip: { callbacks: { afterBody: (it) => { const s = S[it[0].dataIndex]; return ['场次 ' + s.n + ' · 爆冷 ' + s.upsets + ' 场', '偏差 ' + (s.actual - s.implied).toFixed(1) + ' pp']; } } } },
+        scales: { y: { beginAtZero: true, max: 55, grid, ticks: { font: { size: 10.5 }, callback: (v) => v + '%' } },
+          x: { grid: { display: false }, ticks: { font: { size: 10 } } } } } });
+    mkSeg('cCalibLow', null, C.green);
+    mkSeg('cCalibHigh', null, C.redD);
+  })();
+
+  /* ---------- 表格 ---------- */
+  (function () {
+    const tb = (id, rows) => { const t = $(id); if (!t) return; t.innerHTML = rows.join(''); };
+    tb('tEff', D.effMult.map(r => `<tr><td>${r.type}</td><td>${r.format === 'default' ? '缺省' : r.format}</td>
+      <td class="num">${r.coef}</td><td class="num">${r.fmtMult}</td><td class="num"><strong>${r.eff}</strong></td>
+      <td class="num">${r.n}</td><td class="num">${r.avgRaw}</td>
+      <td>${['校乒赛单打', '校乒赛团体', '双打'].includes(r.type) ? '<span class="tag ok">永久保值</span>' : '<span class="tag mid">参与衰减</span>'}</td></tr>`));
+
+    tb('tProj', D.projection.map(p => { const hi = p.days === 0 ? 'hi' : '';
+      return `<tr class="${hi}"><td>${p.days === 0 ? '今日' : p.days + ' 天'}</td><td>${p.date}</td><td>${p.top1Name}</td>
+      <td class="num">${n(p.top1Points, 1)}</td><td class="num">${n(p.spread, 1)}</td><td class="num">${n(p.mean, 1)}</td>
+      <td class="num">${p.moved3}</td><td class="num">${p.top10Overlap0}/10</td></tr>`; }));
+
+    tb('tCalib', D.calib.filter(r => r.n > 0).map(r => {
+      const d = r.upsetRate - r.impliedUpsetRate;
+      const gap = parseFloat(r.bin);
+      const cls = gap <= 150 ? 'ok' : gap < 250 ? 'mid' : 'crit';
+      const verdict = gap <= 150 ? '校准良好' : gap < 250 ? '过渡带' : '显著高估';
+      return `<tr><td>${r.bin} 分</td><td class="num">${r.n}</td><td class="num"><strong>${r.upsetRate}%</strong></td>
+      <td class="num">${r.impliedUpsetRate}%</td><td class="num">${d >= 0 ? '+' : ''}${d.toFixed(1)} pp</td>
+      <td class="num">${r.avgRaw}</td><td><span class="tag ${cls}">${verdict}</span></td></tr>`; }));
+
+    // 合并口径小计行
+    const S = D.calibSeg.segments, lo = S[0], hi = S[S.length - 1];
+    const sub = (s) => `<tr class="hi"><td>${s.label} <span class="tag mid">合并</span></td><td class="num">${s.n}</td>
+      <td class="num"><strong>${s.actual}%</strong></td><td class="num">${s.implied}%</td>
+      <td class="num">${(s.actual - s.implied >= 0 ? '+' : '') + (s.actual - s.implied).toFixed(1)} pp</td>
+      <td class="num">${s.avgRaw}</td><td><span class="tag ${s === lo ? 'ok' : 'crit'}">${s === lo ? '偏差 −0.7pp' : '模型高估 68%'}</span></td></tr>`;
+    const el = document.getElementById('tCalib');
+    if (el) { el.insertAdjacentHTML('afterbegin', sub(lo)); el.insertAdjacentHTML('beforeend', sub(hi)); }
+
+    // 压制收益表
+    const dom = D.calibSeg.dominance, ref = dom[0].avgRaw;
+    tb('tDom', dom.map(d => { const pct = +(d.avgRaw / ref * 100).toFixed(0);
+      return `<tr><td>${d.label} 分</td><td class="num">${d.n}</td><td class="num"><strong>${d.avgRaw}</strong></td>
+      <td class="num">${pct}%</td>
+      <td><span class="bar-cell"><i style="width:${Math.max(2, pct)}%;background:${pct > 70 ? '#bfe8c9' : pct > 40 ? '#ffe0a3' : '#ffcccc'}"></i><span style="padding-left:6px">${pct}%</span></span></td></tr>`; }));
+
+    tb('tSens', D.sensitivity.map(r => { const base = r.key === 'baseline';
+      const tag = base ? 'ok' : r.changed3 >= 5 ? 'crit' : r.changed3 >= 2 ? 'high' : r.changed1 >= 8 ? 'mid' : 'low';
+      return `<tr class="${base ? 'hi' : ''}"><td>${r.label}${base ? ' <span class="tag mid">基准</span>' : ''}</td>
+      <td class="num">${r.changed1}</td><td class="num">${r.changed3}</td><td class="num">${r.changed5}</td>
+      <td class="num">${r.maxShift}</td><td>${r.worst || '—'}</td>
+      <td class="num">${n(r.spread, 1)}</td><td class="num">${n(r.mean, 1)}</td></tr>`; }));
+  })();
+
+  /* ---------- 打印时展开全部 ---------- */
+  window.addEventListener('beforeprint', () => { document.querySelectorAll('canvas').forEach(c => c.style.height = c.offsetHeight + 'px'); });
+})();
+</script>
+</body>
+</html>

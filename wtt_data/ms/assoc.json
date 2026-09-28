@@ -11948,12 +11948,8 @@
     "assoc": "YEM",
     "country": "Yemen",
     "source": "manual-ag2023"
-  },
-  "AHN Jaehyun": {
-    "assoc": "KOR",
-    "country": "Korea Republic",
-    "source": "manual-ag2026-ms"
-  },
+  }
+,
   "Anane VONGSA": {
     "assoc": "LAO",
     "country": "Laos",

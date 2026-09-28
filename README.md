@@ -15,6 +15,7 @@ wfls-tt-club/
 ├── season-review.html          # 赛季总结（KPI/积分变化榜/连胜出勤/单局之最/积分调整审计）
 ├── personal_stats.html         # 个人数据页面（积分趋势 + 荣誉成就）
 ├── player.html                 # 球员个人主页（按 uid 访问：战绩/胜率/积分趋势/对手分析）
+├── match.html                  # 单场比赛详情页（记分牌/逐局比分/积分明细/胜率预测/历史交锋）
 ├── detail.html                 # 新闻/赛事/Q&A 详情页（支持图片、视频、文件附件 + 对阵表查看）
 ├── draws-editor.html           # 对阵表可视化编辑器（admin.html 入口；模板生成/拖拽编辑/导出 draws.json）
 ├── qa.html                     # 常见问题（Q&A）页面
@@ -22,8 +23,9 @@ wfls-tt-club/
 ├── contact.html                # 联系我们页面（社团QQ群二维码）
 ├── admin.html                  # 后台数据概览仪表盘
 ├── umpire-training.html        # 裁判特训彩蛋页（题库 data/umpire-quiz.json）
-├── tt_game/                    # 3D 乒乓球对决彩蛋（Three.js；首页悬浮乒乓球入口轮换导航到不同彩蛋）
+├── tt_game/                    # 3D 乒乓球对决彩蛋（Three.js；首页悬浮乒乓球直达入口）
 ├── submit.html                 # 访客比赛记录提交页（腾讯文档表单 / GitHub Issue / QQ 群三通道）
+├── docs.html                   # 网站文档页（只读素材库浏览器，导航 More… 入口）
 ├── 404.html                    # 404 页面
 │
 ├── wtt_hub.html                # WTT 彩蛋入口（男/女单打、双打、混双）
@@ -31,6 +33,7 @@ wfls-tt-club/
 ├── wtt_dataviz.html            # WTT 数据可视化
 ├── wtt_personal_stats.html     # WTT 个人数据
 ├── wtt_player.html             # WTT 球员个人主页（一人一页）
+├── wtt_match.html              # WTT 单场比赛详情页（noindex，match.html 的 WTT 版）
 ├── wtt_assoc.html              # WTT 协会数据（实力总榜/排名变迁/对抗矩阵）
 ├── wtt_season_review.html      # WTT 赛季总结（noindex，从 wtt_hub.html 卡片进入）
 │
@@ -41,6 +44,7 @@ wfls-tt-club/
 │   ├── shared-partials.js      # 全站共享导航/页脚/二维码模态注入
 │   ├── score-engine.js         # 积分计算核心引擎
 │   ├── ranking.js              # 排名系统 + 积分明细模态框
+│   ├── match-detail.js         # 比赛详情页逻辑（俱乐部 + WTT 双模式，window.MD_WTT_MODE 切换）
 │   ├── club_race.js            # 排名动态竞速图（Bar Chart Race）
 │   ├── data-viz.js             # 数据可视化（Chart.js）
 │   ├── data-viz-extra.js       # 数据可视化扩展（战绩统计/效率散点/交手热力矩阵等）
@@ -51,6 +55,7 @@ wfls-tt-club/
 │   ├── draws-viewer.js         # 对阵表观众端渲染器（搜索高亮/详情弹窗/状态徽标）
 │   ├── draws-editor.js         # 对阵表可视化编辑器逻辑
 │   ├── admin.js                # 后台数据概览仪表盘
+│   ├── docs-browser.js         # 网站文档页逻辑（素材库树 / 筛选 / 搜索 / 预览）
 │   ├── umpire-training.js      # 裁判特训彩蛋逻辑
 │   ├── season-review.js        # 赛季总结（俱乐部 + WTT 双模式，window.SR_WTT_MODE 切换）
 │   ├── main.js                 # 入口初始化
@@ -81,14 +86,17 @@ wfls-tt-club/
 │
 ├── wtt_data/                   # WTT 彩蛋数据（ms/ws/md/wd/xd，按赛季拆分 + manifest.json）
 ├── docs/                       # 文档（tech/ 长期技术文档 · reports/ 一次性预测报告与审计 · posters/ 海报源文件）
-├── tools/                      # 内容同步/校验脚本（仓库仅保留 sync_content.py / ci_validate.py / generate_meta.py，其余脚本仅本地留存）
+├── tools/                      # 入库工具（其余爬虫/导入器脚本仅本地留存、不随站点发布）
+│                               #   sync_content.py 内容同步 · ci_validate.py CI 校验 · i18n_audit.py 中文残留扫描
+│                               #   generate_meta.py 站点 meta · recompute_rankings.js 生成 data/api/
+│                               #   gen_assets_manifest.py 生成 Assets/manifest.json
+│                               #   append_submission.py / import_submissions_csv.py 战绩提交流水线
 │
 ├── Assets/
 │   ├── images/                 # 图片资源
 │   ├── videos/                 # 视频资源
 │   └── files/                  # PDF、Excel等文件资源
 │
-├── images/                     # 站点级图片（og-cover.png）
 ├── README.md                   # 项目说明文档
 └── AGENTS.md                   # AI 助手协作指引（关键命令与架构约定）
 ```
@@ -159,7 +167,7 @@ git push -u origin main
 
 - **自动积分计算**：基于 ELO 变体算法，读取比赛记录自动计算积分
 - **赛季积分继承**：每赛季保留50%历史基础 + 50%赛季表现
-- **类型刷新·定格衰减**：同类型再参赛时锁定前批成绩（持续参赛保值），半衰期 `t` 默认180天（可在 `data/decay-config.json` 配置）
+- **类型刷新·定格衰减**：同类型再参赛时锁定前批成绩（持续参赛保值），半衰期 `t` 当前为 45 天（`data/decay-config.json`）
 - **保值类型**：校乒赛单打/团体默认永久保值（可在 `data/decay-config.json` 配置）
 - **多时间节点快照**：按赛季折叠显示，含赛季初始积分节点
 - **排名变化对比**：▲绿色上升 / ▼红色下降 / NEW蓝色新上榜 / -灰色不变
@@ -173,9 +181,9 @@ git push -u origin main
 ### 积分计算规则
 
 - **基础积分**：根据积分差距分"高积分胜"和"爆冷"两种情况
-- **赛事系数**：普通0.2 / 排位赛0.6 / 校乒联赛0.7 / 校乒赛团体0.8 / 校乒赛单打1.0 / 双打0.2
+- **赛事系数**：普通0.2 / 排位赛0.6 / 挑战赛0.6 / 校乒联赛0.7 / 十二强赛0.7 / 校乒赛团体0.8 / 校乒赛单打1.0 / 双打0.5
 - **赛制系数**：score-log 可记录「赛制」default/bo3/bo5/bo7，倍率在 `event-coefficient.json` 保留键中配置，支持全局统一或按类型自定义（优先级：类型专属 > 全局 > 1，仅社团积分生效）
-- **时间权重**：2^(-距比赛天数/t)，t 默认180天可配置，按"球员×类型"批次分组
+- **时间权重**：2^(-距比赛天数/t)，t 当前 45 天（`data/decay-config.json`），按"球员×类型"批次分组
 - **定格衰减**：同一类型再次出现时，前一批次权重锁死定格；仅最后一批随时间衰减；胜者与负者按各自的"球员×类型"批次分别计算权重（双方衰减一般不同）
 - **保值类型**：校乒赛单打/团体/双打不衰减（`data/decay-config.json` 的 `noDecayTypes`）
 - **积分地板**：最低1200分
@@ -186,10 +194,17 @@ git push -u origin main
 - **记录格式**：双打比赛以 `类型: "双打"` 记入 `data/score-log.json`，胜者/负者为 `"甲/乙"` 两人组合串（可选 `赛制`/`比分`/`局分` 与单打口径一致；恰好两名成员，逐个须在 players.json 登记）
 - **组合即积分主体**：组合是独立积分实体，与成员个人分互不影响。前端加载时组合名按成员 pinyin 排序规范化（"A/B" 与 "B/A" 收敛为同一组合），所有链接/明细/H2H 统一使用规范化形式（`js/common.js` `normalizeDoublesPairName`）
 - **组合初始分**：首场比赛当日（含当日单打结算）两名成员单打积分的平均，再减失衡折扣 `0.25 × 两人分差`（等价于 50% 平均 + 50% 弱侧；系数 `DOUBLES_GAP_DISCOUNT` 可调，规则见 q4）；此后跨赛季按 50% 继承链自然携带（`js/score-engine.js` `buildDoublesInitialScores`）
-- **计分参数**：类型系数 0.8、默认赛制 bo3（`event-coefficient.json`）、不衰减（`noDecayTypes` 含「双打」）、负者扣分 ×0.8——计分公式与单打完全共用
+- **计分参数**：类型系数 0.5、默认赛制 bo3（`event-coefficient.json`）、不衰减（`noDecayTypes` 含「双打」）、负者扣分 ×0.8——计分公式与单打完全共用
 - **口径分离**：单打榜自动排除双打记录，双打榜只含双打记录（加分记录仅单打口径）；两套时间线靠 `withScoreContext()` 临时切换引擎全局（缓存按数据引用失效），不得手工 save/swap
 - **页面**：ranking.html「单打/双打」切换；match.html 双打详情（双头像/逐成员链接）；player.html「双打战绩」区块
 - **数据 API**：`rankings/doubles-current.json` / `rankings/doubles-timeline.json`（组合行 `uid` 为 null，附 `members` 成员 uid 数组；无双打数据时 current 为 null、timeline 为空数组）
+
+### 比赛详情页（match.html）
+
+- 地址形如 `match.html?date=2026-09-15&type=普通&w=付大卫&l=任峻贤`，同日重复对阵追加 `&n=<场次序号>`；WTT 版为 `wtt_match.html`（`window.MD_WTT_MODE` 切双模式，WTT 页 noindex）
+- **入口**：排名页积分明细弹窗、球员页「全部记录」、数据可视化 H2H 表、WTT 各列表页的比赛日期单元格均已链接
+- **内容**：中央记分牌（赛前积分 → 赛后积分与本场增减）、逐局比分、积分产生明细（基础分 → 赛事系数 → 赛制系数 → 时间权重 → 产生积分）、赛前胜率预测（Elo 60% · 历史交锋 20% · 近期状态 20%）、历史交锋表
+- 链接必须用 `buildMatchDetailUrl()` + `computeMatchOccurrenceMap()` 生成：组合名要走内存中的规范化形式（成员按拼音排序），场次序号取自 occurrence map，否则同日重复对阵会全部打开第一场
 
 ### 数据可视化（Data Viz）
 
@@ -445,8 +460,9 @@ python tools/sync_content.py --check    # 仅校验（含预计新增快照数�
   "十二强赛": 0.7,
   "校乒赛团体": 0.8,
   "校乒赛单打": 1.0,
+  "双打": 0.5,
   "赛制系数": {
-    "bo3": 0.8,
+    "bo3": 0.7,
     "bo5": 1.0,
     "bo7": 1.5
   },
@@ -457,7 +473,8 @@ python tools/sync_content.py --check    # 仅校验（含预计新增快照数�
     "校乒联赛": "bo5",
     "十二强赛": "bo5",
     "校乒赛团体": "bo5",
-    "校乒赛单打": "bo5"
+    "校乒赛单打": "bo5",
+    "双打": "bo3"
   }
 }
 ```
@@ -518,7 +535,7 @@ python tools/sync_content.py --check    # 仅校验（含预计新增快照数�
 
 > **注意**：积分调整记录不需要 `胜者` 和 `负者` 字段。
 
-> **关于同日重复记录**：数据中存在 `(日期, 类型, 胜者, 负者)` 完全相同的条目（截至 2026-09 共 24 组）。业务口径为**同一天确实进行了多场对局**（如三局两胜的多局较量），每场独立计分，属正常录入，请勿去重。WTT 数据导入脚本（tools/import_*.py）对该元组去重仅用于防止同一事件重复导入，与校内 score-log 语义不同。
+> **关于同日重复记录**：数据中存在 `(日期, 类型, 胜者, 负者)` 完全相同的条目（截至 2026-09-28 共 26 组）。业务口径为**同一天确实进行了多场对局**（如三局两胜的多局较量），每场独立计分，属正常录入，请勿去重。WTT 数据导入脚本（tools/import_*.py）对该元组去重仅用于防止同一事件重复导入，与校内 score-log 语义不同。
 
 ---
 
@@ -631,7 +648,7 @@ python tools/sync_content.py --check    # 仅校验（含预计新增快照数�
 
 ### 访客提交比赛记录（三条通道）
 
-访客可通过 `submit.html`「提交战绩」页提交比赛记录。**入口在 Ranking 页「积分计算规则」按钮下方**（同款玻璃按钮，见 `ranking.html`），页面本体只保留在线表单入口。三条通道并存，最终都汇入 `data/score-log.json`：
+访客可通过 `submit.html`「提交战绩」页提交比赛记录。**入口在 Ranking 页的「积分相关规则」下拉药丸内**（与「积分计算规则」同款玻璃按钮，桌面与移动端各一处；该药丸同时链到积分计算方法 q1 与双打计分规则 q4）。页面本体只保留在线表单入口。三条通道并存，最终都汇入 `data/score-log.json`：
 
 **通道一：腾讯文档收集表（免账号，面向 99% 无 GitHub 的同学，推荐）**
 
@@ -643,7 +660,7 @@ python tools/sync_content.py --check    # 仅校验（含预计新增快照数�
       python tools/ci_validate.py && git 提交
 ```
 
-- **收集表题目清单**（建表时照抄，导入器按这些列名模糊匹配）：`日期`（必填）、`比赛类型`（单选：普通/排位赛/挑战赛/校乒联赛/十二强赛/校乒赛团体/校乒赛单打，与 `event-coefficient.json` 同步维护）、`赛制`（单选：default/bo3/bo5/bo7）、`胜者`（必填）、`负者`（必填）、`总比分`（选填，如 3-1）、`逐局分数`（选填，如 11-9, 8-11, 11-7，胜者视角）、`备注`、`你的昵称`
+- **收集表题目清单**（建表时照抄，导入器按这些列名模糊匹配）：`日期`（必填）、`比赛类型`（单选：普通/排位赛/挑战赛/校乒联赛/十二强赛/校乒赛团体/校乒赛单打/双打，与 `event-coefficient.json` 同步维护；双打的胜者/负者填「甲/乙」组合名，如 `王成悦/梅哲宇`）、`赛制`（单选：default/bo3/bo5/bo7）、`胜者`（必填）、`负者`（必填）、`总比分`（选填，如 3-1）、`逐局分数`（选填，如 11-9, 8-11, 11-7，胜者视角）、`备注`、`你的昵称`
 - 分享设置尽量选「免登录可填」；链接填入 `submit.html` 的 `TENCENT_FORM_URL` 常量
 - 导入器：编码自动探测（UTF-8/GBK）、日期规范化（2026/9/12 等均可）、选手别名自动转正式姓名、全套 `ci_validate` 口径校验；校验不过的行不写入并逐条报告原因（如选手不在册——先在 `players.json` 建档后重跑同一份 CSV 即可补上）
 - 去重：已导入行按整行内容指纹记录在 `tools/.import-state.json`（gitignored），同一表格重复导出重跑自动跳过；**注意**：导入后若在表格里修改了已导入行的内容，重跑会按新内容重复导入，建议把已入库行的审核列改成「已入库」并始终配合 `--status-column` 使用
