@@ -221,6 +221,7 @@ function wrFlat(res){
 if(opt.evalOnly){
   const G = parseInt(process.env.TT_EVALGAMES || String(opt.eval * 2), 10);
   const { agent } = loadBase();
+  const tProbe = Date.now();   // 本分支在全局 t0 声明之前退出，elapsedSec 要自己计时
   console.log('标定模式：' + opt.from + '（' + VAL_TAGS.length + ' 档 × ' + G + ' 局）');
   const res = ladderEval(agent, opt.seed * 31, G, VAL_TAGS);
   console.log('  对手'.padEnd(16) + '胜率      局分');
@@ -234,7 +235,7 @@ if(opt.evalOnly){
     baseFlat['wr' + r.tag.split('-').map(x => x.charAt(0).toUpperCase() + x.slice(1)).join('')] = +(r.wr * 100).toFixed(1);
   }
   T.tick(Object.assign({ t:'done', stage:'baseline', mode:'input-ladder-probe', from:opt.from,
-           elapsedSec: +(Date.now() - t0) / 1000,
+           elapsedSec: +((Date.now() - tProbe) / 1000).toFixed(1),
            games:G, base: baseMap, wrMap: baseMap, bestEp:0, ep:0,
            ladder: res.map(r => r.tag + ':' + r.wr.toFixed(3)).join(',') }, baseFlat));
   process.exit(0);
