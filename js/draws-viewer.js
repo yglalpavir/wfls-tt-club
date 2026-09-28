@@ -22,6 +22,9 @@ function initDrawsViewer(containerId, draws) {
     const container = document.getElementById(containerId);
     const model = dcNormalizeDraw(draws);
     if (!container || !model) return;
+    // 整块重渲染（切语言等）会换掉旧的 wrapper，body 上的全屏锁必须一并清掉，
+    // 否则页面会停留在「滚不动」状态却看不到任何全屏层。
+    document.body.classList.remove('dv-fs-open');
     currentDrawsData = model;
     renderGridViewer(container, model);
 }
@@ -228,8 +231,6 @@ function renderGridViewer(container, draws) {
     tools.push('<span class="dv-tool-sep">|</span>' +
         '<button class="dv-tool-btn" id="dvZoomOut" title="' + dcT('dv_zoom_out', '缩小') + '"><i class="fa-solid fa-magnifying-glass-minus"></i></button>' +
         '<button class="dv-tool-btn" id="dvZoomIn" title="' + dcT('dv_zoom_in', '放大') + '"><i class="fa-solid fa-magnifying-glass-plus"></i></button>' +
-        '<button class="dv-tool-btn" id="dvZoomFit" title="' + dcT('dv_zoom_fit', '适应内容') + '"><i class="fa-solid fa-expand"></i></button>' +
-        '<button class="dv-tool-btn" id="dvZoomReset" title="' + dcT('dv_zoom_reset', '重置视图') + '"><i class="fa-solid fa-arrows-to-circle"></i></button>' +
         '<button class="dv-tool-btn" id="dvFullscreen" title="' + dcT('dv_fullscreen', '全屏显示 (网页内)') + '"><i class="fa-solid fa-maximize"></i></button>');
     const drawTitle = dvLocalized(draws, 'title');
     const drawSubtitle = dvLocalized(draws, 'subtitle');
@@ -399,21 +400,40 @@ function bindViewerControls(viewport, transformLayer, draws, layout) {
     if (typeof ResizeObserver === 'function') new ResizeObserver(syncFit).observe(viewport);
 
     const $id = id => document.getElementById(id);
-    const zoomIn = $id('dvZoomIn'), zoomOut = $id('dvZoomOut'), zoomFit = $id('dvZoomFit'),
-        zoomReset = $id('dvZoomReset'), fullscreenBtn = $id('dvFullscreen');
+    const zoomIn = $id('dvZoomIn'), zoomOut = $id('dvZoomOut'), fullscreenBtn = $id('dvFullscreen');
 
-    if (fullscreenBtn) fullscreenBtn.addEventListener('click', () => {
+    // 网页内全屏：靠 body 上的 dv-fs-open 类统一处理「锁滚动」和「摘掉祖先 backdrop-filter」。
+    // 不用内联 body.style.overflow —— 站内滚动/导航处理器会把它重置回 ''。
+    function setFullscreen(on) {
         const wrap = viewport.closest('.draws-viewer-wrapper');
         if (!wrap) return;
-        const isFS = wrap.classList.toggle('dv-fullscreen');
-        fullscreenBtn.innerHTML = isFS ? '<i class="fa-solid fa-minimize"></i>' : '<i class="fa-solid fa-maximize"></i>';
-        document.body.style.overflow = isFS ? 'hidden' : '';
-        setTimeout(() => { doFit(); }, 200);
+        wrap.classList.toggle('dv-fullscreen', on);
+        document.body.classList.toggle('dv-fs-open', on);
+        if (fullscreenBtn) {
+            fullscreenBtn.innerHTML = on ? '<i class="fa-solid fa-minimize"></i>' : '<i class="fa-solid fa-maximize"></i>';
+            fullscreenBtn.setAttribute('title', dcT(on ? 'dv_fullscreen_exit' : 'dv_fullscreen', on ? '退出全屏' : '全屏显示 (网页内)'));
+            fullscreenBtn.setAttribute('aria-label', fullscreenBtn.getAttribute('title'));
+        }
+        // 视口尺寸变了，交给 syncFit 自动重新适应
+        fitW = 0; fitH = 0;
+        syncFit();
+    }
+    function isFullscreen() {
+        const wrap = viewport.closest('.draws-viewer-wrapper');
+        return !!(wrap && wrap.classList.contains('dv-fullscreen'));
+    }
+    function toggleFullscreen() { setFullscreen(!isFullscreen()); }
+    if (fullscreenBtn) fullscreenBtn.addEventListener('click', toggleFullscreen);
+
+    // Esc 退出全屏（网页内全屏没有浏览器原生的 Esc 行为）
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && isFullscreen()) { e.stopPropagation(); setFullscreen(false); }
     });
+    // 切换到别的 tab / 重新渲染时兜底清掉 body 上的锁
+    window.addEventListener('pagehide', () => document.body.classList.remove('dv-fs-open'));
+
     if (zoomIn) zoomIn.addEventListener('click', () => { userAdjusted = true; viewerZoom = clampZoom(viewerZoom * 1.25); applyTransform(); });
     if (zoomOut) zoomOut.addEventListener('click', () => { userAdjusted = true; viewerZoom = clampZoom(viewerZoom / 1.25); applyTransform(); });
-    if (zoomFit) zoomFit.addEventListener('click', doFit);
-    if (zoomReset) zoomReset.addEventListener('click', () => { userAdjusted = false; viewerZoom = viewerMinZoom; viewerPanX = 0; viewerPanY = 0; applyTransform(); });
 
     // 滚轮缩放（指向光标）
     viewport.addEventListener('wheel', (e) => {
@@ -482,12 +502,12 @@ function bindViewerControls(viewport, transformLayer, draws, layout) {
     }, { passive: false });
     viewport.addEventListener('touchend', () => { isPanning = false; touchStartDist = 0; });
 
-    // 键盘: +/- 缩放, 0 适应, 方向键平移
+    // 键盘: +/- 缩放, 方向键平移（适应内容/重置视图已移除，改为进入视口时自动适应）
     viewport.addEventListener('keydown', (e) => {
         const step = 60;
         if (e.key === '+' || e.key === '=') { userAdjusted = true; viewerZoom = clampZoom(viewerZoom * 1.2); applyTransform(); }
         else if (e.key === '-' || e.key === '_') { userAdjusted = true; viewerZoom = clampZoom(viewerZoom / 1.2); applyTransform(); }
-        else if (e.key === '0') { userAdjusted = false; doFit(); }
+        else if (e.key === 'f' || e.key === 'F') { toggleFullscreen(); }
         else if (e.key === 'ArrowLeft') { viewerPanX += step; applyTransform(); }
         else if (e.key === 'ArrowRight') { viewerPanX -= step; applyTransform(); }
         else if (e.key === 'ArrowUp') { viewerPanY += step; applyTransform(); }
