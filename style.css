@@ -1114,10 +1114,13 @@ html:lang(en) .hero-title {
 }
 /* .detail-draws 是 glass-card，带 backdrop-filter —— 这会给 position:fixed 的后代
    建立包含块，使 .dv-fullscreen 的 inset:0 相对这张卡片而非视口定位（全屏整体偏移到
-   卡片原位、且尺寸溢出）。全屏期间把滤镜摘掉，fixed 才会重新以视口为基准。 */
+   卡片原位、且尺寸溢出）。全屏期间把滤镜摘掉，fixed 才会重新以视口为基准。
+   必须同时关掉 transition：.glass-card 是 transition:all，滤镜会花 0.3s 淡出，
+   过渡期间包含块依然存在，全屏层就会先落在卡片位置上（用户看到的"错位/空白"）。 */
 body.dv-fs-open .detail-draws,
 body.dv-fs-open .detail-draws.glass-card {
     backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+    transition: none !important;
 }
 body.dv-fs-open { overflow: hidden !important; }
 

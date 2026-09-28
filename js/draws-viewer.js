@@ -10,7 +10,6 @@ let viewerZoom = 1;
 let viewerMinZoom = 0.2;
 let viewerPanX = 0, viewerPanY = 0;
 let isPanning = false, panStart = { x: 0, y: 0 };
-let viewerRafId = null;
 let _dvSearchToken = 0;   // 防止异步渲染竞态
 // 自动"适应内容"的可读性下限：低于此缩放文字已看不清，宁可让用户纵向拖拽
 const DV_MIN_READABLE_ZOOM = 0.4;
@@ -361,18 +360,15 @@ function bindViewerControls(viewport, transformLayer, draws, layout) {
     viewerMinZoom = Math.max(viewerMinZoom, 0.15);
     viewerZoom = viewerMinZoom;
     viewerPanX = 0; viewerPanY = 0;
-    // 必须清掉上一轮遗留的 rAF 句柄：否则重渲染（切语言）时 applyTransform 会因为
-    // 旧句柄非空而直接 return，新画布就永远拿不到 transform，只能看到 1:1 的原始布局。
-    viewerRafId = 0;
     _dvSearchToken++;
 
+    // 同步写 transform：早先挂在 requestAnimationFrame 里，帧被推迟（切后台、页面卡顿）
+    // 时画布会停留在上一个变换上——进出全屏那一下尤其明显：视口尺寸已变、变换却还没跟上，
+    // 1416×1100 的画布按 1:1 塞进 540px 视口，看上去就是一片空白。
+    // 一次 style 写入成本极低，没必要为它等下一帧。
     function applyTransform() {
-        if (viewerRafId) return;
-        viewerRafId = requestAnimationFrame(() => {
-            viewerRafId = null;
-            transformLayer.style.transformOrigin = '0 0';
-            transformLayer.style.transform = 'translate(' + viewerPanX + 'px, ' + viewerPanY + 'px) scale(' + viewerZoom + ')';
-        });
+        transformLayer.style.transformOrigin = '0 0';
+        transformLayer.style.transform = 'translate(' + viewerPanX + 'px, ' + viewerPanY + 'px) scale(' + viewerZoom + ')';
     }
     function clampZoom(z) { return Math.max(viewerMinZoom, Math.min(2.5, z)); }
 
