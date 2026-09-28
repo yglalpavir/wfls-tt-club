@@ -402,13 +402,18 @@ function bindViewerControls(viewport, transformLayer, draws, layout) {
     // 不用内联 body.style.overflow —— 站内滚动/导航处理器会把它重置回 ''。
     function setFullscreen(on) {
         const wrap = viewport.closest('.draws-viewer-wrapper');
-        if (!wrap) return;
+        // viewer 可能已被重新渲染掉（切语言等会整块重建）。此时若还去切类，
+        // 就会把 body 的滚动锁留在一个看不见的全屏层上，或让新旧节点状态互相打架。
+        if (!wrap || !wrap.isConnected) return;
         wrap.classList.toggle('dv-fullscreen', on);
         document.body.classList.toggle('dv-fs-open', on);
-        if (fullscreenBtn) {
-            fullscreenBtn.innerHTML = on ? '<i class="fa-solid fa-minimize"></i>' : '<i class="fa-solid fa-maximize"></i>';
-            fullscreenBtn.setAttribute('title', dcT(on ? 'dv_fullscreen_exit' : 'dv_fullscreen', on ? '退出全屏' : '全屏显示 (网页内)'));
-            fullscreenBtn.setAttribute('aria-label', fullscreenBtn.getAttribute('title'));
+        // 按钮可能被重渲染替换过，按 id 重新取一次再改图标/文案
+        const btn = document.getElementById('dvFullscreen') || fullscreenBtn;
+        if (btn) {
+            btn.innerHTML = on ? '<i class="fa-solid fa-minimize"></i>' : '<i class="fa-solid fa-maximize"></i>';
+            const label = dcT(on ? 'dv_fullscreen_exit' : 'dv_fullscreen', on ? '退出全屏' : '全屏显示 (网页内)');
+            btn.setAttribute('title', label);
+            btn.setAttribute('aria-label', label);
         }
         // 视口尺寸变了，交给 syncFit 自动重新适应
         fitW = 0; fitH = 0;
@@ -416,7 +421,7 @@ function bindViewerControls(viewport, transformLayer, draws, layout) {
     }
     function isFullscreen() {
         const wrap = viewport.closest('.draws-viewer-wrapper');
-        return !!(wrap && wrap.classList.contains('dv-fullscreen'));
+        return !!(wrap && wrap.isConnected && wrap.classList.contains('dv-fullscreen'));
     }
     function toggleFullscreen() { setFullscreen(!isFullscreen()); }
     if (fullscreenBtn) fullscreenBtn.addEventListener('click', toggleFullscreen);
