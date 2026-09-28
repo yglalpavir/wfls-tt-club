@@ -12,6 +12,8 @@ let viewerPanX = 0, viewerPanY = 0;
 let isPanning = false, panStart = { x: 0, y: 0 };
 let viewerRafId = null;
 let _dvSearchToken = 0;   // 防止异步渲染竞态
+// 自动"适应内容"的可读性下限：低于此缩放文字已看不清，宁可让用户纵向拖拽
+const DV_MIN_READABLE_ZOOM = 0.4;
 
 /**
  * 初始化对阵表查看器（对外入口，保持与旧版一致的签名）
@@ -25,6 +27,20 @@ function initDrawsViewer(containerId, draws) {
 }
 
 // ---------- 卡片 DOM ----------
+
+/* 备注卡文本：首行作标题，其余行作正文（小组排名用 \n 排多行）。
+   以 ✕ / × 开头的行视为"未出线"，自动弱化显示——不依赖具体语言的关键词。 */
+function dvNoteTextHtml(text) {
+    const lines = String(text == null ? '' : text).split('\n').map(s => s.trim()).filter(Boolean);
+    if (!lines.length) return '';
+    const head = '<span class="dv-note-title">' + dcEsc(lines[0]) + '</span>';
+    if (lines.length === 1) return head;
+    return head + lines.slice(1).map(l => {
+        const m = l.match(/^(?:[✕✖×]\s*|x\s+)/i);
+        const out = !!m;
+        return '<span class="dv-note-sub' + (out ? ' is-out' : '') + '">' + dcEsc(out ? l.slice(m[0].length) : l) + '</span>';
+    }).join('');
+}
 
 function dvBuildCardEl(card, pos, layout, draws) {
     const theme = draws.theme || {};
@@ -40,7 +56,7 @@ function dvBuildCardEl(card, pos, layout, draws) {
 
     if (card.type === 'note') {
         el.classList.add('dv-card-note');
-        el.innerHTML = '<div class="dv-card-note-text">' + dcEsc(card.text || '') + '</div>';
+        el.innerHTML = '<div class="dv-card-note-text">' + dvNoteTextHtml(dvLocalized(card, 'text')) + '</div>';
         return el;
     }
 
@@ -66,12 +82,12 @@ function dvBuildCardEl(card, pos, layout, draws) {
 
     let html = '';
     if (isBye) {
-        html += '<div class="dv-card-player ' + (p1Won ? 'dv-winner' : '') + '">' + dvPlayerHtml(p1, scores[0], p1Won, card, 'player1_en') + '</div>';
+        html += '<div class="dv-card-player ' + (p1Won ? 'dv-winner' : '') + '">' + dvPlayerHtml(p1, scores[0], p1Won, card, 'player1') + '</div>';
         html += '<div class="dv-card-bye">— BYE —</div>';
     } else {
-        html += '<div class="dv-card-player ' + (p1Won ? 'dv-winner' : (p2Won ? 'dv-loser' : '')) + '">' + dvPlayerHtml(p1, scores[0], p1Won, card, 'player1_en') + '</div>';
+        html += '<div class="dv-card-player ' + (p1Won ? 'dv-winner' : (p2Won ? 'dv-loser' : '')) + '">' + dvPlayerHtml(p1, scores[0], p1Won, card, 'player1') + '</div>';
         html += '<div class="dv-card-vs"></div>';
-        html += '<div class="dv-card-player ' + (p2Won ? 'dv-winner' : (p1Won ? 'dv-loser' : '')) + '">' + dvPlayerHtml(p2, scores[1], p2Won, card, 'player2_en') + '</div>';
+        html += '<div class="dv-card-player ' + (p2Won ? 'dv-winner' : (p1Won ? 'dv-loser' : '')) + '">' + dvPlayerHtml(p2, scores[1], p2Won, card, 'player2') + '</div>';
     }
     // 状态徽标
     if (status === 'live') html += '<div class="dv-status-badge dv-status-live"><span class="dv-live-dot"></span>LIVE</div>';
@@ -79,10 +95,14 @@ function dvBuildCardEl(card, pos, layout, draws) {
     // 总比分角标
     else if (card.score && !isBye) html += '<div class="dv-card-score-tag">' + dcEsc(card.score) + '</div>';
 
+    // 卡片级备注（弃权/补赛、轮次配对等）：直接印在卡片上，不能只藏在弹窗里
+    const cardNote = dvLocalized(card, 'note');
+    if (cardNote) html += '<div class="dv-card-note-line">' + dcEsc(cardNote) + '</div>';
+
     el.innerHTML = html;
 
-    // 可点击展开详情（有附加信息或逐局比分时）
-    if (card.games && card.games.length) el.classList.add('dv-has-detail');
+    // 可点击展开详情（有逐局比分或备注时）
+    if ((card.games && card.games.length) || cardNote) el.classList.add('dv-has-detail');
     return el;
 }
 
@@ -109,6 +129,8 @@ function dvPlayerHtml(p, score, won, card, slot) {
     if (p.seed != null && p.seed !== '') {
         html = '<span class="dv-player-seed">' + dcEsc(String(p.seed)) + '</span>' + html;
     }
+    // 小组出线位徽标（如 "A1"）：紧跟种子号，让"谁出线、去了哪个 1/4 决赛"一眼可读
+    if (p.qualifier) html += '<span class="dv-player-qual" title="' + dcEsc(dcT('dv_qualifier_title', '小组出线位')) + '">' + dcEsc(p.qualifier) + '</span>';
     // 英文形态对象里的附注键是 note_en（不是 note）
     const note = (localized && typeof localized === 'object') ? (localized.note_en || localized.note) : p.note;
     if (note) html += '<span class="dv-player-note" title="' + dcEsc(note) + '">' + dcEsc(note) + '</span>';
@@ -209,10 +231,12 @@ function renderGridViewer(container, draws) {
         '<button class="dv-tool-btn" id="dvZoomFit" title="' + dcT('dv_zoom_fit', '适应内容') + '"><i class="fa-solid fa-expand"></i></button>' +
         '<button class="dv-tool-btn" id="dvZoomReset" title="' + dcT('dv_zoom_reset', '重置视图') + '"><i class="fa-solid fa-arrows-to-circle"></i></button>' +
         '<button class="dv-tool-btn" id="dvFullscreen" title="' + dcT('dv_fullscreen', '全屏显示 (网页内)') + '"><i class="fa-solid fa-maximize"></i></button>');
+    const drawTitle = dvLocalized(draws, 'title');
+    const drawSubtitle = dvLocalized(draws, 'subtitle');
     titleBar.innerHTML =
         '<div class="dv-title-main">' +
-        (draws.title ? '<h2 class="draws-viewer-title">' + dcEsc(draws.title) + '</h2>' : '') +
-        (draws.subtitle ? '<p class="draws-viewer-subtitle">' + dcEsc(draws.subtitle) + '</p>' : '') +
+        (drawTitle ? '<h2 class="draws-viewer-title">' + dcEsc(drawTitle) + '</h2>' : '') +
+        (drawSubtitle ? '<p class="draws-viewer-subtitle">' + dcEsc(drawSubtitle) + '</p>' : '') +
         '</div>' +
         '<div class="draws-viewer-tools">' + tools.join('') + '</div>';
     wrapper.appendChild(titleBar);
@@ -286,7 +310,11 @@ function renderGridViewer(container, draws) {
         const col = card.col != null ? card.col : (card.round != null ? card.round : 0);
         if (!roundsMap[col]) roundsMap[col] = true;
     });
-    const customLabels = draws.roundLabels || {};
+    // 轮次标签优先取数据里的 roundLabels；英文界面下改取 roundLabels_en（draws.json 里一直都有，只是没人读）
+    const useEn = (typeof currentLang !== 'undefined' && currentLang === 'en');
+    const customLabels = (useEn && draws.roundLabels_en && Object.keys(draws.roundLabels_en).length)
+        ? Object.assign({}, draws.roundLabels, draws.roundLabels_en)
+        : (draws.roundLabels || {});
     const defaultRoundLabels = [dcT('dv_round_1', '第一轮'), dcT('dv_round_2', '第二轮'), dcT('dv_quarters', '1/4决赛'), dcT('dv_semis', '半决赛'), dcT('dv_final', '决赛')];
     Object.keys(roundsMap).map(Number).sort((a, b) => a - b).forEach((col, i) => {
         const label = document.createElement('div');
@@ -323,10 +351,18 @@ function renderGridViewer(container, draws) {
 // ---------- 交互：缩放 / 平移 ----------
 
 function bindViewerControls(viewport, transformLayer, draws, layout) {
-    viewerMinZoom = Math.min(1.0, (viewport.clientWidth - 16) / Math.max(layout.canvasW, 1));
+    // 最小缩放必须同时考虑宽和高：只看宽度时，竖向很长的对阵表（如 7 列 × 17 行）
+    // 永远缩不进视口，"适应内容" 只能适应宽度，底部几轮就得靠拖拽才看得到。
+    // 但竖向再长也不该缩到看不清——超过 DV_MIN_READABLE_ZOOM 就停在那儿，改为纵向拖拽。
+    const _fitW = (viewport.clientWidth - 16) / Math.max(layout.canvasW, 1);
+    const _fitH = (viewport.clientHeight - 16) / Math.max(layout.canvasH, 1);
+    viewerMinZoom = Math.min(1.0, _fitW, Math.max(_fitH, DV_MIN_READABLE_ZOOM));
     viewerMinZoom = Math.max(viewerMinZoom, 0.15);
     viewerZoom = viewerMinZoom;
     viewerPanX = 0; viewerPanY = 0;
+    // 必须清掉上一轮遗留的 rAF 句柄：否则重渲染（切语言）时 applyTransform 会因为
+    // 旧句柄非空而直接 return，新画布就永远拿不到 transform，只能看到 1:1 的原始布局。
+    viewerRafId = 0;
     _dvSearchToken++;
 
     function applyTransform() {
@@ -349,6 +385,19 @@ function bindViewerControls(viewport, transformLayer, draws, layout) {
     }
     doFit();
 
+    // 详情页在 tab 未激活时（display:none）就渲染了对阵表，此时 clientWidth/Height 为 0，
+    // 上面那次 doFit() 拿到的是无效尺寸（语言切换后的重渲染同理）。
+    // 只要尺寸没定就等下一次；一旦拿到真实尺寸且用户没手动缩放过，就自动适应一次。
+    let fitW = 0, fitH = 0, userAdjusted = false;
+    function syncFit() {
+        const w = viewport.clientWidth, h = viewport.clientHeight;
+        if (w === 0 || h === 0) return;
+        if (w === fitW && h === fitH) return;
+        fitW = w; fitH = h;
+        if (!userAdjusted) doFit();
+    }
+    if (typeof ResizeObserver === 'function') new ResizeObserver(syncFit).observe(viewport);
+
     const $id = id => document.getElementById(id);
     const zoomIn = $id('dvZoomIn'), zoomOut = $id('dvZoomOut'), zoomFit = $id('dvZoomFit'),
         zoomReset = $id('dvZoomReset'), fullscreenBtn = $id('dvFullscreen');
@@ -361,10 +410,10 @@ function bindViewerControls(viewport, transformLayer, draws, layout) {
         document.body.style.overflow = isFS ? 'hidden' : '';
         setTimeout(() => { doFit(); }, 200);
     });
-    if (zoomIn) zoomIn.addEventListener('click', () => { viewerZoom = clampZoom(viewerZoom * 1.25); applyTransform(); });
-    if (zoomOut) zoomOut.addEventListener('click', () => { viewerZoom = clampZoom(viewerZoom / 1.25); applyTransform(); });
+    if (zoomIn) zoomIn.addEventListener('click', () => { userAdjusted = true; viewerZoom = clampZoom(viewerZoom * 1.25); applyTransform(); });
+    if (zoomOut) zoomOut.addEventListener('click', () => { userAdjusted = true; viewerZoom = clampZoom(viewerZoom / 1.25); applyTransform(); });
     if (zoomFit) zoomFit.addEventListener('click', doFit);
-    if (zoomReset) zoomReset.addEventListener('click', () => { viewerZoom = viewerMinZoom; viewerPanX = 0; viewerPanY = 0; applyTransform(); });
+    if (zoomReset) zoomReset.addEventListener('click', () => { userAdjusted = false; viewerZoom = viewerMinZoom; viewerPanX = 0; viewerPanY = 0; applyTransform(); });
 
     // 滚轮缩放（指向光标）
     viewport.addEventListener('wheel', (e) => {
@@ -377,6 +426,7 @@ function bindViewerControls(viewport, transformLayer, draws, layout) {
         viewerPanX = mx - sc * (mx - viewerPanX);
         viewerPanY = my - sc * (my - viewerPanY);
         viewerZoom = newZoom;
+        userAdjusted = true;
         applyTransform();
     }, { passive: false });
 
@@ -435,9 +485,9 @@ function bindViewerControls(viewport, transformLayer, draws, layout) {
     // 键盘: +/- 缩放, 0 适应, 方向键平移
     viewport.addEventListener('keydown', (e) => {
         const step = 60;
-        if (e.key === '+' || e.key === '=') { viewerZoom = clampZoom(viewerZoom * 1.2); applyTransform(); }
-        else if (e.key === '-' || e.key === '_') { viewerZoom = clampZoom(viewerZoom / 1.2); applyTransform(); }
-        else if (e.key === '0') { doFit(); }
+        if (e.key === '+' || e.key === '=') { userAdjusted = true; viewerZoom = clampZoom(viewerZoom * 1.2); applyTransform(); }
+        else if (e.key === '-' || e.key === '_') { userAdjusted = true; viewerZoom = clampZoom(viewerZoom / 1.2); applyTransform(); }
+        else if (e.key === '0') { userAdjusted = false; doFit(); }
         else if (e.key === 'ArrowLeft') { viewerPanX += step; applyTransform(); }
         else if (e.key === 'ArrowRight') { viewerPanX -= step; applyTransform(); }
         else if (e.key === 'ArrowUp') { viewerPanY += step; applyTransform(); }

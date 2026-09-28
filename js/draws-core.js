@@ -80,6 +80,8 @@ function dcNormalizePlayer(p) {
         if (p.seed != null && p.seed !== '') out.seed = p.seed;
         if (p.note) out.note = String(p.note);
         if (p.desc) out.desc = String(p.desc);
+        // qualifier: 小组出线位标记（如 "A1"），渲染为选手名前的徽标；缺省时旧数据行为不变
+        if (p.qualifier) out.qualifier = String(p.qualifier);
         return out;
     }
     const parsed = dcParsePlayerName(p);
@@ -542,6 +544,7 @@ function _dcCleanPlayer(p) {
     if (p.note) out.note = p.note;
     if (p.note_en) out.note_en = p.note_en;
     if (p.desc) out.desc = p.desc;
+    if (p.qualifier) out.qualifier = p.qualifier;
     // 只有 name 时退化为纯字符串，保持数据精简
     if (Object.keys(out).length === 1) return out.name;
     return out;

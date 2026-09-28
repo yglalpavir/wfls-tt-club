@@ -978,12 +978,13 @@
         "type": "note",
         "col": 0,
         "row": 0,
-        "text": "A组（单循环）"
+        "text": "A组 · 单循环 · 9/10\n1. 任安喆 2胜 · 出线\n2. 任峻贤 1胜 · 出线\n✕ 彭瀚明 0胜 · 淘汰",
+        "text_en": "Group A · Round robin · 9/10\n1. REN Anzhe 2 wins · qualified\n2. REN Junxian 1 win · qualified\n✕ PENG Hanming 0 wins · eliminated"
       },
       {
         "id": "m1",
         "col": 0,
-        "row": 2,
+        "row": 3,
         "player1": {
           "name": "任峻贤",
           "seed": 1
@@ -1012,7 +1013,7 @@
       {
         "id": "m2",
         "col": 0,
-        "row": 4,
+        "row": 7,
         "player1": {
           "name": "任峻贤",
           "seed": 1
@@ -1040,7 +1041,7 @@
       {
         "id": "m3",
         "col": 0,
-        "row": 6,
+        "row": 11,
         "player1": {
           "name": "任安喆",
           "seed": 5
@@ -1070,12 +1071,13 @@
         "type": "note",
         "col": 1,
         "row": 0,
-        "text": "B组（单循环）"
+        "text": "B组 · 单循环 · 9/10\n1. 龚雨煊 2胜 · 出线\n2. 陶锦源 1胜 · 出线\n✕ 叶孟恒 0胜 · 淘汰",
+        "text_en": "Group B · Round robin · 9/10\n1. GONG Yuxuan 2 wins · qualified\n2. TAO Jinyuan 1 win · qualified\n✕ YE Mengheng 0 wins · eliminated"
       },
       {
         "id": "m4",
         "col": 1,
-        "row": 2,
+        "row": 3,
         "player1": {
           "name": "龚雨煊",
           "seed": 3
@@ -1104,7 +1106,7 @@
       {
         "id": "m5",
         "col": 1,
-        "row": 4,
+        "row": 7,
         "player1": {
           "name": "龚雨煊",
           "seed": 3
@@ -1132,7 +1134,7 @@
       {
         "id": "m6",
         "col": 1,
-        "row": 6,
+        "row": 11,
         "player1": {
           "name": "陶锦源",
           "seed": 7
@@ -1162,12 +1164,13 @@
         "type": "note",
         "col": 2,
         "row": 0,
-        "text": "C组（单循环）"
+        "text": "C组 · 单循环 · 9/10–9/17\n1. 姜子润 2胜 · 出线\n2. 付大卫 1胜 · 出线\n✕ 汪宁轩 0胜 · 淘汰",
+        "text_en": "Group C · Round robin · 9/10–9/17\n1. JIANG Zirun 2 wins · qualified\n2. FU Dawei 1 win · qualified\n✕ WANG Ningxuan 0 wins · eliminated"
       },
       {
         "id": "m7",
         "col": 2,
-        "row": 2,
+        "row": 3,
         "player1": {
           "name": "付大卫",
           "seed": 2
@@ -1197,7 +1200,7 @@
       {
         "id": "m8",
         "col": 2,
-        "row": 4,
+        "row": 7,
         "player1": {
           "name": "付大卫",
           "seed": 2
@@ -1216,12 +1219,13 @@
         },
         "score": "3-0",
         "winner": 1,
-        "note": "9/10 汪宁轩弃权不计，9/17 补赛"
+        "note": "9/17 补赛（9/10 弃权不计）",
+        "note_en": "9/17 make-up (9/10 walkover, not counted)"
       },
       {
         "id": "m9",
         "col": 2,
-        "row": 6,
+        "row": 11,
         "player1": {
           "name": "姜子润",
           "seed": 6
@@ -1240,19 +1244,21 @@
         },
         "score": "3-1",
         "winner": 1,
-        "note": "9/11 进行"
+        "note": "9/11",
+        "note_en": "9/11"
       },
       {
         "id": "n4",
         "type": "note",
         "col": 3,
         "row": 0,
-        "text": "D组（单循环）"
+        "text": "D组 · 单循环 · 9/10\n1. 谷子易 2胜 · 出线\n2. 王思博 1胜 · 出线\n✕ 刘冠羽 0胜 · 淘汰",
+        "text_en": "Group D · Round robin · 9/10\n1. GU Ziyi 2 wins · qualified\n2. WANG Sibo 1 win · qualified\n✕ LIU Guanyu 0 wins · eliminated"
       },
       {
         "id": "m10",
         "col": 3,
-        "row": 2,
+        "row": 3,
         "player1": {
           "name": "谷子易",
           "seed": 4
@@ -1280,7 +1286,7 @@
       {
         "id": "m11",
         "col": 3,
-        "row": 4,
+        "row": 7,
         "player1": {
           "name": "谷子易",
           "seed": 4
@@ -1308,7 +1314,7 @@
       {
         "id": "m12",
         "col": 3,
-        "row": 6,
+        "row": 11,
         "player1": {
           "name": "刘冠羽",
           "seed": 8
@@ -1340,7 +1346,8 @@
         "row": 3,
         "player1": {
           "name": "任安喆",
-          "seed": 5
+          "seed": 5,
+          "qualifier": "A1"
         },
         "player1_en": {
           "name": "REN Anzhe",
@@ -1348,7 +1355,8 @@
         },
         "player2": {
           "name": "陶锦源",
-          "seed": 7
+          "seed": 7,
+          "qualifier": "B2"
         },
         "player2_en": {
           "name": "TAO Jinyuan",
@@ -1356,7 +1364,8 @@
         },
         "score": "3-0",
         "winner": 1,
-        "note": "1/4决赛 A组1 vs B组2 · 9/17"
+        "note": "9/17",
+        "note_en": "9/17"
       },
       {
         "id": "m14",
@@ -1364,7 +1373,8 @@
         "row": 7,
         "player1": {
           "name": "龚雨煊",
-          "seed": 3
+          "seed": 3,
+          "qualifier": "B1"
         },
         "player1_en": {
           "name": "GONG Yuxuan",
@@ -1372,7 +1382,8 @@
         },
         "player2": {
           "name": "任峻贤",
-          "seed": 1
+          "seed": 1,
+          "qualifier": "A2"
         },
         "player2_en": {
           "name": "REN Junxian",
@@ -1380,7 +1391,8 @@
         },
         "score": "2-3",
         "winner": 2,
-        "note": "1/4决赛 B组1 vs A组2 · 9/24"
+        "note": "9/24",
+        "note_en": "9/24"
       },
       {
         "id": "m15",
@@ -1388,7 +1400,8 @@
         "row": 11,
         "player1": {
           "name": "姜子润",
-          "seed": 6
+          "seed": 6,
+          "qualifier": "C1"
         },
         "player1_en": {
           "name": "JIANG Zirun",
@@ -1396,7 +1409,8 @@
         },
         "player2": {
           "name": "王思博",
-          "seed": 11
+          "seed": 11,
+          "qualifier": "D2"
         },
         "player2_en": {
           "name": "WANG Sibo",
@@ -1404,7 +1418,8 @@
         },
         "score": "3-2",
         "winner": 1,
-        "note": "1/4决赛 C组1 vs D组2 · 9/17"
+        "note": "9/17",
+        "note_en": "9/17"
       },
       {
         "id": "m16",
@@ -1412,7 +1427,8 @@
         "row": 15,
         "player1": {
           "name": "谷子易",
-          "seed": 4
+          "seed": 4,
+          "qualifier": "D1"
         },
         "player1_en": {
           "name": "GU Ziyi",
@@ -1420,7 +1436,8 @@
         },
         "player2": {
           "name": "付大卫",
-          "seed": 2
+          "seed": 2,
+          "qualifier": "C2"
         },
         "player2_en": {
           "name": "FU Dawei",
@@ -1433,7 +1450,8 @@
           "7-11"
         ],
         "winner": 2,
-        "note": "1/4决赛 D组1 vs C组2 · 9/17"
+        "note": "9/17",
+        "note_en": "9/17"
       },
       {
         "id": "m17",
@@ -1465,38 +1483,6 @@
     ],
     "connections": [
       {
-        "from": "n1",
-        "to": "m13"
-      },
-      {
-        "from": "n1",
-        "to": "m14"
-      },
-      {
-        "from": "n2",
-        "to": "m13"
-      },
-      {
-        "from": "n2",
-        "to": "m14"
-      },
-      {
-        "from": "n3",
-        "to": "m15"
-      },
-      {
-        "from": "n3",
-        "to": "m16"
-      },
-      {
-        "from": "n4",
-        "to": "m15"
-      },
-      {
-        "from": "n4",
-        "to": "m16"
-      },
-      {
         "from": "m13",
         "to": "m17"
       },
@@ -1520,6 +1506,7 @@
         "from": "m18",
         "to": "m19"
       }
-    ]
+    ],
+    "subtitle_en": "Top 2 in each group advance; quarter-finals are cross-paired (A1-B2 / B1-A2 / C1-D2 / D1-C2)"
   }
 ]

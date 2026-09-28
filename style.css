@@ -1126,7 +1126,12 @@ html:lang(en) .hero-title {
     position: relative; min-width: 100%; min-height: 100%;
     will-change: transform;
 }
-.draws-viewer-svg { pointer-events: none; }
+/* 三个画布层必须叠在同一坐标系里：缺了 absolute 会各自参与文档流、
+   上下堆叠，连线就会画到卡片上方两千米处（而不是穿过卡片）。 */
+.draws-viewer-svg,
+.draws-viewer-grid-bg,
+.draws-viewer-cards-layer { position: absolute; top: 0; left: 0; }
+.draws-viewer-svg { pointer-events: none; z-index: 1; }   /* 连线在卡片之下，不压字 */
 .dv-connection-line {
     fill: none; stroke: var(--primary-blue); stroke-width: 2.5;
     stroke-linecap: round; opacity: 0.65;
@@ -1134,7 +1139,9 @@ html:lang(en) .hero-title {
 .dv-connection-arrow { fill: var(--primary-blue); opacity: 0.65; }
 
 /* 网格背景 — 非常淡 */
-.draws-viewer-grid-bg { pointer-events: none; }
+.draws-viewer-grid-bg { pointer-events: none; z-index: 0; }
+/* 卡片层压在连线之上（DOM 顺序也保证这点，这里写死以防后续插层） */
+.draws-viewer-cards-layer { z-index: 2; }
 
 /* 卡片 */
 .dv-card {
@@ -1271,6 +1278,24 @@ html:lang(en) .hero-title {
 }
 .dv-tbd { color: var(--text-muted); font-style: italic; }
 
+/* 小组出线位徽标（A1 / B2 …）——比种子号更醒目，因为它决定后续对阵 */
+.dv-player-qual {
+    flex-shrink: 0; font-family: 'Poppins', sans-serif; font-size: 0.6rem; font-weight: 800;
+    color: #fff; background: linear-gradient(135deg, #52c41a, #237804);
+    min-width: 18px; height: 15px; padding: 0 4px; border-radius: 4px; margin-right: 4px;
+    display: inline-flex; align-items: center; justify-content: center; letter-spacing: 0.3px;
+    box-shadow: 0 1px 3px rgba(35,120,4,0.35);
+}
+.dark-mode .dv-player-qual { background: linear-gradient(135deg, #95de64, #237804); }
+
+/* 卡片级备注行：弃权/补赛、轮次配对等，必须直接可见 */
+.dv-card-note-line {
+    margin-top: 3px; padding-top: 4px; border-top: 1px dashed var(--border-color);
+    font-size: 0.62rem; line-height: 1.35; color: var(--text-muted); text-align: center;
+    white-space: normal; word-break: break-word;
+}
+.dv-card-note-line:empty { display: none; }
+
 /* 备注卡（组别标题等） */
 .dv-card-note {
     background: var(--primary-pale); border-style: dashed;
@@ -1279,8 +1304,13 @@ html:lang(en) .hero-title {
 .dv-card-note-text {
     font-size: 0.8rem; font-weight: 700; color: var(--primary-blue);
     text-align: center; line-height: 1.3; width: 100%;
-    overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+    overflow: hidden; display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical;
+    white-space: pre-line;   /* 组别标题卡用 \n 排多行小组排名 */
 }
+.dv-card-note-text .dv-note-title { display: block; font-weight: 700; }
+.dv-card-note-text .dv-note-sub { display: block; font-size: 0.66rem; font-weight: 500; color: var(--text-secondary); line-height: 1.45; }
+.dark-mode .dv-card-note-text .dv-note-sub { color: var(--text-secondary); }
+.dv-card-note-text .dv-note-sub.is-out { opacity: 0.62; }
 
 /* 状态徽标 */
 .dv-status-badge {
