@@ -37,11 +37,10 @@ function updateScoreUI(){
   const gpY = scoreYou>=10 && scoreYou>scoreAi, gpA = scoreAi>=10 && scoreAi>scoreYou;
   $('gpYou').classList.toggle('on', gpY); $('gpAi').classList.toggle('on', gpA);
   $('midLabel').textContent = midLabelText();
-  /* 实机遥测 chip：仅「鼠标上的tt玩家」参赛时显示（每分刷新一次） */
+  /* 实机遥测：仅「鼠标上的tt玩家」参赛且本局已计分时上报（不再上屏显示） */
   if(typeof TT_STATS !== 'undefined'){
-    const txt = TT_STATS.chipText(), chip = $('ttStatsChip');
-    if(chip && chip.textContent !== txt){ chip.textContent = txt; chip.classList.toggle('hidden', !txt); }
-    if(txt) TT_STATS.push();
+    const ps = TT_STATS.pointsShare();
+    if(ps && ps.total > 0) TT_STATS.push();
   }
 }
 /* 斗蛐蛐：HUD 两侧名字（不换边 → 开场设一次即可） */

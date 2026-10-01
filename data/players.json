@@ -18,6 +18,10 @@
         "校乒赛2026团体冠军"
       ],
       "role": "",
+      "grade": {
+        "enroll": 2024,
+        "graduate": 2027
+      },
       "qq": "2767240950",
       "description": "",
       "status": "active"
@@ -33,6 +37,10 @@
         "校乒赛2026单打亚军"
       ],
       "role": "",
+      "grade": {
+        "enroll": 2024,
+        "graduate": 2027
+      },
       "qq": "2272391954",
       "description": "",
       "status": "active"
@@ -51,6 +59,10 @@
         "校乒赛2026团体亚军"
       ],
       "role": "社长&新高二校队成员",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "role_en": "President & New Grade-11 School Team Member",
       "qq": "3152269031",
       "description": "统筹社团事务",
@@ -71,6 +83,10 @@
         "校乒赛2026单打季军"
       ],
       "role": "副社长&新高二校队成员",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "role_en": "Vice President & New Grade-11 School Team Member",
       "qq": "3447137342",
       "description": "辅助社长管理社团，校乒赛2026单打季军",
@@ -88,6 +104,10 @@
       ],
       "honors": [],
       "role": "活动部部长&器械部部长&新高二校队成员",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "role_en": "Activities Department Head & Equipment Department Head & New Grade-11 School Team Member",
       "qq": "2507798118",
       "description": "负责社团活动组织与器材管理",
@@ -108,6 +128,10 @@
         "校乒赛2026团体冠军"
       ],
       "role": "",
+      "grade": {
+        "enroll": 2024,
+        "graduate": 2027
+      },
       "qq": "",
       "description": "",
       "status": "alumni"
@@ -123,6 +147,10 @@
       ],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -142,6 +170,10 @@
         "校乒赛2026团体冠军"
       ],
       "role": "",
+      "grade": {
+        "enroll": 2024,
+        "graduate": 2027
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -158,6 +190,10 @@
       ],
       "honors": [],
       "role": "副社长&新高二校队成员",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "role_en": "Vice President & New Grade-11 School Team Member",
       "qq": "3942336638",
       "description": "辅助社长管理社团",
@@ -178,6 +214,10 @@
         "校乒赛2026团体季军"
       ],
       "role": "官网负责人",
+      "grade": {
+        "enroll": 2024,
+        "graduate": 2027
+      },
       "role_en": "Website Manager",
       "qq": "399324556",
       "description": "负责维护官网和积分系统",
@@ -198,6 +238,10 @@
         "校乒赛2026团体冠军"
       ],
       "role": "",
+      "grade": {
+        "enroll": 2024,
+        "graduate": 2027
+      },
       "qq": "2273552742",
       "description": "",
       "status": "active"
@@ -217,6 +261,10 @@
         "校乒赛2026单打季军"
       ],
       "role": "副社长",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "role_en": "Vice President",
       "qq": "2651128121",
       "description": "辅助社长管理社团，校乒赛2026单打季军",
@@ -234,6 +282,10 @@
         "校乒赛2026团体冠军"
       ],
       "role": "",
+      "grade": {
+        "enroll": 2024,
+        "graduate": 2027
+      },
       "qq": "3630249390",
       "description": "",
       "status": "active"
@@ -249,6 +301,10 @@
         "校乒赛2025团体季军"
       ],
       "role": "",
+      "grade": {
+        "enroll": 2024,
+        "graduate": 2027
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -264,7 +320,11 @@
       ],
       "honors": [],
       "role": "",
-      "qq": "",
+      "grade": {
+        "enroll": 2024,
+        "graduate": 2027
+      },
+      "qq": "2673353009",
       "description": "",
       "status": "active"
     },
@@ -277,6 +337,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -292,6 +356,10 @@
         "校乒赛2026团体季军"
       ],
       "role": "",
+      "grade": {
+        "enroll": 2024,
+        "graduate": 2027
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -305,6 +373,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2024,
+        "graduate": 2027
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -318,6 +390,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -331,6 +407,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -344,6 +424,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "1358715119",
       "description": "",
       "status": "active"
@@ -357,6 +441,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -370,6 +458,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -383,6 +475,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -396,6 +492,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -409,6 +509,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -422,6 +526,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -435,6 +543,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -448,6 +560,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -461,6 +577,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -474,6 +594,10 @@
       "tags": [],
       "honors": [],
       "role": "宣传部部长",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "role_en": "Publicity Department Head",
       "qq": "3331310563",
       "description": "负责社团宣传工作",
@@ -489,6 +613,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -502,6 +630,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -515,6 +647,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -528,6 +664,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -541,6 +681,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -554,6 +698,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -567,6 +715,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -580,6 +732,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -593,6 +749,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -606,6 +766,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -619,6 +783,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -632,6 +800,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -645,6 +817,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -656,8 +832,14 @@
       "aliases": [],
       "initialScore": 2000,
       "tags": [],
-      "honors": ["校乒赛2026团体季军"],
+      "honors": [
+        "校乒赛2026团体季军"
+      ],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"
@@ -671,6 +853,10 @@
       "tags": [],
       "honors": [],
       "role": "",
+      "grade": {
+        "enroll": 2025,
+        "graduate": 2028
+      },
       "qq": "",
       "description": "",
       "status": "active"

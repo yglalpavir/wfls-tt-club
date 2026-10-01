@@ -33,7 +33,7 @@ function checkNet(){
     if(Math.random() < 0.55){
       v.z *= 0.44; v.y = Math.min(v.y,0.25)*0.5+0.1; v.x *= 0.72;
       if(isServe) netLet = true;
-      toast(gameT('g_toast_netcord'), 'NET CORD', 'gold', 900);
+      toast(gameT('g_toast_netcord'), '', 'gold', 900);
     }else{ p.z = back; v.z *= -0.16; v.y *= 0.35; v.x *= 0.6; lastNetBy = lastHitter; }
   }else{
     p.z = back; v.z *= -0.13; v.y *= 0.42; v.x *= 0.55; lastNetBy = lastHitter;
@@ -147,20 +147,20 @@ function hitPlayer(){
   const rpm = Math.round(Math.abs(r.relOut)*9.55/10)*10;
   if(isPush){ toast(gameT('g_toast_push'), gameT('g_toast_push_sub'), 'you', 700); }
   else if(isSmash){
-    toast(gameT(r.stroke==='forehand' ? 'g_toast_fh_smash' : 'g_toast_bh_smash'), (r.stroke==='forehand'?'FH SMASH':'BH SMASH')+' · '+Math.round(pace*3.6)+' km/h', 'you', 900);
+    toast(gameT(r.stroke==='forehand' ? 'g_toast_fh_smash' : 'g_toast_bh_smash'), Math.round(pace*3.6)+' km/h', 'you', 900);
     shake = Math.max(shake, 0.08); fovKick = Math.max(fovKick, 5.0);
   }
   else if(isCounter){
-    toast(gameT('g_toast_counter'), 'BACKHAND COUNTER · '+Math.round(pace*3.6)+' km/h', 'you', 900);
+    toast(gameT('g_toast_counter'), Math.round(pace*3.6)+' km/h', 'you', 900);
     flashSpr.material.color.set(0x9fe8ff);
     shake = Math.max(shake, 0.045); fovKick = Math.max(fovKick, 2.8);
   }
-  else if(isLoop){ toast(gameT('g_toast_fh_loop'), 'POWER LOOP · '+rpm+' RPM', 'you', 900); shake = Math.max(shake, 0.05); fovKick = Math.max(fovKick, 3.2); }
+  else if(isLoop){ toast(gameT('g_toast_fh_loop'), rpm+' RPM', 'you', 900); shake = Math.max(shake, 0.05); fovKick = Math.max(fovKick, 3.2); }
   else if(Math.abs(side)>SPIN.toastThresh){ toast(gameT('g_toast_sidespin'), gameT(playerPad.svx<0?'g_curve_l':'g_curve_r'), 'gold', 800); playSwipe(clamp(Math.abs(side)/SPIN.sideCap,0.5,1)); }
-  else if(!receive && r.stroke==='forehand' && pace>4.6 && topMag>140){ toast(gameT('g_toast_fh_loop'), 'POWER LOOP · '+rpm+' RPM', 'you', 800); fovKick = Math.max(fovKick, 2.2); }
-  else if(receive && r.stroke==='forehand' && pace>4.2){ toast(gameT('g_toast_fh_drive'), 'QUICK DRIVE · '+Math.round(pace*3.6)+' km/h', 'you', 700); }   // 接发第一板无爆冲，强回球涌现为快带
-  else if(r.stroke==='backhand' && pace>4.3) toast(gameT('g_toast_bh_snap'), 'BACKHAND SNAP', 'you', 800);
-  else if(r.stroke==='backhand' && Math.abs(ax)>0.68) toast(gameT('g_toast_wide'), 'WIDE ANGLE', 'gold', 700);
+  else if(!receive && r.stroke==='forehand' && pace>4.6 && topMag>140){ toast(gameT('g_toast_fh_loop'), rpm+' RPM', 'you', 800); fovKick = Math.max(fovKick, 2.2); }
+  else if(receive && r.stroke==='forehand' && pace>4.2){ toast(gameT('g_toast_fh_drive'), Math.round(pace*3.6)+' km/h', 'you', 700); }   // 接发第一板无爆冲，强回球涌现为快带
+  else if(r.stroke==='backhand' && pace>4.3) toast(gameT('g_toast_bh_snap'), '', 'you', 800);
+  else if(r.stroke==='backhand' && Math.abs(ax)>0.68) toast(gameT('g_toast_wide'), '', 'gold', 700);
   smEl.classList.remove('pop'); void smEl.offsetWidth; smEl.classList.add('pop');
   // ★ 记录玩家行为：来球情境 + 出球动作（训练"玩家模型"作为 AI 对手）
   if(typeof PLAYER_LOG !== 'undefined' && mode==='play'){
@@ -216,10 +216,10 @@ function hitAI(){
   playStroke(stroke, d.playSoundPower);
   // 播报
   if(d.mode==='push') toast(gameT('g_toast_ai_push'), gameT('g_toast_ai_push_sub'), 'ai', 700);
-  else if(d.mode==='lift') toast(gameT('g_toast_ai_lift'), 'AI LOOP UP', 'ai', 700);
-  else if(d.mode==='counter') toast(gameT('g_toast_ai_counter'), 'AI COUNTER · '+Math.round(d.pace*3.6)+' km/h', 'ai', 800);
+  else if(d.mode==='lift') toast(gameT('g_toast_ai_lift'), '', 'ai', 700);
+  else if(d.mode==='counter') toast(gameT('g_toast_ai_counter'), Math.round(d.pace*3.6)+' km/h', 'ai', 800);
   else if(d.mode==='loop' && d.relOut>150) toast(gameT('g_toast_ai_loop'), gameT('g_toast_ai_loop_sub'), 'ai', 900);
-  else if(d.mode==='smash'){ toast(gameT('g_toast_ai_smash'), 'AI SMASH', 'ai', 700); shake = Math.max(shake, 0.045); fovKick = Math.max(fovKick, 2.6); }
+  else if(d.mode==='smash'){ toast(gameT('g_toast_ai_smash'), '', 'ai', 700); shake = Math.max(shake, 0.045); fovKick = Math.max(fovKick, 2.6); }
 }
 /* 斗蛐蛐：左侧（近侧/原玩家侧）也由 aiDecision 回球（dir=-1 向 -Z；两 AI 各用所选模型） */
 function hitAIForPlayer(){

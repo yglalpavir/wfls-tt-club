@@ -6,7 +6,7 @@
  *  · 挂点：rules.pointTo（得分+失分原因）、tt-player.ttHit（触球/擦网）、
  *         tt-player.ttTick（动作分布）
  *  · 只在至少一侧是 ttmouse（DQN）模型时计入，其余对局不计。
- *  · 用法：TT_STATS.reset() / snapshot() / pointsShare() / chipText() / push()
+ *  · 用法：TT_STATS.reset() / snapshot() / pointsShare() / push()
  * ===================================================================== */
 'use strict';
 
@@ -113,13 +113,6 @@ const TT_STATS = (() => {
         const body = JSON.stringify({ at: Date.now(), pair: cur.pair, snap: s, share: pointsShare() });
         return navigator.sendBeacon('/api/ttstats', new Blob([body], { type: 'application/json' }));
       }catch(e){ return false; }
-    },
-    /* HUD 一行文案；无 DQN 参赛或尚无得分时返回空串 */
-    chipText(){
-      const p = pointsShare(); if(!p || p.total === 0) return '';
-      const d = snap()[p.dqnSide];
-      return 'DQN ' + p.dqnPts + ':' + p.oppPts + ' (' + p.share + '%)'
-           + ' · ' + gameT('g_chip_mid', { n: d.contacts, r: (d.netRate || 0), opp: modelLabel(p.oppModel) });
     },
   };
 })();
