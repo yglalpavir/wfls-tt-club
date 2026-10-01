@@ -13,9 +13,12 @@
    跳过局数匹配）；局分逐条合法、无平局、与总比分自洽；仅有局分时须能推出胜方
 6. 比赛类型都在 event-coefficient.json 中有定义
 7. 赛季：ISO 日期、start<=end、不重叠、snapshotDates 合法且落在赛季内
-8. players.json：uid/姓名唯一、initialScore 为数值、status 枚举
+8. players.json：uid/姓名唯一、initialScore 为数值、status 枚举、grade 为合法入学/毕业年份对
 9. draws.json：competitionId 引用有效、卡片 id 唯一、winner 取值合法
 10. 赛季覆盖检查：当前日期超出最后一个赛季结束时失败（强制创建新赛季，防止口径漂移）
+11. WTT score-log（wtt_data/*/）：按项目目录判定单双打形态、类型须在该项目自己的
+    event-coefficient.json 里有系数、日期合法且不在未来。俱乐部侧的「类型 == 双打」
+    口径对 WTT 不成立——WTT 的「类型」是赛事名，单双打由 wtt_data/ 下的项目目录决定。
 
 注：同日 (日期,类型,胜者,负者) 完全重复的记录属正常多次对局（README 有口径说明），不做去重检测。
 用法: python tools/ci_validate.py
@@ -378,7 +381,9 @@ if not isinstance(plist, list):
     err("players.json 缺少 players 数组")
     plist = []
 uids, pnames, dup_uid, dup_name, bad_score, bad_status = set(), set(), 0, 0, 0, 0
+bad_grade = 0
 STATUS_ENUM = {"active", "alumni"}
+GRADE_MAX_SPAN = 6   # 入学到毕业合理跨度（年）；超出视为录错
 for p in plist:
     if not isinstance(p, dict):
         err("players.json 存在非对象条目")
@@ -399,6 +404,17 @@ for p in plist:
     st = p.get("status")
     if st is not None and st not in STATUS_ENUM:
         bad_status += 1
+    # grade 可选：存在时须为 {enroll, graduate} 两个整数，且毕业年不早于入学年、跨度合理
+    gr = p.get("grade")
+    if gr is not None:
+        if not isinstance(gr, dict):
+            bad_grade += 1
+        else:
+            en, ge = gr.get("enroll"), gr.get("graduate")
+            if not all(isinstance(v, int) and not isinstance(v, bool) for v in (en, ge)):
+                bad_grade += 1
+            elif ge - en < 0 or ge - en > GRADE_MAX_SPAN:
+                bad_grade += 1
 if dup_uid:
     err(f"players.json 存在 {dup_uid} 个重复 uid")
 if dup_name:
@@ -407,8 +423,10 @@ if bad_score:
     err(f"players.json 存在 {bad_score} 个非数值 initialScore（会触发前端字符串拼接链）")
 if bad_status:
     err(f"players.json 存在未知 status（允许: {sorted(STATUS_ENUM)}）")
-if not (dup_uid or dup_name or bad_score or bad_status):
-    ok(f"{len(plist)} 名球员 uid/姓名唯一，initialScore 与 status 合法")
+if bad_grade:
+    err(f"players.json 存在 {bad_grade} 个非法 grade（须为 {{enroll, graduate}} 整数对，跨度 0~{GRADE_MAX_SPAN} 年）")
+if not (dup_uid or dup_name or bad_score or bad_status or bad_grade):
+    ok(f"{len(plist)} 名球员 uid/姓名唯一，initialScore、status 与 grade 合法")
 
 # ---- 9) draws.json 引用 ----
 print("[9] draws.json 引用检查")
@@ -460,6 +478,71 @@ else:
             f"否则新比赛将持续计入被延伸的旧赛季且不会触发跨赛季积分继承")
     else:
         ok(f"赛季覆盖至 {last}")
+
+# ---- 11) WTT score-log 结构校验 ----
+# wtt_data/{ms,ws}/ 是单打，{md,wd,xd}/ 是双打；判别依据是项目目录而非「类型」字段
+# （WTT 的「类型」是赛事名如「德甲联赛」「T联赛」，与单双打无关）。
+print("[11] WTT score-log 结构")
+WTT_DOUBLES_DIRS = {"md", "wd", "xd"}
+wtt_badpair = wtt_selfplay = wtt_badtype = wtt_baddate = wtt_future = wtt_nodir = 0
+wtt_files = 0
+for cat_dir in sorted(os.listdir(os.path.join(ROOT, "wtt_data"))):
+    cat_path = os.path.join(ROOT, "wtt_data", cat_dir)
+    if not os.path.isdir(cat_path):
+        continue
+    is_doubles = cat_dir in WTT_DOUBLES_DIRS
+    # 该项目自己的系数表；缺失时跳过类型检查而不是误报
+    coeff_path = os.path.join(cat_path, "event-coefficient.json")
+    cat_types = None
+    if os.path.exists(coeff_path):
+        coeff = load(coeff_path)
+        if isinstance(coeff, dict):
+            cat_types = {k for k, v in coeff.items() if isinstance(v, (int, float))}
+    for fn in sorted(os.listdir(cat_path)):
+        if not (fn.startswith("score-log-") and fn.endswith(".json")):
+            continue
+        wtt_files += 1
+        wlog = load(os.path.join(cat_path, fn))
+        if not isinstance(wlog, list):
+            continue  # 解析失败已在 [1] 报错
+        for r in wlog:
+            if not isinstance(r, dict) or not r.get("胜者"):
+                continue
+            d = r.get("日期")
+            if not valid_iso(d):
+                wtt_baddate += 1
+            elif str(d) > today:
+                wtt_future += 1
+            t = r.get("类型")
+            if cat_types is not None and t and t not in cat_types:
+                wtt_badtype += 1
+            w_pair, l_pair = split_pair(r["胜者"]), split_pair(r.get("负者"))
+            if is_doubles:
+                if w_pair is None or l_pair is None:
+                    wtt_badpair += 1
+                    continue
+                # 同人组合（A/A）与组合自弈（A/B vs B/A）
+                if w_pair[0] == w_pair[1] or l_pair[0] == l_pair[1]:
+                    wtt_badpair += 1
+                if (pair_canon(r["胜者"], w_pair) == pair_canon(r.get("负者"), l_pair)):
+                    wtt_selfplay += 1
+            elif w_pair is not None or l_pair is not None:
+                # 单打项目里出现组合名
+                wtt_badpair += 1
+if wtt_baddate:
+    err(f"{wtt_baddate} 条 WTT 记录的日期不是合法 YYYY-MM-DD")
+if wtt_future:
+    err(f"{wtt_future} 条 WTT 记录的日期在未来（{today} 之后）")
+if wtt_badpair:
+    err(f"{wtt_badpair} 条 WTT 记录的组合形态与项目不符"
+        f"（双打项目须为两人 A/B 组合且两侧成员不同；单打项目不得含组合名）")
+if wtt_selfplay:
+    err(f"发现 {wtt_selfplay} 条 WTT 自弈记录（组合按成员集合比较）")
+if wtt_badtype:
+    err(f"{wtt_badtype} 条 WTT 记录的类型未在该项目的 event-cofficient.json 中定义")
+if not (wtt_baddate or wtt_future or wtt_badpair or wtt_selfplay or wtt_badtype):
+    ok(f"{wtt_files} 个 WTT score-log 文件形态/类型/日期全部合法")
+
 
 print()
 if errors:

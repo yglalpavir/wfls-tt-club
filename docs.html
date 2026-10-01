@@ -483,7 +483,7 @@
 <div class="fm-page">
     <header class="fm-head">
         <div class="fm-titles">
-            <h1><span class="h1-dot"></span><span data-i18n="docs_title">网站文档</span> <span class="fm-sub">Assets/</span></h1>
+            <h1><span class="h1-dot"></span><span data-i18n="docs_title">网站文档</span> <span class="fm-sub" data-i18n="docs_lib_sub">素材库</span></h1>
             <p class="fm-desc" data-i18n="docs_desc">浏览与预览站点文档与静态资源：图片 · 视频 · 音频 · PDF · 文本代码</p>
             <span class="fm-meta-line" id="fmMeta" hidden></span>
         </div>
@@ -494,13 +494,13 @@
                 <button type="button" class="fm-scope" id="scopeToggle" title="搜索范围：当前目录" data-i18n-title="docs_scope_title"><i class="fa-solid fa-folder-tree"></i></button>
             </div>
             <button type="button" class="fm-btn icon-only" id="viewToggle" title="切换视图" data-i18n-title="docs_view_toggle_title"><i class="fa-solid fa-list"></i></button>
-            <button type="button" class="fm-btn icon-only" id="refreshBtn" title="重新扫描 Assets" data-i18n-title="docs_refresh"><i class="fa-solid fa-rotate"></i></button>
+            <button type="button" class="fm-btn icon-only" id="refreshBtn" title="重新加载素材库" data-i18n-title="docs_refresh"><i class="fa-solid fa-rotate"></i></button>
         </div>
     </header>
 
     <div class="fm-toolbar">
         <div class="fm-crumbs-row">
-            <nav class="fm-crumbs" id="fmCrumbs" aria-label="目录路径" data-i18n-aria="docs_breadcrumb_aria"></nav>
+            <nav class="fm-crumbs" id="fmCrumbs" aria-label="位置导航" data-i18n-aria="docs_breadcrumb_aria"></nav>
             <span class="fm-stats" id="fmStats" aria-live="polite"></span>
         </div>
         <div class="fm-chips-row">
@@ -526,7 +526,7 @@
                 <div class="fm-skel"><div class="fm-skel-thumb"></div><div class="fm-skel-line w70"></div><div class="fm-skel-line w45"></div></div>
                 <div class="fm-skel"><div class="fm-skel-thumb"></div><div class="fm-skel-line w70"></div><div class="fm-skel-line w45"></div></div>
             </div>
-            <p data-i18n="docs_loading">正在扫描 Assets 目录…</p>
+            <p data-i18n="docs_loading">正在加载素材库…</p>
         </div>
         <div class="fm-state" id="fmError" hidden></div>
         <div id="fmListing" hidden>

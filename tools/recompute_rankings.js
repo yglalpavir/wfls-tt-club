@@ -183,7 +183,7 @@ function writeIndexHtml(file, m) {
     '</head>',
     '<body>',
     '<h1>WFLS 乒乓球社 · 官网数据 API</h1>',
-    '<p class="meta">生成时间 ' + m.generatedAt + ' · 数据来源 commit <code>' + (m.commit || '-') + '</code> · 实时口径 ' + m.realtimeAsOf + ' · <a href="manifest.json">manifest.json</a></p>',
+    '<p class="meta">数据更新于 ' + m.generatedAt + ' · 排名口径 ' + m.realtimeAsOf + '</p>',
     '<table>',
     '  <thead><tr><th>端点</th><th>条数</th><th>说明</th></tr></thead>',
     '<tbody>',
@@ -273,6 +273,7 @@ function tallyWindow(rawLog, seasons, today) {
         tags: p.tags || [],
         honors: p.honors || [],
         role: p.role || '',
+        grade: p.grade || null,
         status: p.status || 'active',
         initialScore: p.initialScore,
         current: cur ? { points: cur['当前积分'], rank: cur.rank, matches: cur['总场次'], wins: t.wins, losses: t.total - t.wins, winRate: cur['胜率'] } : null

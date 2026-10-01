@@ -1,5 +1,26 @@
 [
   {
+    "version": "v1.3.0",
+    "date": "2026-10-01",
+    "title": "新增数据规模页",
+    "title_en": "New Data Scale Page",
+    "tag": "feature",
+    "changes": [
+      "新增**数据规模**页面（页脚「数据」栏入口）：一页看全本站到底攒了多少数据",
+      "社团侧：成员数、比赛记录、逐月走势柱状图、赛事类型分布、成员标签与荣誉",
+      "职业赛事历史库：6.7 万条记录、6000+ 名球员、2001 年至今的五个单项分布",
+      "内容与素材：文章条目、改稿留档、媒体附件与素材库体积构成",
+      "页面支持中英切换与明暗主题自适应"
+    ],
+    "changes_en": [
+      "Added a **Data Scale** page (linked from the footer's Data column) showing at a glance how much data this site holds",
+      "Club side: member count, match records, a matches-by-month chart, match type breakdown, member tags and honours",
+      "Professional tournament archive: 67k+ records, 6000+ players, and the five event breakdowns since 2001",
+      "Content and media: article count, archived revisions, media attachments and the media library's size breakdown",
+      "The page supports language switching and follows the light/dark theme"
+    ]
+  },
+  {
     "version": "v1.2.0",
     "date": "2026-09-28",
     "title": "比赛详情页、双打榜单与全站英文化",

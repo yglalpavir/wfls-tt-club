@@ -11948,8 +11948,7 @@
     "assoc": "YEM",
     "country": "Yemen",
     "source": "manual-ag2023"
-  }
-,
+  },
   "Anane VONGSA": {
     "assoc": "LAO",
     "country": "Laos",
@@ -12059,5 +12058,960 @@
     "assoc": "MAC",
     "country": "Macau, China",
     "source": "manual-ag2026-ms"
+  },
+  "SCHREYER Erik": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "tleague-roster-2026"
+  },
+  "DUDA Frederik": {
+    "assoc": "AUT",
+    "country": "Austria",
+    "source": "tleague-roster-2026"
+  },
+  "Kas VAN OOST": {
+    "assoc": "NED",
+    "country": "Netherlands",
+    "source": "tleague-roster-2026"
+  },
+  "Leo DE NODREST": {
+    "assoc": "NED",
+    "country": "Netherlands",
+    "source": "tleague-roster-2026"
+  },
+  "MÜHLBACH Hermann": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "tleague-roster-2026"
+  },
+  "PUGNA Bogdan": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "tleague-roster-2026"
+  },
+  "ARPAS Samuel": {
+    "assoc": "CRO",
+    "country": "Croatia",
+    "source": "tleague-roster-2026"
+  },
+  "Gionis Panagiotis": {
+    "assoc": "GRE",
+    "country": "Greece",
+    "source": "tleague-roster-2026"
+  },
+  "Freitas Marcos": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "tleague-roster-2026"
+  },
+  "Qingyu MENG": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "tleague-roster-2026"
+  },
+  "Lichen WANG": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "tleague-roster-2026"
+  },
+  "LAM Nathan": {
+    "assoc": "MAC",
+    "country": "Macau, China",
+    "source": "tleague-roster-2026"
+  },
+  "CHAN Baldwin Ho Wah": {
+    "assoc": "HKG",
+    "country": "Hong Kong, China",
+    "source": "tleague-roster-2026"
+  },
+  "Yijae LEE": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "tleague-roster-2026"
+  },
+  "Jianan CHEN": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "tleague-roster-2026"
+  },
+  "Jinqi CHEN": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "tleague-roster-2026"
+  },
+  "Xinghao ZHAO": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "tleague-roster-2026"
+  },
+  "Yu XU": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "tleague-roster-2026"
+  },
+  "SHU Yu": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "tleague-roster-2026"
+  },
+  "Juan YU": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "tleague-roster-2026"
+  },
+  "EIDA Satoshi": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "SONE Kakeru": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "KAMI Takaya": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "MAWATARI Motoki": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "YOKOYA Akira": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "ONODERA Shohei": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "SUZUKI Hayate": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "NODA Sota": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "IGARASHI Fumiya": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "KONISHI Kaii": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "MIKI Hayato": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "TAKAGIWA Takashi": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "TEZUKA Ryoma": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "SEKI Hiroto": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "MASAKI Daito": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "HAGIHARA Keishi": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "OKANO Shunsuke": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "MIYAKAWA Masahiro": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "IWAIDA Shunto": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "ITO Yuta": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "TOKUDA Kanta": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "NISHI Yasuhiro": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "MIYAGAWA Shodai": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "YOSHIYAMA Kazuki": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "DEN Masaki": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "ISHIYAMA Shin": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "KAWAKAMI Ryuusei": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "TANIMOTO Takumi": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "YAMAZAKI Hayato": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "HOMMA Yuito": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "SAWADA Ryusei": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "ONO Daito": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "ONO Soma": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "ABE Yuto": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "UEDA Hitoshi": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "TAZOE Hibiki": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "MATSUSHITA Taisei": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "NAKANO Kohaku": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "Winnam WU": {
+    "assoc": "HKG",
+    "country": "Hong Kong, China",
+    "source": "tleague-roster-2026"
+  },
+  "Hui JIANG": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "tleague-roster-2026"
+  },
+  "Xi LAN": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "tleague-roster-2026"
+  },
+  "SUTHASINI Sawettabut": {
+    "assoc": "THA",
+    "country": "Thailand",
+    "source": "tleague-roster-2026"
+  },
+  "Mongyu YOO": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "tleague-roster-2026"
+  },
+  "Hanna YOO": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "tleague-roster-2026"
+  },
+  "Yuhan MA": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "tleague-roster-2026"
+  },
+  "Chengxi ZHU": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "tleague-roster-2026"
+  },
+  "Chengfei ZHU": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "tleague-roster-2026"
+  },
+  "Mingyi DENG": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "tleague-roster-2026"
+  },
+  "Shan SHANG": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "tleague-roster-2026"
+  },
+  "Minyi TIAN": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "tleague-roster-2026"
+  },
+  "Zuton YAO": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "tleague-roster-2026"
+  },
+  "Meiyou SONG": {
+    "assoc": "PRK",
+    "country": "Korea DPR",
+    "source": "tleague-roster-2026"
+  },
+  "Yijin SONG": {
+    "assoc": "PRK",
+    "country": "Korea DPR",
+    "source": "tleague-roster-2026"
+  },
+  "UCHINAMI Yu": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "IBAYASHI Marina": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "NANBA Yurika": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "OKAWA Mami": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "OKAWA Chihiro": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "MIMURA Yuka": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "EDAGAWA Hitomi": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "EDAHIRO Hitomi": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "EDAHIRO Madoka": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "TSURUOKA Natsuki": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "NARIMOTO Ayami": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "SHUTO Narumi": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "EDAGAKI Ai": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "KUDO Yume": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "NAKAMURA Mitsuki": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "WATARAI Yu": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "KOBAYASHI Ringo": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "WATARAI Hiro": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "SANADA Haruha": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "SANADA Seiha": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "ASADA Mana": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "YOSHIMATSU Kotori": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "TSUKASA Senri": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "YAMAMOTO Shoko": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "NAGAO Akiko": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "SUGITA Hinami": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "SUGITA Haruna": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "KIMURA Miho": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "KIMURA Mitsuho": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "IMAEDA Aimi": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "FUJITA Chiko": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "INOUE Masaya": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "ONO Sara": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "tleague-roster-2026"
+  },
+  "Minyang SONG": {
+    "assoc": "PRK",
+    "country": "Korea DPR",
+    "source": "tleague-roster-2026"
+  },
+  "Shengqi ZHENG": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "tleague-roster-2026"
+  },
+  "FLORE Tristan": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "OUAICHE Stephane": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "ROBINOT Quentin": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "MATTENET Adrien": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "HACHARD Antoine": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "AKKUZU Can": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "GARDOS Robert": {
+    "assoc": "AUT",
+    "country": "Austria",
+    "source": "fftt-proa"
+  },
+  "ROBINOT Alexandre": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "DRINKHALL Paul Andrew": {
+    "assoc": "ENG",
+    "country": "England",
+    "source": "fftt-proa"
+  },
+  "CASSIN Alexandre": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "TOKIC Bojan": {
+    "assoc": "SLO",
+    "country": "Slovenia",
+    "source": "fftt-proa"
+  },
+  "GERELL Par": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "fftt-proa"
+  },
+  "CHEN Tianyuan": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "ALAMIAN Nima": {
+    "assoc": "IRI",
+    "country": "Iran",
+    "source": "fftt-proa"
+  },
+  "PERSSON Jon": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "fftt-proa"
+  },
+  "NORDBERG Hampus": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "fftt-proa"
+  },
+  "PRYSHCHEPA Yehven": {
+    "assoc": "UKR",
+    "country": "Ukraine",
+    "source": "fftt-proa"
+  },
+  "ANGLES Enzo": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "LAKEEV Vassily": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "fftt-proa"
+  },
+  "JOUTI Eric": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "fftt-proa"
+  },
+  "CAVAILLE Jules": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "BAUM Patrick": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "fftt-proa"
+  },
+  "BROSSIER Benjamin": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "OLAH Benedek": {
+    "assoc": "FIN",
+    "country": "Finland",
+    "source": "fftt-proa"
+  },
+  "REMBERT Bastien": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "ISMAILOV Sadi": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "fftt-proa"
+  },
+  "OLLIVIER Brice": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "FRUCHART Benjamin": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "STAMATOUROS Georgios": {
+    "assoc": "GRE",
+    "country": "Greece",
+    "source": "fftt-proa"
+  },
+  "ISHIY Vitor Seiji": {
+    "assoc": "BRA",
+    "country": "Brazil",
+    "source": "fftt-proa"
+  },
+  "SALIFOU Abdel Kader": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "OMOTAYO Olajide Adeyemi": {
+    "assoc": "NGR",
+    "country": "Nigeria",
+    "source": "fftt-proa"
+  },
+  "LEBESSON Emmanuel": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "SZUDI Adam": {
+    "assoc": "HUN",
+    "country": "Hungary",
+    "source": "fftt-proa"
+  },
+  "LO Dany": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "MAJOROS Bence": {
+    "assoc": "HUN",
+    "country": "Hungary",
+    "source": "fftt-proa"
+  },
+  "CAMPOS VALDES Jorge Moises": {
+    "assoc": "CUB",
+    "country": "Cuba",
+    "source": "fftt-proa"
+  },
+  "JOVER Sebastien": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "DERIT Johan": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "ZHENG Dorian": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "AHMADIAN Amin": {
+    "assoc": "IRI",
+    "country": "Iran",
+    "source": "fftt-proa"
+  },
+  "LANDRIEU Andrea": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "CHATZILYGEROUDIS Gerasimos": {
+    "assoc": "GRE",
+    "country": "Greece",
+    "source": "fftt-proa"
+  },
+  "CHUANG Chih-Yuang": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "fftt-proa"
+  },
+  "LIAO Chen Ting": {
+    "assoc": "TPE",
+    "country": "Chinese Taipei",
+    "source": "fftt-proa"
+  },
+  "SGOUROPOULOS Ioannis": {
+    "assoc": "GRE",
+    "country": "Greece",
+    "source": "fftt-proa"
+  },
+  "CRISAN Adrian": {
+    "assoc": "ROU",
+    "country": "Romania",
+    "source": "fftt-proa"
+  },
+  "LEE Seunjun": {
+    "assoc": "KOR",
+    "country": "Korea Republic",
+    "source": "fftt-proa"
+  },
+  "LORENTZ Romain": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "LAROCHE Thomas": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "JEAN Gregoire": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "ABUSEV Artur": {
+    "assoc": "RUS",
+    "country": "Russia",
+    "source": "fftt-proa"
+  },
+  "MINO Alberto": {
+    "assoc": "GER",
+    "country": "Germany",
+    "source": "fftt-proa"
+  },
+  "DINGSHUO Liu": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "fftt-proa"
+  },
+  "AFANADOR Brian": {
+    "assoc": "PUR",
+    "country": "Puerto Rico",
+    "source": "fftt-proa"
+  },
+  "PENG Xiang": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "fftt-proa"
+  },
+  "THAKKAR Manav Vikash": {
+    "assoc": "IND",
+    "country": "India",
+    "source": "fftt-proa"
+  },
+  "LLORCA Damien": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "MONTEIRO Joao Pedro": {
+    "assoc": "POR",
+    "country": "Portugal",
+    "source": "fftt-proa"
+  },
+  "EFIMOV Vitaly": {
+    "assoc": "POR",
+    "country": "Portugal",
+    "source": "fftt-proa"
+  },
+  "MOURIER Flavio": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "QUEK YONG Izaac": {
+    "assoc": "SGP",
+    "country": "Singapore",
+    "source": "fftt-proa"
+  },
+  "NOIRAULT Antoine": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "SUN Wen": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "fftt-proa"
+  },
+  "LAKATOS Tamas": {
+    "assoc": "HUN",
+    "country": "Hungary",
+    "source": "fftt-proa"
+  },
+  "LIU Yebo": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "fftt-proa"
+  },
+  "DYJAS Jakub": {
+    "assoc": "POL",
+    "country": "Poland",
+    "source": "fftt-proa"
+  },
+  "CHEN Yaxuan": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "fftt-proa"
+  },
+  "LICEN Yuan": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "fftt-proa"
+  },
+  "PELCY Denis": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "QIHAO Zhou": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "fftt-proa"
+  },
+  "LIU Jialiang": {
+    "assoc": "CHN",
+    "country": "China",
+    "source": "fftt-proa"
+  },
+  "PILARD Nathan": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "BERGLUND Simon": {
+    "assoc": "SWE",
+    "country": "Sweden",
+    "source": "fftt-proa"
+  },
+  "COVA Laurent": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "KAYAMA Yu": {
+    "assoc": "JPN",
+    "country": "Japan",
+    "source": "fftt-proa"
+  },
+  "CANTERO JUNCAL Jesus": {
+    "assoc": "ESP",
+    "country": "Spain",
+    "source": "fftt-proa"
+  },
+  "BROCHARD Benjamin": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "DE SAINTILAN Mathieu": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "SZANTOSI David": {
+    "assoc": "HUN",
+    "country": "Hungary",
+    "source": "fftt-proa"
+  },
+  "LANDREAU Antonin": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "LAINE-CAMPINO Clement": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
+  },
+  "BAILLIET Thibault": {
+    "assoc": "FRA",
+    "country": "France",
+    "source": "fftt-proa"
   }
 }

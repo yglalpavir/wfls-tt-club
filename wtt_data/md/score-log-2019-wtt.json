@@ -15,13 +15,19 @@
     "日期": "2019-09-06",
     "类型": "T联赛",
     "胜者": "CHUANG Chih-Yuan/Yuto KIZUKURI",
-    "负者": "Koki NIWA/Kenta TAZOE"
+    "负者": "Koki NIWA/Kenta TAZOE",
+    "比分": "2-1",
+    "局分": [
+      "11-9",
+      "5-11",
+      "11-9"
+    ]
   },
   {
     "日期": "2019-09-07",
     "类型": "T联赛",
     "胜者": "CHUANG Chih-Yuan/CHEN Jianan",
-    "负者": "Masataka MORIZONO/Kohei SANBE"
+    "负者": "Kohei SAMBE/Masataka MORIZONO"
   },
   {
     "日期": "2019-09-07",
@@ -33,19 +39,23 @@
     "日期": "2019-09-07",
     "类型": "T联赛",
     "胜者": "Koki NIWA/Yuya OSHIMA",
-    "负者": "Seiya KISHIKAWA/Masaki TAKAMI"
-  },
-  {
-    "日期": "2019-09-09",
-    "类型": "T联赛",
-    "胜者": "CHEN Szu-Yu/Miyu MAEDA",
-    "负者": "Misaki MORIZONO/Ayane MORITA"
+    "负者": "Seiya KISHIKAWA/Masaki TAKAMI",
+    "比分": "2-0",
+    "局分": [
+      "11-4",
+      "11-4"
+    ]
   },
   {
     "日期": "2019-09-10",
     "类型": "T联赛",
     "胜者": "Kenta MATSUDAIRA/Yuki HIRANO",
-    "负者": "Yukiya UDA/Tomokazu HARIMOTO"
+    "负者": "Yukiya UDA/Tomokazu HARIMOTO",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-7"
+    ]
   },
   {
     "日期": "2019-10-19",
@@ -69,13 +79,12 @@
     "日期": "2019-11-23",
     "类型": "T联赛",
     "胜者": "Masataka MORIZONO/Asuka MACHI",
-    "负者": "Yuki HIRANO/Kenta MATSUDAIRA"
-  },
-  {
-    "日期": "2019-11-23",
-    "类型": "T联赛",
-    "胜者": "LEE Ho Ching/HUANG Yuwen",
-    "负者": "Sakura MORI/Miyu MAEDA"
+    "负者": "Yuki HIRANO/Kenta MATSUDAIRA",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-8"
+    ]
   },
   {
     "日期": "2019-11-24",
@@ -90,34 +99,38 @@
     "负者": "CHEN Jianan/LI Ping"
   },
   {
-    "日期": "2019-11-24",
-    "类型": "T联赛",
-    "胜者": "LEE Ho Ching/HUANG Yuwen",
-    "负者": "Misaki MORIZONO/Rika SUZUKI"
-  },
-  {
-    "日期": "2019-11-24",
-    "类型": "T联赛",
-    "胜者": "Miyu MAEDA/Sakura MORI",
-    "负者": "DOO Hoi Kem/ZENG Jian"
-  },
-  {
     "日期": "2019-12-06",
     "类型": "T联赛",
     "胜者": "Masataka MORIZONO/Asuka MACHI",
-    "负者": "Taimu ARINOBU/Yuto KIZUKURI"
+    "负者": "Taimu ARINOBU/Yuto KIZUKURI",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-7"
+    ]
   },
   {
     "日期": "2019-12-07",
     "类型": "T联赛",
     "胜者": "Yukiya UDA/Kenta TAZOE",
-    "负者": "Masataka MORIZONO/Asuka MACHI"
+    "负者": "Masataka MORIZONO/Asuka MACHI",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-6"
+    ]
   },
   {
     "日期": "2019-12-08",
     "类型": "T联赛",
     "胜者": "Kenta MATSUDAIRA/Shunsuke TOGAMI",
-    "负者": "Masataka MORIZONO/Asuka MACHI"
+    "负者": "Masataka MORIZONO/Asuka MACHI",
+    "比分": "2-1",
+    "局分": [
+      "11-10",
+      "9-11",
+      "11-7"
+    ]
   },
   {
     "日期": "2019-12-28",
@@ -129,7 +142,13 @@
     "日期": "2019-12-29",
     "类型": "T联赛",
     "胜者": "Kenta TAZOE/Yukiya UDA",
-    "负者": "Masataka MORIZONO/Kohei SANBE"
+    "负者": "Kohei SAMBE/Masataka MORIZONO",
+    "比分": "2-1",
+    "局分": [
+      "11-9",
+      "10-11",
+      "11-8"
+    ]
   },
   {
     "日期": "2019-12-30",
@@ -147,7 +166,12 @@
     "日期": "2019-02-02",
     "类型": "T联赛",
     "胜者": "Seiya KISHIKAWA/WONG Chun Ting",
-    "负者": "Kenta MATSUDAIRA/Kenta TAZOE"
+    "负者": "Kenta MATSUDAIRA/Kenta TAZOE",
+    "比分": "2-0",
+    "局分": [
+      "16-14",
+      "11-4"
+    ]
   },
   {
     "日期": "2019-02-02",
@@ -166,12 +190,6 @@
     "类型": "T联赛",
     "胜者": "Hitoshi UEDA/Masataka MORIZONO",
     "负者": "Jun MIZUTANI/Kenta TAZOE"
-  },
-  {
-    "日期": "2019-02-03",
-    "类型": "T联赛",
-    "胜者": "Miyu NAGASAKI/Miyuu KIHARA",
-    "负者": "Rika SUZUKI/Minami ANDO"
   },
   {
     "日期": "2019-02-09",
@@ -219,7 +237,7 @@
     "日期": "2019-02-17",
     "类型": "T联赛",
     "胜者": "Hitoshi UEDA/Masataka MORIZONO",
-    "负者": "JEONG Youngsik/Yuki HIRANO"
+    "负者": "JEOUNG Youngsik/Yuki HIRANO"
   },
   {
     "日期": "2019-02-18",
@@ -230,14 +248,13 @@
   {
     "日期": "2019-02-19",
     "类型": "T联赛",
-    "胜者": "JEONG Youngsik/Yuki HIRANO",
-    "负者": "Taimu ARINOBU/Koki NIWA"
-  },
-  {
-    "日期": "2019-02-20",
-    "类型": "T联赛",
-    "胜者": "Rika SUZUKI/Minami ANDO",
-    "负者": "LEE Ho Ching/LAN Xi"
+    "胜者": "JEOUNG Youngsik/Yuki HIRANO",
+    "负者": "Taimu ARINOBU/Koki NIWA",
+    "比分": "2-0",
+    "局分": [
+      "11-3",
+      "15-13"
+    ]
   },
   {
     "日期": "2019-02-21",
@@ -254,14 +271,25 @@
   {
     "日期": "2019-02-23",
     "类型": "T联赛",
-    "胜者": "Masataka MORIZONO/Kohei SANBE",
-    "负者": "Tomokazu HARIMOTO/Yuya OSHIMA"
+    "胜者": "Kohei SAMBE/Masataka MORIZONO",
+    "负者": "Tomokazu HARIMOTO/Yuya OSHIMA",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-9"
+    ]
   },
   {
     "日期": "2019-02-24",
     "类型": "T联赛",
     "胜者": "Jun MIZUTANI/Yuya OSHIMA",
-    "负者": "Yuki HIRANO/Maharu YOSHIMURA"
+    "负者": "Yuki HIRANO/Maharu YOSHIMURA",
+    "比分": "2-1",
+    "局分": [
+      "9-11",
+      "11-6",
+      "12-10"
+    ]
   },
   {
     "日期": "2019-03-17",
@@ -278,14 +306,13 @@
   {
     "日期": "2019-08-30",
     "类型": "T联赛",
-    "胜者": "Miyu NAGASAKI/Miyuu KIHARA",
-    "负者": "CHEN Szu-Yu/Miyu MAEDA"
-  },
-  {
-    "日期": "2019-08-30",
-    "类型": "T联赛",
     "胜者": "WONG Chun Ting/Yuki HIRANO",
-    "负者": "LI Ping/Yuto KIZUKURI"
+    "负者": "LI Ping/Yuto KIZUKURI",
+    "比分": "2-0",
+    "局分": [
+      "11-5",
+      "11-9"
+    ]
   },
   {
     "日期": "2019-08-31",
@@ -296,38 +323,47 @@
   {
     "日期": "2019-08-31",
     "类型": "T联赛",
-    "胜者": "ZENG Jian/DOO Hoi Kem",
-    "负者": "YANG Haeun/Rika SUZUKI"
-  },
-  {
-    "日期": "2019-08-31",
-    "类型": "T联赛",
     "胜者": "Jun MIZUTANI/Yuya OSHIMA",
-    "负者": "LI Ping/Yuto KIZUKURI"
-  },
-  {
-    "日期": "2019-09-01",
-    "类型": "T联赛",
-    "胜者": "YANG Haeun/Rika SUZUKI",
-    "负者": "CHEN Szu-Yu/Miyu MAEDA"
+    "负者": "LI Ping/Yuto KIZUKURI",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-7"
+    ]
   },
   {
     "日期": "2019-09-11",
     "类型": "T联赛",
     "胜者": "Yuki MATSUYAMA/Masaki TAKAMI",
-    "负者": "Masaki YOSHIDA/Kazuhiro YOSHIMURA"
+    "负者": "Masaki YOSHIDA/Kazuhiro YOSHIMURA",
+    "比分": "2-0",
+    "局分": [
+      "11-5",
+      "11-10"
+    ]
   },
   {
     "日期": "2019-12-05",
     "类型": "T联赛",
     "胜者": "Yukiya UDA/Kenta TAZOE",
-    "负者": "Yuki HIRANO/Shunsuke TOGAMI"
+    "负者": "Yuki HIRANO/Shunsuke TOGAMI",
+    "比分": "2-1",
+    "局分": [
+      "11-8",
+      "6-11",
+      "11-8"
+    ]
   },
   {
     "日期": "2019-02-03",
     "类型": "T联赛",
     "胜者": "Koki NIWA/Taimu ARINOBU",
-    "负者": "Seiya KISHIKAWA/WONG Chun Ting"
+    "负者": "Seiya KISHIKAWA/WONG Chun Ting",
+    "比分": "2-0",
+    "局分": [
+      "11-4",
+      "11-2"
+    ]
   },
   {
     "日期": "2019-02-21",
@@ -338,8 +374,13 @@
   {
     "日期": "2019-02-22",
     "类型": "T联赛",
-    "胜者": "JEONG Youngsik/Yuki HIRANO",
-    "负者": "Taimu ARINOBU/Koki NIWA"
+    "胜者": "JEOUNG Youngsik/Yuki HIRANO",
+    "负者": "Taimu ARINOBU/Koki NIWA",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-8"
+    ]
   },
   {
     "日期": "2019-02-16",
@@ -358,5 +399,293 @@
     "类型": "乒超联赛",
     "胜者": "FANG Bo/ZHU Linfeng",
     "负者": "CHENG Jingqi/ZHAO Zihao"
+  },
+  {
+    "日期": "2019-02-02",
+    "类型": "T联赛",
+    "胜者": "Jin UEDA/Masataka MORIZONO",
+    "负者": "CHUANG Chih-Yuan/Kazuhiro CHAN",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2019-02-03",
+    "类型": "T联赛",
+    "胜者": "Jin UEDA/Masataka MORIZONO",
+    "负者": "Jun MIZUTANI/Kenta TAZOE",
+    "比分": "2-1",
+    "局分": [
+      "11-9",
+      "8-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2019-02-09",
+    "类型": "T联赛",
+    "胜者": "Jun MIZUTANI/Yuya OSHIMA",
+    "负者": "Taku TAKAKIWA/WONG Chun Ting",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2019-02-10",
+    "类型": "T联赛",
+    "胜者": "Jin UEDA/Masataka MORIZONO",
+    "负者": "Taku TAKAKIWA/WONG Chun Ting",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2019-02-11",
+    "类型": "T联赛",
+    "胜者": "Jun MIZUTANI/Yuya OSHIMA",
+    "负者": "CHUANG Chih-Yuan/Kazuhiro CHAN",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2019-02-12",
+    "类型": "T联赛",
+    "胜者": "Jin UEDA/Masataka MORIZONO",
+    "负者": "Koki NIWA/Taimu ARINOBU",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2019-02-16",
+    "类型": "T联赛",
+    "胜者": "Jin UEDA/Masataka MORIZONO",
+    "负者": "Kenta TAZOE/Tomokazu HARIMOTO",
+    "比分": "2-1",
+    "局分": [
+      "11-5",
+      "10-12",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2019-02-17",
+    "类型": "T联赛",
+    "胜者": "Jin UEDA/Masataka MORIZONO",
+    "负者": "JEOUNG Youngsik/Yuki HIRANO",
+    "比分": "2-0",
+    "局分": [
+      "14-12",
+      "15-13"
+    ]
+  },
+  {
+    "日期": "2019-02-18",
+    "类型": "T联赛",
+    "胜者": "CHIANG Hung-Chieh/Kazuhiro CHAN",
+    "负者": "Kenta TAZOE/Yuya OSHIMA",
+    "比分": "2-1",
+    "局分": [
+      "13-11",
+      "6-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2019-02-21",
+    "类型": "T联赛",
+    "胜者": "Koki NIWA/Taimu ARINOBU",
+    "负者": "Jin UEDA/Masataka MORIZONO",
+    "比分": "2-1",
+    "局分": [
+      "11-7",
+      "8-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2019-03-17",
+    "类型": "T联赛",
+    "胜者": "Jin UEDA/Masataka MORIZONO",
+    "负者": "Jun MIZUTANI/Yuya OSHIMA",
+    "比分": "2-1",
+    "局分": [
+      "9-11",
+      "11-7",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2019-08-29",
+    "类型": "T联赛",
+    "胜者": "Jin UEDA/Masataka MORIZONO",
+    "负者": "Koki NIWA/Tomokazu HARIMOTO",
+    "比分": "2-1",
+    "局分": [
+      "5-11",
+      "11-9",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2019-08-31",
+    "类型": "T联赛",
+    "胜者": "Takuya JIN/WONG Chun Ting",
+    "负者": "Jin UEDA/Masataka MORIZONO",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2019-09-04",
+    "类型": "T联赛",
+    "胜者": "Jin UEDA/Masataka MORIZONO",
+    "负者": "Kenta TAZOE/Yuya OSHIMA",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2019-09-05",
+    "类型": "T联赛",
+    "胜者": "Kenta MATSUDAIRA/WONG Chun Ting",
+    "负者": "Jin UEDA/Masataka MORIZONO",
+    "比分": "2-1",
+    "局分": [
+      "11-9",
+      "7-11",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2019-09-07",
+    "类型": "T联赛",
+    "胜者": "CHEN Chien-An/CHUANG Chih-Yuan",
+    "负者": "Kohei SAMBE/Masataka MORIZONO",
+    "比分": "2-1",
+    "局分": [
+      "11-9",
+      "7-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2019-10-19",
+    "类型": "T联赛",
+    "胜者": "CHEN Chien-An/LI Ping",
+    "负者": "Jin UEDA/Masataka MORIZONO",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-10"
+    ]
+  },
+  {
+    "日期": "2019-10-20",
+    "类型": "T联赛",
+    "胜者": "CHEN Chien-An/LI Ping",
+    "负者": "Jun MIZUTANI/Yuya OSHIMA",
+    "比分": "2-1",
+    "局分": [
+      "11-9",
+      "9-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2019-11-23",
+    "类型": "T联赛",
+    "胜者": "Kenta TAZOE/Marcos Freitas",
+    "负者": "CHEN Chien-An/LI Ping",
+    "比分": "2-1",
+    "局分": [
+      "8-11",
+      "11-8",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2019-11-24",
+    "类型": "T联赛",
+    "胜者": "Kenta TAZOE/Marcos Freitas",
+    "负者": "Kenta MATSUDAIRA/Yuki HIRANO",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2019-11-24",
+    "类型": "T联赛",
+    "胜者": "Asuka MACHI/Masataka MORIZONO",
+    "负者": "CHEN Chien-An/LI Ping",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2019-12-04",
+    "类型": "T联赛",
+    "胜者": "Taimu ARINOBU/Yuto KIZUKURI",
+    "负者": "Kenta MATSUDAIRA/Liam PITCHFORD",
+    "比分": "2-1",
+    "局分": [
+      "6-11",
+      "11-9",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2019-12-28",
+    "类型": "T联赛",
+    "胜者": "Asuka MACHI/Masataka MORIZONO",
+    "负者": "CHEN Chien-An/LI Ping",
+    "比分": "2-1",
+    "局分": [
+      "11-5",
+      "8-11",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2019-12-29",
+    "类型": "T联赛",
+    "胜者": "Kenta MATSUDAIRA/Liam PITCHFORD",
+    "负者": "Maharu YOSHIMURA/Taimu ARINOBU",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2019-12-30",
+    "类型": "T联赛",
+    "胜者": "Kenta TAZOE/Yukiya UDA",
+    "负者": "Takuya JIN/Yuki HIRANO",
+    "比分": "2-1",
+    "局分": [
+      "11-8",
+      "8-11",
+      "14-12"
+    ]
   }
 ]

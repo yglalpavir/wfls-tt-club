@@ -3,43 +3,77 @@
     "日期": "2023-02-04",
     "类型": "T联赛",
     "胜者": "Rika SUZUKI/Yurika NANBA",
-    "负者": "Sakura MORI/Hina HAYATA"
+    "负者": "Sakura MORI/Hina HAYATA",
+    "比分": "2-1",
+    "局分": [
+      "10-11",
+      "11-8",
+      "13-11"
+    ]
   },
   {
     "日期": "2023-02-05",
     "类型": "T联赛",
-    "胜者": "Asuka SASAO/Rena ASO",
-    "负者": "Saki SHIBATA/Satsuki OTO"
+    "胜者": "Asuka SASAO/Reina ASO",
+    "负者": "Saki SHIBATA/Satsuki ODO",
+    "比分": "2-1",
+    "局分": [
+      "11-6",
+      "6-11",
+      "11-9"
+    ]
   },
   {
     "日期": "2023-02-11",
     "类型": "T联赛",
     "胜者": "Miyuu KIHARA/Miwa HARIMOTO",
-    "负者": "Saki SHIBATA/Satsuki OTO"
+    "负者": "Saki SHIBATA/Satsuki ODO",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-6"
+    ]
   },
   {
     "日期": "2023-02-12",
     "类型": "T联赛",
     "胜者": "Miyuu KIHARA/Miwa HARIMOTO",
-    "负者": "Asuka SASAO/Rena ASO"
+    "负者": "Asuka SASAO/Reina ASO",
+    "比分": "2-1",
+    "局分": [
+      "4-11",
+      "11-8",
+      "11-8"
+    ]
   },
   {
     "日期": "2023-02-17",
     "类型": "T联赛",
-    "胜者": "Asuka SASAO/Rena ASO",
-    "负者": "Maki SHIOMI/Moe NOMURA"
+    "胜者": "Asuka SASAO/Reina ASO",
+    "负者": "Maki SHIOMI/Moe NOMURA",
+    "比分": "2-1",
+    "局分": [
+      "11-3",
+      "8-11",
+      "11-8"
+    ]
   },
   {
     "日期": "2023-02-25",
     "类型": "T联赛",
-    "胜者": "Saki SHIBATA/Satsuki OTO",
-    "负者": "Maki SHIOMI/Narumi SHUTO"
+    "胜者": "Saki SHIBATA/Satsuki ODO",
+    "负者": "Maki SHIOMI/Narumi SHUTO",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-10"
+    ]
   },
   {
     "日期": "2023-02-26",
     "类型": "T联赛",
     "胜者": "Karen AKAE/Hina HAYATA",
-    "负者": "Saki SHIBATA/Satsuki OTO"
+    "负者": "Saki SHIBATA/Satsuki ODO"
   },
   {
     "日期": "2023-03-26",
@@ -51,13 +85,18 @@
     "日期": "2023-08-11",
     "类型": "T联赛",
     "胜者": "Miyuu KIHARA/Miyu NAGASAKI",
-    "负者": "Rena ASO/SONG Yijin"
+    "负者": "Reina ASO/SONG Yijin"
   },
   {
     "日期": "2023-08-12",
     "类型": "T联赛",
     "胜者": "Miyuu KIHARA/Miyu NAGASAKI",
-    "负者": "Kasumi KIMURA/Yurika NANBA"
+    "负者": "Kasumi KIMURA/Yurika NANBA",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-8"
+    ]
   },
   {
     "日期": "2023-08-19",
@@ -69,7 +108,13 @@
     "日期": "2023-08-19",
     "类型": "T联赛",
     "胜者": "Kasumi KIMURA/Yurika NANBA",
-    "负者": "Tomoyo TAKEMOTO/Moe NOMURA"
+    "负者": "Tomoyo TAKEMOTO/Moe NOMURA",
+    "比分": "2-1",
+    "局分": [
+      "11-10",
+      "9-11",
+      "11-9"
+    ]
   },
   {
     "日期": "2023-08-25",
@@ -81,7 +126,12 @@
     "日期": "2023-10-28",
     "类型": "T联赛",
     "胜者": "Emiko TAGUCHI/Narumi SHUTO",
-    "负者": "Kasumi KIMURA/Yurika NANBA"
+    "负者": "Kasumi KIMURA/Yurika NANBA",
+    "比分": "2-0",
+    "局分": [
+      "11-4",
+      "11-9"
+    ]
   },
   {
     "日期": "2023-10-28",
@@ -99,25 +149,46 @@
     "日期": "2023-10-29",
     "类型": "T联赛",
     "胜者": "Kasumi KIMURA/Yurika NANBA",
-    "负者": "Anne UESAWA/Hana YOSHIMOTO"
+    "负者": "Anne UESAWA/Hana YOSHIMOTO",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-7"
+    ]
   },
   {
     "日期": "2023-11-03",
     "类型": "T联赛",
-    "胜者": "Saki SHIBATA/Satsuki OTO",
-    "负者": "Ayami NARIMOTO/Yume KUDO"
+    "胜者": "Saki SHIBATA/Satsuki ODO",
+    "负者": "Ayami NARIMOTO/Yume KUDO",
+    "比分": "2-1",
+    "局分": [
+      "9-11",
+      "11-5",
+      "11-8"
+    ]
   },
   {
     "日期": "2023-11-03",
     "类型": "T联赛",
     "胜者": "Kasumi KIMURA/Yurika NANBA",
-    "负者": "Emiko TAGUCHI/Narumi SHUTO"
+    "负者": "Emiko TAGUCHI/Narumi SHUTO",
+    "比分": "2-0",
+    "局分": [
+      "11-3",
+      "11-7"
+    ]
   },
   {
     "日期": "2023-11-04",
     "类型": "T联赛",
-    "胜者": "Asuka SASAO/Rena ASO",
-    "负者": "Emiko TAGUCHI/Narumi SHUTO"
+    "胜者": "Asuka SASAO/Reina ASO",
+    "负者": "Emiko TAGUCHI/Narumi SHUTO",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-2"
+    ]
   },
   {
     "日期": "2023-12-09",
@@ -135,7 +206,13 @@
     "日期": "2023-12-23",
     "类型": "T联赛",
     "胜者": "Kasumi KIMURA/Yurika NANBA",
-    "负者": "Miyuu KIHARA/Miwa HARIMOTO"
+    "负者": "Miyuu KIHARA/Miwa HARIMOTO",
+    "比分": "2-1",
+    "局分": [
+      "7-11",
+      "11-8",
+      "11-8"
+    ]
   },
   {
     "日期": "2023-12-24",
@@ -147,7 +224,7 @@
     "日期": "2023-12-25",
     "类型": "T联赛",
     "胜者": "Asuka SASAO/SONG Yijin",
-    "负者": "Saki SHIBATA/Satsuki OTO"
+    "负者": "Saki SHIBATA/Satsuki ODO"
   },
   {
     "日期": "2023-12-10",
@@ -965,5 +1042,824 @@
     ],
     "胜者": "JEON Jihee/SHIN Yubin",
     "负者": "Orawan PARANANG/Suthasini SAWETTABUT"
+  },
+  {
+    "日期": "2023-01-07",
+    "类型": "T联赛",
+    "胜者": "Rika SUZUKI/Yurika NANBA",
+    "负者": "JIANG Hui/Kaho AKAE",
+    "比分": "2-0",
+    "局分": [
+      "11-3",
+      "11-1"
+    ]
+  },
+  {
+    "日期": "2023-01-08",
+    "类型": "T联赛",
+    "胜者": "Rika SUZUKI/Yurika NANBA",
+    "负者": "Hitomi SATO/Honoka HASHIMOTO",
+    "比分": "2-1",
+    "局分": [
+      "8-11",
+      "11-9",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2023-01-08",
+    "类型": "T联赛",
+    "胜者": "MA Yuhan/WEI Wensheng",
+    "负者": "Kyoka IDESAWA/Maki SHIOMI",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-10"
+    ]
+  },
+  {
+    "日期": "2023-02-04",
+    "类型": "T联赛",
+    "胜者": "Hitomi SATO/Honoka HASHIMOTO",
+    "负者": "MA Yuhan/WEI Wensheng",
+    "比分": "2-0",
+    "局分": [
+      "11-5",
+      "11-10"
+    ]
+  },
+  {
+    "日期": "2023-02-05",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI/Miyuu KIHARA",
+    "负者": "MA Yuhan/WEI Wensheng",
+    "比分": "2-1",
+    "局分": [
+      "11-7",
+      "8-11",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2023-02-17",
+    "类型": "T联赛",
+    "胜者": "MA Yuhan/WEI Wensheng",
+    "负者": "Rika SUZUKI/Yurika NANBA",
+    "比分": "2-1",
+    "局分": [
+      "11-10",
+      "9-11",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2023-02-18",
+    "类型": "T联赛",
+    "胜者": "Rika SUZUKI/Yurika NANBA",
+    "负者": "Maki SHIOMI/Moe NOMURA",
+    "比分": "2-1",
+    "局分": [
+      "8-11",
+      "11-8",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2023-02-19",
+    "类型": "T联赛",
+    "胜者": "Maki SHIOMI/Narumi SHUTO",
+    "负者": "Miwa HARIMOTO/Miyuu KIHARA",
+    "比分": "2-1",
+    "局分": [
+      "10-11",
+      "11-10",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2023-02-19",
+    "类型": "T联赛",
+    "胜者": "MA Yuhan/WEI Wensheng",
+    "负者": "Asuka SASAO/Reina ASO",
+    "比分": "2-1",
+    "局分": [
+      "11-7",
+      "4-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2023-02-26",
+    "类型": "T联赛",
+    "胜者": "Rika SUZUKI/Yurika NANBA",
+    "负者": "Hana SAKURAI/Mirei MAKINO",
+    "比分": "2-0",
+    "局分": [
+      "11-5",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2023-02-26",
+    "类型": "T联赛",
+    "胜者": "Hina HAYATA/Kaho AKAE",
+    "负者": "Saki SHIBATA/Satsuki ODO",
+    "比分": "2-1",
+    "局分": [
+      "10-11",
+      "11-8",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2023-08-05",
+    "类型": "T联赛",
+    "胜者": "Saki SHIBATA/Satsuki ODO",
+    "负者": "MA Yuhan/Yurika NANBA",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2023-08-06",
+    "类型": "T联赛",
+    "胜者": "MA Yuhan/Yurika NANBA",
+    "负者": "Miku IZUMO/Rina MAKINO",
+    "比分": "2-0",
+    "局分": [
+      "11-4",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2023-08-11",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI/Miyuu KIHARA",
+    "负者": "Reina ASO/SUN Yizhen",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2023-08-14",
+    "类型": "T联赛",
+    "胜者": "Reina ASO/SUN Yizhen",
+    "负者": "Madoka EDAHIRO/Yume KUDO",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2023-08-15",
+    "类型": "T联赛",
+    "胜者": "Kasumi KIMURA/Yurika NANBA",
+    "负者": "Reina ASO/SUN Yizhen",
+    "比分": "2-0",
+    "局分": [
+      "11-5",
+      "11-10"
+    ]
+  },
+  {
+    "日期": "2023-08-19",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI/Miyuu KIHARA",
+    "负者": "Madoka EDAHIRO/Yume KUDO",
+    "比分": "2-0",
+    "局分": [
+      "11-5",
+      "11-10"
+    ]
+  },
+  {
+    "日期": "2023-08-25",
+    "类型": "T联赛",
+    "胜者": "Hitomi SATO/Honoka HASHIMOTO",
+    "负者": "Asuka SASAO/SUN Yizhen",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-10"
+    ]
+  },
+  {
+    "日期": "2023-10-21",
+    "类型": "T联赛",
+    "胜者": "SUN Mingyang/SUN Yizhen",
+    "负者": "Emiko TAGUCHI/Narumi SHUTO",
+    "比分": "2-0",
+    "局分": [
+      "11-3",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2023-10-20",
+    "类型": "T联赛",
+    "胜者": "SUN Mingyang/SUN Yizhen",
+    "负者": "Miyuu KIHARA/ZHANG Rui",
+    "比分": "2-0",
+    "局分": [
+      "11-5",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2023-10-28",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI/Rin MENDE",
+    "负者": "Hitomi SATO/Honoka HASHIMOTO",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-10"
+    ]
+  },
+  {
+    "日期": "2023-10-29",
+    "类型": "T联赛",
+    "胜者": "Mirei MAKINO/Miyu NAGASAKI",
+    "负者": "Madoka EDAHIRO/Yume KUDO",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2023-11-11",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI/ZHANG Rui",
+    "负者": "Saya YAMAMURO/Yuna KURIYAMA",
+    "比分": "2-1",
+    "局分": [
+      "11-10",
+      "10-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2023-11-12",
+    "类型": "T联赛",
+    "胜者": "Kasumi KIMURA/Yurika NANBA",
+    "负者": "Miyu NAGASAKI/ZHANG Rui",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-10"
+    ]
+  },
+  {
+    "日期": "2023-11-16",
+    "类型": "T联赛",
+    "胜者": "Hina HAYATA/Kaho AKAE",
+    "负者": "Ayami NARIMOTO/Yume KUDO",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2023-11-17",
+    "类型": "T联赛",
+    "胜者": "Ayami NARIMOTO/Yume KUDO",
+    "负者": "Saki SHIBATA/Satsuki ODO",
+    "比分": "2-1",
+    "局分": [
+      "11-6",
+      "7-11",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2023-12-01",
+    "类型": "T联赛",
+    "胜者": "SUN Mingyang/SUN Yizhen",
+    "负者": "Saya YAMAMURO/Yuna KURIYAMA",
+    "比分": "2-0",
+    "局分": [
+      "11-3",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2023-12-02",
+    "类型": "T联赛",
+    "胜者": "Miwa HARIMOTO/Miyuu KIHARA",
+    "负者": "SUN Mingyang/SUN Yizhen",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2023-12-09",
+    "类型": "T联赛",
+    "胜者": "Hana SAKURAI/Miyu NAGASAKI",
+    "负者": "Madoka EDAHIRO/Yume KUDO",
+    "比分": "2-1",
+    "局分": [
+      "3-11",
+      "11-7",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2023-12-10",
+    "类型": "T联赛",
+    "胜者": "Madoka EDAHIRO/Yume KUDO",
+    "负者": "Kasumi KIMURA/Yurika NANBA",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2023-12-23",
+    "类型": "T联赛",
+    "胜者": "Hitomi SATO/Honoka HASHIMOTO",
+    "负者": "Kyoka IDESAWA/Narumi SHUTO",
+    "比分": "2-1",
+    "局分": [
+      "10-11",
+      "11-9",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2023-12-24",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI/Miyuu KIHARA",
+    "负者": "Kyoka IDESAWA/Narumi SHUTO",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2023-12-24",
+    "类型": "T联赛",
+    "胜者": "Kasumi KIMURA/Yurika NANBA",
+    "负者": "Asuka SASAO/SUN Yizhen",
+    "比分": "2-0",
+    "局分": [
+      "11-3",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2023-12-24",
+    "类型": "T联赛",
+    "胜者": "Ayami NARIMOTO/Madoka EDAHIRO",
+    "负者": "Saki SHIBATA/Satsuki ODO",
+    "比分": "2-1",
+    "局分": [
+      "11-9",
+      "5-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2023-12-25",
+    "类型": "T联赛",
+    "胜者": "Emiko TAGUCHI/Kyoka IDESAWA",
+    "负者": "Ayami NARIMOTO/Madoka EDAHIRO",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2023-12-25",
+    "类型": "T联赛",
+    "胜者": "Asuka SASAO/SUN Yizhen",
+    "负者": "Saki SHIBATA/Satsuki ODO",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2023-01-17",
+    "类型": "法国甲级联赛",
+    "胜者": "Clea DE STOPPELEIRE/LI Lilan",
+    "负者": "Filippa BERGAND/Sarah DE NUTTE",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2023-01-17",
+    "类型": "法国甲级联赛",
+    "胜者": "LI Lilan/Sibel ALTINKAYA",
+    "负者": "Camille LUTZ/Filippa BERGAND",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2023-01-24",
+    "类型": "法国甲级联赛",
+    "胜者": "Andrea TODOROVIC/Jia Nan YUAN",
+    "负者": "Daria TRIGOLOS/Rachel MORET",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2023-01-25",
+    "类型": "法国甲级联赛",
+    "胜者": "Audrey ZARIF/Nolwenn FORT",
+    "负者": "Daniela ORTEGA/Gabriela FEHER",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2023-01-25",
+    "类型": "法国甲级联赛",
+    "胜者": "LI He/Nolwenn FORT",
+    "负者": "Charlotte LUTZ/Daniela ORTEGA",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2023-02-02",
+    "类型": "法国甲级联赛",
+    "胜者": "Camelia IACOB/Marie MIGOT",
+    "负者": "Anais SALPIN/LI Samson",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2023-02-02",
+    "类型": "法国甲级联赛",
+    "胜者": "Hana MATELOVA/Marie MIGOT",
+    "负者": "Isa COK/LI Samson",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2023-02-03",
+    "类型": "法国甲级联赛",
+    "胜者": "Anais SALPIN/Isa COK",
+    "负者": "Jia Nan YUAN/Oceane GUISNEL",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2023-02-03",
+    "类型": "法国甲级联赛",
+    "胜者": "Anais SALPIN/LI Samson",
+    "负者": "Andrea TODOROVIC/Jia Nan YUAN",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2023-02-19",
+    "类型": "法国甲级联赛",
+    "胜者": "Charlotte LUTZ/Daniela ORTEGA",
+    "负者": "Audrey ZARIF/Clemence CHEVALLIER",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2023-02-19",
+    "类型": "法国甲级联赛",
+    "胜者": "Leili MOSTAFAVI/Prithika PAVADE",
+    "负者": "Filippa BERGAND/Sarah DE NUTTE",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2023-03-19",
+    "类型": "法国甲级联赛",
+    "胜者": "LIU Hsing-Yin/Prithika PAVADE",
+    "负者": "Filippa BERGAND/Sarah DE NUTTE",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2023-04-02",
+    "类型": "法国甲级联赛",
+    "胜者": "Lucie GAUTHIER/Stephanie LOEUILLETTE",
+    "负者": "Andrea TODOROVIC/ZHENG Yuan",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2023-04-02",
+    "类型": "法国甲级联赛",
+    "胜者": "Oceane GUISNEL/ZHENG Yuan",
+    "负者": "Christina KALLBERG/Lucie GAUTHIER",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2023-04-18",
+    "类型": "法国甲级联赛",
+    "胜者": "Clea DE STOPPELEIRE/Sibel ALTINKAYA",
+    "负者": "Daria TRIGOLOS/JEE Min Hyung",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2023-04-18",
+    "类型": "法国甲级联赛",
+    "胜者": "Clea DE STOPPELEIRE/WANG Yi-Ju",
+    "负者": "Daria TRIGOLOS/Rachel MORET",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2023-05-03",
+    "类型": "法国甲级联赛",
+    "胜者": "Clea DE STOPPELEIRE/Sibel ALTINKAYA",
+    "负者": "Daria TRIGOLOS/JEE Min Hyung",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2023-05-30",
+    "类型": "法国甲级联赛",
+    "胜者": "Barbora VARADY/LIU Hsing-Yin",
+    "负者": "Mariia TAILAKOVA/Pauline CHASSELIN",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2023-05-30",
+    "类型": "法国甲级联赛",
+    "胜者": "Barbora VARADY/Prithika PAVADE",
+    "负者": "Adina DIACONU/Pauline CHASSELIN",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2023-05-30",
+    "类型": "法国甲级联赛",
+    "胜者": "Jieni SHAO/Marie MIGOT",
+    "负者": "LI He/Nolwenn FORT",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2023-06-02",
+    "类型": "法国甲级联赛",
+    "胜者": "Adina DIACONU/Mariia TAILAKOVA",
+    "负者": "Barbora VARADY/Prithika PAVADE",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2023-06-06",
+    "类型": "法国甲级联赛",
+    "胜者": "Eden JOSSET/LI He",
+    "负者": "LIU Hsing-Yin/Leili MOSTAFAVI"
+  },
+  {
+    "日期": "2023-06-06",
+    "类型": "法国甲级联赛",
+    "胜者": "Eden JOSSET/Nolwenn FORT",
+    "负者": "Leili MOSTAFAVI/Prithika PAVADE"
+  },
+  {
+    "日期": "2023-06-06",
+    "类型": "法国甲级联赛",
+    "胜者": "Mariia TAILAKOVA/Pauline CHASSELIN",
+    "负者": "Jieni SHAO/Marie MIGOT",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2023-09-22",
+    "类型": "法国甲级联赛",
+    "胜者": "Camelia IACOB/Jieni SHAO",
+    "负者": "Rachel MORET/Sophie EARLEY",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2023-09-24",
+    "类型": "法国甲级联赛",
+    "胜者": "Charlotte LUTZ/Gabriela FEHER",
+    "负者": "Andrea TODOROVIC/Jia Nan YUAN",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2023-09-24",
+    "类型": "法国甲级联赛",
+    "胜者": "Clea DE STOPPELEIRE/WANG Yanan",
+    "负者": "Agathe AVEZOU/Prithika PAVADE",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2023-09-24",
+    "类型": "法国甲级联赛",
+    "胜者": "Mariia TAILAKOVA/Pauline CHASSELIN",
+    "负者": "Moana NAKAMICHI/Sophie EARLEY",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2023-09-24",
+    "类型": "法国甲级联赛",
+    "胜者": "Rachel MORET/Sophie EARLEY",
+    "负者": "Adina DIACONU/Mariia TAILAKOVA",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2023-09-26",
+    "类型": "法国甲级联赛",
+    "胜者": "Charlotte LUTZ/Gabriela FEHER",
+    "负者": "Emmanuelle LENNON/Hanna HAPONOVA",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2023-09-26",
+    "类型": "法国甲级联赛",
+    "胜者": "Clea DE STOPPELEIRE/WANG Yanan",
+    "负者": "Hana MATELOVA/Marie MIGOT",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2023-09-26",
+    "类型": "法国甲级联赛",
+    "胜者": "Hana MATELOVA/Jieni SHAO",
+    "负者": "Clea DE STOPPELEIRE/Sibel ALTINKAYA",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2023-10-24",
+    "类型": "法国甲级联赛",
+    "胜者": "Hana MATELOVA/Jieni SHAO",
+    "负者": "Jian ZENG/Stephanie LOEUILLETTE",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2023-10-24",
+    "类型": "法国甲级联赛",
+    "胜者": "Oceane GUISNEL/Stephanie LOEUILLETTE",
+    "负者": "Hana MATELOVA/Marie MIGOT",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2023-10-29",
+    "类型": "法国甲级联赛",
+    "胜者": "Sophie EARLEY/ZHU Chengzhu",
+    "负者": "Clea DE STOPPELEIRE/WANG Yanan",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2023-11-07",
+    "类型": "法国甲级联赛",
+    "胜者": "Camille LUTZ/Polina MIKHAILOVA",
+    "负者": "Audrey ZARIF/Nolwenn FORT",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2023-11-07",
+    "类型": "法国甲级联赛",
+    "胜者": "LI He/Nolwenn FORT",
+    "负者": "Camille LUTZ/Daniela DODEAN MONTEIRO",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2023-11-12",
+    "类型": "法国甲级联赛",
+    "胜者": "Charlotte LUTZ/Gabriela FEHER",
+    "负者": "Audrey ZARIF/Nolwenn FORT",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2023-11-12",
+    "类型": "法国甲级联赛",
+    "胜者": "LI He/Nolwenn FORT",
+    "负者": "Gabriela FEHER/Sarah DE NUTTE",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2023-11-16",
+    "类型": "法国甲级联赛",
+    "胜者": "Camille LUTZ/Daniela DODEAN MONTEIRO",
+    "负者": "Hana MATELOVA/Marie MIGOT",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2023-11-19",
+    "类型": "法国甲级联赛",
+    "胜者": "Agathe AVEZOU/Prithika PAVADE",
+    "负者": "Audrey ZARIF/LI He",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2023-11-19",
+    "类型": "法国甲级联赛",
+    "胜者": "Christina KALLBERG/Mariia TAILAKOVA",
+    "负者": "Andrea TODOROVIC/Filippa BERGAND",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2023-11-20",
+    "类型": "法国甲级联赛",
+    "胜者": "Camille LUTZ/Polina MIKHAILOVA",
+    "负者": "Agathe AVEZOU/Jia LIU",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2023-11-20",
+    "类型": "法国甲级联赛",
+    "胜者": "Jia LIU/Prithika PAVADE",
+    "负者": "Camille LUTZ/Linda BERGSTROM",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2023-11-20",
+    "类型": "法国甲级联赛",
+    "胜者": "Oceane GUISNEL/Stephanie LOEUILLETTE",
+    "负者": "Rachel MORET/Sophie EARLEY",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2023-11-21",
+    "类型": "法国甲级联赛",
+    "胜者": "Rachel MORET/Sophie EARLEY",
+    "负者": "Andrea TODOROVIC/Sara RAMIREZ",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2023-11-26",
+    "类型": "法国甲级联赛",
+    "胜者": "Audrey ZARIF/Nolwenn FORT",
+    "负者": "Hanna HAPONOVA/LI Xue",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2023-11-26",
+    "类型": "法国甲级联赛",
+    "胜者": "LI He/Nolwenn FORT",
+    "负者": "Emmanuelle LENNON/Hanna HAPONOVA",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2023-11-28",
+    "类型": "法国甲级联赛",
+    "胜者": "Jian ZENG/Oceane GUISNEL",
+    "负者": "Clea DE STOPPELEIRE/WANG Yanan",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2023-11-28",
+    "类型": "法国甲级联赛",
+    "胜者": "LI Samson/WU Jiaduo",
+    "负者": "Hanna HAPONOVA/LI Xue",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2023-12-05",
+    "类型": "法国甲级联赛",
+    "胜者": "Isa COK/WU Jiaduo",
+    "负者": "Jeanne ROBBES/Lucie GAUTHIER",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2023-12-05",
+    "类型": "法国甲级联赛",
+    "胜者": "Jeanne ROBBES/Stephanie LOEUILLETTE",
+    "负者": "Anais SALPIN/WU Jiaduo",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2023-12-10",
+    "类型": "法国甲级联赛",
+    "胜者": "Camelia IACOB/Jieni SHAO",
+    "负者": "Audrey ZARIF/LI He",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2023-12-12",
+    "类型": "法国甲级联赛",
+    "胜者": "Daniela ORTEGA/Gabriela FEHER",
+    "负者": "Clea DE STOPPELEIRE/Sibel ALTINKAYA",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2023-12-12",
+    "类型": "法国甲级联赛",
+    "胜者": "Daniela ORTEGA/Sarah DE NUTTE",
+    "负者": "Clea DE STOPPELEIRE/WANG Yanan",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2023-12-14",
+    "类型": "法国甲级联赛",
+    "胜者": "Adina DIACONU/Pauline CHASSELIN",
+    "负者": "LI Fen/LI He",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2023-12-16",
+    "类型": "法国甲级联赛",
+    "胜者": "Jia Nan YUAN/Sara RAMIREZ",
+    "负者": "Anais SALPIN/WU Jiaduo",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2023-12-18",
+    "类型": "法国甲级联赛",
+    "胜者": "Jia LIU/LIU Hsing-Yin",
+    "负者": "Daniela ORTEGA/Sarah DE NUTTE",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2023-12-20",
+    "类型": "法国甲级联赛",
+    "胜者": "Christina KALLBERG/Mariia TAILAKOVA",
+    "负者": "Charlotte LUTZ/Gabriela FEHER",
+    "比分": "3-0"
   }
 ]

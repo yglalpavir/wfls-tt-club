@@ -370,9 +370,13 @@ const WTT_RACE_SATURATION = 50;     // 饱和度 %（中低，避免过高）
 const WTT_RACE_LIGHTNESS = 55;      // 亮度 %
 const WTT_RACE_UNKNOWN_COLOR = '#94a3b8';
 const WTT_RACE_FRAME_MS = 700;
-const WTT_RACE_BAR_MIN_PCT = 8;  // 横轴最低刻度对应的条形宽度（%），使横轴不从 0 开始
-
-const WTT_RACE_TICK_PCTS = [8, 31, 54, 77, 100];
+// 横轴刻度：候选步长阶梯，全部是 50 的倍数 —— 于是轴的两端（轨道 0% 与 100% 位置）
+// 以及中间每一格都落在 50 分的整数倍上；跨度变宽时自动升到更粗的步长，避免刻度挤成一团
+const WTT_RACE_STEP_LADDER = [50, 100, 150, 200, 250, 300, 400, 500];
+const WTT_RACE_MIN_BAR_PCT = 2;     // 条长保底（%）：分数正好等于轴左端时宽度不会归零
+const WTT_RACE_MIN_TICK_PX = 36;    // 单个刻度至少要占的像素宽，用来按屏幕宽度定刻度数量上限
+const WTT_RACE_MIN_TICKS = 3;
+const WTT_RACE_MAX_TICKS = 12;
 
 let wttBarRace = {
     initialized: false,
@@ -390,8 +394,12 @@ let wttBarRace = {
     assocColors: {},
     rowMap: new Map(),
     rowHeight: 32,
+    trackPx: 0,            // 条形轨道的实测像素宽（决定刻度数量上限），init/resize 时刷新
+    axisMin: null,         // 显示中的轴域（连续量，朝 50 倍数目标域缓动；静止时精确落在倍数上）
+    axisMax: null,
+    axisMoving: false,     // 轴域是否仍在缓动（决定动画循环要不要续帧）
     lastTs: null,
-    axisTicks: null,       // 复用的坐标轴刻度 span，避免每帧重建 innerHTML
+    axisTicks: null,       // 复用的坐标轴刻度 span，数量随轴域步长变化，避免每帧重建 innerHTML
     activeCount: -1        // 上次渲染的活跃行数，避免每帧写容器高度
 };
 
@@ -504,7 +512,8 @@ function wttApplyBarRaceRowColor(st) {
 }
 
 // 更新行内容（脏检查：仅写发生变化的 DOM 属性，元素引用已在创建时缓存）
-function wttUpdateBarRaceRow(st, rank, maxScore, minScore) {
+// 条长按当前横轴域做线性映射：轴左端即 0%，条长与分数真实对应，不再随榜单自动拉伸
+function wttUpdateBarRaceRow(st, rank, axis) {
     if (st.lastRank !== rank) {
         st.lastRank = rank;
         st.rankEl.textContent = rank + 1;
@@ -512,12 +521,10 @@ function wttUpdateBarRaceRow(st, rank, maxScore, minScore) {
         st.rankEl.classList.toggle('top2', rank === 1);
         st.rankEl.classList.toggle('top3', rank === 2);
     }
-    let pct;
-    if (maxScore > minScore) {
-        pct = WTT_RACE_BAR_MIN_PCT + (st.score - minScore) / (maxScore - minScore) * (100 - WTT_RACE_BAR_MIN_PCT);
-    } else {
-        pct = 100;
-    }
+    // 写法同时兜住 NaN：!(NaN > k) 为真，会落回保底宽度
+    let pct = (st.score - axis.min) / (axis.max - axis.min) * 100;
+    if (!(pct > WTT_RACE_MIN_BAR_PCT)) pct = WTT_RACE_MIN_BAR_PCT;
+    else if (pct > 100) pct = 100;
     if (!(Math.abs(pct - st.lastPct) < 0.03)) {
         st.lastPct = pct;
         const s = pct.toFixed(2) + '%';
@@ -540,45 +547,119 @@ function wttReadBarRaceRowHeight() {
     if (n > 0) wttBarRace.rowHeight = n;
 }
 
-// 坐标轴刻度只创建一次，之后仅更新文本（位置固定不变）
-function wttEnsureBarRaceTicks(axisEl) {
+// 读取条形轨道的实测像素宽：窄屏刻度更密会挤在一起，用它算出刻度数量上限
+function wttReadBarRaceTrackWidth() {
+    const container = document.getElementById('wttBarRaceContainer');
+    if (!container) return;
+    const track = container.querySelector('.bar-race-track');
+    if (!track) return;
+    const w = track.getBoundingClientRect().width;
+    if (w > 0) wttBarRace.trackPx = w;
+}
+
+// 刻度数量上限 = 轨道能容纳的刻度数，钳在 [MIN_TICKS, MAX_TICKS]
+function wttRaceMaxTicks() {
+    const px = wttBarRace.trackPx > 0 ? wttBarRace.trackPx : 600;
+    return wttRaceClampNum(Math.floor(px / WTT_RACE_MIN_TICK_PX) + 1, WTT_RACE_MIN_TICKS, WTT_RACE_MAX_TICKS);
+}
+
+// 按当前画面第 1 名 / 末名的分数域求横轴：两端与中间每格都落在 50 分的整数倍上
+// 从阶梯里挑第一个刻度数不超上限的步长；都超了就用最粗的那个（刻度最少）
+function wttComputeBarRaceAxis(minScore, maxScore) {
+    const maxTicks = wttRaceMaxTicks();
+    let fallback = null;
+    for (let i = 0; i < WTT_RACE_STEP_LADDER.length; i++) {
+        const step = WTT_RACE_STEP_LADDER[i];
+        const lo = Math.floor(minScore / step) * step;
+        const hi = Math.ceil((maxScore - 1e-6) / step) * step;
+        if (hi <= lo) continue;                 // 分数跨度不足一格，跳过
+        const axis = { min: lo, max: hi, step, count: Math.round((hi - lo) / step) + 1 };
+        fallback = axis;                         // 循环跑完时保留的是最粗步长
+        if (axis.count <= maxTicks) return axis;
+    }
+    if (fallback) return fallback;
+    // 所有行分数相同：造一个 50 分宽的最小合法轴域，保证两端仍是 50 的倍数
+    const lo = Math.floor(minScore / 50) * 50;
+    return { min: lo, max: lo + 50, step: 50, count: 2 };
+}
+
+// 刻度 span 池：数量随轴域步长增减，之后仅更新文本与位置
+// 显示中的轴域是连续量，朝「50 倍数目标域」缓动，而不是每帧直接吸附：
+// 直接吸附会让轴域每跨过一个 50 边界就整张图瞬间缩放一次（条宽随之跳变），观感是一跳一跳。
+// 收敛后轴域精确落在 50 的整数倍上，刻度首尾也精确压在 0% / 100%。
+// smooth 与分数用的是同一个帧率无关系数，各速度档的节奏自动保持一致。
+function wttEaseBarRaceAxis(target, animate, smooth) {
+    const B = wttBarRace;
+    if (B.axisMin == null || B.axisMax == null || !animate) {
+        B.axisMin = target.min;
+        B.axisMax = target.max;
+        B.axisMoving = false;
+        return { min: B.axisMin, max: B.axisMax, step: target.step, count: target.count };
+    }
+    B.axisMin += (target.min - B.axisMin) * smooth;
+    B.axisMax += (target.max - B.axisMax) * smooth;
+    // 半个点以内直接吸附，保证一定收敛、不留下永远微动的长尾
+    if (Math.abs(target.min - B.axisMin) < 0.5) B.axisMin = target.min;
+    if (Math.abs(target.max - B.axisMax) < 0.5) B.axisMax = target.max;
+    B.axisMoving = Math.abs(target.min - B.axisMin) > 0.001 || Math.abs(target.max - B.axisMax) > 0.001;
+    return { min: B.axisMin, max: B.axisMax, step: target.step, count: target.count };
+}
+
+function wttEnsureBarRaceTicks(axisEl, count) {
     let t = wttBarRace.axisTicks;
-    if (t && t.axisEl === axisEl && t.spans[0] && t.spans[0].isConnected) return t;
-    axisEl.textContent = '';
-    const frag = document.createDocumentFragment();
-    const spans = WTT_RACE_TICK_PCTS.map(p => {
+    if (!t || t.axisEl !== axisEl || !t.spans[0] || !t.spans[0].isConnected) {
+        axisEl.textContent = '';
+        t = { axisEl, spans: [] };
+        wttBarRace.axisTicks = t;
+    }
+    while (t.spans.length > count) t.spans.pop().remove();
+    while (t.spans.length < count) {
         const s = document.createElement('span');
         s.className = 'bar-race-tick';
-        s.style.left = p + '%';
-        frag.appendChild(s);
-        return s;
-    });
-    axisEl.appendChild(frag);
-    t = { axisEl, spans, vals: new Array(WTT_RACE_TICK_PCTS.length).fill(null) };
-    wttBarRace.axisTicks = t;
+        s._left = null;
+        s._txt = null;
+        // 新增刻度从左邻位置起步，再滑到自己的槽位，避免凭空弹出
+        s._pos = t.spans.length > 0 ? t.spans[t.spans.length - 1]._pos : 0;
+        t.spans.push(s);
+        axisEl.appendChild(s);
+    }
     return t;
 }
 
-// 渲染横坐标轴刻度（按当前显示分数范围，在 8%–100% 条宽区间内取 5 个刻度）
-function wttRenderBarRaceAxis(axisEl, minScore, maxScore) {
+// 渲染横坐标轴刻度
+// 刻度值恒为 step（50 的倍数）的整数倍：base 取显示轴域左端最近的 step 倍数，
+//   静止时 axis.min 正好等于 base，首刻度精确落在 0%、末刻度精确落在 100%。
+// 刻度位置由显示轴域换算，并各自缓动到目标槽位 —— 刻度数量/步长变化时是滑过去而不是瞬间重排。
+function wttRenderBarRaceAxis(axisEl, axis, animate, smooth) {
     if (!axisEl) return;
-    const t = wttEnsureBarRaceTicks(axisEl);
-    for (let i = 0; i < WTT_RACE_TICK_PCTS.length; i++) {
-        const pct = WTT_RACE_TICK_PCTS[i];
-        const value = maxScore > minScore
-            ? minScore + (pct - WTT_RACE_BAR_MIN_PCT) / (100 - WTT_RACE_BAR_MIN_PCT) * (maxScore - minScore)
-            : maxScore;
-        const txt = value.toFixed(0);
-        if (txt !== t.vals[i]) {
-            t.vals[i] = txt;
-            t.spans[i].textContent = txt;
+    const n = axis.count;
+    const t = wttEnsureBarRaceTicks(axisEl, n);
+    const span = axis.max - axis.min;
+    const base = Math.round(axis.min / axis.step) * axis.step;
+    let moving = false;
+    for (let i = 0; i < n; i++) {
+        const s = t.spans[i];
+        const target = span > 0 ? (base + i * axis.step - axis.min) / span * 100 : 0;
+        if (!animate) {
+            s._pos = target;
+        } else {
+            s._pos += (target - s._pos) * smooth;
+            if (Math.abs(target - s._pos) < 0.01) s._pos = target;   // 收敛后吸附，避免长尾微动
+            else moving = true;
         }
+        const left = s._pos.toFixed(2) + '%';
+        if (left !== s._left) { s._left = left; s.style.left = left; }
+        const txt = String(base + i * axis.step);
+        if (txt !== s._txt) { s._txt = txt; s.textContent = txt; }
     }
+    // 刻度位置的收敛阈值比轴域更紧，轴停了但刻度还在滑时也要续帧，否则会冻结在半路
+    if (moving) wttBarRace.axisMoving = true;
 }
 
 // 根据当前显示分数排序并定位所有行（仅写发生变化的样式，无 CSS 过渡）
 // 升入行从榜单底端之外上滑入场；离场行从原位向下滑过底端后移除（层级压低避免与活跃行交叠突兀）
-function wttRenderBarRacePositions() {
+// animate=false 时轴域与刻度直接就位（初始化 / 语言切换 / 窗口缩放），不做缓动
+function wttRenderBarRacePositions(animate, smooth) {
     const container = document.getElementById('wttBarRaceContainer');
     if (!container) return;
 
@@ -594,9 +675,15 @@ function wttRenderBarRacePositions() {
 
     const minScore = active.length ? active[active.length - 1].score : 0;
     const maxScore = active.length ? active[0].score : 0;
+    // 行首次建好后才量得到轨道宽度，用它定刻度数量上限（只量一次，之后靠 resize 刷新）
+    if (!wttBarRace.trackPx) wttReadBarRaceTrackWidth();
+    // 吸附值只是目标，实际渲染用缓动中的轴域，避免每跨一个 50 边界就整图瞬间缩放
+    const axis = active.length
+        ? wttEaseBarRaceAxis(wttComputeBarRaceAxis(minScore, maxScore), animate, smooth)
+        : null;
     const axisEl = document.getElementById('wttRaceScaleLabel');
     if (axisEl) {
-        if (active.length) wttRenderBarRaceAxis(axisEl, minScore, maxScore);
+        if (axis) wttRenderBarRaceAxis(axisEl, axis, animate, smooth);
         else if (wttBarRace.axisTicks) { axisEl.textContent = ''; wttBarRace.axisTicks = null; }
     }
 
@@ -631,7 +718,7 @@ function wttRenderBarRacePositions() {
             st.row.style.opacity = st.opacity.toFixed(3);
         }
         wttApplyBarRaceRowColor(st);
-        wttUpdateBarRaceRow(st, rankIndex, maxScore, minScore);
+        wttUpdateBarRaceRow(st, rankIndex, axis);
         rankIndex++;
     }
 }
@@ -662,7 +749,7 @@ function wttApplyBarRaceMembership(frameIndex, animate, prevIndex) {
     wttBarRace.frameIndex = frameIndex;
     wttDataVizExtraState.raceFrameIndex = frameIndex;
     const slider = document.getElementById('wttRaceSlider');
-    if (slider) slider.value = frameIndex;
+    if (slider) { slider.value = frameIndex; setRangeFill(slider); }
     const dateLabel = document.getElementById('wttRaceDateLabel');
     if (dateLabel) dateLabel.textContent = frame.label;
 
@@ -784,7 +871,7 @@ function wttSetBarRaceFrame(frameIndex, animate = true) {
                     st.opacity = 1;
                 }
             }
-            wttRenderBarRacePositions();
+            wttRenderBarRacePositions(false);
             wttBarRaceRemoveLeftovers();
         }
         wttBarRaceCancelRaf();
@@ -863,8 +950,10 @@ function wttBarRaceTick(ts) {
         }
     }
 
-    wttRenderBarRacePositions();
+    wttRenderBarRacePositions(true, smooth);
     wttBarRaceRemoveLeftovers();
+    // 分数收敛后轴域可能还在缓动，续帧直到轴也停稳，避免留下半截的轴
+    if (wttBarRace.axisMoving) busy = true;
 
     if (busy || B.playing) {
         B.rafId = requestAnimationFrame(wttBarRaceTick);
@@ -941,13 +1030,14 @@ function wttInitBarRace() {
         wttRaceComputeDurations();
     });
 
-    // 响应窗口大小变化：行高由 CSS 变量控制，变化后重新读取并重排
+    // 响应窗口大小变化：行高由 CSS 变量控制、刻度数量受轨道宽度约束，变化后重新读取并重排
     let resizeTimer = null;
     window.addEventListener('resize', () => {
+        wttBarRace.trackPx = 0;         // 立刻作废旧轨道宽，下一帧渲染就会重测，刻度密度不会用错档
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => {
             wttReadBarRaceRowHeight();
-            wttRenderBarRacePositions();
+            wttRenderBarRacePositions(false);
         }, 150);
     });
 
@@ -1019,9 +1109,16 @@ function wttRenderEfficiencyScatter(topN) {
     const allPlayers = wttGetAllPlayers();
     const scoreMap = wttBuildCurrentScoreMap();
     const stats = wttBuildRecordStats(allPlayers);
+    // 与协会实力分同一口径：本赛季无比赛记录的球员不参与；赛季数据缺失时退回不过滤
+    const activeThisSeason = wttGetSeasonActivePlayers(wttGetCurrentSeason());
+    const filterActiveThisSeason = activeThisSeason && activeThisSeason.size > 0
+        ? name => activeThisSeason.has(name)
+        : () => true;
 
     const data = allPlayers
         .filter(n => (stats[n] && stats[n].total > 0))
+        // 本赛季没有任何比赛记录的球员不进效率图，否则老赛季球员会长期占满前 N
+        .filter(filterActiveThisSeason)
         .sort((a, b) => (scoreMap[b] || 0) - (scoreMap[a] || 0))
         .slice(0, topN)
         .map(n => {

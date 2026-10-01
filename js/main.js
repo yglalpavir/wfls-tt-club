@@ -27,7 +27,7 @@ async function loadRankingDataForViz() {
 
         for (let i = 0; i < dataFiles.length; i++) {
             const f = dataFiles[i];
-            showProgress(i18n[currentLang].data_viz_downloading.replace('{label}', f.label).replace('{i}', i + 1).replace('{total}', dataFiles.length).replace('{file}', f.name));
+            showProgress(i18n[currentLang].data_viz_downloading.replace('{label}', f.label).replace('{i}', i + 1).replace('{total}', dataFiles.length));
             await new Promise(r => setTimeout(r, 0));
             if (await f.loader() === false) throw new Error(f.name + ' 加载失败');
         }

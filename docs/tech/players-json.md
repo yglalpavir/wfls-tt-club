@@ -47,6 +47,7 @@
   "tags": ["25-26年副社长", "校队成员", "大满贯"],
   "honors": ["校乒赛2025单打冠军", "校乒赛2026团体冠军"],
   "role": "社长",
+  "grade": { "enroll": 2024, "graduate": 2027 },
   "qq": "3152269031",
   "description": "统筹社团事务",
   "status": "active"
@@ -160,6 +161,20 @@
 
 > 除 `active` / `alumni` 外的任意值都会被当作 `alumni` 处理（`js/player-page.js`：`player.status === 'active' ? active : alumni`）。
 
+### 3.12 `grade` — 年级（可选）
+
+| 项 | 值 |
+| --- | --- |
+| 类型 | `object`，形如 `{ "enroll": 2024, "graduate": 2027 }` |
+| 字段 | `enroll` 入学年份（int）、`graduate` 毕业年份（int），均用四位数年份 |
+| 约束 | 可选，缺失即不显示。存在时 `ci_validate.py` 校验两者为整数、且 `0 ≤ graduate - enroll ≤ 6`（跨度上限 `GRADE_MAX_SPAN`，超出视为录错）。 |
+| 用途 | `player.html` 档案头 meta 行的年级 chip（`player-score-chip` 样式， Graduation Cap 图标）；`data/api/players.json` 原样透出。 |
+| 英文 | **无 `_en` 兄弟字段**。显示文本由 `playerGrade()`（`js/common.js`）按当前语言套 i18n 模板 `pp_grade_fmt` 拼装：中文 `{e}级{g}届`，英文 `Class of {g}`。年份取自数据、模板不含硬编码年份，因此回填全体球员时无需再改 i18n 词典。 |
+
+> **为什么存结构化对象而不是 `"24级27届"` 这样的字符串**：全站要求 EN 模式零中文，而「级/届」是中文。若存字符串，就得为每名球员各手写一份 `grade_en`，漏写一份即在英文界面漏出中文；存结构化对象则由代码统一拼装，新增/回填零维护。附带好处是按级排序或筛选（如「26 级新成员」）可直接比较数值，无需正则解析。
+
+> **当前状态**：字段已就位但**尚未回填数据**（`players.json` 现有 46 名球员均无 `grade` 键），因此页面上暂时看不到年级 chip。用途确定后按上表格式逐人补写即可。
+
 ---
 
 ## 4. 数据结构与上游/下游依赖
@@ -187,7 +202,7 @@
 
 | 关注点 | 约束 |
 | --- | --- |
-| 新增球员 | 手动为该球员补 `uid`（5 位以上唯一数字）、`name`、`pinyin`（英文界面显示用）、`initialScore`、空数组 `tags`/`honors`/`aliases`、`status:"active"`。 |
+| 新增球员 | 手动为该球员补 `uid`（5 位以上唯一数字）、`name`、`pinyin`（英文界面显示用）、`initialScore`、空数组 `tags`/`honors`/`aliases`、`status:"active"`；`grade`（年级）如已知则一并补 `{ "enroll": <入学年>, "graduate": <毕业年> }`，未知则留空。 |
 | 一致性 | `name` 必须与 `data/score-log.json` 中的 `'胜者'` / `'负者'` / `'对象'` 完全一致，否则该姓名会脱离档案（无 uid、无名下初始积分）。 |
 | uid 校验 | `tools/build_players.js`（一次性迁移脚本）内含 `/^\d{5,}$/` 与唯一性校验；不建议手工改动已存在的 `uid`，避免破坏 `player.html` 外链。 |
 | 别名 | 建议随角色变更补充 `aliases`，让英文名/曾用名也能被搜索命中。 |

@@ -21,15 +21,16 @@ venv/
 
 # ===== 临时/一次性脚本数据（tools/）=====
 tools/tleague_data/
+tools/ttbl_data/
 tools/backup_wd/
 tools/_archive*/
 tools/mtc2025_matchcards.json
-tools/tleague_all.json
-tools/tleague_matches.json
 tools/doha_doubles_raw.txt
 tools/mixedteams2024playerlist copy.txt
 tools/_*_raw.txt
 tools/*.migrated.bak
+# 官网名册抓取缓存（T联赛球员对照表的唯一上游）
+tools/_tleague_roster_raw.json
 # results.ittf.link 抓取临时产物（HTML 原文/结构报告/中间 JSON）
 tools/_probe_out/
 tools/_ittf_2012_work/
@@ -53,6 +54,7 @@ tools/*
 !tools/append_submission.py
 !tools/import_submissions_csv.py
 !tools/gen_assets_manifest.py
+!tools/gen_dataset_stats.py
 !tools/i18n_audit.py
 # import_submissions_csv.py 的去重状态（tools/* 规则已默认忽略，此处显式声明意图）
 tools/.import-state.json
@@ -66,5 +68,8 @@ data/api/
 # Assets/manifest.json 由 deploy 工作流在部署时运行 tools/gen_assets_manifest.py 现场生成
 # （docs.html 素材库数据源；本地开发需手动运行一次该脚本）
 Assets/manifest.json
+# data/dataset-stats.json 由 deploy 工作流在部署时运行 tools/gen_dataset_stats.py 现场生成
+# （data_scale.html 数据规模页的数据源；本地开发需手动运行一次该脚本）
+data/dataset-stats.json
 # 本地海报调试预览图，不随站点发布
 .poster-preview/

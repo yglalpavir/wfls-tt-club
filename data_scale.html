@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function(){try{var t=localStorage.getItem("wfls-tt-theme");var d=t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark-mode");}catch(e){}})()</script>
+    <meta name="description" content="WFLS 乒乓球社团数据规模：社团比赛记录、成员档案、职业赛事历史库、内容条目与素材库的真实体量一览。" data-i18n-content="ds_meta_desc">
+    <meta name="keywords" content="武汉外国语学校,WFLS,乒乓球,数据规模,积分记录,赛事档案,社团数据" data-i18n-content="ds_kw">
+    <meta name="author" content="WFLS Table Tennis Club">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="数据规模 | WFLS Table Tennis Club" data-i18n-content="ds_page_title">
+    <meta property="og:description" content="WFLS 乒乓球社团数据规模：社团比赛记录、成员档案、职业赛事历史库、内容条目与素材库的真实体量一览。" data-i18n-content="ds_meta_desc">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://yglalpavir.github.io/wfls-tt-club/images/og-cover.png">
+    <meta property="og:url" content="https://yglalpavir.github.io/wfls-tt-club/data_scale.html">
+    <meta name="twitter:image" content="https://yglalpavir.github.io/wfls-tt-club/images/og-cover.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="数据规模 | WFLS Table Tennis Club" data-i18n-content="ds_page_title">
+    <meta name="twitter:description" content="WFLS 乒乓球社团数据规模：社团比赛记录、成员档案、职业赛事历史库、内容条目与素材库的真实体量一览。" data-i18n-content="ds_meta_desc">
+    <link rel="canonical" href="https://yglalpavir.github.io/wfls-tt-club/data_scale.html">
+    <title data-i18n="ds_page_title">数据规模 | WFLS Table Tennis Club</title>
+    <link rel="icon" type="image/svg+xml" href="Assets/files/favicon_4DA3FF.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .ds-hero-meta { margin-top:16px; font-size:.84rem; color:rgba(255,255,255,.72); font-family:var(--font-en); }
+        .ds-sep { margin:0 10px; opacity:.5; }
+        .ds-section { margin-bottom:40px; }
+        .ds-section-head { margin-bottom:16px; }
+        .ds-section-head h2 { margin:0 0 6px; font-size:1.35rem; font-weight:800; color:var(--text-primary); }
+        .ds-section-head p { margin:0; font-size:.86rem; color:var(--text-secondary); }
+        .ds-lead { margin:0 0 14px; font-size:.92rem; color:var(--text-secondary); line-height:1.7; }
+        .ds-note { margin:12px 0 0; font-size:.82rem; color:var(--text-muted); }
+        .ds-kpi-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:14px; margin-bottom:18px; }
+        .ds-kpi { padding:16px 18px; display:flex; flex-direction:column; align-items:flex-start; gap:2px; }
+        .ds-kpi i { font-size:1.3rem; color:var(--accent-blue,#3b82f6); width:42px; height:42px; display:flex; align-items:center; justify-content:center; border-radius:12px; background:rgba(59,130,246,.1); margin-bottom:8px; flex:none; }
+        .ds-kpi-value { font-size:1.5rem; font-weight:800; font-family:var(--font-en); color:var(--text-primary); line-height:1.2; }
+        .ds-kpi-label { font-size:.78rem; color:var(--text-secondary); }
+        .ds-kpi-sub { font-size:.72rem; color:var(--text-muted); font-family:var(--font-en); }
+        .ds-tone-blue i { color:var(--accent-blue,#3b82f6); background:rgba(59,130,246,.1); }
+        .ds-tone-gold i { color:var(--accent-gold,#f0a500); background:rgba(240,165,0,.12); }
+        .ds-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; margin-bottom:18px; }
+        .ds-grid-1 { grid-template-columns:1fr; }
+        .ds-card { padding:18px 20px; }
+        .ds-card h3 { margin:0 0 4px; font-size:1rem; font-weight:700; color:var(--text-primary); }
+        .ds-card-desc { font-size:.78rem; color:var(--text-muted); margin:0 0 12px; }
+        .ds-chart-box { position:relative; height:280px; margin-top:12px; }
+        .ds-bars { display:flex; flex-direction:column; gap:9px; margin-top:12px; }
+        .ds-bar-row { display:grid; grid-template-columns:minmax(84px,132px) 1fr auto; align-items:center; gap:10px; }
+        .ds-bar-label { font-size:.8rem; color:var(--text-secondary); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+        .ds-bar-track { height:9px; border-radius:999px; background:var(--bg-lighter); overflow:hidden; }
+        .ds-bar-fill { display:block; height:100%; border-radius:999px; background:var(--accent-blue,#3b82f6); transition:width var(--transition-slow); }
+        .ds-fill-gold { background:var(--accent-gold,#f0a500); }
+        .ds-fill-green { background:var(--accent-green,#52c41a); }
+        .ds-bar-value { font-size:.8rem; font-weight:600; font-family:var(--font-en); color:var(--text-primary); white-space:nowrap; }
+        .ds-chip-block { margin-bottom:14px; }
+        .ds-chip-block h4 { margin:0 0 8px; font-size:.82rem; font-weight:600; color:var(--text-secondary); }
+        .ds-chips { display:flex; flex-wrap:wrap; gap:7px; }
+        .ds-chip { display:inline-flex; align-items:center; padding:4px 11px; border-radius:999px; border:1px solid var(--border-color); background:var(--bg-lighter); color:var(--text-secondary); font-size:.76rem; }
+        .ds-links { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+        .ds-btn { display:inline-flex; align-items:center; gap:7px; }
+        .ds-status { text-align:center; padding:56px 16px; color:var(--text-secondary); }
+        .ds-status p { margin:12px 0 0; font-size:.9rem; }
+        .ds-spinner { display:block; width:32px; height:32px; margin:0 auto; border:3px solid var(--border-color); border-top-color:var(--accent-blue,#3b82f6); border-radius:50%; animation:dsSpin .8s linear infinite; }
+        .ds-status-icon { display:block; width:32px; height:32px; margin:0 auto; border-radius:50%; border:3px solid var(--border-color); border-top-color:transparent; }
+        @keyframes dsSpin { to { transform:rotate(360deg); } }
+        @media (max-width:640px) { .ds-kpi-row { grid-template-columns:repeat(2,1fr); } .ds-chart-box { height:240px; } .ds-bar-row { grid-template-columns:minmax(64px,1fr) 1fr auto; } }
+        @media (prefers-reduced-motion: reduce) { .ds-bar-fill { transition:none; } .ds-spinner { animation:none; } }
+    </style>
+</head>
+<body>
+<noscript><div style="padding:10px;text-align:center;background:#b91c1c;color:#fff;font-size:0.9rem;">本站需要启用 JavaScript 才能加载数据。This site requires JavaScript to load data.</div></noscript>
+    <script src="js/shared-partials.js" data-partial="nav"></script>
+
+    <section class="page-hero"><div class="page-hero-overlay"></div><div class="page-hero-content"><span class="section-tag" data-i18n="ds_hero_tag">Data Scale</span><h1 data-i18n="ds_hero_title">数据规模</h1><p data-i18n="ds_hero_desc">这个站点到底攒了多少数据</p><p class="ds-hero-meta" id="dsHeroMeta"></p></div></section>
+
+    <section class="section">
+        <div class="container">
+            <div id="dsBody">
+                <!-- JS 动态渲染 -->
+            </div>
+        </div>
+    </section>
+
+    <script src="js/shared-partials.js" data-partial="footer"></script>
+
+    <script src="js/shared-partials.js" data-partial="qr-modal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" integrity="sha384-e6nUZLBkQ86NJ6TVVKAeSaK8jWa3NhkYWZFomE39AvDbQWeie9PlQqM3pmYW5d1g" crossorigin="anonymous"></script>
+    <script src="js/common.js"></script>
+    <script src="js/data-scale.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

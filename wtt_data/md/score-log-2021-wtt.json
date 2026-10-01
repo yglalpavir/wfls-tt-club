@@ -9,7 +9,12 @@
     "日期": "2021-01-21",
     "类型": "T联赛",
     "胜者": "Masataka MORIZONO/Asuka MACHI",
-    "负者": "Kenta MATSUDAIRA/Hiroto SHINOZUKA"
+    "负者": "Kenta MATSUDAIRA/Hiroto SHINOZUKA",
+    "比分": "2-0",
+    "局分": [
+      "11-4",
+      "11-10"
+    ]
   },
   {
     "日期": "2021-01-23",
@@ -21,25 +26,47 @@
     "日期": "2021-01-29",
     "类型": "T联赛",
     "胜者": "Yuto KIZUKURI/Kazuhiro YOSHIMURA",
-    "负者": "Jun MIZUTANI/Kenta TAZOE"
+    "负者": "Jun MIZUTANI/Kenta TAZOE",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-9"
+    ]
   },
   {
     "日期": "2021-01-30",
     "类型": "T联赛",
     "胜者": "Yuto KIZUKURI/Kazuhiro YOSHIMURA",
-    "负者": "Mizuki OIKAWA/Kenta TAZOE"
+    "负者": "Mizuki OIKAWA/Kenta TAZOE",
+    "比分": "2-1",
+    "局分": [
+      "11-7",
+      "6-11",
+      "13-11"
+    ]
   },
   {
     "日期": "2021-01-30",
     "类型": "T联赛",
-    "胜者": "Sho SONE/Hiroto SHINOZUKA",
-    "负者": "Masataka MORIZONO/Asuka MACHI"
+    "胜者": "Hiroto SHINOZUKA/Kakeru SONE",
+    "负者": "Asuka MACHI/Masataka MORIZONO",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-9"
+    ]
   },
   {
     "日期": "2021-01-31",
     "类型": "T联赛",
-    "胜者": "Yuto KIZUKURI/Kazuhiro YOSHIMURA",
-    "负者": "Sho SONE/Hiroto SHINOZUKA"
+    "胜者": "Kazuhiro YOSHIMURA/Yuto KIZUKURI",
+    "负者": "Hiroto SHINOZUKA/Kakeru SONE",
+    "比分": "2-1",
+    "局分": [
+      "11-10",
+      "7-11",
+      "11-6"
+    ]
   },
   {
     "日期": "2021-01-31",
@@ -50,8 +77,14 @@
   {
     "日期": "2021-02-06",
     "类型": "T联赛",
-    "胜者": "Yuki MATSUYAMA/Sho SONE",
-    "负者": "Yuto KIZUKURI/Kazuhiro YOSHIMURA"
+    "胜者": "Kakeru SONE/Yuki MATSUYAMA",
+    "负者": "Kazuhiro YOSHIMURA/Yuto KIZUKURI",
+    "比分": "2-1",
+    "局分": [
+      "4-11",
+      "11-9",
+      "11-7"
+    ]
   },
   {
     "日期": "2021-02-07",
@@ -60,21 +93,20 @@
     "负者": "Yuto KIZUKURI/Kazuhiro YOSHIMURA"
   },
   {
-    "日期": "2021-02-07",
-    "类型": "T联赛",
-    "胜者": "Miu HIRANO/Miyu MAEDA",
-    "负者": "Rika SUZUKI/Minami ANDO"
-  },
-  {
     "日期": "2021-02-09",
     "类型": "T联赛",
-    "胜者": "Sho SONE/Hiroto SHINOZUKA",
-    "负者": "Yuya OSHIMA/Sora MATSUSHIMA"
+    "胜者": "Hiroto SHINOZUKA/Kakeru SONE",
+    "负者": "Sora MATSUSHIMA/Yuya OSHIMA",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-9"
+    ]
   },
   {
     "日期": "2021-02-11",
     "类型": "T联赛",
-    "胜者": "Sho SONE/Hiroto SHINOZUKA",
+    "胜者": "Hiroto SHINOZUKA/Kakeru SONE",
     "负者": "Hitoshi UEDA/Masataka MORIZONO"
   },
   {
@@ -86,8 +118,14 @@
   {
     "日期": "2021-02-13",
     "类型": "T联赛",
-    "胜者": "Sho SONE/Hiroto SHINOZUKA",
-    "负者": "Kenta TAZOE/Sora MATSUSHIMA"
+    "胜者": "Hiroto SHINOZUKA/Kakeru SONE",
+    "负者": "Kenta TAZOE/Sora MATSUSHIMA",
+    "比分": "2-1",
+    "局分": [
+      "9-11",
+      "11-7",
+      "13-11"
+    ]
   },
   {
     "日期": "2021-02-14",
@@ -98,26 +136,24 @@
   {
     "日期": "2021-02-14",
     "类型": "T联赛",
-    "胜者": "Sho SONE/Hiroto SHINOZUKA",
-    "负者": "Kazuhiro YOSHIMURA/Yuto KIZUKURI"
-  },
-  {
-    "日期": "2021-02-14",
-    "类型": "T联赛",
-    "胜者": "Yui HAMAMOTO/Miyu NAGASAKI",
-    "负者": "Rika SUZUKI/Minami ANDO"
-  },
-  {
-    "日期": "2021-02-20",
-    "类型": "T联赛",
-    "胜者": "Sho SONE/Hiroto SHINOZUKA",
-    "负者": "Kenta TAZOE/Sora MATSUSHIMA"
+    "胜者": "Hiroto SHINOZUKA/Kakeru SONE",
+    "负者": "Kazuhiro YOSHIMURA/Yuto KIZUKURI",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-6"
+    ]
   },
   {
     "日期": "2021-02-20",
     "类型": "T联赛",
-    "胜者": "Rika SUZUKI/Minami ANDO",
-    "负者": "Yui HAMAMOTO/Miyu NAGASAKI"
+    "胜者": "Hiroto SHINOZUKA/Kakeru SONE",
+    "负者": "Kenta TAZOE/Sora MATSUSHIMA",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-8"
+    ]
   },
   {
     "日期": "2021-02-21",
@@ -129,19 +165,24 @@
     "日期": "2021-02-18",
     "类型": "T联赛",
     "胜者": "Kenta TAZOE/Sora MATSUSHIMA",
-    "负者": "Kohei SANBE/Masataka MORIZONO"
-  },
-  {
-    "日期": "2021-02-18",
-    "类型": "T联赛",
-    "胜者": "Yui HAMAMOTO/Miyu NAGASAKI",
-    "负者": "Rika SUZUKI/Shoko YAMAMOTO"
+    "负者": "Kohei SAMBE/Masataka MORIZONO",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-9"
+    ]
   },
   {
     "日期": "2021-02-19",
     "类型": "T联赛",
-    "胜者": "Sho SONE/Hiroto SHINOZUKA",
-    "负者": "Jun MIZUTANI/Yuya OSHIMA"
+    "胜者": "Hiroto SHINOZUKA/Kakeru SONE",
+    "负者": "Jun MIZUTANI/Yuya OSHIMA",
+    "比分": "2-1",
+    "局分": [
+      "5-11",
+      "11-8",
+      "11-9"
+    ]
   },
   {
     "日期": "2021-02-19",
@@ -156,52 +197,67 @@
     "负者": "Mizuki OIKAWA/Kenta TAZOE"
   },
   {
-    "日期": "2021-02-27",
-    "类型": "T联赛",
-    "胜者": "Miu HIRANO/Miyu MAEDA",
-    "负者": "Yui HAMAMOTO/Miyu NAGASAKI"
-  },
-  {
     "日期": "2021-09-09",
     "类型": "T联赛",
     "胜者": "Yuto KIZUKURI/Yuki HIRANO",
-    "负者": "Masaki YOSHIDA/Kenta TAZOE"
+    "负者": "Masaki YOSHIDA/Kenta TAZOE",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-10"
+    ]
   },
   {
     "日期": "2021-09-11",
     "类型": "T联赛",
     "胜者": "Masataka MORIZONO/Asuka MACHI",
-    "负者": "Hitoshi UEDA/Sho SONE"
+    "负者": "Hitoshi UEDA/Kakeru SONE"
   },
   {
     "日期": "2021-09-18",
     "类型": "T联赛",
     "胜者": "Yuya OSHIMA/Sora MATSUSHIMA",
-    "负者": "Masataka MORIZONO/Asuka MACHI"
+    "负者": "Masataka MORIZONO/Asuka MACHI",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-10"
+    ]
   },
   {
     "日期": "2021-09-22",
     "类型": "T联赛",
     "胜者": "Sora MATSUSHIMA/Kenta TAZOE",
-    "负者": "Hitoshi UEDA/Sho SONE"
+    "负者": "Hitoshi UEDA/Kakeru SONE"
   },
   {
     "日期": "2021-09-23",
     "类型": "T联赛",
     "胜者": "Masataka MORIZONO/Asuka MACHI",
-    "负者": "Hitoshi UEDA/Sho SONE"
+    "负者": "Hitoshi UEDA/Kakeru SONE"
   },
   {
     "日期": "2021-09-23",
     "类型": "T联赛",
     "胜者": "Masaki TAKAMI/Yuki MATSUYAMA",
-    "负者": "Jun MIZUTANI/Kenta TAZOE"
+    "负者": "Jun MIZUTANI/Kenta TAZOE",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-9"
+    ]
   },
   {
     "日期": "2021-09-25",
     "类型": "T联赛",
     "胜者": "Sora MATSUSHIMA/Yuya OSHIMA",
-    "负者": "Masataka MORIZONO/Asuka MACHI"
+    "负者": "Masataka MORIZONO/Asuka MACHI",
+    "比分": "2-1",
+    "局分": [
+      "10-11",
+      "11-10",
+      "11-9"
+    ]
   },
   {
     "日期": "2021-09-26",
@@ -213,7 +269,13 @@
     "日期": "2021-10-09",
     "类型": "T联赛",
     "胜者": "Hibiki TAZOE/Masataka MORIZONO",
-    "负者": "Sora MATSUSHIMA/Yuya OSHIMA"
+    "负者": "Sora MATSUSHIMA/Yuya OSHIMA",
+    "比分": "2-1",
+    "局分": [
+      "11-9",
+      "6-11",
+      "15-13"
+    ]
   },
   {
     "日期": "2021-10-10",
@@ -225,7 +287,12 @@
     "日期": "2021-10-15",
     "类型": "T联赛",
     "胜者": "Masataka MORIZONO/Asuka MACHI",
-    "负者": "Masaki TAKAMI/Haruki MIYAMOTO"
+    "负者": "Masaki TAKAMI/Haruki MIYAMOTO",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-9"
+    ]
   },
   {
     "日期": "2021-10-16",
@@ -237,7 +304,12 @@
     "日期": "2021-10-23",
     "类型": "T联赛",
     "胜者": "Yuto KIZUKURI/Yuki HIRANO",
-    "负者": "Hibiki TAZOE/Masataka MORIZONO"
+    "负者": "Hibiki TAZOE/Masataka MORIZONO",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-8"
+    ]
   },
   {
     "日期": "2021-10-23",
@@ -255,7 +327,13 @@
     "日期": "2021-12-12",
     "类型": "T联赛",
     "胜者": "Kenta TAZOE/Hokuto KORIYAMA",
-    "负者": "HAO Shuai/Asuka MACHI"
+    "负者": "HAO Shuai/Asuka MACHI",
+    "比分": "2-1",
+    "局分": [
+      "7-11",
+      "11-9",
+      "11-8"
+    ]
   },
   {
     "日期": "2021-12-20",
@@ -267,36 +345,64 @@
     "日期": "2021-12-21",
     "类型": "T联赛",
     "胜者": "Yuya OSHIMA/Kenta TAZOE",
-    "负者": "Yuto KIZUKURI/Yuki HIRANO"
+    "负者": "Yuto KIZUKURI/Yuki HIRANO",
+    "比分": "2-1",
+    "局分": [
+      "7-11",
+      "11-8",
+      "13-11"
+    ]
   },
   {
     "日期": "2021-12-24",
     "类型": "T联赛",
     "胜者": "Yuto KIZUKURI/Shunsuke TOGAMI",
-    "负者": "Masataka MORIZONO/Asuka MACHI"
+    "负者": "Masataka MORIZONO/Asuka MACHI",
+    "比分": "2-1",
+    "局分": [
+      "11-9",
+      "9-11",
+      "13-11"
+    ]
   },
   {
     "日期": "2021-12-25",
     "类型": "T联赛",
     "胜者": "Yuto KIZUKURI/Shunsuke TOGAMI",
-    "负者": "Masataka MORIZONO/Asuka MACHI"
+    "负者": "Masataka MORIZONO/Asuka MACHI",
+    "比分": "2-0",
+    "局分": [
+      "11-5",
+      "11-9"
+    ]
   },
   {
     "日期": "2021-12-25",
     "类型": "T联赛",
     "胜者": "Koki NIWA/Kenta MATSUDAIRA",
-    "负者": "Yuya OSHIMA/Kenta TAZOE"
+    "负者": "Yuya OSHIMA/Kenta TAZOE",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-4"
+    ]
   },
   {
     "日期": "2021-12-26",
     "类型": "T联赛",
     "胜者": "Masataka MORIZONO/Asuka MACHI",
-    "负者": "Koki NIWA/Kenta MATSUDAIRA"
+    "负者": "Koki NIWA/Kenta MATSUDAIRA",
+    "比分": "2-1",
+    "局分": [
+      "11-7",
+      "10-11",
+      "11-7"
+    ]
   },
   {
     "日期": "2021-09-18",
     "类型": "T联赛",
-    "胜者": "Sakura MORI/Rena ASO",
+    "胜者": "Reina ASO/Sakura MORI",
     "负者": "Xiaona SHAN/Akiko NAGAO"
   },
   {
@@ -405,13 +511,25 @@
     "日期": "2021-10-17",
     "类型": "T联赛",
     "胜者": "Kenta TAZOE/Hokuto KORIYAMA",
-    "负者": "Taimu ARINOBU/Masaki TAKAMI"
+    "负者": "Taimu ARINOBU/Masaki TAKAMI",
+    "比分": "2-1",
+    "局分": [
+      "11-5",
+      "8-11",
+      "11-9"
+    ]
   },
   {
     "日期": "2021-10-22",
     "类型": "T联赛",
     "胜者": "Masataka MORIZONO/Asuka MACHI",
-    "负者": "Taimu ARINOBU/Yuki HIRANO"
+    "负者": "Taimu ARINOBU/Yuki HIRANO",
+    "比分": "2-1",
+    "局分": [
+      "6-11",
+      "11-9",
+      "13-11"
+    ]
   },
   {
     "日期": "2021-10-10",
@@ -430,5 +548,776 @@
     "类型": "乒超联赛",
     "胜者": "ZHOU Qihao/ZHOU Yu",
     "负者": "WANG Chuqin/YAN An"
+  },
+  {
+    "日期": "2021-01-20",
+    "类型": "T联赛",
+    "胜者": "Jun MIZUTANI/Kenta TAZOE",
+    "负者": "Hiroto SHINOZUKA/Takuya JIN",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2021-01-31",
+    "类型": "T联赛",
+    "胜者": "Jin UEDA/Masataka MORIZONO",
+    "负者": "Jun MIZUTANI/Kenta TAZOE",
+    "比分": "2-1",
+    "局分": [
+      "11-10",
+      "9-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2021-02-07",
+    "类型": "T联赛",
+    "胜者": "Jin UEDA/Masataka MORIZONO",
+    "负者": "Kazuhiro YOSHIMURA/Yuto KIZUKURI",
+    "比分": "2-1",
+    "局分": [
+      "10-11",
+      "11-10",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2021-02-11",
+    "类型": "T联赛",
+    "胜者": "Hiroto SHINOZUKA/Kakeru SONE",
+    "负者": "Jin UEDA/Masataka MORIZONO",
+    "比分": "2-1",
+    "局分": [
+      "11-10",
+      "8-11",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2021-02-13",
+    "类型": "T联赛",
+    "胜者": "Jin UEDA/Koki NIWA",
+    "负者": "Maharu YOSHIMURA/Yuto KIZUKURI",
+    "比分": "2-1",
+    "局分": [
+      "11-9",
+      "10-11",
+      "17-15"
+    ]
+  },
+  {
+    "日期": "2021-02-14",
+    "类型": "T联赛",
+    "胜者": "Jun MIZUTANI/Yuya OSHIMA",
+    "负者": "Jin UEDA/Koki NIWA",
+    "比分": "2-1",
+    "局分": [
+      "11-7",
+      "4-11",
+      "15-13"
+    ]
+  },
+  {
+    "日期": "2021-02-21",
+    "类型": "T联赛",
+    "胜者": "Jin UEDA/Masataka MORIZONO",
+    "负者": "Jun MIZUTANI/Yuya OSHIMA",
+    "比分": "2-1",
+    "局分": [
+      "4-11",
+      "11-10",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2021-09-11",
+    "类型": "T联赛",
+    "胜者": "Asuka MACHI/Masataka MORIZONO",
+    "负者": "Jin UEDA/Kakeru SONE",
+    "比分": "2-1",
+    "局分": [
+      "11-9",
+      "8-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2021-09-22",
+    "类型": "T联赛",
+    "胜者": "Kenta TAZOE/Sora MATSUSHIMA",
+    "负者": "Jin UEDA/Kakeru SONE",
+    "比分": "2-1",
+    "局分": [
+      "5-11",
+      "11-8",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2021-09-23",
+    "类型": "T联赛",
+    "胜者": "Asuka MACHI/Masataka MORIZONO",
+    "负者": "Jin UEDA/Kakeru SONE",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2021-09-26",
+    "类型": "T联赛",
+    "胜者": "Asuka MACHI/Masataka MORIZONO",
+    "负者": "Jin UEDA/Koki NIWA",
+    "比分": "2-1",
+    "局分": [
+      "11-4",
+      "7-11",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2021-10-10",
+    "类型": "T联赛",
+    "胜者": "Sora MATSUSHIMA/Yuya OSHIMA",
+    "负者": "Shodai MIYAGAWA/Yuki HIRANO",
+    "比分": "2-1",
+    "局分": [
+      "9-11",
+      "11-10",
+      "17-15"
+    ]
+  },
+  {
+    "日期": "2021-10-16",
+    "类型": "T联赛",
+    "胜者": "Masaki TAKAMI/Motoki MAWATARI",
+    "负者": "Jin UEDA/Kenta MATSUDAIRA",
+    "比分": "2-1",
+    "局分": [
+      "9-11",
+      "11-7",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2021-10-23",
+    "类型": "T联赛",
+    "胜者": "Hiroto SHINOZUKA/Takuya JIN",
+    "负者": "Jun MIZUTANI/Tomokazu HARIMOTO",
+    "比分": "2-1",
+    "局分": [
+      "11-8",
+      "8-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2021-10-24",
+    "类型": "T联赛",
+    "胜者": "Jun MIZUTANI/Tomokazu HARIMOTO",
+    "负者": "Hiroto SHINOZUKA/Jin UEDA",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-10"
+    ]
+  },
+  {
+    "日期": "2021-12-20",
+    "类型": "T联赛",
+    "胜者": "Jin UEDA/Kenta MATSUDAIRA",
+    "负者": "Yuki HIRANO/Yuto KIZUKURI",
+    "比分": "2-1",
+    "局分": [
+      "6-11",
+      "11-6",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2021-01-16",
+    "类型": "法国甲级联赛",
+    "胜者": "Ievgen PRYSHCHEPA/Vasily LAKEEV",
+    "负者": "Alexandre CASSIN/Par GERELL",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2021-01-16",
+    "类型": "法国甲级联赛",
+    "胜者": "Jules CAVAILLE/Vasily LAKEEV",
+    "负者": "Mehdi BOULOUSSA/Par GERELL",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2021-01-26",
+    "类型": "法国甲级联赛",
+    "胜者": "Adrien MATTENET/Quentin ROBINOT",
+    "负者": "Sadi ISMAILOV/Vasily LAKEEV",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-01-26",
+    "类型": "法国甲级联赛",
+    "胜者": "Adrien RASSENFOSSE/Can AKKUZU",
+    "负者": "Eric JOUTI/Vincent PICARD",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-01-26",
+    "类型": "法国甲级联赛",
+    "胜者": "CHEN Tianyuan/Nima ALAMIAN",
+    "负者": "Niagol STOYANOV/Stephane OUAICHE",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-01-26",
+    "类型": "法国甲级联赛",
+    "胜者": "Ievgen PRYSHCHEPA/Vasily LAKEEV",
+    "负者": "Adrien MATTENET/Patrick BAUM",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-01-29",
+    "类型": "法国甲级联赛",
+    "胜者": "Adrien MATTENET/Quentin ROBINOT",
+    "负者": "Enzo ANGLES/Vincent PICARD",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-01-29",
+    "类型": "法国甲级联赛",
+    "胜者": "Benedek OLAH/Bojan TOKIC",
+    "负者": "Anders LIND/Omar ASSAR",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2021-01-29",
+    "类型": "法国甲级联赛",
+    "胜者": "Cedric NUYTINCK/Omar ASSAR",
+    "负者": "Benedek OLAH/Kirill SKACHKOV",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2021-01-31",
+    "类型": "法国甲级联赛",
+    "胜者": "Adrien RASSENFOSSE/Alexandre ROBINOT",
+    "负者": "Niagol STOYANOV/Yang WANG",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2021-01-31",
+    "类型": "法国甲级联赛",
+    "胜者": "Adrien RASSENFOSSE/Robert GARDOS",
+    "负者": "Niagol STOYANOV/Stephane OUAICHE",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-01-31",
+    "类型": "法国甲级联赛",
+    "胜者": "Alexandre CASSIN/Mehdi BOULOUSSA",
+    "负者": "Nima ALAMIAN/Romain RUIZ",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-01-31",
+    "类型": "法国甲级联赛",
+    "胜者": "Brice OLLIVIER/Nima ALAMIAN",
+    "负者": "Mehdi BOULOUSSA/Par GERELL",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2021-02-19",
+    "类型": "法国甲级联赛",
+    "胜者": "Antoine HACHARD/Stephane OUAICHE",
+    "负者": "Adrien MATTENET/Tristan FLORE",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2021-02-21",
+    "类型": "法国甲级联赛",
+    "胜者": "Brice OLLIVIER/CHEN Tianyuan",
+    "负者": "Hampus NORDBERG/Jon PERSSON"
+  },
+  {
+    "日期": "2021-02-21",
+    "类型": "法国甲级联赛",
+    "胜者": "Brice OLLIVIER/Nima ALAMIAN",
+    "负者": "Hampus NORDBERG/Joao GERALDO"
+  },
+  {
+    "日期": "2021-02-23",
+    "类型": "法国甲级联赛",
+    "胜者": "Anders LIND/Cedric NUYTINCK",
+    "负者": "Can AKKUZU/Robert GARDOS",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-03-29",
+    "类型": "法国甲级联赛",
+    "胜者": "Ievgen PRYSHCHEPA/Jules CAVAILLE",
+    "负者": "Brice OLLIVIER/Nima ALAMIAN",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2021-03-30",
+    "类型": "法国甲级联赛",
+    "胜者": "Niagol STOYANOV/Yang WANG",
+    "负者": "Enzo ANGLES/Eric JOUTI",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2021-03-30",
+    "类型": "法国甲级联赛",
+    "胜者": "Quentin ROBINOT/Tristan FLORE",
+    "负者": "Cedric NUYTINCK/Samuel WALKER",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-04-02",
+    "类型": "法国甲级联赛",
+    "胜者": "Alexandre CASSIN/Par GERELL",
+    "负者": "Quentin ROBINOT/Tristan FLORE",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-04-02",
+    "类型": "法国甲级联赛",
+    "胜者": "Benjamin FRUCHART/Nima ALAMIAN",
+    "负者": "Bojan TOKIC/Paul Andrew DRINKHALL",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2021-04-02",
+    "类型": "法国甲级联赛",
+    "胜者": "Georgios STAMATOUROS/Omar ASSAR",
+    "负者": "Enzo ANGLES/Vincent PICARD",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2021-04-02",
+    "类型": "法国甲级联赛",
+    "胜者": "Stephane OUAICHE/Yang WANG",
+    "负者": "Ievgen PRYSHCHEPA/Jules CAVAILLE",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-04-06",
+    "类型": "法国甲级联赛",
+    "胜者": "Hampus NORDBERG/Joao GERALDO",
+    "负者": "Patrick BAUM/Quentin ROBINOT",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2021-04-09",
+    "类型": "法国甲级联赛",
+    "胜者": "Bojan TOKIC/Paul Andrew DRINKHALL",
+    "负者": "Alexandre ROBINOT/Can AKKUZU",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-04-09",
+    "类型": "法国甲级联赛",
+    "胜者": "Can AKKUZU/Robert GARDOS",
+    "负者": "Benedek OLAH/Paul Andrew DRINKHALL",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2021-04-09",
+    "类型": "法国甲级联赛",
+    "胜者": "Patrick BAUM/Quentin ROBINOT",
+    "负者": "Brice OLLIVIER/CHEN Tianyuan",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2021-04-09",
+    "类型": "法国甲级联赛",
+    "胜者": "Quentin ROBINOT/Tristan FLORE",
+    "负者": "CHEN Tianyuan/Nima ALAMIAN",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-04-13",
+    "类型": "法国甲级联赛",
+    "胜者": "Adrien RASSENFOSSE/Alexandre ROBINOT",
+    "负者": "Brice OLLIVIER/CHEN Tianyuan",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2021-04-13",
+    "类型": "法国甲级联赛",
+    "胜者": "Adrien RASSENFOSSE/Robert GARDOS",
+    "负者": "CHEN Tianyuan/Nima ALAMIAN",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2021-04-13",
+    "类型": "法国甲级联赛",
+    "胜者": "Benedek OLAH/Kirill SKACHKOV",
+    "负者": "Sadi ISMAILOV/Vasily LAKEEV"
+  },
+  {
+    "日期": "2021-04-13",
+    "类型": "法国甲级联赛",
+    "胜者": "Eric JOUTI/Vincent PICARD",
+    "负者": "Alexandre CASSIN/Par GERELL",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-04-13",
+    "类型": "法国甲级联赛",
+    "胜者": "Ievgen PRYSHCHEPA/Vasily LAKEEV",
+    "负者": "Benedek OLAH/Paul Andrew DRINKHALL",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-04-15",
+    "类型": "法国甲级联赛",
+    "胜者": "Antoine HACHARD/Stephane OUAICHE",
+    "负者": "Joe SEYFRIED/Mehdi BOULOUSSA",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-04-15",
+    "类型": "法国甲级联赛",
+    "胜者": "Joe SEYFRIED/Par GERELL",
+    "负者": "Stephane OUAICHE/Yang WANG",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2021-04-16",
+    "类型": "法国甲级联赛",
+    "胜者": "Hampus NORDBERG/Joao GERALDO",
+    "负者": "Enzo ANGLES/Vincent PICARD",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-05-15",
+    "类型": "法国甲级联赛",
+    "胜者": "Alexandre CASSIN/Mehdi BOULOUSSA",
+    "负者": "Benedek OLAH/Kirill SKACHKOV",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-05-15",
+    "类型": "法国甲级联赛",
+    "胜者": "Mehdi BOULOUSSA/Par GERELL",
+    "负者": "Bojan TOKIC/Kirill SKACHKOV",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2021-05-18",
+    "类型": "法国甲级联赛",
+    "胜者": "Benedek OLAH/Paul Andrew DRINKHALL",
+    "负者": "Adrien MATTENET/Patrick BAUM",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2021-05-18",
+    "类型": "法国甲级联赛",
+    "胜者": "Cedric NUYTINCK/Samuel WALKER",
+    "负者": "Joe SEYFRIED/Par GERELL",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2021-05-18",
+    "类型": "法国甲级联赛",
+    "胜者": "Hampus NORDBERG/Joao GERALDO",
+    "负者": "Antoine HACHARD/Niagol STOYANOV",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2021-05-21",
+    "类型": "法国甲级联赛",
+    "胜者": "Alexandre CASSIN/Par GERELL",
+    "负者": "Ievgen PRYSHCHEPA/Vasily LAKEEV",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-05-21",
+    "类型": "法国甲级联赛",
+    "胜者": "Can AKKUZU/Robert GARDOS",
+    "负者": "Adrien MATTENET/Patrick BAUM",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2021-05-21",
+    "类型": "法国甲级联赛",
+    "胜者": "Sadi ISMAILOV/Vasily LAKEEV",
+    "负者": "Mehdi BOULOUSSA/Par GERELL",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2021-10-05",
+    "类型": "法国甲级联赛",
+    "胜者": "Abdel-Kader SALIFOU/Florent LAMBIET",
+    "负者": "Hampus NORDBERG/Jon PERSSON"
+  },
+  {
+    "日期": "2021-10-05",
+    "类型": "法国甲级联赛",
+    "胜者": "Adrien MATTENET/Alexis LEBRUN",
+    "负者": "Adam SZUDI/Alexandre ROBINOT"
+  },
+  {
+    "日期": "2021-10-05",
+    "类型": "法国甲级联赛",
+    "胜者": "Alexis LEBRUN/Emmanuel LEBESSON",
+    "负者": "Adam SZUDI/Robert GARDOS"
+  },
+  {
+    "日期": "2021-10-05",
+    "类型": "法国甲级联赛",
+    "胜者": "CHEN Tianyuan/Nima ALAMIAN",
+    "负者": "Cedric NUYTINCK/Omar ASSAR"
+  },
+  {
+    "日期": "2021-10-05",
+    "类型": "法国甲级联赛",
+    "胜者": "Hampus NORDBERG/Joao GERALDO",
+    "负者": "Abdel-Kader SALIFOU/Vitor ISHIY",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2021-10-05",
+    "类型": "法国甲级联赛",
+    "胜者": "Joe SEYFRIED/Mehdi BOULOUSSA",
+    "负者": "Alexey LIVENTSOV/Jules CAVAILLE",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-10-05",
+    "类型": "法国甲级联赛",
+    "胜者": "Joe SEYFRIED/Par GERELL",
+    "负者": "Jules CAVAILLE/Olajide Adeyemi OMOTAYO",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-10-05",
+    "类型": "法国甲级联赛",
+    "胜者": "Nima ALAMIAN/Romain RUIZ",
+    "负者": "Anders LIND/Cedric NUYTINCK"
+  },
+  {
+    "日期": "2021-10-10",
+    "类型": "法国甲级联赛",
+    "胜者": "Bastien REMBERT/Joao GERALDO",
+    "负者": "Alexey LIVENTSOV/Jules CAVAILLE",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2021-10-10",
+    "类型": "法国甲级联赛",
+    "胜者": "Jules CAVAILLE/Olajide Adeyemi OMOTAYO",
+    "负者": "Bastien REMBERT/Jon PERSSON",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-10-12",
+    "类型": "法国甲级联赛",
+    "胜者": "Adrien MATTENET/Emmanuel LEBESSON",
+    "负者": "Joe SEYFRIED/Par GERELL",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2021-10-12",
+    "类型": "法国甲级联赛",
+    "胜者": "Antoine HACHARD/Niagol STOYANOV",
+    "负者": "Abdel-Kader SALIFOU/Florent LAMBIET",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-10-12",
+    "类型": "法国甲级联赛",
+    "胜者": "Bojan TOKIC/Kirill SKACHKOV",
+    "负者": "Cedric NUYTINCK/Sadi ISMAILOV",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-10-12",
+    "类型": "法国甲级联赛",
+    "胜者": "CHEN Tianyuan/Nima ALAMIAN",
+    "负者": "Alexandre ROBINOT/Robert GARDOS",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2021-10-12",
+    "类型": "法国甲级联赛",
+    "胜者": "Florent LAMBIET/Vitor ISHIY",
+    "负者": "Niagol STOYANOV/Yang WANG",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2021-10-12",
+    "类型": "法国甲级联赛",
+    "胜者": "Joe SEYFRIED/Mehdi BOULOUSSA",
+    "负者": "Adrien MATTENET/Alexis LEBRUN"
+  },
+  {
+    "日期": "2021-10-12",
+    "类型": "法国甲级联赛",
+    "胜者": "Omar ASSAR/Sadi ISMAILOV",
+    "负者": "Benedek OLAH/Bojan TOKIC",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2021-11-02",
+    "类型": "法国甲级联赛",
+    "胜者": "Alexey LIVENTSOV/Jules CAVAILLE",
+    "负者": "Abdel-Kader SALIFOU/Bence MAJOROS"
+  },
+  {
+    "日期": "2021-11-02",
+    "类型": "法国甲级联赛",
+    "胜者": "Benedek OLAH/Paul Andrew DRINKHALL",
+    "负者": "Adam SZUDI/Adrien RASSENFOSSE"
+  },
+  {
+    "日期": "2021-11-02",
+    "类型": "法国甲级联赛",
+    "胜者": "Jules CAVAILLE/Olajide Adeyemi OMOTAYO",
+    "负者": "Abdel-Kader SALIFOU/Vitor ISHIY"
+  },
+  {
+    "日期": "2021-11-02",
+    "类型": "法国甲级联赛",
+    "胜者": "Kirill SKACHKOV/Paul Andrew DRINKHALL",
+    "负者": "Adrien RASSENFOSSE/Robert GARDOS",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-11-09",
+    "类型": "法国甲级联赛",
+    "胜者": "Bojan TOKIC/Kirill SKACHKOV",
+    "负者": "Mehdi BOULOUSSA/Par GERELL",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2021-11-09",
+    "类型": "法国甲级联赛",
+    "胜者": "Hampus NORDBERG/Joao GERALDO",
+    "负者": "CHEN Tianyuan/Nima ALAMIAN",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-11-09",
+    "类型": "法国甲级联赛",
+    "胜者": "Joe SEYFRIED/Mehdi BOULOUSSA",
+    "负者": "Benedek OLAH/Bojan TOKIC",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2021-11-16",
+    "类型": "法国甲级联赛",
+    "胜者": "Abdel-Kader SALIFOU/Bence MAJOROS",
+    "负者": "Emmanuel LEBESSON/Quentin ROBINOT",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2021-11-16",
+    "类型": "法国甲级联赛",
+    "胜者": "CHEN Tianyuan/Nima ALAMIAN",
+    "负者": "Jules CAVAILLE/Olajide Adeyemi OMOTAYO",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2021-12-07",
+    "类型": "法国甲级联赛",
+    "胜者": "Adam SZUDI/Alexandre ROBINOT",
+    "负者": "Florent LAMBIET/Vitor ISHIY",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-12-07",
+    "类型": "法国甲级联赛",
+    "胜者": "Adrien MATTENET/Emmanuel LEBESSON",
+    "负者": "Nima ALAMIAN/Romain RUIZ"
+  },
+  {
+    "日期": "2021-12-07",
+    "类型": "法国甲级联赛",
+    "胜者": "Alexandre ROBINOT/Robert GARDOS",
+    "负者": "Bence MAJOROS/Florent LAMBIET",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-12-07",
+    "类型": "法国甲级联赛",
+    "胜者": "Anders LIND/Cedric NUYTINCK",
+    "负者": "Joe SEYFRIED/Sebastien JOVER",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-12-07",
+    "类型": "法国甲级联赛",
+    "胜者": "CHEN Tianyuan/Romain RUIZ",
+    "负者": "Alexis LEBRUN/Emmanuel LEBESSON",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-12-07",
+    "类型": "法国甲级联赛",
+    "胜者": "Hampus NORDBERG/Joao GERALDO",
+    "负者": "Stephane OUAICHE/Yang WANG",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2021-12-07",
+    "类型": "法国甲级联赛",
+    "胜者": "Hampus NORDBERG/Jon PERSSON",
+    "负者": "Antoine HACHARD/Stephane OUAICHE",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-12-10",
+    "类型": "法国甲级联赛",
+    "胜者": "Anders LIND/Cedric NUYTINCK",
+    "负者": "Hampus NORDBERG/Jon PERSSON",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-12-10",
+    "类型": "法国甲级联赛",
+    "胜者": "Cedric NUYTINCK/Omar ASSAR",
+    "负者": "Hampus NORDBERG/Joao GERALDO",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-12-12",
+    "类型": "法国甲级联赛",
+    "胜者": "CHEN Tianyuan/Nima ALAMIAN",
+    "负者": "Bence MAJOROS/Florent LAMBIET",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2021-12-12",
+    "类型": "法国甲级联赛",
+    "胜者": "Nima ALAMIAN/Romain RUIZ",
+    "负者": "Florent LAMBIET/Vitor ISHIY",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2021-12-21",
+    "类型": "法国甲级联赛",
+    "胜者": "Adam SZUDI/Robert GARDOS",
+    "负者": "Bastien REMBERT/Joao GERALDO",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2021-12-21",
+    "类型": "法国甲级联赛",
+    "胜者": "Benedek OLAH/Kirill SKACHKOV",
+    "负者": "Brice OLLIVIER/CHEN Tianyuan",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2021-12-21",
+    "类型": "法国甲级联赛",
+    "胜者": "Bojan TOKIC/Kirill SKACHKOV",
+    "负者": "Brice OLLIVIER/Nima ALAMIAN",
+    "比分": "3-2"
   }
 ]

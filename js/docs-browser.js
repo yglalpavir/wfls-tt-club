@@ -220,7 +220,7 @@
     function renderCrumbs() {
         var segs = state.path ? state.path.split("/") : [];
         var html = '<button type="button" class="crumb' + (segs.length ? "" : " current") + '" data-path=""' +
-            (segs.length ? "" : ' aria-current="page"') + '><i class="fa-solid fa-cube"></i> Assets</button>';
+            (segs.length ? "" : ' aria-current="page"') + '><i class="fa-solid fa-cube"></i> ' + escapeHtml(t("docs_lib_sub", "素材库")) + "</button>";
         segs.forEach(function (seg, i) {
             var p = segs.slice(0, i + 1).join("/");
             var last = i === segs.length - 1;
@@ -793,8 +793,8 @@
         var err = $("fmError");
         err.innerHTML =
             '<i class="fa-solid fa-triangle-exclamation"></i>' +
-            "<p>" + escapeHtml(t("docs_err_title", "未能加载 Assets/manifest.json")) + "</p>" +
-            '<p class="fm-err-hint">' + escapeHtml(t("docs_err_hint", "该文件在部署时由 deploy 工作流自动生成；本地开发请先运行：")) + '<code>python tools/gen_assets_manifest.py</code></p>' +
+            "<p>" + escapeHtml(t("docs_err_title", "素材库暂时无法加载")) + "</p>" +
+            '<p class="fm-err-hint">' + escapeHtml(t("docs_err_hint", "请稍后重试，或直接联系社团负责人获取所需文件。")) + "</p>" +
             '<button type="button" class="fm-btn primary" id="fmRetry"><i class="fa-solid fa-rotate-right"></i> ' + escapeHtml(t("docs_retry", "重试")) + "</button>";
         err.hidden = false;
         $("fmRetry").addEventListener("click", function () { loadManifest(false); });
@@ -827,13 +827,13 @@
             input.setAttribute("aria-label", t("docs_search_ph", "在当前目录筛选…"));
         }
         var crumbs = $("fmCrumbs");
-        if (crumbs) crumbs.setAttribute("aria-label", t("docs_crumb_aria", "目录路径"));
+        if (crumbs) crumbs.setAttribute("aria-label", t("docs_crumb_aria", "位置导航"));
         var chips = $("fmChips");
         if (chips) chips.setAttribute("aria-label", t("docs_filter_aria", "按类型筛选"));
         var dialog = $("pvDialog");
         if (dialog) dialog.setAttribute("aria-label", t("docs_pv_dialog", "文件预览"));
         var loadingP = document.querySelector("#fmLoading p");
-        if (loadingP) loadingP.textContent = t("docs_loading", "正在扫描 Assets 目录…");
+        if (loadingP) loadingP.textContent = t("docs_loading", "正在加载素材库…");
         updateViewToggle();
         if (state.manifest) renderCurrent();
         if (state.preview) renderPreview();

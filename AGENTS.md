@@ -82,7 +82,7 @@ Goal: **EN mode renders zero Chinese** anywhere on the site, including admin / d
 
 ### Dynamic pages MUST register a re-apply hook
 
-`setLanguage()` ends with a list of guarded `if (typeof xxxReapplyI18n === 'function')` calls. Any page that **renders Chinese from JS** must define its hook (keep the last render args in a module-level variable and re-render), or the page keeps showing the old language until reload. Existing hooks: `wttReapplyI18n`, `dataVizReapplyI18n`, `dataVizMainReapplyI18n`, `rankingReapplyI18n`, `reapplyPlayerPage`, `reapplyPersonalStats`, `seasonReviewReapplyI18n`, `matchDetailReapplyI18n`, `docsBrowserReapplyI18n`, `adminReapplyI18n`, `drawsEditorReapplyI18n`, `umpireTrainingReapplyI18n`, `gameReapplyI18n`. **When you add a page or a JS-rendered view, add its hook in the same change.**
+`setLanguage()` ends with a list of guarded `if (typeof xxxReapplyI18n === 'function')` calls. Any page that **renders Chinese from JS** must define its hook (keep the last render args in a module-level variable and re-render), or the page keeps showing the old language until reload. Existing hooks: `wttReapplyI18n`, `dataVizReapplyI18n`, `dataVizMainReapplyI18n`, `rankingReapplyI18n`, `reapplyPlayerPage`, `reapplyPersonalStats`, `seasonReviewReapplyI18n`, `matchDetailReapplyI18n`, `docsBrowserReapplyI18n`, `adminReapplyI18n`, `drawsEditorReapplyI18n`, `umpireTrainingReapplyI18n`, `gameReapplyI18n`, `dataScaleReapplyI18n`. **When you add a page or a JS-rendered view, add its hook in the same change.**
 
 ### Display-layer dictionaries (never translate the data key)
 
@@ -91,6 +91,21 @@ Goal: **EN mode renders zero Chinese** anywhere on the site, including admin / d
 ### Content data uses `_en` sibling fields
 
 Prose content (news / qa / competitions / about / changelog / players `description`+`role` / draws / umpire-quiz) carries `_en` siblings rather than dictionary keys. `sync_content.py` carries them through `index.json`, `search.json` (so English search can hit English body text) and version snapshots; renderers prefer `_en` when `currentLang === 'en'` and fall back to the Chinese value when missing. `tools/i18n_audit.py --data-only` reports entries missing `_en`.
+
+### Visitor-visible copy must read like a visitor, not a developer
+
+Everything a visitor can see on screen is subject to this — body text, `title`, `aria-label`, `placeholder`, meta description, and `<noscript>` blocks. It must **never** contain:
+
+- file paths, directory names or filenames (`tools/`, `data/`, `wtt_data/`, `Assets/`, `draws.json`, `*.py`)
+- scripts, generators, build steps, deploy, CI, git, commits, the repo
+- internal config identifiers written out in prose (`TENCENT_FORM_URL`, `ENABLE_*`)
+- instructions addressed to an admin/maintainer ("管理员：…", "admin: …")
+- raw exception text (`e.message`, stack traces, `HTTP <status>`) — catch it and show a curated message
+- raw Chinese **data keys** used as labels (胜者 / 负者 / 对象 / 分数 / 日期 / 类型 / 局分 / 比分) — these are lookup keys only; run them through `eventTypeLabel()` / `playerTagLabel()` / `wttEventTypeLabel()` etc. before rendering
+
+When a data source can't be fetched, **drop that tile/section silently** — never show a "run `python tools/…`" hint on a public page. Generation steps belong in `AGENTS.md` and in the generator's own docstring, not on screen. A missing-source hint is only acceptable on genuinely admin-only pages that also carry `noindex`.
+
+Maintenance surfaces (`admin.html`, `draws-editor.html`, `tt_game/train.html`) are exempt from the copy rule — for their actual operators, naming the file to replace is useful — but they must carry `<meta name="robots" content="noindex, nofollow">` and stay out of nav / footer / sitemap. `tt_game/train.html` is additionally `Disallow`ed in `robots.txt` (the rest of `tt_game/` is the public easter egg).
 
 ### Auditing
 
@@ -125,6 +140,10 @@ Warn mode by default — it cannot see language ternaries, so it over-reports. T
 | `tools/gen_assets_manifest.py` | Scans `Assets/` into `Assets/manifest.json` (deploy-time generated, gitignored — same pattern as `data/api/`; run manually for local dev) |
 | `docs.html` | 网站文档/Docs: read-only file-manager view over `Assets/` (breadcrumb nav, grid/list, type filter, search; previews image/svg/video/audio/pdf/text/code/markdown via modal) — data comes from `Assets/manifest.json`; entry lives in the navbar **More…** dropdown (`nav_docs`), page uses shared chrome + `common.js` i18n (`docs_*` keys) |
 | `js/docs-browser.js` | docs.html logic: manifest-tree path validation (hash routes are never used to build URLs directly), event delegation, hash routing `#/dir` / `#/dir/file`, lazy marked.js load for Markdown preview; UI strings resolve via `t()` from `common.js` i18n with zh fallback, re-rendered by `docsBrowserReapplyI18n()` on language switch |
+| `data_scale.html` | 数据规模/Data Scale: visitor-facing showcase of how much data the site holds (club records, pro tournament archive, content + media). Entry lives in the **footer** 「数据」 column only (deliberately not in the navbar); i18n keys `ds_*`, re-rendered by `dataScaleReapplyI18n()` |
+| `js/data-scale.js` | data_scale.html logic: self-boots (no `main.js` dispatch, like `docs-browser.js`); computes cheap figures live via `fetch` and fills the rest from `data/dataset-stats.json`, resolving every tile as `live ?? pre` so a missing source silently drops that tile instead of erroring; Chart.js monthly bar chart recolours via a `MutationObserver` on `<html>`'s class (theme toggle) |
+| `tools/gen_dataset_stats.py` | Aggregates what the browser can't compute (wtt_data is 10 MB / 85 files) into `data/dataset-stats.json` — deploy-time generated, gitignored, same pattern as `data/api/`. **WTT doubles logs carry `"A/B"` pair strings, so per-discipline player counts must split the pair before deduping** and the cross-discipline total is a union, not a sum. ⚠️ `tools/*` is gitignored — a new deploy-time tool must be whitelisted with `!tools/<name>` in `.gitignore` or the deploy job fails on a fresh checkout |
+| `data/dataset-stats.json` | **Generated at deploy time** by `tools/gen_dataset_stats.py` inside the `deploy` workflow — gitignored, NOT committed. data_scale.html fetches it; if missing (local dev) the WTT tiles simply don't render |
 | `tools/migrate_draws_v3.py` | One-shot draws.json v2 → v3 migration (finished; kept locally only, gitignored) |
 | `js/season-review.js` | Season review page logic (club + WTT dual mode, switched by `window.SR_WTT_MODE`) |
 | `match.html` / `wtt_match.html` | Match-detail page for a single score-log record (WTT wrapper sets `window.MD_WTT_MODE`) |
@@ -154,3 +173,4 @@ Tracked tree is deploy-facing only: `.zcode/` / `.opencode/` (AI session plans),
 10. Letting the submission bot push to `main` directly, or editing `submit.html` / `append_submission.py` validation without keeping it in sync with `ci_validate.py` — the three must agree on what a valid record is; PRs are the only ingest path (the retired `recompute.yml` bot-commit workflow is the cautionary tale)
 11. Hand-building match-detail URLs from raw score-log names — links must go through `buildMatchDetailUrl()` with the in-memory (alias-normalized; WTT doubles pairs alphabetically re-sorted) names, tuple + same-day occurrence `n`; raw-file pair order won't match the normalized log. Get `n` from `computeMatchOccurrenceMap(localLog)` (common.js, keyed by record object, same ordering as `mdCompute`) — every list page (ranking / player-page / data-viz / wtt_*) must pass it, or same-day duplicate matchups all open the first game
 12. Mixing 口径 when computing with club doubles data present: singles timelines must run on the non-doubles log (use the shared `computeSinglesClubTimeline()` in common.js — ranking.js / main.js `loadRankingDataForViz` / recompute_rankings.js all route through it) and doubles timelines on doubles-only records (bonus records are singles-only), each wrapped in `withScoreContext()` — running the engine directly on the raw full log turns pairs into phantom ranking rows. Player-list builders and KPI windows that scan the raw log (data-viz / personal-stats `getAllPlayers*`, season-review `windowMatches`) must skip doubles records via `isDoublesRecord(r)`; also never build pair display/links from the raw `"A/B"` string without `splitPairNames()` (order in the file is not canonical)
+13. Putting developer-facing text in visitor-visible copy — file paths, `draws.json` / `assoc.json` / `manifest.json`, "run this script", "admin: fill in X", deploy/git/commit, or raw `e.message` in a toast. Page copy answers *what the visitor gets*, never *how the repo works*; see the i18n section's rule. The offenders that shipped once and got fixed: the docs page printing `python tools/gen_assets_manifest.py`, the loading progress bar appending `: {file}` (real filenames), `wtt_assoc` telling visitors a file was missing, and the season-expired banner telling visitors to create a season in `data/seasons.json`

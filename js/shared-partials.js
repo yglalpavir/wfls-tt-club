@@ -81,6 +81,7 @@
         '                        <li><a href="ranking.html">Ranking</a></li>',
         '                        <li><a href="data_viz.html">Data Viz</a></li>',
         '                        <li><a href="personal_stats.html" data-i18n="nav_personal">个人数据</a></li>',
+        '                        <li><a href="data_scale.html">Data Scale</a></li>',
         '                        <li><a href="wtt_ranking.html">WTT Ranking</a></li>',
         '                        <li><a href="wtt_dataviz.html">WTT Data Viz</a></li>',
         '                    </ul>',

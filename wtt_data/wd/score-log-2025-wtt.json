@@ -3,13 +3,24 @@
     "日期": "2025-01-05",
     "类型": "T联赛",
     "胜者": "Honoka HASHIMOTO/Hitomi SATO",
-    "负者": "Asuka SASAO/JEON Jihee"
+    "负者": "Asuka SASAO/JEON Jihee",
+    "比分": "2-0",
+    "局分": [
+      "11-3",
+      "11-10"
+    ]
   },
   {
     "日期": "2025-01-11",
     "类型": "T联赛",
     "胜者": "MA Yuhan/Yurika NANBA",
-    "负者": "Yuka UMEMURA/Maki SHIOMI"
+    "负者": "Yuka UMEMURA/Maki SHIOMI",
+    "比分": "2-1",
+    "局分": [
+      "8-11",
+      "11-10",
+      "13-11"
+    ]
   },
   {
     "日期": "2025-01-11",
@@ -27,55 +38,97 @@
     "日期": "2025-01-12",
     "类型": "T联赛",
     "胜者": "Yuka UMEMURA/Maki SHIOMI",
-    "负者": "Asuka SASAO/Rena ASO"
+    "负者": "Asuka SASAO/Reina ASO",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-8"
+    ]
   },
   {
     "日期": "2025-02-08",
     "类型": "T联赛",
-    "胜者": "Asuka SASAO/Rena ASO",
-    "负者": "Honami NAKAMORI/Yume KUDO"
+    "胜者": "Asuka SASAO/Reina ASO",
+    "负者": "Honami NAKAMORI/Yume KUDO",
+    "比分": "2-0",
+    "局分": [
+      "11-2",
+      "11-8"
+    ]
   },
   {
     "日期": "2025-02-09",
     "类型": "T联赛",
     "胜者": "Honoka HASHIMOTO/Hitomi SATO",
-    "负者": "Yukari SUGASAWA/Yume KUDO"
+    "负者": "Yukari SUGASAWA/Yume KUDO",
+    "比分": "2-1",
+    "局分": [
+      "10-11",
+      "11-9",
+      "11-9"
+    ]
   },
   {
     "日期": "2025-02-15",
     "类型": "T联赛",
     "胜者": "Honoka HASHIMOTO/Hitomi SATO",
-    "负者": "Akiko NAGAO/Yurika NANBA"
+    "负者": "Akiko NAGAO/Yurika NANBA",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-6"
+    ]
   },
   {
     "日期": "2025-02-15",
     "类型": "T联赛",
     "胜者": "Yuka UMEMURA/Maki SHIOMI",
-    "负者": "Miku IZUMO/Asahi HIRANO"
+    "负者": "Miku IZUMO/Asahi HIRANO",
+    "比分": "2-1",
+    "局分": [
+      "11-9",
+      "8-11",
+      "11-8"
+    ]
   },
   {
     "日期": "2025-02-16",
     "类型": "T联赛",
     "胜者": "Akiko NAGAO/Yurika NANBA",
-    "负者": "Miku IZUMO/Asahi HIRANO"
+    "负者": "Miku IZUMO/Asahi HIRANO",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-6"
+    ]
   },
   {
     "日期": "2025-02-16",
     "类型": "T联赛",
-    "胜者": "Sakura YOKOI/Satsuki OTO",
+    "胜者": "Sakura YOKOI/Satsuki ODO",
     "负者": "LI Jingsika/ZHU Chengxi"
   },
   {
     "日期": "2025-02-22",
     "类型": "T联赛",
     "胜者": "Anne UESAWA/Asuka SASAO",
-    "负者": "Honoka HASHIMOTO/Hitomi SATO"
+    "负者": "Honoka HASHIMOTO/Hitomi SATO",
+    "比分": "2-0",
+    "局分": [
+      "11-1",
+      "11-10"
+    ]
   },
   {
     "日期": "2025-02-23",
     "类型": "T联赛",
     "胜者": "Saki SHIBATA/Shina ITO",
-    "负者": "Yuka UMEMURA/Seira USHIJIMA"
+    "负者": "Yuka UMEMURA/Seira USHIJIMA",
+    "比分": "2-0",
+    "局分": [
+      "11-3",
+      "11-6"
+    ]
   },
   {
     "日期": "2025-02-24",
@@ -93,30 +146,42 @@
     "日期": "2025-03-02",
     "类型": "T联赛",
     "胜者": "Yuka UMEMURA/Maki SHIOMI",
-    "负者": "Miyu NAGASAKI/Miwa HARIMOTO"
+    "负者": "Miyu NAGASAKI/Miwa HARIMOTO",
+    "比分": "2-1",
+    "局分": [
+      "11-7",
+      "6-11",
+      "11-8"
+    ]
   },
   {
     "日期": "2025-03-09",
     "类型": "T联赛",
-    "胜者": "Asuka SASAO/Rena ASO",
+    "胜者": "Asuka SASAO/Reina ASO",
     "负者": "Saki AOKI/Sakura YOKOI"
   },
   {
     "日期": "2025-03-09",
     "类型": "T联赛",
     "胜者": "Minami ANDO/Kasumi KIMURA",
-    "负者": "Miyuu KIHARA/Miyu NAGASAKI"
+    "负者": "Miyuu KIHARA/Miyu NAGASAKI",
+    "比分": "2-1",
+    "局分": [
+      "2-11",
+      "11-3",
+      "11-9"
+    ]
   },
   {
     "日期": "2025-03-22",
     "类型": "T联赛",
-    "胜者": "Asuka SASAO/Rena ASO",
+    "胜者": "Asuka SASAO/Reina ASO",
     "负者": "Miyu NAGASAKI/ZHU Chengxi"
   },
   {
     "日期": "2025-03-23",
     "类型": "T联赛",
-    "胜者": "Sakura YOKOI/Satsuki OTO",
+    "胜者": "Sakura YOKOI/Satsuki ODO",
     "负者": "Miyuu KIHARA/Miyu NAGASAKI"
   },
   {
@@ -507,7 +572,13 @@
     "日期": "2025-08-01",
     "类型": "T联赛",
     "胜者": "Kotona OKADA/ZHANG Rui",
-    "负者": "Yume KUDO/Miku IZUMO"
+    "负者": "Yume KUDO/Miku IZUMO",
+    "比分": "2-1",
+    "局分": [
+      "11-8",
+      "8-11",
+      "11-9"
+    ]
   },
   {
     "日期": "2025-08-02",
@@ -519,19 +590,36 @@
     "日期": "2025-08-16",
     "类型": "T联赛",
     "胜者": "Moe NOMURA/Ringo KOBAYASHI",
-    "负者": "Saki SHIBATA/Hitomi SATO"
+    "负者": "Saki SHIBATA/Hitomi SATO",
+    "比分": "2-1",
+    "局分": [
+      "2-11",
+      "11-6",
+      "11-8"
+    ]
   },
   {
     "日期": "2025-08-17",
     "类型": "T联赛",
     "胜者": "Saki SHIBATA/Hitomi SATO",
-    "负者": "Yume KUDO/Miku IZUMO"
+    "负者": "Yume KUDO/Miku IZUMO",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-10"
+    ]
   },
   {
     "日期": "2025-08-24",
     "类型": "T联赛",
-    "胜者": "Asuka SASAO/Rena ASO",
-    "负者": "Miyu NAGASAKI/ZHANG Rui"
+    "胜者": "Asuka SASAO/Reina ASO",
+    "负者": "Miyu NAGASAKI/ZHANG Rui",
+    "比分": "2-1",
+    "局分": [
+      "11-8",
+      "8-11",
+      "11-8"
+    ]
   },
   {
     "日期": "2025-08-30",
@@ -542,38 +630,64 @@
   {
     "日期": "2025-08-31",
     "类型": "T联赛",
-    "胜者": "Asuka SASAO/Rena ASO",
-    "负者": "Moe NOMURA/Ringo KOBAYASHI"
+    "胜者": "Asuka SASAO/Reina ASO",
+    "负者": "Moe NOMURA/Ringo KOBAYASHI",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-3"
+    ]
   },
   {
     "日期": "2025-09-06",
     "类型": "T联赛",
-    "胜者": "Asuka SASAO/Rena ASO",
+    "胜者": "Asuka SASAO/Reina ASO",
     "负者": "Haruha SANADA/Haruna OJIO"
   },
   {
     "日期": "2025-09-07",
     "类型": "T联赛",
     "胜者": "Yume KUDO/Miku IZUMO",
-    "负者": "Asuka SASAO/Rena ASO"
+    "负者": "Asuka SASAO/Reina ASO",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-6"
+    ]
   },
   {
     "日期": "2025-09-13",
     "类型": "T联赛",
     "胜者": "Anne UESAWA/Asuka SASAO",
-    "负者": "Mao TAKAMORI/Hitomi SATO"
+    "负者": "Mao TAKAMORI/Hitomi SATO",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-5"
+    ]
   },
   {
     "日期": "2025-09-13",
     "类型": "T联赛",
     "胜者": "Miyu NAGASAKI/ZHANG Rui",
-    "负者": "Yume KUDO/Miku IZUMO"
+    "负者": "Yume KUDO/Miku IZUMO",
+    "比分": "2-1",
+    "局分": [
+      "11-4",
+      "7-11",
+      "11-6"
+    ]
   },
   {
     "日期": "2025-09-14",
     "类型": "T联赛",
     "胜者": "Miyu NAGASAKI/ZHANG Rui",
-    "负者": "Miyuu KIHARA/Yuna OJIO"
+    "负者": "Miyuu KIHARA/Yuna OJIO",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-5"
+    ]
   },
   {
     "日期": "2025-09-14",
@@ -585,13 +699,24 @@
     "日期": "2025-09-21",
     "类型": "T联赛",
     "胜者": "Kotona OKADA/Miyu NAGASAKI",
-    "负者": "Akiko NAGAO/Yurika NANBA"
+    "负者": "Akiko NAGAO/Yurika NANBA",
+    "比分": "2-1",
+    "局分": [
+      "11-6",
+      "9-11",
+      "12-10"
+    ]
   },
   {
     "日期": "2025-10-11",
     "类型": "T联赛",
     "胜者": "Miyuu KIHARA/Akiko NAGAO",
-    "负者": "Moe NOMURA/Ringo KOBAYASHI"
+    "负者": "Moe NOMURA/Ringo KOBAYASHI",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-9"
+    ]
   },
   {
     "日期": "2025-10-12",
@@ -603,13 +728,25 @@
     "日期": "2025-10-12",
     "类型": "T联赛",
     "胜者": "Yume KUDO/Miku IZUMO",
-    "负者": "ZHU Yuling/Hana SAKURAI"
+    "负者": "ZHU Yuling/Hana SAKURAI",
+    "比分": "2-1",
+    "局分": [
+      "11-7",
+      "4-11",
+      "11-8"
+    ]
   },
   {
     "日期": "2025-10-13",
     "类型": "T联赛",
     "胜者": "Yume KUDO/Miku IZUMO",
-    "负者": "Moe NOMURA/Ringo KOBAYASHI"
+    "负者": "Moe NOMURA/Ringo KOBAYASHI",
+    "比分": "2-1",
+    "局分": [
+      "11-8",
+      "6-11",
+      "12-10"
+    ]
   },
   {
     "日期": "2025-10-18",
@@ -621,13 +758,24 @@
     "日期": "2025-10-19",
     "类型": "T联赛",
     "胜者": "Miyu NAGASAKI/CHENG I-Ching",
-    "负者": "Asuka SASAO/Rena ASO"
+    "负者": "Asuka SASAO/Reina ASO",
+    "比分": "2-1",
+    "局分": [
+      "6-11",
+      "11-10",
+      "11-9"
+    ]
   },
   {
     "日期": "2025-10-25",
     "类型": "T联赛",
     "胜者": "ZHANG Rui/ZHU Yuling",
-    "负者": "Sakura YOKOI/Satsuki OTO"
+    "负者": "Sakura YOKOI/Satsuki ODO",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-4"
+    ]
   },
   {
     "日期": "2025-10-26",
@@ -639,7 +787,13 @@
     "日期": "2025-11-08",
     "类型": "T联赛",
     "胜者": "Yume KUDO/Miku IZUMO",
-    "负者": "Kotona OKADA/Miyu NAGASAKI"
+    "负者": "Kotona OKADA/Miyu NAGASAKI",
+    "比分": "2-1",
+    "局分": [
+      "8-11",
+      "11-10",
+      "13-11"
+    ]
   },
   {
     "日期": "2025-11-09",
@@ -651,37 +805,68 @@
     "日期": "2025-11-15",
     "类型": "T联赛",
     "胜者": "Anne UESAWA/Asuka SASAO",
-    "负者": "Haruna OJIO/Yurika NANBA"
+    "负者": "Haruna OJIO/Yurika NANBA",
+    "比分": "2-0",
+    "局分": [
+      "11-5",
+      "11-7"
+    ]
   },
   {
     "日期": "2025-11-16",
     "类型": "T联赛",
     "胜者": "Miyu NAGASAKI/Hana SAKURAI",
-    "负者": "Haruna OJIO/Yurika NANBA"
+    "负者": "Haruna OJIO/Yurika NANBA",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-8"
+    ]
   },
   {
     "日期": "2025-11-22",
     "类型": "T联赛",
     "胜者": "Yume KUDO/Miku IZUMO",
-    "负者": "Akiko NAGAO/Yurika NANBA"
+    "负者": "Akiko NAGAO/Yurika NANBA",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-7"
+    ]
   },
   {
     "日期": "2025-11-23",
     "类型": "T联赛",
     "胜者": "Yume KUDO/Miku IZUMO",
-    "负者": "Anne UESAWA/Asuka SASAO"
+    "负者": "Anne UESAWA/Asuka SASAO",
+    "比分": "2-1",
+    "局分": [
+      "10-11",
+      "11-10",
+      "11-8"
+    ]
   },
   {
     "日期": "2025-11-29",
     "类型": "T联赛",
     "胜者": "Kotona OKADA/Miyu NAGASAKI",
-    "负者": "Moe NOMURA/Yuna KURIYAMA"
+    "负者": "Moe NOMURA/Yuna KURIYAMA",
+    "比分": "2-0",
+    "局分": [
+      "11-2",
+      "11-8"
+    ]
   },
   {
     "日期": "2025-11-29",
     "类型": "T联赛",
     "胜者": "Miyuu KIHARA/Akiko NAGAO",
-    "负者": "Sakura YOKOI/Satsuki OTO"
+    "负者": "Sakura YOKOI/Satsuki ODO",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-10"
+    ]
   },
   {
     "日期": "2025-11-30",
@@ -693,13 +878,24 @@
     "日期": "2025-11-30",
     "类型": "T联赛",
     "胜者": "Miyuu KIHARA/Akiko NAGAO",
-    "负者": "Yume KUDO/Miku IZUMO"
+    "负者": "Yume KUDO/Miku IZUMO",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-8"
+    ]
   },
   {
     "日期": "2025-11-30",
     "类型": "T联赛",
     "胜者": "Moe NOMURA/Yuna KURIYAMA",
-    "负者": "Anne UESAWA/Asuka SASAO"
+    "负者": "Anne UESAWA/Asuka SASAO",
+    "比分": "2-1",
+    "局分": [
+      "11-9",
+      "9-11",
+      "11-8"
+    ]
   },
   {
     "日期": "2025-11-30",
@@ -866,20 +1062,37 @@
   {
     "日期": "2025-12-14",
     "类型": "T联赛",
-    "胜者": "Sakura YOKOI/Satsuki OTO",
-    "负者": "Miyuu KIHARA/Akiko NAGAO"
+    "胜者": "Sakura YOKOI/Satsuki ODO",
+    "负者": "Miyuu KIHARA/Akiko NAGAO",
+    "比分": "2-1",
+    "局分": [
+      "9-11",
+      "11-10",
+      "11-8"
+    ]
   },
   {
     "日期": "2025-12-20",
     "类型": "T联赛",
-    "胜者": "Asuka SASAO/Rena ASO",
-    "负者": "Miku IZUMO/Chihiro OKAWA"
+    "胜者": "Asuka SASAO/Reina ASO",
+    "负者": "Miku IZUMO/Chihiro OKAWA",
+    "比分": "2-1",
+    "局分": [
+      "7-11",
+      "11-8",
+      "11-8"
+    ]
   },
   {
     "日期": "2025-12-21",
     "类型": "T联赛",
     "胜者": "Kotona OKADA/Miyu NAGASAKI",
-    "负者": "Asuka SASAO/Rena ASO"
+    "负者": "Asuka SASAO/Reina ASO",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-5"
+    ]
   },
   {
     "日期": "2025-12-27",
@@ -2590,5 +2803,814 @@
     "类型": "球星挑战赛",
     "胜者": "Satsuki ODO/Sakura YOKOI",
     "负者": "JOO Cheonhui/KIM Nayeong"
+  },
+  {
+    "日期": "2025-03-15",
+    "类型": "T联赛",
+    "胜者": "Akiko NAGAO/Yurika NANBA",
+    "负者": "Asahi HIRANO/Miku IZUMO",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-10"
+    ]
+  },
+  {
+    "日期": "2025-03-16",
+    "类型": "T联赛",
+    "胜者": "Akiko NAGAO/Yurika NANBA",
+    "负者": "Miu HIRANO/Miyuu KIHARA",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2025-01-04",
+    "类型": "T联赛",
+    "胜者": "CHENG I-Ching/JEON Jihee",
+    "负者": "Miyu NAGASAKI/Miyuu KIHARA",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2025-01-11",
+    "类型": "T联赛",
+    "胜者": "Sachi AOKI/Shina ITO",
+    "负者": "Mitsuki NAKAMURA/Yukari SUGASAWA",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2025-01-12",
+    "类型": "T联赛",
+    "胜者": "Kotona OKADA/LI Jingsika",
+    "负者": "Sachi AOKI/Shina ITO",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-2"
+    ]
+  },
+  {
+    "日期": "2025-02-08",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI/Miyuu KIHARA",
+    "负者": "MA Yuhan/Yurika NANBA",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2025-02-09",
+    "类型": "T联赛",
+    "胜者": "MA Yuhan/Yurika NANBA",
+    "负者": "Maki SHIOMI/Narumi SHUTO",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2025-02-11",
+    "类型": "T联赛",
+    "胜者": "MA Yuhan/Yurika NANBA",
+    "负者": "CHENG I-Ching/JEON Jihee",
+    "比分": "2-1",
+    "局分": [
+      "9-11",
+      "11-6",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2025-02-16",
+    "类型": "T联赛",
+    "胜者": "Sakura YOKOI/Satsuki ODO",
+    "负者": "JOO Cheonhui/LI Jingsika",
+    "比分": "2-1",
+    "局分": [
+      "11-10",
+      "5-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2025-02-22",
+    "类型": "T联赛",
+    "胜者": "JOO Cheonhui/LI Jingsika",
+    "负者": "Maki SHIOMI/Yuka UMEMURA",
+    "比分": "2-1",
+    "局分": [
+      "11-8",
+      "9-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2025-02-23",
+    "类型": "T联赛",
+    "胜者": "JOO Cheonhui/LI Jingsika",
+    "负者": "Akiko NAGAO/Yurika NANBA",
+    "比分": "2-1",
+    "局分": [
+      "10-11",
+      "11-7",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2025-02-24",
+    "类型": "T联赛",
+    "胜者": "Anne UESAWA/Asuka SASAO",
+    "负者": "JOO Cheonhui/Miyuu KIHARA",
+    "比分": "2-1",
+    "局分": [
+      "11-5",
+      "4-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2025-03-01",
+    "类型": "T联赛",
+    "胜者": "Akiko NAGAO/Yurika NANBA",
+    "负者": "Anne UESAWA/Asuka SASAO",
+    "比分": "2-1",
+    "局分": [
+      "11-5",
+      "7-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2025-03-01",
+    "类型": "T联赛",
+    "胜者": "Hitomi EDAHIRO/Mitsuho KIMURA",
+    "负者": "Maki SHIOMI/Yuka UMEMURA",
+    "比分": "2-1",
+    "局分": [
+      "11-4",
+      "5-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2025-03-02",
+    "类型": "T联赛",
+    "胜者": "Akiko NAGAO/Yurika NANBA",
+    "负者": "Sachi AOKI/Satsuki ODO",
+    "比分": "2-1",
+    "局分": [
+      "11-10",
+      "8-11",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2025-03-08",
+    "类型": "T联赛",
+    "胜者": "Anne UESAWA/Asuka SASAO",
+    "负者": "Moe NOMURA/Yuna KURIYAMA",
+    "比分": "2-1",
+    "局分": [
+      "11-6",
+      "6-11",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2025-03-09",
+    "类型": "T联赛",
+    "胜者": "Asuka SASAO/Reina ASO",
+    "负者": "Sachi AOKI/Sakura YOKOI",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2025-03-22",
+    "类型": "T联赛",
+    "胜者": "Asuka SASAO/Reina ASO",
+    "负者": "JOO Cheonhui/Miyu NAGASAKI",
+    "比分": "2-0",
+    "局分": [
+      "11-1",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2025-07-27",
+    "类型": "T联赛",
+    "胜者": "Anne UESAWA/Asuka SASAO",
+    "负者": "Mao TAKAMORI/Sachi AOKI",
+    "比分": "2-1",
+    "局分": [
+      "11-9",
+      "10-11",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2025-08-02",
+    "类型": "T联赛",
+    "胜者": "Miku IZUMO/Yume KUDO",
+    "负者": "Hanon OYAMA/Hikari WATANABE",
+    "比分": "2-0",
+    "局分": [
+      "11-5",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2025-08-02",
+    "类型": "T联赛",
+    "胜者": "Akiko NAGAO/Yurika NANBA",
+    "负者": "Moe NOMURA/Ringo KOBAYASHI",
+    "比分": "2-1",
+    "局分": [
+      "11-3",
+      "9-11",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2025-08-03",
+    "类型": "T联赛",
+    "胜者": "Akiko NAGAO/Yurika NANBA",
+    "负者": "Anne UESAWA/Asuka SASAO",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2025-08-23",
+    "类型": "T联赛",
+    "胜者": "Hana SAKURAI/ZHANG Rui",
+    "负者": "Hitomi SATO/Saki SHIBATA",
+    "比分": "2-1",
+    "局分": [
+      "8-11",
+      "11-10",
+      "14-12"
+    ]
+  },
+  {
+    "日期": "2025-08-30",
+    "类型": "T联赛",
+    "胜者": "Moe NOMURA/Ringo KOBAYASHI",
+    "负者": "TIAN Minyi/Yukari SUGASAWA",
+    "比分": "2-1",
+    "局分": [
+      "3-11",
+      "11-5",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2025-08-30",
+    "类型": "T联赛",
+    "胜者": "Akiko NAGAO/Yurika NANBA",
+    "负者": "Kotona OKADA/Miyu NAGASAKI",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2025-08-31",
+    "类型": "T联赛",
+    "胜者": "Sakura YOKOI/Satsuki ODO",
+    "负者": "Akiko NAGAO/Yurika NANBA",
+    "比分": "2-1",
+    "局分": [
+      "11-5",
+      "4-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2025-09-06",
+    "类型": "T联赛",
+    "胜者": "Asuka SASAO/Reina ASO",
+    "负者": "Haruna OJIO/Seiha SANADA",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2025-09-14",
+    "类型": "T联赛",
+    "胜者": "Sachi AOKI/Saki SHIBATA",
+    "负者": "KIM Nayeong/Ringo KOBAYASHI",
+    "比分": "2-1",
+    "局分": [
+      "8-11",
+      "11-9",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2025-10-04",
+    "类型": "T联赛",
+    "胜者": "Akiko NAGAO/Miyuu KIHARA",
+    "负者": "Miku IZUMO/TIAN Minyi",
+    "比分": "2-1",
+    "局分": [
+      "11-7",
+      "5-11",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2025-10-05",
+    "类型": "T联赛",
+    "胜者": "Hitomi SATO/Saki SHIBATA",
+    "负者": "Miku IZUMO/TIAN Minyi",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2025-10-11",
+    "类型": "T联赛",
+    "胜者": "Anne UESAWA/Asuka SASAO",
+    "负者": "Miku IZUMO/Yume KUDO",
+    "比分": "2-1",
+    "局分": [
+      "11-10",
+      "7-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2025-10-12",
+    "类型": "T联赛",
+    "胜者": "Akiko NAGAO/Miyuu KIHARA",
+    "负者": "Sachi AOKI/Sakura YOKOI",
+    "比分": "2-1",
+    "局分": [
+      "11-10",
+      "8-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2025-10-18",
+    "类型": "T联赛",
+    "胜者": "CHENG I-Ching/Miyu NAGASAKI",
+    "负者": "CHENG Hsien-Tzu/Yuna KURIYAMA",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2025-10-26",
+    "类型": "T联赛",
+    "胜者": "Sachi AOKI/Saki SHIBATA",
+    "负者": "Haruna OJIO/Yurika NANBA",
+    "比分": "2-1",
+    "局分": [
+      "8-11",
+      "11-8",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2025-11-01",
+    "类型": "T联赛",
+    "胜者": "Sachi AOKI/Saki SHIBATA",
+    "负者": "CHENG Hsien-Tzu/Narumi SHUTO",
+    "比分": "2-1",
+    "局分": [
+      "8-11",
+      "11-9",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2025-11-02",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI/ZHANG Rui",
+    "负者": "CHENG Hsien-Tzu/Narumi SHUTO",
+    "比分": "2-1",
+    "局分": [
+      "8-11",
+      "11-10",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2025-11-08",
+    "类型": "T联赛",
+    "胜者": "Akiko NAGAO/Miyuu KIHARA",
+    "负者": "Anne UESAWA/Asuka SASAO",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2025-11-09",
+    "类型": "T联赛",
+    "胜者": "Sachi AOKI/Sakura YOKOI",
+    "负者": "Kotona OKADA/Miyu NAGASAKI",
+    "比分": "2-1",
+    "局分": [
+      "5-11",
+      "11-10",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2025-11-09",
+    "类型": "T联赛",
+    "胜者": "Anne UESAWA/Asuka SASAO",
+    "负者": "Sakura AOI/Yuna KURIYAMA",
+    "比分": "2-0",
+    "局分": [
+      "11-4",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2025-11-15",
+    "类型": "T联赛",
+    "胜者": "Mana ASADA/Shiki KUSAKABE",
+    "负者": "KIM Nayeong/Narumi SHUTO",
+    "比分": "2-1",
+    "局分": [
+      "7-11",
+      "11-8",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2025-12-13",
+    "类型": "T联赛",
+    "胜者": "Sachi AOKI/Sakura YOKOI",
+    "负者": "Miku IZUMO/Yume KUDO",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2025-12-19",
+    "类型": "T联赛",
+    "胜者": "Hina HAYATA/Kaho AKAE",
+    "负者": "Sachi AOKI/Sakura YOKOI",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2025-12-20",
+    "类型": "T联赛",
+    "胜者": "Akiko NAGAO/Miyuu KIHARA",
+    "负者": "KIM Nayeong/Narumi SHUTO",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2025-12-21",
+    "类型": "T联赛",
+    "胜者": "Sachi AOKI/Sakura YOKOI",
+    "负者": "KIM Nayeong/Narumi SHUTO",
+    "比分": "2-1",
+    "局分": [
+      "8-11",
+      "11-6",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2025-12-27",
+    "类型": "T联赛",
+    "胜者": "KIM Nayeong/Narumi SHUTO",
+    "负者": "Kaho AKAE/Rin MENDE",
+    "比分": "2-0",
+    "局分": [
+      "11-5",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2025-12-28",
+    "类型": "T联赛",
+    "胜者": "Akiko NAGAO/Miyuu KIHARA",
+    "负者": "Kaho AKAE/Rin MENDE",
+    "比分": "2-1",
+    "局分": [
+      "3-11",
+      "11-10",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2025-01-22",
+    "类型": "法国甲级联赛",
+    "胜者": "Agathe AVEZOU/ZHU Chengzhu",
+    "负者": "Anastasia STERNER/WANG Yanan",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2025-01-23",
+    "类型": "法国甲级联赛",
+    "胜者": "Camelia IACOB/Jieni SHAO",
+    "负者": "Ekaterina FISCHER/Haruna SUGITA",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2025-01-23",
+    "类型": "法国甲级联赛",
+    "胜者": "Camille LUTZ/Polina MIKHAILOVA",
+    "负者": "Jian ZENG/Nina GUO ZHENG",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2025-01-26",
+    "类型": "法国甲级联赛",
+    "胜者": "Bruna TAKAHASHI/Giorgia PICCOLIN",
+    "负者": "Camille LUTZ/Polina MIKHAILOVA",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2025-01-26",
+    "类型": "法国甲级联赛",
+    "胜者": "Camelia IACOB/Jieni SHAO",
+    "负者": "Anastasia STERNER/WANG Yanan",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2025-01-26",
+    "类型": "法国甲级联赛",
+    "胜者": "Camille LUTZ/Linda BERGSTROM",
+    "负者": "Giorgia PICCOLIN/Rachel MORET",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2025-01-30",
+    "类型": "法国甲级联赛",
+    "胜者": "Dragana VIGNJEVIC/Lea MINNI",
+    "负者": "Anae DE STOPPELEIRE/Anastasia STERNER",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2025-09-14",
+    "类型": "法国甲级联赛",
+    "胜者": "LIU Hsing-Yin/Prithika PAVADE",
+    "负者": "Alexia NODIN/LI Samson",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2025-09-16",
+    "类型": "法国甲级联赛",
+    "胜者": "Jian ZENG/Stephanie LOEUILLETTE",
+    "负者": "Jieni SHAO/Yangzi LIU",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2025-09-16",
+    "类型": "法国甲级联赛",
+    "胜者": "Linda BERGSTROM/Polina MIKHAILOVA",
+    "负者": "Cecilia DEHAN/WU Jiaduo",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2025-09-16",
+    "类型": "法国甲级联赛",
+    "胜者": "Oceane GUISNEL/Stephanie LOEUILLETTE",
+    "负者": "Christina KALLBERG/Yangzi LIU",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2025-09-18",
+    "类型": "法国甲级联赛",
+    "胜者": "Bruna TAKAHASHI/Giorgia PICCOLIN",
+    "负者": "Ema LABOSOVA/LEE Zion",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2025-09-19",
+    "类型": "法国甲级联赛",
+    "胜者": "Adina DIACONU/Sarah DE NUTTE",
+    "负者": "Elodie NIVELLE/LI Samson",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2025-09-19",
+    "类型": "法国甲级联赛",
+    "胜者": "Agathe AVEZOU/LIU Hsing-Yin",
+    "负者": "Nikhat BANU/ZHANG Jing",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2025-09-19",
+    "类型": "法国甲级联赛",
+    "胜者": "Hana GODA/Sarah DE NUTTE",
+    "负者": "Kotomi OMODA/LI Samson",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2025-09-21",
+    "类型": "法国甲级联赛",
+    "胜者": "Bruna TAKAHASHI/Leana HOCHART",
+    "负者": "Jian ZENG/Oceane GUISNEL",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2025-09-21",
+    "类型": "法国甲级联赛",
+    "胜者": "Ema LABOSOVA/Isa COK",
+    "负者": "Cecilia DEHAN/Claire PICARD",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2025-09-21",
+    "类型": "法国甲级联赛",
+    "胜者": "Ema LABOSOVA/LEE Zion",
+    "负者": "Claire PICARD/WU Jiaduo",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2025-09-21",
+    "类型": "法国甲级联赛",
+    "胜者": "Leana HOCHART/Rachel MORET",
+    "负者": "Nina GUO ZHENG/Oceane GUISNEL",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2025-10-26",
+    "类型": "法国甲级联赛",
+    "胜者": "Barbora VARADY/Camille LUTZ",
+    "负者": "Agathe AVEZOU/Hana ARAPOVIC",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2025-10-26",
+    "类型": "法国甲级联赛",
+    "胜者": "Hana ARAPOVIC/Prithika PAVADE",
+    "负者": "Camille LUTZ/Polina MIKHAILOVA",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2025-11-09",
+    "类型": "法国甲级联赛",
+    "胜者": "Agathe AVEZOU/Jie LI",
+    "负者": "Isa COK/LEE Zion",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2025-11-09",
+    "类型": "法国甲级联赛",
+    "胜者": "Agathe AVEZOU/Prithika PAVADE",
+    "负者": "Ema LABOSOVA/LEE Zion",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2025-11-09",
+    "类型": "法国甲级联赛",
+    "胜者": "Jian ZENG/Stephanie LOEUILLETTE",
+    "负者": "LI He/LI Yuqi",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2025-11-11",
+    "类型": "法国甲级联赛",
+    "胜者": "Bruna TAKAHASHI/Rachel MORET",
+    "负者": "Anais SALPIN/Filippa BERGAND",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2025-11-11",
+    "类型": "法国甲级联赛",
+    "胜者": "Giorgia PICCOLIN/Rachel MORET",
+    "负者": "Anais SALPIN/Maria Paulina VEGA MAGANA",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2025-11-14",
+    "类型": "法国甲级联赛",
+    "胜者": "Clea DE STOPPELEIRE/ZHAO Lisa",
+    "负者": "Anais SALPIN/Maria Paulina VEGA MAGANA",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2025-11-14",
+    "类型": "法国甲级联赛",
+    "胜者": "Filippa BERGAND/Maria Paulina VEGA MAGANA",
+    "负者": "LI Xue/ZHAO Lisa",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2025-11-15",
+    "类型": "法国甲级联赛",
+    "胜者": "Agathe AVEZOU/Hana ARAPOVIC",
+    "负者": "Oceane GUISNEL/Stephanie LOEUILLETTE",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2025-11-15",
+    "类型": "法国甲级联赛",
+    "胜者": "Agathe AVEZOU/Jie LI",
+    "负者": "Jian ZENG/Stephanie LOEUILLETTE",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2025-12-12",
+    "类型": "法国甲级联赛",
+    "胜者": "Clea DE STOPPELEIRE/LI Xue",
+    "负者": "Camille LUTZ/Polina MIKHAILOVA"
+  },
+  {
+    "日期": "2025-12-12",
+    "类型": "法国甲级联赛",
+    "胜者": "LI Xue/ZHANG Jing",
+    "负者": "Linda BERGSTROM/Polina MIKHAILOVA"
+  },
+  {
+    "日期": "2025-12-14",
+    "类型": "法国甲级联赛",
+    "胜者": "Adina DIACONU/Charlotte LUTZ",
+    "负者": "Nina GUO ZHENG/Stephanie LOEUILLETTE",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2025-12-14",
+    "类型": "法国甲级联赛",
+    "胜者": "Audrey ZARIF/LI Yuqi",
+    "负者": "Claire PICARD/WU Jiaduo",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2025-12-14",
+    "类型": "法国甲级联赛",
+    "胜者": "Claire PICARD/Jia Nan YUAN",
+    "负者": "Audrey ZARIF/LI He",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2025-12-14",
+    "类型": "法国甲级联赛",
+    "胜者": "Nina GUO ZHENG/Oceane GUISNEL",
+    "负者": "Charlotte LUTZ/Mariia TAILAKOVA",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2025-12-16",
+    "类型": "法国甲级联赛",
+    "胜者": "LEE Zion/Marie MIGOT",
+    "负者": "Elodie NIVELLE/Kotomi OMODA",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2025-12-18",
+    "类型": "法国甲级联赛",
+    "胜者": "Audrey ZARIF/LI He",
+    "负者": "Bruna TAKAHASHI/Rachel MORET",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2025-12-19",
+    "类型": "法国甲级联赛",
+    "胜者": "Filippa BERGAND/ZANG Xiaotong",
+    "负者": "Barbora VARADY/Camille LUTZ",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2025-12-22",
+    "类型": "法国甲级联赛",
+    "胜者": "Christina KALLBERG/Yangzi LIU",
+    "负者": "Hana ARAPOVIC/Prithika PAVADE",
+    "比分": "3-2"
   }
 ]

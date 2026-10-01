@@ -3,7 +3,12 @@
     "日期": "2018-10-24",
     "类型": "T联赛",
     "胜者": "Jun MIZUTANI/Kenta MATSUDAIRA",
-    "负者": "JEONG Youngsik/Yuki HIRANO"
+    "负者": "JEOUNG Youngsik/Yuki HIRANO",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "13-11"
+    ]
   },
   {
     "日期": "2018-10-28",
@@ -12,22 +17,10 @@
     "负者": "Jun MIZUTANI/Kenta TAZOE"
   },
   {
-    "日期": "2018-11-15",
-    "类型": "T联赛",
-    "胜者": "LEE Ho Ching/Saki TASHIRO",
-    "负者": "Misaki MORIZONO/CHENG I-Ching"
-  },
-  {
     "日期": "2018-11-16",
     "类型": "T联赛",
     "胜者": "Hitoshi UEDA/Masataka MORIZONO",
     "负者": "Seiya KISHIKAWA/WONG Chun Ting"
-  },
-  {
-    "日期": "2018-11-16",
-    "类型": "T联赛",
-    "胜者": "Miyu NAGASAKI/Mizuki MORIZONO",
-    "负者": "Misaki MORIZONO/CHENG I-Ching"
   },
   {
     "日期": "2018-11-17",
@@ -38,8 +31,13 @@
   {
     "日期": "2018-11-17",
     "类型": "T联赛",
-    "胜者": "WONG Chun Ting/JEONG Youngsik",
-    "负者": "Jun MIZUTANI/Yuya OSHIMA"
+    "胜者": "JEOUNG Youngsik/WONG Chun Ting",
+    "负者": "Jun MIZUTANI/Yuya OSHIMA",
+    "比分": "2-0",
+    "局分": [
+      "15-13",
+      "13-11"
+    ]
   },
   {
     "日期": "2018-11-17",
@@ -62,7 +60,7 @@
   {
     "日期": "2018-11-18",
     "类型": "T联赛",
-    "胜者": "YAN Xuejiao/Miyu NAGASAKI",
+    "胜者": "Miyu NAGASAKI/YUAN Xuejiao",
     "负者": "ZHANG Chengcheng/ZHANG Hui"
   },
   {
@@ -75,13 +73,23 @@
     "日期": "2018-11-21",
     "类型": "T联赛",
     "胜者": "Koki NIWA/Taimu ARINOBU",
-    "负者": "WONG Chun Ting/Maharu YOSHIMURA"
+    "负者": "WONG Chun Ting/Maharu YOSHIMURA",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "12-10"
+    ]
   },
   {
     "日期": "2018-11-24",
     "类型": "T联赛",
     "胜者": "Jun MIZUTANI/Kenta MATSUDAIRA",
-    "负者": "Koki NIWA/Taimu ARINOBU"
+    "负者": "Koki NIWA/Taimu ARINOBU",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "14-12"
+    ]
   },
   {
     "日期": "2018-11-25",
@@ -93,7 +101,12 @@
     "日期": "2018-12-03",
     "类型": "T联赛",
     "胜者": "Kenta MATSUDAIRA/Kenta TAZOE",
-    "负者": "Koki NIWA/Taimu ARINOBU"
+    "负者": "Koki NIWA/Taimu ARINOBU",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-8"
+    ]
   },
   {
     "日期": "2018-10-26",
@@ -104,14 +117,19 @@
   {
     "日期": "2018-12-04",
     "类型": "T联赛",
-    "胜者": "JEONG Youngsik/Yuki HIRANO",
+    "胜者": "JEOUNG Youngsik/Yuki HIRANO",
     "负者": "CHEN Jianan/ZHANG Hongjie"
   },
   {
     "日期": "2018-12-10",
     "类型": "T联赛",
-    "胜者": "JEONG Youngsik/Yuki HIRANO",
-    "负者": "Koki NIWA/Taimu ARINOBU"
+    "胜者": "JEOUNG Youngsik/Yuki HIRANO",
+    "负者": "Koki NIWA/Taimu ARINOBU",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-2"
+    ]
   },
   {
     "日期": "2018-12-22",
@@ -189,31 +207,29 @@
     "日期": "2018-10-27",
     "类型": "T联赛",
     "胜者": "WONG Chun Ting/Seiya KISHIKAWA",
-    "负者": "Yuichi YOKOYAMA/Masataka MORIZONO"
+    "负者": "Yuichi YOKOYAMA/Masataka MORIZONO",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-7"
+    ]
   },
   {
     "日期": "2018-12-09",
     "类型": "T联赛",
-    "胜者": "JEONG Youngsik/Yuki HIRANO",
-    "负者": "Jun MIZUTANI/Kenta MATSUDAIRA"
+    "胜者": "JEOUNG Youngsik/Yuki HIRANO",
+    "负者": "Jun MIZUTANI/Kenta MATSUDAIRA",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-9"
+    ]
   },
   {
     "日期": "2018-12-09",
     "类型": "T联赛",
     "胜者": "Hitoshi UEDA/Masataka MORIZONO",
     "负者": "Koki NIWA/Taimu ARINOBU"
-  },
-  {
-    "日期": "2018-12-09",
-    "类型": "T联赛",
-    "胜者": "JEON Jihee/CHENG I-Ching",
-    "负者": "DOO Hoi Kem/Yui HAMAMOTO"
-  },
-  {
-    "日期": "2018-10-27",
-    "类型": "T联赛",
-    "胜者": "Misaki MORIZONO/CHENG I-Ching",
-    "负者": "YAN Xuejiao/Mizuki MORIZONO"
   },
   {
     "日期": "2018-10-27",
@@ -225,6 +241,205 @@
     "日期": "2018-10-28",
     "类型": "T联赛",
     "胜者": "WONG Chun Ting/Seiya KISHIKAWA",
-    "负者": "Koki NIWA/Kenji MATSUDAIRA"
+    "负者": "Koki NIWA/Kenji MATSUDAIRA",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2018-10-26",
+    "类型": "T联赛",
+    "胜者": "CHEN Chien-An/CHUANG Chih-Yuan",
+    "负者": "Masataka MORIZONO/Yuichi YOKOYAMA",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2018-10-27",
+    "类型": "T联赛",
+    "胜者": "Jun MIZUTANI/Kenta TAZOE",
+    "负者": "CHEN Chien-An/CHUANG Chih-Yuan",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2018-10-28",
+    "类型": "T联赛",
+    "胜者": "Jin UEDA/Masataka MORIZONO",
+    "负者": "Jun MIZUTANI/Kenta TAZOE",
+    "比分": "2-1",
+    "局分": [
+      "11-9",
+      "8-11",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2018-11-16",
+    "类型": "T联赛",
+    "胜者": "Jin UEDA/Masataka MORIZONO",
+    "负者": "Seiya KISHIKAWA/WONG Chun Ting",
+    "比分": "2-0",
+    "局分": [
+      "11-5",
+      "14-12"
+    ]
+  },
+  {
+    "日期": "2018-11-17",
+    "类型": "T联赛",
+    "胜者": "Jin UEDA/Masataka MORIZONO",
+    "负者": "CHEN Chien-An/CHIANG Hung-Chieh",
+    "比分": "2-1",
+    "局分": [
+      "8-11",
+      "11-8",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2018-11-18",
+    "类型": "T联赛",
+    "胜者": "Jun MIZUTANI/Kenta MATSUDAIRA",
+    "负者": "CHEN Chien-An/CHIANG Hung-Chieh",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2018-11-20",
+    "类型": "T联赛",
+    "胜者": "Maharu YOSHIMURA/WONG Chun Ting",
+    "负者": "Jin UEDA/Masataka MORIZONO",
+    "比分": "2-1",
+    "局分": [
+      "4-11",
+      "11-7",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2018-11-25",
+    "类型": "T联赛",
+    "胜者": "Jin UEDA/Masataka MORIZONO",
+    "负者": "Jun MIZUTANI/Kenta MATSUDAIRA",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "16-14"
+    ]
+  },
+  {
+    "日期": "2018-12-04",
+    "类型": "T联赛",
+    "胜者": "JEOUNG Youngsik/Yuki HIRANO",
+    "负者": "CHEN Chien-An/CHIANG Hung-Chieh",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2018-12-22",
+    "类型": "T联赛",
+    "胜者": "Taku TAKAKIWA/WONG Chun Ting",
+    "负者": "Jin UEDA/Masataka MORIZONO",
+    "比分": "2-1",
+    "局分": [
+      "8-11",
+      "11-6",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2018-12-23",
+    "类型": "T联赛",
+    "胜者": "Taku TAKAKIWA/WONG Chun Ting",
+    "负者": "Jun MIZUTANI/Kenta TAZOE",
+    "比分": "2-1",
+    "局分": [
+      "9-11",
+      "11-7",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2018-12-24",
+    "类型": "T联赛",
+    "胜者": "Jin UEDA/Masataka MORIZONO",
+    "负者": "CHEN Chien-An/CHIANG Hung-Chieh",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2018-12-25",
+    "类型": "T联赛",
+    "胜者": "Kenta MATSUDAIRA/Kenta TAZOE",
+    "负者": "CHIANG Hung-Chieh/Kazuhiro CHAN",
+    "比分": "2-1",
+    "局分": [
+      "11-5",
+      "12-14",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2018-12-26",
+    "类型": "T联赛",
+    "胜者": "Jin UEDA/Masataka MORIZONO",
+    "负者": "Taku TAKAKIWA/WONG Chun Ting",
+    "比分": "2-0",
+    "局分": [
+      "11-5",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2018-12-27",
+    "类型": "T联赛",
+    "胜者": "Jin UEDA/Masataka MORIZONO",
+    "负者": "Jun MIZUTANI/Yuya OSHIMA",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2018-12-08",
+    "类型": "T联赛",
+    "胜者": "Jin UEDA/Masataka MORIZONO",
+    "负者": "Jun MIZUTANI/Kenta MATSUDAIRA",
+    "比分": "2-1",
+    "局分": [
+      "7-11",
+      "11-9",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2018-12-09",
+    "类型": "T联赛",
+    "胜者": "Jin UEDA/Masataka MORIZONO",
+    "负者": "Koki NIWA/Taimu ARINOBU",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "16-14"
+    ]
   }
 ]

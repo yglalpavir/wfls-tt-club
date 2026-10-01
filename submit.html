@@ -85,7 +85,7 @@
                 <span class="sb-step"><b>3</b><span data-i18n="sb_step3">计入积分排名</span></span>
             </div>
             <a id="sbFormLink" class="sb-formbtn" href="#" target="_blank" rel="noopener" hidden><i class="fa-solid fa-file-pen"></i> <span data-i18n="sb_quick_btn">打开提交表单</span></a>
-            <p class="sb-quick-missing" id="sbFormMissing" data-i18n="sb_quick_missing" hidden>提交表单链接尚未配置（管理员：把收集表链接填入本页 TENCENT_FORM_URL）。</p>
+            <p class="sb-quick-missing" id="sbFormMissing" data-i18n="sb_quick_missing" hidden>在线提交表正在准备中，请先通过社团 QQ 群联系负责人代录。</p>
         </div>
         <!-- 本地录入工具（表单 → 队列 → GitHub issue / 复制 JSON 发 QQ 群）：
              收集表上线后整卡隐藏（ENABLE_MANUAL_ENTRY=false）；恢复时把它与 ENABLE_GITHUB_SUBMIT 都改回 true -->
@@ -95,10 +95,10 @@
                 <div><label data-i18n="sb_date">日期</label><input type="date" id="sbDate"></div>
                 <div><label data-i18n="sb_type">类型</label><select id="sbType"></select></div>
                 <div><label data-i18n="sb_format">赛制</label><select id="sbFormat">
-                    <option value="default">default</option>
-                    <option value="bo3">bo3</option>
-                    <option value="bo5">bo5</option>
-                    <option value="bo7">bo7</option>
+                    <option value="default" data-i18n="sb_fmt_default">默认</option>
+                    <option value="bo3" data-i18n="sb_fmt_bo3">三局两胜</option>
+                    <option value="bo5" data-i18n="sb_fmt_bo5">五局三胜</option>
+                    <option value="bo7" data-i18n="sb_fmt_bo7">七局四胜</option>
                 </select></div>
                 <div><label data-i18n="sb_winner">胜者</label><input type="text" id="sbWinner" list="sbPlayerList" autocomplete="off"></div>
                 <div><label data-i18n="sb_loser">负者</label><input type="text" id="sbLoser" list="sbPlayerList" autocomplete="off"></div>

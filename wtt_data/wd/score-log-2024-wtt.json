@@ -3,13 +3,19 @@
     "日期": "2024-01-06",
     "类型": "T联赛",
     "胜者": "Miyuu KIHARA/Miyu NAGASAKI",
-    "负者": "Saki SHIBATA/Satsuki OTO"
+    "负者": "Saki SHIBATA/Satsuki ODO",
+    "比分": "2-1",
+    "局分": [
+      "11-10",
+      "10-11",
+      "12-10"
+    ]
   },
   {
     "日期": "2024-01-07",
     "类型": "T联赛",
     "胜者": "SONG Meiyou/SONG Yijin",
-    "负者": "Saki SHIBATA/Satsuki OTO"
+    "负者": "Saki SHIBATA/Satsuki ODO"
   },
   {
     "日期": "2024-01-08",
@@ -20,13 +26,13 @@
   {
     "日期": "2024-01-13",
     "类型": "T联赛",
-    "胜者": "Saki AOKI/Satsuki OTO",
+    "胜者": "Saki AOKI/Satsuki ODO",
     "负者": "Yuna KURIYAMA/Moe NOMURA"
   },
   {
     "日期": "2024-01-14",
     "类型": "T联赛",
-    "胜者": "Saki AOKI/Satsuki OTO",
+    "胜者": "Saki AOKI/Satsuki ODO",
     "负者": "Miku IZUMO/Yume KUDO"
   },
   {
@@ -38,14 +44,19 @@
   {
     "日期": "2024-02-03",
     "类型": "T联赛",
-    "胜者": "Saki AOKI/Satsuki OTO",
+    "胜者": "Saki AOKI/Satsuki ODO",
     "负者": "Kasumi KIMURA/Yurika NANBA"
   },
   {
     "日期": "2024-02-03",
     "类型": "T联赛",
-    "胜者": "Asuka SASAO/Rena ASO",
-    "负者": "Miyuu KIHARA/Miyu NAGASAKI"
+    "胜者": "Asuka SASAO/Reina ASO",
+    "负者": "Miyuu KIHARA/Miyu NAGASAKI",
+    "比分": "2-0",
+    "局分": [
+      "11-3",
+      "11-10"
+    ]
   },
   {
     "日期": "2024-02-04",
@@ -57,43 +68,71 @@
     "日期": "2024-02-04",
     "类型": "T联赛",
     "胜者": "Asuka SASAO/Hina HAYATA",
-    "负者": "Honoka HASHIMOTO/Hitomi SATO"
+    "负者": "Honoka HASHIMOTO/Hitomi SATO",
+    "比分": "2-0",
+    "局分": [
+      "11-3",
+      "11-8"
+    ]
   },
   {
     "日期": "2024-02-10",
     "类型": "T联赛",
     "胜者": "Kasumi KIMURA/Yurika NANBA",
-    "负者": "Yuna KURIYAMA/Moe NOMURA"
+    "负者": "Yuna KURIYAMA/Moe NOMURA",
+    "比分": "2-1",
+    "局分": [
+      "11-10",
+      "9-11",
+      "11-7"
+    ]
   },
   {
     "日期": "2024-02-11",
     "类型": "T联赛",
-    "胜者": "Saki AOKI/Satsuki OTO",
+    "胜者": "Saki AOKI/Satsuki ODO",
     "负者": "Kasumi KIMURA/Yurika NANBA"
   },
   {
     "日期": "2024-03-02",
     "类型": "T联赛",
     "胜者": "Miyuu KIHARA/Miwa HARIMOTO",
-    "负者": "Yuna KURIYAMA/Moe NOMURA"
+    "负者": "Yuna KURIYAMA/Moe NOMURA",
+    "比分": "2-1",
+    "局分": [
+      "11-8",
+      "10-11",
+      "13-11"
+    ]
   },
   {
     "日期": "2024-03-02",
     "类型": "T联赛",
-    "胜者": "Asuka SASAO/Rena ASO",
+    "胜者": "Asuka SASAO/Reina ASO",
     "负者": "Ai EDAGAKI/Yume KUDO"
   },
   {
     "日期": "2024-03-02",
     "类型": "T联赛",
-    "胜者": "Saki SHIBATA/Satsuki OTO",
-    "负者": "YUAN Xuejiao/MA Yuhan"
+    "胜者": "Saki SHIBATA/Satsuki ODO",
+    "负者": "YUAN Xuejiao/MA Yuhan",
+    "比分": "2-0",
+    "局分": [
+      "11-5",
+      "11-5"
+    ]
   },
   {
     "日期": "2024-03-03",
     "类型": "T联赛",
     "胜者": "Miyuu KIHARA/Miyu NAGASAKI",
-    "负者": "Saki SHIBATA/Satsuki OTO"
+    "负者": "Saki SHIBATA/Satsuki ODO",
+    "比分": "2-1",
+    "局分": [
+      "11-9",
+      "6-11",
+      "11-7"
+    ]
   },
   {
     "日期": "2024-03-03",
@@ -105,31 +144,52 @@
     "日期": "2024-03-03",
     "类型": "T联赛",
     "胜者": "MA Yuhan/Yurika NANBA",
-    "负者": "Asuka SASAO/Rena ASO"
+    "负者": "Asuka SASAO/Reina ASO",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-5"
+    ]
   },
   {
     "日期": "2024-03-24",
     "类型": "T联赛",
-    "胜者": "Asuka SASAO/Rena ASO",
+    "胜者": "Asuka SASAO/Reina ASO",
     "负者": "Miyuu KIHARA/Miyu NAGASAKI"
   },
   {
     "日期": "2024-08-25",
     "类型": "T联赛",
     "胜者": "Miyu NAGASAKI/Miwa HARIMOTO",
-    "负者": "Asuka SASAO/Rena ASO"
+    "负者": "Asuka SASAO/Reina ASO",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-8"
+    ]
   },
   {
     "日期": "2024-08-31",
     "类型": "T联赛",
-    "胜者": "Saki SHIBATA/Satsuki OTO",
-    "负者": "Yuna KURIYAMA/Saya YAMAMURO"
+    "胜者": "Saki SHIBATA/Satsuki ODO",
+    "负者": "Yuna KURIYAMA/Saya YAMAMURO",
+    "比分": "2-1",
+    "局分": [
+      "11-3",
+      "10-11",
+      "11-9"
+    ]
   },
   {
     "日期": "2024-09-01",
     "类型": "T联赛",
-    "胜者": "Asuka SASAO/Rena ASO",
-    "负者": "Yuna KURIYAMA/Saya YAMAMURO"
+    "胜者": "Asuka SASAO/Reina ASO",
+    "负者": "Yuna KURIYAMA/Saya YAMAMURO",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-3"
+    ]
   },
   {
     "日期": "2024-09-07",
@@ -141,49 +201,80 @@
     "日期": "2024-09-08",
     "类型": "T联赛",
     "胜者": "Akiko NAGAO/Yurika NANBA",
-    "负者": "Yume KUDO/Mitsuki NAKAMURA"
+    "负者": "Yume KUDO/Mitsuki NAKAMURA",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-5"
+    ]
   },
   {
     "日期": "2024-09-21",
     "类型": "T联赛",
     "胜者": "Kyoka IZUSAWA/Narumi SHUTO",
-    "负者": "Sakura YOKOI/Satsuki OTO"
+    "负者": "Sakura YOKOI/Satsuki ODO"
   },
   {
     "日期": "2024-09-21",
     "类型": "T联赛",
     "胜者": "Miyu NAGASAKI/Miwa HARIMOTO",
-    "负者": "Shiki KUSAKABE/Mitsuki NAKAMURA"
+    "负者": "Shiki KUSAKABE/Mitsuki NAKAMURA",
+    "比分": "2-0",
+    "局分": [
+      "11-4",
+      "11-4"
+    ]
   },
   {
     "日期": "2024-09-22",
     "类型": "T联赛",
-    "胜者": "Saki SHIBATA/Satsuki OTO",
-    "负者": "Haruna OJIO/Yuna OJIO"
+    "胜者": "Saki SHIBATA/Satsuki ODO",
+    "负者": "Haruna OJIO/Yuna OJIO",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-6"
+    ]
   },
   {
     "日期": "2024-09-22",
     "类型": "T联赛",
-    "胜者": "Asuka SASAO/Rena ASO",
-    "负者": "Miyu NAGASAKI/Miwa HARIMOTO"
+    "胜者": "Asuka SASAO/Reina ASO",
+    "负者": "Miyu NAGASAKI/Miwa HARIMOTO",
+    "比分": "2-1",
+    "局分": [
+      "11-5",
+      "2-11",
+      "12-10"
+    ]
   },
   {
     "日期": "2024-09-27",
     "类型": "T联赛",
-    "胜者": "Asuka SASAO/Rena ASO",
-    "负者": "Honami NAKAMORI/Mitsuki NAKAMURA"
+    "胜者": "Asuka SASAO/Reina ASO",
+    "负者": "Honami NAKAMORI/Mitsuki NAKAMURA",
+    "比分": "2-0",
+    "局分": [
+      "11-3",
+      "11-1"
+    ]
   },
   {
     "日期": "2024-09-28",
     "类型": "T联赛",
     "胜者": "Saki AOKI/Sakura YOKOI",
-    "负者": "Asuka SASAO/Rena ASO"
+    "负者": "Asuka SASAO/Reina ASO"
   },
   {
     "日期": "2024-09-28",
     "类型": "T联赛",
     "胜者": "Miyuu KIHARA/Miwa HARIMOTO",
-    "负者": "Yuka UMEMURA/Maki SHIOMI"
+    "负者": "Yuka UMEMURA/Maki SHIOMI",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-6"
+    ]
   },
   {
     "日期": "2024-09-29",
@@ -195,12 +286,18 @@
     "日期": "2024-10-13",
     "类型": "T联赛",
     "胜者": "Moe NOMURA/Yuna KURIYAMA",
-    "负者": "Akiko NAGAO/Yuka MIMURA"
+    "负者": "Akiko NAGAO/Yuka MIMURA",
+    "比分": "2-1",
+    "局分": [
+      "9-11",
+      "11-10",
+      "11-7"
+    ]
   },
   {
     "日期": "2024-10-19",
     "类型": "T联赛",
-    "胜者": "Sakura YOKOI/Satsuki OTO",
+    "胜者": "Sakura YOKOI/Satsuki ODO",
     "负者": "Emiko TAGUCHI/Yuna KURIYAMA"
   },
   {
@@ -213,61 +310,113 @@
     "日期": "2024-10-26",
     "类型": "T联赛",
     "胜者": "Saki SHIBATA/Shina ITO",
-    "负者": "Shiki KUSAKABE/Asahi HIRANO"
+    "负者": "Shiki KUSAKABE/Asahi HIRANO",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-6"
+    ]
   },
   {
     "日期": "2024-11-02",
     "类型": "T联赛",
     "胜者": "Anne UESAWA/Asuka SASAO",
-    "负者": "Miku IZUMO/Asahi HIRANO"
+    "负者": "Miku IZUMO/Asahi HIRANO",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-3"
+    ]
   },
   {
     "日期": "2024-11-03",
     "类型": "T联赛",
     "胜者": "Minami ANDO/Kasumi KIMURA",
-    "负者": "Miku IZUMO/Asahi HIRANO"
+    "负者": "Miku IZUMO/Asahi HIRANO",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-8"
+    ]
   },
   {
     "日期": "2024-11-09",
     "类型": "T联赛",
     "胜者": "Honoka HASHIMOTO/Hitomi SATO",
-    "负者": "Miyuu KIHARA/LI Jingsika"
+    "负者": "Miyuu KIHARA/LI Jingsika",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-8"
+    ]
   },
   {
     "日期": "2024-11-16",
     "类型": "T联赛",
     "胜者": "Moe NOMURA/Yuna KURIYAMA",
-    "负者": "Miku IZUMO/Mitsuki NAKAMURA"
+    "负者": "Miku IZUMO/Mitsuki NAKAMURA",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-8"
+    ]
   },
   {
     "日期": "2024-11-17",
     "类型": "T联赛",
     "胜者": "Miyuu KIHARA/Miyu NAGASAKI",
-    "负者": "Miku IZUMO/Asahi HIRANO"
+    "负者": "Miku IZUMO/Asahi HIRANO",
+    "比分": "2-0",
+    "局分": [
+      "11-3",
+      "11-5"
+    ]
   },
   {
     "日期": "2024-11-23",
     "类型": "T联赛",
     "胜者": "Saki SHIBATA/Shina ITO",
-    "负者": "Asuka SASAO/Rena ASO"
+    "负者": "Asuka SASAO/Reina ASO",
+    "比分": "2-1",
+    "局分": [
+      "11-10",
+      "1-11",
+      "11-8"
+    ]
   },
   {
     "日期": "2024-11-24",
     "类型": "T联赛",
     "胜者": "Miyuu KIHARA/Miwa HARIMOTO",
-    "负者": "Sakura YOKOI/Satsuki OTO"
+    "负者": "Sakura YOKOI/Satsuki ODO",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-8"
+    ]
   },
   {
     "日期": "2024-11-29",
     "类型": "T联赛",
-    "胜者": "Asuka SASAO/Rena ASO",
-    "负者": "Yukari SUGASAWA/Mitsuki NAKAMURA"
+    "胜者": "Asuka SASAO/Reina ASO",
+    "负者": "Yukari SUGASAWA/Mitsuki NAKAMURA",
+    "比分": "2-1",
+    "局分": [
+      "11-4",
+      "9-11",
+      "11-8"
+    ]
   },
   {
     "日期": "2024-11-30",
     "类型": "T联赛",
     "胜者": "Miyuu KIHARA/Miyu NAGASAKI",
-    "负者": "Yukari SUGASAWA/Mitsuki NAKAMURA"
+    "负者": "Yukari SUGASAWA/Mitsuki NAKAMURA",
+    "比分": "2-0",
+    "局分": [
+      "11-2",
+      "11-9"
+    ]
   },
   {
     "日期": "2024-12-01",
@@ -369,7 +518,13 @@
     "日期": "2024-12-07",
     "类型": "T联赛",
     "胜者": "Miyuu KIHARA/Miyu NAGASAKI",
-    "负者": "MA Yuhan/Yurika NANBA"
+    "负者": "MA Yuhan/Yurika NANBA",
+    "比分": "2-1",
+    "局分": [
+      "11-5",
+      "8-11",
+      "14-12"
+    ]
   },
   {
     "日期": "2024-12-07",
@@ -410,8 +565,13 @@
   {
     "日期": "2024-12-08",
     "类型": "T联赛",
-    "胜者": "Sakura YOKOI/Satsuki OTO",
-    "负者": "Miyuu KIHARA/Miwa HARIMOTO"
+    "胜者": "Sakura YOKOI/Satsuki ODO",
+    "负者": "Miyuu KIHARA/Miwa HARIMOTO",
+    "比分": "2-0",
+    "局分": [
+      "11-5",
+      "11-5"
+    ]
   },
   {
     "日期": "2024-12-08",
@@ -423,13 +583,23 @@
     "日期": "2024-12-28",
     "类型": "T联赛",
     "胜者": "Miyuu KIHARA/Miyu NAGASAKI",
-    "负者": "Yume KUDO/Miku IZUMO"
+    "负者": "Yume KUDO/Miku IZUMO",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-9"
+    ]
   },
   {
     "日期": "2024-12-29",
     "类型": "T联赛",
     "胜者": "Yuka UMEMURA/Maki SHIOMI",
-    "负者": "Miyuu KIHARA/Miwa HARIMOTO"
+    "负者": "Miyuu KIHARA/Miwa HARIMOTO",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-3"
+    ]
   },
   {
     "日期": "2024-08-10",
@@ -520,5 +690,728 @@
     "类型": "奥运会团体",
     "胜者": "Hina HAYATA/Miu HIRANO",
     "负者": "Zuzanna WIELGOS/Natalia BAJOR"
+  },
+  {
+    "日期": "2024-01-07",
+    "类型": "T联赛",
+    "胜者": "SUN Mingyang/SUN Yizhen",
+    "负者": "Saki SHIBATA/Satsuki ODO",
+    "比分": "2-1",
+    "局分": [
+      "6-11",
+      "11-2",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2024-01-08",
+    "类型": "T联赛",
+    "胜者": "Saki SHIBATA/Satsuki ODO",
+    "负者": "Emiko TAGUCHI/Kyoka IDESAWA",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2024-01-08",
+    "类型": "T联赛",
+    "胜者": "HE Zhuojia/Miwa HARIMOTO",
+    "负者": "Madoka EDAHIRO/Yume KUDO",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2024-01-13",
+    "类型": "T联赛",
+    "胜者": "Sachi AOKI/Satsuki ODO",
+    "负者": "Moe NOMURA/Yuna KURIYAMA",
+    "比分": "2-1",
+    "局分": [
+      "10-11",
+      "11-8",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2024-01-14",
+    "类型": "T联赛",
+    "胜者": "Sachi AOKI/Satsuki ODO",
+    "负者": "Miku IZUMO/Yume KUDO",
+    "比分": "2-0",
+    "局分": [
+      "11-4",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2024-02-03",
+    "类型": "T联赛",
+    "胜者": "Madoka EDAHIRO/Yume KUDO",
+    "负者": "Emiko TAGUCHI/Kyoka IDESAWA",
+    "比分": "2-1",
+    "局分": [
+      "11-6",
+      "9-11",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2024-02-03",
+    "类型": "T联赛",
+    "胜者": "Sachi AOKI/Satsuki ODO",
+    "负者": "Kasumi KIMURA/Yurika NANBA",
+    "比分": "2-1",
+    "局分": [
+      "11-4",
+      "6-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2024-02-04",
+    "类型": "T联赛",
+    "胜者": "Miwa HARIMOTO/Miyuu KIHARA",
+    "负者": "Emiko TAGUCHI/Kyoka IDESAWA",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2024-02-11",
+    "类型": "T联赛",
+    "胜者": "Sachi AOKI/Satsuki ODO",
+    "负者": "Kasumi KIMURA/Yurika NANBA",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2024-02-12",
+    "类型": "T联赛",
+    "胜者": "MA Yuhan/Yurika NANBA",
+    "负者": "Madoka EDAHIRO/Yume KUDO",
+    "比分": "2-0",
+    "局分": [
+      "11-5",
+      "11-10"
+    ]
+  },
+  {
+    "日期": "2024-03-02",
+    "类型": "T联赛",
+    "胜者": "Asuka SASAO/Reina ASO",
+    "负者": "Madoka EDAHIRO/Yume KUDO",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2024-03-03",
+    "类型": "T联赛",
+    "胜者": "Madoka EDAHIRO/Yume KUDO",
+    "负者": "Emiko TAGUCHI/Yuna KURIYAMA",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2024-03-23",
+    "类型": "T联赛",
+    "胜者": "Hitomi SATO/Honoka HASHIMOTO",
+    "负者": "SUN Mingyang/SUN Yizhen",
+    "比分": "2-0",
+    "局分": [
+      "12-10",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2024-09-07",
+    "类型": "T联赛",
+    "胜者": "Sachi AOKI/Shina ITO",
+    "负者": "Mitsuki NAKAMURA/Yume KUDO",
+    "比分": "2-1",
+    "局分": [
+      "6-11",
+      "11-6",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2024-09-21",
+    "类型": "T联赛",
+    "胜者": "Kyoka IDESAWA/Narumi SHUTO",
+    "负者": "Sakura YOKOI/Satsuki ODO",
+    "比分": "2-1",
+    "局分": [
+      "10-11",
+      "11-10",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2024-09-28",
+    "类型": "T联赛",
+    "胜者": "Sachi AOKI/Sakura YOKOI",
+    "负者": "Asuka SASAO/Reina ASO",
+    "比分": "2-1",
+    "局分": [
+      "10-11",
+      "11-6",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2024-09-29",
+    "类型": "T联赛",
+    "胜者": "Maki SHIOMI/Yuka UMEMURA",
+    "负者": "Hitomi EDAHIRO/Mitsuki NAKAMURA",
+    "比分": "2-1",
+    "局分": [
+      "7-11",
+      "11-6",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2024-10-19",
+    "类型": "T联赛",
+    "胜者": "Anne UESAWA/Asuka SASAO",
+    "负者": "Kasumi KIMURA/Yurika NANBA",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2024-10-20",
+    "类型": "T联赛",
+    "胜者": "Anne UESAWA/Asuka SASAO",
+    "负者": "Hana SAKURAI/Miyu NAGASAKI",
+    "比分": "2-1",
+    "局分": [
+      "9-11",
+      "11-7",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2024-10-20",
+    "类型": "T联赛",
+    "胜者": "Asahi HIRANO/Miku IZUMO",
+    "负者": "Sachi AOKI/Sakura YOKOI",
+    "比分": "2-1",
+    "局分": [
+      "8-11",
+      "11-3",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2024-10-26",
+    "类型": "T联赛",
+    "胜者": "Manami IMAEDA/Yuna KURIYAMA",
+    "负者": "MA Yuhan/Yurika NANBA",
+    "比分": "2-1",
+    "局分": [
+      "8-11",
+      "11-10",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2024-10-27",
+    "类型": "T联赛",
+    "胜者": "MA Yuhan/Yurika NANBA",
+    "负者": "Anne UESAWA/Misuzu TAKEYA",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2024-11-02",
+    "类型": "T联赛",
+    "胜者": "LI Jingsika/Miyuu KIHARA",
+    "负者": "Kyoka IDESAWA/Narumi SHUTO",
+    "比分": "2-1",
+    "局分": [
+      "2-11",
+      "11-7",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2024-11-03",
+    "类型": "T联赛",
+    "胜者": "Kyoka IDESAWA/Narumi SHUTO",
+    "负者": "Saki SHIBATA/Shina ITO",
+    "比分": "2-1",
+    "局分": [
+      "11-3",
+      "8-11",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2024-11-09",
+    "类型": "T联赛",
+    "胜者": "Anne UESAWA/Asuka SASAO",
+    "负者": "Ringo KOBAYASHI/Yuna KURIYAMA",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2024-11-10",
+    "类型": "T联赛",
+    "胜者": "Anne UESAWA/Asuka SASAO",
+    "负者": "Asahi HIRANO/Miku IZUMO",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2024-11-16",
+    "类型": "T联赛",
+    "胜者": "Sakura YOKOI/Satsuki ODO",
+    "负者": "Akiko NAGAO/Yuka MIMURA",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2024-11-17",
+    "类型": "T联赛",
+    "胜者": "Akiko NAGAO/Yuka MIMURA",
+    "负者": "Anne UESAWA/Asuka SASAO",
+    "比分": "2-1",
+    "局分": [
+      "4-11",
+      "11-9",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2024-11-30",
+    "类型": "T联赛",
+    "胜者": "Sakura YOKOI/Satsuki ODO",
+    "负者": "Akiko NAGAO/Yuka MIMURA",
+    "比分": "2-0",
+    "局分": [
+      "11-5",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2024-12-01",
+    "类型": "T联赛",
+    "胜者": "MA Yuhan/Yurika NANBA",
+    "负者": "Miku IZUMO/Mitsuki NAKAMURA",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2024-12-26",
+    "类型": "T联赛",
+    "胜者": "Maki SHIOMI/Yuka UMEMURA",
+    "负者": "Hina HAYATA/Kaho AKAE",
+    "比分": "2-1",
+    "局分": [
+      "11-8",
+      "7-11",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2024-12-13",
+    "类型": "T联赛",
+    "胜者": "Akiko NAGAO/Yuka MIMURA",
+    "负者": "Ringo KOBAYASHI/Seira USHIJIMA",
+    "比分": "2-1",
+    "局分": [
+      "10-11",
+      "11-8",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2024-12-14",
+    "类型": "T联赛",
+    "胜者": "Ringo KOBAYASHI/Seira USHIJIMA",
+    "负者": "Asahi HIRANO/Miku IZUMO",
+    "比分": "2-1",
+    "局分": [
+      "11-5",
+      "10-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2024-01-03",
+    "类型": "法国甲级联赛",
+    "胜者": "Barbora VARADY/Jia LIU",
+    "负者": "Rachel MORET/ZHU Chengzhu",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2024-01-04",
+    "类型": "法国甲级联赛",
+    "胜者": "Daniela DODEAN MONTEIRO/Polina MIKHAILOVA",
+    "负者": "Jinnipa SAWETTABUT/Sophie EARLEY",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2024-01-04",
+    "类型": "法国甲级联赛",
+    "胜者": "Jian ZENG/Stephanie LOEUILLETTE",
+    "负者": "Filippa BERGAND/Jia Nan YUAN",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2024-01-04",
+    "类型": "法国甲级联赛",
+    "胜者": "Jinnipa SAWETTABUT/Rachel MORET",
+    "负者": "Daniela DODEAN MONTEIRO/Linda BERGSTROM",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2024-01-04",
+    "类型": "法国甲级联赛",
+    "胜者": "Oceane GUISNEL/Stephanie LOEUILLETTE",
+    "负者": "Andrea TODOROVIC/Filippa BERGAND",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2024-01-06",
+    "类型": "法国甲级联赛",
+    "胜者": "Adina DIACONU/Pauline CHASSELIN",
+    "负者": "Barbora VARADY/Prithika PAVADE",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2024-01-06",
+    "类型": "法国甲级联赛",
+    "胜者": "Mariia TAILAKOVA/Pauline CHASSELIN",
+    "负者": "Barbora VARADY/LIU Hsing-Yin",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2024-01-09",
+    "类型": "法国甲级联赛",
+    "胜者": "Charlotte LUTZ/Sarah DE NUTTE",
+    "负者": "Isa COK/LI Samson",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2024-01-09",
+    "类型": "法国甲级联赛",
+    "胜者": "Gabriela FEHER/Sarah DE NUTTE",
+    "负者": "Isa COK/WU Jiaduo",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2024-01-29",
+    "类型": "法国甲级联赛",
+    "胜者": "Hana MATELOVA/Marie MIGOT",
+    "负者": "Hanna HAPONOVA/LI Xue",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2024-01-29",
+    "类型": "法国甲级联赛",
+    "胜者": "Jieni SHAO/Marie MIGOT",
+    "负者": "Ema LABOSOVA/LI Xue",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2024-02-01",
+    "类型": "法国甲级联赛",
+    "胜者": "Andrea TODOROVIC/Filippa BERGAND",
+    "负者": "Ema LABOSOVA/LI Xue",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2024-02-03",
+    "类型": "法国甲级联赛",
+    "胜者": "Andrea TODOROVIC/Filippa BERGAND",
+    "负者": "Clea DE STOPPELEIRE/Sibel ALTINKAYA",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2024-02-03",
+    "类型": "法国甲级联赛",
+    "胜者": "Filippa BERGAND/Sara RAMIREZ",
+    "负者": "Clea DE STOPPELEIRE/WANG Yanan",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2024-02-06",
+    "类型": "法国甲级联赛",
+    "胜者": "Anais SALPIN/Isa COK",
+    "负者": "Camille LUTZ/Linda BERGSTROM",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2024-02-06",
+    "类型": "法国甲级联赛",
+    "胜者": "Camelia IACOB/Marie MIGOT",
+    "负者": "Christina KALLBERG/Pauline CHASSELIN",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2024-02-06",
+    "类型": "法国甲级联赛",
+    "胜者": "Christina KALLBERG/Mariia TAILAKOVA",
+    "负者": "Hana MATELOVA/Marie MIGOT",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2024-02-06",
+    "类型": "法国甲级联赛",
+    "胜者": "Daniela DODEAN MONTEIRO/Linda BERGSTROM",
+    "负者": "Isa COK/LI Samson",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2024-09-11",
+    "类型": "法国甲级联赛",
+    "胜者": "Charlotte LUTZ/Mariia TAILAKOVA",
+    "负者": "Anastasia STERNER/WANG Yanan",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2024-10-08",
+    "类型": "法国甲级联赛",
+    "胜者": "Anastasia STERNER/Clea DE STOPPELEIRE",
+    "负者": "Lucie GAUTHIER/Stephanie LOEUILLETTE",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2024-10-08",
+    "类型": "法国甲级联赛",
+    "胜者": "Anastasia STERNER/WANG Yanan",
+    "负者": "Oceane GUISNEL/Stephanie LOEUILLETTE",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2024-10-08",
+    "类型": "法国甲级联赛",
+    "胜者": "Andrea TODOROVIC/Jia Nan YUAN",
+    "负者": "Camelia IACOB/Jieni SHAO",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2024-10-08",
+    "类型": "法国甲级联赛",
+    "胜者": "Audrey ZARIF/Hana GODA",
+    "负者": "Mariia TAILAKOVA/Sarah DE NUTTE",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2024-10-08",
+    "类型": "法国甲级联赛",
+    "胜者": "Audrey ZARIF/LI He",
+    "负者": "Charlotte LUTZ/Sarah DE NUTTE",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2024-10-08",
+    "类型": "法国甲级联赛",
+    "胜者": "Bruna TAKAHASHI/Giorgia PICCOLIN",
+    "负者": "Ema LABOSOVA/LI Xue",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2024-10-28",
+    "类型": "法国甲级联赛",
+    "胜者": "Jian ZENG/Oceane GUISNEL",
+    "负者": "Audrey ZARIF/Hana GODA",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2024-10-29",
+    "类型": "法国甲级联赛",
+    "胜者": "Agathe AVEZOU/Jie LI",
+    "负者": "Christina KALLBERG/Jieni SHAO",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2024-10-29",
+    "类型": "法国甲级联赛",
+    "胜者": "Agathe AVEZOU/Prithika PAVADE",
+    "负者": "Christina KALLBERG/Yangzi LIU",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2024-10-30",
+    "类型": "法国甲级联赛",
+    "胜者": "Jia Nan YUAN/WU Jiaduo",
+    "负者": "Jian ZENG/Stephanie LOEUILLETTE",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2024-10-31",
+    "类型": "法国甲级联赛",
+    "胜者": "Bruna TAKAHASHI/Giorgia PICCOLIN",
+    "负者": "Jieni SHAO/Yangzi LIU",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2024-10-31",
+    "类型": "法国甲级联赛",
+    "胜者": "Isa COK/LI Xue",
+    "负者": "Dragana VIGNJEVIC/Lea MINNI",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2024-11-08",
+    "类型": "法国甲级联赛",
+    "胜者": "Bruna TAKAHASHI/Rachel MORET",
+    "负者": "Jian ZENG/Stephanie LOEUILLETTE",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2024-11-08",
+    "类型": "法国甲级联赛",
+    "胜者": "Giorgia PICCOLIN/Rachel MORET",
+    "负者": "Oceane GUISNEL/Stephanie LOEUILLETTE",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2024-11-09",
+    "类型": "法国甲级联赛",
+    "胜者": "Barbora VARADY/Prithika PAVADE",
+    "负者": "Giorgia PICCOLIN/Rachel MORET",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2024-11-09",
+    "类型": "法国甲级联赛",
+    "胜者": "Bruna TAKAHASHI/Giorgia PICCOLIN",
+    "负者": "Barbora VARADY/ZHU Chengzhu",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2024-11-10",
+    "类型": "法国甲级联赛",
+    "胜者": "Adina DIACONU/Mariia TAILAKOVA",
+    "负者": "Andrea TODOROVIC/Jia Nan YUAN",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2024-11-10",
+    "类型": "法国甲级联赛",
+    "胜者": "Andrea TODOROVIC/WU Jiaduo",
+    "负者": "Charlotte LUTZ/Mariia TAILAKOVA",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2024-11-11",
+    "类型": "法国甲级联赛",
+    "胜者": "Jian ZENG/Stephanie LOEUILLETTE",
+    "负者": "Barbora VARADY/ZHU Chengzhu",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2024-11-11",
+    "类型": "法国甲级联赛",
+    "胜者": "Oceane GUISNEL/Stephanie LOEUILLETTE",
+    "负者": "Agathe AVEZOU/Barbora VARADY",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2024-11-12",
+    "类型": "法国甲级联赛",
+    "胜者": "Anastasia STERNER/Clea DE STOPPELEIRE",
+    "负者": "Ema LABOSOVA/Marie MIGOT",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2024-11-12",
+    "类型": "法国甲级联赛",
+    "胜者": "Daniela DODEAN MONTEIRO/Polina MIKHAILOVA",
+    "负者": "Jia Nan YUAN/Sara RAMIREZ",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2024-11-12",
+    "类型": "法国甲级联赛",
+    "胜者": "Isa COK/Marie MIGOT",
+    "负者": "Anastasia STERNER/WANG Yanan",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2024-11-14",
+    "类型": "法国甲级联赛",
+    "胜者": "Anastasia STERNER/Clea DE STOPPELEIRE",
+    "负者": "Ekaterina FISCHER/LI Samson",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2024-11-19",
+    "类型": "法国甲级联赛",
+    "胜者": "Agathe AVEZOU/ZHU Chengzhu",
+    "负者": "Ekaterina FISCHER/Haruna SUGITA",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2024-11-19",
+    "类型": "法国甲级联赛",
+    "胜者": "Andrea TODOROVIC/Jia Nan YUAN",
+    "负者": "Anastasia STERNER/Clea DE STOPPELEIRE",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2024-12-10",
+    "类型": "法国甲级联赛",
+    "胜者": "Emmanuelle LENNON/Isa COK",
+    "负者": "Andrea TODOROVIC/Jia Nan YUAN",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2024-12-15",
+    "类型": "法国甲级联赛",
+    "胜者": "Barbora VARADY/Jie LI",
+    "负者": "Audrey ZARIF/LI He",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2024-12-15",
+    "类型": "法国甲级联赛",
+    "胜者": "Hana GODA/LI He",
+    "负者": "Barbora VARADY/Prithika PAVADE",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2024-12-17",
+    "类型": "法国甲级联赛",
+    "胜者": "Jie LI/ZHU Chengzhu",
+    "负者": "Adina DIACONU/Sarah DE NUTTE",
+    "比分": "3-1"
   }
 ]

@@ -9,7 +9,12 @@
     "日期": "2018-11-20",
     "类型": "T联赛",
     "胜者": "Miyu NAGASAKI/Mizuki MORIZONO",
-    "负者": "Misaki MORIZONO/Rika SUZUKI"
+    "负者": "Misaki MORIZONO/Rika SUZUKI",
+    "比分": "2-0",
+    "局分": [
+      "11-5",
+      "11-9"
+    ]
   },
   {
     "日期": "2018-11-21",
@@ -21,24 +26,284 @@
     "日期": "2018-12-22",
     "类型": "T联赛",
     "胜者": "Miyu NAGASAKI/Miyuu KIHARA",
-    "负者": "Elizabeta SAMARA/Minami ANDO"
+    "负者": "Elizabeta SAMARA/Minami ANDO",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-8"
+    ]
   },
   {
     "日期": "2018-12-23",
     "类型": "T联赛",
     "胜者": "Miyu NAGASAKI/Miyuu KIHARA",
-    "负者": "Miyu KATO/Shiho MATSUDAIRA"
+    "负者": "Miyu KATO/Shiho MATSUDAIRA",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-5"
+    ]
   },
   {
     "日期": "2018-10-26",
     "类型": "T联赛",
     "胜者": "Kasumi ISHIKAWA/Miyuu KIHARA",
-    "负者": "Saki TASHIRO/Shiho MATSUDAIRA"
+    "负者": "Saki TASHIRO/Shiho MATSUDAIRA",
+    "比分": "2-1",
+    "局分": [
+      "11-6",
+      "14-16",
+      "11-9"
+    ]
   },
   {
     "日期": "2018-12-26",
     "类型": "T联赛",
     "胜者": "Miyu NAGASAKI/Miyuu KIHARA",
-    "负者": "JEON Jihee/CHENG I-Ching"
+    "负者": "JEON Jihee/CHENG I-Ching",
+    "比分": "2-0",
+    "局分": [
+      "11-4",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2018-10-25",
+    "类型": "T联赛",
+    "胜者": "CHANG Chenchen/Miu HIRANO",
+    "负者": "Misaki MORIZONO/NG Wing Nam",
+    "比分": "2-0",
+    "局分": [
+      "11-5",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2018-10-27",
+    "类型": "T联赛",
+    "胜者": "CHENG I-Ching/Misaki MORIZONO",
+    "负者": "Mizuki MORIZONO/YUAN Xuejiao",
+    "比分": "2-0",
+    "局分": [
+      "15-13",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2018-10-27",
+    "类型": "T联赛",
+    "胜者": "CHANG Chenchen/CHEN Szu-Yu",
+    "负者": "FENG Tianwei/Saki TASHIRO",
+    "比分": "2-1",
+    "局分": [
+      "10-12",
+      "12-10",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2018-10-28",
+    "类型": "T联赛",
+    "胜者": "FENG Tianwei/Saki TASHIRO",
+    "负者": "CHENG I-Ching/Misaki MORIZONO",
+    "比分": "2-1",
+    "局分": [
+      "5-11",
+      "11-7",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2018-10-28",
+    "类型": "T联赛",
+    "胜者": "CHANG Chenchen/CHEN Szu-Yu",
+    "负者": "Kasumi ISHIKAWA/Mizuki MORIZONO",
+    "比分": "2-0",
+    "局分": [
+      "11-2",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2018-11-15",
+    "类型": "T联赛",
+    "胜者": "LEE Ho Ching/Saki TASHIRO",
+    "负者": "CHENG I-Ching/Misaki MORIZONO",
+    "比分": "2-1",
+    "局分": [
+      "5-11",
+      "12-10",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2018-11-16",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI/Mizuki MORIZONO",
+    "负者": "CHENG I-Ching/Misaki MORIZONO",
+    "比分": "2-0",
+    "局分": [
+      "13-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2018-11-17",
+    "类型": "T联赛",
+    "胜者": "CHANG Chenchen/JIANG Hui",
+    "负者": "LEE Ho Ching/Saki TASHIRO",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-1"
+    ]
+  },
+  {
+    "日期": "2018-11-18",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI/YUAN Xuejiao",
+    "负者": "CHANG Chenchen/JIANG Hui",
+    "比分": "2-1",
+    "局分": [
+      "4-11",
+      "11-5",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2018-11-19",
+    "类型": "T联赛",
+    "胜者": "FENG Tianwei/Saki TASHIRO",
+    "负者": "Misaki MORIZONO/Rika SUZUKI",
+    "比分": "2-0",
+    "局分": [
+      "12-10",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2018-11-20",
+    "类型": "T联赛",
+    "胜者": "CHANG Chenchen/JIANG Hui",
+    "负者": "FENG Tianwei/Saki TASHIRO",
+    "比分": "2-1",
+    "局分": [
+      "4-11",
+      "11-4",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2018-11-21",
+    "类型": "T联赛",
+    "胜者": "CHANG Chenchen/JIANG Hui",
+    "负者": "Miyu NAGASAKI/Miyuu KIHARA",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2018-12-03",
+    "类型": "T联赛",
+    "胜者": "CHANG Chenchen/Miu HIRANO",
+    "负者": "FENG Tianwei/Saki TASHIRO",
+    "比分": "2-0",
+    "局分": [
+      "11-5",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2018-12-04",
+    "类型": "T联赛",
+    "胜者": "DOO Hoi Kem/Yui HAMAMOTO",
+    "负者": "FENG Tianwei/Miyu KATO",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2018-12-22",
+    "类型": "T联赛",
+    "胜者": "CHANG Chenchen/JIANG Hui",
+    "负者": "Miyu KATO/Shiho MATSUDAIRA",
+    "比分": "2-1",
+    "局分": [
+      "5-11",
+      "11-6",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2018-12-23",
+    "类型": "T联赛",
+    "胜者": "CHANG Chenchen/JIANG Hui",
+    "负者": "CHENG I-Ching/Elizabeta SAMARA",
+    "比分": "2-1",
+    "局分": [
+      "14-12",
+      "9-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2018-12-26",
+    "类型": "T联赛",
+    "胜者": "CHANG Chenchen/JIANG Hui",
+    "负者": "LEE Ho Ching/Shiho MATSUDAIRA",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2018-12-27",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI/Miyuu KIHARA",
+    "负者": "FENG Tianwei/LEE Ho Ching",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2018-12-27",
+    "类型": "T联赛",
+    "胜者": "CHENG I-Ching/JEON Jihee",
+    "负者": "CHANG Chenchen/JIANG Hui",
+    "比分": "2-0",
+    "局分": [
+      "11-2",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2018-12-08",
+    "类型": "T联赛",
+    "胜者": "CHENG I-Ching/JEON Jihee",
+    "负者": "CHANG Chenchen/JIANG Hui",
+    "比分": "2-1",
+    "局分": [
+      "7-11",
+      "12-10",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2018-12-09",
+    "类型": "T联赛",
+    "胜者": "CHENG I-Ching/JEON Jihee",
+    "负者": "DOO Hoi Kem/Yui HAMAMOTO",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-8"
+    ]
   }
 ]

@@ -73,6 +73,8 @@ function renderPlayerHeader(player) {
     const row = snap ? snap.row : null;
     const curScore = row && row['当前积分'] != null ? (typeof row['当前积分'] === 'number' ? row['当前积分'].toFixed(1) : row['当前积分']) : '-';
     const roleHtml = player.role ? `<span class="player-role-chip"><i class="fa-solid fa-user-tie"></i> ${escapeHtml(String(playerRole(player)))}</span>` : '';
+    const gradeLabel = playerGrade(player);
+    const gradeHtml = gradeLabel ? `<span class="player-score-chip"><i class="fa-solid fa-graduation-cap"></i> ${escapeHtml(gradeLabel)}</span>` : '';
     const statusHtml = `<span class="player-status-chip ${player.status === 'active' ? 'active' : 'alumni'}"><i class="fa-solid fa-circle"></i> ${player.status === 'active' ? i18n[currentLang].pp_status_active : i18n[currentLang].pp_status_alumni}</span>`;
     const tagsHtml = (player.tags || []).map(t => `<span class="personal-tag-badge">${escapeHtml(String(playerTagLabel(t)))}</span>`).join('');
     const honorsHtml = (player.honors || []).map(h => `<span class="personal-honor-badge"><i class="fa-solid fa-medal"></i> ${escapeHtml(String(playerHonorLabel(h)))}</span>`).join('');
@@ -88,6 +90,7 @@ function renderPlayerHeader(player) {
             </div>
             <div class="player-profile-meta">
                 ${roleHtml}
+                ${gradeHtml}
                 <span class="player-score-chip"><i class="fa-solid fa-gem"></i> ${i18n[currentLang].rank_col_points} ${curScore}</span>
                 <span class="player-score-chip"><i class="fa-solid fa-medal"></i> ${rank ? '#' + rank : '-'}</span>
                 ${snap ? `<span class="player-score-chip"><i class="fa-solid fa-clock"></i> ${escapeHtml(String(snap.label))}</span>` : ''}

@@ -169,7 +169,7 @@ const i18n = {
         pagination_prev: "上一页", pagination_next: "下一页", pagination_info: "第 {current} 页，共 {total} 页",
         data_viz_page_title: "数据可视化 | WFLS Table Tennis Club", data_viz_tag: "Data Visualization", data_viz_title: "数据可视化", data_viz_desc: "积分趋势 · 排名变化 · 球员对比",
         data_viz_points_trend: "积分趋势", data_viz_rank_stream: "排名变化河流图", data_viz_player_compare: "球员对比", data_viz_select_players: "选择球员（最多8人）", data_viz_select_player_a: "球员 A", data_viz_select_player_b: "球员 B", data_viz_apply: "应用", data_viz_top_n: "显示前", data_viz_head_to_head: "历史交手记录",
-        data_viz_recent: "最近", data_viz_data_points: "个数据点", data_viz_top_n_suffix: "名球员", data_viz_compare_btn: "对比", data_viz_compare_placeholder: "选择两名球员进行对比分析", data_viz_no_players: "暂无球员数据", data_viz_alert_select_one: "请至少选择一名球员", data_viz_alert_max: "最多选择15名球员", data_viz_alert_two: "请选择两名球员", data_viz_alert_diff: "请选择不同的球员", data_viz_select_player_ph: "-- 选择球员 --", data_viz_win: "胜", data_viz_total_h2h: "总交手: {n} 场", data_viz_recent_match: "最近: {date} (胜者: {winner})", data_viz_pts_change: "{player} 积分变动", data_viz_no_h2h: "暂无交手记录", data_viz_col_date: "日期", data_viz_col_type: "类型", data_viz_col_winner: "胜者", data_viz_axis_points: "积分", data_viz_axis_rank: "排名", data_viz_rank_suffix: "第{n}名", data_viz_topn_select_title: "填写1-20的任意正整数", data_viz_bins_title: "填写4-100的任意正整数", data_viz_cur_score: "当前积分", data_viz_h2h_rate: "交手胜率", data_viz_pred_rate: "预测胜率", data_viz_prepare: "准备下载数据文件...", data_viz_topn_title: "显示最近N个数据点", data_viz_stream_title: "显示最近N个数据点", data_viz_loading: "加载数据中...", data_viz_downloading: "正在下载 {label} ({i}/{total}): {file}", data_viz_calculating: "正在计算排名积分...", data_viz_load_fail: "❌ 排名数据加载失败，请刷新页面重试", data_viz_file_players: "球员档案", data_viz_file_matches: "比赛记录", data_viz_file_initial: "初始积分", data_viz_file_event: "赛事系数", data_viz_file_decay: "衰减配置", data_viz_file_season: "赛季配置", data_viz_no_player_list: "❌ 无法获取球员列表",
+        data_viz_recent: "最近", data_viz_data_points: "个数据点", data_viz_top_n_suffix: "名球员", data_viz_compare_btn: "对比", data_viz_compare_placeholder: "选择两名球员进行对比分析", data_viz_no_players: "暂无球员数据", data_viz_alert_select_one: "请至少选择一名球员", data_viz_alert_max: "最多选择15名球员", data_viz_alert_two: "请选择两名球员", data_viz_alert_diff: "请选择不同的球员", data_viz_select_player_ph: "-- 选择球员 --", data_viz_win: "胜", data_viz_total_h2h: "总交手: {n} 场", data_viz_recent_match: "最近: {date} (胜者: {winner})", data_viz_pts_change: "{player} 积分变动", data_viz_no_h2h: "暂无交手记录", data_viz_col_date: "日期", data_viz_col_type: "类型", data_viz_col_winner: "胜者", data_viz_axis_points: "积分", data_viz_axis_rank: "排名", data_viz_rank_suffix: "第{n}名", data_viz_topn_select_title: "填写1-20的任意正整数", data_viz_bins_title: "填写4-100的任意正整数", data_viz_cur_score: "当前积分", data_viz_h2h_rate: "交手胜率", data_viz_pred_rate: "预测胜率", data_viz_prepare: "准备数据…", data_viz_topn_title: "显示最近N个数据点", data_viz_stream_title: "显示最近N个数据点", data_viz_loading: "加载数据中...", data_viz_downloading: "正在加载 {label}（{i}/{total}）", data_viz_calculating: "正在计算排名积分...", data_viz_load_fail: "❌ 排名数据加载失败，请刷新页面重试", data_viz_file_players: "球员档案", data_viz_file_matches: "比赛记录", data_viz_file_initial: "初始积分", data_viz_file_event: "赛事系数", data_viz_file_decay: "衰减配置", data_viz_file_season: "赛季配置", data_viz_no_player_list: "❌ 无法获取球员列表",
         ps_ov_total: "总场次", ps_ov_wins: "获胜", ps_ov_losses: "失利", ps_ov_rate: "胜率", ps_ov_points: "当前积分",
         ps_sum1: "{player}共进行了{total}盘单打比赛，其中获胜{wins}盘，失利{losses}盘。", ps_sum2: "{player}的胜率为{percent}%。",
         ps_tags_label: "标签", ps_honors_label: "荣誉", ps_date_ymd: "{y}年{m}月{d}日",
@@ -184,6 +184,7 @@ const i18n = {
         personal_stats_page_title: "个人数据 | WFLS Table Tennis Club", personal_stats_tag: "Personal Stats", personal_stats_title: "个人数据", personal_stats_desc: "个人比赛数据统计", personal_stats_filter_label: "按标签筛选", personal_stats_search_label: "搜索球员", personal_stats_search_ph: "搜索球员姓名 / 编号 / 标签（支持拼音）", personal_stats_placeholder: "位球员，选择一名查看个人数据页", personal_stats_no_tags: "暂无标签数据", personal_stats_tag_count: "{n}人", personal_stats_player_count: "{shown} / {total}", personal_stats_player_count_total: "{total}", personal_stats_no_match: "未找到匹配球员", personal_stats_no_data: "暂无比赛数据", personal_stats_load_fail: "数据加载失败，请刷新重试",
         pp_back_index: "返回总览", pp_prev_player: "上一名", pp_next_player: "下一名", pp_no_player: "未找到该球员", pp_all_records: "全部比赛记录", pp_player_id: "球员编号", pp_search_ph: "搜索球员姓名 / 编号 / 标签", pp_total_players: "共 {n} 名球员", pp_role: "职务", pp_match_detail: "积分明细", pp_view_profile: "查看个人数据页",
         pp_loading: "正在加载球员数据...", pp_load_fail: "数据加载失败，请刷新重试", pp_refresh: "刷新页面", pp_status_active: "在校", pp_status_alumni: "已离校", pp_matches_count: "{n} 场", pp_col_before: "赛前", pp_col_change: "调整", pp_col_after: "赛后", pp_tags_label: "标签", pp_honors_label: "荣誉",
+        pp_grade: "年级", pp_grade_fmt: "{e}级{g}届",
         pa_section_title: "深度数据分析", pa_rank_title: "排名走势", pa_type_title: "赛事类型分布", pa_gap_title: "实力差胜负分析", pa_monthly_title: "月度活跃度", pa_form_title: "竞技状态", pa_season_title: "赛季对比", pa_source_title: "积分来源构成",
         pa_rank_axis: "排名", pa_no_rank: "暂无排名数据", pa_no_matches: "暂无对局数据", pa_monthly_matches: "场次数", pa_monthly_winrate: "胜率", pa_type_center_unit: "场", pa_type_wr: "胜率 {r}%",
         pa_gap_self_strong: "我方强", pa_gap_self_slight: "我方略强", pa_gap_opp_strong: "对手强", pa_gap_opp_slight: "对手略强", pa_gap_wins: "胜场", pa_gap_losses: "负场", pa_gap_wr: "胜率 {r}%", pa_gap_hint: "按双方赛前分差分档：对手赛前分 − 我方赛前分，数值越大对手越强",
@@ -197,15 +198,15 @@ const i18n = {
         chart_matches_suffix: " 场", chart_axis_ym_tpl: "{y}年{m}月",
         dv_fullscreen: "全屏显示 (网页内)", dv_fullscreen_exit: "退出全屏", dv_zoom_out: "缩小", dv_zoom_in: "放大", dv_search_placeholder: "搜索选手 / 队伍，高亮晋级路径", dv_champion: "冠军", dv_status_scheduled: "待赛", dv_status_live: "比赛进行中", dv_tbd: "待定", dv_total_score: "总比分", dv_qualifier_title: "小组出线位", dv_round_1: "第一轮", dv_round_2: "第二轮", dv_quarters: "1/4决赛", dv_semis: "半决赛", dv_final: "决赛", dv_round_n: "第{n}轮", dv_legend_win: "胜者", dv_legend_loss: "负者", dv_legend_live: "进行中", dv_legend_pending: "待赛", dv_legend_path: "晋级路径",
         rank_no_data: "暂无排名数据", rank_no_records: "暂无记录", rank_add_short: "加分", rank_ppl: "{n}人", rank_node_count: "{n}个节点",
-        rank_loading: "正在加载排名数据...", rank_prepare: "准备下载数据文件...", rank_download_file: "正在下载 {label} ({i}/{total}): {file}", rank_calculating: "正在计算排名积分（此过程可能较慢，请耐心等待）...", rank_calc_fail: "无法计算排名数据",
+        rank_loading: "正在加载排名数据...", rank_prepare: "准备数据…", rank_download_file: "正在加载 {label}（{i}/{total}）", rank_calculating: "正在计算排名积分（此过程可能较慢，请耐心等待）...", rank_calc_fail: "无法计算排名数据",
         rank_view_player_page: "查看个人数据页", rank_click_detail: "点击查看积分明细",
-        rank_season_expired: "当前日期已超出最后一个赛季（{date}）：新比赛会暂计入该赛季的延伸区间，但不会触发跨赛季积分继承。请在 data/seasons.json 中创建新赛季。",
+        rank_season_expired: "当前日期（{date}）已超出最后一个赛季，新比赛暂计入该赛季的延伸区间；下一赛季开启后会自动继承积分。",
         changelog_page_title: "更新日志 | WFLS Table Tennis Club", changelog_hero_tag: "Changelog", changelog_hero_title: "更新日志", changelog_hero_desc: "版本历史 · 功能更新 · 问题修复", changelog_list_tag: "Version History", changelog_list_title: "版本历史", changelog_empty: "暂无更新日志",
-        docs_page_title: "网站文档 | WFLS Table Tennis Club", docs_title: "网站文档", docs_desc: "浏览与预览站点文档与静态资源：图片 · 视频 · 音频 · PDF · 文本代码",
-        docs_search_ph: "在当前目录筛选…", docs_loading: "正在扫描 Assets 目录…", docs_retry: "重试",
-        docs_err_title: "未能加载 Assets/manifest.json", docs_err_hint: "该文件在部署时由 deploy 工作流自动生成；本地开发请先运行：",
-        docs_view_list: "切换为列表视图", docs_view_grid: "切换为网格视图", docs_refresh: "重新扫描 Assets",
-        docs_filter_aria: "按类型筛选", docs_crumb_aria: "目录路径", docs_pv_dialog: "文件预览",
+        docs_page_title: "网站文档 | WFLS Table Tennis Club", docs_title: "网站文档", docs_lib_sub: "素材库", docs_desc: "浏览与预览站点文档与静态资源：图片 · 视频 · 音频 · PDF · 文本代码",
+        docs_search_ph: "在当前目录筛选…", docs_loading: "正在加载素材库…", docs_retry: "重试",
+        docs_err_title: "素材库暂时无法加载", docs_err_hint: "请稍后重试，或直接联系社团负责人获取所需文件。",
+        docs_view_list: "切换为列表视图", docs_view_grid: "切换为网格视图", docs_refresh: "重新加载素材库",
+        docs_filter_aria: "按类型筛选", docs_crumb_aria: "位置导航", docs_pv_dialog: "文件预览",
         docs_unit_dirs: "{n} 个子文件夹", docs_unit_files: "{n} 个文件", docs_folder_empty: "空文件夹",
         docs_empty_dir: "此文件夹为空", docs_empty_search: "没有匹配「{q}」的条目",
         docs_type_folder: "文件夹", docs_type_image: "图片", docs_type_svg: "SVG 矢量图", docs_type_video: "视频", docs_type_audio: "音频", docs_type_pdf: "PDF 文档", docs_type_markdown: "Markdown", docs_type_text: "文本/代码", docs_type_sheet: "表格", docs_type_doc: "Word 文档", docs_type_ppt: "PPT 演示", docs_type_archive: "压缩包", docs_type_other: "文件",
@@ -223,7 +224,7 @@ const i18n = {
         wtt_back_hub: "返回 WTT Hub",
         sort_desc: "降序", sort_asc: "升序",
         wtt_file_matches: "比赛记录", wtt_file_initial: "初始积分", wtt_file_event: "赛事系数", wtt_file_season: "赛季配置",
-        wtt_prepare: "准备下载数据文件...", wtt_downloading: "正在下载 {label} ({i}/{total}): {file}", wtt_calculating: "正在计算排名积分...", wtt_snapshot: "快照 {current}/{total}", wtt_elapsed: "已用时 {s}s",
+        wtt_prepare: "准备数据…", wtt_downloading: "正在下载 {label} ({i}/{total}): {file}", wtt_calculating: "正在计算排名积分...", wtt_snapshot: "快照 {current}/{total}", wtt_elapsed: "已用时 {s}s",
         wtt_default_season: "默认赛季", wtt_node_count: "{n}个节点", wtt_ppl: "{n}人",
         wtt_no_records: "暂无记录", wtt_cant_compute: "无法计算WTT排名数据", wtt_bonus: "加分",
         wtt_no_players: "暂无球员数据", wtt_select_player: "-- 选择球员 --", wtt_compare_btn: "对比", wtt_compare_placeholder: "选择两名球员进行对比分析",
@@ -250,7 +251,7 @@ const i18n = {
         wtt_assoc_sq_points: "积分", wtt_assoc_sq_matches: "场次", wtt_assoc_sq_winrate: "胜率", wtt_assoc_sq_global_rank: "全球排名", wtt_assoc_sq_empty: "该协会暂无有积分的登记球员",
         wtt_assoc_bump_title: "协会排名变迁", wtt_assoc_bump_desc: "各协会按实力分的位次随时间的变化",
         wtt_assoc_matrix_title: "协会对抗矩阵", wtt_assoc_matrix_hint: "行协会对列协会的历史交手胜率（仅统计跨协会对阵）· 颜色越深胜率越高", wtt_assoc_matrix_size: "矩阵规模", wtt_assoc_matrix_cell: "{a} 对 {b} 胜率 {r}%（{n} 场）",
-        wtt_assoc_no_data_hint: "当前项目无协会籍数据（缺少 assoc.json），协会栏目不可用",
+        wtt_assoc_no_data_hint: "本项赛事暂未收录协会归属信息。",
         wtt_cat_ms: "男子单打", wtt_cat_ws: "女子单打", wtt_cat_md: "男子双打", wtt_cat_wd: "女子双打", wtt_cat_xd: "混合双打",
         nav_submit: "提交战绩", submit_page_title: "提交战绩 | WFLS Table Tennis Club",
         sb_hero_tag: "Submit", sb_hero_title: "提交战绩", sb_hero_desc: "比赛结果 / 审核通过后自动计入排名", sb_form_title: "记录录入",
@@ -270,7 +271,8 @@ const i18n = {
         sb_quick_title: "在线提交比赛战绩", sb_quick_btn: "打开提交表单",
         sb_step1: "在线填写结果", sb_step2: "管理员审核", sb_step3: "计入积分排名",
         sb_quick_desc: "无需 GitHub：点击下方按钮，在腾讯文档表单里填写比赛结果，管理员审核后统一计入排名。",
-        sb_quick_missing: "提交表单链接尚未配置（管理员：把收集表链接填入本页 TENCENT_FORM_URL）。",
+        sb_quick_missing: "在线提交表正在准备中，请先通过社团 QQ 群联系负责人代录。",
+        sb_fmt_default: "默认", sb_fmt_bo3: "三局两胜", sb_fmt_bo5: "五局三胜", sb_fmt_bo7: "七局四胜",
         /* ---- 赛季总结页 ---- */
         sr_page_title: "赛季总结 | WFLS Table Tennis Club",
         sr_hero_tag: "Season Review", sr_hero_title: "赛季总结", sr_hero_desc: "胜负 · 积分 · 连胜 · 赛季之最",
@@ -293,10 +295,36 @@ const i18n = {
         sr_daily_title: "按日积分走势", sr_daily_desc: "点选球员查看其本赛季积分的逐日走势（至多 10 人）；各日取截至当日的实时口径，俱乐部模式含时间衰减。",
         sr_daily_search: "搜索球员…", sr_daily_clear: "清空", sr_daily_max: "最多同时显示 10 人",
         sr_daily_empty: "请点选上方球员绘制曲线", sr_daily_start: "赛季初", sr_daily_axis: "积分",
+        /* ---- 数据规模页 ---- */
+        ds_page_title: "数据规模 | WFLS Table Tennis Club",
+        ds_hero_tag: "Data Scale", ds_hero_title: "数据规模", ds_hero_desc: "这个站点到底攒了多少数据",
+        ds_meta_desc: "WFLS 乒乓球社团数据规模：社团比赛记录、成员档案、职业赛事历史库、内容条目与素材库的真实体量一览。",
+        ds_kw: "武汉外国语学校,WFLS,乒乓球,数据规模,积分记录,赛事档案,社团数据",
+        ds_loading: "正在统计…", ds_error: "数据暂时无法显示，请稍后再试。",
+        ds_asof: "数据截至", ds_club_range: "社团记录区间", ds_pro_range: "职业赛事区间",
+        ds_sec_club: "社团数据", ds_sec_club_desc: "每一场比赛都由社团成员提交、审核后记入公开档案。",
+        ds_sec_wtt: "职业赛事历史库", ds_sec_content: "内容与素材", ds_sec_join: "一起把数据补全",
+        ds_sec_wtt_desc: "覆盖 {years} 年，共 {seasons} 条赛季记录、{files} 份年度赛事档案，逐年录入。",
+        ds_sec_content_desc: "新闻、赛事、问答与素材库，也是这个站点的一部分。",
+        ds_sec_join_desc: "每一场比赛都可以由社团成员提交，审核通过后并入公开记录，排名与赛季总结会同步更新。",
+        ds_kpi_members: "社团成员", ds_kpi_club_matches: "社团比赛记录", ds_kpi_pro_records: "职业赛事记录", ds_kpi_pro_players: "收录职业球员",
+        ds_kpi_seasons: "赛季", ds_kpi_snapshot_days: "快照日", ds_kpi_match_days: "比赛日", ds_kpi_games: "单局比分记录",
+        ds_kpi_adjust: "积分调整", ds_kpi_draws: "淘汰赛对阵位",
+        ds_kpi_pro_snapshots: "排名快照点", ds_kpi_pro_events: "赛事类型", ds_kpi_pro_years: "收录年份",
+        ds_kpi_entries: "内容条目", ds_kpi_revisions: "改稿留档", ds_kpi_media: "媒体附件", ds_kpi_releases: "更新日志", ds_kpi_asset_files: "素材文件",
+        ds_chart_month_title: "逐月比赛记录", ds_chart_month_desc: "按月统计录入的比赛场次。",
+        ds_bars_types_title: "赛事类型分布", ds_bars_pro_title: "五个单项的记录分布", ds_bars_asset_title: "素材库体积构成",
+        ds_chips_tags: "成员标签", ds_chips_honors: "成员荣誉", ds_chips_roles: "社团骨干",
+        ds_asset_video: "视频", ds_asset_image: "图片", ds_asset_doc: "文档与其他", ds_asset_files_fmt: "{n} 个文件",
+        ds_data_volume: "赛事与内容数据文件合计 {size}",
+        ds_btn_pro_home: "WTT 首页", ds_btn_pro_rank: "WTT 排名", ds_btn_pro_viz: "WTT 可视化", ds_btn_rules: "积分规则",
+        ds_btn_news: "近期动态", ds_btn_comp: "赛事信息", ds_btn_qa: "Q&A", ds_btn_changelog: "更新日志", ds_btn_docs: "网站文档",
+        ds_btn_submit: "提交战绩",
+        ds_month_fmt: "{m}月",
         /* ---- WTT 赛季总结 ---- */
         wtt_sr_page_title: "WTT 赛季总结 | WFLS TT Club",
         wtt_sr_hero_tag: "WTT Season Review", wtt_sr_hero_title: "WTT 赛季总结", wtt_sr_hero_desc: "胜负 · 积分 · 连胜 · 赛季之最",
-        wtt_sr_footnote: "WTT 彩蛋玩法：数据口径与 WTT 排名一致（零和积分、无时间衰减）。",
+        wtt_sr_footnote: "WTT 彩蛋玩法：计分规则与 WTT 排名一致（零和积分、无时间衰减）。",
         /* ---- 比赛详情页 ---- */
         md_page_title: "比赛详情 | WFLS Table Tennis Club",
         md_hero_tag: "Match Detail", md_hero_title: "比赛详情", md_hero_desc: "比分 · 积分 · 胜率 · 交锋",
@@ -342,7 +370,7 @@ const i18n = {
         /* ---- 事件类型词典（显示层；数据键保持中文） ---- */
         ev_normal: "普通", ev_ranked: "排位赛", ev_challenge: "挑战赛", ev_school_league: "校乒联赛", ev_top12: "十二强赛", ev_school_team: "校乒赛团体", ev_school_singles: "校乒赛单打", ev_doubles: "双打",
         /* ---- WTT 赛事类型词典 ---- */
-        wtt_ev_tleague: "T联赛", wtt_ev_ittf_open: "ittf公开赛", wtt_ev_ittf_regular: "ittf常规赛", wtt_ev_ittf_platinum: "ittf白金赛", wtt_ev_worlds: "世乒赛", wtt_ev_worlds_team: "世乒赛团体", wtt_ev_worldcup: "世界杯", wtt_ev_worldcup_team: "世界杯团体", wtt_ev_csl: "乒超联赛", wtt_ev_asiad: "亚运会", wtt_ev_asiad_team: "亚运会团体", wtt_ev_alljapan: "全日锦", wtt_ev_nationalgames: "全运会", wtt_ev_nationals: "全锦赛", wtt_ev_champions: "冠军赛", wtt_ev_grandsmash: "大满贯", wtt_ev_olympics: "奥运会", wtt_ev_olympics_team: "奥运会团体", wtt_ev_challenge_reg: "常规挑战赛", wtt_ev_dfbpokal: "德国杯", wtt_ev_bundesliga: "德甲联赛", wtt_ev_bundesliga_final: "德甲联赛决赛", wtt_ev_bundesliga_semi: "德甲联赛半决赛", wtt_ev_finals: "总决赛", wtt_ev_feeder: "支线赛", wtt_ev_euroleague_team: "欧冠团体", wtt_ev_continental_cup: "洲杯赛", wtt_ev_continental_champs: "洲锦赛", wtt_ev_continental_team: "洲锦赛团体", wtt_ev_star: "球星挑战赛",
+        wtt_ev_tleague: "T联赛", wtt_ev_ittf_open: "ittf公开赛", wtt_ev_ittf_regular: "ittf常规赛", wtt_ev_ittf_platinum: "ittf白金赛", wtt_ev_worlds: "世乒赛", wtt_ev_worlds_team: "世乒赛团体", wtt_ev_worldcup: "世界杯", wtt_ev_worldcup_team: "世界杯团体", wtt_ev_csl: "乒超联赛", wtt_ev_asiad: "亚运会", wtt_ev_asiad_team: "亚运会团体", wtt_ev_alljapan: "全日锦", wtt_ev_nationalgames: "全运会", wtt_ev_nationals: "全锦赛", wtt_ev_champions: "冠军赛", wtt_ev_grandsmash: "大满贯", wtt_ev_olympics: "奥运会", wtt_ev_olympics_team: "奥运会团体", wtt_ev_challenge_reg: "常规挑战赛", wtt_ev_dfbpokal: "德国杯", wtt_ev_bundesliga: "德甲联赛", wtt_ev_bundesliga_final: "德甲联赛决赛", wtt_ev_bundesliga_semi: "德甲联赛半决赛", wtt_ev_finals: "总决赛", wtt_ev_feeder: "支线赛", wtt_ev_euroleague_team: "欧冠团体", wtt_ev_continental_cup: "洲杯赛", wtt_ev_continental_champs: "洲锦赛", wtt_ev_continental_team: "洲锦赛团体", wtt_ev_star: "球星挑战赛", wtt_ev_france_proa: "法国甲级联赛", wtt_ev_sweden_allsv: "瑞典甲级联赛",
         /* ---- 赛季标签词典（按 seasons.json id/label 查；label 是引擎 join key 不可改） ---- */
         season_2026_spring: "2026年春季学期", season_2026_summer: "2026年暑假", season_2026_autumn: "2026年秋季学期",
         /* ---- 球员标签 / 荣誉词典 ---- */
@@ -378,7 +406,7 @@ const i18n = {
         /* ---- docs 浏览器静态控件 ---- */
         docs_filter_ph: "在当前目录筛选…", docs_filter_files_aria: "筛选文件",
         docs_scope_title: "搜索范围：当前目录", docs_view_toggle_title: "切换视图",
-        docs_breadcrumb_aria: "目录路径", docs_type_filter_aria: "按类型筛选",
+        docs_breadcrumb_aria: "位置导航", docs_type_filter_aria: "按类型筛选",
         docs_sort_name: "名称", docs_preview_aria: "文件预览",
         media_download_file: "下载文件",
         /* ---- 页面级文案：SEO / 404 / ranking / WTT / admin（补齐 HTML 已引用但字典缺失的 key） ---- */
@@ -646,15 +674,15 @@ const i18n = {
         de_err_invalid: "无效对象",
         de_toast_conflict_id: "与现有布表 ID 冲突，已自动改号：{list}",
         de_toast_applied: "已应用当前对阵表",
-        de_err_json: "JSON 解析失败：{msg}",
+        de_err_json: "JSON 解析失败，请检查粘贴内容格式。",
         de_toast_imported: "已导入 {n} 张对阵表",
         de_toast_appended: "已追加为 {id}",
-        de_err_import: "导入失败：{msg}",
+        de_err_import: "导入失败，请检查粘贴内容格式。",
         de_err_entries: "请填写参赛名单",
         de_err_groups: "请按「组名: 选手1、选手2」格式填写分组",
-        de_err_tpl: "模板生成失败：{msg}",
+        de_err_tpl: "模板生成失败，请稍后重试。",
         de_toast_tpl: "模板已生成 {id}，可继续微调",
-        de_toast_download: "已下载 draws.json —— 请用它替换仓库中的 data/draws.json 并提交",
+        de_toast_download: "已下载对阵表数据",
         de_toast_copy_all: "已复制全部 draws.json 到剪贴板",
         de_err_copy_all: "复制失败，请用 JSON 面板手动复制",
         de_v_empty: "抽签表为空",
@@ -789,7 +817,7 @@ const i18n = {
         pagination_prev: "Previous", pagination_next: "Next", pagination_info: "Page {current} of {total}",
         data_viz_page_title: "Data Visualization | WFLS Table Tennis Club", data_viz_tag: "Data Visualization", data_viz_title: "Data Visualization", data_viz_desc: "Points Trend · Rank Flow · Player Compare",
         data_viz_points_trend: "Points Trend", data_viz_rank_stream: "Rank Flow", data_viz_player_compare: "Player Comparison", data_viz_select_players: "Select Players (max 8)", data_viz_select_player_a: "Player A", data_viz_select_player_b: "Player B", data_viz_apply: "Apply", data_viz_top_n: "Top", data_viz_head_to_head: "Head to Head",
-        data_viz_recent: "Recent", data_viz_data_points: "data points", data_viz_top_n_suffix: "players", data_viz_compare_btn: "Compare", data_viz_compare_placeholder: "Select two players to compare", data_viz_no_players: "No players yet", data_viz_alert_select_one: "Please select at least one player", data_viz_alert_max: "Maximum of 15 players", data_viz_alert_two: "Please select two players", data_viz_alert_diff: "Please select two different players", data_viz_select_player_ph: "-- Select Player --", data_viz_win: "wins", data_viz_total_h2h: "Total H2H: {n} matches", data_viz_recent_match: "Recent: {date} (Winner: {winner})", data_viz_pts_change: "{player} point change", data_viz_no_h2h: "No head-to-head records", data_viz_col_date: "Date", data_viz_col_type: "Type", data_viz_col_winner: "Winner", data_viz_axis_points: "Points", data_viz_axis_rank: "Rank", data_viz_rank_suffix: "Rank #{n}", data_viz_topn_select_title: "Enter any positive integer from 1 to 20", data_viz_bins_title: "Enter any integer from 4 to 100", data_viz_cur_score: "Current Points", data_viz_h2h_rate: "H2H Win Rate", data_viz_pred_rate: "Predicted Win Rate", data_viz_prepare: "Preparing data files...", data_viz_topn_title: "Show recent N data points", data_viz_stream_title: "Show recent N data points", data_viz_loading: "Loading data...", data_viz_downloading: "Downloading {label} ({i}/{total}): {file}", data_viz_calculating: "Calculating rankings...", data_viz_load_fail: "❌ Failed to load ranking data. Please refresh and try again.", data_viz_file_players: "Players", data_viz_file_matches: "Match Records", data_viz_file_initial: "Initial Scores", data_viz_file_event: "Event Coefficients", data_viz_file_decay: "Decay Config", data_viz_file_season: "Season Config", data_viz_no_player_list: "❌ Could not fetch player list",
+        data_viz_recent: "Recent", data_viz_data_points: "data points", data_viz_top_n_suffix: "players", data_viz_compare_btn: "Compare", data_viz_compare_placeholder: "Select two players to compare", data_viz_no_players: "No players yet", data_viz_alert_select_one: "Please select at least one player", data_viz_alert_max: "Maximum of 15 players", data_viz_alert_two: "Please select two players", data_viz_alert_diff: "Please select two different players", data_viz_select_player_ph: "-- Select Player --", data_viz_win: "wins", data_viz_total_h2h: "Total H2H: {n} matches", data_viz_recent_match: "Recent: {date} (Winner: {winner})", data_viz_pts_change: "{player} point change", data_viz_no_h2h: "No head-to-head records", data_viz_col_date: "Date", data_viz_col_type: "Type", data_viz_col_winner: "Winner", data_viz_axis_points: "Points", data_viz_axis_rank: "Rank", data_viz_rank_suffix: "Rank #{n}", data_viz_topn_select_title: "Enter any positive integer from 1 to 20", data_viz_bins_title: "Enter any integer from 4 to 100", data_viz_cur_score: "Current Points", data_viz_h2h_rate: "H2H Win Rate", data_viz_pred_rate: "Predicted Win Rate", data_viz_prepare: "Preparing data…", data_viz_topn_title: "Show recent N data points", data_viz_stream_title: "Show recent N data points", data_viz_loading: "Loading data...", data_viz_downloading: "Loading {label} ({i}/{total})", data_viz_calculating: "Calculating rankings...", data_viz_load_fail: "❌ Failed to load ranking data. Please refresh and try again.", data_viz_file_players: "Players", data_viz_file_matches: "Match Records", data_viz_file_initial: "Initial Scores", data_viz_file_event: "Event Coefficients", data_viz_file_decay: "Decay Config", data_viz_file_season: "Season Config", data_viz_no_player_list: "❌ Could not fetch player list",
         ps_ov_total: "Matches", ps_ov_wins: "Wins", ps_ov_losses: "Losses", ps_ov_rate: "Win Rate", ps_ov_points: "Points",
         ps_sum1: "{player} has played {total} singles matches, winning {wins} and losing {losses}.", ps_sum2: "{player}'s win rate is {percent}%.",
         ps_tags_label: "Tags", ps_honors_label: "Honors", ps_date_ymd: "{m}/{d}/{y}",
@@ -804,6 +832,7 @@ const i18n = {
         personal_stats_page_title: "Personal Stats | WFLS Table Tennis Club", personal_stats_tag: "Personal Stats", personal_stats_title: "Personal Stats", personal_stats_desc: "Personal Match Statistics", personal_stats_filter_label: "Filter by Tags", personal_stats_search_label: "Search Players", personal_stats_search_ph: "Search by name / ID / tag (pinyin supported)", personal_stats_placeholder: "players total, select to view personal stats", personal_stats_no_tags: "No tags available", personal_stats_tag_count: "{n} players", personal_stats_player_count: "{shown} / {total}", personal_stats_player_count_total: "{total}", personal_stats_no_match: "No matching players", personal_stats_no_data: "No match data yet", personal_stats_load_fail: "Failed to load data. Please refresh and try again.",
         pp_back_index: "Back to Overview", pp_prev_player: "Previous", pp_next_player: "Next", pp_no_player: "Player not found", pp_all_records: "All Match Records", pp_player_id: "Player ID", pp_search_ph: "Search by name / ID / tag", pp_total_players: "{n} players total", pp_role: "Role", pp_match_detail: "Score Details", pp_view_profile: "View Personal Page",
         pp_loading: "Loading player data...", pp_load_fail: "Failed to load data. Please refresh and try again.", pp_refresh: "Refresh", pp_status_active: "Active", pp_status_alumni: "Alumni", pp_matches_count: "{n} matches", pp_col_before: "Before", pp_col_change: "Change", pp_col_after: "After", pp_tags_label: "Tags", pp_honors_label: "Honors",
+        pp_grade: "Grade", pp_grade_fmt: "Class of {g}",
         pa_section_title: "Deep Analytics", pa_rank_title: "Rank Trend", pa_type_title: "Event Type Mix", pa_gap_title: "Results by Rating Gap", pa_monthly_title: "Monthly Activity", pa_form_title: "Current Form", pa_season_title: "Season Comparison", pa_source_title: "Score Sources",
         pa_rank_axis: "Rank", pa_no_rank: "No ranking data", pa_no_matches: "No match data", pa_monthly_matches: "Matches", pa_monthly_winrate: "Win rate", pa_type_center_unit: "games", pa_type_wr: "Win rate {r}%",
         pa_gap_self_strong: "Favorite", pa_gap_self_slight: "Slight favorite", pa_gap_opp_strong: "Underdog", pa_gap_opp_slight: "Slight underdog", pa_gap_wins: "Wins", pa_gap_losses: "Losses", pa_gap_wr: "Win rate {r}%", pa_gap_hint: "Banded by pre-match rating gap (opponent − player); the larger the value, the stronger the opponent",
@@ -817,15 +846,15 @@ const i18n = {
         chart_matches_suffix: " matches", chart_axis_ym_tpl: "{m}/{y}",
         dv_fullscreen: "Fullscreen (in page)", dv_fullscreen_exit: "Exit fullscreen", dv_zoom_out: "Zoom out", dv_zoom_in: "Zoom in", dv_search_placeholder: "Search player / team, highlight path", dv_champion: "Champion", dv_status_scheduled: "Scheduled", dv_status_live: "Live", dv_tbd: "TBD", dv_total_score: "Total", dv_qualifier_title: "Group qualifier slot", dv_round_1: "Round 1", dv_round_2: "Round 2", dv_quarters: "Quarterfinals", dv_semis: "Semifinals", dv_final: "Final", dv_round_n: "Round {n}", dv_legend_win: "Winner", dv_legend_loss: "Loser", dv_legend_live: "Live", dv_legend_pending: "Scheduled", dv_legend_path: "Path",
         rank_no_data: "No ranking data", rank_no_records: "No records", rank_add_short: "Bonus", rank_ppl: "{n} players", rank_node_count: "{n} nodes",
-        rank_loading: "Loading ranking data...", rank_prepare: "Preparing to download data files...", rank_download_file: "Downloading {label} ({i}/{total}): {file}", rank_calculating: "Calculating ranking points (this may take a while)...", rank_calc_fail: "Unable to compute ranking data",
+        rank_loading: "Loading ranking data...", rank_prepare: "Preparing data…", rank_download_file: "Loading {label} ({i}/{total})", rank_calculating: "Calculating ranking points (this may take a while)...", rank_calc_fail: "Unable to compute ranking data",
         rank_view_player_page: "View personal page", rank_click_detail: "Click for score details",
-        rank_season_expired: "Today is past the last season ({date}): new matches are counted into that season's extension, but cross-season inheritance will not apply. Create a new season in data/seasons.json.",
+        rank_season_expired: "Today ({date}) is past the last season. New matches count into that season's extension; points carry over when the next season opens.",
         changelog_page_title: "Changelog | WFLS Table Tennis Club", changelog_hero_tag: "Changelog", changelog_hero_title: "Changelog", changelog_hero_desc: "Version History · Features · Bug Fixes", changelog_list_tag: "Version History", changelog_list_title: "Version History", changelog_empty: "No changelog entries yet",
-        docs_page_title: "Docs | WFLS Table Tennis Club", docs_title: "Docs", docs_desc: "Browse and preview site documents & static assets: images · videos · audio · PDF · text & code",
-        docs_search_ph: "Filter in current folder…", docs_loading: "Scanning Assets…", docs_retry: "Retry",
-        docs_err_title: "Failed to load Assets/manifest.json", docs_err_hint: "This file is generated at deploy time by the deploy workflow; for local dev run:",
-        docs_view_list: "Switch to list view", docs_view_grid: "Switch to grid view", docs_refresh: "Rescan Assets",
-        docs_filter_aria: "Filter by type", docs_crumb_aria: "Folder path", docs_pv_dialog: "File preview",
+        docs_page_title: "Docs | WFLS Table Tennis Club", docs_title: "Docs", docs_lib_sub: "Library", docs_desc: "Browse and preview site documents & static assets: images · videos · audio · PDF · text & code",
+        docs_search_ph: "Filter in current folder…", docs_loading: "Loading the media library…", docs_retry: "Retry",
+        docs_err_title: "The media library couldn't be loaded", docs_err_hint: "Please try again later, or contact a club member for the file you need.",
+        docs_view_list: "Switch to list view", docs_view_grid: "Switch to grid view", docs_refresh: "Reload the media library",
+        docs_filter_aria: "Filter by type", docs_crumb_aria: "Breadcrumb", docs_pv_dialog: "File preview",
         docs_unit_dirs: "{n} folders", docs_unit_files: "{n} files", docs_folder_empty: "Empty folder",
         docs_empty_dir: "This folder is empty", docs_empty_search: "No items match “{q}”",
         docs_type_folder: "Folder", docs_type_image: "Image", docs_type_svg: "SVG vector", docs_type_video: "Video", docs_type_audio: "Audio", docs_type_pdf: "PDF", docs_type_markdown: "Markdown", docs_type_text: "Text/Code", docs_type_sheet: "Spreadsheet", docs_type_doc: "Word doc", docs_type_ppt: "Slides", docs_type_archive: "Archive", docs_type_other: "File",
@@ -843,7 +872,7 @@ const i18n = {
         wtt_back_hub: "Back to WTT Hub",
         sort_desc: "Descending", sort_asc: "Ascending",
         wtt_file_matches: "Match Records", wtt_file_initial: "Initial Scores", wtt_file_event: "Event Coefficients", wtt_file_season: "Season Config",
-        wtt_prepare: "Preparing data files...", wtt_downloading: "Downloading {label} ({i}/{total}): {file}", wtt_calculating: "Calculating rankings...", wtt_snapshot: "Snapshot {current}/{total}", wtt_elapsed: "Elapsed {s}s",
+        wtt_prepare: "Preparing data…", wtt_downloading: "Downloading {label} ({i}/{total}): {file}", wtt_calculating: "Calculating rankings...", wtt_snapshot: "Snapshot {current}/{total}", wtt_elapsed: "Elapsed {s}s",
         wtt_default_season: "Default Season", wtt_node_count: "{n} nodes", wtt_ppl: "{n} players",
         wtt_no_records: "No records", wtt_cant_compute: "Could not compute WTT rankings", wtt_bonus: "Bonus",
         wtt_no_players: "No player data", wtt_select_player: "-- Select Player --", wtt_compare_btn: "Compare", wtt_compare_placeholder: "Select two players to compare",
@@ -870,7 +899,7 @@ const i18n = {
         wtt_assoc_sq_points: "Points", wtt_assoc_sq_matches: "Matches", wtt_assoc_sq_winrate: "Win Rate", wtt_assoc_sq_global_rank: "Global Rank", wtt_assoc_sq_empty: "No scored players registered for this association",
         wtt_assoc_bump_title: "Rank Movement", wtt_assoc_bump_desc: "How association positions by strength score change over time",
         wtt_assoc_matrix_title: "Head-to-Head Matrix", wtt_assoc_matrix_hint: "Row association win rate vs column association (cross-assoc matches only) · darker = higher", wtt_assoc_matrix_size: "Matrix size", wtt_assoc_matrix_cell: "{a} vs {b}: win rate {r}% ({n} matches)",
-        wtt_assoc_no_data_hint: "No association data for this category (missing assoc.json)",
+        wtt_assoc_no_data_hint: "Association information is not available for this event yet.",
         wtt_cat_ms: "Men's Singles", wtt_cat_ws: "Women's Singles", wtt_cat_md: "Men's Doubles", wtt_cat_wd: "Women's Doubles", wtt_cat_xd: "Mixed Doubles",
         nav_submit: "Submit Results", submit_page_title: "Submit Results | WFLS Table Tennis Club",
         sb_hero_tag: "Submit", sb_hero_title: "Submit Results", sb_hero_desc: "Match results / Counted into rankings after review", sb_form_title: "Record Entry",
@@ -890,7 +919,8 @@ const i18n = {
         sb_quick_title: "Submit Your Match Results", sb_quick_btn: "Open the submission form",
         sb_step1: "Fill in the form", sb_step2: "Admin review", sb_step3: "Counted into rankings",
         sb_quick_desc: "No GitHub needed: click below and fill in the Tencent Docs form. Results are reviewed and batched into the rankings.",
-        sb_quick_missing: "The form link is not configured yet (admin: fill in TENCENT_FORM_URL on this page).",
+        sb_quick_missing: "The online form is being set up. For now please contact a club member in the QQ group.",
+        sb_fmt_default: "Default", sb_fmt_bo3: "Best of 3", sb_fmt_bo5: "Best of 5", sb_fmt_bo7: "Best of 7",
         /* ---- Season review ---- */
         sr_page_title: "Season Review | WFLS Table Tennis Club",
         sr_hero_tag: "Season Review", sr_hero_title: "Season Review", sr_hero_desc: "Matches · Points · Streaks · Season Bests",
@@ -913,6 +943,32 @@ const i18n = {
         sr_daily_title: "Daily Points Timeline", sr_daily_desc: "Pick players (up to 10) to chart their daily points through the season; each day uses the realtime basis as of that day (club mode includes time decay).",
         sr_daily_search: "Search players…", sr_daily_clear: "Clear", sr_daily_max: "Up to 10 players at a time",
         sr_daily_empty: "Select players above to draw their curves", sr_daily_start: "Start", sr_daily_axis: "Points",
+        /* ---- Data scale ---- */
+        ds_page_title: "Data Scale | WFLS Table Tennis Club",
+        ds_hero_tag: "Data Scale", ds_hero_title: "Data Scale", ds_hero_desc: "How much data this site actually holds",
+        ds_meta_desc: "The real size of the WFLS Table Tennis Club dataset: club match records, member profiles, a professional tournament archive, articles and media.",
+        ds_kw: "WFLS,table tennis,data scale,match records,tournament archive,club dataset",
+        ds_loading: "Counting…", ds_error: "The figures can't be shown right now. Please try again later.",
+        ds_asof: "Data as of", ds_club_range: "Club records", ds_pro_range: "Pro archive",
+        ds_sec_club: "Club Data", ds_sec_club_desc: "Every match is submitted by a club member, reviewed, then filed into the public record.",
+        ds_sec_wtt: "Professional Tournament Archive", ds_sec_content: "Content & Media", ds_sec_join: "Help Fill In The Record",
+        ds_sec_wtt_desc: "Spanning {years} years, with {seasons} season records and {files} yearly tournament files, entered year by year.",
+        ds_sec_content_desc: "News, competitions, Q&A and the media library are part of this site too.",
+        ds_sec_join_desc: "Any club member can submit a match result. Once reviewed it joins the public record, and rankings and season reviews update with it.",
+        ds_kpi_members: "Club members", ds_kpi_club_matches: "Club match records", ds_kpi_pro_records: "Pro tournament records", ds_kpi_pro_players: "Pro players covered",
+        ds_kpi_seasons: "Seasons", ds_kpi_snapshot_days: "Snapshot days", ds_kpi_match_days: "Match days", ds_kpi_games: "Game scores recorded",
+        ds_kpi_adjust: "Points adjustments", ds_kpi_draws: "Bracket slots",
+        ds_kpi_pro_snapshots: "Ranking snapshots", ds_kpi_pro_events: "Event types", ds_kpi_pro_years: "Years covered",
+        ds_kpi_entries: "Articles", ds_kpi_revisions: "Archived revisions", ds_kpi_media: "Media attachments", ds_kpi_releases: "Changelog releases", ds_kpi_asset_files: "Media files",
+        ds_chart_month_title: "Matches by Month", ds_chart_month_desc: "Matches filed per month.",
+        ds_bars_types_title: "Match Types", ds_bars_pro_title: "Records by Event", ds_bars_asset_title: "Media Library by Type",
+        ds_chips_tags: "Member Tags", ds_chips_honors: "Member Honours", ds_chips_roles: "Core Members",
+        ds_asset_video: "Video", ds_asset_image: "Images", ds_asset_doc: "Docs & other", ds_asset_files_fmt: "{n} files",
+        ds_data_volume: "{size} of tournament and content data files",
+        ds_btn_pro_home: "WTT Home", ds_btn_pro_rank: "WTT Ranking", ds_btn_pro_viz: "WTT Data Viz", ds_btn_rules: "Points Rules",
+        ds_btn_news: "News", ds_btn_comp: "Competitions", ds_btn_qa: "Q&A", ds_btn_changelog: "Changelog", ds_btn_docs: "Docs",
+        ds_btn_submit: "Submit a result",
+        ds_month_fmt: "{m}",
         /* ---- WTT season review ---- */
         wtt_sr_page_title: "WTT Season Review | WFLS TT Club",
         wtt_sr_hero_tag: "WTT Season Review", wtt_sr_hero_title: "WTT Season Review", wtt_sr_hero_desc: "Matches · Points · Streaks · Season Bests",
@@ -962,7 +1018,7 @@ const i18n = {
         /* ---- Event type dictionary (display layer; data keys stay Chinese) ---- */
         ev_normal: "Normal", ev_ranked: "Ranked", ev_challenge: "Challenge", ev_school_league: "School League", ev_top12: "Top-12", ev_school_team: "School Championship · Team", ev_school_singles: "School Championship · Singles", ev_doubles: "Doubles",
         /* ---- WTT event type dictionary ---- */
-        wtt_ev_tleague: "T.League", wtt_ev_ittf_open: "ITTF Open", wtt_ev_ittf_regular: "ITTF Regular", wtt_ev_ittf_platinum: "ITTF Platinum", wtt_ev_worlds: "World Championships", wtt_ev_worlds_team: "World Team Championships", wtt_ev_worldcup: "World Cup", wtt_ev_worldcup_team: "World Team Cup", wtt_ev_csl: "Chinese Super League", wtt_ev_asiad: "Asian Games", wtt_ev_asiad_team: "Asian Games Team", wtt_ev_alljapan: "All-Japan Championships", wtt_ev_nationalgames: "National Games", wtt_ev_nationals: "National Championships", wtt_ev_champions: "WTT Champions", wtt_ev_grandsmash: "Grand Smash", wtt_ev_olympics: "Olympic Games", wtt_ev_olympics_team: "Olympic Team Event", wtt_ev_challenge_reg: "Regular Challenge", wtt_ev_dfbpokal: "German Cup", wtt_ev_bundesliga: "Bundesliga", wtt_ev_bundesliga_final: "Bundesliga Finals", wtt_ev_bundesliga_semi: "Bundesliga Semifinals", wtt_ev_finals: "WTT Finals", wtt_ev_feeder: "WTT Feeder", wtt_ev_euroleague_team: "European Champions League", wtt_ev_continental_cup: "Continental Cup", wtt_ev_continental_champs: "Continental Championships", wtt_ev_continental_team: "Continental Team Championships", wtt_ev_star: "WTT Star Contender",
+        wtt_ev_tleague: "T.League", wtt_ev_ittf_open: "ITTF Open", wtt_ev_ittf_regular: "ITTF Regular", wtt_ev_ittf_platinum: "ITTF Platinum", wtt_ev_worlds: "World Championships", wtt_ev_worlds_team: "World Team Championships", wtt_ev_worldcup: "World Cup", wtt_ev_worldcup_team: "World Team Cup", wtt_ev_csl: "Chinese Super League", wtt_ev_asiad: "Asian Games", wtt_ev_asiad_team: "Asian Games Team", wtt_ev_alljapan: "All-Japan Championships", wtt_ev_nationalgames: "National Games", wtt_ev_nationals: "National Championships", wtt_ev_champions: "WTT Champions", wtt_ev_grandsmash: "Grand Smash", wtt_ev_olympics: "Olympic Games", wtt_ev_olympics_team: "Olympic Team Event", wtt_ev_challenge_reg: "Regular Challenge", wtt_ev_dfbpokal: "German Cup", wtt_ev_bundesliga: "Bundesliga", wtt_ev_bundesliga_final: "Bundesliga Finals", wtt_ev_bundesliga_semi: "Bundesliga Semifinals", wtt_ev_finals: "WTT Finals", wtt_ev_feeder: "WTT Feeder", wtt_ev_euroleague_team: "European Champions League", wtt_ev_continental_cup: "Continental Cup", wtt_ev_continental_champs: "Continental Championships", wtt_ev_continental_team: "Continental Team Championships", wtt_ev_star: "WTT Star Contender", wtt_ev_france_proa: "French Pro A", wtt_ev_sweden_allsv: "Swedish Allsvenskan",
         /* ---- Season label dictionary (keyed by seasons.json id/label; label is a load-bearing join key) ---- */
         season_2026_spring: "Spring 2026 Semester", season_2026_summer: "Summer 2026", season_2026_autumn: "Autumn 2026 Semester",
         /* ---- Player tag / honor dictionary ---- */
@@ -998,7 +1054,7 @@ const i18n = {
         /* ---- docs browser static controls ---- */
         docs_filter_ph: "Filter in this folder…", docs_filter_files_aria: "Filter files",
         docs_scope_title: "Search scope: current folder", docs_view_toggle_title: "Toggle view",
-        docs_breadcrumb_aria: "Folder path", docs_type_filter_aria: "Filter by type",
+        docs_breadcrumb_aria: "Breadcrumb", docs_type_filter_aria: "Filter by type",
         docs_sort_name: "Name", docs_preview_aria: "File preview",
         media_download_file: "Download file",
         /* ---- Page-level copy: SEO / 404 / ranking / WTT / admin (keys referenced by HTML but missing from the dictionary) ---- */
@@ -1266,15 +1322,15 @@ const i18n = {
         de_err_invalid: "Invalid object",
         de_toast_conflict_id: "IDs conflicting with the existing draws were renumbered: {list}",
         de_toast_applied: "Current draw updated",
-        de_err_json: "Failed to parse the JSON: {msg}",
+        de_err_json: "Couldn't parse the JSON — check the pasted content.",
         de_toast_imported: "Imported {n} draws",
         de_toast_appended: "Appended as {id}",
-        de_err_import: "Import failed: {msg}",
+        de_err_import: "Import failed — check the pasted content.",
         de_err_entries: "Please fill in the entrant list",
         de_err_groups: "Please enter the groups as “Group: Player 1, Player 2”",
-        de_err_tpl: "Template generation failed: {msg}",
+        de_err_tpl: "Template generation failed. Please try again.",
         de_toast_tpl: "Template generated as {id} — feel free to fine-tune it",
-        de_toast_download: "draws.json downloaded — use it to replace data/draws.json in the repository and commit",
+        de_toast_download: "Bracket data downloaded",
         de_toast_copy_all: "All of draws.json was copied to the clipboard",
         de_err_copy_all: "Copy failed, please copy manually from the JSON panel",
         de_v_empty: "The draw is empty",
@@ -1440,6 +1496,7 @@ function setLanguage(lang) {
     if (typeof drawsEditorReapplyI18n === 'function') drawsEditorReapplyI18n();
     if (typeof umpireTrainingReapplyI18n === 'function') umpireTrainingReapplyI18n();
     if (typeof gameReapplyI18n === 'function') gameReapplyI18n();
+    if (typeof dataScaleReapplyI18n === 'function') dataScaleReapplyI18n();
 }
 async function updateHeroLastUpdated() { const el = document.getElementById('heroLastUpdated'); if (!el) return; const cached = safeStorage.get('wfls-last-updated'); if (cached) { try { const cd = JSON.parse(cached); if (cd.date && (Date.now() - cd.ts) < 3600000) { el.textContent = currentLang === 'zh' ? `上次更新：${cd.date}` : `Last updated: ${cd.date}`; return; } } catch(e) {} } try { const res = await fetch('https://api.github.com/repos/yglalpavir/wfls-tt-club/commits?per_page=1'); if (res.ok) { const commits = await res.json(); if (commits && commits.length > 0) { const d = new Date(commits[0].commit.committer.date); const ds = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); safeStorage.set('wfls-last-updated', JSON.stringify({ date: ds, ts: Date.now() })); el.textContent = currentLang === 'zh' ? `上次更新：${ds}` : `Last updated: ${ds}`; return; } } } catch(e) { console.warn('GitHub API failed, fallback to about.json'); } if (aboutData && aboutData.lastUpdated) { el.textContent = currentLang === 'zh' ? `上次更新：${aboutData.lastUpdated}` : `Last updated: ${aboutData.lastUpdated}`; } }
 function updateRankingHeaders() { document.querySelectorAll('.ranking-table-full th[data-i18n]').forEach(th => { const key = th.getAttribute('data-i18n'); if (i18n[currentLang] && i18n[currentLang][key]) th.innerHTML = i18n[currentLang][key] + ' <span class="sort-arrow"></span>'; }); }
@@ -1464,7 +1521,7 @@ function getNodeDisplayLabel(n) {
 
 /* ===================== i18n 显示层 helper（数据键保持中文，仅显示翻译） ===================== */
 const EVENT_TYPE_KEY_MAP = { '普通': 'ev_normal', '排位赛': 'ev_ranked', '挑战赛': 'ev_challenge', '校乒联赛': 'ev_school_league', '十二强赛': 'ev_top12', '校乒赛团体': 'ev_school_team', '校乒赛单打': 'ev_school_singles', '双打': 'ev_doubles', '比赛结果加分': 'score_type_bonus' };
-const WTT_EVENT_TYPE_KEY_MAP = { 'T联赛': 'wtt_ev_tleague', 'ittf公开赛': 'wtt_ev_ittf_open', 'ittf常规赛': 'wtt_ev_ittf_regular', 'ittf白金赛': 'wtt_ev_ittf_platinum', '世乒赛': 'wtt_ev_worlds', '世乒赛团体': 'wtt_ev_worlds_team', '世界杯': 'wtt_ev_worldcup', '世界杯团体': 'wtt_ev_worldcup_team', '乒超联赛': 'wtt_ev_csl', '亚运会': 'wtt_ev_asiad', '亚运会团体': 'wtt_ev_asiad_team', '全日锦': 'wtt_ev_alljapan', '全运会': 'wtt_ev_nationalgames', '全锦赛': 'wtt_ev_nationals', '冠军赛': 'wtt_ev_champions', '大满贯': 'wtt_ev_grandsmash', '奥运会': 'wtt_ev_olympics', '奥运会团体': 'wtt_ev_olympics_team', '常规挑战赛': 'wtt_ev_challenge_reg', '德国杯': 'wtt_ev_dfbpokal', '德甲联赛': 'wtt_ev_bundesliga', '德甲联赛决赛': 'wtt_ev_bundesliga_final', '德甲联赛半决赛': 'wtt_ev_bundesliga_semi', '总决赛': 'wtt_ev_finals', '支线赛': 'wtt_ev_feeder', '欧冠团体': 'wtt_ev_euroleague_team', '洲杯赛': 'wtt_ev_continental_cup', '洲锦赛': 'wtt_ev_continental_champs', '洲锦赛团体': 'wtt_ev_continental_team', '球星挑战赛': 'wtt_ev_star', '比赛结果加分': 'score_type_bonus' };
+const WTT_EVENT_TYPE_KEY_MAP = { 'T联赛': 'wtt_ev_tleague', 'ittf公开赛': 'wtt_ev_ittf_open', 'ittf常规赛': 'wtt_ev_ittf_regular', 'ittf白金赛': 'wtt_ev_ittf_platinum', '世乒赛': 'wtt_ev_worlds', '世乒赛团体': 'wtt_ev_worlds_team', '世界杯': 'wtt_ev_worldcup', '世界杯团体': 'wtt_ev_worldcup_team', '乒超联赛': 'wtt_ev_csl', '亚运会': 'wtt_ev_asiad', '亚运会团体': 'wtt_ev_asiad_team', '全日锦': 'wtt_ev_alljapan', '全运会': 'wtt_ev_nationalgames', '全锦赛': 'wtt_ev_nationals', '冠军赛': 'wtt_ev_champions', '大满贯': 'wtt_ev_grandsmash', '奥运会': 'wtt_ev_olympics', '奥运会团体': 'wtt_ev_olympics_team', '常规挑战赛': 'wtt_ev_challenge_reg', '德国杯': 'wtt_ev_dfbpokal', '德甲联赛': 'wtt_ev_bundesliga', '德甲联赛决赛': 'wtt_ev_bundesliga_final', '德甲联赛半决赛': 'wtt_ev_bundesliga_semi', '总决赛': 'wtt_ev_finals', '支线赛': 'wtt_ev_feeder', '欧冠团体': 'wtt_ev_euroleague_team', '洲杯赛': 'wtt_ev_continental_cup', '洲锦赛': 'wtt_ev_continental_champs', '洲锦赛团体': 'wtt_ev_continental_team', '球星挑战赛': 'wtt_ev_star', '法国甲级联赛': 'wtt_ev_france_proa', '瑞典甲级联赛': 'wtt_ev_sweden_allsv', '比赛结果加分': 'score_type_bonus' };
 const SEASON_KEY_MAP = { '2026-spring': 'season_2026_spring', '2026-summer': 'season_2026_summer', '2026-autumn': 'season_2026_autumn', '2026年春季学期': 'season_2026_spring', '2026年暑假': 'season_2026_summer', '2026年秋季学期': 'season_2026_autumn' };
 const PLAYER_TAG_KEY_MAP = { '校队成员': 'ptag_school_team', '大满贯': 'ptag_grand_slam', '26-27年社长': 'ptag_pres_2627', '26-27年副社长': 'ptag_vp_2627', '25-26年社长': 'ptag_pres_2526', '25-26年副社长': 'ptag_vp_2526', '24-25年副社长': 'ptag_vp_2425', '校一直板': 'ptag_penholder1', '校二直板': 'ptag_penholder2' };
 const PLAYER_HONOR_KEY_MAP = { '校乒赛2025单打冠军': 'phonor_s25_singles_1', '校乒赛2026单打冠军': 'phonor_s26_singles_1', '校乒赛2026单打亚军': 'phonor_s26_singles_2', '校乒赛2026单打季军': 'phonor_s26_singles_3', '校乒赛2026团体冠军': 'phonor_s26_team_1', '校乒赛2026团体亚军': 'phonor_s26_team_2', '校乒赛2026团体季军': 'phonor_s26_team_3', '校乒赛2025团体季军': 'phonor_s25_team_3' };
@@ -1484,6 +1541,16 @@ function playerHonorLabel(v) { return i18nMapped(PLAYER_HONOR_KEY_MAP, v); }
 /* 球员职务 / 简介：players.json 可带 role_en / description_en 同级字段，英文模式优先 */
 function playerRole(p) { if (!p) return ''; if (currentLang === 'en' && p.role_en) return p.role_en; return p.role || ''; }
 function playerDescription(p) { if (!p) return ''; if (currentLang === 'en' && p.description_en) return p.description_en; return p.description || ''; }
+/* 球员年级：players.json 可带 grade 对象（{enroll, graduate}）；显示文本按语言由词典模板拼装，不存中文 */
+function playerGrade(p) {
+    const g = p && p.grade;
+    if (!g || typeof g !== 'object') return '';
+    const e = g.enroll, r = g.graduate;
+    if (!Number.isFinite(e) || !Number.isFinite(r)) return '';
+    const L = i18n[currentLang] || {};
+    const tpl = L.pp_grade_fmt || '{e}级{g}届';
+    return tpl.replace('{e}', e).replace('{g}', r);
+}
 /* 统一日期格式（英文模式 {m}/{d}/{y}；经 i18n 模板可随时改样式） */
 function fmtDate(y, m, d) {
     const L = i18n[currentLang] || {};
@@ -3389,6 +3456,19 @@ function applyChartDefaults() {
     Chart.defaults.elements.arc.borderWidth = 2;
 }
 
+/* Range 滑块轨道填充进度：WebKit 没有原生 progress 伪元素，靠 --fill 画渐变；
+   Firefox 用 ::-moz-range-progress 自带。
+   注意：脚本改 slider.value 不会触发 input 事件，所以改值处必须显式调用本函数，
+   否则自动播放时轨道填充会停在原地。 */
+function setRangeFill(slider) {
+    if (!slider) return;
+    const min = parseFloat(slider.min) || 0;
+    const max = parseFloat(slider.max) || 0;
+    const val = parseFloat(slider.value) || 0;
+    const pct = max > min ? (val - min) / (max - min) * 100 : 0;
+    slider.style.setProperty('--fill', pct.toFixed(2) + '%');
+}
+
 function initCommon() {
     initSearch();
     // 全站预载球员档案：nameIndex 供姓名链接（getUidForPlayerName）与英文拼音显示（playerDisplayName）使用，
@@ -3397,12 +3477,10 @@ function initCommon() {
     highlightNavByPath();
     initVizMobileNav();
     if (typeof Chart !== 'undefined') applyChartDefaults();
-    /* 竞速滑块：同步轨道填充进度（webkit 用 --fill 渐变，Firefox 用 range-progress） */
+    /* 竞速滑块：用户拖动时同步轨道填充进度（程序化改值由调用方 setRangeFill 负责） */
     document.addEventListener('input', e => {
         const s = e.target;
-        if (!s.classList || !s.classList.contains('viz-race-slider')) return;
-        const max = parseFloat(s.max) || 0;
-        s.style.setProperty('--fill', (max > 0 ? (parseFloat(s.value) / max * 100) : 0) + '%');
+        if (s.classList && s.classList.contains('viz-race-slider')) setRangeFill(s);
     });
     window.addEventListener('scroll', updateSideNavHighlight);
     updateSideNavHighlight();

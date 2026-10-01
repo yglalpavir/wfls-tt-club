@@ -1090,7 +1090,7 @@ function bindModals() {
             afterChange();
             $('jsonModal').style.display = 'none';
         } catch (e) {
-            edToast(edTpl('de_err_json', 'JSON 解析失败：{msg}', { msg: e.message }), true);
+            edToast(edTpl('de_err_json', 'JSON 解析失败，请检查粘贴内容格式。'), true);
         }
     });
 
@@ -1130,7 +1130,7 @@ function bindModals() {
             afterChange();
             $('importModal').style.display = 'none';
         } catch (e) {
-            edToast(edTpl('de_err_import', '导入失败：{msg}', { msg: e.message }), true);
+            edToast(edTpl('de_err_import', '导入失败，请检查粘贴内容格式。'), true);
         }
     });
 }
@@ -1175,7 +1175,7 @@ function generateFromTemplate() {
         }
     } catch (e) {
         edUndoStack.pop();
-        edToast(edTpl('de_err_tpl', '模板生成失败：{msg}', { msg: e.message }), true);
+        edToast(edTpl('de_err_tpl', '模板生成失败，请稍后重试。'), true);
         return;
     }
     edDraws.push(dcNormalizeDraw(draw));
@@ -1213,7 +1213,7 @@ function downloadDraws() {
     setTimeout(() => URL.revokeObjectURL(a.href), 2000);
     edBaseline = json;
     markDirty();
-    edToast(edT('de_toast_download', '已下载 draws.json —— 请用它替换仓库中的 data/draws.json 并提交'));
+    edToast(edT('de_toast_download', '已下载对阵表数据'));
 }
 
 function copyAll() {

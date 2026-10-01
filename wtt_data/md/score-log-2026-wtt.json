@@ -81,13 +81,13 @@
     "日期": "2026-01-10",
     "类型": "T联赛",
     "胜者": "PARK Ganghyeon/Ryoichi YOSHIYAMA",
-    "负者": "Daito ONO/Taimu ARINOBU"
-  },
-  {
-    "日期": "2026-01-10",
-    "类型": "T联赛",
-    "胜者": "Saki SHIBATA/Hitomi SATO",
-    "负者": "ZHANG Rui/Hana SAKURAI"
+    "负者": "Daito ONO/Taimu ARINOBU",
+    "比分": "2-1",
+    "局分": [
+      "11-8",
+      "9-11",
+      "11-8"
+    ]
   },
   {
     "日期": "2026-01-10",
@@ -105,13 +105,24 @@
     "日期": "2026-01-11",
     "类型": "T联赛",
     "胜者": "Fumiya IGARASHI/Taisei MATSUSHITA",
-    "负者": "Takumi TANIMOTO/Mizuki OIKAWA"
+    "负者": "Takumi TANIMOTO/Mizuki OIKAWA",
+    "比分": "2-1",
+    "局分": [
+      "9-11",
+      "11-5",
+      "12-10"
+    ]
   },
   {
     "日期": "2026-01-11",
     "类型": "T联赛",
     "胜者": "PARK Ganghyeon/Ryoichi YOSHIYAMA",
-    "负者": "Yuya OSHIMA/Shunsuke OKANO"
+    "负者": "Yuya OSHIMA/Shunsuke OKANO",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-9"
+    ]
   },
   {
     "日期": "2026-01-15",
@@ -303,7 +314,12 @@
     "日期": "2026-02-08",
     "类型": "T联赛",
     "胜者": "Daito ONO/Taimu ARINOBU",
-    "负者": "Fumiya IGARASHI/Taisei MATSUSHITA"
+    "负者": "Fumiya IGARASHI/Taisei MATSUSHITA",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-8"
+    ]
   },
   {
     "日期": "2026-02-12",
@@ -411,7 +427,12 @@
     "日期": "2026-02-15",
     "类型": "T联赛",
     "胜者": "LIN Yun-Ju/Ryoichi YOSHIYAMA",
-    "负者": "Daito ONO/Taimu ARINOBU"
+    "负者": "Daito ONO/Taimu ARINOBU",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-7"
+    ]
   },
   {
     "日期": "2026-02-15",
@@ -423,7 +444,13 @@
     "日期": "2026-02-21",
     "类型": "T联赛",
     "胜者": "HAO Shuai/Mizuki OIKAWA",
-    "负者": "Fumiya IGARASHI/Taisei MATSUSHITA"
+    "负者": "Fumiya IGARASHI/Taisei MATSUSHITA",
+    "比分": "2-1",
+    "局分": [
+      "11-5",
+      "3-11",
+      "11-7"
+    ]
   },
   {
     "日期": "2026-02-21",
@@ -434,14 +461,14 @@
   {
     "日期": "2026-02-22",
     "类型": "T联赛",
-    "胜者": "Anne UESAWA/Asuka SASAO",
-    "负者": "Saki SHIBATA/Hitomi SATO"
-  },
-  {
-    "日期": "2026-02-22",
-    "类型": "T联赛",
     "胜者": "HAO Shuai/Mizuki OIKAWA",
-    "负者": "Keishi HAGIHARA/Ryoichi YOSHIYAMA"
+    "负者": "Keishi HAGIHARA/Ryoichi YOSHIYAMA",
+    "比分": "2-1",
+    "局分": [
+      "11-7",
+      "10-11",
+      "11-9"
+    ]
   },
   {
     "日期": "2026-02-22",
@@ -472,12 +499,6 @@
     "类型": "大满贯",
     "胜者": "Youssef ABDELAZIZ/Mohamed ELBEIALI",
     "负者": "LOY Xing Yao/LE Ellsworth"
-  },
-  {
-    "日期": "2026-02-23",
-    "类型": "T联赛",
-    "胜者": "Anne UESAWA/Asuka SASAO",
-    "负者": "ZHANG Rui/Hana SAKURAI"
   },
   {
     "日期": "2026-02-23",
@@ -591,7 +612,13 @@
     "日期": "2026-02-28",
     "类型": "T联赛",
     "胜者": "Keishi HAGIHARA/Ryoichi YOSHIYAMA",
-    "负者": "Shin ISHIYAMA/Yuto ABE"
+    "负者": "Shin ISHIYAMA/Yuto ABE",
+    "比分": "2-1",
+    "局分": [
+      "11-3",
+      "9-11",
+      "11-9"
+    ]
   },
   {
     "日期": "2026-02-28",
@@ -603,7 +630,12 @@
     "日期": "2026-03-01",
     "类型": "T联赛",
     "胜者": "Hibiki TAZOE/Takumi TANIMOTO",
-    "负者": "Shin ISHIYAMA/Yuto ABE"
+    "负者": "Shin ISHIYAMA/Yuto ABE",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-6"
+    ]
   },
   {
     "日期": "2026-03-01",
@@ -621,19 +653,34 @@
     "日期": "2026-03-07",
     "类型": "T联赛",
     "胜者": "Yuto KIZUKURI/Taimu ARINOBU",
-    "负者": "Asuka MACHI/Yuma TSUBOI"
+    "负者": "Asuka MACHI/Yuma TSUBOI",
+    "比分": "2-0",
+    "局分": [
+      "11-4",
+      "11-6"
+    ]
   },
   {
     "日期": "2026-03-08",
     "类型": "T联赛",
     "胜者": "LIN Yun-Ju/YAN An",
-    "负者": "Yuhi SAKAI/Yuya OSHIMA"
+    "负者": "Yuhi SAKAI/Yuya OSHIMA",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-3"
+    ]
   },
   {
     "日期": "2026-03-08",
     "类型": "T联赛",
     "胜者": "Yuto KIZUKURI/Taimu ARINOBU",
-    "负者": "Hibiki TAZOE/Takumi TANIMOTO"
+    "负者": "Hibiki TAZOE/Takumi TANIMOTO",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-8"
+    ]
   },
   {
     "日期": "2026-03-21",
@@ -706,12 +753,6 @@
     "类型": "常规挑战赛",
     "胜者": "Snehit SURAVAJJULA/Akash PAL",
     "负者": "Payas JAIN/Ankur BHATTACHARJEE"
-  },
-  {
-    "日期": "2026-03-28",
-    "类型": "T联赛",
-    "胜者": "Miyu NAGASAKI/Miwa HARIMOTO",
-    "负者": "Anne UESAWA/Asuka SASAO"
   },
   {
     "日期": "2026-03-28",
@@ -1587,7 +1628,12 @@
     "日期": "2026-07-25",
     "类型": "T联赛",
     "胜者": "Koki NIWA/Kazuhiro YOSHIMURA",
-    "负者": "Asuka SAKAI/Yuto KIZUKURI"
+    "负者": "Asuka SAKAI/Yuto KIZUKURI",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-8"
+    ]
   },
   {
     "日期": "2026-07-25",
@@ -3354,60 +3400,6 @@
     "负者": "WONG Chun Ting/CHAN Baldwin"
   },
   {
-    "日期": "2026-08-16",
-    "类型": "德甲联赛",
-    "胜者": "Maciej KUBIK/Martin ALLEGRO",
-    "负者": "Marcos FREITAS/Ovidiu IONESCU"
-  },
-  {
-    "日期": "2026-08-17",
-    "类型": "德甲联赛",
-    "胜者": "Irvin BERTRAND/Mattias KARLSSON",
-    "负者": "Andrei ISTRATE/Jonathan GROTH"
-  },
-  {
-    "日期": "2026-08-17",
-    "类型": "德甲联赛",
-    "胜者": "Iulian CHIRITA/Tiago ABIODUN",
-    "负者": "Cedric MEISSNER/Romain RUIZ"
-  },
-  {
-    "日期": "2026-08-18",
-    "类型": "德甲联赛",
-    "胜者": "Ricardo WALTHER/Tiago APOLONIA",
-    "负者": "Bastian STEGER/Daniel HABESOHN"
-  },
-  {
-    "日期": "2026-08-22",
-    "类型": "德甲联赛",
-    "胜者": "Benno OEHME/Ivor BAN",
-    "负者": "Andrei ISTRATE/Jonathan GROTH"
-  },
-  {
-    "日期": "2026-08-23",
-    "类型": "德甲联赛",
-    "胜者": "Irvin BERTRAND/Mattias KARLSSON",
-    "负者": "Maciej KUBIK/Martin ALLEGRO"
-  },
-  {
-    "日期": "2026-08-25",
-    "类型": "德甲联赛",
-    "胜者": "Adrien RASSENFOSSE/Cedric MEISSNER",
-    "负者": "Andrei ISTRATE/Ruwen FILUS"
-  },
-  {
-    "日期": "2026-08-29",
-    "类型": "德国杯",
-    "胜者": "Karl WALTER/Noah HERSEL",
-    "负者": "Adrian GOSSOW/Damian FLORO"
-  },
-  {
-    "日期": "2026-08-29",
-    "类型": "德国杯",
-    "胜者": "Irvin BERTRAND/Mattias KARLSSON",
-    "负者": "Cedric MEISSNER/Romain RUIZ"
-  },
-  {
     "日期": "2026-09-03",
     "类型": "常规挑战赛",
     "胜者": "Florian BOURRASSAUD/Esteban DORR",
@@ -4178,5 +4170,1148 @@
       "12-10",
       "11-9"
     ]
+  },
+  {
+    "日期": "2026-01-11",
+    "类型": "德甲联赛",
+    "胜者": "Dang QIU/Yongyin LI",
+    "负者": "Benedikt DUDA/Leo DE NODREST",
+    "比分": "3-1",
+    "局分": [
+      "5-11",
+      "11-6",
+      "11-9",
+      "14-12"
+    ]
+  },
+  {
+    "日期": "2026-01-12",
+    "类型": "德甲联赛",
+    "胜者": "Adam SZUDI/Cedric NUYTINCK",
+    "负者": "Eduard IONESCU/Patrick FRANZISKA",
+    "比分": "3-1",
+    "局分": [
+      "11-9",
+      "11-8",
+      "8-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2026-01-16",
+    "类型": "德甲联赛",
+    "胜者": "Cedric MEISSNER/Patrick FRANZISKA",
+    "负者": "LIAO Cheng-Ting/Steffen MENGEL",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-9",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2026-01-16",
+    "类型": "德甲联赛",
+    "胜者": "Irvin BERTRAND/Mattias KARLSSON",
+    "负者": "Ivor BAN/Juan PEREZ",
+    "比分": "3-1",
+    "局分": [
+      "11-3",
+      "11-8",
+      "10-12",
+      "11-2"
+    ]
+  },
+  {
+    "日期": "2026-01-17",
+    "类型": "德甲联赛",
+    "胜者": "Andre BERTELSMEIER/Daniel HABESOHN",
+    "负者": "Martin ALLEGRO/Samuel WALKER",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "13-11",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2026-01-18",
+    "类型": "德甲联赛",
+    "胜者": "Adam SZUDI/Cedric NUYTINCK",
+    "负者": "Ricardo WALTHER/Tiago APOLONIA",
+    "比分": "3-1",
+    "局分": [
+      "11-8",
+      "9-11",
+      "11-5",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2026-01-23",
+    "类型": "德甲联赛",
+    "胜者": "LIAO Cheng-Ting/Ovidiu IONESCU",
+    "负者": "Fanbo MENG/MENG Qingyu",
+    "比分": "3-1",
+    "局分": [
+      "9-11",
+      "12-10",
+      "11-9",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2026-01-25",
+    "类型": "德甲联赛",
+    "胜者": "Irvin BERTRAND/Mattias KARLSSON",
+    "负者": "Ricardo WALTHER/Tom JARVIS",
+    "比分": "3-1",
+    "局分": [
+      "11-4",
+      "11-3",
+      "8-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2026-02-09",
+    "类型": "德甲联赛",
+    "胜者": "Marcos FREITAS/Ovidiu IONESCU",
+    "负者": "Csaba ANDRAS/Ivor BAN",
+    "比分": "3-0",
+    "局分": [
+      "13-11",
+      "11-7",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2026-02-10",
+    "类型": "德甲联赛",
+    "胜者": "Anton KALLBERG/Yongyin LI",
+    "负者": "Hiroto SHINOZUKA/Ricardo WALTHER",
+    "比分": "3-1",
+    "局分": [
+      "11-7",
+      "8-11",
+      "11-9",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2026-02-13",
+    "类型": "德甲联赛",
+    "胜者": "Adrien RASSENFOSSE/Leo DE NODREST",
+    "负者": "Irvin BERTRAND/Kirill GERASSIMENKO",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-8",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2026-02-14",
+    "类型": "德甲联赛",
+    "胜者": "Fanbo MENG/Jonathan GROTH",
+    "负者": "Ricardo WALTHER/Tiago APOLONIA",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-9",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2026-02-15",
+    "类型": "德甲联赛",
+    "胜者": "Anton KALLBERG/Dang QIU",
+    "负者": "Cedric MEISSNER/FAN Zhendong",
+    "比分": "3-1",
+    "局分": [
+      "12-10",
+      "11-7",
+      "7-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2026-02-15",
+    "类型": "德甲联赛",
+    "胜者": "Maciej KUBIK/Martin ALLEGRO",
+    "负者": "Marcos FREITAS/Ovidiu IONESCU",
+    "比分": "3-1",
+    "局分": [
+      "7-11",
+      "11-5",
+      "11-9",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2026-03-23",
+    "类型": "德甲联赛",
+    "胜者": "Luka MLADENOVIC/Martin ALLEGRO",
+    "负者": "Fanbo MENG/Jonathan GROTH",
+    "比分": "3-2",
+    "局分": [
+      "3-11",
+      "11-5",
+      "11-9",
+      "9-11",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2026-03-25",
+    "类型": "德甲联赛",
+    "胜者": "Ivor BAN/Jo YOKOTANI",
+    "负者": "Cedric MEISSNER/Samuel ARPAS",
+    "比分": "3-0",
+    "局分": [
+      "12-10",
+      "11-7",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2026-03-27",
+    "类型": "德甲联赛",
+    "胜者": "Fanbo MENG/MENG Qingyu",
+    "负者": "Cedric MEISSNER/Samuel ARPAS",
+    "比分": "3-1",
+    "局分": [
+      "11-6",
+      "11-8",
+      "6-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2026-03-27",
+    "类型": "德甲联赛",
+    "胜者": "Anton KALLBERG/Yongyin LI",
+    "负者": "Irvin BERTRAND/Mattias KARLSSON",
+    "比分": "3-2",
+    "局分": [
+      "11-3",
+      "7-11",
+      "6-11",
+      "11-5",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2026-05-30",
+    "类型": "德甲联赛半决赛",
+    "胜者": "Dang QIU/Yongyin LI",
+    "负者": "Adrien RASSENFOSSE/Leo DE NODREST",
+    "比分": "3-1",
+    "局分": [
+      "5-11",
+      "11-4",
+      "11-7",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2026-08-16",
+    "类型": "德甲联赛",
+    "胜者": "Maciej KUBIK/Martin ALLEGRO",
+    "负者": "Marcos FREITAS/Ovidiu IONESCU",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-9",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2026-08-17",
+    "类型": "德甲联赛",
+    "胜者": "Irvin BERTRAND/Mattias KARLSSON",
+    "负者": "Andrei ISTRATE/Jonathan GROTH",
+    "比分": "3-1",
+    "局分": [
+      "6-11",
+      "11-6",
+      "11-8",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2026-08-17",
+    "类型": "德甲联赛",
+    "胜者": "Iulian CHIRITA/Tiago ABIODUN",
+    "负者": "Cedric MEISSNER/Romain RUIZ",
+    "比分": "3-2",
+    "局分": [
+      "7-11",
+      "7-11",
+      "12-10",
+      "11-9",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2026-08-18",
+    "类型": "德甲联赛",
+    "胜者": "Ricardo WALTHER/Tiago APOLONIA",
+    "负者": "Bastian STEGER/Daniel HABESOHN",
+    "比分": "3-1",
+    "局分": [
+      "12-10",
+      "11-7",
+      "2-11",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2026-08-22",
+    "类型": "德甲联赛",
+    "胜者": "Benno OEHME/Ivor BAN",
+    "负者": "Andrei ISTRATE/Jonathan GROTH",
+    "比分": "3-2",
+    "局分": [
+      "8-11",
+      "8-11",
+      "11-9",
+      "11-9",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2026-08-23",
+    "类型": "德甲联赛",
+    "胜者": "Irvin BERTRAND/Mattias KARLSSON",
+    "负者": "Maciej KUBIK/Martin ALLEGRO",
+    "比分": "3-1",
+    "局分": [
+      "11-8",
+      "11-6",
+      "6-11",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2026-08-25",
+    "类型": "德甲联赛",
+    "胜者": "Adrien RASSENFOSSE/Cedric MEISSNER",
+    "负者": "Andrei ISTRATE/Ruwen FILUS",
+    "比分": "3-1",
+    "局分": [
+      "11-5",
+      "3-11",
+      "11-6",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2026-09-03",
+    "类型": "德甲联赛",
+    "胜者": "Adam SZUDI/Cedric NUYTINCK",
+    "负者": "Benno OEHME/Ivor BAN",
+    "比分": "3-2",
+    "局分": [
+      "11-6",
+      "9-11",
+      "11-6",
+      "5-11",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2026-09-06",
+    "类型": "德甲联赛",
+    "胜者": "Marcos FREITAS/Ovidiu IONESCU",
+    "负者": "Ricardo WALTHER/Tiago APOLONIA",
+    "比分": "3-1",
+    "局分": [
+      "11-8",
+      "16-14",
+      "10-12",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2026-09-13",
+    "类型": "德甲联赛",
+    "胜者": "Tiago APOLONIA/Tobias HIPPLER",
+    "负者": "Irvin BERTRAND/Kirill GERASSIMENKO",
+    "比分": "3-1",
+    "局分": [
+      "11-7",
+      "11-9",
+      "8-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2026-09-13",
+    "类型": "德甲联赛",
+    "胜者": "Benno OEHME/Ivor BAN",
+    "负者": "Adrien RASSENFOSSE/Cedric MEISSNER",
+    "比分": "3-2",
+    "局分": [
+      "11-8",
+      "11-7",
+      "1-11",
+      "4-11",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2026-09-21",
+    "类型": "德甲联赛",
+    "胜者": "Dimitrij OVTCHAROV/Fanbo MENG",
+    "负者": "Adam SZUDI/Kristian KARLSSON",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-8",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2026-09-21",
+    "类型": "德甲联赛",
+    "胜者": "Maciej KUBIK/Martin ALLEGRO",
+    "负者": "Andre BERTELSMEIER/Daniel HABESOHN",
+    "比分": "3-2",
+    "局分": [
+      "11-8",
+      "9-11",
+      "9-11",
+      "11-6",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2026-09-25",
+    "类型": "德甲联赛",
+    "胜者": "Maciej KUBIK/Martin ALLEGRO",
+    "负者": "Tiago APOLONIA/Tobias HIPPLER",
+    "比分": "3-2",
+    "局分": [
+      "14-12",
+      "11-5",
+      "10-12",
+      "2-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2026-01-04",
+    "类型": "德国杯",
+    "胜者": "Dimitrij OVTCHAROV/Fanbo MENG",
+    "负者": "Csaba ANDRAS/Ivor BAN",
+    "比分": "3-2",
+    "局分": [
+      "11-8",
+      "4-11",
+      "9-11",
+      "13-11",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2026-08-30",
+    "类型": "德国杯",
+    "胜者": "Dimitrij OVTCHAROV/Jonathan GROTH",
+    "负者": "Iulian CHIRITA/Tiago ABIODUN",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-8",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2026-08-29",
+    "类型": "德国杯",
+    "胜者": "Karl WALTER/Noah HERSEL",
+    "负者": "Adrian GOSSOW/Damian FLORO",
+    "比分": "3-2",
+    "局分": [
+      "13-11",
+      "7-11",
+      "8-11",
+      "11-9",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2026-08-29",
+    "类型": "德国杯",
+    "胜者": "Irvin BERTRAND/Mattias KARLSSON",
+    "负者": "Cedric MEISSNER/Romain RUIZ",
+    "比分": "3-1",
+    "局分": [
+      "11-6",
+      "11-8",
+      "9-11",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2026-01-10",
+    "类型": "T联赛",
+    "胜者": "Mizuki OIKAWA/Takumi TANIMOTO",
+    "负者": "Hiromu KOBAYASHI/Masaki YOSHIDA",
+    "比分": "2-1",
+    "局分": [
+      "5-11",
+      "11-9",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2026-02-07",
+    "类型": "T联赛",
+    "胜者": "Fumiya IGARASHI/Taisei MATSUSHITA",
+    "负者": "Hiromu KOBAYASHI/Masaki YOSHIDA",
+    "比分": "2-1",
+    "局分": [
+      "11-4",
+      "8-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2026-02-14",
+    "类型": "T联赛",
+    "胜者": "Shin ISHIYAMA/Yuto ABE",
+    "负者": "Shodai MIYAGAWA/Yuya OSHIMA",
+    "比分": "2-1",
+    "局分": [
+      "11-8",
+      "5-11",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2026-02-14",
+    "类型": "T联赛",
+    "胜者": "Daito ONO/Taimu ARINOBU",
+    "负者": "Hiromu KOBAYASHI/Masaki YOSHIDA",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2026-02-15",
+    "类型": "T联赛",
+    "胜者": "Shodai MIYAGAWA/Yuya OSHIMA",
+    "负者": "HAO Shuai/Hibiki TAZOE",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2026-02-28",
+    "类型": "T联赛",
+    "胜者": "Hiromu KOBAYASHI/Masaki YOSHIDA",
+    "负者": "Shodai MIYAGAWA/Yuya OSHIMA",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2026-03-01",
+    "类型": "T联赛",
+    "胜者": "LIM Jonghoon/Masaki YOSHIDA",
+    "负者": "Daito ONO/Taimu ARINOBU",
+    "比分": "2-0",
+    "局分": [
+      "11-5",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2026-03-07",
+    "类型": "T联赛",
+    "胜者": "LIN Yun-Ju/YAN An",
+    "负者": "LIM Jonghoon/Masaki YOSHIDA",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2026-03-21",
+    "类型": "T联赛",
+    "胜者": "LIM Jonghoon/Masaki YOSHIDA",
+    "负者": "Taimu ARINOBU/Yuto KIZUKURI",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2026-08-15",
+    "类型": "T联赛",
+    "胜者": "Hiromu KOBAYASHI/Masaki YOSHIDA",
+    "负者": "Shin ISHIYAMA/Sho SUZUKI",
+    "比分": "2-0",
+    "局分": [
+      "11-5",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2026-08-15",
+    "类型": "T联赛",
+    "胜者": "Yuhi SAKAI/Yuya OSHIMA",
+    "负者": "Kazuki YOSHIYAMA/Mizuki OIKAWA",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2026-08-16",
+    "类型": "T联赛",
+    "胜者": "Keishi HAGIHARA/Ryoichi YOSHIYAMA",
+    "负者": "Shin ISHIYAMA/Sho SUZUKI",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2026-08-16",
+    "类型": "T联赛",
+    "胜者": "Taimu ARINOBU/Yuma TSUBOI",
+    "负者": "CHO Seungmin/Yuya OSHIMA",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2026-08-22",
+    "类型": "T联赛",
+    "胜者": "Mizuki OIKAWA/Sora MATSUSHIMA",
+    "负者": "Koki NIWA/Ryoichi YOSHIYAMA",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-10"
+    ]
+  },
+  {
+    "日期": "2026-08-23",
+    "类型": "T联赛",
+    "胜者": "Taimu ARINOBU/Yuma TSUBOI",
+    "负者": "Koki NIWA/Ryoichi YOSHIYAMA",
+    "比分": "2-1",
+    "局分": [
+      "11-7",
+      "8-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2026-08-28",
+    "类型": "T联赛",
+    "胜者": "Hiromu KOBAYASHI/Masaki YOSHIDA",
+    "负者": "Maharu YOSHIMURA/Shunto IWAIDA",
+    "比分": "2-1",
+    "局分": [
+      "10-11",
+      "11-8",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2026-08-29",
+    "类型": "T联赛",
+    "胜者": "Hiromu KOBAYASHI/Masaki YOSHIDA",
+    "负者": "Hiroto SHINOZUKA/Koji UEZU",
+    "比分": "2-1",
+    "局分": [
+      "11-7",
+      "9-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2026-08-29",
+    "类型": "T联赛",
+    "胜者": "Fumiya IGARASHI/Motoki MAWATARI",
+    "负者": "Kohaku NAKANO/Yuma TSUBOI",
+    "比分": "2-1",
+    "局分": [
+      "11-10",
+      "6-11",
+      "14-12"
+    ]
+  },
+  {
+    "日期": "2026-08-30",
+    "类型": "T联赛",
+    "胜者": "Hiromu KOBAYASHI/Masaki YOSHIDA",
+    "负者": "Ryuusei KAWAKAMI/Yuta ITO",
+    "比分": "2-0",
+    "局分": [
+      "11-1",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2026-08-30",
+    "类型": "T联赛",
+    "胜者": "Sora MATSUSHIMA/Yuki MATSUYAMA",
+    "负者": "Fumiya IGARASHI/Motoki MAWATARI",
+    "比分": "2-1",
+    "局分": [
+      "11-5",
+      "10-11",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2026-09-05",
+    "类型": "T联赛",
+    "胜者": "Taimu ARINOBU/Yuma TSUBOI",
+    "负者": "Sora MATSUSHIMA/Yuki MATSUYAMA",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2026-09-05",
+    "类型": "T联赛",
+    "胜者": "Hiroto SHINOZUKA/Tonin RYUZAKI",
+    "负者": "Shin ISHIYAMA/Yuto ABE",
+    "比分": "2-0",
+    "局分": [
+      "11-5",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2026-09-06",
+    "类型": "T联赛",
+    "胜者": "Hiromu KOBAYASHI/Masaki YOSHIDA",
+    "负者": "Taimu ARINOBU/Yuma TSUBOI",
+    "比分": "2-1",
+    "局分": [
+      "10-11",
+      "11-10",
+      "14-12"
+    ]
+  },
+  {
+    "日期": "2026-09-06",
+    "类型": "T联赛",
+    "胜者": "Hiroto SHINOZUKA/Tonin RYUZAKI",
+    "负者": "Kazuhiro YOSHIMURA/Koki NIWA",
+    "比分": "2-1",
+    "局分": [
+      "11-9",
+      "7-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2026-09-12",
+    "类型": "T联赛",
+    "胜者": "Jo YOKOTANI/Kazuki YOSHIYAMA",
+    "负者": "Hiromu KOBAYASHI/Masaki YOSHIDA",
+    "比分": "2-1",
+    "局分": [
+      "5-11",
+      "11-8",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2026-09-19",
+    "类型": "T联赛",
+    "胜者": "Motoki MAWATARI/Shunsuke OKANO",
+    "负者": "Keishi HAGIHARA/YAN An",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2026-09-19",
+    "类型": "T联赛",
+    "胜者": "Taimu ARINOBU/Yuma TSUBOI",
+    "负者": "HAO Shuai/Hibiki TAZOE",
+    "比分": "2-0",
+    "局分": [
+      "11-5",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2026-09-20",
+    "类型": "T联赛",
+    "胜者": "Soh YOSHIDA/Taisei MATSUSHITA",
+    "负者": "Koki NIWA/YAN An",
+    "比分": "2-1",
+    "局分": [
+      "11-10",
+      "4-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2026-09-20",
+    "类型": "T联赛",
+    "胜者": "HAO Shuai/Yuki MATSUYAMA",
+    "负者": "Koji UEZU/Yuhi SAKAI",
+    "比分": "2-1",
+    "局分": [
+      "8-11",
+      "11-7",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2026-01-04",
+    "类型": "法国甲级联赛",
+    "胜者": "AN Jaehyun/Joao Pedro MONTEIRO",
+    "负者": "Flavio MOURIER/Quadri ARUNA",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-01-06",
+    "类型": "法国甲级联赛",
+    "胜者": "Alvaro ROBLES/Thibault PORET",
+    "负者": "CHEN Tianyuan/Nima ALAMIAN",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-01-06",
+    "类型": "法国甲级联赛",
+    "胜者": "CHEN Tianyuan/Yang WANG",
+    "负者": "Alvaro ROBLES/Lilian BARDET",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-01-06",
+    "类型": "法国甲级联赛",
+    "胜者": "Elias RANEFUR/Florian BOURRASSAUD",
+    "负者": "Noshad ALAMIYAN/Vincent PICARD",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-01-06",
+    "类型": "法国甲级联赛",
+    "胜者": "Jules ROLLAND/Vincent PICARD",
+    "负者": "Elias RANEFUR/LIU Yebo",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-01-26",
+    "类型": "法国甲级联赛",
+    "胜者": "CHEN Tianyuan/Yang WANG",
+    "负者": "Alexandre CASSIN/Flavio MOURIER",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-01-27",
+    "类型": "法国甲级联赛",
+    "胜者": "Alexis KOURAICHI/Noshad ALAMIYAN",
+    "负者": "Andrea LANDRIEU/Yu KAYAMA",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-01-27",
+    "类型": "法国甲级联赛",
+    "胜者": "Flavien COTON/Jesus CANTERO JUNCAL",
+    "负者": "Lev KATSMAN/Simon GAUZY",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-01-28",
+    "类型": "法国甲级联赛",
+    "胜者": "Antoine HACHARD/Gregoire JEAN",
+    "负者": "Florent LAMBIET/Joao Pedro MONTEIRO",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-02-03",
+    "类型": "法国甲级联赛",
+    "胜者": "Alexis KOURAICHI/Noshad ALAMIYAN",
+    "负者": "Alexandre CASSIN/Flavio MOURIER",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-02-03",
+    "类型": "法国甲级联赛",
+    "胜者": "Flavio MOURIER/Quadri ARUNA",
+    "负者": "Alexis KOURAICHI/Jules ROLLAND",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-02-03",
+    "类型": "法国甲级联赛",
+    "胜者": "Florent LAMBIET/Joao Pedro MONTEIRO",
+    "负者": "Jules CAVAILLE/Yu KAYAMA",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-02-03",
+    "类型": "法国甲级联赛",
+    "胜者": "Stephane OUAICHE/Yu KAYAMA",
+    "负者": "Joao Pedro MONTEIRO/LIU Jialiang",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-03-03",
+    "类型": "法国甲级联赛",
+    "胜者": "Alexis KOURAICHI/Vincent PICARD",
+    "负者": "Bastien REMBERT/Can AKKUZU",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-03-03",
+    "类型": "法国甲级联赛",
+    "胜者": "Can AKKUZU/Joao GERALDO",
+    "负者": "Alexis KOURAICHI/Jules ROLLAND",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-03-03",
+    "类型": "法国甲级联赛",
+    "胜者": "Elias RANEFUR/Simon BERGLUND",
+    "负者": "Flavien COTON/Joao Pedro MONTEIRO",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-03-10",
+    "类型": "法国甲级联赛",
+    "胜者": "Alvaro ROBLES/Vitaly EFIMOV",
+    "负者": "Antoine HACHARD/Gregoire JEAN",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-03-10",
+    "类型": "法国甲级联赛",
+    "胜者": "Elias RANEFUR/Florian BOURRASSAUD",
+    "负者": "Nima ALAMIAN/Yang WANG",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-03-17",
+    "类型": "法国甲级联赛",
+    "胜者": "Alexis LEBRUN/Gregoire JEAN",
+    "负者": "Alexis KOURAICHI/Jules ROLLAND",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-03-17",
+    "类型": "法国甲级联赛",
+    "胜者": "Flavien COTON/Florent LAMBIET",
+    "负者": "Alexandre ROBINOT/Thibault PORET",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-03-19",
+    "类型": "法国甲级联赛",
+    "胜者": "Antoine HACHARD/Gregoire JEAN",
+    "负者": "Alexandre CASSIN/Flavio MOURIER",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-03-19",
+    "类型": "法国甲级联赛",
+    "胜者": "Esteban DORR/Gregoire JEAN",
+    "负者": "Flavio MOURIER/Quadri ARUNA",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-03-20",
+    "类型": "法国甲级联赛",
+    "胜者": "CHEN Tianyuan/Nima ALAMIAN",
+    "负者": "Andrea LANDRIEU/Jules CAVAILLE",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-03-20",
+    "类型": "法国甲级联赛",
+    "胜者": "Jules CAVAILLE/Stephane OUAICHE",
+    "负者": "CHEN Tianyuan/Yang WANG",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-03-24",
+    "类型": "法国甲级联赛",
+    "胜者": "Alexandre CASSIN/Thomas LAROCHE",
+    "负者": "Stephane OUAICHE/Yu KAYAMA",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-03-24",
+    "类型": "法国甲级联赛",
+    "胜者": "Alexandre ROBINOT/Vitaly EFIMOV",
+    "负者": "Elias RANEFUR/LIU Yebo",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-03-24",
+    "类型": "法国甲级联赛",
+    "胜者": "Andrea LANDRIEU/Yu KAYAMA",
+    "负者": "Flavio MOURIER/Thomas LAROCHE",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-03-24",
+    "类型": "法国甲级联赛",
+    "胜者": "Thibault PORET/Vitaly EFIMOV",
+    "负者": "Florian BOURRASSAUD/LIU Yebo",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-04-07",
+    "类型": "法国甲级联赛",
+    "胜者": "Alvaro ROBLES/Thibault PORET",
+    "负者": "Nima ALAMIAN/Yang WANG",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-04-07",
+    "类型": "法国甲级联赛",
+    "胜者": "Flavien COTON/Joao Pedro MONTEIRO",
+    "负者": "Flavio MOURIER/Thomas LAROCHE",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-04-07",
+    "类型": "法国甲级联赛",
+    "胜者": "Jules ROLLAND/Vincent PICARD",
+    "负者": "Florian BOURRASSAUD/LIU Yebo",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-04-07",
+    "类型": "法国甲级联赛",
+    "胜者": "Lev KATSMAN/WANG Xin",
+    "负者": "Andrea LANDRIEU/Jules CAVAILLE",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-04-07",
+    "类型": "法国甲级联赛",
+    "胜者": "Vladimir SIDORENKO/WANG Xin",
+    "负者": "Jules CAVAILLE/Stephane OUAICHE",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-04-10",
+    "类型": "法国甲级联赛",
+    "胜者": "CHEN Tianyuan/Nima ALAMIAN",
+    "负者": "Alexis KOURAICHI/Vincent PICARD",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-04-10",
+    "类型": "法国甲级联赛",
+    "胜者": "Jules ROLLAND/Vincent PICARD",
+    "负者": "CHEN Tianyuan/Yang WANG",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "法国甲级联赛",
+    "胜者": "Bastien REMBERT/Joe SEYFRIED",
+    "负者": "Gregoire JEAN/Remi BETELU",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "法国甲级联赛",
+    "胜者": "Bastien REMBERT/Lilian BARDET",
+    "负者": "Antoine HACHARD/Gregoire JEAN",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-09-22",
+    "类型": "法国甲级联赛",
+    "胜者": "Flavien COTON/Luka MLADENOVIC",
+    "负者": "Benjamin FRUCHART/Clement LAINE-CAMPINO",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-09-25",
+    "类型": "法国甲级联赛",
+    "胜者": "Antoine HACHARD/Gregoire JEAN",
+    "负者": "Alexis KOURAICHI/Thibault BAILLIET",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-09-25",
+    "类型": "法国甲级联赛",
+    "胜者": "Thibault BAILLIET/Vincent PICARD",
+    "负者": "Gregoire JEAN/Remi BETELU",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-09-29",
+    "类型": "法国甲级联赛",
+    "胜者": "Alexis KOURAICHI/Vincent PICARD",
+    "负者": "Flavien COTON/Florent LAMBIET",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-09-29",
+    "类型": "法国甲级联赛",
+    "胜者": "Bence MAJOROS/David SZANTOSI",
+    "负者": "Mathieu DE SAINTILAN/Tristan FLORE",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-09-29",
+    "类型": "法国甲级联赛",
+    "胜者": "Elias RANEFUR/Florian BOURRASSAUD",
+    "负者": "Antoine HACHARD/Remi BETELU",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-09-29",
+    "类型": "法国甲级联赛",
+    "胜者": "Esteban DORR/Nathan PILARD",
+    "负者": "Benjamin FRUCHART/Clement LAINE-CAMPINO",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-09-29",
+    "类型": "法国甲级联赛",
+    "胜者": "Florent LAMBIET/Leo DE NODREST",
+    "负者": "Alexis KOURAICHI/Thibault BAILLIET",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-09-29",
+    "类型": "法国甲级联赛",
+    "胜者": "Hugo DESCHAMPS/Mathieu DE SAINTILAN",
+    "负者": "Antoine NOIRAULT/David SZANTOSI",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-09-29",
+    "类型": "法国甲级联赛",
+    "胜者": "Nathan PILARD/Thibault PORET",
+    "负者": "Benjamin FRUCHART/Nima ALAMIAN",
+    "比分": "3-1"
   }
 ]

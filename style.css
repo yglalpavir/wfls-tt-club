@@ -975,11 +975,11 @@ html:lang(en) .hero-title {
 
 /* Footer — 极简黑底编辑风：左品牌锁定块 + 三列大字链接，底栏细分隔线 + 社交图标 */
 .footer {
-    background: #000;
+    background: #0a1628;
     color: #fff;
     padding: 72px 0 calc(40px + env(safe-area-inset-bottom));
 }
-.dark-mode .footer { background: #000; }
+.dark-mode .footer { background: #0d1117; }
 .footer-main { display: grid; grid-template-columns: minmax(0,1.7fr) repeat(3, minmax(0,1fr)); gap: 48px 56px; }
 .footer-brand-lockup { display: block; color: #fff; }
 .footer-brand-name { font-family: var(--font-en); font-weight: 700; font-size: clamp(1.1rem, 1.6vw, 1.4rem); line-height: 1.3; color: #fff; }

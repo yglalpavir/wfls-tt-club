@@ -162,6 +162,9 @@ function renderEfficiencyScatter(topN) {
 
     const data = allPlayers
         .filter(n => (stats[n] && stats[n].total > 0))
+        // 社团口径：players.json 档案标记为已离校（status 非 active）的成员不进效率图。
+        // 档案查无此人时照常显示 —— 没有档案不等于已离校，不能顺带一起滤掉。
+        .filter(n => { const p = getPlayerByName(n); return !p || !p.status || p.status === 'active'; })
         .sort((a, b) => (scoreMap[b] || 0) - (scoreMap[a] || 0))
         .slice(0, topN)
         .map(n => {

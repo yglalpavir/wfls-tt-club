@@ -193,7 +193,7 @@ async function loadRankingData() {
         const runWave = wave => Promise.all(wave.map(async f => {
             const ok = await f.loader();
             doneFiles++;
-            updateProgress(i18n[currentLang].rank_download_file.replace('{label}', f.label).replace('{i}', doneFiles).replace('{total}', totalFiles).replace('{file}', f.name));
+            updateProgress(i18n[currentLang].rank_download_file.replace('{label}', f.label).replace('{i}', doneFiles).replace('{total}', totalFiles));
             return { f, ok };
         }));
         const r1 = await runWave(wave1);

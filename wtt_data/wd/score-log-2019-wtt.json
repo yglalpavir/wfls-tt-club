@@ -3,19 +3,37 @@
     "日期": "2019-09-08",
     "类型": "T联赛",
     "胜者": "Yuka UMEMURA/Ayane MORITA",
-    "负者": "ZENG Jian/Mizuki MORIZONO"
+    "负者": "ZENG Jian/Mizuki MORIZONO",
+    "比分": "2-1",
+    "局分": [
+      "11-5",
+      "10-11",
+      "13-11"
+    ]
   },
   {
     "日期": "2019-11-23",
     "类型": "T联赛",
     "胜者": "Misaki MORIZONO/Rika SUZUKI",
-    "负者": "Sofia POLCANOVA/ZENG Jian"
+    "负者": "Sofia POLCANOVA/ZENG Jian",
+    "比分": "2-1",
+    "局分": [
+      "11-5",
+      "6-11",
+      "11-7"
+    ]
   },
   {
     "日期": "2019-12-07",
     "类型": "T联赛",
     "胜者": "Yuka UMEMURA/Ayane MORITA",
-    "负者": "Yui HAMAMOTO/Miyu NAGASAKI"
+    "负者": "Yui HAMAMOTO/Miyu NAGASAKI",
+    "比分": "2-1",
+    "局分": [
+      "11-7",
+      "6-11",
+      "11-9"
+    ]
   },
   {
     "日期": "2019-12-08",
@@ -27,19 +45,34 @@
     "日期": "2019-12-28",
     "类型": "T联赛",
     "胜者": "CHEN Szu-Yu/JEON Jihee",
-    "负者": "Ayane MORITA/Yuka UMEMURA"
+    "负者": "Ayane MORITA/Yuka UMEMURA",
+    "比分": "2-0",
+    "局分": [
+      "11-5",
+      "11-7"
+    ]
   },
   {
     "日期": "2019-12-30",
     "类型": "T联赛",
     "胜者": "CHEN Szu-Yu/JEON Jihee",
-    "负者": "Miyuu KIHARA/Miyu NAGASAKI"
+    "负者": "Miyuu KIHARA/Miyu NAGASAKI",
+    "比分": "2-0",
+    "局分": [
+      "11-4",
+      "11-10"
+    ]
   },
   {
     "日期": "2019-01-31",
     "类型": "T联赛",
     "胜者": "Rika SUZUKI/Minami ANDO",
-    "负者": "Miyu KATO/LEE Ho Ching"
+    "负者": "Miyu KATO/LEE Ho Ching",
+    "比分": "2-0",
+    "局分": [
+      "12-10",
+      "11-6"
+    ]
   },
   {
     "日期": "2019-02-09",
@@ -58,5 +91,405 @@
     "类型": "T联赛",
     "胜者": "ZHANG Chengcheng/ZHANG Hui",
     "负者": "Kasumi ISHIKAWA/Miyuu KIHARA"
+  },
+  {
+    "日期": "2019-01-30",
+    "类型": "T联赛",
+    "胜者": "CHANG Chenchen/JIANG Hui",
+    "负者": "Shiho MATSUDAIRA/Yumeno SOMA",
+    "比分": "2-0",
+    "局分": [
+      "11-5",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2019-02-02",
+    "类型": "T联赛",
+    "胜者": "CHANG Chenchen/JIANG Hui",
+    "负者": "Miwa HARIMOTO/Mizuki MORIZONO",
+    "比分": "2-1",
+    "局分": [
+      "7-11",
+      "11-7",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2019-02-03",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI/Miyuu KIHARA",
+    "负者": "Minami ANDO/Rika SUZUKI",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2019-02-09",
+    "类型": "T联赛",
+    "胜者": "CHANG Chenchen/JIANG Hui",
+    "负者": "DOO Hoi Kem/Miyu NAGASAKI",
+    "比分": "2-0",
+    "局分": [
+      "11-6",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2019-02-10",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI/Miyuu KIHARA",
+    "负者": "FENG Tianwei/LAN Xi",
+    "比分": "2-0",
+    "局分": [
+      "11-1",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2019-02-10",
+    "类型": "T联赛",
+    "胜者": "CHANG Chenchen/JIANG Hui",
+    "负者": "Minami ANDO/Rika SUZUKI",
+    "比分": "2-1",
+    "局分": [
+      "11-9",
+      "4-11",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2019-02-11",
+    "类型": "T联赛",
+    "胜者": "FENG Tianwei/LAN Xi",
+    "负者": "Minami ANDO/Rika SUZUKI",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2019-02-16",
+    "类型": "T联赛",
+    "胜者": "Kasumi ISHIKAWA/Miyuu KIHARA",
+    "负者": "CHANG Chenchen/JIANG Hui",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2019-02-17",
+    "类型": "T联赛",
+    "胜者": "Kasumi ISHIKAWA/Miyuu KIHARA",
+    "负者": "FENG Tianwei/LAN Xi",
+    "比分": "2-1",
+    "局分": [
+      "5-11",
+      "11-5",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2019-02-19",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI/YUAN Xuejiao",
+    "负者": "FENG Tianwei/LAN Xi",
+    "比分": "2-1",
+    "局分": [
+      "2-11",
+      "11-8",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2019-02-20",
+    "类型": "T联赛",
+    "胜者": "Minami ANDO/Rika SUZUKI",
+    "负者": "LAN Xi/LEE Ho Ching",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2019-02-21",
+    "类型": "T联赛",
+    "胜者": "Minami ANDO/Rika SUZUKI",
+    "负者": "CHANG Chenchen/JIANG Hui",
+    "比分": "2-1",
+    "局分": [
+      "9-11",
+      "11-4",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2019-02-22",
+    "类型": "T联赛",
+    "胜者": "CHANG Chenchen/JIANG Hui",
+    "负者": "Miyu NAGASAKI/Miyuu KIHARA",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2019-02-23",
+    "类型": "T联赛",
+    "胜者": "FENG Tianwei/LAN Xi",
+    "负者": "HAN Ying/SUH Hyowon",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2019-02-24",
+    "类型": "T联赛",
+    "胜者": "CHANG Chenchen/JIANG Hui",
+    "负者": "Minami ANDO/Moe NOMURA",
+    "比分": "2-0",
+    "局分": [
+      "14-12",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2019-03-17",
+    "类型": "T联赛",
+    "胜者": "CHANG Chenchen/JIANG Hui",
+    "负者": "Kasumi ISHIKAWA/Miyuu KIHARA",
+    "比分": "2-1",
+    "局分": [
+      "8-11",
+      "11-7",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2019-08-30",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI/Miyuu KIHARA",
+    "负者": "CHEN Szu-Yu/Miyu MAEDA",
+    "比分": "2-1",
+    "局分": [
+      "11-9",
+      "8-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2019-08-31",
+    "类型": "T联赛",
+    "胜者": "DOO Hoi Kem/ZENG Jian",
+    "负者": "Rika SUZUKI/YANG Haeun",
+    "比分": "2-1",
+    "局分": [
+      "11-5",
+      "6-11",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2019-08-31",
+    "类型": "T联赛",
+    "胜者": "LEE Ho Ching/SOO Wai Yam Minnie",
+    "负者": "JEON Jihee/YU Mengyu",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2019-09-01",
+    "类型": "T联赛",
+    "胜者": "Rika SUZUKI/YANG Haeun",
+    "负者": "CHEN Szu-Yu/Miyu MAEDA",
+    "比分": "2-1",
+    "局分": [
+      "4-11",
+      "11-6",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2019-09-01",
+    "类型": "T联赛",
+    "胜者": "Mizuki MORIZONO/ZENG Jian",
+    "负者": "LEE Ho Ching/SOO Wai Yam Minnie",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2019-09-02",
+    "类型": "T联赛",
+    "胜者": "Ayane MORITA/Misaki MORIZONO",
+    "负者": "LEE Ho Ching/SOO Wai Yam Minnie",
+    "比分": "2-1",
+    "局分": [
+      "11-9",
+      "5-11",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2019-09-06",
+    "类型": "T联赛",
+    "胜者": "HUANG Yu-Wen/Sawettabut SUTHASINI",
+    "负者": "Mizuki MORIZONO/ZENG Jian",
+    "比分": "2-1",
+    "局分": [
+      "9-11",
+      "11-10",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2019-09-07",
+    "类型": "T联赛",
+    "胜者": "CHEN Szu-Yu/YU Mengyu",
+    "负者": "Mizuki MORIZONO/ZENG Jian",
+    "比分": "2-0",
+    "局分": [
+      "11-8",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2019-09-07",
+    "类型": "T联赛",
+    "胜者": "Ayane MORITA/Yuka UMEMURA",
+    "负者": "HUANG Yu-Wen/Sawettabut SUTHASINI",
+    "比分": "2-1",
+    "局分": [
+      "11-10",
+      "9-11",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2019-09-08",
+    "类型": "T联赛",
+    "胜者": "HUANG Yu-Wen/Sawettabut SUTHASINI",
+    "负者": "CHEN Szu-Yu/YU Mengyu",
+    "比分": "2-0",
+    "局分": [
+      "11-9",
+      "11-10"
+    ]
+  },
+  {
+    "日期": "2019-09-09",
+    "类型": "T联赛",
+    "胜者": "CHEN Szu-Yu/Miyu MAEDA",
+    "负者": "Ayane MORITA/Misaki MORIZONO",
+    "比分": "2-0",
+    "局分": [
+      "11-2",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2019-11-23",
+    "类型": "T联赛",
+    "胜者": "HUANG Yu-Wen/LEE Ho Ching",
+    "负者": "Miyu MAEDA/Sakura MORI",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2019-11-24",
+    "类型": "T联赛",
+    "胜者": "HUANG Yu-Wen/LEE Ho Ching",
+    "负者": "Misaki MORIZONO/Rika SUZUKI",
+    "比分": "2-0",
+    "局分": [
+      "11-3",
+      "11-10"
+    ]
+  },
+  {
+    "日期": "2019-11-24",
+    "类型": "T联赛",
+    "胜者": "Miyu MAEDA/Sakura MORI",
+    "负者": "DOO Hoi Kem/ZENG Jian",
+    "比分": "2-0",
+    "局分": [
+      "11-7",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2019-12-07",
+    "类型": "T联赛",
+    "胜者": "Kaho AKAE/Miyu MAEDA",
+    "负者": "LEE Ho Ching/SOO Wai Yam Minnie",
+    "比分": "2-1",
+    "局分": [
+      "8-11",
+      "11-10",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2019-12-08",
+    "类型": "T联赛",
+    "胜者": "Kaho AKAE/Miyu MAEDA",
+    "负者": "Miyu NAGASAKI/ZENG Jian",
+    "比分": "2-0",
+    "局分": [
+      "11-10",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2019-12-08",
+    "类型": "T联赛",
+    "胜者": "LEE Ho Ching/SOO Wai Yam Minnie",
+    "负者": "Ayane MORITA/Yuka UMEMURA",
+    "比分": "2-1",
+    "局分": [
+      "6-11",
+      "11-9",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2019-12-27",
+    "类型": "T联赛",
+    "胜者": "Rika SUZUKI/YANG Haeun",
+    "负者": "Miku IZUMO/Sawettabut SUTHASINI",
+    "比分": "2-1",
+    "局分": [
+      "10-11",
+      "11-10",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2019-12-29",
+    "类型": "T联赛",
+    "胜者": "Miyu NAGASAKI/Miyuu KIHARA",
+    "负者": "Miku IZUMO/Sawettabut SUTHASINI",
+    "比分": "2-0",
+    "局分": [
+      "11-4",
+      "11-6"
+    ]
   }
 ]
