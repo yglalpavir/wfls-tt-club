@@ -60,6 +60,7 @@ const opt = {
    * --games 退化成保险上限（避免卡死/死循环把 CPU 占到天荒地老）。
    * 预算在轮次边界判定，所以每轮（--step）的验证与检查点一定成对落盘。 */
   hours: 0,
+  hoursAdd: 0,   // 本次额外投入的墙钟预算（叠加在断点已耗时之上；--hours 是跨中断累计的总量）
   /* 每轮验证的对手档位。默认全阶梯 5 档；'default' 强制保留——它是采纳护栏的
    * 参照（vs默认 不劣于 -5pp 才采纳），拿掉它等于关掉防崩保护。 */
   vallevels: 'default,hell,elite,extreme,extreme-max',
@@ -90,6 +91,7 @@ for(let i = 0; i < args.length; i++){
   else if(args[i] === '--ckpt') opt.ckpt = parseInt(args[++i], 10);
   else if(args[i] === '--eps-reset') opt.epsReset = parseInt(args[++i], 10);
   else if(args[i] === '--hsizes') opt.hSizesArg = args[++i];
+  else if(args[i] === '--hours-add') opt.hoursAdd = parseFloat(args[++i]);
   else if(args[i] === '--from'){
     const v = args[++i];
     if(String(v).toLowerCase() === 'random'){ opt.fromRandom = true; opt.from = '(random)'; }
@@ -344,7 +346,13 @@ const resumeWr = (tag) => {
 
 /* ---- 检查点目录：默认 data/checkpoints/<run>/；续训时沿用上次的目录 ---- */
 const RUN_NAME = opt.runName || (RESUME && RESUME.idx && RESUME.idx.run) || ('input3-' + dayStamp());
-const CKPT_DIR = opt.ckptDir || (RESUME && RESUME.dir) || path.join(ROOT, 'data', 'checkpoints', RUN_NAME);
+/* 续训默认写回起点所在目录（同一条曲线接着长），但显式给了 --ckptdir 或 --run-name
+ * 就以显式值为准 —— 否则「换个名字重跑一轮」会静默写进旧目录，把新旧口径（或两个
+ * 实验）的曲线混在一起，读图时无从分辨。 */
+const CKPT_DIR = opt.ckptDir
+  || ((opt.runName || (RESUME && RESUME.dir)) ? path.join(ROOT, 'data', 'checkpoints', RUN_NAME) : null)
+  || (RESUME && RESUME.dir)
+  || path.join(ROOT, 'data', 'checkpoints', RUN_NAME);
 const IDX_PATH = path.join(CKPT_DIR, 'index.json');
 /* 曲线文件的目录要在这里就建好。18h 预设把曲线放在检查点目录里
  * （data/checkpoints/input3-18h/curve.json），而那个目录原本只有写检查点时才建；
@@ -393,7 +401,20 @@ const curve = (() => {
   }catch(e){ return []; }
 })();
 /* ---- 墙钟预算：--hours 换算成秒；续训要扣掉断点里已累计的耗时 ---- */
-const BUDGET_SEC = opt.hours > 0 ? opt.hours * 3600 : 0;
+/* 预算 = --hours（跨中断累计的总量） + --hours-add（本次额外投入）。
+ * 只有 --hours 时，续训一个已耗 8.6h 的断点再给 --hours 3 会让剩余预算为 0、
+ * 训练循环一次都不进；--hours-add 让「在既有进度上再投 N 小时」成为可能。 */
+/* 墙钟预算的三种写法，语义互不相同，别混：
+ *   --hours N    总量 N 小时（跨多次中断累计）。断点已耗 8.6h 时给 --hours 3
+ *                会让剩余为 0、训练循环一次都不进（elapsed() 含 R.elapsed）。
+ *   --hours-add N  在既有累计之上**再追加** N 小时——「已经跑了 8.6h，再投 3 小时」
+ *                就用这个，与 R.elapsed 无关。
+ *   都不给        无墙钟限制，只受 --games 约束。
+ * 折算成同一个 BUDGET_SEC 时：--hours 优先；否则基准是断点已耗时 + 本次追加。 */
+const RESUME_ELAPSED = R.elapsed || 0;
+const BUDGET_SEC = opt.hours > 0
+  ? opt.hours * 3600
+  : (opt.hoursAdd > 0 ? RESUME_ELAPSED + opt.hoursAdd * 3600 : 0);
 const elapsed = () => R.elapsed + (Date.now() - t0) / 1000;
 const remain = () => BUDGET_SEC > 0 ? Math.max(0, BUDGET_SEC - elapsed()) : -1;
 /* 实测吞吐（含梯度更新；tools/_probe_thr.js 量的，24 核 / adam / learnp 2）：
@@ -446,7 +467,7 @@ console.log('  每轮验证：' + VAL_TAGS.length + ' 档 × ' + opt.eval + ' �
 console.log('  games=' + opt.games + ' step=' + opt.step + ' ckpt=' + opt.ckpt + ' jitter=' + opt.jitter +
   ' seed=' + opt.seed +
   (BUDGET_SEC > 0
-    ? '  预算=' + opt.hours + 'h' + (R.elapsed > 0
+    ? '  预算=' + (opt.hoursAdd > 0 ? '+' + opt.hoursAdd + 'h' : opt.hours + 'h') + (R.elapsed > 0
         ? '（已耗 ' + (R.elapsed / 3600).toFixed(2) + 'h / 剩 ' + (remain() / 3600).toFixed(2) + 'h）' : '')
     : ''));
 console.log('  优化器：' + trainMode);
@@ -459,7 +480,7 @@ if(R.resumed){
 }
 T.phase('train', (R.resumed ? '断点续训 ep=' + (R.ep0 + 1) + ' · ' : '新起点 · ') +
   'games=' + opt.games + ' 课程=' + PHASES.map(p => p.tag + '=' + p.share.toFixed(2)).join(',') +
-  (BUDGET_SEC > 0 ? ' 预算=' + opt.hours + 'h' : ''));
+  (BUDGET_SEC > 0 ? ' 预算=' + (opt.hoursAdd > 0 ? '+' + opt.hoursAdd + 'h' : opt.hours + 'h') + '（本次投入）' : ''));
 T.tick({ t:'start', run:RUN_NAME, resumed:R.resumed, ep0:R.ep0 + 1, games:opt.games, step:opt.step,
          vallevels:VAL_TAGS.map(l => l.tag).join(','), valgames:opt.eval,
          budgetSec:BUDGET_SEC, elapsedSec:R.elapsed, ckptSec:opt.noCkpt ? 0 : opt.ckpt,
@@ -485,7 +506,12 @@ agent.setBcMix(opt.bcmix);
  * 断点续训时沿用 index 里记录的基线（同一起点权重，重跑只会多花几十秒并引入噪声）；
  * 裸权重续训 / 新跑则现场标定。护栏依赖的档位有一条缺失就整体重测，
  * 宁可多花几十秒也不要拿残缺基线去比。 */
-const BASE_G = Math.max(60, opt.eval * 2);
+/* 基线标定的局数：只用于定"起点权重有多强"这条判定线，需要够稳但不必和正式
+ * 验证同等精度。原值 max(60, eval*2) 在 --eval 77 下是 154 局/档，5 档共 770 局
+ * ≈ 56 分钟——续训还没开跑就先吃掉半个预算（实测卡在这一步很久）。
+ * 60 局/档的噪声约 ±6.3pp，对"护栏判定线"足够（它只决定"是否比起点强"）。
+ * 环境口径变更后基线必须重标（旧的作废），所以这条路径不可避免，只能把单次成本压下来。 */
+const BASE_G = Math.max(40, Math.round(opt.eval * 0.8));
 const needTags = ['default', opt.end, PHASES[0].tag].filter((t, i, a) => a.indexOf(t) === i);
 const baseUsable = !!(R.base && needTags.every(t => R.base[t] != null));
 if(R.base && !baseUsable){
@@ -496,7 +522,12 @@ const baseLadder = (R.base && baseUsable)
   ? VAL_TAGS.map(lv => R.base[lv.tag] != null
       ? { tag: lv.tag, id: lv.id, wr: R.base[lv.tag], games: BASE_G, detail: '断点记录' } : null)
       .filter(Boolean)
-  : ladderEval(agent, opt.seed * 13, BASE_G, VAL_TAGS);
+  /* 只标定护栏真正要用的档位（needTags = default / 顶档 / 课程首档）。
+   * 原来跑满 VAL_TAGS 全部 5 档，但下游 baseDef/baseMax/basePhase 只读这 3 档，
+   * 多出的 2 档纯属浪费——--eval 77 下就是白跑 246 局 ≈ 18 分钟。
+   * 曲线/面板展示用的是每轮验证的 wr，不依赖 baseLadder，所以这里窄化不影响任何显示。 */
+  : ladderEval(agent, opt.seed * 13, BASE_G,
+               VAL_TAGS.filter(lv => needTags.indexOf(lv.tag) >= 0));
 console.log('基线（' + (R.base ? '断点记录' : '起点权重') + '）：' +
   baseLadder.map(r => r.tag + '=' + (r.wr * 100).toFixed(1) + '%').join('  '));
 const wrOfTag = (arr, tag, fb) => {
@@ -568,10 +599,23 @@ agent.setLearnPerPoint(opt.learnp);
 const EPS_BASE0 = 0.18, EPS_BASE1 = 0.07, EPS_PULSE = 0.30;
 /* 续训学习率：起点是好策略，起步就要比从头训练低一个量级；600 局走完衰减 */
 const LR_0 = 0.00010, LR_1 = 0.000035, LR_HORIZON = 600;
-/* 早停门槛要宽：40 局评估的样本噪声就有 ±10pp（实测同一轮内 63%~81% 来回摆），
- * 拿它当判据会把正在恢复的轮次错杀。护栏（bestDef）已保证不会采纳退化权重，
- * 早停只用来兜"彻底崩了"的情形。 */
-const ABORT_GAP = 0.18, ABORT_N = 4;
+/* ---- 早停（兜底：只在模型"彻底崩了"时停）----
+ *
+ * 判据用两条，**都与起点基线无关**——这是 2026-10-03 修掉的一个真 bug：
+ * 原来写的是 `epD < baseDef - ABORT_GAP`，ABORT_GAP=0.18。它在旧配置下成立
+ * （起点是有能力的模型，基线 37.7%，阈值 19.7%），但从零训练（--from random）
+ * 后基线只有 7.0%，阈值算成 **-11%** —— 胜率不可能低于 0，这个条件**永远为假**。
+ * 后果实测：ep5400 的 vs地狱 掉到 5.7%（比随机初始化还差），日志里一条
+ * 退化告警都没有，早停形同虚设。
+ *
+ * 现在的两条判据：
+ *   1) ABORT_DROP —— 相对**本轮最佳**的跌幅。选优分 bestScore 已经吸收了
+ *      「对手变强时分数自然降低」的影响，所以拿它当参照不会被课程推进误伤。
+ *      0.30 = 掉到峰值的 70%；77 局评估的噪声约 ±5.7pp，30pp 是它的 5 倍余量。
+ *   2) ABORT_FLOOR —— 绝对地板 0.12。低于 12% 基本等于没在打球（比随机初始化的
+ *      7% 高不了多少），任何训练配置下这都是废的。
+ * 两条都满足才算退化，连续 ABORT_N 轮才停，避免单轮噪声误杀。 */
+const ABORT_DROP = 0.30, ABORT_FLOOR = 0.12, ABORT_N = 4;
 const clEps = (v) => v < 0.02 ? 0.02 : (v > 1 ? 1 : v);
 let epsBoost = 0;
 let degenerate = 0;
@@ -636,8 +680,9 @@ if(BUDGET_SEC > 0 && elapsed() >= BUDGET_SEC){
   budgetExhausted = true;
   console.warn('\n⏱ --hours ' + opt.hours + ' 预算已用完（断点累计 ' + fmtH(R.elapsed) +
     '）——没有可继续的训练量。');
-  console.warn('  加预算：--hours ' + Math.ceil(R.elapsed / 3600 + 1) +
-    '（覆盖已累计的 ' + (R.elapsed / 3600).toFixed(2) + 'h），或 --hours 0 取消限时只用 --games 兜底。');
+  console.warn('  加预算：--hours-add 3（在已累计的 ' + (R.elapsed / 3600).toFixed(2) +
+    'h 之上再投 3h），或 --hours ' + Math.ceil(R.elapsed / 3600 + 1) +
+    '（总量覆盖式），或两者都不给取消限时只用 --games 兜底。');
   T.tick({ t:'budget', exhausted:true, hours:opt.hours, elapsedSec:R.elapsed, sec:R.elapsed });
 }
 /* 心跳计时：一轮 --step 可能长达 20 多分钟，期间若不打点，面板在长跑里只剩
@@ -749,14 +794,18 @@ for(let g = R.ep0; g < opt.games && !budgetExhausted && !stopRequested; g++){ st
         ' · vs' + opt.end + ' ' + (epM * 100).toFixed(1) + '% · vs本档 ' + (epH * 100).toFixed(1) +
         '% · vs默认 ' + (epD * 100).toFixed(1) + '%');
     }
-    /* 早停：连续多块评估都远低于基线，说明这组超参在毁模型（典型：BC 占比过高、
-     * 学习率过大、回放太小），立刻停并回退基线权重。阈值刻意放宽——
-     * 详见 ABORT_GAP 注释。 */
-    if(epD < baseDef - ABORT_GAP || epM < baseMax - ABORT_GAP){
+    /* 早停：连续 ABORT_N 轮同时满足「相对本轮最佳跌幅过大」且「绝对地板过低」，
+     * 说明这组超参在毁模型（典型：BC 占比过高、学习率过大、回放太小），立刻停。
+     * 详见 ABORT_DROP 注释——关键是判据不依赖起点基线，否则从零训练时阈值会变成负数。 */
+    const abDrop = (bestScore > 0) && (sc < bestScore * (1 - ABORT_DROP));
+    const abFloor = (epD < ABORT_FLOOR) && (epM < ABORT_FLOOR);
+    if(abDrop || abFloor){
       degenerate++;
-      console.warn('  ⚠ 评估远低于基线（vs默认 ' + (epD * 100).toFixed(1) + '% vs 基线 ' + (baseDef * 100).toFixed(1) +
-        '%；vs' + opt.end + ' ' + (epM * 100).toFixed(1) + '% vs 基线 ' + (baseMax * 100).toFixed(1) +
-        '%）· 退化 ' + degenerate + '/' + ABORT_N);
+      console.warn('  ⚠ 评估退化（vs默认 ' + (epD * 100).toFixed(1) + '% · vs' + opt.end + ' ' +
+        (epM * 100).toFixed(1) + '% · 本轮分 ' + (sc * 100).toFixed(1) + '% vs 最佳 ' +
+        (bestScore * 100).toFixed(1) + '%' +
+        (abDrop ? ' · 跌幅>30%' : '') + (abFloor ? ' · 低于地板12%' : '') +
+        '）· 退化 ' + degenerate + '/' + ABORT_N);
     } else degenerate = 0;
     if(degenerate >= ABORT_N){
       console.warn('  ✗ 连续 ' + ABORT_N + ' 块评估退化，提前停止（结果回退到基线权重）');

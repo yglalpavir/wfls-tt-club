@@ -29,3 +29,7 @@ js/*.bak-*
 *.log
 # 2026-09-13 UI 改版前的整份游戏备份，脚本清单已过期，无人链接
 backups/
+
+# ---- 烘焙权重备份：自动烘焙每 3 小时存一版（14MB/版，保留最近 8 版）----
+# 回滚用：cp data/bak/input-weights.<mmdd-HHMM>.js js/input-weights.js
+data/bak/

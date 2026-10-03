@@ -6,11 +6,13 @@
  * ============================================================ */
 
 /* ---------- 记分牌 scorebug：官网白玻璃胶囊 ---------- */
-#scorebug{position:absolute;top:18px;left:50%;transform:translateX(-50%);
+#scorebug{position:absolute;top:calc(18px + env(safe-area-inset-top));left:50%;
+  transform:translateX(-50%);
   display:flex;align-items:stretch;border-radius:var(--r-lg);overflow:visible;
   background:var(--glass-hi);
   backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
-  border:1px solid var(--line);box-shadow:var(--shadow-lg)}
+  border:1px solid var(--line);box-shadow:var(--shadow-lg);
+  max-width:calc(100vw - 24px)}
 #scorebug .team,#scorebug .mid{position:relative;padding:8px 22px}
 #scorebug .inner{display:flex;align-items:center;gap:12px}
 .team.you{background:linear-gradient(180deg,rgba(255,77,79,.1),rgba(255,77,79,.02) 70%);
@@ -48,7 +50,8 @@
 #rallyChip.hot{opacity:1;text-shadow:0 0 14px rgba(240,165,0,.45)}
 
 /* ---------- LIVE 状态 / 遥测 chip ---------- */
-#liveChip{position:absolute;top:20px;left:20px;font-size:10.5px;font-weight:600;
+#liveChip{position:absolute;top:calc(20px + env(safe-area-inset-top));
+  left:calc(20px + env(safe-area-inset-left));font-size:10.5px;font-weight:600;
   letter-spacing:2.5px;color:var(--t-mid);display:flex;align-items:center;gap:8px;
   background:var(--glass);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
   padding:7px 14px;border:1px solid var(--line);border-radius:var(--r-pill);
@@ -61,9 +64,10 @@
   background:var(--glass);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
   padding:7px 14px;border:1px solid rgba(13,148,136,.35);border-radius:var(--r-pill);
   box-shadow:var(--shadow-md);white-space:nowrap}
-#statusLine{position:absolute;top:100px;left:50%;transform:translateX(-50%);
+#statusLine{position:absolute;top:calc(100px + env(safe-area-inset-top));left:50%;
+  transform:translateX(-50%);max-width:calc(100vw - 24px);
   font-size:12px;font-weight:600;letter-spacing:4px;color:var(--t-inv);
-  text-shadow:0 2px 10px rgba(5,8,15,.85);white-space:nowrap}
+  text-shadow:0 2px 10px rgba(5,8,15,.85);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 /* ---------- 得分/信息提示 toast（直压场景，保持亮字） ---------- */
 #toast{position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);
@@ -89,7 +93,11 @@
 #counterHint,#pushHint{position:absolute;left:50%;transform:translateX(-50%) translateY(8px);
   display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;letter-spacing:2.5px;
   padding:8px 18px;border-radius:var(--r-pill);opacity:0;transition:opacity .25s,transform .25s;
+  max-width:calc(100vw - 24px);
   backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur)}
+/* 文案放在内层 span：外层是 flex 容器，text-overflow 对它无效，
+   长文案（英文提示尤其长）会被硬切，加省略号才有提示作用 */
+#counterHint>span,#pushHint>span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 #counterHint{bottom:124px;background:var(--glass-hi);border:1px solid rgba(0,123,255,.5);
   color:var(--blue-d)}
 #counterHint::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--blue);
@@ -103,9 +111,15 @@
 #pushHint.on{opacity:1;transform:translateX(-50%) translateY(0);animation:phPulse .9s ease-in-out infinite}
 @keyframes phPulse{50%{border-color:rgba(13,148,136,.95);box-shadow:0 0 24px rgba(13,148,136,.3)}}
 
-/* ---------- 球台下方 deck：握法徽章 + 挥拍条 + 发球指示 ---------- */
-#deck{position:absolute;left:50%;bottom:66px;transform:translateX(-50%);
-  display:flex;gap:10px;align-items:stretch}
+/* ---------- 球台下方 deck：握法徽章 + 挥拍条 + 发球指示 ----------
+   width:max-content 不能省：#deck 是 absolute + left:50% 且没有 right，
+   收缩宽度会被"可用宽度 = 100% - 50%"卡在 50vw，导致三块内容在窄屏被迫竖排三行、
+   整个压到底栏上。配合 max-width 才是"能一行就一行、放不下才换行"。
+   bottom 用实测的 --barH（底栏真实高度，由 js/ui.js 写入），底栏换行变高时也不会被压住。 */
+#deck{position:absolute;left:50%;bottom:calc(var(--barH,52px) + 14px + env(safe-area-inset-bottom));
+  transform:translateX(-50%);
+  width:max-content;max-width:min(96vw,calc(100vw - 20px));
+  display:flex;gap:10px;align-items:stretch;flex-wrap:wrap;justify-content:center}
 #deck>div{border-radius:var(--r-md)}
 /* 握法徽章（JS 会把 className 整个换成 forehand/backhand，一律用 id 选择器） */
 #stanceChip{display:flex;align-items:center;gap:11px;padding:8px 18px;
@@ -162,11 +176,14 @@
 #serveChip span{font-size:9px;letter-spacing:1px;color:var(--t-dim)}
 
 /* ---------- 底部栏 / 键位提示 / 按钮 ---------- */
+/* 不要给这里加 gap：#hints + #btns 在 1280 宽恰好占满，额外间距会触发 flex 收缩，
+   让桌面端的提示条和按钮列都比改前窄一截。space-between 本来就负责把两组分开。 */
 #bottomBar{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;
   align-items:center;padding:14px 22px;
+  padding-bottom:calc(14px + env(safe-area-inset-bottom));
   background:linear-gradient(transparent,rgba(8,11,18,.72))}
 #hints{display:flex;gap:15px;font-size:11.5px;color:rgba(255,255,255,.62);letter-spacing:1px;
-  flex-wrap:wrap;align-items:center}
+  flex-wrap:wrap;align-items:center;min-width:0}
 kbd{display:inline-block;border:1px solid var(--line);border-radius:7px;
   background:var(--glass-hi);color:var(--t-hi);padding:2px 8px;font-size:10.5px;
   font-family:var(--mono);margin-right:6px;
@@ -216,7 +233,13 @@ kbd{display:inline-block;border:1px solid var(--line);border-radius:7px;
 
 /* ============================================================
  *  触屏操作控件（html.touch 时启用）
- *  搓球大圆钮=右下 · 发球簇=左下（仅发球阶段） · 退出观看=左上
+ *  布局契约（改这里之前先看数字）：
+ *   · 顶部：记分牌（居中）→ 状态行 → deck（握法+挥拍条），全部锚在 top。
+ *     把 deck 从台面下方搬上来，是为了不再横压己方来球区（横屏尤其明显）。
+ *   · 底部：发球簇（左）＋ 搓球大圆钮（右），高度由 --ctrlH 实测写回 CSS。
+ *   · 右上角只剩 2 枚图标钮，系统按钮组收进贴底抽屉（默认收起）。
+ *  --ctrlH / --deckH 由 js/ui.js 的 syncTouchMetrics() 实测写入，
+ *  取代原来手调的 bottom:114/176/208px——换机型就崩的根源。
  * ============================================================ */
 #touchCtl{display:none}
 html.touch #touchCtl{display:block}
@@ -229,17 +252,52 @@ html.touch #touchCtl{display:block}
 .tc-btn>span{pointer-events:none}
 .tc-btn.active{background:rgba(240,165,0,.18);border-color:var(--gold);color:var(--gold-d);
   box-shadow:0 0 20px rgba(240,165,0,.35)}
-/* 搓球大圆钮：按住 = ctrlHold（搓球/放平拍面） */
+
+/* ---- 右上角图标簇：对局中唯一的常驻系统入口（≥44px 触控目标） ---- */
+#touchTop{position:absolute;top:calc(10px + env(safe-area-inset-top));
+  right:calc(10px + env(safe-area-inset-right));display:flex;gap:8px;z-index:3}
+.tc-ico{width:44px;height:44px;min-width:44px;padding:0;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--glass);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
+  border:1px solid var(--line);color:var(--t-hi);font-size:19px;line-height:1;
+  font-family:var(--disp);font-weight:700;
+  box-shadow:var(--shadow-md);transition:border-color .15s,background .15s,transform .15s}
+@media (hover:hover){ .tc-ico:hover{border-color:var(--blue);color:var(--blue-d)} }
+html.touch.sheet-open #btnMenuIco{background:var(--blue);border-color:var(--blue-l);color:#fff}
+/* 触屏操作速记：开局显示数秒后淡出（键鼠提示在 html.touch 下是隐藏的，触屏需要自己的）。
+   放在底部控件带上方 —— 顶部那一行已经被记分牌和图标钮占满。 */
+#touchTips{position:absolute;left:50%;bottom:calc(var(--ctrlH,94px) + 10px);
+  transform:translateX(-50%);max-width:calc(100vw - 28px);
+  display:none;align-items:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  font-size:11px;font-weight:600;letter-spacing:.5px;color:var(--t-inv);
+  background:rgba(8,11,18,.5);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
+  border:1px solid var(--line);border-radius:var(--r-pill);padding:7px 14px;
+  opacity:0;transition:opacity .45s;z-index:2}
+html.touch #touchTips{display:flex}
+html.touch #touchTips.show{opacity:1}
+/* 速记可见时把战术提示条顶上去，避免两条提示叠在同一行 */
+html.tips-on.touch #counterHint{bottom:calc(var(--ctrlH,94px) + 48px)}
+html.tips-on.touch #pushHint{bottom:calc(var(--ctrlH,94px) + 80px)}
+
+/* 抽屉遮罩：点空白处收起（它不是 button，靠 #btns/sheetCtl 之外的空白区点击关闭） */
+#sheetScrim{display:none;position:fixed;inset:0;z-index:4;pointer-events:none;
+  background:rgba(6,8,14,.55);opacity:0;transition:opacity .28s}
+html.touch.sheet-open #sheetScrim{display:block;opacity:1;pointer-events:auto}
+
+/* 搓球大圆钮：按住 = ctrlHold（搓球/放平拍面）。对局全程可用，故置于最高优先层。 */
 #btnPush{display:none;position:absolute;right:calc(16px + env(safe-area-inset-right));
   bottom:calc(18px + env(safe-area-inset-bottom));width:82px;height:82px;min-width:0;min-height:0;
-  padding:0;border-radius:50%;font-family:var(--disp);font-weight:700;font-size:32px;letter-spacing:2px}
+  padding:0;border-radius:50%;font-family:var(--disp);font-weight:700;font-size:32px;letter-spacing:2px;
+  z-index:5}
 html.touch.playing #btnPush{display:flex}
 #btnPush.active{background:rgba(13,148,136,.16);border-color:var(--teal);color:var(--teal);
   box-shadow:0 0 22px rgba(13,148,136,.4)}
-/* 发球控件簇：按住 ◀/▶ = 左右侧旋 · 点按 −/＋ = 旋转强度（仅玩家发球阶段出现） */
+/* 发球控件簇：按住 ◀/▶ = 左右侧旋 · 点按 −/＋ = 旋转强度（仅玩家发球阶段出现）
+   宽度上限为「屏宽 − 搓钮 − 边距」，放不下就换行 —— 宁可换行也绝不压到搓钮 */
 #touchServe{position:absolute;left:calc(16px + env(safe-area-inset-left));
-  bottom:calc(18px + env(safe-area-inset-bottom));display:flex;gap:10px;
-  opacity:0;transform:translateY(10px);transition:opacity .25s,transform .25s}
+  bottom:calc(18px + env(safe-area-inset-bottom));display:flex;gap:10px;flex-wrap:wrap;
+  max-width:calc(100vw - 32px - 82px - 12px);
+  opacity:0;transform:translateY(10px);transition:opacity .25s,transform .25s;z-index:5}
 #touchServe.on{opacity:1;transform:none}
 #touchServe:not(.on) button{pointer-events:none}
 /* 观看模式退出钮（对应桌面 Esc） */
@@ -247,15 +305,54 @@ html.touch.playing #btnPush{display:flex}
   top:calc(60px + env(safe-area-inset-top));min-height:42px;font-size:12px;border-radius:var(--r-pill)}
 html.touch.watching #btnExitWatch{display:flex}
 
-/* ---------- 触屏布局：隐藏键鼠提示，系统按钮改右上竖排 ---------- */
+/* 触屏下记分牌必须给右上角图标簇让位：居中时左右同时被侵蚀，右缘必然压到图标。
+   宽度取 700 而不是 560 —— 551~570 这一段虽然不进 ≤560 断点，却同样会撞。 */
+@media (max-width:700px){
+  html.touch #midLabel{display:none}
+  html.touch #mid{padding:4px 7px}
+  html.touch #scorebug{left:calc(10px + env(safe-area-inset-left));transform:none;
+    max-width:calc(100vw - 20px - 108px)}
+}
+/* ---------- 触屏布局：隐藏键鼠提示，系统按钮组收进贴底抽屉 ---------- */
 html.touch #hints{display:none}
-html.touch #bottomBar{background:linear-gradient(transparent,rgba(8,11,18,.45))}
-html.touch #btns{position:fixed;top:calc(12px + env(safe-area-inset-top));
-  right:calc(12px + env(safe-area-inset-right));flex-direction:column;align-items:flex-end;gap:8px}
-html.touch #btns .btn{padding:7px 12px;font-size:11px;letter-spacing:1px}
-html.touch #deck{bottom:114px}
-html.touch #counterHint{bottom:176px}
-html.touch #pushHint{bottom:208px}
+html.touch #bottomBar{background:none;padding:0}
+/* 抽屉本体：默认在屏幕外，sheet-open 时滑入。pointer-events:auto 整块拦截拖动，
+   否则按钮之间的空隙会把指针漏给球拍拖动逻辑。 */
+html.touch #btns{position:fixed;left:0;right:0;bottom:0;z-index:6;
+  flex-direction:column;align-items:stretch;gap:0;
+  padding:10px 12px calc(12px + env(safe-area-inset-bottom));
+  background:var(--glass-hi);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
+  border-top:1px solid var(--line);box-shadow:0 -12px 40px rgba(10,16,30,.4);
+  border-radius:var(--r-lg) var(--r-lg) 0 0;
+  transform:translateY(105%);transition:transform .3s cubic-bezier(.2,.9,.25,1);
+  pointer-events:auto}
+html.touch.sheet-open #btns{transform:none}
+/* 抽屉内为整行大按钮：远超 44px 触控下限，且横向对齐便于扫读 */
+html.touch #btns .btn{width:100%;justify-content:flex-start;
+  padding:0 20px;min-height:52px;font-size:14px;letter-spacing:1px;border-radius:var(--r-md)}
+html.touch #btns .btn + .btn{margin-top:8px}
+
+/* deck 搬到顶部：横屏时台面上方是远端背景，不再遮挡己方来球落点。
+   --deckTop 按断点给不同值（各断点下 statusLine 的底边不同）。 */
+html.touch #deck{top:calc(var(--deckTop,120px) + env(safe-area-inset-top));bottom:auto;
+  flex-wrap:wrap;justify-content:center;max-width:calc(100vw - 20px);gap:6px}
+/* deck 在触屏上要压到两行以内，否则会一路顶进球台：隐藏挥拍条的文字说明
+   （「横向滑动蓄力」已由 #touchTips 在开局时说过），并收紧各块内边距 */
+html.touch .sm-val{display:none}
+html.touch #stanceChip,html.touch #spinMeter,html.touch #serveChip{padding:5px 11px;gap:8px}
+html.touch .sm-track{width:92px}
+html.touch .sc-txt b{font-size:12px;letter-spacing:1px}
+html.touch .sc-txt span,html.touch #serveChip span{font-size:8px;letter-spacing:.5px}
+html.touch #serveChip b,html.touch .sm-label{font-size:11px;letter-spacing:1px}
+/* 战术提示条：贴在底部控件带正上方，单行不再换行堆高（SE 上曾高达 113px） */
+html.touch #counterHint,#pushHint{bottom:calc(var(--ctrlH,100px) + env(safe-area-inset-bottom) + 10px);
+  max-width:calc(100vw - 24px);font-size:11px;letter-spacing:1px;
+  padding:7px 14px;overflow:hidden}
+html.touch #pushHint{bottom:calc(var(--ctrlH,100px) + env(safe-area-inset-bottom) + 42px)}
+/* toast 落在「顶部 deck」与「底部控件带」之间的空档里，两头都不压 */
+html.touch #toast{top:46%}
+html.touch #toastBig{font-size:clamp(34px,9vw,58px);letter-spacing:4px}
+html.touch #toastSub{font-size:11.5px;letter-spacing:2px;margin-top:6px}
 
 /* ---------- 小屏响应式（窄屏 / 矮横屏） ---------- */
 @media (max-width:820px){
@@ -267,10 +364,10 @@ html.touch #pushHint{bottom:208px}
   #midLabel{font-size:8.5px;letter-spacing:1px}
   #rallyChip{font-size:12.5px}
   .gp{font-size:8.5px;padding:2px 8px}
-  #liveChip{top:12px;left:12px;font-size:9.5px;padding:5px 11px;letter-spacing:2px}
+  #liveChip{display:none}      /* 纯装饰。~680px 以下记分牌会盖住它，这里一并在 ≤820 断点内隐藏 */
   #ttStatsChip{top:12px;left:158px;font-size:9.5px;padding:5px 11px}
   #statusLine{top:72px;font-size:10.5px;letter-spacing:3px}
-  #deck{bottom:88px;gap:8px;flex-wrap:wrap;justify-content:center;max-width:96vw}
+  #deck{gap:8px}
   #stanceChip,#spinMeter,#serveChip{padding:6px 12px}
   #spinMeter{gap:8px}
   .sm-track{width:118px}
@@ -278,7 +375,8 @@ html.touch #pushHint{bottom:208px}
   .sc-txt b{font-size:12.5px}
   #counterHint{bottom:150px;font-size:11px;letter-spacing:2px;padding:7px 15px}
   #pushHint{bottom:182px;font-size:11px;letter-spacing:2px;padding:7px 15px}
-  #bottomBar{padding:10px 12px}
+  html.touch #deck{--deckTop:94px}
+  #bottomBar{padding:10px 12px;padding-bottom:calc(10px + env(safe-area-inset-bottom))}
   .btn{padding:8px 15px;font-size:11px}
 }
 @media (max-width:560px){
@@ -286,31 +384,62 @@ html.touch #pushHint{bottom:208px}
   #scorebug .team,#scorebug .mid{padding:4px 9px}
   #scorebug .inner{gap:6px}
   .name{font-size:8.5px;letter-spacing:.5px;white-space:nowrap}
-  #midLabel{font-size:8px;letter-spacing:.5px;white-space:nowrap}
+  /* 规则文案（帮助页里有）让位给分数：记分牌右侧要同时容纳右上角 2 枚图标钮 */
+  #midLabel{display:none}
+  #mid{padding:4px 7px}
   #rallyChip{font-size:10.5px;margin-top:0}
-  #statusLine{top:58px;font-size:10px;letter-spacing:2px}
-  #liveChip{display:none}              /* 窄屏：与记分牌重叠，隐藏（纯装饰） */
+  #statusLine{top:calc(58px + env(safe-area-inset-top));font-size:10px;letter-spacing:2px}
   #ttStatsChip{left:12px;top:78px}
-  html.touch #btns .btn{padding:6px 9px;font-size:10px}
   /* 非触屏窄窗：底部栏改纵排，提示整行紧凑排列 → 压低高度避免与 deck 重叠 */
-  #bottomBar{flex-direction:column;align-items:stretch;gap:7px;padding:9px 10px}
+  #bottomBar{flex-direction:column;align-items:stretch;gap:7px;padding:9px 10px;
+    padding-bottom:calc(9px + env(safe-area-inset-bottom))}
   #bottomBar #hints{width:100%;gap:6px 10px;font-size:10px}
   #bottomBar #hints kbd{font-size:9.5px;padding:1px 6px;margin-right:4px}
   #bottomBar #hints .assistTag{font-size:10px}
   #bottomBar #btns{justify-content:flex-end}
-  #deck{bottom:118px}
   #toast{top:26%}
   #toastSub{font-size:11.5px;letter-spacing:3px}
-  .tc-btn{min-width:52px;min-height:46px;padding:7px 10px;font-size:12px}
-  #btnPush{width:72px;height:72px;font-size:28px}
-  #touchServe{gap:8px}
+  .tc-btn{min-width:52px;min-height:48px;padding:7px 10px;font-size:12px}
+  #btnPush{width:76px;height:76px;font-size:28px}
+  /* 搓钮缩到 76px，发球簇的宽度上限同步收紧，否则两者仍可能贴死 */
+  #touchServe{gap:8px;max-width:calc(100vw - 32px - 76px - 12px)}
+  /* 竖屏固定成 2×2：英文标签（Left spin / Pwr ＋）比中文宽很多，靠自动换行会
+     在 320px 机上排成 3~4 行；锁死两行两列，高度恒定，提示条也好对位 */
+  #touchServe{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  #touchServe .tc-btn{min-width:0;padding:6px 8px;font-size:11px;letter-spacing:.5px}
+  #touchTop{gap:6px}
+  /* 不降到 44px 以下：触控目标下限。记分牌预留宽度(108px)已按 2×44+6+10 留足 */
+  .tc-ico{font-size:18px}
+  #touchTips{max-width:calc(100vw - 24px);font-size:10px;padding:6px 11px}
+  html.touch #deck{--deckTop:80px}
+}
+/* 极窄屏（≤420，如 iPhone SE / 多数安卓中低端机）：记分牌再收一档，
+   靠左右底色区分你我（红=你 / 蓝=AI），把宽度全让给分数与右上角图标钮 */
+@media (max-width:420px){
+  #scorebug .team{padding:3px 6px}
+  #scorebug .inner{gap:3px}
+  .pts{font-size:23px;min-width:22px}
+  .name{font-size:8px;letter-spacing:0}
+  .dot{width:7px;height:7px}
+  #mid{padding:3px 5px}
+  #rallyChip{font-size:10px;letter-spacing:.5px}
+  .gp{font-size:8px;padding:2px 6px}
 }
 @media (max-height:480px) and (orientation:landscape){
-  #scorebug{top:8px}
-  #liveChip{top:8px;left:12px}
+  #scorebug{top:calc(8px + env(safe-area-inset-top))}
+  #liveChip{top:calc(8px + env(safe-area-inset-top));left:12px}
   #ttStatsChip{top:8px}
-  #statusLine{top:54px;font-size:10px}
+  #statusLine{top:calc(72px + env(safe-area-inset-top));font-size:10px}
   #toast{top:34%}
-  html.touch #btns{top:calc(8px + env(safe-area-inset-top));right:calc(8px + env(safe-area-inset-right));gap:6px}
   html.touch #btnExitWatch{top:calc(50px + env(safe-area-inset-top))}
+  /* 矮横屏：顶部三条（记分牌 → 状态行 → deck）依次下压，把纵向空间全留给球台 */
+  html.touch #deck{--deckTop:96px}
+  html.touch #counterHint,html.touch #pushHint{
+    bottom:calc(var(--ctrlH,76px) + env(safe-area-inset-bottom) + 6px)}
+  html.touch #pushHint{bottom:calc(var(--ctrlH,76px) + env(safe-area-inset-bottom) + 36px)}
+  html.tips-on.touch #counterHint{bottom:calc(var(--ctrlH,76px) + env(safe-area-inset-bottom) + 42px)}
+  html.tips-on.touch #pushHint{bottom:calc(var(--ctrlH,76px) + env(safe-area-inset-bottom) + 72px)}
+  html.touch #toast{top:52%}
+  html.touch #toastBig{font-size:30px;letter-spacing:2px}
+  #counterHint,#pushHint{font-size:10.5px;letter-spacing:1px;padding:6px 13px}
 }

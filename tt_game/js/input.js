@@ -9,14 +9,32 @@ let mouseNy = 0.5;   // 指针垂直位置（0=上/深压 · 1=下/摆短）→ 
 // 正/反手由 autoStance() 自动选择（按球拍与球的位置），无需 Shift/右键切换
 function refreshStance(){ playerStance = autoStance(); }
 
-/* ---- 触屏检测：主指针为粗指针（手机/平板）即启用；触屏笔记本首次触摸时动态启用 ---- */
-let TOUCH = matchMedia('(pointer:coarse)').matches;
+/* ---- 布局默认值：手持尺寸 → 触屏，桌面尺寸 → 键鼠 ----
+   早先只看 matchMedia('(pointer:coarse)')：触屏笔记本、外接了鼠标的手机、
+   把窗口收窄的桌面浏览器都会判成键鼠，于是「搓」「发球侧旋」这排按钮整体消失
+   且无从切换。现在两个信号取或：
+     · 粗指针        → 一定是手持设备
+     · 视口短边过小  → 手持尺寸（横屏手机短边只有 ~390，用宽度判会漏）
+   短边阈值取 700：1280×800 / 1024×768 这类常见笔记本视口仍判为键鼠，
+   而 640×1168 这种手机比例、以及横过来放的 844×390 都会进触屏布局。
+   只在加载时判一次，避免拖窗口时布局在比赛中途来回跳；用户用「切触屏 / 切键鼠」
+   显式选过之后，localStorage 里的选择永远优先于自动判定。 */
+const LAYOUT_KEY = 'wfls-tt-layout';
+const MOBILE_MAX_SIDE = 700;
+function readLayoutLock(){ try{ return localStorage.getItem(LAYOUT_KEY); }catch(e){ return null; } }
+function looksLikeHandheld(){
+  return matchMedia('(pointer:coarse)').matches
+      || Math.min(innerWidth, innerHeight) <= MOBILE_MAX_SIDE;
+}
+const layoutLock = readLayoutLock();
+let TOUCH = layoutLock ? (layoutLock === 'touch') : looksLikeHandheld();
 if(TOUCH) document.documentElement.classList.add('touch');
 window.addEventListener('touchstart', ()=>{
-  if(TOUCH) return;
+  if(TOUCH || layoutLock === 'mouse') return;   // 用户显式选过键鼠布局就别再自动翻转
   TOUCH = true;
   document.documentElement.classList.add('touch');
   applyTouchTexts();
+  refreshLayoutBtn();
 }, {once:true, passive:true});
 
 function pointerTrack(e){
@@ -77,6 +95,14 @@ window.addEventListener('pointercancel', e=>{ if(e.pointerId===touchId) touchId 
 window.addEventListener('contextmenu', e=>e.preventDefault());
 window.addEventListener('keydown', e=>{
   // 发球（下旋发球已取消，恒定上旋）：S=左旋 D=右旋（A 保留仅驱动发球动画）
+  /* A 键：切换发球旋转（上旋 ↔ 下旋）。此前 KeyA 只置位 serveKeys.a 但无任何消费者
+     （grep 全仓确认），是空键，正好拿来切旋——不必新增按键或改帮助面板布局。
+     下旋是本游戏被关掉的真实玩法（rules.js 原硬编码 top:true，注释「下旋发球已取消」），
+     而对手的接下旋逻辑一直在（policy.js receive.pushProb=0.62 只对 isBack 生效），
+     只是永远没人发下旋球，那条路径一直是死的。 */
+  if(e.code==='KeyA' && mode==='play' && state==='awaitServe' && server==='player'){
+    serveCfg.top = !serveCfg.top; serveCfg.side = 0;   // 切旋时清掉侧旋，避免组合歧义
+  }
   if(e.code==='KeyA') serveKeys.a = true;
   if(e.code==='KeyS') serveKeys.s = true;          // 发球：左侧旋
   if(e.code==='KeyD') serveKeys.d = true;          // 发球：右侧旋
@@ -87,6 +113,7 @@ window.addEventListener('keydown', e=>{
   if(e.key==='Shift' && !e.repeat){ shiftHold = true; refreshStance(); }
   ensureAudio();
   if(mode==='menu'){ startGame(); return; }
+  if(e.code==='Escape' && document.documentElement.classList.contains('sheet-open')){ setSheet(false); return; }
   if(e.code==='Space' || e.code==='Enter'){
     e.preventDefault();
     if(state==='awaitServe' && server==='player') startToss();
@@ -157,9 +184,62 @@ document.querySelectorAll('.model-btn').forEach(b => {
   b.addEventListener('click', e => { e.stopPropagation(); selectModel(b.dataset.model); });
 });
 selectModel(aiModel);
-$('btnHelp').onclick = e=>{ e.stopPropagation(); $('helpOverlay').classList.remove('hidden'); };
+$('btnHelp').onclick = e=>{ e.stopPropagation(); openHelp(); };
 $('btnHelpClose').onclick = e=>{ e.stopPropagation(); $('helpOverlay').classList.add('hidden'); };
 $('btnMenu').onclick = e=>{ e.stopPropagation(); toMenu(); };
+
+/* ---- 触屏系统按钮抽屉 ----
+   桌面：#btns 是底栏右侧横排；触屏：右上只留 2 枚图标钮，#btns 收进贴底抽屉。
+   抽屉默认收起（html.touch.sheet-open 才展开），这样记分牌右上角整片让出来。 */
+const rootEl2 = document.documentElement;
+function setSheet(open){
+  rootEl2.classList.toggle('sheet-open', !!open);
+  const b = $('btnMenuIco');
+  if(b) b.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+function openHelp(){ setSheet(false); $('helpOverlay').classList.remove('hidden'); }
+if($('btnMenuIco')) $('btnMenuIco').onclick = e=>{ e.stopPropagation(); setSheet(!rootEl2.classList.contains('sheet-open')); };
+if($('btnHelpIco')) $('btnHelpIco').onclick = e=>{ e.stopPropagation(); ensureAudio(); openHelp(); };
+/* 抽屉展开时：点遮罩收起；点抽屉内的系统项（首页/重置等）后自动收起 */
+if($('sheetScrim')) $('sheetScrim').onclick = ()=>setSheet(false);
+$('btns').addEventListener('click', e=>{
+  if(e.target.closest('.btn')) setSheet(false);
+}, true);   // 捕获阶段：先收起再让原 handler 跑（btnQuality/btnSound 的 onclick 不受影响）
+
+/* ---- 触屏操作速记：开局提示几秒后淡出（触屏下键鼠提示条是隐藏的） ----
+   tips-on 同时把战术提示条（counter/push）顶高一行，避免两条提示叠在一起。 */
+let tipsTimer = 0;
+function showTouchTips(){
+  const el = $('touchTips');
+  if(!el || !TOUCH) return;
+  el.classList.add('show');
+  document.documentElement.classList.add('tips-on');
+  clearTimeout(tipsTimer);
+  tipsTimer = setTimeout(()=>{
+    el.classList.remove('show');
+    document.documentElement.classList.remove('tips-on');
+  }, 5200);
+}
+
+/* ---- 布局切换：触屏布局 ↔ 键鼠布局 ----
+   自动判定漏掉的设备（触屏笔记本 / 外接鼠标的手机 / 窄窗桌面）靠这个按钮拿到
+   「搓」「发球侧旋」那排控件，反过来也能一键退回键鼠布局。选择记进 localStorage。 */
+const btnLayout = $('btnLayout');
+function layoutBtnText(){ return gameT(TOUCH ? 'g_btn_layout_mouse' : 'g_btn_layout_touch'); }
+function refreshLayoutBtn(){ if(btnLayout) btnLayout.firstElementChild.textContent = layoutBtnText(); }
+function setTouchMode(on){
+  TOUCH = !!on;
+  document.documentElement.classList.toggle('touch', TOUCH);
+  try{ localStorage.setItem(LAYOUT_KEY, TOUCH ? 'touch' : 'mouse'); }catch(e){}
+  if(TOUCH) applyTouchTexts();
+  setSheet(false);
+  syncTouchMetrics();
+  refreshLayoutBtn();
+  pushTxtV = '';          // 搓球提示的措辞分键鼠/触屏两种，清缓存强制按当前布局重写
+  if(TOUCH) showTouchTips();
+}
+if(btnLayout) btnLayout.onclick = e=>{ e.stopPropagation(); ensureAudio(); setTouchMode(!TOUCH); };
+refreshLayoutBtn();
 
 /* ---- 触屏按钮：按住类（pointerdown/up/cancel + 指针捕获，保证可靠释放） ---- */
 function holdBtn(el, on, off){
@@ -195,8 +275,8 @@ function applyTouchTexts(){
   const sl = $('statusLine');
   const slKey = sl ? (sl.getAttribute('data-i18n') || '') : '';
   if(sl && slKey.indexOf('g_status_demo') === 0){ sl.removeAttribute('data-i18n'); sl.textContent = gameT('g_status_demo_touch'); }
-  const ph = $('pushHint');
-  if(ph && ph.getAttribute('data-i18n')){ ph.removeAttribute('data-i18n'); ph.textContent = gameT('g_push_hint_touch'); }
+  const ph = $('pushHint'), sp = ph ? ph.firstElementChild : null;
+  if(sp){ sp.removeAttribute('data-i18n'); sp.textContent = gameT('g_push_hint_touch'); }
 }
 if(TOUCH) applyTouchTexts();
 
@@ -228,6 +308,7 @@ function startFight(){
     ensureAudio(); mode = 'watch';
     aiModel = fightR;                     // 右侧（原 AI 侧）决策/移动用 aiModel=fightR
     $('startOverlay').classList.add('hidden');
+    setSheet(false);
     scoreYou = scoreAi = 0; longestRally = 0; ballDead = true;
     seriesWinsL = seriesWinsR = 0;        // 新一季：重置系列比分
     $('endOverlay').classList.add('hidden'); $('confetti').innerHTML = '';
@@ -246,9 +327,11 @@ function resetMatch(){
   if(mode==='menu') return;
   scoreYou = scoreAi = 0; longestRally = 0; ballDead = true;
   $('endOverlay').classList.add('hidden'); $('confetti').innerHTML = '';
+  setSheet(false);
   updateScoreUI();
   setupServe(mode==='watch' ? undefined : 'player');
   toast(gameT('g_toast_match_start'), gameT('g_toast_match_start_sub'), 'gold', 1600);
+  showTouchTips();
 }
 /* 斗蛐蛐两侧 AI 选择（可相同可不同） */
 const fightSel = document.querySelectorAll('.oc-diff select');
@@ -267,5 +350,6 @@ function inputReapplyI18n(){
   syncFightHint();
   $('btnSound').firstElementChild.textContent = gameT(soundOn ? 'g_btn_sound_on' : 'g_btn_sound_off');
   if(btnQuality) btnQuality.firstElementChild.textContent = gameT('g_btn_quality') + QUALITY.modeLabel();
+  refreshLayoutBtn();
   if(TOUCH) applyTouchTexts();
 }

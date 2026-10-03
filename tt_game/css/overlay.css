@@ -30,7 +30,7 @@
   background:linear-gradient(90deg,transparent,rgba(240,165,0,.7))}
 .ov-kicker::after{background:linear-gradient(90deg,rgba(240,165,0,.7),transparent)}
 @keyframes kickerIn{from{opacity:0;letter-spacing:14px}to{opacity:1;letter-spacing:7px}}
-.ov-title{font-family:var(--disp);font-weight:800;font-size:clamp(58px,10vw,104px);
+.ov-title{font-family:var(--disp);font-weight:800;font-size:clamp(40px,10vw,104px);
   letter-spacing:8px;line-height:1.05;
   background:linear-gradient(180deg,#ffffff 30%,#cfe3ff 75%,#9cc4ff);
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
@@ -102,6 +102,20 @@
 .ov-btns{display:flex;gap:14px;align-items:center;justify-content:center}
 #helpOverlay{z-index:30}
 
+/* ---------- 吸底主行动区 ----------
+   手机上说明卡很长（要滚过 3~5 组键位 + 模型选择才能到按钮），小屏把主按钮钉在
+   可视区底部，任何机型都不用滚就能开赛。
+   桌面用 display:contents 让这层包裹彻底退出盒模型 —— 里面的按钮重新变回
+   .overlay 的直接 flex 子项，纵向排列与间距和加这层之前逐像素一致。 */
+.ov-actions{display:contents}
+@media (max-width:820px), (max-height:600px){
+  .ov-actions{position:sticky;bottom:0;z-index:2;display:flex;flex-wrap:wrap;
+    gap:10px;align-items:center;justify-content:center;
+    width:100%;margin-top:auto;padding:14px 0 2px;
+    background:linear-gradient(transparent,rgba(10,12,18,.88) 38%,rgba(10,12,18,.96))}
+  .ov-actions .btn{flex:1 1 auto;min-width:132px;max-width:340px;min-height:52px}
+}
+
 /* ---------- 彩带 ---------- */
 #confetti{position:absolute;inset:0;overflow:hidden;pointer-events:none}
 #confetti i{position:absolute;top:-24px;width:8px;height:14px;border-radius:2px;
@@ -116,15 +130,15 @@ html.touch .mouse-only{display:none}
 
 /* ---------- 小屏：排版收紧 ---------- */
 @media (max-width:820px), (max-height:600px){
-  .overlay{gap:12px;padding-left:14px;padding-right:14px}
+  .overlay{gap:10px;padding-left:14px;padding-right:14px}
   .ov-title{letter-spacing:4px}
   .ov-title-sm{letter-spacing:3px}
   .ov-sub{font-size:11px;letter-spacing:2px}
   .ov-controls{gap:16px;margin:4px 0 2px;padding:16px 18px}
   .oc-group{min-width:150px;gap:7px}
   .oc-group div{font-size:11.5px;gap:8px}
-  .oc-diff .model-btn{min-height:40px}
-  .oc-diff .fight-row select{min-height:40px}
+  .oc-diff .model-btn{min-height:44px}
+  .oc-diff .fight-row select{min-height:44px}
   .ov-hint{font-size:10px;letter-spacing:1px;line-height:1.75;max-width:92vw}
   .btn.primary{font-size:17px;padding:12px 36px}
   .ov-btns{flex-wrap:wrap}

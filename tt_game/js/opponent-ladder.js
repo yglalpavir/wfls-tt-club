@@ -57,7 +57,7 @@ const OPP_LADDER = (() => {
            'wide.forehand': 1.05, 'wide.backhand': 1.28,
            push: { forceThresh: 40, prob: 0.66 }, counter: { spinThreshMul: 0.85, prob: 0.88 },
            smash: { prob: 0.68 }, loop: { prob: 0.78 },
-           serve: { topProb: 1, sideProb: 0.72, txSpread: 0.95, tzBase: 0.95, tzRange: 0.3, power: 0.72 } } },
+           serve: { topProb: 0.7, sideProb: 0.72, txSpread: 0.95, tzBase: 0.95, tzRange: 0.3, power: 0.72 } } },
 
     { id: 3, tag: 'extreme', name: '极端对手',
       desc: '跑位近上限 + 误差减半 + 速度/旋转 ×1.22 + 凶狠落点',
@@ -72,7 +72,7 @@ const OPP_LADDER = (() => {
            txMin: 0.26, txRange: 0.48,
            push: { forceThresh: 40, prob: 0.70 }, counter: { spinThreshMul: 0.85, prob: 0.93 },
            smash: { prob: 0.74 }, loop: { prob: 0.84 },
-           serve: { topProb: 1, sideProb: 0.80, txSpread: 1.0, tzBase: 0.95, tzRange: 0.3, power: 0.82 } } },
+           serve: { topProb: 0.7, sideProb: 0.80, txSpread: 1.0, tzBase: 0.95, tzRange: 0.3, power: 0.82 } } },
 
     { id: 4, tag: 'extreme-max', name: '极端·满档',
       desc: '跑位/纵深顶格 + 误差近零 + 速度 ×1.30 旋转 ×1.34 + 概率拉满',
@@ -87,7 +87,7 @@ const OPP_LADDER = (() => {
            txMin: 0.30, txRange: 0.52,
            push: { forceThresh: 40, prob: 0.74 }, counter: { spinThreshMul: 0.85, prob: 0.97 },
            smash: { prob: 0.80 }, loop: { prob: 0.90 },
-           serve: { topProb: 1, sideProb: 0.86, txSpread: 1.05, tzBase: 0.95, tzRange: 0.3, power: 0.92 } } },
+           serve: { topProb: 0.7, sideProb: 0.86, txSpread: 1.05, tzBase: 0.95, tzRange: 0.3, power: 0.92 } } },
   ];
 
   /* ---- 路径写入（支持 'wide.forehand' 这类嵌套键）---- */

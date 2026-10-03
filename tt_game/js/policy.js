@@ -65,8 +65,11 @@ const POLICY_DEFAULT = {
   txWideProb: 0.055, txWideMag: 0.5, txWideSpread: 0.35,
   txClamp: 0.74,
   tzBase: 0.85, tzRange: 0.45,
-  // 发球（下旋发球已取消：topProb 恒为 1，仅保留字段兼容旧向量）
-  serve: { topProb: 1.0, sideProb: 0.6, txSpread: 0.9, tzBase: 0.95, tzRange: 0.3 },
+  /* topProb: 1.0 时 aiServePlan 的 `rng() < topProb` 恒真 → 全部上旋，下旋是死代码。
+     降到 0.7 = 30% 下旋。取值偏保守：下旋球接起来更容易（对手走 push 搓球），
+     对手整体强度变化有限，但让 DQN 的发球维度有了真实可学的信号——
+     policy.js 的 receive.pushProb(0.62) 只在 isBack 时生效，只有真发下旋才会触发。 */
+  serve: { topProb: 0.7, sideProb: 0.6, txSpread: 0.9, tzBase: 0.95, tzRange: 0.3 },
   // 各打法出球质量（×系数，默认=现状，零回归）
   loopPace: 1.0, loopSpin: 1.0, loopArc: 1.0,
   smashPace: 1.0, smashSpin: 1.0,
@@ -280,7 +283,7 @@ const WEAK_POLICY = {
   counter: { prob: 0.45 }, smash: { prob: 0.05 }, loop: { prob: 0.3 },
   awayProb: 0.5, txMin: 0.12, txRange: 0.3,
   tzBase: 0.8, tzRange: 0.3, txWideProb: 0.02,
-  serve: { topProb: 1.0, sideProb: 0.6 },
+  serve: { topProb: 0.7, sideProb: 0.6 },
 };
 function _vecOf(p){ return POLICY_KEYS.map(s => get(p, s.k, s.def)); }
 function strongVec(){
@@ -330,7 +333,7 @@ function grandSlamPolicy(){
   const L = Object.assign({}, GRANDSLAM_POLICY, {
     moveSpeed: 2.9, moveErr: 0.02, moveZ: 2.7,
     smash: { prob: Math.max(0.5, (GRANDSLAM_POLICY.smash && GRANDSLAM_POLICY.smash.prob) || 0.5) },
-    serve: { topProb: 1.0, sideProb: (GRANDSLAM_POLICY.serve && GRANDSLAM_POLICY.serve.sideProb) || 0.6 },
+    serve: { topProb: 0.7, sideProb: (GRANDSLAM_POLICY.serve && GRANDSLAM_POLICY.serve.sideProb) || 0.6 },
   });
   return unflattenPolicy(_vecOf(L));
 }

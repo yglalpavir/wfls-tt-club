@@ -104,13 +104,20 @@ const INPUTSIM = (() => {
 
   /* ==== 磁吸（physics.js#physicsStep 玩家侧，逐帧）====
      now：当前仿真时刻（秒）——姿态切换过渡成本（SIM.stanceRampOf）与实机同款 */
+  /* ctrlOn 形参已废弃：pushF 判据改为「只看是否下旋」后不再读取它（对齐实机 AI 侧）。
+   * 保留位置是为了不打乱既有调用点的参数顺序。 */
   function magnetPull(p, v, s, pad, stance, ctrlOn, canHit, now){
     if(!canHit || v.z <= 0) return;
     if(p.z < (stance === 'forehand' ? 0.3 : 0.45)) return;
     const stF = C.STROKE[stance];
-    const pushF = (ctrlOn && relTopOfSt(s.x, v.z) < -8) ? C.PUSH.fit : null;
+    /* 同 tryPlayerFit：pushF 只看是否下旋，不看 ctrlOn。
+     * 实机 AI 侧 physics.js:354 的 magA = stA.magnet + (highA ? 1.2 : 0)，
+     * 完全不含 pushF.mag；训练侧原来含 (pushF ? pushF.mag : 0)，
+     * 而 pushF.mag = 1.5 比 stF.magnet（1.35 正手 / 0.95 反手）还大 ——
+     * 训练时球被吸过去的力度比实机大很多，实机自然吸不住。 */
+    const pushF = relTopOfSt(s.x, v.z) < -8 ? C.PUSH.fit : null;
     const high = p.y > C.TABLE_TOP + 0.13;
-    const mag = (stF.magnet + (pushF ? pushF.mag : 0) + (high ? 1.2 : 0))
+    const mag = (stF.magnet + (high ? 1.2 : 0))   // 与实机 AI 侧 magA 同口径
               * SIM.stanceRampOf(pad.stanceT, now);
     v.x += cl(pad.x - p.x, -0.7, 0.7) * ASSIST.magnetPull * mag * DT;
     const zAhead = pad.z - p.z;
@@ -126,11 +133,23 @@ const INPUTSIM = (() => {
        实机 swept 要求"上一帧还在拍面前方、这一帧已越过平面"的真实穿越，
        旧实现只有 bz > plane - zF，球已经过拍面 20cm 也算触球——
        这是仿真 57% / 实机 10% 胜率差的主因（仿真几乎总是"打到"，实机常打不到）。 */
+  /* ctrlOn 形参已废弃，同 magnetPull —— 保留位置不打乱调用点顺序。 */
   function tryPlayerFit(bx, by, bz, prevZ, v, s, pad, stance, ctrlOn){
+    /* ★ 2026-10-03 对齐实机 physics.js#tryAIHit 的 pushF 判据。
+     *
+     * 原来这里是 (under && ctrlOn)，即「下旋球 **且** agent 按住 Ctrl」才给搓球拟合；
+     * 实机 AI 侧（physics.js:289）是 `isBack ? PUSH.fit : null`，**只看球是否下旋，
+     * 不看 agent 按没按 Ctrl**。于是下旋球上实机 AI 侧的触球窗口更宽：
+     *   横向 ±0.170 → ±0.220 m（+29%）
+     *   纵向 ±0.140 → ±0.220 m（+57%）
+     *   深度 ±0.060 → ±0.120 m（+100%）
+     * agent 在训练里从没见过这么宽容的接球条件，实机遇到下旋球自然接不住。
+     * 这个失配在今天把 AI 下旋率从 0 提到 30% 之后才真正暴露——
+     * 此前全游戏恒上旋，pushF 两边都恒为 null，所以从未生效。 */
     const under = relTopOfSt(s.x, v.z) < -8;
-    const pushSt = (under && ctrlOn) ? ((bx >= pad.x) ? 'backhand' : 'forehand') : stance;
+    const pushF = under ? C.PUSH.fit : null;          // 与实机 tryAIHit 同口径
+    const pushSt = pushF ? ((bx >= pad.x) ? 'backhand' : 'forehand') : stance;
     const st = C.STROKE[pushSt];
-    const pushF = (under && ctrlOn) ? C.PUSH.fit : null;
     const high = by > C.TABLE_TOP + 0.13;
     const inQual = cl((Math.abs(v.z) * 0.06 + Math.abs(s.x) * 0.002 + Math.abs(s.y) * 0.002) - 0.15, 0, 0.35);
     const fitV = pushF ? st.forgiveV + pushF.v : (high ? st.forgiveV + 0.30 : Math.max(st.forgiveV - inQual, 0.04));

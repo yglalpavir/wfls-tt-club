@@ -34,8 +34,8 @@
   </div>
   <div id="statusLine" data-i18n="g_status_demo">AI 演示对局 · 按任意键开始</div>
   <div id="toast"><div id="toastBig"></div><div id="toastSub"></div></div>
-  <div id="counterHint" data-i18n="g_counter_hint">◎ 重旋来球 · 反手快撕借力反击!</div>
-  <div id="pushHint" data-i18n="g_push_hint">◎ 下旋来球 · 按住 Ctrl 搓球</div>
+  <div id="counterHint"><span data-i18n="g_counter_hint">◎ 重旋来球 · 反手快撕借力反击!</span></div>
+  <div id="pushHint"><span data-i18n="g_push_hint">◎ 下旋来球 · 按住 Ctrl 搓球</span></div>
   <div id="deck">
     <div id="serveChip" class="top"><b id="serveChipTxt" data-i18n="g_serve_chip_top">▲ 上旋发球</b><span id="serveChipSide" data-i18n="g_serve_chip_side">无侧旋</span></div>
     <div id="stanceChip" class="forehand">
@@ -57,17 +57,24 @@
       <span data-i18n="g_hint_reset"><kbd>R</kbd>重置</span>
       <span class="assistTag" data-i18n="g_hint_assist">◎ 正手重旋 · 反手快撕 对轰</span>
     </div>
+    <!-- 系统按钮组：桌面＝底栏右侧横排；触屏＝贴底抽屉（默认收起，html.touch.sheet-open 展开） -->
     <div id="btns">
       <a class="btn" id="btnHome" href="../index.html"><span data-i18n="g_btn_home">‹ 返回首页</span></a>
       <button class="btn" id="btnQuality"><span data-i18n="g_btn_quality_full">画质：自动</span></button>
       <button class="btn" id="btnHelp"><span data-i18n="g_btn_help">帮助 ?</span></button>
       <button class="btn" id="btnSound"><span data-i18n="g_btn_sound_on">音效：开</span></button>
       <button class="btn" id="btnReset"><span data-i18n="g_btn_reset">重置比分</span></button>
+      <button class="btn" id="btnLayout"><span data-i18n="g_btn_layout_touch">切触屏</span></button>
       <button class="btn" id="gameLangToggle"><span data-i18n="g_lang_btn">EN</span></button>
     </div>
   </div>
   <!-- 触屏操作控件：仅触屏设备显示（html.touch） -->
   <div id="touchCtl">
+    <div id="touchTop">
+      <button class="tc-ico" id="btnHelpIco" data-i18n-aria="g_aria_help">?</button>
+      <button class="tc-ico" id="btnMenuIco" data-i18n-aria="g_aria_menu">≡</button>
+    </div>
+    <div id="touchTips" data-i18n="g_touch_tips">拖动移动球拍 · 快速横滑加侧旋 · 按住「搓」放平拍面</div>
     <button class="tc-btn" id="btnExitWatch"><span data-i18n="g_btn_exit_watch">✕ 退出观看</span></button>
     <div id="touchServe">
       <button class="tc-btn tc-hold" id="btnSpinL"><span data-i18n="g_btn_spin_l">◀ 左旋</span></button>
@@ -77,6 +84,7 @@
     </div>
     <button class="tc-btn tc-hold" id="btnPush"><span data-i18n="g_btn_push">搓</span></button>
   </div>
+  <div id="sheetScrim"></div>
   <div id="vig"></div>
   <div id="flash"></div>
   <div id="hitMarker"></div>
@@ -158,8 +166,10 @@
       <div class="diff-hint" id="fightHint" data-i18n="g_fight_hint0">可选相同/不同 AI · 不换边 · 先赢 3 大局者胜</div>
     </div>
   </div>
-  <button class="btn primary" id="btnStart"><span data-i18n="g_btn_start">开始比赛 ▶</span></button>
-  <button class="btn" id="btnWatch"><span data-i18n="g_btn_watch">AI 斗蛐蛐 ▶</span></button>
+  <div class="ov-actions">
+    <button class="btn primary" id="btnStart"><span data-i18n="g_btn_start">开始比赛 ▶</span></button>
+    <button class="btn" id="btnWatch"><span data-i18n="g_btn_watch">AI 斗蛐蛐 ▶</span></button>
+  </div>
 </div>
 
 <div id="endOverlay" class="overlay hidden">
@@ -219,7 +229,9 @@
       <div><kbd data-i18n="g_in_close_btn">✕ 钮</kbd><span data-i18n="g_row_t_exit">观看模式退出</span></div>
     </div>
   </div>
-  <button class="btn primary" id="btnHelpClose"><span data-i18n="g_btn_close">关闭 ✕</span></button>
+  <div class="ov-actions">
+    <button class="btn primary" id="btnHelpClose"><span data-i18n="g_btn_close">关闭 ✕</span></button>
+  </div>
 </div>
 
 <script src="js/i18n.js"></script>

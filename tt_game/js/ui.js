@@ -11,6 +11,46 @@ const counterHintEl = $('counterHint'), pushHintEl = $('pushHint');
 const stanceChipEl = $('stanceChip'), stanceTxtEl = $('stanceTxt'), stanceSubEl = $('stanceSub');
 const serveChipEl = $('serveChip'), serveTxtEl = $('serveChipTxt'), serveSideEl = $('serveChipSide');
 const touchServeEl = $('touchServe');
+const btnPushEl = $('btnPush');
+
+/* ---- 触屏底部控件带实测：把真实高度写回 CSS 变量 --ctrlH ----
+ * 发球簇在窄屏会换行、搓钮尺寸也随断点变，控件带高度不是常数；
+ * 提示条按 --ctrlH 让位，换机型就不会互相压住（原先是手调的 114/176/208px，
+ * 在 320px 宽的机型上已经压死了）。取 max(发球簇, 搓钮)+底距 而非按状态取，
+ * 是为了让提示条不随发球阶段来回跳。 */
+const rootEl = document.documentElement;
+let lastCtrlH = 0;
+function syncTouchMetrics(){
+  if(!TOUCH){ rootEl.style.removeProperty('--ctrlH'); lastCtrlH = 0; return; }
+  // 底距读 #btnPush 的 computed bottom —— 它是 calc(18px + env(safe-area-inset-bottom))，
+  // 浏览器会解析成实际像素，含刘海/小白条的 inset，JS 侧不必再算一遍
+  const edge = btnPushEl ? (parseFloat(getComputedStyle(btnPushEl).bottom) || 18) : 18;
+  const h = Math.max(touchServeEl ? touchServeEl.offsetHeight : 0,
+                    btnPushEl ? btnPushEl.offsetHeight : 0) + edge;
+  if(h !== lastCtrlH){ lastCtrlH = h; rootEl.style.setProperty('--ctrlH', h + 'px'); }
+}
+/* 两个控件高度都会随断点/换行变化 —— 观察它们本身（#touchCtl 是零尺寸静态壳，观察它不会触发） */
+if(typeof ResizeObserver === 'function'){
+  [touchServeEl, btnPushEl].forEach(el=>{
+    if(el) new ResizeObserver(syncTouchMetrics).observe(el);
+  });
+}
+/* ---- 底栏实测高度 → --barH ----
+   #deck 原本写死 bottom:66/88/118px，但底栏里的提示和按钮在窄屏会各自换行、
+   高度可达 146px，deck 就会被压住。改成实测后 deck 永远浮在底栏之上。 */
+const bottomBarEl = $('bottomBar');
+let lastBarH = 0;
+function syncBarHeight(){
+  if(!bottomBarEl) return;
+  const h = bottomBarEl.offsetHeight;
+  if(h !== lastBarH){ lastBarH = h; rootEl.style.setProperty('--barH', h + 'px'); }
+}
+if(typeof ResizeObserver === 'function' && bottomBarEl){
+  new ResizeObserver(syncBarHeight).observe(bottomBarEl);
+}
+window.addEventListener('resize', syncBarHeight);
+window.addEventListener('resize', syncTouchMetrics);
+window.addEventListener('orientationchange', syncTouchMetrics);
 
 /* statusLine 文案:直接传字符串(已是当前语言)或传函数,语言切换时按函数重算 */
 let lastStatus = null;

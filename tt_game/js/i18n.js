@@ -55,6 +55,11 @@ window.GAME_I18N = {
     "g_btn_sound_off": "音效：关",
     "g_btn_reset": "重置比分",
     "g_btn_exit_watch": "✕ 退出观看",
+    "g_touch_tips": "拖动移动 · 快速横滑加侧旋 · 按住「搓」放平拍面",
+    "g_btn_layout_touch": "切触屏",
+    "g_btn_layout_mouse": "切键鼠",
+    "g_aria_help": "操作指南",
+    "g_aria_menu": "更多设置",
     "g_btn_spin_l": "◀ 左旋",
     "g_btn_spin_r": "右旋 ▶",
     "g_btn_pow_minus": "强 −",
@@ -88,7 +93,7 @@ window.GAME_I18N = {
     "g_row_t_push_pull": "上推快攻 / 下拉弧圈",
     "g_row_t_pushbtn": "按住=搓球",
     "g_row_t_lr_btn": "按住=左 / 右侧旋",
-    "g_row_t_topbtns": "重置比分 · 音效开关",
+    "g_row_t_topbtns": "布局切换 · 画质 · 音效 · 重置比分 · 语言",
     "g_row_t_exit": "观看模式退出",
     "g_choose_model": "选择对战模型",
     "g_model_standard": "普通 AI",
@@ -181,7 +186,7 @@ window.GAME_I18N = {
     "g_lang_aria": "切换语言",
     "g_hint_auto_side": "自动换面",
     "g_hint_red_crosshair": "红色准星",
-    "g_hint_top_right": "右上按钮",
+    "g_hint_top_right": "右上 ≡ 钮",
     "g_in_mouse_lr": "鼠标左右",
     "g_in_mouse_ud": "鼠标上下",
     "g_in_quick_swipe": "快速横滑",
@@ -241,6 +246,11 @@ window.GAME_I18N = {
     "g_btn_sound_off": "Sound: Off",
     "g_btn_reset": "Reset score",
     "g_btn_exit_watch": "✕ Exit watch",
+    "g_touch_tips": "Drag to move · Swipe fast for sidespin · Hold PUSH to flatten",
+    "g_btn_layout_touch": "Touch UI",
+    "g_btn_layout_mouse": "Mouse UI",
+    "g_aria_help": "Controls guide",
+    "g_aria_menu": "More options",
     "g_btn_spin_l": "◀ Left spin",
     "g_btn_spin_r": "Right spin ▶",
     "g_btn_pow_minus": "Pwr −",
@@ -274,7 +284,7 @@ window.GAME_I18N = {
     "g_row_t_push_pull": "Push up / pull down",
     "g_row_t_pushbtn": "Hold to push",
     "g_row_t_lr_btn": "Hold = left / right sidespin",
-    "g_row_t_topbtns": "Reset score · toggle sound",
+    "g_row_t_topbtns": "Layout · quality · sound · reset score · language",
     "g_row_t_exit": "Leave watch mode",
     "g_choose_model": "Choose your opponent",
     "g_model_standard": "Standard AI",
@@ -367,7 +377,7 @@ window.GAME_I18N = {
     "g_lang_aria": "Switch language",
     "g_hint_auto_side": "auto side-switch",
     "g_hint_red_crosshair": "red crosshair",
-    "g_hint_top_right": "top-right button",
+    "g_hint_top_right": "top-right ≡ button",
     "g_in_mouse_lr": "mouse left / right",
     "g_in_mouse_ud": "mouse up / down",
     "g_in_quick_swipe": "quick swipe",
@@ -469,6 +479,12 @@ function gameI18nInit(){
   try{ stored = localStorage.getItem(window.GAME_LANG_KEY); }catch(e){}
   window.gameLang = (stored === 'en') ? 'en' : 'zh';
   applyStaticI18n(document);
+  // applyStaticI18n 会把每个 data-i18n 节点重写回字典值，包括「布局切换 / 画质 / 音效」
+  // 这几个由 JS 按状态拼出来的文案 —— 必须紧接着跑一次重绘钩子，否则首屏按钮显示的
+  // 是静态占位文案（切触屏/切键鼠 会反，音量和画质也会停在默认值）。
+  if(typeof window.gameReapplyI18n === 'function'){
+    try{ window.gameReapplyI18n(); }catch(e){ if(window.console) window.console.warn(e); }
+  }
   var toggle = document.getElementById('gameLangToggle');
   if(toggle && !toggle.__i18nBound){
     toggle.__i18nBound = true;

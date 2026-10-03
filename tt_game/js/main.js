@@ -83,7 +83,9 @@ function updatePushHint(){
   if(!on) return;
   const t = ctrlHold ? gameT('g_push_now')
     : gameT(TOUCH ? 'g_push_hint_touch' : 'g_push_hint');
-  if(t !== pushTxtV){ pushTxtV = t; pushHintEl.textContent = t; }
+  // 写进内层 <span>：外层是 flex 容器，text-overflow 只对块级文本节点生效，
+  // 直接给 #pushHint 赋 textContent 会连 span 一起替换掉、省略号就失效了
+  if(t !== pushTxtV){ pushTxtV = t; pushHintEl.firstElementChild.textContent = t; }
 }
 /* 挥拍相位：ready(待机) → windup(引拍) → strike(挥拍/随挥) → ready
    引拍时球拍后撤/蓄力（正手大、反手紧凑），触球时前送/横扫/拍面关闭，随挥后还原 */
@@ -282,9 +284,11 @@ function animate(){
 
   renderer.render(scene, camera);
 }
-/* 相机随宽高比自适应：横屏保持原始视角，竖屏拉高拉远+扩 FOV，保证整张球台可见（不强制横屏） */
+/* 相机随宽高比自适应：横屏保持原始视角，竖屏拉高拉远+扩 FOV，保证整张球台可见（不强制横屏）
+   CAM_TALL 由 {fov:68,y:3.35,z:6.10} 收近到此处：原先竖屏球台只占屏幕中间约 1/3，
+   上下各留一大片空看台；收近后球台充满可视区，且 HUD 已整体上移，不再压到己方来球区。 */
 const CAM_WIDE = { fov:40, y:2.72, z:4.88 };   // 横屏基准（原始值）
-const CAM_TALL = { fov:68, y:3.35, z:6.10 };   // 竖屏预设
+const CAM_TALL = { fov:60, y:3.02, z:5.42 };   // 竖屏预设
 let baseFov = CAM_WIDE.fov, camBaseY = CAM_WIDE.y, camBaseZ = CAM_WIDE.z;
 function fitCameraToAspect(){
   const a = innerWidth/innerHeight;
@@ -298,6 +302,8 @@ window.addEventListener('resize', ()=>{
   fitCameraToAspect();
   camera.updateProjectionMatrix();
   renderer.setSize(innerWidth, innerHeight);
+  syncTouchMetrics();      // 旋转/窗口变化后控件带高度会变，重算 --ctrlH
+  syncBarHeight();         // 底栏在窄屏会换行变高，重算 --barH
 });
 
 /* ---------------- 15. 启动 ---------------- */
@@ -305,6 +311,8 @@ updateScoreUI();
 demoServe();
 if(TOUCH) applyTouchTexts();   // demoServe 可能重写状态行，最后再按触屏替换文案
 fitCameraToAspect();
+syncTouchMetrics();            // 首次布局完成 → 写入初始 --ctrlH（触屏提示条据此避让）
+syncBarHeight();               // 写入 --barH（deck 浮在底栏之上）
 /* 语言切换总钩子：i18n.js 在 setGameLanguage() 里调用(本文件最后加载 → 钩子已就绪) */
 window.gameReapplyI18n = function(){
   ['uiReapplyI18n', 'inputReapplyI18n'].forEach(fn=>{

@@ -757,7 +757,7 @@
           "min": 4,
           "max": 120,
           "step": 4,
-          "desc": "轮末对每一档对手各打这么多局。验证是**纯推理**（约 4.4 局/秒），5 档×24 局≈120 局≈29 秒，只占每轮约 2%——不是瓶颈，可放心给足局数换取统计稳定性。"
+          "desc": "轮末对每一档对手各打这么多局。验证是**纯推理**（约 4.4 局/秒），5 档×77 局≈120 局≈29 秒，只占每轮约 2%——不是瓶颈，可放心给足局数换取统计稳定性。"
         },
         {
           "name": "step",
@@ -1041,7 +1041,7 @@
           "args": {
             "hours": 18,
             "games": 76000,
-            "eval": 24,
+            "eval": 77,
             "step": 1500,
             "ckpt": 1500,
             "keep": 12,
@@ -1060,14 +1060,14 @@
             "run-name": "input3-18h",
             "curve": "data/checkpoints/input3-18h/curve.json"
           },
-          "desc": "墙钟 18h：step 1500 ≈ 21 分钟一轮（1500 回合训练 + 5 档×24 局验证≈29s），约 50 轮 / 约 76000 训练回合；每轮一个检查点，环形保留 12 份 + 最佳（≈48MB，已 gitignore）。断线随时用「续训 18h」或 --resume data/checkpoints/input3-18h/index.json 接着跑。"
+          "desc": "墙钟 18h：step 1500 ≈ 21 分钟一轮（1500 回合训练 + 5 档×77 局验证≈29s），约 50 轮 / 约 76000 训练回合；每轮一个检查点，环形保留 12 份 + 最佳（≈48MB，已 gitignore）。断线随时用「续训 18h」或 --resume data/checkpoints/input3-v3/index.json 接着跑。"
         },
         {
           "name": "续训 18h",
           "args": {
             "hours": 18,
             "games": 76000,
-            "eval": 24,
+            "eval": 77,
             "step": 1500,
             "ckpt": 1500,
             "keep": 12,
@@ -1085,7 +1085,7 @@
             "seed": 20260927,
             "run-name": "input3-18h",
             "curve": "data/checkpoints/input3-18h/curve.json",
-            "resume": "data/checkpoints/input3-18h/index.json"
+            "resume": "data/checkpoints/input3-v3/index.json"
           },
           "desc": "接上次长跑：同目录、曲线接续、检查点续排；--hours 18 会扣掉断点里已累计的耗时，所以 18h 可跨多次中断累计。起点若已越过 --games，脚本按剩余预算自动放宽上限。"
         }
