@@ -24,8 +24,19 @@ const X_CLAMP  = 1.2;
 const AI_SPEED = 2.45;
 /* DQN 决策跳帧：每 N 帧决策一次（60/N Hz）。训练器 input-sim.js 与实机
  * tt-player.js 必须共用这一份——历史上训练按 60Hz 决策、实机按 15Hz，
- * 导致训练里 16ms 内可修正的错误在实机停留最多 50ms（≈15cm 球程）。 */
-const DECIDE_SKIP = 3;
+ * 导致训练里 16ms 内可修正的错误在实机停留最多 50ms（≈15cm 球程）。
+ * 2026-10-02：3 → 1，决策提到 60Hz（每帧一次）。追球决策的时间分辨率
+ * 直接决定急速来球够不够得着，50ms 在 5m/s 来球下就是 25cm 球程差。 */
+const DECIDE_SKIP = 1;
+/* ---- 「鼠标上的tt玩家」拍面运动参数（训练器与实机同一份）----
+ * MOUSE_PACE   ：指数趋近系数。拍面每帧向目标移动 (目标-当前) × dt × MOUSE_PACE，
+ *                时间常数 ≈ 1/MOUSE_PACE 秒（MOUSE_PACE=18 → ≈55ms）。
+ * MOUSE_SV_CAP ：拍面速度硬钳（m/s）。同时决定出球力量——svx 进 resolveHit 的 swipe，
+ *                svz 进 fwd，所以它不只是「移动快慢」，还影响球的质量。
+ * ★ 这两个值是「限速」的唯一调节口：想让它变笨/更好打就调小 MOUSE_SV_CAP，
+ *   改完重烘焙即可，不需要重训（纯应用层钳位，不改变已学到的权重行为）。
+ *   训练时用当前等效速度，避免人为削弱连带削弱学到的策略。 */
+const MOUSE_PACE = 18, MOUSE_SV_CAP = 7;
 
 const COUNTER = {          // 反手快撕（玩家与 AI 共用）
   spinThresh: 30,          // ★ 触发阈值降低：中等旋转即可借力快撕

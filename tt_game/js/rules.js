@@ -108,15 +108,33 @@ function startToss(){
     const side = (serveKeys.s?1:0) - (serveKeys.d?1:0);   // S=左旋 D=右旋
     c.side = side;
     servePlan = {
-      top: true,                       // 下旋发球已取消：发球恒定上旋（可搭侧旋）
-      side, power: c.power, type: c.type,
+      /* A 键切上下旋（input.js）。下旋原本被硬编码关掉：strikeServe 一直支持
+         topSpin===false（topSign=-0.6，下旋取上旋 60% 强度），只是没有任何地方产出它。
+         对手侧接下旋的逻辑也一直在（policy.js aiDecision 的 isBack 分支 →
+         receive.pushProb 0.62 搓球），此前是死代码。侧旋只在上旋档叠加，切到下旋时清零。 */
+      top: c.top !== false,
+      side: c.top === false ? 0 : side,
+      power: c.power, type: c.type,
       // 抛球点：端线后 + 随鼠标（zy 由鼠标/深度决定，保证端线外）
       tx: clamp(targetX*0.35, -0.4, 0.4),
       tz: clamp(PLAYER_Z + 0.10, TABLE_L/2+0.05, 1.7),   // 端线后
     };
   }else{
-    const pol = (mode==='watch' && isP) ? policyForSide('player') : resolvedPolicy();
-    servePlan = aiServePlan(pol);
+    /* 「鼠标上的tt玩家」：发球由 DQN 决定（侧旋/力度来自动作的第五、六维）。
+     * 训练侧同构逻辑在 input-sim.js「发球前决策」块——两边必须同一口径。 */
+    const ttSide = (mode==='watch' && isP) ? 'player' : 'ai';
+    let ttDecide = null;
+    if(typeof TT_PLAYER !== 'undefined' && TT_PLAYER.decideServe && TT_PLAYER.isTtSide(ttSide)){
+      ttDecide = TT_PLAYER.decideServe();
+    }
+    if(ttDecide){
+      /* 上/下旋由 DQN 决定（动作第四维）；下旋取 strikeServe 的 topSign=-0.6 口径。 */
+      servePlan = { top: ttDecide.top !== false, side: 0, power: ttDecide.power,
+                    type: 'long', tx: clamp(targetX*0.35, -0.4, 0.4), tz: 0.95 };
+    }else{
+      const pol = (mode==='watch' && isP) ? policyForSide('player') : resolvedPolicy();
+      servePlan = aiServePlan(pol);
+    }
   }
   // ITTF：垂直抛球 ≥16cm、无旋转
   ball.vel.set(0, Math.sqrt(2*G*SERVE.TOSS_H), 0);

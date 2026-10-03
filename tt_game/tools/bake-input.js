@@ -13,8 +13,10 @@ const evD = process.argv[4] != null ? parseFloat(process.argv[4]) : 0;
 const opp = process.argv[5] || 'hell';
 const b = JSON.parse(fs.readFileSync(src, 'utf8'));
 const net = b.w || b.net;
-if(!net || !Array.isArray(net) || net.length !== 4){
-  console.error('权重格式不符（需要 4 层 [in→h1→h2→h3→out]）：' + src);
+/* 层数不再硬编码 4：网络可以加深（2026-10-02 起是 88→256→384→256→952，仍是 4 层，
+ * 但架构允许更深）。只要求「至少 2 层」——一层没有隐藏层，不该出现在这。 */
+if(!net || !Array.isArray(net) || net.length < 2){
+  console.error('权重格式不符（需要 [in→h1→…→out] 的多层数组）：' + src);
   process.exit(1);
 }
 /* 层尺寸：{W:[[..]]} 行=输出维；直接数组则取 length */
@@ -24,7 +26,9 @@ const shape = net.map(l => {
   const cols = Array.isArray(W) && Array.isArray(W[0]) ? W[0].length : (Array.isArray(l) ? null : null);
   return [rows, cols];
 });
-const nActions = (Array.isArray(net[3]) ? net[3].length : net[3].W.length)
+/* 动作数取**最后一层**（输出层），不能写死 net[3]——层数变了就取错位置。 */
+const last = net[net.length - 1];
+const nActions = (Array.isArray(last) ? last.length : (last.W && last.W.length))
                  || (b.o && b.o.nActions) || 0;
 if(!nActions){ console.error('无法推断动作数：' + src); process.exit(1); }
 const inDim = shape[0][1];

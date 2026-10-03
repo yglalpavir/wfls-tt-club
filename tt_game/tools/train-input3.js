@@ -64,7 +64,8 @@ const opt = {
    * 参照（vs默认 不劣于 -5pp 才采纳），拿掉它等于关掉防崩保护。 */
   vallevels: 'default,hell,elite,extreme,extreme-max',
   runName: '', ckptDir: '', keep: 12, noCkpt: false,
-  resume: '', resumeBest: false,
+  resume: '', resumeBest: false, fromRandom: false,
+  hSizesArg: '',
   // 课程：每档占比（和 = 1.0）。想换节奏用 --phases hell:0.2,elite:0.28,extreme:0.3,extreme-max:0.22
   phases: 'hell:0.20,elite:0.28,extreme:0.30,extreme-max:0.22',
   /* 优化器（dqn.js#mlpTrainEnh，全部 opt-in；不传任何 flag = 旧 SGD 路径）：
@@ -88,7 +89,12 @@ for(let i = 0; i < args.length; i++){
   else if(args[i] === '--learnp') opt.learnp = parseInt(args[++i], 10);
   else if(args[i] === '--ckpt') opt.ckpt = parseInt(args[++i], 10);
   else if(args[i] === '--eps-reset') opt.epsReset = parseInt(args[++i], 10);
-  else if(args[i] === '--from') opt.from = path.resolve(args[++i]);
+  else if(args[i] === '--hsizes') opt.hSizesArg = args[++i];
+  else if(args[i] === '--from'){
+    const v = args[++i];
+    if(String(v).toLowerCase() === 'random'){ opt.fromRandom = true; opt.from = '(random)'; }
+    else opt.from = path.resolve(v);
+  }
   else if(args[i] === '--save') opt.save = path.resolve(args[++i]);
   else if(args[i] === '--curve') opt.curve = path.resolve(args[++i]);
   else if(args[i] === '--start') opt.start = args[++i];
@@ -153,7 +159,16 @@ if(opt.epsReset % opt.step !== 0){
                 '（设成 step 的整数倍，例如 ' + (opt.step * 2) + '）');
 }
 
-function brainOf(agent){ return { act(o){ return agent.act(o, true).cmd; }, credit(d){ agent.credit(d); } }; }
+/* act(o, mark)：mark 透传给 agent，input-sim 发球决策用它标记 'serve' 帧，
+ * 之后 creditMarked('serve', d) 能把发球奖励精确落到那一帧。
+ * 若不透传，标记丢失 → 发球奖励回落到最后一帧 → 发球维度学不出分化。 */
+function brainOf(agent){
+  return {
+    act(o, mark){ return agent.act(o, true, mark).cmd; },
+    credit(d){ agent.credit(d); },
+    creditMarked(m, d){ if(agent.creditMarked) agent.creditMarked(m, d); else agent.credit(d); }
+  };
+}
 function brainEval(agent){ return { act(o){ return agent.decode(agent.bestAction(o)); }, credit(){} }; }
 
 /* ---- 载入起点权重（续训起点 = 上一轮最佳）----
@@ -162,13 +177,30 @@ function brainEval(agent){ return { act(o){ return agent.decode(agent.bestAction
  * 解码只会输出垃圾输入，续训等于从随机策略起步（实测仅 ~21% 胜率），必须先拦下来。 */
 function loadWeight(p, label){
   const txt = fs.readFileSync(p, 'utf8');
-  const base = IA.loadInputAgent(txt);
+  /* 换网络后旧权重形状不再兼容。input-agent.js 的 setNet 会硬拦（抛错），
+   * 这里转成可读的退出信息——否则续训会带着一份塞不进新网的旧权重静默跑，
+   * 而失效形态是「Q 全 NaN → bestAction 恒返回动作 0」，极难从胜率反推原因。 */
+  let base;
+  try{
+    base = IA.loadInputAgent(txt);
+  }catch(e){
+    console.error('❌ ' + (label || '起点权重') + ' 与当前网络形状不兼容，拒绝续训：' + p);
+    console.error('    ' + (e && e.message ? e.message : e));
+    process.exit(2);
+  }
   const net = base.getNet();
   const widths = net.map(l => l.W.length + '×' + l.W[0].length).join(' → ');
   const bad = [];
   if(base.nActions !== IA.ACT_N) bad.push('nActions=' + base.nActions + ' ≠ 当前 ACT_N=' + IA.ACT_N);
   if(net[0].W[0].length !== IA.OBS_N) bad.push('输入维=' + net[0].W[0].length + ' ≠ 当前 OBS_N=' + IA.OBS_N);
   if(net[net.length - 1].W.length !== IA.ACT_N) bad.push('输出维=' + net[net.length - 1].W.length + ' ≠ 当前 ACT_N=' + IA.ACT_N);
+  /* 隐藏层宽度：换了网络后旧权重唯一「合法地」被 load 进来的方式就是这个漏洞——
+   * nActions/OBS_N 都对得上，只有宽度不同。必须显式比对。 */
+  const hGot = net.slice(0, -1).map(l => l.W.length);
+  const wantHs = (function(){ try{ const o = JSON.parse(txt).o; return o && o.hSizes; }catch(e){ return null; } })();
+  if(Array.isArray(wantHs) && hGot.length === wantHs.length && hGot.some((v, i) => v !== wantHs[i])){
+    bad.push('隐藏层宽度=' + hGot.join('/') + ' ≠ 该权重自己的 hSizes=' + wantHs.join('/'));
+  }
   if(bad.length){
     console.error('❌ ' + (label || '起点权重') + ' 与当前动作空间不兼容，拒绝续训：' + p);
     for(const b of bad) console.error('    ' + b);
@@ -179,7 +211,31 @@ function loadWeight(p, label){
   }
   return { agent: base, shape: widths };
 }
-const loadBase = () => loadWeight(opt.from, '起点权重');
+/* 网络隐藏层宽度。默认 = input-agent.js 的 hSizes（256/384/256，2026-10-02 扩容）。
+ * --hsizes 可临时改（如 128,192,128 快速冒烟、或 192,256,192 折中），
+ * 权重形状必须与之一致——A4 会校验，对不上会直接拒绝续训。 */
+const DEFAULT_HSIZES = (opt.hSizesArg && opt.hSizesArg.trim()
+  ? opt.hSizesArg.split(',').map(x => parseInt(x, 10)).filter(n => n > 0)
+  : IA.HSIZES.slice());   // 默认 = input-agent.js 的 DEFAULT_HSIZES（唯一权威）
+if(DEFAULT_HSIZES.length < 1){ console.error('❌ --hsizes 解析失败：' + opt.hSizesArg); process.exit(2); }
+
+/* 起点权重。--from random = 跳过加载，用当前网络形状（IA 默认 hSizes + ACT_N）随机初始化。
+ * 换网络后旧存档形状不再兼容（A4 会拦），从零训练必须走这条路——2026-10-02 换到
+ * 256/384/256 + 8568 动作时就是这么起的。 */
+const loadBase = () => {
+  if(opt.fromRandom){
+    const o = { stateSize: IA.OBS_N, nActions: IA.ACT_N, hSizes: DEFAULT_HSIZES,
+                lr: 3.5e-5, gamma: 0.99, eps0: 1, epsMin: 0.12, batch: 128,
+                replayCap: 1200000, targetEvery: 1500, learnPerPoint: 2,
+                optimizer: 'adam', layerLr: '1,1,1,3' };
+    const a = IA.createInputAgent(o, mulberry32(opt.seed));
+    const widths = a.getNet().map(l => l.W.length + '×' + l.W[0].length).join(' → ');
+    console.log('  起点权重：随机初始化（新网络）' + (opt.save ? '' : ''));
+    console.log('  网络形状：' + widths);
+    return { agent: a, shape: widths };
+  }
+  return loadWeight(opt.from, '起点权重');
+};
 
 /* ---- 每轮验证的对手档位 ----
  * 'default' 与 --end（顶档）强制保留：采纳护栏的两条判定线（vs默认 不劣于 -5pp、

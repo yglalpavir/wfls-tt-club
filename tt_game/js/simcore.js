@@ -45,7 +45,11 @@ const SIM = (() => {
     // —— 出球常量（玩家与 AI 共用同一份；浏览器同步自 constants.js）——
     PADDLE_Y: 0.91, PAD_HW: 0.10, PAD_HH: 0.115, PAD_HD: 0.03,
     X_CLAMP: 1.2, PLAYER_Z: 1.32, AI_Z: -1.32,
-    DECIDE_SKIP: 3,        // DQN 决策跳帧（=15Hz）：训练器与实机 tt-player.js 共用同一份
+    // DQN 决策跳帧（Node 训练侧默认值；浏览器由 constants.js 的 DECIDE_SKIP 注入覆盖）
+    DECIDE_SKIP: 1,
+    /* 「鼠标上的tt玩家」拍面运动参数（Node 默认值，浏览器由 constants.js 注入）。
+     * 训练器 input-sim.js 与实机 tt-player.js 都从这里读，杜绝两边各写一份导致失配。 */
+    MOUSE_PACE: 18, MOUSE_SV_CAP: 7,
     STROKE: {
       forehand: { paceBase: 2.5, paceSwipe: 0.78, paceMax: 6.5, spinGen: 2.7, sideGen: 40, spinCap: 280, aimXMax: 0.62, arc: 1.0, recover: 0.20, control: 0.78, forgiveV: 0.14, forgiveH: 0.05, forgiveZ: 0.06, magnet: 1.35 },
       backhand: { paceBase: 3.55, paceSwipe: 0.48, paceMax: 6.4, spinGen: 0.65, sideGen: 24, spinCap: 90, aimXMax: 0.74, arc: 0.8, recover: 0.08, control: 0.66, forgiveV: 0.11, forgiveH: 0.035, forgiveZ: 0.05, magnet: 0.95 },
@@ -764,6 +768,8 @@ const SIM = (() => {
     if(typeof PAD_HW !== 'undefined'){ C.PAD_HW = PAD_HW; C.PAD_HH = PAD_HH; C.PAD_HD = PAD_HD; }
     if(typeof X_CLAMP !== 'undefined'){ C.X_CLAMP = X_CLAMP; C.PLAYER_Z = PLAYER_Z; C.AI_Z = AI_Z; }
     if(typeof DECIDE_SKIP !== 'undefined') C.DECIDE_SKIP = DECIDE_SKIP;
+    if(typeof MOUSE_PACE !== 'undefined') C.MOUSE_PACE = MOUSE_PACE;
+    if(typeof MOUSE_SV_CAP !== 'undefined') C.MOUSE_SV_CAP = MOUSE_SV_CAP;
     if(typeof STROKE !== 'undefined') C.STROKE = STROKE;
     if(typeof PUSH !== 'undefined') C.PUSH = PUSH;
     if(typeof LIFT !== 'undefined') C.LIFT = LIFT;
