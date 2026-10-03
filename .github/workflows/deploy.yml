@@ -45,7 +45,8 @@ jobs:
       - name: Assemble site
         run: |
           mkdir _site
-          rsync -a --exclude='.git' --exclude='_site' ./ _site/
+          # out/ 是 results.ittf.link 等站点的抓取残留（含第三方 script 标签），不对外发布。
+          rsync -a --exclude='.git' --exclude='_site' --exclude='out' ./ _site/
       - uses: actions/configure-pages@v5
         with:
           enablement: true

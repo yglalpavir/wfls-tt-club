@@ -23,6 +23,15 @@ Regenerate the Assets manifest for the docs.html asset browser (auto-generated a
 python tools/gen_assets_manifest.py
 ```
 
+Refresh `sitemap.xml` / `feed.xml` after adding or removing a **public, indexable** page (they are committed, not deploy-generated, and CI diffs them):
+
+```bash
+python tools/generate_meta.py          # Regenerate both
+python tools/generate_meta.py --check  # CI gate: exits 1 on drift
+```
+
+`lastmod` must depend only on things that change when you commit — the HEAD commit date, and the newest `date` in `data/{news,competitions,qa}/index.json`. It must **not** be seeded from `date.today()`: `sitemap.xml` is a committed file, so a `today` seed makes the gate fail every day that passes without a commit. Because `git_head_lastmod()` reads HEAD, regenerate *after* committing the change that moved it.
+
 No npm/lint/typecheck commands exist — there are no build tools or test suites.
 
 ## Content system (news / competitions / QA)
@@ -106,6 +115,11 @@ Everything a visitor can see on screen is subject to this — body text, `title`
 When a data source can't be fetched, **drop that tile/section silently** — never show a "run `python tools/…`" hint on a public page. Generation steps belong in `AGENTS.md` and in the generator's own docstring, not on screen. A missing-source hint is only acceptable on genuinely admin-only pages that also carry `noindex`.
 
 Maintenance surfaces (`admin.html`, `draws-editor.html`, `tt_game/train.html`) are exempt from the copy rule — for their actual operators, naming the file to replace is useful — but they must carry `<meta name="robots" content="noindex, nofollow">` and stay out of nav / footer / sitemap. `tt_game/train.html` is additionally `Disallow`ed in `robots.txt` (the rest of `tt_game/` is the public easter egg).
+
+**Two deliberate exceptions** to "noindex ⇒ out of nav/footer", both decided 2026-10-03 — don't "fix" them by adding a meta tag or moving the entry:
+
+- `docs.html` sits in the navbar **More…** dropdown but is `noindex`. It has to stay that way: its whole content is the `Assets/` tree, and `robots.txt` `Disallow`s `/Assets/`. Making it indexable would put pages in search results that crawlers can't fetch.
+- `umpire-training.html` sits in the footer but is `noindex` — it's a rules easter egg, deliberately not a search landing page.
 
 ### Auditing
 

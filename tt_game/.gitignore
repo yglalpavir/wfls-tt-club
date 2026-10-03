@@ -14,3 +14,18 @@ tools/_smoke_*.py
 # ---- 停止哨兵：server 写一个空文件让长跑在回合边界优雅暂停 ----
 # train-input3.js 每局检查一次；暂停完成后自己删掉。
 data/.stop/
+
+# ---- 部署面收缩（2026-10）：训练期产物不进库、不上线 ----
+# 运行时只懒加载 js/input-weights.js（bake-input.js 的烘焙产物）；下面这些是它的
+# 上游原料与历史备份，单个 1.9-6.6MB。它们只被 Node 诊断/烘焙脚本按本地路径读取，
+# 而真正的续训依赖同样已忽略的 data/checkpoints/ —— 所以不入库不影响任何线上功能，
+# 只意味着「干净克隆跑不了本地训练」，这与既有策略一致。
+data/input-ai*.json
+data/tmp-*.json
+# 权重历史备份（input-weights.js 本体保留，它是游戏实际加载的文件）
+js/*.bak
+js/*.bak-*
+# 训练日志（server.log / train-*.log 等）
+*.log
+# 2026-09-13 UI 改版前的整份游戏备份，脚本清单已过期，无人链接
+backups/
