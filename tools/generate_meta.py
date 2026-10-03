@@ -30,6 +30,7 @@ PAGES = [
     "index.html", "news.html", "competitions.html", "ranking.html",
     "data_viz.html", "data_scale.html", "season-review.html", "personal_stats.html", "player.html", "detail.html",
     "members.html", "qa.html", "changelog.html", "contact.html",
+    "match.html", "submit.html",
 ]
 FEED_BASE = "news"      # feed 的内容类型
 FEED_LIMIT = 20
@@ -49,10 +50,11 @@ def git_head_lastmod():
 
 
 def build_sitemap():
-    today = date.today().isoformat()
     head_lm = git_head_lastmod()
-    # 内容数据最新的条目日期 —— 作为内容页 lastmod 的下限参考
-    latest_content = today
+    # 内容数据最新的条目日期 —— 作为内容页 lastmod 的下限参考。
+    # 起点必须为空串而非 date.today()：以「今天」为起点时，lastmod 每天都会随日历前移，
+    # 而 sitemap.xml 是提交进仓库的固定文件，于是每过一天 --check 就不一致、CI 必然变红。
+    latest_content = ""
     try:
         for t in ("news", "competitions", "qa"):
             p = os.path.join(ROOT, "data", t, "index.json")
