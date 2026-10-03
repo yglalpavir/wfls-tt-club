@@ -6,8 +6,10 @@
    无自弈、日期合法且不晚于今天；双打记录（类型=双打）胜者/负者必须是 "A/B" 两人组合
    （拆半逐个查登记，A/B 与 B/A 视为同一组合的自弈判定），其他类型禁用组合名
 3. 加分记录（对象/分数 形态）的分数必须可解析为非零数值
-4. 赛制校验：显式赛制 ∈ 赛制系数键 ∪ {default}；缺省赛制依赖的「默认赛制」必须覆盖该类型；
-   decay-config 的 noDecayTypes ⊆ 已定义类型
+4. 赛制校验：显式赛制 ∈ 赛制系数键（字面 "default" 不接受）；每场比赛必须写明**具体**赛制
+   （缺失即失败，见 tools/backfill_score_log_format.py 的历史补全）；缺省赛制依赖的
+   「默认赛制」必须覆盖该类型；decay-config 的 noDecayTypes ⊆ 已定义类型
+   （本项仅作用于俱乐部记录，WTT 记录无「赛制」字段，由 [11] 校验）
 5. 比分/局分自洽性（可选字段，口径与 tools/append_submission.py 一致；覆盖 data/score-log.json
    与 wtt_data/*/score-log-*.json）：总比分格式/胜方局数更大且 ≤4/与赛制匹配（WTT 记录无赛制字段，
    跳过局数匹配）；局分逐条合法、无平局、与总比分自洽；仅有局分时须能推出胜方
@@ -28,6 +30,7 @@ import json
 import os
 import re
 import sys
+from collections import Counter
 from datetime import date, datetime
 
 # Windows GBK 控制台兜底：输出统一走 UTF-8（CI Linux 环境不受影响）
@@ -207,18 +210,22 @@ format_coeffs = coeff.get("赛制系数") if isinstance(coeff, dict) else None
 default_formats = coeff.get("默认赛制") if isinstance(coeff, dict) else None
 format_keys = {str(k).lower() for k in format_coeffs} if isinstance(format_coeffs, dict) else set()
 bad_formats, uncovered_defaults = set(), set()
+missing_fmt, literal_default = [], []
 for r in scorelog:
     if not r.get("胜者"):
         continue
     et = r.get("类型")
     fmt = r.get("赛制")
     if fmt in (None, ""):
+        missing_fmt.append((r.get("日期"), et))
         df = (default_formats or {}).get(et) if isinstance(default_formats, dict) else None
         if df is None and et in coeff_types:
             uncovered_defaults.add(et)
         elif df is not None and str(df).lower() not in format_keys and str(df).lower() != "default":
             uncovered_defaults.add(et)
-    elif str(fmt).lower() != "default" and str(fmt).lower() not in format_keys:
+    elif str(fmt).lower() == "default":
+        literal_default.append((r.get("日期"), et))
+    elif str(fmt).lower() not in format_keys:
         bad_formats.add(str(fmt))
 if bad_formats:
     err(f"赛制取值不在 赛制系数 键中: {sorted(bad_formats)}（可用: {sorted(format_keys)}）")
@@ -228,6 +235,21 @@ if uncovered_defaults:
     err(f"以下类型的记录缺省「赛制」，但「默认赛制」未配置或非法（将按倍率 1 静默处理）: {sorted(uncovered_defaults)}")
 else:
     ok("缺省赛制的类型均被「默认赛制」覆盖")
+# 硬门禁：每场比赛都要有**具体**赛制。历史上 188/328 条缺失、且 q1 公布的 bo3 倍率与
+# event-coefficient.json 不符，现已补全，故升级为 err。字面 "default" 同样不接受——
+# 它把口径决定推迟到读表时，出错时无法从记录本身看出用了哪套赛制。
+# 仅作用于俱乐部记录：wtt_data/*/score-log-*.json 无「赛制」字段，由 [11] 单独校验。
+if missing_fmt or literal_default:
+    parts = []
+    if missing_fmt:
+        parts.append("缺失 {} 条".format(len(missing_fmt)))
+    if literal_default:
+        parts.append("字面值 \"default\" {} 条".format(len(literal_default)))
+    by_type = Counter(et for _, et in missing_fmt + literal_default)
+    err("比赛记录的「赛制」必须写具体值（bo3/bo5/bo7），当前{}；按类型: {}".format(
+        "、".join(parts), dict(sorted(by_type.items()))))
+else:
+    ok("所有比赛记录均已写明具体赛制")
 decay_cfg = load(os.path.join(ROOT, "data", "decay-config.json")) or {}
 no_decay = decay_cfg.get("noDecayTypes") if isinstance(decay_cfg, dict) else None
 if isinstance(no_decay, list):

@@ -179,10 +179,14 @@ def validate_match(rec, today, names, alias_map, coeff_types, format_keys, defau
     fmt_l = str(fmt).lower() if fmt not in (None, "") else None
     if fmt_l is not None and fmt_l != "default" and fmt_l not in format_keys:
         errs.append(f"赛制 {fmt!r} 不合法（可用：default / {sorted(format_keys)}）")
-    elif fmt_l is not None:
+    elif fmt_l is not None and fmt_l != "default":
         out["赛制"] = fmt_l
     else:
-        out["赛制"] = "default"
+        # 缺省或字面 "default" 一律**解析成具体赛制**再写出：ci_validate 已把「比赛记录必须
+        # 写明具体赛制」升级为硬门禁，原样写 "default" 会被自己的校验挡下。取值来自「默认赛制」
+        # 表，与引擎解析 'default' 时的口径完全一致（js/score-engine.js getFormatMultiplier），
+        # 因此对积分零影响。类型未被覆盖时退回 "default"，由 ci_validate 报错拦截。
+        out["赛制"] = str(default_formats.get(et) or "default").lower()
 
     def resolve_side(raw_name, side):
         """解析一侧：单名 → 规范名（str）；组合 → 规范名列表（list，保持提交顺序，
