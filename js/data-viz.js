@@ -521,23 +521,35 @@ function getApproxScoreAtDate(playerName, targetDate, sortedLog, startScores, be
     }
 
     const sc = { ...effectiveStartScores };
-    for (const r of sortedLog) {
-        // 跳过赛季开始前的记录
-        if (seasonStartDate && r['日期'] < seasonStartDate) continue;
-        if (beforeMatch ? (r['日期'] >= targetDate) : (r['日期'] > targetDate)) break;
-        if (isMatchRecord(r)) {
-            const w = r['胜者'], l = r['负者'];
-            if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE;
-            if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
-            const { wGain: wg, lLoss: wl } = calcMatchPointsDual(w, l, r['类型'], r['日期'], getTodayStr(), sc, r['赛制']);
-            sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
-            sc[l] = Math.max(SCORE_FLOOR, sc[l] - wl);
-        } else if (isBonusRecord(r)) {
-            const t = r['对象'];
-            const b = parseFloat(r['分数']) || 0;
-            if (!sc[t]) sc[t] = DEFAULT_INITIAL_SCORE;
-            sc[t] = Math.max(SCORE_FLOOR, sc[t] + b);
+    // 构建赛季内 [seasonStartDate, targetDate] 的批次定格索引。calcMatchPointsDual 内部经
+    // getFreezeWeight 读这个全局，索引缺失或错配会静默退化成「不衰减」(score-engine.js:128)，
+    // 这正是本函数此前算出错误积分的原因。取完恢复原值，避免污染同页其它口径
+    // （与 match-detail.js / season-review.js 同一惯用法）。
+    const prevBatches = playerTypeBatches;
+    playerTypeBatches = buildPlayerTypeBatches(sortedLog.filter(r => (!seasonStartDate || r['日期'] >= seasonStartDate) && r['日期'] <= targetDate));
+    try {
+        for (const r of sortedLog) {
+            // 跳过赛季开始前的记录
+            if (seasonStartDate && r['日期'] < seasonStartDate) continue;
+            if (beforeMatch ? (r['日期'] >= targetDate) : (r['日期'] > targetDate)) break;
+            if (isMatchRecord(r)) {
+                const w = r['胜者'], l = r['负者'];
+                if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE;
+                if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
+                // 快照日必须是 targetDate（= 该对手的最后交手日），不能取今天：
+                // 本函数要的是「截至 targetDate 的积分」，取今天会额外衰减一次。
+                const { wGain: wg, lLoss: wl } = calcMatchPointsDual(w, l, r['类型'], r['日期'], targetDate, sc, r['赛制']);
+                sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
+                sc[l] = Math.max(SCORE_FLOOR, sc[l] - wl);
+            } else if (isBonusRecord(r)) {
+                const t = r['对象'];
+                const b = parseFloat(r['分数']) || 0;
+                if (!sc[t]) sc[t] = DEFAULT_INITIAL_SCORE;
+                sc[t] = Math.max(SCORE_FLOOR, sc[t] + b);
+            }
         }
+    } finally {
+        playerTypeBatches = prevBatches;
     }
     return Math.round(sc[playerName] || DEFAULT_INITIAL_SCORE);
 }
@@ -547,7 +559,7 @@ function renderPersonalStats(playerName) {
     if (!container) return;
 
     if (!scoreLogData || !scoreLogData.length) {
-        container.innerHTML = '<div class="compare-placeholder"><p>暂无比赛数据</p></div>';
+        container.innerHTML = `<div class="compare-placeholder"><p>${i18n[currentLang].personal_stats_no_data}</p></div>`;
         return;
     }
 
@@ -638,12 +650,15 @@ function renderPersonalStats(playerName) {
         if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
         if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
         const { wGain: wg, lLoss: wl } = calcMatchPointsDual(w, l, r['类型'], r['日期'], getTodayStr(), scores, r['赛制']);
+        // 以「对手」为键记录**本人**在该对手身上的得分/失分，net = 本人净得分：
+        // 拿捏筛 net>0（我压制他）、克星筛 net<0（我打不过他）。两分支各只记本人一侧——
+        // 胜方记 wg（本人所得），败方记 wl（本人所失）。败方若把对手的 wg 记进 gained，
+        // net 会变成「对手所得 − 本人所失」，因 wg > wl（LOSER_POINT_MULTIPLIER=0.8）
+        // 而恒为正，克星卡将永远为空。
         if (w === playerName) {
             oppPointsGained[l] = (oppPointsGained[l] || 0) + wg;
-            oppPointsLost[l] = (oppPointsLost[l] || 0) + wl;
         } else if (l === playerName) {
-            oppPointsLost[w] = (oppPointsLost[w] || 0) + wg;
-            oppPointsGained[w] = (oppPointsGained[w] || 0) + wl;
+            oppPointsLost[w] = (oppPointsLost[w] || 0) + wl;
         }
         scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg);
         scores[l] = Math.max(SCORE_FLOOR, scores[l] - wl);

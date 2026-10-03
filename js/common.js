@@ -409,6 +409,9 @@ const i18n = {
         docs_breadcrumb_aria: "位置导航", docs_type_filter_aria: "按类型筛选",
         docs_sort_name: "名称", docs_preview_aria: "文件预览",
         media_download_file: "下载文件",
+        media_img_error: "图片加载失败", media_img_download: "下载图片",
+        media_video_loading: "视频加载中...", media_video_error: "视频加载失败",
+        media_video_error_hint: "（文件较大，网络不稳定时可能加载较慢）", media_video_download: "下载视频",
         /* ---- 页面级文案：SEO / 404 / ranking / WTT / admin（补齐 HTML 已引用但字典缺失的 key） ---- */
         nf_page_title: "404 - 页面未找到 | WFLS Table Tennis Club",
         nf_meta_desc: "WFLS Table Tennis Club - 页面未找到",
@@ -1057,6 +1060,9 @@ const i18n = {
         docs_breadcrumb_aria: "Breadcrumb", docs_type_filter_aria: "Filter by type",
         docs_sort_name: "Name", docs_preview_aria: "File preview",
         media_download_file: "Download file",
+        media_img_error: "Image failed to load", media_img_download: "Download image",
+        media_video_loading: "Loading video...", media_video_error: "Video failed to load",
+        media_video_error_hint: "(the file is large and may load slowly on a slow connection)", media_video_download: "Download video",
         /* ---- Page-level copy: SEO / 404 / ranking / WTT / admin (keys referenced by HTML but missing from the dictionary) ---- */
         nf_page_title: "404 - Page Not Found | WFLS Table Tennis Club",
         nf_meta_desc: "WFLS Table Tennis Club - Page not found",
@@ -2745,7 +2751,7 @@ function buildMediaItem(m, embed) {
         img.src = m.src;
         img.alt = m.alt || '图片';
         img.loading = 'lazy';
-        img.onerror = () => { img.style.display = 'none'; const srcSafe = escapeHtml(m.src); mi.innerHTML = '<div class="media-error"><i class="fa-solid fa-image"></i><p>图片加载失败</p><a href="' + srcSafe + '" download class="media-download-link"><i class="fa-solid fa-download"></i> 下载图片</a></div>'; };
+        img.onerror = () => { img.style.display = 'none'; const srcSafe = escapeHtml(m.src); const L = i18n[currentLang] || {}; mi.innerHTML = '<div class="media-error"><i class="fa-solid fa-image"></i><p>' + escapeHtml(L.media_img_error) + '</p><a href="' + srcSafe + '" download class="media-download-link"><i class="fa-solid fa-download"></i> ' + escapeHtml(L.media_img_download) + '</a></div>'; };
         mi.appendChild(img);
     } else if (m.type === 'video') {
         const wrapper = document.createElement('div');
@@ -2763,7 +2769,7 @@ function buildMediaItem(m, embed) {
         v.appendChild(source);
         const loadingEl = document.createElement('div');
         loadingEl.className = 'video-loading';
-        loadingEl.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i><p>视频加载中...</p>';
+        loadingEl.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i><p>' + escapeHtml((i18n[currentLang] || {}).media_video_loading) + '</p>';
         let videoLoaded = false, videoError = false;
         const hideLoading = () => { if (!videoLoaded && !videoError) { videoLoaded = true; loadingEl.style.display = 'none'; } };
         const showLoading = () => { if (videoLoaded && !videoError) { videoLoaded = false; loadingEl.style.display = 'flex'; } };
@@ -2779,7 +2785,8 @@ function buildMediaItem(m, embed) {
             videoError = true;
             loadingEl.style.display = 'none';
             const srcSafe = escapeHtml(m.src);
-            mi.innerHTML = '<div class="media-error"><i class="fa-solid fa-video"></i><p>视频加载失败</p><p class="media-error-hint">（文件较大，网络不稳定时可能加载较慢）</p><a href="' + srcSafe + '" download class="media-download-link"><i class="fa-solid fa-download"></i> 下载视频</a></div>';
+            const L = i18n[currentLang] || {};
+            mi.innerHTML = '<div class="media-error"><i class="fa-solid fa-video"></i><p>' + escapeHtml(L.media_video_error) + '</p><p class="media-error-hint">' + escapeHtml(L.media_video_error_hint) + '</p><a href="' + srcSafe + '" download class="media-download-link"><i class="fa-solid fa-download"></i> ' + escapeHtml(L.media_video_download) + '</a></div>';
         };
         v.onerror = handleVideoError;
         source.onerror = handleVideoError;
