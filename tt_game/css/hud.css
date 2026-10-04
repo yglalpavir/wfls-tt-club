@@ -284,8 +284,10 @@ html.tips-on.touch #pushHint{bottom:calc(var(--ctrlH,94px) + 80px)}
   background:rgba(6,8,14,.55);opacity:0;transition:opacity .28s}
 html.touch.sheet-open #sheetScrim{display:block;opacity:1;pointer-events:auto}
 
-/* 搓球大圆钮：按住 = ctrlHold（搓球/放平拍面）。对局全程可用，故置于最高优先层。 */
-#btnPush{display:none;position:absolute;right:calc(16px + env(safe-area-inset-right));
+/* 搓球大圆钮：按住 = ctrlHold（搓球/放平拍面）。对局全程可用，故置于最高优先层。
+   底栏左右可换边：默认搓钮在左、发球簇在右（html.push-right 反过来），
+   两个控件永远分居两侧，中间那段空地正好留给拖动球拍的手。 */
+#btnPush{display:none;position:absolute;left:calc(16px + env(safe-area-inset-left));right:auto;
   bottom:calc(18px + env(safe-area-inset-bottom));width:82px;height:82px;min-width:0;min-height:0;
   padding:0;border-radius:50%;font-family:var(--disp);font-weight:700;font-size:32px;letter-spacing:2px;
   z-index:5}
@@ -293,11 +295,14 @@ html.touch.playing #btnPush{display:flex}
 #btnPush.active{background:rgba(13,148,136,.16);border-color:var(--teal);color:var(--teal);
   box-shadow:0 0 22px rgba(13,148,136,.4)}
 /* 发球控件簇：按住 ◀/▶ = 左右侧旋 · 点按 −/＋ = 旋转强度（仅玩家发球阶段出现）
-   宽度上限为「屏宽 − 搓钮 − 边距」，放不下就换行 —— 宁可换行也绝不压到搓钮 */
-#touchServe{position:absolute;left:calc(16px + env(safe-area-inset-left));
+   宽度上限为「屏宽 − 搓钮 − 边距」，放不下就换行 —— 宁可换行也绝不压到搓钮。
+   左右位置与搓钮严格对调，两者不可能同时占同一边。 */
+#touchServe{position:absolute;right:calc(16px + env(safe-area-inset-right));left:auto;
   bottom:calc(18px + env(safe-area-inset-bottom));display:flex;gap:10px;flex-wrap:wrap;
   max-width:calc(100vw - 32px - 82px - 12px);
   opacity:0;transform:translateY(10px);transition:opacity .25s,transform .25s;z-index:5}
+html.push-right #btnPush{left:auto;right:calc(16px + env(safe-area-inset-right))}
+html.push-right #touchServe{right:auto;left:calc(16px + env(safe-area-inset-left))}
 #touchServe.on{opacity:1;transform:none}
 #touchServe:not(.on) button{pointer-events:none}
 /* 观看模式退出钮（对应桌面 Esc） */

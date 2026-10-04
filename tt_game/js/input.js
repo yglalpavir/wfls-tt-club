@@ -241,6 +241,30 @@ function setTouchMode(on){
 if(btnLayout) btnLayout.onclick = e=>{ e.stopPropagation(); ensureAudio(); setTouchMode(!TOUCH); };
 refreshLayoutBtn();
 
+/* ---- 搓球键位置：左（默认）/ 右 ----
+   底栏两个控件簇分居左右两侧，捏不到同一只手：默认搓球大圆钮在左、发球簇在右，
+   右手拇指空出来贴着拖动区。左撇子或习惯右手持机搓球的人在设置里一键对调。 */
+const PUSH_SIDE_KEY = 'wfls-tt-push-side';
+const btnPushSide = $('btnPushSide');
+function pushSide(){
+  try{ return localStorage.getItem(PUSH_SIDE_KEY) === 'right' ? 'right' : 'left'; }  // 缺省=左
+  catch(e){ return 'left'; }
+}
+function refreshPushSideBtn(){
+  if(btnPushSide) btnPushSide.firstElementChild.textContent = gameT(pushSide()==='right' ? 'g_btn_push_right' : 'g_btn_push_left');
+}
+function applyPushSide(){
+  document.documentElement.classList.toggle('push-right', pushSide()==='right');
+  refreshPushSideBtn();
+}
+if(btnPushSide) btnPushSide.onclick = e=>{
+  e.stopPropagation(); ensureAudio();
+  try{ localStorage.setItem(PUSH_SIDE_KEY, pushSide()==='right' ? 'left' : 'right'); }catch(err){}
+  applyPushSide();
+  syncTouchMetrics();   // 控件带高度不变，但左右对调后立刻复核一次更稳妥
+};
+applyPushSide();
+
 /* ---- 触屏按钮：按住类（pointerdown/up/cancel + 指针捕获，保证可靠释放） ---- */
 function holdBtn(el, on, off){
   if(!el) return;
@@ -351,5 +375,6 @@ function inputReapplyI18n(){
   $('btnSound').firstElementChild.textContent = gameT(soundOn ? 'g_btn_sound_on' : 'g_btn_sound_off');
   if(btnQuality) btnQuality.firstElementChild.textContent = gameT('g_btn_quality') + QUALITY.modeLabel();
   refreshLayoutBtn();
+  refreshPushSideBtn();
   if(TOUCH) applyTouchTexts();
 }
