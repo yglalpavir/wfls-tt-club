@@ -73,3 +73,6 @@ Assets/manifest.json
 data/dataset-stats.json
 # 本地海报调试预览图，不随站点发布
 .poster-preview/
+# 社展离线版产物（tools/build_offline.py 生成，只存在于本地磁盘）
+offline_pkg/
+offline_pkg.building/

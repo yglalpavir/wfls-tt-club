@@ -371,8 +371,20 @@ function physicsStep(dt){
   checkNet();
   if(state==='rally' && !ballDead){ tryPlayerHit(); tryAIHit(); }
   if(!ballDead){
-    if(p.y<=BALL_R && v.y<0){ p.y = BALL_R; resolveOut(); }
-    else if(Math.abs(p.x)>7.5 || Math.abs(p.z)>7.5 || p.y<-0.5) resolveOut();
+    /* 出界判定。原来的两个条件合起来会死锁：
+     *   · 落地判死要求 v.y<0，但台外地面反弹（下面的 else 分支）把 v.y 变正，
+     *     球就在 y=BALL_R 上下振荡，落地判死大半帧不成立；
+     *   · 而 |x|>7.5 / |z|>7.5 离台面（半长 1.37）太远，阻尼会让球先停住，
+     *     永远到不了 7.5。
+     * 结果：球停在台外 4~6 米处无限弹跳，state 永远停在 rally/toss，这一分打不完。
+     * 表现为「某一分突然卡住 / AI 与玩家都不动」，与哪一方发球无关。
+     * 修：加「落到台面外的地面上」判死（按台面外接矩形 + 一点余量），
+     *     并把硬阈值从 7.5 收到台面尺寸的量级，作为兜底防飞出场外太远。 */
+    const OUT_X = TABLE_W / 2 + 0.35, OUT_Z = TABLE_L / 2 + 0.35;   // 台面外接矩形 + 余量
+    const onFloor = p.y <= BALL_R + 1e-4;
+    if(onFloor && v.y < 0){ p.y = BALL_R; resolveOut(); }
+    else if(onFloor && (Math.abs(p.x) > OUT_X || Math.abs(p.z) > OUT_Z)) resolveOut();
+    else if(Math.abs(p.x) > 3.0 || Math.abs(p.z) > 3.0 || p.y < -0.5) resolveOut();
   }else{
     if(p.y<=BALL_R && v.y<0){ p.y=BALL_R; v.y=-v.y*0.5; v.x*=0.72; v.z*=0.72; }
   }
