@@ -268,6 +268,23 @@ function ladderEval(agent, rngSeed, games, tags){
   return out;
 }
 
+/* ---- 每档 N 局 × 2 个独立种子，取合并胜率 ----
+ * 单种子的胜率会把"这批对手序列恰好克制/恰好被克制"记进选优分（种子过拟合）。
+ * 两个独立种子合并后，同一代选优的噪声减半；最终评估本来就是 eval*2 局，
+ * 这里把每轮验证提到同口径。代价：每轮验证局数翻倍（--eval 77 → 3 档 × 154 局）。
+ * detail 记两段各自的局分，方便事后看两个种子是否严重分歧。 */
+function ladderEval2(agent, rngSeed, games, tags){
+  const a = ladderEval(agent, rngSeed, games, tags);
+  const b = ladderEval(agent, rngSeed * 7 + 104729, games, tags);
+  return a.map((r, i) => {
+    const q = b[i];
+    const wa = Math.round(r.wr * r.games), wb = Math.round(q.wr * q.games);
+    const g = r.games + q.games;
+    return { tag: r.tag, id: r.id, wr: +((wa + wb) / g).toFixed(4), games: g,
+             detail: r.detail + ' | ' + q.detail };
+  });
+}
+
 /* ---- 胜率结果 → 扁平 series 键（wr<档位名驼峰>）：曲线文件与 UI 图表直接取用 ---- */
 function wrFlat(res){
   const o = {};
@@ -344,8 +361,20 @@ const resumeWr = (tag) => {
   return typeof v === 'number' ? v : -1;
 };
 
-/* ---- 检查点目录：默认 data/checkpoints/<run>/；续训时沿用上次的目录 ---- */
-const RUN_NAME = opt.runName || (RESUME && RESUME.idx && RESUME.idx.run) || ('input3-' + dayStamp());
+/* ---- 检查点目录：默认 data/checkpoints/<run>/ ----
+ * ★ 续训默认开新目录（旧 run 名 + 日期后缀），除非显式给了 --run-name/--ckptdir。
+ *   旧行为是直接沿用起点 run 的名字与目录，而局号又从头数（ep 200/400/…），
+ *   于是新 run 的检查点会**覆盖**旧 run 同号的 checks[]，两段历史混进同一个
+ *   index.json。实测事故：input3-v4 的 index.json 里 run 字段写着 "input3-v3"、
+ *   adopted.json 与 v3 的 ckpt-006400.json 逐字节相同、ep 6400~8400 的
+ *   checks[] 全部停在 ep 3600 的胜率上 —— 看起来像「验证循环冻住了」，
+ *   其实是覆盖事故的表象：新 run 写的都是 ep 200~2000，覆盖了旧 run 的低位，
+ *   旧 run 的高位 6400~8400 无人覆盖，于是永远停在那里。 */
+const RESUME_RUN = (RESUME && RESUME.idx && RESUME.idx.run) || null;
+const INHERIT_DIR = !opt.runName && !opt.ckptDir && !!(RESUME && RESUME.dir);
+const RUN_NAME = opt.runName
+  || (INHERIT_DIR ? (RESUME_RUN + '-' + dayStamp()) : RESUME_RUN)
+  || ('input3-' + dayStamp());
 /* 续训默认写回起点所在目录（同一条曲线接着长），但显式给了 --ckptdir 或 --run-name
  * 就以显式值为准 —— 否则「换个名字重跑一轮」会静默写进旧目录，把新旧口径（或两个
  * 实验）的曲线混在一起，读图时无从分辨。 */
@@ -354,6 +383,19 @@ const CKPT_DIR = opt.ckptDir
   || (RESUME && RESUME.dir)
   || path.join(ROOT, 'data', 'checkpoints', RUN_NAME);
 const IDX_PATH = path.join(CKPT_DIR, 'index.json');
+/* 硬拦第二道闸：目标目录里已有的 index 若属于另一个 run 名，绝不覆写。
+ * 上一段已经把「续训默认目录」换开了，这里防的是显式指定写错 ——
+ * 至少要炸出来，而不是把别人的曲线悄悄盖掉。 */
+if(fs.existsSync(IDX_PATH)){
+  try{
+    const ex = JSON.parse(fs.readFileSync(IDX_PATH, 'utf8'));
+    if(ex && ex.run && ex.run !== RUN_NAME){
+      console.error('❌ ' + rel(IDX_PATH) + ' 已属于 run「' + ex.run + '」，与本次「' + RUN_NAME + '」不符。');
+      console.error('    换 --run-name / --ckptdir 指定新目录；覆盖会把两轮曲线混成一条。');
+      process.exit(2);
+    }
+  }catch(e){ /* index 损坏时不拦，交给后续读取逻辑报错 */ }
+}
 /* 曲线文件的目录要在这里就建好。18h 预设把曲线放在检查点目录里
  * （data/checkpoints/input3-18h/curve.json），而那个目录原本只有写检查点时才建；
  * 可第一轮边界里 curve 的 writeFileSync 排在 writeCheckpoint 之前，
@@ -778,7 +820,7 @@ for(let g = R.ep0; g < opt.games && !budgetExhausted && !stopRequested; g++){ st
      * 逐档胜率就是面板上「对不同模型的验证胜率」；选优仍只取其中 3 档
      * （顶档为主 / 本阶段次之 / 默认策略做回归护栏）。 */
     const tEv = Date.now();
-    const res = ladderEval(agent, opt.seed * 91 + g, opt.eval, VAL_TAGS);
+    const res = ladderEval2(agent, opt.seed * 91 + g, opt.eval, VAL_TAGS);
     const wr = wrFlat(res);
     const wrMap = {}; for(const r of res) wrMap[r.tag] = r.wr;
     const epM = wrMap[opt.end], epD = wrMap['default'];   // 顶档与 default 已强制包含，必然存在
@@ -889,11 +931,18 @@ if(stopRequested){
 if(bestNet) agent.setNet(bestNet);
 const FINAL_G = Math.max(80, opt.eval * 2);
 console.log('\n=== 最佳权重最终评估（' + FINAL_G + ' 局/档）===');
-const finNew = ladderEval(agent, opt.seed * 51, FINAL_G, VAL_TAGS);
+const finNew = ladderEval2(agent, opt.seed * 51, Math.max(40, Math.round(FINAL_G / 2)), VAL_TAGS);
 const finBase = baseLadder;   // 基线已在训练前标定（同一份起点权重）
+/* ★ 按档名匹配，不按下标。baseLadder 现场标定时只跑 needTags 三档（省 246 局），
+ *   而 finNew 是完整 VAL_TAGS —— 原来 `finBase[i]` 按下标取，第四档起是 undefined，
+ *   `--from random`（无断点基线）必崩 TypeError；--resume 带残缺基线时则把
+ *   「default 的胜率」和「顶档的胜率」错位相减，算出 0.0704 / 0.4682 这种数
+ *   （input3-v4 的 final.base 就是这么来的）。 */
+const baseByTag = {}; for(const r of baseLadder) baseByTag[r.tag] = r;
 console.log('  对手'.padEnd(16) + '最佳权重      起点权重');
 for(let i = 0; i < finNew.length; i++){
-  const a = finNew[i], b = finBase[i];
+  const a = finNew[i], b = baseByTag[a.tag];
+  if(!b){ console.log('  ' + a.tag.padEnd(14) + (a.wr * 100).toFixed(1).padStart(6) + '%' + '  ' + '  (基线无此档)'); continue; }
   const d = (a.wr - b.wr) * 100;
   console.log('  ' + a.tag.padEnd(14) + (a.wr * 100).toFixed(1).padStart(6) + '%' + '  ' +
               (b.wr * 100).toFixed(1).padStart(6) + '%' + '  ' + (d >= 0 ? '+' : '') + d.toFixed(1));

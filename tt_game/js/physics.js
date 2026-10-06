@@ -96,6 +96,16 @@ function autoStance(){
 }
 /* 搓球握法：按住Ctrl + 下旋来球 → 左半台(反手位)自动倒板反手搓，右半台正手搓；否则按握法 */
 function pushStanceOf(){
+  /* ★ 「鼠标上的tt玩家」对局：本侧姿态由 TT_PLAYER 拥有（tt-player.js#stanceTick），
+   * 输入口径与训练侧 input-sim#stanceOf 逐项一致。真人玩家侧仍走 autoStance()。
+   * 不这么切分的话，同一个 SIM.resolveStance 会吃到两套不同的输入
+   * （自适应预测缓存 vs 每板一次且不随磁吸漂移的预测点；gvx/bvx/strokeSwitches 的
+   *  给法也不同），于是选出的 STROKE 不同 → 触球窗口与磁吸强度都不同 ——
+   * 也就是 agent 训的是「训练侧那套姿态下的自己」。 */
+  if(typeof TT_PLAYER !== 'undefined' && TT_PLAYER.isReady() && TT_PLAYER.isTtSide('player')
+     && typeof mode !== 'undefined' && mode === 'watch'){
+    return TT_PLAYER.getStance('player');
+  }
   if(ctrlHold && relTop() < -8){
     return (ball.pos.x >= playerPad.group.position.x) ? 'backhand' : 'forehand';
   }
@@ -261,14 +271,12 @@ function hitAIForPlayer(){
 }
 function tryPlayerHit(){
   if(lastHitter==='player' || !canHit.player) return;
-  const st = STROKE[pushStanceOf()];                               // 搓球用对应半台握法（左半台反手倒板）
-  const pushF = (ctrlHold && relTop() < -8) ? PUSH.fit : null;     // 按住Ctrl搓球：拟合放宽（更容易）
-  const high = ball.pos.y > TABLE_TOP + 0.13;                      // 半高球（阈值降低到 2/3）→ 爆扣/爆抽几乎必中
-  // 来球质量压力：球速越快/旋转越强 → 接球拟合越紧（更难接好）
-  const inQual = clamp((Math.abs(ball.vel.z) * 0.06 + Math.abs(ball.spin.x) * 0.002 + Math.abs(ball.spin.y) * 0.002) - 0.15, 0, 0.35);
-  const fitV = pushF ? st.forgiveV + pushF.v : (high ? st.forgiveV + 0.30 : Math.max(st.forgiveV - inQual, 0.04));
-  const fitH = pushF ? st.forgiveH + pushF.h : (high ? st.forgiveH + 0.16 : Math.max(st.forgiveH - inQual * 0.5, 0.02));
-  const fitZ = pushF ? st.forgiveZ + pushF.z : (high ? st.forgiveZ + 0.12 : Math.max(st.forgiveZ - inQual * 0.4, 0.02));
+  const stance = pushStanceOf();                                   // 搓球用对应半台握法（左半台反手倒板）
+  /* 容错窗口统一走 SIM.fitWindow（与训练 input-sim#tryPlayerFit 同一份公式）。
+     allowPush 传 ctrlHold：真人只有「按住 Ctrl 且来球下旋」才拿搓球宽容窗口，
+     AI 侧与训练侧只看球是否下旋 —— 这是三处有意不同的唯一一条，其余共用。 */
+  const W = SIM.fitWindow(stance, relTop(), ball.pos.y, ball.vel, ball.spin, !!ctrlHold);
+  const fitV = W.fitV, fitH = W.fitH, fitZ = W.fitZ;
   const g = playerPad.group.position, plane = g.z-PAD_HD;
   const zF = fitZ || 0.05;                    // 前后拟合：z 方向容错
   const swept = (_prev.z<=plane+zF && ball.pos.z>plane-zF && ball.vel.z>0);
@@ -282,19 +290,14 @@ function tryPlayerHit(){
 }
 function tryAIHit(){
   if(lastHitter==='ai' || !canHit.ai) return;
-  // ★ 与玩家对称：AI 接球拟合使用同一套 STROKE 容错 + 来球质量压力 + 半高/搓球增强
+  // ★ 与玩家对称：接球拟合窗口走 SIM.fitWindow（下旋来球自动获得搓球拟合，
+  //   判据只看球是否下旋、不看 agent 按没按 Ctrl —— 与训练侧已对齐）
   const stance = aiPad.stance;   // 姿态由 aiMoveShared resolveStance 维护
-  const st = STROKE[stance];
-  const isBack = relTop() < -8;
-  const pushF = isBack ? PUSH.fit : null;                        // AI 下旋来球自动获得搓球拟合（等效按住 Ctrl；原恒为 null 的死分支已修复）
-  const high = ball.pos.y > TABLE_TOP + 0.13;                    // 半高阈值与玩家一致
-  const inQual = clamp((Math.abs(ball.vel.z) * 0.06 + Math.abs(ball.spin.x) * 0.002 + Math.abs(ball.spin.y) * 0.002) - 0.15, 0, 0.35);
-  const fitV = pushF ? st.forgiveV + pushF.v : (high ? st.forgiveV + 0.30 : Math.max(st.forgiveV - inQual, 0.04));
-  const fitH = pushF ? st.forgiveH + pushF.h : (high ? st.forgiveH + 0.16 : Math.max(st.forgiveH - inQual * 0.5, 0.02));
-  const fitZ = pushF ? st.forgiveZ + pushF.z : (high ? st.forgiveZ + 0.12 : Math.max(st.forgiveZ - inQual * 0.4, 0.02));
+  const W = SIM.fitWindow(stance, relTop(), ball.pos.y, ball.vel, ball.spin);
+  const fitV = W.fitV, fitH = W.fitH, fitZ = W.fitZ;
   const g = aiPad.group.position, plane = g.z+PAD_HD;
   const zF = fitZ || 0.05;
-  const swept = (_prev.z>=plane+zF && ball.pos.z<plane-zF && ball.vel.z<0);
+  const swept = (_prev.z>=plane-zF && ball.pos.z<plane+zF && ball.vel.z<0);   // 玩家侧 swept 的严格镜像
   const prox  = Math.abs(ball.pos.z-g.z)<PAD_HD+BALL_R*2+zF && ball.vel.z<0.3;
   if(!(swept||prox)) return;
   if(Math.abs(ball.pos.x-g.x)>PAD_HW+BALL_R+fitH) return;
@@ -329,62 +332,49 @@ function physicsStep(dt){
   _mag.copy(s).cross(v).multiplyScalar(MAGNUS*dt); v.add(_mag);
   p.addScaledVector(v, dt);
   s.multiplyScalar(Math.max(0, 1-0.05*dt));
-  if(state==='rally' && !ballDead){
-    const stP = STROKE[playerStance];
-    if(canHit.player && v.z>0 && p.z>(playerStance==='forehand'?0.3:0.45)){
-      // 搓球拟合：按住Ctrl + 来球下旋 → 磁吸更强、引拍用放平拍
-      const pushF = (ctrlHold && relTop() < -8) ? PUSH.fit : null;
-      const high = p.y > TABLE_TOP + 0.13;                         // 半高球（阈值降低到 2/3）→ 磁吸更强（爆扣/爆抽几乎必中）
-      if(playerPad.phase==='ready') beginWindup(playerPad, pushF ? 'push' : playerStance, pushF ? 0.5 : 0.55);
-      // 姿态切换过渡成本：刚换握的 0.18s 内磁吸打折（换握/转腰未到位），线性恢复
-      const mag = (stP.magnet + (pushF ? pushF.mag : 0) + (high ? 1.2 : 0)) * SIM.stanceRampOf(playerPad.stanceT, elapsed);
-      v.x += clamp(playerPad.group.position.x-p.x, -0.7, 0.7)*ASSIST.magnetPull*mag*dt;
-      // 前后拟合：短球在球拍前方时向球拍深度凑近，避免漏球
-      const zAhead = playerPad.group.position.z - p.z;
-      if(zAhead>0.05) v.z += clamp(zAhead*0.5, 0, 0.45)*ASSIST.magnetPull*mag*0.55*dt;
-      // 高度拟合：半高球向下吸向拍面（扣球更容易够到）
-      if(high && p.y > playerPad.group.position.y){
-        const yGap = playerPad.group.position.y - p.y;             // 负（球高于拍面）
-        v.y += clamp(yGap*0.4, -0.35, 0)*ASSIST.magnetPull*mag*0.4*dt;
-      }
-    }
-    if(canHit.ai && v.z<0 && p.z<-ASSIST.magnetRangeZ){
-      // ★ 与玩家对称：AI 磁吸用同侧 STROKE.magnet + 半高增强（镜像 -Z）+ 同款切换过渡成本
-      const stA = STROKE[aiPad.stance];
-      const highA = p.y > TABLE_TOP + 0.13;
-      const magA = (stA.magnet + (highA ? 1.2 : 0)) * SIM.stanceRampOf(aiPad.stanceT, elapsed);
-      v.x += clamp(aiPad.group.position.x-p.x, -0.7, 0.7)*ASSIST.magnetPull*magA*dt;
-      // 半高球向下吸向拍面（与玩家侧对称）
-      if(highA && p.y > aiPad.group.position.y){
-        const yGapA = aiPad.group.position.y - p.y;
-        v.y += clamp(yGapA*0.4, -0.35, 0)*ASSIST.magnetPull*magA*0.4*dt;
-      }
-      // 前后拟合：深球在球拍后（-Z 侧）时向球拍深度凑近（镜像玩家 zAhead）
-      const zBehind = aiPad.group.position.z - p.z;               // 负（球在拍后/+Z 方向）
-      if(zBehind<-0.05) v.z += clamp(-zBehind*0.5, 0, 0.45)*ASSIST.magnetPull*magA*0.55*dt;
-    }
-  }
+  /* 台面弹跳先于磁吸：训练侧 input-sim#playerReceive 的顺序是
+     「子步积分 → 弹跳 → 磁吸 → 触球判定」，磁吸读到的是弹跳后的球高。
+     实机原来把磁吸放在积分之后、弹跳之前，读到的是弹跳前的高度 ——
+     半高球（high 判据 p.y > TABLE_TOP+0.13）在两种顺序下判定不同，
+     弹起越低差别越大。对齐成「弹跳 → 磁吸」，两侧口径才真正同一。 */
   if(v.y<0 && p.y-BALL_R<=TABLE_TOP && _prev.y-BALL_R>TABLE_TOP-0.05
      && Math.abs(p.x)<=TABLE_W/2+BALL_R*0.6 && Math.abs(p.z)<=TABLE_L/2+BALL_R*0.6){
     p.y = TABLE_TOP+BALL_R; tableBounce();
   }
+  if(state==='rally' && !ballDead){
+    /* 磁吸统一走 SIM.magnetStep（训练侧 input-sim 同一份，mir 区分左右）。
+     * pushMag 只给真人玩家侧（constants.js 写明 PUSH.fit.mag 是「玩家专用」）；
+     * agent 侧（ttmouse / 斗蛐蛐两侧）传 false，与原实机 AI 侧口径一致。 */
+    if(canHit.player && v.z>0){
+      const pushF = (ctrlHold && relTop() < -8) ? PUSH.fit : null;
+      if(playerPad.phase==='ready') beginWindup(playerPad, pushF ? 'push' : playerStance, pushF ? 0.5 : 0.55);
+      SIM.magnetStep(p, v, s, { mir: 1, padX: playerPad.group.position.x,
+        padZ: playerPad.group.position.z, padY: playerPad.group.position.y,
+        stance: playerStance, stanceT: playerPad.stanceT, now: elapsed,
+        canHit: true, ctrl: !!ctrlHold, pushMag: true, dt });
+    }
+    if(canHit.ai && v.z<0){
+      SIM.magnetStep(p, v, s, { mir: -1, padX: aiPad.group.position.x,
+        padZ: aiPad.group.position.z, padY: aiPad.group.position.y,
+        stance: aiPad.stance, stanceT: aiPad.stanceT, now: elapsed,
+        canHit: true, ctrl: false, pushMag: false, dt });
+    }
+  }
   checkNet();
   if(state==='rally' && !ballDead){ tryPlayerHit(); tryAIHit(); }
   if(!ballDead){
-    /* 出界判定。原来的两个条件合起来会死锁：
+    /* 出界判定统一走 SIM.outOfBounds（训练侧 playerReceive 同一份）。
+     * 原来的两个条件合起来会死锁：
      *   · 落地判死要求 v.y<0，但台外地面反弹（下面的 else 分支）把 v.y 变正，
      *     球就在 y=BALL_R 上下振荡，落地判死大半帧不成立；
      *   · 而 |x|>7.5 / |z|>7.5 离台面（半长 1.37）太远，阻尼会让球先停住，
      *     永远到不了 7.5。
      * 结果：球停在台外 4~6 米处无限弹跳，state 永远停在 rally/toss，这一分打不完。
      * 表现为「某一分突然卡住 / AI 与玩家都不动」，与哪一方发球无关。
-     * 修：加「落到台面外的地面上」判死（按台面外接矩形 + 一点余量），
-     *     并把硬阈值从 7.5 收到台面尺寸的量级，作为兜底防飞出场外太远。 */
-    const OUT_X = TABLE_W / 2 + 0.35, OUT_Z = TABLE_L / 2 + 0.35;   // 台面外接矩形 + 余量
-    const onFloor = p.y <= BALL_R + 1e-4;
-    if(onFloor && v.y < 0){ p.y = BALL_R; resolveOut(); }
-    else if(onFloor && (Math.abs(p.x) > OUT_X || Math.abs(p.z) > OUT_Z)) resolveOut();
-    else if(Math.abs(p.x) > 3.0 || Math.abs(p.z) > 3.0 || p.y < -0.5) resolveOut();
+     * 修法（已在 SIM.outOfBounds 里）：加「落到台面外的地面上」判死
+     *     （按台面外接矩形 + 一点余量），并把硬阈值收到台面尺寸的量级，
+     *     作为兜底防飞出场外太远。 */
+    if(SIM.outOfBounds(p, v)) resolveOut();
   }else{
     if(p.y<=BALL_R && v.y<0){ p.y=BALL_R; v.y=-v.y*0.5; v.x*=0.72; v.z*=0.72; }
   }

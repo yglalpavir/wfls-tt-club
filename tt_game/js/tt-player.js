@@ -33,10 +33,11 @@ const TT_PLAYER = (() => {
   let agent = null, ready = false;
   let frame = 0;
   /* 每侧虚拟"玩家拍"（玩家侧坐标系：拍在 +z 近台，来球 vz>0） */
-  const vpads = {
-    player: { x: 0, z: PLAYER_Z, svx: 0, svz: 0, ctrl: false, my: 0.5, cur: { tx: 0, my: 0.5, ctrl: false } },
-    ai:     { x: 0, z: PLAYER_Z, svx: 0, svz: 0, ctrl: false, my: 0.5, cur: { tx: 0, my: 0.5, ctrl: false } },
-  };
+  const __vpInit = () => ({ x: 0, z: PLAYER_Z, svx: 0, svz: 0, ctrl: false, my: 0.5,
+    cur: { tx: 0, my: 0.5, ctrl: false },
+    stance: 'forehand', stanceT: -1e9, serveLock: null,
+    _nz: { v: 0, t: -1 }, _stSw: 0, _wasInbound: false, _predBX: null });
+  const vpads = { player: __vpInit(), ai: __vpInit() };
   const cl = (v, a, b) => v < a ? a : (v > b ? b : v);
   const PADDLE_Y_ = C_.PADDLE_Y || 0.91;
 
@@ -108,19 +109,60 @@ const TT_PLAYER = (() => {
     };
   }
 
+  /* ---- 本侧的姿态决策（玩家侧坐标系）----
+   * ★ 与训练侧 input-sim.js#stanceOf **逐字段对齐** —— 不是"给得更多"，是"给一样的"。
+   *   两侧喂给 SIM.resolveStance 的字段必须完全相同，否则姿态就会分叉，而姿态
+   *   同时决定两件有物理后果的事：tryPlayerHit 里用哪个 STROKE 算触球窗口、
+   *   physicsStep 里用哪个 STROKE.magnet 算磁吸。
+   *   训练侧 stanceOf 的入参只有：bx / gx / gz / cur / lastSwitch / now /
+   *   inbound:true / commit / rng / bvx / noiseBox。**没有** gvx、ttc、ballY、
+   *   spinY、strokeSwitches、idle —— 所以这里一个都不传，多传一个就是新的失配。
+   *   bx = 每板一次的整板预测击球点，且不随磁吸拉球漂移（训练侧明确要求这一点，
+   *   否则会出现"磁吸改变球位 → 改变姿态"的反馈震荡）。
+   *   还原期（无来球）不调用 resolveStance、保持当前姿态 —— 与训练侧一致
+   *   （autoStance 的 resetHold 归位是真人手感，不属于训练口径）。 */
+  function stanceTick(vp, m, dt, mir){
+    const inbound = (typeof ball !== 'undefined') && ball.active && !ballDead && m.vel.z > 0.15;
+    if(!inbound){ vp._wasInbound = false; return; }
+    if(!vp._wasInbound){
+      vp._wasInbound = true;
+      vp._predBX = null;
+      vp._stSw = 0;
+      if(vp._nz){ vp._nz.v = 0; vp._nz.t = -1; }
+    }
+    if(vp._predBX == null) vp._predBX = SIM.predictXAtZ(m.pos, m.vel, m.spin, PLAYER_Z);
+    const ttc = (vp.z - m.pos.z) / m.vel.z;
+    const commit = ttc > 0 && ttc < SIM.commitTOf(vp.stance, m.vel.z);
+    const st = SIM.resolveStance({ bx: vp._predBX, gx: vp.x, gz: vp.z, cur: vp.stance,
+      lastSwitch: vp.stanceT, now: elapsed, inbound: true, commit, rng: Math.random,
+      bvx: m.vel.x || 0, noiseBox: vp._nz });
+    if(st !== vp.stance){ vp.stance = st; vp.stanceT = elapsed; }
+  }
+
   /* ---- 60Hz 决策 + 拍面缓动（input-sim.padControl 同公式，作用到实机拍） ---- */
   function ttTick(dt, side, realPad){
     if(!isReady()) return;
     const vp = vpads[side];
     const mir = (side === 'player') ? 1 : -1;
     const m = mirrorState(side);
-    if(frame % DECIDE_SKIP_ === 0){
+    /* ★ 发球锁：抛球窗口内冻结动作。
+     * 实机抛球有 1~1.5s 的 awaitServe + ~0.35s 的 toss 下降才击球，这段时间里
+     * ttTick 每帧都在重新决策 —— 于是真正击球那一刻的拍位是**最后一次**决策的目标，
+     * 而不是发球决策的目标。训练侧相反：serveFromPlayer 之前跑 15 帧 padControl
+     * 把拍面收敛到发球动作的 tx。出球点由拍位决定（SIM.serveOrigin），于是两边
+     * 的发球出球点系统性地不同。这里把发球决策锁到击球为止，与训练侧同口径。 */
+    const serving = vp.serveLock && (typeof state !== 'undefined')
+                    && (state === 'awaitServe' || state === 'toss')
+                    && (typeof server !== 'undefined') && server === side;
+    if(serving){
+      vp.cur = vp.serveLock;
+    }else if(frame % DECIDE_SKIP_ === 0){
       const obs = buildObs(side, realPad);
       const a = agent.bestAction(obs);
       vp.cur = agent.decode(a);
       if(typeof TT_STATS !== 'undefined') TT_STATS.noteAction(side, vp.cur);
     }
-    frame++;
+    if(!serving) frame++;
     /* padControl（玩家侧坐标系） */
     /* MOUSE_PACE / MOUSE_SV_CAP 从 simcore 的 C 读——与训练器 input-sim.js 同一份。
      * 原来这里是裸数字 18 / ±7，训练侧也各写一份；两边漂移 = 又一次训练/实机失配。
@@ -165,28 +207,17 @@ const TT_PLAYER = (() => {
     if(side === 'player' && typeof ctrlHold !== 'undefined' && typeof beginWindup === 'function'){
       ctrlHold = vp.ctrl;
     }
-    /* 正/反手姿态（仅 AI 侧；玩家侧由 autoStance 唯一所有，勿双写）。
-       mirrorState 只镜像 z——x 语义两侧一致，bvx 直接用真实坐标的 ball.vel.x。
-       与 aiMoveShared 同款 90ms 预测缓存 + SIM.resolveStance（v2.3：触球时刻几何/
-       横向趋势/方向不对称滞回/OU 平滑噪声/软承诺/磁吸过渡成本与实机 AI、玩家完全同源）。 */
-    if(side === 'ai'){
-      const inboundSt = typeof ball !== 'undefined' && ball.active && !ballDead && ball.vel.z * mir > 0.15;
-      if(inboundSt && !vp._wasInbound){ vp._stSw = 0; if(vp._nz){ vp._nz.v = 0; vp._nz.t = -1; } }   // 新一板：重置切换预算与决策噪声
-      vp._wasInbound = inboundSt;
-      if(inboundSt && elapsed - (vp._spT != null ? vp._spT : -9) > 0.09){
-        vp._spT = elapsed;
-        vp._spBX = SIM.predictXAtZ(ball.pos, ball.vel, ball.spin, g.z);
-      }
-      const ttc = (g.z - ball.pos.z) / ball.vel.z;   // 球到拍面平面时间（分子分母同号）
-      const st = SIM.resolveStance({ bx: inboundSt ? vp._spBX : ball.pos.x, gx: g.x, gz: g.z,
-        cur: realPad.stance, lastSwitch: realPad.stanceT, now: elapsed,
-        inbound: inboundSt, idle: !ball.active || ballDead,
-        commit: inboundSt && ttc > 0 && ttc < SIM.commitTOf(realPad.stance, ball.vel.z),
-        strokeSwitches: vp._stSw || 0, bvx: ball.vel.x, gvx: realPad.svx || 0,
-        ttc: inboundSt ? ttc : null, ballY: ball.pos.y, spinY: ball.spin.y,
-        noiseBox: (vp._nz || (vp._nz = { v: 0, t: -1 })) });
-      if(st !== realPad.stance){ realPad.stance = st; realPad.stanceT = elapsed; vp._stSw = (vp._stSw || 0) + 1; }
-    }
+    /* 正/反手姿态：本侧统一由 stanceTick 拥有（= 训练侧 input-sim#stanceOf 的输入口径）。
+       原来这里是「AI 侧用 ttTick 内嵌的 90ms 缓存版、玩家侧用 physics.js#autoStance
+       的自适应缓存版」—— 两套不同的输入喂同一个 SIM.resolveStance，实测构成
+       default/elite/extreme 档 -20~-38pp 缺口的一部分（见 tools/phase3-findings.md §5）。
+       玩家侧不再由 autoStance 写 playerPad.stance，autoStance 的返回值在
+       ttmouse 对局里已不参与任何物理判定（见 physics.js#autoStance 顶部注释）。 */
+    stanceTick(vp, m, dt, mir);
+    realPad.stance = vp.stance; realPad.stanceT = vp.stanceT;
+    /* 玩家侧同步 playerStance 全局：physicsStep 的玩家侧磁吸与 tryPlayerHit 都读它，
+       不同步的话它们读到的是 autoStance 的结果（真人路径）而不是本模型的。 */
+    if(side === 'player' && typeof playerStance !== 'undefined') playerStance = vp.stance;
     /* 引拍预告（与 aiMoveShared 同窗口）：在玩家侧坐标系看球接近虚拟拍时引拍 */
     if(typeof beginWindup === 'function' && realPad.phase === 'ready'
        && typeof lastHitter !== 'undefined' && lastHitter !== side
@@ -211,12 +242,18 @@ const TT_PLAYER = (() => {
       vel: { x: m.vel.x, y: m.vel.y, z: m.vel.z },
       spin: { x: m.spin.x, y: m.spin.y, z: 0 },
       swipe: vp.svx,
-      fwd: cl(-vp.svz / 7, 0, 1),
+      fwd: SIM.fwdOf(vp.svz),          // 分母读 MOUSE_SV_CAP（原来硬编码 /7，与训练侧各写一份）
       mouseNy: ny,
       aim: { x: aimX, z: aimZ, gx: vp.x },
       ctrlHold: !!realPad.ctrl,
       dir: -1,
-      applyArcAdj: (typeof mode !== 'undefined') ? mode === 'play' : true,
+      /* ★ 无条件应用弧线拟合。
+       * 原来写 applyArcAdj:(mode==='play')，于是**斗蛐蛐模式（mode==='watch'）下
+       * 弧线拟合被静默关掉** —— 而这正是线上遥测里全部 ttmouse 对局所在的模式。
+       * 训练侧 input-sim#hitShot 恒传 true，权重是在「弧线拟合生效」下学出来的，
+       * 关掉它等于实机换了一套出球物理。resolveHit 里这一项直接改 arc（±0.35），
+       * 进而改 solveShot 的抛物线与落点深度。 */
+      applyArcAdj: true,
       // 接发球板（第一板）无法触发爆冲——与实机玩家/AI 同一限制
       receive: (typeof rallyCount !== 'undefined' && typeof lastHitter !== 'undefined')
                ? (rallyCount <= 1 && lastHitter !== side) : false,
@@ -239,7 +276,10 @@ const TT_PLAYER = (() => {
       vp.x = 0; vp.z = PLAYER_Z; vp.svx = 0; vp.svz = 0;
       vp.ctrl = false; vp.my = 0.5;
       vp.cur = { tx: 0, my: 0.5, ctrl: false };
+      vp.serveLock = null;                       // 发球锁：每分重置
+      vp.stance = 'forehand'; vp.stanceT = -1e9; // 姿态跨板保持（与实机 playerPad 同）
       vp._stSw = 0;                            // 切换预算
+      vp._wasInbound = false; vp._predBX = null; // 每板重置：预测击球点 / 上升沿
       if(vp._nz){ vp._nz.v = 0; vp._nz.t = -1; }   // OU 决策噪声
     }
   }
@@ -290,10 +330,16 @@ const TT_PLAYER = (() => {
     };
     const d = agent.decode(agent.bestAction(obs));
     vp.cur = { tx: d.tx, my: d.my, ctrl: d.ctrl };
+    /* 锁住这一次决策直到击球（见 ttTick 的「发球锁」注释）：拍位要收敛到发球动作，
+       而不是被抛球窗口里后续的逐帧决策改写。 */
+    vp.serveLock = { tx: d.tx, my: d.my, ctrl: d.ctrl };
     return { top: d.serveTop, power: d.servePower, tx: d.tx, my: d.my };
   }
 
-  return { init, isReady, isTtSide, ttTick, ttHit, reset, ensureWeights, decideServe,
+  /* 本侧当前姿态（physics.js#pushStanceOf 在 ttmouse 玩家侧读它） */
+  function getStance(side){ const vp = vpads[side]; return vp ? vp.stance : 'forehand'; }
+
+  return { init, isReady, isTtSide, ttTick, ttHit, reset, ensureWeights, decideServe, getStance,
            get agent(){ return agent; } };
 })();
 

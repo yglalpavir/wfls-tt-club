@@ -102,59 +102,181 @@ const INPUTSIM = (() => {
     return st;
   }
 
-  /* ==== 磁吸（physics.js#physicsStep 玩家侧，逐帧）====
-     now：当前仿真时刻（秒）——姿态切换过渡成本（SIM.stanceRampOf）与实机同款 */
-  /* ctrlOn 形参已废弃：pushF 判据改为「只看是否下旋」后不再读取它（对齐实机 AI 侧）。
-   * 保留位置是为了不打乱既有调用点的参数顺序。 */
+  /* ==== 磁吸（实机 physics.js#physicsStep 两侧共用 SIM.magnetStep）====
+     这里只保留玩家侧（mir=+1）的调用形状；z 门、强度、纵深/高度拟合全部在 simcore，
+     AI 侧（mir=-1）走同一个函数 —— 训练器的对手也用它，不再是「无磁吸的闭式近似」。 */
   function magnetPull(p, v, s, pad, stance, ctrlOn, canHit, now){
-    if(!canHit || v.z <= 0) return;
-    if(p.z < (stance === 'forehand' ? 0.3 : 0.45)) return;
-    const stF = C.STROKE[stance];
-    /* 同 tryPlayerFit：pushF 只看是否下旋，不看 ctrlOn。
-     * 实机 AI 侧 physics.js:354 的 magA = stA.magnet + (highA ? 1.2 : 0)，
-     * 完全不含 pushF.mag；训练侧原来含 (pushF ? pushF.mag : 0)，
-     * 而 pushF.mag = 1.5 比 stF.magnet（1.35 正手 / 0.95 反手）还大 ——
-     * 训练时球被吸过去的力度比实机大很多，实机自然吸不住。 */
-    const pushF = relTopOfSt(s.x, v.z) < -8 ? C.PUSH.fit : null;
-    const high = p.y > C.TABLE_TOP + 0.13;
-    const mag = (stF.magnet + (high ? 1.2 : 0))   // 与实机 AI 侧 magA 同口径
-              * SIM.stanceRampOf(pad.stanceT, now);
-    v.x += cl(pad.x - p.x, -0.7, 0.7) * ASSIST.magnetPull * mag * DT;
-    const zAhead = pad.z - p.z;
-    if(zAhead > 0.05) v.z += cl(zAhead * 0.5, 0, 0.45) * ASSIST.magnetPull * mag * 0.55 * DT;
-    if(high && p.y > PADDLE_Y){
-      const yGap = PADDLE_Y - p.y;
-      v.y += cl(yGap * 0.4, -0.35, 0) * ASSIST.magnetPull * mag * 0.4 * DT;
-    }
+    SIM.magnetStep(p, v, s, { mir: 1, padX: pad.x, padZ: pad.z, padY: PADDLE_Y,
+      stance, stanceT: pad.stanceT, now, canHit: !!canHit,
+      ctrl: !!pad.ctrl, pushMag: false, dt: DT });
   }
+
+  /* 单调仿真时钟。
+   * 原来两侧都用「本板内局部时钟 i*DT」，于是姿态切换时刻 stanceT 与新一板的
+   * now 混在不同时间轴上（stanceT 甚至可能大于新一板的 now），
+   * resolveStance 的 minHold 软坡与 stanceRampOf 的磁吸过渡成本都算错。
+   * 实机用的是单调递增的 elapsed，这里同源。 */
+  let simClock = 0;
+
+  /* 对手球拍初值：字段与实机 aiPad 对齐（simcore#aiStep 就地改写它们）。
+   * 在一分一分之间**保留**（不每板重置），与实机 aiPad.stance 跨板保持一致。 */
+  let oppPad = null;
+  function aiPadInit(){
+    if(oppPad) return oppPad;
+    oppPad = { x: 0, z: AI_Z, svx: 0, svz: 0,
+               stance: 'forehand', stanceT: -1e9,
+               predT: -1e9, predX: 0, predZ: AI_Z,
+               _nz: { v: 0, t: -1 }, _inbound: false, _xErr: 0,
+               _wrapDone: false, _wrapOn: false, _strokeSwitches: 0 };
+    return oppPad;
+  }
+  /* 对手档位的精度系数（实机 diffPrecision(model)）。阶梯策略带 _ladderTag；
+   * 非阶梯策略按「普通 AI」= 1.0。 */
+  function precOf(pol){
+    try{
+      const tag = (typeof OPP_LADDER !== 'undefined' && OPP_LADDER.tagOf) ? OPP_LADDER.tagOf(pol) : 'standard';
+      return P.diffPrecision(tag === 'unknown' ? 'standard' : tag);
+    }catch(e){ return 1.0; }
+  }
+
+  /* ==== 球的一个仿真帧（SUBN 个 1/120 子步）====
+     实机 physicsStep 与两侧接收循环共用同一份：撞网 → 积分 → 弹跳 → 出界。
+     历史上这里是第三份实现（phase1-findings 记着「两处独立实现，历史上多处不一致」）。
+     st = { p, v, s, pPrev, bounced, ownSign(+1 玩家半台 / -1 AI 半台) }
+     返回 null = 继续；否则是结束原因。 */
+  function stepBall(st, rng){
+    const p = st.p, v = st.v, s = st.s, pPrev = st.pPrev;
+    const n = SUBN, h = DT / n;
+    for(let k = 0; k < n; k++){
+      v.y -= C.G * h;
+      const drag = 1 - C.AIR * h; v.x *= drag; v.y *= drag; v.z *= drag;
+      const ex = s.y * v.z - s.z * v.y, ey = s.z * v.x - s.x * v.z, ez = s.x * v.y - s.y * v.x;
+      v.x += ex * C.MAGNUS * h; v.y += ey * C.MAGNUS * h; v.z += ez * C.MAGNUS * h;
+      // 飞行中旋转衰减（与实机 physics.js 的 s.multiplyScalar(1-0.05*dt) 对齐）
+      const sd = Math.max(0, 1 - 0.05 * h); s.x *= sd; s.y *= sd;
+      p.x += v.x * h; p.y += v.y * h; p.z += v.z * h;
+      /* 台面弹跳。★ 含实机 physics.js 的「上一子步必须在台面上方」守卫
+       * （_prev.y - BALL_R > TABLE_TOP - 0.05）：少了它，一颗擦着台边低平的球
+       * 会在已经低于台面的子步里被反复判成落台 → bounced 置位 → 紧接着二跳判
+       * double，训练里白丢分，实机不会。 */
+      if(v.y < 0 && p.y - C.BALL_R <= C.TABLE_TOP
+         && pPrev.y - C.BALL_R > C.TABLE_TOP - 0.05
+         && Math.abs(p.x) <= C.TABLE_W / 2 + C.BALL_R * 0.6
+         && Math.abs(p.z) <= C.TABLE_L / 2 + C.BALL_R * 0.6){
+        p.y = C.TABLE_TOP + C.BALL_R;
+        v.y = -v.y * C.REST;
+        v.z = v.z * 0.99 + s.x * C.SPIN_KICK;
+        v.x = v.x * 0.985 - s.y * C.SPIN_KICK * 0.6;
+        s.x *= 0.72; s.y *= 0.72;
+        if(st.ownSign * p.z > 0){ if(st.bounced) return 'double'; st.bounced = true; }
+      }
+      // 出界/落地（与实机 physicsStep 末段同一份 SIM.outOfBounds）
+      if(SIM.outOfBounds(p, v)) return st.bounced ? 'out-recv' : 'out';
+      /* ★ 撞网判定放在**积分之后**（= 实机 physicsStep 的顺序：
+       *   积分 → 落台 → 磁吸 → checkNet → 触球）。
+       *   原来放在积分**之前**，于是比较的是「上上个子步起点」与「本子步起点」，
+       *   判定整体滞后一个子步（1/120 s）。5m/s 的球过网时差约 4cm 落点，
+       *   而 yC 是靠线性插值取的 —— 滞后一段就等于拿错误的两个端点插值，
+       *   于是过网高度、带内擦网/弹回的判定全都偏。这是每一颗过网球都吃的偏差。 */
+      netStep(p, v, pPrev, rng);
+      pPrev.x = p.x; pPrev.y = p.y; pPrev.z = p.z;   // 下一子步的穿越起点
+    }
+    return null;
+  }
+
+  /* ==== AI 接发/回球（实机 ai.js#aiMoveShared + physics.js#tryAIHit/#hitAI 同构）====
+     ★ 2026-10-04 这段是重写过的。原来是 aiReach()：预测触球点 → 抽一次高斯误差
+       → 指数趋近到终点 → |Δx|>0.15 硬判失败。没有逐帧跑位、没有磁吸、没有
+       穿越/贴近判据、没有三维接触窗口、没有落台/撞网交互 —— 4 道 reach:false
+       硬门直接给 agent 记分。于是「对手」在训练与实机是两个不同的游戏，
+       仿真胜率从这个分叉开始就不可迁移（tools/diag-reach.js 量过这块的账）。
+     现在对手真的逐帧跑：SIM.aiStep（= 实机逐帧跑位与姿态）+ SIM.magnetStep
+     （= 实机 AI 侧磁吸）+ 与 tryAIHit 镜像的接触判据 + P.aiDecision 出球。
+     isReceive：接发球板（第一板）—— 与实机 hitAI 的 receive 门控一致。 */
+  function aiReceive(from, vel, spin, pol, rng, isReceive, oppX){
+    const pad = aiPadInit();
+    pad._oppX = oppX || 0;
+    const p = { x: from.x, y: from.y, z: from.z };
+    const v = { x: vel.x, y: vel.y, z: vel.z };
+    const s = { x: spin ? spin.x : 0, y: spin ? spin.y : 0, z: 0 };
+    const BALL = { active: true, pos: p, vel: v, spin: s };
+    const prec = precOf(pol);
+    const spd = getP(pol, 'moveSpeed', 2.45), zSpd = getP(pol, 'moveZ', 2.0);
+    const rPace = getP(pol, 'recoverPace', 7);
+    const errBase = getP(pol, 'moveErr', 0.06);
+    const fhPref = getP(pol, 'fhPref', 1);
+    /* 从**击球点**开始逐帧积分（与 playerReceive 同构：接收方自己Detect落台）。
+     * 所以 bounced 起始为假；球第一次落本方半台时置位，再落一次 = 双跳 =
+     * 对手没能回球 = agent 得分（与实机 rulesOnBounce 同义）。 */
+    const st = { p, v, s, pPrev: { x: p.x, y: p.y, z: p.z }, bounced: false, ownSign: -1 };
+    for(let i = 0; i < 2600; i++){
+      /* 1. 逐帧跑位 + 姿态决策（= 实机 aiMoveShared，SIM.aiStep 内会就地改写 pad） */
+      SIM.aiStep({ dt: DT, now: simClock, side: 'ai', mir: -1,
+        pad, ball: BALL, ballDead: false, lastHitter: 'player',
+        zHome: AI_Z, zLo: ZRANGE.ai.lo, zHi: ZRANGE.ai.hi, policy: pol,
+        moveSpeed: spd, moveZ: zSpd, recoverPace: rPace, fhPref,
+        errBase, precZ: 0.05 * prec, rng });
+      /* 2. 物理（与玩家侧同一份 stepBall） */
+      const pzPrev = p.z;
+      st.pPrev.x = p.x; st.pPrev.y = p.y; st.pPrev.z = p.z;
+      const ended = stepBall(st, rng);
+      simClock += DT;
+      if(ended) return { hit: false, loss: ended };
+      /* 3. 磁吸（mir=-1，与实机 AI 侧同一份 SIM.magnetStep） */
+      SIM.magnetStep(p, v, s, { mir: -1, padX: pad.x, padZ: pad.z, padY: PADDLE_Y,
+        stance: pad.stance, stanceT: pad.stanceT, now: simClock,
+        canHit: true, ctrl: false, pushMag: false, dt: DT });
+      /* 4. 接触判据（实机 tryAIHit 的镜像：拍面平面在 pad.z+PAD_HD，来球 vz<0） */
+      const W = SIM.fitWindow(pad.stance, relTopOfSt(s.x, v.z), p.y, v, s, true);
+      const zF = W.fitZ || 0.05;
+      const plane = pad.z + PAD_HD;
+      const swept = (pzPrev >= plane - zF && p.z < plane + zF && v.z < 0);
+      const prox = Math.abs(p.z - pad.z) < PAD_HD + C.BALL_R * 2 + zF && v.z < 0.3;
+      if(swept || prox){
+        if(Math.abs(p.x - pad.x) <= PAD_HW + C.BALL_R + W.fitH &&
+           Math.abs(p.y - PADDLE_Y) <= PAD_HH + C.BALL_R + W.fitV){
+          p.z = plane + C.BALL_R;
+          const d = aiReturn(p, v, s, pad, pol, rng, isReceive, DT);
+          return { hit: true, out: { pos: { x: p.x, y: p.y, z: p.z }, vel: d.outVel, spin: d.spin } };
+        }
+      }
+    }
+    return { hit: false, loss: 'timeout' };
+  }
+
+  /* AI 出球（= 实机 hitAI 的 aiDecision 调用；stroke 取 pad.stance，
+     不再是旧 aiReturn 里那句「球在拍左侧就是正手」的粗判） */
+  function aiReturn(b, v, s, pad, pol, rng, isReceive, dt){
+    const d = P.aiDecision({
+      stroke: pad.stance, dir: 1,
+      bx: b.x, by: b.y, bz: b.z,
+      vx: v.x, vy: v.y, vz: v.z,
+      sx: s.x, sy: s.y,
+      aiX: pad.x, playerX: pad._oppX || 0,
+      svx: pad.svx, svz: pad.svz,
+      receive: !!isReceive,
+      rng,
+    }, pol);
+    return { outVel: d.outVel, spin: { x: d.fx, y: d.fy, z: 0 }, mode: d.mode };
+  }
+
   /* 正/反手容错拟合 → 触球否（physics.js#tryPlayerHit 全公式）
      bx/by/bz = 球位 x/y/z（与实机一致的窗口判断）
      prevZ = 本帧积分前的 z（= 实机 physics.js 的 _prev.z）：
        实机 swept 要求"上一帧还在拍面前方、这一帧已越过平面"的真实穿越，
        旧实现只有 bz > plane - zF，球已经过拍面 20cm 也算触球——
        这是仿真 57% / 实机 10% 胜率差的主因（仿真几乎总是"打到"，实机常打不到）。 */
-  /* ctrlOn 形参已废弃，同 magnetPull —— 保留位置不打乱调用点顺序。 */
+  /* ctrlOn 形参已废弃（同 magnetPull —— 保留位置不打乱调用点顺序）。
+   * ★ 2026-10-04：窗口公式整体搬进 SIM.fitWindow（与实机 tryAIHit/tryPlayerHit
+   *   同一份），这里只剩「用哪个 STROKE」与「穿越/贴近判据」。 */
   function tryPlayerFit(bx, by, bz, prevZ, v, s, pad, stance, ctrlOn){
-    /* ★ 2026-10-03 对齐实机 physics.js#tryAIHit 的 pushF 判据。
-     *
-     * 原来这里是 (under && ctrlOn)，即「下旋球 **且** agent 按住 Ctrl」才给搓球拟合；
-     * 实机 AI 侧（physics.js:289）是 `isBack ? PUSH.fit : null`，**只看球是否下旋，
-     * 不看 agent 按没按 Ctrl**。于是下旋球上实机 AI 侧的触球窗口更宽：
-     *   横向 ±0.170 → ±0.220 m（+29%）
-     *   纵向 ±0.140 → ±0.220 m（+57%）
-     *   深度 ±0.060 → ±0.120 m（+100%）
-     * agent 在训练里从没见过这么宽容的接球条件，实机遇到下旋球自然接不住。
-     * 这个失配在今天把 AI 下旋率从 0 提到 30% 之后才真正暴露——
-     * 此前全游戏恒上旋，pushF 两边都恒为 null，所以从未生效。 */
+    /* pushF 判据与实机 AI 侧一致：只看球是否下旋，不看 agent 按没按 Ctrl。
+     * （2026-10-03 已对齐；当时 agent 若不在下旋球上按 Ctrl，训练里拿不到
+     *   搓球宽容窗口，实机却拿得到 → 横向 ±0.170 vs ±0.220 m。） */
     const under = relTopOfSt(s.x, v.z) < -8;
-    const pushF = under ? C.PUSH.fit : null;          // 与实机 tryAIHit 同口径
-    const pushSt = pushF ? ((bx >= pad.x) ? 'backhand' : 'forehand') : stance;
-    const st = C.STROKE[pushSt];
-    const high = by > C.TABLE_TOP + 0.13;
-    const inQual = cl((Math.abs(v.z) * 0.06 + Math.abs(s.x) * 0.002 + Math.abs(s.y) * 0.002) - 0.15, 0, 0.35);
-    const fitV = pushF ? st.forgiveV + pushF.v : (high ? st.forgiveV + 0.30 : Math.max(st.forgiveV - inQual, 0.04));
-    const fitH = pushF ? st.forgiveH + pushF.h : (high ? st.forgiveH + 0.16 : Math.max(st.forgiveH - inQual * 0.5, 0.02));
-    const fitZ = pushF ? st.forgiveZ + pushF.z : (high ? st.forgiveZ + 0.12 : Math.max(st.forgiveZ - inQual * 0.4, 0.02));
+    const pushSt = under ? ((bx >= pad.x) ? 'backhand' : 'forehand') : stance;
+    const W = SIM.fitWindow(pushSt, relTopOfSt(s.x, v.z), by, v, s, true);
+    const fitV = W.fitV, fitH = W.fitH, fitZ = W.fitZ;
     const plane = pad.z - PAD_HD;
     const zF = fitZ || 0.05;
     const swept = (prevZ <= plane + zF && bz > plane - zF && v.z > 0);   // 本帧真实穿越拍面平面（= 实机 _prev.z 判据）
@@ -178,7 +300,7 @@ const INPUTSIM = (() => {
       vel: { x: v.x, y: v.y, z: v.z },
       spin: { x: s.x, y: s.y, z: 0 },
       swipe: pad.svx,
-      fwd: cl(-pad.svz / 7, 0, 1),
+      fwd: SIM.fwdOf(pad.svz),          // 分母读 MOUSE_SV_CAP（原来硬编码 /7）
       mouseNy: ny,
       aim: { x: aimX, z: aimZ, gx: pad.x },
       ctrlHold: !!pad.ctrl,
@@ -206,7 +328,12 @@ const INPUTSIM = (() => {
     // 且不随磁吸拉球漂移——姿态决策稳定，不会出现"磁吸改变球位→改变姿态"的反馈震荡
     let predBX = from.x;
     if(vel.z > 0.15) predBX = SIM.predictXAtZ(from, vel, spin, PLAYER_Z);
-    let stance = pad.stance, bounced = false;
+    let stance = pad.stance;
+    /* 落台标志必须跨帧持久：stepBall 就地改这个对象。
+       （曾把它当局部布尔传进去 —— 布尔按值传递，stepBall 置的 true 丢了，
+         触球判据 `if(bounced && …)` 一次都没触发，agent 回球恒为 0。） */
+    const stB = { p, v, s, pPrev: null, bounced: false, ownSign: 1 };
+    let bounced = false;
     let f = 0;
     const skip = freq || 1;   // 决策跳帧；playInputPoint 已按 DECIDE_SKIP 传入（60Hz）
     let cur = { tx: 0, my: 0.5, ctrl: false };
@@ -217,7 +344,7 @@ const INPUTSIM = (() => {
         sx: s.x, sy: s.y,
         px: pad.x, pz: pad.z, svx: pad.svx, svz: pad.svz,
         tx: pad._tx != null ? pad._tx : 0, my: pad._my != null ? pad._my : 0.5,
-        bounced: bounced ? 1 : 0,
+        bounced: stB.bounced ? 1 : 0,
       };
       if(brain){ if(f % skip === 0) cur = brain.act(obs); f++; }
       pad.ctrl = !!cur.ctrl;
@@ -227,51 +354,27 @@ const INPUTSIM = (() => {
           'cur=' + JSON.stringify(cur));
         throw new Error('nan-in-recv');
       }
-      padControl(pad, { tx: cur.tx, my: cur.my, ball: v, pos: p, vel: v, spin: s, ballActive: bounced }, DT);
+      padControl(pad, { tx: cur.tx, my: cur.my, ball: v, pos: p, vel: v, spin: s, ballActive: stB.bounced }, DT);
       const pzPrev = p.z;   // 本帧积分前的 z（= 实机 _prev.z，供 swept 穿越判据用）
-      const pPrev = { x: p.x, y: p.y, z: p.z };   // 子步起点（= 实机 _prev，供撞网穿越判据用）
-      // —— 物理（子步积分）——
-      // 实机 main.js 按 n=ceil(dt/(1/120)) 子步调 physicsStep，即 1/60 帧内 2 个 1/120 步；
-      // 旧仿真单步 1/60 积分，轨迹与实机系统性不同（发球解算器 SIM.serveShot 本身按 1/60 解，
-      // 却在 1/120 子步的实机里跑，是实机发球失误率偏高的直接原因）。
-      let ended = null;
-      {
-        const n = SUBN, h = DT / n;
-        for(let k = 0; k < n; k++){
-          netStep(p, v, pPrev, rng);   // 撞网判定（对齐实机 physics.js#checkNet）
-          v.y -= C.G * h;
-          const drag = 1 - C.AIR * h; v.x *= drag; v.y *= drag; v.z *= drag;
-          const ex = s.y * v.z - s.z * v.y, ey = s.z * v.x - s.x * v.z, ez = s.x * v.y - s.y * v.x;
-          v.x += ex * C.MAGNUS * h; v.y += ey * C.MAGNUS * h; v.z += ez * C.MAGNUS * h;
-          // 飞行中旋转衰减（与实机 physics.js 的 s.multiplyScalar(1-0.05*dt) 对齐）——
-          // 此前训练侧缺失，训练出的策略对"高旋长距离来球"的衰减行为从未见过
-          const sd = Math.max(0, 1 - 0.05 * h); s.x *= sd; s.y *= sd;
-          p.x += v.x * h; p.y += v.y * h; p.z += v.z * h;
-          // 台面弹跳
-          if(v.y < 0 && p.y - C.BALL_R <= C.TABLE_TOP
-             && Math.abs(p.x) <= C.TABLE_W / 2 + C.BALL_R * 0.6
-             && Math.abs(p.z) <= C.TABLE_L / 2 + C.BALL_R * 0.6){
-            p.y = C.TABLE_TOP + C.BALL_R;
-            v.y = -v.y * C.REST;
-            v.z = v.z * 0.99 + s.x * C.SPIN_KICK;
-            v.x = v.x * 0.985 - s.y * C.SPIN_KICK * 0.6;
-            s.x *= 0.72; s.y *= 0.72;
-            if(p.z > 0){ if(bounced){ ended = 'double'; break; } bounced = true; }
-          }
-          // 出界/落地
-          if((p.y <= C.BALL_R && v.y < 0) || Math.abs(p.x) > 3 || p.z > 4.5 || p.z < -4.5){
-            ended = bounced ? 'out-recv' : 'out'; break;
-          }
-          pPrev.x = p.x; pPrev.y = p.y; pPrev.z = p.z;   // 下一子步的穿越起点
-        }
-      }
+      stB.pPrev = { x: p.x, y: p.y, z: p.z };   // 子步起点（= 实机 _prev，供撞网穿越判据用）
+      /* —— 物理（子步积分 + 弹跳 + 出界）——
+       * 实机 main.js 每个 1/60 帧按 n=SIM.subStepsFor(dt)=2 调 physicsStep；
+       * 旧仿真单步 1/60 积分，轨迹与实机系统性不同（发球解算器 SIM.serveShot 本身
+       * 按 1/120 解，却在 1/60 的仿真里跑）。现在与实机共用 stepBall 一份。 */
+      const ended = stepBall(stB, rng);
+      bounced = stB.bounced;
+      simClock += DT;
       if(ended) return { hit:false, loss: ended };
-      if(bounced && v.z > 0.02){
-        // 每帧一次姿态决策（旧版磁吸/拟合各调一次且噪声重复抽签）；now=帧数×DT；
-        // TTC 承诺窗口与实机 autoStance 同公式（SIM.commitTOf：分姿态 × 来球速度自适应）
+      /* 触球相位门：bounced（球已落本方台面）+ vz > -0.3。
+       * 原来卡的是 vz > 0.02 —— 只许在弹起**上升段**触球。实机 tryPlayerHit 的
+       * prox 判据是 vz > -0.3（球还在缓降、已贴近拍面时也算数），于是训练里
+       * agent 从没见过「刚弹起还在往下走一点就接」这一段，上旋重的球实机能救、
+       * 训练里没学过。放宽到与实机同口径。 */
+      if(bounced && v.z > -0.3){
+        // 每帧一次姿态决策（磁吸/拟合共用同一次，不重复抽签）；now = 单调仿真时钟
         const ttc = (pad.z - p.z) / v.z;
-        stance = stanceOf(pad, predBX, i * DT, rng, ttc > 0 && ttc < SIM.commitTOf(pad.stance, v.z), v.x);
-        magnetPull(p, v, s, pad, stance, pad.ctrl, true, i * DT);
+        stance = stanceOf(pad, predBX, simClock, rng, ttc > 0 && ttc < SIM.commitTOf(pad.stance, v.z), v.x);
+        magnetPull(p, v, s, pad, stance, pad.ctrl, true, simClock);
         const fitSt = tryPlayerFit(p.x, p.y, p.z, pzPrev, v, s, pad, stance, pad.ctrl);
         if(fitSt !== null){
           p.z = pad.z - PAD_HD - C.BALL_R;
@@ -328,7 +431,12 @@ const INPUTSIM = (() => {
    * 2026-10-02 之前这里是全写死的常量（power 恒 0.5、sideY 恒 0、落点恒 0.62 深），
    * 调用点也不传 opt —— DQN 从没学过控制自己的发球，每分都是同一个球，
    * 而实机侧走 aiServePlan 有 60% 侧旋，训练/实机发球口径不一致。
-   * 现在 serveSide / servePower 来自 DQN 动作的第五、六维（见 input-agent decodeAction）。 */
+   * 现在 serveSide / servePower 来自 DQN 动作的第五、六维（见 input-agent decodeAction）。
+   * ★ 2026-10-04 出球点改走 SIM.serveOrigin（与实机 rules#strikeServe 同一份）。
+   *   原来这里写死 {x: pad.x*0.35(±0.4), y: PADDLE_Y, z: PLAYER_Z+0.10 = 1.45}，
+   *   实机却是「端线外 0.5m、拍高+0.10、x 用满拍位」—— z 差 42cm、y 差 10cm。
+   *   serveShot 是**从出球点反解速度**的，出球点不同 → 解出的发球完全不同，
+   *   训练出的发球在实机复现不出来。 */
   function serveFromPlayer(pad, rng, opt){
     opt = opt || {};
     const power = cl(opt.power != null ? opt.power : 0.6, 0, 1);
@@ -338,7 +446,7 @@ const INPUTSIM = (() => {
        （上旋的 60%）。训练/实机同口径，否则 DQN 学到的发球在实机复现不出来。 */
     const topSign = top ? 1 : -0.6;
     const spinX = magR * (0.6 + 0.8 * power) * topSign;
-    const from = { x: cl(pad.x * 0.35, -0.4, 0.4), y: C.PADDLE_Y, z: cl(PLAYER_Z + 0.10, 1.45, 1.7) };
+    const from = SIM.serveOrigin('player', pad.x, pad.z);
     let sv = SIM.serveShot(from, { dir: -1, depth: 0.62 + (rng() - 0.5) * 0.06, spinX, sideY: 0 });
     if(!sv) sv = SIM.serveShot(from, { dir: -1, depth: 0.62, spinX, sideY: 0 });
     if(!sv) sv = SIM.serveShot(from, { dir: -1, depth: 0.35, spinX: 0, sideY: 0 });
@@ -347,7 +455,7 @@ const INPUTSIM = (() => {
   function serveFromAI(policy, rng){
     const plan = P.aiServePlan(policy, rng);
     const power = cl(plan.power == null ? 0.5 : plan.power, 0, 1);
-    const from = { x: 0, y: C.TABLE_TOP + 0.28, z: -1.87 };
+    const from = SIM.serveOrigin('ai', 0, C.AI_Z);
     /* serveSpin / servePace 必须乘入：aiServePlan 明确返回这两个倍率并注明"调用方乘入
      * mag/sideMag"，实机 rules.js#strikeServe 也照做。丢了它们 = elite 以上的档位
      * 发球强度在评估里完全没有差异（extreme-max 上旋少 26%、速度少 23%），
@@ -360,22 +468,6 @@ const INPUTSIM = (() => {
     if(!sv) sv = SIM.serveShot(from, { dir: 1, depth: 0.62, spinX: mag, sideY: 0 });
     if(!sv) sv = SIM.serveShot(from, { dir: 1, depth: 0.35, spinX: 0, sideY: 0 });
     return { from, vel: sv.vel, spin: sv.spin };
-  }
-
-  /* ==== AI 接发/回球（simmatch.returnShot 同构）====
-     isReceive：接发球板（第一板）——此前训练侧从不传 receive，receive.pushProb/attackProb
-     与爆冲门控在训练里从未生效（simmatch.js 一直传），此处对齐实机/ simmatch。 */
-  function aiReturn(meetState, pol, rng, ownX, oppX, isReceive){
-    const stroke = meetState.pos.x < ownX ? 'forehand' : 'backhand';
-    const d = P.aiDecision({
-      stroke, dir: 1,
-      bx: meetState.pos.x, by: meetState.pos.y, bz: meetState.pos.z,
-      vx: meetState.vel.x, vy: meetState.vel.y, vz: meetState.vel.z,
-      sx: meetState.spin.x, sy: meetState.spin.y,
-      aiX: ownX, playerX: oppX, rng,
-      receive: !!isReceive,
-    }, pol);
-    return { outVel: d.outVel, fx: d.fx, fy: d.fy, mode: d.mode };
   }
 
   function gaussOf(rng){ return (rng() + rng() + rng() - 1.5) * 0.8; }
@@ -391,30 +483,7 @@ const INPUTSIM = (() => {
   function _playInputPointInner(agent, pA, rng, firstServer, freq){
     const skip = freq || C.DECIDE_SKIP || 1;
     const pad = padInit(PLAYER_Z);
-    const aiP = { x: 0, z: AI_Z };
-    const zSpd = getP(pA, 'moveZ', 2.0), spd = getP(pA, 'moveSpeed', 2.45), err = getP(pA, 'moveErr', 0.06);
     const credit = d => { if(agent && agent.credit) agent.credit(d); };
-    const aiReach = (state, z, x) => {
-      /* 同一个 predict/检查块（返回 {reach, meet, newX, newZ}） */
-      const meet = SIM.predictMeetZ(state.pos, state.vel, state.spin, 'ai', WIN_LO, WIN_HI, ZRANGE.ai.lo, ZRANGE.ai.hi);
-      if(!meet) return { reach:false, why:'reach-null' };
-      /* 反应延迟：实机 aiMoveShared 是逐帧指数跟随（g.x += clamp((target-g.x)*rPace, ...)*dt，
-       * rPace=7，dt=1/60），跑位有 ~143ms 时间常数。原评估直接一次性 clamp 到位
-       * = 零反应延迟，把"够不够得到"判得比实机宽松，对手被系统性高估。 */
-      const rPace = getP(pA, 'recoverPace', 7);
-      const frames = Math.max(1, Math.round(meet.t / DT));
-      const perF = 1 - Math.exp(-rPace * DT);   // 指数趋近的帧级系数
-      const errS0 = err + Math.abs(state.spin.x) * 0.0011 + Math.abs(state.spin.y) * 0.0006 + Math.max(0, Math.abs(state.vel.z) - 4) * 0.05;
-      const xT = meet.x + gaussOf(rng) * errS0;
-      /* 指数跟随 n 帧的闭式终值：x_end = x + (xT-x)*(1-(1-perF)^n)。
-       * 用闭式解而非逐帧循环，避免累积误差，也省掉每板的循环开销。 */
-      const k = 1 - Math.pow(1 - perF, frames);
-      const nx = x + cl((xT - x) * k, -spd * meet.t, spd * meet.t);
-      const nz = z + cl((meet.z - z) * k, -zSpd * meet.t, zSpd * meet.t);
-      if(Math.abs(meet.z - nz) > 0.10) return { reach:false, why:'reach-z' };
-      if(Math.abs(meet.x - nx) > PAD_HW + 0.05) return { reach:false, why:'reach-pos' };
-      return { reach:true, meet, newX: nx, newZ: nz };
-    };
 
     /* ---- 发球：先让 DQN 决策一次，再据其结果发球 ----
      * 时序要点：原来 serveFromPlayer 在 padInit 之后立即调用，此时 pad.x 恒为 0
@@ -482,8 +551,8 @@ const INPUTSIM = (() => {
     credit(0.02);
 
     let hitter = null;
-    /* 接发用发球接触点状态整程模拟（playerReceive/aiReach 自会检测二跳落玩家侧→
-       浮出台面；与实机 aiMoveShared/ttTick 一致——深发球按全程反应时间判定够到球）。
+    /* 接发用发球接触点状态整程模拟（playerReceive / aiReceive 自会检测二跳落本方
+       侧 → 浮出台面；两侧都是逐帧真跑，与实机 aiMoveShared/ttTick 同一份代码）。
        接发球板（第一板）：isReceive=true → 两侧都无法触发爆冲。 */
     let state = { pos: srv.from, vel: srv.vel, spin: srv.spin };
     const receiver0 = firstServer === 'player' ? 'ai' : 'player';
@@ -493,15 +562,16 @@ const INPUTSIM = (() => {
       state = { pos: r0.out.pos, vel: r0.out.vel, spin: r0.out.spin }; hitter = 'player'; shots++; pReturns++;
       credit(0.08);
     }else{
-      const r0 = aiReach(state, aiP.z, aiP.x);
-      if(!r0.reach){
+      /* ★ 旧实现在这里先用 simS 校验过的发球状态，但对手「够不够得到」是闭式近似。
+       *   发球已由 simulateServeFull 保证两跳合法（首跳己方、二跳对方），所以对手
+       *   面对的是一颗合法来球，逐帧跑一遍 aiReceive 即可判定它能不能回。 */
+      const r0 = aiReceive(state.pos, state.vel, state.spin, pA, rng, true, pad.x);
+      if(!r0.hit){
         // 对手够不到发球 —— 发球直接得分，这是最好的发球
-        winner = 'player'; reason = 'ai-' + r0.why;
+        winner = 'player'; reason = 'ai-recv-' + r0.loss;
         if(serveMark) cmServe(0.6);
         credit(0.3); return { winner, shots, reason, pReturns };
       }
-      aiP.x = r0.newX; aiP.z = r0.newZ;
-      const hit0 = aiReturn(r0.meet.state, pA, rng, aiP.x, pad.x, true);
       /* 对手接到了：按**回球质量**给连续奖励，而不是只看接球手法。
        * 原设计只认 push/lift 两种弱接，实测 elite 对手几乎总能接到并强攻，
        * 三档奖励全不命中 → 一次信号都发不出去（探针实测 200 局 0 样本）。
@@ -511,15 +581,15 @@ const INPUTSIM = (() => {
        * aiReturn 已经算出来（outVel / mode），不需要额外模拟。
        * 归一化到 [-1, 1] 后乘 0.5：正 = 逼出了弱接，负 = 被对手抢攻。 */
       if(serveMark){
-        const sp = Math.sqrt(hit0.outVel.x * hit0.outVel.x +
-                             hit0.outVel.y * hit0.outVel.y +
-                             hit0.outVel.z * hit0.outVel.z);
-        const spinMag = Math.abs(hit0.fx) + Math.abs(hit0.fy);
+        const sp = Math.sqrt(r0.out.vel.x * r0.out.vel.x +
+                             r0.out.vel.y * r0.out.vel.y +
+                             r0.out.vel.z * r0.out.vel.z);
+        const spinMag = Math.abs(r0.out.spin.x) + Math.abs(r0.out.spin.y);
         // 速度：>5m/s 是强攻，<3m/s 是软接；旋转：>150 是强力拧，<60 是软
         const q = (5.0 - Math.min(sp, 6.5)) / 3.5 * 0.6 + (150 - Math.min(spinMag, 200)) / 150 * 0.4;
         cmServe(cl((q - 0.5) * 1.0, -0.5, 0.5));
       }
-      state = { pos: r0.meet.state.pos, vel: hit0.outVel, spin: { x: hit0.fx, y: hit0.fy, z: 0 } };
+      state = { pos: r0.out.pos, vel: r0.out.vel, spin: r0.out.spin };
       hitter = 'ai'; shots++;
     }
 
@@ -538,11 +608,12 @@ const INPUTSIM = (() => {
         state = { pos: r.out.pos, vel: r.out.vel, spin: r.out.spin }; hitter = 'player'; shots++; pReturns++;
         credit(0.05);
       }else{
-        const r2 = aiReach(state, aiP.z, aiP.x);
-        if(!r2.reach){ winner = 'player'; reason = 'ai-' + r2.why; credit(0.35); break; }
-        aiP.x = r2.newX; aiP.z = r2.newZ;
-        const rr = aiReturn(r2.meet.state, pA, rng, aiP.x, pad.x);
-        state = { pos: r2.meet.state.pos, vel: rr.outVel, spin: { x: rr.fx, y: rr.fy, z: 0 } };
+        /* ★ 对手逐帧真跑（SIM.aiStep + SIM.magnetStep + 镜像接触判据 + aiDecision）。
+           旧实现是闭式 aiReach，够不到就直接给 agent 记分 —— 那 4 道硬门就是
+           tools/diag-reach.js 当初量到的「仿真胜率虚高」的主要来源。 */
+        const r2 = aiReceive(state.pos, state.vel, state.spin, pA, rng, false, pad.x);
+        if(!r2.hit){ winner = 'player'; reason = 'ai-recv-' + r2.loss; credit(0.35); break; }
+        state = { pos: r2.out.pos, vel: r2.out.vel, spin: r2.out.spin };
         hitter = 'ai'; shots++;
       }
     }

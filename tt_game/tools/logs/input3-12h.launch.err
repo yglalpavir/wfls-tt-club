@@ -1,0 +1,3 @@
+tools/_supervise.sh: line 130: [: 1787.5: integer expression expected
+tools/_supervise.sh: line 93: [: 1787.5: integer expression expected
+tools/_supervise.sh: line 109: 1787.5: syntax error: invalid arithmetic operator (error token is ".5")

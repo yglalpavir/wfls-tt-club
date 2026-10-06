@@ -132,7 +132,7 @@ function startToss(){
       servePlan = { top: ttDecide.top !== false, side: 0, power: ttDecide.power,
                     type: 'long', tx: clamp(targetX*0.35, -0.4, 0.4), tz: 0.95 };
     }else{
-      const pol = (mode==='watch' && isP) ? policyForSide('player') : resolvedPolicy();
+      const pol = (mode==='watch' && isP) ? policyForSide('player') : resolvedPolicyFor('ai');
       servePlan = aiServePlan(pol);
     }
   }
@@ -166,12 +166,23 @@ function strikeServe(){
   const spinX = mag;                                      // 传入 serveShot 的相对旋（正=上旋）
   const sideMag = (side*SERVE.sideMag + (Math.random()-0.5)*6) * (0.6 + 0.8*power) * sSpin;
   const sideY = sideMag;
-  let sv = SIM.serveShot(ball.pos, { dir: toward, depth, spinX, sideY, speedMul: sPace });
+  /* ★ 出球点统一走 SIM.serveOrigin（训练侧 input-sim#serveFromPlayer 同一份）。
+   *   原来直接用 ball.pos —— 而 ball.pos 是 main.js#awaitServe 每帧摆的
+   *   「端线外 0.5m、拍高 TABLE_TOP+0.05」，抛球后再落到 PADDLE_Y+0.10 才击球。
+   *   也就是出球点取决于「抛球那一刻球在哪」，训练侧则写死另一套坐标，
+   *   两边从不同的点解 serveShot → 解出的速度分布完全不同。
+   *   现在按击球时刻的拍位算：x 用满拍位、纵深端线外 0.5m、高度拍高+0.10。
+   *   （servePlan.tx/tz 原本在这里被算出来却从不消费，一并去掉——出球点由
+   *     拍位决定，玩家把鼠标移到哪就从哪发，这本来就是 servePlan 想要的语义。） */
+  const padPos = (isP ? playerPad : aiPad).group.position;
+  const org = SIM.serveOrigin(server, padPos.x, padPos.z);
+  const from = { x: org.x, y: org.y, z: org.z };
+  let sv = SIM.serveShot(from, { dir: toward, depth, spinX, sideY, speedMul: sPace });
   // 兜底：若本次旋转组合偶发无解，退回无侧旋/常用深度重试（保证发球总能两跳合法过网）
   if(!sv){ sv = SIM.serveShot(ball.pos, { dir: toward, depth: 0.5, spinX, sideY: 0 }); }
   if(!sv){ sv = SIM.serveShot(ball.pos, { dir: toward, depth: 0.35, spinX: 0, sideY: 0 }); }
   // 最后防线：出球点过于贴边（vx 转向受限）仍可能无解 → 从台面中心打一记中浅无旋发球，绝不崩溃
-  if(!sv){ sv = SIM.serveShot({ x: 0, y: ball.pos.y, z: ball.pos.z }, { dir: toward, depth: 0.4, spinX: 0, sideY: 0 }); }
+  if(!sv){ sv = SIM.serveShot({ x: 0, y: from.y, z: from.z }, { dir: toward, depth: 0.4, spinX: 0, sideY: 0 }); }
   // 再退一步：出球点本身已偏离合法域（球位被上一帧残留/异常状态污染）时，
   // 用保证有解的规范发球位（端线外 0.5m、台面上 5cm）重试
   if(!sv){ sv = SIM.serveShot({ x: 0, y: TABLE_TOP + 0.05, z: toward < 0 ? TABLE_L/2 + 0.5 : -(TABLE_L/2 + 0.5) }, { dir: toward, depth: 0.4, spinX: 0, sideY: 0 }); }

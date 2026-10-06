@@ -1,0 +1,10 @@
+run=smoke1
+attempt=11
+elapsed_s=66
+budget_s=72
+child_pid=none
+child_alive=no
+idx_age_s=0
+last_heartbeat=2026-10-06 07:07:22
+log=tools/logs/smoke1.log
+sup_log=tools/logs/smoke1.supervise.log

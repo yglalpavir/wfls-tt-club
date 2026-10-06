@@ -29,11 +29,82 @@ const OPP_LADDER = (() => {
     else { try { DEF = require('./policy.js').POLICY_DEFAULT; } catch(e){ DEF = {}; } }
     return DEF;
   }
+  /* ★ 各档的**基座策略**。默认全部是 POLICY_DEFAULT，唯一的例外是 'hell'：
+   *
+   *   实机的「地狱 AI」= policyForModel('hell') = unflattenPolicy(strongVec())
+   *   = learned-policy.js 的 42 维自对弈学习值 + 移动护栏 2.8/0.03/2.6。
+   *
+   * 它**不是** POLICY_DEFAULT 换个跑动速度：落点窗口（tzBase 0.85 vs 0.95、
+   * txRange 0.45 vs 0.3）、击球倾向（receive.pushProb / receive.attackProb /
+   * swipeSide 只有学习策略有）、发球参数全都不同。
+   *
+   * 2026-10-04 实测（tools/live-match.js，同权重同种子各 8 局）：
+   *   训练打 POLICY_DEFAULT 版 hell = 71.5% 仿真分点率
+   *   实机打真正的 LEARNED_POLICY 版 hell = 13.1% 分点率
+   * 也就是说课程里名为「地狱 AI」的那一档，模型其实从没见过来。改成同源。 */
+  let LEARNED = null;
+  function learnedPolicy(){
+    if(LEARNED) return LEARNED;
+    /* 浏览器：strongVec / unflattenPolicy 都是 policy.js 的全局。
+       Node：只有 P.*（module.exports）可用。两条都试，都失败才回落默认。 */
+    try{
+      if(typeof strongVec === 'function' && typeof unflattenPolicy === 'function'){
+        LEARNED = unflattenPolicy(strongVec()); return LEARNED;
+      }
+      if(typeof P !== 'undefined' && P && typeof P.strongVec === 'function'){
+        LEARNED = P.unflattenPolicy(P.strongVec()); return LEARNED;
+      }
+      const pp = require('./policy.js');
+      LEARNED = pp.unflattenPolicy(pp.strongVec());
+    }catch(e){ LEARNED = defPolicy(); }
+    if(!LEARNED) LEARNED = defPolicy();
+    return LEARNED;
+  }
+  /* 大满贯预备种子：实机同源口径 = policyForModel('grandslam')
+   * （policy.js#grandSlamPolicy：learned-policy-grandslam.js 预备种子 + 移动覆写
+   *   moveSpeed 2.9 / moveErr 0.02 / moveZ 2.7，未训练回落地狱）。
+   * 与 hell 档同理（见上 #9 注）：阶梯里这一档必须是实机 policyForModel 给出的
+   * 那个策略，不能在阶梯里另抄一份数值 —— 否则重蹈"训练打的对手不是实机对手"。
+   * 所以这一档 p 留空（{}），难度全部由策略自身携带，阶梯不做任何加压。 */
+  let GS = null;
+  function grandSlamSeedPolicy(){
+    if(GS) return GS;
+    try{
+      if(typeof P !== 'undefined' && P && typeof P.policyForModel === 'function'){
+        GS = P.policyForModel('grandslam');
+      } else if(typeof policyForModel === 'function'){
+        GS = policyForModel('grandslam');
+      } else {
+        GS = require('./policy.js').policyForModel('grandslam');
+      }
+    }catch(e){ GS = null; }
+    if(!GS) GS = learnedPolicy();   // policy.js 的 grandSlamPolicy 未训练时也回落地狱
+    return GS;
+  }
+  function basePolicy(kind){
+    if(kind === 'learned') return learnedPolicy();
+    if(kind === 'grandslam') return grandSlamSeedPolicy();
+    return defPolicy();
+  }
+  /* 结构化深拷贝（策略只有 plain object / number / string，够用）。
+   * ★ at() 必须深拷贝基座再覆写。原来只做了浅拷贝，于是 setPath(o,'wide.forehand',…)
+   * 之类点路径覆写会**原地改到基座身上**——实测调一次 at('extreme-max') 之后
+   * POLICY_DEFAULT.wide 变成 {1.15, 1.40}，实机的「普通 AI」从此永久变宽。
+   * 阶梯里 push/counter/smash/loop/serve 用整对象替换侥幸没中招，wide 是唯一点路径。 */
+  function clonePolicy(o){
+    if(o === null || typeof o !== 'object') return o;
+    if(Array.isArray(o)) return o.map(clonePolicy);
+    const r = {};
+    for(const k of Object.keys(o)) r[k] = clonePolicy(o[k]);
+    return r;
+  }
   const cl = (v, a, b) => v < a ? a : (v > b ? b : v);
 
-  /* ---- 各档"难度旋钮"（其余字段回落 POLICY_DEFAULT）----
+  /* ---- 各档"难度旋钮"（基座 = base，其余字段回落基座）----
    * 数值全部落在 policy.js POLICY_KEYS 声明的 [min,max] 内，保证是可进化到/
-   * 可被 GA 覆盖的真实配置，不是作弊开关。 */
+   * 可被 GA 覆盖的真实配置，不是作弊开关。
+   * base 缺省 = 'default'（POLICY_DEFAULT）；'hell' 显式写 base:'learned'，
+   * 因为实机的地狱 AI 是自对弈学出来的策略，不是默认策略加速版（见 basePolicy）。 */
   const LEVELS = [
     { id: 0, tag: 'default', name: '默认策略',
       desc: 'POLICY_DEFAULT 原样：标准速度 / 0.06 落点误差',
@@ -41,8 +112,8 @@ const OPP_LADDER = (() => {
       p: {} },
 
     { id: 1, tag: 'hell', name: '地狱 AI',
-      desc: '现有最强对手：速度 2.8 / 误差 0.03 / 纵深 2.6（v2 训练用对手）',
-      diff: 0.25,
+      desc: '实机同源：learned-policy.js 自对弈学习值 + 移动护栏 2.8/0.03/2.6',
+      diff: 0.25, base: 'learned',
       p: { moveSpeed: 2.8, moveErr: 0.03, moveZ: 2.6 } },
 
     { id: 2, tag: 'elite', name: '精英对手',
@@ -88,6 +159,11 @@ const OPP_LADDER = (() => {
            push: { forceThresh: 40, prob: 0.74 }, counter: { spinThreshMul: 0.85, prob: 0.97 },
            smash: { prob: 0.80 }, loop: { prob: 0.90 },
            serve: { topProb: 0.7, sideProb: 0.86, txSpread: 1.05, tzBase: 0.95, tzRange: 0.3, power: 0.92 } } },
+
+    { id: 5, tag: 'grandslam', name: '大满贯预备种子',
+      desc: '实机同源：policyForModel("grandslam")＝learned-policy-grandslam.js 预备种子 + 移动覆写 2.9/0.02/2.7，阶梯零加压',
+      diff: 0.90, base: 'grandslam',
+      p: {} },
   ];
 
   /* ---- 路径写入（支持 'wide.forehand' 这类嵌套键）---- */
@@ -104,9 +180,7 @@ const OPP_LADDER = (() => {
    * 抖动让"同一档"也有若干亚型：训练时随机取亚型可显著降低对单一配置的记忆。 */
   function at(id, rng, spread){
     const lv = LEVELS[typeof id === 'number' ? id : (LEVELS.find(x => x.tag === id) || LEVELS[0]).id];
-    const o = {};
-    const def = defPolicy();
-    for(const k of Object.keys(def)) o[k] = def[k];
+    const o = clonePolicy(basePolicy(lv.base));
     if(lv.p) for(const k of Object.keys(lv.p)) setPath(o, k, lv.p[k]);
     if(rng && spread > 0){
       const jit = (v) => v * (1 + (rng() - 0.5) * 2 * spread);
@@ -144,7 +218,7 @@ const OPP_LADDER = (() => {
   return {
     LEVELS, LEVEL_TAGS: LEVELS.map(l => l.tag),
     DEFAULT_FROM: 1,          // 课程默认起点 = 'hell'（与 v2 训练对手一致）
-    TOP: 4,                   // 课程终点 = 'extreme-max'
+    TOP: 5,                   // 课程终点 = 'grandslam'（2026-10-06 起训练顶档换成大满贯预备种子）
     defPolicy, at, pick, schedule,
     tagOf(p){ return (p && p._ladderTag) || 'unknown'; },
   };

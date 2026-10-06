@@ -14,7 +14,7 @@ const TT_STATS = (() => {
   const TTM = 'ttmouse';
   const blank = () => ({ model: '', pts: 0, contacts: 0, nets: 0,
                          dec: 0, ctrl: 0, txSum: 0, mySum: 0, txMin: 1.9, txMax: -1.9,
-                         lost: { net: 0, out: 0, double: 0, serve: 0, other: 0 } });
+                         lost: { net: 0, out: 0, double: 0, serve: 0, other: 0, noreach: 0 } });
   let cur = null, nSnap = 0;
 
   /* 当前模式下某侧的模型名（每次实时读取，不缓存——用户可在对局中切换模型） */
@@ -32,13 +32,22 @@ const TT_STATS = (() => {
   const pairName = () => modelOf('player') + ' vs ' + modelOf('ai');
   function active(){ return !!cur && (cur.sides.player.model === TTM || cur.sides.ai.model === TTM); }
 
-  /* 失分原因归类（msg 是 UI 文案，用关键词归类；未知落 other） */
+  /* 失分原因归类（msg 是 UI 文案，用关键词归类；未知落 other）
+   * ★ 必须先把「对手未能回球」挑出来：它是**够不到球**，不是自己打坏。
+   *   原顺序里 /网/ 先命中不了「对手未能回球」，而这条文案又没有任何一个
+   *   关键词（网/出界/双跳/发球）能匹配，于是 23 个真实 session 里
+   *   DQN 的 99 次「未能回球」全被静默归进 other —— 而 other 与 double 才是
+   *   「够不到」的正确口径。诊断训练/实机失配时最需要知道的就是这个比例，
+   *   归错类等于把唯一的判据扔了。
+   * 判据按「先判否定式，再判肯定式」：文案里出现「未能回球」「回球失败」就是没接到。 */
   function reasonOf(msg){
     const s = String(msg || '');
-    if(/下网|未过网|撞网|网/.test(s)) return 'net';
-    if(/出界|出台|出台/.test(s)) return 'out';
+    // 够不到：对手（或自己）没能把球打回来
+    if(/未能回球|回球失败/.test(s)) return 'noreach';
     if(/双跳/.test(s)) return 'double';
     if(/发球/.test(s)) return 'serve';
+    if(/下网|未过网|撞网|网/.test(s)) return 'net';
+    if(/出界|出台/.test(s)) return 'out';
     return 'other';
   }
   const rate = (n, d) => d ? +(n / d * 100).toFixed(1) : 0;
@@ -80,13 +89,19 @@ const TT_STATS = (() => {
       const live = pairName();
       if(!cur || cur.pair !== live){ if(cur && (cur.sides.player.model === TTM || cur.sides.ai.model === TTM)) this.push(); this.reset(); }
     },
-    /* rules.pointTo 调用：计一分，并把失分原因归到输家名下 */
+    /* rules.pointTo 调用：计一分，并把失分原因归到输家名下。
+       同时保留原始文案 lastReasonMsg —— 上报快照里也带上，这样分类规则
+       改错时仍能从日志里复原真相（历史教训：other 桶里混着 99 次「未能回球」，
+       而快照只存了分类结果，原始文案没落盘，事后无法复原）。 */
     record(winner, msg){
       if(!cur || !active()) return;
       cur.sides[winner].pts++; cur.ptsTotal++;
       const loser = winner === 'player' ? 'ai' : 'player';
       const k = reasonOf(msg); cur.sides[loser].lost[k]++;
       cur.lastReason = msg || ''; cur.lastWinner = winner; cur.lastT = Date.now();
+      cur.reasons = cur.reasons || [];
+      cur.reasons.push(cur.ptsTotal + ':' + winner + ':' + (msg || ''));
+      if(cur.reasons.length > 400) cur.reasons.splice(0, cur.reasons.length - 400);
     },
     /* ttHit 调用：一次成功触球；net=true 表示这板出球撞网/下网 */
     noteHit(side, net){
@@ -110,7 +125,9 @@ const TT_STATS = (() => {
       const s = snap();
       if(!s || typeof navigator === 'undefined' || typeof navigator.sendBeacon !== 'function') return false;
       try{
-        const body = JSON.stringify({ at: Date.now(), pair: cur.pair, snap: s, share: pointsShare() });
+        const body = JSON.stringify({ at: Date.now(), pair: cur.pair, snap: s,
+                                      reasons: (cur.reasons || []).slice(-60),   // 原始文案（分类可复核）
+                                      share: pointsShare() });
         return navigator.sendBeacon('/api/ttstats', new Blob([body], { type: 'application/json' }));
       }catch(e){ return false; }
     },

@@ -13,89 +13,29 @@ function predictLanding(){ return SIM.predictLanding(ball.pos, ball.vel, ball.sp
    policy：本侧所用策略（moveSpeed/moveZ）；precModel：diffPrecision 精度模型 */
 function aiMoveShared(dt, pad, side, zHome, zLo, zHi, policy, precModel){
   const g = pad.group.position;
-  const toward = side==='player' ? 1 : -1;     // 玩家侧接 +Z 来球，AI 侧接 -Z 来球
-  let targetX = 0, targetZ = zHome;
-  const inbound = ball.active && !ballDead && toward*ball.vel.z > 0.15;
-  if(!inbound) pad._inbound = false;
-  if(inbound){
-    /* 新一板来球抽一次落点 X 预测偏差，与仿真 aiReach 的 errS 同义（input-sim.js）。
-     * 历史上实机对手 X 轴零误差——阶梯最狠的 moveErr 轴（0.06→0.004）只在仿真里生效，
-     * "极端"对手在实机并没有更精准。只在上升沿抽一次，避免 90ms 刷新退化成随机游走。 */
-    if(!pad._inbound){
-      pad._inbound = true;
-      const base = (typeof policyForModel === 'function') ? get(policyForModel(precModel), 'moveErr', 0.06) : 0.06;
-      const amp  = Math.abs(ball.spin.x)*0.0011 + Math.abs(ball.spin.y)*0.0006
-                 + Math.max(0, Math.abs(ball.vel.z) - 4)*0.05;
-      pad._xErr  = gauss() * (base + amp);
-      pad._wrapDone = false; pad._wrapOn = false;    // 侧身判定每板重置
-      pad._strokeSwitches = 0;                       // 一板一次切换预算（AI 承诺机制）
-      if(pad._nz){ pad._nz.v = 0; pad._nz.t = -1; }  // OU 决策噪声每板重启（不带着上一板的犹豫）
-    }
-    const ttc0 = (g.z - ball.pos.z) / ball.vel.z;   // 球到拍面平面时间（分子分母同号）
-    if(elapsed-pad.predT > clamp(ttc0 > 0 ? ttc0*0.25 : 0.09, 0.016, 0.09)){   // 缓存随 TTC 自适应
-      pad.predX = predictXAtZ(g.z);                 // 用当前拍面 z 预测 x
-      const m = SIM.predictMeetZ(ball.pos, ball.vel, ball.spin, side, PADDLE_Y-0.235, PADDLE_Y+0.235, zLo, zHi);
-      pad.predZ = m ? m.z : zHome;
-      pad.predT = elapsed;
-    }
-    targetX = pad.predX;
-    targetZ = pad.predZ;
-    /* 正/反手姿态（仅 AI 侧）：用 predX 预测击球点决策，触球时刻几何/横向趋势/方向
-       不对称滞回/OU 平滑噪声/软承诺全在 SIM.resolveStance（v2.3）。玩家侧姿态由
-       autoStance 唯一所有——watch 模式本函数也驱动 playerPad，但不得碰它的姿态。 */
-    if(side === 'ai' && !pad._wrapOn){
-      const ttc = ttc0;                             // 球到拍面平面时间（上面已算）
-      const fhPref = get(policy, 'fhPref', 1);        // 策略可下调正手偏好（均衡型选手）
-      const st = SIM.resolveStance({ bx: pad.predX, gx: g.x, gz: g.z, cur: pad.stance,
-        lastSwitch: pad.stanceT, now: elapsed, inbound: true,
-        commit: ttc > 0 && ttc < SIM.commitTOf(pad.stance, ball.vel.z),
-        strokeSwitches: pad._strokeSwitches || 0,
-        gvx: pad.svx || 0, bvx: ball.vel.x, ttc, ballY: ball.pos.y, spinY: ball.spin.y, fhPref,
-        noiseBox: (pad._nz || (pad._nz = { v: 0, t: -1 })) });
-      if(st !== pad.stance){ pad.stance = st; pad.stanceT = elapsed; pad._strokeSwitches = (pad._strokeSwitches || 0) + 1; }
-      // 侧身正手（wrap around）：反手位球、距离适中 → 每板一次评估（v2.2：SIM.wrapProb
-      // 按"侧身可行性×来球速度"调制概率，替代静态抽签）。本板锁定（_wrapOn），跳过后续逐帧重评估。
-      if(!pad._wrapDone){
-        pad._wrapDone = true;
-        const W = (typeof STANCE !== 'undefined') ? STANCE.wrap : null;
-        const dx = pad.predX - g.x;                 // 反手位 = 球在拍 +X 侧（-X 为正手位）
-        if(W && W.prob > 0 && pad.stance === 'backhand' && dx > W.distMin && dx < W.distMax
-           && Math.random() < SIM.wrapProb({ ttc, dx, vz: ball.vel.z, W, fhPref })){
-          pad.stance = 'forehand'; pad.stanceT = elapsed;
-          pad._wrapOn = true;
-        }
-      }
-    }
-    // AI 引拍预告：球接近回球点时提前引拍（phase 去重；与实机 try*Hit 的接触窗口一致）
-    if(lastHitter!==side && pad.phase==='ready'){
-      const ttc = toward>0 ? (g.z - ball.pos.z)/ball.vel.z : (ball.pos.z - g.z)/-ball.vel.z;
-      if(ttc>0 && ttc<0.16){
-        beginWindup(pad, pad.stance, 0.5);
-      }
-    }
-  }else if(ball.active && !ballDead){ targetX = g.x*0.9; targetZ = zHome; }
-  /* 一分之间（无活球）超过 resetHold 秒 → AI 也回正手基准握法（v2.3 还原归位，
-     与玩家侧 autoStance 同源；仅 AI 侧——watch 模式 playerPad 姿态归 autoStance 所有） */
-  if(side === 'ai' && !inbound){
-    const st0 = SIM.resolveStance({ bx: g.x, gx: g.x, gz: g.z, cur: pad.stance,
-      lastSwitch: pad.stanceT, now: elapsed, inbound: false,
-      idle: !ball.active || ballDead });
-    if(st0 !== pad.stance){ pad.stance = st0; pad.stanceT = elapsed; }
-  }
-  if(!Number.isFinite(targetX)) targetX = 0;                 // NaN 护栏
-  if(!Number.isFinite(targetZ)) targetZ = zHome;
-  targetX = clamp(targetX + (pad._xErr || 0), -X_CLAMP, X_CLAMP);   // 含本板落点预测偏差
-  targetZ += gauss()*0.05*diffPrecision(precModel);          // z 预测误差（按本侧模型）
-  targetZ = clamp(targetZ, zLo, zHi);                        // 前后范围左右镜像对称（各 0.4m 前扑/后退）
-  const spd = get(policy,'moveSpeed',2.45), zSpd = get(policy,'moveZ',2.0);
-  const rPace = get(policy,'recoverPace',7);   // 跟随/回位速度（42 维扩容：原常数 7 参数化）
-  const prevX = g.x, prevZ = g.z;
-  g.x += clamp((targetX-g.x)*rPace, -spd, spd)*dt;
-  g.z += clamp((targetZ-g.z)*rPace, -zSpd, zSpd)*dt;
-  pad.svx = (g.x-prevX)/Math.max(dt,1e-4);
-  pad.svz = (g.z-prevZ)/Math.max(dt,1e-4);
+  pad.x = g.x; pad.z = g.z;
+  /* ★ 本函数现在是 SIM.aiStep 的薄适配层：真正的逐帧跑位 / 落点预测 / 姿态决策 /
+     侧身正手 全部搬进了 simcore.js，好让训练器（input-sim.js）对同一条对手
+     也调同一份代码。训练器过去用的是 input-sim.js#aiReach 那套闭式近似
+     （无逐帧跑位、无磁吸、无三维接触判定），于是「对手」在训练与实机是两个
+     不同的游戏，仿真胜率从这个分叉开始就不可迁移。 */
+  const r = SIM.aiStep({
+    dt, now: elapsed, side, mir: (side === 'player' ? 1 : -1),
+    pad, ball, ballDead, lastHitter,
+    zHome, zLo, zHi, policy,
+    moveSpeed: get(policy, 'moveSpeed', 2.45),
+    moveZ: get(policy, 'moveZ', 2.0),
+    recoverPace: get(policy, 'recoverPace', 7),
+    fhPref: get(policy, 'fhPref', 1),
+    /* 落点误差与精度系数按「本侧模型」取（simcore 不认识模型名，由调用方解析） */
+    errBase: get(policyForModel(precModel), 'moveErr', 0.06),
+    precZ: 0.05 * diffPrecision(precModel),
+    rng: Math.random,
+  });
+  g.x = pad.x; g.z = pad.z;
+  /* 引拍预告：球接近回球点时提前引拍（与实机 try*Hit 的接触窗口一致） */
+  if(r.windup && pad.phase === 'ready') beginWindup(pad, pad.stance, 0.5);
 }
-
 function aiMove(dt){
   // ★ 右上角模型 = 鼠标上的tt玩家：用训练出的输入级 DQN 驱动（镜像到玩家侧坐标系）
   if(typeof TT_PLAYER !== 'undefined' && TT_PLAYER.isTtSide('ai') && TT_PLAYER.isReady()){
@@ -103,7 +43,9 @@ function aiMove(dt){
     return;
   }
   // ★ 右侧(AI 侧)也用与左侧玩家侧完全相同的移动逻辑（统一到 aiMoveShared）
-  aiMoveShared(dt, aiPad, 'ai', AI_Z, -1.72, -0.92, resolvedPolicy(), sideModel('ai'));
+  // 策略按侧解析：斗蛐蛐右侧 = fightR。原来用 resolvedPolicy()（读顶栏 aiModel），
+  // 于是斗蛐蛐里给右侧选什么模型，跑动速度与出球选择都还是顶栏那一档（默认普通 AI）。
+  aiMoveShared(dt, aiPad, 'ai', AI_Z, -1.72, -0.92, resolvedPolicyFor('ai'), sideModel('ai'));
 }
 function demoPlayer(dt){
   const g = playerPad.group.position;
@@ -182,7 +124,7 @@ const bandit = {
   },
   /* 决策用策略：难度基线 + 当前上下文所选 arm 的偏置 */
   policyForContext(ctx){
-    if(mode!=='play') return resolvedPolicy();
+    if(mode!=='play') return resolvedPolicyFor('ai');
     const bucket = banditBucket(ctx);
     const st = this.initBucket(bucket);
     const arm = this.sampleArm(st);

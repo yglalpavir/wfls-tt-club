@@ -191,30 +191,56 @@ function updatePaddlePose(dt){
     if(p.phase==='ready') p.inner.position.y += Math.sin(elapsed*2.0 + (p===aiPad?1.7:0))*0.0025;
   });
 }
+/* ---- 固定步长仿真（★ 训练/实机一致性的关键）----
+   原来 animate() 直接用渲染帧的 dt 推进整个仿真：拍面缓动、姿态决策、磁吸、
+   触球判定、物理子步数全部跟着显示器刷新率走。
+   · 144Hz 屏 → 每帧 dt=1/144，物理子步 n=ceil((1/144)/(1/120))=1、h=1/144，
+     而「鼠标上的tt玩家」的权重是在**恒定 1/60 帧 × 2 个 1/120 子步**下训出来的；
+   · 30Hz 屏 → n=4，拍面缓动按 dt=1/30 走。
+   两种情况下实机跑的根本不是训练时那个游戏。
+   现在把仿真拆成固定 1/60 帧的累加器：渲染仍按刷新率走（画面依旧顺滑），
+   但物理与决策恒定 60Hz —— 与训练器 input-sim.js 的 DT/SUBN 严格一致。
+   累加器上限 6 帧/渲染帧，避免长卡顿后的「死亡螺旋」。 */
+const SIM_FRAME = 1/60;
+let simAcc = 0;
+/* 仿真一帧：与训练器 input-sim.js#playerReceive 的逐帧顺序一一对应 */
+function stepSim(dt){
+  elapsed += dt;
+  /* 姿态：真人玩家侧由 autoStance 唯一所有；「鼠标上的tt玩家」站玩家侧时
+     改由 TT_PLAYER 拥有（tt-player.js#stanceTick，输入口径与训练侧一致）。
+     不跳过 autoStance 的话它会与 TT_PLAYER 每帧互相覆写 playerPad.stance，
+     磁吸与触球窗口读到哪一份就变成帧序的偶然结果。 */
+  if(!(typeof TT_PLAYER !== 'undefined' && TT_PLAYER.isReady()
+       && TT_PLAYER.isTtSide('player') && mode === 'watch')){
+    playerStance = autoStance();
+  }
+  if(mode==='menu') demoPlayer(dt);
+  else if(mode==='watch') aiMovePlayer(dt);
+  else playerControl(dt);
+  aiMove(dt);                          // AI 侧（或 ttmouse 的 ttTick）
+  if(mode!=='watch') updateWindupTrigger();   // 观看模式由 aiMovePlayer 触发引拍
+  if(state==='awaitServe'){
+    /* 抛球点（端线后、拍高附近）—— 与 rules#strikeServe 的出球点同一口径，
+       见 SIM.serveOrigin。这里只是抛球动画的起点。 */
+    const pad = server==='player' ? playerPad : aiPad;
+    const o = SIM.serveOrigin(server, pad.group.position.x, pad.group.position.z);
+    ball.pos.set(o.x, TABLE_TOP + 0.05, o.z);
+    ball.vel.set(0,0,0); ball.spin.set(0,0,0);
+  } else if(ball.active){
+    const n = SIM.subStepsFor(dt), h = dt/n;      // 恒定 2 × 1/120
+    for(let i=0;i<n;i++) physicsStep(h);
+  }
+}
 function animate(){
   requestAnimationFrame(animate);
   const dt = Math.min(clock.getDelta(), 0.05);
   QUALITY.tick(dt);                 // 动态分辨率调节(仅自动档生效)
-  elapsed += dt;
-  playerStance = autoStance();        // 正/反手自动选择（球拍与球的相对位置）
-
-  if(mode==='menu') demoPlayer(dt);
-  else if(mode==='watch') aiMovePlayer(dt);
-  else playerControl(dt);
-  aiMove(dt);
-  if(mode!=='watch') updateWindupTrigger();   // 观看模式由 aiMovePlayer 触发引拍
-
-  if(state==='awaitServe'){
-    const pad = server==='player' ? playerPad : aiPad;
-    // 抛球点：端线后（规则）——球在拍后方、端线外侧约 0.5m（真实发球站位），台面之上，先垂直抛起
-    const behind = server==='player' ? 1 : -1;         // 玩家侧 +Z(AI侧的场外)，AI 侧 -Z
-    ball.pos.set(pad.group.position.x, TABLE_TOP + 0.05, clamp(pad.group.position.z, server==='player'?TABLE_L/2:-3, server==='player'?3:-TABLE_L/2) + behind*0.50);
-    ball.vel.set(0,0,0); ball.spin.set(0,0,0);
-  }else if(ball.active){
-    const n = Math.max(1, Math.ceil(dt/(1/120))), h = dt/n;
-    for(let i=0;i<n;i++) physicsStep(h);
-  }
-
+  /* ---- 仿真：固定 1/60 步长累加（与训练器同源，见上方注释）---- */
+  simAcc += dt;
+  let simSteps = 0;
+  while(simAcc >= SIM_FRAME && simSteps < 6){ simAcc -= SIM_FRAME; stepSim(SIM_FRAME); simSteps++; }
+  if(simSteps >= 6) simAcc = 0;     // 长卡顿：丢弃积压，不追帧
+  /* ---- 以下纯渲染/表现层，按渲染 dt 走 ---- */
   ballMesh.position.copy(ball.pos);
   ballMesh.rotation.x += ball.spin.x*dt*0.8;
   ballMesh.rotation.y += ball.spin.y*dt*0.8 + dt*0.6;

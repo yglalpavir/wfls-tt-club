@@ -7,6 +7,28 @@
  * ===================================================================== */
 'use strict';
 
+/* ★ Node 侧补齐 learned-policy*.js（浏览器里它们是 <script> 全局，Node 里是模块作用域 const）
+ * strongVec() / grandSlamPolicy() / nemesisPolicy() 都靠 `typeof LEARNED_POLICY !== 'undefined'`
+ * 判断学习策略在不在。Node 下 require 本文件时那个判断恒为假，于是：
+ *   · policyForModel('hell') 静默返回 POLICY_DEFAULT 而不是地狱 AI
+ *   · policyForModel('grandslam'|'nemesis') 同理静默降级
+ * 训练器目前靠 opponent-ladder.js 自己 require 绕开了这个坑，但任何直接调
+ * policyForModel('hell') 的 Node 脚本（eval-candidates / diag-* / 未来的 live-match 对照）
+ * 拿到的都是「假地狱 AI」，且**没有任何报错**。这里显式挂到 global 上，
+ * 让 Node 与浏览器同源。 */
+if(typeof require === 'function'){
+  const __lp = (n, k)=>{ try{ return require('./' + n)[k]; }catch(e){ return undefined; } };
+  if(typeof LEARNED_POLICY === 'undefined'){
+    const v = __lp('learned-policy.js', 'LEARNED_POLICY'); if(v) global.LEARNED_POLICY = v;
+  }
+  if(typeof GRANDSLAM_POLICY === 'undefined'){
+    const v = __lp('learned-policy-grandslam.js', 'GRANDSLAM_POLICY'); if(v) global.GRANDSLAM_POLICY = v;
+  }
+  if(typeof NEMESIS_POLICY === 'undefined'){
+    const v = __lp('learned-policy-nemesis.js', 'NEMESIS_POLICY'); if(v) global.NEMESIS_POLICY = v;
+  }
+}
+
 const cclamp = (v, a, b) => v < a ? a : (v > b ? b : v);   // 用 cclamp 避免与 constants.js 全局 clamp 冲突
 /* 相对上旋（方向无关）：正=上旋 / 负=下旋 */
 function relTopOf(ctx){ return ctx.sx * Math.sign(ctx.vz || 1); }
@@ -85,6 +107,16 @@ let currentPolicy = null;
 function setCurrentPolicy(p){ currentPolicy = p; _diffCache = { d:null, pol:null }; }
 function resolvedPolicy(){
   if(currentPolicy) return currentPolicy;
+  return policyForModel(aiModel);
+}
+/* ★ 分侧解析：斗蛐蛐(watch) 模式下两侧模型是 fightL / fightR，与顶栏 aiModel 无关。
+ * 原来 resolvedPolicy() 一律读 aiModel，导致斗蛐蛐里选「地狱 AI 克星 / 极端」打右侧时，
+ * 右侧的**出球选择与跑动速度**其实用的是顶栏那档（默认是普通 AI），只有落点误差
+ * moveErr 与 diffPrecision 读了 fightR —— 选什么对手都像半个普通 AI。
+ * 现在按侧解析：ai.js#aiMove / hitAI 的 bandit / rules.js#startToss 都走这个。 */
+function resolvedPolicyFor(side){
+  if(currentPolicy) return currentPolicy;
+  if(typeof mode !== 'undefined' && mode === 'watch') return policyForModel(sideModel(side));
   return policyForModel(aiModel);
 }
 function policyMoveSpeed(){ return get(resolvedPolicy(), 'moveSpeed', 2.45); }  // = AI_SPEED（字面量保证 Node 可加载）
@@ -378,8 +410,8 @@ if(typeof module !== 'undefined' && module.exports){
   module.exports = {
     clamp: cclamp, relTopOf, gaussOf, strokePowerOf, get, setPath,
     DEFAULT_TEMPLATE, POLICY_DEFAULT, POLICY_KEYS, WEAK_POLICY,
-    setCurrentPolicy, resolvedPolicy, policyMoveSpeed, policyMoveZ, diffPrecision, policyForDifficulty,
-    policyForModel, grandSlamPolicy, policyForSide, sideModel,
+    setCurrentPolicy, resolvedPolicy, resolvedPolicyFor, policyMoveSpeed, policyMoveZ, diffPrecision, policyForDifficulty,
+    policyForModel, strongVec, grandSlamPolicy, nemesisPolicy, policyForSide, sideModel,
     aiDecision, aiServePlan, aiServeTarget, flattenPolicy, unflattenPolicy,
   };
 }

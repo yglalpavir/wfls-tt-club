@@ -757,6 +757,208 @@ const SIM = (() => {
     return S.transMag + (1 - S.transMag) * Math.max(0, t);
   }
 
+  /* ==================================================================
+   *  实机 / 训练 共用判定口径（单一来源）
+   * ==================================================================
+   *  下面这几个口径历史上在 physics.js（实机）与 input-sim.js（训练）
+   *  **各写一份**，两边漂移出 8 处硬失配，把同一份权重的仿真胜率从
+   *  74% 抬到实机 26%（见 tools/live-match.js 与 tools/phase1-findings.md）。
+   *  两边各写一份 = 必然漂移，所以收进 simcore：谁都不许再自己抄一遍。
+   */
+
+  /* ---- 发球点击球点 ----
+   * 实机原来在 main.js#awaitServe 摆球（端线后 0.5m、拍高 TABLE_TOP+0.05），
+   * rules.js#strikeServe 再拿 ball.pos 去解算 —— 于是出球点取决于「抛球那一刻
+   * 球在哪」，训练侧则写死 {y: PADDLE_Y, z: PLAYER_Z+0.10=1.45}。同一记发球在
+   * 两边从不同的点出发，serveShot 解出的速度分布完全不同（实测 z 差 42cm、
+   * y 差 10cm），训练出的发球在实机复现不出来。
+   * 现在统一成「按击球时刻的拍位算」：x = 拍位 x，纵深 = 端线外 0.5m，
+   * 高度 = 拍高 + 抛球落击余量。side: 'player' | 'ai'。 */
+  const clampZ = (v, a, b) => v < a ? a : (v > b ? b : v);
+  function serveOrigin(side, padX, padZ){
+    const s = (side === 'ai') ? -1 : 1;
+    const half = C.TABLE_L / 2;
+    const zDef = s * (half + 0.50);
+    const z = (padZ == null || !Number.isFinite(padZ)) ? zDef
+            : (s > 0 ? clampZ(padZ, half, 3) + 0.50 : clampZ(padZ, -3, -half) - 0.50);
+    return { x: (padX == null || !Number.isFinite(padX)) ? 0 : padX,
+             y: C.PADDLE_Y + 0.10,          // 抛球下落到击球高度（实机 physicsStep#toss 的阈值）
+             z: z };
+  }
+
+  /* ---- 每帧物理子步数（实机 main.js 与训练 input-sim 同一份）----
+   * 历史上实机写死 ceil(dt/(1/120)) 而 dt 跟着显示器刷新率走：144Hz 屏上
+   * 每帧只积 1 个 1/144 子步，触球判据的「本帧真实穿越拍面」窗口分辨率就变了。
+   * 配合 main.js 的固定步长累加器（恒定 1/60 帧 × 2 子步），这里只保留公式。 */
+  function subStepsFor(dt){ return Math.max(1, Math.ceil(dt / SDT)); }
+
+  /* ---- 出界 / 落地判定（实机 physicsStep 末段与训练 playerReceive 共用）----
+   * 台面外接矩形 + 余量；与台面尺寸绑定，改台面尺寸不会漏改。
+   * 返回 null = 还在局内；否则是原因串。 */
+  const OUT_MARGIN = 0.35, OUT_HARD = 3.0;
+  function outOfBounds(p, v){
+    const outX = C.TABLE_W / 2 + OUT_MARGIN, outZ = C.TABLE_L / 2 + OUT_MARGIN;
+    const onFloor = p.y <= C.BALL_R + 1e-4;
+    if(onFloor && v.y < 0) return 'floor';
+    if(onFloor && (Math.abs(p.x) > outX || Math.abs(p.z) > outZ)) return 'out';
+    if(Math.abs(p.x) > OUT_HARD || Math.abs(p.z) > OUT_HARD || p.y < -0.5) return 'hard';
+    return null;
+  }
+
+  /* ---- 触球容错窗口（fitV / fitH / fitZ）----
+   * 实机 tryAIHit / 训练 tryPlayerFit 的这三条公式逐字相同，但「用哪个 STROKE」
+   * 不同：实机 AI 侧用 aiPad.stance（下旋来球自动倒板），训练侧用 pushF 判据选
+   * 正反手。pushF 判据两边已统一成「只看是否下旋」（relTop < -8），这里把整个
+   * 窗口计算收成一处：谁改谁两边一起改，不可能只漂一边。
+   * allowPush：是否允许主动搓球拟合。实机玩家侧传 ctrlHold（真人按键），
+   * AI 侧与训练侧传 true（只看球是否下旋）—— 这一条是三处**有意不同**的口径，
+   * 其余全部共用。 */
+  function fitWindow(stance, relTop, ballY, v, s, allowPush){
+    const isBack = relTop < -8;
+    const pushF = (isBack && allowPush !== false) ? C.PUSH.fit : null;
+    const st = C.STROKE[stance] || C.STROKE.forehand;
+    const high = ballY > C.TABLE_TOP + 0.13;
+    const inQual = clamp((Math.abs(v.z) * 0.06 + Math.abs(s.x) * 0.002 + Math.abs(s.y) * 0.002) - 0.15, 0, 0.35);
+    return {
+      pushF, high, inQual,
+      fitV: pushF ? st.forgiveV + pushF.v : (high ? st.forgiveV + 0.30 : Math.max(st.forgiveV - inQual, 0.04)),
+      fitH: pushF ? st.forgiveH + pushF.h : (high ? st.forgiveH + 0.16 : Math.max(st.forgiveH - inQual * 0.5, 0.02)),
+      fitZ: pushF ? st.forgiveZ + pushF.z : (high ? st.forgiveZ + 0.12 : Math.max(st.forgiveZ - inQual * 0.4, 0.02)),
+    };
+  }
+
+  /* ---- 前冲力度 fwd：分母必须读 MOUSE_SV_CAP ----
+   * 历史上 input-sim.js 与 tt-player.js 各自硬编码 /7，而 MOUSE_SV_CAP 也在
+   * constants.js 里是 7 —— 今天数值一致，但改限速的那一处不会跟着另外两处走，
+   * 于是「限速」悄悄改变了出球力量。 */
+  function fwdOf(svz){ return clamp(-svz / (C.MOUSE_SV_CAP || 7), 0, 1); }
+
+  /* ---- 磁吸（两侧共用，mir=+1 玩家侧 / -1 AI 侧）----
+   * 原来实机 physicsStep 里写两份、训练侧 input-sim#magnetPull 再写一份，
+   * 三处漂移出：z 门（实机 AI 侧写死 0.45 / 训练按姿态 0.3·0.45）、
+   * 调用顺序（实机在弹跳**前**、训练在弹跳**后**）、
+   * 以及 AI 侧纵深磁吸的**符号错误**（见下）。
+   * o = { mir, padX, padZ, padY, stance, stanceT, now, canHit, ctrl, pushMag, dt }
+   *   ctrl     —— 是否「主动搓球」。真人传 ctrlHold；agent 传 false
+   *               （agent 的下旋拟合由 fitWindow 的 allowPush 单独给）。
+   *   pushMag  —— 磁吸里是否叠加 PUSH.fit.mag。只有真人侧为 true
+   *               （constants.js 明确写了「玩家专用」）；agent 侧与实机 AI 侧
+   *               原口径都是不叠加。
+   * ★ 符号修正：实机 AI 侧原来写
+   *     zBehind = aiPad.z - p.z（负） → v.z += clamp(-zBehind*0.5, …)
+   *   注释说「镜像玩家 zAhead」但没镜像符号，结果是把**短球往网方向拉**而不是
+   *   往台内拉 —— AI 的短球因此被自己的磁吸顶浅，正好送到对手的进攻位。
+   *   正确写法是 v.z += mir * clamp(−zBehind*0.5, …)。 */
+  function magnetStep(p, v, s, o){
+    if(!o.canHit) return;
+    const mir = o.mir;
+    if(mir * v.z <= 0) return;
+    const zGate = (o.stance === 'forehand') ? 0.3 : 0.45;
+    if(mir * p.z < zGate) return;
+    const stF = C.STROKE[o.stance] || C.STROKE.forehand;
+    const pushF = (o.pushMag && o.ctrl && relTopOf(s.x, v.z) < -8) ? C.PUSH.fit : null;
+    const high = p.y > C.TABLE_TOP + 0.13;
+    const mag = (stF.magnet + (pushF ? pushF.mag : 0) + (high ? 1.2 : 0)) * stanceRampOf(o.stanceT, o.now);
+    const pull = (C.ASSISTG && C.ASSISTG.magnetPull) || 2.4;
+    v.x += clamp(o.padX - p.x, -0.7, 0.7) * pull * mag * o.dt;
+    const zAhead = mir * (o.padZ - p.z);
+    if(zAhead > 0.05) v.z += mir * clamp(zAhead * 0.5, 0, 0.45) * pull * mag * 0.55 * o.dt;
+    if(high && p.y > o.padY){
+      const yGap = o.padY - p.y;
+      v.y += clamp(yGap * 0.4, -0.35, 0) * pull * mag * 0.4 * o.dt;
+    }
+  }
+
+  /* ---- 对手 AI 逐帧跑位 + 姿态（实机 ai.js#aiMoveShared 与训练侧共用）----
+   * 训练器过去根本不用这个函数：input-sim.js#aiReach 是一套闭式近似
+   * （预测触球点 → 抽一次高斯误差 → 指数趋近 → |Δx|>0.15 硬判失败），
+   * 既没有逐帧跑位、没有磁吸、也没有三维接触判定。
+   * 于是「对手」在训练与实机是两个不同的游戏 —— 仿真胜率从这个分叉开始就不可迁移。
+   * 现在把实机那份逐字搬进 simcore，两边都调它。
+   * o = {
+   *   dt, now, side('player'|'ai'), mir(+1/-1),
+   *   pad   —— 就地改写 {x, z, svx, svz, stance, stanceT, predT, predX, predZ,
+   *                      _nz, _xErr, _inbound, _wrapDone, _wrapOn, _strokeSwitches}
+   *   ball  —— { active, pos{x,y,z}, vel{x,y,z}, spin{x,y,z} }
+   *   ballDead, lastHitter, zHome, zLo, zHi,
+   *   policy { moveSpeed, moveZ, recoverPace, fhPref },
+   *   errBase  —— 本档 moveErr（调用方按档位取；simcore 不认识模型名）
+   *   precZ    —— 纵深误差系数 0.05 × diffPrecision(model)（同上）
+   *   rng
+   * }
+   * 返回 { windup }：windup=true 表示该引拍（纯动画，由调用方执行）。 */
+  function aiStep(o){
+    const P_ = o.pad, B = o.ball, dt = o.dt, now = o.now;
+    const mir = o.mir, side = o.side;
+    let targetX = 0, targetZ = o.zHome;
+    const inbound = B.active && !o.ballDead && mir * B.vel.z > 0.15;
+    if(!inbound) P_._inbound = false;
+    let windup = false;
+    if(inbound){
+      if(!P_._inbound){
+        P_._inbound = true;
+        const amp = Math.abs(B.spin.x) * 0.0011 + Math.abs(B.spin.y) * 0.0006
+                  + Math.max(0, Math.abs(B.vel.z) - 4) * 0.05;
+        P_._xErr = gaussOf(o.rng) * (o.errBase + amp);
+        P_._wrapDone = false; P_._wrapOn = false;
+        P_._strokeSwitches = 0;
+        if(P_._nz){ P_._nz.v = 0; P_._nz.t = -1; }
+      }
+      const ttc0 = (P_.z - B.pos.z) / B.vel.z;
+      const cacheT = clamp(ttc0 > 0 ? ttc0 * 0.25 : 0.09, 0.016, 0.09);
+      if(now - P_.predT > cacheT){
+        P_.predT = now;
+        P_.predX = predictXAtZ(B.pos, B.vel, B.spin, P_.z);
+        const m = predictMeetZ(B.pos, B.vel, B.spin, side, C.PADDLE_Y - 0.235, C.PADDLE_Y + 0.235, o.zLo, o.zHi);
+        P_.predZ = m ? m.z : o.zHome;
+      }
+      targetX = P_.predX;
+      targetZ = P_.predZ;
+      if(side === 'ai' && !P_._wrapOn){
+        const ttc = ttc0;
+        const fhPref = o.fhPref == null ? 1 : o.fhPref;
+        const st = resolveStance({ bx: P_.predX, gx: P_.x, gz: P_.z, cur: P_.stance,
+          lastSwitch: P_.stanceT, now, inbound: true,
+          commit: ttc > 0 && ttc < commitTOf(P_.stance, B.vel.z),
+          strokeSwitches: P_._strokeSwitches || 0,
+          gvx: P_.svx || 0, bvx: B.vel.x, ttc, ballY: B.pos.y, spinY: B.spin.y, fhPref,
+          noiseBox: (P_._nz || (P_._nz = { v: 0, t: -1 })), rng: o.rng });
+        if(st !== P_.stance){ P_.stance = st; P_.stanceT = now; P_._strokeSwitches = (P_._strokeSwitches || 0) + 1; }
+        if(!P_._wrapDone){
+          P_._wrapDone = true;
+          const W = (C.STANCE && C.STANCE.wrap) || null;
+          const dx = P_.predX - P_.x;
+          if(W && W.prob > 0 && P_.stance === 'backhand' && dx > W.distMin && dx < W.distMax
+             && o.rng() < wrapProb({ ttc, dx, vz: B.vel.z, W, fhPref })){
+            P_.stance = 'forehand'; P_.stanceT = now;
+            P_._wrapOn = true;
+          }
+        }
+      }
+      if(o.lastHitter !== side){
+        const ttc = mir > 0 ? (P_.z - B.pos.z) / B.vel.z : (B.pos.z - P_.z) / -B.vel.z;
+        if(ttc > 0 && ttc < 0.16) windup = true;
+      }
+    }else if(B.active && !o.ballDead){ targetX = P_.x * 0.9; targetZ = o.zHome; }
+    if(side === 'ai' && !inbound){
+      const st0 = resolveStance({ bx: P_.x, gx: P_.x, gz: P_.z, cur: P_.stance,
+        lastSwitch: P_.stanceT, now, inbound: false,
+        idle: !B.active || o.ballDead, rng: o.rng });
+      if(st0 !== P_.stance){ P_.stance = st0; P_.stanceT = now; }
+    }
+    if(!Number.isFinite(targetX)) targetX = 0;
+    if(!Number.isFinite(targetZ)) targetZ = o.zHome;
+    targetX = clamp(targetX + (P_._xErr || 0), -C.X_CLAMP, C.X_CLAMP);
+    targetZ = clamp(targetZ + gaussOf(o.rng) * o.precZ, o.zLo, o.zHi);
+    const spd = o.moveSpeed, zSpd = o.moveZ, rPace = o.recoverPace;
+    const prevX = P_.x, prevZ = P_.z;
+    P_.x += clamp((targetX - P_.x) * rPace, -spd, spd) * dt;
+    P_.z += clamp((targetZ - P_.z) * rPace, -zSpd, zSpd) * dt;
+    P_.svx = (P_.x - prevX) / Math.max(dt, 1e-4);
+    P_.svz = (P_.z - prevZ) / Math.max(dt, 1e-4);
+    return { windup, targetX, targetZ };
+  }
+
   /* 浏览器：constants.js 已加载 → 同步全局物理常量（单一物理源，防漂移） */
   if(typeof TABLE_L !== 'undefined'){
     C.TABLE_L = TABLE_L; C.TABLE_W = TABLE_W; C.TABLE_H = TABLE_H; C.TABLE_TOP = TABLE_TOP;
@@ -781,7 +983,8 @@ const SIM = (() => {
   }
 
   const api = { C, clamp, v, vcopy, solveShot, simulateShot, simulateFull, simulateServeFull, tableBounce, predictXAtZ, predictLanding, predictZAtY, predictMeetZ, serveShot, makeNetShot,
-                relTopOf, gaussOf, strokePowerOf, resolveHit, resolveStance, stanceRampOf, wrapProb, commitTOf };
+                relTopOf, gaussOf, strokePowerOf, resolveHit, resolveStance, stanceRampOf, wrapProb, commitTOf,
+                serveOrigin, subStepsFor, outOfBounds, fitWindow, fwdOf, magnetStep, aiStep };
   if(typeof module !== 'undefined' && module.exports) module.exports = api;
   return api;
 })();
