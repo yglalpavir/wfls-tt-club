@@ -1,0 +1,64 @@
+{
+  "run": "input3-gs",
+  "at": "2026-10-06T15:03:51.005Z",
+  "games": 30,
+  "seed": "20261004",
+  "tol": 8,
+  "top": "grandslam",
+  "bestEp": 2000,
+  "bestSimScore": 0.7013,
+  "candidate": {
+    "live": {
+      "default": 0.48100000000000004,
+      "hell": 0.023,
+      "grandslam": 0.49200000000000005
+    },
+    "sim": {
+      "default": 0.6990000000000001,
+      "hell": 0.193,
+      "grandslam": 0.737
+    },
+    "delta": {
+      "default": -21.8,
+      "hell": -17,
+      "grandslam": -24.5
+    },
+    "worstDelta": -24.5
+  },
+  "baseline": {
+    "note": "input3-gs 第二轮训练的实机基线 = 2026-10-06 烘焙后的 js/input-weights.js（来自 input3-12h/ckpt-008500）。新一轮收尾时与候选权重同种子（20261004）配对比较。",
+    "at": "2026-10-06T00:00:55.122Z",
+    "games": 30,
+    "seed": "20261004",
+    "weights": "js/input-weights.js",
+    "srcWeights": "data/checkpoints/input3-12h/ckpt-008500.json",
+    "live": {
+      "default": 0.354,
+      "hell": 0.11699999999999999,
+      "grandslam": 0.354
+    },
+    "sim": {
+      "default": 0.607,
+      "hell": 0.16,
+      "grandslam": 0.605
+    },
+    "delta": {
+      "default": -25.3,
+      "hell": -4.4,
+      "grandslam": -25.2
+    },
+    "worstDelta": -25.3,
+    "weighted": 0.2829,
+    "top": "grandslam",
+    "levels": [
+      "default",
+      "hell",
+      "grandslam"
+    ]
+  },
+  "gates": {
+    "improved": false,
+    "bakeAnyway": false
+  },
+  "passed": false
+}

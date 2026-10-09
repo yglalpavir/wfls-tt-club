@@ -67,6 +67,9 @@ POLL="${SUP_POLL:-60}"
 STALL="${SUP_STALL:-1800}"
 BOOT="${SUP_BOOT:-1500}"
 TRAINER="${SUP_TRAINER:-tools/train-input3.js}"
+# 卡死判定换成「连续未推进的轮次数」后，这两个阈值必须换算成轮数
+STALL_POLLS_MAX=$(( STALL / POLL )); [ "$STALL_POLLS_MAX" -lt 1 ] && STALL_POLLS_MAX=1
+BOOT_POLLS=$(( BOOT / POLL ))
 
 note(){ printf '[%s] %s\n' "$(date '+%Y-%m-%d %H:%M:%S')" "$*" | tee -a "$SUP_LOG"; }
 
@@ -90,7 +93,18 @@ lock_free(){
 }
 lock_free
 echo $$ > "$LOCK"
-trap 'rm -f "$LOCK"' EXIT
+# 守护自己被杀（Ctrl-C / 终端关闭 / 被 taskkill）时，必须先把训练器停掉再放锁。
+# 否则会留下一个仍在写 index.json 的孤儿，而锁已经没了 —— 下一次启动就会
+# 再起一个训练器，两个进程并发写同一份断点，把 2026-10-05 那次事故重演一遍。
+trap 'on_exit' EXIT
+on_exit(){
+  trap - EXIT
+  if [ -n "${CHILD:-}" ] && [ "$CHILD" != "none" ]; then
+    printf '[%s] 守护退出：先停掉训练器 pid %s\n' "$(date '+%Y-%m-%d %H:%M:%S')" "$CHILD" >> "$SUP_LOG"
+    command -v stop_child >/dev/null 2>&1 && { stop_child "守护退出" >> "$SUP_LOG" 2>&1 || true; }
+  fi
+  rm -f "$LOCK"
+}
 
 # 已累计墙钟秒数：优先读 index.json；读不到当 0（首次启动）。
 # 必须 Math.floor —— 训练器写的是浮点（elapsedSec: 37624.1），而下面的比较是
@@ -111,6 +125,30 @@ elapsed_of(){
 idx_mtime(){
   [ -f "$IDX" ] || { echo 0; return; }
   stat -c %Y "$IDX" 2>/dev/null || echo 0
+}
+now_epoch(){ date +%s; }
+# 本 run 名下还活着的训练器（Windows PID，逐行）。
+# 为什么不用 `kill $CHILD`：守护脚本在 Git Bash/MSYS 下跑，$! 是 MSYS 侧的 PID，
+# 对**原生 Windows 子进程**（node.exe）的信号投递并不可靠 —— 实测守护里
+# `kill -TERM` 之后 MSYS 认为子进程已退出，Windows 侧的 node 却还在跑
+# （tools/logs/smoke2 的两个孤儿）。那会导致守护重启出第二个训练器、
+# 与第一个并发写同一份 index.json，正是 2026-10-05 21:12 那次事故的成因。
+# 所以：优雅停走训练器自己的哨兵文件，硬杀走 taskkill + Windows PID。
+winpids_of(){
+  powershell -NoProfile -Command \
+    "(Get-CimInstance Win32_Process -Filter \"Name='node.exe'\" | Where-Object { \$_.CommandLine -like '*--run-name $RUN*' } | Select-Object -ExpandProperty ProcessId)" \
+    2>/dev/null | tr -d '\r' | grep -E '^[0-9]+$'
+}
+# 进度指纹：训练器每落一次检查点都会重写 index.json，elapsedSec 必然递增。
+# 卡死判定比对的就是这个值（见下方轮询处的说明）。
+prog_sig(){
+  [ -f "$IDX" ] || { echo "none"; return; }
+  node -e '
+    const fs=require("fs");
+    try{ const d=JSON.parse(fs.readFileSync(process.argv[1],"utf8"));
+         process.stdout.write("e="+(d.elapsedSec||0)+",ep="+((d.cur&&d.cur.ep)||0)); }
+    catch(e){ process.stdout.write("unreadable"); }
+  ' "$IDX"
 }
 
 # 第一次起跑用 --from（裸权重），之后一律 --resume（带 ep 偏移 + 选优状态 + 基线）
@@ -137,6 +175,8 @@ elapsed_s=$ELAPSED
 budget_s=$BUDGET_SEC
 child_pid=${CHILD:-none}
 child_alive=${CHILD_ALIVE:-no}
+prog_sig=${LAST_SIG:-}
+stall_polls=${STALL_POLLS:-0}
 idx_age_s=$IDX_AGE
 last_heartbeat=$(date '+%Y-%m-%d %H:%M:%S')
 log=$LOG
@@ -150,6 +190,44 @@ note "附加参数=${EXTRA[*]-（无）}"
 note "心跳=${POLL}s · 卡死阈值=${STALL}s · 启动豁免=${BOOT}s"
 note "日志=$LOG"
 note "可用磁盘：$(df -k . 2>/dev/null | awk 'NR==2{printf "%.1f GB", $4/1048576}')"
+
+# 优雅停一个训练器，三级降级：
+#   1) 哨兵文件 —— 训练器自己的通道，每局（~4s）检查一次，收到后在回合边界
+#      落检查点再退出。这是唯一在 Windows 上可靠、又不会丢进度的手段。
+#   2) SIGTERM —— 训练器也装了 handler（优雅停）。但 MSYS → 原生 node 的信号
+#      投递不可靠（见 winpids_of 的注释），所以只当次优选。
+#   3) taskkill /F /T —— 按 Windows PID 硬杀，保证一定真的停掉。硬杀最多丢
+#      一个 --ckpt 间隔的进度（默认 100 局 ≈ 7 分钟），检查点已原子落盘。
+stop_child(){
+  local why="${1:-请求}"
+  local waited=0 pid
+  # 1) 哨兵
+  : > "$STOP_FLAG" 2>/dev/null || true
+  while [ "$waited" -lt "${STOP_GRACE:-120}" ]; do
+    [ -z "$(winpids_of)" ] && { note "  训练器已响应哨兵优雅停止（$why）"; return 0; }
+    sleep 10; waited=$(( waited + 10 ))
+  done
+  # 2) SIGTERM（顺带把哨兵删掉，否则训练器可能在下一次重启时立刻自杀）
+  [ -f "$STOP_FLAG" ] && rm -f "$STOP_FLAG"
+  note "  哨兵 $((waited)) 秒无响应，发 SIGTERM（$why）"
+  kill -TERM "$CHILD" 2>/dev/null || true
+  waited=0
+  while [ "$waited" -lt 30 ]; do
+    [ -z "$(winpids_of)" ] && { note "  SIGTERM 生效（$why）"; return 0; }
+    sleep 5; waited=$(( waited + 5 ))
+  done
+  # 3) taskkill 硬杀
+  for pid in $(winpids_of); do
+    note "  硬杀训练器 Windows pid $pid（$why）"
+    taskkill //F //T //PID "$pid" >/dev/null 2>&1 || true
+  done
+  sleep 2
+  wait "$CHILD" 2>/dev/null || true
+  [ -z "$(winpids_of)" ] && { note "  已硬杀（$why）"; return 0; }
+  note "  ✗ 硬杀后 run=$RUN 的训练器仍在运行：$(winpids_of | tr '\n' ' ')"
+  note "    守护将拒绝重启（并发写 index.json 会损坏断点）。请手工 taskkill 后再看 tools/logs/$RUN.log"
+  return 1
+}
 
 attempt=0
 SUP_T0=$SECONDS
@@ -202,12 +280,30 @@ while :; do
   write_state
 
   code=""
+  LAST_SIG=""
+  STALL_POLLS=0
+  POLL_N=0
   while :; do
     sleep "$POLL"
+    POLL_N=$(( POLL_N + 1 ))
     # 守护停止哨兵 → 转交训练器认的哨兵（训练器每局检查一次，~4s 内响应）
-    if [ -f "$SUP_FLAG" ] && [ ! -f "$STOP_FLAG" ]; then
-      : > "$STOP_FLAG" 2>/dev/null || true
-      note "已向训练器转交停止哨兵 $STOP_FLAG"
+    # 但**光转交不够**：训练器启动段（基线标定 + 500 局预填回放）里不查哨兵，
+    # 真卡死时更是永远等不到。所以给一个宽限，之后走 stop_child 的三级降级。
+    # （不加这段的话，"叫停"这个动作在最需要它的场景——训练已经不正常——反而失效。）
+    if [ -f "$SUP_FLAG" ]; then
+      if [ -z "${SUP_STOP_SEEN:-}" ]; then SUP_STOP_SEEN=$SECONDS; fi
+      if [ ! -f "$STOP_FLAG" ]; then
+        : > "$STOP_FLAG" 2>/dev/null || true
+        note "已向训练器转交停止哨兵 $STOP_FLAG"
+      fi
+      if [ $(( SECONDS - SUP_STOP_SEEN )) -ge "${STOP_USER_GRACE:-300}" ]; then
+        note "停止请求已 $(( SECONDS - SUP_STOP_SEEN )) 秒未见训练器退出，启用三级降级停止"
+        stop_child "用户叫停超时"
+        wait "$CHILD" 2>/dev/null || true
+        code=0
+        CHILD_ALIVE=no
+        break
+      fi
     fi
 
     if ! kill -0 "$CHILD" 2>/dev/null; then
@@ -217,35 +313,40 @@ while :; do
       break
     fi
 
-    # 静默时长以 index.json 的 mtime 为准：mtime 变了就说明训练器还在推进，
-    # 此时 IDX_AGE 直接取 NOWT-mtime（不用累加轮询次数，避免时钟回拨放大误差）。
-    MT=$(idx_mtime)
-    NOWT=$SECONDS
-    if [ "$MT" -gt 0 ]; then
-      AGE=$(( NOWT - MT ))
-      if [ "$AGE" -lt "$IDX_AGE" ]; then IDX_AGE=$AGE; fi
-    else
-      IDX_AGE=$(( NOWT - CHILD_T0 ))
+    # 启动豁免：基线标定 + 预填回放期间本来就还没落检查点，不该被判成卡死
+    if [ "$POLL_N" -le "$BOOT_POLLS" ]; then
+      write_state
+      continue
     fi
 
+    # 卡死判定 —— **按内容，不按时钟**。
+    # 训练器每落一次检查点就重写 index.json，其中的 elapsedSec 必然变大。
+    # 连着 N 次轮询读到同一个值 = 它没在推进（死循环 / 死锁 / 磁盘写失败）。
+    # 早期版本用 `now - mtime` 算静默时长，实测不可靠：
+    #   ① mtime 是 epoch 秒、$SECONDS 是本进程运行秒数，混算会得到 -17 亿这种负数；
+    #   ② 这台机器的墙上时钟在一次会话里就往前跳了 41 小时，墙钟差值随时失真。
+    # 计「连续未变化的轮次数」对两者都免疫。
+    SIG=$(prog_sig)
+    if [ "$SIG" = "$LAST_SIG" ]; then
+      STALL_POLLS=$(( STALL_POLLS + 1 ))
+    else
+      STALL_POLLS=0
+      LAST_SIG=$SIG
+    fi
+    MT=$(idx_mtime); NOWT=$(now_epoch)
+    if [ "$MT" -gt 0 ]; then IDX_AGE=$(( NOWT - MT )); else IDX_AGE=-1; fi
     write_state
 
-    if [ "$IDX_AGE" -ge "$STALL" ] && [ $(( NOWT - CHILD_T0 )) -ge "$BOOT" ]; then
-      note "✗ 卡死判定：index.json 已 $((IDX_AGE/60)) 分钟未更新（阈值 $((STALL/60)) 分钟）"
-      kill -TERM "$CHILD" 2>/dev/null
-      for _ in 1 2 3 4 5 6 7 8 9 10 11 12; do
-        kill -0 "$CHILD" 2>/dev/null || break
-        sleep 10
-      done
-      if kill -0 "$CHILD" 2>/dev/null; then
-        note "  SIGTERM 后 2 分钟仍未退出，强杀"
-        kill -KILL "$CHILD" 2>/dev/null
-        sleep 3
+    if [ "$STALL_POLLS" -ge "$STALL_POLLS_MAX" ]; then
+      note "✗ 卡死判定：index.json 的 elapsedSec 连续 $((STALL_POLLS * POLL)) 秒没有变化（$STALL_POLLS 次轮询，阈值 $STALL_POLLS_MAX 次）"
+      if stop_child "卡死"; then
+        code=99
+        CHILD_ALIVE=no
+        tail -n 25 "$LOG" >> "$SUP_LOG" 2>/dev/null
+        break
       fi
-      wait "$CHILD" 2>/dev/null || true
-      code=99
-      CHILD_ALIVE=no
-      tail -n 25 "$LOG" >> "$SUP_LOG" 2>/dev/null
+      # 硬杀都没成功 → 绝不能再起一个训练器（并发写 index.json = 断点损坏）
+      note "✗ 无法停止卡死的训练器，守护放弃重启并退出，避免并发写断点"
       break
     fi
   done

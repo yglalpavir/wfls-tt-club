@@ -1,8 +1,13 @@
 /* bake-input.js：把某份输入级 DQN 权重烘焙进 js/input-weights.js（浏览器直接用）
- * 用法：node tools/bake-input.js <src.json> [evalHell] [evalDefault] [opp标签]
+ * 用法：node tools/bake-input.js <src.json> [evalHell] [evalDefault] [opp标签] [ladderLive] [simEval]
  * src.json 需为输入级 agent 存档（{o, w} 或 {o, net}）
- *   evalHell / evalDefault：终评胜率（0~1），写进 INPUT_AI_META 供页面展示
+ *   evalHell / evalDefault：**实机管线**实测胜率（0~1），写进 INPUT_AI_META 供页面展示。
+ *     必须是实机值 —— 这两个数字是玩家唯一能看到的胜率，写仿真值等于对外宣称
+ *     一个游戏里不存在的水平（线上那份曾写 evalHell:0.75 / 实机 2.4%）。
+ *     由 _finalize-12h.js 从 tools/live-match.js 的实测结果传入。
  *   opp 标签：对手来源说明，默认 'hell'；课程续训产物传 'ladder'
+ *   ladderLive：可选 JSON 字符串，实机管线逐档实测值（留痕，便于日后查 sim/live 岔开）
+ *   simEval：可选 JSON 字符串，同一份权重的仿真值，仅作对照
  * nActions / 网络形状一律从权重本身推断，避免硬编码把 238 与 952 动作网搞混。 */
 'use strict';
 const fs = require('fs');
@@ -11,6 +16,11 @@ const src = process.argv[2] || path.join(__dirname, '..', 'data', 'input-ai.json
 const evH = process.argv[3] != null ? parseFloat(process.argv[3]) : 0;
 const evD = process.argv[4] != null ? parseFloat(process.argv[4]) : 0;
 const opp = process.argv[5] || 'hell';
+/* 实机 / 仿真对照都是可选的；传了就记，解析失败不致命（不能因为留痕字段
+ * 坏掉就整个烘焙失败 —— 权重本身才是要紧的）。 */
+function parseOpt(s, fallback){ if(!s) return fallback; try { return JSON.parse(s); } catch(e){ return fallback; } }
+const ladderLive = parseOpt(process.argv[6], null);
+const simEval = parseOpt(process.argv[7], null);
 const b = JSON.parse(fs.readFileSync(src, 'utf8'));
 const net = b.w || b.net;
 /* 层数不再硬编码 4：网络可以加深（2026-10-02 起是 88→256→384→256→952，仍是 4 层，
@@ -41,9 +51,14 @@ const meta = {
   src: path.relative(path.join(__dirname, '..'), src).split(path.sep).join('/'),
   nActions,
   hSizes,
+  /* evalDefault / evalHell = 实机管线（tools/live-match.js）实测分点率 */
   evalDefault: evD, evalHell: evH,
 };
+if(ladderLive) meta.ladderLive = ladderLive;
+if(simEval) meta.simEval = simEval;
 const baked = { version: 1, trainedAt, opp, src: meta.src, nActions, hSizes, evalDefault: evD, evalHell: evH, net };
+if(ladderLive) baked.ladderLive = ladderLive;
+if(simEval) baked.simEval = simEval;
 const out = '/* 自动生成：' + path.basename(src) + '（输入级 DQN 权重，' + nActions + ' 动作 · ' + hSizes.join('/') + '） */\n'
   + 'const INPUT_AI_WEIGHTS = ' + JSON.stringify(baked) + ';\n'
   + 'const INPUT_AI_META = ' + JSON.stringify(meta) + ';\n'

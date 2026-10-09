@@ -39,7 +39,7 @@ function write(ep) {
 }
 
 const T0 = Date.now();
-console.log('[stub] mode=' + MODE + ' run=' + RUN + ' idx=' + idx + ' elapsed0=' + cur);
+console.log('[stub] mode=' + MODE + ' run=' + RUN + ' winpid=' + process.pid + ' idx=' + idx + ' elapsed0=' + cur);
 
 if (MODE === 'fast') { write(0); process.exit(0); }
 

@@ -1,31 +1,26 @@
 {
-  "note": "游戏当前加载的那份权重（js/input-weights.js，来自 data/checkpoints/input3-v3/ckpt-003600.json）在实机管线上的表现。12h 续训收尾时与候选权重同种子配对比较。",
-  "at": "2026-10-05T13:07:29.973Z",
+  "note": "游戏**当前**加载的那份权重（js/input-weights.js ← data/checkpoints/input3-12h/ckpt-008500.json，2026-10-06 已烘焙）在实机管线上的表现。input3-hell12h 收尾时与候选权重同种子配对比较。旧基线（input3-v3/ckpt-003600）归档在 baseline-live.v3-archive.json。",
+  "at": "2026-10-06T00:00:55.122Z",
   "games": 30,
-  "seed": 20261004,
+  "seed": "20261004",
+  "top": "grandslam",
   "weights": "js/input-weights.js",
-  "srcWeights": "data/checkpoints/input3-v3/ckpt-003600.json",
+  "srcWeights": "data/checkpoints/input3-12h/ckpt-008500.json",
   "live": {
-    "default": 0.35700000000000004,
-    "hell": 0.024,
-    "elite": 0.363,
-    "extreme": 0.461,
-    "extreme-max": 0.578
+    "default": 0.354,
+    "hell": 0.11699999999999999,
+    "grandslam": 0.354
   },
   "sim": {
-    "default": 0.665,
-    "hell": 0.024,
-    "elite": 0.718,
-    "extreme": 0.733,
-    "extreme-max": 0.6509999999999999
+    "default": 0.607,
+    "hell": 0.16,
+    "grandslam": 0.605
   },
   "delta": {
-    "default": -30.8,
-    "hell": 0,
-    "elite": -35.5,
-    "extreme": -27.2,
-    "extreme-max": -7.3
+    "default": -25.3,
+    "hell": -4.4,
+    "grandslam": -25.2
   },
-  "worstDelta": -35.5,
-  "weighted": 0.35655
+  "worstDelta": -25.3,
+  "weighted": 0.2829
 }

@@ -1,0 +1,31 @@
+{
+  "note": "游戏当前加载的那份权重（js/input-weights.js，来自 data/checkpoints/input3-v3/ckpt-003600.json）在实机管线上的表现。12h 续训收尾时与候选权重同种子配对比较。",
+  "at": "2026-10-05T13:07:29.973Z",
+  "games": 30,
+  "seed": 20261004,
+  "weights": "js/input-weights.js",
+  "srcWeights": "data/checkpoints/input3-v3/ckpt-003600.json",
+  "live": {
+    "default": 0.35700000000000004,
+    "hell": 0.024,
+    "elite": 0.363,
+    "extreme": 0.461,
+    "extreme-max": 0.578
+  },
+  "sim": {
+    "default": 0.665,
+    "hell": 0.024,
+    "elite": 0.718,
+    "extreme": 0.733,
+    "extreme-max": 0.6509999999999999
+  },
+  "delta": {
+    "default": -30.8,
+    "hell": 0,
+    "elite": -35.5,
+    "extreme": -27.2,
+    "extreme-max": -7.3
+  },
+  "worstDelta": -35.5,
+  "weighted": 0.35655
+}

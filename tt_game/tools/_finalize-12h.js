@@ -69,8 +69,8 @@ if(!fs.existsSync(IDX)) fail('找不到 ' + IDX + '（训练还没落过检查�
 const idx = JSON.parse(fs.readFileSync(IDX, 'utf8'));
 const best = idx.best || {};
 if(!best.file) fail('index.json 里还没有 best 字段 —— 训练至少要跑完一轮验证（--step）才有最佳权重');
-const bestPath = path.join(ROOT, 'data', 'checkpoints', RUN, best.file);
-if(!fs.existsSync(bestPath)) fail('best 指向的权重文件不存在：' + bestPath);
+if(!fs.existsSync(path.join(ROOT, 'data', 'checkpoints', RUN, best.file)))
+  fail('best 指向的权重文件不存在：' + best.file);
 
 console.log('=== 12h 训练收尾验收 · run=' + RUN + ' ===');
 console.log('最佳权重    ：' + best.file + '（ep ' + best.ep + '）');
@@ -99,7 +99,100 @@ function liveRun(weightsPath, label){
   return { live, sim, delta, worstDelta: worst };
 }
 
-const cand = liveRun(bestPath, '候选 ' + best.file);
+/* ---- 候选集：不能只测「仿真最佳」那一份 --------------------------------
+ * 为什么：仿真分点率与实机分点率在地狱这一档会大幅分叉，而且**方向不定**。
+ * 两份实测记录（tools/logs/*.finalize.json，同一档同口径）：
+ *   input3-12h ckpt-008500  仿真地狱 16.0% → 实机 11.7%（−4.4pp，可接受）
+ *   input3-gs   best@ep2000 仿真地狱 18.8% → 实机  2.3%（−16.5pp，直接崩）
+ * 所以「仿真选优分最高的那一份」并不等于「实机最强的那一份」。
+ * 原收尾只跑 best.file，等于把候选集压成 1；而 gs 那一轮的最佳恰好在 ep 2000，
+ * 后面一万两千局里的十几份检查点一份都没被看过。
+ * 改成：按仿真分（只算闸门关心的三个**实机真实可选**对手：顶档/地狱/普通）
+ * 取前 --topN 份，逐份跑实机管线，最后按**实机**加权分挑，而不是按仿真分挑。
+ * 代价：每多一份候选多花一次实机对局（3 档 ×30 局 ≈ 10 分钟）。
+ */
+const TOPN = Math.max(1, parseInt(argOf('--topN', '3'), 10));
+const simScore = m => (m[TOP] || 0) * W_TOP + (m['hell'] || 0) * W_HELL + (m['default'] || 0) * W_DEF;
+
+/* 候选按**文件内容**去重，不按文件名。
+ * 为什么必须这样做：train-input3.js 的 writeCheckpoint 落盘的是 bestNet
+ * （当轮选优分最高那份权重），不是「该 ep 当时的策略」。于是只要没有新的
+ * ★新最佳，后面落的所有检查点都是同一份权重的副本 ——
+ * 实测 input3-hell12h 的 17 份检查点 md5 完全相同（bestNet 最后一次更新在
+ * ep 3500，此后 1700 局全部复制粘贴）。按文件名去重会把这些副本当成不同
+ * 候选，于是「取前 3 份」实际是拿**同一份权重跑 3 遍实机管线**（白烧约 30
+ * 分钟），而且报告里会显示 3 行几乎一样的排名，看起来像做了多候选筛选，
+ * 实际一份都没多选。这正是 phase4 §#15 想根治的病。
+ * 按内容去重后候选集会如实塌缩成 1 份 —— 那就只跑 1 遍，并明确告诉使用者
+ * 「这一轮只有 1 份可用权重」，而不是伪装成多候选。 */
+function sha1(file){
+  return require('crypto').createHash('sha1').update(fs.readFileSync(file)).digest('hex');
+}
+function candidateFiles(){
+  const seen = new Set(), byHash = new Map(), out = [];
+  const push = c => {
+    if(!c || !c.file) return;
+    if(seen.has(c.file)) return;
+    const abs = path.join(ROOT, 'data', 'checkpoints', RUN, c.file);
+    if(!fs.existsSync(abs)) return;
+    seen.add(c.file);
+    const h = sha1(abs);
+    const prev = byHash.get(h);
+    if(prev){
+      prev.dups.push(c.file);          // 同权重，换名留着，不进候选
+      return;
+    }
+    const e = { file: c.file, ep: c.ep, simScore: simScore(c.wr || {}), dups: [] };
+    byHash.set(h, e);
+    out.push(e);
+  };
+  push(best);
+  for(const c of (idx.checks || [])) push(c);
+  out.sort((a, b) => b.simScore - a.simScore);
+  return out;
+}
+
+const ALL_DISTINCT = candidateFiles();
+const CANDS = ALL_DISTINCT.slice(0, TOPN);
+console.log('\n候选集（按仿真三档加权分排序；内容去重后共 ' + ALL_DISTINCT.length +
+            ' 份不同权重，本次实机验收前 ' + CANDS.length + ' 份）：');
+ALL_DISTINCT.slice(0, TOPN).forEach(c => console.log('  ' + c.file + '  ep ' + c.ep +
+  '  仿真分 ' + (c.simScore * 100).toFixed(1) +
+  (c.dups.length ? '  （另有 ' + c.dups.length + ' 个同权重的副本已折叠）' : '')));
+const dupTotal = ALL_DISTINCT.reduce((a, c) => a + c.dups.length, 0);
+if(dupTotal > 0){
+  console.log('\n⚠ 检查点里有 ' + dupTotal + ' 个副本与上面某份**逐字节相同**，已折叠不测。');
+  console.log('  原因见 candidateFiles 的注释：训练器落盘的是 bestNet 而不是当轮策略，');
+  console.log('  没有新「★最佳」的这些轮次写的都是同一份权重。这一轮实际只有 ' +
+              ALL_DISTINCT.length + ' 份可用权重，--topN 不可能凑出更多。');
+}
+if(CANDS.length < TOPN){
+  console.log('  （要求 ' + TOPN + ' 份，实际只有 ' + CANDS.length +
+              ' 份不同权重 —— 下面这份的实机成绩就是全部证据，没有备选可换。）');
+}
+
+const RESULTS = CANDS.map(c => ({
+  file: c.file, ep: c.ep, simScore: c.simScore,
+  abs: path.join(ROOT, 'data', 'checkpoints', RUN, c.file),
+  r: liveRun(path.join(ROOT, 'data', 'checkpoints', RUN, c.file), '候选 ' + c.file),
+}));
+RESULTS.sort((a, b) => score(b.r.live) - score(a.r.live));
+
+console.log('\n=== 实机加权分排名（' + LEVELS.join('/') + '，权重 ' +
+  TOP + '=' + W_TOP + ' hell=' + W_HELL + ' default=' + W_DEF + '）===');
+for(const x of RESULTS){
+  console.log('  ' + (score(x.r.live) * 100).toFixed(2).padStart(6) + '%  ' + x.file.padEnd(18) +
+    '  hell=' + ((x.r.live['hell'] || 0) * 100).toFixed(1).padStart(5) + '%' +
+    '  ' + TOP + '=' + ((x.r.live[TOP] || 0) * 100).toFixed(1).padStart(5) + '%' +
+    '  default=' + ((x.r.live['default'] || 0) * 100).toFixed(1).padStart(5) + '%' +
+    '  （仿真分 ' + (x.simScore * 100).toFixed(1) + '）');
+}
+const chosen = RESULTS[0];
+const cand = chosen.r;
+const bestPath = chosen.abs;
+const bestEp = chosen.ep;
+console.log('\n→ 按**实机**加权分选中：' + chosen.file + '（ep ' + bestEp + '）');
+
 const base = fs.existsSync(BASELINE_P)
   ? JSON.parse(fs.readFileSync(BASELINE_P, 'utf8'))
   : null;
@@ -154,6 +247,16 @@ console.log('  ' + (okC2 ? '✓' : '✗') + ' 闸门 C2（失配未失控）：w
 const bakeAllowed = pass || (BAKE_ANYWAY && okC2);
 const report = {
   run: RUN, at: new Date().toISOString(), games: GAMES, seed: SEED, tol: TOL, top: TOP,
+  topN: TOPN,
+  /* 候选集与排名：选中的是**实机**最强那份，不是仿真分最高那份。
+   * distinctWrites = 去重前实际存在的不同权重数；dupCheckpoints = 被折叠的同内容副本数。
+   * 两者一起才能读出「这一轮到底有几份可测的权重」——只报 topN 会让人以为
+   * 跑了 N 份筛选，其实可能全都是同一份权重（见 candidateFiles 的注释）。 */
+  distinctWrites: ALL_DISTINCT.length,
+  dupCheckpoints: dupTotal,
+  candidates: RESULTS.map(x => ({ file: x.file, ep: x.ep, simScore: x.simScore,
+                                   liveScore: score(x.r.live), live: x.r.live, worstDelta: x.r.worstDelta })),
+  chosen: { file: chosen.file, ep: bestEp, simScore: chosen.simScore, liveScore: score(cand.live) },
   bestEp: best.ep, bestSimScore: best.best,
   candidate: cand, baseline: base, gates: { improved: pass, bakeAnyway: BAKE_ANYWAY },
   passed: bakeAllowed,
@@ -184,12 +287,22 @@ const bak = path.join(BAK, 'input-weights.pre-' + RUN + '-' + stamp + '.js');
 fs.copyFileSync(WEIGHTS, bak);
 console.log('\n已备份现权重 → ' + path.relative(ROOT, bak));
 
+/* meta 里那两个字段是**页面上给玩家看的**胜率，必须写**实机管线**实测值。
+ * 原来这里写的是 best.wr（仿真值）—— 于是线上那份权重的 meta 写着
+ * evalHell: 0.75，实机对真地狱 AI 只有 2.4%：对外宣称打不过地狱的 AI，
+ * 在游戏里被地狱 AI 打成 2.4%。phase3 §4/§6 的全部结论就是「仿真数字不能
+ * 当实机数字用」，meta 是这条结论最该守住的地方（它是玩家唯一能看到的数字）。
+ * 仿真值另存到 simEval，两边都留痕，便于以后一眼看出 sim/live 又岔开了。 */
 const wr = best.wr || {};
-const evHell = wr['hell'] || cand.live['hell'] || 0;
-const evDef = wr['default'] || cand.live['default'] || 0;
-const label = 'ladder-parity-' + RUN + '-ep' + best.ep;
+const evHell = cand.live['hell'] || 0;
+const evDef = cand.live['default'] || 0;
+const label = 'ladder-parity-' + RUN + '-ep' + bestEp;
+const ladderLive = { at: new Date().toISOString(), seed: SEED, games: GAMES, byTier: cand.live };
 execFileSync(process.execPath, ['tools/bake-input.js', path.relative(ROOT, bestPath),
-                                String(evHell), String(evDef), label], { cwd: ROOT, stdio: 'inherit' });
+                                String(evHell), String(evDef), label,
+                                JSON.stringify(ladderLive),
+                                JSON.stringify({ default: wr['default'] || 0, hell: wr['hell'] || 0 })],
+               { cwd: ROOT, stdio: 'inherit' });
 
 const IA = require(path.join(ROOT, 'js', 'input-agent.js'));
 const baked = require(path.join(ROOT, 'js', 'input-weights.js'));

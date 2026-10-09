@@ -1,10 +1,10 @@
 run=input3-gs
 attempt=5
-elapsed_s=36842
+elapsed_s=43404
 budget_s=43200
-child_pid=163756
-child_alive=yes
-idx_age_s=-1791245334
-last_heartbeat=2026-10-06 19:40:16
+child_pid=none
+child_alive=no
+idx_age_s=0
+last_heartbeat=2026-10-06 20:29:22
 log=tools/logs/input3-gs.log
 sup_log=tools/logs/input3-gs.supervise.log
