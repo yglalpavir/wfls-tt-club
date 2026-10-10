@@ -264,6 +264,7 @@ const WTT_KNOWN_GENDERS = {
     "Vladimir SIDORENKO": "M",
     "WANG Chuqin": "M",
     "WANG Xiaotong": "F",
+    "WANG Yidi": "F",
     "WEN Ruibo": "M",
     "WONG Chun Ting": "M",
     "WONG Qi Shen": "M",
