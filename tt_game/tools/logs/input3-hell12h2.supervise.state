@@ -1,0 +1,12 @@
+run=input3-hell12h2
+attempt=1
+elapsed_s=43571
+budget_s=43200
+child_pid=none
+child_alive=no
+prog_sig=e=43571,ep=8600
+stall_polls=3
+idx_age_s=0
+last_heartbeat=2026-10-10 14:07:34
+log=tools/logs/input3-hell12h2.log
+sup_log=tools/logs/input3-hell12h2.supervise.log

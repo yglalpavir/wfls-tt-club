@@ -529,11 +529,19 @@ function main(){
     const tot = Object.values(agg).reduce((a, b) => a + b, 0) || 1;
     for(const k in agg) console.log('    ' + k.padEnd(9) + String(agg[k]).padStart(5) +
       '  ' + ((agg[k] / tot) * 100).toFixed(1) + '%' + '  ' + '█'.repeat(Math.round(agg[k] / tot * 40)));
-    const reach = (agg.other + agg.double);
+    /* 够不到 = noreach（未能回球/回球失败）+ double（双跳）。
+     * 原来这里写的是 agg.other + agg.double —— other 是 reasonOf 的**兜底类**
+     * （消息没匹配任何关键词），不是"够不到"。于是汇总行与上面逐项打印自相矛盾：
+     * 分项明明打 noreach 499 / 95.6%，汇总却报「够不到 = 0 / 522 = 0.0%」。
+     * 这个数字恰恰是判断"是不是深度/站位问题"的第一证据，算错就等于把结论
+     * 指向相反方向（2026-10-08 input3-hell12h 收尾就是这样被读成 0%）。 */
+    const reach = (agg.noreach + agg.double);
     console.log('    —— 够不到（未能回球 + 双跳）= ' + reach + ' / ' + tot +
                 ' = ' + ((reach / tot) * 100).toFixed(1) + '%');
     console.log('    —— 自己出界/下网           = ' + (agg.out + agg.net) + ' / ' + tot +
                 ' = ' + (((agg.out + agg.net) / tot) * 100).toFixed(1) + '%');
+    if(agg.other) console.log('    —— 未归类（other）          = ' + agg.other + ' / ' + tot +
+                ' = ' + ((agg.other / tot) * 100).toFixed(1) + '%');
   }
   console.log('');
   console.log('  耗时 ' + ((Date.now() - t0) / 1000).toFixed(1) + 's');

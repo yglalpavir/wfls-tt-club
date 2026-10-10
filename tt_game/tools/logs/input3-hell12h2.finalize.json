@@ -1,0 +1,94 @@
+{
+  "run": "input3-hell12h2",
+  "at": "2026-10-10T06:23:08.609Z",
+  "games": 30,
+  "seed": "20261004",
+  "tol": 8,
+  "top": "grandslam",
+  "topN": 3,
+  "distinctWrites": 2,
+  "dupCheckpoints": 15,
+  "candidates": [
+    {
+      "file": "ckpt-000100.json",
+      "ep": 100,
+      "simScore": 0.19386499999999998,
+      "liveScore": 0.31815,
+      "live": {
+        "default": 0.426,
+        "hell": 0.026000000000000002,
+        "grandslam": 0.45299999999999996
+      },
+      "worstDelta": -30.1
+    },
+    {
+      "file": "ckpt-007100.json",
+      "ep": 7100,
+      "simScore": 0.19386499999999998,
+      "liveScore": 0.31815,
+      "live": {
+        "default": 0.426,
+        "hell": 0.026000000000000002,
+        "grandslam": 0.45299999999999996
+      },
+      "worstDelta": -30.1
+    }
+  ],
+  "chosen": {
+    "file": "ckpt-000100.json",
+    "ep": 100,
+    "simScore": 0.19386499999999998,
+    "liveScore": 0.31815
+  },
+  "bestEp": 100,
+  "bestSimScore": 0.4144,
+  "candidate": {
+    "live": {
+      "default": 0.426,
+      "hell": 0.026000000000000002,
+      "grandslam": 0.45299999999999996
+    },
+    "sim": {
+      "default": 0.727,
+      "hell": 0.065,
+      "grandslam": 0.738
+    },
+    "delta": {
+      "default": -30.1,
+      "hell": -3.9,
+      "grandslam": -28.5
+    },
+    "worstDelta": -30.1
+  },
+  "baseline": {
+    "note": "游戏**当前**加载的那份权重（js/input-weights.js ← data/checkpoints/input3-12h/ckpt-008500.json，2026-10-06 已烘焙）在实机管线上的表现。input3-hell12h 收尾时与候选权重同种子配对比较。旧基线（input3-v3/ckpt-003600）归档在 baseline-live.v3-archive.json。",
+    "at": "2026-10-06T00:00:55.122Z",
+    "games": 30,
+    "seed": "20261004",
+    "top": "grandslam",
+    "weights": "js/input-weights.js",
+    "srcWeights": "data/checkpoints/input3-12h/ckpt-008500.json",
+    "live": {
+      "default": 0.354,
+      "hell": 0.11699999999999999,
+      "grandslam": 0.354
+    },
+    "sim": {
+      "default": 0.607,
+      "hell": 0.16,
+      "grandslam": 0.605
+    },
+    "delta": {
+      "default": -25.3,
+      "hell": -4.4,
+      "grandslam": -25.2
+    },
+    "worstDelta": -25.3,
+    "weighted": 0.2829
+  },
+  "gates": {
+    "improved": false,
+    "bakeAnyway": false
+  },
+  "passed": false
+}

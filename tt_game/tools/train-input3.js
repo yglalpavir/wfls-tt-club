@@ -836,12 +836,21 @@ for(let g = R.ep0; g < opt.games && !budgetExhausted && !stopRequested; g++){ st
         ' · vs' + opt.end + ' ' + (epM * 100).toFixed(1) + '% · vs本档 ' + (epH * 100).toFixed(1) +
         '% · vs默认 ' + (epD * 100).toFixed(1) + '%');
     }
-    /* 早停：连续 ABORT_N 轮同时满足「相对本轮最佳跌幅过大」且「绝对地板过低」，
+    /* 早停：连续 ABORT_N 轮**同时**满足「相对本轮最佳跌幅过大」**且**「绝对地板过低」，
      * 说明这组超参在毁模型（典型：BC 占比过高、学习率过大、回放太小），立刻停。
-     * 详见 ABORT_DROP 注释——关键是判据不依赖起点基线，否则从零训练时阈值会变成负数。 */
+     * 详见 ABORT_DROP 注释——关键是判据不依赖起点基线，否则从零训练时阈值会变成负数。
+     *
+     * ★ 2026-10-10 修：这里原来是 `abDrop || abFloor`，与上方注释「两条都满足才算退化」
+     *   相矛盾，效果是**分数相对峰值掉 30% 单独就能触发退化计数**，哪怕绝对水平还好。
+     *   实测代价：input3-hell12h 在 ep 2250 被误停 —— 那三轮 default 分别是
+     *   30.0 / 27.5 / 30.0%，全都远高于 12% 的地板（模型在正常打球），只是分数相对
+     *   峰值 41.6% 掉了 30%+。而选优分在 77 局评估下本身就在 ±10pp 内晃，
+     *   「相对峰值 -30%」很容易纯靠噪声达成 → 一个正在推进的进程被停掉。
+     *   改成 && 后，那三轮不再计数；真正的崩坏（default 5.0% / hell 0.0%）
+     *   两条同时成立，仍然会被抓住。 */
     const abDrop = (bestScore > 0) && (sc < bestScore * (1 - ABORT_DROP));
     const abFloor = (epD < ABORT_FLOOR) && (epM < ABORT_FLOOR);
-    if(abDrop || abFloor){
+    if(abDrop && abFloor){
       degenerate++;
       console.warn('  ⚠ 评估退化（vs默认 ' + (epD * 100).toFixed(1) + '% · vs' + opt.end + ' ' +
         (epM * 100).toFixed(1) + '% · 本轮分 ' + (sc * 100).toFixed(1) + '% vs 最佳 ' +
