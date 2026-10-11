@@ -114,7 +114,7 @@ function liveRun(weightsPath, label){
 const TOPN = Math.max(1, parseInt(argOf('--topN', '3'), 10));
 const simScore = m => (m[TOP] || 0) * W_TOP + (m['hell'] || 0) * W_HELL + (m['default'] || 0) * W_DEF;
 
-/* 候选按**文件内容**去重，不按文件名。
+/* 候选按**权重内容**去重，不按文件名、也不按整个文件的字节。
  * 为什么必须这样做：train-input3.js 的 writeCheckpoint 落盘的是 bestNet
  * （当轮选优分最高那份权重），不是「该 ep 当时的策略」。于是只要没有新的
  * ★新最佳，后面落的所有检查点都是同一份权重的副本 ——
@@ -123,10 +123,21 @@ const simScore = m => (m[TOP] || 0) * W_TOP + (m['hell'] || 0) * W_HELL + (m['de
  * 候选，于是「取前 3 份」实际是拿**同一份权重跑 3 遍实机管线**（白烧约 30
  * 分钟），而且报告里会显示 3 行几乎一样的排名，看起来像做了多候选筛选，
  * 实际一份都没多选。这正是 phase4 §#15 想根治的病。
- * 按内容去重后候选集会如实塌缩成 1 份 —— 那就只跑 1 遍，并明确告诉使用者
- * 「这一轮只有 1 份可用权重」，而不是伪装成多候选。 */
+ *
+ * ★ 2026-10-10 再修：按**整个文件**做哈希仍然不够。input3-hell12h2 实测到
+ *   ckpt-000100 与 ckpt-007100 的 md5 不同，但 480768 个权重参数**逐个完全
+ *   相同** —— 差别只在元数据 `o.lr`（0.000089275 vs 0.000035，学习率残留）。
+ *   于是文件哈希把它们当成两份不同候选，实机管线跑了两遍、给出逐位相同的
+ *   分数（2.6% / 42.6% / 45.3%），报告里出现两行一模一样的排名 ——
+ *   比 #21 原来的症状更隐蔽：连「跑 3 遍」的日志都看不出异常。
+ *   真正该比的是**权重本身**，所以这里只哈希 net/w 数组，忽略 o 等元数据。
+ *   去重后候选集会如实塌缩成 1 份 —— 那就只跑 1 遍，并明确告诉使用者
+ *   「这一轮只有 1 份可用权重」，而不是伪装成多候选。 */
 function sha1(file){
-  return require('crypto').createHash('sha1').update(fs.readFileSync(file)).digest('hex');
+  const crypto = require('crypto');
+  const b = JSON.parse(fs.readFileSync(file, 'utf8'));
+  const net = b.w || b.net;          // 只取权重，忽略 o（lr/gamma 等元数据）
+  return crypto.createHash('sha1').update(JSON.stringify(net)).digest('hex');
 }
 function candidateFiles(){
   const seen = new Set(), byHash = new Map(), out = [];
@@ -147,6 +158,12 @@ function candidateFiles(){
     out.push(e);
   };
   push(best);
+  /* 2026-10-11：train-input3.js 现在 ckpt-* 存「当轮策略」、best-* 存「选优最佳」。
+   * 两者都要进候选：前者提供多样性（仿真/实机分叉时实测能差 16pp，
+   * 只有一份候选就等于按仿真分挑），后者是选优意义上的最佳。
+   * best.file 现在指向 best-*.json，push(best) 已经覆盖；这里再把每条
+   * entry 的 bestFile 也推一遍（内容去重会自动折叠重复的那份）。 */
+  for(const c of (idx.checks || [])) if(c.bestFile) push({ file: c.bestFile, ep: c.ep, wr: c.wr });
   for(const c of (idx.checks || [])) push(c);
   out.sort((a, b) => b.simScore - a.simScore);
   return out;

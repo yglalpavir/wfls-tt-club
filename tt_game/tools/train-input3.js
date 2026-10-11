@@ -77,6 +77,14 @@ const opt = {
    * 单 lr 同时喂两者会让输出层欠驱动；且输出层 |d|<100 截断触发率 0.000%，
    * 现有唯一稳定性机制在真实分布下从未生效过。 */
   optimizer: '', gradClip: 0, layerLr: '',
+  /* 续训学习率。默认沿用 1e-4 → 3.5e-5（600 局走完衰减）。
+   * ★ 2026-10-11 加 --lr0/--lr1：实测 input3-hell12h2 从**强起点**（default 70.6%）
+   *   续训时训练胜率从 50.8% 单调掉到 20.4%、vs默认 一度崩到 5.0%——
+   *   起点已经很好，1e-4 起步的步长太大，续训实际上在拆自己。
+   *   强起点续训应显式降一个量级（--lr0 1e-5），而不是吃默认值。 */
+  lr0: 0.00010, lr1: 0.000035,
+  /* 选优分第二档的锚点档位（默认 = 课程第一段）。见 SEL_REF 注释。 */
+  selRef: '',
 };
 for(let i = 0; i < args.length; i++){
   if(args[i] === '--games') opt.games = parseInt(args[++i], 10);
@@ -109,6 +117,9 @@ for(let i = 0; i < args.length; i++){
   else if(args[i] === '--optimizer') opt.optimizer = args[++i];
   else if(args[i] === '--grad-clip') opt.gradClip = parseFloat(args[++i]);
   else if(args[i] === '--layer-lr') opt.layerLr = args[++i];
+  else if(args[i] === '--lr0') opt.lr0 = parseFloat(args[++i]);
+  else if(args[i] === '--lr1') opt.lr1 = parseFloat(args[++i]);
+  else if(args[i] === '--sel-ref') opt.selRef = args[++i];
   else if(args[i] === '--hours') opt.hours = parseFloat(args[++i]);
   else if(args[i] === '--vallevels') opt.vallevels = args[++i];
   else if(args[i] === '--run-name') opt.runName = args[++i];
@@ -147,7 +158,30 @@ function parsePhases(spec){
 }
 const PHASES = parsePhases(opt.phases);
 const evalAtPhase = g => PHASES.find(p => g < p.to * opt.games) || PHASES[PHASES.length - 1];
+/* 续训学习率：起点是好策略，起步就要比从头训练低一个量级；LR_HORIZON 局走完衰减。
+ * 实际取值来自 --lr0/--lr1（强起点续训必须显式调低，见 opt.lr0 的注释）。
+ * 声明放在这里：启动横幅（§启动输出）要打印它，不能等到训练段才定义。 */
+const LR_0 = opt.lr0, LR_1 = opt.lr1, LR_HORIZON = 600;
 const oppForPhase = (p, rng) => OPP.pick(rng, p.tag, opt.jitter);
+
+/* ---- 选优分口径（唯一定义处）----
+ * SEL_W 与 SEL_REF 被**基线标定**和**每轮选优**共用，两边必须逐项对齐，
+ * 否则 bestScore 与 sc 不是同一个量，「更强」就无从比较。
+ * 曾经的病：基线第二项取 PHASES[0].tag，每轮第二项取 phase.tag（跟着课程漂移），
+ * 课程一进入地狱段两边的口径就分叉了 → keep 永远不成立 → 12h 全白跑。
+ * 详见训练循环里 epH 那段注释。 */
+const SEL_W = [0.45, 0.30, 0.25];          // 顶档 / 第二档 / 默认护栏
+/* 第二档锚点。默认锚 PHASES[0].tag（= 课程第一段的对手），但**强烈建议用
+ * --sel-ref 显式指定**：本轮的选优目标就是哪一档，写死在课程顺序里等于
+ * 让人去数「第一段是谁」——上一轮的口径错配就是这么来的（课程一改，
+ * 基线与每轮打的分就不是同一个量，keep 永不成立，12h 零产出）。
+ * 显式指定后，基线 baseBest 与每轮 sc 都用它，两边永远同口径。
+ * 例：--end hell --sel-ref hell → sc = 0.45*hell + 0.30*hell + 0.25*default
+ *     = 0.75*地狱 + 0.25*默认护栏（"专攻地狱但别把普通档练崩"）。 */
+const SEL_REF = opt.selRef || PHASES[0].tag;
+const selScore = (wrMap, fb) => SEL_W[0] * wrMap[opt.end]
+                               + SEL_W[1] * ((typeof wrMap[SEL_REF] === 'number') ? wrMap[SEL_REF] : fb)
+                               + SEL_W[2] * wrMap['default'];
 
 /* ---- 参数一致性：这些组合会静默失效，先说清楚 ----
  * ε 脉冲检查挂在"每轮"块内，只有 (g+1) 同时是 step 与 epsReset 的倍数时才触发；
@@ -251,6 +285,9 @@ const VAL_TAGS = (() => {
   const forced = [];
   if(keep.indexOf('default') < 0){ keep.unshift('default'); forced.push('default（采纳护栏：vs默认 不劣于 -5pp）'); }
   if(keep.indexOf(opt.end) < 0){ keep.push(opt.end); forced.push(opt.end + '（顶档：采纳线 vs' + opt.end + ' 至少 +1.5pp）'); }
+  /* SEL_REF 承担选优分 0.30 权重，不测它就等于那一项恒为 0 —— 分数被系统性压低，
+   * keep 又会永不成立（正是上一轮 12h 零产出的形态）。这里强制补进来。 */
+  if(keep.indexOf(SEL_REF) < 0){ keep.push(SEL_REF); forced.push(SEL_REF + '（选优分第二档锚点：权重 0.30）'); }
   if(forced.length) console.warn('    ⚠ 验证档位补入 ' + forced.join('、'));
   return keep.map(t => OPP.LEVELS.find(l => l.tag === t));
 })();
@@ -335,12 +372,18 @@ const RESUME = (function(){
   catch(e){ console.error('❌ 无法读取续训起点 ' + opt.resume + '：' + e.message); process.exit(2); }
   if(d && Array.isArray(d.checks)){
     if(!d.checks.length){ console.error('❌ ' + opt.resume + ' 里没有检查点'); process.exit(2); }
+    /* 2026-10-11：ckpt-*.json 现在存的是「当轮策略」，而**续训必须从 bestNet 起步**
+     * ——中途某轮策略可能正处于劣化中（round 3 的曲线里 default 一度掉到 5%），
+     * 从那里接着训等于把崩坏状态继承下来。
+     * 有 --resume-best 时取全表选优最高那条；否则仍取最后一条，但用它的 bestFile
+     * （= 当次落盘时的 bestNet）。旧索引没有 bestFile 字段，回落到 file。 */
     const entry = opt.resumeBest
       ? d.checks.reduce((a, b) => (b.best > a.best ? b : a), d.checks[0])
       : d.checks[d.checks.length - 1];
-    const f = entry.file && !path.isAbsolute(entry.file) ? path.join(path.dirname(p), entry.file) : entry.file;
+    const want = entry.bestFile || entry.file;
+    const f = want && !path.isAbsolute(want) ? path.join(path.dirname(p), want) : want;
     if(!f || !fs.existsSync(f)){
-      console.error('❌ 检查点权重文件不存在：' + (entry.file || '(空)'));
+      console.error('❌ 检查点权重文件不存在：' + (want || '(空)'));
       console.error('    该检查点可能已被 --keep 环形裁剪掉，换一个 index 或从裸权重文件续训');
       process.exit(2);
     }
@@ -354,10 +397,15 @@ const RESUME = (function(){
   console.error('❌ 续训起点既不是检查点索引（含 checks[]）也不是权重文件（{w,o}）：' + opt.resume);
   process.exit(2);
 })();
-/* index 里取某档胜率（缺则 -1，由下面的基线兜底） */
+/* index 里取某档胜率（缺则 -1，由下面的基线兜底）。
+ * ★ 续训载入的是 bestNet（见 RESUME 的 entry.bestFile），所以护栏基线必须读
+ *   bestWr —— entry.wr 现在是「当轮策略」的胜率（收尾挑候选用），不是这份权重的。
+ *   旧索引没有 bestWr 字段，回落到 wr（旧语义下两者本来就同一份）。 */
 const resumeWr = (tag) => {
-  if(!RESUME || !RESUME.entry || !RESUME.entry.wr) return -1;
-  const v = RESUME.entry.wr[tag];
+  if(!RESUME || !RESUME.entry) return -1;
+  const src = RESUME.entry.bestWr || RESUME.entry.wr;
+  if(!src) return -1;
+  const v = src[tag];
   return typeof v === 'number' ? v : -1;
 };
 
@@ -412,7 +460,7 @@ const R = {
   win: RESUME ? (RESUME.entry.trainWins | 0) : 0,
   total: RESUME ? (RESUME.entry.trainTotal | 0) : 0,
   best: RESUME ? (RESUME.entry.best != null ? RESUME.entry.best : null) : null,
-  bestWr: RESUME ? Object.assign({}, RESUME.entry.wr || {}) : {},
+  bestWr: RESUME ? Object.assign({}, RESUME.entry.bestWr || RESUME.entry.wr || {}) : {},
   bestDef: RESUME ? resumeWr('default') : -1,
   bestMax: RESUME ? resumeWr(opt.end) : -1,
   bestPhase: RESUME ? resumeWr(PHASES[0].tag) : -1,
@@ -483,7 +531,7 @@ function cfgSnapshot(){
   return { games:opt.games, hours:opt.hours, step:opt.step, eval:opt.eval, ckpt:opt.ckpt, keep:opt.keep,
            vallevels:VAL_TAGS.map(l => l.tag).join(','), phases:opt.phases, jitter:opt.jitter, seed:opt.seed,
            start:opt.start, end:opt.end, optimizer:opt.optimizer || 'sgd', gradClip:opt.gradClip,
-           layerLr:opt.layerLr || null, trainMode:trainMode, bcmix:opt.bcmix, bcpass:opt.bcpass,
+           layerLr:opt.layerLr || null, lr0:opt.lr0, lr1:opt.lr1, selRef:SEL_REF, trainMode:trainMode, bcmix:opt.bcmix, bcpass:opt.bcpass,
            preload:opt.preload, learnp:opt.learnp, epsReset:opt.epsReset, pret:opt.pret, bcpairs:opt.bcGames,
            noSave:opt.noSave, noCkpt:opt.noCkpt };
 }
@@ -512,7 +560,7 @@ console.log('  games=' + opt.games + ' step=' + opt.step + ' ckpt=' + opt.ckpt +
     ? '  预算=' + (opt.hoursAdd > 0 ? '+' + opt.hoursAdd + 'h' : opt.hours + 'h') + (R.elapsed > 0
         ? '（已耗 ' + (R.elapsed / 3600).toFixed(2) + 'h / 剩 ' + (remain() / 3600).toFixed(2) + 'h）' : '')
     : ''));
-console.log('  优化器：' + trainMode);
+console.log('  优化器：' + trainMode + ' · lr ' + opt.lr0 + ' → ' + opt.lr1 + '（' + LR_HORIZON + ' 局）');
 console.log('  检查点：' + (opt.noCkpt ? '关闭（--no-ckpt）'
   : rel(CKPT_DIR) + ' · 每 ' + opt.ckpt + ' 局 · 保留 ' + opt.keep + ' 份 + 最佳'));
 if(R.resumed){
@@ -580,7 +628,9 @@ const baseDef = wrOfTag(baseLadder, 'default');
 const baseMax = wrOfTag(baseLadder, opt.end);
 const basePhase = wrOfTag(baseLadder, PHASES[0].tag, opt.end);
 CIdx.base = {}; for(const r of baseLadder) CIdx.base[r.tag] = r.wr;
-CIdx.baseBest = 0.45 * baseMax + 0.30 * basePhase + 0.25 * baseDef;
+/* ★ 与每轮选优共用 selScore：基线与 sc 必须是同一个量，否则 bestScore 这个
+ * 门槛会随课程阶段漂移（见 SEL_W 处注释：input3-hell12h2 因此 12h 零产出）。 */
+CIdx.baseBest = selScore(CIdx.base, baseMax);
 /* 用起点基线初始化"最佳"，让选优护栏从第 1 次评估就真正生效——
  * 否则 bestDef=-1 会让第一块评估无条件被采纳为"最佳"，退化也会被当成成果。
  * 断点里已有 best 时沿用断点状态；缺哪一档就用起点基线兜底，别让护栏变空门。 */
@@ -639,8 +689,6 @@ agent.setLearnPerPoint(opt.learnp);
  *    基线 ε 从 0.30 线性降到 0.10；每 --eps-reset 局再叠加一次 0.45 的探索脉冲
  *    （半衰期 ~140 局），配合 bestNet 回退，避免回放被贪心数据统治后晚期退化。 */
 const EPS_BASE0 = 0.18, EPS_BASE1 = 0.07, EPS_PULSE = 0.30;
-/* 续训学习率：起点是好策略，起步就要比从头训练低一个量级；600 局走完衰减 */
-const LR_0 = 0.00010, LR_1 = 0.000035, LR_HORIZON = 600;
 /* ---- 早停（兜底：只在模型"彻底崩了"时停）----
  *
  * 判据用两条，**都与起点基线无关**——这是 2026-10-03 修掉的一个真 bug：
@@ -661,6 +709,16 @@ const ABORT_DROP = 0.30, ABORT_FLOOR = 0.12, ABORT_N = 4;
 const clEps = (v) => v < 0.02 ? 0.02 : (v > 1 ? 1 : v);
 let epsBoost = 0;
 let degenerate = 0;
+/* 选优饥饿计数：连续多少轮没出现新最佳。到 STARVE_N 就在日志里告警
+ * （口径错配的现场特征，见训练循环里那段注释）。不自动停止——停下来说明
+ * "这组超参打不过"是误判，得让人来看。 */
+let starve = 0;
+const STARVE_N = 12;
+/* 最近一次验证的逐档胜率（模块级，供 writeCheckpoint 记录）。
+ * 检查点条目需要**它自己**的胜率：收尾按仿真分挑候选时，用的是 entry.wr。
+ * 旧实现 entry.wr = bestWr，那是「选优最佳那一份」的胜率，ckpt-* 存的是当轮
+ * 策略却报着别人的成绩 —— 候选排序因此失真。 */
+let lastWrMap = {};
 let curPhaseTag = null;
 let lastEp = 0, lastCkpt = 0;
 const fmtH = (s) => {
@@ -677,25 +735,40 @@ const fmtH = (s) => {
  * 文件，不裁盘会写爆磁盘。 */
 function writeCheckpoint(ep){
   if(opt.noCkpt) return;
-  const cur = agent.getNet();
-  agent.setNet(bestNet);
+  /* ★ 2026-10-11：这里原来只存 bestNet，于是「没有新最佳」的每一轮写的都是
+   * 同一份权重的副本 —— 17 份检查点逐位相同，收尾的候选集塌缩成 1 份，
+   * 实机管线白跑两遍还给出逐位相同的分数（phase4 #21/#22）。
+   * 改成并存两份：
+   *   ckpt-*.json  = **当轮实际策略**（agent 当前权重）→ 收尾有多份不同权重可选，
+   *                  仿真/实机分叉时（实测能差 16pp）才挑得出真正最强的那份；
+   *   best-*.json  = bestNet（选优最佳）→ 续训起点与兜底回退仍然用它。
+   * 两份都进同一个环形目录与 index（用 role 区分），--keep 仍按总数裁剪。 */
   const file = 'ckpt-' + String(ep).padStart(6, '0') + '.json';
   try{
     fs.mkdirSync(CKPT_DIR, { recursive: true });
     fs.writeFileSync(path.join(CKPT_DIR, file), agent.serialize(), 'utf8');
   }catch(e){ console.warn('  ⚠ 检查点写入失败：' + e.message); }
-  agent.setNet(cur);
+  /* bestNet 单独存一份：它的 ep 是「当选优最佳时的回合」，与当轮策略不是一回事，
+   * 混在同一个 checks[] 里会让 --resume 默认取到 bestNet 那条（续训起点必须是它）。 */
+  const bestFile = 'best-' + String(bestEp).padStart(6, '0') + '.json';
+  try{
+    const cur = agent.getNet();
+    agent.setNet(bestNet);
+    fs.writeFileSync(path.join(CKPT_DIR, bestFile), agent.serialize(), 'utf8');
+    agent.setNet(cur);
+  }catch(e){ console.warn('  ⚠ 最佳权重写入失败：' + e.message); }
   let size = 0;
   try{ size = fs.statSync(path.join(CKPT_DIR, file)).size; }catch(e){}
   const entry = { ep, sec: +elapsed().toFixed(1), best: +bestScore.toFixed(4), bestEp: bestEp,
-                  wr: Object.assign({}, bestWr), trainWins: win, trainTotal: total,
-                  eps: +agent.getEps().toFixed(3), file, size };
+                  wr: Object.assign({}, lastWrMap), bestWr: Object.assign({}, bestWr),
+                  trainWins: win, trainTotal: total,
+                  eps: +agent.getEps().toFixed(3), file, bestFile, role: 'cur', size };
   /* 同一 ep 覆盖写（断电后续训常落在同一边界）：替换旧条目而不是追加，
    * 否则 index.json 里会攒出重复行、面板表格也会有重复 ep。 */
   const slot = CIdx.checks.findIndex(c => c.ep === ep);
   if(slot >= 0) CIdx.checks[slot] = entry; else CIdx.checks.push(entry);
   if(!CIdx.best || entry.best > CIdx.best.best)
-    CIdx.best = { ep: entry.ep, best: entry.best, wr: entry.wr, sec: entry.sec, file: entry.file };
+    CIdx.best = { ep: entry.ep, best: entry.best, wr: entry.bestWr, sec: entry.sec, file: bestFile };
   CIdx.updated = new Date().toISOString();
   CIdx.elapsedSec = entry.sec;
   CIdx.cur = { ep, sec: entry.sec, best: entry.best, eps: entry.eps,
@@ -709,9 +782,17 @@ function trimRing(){
   const bestEp = CIdx.best ? CIdx.best.ep : null;
   const keep = new Set(CIdx.checks.slice(-opt.keep).map(c => c.ep));
   if(bestEp != null) keep.add(bestEp);
+  /* 仍然在引用 best-*.json 的条目，其 bestFile 不能删。
+   * 每条 entry 的 bestFile 都可能指向同一份「当前最佳」权重；只要还有一条
+   * 被保留的条目引用它，就留着。best-*.json 只有一份（bestEp 变了名字就变），
+   * 实际占空间可忽略，但删掉会让续训/收尾找不到兜底权重。 */
+  const liveBest = new Set(CIdx.checks.filter(c => keep.has(c.ep)).map(c => c.bestFile).filter(Boolean));
   for(const c of CIdx.checks.slice()){
     if(keep.has(c.ep)) continue;
     try{ fs.unlinkSync(path.join(CKPT_DIR, c.file)); }catch(e){}
+    if(c.bestFile && !liveBest.has(c.bestFile)){
+      try{ fs.unlinkSync(path.join(CKPT_DIR, c.bestFile)); }catch(e){}
+    }
     CIdx.checks = CIdx.checks.filter(x => x !== c);
   }
 }
@@ -823,10 +904,34 @@ for(let g = R.ep0; g < opt.games && !budgetExhausted && !stopRequested; g++){ st
     const res = ladderEval2(agent, opt.seed * 91 + g, opt.eval, VAL_TAGS);
     const wr = wrFlat(res);
     const wrMap = {}; for(const r of res) wrMap[r.tag] = r.wr;
+    lastWrMap = wrMap;
     const epM = wrMap[opt.end], epD = wrMap['default'];   // 顶档与 default 已强制包含，必然存在
-    const epH = (typeof wrMap[phase.tag] === 'number') ? wrMap[phase.tag] : epM;
-    /* 选优分：顶档为主、本阶段次之、默认策略做护栏 */
-    const sc = 0.45 * epM + 0.30 * epH + 0.25 * epD;
+    /* 选优分：顶档为主、本阶段次之、默认策略做护栏。
+     *
+     * ★ 2026-10-11 修（本轮开跑前发现的**致命**口径错配，废掉了整整两轮 12h）：
+     *   epH 原本取 `wrMap[phase.tag]`（**当前阶段**的对手），而 bestScore 的初值
+     *   来自 baseBest = 0.45*baseMax + 0.30*basePhase + 0.25*baseDef，其中
+     *   basePhase 取的是 `PHASES[0].tag`（**第一个阶段**的对手），见基线标定处。
+     *   两者不是同一个量：课程一推进，sc 的第二项就从「default」换成了「hell」，
+     *   而 bestScore 仍停在「0.45*地狱 + 0.55*默认」那个旧口径上。
+     *
+     *   实测 input3-hell12h2（--end hell，阶段 default→extreme-max→grandslam→hell）：
+     *     基线 bestScore = 0.45*0.0578 + 0.30*0.7061 + 0.25*0.7061 = 0.4144（日志里的 41.4）
+     *     进入 hell 阶段后 sc = 0.45*hell + 0.30*hell + 0.25*default
+     *     要超过 0.4144，在 default=70.6% 时需要 **hell > 31.7%**
+     *   而整轮 8600 局里地狱最高只到 22.5%（ep6000），那一轮 default 已经掉到 38.8%，
+     *   折算 sc = 0.266 —— 差着 15pp，**永远不可能超过基线**。
+     *   于是 keep 一次都没成立 → bestNet 从未更新 → 17 份检查点全是同一份权重的副本
+     *   （逐位比对：与起点 input3-hell12h/ckpt-007000 完全相同，sha1 一致）。
+     *   12h 的训练没有浪费在「打不过」，而是浪费在「打得过但没被记下来」。
+     *
+     *   修法：选优分的三个档位**与基线标定逐项对齐**——第二项固定取 PHASES[0].tag，
+     *   不再随当前阶段漂移。这样 sc 与 bestScore 恒在同一口径上，「更强」这两个字
+     *   才重新有意义。（想让第二项跟课程走，就得让基线也用同一个 tag 重标，
+     *   但那样每次换课程都要重标基线，反而更容易出错；固定第一阶段最省心。）
+     */
+    const epH = (typeof wrMap[SEL_REF] === 'number') ? wrMap[SEL_REF] : epM;
+    const sc = SEL_W[0] * epM + SEL_W[1] * epH + SEL_W[2] * epD;
     const keep = (sc > bestScore) && (epD >= bestDef - 0.05);
     if(keep){
       bestScore = sc; bestDef = epD; bestMax = epM; bestPhase = epH; bestEp = g + 1;
@@ -835,6 +940,22 @@ for(let g = R.ep0; g < opt.games && !budgetExhausted && !stopRequested; g++){ st
       console.log('  ★ 新最佳（ep ' + (g + 1) + '）：best=' + (bestScore * 100).toFixed(1) +
         ' · vs' + opt.end + ' ' + (epM * 100).toFixed(1) + '% · vs本档 ' + (epH * 100).toFixed(1) +
         '% · vs默认 ' + (epD * 100).toFixed(1) + '%');
+    }
+    /* ★ 2026-10-11 加：选优饥饿告警。
+     * 口径错配的典型现场是「每轮分都够不着门槛」——训练在跑、指标在动，但
+     * bestScore 永远不动，于是 bestNet 永远不更新、17 份检查点全是副本，
+     * 12h 一分不落地白烧。input3-hell12h2 就是这么废掉的，而当时日志里
+     * 「best=41.4@0」从头到尾一个 ★ 都没有，看着像「在训练但打不过」。
+     * 现在：连续 N 轮没有新最佳就打出来，并直接给出「这轮离门槛还差多少」，
+     * 让人在头几轮就知道该停，而不是 12h 后才发现。差值用起点基线算
+     * （scMax = 三项都打满时的上限），低于门槛越多越可疑。 */
+    starve = keep ? 0 : starve + 1;
+    if(starve === STARVE_N){
+      console.warn('  ⚠ 已连续 ' + starve + ' 轮没有新最佳（best=' + (bestScore * 100).toFixed(1) +
+        '@' + bestEp + '）· 本轮分 ' + (sc * 100).toFixed(1) + '，差 ' +
+        ((bestScore - sc) * 100).toFixed(1) + 'pp。');
+      console.warn('    若这项分数始终够不着门槛，多半是选优分口径与基线不一致' +
+        '（第二档应固定锚 SEL_REF=' + SEL_REF + '，权重 ' + SEL_W.join('/') + '）。');
     }
     /* 早停：连续 ABORT_N 轮**同时**满足「相对本轮最佳跌幅过大」**且**「绝对地板过低」，
      * 说明这组超参在毁模型（典型：BC 占比过高、学习率过大、回放太小），立刻停。
@@ -962,9 +1083,10 @@ const nMax = wrOfTag(finNew, opt.end);
 const nStart = wrOfTag(finNew, PHASES[0].tag, opt.end);
 /* 采纳条件：对顶档明显更强，且不显著退步 vs 默认策略（回归护栏） */
 const adopt = (!opt.noSave) && (nMax >= baseMax + 0.015) && (nDef >= baseDef - 0.03);
-/* 用最终标定（局数更多、噪声更小）重算选优分，收尾检查点记这份更准的胜率 */
-bestScore = 0.45 * nMax + 0.30 * nStart + 0.25 * nDef;
 const finMap = {}; for(const r of finNew) finMap[r.tag] = r.wr;
+/* 用最终标定（局数更多、噪声更小）重算选优分，收尾检查点记这份更准的胜率。
+ * 与基线、每轮选优共用 selScore，三处口径必须一致。 */
+bestScore = selScore(finMap, nMax);
 Object.assign(bestWr, finMap);
 const finalEp = Math.max(lastEp, lastCkpt) || R.ep0;
 const lastCkptEp = CIdx.checks.length ? CIdx.checks[CIdx.checks.length - 1].ep : 0;
