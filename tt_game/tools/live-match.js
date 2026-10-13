@@ -432,6 +432,56 @@ const TOL = parseFloat(argOf('--tol', 'NaN'));
 const SIM_ONLY = HAS('--sim-only');
 const LIVE_ONLY = HAS('--live-only');
 const MAXSEC = parseFloat(argOf('--maxsec', '40'));
+/* --brain：把实机侧的 DQN 决策整体换成脚本脑（追球假设的判决实验用）。
+ * 2026-10-14 R5 起因：BC 预训练出来的那份 net 实机只有 1.5%（比基线 11.7% 还差），
+ * 但那份 net 的 argmax 命中率只有 3.3%——它压根没学到追球，所以这个结果
+ * 既不能证明也不能推翻「够不到球」这个假设。要判决假设本身，就必须绕开网络，
+ * 直接把「追拦截预测点」这条策略喂进**实机管线**。
+ *   chase  = 追 (x + vx·τ)，τ = 到拍面平面的碰撞时间（R5 主张的正确目标）
+ *   naive  = 追球**当前** x（旧 BC 目标，用来量「前瞻值多少钱」）
+ *   centre = tx 恒为 0（拍面钉在中间，对照组）
+ *   prior  = **保留网络，只把横向那一维换成解析追球**（R5 的最终设计判决）：
+ *           仍走原 net 的 argmax，但把它解出来的 mxI 覆盖成 chase 的桶，
+ *           my/ctrl/上旋三維原样保留 —— 量的是「网络管深度与手法 + 解析管横向」
+ *           这个组合到底值多少（网络其余部分不丢，也不必重新学横向）。
+ * 权重照常载入（形状自检要过），但决策函数被覆盖，实机跑的是脚本脑。 */
+const BRAIN = argOf('--brain', '');
+function brainSrc(kind){
+  return '(function(){\n' +
+  '  var IN_MX=[],IN_MY=[];\n' +
+  '  for(var i=0;i<34;i++) IN_MX.push(-0.9 + i*(1.8/33));\n' +
+  '  for(var j=0;j<14;j++) IN_MY.push(j/13);\n' +
+  '  function near(arr,v){ var b=0; for(var i=1;i<arr.length;i++) if(Math.abs(arr[i]-v)<Math.abs(arr[b]-v)) b=i; return b; }\n' +
+  '  var KIND = ' + JSON.stringify(kind) + ';\n' +
+  '  var ag = TT_PLAYER.agent;\n' +
+  '  var netBest = ag.bestAction.bind(ag);\n' +
+  '  function chaseBin(obs){\n' +
+  '    var vz=obs.vz||0, vx=obs.vx||0, z=obs.z||0, x=obs.x||0;\n' +
+  '    var pz = (obs.pz!=null) ? obs.pz : 1.32;\n' +
+  '    var closing = (pz - z)*vz > 0 && Math.abs(vz) > 0.05;\n' +
+  '    var tau = closing ? Math.min(1.5, Math.abs((pz - z)/vz)) : 0;\n' +
+  '    var tx = x + vx*tau;\n' +
+  '    if(tx > 0.9) tx = 0.9; if(tx < -0.9) tx = -0.9;\n' +
+  '    return near(IN_MX, tx);\n' +
+  '  }\n' +
+  '  ag.bestAction = function(obs){\n' +
+  '    if(KIND==="prior"){\n' +
+  '      var a = netBest(obs);\n' +
+  '      var topI = a & 1, ctrl = (a>>1) & 1, myI = (a>>2) % 14;\n' +
+  '      return ((chaseBin(obs)*14 + myI)*2 + ctrl)*2 + topI;\n' +
+  '    }\n' +
+  '    var vz=obs.vz||0, vx=obs.vx||0, z=obs.z||0, x=obs.x||0;\n' +
+  '    var pz = (obs.pz!=null) ? obs.pz : 1.32;\n' +
+  '    var closing = (pz - z)*vz > 0 && Math.abs(vz) > 0.05;\n' +
+  '    var tau = closing ? Math.min(1.5, Math.abs((pz - z)/vz)) : 0;\n' +
+  '    var tx = (KIND==="chase") ? (x + vx*tau) : (KIND==="naive" ? x : 0);\n' +
+  '    if(tx > 0.9) tx = 0.9; if(tx < -0.9) tx = -0.9;\n' +
+  '    var my = (obs.my!=null) ? obs.my : 0.5;\n' +
+  '    var i = near(IN_MX, tx), j = near(IN_MY, my);\n' +
+  '    return ((i*14 + j)*2)*2 + 0;   /* ctrl=false, 不带上旋（发球不经过 bestAction） */\n' +
+  '  };\n' +
+  '})();';
+}
 
 if(!fs.existsSync(W)){ console.error('权重文件不存在：' + W); process.exit(2); }
 
@@ -459,7 +509,16 @@ function main(){
     if(HAS('--serve-log')){
       vm.runInContext('__serveFroms = []; const __so = SIM.serveShot; SIM.serveShot = function(f, o){ __serveFroms.push({ x:+f.x.toFixed(3), y:+f.y.toFixed(3), z:+f.z.toFixed(3), dir:o && o.dir }); return __so(f, o); };', rig.ctx);
     }
-    console.log('完成，动作数 ' + rig.nActions);
+    console.log('完成，动作数 ' + rig.nActions + (BRAIN ? ('，决策已换成脚本脑 ' + BRAIN + '（权重仅供形状自检）') : ''));
+    if(BRAIN) vm.runInContext(brainSrc(BRAIN), rig.ctx);   // 形状自检通过后再接管决策
+    /* --no-prior：关掉 input-agent 的横向拦截先验（回退到纯 argmax）。
+     * 用途：A/B —— 烘焙时必须能区分「提升来自新权重」还是「来自先验」。
+     * 先验现已在 input-agent.js 内置且默认开，所以「线上老权重 + 新代码」
+     * 本身就已经比 R4 的基线强很多；不带这个开关就没法做同口径比较。 */
+    if(HAS('--no-prior') && rig.ctx.TT_PLAYER && rig.ctx.TT_PLAYER.agent &&
+       typeof rig.ctx.TT_PLAYER.agent.setLateralPrior === 'function'){
+      rig.ctx.TT_PLAYER.agent.setLateralPrior(false);
+    }
   }
 
   const rows = [];

@@ -61,8 +61,18 @@ const INPUT_AGENT = (() => {
     const bounced = g.bounced ? 1 : 0;
     const signVz = vz >= 0 ? 1 : -1;
     const sp = Math.sqrt(vx * vx + vy * vy + vz * vz);
-    /* 来球到拍所在 z 平面的碰撞时间 τ（秒，截断 0..1.5；仅来球时非零） */
-    const tauS = (vz < -0.05 && pz - z > 0) ? Math.min(1.5, Math.abs((pz - z) / vz)) : 0;
+    /* 来球到拍所在 z 平面的碰撞时间 τ（秒，截断 0..1.5；仅来球时非零）。
+     * ★ 2026-10-14（R5）：原来写的是 `vz < -0.05 && pz - z > 0`——球**正在离开**
+     *   拍面时才算 τ。但玩家侧回球全程 vz > 0（input-sim.playerReceive 的
+     *   playerContact 门控 `v.z > -0.3`，实机 tt-player 同款），也就是说
+     *   「需要拦球」的每一帧 τ 恒为 0，#21~#24 四个预测拦截特征退化成当前值，
+     *   网络拿不到任何前瞻量。实测（球 x=0.8, pz=1.32, z=0.5）：
+     *     vz=+3.2 → tau01=0.000   vz=-1.2 → tau01=0.456
+     *   正确判据是「球正朝拍面移动」：(pz-z)*vz > 0，与哪一侧无关。
+     *   ⚠ 这改变了 4 维输入的语义，旧权重在这 4 维上是脏的——续训必须
+     *   走 BC 预训练起点，不能直接 warm-start 线上权重。 */
+    const closing = (pz - z) * vz > 0 && Math.abs(vz) > 0.05;
+    const tauS = closing ? Math.min(1.5, Math.abs((pz - z) / vz)) : 0;
     const tau01 = tauS / 1.5;
     return [
       x / 1.2, (y - 0.46) / 0.8, z / 2.2,
@@ -119,7 +129,7 @@ const INPUT_AGENT = (() => {
       (bounced && tauS < 0.3) ? 1 : 0,
       x > 0 ? 1 : 0,
       1 - Math.abs(x) / 1.2,
-      (pz - z > 0 && vz < 0) ? 1 : 0,
+      closing ? 1 : 0,
       Math.abs(px) > 1 ? 1 : 0,
       z < -1.6 ? 1 : 0,
       ((x - px) * (x - px) + (z - pz) * (z - pz)) / 6,
@@ -153,6 +163,41 @@ const INPUT_AGENT = (() => {
       if(dd < bd){ bd = dd; best = a; }
     }
     return best;
+  }
+
+  /* ---- 横向拦截先验（R5，2026-10-14） --------------------------------
+   * 问题（60h 训练 + 5 轮续训仍未解决）：网络学会的横向决策塌在中心。
+   *   `_diag_argmax.js` 实测线上权重：球在 x∈[-1.2,1.2] 全程扫一遍，
+   *   argmax 解出的 tx 只有 **4 个**不同取值；|x|≤0.6 时 tx 恒在 ±0.14m 内，
+   *   而接触窗口只有 PAD_HW 0.10 + BALL_R 0.02 + fitH 0.17~0.22 ≈ **±0.29~0.34m**。
+   *   → 球被地狱 AI 放到 |x|≈0.8~1.2 时拍面**物理上够不到**，
+   *     实机 95~99% 的败局判 noreach。这不是速度问题：padControl 的
+   *     `pad.x += (tx-pad.x)*dt*MOUSE_PACE` 在 60Hz 下每帧收 30% 残差，
+   *     τ=1/18s，扫过整个台面只要 0.15s —— 是**目标错了**。
+   * 为什么不给网络学：`--brain chase` 脚本脑实机 vs 地狱 **40.1%**（基线 11.7%），
+   *   一行解析式就值 +28pp；但行为克隆教不会它 —— BC 池实测 argmax 命中率
+   *   只有 3~6%（1904 维输出上 MSE 表达不了「排名」），warm-start 12 epoch 后
+   *   实机直接掉到 **0.0%**。所以横向改由解析式负责，网络保留其余三维。
+   * 做法：只在**来球方向**（closing）时把 argmax 解出的 mxI 换成拦截桶；
+   *   my / ctrl / 上旋 三维原样保留 —— 深度与手法仍然由 TD 学出来的网络决定。
+   *   非来球时（球正飞离、或发球待抛 vz≈0）不干预，拍面按网络原意归位。
+   * 实机收益（tools/live-match.js --brain prior，30 局 vs 地狱）：
+   *   **8.7% → 32.1%**（+23.4pp），拍面触球 246/269。
+   * 开关：o.lateralPrior !== false，setLateralPrior(false) 可整条关掉回退到纯 argmax。 */
+  function lateralBinOf(obs){
+    const z = obs.z || 0, vx = obs.vx || 0, vz = obs.vz || 0;
+    const pz = (obs.pz != null) ? obs.pz : 0;
+    /* 与 encodeObs 里 tauS 同一个 closing 判据：球正在朝拍面平面来 */
+    if(!((pz - z) * vz > 0 && Math.abs(vz) > 0.05)) return -1;
+    const tau = Math.min(1.5, Math.abs((pz - z) / vz));
+    let tx = (obs.x || 0) + vx * tau;
+    if(tx > 0.9) tx = 0.9; else if(tx < -0.9) tx = -0.9;
+    let b = 0, bd = Infinity;
+    for(let i = 0; i < IN_MX.length; i++){
+      const d = Math.abs(IN_MX[i] - tx);
+      if(d < bd){ bd = d; b = i; }
+    }
+    return b;
   }
 
   /* ---- 简单基线"追球型"输入（对照/冒烟用）：鼠标永远追球 + 中线深度 ---- */
@@ -216,8 +261,18 @@ const INPUT_AGENT = (() => {
         const q = DQN.mlpForward(net, encodeObs(obs)).last;
         let bq = -1e9; const ties = [];
         for(let i = 0; i < q.length; i++){ if(q[i] > bq + 1e-9){ bq = q[i]; ties.length = 0; } if(q[i] >= bq - 1e-9) ties.push(i); }
-        return ties[(rng() * ties.length) | 0];
+        const a = ties[(rng() * ties.length) | 0];
+        /* 横向拦截先验（见 lateralBinOf 上方注释）。只换 mxI，
+         * my/ctrl/上旋仍来自网络 argmax。返回 -1 = 不该干预（球在飞离或待发球）。 */
+        if(o.lateralPrior === false) return a;
+        const lb = lateralBinOf(obs);
+        if(lb < 0) return a;
+        if((a >> 2) / 14 === lb) return a;          // 网络本来就追对了，不动
+        return ((lb * 14 + ((a >> 2) % 14)) * 2 + ((a >> 1) & 1)) * 2 + (a & 1);
       },
+      /* 整条关掉横向先验，回退到纯 argmax（回滚开关，也给 A/B 诊断用）。 */
+      setLateralPrior(on){ o.lateralPrior = !!on; return o.lateralPrior; },
+      getLateralPrior(){ return o.lateralPrior !== false; },
       credit(d){ const s = episode[episode.length - 1]; if(s) s.reward = (s.reward || 0) + d; },
       /* 给 episode 里最后一个带 mark 标记的帧加 reward（找不到则退化为 credit）。
          用于把「发球效果」这类局部信号精确归因到发球决策那一帧。 */
@@ -247,14 +302,28 @@ const INPUT_AGENT = (() => {
         if(replay.size() < o.batch) return;
         const batch = replay.sample(o.batch, rng);
         /* 在线 BC：每个 batch 混入 bcMix 比例的监督对（跟踪技能持续保鲜，防止 RL 洗掉）
-         * bcMix 默认 20%（max-4 保底），可经 opts.bcMix 调大（回放被自对弈数据稀释时升到 30%+） */
+         * bcMix 默认 20%（max-4 保底），可经 opts.bcMix 调大（回放被自对弈数据稀释时升到 30%+）
+         * ★ 2026-10-14（R5）：原来是 `tgt.fill(0); tgt[bcAction] = bcBoost`，即把
+         *   另外 1903 个动作的 Q 一起往 0 拉。而 TD 学出来的好动作 Q = +3·γᵏ ≫ 1.6，
+         *   等于每一记 BC 都在往反方向踩 1903 个动作。bcmix 0.06 × batch 64 = 4/64
+         *   ≈ 6.25%，× learnPerPoint × 9000 点 ≈ 7.2 万记破坏性更新 / 12h。
+         *   改成「只抬不压」：以当前 Q 为基线，只把示范动作抬到 max(q, bcBoost)。
+         *   配合 bcTarget=intercept（见 train-input3 naiveCmd）才是真正的保鲜。 */
         let bcIdx = 0;
-        const bcMix = (bcPairs && bcPairs.length) ? Math.max(4, ((o.bcMix != null ? o.bcMix : 0.2) * o.batch) | 0) : 0;
+        /* ★ R5：`--bcmix 0` 以前**关不掉**在线 BC —— `Math.max(4, 0|0)` 恒为 4，
+         * 每个 batch 仍有 6.25% 的 BC 样本在把 my 往 0.5、ctrl 往 false 拽。
+         * 横向拦截现在由 bestAction 的解析先验负责（见 lateralBinOf），
+         * BC 再重复一遍只会跟 TD 抢深度/手法这两维，必须能真正关掉。
+         * o.bcMix 缺省仍是 0.2，行为与旧版一致。 */
+        const bcMix = (bcPairs && bcPairs.length && (o.bcMix != null ? o.bcMix : 0.2) > 0)
+                      ? Math.max(4, ((o.bcMix != null ? o.bcMix : 0.2) * o.batch) | 0) : 0;
         for(const s of batch){
           if(bcMix && (rng() * o.batch) < bcMix){
             const p = bcPairs[(rng() * bcPairs.length) | 0];
-            const tgt = new Array(o.nActions).fill(0);
-            tgt[p[1]] = bcBoost != null ? bcBoost : 1.5;
+            if(!p[0] || !p[0].every(v => isFinite(v))) continue;
+            const q = DQN.mlpForward(net, p[0]).last;
+            const tgt = q.slice();
+            tgt[p[1]] = Math.max(q[p[1]], bcBoost != null ? bcBoost : 1.5);
             DQN.mlpTrain(net, p[0], tgt, o.lr * 0.7, trainOpt);
             bcIdx++;
             continue;
@@ -286,6 +355,7 @@ const INPUT_AGENT = (() => {
       setBC(pairs, boost){ bcPairs = pairs; if(boost != null) bcBoost = boost; },
       /* 在线 BC 混入比例：续训时存档里的 o.bcMix（0.35）会把好策略冲回"追球"，需要单独压低 */
       setBcMix(m){ o.bcMix = m; },
+      /* 0 = 在线 BC 真正关闭（见 learn() 里 bcMix 的注释）。 */
       getBcMix(){ return o.bcMix; },
       getEps(){ return eps; },
       setEps(e){ eps = e; },
@@ -321,12 +391,46 @@ const INPUT_AGENT = (() => {
        * 每回合 6 次 × 小回放缓冲会把 Q 值反复锤爆（实测 60 局 vs默认 71%→40%） */
       setLearnPerPoint(n){ o.learnPerPoint = n; },
       getReplaySize(){ return replay.size(); },
-      /* 模仿单步（行为克隆暖启动）：硬目标监督——所选动作 Q 抬到 boost，
-       * 其余动作压到 0（一次性传播，不会被共享隐层噪声抬高其他动作） */
+      /* 模仿单步（行为克隆暖启动）：只把示范动作抬到 boost。
+       * ★ 2026-10-14（R5）：原来写的是硬目标 —— `tgt.fill(0); tgt[action]=boost`，
+       *   注释说是「一次性传播，不会被共享隐层噪声抬高其他动作」。实际后果相反：
+       *   1904 个输出里，**每一次** BC 调用都会把另外 1903 个的 Q 往 0 拉。
+       *   池子里有 N 个状态时，示范动作那一行只被自己那 1/N 的调用往上推，
+       *   却被另外 (N-1)/N 往下踩 —— N 越大越被压死。
+       *   实测（_bc_pretrain.js，657 个状态 / default 对手，Adam+clip2+layerlr，
+       *   lr=0.01、20 epoch 共 1.3 万次 imitate）：
+       *     硬目标：q[示范] -0.0658 → -0.0001（只走了 4%），argmax 命中率 6.1%，
+       *             20/40 个 epoch 命中率**完全不变**，等于没训练。
+       *     单状态对照（200 次 imitate，同一套优化器）：q 0.0017 → 1.3520，命中。
+       *   差别只在「池子有多大」，所以历史上单测永远看不出这个 bug，
+       *   只有真跑 BC 预训练/周期重锚时才暴露成「BC 学不动」。
+       *   改成只抬不压：基线取当前 Q，只抬示范动作。
+       *   （learn() 里的在线 BC 已先行改成同样的 raise-only，见该处注释。）
+       * ★ 2026-10-14（R5 续）：只抬不压**也不够**。argmax 要的是**排名**不是数值，
+       *   而 MSE 只能表达数值。1904 个输出里只要有两个以上候选，raise-only 就让
+       *   每一行都被抬到同一个 boost，argmax 退化成噪声。实测（Adam+clip2）：
+       *     硬目标     → 命中率随更新次数**单调衰减**（5 次 100% → 520 次 1%），
+       *                  且每个 epoch 打完完全不动 —— 是「全局汇」把整网压成 0。
+       *     raise-only → 饱和成平局，命中率卡在 0~17%，300 epoch 与 50 epoch 同值。
+       *   正确形状是**成对排序损失**：一次只动两个输出单元 ——
+       *     把示范抬到 max(q[action], boost)，同时只把**当前亚军**压到中点。
+       *   这样每条样本只与一个竞争者赛跑，收敛量级从「打完 1903 个对手」变成
+       *   O(log nActions) 轮；既不制造全局汇，也不制造平局。
+       *   压的是 argmax 的真正障碍（当前最高的非示范），不是任意单元。 */
       imitate(state, action, boost){
-        const n = o.nActions;
-        const tgt = new Array(n).fill(0);
-        tgt[action] = boost != null ? boost : 2.0;
+        if(!state || !state.every(v => isFinite(v))) return;
+        const b = (boost != null) ? boost : 2.0;
+        const q = DQN.mlpForward(net, state).last;
+        const n = q.length;
+        if(action < 0 || action >= n) return;
+        const want = Math.max(q[action], b);
+        let bj = -1, bv = -Infinity;
+        for(let i = 0; i < n; i++){ if(i !== action && q[i] > bv){ bv = q[i]; bj = i; } }
+        const tgt = q.slice();
+        tgt[action] = want;
+        /* 亚军已经远低于示范（相对间隔 ≥ boost）就不再动它：
+         * 省掉 1904 长数组里 99.9% 本来就为 0 的梯度项。 */
+        if(bj >= 0 && (want - bv) < b) tgt[bj] = bv + (want - bv) * 0.5;
         DQN.mlpTrain(net, state, tgt, o.lr * 0.9, trainOpt);
       },
       /* 运行时切换优化器配置。

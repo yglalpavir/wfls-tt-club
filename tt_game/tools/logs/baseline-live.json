@@ -1,26 +1,44 @@
 {
-  "note": "游戏**当前**加载的那份权重（js/input-weights.js ← data/checkpoints/input3-12h/ckpt-008500.json，2026-10-06 已烘焙）在实机管线上的表现。input3-hell12h 收尾时与候选权重同种子配对比较。旧基线（input3-v3/ckpt-003600）归档在 baseline-live.v3-archive.json。",
-  "at": "2026-10-06T00:00:55.122Z",
+  "note": "游戏**当前**加载的那份权重（js/input-weights.js ← data/checkpoints/input3-12h/ckpt-008500.json）在**当前代码**上的实机管线表现。2026-10-14 第 5 轮重测：js/input-agent.js 加了 lateralPrior（默认开）后，同一份权重的实机表现大幅变化，必须重测，否则 input3-hell12h5 的闸门 A 会必然通过（等于没设闸门）。旧基线（无 lateralPrior 的历史口径：default 35.4 / hell 11.7 / grandslam 35.4）归档在 baseline-live.v4-archive.json。",
+  "at": "2026-10-14T03:20:00.000Z",
   "games": 30,
   "seed": "20261004",
   "top": "grandslam",
   "weights": "js/input-weights.js",
   "srcWeights": "data/checkpoints/input3-12h/ckpt-008500.json",
+  "code": "lateralPrior=on（js/input-agent.js#bestAction；回滚开关 agent.setLateralPrior(false)）",
   "live": {
+    "default": 0.886,
+    "hell": 0.381,
+    "grandslam": 0.905
+  },
+  "liveOld": {
     "default": 0.354,
-    "hell": 0.11699999999999999,
+    "hell": 0.117,
     "grandslam": 0.354
   },
   "sim": {
-    "default": 0.607,
-    "hell": 0.16,
-    "grandslam": 0.605
+    "default": 0.969,
+    "hell": 0.932,
+    "grandslam": null
   },
+  "simNote": "sim 是 train-input3.js 的 3-局冒烟采样，饱和到接近 100%，已失去分辨力（选优基线分 94.1、天花板 100）。sim 只能用来排序候选，判达标一律走实机。",
   "delta": {
-    "default": -25.3,
-    "hell": -4.4,
-    "grandslam": -25.2
+    "default": null,
+    "hell": null,
+    "grandslam": null
   },
-  "worstDelta": -25.3,
-  "weighted": 0.2829
+  "deltaNote": "delta 是「同权重 sim − live」，本轮 sim 采样只有 3 局，不足以算差值，留空。",
+  "worstDelta": null,
+  "weighted": 0.5073,
+  "lossReasons": {
+    "noreach": 90,
+    "out": 51,
+    "serve": 25,
+    "net": 6,
+    "double": 0,
+    "other": 0,
+    "total": 172
+  },
+  "lossNote": "lateralPrior 之后，失球主因从「够不到 95~99%」变成 noreach 52.3% / 出界 33.1% / 发球 14.5%。够不到仍然是第一大项 —— 还有空间给 TD 训。"
 }

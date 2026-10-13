@@ -675,9 +675,24 @@ T.tick({ t:'start', run:RUN_NAME, resumed:R.resumed, ep0:R.ep0 + 1, games:opt.ga
          budgetSec:BUDGET_SEC, elapsedSec:R.elapsed, ckptSec:opt.noCkpt ? 0 : opt.ckpt,
          keep:opt.keep, ckptDir:rel(CKPT_DIR), curve:rel(opt.curve), trainMode:trainMode });
 
-/* ---- BC 保鲜池：追球监督，防止 RL 在对极端对手时洗掉基础接球技能 ---- */
+/* ---- BC 保鲜池：追球监督，防止 RL 在对极端对手时洗掉基础接球技能 ----
+ * ★ 2026-10-14（R5）naiveCmd 从「追球的**当前** x」改成「追球的**拦截预测点**」。
+ *   旧目标 tx = clamp(o.x)：球速 vx=±3 m/s 时，0.3s 后球就横移 0.9m——
+ *   拍面永远慢半拍追在球后面，实测线上权重的 argmax 决策只用到 34 个鼠标X里的
+ *   4 个，且 |bx|∈[0.8,1.2] 时 tx 仍停在 ±0.14（见 tools/_diag_argmax.js）。
+ *   接触窗口只有 |bx-px| ≤ PAD_HW+BALL_R+fitH ≈ 0.29~0.34m，于是「够不到」
+ *   （noreach）占了 95~99% 的败局——这不是深度问题，是横向追踪问题。
+ *   正确目标是 x + vx·τ，τ = 到拍面 z 平面（PLAYER_Z）的碰撞时间，与 encodeObs
+ *   的 tauS 同一判据 (pz-z)*vz>0（已在 input-agent.js 修正）。 */
 const bcPairs = [];
-const naiveCmd = (o) => ({ tx: Math.max(-0.9, Math.min(0.9, o.x || 0)), my: 0.5, ctrl: false });
+const chaseTx = (o) => {
+  const x = o.x || 0, vx = o.vx || 0, vz = o.vz || 0;
+  const pz = (o.pz != null) ? o.pz : INPUTSIM.PLAYER_Z;
+  const closing = (pz - (o.z || 0)) * vz > 0 && Math.abs(vz) > 0.05;
+  const tau = closing ? Math.min(1.5, Math.abs((pz - (o.z || 0)) / vz)) : 0;
+  return Math.max(-0.9, Math.min(0.9, x + vx * tau));
+};
+const naiveCmd = (o) => ({ tx: chaseTx(o), my: 0.5, ctrl: false });
 const naive = { act(o){ const c = naiveCmd(o); bcPairs.push([agent.encode(o), IA.nearestAction(c.tx, c.my, c.ctrl)]); return c; }, credit(){} };
 for(let g = 0; g < opt.bcGames; g++){
   INPUTSIM.playInputPoint(naive, PP.POLICY_DEFAULT, mulberry32(707000 + g), g % 2 === 0 ? 'player' : 'ai');

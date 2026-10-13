@@ -29,14 +29,37 @@ if(!argv.length){
 }
 const src = path.resolve(argv[0]);
 if(!fs.existsSync(src)){ console.error('权重文件不存在：' + src); process.exit(2); }
-const evH = argv[2] != null ? parseFloat(argv[2]) : 0;
-const evD = argv[3] != null ? parseFloat(argv[3]) : 0;
-const opp = argv[4] || 'hell';
+/* ★ 2026-10-14（R5）修正：argv = process.argv.slice(2)，所以 argv[0] 是 <src.json>，
+ * 胜率等可选参数从 argv[1] 起。原来的下标整组偏移了一位（argv[2]/[3]/[4]/[5]/[6]），
+ * 后果有三重，且都很难一眼看出来：
+ *   1. 传进来的 evalHell 被当成 evalDefault、evalDefault 被 parseFloat 成 NaN
+ *      （JSON.stringify(NaN) → null），**页面上给玩家看的两个胜率整个错位**；
+ *   2. opp 标签取到了 ladderLive 的 JSON 原文，meta.opp 变成一坨 JSON 字符串；
+ *   3. 最要命的是 _finalize-12h.js L318 的调用把 'tools/bake-input.js' 当成 argv[0]，
+ *      于是 src 解析成**脚本自己** —— 它确实 existsSync 通过，但 JSON.parse 一个
+ *      .js 源文件必然 SyntaxError，收尾阶段直接崩在烘焙这一步（12h 训练白跑）。
+ * 现在的下标与头部用法注释、以及 _finalize-12h.js 的调用方式三方一致。 */
+const evH = argv[1] != null ? parseFloat(argv[1]) : 0;
+const evD = argv[2] != null ? parseFloat(argv[2]) : 0;
+const opp = argv[3] || 'hell';
 /* 实机 / 仿真对照都是可选的；传了就记，解析失败不致命（不能因为留痕字段
  * 坏掉就整个烘焙失败 —— 权重本身才是要紧的）。 */
 function parseOpt(s, fallback){ if(!s) return fallback; try { return JSON.parse(s); } catch(e){ return fallback; } }
-const ladderLive = parseOpt(argv[5], null);
-const simEval = parseOpt(argv[6], null);
+const ladderLive = parseOpt(argv[4], null);
+const simEval = parseOpt(argv[5], null);
+/* 这两个数是**页面上给玩家看的**胜率，位置错了要能当场发现，不能靠事后看页面。
+ * （offset bug 的教训：错位时它们一个变成 NaN→null、一个串到别的档位。） */
+const badNum = [];
+if(argv[1] != null && !isFinite(evH)) badNum.push('evalHell=' + JSON.stringify(argv[1]));
+if(argv[2] != null && !isFinite(evD)) badNum.push('evalDefault=' + JSON.stringify(argv[2]));
+if(evH < 0 || evH > 1) badNum.push('evalHell=' + evH + ' 不在 0~1');
+if(evD < 0 || evD > 1) badNum.push('evalDefault=' + evD + ' 不在 0~1');
+if(badNum.length){
+  console.error('❌ 拒绝烘焙：胜率参数不是 0~1 的数（多半是位置传错了）');
+  for(const b of badNum) console.error('    ' + b);
+  console.error('    用法：<src.json> [evalHell] [evalDefault] [opp标签] [ladderLive] [simEval]');
+  process.exit(2);
+}
 const b = JSON.parse(fs.readFileSync(src, 'utf8'));
 const net = b.w || b.net;
 /* 层数不再硬编码 4：网络可以加深（2026-10-02 起是 88→256→384→256→952，仍是 4 层，
