@@ -252,16 +252,30 @@ if(!base){
  * 绝对阈值只保留一条兜底上限，防止出现荒谬的失配。 */
 const candAbs = Math.abs(cand.worstDelta);
 const baseAbs = base ? Math.abs(base.worstDelta || 0) : null;
-const okC1 = (baseAbs == null) ? (candAbs <= TOL) : (candAbs <= baseAbs + 3);
+/* ★ 2026-10-14（第 5 轮演练时发现）：基线如果是用 --live-only 测的，
+ *   baseline-live.json 的 delta/worstDelta 会是 null，`base.worstDelta || 0`
+ *   悄悄变成 0 —— 闸门 C1 于是退化成「|Δ| ≤ 3pp」。而仿真在 lateralPrior 之后
+ *   已饱和到 93~97%、实机只有 38~89%，任何候选的 |Δ| 都在 30~60pp，
+ *   **C1 永远不可能通过，12h 会在最后一步被判未达标**。空基线不许当成 0 用。 */
+const baseDeltaMissing = !!base && !(Math.abs(base.worstDelta || 0) > 0);
+if(baseDeltaMissing){
+  console.log('\n  ⚠ 闸门 C1 的参照物缺失：基线没有 worstDelta（多半是用 --live-only 测的）。' +
+              '\n    此时 C1 不可判定 —— 已按「C1 不通过」处理，而不是拿 0 当参照物。');
+  console.log('    修法：node tools/_refresh-baseline.js --games ' + GAMES +
+              ' --seed ' + SEED + ' --opp ' + LEVELS.join(','));
+}
+const okC1 = baseDeltaMissing ? false
+           : (baseAbs == null) ? (candAbs <= TOL) : (candAbs <= baseAbs + 3);
 const okC2 = candAbs <= 45;
 pass = pass && okC1 && okC2;
 console.log('  ' + (okC1 ? '✓' : '✗') + ' 闸门 C1（没比基线更走样）：worst|Δ| ' +
-  candAbs.toFixed(1) + 'pp' + (baseAbs != null ? ' ≤ 基线 ' + baseAbs.toFixed(1) + 'pp + 3pp' : ' ≤ 容差 ' + TOL + 'pp（无基线）'));
+  candAbs.toFixed(1) + 'pp' + (baseDeltaMissing ? ' ≤ 参照物缺失，判不通过'
+    : (baseAbs != null ? ' ≤ 基线 ' + baseAbs.toFixed(1) + 'pp + 3pp' : ' ≤ 容差 ' + TOL + 'pp（无基线）')));
 console.log('  ' + (okC2 ? '✓' : '✗') + ' 闸门 C2（失配未失控）：worst|Δ| ' + candAbs.toFixed(1) + 'pp ≤ 45pp（兜底天花板）');
 
 /* --bake-anyway 只旁路 A/B（"有没有变强"由人拍板），C2（失配失控）仍一票否决：
  * 失配失控意味着这份权重在实机上不可信，烘了等于把仿真过拟合发布给玩家。 */
-const bakeAllowed = pass || (BAKE_ANYWAY && okC2);
+const bakeAllowed = pass || (BAKE_ANYWAY && okC2 && !baseDeltaMissing);
 const report = {
   run: RUN, at: new Date().toISOString(), games: GAMES, seed: SEED, tol: TOL, top: TOP,
   topN: TOPN,
@@ -276,6 +290,7 @@ const report = {
   chosen: { file: chosen.file, ep: bestEp, simScore: chosen.simScore, liveScore: score(cand.live) },
   bestEp: best.ep, bestSimScore: best.best,
   candidate: cand, baseline: base, gates: { improved: pass, bakeAnyway: BAKE_ANYWAY },
+  baseDeltaMissing,
   passed: bakeAllowed,
 };
 const rp = path.join(ROOT, 'tools', 'logs', RUN + '.finalize.json');
