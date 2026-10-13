@@ -165,7 +165,13 @@ function candidateFiles(){
    * entry 的 bestFile 也推一遍（内容去重会自动折叠重复的那份）。 */
   for(const c of (idx.checks || [])) if(c.bestFile) push({ file: c.bestFile, ep: c.ep, wr: c.wr });
   for(const c of (idx.checks || [])) push(c);
-  out.sort((a, b) => b.simScore - a.simScore);
+  /* 排序：仿真分高的优先；**同分时取 ep 大的（训练得更久的那一份）**。
+   * 2026-10-14：lateralPrior 落地后仿真饱和了（default/hell/grandslam 全 98.3%），
+   * 一整轮 12h 下来几十个检查点的仿真分会大量并列。原写法只按 simScore 排，
+   * 而 Array.sort 在 V8 里是稳定的 → 并列时保留插入顺序，也就是
+   * **最早**达成那个分数的检查点胜出，训练了 10 小时的后期权重反而被挤掉。
+   * 仿真分既然已经分不出高低，就该用唯一还单调的量（训练进度）兜底。 */
+  out.sort((a, b) => b.simScore - a.simScore || (b.ep || 0) - (a.ep || 0));
   return out;
 }
 
