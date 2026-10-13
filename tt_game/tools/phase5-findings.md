@@ -18,6 +18,7 @@
 | `chase`（tx = x + vx·τ，预测拦截点） | **40.1 %** | |
 | 线上权重 `input3-12h/ckpt-008500` | 8.7 ~ 11.7 % | 现行烘焙产物 |
 | `prior`（网络出 my/ctrl/旋转，横向交给规则） | **32.1 %**（τ 修复后基线为 8.7 %） | 已落进 `js/input-agent.js` |
+| **本轮 `ckpt-000750`（prior + 12h TD）** | **59.2 %** | **已烘焙上线（seed 777 复测 57.8 %）** |
 
 **横向追踪本身就是瓶颈。** 拍面速度不是（见 §2）。修好 τ 之后，「拍面停中间」的网络从 8.7 % 变成 32.1 %，一行训练都不需要。
 
@@ -31,11 +32,16 @@
 | r3 `input3-hell12h` | 同上 | 35.4 % | 11.7 % | 35.4 % | 白跑（选优口径错） |
 | r4a `input3-hell12h2` | 同上 | — | 2.6 % | — | 白跑（选优口径错，模型训崩） |
 | r4b `input3-hell12h3` | 同上 | 38.6 % | 5.0 % | 36.4 % | 门禁 B 失败，**未烘焙**（正确） |
+| **r5 `input3-hell12h5` ep750** | 同上 + τ 修复 + **横向 prior** | **93.3 %** | **59.2 %** | **91.5 %** | **✅ 已烘焙上线** |
 
 r4b 的训练胜率 50.4 % → 21.6 % **单调下降**，`best` 只动过一次（ep 2250）然后 8300 回合不动。
 说明：**不是没学会，是学成了坏的，而且选优忠实地记录了这一点**。
 
 前 4 轮共烧掉约 48 机时。
+
+第 5 轮的真正产出不是那 12 小时，而是**定位到「网络把拍面停在中间」这一条根因**：
+前 4 轮里 `default 35 %` / `grandslam 35 %` 一直让人以为「整体偏弱、只是难赢」，
+实际上它们和 `hell 11.7 %` 是**同一个病** —— 够不到球（§2、§3）。修掉之后 default/grandslam 顺带涨到 93 %/91 %。
 
 ---
 
@@ -419,10 +425,86 @@ bash tools/_supervise.sh input3-hell12h5 12 data/checkpoints/input3-12h/ckpt-008
 
 ---
 
-## 13. 下一步
+## 13. 结果：ep 750 —— 对地狱实机 **38.1 % → 59.2 %（+21.1 pp）**
 
-1. 盯 `data/checkpoints/input3-hell12h5/index.json` 的 `best` / `curve.json` 是否有 ★（尤其进 `hell` 段之后）。
-2. trainer 退出后 `_finalize-12h.js --topN 4 --top hell --opp default,hell,grandslam` 自动接手；
-   **门禁 A（实机加权 > 新基线 0.5073）与门禁 B（实机 vs 地狱 ≥ 0.381）都过才烘焙。**
-3. 过 → `bake-input.js` 写 `js/input-weights.js`，再跑一次实机确认 meta 里的数是真机数。
-4. 不过 → 保留现有权重，本轮照样算成功（**诊断链条是真正的产出**）。
+`node tools/live-match.js --from data/checkpoints/input3-hell12h5/ckpt-000750.json --opp default,hell,grandslam --games 30 --seed 20261004 --live-only`
+
+| 档位 | 基线（旧权重 + prior） | **ckpt-000750** | Δ |
+|---|---|---|---|
+| default | 88.6 % | **93.3 %** | +4.7 pp |
+| **hell** | **38.1 %** | **59.2 %** | **+21.1 pp** |
+| grandslam | 90.5 % | **91.5 %** | +1.0 pp |
+| 加权 0.75·hell + 0.25·default | 50.72 % | **67.7 %** | **+17.0 pp** |
+
+- **换种子复测 seed 777 → 地狱 57.8 %**，不是挑种子挑出来的。
+- DQN 侧败因：`out` 31（25.2 %）、`noreach` 88/123（71.5 %，含对方吃两跳）、`net` 4。
+  即：**TD 修好了「打到了但打错」，剩下的还是够不到 —— 下一步该动的是站位/时机，不是击球参数。**
+- 已用 `bake-input.js` 烘焙进 `js/input-weights.js`（commit `700903d`），并用**不带 `--from`** 的实机跑复验过一次
+  （直接读线上权重文件 → seed 777 地狱 57.8 %），确认线上产物可用。
+
+### 课程曲线（trainer ep → 仿真 default/hell/grandslam，trainW）
+
+| ep | 段 | default | hell | grandslam | trainW | best |
+|---|---|---|---|---|---|---|
+| 250 | default | 98.3 | 85.0 | 98.3 | 76.0 | 94.1 |
+| 500 | default | 96.7 | 91.7 | 98.3 | 79.0 | 94.2 |
+| **750** | default | **98.3** | **98.3** | **98.3** | 73.6 | **98.3 ★** |
+| 1000 | **hell（刚切段）** | 75.0 | **21.7** | 68.3 | 63.3 | 98.3 |
+| 1250 | hell | 96.7 | 70.0 | 96.7 | 55.0 | 98.3 |
+
+ep 1000 那个坑是**切段瞬态**，不是崩：下一轮就回到 96.7 / 70.0 / 96.7。
+但 `trainW` 单调下滑（76 → 79 → 73.6 → 63.3 → 55）与 r4 同形，仍需盯着。
+★ 之后轮速也变快：验证耗时 984.9 → 307.9 → 170.2 → 207 s，一轮回到 21–30 min。
+
+## 14. 「仿真饱和」连带把选优也坑了 —— 两个新修
+
+仿真里几十个 checkpoint 都并列 98.3 %，`Array.sort` 在 V8 是稳定的，于是**最先达到这个分的那一轮被选中，后面 10 小时的训练被挤出候选**。
+
+1. **同分用 `ep` 大的排前**（commit `ddabc65`）：
+   ```js
+   out.sort((a,b) => b.simScore - a.simScore || (b.ep||0) - (a.ep||0));
+   ```
+   仿真已经分不开，就用唯一还单调的量（训练进度）兜底。
+2. **`best.file` 保底入选**（commit `5416c6a`）：`candidateFiles()` 给它打 `isBest` 标记，
+   ```js
+   const CANDS = ALL_DISTINCT.slice(0, TOPN);
+   if(bestEntry && !CANDS.includes(bestEntry)) CANDS.push(bestEntry);
+   ```
+   候选数变成 ≤ TOPN+1，列表里标 `← 选优最佳（保底入选）`。
+   **理由很直接：真正带来 +21 pp 的就是 ep 750，而它的仿真分是并列的 98.3 %** ——
+   纯 top-N 完全可能把那一份已经验证过最好的权重挤掉，12h 白跑。
+   内容去重 + `ckpt-*`/`best-*` 折叠保证它不会被测两遍。
+
+## 15. 验收脚本必须**演练**，这是本轮最贵的教训
+
+round 5 一共踩了 **3 个「最后一步才死」的 bug**，训练日志里一个都看不出来：
+
+| # | 现象 | 后果 |
+|---|---|---|
+| 1 | `bake-input.js` argv 整槽偏移 | 12h 跑完在烘焙那一步 `JSON.parse` 脚本自身 → SyntaxError |
+| 2 | 门禁 C1 的参照对象是**空的** | 基线当初按 `--live-only` 量的，`worstDelta` 为 null，`Math.abs(base.worstDelta || 0)` 静默取 0 ⇒ C1 变成「\|Δ\| ≤ 3pp」，仿真饱和后**任何候选都过不了** |
+| 3 | 门禁 C2 的 45 pp 硬编码是旧口径的 | 基线自身的 worst\|Δ\| 就有 49.2 pp，C2 会把「和基线一样失配」的候选判死 |
+
+修法：新增 `tools/_refresh-baseline.js`（用 finalize **自己的口径**重新量基线：sim + live 一起跑、正则与 finalize 同款、
+写 `worstDelta`）、finalize 增加 `baseDeltaMissing` 守卫（缺 `worstDelta` 直接判 C1 失败且 **`--bake-anyway` 也盖不掉**）、
+C2 改成 `min(85, max(45, baseAbs + 20))`。
+
+**然后用一个临时 run 目录 + `--dry-run` 完整演练了一遍**，四个门禁都判在了真实参照上：
+
+```
+A: 48.92% vs 基线 50.72% ✗ -1.80pp
+B: vs地狱 33.3% vs 基线 38.1% ✗ -4.80pp
+C1: worst|Δ| 54.7pp ≤ 基线 49.2pp + 3pp ✗
+C2: worst|Δ| 54.7pp ≤ 基线 49.2pp + 20pp = 69.2pp ✓
+→ 未达标，不烘焙，js/input-weights.js 保持原样（演练，未写标记）
+```
+
+结论写进规矩：**验收脚本必须演练，这是必做项，不是保险。**
+
+## 16. 收尾
+
+1. trainer 退出 → `_finalize-12h.js --topN 4 --top hell --opp default,hell,grandslam` 自动接手，
+   最多测 5 个候选，**四门全过才烘焙**。
+2. 门禁 A（实机加权 > 0.5072）、B（实机 vs 地狱 ≥ 0.381）目前 ep 750 都已远超（0.677 / 0.592）。
+3. 不过 → 保留现有权重，本轮照样算成功（**诊断链条是真正的产出**）。
+4. 训练结束后剥掉 `_run-hell12h5-and-finalize.sh` 的 UTF-8 BOM（bash 跑 `bash file` 时无害，`./file` 会炸）。
