@@ -158,6 +158,9 @@ function candidateFiles(){
     out.push(e);
   };
   push(best);
+  /* best.file 第一个进池，所以 byHash 里对应那条就是「选优最佳」那一份。
+   * 标出来，最后保底进候选集（见下方「保底入选」）。 */
+  if(best && best.file) for(const e of out) if(e.file === best.file) e.isBest = true;
   /* 2026-10-11：train-input3.js 现在 ckpt-* 存「当轮策略」、best-* 存「选优最佳」。
    * 两者都要进候选：前者提供多样性（仿真/实机分叉时实测能差 16pp，
    * 只有一份候选就等于按仿真分挑），后者是选优意义上的最佳。
@@ -176,11 +179,21 @@ function candidateFiles(){
 }
 
 const ALL_DISTINCT = candidateFiles();
+/* ---- 保底入选：选优最佳（best.file）无论仿真分排第几都进候选集。
+ * 2026-10-14：仿真饱和后，一整轮里几十个检查点仿真分并列在 98.3%。
+ * 排序保的是 ep 大的，于是训练后期的权重会一致压过早期那份 ——
+ * 而这一轮真正跑出实机 +21pp 的是 ep 750（仿真分同样是 98.3%）。
+ * 如果只取前 --topN，实测过的最佳权重可能被一串「同分但没验证过」的挤掉，
+ * 12h 就白跑了。候选集最多 TOPN+1 份，多花一次实机跑（~10min）换确定性。
+ * （它已经因为内容去重和 ckpt-*.json 折叠的只剩一份，不会重复测。） */
 const CANDS = ALL_DISTINCT.slice(0, TOPN);
+const bestEntry = ALL_DISTINCT.find(c => c.isBest);
+if(bestEntry && !CANDS.includes(bestEntry)) CANDS.push(bestEntry);
 console.log('\n候选集（按仿真三档加权分排序；内容去重后共 ' + ALL_DISTINCT.length +
             ' 份不同权重，本次实机验收前 ' + CANDS.length + ' 份）：');
-ALL_DISTINCT.slice(0, TOPN).forEach(c => console.log('  ' + c.file + '  ep ' + c.ep +
+CANDS.forEach(c => console.log('  ' + c.file + '  ep ' + c.ep +
   '  仿真分 ' + (c.simScore * 100).toFixed(1) +
+  (c.isBest ? '  ← 选优最佳（保底入选）' : '') +
   (c.dups.length ? '  （另有 ' + c.dups.length + ' 个同权重的副本已折叠）' : '')));
 const dupTotal = ALL_DISTINCT.reduce((a, c) => a + c.dups.length, 0);
 if(dupTotal > 0){
