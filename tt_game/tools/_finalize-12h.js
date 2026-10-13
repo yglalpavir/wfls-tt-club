@@ -266,12 +266,24 @@ if(baseDeltaMissing){
 }
 const okC1 = baseDeltaMissing ? false
            : (baseAbs == null) ? (candAbs <= TOL) : (candAbs <= baseAbs + 3);
-const okC2 = candAbs <= 45;
+/* ★ 2026-10-14：原来的 C2 是写死的绝对值 45pp。那是在 lateralPrior 之前定的 ——
+ *   当时 sim/live 的缺口是 -4.4 ~ -16.5pp，45pp 确实是"离谱"的兜底线。
+ *   lateralPrior 之后仿真饱和到 87~98%，**基线自己的 worst|Δ| 就是 49.2pp**，
+ *   于是 C2 会把「和基线一样失配」的正常候选判成失控 —— 与 C1 空参照物
+ *   同一类病：阈值早于口径变化，两种失配都卡在最后一步。
+ *   改成：以基线为锚（+20pp 容忍），并保留绝对地板 45 与绝对天花板 85。
+ *   C1（基线 + 3pp）仍然是最紧的那道，C2 只是更松的兜底。 */
+const C2_FLOOR = 45, C2_MARGIN = 20, C2_CEIL = 85;
+const c2Limit = Math.min(C2_CEIL,
+                 Math.max(C2_FLOOR, baseAbs == null || baseDeltaMissing ? C2_FLOOR : baseAbs + C2_MARGIN));
+const okC2 = !baseDeltaMissing && candAbs <= c2Limit;
 pass = pass && okC1 && okC2;
 console.log('  ' + (okC1 ? '✓' : '✗') + ' 闸门 C1（没比基线更走样）：worst|Δ| ' +
   candAbs.toFixed(1) + 'pp' + (baseDeltaMissing ? ' ≤ 参照物缺失，判不通过'
     : (baseAbs != null ? ' ≤ 基线 ' + baseAbs.toFixed(1) + 'pp + 3pp' : ' ≤ 容差 ' + TOL + 'pp（无基线）')));
-console.log('  ' + (okC2 ? '✓' : '✗') + ' 闸门 C2（失配未失控）：worst|Δ| ' + candAbs.toFixed(1) + 'pp ≤ 45pp（兜底天花板）');
+console.log('  ' + (okC2 ? '✓' : '✗') + ' 闸门 C2（失配未失控）：worst|Δ| ' + candAbs.toFixed(1) +
+  'pp ≤ ' + c2Limit.toFixed(1) + 'pp（基线 ' + (baseAbs == null ? '无' : baseAbs.toFixed(1)) +
+  'pp + ' + C2_MARGIN + 'pp，绝对天花板 ' + C2_CEIL + 'pp）');
 
 /* --bake-anyway 只旁路 A/B（"有没有变强"由人拍板），C2（失配失控）仍一票否决：
  * 失配失控意味着这份权重在实机上不可信，烘了等于把仿真过拟合发布给玩家。 */
