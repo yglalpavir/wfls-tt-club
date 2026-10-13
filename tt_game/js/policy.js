@@ -324,7 +324,7 @@ function strongVec(){
   // 击球选择 / 落点 / 发球完全采用自对弈学习值。
   // · 依据：raw 学习策略在 sim 中 vs 加强玩家模型 68%、vs 默认 64%，
   //   而旧修正（强制压低 push.prob / 改发球 mix / 抬 smash）把强度砍到 46%/49%；
-  //   输入级 DQN 训练器（train-input.js）的"地狱对手"也早已用本温和口径，实机应一致。
+  //   输入级 DQN 训练器（train-input3.js）的"地狱对手"也早已用本温和口径，实机应一致。
   const L = Object.assign({}, LEARNED_POLICY, {
     moveSpeed: 2.8, moveErr: 0.03, moveZ: 2.6,
   });

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>2026 校队选拔 · 竖版海报 | 武汉外国语学校乒乓球社团</title>
+<!--
+  校队选拔竖版海报（1240×1754，A4 @150dpi 比例）· 极简版：只留必要信息
+  骨架沿用 event-poster-2026-shezhan-portrait.html「大字版」，但删掉全部赛制/名额/条件信息
+  结构：品牌行（武汉外国语学校乒乓球社团 46px 衬线 / 右侧英文社名）
+        → 抬头「校队成员」
+        → 标题行：巨字「选拔」380px + 右侧社团徽标 288px（Assets/files/logo.svg，底部对齐，参数照搬社展海报）
+        → 黑底横幅（10.15 THU ｜ 中午及社团课时间 · 体育馆（食堂三楼））
+        → 登记条（现场登记 班级姓名）
+        → 咨询行（高二 9 班 龚雨煊 · 高二 7 班 任安喆）
+        → 页脚（二维码 + 群号 + 官网）+ 居中社团署名
+  删掉的东西（社长 2026-10-13 定：信息太多）：参选要求 / 选拔形式表格 / 预计结果双卡 / 备注整段 /
+    英文小标（VENUE / TEAM SELECTION 等）/ 副题行「高一 · 高二 · 三局两胜」/ 登记条里的「无需提前报名」等铺陈
+    ——社长口径就是「现场登记班级姓名」这一句，所以登记条不再带标签，直接一句话，框也收窄到刚好包住文字
+  两条硬性取舍：① 社团身份必须最显眼——社团名放品牌行首行衬线大字，页脚再署名一次收尾
+                ② 砍掉一切注释性文字，只留行动信息（何时 / 何地 / 怎么来 / 找谁）
+  配色：纯黑白 + 冷灰蓝细线（--line #d8e2ee），全页只一个实心块（横幅），不引入彩色
+  字体分工：Poppins=英文/数字 · Noto Serif SC=中文标题 · Noto Sans SC=正文 · IBM Plex Mono=英文小字
+  导出（改任何文案后都必须重导，两档都要）：起 python -m http.server 起在仓库根，然后
+    Chrome --headless=old --disable-gpu --no-sandbox --hide-scrollbars
+      --user-data-dir=<新的临时目录> --force-device-scale-factor=2 --window-size=1240,1754
+      --virtual-time-budget=25000 --screenshot=../../.poster-preview/selection-poster-2026-portrait-300dpi.png
+      http://127.0.0.1:8767/docs/posters/selection-poster-2026-portrait.html
+    scale 改 4 再导一次 → selection-poster-2026-portrait-600dpi.png（1240×1754 画布 ⇒ 2480×3508 / 4960×7016）
+    注意：每次换新的 --user-data-dir；Start-Process 不要加 -WindowStyle Hidden（Chrome 会不输出 PNG）；
+          必须用 --headless=old；PowerShell 数组里的开关值要用 ("--flag=$v") 括起来，否则 2 会变成第二个目标
+  导完核对两件事：① 画布不溢出（浏览器里 .poster 的 scrollHeight <= clientHeight）
+                ② 亲眼看一遍 PNG（字体回落、二维码是否加载、有没有裁切）
+  二维码读取 ../../Assets/images/qr-code.jpg（相对 docs/posters/），缺失时显示占位框；印刷前确认为最新群码。
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@500;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+      --ink: #101018; --ink2: #3a4250; --muted: #6b7c93;
+      --line: #d8e2ee; --dim: #9fb2c6;
+      --en: 'Poppins', sans-serif; --cn: 'Noto Sans SC', sans-serif; --serif: 'Noto Serif SC', serif;
+      --mono: 'IBM Plex Mono', monospace;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--cn); color: var(--ink); background: #e3e9f1; }
+
+  .poster {
+    position: relative; width: 1240px; height: 1754px; overflow: hidden; background: #fff;
+    padding: 40px 56px 0; display: flex; flex-direction: column;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+
+  /* 品牌行：社团名（乒乓球社）放最前，全页第一眼读到 */
+  .brand { display: flex; justify-content: space-between; align-items: center; }
+  .brand .bt { font-family: var(--serif); font-size: 46px; font-weight: 900; letter-spacing: 5px; color: var(--ink); white-space: nowrap; }
+  .brand .en { font-family: var(--mono); font-size: 13px; letter-spacing: 2.5px; color: var(--muted); white-space: nowrap; }
+
+  /* 标题区：巨字「选拔」+ 右侧社团徽标（参数照搬 event-poster-2026-shezhan-portrait.html：
+     logo 高 288px，与巨字底部 flex-end 对齐；巨字 380px 无字距，两字 760px + 徽标 341 + 间距 20 = 1121 ≤ 版宽 1128） */
+  .kicker { margin-top: 26px; font-family: var(--serif); font-size: 54px; font-weight: 700; letter-spacing: 12px; color: var(--ink2); }
+  .trow { margin-top: 6px; display: flex; align-items: flex-end; gap: 20px; }
+  .t1 { font-family: var(--serif); font-size: 380px; font-weight: 900; line-height: 1.02; color: var(--ink); white-space: nowrap; }
+  .tright { flex: 1; display: flex; justify-content: flex-end; align-items: flex-end; }
+  .logo { display: block; height: 288px; width: auto; }
+
+  /* 黑底横幅：全页唯一实心块 */
+  .banner { margin-top: 130px; background: var(--ink); color: #fff; border-radius: 22px; padding: 40px 48px 42px; }
+  .banner .row1 { display: flex; align-items: baseline; justify-content: space-between; gap: 26px; }
+  .banner .date { font-family: var(--en); font-size: 92px; font-weight: 900; letter-spacing: 2px; line-height: 1; }
+  .banner .time { font-family: var(--serif); font-size: 52px; font-weight: 700; letter-spacing: 4px; line-height: 1; }
+  .banner .row2 { margin-top: 18px; display: flex; align-items: baseline; gap: 20px; }
+  .banner .ven { font-family: var(--serif); font-size: 48px; font-weight: 700; letter-spacing: 3px; line-height: 1; }
+  .banner .ven span { color: var(--dim); font-size: 34px; letter-spacing: 2px; }
+
+  /* 登记条：怎么来（文案砍到最短：现场登记 班级姓名，所以没有标签，直接一句话） */
+  .signin { margin-top: 112px; align-self: flex-start; border: 2.5px solid var(--ink); border-radius: 18px; padding: 28px 44px; }
+  .signin .txt { font-family: var(--serif); font-size: 46px; font-weight: 700; line-height: 1.25; letter-spacing: 4px; color: var(--ink2); }
+  .signin .txt b { color: var(--ink); font-weight: 900; }
+
+  /* 咨询行：找谁问 */
+  .people { margin-top: 78px; display: flex; align-items: baseline; gap: 22px; }
+  .people .lab { flex: 0 0 auto; font-size: 24px; letter-spacing: 1px; color: var(--muted); }
+  .people .nm { font-family: var(--serif); font-size: 34px; font-weight: 700; letter-spacing: 2px; color: var(--ink); }
+  .people .nm i { font-family: var(--cn); font-style: normal; font-size: 22px; font-weight: 400; color: var(--muted); letter-spacing: 1px; margin: 0 12px 0 8px; }
+
+  /* 页脚：白底二维码牌 + 文字堆 */
+  .foot { margin: auto 0 0; padding: 56px 0 28px; }
+  .join { display: flex; align-items: center; gap: 40px; }
+  .qr-box {
+    flex: 0 0 206px; height: 206px; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px;
+    display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 22px rgba(0, 0, 0, 0.14);
+  }
+  .qr-box img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .qr-fallback { display: none; width: 100%; height: 100%; border: 2px dashed #b9c6d6; border-radius: 8px; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-size: 11px; color: var(--muted); line-height: 1.5; }
+  .join-info { flex: 1; }
+  .join-info .t { font-size: 30px; font-weight: 900; letter-spacing: 2px; color: var(--ink); }
+  .join-info .url { margin-top: 12px; font-family: var(--en); font-size: 19px; font-weight: 600; color: var(--muted); letter-spacing: 0.3px; }
+  .join-info .gnum { margin-top: 6px; font-size: 19px; color: var(--muted); }
+  .join-info .gnum b { font-family: var(--en); font-weight: 900; font-size: 32px; color: var(--ink); letter-spacing: 2px; margin-left: 10px; }
+  .sign { margin-top: 20px; text-align: center; font-family: var(--serif); font-size: 17px; font-weight: 700; letter-spacing: 5px; color: var(--muted); }
+
+  @media print {
+    @page { size: 1240px 1754px; margin: 0; }
+    body { background: #fff; }
+    .poster { margin: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <div class="brand">
+    <span class="bt">武汉外国语学校乒乓球社团</span>
+    <span class="en">WFLS TABLE TENNIS CLUB</span>
+  </div>
+
+  <div class="kicker">校队成员</div>
+  <div class="trow">
+    <div class="t1">选拔</div>
+    <div class="tright"><img class="logo" src="../../Assets/files/logo.svg" alt="武外乒乓球社团徽标"></div>
+  </div>
+
+  <div class="banner">
+    <div class="row1"><span class="date">10.15 THU</span><span class="time">中午及社团课时间</span></div>
+    <div class="row2"><span class="ven">体育馆<span>（食堂三楼）</span></span></div>
+  </div>
+
+  <div class="signin">
+    <span class="txt">现场登记 <b>班级姓名</b></span>
+  </div>
+
+  <div class="people">
+    <span class="lab">详情可咨询</span>
+    <span class="nm">龚雨煊<i>高二 9 班</i>任安喆<i>高二 7 班</i></span>
+  </div>
+
+  <div class="foot">
+    <div class="join">
+      <div class="qr-box">
+        <img class="qr" src="../../Assets/images/qr-code.jpg" alt="社团QQ群二维码">
+        <div class="qr-fallback">二维码占位<br>Assets/images/qr-code.jpg</div>
+      </div>
+      <div class="join-info">
+        <div class="t">扫码进群</div>
+        <div class="url">yglalpavir.github.io/wfls-tt-club</div>
+        <div class="gnum">社团 QQ 群<b>760667083</b></div>
+      </div>
+    </div>
+    <div class="sign">武汉外国语学校乒乓球社团</div>
+  </div>
+
+</div>
+<script>
+  document.querySelectorAll('img.qr').forEach(function (im) {
+    im.onerror = function () {
+      im.style.display = 'none';
+      var f = im.parentElement.querySelector('.qr-fallback');
+      if (f) f.style.display = 'flex';
+    };
+  });
+</script>
+</body>
+</html>

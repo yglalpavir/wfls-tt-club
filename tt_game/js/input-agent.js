@@ -4,9 +4,12 @@
  *    本智能体控制的是**原始鼠标/键盘输入**——每帧输出
  *      鼠标X(targetX) × 鼠标Y(mouseNy) × Ctrl(搓球)
  *    由 input-sim.js 的玩家引擎（实机同款管线）把输入变成击球。
- *  · 观测：88 维归一化（球/拍/鼠标/来球/动力学/台面相位特征）；动作：17×7×2=238 离散。
+ *  · 观测：88 维归一化（球/拍/鼠标/来球/动力学/台面相位特征）；动作：34×14×2×2=1904 离散。
  *  · 复用 dqn.js 的 MLP（mlpInit/Forward/Train）+ 经验回放；浏览器仅需推理。
- *  · 训练：tools/train-input.js；产出 data/input-ai.json → js/input-weights.js
+ *  · 训练：tools/train-input3.js（唯一训练器）；产出经 tools/bake-input.js
+ *    烘焙进 js/input-weights.js，实机 tt-player.js 懒加载该文件。
+ *    （v1 train-input.js / v2 train-input2.js 已删：它们建的是 238/952 动作的
+ *      旧网络，与当前 1904 动作解码器不兼容，跑出来的权重实机加载不了。）
  * ===================================================================== */
 'use strict';
 const INPUT_AGENT = (() => {

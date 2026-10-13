@@ -1,7 +1,7 @@
 /* =====================================================================
  *  train-input3.js — 输入级 DQN「极端对手课程」续训器
- *  · 目标：把"鼠标上的tt玩家"（tools/train-input2.js 产出的输入级 DQN）
- *    从 hell 档继续推到「极端·满档」，用**逐级更强**的对手把策略压上去。
+ *  · 目标：把"鼠标上的tt玩家"（输入级 DQN，实机权重在 js/input-weights.js）
+ *    从地狱档继续推到「极端·满档」，用**逐级更强**的对手把策略压上去。
  *  · 与 v2 的差异：
  *      - 对手不再是固定 HELL，而是 js/opponent-ladder.js 的课程阶梯
  *        （hell → elite → extreme → extreme-max），每局随机取一档亚型（抖动），
@@ -48,8 +48,12 @@ const opt = {
   ckpt: 400, epsReset: 500,
   bcmix: 0.06, bcpass: 0,
   preload: 500, learnp: 2,
-  /* 续训起点 = 当前最佳权重（护栏的基线也是它：必须打赢自己才能采纳） */
-  from: path.join(ROOT, 'data', 'input-ai-extreme.json'),
+  /* 续训起点 = 当前最佳权重（护栏的基线也是它：必须打赢自己才能采纳）。
+   * 'auto' = 自动挑最新一份形状兼容的检查点（见 resolveAutoFrom）；
+   * 找不到就退回随机初始化并大声告警。
+   * ★ 不要把这里写死成某个 data/input-ai*.json：仓库里躺着 238/952 动作三代旧网，
+   *   任何一份都与当前 1904 动作不兼容，写死 = 开箱即 exit 2。 */
+  from: 'auto',
   save: path.join(ROOT, 'data', 'input-ai-extreme.json'),
   curve: path.join(__dirname, 'input-curve-v3.json'),
   start: 'hell', end: 'extreme-max', jitter: 0.06,
@@ -65,7 +69,7 @@ const opt = {
    * 参照（vs默认 不劣于 -5pp 才采纳），拿掉它等于关掉防崩保护。 */
   vallevels: 'default,hell,elite,extreme,extreme-max',
   runName: '', ckptDir: '', keep: 12, noCkpt: false,
-  resume: '', resumeBest: false, fromRandom: false,
+  resume: '', resumeBest: false, fromRandom: false, fromAuto: true,
   hSizesArg: '',
   // 课程：每档占比（和 = 1.0）。想换节奏用 --phases hell:0.2,elite:0.28,extreme:0.3,extreme-max:0.22
   phases: 'hell:0.20,elite:0.28,extreme:0.30,extreme-max:0.22',
@@ -102,7 +106,9 @@ for(let i = 0; i < args.length; i++){
   else if(args[i] === '--hours-add') opt.hoursAdd = parseFloat(args[++i]);
   else if(args[i] === '--from'){
     const v = args[++i];
-    if(String(v).toLowerCase() === 'random'){ opt.fromRandom = true; opt.from = '(random)'; }
+    const lv = String(v).toLowerCase();
+    if(lv === 'random'){ opt.fromRandom = true; opt.from = '(random)'; }
+    else if(lv === 'auto'){ opt.fromAuto = true; opt.from = 'auto'; }
     else opt.from = path.resolve(v);
   }
   else if(args[i] === '--save') opt.save = path.resolve(args[++i]);
@@ -241,11 +247,87 @@ function loadWeight(p, label){
     console.error('❌ ' + (label || '起点权重') + ' 与当前动作空间不兼容，拒绝续训：' + p);
     for(const b of bad) console.error('    ' + b);
     console.error('    网络形状：' + widths);
-    console.error('    可用兼容起点：data/input-ai-a952.json（' + IA.ACT_N + ' 动作 = ' +
-                  IA.IN_MX.length + '×' + IA.IN_MY.length + '×2）');
+    console.error('    续训起点请用 --from auto（自动挑最新一份兼容检查点）');
+    console.error('    换网络后要从零训练：--from random');
     process.exit(2);
   }
   return { agent: base, shape: widths };
+}
+
+/* ---- --from auto：挑一份形状兼容的最新权重 ----
+ * 续训的语义是「从当前最好的一份接着练」，而「当前最好」会随每一轮采纳漂移。
+ * 写死路径 = 写死一份过期存档（已发生过：默认指向 952 动作的 input-ai-extreme.json，
+ * 开箱直接 exit 2）。改成扫检查点目录 + 形状过滤：
+ *   1. data/<save 同名>.json  —— 上一轮真正采纳落盘的产物（它就是实机在用的那份）
+ *   2. data/checkpoints/<run>/best-XXXX.json（优先，环形的「最佳」那一份）
+ *   3. data/checkpoints/<run>/ckpt-XXXX.json（次选，取 mtime 最新的）
+ * 每份都用 netShape() 试读，形状不兼容的直接跳过（不打印，避免刷屏）。 */
+function netShape(p){
+  let a;
+  try{
+    a = IA.loadInputAgent(fs.readFileSync(p, 'utf8'));
+  }catch(e){ return null; }   // setNet 硬拦 → 这份塞不进当前网络，跳过
+  try{
+    const net = a.getNet();
+    const hs = net.slice(0, -1).map(l => l.W.length);
+    /* 只看加载后网络自身的形状。注意：形状元数据在存档里的位置不统一——
+     * 采纳产物 data/input-ai*.json 有顶层 o.nActions，检查点 ckpt-*.json 只有
+     * o.o.hSizes，没有 nActions。所以这里一律读 agent/net，不读存档字段。 */
+    return (a.nActions === IA.ACT_N
+            && net[0].W[0].length === IA.OBS_N
+            && hs.join('/') === DEFAULT_HSIZES.join('/'))
+           ? { shape: net.map(l => l.W.length + '×' + l.W[0].length).join(' → ') }
+           : null;
+  }catch(e){ return null; }
+}
+function resolveAutoFrom(){
+  // 本地算相对路径：rel() 是 L424 的 const 箭头函数，而本函数在 L401 就被 loadBase 调用，
+  // 引用它会撞 TDZ（ReferenceError: Cannot access 'rel' before initialization）。
+  const relp = (p) => path.relative(ROOT, p).replace(/\\/g, '/');
+  const ckRoot = path.join(ROOT, 'data', 'checkpoints');
+  const cand = [];
+  /* 0) 最高优先：实机正在跑的那份。js/input-weights.js 是烘焙产物（index.html 懒加载
+   *    进 tt-player.js），它的 meta.src 指向真正的权重文件。「当前最好」的权威答案
+   *    就是它——比任何检查点 mtime 都准。实测踩过的坑：只按 mtime 排序会挑中
+   *    input3-hell12h3/best-009000.json，那一轮 status=dry-run、从没过 finalize 闸门，
+   *    一旦拿它当护栏基线，「必须打赢自己」的比较对象就悄悄换人了。 */
+  try{
+    const baked = require(path.join(ROOT, 'js', 'input-weights.js'));
+    if(baked && baked.INPUT_AI_META && baked.INPUT_AI_META.src)
+      cand.push(path.resolve(ROOT, baked.INPUT_AI_META.src));
+  }catch(e){ /* 未烘焙 / 结构变了：静默，继续往下找 */ }
+  // 1) 采纳产物本身（它就是上一轮通过护栏后落盘的那份）
+  if(!opt.fromRandom) cand.push(opt.save);
+  // 2)/3) 检查点：best-* 优先于 ckpt-*
+  let runs = [];
+  try{ runs = fs.readdirSync(ckRoot).filter(d =>
+        fs.existsSync(path.join(ckRoot, d)) &&
+        fs.statSync(path.join(ckRoot, d)).isDirectory()); }catch(e){ runs = []; }
+  const files = [];
+  for(const r of runs){
+    let fs2 = [];
+    try{ fs2 = fs.readdirSync(path.join(ckRoot, r)); }catch(e){ continue; }
+    for(const f of fs2){
+      if(/^best-.*\.json$/.test(f)) files.push([0, r, f]);
+      else if(/^ckpt-.*\.json$/.test(f)) files.push([1, r, f]);
+    }
+  }
+  files.sort((a, b) => (a[0] - b[0]) ||
+    (fs.statSync(path.join(ckRoot, b[1], b[2])).mtimeMs - fs.statSync(path.join(ckRoot, a[1], a[2])).mtimeMs));
+  for(const f of files) cand.push(path.join(ckRoot, f[1], f[2]));
+
+  const skipped = [];
+  for(const p of cand){
+    if(!fs.existsSync(p)) continue;
+    const s = netShape(p);
+    if(s) return { path: p, shape: s.shape };
+    skipped.push(relp(p));
+  }
+  if(skipped.length)
+    console.log('  （auto 跳过 ' + skipped.length + ' 份形状不兼容的存档：' +
+                skipped.slice(0, 3).map(relp).join('、') +
+                (skipped.length > 3 ? ' 等' : '') + '）');
+  return null;
 }
 /* 网络隐藏层宽度。默认 = input-agent.js 的 hSizes（256/384/256，2026-10-02 扩容）。
  * --hsizes 可临时改（如 128,192,128 快速冒烟、或 192,256,192 折中），
@@ -257,18 +339,35 @@ if(DEFAULT_HSIZES.length < 1){ console.error('❌ --hsizes 解析失败：' + op
 
 /* 起点权重。--from random = 跳过加载，用当前网络形状（IA 默认 hSizes + ACT_N）随机初始化。
  * 换网络后旧存档形状不再兼容（A4 会拦），从零训练必须走这条路——2026-10-02 换到
- * 256/384/256 + 8568 动作时就是这么起的。 */
+ * 256/384/256 + 8568 动作时就是这么起的。
+ * --from auto（默认）= 挑最新一份形状兼容的权重；挑不到就退回随机并大声告警，
+ * 而不是拿一份过期存档去撞 A4 的 exit 2。 */
+const randInit = (why) => {
+  const o = { stateSize: IA.OBS_N, nActions: IA.ACT_N, hSizes: DEFAULT_HSIZES,
+              lr: 3.5e-5, gamma: 0.99, eps0: 1, epsMin: 0.12, batch: 128,
+              replayCap: 1200000, targetEvery: 1500, learnPerPoint: 2,
+              optimizer: 'adam', layerLr: '1,1,1,3' };
+  const a = IA.createInputAgent(o, mulberry32(opt.seed));
+  const widths = a.getNet().map(l => l.W.length + '×' + l.W[0].length).join(' → ');
+  console.log('  起点权重：随机初始化（新网络）' + why);
+  console.log('  网络形状：' + widths);
+  return { agent: a, shape: widths };
+};
 const loadBase = () => {
-  if(opt.fromRandom){
-    const o = { stateSize: IA.OBS_N, nActions: IA.ACT_N, hSizes: DEFAULT_HSIZES,
-                lr: 3.5e-5, gamma: 0.99, eps0: 1, epsMin: 0.12, batch: 128,
-                replayCap: 1200000, targetEvery: 1500, learnPerPoint: 2,
-                optimizer: 'adam', layerLr: '1,1,1,3' };
-    const a = IA.createInputAgent(o, mulberry32(opt.seed));
-    const widths = a.getNet().map(l => l.W.length + '×' + l.W[0].length).join(' → ');
-    console.log('  起点权重：随机初始化（新网络）' + (opt.save ? '' : ''));
-    console.log('  网络形状：' + widths);
-    return { agent: a, shape: widths };
+  if(opt.fromRandom) return randInit('');
+  if(opt.fromAuto || opt.from === 'auto'){
+    const hit = resolveAutoFrom();
+    if(hit){
+      console.log('  起点权重（--from auto）：' + path.relative(ROOT, hit.path).replace(/\\/g, '/'));
+      opt.from = hit.path;   // 后续日志/遥测/索引里报真实文件，别留 'auto' 这个占位
+      return loadWeight(hit.path, '起点权重');
+    }
+    console.warn('  ⚠ --from auto：找不到任何形状兼容的存档（' + IA.ACT_N + ' 动作 / ' +
+                 DEFAULT_HSIZES.join('-') + '），退回随机初始化。');
+    console.warn('    要从零训练这是正常的；要续训请显式给一份兼容权重的路径（--from <file>）。');
+    opt.fromRandom = true;
+    opt.from = '(random)';   // 下游日志/遥测别报一个解析不出来的 'auto'
+    return randInit('');
   }
   return loadWeight(opt.from, '起点权重');
 };
@@ -1119,8 +1218,28 @@ const doneBase = {
   ckpts:CIdx.checks.length, ckptDir:rel(CKPT_DIR), ckptIdx:rel(IDX_PATH)
 };
 if(adopt){
+  /* 写盘前断言形状。这份文件是下一次 --from auto 的首选起点，也是实机烘焙的源，
+   * 一旦写歪（net 被动过 / --hsizes 与建网不一致），后面每一次续训都会 exit 2，
+   * 而且要等到下一个人跑起来才发现。宁可现在炸。 */
+  const sNet = agent.getNet();
+  const sBad = [];
+  const ser = agent.serialize();
+  if(agent.nActions !== IA.ACT_N) sBad.push('nActions=' + agent.nActions + ' ≠ ' + IA.ACT_N);
+  if(sNet[0].W[0].length !== IA.OBS_N) sBad.push('输入维=' + sNet[0].W[0].length + ' ≠ ' + IA.OBS_N);
+  const sHs = sNet.slice(0, -1).map(l => l.W.length);
+  if(sHs.join('/') !== DEFAULT_HSIZES.join('/'))
+    sBad.push('隐藏层=' + sHs.join('/') + ' ≠ ' + DEFAULT_HSIZES.join('/'));
+  try{
+    const ro = JSON.parse(ser);
+    if(ro.nActions !== IA.ACT_N) sBad.push('序列化 nActions=' + ro.nActions + ' ≠ ' + IA.ACT_N);
+  }catch(e){ sBad.push('serialize() 产出不是合法 JSON'); }
+  if(sBad.length){
+    console.error('❌ 拒绝写入形状不合法的权重：' + opt.save);
+    for(const b of sBad) console.error('    ' + b);
+    process.exit(3);
+  }
   fs.mkdirSync(path.dirname(opt.save), { recursive: true });
-  fs.writeFileSync(opt.save, agent.serialize(), 'utf8');
+  fs.writeFileSync(opt.save, ser, 'utf8');
   const relSave = rel(opt.save);
   console.log('✅ 采纳：已保存 ' + relSave +
               '（vs ' + opt.end + ' ' + (nMax * 100).toFixed(1) + '% ← 基线 ' + (baseMax * 100).toFixed(1) + '%）');

@@ -130,6 +130,32 @@ python tools/i18n_audit.py --strict   # exit 1 on any residual (for CI once clea
 
 Warn mode by default — it cannot see language ternaries, so it over-reports. The authoritative check is a browser sweep in EN mode (see `docs/reports/plan-2026-09-28-i18n-en.md` for the page checklist).
 
+## Posters (docs/posters/)
+
+Poster HTML sources live in `docs/posters/` (canvas 1240×1754 = A4 @150dpi ratio, or 1754×1240 landscape). House style is the「大字版」skeleton of `event-poster-2026-shezhan-portrait.html`: serif giant Chinese title (Noto Serif SC — **do not** swap in ZCOOL QingKe HuangYou, the 社长 rejected it), black/white + cool blue-grey hairlines, no colour, at most two solid black blocks.
+
+**Every poster change MUST end with a two-shot export** — designing is not done until the PNGs exist, same as content edits needing `sync_content.py`:
+
+```bash
+# serve the repo root (Chrome headless cannot open file://)
+python -m http.server 8767 --bind 127.0.0.1
+
+# A4 @300dpi (2480×3508) and @600dpi (4960×7016) → gitignored .poster-preview/
+chrome --headless=old --disable-gpu --no-sandbox --hide-scrollbars ^
+  --user-data-dir=%TEMP%/poster-export-a --force-device-scale-factor=2 ^
+  --window-size=1240,1754 --virtual-time-budget=25000 ^
+  --screenshot=.poster-preview/<name>-300dpi.png ^
+  http://127.0.0.1:8767/docs/posters/<name>.html
+# then repeat with --force-device-scale-factor=4 → <name>-600dpi.png
+```
+
+Gotchas that cost real time:
+- Use a **fresh `--user-data-dir` per run** and **do not** pass `-WindowStyle Hidden` to `Start-Process` — Chrome silently writes no PNG.
+- Use `--headless=old`, not `=new` (=new has intermittently produced no file here).
+- `--virtual-time-budget=25000` is needed or Google Fonts (Noto Serif SC / Poppins) don't finish loading and you get fallback-font art.
+- Re-verify the canvas actually fits after any copy change: `document.querySelector('.poster').scrollHeight <= clientHeight` in the browser, and eyeball the exported PNG. Copy edits silently overflow the fixed 1754px canvas and get clipped.
+- `.poster-preview/` is gitignored — exports stay local, only the HTML source is committed.
+
 ## File structure quick reference
 
 | Path | Purpose |

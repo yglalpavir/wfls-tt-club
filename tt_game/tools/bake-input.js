@@ -1,26 +1,42 @@
 /* bake-input.js：把某份输入级 DQN 权重烘焙进 js/input-weights.js（浏览器直接用）
- * 用法：node tools/bake-input.js <src.json> [evalHell] [evalDefault] [opp标签] [ladderLive] [simEval]
+ * 用法：node tools/bake-input.js <src.json> [evalHell] [evalDefault] [opp标签] [ladderLive] [simEval] [--force]
+ * src.json **必填**。曾经这里是可选的、默认 data/input-ai.json —— 那份是 238 动作的
+ * 旧网，于是 `node tools/bake-input.js`（不带参数）会把一份实机加载不起来的垃圾权重
+ * 直接盖掉 js/input-weights.js，还把 eval 胜率静默写成 0。烘焙是不可逆动作
+ * （实机懒加载的就是这个文件），所以从「忘了传参数」升级为硬报错。
  * src.json 需为输入级 agent 存档（{o, w} 或 {o, net}）
  *   evalHell / evalDefault：**实机管线**实测胜率（0~1），写进 INPUT_AI_META 供页面展示。
  *     必须是实机值 —— 这两个数字是玩家唯一能看到的胜率，写仿真值等于对外宣称
  *     一个游戏里不存在的水平（线上那份曾写 evalHell:0.75 / 实机 2.4%）。
  *     由 _finalize-12h.js 从 tools/live-match.js 的实测结果传入。
+ *     不传 = 写 0，只适合调试，正式烘焙必须传。
  *   opp 标签：对手来源说明，默认 'hell'；课程续训产物传 'ladder'
  *   ladderLive：可选 JSON 字符串，实机管线逐档实测值（留痕，便于日后查 sim/live 岔开）
  *   simEval：可选 JSON 字符串，同一份权重的仿真值，仅作对照
- * nActions / 网络形状一律从权重本身推断，避免硬编码把 238 与 952 动作网搞混。 */
+ *   --force：形状与当前 input-agent.js 对不上时仍然烘焙（明知故犯，得自己负责）
+ * nActions / 网络形状一律从权重本身推断，避免硬编码把 238 与 952 动作网搞混，
+ * 再与 input-agent.js 的 ACT_N / OBS_N / HSIZES 对账——对不上直接 exit 2。 */
 'use strict';
 const fs = require('fs');
 const path = require('path');
-const src = process.argv[2] || path.join(__dirname, '..', 'data', 'input-ai.json');
-const evH = process.argv[3] != null ? parseFloat(process.argv[3]) : 0;
-const evD = process.argv[4] != null ? parseFloat(process.argv[4]) : 0;
-const opp = process.argv[5] || 'hell';
+const IA = require(path.join(__dirname, '..', 'js', 'input-agent.js'));
+const argv = process.argv.slice(2).filter(a => a !== '--force');
+const force = process.argv.slice(2).indexOf('--force') >= 0;
+if(!argv.length){
+  console.error('用法：node tools/bake-input.js <src.json> [evalHell] [evalDefault] [opp标签] [ladderLive] [simEval] [--force]');
+  console.error('  src 必填——烘焙会直接覆盖实机在用的 js/input-weights.js，不接受默认值。');
+  process.exit(2);
+}
+const src = path.resolve(argv[0]);
+if(!fs.existsSync(src)){ console.error('权重文件不存在：' + src); process.exit(2); }
+const evH = argv[2] != null ? parseFloat(argv[2]) : 0;
+const evD = argv[3] != null ? parseFloat(argv[3]) : 0;
+const opp = argv[4] || 'hell';
 /* 实机 / 仿真对照都是可选的；传了就记，解析失败不致命（不能因为留痕字段
  * 坏掉就整个烘焙失败 —— 权重本身才是要紧的）。 */
 function parseOpt(s, fallback){ if(!s) return fallback; try { return JSON.parse(s); } catch(e){ return fallback; } }
-const ladderLive = parseOpt(process.argv[6], null);
-const simEval = parseOpt(process.argv[7], null);
+const ladderLive = parseOpt(argv[5], null);
+const simEval = parseOpt(argv[6], null);
 const b = JSON.parse(fs.readFileSync(src, 'utf8'));
 const net = b.w || b.net;
 /* 层数不再硬编码 4：网络可以加深（2026-10-02 起是 88→256→384→256→952，仍是 4 层，
@@ -43,6 +59,24 @@ const nActions = (Array.isArray(last) ? last.length : (last.W && last.W.length))
 if(!nActions){ console.error('无法推断动作数：' + src); process.exit(1); }
 const inDim = shape[0][1];
 const hSizes = [shape[0][0], shape[1][0], shape[2][0]];
+/* 与当前 input-agent.js 对账。实机 tt-player.js 走的就是 ACT_N 的解码器，
+ * 烘一份 238/952 动作的旧网进去 = 游戏里「鼠标上的tt玩家」静默退回普通 AI，
+ * 而 js/input-weights.js 看起来一切正常。烘焙是不可逆的，先在这里拦住。 */
+const bad = [];
+if(nActions !== IA.ACT_N) bad.push('nActions=' + nActions + ' ≠ 当前 ACT_N=' + IA.ACT_N);
+if(inDim !== IA.OBS_N) bad.push('输入维=' + inDim + ' ≠ 当前 OBS_N=' + IA.OBS_N);
+if(hSizes.join('/') !== IA.HSIZES.join('/'))
+  bad.push('隐藏层=' + hSizes.join('/') + ' ≠ 当前 HSIZES=' + IA.HSIZES.join('/'));
+if(bad.length && !force){
+  console.error('❌ 拒绝烘焙：权重形状与实机解码器不兼容');
+  for(const b of bad) console.error('    ' + b);
+  console.error('    实机 tt-player.js 用的是 ' + IA.ACT_N + ' 动作 / ' + IA.OBS_N +
+                ' 维输入的解码器，烘进去只会被静默丢弃。');
+  console.error('    确实要烘就加 --force（自己负责）。');
+  process.exit(2);
+}
+if(bad.length)
+  console.warn('⚠ --force：明知形状不兼容仍烘焙（' + bad.join('；') + '）');
 const trainedAt = new Date().toISOString().slice(0, 10);
 const meta = {
   version: 1,

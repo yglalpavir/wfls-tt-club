@@ -1,6 +1,7 @@
 /* =====================================================================
  *  tt-player.js — 「鼠标上的tt玩家」对战模型
- *  · 把 tools/train-input.js 训练出的"输入级 DQN"（记 鼠标X/鼠标Y/Ctrl
+ *  · 把输入级 DQN（tools/train-input3.js 训练、tools/bake-input.js 烘焙进
+ *    js/input-weights.js；记 鼠标X/鼠标Y/Ctrl
  *    三个原始输入）直接搬进实机，作为 AI 侧对手——
  *    与训练环境 input-sim.js 100% 同款管线：
  *      15Hz 决策 → encodeObs(88维) → bestAction → decode(tx,my,ctrl)

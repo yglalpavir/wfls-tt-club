@@ -1,0 +1,106 @@
+{
+  "run": "input3-hell12h3",
+  "at": "2026-10-11T14:39:11.817Z",
+  "games": 30,
+  "seed": "20261004",
+  "tol": 8,
+  "top": "hell",
+  "topN": 3,
+  "distinctWrites": 17,
+  "dupCheckpoints": 2,
+  "candidates": [
+    {
+      "file": "best-002250.json",
+      "ep": 2250,
+      "simScore": 0.24582500000000002,
+      "liveScore": 0.134,
+      "live": {
+        "default": 0.386,
+        "hell": 0.05,
+        "grandslam": 0.364
+      },
+      "worstDelta": -29.9
+    },
+    {
+      "file": "ckpt-009750.json",
+      "ep": 9750,
+      "simScore": 0.25830000000000003,
+      "liveScore": 0.10025,
+      "live": {
+        "default": 0.32,
+        "hell": 0.027000000000000003,
+        "grandslam": 0.314
+      },
+      "worstDelta": -22.7
+    },
+    {
+      "file": "ckpt-009500.json",
+      "ep": 9500,
+      "simScore": 0.266675,
+      "liveScore": 0.0795,
+      "live": {
+        "default": 0.228,
+        "hell": 0.03,
+        "grandslam": 0.20600000000000002
+      },
+      "worstDelta": -43.2
+    }
+  ],
+  "chosen": {
+    "file": "best-002250.json",
+    "ep": 2250,
+    "simScore": 0.24582500000000002,
+    "liveScore": 0.134
+  },
+  "bestEp": 2250,
+  "bestSimScore": 0.2458,
+  "candidate": {
+    "live": {
+      "default": 0.386,
+      "hell": 0.05,
+      "grandslam": 0.364
+    },
+    "sim": {
+      "default": 0.645,
+      "hell": 0.12,
+      "grandslam": 0.6629999999999999
+    },
+    "delta": {
+      "default": -26,
+      "hell": -7,
+      "grandslam": -29.9
+    },
+    "worstDelta": -29.9
+  },
+  "baseline": {
+    "note": "游戏**当前**加载的那份权重（js/input-weights.js ← data/checkpoints/input3-12h/ckpt-008500.json，2026-10-06 已烘焙）在实机管线上的表现。input3-hell12h 收尾时与候选权重同种子配对比较。旧基线（input3-v3/ckpt-003600）归档在 baseline-live.v3-archive.json。",
+    "at": "2026-10-06T00:00:55.122Z",
+    "games": 30,
+    "seed": "20261004",
+    "top": "grandslam",
+    "weights": "js/input-weights.js",
+    "srcWeights": "data/checkpoints/input3-12h/ckpt-008500.json",
+    "live": {
+      "default": 0.354,
+      "hell": 0.11699999999999999,
+      "grandslam": 0.354
+    },
+    "sim": {
+      "default": 0.607,
+      "hell": 0.16,
+      "grandslam": 0.605
+    },
+    "delta": {
+      "default": -25.3,
+      "hell": -4.4,
+      "grandslam": -25.2
+    },
+    "worstDelta": -25.3,
+    "weighted": 0.2829
+  },
+  "gates": {
+    "improved": false,
+    "bakeAnyway": false
+  },
+  "passed": false
+}

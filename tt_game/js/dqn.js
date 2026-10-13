@@ -2,9 +2,13 @@
  *  dqn.js — 深度强化学习核心（纯 JS，无依赖，浏览器/Node 共用）
  *  · 小型 MLP 作为 Q 网络（state → 各动作 Q 值）
  *  · DQN agent：ε-greedy 选动作 + 经验回放 + 目标网络 + TD 学习
- *  · 与 simmatch 自对弈环境配合（tools/train-dqn.js 训练）
- *  · 决策：DQN 输出"打法模式"（push/lift/counter/smash/loop/def），
- *    出球物理仍复用 aiDecision（forceMode）→ 混合策略（NN 学战术、物理沿用）
+ *  · 现状（2026-10-13）：本文件只剩 **MLP 原语**（mlpInit / mlpForward / mlpTrain
+ *    / mlpTrainEnh）在用 —— 消费方是 js/input-agent.js 的"输入级"智能体
+ *    （88 维观测 → 1904 动作，训练器 tools/train-input3.js）。
+ *    createDQN()/dqnLoad() 与同文件里的 8 维状态 + 6 模式动作 agent（"决策级"
+ *    那一支，配套 tools/train-dqn.js + js/dqn-weights.js）已于同日删除：
+ *    那条路产出的权重从未被 index.html 加载过。
+ *    出球物理复用 SIM.resolveHit（与玩家/AI 同一份），不再有 forceMode 混合策略。
  * ===================================================================== */
 'use strict';
 
