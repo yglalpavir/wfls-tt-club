@@ -77,12 +77,43 @@ set -u
 cd "$(dirname "$0")/.." || exit 1
 mkdir -p data/checkpoints/input3-hell12h5 tools/logs data/.stop
 
+# ★ 2026-10-14 04:05：--games 9000 → 3200，并放宽卡死阈值。
+# 第一轮跑出来的真实节奏（tools/logs/input3-hell12h5.log）：
+#   ep 250 [default] train=76% vsdefault=98.3% vshell=85.0% vsgrandslam=98.3%
+#            best=94.1@0 eps=0.18 剩11h25m  [2084s 训练 + 985s 验证]
+# 一轮 = 3069s ≈ **51 分钟**（训练 250 局 2084s + 三档验证 90 局 985s）。
+# 比第四轮慢一倍多，是因为**这一轮球真的被接住了**：以前 95% 的失球是
+# 「够不到」，球落地极快；现在回合变长 → 每局帧数变多 → TD 更新次数变多。
+#   ⇒ 按 elapsedSec（只算训练）43200s 最多买 20 轮 = 5000 局；
+#     按墙钟 43200s 只买得到 **14 轮 = 3500 局**。
+#
+# 而课程边界是 `phase.to * opt.games`（train-input3.js L166/L979）。
+# --games 9000 ⇒ default 段 = 前 2250 局 = **前 9 轮 ≈ 7.6 小时**；
+# default 已在 98.3%，在这一档再烧 7.6 小时学不到东西，真正要修的地狱
+# 只剩 4.4 小时。这不是训练强度问题，是**预算分配问题**。
+#   ⇒ --games 3200 = 12.8 轮，约 11.1 小时墙钟，训练器自己收尾：
+#       default 0-800（3.2 轮，护栏）→ hell 800-2240（5.8 轮，主战场）
+#       → grandslam 2240-2720（1.9 轮）→ hell 2720-3200（1.9 轮）
+#     地狱累计 60% ≈ 7.7 小时，其中约 3/4 在主战场而不是尾段。
+#
+# 同一批数据还暴露了守护的一个误判窗口：卡死判定数的是
+# 「index.json 的 elapsedSec 连续 N 次轮询没变」，而 index.json
+# **每个检查点（= 每轮）才重写一次**。一轮 51 分钟 > 旧的 SUP_STALL 1800s
+# （30 分钟），于是**一个健康的训练器会被判成卡死并被杀**（首轮实测：
+# 04:11 就会触发）。
+#   ⇒ SUP_BOOT 3600（启动豁免 60 分钟）+ SUP_STALL 5400（静默 90 分钟才判死），
+#     都严格大于实测的一轮耗时 3069s。
+
+# 卡死阈值必须大于一轮实测耗时，否则会把健康的训练器杀掉。
+export SUP_BOOT="${SUP_BOOT:-3600}"
+export SUP_STALL="${SUP_STALL:-5400}"
+
 exec bash tools/_supervise.sh input3-hell12h5 12 \
   data/checkpoints/input3-12h/ckpt-008500.json \
   --run-name input3-hell12h5 \
   --end hell \
   --sel-ref hell \
-  --games 9000 \
+  --games 3200 \
   --step 250 \
   --eval 30 \
   --vallevels default,hell,grandslam \

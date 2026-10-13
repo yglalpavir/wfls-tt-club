@@ -40,6 +40,12 @@ function Say($m){
 }
 
 Say "看门狗启动：run=$Run 预算=${Hours}h 轮询=${PollSec}s bash=$Bash"
+# 自己把 PID 写进文件：停看门狗只能按 PID 停。
+# ★ 不要用 `Get-CimInstance … Where-Object { $_.CommandLine -like '*_watchdog*' }`
+#   去匹配再 Stop-Process —— 那会把调用它的宿主 shell 自己也匹配上并杀掉
+#   （实测退出码 255、无输出、命令直接消失）。按 PID 文件停是唯一安全的做法。
+$Host.UI.RawUI.WindowTitle = "wfls-watchdog-$Run"
+Set-Content -Path (Join-Path $Root "tools\logs\$Run.watchdog.pid") -Value $PID -Encoding ascii
 
 while ($true) {
   Start-Sleep -Seconds $PollSec

@@ -1,0 +1,29 @@
+{
+  "note": "【归档·已作废】2026-10-06 实测、且**不含** lateralPrior 的历史基线。2026-10-14 第 5 轮给 js/input-agent.js 加了 lateralPrior（默认开）后，同一份权重（data/checkpoints/input3-12h/ckpt-008500.json）的实机表现变成 default 88.6 / hell 38.1 / grandslam 90.5（见 baseline-live.json）。拿本文件当闸门基线会让闸门 A 必然通过 —— 已停用。",
+  "archivedAt": "2026-10-14",
+  "supersededBy": "tools/logs/baseline-live.json",
+  "at": "2026-10-06T00:00:55.122Z",
+  "games": 30,
+  "seed": "20261004",
+  "top": "grandslam",
+  "weights": "js/input-weights.js",
+  "srcWeights": "data/checkpoints/input3-12h/ckpt-008500.json",
+  "code": "lateralPrior=off（当时 js/input-agent.js 里还没有这个机制）",
+  "live": {
+    "default": 0.354,
+    "hell": 0.11699999999999999,
+    "grandslam": 0.354
+  },
+  "sim": {
+    "default": 0.607,
+    "hell": 0.16,
+    "grandslam": 0.605
+  },
+  "delta": {
+    "default": -25.3,
+    "hell": -4.4,
+    "grandslam": -25.2
+  },
+  "worstDelta": -25.3,
+  "weighted": 0.2829
+}
