@@ -1146,6 +1146,25 @@ for(let g = R.ep0; g < opt.games && !budgetExhausted && !stopRequested; g++){ st
   }
 }
 
+/* ---- 正常收尾：循环跑完（--games 用尽）也必须落最后一个检查点 ----
+ * 检查点只在 (g+1) % opt.ckpt === 0 的**轮次边界**写。若 --games 不是 --ckpt 的整数倍，
+ * 最后一个边界永远到不了，循环会带着最后 N 回合的训练直接退出 ——
+ * index.json 的 elapsedSec 不落盘，监督器读到**冻结**的 elapsedSec，
+ * 判定「预算没用完」再拉一次 trainer，于是无限空转。
+ * 实测（input3-hell12h5，--games 3200 / --ckpt 250 ⇒ 差 50 回合）：
+ *   07:36 → 21:20 连转 21 次，每次真训约 199 回合 / 14 分钟，然后原样退出；
+ *   14 小时机时空转，ep 永远停在 3000。--no-save 下产物无损，但纯烧机时。
+ * 暂停分支本来就有 writeCheckpoint(stopEp)，正常结束这条路径原来没有 —— 补上。 */
+const finishEp = Math.max(stopEp, R.ep0);
+if(!opt.noCkpt && finishEp > lastCkpt){
+  writeCheckpoint(finishEp); lastCkpt = finishEp;
+  console.log('  ●收尾 ckpt ep ' + finishEp + ' → ' + rel(IDX_PATH) +
+    '（games=' + opt.games + ' 非 ckpt=' + opt.ckpt + ' 的整数倍，末尾这' +
+    (finishEp - (Math.floor(finishEp / opt.ckpt) * opt.ckpt)) + ' 回合已在轮次边界之外）');
+  T.tick({ t:'ckpt-final', ep:finishEp, best:+bestScore.toFixed(4), bestEp:bestEp,
+           elapsedSec:+elapsed().toFixed(1), reason:'games-not-multiple-of-ckpt' });
+}
+
 /* ---- 暂停收尾：落检查点即退，不跑最终评估、不碰生产权重 ---- */
 if(stopRequested){
   try{ if(fs.existsSync(STOP_FLAG)) fs.unlinkSync(STOP_FLAG); }catch(e){}

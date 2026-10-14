@@ -231,6 +231,8 @@ stop_child(){
 
 attempt=0
 SUP_T0=$SECONDS
+# 上一次 attempt 结束时的 elapsedSec；-1 表示"还没有上一次"（首次启动不算无进展）
+ELAPSED_PREV=-1
 # 用户叫停整个批次：先给训练器写它认的哨兵（让它在下一个回合边界优雅落盘），
 # 再等它自己退；守护自己则直接 break。
 user_stop(){
@@ -258,6 +260,22 @@ while :; do
     note "  收尾，不再重启"
     break
   fi
+
+  # ★ 无进展守卫：训练器**干净退出（code=0）但 elapsedSec 一个字都没涨**。
+  #   这不是崩溃，是"跑完了但没把结果落盘"，再拉一次 trainer 只会重复同一件事。
+  #   实测（input3-hell12h5，--games 3200 不是 --ckpt 250 的整数倍，
+  #   末尾 200 回合落在所有轮次边界之外 → 循环结束时不写检查点）：
+  #   07:36→21:20 连转 21 次，每次真训约 199 回合 / 14 分钟后原样退出，
+  #   elapsedSec 冻在 14952s、ep 冻在 3000，**14 小时机时空转**。
+  #   代码侧已在 train-input3.js 补了收尾落盘；这里是第二道保险 ——
+  #   就算再出现同类 bug，也只白跑一次，不会白跑一整天。
+  if [ "$code" = "0" ] && [ "$ELAPSED_PREV" -ge 0 ] && [ "$ELAPSED" -le "$ELAPSED_PREV" ]; then
+    note "✗ 训练器干净退出但 elapsedSec 未推进（${ELAPSED_PREV}s → ${ELAPSED}s）：判定为收尾落盘缺失，不再重启"
+    note "  收尾。剩余预算 $((BUDGET_SEC - ELAPSED))s 未用完属正常 —— 训练已跑到 --games 尽头。"
+    note "  若这不是预期，检查 --games 是否为 --ckpt 的整数倍（train-input3.js 会在轮次边界外不落盘）。"
+    break
+  fi
+  ELAPSED_PREV=$ELAPSED
 
   attempt=$((attempt + 1))
   if [ "$attempt" -gt "$MAX_RESTART" ]; then
