@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>QQ 素材小尺寸对照 · 乒字标 vs 球拍标</title>
+<!--
+  决策辅助页：把两个头像方案按 QQ 真实显示尺寸（资料卡 100px / 群列表 64px / 群成员 40px / 访客卡片 24px）并排铺开
+  QQ 头像在多数位置是圆形裁切（群资料/个人资料卡），方形位置（说说/群列表）为圆角方 —— 已在两个方案里都收进内切圆
+  本页只用于选型，不参与发布；导出：--window-size=1180,452 --force-device-scale-factor=2
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1180px; height: 452px; padding: 34px 40px;
+    font-family: 'Noto Sans SC', sans-serif; background: #eef2f7; color: #1a1a2e;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  h1 { font-size: 24px; font-weight: 700; }
+  .sub { margin-top: 6px; font-size: 15px; color: #5b6b7d; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 22px; }
+  .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 22px 24px 26px; }
+  .card h2 { font-size: 19px; font-weight: 700; margin-bottom: 4px; }
+  .card .note { font-size: 13px; color: #6b7c93; line-height: 1.6; min-height: 42px; }
+  .row { display: flex; align-items: flex-end; gap: 30px; margin-top: 18px; }
+  .cell { text-align: center; }
+  .cell .px { margin-top: 8px; font-size: 12px; color: #8494a8; }
+  .sq { overflow: hidden; border-radius: 18%; box-shadow: 0 4px 14px rgba(0, 0, 0, .16); }
+  .ci { border-radius: 50%; overflow: hidden; box-shadow: 0 4px 14px rgba(0, 0, 0, .16); }
+  .foot { margin-top: 22px; background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 18px 24px; font-size: 14px; color: #4a5568; line-height: 1.8; }
+  .foot b { color: #1a1a2e; }
+</style>
+</head>
+<body>
+  <h1>QQ 号头像选型对照</h1>
+  <div class="sub">两方案同族：品牌蓝渐变场 + 白色主体 + 斜向细线肌理；均收进内切圆，方形裁切与圆形裁切都不丢主体</div>
+
+  <div class="grid">
+    <div class="card">
+      <h2>方案 A ·「乒」字标</h2>
+      <div class="note">Noto Serif SC 900 巨字，与海报房规同一字体。中文语境一眼认社团，缩到 40px 仍是「乒」字。</div>
+      <div class="row">
+        <div class="cell"><div class="sq" style="width:100px;height:100px"><img src="../../.poster-preview/qq/avatar-ping.png" width="100" height="100"></div><div class="px">方形 100px</div></div>
+        <div class="cell"><div class="ci" style="width:100px;height:100px"><img src="../../.poster-preview/qq/avatar-ping.png" width="100" height="100"></div><div class="px">圆形 100px</div></div>
+        <div class="cell"><div class="ci" style="width:64px;height:64px"><img src="../../.poster-preview/qq/avatar-ping.png" width="64" height="64"></div><div class="px">群列表 64px</div></div>
+        <div class="cell"><div class="ci" style="width:40px;height:40px"><img src="../../.poster-preview/qq/avatar-ping.png" width="40" height="40"></div><div class="px">成员 40px</div></div>
+        <div class="cell"><div class="ci" style="width:24px;height:24px"><img src="../../.poster-preview/qq/avatar-ping.png" width="24" height="24"></div><div class="px">24px</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>方案 B · 红胶球拍标</h2>
+      <div class="note">经典红胶 + 黑柄黑边，图形语境零门槛；红是全站唯一彩色，正好当识别锚点。</div>
+      <div class="row">
+        <div class="cell"><div class="sq" style="width:100px;height:100px"><img src="../../.poster-preview/qq/avatar-paddle.png" width="100" height="100"></div><div class="px">方形 100px</div></div>
+        <div class="cell"><div class="ci" style="width:100px;height:100px"><img src="../../.poster-preview/qq/avatar-paddle.png" width="100" height="100"></div><div class="px">圆形 100px</div></div>
+        <div class="cell"><div class="ci" style="width:64px;height:64px"><img src="../../.poster-preview/qq/avatar-paddle.png" width="64" height="64"></div><div class="px">群列表 64px</div></div>
+        <div class="cell"><div class="ci" style="width:40px;height:40px"><img src="../../.poster-preview/qq/avatar-paddle.png" width="40" height="40"></div><div class="px">成员 40px</div></div>
+        <div class="cell"><div class="ci" style="width:24px;height:24px"><img src="../../.poster-preview/qq/avatar-paddle.png" width="24" height="24"></div><div class="px">24px</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <b>上传规格：</b>头像 640×640（导出为 1280×1280，QQ 会按需缩放；群里选 1024×1024 以上更稳）· 空间封面 1280×640。<br>
+    <b>配套封面：</b>与两个头像同族的 1280×640 空间封面（口号黑底横幅 + 社团数据条 + 入群二维码）。<br>
+    <b>换方案：</b>改 <code>docs/qq/avatar-*.html</code> 后按 README 里的三行命令重新导出，不需要改别的文件。
+  </div>
+</body>
+</html>

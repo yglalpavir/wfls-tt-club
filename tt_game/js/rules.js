@@ -177,15 +177,33 @@ function strikeServe(){
   const padPos = (isP ? playerPad : aiPad).group.position;
   const org = SIM.serveOrigin(server, padPos.x, padPos.z);
   const from = { x: org.x, y: org.y, z: org.z };
+  /* ★★ 出球点必须与解算点同一个点。
+   * serveShot 是**从 from 反解速度**的：解出来的速度只对 from 这个出发点成立。
+   * 这里原本只 ball.vel.copy(sv.vel)，从不把球搬到 from —— 球实际从抛球留下的
+   * ball.pos 起飞，而那个 ball.pos 是 main.js#awaitServe 每帧按**当时的拍位**
+   * 摆的（serveOrigin），strikeServe 里又按**击球那一刻的拍位**重算了一遍。
+   * 两次拍位之间的差就是发球落点与解算值的全部误差。
+   * 实测：「鼠标上的tt玩家」发球窗口有 1~1.5s，期间 ttTick 仍按 serveLock 驱动
+   * 虚拟拍收敛到发球动作（padControl），拍位在窗口里继续移动，于是
+   *   postFrom.z 2.065 vs org.z 2.169（差 10cm）、postFrom.x -0.175 vs org.x 0.056（差 23cm）
+   * —— 偏差 0.28m。同一个速度换个出发点就是另一个球：实测同一 velocity
+   * (x -0.082, y 1.88, z -3.18) 因 spin.x 在 -29.4 / -27.2 之间差 7%，
+   * 一记判 ok、一记判 net。
+   * 后果：tt玩家发球大量 g_msg_serve_out / 下网（实机失分 44% 全是发球），
+   * 而验收脚本 live-match.js 跑 input-sim#serveFromPlayer（球落在 srv.from，
+   * 与解算点自洽）永远看不到这个病 —— 这就是「烘培结果与界面不符」的根因。
+   * 训练侧 input-sim#serveFromPlayer 返回 {from,vel,spin} 由调用方把球放在 from，
+   * 这里对齐同一口径。 */
+  ball.pos.set(from.x, from.y, from.z);
   let sv = SIM.serveShot(from, { dir: toward, depth, spinX, sideY, speedMul: sPace });
   // 兜底：若本次旋转组合偶发无解，退回无侧旋/常用深度重试（保证发球总能两跳合法过网）
-  if(!sv){ sv = SIM.serveShot(ball.pos, { dir: toward, depth: 0.5, spinX, sideY: 0 }); }
-  if(!sv){ sv = SIM.serveShot(ball.pos, { dir: toward, depth: 0.35, spinX: 0, sideY: 0 }); }
+  if(!sv){ sv = SIM.serveShot(from, { dir: toward, depth: 0.5, spinX, sideY: 0 }); }
+  if(!sv){ sv = SIM.serveShot(from, { dir: toward, depth: 0.35, spinX: 0, sideY: 0 }); }
   // 最后防线：出球点过于贴边（vx 转向受限）仍可能无解 → 从台面中心打一记中浅无旋发球，绝不崩溃
-  if(!sv){ sv = SIM.serveShot({ x: 0, y: from.y, z: from.z }, { dir: toward, depth: 0.4, spinX: 0, sideY: 0 }); }
+  if(!sv){ ball.pos.x = 0; sv = SIM.serveShot({ x: 0, y: from.y, z: from.z }, { dir: toward, depth: 0.4, spinX: 0, sideY: 0 }); }
   // 再退一步：出球点本身已偏离合法域（球位被上一帧残留/异常状态污染）时，
   // 用保证有解的规范发球位（端线外 0.5m、台面上 5cm）重试
-  if(!sv){ sv = SIM.serveShot({ x: 0, y: TABLE_TOP + 0.05, z: toward < 0 ? TABLE_L/2 + 0.5 : -(TABLE_L/2 + 0.5) }, { dir: toward, depth: 0.4, spinX: 0, sideY: 0 }); }
+  if(!sv){ const fb = { x: 0, y: TABLE_TOP + 0.05, z: toward < 0 ? TABLE_L/2 + 0.5 : -(TABLE_L/2 + 0.5) }; ball.pos.set(fb.x, fb.y, fb.z); sv = SIM.serveShot(fb, { dir: toward, depth: 0.4, spinX: 0, sideY: 0 }); }
   if(!sv){
     // 仍无解：不抛出。历史上此处 sv 为 null 会直接 .copy 抛错，异常从 requestAnimationFrame
     // 冒泡会永久终止整个动画循环——游戏冻在发球帧，且球继续自由下落（曾见 pos.y≈-2795）。

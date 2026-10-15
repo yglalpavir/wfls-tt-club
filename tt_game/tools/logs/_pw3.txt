@@ -1,0 +1,10 @@
+﻿璧风偣鏉冮噸锛歞ata/checkpoints/_bc-chase/prod.json
+缃戠粶瑙勬牸锛歄BS_N=88 ACT_N=1904 HSIZES=[192,256,192]
+璁粌璺緞锛歛dam+clip2+layerlr  lr=0.01  鍒嗗眰lr=[1,1,1,3]
+閲囬泦 1073 鏉＄洃鐫ｅ锛?0 灞€锛?073 娆″喅绛栵紝瀵规墜=default锛?  绀鸿寖 tx锛氬潎鍊?-0.045  鑼冨洿 [-0.79, 0.76]  鍙栧€兼暟 106
+璁粌姹?120 鏉★紙浠?1073 鏉″垎灞傞噰鏍凤級
+  epoch   1/12  argmax 鍛戒腑鐜?5.8%
+  epoch   5/12  argmax 鍛戒腑鐜?1.7%
+  epoch  10/12  argmax 鍛戒腑鐜?3.3%
+  epoch  12/12  argmax 鍛戒腑鐜?3.3%
+宸插啓鍑?data\checkpoints\_bc-chase\warm.json锛?947 KB锛?涓嬩竴姝ワ細node tools/live-match.js --from data/checkpoints/_bc-chase/warm.json --opp hell --games 30 --live-only

@@ -1,0 +1,13 @@
+﻿prior on = true
+bx= -1.2  -> tx= -0.900 my=0.92 ctrl=true
+bx= -0.8  -> tx= -0.791 my=0.46 ctrl=false
+bx= -0.4  -> tx= -0.409 my=0.46 ctrl=false
+bx=  0.0  -> tx= -0.027 my=0.46 ctrl=false
+bx=  0.4  -> tx=  0.409 my=0.46 ctrl=false
+bx=  0.8  -> tx=  0.791 my=0.46 ctrl=false
+bx=  1.2  -> tx=  0.900 my=0.46 ctrl=false
+椋炵鏃?tx= 0.9 (搴斾繚鎸佺綉缁滃師鎰?闈炴嫤鎴?
+--- 鍏虫帀鍏堥獙 ---
+bx= -1.2  -> tx=-0.027
+bx= -0.4  -> tx=-0.136
+bx=  0.8  -> tx=0.900

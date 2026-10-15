@@ -498,12 +498,14 @@ python tools/sync_content.py --check    # 仅校验（含预计新增快照数�
     "endDate": "2026-06-30",
     "snapshotDates": [
       "2026-03-15",
-      "2026-03-31",
-      "2026-04-15"
+      "2026-03-22",
+      "2026-03-29"
     ]
   }
 ]
 ```
+
+俱乐部快照固定为**每周日**：`snapshotDates` = 赛季区间内 `startDate` 之后的所有周日，末尾若 `endDate` 不是周日则补一个 `endDate` 收尾快照（引擎会跳过 `snapshotDate <= startDate` 的条目）。进行中的赛季只排到最近一个已过去的周日。WTT 排名（`wtt_data/*/seasons.json`）沿用各自的月度节奏，不受此约束。
 
 ### `score-log.json` - 比赛记录 + 积分调整
 
@@ -695,6 +697,7 @@ python tools/sync_content.py --check    # 仅校验（含预计新增快照数�
 
 - 编辑 `players.json` 中的 `baseDate`（初始积分基准日）
 - 编辑 `seasons.json` 中的赛季起始/结束日期
+- 快照日期为每周日：新增赛季时按区间内的周日填 `snapshotDates`，进行中的赛季排到最近一个已过去的周日
 
 ### 调整主题色
 

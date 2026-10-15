@@ -1,0 +1,101 @@
+{
+  "run": "_finsmoke",
+  "at": "2026-10-13T20:21:40.874Z",
+  "games": 4,
+  "seed": "20261004",
+  "tol": 8,
+  "top": "hell",
+  "topN": 2,
+  "distinctWrites": 1,
+  "dupCheckpoints": 1,
+  "candidates": [
+    {
+      "file": "ckpt-009800.json",
+      "ep": 9900,
+      "simScore": 0.29055,
+      "liveScore": 0.48924999999999996,
+      "live": {
+        "default": 0.958,
+        "hell": 0.33299999999999996,
+        "grandslam": 0.741
+      },
+      "worstDelta": -54.7
+    }
+  ],
+  "chosen": {
+    "file": "ckpt-009800.json",
+    "ep": 9900,
+    "simScore": 0.29055,
+    "liveScore": 0.48924999999999996
+  },
+  "bestEp": 9900,
+  "bestSimScore": 0.99,
+  "candidate": {
+    "live": {
+      "default": 0.958,
+      "hell": 0.33299999999999996,
+      "grandslam": 0.741
+    },
+    "sim": {
+      "default": 1,
+      "hell": 0.88,
+      "grandslam": 0.9570000000000001
+    },
+    "delta": {
+      "default": -4.2,
+      "hell": -54.7,
+      "grandslam": -21.6
+    },
+    "worstDelta": -54.7
+  },
+  "baseline": {
+    "note": "游戏**当前**加载的那份权重在**当前代码**上的表现，含 sim/live/delta 三档完整口径（2026-10-14 第 5 轮用 tools/_refresh-baseline.js 重测）。闸门 C1 读 delta.worstDelta，缺这一项会让 C1 变成「|Δ| ≤ 3pp」而永远不通过。",
+    "at": "2026-10-13T20:19:38.492Z",
+    "games": 30,
+    "seed": "20261004",
+    "top": "hell",
+    "weights": "js/input-weights.js",
+    "srcWeights": "data/checkpoints/input3-12h/ckpt-008500.json",
+    "code": "lateralPrior=on（js/input-agent.js#bestAction；回滚开关 agent.setLateralPrior(false)）",
+    "live": {
+      "default": 0.8859999999999999,
+      "hell": 0.381,
+      "grandslam": 0.905
+    },
+    "liveOld": {
+      "default": 0.354,
+      "hell": 0.117,
+      "grandslam": 0.354
+    },
+    "sim": {
+      "default": 0.985,
+      "hell": 0.873,
+      "grandslam": 0.971
+    },
+    "simNote": "sim 是 train-input3.js 的 3-局冒烟采样，饱和到接近 100%，已失去分辨力（选优基线分 94.1、天花板 100）。sim 只能用来排序候选，判达标一律走实机。",
+    "delta": {
+      "default": -9.9,
+      "hell": -49.2,
+      "grandslam": -6.6
+    },
+    "deltaNote": "delta 是「同权重 sim − live」，本轮 sim 采样只有 3 局，不足以算差值，留空。",
+    "worstDelta": -49.2,
+    "weighted": 0.5072,
+    "lossReasons": {
+      "noreach": 90,
+      "out": 51,
+      "serve": 25,
+      "net": 6,
+      "double": 0,
+      "other": 0,
+      "total": 172
+    },
+    "lossNote": "lateralPrior 之后，失球主因从「够不到 95~99%」变成 noreach 52.3% / 出界 33.1% / 发球 14.5%。够不到仍然是第一大项 —— 还有空间给 TD 训。"
+  },
+  "gates": {
+    "improved": false,
+    "bakeAnyway": false
+  },
+  "baseDeltaMissing": false,
+  "passed": false
+}

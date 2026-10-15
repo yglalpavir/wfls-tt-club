@@ -1,0 +1,6 @@
+﻿pairs=657
+raw keys=x,y,z,vx,vy,vz,sx,sy,px,pz,svx,svz,tx,my,bounced
+before q[act]=-0.0658 argmax=349 bestAction(raw)=349
+after  q[act]=-0.0001 argmax=1088 bestAction(raw)=1088 act=920
+hit=6.1%
+st len=88 finite=true
