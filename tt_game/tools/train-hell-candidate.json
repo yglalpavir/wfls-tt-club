@@ -1,8 +1,8 @@
 {
   "vec": [
-    3.3481713013757988,
-    0,
-    0.9843173166736962,
+    2.8,
+    0.03,
+    2.6,
     0.95,
     10,
     0.9637732031999241,
@@ -43,15 +43,15 @@
     0.7653707568770075,
     6.744683881724924
   ],
-  "fitness": 0.834,
-  "bestGen": 794,
-  "seed": 20260913,
-  "gens": 1000,
-  "vsDefault": 0.9168,
-  "vsDefaultOld": 0.7857,
-  "vsPlayer": 0.9272,
-  "vsPlayerOld": 0.9709,
-  "vsOldHell": 0.8738,
+  "fitness": 0.6923,
+  "bestGen": 0,
+  "seed": 20260810,
+  "gens": 2,
+  "vsDefault": 0.8691,
+  "vsDefaultOld": 0.8632,
+  "vsPlayer": 0.9168,
+  "vsPlayerOld": 0.9258,
+  "vsOldHell": 0.5021,
   "adopted": false,
-  "trainedAt": "2026-09-13T07:47:54.771Z"
+  "trainedAt": "2026-10-16T14:45:07.630Z"
 }

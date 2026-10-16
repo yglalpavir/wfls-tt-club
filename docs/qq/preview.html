@@ -1,72 +1,105 @@
 <!DOCTYPE html>
+<!-- Local review sheet for the QQ avatar candidates.
+     It renders the exported PNGs (.poster-preview/qq/avatar-*.png, gitignored) both as a
+     rounded square and as the round crop QQ actually shows, at 100 / 64 / 40 / 24 px —
+     the sizes that decide whether the mark and the wordmark survive. Run the export in
+     README section 8 first, otherwise every image is a broken tile.
+     Export: --window-size=1180,1220 -> .poster-preview/qq/preview.png -->
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<title>QQ 素材小尺寸对照 · 乒字标 vs 球拍标</title>
-<!--
-  决策辅助页：把两个头像方案按 QQ 真实显示尺寸（资料卡 100px / 群列表 64px / 群成员 40px / 访客卡片 24px）并排铺开
-  QQ 头像在多数位置是圆形裁切（群资料/个人资料卡），方形位置（说说/群列表）为圆角方 —— 已在两个方案里都收进内切圆
-  本页只用于选型，不参与发布；导出：--window-size=1180,452 --force-device-scale-factor=2
--->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+<title>QQ 头像对照</title>
 <style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    width: 1180px; height: 452px; padding: 34px 40px;
-    font-family: 'Noto Sans SC', sans-serif; background: #eef2f7; color: #1a1a2e;
-    -webkit-print-color-adjust: exact; print-color-adjust: exact;
-  }
-  h1 { font-size: 24px; font-weight: 700; }
-  .sub { margin-top: 6px; font-size: 15px; color: #5b6b7d; }
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 22px; }
-  .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 22px 24px 26px; }
-  .card h2 { font-size: 19px; font-weight: 700; margin-bottom: 4px; }
-  .card .note { font-size: 13px; color: #6b7c93; line-height: 1.6; min-height: 42px; }
-  .row { display: flex; align-items: flex-end; gap: 30px; margin-top: 18px; }
-  .cell { text-align: center; }
-  .cell .px { margin-top: 8px; font-size: 12px; color: #8494a8; }
-  .sq { overflow: hidden; border-radius: 18%; box-shadow: 0 4px 14px rgba(0, 0, 0, .16); }
-  .ci { border-radius: 50%; overflow: hidden; box-shadow: 0 4px 14px rgba(0, 0, 0, .16); }
-  .foot { margin-top: 22px; background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 18px 24px; font-size: 14px; color: #4a5568; line-height: 1.8; }
-  .foot b { color: #1a1a2e; }
+  :root { --line:#d8e2ee; --ink:#101828; --dim:#6b7c93; --blue:#2f7fe6; }
+  html, body { margin:0; padding:0; }
+  body { width:1180px; height:1220px; box-sizing:border-box; background:#f6f9fc; color:var(--ink);
+         padding:26px 30px; font-family:"Poppins","Noto Sans SC","Microsoft YaHei",sans-serif; }
+  h1 { font-size:20px; margin:0 0 7px; letter-spacing:.4px; }
+  .sub { font-size:12.5px; color:var(--dim); margin:0 0 18px; line-height:1.6; }
+  table { border-collapse:collapse; width:100%; background:#fff; border:1px solid var(--line); }
+  th, td { border-bottom:1px solid var(--line); padding:11px 16px; text-align:left; vertical-align:middle; }
+  tr:last-child td { border-bottom:0; }
+  th { font-size:11px; color:var(--dim); font-weight:700; letter-spacing:.5px; }
+  td.name { width:280px; font-size:14px; font-weight:600; }
+  td.name .desc { display:block; font-weight:400; font-size:11.5px; color:var(--dim); margin-top:5px; line-height:1.55; }
+  td.name .badge { display:inline-block; font-size:10px; font-weight:700; color:#fff; background:var(--blue);
+                   border-radius:999px; padding:2px 8px; margin-left:7px; vertical-align:2px; }
+  td.name .badge.grey { background:#9aa8ba; }
+  .crops { display:flex; align-items:flex-end; gap:30px; }
+  figure { margin:0; text-align:center; }
+  figure img { display:block; border-radius:50%; box-shadow:0 0 0 1px rgba(16,24,40,.10); }
+  figure.sq img { border-radius:30%; }
+  figcaption { font-size:10.5px; color:var(--dim); margin-top:6px; }
+  figure.sq figcaption { color:var(--ink); font-weight:600; }
 </style>
 </head>
 <body>
-  <h1>QQ 号头像选型对照</h1>
-  <div class="sub">两方案同族：品牌蓝渐变场 + 白色主体 + 斜向细线肌理；均收进内切圆，方形裁切与圆形裁切都不丢主体</div>
-
-  <div class="grid">
-    <div class="card">
-      <h2>方案 A ·「乒」字标</h2>
-      <div class="note">Noto Serif SC 900 巨字，与海报房规同一字体。中文语境一眼认社团，缩到 40px 仍是「乒」字。</div>
-      <div class="row">
-        <div class="cell"><div class="sq" style="width:100px;height:100px"><img src="../../.poster-preview/qq/avatar-ping.png" width="100" height="100"></div><div class="px">方形 100px</div></div>
-        <div class="cell"><div class="ci" style="width:100px;height:100px"><img src="../../.poster-preview/qq/avatar-ping.png" width="100" height="100"></div><div class="px">圆形 100px</div></div>
-        <div class="cell"><div class="ci" style="width:64px;height:64px"><img src="../../.poster-preview/qq/avatar-ping.png" width="64" height="64"></div><div class="px">群列表 64px</div></div>
-        <div class="cell"><div class="ci" style="width:40px;height:40px"><img src="../../.poster-preview/qq/avatar-ping.png" width="40" height="40"></div><div class="px">成员 40px</div></div>
-        <div class="cell"><div class="ci" style="width:24px;height:24px"><img src="../../.poster-preview/qq/avatar-ping.png" width="24" height="24"></div><div class="px">24px</div></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <h2>方案 B · 红胶球拍标</h2>
-      <div class="note">经典红胶 + 黑柄黑边，图形语境零门槛；红是全站唯一彩色，正好当识别锚点。</div>
-      <div class="row">
-        <div class="cell"><div class="sq" style="width:100px;height:100px"><img src="../../.poster-preview/qq/avatar-paddle.png" width="100" height="100"></div><div class="px">方形 100px</div></div>
-        <div class="cell"><div class="ci" style="width:100px;height:100px"><img src="../../.poster-preview/qq/avatar-paddle.png" width="100" height="100"></div><div class="px">圆形 100px</div></div>
-        <div class="cell"><div class="ci" style="width:64px;height:64px"><img src="../../.poster-preview/qq/avatar-paddle.png" width="64" height="64"></div><div class="px">群列表 64px</div></div>
-        <div class="cell"><div class="ci" style="width:40px;height:40px"><img src="../../.poster-preview/qq/avatar-paddle.png" width="40" height="40"></div><div class="px">成员 40px</div></div>
-        <div class="cell"><div class="ci" style="width:24px;height:24px"><img src="../../.poster-preview/qq/avatar-paddle.png" width="24" height="24"></div><div class="px">24px</div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="foot">
-    <b>上传规格：</b>头像 640×640（导出为 1280×1280，QQ 会按需缩放；群里选 1024×1024 以上更稳）· 空间封面 1280×640。<br>
-    <b>配套封面：</b>与两个头像同族的 1280×640 空间封面（口号黑底横幅 + 社团数据条 + 入群二维码）。<br>
-    <b>换方案：</b>改 <code>docs/qq/avatar-*.html</code> 后按 README 里的三行命令重新导出，不需要改别的文件。
-  </div>
+  <h1>QQ 头像对照 · 武外乒乓球社团</h1>
+  <p class="sub">每一行都是同一张 1280×1280 导出图：最左是方形（群列表的圆角方裁切），右边四格是 QQ 资料卡 / 评论区的圆形裁切。前三行比的是「字标怎么加」，中间两行比底色，最后一行是「图标里不排字」的反面对照。缩到 24px 还认得出来，才算能用。</p>
+  <table>
+    <thead><tr><th>方案</th><th>圆角方 / 圆裁 100 · 64 · 40 · 24</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="name">蓝底 · 徽标 + WTTC<span class="badge">推荐</span><span class="desc">加字后最稳的一版：四个拉丁大写字母在 40px 下仍认得出字形，24px 变成「有字」的方块。</span></td>
+        <td><div class="crops">
+          <figure class="sq"><img src="../../.poster-preview/qq/avatar-blue-wttc.png" width="128" height="128" alt=""><figcaption>方形</figcaption></figure>
+          <figure><img src="../../.poster-preview/qq/avatar-blue-wttc.png" width="100" height="100" alt=""><figcaption>100</figcaption></figure>
+          <figure><img src="../../.poster-preview/qq/avatar-blue-wttc.png" width="64" height="64" alt=""><figcaption>64</figcaption></figure>
+          <figure><img src="../../.poster-preview/qq/avatar-blue-wttc.png" width="40" height="40" alt=""><figcaption>40</figcaption></figure>
+          <figure><img src="../../.poster-preview/qq/avatar-blue-wttc.png" width="24" height="24" alt=""><figcaption>24</figcaption></figure>
+        </div></td>
+      </tr>
+      <tr>
+        <td class="name">蓝底 · 纯徽标<span class="badge grey">次选</span><span class="desc">完全不依赖文字，小尺寸最干净；代价是少了「我们是谁」的提示。徽标可以放到画布 76%。</span></td>
+        <td><div class="crops">
+          <figure class="sq"><img src="../../.poster-preview/qq/avatar-blue.png" width="128" height="128" alt=""><figcaption>方形</figcaption></figure>
+          <figure><img src="../../.poster-preview/qq/avatar-blue.png" width="100" height="100" alt=""><figcaption>100</figcaption></figure>
+          <figure><img src="../../.poster-preview/qq/avatar-blue.png" width="64" height="64" alt=""><figcaption>64</figcaption></figure>
+          <figure><img src="../../.poster-preview/qq/avatar-blue.png" width="40" height="40" alt=""><figcaption>40</figcaption></figure>
+          <figure><img src="../../.poster-preview/qq/avatar-blue.png" width="24" height="24" alt=""><figcaption>24</figcaption></figure>
+        </div></td>
+      </tr>
+      <tr>
+        <td class="name">蓝底 · 徽标 + WFLS TT CLUB<span class="badge grey">仅大尺寸</span><span class="desc">与徽标等宽的完整字标，只在头像被放大时（资料卡、空间头部、海报）看得清：40px 时字高只剩 2.3px。</span></td>
+        <td><div class="crops">
+          <figure class="sq"><img src="../../.poster-preview/qq/avatar-blue-wfls.png" width="128" height="128" alt=""><figcaption>方形</figcaption></figure>
+          <figure><img src="../../.poster-preview/qq/avatar-blue-wfls.png" width="100" height="100" alt=""><figcaption>100</figcaption></figure>
+          <figure><img src="../../.poster-preview/qq/avatar-blue-wfls.png" width="64" height="64" alt=""><figcaption>64</figcaption></figure>
+          <figure><img src="../../.poster-preview/qq/avatar-blue-wfls.png" width="40" height="40" alt=""><figcaption>40</figcaption></figure>
+          <figure><img src="../../.poster-preview/qq/avatar-blue-wfls.png" width="24" height="24" alt=""><figcaption>24</figcaption></figure>
+        </div></td>
+      </tr>
+      <tr>
+        <td class="name">墨底 · 纯徽标<span class="badge grey">备选底色</span><span class="desc">几何与蓝底完全相同，底色换近黑 <code>#101828</code>，对比度最高、远处最清楚。</span></td>
+        <td><div class="crops">
+          <figure class="sq"><img src="../../.poster-preview/qq/avatar-navy.png" width="128" height="128" alt=""><figcaption>方形</figcaption></figure>
+          <figure><img src="../../.poster-preview/qq/avatar-navy.png" width="100" height="100" alt=""><figcaption>100</figcaption></figure>
+          <figure><img src="../../.poster-preview/qq/avatar-navy.png" width="64" height="64" alt=""><figcaption>64</figcaption></figure>
+          <figure><img src="../../.poster-preview/qq/avatar-navy.png" width="40" height="40" alt=""><figcaption>40</figcaption></figure>
+          <figure><img src="../../.poster-preview/qq/avatar-navy.png" width="24" height="24" alt=""><figcaption>24</figcaption></figure>
+        </div></td>
+      </tr>
+      <tr>
+        <td class="name">白底 · 蓝徽标<span class="badge grey">备选底色</span><span class="desc">最干净的一版，但夹在白色评论区里容易「化」进背景（对照表里靠这一圈 1px 描边才分得清）。</span></td>
+        <td><div class="crops">
+          <figure class="sq"><img src="../../.poster-preview/qq/avatar-white.png" width="128" height="128" alt=""><figcaption>方形</figcaption></figure>
+          <figure><img src="../../.poster-preview/qq/avatar-white.png" width="100" height="100" alt=""><figcaption>100</figcaption></figure>
+          <figure><img src="../../.poster-preview/qq/avatar-white.png" width="64" height="64" alt=""><figcaption>64</figcaption></figure>
+          <figure><img src="../../.poster-preview/qq/avatar-white.png" width="40" height="40" alt=""><figcaption>40</figcaption></figure>
+          <figure><img src="../../.poster-preview/qq/avatar-white.png" width="24" height="24" alt=""><figcaption>24</figcaption></figure>
+        </div></td>
+      </tr>
+      <tr>
+        <td class="name">带中文社名<span class="badge grey">对照 · 不推荐</span><span class="desc">七个汉字缩到 64px 就糊成一团，24px 只剩一道白痕 —— 「图标里不排字」这条规范在现实里的样子。</span></td>
+        <td><div class="crops">
+          <figure class="sq"><img src="../../.poster-preview/qq/avatar-with-name.png" width="128" height="128" alt=""><figcaption>方形</figcaption></figure>
+          <figure><img src="../../.poster-preview/qq/avatar-with-name.png" width="100" height="100" alt=""><figcaption>100</figcaption></figure>
+          <figure><img src="../../.poster-preview/qq/avatar-with-name.png" width="64" height="64" alt=""><figcaption>64</figcaption></figure>
+          <figure><img src="../../.poster-preview/qq/avatar-with-name.png" width="40" height="40" alt=""><figcaption>40</figcaption></figure>
+          <figure><img src="../../.poster-preview/qq/avatar-with-name.png" width="24" height="24" alt=""><figcaption>24</figcaption></figure>
+        </div></td>
+      </tr>
+    </tbody>
+  </table>
 </body>
 </html>

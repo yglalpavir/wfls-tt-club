@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- QQ avatar, name-carrying version — kept as the comparison case for the rule
+     "no text inside the icon": the club name is legible at 100px but turns to mush
+     at 40px and 24px, and the QQ nickname already sits next to the avatar, so the
+     name is redundant. Not recommended; see preview.html and README section 1.
+     Name font must stay Noto Serif SC (the club's poster face). -->
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>QQ 头像 · 带社名（对照）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; }
+  .avatar { position: relative; width: 640px; height: 640px; background: #2f7fe6; overflow: hidden; }
+  .mark { position: absolute; left: 50%; top: 40%; width: 54%;
+          transform: translate(-50%, -50%); display: block; }
+  .name { position: absolute; left: 0; right: 0; top: 74%; text-align: center;
+          font-family: "Noto Serif SC", serif; font-weight: 900; font-size: 58px;
+          letter-spacing: 6px; text-indent: 6px; color: #ffffff; line-height: 1; }
+</style>
+</head>
+<body>
+  <div class="avatar">
+    <img class="mark" src="logo-mark-white.svg" alt="">
+    <div class="name">武外乒乓球社团</div>
+  </div>
+</body>
+</html>

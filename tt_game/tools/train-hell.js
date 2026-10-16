@@ -14,6 +14,15 @@
  *  · CPU 占用：--workers N 硬性限制并行核数（默认=核数）；--nice 整体降到
  *    BelowNormal 优先级（全速用空闲核，一有交互 OS 自动让位），两者可叠加；
  *    父包装进程被杀（如 Web 训练台停止）时子进程经 IPC 心跳看门狗 6s 自动退出。
+ *  · 2026-10-16 方案A（用户批准，针对上一轮 850 代"零提升"的诊断）：
+ *      ① 主目标改为「vs 现役地狱」头对头 —— 对手固定为 curVec（冻结参照，不是
+ *         每代移动的 best.v），权重 0.52；旧的 0.34*pb+0.26*def 常年顶在天花板
+ *         （0.94/0.90）几乎不贡献梯度。
+ *      ② 冻结 moveSpeed/moveErr/moveZ（idx 0/1/2）—— 实机 policyForModel('hell')
+ *         经 strongVec() 把这三项硬写为 2.8/0.03/2.6，训练却优化原始向量，导致
+ *         这三维在真机上被忽略（上一轮候选第二大的改动恰好是 moveZ，实机没生效）。
+ *         现在钉死在护栏值：训练向量 == 实机向量。
+ *      ③ 每代局数 24→60 降噪；④ 跨代固定种子（去掉 +g*991）使 best 可比。
  * ===================================================================== */
 'use strict';
 const path = require('path');
@@ -29,7 +38,7 @@ function gaussN(rng){ let u = 0, v = 0; while(u === 0) u = rng(); while(v === 0)
 
 /* ---- 参数 ---- */
 const args = process.argv.slice(2);
-const opt = { gens: 400, games: 24, pop: 24, seed: 20260810, smoke: false, workers: Math.max(2, Math.min(24, os.cpus().length || 8)) };
+const opt = { gens: 400, games: 60, pop: 24, seed: 20260810, smoke: false, workers: Math.max(2, Math.min(24, os.cpus().length || 8)) };
 for(let i = 0; i < args.length; i++){
   if(args[i] === '--smoke') opt.smoke = true;
   else if(args[i] === '--gens') opt.gens = parseInt(args[++i], 10);
@@ -73,6 +82,16 @@ if(process.env.TT_NICE_CHILD){
 const KEYS = P.POLICY_KEYS;
 const range = s => s.max - s.min;
 
+/* ---- 冻结维（2026-10-16 方案A）----
+ * moveSpeed / moveErr / moveZ 是 strongVec() 的实机难度护栏：policyForModel('hell')
+ * 读入 LEARNED_POLICY 后会把这三项硬写为 2.8 / 0.03 / 2.6（js/policy.js L321-332）。
+ * 训练/验证却走 P.unflattenPolicy(rawVec)，于是这三维在训练里被优化、在实机里被忽略
+ * —— 上一轮 850 代候选第二大的改动恰好是 moveZ（0.984→1.796），实机等于没动。
+ * 现在把它们钉死在护栏值上：训练向量 == 实机向量，口径一致。 */
+const FROZEN = [[0, 2.8], [1, 0.03], [2, 2.6]];             // [idx, 护栏值]
+const FROZEN_IDX = new Set(FROZEN.map(f => f[0]));
+function applyFrozen(vec){ for(const f of FROZEN) vec[f[0]] = f[1]; return vec; }
+
 /* ---- 当前地狱学习策略（续训起点；--from 优先用候选向量） ---- */
 let curVec = P.flattenPolicy(P.POLICY_DEFAULT);
 if(opt.from){
@@ -85,6 +104,7 @@ if(opt.from){
   const CUR = require(path.join(__dirname, '..', 'js', 'learned-policy.js'));
   if(CUR && CUR.LEARNED_POLICY) curVec = P.flattenPolicy(CUR.LEARNED_POLICY);
 }catch(e){ console.warn('learned-policy.js 读取失败，以默认策略为续训起点'); }
+applyFrozen(curVec);   // 续训起点与实机口径对齐（见 FROZEN 注释）
 
 /* ---- 评估 worker 池 ---- */
 class EvalPool{
@@ -162,6 +182,7 @@ if(opt.smoke){
 function mutate(vec, sigma, rng){
   const out = vec.slice();
   for(let i = 0; i < out.length; i++){
+    if(FROZEN_IDX.has(i)) continue;             // 冻结维不参与变异（方案A）
     const s = KEYS[i];
     if(rng() < 0.12) out[i] = s.min + rng() * range(s);
     else out[i] += gaussN(rng) * range(s) * sigma;
@@ -176,14 +197,15 @@ function mutate(vec, sigma, rng){
   let pop = [];
   for(let i = 0; i < opt.pop; i++){
     if(i === 0) pop.push({ v: curVec.slice(), tag: 'cur' });
-    else if(i === 1) pop.push({ v: P.flattenPolicy(P.POLICY_DEFAULT), tag: 'base' });
-    else pop.push({ v: KEYS.map(s => s.min + rng0() * range(s)), tag: 'rand' });
+    else if(i === 1) pop.push({ v: applyFrozen(P.flattenPolicy(P.POLICY_DEFAULT)), tag: 'base' });
+    else pop.push({ v: applyFrozen(KEYS.map(s => s.min + rng0() * range(s))), tag: 'rand' });
   }
   let best = { v: curVec.slice(), fit: 0, gen: -1, tag: 'cur' };
   let evals = 0;
   const curve = [];
   const t0 = Date.now();
   console.log('地狱 AI 续训 · gens=' + opt.gens + ' games=' + opt.games + ' pop=' + opt.pop + ' seed=' + opt.seed + ' workers=' + opt.workers);
+  console.log('口径(方案A)：fit=0.52*vs现役 + 0.20*vs加强玩家 + 0.16*vs默认 + 0.12*vs搓球 · 冻结维 idx0/1/2=2.8/0.03/2.6 · 跨代固定种子');
   console.log('续训起点(当前地狱策略)：' + curVec.map(v => v.toFixed(2)).join(','));
   T.phase('train', '地狱 AI 续训开始 gens=' + opt.gens + ' pop=' + opt.pop + ' games=' + opt.games + ' workers=' + opt.workers);
   for(let g = 0; g < opt.gens; g++){
@@ -191,10 +213,10 @@ function mutate(vec, sigma, rng){
     /* 全代评估一次性提交（并行跑满 worker 池），再统一回收 */
     const rows = [];
     for(const m of pop){
-      const evDef  = evalCandidate(m.v, 'default', BASE.def  + g * 991, opt.games, best.v);
-      const evPB   = evalCandidate(m.v, 'pb',      BASE.pb   + g * 991, opt.games, best.v);
-      const evPush = evalCandidate(m.v, 'pusher',  BASE.push + g * 991, opt.games, best.v);
-      const evSelf = evalCandidate(m.v, 'self',    BASE.self + g * 991, opt.games, best.v);
+      const evDef  = evalCandidate(m.v, 'default', BASE.def,  opt.games, curVec);
+      const evPB   = evalCandidate(m.v, 'pb',      BASE.pb,   opt.games, curVec);
+      const evPush = evalCandidate(m.v, 'pusher',  BASE.push, opt.games, curVec);
+      const evSelf = evalCandidate(m.v, 'self',    BASE.self, opt.games, curVec);
       rows.push({ m, evDef, evPB, evPush, evSelf });
     }
     for(const r of rows) await r.evDef;
@@ -205,8 +227,10 @@ function mutate(vec, sigma, rng){
       const m = r.m;
       const fDef = await r.evDef, fPB = await r.evPB, fPush = await r.evPush, fSelf = await r.evSelf;
       evals += 8;
-      /* 权重：针对最强对手(加强玩家模型)为主，默认+自对弈次之，搓球狂兜底 */
-      m.fit = 0.34 * fPB + 0.26 * fDef + 0.26 * fSelf + 0.14 * fPush;
+      /* 方案A（2026-10-16）：主目标 = vs 现役地狱头对头（对手固定为 curVec，权重 0.52）；
+       * 其余三项为护栏。旧口径 0.34*pb+0.26*def 常年顶在天花板（0.94/0.90）几乎不贡献
+       * 梯度，自对弈项又用了每代移动的 best.v（移动靶），跨代不可比。 */
+      m.fit = 0.52 * fSelf + 0.20 * fPB + 0.16 * fDef + 0.12 * fPush;
       m.fDef = fDef; m.fPB = fPB; m.fPush = fPush; m.fSelf = fSelf;
     }
     pop.sort((a, b) => b.fit - a.fit);
@@ -219,7 +243,7 @@ function mutate(vec, sigma, rng){
       console.log('gen ' + String(g).padStart(3) +
         '  top.fit=' + champ.fit.toFixed(4) +
         ' (vsDef=' + champ.fDef.toFixed(3) + ' vsPB=' + champ.fPB.toFixed(3) +
-        ' vsPush=' + champ.fPush.toFixed(3) + ' vsSelf=' + champ.fSelf.toFixed(3) + ')' +
+        ' vsPush=' + champ.fPush.toFixed(3) + ' vsCur=' + champ.fSelf.toFixed(3) + ')' +
         '  best=' + best.fit.toFixed(4) + (best.tag === 'cur' ? '(续训) ' : '') +
         '  [' + (Date.now() - t0) / 1000 + 's]');
       fs.writeFileSync(path.join(__dirname, 'train-hell-curve.json'), JSON.stringify(curve, null, 2), 'utf8');   // 中途存档，便于长训监控

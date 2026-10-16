@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- QQ avatar: flat brand-blue field + the club mark + the full Latin wordmark
+     "WFLS TT CLUB" (the same line the club logo carries under the mark).
+     640x640 canvas, exported at --force-device-scale-factor=2 -> 1280x1280.
+     Size caveat (see README section 1): at this width the caps are ~36px tall on the
+     640 canvas, i.e. ~5.6px at a 100px avatar and ~2.3px at 40px — so this lockup only
+     holds up where the avatar is shown large (profile card, space header, posters).
+     Use avatar-blue-wttc.html when the icon has to survive 40px and below.
+     Layout: mark at 68% of the canvas, caption 25px below, whole lockup centred, no
+     shadow, no rounded corners. -->
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>QQ 头像 · 蓝底 + WFLS TT CLUB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; }
+  .avatar { display: flex; flex-direction: column; align-items: center; justify-content: center;
+            width: 640px; height: 640px; background: #2f7fe6; overflow: hidden; }
+  .avatar .mark { display: block; width: 68%; }
+  .avatar .word { margin-top: 25px; color: #ffffff; white-space: nowrap;
+                  font-family: "Poppins", "Noto Sans SC", sans-serif; font-weight: 700;
+                  font-size: 51px; line-height: 0.75;
+                  letter-spacing: 0.05em; text-indent: 0.05em; }
+</style>
+</head>
+<body>
+  <div class="avatar">
+    <img class="mark" src="logo-mark-white.svg" alt="武外乒乓球社团徽标">
+    <div class="word">WFLS TT CLUB</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- QQ avatar (recommended): flat brand-blue field + the club mark in white, no text.
+     640x640 canvas, exported at --force-device-scale-factor=2 -> 1280x1280.
+     Design rules applied (see README section 1):
+       - mark only, no club name   (text in an icon is illegible below ~64px and
+                                    redundant next to the QQ nickname)
+       - flat opaque field         (a gradient adds nothing at 24px)
+       - mark at 76% of the canvas, centred: the ink stays inside a circle of
+         0.588 x width, so a 76% mark keeps ~10% clearance from the round crop
+       - no shadow / no rounded corners  (the platform draws its own mask)
+     The mark SVG is docs/qq/logo-mark-white.svg (derived from Assets/files/logo.svg,
+     paths verbatim, club-name text dropped, viewBox tightened, linework thickened
+     to stroke-width 1 for small-size legibility). -->
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>QQ 头像 · 蓝底</title>
+<style>
+  html, body { margin: 0; padding: 0; }
+  .avatar { position: relative; width: 640px; height: 640px; background: #2f7fe6; overflow: hidden; }
+  .avatar img { position: absolute; left: 50%; top: 50%; width: 76%;
+                transform: translate(-50%, -50%); display: block; }
+</style>
+</head>
+<body>
+  <div class="avatar"><img src="logo-mark-white.svg" alt="武外乒乓球社团徽标"></div>
+</body>
+</html>
