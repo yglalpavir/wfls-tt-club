@@ -259,11 +259,13 @@ function tallyWindow(rawLog, seasons, today) {
   current.data.forEach(p => { currentByName[p['姓名']] = p; });
   const tally = tallyWindow(rawLog, seasons, current.time);
 
+  // 档案 visible:false（暂不在前台展示）的成员不进公开 API
+  const apiPlayers = playersData.players.filter(p => p.visible !== false);
   const playersPayload = {
     version: 1,
     baseDate: playersData.baseDate,
-    count: playersData.players.length,
-    players: playersData.players.map(p => {
+    count: apiPlayers.length,
+    players: apiPlayers.map(p => {
       const cur = currentByName[p.name];
       const t = tally[p.name] || { wins: 0, total: 0 };
       return {

@@ -158,7 +158,8 @@ function getAllPlayersForPersonal() {
         }
     }
 
-    const players = Array.from(playerSet);
+    // 档案 visible === false 的球员不进前台列表
+    const players = Array.from(playerSet).filter(n => !isPlayerHiddenName(n));
     if (!players.length) {
         console.warn('[PersonalStats] getAllPlayers: 未找到任何球员');
     }

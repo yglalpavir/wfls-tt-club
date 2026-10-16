@@ -404,6 +404,8 @@ if not isinstance(plist, list):
     plist = []
 uids, pnames, dup_uid, dup_name, bad_score, bad_status = set(), set(), 0, 0, 0, 0
 bad_grade = 0
+bad_visible = 0
+hidden_players = 0
 STATUS_ENUM = {"active", "alumni"}
 GRADE_MAX_SPAN = 6   # 入学到毕业合理跨度（年）；超出视为录错
 for p in plist:
@@ -426,6 +428,13 @@ for p in plist:
     st = p.get("status")
     if st is not None and st not in STATUS_ENUM:
         bad_status += 1
+    # visible 可选：存在时须为布尔；false = 档案暂不在前台展示（排名表/球员列表/个人页/公开 API 均过滤）
+    vs = p.get("visible")
+    if vs is not None:
+        if not isinstance(vs, bool):
+            bad_visible += 1
+        elif vs is False:
+            hidden_players += 1
     # grade 可选：存在时须为 {enroll, graduate} 两个整数，且毕业年不早于入学年、跨度合理
     gr = p.get("grade")
     if gr is not None:
@@ -447,8 +456,11 @@ if bad_status:
     err(f"players.json 存在未知 status（允许: {sorted(STATUS_ENUM)}）")
 if bad_grade:
     err(f"players.json 存在 {bad_grade} 个非法 grade（须为 {{enroll, graduate}} 整数对，跨度 0~{GRADE_MAX_SPAN} 年）")
-if not (dup_uid or dup_name or bad_score or bad_status or bad_grade):
-    ok(f"{len(plist)} 名球员 uid/姓名唯一，initialScore、status 与 grade 合法")
+if bad_visible:
+    err(f"players.json 存在 {bad_visible} 个非布尔 visible（须为 true/false；false = 前台隐藏）")
+if not (dup_uid or dup_name or bad_score or bad_status or bad_grade or bad_visible):
+    ok(f"{len(plist)} 名球员 uid/姓名唯一，initialScore、status 与 grade 合法"
+       + (f"（{hidden_players} 人 visible:false 前台隐藏）" if hidden_players else ""))
 
 # ---- 9) draws.json 引用 ----
 print("[9] draws.json 引用检查")

@@ -260,6 +260,8 @@ function isProfileActivePlayer(name) {
     if (typeof playersData === 'undefined' || !playersData || !Array.isArray(playersData.players)) return false;
     const p = (typeof getPlayerByName === 'function') ? getPlayerByName(name) : null;
     if (!p) return false;
+    // 档案 visible === false（暂不在前台展示）不进入排名表；有比赛记录者仍按下面的窗口口径显示
+    if (p.visible === false) return false;
     return !p.status || p.status === 'active';
 }
 
@@ -613,6 +615,9 @@ function computeInheritedScores(sortedLog, seasonStartScores, prevSeason, initia
 // 赛季初排名节点（时间线首个节点：人人按当前积分排序，无场次数据）
 function buildSeasonInitialNode(currentScores, season) {
     const id = Object.entries(currentScores)
+        // 档案 visible:false（暂不在前台展示）的球员不进赛季初节点：该节点是纯档案清单（总场次 0），
+        // 隐藏档案没有战绩可依据；有战绩的隐藏球员仍会出现在真正的快照节点（active.has(n) 口径）
+        .filter(([n]) => !(typeof isPlayerHiddenName === 'function' && isPlayerHiddenName(n)))
         .map(([n, pt]) => ({
             '姓名': n,
             '当前积分': Math.round(pt * 10) / 10,

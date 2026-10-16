@@ -218,7 +218,7 @@
                 knownNames[x.name] = true;
                 (x.aliases || []).forEach(function (a) { aliasMap[a] = x.name; knownNames[a] = true; });
             });
-            $("sbPlayerList").innerHTML = ((p && p.players) || []).filter(function (x) { return x.name; }).map(function (x) {
+            $("sbPlayerList").innerHTML = ((p && p.players) || []).filter(function (x) { return x.name && x.visible !== false; }).map(function (x) {
                 return '<option value="' + esc(x.name) + '"></option>' + (x.aliases || []).map(function (a) { return '<option value="' + esc(a) + '"></option>'; }).join("");
             }).join("");
             renderQueue();

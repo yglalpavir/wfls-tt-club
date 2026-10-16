@@ -173,7 +173,19 @@
 
 > **为什么存结构化对象而不是 `"24级27届"` 这样的字符串**：全站要求 EN 模式零中文，而「级/届」是中文。若存字符串，就得为每名球员各手写一份 `grade_en`，漏写一份即在英文界面漏出中文；存结构化对象则由代码统一拼装，新增/回填零维护。附带好处是按级排序或筛选（如「26 级新成员」）可直接比较数值，无需正则解析。
 
-> **当前状态**：字段已就位但**尚未回填数据**（`players.json` 现有 46 名球员均无 `grade` 键），因此页面上暂时看不到年级 chip。用途确定后按上表格式逐人补写即可。
+> **当前状态**：`players.json` 现有 57 名球员均已带 `grade`（2024 级 11 人、2025 级 35 人、2026 级 11 人），页面上正常显示年级 chip；新增球员按上表格式逐人补写即可。
+
+### 3.13 `visible` — 前台可见性（可选）
+
+| 项 | 值 |
+| --- | --- |
+| 类型 | `boolean` |
+| 约束 | 可选，缺失等同 `true`；存在时必须是布尔（`ci_validate.py` 校验，并统计隐藏人数）。 |
+| 用途 | `false` = **档案暂不在前台展示**。过滤点：排名表（`isProfileActivePlayer()`，`js/score-engine.js`）、数据可视化/个人数据页的球员列表与选择器（`getAllPlayers()`、`getAllPlayersForPersonal()`）、个人主页（`getPlayerByUid()` 返回 `null`，`player.html` 显示「未找到该球员」）、首页核心成员卡（`loadMembersData()`）、`submit.html` 姓名候选、`data_scale.html` 成员计数、公开 API（`data/api/players.json`，见 `tools/recompute_rankings.js`）。 |
+| 恢复 | 删掉该键或改回 `true` 即可：数据本身不删，`uid` 不变，已有外链与积分不受影响。 |
+| 英文 | 无 `_en` 兄弟字段（纯逻辑开关，不显示）。 |
+
+> **只影响展示层，不影响算分**：`initialScoresData` 与引擎口径仍收录隐藏球员的 `initialScore`，因此他一旦有了比赛记录，积分不会被默认分污染。反过来说，**若隐藏球员已有（窗口内）比赛记录，他仍会出现在排名表里**——那条规则与 `alumni` 共用（「窗口内有比赛记录的球员仍然显示」），所以 `visible: false` 只适合用在尚无战绩的档案上（如报名后待公布的选拔名单）。
 
 ---
 
@@ -202,7 +214,7 @@
 
 | 关注点 | 约束 |
 | --- | --- |
-| 新增球员 | 手动为该球员补 `uid`（5 位以上唯一数字）、`name`、`pinyin`（英文界面显示用）、`initialScore`、空数组 `tags`/`honors`/`aliases`、`status:"active"`；`grade`（年级）如已知则一并补 `{ "enroll": <入学年>, "graduate": <毕业年> }`，未知则留空。 |
+| 新增球员 | 手动为该球员补 `uid`（5 位以上唯一数字）、`name`、`pinyin`（英文界面显示用）、`initialScore`、空数组 `tags`/`honors`/`aliases`、`status:"active"`；`grade`（年级）如已知则一并补 `{ "enroll": <入学年>, "graduate": <毕业年> }`，未知则留空；需要「先建档、后公布」时加 `"visible": false`（见 §3.13）。 |
 | 一致性 | `name` 必须与 `data/score-log.json` 中的 `'胜者'` / `'负者'` / `'对象'` 完全一致，否则该姓名会脱离档案（无 uid、无名下初始积分）。 |
 | uid 校验 | `tools/build_players.js`（一次性迁移脚本）内含 `/^\d{5,}$/` 与唯一性校验；不建议手工改动已存在的 `uid`，避免破坏 `player.html` 外链。 |
 | 别名 | 建议随角色变更补充 `aliases`，让英文名/曾用名也能被搜索命中。 |

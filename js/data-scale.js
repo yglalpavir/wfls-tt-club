@@ -45,7 +45,8 @@
             softJson('data/news/index.json'), softJson('data/competitions/index.json'),
             softJson('data/qa/index.json'), softJson('data/changelog.json')
         ]).then(function (r) {
-            var players = (playersData && playersData.players) || [];
+            // 档案 visible === false（暂不展示）的成员不计入公开统计
+            var players = ((playersData && playersData.players) || []).filter(function (p) { return p && p.visible !== false; });
             var log = r[1] || [], seasons = r[2] || [], draws = r[3] || [];
             var news = r[4] || [], comps = r[5] || [], qa = r[6] || [], changelog = r[7] || [];
 
