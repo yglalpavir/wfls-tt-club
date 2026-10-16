@@ -1655,5 +1655,624 @@
     "胜者": "Mehdi BOULOUSSA/Par GERELL",
     "负者": "Benedek OLAH/LIM Jonghoon",
     "比分": "3-1"
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Filip RADOVIC/Filip RADULOVIC",
+    "负者": "Arturs REINHOLDS/Martin FROSETH",
+    "比分": "3-1",
+    "局分": [
+      "12-10",
+      "11-2",
+      "6-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Filip ZELJKO/Frane KOJIC",
+    "负者": "Alex NAUMI/Benedek OLAH",
+    "比分": "3-2",
+    "局分": [
+      "12-10",
+      "9-11",
+      "11-7",
+      "4-11",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Alexander CHEN/David SERDAROGLU",
+    "负者": "Carlos CABALLERO/Joan MASIP",
+    "比分": "3-1",
+    "局分": [
+      "11-7",
+      "11-5",
+      "9-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Peter HRIBAR/Tilen CVETKO",
+    "负者": "Petyo KRASTEV/Teodor ALEXANDROV",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-8",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Daniel BERZOSA/Iulian CHIRITA",
+    "负者": "Andrii GREBENIUK/Yevhen Pryshchepa",
+    "比分": "3-1",
+    "局分": [
+      "11-4",
+      "11-4",
+      "9-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Milosz REDZIMSKI/Vladislav URSU",
+    "负者": "Aleksandr SMIRNOV/Toomas LIBENE",
+    "比分": "3-1",
+    "局分": [
+      "9-11",
+      "11-7",
+      "13-11",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Martin ANDERSEN/Tobias RASMUSSEN",
+    "负者": "Adam KLAJBER/Jakub ZELINKA",
+    "比分": "3-1",
+    "局分": [
+      "11-7",
+      "9-11",
+      "12-10",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Eric GLOD/Luka MLADENOVIC",
+    "负者": "Federico GIARDI/Mattias MONGIUSTI",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-8",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Andrei PUTUNTICA/Dimitrije LEVAJAC",
+    "负者": "Barish MOULLET/Loic STOLL",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-8",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Adrien RASSENFOSSE/Borgar HAUG",
+    "负者": "Anton LIMONOV/Yaroslav ZHMUDENKO",
+    "比分": "3-0",
+    "局分": [
+      "13-11",
+      "12-10",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Anders LIND/Yang WANG",
+    "负者": "Marko JEVTOVIC/Zsolt PETO",
+    "比分": "3-1",
+    "局分": [
+      "11-4",
+      "15-13",
+      "7-11",
+      "11-2"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Maciej KUBIK/Samuel KULCZYCKI",
+    "负者": "Marios YIANGOU/Michael TAUBER",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-8",
+      "11-2"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Abdullah YIGENLER/Ibrahim GUNDUZ",
+    "负者": "Ignas NAVICKAS/Kestutis ZEIMYS",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-9",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Jonathan GROTH/Liam PITCHFORD",
+    "负者": "Fatih KARABAXHAK/Filip MLADENOVSKI",
+    "比分": "3-0",
+    "局分": [
+      "14-12",
+      "11-5",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Emmanuel LEBESSON/Simon GAUZY",
+    "负者": "Filip RADOVIC/Filip RADULOVIC",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "11-5",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Giorgos KONSTANTINOPOULOS/Ioannis SGOUROPOULOS",
+    "负者": "Daniels KOGANS/Ivik NIELSEN",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-8",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Jordy PICCOLIN/Tal ISRAELI",
+    "负者": "Georgios STAMATOUROS/Konstantinos KONSTANTINOPOULOS",
+    "比分": "3-2",
+    "局分": [
+      "5-11",
+      "12-10",
+      "11-8",
+      "7-11",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2022-08-16",
+    "类型": "洲锦赛",
+    "胜者": "Benedikt DUDA/Dang QIU",
+    "负者": "Giorgos KONSTANTINOPOULOS/Ioannis SGOUROPOULOS",
+    "比分": "3-1",
+    "局分": [
+      "12-10",
+      "4-11",
+      "11-5",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2022-08-16",
+    "类型": "洲锦赛",
+    "胜者": "Kristian KARLSSON/Mattias FALCK",
+    "负者": "Alexander CHEN/David SERDAROGLU",
+    "比分": "3-1",
+    "局分": [
+      "11-4",
+      "13-15",
+      "11-5",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2022-08-16",
+    "类型": "洲锦赛",
+    "胜者": "Mihai BOBOCICA/Niagol STOYANOV",
+    "负者": "Anders LIND/Yang WANG",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-7",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2022-08-16",
+    "类型": "洲锦赛",
+    "胜者": "Maciej KUBIK/Samuel KULCZYCKI",
+    "负者": "Adam SZUDI/Nandor ECSEKI",
+    "比分": "3-1",
+    "局分": [
+      "11-7",
+      "6-11",
+      "11-5",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2022-08-16",
+    "类型": "洲锦赛",
+    "胜者": "Martin ANDERSEN/Tobias RASMUSSEN",
+    "负者": "Samuel WALKER/Tom JARVIS",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "14-12",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2022-08-16",
+    "类型": "洲锦赛",
+    "胜者": "Bence MAJOROS/Csaba ANDRAS",
+    "负者": "Abdullah YIGENLER/Ibrahim GUNDUZ",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-5",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2022-08-16",
+    "类型": "洲锦赛",
+    "胜者": "Florent LAMBIET/Martin ALLEGRO",
+    "负者": "Peter HRIBAR/Tilen CVETKO",
+    "比分": "3-1",
+    "局分": [
+      "11-7",
+      "11-8",
+      "9-11",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2022-08-16",
+    "类型": "洲锦赛",
+    "胜者": "Alexis LEBRUN/Felix LEBRUN",
+    "负者": "Jordy PICCOLIN/Tal ISRAELI",
+    "比分": "3-0",
+    "局分": [
+      "12-10",
+      "11-3",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2022-08-16",
+    "类型": "洲锦赛",
+    "胜者": "Anton KALLBERG/Jon PERSSON",
+    "负者": "Emmanuel LEBESSON/Simon GAUZY",
+    "比分": "3-2",
+    "局分": [
+      "11-9",
+      "4-11",
+      "10-12",
+      "12-10",
+      "14-12"
+    ]
+  },
+  {
+    "日期": "2022-08-16",
+    "类型": "洲锦赛",
+    "胜者": "Cedric NUYTINCK/Jakub DYJAS",
+    "负者": "Filip ZELJKO/Frane KOJIC",
+    "比分": "3-1",
+    "局分": [
+      "11-3",
+      "12-10",
+      "9-11",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2022-08-16",
+    "类型": "洲锦赛",
+    "胜者": "Aleksandar KARAKASEVIC/Lubomir PISTEJ",
+    "负者": "Jonathan GROTH/Liam PITCHFORD",
+    "比分": "3-2",
+    "局分": [
+      "8-11",
+      "9-11",
+      "12-10",
+      "11-7",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2022-08-16",
+    "类型": "洲锦赛",
+    "胜者": "Andrei PUTUNTICA/Dimitrije LEVAJAC",
+    "负者": "Darko JORGIC/Tomas POLANSKY",
+    "比分": "3-2",
+    "局分": [
+      "7-11",
+      "11-8",
+      "8-11",
+      "11-8",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2022-08-16",
+    "类型": "洲锦赛",
+    "胜者": "Alvaro ROBLES/Ovidiu IONESCU",
+    "负者": "Eric GLOD/Luka MLADENOVIC",
+    "比分": "3-2",
+    "局分": [
+      "7-11",
+      "13-11",
+      "10-12",
+      "11-7",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2022-08-16",
+    "类型": "洲锦赛",
+    "胜者": "Milosz REDZIMSKI/Vladislav URSU",
+    "负者": "Darius MOVILEANU/Eduard IONESCU",
+    "比分": "3-1",
+    "局分": [
+      "11-3",
+      "9-11",
+      "11-9",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2022-08-16",
+    "类型": "洲锦赛",
+    "胜者": "Daniel HABESOHN/Robert GARDOS",
+    "负者": "Daniel BERZOSA/Iulian CHIRITA",
+    "比分": "3-2",
+    "局分": [
+      "9-11",
+      "11-8",
+      "8-11",
+      "11-4",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2022-08-16",
+    "类型": "洲锦赛",
+    "胜者": "Jiri MARTINKO/Pavel SIRUCEK",
+    "负者": "Adrien RASSENFOSSE/Borgar HAUG",
+    "比分": "3-1",
+    "局分": [
+      "8-11",
+      "11-8",
+      "11-5",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2022-08-17",
+    "类型": "洲锦赛",
+    "胜者": "Benedikt DUDA/Dang QIU",
+    "负者": "Aleksandar KARAKASEVIC/Lubomir PISTEJ",
+    "比分": "3-1",
+    "局分": [
+      "2-11",
+      "11-7",
+      "11-9",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2022-08-17",
+    "类型": "洲锦赛",
+    "胜者": "Anton KALLBERG/Jon PERSSON",
+    "负者": "Cedric NUYTINCK/Jakub DYJAS",
+    "比分": "3-2",
+    "局分": [
+      "11-5",
+      "4-11",
+      "5-11",
+      "11-8",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2022-08-17",
+    "类型": "洲锦赛",
+    "胜者": "Milosz REDZIMSKI/Vladislav URSU",
+    "负者": "Alvaro ROBLES/Ovidiu IONESCU",
+    "比分": "3-1",
+    "局分": [
+      "11-7",
+      "6-11",
+      "11-6",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2022-08-17",
+    "类型": "洲锦赛",
+    "胜者": "Daniel HABESOHN/Robert GARDOS",
+    "负者": "Jiri MARTINKO/Pavel SIRUCEK",
+    "比分": "3-2",
+    "局分": [
+      "11-8",
+      "12-14",
+      "9-11",
+      "11-7",
+      "16-14"
+    ]
+  },
+  {
+    "日期": "2022-08-17",
+    "类型": "洲锦赛",
+    "胜者": "Kristian KARLSSON/Mattias FALCK",
+    "负者": "Martin ANDERSEN/Tobias RASMUSSEN",
+    "比分": "3-1",
+    "局分": [
+      "11-5",
+      "9-11",
+      "11-5",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2022-08-17",
+    "类型": "洲锦赛",
+    "胜者": "Florent LAMBIET/Martin ALLEGRO",
+    "负者": "Bence MAJOROS/Csaba ANDRAS",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "15-13",
+      "11-1"
+    ]
+  },
+  {
+    "日期": "2022-08-17",
+    "类型": "洲锦赛",
+    "胜者": "Maciej KUBIK/Samuel KULCZYCKI",
+    "负者": "Mihai BOBOCICA/Niagol STOYANOV",
+    "比分": "3-1",
+    "局分": [
+      "12-10",
+      "11-9",
+      "5-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2022-08-17",
+    "类型": "洲锦赛",
+    "胜者": "Alexis LEBRUN/Felix LEBRUN",
+    "负者": "Andrei PUTUNTICA/Dimitrije LEVAJAC",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-8",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2022-08-17",
+    "类型": "洲锦赛",
+    "胜者": "Kristian KARLSSON/Mattias FALCK",
+    "负者": "Florent LAMBIET/Martin ALLEGRO",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "12-10",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2022-08-17",
+    "类型": "洲锦赛",
+    "胜者": "Alexis LEBRUN/Felix LEBRUN",
+    "负者": "Milosz REDZIMSKI/Vladislav URSU",
+    "比分": "3-1",
+    "局分": [
+      "11-7",
+      "11-7",
+      "7-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2022-08-17",
+    "类型": "洲锦赛",
+    "胜者": "Daniel HABESOHN/Robert GARDOS",
+    "负者": "Benedikt DUDA/Dang QIU",
+    "比分": "3-2",
+    "局分": [
+      "11-8",
+      "12-10",
+      "5-11",
+      "9-11",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2022-08-17",
+    "类型": "洲锦赛",
+    "胜者": "Anton KALLBERG/Jon PERSSON",
+    "负者": "Maciej KUBIK/Samuel KULCZYCKI",
+    "比分": "3-2",
+    "局分": [
+      "11-9",
+      "11-5",
+      "7-11",
+      "5-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2022-08-18",
+    "类型": "洲锦赛",
+    "胜者": "Daniel HABESOHN/Robert GARDOS",
+    "负者": "Alexis LEBRUN/Felix LEBRUN",
+    "比分": "3-1",
+    "局分": [
+      "3-11",
+      "11-7",
+      "11-8",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2022-08-18",
+    "类型": "洲锦赛",
+    "胜者": "Kristian KARLSSON/Mattias FALCK",
+    "负者": "Anton KALLBERG/Jon PERSSON",
+    "比分": "3-1",
+    "局分": [
+      "10-12",
+      "11-8",
+      "11-8",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2022-08-18",
+    "类型": "洲锦赛",
+    "胜者": "Kristian KARLSSON/Mattias FALCK",
+    "负者": "Daniel HABESOHN/Robert GARDOS",
+    "比分": "3-1",
+    "局分": [
+      "10-12",
+      "11-1",
+      "11-5",
+      "13-11"
+    ]
   }
 ]

@@ -1,0 +1,764 @@
+[
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Aikaterini TOLIOU/Giorgos KONSTANTINOPOULOS",
+    "负者": "Alex NAUMI/Anna KIRICHENKO",
+    "比分": "3-1",
+    "局分": [
+      "11-6",
+      "11-3",
+      "4-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Polina TRIFONOVA/Teodor ALEXANDROV",
+    "负者": "Dzana BIOGRADLIC/Federico GIARDI",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "12-10",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Foteini MELETIE/Marios YIANGOU",
+    "负者": "Emilija RILISKYTE/Ignas NAVICKAS",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-9",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Aleksandr SMIRNOV/Reelica HANSON",
+    "负者": "Daniels KOGANS/Ramona Maarit BETZ",
+    "比分": "3-1",
+    "局分": [
+      "11-2",
+      "12-10",
+      "10-12",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Alexandra CHIRACOVA/Vladislav URSU",
+    "负者": "Arturs REINHOLDS/Baiba BOGDANOVA",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-6",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Elisavet TERPOU/Konstantinos KONSTANTINOPOULOS",
+    "负者": "Martin FROSETH/Martine TOFTAKER",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-9",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Carlos CABALLERO/Sofia-Xuan ZHANG",
+    "负者": "Margo DEGRAEF/Michael TAUBER",
+    "比分": "3-1",
+    "局分": [
+      "12-10",
+      "11-8",
+      "5-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Tetyana BILENKO/Yevhen Pryshchepa",
+    "负者": "Loic STOLL/Shuohan MEN",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "11-4",
+      "11-1"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Ines MATOS/Martin ANDERSEN",
+    "负者": "Edin GUTIC/Harisa MESETOVIC",
+    "比分": "3-1",
+    "局分": [
+      "11-6",
+      "6-11",
+      "11-8",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Ivik NIELSEN/Sabina MUSAJEVA",
+    "负者": "Fatih KARABAXHAK/Linda ZEQIRI",
+    "比分": "3-1",
+    "局分": [
+      "16-14",
+      "11-1",
+      "11-13",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Luka MLADENOVIC/Xia Lian NI",
+    "负者": "Mattias MONGIUSTI/Patricia SANTOS",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-2",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Petyo KRASTEV/Maria YOVKOVA",
+    "负者": "Kestutis ZEIMYS/Kornelija RILISKYTE",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "11-8",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Airi AVAMERI/Toomas LIBENE",
+    "负者": "Amelia NIKOLOV/Filip MLADENOVSKI",
+    "比分": "3-0",
+    "局分": [
+      "11-2",
+      "17-15",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Benedikt DUDA/Sabine WINTER",
+    "负者": "Debora VIVARELLI/Jordy PICCOLIN",
+    "比分": "3-1",
+    "局分": [
+      "11-8",
+      "5-11",
+      "11-1",
+      "11-2"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Ines MATOS/Martin ANDERSEN",
+    "负者": "Bence MAJOROS/Leonie HARTBRICH",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "15-13",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Filip ZELJKO/Mateja JEGER",
+    "负者": "Alexandra CHIRACOVA/Vladislav URSU",
+    "比分": "3-1",
+    "局分": [
+      "11-4",
+      "11-5",
+      "6-11",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Anton LIMONOV/Solomiya BRATEYKO",
+    "负者": "Foteini MELETIE/Marios YIANGOU",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-8",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Ibrahim GUNDUZ/Sibel ALTINKAYA",
+    "负者": "Polina TRIFONOVA/Teodor ALEXANDROV",
+    "比分": "3-1",
+    "局分": [
+      "11-6",
+      "12-10",
+      "8-11",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Borgar HAUG/Rebekka CARLSEN",
+    "负者": "Aleksandr SMIRNOV/Reelica HANSON",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-9",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Elisavet TERPOU/Konstantinos KONSTANTINOPOULOS",
+    "负者": "Peter HRIBAR/Ana TOFANT",
+    "比分": "3-1",
+    "局分": [
+      "11-9",
+      "3-11",
+      "11-4",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Benedek OLAH/Britt EERLAND",
+    "负者": "Ivik NIELSEN/Sabina MUSAJEVA",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-6",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Daniel HABESOHN/Elizabeta SAMARA",
+    "负者": "Tetyana BILENKO/Yevhen Pryshchepa",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-7",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Linda BERGSTROM/Truls MOREGARD",
+    "负者": "Airi AVAMERI/Toomas LIBENE",
+    "比分": "3-2",
+    "局分": [
+      "9-11",
+      "11-9",
+      "11-1",
+      "10-12",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Katarzyna WEGRZYN/Samuel KULCZYCKI",
+    "负者": "David REITSPIES/Katerina TOMANOVSKA",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-7",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Luka MLADENOVIC/Xia Lian NI",
+    "负者": "Lubomir JANCARIK/Zdena BLASKOVA",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-7",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Barish MOULLET/Rachel MORET",
+    "负者": "Petyo KRASTEV/Maria YOVKOVA",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-8",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Deni KOZUL/Katarina STRAZAR",
+    "负者": "Andrei PUTUNTICA/Hana ARAPOVIC",
+    "比分": "3-0",
+    "局分": [
+      "12-10",
+      "11-5",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Charlotte BARDSLEY/Tom JARVIS",
+    "负者": "Aikaterini TOLIOU/Giorgos KONSTANTINOPOULOS",
+    "比分": "3-0",
+    "局分": [
+      "13-11",
+      "11-8",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2022-08-13",
+    "类型": "洲锦赛",
+    "胜者": "Carlos CABALLERO/Sofia-Xuan ZHANG",
+    "负者": "Aleksandar KARAKASEVIC/Sabina SURJAN",
+    "比分": "3-2",
+    "局分": [
+      "3-11",
+      "11-9",
+      "11-6",
+      "11-13",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Prithika PAVADE/Simon GAUZY",
+    "负者": "Filip ZELJKO/Mateja JEGER",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-7",
+      "11-2"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Deni KOZUL/Katarina STRAZAR",
+    "负者": "Kristian KARLSSON/Christina KALLBERG",
+    "比分": "3-1",
+    "局分": [
+      "6-11",
+      "11-9",
+      "11-6",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Tatiana KUKULKOVA/Yang WANG",
+    "负者": "Benedek OLAH/Britt EERLAND",
+    "比分": "3-1",
+    "局分": [
+      "5-11",
+      "11-4",
+      "11-5",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Benedikt DUDA/Sabine WINTER",
+    "负者": "Eric GLOD/Sarah DE NUTTE",
+    "比分": "3-1",
+    "局分": [
+      "11-8",
+      "11-5",
+      "10-12",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Barbora BALAZOVA/Lubomir PISTEJ",
+    "负者": "Ines MATOS/Martin ANDERSEN",
+    "比分": "3-2",
+    "局分": [
+      "9-11",
+      "11-5",
+      "11-4",
+      "9-11",
+      "17-15"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Nandor ECSEKI/Dora MADARASZ",
+    "负者": "Borgar HAUG/Rebekka CARLSEN",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-7",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Jakub DYJAS/Natalia PARTYKA",
+    "负者": "Ibrahim GUNDUZ/Sibel ALTINKAYA",
+    "比分": "3-0",
+    "局分": [
+      "12-10",
+      "12-10",
+      "14-12"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Alvaro ROBLES/Maria XIAO",
+    "负者": "Barish MOULLET/Rachel MORET",
+    "比分": "3-1",
+    "局分": [
+      "11-1",
+      "11-7",
+      "10-12",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Dang QIU/Nina MITTELHAM",
+    "负者": "Linda BERGSTROM/Truls MOREGARD",
+    "比分": "3-2",
+    "局分": [
+      "4-11",
+      "11-7",
+      "12-14",
+      "12-10",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Robert GARDOS/Sofia POLCANOVA",
+    "负者": "Charlotte BARDSLEY/Tom JARVIS",
+    "比分": "3-1",
+    "局分": [
+      "11-6",
+      "6-11",
+      "11-9",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Katarzyna WEGRZYN/Samuel KULCZYCKI",
+    "负者": "Liam PITCHFORD/Tin-Tin HO",
+    "比分": "3-2",
+    "局分": [
+      "4-11",
+      "11-8",
+      "6-11",
+      "11-3",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Ovidiu IONESCU/Bernadette SZOCS",
+    "负者": "Anton LIMONOV/Solomiya BRATEYKO",
+    "比分": "3-1",
+    "局分": [
+      "11-3",
+      "4-11",
+      "11-9",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Dimitrije LEVAJAC/Izabela LUPULESKU",
+    "负者": "Carlos CABALLERO/Sofia-Xuan ZHANG",
+    "比分": "3-1",
+    "局分": [
+      "11-6",
+      "6-11",
+      "11-7",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Daniel HABESOHN/Elizabeta SAMARA",
+    "负者": "Abdullah YIGENLER/Ozge YILMAZ",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-7",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Luka MLADENOVIC/Xia Lian NI",
+    "负者": "Giorgia PICCOLIN/Niagol STOYANOV",
+    "比分": "3-2",
+    "局分": [
+      "8-11",
+      "11-8",
+      "9-11",
+      "11-4",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Emmanuel LEBESSON/Jia Nan YUAN",
+    "负者": "Elisavet TERPOU/Konstantinos KONSTANTINOPOULOS",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-9",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Emmanuel LEBESSON/Jia Nan YUAN",
+    "负者": "Daniel HABESOHN/Elizabeta SAMARA",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-9",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Nandor ECSEKI/Dora MADARASZ",
+    "负者": "Deni KOZUL/Katarina STRAZAR",
+    "比分": "3-2",
+    "局分": [
+      "7-11",
+      "11-7",
+      "10-12",
+      "11-2",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Barbora BALAZOVA/Lubomir PISTEJ",
+    "负者": "Benedikt DUDA/Sabine WINTER",
+    "比分": "3-0",
+    "局分": [
+      "13-11",
+      "11-9",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Alvaro ROBLES/Maria XIAO",
+    "负者": "Jakub DYJAS/Natalia PARTYKA",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "16-14",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Robert GARDOS/Sofia POLCANOVA",
+    "负者": "Dang QIU/Nina MITTELHAM",
+    "比分": "3-1",
+    "局分": [
+      "11-0",
+      "6-11",
+      "11-9",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Prithika PAVADE/Simon GAUZY",
+    "负者": "Tatiana KUKULKOVA/Yang WANG",
+    "比分": "3-0",
+    "局分": [
+      "11-1",
+      "11-9",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Katarzyna WEGRZYN/Samuel KULCZYCKI",
+    "负者": "Dimitrije LEVAJAC/Izabela LUPULESKU",
+    "比分": "3-1",
+    "局分": [
+      "11-8",
+      "9-11",
+      "13-11",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Ovidiu IONESCU/Bernadette SZOCS",
+    "负者": "Luka MLADENOVIC/Xia Lian NI",
+    "比分": "3-1",
+    "局分": [
+      "12-10",
+      "9-11",
+      "11-7",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Robert GARDOS/Sofia POLCANOVA",
+    "负者": "Prithika PAVADE/Simon GAUZY",
+    "比分": "3-1",
+    "局分": [
+      "11-9",
+      "5-11",
+      "11-7",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Ovidiu IONESCU/Bernadette SZOCS",
+    "负者": "Katarzyna WEGRZYN/Samuel KULCZYCKI",
+    "比分": "3-1",
+    "局分": [
+      "11-5",
+      "11-9",
+      "5-11",
+      "14-12"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Emmanuel LEBESSON/Jia Nan YUAN",
+    "负者": "Nandor ECSEKI/Dora MADARASZ",
+    "比分": "3-2",
+    "局分": [
+      "11-6",
+      "11-13",
+      "11-7",
+      "6-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2022-08-14",
+    "类型": "洲锦赛",
+    "胜者": "Barbora BALAZOVA/Lubomir PISTEJ",
+    "负者": "Alvaro ROBLES/Maria XIAO",
+    "比分": "3-2",
+    "局分": [
+      "11-9",
+      "9-11",
+      "10-12",
+      "13-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2022-08-15",
+    "类型": "洲锦赛",
+    "胜者": "Emmanuel LEBESSON/Jia Nan YUAN",
+    "负者": "Barbora BALAZOVA/Lubomir PISTEJ",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-6",
+      "14-12"
+    ]
+  },
+  {
+    "日期": "2022-08-15",
+    "类型": "洲锦赛",
+    "胜者": "Ovidiu IONESCU/Bernadette SZOCS",
+    "负者": "Robert GARDOS/Sofia POLCANOVA",
+    "比分": "3-2",
+    "局分": [
+      "5-11",
+      "7-11",
+      "11-9",
+      "11-7",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2022-08-15",
+    "类型": "洲锦赛",
+    "胜者": "Emmanuel LEBESSON/Jia Nan YUAN",
+    "负者": "Ovidiu IONESCU/Bernadette SZOCS",
+    "比分": "3-1",
+    "局分": [
+      "8-11",
+      "11-6",
+      "11-5",
+      "11-9"
+    ]
+  }
+]

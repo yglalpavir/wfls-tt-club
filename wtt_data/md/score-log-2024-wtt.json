@@ -1859,5 +1859,721 @@
     "胜者": "Quadri ARUNA/Tamas LAKATOS",
     "负者": "Elias RANEFUR/Florian BOURRASSAUD",
     "比分": "3-2"
+  },
+  {
+    "日期": "2024-10-16",
+    "类型": "洲锦赛",
+    "胜者": "Vladimir PETKOV/Yoan VELICHKOV",
+    "负者": "Ivik NIELSEN/Rune SCHULTZ",
+    "比分": "3-0",
+    "局分": [
+      "11-2",
+      "11-6",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2024-10-16",
+    "类型": "洲锦赛",
+    "胜者": "Joao MONTEIRO/Tiago APOLONIA",
+    "负者": "Abdullah YIGENLER/Ibrahim GUNDUZ",
+    "比分": "3-1",
+    "局分": [
+      "11-4",
+      "14-16",
+      "11-6",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2024-10-16",
+    "类型": "洲锦赛",
+    "胜者": "Madis MOOS/Pert Marten LEHTLAAN",
+    "负者": "Danny BAJWA/Martin JOHNSON",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-1",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2024-10-16",
+    "类型": "洲锦赛",
+    "胜者": "Aleksandrs MASKALONOKS/Olegs KARTUZOVS",
+    "负者": "Federico GIARDI/Mattias MONGIUSTI",
+    "比分": "3-2",
+    "局分": [
+      "11-6",
+      "5-11",
+      "2-11",
+      "11-5",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2024-10-16",
+    "类型": "洲锦赛",
+    "胜者": "Eitay SHUSHAN/Itay AVIVI",
+    "负者": "Hilal HASANOV/Nihad MAMMADOV",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-6",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2024-10-16",
+    "类型": "洲锦赛",
+    "胜者": "Andrii GREBENIUK/Mykyta ZAVADA",
+    "负者": "Ingi Darvis RODRIGUEZ/Matthías Þór SANDHOLT",
+    "比分": "3-1",
+    "局分": [
+      "9-11",
+      "11-7",
+      "11-3",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2024-10-16",
+    "类型": "洲锦赛",
+    "胜者": "Georgios STAMATOUROS/Ioannis SGOUROPOULOS",
+    "负者": "Daniels KOGANS/Kestutis ZEIMYS",
+    "比分": "3-1",
+    "局分": [
+      "11-9",
+      "11-13",
+      "11-2",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2024-10-16",
+    "类型": "洲锦赛",
+    "胜者": "Kas VAN OOST/Luka MLADENOVIC",
+    "负者": "Arturs SPALIS/Kristijan STANOJKOVSKI",
+    "比分": "3-1",
+    "局分": [
+      "11-6",
+      "11-6",
+      "7-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2024-10-16",
+    "类型": "洲锦赛",
+    "胜者": "Aleksi RASANEN/Brin VOVK PETROVSKI",
+    "负者": "Gabrielius CAMARA/Milo DE BOER",
+    "比分": "3-2",
+    "局分": [
+      "7-11",
+      "11-7",
+      "8-11",
+      "11-4",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2024-10-16",
+    "类型": "洲锦赛",
+    "胜者": "Maciej KOLODZIEJCZYK/Vladislav URSU",
+    "负者": "Ivor BAN/Leon BENKO",
+    "比分": "3-2",
+    "局分": [
+      "8-11",
+      "11-3",
+      "11-5",
+      "8-11",
+      "11-2"
+    ]
+  },
+  {
+    "日期": "2024-10-16",
+    "类型": "洲锦赛",
+    "胜者": "Joao MONTEIRO/Tiago APOLONIA",
+    "负者": "Heorhi KUNATS/Nikon SHUTOV",
+    "比分": "3-1",
+    "局分": [
+      "11-1",
+      "9-11",
+      "11-9",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2024-10-16",
+    "类型": "洲锦赛",
+    "胜者": "Konstantinos ANGELAKIS/Yang WANG",
+    "负者": "Khai LAM/Martin FROSETH",
+    "比分": "3-1",
+    "局分": [
+      "11-6",
+      "8-11",
+      "11-7",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2024-10-16",
+    "类型": "洲锦赛",
+    "胜者": "Juan PEREZ/Rafael DE LAS HERAS",
+    "负者": "Vladimir PETKOV/Yoan VELICHKOV",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "12-10",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2024-10-16",
+    "类型": "洲锦赛",
+    "胜者": "Connor GREEN/Hakan ISIK",
+    "负者": "Madis MOOS/Pert Marten LEHTLAAN",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-4",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2024-10-16",
+    "类型": "洲锦赛",
+    "胜者": "Andrei PUTUNTICA/Dimitrije LEVAJAC",
+    "负者": "Marios YIANGOU/Natanel ABRAMOV",
+    "比分": "3-1",
+    "局分": [
+      "11-6",
+      "11-8",
+      "6-11",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2024-10-16",
+    "类型": "洲锦赛",
+    "胜者": "Andrea PUPPO/Matteo MUTTI",
+    "负者": "Aleksandrs MASKALONOKS/Olegs KARTUZOVS",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-3",
+      "11-2"
+    ]
+  },
+  {
+    "日期": "2024-10-16",
+    "类型": "洲锦赛",
+    "胜者": "Andre BERTELSMEIER/Fanbo MENG",
+    "负者": "Jan VALENTA/Ondrej KVETON",
+    "比分": "3-2",
+    "局分": [
+      "11-3",
+      "11-4",
+      "10-12",
+      "13-15",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2024-10-16",
+    "类型": "洲锦赛",
+    "胜者": "Lubomir JANCARIK/Pavel SIRUCEK",
+    "负者": "Mateusz ZALEWSKI/Zhenlong LIU",
+    "比分": "3-1",
+    "局分": [
+      "11-9",
+      "9-11",
+      "11-9",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2024-10-16",
+    "类型": "洲锦赛",
+    "胜者": "Alvaro ROBLES/Ovidiu IONESCU",
+    "负者": "Eitay SHUSHAN/Itay AVIVI",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-7",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2024-10-16",
+    "类型": "洲锦赛",
+    "胜者": "Andrii GREBENIUK/Mykyta ZAVADA",
+    "负者": "Cedric TSCHANZ/Thor CHRISTENSEN",
+    "比分": "3-1",
+    "局分": [
+      "11-5",
+      "11-9",
+      "7-11",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2024-10-16",
+    "类型": "洲锦赛",
+    "胜者": "Anders LIND/Andrej GACINA",
+    "负者": "Georgios STAMATOUROS/Ioannis SGOUROPOULOS",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-9",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2024-10-16",
+    "类型": "洲锦赛",
+    "胜者": "Alex NAUMI/Benedek OLAH",
+    "负者": "Ignas SISANOVAS/Lukas RIMKUS",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-3",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2024-10-16",
+    "类型": "洲锦赛",
+    "胜者": "Anton LIMONOV/Yaroslav ZHMUDENKO",
+    "负者": "Aleksa GACEV/Pero TEPIC",
+    "比分": "3-1",
+    "局分": [
+      "7-11",
+      "11-6",
+      "11-4",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2024-10-16",
+    "类型": "洲锦赛",
+    "胜者": "Kas VAN OOST/Luka MLADENOVIC",
+    "负者": "Barish MOULLET/Elias HARDMEIER",
+    "比分": "3-2",
+    "局分": [
+      "10-12",
+      "11-7",
+      "11-6",
+      "5-11",
+      "15-13"
+    ]
+  },
+  {
+    "日期": "2024-10-16",
+    "类型": "洲锦赛",
+    "胜者": "Jonathan GROTH/Martin ANDERSEN",
+    "负者": "Aleksi RASANEN/Brin VOVK PETROVSKI",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-7",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2024-10-17",
+    "类型": "洲锦赛",
+    "胜者": "Daniel HABESOHN/Robert GARDOS",
+    "负者": "Andrei PUTUNTICA/Dimitrije LEVAJAC",
+    "比分": "3-2",
+    "局分": [
+      "7-11",
+      "11-6",
+      "11-8",
+      "7-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2024-10-17",
+    "类型": "洲锦赛",
+    "胜者": "Anton KALLBERG/Truls MOREGARD",
+    "负者": "Anders LIND/Andrej GACINA",
+    "比分": "3-0",
+    "局分": [
+      "14-12",
+      "12-10",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2024-10-17",
+    "类型": "洲锦赛",
+    "胜者": "Alvaro ROBLES/Ovidiu IONESCU",
+    "负者": "Adam SZUDI/Nandor ECSEKI",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-6",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2024-10-17",
+    "类型": "洲锦赛",
+    "胜者": "Konstantinos ANGELAKIS/Yang WANG",
+    "负者": "Liam PITCHFORD/Samuel WALKER",
+    "比分": "3-2",
+    "局分": [
+      "11-7",
+      "7-11",
+      "10-12",
+      "11-7",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2024-10-17",
+    "类型": "洲锦赛",
+    "胜者": "Cedric NUYTINCK/Lubomir PISTEJ",
+    "负者": "Juan PEREZ/Rafael DE LAS HERAS",
+    "比分": "3-1",
+    "局分": [
+      "12-14",
+      "11-6",
+      "11-7",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2024-10-17",
+    "类型": "洲锦赛",
+    "胜者": "Kristian KARLSSON/Mattias FALCK",
+    "负者": "Anton LIMONOV/Yaroslav ZHMUDENKO",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-9",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2024-10-17",
+    "类型": "洲锦赛",
+    "胜者": "Andre BERTELSMEIER/Fanbo MENG",
+    "负者": "Darius MOVILEANU/Eduard IONESCU",
+    "比分": "3-1",
+    "局分": [
+      "14-12",
+      "13-11",
+      "10-12",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2024-10-17",
+    "类型": "洲锦赛",
+    "胜者": "Maciej KUBIK/Milosz REDZIMSKI",
+    "负者": "Joao MONTEIRO/Tiago APOLONIA",
+    "比分": "3-2",
+    "局分": [
+      "7-11",
+      "11-6",
+      "7-11",
+      "11-9",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2024-10-17",
+    "类型": "洲锦赛",
+    "胜者": "Alexis LEBRUN/Felix LEBRUN",
+    "负者": "Jonathan GROTH/Martin ANDERSEN",
+    "比分": "3-1",
+    "局分": [
+      "9-11",
+      "11-6",
+      "11-5",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2024-10-17",
+    "类型": "洲锦赛",
+    "胜者": "Maciej KOLODZIEJCZYK/Vladislav URSU",
+    "负者": "Adrien RASSENFOSSE/Martin ALLEGRO",
+    "比分": "3-2",
+    "局分": [
+      "8-11",
+      "9-11",
+      "11-5",
+      "11-6",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2024-10-17",
+    "类型": "洲锦赛",
+    "胜者": "Esteban DORR/Florian BOURRASSAUD",
+    "负者": "Lubomir JANCARIK/Pavel SIRUCEK",
+    "比分": "3-0",
+    "局分": [
+      "12-10",
+      "11-7",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2024-10-17",
+    "类型": "洲锦赛",
+    "胜者": "Darko JORGIC/Tomislav PUCAR",
+    "负者": "Connor GREEN/Hakan ISIK",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-4",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2024-10-17",
+    "类型": "洲锦赛",
+    "胜者": "Deni KOZUL/Peter HRIBAR",
+    "负者": "Andrii GREBENIUK/Mykyta ZAVADA",
+    "比分": "3-1",
+    "局分": [
+      "11-9",
+      "8-11",
+      "11-9",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2024-10-17",
+    "类型": "洲锦赛",
+    "胜者": "Benedikt DUDA/Dang QIU",
+    "负者": "Kas VAN OOST/Luka MLADENOVIC",
+    "比分": "3-1",
+    "局分": [
+      "9-11",
+      "11-6",
+      "11-6",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2024-10-17",
+    "类型": "洲锦赛",
+    "胜者": "Borgar HAUG/Florent LAMBIET",
+    "负者": "Alex NAUMI/Benedek OLAH",
+    "比分": "3-1",
+    "局分": [
+      "11-6",
+      "7-11",
+      "11-7",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2024-10-17",
+    "类型": "洲锦赛",
+    "胜者": "Andrea PUPPO/Matteo MUTTI",
+    "负者": "Balazs LEI/Samuel ARPAS",
+    "比分": "3-2",
+    "局分": [
+      "11-9",
+      "4-11",
+      "4-11",
+      "11-4",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2024-10-18",
+    "类型": "洲锦赛",
+    "胜者": "Deni KOZUL/Peter HRIBAR",
+    "负者": "Esteban DORR/Florian BOURRASSAUD",
+    "比分": "3-2",
+    "局分": [
+      "12-10",
+      "4-11",
+      "5-11",
+      "11-7",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2024-10-18",
+    "类型": "洲锦赛",
+    "胜者": "Kristian KARLSSON/Mattias FALCK",
+    "负者": "Andre BERTELSMEIER/Fanbo MENG",
+    "比分": "3-0",
+    "局分": [
+      "13-11",
+      "11-3",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2024-10-18",
+    "类型": "洲锦赛",
+    "胜者": "Cedric NUYTINCK/Lubomir PISTEJ",
+    "负者": "Konstantinos ANGELAKIS/Yang WANG",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "12-10",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2024-10-18",
+    "类型": "洲锦赛",
+    "胜者": "Maciej KUBIK/Milosz REDZIMSKI",
+    "负者": "Borgar HAUG/Florent LAMBIET",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-5",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2024-10-18",
+    "类型": "洲锦赛",
+    "胜者": "Benedikt DUDA/Dang QIU",
+    "负者": "Daniel HABESOHN/Robert GARDOS",
+    "比分": "3-0",
+    "局分": [
+      "13-11",
+      "11-9",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2024-10-18",
+    "类型": "洲锦赛",
+    "胜者": "Alexis LEBRUN/Felix LEBRUN",
+    "负者": "Alvaro ROBLES/Ovidiu IONESCU",
+    "比分": "3-1",
+    "局分": [
+      "11-9",
+      "11-6",
+      "8-11",
+      "14-12"
+    ]
+  },
+  {
+    "日期": "2024-10-18",
+    "类型": "洲锦赛",
+    "胜者": "Anton KALLBERG/Truls MOREGARD",
+    "负者": "Andrea PUPPO/Matteo MUTTI",
+    "比分": "3-0",
+    "局分": [
+      "11-3",
+      "11-7",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2024-10-18",
+    "类型": "洲锦赛",
+    "胜者": "Maciej KOLODZIEJCZYK/Vladislav URSU",
+    "负者": "Darko JORGIC/Tomislav PUCAR",
+    "比分": "3-2",
+    "局分": [
+      "12-10",
+      "12-10",
+      "9-11",
+      "3-11",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2024-10-19",
+    "类型": "洲锦赛",
+    "胜者": "Maciej KOLODZIEJCZYK/Vladislav URSU",
+    "负者": "Deni KOZUL/Peter HRIBAR",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "16-14",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2024-10-19",
+    "类型": "洲锦赛",
+    "胜者": "Kristian KARLSSON/Mattias FALCK",
+    "负者": "Benedikt DUDA/Dang QIU",
+    "比分": "3-2",
+    "局分": [
+      "9-11",
+      "11-6",
+      "11-7",
+      "8-11",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2024-10-19",
+    "类型": "洲锦赛",
+    "胜者": "Alexis LEBRUN/Felix LEBRUN",
+    "负者": "Cedric NUYTINCK/Lubomir PISTEJ",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-7",
+      "11-2"
+    ]
+  },
+  {
+    "日期": "2024-10-19",
+    "类型": "洲锦赛",
+    "胜者": "Anton KALLBERG/Truls MOREGARD",
+    "负者": "Maciej KUBIK/Milosz REDZIMSKI",
+    "比分": "3-1",
+    "局分": [
+      "11-9",
+      "11-8",
+      "3-11",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2024-10-19",
+    "类型": "洲锦赛",
+    "胜者": "Alexis LEBRUN/Felix LEBRUN",
+    "负者": "Maciej KOLODZIEJCZYK/Vladislav URSU",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-9",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2024-10-19",
+    "类型": "洲锦赛",
+    "胜者": "Anton KALLBERG/Truls MOREGARD",
+    "负者": "Kristian KARLSSON/Mattias FALCK",
+    "比分": "3-0",
+    "局分": [
+      "12-10",
+      "11-6",
+      "11-2"
+    ]
+  },
+  {
+    "日期": "2024-10-20",
+    "类型": "洲锦赛",
+    "胜者": "Alexis LEBRUN/Felix LEBRUN",
+    "负者": "Anton KALLBERG/Truls MOREGARD",
+    "比分": "3-0",
+    "局分": [
+      "11-2",
+      "11-6",
+      "11-8"
+    ]
   }
 ]

@@ -1319,5 +1319,578 @@
     "胜者": "Bojan TOKIC/Kirill SKACHKOV",
     "负者": "Brice OLLIVIER/Nima ALAMIAN",
     "比分": "3-2"
+  },
+  {
+    "日期": "2021-06-23",
+    "类型": "洲锦赛",
+    "胜者": "Marek BADOWSKI/Robin DEVOS",
+    "负者": "Alfredas UDRA/Kestutis ZEIMYS",
+    "比分": "3-2",
+    "局分": [
+      "11-8",
+      "10-12",
+      "11-4",
+      "7-11",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2021-06-23",
+    "类型": "洲锦赛",
+    "胜者": "Lubomir PISTEJ/Ovidiu IONESCU",
+    "负者": "Ioannis SGOUROPOULOS/Marios YIANGOU",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-2",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2021-06-23",
+    "类型": "洲锦赛",
+    "胜者": "Darko JORGIC/Tomislav PUCAR",
+    "负者": "Aleksandr LUSIN/Vladislav URSU",
+    "比分": "3-2",
+    "局分": [
+      "9-11",
+      "11-2",
+      "11-7",
+      "11-13",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2021-06-23",
+    "类型": "洲锦赛",
+    "胜者": "Andrea LANDRIEU/Can AKKUZU",
+    "负者": "Georgios STAMATOUROS/Giorgos KONSTANTINOPOULOS",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-5",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2021-06-23",
+    "类型": "洲锦赛",
+    "胜者": "Arturs REINHOLDS/Vallot VAINULA",
+    "负者": "Panagiotis GIONIS/Yang WANG",
+    "比分": "3-1",
+    "局分": [
+      "6-11",
+      "11-9",
+      "11-8",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2021-06-23",
+    "类型": "洲锦赛",
+    "胜者": "Viktor YEFIMOV/Yevhen Pryshchepa",
+    "负者": "Petyo KRASTEV/Teodor ALEXANDROV",
+    "比分": "3-1",
+    "局分": [
+      "6-11",
+      "12-10",
+      "11-9",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2021-06-23",
+    "类型": "洲锦赛",
+    "胜者": "Aleksandr KHANIN/Vladislav RUKLETSOV",
+    "负者": "Kreshnik MAHMUTI/Kristijan STANOJKOVSKI",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-7",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2021-06-23",
+    "类型": "洲锦赛",
+    "胜者": "Abdullah YIGENLER/Ibrahim GUNDUZ",
+    "负者": "Marco RECH DALDOSSO/Peter HRIBAR",
+    "比分": "3-1",
+    "局分": [
+      "11-9",
+      "9-11",
+      "11-8",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2021-06-23",
+    "类型": "洲锦赛",
+    "胜者": "Alexandre CASSIN/Emmanuel LEBESSON",
+    "负者": "Martin ANDERSEN/Thor CHRISTENSEN",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-6",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2021-06-23",
+    "类型": "洲锦赛",
+    "胜者": "Gleb SHAMRUK/Pavel PLATONOV",
+    "负者": "Eduard IONESCU/Jakub ZELINKA",
+    "比分": "3-2",
+    "局分": [
+      "11-5",
+      "6-11",
+      "4-11",
+      "11-3",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2021-06-23",
+    "类型": "洲锦赛",
+    "胜者": "Hunor SZOCS/Rares SIPOS",
+    "负者": "David SERDAROGLU/Maciej KOLODZIEJCZYK",
+    "比分": "3-2",
+    "局分": [
+      "11-9",
+      "10-12",
+      "5-11",
+      "11-8",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2021-06-23",
+    "类型": "洲锦赛",
+    "胜者": "Filip ZELJKO/Samuel WALKER",
+    "负者": "Michael TAUBER/Yonatan SHUSTERMAN",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-5",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2021-06-23",
+    "类型": "洲锦赛",
+    "胜者": "Andrei PUTUNTICA/Dimitrije LEVAJAC",
+    "负者": "Bojan TOKIC/Deni KOZUL",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2021-06-23",
+    "类型": "洲锦赛",
+    "胜者": "Tamas LAKATOS/Tobias RASMUSSEN",
+    "负者": "Eskil LINDHOLM/Olegs KARTUZOVS",
+    "比分": "3-0",
+    "局分": [
+      "11-3",
+      "11-3",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2021-06-24",
+    "类型": "洲锦赛",
+    "胜者": "Daniel HABESOHN/Robert GARDOS",
+    "负者": "Tamas LAKATOS/Tobias RASMUSSEN",
+    "比分": "3-1",
+    "局分": [
+      "11-6",
+      "8-11",
+      "11-7",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2021-06-24",
+    "类型": "洲锦赛",
+    "胜者": "Diogo CARVALHO/Joao GERALDO",
+    "负者": "Marek BADOWSKI/Robin DEVOS",
+    "比分": "3-1",
+    "局分": [
+      "11-9",
+      "11-7",
+      "9-11",
+      "15-13"
+    ]
+  },
+  {
+    "日期": "2021-06-24",
+    "类型": "洲锦赛",
+    "胜者": "Kristian KARLSSON/Mattias FALCK",
+    "负者": "Arturs REINHOLDS/Vallot VAINULA",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-7",
+      "11-2"
+    ]
+  },
+  {
+    "日期": "2021-06-24",
+    "类型": "洲锦赛",
+    "胜者": "Lev KATSMAN/Maksim GREBNEV",
+    "负者": "Marko JEVTOVIC/Zsolt PETO",
+    "比分": "3-1",
+    "局分": [
+      "11-3",
+      "7-11",
+      "13-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2021-06-24",
+    "类型": "洲锦赛",
+    "胜者": "Benedikt DUDA/Dang QIU",
+    "负者": "Andrei PUTUNTICA/Dimitrije LEVAJAC",
+    "比分": "3-1",
+    "局分": [
+      "11-5",
+      "11-7",
+      "9-11",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2021-06-24",
+    "类型": "洲锦赛",
+    "胜者": "Adam SZUDI/Nandor ECSEKI",
+    "负者": "Eric GLOD/Luka MLADENOVIC",
+    "比分": "3-1",
+    "局分": [
+      "11-7",
+      "11-6",
+      "5-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2021-06-24",
+    "类型": "洲锦赛",
+    "胜者": "Alex NAUMI/Benedek OLAH",
+    "负者": "Viktor YEFIMOV/Yevhen Pryshchepa",
+    "比分": "3-1",
+    "局分": [
+      "11-7",
+      "13-11",
+      "7-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2021-06-24",
+    "类型": "洲锦赛",
+    "胜者": "Mihai BOBOCICA/Niagol STOYANOV",
+    "负者": "Alexandre CASSIN/Emmanuel LEBESSON",
+    "比分": "3-2",
+    "局分": [
+      "12-10",
+      "9-11",
+      "10-12",
+      "11-9",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2021-06-24",
+    "类型": "洲锦赛",
+    "胜者": "Darko JORGIC/Tomislav PUCAR",
+    "负者": "Patrick FRANZISKA/Timo BOLL",
+    "比分": "3-2",
+    "局分": [
+      "12-10",
+      "7-11",
+      "11-4",
+      "9-11",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2021-06-24",
+    "类型": "洲锦赛",
+    "胜者": "Cedric NUYTINCK/Jakub DYJAS",
+    "负者": "Andrea LANDRIEU/Can AKKUZU",
+    "比分": "3-0",
+    "局分": [
+      "11-3",
+      "12-10",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2021-06-24",
+    "类型": "洲锦赛",
+    "胜者": "Maciej KUBIK/Samuel KULCZYCKI",
+    "负者": "Filip ZELJKO/Samuel WALKER",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "11-7",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2021-06-24",
+    "类型": "洲锦赛",
+    "胜者": "Joao MONTEIRO/Tiago APOLONIA",
+    "负者": "Lubomir PISTEJ/Ovidiu IONESCU",
+    "比分": "3-1",
+    "局分": [
+      "11-4",
+      "4-11",
+      "11-4",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2021-06-24",
+    "类型": "洲锦赛",
+    "胜者": "Florent LAMBIET/Martin ALLEGRO",
+    "负者": "Gleb SHAMRUK/Pavel PLATONOV",
+    "比分": "3-0",
+    "局分": [
+      "11-3",
+      "11-4",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2021-06-24",
+    "类型": "洲锦赛",
+    "胜者": "Pavel SIRUCEK/Tomas POLANSKY",
+    "负者": "Abdullah YIGENLER/Ibrahim GUNDUZ",
+    "比分": "3-1",
+    "局分": [
+      "12-10",
+      "8-11",
+      "11-3",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2021-06-24",
+    "类型": "洲锦赛",
+    "胜者": "Kirill SKACHKOV/Vladimir SIDORENKO",
+    "负者": "Hunor SZOCS/Rares SIPOS",
+    "比分": "3-1",
+    "局分": [
+      "11-5",
+      "8-11",
+      "11-5",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2021-06-24",
+    "类型": "洲锦赛",
+    "胜者": "Anton KALLBERG/Jon PERSSON",
+    "负者": "Aleksandr KHANIN/Vladislav RUKLETSOV",
+    "比分": "3-1",
+    "局分": [
+      "9-11",
+      "11-7",
+      "11-8",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2021-06-25",
+    "类型": "洲锦赛",
+    "胜者": "Lev KATSMAN/Maksim GREBNEV",
+    "负者": "Kristian KARLSSON/Mattias FALCK",
+    "比分": "3-2",
+    "局分": [
+      "10-12",
+      "6-11",
+      "11-8",
+      "11-7",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2021-06-25",
+    "类型": "洲锦赛",
+    "胜者": "Benedikt DUDA/Dang QIU",
+    "负者": "Alex NAUMI/Benedek OLAH",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "11-7",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2021-06-25",
+    "类型": "洲锦赛",
+    "胜者": "Daniel HABESOHN/Robert GARDOS",
+    "负者": "Mihai BOBOCICA/Niagol STOYANOV",
+    "比分": "3-1",
+    "局分": [
+      "10-12",
+      "11-6",
+      "11-6",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2021-06-25",
+    "类型": "洲锦赛",
+    "胜者": "Adam SZUDI/Nandor ECSEKI",
+    "负者": "Diogo CARVALHO/Joao GERALDO",
+    "比分": "3-1",
+    "局分": [
+      "11-5",
+      "4-11",
+      "11-9",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2021-06-25",
+    "类型": "洲锦赛",
+    "胜者": "Joao MONTEIRO/Tiago APOLONIA",
+    "负者": "Maciej KUBIK/Samuel KULCZYCKI",
+    "比分": "3-0",
+    "局分": [
+      "12-10",
+      "11-3",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2021-06-25",
+    "类型": "洲锦赛",
+    "胜者": "Cedric NUYTINCK/Jakub DYJAS",
+    "负者": "Pavel SIRUCEK/Tomas POLANSKY",
+    "比分": "3-1",
+    "局分": [
+      "11-7",
+      "8-11",
+      "11-8",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2021-06-25",
+    "类型": "洲锦赛",
+    "胜者": "Darko JORGIC/Tomislav PUCAR",
+    "负者": "Anton KALLBERG/Jon PERSSON",
+    "比分": "3-1",
+    "局分": [
+      "9-11",
+      "11-7",
+      "11-3",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2021-06-25",
+    "类型": "洲锦赛",
+    "胜者": "Kirill SKACHKOV/Vladimir SIDORENKO",
+    "负者": "Florent LAMBIET/Martin ALLEGRO",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-6",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2021-06-26",
+    "类型": "洲锦赛",
+    "胜者": "Cedric NUYTINCK/Jakub DYJAS",
+    "负者": "Kirill SKACHKOV/Vladimir SIDORENKO",
+    "比分": "3-2",
+    "局分": [
+      "11-8",
+      "9-11",
+      "5-11",
+      "11-8",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2021-06-26",
+    "类型": "洲锦赛",
+    "胜者": "Joao MONTEIRO/Tiago APOLONIA",
+    "负者": "Darko JORGIC/Tomislav PUCAR",
+    "比分": "3-1",
+    "局分": [
+      "5-11",
+      "11-9",
+      "11-6",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2021-06-26",
+    "类型": "洲锦赛",
+    "胜者": "Lev KATSMAN/Maksim GREBNEV",
+    "负者": "Benedikt DUDA/Dang QIU",
+    "比分": "3-1",
+    "局分": [
+      "7-11",
+      "11-8",
+      "11-8",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2021-06-26",
+    "类型": "洲锦赛",
+    "胜者": "Adam SZUDI/Nandor ECSEKI",
+    "负者": "Daniel HABESOHN/Robert GARDOS",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "11-9",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2021-06-26",
+    "类型": "洲锦赛",
+    "胜者": "Cedric NUYTINCK/Jakub DYJAS",
+    "负者": "Joao MONTEIRO/Tiago APOLONIA",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-6",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2021-06-26",
+    "类型": "洲锦赛",
+    "胜者": "Lev KATSMAN/Maksim GREBNEV",
+    "负者": "Adam SZUDI/Nandor ECSEKI",
+    "比分": "3-2",
+    "局分": [
+      "9-11",
+      "11-9",
+      "7-11",
+      "11-7",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2021-06-27",
+    "类型": "洲锦赛",
+    "胜者": "Lev KATSMAN/Maksim GREBNEV",
+    "负者": "Cedric NUYTINCK/Jakub DYJAS",
+    "比分": "3-1",
+    "局分": [
+      "12-10",
+      "11-8",
+      "8-11",
+      "11-7"
+    ]
   }
 ]
