@@ -860,6 +860,193 @@
       "qq": "",
       "description": "",
       "status": "active"
+    },
+    {
+      "uid": 10046,
+      "name": "吕宥衡",
+      "pinyin": "LÜ Youheng",
+      "aliases": [],
+      "initialScore": 1800,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "grade": {
+        "enroll": 2026,
+        "graduate": 2029
+      },
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10047,
+      "name": "熊若翔",
+      "pinyin": "XIONG Ruoxiang",
+      "aliases": [],
+      "initialScore": 1800,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "grade": {
+        "enroll": 2026,
+        "graduate": 2029
+      },
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10048,
+      "name": "潘乐然",
+      "pinyin": "PAN Leran",
+      "aliases": [],
+      "initialScore": 1800,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "grade": {
+        "enroll": 2026,
+        "graduate": 2029
+      },
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10049,
+      "name": "王禹涵",
+      "pinyin": "WANG Yuhan",
+      "aliases": [],
+      "initialScore": 1800,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "grade": {
+        "enroll": 2026,
+        "graduate": 2029
+      },
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10050,
+      "name": "徐耀鹏",
+      "pinyin": "XU Yaopeng",
+      "aliases": [],
+      "initialScore": 1800,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "grade": {
+        "enroll": 2026,
+        "graduate": 2029
+      },
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10051,
+      "name": "朱昱安",
+      "pinyin": "ZHU Yu'an",
+      "aliases": [],
+      "initialScore": 1800,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "grade": {
+        "enroll": 2026,
+        "graduate": 2029
+      },
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10052,
+      "name": "冯秋源",
+      "pinyin": "FENG Qiuyuan",
+      "aliases": [],
+      "initialScore": 1800,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "grade": {
+        "enroll": 2026,
+        "graduate": 2029
+      },
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10053,
+      "name": "马钰恒",
+      "pinyin": "MA Yuheng",
+      "aliases": [],
+      "initialScore": 1800,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "grade": {
+        "enroll": 2026,
+        "graduate": 2029
+      },
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10054,
+      "name": "熊子越",
+      "pinyin": "XIONG Ziyue",
+      "aliases": [],
+      "initialScore": 1800,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "grade": {
+        "enroll": 2026,
+        "graduate": 2029
+      },
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10055,
+      "name": "李泱乐",
+      "pinyin": "LI Yuele",
+      "aliases": [],
+      "initialScore": 1800,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "grade": {
+        "enroll": 2026,
+        "graduate": 2029
+      },
+      "qq": "",
+      "description": "",
+      "status": "active"
+    },
+    {
+      "uid": 10056,
+      "name": "熊品钧",
+      "pinyin": "XIONG Pinjun",
+      "aliases": [],
+      "initialScore": 1800,
+      "tags": [],
+      "honors": [],
+      "role": "",
+      "grade": {
+        "enroll": 2026,
+        "graduate": 2029
+      },
+      "qq": "",
+      "description": "",
+      "status": "active"
     }
   ]
 }
