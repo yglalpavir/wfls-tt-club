@@ -51,12 +51,12 @@ ETTU 官方成绩平台 = TTM WebGen 静态站点 `https://www.ttm.co.at/results
 
 ETTU/TTM 平台只回溯到 `ec2020`（`ec2016`/`ec2017`/`ec2018`/`ec2019` 均 404）。
 
-- **2016 / 2018 个人赛**：仅有二手来源 allabouttabletennis.com 的签表页，
-  早期轮次只有局数（如 `4-1`）没有逐局比分，覆盖不完整、需额外解析与人工校对。
-- **2017 / 2019 团体赛**：未找到任何机读来源。
+- **2016 / 2018 个人赛**：ETTU 无存档，改用二手来源 allabouttabletennis.com（AATT）补录；
+  早期轮次只有局数（如 `4-1`）没有逐局比分 → 这些场次只写 `比分`。
+- **2017 / 2019 团体赛**：ETTU 无存档；AATT 有团体页，且每场单打都带逐局比分。
 
-处理方式：**第一优先级交付 2020–2026 全部届次**（来源权威、含逐局比分）；
-2016/2018 作为可选的「尽力而为」增量另行处理，2017/2019 记录为「来源缺失」。
+处理方式：先交付 2020–2026 全部届次（ETTU 权威源），再用 AATT 补录 2016–2019
+（详见 §7）。两段数据在类型、胜负口径、姓名与双打组合名规范化上完全一致。
 
 ## 3. 记录口径（与仓库约定对齐）
 
@@ -118,3 +118,56 @@ xd 2021=52／2022=60／2024=64／2026=71。
 脚本复跑新增 0 条；`git diff --numstat -- wtt_data/` 各文件删除行数为 0
 （`xd/score-log-2021-wtt.json`、`xd/score-log-2024-wtt.json` 各 1 行删除，
  系原末条记录补逗号所致）。
+
+## 7. 补录 2016–2019（二手源，已完成）
+
+ETTU/TTM 无 2016–2019 存档，这两届个人赛与团体赛改用 **allabouttabletennis.com（AATT）**
+的比赛结果页补录（`tools/_aatt_probe.py` 抓取 14 个页面到 `tools/.aatt_raw/`，
+`tools/import_euro_champs_aatt.py` 解析并追加；两个脚本都是本地工具，`tools/*` 已被 gitignore）。
+
+| 届次 | 举办地 | 项目 | 页面数 |
+|---|---|---|---|
+| 2016 | 布达佩斯 | MS WS MD WD XD | 5 |
+| 2017 | 卢森堡 | MT WT | 2 |
+| 2018 | 阿利坎特 | MS WS MD WD XD | 5 |
+| 2019 | 南特 | MT WT | 2 |
+
+口径与限制（记录已按此执行）：
+
+- 类型仍为 `洲锦赛`（个人）/ `洲锦赛团体`（团体），团体赛同样记录为个人单打场次
+  （MT→`ms`、WT→`ws`），与 2020–2026 那段完全一致。
+- **个人赛只含正赛第一轮起的场次**：源站不给资格赛/安慰赛。
+- **早期轮次只有局数、没有逐局比分**，这些场次只写 `比分`（不写 `局分`）；
+  个人赛自 8 强起才有逐局比分，团体赛每场单打都有逐局比分。
+- **2017/2019 团体赛只有夺冠档（Championships Division / 决赛阶段）的逐场明细**，
+  Challenge / Standard Division 源站只给分组与最终名次，故未收录。
+- **2019 团体赛小组赛所在页面没有日期段落**，按赛事窗口起始日 `2019-09-03` 归日
+  （页面自述赛事为 3–8 September 2019，八强赛起才逐日标注 9-06/07/08）。
+- **弃权/伤退行不录入**（共 3 行：2016 混双 2 行结果列写 `w/o`、2019 女团 1 行写 `Walkover`），
+  源站未给出任何局数，无法判定比分。
+- 姓名有四种源站写法（`19 Jakub DYJAS (Poland)`、`(55) WEBER Lionel (Switzerland)`、
+  `FILUS, Ruwen`、`SHIBAEV Alexander`），统一为仓库的 `名 姓`：先在现有 wtt_data 姓名表里按
+  「整串 → 词集合」反查标准拼写（顺序不确定时用候选顺序投票），查不到才按启发式定序。
+- 双打组合名与 `js/wtt_common.js` 同规则（XD 男先女后，性别未知退回字典序）。
+
+产出规模：**1031 场**，重复 0 条。逐文件新增（全部纯追加）：
+md 2016=31／2018=31；ms 2016=63／2017=183／2018=63／2019=116；
+wd 2016=31／2018=31；ws 2016=63／2017=180／2018=63／2019=116；
+xd 2016=29／2018=31。xd 项目原缺这两年的年度文件，**新建**
+`wtt_data/xd/score-log-2016-wtt.json` 与 `wtt_data/xd/score-log-2018-wtt.json`，
+并登记进 `wtt_data/xd/manifest.json`。
+
+验收结果（2026-10-17，提交 `74ea502`：15 files changed, +11056 / −1）：
+
+- `python tools/ci_validate.py` 全绿：261 个 JSON 解析通过；`[5]` 比分/局分自洽，
+  WTT 侧 22974 条含比分记录无异常；`[11]` **88** 个 WTT score-log 文件结构合法。
+- 签表完整性自检：MS/WS 63 = 32+16+8+4+2+1；MD/WD 31 = 16+8+4+2+1；
+  2016 混双 29 场 + 2 条弃权 = 31。
+- 冠军交叉核对（与页面奖牌框比对）4/4 一致：2016 男单 Emmanuel Lebesson、
+  2016 女单 Melek HU、2018 男单 Timo Boll、2018 女单 LI Qian。
+- 脚本复跑新增 0 条（幂等）；`git diff --numstat -- wtt_data/` 各 score-log 删除行数为 0
+  （`xd/manifest.json` 1 行删除，系原末条补逗号所致）。
+- 源站笔误已容错：2018 混双 `PICCOLIN Giorgia Italy)` 缺左括号，解析结果仍为 `Giorgia PICCOLIN`。
+- 10 个姓名未在现有姓名表命中（这些选手仓库尚无既有写法，按启发式定序写入）：
+  Xuan ZHANG、Kristin SILBEREISEN、Aneta KUCEROVA、Judith LIU、Karin ADAMKOVA、
+  Aleksandra VOVK、Christian KILL、Egle TAMASAUSKAITE、Georgia ZAVITSANOU、Sarah MEYER。
