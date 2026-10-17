@@ -20,6 +20,15 @@
 #
 # 停止：  touch data/.stop/hell-selfplay.stop
 # 日志：  tools/logs/_hell-selfplay.log
+#
+# 续训起点（2026-10-17 增加）：
+#   默认从 js/learned-policy.js（线上地狱）起跑。
+#   要接着上一轮候选继续训，二选一：
+#     HELL_START=tools/logs/_run330-candidate.json bash tools/_supervise-hell.sh 330 --workers 20 --no-write
+#     echo tools/logs/_run330-candidate.json > tools/logs/_hell-selfplay.start   # 看门狗重启也能读到
+#   只影响「第一次」启动；之后崩溃重启从 best.json（本轮最新最优）续训。
+#   注意此时 train-hell.js 的「现役」参照也变成该起点，跨轮头对头要另行复评。
+#   要从线上重新起跑：删掉 tools/logs/_hell-selfplay.start。
 # =====================================================================
 set -u
 
@@ -39,6 +48,16 @@ EXTRA=("$@")
 if [ "${#EXTRA[@]}" -eq 0 ]; then
   EXTRA=(--workers 20 --no-write)
 fi
+
+# ---- 续训起点：HELL_START 环境变量，或 tools/logs/_hell-selfplay.start 文件 ----
+# 只影响「第一次」启动；之后崩溃重启从 best.json（本轮最新最优）续训。
+# 想从线上地狱重新起跑：删掉这个 start 文件即可。
+START="${HELL_START:-}"
+START_FILE="tools/logs/_${RUN}.start"
+if [ -z "$START" ] && [ -f "$START_FILE" ]; then
+  START="$(tr -d '\r\n' < "$START_FILE")"
+fi
+[ -n "$START" ] && echo "[$(date '+%F %T')] 续训起点 START=$START" >> "$LOG"
 
 # ---- 单实例锁：避免两个守护同时写 best.json（会把续训起点搅乱）----
 if [ -f "$LOCK" ]; then
@@ -89,9 +108,12 @@ while :; do
 
   if [ "$FIRST" = "1" ]; then
     ARGS=(--gens "$n")
+    [ -n "$START" ] && ARGS+=(--from "$START")
     FIRST=0
   else
-    ARGS=(--gens "$n" --from "$BEST")
+    if [ -f "$BEST" ]; then ARGS=(--gens "$n" --from "$BEST")
+    elif [ -n "$START" ]; then ARGS=(--gens "$n" --from "$START")
+    else ARGS=(--gens "$n"); fi
   fi
 
   BEFORE=$(savedAtGen)

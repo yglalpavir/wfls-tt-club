@@ -119,3 +119,47 @@
 
 服务重启掐掉了两个我挂的 shell 后台等待进程（不影响训练本身）；看门狗与 waiter 未受影响，防中断链路完好。
 已重新挂一个完成通知。
+
+---
+
+## 第三轮（2026-10-17 19:46 启动）— 「续训」
+
+用户指令：**「续训」**（= 接着第二轮候选继续训练，暂不采纳）
+
+### 起点与口径澄清（重要）
+
+- 起点 = **第二轮候选** `tools/logs/_run330-candidate.json`（归档副本，稳定不变）。
+- ⚠️ `train-hell.js` 的「现役」参照就是 `--from` 给的起点，所以**本轮的 `vs现役` = vs 第二轮候选**，
+  不再是 vs 线上地狱。**跨轮判定必须另用 `_hell-h2h.js`（默认参照 = 线上 `strongVec()`）**，
+  并与第二轮的成绩 `57.27 %`（3200 局）比较。
+- 为支持「从指定检查点起跑」，`_supervise-hell.sh` 新增：
+  - `HELL_START=<file>` 环境变量，或 `tools/logs/_hell-selfplay.start` 文件（看门狗重启也读得到）；
+  - 只作用于**第一次**启动；崩溃重启仍从 `best.json` 续训（`best.json` 不存在时回落 `START`）。
+- 启动前已做：归档第二轮产物到 `tools/logs/_run330-{curve,best,candidate}.json`；
+  删除 `tools/logs/_hell-selfplay.state`（旧值 330，否则 `n = 330-330 = 0` 立即收工）与
+  `tools/train-hell-best.json`（否则 `savedAtGen` 起点 = 329，会让「干净退出但未推进」守卫误判为落盘缺失）。
+
+### 运行
+
+```
+bash tools/_supervise-hell.sh 330 --workers 20 --no-write
+```
+- 起点向量前三维 `[2.80, 0.03, 2.60]` = 护栏值 ✓（冻结维生效）
+- 68 s/代 ⇒ 330 代 ≈ 5.7 h ⇒ 预计收尾 **次日 01:25 前后**
+- 守护 chain PID 432 / winpid 18776 · 看门狗 PID 33796 · waiter 19:46:53 启动
+- 停止：`touch data/.stop/hell-selfplay.stop`
+
+### 工具改动（第三轮新增）
+
+- `tools/_hell-h2h.js` 新增 **`--versus <file>`**（换参照策略）与 **`--from <file>`**（换候选来源）；
+  位置参数与选项解耦。
+  自测：`--versus` 指向与候选相同的文件时给出 `50.00 %` ✓（口径自检通过）。
+- `tools/_supervise-hell.sh` 新增 `HELL_START` / `_hell-selfplay.start` 起点机制。
+
+### 收尾（第三轮）
+
+- 跑完：`node tools/_hell-h2h.js 200 8`（默认参照 = 线上地狱）→ 与 **57.27 %** 比较。
+- 另跑：`node tools/_hell-h2h.js 200 8 --from tools/logs/_run330-candidate.json --versus <第三轮候选>`
+  —— 不对，方向是「第三轮候选 vs 第二轮候选」，即
+  `--from tools/train-hell-candidate.json --versus tools/logs/_run330-candidate.json`。
+- 仍**不自动采纳**。
