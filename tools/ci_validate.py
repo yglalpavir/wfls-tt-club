@@ -258,6 +258,21 @@ if isinstance(no_decay, list):
         err(f"decay-config.json 的 noDecayTypes 含未定义类型: {stray}")
     else:
         ok("noDecayTypes ⊆ 已定义类型")
+if isinstance(decay_cfg, dict):
+    # 半衰期 t 是必填项：引擎在加载失败/缺 t 时会静默回退源码默认值 180，
+    # 与线上公布的口径不一致，故这里升级为硬校验。
+    t_val = decay_cfg.get("t")
+    if isinstance(t_val, bool) or not isinstance(t_val, (int, float)) or t_val <= 0:
+        err(f"decay-config.json 的 t 必须为正数（半衰期天数）: {t_val!r}")
+    else:
+        ok(f"decay-config.json 的 t 合法（{t_val:g} 天）")
+    # 权重下限（可选）：引擎仅接受 0 < minWeight <= 1，其余静默忽略并沿用默认 0.2。
+    mw_val = decay_cfg.get("minWeight")
+    if mw_val is not None:
+        if isinstance(mw_val, bool) or not isinstance(mw_val, (int, float)) or not (0 < mw_val <= 1):
+            err(f"decay-config.json 的 minWeight 必须为 (0, 1] 区间的数值: {mw_val!r}")
+        else:
+            ok(f"decay-config.json 的 minWeight 合法（{mw_val:g}）")
 
 # ---- 5) 比分/局分自洽性（可选字段；口径与 tools/append_submission.py validate_match 一致）----
 print("[5] 比分/局分自洽性")

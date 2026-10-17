@@ -1451,6 +1451,10 @@ let initialScoresData = null, eventCoefficients = null, seasonsData = null, play
 let playersData = null;          // { version, baseDate, players: [...] }
 let uidIndex = {};               // uid(String) -> player
 let nameIndex = {};              // 姓名/别名 -> player
+// HALF_LIFE_DAYS 仅供 WTT 玩家页的历史 LUT（js/wtt_personal_stats.js）使用。
+// WTT 已关闭时间衰减（SCORE_TIME_DECAY_ENABLED=false），该值实际不生效；
+// 社团积分的时间衰减半衰期与权重下限只认 data/decay-config.json 的 "t" / "minWeight"
+//（由 js/score-engine.js 的 loadDecayConfig() 读取，禁止在这里硬编码）。
 const SCORE_FLOOR = 1200, HALF_LIFE_DAYS = 180;
 let DEFAULT_INITIAL_SCORE = 1300;  // 可配置的默认初始分（WTT settings.json 中的 baseScore 可覆盖）
 let SCORE_TIME_DECAY_ENABLED = true;  // 赛季内时间衰减开关（WTT 关闭）

@@ -8,6 +8,10 @@ function isBonusRecord(record) { return record['类型'] === '比赛结果加分
 function getBaseScore(gap) { const ag = Math.abs(gap); if (gap >= 0) { if (ag <= 49) return 30; if (ag <= 99) return 24; if (ag <= 149) return 20; if (ag <= 199) return 16; if (ag <= 299) return 12; if (ag <= 399) return 8; return 4; } if (ag <= 49) return 30; if (ag <= 99) return 36; if (ag <= 149) return 42; if (ag <= 199) return 48; if (ag <= 299) return 54; if (ag <= 399) return 60; return 66; }
 // 可配置的时间衰减半衰期 t（单位：天），默认 180，可由 data/decay-config.json 的 "t" 覆盖
 let DECAY_HALF_LIFE_DAYS = 180;
+// 时间权重下限：无论距比赛多久，权重不再低于该值（“衰减最多衰减到最开始的 0.2 倍”）。
+// 默认 0.2，可由 data/decay-config.json 的 "minWeight" 覆盖（须 0 < v ≤ 1）。
+// 作用于 getTimeWeight 与 getFreezeWeight（定格值同样有下限）；WTT 不衰减、保值类型恒 1，均不受影响。
+let DECAY_WEIGHT_FLOOR = 0.2;
 // ===== 赛制系数（bo3/bo5/bo7，仅社团积分生效；WTT 模式恒为 1）=====
 // 由 event-coefficient.json 的保留键解析：
 //   "赛制系数": {
@@ -67,7 +71,7 @@ function getFormatMultiplier(eventType, matchFormat) {
 function getEventCoefficient(et) { if (!eventCoefficients) return 0.2; const v = eventCoefficients[et]; return (typeof v === 'number') ? v : 0.2; }
 function getTimeWeight(matchDate, snapshotDate) {
     if (SCORE_TIME_DECAY_ENABLED === false) return 1;   // WTT / 非衰减模式：调用点两参同值、权重恒 1，跳过 Date 构造
-    const mt = new Date(matchDate + 'T00:00:00').getTime(), st = new Date(snapshotDate + 'T00:00:00').getTime(); const dd = (st - mt) / 86400000; if (dd < 0) return 0; return Math.pow(2, -dd / DECAY_HALF_LIFE_DAYS); }
+    const mt = new Date(matchDate + 'T00:00:00').getTime(), st = new Date(snapshotDate + 'T00:00:00').getTime(); const dd = (st - mt) / 86400000; if (dd < 0) return 0; return Math.max(DECAY_WEIGHT_FLOOR, Math.pow(2, -dd / DECAY_HALF_LIFE_DAYS)); }
 
 // ===== 类型刷新·定格衰减：批次索引 =====
 // 对每名球员的每种类型，按日期聚簇（BATCH_GROUP_DAYS 内视为同一批）成批次。
@@ -118,6 +122,7 @@ function buildPlayerTypeBatches(sortedLog) {
  * - noDecay 类型：恒为 1（永久保值）。
  * - 该批存在下一批：定格于下一批出现日，权重不再随时间缩小。
  * - 该批为最后一批：按 snapshotDate 正常衰减。
+ * - 权重下限 DECAY_WEIGHT_FLOOR（默认 0.2）：衰减不会低于该值。
  * - WTT（SCORE_TIME_DECAY_ENABLED=false）：恒为 1。
  */
 function getFreezeWeight(player, et, matchDate, snapshotDate) {
@@ -133,7 +138,7 @@ function getFreezeWeight(player, et, matchDate, snapshotDate) {
     }
     if (idx === -1) return 1;
     const freezeDate = batches[idx + 1] ? batches[idx + 1].date : snapshotDate;
-    return Math.pow(2, -_dayDiffNum(batches[idx].date, freezeDate) / DECAY_HALF_LIFE_DAYS);
+    return Math.max(DECAY_WEIGHT_FLOOR, Math.pow(2, -_dayDiffNum(batches[idx].date, freezeDate) / DECAY_HALF_LIFE_DAYS));
 }
 
 function calcMatchPoints(winner, loser, eventType, matchDate, snapshotDate, currentScores, matchFormat) {
@@ -992,7 +997,7 @@ async function loadInitialScores() {
 }
 async function loadEventCoefficients() { try { const resp = await fetch('data/event-coefficient.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); eventCoefficients = await resp.json(); parseFormatConfig(eventCoefficients); return true; } catch(e) { console.error('event-coefficient.json 加载失败', e); return false; } }
 // 保值类型默认值：decay-config.json 加载失败时的兜底（与 data/decay-config.json 保持一致）
-const DEFAULT_NO_DECAY_TYPES = ['校乒赛单打', '校乒赛团体', '双打'];
+const DEFAULT_NO_DECAY_TYPES = ['校乒赛单打', '校乒赛团体', '双打', '校队选拔'];
 // 加载衰减配置。返回 true/false 供调用方判定成败（失败时 ranking 页会显示可见错误，
 // 而不是静默沿用错误的半衰期 180 天继续计算）。
 async function loadDecayConfig() {
@@ -1004,6 +1009,7 @@ async function loadDecayConfig() {
         return false;
     }
     if (typeof decayConfig.t === 'number' && decayConfig.t > 0) DECAY_HALF_LIFE_DAYS = decayConfig.t;
+    if (typeof decayConfig.minWeight === 'number' && decayConfig.minWeight > 0 && decayConfig.minWeight <= 1) DECAY_WEIGHT_FLOOR = decayConfig.minWeight;
     return true;
 }
 

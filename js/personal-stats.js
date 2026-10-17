@@ -707,7 +707,6 @@ function renderPersonalStats(playerName, containerId) {
  *
  * 优化策略：
  * - 预解析所有日期为时间戳，避免循环内重复 new Date()
- * - 预建时间衰减查找表 (LUT)，避免循环内重复 Math.pow()
  * - 分离赛事记录和加分记录，各自独立索引推进
  */
 function computeDailyScoreHistory(playerName, sortedLog, startScores, collectTypes) {
