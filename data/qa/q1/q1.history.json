@@ -1,5 +1,12 @@
 [
   {
+    "version": 6,
+    "updatedAt": "2026-10-17",
+    "title": "Ranking中的积分计算方法",
+    "visible": null,
+    "file": "q1.v6.json"
+  },
+  {
     "version": 5,
     "updatedAt": "2026-10-02",
     "title": "Ranking中的积分计算方法",
