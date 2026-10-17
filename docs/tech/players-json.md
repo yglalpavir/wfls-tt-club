@@ -181,11 +181,11 @@
 | --- | --- |
 | 类型 | `boolean` |
 | 约束 | 可选，缺失等同 `true`；存在时必须是布尔（`ci_validate.py` 校验，并统计隐藏人数）。 |
-| 用途 | `false` = **档案暂不在前台展示**。过滤点：排名表（`isProfileActivePlayer()`，`js/score-engine.js`）、数据可视化/个人数据页的球员列表与选择器（`getAllPlayers()`、`getAllPlayersForPersonal()`）、个人主页（`getPlayerByUid()` 返回 `null`，`player.html` 显示「未找到该球员」）、首页核心成员卡（`loadMembersData()`）、`submit.html` 姓名候选、`data_scale.html` 成员计数、公开 API（`data/api/players.json`，见 `tools/recompute_rankings.js`）。 |
+| 用途 | `false` = **档案暂不在前台展示**。过滤点：排名行与时间线（`isRankingRowHidden()` / `isProfileActivePlayer()`，`js/score-engine.js`：名次编号按公开名单连续，隐藏者整行不出现）、数据可视化/个人数据页的球员列表与选择器（`getAllPlayers()`、`getAllPlayersForPersonal()`）、个人主页（`getPlayerByUid()` 返回 `null`，`player.html` 显示「未找到该球员」）、首页核心成员卡（`loadMembersData()`）、`submit.html` 姓名候选、`data_scale.html` 成员计数、公开 API（`data/api/players.json`，见 `tools/recompute_rankings.js`）。 |
 | 恢复 | 删掉该键或改回 `true` 即可：数据本身不删，`uid` 不变，已有外链与积分不受影响。 |
 | 英文 | 无 `_en` 兄弟字段（纯逻辑开关，不显示）。 |
 
-> **只影响展示层，不影响算分**：`initialScoresData` 与引擎口径仍收录隐藏球员的 `initialScore`，因此他一旦有了比赛记录，积分不会被默认分污染。反过来说，**若隐藏球员已有（窗口内）比赛记录，他仍会出现在排名表里**——那条规则与 `alumni` 共用（「窗口内有比赛记录的球员仍然显示」），所以 `visible: false` 只适合用在尚无战绩的档案上（如报名后待公布的选拔名单）。
+> **只影响展示层，不影响算分**：`initialScoresData` 与引擎口径仍收录隐藏球员的 `initialScore`、仍照常重放他的比赛记录（别人的比分、衰减权重不受影响）——只是他自己不出现在任何前台列表里。**有战绩也一样隐藏**：排名行按 `isRankingRowHidden()` 过滤（`buildRankedSnapshotRows()` 与两个实时行生成器），所以隐藏球员打过的比赛不会让他出现在排名表/时间线上，也不会占用其他球员的名次编号；比赛记录照录不误，等他该公布时删掉 `visible` 即可一次还原。注意主客双方是两个人：他赢的那场对**对手**照样算分（对手的排名会真实变化）。
 
 ---
 

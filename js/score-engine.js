@@ -265,6 +265,13 @@ function isProfileActivePlayer(name) {
     return !p.status || p.status === 'active';
 }
 
+// 排名行隐藏口径：档案 visible === false 的球员，即使窗口内有他的比赛记录，也不进排名行 / 时间线。
+// 否则「隐藏」只挡档案页：他有战绩就会被窗口口径带回来，还会占用其他球员的名次编号。
+// 名次编号按公开名单连续（隐藏者整行不出现，不做空位占位）。
+function isRankingRowHidden(name) {
+    return typeof isPlayerHiddenName === 'function' && isPlayerHiddenName(name);
+}
+
 // ============ 🔥 性能优化：球员比赛预索引 ============
 
 // ============ 🔥 性能优化：按日期排序日志的记忆化 ============
@@ -637,7 +644,7 @@ function buildSeasonInitialNode(currentScores, season) {
 // 由积分表生成排序后的排名行（比较器统一走 compareRankedRows；统计取自预建索引）
 function buildRankedSnapshotRows(scoreMap, isActiveName, playerMatches, startDate, sd) {
     return Object.entries(scoreMap)
-        .filter(([n]) => isActiveName(n))
+        .filter(([n]) => isActiveName(n) && !isRankingRowHidden(n))
         .map(([n, pt]) => {
             const stats = getPlayerStatsFromIndex(playerMatches, n, startDate, sd);
             return {
@@ -867,7 +874,7 @@ function calculateRealtimeRanking() {
         matchStats[w].total++; matchStats[w].wins++;
         matchStats[l].total++;
     });
-    const sp = Object.entries(sc).filter(([n]) => sap.size === 0 || sap.has(n) || isProfileActivePlayer(n)).map(([n, pt]) => {
+    const sp = Object.entries(sc).filter(([n]) => (sap.size === 0 || sap.has(n) || isProfileActivePlayer(n)) && !isRankingRowHidden(n)).map(([n, pt]) => {
         const ms = matchStats[n];
         return {
             '姓名': n, '当前积分': Math.round(pt * 10) / 10,
@@ -957,7 +964,7 @@ async function calculateRealtimeRankingAsync(onProgress) {
         matchStats[w].total++; matchStats[w].wins++;
         matchStats[l].total++;
     });
-    const sp = Object.entries(sc).filter(([n]) => sap.size === 0 || sap.has(n) || isProfileActivePlayer(n)).map(([n, pt]) => {
+    const sp = Object.entries(sc).filter(([n]) => (sap.size === 0 || sap.has(n) || isProfileActivePlayer(n)) && !isRankingRowHidden(n)).map(([n, pt]) => {
         const ms = matchStats[n];
         return {
             '姓名': n, '当前积分': Math.round(pt * 10) / 10,
