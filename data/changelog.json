@@ -1,44 +1,30 @@
 [
   {
-    "version": "v1.3.0",
+    "version": "v1.1.9",
     "date": "2026-10-01",
     "title": "新增数据规模页",
     "title_en": "New Data Scale Page",
     "tag": "feature",
     "changes": [
-      "新增**数据规模**页面（页脚「数据」栏入口）：一页看全本站到底攒了多少数据",
-      "社团侧：成员数、比赛记录、逐月走势柱状图、赛事类型分布、成员标签与荣誉",
-      "职业赛事历史库：6.7 万条记录、6000+ 名球员、2001 年至今的五个单项分布",
-      "内容与素材：文章条目、改稿留档、媒体附件与素材库体积构成",
-      "页面支持中英切换与明暗主题自适应"
+      "新增**数据规模**页面（页脚「数据」栏入口）：一页看全本站到底攒了多少数据"
     ],
     "changes_en": [
-      "Added a **Data Scale** page (linked from the footer's Data column) showing at a glance how much data this site holds",
-      "Club side: member count, match records, a matches-by-month chart, match type breakdown, member tags and honours",
-      "Professional tournament archive: 67k+ records, 6000+ players, and the five event breakdowns since 2001",
-      "Content and media: article count, archived revisions, media attachments and the media library's size breakdown",
-      "The page supports language switching and follows the light/dark theme"
+      "Added a **Data Scale** page (linked from the footer's Data column) showing at a glance how much data this site holds"
     ]
   },
   {
-    "version": "v1.2.0",
+    "version": "v1.1.8",
     "date": "2026-09-28",
     "title": "比赛详情页、双打榜单与全站英文化",
     "title_en": "Match Details, Doubles Rankings and Full English Support",
     "tag": "feature",
     "changes": [
       "新增**比赛详情**页面：记分牌、逐局比分、积分明细、胜率预测与历史交锋",
-      "新增**双打**积分榜：排名页可切换「单打 / 双打」，组合按独立主体计分（赛事系数 0.5、不衰减）",
-      "排名页**移动端**重做为卡片式排行榜，支持拼音搜索与点列头排序",
-      "全站英文适配完成：切到英文后 31 个界面无中文残留，球员显示拼音名",
-      "新增**网站文档**页面（导航栏 More… 入口）；首页彩蛋球改为直达 3D 乒乓球；赛季总结新增按日积分走势图"
+      "新增**双打**积分榜：排名页可切换「单打 / 双打」，组合按独立主体计分（赛事系数 0.5、不衰减）"
     ],
     "changes_en": [
       "Added a new **Match Detail** page: scoreboard, game-by-game scores, points breakdown, win-rate prediction and head-to-head history",
-      "Added a **Doubles** leaderboard: the Ranking page switches between Singles and Doubles, with each pair scored as an independent entity (coefficient 0.5, no decay)",
-      "Rebuilt the **mobile** Ranking page as a card-based leaderboard with pinyin search and tap-to-sort headers",
-      "Finished the full English pass: after switching, all 31 interfaces show no Chinese and players show pinyin names",
-      "Added a **Docs** page (under More… in the navbar); the home page easter-egg ball now links straight to the 3D game; the Season Review page gained a daily points trend chart"
+      "Added a **Doubles** leaderboard: the Ranking page switches between Singles and Doubles, with each pair scored as an independent entity (coefficient 0.5, no decay)"
     ]
   },
   {

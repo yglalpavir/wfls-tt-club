@@ -1,0 +1,14 @@
+﻿{
+ "fitness": 0.7485,
+ "bestGen": 318,
+ "seed": 20260810,
+ "gens": 330,
+ "vsDefault": 0.8647,
+ "vsDefaultOld": 0.8471,
+ "vsPlayer": 0.9032,
+ "vsPlayerOld": 0.9137,
+ "vsOldHell": 0.608,
+ "adopted": false,
+ "trainedAt": "2026-10-17T17:28:15.496Z"
+}
+vecLen=42

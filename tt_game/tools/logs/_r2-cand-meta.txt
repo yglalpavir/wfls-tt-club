@@ -1,0 +1,1 @@
+﻿{"fitness":0.737,"bestGen":255,"seed":20260810,"gens":330,"vsDefault":0.8433,"vsDefaultOld":0.8612,"vsPlayer":0.9131,"vsPlayerOld":0.9178,"vsOldHell":0.5729,"adopted":false,"trainedAt":"2026-10-16T20:27:05.611Z"}
