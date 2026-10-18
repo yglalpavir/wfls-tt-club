@@ -120,9 +120,9 @@ function mdCompute() {
                 if (!scores[rl]) scores[rl] = DEFAULT_INITIAL_SCORE;
                 preW = scores[rw];
                 preL = scores[rl];
-                const dual = calcMatchPointsDual(rw, rl, r['类型'], r['日期'], snap, scores, r['赛制']);
+                const dual = calcMatchPointsDual(rw, rl, r['类型'], r['日期'], snap, scores, r['赛制'], r);
                 wg = dual.wGain; wl = dual.lLoss;
-                rawGain = calcRawPoints(rw, rl, r['类型'], scores, r['赛制']);
+                rawGain = calcRawPoints(rw, rl, r['类型'], scores, r['赛制'], r);
                 // 胜负双方衰减权重不同：各按自己的 球员×类型 批次定格/衰减
                 timeWW = getFreezeWeight(rw, r['类型'], r['日期'], snap);
                 timeWL = getFreezeWeight(rl, r['类型'], r['日期'], snap);
@@ -132,7 +132,7 @@ function mdCompute() {
                 const rw = r['胜者'], rl = r['负者'];
                 if (!scores[rw]) scores[rw] = DEFAULT_INITIAL_SCORE;
                 if (!scores[rl]) scores[rl] = DEFAULT_INITIAL_SCORE;
-                const gd = calcMatchPointsDual(rw, rl, r['类型'], r['日期'], snap, scores, r['赛制']);
+                const gd = calcMatchPointsDual(rw, rl, r['类型'], r['日期'], snap, scores, r['赛制'], r);
                 scores[rw] = Math.max(SCORE_FLOOR, scores[rw] + gd.wGain);
                 scores[rl] = Math.max(SCORE_FLOOR, scores[rl] - gd.lLoss);
             } else if (isBonusRecord(r)) {

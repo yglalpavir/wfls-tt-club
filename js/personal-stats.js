@@ -310,7 +310,7 @@ function getApproxScoreAtDate(playerName, targetDate, sortedLog, startScores, be
             const w = r['胜者'], l = r['负者'];
             if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE;
             if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
-            const { wGain: wg, lLoss: wl } = calcMatchPointsDual(w, l, r['类型'], r['日期'], targetDate, sc, r['赛制']);
+            const { wGain: wg, lLoss: wl } = calcMatchPointsDual(w, l, r['类型'], r['日期'], targetDate, sc, r['赛制'], r);
             sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
             sc[l] = Math.max(SCORE_FLOOR, sc[l] - wl);
         } else if (isBonusRecord(r)) {
@@ -496,7 +496,7 @@ function renderPersonalStats(playerName, containerId) {
         const w = r['胜者'], l = r['负者'];
         if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
         if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
-        const { wGain: wg, lLoss: wl } = calcMatchPointsDual(w, l, r['类型'], r['日期'], getTodayStr(), scores, r['赛制']);
+        const { wGain: wg, lLoss: wl } = calcMatchPointsDual(w, l, r['类型'], r['日期'], getTodayStr(), scores, r['赛制'], r);
         // 以「对手」为键记录**本人**在该对手身上的得分/失分（口径同 data-viz.js）：
         // 胜方记 wg（本人所得），败方记 wl（本人所失）。注意本文件的幸运星/克星当前按
         // 胜率排序、未读这两个量，此处保持与 data-viz.js 一致以防日后复用时口径漂移。

@@ -186,9 +186,9 @@ function srReplaySeason(si, end, sortedWindow) {
             const w = r['胜者'], l = r['负者'];
             if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
             if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
-            const rawGain = calcRawPoints(w, l, r['类型'], scores, r['赛制']);
+            const rawGain = calcRawPoints(w, l, r['类型'], scores, r['赛制'], r);
             if (!best || rawGain > best.rawGain) best = { rawGain, w, l, type: r['类型'], date: r['日期'], gap: Math.round(Math.abs(scores[w] - scores[l])) };
-            const { wGain: wg, lLoss: wl } = calcMatchPointsDual(w, l, r['类型'], r['日期'], end, scores, r['赛制']);
+            const { wGain: wg, lLoss: wl } = calcMatchPointsDual(w, l, r['类型'], r['日期'], end, scores, r['赛制'], r);
             scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg);
             scores[l] = Math.max(SCORE_FLOOR, scores[l] - wl);
         }
@@ -238,7 +238,7 @@ function srComputeDailySeries(si, season, end, sortedWindow) {
                 const w = r['胜者'], l = r['负者'];
                 if (sc[w] == null) sc[w] = DEFAULT_INITIAL_SCORE;
                 if (sc[l] == null) sc[l] = DEFAULT_INITIAL_SCORE;
-                const { wGain: wg, lLoss: wl } = calcMatchPointsDual(w, l, r['类型'], r['日期'], r['日期'], sc, r['赛制']);
+                const { wGain: wg, lLoss: wl } = calcMatchPointsDual(w, l, r['类型'], r['日期'], r['日期'], sc, r['赛制'], r);
                 sc[w] = Math.max(SCORE_FLOOR, sc[w] + wg);
                 sc[l] = Math.max(SCORE_FLOOR, sc[l] - wl);
                 seen.add(w); seen.add(l);

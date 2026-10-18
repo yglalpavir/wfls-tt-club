@@ -127,9 +127,9 @@ function computePlayerMatchRecords(playerName) {
                 const w = r['胜者'], l = r['负者'];
                 if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
                 if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
-                const wgDual = calcMatchPointsDual(w, l, r['类型'], r['日期'], getTodayStr(), scores, r['赛制']);
+                const wgDual = calcMatchPointsDual(w, l, r['类型'], r['日期'], getTodayStr(), scores, r['赛制'], r);
                 const wg = wgDual.wGain, wl = wgDual.lLoss;
-                const rawGain = calcRawPoints(w, l, r['类型'], scores, r['赛制']);
+                const rawGain = calcRawPoints(w, l, r['类型'], scores, r['赛制'], r);
                 if (w === playerName || l === playerName) {
                     const isWin = w === playerName;
                     const pre = scores[playerName];

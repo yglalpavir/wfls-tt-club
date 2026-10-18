@@ -91,16 +91,16 @@ function renderScoreDetailReplay(player, snapshotDate) {
         if (isMatchRecord(record)) {
             const w = record['胜者'], l = record['负者'];
             if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE; if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
-            const decayedDual = calcMatchPointsDual(w, l, record['类型'], record['日期'], snapshotDate, scores, record['赛制']);
+            const decayedDual = calcMatchPointsDual(w, l, record['类型'], record['日期'], snapshotDate, scores, record['赛制'], record);
             const decayedGain = decayedDual.wGain, decayedLoss = decayedDual.lLoss;
-            const rawGain = calcRawPoints(w, l, record['类型'], scores, record['赛制']);
+            const rawGain = calcRawPoints(w, l, record['类型'], scores, record['赛制'], record);
             if (record['胜者'] === player || record['负者'] === player) {
                 const isWinner = record['胜者'] === player;
                 const rawChange = isWinner ? rawGain : -(rawGain * LOSER_POINT_MULTIPLIER);
                 const decayedChange = isWinner ? decayedGain : -decayedLoss;
                 const scoreBefore = scores[player];
                 const scoreAfter = scoreBefore + decayedChange;
-                recordsWithScores.push({ date: record['日期'], type: record['类型'], opponent: isWinner ? record['负者'] : record['胜者'], isWinner, isBonus: false, scoreBefore, rawChange, decayedChange, scoreAfter, score: record['比分'] || null, games: Array.isArray(record['局分']) ? record['局分'] : null, n: matchOccMap.get(record) || 1 });
+                recordsWithScores.push({ date: record['日期'], type: record['类型'], opponent: isWinner ? record['负者'] : record['胜者'], isWinner, isBonus: false, scoreBefore, rawChange, decayedChange, scoreAfter, score: record['比分'] || null, games: Array.isArray(record['局分']) ? record['局分'] : null, n: matchOccMap.get(record) || 1, basis: getRecordBaseScoreInfo(record) });
             }
             scores[w] = Math.max(SCORE_FLOOR, scores[w] + decayedGain);
             scores[l] = Math.max(SCORE_FLOOR, scores[l] - decayedLoss);
@@ -131,8 +131,15 @@ function renderScoreDetailReplay(player, snapshotDate) {
         /* 比分/局分存储为胜者视角：负行按球员视角展示（对调数字、局序不变）；对手名可点（双打组合逐成员链接） */
         const gamesView = playerViewGames(r.games, r.isWinner);
         const scoreCell = hasScore ? `<td${gamesView && gamesView.length ? ` title="${i18n[currentLang].sb_games_label || '局分'}：${escapeHtml(gamesView.join(' '))}"` : ''}>${r.score ? escapeHtml(playerViewScore(r.score, r.isWinner)) : '-'}</td>` : '';
-        return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(eventTypeLabel(r.type))}</td><td>${linkPlayerSide(r.opponent)}</td><td class="${rc}">${res}</td>${scoreCell}<td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${changeDisplay}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
-    }).join('');
+        /* 变动单元格提示：产生分按「比赛当日分差」定档（与快照无关），括号内为计入时间权重后的实际变动 */
+        const basisTip = (r.basis && r.basis.base != null)
+            ? (i18n[currentLang].sd_basis_tip || '')
+                .replace(/\{raw\}/g, signRaw + r.rawChange.toFixed(1))
+                .replace(/\{base\}/g, String(r.basis.base))
+                .replace(/\{gap\}/g, (r.basis.gap > 0 ? '+' : '') + r.basis.gap.toFixed(1))
+            : '';
+        return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(eventTypeLabel(r.type))}</td><td>${linkPlayerSide(r.opponent)}</td><td class="${rc}">${res}</td>${scoreCell}<td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}"${basisTip ? ` title="${escapeHtml(basisTip)}"` : ''}>${changeDisplay}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
+    }).join('') + `<tr class="score-detail-note"><td colspan="${hasScore ? 8 : 7}" style="font-size:11px;line-height:1.6;opacity:.65;padding:8px 10px;">${escapeHtml(i18n[currentLang].sd_basis_note || '')}</td></tr>`;
     setTimeout(adjustModalSize, 150);
 }
 
