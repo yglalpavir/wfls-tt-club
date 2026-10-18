@@ -131,15 +131,8 @@ function renderScoreDetailReplay(player, snapshotDate) {
         /* 比分/局分存储为胜者视角：负行按球员视角展示（对调数字、局序不变）；对手名可点（双打组合逐成员链接） */
         const gamesView = playerViewGames(r.games, r.isWinner);
         const scoreCell = hasScore ? `<td${gamesView && gamesView.length ? ` title="${i18n[currentLang].sb_games_label || '局分'}：${escapeHtml(gamesView.join(' '))}"` : ''}>${r.score ? escapeHtml(playerViewScore(r.score, r.isWinner)) : '-'}</td>` : '';
-        /* 变动单元格提示：产生分按「比赛当日分差」定档（与快照无关），括号内为计入时间权重后的实际变动 */
-        const basisTip = (r.basis && r.basis.base != null)
-            ? (i18n[currentLang].sd_basis_tip || '')
-                .replace(/\{raw\}/g, signRaw + r.rawChange.toFixed(1))
-                .replace(/\{base\}/g, String(r.basis.base))
-                .replace(/\{gap\}/g, (r.basis.gap > 0 ? '+' : '') + r.basis.gap.toFixed(1))
-            : '';
-        return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(eventTypeLabel(r.type))}</td><td>${linkPlayerSide(r.opponent)}</td><td class="${rc}">${res}</td>${scoreCell}<td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}"${basisTip ? ` title="${escapeHtml(basisTip)}"` : ''}>${changeDisplay}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
-    }).join('') + `<tr class="score-detail-note"><td colspan="${hasScore ? 8 : 7}" style="font-size:11px;line-height:1.6;opacity:.65;padding:8px 10px;">${escapeHtml(i18n[currentLang].sd_basis_note || '')}</td></tr>`;
+        return `<tr><td><a class="player-name-link" href="${mdUrl}">${escapeHtml(r.date)}</a></td><td>${escapeHtml(eventTypeLabel(r.type))}</td><td>${linkPlayerSide(r.opponent)}</td><td class="${rc}">${res}</td>${scoreCell}<td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${changeDisplay}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`;
+    }).join('');
     setTimeout(adjustModalSize, 150);
 }
 
