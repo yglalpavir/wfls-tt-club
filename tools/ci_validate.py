@@ -246,7 +246,7 @@ if missing_fmt or literal_default:
     if literal_default:
         parts.append("字面值 \"default\" {} 条".format(len(literal_default)))
     by_type = Counter(et for _, et in missing_fmt + literal_default)
-    err("比赛记录的「赛制」必须写具体值（bo3/bo5/bo7），当前{}；按类型: {}".format(
+    err("比赛记录的「赛制」必须写具体值（bo1/bo3/bo5/bo7），当前{}；按类型: {}".format(
         "、".join(parts), dict(sorted(by_type.items()))))
 else:
     ok("所有比赛记录均已写明具体赛制")
@@ -276,7 +276,7 @@ if isinstance(decay_cfg, dict):
 
 # ---- 5) 比分/局分自洽性（可选字段；口径与 tools/append_submission.py validate_match 一致）----
 print("[5] 比分/局分自洽性")
-WINS_NEEDED = {"bo3": 2, "bo5": 3, "bo7": 4}
+WINS_NEEDED = {"bo1": 1, "bo3": 2, "bo5": 3, "bo7": 4}
 TOTAL_SCORE_RE = re.compile(r"^(\d{1,2})\s*[-:：]\s*(\d{1,2})$")
 
 def check_score_fields(records, label, fmt_defaults):

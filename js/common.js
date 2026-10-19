@@ -272,7 +272,7 @@ const i18n = {
         sb_step1: "在线填写结果", sb_step2: "管理员审核", sb_step3: "计入积分排名",
         sb_quick_desc: "无需 GitHub：点击下方按钮，在腾讯文档表单里填写比赛结果，管理员审核后统一计入排名。",
         sb_quick_missing: "在线提交表正在准备中，请先通过社团 QQ 群联系负责人代录。",
-        sb_fmt_default: "默认", sb_fmt_bo3: "三局两胜", sb_fmt_bo5: "五局三胜", sb_fmt_bo7: "七局四胜",
+        sb_fmt_default: "默认", sb_fmt_bo1: "单局决胜", sb_fmt_bo3: "三局两胜", sb_fmt_bo5: "五局三胜", sb_fmt_bo7: "七局四胜",
         /* ---- 赛季总结页 ---- */
         sr_page_title: "赛季总结 | WFLS Table Tennis Club",
         sr_hero_tag: "Season Review", sr_hero_title: "赛季总结", sr_hero_desc: "胜负 · 积分 · 连胜 · 赛季之最",
@@ -923,7 +923,7 @@ const i18n = {
         sb_step1: "Fill in the form", sb_step2: "Admin review", sb_step3: "Counted into rankings",
         sb_quick_desc: "No GitHub needed: click below and fill in the Tencent Docs form. Results are reviewed and batched into the rankings.",
         sb_quick_missing: "The online form is being set up. For now please contact a club member in the QQ group.",
-        sb_fmt_default: "Default", sb_fmt_bo3: "Best of 3", sb_fmt_bo5: "Best of 5", sb_fmt_bo7: "Best of 7",
+        sb_fmt_default: "Default", sb_fmt_bo1: "Single game", sb_fmt_bo3: "Best of 3", sb_fmt_bo5: "Best of 5", sb_fmt_bo7: "Best of 7",
         /* ---- Season review ---- */
         sr_page_title: "Season Review | WFLS Table Tennis Club",
         sr_hero_tag: "Season Review", sr_hero_title: "Season Review", sr_hero_desc: "Matches · Points · Streaks · Season Bests",

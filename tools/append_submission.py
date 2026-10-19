@@ -38,7 +38,7 @@ PLAYERS = os.path.join(ROOT, "data", "players.json")
 COEFF = os.path.join(ROOT, "data", "event-coefficient.json")
 
 ALLOWED_KEYS = {"日期", "类型", "赛制", "胜者", "负者", "对象", "分数", "比分", "局分"}
-WINS_NEEDED = {"bo3": 2, "bo5": 3, "bo7": 4}
+WINS_NEEDED = {"bo1": 1, "bo3": 2, "bo5": 3, "bo7": 4}
 FENCE_RE = re.compile(r"```(?:json|JSON)\s*\n(.*?)```", re.DOTALL)
 TOTAL_SCORE_RE = re.compile(r"^(\d{1,2})\s*[-:：]\s*(\d{1,2})$")
 GAME_SCORE_RE = re.compile(r"^(\d{1,2})\s*[-:：]\s*(\d{1,2})$")

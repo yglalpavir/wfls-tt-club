@@ -96,6 +96,7 @@
                 <div><label data-i18n="sb_type">类型</label><select id="sbType"></select></div>
                 <div><label data-i18n="sb_format">赛制</label><select id="sbFormat">
                     <option value="default" data-i18n="sb_fmt_default">默认</option>
+                    <option value="bo1" data-i18n="sb_fmt_bo1">单局决胜</option>
                     <option value="bo3" data-i18n="sb_fmt_bo3">三局两胜</option>
                     <option value="bo5" data-i18n="sb_fmt_bo5">五局三胜</option>
                     <option value="bo7" data-i18n="sb_fmt_bo7">七局四胜</option>
@@ -257,10 +258,10 @@
             return list.filter(function (g) { return +g.split("-")[0] > +g.split("-")[1]; }).length;
         }
         function neededWins(type, fmt) {
-            if (fmt === "bo3" || fmt === "bo5" || fmt === "bo7") return { bo3: 2, bo5: 3, bo7: 4 }[fmt];
+            if (fmt === "bo1" || fmt === "bo3" || fmt === "bo5" || fmt === "bo7") return { bo1: 1, bo3: 2, bo5: 3, bo7: 4 }[fmt];
             var d = coeffData && coeffData["默认赛制"];
             var f = d && d[type];
-            return f ? { bo3: 2, bo5: 3, bo7: 4 }[f] : null;
+            return f ? { bo1: 1, bo3: 2, bo5: 3, bo7: 4 }[f] : null;
         }
 
         $("sbAdd").addEventListener("click", function () {

@@ -520,6 +520,7 @@
                     <div><label data-i18n="sb_type">类型</label><select id="seType"></select></div>
                     <div><label data-i18n="sb_format">赛制</label><select id="seFormat">
                         <option value="default">default</option>
+                        <option value="bo1">bo1</option>
                         <option value="bo3">bo3</option>
                         <option value="bo5">bo5</option>
                         <option value="bo7">bo7</option>
@@ -633,13 +634,13 @@
                 });
                 $("seAddMatch").addEventListener("click", function () {
                     var fmt = $("seFormat").value;
-                    if (["default", "bo3", "bo5", "bo7"].indexOf(fmt) === -1) return msg("adm_se_err_format", "赛制仅支持 default / bo3 / bo5 / bo7", null, true);
+                    if (["default", "bo1", "bo3", "bo5", "bo7"].indexOf(fmt) === -1) return msg("adm_se_err_format", "赛制仅支持 default / bo1 / bo3 / bo5 / bo7", null, true);
                     var rec = { "日期": $("seDate").value, "类型": $("seType").value, "赛制": fmt, "胜者": $("seWinner").value, "负者": $("seLoser").value };
                     if (!rec["日期"] || !rec["类型"] || !rec["胜者"] || !rec["负者"]) return msg("sb_err_fill", "请完整填写日期 / 类型 / 胜者 / 负者", null, true);
                     if (rec["胜者"] === rec["负者"]) return msg("sb_err_same", "胜者与负者不能相同", null, true);
                     if (!/^\d{4}-\d{2}-\d{2}$/.test(rec["日期"])) return msg("sb_err_date", "日期格式需为 YYYY-MM-DD", null, true);
                     if ($("seScoreToggle").checked) {
-                        var WINS = { bo3: 2, bo5: 3, bo7: 4 }, reT = /^(\d{1,2})\s*[-:：]\s*(\d{1,2})$/;
+                        var WINS = { bo1: 1, bo3: 2, bo5: 3, bo7: 4 }, reT = /^(\d{1,2})\s*[-:：]\s*(\d{1,2})$/;
                         var eff = fmt === "default" ? (defaultFormats[rec["类型"]] || "") : fmt;
                         var needed = WINS[eff] || 0;
                         var total = $("seScoreTotal").value.trim(), gamesRaw = $("seScoreGames").value.trim();
