@@ -37,7 +37,7 @@
   <div id="counterHint"><span data-i18n="g_counter_hint">◎ 重旋来球 · 反手快撕借力反击!</span></div>
   <div id="pushHint"><span data-i18n="g_push_hint">◎ 下旋来球 · 按住 Ctrl 搓球</span></div>
   <div id="deck">
-    <div id="serveChip" class="top"><b id="serveChipTxt" data-i18n="g_serve_chip_top">▲ 上旋发球</b><span id="serveChipSide" data-i18n="g_serve_chip_side">无侧旋</span></div>
+    <div id="serveChip" class="top"><b id="serveChipTxt" data-i18n="g_serve_chip_top">▲上旋</b><span id="serveChipSide" data-i18n="g_serve_chip_side">直</span></div>
     <div id="stanceChip" class="forehand">
       <i class="rubber"></i>
       <div class="sc-txt"><b id="stanceTxt" data-i18n="g_stance_fh">正手 FOREHAND</b><span id="stanceSub" data-i18n="g_stance_fh_sub">极重上旋 · 重炮 · 几乎不漏球</span></div>
@@ -80,6 +80,7 @@
     <div id="touchServe">
       <button class="tc-btn tc-hold" id="btnSpinL"><span data-i18n="g_btn_spin_l">◀ 左旋</span></button>
       <button class="tc-btn tc-hold" id="btnSpinR"><span data-i18n="g_btn_spin_r">右旋 ▶</span></button>
+      <button class="tc-btn" id="btnServeSpin"><span data-i18n="g_btn_serve_spin">上/下旋</span></button>
       <button class="tc-btn" id="btnPowMinus"><span data-i18n="g_btn_pow_minus">强 −</span></button>
       <button class="tc-btn" id="btnPowPlus"><span data-i18n="g_btn_pow_plus">强 ＋</span></button>
     </div>
@@ -111,7 +112,8 @@
     <div class="oc-group mouse-only">
       <h3 data-i18n="g_h3_serve">发球</h3>
       <div><kbd data-i18n="g_in_click_space">点击 / 空格</kbd><span data-i18n="g_row_serve_toss">垂直抛球≥16cm → 自动击球（先落本半台）</span></div>
-      <div><kbd>S / D</kbd><span data-i18n="g_row_serve_sd">左 / 右侧旋（发球恒定上旋 · 深发球两跳落对方半台）</span></div>
+      <div><kbd>A</kbd><span data-i18n="g_row_serve_spin">上 / 下旋切换（下旋更沉 · 可叠侧旋）</span></div>
+      <div><kbd>S / D</kbd><span data-i18n="g_row_serve_sd">左 / 右侧旋（可与上/下旋叠加 · 深发球两跳落对方半台）</span></div>
       <div><kbd>Q / E</kbd><span data-i18n="g_row_serve_qe">旋转强度 弱 / 强（发球前调）</span></div>
     </div>
     <div class="oc-group touch-only">
@@ -129,7 +131,8 @@
     <div class="oc-group touch-only">
       <h3 data-i18n="g_h3_serve">发球</h3>
       <div><kbd data-i18n="g_in_tap_screen">轻点屏幕</kbd><span data-i18n="g_row_serve_toss">垂直抛球≥16cm → 自动击球（先落本半台）</span></div>
-      <div><kbd data-i18n="g_in_lr_btn">◀ / ▶ 钮</kbd><span data-i18n="g_row_t_lr_btn">按住 = 左 / 右侧旋（发球恒定上旋 · 两跳落对方半台）</span></div>
+      <div><kbd data-i18n="g_in_serve_spin_btn">上/下旋 钮</kbd><span data-i18n="g_row_serve_spin">上 / 下旋切换（下旋更沉 · 可叠侧旋）</span></div>
+      <div><kbd data-i18n="g_in_lr_btn">◀ / ▶ 钮</kbd><span data-i18n="g_row_t_lr_btn">按住 = 左 / 右侧旋（可与上/下旋叠加 · 两跳落对方半台）</span></div>
       <div><kbd data-i18n="g_in_minus_plus_btn">− / ＋ 钮</kbd><span data-i18n="g_row_serve_qe">旋转强度 弱 / 强（发球前调）</span></div>
     </div>
     <div class="oc-group oc-diff">
@@ -204,7 +207,8 @@
     </div>
     <div class="oc-group mouse-only">
       <h3 data-i18n="g_h3_serve_sys">发球与系统</h3>
-      <div><kbd>S / D</kbd><span data-i18n="g_row_serve_sd">左 / 右侧旋（发球恒定上旋 · 深发球两跳落对方半台）</span></div>
+      <div><kbd>A</kbd><span data-i18n="g_row_serve_spin">上 / 下旋切换（下旋更沉 · 可叠侧旋）</span></div>
+      <div><kbd>S / D</kbd><span data-i18n="g_row_serve_sd">左 / 右侧旋（可与上/下旋叠加 · 深发球两跳落对方半台）</span></div>
       <div><kbd>Q / E</kbd><span data-i18n="g_row_serve_qe">旋转强度 弱 / 强（发球前调）</span></div>
       <div><kbd>R</kbd><span data-i18n="g_row_r_reset">重置比分</span></div>
       <div><kbd>M</kbd><span data-i18n="g_row_m_sound">音效开关</span></div>
@@ -224,7 +228,8 @@
     </div>
     <div class="oc-group touch-only">
       <h3 data-i18n="g_h3_serve_sys">发球与系统</h3>
-      <div><kbd data-i18n="g_in_lr_btn">◀ / ▶ 钮</kbd><span data-i18n="g_row_t_lr_btn">按住 = 左 / 右侧旋（发球恒定上旋 · 两跳落对方半台）</span></div>
+      <div><kbd data-i18n="g_in_serve_spin_btn">上/下旋 钮</kbd><span data-i18n="g_row_serve_spin">上 / 下旋切换（下旋更沉 · 可叠侧旋）</span></div>
+      <div><kbd data-i18n="g_in_lr_btn">◀ / ▶ 钮</kbd><span data-i18n="g_row_t_lr_btn">按住 = 左 / 右侧旋（可与上/下旋叠加 · 两跳落对方半台）</span></div>
       <div><kbd data-i18n="g_in_minus_plus_btn">− / ＋ 钮</kbd><span data-i18n="g_row_serve_qe">旋转强度 弱 / 强（发球前调）</span></div>
       <div><kbd data-i18n="g_hint_top_right">右上按钮</kbd><span data-i18n="g_row_t_topbtns">重置比分 · 音效开关</span></div>
       <div><kbd data-i18n="g_in_close_btn">✕ 钮</kbd><span data-i18n="g_row_t_exit">观看模式退出</span></div>

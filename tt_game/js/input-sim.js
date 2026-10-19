@@ -427,7 +427,7 @@ const INPUTSIM = (() => {
     }
   }
 
-  /* ==== 发球：下旋已取消（恒定上旋），侧旋/力度/出球点由 DQN 决定 ====
+  /* ==== 发球：上/下旋与力度由 DQN 决定（侧旋维未进动作空间，sideY 恒 0）====
    * 2026-10-02 之前这里是全写死的常量（power 恒 0.5、sideY 恒 0、落点恒 0.62 深），
    * 调用点也不传 opt —— DQN 从没学过控制自己的发球，每分都是同一个球，
    * 而实机侧走 aiServePlan 有 60% 侧旋，训练/实机发球口径不一致。
@@ -465,6 +465,10 @@ const INPUTSIM = (() => {
     const mag = (22 + rng() * 10) * (0.6 + 0.8 * power) * sSpin;
     const sideY = (plan.side * 72 + (rng() - 0.5) * 6) * (0.6 + 0.8 * power) * sSpin;
     let sv = SIM.serveShot(from, { dir: 1, depth: 0.62 + (rng() - 0.5) * 0.06, spinX: mag, sideY, speedMul: sPace });
+    /* 与实机 rules.js#strikeServe 同一套退让链：先逐级收敛侧旋（保住旋向），再无旋兜底。
+       下旋 + 大侧旋在满旋转下 primary 无解率可达 30%（见 rules.js 注释）。 */
+    if(!sv) sv = SIM.serveShot(from, { dir: 1, depth: 0.62, spinX: mag, sideY: sideY * 0.7 });
+    if(!sv) sv = SIM.serveShot(from, { dir: 1, depth: 0.62, spinX: mag, sideY: sideY * 0.45 });
     if(!sv) sv = SIM.serveShot(from, { dir: 1, depth: 0.62, spinX: mag, sideY: 0 });
     if(!sv) sv = SIM.serveShot(from, { dir: 1, depth: 0.35, spinX: 0, sideY: 0 });
     return { from, vel: sv.vel, spin: sv.spin };

@@ -12,7 +12,8 @@
     var VIDEO_EXT = ['mp4', 'webm', 'mov', 'avi', 'mkv'];
     var IMAGE_EXT = ['png', 'jpg', 'jpeg', 'gif', 'svg', 'webp', 'avif', 'bmp'];
 
-    var state = { ready: false, live: null, pre: null, assets: null, chart: null, themeObserver: null };
+    var state = { ready: false, live: null, pre: null, assets: null, chart: null, themeObserver: null, netW: 0 };
+    var netResizeTimer = null, netResizeBound = false;
 
     /* ---------- 取数 ---------- */
 
@@ -105,9 +106,107 @@
                 honors: uniq(honors), roles: roles,
                 entries: news.length + comps.length + qa.length,
                 entriesByType: { news: news.length, competitions: comps.length, qa: qa.length },
-                media: mediaCount, releases: changelog.length
+                media: mediaCount, releases: changelog.length,
+                net: buildGraph(matches, players)
             };
         });
+    }
+
+    /* ---------- 交手网络：把比赛记录折成一张关系图 ---------- */
+
+    // 节点 = 出场过的成员，边 = 对手组合（权重 = 交手次数）。
+    // 双打按场上四位选手互相交手计入；分开的连通集团原样保留（不做任何“体检”判定）。
+    function buildGraph(matches, players) {
+        var nodes = [], byUid = {};
+        // 每位公开成员先占一个位置：没有交手记录的成员同样算在人数里，
+        // 但他们不进那张网（度为 0），最后收在图下方的虚线框
+        players.forEach(function (p) {
+            if (!p || p.uid == null) return;
+            var k = String(p.uid);
+            if (byUid[k] != null) return;
+            byUid[k] = nodes.length;
+            nodes.push({
+                uid: k, name: p.name,
+                enroll: (p.grade && p.grade.enroll) || 0,
+                deg: 0, games: 0, nb: []
+            });
+        });
+
+        function sideNames(v) {
+            if (typeof v !== 'string' || !v) return [];
+            // splitPairNames 只认 "A/B" 组合，单打名返回 null —— 回退到整名
+            var parts = (typeof splitPairNames === 'function') ? splitPairNames(v) : null;
+            if (!parts) parts = v.indexOf('/') >= 0 ? v.split('/') : [v];
+            return parts.map(function (s) { return String(s).trim(); }).filter(Boolean);
+        }
+        function nodeOf(name) {
+            var p = typeof getPlayerByName === 'function' ? getPlayerByName(name) : null;
+            if (!p || p.uid == null) return -1;
+            var k = String(p.uid);
+            // 档案暂不展示的成员不进图（byUid 里没有他们）
+            return byUid[k] != null ? byUid[k] : -1;
+        }
+
+        var pairMap = {}, edges = [];
+        matches.forEach(function (m) {
+            var wa = sideNames(m['胜者']).map(nodeOf).filter(function (i) { return i >= 0; });
+            var la = sideNames(m['负者']).map(nodeOf).filter(function (i) { return i >= 0; });
+            if (!wa.length || !la.length) return;
+
+            var once = {};
+            wa.concat(la).forEach(function (i) {
+                if (once[i]) return;
+                once[i] = 1;
+                nodes[i].games++;
+            });
+
+            wa.forEach(function (a) {
+                la.forEach(function (b) {
+                    if (a === b) return;
+                    var x = Math.min(a, b), y = Math.max(a, b), key = x + '|' + y;
+                    var e = pairMap[key];
+                    if (!e) {
+                        e = pairMap[key] = { a: x, b: y, w: 0 };
+                        edges.push(e);
+                        nodes[x].deg++; nodes[y].deg++;
+                        nodes[x].nb.push(y); nodes[y].nb.push(x);
+                    }
+                    e.w++;
+                });
+            });
+        });
+
+        // 连通分量：只连有交集的成员，零度成员单独收在图下方的虚线框里
+        var seenNode = [], comps = [], isolated = [], maxDeg = 0;
+        nodes.forEach(function (nd, i) {
+            if (nd.deg > maxDeg) maxDeg = nd.deg;
+            if (!nd.deg) { isolated.push(i); return; }
+            if (seenNode[i]) return;
+            seenNode[i] = 1;
+            var stack = [i], comp = [];
+            while (stack.length) {
+                var v = stack.pop();
+                comp.push(v);
+                nodes[v].nb.forEach(function (u) {
+                    if (!seenNode[u]) { seenNode[u] = 1; stack.push(u); }
+                });
+            }
+            comps.push(comp);
+        });
+        comps.sort(function (a, b) { return b.length - a.length; });
+
+        // 年级只用来上色，不参与布局（同年级之间的交手并不比随机更多，按年级分堆会凭空造出结构）
+        var years = [];
+        nodes.forEach(function (nd) {
+            if (nd.enroll && years.indexOf(nd.enroll) < 0) years.push(nd.enroll);
+        });
+        years.sort(function (a, b) { return a - b; });
+        nodes.forEach(function (nd) { nd.ci = nd.enroll ? years.indexOf(nd.enroll) : -1; });
+
+        return {
+            nodes: nodes, edges: edges, comps: comps, isolated: isolated,
+            years: years, maxDeg: maxDeg
+        };
     }
 
     // 年度赛事档案份数与排名快照点：manifest.json + seasons.json，加起来不到 50 KB
@@ -379,19 +478,626 @@
         };
     }
 
+    /* ---------- 交手网络：渲染 ---------- */
+
+    var NET_PAD = 24, NET_COLORS = 4, NET_LABEL_SIZE = 10.5;
+
+    function netDisplay(name) {
+        return typeof playerDisplayName === 'function' ? playerDisplayName(name) : name;
+    }
+    function cohortLabel(y) {
+        return y ? t('ds_net_cohort', { y: y }) : t('ds_net_cohort_other');
+    }
+    // 年级只用颜色区分（顺序从早到晚），颜色在 CSS 里绑定主题变量，切主题不用重画
+    function netCohortClass(ci) {
+        return (ci >= 0 && ci < NET_COLORS) ? 'ds-net-c' + ci : 'ds-net-cx';
+    }
+    // 文本宽度估算：CJK 约 1em，其余约 0.56em
+    function netTextWidth(s, size) {
+        var w = 0;
+        for (var i = 0; i < s.length; i++) w += s.charCodeAt(i) > 0x2e7f ? size : size * 0.56;
+        return w;
+    }
+    function netNodeR(nd, maxDeg) {
+        return 4 + 7 * Math.sqrt((nd.deg || 0) / (maxDeg || 1));
+    }
+    function netProfileUrl(nd) {
+        return typeof getPlayerProfileUrl === 'function' ? getPlayerProfileUrl(nd.uid) : '';
+    }
+
+    // 单个连通集团的世界坐标布局（Fruchterman–Reingold）：只负责形状，尺寸交给外面统一缩放
+    function netLayoutBlock(ids, N) {
+        var n = ids.length;
+        var local = {}, xs = [], ys = [], i;
+        ids.forEach(function (gi, idx) { local[gi] = idx; });
+
+        var kk = 42;
+        for (i = 0; i < n; i++) {
+            var a = i * 2.399963 + 0.9;
+            var r0 = kk * Math.sqrt(i + 0.6);
+            xs[i] = Math.cos(a) * r0;
+            ys[i] = Math.sin(a) * r0;
+        }
+
+        var es = [];
+        N.edges.forEach(function (e) {
+            var a = local[e.a], b = local[e.b];
+            if (a != null && b != null) es.push([a, b, e.w]);
+        });
+
+        var iters = Math.min(340, 160 + n * 4);
+        var temp = kk * 1.5;
+        for (var it = 0; it < iters; it++) {
+            var dx = [], dy = [];
+            for (i = 0; i < n; i++) { dx[i] = 0; dy[i] = 0; }
+            for (i = 0; i < n; i++) {
+                for (var j = i + 1; j < n; j++) {
+                    var vx = xs[i] - xs[j], vy = ys[i] - ys[j];
+                    var d2 = vx * vx + vy * vy;
+                    if (d2 < 0.01) { vx = 0.11; vy = 0.07; d2 = 0.017; }
+                    // 斥力用 1/d²（而不是 FR 的 1/d）：近处推得狠、远处迅速衰减，
+                    // 中宫不会糊成一团，外围也不会被一个离群点顶得满画布飞
+                    var d = Math.sqrt(d2), f = kk * kk * kk / d2;
+                    // 远处的点不再互相排斥：否则 40 多个"只打过一两场"的边缘成员会
+                    // 被整张图一起往外推，撑成一圈均匀的环，中宫反而被压扁
+                    var cut = kk * 3.6;
+                    if (d > cut) f *= Math.max(0, 1 - (d - cut) / (kk * 2.2));
+                    dx[i] += vx / d * f; dy[i] += vy / d * f;
+                    dx[j] -= vx / d * f; dy[j] -= vy / d * f;
+                }
+            }
+            es.forEach(function (e) {
+                var vx = xs[e[1]] - xs[e[0]], vy = ys[e[1]] - ys[e[0]];
+                var d = Math.sqrt(vx * vx + vy * vy) || 0.01;
+                // 交手越多的组合拉得越紧（有上限，避免一对 “老对手” 把两个人粘死）
+                var f = Math.min(d * d / kk, kk * 0.85) * 1.0 * (1 + 0.1 * Math.min(3, e[2] - 1));
+                dx[e[0]] += vx / d * f; dy[e[0]] += vy / d * f;
+                dx[e[1]] -= vx / d * f; dy[e[1]] -= vy / d * f;
+            });
+            for (i = 0; i < n; i++) {
+                dx[i] -= xs[i] * 0.03;
+                dy[i] -= ys[i] * 0.03;
+                var dl = Math.sqrt(dx[i] * dx[i] + dy[i] * dy[i]) || 0.01;
+                var step = Math.min(dl, temp);
+                xs[i] += dx[i] / dl * step;
+                ys[i] += dy[i] / dl * step;
+            }
+            temp *= 0.978;
+        }
+
+        // 尾部压缩：把外围收回到中宫旁边，长线变短线。
+        // 之前用 pow(...,0.45) 是「单调压扁」，结果每个边缘成员的半径几乎相同，
+        // 整张图变成一圈均匀的烟花；这里改成线性收缩 0.42，保留疏密差别
+        var rad = [];
+        for (i = 0; i < n; i++) rad.push(Math.sqrt(xs[i] * xs[i] + ys[i] * ys[i]));
+        var sorted = rad.slice().sort(function (a, b) { return a - b; });
+        var Rc = sorted[Math.max(0, Math.floor(sorted.length * 0.8) - 1)] || 1;
+        for (i = 0; i < n; i++) {
+            if (rad[i] > Rc) {
+                var nr = Rc + (rad[i] - Rc) * 0.42;
+                xs[i] *= nr / rad[i]; ys[i] *= nr / rad[i];
+            }
+        }
+
+        var minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+        for (i = 0; i < n; i++) {
+            if (xs[i] < minX) minX = xs[i];
+            if (xs[i] > maxX) maxX = xs[i];
+            if (ys[i] < minY) minY = ys[i];
+            if (ys[i] > maxY) maxY = ys[i];
+        }
+        return {
+            ids: ids, xs: xs, ys: ys, minX: minX, minY: minY,
+            w: Math.max(1, maxX - minX), h: Math.max(1, maxY - minY)
+        };
+    }
+
+    // 圆点半径是固定像素值，缩放之后会有点挨得过近：在像素空间把它们互相推开
+    function netSpreadNodes(N, pos, ids, maxDeg, rounds) {
+        var margin = 11;
+        var total = 0;
+        for (var it = 0; it < rounds * 24; it++) {
+            var moved = 0;
+            for (var i = 0; i < ids.length; i++) {
+                var a = ids[i], pa = pos[a];
+                if (!pa) continue;
+                var ra = netNodeR(N.nodes[a], maxDeg);
+                for (var j = i + 1; j < ids.length; j++) {
+                    var b = ids[j], pb = pos[b];
+                    if (!pb) continue;
+                    var need = ra + netNodeR(N.nodes[b], maxDeg) + margin;
+                    var vx = pb.x - pa.x, vy = pb.y - pa.y;
+                    var d = Math.sqrt(vx * vx + vy * vy);
+                    if (d >= need) continue;
+                    if (d < 0.01) { vx = 0.83; vy = 0.56; d = 1; }   // 完全重合时挑一个固定方向
+                    var push = (need - d) * 0.5;
+                    pa.x -= vx / d * push; pa.y -= vy / d * push;
+                    pb.x += vx / d * push; pb.y += vy / d * push;
+                    moved++;
+                }
+            }
+            total += moved;
+            if (!moved) break;
+        }
+        return total;
+    }
+
+    // 把图整体收进画布（只缩不放）并居中，返回实际缩放比例
+    function netFitToBox(pos, ids, x0, x1, y0, y1) {
+        var minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+        ids.forEach(function (gi) {
+            var p = pos[gi];
+            if (!p) return;
+            if (p.x < minX) minX = p.x;
+            if (p.x > maxX) maxX = p.x;
+            if (p.y < minY) minY = p.y;
+            if (p.y > maxY) maxY = p.y;
+        });
+        if (minX === Infinity) return 1;
+        var s = Math.min(1, (x1 - x0) / Math.max(1, maxX - minX), (y1 - y0) / Math.max(1, maxY - minY));
+        var cx = (minX + maxX) / 2, cy = (minY + maxY) / 2;
+        var tx = (x0 + x1) / 2, ty = (y0 + y1) / 2;
+        ids.forEach(function (gi) {
+            var p = pos[gi];
+            if (!p) return;
+            p.x = tx + (p.x - cx) * s;
+            p.y = ty + (p.y - cy) * s;
+        });
+        return s;
+    }
+
+    // 放一个名字：八个候选位逐个打分，压住别的名字最贵、压住别人的点次之，
+    // 都不划算就干脆不标（悬停时再临时补上，所以静态标签可以留得很稀）
+    function netPlaceLabel(N, pos, gi, ctx, cls) {
+        var nd = N.nodes[gi], p = pos[gi];
+        if (!nd || !p) return null;
+        var r = netNodeR(nd, N.maxDeg);
+        var txt = netDisplay(nd.name);
+        var wpx = netTextWidth(txt, NET_LABEL_SIZE) + 2;
+        var slots = [
+            [p.x + r + 6, p.y, 'start'],
+            [p.x - r - 6, p.y, 'end'],
+            [p.x, p.y - r - 7, 'middle'],
+            [p.x, p.y + r + 13, 'middle'],
+            [p.x + r * 0.7 + 3, p.y - r * 0.8, 'start'],
+            [p.x - r * 0.7 - 3, p.y - r * 0.8, 'end'],
+            [p.x + r * 0.7 + 3, p.y + r * 0.8 + 7, 'start'],
+            [p.x - r * 0.7 - 3, p.y + r * 0.8 + 7, 'end']
+        ];
+        var best = null, bestScore = Infinity;
+        slots.forEach(function (s) {
+            var x0 = s[2] === 'start' ? s[0] : s[2] === 'end' ? s[0] - wpx : s[0] - wpx / 2;
+            var box = { x0: x0, y0: s[1] - 5.5, x1: x0 + wpx, y1: s[1] + 4.5, sx: s[0], sy: s[1], anchor: s[2] };
+            if (box.x0 < 3 || box.x1 > ctx.W - 3 || box.y0 < 2 || box.y1 > ctx.H - 2) return;
+            var score = 0;
+            if (ctx.bias) {
+                var lvx = s[0] - p.x, lvy = s[1] - p.y;
+                var lvl = Math.sqrt(lvx * lvx + lvy * lvy);
+                var ovx = p.x - ctx.cx, ovy = p.y - ctx.cy;
+                var ovl = Math.sqrt(ovx * ovx + ovy * ovy);
+                if (lvl > 0.01 && ovl > 1) {
+                    // 与「向外」方向一致的位置更划算（权重小于压住别的字，只作倾向）
+                    score += (1 - (lvx * ovx + lvy * ovy) / (lvl * ovl)) * 7;
+                }
+            }
+            ctx.obst.forEach(function (b) {
+                var ox = Math.min(box.x1, b.x1) - Math.max(box.x0, b.x0);
+                var oy = Math.min(box.y1, b.y1) - Math.max(box.y0, b.y0);
+                if (ox > 0 && oy > 0) score += ox * oy * 3 + 100;
+            });
+            N.nodes.forEach(function (o, oi) {
+                if (oi === gi) return;
+                var op = pos[oi];
+                if (!op) return;
+                var orx = netNodeR(o, N.maxDeg);
+                var ox = Math.min(box.x1, op.x + orx) - Math.max(box.x0, op.x - orx);
+                var oy = Math.min(box.y1, op.y + orx) - Math.max(box.y0, op.y - orx);
+                if (ox > 0 && oy > 0) score += ox * oy * 8;
+            });
+            if (score < bestScore) { bestScore = score; best = box; }
+        });
+        if (!best || bestScore >= 40) return null;
+        best.gi = gi;
+        ctx.obst.push(best);
+        ctx.out.push('<text class="ds-net-lab' + (cls ? ' ' + cls : '') + '" data-l="' + gi +
+            '" x="' + best.sx.toFixed(1) + '" y="' + best.sy.toFixed(1) +
+            '" text-anchor="' + best.anchor + '" dominant-baseline="middle">' + escapeHtml(txt) + '</text>');
+        return best;
+    }
+
+    function netLabelCtx(N, pos, obst, W, H) {
+        var cx = 0, cy = 0, cn = 0;
+        pos.forEach(function (q) { if (q) { cx += q.x; cy += q.y; cn++; } });
+        return {
+            obst: obst || [], out: [], W: W, H: H,
+            cx: cn ? cx / cn : W / 2, cy: cn ? cy / cn : H / 2,
+            bias: cn > 8
+        };
+    }
+
+    // 静态标签：只标对手最多的前 limit 位，其余靠悬停补
+    function netPlaceLabels(N, pos, order, limit, W, H) {
+        var ctx = netLabelCtx(N, pos, [], W, H);
+        var boxes = [];
+        order.some(function (gi) {
+            if (boxes.length >= limit) return true;
+            var b = netPlaceLabel(N, pos, gi, ctx);
+            if (b) boxes.push(b);
+            return false;
+        });
+        return { html: ctx.out.join(''), boxes: boxes };
+    }
+
+    // 悬停时给邻居补名字：借静态标签的占位当障碍，放不下就不放（最多 14 个）
+    function netHoverLabels(N, pos, i, staticBoxes, W, H) {
+        var ctx = netLabelCtx(N, pos, staticBoxes.slice(), W, H);
+        var done = {}, n = 0;
+        staticBoxes.forEach(function (b) { done[b.gi] = 1; });
+        var order = N.nodes[i].nb.slice().sort(function (a, b) {
+            return N.nodes[b].deg - N.nodes[a].deg;
+        });
+        order.some(function (gi) {
+            if (n >= 14) return true;
+            if (done[gi]) return false;
+            if (netPlaceLabel(N, pos, gi, ctx, 'is-hot-lab')) n++;
+            return false;
+        });
+        return ctx.out.join('');
+    }
+
+    function renderNetwork() {
+        var N = state.live && state.live.net;
+        if (!N || !N.comps.length || N.comps[0].length < 2) return '';
+
+        var stats = [
+            [N.nodes.length, t('ds_kpi_members')],
+            [N.edges.length, t('ds_net_pairs')],
+            [N.comps[0].length, t('ds_net_largest')],
+            [N.isolated.length, t('ds_net_isolated')]
+        ];
+        var statHtml = '<div class="ds-net-stats">' + stats.map(function (s) {
+            return '<div class="ds-net-stat"><span class="ds-net-stat-v">' + escapeHtml(fmtInt(s[0])) +
+                '</span><span class="ds-net-stat-l">' + escapeHtml(s[1]) + '</span></div>';
+        }).join('') + '</div>';
+
+        var legend = N.years.map(function (y, i) {
+            var cnt = 0;
+            N.nodes.forEach(function (nd) { if (nd.enroll === y) cnt++; });
+            return '<li><span class="ds-net-swatch ' + netCohortClass(i) + '"></span>' +
+                '<span>' + escapeHtml(cohortLabel(y)) + '</span><em>' + escapeHtml(fmtInt(cnt)) + '</em></li>';
+        }).join('');
+        var ungraded = 0;
+        N.nodes.forEach(function (nd) { if (!nd.enroll) ungraded++; });
+        if (ungraded) {
+            legend += '<li><span class="ds-net-swatch ds-net-cx"></span><span>' +
+                escapeHtml(t('ds_net_cohort_other')) + '</span><em>' + escapeHtml(fmtInt(ungraded)) + '</em></li>';
+        }
+
+        var keys = '<div class="ds-net-keys">' +
+            '<span class="ds-net-key"><svg width="30" height="12" viewBox="0 0 30 12" aria-hidden="true">' +
+            '<line x1="1" y1="2" x2="29" y2="2" stroke-width="1"/>' +
+            '<line x1="1" y1="6" x2="29" y2="6" stroke-width="2"/>' +
+            '<line x1="1" y1="10" x2="29" y2="10" stroke-width="3"/></svg>' +
+            escapeHtml(t('ds_net_key_edge')) + '</span>' +
+            (N.isolated.length ? '<span class="ds-net-key"><span class="ds-net-dash" aria-hidden="true"></span>' +
+                escapeHtml(t('ds_net_isolated')) + '</span>' : '') +
+            '</div>';
+
+        // 触屏没有悬停：换一句「点一下」的说法
+        var touchOnly = !!(window.matchMedia && window.matchMedia('(hover: none)').matches);
+        var rail = '<aside class="ds-net-rail">' + statHtml +
+            '<ul class="ds-net-legend">' + legend + '</ul>' + keys +
+            '<p class="ds-net-hint">' +
+            escapeHtml(t(touchOnly ? 'ds_net_hint_touch' : 'ds_net_hint')) + '</p></aside>';
+
+        return {
+            card: '<div class="ds-card glass-card"><div class="ds-net">' +
+                '<div class="ds-net-stage" id="dsNetGraph"></div>' + rail + '</div></div>',
+            note: '<p class="ds-note">' + escapeHtml(t('ds_net_note')) + '</p>'
+        };
+    }
+
+    function renderNetworkGraph() {
+        var host = document.getElementById('dsNetGraph');
+        var N = state.live && state.live.net;
+        if (!host || !N || !N.comps.length) return;
+
+        var W = Math.max(240, Math.round(host.clientWidth || 320));
+        state.netW = host.clientWidth || W;
+        var narrow = W < 520;
+
+        var maxDeg = N.maxDeg || 1;
+        var maxEdgeW = 1;
+        N.edges.forEach(function (e) { if (e.w > maxEdgeW) maxEdgeW = e.w; });
+        var wLog = Math.log(1 + maxEdgeW) || 1;
+        var maxR = netNodeR({ deg: maxDeg }, maxDeg);
+
+        // 每个连通集团各自布局（世界坐标），再并排摆开、缩放到画布内
+        var blocks = N.comps.map(function (comp) { return netLayoutBlock(comp, N); });
+        var gap = 44, totalW = 0, maxH = 1;
+        blocks.forEach(function (b) {
+            totalW += b.w;
+            if (b.h > maxH) maxH = b.h;
+        });
+        totalW += gap * Math.max(0, blocks.length - 1);
+
+        var cursor = 0;
+        blocks.forEach(function (b) {
+            b.dx = cursor - b.minX;
+            b.dy = (maxH - b.h) / 2 - b.minY;
+            cursor += b.w + gap;
+        });
+
+        var pad = NET_PAD + maxR;
+        var availW = Math.max(60, W - 2 * pad);
+        // 画布高度按布局自身的宽高比来定（力导向没有唯一正确的长宽比）：
+        // 布局偏窄就给它方一点的画布，偏宽就压扁一点，别硬塞进固定高度里把点挤在一起
+        var aspect = totalW / Math.max(1, maxH);
+        var targetAspect = Math.max(1.05, Math.min(narrow ? 1.2 : 1.95, aspect));
+        var graphH = Math.round(Math.max(narrow ? 300 : 340,
+            Math.min(narrow ? 520 : 700, W / targetAspect)));
+        var availH = Math.max(60, graphH - 2 * pad);
+
+        // 横向允许有限度拉伸把卡片用满；超过上限就保持等比、左右留白
+        var k = Math.min(availW / totalW, availH / maxH);
+        var kx = k * Math.min(availW / totalW / k, 1.45);
+        var ky = k * Math.min(availH / maxH / k, 1.45);
+        var ox = (W - totalW * kx) / 2;
+        var oy = (graphH - maxH * ky) / 2;
+
+        var pos = [], graphIds = [];
+        blocks.forEach(function (b) {
+            b.ids.forEach(function (gi, i) {
+                pos[gi] = { x: ox + (b.dx + b.xs[i]) * kx, y: oy + (b.dy + b.ys[i]) * ky };
+                graphIds.push(gi);
+            });
+        });
+
+        // 推开 ↔ 收回：单次「推开再缩放」会把刚推出来的间距又按比例压回去，
+        // 所以反复几轮，直到这一次完全不用再缩（s≈1）为止
+        for (var cyc = 0; cyc < 8; cyc++) {
+            netSpreadNodes(N, pos, graphIds, maxDeg, 4);
+            if (netFitToBox(pos, graphIds, pad, W - pad, pad, graphH - pad) > 0.999) break;
+        }
+
+        // 图下方的虚线框：一条边都没有的成员排成若干行，不参与上面那张网
+        var bandItems = N.isolated.map(function (gi) {
+            var nm = netDisplay(N.nodes[gi].name);
+            return { gi: gi, name: nm, w: 10 + netTextWidth(nm, NET_LABEL_SIZE) };
+        });
+        var bandTop = graphH + 14, rowH = 24;
+        var bandX = NET_PAD + 16, bandMaxX = W - NET_PAD - 16;
+        var bx = bandX, by = 0, rows = 0;
+        bandItems.forEach(function (it) {
+            if (!rows) rows = 1;
+            if (bx + it.w > bandMaxX && bx > bandX) { bx = bandX; by += rowH; rows++; }
+            it.x = bx; it.y = by;
+            bx += it.w + 18;
+        });
+        var bandH = bandItems.length ? 50 + (rows - 1) * rowH : 0;
+        var H = bandItems.length ? bandTop + bandH + 8 : graphH;
+
+        // 边：细的（交手少的）先画，粗的压在上面
+        var edgeHtml = '', hitHtml = '';
+        N.edges.map(function (e, i) { return i; })
+            .sort(function (a, b) { return N.edges[a].w - N.edges[b].w; })
+            .forEach(function (i) {
+                var e = N.edges[i], pa = pos[e.a], pb = pos[e.b];
+                if (!pa || !pb) return;
+                var d = 'M' + pa.x.toFixed(1) + ' ' + pa.y.toFixed(1) + 'L' + pb.x.toFixed(1) + ' ' + pb.y.toFixed(1);
+                var lw = 0.9 + 2.4 * Math.log(1 + e.w) / wLog;
+                var lo = 0.05 + 0.5 * Math.log(1 + e.w) / wLog;
+                edgeHtml += '<path class="ds-net-edge" data-k="' + i + '" d="' + d +
+                    '" stroke-width="' + lw.toFixed(2) + '" stroke-opacity="' + lo.toFixed(2) + '"/>';
+                hitHtml += '<path class="ds-net-hit" data-e="' + i + '" d="' + d + '"/>';
+            });
+
+        var nodeHtml = graphIds.slice().sort(function (a, b) {
+            return N.nodes[a].deg - N.nodes[b].deg;
+        }).map(function (gi) {
+            var nd = N.nodes[gi], p = pos[gi], r = netNodeR(nd, maxDeg);
+            var title = netDisplay(nd.name) + ' · ' + cohortLabel(nd.enroll);
+            return '<a class="ds-net-g" data-n="' + gi + '" href="' + escapeHtml(netProfileUrl(nd)) + '">' +
+                '<circle class="ds-net-ring" cx="' + p.x.toFixed(1) + '" cy="' + p.y.toFixed(1) + '" r="' + (r + 3.6).toFixed(1) + '"/>' +
+                '<circle class="ds-net-node ' + netCohortClass(nd.ci) + '" cx="' + p.x.toFixed(1) + '" cy="' + p.y.toFixed(1) + '" r="' + r.toFixed(1) + '"/>' +
+                '<title>' + escapeHtml(title) + '</title></a>';
+        }).join('');
+
+        // 静态标签只留最关键的十几个，其余靠悬停补：全部都标上就是一团字
+        var labelLimit = narrow ? 9 : Math.max(10, Math.min(16, Math.round(W / 60)));
+        var placed = netPlaceLabels(N, pos,
+            graphIds.slice().sort(function (a, b) { return N.nodes[b].deg - N.nodes[a].deg; }),
+            labelLimit, W, graphH);
+        var labelHtml = placed.html;
+
+        var bandHtml = '';
+        if (bandItems.length) {
+            bandHtml = '<rect class="ds-net-band" x="' + NET_PAD + '" y="' + bandTop +
+                '" width="' + (W - 2 * NET_PAD) + '" height="' + bandH + '" rx="12"/>' +
+                '<text class="ds-net-band-cap" x="' + (NET_PAD + 16) + '" y="' + (bandTop + 19) + '">' +
+                escapeHtml(t('ds_net_isolated') + ' · ' + t('ds_net_people', { n: bandItems.length })) + '</text>' +
+                bandItems.map(function (it) {
+                    var nd = N.nodes[it.gi], p = { x: it.x, y: bandTop + 38 + it.y };
+                    pos[it.gi] = p;
+                    var title = netDisplay(nd.name) + ' · ' + cohortLabel(nd.enroll);
+                    return '<a class="ds-net-g" data-n="' + it.gi + '" href="' + escapeHtml(netProfileUrl(nd)) + '">' +
+                        '<circle class="ds-net-ring" cx="' + p.x.toFixed(1) + '" cy="' + p.y.toFixed(1) + '" r="8"/>' +
+                        '<circle class="ds-net-node ' + netCohortClass(nd.ci) + '" cx="' + p.x.toFixed(1) +
+                        '" cy="' + p.y.toFixed(1) + '" r="4.2"/>' +
+                        '<text class="ds-net-band-name" x="' + (p.x + 9).toFixed(1) + '" y="' + p.y.toFixed(1) +
+                        '" dominant-baseline="middle">' + escapeHtml(it.name) + '</text>' +
+                        '<title>' + escapeHtml(title) + '</title></a>';
+                }).join('');
+        }
+
+        // 光晕跟着主集团最终位置走（取实际落点，缩放/推开之后的坐标）
+        var gMinX = Infinity, gMinY = Infinity, gMaxX = -Infinity, gMaxY = -Infinity;
+        N.comps[0].forEach(function (gi) {
+            var p = pos[gi];
+            if (!p) return;
+            if (p.x < gMinX) gMinX = p.x;
+            if (p.x > gMaxX) gMaxX = p.x;
+            if (p.y < gMinY) gMinY = p.y;
+            if (p.y > gMaxY) gMaxY = p.y;
+        });
+        var gx = (gMinX + gMaxX) / 2, gy = (gMinY + gMaxY) / 2;
+        var glow = '<circle class="ds-net-glow" cx="' + gx.toFixed(1) + '" cy="' + gy.toFixed(1) + '" r="' +
+            (Math.max(gMaxX - gMinX, gMaxY - gMinY) * 0.62 + 90).toFixed(1) + '" fill="url(#dsNetGlow)"/>';
+
+        host.innerHTML = '<div class="ds-net-tip" aria-hidden="true"></div>' +
+            '<svg class="ds-net-svg" viewBox="0 0 ' + W + ' ' + H + '" width="' + W + '" height="' + H +
+            '" role="group" aria-label="' +
+            escapeHtml(t('ds_net_aria', { members: N.nodes.length, pairs: N.edges.length })) + '">' +
+            '<defs><radialGradient id="dsNetGlow">' +
+            '<stop offset="0%" style="stop-color:var(--accent-blue);stop-opacity:.12"/>' +
+            '<stop offset="100%" style="stop-color:var(--accent-blue);stop-opacity:0"/>' +
+            '</radialGradient></defs>' +
+            glow + bandHtml +
+            '<g class="ds-net-edges">' + edgeHtml + '</g>' +
+            '<g class="ds-net-hits">' + hitHtml + '</g>' +
+            '<g class="ds-net-nodes">' + nodeHtml + '</g>' +
+            '<g class="ds-net-labels">' + labelHtml + '</g>' +
+            '</svg>';
+
+        netWire(host.querySelector('.ds-net-svg'), host, N, pos, placed.boxes, W, graphH);
+    }
+
+    // 悬停：高亮一位成员的整圈交手，其余压暗；悬停一条边看这组对手打了几场
+    function netWire(svg, host, N, pos, labelBoxes, W, H) {
+        if (!svg) return;
+        var tip = host.querySelector('.ds-net-tip');
+        var labGroup = svg.querySelector('.ds-net-labels');
+        var nodeEls = [].slice.call(svg.querySelectorAll('[data-n]'));
+        var lineEls = [].slice.call(svg.querySelectorAll('.ds-net-edge'));
+        var labEls = [].slice.call(svg.querySelectorAll('.ds-net-lab'));
+        var nodeByI = [], lineByK = [], labByI = [];
+        nodeEls.forEach(function (el) { nodeByI[+el.getAttribute('data-n')] = el; });
+        lineEls.forEach(function (el) { lineByK[+el.getAttribute('data-k')] = el; });
+        labEls.forEach(function (el) { labByI[+el.getAttribute('data-l')] = el; });
+
+        var hot = null;
+
+        function placeTip(px, py) {
+            var w = host.clientWidth || 320;
+            var tw = tip.offsetWidth || 180, th = tip.offsetHeight || 44;
+            // 让开光标底下的那个点：默认放右上，靠边就翻到左边 / 下面
+            var x = px + 16;
+            if (x + tw > w - 6) x = px - 16 - tw;
+            if (x < 6) x = 6;
+            var below = py - 12 - th < 6;
+            var y = below ? py + 16 : py - 12;
+            tip.style.transform = 'translate(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px) translate(0,' +
+                (below ? '0' : '-100%') + ')';
+        }
+        function showTip(html, px, py) {
+            tip.innerHTML = html;
+            tip.classList.add('is-on');
+            placeTip(px, py);
+        }
+        function clear() {
+            if (!hot) return;
+            hot = null;
+            svg.classList.remove('is-focus');
+            nodeEls.forEach(function (el) { el.classList.remove('is-hot', 'is-near'); });
+            lineEls.forEach(function (el) { el.classList.remove('is-hot'); });
+            labEls.forEach(function (el) { el.classList.remove('is-near', 'is-self'); });
+            // 悬停时临时补的名字整批撤掉
+            if (labGroup) {
+                var dyn = labGroup.querySelectorAll('.is-hot-lab');
+                for (var d = 0; d < dyn.length; d++) dyn[d].parentNode.removeChild(dyn[d]);
+            }
+            tip.classList.remove('is-on');
+        }
+        function focusNode(i, px, py) {
+            if (hot && hot.t === 'n' && hot.i === i) { placeTip(px, py); return; }
+            clear();
+            hot = { t: 'n', i: i };
+            svg.classList.add('is-focus');
+            if (nodeByI[i]) nodeByI[i].classList.add('is-hot');
+            N.nodes[i].nb.forEach(function (j) { if (nodeByI[j]) nodeByI[j].classList.add('is-near'); });
+            // 自己的名字让给浮层显示（否则浮层刚好压在同一串字上）
+            if (labByI[i]) labByI[i].classList.add('is-self');
+            N.nodes[i].nb.forEach(function (j) { if (labByI[j]) labByI[j].classList.add('is-near'); });
+            for (var k = 0; k < N.edges.length; k++) {
+                var e = N.edges[k];
+                if ((e.a === i || e.b === i) && lineByK[k]) lineByK[k].classList.add('is-hot');
+            }
+            // 邻居里没有静态名字的，临时补上（放不下就不放，宁可少标也不叠字）
+            if (labGroup && labelBoxes) {
+                labGroup.insertAdjacentHTML('beforeend', netHoverLabels(N, pos, i, labelBoxes, W, H));
+            }
+            var nd = N.nodes[i];
+            showTip('<b>' + escapeHtml(netDisplay(nd.name)) + '</b><span>' +
+                escapeHtml(t('ds_net_tip_node', { cohort: cohortLabel(nd.enroll), opp: nd.deg, games: nd.games })) +
+                '</span>', px, py);
+        }
+        function focusEdge(i, px, py) {
+            if (hot && hot.t === 'e' && hot.i === i) { placeTip(px, py); return; }
+            clear();
+            hot = { t: 'e', i: i };
+            svg.classList.add('is-focus');
+            var e = N.edges[i];
+            if (lineByK[i]) lineByK[i].classList.add('is-hot');
+            if (nodeByI[e.a]) nodeByI[e.a].classList.add('is-hot');
+            if (nodeByI[e.b]) nodeByI[e.b].classList.add('is-hot');
+            if (labByI[e.a]) labByI[e.a].classList.add('is-near');
+            if (labByI[e.b]) labByI[e.b].classList.add('is-near');
+            showTip('<b>' + escapeHtml(netDisplay(N.nodes[e.a].name)) + ' × ' +
+                escapeHtml(netDisplay(N.nodes[e.b].name)) + '</b><span>' +
+                escapeHtml(t('ds_net_tip_edge', { n: e.w })) + '</span>', px, py);
+        }
+        function hitTarget(ev) {
+            var el = ev.target;
+            return (el && el.closest) ? el.closest('[data-n],[data-e]') : null;
+        }
+        svg.addEventListener('pointermove', function (ev) {
+            var el = hitTarget(ev);
+            var rect = host.getBoundingClientRect();
+            var px = ev.clientX - rect.left, py = ev.clientY - rect.top;
+            if (!el) { clear(); return; }
+            var ni = el.getAttribute('data-n');
+            if (ni != null) { focusNode(+ni, px, py); return; }
+            var ei = el.getAttribute('data-e');
+            if (ei != null) focusEdge(+ei, px, py);
+        });
+        svg.addEventListener('pointerleave', clear);
+        svg.addEventListener('focusin', function (ev) {
+            var el = hitTarget(ev);
+            if (!el) return;
+            var ni = el.getAttribute('data-n');
+            if (ni == null) return;
+            var p = pos[+ni] || { x: 80, y: 80 };
+            focusNode(+ni, p.x, p.y + 4);
+        });
+        svg.addEventListener('focusout', clear);
+    }
+
     function render() {
         var body = document.getElementById('dsBody');
         if (!body || !state.live) return;
-        var pro = renderPro(), join = renderJoin();
+        var pro = renderPro(), join = renderJoin(), net = renderNetwork();
 
         body.innerHTML = renderOverview() +
             section('ds-sec-club', t('ds_sec_club'), t('ds_sec_club_desc'), renderClub()) +
+            section('ds-sec-net', t('ds_sec_net'), t('ds_sec_net_desc'), net ? net.card + net.note : '') +
             section('ds-sec-pro', t('ds_sec_wtt'), pro.desc, pro.body) +
             section('ds-sec-content', t('ds_sec_content'), t('ds_sec_content_desc'), renderContent()) +
             section('ds-sec-join', t('ds_sec_join'), join.desc, join.body);
 
         renderHeroMeta();
         renderChart();
+        renderNetworkGraph();
+    }
+
+    // 容器宽度变了才重画（手机转屏 / 侧栏收起），当作纯几何调整
+    function onNetResize() {
+        if (netResizeTimer) clearTimeout(netResizeTimer);
+        netResizeTimer = setTimeout(function () {
+            var host = document.getElementById('dsNetGraph');
+            if (!host || !state.ready || !state.live || !state.live.net) return;
+            if (Math.abs((host.clientWidth || 0) - state.netW) < 24) return;
+            renderNetworkGraph();
+        }, 160);
     }
 
     /* ---------- 逐月柱状图 ---------- */
@@ -481,6 +1187,10 @@
                 state.ready = true;
                 render();
                 watchTheme();
+                if (!netResizeBound) {
+                    netResizeBound = true;
+                    window.addEventListener('resize', onNetResize);
+                }
             })
             .catch(function (e) {
                 console.error('DataScale: 加载失败', e);

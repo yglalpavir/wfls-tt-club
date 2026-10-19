@@ -19,12 +19,12 @@ let fightL = 'hell', fightR = 'hell';                 // AI 斗蛐蛐双方模�
 let seriesWinsL = 0, seriesWinsR = 0;                // 5局三胜系列胜场
 const BEST_OF = 5, NEED_WINS = 3;                    // 五局三胜
 let playerStance = 'forehand', chipState = 'forehand';
-let shiftHold = false, rmbHold = false;
-let serveKeys = { a:false, s:false, d:false };   // 发球按住：a=上旋(仅发球动画) s=左旋 d=右旋（下旋发球已取消）
+let serveKeys = { s:false, d:false };   // 发球按住：s=左旋 d=右旋（上下旋由 serveCfg.top 决定）
 let ctrlHold = false;                            // 按住 Ctrl = 主动搓球
-let servePlan = null;                            // 发球旋转计划 {top,side,power,type}（startToss 决定，动画与击球一致）
-// ★ 发球预调（发球前调好，点击抛发）：top=上旋(恒定，下旋发球已取消) side=左右旋 · power=强度0..1（发球不再区分短球/急长球）
-let serveCfg = { top:true, side:0, power:0.5, type:'long' };
+let servePlan = null;                            // 发球旋转计划 {top,side,power,serveSpin,servePace}（startToss 决定，动画与击球一致）
+// ★ 发球预调（发球前调好，点击抛发）：top=true 上旋 / false 下旋（下旋取上旋 60% 强度，见 rules.js topSign）
+//   side=左/右侧旋（可与下旋叠加，与 AI 的 aiServePlan 同口径） · power=强度0..1（发球不区分短球/急长球）
+let serveCfg = { top:true, side:0, power:0.5 };
 let willNet = false;                             // 对下旋抢点 → 下网标记
 const other = s => s==='player' ? 'ai' : 'player';
 const gauss = () => (Math.random()+Math.random()+Math.random()-1.5)*0.8;

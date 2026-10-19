@@ -1,0 +1,2 @@
+权重：js\input-weights.js  形状 192×88 → 256×192 → 192×256 → 1904×192  动作数 1904  来源 data/checkpoints/input3-hell12h5/ckpt-000500.json
+载入实机管线（input-weights.js ~9.7MB）… 完成，动作数 1904

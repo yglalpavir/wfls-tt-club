@@ -58,12 +58,7 @@
   box-shadow:var(--shadow-md)}
 #liveChip i{width:7px;height:7px;border-radius:50%;background:var(--red);
   box-shadow:0 0 10px rgba(255,77,79,.8);animation:pulse 1.4s infinite}
-/* 实机遥测 chip：仅当「鼠标上的tt玩家」参赛时显示，是实机表现的唯一可信判据 */
-#ttStatsChip{position:absolute;top:20px;left:200px;font-size:10.5px;font-weight:600;
-  letter-spacing:1px;color:var(--teal);
-  background:var(--glass);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
-  padding:7px 14px;border:1px solid rgba(13,148,136,.35);border-radius:var(--r-pill);
-  box-shadow:var(--shadow-md);white-space:nowrap}
+/* 实机遥测 chip 已下线（#ttStatsChip 无 HTML 元素、无 JS 引用），样式一并删除 */
 #statusLine{position:absolute;top:calc(100px + env(safe-area-inset-top));left:50%;
   transform:translateX(-50%);max-width:calc(100vw - 24px);
   font-size:12px;font-weight:600;letter-spacing:4px;color:var(--t-inv);
@@ -171,8 +166,11 @@
   border:1px solid rgba(0,123,255,.5);box-shadow:var(--shadow-md)}
 #serveChip.on{display:flex}
 #serveChip.top{border-color:rgba(255,77,79,.55)}
+/* 下旋发球：冷色（青绿）区分于上旋的红，与「下旋=沉」的手感对应 */
+#serveChip.back{border-color:rgba(13,148,136,.65)}
 #serveChip b{font-family:var(--disp);font-weight:600;font-size:12.5px;letter-spacing:1px;color:var(--ai-d)}
 #serveChip.top b{color:var(--you-d)}
+#serveChip.back b{color:var(--teal)}
 #serveChip span{font-size:9px;letter-spacing:1px;color:var(--t-dim)}
 
 /* ---------- 底部栏 / 键位提示 / 按钮 ---------- */
@@ -305,6 +303,9 @@ html.push-right #btnPush{left:auto;right:calc(16px + env(safe-area-inset-right))
 html.push-right #touchServe{right:auto;left:calc(16px + env(safe-area-inset-left))}
 #touchServe.on{opacity:1;transform:none}
 #touchServe:not(.on) button{pointer-events:none}
+/* 上/下旋切换钮（= 桌面 A 键）：非按住型，只表达当前档位。
+   下旋档点亮成青色，与 chip 的 .back 同色系；上旋档保持常态。 */
+#btnServeSpin.back{background:rgba(13,148,136,.16);border-color:var(--teal);color:var(--teal)}
 /* 观看模式退出钮（对应桌面 Esc） */
 #btnExitWatch{display:none;position:absolute;left:calc(16px + env(safe-area-inset-left));
   top:calc(60px + env(safe-area-inset-top));min-height:42px;font-size:12px;border-radius:var(--r-pill)}
@@ -370,7 +371,6 @@ html.touch #toastSub{font-size:11.5px;letter-spacing:2px;margin-top:6px}
   #rallyChip{font-size:12.5px}
   .gp{font-size:8.5px;padding:2px 8px}
   #liveChip{display:none}      /* 纯装饰。~680px 以下记分牌会盖住它，这里一并在 ≤820 断点内隐藏 */
-  #ttStatsChip{top:12px;left:158px;font-size:9.5px;padding:5px 11px}
   #statusLine{top:72px;font-size:10.5px;letter-spacing:3px}
   #deck{gap:8px}
   #stanceChip,#spinMeter,#serveChip{padding:6px 12px}
@@ -394,7 +394,6 @@ html.touch #toastSub{font-size:11.5px;letter-spacing:2px;margin-top:6px}
   #mid{padding:4px 7px}
   #rallyChip{font-size:10.5px;margin-top:0}
   #statusLine{top:calc(58px + env(safe-area-inset-top));font-size:10px;letter-spacing:2px}
-  #ttStatsChip{left:12px;top:78px}
   /* 非触屏窄窗：底部栏改纵排，提示整行紧凑排列 → 压低高度避免与 deck 重叠 */
   #bottomBar{flex-direction:column;align-items:stretch;gap:7px;padding:9px 10px;
     padding-bottom:calc(9px + env(safe-area-inset-bottom))}
@@ -411,6 +410,9 @@ html.touch #toastSub{font-size:11.5px;letter-spacing:2px;margin-top:6px}
   /* 竖屏固定成 2×2：英文标签（Left spin / Pwr ＋）比中文宽很多，靠自动换行会
      在 320px 机上排成 3~4 行；锁死两行两列，高度恒定，提示条也好对位 */
   #touchServe{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  /* 上/下旋钮是切换型（不是按住型），单独占满一行并置于顶部；
+     下面 4 钮仍保持原 2×2，行高变化由 syncTouchMetrics() 写入 --ctrlH 自适应。 */
+  #touchServe #btnServeSpin{grid-column:1/-1;order:-1}
   #touchServe .tc-btn{min-width:0;padding:6px 8px;font-size:11px;letter-spacing:.5px}
   #touchTop{gap:6px}
   /* 不降到 44px 以下：触控目标下限。记分牌预留宽度(108px)已按 2×44+6+10 留足 */
@@ -433,7 +435,6 @@ html.touch #toastSub{font-size:11.5px;letter-spacing:2px;margin-top:6px}
 @media (max-height:480px) and (orientation:landscape){
   #scorebug{top:calc(8px + env(safe-area-inset-top))}
   #liveChip{top:calc(8px + env(safe-area-inset-top));left:12px}
-  #ttStatsChip{top:8px}
   #statusLine{top:calc(72px + env(safe-area-inset-top));font-size:10px}
   #toast{top:34%}
   html.touch #btnExitWatch{top:calc(50px + env(safe-area-inset-top))}

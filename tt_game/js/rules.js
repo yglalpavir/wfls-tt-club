@@ -108,13 +108,13 @@ function startToss(){
     const side = (serveKeys.s?1:0) - (serveKeys.d?1:0);   // S=左旋 D=右旋
     c.side = side;
     servePlan = {
-      /* A 键切上下旋（input.js）。下旋原本被硬编码关掉：strikeServe 一直支持
-         topSpin===false（topSign=-0.6，下旋取上旋 60% 强度），只是没有任何地方产出它。
-         对手侧接下旋的逻辑也一直在（policy.js aiDecision 的 isBack 分支 →
-         receive.pushProb 0.62 搓球），此前是死代码。侧旋只在上旋档叠加，切到下旋时清零。 */
+      /* A 键 / 触屏「上下旋」钮切上下旋（input.js）。strikeServe 一直支持
+         topSpin===false（topSign=-0.6，下旋取上旋 60% 强度）。对手侧接下旋的逻辑也一直在
+         （policy.js aiDecision 的 isBack 分支 → receive.pushProb 0.62 搓球）。
+         侧旋与上下旋独立组合 —— 与 AI 的 aiServePlan（topProb / sideProb 各自抽签）同口径。 */
       top: c.top !== false,
-      side: c.top === false ? 0 : side,
-      power: c.power, type: c.type,
+      side: side,
+      power: c.power,
       // 抛球点：端线后 + 随鼠标（zy 由鼠标/深度决定，保证端线外）
       tx: clamp(targetX*0.35, -0.4, 0.4),
       tz: clamp(PLAYER_Z + 0.10, TABLE_L/2+0.05, 1.7),   // 端线后
@@ -130,7 +130,7 @@ function startToss(){
     if(ttDecide){
       /* 上/下旋由 DQN 决定（动作第四维）；下旋取 strikeServe 的 topSign=-0.6 口径。 */
       servePlan = { top: ttDecide.top !== false, side: 0, power: ttDecide.power,
-                    type: 'long', tx: clamp(targetX*0.35, -0.4, 0.4), tz: 0.95 };
+                    tx: clamp(targetX*0.35, -0.4, 0.4), tz: 0.95 };
     }else{
       const pol = (mode==='watch' && isP) ? policyForSide('player') : resolvedPolicyFor('ai');
       servePlan = aiServePlan(pol);
@@ -141,7 +141,9 @@ function startToss(){
   ball.spin.set(0,0,0);
   const pad = isP ? playerPad : aiPad;
   pad.serveSide = servePlan.side || 0;                       // 侧旋 → 触球横向扫（仅动画，不影响物理）
-  beginWindup(pad, 'serveTop', 0.5);
+  // 发球动作随旋转：下旋用前下切的 servePush（constants.js ANIM.servePush），否则 serveTop。
+  // 此前恒用 serveTop，于是下旋发球看起来和上旋一模一样（AI 发下旋同样看不出来）。
+  beginWindup(pad, servePlan.top === false ? 'servePush' : 'serveTop', 0.5);
   playServe();
   setStatus(isP ? (()=>gameT('g_st_toss')) : (()=>gameT('g_st_ai_serve2')));
 }
@@ -196,7 +198,13 @@ function strikeServe(){
    * 这里对齐同一口径。 */
   ball.pos.set(from.x, from.y, from.z);
   let sv = SIM.serveShot(from, { dir: toward, depth, spinX, sideY, speedMul: sPace });
-  // 兜底：若本次旋转组合偶发无解，退回无侧旋/常用深度重试（保证发球总能两跳合法过网）
+  /* 兜底：旋转组合偶发无解时逐级退让，保证发球总能两跳合法过网。
+     实测（power 1.0 满旋转 + 下旋 + 侧旋）primary 命中率只有 ~70% —— 大量侧旋叠在下旋上
+     会把两跳轨迹推出合法域（上旋+侧旋仍 ~100%）。此前无解就直接「丢掉全部侧旋」，
+     等于玩家/高档 AI 选中的侧旋在最强的发球上被静默抹掉；现在先按幅度逐级收敛侧旋（保住旋向），
+     实在无解才退回上旋/无旋。AI 侧同构在 input-sim.js#serveFromAI，改动要同步。 */
+  if(!sv){ sv = SIM.serveShot(from, { dir: toward, depth: 0.5, spinX, sideY: sideY*0.7 }); }
+  if(!sv){ sv = SIM.serveShot(from, { dir: toward, depth: 0.5, spinX, sideY: sideY*0.45 }); }
   if(!sv){ sv = SIM.serveShot(from, { dir: toward, depth: 0.5, spinX, sideY: 0 }); }
   if(!sv){ sv = SIM.serveShot(from, { dir: toward, depth: 0.35, spinX: 0, sideY: 0 }); }
   // 最后防线：出球点过于贴边（vx 转向受限）仍可能无解 → 从台面中心打一记中浅无旋发球，绝不崩溃

@@ -6,8 +6,7 @@
 /* ---------------- 13. 输入 ---------------- */
 let targetX = 0, targetZ = 1.32;
 let mouseNy = 0.5;   // 指针垂直位置（0=上/深压 · 1=下/摆短）→ 驱动弧线与落点深度
-// 正/反手由 autoStance() 自动选择（按球拍与球的位置），无需 Shift/右键切换
-function refreshStance(){ playerStance = autoStance(); }
+// 正/反手由 autoStance() 自动选择（按球拍与球的位置），没有手动切换键
 
 /* ---- 布局默认值：手持尺寸 → 触屏，桌面尺寸 → 键鼠 ----
    早先只看 matchMedia('(pointer:coarse)')：触屏笔记本、外接了鼠标的手机、
@@ -75,7 +74,6 @@ window.addEventListener('pointerdown', e=>{
     return;
   }
   pointerTrack(e);
-  if(e.button===2){ rmbHold = true; refreshStance(); return; }
   if(mode==='menu') return;
   if(e.target.closest('button')) return;
   if(state==='awaitServe' && server==='player') startToss();
@@ -87,30 +85,25 @@ window.addEventListener('pointerup', e=>{
     const ms = performance.now()-touchStart.t;
     // 拖动定位松手不误发球；静止轻点才抛球（鼠标仍保持按下即发，不变）
     if(!touchMoved && ms<350 && mode==='play' && state==='awaitServe' && server==='player') startToss();
-    return;
   }
-  if(e.button===2){ rmbHold = false; refreshStance(); }
 });
 window.addEventListener('pointercancel', e=>{ if(e.pointerId===touchId) touchId = null; });
 window.addEventListener('contextmenu', e=>e.preventDefault());
 window.addEventListener('keydown', e=>{
-  // 发球（下旋发球已取消，恒定上旋）：S=左旋 D=右旋（A 保留仅驱动发球动画）
-  /* A 键：切换发球旋转（上旋 ↔ 下旋）。此前 KeyA 只置位 serveKeys.a 但无任何消费者
-     （grep 全仓确认），是空键，正好拿来切旋——不必新增按键或改帮助面板布局。
-     下旋是本游戏被关掉的真实玩法（rules.js 原硬编码 top:true，注释「下旋发球已取消」），
-     而对手的接下旋逻辑一直在（policy.js receive.pushProb=0.62 只对 isBack 生效），
-     只是永远没人发下旋球，那条路径一直是死的。 */
+  // 发球（S=左旋 / D=右旋；上下旋见下方 A 键）：侧旋可与下旋叠加，与 AI 的 aiServePlan 同口径
+  /* A 键：切换发球旋转（上旋 ↔ 下旋）。此前 KeyA 只置位 serveKeys.a 而全仓无消费者（空键），
+     正好拿来切旋——不必新增按键。下旋是真实玩法：strikeServe 一直支持 topSpin===false
+     （topSign=-0.6，下旋取上旋 60% 强度），对手接下旋的逻辑也一直在
+     （policy.js receive.pushProb=0.62 只对 isBack 生效），此前只是没人发得出下旋球。 */
   if(e.code==='KeyA' && mode==='play' && state==='awaitServe' && server==='player'){
-    serveCfg.top = !serveCfg.top; serveCfg.side = 0;   // 切旋时清掉侧旋，避免组合歧义
+    serveCfg.top = !serveCfg.top;   // 不再清侧旋：下旋+侧旋由 rules.js 的组合发球解算处理
   }
-  if(e.code==='KeyA') serveKeys.a = true;
   if(e.code==='KeyS') serveKeys.s = true;          // 发球：左侧旋
   if(e.code==='KeyD') serveKeys.d = true;          // 发球：右侧旋
   // 发球旋转强度：Q=调弱 E=调强（发球前调，0..1）
   if(e.code==='KeyQ'){ if(mode==='play' && state==='awaitServe' && server==='player'){ serveCfg.power = clamp(serveCfg.power-0.2, 0, 1); } }
   if(e.code==='KeyE'){ if(mode==='play' && state==='awaitServe' && server==='player'){ serveCfg.power = clamp(serveCfg.power+0.2, 0, 1); } }
   if(e.code==='ControlLeft'||e.code==='ControlRight') ctrlHold = true;   // 搓球
-  if(e.key==='Shift' && !e.repeat){ shiftHold = true; refreshStance(); }
   ensureAudio();
   if(mode==='menu'){ startGame(); return; }
   if(e.code==='Escape' && document.documentElement.classList.contains('sheet-open')){ setSheet(false); return; }
@@ -123,11 +116,9 @@ window.addEventListener('keydown', e=>{
   if(e.code==='Escape' && mode==='watch') toMenu();   // 观看模式 Esc 返回
 });
 window.addEventListener('keyup', e=>{
-  if(e.code==='KeyA') serveKeys.a = false;
   if(e.code==='KeyS') serveKeys.s = false;
   if(e.code==='KeyD') serveKeys.d = false;
   if(e.code==='ControlLeft'||e.code==='ControlRight') ctrlHold = false;
-  if(e.key==='Shift'){ shiftHold = false; refreshStance(); }
 });
 function toggleSound(){
   soundOn = !soundOn;
@@ -284,6 +275,14 @@ function holdBtn(el, on, off){
 holdBtn($('btnPush'),  ()=>{ ctrlHold = true;  }, ()=>{ ctrlHold = false; });   // 搓球 = 桌面 Ctrl
 holdBtn($('btnSpinL'), ()=>{ serveKeys.s = true; }, ()=>{ serveKeys.s = false; }); // 发球左旋 = 桌面 S
 holdBtn($('btnSpinR'), ()=>{ serveKeys.d = true; }, ()=>{ serveKeys.d = false; }); // 发球右旋 = 桌面 D
+/* 发球上/下旋切换 = 桌面 A 键（轻点切换，不按住）：
+   触屏此前没有等价控件，触屏玩家永远只能发上旋——这是两侧唯一的真实能力缺口。
+   侧旋仍由 ◀/▶ 按住给，与桌面 S/D 一致；两者可叠加（下旋+侧旋）。 */
+if($('btnServeSpin')) $('btnServeSpin').addEventListener('pointerdown', e=>{
+  e.stopPropagation(); ensureAudio();
+  if(mode==='play' && state==='awaitServe' && server==='player') serveCfg.top = !serveCfg.top;
+  updateServeUI();          // 立即把 chip 与新按钮的激活态刷成当前旋转，不等下一帧
+});
 /* 发球旋转强度 −/＋：与桌面 Q/E 同条件同步长 */
 function adjustServePower(d){
   if(mode==='play' && state==='awaitServe' && server==='player')

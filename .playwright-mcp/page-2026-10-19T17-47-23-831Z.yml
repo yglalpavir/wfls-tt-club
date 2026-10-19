@@ -1,0 +1,542 @@
+- generic [active] [ref=f5e1]:
+  - navigation [ref=f5e2]:
+    - generic [ref=f5e3]:
+      - link " WFLS TT Club" [ref=f5e4] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=f5e5]: 
+        - generic [ref=f5e7]: WFLS TT Club
+      - list [ref=f5e8]:
+        - listitem [ref=f5e9]:
+          - link "Home" [ref=f5e10] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=f5e11]:
+          - link "News" [ref=f5e12] [cursor=pointer]:
+            - /url: news.html
+        - listitem [ref=f5e13]:
+          - link "Competitions" [ref=f5e14] [cursor=pointer]:
+            - /url: competitions.html
+        - listitem [ref=f5e15]:
+          - link "Ranking Beta" [ref=f5e16] [cursor=pointer]:
+            - /url: ranking.html
+        - listitem [ref=f5e17]:
+          - link "More... " [ref=f5e18] [cursor=pointer]:
+            - /url: "#"
+            - text: More...
+            - generic [ref=f5e19]: 
+        - listitem [ref=f5e20]:
+          - link "Contact" [ref=f5e21] [cursor=pointer]:
+            - /url: contact.html
+      - generic [ref=f5e22]:
+        - button "搜索" [ref=f5e23] [cursor=pointer]:
+          - generic [ref=f5e24]: 
+        - button "切换主题" [ref=f5e25] [cursor=pointer]:
+          - generic [ref=f5e26]: 
+        - button "切换语言" [ref=f5e27] [cursor=pointer]:
+          - generic [ref=f5e28]: EN
+  - generic [ref=f5e31]:
+    - generic [ref=f5e32]: Data Scale
+    - heading "数据规模" [level=1] [ref=f5e33]
+    - paragraph [ref=f5e34]: 这个站点到底攒了多少数据
+    - paragraph [ref=f5e103]: 数据截至 2026-10-19·社团记录区间 2026-03-03 – 2026-10-19·职业赛事区间 2001-07-04 – 2026-09-29
+  - generic [ref=f5e37]:
+    - generic [ref=f5e104]:
+      - generic [ref=f5e105]:
+        - generic [ref=f5e106]: 
+        - generic [ref=f5e107]: "46"
+        - generic [ref=f5e108]: 社团成员
+      - generic [ref=f5e109]:
+        - generic [ref=f5e110]: 
+        - generic [ref=f5e111]: "376"
+        - generic [ref=f5e112]: 社团比赛记录
+      - generic [ref=f5e113]:
+        - generic [ref=f5e114]: 
+        - generic [ref=f5e115]: 67,735
+        - generic [ref=f5e116]: 职业赛事记录
+      - generic [ref=f5e117]:
+        - generic [ref=f5e118]: 
+        - generic [ref=f5e119]: 6,268
+        - generic [ref=f5e120]: 收录职业球员
+    - generic [ref=f5e121]:
+      - generic [ref=f5e122]:
+        - heading "社团数据" [level=2] [ref=f5e123]
+        - paragraph [ref=f5e124]: 每一场比赛都由社团成员提交、审核后记入公开档案。
+      - generic [ref=f5e125]:
+        - generic [ref=f5e126]:
+          - generic [ref=f5e127]: 
+          - generic [ref=f5e128]: "3"
+          - generic [ref=f5e129]: 赛季
+        - generic [ref=f5e130]:
+          - generic [ref=f5e131]: 
+          - generic [ref=f5e132]: "35"
+          - generic [ref=f5e133]: 快照日
+        - generic [ref=f5e134]:
+          - generic [ref=f5e135]: 
+          - generic [ref=f5e136]: "106"
+          - generic [ref=f5e137]: 比赛日
+        - generic [ref=f5e138]:
+          - generic [ref=f5e139]: 
+          - generic [ref=f5e140]: "171"
+          - generic [ref=f5e141]: 单局比分记录
+        - generic [ref=f5e142]:
+          - generic [ref=f5e143]: 
+          - generic [ref=f5e144]: "38"
+          - generic [ref=f5e145]: 积分调整
+          - generic [ref=f5e146]: +1,065
+        - generic [ref=f5e147]:
+          - generic [ref=f5e148]: 
+          - generic [ref=f5e149]: "64"
+          - generic [ref=f5e150]: 淘汰赛对阵位
+      - generic [ref=f5e151]:
+        - generic [ref=f5e152]:
+          - heading "赛事类型分布" [level=3] [ref=f5e153]
+          - generic [ref=f5e154]:
+            - generic [ref=f5e155]:
+              - generic [ref=f5e156]: 普通
+              - img "普通 242" [ref=f5e158]
+              - generic [ref=f5e159]: "242"
+            - generic [ref=f5e160]:
+              - generic [ref=f5e161]: 校乒赛单打
+              - img "校乒赛单打 56" [ref=f5e163]
+              - generic [ref=f5e164]: "56"
+            - generic [ref=f5e165]:
+              - generic [ref=f5e166]: 校乒赛团体
+              - img "校乒赛团体 43" [ref=f5e168]
+              - generic [ref=f5e169]: "43"
+            - generic [ref=f5e170]:
+              - generic [ref=f5e171]: 十二强赛
+              - img "十二强赛 16" [ref=f5e173]
+              - generic [ref=f5e174]: "16"
+            - generic [ref=f5e175]:
+              - generic [ref=f5e176]: 校队选拔
+              - img "校队选拔 11" [ref=f5e178]
+              - generic [ref=f5e179]: "11"
+            - generic [ref=f5e180]:
+              - generic [ref=f5e181]: 双打
+              - img "双打 7" [ref=f5e183]
+              - generic [ref=f5e184]: "7"
+            - generic [ref=f5e185]:
+              - generic [ref=f5e186]: 校乒联赛
+              - img "校乒联赛 1" [ref=f5e188]
+              - generic [ref=f5e189]: "1"
+        - generic [ref=f5e190]:
+          - heading "逐月比赛记录" [level=3] [ref=f5e191]
+          - paragraph [ref=f5e192]: 按月统计录入的比赛场次。
+      - generic [ref=f5e195]:
+        - heading "成员标签" [level=4] [ref=f5e196]
+        - generic [ref=f5e197]:
+          - generic [ref=f5e198]: 校队成员 ×12
+          - generic [ref=f5e199]: 26-27年副社长 ×3
+          - generic [ref=f5e200]: 25-26年副社长 ×2
+          - generic [ref=f5e201]: 大满贯 ×1
+          - generic [ref=f5e202]: 26-27年社长 ×1
+          - generic [ref=f5e203]: 校一直板 ×1
+          - generic [ref=f5e204]: 25-26年社长 ×1
+          - generic [ref=f5e205]: 24-25年副社长 ×1
+          - generic [ref=f5e206]: 校二直板 ×1
+      - generic [ref=f5e207]:
+        - heading "成员荣誉" [level=4] [ref=f5e208]
+        - generic [ref=f5e209]:
+          - generic [ref=f5e210]: 校乒赛2025单打冠军
+          - generic [ref=f5e211]: 校乒赛2026团体冠军
+          - generic [ref=f5e212]: 校乒赛2026单打亚军
+          - generic [ref=f5e213]: 校乒赛2026团体亚军
+          - generic [ref=f5e214]: 校乒赛2026单打季军
+          - generic [ref=f5e215]: 校乒赛2026单打冠军
+          - generic [ref=f5e216]: 校乒赛2026团体季军
+          - generic [ref=f5e217]: 校乒赛2025团体季军
+      - generic [ref=f5e218]:
+        - heading "社团骨干" [level=4] [ref=f5e219]
+        - generic [ref=f5e220]:
+          - generic [ref=f5e221]: 龚雨煊
+          - generic [ref=f5e222]: 谷子易
+          - generic [ref=f5e223]: 姜子润
+          - generic [ref=f5e224]: 任安喆
+          - generic [ref=f5e225]: 任峻贤
+          - generic [ref=f5e226]: 梅哲宇
+          - generic [ref=f5e227]: 叶孟恒
+    - generic [ref=f5e228]:
+      - generic [ref=f5e229]:
+        - heading "交手网络" [level=2] [ref=f5e230]
+        - paragraph [ref=f5e231]: 把社团的每一场对局连成一张网：一个点是一位成员，一条线代表两人交过手。
+      - generic [ref=f5e233]:
+        - img "社团成员交手网络：46 位成员，142 组对手。" [ref=f5e235]:
+          - generic [ref=f5e237]: 尚未交手 · 5 人
+          - link "陈知勉 · 2025 级" [ref=f5e238] [cursor=pointer]:
+            - /url: player.html?uid=10023
+            - generic: 陈知勉
+          - link "何子涵 · 2025 级" [ref=f5e241] [cursor=pointer]:
+            - /url: player.html?uid=10025
+            - generic: 何子涵
+          - link "胡永轩 · 2025 级" [ref=f5e244] [cursor=pointer]:
+            - /url: player.html?uid=10026
+            - generic: 胡永轩
+          - link "刘浩扬 · 2025 级" [ref=f5e247] [cursor=pointer]:
+            - /url: player.html?uid=10038
+            - generic: 刘浩扬
+          - link "俞睿哲 · 2025 级" [ref=f5e250] [cursor=pointer]:
+            - /url: player.html?uid=10042
+            - generic: 俞睿哲
+          - generic [ref=f5e397]:
+            - link "熊子乐 · 2025 级" [ref=f5e398] [cursor=pointer]:
+              - /url: player.html?uid=10041
+            - link "王天森 · 2025 级" [ref=f5e401] [cursor=pointer]:
+              - /url: player.html?uid=10043
+            - link "刘彧铭 · 2025 级" [ref=f5e404] [cursor=pointer]:
+              - /url: player.html?uid=10034
+            - link "李全景 · 2024 级" [ref=f5e407] [cursor=pointer]:
+              - /url: player.html?uid=10017
+            - link "张宸瑞2 · 2025 级" [ref=f5e410] [cursor=pointer]:
+              - /url: player.html?uid=10037
+            - link "王玥涵 · 2025 级" [ref=f5e413] [cursor=pointer]:
+              - /url: player.html?uid=10040
+            - link "吕曜而 · 2025 级" [ref=f5e416] [cursor=pointer]:
+              - /url: player.html?uid=10039
+            - link "丁胜怀 · 2025 级" [ref=f5e419] [cursor=pointer]:
+              - /url: player.html?uid=10024
+            - link "刘天齐 · 2025 级" [ref=f5e422] [cursor=pointer]:
+              - /url: player.html?uid=10033
+            - link "王子一 · 2025 级" [ref=f5e425] [cursor=pointer]:
+              - /url: player.html?uid=10027
+            - link "肖辰宇 · 2025 级" [ref=f5e428] [cursor=pointer]:
+              - /url: player.html?uid=10036
+            - link "邓以清 · 2025 级" [ref=f5e431] [cursor=pointer]:
+              - /url: player.html?uid=10031
+            - link "何齐烨 · 2025 级" [ref=f5e434] [cursor=pointer]:
+              - /url: player.html?uid=10032
+            - link "胡朗诚 · 2024 级" [ref=f5e437] [cursor=pointer]:
+              - /url: player.html?uid=10013
+            - link "杨苏旭 · 2025 级" [ref=f5e440] [cursor=pointer]:
+              - /url: player.html?uid=10022
+            - link "王思博 · 2025 级" [ref=f5e443] [cursor=pointer]:
+              - /url: player.html?uid=10020
+            - link "吴慈航 · 2025 级" [ref=f5e446] [cursor=pointer]:
+              - /url: player.html?uid=10021
+            - link "戴星翊 · 2025 级" [ref=f5e449] [cursor=pointer]:
+              - /url: player.html?uid=10045
+            - link "曹高畅 · 2025 级" [ref=f5e452] [cursor=pointer]:
+              - /url: player.html?uid=10030
+            - link "宁悦辛 · 2025 级" [ref=f5e455] [cursor=pointer]:
+              - /url: player.html?uid=10035
+            - link "彭瀚明 · 2025 级" [ref=f5e458] [cursor=pointer]:
+              - /url: player.html?uid=10044
+            - link "汪宁轩 · 2025 级" [ref=f5e461] [cursor=pointer]:
+              - /url: player.html?uid=10019
+            - link "叶泓鑫 · 2025 级" [ref=f5e464] [cursor=pointer]:
+              - /url: player.html?uid=10028
+            - link "叶孟恒 · 2025 级" [ref=f5e467] [cursor=pointer]:
+              - /url: player.html?uid=10029
+            - link "张宸瑞1 · 2024 级" [ref=f5e470] [cursor=pointer]:
+              - /url: player.html?uid=10016
+            - link "刘冠羽 · 2025 级" [ref=f5e473] [cursor=pointer]:
+              - /url: player.html?uid=10018
+            - link "陈瑜萱 · 2024 级" [ref=f5e476] [cursor=pointer]:
+              - /url: player.html?uid=10000
+            - link "孙钰鑫 · 2024 级" [ref=f5e479] [cursor=pointer]:
+              - /url: player.html?uid=10014
+            - link "祁子傲 · 2024 级" [ref=f5e482] [cursor=pointer]:
+              - /url: player.html?uid=10007
+            - link "陶锦源 · 2025 级" [ref=f5e485] [cursor=pointer]:
+              - /url: player.html?uid=10015
+            - link "梅哲宇 · 2025 级" [ref=f5e488] [cursor=pointer]:
+              - /url: player.html?uid=10011
+            - link "李南熠 · 2024 级" [ref=f5e491] [cursor=pointer]:
+              - /url: player.html?uid=10005
+            - link "魏罗瑞 · 2024 级" [ref=f5e494] [cursor=pointer]:
+              - /url: player.html?uid=10010
+            - link "王成悦 · 2024 级" [ref=f5e497] [cursor=pointer]:
+              - /url: player.html?uid=10012
+            - link "彭一和 · 2025 级" [ref=f5e500] [cursor=pointer]:
+              - /url: player.html?uid=10006
+            - link "任安喆 · 2025 级" [ref=f5e503] [cursor=pointer]:
+              - /url: player.html?uid=10008
+            - link "谷子易 · 2025 级" [ref=f5e506] [cursor=pointer]:
+              - /url: player.html?uid=10003
+            - link "龚雨煊 · 2025 级" [ref=f5e509] [cursor=pointer]:
+              - /url: player.html?uid=10002
+            - link "付大卫 · 2024 级" [ref=f5e512] [cursor=pointer]:
+              - /url: player.html?uid=10001
+            - link "姜子润 · 2025 级" [ref=f5e515] [cursor=pointer]:
+              - /url: player.html?uid=10004
+            - link "任峻贤 · 2024 级" [ref=f5e518] [cursor=pointer]:
+              - /url: player.html?uid=10009
+          - generic [ref=f5e521]:
+            - generic: 任峻贤
+            - generic: 龚雨煊
+            - generic: 付大卫
+            - generic: 谷子易
+            - generic: 彭一和
+            - generic: 任安喆
+            - generic: 梅哲宇
+            - generic: 李南熠
+            - generic: 陈瑜萱
+            - generic: 孙钰鑫
+            - generic: 祁子傲
+            - generic: 陶锦源
+            - generic: 刘冠羽
+            - generic: 张宸瑞1
+            - generic: 叶泓鑫
+            - generic: 叶孟恒
+            - generic: 彭瀚明
+            - generic: 汪宁轩
+            - generic: 王思博
+            - generic: 吴慈航
+            - generic: 戴星翊
+            - generic: 曹高畅
+            - generic: 宁悦辛
+            - generic: 肖辰宇
+            - generic: 邓以清
+            - generic: 何齐烨
+            - generic: 胡朗诚
+        - complementary [ref=f5e522]:
+          - generic [ref=f5e523]:
+            - generic [ref=f5e524]:
+              - generic [ref=f5e525]: "46"
+              - generic [ref=f5e526]: 社团成员
+            - generic [ref=f5e527]:
+              - generic [ref=f5e528]: "142"
+              - generic [ref=f5e529]: 对手组合
+            - generic [ref=f5e530]:
+              - generic [ref=f5e531]: "41"
+              - generic [ref=f5e532]: 连成一片
+            - generic [ref=f5e533]:
+              - generic [ref=f5e534]: "5"
+              - generic [ref=f5e535]: 尚未交手
+          - list [ref=f5e536]:
+            - listitem [ref=f5e537]:
+              - generic [ref=f5e539]: 2024 级
+              - emphasis [ref=f5e540]: "11"
+            - listitem [ref=f5e541]:
+              - generic [ref=f5e543]: 2025 级
+              - emphasis [ref=f5e544]: "35"
+          - generic [ref=f5e545]:
+            - generic [ref=f5e546]: 交手次数
+            - generic [ref=f5e548]: 尚未交手
+          - paragraph [ref=f5e550]: 把光标停在一位成员上，能看到他和谁交过手；点一下进入个人页。
+      - paragraph [ref=f5e551]: 双打比赛按场上四位选手互相交手计入；同一对成员多次交手会连成更粗的线。
+    - generic [ref=f5e552]:
+      - generic [ref=f5e553]:
+        - heading "职业赛事历史库" [level=2] [ref=f5e554]
+        - paragraph [ref=f5e555]: 覆盖 26 年，共 125 条赛季记录、88 份年度赛事档案，逐年录入。
+      - generic [ref=f5e556]:
+        - generic [ref=f5e557]:
+          - generic [ref=f5e558]: 
+          - generic [ref=f5e559]: 67,735
+          - generic [ref=f5e560]: 职业赛事记录
+        - generic [ref=f5e561]:
+          - generic [ref=f5e562]: 
+          - generic [ref=f5e563]: 6,268
+          - generic [ref=f5e564]: 收录职业球员
+        - generic [ref=f5e565]:
+          - generic [ref=f5e566]: 
+          - generic [ref=f5e567]: 1,490
+          - generic [ref=f5e568]: 排名快照点
+        - generic [ref=f5e569]:
+          - generic [ref=f5e570]: 
+          - generic [ref=f5e571]: "30"
+          - generic [ref=f5e572]: 赛事类型
+        - generic [ref=f5e573]:
+          - generic [ref=f5e574]: 
+          - generic [ref=f5e575]: "26"
+          - generic [ref=f5e576]: 收录年份
+      - generic [ref=f5e577]:
+        - heading "五个单项的记录分布" [level=3] [ref=f5e578]
+        - generic [ref=f5e579]:
+          - generic [ref=f5e580]:
+            - generic [ref=f5e581]: 男子单打
+            - img "男子单打 30,363" [ref=f5e583]
+            - generic [ref=f5e584]: 30,363
+          - generic [ref=f5e585]:
+            - generic [ref=f5e586]: 女子单打
+            - img "女子单打 22,943" [ref=f5e588]
+            - generic [ref=f5e589]: 22,943
+          - generic [ref=f5e590]:
+            - generic [ref=f5e591]: 男子双打
+            - img "男子双打 7,164" [ref=f5e593]
+            - generic [ref=f5e594]: 7,164
+          - generic [ref=f5e595]:
+            - generic [ref=f5e596]: 女子双打
+            - img "女子双打 5,406" [ref=f5e598]
+            - generic [ref=f5e599]: 5,406
+          - generic [ref=f5e600]:
+            - generic [ref=f5e601]: 混合双打
+            - img "混合双打 1,859" [ref=f5e603]
+            - generic [ref=f5e604]: 1,859
+      - generic [ref=f5e605]:
+        - link " WTT 首页" [ref=f5e606] [cursor=pointer]:
+          - /url: wtt_hub.html
+          - generic [ref=f5e607]: 
+          - text: WTT 首页
+        - link " WTT 排名" [ref=f5e608] [cursor=pointer]:
+          - /url: wtt_ranking.html
+          - generic [ref=f5e609]: 
+          - text: WTT 排名
+        - link " WTT 可视化" [ref=f5e610] [cursor=pointer]:
+          - /url: wtt_dataviz.html
+          - generic [ref=f5e611]: 
+          - text: WTT 可视化
+        - link " 积分规则" [ref=f5e612] [cursor=pointer]:
+          - /url: qa.html
+          - generic [ref=f5e613]: 
+          - text: 积分规则
+    - generic [ref=f5e614]:
+      - generic [ref=f5e615]:
+        - heading "内容与素材" [level=2] [ref=f5e616]
+        - paragraph [ref=f5e617]: 新闻、赛事、问答与素材库，也是这个站点的一部分。
+      - generic [ref=f5e618]:
+        - generic [ref=f5e619]:
+          - generic [ref=f5e620]: 
+          - generic [ref=f5e621]: "28"
+          - generic [ref=f5e622]: 内容条目
+        - generic [ref=f5e623]:
+          - generic [ref=f5e624]: 
+          - generic [ref=f5e625]: "67"
+          - generic [ref=f5e626]: 改稿留档
+        - generic [ref=f5e627]:
+          - generic [ref=f5e628]: 
+          - generic [ref=f5e629]: "26"
+          - generic [ref=f5e630]: 媒体附件
+        - generic [ref=f5e631]:
+          - generic [ref=f5e632]: 
+          - generic [ref=f5e633]: "26"
+          - generic [ref=f5e634]: 更新日志
+        - generic [ref=f5e635]:
+          - generic [ref=f5e636]: 
+          - generic [ref=f5e637]: "35"
+          - generic [ref=f5e638]: 素材文件
+      - generic [ref=f5e640]:
+        - heading "素材库体积构成" [level=3] [ref=f5e641]
+        - generic [ref=f5e642]:
+          - generic [ref=f5e643]:
+            - generic [ref=f5e644]: 视频
+            - img "视频 119.4 MB · 11 个文件" [ref=f5e646]
+            - generic [ref=f5e647]: 119.4 MB · 11 个文件
+          - generic [ref=f5e648]:
+            - generic [ref=f5e649]: 图片
+            - img "图片 7.1 MB · 20 个文件" [ref=f5e651]
+            - generic [ref=f5e652]: 7.1 MB · 20 个文件
+          - generic [ref=f5e653]:
+            - generic [ref=f5e654]: 文档与其他
+            - img "文档与其他 6.7 MB · 4 个文件" [ref=f5e656]
+            - generic [ref=f5e657]: 6.7 MB · 4 个文件
+      - paragraph [ref=f5e658]: 赛事与内容数据文件合计 11.8 MB
+      - generic [ref=f5e659]:
+        - link " 近期动态" [ref=f5e660] [cursor=pointer]:
+          - /url: news.html
+          - generic [ref=f5e661]: 
+          - text: 近期动态
+        - link " 赛事信息" [ref=f5e662] [cursor=pointer]:
+          - /url: competitions.html
+          - generic [ref=f5e663]: 
+          - text: 赛事信息
+        - link " Q&A" [ref=f5e664] [cursor=pointer]:
+          - /url: qa.html
+          - generic [ref=f5e665]: 
+          - text: Q&A
+        - link " 更新日志" [ref=f5e666] [cursor=pointer]:
+          - /url: changelog.html
+          - generic [ref=f5e667]: 
+          - text: 更新日志
+        - link " 网站文档" [ref=f5e668] [cursor=pointer]:
+          - /url: docs.html
+          - generic [ref=f5e669]: 
+          - text: 网站文档
+    - generic [ref=f5e670]:
+      - heading "一起把数据补全" [level=2] [ref=f5e672]
+      - paragraph [ref=f5e673]: 每一场比赛都可以由社团成员提交，审核通过后并入公开记录，排名与赛季总结会同步更新。
+      - paragraph [ref=f5e674]: 数据截至 2026-10-19
+      - generic [ref=f5e675]:
+        - link " 提交战绩" [ref=f5e676] [cursor=pointer]:
+          - /url: submit.html
+          - generic [ref=f5e677]: 
+          - text: 提交战绩
+        - link " 积分规则" [ref=f5e678] [cursor=pointer]:
+          - /url: qa.html
+          - generic [ref=f5e679]: 
+          - text: 积分规则
+        - link " 更新日志" [ref=f5e680] [cursor=pointer]:
+          - /url: changelog.html
+          - generic [ref=f5e681]: 
+          - text: 更新日志
+  - contentinfo [ref=f5e41]:
+    - generic [ref=f5e42]:
+      - generic [ref=f5e43]:
+        - generic [ref=f5e44]:
+          - link "WFLS Table Tennis Club" [ref=f5e45] [cursor=pointer]:
+            - /url: index.html
+          - paragraph [ref=f5e46]: 武汉外国语学校 · 湖北省武汉市
+          - paragraph [ref=f5e47]: 挥拍逐梦，旋转青春
+        - navigation [ref=f5e48]:
+          - heading "社团" [level=3] [ref=f5e49]
+          - list [ref=f5e50]:
+            - listitem [ref=f5e51]:
+              - link "Home" [ref=f5e52] [cursor=pointer]:
+                - /url: index.html
+            - listitem [ref=f5e53]:
+              - link "News" [ref=f5e54] [cursor=pointer]:
+                - /url: news.html
+            - listitem [ref=f5e55]:
+              - link "Competitions" [ref=f5e56] [cursor=pointer]:
+                - /url: competitions.html
+            - listitem [ref=f5e57]:
+              - link "社团骨干" [ref=f5e58] [cursor=pointer]:
+                - /url: members.html
+            - listitem [ref=f5e59]:
+              - link "赛季总结" [ref=f5e60] [cursor=pointer]:
+                - /url: season-review.html
+        - navigation [ref=f5e61]:
+          - heading "数据" [level=3] [ref=f5e62]
+          - list [ref=f5e63]:
+            - listitem [ref=f5e64]:
+              - link "Ranking" [ref=f5e65] [cursor=pointer]:
+                - /url: ranking.html
+            - listitem [ref=f5e66]:
+              - link "Data Viz" [ref=f5e67] [cursor=pointer]:
+                - /url: data_viz.html
+            - listitem [ref=f5e68]:
+              - link "个人数据" [ref=f5e69] [cursor=pointer]:
+                - /url: personal_stats.html
+            - listitem [ref=f5e70]:
+              - link "Data Scale" [ref=f5e71] [cursor=pointer]:
+                - /url: data_scale.html
+            - listitem [ref=f5e72]:
+              - link "WTT Ranking" [ref=f5e73] [cursor=pointer]:
+                - /url: wtt_ranking.html
+            - listitem [ref=f5e74]:
+              - link "WTT Data Viz" [ref=f5e75] [cursor=pointer]:
+                - /url: wtt_dataviz.html
+        - navigation [ref=f5e76]:
+          - heading "信息" [level=3] [ref=f5e77]
+          - list [ref=f5e78]:
+            - listitem [ref=f5e79]:
+              - link "提交战绩" [ref=f5e80] [cursor=pointer]:
+                - /url: submit.html
+            - listitem [ref=f5e81]:
+              - link "Q&A" [ref=f5e82] [cursor=pointer]:
+                - /url: qa.html
+            - listitem [ref=f5e83]:
+              - link "更新日志" [ref=f5e84] [cursor=pointer]:
+                - /url: changelog.html
+            - listitem [ref=f5e85]:
+              - link "网站文档" [ref=f5e86] [cursor=pointer]:
+                - /url: docs.html
+            - listitem [ref=f5e87]:
+              - link "Umpire Training" [ref=f5e88] [cursor=pointer]:
+                - /url: umpire-training.html
+            - listitem [ref=f5e89]:
+              - link "Contact" [ref=f5e90] [cursor=pointer]:
+                - /url: contact.html
+      - generic [ref=f5e91]:
+        - generic [ref=f5e92]:
+          - generic [ref=f5e93]: 关注我们
+          - generic [ref=f5e94]:
+            - button "社团QQ群二维码" [ref=f5e95] [cursor=pointer]:
+              - generic [ref=f5e96]: 
+            - link "GitHub" [ref=f5e97] [cursor=pointer]:
+              - /url: https://github.com/yglalpavir/wfls-tt-club
+              - generic [ref=f5e98]: 
+        - generic [ref=f5e99]:
+          - link "社团理念" [ref=f5e100] [cursor=pointer]:
+            - /url: index.html#philosophy
+          - link "积分规则" [ref=f5e101] [cursor=pointer]:
+            - /url: qa.html
+        - paragraph [ref=f5e102]: ©2026 WFLS Table Tennis Club. All rights reserved

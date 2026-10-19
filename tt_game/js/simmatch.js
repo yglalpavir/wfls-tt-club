@@ -57,10 +57,9 @@ const SIMMATCH = (() => {
     return null;
   }
   /* 发球：从 server 抛球点两跳发球（ITTF：首跳己方→弹起过网→二跳对方）
-     与实机 rules.js#strikeServe 同一套（统一深发球 + 恒定上旋 + 组合侧旋） */
+     与实机 rules.js#strikeServe 同一套（统一深发球 + 上/下旋 + 可叠侧旋） */
   const SERVE = { topMag:22, sideMag:72,
-    long:{ speed:2.7, speedJitter:0.3, arc:0.95, depth:0.62, depthJitter:0.06 },
-    short:{ speed:2.7, speedJitter:0.3, arc:0.95, depth:0.62, depthJitter:0.06 } };
+    long:{ speed:2.7, arc:0.95, depth:0.62, depthJitter:0.06 } };
   function serveShot(server, policy, rng){
     const isP = server==='player';
     const dir = isP ? -1 : 1;
@@ -77,7 +76,10 @@ const SIMMATCH = (() => {
     const spinX = mag;
     const sy = (plan.side*SERVE.sideMag + (rng()-0.5)*6) * (0.6 + 0.8*power) * sSpin;
     let sv = SIM.serveShot(from, { dir, depth, spinX, sideY: sy, speedMul: sPace });
-    if(!sv){ sv = SIM.serveShot(from, { dir, depth: 0.62, spinX, sideY: 0, speedMul: sPace }); }
+    // 回退：逐级收敛侧旋（保住旋向），最后才丢旋转——与实机 rules.js#strikeServe 同构
+    if(!sv){ sv = SIM.serveShot(from, { dir, depth: 0.5, spinX, sideY: sy*0.7, speedMul: sPace }); }
+    if(!sv){ sv = SIM.serveShot(from, { dir, depth: 0.5, spinX, sideY: sy*0.45, speedMul: sPace }); }
+    if(!sv){ sv = SIM.serveShot(from, { dir, depth: 0.5, spinX, sideY: 0, speedMul: sPace }); }
     if(!sv){ sv = SIM.serveShot(from, { dir, depth: 0.35, spinX: 0, sideY: 0 }); }
     return { from, vel: sv.vel, spin: sv.spin };
   }

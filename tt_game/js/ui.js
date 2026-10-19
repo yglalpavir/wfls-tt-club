@@ -12,6 +12,7 @@ const stanceChipEl = $('stanceChip'), stanceTxtEl = $('stanceTxt'), stanceSubEl 
 const serveChipEl = $('serveChip'), serveTxtEl = $('serveChipTxt'), serveSideEl = $('serveChipSide');
 const touchServeEl = $('touchServe');
 const btnPushEl = $('btnPush');
+const serveSpinBtnEl = $('btnServeSpin');   // 触屏「上下旋」切换钮（= 桌面 A 键）
 
 /* ---- 触屏底部控件带实测：把真实高度写回 CSS 变量 --ctrlH ----
  * 发球簇在窄屏会换行、搓钮尺寸也随断点变，控件带高度不是常数；
@@ -138,8 +139,8 @@ function updateStanceChip(){
   void stanceChipEl.offsetWidth; stanceChipEl.classList.add('pop');
   tone(playerStance==='forehand'?340:560, 0, 0.05, 'square', 0.06);
 }
-/* 发球 chip 的红色顶边是静态样式(#serveChip.top),不再每帧 toggle */
-let serveOn = null, serveTxtV = null, serveSideV = null;
+/* 发球 chip 的边框颜色由 class 表达：.top 上旋（红）/ .back 下旋（青），随 serveCfg.top 实时切换 */
+let serveOn = null, serveTxtV = null, serveSideV = null, serveBackV = null;
 function updateServeUI(){
   if(!serveChipEl) return;
   const on = mode==='play' && (state==='awaitServe'||state==='toss') && server==='player';
@@ -147,10 +148,17 @@ function updateServeUI(){
   if(!on) return;
   // 同步当前按键到 serveCfg（发球前调节：S=左旋 D=右旋）
   serveCfg.side = (serveKeys.s?1:0) - (serveKeys.d?1:0);
+  const back = serveCfg.top === false;                 // 下旋 = A 键 / 触屏「上下旋」钮切过来
+  if(back !== serveBackV){
+    serveBackV = back;
+    serveChipEl.classList.toggle('back', back);
+    serveChipEl.classList.toggle('top', !back);
+    if(serveSpinBtnEl) serveSpinBtnEl.classList.toggle('back', back);
+  }
   const sideTxt = serveCfg.side===1 ? gameT('g_serve_side_l') : (serveCfg.side===-1 ? gameT('g_serve_side_r') : gameT('g_serve_side_n'));
   const pIdx = serveCfg.power<0.4 ? gameT('g_pw_weak') : (serveCfg.power>0.7 ? gameT('g_pw_strong') : gameT('g_pw_mid'));
-  // 主标签：旋转组合（下旋发球已取消 → 恒定▲上旋 + ◀/▶侧），副标签：强度（值变化才写 DOM）
-  const t1 = gameT('g_serve_top') + (serveCfg.side!==0 ? '·'+sideTxt : '');
+  // 主标签：旋转组合（上/下旋 + ◀/▶侧旋，两者可叠加），副标签：强度（值变化才写 DOM）
+  const t1 = gameT(back ? 'g_serve_back' : 'g_serve_top') + (serveCfg.side!==0 ? '·'+sideTxt : '');
   if(t1 !== serveTxtV){ serveTxtV = t1; serveTxtEl.textContent = t1; }
   const t2 = gameT('g_serve_pow_fmt', {p: pIdx});
   if(t2 !== serveSideV){ serveSideV = t2; serveSideEl.textContent = t2; }

@@ -76,7 +76,7 @@ const POLICY_DEFAULT = {
   // 模式选择（软概率级联）
   backThresh: -8,
   push:    { forceThresh: 40, prob: 0.62 },
-  counter: { spinThreshMul: 0.85, prob: 0.8 },
+  counter: { prob: 0.8 },
   smash:   { prob: 0.6 },
   loop:    { prob: 0.7 },
   // 落点策略
@@ -91,7 +91,7 @@ const POLICY_DEFAULT = {
      降到 0.7 = 30% 下旋。取值偏保守：下旋球接起来更容易（对手走 push 搓球），
      对手整体强度变化有限，但让 DQN 的发球维度有了真实可学的信号——
      policy.js 的 receive.pushProb(0.62) 只在 isBack 时生效，只有真发下旋才会触发。 */
-  serve: { topProb: 0.7, sideProb: 0.6, txSpread: 0.9, tzBase: 0.95, tzRange: 0.3 },
+  serve: { topProb: 0.7, sideProb: 0.6 },
   // 各打法出球质量（×系数，默认=现状，零回归）
   loopPace: 1.0, loopSpin: 1.0, loopArc: 1.0,
   smashPace: 1.0, smashSpin: 1.0,
@@ -242,12 +242,6 @@ function aiServePlan(policy, rng){
     servePace: get(p, 'servePace', 1.0),   // 出球速度倍率（serveShot 解算下限/上限缩放）
   };
 }
-function aiServeTarget(policy, rng){
-  rng = rng || Math.random;
-  const p = policy || POLICY_DEFAULT;
-  return { x: (rng() - 0.5) * get(p, 'serve.txSpread', 0.9), z: get(p, 'serve.tzBase', 0.95) + rng() * get(p, 'serve.tzRange', 0.3) };
-}
-
 /* ---- 可进化参数（扁平向量）---- */
 const POLICY_KEYS = [
   { k: 'moveSpeed',      min: 1.6,  max: 3.4,  def: 2.45 },
@@ -412,6 +406,6 @@ if(typeof module !== 'undefined' && module.exports){
     DEFAULT_TEMPLATE, POLICY_DEFAULT, POLICY_KEYS, WEAK_POLICY,
     setCurrentPolicy, resolvedPolicy, resolvedPolicyFor, policyMoveSpeed, policyMoveZ, diffPrecision, policyForDifficulty,
     policyForModel, strongVec, grandSlamPolicy, nemesisPolicy, policyForSide, sideModel,
-    aiDecision, aiServePlan, aiServeTarget, flattenPolicy, unflattenPolicy,
+    aiDecision, aiServePlan, flattenPolicy, unflattenPolicy,
   };
 }

@@ -1,0 +1,542 @@
+- generic [ref=f6e1]:
+  - navigation [ref=f6e2]:
+    - generic [ref=f6e3]:
+      - link " WFLS TT Club" [ref=f6e4] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=f6e5]: 
+        - generic [ref=f6e7]: WFLS TT Club
+      - list [ref=f6e8]:
+        - listitem [ref=f6e9]:
+          - link "Home" [ref=f6e10] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=f6e11]:
+          - link "News" [ref=f6e12] [cursor=pointer]:
+            - /url: news.html
+        - listitem [ref=f6e13]:
+          - link "Competitions" [ref=f6e14] [cursor=pointer]:
+            - /url: competitions.html
+        - listitem [ref=f6e15]:
+          - link "Ranking Beta" [ref=f6e16] [cursor=pointer]:
+            - /url: ranking.html
+        - listitem [ref=f6e17]:
+          - link "More... " [ref=f6e18] [cursor=pointer]:
+            - /url: "#"
+            - text: More...
+            - generic [ref=f6e679]: 
+        - listitem [ref=f6e20]:
+          - link "Contact" [ref=f6e21] [cursor=pointer]:
+            - /url: contact.html
+      - generic [ref=f6e22]:
+        - button "Search" [ref=f6e680] [cursor=pointer]:
+          - generic [ref=f6e24]: 
+        - button "Toggle theme" [ref=f6e681] [cursor=pointer]:
+          - generic [ref=f6e26]: 
+        - button "Switch language" [active] [ref=f6e682] [cursor=pointer]:
+          - generic [ref=f6e28]: 中文
+  - generic [ref=f6e31]:
+    - generic [ref=f6e32]: Data Scale
+    - heading "Data Scale" [level=1] [ref=f6e683]
+    - paragraph [ref=f6e34]: How much data this site actually holds
+    - paragraph [ref=f6e35]: Data as of 2026-10-19·Club records 2026-03-03 – 2026-10-19·Pro archive 2001-07-04 – 2026-09-29
+  - generic [ref=f6e38]:
+    - generic [ref=f6e684]:
+      - generic [ref=f6e685]:
+        - generic [ref=f6e686]: 
+        - generic [ref=f6e687]: "46"
+        - generic [ref=f6e688]: Club members
+      - generic [ref=f6e689]:
+        - generic [ref=f6e690]: 
+        - generic [ref=f6e691]: "376"
+        - generic [ref=f6e692]: Club match records
+      - generic [ref=f6e693]:
+        - generic [ref=f6e694]: 
+        - generic [ref=f6e695]: 67,735
+        - generic [ref=f6e696]: Pro tournament records
+      - generic [ref=f6e697]:
+        - generic [ref=f6e698]: 
+        - generic [ref=f6e699]: 6,268
+        - generic [ref=f6e700]: Pro players covered
+    - generic [ref=f6e701]:
+      - generic [ref=f6e702]:
+        - heading "Club Data" [level=2] [ref=f6e703]
+        - paragraph [ref=f6e704]: Every match is submitted by a club member, reviewed, then filed into the public record.
+      - generic [ref=f6e705]:
+        - generic [ref=f6e706]:
+          - generic [ref=f6e707]: 
+          - generic [ref=f6e708]: "3"
+          - generic [ref=f6e709]: Seasons
+        - generic [ref=f6e710]:
+          - generic [ref=f6e711]: 
+          - generic [ref=f6e712]: "35"
+          - generic [ref=f6e713]: Snapshot days
+        - generic [ref=f6e714]:
+          - generic [ref=f6e715]: 
+          - generic [ref=f6e716]: "106"
+          - generic [ref=f6e717]: Match days
+        - generic [ref=f6e718]:
+          - generic [ref=f6e719]: 
+          - generic [ref=f6e720]: "171"
+          - generic [ref=f6e721]: Game scores recorded
+        - generic [ref=f6e722]:
+          - generic [ref=f6e723]: 
+          - generic [ref=f6e724]: "38"
+          - generic [ref=f6e725]: Points adjustments
+          - generic [ref=f6e726]: +1,065
+        - generic [ref=f6e727]:
+          - generic [ref=f6e728]: 
+          - generic [ref=f6e729]: "64"
+          - generic [ref=f6e730]: Bracket slots
+      - generic [ref=f6e731]:
+        - generic [ref=f6e732]:
+          - heading "Match Types" [level=3] [ref=f6e733]
+          - generic [ref=f6e734]:
+            - generic [ref=f6e735]:
+              - generic [ref=f6e736]: Normal
+              - img "Normal 242" [ref=f6e738]
+              - generic [ref=f6e739]: "242"
+            - generic [ref=f6e740]:
+              - generic [ref=f6e741]: School Championship · Singles
+              - img "School Championship · Singles 56" [ref=f6e743]
+              - generic [ref=f6e744]: "56"
+            - generic [ref=f6e745]:
+              - generic [ref=f6e746]: School Championship · Team
+              - img "School Championship · Team 43" [ref=f6e748]
+              - generic [ref=f6e749]: "43"
+            - generic [ref=f6e750]:
+              - generic [ref=f6e751]: Top-12
+              - img "Top-12 16" [ref=f6e753]
+              - generic [ref=f6e754]: "16"
+            - generic [ref=f6e755]:
+              - generic [ref=f6e756]: Team Trials
+              - img "Team Trials 11" [ref=f6e758]
+              - generic [ref=f6e759]: "11"
+            - generic [ref=f6e760]:
+              - generic [ref=f6e761]: Doubles
+              - img "Doubles 7" [ref=f6e763]
+              - generic [ref=f6e764]: "7"
+            - generic [ref=f6e765]:
+              - generic [ref=f6e766]: School League
+              - img "School League 1" [ref=f6e768]
+              - generic [ref=f6e769]: "1"
+        - generic [ref=f6e770]:
+          - heading "Matches by Month" [level=3] [ref=f6e771]
+          - paragraph [ref=f6e772]: Matches filed per month.
+      - generic [ref=f6e775]:
+        - heading "Member Tags" [level=4] [ref=f6e776]
+        - generic [ref=f6e777]:
+          - generic [ref=f6e778]: School Team Member ×12
+          - generic [ref=f6e779]: 2026-27 Vice President ×3
+          - generic [ref=f6e780]: 2025-26 Vice President ×2
+          - generic [ref=f6e781]: Grand Slam ×1
+          - generic [ref=f6e782]: 2026-27 President ×1
+          - generic [ref=f6e783]: School No.1 Penholder ×1
+          - generic [ref=f6e784]: 2025-26 President ×1
+          - generic [ref=f6e785]: 2024-25 Vice President ×1
+          - generic [ref=f6e786]: School No.2 Penholder ×1
+      - generic [ref=f6e787]:
+        - heading "Member Honours" [level=4] [ref=f6e788]
+        - generic [ref=f6e789]:
+          - generic [ref=f6e790]: 2025 School Championship Singles Champion
+          - generic [ref=f6e791]: 2026 School Championship Team Champion
+          - generic [ref=f6e792]: 2026 School Championship Singles Runner-up
+          - generic [ref=f6e793]: 2026 School Championship Team Runner-up
+          - generic [ref=f6e794]: 2026 School Championship Singles Third Place
+          - generic [ref=f6e795]: 2026 School Championship Singles Champion
+          - generic [ref=f6e796]: 2026 School Championship Team Third Place
+          - generic [ref=f6e797]: 2025 School Championship Team Third Place
+      - generic [ref=f6e798]:
+        - heading "Core Members" [level=4] [ref=f6e799]
+        - generic [ref=f6e800]:
+          - generic [ref=f6e801]: GONG Yuxuan
+          - generic [ref=f6e802]: GU Ziyi
+          - generic [ref=f6e803]: JIANG Zirun
+          - generic [ref=f6e804]: REN Anzhe
+          - generic [ref=f6e805]: REN Junxian
+          - generic [ref=f6e806]: MEI Zheyu
+          - generic [ref=f6e807]: YE Mengheng
+    - generic [ref=f6e808]:
+      - generic [ref=f6e809]:
+        - heading "Match Network" [level=2] [ref=f6e810]
+        - paragraph [ref=f6e811]: "Every club match drawn as one web: a dot is a member, and a line means those two have played each other."
+      - generic [ref=f6e813]:
+        - 'img "Club match network: 46 members and 142 opponent pairs." [ref=f6e815]':
+          - generic [ref=f6e817]: Not yet connected · 5 members
+          - link "CHEN Zhimian · Class of 2025" [ref=f6e818] [cursor=pointer]:
+            - /url: player.html?uid=10023
+            - generic: CHEN Zhimian
+          - link "HE Zihan · Class of 2025" [ref=f6e821] [cursor=pointer]:
+            - /url: player.html?uid=10025
+            - generic: HE Zihan
+          - link "HU Yongxuan · Class of 2025" [ref=f6e824] [cursor=pointer]:
+            - /url: player.html?uid=10026
+            - generic: HU Yongxuan
+          - link "LIU Haoyang · Class of 2025" [ref=f6e827] [cursor=pointer]:
+            - /url: player.html?uid=10038
+            - generic: LIU Haoyang
+          - link "YU Ruizhe · Class of 2025" [ref=f6e830] [cursor=pointer]:
+            - /url: player.html?uid=10042
+            - generic: YU Ruizhe
+          - generic [ref=f6e977]:
+            - link "XIONG Zile · Class of 2025" [ref=f6e978] [cursor=pointer]:
+              - /url: player.html?uid=10041
+            - link "WANG Tiansen · Class of 2025" [ref=f6e981] [cursor=pointer]:
+              - /url: player.html?uid=10043
+            - link "LIU Yuming · Class of 2025" [ref=f6e984] [cursor=pointer]:
+              - /url: player.html?uid=10034
+            - link "LI Quanjing · Class of 2024" [ref=f6e987] [cursor=pointer]:
+              - /url: player.html?uid=10017
+            - link "ZHANG Chenrui · Class of 2025" [ref=f6e990] [cursor=pointer]:
+              - /url: player.html?uid=10037
+            - link "WANG Yuehan · Class of 2025" [ref=f6e993] [cursor=pointer]:
+              - /url: player.html?uid=10040
+            - link "LÜ Yao'er · Class of 2025" [ref=f6e996] [cursor=pointer]:
+              - /url: player.html?uid=10039
+            - link "DING Shenghuai · Class of 2025" [ref=f6e999] [cursor=pointer]:
+              - /url: player.html?uid=10024
+            - link "LIU Tianqi · Class of 2025" [ref=f6e1002] [cursor=pointer]:
+              - /url: player.html?uid=10033
+            - link "WANG Ziyi · Class of 2025" [ref=f6e1005] [cursor=pointer]:
+              - /url: player.html?uid=10027
+            - link "XIAO Chenyu · Class of 2025" [ref=f6e1008] [cursor=pointer]:
+              - /url: player.html?uid=10036
+            - link "DENG Yiqing · Class of 2025" [ref=f6e1011] [cursor=pointer]:
+              - /url: player.html?uid=10031
+            - link "HE Qiye · Class of 2025" [ref=f6e1014] [cursor=pointer]:
+              - /url: player.html?uid=10032
+            - link "HU Langcheng · Class of 2024" [ref=f6e1017] [cursor=pointer]:
+              - /url: player.html?uid=10013
+            - link "YANG Suxu · Class of 2025" [ref=f6e1020] [cursor=pointer]:
+              - /url: player.html?uid=10022
+            - link "WANG Sibo · Class of 2025" [ref=f6e1023] [cursor=pointer]:
+              - /url: player.html?uid=10020
+            - link "WU Cihang · Class of 2025" [ref=f6e1026] [cursor=pointer]:
+              - /url: player.html?uid=10021
+            - link "DAI Xingyi · Class of 2025" [ref=f6e1029] [cursor=pointer]:
+              - /url: player.html?uid=10045
+            - link "CAO Gaochang · Class of 2025" [ref=f6e1032] [cursor=pointer]:
+              - /url: player.html?uid=10030
+            - link "NING Yuexin · Class of 2025" [ref=f6e1035] [cursor=pointer]:
+              - /url: player.html?uid=10035
+            - link "PENG Hanming · Class of 2025" [ref=f6e1038] [cursor=pointer]:
+              - /url: player.html?uid=10044
+            - link "WANG Ningxuan · Class of 2025" [ref=f6e1041] [cursor=pointer]:
+              - /url: player.html?uid=10019
+            - link "YE Hongxin · Class of 2025" [ref=f6e1044] [cursor=pointer]:
+              - /url: player.html?uid=10028
+            - link "YE Mengheng · Class of 2025" [ref=f6e1047] [cursor=pointer]:
+              - /url: player.html?uid=10029
+            - link "ZHANG Chenrui · Class of 2024" [ref=f6e1050] [cursor=pointer]:
+              - /url: player.html?uid=10016
+            - link "LIU Guanyu · Class of 2025" [ref=f6e1053] [cursor=pointer]:
+              - /url: player.html?uid=10018
+            - link "CHEN Yuxuan · Class of 2024" [ref=f6e1056] [cursor=pointer]:
+              - /url: player.html?uid=10000
+            - link "SUN Yuxin · Class of 2024" [ref=f6e1059] [cursor=pointer]:
+              - /url: player.html?uid=10014
+            - link "QI Ziao · Class of 2024" [ref=f6e1062] [cursor=pointer]:
+              - /url: player.html?uid=10007
+            - link "TAO Jinyuan · Class of 2025" [ref=f6e1065] [cursor=pointer]:
+              - /url: player.html?uid=10015
+            - link "MEI Zheyu · Class of 2025" [ref=f6e1068] [cursor=pointer]:
+              - /url: player.html?uid=10011
+            - link "LI Nanyi · Class of 2024" [ref=f6e1071] [cursor=pointer]:
+              - /url: player.html?uid=10005
+            - link "WEI Luorui · Class of 2024" [ref=f6e1074] [cursor=pointer]:
+              - /url: player.html?uid=10010
+            - link "WANG Chengyue · Class of 2024" [ref=f6e1077] [cursor=pointer]:
+              - /url: player.html?uid=10012
+            - link "PENG Yihe · Class of 2025" [ref=f6e1080] [cursor=pointer]:
+              - /url: player.html?uid=10006
+            - link "REN Anzhe · Class of 2025" [ref=f6e1083] [cursor=pointer]:
+              - /url: player.html?uid=10008
+            - link "GU Ziyi · Class of 2025" [ref=f6e1086] [cursor=pointer]:
+              - /url: player.html?uid=10003
+            - link "GONG Yuxuan · Class of 2025" [ref=f6e1089] [cursor=pointer]:
+              - /url: player.html?uid=10002
+            - link "FU Dawei · Class of 2024" [ref=f6e1092] [cursor=pointer]:
+              - /url: player.html?uid=10001
+            - link "JIANG Zirun · Class of 2025" [ref=f6e1095] [cursor=pointer]:
+              - /url: player.html?uid=10004
+            - link "REN Junxian · Class of 2024" [ref=f6e1098] [cursor=pointer]:
+              - /url: player.html?uid=10009
+          - generic [ref=f6e1101]:
+            - generic: REN Junxian
+            - generic: GONG Yuxuan
+            - generic: FU Dawei
+            - generic: GU Ziyi
+            - generic: REN Anzhe
+            - generic: MEI Zheyu
+            - generic: LI Nanyi
+            - generic: SUN Yuxin
+            - generic: QI Ziao
+            - generic: TAO Jinyuan
+            - generic: LIU Guanyu
+            - generic: ZHANG Chenrui
+            - generic: YE Hongxin
+            - generic: YE Mengheng
+            - generic: PENG Hanming
+            - generic: WANG Ningxuan
+            - generic: WANG Sibo
+            - generic: WU Cihang
+            - generic: DAI Xingyi
+            - generic: CAO Gaochang
+            - generic: NING Yuexin
+            - generic: XIAO Chenyu
+            - generic: DENG Yiqing
+            - generic: HE Qiye
+            - generic: HU Langcheng
+            - generic: YANG Suxu
+            - generic: LIU Yuming
+        - complementary [ref=f6e1102]:
+          - generic [ref=f6e1103]:
+            - generic [ref=f6e1104]:
+              - generic [ref=f6e1105]: "46"
+              - generic [ref=f6e1106]: Club members
+            - generic [ref=f6e1107]:
+              - generic [ref=f6e1108]: "142"
+              - generic [ref=f6e1109]: Opponent pairs
+            - generic [ref=f6e1110]:
+              - generic [ref=f6e1111]: "41"
+              - generic [ref=f6e1112]: Largest cluster
+            - generic [ref=f6e1113]:
+              - generic [ref=f6e1114]: "5"
+              - generic [ref=f6e1115]: Not yet connected
+          - list [ref=f6e1116]:
+            - listitem [ref=f6e1117]:
+              - generic [ref=f6e1119]: Class of 2024
+              - emphasis [ref=f6e1120]: "11"
+            - listitem [ref=f6e1121]:
+              - generic [ref=f6e1123]: Class of 2025
+              - emphasis [ref=f6e1124]: "35"
+          - generic [ref=f6e1125]:
+            - generic [ref=f6e1126]: Matches played
+            - generic [ref=f6e1128]: Not yet connected
+          - paragraph [ref=f6e1130]: Hover a member to see everyone they have played; click to open their profile.
+      - paragraph [ref=f6e1131]: Doubles count each player on court against the opposing pair, and repeat meetings between the same two members add up to a thicker line.
+    - generic [ref=f6e1132]:
+      - generic [ref=f6e1133]:
+        - heading "Professional Tournament Archive" [level=2] [ref=f6e1134]
+        - paragraph [ref=f6e1135]: Spanning 26 years, with 125 season records and 88 yearly tournament files, entered year by year.
+      - generic [ref=f6e1136]:
+        - generic [ref=f6e1137]:
+          - generic [ref=f6e1138]: 
+          - generic [ref=f6e1139]: 67,735
+          - generic [ref=f6e1140]: Pro tournament records
+        - generic [ref=f6e1141]:
+          - generic [ref=f6e1142]: 
+          - generic [ref=f6e1143]: 6,268
+          - generic [ref=f6e1144]: Pro players covered
+        - generic [ref=f6e1145]:
+          - generic [ref=f6e1146]: 
+          - generic [ref=f6e1147]: 1,490
+          - generic [ref=f6e1148]: Ranking snapshots
+        - generic [ref=f6e1149]:
+          - generic [ref=f6e1150]: 
+          - generic [ref=f6e1151]: "30"
+          - generic [ref=f6e1152]: Event types
+        - generic [ref=f6e1153]:
+          - generic [ref=f6e1154]: 
+          - generic [ref=f6e1155]: "26"
+          - generic [ref=f6e1156]: Years covered
+      - generic [ref=f6e1157]:
+        - heading "Records by Event" [level=3] [ref=f6e1158]
+        - generic [ref=f6e1159]:
+          - generic [ref=f6e1160]:
+            - generic [ref=f6e1161]: Men's Singles
+            - img "Men's Singles 30,363" [ref=f6e1163]
+            - generic [ref=f6e1164]: 30,363
+          - generic [ref=f6e1165]:
+            - generic [ref=f6e1166]: Women's Singles
+            - img "Women's Singles 22,943" [ref=f6e1168]
+            - generic [ref=f6e1169]: 22,943
+          - generic [ref=f6e1170]:
+            - generic [ref=f6e1171]: Men's Doubles
+            - img "Men's Doubles 7,164" [ref=f6e1173]
+            - generic [ref=f6e1174]: 7,164
+          - generic [ref=f6e1175]:
+            - generic [ref=f6e1176]: Women's Doubles
+            - img "Women's Doubles 5,406" [ref=f6e1178]
+            - generic [ref=f6e1179]: 5,406
+          - generic [ref=f6e1180]:
+            - generic [ref=f6e1181]: Mixed Doubles
+            - img "Mixed Doubles 1,859" [ref=f6e1183]
+            - generic [ref=f6e1184]: 1,859
+      - generic [ref=f6e1185]:
+        - link " WTT Home" [ref=f6e1186] [cursor=pointer]:
+          - /url: wtt_hub.html
+          - generic [ref=f6e1187]: 
+          - text: WTT Home
+        - link " WTT Ranking" [ref=f6e1188] [cursor=pointer]:
+          - /url: wtt_ranking.html
+          - generic [ref=f6e1189]: 
+          - text: WTT Ranking
+        - link " WTT Data Viz" [ref=f6e1190] [cursor=pointer]:
+          - /url: wtt_dataviz.html
+          - generic [ref=f6e1191]: 
+          - text: WTT Data Viz
+        - link " Points Rules" [ref=f6e1192] [cursor=pointer]:
+          - /url: qa.html
+          - generic [ref=f6e1193]: 
+          - text: Points Rules
+    - generic [ref=f6e1194]:
+      - generic [ref=f6e1195]:
+        - heading "Content & Media" [level=2] [ref=f6e1196]
+        - paragraph [ref=f6e1197]: News, competitions, Q&A and the media library are part of this site too.
+      - generic [ref=f6e1198]:
+        - generic [ref=f6e1199]:
+          - generic [ref=f6e1200]: 
+          - generic [ref=f6e1201]: "28"
+          - generic [ref=f6e1202]: Articles
+        - generic [ref=f6e1203]:
+          - generic [ref=f6e1204]: 
+          - generic [ref=f6e1205]: "67"
+          - generic [ref=f6e1206]: Archived revisions
+        - generic [ref=f6e1207]:
+          - generic [ref=f6e1208]: 
+          - generic [ref=f6e1209]: "26"
+          - generic [ref=f6e1210]: Media attachments
+        - generic [ref=f6e1211]:
+          - generic [ref=f6e1212]: 
+          - generic [ref=f6e1213]: "26"
+          - generic [ref=f6e1214]: Changelog releases
+        - generic [ref=f6e1215]:
+          - generic [ref=f6e1216]: 
+          - generic [ref=f6e1217]: "35"
+          - generic [ref=f6e1218]: Media files
+      - generic [ref=f6e1220]:
+        - heading "Media Library by Type" [level=3] [ref=f6e1221]
+        - generic [ref=f6e1222]:
+          - generic [ref=f6e1223]:
+            - generic [ref=f6e1224]: Video
+            - img "Video 119.4 MB · 11 files" [ref=f6e1226]
+            - generic [ref=f6e1227]: 119.4 MB · 11 files
+          - generic [ref=f6e1228]:
+            - generic [ref=f6e1229]: Images
+            - img "Images 7.1 MB · 20 files" [ref=f6e1231]
+            - generic [ref=f6e1232]: 7.1 MB · 20 files
+          - generic [ref=f6e1233]:
+            - generic [ref=f6e1234]: Docs & other
+            - img "Docs & other 6.7 MB · 4 files" [ref=f6e1236]
+            - generic [ref=f6e1237]: 6.7 MB · 4 files
+      - paragraph [ref=f6e1238]: 11.8 MB of tournament and content data files
+      - generic [ref=f6e1239]:
+        - link " News" [ref=f6e1240] [cursor=pointer]:
+          - /url: news.html
+          - generic [ref=f6e1241]: 
+          - text: News
+        - link " Competitions" [ref=f6e1242] [cursor=pointer]:
+          - /url: competitions.html
+          - generic [ref=f6e1243]: 
+          - text: Competitions
+        - link " Q&A" [ref=f6e1244] [cursor=pointer]:
+          - /url: qa.html
+          - generic [ref=f6e1245]: 
+          - text: Q&A
+        - link " Changelog" [ref=f6e1246] [cursor=pointer]:
+          - /url: changelog.html
+          - generic [ref=f6e1247]: 
+          - text: Changelog
+        - link " Docs" [ref=f6e1248] [cursor=pointer]:
+          - /url: docs.html
+          - generic [ref=f6e1249]: 
+          - text: Docs
+    - generic [ref=f6e1250]:
+      - heading "Help Fill In The Record" [level=2] [ref=f6e1252]
+      - paragraph [ref=f6e1253]: Any club member can submit a match result. Once reviewed it joins the public record, and rankings and season reviews update with it.
+      - paragraph [ref=f6e1254]: Data as of 2026-10-19
+      - generic [ref=f6e1255]:
+        - link " Submit a result" [ref=f6e1256] [cursor=pointer]:
+          - /url: submit.html
+          - generic [ref=f6e1257]: 
+          - text: Submit a result
+        - link " Points Rules" [ref=f6e1258] [cursor=pointer]:
+          - /url: qa.html
+          - generic [ref=f6e1259]: 
+          - text: Points Rules
+        - link " Changelog" [ref=f6e1260] [cursor=pointer]:
+          - /url: changelog.html
+          - generic [ref=f6e1261]: 
+          - text: Changelog
+  - contentinfo [ref=f6e617]:
+    - generic [ref=f6e618]:
+      - generic [ref=f6e619]:
+        - generic [ref=f6e620]:
+          - link "WFLS Table Tennis Club" [ref=f6e621] [cursor=pointer]:
+            - /url: index.html
+          - paragraph [ref=f6e622]: Wuhan Foreign Languages School · Wuhan, Hubei, China
+          - paragraph [ref=f6e623]: Swing for dreams, spin for youth
+        - navigation [ref=f6e624]:
+          - heading "Club" [level=3] [ref=f6e1262]
+          - list [ref=f6e626]:
+            - listitem [ref=f6e627]:
+              - link "Home" [ref=f6e628] [cursor=pointer]:
+                - /url: index.html
+            - listitem [ref=f6e629]:
+              - link "News" [ref=f6e630] [cursor=pointer]:
+                - /url: news.html
+            - listitem [ref=f6e631]:
+              - link "Competitions" [ref=f6e632] [cursor=pointer]:
+                - /url: competitions.html
+            - listitem [ref=f6e633]:
+              - link "Core Members" [ref=f6e1263] [cursor=pointer]:
+                - /url: members.html
+            - listitem [ref=f6e635]:
+              - link "Season Review" [ref=f6e1264] [cursor=pointer]:
+                - /url: season-review.html
+        - navigation [ref=f6e637]:
+          - heading "Data" [level=3] [ref=f6e1265]
+          - list [ref=f6e639]:
+            - listitem [ref=f6e640]:
+              - link "Ranking" [ref=f6e641] [cursor=pointer]:
+                - /url: ranking.html
+            - listitem [ref=f6e642]:
+              - link "Data Viz" [ref=f6e643] [cursor=pointer]:
+                - /url: data_viz.html
+            - listitem [ref=f6e644]:
+              - link "Personal Stats" [ref=f6e1266] [cursor=pointer]:
+                - /url: personal_stats.html
+            - listitem [ref=f6e646]:
+              - link "Data Scale" [ref=f6e647] [cursor=pointer]:
+                - /url: data_scale.html
+            - listitem [ref=f6e648]:
+              - link "WTT Ranking" [ref=f6e649] [cursor=pointer]:
+                - /url: wtt_ranking.html
+            - listitem [ref=f6e650]:
+              - link "WTT Data Viz" [ref=f6e651] [cursor=pointer]:
+                - /url: wtt_dataviz.html
+        - navigation [ref=f6e652]:
+          - heading "Information" [level=3] [ref=f6e1267]
+          - list [ref=f6e654]:
+            - listitem [ref=f6e655]:
+              - link "Submit Results" [ref=f6e1268] [cursor=pointer]:
+                - /url: submit.html
+            - listitem [ref=f6e657]:
+              - link "Q&A" [ref=f6e658] [cursor=pointer]:
+                - /url: qa.html
+            - listitem [ref=f6e659]:
+              - link "Changelog" [ref=f6e1269] [cursor=pointer]:
+                - /url: changelog.html
+            - listitem [ref=f6e661]:
+              - link "docs" [ref=f6e1270] [cursor=pointer]:
+                - /url: docs.html
+            - listitem [ref=f6e663]:
+              - link "Umpire Training" [ref=f6e664] [cursor=pointer]:
+                - /url: umpire-training.html
+            - listitem [ref=f6e665]:
+              - link "Contact" [ref=f6e666] [cursor=pointer]:
+                - /url: contact.html
+      - generic [ref=f6e667]:
+        - generic [ref=f6e668]:
+          - generic [ref=f6e669]: Follow Us
+          - generic [ref=f6e670]:
+            - button "Club QQ Group QR Code" [ref=f6e1271] [cursor=pointer]:
+              - generic [ref=f6e672]: 
+            - link "GitHub" [ref=f6e673] [cursor=pointer]:
+              - /url: https://github.com/yglalpavir/wfls-tt-club
+              - generic [ref=f6e674]: 
+        - generic [ref=f6e675]:
+          - link "Philosophy" [ref=f6e1272] [cursor=pointer]:
+            - /url: index.html#philosophy
+          - link "Ranking Rules" [ref=f6e1273] [cursor=pointer]:
+            - /url: qa.html
+        - paragraph [ref=f6e678]: ©2026 WFLS Table Tennis Club. All rights reserved

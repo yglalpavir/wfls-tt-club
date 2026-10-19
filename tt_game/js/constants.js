@@ -127,15 +127,11 @@ const LIFT = {                 // 拉球起下旋（下旋来球 · 前冲回球
 };
 const SERVE = {                // 发球旋转与抛球（ITTF：垂直抛起≥16cm、无旋转、下降击球）
   TOSS_H: 0.18,                // 抛球高度（m）≥16cm 规则；初速 vy = sqrt(2*G*TOSS_H) ≈ 1.88
-  topMag: 22,                  // 上旋发球 spin.x 基础幅值（下旋发球已取消，backMag 不再使用）
-  backMag: 14,                 // （兼容保留：下旋发球已取消，实际恒用 topMag）
-  sideMag: 72,                 // 侧旋发球 spin.y 基础幅值
-  power: { weak: 0.6, mid: 1.0, strong: 1.4 },   // 旋转强度档（发球前调好）：缩放上旋与侧旋
-  // 统一深发球（不再区分短球/急长球；下旋发球已取消）：两跳发球第一跳靠己方半台中部偏后(z1≈0.55)、
+  topMag: 22,                  // 上旋发球 spin.x 基础幅值（下旋 = 上旋 × (-0.6)，见 rules.js#strikeServe 的 topSign）
+  sideMag: 72,                 // 侧旋发球 spin.y 基础幅值（可与上/下旋叠加，玩家与 AI 同口径）
+  // 统一深发球（不再区分短球/急长球）：两跳发球第一跳靠己方半台中部偏后(z1≈0.55)、
   // 低平过网(弹起≈0.4m)、二跳深≈0.62（深压对方半台，由 SIM.serveShot 低平解算保证过网不高）
-  // 为兼容旧代码引用保留 short/long 两个键，但指向同一套参数
-  long: { speed: 2.7, speedJitter: 0.3, arc: 0.95, depth: 0.62, depthJitter: 0.06 },
-  short: { speed: 2.7, speedJitter: 0.3, arc: 0.95, depth: 0.62, depthJitter: 0.06 },
+  long: { speed: 2.7, arc: 0.95, depth: 0.62, depthJitter: 0.06 },
 };
 const ANIM = {                 // 球拍挥拍动画：正手大引拍/横扫/长随挥 · 反手紧凑/前推/手腕抖
   forehand: {
