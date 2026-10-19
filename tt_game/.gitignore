@@ -33,3 +33,12 @@ backups/
 # ---- 烘焙权重备份：自动烘焙每 3 小时存一版（14MB/版，保留最近 8 版）----
 # 回滚用：cp data/bak/input-weights.<mmdd-HHMM>.js js/input-weights.js
 data/bak/
+
+# ---- 地狱 AI 自对弈守护链的运行时产物（2026-10-19）----
+# 这些是「当前跑到第几代 / 守护进程 pid / 续训起点」这类一次性状态，
+# 每次跑都会变，入库只会制造无意义的 diff 和合并冲突。
+# _hell-selfplay.start 例外：它是「下一轮从哪个检查点续训」的**决策**，需要入库。
+tools/logs/_hell-selfplay.state
+tools/logs/_hell-selfplay.watchdog.pid
+tools/logs/_hell-selfplay.winpid
+tools/logs/_hell-selfplay.start.tmp

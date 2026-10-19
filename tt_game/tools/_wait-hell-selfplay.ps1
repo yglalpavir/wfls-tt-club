@@ -8,7 +8,7 @@ $root = Split-Path -Parent $here
 Set-Location $root
 
 $run     = 'hell-selfplay'
-$total   = 330
+$total   = 520
 $curve   = Join-Path $root 'tools\train-hell-curve.json'
 $best    = Join-Path $root 'tools\train-hell-best.json'
 $state   = Join-Path $root "tools\logs\_$run.state"
@@ -68,3 +68,4 @@ while ((Get-Date) -lt $deadline) {
   Start-Sleep -Seconds 300
 }
 Note 'waiter end'
+

@@ -10,7 +10,7 @@ $root = Split-Path -Parent $here             # ...\tt_game
 Set-Location $root
 
 $run     = 'hell-selfplay'
-$total   = 330
+$total   = 520
 $lock    = Join-Path $root "data\.stop\$run.lock"
 $stop    = Join-Path $root "data\.stop\$run.stop"
 $state   = Join-Path $root "tools\logs\_$run.state"
@@ -82,3 +82,4 @@ while ($true) {
   Start-Sleep -Seconds 300
 }
 Note 'watchdog end'
+

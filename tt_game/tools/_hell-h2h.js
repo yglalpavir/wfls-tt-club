@@ -25,6 +25,7 @@ const LP = require(path.join(__dirname, '..', 'js', 'learned-policy.js'));
  * 所以「候选 vs 线上」必须用实机口径 —— 默认 strongVec()；加 --opp-raw 才用原始向量；
  * 加 --versus <file> 则改用任意 {vec:[...]} 检查点作参照（例如上一轮候选）。 */
 const USE_RAW = process.argv.includes('--opp-raw');
+const USE_NEMESIS = process.argv.includes('--opp-nemesis');
 const argOf = (name) => { const i = process.argv.indexOf(name); return (i >= 0 && process.argv[i + 1]) ? process.argv[i + 1] : ''; };
 const VERSUS_FILE = argOf('--versus');
 const FROM_FILE = argOf('--from');
@@ -33,6 +34,9 @@ let OPP, OPP_LABEL;
 if(VERSUS_FILE){
   OPP = P.unflattenPolicy(JSON.parse(fs.readFileSync(VERSUS_FILE, 'utf8')).vec);
   OPP_LABEL = '指定参照 ' + VERSUS_FILE;
+} else if(USE_NEMESIS){
+  OPP = P.policyForModel('nemesis');
+  OPP_LABEL = '地狱AI克星 policyForModel("nemesis")（第四轮新增：非地狱血统的强参照）';
 } else {
   OPP = P.unflattenPolicy(USE_RAW ? P.flattenPolicy(LP.LEARNED_POLICY) : P.strongVec());
   OPP_LABEL = USE_RAW ? '原始 LEARNED_POLICY（实机不用）' : 'strongVec() 实机口径（护栏 2.8/0.03/2.6）';
@@ -49,6 +53,7 @@ console.log('候选来源: ' + CAND_FILE);
 const VALUE_FLAGS = ['--from', '--versus'];
 const _pos = process.argv.slice(2).filter((v, i, arr) => {
   if(v === '--opp-raw') return false;
+  if(v === '--opp-nemesis') return false;
   if(VALUE_FLAGS.includes(v)) return false;
   if(i > 0 && VALUE_FLAGS.includes(arr[i - 1])) return false;
   return true;
