@@ -77,3 +77,6 @@ data/dataset-stats.json
 offline_pkg/
 offline_pkg.building/
 offline_pkg.zip
+
+# HIP 训练工作区（M0/M1 生成物：评测 JSON、checkpoint、数据集）
+tt_game/data/hip/

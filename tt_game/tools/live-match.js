@@ -247,6 +247,7 @@ const PIPELINE = [
   'learned-policy-nemesis.js',
   'dqn.js',                  // MLP 原语
   'input-agent.js',          // 输入级 DQN（needs DQN）
+  'hip-skill.js',            // ★ HIP L1：解析技能控制器（无学习参数，tt-player 之前）
   'input-weights.js',        // 烘焙权重（~9.7MB，懒加载同款）
   'state.js',                // 全局状态变量
   'tt-stats.js',             // 遥测（提供 reasonOf 归类）
@@ -380,13 +381,20 @@ function loadWeights(file){
 }
 
 /* ---------------- 仿真侧（input-sim.js，与训练器同一份） ---------------- */
-function buildSimSide(weightsFile){
+function buildSimSide(weightsFile, controller){
   const PP = require(path.join(ROOT, 'js', 'policy.js'));
   const SIM = require(path.join(ROOT, 'js', 'simcore.js'));
   const INPUTSIM = require(path.join(ROOT, 'js', 'input-sim.js'));
   const IA = require(path.join(ROOT, 'js', 'input-agent.js'));
   const OPP = require(path.join(ROOT, 'js', 'opponent-ladder.js'));
   global.SIM = SIM; global.P = PP;
+  /* hip 控制器没有学习参数 → 不需要权重（也不该被权重文件卡住）。
+   * 权重文件仍然会被加载一次做「形状自检」：实机侧仍要过一遍 TT_PLAYER.isReady()。 */
+  if(controller === 'hip'){
+    const { HIP_SKILL } = require(path.join(ROOT, 'js', 'hip-skill.js'));
+    const brain = HIP_SKILL.makeBrain();
+    return { INPUTSIM, OPP, IA, agent: null, brain, meta: null };
+  }
   const w = loadWeights(weightsFile);
   let agent;
   if(w.kind === 'archive'){
@@ -446,6 +454,17 @@ const MAXSEC = parseFloat(argOf('--maxsec', '40'));
  *           这个组合到底值多少（网络其余部分不丢，也不必重新学横向）。
  * 权重照常载入（形状自检要过），但决策函数被覆盖，实机跑的是脚本脑。 */
 const BRAIN = argOf('--brain', '');
+/* --controller <dqn|hip>：切换决策来源。
+ *   dqn = 输入级 DQN（1904 维，逐帧 argmax + 横向拦截先验）
+ *   hip = HIP L1 解析技能控制器（js/hip-skill.js，零学习参数）
+ * 两者产出的都是 {tx,my,ctrl}，共用同一条物理管线（padControl/resolveHit），
+ * 所以实机分点率可直接对比。 */
+const CONTROLLER = argOf('--controller', 'dqn');
+/* --json <path>：把结果写成结构化 JSON（给 tools/hip-eval.js 做闸门判定用） */
+const JSON_OUT = argOf('--json', '');
+/* --hip-cfg <path|json>：覆盖 HIP 控制器旋钮（实机扫描用）。
+ *   文件里是 {"myDrive":0.5, ...}；注入到 vm 里的 HIP_SKILL.setConfig()。 */
+const HIP_CFG = argOf('--hip-cfg', '');
 function brainSrc(kind){
   return '(function(){\n' +
   '  var IN_MX=[],IN_MY=[];\n' +
@@ -492,11 +511,12 @@ function main(){
   /* 仿真侧（纯 Node require，与训练器完全同源） */
   let sim = null;
   if(!LIVE_ONLY){
-    sim = buildSimSide(W);
-    console.log('权重：' + path.relative(ROOT, W) +
-                '  形状 ' + sim.agent.getNet().map(l => l.W.length + '×' + l.W[0].length).join(' → ') +
-                '  动作数 ' + sim.agent.nActions +
-                (sim.meta && sim.meta.src ? '  来源 ' + sim.meta.src : ''));
+    sim = buildSimSide(W, CONTROLLER);
+    console.log((CONTROLLER === 'hip' ? '控制器：HIP-L1（解析技能控制器，无学习参数）'
+                                       : '权重：' + path.relative(ROOT, W) +
+                                         '  形状 ' + sim.agent.getNet().map(l => l.W.length + '×' + l.W[0].length).join(' → ') +
+                                         '  动作数 ' + sim.agent.nActions +
+                                         (sim.meta && sim.meta.src ? '  来源 ' + sim.meta.src : '')));
   }
   /* 实机侧 */
   let rig = null, step = null;
@@ -511,6 +531,88 @@ function main(){
     }
     console.log('完成，动作数 ' + rig.nActions + (BRAIN ? ('，决策已换成脚本脑 ' + BRAIN + '（权重仅供形状自检）') : ''));
     if(BRAIN) vm.runInContext(brainSrc(BRAIN), rig.ctx);   // 形状自检通过后再接管决策
+    /* --controller hip：把实机侧的决策来源换成解析技能控制器。
+     * 权重仍然照常载入（形状自检 + 管线一致性），但不再参与决策。 */
+    if(CONTROLLER === 'hip'){
+      vm.runInContext('TT_PLAYER.setController("hip");', rig.ctx);
+      /* 注意：vm 里 `const TT_PLAYER = …` 是**词法绑定**，不是 ctx 的属性，
+       * 所以 rig.ctx.TT_PLAYER 是 undefined —— 只能通过 runInContext 取值。 */
+      const ctrl = vm.runInContext('TT_PLAYER.getController()', rig.ctx);
+      if(ctrl !== 'hip') throw new Error('TT_PLAYER.setController("hip") 没生效（拿到 ' + ctrl + '）');
+      if(HIP_CFG){
+        const raw = HIP_CFG.trim().startsWith('{') ? HIP_CFG : fs.readFileSync(path.resolve(HIP_CFG), 'utf8');
+        const cfgObj = JSON.parse(raw);
+        vm.runInContext('HIP_SKILL.setConfig(' + JSON.stringify(cfgObj) + ');', rig.ctx);
+        console.log('  HIP 旋钮覆盖：' + JSON.stringify(cfgObj));
+      }
+      /* --hip-probe：量化「够不到」到底是预测不准还是跑不到。
+       *   探针包住 HIP 控制器的 plan，记录每一帧：
+       *     预测接触点 bx（控制器内部状态）
+       *     球按当前速度线性外推到拍面所在 z 平面的实际 x
+       *   两者的差 = 预测误差；|实际x − 拍位x| = 跑位残差。
+       *   够不到的根因就在这两个数里。 */
+      if(HAS('--hip-probe')){
+        vm.runInContext([
+          'globalThis.__hipProbe = { cross:[], gate:[] };',
+          'const __om = HIP_SKILL.makeController;',
+          'HIP_SKILL.makeController = function(o){',
+          '  const c = __om(o); const op = c.plan;',
+          '  let prev = null;   // ★ 每侧各一份：两侧共用会互相覆盖（之前 341 次触球只记到 29 次）',
+          '  c.plan = function(obs){',
+          '    const r = op(obs);',
+          '    const st = c.state;',
+          '    const P = globalThis.__hipProbe;',
+          '    if(st && st.inb && obs.vz > 0.3){',
+          '      /* 进入拍面邻域的那一帧：记录闸门状态 canHit.player / shotBouncedOpp / lastHitter */',
+          '      if(Math.abs(obs.z - obs.pz) < 0.16){',
+          '        P.gate.push({ canHit: (typeof canHit !== "undefined" ? canHit.player : null),',
+          '                      bounced: (typeof shotBouncedOpp !== "undefined" ? shotBouncedOpp : null),',
+          '                      lastHitter: (typeof lastHitter !== "undefined" ? lastHitter : null),',
+          '                      dz: obs.z - obs.pz, by: obs.y, gap: Math.abs(obs.x - obs.px),',
+          '                      vz: obs.vz, step: obs.vz/60 });',
+          '      }',
+          '      if(prev && prev.z < obs.pz && obs.z >= obs.pz){',
+          '        const W = SIM.fitWindow("forehand", SIM.relTopOf(obs.sx||0, obs.vz), obs.y,',
+          '                               { x:obs.vx, y:obs.vy, z:obs.vz }, { x:obs.sx||0, y:obs.sy||0, z:0 }, true);',
+          '        P.cross.push({ gap: Math.abs(obs.x - obs.px),',
+          '                       perr: st.bx != null ? Math.abs(st.bx - obs.x) : null,',
+          '                       by: obs.y, svx: obs.svx, tau: st.tau, vz: obs.vz,',
+          '                       dz: obs.z - obs.pz, pz: obs.pz, bz: obs.z,',
+          '                       fitH: W.fitH, fitV: W.fitV, fitZ: W.fitZ, high: W.high,',
+          '                       prevZ: prev.z, step: obs.vz/60, ttc: (obs.pz - obs.z)/obs.vz });',
+          '      }',
+          '      prev = { x: obs.x, y: obs.y, z: obs.z, px: obs.px, pz: obs.pz, vx: obs.vx, vz: obs.vz, bz: obs.z };',
+          '    }',
+          '    return r;',
+          '  };',
+          '  return c;',
+          '};',
+          '/* ---- 直接包裹实机的 tryPlayerHit：逐帧记录每一条判据 ---- */',
+          'globalThis.__hipTests = [];',
+          'const __tp = tryPlayerHit;',
+          'tryPlayerHit = function(){',
+          '  if(lastHitter==="player" || !canHit.player){',
+          '    globalThis.__hipTests.push({ why:"gate", lh:lastHitter, canHit:canHit.player });',
+          '    return __tp.apply(null, arguments);',
+          '  }',
+          '  const stance = pushStanceOf();',
+          '  const W = SIM.fitWindow(stance, relTop(), ball.pos.y, ball.vel, ball.spin, !!ctrlHold);',
+          '  const g = playerPad.group.position, plane = g.z-PAD_HD;',
+          '  const zF = W.fitZ || 0.05;',
+          '  const swept = (_prev.z<=plane+zF && ball.pos.z>plane-zF && ball.vel.z>0);',
+          '  const prox  = Math.abs(ball.pos.z-g.z)<PAD_HD+BALL_R*2+zF && ball.vel.z>-0.3;',
+          '  const dx = Math.abs(ball.pos.x-g.x), limX = PAD_HW+BALL_R+W.fitH;',
+          '  const dy = Math.abs(ball.pos.y-g.y), limY = PAD_HH+BALL_R+W.fitV;',
+          '  globalThis.__hipTests.push({ why:"test", ok:((swept||prox)&&dx<=limX&&dy<=limY),',
+          '    swept:swept, prox:prox, dx:dx, limX:limX, dy:dy, limY:limY,',
+          '    dz: ball.pos.z-g.z, zLim: PAD_HD+BALL_R*2+zF, by: ball.pos.y, PADDLE_Y: PADDLE_Y,',
+          '    fitH:W.fitH, fitV:W.fitV, fitZ:W.fitZ, high:W.high, stance:stance,',
+          '    vx: ball.vel.x, vz: ball.vel.z });',
+          '  return __tp.apply(null, arguments);',
+          '};'
+        ].join('\n'), rig.ctx);
+      }
+    }
     /* --no-prior：关掉 input-agent 的横向拦截先验（回退到纯 argmax）。
      * 用途：A/B —— 烘焙时必须能区分「提升来自新权重」还是「来自先验」。
      * 先验现已在 input-agent.js 内置且默认开，所以「线上老权重 + 新代码」
@@ -611,6 +713,48 @@ function main(){
                                    '  z=' + String(f.z).padStart(7) + '  dir=' + f.dir);
   }
   console.log('');
+  if(HAS('--hip-probe') && rig){
+    const p = vm.runInContext('(()=>{ const C = (globalThis.__hipProbe.cross||[]); const q=(a,f)=>{ if(!a.length) return "-"; const b=a.slice().sort((x,y)=>x-y); return b[Math.min(b.length-1,Math.floor(f*b.length))].toFixed(3); }; const g=(f)=>C.map(c=>c[f]).filter(v=>v!=null); return { n:C.length, p50Gap:q(g("gap"),0.5), p90Gap:q(g("gap"),0.9), p50Err:q(g("perr"),0.5), p90Err:q(g("perr"),0.9), p50By:q(g("by"),0.5), p50Dz:q(g("dz"),0.5), p90Dz:q(g("dz"),0.9), p50FitH:q(g("fitH"),0.5), p50FitV:q(g("fitV"),0.5), p50FitZ:q(g("fitZ"),0.5), hiRate: (C.length? (C.filter(c=>c.high).length/C.length*100).toFixed(0) : "-"), p50Step:q(g("vz"),0.5), p50PrevZ:q(g("prevZ"),0.5) }; })()', rig.ctx);
+    console.log('  HIP 探针（**漏球**样本 n=' + p.n + '）：');
+    console.log('    落点差 |球x−拍位x| p50 ' + p.p50Gap + ' p90 ' + p.p90Gap + '   预测误差 p50 ' + p.p50Err + ' p90 ' + p.p90Err);
+    console.log('    触球高度 p50 ' + p.p50By + '（>0.89 才是高球，本样本高球率 ' + p.hiRate + '%）');
+    console.log('    球z − 拍z p50 ' + p.p50Dz + ' p90 ' + p.p90Dz + '  （接触窗口 ±' + (0.09) + 'm）');
+    console.log('    拟合窗口 fitH ' + p.p50FitH + ' fitV ' + p.p50FitV + ' fitZ ' + p.p50FitZ);
+    const g = vm.runInContext('(()=>{ const G = globalThis.__hipProbe.gate||[]; const n=G.length; const c=(f)=>G.filter(x=>x[f]===true).length; const cF=(f)=>G.filter(x=>x[f]===false).length; const q=(a,f)=>{ if(!a.length) return "-"; const b=a.slice().sort((x,y)=>x-y); return b[Math.min(b.length-1,Math.floor(f*b.length))].toFixed(3); }; return { n, canHitTrue:c("canHit"), canHitFalse:cF("canHit"), bouncedTrue:c("bounced"), lastAi:c("lastHitter")===c("lastHitter")?0:G.filter(x=>x.lastHitter==="ai").length, dz:q(G.map(x=>x.dz),0.5) }; })()', rig.ctx);
+    console.log('    闸门采样 n=' + g.n + '：canHit=true ' + g.canHitTrue + ' / false ' + g.canHitFalse +
+                '；球已落台(bounced=true) ' + g.bouncedTrue);
+    const t = vm.runInContext('(()=>{ const T = globalThis.__hipTests||[]; const tests=T.filter(x=>x.why==="test"); const gates=T.filter(x=>x.why==="gate"); const n=tests.length; const cnt=(f,v)=>tests.filter(x=>x[f]===v).length; const q=(a,f)=>{ if(!a.length) return "-"; const b=a.slice().sort((x,y)=>x-y); return b[Math.min(b.length-1,Math.floor(f*b.length))].toFixed(3); }; return { n, gates:gates.length, noSwept:cnt("swept",false), noProx:cnt("prox",false), xFail:tests.filter(x=>x.dx>x.limX).length, yFail:tests.filter(x=>x.dy>x.limY).length, ok:cnt("ok",true), dz:q(tests.map(x=>x.dz),0.5), zLim:q(tests.map(x=>x.zLim),0.5), dx:q(tests.map(x=>x.dx),0.5), limX:q(tests.map(x=>x.limX),0.5), dy:q(tests.map(x=>x.dy),0.5), limY:q(tests.map(x=>x.limY),0.5), by:q(tests.map(x=>x.by),0.5), high:tests.filter(x=>x.high).length }; })()', rig.ctx);
+    console.log('    ★ tryPlayerHit 逐帧判据（n=' + t.n + '，另有闸门拦截 ' + t.gates + '）：');
+    console.log('      放行(ok) ' + t.ok + ' / 未放行 ' + (t.n - t.ok) + '；未放行原因：swept假 ' + t.noSwept + '  prox假 ' + t.noProx + '  x超限 ' + t.xFail + '  y超限 ' + t.yFail);
+    console.log('      |球z−拍z| p50 ' + t.dz + '（z容差 ±' + t.zLim + '）；|球x−拍x| p50 ' + t.dx + '（x容差 ' + t.limX + '）；|球y−拍y| p50 ' + t.dy + '（y容差 ' + t.limY + '）；球高 p50 ' + t.by + '，高球帧 ' + t.high);
+  }
+
+  /* ---- --json：结构化结果落盘（tools/hip-eval.js 的闸门输入）---- */
+  if(JSON_OUT){
+    const byTier = {};
+    for(const r of rows){
+      if(!r.live) continue;
+      const n = r.live.dqn + r.live.opp;
+      const p = n ? r.live.dqn / n : 0.5;
+      byTier[r.tag] = {
+        dqnPts: r.live.dqn, oppPts: r.live.opp, points: n,
+        rate: p,
+        ci95: n ? 1.96 * Math.sqrt(p * (1 - p) / n) : 0,
+        lost: r.live.lost || null,
+        dqnContacts: r.live.dqnContacts, oppContacts: r.live.oppContacts,
+        frames: r.live.frames,
+        simRate: r.sv ? r.sv.rate : null,
+      };
+    }
+    const out = {
+      tool: 'live-match', controller: CONTROLLER, weights: path.relative(ROOT, W),
+      side: SIDE, seed: parseInt(SEED, 10), games: GAMES, hz: HZ, maxsec: MAXSEC,
+      elapsedSec: +((Date.now() - t0) / 1000).toFixed(1),
+      byTier,
+    };
+    fs.writeFileSync(path.resolve(JSON_OUT), JSON.stringify(out, null, 2));
+    console.log('  JSON 结果已写入 ' + path.relative(ROOT, path.resolve(JSON_OUT)));
+  }
 
   if(isFinite(TOL)){
     const ok = Math.abs(worst) <= TOL;

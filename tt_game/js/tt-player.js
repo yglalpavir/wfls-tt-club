@@ -42,6 +42,25 @@ const TT_PLAYER = (() => {
   const cl = (v, a, b) => v < a ? a : (v > b ? b : v);
   const PADDLE_Y_ = C_.PADDLE_Y || 0.91;
 
+  /* ---- 控制器选择：'dqn'（1904 维输入级 DQN）/ 'hip'（解析技能控制器 L1）----
+   * 两条路都只产出 {tx, my, ctrl}，共用同一套 padControl / resolveHit 物理，
+   * 所以实机表现可直接对比（tools/live-match.js --controller hip|dqn）。 */
+  let controller = 'dqn';
+  const hipCtls = { player: null, ai: null };
+  function hipCtl(side){
+    if(!hipCtls[side]){
+      if(typeof HIP_SKILL === 'undefined') return null;
+      hipCtls[side] = HIP_SKILL.makeController();
+    }
+    return hipCtls[side];
+  }
+  function setController(kind){
+    controller = (kind === 'hip') ? 'hip' : 'dqn';
+    if(controller === 'hip'){ hipCtls.player = null; hipCtls.ai = null; }
+    return controller;
+  }
+  function getController(){ return controller; }
+
   /* ---- 从烘焙权重初始化推理智能体（与训练存档同结构） ---- */
   function init(){
     try{
@@ -73,7 +92,11 @@ const TT_PLAYER = (() => {
       ready = false;
     }
   }
-  function isReady(){ return ready && !!agent; }
+  function isReady(){
+    /* hip 控制器不依赖权重：解析技能层没有任何学习参数 */
+    if(controller === 'hip') return typeof HIP_SKILL !== 'undefined';
+    return ready && !!agent;
+  }
 
   /* ---- 侧 → 是否使用「鼠标上的tt玩家」模型 ---- */
   function isTtSide(side){
@@ -159,8 +182,15 @@ const TT_PLAYER = (() => {
       vp.cur = vp.serveLock;
     }else if(frame % DECIDE_SKIP_ === 0){
       const obs = buildObs(side, realPad);
-      const a = agent.bestAction(obs);
-      vp.cur = agent.decode(a);
+      if(controller === 'hip'){
+        /* HIP L1：解析技能控制器。输入是同一份 15 字段 obs（与训练侧同构），
+         * 输出同样是 {tx,my,ctrl}，因此实机/训练共用一条物理管线。 */
+        const hc = hipCtl(side);
+        vp.cur = hc ? hc.plan(obs) : { tx: 0, my: 0.5, ctrl: false };
+      }else{
+        const a = agent.bestAction(obs);
+        vp.cur = agent.decode(a);
+      }
       if(typeof TT_STATS !== 'undefined') TT_STATS.noteAction(side, vp.cur);
     }
     if(!serving) frame++;
@@ -283,6 +313,9 @@ const TT_PLAYER = (() => {
       vp._wasInbound = false; vp._predBX = null; // 每板重置：预测击球点 / 上升沿
       if(vp._nz){ vp._nz.v = 0; vp._nz.t = -1; }   // OU 决策噪声
     }
+    /* HIP L1：每分重置解析控制器的板级状态 */
+    if(hipCtls.player && hipCtls.player.reset) hipCtls.player.reset();
+    if(hipCtls.ai && hipCtls.ai.reset) hipCtls.ai.reset();
   }
 
   /* ---- 权重懒加载：input-weights.js（3.8MB）仅在需要本模型时注入 ----
@@ -329,7 +362,16 @@ const TT_PLAYER = (() => {
       svx: realPad.svx, svz: (side === 'player') ? realPad.svz : -realPad.svz,
       tx: vp.cur.tx, my: vp.cur.my, bounced: 0,
     };
-    const d = agent.decode(agent.bestAction(obs));
+    const d = (controller === 'hip')
+      ? (function(){
+          const hc = hipCtl(side);
+          const s = hc ? hc.serve() : { tx: 0, my: 0.5, top: true, power: 0.6 };
+          return { tx: s.tx, my: s.my, ctrl: false, serveTop: s.top, servePower: s.power };
+        })()
+      : (function(){
+          const x = agent.decode(agent.bestAction(obs));
+          return { tx: x.tx, my: x.my, ctrl: x.ctrl, serveTop: x.serveTop, servePower: x.servePower };
+        })();
     vp.cur = { tx: d.tx, my: d.my, ctrl: d.ctrl };
     /* 锁住这一次决策直到击球（见 ttTick 的「发球锁」注释）：拍位要收敛到发球动作，
        而不是被抛球窗口里后续的逐帧决策改写。 */
@@ -341,6 +383,7 @@ const TT_PLAYER = (() => {
   function getStance(side){ const vp = vpads[side]; return vp ? vp.stance : 'forehand'; }
 
   return { init, isReady, isTtSide, ttTick, ttHit, reset, ensureWeights, decideServe, getStance,
+           setController, getController,
            get agent(){ return agent; } };
 })();
 
