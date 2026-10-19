@@ -204,7 +204,17 @@ const TT_PLAYER = (() => {
     const tx = cl(vp.cur.tx, -X_CLAMP_, X_CLAMP_);
     const tz = cl(0.92 + (vp.cur.my != null ? vp.cur.my : 0.5) * 0.8, ZRANGE_P.lo, ZRANGE_P.hi);
     let effZ = tz;
-    if(m.vel.z > 0.5 && typeof ball !== 'undefined' && ball.active){
+    /* ★ 可选的**独立拍面深度**通道（vp.cur.pz），与 input-sim.js#padControl 同口径。
+     * my 一个旋钮同时管「拍面 z」与「出球深度」两件互斥的事；实机实测
+     * （tools/live-match.js --hip-probe）：够不到的决定性帧里球高 p50 = 0.569
+     * —— 球还在台面以下，说明它在拍面深度之前**还没弹起来**（从拍下穿过），
+     * 而拍面停在 z=1.273（由 my 推出）恰在「球弹起之前」那一段。
+     * ⇒ 拍面 z 要由**预测弹跳点**决定，不能由出球深度决定。
+     * pz 存在时直接用它（控制器自己 owns 深度）；不传 pz 的路径（真人 / DQN）
+     * 行为完全不变。 */
+    if(vp.cur.pz != null){
+      effZ = cl(vp.cur.pz, ZRANGE_P.lo, ZRANGE_P.hi);
+    }else if(m.vel.z > 0.5 && typeof ball !== 'undefined' && ball.active){
       const meet = SIM.predictMeetZ(m.pos, m.vel, m.spin, 'player',
                                     WIN_LO, WIN_HI, ZRANGE_P.lo, ZRANGE_P.hi);
       if(meet){

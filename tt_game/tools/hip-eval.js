@@ -123,6 +123,11 @@ function main(){
   const maxsec = parseInt(argOf('--maxsec', '30'), 10);
   const gate = argOf('--gate', '');
   const sweep = argOf('--sweep', '');
+  /* --grid 可重复：node tools/hip-eval.js --grid myDrive=0.4,0.54 --grid padZOffset=0.1,0.25 */
+  const gridArgs = [];
+  for(let i = 2; i < process.argv.length; i++){
+    if(process.argv[i] === '--grid' && process.argv[i + 1]) gridArgs.push(process.argv[i + 1]);
+  }
   const t0 = Date.now();
 
   const base = { controller, opp, games, seed, from, maxsec,
@@ -155,24 +160,36 @@ function main(){
     return agg;
   };
 
-  if(sweep){
-    const j = sweep.indexOf('=');
-    const key = sweep.slice(0, j);
-    const vals = sweep.slice(j + 1).split(',').map(Number);
+  if(sweep || gridArgs.length){
+    /* --grid key1=v1,v2 key2=w1,w2：二维笛卡尔积扫描（实机）。
+     * 动机：出球深度 myDrive 与拍面深度 padZOffset 是**耦合**的 ——
+     * 拍面深度决定触球高度，触球高度经 resolveHit 的 arcFit 改变弧线，
+     * 弧线决定落点深度，所以一次只动一个必然顾此失彼。 */
+    const axes = gridArgs.map(spec => {
+      const j = spec.indexOf('=');
+      const key = spec.slice(0, j);
+      const vals = spec.slice(j + 1).split(',').map(Number);
+      return { key, vals };
+    });
+    const combos = [];
+    (function rec(i, acc){
+      if(i >= axes.length){ combos.push(Object.assign({}, acc)); return; }
+      for(const v of axes[i].vals){ acc[axes[i].key] = v; rec(i + 1, acc); }
+    })(0, {});
     const rows = [];
-    for(const v of vals){
-      const cfgObj = {}; cfgObj[key] = v;
-      const agg = doOne(cfgObj, key + '=' + v);
+    for(const c of combos){
+      const label = Object.keys(c).map(k => k + '=' + c[k]).join(' ');
+      const agg = doOne(c, label);
       const t = Object.keys(agg)[0];
       const a = agg[t];
       const ci = wilson(a.rate, a.points);
-      rows.push({ key, v, rate: a.rate, lo: ci.lo, hi: ci.hi, points: a.points, lost: a.lost });
-      console.log('  → ' + key + '=' + v + '  分点率 ' + (a.rate * 100).toFixed(1) + '%  CI[' +
+      rows.push({ cfg: c, rate: a.rate, lo: ci.lo, hi: ci.hi, points: a.points, lost: a.lost });
+      console.log('  → ' + label + '  分点率 ' + (a.rate * 100).toFixed(1) + '%  CI[' +
                   (ci.lo * 100).toFixed(1) + ',' + (ci.hi * 100).toFixed(1) + ']  失分 ' + JSON.stringify(a.lost));
     }
     rows.sort((x, y) => y.rate - x.rate);
-    console.log('\n  最好：' + rows[0].key + '=' + rows[0].v + '  ' + (rows[0].rate * 100).toFixed(1) + '%');
-    fs.writeFileSync(path.join(DATA, 'sweep-' + key + '.json'), JSON.stringify(rows, null, 2));
+    console.log('\n  最好：' + JSON.stringify(rows[0].cfg) + '  ' + (rows[0].rate * 100).toFixed(1) + '%');
+    fs.writeFileSync(path.join(DATA, 'sweep-grid.json'), JSON.stringify(rows, null, 2));
     console.log('  耗时 ' + ((Date.now() - t0) / 1000).toFixed(1) + 's');
     return;
   }

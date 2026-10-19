@@ -71,7 +71,20 @@ const INPUTSIM = (() => {
     const tx = cl(ctx.tx, -X_CLAMP, X_CLAMP);
     const tz = cl(0.92 + (ctx.my != null ? ctx.my : 0.5) * 0.8, ZRANGE.player.lo, ZRANGE.player.hi);
     let effZ = tz;
-    if(ctx.ball && ctx.ball.z > 0.5 && ctx.ballActive){
+    /* ★ 可选的**独立拍面深度**通道（ctx.pz）。
+     * my 一个旋钮同时管两件互斥的事：
+     *   ① 拍面 z（tz）→ 决定在球的哪一段高度上碰球 → 决定接触窗口宽窄
+     *   ② 出球深度（aimZ = −1.24+0.74·my²）→ 决定球落在哪
+     * 实机实测（tools/live-match.js --hip-probe）：够不到的 24 个决定性帧里
+     * 球高 p50 = 0.569 —— 球还在台面以下，也就是**在拍面深度之前还没弹起来**
+     * （球从拍下穿过）。而球拍停在 z=1.273（由 my=0.54 推出），
+     * 恰好落在「球弹起之前」那一段。⇒ 拍面 z 必须由**预测弹跳点**决定，
+     * 而不是由出球深度决定。
+     * ctx.pz 存在时直接用它当拍面 z（不再套 meet 拟合修正：控制器自己owns 深度）。
+     * 人类玩家与 DQN 不传 pz → 行为完全不变。 */
+    if(ctx.pz != null){
+      effZ = cl(ctx.pz, ZRANGE.player.lo, ZRANGE.player.hi);
+    }else if(ctx.ball && ctx.ball.z > 0.5 && ctx.ballActive){
       const meet = SIM.predictMeetZ(ctx.pos, ctx.vel, ctx.spin, 'player',
                                     WIN_LO, WIN_HI, ZRANGE.player.lo, ZRANGE.player.hi);
       if(meet){
@@ -354,7 +367,7 @@ const INPUTSIM = (() => {
           'cur=' + JSON.stringify(cur));
         throw new Error('nan-in-recv');
       }
-      padControl(pad, { tx: cur.tx, my: cur.my, ball: v, pos: p, vel: v, spin: s, ballActive: stB.bounced }, DT);
+      padControl(pad, { tx: cur.tx, my: cur.my, pz: cur.pz, ball: v, pos: p, vel: v, spin: s, ballActive: stB.bounced }, DT);
       const pzPrev = p.z;   // 本帧积分前的 z（= 实机 _prev.z，供 swept 穿越判据用）
       stB.pPrev = { x: p.x, y: p.y, z: p.z };   // 子步起点（= 实机 _prev，供撞网穿越判据用）
       /* —— 物理（子步积分 + 弹跳 + 出界）——

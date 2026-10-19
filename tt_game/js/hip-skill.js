@@ -45,6 +45,8 @@ const HIP_SKILL = (() => {
   const G = C_.G != null ? C_.G : 9.81;
 
   const cl = (v, a, b) => (v < a ? a : (v > b ? b : v));
+  /* 最近一次预测失败的诊断（供 live-match --hip-probe 统计） */
+  const LAST_FAIL = { wide: null };
   const sgn = (v) => (v < 0 ? -1 : 1);
 
   /* ---- 可调旋钮（默认值由 tools/hip-tune.js 的坐标下降定出，2026-10-20）----
@@ -99,6 +101,20 @@ const HIP_SKILL = (() => {
     /* 待机 */
     homeX:       0.0,
     homeMy:      0.50,
+    /* ★ 独立拍面深度通道（pz）：拍面 z = 预测落台点 z + padZOffset。
+     * 实机实测（tools/live-match.js --hip-probe，20 局 / 2845 次 tryPlayerHit）：
+     *   365 个「球已到拍面深度」的决定性帧里，横向 x 超限 **0** 次，
+     *   24 次漏球**全部**是纵向 y 超限，且那些帧的球高 p50 = **0.569**
+     *   （0.41~0.68）—— 球还在**台面以下**，也就是它在拍面深度之前
+     *   **还没落地弹起**，直接从拍下穿过去了。
+     *   根因：拍面 z 由 my 推出（my=0.54 → z=1.273），恰好停在「球弹起之前」
+     *   那一段。⇒ 拍面 z 必须由**预测落台点**决定，与出球深度解耦。
+     *   offset 取多少：落台后球上升，0.2~0.3m 相当于弹起后 2~3 帧，
+     *   触球高度 ≈ 0.82~0.86（离拍心 0.91 只差 0.05~0.09，在纵向容差 0.175 内）。 */
+     padZOffset:  0.35,   // 拍面 z = 预测落台点 z + 偏移（<0 = 关闭 pz 通道）
+     padZPhase:   1,      // 拍面 z 是否按「球的 z 相位栅格」吸附（避免球跳过接触窗口）
+    padZMin:     0.95,   // 拍面 z 下限
+    padZMax:     1.60,   // 拍面 z 上限
   /* 预判站位：AI 的落点永远在玩家的**反侧**（policy.js#aiDecision:
    * away = playerX>0 ? -1 : 1），所以下一球大概率来「上一球的反侧」。
    * 空档时先站到那一侧，等球来就不用追 —— 理论上是最便宜的够球率提升。
@@ -115,32 +131,91 @@ const HIP_SKILL = (() => {
   function setConfig(cfg){ OVERRIDE = cfg ? Object.assign({}, DEFAULTS, cfg) : null; return OVERRIDE; }
   function getConfig(){ return Object.assign({}, OVERRIDE || DEFAULTS); }
 
-  /* ---- 接触点预测 ----
-   * 复用 simcore.predictMeetZ：球在自己半台弹起后第一次进入
-   * [WIN_LO,WIN_HI] × [ZRANGE.lo,hi] 的点。它是**弹起后**的位置，
-   * 真正触球还要再往前（+z）一点点，所以做一次线性外推。
-   * 返回 {x, y, z, tau, ok}；ok=false 时调用方退化处理。 */
-  function predictContact(obs, zp){
-    if(!SIM_ || !SIM_.predictMeetZ) return { ok: false };
-    const pos = { x: obs.x, y: obs.y, z: obs.z };
-    const vel = { x: obs.vx || 0, y: obs.vy || 0, z: obs.vz || 0 };
-    const spin = { x: obs.sx || 0, y: obs.sy || 0, z: 0 };
-    let mt = null;
-    try { mt = SIM_.predictMeetZ(pos, vel, spin, 'player', WIN_LO, WIN_HI, ZRANGE.lo, ZRANGE.hi); }
-    catch (e) { mt = null; }
-    if(!mt || !mt.state) return { ok: false };
-    const sv = mt.state.vel, sp = mt.state.pos;
-    const vz = Math.max(sv.z || 0, 0.25);
-    const dt2 = Math.max(0, (zp - sp.z) / vz);       // 从落点走到拍面还要多久
+  /* ---- 接触点预测（**与实机 physics.js#physicsStep 逐子步同口径**）----
+   * ★ 为什么不再用 SIM.predictMeetZ：它的弹跳判据与实机不一致 ——
+   *   实机 physics.js:340-341：
+   *     v.y<0 && p.y-BALL_R<=TABLE_TOP && _prev.y-BALL_R>TABLE_TOP-0.05
+   *     && |p.x|<=TABLE_W/2+BALL_R*0.6 && |p.z|<=TABLE_L/2+BALL_R*0.6
+   *   simcore.predictMeetZ：
+   *     v.y<0 && p.y-BALL_R<=TABLE_TOP && |p.x|<=TABLE_W/2 && |p.z|<=TABLE_L/2
+   *   差两点：
+   *   (a) 实机台面外沿多 0.6·BALL_R = 1.2cm。落台点 z ∈ [1.370, 1.382] 的球
+   *       **实机会弹起、预测器不认** ⇒ 拍面深度失去依据 ⇒ 球从拍下穿过
+   *       （实测那批漏球帧的球高 p50 = 0.507，还在台面以下）。
+   *   (b) 实机要求「上一子步球还在台面之上」，陡降的球实机**不弹**。
+   *   下面这份积分器照抄实机：1/120 子步、同一套重力/阻力/Magnus(s×v)/旋转衰减/
+   *   弹跳判据/tableBounce 公式，并一路跟到「球到达拍面深度」的那一点。
+   *   返回 {ok, x, y, z, tau, inSpd, inVx, bz, tBounce, vzPost, targetZ}。
+   *   targetZ = 拍面目标 z（= 落台点 z + padZOffset，夹在 padZMin/Max）。
+   */
+  const SUB_DT = 1 / 120;     // 实机每帧 2 子步（SIM.subStepsFor(1/60) = 2）
+  function predictContact(obs, cfg){
+    if(!SIM_) return { ok: false };
+    const C = SIM_.C || {};
+    const G_ = C.G != null ? C.G : 9.81;
+    const AIR_ = C.AIR != null ? C.AIR : 0.10;
+    const MAG_ = C.MAGNUS != null ? C.MAGNUS : 0.0032;
+    const REST_ = C.REST != null ? C.REST : 0.72;
+    const KICK_ = C.SPIN_KICK != null ? C.SPIN_KICK : 0.016;
+    const TT = C.TABLE_TOP != null ? C.TABLE_TOP : 0.76;
+    const TW = C.TABLE_W != null ? C.TABLE_W : 1.525;
+    const TL = C.TABLE_L != null ? C.TABLE_L : 2.74;
+    const BR = C.BALL_R != null ? C.BALL_R : 0.02;
+    const off = (cfg && cfg.padZOffset != null) ? cfg.padZOffset : 0.35;
+    const zmin = (cfg && cfg.padZMin != null) ? cfg.padZMin : 0.95;
+    const zmax = (cfg && cfg.padZMax != null) ? cfg.padZMax : 1.60;
+
+    let px = obs.x, py = obs.y, pz = obs.z;
+    let vx = obs.vx || 0, vy = obs.vy || 0, vz = obs.vz || 0;
+    let sx = obs.sx || 0, sy = obs.sy || 0;
+    let t = 0;
+    let bounced = false, tB = 0, bz = 0, bvz = 0;
+    let targetZ = null, hit = null;
+
+    for(let i = 0; i < 900; i++){
+      const prevY = py;
+      /* ---- 积分（实机 physicsStep 的前 5 行）---- */
+      vy -= G_ * SUB_DT;
+      const drag = Math.max(0, 1 - AIR_ * SUB_DT);
+      vx *= drag; vy *= drag; vz *= drag;
+      const mx = sy * vz, my = -sx * vz, mz = sx * vy - sy * vx;   // s × v（sz=0）
+      vx += mx * MAG_ * SUB_DT; vy += my * MAG_ * SUB_DT; vz += mz * MAG_ * SUB_DT;
+      px += vx * SUB_DT; py += vy * SUB_DT; pz += vz * SUB_DT;
+      const sd = Math.max(0, 1 - 0.05 * SUB_DT); sx *= sd; sy *= sd;
+      t += SUB_DT;
+      /* ---- 台面弹跳（实机 physics.js:340-341 + tableBounce）---- */
+      if(vy < 0 && py - BR <= TT && (prevY - BR) > TT - 0.05
+         && Math.abs(px) <= TW / 2 + BR * 0.6 && Math.abs(pz) <= TL / 2 + BR * 0.6){
+        py = TT + BR;
+        vy = -vy * REST_;
+        vz = vz * 0.99 + sx * KICK_;
+        vx = vx * 0.985 - sy * KICK_ * 0.6;
+        sx *= 0.72; sy *= 0.72;
+        if(!bounced){
+          bounced = true; tB = t; bz = pz; bvz = vz;
+          targetZ = cl(bz + off, zmin, zmax);
+        }
+      }
+      /* ---- 球到达拍面深度的那一点 = 触球点 ---- */
+      if(bounced && !hit && pz >= targetZ){
+        hit = { x: px, y: py, z: pz, t: t, vx: vx, vy: vy, vz: vz };
+        break;
+      }
+      if(py <= BR && vy < 0) break;                 // 落地
+      if(Math.abs(pz) > 4.5 || Math.abs(px) > 3) break;
+    }
+    if(!hit){ LAST_FAIL.noBounce = true; return { ok: false }; }
+    LAST_FAIL.noBounce = false;
     return {
       ok: true,
-      x: sp.x + (sv.x || 0) * dt2,
-      y: sp.y + (sv.y || 0) * dt2 - 0.5 * G * dt2 * dt2,
-      z: sp.z + vz * dt2,
-      tau: mt.t + dt2,
-      inSpd: Math.abs(sv.z || 0),
-      inVx: (sv.x || 0),
-      meet: mt,
+      x: hit.x, y: hit.y, z: hit.z,
+      tau: hit.t,
+      inSpd: Math.abs(hit.vz),
+      inVx: hit.vx,
+      bz: bz,                 // 落台点 z
+      tBounce: tB,            // 落台时刻
+      vzPost: Math.abs(bvz),  // 落台后的 vz
+      targetZ: targetZ,       // 拍面目标 z
     };
   }
 
@@ -189,9 +264,12 @@ const HIP_SKILL = (() => {
        *   早先只在来球第一帧算一次 tau（0.42s 恒定），追位律就退化成
        *   「朝一个固定点匀速走」，球拍到位时球早走了 → 100% 够不到
        *   （实测分点率 0%，全部 lose:out）。 */
-      const ct = predictContact(obs, zp);
+      const ct = predictContact(obs, cfg);
       if(ct.ok){
-        S.bx = ct.x; S.by = ct.y; S.bz = ct.z; S.tau = ct.tau; S.hasMeet = true;
+        S.bx = ct.x; S.by = ct.y; S.bz = ct.bz; S.tau = ct.tau; S.hasMeet = true;
+        S.bounceZ = ct.bz;
+        S.tBounce = ct.tBounce; S.vzPost = ct.vzPost; S.padZ = ct.targetZ;
+        S.inVx = ct.inVx;
         /* 来球**触球时**的速度（不是出球瞬间的）：弹跳时上旋 kick 会把 vz 顶高
          * （sx=389 时 +6.2m/s，实测来球 5.4 → 14.6m/s），用出球瞬间的速度会
          * 严重低估「这一板要收多少」。meet 点就是弹起点，速度已是 kick 之后的。 */
@@ -201,6 +279,7 @@ const HIP_SKILL = (() => {
         const t = Math.max(0.04, (zp - obs.z) / Math.max(vz, 0.05));
         S.bx = obs.x + (obs.vx || 0) * t;
         S.by = obs.y; S.bz = PLAYER_Z; S.tau = t; S.hasMeet = false;
+        S.padZ = null;
       }
       S.lastTau = S.tau;
 
@@ -283,7 +362,35 @@ const HIP_SKILL = (() => {
         tx = px + hold + vCmd / PACE;
       }
 
-      return { tx: cl(tx, -X_CLAMP, X_CLAMP), my: cl(my, 0, 1), ctrl: ctrl };
+      /* ★ 独立拍面深度通道：pz = 预测落台点 z + padZOffset。
+       * 与出球深度（my）完全解耦 —— 这正是 M1 剩下的唯一硬瓶颈：
+       * 够不到的球，球高 p50 = 0.569（还在台面以下 = 球在拍面深度之前没弹起，
+       * 从拍下穿过去了），而拍面 z 原先是由 my 推出的。
+       *
+       * ★★ z 相位对齐（padZPhase）：球弹起后每帧 z 步进 s = vz/60（实测
+       *   0.14~0.23m），而接触判据的 z 容差只有
+       *   PAD_HD + 2·BALL_R + fitZ ≈ 0.09~0.11m。**s 接近容差的 2 倍**，
+       *   所以拍面深度若与球的 z 序列不同步，球会「跳过」接触窗口
+       *   （swept 与 prox 同时不成立 → 球直接穿过拍面 → 漏球）。
+       *   球在测试帧上的 z = 落台z + r + k·s，r = 落台到下一个帧边界的余量，
+       *   k = 整数帧号。控制器把拍面深度吸附到这串栅格上（k 取最接近
+       *   padZOffset 的整数），触球时球正好在拍面正中。 */
+      let padZ = null;
+      if(cfg.padZOffset >= 0 && S.padZ != null && S.hasMeet){
+        padZ = cl(S.padZ, cfg.padZMin, cfg.padZMax);
+        if(cfg.padZPhase && S.vzPost > 0.2){
+          /* z 相位对齐（默认关，实机 40 局实测 63.8% < 不对齐的 68.2%）：
+           * 把拍面深度吸附到「球弹起后每帧 z 步进 s=vz/60」这条栅格上。 */
+          const s = S.vzPost / 60;
+          const tb = S.tBounce != null ? S.tBounce : 0;
+          const nextFrame = Math.ceil(tb * 60 + 1e-6) / 60;
+          const r = Math.max(0, nextFrame - tb) * S.vzPost;
+          const k = Math.max(1, Math.round((cfg.padZOffset - r) / s));
+          padZ = cl(S.bounceZ + r + k * s, cfg.padZMin, cfg.padZMax);
+        }
+      }
+
+      return { tx: cl(tx, -X_CLAMP, X_CLAMP), my: cl(my, 0, 1), ctrl: ctrl, pz: padZ };
     }
 
     /* 发球：HIP 的发球是固定动作（上旋、中等力量、居中） */
@@ -306,7 +413,7 @@ const HIP_SKILL = (() => {
     };
   }
 
-  return { makeController, makeBrain, setConfig, getConfig, DEFAULTS, predictContact,
+  return { makeController, makeBrain, setConfig, getConfig, DEFAULTS, predictContact, LAST_FAIL,
            get constants(){ return { PLAYER_Z, X_CLAMP, PADDLE_Y, PACE, SVCAP, AIM, AIM_XMAX, ZRANGE, WIN_LO, WIN_HI }; } };
 })();
 

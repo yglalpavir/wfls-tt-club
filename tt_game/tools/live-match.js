@@ -562,6 +562,7 @@ function main(){
           '    const r = op(obs);',
           '    const st = c.state;',
           '    const P = globalThis.__hipProbe;',
+          '    if(st){ globalThis.__hipLastState = st; }',
           '    if(st && st.inb && obs.vz > 0.3){',
           '      /* 进入拍面邻域的那一帧：记录闸门状态 canHit.player / shotBouncedOpp / lastHitter */',
           '      if(Math.abs(obs.z - obs.pz) < 0.16){',
@@ -569,7 +570,8 @@ function main(){
           '                      bounced: (typeof shotBouncedOpp !== "undefined" ? shotBouncedOpp : null),',
           '                      lastHitter: (typeof lastHitter !== "undefined" ? lastHitter : null),',
           '                      dz: obs.z - obs.pz, by: obs.y, gap: Math.abs(obs.x - obs.px),',
-          '                      vz: obs.vz, step: obs.vz/60 });',
+          '                      vz: obs.vz, step: obs.vz/60, hasMeet: st.hasMeet,' +
+          '                      wide: (st.hasMeet ? null : (HIP_SKILL.LAST_FAIL.wide || null)) });',
           '      }',
           '      if(prev && prev.z < obs.pz && obs.z >= obs.pz){',
           '        const W = SIM.fitWindow("forehand", SIM.relTopOf(obs.sx||0, obs.vz), obs.y,',
@@ -603,13 +605,24 @@ function main(){
           '  const prox  = Math.abs(ball.pos.z-g.z)<PAD_HD+BALL_R*2+zF && ball.vel.z>-0.3;',
           '  const dx = Math.abs(ball.pos.x-g.x), limX = PAD_HW+BALL_R+W.fitH;',
           '  const dy = Math.abs(ball.pos.y-g.y), limY = PAD_HH+BALL_R+W.fitV;',
-          '  globalThis.__hipTests.push({ why:"test", ok:((swept||prox)&&dx<=limX&&dy<=limY),',
+          '  const zOK = (swept||prox), xOK = dx<=limX, yOK = dy<=limY;',
+          '  const st = (typeof __hipLastState !== "undefined") ? __hipLastState : null;',
+          '  globalThis.__hipTests.push({ why:"test", ok:(zOK&&xOK&&yOK), decisive:zOK,',
+          '    fail: zOK ? (xOK ? (yOK ? "" : "y") : "x") : "z",',
           '    swept:swept, prox:prox, dx:dx, limX:limX, dy:dy, limY:limY,',
           '    dz: ball.pos.z-g.z, zLim: PAD_HD+BALL_R*2+zF, by: ball.pos.y, PADDLE_Y: PADDLE_Y,',
           '    fitH:W.fitH, fitV:W.fitV, fitZ:W.fitZ, high:W.high, stance:stance,',
+          '    hasMeet: st ? st.hasMeet : null, bounceZ: st ? st.bounceZ : null,',
+          '    predBx: st ? st.bx : null, predBz: st ? st.bz : null,',
           '    vx: ball.vel.x, vz: ball.vel.z });',
           '  return __tp.apply(null, arguments);',
-          '};'
+          '};',
+          '/* ---- 记录成功触球时的高度分布（对照漏球样本）---- */',
+          'globalThis.__hipHits = [];',
+          'const __hp = hitPlayer, __hap = hitAIForPlayer;',
+          'const __rec = () => { globalThis.__hipHits.push({ by: ball.pos.y, gz: playerPad.group.position.z, high: ball.pos.y > TABLE_TOP+0.13 }); };',
+          'hitPlayer = function(){ __rec(); return __hp.apply(null, arguments); };',
+          'hitAIForPlayer = function(){ __rec(); return __hap.apply(null, arguments); };'
         ].join('\n'), rig.ctx);
       }
     }
@@ -723,10 +736,17 @@ function main(){
     const g = vm.runInContext('(()=>{ const G = globalThis.__hipProbe.gate||[]; const n=G.length; const c=(f)=>G.filter(x=>x[f]===true).length; const cF=(f)=>G.filter(x=>x[f]===false).length; const q=(a,f)=>{ if(!a.length) return "-"; const b=a.slice().sort((x,y)=>x-y); return b[Math.min(b.length-1,Math.floor(f*b.length))].toFixed(3); }; return { n, canHitTrue:c("canHit"), canHitFalse:cF("canHit"), bouncedTrue:c("bounced"), lastAi:c("lastHitter")===c("lastHitter")?0:G.filter(x=>x.lastHitter==="ai").length, dz:q(G.map(x=>x.dz),0.5) }; })()', rig.ctx);
     console.log('    闸门采样 n=' + g.n + '：canHit=true ' + g.canHitTrue + ' / false ' + g.canHitFalse +
                 '；球已落台(bounced=true) ' + g.bouncedTrue);
-    const t = vm.runInContext('(()=>{ const T = globalThis.__hipTests||[]; const tests=T.filter(x=>x.why==="test"); const gates=T.filter(x=>x.why==="gate"); const n=tests.length; const cnt=(f,v)=>tests.filter(x=>x[f]===v).length; const q=(a,f)=>{ if(!a.length) return "-"; const b=a.slice().sort((x,y)=>x-y); return b[Math.min(b.length-1,Math.floor(f*b.length))].toFixed(3); }; return { n, gates:gates.length, noSwept:cnt("swept",false), noProx:cnt("prox",false), xFail:tests.filter(x=>x.dx>x.limX).length, yFail:tests.filter(x=>x.dy>x.limY).length, ok:cnt("ok",true), dz:q(tests.map(x=>x.dz),0.5), zLim:q(tests.map(x=>x.zLim),0.5), dx:q(tests.map(x=>x.dx),0.5), limX:q(tests.map(x=>x.limX),0.5), dy:q(tests.map(x=>x.dy),0.5), limY:q(tests.map(x=>x.limY),0.5), by:q(tests.map(x=>x.by),0.5), high:tests.filter(x=>x.high).length }; })()', rig.ctx);
-    console.log('    ★ tryPlayerHit 逐帧判据（n=' + t.n + '，另有闸门拦截 ' + t.gates + '）：');
-    console.log('      放行(ok) ' + t.ok + ' / 未放行 ' + (t.n - t.ok) + '；未放行原因：swept假 ' + t.noSwept + '  prox假 ' + t.noProx + '  x超限 ' + t.xFail + '  y超限 ' + t.yFail);
-    console.log('      |球z−拍z| p50 ' + t.dz + '（z容差 ±' + t.zLim + '）；|球x−拍x| p50 ' + t.dx + '（x容差 ' + t.limX + '）；|球y−拍y| p50 ' + t.dy + '（y容差 ' + t.limY + '）；球高 p50 ' + t.by + '，高球帧 ' + t.high);
+    const g2 = vm.runInContext('(()=>{ const G = globalThis.__hipProbe.gate||[]; const nm = G.filter(x=>x.hasMeet===false); const q=(a,f)=>{ if(!a.length) return "-"; const b=a.slice().sort((x,y)=>x-y); return b[Math.min(b.length-1,Math.floor(f*b.length))].toFixed(3); }; return { nm: nm.length, withWide: nm.filter(x=>x.wide).length, wideZ: q(nm.filter(x=>x.wide).map(x=>x.wide.z),0.5), wideZmin: q(nm.filter(x=>x.wide).map(x=>x.wide.z),0), wideZmax: q(nm.filter(x=>x.wide).map(x=>x.wide.z),0.999), wideY: q(nm.filter(x=>x.wide).map(x=>x.wide.y),0.5) }; })()', rig.ctx);
+    console.log('    预测失败帧 n=' + g2.nm + '：放宽窗口后仍能找到落台点 ' + g2.withWide + '（z p50 ' + g2.wideZ + ' 最小 ' + g2.wideZmin + ' 最大 ' + g2.wideZmax + '，球高 p50 ' + g2.wideY + '）→ 找不到 = 该球在玩家半台没弹起');
+    const t = vm.runInContext('(()=>{ const T = globalThis.__hipTests||[]; const tests=T.filter(x=>x.why==="test"); const gates=T.filter(x=>x.why==="gate"); const n=tests.length; const dec=tests.filter(x=>x.decisive); const q=(a,f)=>{ if(!a.length) return "-"; const b=a.slice().sort((x,y)=>x-y); return b[Math.min(b.length-1,Math.floor(f*b.length))].toFixed(3); }; const H=globalThis.__hipHits||[]; const yf=dec.filter(x=>x.fail==="y"); return { n, gates:gates.length, dec:dec.length, failX:dec.filter(x=>x.fail==="x").length, failY:yf.length, okInDec:dec.filter(x=>x.ok).length, dx:q(dec.map(x=>x.dx),0.5), limX:q(dec.map(x=>x.limX),0.5), dy:q(dec.map(x=>x.dy),0.5), limY:q(dec.map(x=>x.limY),0.5), by:q(dec.map(x=>x.by),0.5), hiDec:dec.filter(x=>x.high).length, yFailBy:q(yf.map(x=>x.by),0.5), yFailDy:q(yf.map(x=>x.dy),0.5), yFailMin:yf.length?q(yf.map(x=>x.by),0):"-", yFailMax:yf.length?q(yf.map(x=>x.by),0.999):"-", yFailGz:q(yf.map(x=>x.gz||0),0.5), hitN:H.length, hitBy:q(H.map(x=>x.by),0.5), hitHi:H.filter(x=>x.high).length, hitGz:q(H.map(x=>x.gz),0.5) }; })()', rig.ctx);
+    console.log('    ★ tryPlayerHit 判据：总调用 ' + t.n + '，闸门拦截 ' + t.gates + '，**球已到拍面深度**的帧 ' + t.dec + '（决定性帧）');
+    console.log('      决定性帧里：放行 ' + t.okInDec + '，x 超限 ' + t.failX + '，y 超限 ' + t.failY);
+    console.log('      决定性帧 |球x−拍x| p50 ' + t.dx + '（容差 ' + t.limX + '）；|球y−拍y| p50 ' + t.dy + '（容差 ' + t.limY + '）；球高 p50 ' + t.by + '，高球帧 ' + t.hiDec);
+    console.log('      y 超限帧的球高 p50 ' + t.yFailBy + '（min ' + t.yFailMin + ' / max ' + t.yFailMax + '），|Δy| p50 ' + t.yFailDy);
+    const f2 = vm.runInContext('(()=>{ const T=(globalThis.__hipTests||[]).filter(x=>x.why==="test"&&x.decisive); const f=T.filter(x=>x.fail==="y"), o=T.filter(x=>x.ok); const q=(a,f)=>{ if(!a.length) return "-"; const b=a.slice().sort((x,y)=>x-y); return b[Math.min(b.length-1,Math.floor(f*b.length))].toFixed(3); }; const hm=(a)=>a.filter(x=>x.hasMeet).length; return { fNoMeet:f.length-hm(f), fHasMeet:hm(f), fBounceZ:q(f.map(x=>x.bounceZ),0.5), oNoMeet:o.length-hm(o), oHasMeet:hm(o), oBounceZ:q(o.map(x=>x.bounceZ),0.5), fGz:q(f.map(x=>x.dz),0.5) }; })()', rig.ctx);
+    console.log('      漏球帧：有落台预测 ' + f2.fHasMeet + '/' + f2.fNoMeet + f2.fNoMeet + '（无预测 ' + f2.fNoMeet + '），预测落台 z p50 ' + f2.fBounceZ);
+    console.log('      成功帧：有落台预测 ' + f2.oHasMeet + '，无 ' + f2.oNoMeet + '，预测落台 z p50 ' + f2.oBounceZ);
+    console.log('      成功触球 n=' + t.hitN + '：触球高度 p50 ' + t.hitBy + '，高球占比 ' + (t.hitN ? (t.hitHi / t.hitN * 100).toFixed(0) : '-') + '%，拍面 z p50 ' + t.hitGz);
   }
 
   /* ---- --json：结构化结果落盘（tools/hip-eval.js 的闸门输入）---- */
