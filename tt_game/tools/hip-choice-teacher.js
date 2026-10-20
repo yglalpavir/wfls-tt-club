@@ -215,7 +215,20 @@ function scoreOption(opt, ctx){
  * 这里直接调用 input-sim 的 aiReceive：**让对手真的去接这一球**。
  *   接到了 ⇒ 这一拍没价值（pMiss=0）；没接到 ⇒ 有价值（pMiss=1）。
  *   aiReceive 的三种失败（timeout / double / out）都是「对手没接到」。
- * 探针用独立 rng（不动游戏的 rng 流 ⇒ 不破坏 rollout 的确定性）。 */
+ * 探针用独立 rng（不动游戏的 rng 流 ⇒ 不破坏 rollout 的确定性）。
+ *
+ * ★ 2026-10-21 补：**对手「接到了但打回去的球出界」才是落点维度真正的收益来源**。
+ *   探针原先只问「对手有没有接到」，而实测对手 100% 接到 ⇒ 这一项恒为 0 ⇒ 标签里没有信号。
+ *   仿真 A/B（data/hip/_simcorner.js，400 分/组，对手=hell，限速 2.0）量到：
+ *       自然落点：胜 3.0%，对手**回球出界率 2.1%**
+ *       固定 +x 角：胜 14.3%，对手回球出界率 **11.3%**
+ *       固定 -x 角：胜 15.3%，对手回球出界率 **11.3%**
+ *   ⇒ 胜局数与「对手回球出界次数」一一对应（12≈12、57≈57、61≈61）：
+ *     **角落战术不是让对手够不到，而是让对手接到之后自己打长出界**
+ *     （对手的瞄准误差随落点横向距离增大：txErrBx·|bx|）。
+ *   所以 ground truth 必须是「对手这一拍的**回球质量**」，不是「对手有没有接到」。
+ *   probeOppReply 返回：对手没接到的比例（miss）、对手接到但回球出界的比例（out）、
+ *   以及安全回球的落点（越短球对我们越有利 ⇒ short）。 */
 let curOpp = null;                      // 当前对手策略（打标时用）
 let curOppTag = null;                   // 当前对手档位名（写进 meta；原来写死 oppTags[0] ⇒ 全标成第一个档）
 const PROBE_RNG = mulberry32(0xC0FFEE);
@@ -232,6 +245,45 @@ function probeOppMiss(sc, ctx){
   return null;
 }
 
+/* ★ 新版探针：问「对手这一拍的结果」——没接到 / 接到但回球出界 / 安全回球 */
+function probeOppReply(sc, ctx, M){
+  if(!curOpp || !INPUTSIM.aiReceive || !sc || !sc.shot) return null;
+  let nMiss = 0, nOut = 0, nOk = 0, sumZ = 0, nTried = 0;
+  for(let k = 0; k < M; k++){
+    let rec = null;
+    try{
+      rec = INPUTSIM.aiReceive(sc.shot.pos, sc.shot.vel, sc.shot.spin, curOpp,
+                               PROBE_RNG, false, (ctx && ctx.ox) || 0);
+    }catch(e){ continue; }
+    if(!rec) continue;
+    nTried++;
+    if(!rec.hit){ nMiss++; continue; }
+    /* 对手接到了 ⇒ 再算它那一拍会打成什么样（回球出界 ⇒ 这一分我们直接赢） */
+    const o = rec.out;
+    if(!o || !o.vel) { nOk++; continue; }
+    let land = null;
+    try{
+      land = SIM.simulateFull(o.pos, o.vel, 'ai', { x:o.spin.x, y:o.spin.y, z:0 }, PROBE_RNG);
+    }catch(e){ land = null; }
+    if(land && !land.ok && (land.reason === 'floor' || land.reason === 'out')){
+      nOut++;
+    }else if(land && land.ok && land.landing){
+      nOk++; sumZ += Math.abs(land.landing.z);
+    }else{
+      nOk++;
+    }
+  }
+  if(!nTried) return null;
+  const avgZ = nOk ? (sumZ / Math.max(nOk, 1)) : 1.0;
+  return {
+    miss: nMiss / nTried,
+    out: nOut / nTried,
+    /* 安全回球落在我们这半台的深度（0.7 短球 ~ 1.37 底线）：越短球越好打 */
+    short: nOk ? cl((1.15 - avgZ) / 0.60, 0, 1) : 0,
+    n: nTried,
+  };
+}
+
 function main(){
   const oppTags = argOf('--opp', 'hell').split(',').map(s => s.trim()).filter(Boolean);
   const points = parseInt(argOf('--points', '9000'), 10);
@@ -246,6 +298,15 @@ function main(){
   /* 探针开关：--probe 0 关（纯几何 pMiss）；--probe-top N 只探前 N 个候选 */
   const PROBE = parseInt(argOf('--probe', '1'), 10);
   const PROBE_TOP = parseInt(argOf('--probe-top', '0'), 10);
+  /* ★ 回球质量探针：每个候选探几次（默认 3）⇒ 得到比率而不是 0/1 噪声 */
+  const PROBE_M = parseInt(argOf('--probe-m', '3'), 10);
+  /* 落点价值里三个 ground-truth 项的权重：
+   *   W_OUT  = 对手接到但自己打长出界（角落战术的真正收益来源）
+   *   W_MISS = 对手根本没接到
+   *   W_SHORT= 对手安全回球但落点短（短球好打） */
+  const W_OUT = parseFloat(argOf('--w-out', '6.0'), 10);
+  const W_MISS = parseFloat(argOf('--w-miss', '2.4'), 10);
+  const W_SHORT = parseFloat(argOf('--w-short', '0.6'), 10);
   if(CAP > 0){ ML.setMoveLimit({ cap: CAP }); }
   console.log('移动预算（限速）：横向 ' + (ML.getMoveLimit().cap == null ? '不限' : ML.getMoveLimit().cap + ' m/s'));
   let dbgLeft = DBG;
@@ -258,7 +319,7 @@ function main(){
   const rng = mulberry32(seed);
 
   const hist = {};        // 最优选项的分布（诊断用）
-  let avgMax = 0, avgH = 0, avgNZ = 0, avgPC = 0, avgDrift = 0, avgProbe = 0, avgProbeMiss = 0;
+  let avgMax = 0, avgH = 0, avgNZ = 0, avgPC = 0, avgDrift = 0, avgProbe = 0, avgProbeMiss = 0, avgProbeOut = 0;
   let lastIncoming = false, curIntent = null, labeled = false;
   /* 打标时刻（秒，触球前的剩余时间）：必须与 L1 的挥拍阶段起点一致 */
   const LABEL_TAU = 0.06;
@@ -302,10 +363,17 @@ function main(){
             if(sc.pContact > 0){ pcSum += sc.pContact; driftSum += Math.abs(sc.drift || 0); }
             if(sc.s > bestS){ bestS = sc.s; best = i; driftBest = sc.drift || 0; pcBest = sc.pContact || 0; }
           }
-          /* ★ 探针阶段：把几何 pMiss 换成「对手真的接不到」的 ground truth。
+          /* ★ 探针阶段：把几何 pMiss 换成**对手这一拍的真实结果**。
+           *   旧版只问「对手有没有接到」⇒ 实测对手 100% 接到 ⇒ 这一项恒为 0
+           *   ⇒ 标签里没有落点信号（教师退化成「恒定往右打一点」= 复制 L1）。
+           *   新版问两件事：
+           *     miss  = 对手没接到（这一分直接赢）；
+           *     out   = 对手接到了，但**它自己把球打长出界**（这一分也直接赢）；
+           *            ★ 这才是角落战术真正的收益来源（见文件头注释的仿真 A/B）。
+           *   每个候选探 PROBE_M 次（默认 3）⇒ 得到一个比率而不是 0/1 噪声。
            *   探针只跑分数最高的前 probeTop 个（默认全跑；每跑一个都是一次
            *   对手接球仿真 ⇒ 成本高；未探的选项保持几何分）。 */
-          let nProbe = 0, nProbeMiss = 0;
+          let nProbe = 0, nProbeMiss = 0, nProbeOut = 0;
           if(PROBE > 0 && curOpp){
             const order = [];
             for(let i = 0; i < HIP_CHOICE.N_OPT; i++) if(scs[i]) order.push(i);
@@ -313,22 +381,27 @@ function main(){
             const lim = (PROBE_TOP > 0) ? Math.min(PROBE_TOP, order.length) : order.length;
             for(let k = 0; k < lim; k++){
               const i = order[k];
-              const pm = probeOppMiss(scs[i], ctx);
-              if(pm == null) continue;
-              nProbe++;
-              if(pm > 0){
-                nProbeMiss++;
-                /* ground truth：这一球对手接不到 ⇒ 落点价值拉满 */
-                scores[i] = scs[i].pContact * (scs[i].V0 + 2.4) - (1 - scs[i].pContact) * MISS_PENALTY;
+              const pr = (PROBE_M > 1) ? probeOppReply(scs[i], ctx, PROBE_M) : null;
+              let miss = 0, out = 0, short = 0;
+              if(pr){
+                miss = pr.miss; out = pr.out; short = pr.short;
+                nProbe++; nProbeMiss += pr.miss; nProbeOut += pr.out;
               }else{
-                /* 对手接到了 ⇒ 落点价值里的 pMiss 项归零 */
-                scores[i] = scs[i].pContact * scs[i].V0 - (1 - scs[i].pContact) * MISS_PENALTY;
+                const pm = probeOppMiss(scs[i], ctx);
+                if(pm == null) continue;
+                nProbe++; miss = pm;
+                if(pm > 0) nProbeMiss++;
               }
+              /* 落点价值 = 几何项 + 「对手这一拍白送」的价值
+               *   W_OUT：对手回球出界 ≈ 这一分直接赢（实测：角落 11.3% vs 自然 2.1%，
+               *          胜局数与回球出界次数一一对应）⇒ 权重必须压过接触成功率损失。 */
+              scores[i] = scs[i].pContact * (scs[i].V0 + W_MISS * miss + W_OUT * out + W_SHORT * short)
+                        - (1 - scs[i].pContact) * MISS_PENALTY;
             }
             best = -1; bestS = -1e9;
             for(let i = 0; i < HIP_CHOICE.N_OPT; i++) if(scores[i] > bestS){ bestS = scores[i]; best = i; }
           }
-          avgProbe += nProbe; avgProbeMiss += nProbeMiss;
+          avgProbe += nProbe; avgProbeMiss += nProbeMiss; avgProbeOut += nProbeOut;
           if(best >= 0 && bestS > -11){
             if(dbgLeft > 0){
               dbgLeft--;
@@ -417,6 +490,7 @@ function main(){
     if(avgProbe > 0){
       console.log('对手真实接球探针：平均每球 ' + (avgProbe / Math.max(nSamples,1)).toFixed(1) +
                   ' 次，其中对手没接到 ' + (avgProbeMiss / Math.max(avgProbe,1)).toFixed(3) +
+                  '，对手回球自己出界 ' + (avgProbeOut / Math.max(avgProbe,1)).toFixed(3) +
                   '（= 落点维度的真实收益率）');
     }
   });
