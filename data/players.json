@@ -920,7 +920,7 @@
       "name": "王禹涵",
       "pinyin": "WANG Yuhan",
       "aliases": [],
-      "initialScore": 1700,
+      "initialScore": 1900,
       "tags": [],
       "honors": [],
       "role": "",
@@ -931,14 +931,14 @@
       "qq": "",
       "description": "",
       "status": "active",
-      "visible": false
+      "visible": true
     },
     {
       "uid": 10050,
       "name": "徐耀鹏",
       "pinyin": "XU Yaopeng",
       "aliases": [],
-      "initialScore": 1700,
+      "initialScore": 1900,
       "tags": [],
       "honors": [],
       "role": "",
@@ -949,7 +949,7 @@
       "qq": "",
       "description": "",
       "status": "active",
-      "visible": false
+      "visible": true
     },
     {
       "uid": 10051,
