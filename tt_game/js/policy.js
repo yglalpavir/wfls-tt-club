@@ -363,14 +363,27 @@ function grandSlamPolicy(){
   });
   return unflattenPolicy(_vecOf(L));
 }
+/* ★★ 'trap'：带「读球代价」的强对手（HIP M5 的对手侧升级，训练/评测专用，不上线）
+ *   readDelay：读旋的延迟（秒）——这段时间不横移，可用跑位时间被吃掉；
+ *   readSpin ：用**不含旋转**的直线外推预测落点（错误信念）
+ *              ⇒ 玩家的旋转（Magnus 偏移）会系统性地把真落点推离对手的信念。
+ *   两个开关合起来给对手一个真实的取舍：读得准 ⇒ 多花时间；抢时间 ⇒ 信念偏。
+ *   这是 L2「往哪打/怎么打」第一次有可学信号的前提
+ *   （见 docs/tech/hip-framework.md §1.13 与 §4.5）。 */
+function trapPolicy(){
+  const base = unflattenPolicy(strongVec());
+  return Object.assign({}, base, { readDelay: 0.07, readSpin: true });
+}
 /* 按所选对战模型解析策略：普通=默认 · 地狱=学习策略 · 大满贯=预备种子 ·
  *   extreme / extreme-max=极端对手阶梯（opponent-ladder.js，与训练器同源）·
  *   nemesis=地狱AI克星（只针对地狱AI特训）·
+ *   trap=带读球代价的强对手（HIP M5，训练/评测专用）·
  *   鼠标上的tt玩家=默认(仅发球决策用，回球由 DQN 驱动) */
 function policyForModel(model){
   if(model === 'hell') return unflattenPolicy(strongVec());
   if(model === 'grandslam') return grandSlamPolicy();
   if(model === 'nemesis') return nemesisPolicy();
+  if(model === 'trap') return trapPolicy();
   if(model === 'extreme' || model === 'extreme-max'){
     if(typeof OPP_LADDER !== 'undefined') return OPP_LADDER.at(model);
     if(typeof module !== 'undefined' && module.exports) return require('./opponent-ladder.js').at(model);

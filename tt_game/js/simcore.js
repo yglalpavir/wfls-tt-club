@@ -894,6 +894,16 @@ const SIM = (() => {
     const inbound = B.active && !o.ballDead && mir * B.vel.z > 0.15;
     if(!inbound) P_._inbound = false;
     let windup = false;
+    /* ★★ 读球代价（可选，默认关闭；线上对手不带这两个字段 ⇒ 行为逐位不变）
+     *   readDelay：读旋需要的延迟（秒）——这段时间不横移，可用跑位时间被吃掉；
+     *   readSpin ：为真时用**不含旋转**的直线外推预测落点（错误信念）
+     *              ⇒ 玩家的旋转/Magnus 会把真落点系统性地推离对手的信念。
+     *   两者合起来给对手一个真实的取舍：读得准就要多花时间。
+     *   动机见 docs/tech/hip-framework.md §1.13 / §4.5：现役对手的
+     *   「预测落点→全速扑过去」没有取舍，辅助预算 3.8 倍 ⇒ 玩家的落点没有收益空间。 */
+    const pol = o.policy || null;
+    const rDelay = (pol && pol.readDelay > 0) ? pol.readDelay : 0;
+    const rNoSpin = (pol && pol.readSpin) ? 1 : 0;
     if(inbound){
       if(!P_._inbound){
         P_._inbound = true;
@@ -902,17 +912,22 @@ const SIM = (() => {
         P_._xErr = gaussOf(o.rng) * (o.errBase + amp);
         P_._wrapDone = false; P_._wrapOn = false;
         P_._strokeSwitches = 0;
+        P_._readT = now;               // 读球起点（读球代价用）
         if(P_._nz){ P_._nz.v = 0; P_._nz.t = -1; }
       }
       const ttc0 = (P_.z - B.pos.z) / B.vel.z;
       const cacheT = clamp(ttc0 > 0 ? ttc0 * 0.25 : 0.09, 0.016, 0.09);
       if(now - P_.predT > cacheT){
         P_.predT = now;
-        P_.predX = predictXAtZ(B.pos, B.vel, B.spin, P_.z);
+        /* 信念：可选的「误设模型」——忽略旋转 ⇒ 对手的落点预测被 Magnus 偏移带偏 */
+        const spinBelief = rNoSpin ? { x: 0, y: 0, z: 0 } : B.spin;
+        P_.predX = predictXAtZ(B.pos, B.vel, spinBelief, P_.z);
         const m = predictMeetZ(B.pos, B.vel, B.spin, side, C.PADDLE_Y - 0.235, C.PADDLE_Y + 0.235, o.zLo, o.zHi);
         P_.predZ = m ? m.z : o.zHome;
       }
-      targetX = P_.predX;
+      /* 读球延迟内不横移（真实乒乓里读旋需要时间） */
+      const reading = rDelay > 0 && (now - (P_._readT != null ? P_._readT : now)) < rDelay;
+      targetX = reading ? P_.x : P_.predX;
       targetZ = P_.predZ;
       if(side === 'ai' && !P_._wrapOn){
         const ttc = ttc0;

@@ -95,8 +95,16 @@ function main(){
     nPoint++;
     const tag = tags[Math.floor(rng() * tags.length) % tags.length];
     curTag = tag;
-    const pol0 = OPP.at(tag) || P.policyForModel(tag) || P.POLICY_DEFAULT;
-    const pol = hasErr ? Object.assign({}, pol0, { moveErr: errOv }) : pol0;
+    const pol0 = (tag === 'trap') ? (P.policyForModel('trap') || P.POLICY_DEFAULT)
+                                  : (OPP.at(tag) || P.policyForModel(tag) || P.POLICY_DEFAULT);
+    /* --delay <v> / --nospin <0|1>：覆盖对手的「读球代价」参数（诊断用）。
+     *   readDelay 越大 ⇒ 读旋越久 ⇒ 可用跑位时间越少；readSpin=0 ⇒ 信念包含旋转（无误设）。 */
+    const dOv = parseFloat(argOf('--delay', ''));
+    const nsOv = argOf('--nospin', '');
+    const polOv = Object.assign({}, pol0,
+      (isNaN(dOv) ? {} : { readDelay: dOv }),
+      (nsOv === '' ? {} : { readSpin: nsOv !== '0' }));
+    const pol = hasErr ? Object.assign({}, polOv, { moveErr: errOv }) : polOv;
     /* 随机化玩家侧：落点目标 + 出球深度（把落点空间铺开） */
     const cfg = hasAlt
       ? { aimForceAlt: altV, myDrive: 0.46 + rng() * 0.22 }
