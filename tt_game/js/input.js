@@ -156,12 +156,14 @@ function modelLabel(id){
   return (typeof gameT === 'function' && k) ? gameT(k) : (MODEL_NAMES[id] || String(id));
 }
 /* ---- 「鼠标上的tt玩家」权重懒加载：涉及该模型时提前注入，开赛时若未就绪则等待 ----
- * 「tt玩家·HIP」走**纯 L1**（零学习参数）⇒ 不需要任何权重文件；
- * L2'（K 路安全动作集）的权重只在显式 setController('hip-choice') 时才需要。 */
+ * 「tt玩家·HIP」走**纯 L1**（解析技能层，零学习参数）⇒ 不需要任何权重文件；
+ * L2'（K 路蒸馏学生）的权重只在显式 setController('hip-choice') 时才需要。
+ * DQN（ttmouse）需要 js/input-weights.js（约 9.7MB，同样懒加载）。 */
 function maybePreloadTtWeights(){
   if(typeof TT_PLAYER === 'undefined') return;
   if(aiModel==='ttmouse' || fightL==='ttmouse' || fightR==='ttmouse')
     TT_PLAYER.ensureWeights().catch(err => console.warn('[tt] 权重加载失败：' + err.message));
+  /* hipmouse 走纯 L1（解析技能层）⇒ 不需要任何权重文件（省 277KB 下载）。 */
 }
 function refreshModelHint(){
   const h = $('modelHint');
@@ -324,7 +326,7 @@ function startGame(){
   // 选了「鼠标上的tt玩家」但权重未就绪：等懒加载完成再开赛（失败也照常开赛，该侧回退普通 AI）
   if(aiModel==='ttmouse' && typeof INPUT_AI_WEIGHTS === 'undefined' && typeof TT_PLAYER !== 'undefined')
     TT_PLAYER.ensureWeights().then(go).catch(()=>go());
-  // 「tt玩家·HIP」走纯 L1（零学习参数）⇒ 不需要任何权重文件，直接开赛
+  // 「tt玩家·HIP」走纯 L1（解析技能层，零权重文件）⇒ 直接开赛
   else go();
 }
 /* AI 斗蛐蛐：两侧 AI（可相同/不同）对战，5局三胜，不换边 */
@@ -346,7 +348,7 @@ function startFight(){
   };
   const needW = (fightL==='ttmouse' || fightR==='ttmouse')
     && typeof INPUT_AI_WEIGHTS === 'undefined' && typeof TT_PLAYER !== 'undefined';
-  /* 「tt玩家·HIP」= 纯 L1（零学习参数）⇒ 不需要权重文件 */
+  /* 「tt玩家·HIP」走纯 L1（解析技能层）⇒ 不需要权重文件 */
   if(needW) TT_PLAYER.ensureWeights().then(go).catch(()=>go());
   else go();
 }

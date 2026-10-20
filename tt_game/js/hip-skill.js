@@ -83,6 +83,25 @@ const HIP_SKILL = (() => {
      *   机理：「回球到球来的地方」= 把球送回对手已经站着的区域；
      *   固定落点才能逼对手跑动。 */
     landTarget:  null,
+    /* ★ landCorner（正式）：打「对手的反侧角」（1=开）。
+     *   限速下模型防守被打穿 ⇒ 胜负改由落点决定；实机（cap 2.0, 40 局同种子）：
+     *   自然落点 47.8%  vs  固定 +0.62 角 83.1%（+35.3pp）。
+     *   固定角有单侧风险 ⇒ 本旋钮按对手当前站位（obs.ox）选反侧。 */
+    landCorner:  0,
+    landCornerV: 0.62,   // 反侧角的横向目标（米）
+    /* ★ landAuto（正式，默认 'auto'）：限速下的「固定角落点」战术。
+     *   'auto' = **只在开了移动预算（cap != null）时生效** ⇒ 不限速路径逐位不变（零回归）；
+     *   'pos' / 'neg' = 强制 +x / −x 角（不限速也生效，诊断用）；
+     *   0 / 'off' = 关。
+     *   实机（cap 2.0，40 局/组，同种子，vs hell）：
+     *     自然落点 47.8%  |  固定 +0.62 角 83.1%（+35.3pp）  |  固定 −0.62 角 35.5%
+     *     |  自适应「打对手反侧角」 51.2%
+     *   ⇒ ① 角落的价值高度**单侧**（+x 侧好、−x 侧差）；
+     *     ② 自适应版本只有 +3.4pp，因为对手大多数时间站在中间 ⇒ 选边近乎随机 ⇒ 收益被平均掉；
+     *     ③ 只在**没有意图**（纯 L1 路径）时生效 —— L2 路径的落点由学生自己决定，
+     *        动作集里已经有绝对角落选项（hip-choice 的 abs-r55 等），不需要这里插手。 */
+    landAuto:    'auto',
+    landAutoV:   0.62,   // 固定角落的横向目标（米）
     aimShiftGain:0.5,    // 落点偏移的补偿强度（1=全补偿）
     aimTau:      0.35,   // 估算飞行时间（把速度差换算成落点差）
     wideThresh:  0.25,   // |bx| 超过它算「宽球」
@@ -230,9 +249,9 @@ const HIP_SKILL = (() => {
     depthMin:   0.52,     // 落点深度下限（太短会下网）
     depthGain:  1.60,     // my 的修正增益（d(my)/d(depth) ≈ −1.6）
     depthIter:  3,        // 迭代次数
-    myMin:      0.46,     // 修正时 my 的下限
-    myMax:      0.68,     // 修正时 my 的上限
-    depthSafetyCapped: 0, // ★ 有限速时是否仍开这条修正网（默认关，见 plan() 里的说明）
+    myMin:      0.30,     // 修正时 my 的下限（方向修对后要留出下调空间：my↓ ⇒ 弧线更平 ⇒ 落点更近）
+    myMax:      0.72,     // 修正时 my 的上限
+    depthSafetyCapped: 1, // ★ 有限速时是否仍开这条修正网（默认开：方向修对之后才有效）
   /* 预判站位：AI 的落点永远在玩家的**反侧**（policy.js#aiDecision:
    * away = playerX>0 ? -1 : 1），所以下一球大概率来「上一球的反侧」。
    * 空档时先站到那一侧，等球来就不用追 —— 理论上是最便宜的够球率提升。
@@ -636,6 +655,12 @@ const HIP_SKILL = (() => {
     return Math.min(raw, Math.max(0, v));
   }
 
+  /* 移动预算是否生效（cap != null）。限速下「够不到」重新出现 ⇒ 胜负改由落点决定。 */
+  function cappedOn(){
+    const cap = (typeof MOVE_LIMIT !== 'undefined' && MOVE_LIMIT) ? MOVE_LIMIT.cap : null;
+    return cap != null;
+  }
+
   function makeController(opts){
     const cfg = Object.assign({}, OVERRIDE || DEFAULTS, opts || {});
     const S = {
@@ -761,6 +786,29 @@ const HIP_SKILL = (() => {
          * ⇒ L1 的落点应当是「一个可调的固定目标」，而不是「球来的地方」。 */
         S.wide = false;
         S.want = cl(cfg.landTarget, -0.62, 0.62);
+      }else if(cfg.landCorner){
+        /* ★ landCorner（正式）：打「对手的反侧角」—— 绝对落点目标随对手站位自适应。
+         * 动机（限速下的实机事实）：限速后模型的防守被打穿（够不到 > 0），
+         * 胜负转由「球放到哪儿」决定；固定 +x 角比自然落点高 35pp（47.8% → 83.1%，
+         * 40 局同种子，cap 2.0），但固定角有单侧风险（对手若恰好站在那边就无效）。
+         * 本旋钮按对手当前站位选反侧 ⇒ 两侧都有效。
+         * obs.ox = 对手拍位 x（tt-player / input-sim 的 obs 都有）。 */
+        S.wide = true;
+        const ox = obs.ox || 0;
+        S.want = cl((ox >= 0 ? -1 : 1) * (cfg.landCornerV || cfg.landX), -0.62, 0.62);
+      }else if(!intent && (cfg.landAuto === 'pos' || (cfg.landAuto === 'auto' && cappedOn()))){
+        /* ★ landAuto（正式）：限速下的「固定角落点」。
+         * 机理：限速后模型的防守被打穿（够不到 > 0），胜负转由「球放到哪儿」决定。
+         * 实机（cap 2.0，40 局/组，同种子，vs hell）：
+         *     自然落点 47.8%  |  固定 +0.62 角 83.1%  |  固定 −0.62 角 35.5%
+         *     |  自适应反侧角 51.2%
+         * ⇒ 固定角落好 35pp，但**单侧**（换到 −x 角反而 −12pp）；
+         *   自适应版本只 +3.4pp（对手常在中间 ⇒ 选边近乎随机 ⇒ 收益被平均掉）。
+         * 只在**没有意图**（纯 L1 路径）时生效：L2 的落点由学生决定，
+         * 它的动作集里本来就有绝对角落选项（abs-r55 等），不必在这里插手。 */
+        S.wide = true;
+        const side = (cfg.landAuto === 'neg') ? -1 : 1;
+        S.want = cl(side * (cfg.landAutoV != null ? cfg.landAutoV : 0.62), -0.62, 0.62);
       }
       /* 记住这一球来自哪一侧 → 空档时预判站到反侧 */
       if(S.bx < -0.12) S.lastSide = -1; else if(S.bx > 0.12) S.lastSide = 1;
@@ -862,14 +910,26 @@ const HIP_SKILL = (() => {
         S.depthChecked = true;
         const dctx = { bx: S.bx, by: S.by, bz: S.bz, vel: S.vel,
                        sx: obs.sx, sy: obs.sy, svz: obs.svz };
+        /* ★ 限速口径：这条网算落点时必须用**与实机同一份**出球参数
+         *   （swipe = 故意挥拍速度，fwd = 0），否则它会用「跑位冲量」去估球速，
+         *   估出一个假的「打长」⇒ 把 my 调小 ⇒ 真球反而打短。
+         *   挥拍速度用「按 S.want 反解的 vCmd」近似（伺服只微调 aimT，量级很小）。 */
+        const capOn2 = (typeof MOVE_LIMIT !== 'undefined' && MOVE_LIMIT) ? (MOVE_LIMIT.cap != null) : false;
+        const vEst = cl((S.want - AIM.xFromPos * px) / AIM.xFromSwipe, -cfg.maxSwing, cfg.maxSwing);
         for(let it = 0; it < cfg.depthIter; it++){
-          const land = landingOf(px, svx, dctx, my, ctrl, S.want, SERVO_RNG);
+          const land = landingOf(px, svx, dctx, my, ctrl, S.want, SERVO_RNG, false,
+                                 capOn2 ? vEst : undefined, capOn2 ? 0 : undefined);
           if(!land || land.z == null) break;
           const depth = -land.z;
           S.depthLand = depth;
           let my2 = my;
-          if(depth > cfg.depthMax)      my2 = my + (depth - cfg.depthMax) * cfg.depthGain;
-          else if(depth < cfg.depthMin) my2 = my - (cfg.depthMin - depth) * cfg.depthGain;
+          /* ★ 修正方向：**my 越大 ⇒ 弧线越高 ⇒ 球在空中停更久 ⇒ 落点更深**。
+           *   实测 my 0.30→0.60 落点 z −0.733→−0.960（d(lz)/d(my) ≈ −0.76）
+           *   ⇒ 「打太长」要**调小 my**（弧线更平 ⇒ 落点更近）。
+           *   旧版方向写反了（调大 my ⇒ 越修越深），是不限速路径上
+           *   98.3% → 96.2% 的那点回归的来源。 */
+          if(depth > cfg.depthMax)      my2 = my - (depth - cfg.depthMax) * cfg.depthGain;
+          else if(depth < cfg.depthMin) my2 = my + (cfg.depthMin - depth) * cfg.depthGain;
           else { S.depthOk = (S.depthOk || 0) + 1; break; }
           my2 = cl(my2, cfg.myMin, cfg.myMax);
           S.depthFixed = (S.depthFixed || 0) + 1;

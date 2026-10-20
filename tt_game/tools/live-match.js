@@ -559,11 +559,15 @@ function main(){
   let sim = null;
   if(!LIVE_ONLY){
     sim = buildSimSide(W, CONTROLLER);
-    console.log((CONTROLLER === 'hip' ? '控制器：HIP-L1（解析技能控制器，无学习参数）'
-                                       : '权重：' + path.relative(ROOT, W) +
-                                         '  形状 ' + sim.agent.getNet().map(l => l.W.length + '×' + l.W[0].length).join(' → ') +
-                                         '  动作数 ' + sim.agent.nActions +
-                                         (sim.meta && sim.meta.src ? '  来源 ' + sim.meta.src : '')));
+    /* ★ 只有 DQN 控制器才有 DQN 网络可打印；hip / hip-intent / hip-choice 的仿真侧
+     * 不建 DQN agent ⇒ 以前这里会抛 TypeError（在**开局之前**就崩，整局白跑）。 */
+    const simDesc = (CONTROLLER === 'hip' || CONTROLLER === 'hip-intent' || CONTROLLER === 'hip-choice')
+      ? ('控制器：' + CONTROLLER + '（解析技能层 + 可选策略层）')
+      : ('权重：' + path.relative(ROOT, W) +
+         (sim.agent ? ('  形状 ' + sim.agent.getNet().map(l => l.W.length + '×' + l.W[0].length).join(' → ') +
+                       '  动作数 ' + sim.agent.nActions) : '') +
+         (sim.meta && sim.meta.src ? '  来源 ' + sim.meta.src : ''));
+    console.log(simDesc);
   }
   /* 实机侧 */
   let rig = null, step = null;

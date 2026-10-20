@@ -83,16 +83,14 @@ const TT_PLAYER = (() => {
   function controllerFor(side){
     if(controllerExplicit) return controller;
     const m = modelOf(side);
-    /* ★ hipmouse 走**纯 L1**，不走 L2'（K 路蒸馏学生）。
-     * 实机同口径对比（maxsec 120，seed 20261004，60 局/档）：
-     *   L1        hell 93.3% [89.9,95.6] / default 100.0% / grandslam 99.8%
-     *   L1+L2'    hell 91.4% [87.5,94.2] / default 100.0% / grandslam 100.0%
-     * ⇒ 学习层在「往哪打」这个维度上**没有超过解析层**（CI 重叠，方向上还略低）。
-     * 原因（见 docs/reports/hip-m3-findings.md §10）：L1 修完第六个真 bug 之后，
-     * 失分 100% 是「自己出界/下网」而不是「够不到」——
-     * 解析层已经把「够得到 + 不乱打」做满了，L2 的增量空间被压缩到噪声级。
-     * L2' 保留为研究件（tools/hip-choice-*.js + js/hip-choice-weights.js），
-     * 它的价值要等 L3 对手模型与 L4 联赛把动作空间撑开之后才能兑现。 */
+    /* ★ hipmouse 走 **纯 L1（解析技能层）+ 限速 + 固定角落战术**，控制器 = 'hip'。
+     * 实机（maxsec 120，seed 20261004，vs 地狱 AI）：
+     *   不限速 L1（老口径）              97.1%   —— 靠「密不透风的防守」取胜（用户明确不要）
+     *   限速 cap 2.0 L1 自然落点          47.8%  [43.5,52.1]（40 局）
+     *   限速 cap 2.0 L1 + 固定 +x 角      83.1%  [78.2,87.1]（40 局，+35.3pp）
+     *   限速 cap 2.0 L2'（K 路学生）      58.9%（12 局）—— 学习层第一次超过解析层，
+     *        但仍不如「固定角落」⇒ 线上选 L1 + 角落战术，L2' 留作研究件（见 hip-framework.md §1.17.2）。
+     * 详见 docs/tech/hip-framework.md §1.17.2 与 docs/reports/hip-m3-findings.md §11e。 */
     if(m === 'hipmouse') return 'hip';
     if(m === 'ttmouse')  return 'dqn';
     return controller;
