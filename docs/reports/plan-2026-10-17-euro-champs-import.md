@@ -168,10 +168,19 @@ xd 2016=29／2018=31。xd 项目原缺这两年的年度文件，**新建**
 - 脚本复跑新增 0 条（幂等）；`git diff --numstat -- wtt_data/` 各 score-log 删除行数为 0
   （`xd/manifest.json` 1 行删除，系原末条补逗号所致）。
 - 源站笔误已容错：2018 混双 `PICCOLIN Giorgia Italy)` 缺左括号，解析结果仍为 `Giorgia PICCOLIN`。
-- 9 个姓名未在现有姓名表命中（这些选手仓库尚无既有写法，按启发式定序写入）：
-  Xuan ZHANG、Aneta KUCEROVA、Judith LIU、Karin ADAMKOVA、
-  Aleksandra VOVK、Christian KILL、Egle TAMASAUSKAITE、Georgia ZAVITSANOU、Sarah MEYER。
+- 8 个姓名当时未在现有姓名表命中（这些选手仓库尚无既有写法，按启发式定序写入；
+  现已写入数据，复跑 `--check` 全部命中）：
+  Aneta KUCEROVA、Judith LIU、Karin ADAMKOVA、Aleksandra VOVK、Christian KILL、
+  Egle TAMASAUSKAITE、Georgia ZAVITSANOU、Sarah MEYER。
 - **身份统一**：2016 年源站写作 `Kristin SILBEREISEN` 的 11 条记录（女双 5、女单 4、混双 2）
   与仓库 2001–2015 一直使用的 `Kristin LANG` 是同一人（婚后改姓；维基百科 `Kristin Lang`
   条目重定向到 `Kristin Silbereisen`）。为避免 WTT 排名把同一人拆成两个身份，这 11 条已
   统一为仓库写法 `Kristin LANG`，导入器 `EXTRA_NAME_MAP` 同步登记该别名。
+- **身份统一（二）**：2016 女双页写作 `ZHANG Xuan (Spain)`、2017 女团页写作 `ZHANG, Xuan`
+  的选手，与仓库 `wtt_data/ws/assoc.json` 里唯一的西班牙 ZHANG —— `Sofia-Xuan ZHANG`
+  （`official-id115402`，2021–2026 各文件均用此写法）是同一人（Sofia-Xuan Zhang，1999-09-14
+  出生，2016 年 17 岁，年龄与搭档 Sara RAMIREZ 的女双组合吻合）。这 14 条记录
+  （女双 3、女单 11）统一为 `Sofia-Xuan ZHANG`；不统一则 `js/wtt_common.js` 的
+  `wttNameIdentity` 会把 `{xuan, zhang}` 与 `{sofiaxuan, zhang}` 算成两人，WTT 排名被拆行。
+  导入器 `EXTRA_NAME_MAP` 同步登记 `xuan zhang` / `zhang xuan` 两个键。
+  提交 `11c0ba0`（Kristin）之后单独提交该修正；`ci_validate.py` 复跑仍全绿。
