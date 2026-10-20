@@ -324,9 +324,7 @@ function startGame(){
   // 选了「鼠标上的tt玩家」但权重未就绪：等懒加载完成再开赛（失败也照常开赛，该侧回退普通 AI）
   if(aiModel==='ttmouse' && typeof INPUT_AI_WEIGHTS === 'undefined' && typeof TT_PLAYER !== 'undefined')
     TT_PLAYER.ensureWeights().then(go).catch(()=>go());
-  // 「tt玩家·HIP」同理：等 hip-choice-weights.js 注入完成
-  else if(aiModel==='hipmouse' && typeof HIP_CHOICE_WEIGHTS === 'undefined' && typeof TT_PLAYER !== 'undefined')
-    TT_PLAYER.ensureHipChoiceWeights().then(go).catch(()=>go());
+  // 「tt玩家·HIP」走纯 L1（零学习参数）⇒ 不需要任何权重文件，直接开赛
   else go();
 }
 /* AI 斗蛐蛐：两侧 AI（可相同/不同）对战，5局三胜，不换边 */
@@ -348,10 +346,8 @@ function startFight(){
   };
   const needW = (fightL==='ttmouse' || fightR==='ttmouse')
     && typeof INPUT_AI_WEIGHTS === 'undefined' && typeof TT_PLAYER !== 'undefined';
-  const needHipW = (fightL==='hipmouse' || fightR==='hipmouse')
-    && typeof HIP_CHOICE_WEIGHTS === 'undefined' && typeof TT_PLAYER !== 'undefined';
+  /* 「tt玩家·HIP」= 纯 L1（零学习参数）⇒ 不需要权重文件 */
   if(needW) TT_PLAYER.ensureWeights().then(go).catch(()=>go());
-  else if(needHipW) TT_PLAYER.ensureHipChoiceWeights().then(go).catch(()=>go());
   else go();
 }
 function resetMatch(){
