@@ -977,7 +977,13 @@
 
         var hot = null;
 
+        var tipBox = null;
         function placeTip(px, py) {
+            // 位置要变，先把上一处「被浮层压住」的名字放出来
+            if (labGroup) {
+                var prev = labGroup.querySelectorAll('.is-under-tip');
+                for (var q = 0; q < prev.length; q++) prev[q].classList.remove('is-under-tip');
+            }
             var w = host.clientWidth || 320;
             var tw = tip.offsetWidth || 180, th = tip.offsetHeight || 44;
             // 让开光标底下的那个点：默认放右上，靠边就翻到左边 / 下面
@@ -988,11 +994,29 @@
             var y = below ? py + 16 : py - 12;
             tip.style.transform = 'translate(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px) translate(0,' +
                 (below ? '0' : '-100%') + ')';
+            // 记下浮层占的方块，下面用它让开成员名字
+            tipBox = { x0: x, x1: x + tw, y0: below ? y : y - th, y1: below ? y + th : y };
+        }
+        // 浮层底下压着的名字先藏起来，等移开再露出来（名字比标签重要）
+        function hideUnderTip() {
+            if (!labGroup || !tipBox) return;
+            var els = [].slice.call(labGroup.querySelectorAll('.ds-net-lab'));
+            els.forEach(function (el) {
+                if (el.classList.contains('is-self')) return;
+                var b;
+                try { b = el.getBBox(); } catch (err) { return; }
+                if (b.width <= 0) return;
+                if (b.x + b.width > tipBox.x0 - 3 && b.x < tipBox.x1 + 3 &&
+                    b.y + b.height > tipBox.y0 - 3 && b.y < tipBox.y1 + 3) {
+                    el.classList.add('is-under-tip');
+                }
+            });
         }
         function showTip(html, px, py) {
             tip.innerHTML = html;
             tip.classList.add('is-on');
             placeTip(px, py);
+            hideUnderTip();
         }
         function clear() {
             if (!hot) return;
@@ -1000,7 +1024,7 @@
             svg.classList.remove('is-focus');
             nodeEls.forEach(function (el) { el.classList.remove('is-hot', 'is-near'); });
             lineEls.forEach(function (el) { el.classList.remove('is-hot'); });
-            labEls.forEach(function (el) { el.classList.remove('is-near', 'is-self'); });
+            labEls.forEach(function (el) { el.classList.remove('is-near', 'is-self', 'is-under-tip'); });
             // 悬停时临时补的名字整批撤掉
             if (labGroup) {
                 var dyn = labGroup.querySelectorAll('.is-hot-lab');
@@ -1009,7 +1033,7 @@
             tip.classList.remove('is-on');
         }
         function focusNode(i, px, py) {
-            if (hot && hot.t === 'n' && hot.i === i) { placeTip(px, py); return; }
+            if (hot && hot.t === 'n' && hot.i === i) { placeTip(px, py); hideUnderTip(); return; }
             clear();
             hot = { t: 'n', i: i };
             svg.classList.add('is-focus');
@@ -1032,7 +1056,7 @@
                 '</span>', px, py);
         }
         function focusEdge(i, px, py) {
-            if (hot && hot.t === 'e' && hot.i === i) { placeTip(px, py); return; }
+            if (hot && hot.t === 'e' && hot.i === i) { placeTip(px, py); hideUnderTip(); return; }
             clear();
             hot = { t: 'e', i: i };
             svg.classList.add('is-focus');

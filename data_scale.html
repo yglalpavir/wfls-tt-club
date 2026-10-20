@@ -98,6 +98,8 @@
         .ds-net-svg.is-focus .ds-net-lab.is-near { opacity:1; }
         /* 悬停对象自己的名字由浮层接管，避免同一串字叠在浮层上 */
         .ds-net-svg.is-focus .ds-net-lab.is-self { opacity:0; }
+        /* 浮层盖住的名字先让位 */
+        .ds-net-svg.is-focus .ds-net-lab.is-under-tip { opacity:0; }
         /* 悬停时临时补出来的名字：进场淡入，且不受压暗影响 */
         .ds-net-svg.is-focus .ds-net-lab.is-hot-lab { opacity:1; animation:dsLabIn .18s ease both; }
         @keyframes dsLabIn { from { opacity:0; } to { opacity:1; } }

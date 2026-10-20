@@ -1,0 +1,5 @@
+[   13249ms] TypeError: Cannot read properties of null (reading 'decode')
+    at http://127.0.0.1:8768/tt_game/js/tt-player.js:503:27
+    at Object.decideServe (http://127.0.0.1:8768/tt_game/js/tt-player.js:505:11)
+    at startToss (http://127.0.0.1:8768/tt_game/js/rules.js:128:28)
+    at http://127.0.0.1:8768/tt_game/js/rules.js:95:47
