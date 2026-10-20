@@ -57,6 +57,14 @@ const HIP_SKILL = (() => {
     /* 落点 */
     landX:       0.55,   // 宽球时期望的落点（±，台半宽 0.7625）
     landXMid:    0.55,   // 中球时期望的落点
+    /* ★ aimNat：落点目标用「自然落点 + 偏移」表达（1），还是老的「绝对落点 ±landX」（0）。
+     *   自然落点 = 0.55·拍位x + 0.30·拍速x（不挥拍时的落点）。
+     *   落点公式里拍位被接触窗口锁在球附近（±0.14m）⇒ 绝对落点只能靠挥拍实现，
+     *   而挥拍会让拍子在触球前漂移 ≈0.065·vCmd（vCmd 上限 0.8 ⇒ 漂移 0.052m）
+     *   ⇒ 「为了控落点而挥拍」≈ 拿够球率换落点。实测（vs hell，40 局）：
+     *   绝对落点 ±0.55 ⇒ 69.6%；自然落点 ±0.30 ⇒ 87.9%。 */
+    aimNat:      1,      // 1 = 落点目标 = 自然落点 + landBias
+    landBias:    0.0,    // 自然落点的偏移（米）；正 = 往 +x 打
     aimShiftGain:0.5,    // 落点偏移的补偿强度（1=全补偿）
     aimTau:      0.35,   // 估算飞行时间（把速度差换算成落点差）
     wideThresh:  0.25,   // |bx| 超过它算「宽球」
@@ -69,7 +77,19 @@ const HIP_SKILL = (() => {
     /* 挥拍 */
     swingLead:   0.05,   // 进入挥拍阶段的提前量（秒）
     swingEff:    0.45,   // 期望落点 → 需要的拍速 的经验折算
-    maxSwing:    2.0,    // 拍速上限（命令值）
+    /* ★ maxSwing 必须压小：挥拍命令 tx = px + hold + vCmd/PACE 会让拍子在
+     *   触球前漂移 ≈ (vCmd/18)(1−e^{−18T}) ≈ 0.065·vCmd。vCmd=2.0 ⇒ 漂移 0.13m
+     *   ≈ 整个接触窗口（±0.14m）⇒ 「为了控落点而挥拍」直接等于「够不到」。
+     *   0.8 ⇒ 漂移 ≤0.05m，落点可调范围仍有 ±0.18~0.26m。 */
+    maxSwing:    0.8,    // 拍速上限（命令值）
+    /* L2（意图层）提议的安全闸门 */
+     intentMyLo:  0.50,   // 意图给的 my 只能落在这个安全带（实机扫描：0.42 时 67% 的球自己出界，0.50/0.58 都是安全点）
+    intentMyHi:  0.58,
+    intentMyFixed: 0.54,   // ≥0 时固定 my（实机扫描「意图路径」的深度带用；-1 = 用意图给的深度）
+    intentAimR:  0.30,   // 意图落点与「自然落点」的最大偏移（超出就回落）
+    intentVerify:1,      // 触球前用 resolveHit+simulateFull 复核（非法就回落）
+    intentVerifyTau: 0.05,   // 复核触发时刻（触球前多少秒内做一次，每板只判一次）
+    intentVerifyMargin: 0.0, // 复核时的台面安全余量（落点离台边太近就丢弃意图）
     aimTrim:     0.6,    // 挥拍阶段：落点律相对追位律的权重
     /* 深度/手法 */
     myDrive:     0.54,   // 常规击球的 my（→ 落点深度 + 前冲力度）
@@ -212,11 +232,50 @@ const HIP_SKILL = (() => {
       tau: hit.t,
       inSpd: Math.abs(hit.vz),
       inVx: hit.vx,
+      vel: { x: hit.vx, y: hit.vy, z: hit.vz },   // 触球瞬间的球速（复核出球用）
       bz: bz,                 // 落台点 z
       tBounce: tB,            // 落台时刻
       vzPost: Math.abs(bvz),  // 落台后的 vz
       targetZ: targetZ,       // 拍面目标 z
     };
+  }
+
+  /* ---- 意图复核：L2 提议的出球在**预测接触点**上真的合法吗？----
+   * 用实机同一份出球核（SIM.resolveHit）+ 同一份轨迹校验（SIM.simulateFull）
+   * 把「这一拍按这个意图打出去会落在哪、会不会出界」算出来。
+   * 非法（出界/下网）就丢弃 L2 的提议，回落 L1 的默认 —— 这就是
+   * 「L2 只提议、L1 裁决」的第二道闸门。 */
+  function verifyIntent(ctl, ctx, rng){
+    if(!SIM_ || !SIM_.resolveHit || !SIM_.simulateFull) return true;
+    const aimZ = AIM.zDeep + (AIM.zShort - AIM.zDeep) * ctl.my * ctl.my;
+    let r;
+    try{
+      r = SIM_.resolveHit({
+        stroke: 'forehand',
+        pos: { x: ctx.bx, y: ctx.by, z: ctx.bz },
+        vel: ctx.vel || { x: ctx.vx || 0, y: ctx.vy || 0, z: ctx.vz || 0 },
+        spin: { x: ctx.sx || 0, y: ctx.sy || 0, z: 0 },
+        swipe: ctx.svx || 0,
+        fwd: SIM_.fwdOf ? SIM_.fwdOf(ctx.svz || 0) : 0,
+        mouseNy: ctl.my,
+        aim: { x: ctl.aimX, z: aimZ, gx: ctx.px },
+        ctrlHold: !!ctl.ctrl,
+        dir: -1, applyArcAdj: true, receive: false, rng: rng || Math.random,
+      });
+    }catch(e){ return true; }
+    if(!r || !r.outVel) return false;
+    let land;
+    try{
+      land = SIM_.simulateFull({ x: ctx.bx, y: ctx.by, z: ctx.bz }, r.outVel, 'player',
+                                { x: r.spin.x, y: r.spin.y, z: 0 }, rng || Math.random);
+    }catch(e){ return true; }
+    if(!land || !land.ok) return false;
+    const L = land.landing || { x: 0, z: 0 };
+    /* 台面余量：横向半宽 0.7625，纵向半长 1.37（再留一点安全余量） */
+    const mg = ctx.margin != null ? ctx.margin : 0;
+    if(Math.abs(L.x) > 0.7625 - 0.01 - mg || Math.abs(L.z) > 1.37 - 0.01 - mg) return false;
+    ctx.landX = L.x; ctx.landZ = L.z;
+    return true;
   }
 
   /* ---- 控制器 ----
@@ -250,6 +309,7 @@ const HIP_SKILL = (() => {
         S.shots++;
         S.rtop = (SIM_ && SIM_.relTopOf) ? SIM_.relTopOf(obs.sx || 0, vz) : (obs.sx || 0);
         S.inSpd = Math.abs(vz);
+        S.intentChecked = false;      // 每板重置（第三道闸门每板只判一次）
         if(cfg.alternate) S.side = -S.side;
         S.aimLocked = false;
       }else if(!incoming){
@@ -270,6 +330,7 @@ const HIP_SKILL = (() => {
         S.bounceZ = ct.bz;
         S.tBounce = ct.tBounce; S.vzPost = ct.vzPost; S.padZ = ct.targetZ;
         S.inVx = ct.inVx;
+        S.vel = ct.vel;                 // 触球瞬间的球速（意图复核用）
         /* 来球**触球时**的速度（不是出球瞬间的）：弹跳时上旋 kick 会把 vz 顶高
          * （sx=389 时 +6.2m/s，实测来球 5.4 → 14.6m/s），用出球瞬间的速度会
          * 严重低估「这一板要收多少」。meet 点就是弹起点，速度已是 kick 之后的。 */
@@ -288,11 +349,29 @@ const HIP_SKILL = (() => {
        *   实测预测 bx=-0.74 而锁定的 want 却是 +0.46），于是落点纠偏往反方向
        *   拉 —— 挥拍阶段 tx 从 -0.74 跳到 -0.58，把拍子从球上拽开，
        *   92% 的球变成「够不到」（lose:out）。 */
-      if(intent){ S.wide = false; S.want = cl(intent.aimX, -0.62, 0.62); }
+      if(intent){
+        S.wide = false;
+        /* ★ 第一道闸门：意图落点不得离「自然落点」太远。
+         * 自然落点 = 0.55·拍位x + 0.30·拍速x（不挥拍时就是这个）。
+         * 偏得越远，L1 要的拍速越大 → 拍子在触球前漂移越大 → 直接够不到。
+         * 实测：学生给「球在 +0.3、落点 −0.62」⇒ 100% 失分且全是够不到。 */
+        const natAim = cl(AIM.xFromPos * (obs.px || 0) + AIM.xFromSwipe * (obs.svx || 0), -0.62, 0.62);
+        let w = cl(intent.aimX, -0.62, 0.62);
+        const d = w - natAim;
+        if(Math.abs(d) > cfg.intentAimR) w = natAim + cl(d, -cfg.intentAimR, cfg.intentAimR);
+        S.want = w;
+      }
       else{
-        const wide = Math.abs(S.bx) > cfg.wideThresh;
-        S.wide = wide;
-        S.want = (wide ? (S.bx < 0 ? -1 : 1) : S.side) * (wide ? cfg.landX : cfg.landXMid);
+        const natAim = cl(AIM.xFromPos * (obs.px || 0) + AIM.xFromSwipe * (obs.svx || 0), -0.62, 0.62);
+        if(cfg.aimNat){
+          /* 自然落点 + 偏移（默认）：不为了控落点而挥拍 ⇒ 拍子不漂离球。 */
+          S.wide = false;
+          S.want = cl(natAim + cfg.landBias, -0.62, 0.62);
+        }else{
+          const wide = Math.abs(S.bx) > cfg.wideThresh;
+          S.wide = wide;
+          S.want = (wide ? (S.bx < 0 ? -1 : 1) : S.side) * (wide ? cfg.landX : cfg.landXMid);
+        }
       }
       /* 记住这一球来自哪一侧 → 空档时预判站到反侧 */
       if(S.bx < -0.12) S.lastSide = -1; else if(S.bx > 0.12) S.lastSide = 1;
@@ -310,7 +389,28 @@ const HIP_SKILL = (() => {
       /* ── 手法（下旋搓 / 挑 / 常规） ── */
       let my = cfg.myDrive, ctrl = false, isPushCase = false;
       if(intent){
-        my = cl(intent.my, 0.15, 0.95); ctrl = !!intent.ctrl; isPushCase = !!intent.ctrl;
+        /* ★ 第二道闸门：my 夹到实机验证过的安全带。
+         * 实机扫描（40 局/组）：my=0.38 时 67% 的球自己出界，my=0.54 只 2%。
+         * 搓球（ctrl）用自己的 my（搓球的深度另算），其余夹进安全带。 */
+        if(intent.ctrl){ my = cl(intent.my, 0.15, 0.95); }
+        else {
+          my = cl(intent.my, cfg.intentMyLo, cfg.intentMyHi);
+          /* ★ 固定 my（扫描用）：intentMyFixed ≥ 0 时无视意图给的深度，
+           *   用来在**实机**上测「意图路径的安全深度带」。
+           *   （注意：pz 通道上线后，意图路径里的 my 只管出球深度/弧线，
+           *     不再管拍面深度 —— 之前用 L1 路径测出来的 [0.50,0.58] 不能直接套。） */
+          if(cfg.intentMyFixed >= 0) my = cfg.intentMyFixed;
+          /* ★ 安全下限：L1 的「快球回短」逻辑（mySpeedGain）在意图路径上被跳过了，
+           *   但快球本来就顶死了出球速度上限 → 固定深度必然打长出界。
+           *   实机：意图路径 out 19.2%（纯 L1 只有 1%）。
+           *   ⇒ 意图给的 my 只能在这个下限之上。 */
+          if(cfg.mySpeedGain > 0){
+            const t = cl((S.inSpd - cfg.mySpeedRef) / Math.max(cfg.mySpeedSpan, 0.1), 0, 1);
+            const floor = cfg.myDrive + cfg.mySpeedGain * t;
+            if(floor > my) my = cl(floor, cfg.intentMyLo, cfg.intentMyHi);
+          }
+        }
+        ctrl = !!intent.ctrl; isPushCase = !!intent.ctrl;
       }else{
       if(S.rtop < cfg.pushRtop){                 // 下旋来球
         if(S.by < cfg.pushHeight){ ctrl = !!cfg.pushCtrl; my = cfg.myPush; isPushCase = true; }
@@ -328,6 +428,29 @@ const HIP_SKILL = (() => {
         my = cfg.myApproach;
       }
       my = cl(my, 0.15, 0.95);
+      }
+
+      /* ★ 第三道闸门（**两条路径都生效**）：触球前把「这一拍打出去会落在哪」
+       *   算一遍（实机同一份 resolveHit + simulateFull）。出界/下网 ⇒ 落点回落
+       *   「自然落点」；意图路径额外回落 my/ctrl（意图给的深度可能是错的）。
+       *   只在触球前 0.05s 内做（每帧都做太贵，且早期预测还不准）。
+       * ★ 2026-10-20 修：这段原本写在 else 分支里（只在「没有意图」时可达），
+       *   于是对意图路径**从来没有生效过**——三道闸门实际只落了两道。
+       *   后来又把它扩展到 L1 路径（L1 也要复核自己的落点）。 */
+      if(cfg.intentVerify && S.hasMeet && S.tau < cfg.intentVerifyTau && !S.intentChecked){
+        S.intentChecked = true;
+        const ok = verifyIntent({ my: my, ctrl: ctrl, aimX: S.want },
+          { bx: S.bx, by: S.by, bz: S.bz, vel: S.vel, svx: obs.svx, svz: obs.svz,
+            px: obs.px, sx: obs.sx, sy: obs.sy, margin: cfg.intentVerifyMargin }, Math.random);
+        if(!ok){
+          /* 落点回落「自然落点」（任何路径都安全：不做额外挥拍）。 */
+          S.want = cl(AIM.xFromPos * (obs.px || 0) + AIM.xFromSwipe * (obs.svx || 0), -0.62, 0.62);
+          /* 意图路径还要回落深度/手法（意图给的深度可能是错的）。 */
+          if(intent){ my = cfg.myDrive; ctrl = false; }
+          S.verifyFail = (S.verifyFail || 0) + 1;
+        }else{
+          S.verifyOk = (S.verifyOk || 0) + 1;
+        }
       }
 
       /* ── 落点控制（闭环）──

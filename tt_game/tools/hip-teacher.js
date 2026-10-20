@@ -85,19 +85,27 @@ function scoreIntent(id, ctx){
   const land = SIM.simulateFull(pos, r.outVel, 'player', { x: r.spin.x, y: r.spin.y, z: 0 }, ctx.rng);
   if(!land.ok) return { s: -12, legal: 0, reason: land.reason };
   const L = land.landing;
-  /* 飞行时间 → 对手够不够得到 */
+  /* 飞行时间 → 对手够不够得到（连续概率，不是 0/0.5/1 三档） */
   const dist = Math.hypot(L.x - ctx.bx, L.z - ctx.bz);
   const hSpd = Math.hypot(r.outVel.x, r.outVel.z) || 1;
   const flightT = dist / hSpd;
   const reachT = Math.abs(L.x - ctx.ox) / OPP_SPEED;
   const availT = flightT + OPP_REACT;
-  const pMiss = cl(0.5 + (availT - reachT) / 0.20, 0, 1);
-  const depthQ = cl((Math.abs(L.z) - 0.45) / 0.8, 0, 1);
-  const crossQ = (Math.abs(L.x - ctx.ox) > 0.25) ? 1 : 0;
-  const margin = Math.min(0.7625 - Math.abs(L.x), 1.37 - Math.abs(L.z));
-  const risk = cl((0.10 - margin) / 0.10, 0, 1);
-  const s = 3.0 * pMiss + 0.7 * depthQ + 0.6 * crossQ - 1.2 * risk;
-  return { s, legal: 1, pMiss, land: L, mode: r.mode, margin };
+  const pMiss = 1 / (1 + Math.exp(-(availT - reachT) / 0.10));
+  /* 离对手越远越好（连续） */
+  const qFar = cl(Math.abs(L.x - ctx.ox) / 0.85, 0, 1);
+  /* 深度：落在对方底线附近最好（太短会被顶住，太深给时间） */
+  const az = Math.abs(L.z);
+  const qDeep = az < 0.45 ? 0 : (az > 1.35 ? cl((1.45 - az) / 0.20, 0, 1)
+                           : (az <= 1.05 ? (az - 0.45) / 0.60 : (1.35 - az) / 0.30));
+  /* 球速：快球更难被回击 */
+  const spd = Math.hypot(r.outVel.x, r.outVel.y, r.outVel.z);
+  const qSpeed = cl(spd / 6.5, 0, 1);
+  /* 风险：贴边（出界/下网已在 simulateFull 里判死，这里只罚「擦边」） */
+  const margin = Math.min(0.7625 - Math.abs(L.x), 1.37 - az);
+  const risk = cl((0.12 - margin) / 0.12, 0, 1);
+  const s = 2.4 * pMiss + 1.2 * qFar + 1.0 * qDeep + 0.7 * qSpeed - 1.6 * risk;
+  return { s, legal: 1, pMiss, land: L, mode: r.mode, margin, spd };
 }
 
 function main(){
@@ -142,18 +150,38 @@ function main(){
             if(sc.s > bestS){ bestS = sc.s; best = id; }
           }
           if(best >= 0 && bestS > -11){
-            /* softmax → soft label */
-            const probs = new Float64Array(HIP_INTENT.N_INTENT);
-            let sum = 0;
+            /* ★ 标签改成**按维度分头**的软标签（place/depth/stroke/ctrl）。
+             *   一次学 336 路联合 softmax 失败过：教师在 ~110 个候选上的分差
+             *   太小，软标签几乎是平的（平均最大概率 0.026），学生 top-1 只有 16.9%。
+             *   分头后每个头在自己的维度上做 softmax，标签锐利且可学。 */
+            const slices = HIP_INTENT.headSlices();
+            const headScores = slices.map(sl => new Float64Array(sl.n).fill(-1e9));
             for(const id of cands){
-              const e = Math.exp((scores[id] - bestS) / temp);
-              probs[id] = e; sum += e;
+              const d = HIP_INTENT.decode(id);
+              const vals = [d.place, d.depth, d.stroke, d.ctrl ? 1 : 0];
+              for(let h = 0; h < slices.length; h++){
+                const v = vals[h];
+                if(scores[id] > headScores[h][v]) headScores[h][v] = scores[id];
+              }
             }
-            for(const id of cands) probs[id] /= (sum || 1);
+            const ph = {};
+            for(let h = 0; h < slices.length; h++){
+              const sl = slices[h], arr = headScores[h];
+              let mx = -Infinity;
+              for(let v = 0; v < sl.n; v++) if(arr[v] > mx) mx = arr[v];
+              let sum = 0;
+              const p = new Float64Array(sl.n);
+              for(let v = 0; v < sl.n; v++){
+                if(arr[v] <= -1e8){ p[v] = 0; continue; }   // 该值在本次候选里不合法
+                const e = Math.exp((arr[v] - mx) / temp); p[v] = e; sum += e;
+              }
+              for(let v = 0; v < sl.n; v++) p[v] /= (sum || 1);
+              ph[sl.key] = Array.from(p, x => Math.round(x * 1e4) / 1e4);
+            }
             const f = HIP_INTENT.features(Object.assign({}, obs, { rtop }));
             const line = JSON.stringify({
               f: Array.from(f, v => Math.round(v * 1e4) / 1e4),
-              p: Array.from(probs, v => Math.round(v * 1e4) / 1e4),
+              ph,
               top: best,
               meta: { opp: oppTags[0], bx: +ctx.bx.toFixed(3), by: +ctx.by.toFixed(3),
                       tau: +ctx.tau.toFixed(3), ox: +ctx.ox.toFixed(3), rtop: Math.round(rtop),

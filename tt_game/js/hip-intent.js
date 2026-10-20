@@ -182,6 +182,34 @@ const HIP_INTENT = (() => {
    *   { sizes:[28,96,128,128,336], w:[扁平 float32], meta:{...} }
    * 扁平数组 = 逐层 [W(行优先 out×in) | b(out)] 拼接。
    * 参数约 3.6 万 → fp32 约 145KB（比 1904 维 DQN 的 9.7MB 小 60 倍）。 */
+  /* ================= L2 策略网络：4 个头 =================
+   * 一次学 336 路联合 softmax 失败过：教师在 ~110 个候选上的分差太小，
+   * 软标签几乎是平的（实测平均最大概率 0.026、熵 4.24 ≈ 均匀 5.82），
+   * 学生学到的 top-1 只有 16.9%（= 噪声水平）。
+   * 改成**按维度分头**：每个头在自己那一维上做 softmax，
+   * 标签由「该维度上的边际最优」给出（比 336 路联合 argmax 稳得多）。
+   *   落点 7 / 深度 4 / 手法 6 / ctrl 2 = 19 个输出单元。
+   * 网络：28 → 96 → 128 → 128 → 19（ReLU 隐层，输出层线性）。 */
+  const HEADS = [
+    { key: 'place',  n: 7, of: (id) => decode(id).place },
+    { key: 'depth',  n: 4, of: (id) => decode(id).depth },
+    { key: 'stroke', n: 6, of: (id) => decode(id).stroke },
+    { key: 'ctrl',   n: 2, of: (id) => (decode(id).ctrl ? 1 : 0) },
+  ];
+  const N_OUT_HEAD = 19;
+  function headSlices(){
+    let off = 0;
+    return HEADS.map(h => { const s = { key: h.key, off, n: h.n }; off += h.n; return s; });
+  }
+  /* 4 个头的 argmax → 意图 id */
+  function fromHeads(sel){
+    const place = Math.max(0, Math.min(6, sel[0] | 0));
+    const depth = Math.max(0, Math.min(3, sel[1] | 0));
+    const stroke = Math.max(0, Math.min(5, sel[2] | 0));
+    const ctrl = sel[3] ? 1 : 0;
+    return encode(place, depth, stroke, ctrl);
+  }
+
   function forward(weights, feats){
     const sizes = weights.sizes, w = weights.w;
     let off = 0, a = feats, out = null;
@@ -209,6 +237,27 @@ const HIP_INTENT = (() => {
     for(let i = 0; i < o.length; i++) if(o[i] > bv){ bv = o[i]; bi = i; }
     return bi;
   }
+  /* ---- 逐头 argmax（place/depth/stroke/ctrl 各取自己的最大值）----
+   * ★ 2026-10-20 修：实机接线一直用的是全局 argmax（19 维里取一个最大），
+   *   然后把那个**数字**喂给 fromHeads()——而 fromHeads 期望的是
+   *   [place, depth, stroke, ctrl] 四个下标。于是 place/depth/stroke 全部退化成 0，
+   *   意图永远是 id 0（place=-0.62 / depth=0.45 / drive）。
+   *   ⇒ 学生从头到尾**没有真正参与过决策**，实测到的「意图层」效果全是闸门的效果。
+   * 本函数返回 [placeIdx, depthIdx, strokeIdx, ctrlIdx]，可直接喂 fromHeads()。 */
+  function argmaxHeads(weights, feats){
+    const o = forward(weights, feats);
+    const sel = [];
+    for(const h of headSlices()){
+      let bi = 0, bv = -Infinity;
+      for(let i = 0; i < h.n; i++){ const v = o[h.off + i]; if(v > bv){ bv = v; bi = i; } }
+      sel.push(bi);
+    }
+    return sel;
+  }
+  /* ---- 一步到位：特征 → 意图 id（实机/仿真统一走这个）---- */
+  function decide(weights, feats){
+    return fromHeads(argmaxHeads(weights, feats));
+  }
   function softmax(logits){
     let mx = -Infinity;
     for(let i = 0; i < logits.length; i++) if(logits[i] > mx) mx = logits[i];
@@ -222,8 +271,9 @@ const HIP_INTENT = (() => {
   return {
     PLACEMENTS, PLACEMENT_NAMES, DEPTHS, DEPTH_NAMES, STROKES, STROKE_NAMES,
     N_PLACE, N_DEPTH, N_STROKE, N_CTRL, N_INTENT, N_FEAT,
+    HEADS, N_OUT_HEAD, headSlices, fromHeads,
     encode, decode, get, mask, intentToControls, representative, features, rtopOf,
-    forward, argmax, softmax,
+    forward, argmax, argmaxHeads, decide, softmax,
     STROKE_PUSH: 3, STROKE_LIFT: 4, STROKE_SMASH: 2,
   };
 })();

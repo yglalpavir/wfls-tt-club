@@ -76,9 +76,24 @@ function runGame(brain, opp, rng, firstServer, buckets, shotStat){
   return { sA, sB };
 }
 
-function runOne(cfg, oppTag, games, seed, useDqn){
+function runOne(cfg, oppTag, games, seed, useDqn, useIntent){
   let brain;
-  if(useDqn){
+  if(useIntent){
+    const { HIP_INTENT } = require(path.join(ROOT, 'js', 'hip-intent.js'));
+    const HIP_SKILL = require(path.join(ROOT, 'js', 'hip-skill.js')).HIP_SKILL;
+    const W = require(path.join(ROOT, 'js', 'hip-weights.js'));
+    const net = W.HIP_WEIGHTS || W;
+    const ctl = HIP_SKILL.makeController(cfg);
+    brain = {
+      act(obs){
+        const f = HIP_INTENT.features(obs);
+        const id = HIP_INTENT.decide(net, f);
+        const c = HIP_INTENT.intentToControls(id, obs);
+        return ctl.plan(obs, c);
+      },
+      credit(){}
+    };
+  }else if(useDqn){
     const IA = require(path.join(ROOT, 'js', 'input-agent.js'));
     const baked = require(path.join(ROOT, 'js', 'input-weights.js'));
     const agent = IA.createInputAgent({ stateSize: IA.OBS_N, nActions: IA.ACT_N,
@@ -131,6 +146,7 @@ function main(){
   const seed = parseInt(argOf('--seed', '20261004'), 10);
   const jsonOut = argOf('--json', '');
   const useDqn = process.argv.includes('--dqn');
+  const useIntent = process.argv.includes('--intent');
   const base = parseSets();
 
   const gridArg = argOf('--grid', '');
@@ -143,7 +159,7 @@ function main(){
     const rows = [];
     for(const v of vals){
       const cfg = Object.assign({}, base, { [key]: v });
-      const r = runOne(cfg, oppTag, games, seed, useDqn);
+      const r = runOne(cfg, oppTag, games, seed, useDqn, useIntent);
       rows.push({ key, v, rate: r.rate, ci: r.ci, avgShots: r.avgShots, buckets: r.buckets });
       console.log(`${key}=${v}\t分点率=${(r.rate * 100).toFixed(1)}% ±${(r.ci * 100).toFixed(1)}\t均板=${r.avgShots.toFixed(1)}\t${fmtBuckets(r.buckets)}`);
     }
@@ -153,7 +169,7 @@ function main(){
     return;
   }
 
-  const r = runOne(base, oppTag, games, seed, useDqn);
+  const r = runOne(base, oppTag, games, seed, useDqn, useIntent);
   const dt = ((Date.now() - t0) / 1000).toFixed(1);
   console.log(`对手=${oppTag} 脑=${useDqn ? 'DQN(烘焙权重)' : 'HIP-L1'} 局数=${games} seed=${seed} 用时=${dt}s`);
   console.log(`分点率 = ${(r.rate * 100).toFixed(1)}% ± ${(r.ci * 100).toFixed(1)}  （${r.pA} : ${r.pB}，共 ${r.pts} 分）`);

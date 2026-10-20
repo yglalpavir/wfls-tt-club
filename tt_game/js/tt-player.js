@@ -42,9 +42,13 @@ const TT_PLAYER = (() => {
   const cl = (v, a, b) => v < a ? a : (v > b ? b : v);
   const PADDLE_Y_ = C_.PADDLE_Y || 0.91;
 
-  /* ---- 控制器选择：'dqn'（1904 维输入级 DQN）/ 'hip'（解析技能控制器 L1）----
-   * 两条路都只产出 {tx, my, ctrl}，共用同一套 padControl / resolveHit 物理，
-   * 所以实机表现可直接对比（tools/live-match.js --controller hip|dqn）。 */
+  /* ---- 控制器选择 ----
+   *   'dqn'        1904 维输入级 DQN（逐帧 argmax + 横向拦截先验）
+   *   'hip'        HIP L1 解析技能控制器（零学习参数）
+   *   'hip-intent' HIP L2：L1 负责「够得到」，L2 策略网络负责「往哪打」
+   *                （L2 输出意图 → intentToControls → 仍交给 L1 做闭环）
+   * 三条路都只产出 {tx, my, ctrl}，共用同一套 padControl / resolveHit 物理，
+   * 所以实机表现可直接对比（tools/live-match.js --controller dqn|hip|hip-intent）。 */
   let controller = 'dqn';
   const hipCtls = { player: null, ai: null };
   function hipCtl(side){
@@ -55,11 +59,41 @@ const TT_PLAYER = (() => {
     return hipCtls[side];
   }
   function setController(kind){
-    controller = (kind === 'hip') ? 'hip' : 'dqn';
-    if(controller === 'hip'){ hipCtls.player = null; hipCtls.ai = null; }
+    controller = (kind === 'hip') ? 'hip' : (kind === 'hip-intent' ? 'hip-intent' : 'dqn');
+    if(controller !== 'dqn'){ hipCtls.player = null; hipCtls.ai = null; }
     return controller;
   }
   function getController(){ return controller; }
+
+  /* ---- L2 权重懒加载（js/hip-weights.js，约 80KB）---- */
+  let hipWeightsPromise = null;
+  function ensureHipWeights(){
+    if(typeof HIP_WEIGHTS !== 'undefined') return Promise.resolve();
+    if(!hipWeightsPromise){
+      hipWeightsPromise = new Promise((resolve, reject) => {
+        if(typeof document === 'undefined'){ reject(new Error('no-document')); return; }
+        const s = document.createElement('script');
+        s.src = 'js/hip-weights.js';
+        s.onload = () => resolve();
+        s.onerror = () => { hipWeightsPromise = null; reject(new Error('hip-weights.js 加载失败')); };
+        document.head.appendChild(s);
+      });
+    }
+    return hipWeightsPromise;
+  }
+
+  /* ---- L2 决策：obs → 特征 → 网络 → 意图 → 控制量 ---- */
+  function hipIntentControls(obs){
+    if(typeof HIP_INTENT === 'undefined' || typeof HIP_WEIGHTS === 'undefined') return null;
+    try{
+      const feats = HIP_INTENT.features(obs);
+      /* ★ 逐头 argmax（place/depth/stroke/ctrl 各取自己的最大值）→ 意图 id。
+       *   早先误用全局 argmax（19 维里取一个最大）再喂 fromHeads，
+       *   四个下标全退化成 0 ⇒ 意图恒为 id 0，学生从未参与决策。 */
+      const id = HIP_INTENT.decide(HIP_WEIGHTS, feats);
+      return HIP_INTENT.intentToControls(id, obs);
+    }catch(e){ return null; }
+  }
 
   /* ---- 从烘焙权重初始化推理智能体（与训练存档同结构） ---- */
   function init(){
@@ -93,8 +127,9 @@ const TT_PLAYER = (() => {
     }
   }
   function isReady(){
-    /* hip 控制器不依赖权重：解析技能层没有任何学习参数 */
+    /* hip / hip-intent 控制器不依赖 DQN 权重 */
     if(controller === 'hip') return typeof HIP_SKILL !== 'undefined';
+    if(controller === 'hip-intent') return typeof HIP_SKILL !== 'undefined' && typeof HIP_INTENT !== 'undefined';
     return ready && !!agent;
   }
 
@@ -191,7 +226,12 @@ const TT_PLAYER = (() => {
       vp.cur = vp.serveLock;
     }else if(frame % DECIDE_SKIP_ === 0){
       const obs = buildObs(side, realPad);
-      if(controller === 'hip'){
+      if(controller === 'hip-intent'){
+        /* L2 给意图（往哪打），L1 负责「够得到」+ 落点闭环 */
+        const hc = hipCtl(side);
+        const ctl = hipIntentControls(obs);
+        vp.cur = (hc && ctl) ? hc.plan(obs, ctl) : { tx: 0, my: 0.5, ctrl: false };
+      }else if(controller === 'hip'){
         /* HIP L1：解析技能控制器。输入是同一份 15 字段 obs（与训练侧同构），
          * 输出同样是 {tx,my,ctrl}，因此实机/训练共用一条物理管线。 */
         const hc = hipCtl(side);
@@ -381,7 +421,7 @@ const TT_PLAYER = (() => {
       svx: realPad.svx, svz: (side === 'player') ? realPad.svz : -realPad.svz,
       tx: vp.cur.tx, my: vp.cur.my, bounced: 0,
     };
-    const d = (controller === 'hip')
+    const d = (controller === 'hip' || controller === 'hip-intent')
       ? (function(){
           const hc = hipCtl(side);
           const s = hc ? hc.serve() : { tx: 0, my: 0.5, top: true, power: 0.6 };
@@ -401,7 +441,7 @@ const TT_PLAYER = (() => {
   /* 本侧当前姿态（physics.js#pushStanceOf 在 ttmouse 玩家侧读它） */
   function getStance(side){ const vp = vpads[side]; return vp ? vp.stance : 'forehand'; }
 
-  return { init, isReady, isTtSide, ttTick, ttHit, reset, ensureWeights, decideServe, getStance,
+  return { init, isReady, isTtSide, ttTick, ttHit, reset, ensureWeights, ensureHipWeights, decideServe, getStance,
            setController, getController,
            get agent(){ return agent; } };
 })();

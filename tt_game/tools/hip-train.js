@@ -1,16 +1,19 @@
 /* =====================================================================
- *  hip-train.js — M2 学生：CE（软标签）蒸馏
+ *  hip-train.js — HIP L2：意图策略网络的**交叉熵蒸馏**训练器
  *
- *  与 DQN 时代的关键差别：
- *    · 损失是**分类**（softmax 交叉熵 / KL），不是 1904 维 MSE ——
- *      phase5 已证伪 MSE + 硬标签在 1904 路输出上（qmax 跑到 1e93）。
- *    · 标签是**软分布**（教师的 softmax），不是 one-hot。
- *    · 样本是「教师搜索出的最优意图」，不是环境回报 ——
- *      所以信用分配跨度只有 1 拍（而不是 500 帧的自举链）。
+ *  数据格式（每行一条 ndjson，由 tools/hip-teacher.js 产出）：
+ *    { f: [28 维特征], ph: { place:[7], depth:[4], stroke:[6], ctrl:[2] }, top: 意图 id }
+ *  —— 标签是**分头**的软标签：每个头在自己的维度上做 softmax（温度由教师定）。
+ *    早期版本用 336 路单头 + 三档离散分数，标签几乎是平的
+ *    （实测平均最大概率 0.026、熵 4.24/5.82），学出来 top1 只有噪声水平 → 必须分头。
  *
- *  用法（cwd = tt_game/）：
- *    node tools/hip-train.js --data data/hip/teacher-v1.ndjson --epochs 30
- *    node tools/hip-train.js --data ... --out js/hip-weights.js --lr 0.002
+ *  网络：28 → 96 → 128 → 128 → 19（4 个头的 logits 拼接）
+ *  损失：4 段各自的 softmax CE 之和（label smoothing + 全局梯度裁剪 + Adam）
+ *
+ *  已知坑（保留注释以免重犯）：
+ *   - 批内梯度累加必须取 g[L]，不能取 g[0]：层间梯度形状不同，
+ *     越界读到 undefined → 整个梯度 NaN → loss 永远 NaN。
+ *   - 隐层 ReLU 导数按**激活值**是否 >0 判定，不能按梯度符号。
  * ===================================================================== */
 'use strict';
 const path = require('path');
@@ -35,10 +38,11 @@ function mulberry32(a){
 }
 const cl = (v, a, b) => (v < a ? a : (v > b ? b : v));
 
-const N_IN = HIP_INTENT.N_FEAT, N_OUT = HIP_INTENT.N_INTENT;
+const N_IN = HIP_INTENT.N_FEAT;
+const N_OUT = HIP_INTENT.N_OUT_HEAD;          // 19 = 7+4+6+2
 const SIZES = [N_IN, 96, 128, 128, N_OUT];
+const HEADS = HIP_INTENT.headSlices();          // [{key,off,n}]
 
-/* ---- 权重：逐层 [W(out×in) 行优先 | b(out)] ---- */
 function initWeights(rng){
   const w = [];
   for(let L = 0; L < SIZES.length - 1; L++){
@@ -56,11 +60,8 @@ function flat(w){
   for(const a of w) for(let i = 0; i < a.length; i++) out.push(a[i]);
   return out;
 }
-
-/* ---- 前向：返回每层的激活 ---- */
 function forward(w, x){
   const acts = [x], nL = SIZES.length - 1;
-  let a = x;
   for(let L = 0; L < nL; L++){
     const nIn = SIZES[L], nOut = SIZES[L + 1];
     const W = w[L * 2], b = w[L * 2 + 1];
@@ -68,44 +69,47 @@ function forward(w, x){
     for(let j = 0; j < nOut; j++){
       let s = b[j];
       const base = j * nIn;
-      for(let i = 0; i < nIn; i++) s += W[base + i] * a[i];
+      for(let i = 0; i < nIn; i++) s += W[base + i] * x[i];
       o[j] = (L === nL - 1) ? s : (s > 0 ? s : 0);
     }
-    acts.push(o); a = o;
+    acts.push(o);
+    x = o;
   }
   return acts;
 }
-/* ---- 反向：交叉熵（软标签）+ label smoothing + 梯度裁剪 ---- */
-function backward(w, acts, p, gradOut){
+
+/* 逐头 softmax：返回 [[{p:[]},...]]（每个头一段） */
+function headSoftmax(logits){
+  const out = [];
+  for(const h of HEADS){
+    let mx = -Infinity;
+    for(let i = 0; i < h.n; i++){ const v = logits[h.off + i]; if(v > mx) mx = v; }
+    let sum = 0;
+    const p = new Float32Array(h.n);
+    for(let i = 0; i < h.n; i++){ const e = Math.exp(logits[h.off + i] - mx); p[i] = e; sum += e; }
+    for(let i = 0; i < h.n; i++) p[i] /= (sum || 1);
+    out.push(p);
+  }
+  return out;
+}
+
+function backward(w, acts, tgt, gradOut){
   const nL = SIZES.length - 1;
   const grads = [];
   for(let L = 0; L < nL; L++) grads.push([new Float32Array(SIZES[L + 1] * SIZES[L]), new Float32Array(SIZES[L + 1])]);
-  /* 输出层：softmax 交叉熵的 dL/dlogits = (softmax(logits) − target) */
+  /* 输出层：逐头 dL/dlogits = (softmax(该头) − 该头目标) */
   const logits = acts[nL];
-  let mx = -Infinity;
-  for(let i = 0; i < N_OUT; i++) if(logits[i] > mx) mx = logits[i];
-  let sum = 0;
-  const sm = new Float32Array(N_OUT);
-  for(let i = 0; i < N_OUT; i++){ const e = Math.exp(logits[i] - mx); sm[i] = e; sum += e; }
-  for(let i = 0; i < N_OUT; i++) sm[i] /= (sum || 1);
-  if(globalThis.__DBG){
-    let nb = 0, np = 0;
-    for(let i = 0; i < N_OUT; i++){ if(!isFinite(sm[i])) nb++; if(p[i] != null && !isFinite(p[i])) np++; }
-    console.log('  [dbg] sm 非有限 ' + nb + '，p 非有限 ' + np + '，sum=' + sum + '，mx=' + mx +
-                '，logits[0..2]=' + logits[0] + ',' + logits[1] + ',' + logits[2] +
-                '，p[0..2]=' + p[0] + ',' + p[1] + ',' + p[2] + '，p.len=' + (p && p.length));
+  const sm = headSoftmax(logits);
+  for(let h = 0; h < HEADS.length; h++){
+    const H = HEADS[h], p = sm[h], t = tgt[h];
+    for(let i = 0; i < H.n; i++){
+      gradOut[H.off + i] = (p[i] - (t && t[i] != null ? t[i] : 0));
+    }
   }
-  for(let i = 0; i < N_OUT; i++) gradOut[i] = (sm[i] - p[i]);   // 批内求和，批末再除以 batch
   for(let L = nL - 1; L >= 0; L--){
     const nIn = SIZES[L], nOut = SIZES[L + 1];
     const gW = grads[L][0], gb = grads[L][1];
-    const dOut = gradOut;
-    if(globalThis.__DBG){
-      let bad = 0; for(let j = 0; j < nOut; j++) if(!isFinite(dOut[j])) bad++;
-      if(bad) console.log('  [dbg] 层 L=' + L + ' 的 dOut 有 ' + bad + ' 个非有限值；前 3 个：' +
-        dOut[0] + ',' + dOut[1] + ',' + dOut[2] + '；acts[L][0]=' + acts[L][0] +
-        '；w[L*2][0]=' + w[L*2][0]);
-    }
+    let dOut = gradOut;
     const dIn = new Float32Array(nIn);
     for(let j = 0; j < nOut; j++){
       const g = dOut[j];
@@ -115,8 +119,7 @@ function backward(w, acts, p, gradOut){
       for(let i = 0; i < nIn; i++) gW[base + i] += g * acts[L][i];
     }
     if(L > 0){
-      /* 隐层：dL/dx = Wᵀ·dOut，再乘 ReLU 导数（按**激活值**是否 >0，
-         不能按梯度符号 —— 梯度负但激活正的情况很常见） */
+      /* 隐层：dL/dx = Wᵀ·dOut，再乘 ReLU 导数（按**激活值**是否 >0） */
       for(let i = 0; i < nIn; i++){
         let s = 0;
         for(let j = 0; j < nOut; j++) s += dOut[j] * w[L * 2][j * nIn + i];
@@ -129,106 +132,122 @@ function backward(w, acts, p, gradOut){
 }
 
 function main(){
-  const dataPath = path.resolve(ROOT, argOf('--data', 'data/hip/teacher-v1.ndjson'));
+  const dataPath = path.resolve(ROOT, argOf('--data', 'data/hip/teacher-v2.ndjson'));
   const outPath = path.resolve(ROOT, argOf('--out', 'js/hip-weights.js'));
-  const epochs = parseInt(argOf('--epochs', '30'), 10);
+  const epochs = parseInt(argOf('--epochs', '40'), 10);
   const lr = parseFloat(argOf('--lr', '0.002'));
   const batch = parseInt(argOf('--batch', '64'), 10);
   const smooth = parseFloat(argOf('--smooth', '0.03'), 10);
   const seed = parseInt(argOf('--seed', '20261004'), 10);
-  const validFrac = parseFloat(argOf('--valid', '0.1'), 10);
+  const validFrac = parseFloat(argOf('--valid', '0.12'), 10);
   const clip = parseFloat(argOf('--clip', '2'), 10);
 
   if(!fs.existsSync(dataPath)){ console.error('数据文件不存在：' + dataPath); process.exit(2); }
   const lines = fs.readFileSync(dataPath, 'utf8').split('\n').filter(Boolean);
   console.log('读入样本 ' + lines.length + ' 条');
-  const data = lines.map(l => JSON.parse(l));
+  const raw = lines.map(l => JSON.parse(l));
+  /* 标签归一化：ph 的每个头 → 概率数组（教师已给概率；若是计数则归一化） */
+  const data = [];
+  let bad = 0;
+  for(const s of raw){
+    if(!s.ph || !s.f){ bad++; continue; }
+    const tgt = [];
+    for(const h of HEADS){
+      const arr = s.ph[h.key];
+      if(!arr){ bad++; tgt.push(null); continue; }
+      let sum = 0; for(const v of arr) sum += v;
+      if(!(sum > 0)){ tgt.push(null); continue; }
+      const p = new Float32Array(h.n);
+      for(let i = 0; i < h.n; i++) p[i] = arr[i] / sum;
+      tgt.push(p);
+    }
+    data.push({ f: s.f, tgt, top: s.top, w: s.w != null ? s.w : 1 });
+  }
+  if(bad) console.log('跳过 ' + bad + ' 条缺标签/缺特征的样本');
+  if(!data.length){ console.error('没有可用样本'); process.exit(2); }
+
   const rng = mulberry32(seed);
-  /* 打散 + 切分 */
   for(let i = data.length - 1; i > 0; i--){ const j = Math.floor(rng() * (i + 1)); const t = data[i]; data[i] = data[j]; data[j] = t; }
   const nValid = Math.max(16, Math.floor(data.length * validFrac));
   const valid = data.slice(0, nValid), train = data.slice(nValid);
-  console.log('训练 ' + train.length + ' / 验证 ' + valid.length);
+  console.log('训练 ' + train.length + ' / 验证 ' + valid.length + '；输出维度 ' + N_OUT + '（' +
+              HEADS.map(h => h.key + ':' + h.n).join(' ') + '）');
 
   const w = initWeights(mulberry32(seed + 1));
-  /* Adam 状态 */
   const m = [], v = [];
   for(let i = 0; i < w.length; i++){ m.push(new Float32Array(w[i].length)); v.push(new Float32Array(w[i].length)); }
   let tStep = 0;
   const b1 = 0.9, b2 = 0.999, eps = 1e-8;
 
   const evalSet = (set) => {
-    let loss = 0, top1 = 0;
+    let loss = 0, n = 0;
+    const top1 = HEADS.map(() => 0), topN = HEADS.map(() => 0);
+    let combo = 0;
     for(const s of set){
       const acts = forward(w, s.f);
       const logits = acts[acts.length - 1];
-      let mx = -Infinity;
-      for(let i = 0; i < N_OUT; i++) if(logits[i] > mx) mx = logits[i];
-      let sum = 0;
-      const sm = new Float32Array(N_OUT);
-      for(let i = 0; i < N_OUT; i++){ const e = Math.exp(logits[i] - mx); sm[i] = e; sum += e; }
-      for(let i = 0; i < N_OUT; i++) sm[i] /= (sum || 1);
-      for(let i = 0; i < N_OUT; i++){
-        const t = s.p[i] * (1 - smooth) + (smooth / N_OUT);
-        if(t > 0) loss -= t * Math.log(Math.max(sm[i], 1e-9));
+      const sm = headSoftmax(logits);
+      const sel = [];
+      for(let h = 0; h < HEADS.length; h++){
+        const H = HEADS[h], p = sm[h];
+        let bi = 0, bv = -Infinity;
+        for(let i = 0; i < H.n; i++) if(p[i] > bv){ bv = p[i]; bi = i; }
+        sel.push(bi);
+        const t = s.tgt[h];
+        if(t){
+          for(let i = 0; i < H.n; i++){
+            const tt = t[i] * (1 - smooth) + (smooth / H.n);
+            if(tt > 0) loss -= tt * Math.log(Math.max(p[i], 1e-9));
+          }
+          /* 该头的 top1：学生的 argmax 是否落在教师 top-3 里（软标签无法严格比 argmax） */
+          let ti = 0, tv = -Infinity;
+          for(let i = 0; i < H.n; i++) if(t[i] > tv){ tv = t[i]; ti = i; }
+          if(bi === ti) top1[h]++;
+          const ord = Array.from({ length: H.n }, (_, i) => i).sort((a, b) => t[b] - t[a]);
+          if(ord.slice(0, 3).indexOf(bi) >= 0) topN[h]++;
+        }
+        n++;
       }
-      let bi = 0, bv = -Infinity;
-      for(let i = 0; i < N_OUT; i++) if(sm[i] > bv){ bv = sm[i]; bi = i; }
-      if(bi === s.top) top1++;
+      if(s.top != null){
+        const id = HIP_INTENT.fromHeads(sel);
+        if(id === s.top) combo++;
+      }
     }
-    return { loss: loss / Math.max(1, set.length), top1: top1 / Math.max(1, set.length) };
+    const N = Math.max(1, set.length);
+    return { loss: loss / N, top1: top1.map(x => x / N), top3: topN.map(x => x / N), combo: combo / N };
   };
+  const fmtEval = (e) => 'loss ' + e.loss.toFixed(4) + '  ' +
+    HEADS.map((h, i) => h.key + ' top1 ' + (e.top1[i] * 100).toFixed(1) + '%').join('  ') +
+    '  组合 top1 ' + (e.combo * 100).toFixed(1) + '%';
 
   const before = evalSet(valid);
-  console.log('训练前：验证 loss ' + before.loss.toFixed(4) + '  top1 ' + (before.top1 * 100).toFixed(1) + '%');
+  console.log('训练前：验证 ' + fmtEval(before));
 
   const t0 = Date.now();
   for(let ep = 0; ep < epochs; ep++){
-    /* 洗牌 */
     for(let i = train.length - 1; i > 0; i--){ const j = Math.floor(rng() * (i + 1)); const t = train[i]; train[i] = train[j]; train[j] = t; }
     for(let s0 = 0; s0 < train.length; s0 += batch){
       const s1 = Math.min(train.length, s0 + batch);
-      const bs = s1 - s0;
       const grads = [];
       for(let L = 0; L < SIZES.length - 1; L++) grads.push([new Float32Array(SIZES[L + 1] * SIZES[L]), new Float32Array(SIZES[L + 1])]);
       for(let b = s0; b < s1; b++){
         const smp = train[b];
         const acts = forward(w, smp.f);
-        if(globalThis.__DBG){
-          let bad = 0;
-          for(let L = 1; L < acts.length; L++) for(let i = 0; i < acts[L].length; i++) if(!isFinite(acts[L][i])) bad++;
-          if(bad){
-            console.log('  [dbg] 样本 #' + b + ' 前向有 ' + bad + ' 个非有限激活；f=' +
-                        JSON.stringify(smp.f) + '；p[0..3]=' + JSON.stringify(smp.p.slice(0, 4)));
-          }
-        }
-        const g = backward(w, acts, smp.p, new Float32Array(N_OUT));
+        const g = backward(w, acts, smp.tgt, new Float32Array(N_OUT));
         for(let L = 0; L < grads.length; L++){
-          /* ★ 必须取 g[L]，不是 g[0]：层间梯度形状不同，
-           *   读越界会得到 undefined → NaN（一度整个训练 loss=NaN）。 */
+          /* ★ 必须取 g[L]，不是 g[0]：层间梯度形状不同，越界读 undefined → NaN */
           const gW = grads[L][0], gb = grads[L][1], sW = g[L][0], sb = g[L][1];
           for(let i = 0; i < gW.length; i++) gW[i] += sW[i];
           for(let i = 0; i < gb.length; i++) gb[i] += sb[i];
         }
       }
-      /* 批内求和 → 除以 batch size（梯度尺度） */
       const inv = 1 / Math.max(1, (s1 - s0));
       for(const g of grads) for(const a of g) for(let i = 0; i < a.length; i++) a[i] *= inv;
-      if(globalThis.__DBG){
-        let mx = 0, nan = 0, inf = 0;
-        for(const g of grads) for(const a of g) for(let i = 0; i < a.length; i++){
-          const v = a[i];
-          if(Number.isNaN(v)) nan++; else if(!isFinite(v)) inf++; else if(Math.abs(v) > mx) mx = Math.abs(v);
-        }
-        console.log('  [dbg] 批 s0=' + s0 + ' 梯度 max|g|=' + mx.toExponential(3) + ' nan=' + nan + ' inf=' + inf);
-      }
       /* 梯度裁剪（全局 2-范数） */
-      let gn = 0, gnan = 0;
-      for(const g of grads){ for(const a of g) for(let i = 0; i < a.length; i++){ const v = a[i]; if(!isFinite(v)) gnan++; else gn += v * v; } }
-      if(gnan){ console.log('  [dbg] 梯度里有 NaN/Inf：' + gnan); }
+      let gn = 0;
+      for(const g of grads){ for(const a of g) for(let i = 0; i < a.length; i++){ const v = a[i]; if(isFinite(v)) gn += v * v; } }
       gn = Math.sqrt(gn);
       const scale = (gn > clip) ? (clip / (gn || 1)) : 1;
-      /* Adam 更新 */
       tStep++;
       const bc1 = 1 - Math.pow(b1, tStep), bc2 = 1 - Math.pow(b2, tStep);
       for(let L = 0; L < SIZES.length - 1; L++){
@@ -246,25 +265,28 @@ function main(){
     }
     if(ep % 5 === 0 || ep === epochs - 1){
       const e = evalSet(valid);
-      console.log('  epoch ' + (ep + 1) + '/' + epochs + '  验证 loss ' + e.loss.toFixed(4) +
-                  '  top1 ' + (e.top1 * 100).toFixed(1) + '%  (' + ((Date.now() - t0) / 1000).toFixed(1) + 's)');
+      console.log('  epoch ' + (ep + 1) + '/' + epochs + '  验证 ' + fmtEval(e) + '  (' + ((Date.now() - t0) / 1000).toFixed(1) + 's)');
     }
   }
 
   const after = evalSet(valid);
-  const tr = evalSet(train.slice(0, Math.min(500, train.length)));
-  console.log('训练后：验证 loss ' + after.loss.toFixed(4) + '  top1 ' + (after.top1 * 100).toFixed(1) +
-              '%  （训练集 top1 ' + (tr.top1 * 100).toFixed(1) + '%）');
+  const tr = evalSet(train.slice(0, Math.min(600, train.length)));
+  console.log('训练后：验证 ' + fmtEval(after));
+  console.log('        训练集 ' + fmtEval(tr));
 
   /* ---- 烘焙 ---- */
   const fw = flat(w);
   const json = JSON.stringify({ sizes: SIZES, w: fw.map(v => Math.round(v * 1e5) / 1e5) });
   const meta = { version: 1, trainedAt: new Date().toISOString().slice(0, 10),
                  src: path.relative(ROOT, dataPath), nSamples: data.length,
-                 validLoss: +after.loss.toFixed(4), validTop1: +after.top1.toFixed(4),
-                 trainTop1: +tr.top1.toFixed(4), nFeat: N_IN, nIntent: N_OUT };
-  const out = '/* 自动生成：tools/hip-train.js —— HIP L2 策略网络（CE 蒸馏）\n' +
-    ' * 勿手改；重训命令见 docs/reports/hip-m1-findings.md\n */\n' +
+                 validLoss: +after.loss.toFixed(4),
+                 validTop1: Object.fromEntries(HEADS.map((h, i) => [h.key, +after.top1[i].toFixed(4)])),
+                 validTop3: Object.fromEntries(HEADS.map((h, i) => [h.key, +after.top3[i].toFixed(4)])),
+                 comboTop1: +after.combo.toFixed(4),
+                 trainTop1: Object.fromEntries(HEADS.map((h, i) => [h.key, +tr.top1[i].toFixed(4)])),
+                 nFeat: N_IN, nOut: N_OUT, heads: HEADS.map(h => ({ key: h.key, n: h.n })) };
+  const out = '/* 自动生成：tools/hip-train.js —— HIP L2 策略网络（4 头 CE 蒸馏）\n' +
+    ' * 勿手改；重训命令见 docs/reports/hip-m2-findings.md\n */\n' +
     'const HIP_WEIGHTS = ' + json + ';\n' +
     'const HIP_WEIGHTS_META = ' + JSON.stringify(meta) + ';\n' +
     'if(typeof module !== "undefined" && module.exports) module.exports = { HIP_WEIGHTS, HIP_WEIGHTS_META };\n';

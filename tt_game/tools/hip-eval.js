@@ -177,8 +177,15 @@ function main(){
       for(const v of axes[i].vals){ acc[axes[i].key] = v; rec(i + 1, acc); }
     })(0, {});
     const rows = [];
-    for(const c of combos){
-      const label = Object.keys(c).map(k => k + '=' + c[k]).join(' ');
+    /* --hip-cfg 指定的旋钮作为**基线**与每个网格组合合并（网格只覆盖列出的键） */
+    let baseCfg = {};
+    if(base.cfg){
+      try{ baseCfg = JSON.parse(fs.readFileSync(path.resolve(ROOT, base.cfg), 'utf8')); }
+      catch(e){ console.error('读取 --hip-cfg 失败：' + e.message); }
+    }
+    for(const c0 of combos){
+      const c = Object.assign({}, baseCfg, c0);
+      const label = Object.keys(c0).map(k => k + '=' + c0[k]).join(' ');
       const agg = doOne(c, label);
       const t = Object.keys(agg)[0];
       const a = agg[t];
