@@ -222,6 +222,12 @@ const INPUTSIM = (() => {
      * 所以 bounced 起始为假；球第一次落本方半台时置位，再落一次 = 双跳 =
      * 对手没能回球 = agent 得分（与实机 rulesOnBounce 同义）。 */
     const st = { p, v, s, pPrev: { x: p.x, y: p.y, z: p.z }, bounced: false, ownSign: -1 };
+    /* ★ 接触余量诊断（L3 研究用）：记录最后一次接触判据的横向间隙与窗口宽度。
+     *   gap  = |球x − 拍x|（横向间隙）
+     *   fitX = PAD_HW + BALL_R + W.fitH（这一板允许的横向容差）
+     *   xErr = 对手这一板的瞄准误差（aiStep 里按板抽的高斯误差）
+     *   「对手从不错过」到底是因为窗口宽、还是因为瞄准误差被磁吸吃掉，就看这三个数。 */
+    let lastGap = 0, lastFitX = 0, lastFitH = 0, lastBy = 0;
     for(let i = 0; i < 2600; i++){
       /* 1. 逐帧跑位 + 姿态决策（= 实机 aiMoveShared，SIM.aiStep 内会就地改写 pad） */
       SIM.aiStep({ dt: DT, now: simClock, side: 'ai', mir: -1,
@@ -248,16 +254,23 @@ const INPUTSIM = (() => {
       const plane = pad.z + PAD_HD;
       const swept = (pzPrev >= plane - zF && p.z < plane + zF && v.z < 0);
       const prox = Math.abs(p.z - pad.z) < PAD_HD + C.BALL_R * 2 + zF && v.z < 0.3;
+      lastGap = Math.abs(p.x - pad.x);
+      lastFitX = PAD_HW + C.BALL_R + W.fitH;
+      lastFitH = W.fitH;
+      lastBy = p.y;
       if(swept || prox){
         if(Math.abs(p.x - pad.x) <= PAD_HW + C.BALL_R + W.fitH &&
            Math.abs(p.y - PADDLE_Y) <= PAD_HH + C.BALL_R + W.fitV){
           p.z = plane + C.BALL_R;
           const d = aiReturn(p, v, s, pad, pol, rng, isReceive, DT);
-          return { hit: true, out: { pos: { x: p.x, y: p.y, z: p.z }, vel: d.outVel, spin: d.spin } };
+          return { hit: true, gap: lastGap, fitX: lastFitX, fitH: lastFitH, by: lastBy,
+                   xErr: (pad._xErr || 0),
+                   out: { pos: { x: p.x, y: p.y, z: p.z }, vel: d.outVel, spin: d.spin } };
         }
       }
     }
-    return { hit: false, loss: 'timeout' };
+    return { hit: false, loss: 'timeout', gap: lastGap, fitX: lastFitX, fitH: lastFitH,
+             by: lastBy, xErr: (pad._xErr || 0) };
   }
 
   /* AI 出球（= 实机 hitAI 的 aiDecision 调用；stroke 取 pad.stance，

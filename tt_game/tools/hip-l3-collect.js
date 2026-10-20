@@ -51,6 +51,20 @@ function main(){
   let n = 0, nPos = 0, nNeg = 0, nSkip = 0, nPoint = 0;
   let curTag = '';
   const perTag = {};
+  /* ★ --alt <v>：**逐板交替**强制绝对落点（±v），而不是每分随机一个固定落点。
+   *   为什么要逐板交替：对手的横向速度上限是 moveSpeed(2.8 m/s)，而击球飞行时间只有
+   *   ~0.4s ⇒ 对手最多横移 ~1.1m；台半宽 0.7625m。
+   *   ⇒ 只有当对手**站在一边**而我们把球打到**另一边**时，它才够不到；
+   *   每分随机的固定落点做不到这件事（对手总能回到中间）⇒ 上一版采集全是正样本。 */
+  const altV = parseFloat(argOf('--alt', ''));
+  const hasAlt = !isNaN(altV);
+  /* ★ --err <v>：覆盖对手的瞄准误差基数 moveErr（诊断「对手的辅助预算」）。
+   *   moveErr 是 aiStep 里每板抽一次的高斯瞄准误差的基数（σ = moveErr + amp）。
+   *   把它调到 0.3/0.6/1.0 就能量出：**对手的瞄准误差要大到什么程度才会真的漏球**。 */
+  const errOv = parseFloat(argOf('--err', ''));
+  const hasErr = !isNaN(errOv);
+  /* 接触余量统计：gap = |球x−拍x|，fitX = 该板的横向容差 */
+  const gapStat = { n: 0, sum: 0, max: 0, over: 0, fitSum: 0, errSum: 0, errAbs: 0 };
 
   INPUTSIM.setObserver(function(ctx, r){
     /* 标签：对手接到了 = 1；没接到（timeout）= 0；其它（球出界等）跳过 */
@@ -59,10 +73,20 @@ function main(){
     else if(r && r.loss === 'timeout') y = 0;
     if(y === null){ nSkip++; return; }
     const f = HIP_L3.features(ctx);
+    if(r && typeof r.gap === 'number'){
+      gapStat.n++; gapStat.sum += r.gap;
+      gapStat.fitSum += (r.fitX || 0);
+      gapStat.errSum += (r.xErr || 0);
+      gapStat.errAbs += Math.abs(r.xErr || 0);
+      if(r.gap > gapStat.max) gapStat.max = r.gap;
+    }
     out.write(JSON.stringify({ f: f, y: y,
       m: { tag: curTag, lx: +(ctx.sim && ctx.sim.landing ? ctx.sim.landing.x : 0).toFixed(3),
            lz: +(ctx.sim && ctx.sim.landing ? ctx.sim.landing.z : 0).toFixed(3),
-           dx: +(ctx.oppX || 0).toFixed(3) } }) + '\n');
+           dx: +(ctx.oppX || 0).toFixed(3),
+           gap: r && typeof r.gap === 'number' ? +r.gap.toFixed(3) : null,
+           fitX: r && typeof r.fitX === 'number' ? +r.fitX.toFixed(3) : null,
+           xErr: r && typeof r.xErr === 'number' ? +r.xErr.toFixed(3) : null } }) + '\n');
     n++; if(y) nPos++; else nNeg++;
   });
 
@@ -71,12 +95,12 @@ function main(){
     nPoint++;
     const tag = tags[Math.floor(rng() * tags.length) % tags.length];
     curTag = tag;
-    const pol = OPP.at(tag) || P.policyForModel(tag) || P.POLICY_DEFAULT;
+    const pol0 = OPP.at(tag) || P.policyForModel(tag) || P.POLICY_DEFAULT;
+    const pol = hasErr ? Object.assign({}, pol0, { moveErr: errOv }) : pol0;
     /* 随机化玩家侧：落点目标 + 出球深度（把落点空间铺开） */
-    const cfg = {
-      aimForce: (rng() * 2 - 1) * 0.62,
-      myDrive: 0.46 + rng() * 0.22,
-    };
+    const cfg = hasAlt
+      ? { aimForceAlt: altV, myDrive: 0.46 + rng() * 0.22 }
+      : { aimForce: (rng() * 2 - 1) * 0.62, myDrive: 0.46 + rng() * 0.22 };
     const brain = HIP_SKILL.makeBrain(cfg);
     const r = mulberry32(seed + nPoint * 7919);
     const res = INPUTSIM.playInputPoint(brain, pol, r, (nPoint % 2) === 0 ? 'player' : 'ai');
@@ -88,6 +112,13 @@ function main(){
               ' / 跳过 ' + nSkip + '），' + nPoint + ' 分，耗时 ' +
               ((Date.now() - t0) / 1000).toFixed(1) + 's');
   console.log('各对手分场次：' + JSON.stringify(perTag));
+  if(gapStat.n){
+    console.log('接触余量：n=' + gapStat.n +
+      '  gap 均值 ' + (gapStat.sum / gapStat.n).toFixed(3) +
+      '  gap 最大 ' + gapStat.max.toFixed(3) +
+      '  横向容差均值 ' + (gapStat.fitSum / gapStat.n).toFixed(3) +
+      '  瞄准误差 |均值| ' + (gapStat.errAbs / gapStat.n).toFixed(3));
+  }
   console.log('已写出 ' + path.relative(ROOT, outPath));
 }
 main();
