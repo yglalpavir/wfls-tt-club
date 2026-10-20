@@ -637,6 +637,19 @@ function main(){
           '};',
           '/* ---- 记录成功触球时的高度分布（对照漏球样本）---- */',
           'globalThis.__hipHits = [];',
+          '/* ---- 落点探针：玩家每次击球后，用实机出球速度复算落点 ---- */',
+          'globalThis.__hipLand = [];',
+          '/* 玩家（ttmouse）这一侧的出球是 TT_PLAYER.ttHit 算的（不是 physics.js#hitPlayer），',
+          '   所以落点探针要挂在 ttHit 上。 */',
+          'try{ const __tt = TT_PLAYER.ttHit;',
+          '  TT_PLAYER.ttHit = function(){ const r = __tt.apply(null, arguments); try{ const st = globalThis.__hipLastState; const L = SIM.simulateFull({x:ball.pos.x,y:ball.pos.y,z:ball.pos.z}, {x:ball.vel.x,y:ball.vel.y,z:ball.vel.z}, "player", {x:ball.spin.x,y:ball.spin.y,z:0}, Math.random); globalThis.__hipLand.push({ ok: !!(L&&L.ok), reason: L?L.reason:null, lx: (L&&L.landing)?L.landing.x:null, lz: (L&&L.landing)?L.landing.z:null, want: st?st.want:null, bx: st?st.bx:null, spd: Math.hypot(ball.vel.x,ball.vel.y,ball.vel.z), svx: st?st.svx:null }); const p = globalThis.__hipPend; if(p>=0 && globalThis.__hipBounce){ globalThis.__hipBounce[p].hit = true; globalThis.__hipPend = -1; } }catch(e){} return r; };',
+          '}catch(e){}',
+          '/* ---- 弹跳探针：每次台面弹跳记一次（含后续是否被玩家回击）---- */',
+          'globalThis.__hipBounce = [];',
+          'globalThis.__hipPend = -1;',
+          'try{ const __tb = globalThis.tableBounce;',
+          '  globalThis.tableBounce = function(){ try{ const st = globalThis.__hipLastState; const g = playerPad.group.position; globalThis.__hipBounce.push({ bx: ball.pos.x, bz: ball.pos.z, py: ball.pos.y, vz: ball.vel.z, vy: ball.vel.y, t: elapsed, hit: false, pz: st?st.padZ:null, bzPred: st?st.bounceZ:null, px: g.x, pzNow: g.z, bxPred: st?st.bx:null }); globalThis.__hipPend = globalThis.__hipBounce.length-1; }catch(e){} return __tb.apply(null, arguments); };',
+          '}catch(e){}',
           'const __hp = hitPlayer, __hap = hitAIForPlayer;',
           'const __rec = () => { globalThis.__hipHits.push({ by: ball.pos.y, gz: playerPad.group.position.z, high: ball.pos.y > TABLE_TOP+0.13 }); };',
           'hitPlayer = function(){ __rec(); return __hp.apply(null, arguments); };',
@@ -667,10 +680,12 @@ function main(){
       else vm.runInContext('mode="watch"; fightL="ttmouse"; fightR=' + JSON.stringify(tag) + '; aiModel="standard";', rig.ctx);
       const dqnIsAi = SIDE === 'ai';
       let dqnPts = 0, oppPts = 0, lostAgg = null, dqnContacts = 0, oppContacts = 0, frames = 0;
+      const gameLog = [];
       for(let g = 0; g < GAMES; g++){
         const r = playGame(rig, step, SEED + 4242, g, MAXSEC);
         const dq = dqnIsAi ? r.ai : r.you, op = dqnIsAi ? r.you : r.ai;
         dqnPts += dq; oppPts += op; frames += r.frames;
+        gameLog.push({ g, dq, op, frames: r.frames });
         if(r.stats){
           const side = dqnIsAi ? 'ai' : 'player', oSide = dqnIsAi ? 'player' : 'ai';
           dqnContacts += r.stats[side].contacts; oppContacts += r.stats[oSide].contacts;
@@ -680,7 +695,11 @@ function main(){
         }
       }
       live = { dqn: dqnPts, opp: oppPts, rate: (dqnPts + oppPts) ? dqnPts / (dqnPts + oppPts) : 0.5,
-               lost: lostAgg, dqnContacts, oppContacts, frames };
+               lost: lostAgg, dqnContacts, oppContacts, frames,
+               /* ★ 停摆检测：一局在 maxsec 内一分都没打出来 ⇒ 这局是「拉锯到超时」。
+                 * 分点率的分母因此会偏小（小样本高胜率），比较不同配置时必须看这个数。 */
+               stalled: gameLog.filter(x => (x.dq + x.op) === 0).length,
+               games: gameLog };
     }
     /* ---- 仿真管线 ---- */
     let sv = null;
@@ -765,6 +784,18 @@ function main(){
     console.log('      漏球帧：有落台预测 ' + f2.fHasMeet + '/' + f2.fNoMeet + f2.fNoMeet + '（无预测 ' + f2.fNoMeet + '），预测落台 z p50 ' + f2.fBounceZ);
     console.log('      成功帧：有落台预测 ' + f2.oHasMeet + '，无 ' + f2.oNoMeet + '，预测落台 z p50 ' + f2.oBounceZ);
     console.log('      成功触球 n=' + t.hitN + '：触球高度 p50 ' + t.hitBy + '，高球占比 ' + (t.hitN ? (t.hitHi / t.hitN * 100).toFixed(0) : '-') + '%，拍面 z p50 ' + t.hitGz);
+    /* 落点探针：请求的落点（want） vs 实机出球速度复算出来的落点（lx） */
+    const ld = vm.runInContext('(()=>{ const L=(globalThis.__hipLand||[]); const q=(a,f)=>{ if(!a.length) return "-"; const b=a.slice().sort((x,y)=>x-y); return b[Math.min(b.length-1,Math.floor(f*b.length))].toFixed(3); }; const mean=(a)=>a.length?(a.reduce((s,v)=>s+v,0)/a.length).toFixed(3):"-"; const ok=L.filter(x=>x.ok&&x.lx!=null); const wide=ok.filter(x=>x.want!=null&&Math.abs(x.want)>0.4); const near=ok.filter(x=>x.want!=null&&Math.abs(x.want)<=0.1); const rs={}; L.forEach(x=>{ if(!x.ok) rs[x.reason||"?"]=(rs[x.reason||"?"]||0)+1; }); return { n:L.length, ok:ok.length, rs:JSON.stringify(rs), lxP10:q(ok.map(x=>x.lx),0.1), lxP50:q(ok.map(x=>x.lx),0.5), lxP90:q(ok.map(x=>x.lx),0.9), lzP50:q(ok.map(x=>x.lz),0.5), wideN:wide.length, wideP10:q(wide.map(x=>x.lx),0.1), wideP50:q(wide.map(x=>x.lx),0.5), wideP90:q(wide.map(x=>x.lx),0.9), nearN:near.length, nearP50:q(near.map(x=>x.lx),0.5), offWide:mean(wide.map(x=>x.want-x.lx)), offNear:mean(near.map(x=>x.want-x.lx)), spdP50:q(ok.map(x=>x.spd),0.5), spdP90:q(ok.map(x=>x.spd),0.9), svxP50:q(ok.map(x=>x.svx),0.5), svxAbsP50:q(ok.map(x=>Math.abs(x.svx||0)),0.5), svxAbsP90:q(ok.map(x=>Math.abs(x.svx||0)),0.9) }; })()', rig.ctx);
+    console.log('    ★ 落点探针：玩家出球 n=' + ld.n + '（合法落台 ' + ld.ok + '，失败原因 ' + ld.rs + '）');
+    console.log('      落点 x 分位 p10 ' + ld.lxP10 + ' p50 ' + ld.lxP50 + ' p90 ' + ld.lxP90 + '；落点 |z| p50 ' + ld.lzP50);
+    console.log('      请求 |want|>0.4 的球 n=' + ld.wideN + '：落点 x p10 ' + ld.wideP10 + ' p50 ' + ld.wideP50 + ' p90 ' + ld.wideP90 + '（请求−落点 平均 ' + ld.offWide + '）');
+    console.log('      请求 |want|≤0.1 的球 n=' + ld.nearN + '：落点 x p50 ' + ld.nearP50 + '（请求−落点 平均 ' + ld.offNear + '）');
+    console.log('      ★ 出球速度 p50 ' + ld.spdP50 + ' p90 ' + ld.spdP90 + '；拍速 |svx| p50 ' + ld.svxAbsP50 + ' p90 ' + ld.svxAbsP90 + '（svx = 出球核的 swipe ⇒ 决定速度倍率）');
+    /* 弹跳探针：玩家半台上的每次弹跳 + 随后是否被回击 */
+    const bc = vm.runInContext('(()=>{ const A=(globalThis.__hipBounce||[]).filter(x=>x.bz>0); const q=(a,f)=>{ const bb=a.filter(v=>v!=null); if(!bb.length) return "-"; const b=bb.slice().sort((x,y)=>x-y); return b[Math.min(b.length-1,Math.floor(f*b.length))].toFixed(3); }; const med=(a)=>q(a,0.5); const B=[[0,0.7],[0.7,0.9],[0.9,1.1],[1.1,1.45]]; const rows=B.map(r=>{ const S=A.filter(x=>x.bz>=r[0]&&x.bz<r[1]); const H=S.filter(x=>x.hit); const M=S.filter(x=>!x.hit); const dx=(L)=>med(L.map(x=>Math.abs(x.bx-x.px))); const dz=(L)=>med(L.map(x=>x.pzNow-x.bz)); return r[0]+"-"+r[1]+" n="+S.length+" hit="+(S.length?(H.length/S.length*100).toFixed(0):"-")+"% dxHit="+dx(H)+" dxMiss="+dx(M)+" dzNowHit="+dz(H)+" dzNowMiss="+dz(M)+" vyH="+med(H.map(x=>Math.abs(x.vy)))+" vyM="+med(M.map(x=>Math.abs(x.vy)))+" vzH="+med(H.map(x=>Math.abs(x.vz)))+" vzM="+med(M.map(x=>Math.abs(x.vz))); }); const M=A.filter(x=>!x.hit); return { n:A.length, rows:rows.join(" | "), mErrP50:med(M.map(x=>x.bzPred!=null?x.bz-x.bzPred:null)), mNoPred:M.filter(x=>x.bzPred==null).length }; })()', rig.ctx);
+    console.log('    ★ 弹跳探针（玩家半台）：弹跳 n=' + bc.n + '（未回击里无预测 ' + bc.mNoPred + '）');
+    console.log('      误差中位数（实际−预测）：未回击 ' + bc.mErrP50 + '，已回击 ' + bc.hErrP50);
+    console.log('      ' + bc.rows);
   }
 
   /* ---- --json：结构化结果落盘（tools/hip-eval.js 的闸门输入）---- */
@@ -781,6 +812,11 @@ function main(){
         lost: r.live.lost || null,
         dqnContacts: r.live.dqnContacts, oppContacts: r.live.oppContacts,
         frames: r.live.frames,
+        /* ★ 停摆局数（一局在 maxsec 内 0 分）与逐局比分。
+         * 分点率的分母 = 实际打出的分数；若大量局停摆，样本会变得很小、
+         * 胜率会虚高，比较不同配置时必须同时看 stalled。 */
+        stalled: r.live.stalled != null ? r.live.stalled : 0,
+        games: r.live.games || null,
         simRate: r.sv ? r.sv.rate : null,
       };
     }

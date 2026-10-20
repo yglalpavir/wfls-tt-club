@@ -50,8 +50,20 @@ function wilson(p, n, z){
 }
 
 /* 跑一个分片：live-match --json → 解析 */
+/* ★ 并发安全：配置与结果文件必须**每个进程独占**。
+ *   历史 bug：所有进程共用 data/hip/_cfg.json 与 data/hip/_shard.json
+ *   ⇒ 两个 hip-eval 同时跑时互相覆盖对方的旋钮配置，
+ *   表现为「同一配置在不同扫描里给出不同结果」（曾出现按组合序号平移的重复）。
+ *   现在用 pid 命名，进程退出即删。 */
+const CFG_PATH = path.join(DATA, '_cfg_' + process.pid + '.json');
+const SHARD_PATH = path.join(DATA, '_shard_' + process.pid + '.json');
+process.on('exit', () => {
+  try{ fs.unlinkSync(CFG_PATH); }catch(e){}
+  try{ fs.unlinkSync(SHARD_PATH); }catch(e){}
+});
+
 function runShard(opts){
-  const jsonPath = path.join(DATA, '_shard.json');
+  const jsonPath = SHARD_PATH;
   const args = [ path.join(__dirname, 'live-match.js'),
     '--opp', opts.opp, '--games', String(opts.games), '--seed', String(opts.seed),
     '--live-only', '--maxsec', String(opts.maxsec || 30),
@@ -74,7 +86,10 @@ function aggregate(byTier){
     const b = byTier[t];
     const n = b.dqnPts + b.oppPts;
     agg[t] = { dqn: b.dqnPts, opp: b.oppPts, points: n, rate: n ? b.dqnPts / n : 0,
-               lost: b.lost || {}, contacts: [b.dqnContacts, b.oppContacts] };
+               lost: b.lost || {}, contacts: [b.dqnContacts, b.oppContacts],
+               /* ★ 停摆局数与局数：分点率的分母是「窗口内打出的分数」，
+               *   相持越长分母越小、胜率越虚高 ⇒ 必须同时看分数÷局数与停摆数。 */
+               stalled: b.stalled || 0, games: b.games ? b.games.length : 0 };
   }
   return agg;
 }
@@ -82,17 +97,19 @@ function aggregate(byTier){
 function report(agg, label){
   console.log('');
   console.log('  ' + label);
-  console.log('  ' + '对手'.padEnd(12) + '实机分点率'.padEnd(14) + 'Wilson95%'.padEnd(20) + '局/分'.padEnd(10) + '锚点(30局)');
-  console.log('  ' + '-'.repeat(76));
+  console.log('  ' + '对手'.padEnd(12) + '实机分点率'.padEnd(14) + 'Wilson95%'.padEnd(20) + '局/分'.padEnd(12) + '分/局'.padEnd(8) + '停摆'.padEnd(6) + '锚点(30局)');
+  console.log('  ' + '-'.repeat(90));
   for(const t of Object.keys(agg)){
     const a = agg[t];
     const ci = wilson(a.rate, a.points);
     const anc = ANCHOR.byTier[t];
     const d = (anc != null) ? (((a.rate - anc) * 100 >= 0 ? '+' : '') + ((a.rate - anc) * 100).toFixed(1) + 'pp') : '—';
+    const ppg = a.games ? (a.points / a.games).toFixed(2) : '—';
     console.log('  ' + t.padEnd(12) +
       (a.rate * 100).toFixed(1).padStart(6) + '%'.padEnd(8) +
       ('[' + (ci.lo * 100).toFixed(1) + ',' + (ci.hi * 100).toFixed(1) + ']').padEnd(20) +
-      (a.points + '').padEnd(10) + (anc != null ? (anc * 100).toFixed(1) + '%  Δ' + d : '—'));
+      (a.points + '').padEnd(12) + ppg.padEnd(8) +
+      (a.stalled + '').padEnd(6) + (anc != null ? (anc * 100).toFixed(1) + '%  Δ' + d : '—'));
   }
 }
 
@@ -133,10 +150,21 @@ function main(){
   const base = { controller, opp, games, seed, from, maxsec,
                  cfg: argOf('--hip-cfg', '') };
 
+  /* ★ --hip-cfg 的基线配置（两条路径都要用）。
+   *   历史 bug：非 grid 路径调用 doOne(null) ⇒ cfgPath 为空 ⇒
+   *   子进程根本没收到 --hip-cfg ⇒ 所有「带 --hip-cfg 的单点评测」
+   *   其实跑的是**默认配置**（分点率相同、看起来像配置生效其实是没生效）。 */
+  let baseCfgObj = null;
+  if(base.cfg){
+    try{
+      baseCfgObj = JSON.parse(fs.readFileSync(path.resolve(ROOT, base.cfg), 'utf8'));
+    }catch(e){ console.error('读取 --hip-cfg 失败：' + e.message); baseCfgObj = null; }
+  }
+
   const doOne = (cfgObj, label) => {
     let cfgPath = '';
     if(cfgObj && Object.keys(cfgObj).length){
-      cfgPath = path.join(DATA, '_cfg.json');
+      cfgPath = CFG_PATH;
       fs.writeFileSync(cfgPath, JSON.stringify(cfgObj));
     }
     /* 分片：每个分片一次 live-match（串行调用，但每次内部是 60Hz 实机模拟） */
@@ -190,9 +218,12 @@ function main(){
       const t = Object.keys(agg)[0];
       const a = agg[t];
       const ci = wilson(a.rate, a.points);
-      rows.push({ cfg: c, rate: a.rate, lo: ci.lo, hi: ci.hi, points: a.points, lost: a.lost });
+      rows.push({ cfg: c, rate: a.rate, lo: ci.lo, hi: ci.hi, points: a.points, lost: a.lost,
+                  ppg: a.games ? a.points / a.games : null, stalled: a.stalled });
       console.log('  → ' + label + '  分点率 ' + (a.rate * 100).toFixed(1) + '%  CI[' +
-                  (ci.lo * 100).toFixed(1) + ',' + (ci.hi * 100).toFixed(1) + ']  失分 ' + JSON.stringify(a.lost));
+                  (ci.lo * 100).toFixed(1) + ',' + (ci.hi * 100).toFixed(1) + ']  分/局 ' +
+                  (a.games ? (a.points / a.games).toFixed(2) : '-') + '  停摆 ' + a.stalled +
+                  '  失分 ' + JSON.stringify(a.lost));
     }
     rows.sort((x, y) => y.rate - x.rate);
     console.log('\n  最好：' + JSON.stringify(rows[0].cfg) + '  ' + (rows[0].rate * 100).toFixed(1) + '%');
@@ -201,7 +232,7 @@ function main(){
     return;
   }
 
-  const agg = doOne(null);
+  const agg = doOne(baseCfgObj);
   console.log('');
   console.log('  锚点来源：' + ANCHOR.src + '（' + ANCHOR.at + '，' + ANCHOR.games + ' 局/档）');
   console.log('  耗时 ' + ((Date.now() - t0) / 1000).toFixed(1) + 's');
