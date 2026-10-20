@@ -237,7 +237,7 @@ const HIP_SKILL = (() => {
     }
 
     /* 主入口：obs(15 字段) → {tx, my, ctrl} */
-    function plan(obs){
+    function plan(obs, intent){
       const vz = obs.vz || 0;
       const incoming = vz > 0.15;
       const zp = obs.pz != null ? obs.pz : PLAYER_Z;
@@ -288,9 +288,12 @@ const HIP_SKILL = (() => {
        *   实测预测 bx=-0.74 而锁定的 want 却是 +0.46），于是落点纠偏往反方向
        *   拉 —— 挥拍阶段 tx 从 -0.74 跳到 -0.58，把拍子从球上拽开，
        *   92% 的球变成「够不到」（lose:out）。 */
-      const wide = Math.abs(S.bx) > cfg.wideThresh;
-      S.wide = wide;
-      S.want = (wide ? (S.bx < 0 ? -1 : 1) : S.side) * (wide ? cfg.landX : cfg.landXMid);
+      if(intent){ S.wide = false; S.want = cl(intent.aimX, -0.62, 0.62); }
+      else{
+        const wide = Math.abs(S.bx) > cfg.wideThresh;
+        S.wide = wide;
+        S.want = (wide ? (S.bx < 0 ? -1 : 1) : S.side) * (wide ? cfg.landX : cfg.landXMid);
+      }
       /* 记住这一球来自哪一侧 → 空档时预判站到反侧 */
       if(S.bx < -0.12) S.lastSide = -1; else if(S.bx > 0.12) S.lastSide = 1;
 
@@ -306,6 +309,9 @@ const HIP_SKILL = (() => {
 
       /* ── 手法（下旋搓 / 挑 / 常规） ── */
       let my = cfg.myDrive, ctrl = false, isPushCase = false;
+      if(intent){
+        my = cl(intent.my, 0.15, 0.95); ctrl = !!intent.ctrl; isPushCase = !!intent.ctrl;
+      }else{
       if(S.rtop < cfg.pushRtop){                 // 下旋来球
         if(S.by < cfg.pushHeight){ ctrl = !!cfg.pushCtrl; my = cfg.myPush; isPushCase = true; }
         else { my = cfg.myLift; isPushCase = true; }
@@ -322,6 +328,7 @@ const HIP_SKILL = (() => {
         my = cfg.myApproach;
       }
       my = cl(my, 0.15, 0.95);
+      }
 
       /* ── 落点控制（闭环）──
        * 玩家的落点公式（tt-player / input-sim 同一份）：

@@ -229,6 +229,9 @@ const INPUTSIM = (() => {
         zHome: AI_Z, zLo: ZRANGE.ai.lo, zHi: ZRANGE.ai.hi, policy: pol,
         moveSpeed: spd, moveZ: zSpd, recoverPace: rPace, fhPref,
         errBase, precZ: 0.05 * prec, rng });
+      /* ★ 记录对手拍位 x：HIP 的教师/学生都要用它算「对手够不够得到落点」。
+       *   这里在每帧跑位后立即记（= 玩家能看到的对手实时位置）。 */
+      _aiPadX = pad.x;
       /* 2. 物理（与玩家侧同一份 stepBall） */
       const pzPrev = p.z;
       st.pPrev.x = p.x; st.pPrev.y = p.y; st.pPrev.z = p.z;
@@ -358,6 +361,7 @@ const INPUTSIM = (() => {
         px: pad.x, pz: pad.z, svx: pad.svx, svz: pad.svz,
         tx: pad._tx != null ? pad._tx : 0, my: pad._my != null ? pad._my : 0.5,
         bounced: stB.bounced ? 1 : 0,
+        ox: _aiPadX,          // ★ 对手拍位 x（HIP 用；DQN 忽略）
       };
       if(brain){ if(f % skip === 0) cur = brain.act(obs); f++; }
       pad.ctrl = !!cur.ctrl;
@@ -646,6 +650,11 @@ const INPUTSIM = (() => {
    * 供下一分的 padInit 继承（否则发球观测每分完全相同 → argmax 锁死）。
    * _lastPad 是 playInputPointInner 在运行期间实时更新的实时拍状态。 */
   let _lastPad = null;
+  /* ★ 对手（AI）拍位的实时 x —— HIP 的教师/学生都要用它算「对手够不够得到落点」。
+   *   实机侧对应：tt-player.js#buildObs 的 ox（= 对手拍 group.position.x）。
+   *   DQN 的 encodeObs 只按名字取 15 个字段，多加 ox 不影响它（88 维输入不变）。 */
+  let _aiPadX = 0;
+  function aiPadX(){ return _aiPadX; }
   function playInputPoint(agent, pA, rng, firstServer, freq){
     _lastPad = null;
     const r = _playInputPointInner(agent, pA, rng, firstServer, freq);
@@ -679,7 +688,7 @@ const INPUTSIM = (() => {
   }
 
   const api = { cl, C, DT, PLAYER_Z, AI_Z, padInit, padControl, playerReceive, HITDBG,
-                serveFromPlayer, serveFromAI, aiReturn,
+                serveFromPlayer, serveFromAI, aiReturn, aiPadX,
                 playInputPoint, playInputGame, playInputMatch };
   if(typeof module !== 'undefined' && module.exports) module.exports = api;
   return api;

@@ -130,6 +130,15 @@ const TT_PLAYER = (() => {
       svx: realPad.svx, svz: (side === 'player') ? realPad.svz : -realPad.svz,
       tx: vp.cur.tx, my: vp.cur.my,
       bounced: (typeof shotBouncedOpp !== 'undefined' && shotBouncedOpp) ? 1 : 0,
+      /* ★ 对手拍位 x（HIP 的教师/学生用它算「对手够不够得到落点」）。
+       *   玩家侧：对手 = AI 拍（不镜像）；AI 侧：对手 = 真人拍（镜像）。
+       *   DQN 的 encodeObs 按名取 15 个字段，多一个 ox 不影响它。 */
+      ox: (function(){
+        const opp = (side === 'player') ? (typeof aiPad !== 'undefined' ? aiPad : null)
+                                         : (typeof playerPad !== 'undefined' ? playerPad : null);
+        if(!opp || !opp.group) return 0;
+        return (side === 'player') ? opp.group.position.x : -opp.group.position.x;
+      })(),
     };
   }
 
