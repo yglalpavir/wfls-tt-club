@@ -86,9 +86,17 @@ function normCdf(x){ return 0.5 * (1 + erf(x / Math.SQRT2)); }
  *   （对应关系必须与 js/hip-skill.js plan() 保持一致。） */
 function simSwing(px0, svx0, bx, want, ctx){
   const cfg = ctx.cfg, A = AIM;
-  const dt = 1 / 60, rate = 18;
+  const dt = 1 / 60, rate = 18, svCap = 7;
   let px = px0, svx = svx0;
-  const steps = Math.max(1, Math.round(cl(cfg.swingLead, dt, 0.25) / dt));
+  /* ★ 仿真到**触球时刻**（τ），不是只仿真挥拍阶段那 3 帧。
+   *   部署时落点闭环每帧都在跑、拍子会一路收敛到球旁（hold 项把拍位拉向球），
+   *   触球瞬间的拍速 ≈ 18·(球x − 拍位x) + vCmd。
+   *   只仿真 3 帧 ⇒ 「达成落点」被系统性低估（实机探针反推：低估约 2.5 倍），
+   *   于是教师以为「要打偏就得挥得很大、挥大了就打不到位」，
+   *   左偏选项（aim −0.24）永远排在后面 ⇒ 学生只学会「恒定打右侧」。
+   *   （这一条与部署侧 js/hip-skill.js#simSwingToContact 同源，见 P5。） */
+  const tau = (ctx.tau != null) ? ctx.tau : cfg.swingLead;
+  const steps = Math.max(1, Math.round(cl(tau, dt, 0.5) / dt));
   let vCmd = 0;
   for(let k = 0; k < steps; k++){
     /* 落点闭环（hip-skill.js: aimNow/offX/physVx/intentVx/shift/aimT） */
@@ -101,10 +109,10 @@ function simSwing(px0, svx0, bx, want, ctx){
     const hold = cl(bx - px, -cfg.holdClamp, cfg.holdClamp);
     const vA = (aimT - A.xFromPos * px) / A.xFromSwipe;
     vCmd = cl(vA, -cfg.maxSwing, cfg.maxSwing);
-    const tx = px + hold + vCmd / rate;
+    const tx = cl(px + hold + vCmd / rate, -1.2, 1.2);
     /* 一帧拍子动力学（tt-player.js 的内联 padControl） */
     const nx = px + (tx - px) * Math.min(1, dt * rate);
-    const rawV = (nx - px) / dt;
+    const rawV = cl((nx - px) / dt, -svCap, svCap);
     svx += (rawV - svx) * Math.min(1, dt * 12);
     px = nx;
   }

@@ -83,7 +83,17 @@ const TT_PLAYER = (() => {
   function controllerFor(side){
     if(controllerExplicit) return controller;
     const m = modelOf(side);
-    if(m === 'hipmouse') return 'hip-choice';
+    /* ★ hipmouse 走**纯 L1**，不走 L2'（K 路蒸馏学生）。
+     * 实机同口径对比（maxsec 120，seed 20261004，60 局/档）：
+     *   L1        hell 93.3% [89.9,95.6] / default 100.0% / grandslam 99.8%
+     *   L1+L2'    hell 91.4% [87.5,94.2] / default 100.0% / grandslam 100.0%
+     * ⇒ 学习层在「往哪打」这个维度上**没有超过解析层**（CI 重叠，方向上还略低）。
+     * 原因（见 docs/reports/hip-m3-findings.md §10）：L1 修完第六个真 bug 之后，
+     * 失分 100% 是「自己出界/下网」而不是「够不到」——
+     * 解析层已经把「够得到 + 不乱打」做满了，L2 的增量空间被压缩到噪声级。
+     * L2' 保留为研究件（tools/hip-choice-*.js + js/hip-choice-weights.js），
+     * 它的价值要等 L3 对手模型与 L4 联赛把动作空间撑开之后才能兑现。 */
+    if(m === 'hipmouse') return 'hip';
     if(m === 'ttmouse')  return 'dqn';
     return controller;
   }

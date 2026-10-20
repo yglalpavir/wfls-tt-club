@@ -149,10 +149,113 @@ live-match 每局有 `maxsec` 上限，而 11 分制在 40 秒内打不完 ⇒ �
 
 ---
 
-## 8. 下一步
+## 8. 浏览器产品化 + 第七个真 bug
 
-1. 修剩下的「自己出界」（修复后 7/92）：随 (拍面深度 × 出球深度) 联合扫描重新定 my 带宽；
-2. **重训 L2**：教师的 rollout 是用**旧的（坏的）L1** 采的样，必须用修好的 L1 重采；
-   同时把教师的落点前向仿真换成与部署同源的 `simSwingToContact`（P5 口径一致）；
-3. 用 maxsec=120 重测三档（hell/default/grandslam）与 DQN 锚点，形成可比的成绩表；
-4. 把「够不到 = 0」之后剩下的「出界」问题定位到接触高度 → 弧线 → 落点深度这条链上。
+M3 的成果要能上线，HIP 在浏览器里注册成一个可选模型 `hipmouse`（观战模式下拉框里
+多一项「tt玩家·HIP」）。这件事本身又暴露了一个**只在浏览器里出现**的真 bug。
+
+### 8.1 第七个真 bug：`decideServe()` 把「模型名」当成了「哪一侧」
+
+```js
+// 旧代码
+const side = (mode === 'watch') ? (server === 'player' ? fightL : fightR) : ...;
+if(side !== 'ttmouse' && side !== 'hipmouse') return null;
+const realPad = (side === 'player') ? playerPad : aiPad;      // ← side 是模型名！
+const vp = vpads[side === 'player' ? 'player' : 'ai'];       // ← 同样错
+```
+
+`fightL/fightR` 是**模型名**（`'ttmouse'`/`'hipmouse'`），不是 `'player'`/`'ai'`。
+于是：
+
+1. `side === 'player'` 恒为 false ⇒ 玩家侧发球时 `realPad` 取成 **aiPad**、
+   `vpads` 取成 **vpads['ai']** ⇒ 发球决策读的是**对手的拍**；
+2. `controllerFor('ttmouse')` 解析不出控制器 ⇒ 落到 DQN 分支 ⇒ `agent` 为 null ⇒
+   **`TypeError: Cannot read properties of null (reading 'decode')`**
+   （`rules.js#startToss` → `decideServe`，浏览器控制台直接报错）。
+
+修法：**模型名、侧、控制器是三个不同的概念，用三个不同的变量名**。
+先解析模型名（判 `'ttmouse'`/`'hipmouse'`），再单独解析 side
+（watch：`server==='player'` → `'player'`，否则 `'ai'`；非 watch：只有 `aiModel` 一侧可能是 tt 侧），
+最后按该侧判 `isReady(side)`。
+
+### 8.2 浏览器冒烟测试方法（可复现）
+
+* ⚠️ **浏览器缓存会加载旧脚本**：playwright 的 profile 缓存了前一天的 `tt-player.js`，
+  `Network.setCacheDisabled` + reload **也不生效**（页面里 `TT_PLAYER` 仍是旧版，
+  缺 `ensureHipWeights`/`setController`/`ensureHipChoiceWeights`）。
+  ⇒ 解法：自建**强制 no-store** 的静态服务器（`tt_game/data/hip/_server.js`，
+  node http，监听 127.0.0.1:8768），用它托管 `http://127.0.0.1:8768/tt_game/index.html`。
+* 流程：navigate → 等 3s → `browser_console_messages({level:'error'})` 必须 **0 条**
+  → `browser_evaluate` 起一局（`fightL='hipmouse'; fightR='hell'; startFight();`）
+  → 等 8~12s → 查 `typeof HIP_CHOICE_WEIGHTS`（应为 object）、
+  `TT_PLAYER.isTtSide('player')`、`TT_PLAYER.isReady('player')`、`mode`，
+  以及**球拍 x 是否随时间变化**（证明控制器真的在驱动球拍，而不只是「没报错」）。
+* 实测结果：0 条 console error；权重懒加载成功；isTtSide/isReady 均 true；
+  球拍 x 由 0 移到 0.343 ✓。
+
+---
+
+## 10. 最终三方对比：学习层没有超过解析层
+
+口径：**maxsec 120**、seed 20261004、60 局/档（DQN 锚点 20 局/档）。
+产物：`tt_game/data/hip/final-{l1,choice,dqn}.txt`（`tools/hip-eval.js`）。
+
+| 控制器 | 地狱 AI | default | grandslam | 失分结构 |
+|---|---|---|---|---|
+| DQN 锚点（12h 训练） | 65.6% [58.1,72.5] | 99.5% | 97.9% | 够不到 16.5% / 出界·下网 79.6% |
+| **HIP L1（M3 最终）** | **93.3%** [89.9,95.6] | 100.0% | 99.8% | 够不到 **0%** / net 7 + out 15 |
+| HIP L1 + L2'（K 路学生） | 91.4% [87.5,94.2] | 100.0% | 100.0% | 够不到 **0%** / net 8 + out 19 |
+
+分/局：L1 = 4.97 / 9.87 / 10.03（停摆 1/0/1）；L2' = 4.48 / 9.57 / 10.13（停摆 1/1/0）。
+
+### 10.1 为什么会这样
+
+L1 修完第六个真 bug（弹起后预测器去找第二次弹跳）之后，
+**失分 100% 是「自己出界/下网」，「够不到」被清零**。
+L2 学的维度是「往哪打（落点/深度/搓球）」，而这个维度在解析层已经饱和：
+自然落点 + 深度安全网 ≈ 最优 ⇒ **学习层的增量空间被压到噪声级**。
+
+教师标签也印证了这一点：choice-v4 的最优选项分布是
+m58-r 60.9% / m54-r 27.2% / m50-r 7.2% / 居中类 4.8%，
+**左偏类与搓球类 0%** ⇒ 教师认为「恒定往右打一点」就是最优策略，
+而这恰恰是解析层本来就在做的事 ⇒ 学生只是复制了 L1 的策略，
+多出来的 1.9pp 差距（方向上还更差）来自学生网络的分类误差。
+
+### 10.2 一条新的机理（值得单列）
+
+教师的逐帧仿真显示：**挥拍对落点的控制是单侧的**。
+`simSwing` 的调试输出（bx=0.584, px=0.524, svx=+0.20）：
+- 目标 −0.24（往左）⇒ 拍速漂移 −0.050m、接触成功率 0.871、落点只挪了 +0.006m（**几乎没动**）；
+- 目标 +0.24（往右）⇒ 拍速漂移 +0.008m、接触成功率 0.973、落点挪了 +0.200m。
+
+原因是追位律与挥拍命令**共用同一个通道**：
+`tx = px + hold + vCmd/PACE`，其中 `hold = clamp(bx − px, ±0.22)` 把拍子往球上拉。
+当拍子落在球的**左侧**（追位滞后，样例里 3/3 都是）时，
+`hold > 0` 就在**往右拉**，于是「往右挥」被放大、「往左挥」被抵消 ⇒ 落点只能往右推。
+
+这条机理同时解释了实机扫描的旧结果：
+「目标 +0.55」74.6% > 自然落点 70.3% > 「目标 −0.55」68.1%（30 局/组）。
+⇒ **修法方向**（未实施，见路线图）：给挥拍独立于追位的权限
+（挥拍阶段降低 hold 的权重，或让 hold 只在「还够不着」时生效），
+否则左半台永远是打不到的。
+
+### 10.3 决策
+
+**浏览器里的「tt玩家·HIP」上线的是纯 L1**（零学习参数、不需要权重文件、加载更快）；
+L2' 保留为研究件（`tools/hip-choice-*.js` + `js/hip-choice-weights.js`），
+等 L3/L4 落地后再评估。
+
+---
+
+## 11. 下一步（按优先级）
+
+1. **L3 对手模型**（框架的下一层）：把「对手够不够得到这个落点」从解析近似
+   （`OPP_SPEED=2.8` + 固定反应时间）换成**学出来的可达性模型** ——
+   采集 (落点 x、落点深度、球速、旋、对手拍位、相持长度) → 对手是否真的回球，
+   训一个小的判别网络；教师用它替代 `pMiss` ⇒ 落点选择的收益才真正可信。
+   （采集可以在 sim 里做，标签是免费的：**对手回球了 = 够得到**。）
+2. **落点控制单侧化的修复**（§10.2）：给挥拍独立权限，让左半台可打。
+3. **L4 联赛**：L1/L2/对手策略互相提供训练信号（42 维 GA 在固定参照池上早到平台期）。
+4. **对手侧升级**：42 维参数策略 → 与 L2 同构的意图策略 + 联赛。
+
+
