@@ -133,6 +133,16 @@ const HIP_SKILL = (() => {
      *   触球高度 ≈ 0.82~0.86（离拍心 0.91 只差 0.05~0.09，在纵向容差 0.175 内）。 */
      padZOffset:  0.35,   // 拍面 z = 预测落台点 z + 偏移（<0 = 关闭 pz 通道）
      padZPhase:   1,      // 拍面 z 是否按「球的 z 相位栅格」吸附（避免球跳过接触窗口）
+    /* ★ padZMode：拍面深度的目标 = 弹跳后轨迹的**顶点**（1），还是老的
+     *   「落台点 + 固定偏移」（0）。
+     *   机理：接触窗口的**横向**容差 = PAD_HW + BALL_R + fitH，而 fitH 只在
+     *   球高 > TABLE_TOP+0.13 = 0.89 时才放宽（0.026 → 0.186 ⇒ x 容差
+     *   0.146m → 0.306m，翻倍）。实机触球高度 p50 = 0.83（全是低球）⇒
+     *   一直吃最窄窗口，而「够不到」的横向差 p90 只有 0.107m —— 差一点点被拒。
+     *   弹跳后轨迹的顶点是**每颗球能达到的最高点**，把拍面放到顶点所在的 z 上，
+     *   就是逐球拿最大接触高度（固定偏移做不到：球的弧线高度逐球不同）。 */
+    padZMode:    0,      // 0 = 固定偏移，1 = 顶点击球
+    apexMaxDy:   0.16,   // 顶点比拍心高过这个值就放弃（拍子够不着）
     padZMin:     0.95,   // 拍面 z 下限
     padZMax:     1.60,   // 拍面 z 上限
   /* 预判站位：AI 的落点永远在玩家的**反侧**（policy.js#aiDecision:
@@ -169,6 +179,9 @@ const HIP_SKILL = (() => {
    *   targetZ = 拍面目标 z（= 落台点 z + padZOffset，夹在 padZMin/Max）。
    */
   const SUB_DT = 1 / 120;     // 实机每帧 2 子步（SIM.subStepsFor(1/60) = 2）
+  /* 弹跳后的轨迹缓冲（模块级复用，避免每帧分配对象） */
+  const TRAJ_CAP = 800, TRAJ_STRIDE = 7;
+  const TRAJ = new Float64Array(TRAJ_CAP * TRAJ_STRIDE);
   function predictContact(obs, cfg){
     if(!SIM_) return { ok: false };
     const C = SIM_.C || {};
@@ -181,16 +194,19 @@ const HIP_SKILL = (() => {
     const TW = C.TABLE_W != null ? C.TABLE_W : 1.525;
     const TL = C.TABLE_L != null ? C.TABLE_L : 2.74;
     const BR = C.BALL_R != null ? C.BALL_R : 0.02;
+    const PAD_HD = C.PAD_HD != null ? C.PAD_HD : 0.03;
     const off = (cfg && cfg.padZOffset != null) ? cfg.padZOffset : 0.35;
     const zmin = (cfg && cfg.padZMin != null) ? cfg.padZMin : 0.95;
     const zmax = (cfg && cfg.padZMax != null) ? cfg.padZMax : 1.60;
+    const apexMode = (cfg && cfg.padZMode != null) ? cfg.padZMode : 0;
+    const apexMaxDy = (cfg && cfg.apexMaxDy != null) ? cfg.apexMaxDy : 0.16;
 
     let px = obs.x, py = obs.y, pz = obs.z;
     let vx = obs.vx || 0, vy = obs.vy || 0, vz = obs.vz || 0;
     let sx = obs.sx || 0, sy = obs.sy || 0;
     let t = 0;
     let bounced = false, tB = 0, bz = 0, bvz = 0;
-    let targetZ = null, hit = null;
+    let nTraj = 0;
 
     for(let i = 0; i < 900; i++){
       const prevY = py;
@@ -211,32 +227,90 @@ const HIP_SKILL = (() => {
         vz = vz * 0.99 + sx * KICK_;
         vx = vx * 0.985 - sy * KICK_ * 0.6;
         sx *= 0.72; sy *= 0.72;
-        if(!bounced){
-          bounced = true; tB = t; bz = pz; bvz = vz;
-          targetZ = cl(bz + off, zmin, zmax);
-        }
+        if(!bounced){ bounced = true; tB = t; bz = pz; bvz = vz; }
       }
-      /* ---- 球到达拍面深度的那一点 = 触球点 ---- */
-      if(bounced && !hit && pz >= targetZ){
-        hit = { x: px, y: py, z: pz, t: t, vx: vx, vy: vy, vz: vz };
-        break;
+      /* ---- 记录弹跳后的整条轨迹（顶点/穿越点都在里面找）---- */
+      if(bounced && nTraj < TRAJ_CAP){
+        const o = nTraj * TRAJ_STRIDE;
+        TRAJ[o] = px; TRAJ[o+1] = py; TRAJ[o+2] = pz;
+        TRAJ[o+3] = vx; TRAJ[o+4] = vy; TRAJ[o+5] = vz; TRAJ[o+6] = t;
+        nTraj++;
       }
       if(py <= BR && vy < 0) break;                 // 落地
       if(Math.abs(pz) > 4.5 || Math.abs(px) > 3) break;
     }
-    if(!hit){ LAST_FAIL.noBounce = true; return { ok: false }; }
+    if(!bounced || nTraj === 0){ LAST_FAIL.noBounce = true; return { ok: false }; }
     LAST_FAIL.noBounce = false;
+
+    /* ---- 顶点（弹跳后轨迹的最高点）----
+     * ★ 为什么要在顶点击球：接触窗口的**横向**容差
+     *   PAD_HW + BALL_R + fitH，其中 fitH 只在球高 > TABLE_TOP+0.13 = 0.89
+     *   时才放宽（0.026 → 0.186，即 x 容差 0.146m → 0.306m，翻倍）。
+     *   实机触球高度 p50 = 0.83（全是低球）⇒ 一直吃最窄的窗口，
+     *   而「够不到」的横向差 p90 只有 0.107m —— 差一点点就被拒。
+     *   弹跳后球的最高点是**每一颗球能达到的最大高度**，把拍面放到
+     *   顶点所在的 z 上，就能逐球拿到最大接触高度（而不是固定偏移）。 */
+    let ai = -1;
+    for(let i = 0; i < nTraj; i++){
+      const y = TRAJ[i * TRAJ_STRIDE + 1];
+      if(ai < 0 || y > TRAJ[ai * TRAJ_STRIDE + 1]) ai = i;
+    }
+    const apexY = ai >= 0 ? TRAJ[ai * TRAJ_STRIDE + 1] : 0;
+    const apexZ = ai >= 0 ? TRAJ[ai * TRAJ_STRIDE + 2] : 0;
+
+    /* ---- 目标拍面深度 ---- */
+    let crossZ = cl(bz + off, zmin, zmax);   // 球心穿过的平面
+    let targetZ = crossZ;                   // 拍子的虚拟 z（与老口径一致：targetZ = crossZ）
+    let useApex = false;
+    if(apexMode && ai >= 0){
+      /* 顶点在拍子够得着的范围内，且顶点的 z 没超出拍子行程 */
+      const apexOk = apexY <= PADDLE_Y + apexMaxDy && apexY >= PADDLE_Y - 0.22
+                  && apexZ + PAD_HD >= zmin && apexZ + PAD_HD <= zmax;
+      if(apexOk){
+        crossZ = apexZ;
+        targetZ = cl(apexZ + PAD_HD, zmin, zmax);
+        useApex = true;
+      }
+    }
+    /* ---- 找球心穿过 crossZ 的那一刻 ---- */
+    let hi = -1;
+    for(let i = 0; i < nTraj; i++){
+      if(TRAJ[i * TRAJ_STRIDE + 2] >= crossZ){ hi = i; break; }
+    }
+    if(hi < 0){ LAST_FAIL.noBounce = true; return { ok: false }; }
+    /* 线性插值到 crossZ 精确位置 */
+    let hx, hy, hz, hvx, hvy, hvz, ht;
+    if(hi === 0){
+      const o = 0;
+      hx = TRAJ[o]; hy = TRAJ[o+1]; hz = TRAJ[o+2];
+      hvx = TRAJ[o+3]; hvy = TRAJ[o+4]; hvz = TRAJ[o+5]; ht = TRAJ[o+6];
+    }else{
+      const o1 = (hi - 1) * TRAJ_STRIDE, o2 = hi * TRAJ_STRIDE;
+      const z1 = TRAJ[o1+2], z2 = TRAJ[o2+2];
+      const f = z2 > z1 ? (crossZ - z1) / (z2 - z1) : 0;
+      const g = f < 0 ? 0 : (f > 1 ? 1 : f);
+      hx = TRAJ[o1]   + (TRAJ[o2]   - TRAJ[o1])   * g;
+      hy = TRAJ[o1+1] + (TRAJ[o2+1] - TRAJ[o1+1]) * g;
+      hz = crossZ;
+      hvx = TRAJ[o1+3] + (TRAJ[o2+3] - TRAJ[o1+3]) * g;
+      hvy = TRAJ[o1+4] + (TRAJ[o2+4] - TRAJ[o1+4]) * g;
+      hvz = TRAJ[o1+5] + (TRAJ[o2+5] - TRAJ[o1+5]) * g;
+      ht  = TRAJ[o1+6] + (TRAJ[o2+6] - TRAJ[o1+6]) * g;
+    }
     return {
       ok: true,
-      x: hit.x, y: hit.y, z: hit.z,
-      tau: hit.t,
-      inSpd: Math.abs(hit.vz),
-      inVx: hit.vx,
-      vel: { x: hit.vx, y: hit.vy, z: hit.vz },   // 触球瞬间的球速（复核出球用）
+      x: hx, y: hy, z: hz,
+      tau: ht,
+      inSpd: Math.abs(hvz),
+      inVx: hvx,
+      vel: { x: hvx, y: hvy, z: hvz },   // 触球瞬间的球速（复核出球用）
       bz: bz,                 // 落台点 z
       tBounce: tB,            // 落台时刻
       vzPost: Math.abs(bvz),  // 落台后的 vz
       targetZ: targetZ,       // 拍面目标 z
+      apexY: apexY,           // 弹跳后轨迹的最高点高度
+      apexZ: apexZ,           // 最高点所在的 z
+      useApex: useApex,       // 是否采用了「顶点击球」
     };
   }
 
@@ -329,6 +403,7 @@ const HIP_SKILL = (() => {
         S.bx = ct.x; S.by = ct.y; S.bz = ct.bz; S.tau = ct.tau; S.hasMeet = true;
         S.bounceZ = ct.bz;
         S.tBounce = ct.tBounce; S.vzPost = ct.vzPost; S.padZ = ct.targetZ;
+        S.apexY = ct.apexY; S.apexZ = ct.apexZ; S.useApex = ct.useApex;
         S.inVx = ct.inVx;
         S.vel = ct.vel;                 // 触球瞬间的球速（意图复核用）
         /* 来球**触球时**的速度（不是出球瞬间的）：弹跳时上旋 kick 会把 vz 顶高
@@ -508,7 +583,7 @@ const HIP_SKILL = (() => {
       let padZ = null;
       if(cfg.padZOffset >= 0 && S.padZ != null && S.hasMeet){
         padZ = cl(S.padZ, cfg.padZMin, cfg.padZMax);
-        if(cfg.padZPhase && S.vzPost > 0.2){
+        if(cfg.padZPhase && S.vzPost > 0.2 && !S.useApex){
           /* z 相位对齐（默认关，实机 40 局实测 63.8% < 不对齐的 68.2%）：
            * 把拍面深度吸附到「球弹起后每帧 z 步进 s=vz/60」这条栅格上。 */
           const s = S.vzPost / 60;

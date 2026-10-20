@@ -24,28 +24,34 @@ const HIP_CHOICE = (() => {
    * 说明  : my=0.54 是实机扫描出来的尖峰（0.45→60.5%，0.54→87.9%，0.62→71.0%）
    */
   const OPTIONS = [
-    { id: 0,  name: 'm50-l', my: 0.50, aim: -0.22, ctrl: false },
-    { id: 1,  name: 'm50-c', my: 0.50, aim:  0.00, ctrl: false },
-    { id: 2,  name: 'm50-r', my: 0.50, aim:  0.22, ctrl: false },
-    { id: 3,  name: 'm54-l', my: 0.54, aim: -0.22, ctrl: false },
-    { id: 4,  name: 'm54-c', my: 0.54, aim:  0.00, ctrl: false },
-    { id: 5,  name: 'm54-r', my: 0.54, aim:  0.22, ctrl: false },
-    { id: 6,  name: 'm58-l', my: 0.58, aim: -0.22, ctrl: false },
-    { id: 7,  name: 'm58-c', my: 0.58, aim:  0.00, ctrl: false },
-    { id: 8,  name: 'm58-r', my: 0.58, aim:  0.22, ctrl: false },
-    { id: 9,  name: 'push-c', my: 0.56, aim:  0.00, ctrl: true  },
-    { id: 10, name: 'push-r', my: 0.56, aim:  0.15, ctrl: true  },
+    /* —— 常规选项：my 固定 0.54（实机扫描的尖峰：0.45→60.5%，0.54→87.9%，0.62→71.0%，
+     *    0.85→54.5%），只让**落点偏移**变。偏移量靠挥拍实现，
+     *    代价 = 拍子在触球前漂移 ≈0.065·vCmd（接触窗口只有 ±0.14m）。 —— */
+    { id: 0,  name: 'm54-l2', my: 0.54, aim: -0.12, ctrl: false },
+    { id: 1,  name: 'm54-l',  my: 0.54, aim: -0.24, ctrl: false },
+    { id: 2,  name: 'm54-c',  my: 0.54, aim:  0.00, ctrl: false },
+    { id: 3,  name: 'm54-r',  my: 0.54, aim:  0.24, ctrl: false },
+    { id: 4,  name: 'm54-r2', my: 0.54, aim:  0.12, ctrl: false },
+    /* —— 搓球选项：只在下旋来球时可选（fitWindow 的 pushF 只对下旋生效）—— */
+    { id: 5,  name: 'push-c', my: 0.56, aim:  0.00, ctrl: true  },
+    { id: 6,  name: 'push-l', my: 0.56, aim: -0.12, ctrl: true  },
+    { id: 7,  name: 'push-r', my: 0.56, aim:  0.12, ctrl: true  },
   ];
   const N_OPT = OPTIONS.length;
 
-  /* ---- 掩码：搓球只在下旋来球时可选 ---- */
+  /* ---- 掩码：搓球只在下旋来球且球不高时可选 ----
+   * 搓球的落点/手法是 PUSH 分支（arc=PUSH.arc+arcSafe、control=0.9），
+   * 只有 fitWindow 的 pushF（横向容差 0.026→0.170）在**下旋**时才生效，
+   * 而 L1 的搓球判据还有「球高 < pushHeight(0.95)」这一条。 */
   function mask(ctx){
     const m = new Uint8Array(N_OPT);
     const rtop = (ctx && ctx.rtop != null) ? ctx.rtop : 0;
+    const by = (ctx && ctx.by != null) ? ctx.by : 0;
     const back = rtop < -8;                     // 下旋来球
+    const low = by < 0.95;                     // 球不太高
     for(let i = 0; i < N_OPT; i++){
       const o = OPTIONS[i];
-      m[i] = (o.ctrl && !back) ? 0 : 1;
+      m[i] = (o.ctrl && !(back && low)) ? 0 : 1;
     }
     return m;
   }
