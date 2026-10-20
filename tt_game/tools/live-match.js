@@ -496,13 +496,25 @@ const JSON_OUT = argOf('--json', '');
  *   文件里是 {"myDrive":0.5, ...}；注入到 vm 里的 HIP_SKILL.setConfig()。 */
 const HIP_CFG = argOf('--hip-cfg', '');
 /* --move-cap <m/s>：模型侧移动预算（限速）。
- *   0 / 负数 / 不给 = 不限（限速前基线口径）。
  *   作用范围：**只有模型控制的拍**（ttmouse / hipmouse）——真人的拍面走
  *   main.js#playerControl，不受影响。
  *   同时作用于实机侧（vm 里的 MOVE_LIMIT）与仿真侧（Node 的 MOVE_LIMIT），
- *   保证两侧同一口径（否则又是训练/实机失配）。 */
-const MOVE_CAP = parseFloat(argOf('--move-cap', '0'));
-const MOVE_CAP_Z = parseFloat(argOf('--move-cap-z', '0'));
+ *   保证两侧同一口径（否则又是训练/实机失配）。
+ *
+ *   ★ 三种状态（2026-10-21 修）：
+ *     不给      = 用出厂默认（js/move-limit.js 的 DEFAULT_CAP，浏览器也是这一份）
+ *     --move-cap 0 / 负数 = **显式不限**（限速前基线口径）
+ *     --move-cap v (v>0)  = 限速 v m/s
+ *   旧实现把「不给」和「给 0」当成同一件事（都用 `MOVE_CAP > 0` 判断），
+ *   于是**显式给 0 也拿不到不限**（默认 2.0 仍在生效）——
+ *   「不限速基线」根本测不出来，而且测出来的数字会被误当成不限速。
+ *   现在用 MOVE_CAP_SET 区分「没给」与「给了 0」。 */
+const MOVE_CAP_RAW = argOf('--move-cap', '');
+const MOVE_CAP_SET = MOVE_CAP_RAW !== '';
+const MOVE_CAP = MOVE_CAP_SET ? (parseFloat(MOVE_CAP_RAW) || 0) : 0;
+const MOVE_CAP_Z_RAW = argOf('--move-cap-z', '');
+const MOVE_CAP_Z_SET = MOVE_CAP_Z_RAW !== '';
+const MOVE_CAP_Z = MOVE_CAP_Z_SET ? (parseFloat(MOVE_CAP_Z_RAW) || 0) : 0;
 function brainSrc(kind){
   return '(function(){\n' +
   '  var IN_MX=[],IN_MY=[];\n' +
@@ -548,7 +560,7 @@ function main(){
   const t0 = Date.now();
   /* ★ 移动预算（限速）：仿真侧（Node）与实机侧（vm）必须是同一份口径，
    * 否则就是又一次「训练/实机失配」。只影响模型控制的拍，真人不受影响。 */
-  if(MOVE_CAP > 0 || MOVE_CAP_Z > 0){
+  if(MOVE_CAP_SET || MOVE_CAP_Z_SET){
     const ML = require(path.join(ROOT, 'js', 'move-limit.js'));
     ML.setMoveLimit({ cap: MOVE_CAP > 0 ? MOVE_CAP : null,
                       capZ: MOVE_CAP_Z > 0 ? MOVE_CAP_Z : null });
@@ -576,7 +588,7 @@ function main(){
     rig = buildLiveRig(W);
     step = makeStep(rig.ctx, HZ);
     /* 限速也注入 vm 里的实机侧（vm 里 move-limit.js 是普通 script ⇒ 全局函数） */
-    if(MOVE_CAP > 0 || MOVE_CAP_Z > 0){
+    if(MOVE_CAP_SET || MOVE_CAP_Z_SET){
       vm.runInContext('setMoveLimit({ cap: ' + (MOVE_CAP > 0 ? MOVE_CAP : 'null') +
                       ', capZ: ' + (MOVE_CAP_Z > 0 ? MOVE_CAP_Z : 'null') + ' });', rig.ctx);
     }
