@@ -632,7 +632,20 @@ const INPUTSIM = (() => {
         /* ★ 对手逐帧真跑（SIM.aiStep + SIM.magnetStep + 镜像接触判据 + aiDecision）。
            旧实现是闭式 aiReach，够不到就直接给 agent 记分 —— 那 4 道硬门就是
            tools/diag-reach.js 当初量到的「仿真胜率虚高」的主要来源。 */
+        /* ★ 观察钩子（L3 对手可达性模型）：在「对手逐帧真跑」的入口处把
+         *   这一球的物理量交给外部采集器，并回传对手到底够没够到。
+         *   放在这里是因为这是**唯一**同时握有
+         *     sim（落点 landing / 弹起 bounce 的速度与旋转）、
+         *     state（出球位置与速度）、_aiPadX（对手拍位 x）、
+         *     shots（相持长度）、r2.hit（够没够到 = 免费标签）
+         *   的位置。sim 绝不能在校验器里重算（simulateFull 内部有 45% 擦网随机，
+         *   重算会改 rng 流、破坏确定性）。
+         *   没有装观察器时，观察器上下文根本不会构造（零开销、零行为变化）。 */
+        const obsCtx = _observer
+          ? { sim: sim, state: state, oppX: _aiPadX, shots: shots, hitter: hitter, pol: pA }
+          : null;
         const r2 = aiReceive(state.pos, state.vel, state.spin, pA, rng, false, pad.x);
+        if(_observer && obsCtx){ try{ _observer(obsCtx, r2); }catch(e){ /* 观察器出错不影响对局 */ } }
         if(!r2.hit){ winner = 'player'; reason = 'ai-recv-' + r2.loss; credit(0.35); break; }
         state = { pos: r2.out.pos, vel: r2.out.vel, spin: r2.out.spin };
         hitter = 'ai'; shots++;
@@ -655,6 +668,17 @@ const INPUTSIM = (() => {
    *   DQN 的 encodeObs 只按名字取 15 个字段，多加 ox 不影响它（88 维输入不变）。 */
   let _aiPadX = 0;
   function aiPadX(){ return _aiPadX; }
+  /* ---- 观察钩子（可选）：L3 对手可达性模型的数据采集用 ----
+   * 装上后，每次「对手接球」都会调用 observer(ctx, result)：
+   *   ctx = { sim, state, oppX, shots, hitter, pol }
+   *     sim  = SIM.simulateFull 的结果（landing / bounce / ok / bouncedOpp）
+   *     state= 出球时的 {pos, vel, spin}
+   *     oppX = 对手拍位 x（对手接球前）
+   *     shots= 相持板数
+   *   result= aiReceive 的返回（hit:true / {hit:false, loss}）
+   * 传 null 卸载。观察器抛错不会影响对局。 */
+  let _observer = null;
+  function setObserver(fn){ _observer = typeof fn === 'function' ? fn : null; }
   function playInputPoint(agent, pA, rng, firstServer, freq){
     _lastPad = null;
     const r = _playInputPointInner(agent, pA, rng, firstServer, freq);
@@ -688,7 +712,7 @@ const INPUTSIM = (() => {
   }
 
   const api = { cl, C, DT, PLAYER_Z, AI_Z, padInit, padControl, playerReceive, HITDBG,
-                serveFromPlayer, serveFromAI, aiReturn, aiPadX,
+                serveFromPlayer, serveFromAI, aiReturn, aiPadX, setObserver,
                 playInputPoint, playInputGame, playInputMatch };
   if(typeof module !== 'undefined' && module.exports) module.exports = api;
   return api;
