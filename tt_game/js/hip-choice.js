@@ -18,24 +18,31 @@
  */
 const HIP_CHOICE = (() => {
   /* ---- 选项表（K = 11）----
-   * my    : 出球深度/弧线旋钮（意图路径下只管出球，拍面深度由 pz 通道管）
+   * my    : 出球深度/弧线旋钮（pz 通道把拍面深度与出球深度解耦 ⇒ my 是纯出球旋钮）
    * aim   : 相对「自然落点」的偏移（米）—— 靠挥拍实现，代价已计入教师打分
    * ctrl  : 是否搓球（只在下旋来球时可用）
-   * 说明  : my=0.54 是实机扫描出来的尖峰（0.45→60.5%，0.54→87.9%，0.62→71.0%）
+   *
+   * ★ 2026-10-20 重排（第六个真 bug 修完之后）：
+   *   旧表把 my 钉死在 0.54（当时扫出来的尖峰），但那个尖峰是在
+   *   「拍面深度由 my 推出」的口径下测的；pz 通道上线后 my 只管出球，
+   *   实机二维扫描（padZOffset × myDrive，20 局/格）显示
+   *   my ∈ {0.50, 0.54, 0.58} 都安全（自己出界 3~8 球/局），
+   *   尖峰消失、变成平台 ⇒ **深度值得让学习层自己选**。
    */
   const OPTIONS = [
-    /* —— 常规选项：my 固定 0.54（实机扫描的尖峰：0.45→60.5%，0.54→87.9%，0.62→71.0%，
-     *    0.85→54.5%），只让**落点偏移**变。偏移量靠挥拍实现，
-     *    代价 = 拍子在触球前漂移 ≈0.065·vCmd（接触窗口只有 ±0.14m）。 —— */
-    { id: 0,  name: 'm54-l2', my: 0.54, aim: -0.12, ctrl: false },
-    { id: 1,  name: 'm54-l',  my: 0.54, aim: -0.24, ctrl: false },
-    { id: 2,  name: 'm54-c',  my: 0.54, aim:  0.00, ctrl: false },
-    { id: 3,  name: 'm54-r',  my: 0.54, aim:  0.24, ctrl: false },
-    { id: 4,  name: 'm54-r2', my: 0.54, aim:  0.12, ctrl: false },
+    /* —— 常规选项：my × 落点偏移（9 个）—— */
+    { id: 0,  name: 'm50-c', my: 0.50, aim:  0.00, ctrl: false },
+    { id: 1,  name: 'm50-l', my: 0.50, aim: -0.24, ctrl: false },
+    { id: 2,  name: 'm50-r', my: 0.50, aim:  0.24, ctrl: false },
+    { id: 3,  name: 'm54-c', my: 0.54, aim:  0.00, ctrl: false },
+    { id: 4,  name: 'm54-l', my: 0.54, aim: -0.24, ctrl: false },
+    { id: 5,  name: 'm54-r', my: 0.54, aim:  0.24, ctrl: false },
+    { id: 6,  name: 'm58-c', my: 0.58, aim:  0.00, ctrl: false },
+    { id: 7,  name: 'm58-l', my: 0.58, aim: -0.24, ctrl: false },
+    { id: 8,  name: 'm58-r', my: 0.58, aim:  0.24, ctrl: false },
     /* —— 搓球选项：只在下旋来球时可选（fitWindow 的 pushF 只对下旋生效）—— */
-    { id: 5,  name: 'push-c', my: 0.56, aim:  0.00, ctrl: true  },
-    { id: 6,  name: 'push-l', my: 0.56, aim: -0.12, ctrl: true  },
-    { id: 7,  name: 'push-r', my: 0.56, aim:  0.12, ctrl: true  },
+    { id: 9,  name: 'push-c', my: 0.56, aim:  0.00, ctrl: true  },
+    { id: 10, name: 'push-r', my: 0.56, aim:  0.12, ctrl: true  },
   ];
   const N_OPT = OPTIONS.length;
 

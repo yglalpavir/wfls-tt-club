@@ -183,6 +183,24 @@ const HIP_SKILL = (() => {
      *   并把拍面目标抬到「球的当前 z」，免得拍子往回跑。
      *   0 = 关（回到旧的错误行为，用于 A/B）。 */
     postBounceFix: 1,
+    /* ★ 深度安全网（depthSafety）：把「这一拍会落在多深」夹进安全带。
+     *   背景（第六个真 bug 修完之后）：够不到已清零，**失分 100% 是「自己出界/下网」**。
+     *   出界机理：出球深度 my 与入球速度/接触高度耦合 —— 来球越快、接触越低，
+     *   resolveHit 的 arcFit 越小 ⇒ 弧线越平 ⇒ 落点越深 ⇒ 撞端线出界。
+     *   做法：用实机同一份 resolveHit + simulateFull 复算这一拍的落点，
+     *   若落点深度超界，就把 my 往「更浅」的方向拉
+     *   （my↑ ⇒ aimZ = −1.24+0.74·my² 更浅 + arcMouse = −0.28+0.58·my 更高 ⇒ 落点更浅）。
+     *   与第三道闸门的区别：闸门是**否决**（落点非法就打回自然落点），
+     *   而自然落点本身也可能出界；这里是**修正**（把 my 拉到合法）。 */
+    depthSafety: 1,       // 1 = 开（实机 A/B：off 92.3% / on 93.1% / on+depthMax1.15 94.1%，
+                           //     失分 out 12→10→8 单调下降；vs hell，40 局/组，同种子）
+    depthTau:   0.05,     // 触球前多少秒做这次修正（与第三道闸门同口径）
+    depthMax:   1.15,     // 落点深度上限（端线 1.37，留 0.22 余量）
+    depthMin:   0.52,     // 落点深度下限（太短会下网）
+    depthGain:  1.60,     // my 的修正增益（d(my)/d(depth) ≈ −1.6）
+    depthIter:  3,        // 迭代次数
+    myMin:      0.46,     // 修正时 my 的下限
+    myMax:      0.68,     // 修正时 my 的上限
   /* 预判站位：AI 的落点永远在玩家的**反侧**（policy.js#aiDecision:
    * away = playerX>0 ? -1 : 1），所以下一球大概率来「上一球的反侧」。
    * 空档时先站到那一侧，等球来就不用追 —— 理论上是最便宜的够球率提升。
@@ -559,6 +577,7 @@ const HIP_SKILL = (() => {
         S.rtop = (SIM_ && SIM_.relTopOf) ? SIM_.relTopOf(obs.sx || 0, vz) : (obs.sx || 0);
         S.inSpd = Math.abs(vz);
         S.intentChecked = false;      // 每板重置（第三道闸门每板只判一次）
+        S.depthChecked = false;       // 每板重置（深度安全网每板只判一次）
         if(cfg.alternate) S.side = -S.side;
         /* ★ aimForceAlt：每板交替强制绝对落点（±v）。
          *   对手会跟着上一球站位 ⇒ 固定一边会被适应，换边才有效。 */
@@ -734,6 +753,33 @@ const HIP_SKILL = (() => {
           S.verifyFail = (S.verifyFail || 0) + 1;
         }else{
           S.verifyOk = (S.verifyOk || 0) + 1;
+        }
+      }
+
+      /* ★ 深度安全网：把这一拍的落点深度夹进 [depthMin, depthMax]。
+       *   触发条件与第三道闸门相同（触球前 0.05s、每板一次），但动作不同：
+       *   闸门是「落点非法 ⇒ 打回自然落点」，这里是「落点太深 ⇒ 把 my 拉浅」。
+       *   为什么要修正而不是否决：自然落点（= 回球到球来的地方）本身也可能出界，
+       *   而实测失分 100% 是出界 ⇒ 否决式闸门救不了。
+       *   落点深度 = −landing.z（对手半台为负），
+       *   修正方向：太深（depth > depthMax）⇒ my 增大（更浅）；太短 ⇒ my 减小。 */
+      if(cfg.depthSafety > 0 && S.hasMeet && S.vel && S.tau < cfg.depthTau && !S.depthChecked){
+        S.depthChecked = true;
+        const dctx = { bx: S.bx, by: S.by, bz: S.bz, vel: S.vel,
+                       sx: obs.sx, sy: obs.sy, svz: obs.svz };
+        for(let it = 0; it < cfg.depthIter; it++){
+          const land = landingOf(px, svx, dctx, my, ctrl, S.want, SERVO_RNG);
+          if(!land || land.z == null) break;
+          const depth = -land.z;
+          S.depthLand = depth;
+          let my2 = my;
+          if(depth > cfg.depthMax)      my2 = my + (depth - cfg.depthMax) * cfg.depthGain;
+          else if(depth < cfg.depthMin) my2 = my - (cfg.depthMin - depth) * cfg.depthGain;
+          else { S.depthOk = (S.depthOk || 0) + 1; break; }
+          my2 = cl(my2, cfg.myMin, cfg.myMax);
+          S.depthFixed = (S.depthFixed || 0) + 1;
+          if(Math.abs(my2 - my) < 1e-4){ my = my2; break; }
+          my = my2;
         }
       }
 

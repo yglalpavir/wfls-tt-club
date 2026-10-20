@@ -147,19 +147,22 @@ $('btnWatch').onclick = e=>{ e.stopPropagation(); startFight(); };
 
 /* ---- 对战模型选择（普通AI / 地狱AI / 大满贯预备种子 / 鼠标上的tt玩家 / 地狱AI克星）----
  * 极端对手 / 极端·满档已取消可选（opponent-ladder.js 仍保留，供 train-input3.js 课程训练用） */
-const MODEL_NAMES = { standard: '普通 AI', hell: '地狱 AI', grandslam: '大满贯预备种子', ttmouse: '鼠标上的tt玩家', nemesis: '地狱AI克星' };
-const MODEL_KEYS = { standard:'g_model_standard', hell:'g_model_hell', grandslam:'g_model_grandslam', ttmouse:'g_model_ttmouse', nemesis:'g_model_nemesis' };
-const MODEL_HINT_KEYS = { standard:'g_mhint_standard', hell:'g_mhint_hell', grandslam:'g_mhint_grandslam', ttmouse:'g_mhint_ttmouse', nemesis:'g_mhint_nemesis' };
+const MODEL_NAMES = { standard: '普通 AI', hell: '地狱 AI', grandslam: '大满贯预备种子', ttmouse: '鼠标上的tt玩家', hipmouse: 'tt玩家·HIP', nemesis: '地狱AI克星' };
+const MODEL_KEYS = { standard:'g_model_standard', hell:'g_model_hell', grandslam:'g_model_grandslam', ttmouse:'g_model_ttmouse', hipmouse:'g_model_hipmouse', nemesis:'g_model_nemesis' };
+const MODEL_HINT_KEYS = { standard:'g_mhint_standard', hell:'g_mhint_hell', grandslam:'g_mhint_grandslam', ttmouse:'g_mhint_ttmouse', hipmouse:'g_mhint_hipmouse', nemesis:'g_mhint_nemesis' };
 /* 模型显示名(随语言) —— 所有界面文案都必须走这里,MODEL_NAMES 只作 zh 兜底 */
 function modelLabel(id){
   const k = MODEL_KEYS[id];
   return (typeof gameT === 'function' && k) ? gameT(k) : (MODEL_NAMES[id] || String(id));
 }
-/* ---- 「鼠标上的tt玩家」权重懒加载：涉及该模型时提前注入，开赛时若未就绪则等待 ---- */
+/* ---- 「鼠标上的tt玩家」权重懒加载：涉及该模型时提前注入，开赛时若未就绪则等待 ----
+ * 「tt玩家·HIP」用另一套权重（hip-choice-weights.js，K 路安全动作集），同样懒加载。 */
 function maybePreloadTtWeights(){
   if(typeof TT_PLAYER === 'undefined') return;
   if(aiModel==='ttmouse' || fightL==='ttmouse' || fightR==='ttmouse')
     TT_PLAYER.ensureWeights().catch(err => console.warn('[tt] 权重加载失败：' + err.message));
+  if(aiModel==='hipmouse' || fightL==='hipmouse' || fightR==='hipmouse')
+    TT_PLAYER.ensureHipChoiceWeights().catch(err => console.warn('[hip] 权重加载失败：' + err.message));
 }
 function refreshModelHint(){
   const h = $('modelHint');
@@ -322,6 +325,9 @@ function startGame(){
   // 选了「鼠标上的tt玩家」但权重未就绪：等懒加载完成再开赛（失败也照常开赛，该侧回退普通 AI）
   if(aiModel==='ttmouse' && typeof INPUT_AI_WEIGHTS === 'undefined' && typeof TT_PLAYER !== 'undefined')
     TT_PLAYER.ensureWeights().then(go).catch(()=>go());
+  // 「tt玩家·HIP」同理：等 hip-choice-weights.js 注入完成
+  else if(aiModel==='hipmouse' && typeof HIP_CHOICE_WEIGHTS === 'undefined' && typeof TT_PLAYER !== 'undefined')
+    TT_PLAYER.ensureHipChoiceWeights().then(go).catch(()=>go());
   else go();
 }
 /* AI 斗蛐蛐：两侧 AI（可相同/不同）对战，5局三胜，不换边 */
@@ -343,7 +349,10 @@ function startFight(){
   };
   const needW = (fightL==='ttmouse' || fightR==='ttmouse')
     && typeof INPUT_AI_WEIGHTS === 'undefined' && typeof TT_PLAYER !== 'undefined';
+  const needHipW = (fightL==='hipmouse' || fightR==='hipmouse')
+    && typeof HIP_CHOICE_WEIGHTS === 'undefined' && typeof TT_PLAYER !== 'undefined';
   if(needW) TT_PLAYER.ensureWeights().then(go).catch(()=>go());
+  else if(needHipW) TT_PLAYER.ensureHipChoiceWeights().then(go).catch(()=>go());
   else go();
 }
 function resetMatch(){

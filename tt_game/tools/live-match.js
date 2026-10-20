@@ -250,6 +250,8 @@ const PIPELINE = [
   'hip-skill.js',            // ★ HIP L1：解析技能控制器（无学习参数，tt-player 之前）
   'hip-intent.js',           // ★ HIP L2：意图空间 + 特征 + 前向（依赖 hip-skill）
   'hip-weights.js',          // ★ HIP L2 权重（CE 蒸馏烘焙，~80KB）
+  'hip-choice.js',           // ★ HIP L2'：K 路安全动作集（依赖 hip-skill/hip-intent）
+  'hip-choice-weights.js',   // ★ HIP L2' 权重（K 分类烘焙）
   'input-weights.js',        // 烘焙权重（~9.7MB，懒加载同款）
   'state.js',                // 全局状态变量
   'tt-stats.js',             // 遥测（提供 reasonOf 归类）
@@ -392,7 +394,7 @@ function buildSimSide(weightsFile, controller){
   global.SIM = SIM; global.P = PP;
   /* hip 控制器没有学习参数 → 不需要权重（也不该被权重文件卡住）。
    * 权重文件仍然会被加载一次做「形状自检」：实机侧仍要过一遍 TT_PLAYER.isReady()。 */
-  if(controller === 'hip' || controller === 'hip-intent'){
+  if(controller === 'hip' || controller === 'hip-intent' || controller === 'hip-choice'){
     const { HIP_SKILL } = require(path.join(ROOT, 'js', 'hip-skill.js'));
     if(controller === 'hip-intent'){
       const { HIP_INTENT } = require(path.join(ROOT, 'js', 'hip-intent.js'));
@@ -402,6 +404,19 @@ function buildSimSide(weightsFile, controller){
         const feats = HIP_INTENT.features(o);
         const id = HIP_INTENT.decide(W2.HIP_WEIGHTS, feats);
         const c = HIP_INTENT.intentToControls(id, o);
+        return ctl.plan(o, c);
+      }, credit(){} };
+      return { INPUTSIM, OPP, IA, agent: null, brain, meta: null };
+    }
+    if(controller === 'hip-choice'){
+      const { HIP_INTENT } = require(path.join(ROOT, 'js', 'hip-intent.js'));
+      const { HIP_CHOICE } = require(path.join(ROOT, 'js', 'hip-choice.js'));
+      const W3 = require(path.join(ROOT, 'js', 'hip-choice-weights.js'));
+      const ctl = HIP_SKILL.makeController();
+      const brain = { act(o){
+        const feats = HIP_INTENT.features(o);
+        const id = HIP_INTENT.argmax(W3.HIP_CHOICE_WEIGHTS || W3, feats);
+        const c = HIP_CHOICE.optionToIntent(id, o, SIM.C.AIM);
         return ctl.plan(o, c);
       }, credit(){} };
       return { INPUTSIM, OPP, IA, agent: null, brain, meta: null };
@@ -547,7 +562,7 @@ function main(){
     if(BRAIN) vm.runInContext(brainSrc(BRAIN), rig.ctx);   // 形状自检通过后再接管决策
     /* --controller hip：把实机侧的决策来源换成解析技能控制器。
      * 权重仍然照常载入（形状自检 + 管线一致性），但不再参与决策。 */
-    if(CONTROLLER === 'hip' || CONTROLLER === 'hip-intent'){
+    if(CONTROLLER === 'hip' || CONTROLLER === 'hip-intent' || CONTROLLER === 'hip-choice'){
       vm.runInContext('TT_PLAYER.setController(' + JSON.stringify(CONTROLLER) + ');', rig.ctx);
       /* 注意：vm 里 `const TT_PLAYER = …` 是**词法绑定**，不是 ctx 的属性，
        * 所以 rig.ctx.TT_PLAYER 是 undefined —— 只能通过 runInContext 取值。 */
@@ -556,6 +571,10 @@ function main(){
       if(CONTROLLER === 'hip-intent'){
         const ok = vm.runInContext('typeof HIP_INTENT !== "undefined" && typeof HIP_WEIGHTS !== "undefined"', rig.ctx);
         if(!ok) throw new Error('hip-intent 需要 js/hip-intent.js 与 js/hip-weights.js');
+      }
+      if(CONTROLLER === 'hip-choice'){
+        const ok = vm.runInContext('typeof HIP_CHOICE !== "undefined" && typeof HIP_CHOICE_WEIGHTS !== "undefined"', rig.ctx);
+        if(!ok) throw new Error('hip-choice 需要 js/hip-choice.js 与 js/hip-choice-weights.js');
       }
       if(HIP_CFG){
         const raw = HIP_CFG.trim().startsWith('{') ? HIP_CFG : fs.readFileSync(path.resolve(HIP_CFG), 'utf8');

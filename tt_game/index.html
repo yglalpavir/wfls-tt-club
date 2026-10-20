@@ -142,6 +142,7 @@
         <button class="model-btn" data-model="hell" data-i18n="g_model_hell">地狱 AI</button>
         <button class="model-btn" data-model="grandslam" data-i18n="g_model_grandslam">大满贯预备种子</button>
         <button class="model-btn" data-model="ttmouse" data-i18n="g_model_ttmouse">鼠标上的tt玩家</button>
+        <button class="model-btn" data-model="hipmouse" data-i18n="g_model_hipmouse">tt玩家·HIP</button>
         <button class="model-btn" data-model="nemesis" data-i18n="g_model_nemesis">地狱AI克星</button>
       </div>
       <div class="diff-hint" id="modelHint" data-i18n="g_mhint_standard">普通 AI：标准水平 · 攻守平衡</div>
@@ -155,6 +156,7 @@
           <option value="hell" selected data-i18n="g_model_hell">地狱 AI</option>
           <option value="grandslam" data-i18n="g_model_grandslam">大满贯预备种子</option>
           <option value="ttmouse" data-i18n="g_model_ttmouse">鼠标上的tt玩家</option>
+          <option value="hipmouse" data-i18n="g_model_hipmouse">tt玩家·HIP</option>
           <option value="nemesis" data-i18n="g_model_nemesis">地狱AI克星</option>
         </select>
         <span class="vs">VS</span>
@@ -163,6 +165,7 @@
           <option value="hell" selected data-i18n="g_model_hell">地狱 AI</option>
           <option value="grandslam" data-i18n="g_model_grandslam">大满贯预备种子</option>
           <option value="ttmouse" data-i18n="g_model_ttmouse">鼠标上的tt玩家</option>
+          <option value="hipmouse" data-i18n="g_model_hipmouse">tt玩家·HIP</option>
           <option value="nemesis" data-i18n="g_model_nemesis">地狱AI克星</option>
         </select>
         <label data-i18n="g_fight_right">右 AI</label>
@@ -251,6 +254,11 @@
 <script src="js/learned-policy-nemesis.js"></script>
 <script src="js/dqn.js"></script>
 <script src="js/input-agent.js"></script>
+<!-- HIP 分层意图策略：L1 解析技能层（无学习参数）+ L2 战术层（CE 蒸馏）。
+     权重 hip-weights.js / hip-choice-weights.js 各自按需懒加载（见 tt-player.js） -->
+<script src="js/hip-skill.js"></script>
+<script src="js/hip-intent.js"></script>
+<script src="js/hip-choice.js"></script>
 <!-- input-weights.js(3.8MB)已改为按需懒加载:仅对战模型选中「鼠标上的tt玩家」时注入,
      见 tt-player.js 的 TT_PLAYER.ensureWeights / input.js 的预载触发。移动端可省去
      数百毫秒的下载+解析阻塞 -->

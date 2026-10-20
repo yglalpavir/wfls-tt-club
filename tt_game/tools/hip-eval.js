@@ -89,7 +89,8 @@ function aggregate(byTier){
                lost: b.lost || {}, contacts: [b.dqnContacts, b.oppContacts],
                /* ★ 停摆局数与局数：分点率的分母是「窗口内打出的分数」，
                *   相持越长分母越小、胜率越虚高 ⇒ 必须同时看分数÷局数与停摆数。 */
-               stalled: b.stalled || 0, games: b.games ? b.games.length : 0 };
+               stalled: b.stalled || 0,
+               games: b.gameCount != null ? b.gameCount : (b.games ? b.games.length : 0) };
   }
   return agg;
 }
@@ -180,6 +181,10 @@ function main(){
         m.dqnPts += b.dqnPts; m.oppPts += b.oppPts;
         m.dqnContacts += b.dqnContacts; m.oppContacts += b.oppContacts;
         if(b.lost) for(const k in b.lost) m.lost[k] = (m.lost[k] || 0) + b.lost[k];
+        /* ★ 停摆局数与局数必须一起合并（漏了会让「分/局」与「停摆」永远显示 —/0），
+         *   而这两个数是判断「胜率是否因样本变小而虚高」的唯一依据。 */
+        m.stalled = (m.stalled || 0) + (b.stalled || 0);
+        m.gameCount = (m.gameCount || 0) + (b.games ? b.games.length : 0);
       }
     }
     const agg = aggregate(merged);

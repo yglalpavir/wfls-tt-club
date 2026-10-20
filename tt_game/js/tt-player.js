@@ -59,7 +59,10 @@ const TT_PLAYER = (() => {
     return hipCtls[side];
   }
   function setController(kind){
-    controller = (kind === 'hip') ? 'hip' : (kind === 'hip-intent' ? 'hip-intent' : 'dqn');
+    controller = (kind === 'hip') ? 'hip'
+              : (kind === 'hip-intent') ? 'hip-intent'
+              : (kind === 'hip-choice') ? 'hip-choice'
+              : 'dqn';
     if(controller !== 'dqn'){ hipCtls.player = null; hipCtls.ai = null; }
     return controller;
   }
@@ -82,6 +85,23 @@ const TT_PLAYER = (() => {
     return hipWeightsPromise;
   }
 
+  /* ---- L2' 权重懒加载（js/hip-choice-weights.js）---- */
+  let hipChoiceWeightsPromise = null;
+  function ensureHipChoiceWeights(){
+    if(typeof HIP_CHOICE_WEIGHTS !== 'undefined') return Promise.resolve();
+    if(!hipChoiceWeightsPromise){
+      hipChoiceWeightsPromise = new Promise((resolve, reject) => {
+        if(typeof document === 'undefined'){ reject(new Error('no-document')); return; }
+        const s = document.createElement('script');
+        s.src = 'js/hip-choice-weights.js';
+        s.onload = () => resolve();
+        s.onerror = () => { hipChoiceWeightsPromise = null; reject(new Error('hip-choice-weights.js 加载失败')); };
+        document.head.appendChild(s);
+      });
+    }
+    return hipChoiceWeightsPromise;
+  }
+
   /* ---- L2 决策：obs → 特征 → 网络 → 意图 → 控制量 ---- */
   function hipIntentControls(obs){
     if(typeof HIP_INTENT === 'undefined' || typeof HIP_WEIGHTS === 'undefined') return null;
@@ -92,6 +112,20 @@ const TT_PLAYER = (() => {
        *   四个下标全退化成 0 ⇒ 意图恒为 id 0，学生从未参与决策。 */
       const id = HIP_INTENT.decide(HIP_WEIGHTS, feats);
       return HIP_INTENT.intentToControls(id, obs);
+    }catch(e){ return null; }
+  }
+
+  /* ---- L2' 决策：obs → 特征 → 网络（K 分类）→ 安全动作 → L1 执行 ----
+   * 与 hipIntentControls 的区别：那边是 336 类意图 + 4 头 argmax，
+   * 这边是 K 个**实机验证过安全**的选项（js/hip-choice.js），
+   * 网络只有**一个头** ⇒ 直接全局 argmax 就是 K 分类。 */
+  function hipChoiceControls(obs){
+    if(typeof HIP_INTENT === 'undefined' || typeof HIP_CHOICE === 'undefined'
+       || typeof HIP_CHOICE_WEIGHTS === 'undefined') return null;
+    try{
+      const feats = HIP_INTENT.features(obs);
+      const id = HIP_INTENT.argmax(HIP_CHOICE_WEIGHTS, feats);
+      return HIP_CHOICE.optionToIntent(id, obs, C_.AIM);
     }catch(e){ return null; }
   }
 
@@ -127,9 +161,13 @@ const TT_PLAYER = (() => {
     }
   }
   function isReady(){
-    /* hip / hip-intent 控制器不依赖 DQN 权重 */
+    /* hip / hip-intent / hip-choice 控制器不依赖 DQN 权重 */
     if(controller === 'hip') return typeof HIP_SKILL !== 'undefined';
     if(controller === 'hip-intent') return typeof HIP_SKILL !== 'undefined' && typeof HIP_INTENT !== 'undefined';
+    if(controller === 'hip-choice'){
+      return typeof HIP_SKILL !== 'undefined' && typeof HIP_INTENT !== 'undefined'
+          && typeof HIP_CHOICE !== 'undefined' && typeof HIP_CHOICE_WEIGHTS !== 'undefined';
+    }
     return ready && !!agent;
   }
 
@@ -230,6 +268,11 @@ const TT_PLAYER = (() => {
         /* L2 给意图（往哪打），L1 负责「够得到」+ 落点闭环 */
         const hc = hipCtl(side);
         const ctl = hipIntentControls(obs);
+        vp.cur = (hc && ctl) ? hc.plan(obs, ctl) : { tx: 0, my: 0.5, ctrl: false };
+      }else if(controller === 'hip-choice'){
+        /* L2' 给「安全动作」（my × 落点偏移），L1 负责执行与兜底闸门 */
+        const hc = hipCtl(side);
+        const ctl = hipChoiceControls(obs);
         vp.cur = (hc && ctl) ? hc.plan(obs, ctl) : { tx: 0, my: 0.5, ctrl: false };
       }else if(controller === 'hip'){
         /* HIP L1：解析技能控制器。输入是同一份 15 字段 obs（与训练侧同构），
@@ -421,7 +464,7 @@ const TT_PLAYER = (() => {
       svx: realPad.svx, svz: (side === 'player') ? realPad.svz : -realPad.svz,
       tx: vp.cur.tx, my: vp.cur.my, bounced: 0,
     };
-    const d = (controller === 'hip' || controller === 'hip-intent')
+    const d = (controller === 'hip' || controller === 'hip-intent' || controller === 'hip-choice')
       ? (function(){
           const hc = hipCtl(side);
           const s = hc ? hc.serve() : { tx: 0, my: 0.5, top: true, power: 0.6 };
@@ -441,7 +484,8 @@ const TT_PLAYER = (() => {
   /* 本侧当前姿态（physics.js#pushStanceOf 在 ttmouse 玩家侧读它） */
   function getStance(side){ const vp = vpads[side]; return vp ? vp.stance : 'forehand'; }
 
-  return { init, isReady, isTtSide, ttTick, ttHit, reset, ensureWeights, ensureHipWeights, decideServe, getStance,
+  return { init, isReady, isTtSide, ttTick, ttHit, reset, ensureWeights, ensureHipWeights,
+           ensureHipChoiceWeights, decideServe, getStance,
            setController, getController,
            get agent(){ return agent; } };
 })();
