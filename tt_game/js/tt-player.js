@@ -474,11 +474,22 @@ const TT_PLAYER = (() => {
    * 训练侧对应 input-sim.js 的「发球前决策」块（serveObs + 15 帧 padControl）——
    * 两边必须同一口径，否则训练出的发球在实机复现不出来。 */
   function decideServe(){
-    if(!isReady()) return null;
-    const side = (typeof mode !== 'undefined' && mode === 'watch')
-      ? (server === 'player' ? fightL : fightR)
-      : (server === 'ai' ? aiModel : '');
-    if(side !== 'ttmouse' && side !== 'hipmouse') return null;
+    /* ★ 这里要分清「模型名」与「哪一侧」：原代码把 modelOf() 的返回值（'ttmouse'）
+     *   当成 side 用，于是 realPad 取成 aiPad、vpads 取成 vpads['ai'] ——
+     *   玩家侧发球时读的是**对手的拍**；而且 controllerFor('ttmouse') 解析不出
+     *   控制器 ⇒ agent 为 null ⇒ `agent.decode` 抛 TypeError（浏览器端实测到）。
+     *   修法：先算出模型名，再单独解析出 side，最后按该侧判 isReady。*/
+    const isWatch = (typeof mode !== 'undefined' && mode === 'watch');
+    let model = '', side = '';
+    if(isWatch){
+      if(server === 'player'){ model = fightL; side = 'player'; }
+      else { model = fightR; side = 'ai'; }
+    }else{
+      model = (server === 'ai') ? aiModel : '';   // 真人对局里玩家发球 ⇒ 不是 tt 侧
+      side = 'ai';
+    }
+    if(model !== 'ttmouse' && model !== 'hipmouse') return null;
+    if(!isReady(side)) return null;
     const realPad = (side === 'player') ? playerPad : aiPad;
     if(typeof realPad === 'undefined' || !realPad || !realPad.group) return null;
     /* 发球待机观测：球未抛起 → 位置/速度置中、标记未落台（与训练侧 serveObs 同构） */
