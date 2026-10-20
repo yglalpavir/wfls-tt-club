@@ -252,6 +252,9 @@ const HIP_SKILL = (() => {
     myMin:      0.30,     // 修正时 my 的下限（方向修对后要留出下调空间：my↓ ⇒ 弧线更平 ⇒ 落点更近）
     myMax:      0.72,     // 修正时 my 的上限
     depthSafetyCapped: 1, // ★ 有限速时是否仍开这条修正网（默认开：方向修对之后才有效）
+    depthLatch:   0,      // ★ 修正是否**跨帧锁存**（默认关：实测锁存有害 83.1%→55.1%，
+                           //     因为这条网的落点估计偏悲观（dLand p90=3.5 vs 真实 ~1.0）
+                           //     ⇒ 锁存会把好球一起拉歪；见「第十个真 bug」）
   /* 预判站位：AI 的落点永远在玩家的**反侧**（policy.js#aiDecision:
    * away = playerX>0 ? -1 : 1），所以下一球大概率来「上一球的反侧」。
    * 空档时先站到那一侧，等球来就不用追 —— 理论上是最便宜的够球率提升。
@@ -691,6 +694,7 @@ const HIP_SKILL = (() => {
         S.inSpd = Math.abs(vz);
         S.intentChecked = false;      // 每板重置（第三道闸门每板只判一次）
         S.depthChecked = false;       // 每板重置（深度安全网每板只判一次）
+        S.myFix = null;               // 每板重置（深度安全网算出的修正 my，见下面的 ★ 第十个真 bug）
         if(cfg.alternate) S.side = -S.side;
         /* ★ aimForceAlt：每板交替强制绝对落点（±v）。
          *   对手会跟着上一球站位 ⇒ 固定一边会被适应，换边才有效。 */
@@ -866,6 +870,23 @@ const HIP_SKILL = (() => {
       }
       my = cl(my, 0.15, 0.95);
       }
+      /* ★★★ 第十个真 bug（已定位，但**修法被实测否决** ⇒ 默认关）
+       *   症状：深度安全网**每板只判一次**（`S.depthChecked`），而 `my` 在每一帧都从
+       *   `cfg.myDrive` 重新起算 ⇒ 安全网算出的 my2 在**下一帧就被冲掉**，
+       *   真正触球那一帧用的还是 myDrive（实测坏球的 my 恒为 0.540，
+       *   而安全网估出的深度 dLand = 3.18~3.84m，端线只有 1.37m ⇒ 它**算对了**）。
+       *   修法（把修正**跨帧锁存**在 `S.myFix` 里）**实测有害**：
+       *   实机 A/B（限速 2.0 + 固定角落，40 局，配对同种子）
+       *     不锁存（= 上线配置）      **83.1%** [78.2,87.1]
+       *     锁存 + 方向「太深 ⇒ my 调小」31.1% [25.5,37.2]（失分 98.2% 自己出界）
+       *     锁存 + 方向「太深 ⇒ my 调大」**55.1%** [49.7,60.5]
+       *   ⇒ 锁存为什么更差：这条网的**估计偏悲观**（dLand p50 = 1.18、p90 = 3.5，
+       *   而真实落点深度 p50 只有 1.0）⇒ 锁存会把约 10~20% 的**好球**也一起拉歪
+       *   （my 被推到 myMax ⇒ 弧线变高 ⇒ 球变短 ⇒ 被对手轻松回到）。
+       *   ⇒ 正确的修法是**把估计做准**，不是把估计锁死 ⇒ 锁存保留为旋钮，默认关。
+       *   ⇒ 通用教训：「代码在跑」≠「代码在起作用」；但反过来也成立 ——
+       *     **「算对了」不等于「锁住它是对的」**（锁之前先问：这个估计有多可信？）。 */
+      if(cfg.depthLatch > 0 && S.myFix != null) my = cl(S.myFix, cfg.myMin, cfg.myMax);
 
       /* ★ 第三道闸门（**两条路径都生效**）：触球前把「这一拍打出去会落在哪」
        *   算一遍（实机同一份 resolveHit + simulateFull）。出界/下网 ⇒ 落点回落
@@ -899,11 +920,11 @@ const HIP_SKILL = (() => {
        *   而实测失分 100% 是出界 ⇒ 否决式闸门救不了。
        *   落点深度 = −landing.z（对手半台为负），
        *   修正方向：太深（depth > depthMax）⇒ my 增大（更浅）；太短 ⇒ my 减小。
-       *   ★ 限速下默认**关**（depthSafetyCapped=0）：限速口径下「打长」的成因是
-       *   resolveHit 的 isLoop 误判（跑位冲量喂饱 fwd ⇒ 拉球 ⇒ pace 7 ⇒ 球冲过端线），
-       *   而 my 对落点深度几乎不敏感（实测 my 0.30→0.95 落点只差 0.23m 且非单调），
-       *   所以这条修正网救不了限速下的出界，只会改坏弧线（实测 4.1% → 1.2%）。
-       *   不限速时它是有效的（出界 12→8），故只在有限速时才关。 */
+       *   ★ 限速下**开**（depthSafetyCapped=1）：限速口径下「打长」的成因有两个
+       *   （isLoop 误判 —— 已用 swingFwd 修掉；以及落点目标在远角 ⇒ 意图解算出的球极快），
+       *   剩下的那一小撮（实测 0.8% 的出球）由这条网收尾。
+       *   ⚠ 注意：这条网的价值取决于 (1) 修正**跨帧锁存**（第十个真 bug）与
+       *   (2) 修正**方向**（实机 A/B 定，不能用孤立复算定）。 */
       const capOn = (typeof MOVE_LIMIT !== 'undefined' && MOVE_LIMIT) ? (MOVE_LIMIT.cap != null) : false;
       const dsOn = (cfg.depthSafety > 0) && (!capOn || cfg.depthSafetyCapped > 0);
       if(dsOn && S.hasMeet && S.vel && S.tau < cfg.depthTau && !S.depthChecked){
@@ -923,15 +944,22 @@ const HIP_SKILL = (() => {
           const depth = -land.z;
           S.depthLand = depth;
           let my2 = my;
-          /* ★ 修正方向：**my 越大 ⇒ 弧线越高 ⇒ 球在空中停更久 ⇒ 落点更深**。
-           *   实测 my 0.30→0.60 落点 z −0.733→−0.960（d(lz)/d(my) ≈ −0.76）
-           *   ⇒ 「打太长」要**调小 my**（弧线更平 ⇒ 落点更近）。
-           *   旧版方向写反了（调大 my ⇒ 越修越深），是不限速路径上
-           *   98.3% → 96.2% 的那点回归的来源。 */
-          if(depth > cfg.depthMax)      my2 = my - (depth - cfg.depthMax) * cfg.depthGain;
-          else if(depth < cfg.depthMin) my2 = my + (cfg.depthMin - depth) * cfg.depthGain;
+          /* ★ 修正方向：**打太长 ⇒ my 增大（落点更浅）**；打太短 ⇒ my 减小。
+           *   ⚠ 这里踩过一次坑：先前用**孤立复算**（固定接触点、扫 my 0.30~0.95）
+           *   得出「my 越大落点越深（d(lz)/d(my) ≈ −0.76）」，据此把方向**反过来**。
+           *   但那组样本**非单调**（my 0.30 → lz −0.733，my 0.60 → −0.960，
+           *   my 0.95 → −0.896），结论不成立。
+           *   实机 A/B（限速 2.0 + 固定角落，40 局，配对同种子）给出的方向相反：
+           *   把「太深 ⇒ my 调小」+ 跨帧锁存一起上线 ⇒ 胜率 83.1% → **31.1%**，
+           *   失分的 98.2% 变成「自己出界」（483 球）⇒ **my 调小 = 球更长**。
+           *   ⇒ 方向必须用**实机 A/B**定，不能用孤立复算定；
+           *   而 A/B 又必须先把修正**真正落到球上**（跨帧锁存）才有意义 ——
+           *   这就是「第十个真 bug」与「方向」两件事必须一起修的原因。 */
+          if(depth > cfg.depthMax)      my2 = my + (depth - cfg.depthMax) * cfg.depthGain;
+          else if(depth < cfg.depthMin) my2 = my - (cfg.depthMin - depth) * cfg.depthGain;
           else { S.depthOk = (S.depthOk || 0) + 1; break; }
           my2 = cl(my2, cfg.myMin, cfg.myMax);
+          if(cfg.depthLatch > 0) S.myFix = my2;   /* ★ 跨帧锁存（默认关，见上面的「第十个真 bug」） */
           S.depthFixed = (S.depthFixed || 0) + 1;
           if(Math.abs(my2 - my) < 1e-4){ my = my2; break; }
           my = my2;
