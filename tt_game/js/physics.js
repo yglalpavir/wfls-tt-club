@@ -293,7 +293,12 @@ function tryAIHit(){
   // ★ 与玩家对称：接球拟合窗口走 SIM.fitWindow（下旋来球自动获得搓球拟合，
   //   判据只看球是否下旋、不看 agent 按没按 Ctrl —— 与训练侧已对齐）
   const stance = aiPad.stance;   // 姿态由 aiMoveShared resolveStance 维护
-  const W = SIM.fitWindow(stance, relTop(), ball.pos.y, ball.vel, ball.spin);
+  /* ★ assist：对手的「接触宽容度」缩放（策略字段，默认 1 = 线上口径不变）。
+     这一份宽容窗口是游戏给对手的最大辅助（容差 0.209m vs 对手瞄准误差 0.055m
+     ⇒ 辅助预算 3.8 倍 ⇒ 对手从不错过 ⇒ 「往哪打」没有可学信号）。
+     收回它（assist<1）对手就会真的失误，落点/球速的选择才第一次有收益。 */
+  const _apol = (typeof policyForSide === 'function') ? policyForSide('ai') : null;
+  const W = SIM.fitWindow(stance, relTop(), ball.pos.y, ball.vel, ball.spin, undefined, _apol ? _apol.assist : null);
   const fitV = W.fitV, fitH = W.fitH, fitZ = W.fitZ;
   const g = aiPad.group.position, plane = g.z+PAD_HD;
   const zF = fitZ || 0.05;

@@ -249,7 +249,7 @@ const INPUTSIM = (() => {
         stance: pad.stance, stanceT: pad.stanceT, now: simClock,
         canHit: true, ctrl: false, pushMag: false, dt: DT });
       /* 4. 接触判据（实机 tryAIHit 的镜像：拍面平面在 pad.z+PAD_HD，来球 vz<0） */
-      const W = SIM.fitWindow(pad.stance, relTopOfSt(s.x, v.z), p.y, v, s, true);
+      const W = SIM.fitWindow(pad.stance, relTopOfSt(s.x, v.z), p.y, v, s, true, pol && pol.assist);
       const zF = W.fitZ || 0.05;
       const plane = pad.z + PAD_HD;
       const swept = (pzPrev >= plane - zF && p.z < plane + zF && v.z < 0);

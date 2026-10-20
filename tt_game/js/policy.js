@@ -377,16 +377,29 @@ function trapPolicy(){
    *   实测 16000 条样本 0 漏球 ⇒ 读球代价完全体现不出来（§4.6）。 */
   return Object.assign({}, base, { readDelay: 0.07, readSpin: true, readFreeze: true });
 }
+/* ★ bare：收回「接触宽容度」这份辅助的对手档（assist < 1）。
+ *   宽容窗口是游戏给对手的最大礼物：线上容差 0.209m vs 对手瞄准误差 0.055m
+ *   ⇒ 辅助预算 3.8 倍 ⇒ 对手从不错过 ⇒ 玩家「往哪打」在物理上没有收益空间
+ *   （docs/tech/hip-framework.md §1.13）。assist 把容差按比例缩小，
+ *   对手开始真的失误 ⇒ 落点/球速的选择第一次有可学信号。
+ *   ★ 线上默认档（hell/default/grandslam…）完全不带 assist ⇒ 行为逐位不变；
+ *     这一档只给训练/评测用（比 trap 更接近「真实乒乓」而不是「会读错球的 AI」）。 */
+function barePolicy(){
+  const base = unflattenPolicy(strongVec());
+  return Object.assign({}, base, { assist: 0.45 });
+}
 /* 按所选对战模型解析策略：普通=默认 · 地狱=学习策略 · 大满贯=预备种子 ·
  *   extreme / extreme-max=极端对手阶梯（opponent-ladder.js，与训练器同源）·
  *   nemesis=地狱AI克星（只针对地狱AI特训）·
  *   trap=带读球代价的强对手（HIP M5，训练/评测专用）·
+ *   bare=收回接触宽容度辅助的对手档（HIP M5b，训练/评测专用）·
  *   鼠标上的tt玩家=默认(仅发球决策用，回球由 DQN 驱动) */
 function policyForModel(model){
   if(model === 'hell') return unflattenPolicy(strongVec());
   if(model === 'grandslam') return grandSlamPolicy();
   if(model === 'nemesis') return nemesisPolicy();
   if(model === 'trap') return trapPolicy();
+  if(model === 'bare') return barePolicy();
   if(model === 'extreme' || model === 'extreme-max'){
     if(typeof OPP_LADDER !== 'undefined') return OPP_LADDER.at(model);
     if(typeof module !== 'undefined' && module.exports) return require('./opponent-ladder.js').at(model);

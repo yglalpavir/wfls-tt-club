@@ -813,18 +813,27 @@ const SIM = (() => {
    * allowPush：是否允许主动搓球拟合。实机玩家侧传 ctrlHold（真人按键），
    * AI 侧与训练侧传 true（只看球是否下旋）—— 这一条是三处**有意不同**的口径，
    * 其余全部共用。 */
-  function fitWindow(stance, relTop, ballY, v, s, allowPush){
+  function fitWindow(stance, relTop, ballY, v, s, allowPush, assist){
     const isBack = relTop < -8;
     const pushF = (isBack && allowPush !== false) ? C.PUSH.fit : null;
     const st = C.STROKE[stance] || C.STROKE.forehand;
     const high = ballY > C.TABLE_TOP + 0.13;
     const inQual = clamp((Math.abs(v.z) * 0.06 + Math.abs(s.x) * 0.002 + Math.abs(s.y) * 0.002) - 0.15, 0, 0.35);
-    return {
+    /* ★ assist：接触宽容度的**缩放系数**（默认 1 = 当前线上口径，逐位不变）。
+     *   宽容窗口是这个游戏给对手的最大「辅助」：线上对手瞄准误差 0.055m，
+     *   而接触容差有 0.209m（辅助预算 ≈3.8 倍）⇒ 对手从不错过，
+     *   于是「往哪打」这个维度在物理上没有可学的信号（见 docs/tech/hip-framework.md §1.13）。
+     *   把 assist 调小 = 收回这份辅助（更接近真实乒乓），对手开始会失误，
+     *   落点/球速的选择才第一次产生收益。训练与评测可用，线上默认仍是 1。 */
+    const A = (assist == null || !isFinite(assist)) ? 1 : assist;
+    const r = {
       pushF, high, inQual,
       fitV: pushF ? st.forgiveV + pushF.v : (high ? st.forgiveV + 0.30 : Math.max(st.forgiveV - inQual, 0.04)),
       fitH: pushF ? st.forgiveH + pushF.h : (high ? st.forgiveH + 0.16 : Math.max(st.forgiveH - inQual * 0.5, 0.02)),
       fitZ: pushF ? st.forgiveZ + pushF.z : (high ? st.forgiveZ + 0.12 : Math.max(st.forgiveZ - inQual * 0.4, 0.02)),
     };
+    if(A !== 1){ r.fitV *= A; r.fitH *= A; r.fitZ *= A; }
+    return r;
   }
 
   /* ---- 前冲力度 fwd：分母必须读 MOUSE_SV_CAP ----

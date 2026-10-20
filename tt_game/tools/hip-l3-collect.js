@@ -67,10 +67,16 @@ function main(){
   const gapStat = { n: 0, sum: 0, max: 0, over: 0, fitSum: 0, errSum: 0, errAbs: 0 };
 
   INPUTSIM.setObserver(function(ctx, r){
-    /* 标签：对手接到了 = 1；没接到（timeout）= 0；其它（球出界等）跳过 */
+    /* 标签：对手接到了 = 1；没接到 = 0。
+     * ★ 判据的坑（2026-10-20 修）：aiReceive 的失败有三种 loss ——
+     *   'timeout'（循环跑完没碰到球）、'double'（球在对手半台弹了两次 = 对手没接到）、
+     *   'out'（球在对手半台出界 = 对手没接到）。
+     *   原实现只把 'timeout' 当负样本，'double'/'out' 全部被 skip
+     *   ⇒ 任何「对手真的漏球」的场景都会被丢掉，采集结果永远是 0 负样本。
+     *   判据修正：hit=1；其余 loss 一律 0（对手没把球打回去）。 */
     let y = null;
     if(r && r.hit) y = 1;
-    else if(r && r.loss === 'timeout') y = 0;
+    else if(r) y = 0;
     if(y === null){ nSkip++; return; }
     const f = HIP_L3.features(ctx);
     if(r && typeof r.gap === 'number'){
@@ -96,6 +102,7 @@ function main(){
     const tag = tags[Math.floor(rng() * tags.length) % tags.length];
     curTag = tag;
     const pol0 = (tag === 'trap') ? (P.policyForModel('trap') || P.POLICY_DEFAULT)
+                : (tag === 'bare') ? (P.policyForModel('bare') || P.POLICY_DEFAULT)
                                   : (OPP.at(tag) || P.policyForModel(tag) || P.POLICY_DEFAULT);
     /* --delay <v> / --nospin <0|1>：覆盖对手的「读球代价」参数（诊断用）。
      *   readDelay 越大 ⇒ 读旋越久 ⇒ 可用跑位时间越少；readSpin=0 ⇒ 信念包含旋转（无误设）。 */
@@ -104,10 +111,14 @@ function main(){
     /* --freeze <0|1>：冻结对手的信念（读完球就承诺自己的判断，不再随球逼近自我纠正）。
      *   不冻结时「误设模型」会被时间抹平（对手每 16~90ms 从球的当前位置重算落点）⇒ 0 漏球。 */
     const fzOv = argOf('--freeze', '');
+    /* --assist <v>：缩放对手的「接触宽容度」（1 = 线上口径；调小 = 收回这份辅助，
+     *   对手开始真的失误 ⇒ 落点/球速的选择第一次有可学信号。见 hip-framework.md §1.13。 */
+    const asOv = parseFloat(argOf('--assist', ''));
     const polOv = Object.assign({}, pol0,
       (isNaN(dOv) ? {} : { readDelay: dOv }),
       (nsOv === '' ? {} : { readSpin: nsOv !== '0' }),
-      (fzOv === '' ? {} : { readFreeze: fzOv !== '0' }));
+      (fzOv === '' ? {} : { readFreeze: fzOv !== '0' }),
+      (isNaN(asOv) ? {} : { assist: asOv }));
     const pol = hasErr ? Object.assign({}, polOv, { moveErr: errOv }) : polOv;
     /* 随机化玩家侧：落点目标 + 出球深度（把落点空间铺开） */
     const cfg = hasAlt
