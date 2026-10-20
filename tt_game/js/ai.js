@@ -38,7 +38,7 @@ function aiMoveShared(dt, pad, side, zHome, zLo, zHi, policy, precModel){
 }
 function aiMove(dt){
   // ★ 右上角模型 = 鼠标上的tt玩家：用训练出的输入级 DQN 驱动（镜像到玩家侧坐标系）
-  if(typeof TT_PLAYER !== 'undefined' && TT_PLAYER.isTtSide('ai') && TT_PLAYER.isReady()){
+  if(typeof TT_PLAYER !== 'undefined' && TT_PLAYER.isTtSide('ai') && TT_PLAYER.isReady('ai')){
     TT_PLAYER.ttTick(dt, 'ai', aiPad);
     return;
   }
@@ -62,7 +62,7 @@ function demoPlayer(dt){
 }
 /* 斗蛐蛐：左侧（近侧/原玩家侧）由 AI 控制——与右侧共用同一套 aiMoveShared（player 方向） */
 function aiMovePlayer(dt){
-  if(typeof TT_PLAYER !== 'undefined' && TT_PLAYER.isTtSide('player') && TT_PLAYER.isReady()){
+  if(typeof TT_PLAYER !== 'undefined' && TT_PLAYER.isTtSide('player') && TT_PLAYER.isReady('player')){
     TT_PLAYER.ttTick(dt, 'player', playerPad);
     return;
   }

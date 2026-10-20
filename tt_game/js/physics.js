@@ -102,7 +102,7 @@ function pushStanceOf(){
    * （自适应预测缓存 vs 每板一次且不随磁吸漂移的预测点；gvx/bvx/strokeSwitches 的
    *  给法也不同），于是选出的 STROKE 不同 → 触球窗口与磁吸强度都不同 ——
    * 也就是 agent 训的是「训练侧那套姿态下的自己」。 */
-  if(typeof TT_PLAYER !== 'undefined' && TT_PLAYER.isReady() && TT_PLAYER.isTtSide('player')
+  if(typeof TT_PLAYER !== 'undefined' && TT_PLAYER.isReady('player') && TT_PLAYER.isTtSide('player')
      && typeof mode !== 'undefined' && mode === 'watch'){
     return TT_PLAYER.getStance('player');
   }
@@ -191,7 +191,7 @@ function hitPlayer(){
 function hitAI(){
   const g = aiPad.group.position;
   // ★ 鼠标上的tt玩家：击球由输入级 DQN 管线产出（hitShot 同构），其余动画/音效照旧
-  if(typeof TT_PLAYER !== 'undefined' && TT_PLAYER.isReady() && TT_PLAYER.isTtSide('ai')){
+  if(typeof TT_PLAYER !== 'undefined' && TT_PLAYER.isReady('ai') && TT_PLAYER.isTtSide('ai')){
     const stroke = aiPad.stance;
     aiPad.flipTarget = stroke==='backhand' ? 1 : 0;
     aiPad.strokeT = elapsed;
@@ -235,7 +235,7 @@ function hitAI(){
 function hitAIForPlayer(){
   const g = playerPad.group.position;
   // ★ 鼠标上的tt玩家（斗蛐蛐左侧）：用同款输入级 DQN 玩家管线（无需镜像，本侧即玩家侧）
-  if(typeof TT_PLAYER !== 'undefined' && TT_PLAYER.isReady() && TT_PLAYER.isTtSide('player')){
+  if(typeof TT_PLAYER !== 'undefined' && TT_PLAYER.isReady('player') && TT_PLAYER.isTtSide('player')){
     const stroke = playerPad.stance;
     playerPad.flipTarget = stroke==='backhand' ? 1 : 0;
     playerPad.strokeT = elapsed;

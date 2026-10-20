@@ -50,6 +50,11 @@ const TT_PLAYER = (() => {
    * 三条路都只产出 {tx, my, ctrl}，共用同一套 padControl / resolveHit 物理，
    * 所以实机表现可直接对比（tools/live-match.js --controller dqn|hip|hip-intent）。 */
   let controller = 'dqn';
+  /* ★ setController 被显式调用过 ⇒ 两侧都用这个控制器（评测台 live-match 走这条）；
+   *   浏览器里没人调 setController ⇒ 按**每侧对局模型**解析控制器
+   *   （fightL='ttmouse' 一侧走 DQN、fightR='hipmouse' 一侧走 HIP，
+   *    两种球手可以同时上场 —— 这是把 HIP 做成「可选项」而不是「全局替换」的前提）。*/
+  let controllerExplicit = false;
   const hipCtls = { player: null, ai: null };
   function hipCtl(side){
     if(!hipCtls[side]){
@@ -59,6 +64,7 @@ const TT_PLAYER = (() => {
     return hipCtls[side];
   }
   function setController(kind){
+    controllerExplicit = true;
     controller = (kind === 'hip') ? 'hip'
               : (kind === 'hip-intent') ? 'hip-intent'
               : (kind === 'hip-choice') ? 'hip-choice'
@@ -67,6 +73,20 @@ const TT_PLAYER = (() => {
     return controller;
   }
   function getController(){ return controller; }
+  /* 该侧的对局模型名（watch 模式 = fightL/fightR；其它 = aiModel） */
+  function modelOf(side){
+    if(typeof mode !== 'undefined' && mode === 'watch')
+      return (side === 'player') ? fightL : fightR;
+    return (side === 'ai') ? aiModel : '';
+  }
+  /* 该侧用哪个控制器 */
+  function controllerFor(side){
+    if(controllerExplicit) return controller;
+    const m = modelOf(side);
+    if(m === 'hipmouse') return 'hip-choice';
+    if(m === 'ttmouse')  return 'dqn';
+    return controller;
+  }
 
   /* ---- L2 权重懒加载（js/hip-weights.js，约 80KB）---- */
   let hipWeightsPromise = null;
@@ -160,23 +180,30 @@ const TT_PLAYER = (() => {
       ready = false;
     }
   }
-  function isReady(){
-    /* hip / hip-intent / hip-choice 控制器不依赖 DQN 权重 */
-    if(controller === 'hip') return typeof HIP_SKILL !== 'undefined';
-    if(controller === 'hip-intent') return typeof HIP_SKILL !== 'undefined' && typeof HIP_INTENT !== 'undefined';
-    if(controller === 'hip-choice'){
-      return typeof HIP_SKILL !== 'undefined' && typeof HIP_INTENT !== 'undefined'
-          && typeof HIP_CHOICE !== 'undefined' && typeof HIP_CHOICE_WEIGHTS !== 'undefined';
+  function hipReady(ctrl){
+    if(ctrl === 'hip') return typeof HIP_SKILL !== 'undefined';
+    if(ctrl === 'hip-intent') return typeof HIP_SKILL !== 'undefined' && typeof HIP_INTENT !== 'undefined';
+    if(ctrl === 'hip-choice') return typeof HIP_SKILL !== 'undefined' && typeof HIP_INTENT !== 'undefined'
+        && typeof HIP_CHOICE !== 'undefined' && typeof HIP_CHOICE_WEIGHTS !== 'undefined';
+    return false;
+  }
+  function isReady(side){
+    /* hip / hip-intent / hip-choice 控制器不依赖 DQN 权重。
+     * 传 side 时按该侧的控制器判定（浏览器里两侧可能一个 DQN 一个 HIP，
+     * 只加载了 HIP 权重时也必须让 HIP 那侧正常上场）。 */
+    if(side){
+      const ctrl = controllerFor(side);
+      return (ctrl === 'dqn') ? (ready && !!agent) : hipReady(ctrl);
     }
-    return ready && !!agent;
+    /* 无 side：任一侧可用即可 */
+    if(ready && agent) return true;
+    return hipReady(controllerFor('player')) || hipReady(controllerFor('ai'));
   }
 
-  /* ---- 侧 → 是否使用「鼠标上的tt玩家」模型 ---- */
+  /* ---- 侧 → 是否使用「鼠标上的tt玩家」模型（ttmouse=DQN / hipmouse=HIP） ---- */
   function isTtSide(side){
-    const m = (typeof mode !== 'undefined' && mode === 'watch')
-      ? (side === 'player' ? fightL : fightR)
-      : (side === 'ai' ? aiModel : '');
-    return m === 'ttmouse';
+    const m = modelOf(side);
+    return m === 'ttmouse' || m === 'hipmouse';
   }
 
   /* ---- 实况 → 玩家侧坐标系（mir=+1 玩家侧原样 / mir=-1 AI 侧镜像） ---- */
@@ -264,17 +291,18 @@ const TT_PLAYER = (() => {
       vp.cur = vp.serveLock;
     }else if(frame % DECIDE_SKIP_ === 0){
       const obs = buildObs(side, realPad);
-      if(controller === 'hip-intent'){
+      const ctrl = controllerFor(side);
+      if(ctrl === 'hip-intent'){
         /* L2 给意图（往哪打），L1 负责「够得到」+ 落点闭环 */
         const hc = hipCtl(side);
         const ctl = hipIntentControls(obs);
         vp.cur = (hc && ctl) ? hc.plan(obs, ctl) : { tx: 0, my: 0.5, ctrl: false };
-      }else if(controller === 'hip-choice'){
+      }else if(ctrl === 'hip-choice'){
         /* L2' 给「安全动作」（my × 落点偏移），L1 负责执行与兜底闸门 */
         const hc = hipCtl(side);
         const ctl = hipChoiceControls(obs);
         vp.cur = (hc && ctl) ? hc.plan(obs, ctl) : { tx: 0, my: 0.5, ctrl: false };
-      }else if(controller === 'hip'){
+      }else if(ctrl === 'hip'){
         /* HIP L1：解析技能控制器。输入是同一份 15 字段 obs（与训练侧同构），
          * 输出同样是 {tx,my,ctrl}，因此实机/训练共用一条物理管线。 */
         const hc = hipCtl(side);
@@ -362,7 +390,7 @@ const TT_PLAYER = (() => {
 
   /* ---- 触球：与 input-sim hitShot 同构（玩家侧坐标系 resolveHit，AI 侧再镜像回真坐标） ---- */
   function ttHit(side, realPad){
-    if(!isReady()) return false;
+    if(!isReady(side)) return false;
     const mir = (side === 'player') ? 1 : -1;
     const m = mirrorState(side);
     const vp = vpads[side];
@@ -450,7 +478,7 @@ const TT_PLAYER = (() => {
     const side = (typeof mode !== 'undefined' && mode === 'watch')
       ? (server === 'player' ? fightL : fightR)
       : (server === 'ai' ? aiModel : '');
-    if(side !== 'ttmouse') return null;
+    if(side !== 'ttmouse' && side !== 'hipmouse') return null;
     const realPad = (side === 'player') ? playerPad : aiPad;
     if(typeof realPad === 'undefined' || !realPad || !realPad.group) return null;
     /* 发球待机观测：球未抛起 → 位置/速度置中、标记未落台（与训练侧 serveObs 同构） */
@@ -464,7 +492,8 @@ const TT_PLAYER = (() => {
       svx: realPad.svx, svz: (side === 'player') ? realPad.svz : -realPad.svz,
       tx: vp.cur.tx, my: vp.cur.my, bounced: 0,
     };
-    const d = (controller === 'hip' || controller === 'hip-intent' || controller === 'hip-choice')
+    const d = (controllerFor(side) === 'hip' || controllerFor(side) === 'hip-intent'
+               || controllerFor(side) === 'hip-choice')
       ? (function(){
           const hc = hipCtl(side);
           const s = hc ? hc.serve() : { tx: 0, my: 0.5, top: true, power: 0.6 };
