@@ -10,8 +10,8 @@
  *
  * 所以这里的动作空间 = K 个**实机验证过安全**的选项（每个选项 = 一个 my × 落点偏移），
  * 学生只做 K 分类，输出一律落在「已知安全」的格子里。
- * 落点偏移靠「相对自然落点的偏移」表达，因为自然落点随球的位置变化，
- * 绝对落点是做不到的（拍子必须在球旁边 ±0.14m）。
+ * 落点偏移靠「相对自然落点的偏移」表达；另有 4 个**绝对落点**选项（abs），
+ * 它们是「打远角」的唯一入口（自然落点 = 0.55·球x ⇒ 落点必然跟着球走）。
  *
  * 教师（tools/hip-choice-teacher.js）负责给每个选项打分并选最优，
  * 学生（tools/hip-choice-train.js）只学这个 K 分类。
@@ -30,7 +30,7 @@ const HIP_CHOICE = (() => {
    *   尖峰消失、变成平台 ⇒ **深度值得让学习层自己选**。
    */
   const OPTIONS = [
-    /* —— 常规选项：my × 落点偏移（9 个）—— */
+    /* —— 常规选项：my × 落点偏移（相对自然落点，9 个）—— */
     { id: 0,  name: 'm50-c', my: 0.50, aim:  0.00, ctrl: false },
     { id: 1,  name: 'm50-l', my: 0.50, aim: -0.24, ctrl: false },
     { id: 2,  name: 'm50-r', my: 0.50, aim:  0.24, ctrl: false },
@@ -43,6 +43,24 @@ const HIP_CHOICE = (() => {
     /* —— 搓球选项：只在下旋来球时可选（fitWindow 的 pushF 只对下旋生效）—— */
     { id: 9,  name: 'push-c', my: 0.56, aim:  0.00, ctrl: true  },
     { id: 10, name: 'push-r', my: 0.56, aim:  0.12, ctrl: true  },
+    /* —— 绝对落点选项（4 个）——
+     * ★ 2026-10-21 新增（限速实验的连锁发现）：
+     *   上面的 9 个常规选项的落点都是「相对自然落点」，而自然落点 ≈ 0.55·球x
+     *   ⇒ 球打回来时落点必然跟着球走 ⇒ **动作空间里根本没有「打远角」这个选项**
+     *   ⇒ 教师用 ground-truth 探针（真的调 aiReceive 看对手接不接得到）实测：
+     *      对 hell、对 bare(assist 0.45) 都是 **0 次「对手没接到」**。
+     *   M3 引入 aimNat（自然落点）时把「绝对落点」能力弄丢了：
+     *      老口径 landTarget=±0.55 实测能达成（请求 +0.55 ⇒ 落点中位 +0.49）。
+     *   现在补回来：abs 是**绝对落点目标**（米），与球的来向无关。
+     *   物理上可达吗？落点 = 0.55·拍位x + 0.30·拍速x，
+     *   而拍速x 受移动预算 cap 限制 ⇒ cap=2.0 时可偏 ±0.60m、cap=2.4 时 ±0.72m ⇒ 够。
+     *   前提：挥拍项必须在 cap 下「有额度」——若 holdClamp 太大，追位会把手臂打满
+     *   （追位残差 = 18·hold），挥拍项就完全失效 ⇒ 落点锁死。
+     *   ⇒ 限速 + 轻追位（holdClamp 小）才是「打远角」可执行的前提。 */
+    { id: 11, name: 'abs-l55', my: 0.54, abs: -0.55, ctrl: false },
+    { id: 12, name: 'abs-l30', my: 0.54, abs: -0.30, ctrl: false },
+    { id: 13, name: 'abs-r30', my: 0.54, abs:  0.30, ctrl: false },
+    { id: 14, name: 'abs-r55', my: 0.54, abs:  0.55, ctrl: false },
   ];
   const N_OPT = OPTIONS.length;
 
@@ -66,7 +84,7 @@ const HIP_CHOICE = (() => {
   /* ---- 选项 → 控制量（aimX 是相对自然落点的偏移，由调用方加到自然落点上）---- */
   function optionToControls(id, ctx){
     const o = OPTIONS[id] || OPTIONS[4];
-    return { my: o.my, ctrl: !!o.ctrl, aimOffset: o.aim, optId: o.id, name: o.name };
+    return { my: o.my, ctrl: !!o.ctrl, aimOffset: o.aim, abs: (o.abs != null ? o.abs : null), optId: o.id, name: o.name };
   }
 
   /* ---- 自然落点（与 hip-skill 的 aim 律一致）---- */
@@ -82,7 +100,10 @@ const HIP_CHOICE = (() => {
     const c = optionToControls(id, obs);
     const nat = naturalAim(obs, AIM);
     const lim = 0.62;
-    const aimX = Math.max(-lim, Math.min(lim, nat + c.aimOffset));
+    /* ★ 绝对落点选项（abs != null）：直接给绝对目标，不叠自然落点 */
+    const aimX = (c.abs != null)
+      ? Math.max(-lim, Math.min(lim, c.abs))
+      : Math.max(-lim, Math.min(lim, nat + c.aimOffset));
     return { my: c.my, ctrl: c.ctrl, aimX: aimX, optId: c.optId, name: c.name };
   }
 

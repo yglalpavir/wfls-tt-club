@@ -18,6 +18,8 @@ const ROOT = path.join(__dirname, '..');
 const INPUTSIM = require(path.join(ROOT, 'js', 'input-sim.js'));
 const SIM = global.SIM || require(path.join(ROOT, 'js', 'simcore.js'));
 const OPP = require(path.join(ROOT, 'js', 'opponent-ladder.js'));
+const P = require(path.join(ROOT, 'js', 'policy.js'));
+const ML = require(path.join(ROOT, 'js', 'move-limit.js'));
 const { HIP_SKILL } = require(path.join(ROOT, 'js', 'hip-skill.js'));
 const { HIP_INTENT } = require(path.join(ROOT, 'js', 'hip-intent.js'));
 const { HIP_CHOICE } = require(path.join(ROOT, 'js', 'hip-choice.js'));
@@ -98,9 +100,12 @@ function simSwing(px0, svx0, bx, want, ctx){
   const tau = (ctx.tau != null) ? ctx.tau : cfg.swingLead;
   const steps = Math.max(1, Math.round(cl(tau, dt, 0.5) / dt));
   let vCmd = 0;
+  /* ★ 限速口径：落点的横向项只用「故意挥拍速度」（与实机 tt-player.js 的 swAim 一致），
+   *   否则教师算的落点会被满速冲量拽偏 ±0.6m ⇒ 标签推荐的是实机打不到的落点。 */
+  const capOn = !!(ML.getMoveLimit && ML.getMoveLimit().cap != null);
   for(let k = 0; k < steps; k++){
     /* 落点闭环（hip-skill.js: aimNow/offX/physVx/intentVx/shift/aimT） */
-    const aimNow = A.xFromPos * px + A.xFromSwipe * svx;
+    const aimNow = A.xFromPos * px + A.xFromSwipe * (capOn ? vCmd : svx);
     const offX = cl((bx - px) / 0.10, -1, 1);
     const physVx = 0.22 * (ctx.inVx || 0) + 1.2 * offX;
     const intentVx = (aimNow - bx) / cfg.aimTau;
@@ -110,13 +115,16 @@ function simSwing(px0, svx0, bx, want, ctx){
     const vA = (aimT - A.xFromPos * px) / A.xFromSwipe;
     vCmd = cl(vA, -cfg.maxSwing, cfg.maxSwing);
     const tx = cl(px + hold + vCmd / rate, -1.2, 1.2);
-    /* 一帧拍子动力学（tt-player.js 的内联 padControl） */
-    const nx = px + (tx - px) * Math.min(1, dt * rate);
+    /* 一帧拍子动力学（tt-player.js 的内联 padControl）
+     * ★ 必须用共享的 moveStep：模型侧限速（js/move-limit.js）也要生效 ——
+     *   否则教师算出的「实际落点 / 接触成功率」是无限速口径，
+     *   会推荐「限速后根本够不到」的挥拍。 */
+    const nx = ML.moveStep(px, tx, rate, dt, ML.getMoveLimit().cap);
     const rawV = cl((nx - px) / dt, -svCap, svCap);
     svx += (rawV - svx) * Math.min(1, dt * 12);
     px = nx;
   }
-  const achieved = cl(A.xFromPos * px + A.xFromSwipe * svx, -0.62, 0.62);
+  const achieved = cl(A.xFromPos * px + A.xFromSwipe * (capOn ? vCmd : svx), -0.62, 0.62);
   return { px, svx, achieved, vCmd, drift: px - bx };
 }
 
@@ -124,6 +132,7 @@ function simSwing(px0, svx0, bx, want, ctx){
 function scoreOption(opt, ctx){
   const ctl = HIP_CHOICE.optionToIntent(opt.id, ctx.obs, AIM);
   const aimZ = AIM.zDeep + (AIM.zShort - AIM.zDeep) * ctl.my * ctl.my;
+  const capOn = !!(ML.getMoveLimit && ML.getMoveLimit().cap != null);
 
   /* 执行模型：L1 实际会打成什么样（逐帧前向仿真挥拍阶段） */
   const ex = simSwing(ctx.px, ctx.svx, ctx.bx, ctl.aimX, ctx);
@@ -141,7 +150,12 @@ function scoreOption(opt, ctx){
       pos: { x: ctx.bx, y: ctx.by, z: ctx.bz },
       vel: { x: ctx.vx, y: ctx.vy, z: ctx.vz },
       spin: { x: ctx.sx, y: ctx.sy, z: 0 },
-      swipe: ex.svx, fwd: SIM.fwdOf ? SIM.fwdOf(ctx.svz) : 0,
+      /* ★ 限速口径：出球核的 swipe/fwd 必须与实机**完全一致**
+       *   （hip-skill.js 的 swingSwipe / swingFwd：限速时「跑位冲量」不再计入球速，
+       *    否则 resolveHit 的 isLoop 误判 ⇒ 这一板被当成拉球 ⇒ pace 7 ⇒ 球冲过端线）。
+       *   实机在限速下传的是：swipe = 故意挥拍速度 vCmd，fwd = 0。 */
+      swipe: capOn ? (ex.vCmd || 0) : ex.svx,
+      fwd: capOn ? 0 : (SIM.fwdOf ? SIM.fwdOf(ctx.svz) : 0),
       mouseNy: ctl.my,
       /* 落点用「实际会落的地方」；gx = 触球时拍心的 x */
       aim: { x: ex.achieved, z: aimZ, gx: ex.px },
@@ -185,7 +199,37 @@ function scoreOption(opt, ctx){
   /* ★ 总分 = 接触成功率 × 落点价值 − 失败率 × 丢分代价。
    *   落点非法（出界/下网）直接判死：−12。 */
   const s = pContact * V - (1 - pContact) * MISS_PENALTY;
-  return { s, legal: 1, land: L, mode: r.mode, pContact, drift: ex.drift, achieved: ex.achieved };
+  return { s, legal: 1, land: L, mode: r.mode, pContact, drift: ex.drift, achieved: ex.achieved,
+           /* 探针用：V 去掉 pMiss 项后的部分 + 这一球真正打出去的球 */
+           V0: V - 2.4 * pMiss,
+           shot: { pos: { x: ctx.bx, y: ctx.by, z: ctx.bz },
+                   vel: { x: r.outVel.x, y: r.outVel.y, z: r.outVel.z },
+                   spin: { x: r.spin.x, y: r.spin.y, z: 0 } } };
+}
+
+/* ==== 对手真实接球探针（ground truth）====
+ * 几何近似 pMiss（reachT/availT）**不知道对手的接触容差**：
+ * 实测线上对手的瞄准误差 0.055m vs 接触容差 0.209m（辅助预算 3.8 倍），
+ * 于是「把球放到对手够不到的地方」在标签里根本没有信号
+ * （教师退化成「恒定往右打一点」= 复制 L1）。
+ * 这里直接调用 input-sim 的 aiReceive：**让对手真的去接这一球**。
+ *   接到了 ⇒ 这一拍没价值（pMiss=0）；没接到 ⇒ 有价值（pMiss=1）。
+ *   aiReceive 的三种失败（timeout / double / out）都是「对手没接到」。
+ * 探针用独立 rng（不动游戏的 rng 流 ⇒ 不破坏 rollout 的确定性）。 */
+let curOpp = null;                      // 当前对手策略（打标时用）
+let curOppTag = null;                   // 当前对手档位名（写进 meta；原来写死 oppTags[0] ⇒ 全标成第一个档）
+const PROBE_RNG = mulberry32(0xC0FFEE);
+function probeOppMiss(sc, ctx){
+  if(!curOpp || !INPUTSIM.aiReceive || !sc || !sc.shot) return null;
+  try{
+    /* ★ oppX 必须是对手**当前真实拍位**（ctx.ox）：传 0 等于让对手凭空回到中间，
+     *   它就永远接得到 ⇒ 探针恒为 0 命中，标签退化成几何近似。 */
+    const rec = INPUTSIM.aiReceive(sc.shot.pos, sc.shot.vel, sc.shot.spin, curOpp,
+                                   PROBE_RNG, false, (ctx && ctx.ox) || 0);
+    if(rec && rec.hit) return 0;
+    if(rec) return 1;
+  }catch(e){ return null; }
+  return null;
 }
 
 function main(){
@@ -195,6 +239,15 @@ function main(){
   const seed = parseInt(argOf('--seed', '20261004'), 10);
   const outPath = path.resolve(ROOT, argOf('--out', 'data/hip/choice-v1.ndjson'));
   const DBG = parseInt(argOf('--debug', '0'), 10);
+  /* ★ 移动预算（限速）：教师必须在**与部署同口径的限速**下 rollout，
+   *   否则它算出的「实际落点 / 接触成功率」是无限速口径 ⇒ 会推荐
+   *   限速后根本够不到的挥拍。--move-cap <m/s>，0/不给 = 用 move-limit.js 的出厂默认。 */
+  const CAP = parseFloat(argOf('--move-cap', '0'));
+  /* 探针开关：--probe 0 关（纯几何 pMiss）；--probe-top N 只探前 N 个候选 */
+  const PROBE = parseInt(argOf('--probe', '1'), 10);
+  const PROBE_TOP = parseInt(argOf('--probe-top', '0'), 10);
+  if(CAP > 0){ ML.setMoveLimit({ cap: CAP }); }
+  console.log('移动预算（限速）：横向 ' + (ML.getMoveLimit().cap == null ? '不限' : ML.getMoveLimit().cap + ' m/s'));
   let dbgLeft = DBG;
   if(!fs.existsSync(path.dirname(outPath))) fs.mkdirSync(path.dirname(outPath), { recursive: true });
   const out = fs.createWriteStream(outPath, { flags: 'w' });
@@ -205,7 +258,7 @@ function main(){
   const rng = mulberry32(seed);
 
   const hist = {};        // 最优选项的分布（诊断用）
-  let avgMax = 0, avgH = 0, avgNZ = 0, avgPC = 0, avgDrift = 0;
+  let avgMax = 0, avgH = 0, avgNZ = 0, avgPC = 0, avgDrift = 0, avgProbe = 0, avgProbeMiss = 0;
   let lastIncoming = false, curIntent = null, labeled = false;
   /* 打标时刻（秒，触球前的剩余时间）：必须与 L1 的挥拍阶段起点一致 */
   const LABEL_TAU = 0.06;
@@ -238,16 +291,44 @@ function main(){
           };
           const m = HIP_CHOICE.mask({ rtop, by: ctx.by });
           const scores = new Float64Array(HIP_CHOICE.N_OPT);
+          const scs = new Array(HIP_CHOICE.N_OPT).fill(null);
           let best = -1, bestS = -1e9, legalCount = 0, pcSum = 0, driftSum = 0;
           let driftBest = 0, pcBest = 0;
           for(let i = 0; i < HIP_CHOICE.N_OPT; i++){
             if(!m[i]){ scores[i] = -1e9; continue; }
             const sc = scoreOption(HIP_CHOICE.OPTIONS[i], ctx);
-            scores[i] = sc.s;
+            scs[i] = sc; scores[i] = sc.s;
             if(sc.legal) legalCount++;
             if(sc.pContact > 0){ pcSum += sc.pContact; driftSum += Math.abs(sc.drift || 0); }
             if(sc.s > bestS){ bestS = sc.s; best = i; driftBest = sc.drift || 0; pcBest = sc.pContact || 0; }
           }
+          /* ★ 探针阶段：把几何 pMiss 换成「对手真的接不到」的 ground truth。
+           *   探针只跑分数最高的前 probeTop 个（默认全跑；每跑一个都是一次
+           *   对手接球仿真 ⇒ 成本高；未探的选项保持几何分）。 */
+          let nProbe = 0, nProbeMiss = 0;
+          if(PROBE > 0 && curOpp){
+            const order = [];
+            for(let i = 0; i < HIP_CHOICE.N_OPT; i++) if(scs[i]) order.push(i);
+            order.sort((a,b) => scores[b] - scores[a]);
+            const lim = (PROBE_TOP > 0) ? Math.min(PROBE_TOP, order.length) : order.length;
+            for(let k = 0; k < lim; k++){
+              const i = order[k];
+              const pm = probeOppMiss(scs[i], ctx);
+              if(pm == null) continue;
+              nProbe++;
+              if(pm > 0){
+                nProbeMiss++;
+                /* ground truth：这一球对手接不到 ⇒ 落点价值拉满 */
+                scores[i] = scs[i].pContact * (scs[i].V0 + 2.4) - (1 - scs[i].pContact) * MISS_PENALTY;
+              }else{
+                /* 对手接到了 ⇒ 落点价值里的 pMiss 项归零 */
+                scores[i] = scs[i].pContact * scs[i].V0 - (1 - scs[i].pContact) * MISS_PENALTY;
+              }
+            }
+            best = -1; bestS = -1e9;
+            for(let i = 0; i < HIP_CHOICE.N_OPT; i++) if(scores[i] > bestS){ bestS = scores[i]; best = i; }
+          }
+          avgProbe += nProbe; avgProbeMiss += nProbeMiss;
           if(best >= 0 && bestS > -11){
             if(dbgLeft > 0){
               dbgLeft--;
@@ -285,7 +366,7 @@ function main(){
               f: Array.from(f, v => Math.round(v * 1e4) / 1e4),
               p: Array.from(p, v => Math.round(v * 1e4) / 1e4),
               top: best,
-              meta: { opp: oppTags[0], bx: +ctx.bx.toFixed(3), by: +ctx.by.toFixed(3),
+              meta: { opp: (curOppTag || oppTags[0]), bx: +ctx.bx.toFixed(3), by: +ctx.by.toFixed(3),
                       tau: +ctx.tau.toFixed(3), ox: +ctx.ox.toFixed(3), rtop: Math.round(rtop),
                       legal: legalCount, bestS: +bestS.toFixed(3),
                       pdx: +Math.abs(ctx.bx - ctx.px).toFixed(3),
@@ -305,7 +386,15 @@ function main(){
 
   let pts = 0, wins = 0, gi = 0;
   while(pts < points && gi < points * 6){
-    const opp = OPP.at(oppTags[gi % oppTags.length]);
+    const oppTag = oppTags[gi % oppTags.length];
+    /* ★ 对手档位：'bare'（辅助 assist=0.45，M6 引入）与 'trap' 不在阶梯表里，
+     * OPP.at('bare') 会**静默回落到默认策略** ⇒ 必须像 hip-l3-collect.js 那样特判，
+     * 否则教师永远只对着「从不错过」的对手学，落点维度学不到任何东西。 */
+    const opp = (oppTag === 'trap') ? (P.policyForModel('trap') || P.POLICY_DEFAULT)
+              : (oppTag === 'bare') ? (P.policyForModel('bare') || P.POLICY_DEFAULT)
+              : (OPP.at(oppTag) || P.policyForModel(oppTag) || P.POLICY_DEFAULT);
+    curOpp = opp;   /* 探针要用**当前这一局的真实对手**（assist/速度都不同） */
+    curOppTag = oppTag;   /* ★ meta 里要记**真实对手**（原来写 oppTags[0] ⇒ 全部标成第一个档） */
     const r = INPUTSIM.playInputPoint(brain, opp, mulberry32((seed + gi * 7919) >>> 0),
                                       (gi % 2 === 0) ? 'player' : 'ai');
     pts++; gi++;
@@ -325,6 +414,11 @@ function main(){
                 '  非零选项数 ' + (avgNZ / Math.max(nSamples,1)).toFixed(2));
     console.log('接触成功率均值 ' + (avgPC / Math.max(nSamples,1)).toFixed(3) +
                 '  挥拍漂移均值 ' + (avgDrift / Math.max(nSamples,1)).toFixed(4) + ' m');
+    if(avgProbe > 0){
+      console.log('对手真实接球探针：平均每球 ' + (avgProbe / Math.max(nSamples,1)).toFixed(1) +
+                  ' 次，其中对手没接到 ' + (avgProbeMiss / Math.max(avgProbe,1)).toFixed(3) +
+                  '（= 落点维度的真实收益率）');
+    }
   });
 }
 

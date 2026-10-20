@@ -258,6 +258,7 @@ const PIPELINE = [
   'physics.js',              // ★ 真实物理/触球/出球
   'ai.js',                   // ★ 真实 AI 跑位 + 赌博机
   'rules.js',                // ★ 真实规则/发球/判分
+  'move-limit.js',           // ★ 模型侧移动预算（限速；tt-player 之前）
   'tt-player.js',            // ★ 真实 DQN 推理管线
 ];
 
@@ -494,6 +495,14 @@ const JSON_OUT = argOf('--json', '');
 /* --hip-cfg <path|json>：覆盖 HIP 控制器旋钮（实机扫描用）。
  *   文件里是 {"myDrive":0.5, ...}；注入到 vm 里的 HIP_SKILL.setConfig()。 */
 const HIP_CFG = argOf('--hip-cfg', '');
+/* --move-cap <m/s>：模型侧移动预算（限速）。
+ *   0 / 负数 / 不给 = 不限（限速前基线口径）。
+ *   作用范围：**只有模型控制的拍**（ttmouse / hipmouse）——真人的拍面走
+ *   main.js#playerControl，不受影响。
+ *   同时作用于实机侧（vm 里的 MOVE_LIMIT）与仿真侧（Node 的 MOVE_LIMIT），
+ *   保证两侧同一口径（否则又是训练/实机失配）。 */
+const MOVE_CAP = parseFloat(argOf('--move-cap', '0'));
+const MOVE_CAP_Z = parseFloat(argOf('--move-cap-z', '0'));
 function brainSrc(kind){
   return '(function(){\n' +
   '  var IN_MX=[],IN_MY=[];\n' +
@@ -537,6 +546,15 @@ function pct(x){ return (x * 100).toFixed(1) + '%'; }
 
 function main(){
   const t0 = Date.now();
+  /* ★ 移动预算（限速）：仿真侧（Node）与实机侧（vm）必须是同一份口径，
+   * 否则就是又一次「训练/实机失配」。只影响模型控制的拍，真人不受影响。 */
+  if(MOVE_CAP > 0 || MOVE_CAP_Z > 0){
+    const ML = require(path.join(ROOT, 'js', 'move-limit.js'));
+    ML.setMoveLimit({ cap: MOVE_CAP > 0 ? MOVE_CAP : null,
+                      capZ: MOVE_CAP_Z > 0 ? MOVE_CAP_Z : null });
+    console.log('移动预算（限速）：横向 ' + (MOVE_CAP > 0 ? MOVE_CAP + ' m/s' : '不限') +
+                '，纵向 ' + (MOVE_CAP_Z > 0 ? MOVE_CAP_Z + ' m/s' : '不限'));
+  }
   /* 仿真侧（纯 Node require，与训练器完全同源） */
   let sim = null;
   if(!LIVE_ONLY){
@@ -553,6 +571,11 @@ function main(){
     process.stdout.write('载入实机管线（input-weights.js ~9.7MB）… ');
     rig = buildLiveRig(W);
     step = makeStep(rig.ctx, HZ);
+    /* 限速也注入 vm 里的实机侧（vm 里 move-limit.js 是普通 script ⇒ 全局函数） */
+    if(MOVE_CAP > 0 || MOVE_CAP_Z > 0){
+      vm.runInContext('setMoveLimit({ cap: ' + (MOVE_CAP > 0 ? MOVE_CAP : 'null') +
+                      ', capZ: ' + (MOVE_CAP_Z > 0 ? MOVE_CAP_Z : 'null') + ' });', rig.ctx);
+    }
     /* --serve-log：记录每次发球解算用的出球点。发球出球点由击球时刻的拍位决定，
        是训练/实机最容易漂的一处（训练写死 z=1.45/y=0.91，实机端线外 z=1.87/y=1.01）。 */
     if(HAS('--serve-log')){
@@ -661,7 +684,7 @@ function main(){
           '/* 玩家（ttmouse）这一侧的出球是 TT_PLAYER.ttHit 算的（不是 physics.js#hitPlayer），',
           '   所以落点探针要挂在 ttHit 上。 */',
           'try{ const __tt = TT_PLAYER.ttHit;',
-          '  TT_PLAYER.ttHit = function(){ const r = __tt.apply(null, arguments); try{ const st = globalThis.__hipLastState; const L = SIM.simulateFull({x:ball.pos.x,y:ball.pos.y,z:ball.pos.z}, {x:ball.vel.x,y:ball.vel.y,z:ball.vel.z}, "player", {x:ball.spin.x,y:ball.spin.y,z:0}, Math.random); globalThis.__hipLand.push({ ok: !!(L&&L.ok), reason: L?L.reason:null, lx: (L&&L.landing)?L.landing.x:null, lz: (L&&L.landing)?L.landing.z:null, want: st?st.want:null, bx: st?st.bx:null, spd: Math.hypot(ball.vel.x,ball.vel.y,ball.vel.z), svx: st?st.svx:null }); const p = globalThis.__hipPend; if(p>=0 && globalThis.__hipBounce){ globalThis.__hipBounce[p].hit = true; globalThis.__hipPend = -1; } }catch(e){} return r; };',
+          '  TT_PLAYER.ttHit = function(){ const r = __tt.apply(null, arguments); try{ const st = globalThis.__hipLastState; const L = SIM.simulateFull({x:ball.pos.x,y:ball.pos.y,z:ball.pos.z}, {x:ball.vel.x,y:ball.vel.y,z:ball.vel.z}, "player", {x:ball.spin.x,y:ball.spin.y,z:0}, Math.random); globalThis.__hipLand.push({ ok: !!(L&&L.ok), reason: L?L.reason:null, lx: (L&&L.landing)?L.landing.x:null, lz: (L&&L.landing)?L.landing.z:null, want: st?st.want:null, bx: st?st.bx:null, spd: Math.hypot(ball.vel.x,ball.vel.y,ball.vel.z), svx: st?st.svx:null, my: (arguments[1]&&arguments[1]._my!=null)?arguments[1]._my:null, svz: (arguments[1]&&arguments[1].svz!=null)?arguments[1].svz:null, cy: ball.pos.y, cz: ball.pos.z, cx: ball.pos.x, ovx: ball.vel.x, ovy: ball.vel.y, ovz: ball.vel.z }); const p = globalThis.__hipPend; if(p>=0 && globalThis.__hipBounce){ globalThis.__hipBounce[p].hit = true; globalThis.__hipPend = -1; } }catch(e){} return r; };',
           '}catch(e){}',
           '/* ---- 弹跳探针：每次台面弹跳记一次（含后续是否被玩家回击）---- */',
           'globalThis.__hipBounce = [];',
@@ -845,6 +868,14 @@ function main(){
       elapsedSec: +((Date.now() - t0) / 1000).toFixed(1),
       byTier,
     };
+    /* 探针原始数据（--hip-probe 时）：落点逐球记录，离线分析失败形态用。
+     * 上限 4000 条，避免 JSON 过大。 */
+    if(HAS('--hip-probe') && rig.ctx){
+      try{
+        const pl = vm.runInContext('(globalThis.__hipLand||[]).slice(0,4000)', rig.ctx);
+        if(pl && pl.length) out.probeLand = pl;
+      }catch(e){}
+    }
     fs.writeFileSync(path.resolve(JSON_OUT), JSON.stringify(out, null, 2));
     console.log('  JSON 结果已写入 ' + path.relative(ROOT, path.resolve(JSON_OUT)));
   }

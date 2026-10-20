@@ -12,6 +12,12 @@
 'use strict';
 if(typeof module !== 'undefined' && module.exports){
   const mcore = require('./simcore.js'); global.SIM = mcore; global.P = require('./policy.js');
+  /* 移动预算（限速）：Node 下把 move-limit 的全局挂出来（浏览器/评测 vm 里
+   * move-limit.js 是普通 script，天然是全局）⇒ 三种运行环境同一份口径。 */
+  if(typeof global.MOVE_LIMIT === 'undefined'){
+    const ml = require('./move-limit.js');
+    global.MOVE_LIMIT = ml.MOVE_LIMIT; global.moveStep = ml.moveStep;
+  }
 }
 /* 击球采样统计（临时诊断用）：HITDBG 对象常驻，但每记球多跑一遍 simulateFull
  * 只为统计，训练时白白多花近一半仿真开销 → 默认关，诊断脚本用 TT_HITDBG=1 打开。 */
@@ -93,8 +99,16 @@ const INPUTSIM = (() => {
       }
     }
     const prevX = pad.x, prevZ = pad.z;
-    pad.x += (tx - pad.x) * Math.min(1, dt * rate);
-    pad.z += (effZ - pad.z) * Math.min(1, dt * rate * 0.7);
+    /* ★ 移动预算（限速）——与实机 tt-player.js 同一份 MOVE_LIMIT（js/move-limit.js）。
+     * cap=null 时与原式逐位等价。详见 js/move-limit.js 的说明。 */
+    const ML = (typeof MOVE_LIMIT !== 'undefined') ? MOVE_LIMIT : null;
+    const capX = ML ? ML.cap : null, capZ = ML ? ML.capZ : null;
+    pad.x = (ML && typeof moveStep === 'function')
+      ? moveStep(pad.x, tx, rate, dt, capX)
+      : pad.x + (tx - pad.x) * Math.min(1, dt * rate);
+    pad.z = (ML && typeof moveStep === 'function')
+      ? moveStep(pad.z, effZ, rate * 0.7, dt, capZ)
+      : pad.z + (effZ - pad.z) * Math.min(1, dt * rate * 0.7);
     const svx = cl((pad.x - prevX) / Math.max(dt, 1e-4), -svCap, svCap);
     const svz = cl((pad.z - prevZ) / Math.max(dt, 1e-4), -svCap, svCap);
     pad.svx += (svx - pad.svx) * Math.min(1, dt * 12);
@@ -320,7 +334,10 @@ const INPUTSIM = (() => {
      receive = 接发球板（第一板）：无法触发爆冲（与实机 hitPlayer 同一门控） */
   function hitShot(b, v, s, pad, mouseNy, rng, receive){
     const CV = C.AIM || { xFromPos: 0.55, xFromSwipe: 0.30, zDeep: -1.24, zShort: -0.50 };
-    const aimX = cl(pad.x * CV.xFromPos + pad.svx * CV.xFromSwipe, -0.9, 0.9);
+    /* ★ 同 tt-player.js：限速口径下落点的横向项用「故意挥拍速度」（pad._sw），
+     *   不限速时 pad._sw 为 null ⇒ 仍用真实拍速 ⇒ 逐位不变（零回归）。 */
+    const swAim = (pad._sw != null) ? pad._sw : pad.svx;
+    const aimX = cl(pad.x * CV.xFromPos + swAim * CV.xFromSwipe, -0.9, 0.9);
     const ny = cl(mouseNy != null ? mouseNy : 0.5, 0, 1);
     const aimZ = CV.zDeep + (CV.zShort - CV.zDeep) * ny * ny;
     return SIM.resolveHit({
@@ -328,8 +345,8 @@ const INPUTSIM = (() => {
       pos: { x: b.x, y: b.y, z: b.z },
       vel: { x: v.x, y: v.y, z: v.z },
       spin: { x: s.x, y: s.y, z: 0 },
-      swipe: pad.svx,
-      fwd: SIM.fwdOf(pad.svz),          // 分母读 MOUSE_SV_CAP（原来硬编码 /7）
+      swipe: (pad._sw != null ? pad._sw : pad.svx),
+      fwd: (pad._f != null ? pad._f : SIM.fwdOf(pad.svz)),  // 分母读 MOUSE_SV_CAP（原来硬编码 /7）
       mouseNy: ny,
       aim: { x: aimX, z: aimZ, gx: pad.x },
       ctrlHold: !!pad.ctrl,
@@ -377,6 +394,10 @@ const INPUTSIM = (() => {
         ox: _aiPadX,          // ★ 对手拍位 x（HIP 用；DQN 忽略）
       };
       if(brain){ if(f % skip === 0) cur = brain.act(obs); f++; }
+    /* ★ 故意挥拍速度（跑位与挥拍分离），没给就沿用真实拍速 */
+    pad._sw = (cur && cur.sw != null) ? cur.sw : null;
+    /* ★ 故意前冲力度（同源第二个泄漏点），没给就沿用真实拍面 z 速度 */
+    pad._f = (cur && cur.f != null) ? cur.f : null;
       pad.ctrl = !!cur.ctrl;
       pad._tx = cur.tx; pad._my = cur.my;
       if(process.env.TT_DEBUG_NAN && ![p.x, p.y, p.z, v.x, v.y, v.z, s.x, s.y, pad.x, pad.z, pad.svx, pad.svz].every(Number.isFinite)){
@@ -725,7 +746,7 @@ const INPUTSIM = (() => {
   }
 
   const api = { cl, C, DT, PLAYER_Z, AI_Z, padInit, padControl, playerReceive, HITDBG,
-                serveFromPlayer, serveFromAI, aiReturn, aiPadX, setObserver,
+                serveFromPlayer, serveFromAI, aiReceive, aiReturn, aiPadX, setObserver,
                 playInputPoint, playInputGame, playInputMatch };
   if(typeof module !== 'undefined' && module.exports) module.exports = api;
   return api;

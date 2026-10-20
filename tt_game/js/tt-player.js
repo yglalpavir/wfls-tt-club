@@ -357,13 +357,33 @@ const TT_PLAYER = (() => {
       }
     }
     const prevX = vp.x, prevZ = vp.z;
-    vp.x += (tx - vp.x) * Math.min(1, dt * rate);
-    vp.z += (effZ - vp.z) * Math.min(1, dt * rate * 0.7);
+    /* ★ 移动预算（限速）：模型侧拍速上限（js/move-limit.js，单一真相源）。
+     * cap=null 时与原式逐位等价 ⇒ 默认不限、零回归。
+     * 为什么要限：模型的 tx 是每帧重算的精确拦截点 ⇒ 等价「鼠标瞬移」，
+     * 它「够得到」一切，实测失分里「够不到」= 0% ⇒ 实力全来自防守。
+     * 限速后「跑不快」成为真实约束 ⇒ 站位/落点开始有价值。
+     * 真人的拍面走 main.js#playerControl（另一条路径）⇒ 访客手感不变。 */
+    const ML = (typeof MOVE_LIMIT !== 'undefined') ? MOVE_LIMIT : null;
+    const capX = ML ? ML.cap : null, capZ = ML ? ML.capZ : null;
+    vp.x = (ML && typeof moveStep === 'function')
+      ? moveStep(vp.x, tx, rate, dt, capX)
+      : vp.x + (tx - vp.x) * Math.min(1, dt * rate);
+    vp.z = (ML && typeof moveStep === 'function')
+      ? moveStep(vp.z, effZ, rate * 0.7, dt, capZ)
+      : vp.z + (effZ - vp.z) * Math.min(1, dt * rate * 0.7);
     const svx = cl((vp.x - prevX) / Math.max(dt, 1e-4), -svCap, svCap);
     const svz = cl((vp.z - prevZ) / Math.max(dt, 1e-4), -svCap, svCap);
     vp.svx += (svx - vp.svx) * Math.min(1, dt * 12);
     vp.svz += (svz - vp.svz) * Math.min(1, dt * 12);
     vp.ctrl = !!vp.cur.ctrl;
+    /* ★ sw：控制器声明的「故意挥拍速度」（跑位与挥拍分离）。
+     * 只有开了移动预算的模型才会给（HIP 的 swingSwipe 旋钮）；
+     * 没给就沿用真实拍速（真人 / DQN 行为逐位不变）。 */
+    vp.sw = (vp.cur.sw != null) ? vp.cur.sw : null;
+    /* ★ f：控制器声明的「故意前冲力度」（0~1）。同源的第二个泄漏点：
+     * 限速下拍面俯冲找球的速度会被 resolveHit 当成前冲力度
+     * （isLoop 判据 fwd>0.35）⇒ 这一板被误判成拉球 ⇒ 球冲过端线。 */
+    vp.f = (vp.cur.f != null) ? vp.cur.f : null;
     /* 写回实机拍（AI 侧 z 镜像回负半轴） */
     const g = realPad.group.position;
     g.x = vp.x;
@@ -405,15 +425,22 @@ const TT_PLAYER = (() => {
     const m = mirrorState(side);
     const vp = vpads[side];
     const ny = cl(realPad._my != null ? realPad._my : 0.5, 0, 1);
-    const aimX = cl(vp.x * CV.xFromPos + vp.svx * CV.xFromSwipe, -0.9, 0.9);
+    /* ★ 落点的横向项用「故意挥拍速度」而不是真实拍速（限速口径）。
+     *   落点 = 0.55·拍位x + 0.30·拍速x；限速下真实拍速 = 满速冲量（可达 cap=2.0），
+     *   那一项会把落点整体拽偏 ±0.6m ⇒ 球乱飞/出界，而且落点伺服根本改不动它
+     *   （伺服只能改 aim.x 的那 0.30·vCmd 项）。
+     *   限速时 vp.sw = 故意挥拍速度（|vCmd| ≤ maxSwing 0.8 ⇒ 落点可偏 ±0.24m），
+     *   不限速时 vp.sw 为 null ⇒ 仍用真实拍速 ⇒ 逐位不变（零回归）。 */
+    const swAim = (vp.sw != null) ? vp.sw : vp.svx;
+    const aimX = cl(vp.x * CV.xFromPos + swAim * CV.xFromSwipe, -0.9, 0.9);
     const aimZ = CV.zDeep + (CV.zShort - CV.zDeep) * ny * ny;
     const r = SIM.resolveHit({
       stroke: 'forehand',
       pos: { x: m.pos.x, y: m.pos.y, z: m.pos.z },
       vel: { x: m.vel.x, y: m.vel.y, z: m.vel.z },
       spin: { x: m.spin.x, y: m.spin.y, z: 0 },
-      swipe: vp.svx,
-      fwd: SIM.fwdOf(vp.svz),          // 分母读 MOUSE_SV_CAP（原来硬编码 /7，与训练侧各写一份）
+      swipe: (vp.sw != null ? vp.sw : vp.svx),
+      fwd: (vp.f != null ? vp.f : SIM.fwdOf(vp.svz)),  // 分母读 MOUSE_SV_CAP（原来硬编码 /7，与训练侧各写一份）
       mouseNy: ny,
       aim: { x: aimX, z: aimZ, gx: vp.x },
       ctrlHold: !!realPad.ctrl,

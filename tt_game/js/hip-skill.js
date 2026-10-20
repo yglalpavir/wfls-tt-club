@@ -191,13 +191,36 @@ const HIP_SKILL = (() => {
      *   并把拍面目标抬到「球的当前 z」，免得拍子往回跑。
      *   0 = 关（回到旧的错误行为，用于 A/B）。 */
     postBounceFix: 1,
+  /* chaseBounce：追位目标是「落台点 x」还是「触球点 x」。
+   * 0 = 触球点（旧行为）；1 = 落台点。
+   * 限速下的意义：落台点早得多就知道 ⇒ 模型能提前站好 ⇒ 触球时拍速≈0
+   * ⇒ 不触发「挥拍冲量放大球速」（限速下 out 爆炸的主因）。 */
+  chaseBounce: 0,
+  /* swingLaw：挥拍阶段的目标律。0 = 旧（px+hold+vCmd/PACE，满速冲进球）；
+   * 1 = 位置律（目标是接触点 bx ⇒ 减速进入 ⇒ 触球拍速≈0）。 */
+  swingLaw: 0,
+  /* swingSwipe：出球核的 swipe 用哪一个。
+   * null = 真实拍速（旧行为）；1 = 故意挥拍速度 S.sw（跑位与挥拍分离）。
+   * 只有开了移动预算才需要它（限速下满速冲量会把球速放大 50%）。 */
+  swingSwipe: 'auto',
+  /* swingFwd：出球核的 fwd（前冲力度）用哪一个。
+   * null = 真实拍面 z 速度（旧行为）；数字 = 故意前冲力度上限（0~1）。
+   * ★ 与 swingSwipe 同源的第二个泄漏点：resolveHit 的 isLoop 判据是
+   *   `|swipe|>1.1 && fwd>0.35` ⇒ 限速下「拍面俯冲速度」也算成前冲力度，
+   *   这一板被误判成拉球（arc 1.46 / pace 7 / vz -7）⇒ 球必然冲过端线。
+   *   复算与实机逐位吻合：inSpd 3~10 + fwd≥0.7 + swipe -1.97
+   *   ⇒ mode=loop, vz=-7, 落点 z=-2.7~-3.0（floor）＝ 实机 ovz -6.50 / 落点 -2.93。
+   *   ⇒ 限速下把 fwd 也从「跑位」里剥出来（0 = 纯借力，不主动前冲）。 */
+  swingFwd: 'auto',
     /* ★ 深度安全网（depthSafety）：把「这一拍会落在多深」夹进安全带。
      *   背景（第六个真 bug 修完之后）：够不到已清零，**失分 100% 是「自己出界/下网」**。
      *   出界机理：出球深度 my 与入球速度/接触高度耦合 —— 来球越快、接触越低，
      *   resolveHit 的 arcFit 越小 ⇒ 弧线越平 ⇒ 落点越深 ⇒ 撞端线出界。
      *   做法：用实机同一份 resolveHit + simulateFull 复算这一拍的落点，
      *   若落点深度超界，就把 my 往「更浅」的方向拉
-     *   （my↑ ⇒ aimZ = −1.24+0.74·my² 更浅 + arcMouse = −0.28+0.58·my 更高 ⇒ 落点更浅）。
+     *   （my↑ ⇒ aimZ = −1.24+0.74·my² 更浅，但 arcMouse = −0.28+0.58·my 同时更高 ⇒ 弧线更平？⇒ 更长；
+     *   两者几乎抵消 —— 实测 my 从 0.30 扫到 0.95，落点深度只差 0.23m 且非单调）。
+     *   ⇒ 这条网只在「不限速」口径下有效（出界 12→8）；限速口径下默认关（depthSafetyCapped=0）。
      *   与第三道闸门的区别：闸门是**否决**（落点非法就打回自然落点），
      *   而自然落点本身也可能出界；这里是**修正**（把 my 拉到合法）。 */
     depthSafety: 1,       // 1 = 开（实机 A/B：off 92.3% / on 93.1% / on+depthMax1.15 94.1%，
@@ -209,6 +232,7 @@ const HIP_SKILL = (() => {
     depthIter:  3,        // 迭代次数
     myMin:      0.46,     // 修正时 my 的下限
     myMax:      0.68,     // 修正时 my 的上限
+    depthSafetyCapped: 0, // ★ 有限速时是否仍开这条修正网（默认关，见 plan() 里的说明）
   /* 预判站位：AI 的落点永远在玩家的**反侧**（policy.js#aiDecision:
    * away = playerX>0 ? -1 : 1），所以下一球大概率来「上一球的反侧」。
    * 空档时先站到那一侧，等球来就不用追 —— 理论上是最便宜的够球率提升。
@@ -280,7 +304,7 @@ const HIP_SKILL = (() => {
     let vx = obs.vx || 0, vy = obs.vy || 0, vz = obs.vz || 0;
     let sx = obs.sx || 0, sy = obs.sy || 0;
     let t = 0;
-    let bounced = false, tB = 0, bz = 0, bvz = 0;
+    let bounced = false, tB = 0, bz = 0, bvz = 0, bxp = 0;
     let nTraj = 0;
 
     /* ★ 球已经在玩家半台弹起（obs.bounced=1）且仍在飞来 ⇒ **不要再找弹跳**。
@@ -301,6 +325,7 @@ const HIP_SKILL = (() => {
       bounced = true;
       bz = (PRED_BZ != null) ? PRED_BZ : pz;
       bvz = vz;
+      bxp = px;
     }
 
     for(let i = 0; i < 900; i++){
@@ -322,7 +347,7 @@ const HIP_SKILL = (() => {
         vz = vz * 0.99 + sx * KICK_;
         vx = vx * 0.985 - sy * KICK_ * 0.6;
         sx *= 0.72; sy *= 0.72;
-        if(!bounced){ bounced = true; tB = t; bz = pz; bvz = vz;
+        if(!bounced){ bounced = true; tB = t; bz = pz; bvz = vz; bxp = px;
           /* 只记玩家半台（pz>0）的落台点：球飞向对手那边时预测到的落台
            *   在对手半台，不能拿来当「这一板」的落台参考。 */
           if(pz > 0) PRED_BZ = pz;
@@ -442,6 +467,7 @@ const HIP_SKILL = (() => {
       inVx: hvx,
       vel: { x: hvx, y: hvy, z: hvz },   // 触球瞬间的球速（复核出球用）
       bz: bz,                 // 落台点 z
+      bounceX: bxp,           // ★ 落台点 x（限速下用来「提前站位」，见 chaseBounce）
       tBounce: tB,            // 落台时刻
       vzPost: Math.abs(bvz),  // 落台后的 vz
       targetZ: targetZ,       // 拍面目标 z
@@ -512,20 +538,30 @@ const HIP_SKILL = (() => {
   /* 把拍子前向仿真到触球（照抄 tt-player 的 padControl 动力学） */
   function simSwingToContact(px, svx, bx, tau, cfg, vCmd){
     const dt = 1 / 60, svCap = (SIM_ && SIM_.C && SIM_.C.MOUSE_SV_CAP) ? SIM_.C.MOUSE_SV_CAP : 7;
+    /* ★ 限速感知：伺服必须用与实机**同一份**限速公式，否则它算出来的落点
+     * 与真实落点不一致 ⇒ 误差反解朝错方向修（限速前 30% 挥拍、
+     * 限速后 100% 挥拍，差异被放大 3 倍以上）。
+     * cap=null 时 moveStep 与原式逐位等价 ⇒ 零回归。 */
+    const ML = (typeof MOVE_LIMIT !== 'undefined') ? MOVE_LIMIT : null;
+    const capX = ML ? ML.cap : null;
     let x = px, v = svx;
     const steps = Math.max(1, Math.ceil(tau / dt));
     for(let i = 0; i < steps; i++){
       const hold = cl(bx - x, -cfg.holdClamp, cfg.holdClamp);
-      const tx = cl(x + hold + vCmd / PACE, -X_CLAMP, X_CLAMP);
+      const tx = (cfg && cfg.swingLaw === 1)
+        ? cl(bx + vCmd / PACE, -X_CLAMP, X_CLAMP)      /* 位置律：减速进入接触点 */
+        : cl(x + hold + vCmd / PACE, -X_CLAMP, X_CLAMP);
       const prev = x;
-      x += (tx - x) * Math.min(1, dt * PACE);
+      x = (ML && typeof moveStep === 'function')
+        ? moveStep(x, tx, PACE, dt, capX)
+        : x + (tx - x) * Math.min(1, dt * PACE);
       const raw = cl((x - prev) / dt, -svCap, svCap);
       v += (raw - v) * Math.min(1, dt * 12);
     }
     return { x: x, svx: v };
   }
   /* 给定触球瞬间的拍位/拍速，这一拍会落在哪（实机同一份出球核 + 轨迹校验） */
-  function landingOf(pxC, svxC, ctx, my, ctrl, aimX, rng){
+  function landingOf(pxC, svxC, ctx, my, ctrl, aimX, rng, requireOk, swOvf, fwdOvf){
     if(!SIM_ || !SIM_.resolveHit || !SIM_.simulateFull) return null;
     const aimZ = AIM.zDeep + (AIM.zShort - AIM.zDeep) * my * my;
     let r;
@@ -535,8 +571,8 @@ const HIP_SKILL = (() => {
         pos: { x: ctx.bx, y: ctx.by, z: ctx.bz },
         vel: ctx.vel || { x: 0, y: 0, z: 0 },
         spin: { x: ctx.sx || 0, y: ctx.sy || 0, z: 0 },
-        swipe: svxC,
-        fwd: SIM_.fwdOf ? SIM_.fwdOf(ctx.svz || 0) : 0,
+        swipe: (swOvf != null) ? swOvf : svxC,
+        fwd: (fwdOvf != null) ? fwdOvf : (SIM_.fwdOf ? SIM_.fwdOf(ctx.svz || 0) : 0),
         mouseNy: my,
         aim: { x: aimX, z: aimZ, gx: pxC },
         ctrlHold: !!ctrl,
@@ -549,18 +585,62 @@ const HIP_SKILL = (() => {
       land = SIM_.simulateFull({ x: ctx.bx, y: ctx.by, z: ctx.bz }, r.outVel, 'player',
                                 { x: r.spin.x, y: r.spin.y, z: 0 }, rng);
     }catch(e){ return null; }
-    if(!land || !land.ok || !land.landing) return null;
-    return land.landing;
+    if(!land || !land.landing) return null;
+    /* ★★ 第七个真 bug（限速后暴露）：simulateFull 对「打长/出界」返回
+     *   { ok:false, reason:'floor'|'out', landing:{x,y:0,z} } —— 落点坐标**仍然给出来**。
+     *   原来这里一律 return null ⇒ 深度安全网拿不到「这一球到底打多远」
+     *   ⇒ 恰恰是最该修的那批球（打长）永远修不了（实测 my 一直停在 0.540）。
+     *   现在：floor/out 也返回落点（带 ok=false），由调用方决定用不用；
+     *   net（挂网 ⇒ 深度无意义）与 timeout（没落点）仍然返回 null。
+     *   requireOk=true 的调用方（落点伺服）只要合法落点，保持旧行为。 */
+    if(land.reason === 'net' || land.reason === 'timeout') return null;
+    if(requireOk && !land.ok) return null;
+    return { x: land.landing.x, z: land.landing.z, ok: !!land.ok, reason: land.reason || null };
   }
 
   /* ---- 控制器 ----
    * 每侧一个实例（实机 player/ai 各一，训练侧一个）。
    * 状态：这一板是否在飞来、预测接触点、目标落点、换边计数。 */
+  /* swingSwipe 的开关：
+   *   null/undefined = 旧行为（出球核用真实拍速）；
+   *   1 = 用「故意挥拍速度」（跑位与挥拍分离）；
+   *   'auto' = **只在开了移动预算时**用故意挥拍速度
+   *     （不限速时旧行为逐位不变 ⇒ 零回归；限速时避免「满速冲量放大球速」）。 */
+  function swingSwipeOn(cfg){
+    const v = cfg ? cfg.swingSwipe : null;
+    if(v === 1) return true;
+    if(v === 'auto'){
+      const cap = (typeof MOVE_LIMIT !== 'undefined' && MOVE_LIMIT) ? MOVE_LIMIT.cap : null;
+      return cap != null;
+    }
+    return false;
+  }
+
+  /* swingFwd 的取值：undefined = 沿用真实拍面 z 速度（旧行为，逐位不变）；
+   * 数字 = 故意前冲力度上限（0~1）。
+   * 挥拍阶段之外（还在追位）一律给 0：还没准备出手时，
+   * 不该因为「俯冲找球」而把这一板打成拉球。 */
+  function swingFwdVal(cfg, obs, inSwing){
+    let v = cfg ? cfg.swingFwd : null;
+    if(v === 'auto'){
+      /* 'auto' = 只在开了移动预算时把前冲力度从「跑位」里剥出来
+       * （不限速时旧行为逐位不变 ⇒ 零回归）。 */
+      const cap = (typeof MOVE_LIMIT !== 'undefined' && MOVE_LIMIT) ? MOVE_LIMIT.cap : null;
+      if(cap == null) return undefined;
+      v = 0;
+    }
+    if(v == null) return undefined;
+    if(!inSwing) return 0;
+    let raw = 0;
+    try{ raw = (SIM_ && SIM_.fwdOf) ? SIM_.fwdOf((obs && obs.svz) || 0) : 0; }catch(e){ raw = 0; }
+    return Math.min(raw, Math.max(0, v));
+  }
+
   function makeController(opts){
     const cfg = Object.assign({}, OVERRIDE || DEFAULTS, opts || {});
     const S = {
       inb: false,        // 当前是否在处理「来球」
-      bx: 0, by: PADDLE_Y, bz: PLAYER_Z, tau: 9,
+      bx: 0, by: PADDLE_Y, bz: PLAYER_Z, tau: 9, bounceX: null,
       wide: false, aimT: 0, side: 1, rtop: 0,
       shots: 0, lastTau: 9, reach: 1,
     };
@@ -606,7 +686,7 @@ const HIP_SKILL = (() => {
       const ct = predictContact(obs, cfg);
       if(ct.ok){
         S.bx = ct.x; S.by = ct.y; S.bz = ct.bz; S.tau = ct.tau; S.hasMeet = true;
-        S.bounceZ = ct.bz;
+        S.bounceZ = ct.bz; S.bounceX = ct.bounceX;
         S.tBounce = ct.tBounce; S.vzPost = ct.vzPost; S.padZ = ct.targetZ;
         S.apexY = ct.apexY; S.apexZ = ct.apexZ; S.useApex = ct.useApex;
         S.cty = ct.cty; S.useContactY = ct.useContactY;
@@ -770,8 +850,15 @@ const HIP_SKILL = (() => {
        *   为什么要修正而不是否决：自然落点（= 回球到球来的地方）本身也可能出界，
        *   而实测失分 100% 是出界 ⇒ 否决式闸门救不了。
        *   落点深度 = −landing.z（对手半台为负），
-       *   修正方向：太深（depth > depthMax）⇒ my 增大（更浅）；太短 ⇒ my 减小。 */
-      if(cfg.depthSafety > 0 && S.hasMeet && S.vel && S.tau < cfg.depthTau && !S.depthChecked){
+       *   修正方向：太深（depth > depthMax）⇒ my 增大（更浅）；太短 ⇒ my 减小。
+       *   ★ 限速下默认**关**（depthSafetyCapped=0）：限速口径下「打长」的成因是
+       *   resolveHit 的 isLoop 误判（跑位冲量喂饱 fwd ⇒ 拉球 ⇒ pace 7 ⇒ 球冲过端线），
+       *   而 my 对落点深度几乎不敏感（实测 my 0.30→0.95 落点只差 0.23m 且非单调），
+       *   所以这条修正网救不了限速下的出界，只会改坏弧线（实测 4.1% → 1.2%）。
+       *   不限速时它是有效的（出界 12→8），故只在有限速时才关。 */
+      const capOn = (typeof MOVE_LIMIT !== 'undefined' && MOVE_LIMIT) ? (MOVE_LIMIT.cap != null) : false;
+      const dsOn = (cfg.depthSafety > 0) && (!capOn || cfg.depthSafetyCapped > 0);
+      if(dsOn && S.hasMeet && S.vel && S.tau < cfg.depthTau && !S.depthChecked){
         S.depthChecked = true;
         const dctx = { bx: S.bx, by: S.by, bz: S.bz, vel: S.vel,
                        sx: obs.sx, sy: obs.sy, svz: obs.svz };
@@ -832,12 +919,29 @@ const HIP_SKILL = (() => {
          * aim=0.78（被夹到 0.62），落点 x 顶到台边 → 23% 直接出边线。
          * 位置律让拍子「先到位、后停住」，到位时拍速≈0，落点回到
          * 0.55·bx（宽球 ≈0.33），稳稳在台内。 */
-        tx = cl(S.bx + cfg.posLead, -X_CLAMP, X_CLAMP);
+        S.sw = 0;   // 追位阶段没有挥拍
+        S.inSwing = false;
+        const chaseX = (cfg.chaseBounce && S.bounceX != null) ? S.bounceX : S.bx;
+        tx = cl(chaseX + cfg.posLead, -X_CLAMP, X_CLAMP);
       }else{
         /* 挥拍阶段：位置保持在球附近，速度纠偏到目标落点。
          * v = (aimT − 0.55·px)/0.30  →  落点闭环 */
         const hold = cl(S.bx - px, -cfg.holdClamp, cfg.holdClamp);
+        /* ★ swingLaw=1：挥拍阶段也用「位置律」——目标是接触点 bx 本身，
+         * 一阶跟踪器会让拍子**减速进入**接触点（到位时拍速≈0）⇒
+         * 不触发 resolveHit 的 qMult 速度放大（限速下 out 爆炸的主因）。
+         * 旧律 tx = px + hold + vCmd/PACE 是「位置 + 速度前馈」，
+         * 限速下 hold 被夹住 ⇒ 拍子以满速冲进球 ⇒ 触球拍速 = cap ⇒ 球被打长。 */
         let vCmd = cl((aimT - AIM.xFromPos * px) / AIM.xFromSwipe, -cfg.maxSwing, cfg.maxSwing);
+        /* ★ 故意挥拍速度（sw）：只有它代表「这一拍的手上动作」。
+         * 追位（跑位）速度不该算进击球——限速下模型总是「迟到猛冲」
+         * （触球拍速 = cap），而 resolveHit 的 qMult=1+sqrt(|swipe|*0.8/5.6)
+         * 会把这个冲量放大成 +53% 球速 ⇒ 球飞过端线（实测 out 占 95%）。
+         * 把「跑位」与「挥拍」分开后：
+         *   1) 球速回到正常区间（不再自己打长出界）；
+         *   2) 落点仍由挥拍控制（aimX = 0.55*拍位x + 0.30*sw）⇒ 落点维度活着。 */
+        S.sw = vCmd;
+        S.inSwing = true;
         /* ★★ 落点伺服（M3）：把「实际落点」伺服到「想要的落点」（S.want）。
          * 前馈只解了「vCmd → 落点」的线性关系，漏掉了触球瞬间拍速里的
          * 追位滞后项 18·(球x−拍位x) ⇒ 固定落点目标会带系统性偏移
@@ -850,7 +954,12 @@ const HIP_SKILL = (() => {
                          sx: obs.sx, sy: obs.sy, svz: obs.svz };
           for(let it = 0; it < cfg.servoIter; it++){
             const sw = simSwingToContact(px, obs.svx || 0, S.bx, tau, cfg, vCmd);
-            const land = landingOf(sw.x, sw.svx, sctx, my, ctrl, aimT, SERVO_RNG);
+            /* ★ 限速口径：伺服算落点时必须用**与实机同一份**出球参数
+             *   （swipe = 故意挥拍速度 vCmd，fwd = 0），否则伺服会朝一个
+             *   永远不会发生的落点修正 ⇒ 把球往台外打。 */
+            const capOn2 = (typeof MOVE_LIMIT !== 'undefined' && MOVE_LIMIT) ? (MOVE_LIMIT.cap != null) : false;
+            const land = landingOf(sw.x, sw.svx, sctx, my, ctrl, aimT, SERVO_RNG, true,
+                                  capOn2 ? (vCmd || 0) : undefined, capOn2 ? 0 : undefined);
             if(!land) break;
             const err = S.want - land.x;
             S.servoLand = land.x; S.servoErr = err;
@@ -859,7 +968,9 @@ const HIP_SKILL = (() => {
             vCmd = cl((aimT - AIM.xFromPos * px) / AIM.xFromSwipe, -cfg.maxSwing, cfg.maxSwing);
           }
         }
-        tx = px + hold + vCmd / PACE;
+        tx = (cfg.swingLaw === 1)
+          ? cl(S.bx + vCmd / PACE, -X_CLAMP, X_CLAMP)
+          : px + hold + vCmd / PACE;
       }
 
       /* ★ 独立拍面深度通道：pz = 预测落台点 z + padZOffset。
@@ -890,7 +1001,9 @@ const HIP_SKILL = (() => {
         }
       }
 
-      return { tx: cl(tx, -X_CLAMP, X_CLAMP), my: cl(my, 0, 1), ctrl: ctrl, pz: padZ };
+      return { tx: cl(tx, -X_CLAMP, X_CLAMP), my: cl(my, 0, 1), ctrl: ctrl, pz: padZ,
+               sw: (swingSwipeOn(cfg) ? (S.sw || 0) : undefined),
+               f: swingFwdVal(cfg, obs, S.inSwing) };
     }
 
     /* 发球：HIP 的发球是固定动作（上旋、中等力量、居中） */

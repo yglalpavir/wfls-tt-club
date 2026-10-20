@@ -20,6 +20,8 @@ const ROOT = path.join(__dirname, '..');
 const INPUTSIM = require(path.join(ROOT, 'js', 'input-sim.js'));
 const OPP = require(path.join(ROOT, 'js', 'opponent-ladder.js'));
 const { HIP_SKILL } = require(path.join(ROOT, 'js', 'hip-skill.js'));
+/* 模型侧移动预算（限速）—— 仿真侧与实机同一份 */
+const ML = require(path.join(ROOT, 'js', 'move-limit.js'));
 
 function argOf(flag, def){
   const i = process.argv.indexOf(flag);
@@ -140,6 +142,21 @@ function parseSets(){
   return out;
 }
 
+function parseGrids(){
+  const grids = [];
+  for(let i = 2; i < process.argv.length; i++){
+    if(process.argv[i] === '--grid'){
+      const kv = process.argv[i + 1] || '';
+      const j = kv.indexOf('=');
+      /* 值必须是有限数：'1.2,1.6' 被当成一个值时 Number() = NaN，
+       * 而 NaN 会在 moveStep 里把拍位污染成 NaN ⇒ 整个仿真静默失效。 */
+      if(j > 0) grids.push({ key: kv.slice(0, j), vals: kv.slice(j + 1).split(',').map(Number).filter(v => Number.isFinite(v)) });
+      i++;
+    }
+  }
+  return grids;
+}
+
 function main(){
   const oppTag = argOf('--opp', 'hell');
   const games = parseInt(argOf('--games', '30'), 10);
@@ -148,30 +165,48 @@ function main(){
   const useDqn = process.argv.includes('--dqn');
   const useIntent = process.argv.includes('--intent');
   const base = parseSets();
+  /* ★ 移动预算（限速）：--move-cap <m/s>，0/不给 = 用 move-limit.js 的出厂默认。
+   *   与实机同一份常量 ⇒ 仿真里的限速口径 = 实机口径。 */
+  const capArg = parseFloat(argOf('--move-cap', '0'));
+  if(capArg > 0) ML.setMoveLimit({ cap: capArg });
+  const capNow = ML.getMoveLimit().cap;
 
-  const gridArg = argOf('--grid', '');
+  const grids = parseGrids();
   const t0 = Date.now();
 
-  if(gridArg){
-    const j = gridArg.indexOf('=');
-    const key = gridArg.slice(0, j);
-    const vals = gridArg.slice(j + 1).split(',').map(Number);
-    const rows = [];
-    for(const v of vals){
-      const cfg = Object.assign({}, base, { [key]: v });
-      const r = runOne(cfg, oppTag, games, seed, useDqn, useIntent);
-      rows.push({ key, v, rate: r.rate, ci: r.ci, avgShots: r.avgShots, buckets: r.buckets });
-      console.log(`${key}=${v}\t分点率=${(r.rate * 100).toFixed(1)}% ±${(r.ci * 100).toFixed(1)}\t均板=${r.avgShots.toFixed(1)}\t${fmtBuckets(r.buckets)}`);
+  if(grids.length){
+    /* 多轴笛卡尔积（--grid 可重复） */
+    let combos = [{}];
+    for(const g of grids){
+      const next = [];
+      for(const c of combos) for(const v of g.vals) next.push(Object.assign({}, c, { [g.key]: v }));
+      combos = next;
     }
+    const rows = [];
+    for(const cfg of combos){
+      /* ★ moveCap 是**物理层**参数（不是控制器旋钮）⇒ 必须从 cfg 里剥出来，
+       *   单独写进 move-limit.js（与实机同一份常量）。 */
+      let cap = capNow;
+      if(cfg.moveCap != null){
+        cap = cfg.moveCap > 0 ? cfg.moveCap : null;
+        ML.setMoveLimit({ cap: cap });
+        delete cfg.moveCap;
+      }
+      const r = runOne(cfg, oppTag, games, seed, useDqn, useIntent);
+      const key = grids.map(g => g.key + '=' + (g.key === 'moveCap' ? cap : cfg[g.key])).join(' ');
+      rows.push({ key, cfg, cap, rate: r.rate, ci: r.ci, avgShots: r.avgShots, buckets: r.buckets });
+      console.log(`${key}\t分点率=${(r.rate * 100).toFixed(1)}% ±${(r.ci * 100).toFixed(1)}\t均板=${r.avgShots.toFixed(1)}\t${fmtBuckets(r.buckets)}`);
+    }
+    ML.setMoveLimit({ cap: capNow });
     rows.sort((a, b) => b.rate - a.rate);
-    console.log('\n最好：', rows[0].key + '=' + rows[0].v, (rows[0].rate * 100).toFixed(1) + '%');
-    if(jsonOut) fs.writeFileSync(path.resolve(jsonOut), JSON.stringify({ grid: rows }, null, 2));
+    console.log('\n最好：', rows[0].key, (rows[0].rate * 100).toFixed(1) + '%');
+    if(jsonOut) fs.writeFileSync(path.resolve(jsonOut), JSON.stringify({ opp: oppTag, games, seed, cap: capNow, grid: rows }, null, 2));
     return;
   }
 
   const r = runOne(base, oppTag, games, seed, useDqn, useIntent);
   const dt = ((Date.now() - t0) / 1000).toFixed(1);
-  console.log(`对手=${oppTag} 脑=${useDqn ? 'DQN(烘焙权重)' : 'HIP-L1'} 局数=${games} seed=${seed} 用时=${dt}s`);
+  console.log(`对手=${oppTag} 脑=${useDqn ? 'DQN(烘焙权重)' : 'HIP-L1'} 局数=${games} seed=${seed} 限速=${capNow == null ? '不限' : capNow + ' m/s'} 用时=${dt}s`);
   console.log(`分点率 = ${(r.rate * 100).toFixed(1)}% ± ${(r.ci * 100).toFixed(1)}  （${r.pA} : ${r.pB}，共 ${r.pts} 分）`);
   console.log(`平均每分板数 = ${r.avgShots.toFixed(2)}`);
   console.log('分项：', fmtBuckets(r.buckets));

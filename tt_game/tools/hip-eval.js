@@ -70,6 +70,8 @@ function runShard(opts){
     '--controller', opts.controller, '--json', jsonPath ];
   if(opts.from) args.push('--from', opts.from);
   if(opts.cfg) args.push('--hip-cfg', opts.cfg);
+  /* ★ 移动预算（限速）：模型侧拍速上限（m/s）。0/不给 = 不限。 */
+  if(opts.moveCap) args.push('--move-cap', String(opts.moveCap));
   const r = spawnSync(process.execPath, args, { cwd: ROOT, encoding: 'utf8', maxBuffer: 1 << 26 });
   if(r.status !== 0 && !fs.existsSync(jsonPath)){
     return { error: (r.stderr || r.stdout || '').toString().slice(0, 800) };
@@ -149,7 +151,8 @@ function main(){
   const t0 = Date.now();
 
   const base = { controller, opp, games, seed, from, maxsec,
-                 cfg: argOf('--hip-cfg', '') };
+                 cfg: argOf('--hip-cfg', ''),
+                 moveCap: argOf('--move-cap', '') };
 
   /* ★ --hip-cfg 的基线配置（两条路径都要用）。
    *   历史 bug：非 grid 路径调用 doOne(null) ⇒ cfgPath 为空 ⇒
@@ -162,18 +165,19 @@ function main(){
     }catch(e){ console.error('读取 --hip-cfg 失败：' + e.message); baseCfgObj = null; }
   }
 
-  const doOne = (cfgObj, label) => {
+  const doOne = (cfgObj, label, capOverride) => {
     let cfgPath = '';
     if(cfgObj && Object.keys(cfgObj).length){
       cfgPath = CFG_PATH;
       fs.writeFileSync(cfgPath, JSON.stringify(cfgObj));
     }
+    const cap = (capOverride != null && capOverride !== '') ? capOverride : base.moveCap;
     /* 分片：每个分片一次 live-match（串行调用，但每次内部是 60Hz 实机模拟） */
     const merged = {};
     const perShard = Math.max(1, Math.round(games / shards));
     for(let s = 0; s < shards; s++){
       const r = runShard({ controller, opp, games: perShard, seed: seed + s * 1000,
-                            maxsec, from, cfg: cfgPath });
+                            maxsec, from, cfg: cfgPath, moveCap: cap });
       if(r.error){ console.error('分片 ' + s + ' 失败：\n' + r.error); continue; }
       for(const t of Object.keys(r.byTier)){
         if(!merged[t]) merged[t] = { dqnPts: 0, oppPts: 0, lost: {}, dqnContacts: 0, oppContacts: 0 };
@@ -217,9 +221,13 @@ function main(){
       catch(e){ console.error('读取 --hip-cfg 失败：' + e.message); }
     }
     for(const c0 of combos){
-      const c = Object.assign({}, baseCfg, c0);
+      /* ★ moveCap 是**物理层**参数（js/move-limit.js），不是 HIP 旋钮
+       *   ⇒ 必须单独走 --move-cap，不能塞进 --hip-cfg。 */
+      const cap = ('moveCap' in c0) ? c0.moveCap : null;
+      const c = Object.assign({}, baseCfg);
+      for(const k in c0) if(k !== 'moveCap') c[k] = c0[k];
       const label = Object.keys(c0).map(k => k + '=' + c0[k]).join(' ');
-      const agg = doOne(c, label);
+      const agg = doOne(c, label, cap);
       const t = Object.keys(agg)[0];
       const a = agg[t];
       const ci = wilson(a.rate, a.points);
