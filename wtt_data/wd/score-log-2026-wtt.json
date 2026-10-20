@@ -4749,5 +4749,29 @@
       "12-10",
       "11-5"
     ]
+  },
+  {
+    "日期": "2026-10-16",
+    "类型": "洲锦赛",
+    "胜者": "Natalia BAJOR/Tatiana KUKULKOVA",
+    "负者": "Bernadette SZOCS/Elizabeta SAMARA",
+    "比分": "3-0",
+    "局分": [
+      "13-11",
+      "11-6",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2026-10-17",
+    "类型": "洲锦赛",
+    "胜者": "Natalia BAJOR/Tatiana KUKULKOVA",
+    "负者": "Anna BRZYSKA/Zuzanna WIELGOS",
+    "比分": "3-0",
+    "局分": [
+      "14-12",
+      "11-8",
+      "13-11"
+    ]
   }
 ]

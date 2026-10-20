@@ -44,8 +44,8 @@ ETTU 官方成绩平台 = TTM WebGen 静态站点 `https://www.ttm.co.at/results
 
 注：
 - `ec2020` 的比赛日实际落在 2021-06，因此这些记录归属 **2021 赛季**（赛季由 `日期` 决定）。
-- 2026 届仍在进行中（10-18 结束），截至 2026-10-17 有 21 行「已定签表未开打」，
-  导入器必须跳过未开打行，并且**可重复执行**，待赛事结束后再跑一次即可补齐决赛。
+- 2026 届首次导入时仍在进行中（10-18 结束），截至 2026-10-17 有 21 行「已定签表未开打」，
+  导入器跳过未开打行且**可重复执行**；赛事结束后已重抓页面补齐全部比赛日（见 §8）。
 
 ### 数据源覆盖不到的部分（与「2016–2026」诉求的差距）
 
@@ -94,6 +94,7 @@ ETTU/TTM 平台只回溯到 `ec2020`（`ec2016`/`ec2017`/`ec2018`/`ec2019` 均 4
 ## 5. 实际产出规模（已导入）
 
 - 个人赛场次：ec2020 435 + ec2022 503 + ec2024 568 + ec2026 498 = **2004 场**
+  （ec2026 属未完赛快照，完赛后为 533 场，见 §8）
 - 团体赛单打场次：ec2021 254 + ec2023 294 + ec2025 345 = **893 场**
   （源站 `tr.individual` 行数为 340/390/455，其中含「该场次未出场」的空位占位，
   按 `td.result` 为空或非数字跳过后的实际完赛场次为 254/294/345）
@@ -184,3 +185,22 @@ xd 2016=29／2018=31。xd 项目原缺这两年的年度文件，**新建**
   `wttNameIdentity` 会把 `{xuan, zhang}` 与 `{sofiaxuan, zhang}` 算成两人，WTT 排名被拆行。
   导入器 `EXTRA_NAME_MAP` 同步登记 `xuan zhang` / `zhang xuan` 两个键。
   提交 `11c0ba0`（Kristin）之后单独提交该修正；`ci_validate.py` 复跑仍全绿。
+
+## 8. 2026 届完赛补齐（已完成）
+
+2026 欧锦赛（卢布尔雅那）于 10-18 结束。2026-10-21 重新抓取 `ec2026` 的 `dates.html`
+与全部 8 个比赛日页面（覆盖 10-17 的旧缓存），重跑
+`python tools/import_europe_champs.py --only ec2026` 补齐最后两个比赛日。
+
+- 新增 **35 场**：md 2（57→59）、ms 15（174→189）、wd 2（52→54）、ws 15（144→159）、
+  xd 1（71→72）；纯追加，`git diff --numstat -- wtt_data/` 删除行数为 0。
+- 解析统计：`unplayed=0`、`bad_row=0`（首次导入时 21 行未开打），
+  `no_juifen=3`（源站这三场未列逐局，只写 `比分`）。
+- 复跑 `--check` 新增 0 条（幂等）；`python tools/ci_validate.py` 全绿
+  （261 个 JSON 解析通过、WTT 侧 22974 条含比分记录自洽、88 个 WTT score-log 结构合法）。
+- 五个项目冠军全部与外部报道交叉核对一致（含决赛对手与局数）：
+  男单 Felix LEBRUN 4-3 Anton KALLBERG（10-18）；女单 Elizabet ABRAAMIAN 4-3
+  Annett KAUFMANN（10-18）；男双 Alexis LEBRUN/Felix LEBRUN 3-2
+  Anton KALLBERG/Kristian KARLSSON（10-17）；女双 Natalia BAJOR/Tatiana KUKULKOVA 3-0
+  Anna BRZYSKA/Zuzanna WIELGOS（10-17）；混双 Benedikt DUDA/Nina MITTELHAM 3-2
+  Alexis LEBRUN/Charlotte LUTZ（10-16）。
