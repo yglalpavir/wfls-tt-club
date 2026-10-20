@@ -101,9 +101,13 @@ function main(){
      *   readDelay 越大 ⇒ 读旋越久 ⇒ 可用跑位时间越少；readSpin=0 ⇒ 信念包含旋转（无误设）。 */
     const dOv = parseFloat(argOf('--delay', ''));
     const nsOv = argOf('--nospin', '');
+    /* --freeze <0|1>：冻结对手的信念（读完球就承诺自己的判断，不再随球逼近自我纠正）。
+     *   不冻结时「误设模型」会被时间抹平（对手每 16~90ms 从球的当前位置重算落点）⇒ 0 漏球。 */
+    const fzOv = argOf('--freeze', '');
     const polOv = Object.assign({}, pol0,
       (isNaN(dOv) ? {} : { readDelay: dOv }),
-      (nsOv === '' ? {} : { readSpin: nsOv !== '0' }));
+      (nsOv === '' ? {} : { readSpin: nsOv !== '0' }),
+      (fzOv === '' ? {} : { readFreeze: fzOv !== '0' }));
     const pol = hasErr ? Object.assign({}, polOv, { moveErr: errOv }) : polOv;
     /* 随机化玩家侧：落点目标 + 出球深度（把落点空间铺开） */
     const cfg = hasAlt

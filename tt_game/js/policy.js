@@ -372,7 +372,10 @@ function grandSlamPolicy(){
  *   （见 docs/tech/hip-framework.md §1.13 与 §4.5）。 */
 function trapPolicy(){
   const base = unflattenPolicy(strongVec());
-  return Object.assign({}, base, { readDelay: 0.07, readSpin: true });
+  /* readFreeze：读完球就**承诺**自己的判断（不再随球逼近自我纠正）——
+   *   没有它，误设模型会被时间抹平（对手每 16~90ms 从球的当前位置重算落点），
+   *   实测 16000 条样本 0 漏球 ⇒ 读球代价完全体现不出来（§4.6）。 */
+  return Object.assign({}, base, { readDelay: 0.07, readSpin: true, readFreeze: true });
 }
 /* 按所选对战模型解析策略：普通=默认 · 地狱=学习策略 · 大满贯=预备种子 ·
  *   extreme / extreme-max=极端对手阶梯（opponent-ladder.js，与训练器同源）·

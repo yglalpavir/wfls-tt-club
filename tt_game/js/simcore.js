@@ -904,6 +904,13 @@ const SIM = (() => {
     const pol = o.policy || null;
     const rDelay = (pol && pol.readDelay > 0) ? pol.readDelay : 0;
     const rNoSpin = (pol && pol.readSpin) ? 1 : 0;
+    /* ★ readFreeze：把「信念」冻结。默认关闭。
+     *   背景：对手原本每 16~90ms 就从**球的当前位置**重新预测一次落点，
+     *   ⇒ 任何「预测模型错了」的误差都会随着球逼近而自我纠正
+     *   （剩余飞行时间越短，Magnus 累积偏差越小）⇒ 读球代价完全体现不出来
+     *   （实测 16000 条样本 0 漏球，见 docs/tech/hip-framework.md §4.6）。
+     *   冻结 = 读完球就**承诺**自己的判断并一直用 ⇒ 错误信念持续存在 ⇒ 才可能真的够不到。 */
+    const rFreeze = (pol && pol.readFreeze) ? 1 : 0;
     if(inbound){
       if(!P_._inbound){
         P_._inbound = true;
@@ -913,6 +920,7 @@ const SIM = (() => {
         P_._wrapDone = false; P_._wrapOn = false;
         P_._strokeSwitches = 0;
         P_._readT = now;               // 读球起点（读球代价用）
+        P_._frz = null;                // 冻结信念（readFreeze 用）：每板重置
         if(P_._nz){ P_._nz.v = 0; P_._nz.t = -1; }
       }
       const ttc0 = (P_.z - B.pos.z) / B.vel.z;
@@ -921,9 +929,16 @@ const SIM = (() => {
         P_.predT = now;
         /* 信念：可选的「误设模型」——忽略旋转 ⇒ 对手的落点预测被 Magnus 偏移带偏 */
         const spinBelief = rNoSpin ? { x: 0, y: 0, z: 0 } : B.spin;
-        P_.predX = predictXAtZ(B.pos, B.vel, spinBelief, P_.z);
-        const m = predictMeetZ(B.pos, B.vel, B.spin, side, C.PADDLE_Y - 0.235, C.PADDLE_Y + 0.235, o.zLo, o.zHi);
-        P_.predZ = m ? m.z : o.zHome;
+        if(rFreeze && P_._frz){
+          /* 冻结信念：不再随球逼近自我纠正（否则误设模型会被时间抹平） */
+          P_.predX = P_._frz.x;
+          P_.predZ = P_._frz.z;
+        }else{
+          P_.predX = predictXAtZ(B.pos, B.vel, spinBelief, P_.z);
+          const m = predictMeetZ(B.pos, B.vel, B.spin, side, C.PADDLE_Y - 0.235, C.PADDLE_Y + 0.235, o.zLo, o.zHi);
+          P_.predZ = m ? m.z : o.zHome;
+          if(rFreeze) P_._frz = { x: P_.predX, z: P_.predZ };
+        }
       }
       /* 读球延迟内不横移（真实乒乓里读旋需要时间） */
       const reading = rDelay > 0 && (now - (P_._readT != null ? P_._readT : now)) < rDelay;
