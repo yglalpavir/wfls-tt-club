@@ -1,0 +1,60 @@
+- generic [active] [ref=f1e1]:
+  - generic:
+    - generic: LIVE · Ping Pong Arena
+    - button "Match stats" [ref=f1e93] [cursor=pointer]
+    - generic:
+      - generic:
+        - generic:
+          - generic: L·Hell AI
+          - generic: "5"
+      - generic:
+        - generic:
+          - generic: "Series 0 : 0 · Best of 5"
+          - generic: RALLY 3
+      - generic:
+        - generic:
+          - generic: "1"
+          - generic: R·Hell AI
+    - generic: Rally · serve bounces own half first · read the rubber flip to predict the AI
+    - generic:
+      - generic: Point!
+      - generic: No return
+    - generic: ◎ Heavy topspin incoming · counter with a backhand snap!
+    - generic: ◎ Backspin incoming · hold Ctrl to push
+    - generic:
+      - generic:
+        - generic:
+          - generic: FOREHAND
+          - generic: Heavy topspin · cannon · rarely misses
+      - generic:
+        - generic: Swing
+        - generic: ◀ Charge left spin
+    - generic:
+      - generic:
+        - generic:
+          - generic: Mouse L/R
+          - text: move
+        - generic:
+          - generic: Mouse U/D
+          - text: deep / short
+        - generic:
+          - generic: Fast swipe
+          - text: strong sidespin
+        - generic:
+          - generic: Auto flip
+          - text: backhand snap
+        - generic:
+          - generic: R
+          - text: reset
+        - generic: ◎ Heavy FH · backhand snap
+      - generic:
+        - link "‹ Home":
+          - /url: ../index.html
+        - 'button "Quality: Auto" [ref=f1e94] [cursor=pointer]'
+        - button "Help ?" [ref=f1e95] [cursor=pointer]
+        - 'button "Sound: On" [ref=f1e96] [cursor=pointer]'
+        - button "Reset score" [ref=f1e97] [cursor=pointer]
+        - button "Touch UI" [ref=f1e98] [cursor=pointer]
+        - 'button "Push: Left" [ref=f1e99] [cursor=pointer]'
+        - button "Switch language" [ref=f1e100] [cursor=pointer]:
+          - generic [ref=f1e18]: 中文

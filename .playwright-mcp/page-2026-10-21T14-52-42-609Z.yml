@@ -1,0 +1,119 @@
+- generic [active] [ref=f3e1]:
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - generic: 你 YOU
+          - generic: "0"
+      - generic: RALLY 0
+      - generic:
+        - generic:
+          - generic: "0"
+          - generic: AI 电脑
+    - generic: 发球!
+    - generic: ◎ 重旋来球 · 反手快撕借力反击!
+    - generic: ◎ 下旋来球 · 按住「搓」钮搓球
+    - generic:
+      - generic:
+        - generic:
+          - generic: 正手 FOREHAND
+          - generic: 极重上旋 · 重炮 · 几乎不漏球
+      - generic: 挥拍
+    - generic [ref=f3e2]:
+      - link "‹ 返回首页" [ref=f3e3] [cursor=pointer]:
+        - /url: ../index.html
+      - button "画质：自动" [ref=f3e5] [cursor=pointer]
+      - button "帮助 ?" [ref=f3e7] [cursor=pointer]
+      - button "音效：开" [ref=f3e9] [cursor=pointer]
+      - button "重置比分" [ref=f3e11] [cursor=pointer]
+      - button "切键鼠" [ref=f3e13] [cursor=pointer]
+      - button "搓球键：左" [ref=f3e15] [cursor=pointer]
+      - button "切换语言" [ref=f3e17] [cursor=pointer]:
+        - generic [ref=f3e18]: EN
+    - generic:
+      - generic:
+        - button "数据分析" [ref=f3e19] [cursor=pointer]: ▦
+        - button "操作指南" [ref=f3e20] [cursor=pointer]: "?"
+        - button "更多设置" [ref=f3e21] [cursor=pointer]: ≡
+      - generic: 拖动移动 · 快速横滑加侧旋 · 按住「搓」放平拍面
+      - generic:
+        - button "◀ 左旋"
+        - button "右旋 ▶"
+        - button "上/下旋"
+        - button "强 −"
+        - button "强 ＋"
+  - generic [ref=f3e22]:
+    - generic [ref=f3e23]: WFLS TABLE TENNIS CLUB · 彩蛋 EASTER EGG
+    - heading "乒乓·对决" [level=1] [ref=f3e24]
+    - generic [ref=f3e25]: TABLE TENNIS ARENA · 11分制 · 净胜两球 · ITTF 规则
+    - generic [ref=f3e26]:
+      - generic [ref=f3e27]:
+        - heading "移动与瞄准" [level=3] [ref=f3e28]
+        - generic [ref=f3e29]:
+          - generic [ref=f3e30]: 手指拖动
+          - generic [ref=f3e31]: 移动球拍
+        - generic [ref=f3e32]:
+          - generic [ref=f3e33]: 上推 / 下拉
+          - generic [ref=f3e34]: 上推快攻 / 下拉弧圈
+        - generic [ref=f3e35]:
+          - generic [ref=f3e36]: 红色准星
+          - generic [ref=f3e37]: 瞄准落点
+      - generic [ref=f3e38]:
+        - heading "击球技术" [level=3] [ref=f3e39]
+        - generic [ref=f3e40]:
+          - generic [ref=f3e41]: 快速横滑
+          - generic [ref=f3e42]: 强力侧旋 · 爆冲爆扣
+        - generic [ref=f3e43]:
+          - generic [ref=f3e44]: 自动换面
+          - generic [ref=f3e45]: 自动选正/反手
+        - generic [ref=f3e46]:
+          - generic [ref=f3e47]: 「搓」钮
+          - generic [ref=f3e48]: 按住=搓球
+      - generic [ref=f3e49]:
+        - heading "发球" [level=3] [ref=f3e50]
+        - generic [ref=f3e51]:
+          - generic [ref=f3e52]: 轻点屏幕
+          - generic [ref=f3e53]: 垂直抛球 → 自动击球
+        - generic [ref=f3e54]:
+          - generic [ref=f3e55]: 上/下旋 钮
+          - generic [ref=f3e56]: 上 / 下旋切换（下旋更沉 · 可叠侧旋）
+        - generic [ref=f3e57]:
+          - generic [ref=f3e58]: ◀ / ▶ 钮
+          - generic [ref=f3e59]: 按住=左 / 右侧旋（可叠上/下旋）
+        - generic [ref=f3e60]:
+          - generic [ref=f3e61]: − / ＋ 钮
+          - generic [ref=f3e62]: 旋转强度 弱 / 强
+      - generic [ref=f3e63]:
+        - heading "选择对战模型" [level=3] [ref=f3e64]
+        - generic [ref=f3e65]:
+          - button "普通 AI" [ref=f3e66] [cursor=pointer]
+          - button "地狱 AI" [ref=f3e67] [cursor=pointer]
+          - button "大满贯预备种子" [ref=f3e68] [cursor=pointer]
+          - button "鼠标上的tt玩家" [ref=f3e69] [cursor=pointer]
+          - button "tt玩家·HIP" [ref=f3e70] [cursor=pointer]
+          - button "地狱AI克星" [ref=f3e71] [cursor=pointer]
+        - generic [ref=f3e72]: 普通 AI：标准水平 · 攻守平衡
+      - generic [ref=f3e73]:
+        - heading "AI 斗蛐蛐 · 五局三胜" [level=3] [ref=f3e74]
+        - generic [ref=f3e75]:
+          - generic [ref=f3e76]: 左 AI
+          - combobox [ref=f3e77] [cursor=pointer]:
+            - option "普通 AI"
+            - option "地狱 AI" [selected]
+            - option "大满贯预备种子"
+            - option "鼠标上的tt玩家"
+            - option "tt玩家·HIP"
+            - option "地狱AI克星"
+          - generic [ref=f3e78]: VS
+          - combobox [ref=f3e79] [cursor=pointer]:
+            - option "普通 AI"
+            - option "地狱 AI" [selected]
+            - option "大满贯预备种子"
+            - option "鼠标上的tt玩家"
+            - option "tt玩家·HIP"
+            - option "地狱AI克星"
+          - generic [ref=f3e80]: 右 AI
+        - generic [ref=f3e81]: 地狱 AI（内战） · 不换边 · 先赢3大局者胜
+    - generic [ref=f3e82]:
+      - button "开始比赛 ▶" [ref=f3e83] [cursor=pointer]
+      - button "AI 斗蛐蛐 ▶" [ref=f3e85] [cursor=pointer]

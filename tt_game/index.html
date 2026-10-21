@@ -15,11 +15,14 @@
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/hud.css">
 <link rel="stylesheet" href="css/overlay.css">
+<link rel="stylesheet" href="css/analytics.css">
 </head>
 <body>
 
 <div id="hud">
   <div id="liveChip"><i></i><span data-i18n="g_live_chip">LIVE · 乒乓竞技场</span></div>
+  <!-- 桌面端数据分析入口（触屏端在 #touchTop 里用图标钮） -->
+  <div id="statsFab"><button class="btn" id="btnStats"><span data-i18n="g_btn_stats">数据分析</span></button></div>
   <div id="scorebug">
     <div class="team you"><span class="gp" id="gpYou" data-i18n="g_game_point">局点</span>
       <div class="inner"><span class="name" id="nameYou" data-i18n="g_name_you">你 YOU</span><span class="pts" id="ptsYou">0</span><span class="dot" id="dotYou"></span></div>
@@ -72,6 +75,7 @@
   <!-- 触屏操作控件：仅触屏设备显示（html.touch） -->
   <div id="touchCtl">
     <div id="touchTop">
+      <button class="tc-ico" id="btnStatsIco" data-i18n-aria="g_aria_stats">▦</button>
       <button class="tc-ico" id="btnHelpIco" data-i18n-aria="g_aria_help">?</button>
       <button class="tc-ico" id="btnMenuIco" data-i18n-aria="g_aria_menu">≡</button>
     </div>
@@ -93,6 +97,7 @@
 </div>
 
 <div id="startOverlay" class="overlay">
+  <a class="btn ov-site-link" id="btnSite" href="../index.html"><span data-i18n="g_btn_home">‹ 返回官网</span></a>
   <div class="ov-kicker" data-i18n="g_ov_kicker">WFLS TABLE TENNIS CLUB · 彩蛋 EASTER EGG</div>
   <h1 class="ov-title" data-i18n="g_ov_title">乒乓·对决</h1>
   <div class="ov-sub" data-i18n="g_ov_sub">TABLE TENNIS ARENA · 11分制 · 净胜两球 · ITTF 规则</div>
@@ -186,6 +191,7 @@
   <div class="ov-sub" id="endStats"></div>
   <div class="ov-btns">
     <button class="btn primary" id="btnAgain"><span data-i18n="g_btn_again">再来一局 ▶</span></button>
+    <button class="btn" id="btnEndStats"><span data-i18n="g_btn_stats">数据分析</span></button>
     <button class="btn" id="btnMenu"><span data-i18n="g_btn_menu">主菜单</span></button>
   </div>
   <div id="confetti"></div>
@@ -215,6 +221,7 @@
       <div><kbd>Q / E</kbd><span data-i18n="g_row_serve_qe">旋转强度 弱 / 强（发球前调）</span></div>
       <div><kbd>R</kbd><span data-i18n="g_row_r_reset">重置比分</span></div>
       <div><kbd>M</kbd><span data-i18n="g_row_m_sound">音效开关</span></div>
+      <div><kbd>V</kbd><span data-i18n="g_row_v_stats">数据分析（本局 / 上一局）</span></div>
     </div>
     <div class="oc-group touch-only">
       <h3 data-i18n="g_h3_move">移动与瞄准</h3>
@@ -241,6 +248,10 @@
   <div class="ov-actions">
     <button class="btn primary" id="btnHelpClose"><span data-i18n="g_btn_close">关闭 ✕</span></button>
   </div>
+</div>
+
+<div id="statsOverlay" class="overlay hidden">
+  <div class="an-card" id="anCard"></div>
 </div>
 
 <script src="js/i18n.js"></script>
@@ -270,6 +281,7 @@
 <script src="js/state.js"></script>
 <script src="js/tt-stats.js"></script>
 <script src="js/player-log.js"></script>
+<script src="js/game-analytics.js"></script>
 
 <script src="js/ui.js"></script>
 <script src="js/rules.js"></script>

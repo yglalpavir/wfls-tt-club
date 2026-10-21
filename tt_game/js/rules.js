@@ -19,8 +19,10 @@ function pointTo(winner, msg){
   if(winner==='player'){ scoreYou++; flash('you'); toast(gameT('g_toast_point'), gameT(msg), 'you'); playScore(true); }
   else{ scoreAi++; flash('ai'); toast(gameT('g_toast_lost'), gameT(msg), 'ai'); playScore(false); }
   updateScoreUI();
+  if(typeof GAME_ANALYTICS !== 'undefined') GAME_ANALYTICS.point(winner, msg);
   if((scoreYou>=11 || scoreAi>=11) && Math.abs(scoreYou-scoreAi)>=2){
     state = 'over';
+    if(typeof GAME_ANALYTICS !== 'undefined') GAME_ANALYTICS.gameOver(scoreYou>scoreAi ? 'player' : 'ai');
     if(mode==='watch'){   // 斗蛐蛐：记系列胜场 → 5局三胜判定
       if(scoreYou>scoreAi) seriesWinsL++; else seriesWinsR++;
       updateScoreUI();
@@ -38,6 +40,7 @@ function watchRestart(){
   scoreYou = scoreAi = 0; longestRally = 0; ballDead = true;
   $('endOverlay').classList.add('hidden'); $('confetti').innerHTML = '';
   updateScoreUI();
+  if(typeof GAME_ANALYTICS !== 'undefined') GAME_ANALYTICS.begin();
   setStatus(()=>gameT('g_st_watch_series', {a: modelLabel(fightL), b: modelLabel(fightR), l: seriesWinsL, r: seriesWinsR}));
   setupServe();
 }
@@ -86,6 +89,7 @@ function setupServe(override){
   canHit.player = canHit.ai = false; rallyCount = 0; updateRallyChip();
   if(typeof TT_PLAYER !== 'undefined') TT_PLAYER.reset();   // 鼠标上的tt玩家：每分重置虚拟拍
   server = override || nextServer();
+  if(typeof GAME_ANALYTICS !== 'undefined') GAME_ANALYTICS.serveSetup(server);
   updateScoreUI();
   const auto = (mode==='menu' || mode==='watch');   // 观看模式：双方都自动发球
   if(server==='player' && !auto){
@@ -227,6 +231,7 @@ function strikeServe(){
   lastHitter = server; isServe = true; shotBouncedOpp = false; serveBouncedOwn = false;
   canHit.player = canHit.ai = false; rallyCount = 1; updateRallyChip();
   strikeSwing(isP?playerPad:aiPad, 0.5);
+  if(typeof GAME_ANALYTICS !== 'undefined') GAME_ANALYTICS.serveStrike(plan);
   state = 'rally';
   playPaddleHit(0.5);
   setStatus(()=>gameT('g_st_rally'));

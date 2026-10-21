@@ -1,0 +1,70 @@
+- generic [active] [ref=f4e1]:
+  - generic:
+    - generic: LIVE · 乒乓竞技场
+    - button "数据分析" [ref=f4e3] [cursor=pointer]
+    - generic:
+      - generic:
+        - generic: 局点
+        - generic:
+          - generic: 左·地狱 AI
+          - generic: "11"
+      - generic:
+        - generic:
+          - generic: 局点 GAME POINT
+          - generic: RALLY 0
+      - generic:
+        - generic:
+          - generic: "0"
+          - generic: 右·地狱 AI
+    - generic: 抛球发球!
+    - generic:
+      - generic: 得分!
+      - generic: 下网!
+    - generic: ◎ 重旋来球 · 反手快撕借力反击!
+    - generic: ◎ 下旋来球 · 按住 Ctrl 搓球
+    - generic:
+      - generic:
+        - generic:
+          - generic: 正手 FOREHAND
+          - generic: 极重上旋 · 重炮 · 几乎不漏球
+      - generic:
+        - generic: 挥拍
+        - generic: 横向滑动蓄力
+    - generic:
+      - generic:
+        - generic:
+          - generic: 鼠标左右
+          - text: 移动
+        - generic:
+          - generic: 鼠标上下
+          - text: 压深/摆短
+        - generic:
+          - generic: 快速横滑
+          - text: 强力侧旋
+        - generic:
+          - generic: 自动换面
+          - text: 反手快撕
+        - generic:
+          - generic: R
+          - text: 重置
+        - generic: ◎ 正手重旋 · 反手快撕
+      - generic:
+        - link "‹ 返回首页":
+          - /url: ../index.html
+        - button "画质：自动" [ref=f4e5] [cursor=pointer]
+        - button "帮助 ?" [ref=f4e7] [cursor=pointer]
+        - button "音效：开" [ref=f4e9] [cursor=pointer]
+        - button "重置比分" [ref=f4e11] [cursor=pointer]
+        - button "切触屏" [ref=f4e13] [cursor=pointer]
+        - button "搓球键：左" [ref=f4e15] [cursor=pointer]
+        - button "切换语言" [ref=f4e17] [cursor=pointer]:
+          - generic [ref=f4e18]: EN
+  - generic [ref=f4e85]:
+    - generic [ref=f4e86]: 比赛结束 · GAME OVER
+    - heading "胜利!" [level=1] [ref=f4e87]
+    - generic [ref=f4e88]: "11 : 0"
+    - generic [ref=f4e89]: 最长回合 0 拍 · 总得分 11
+    - generic [ref=f4e90]:
+      - button "再来一局 ▶" [ref=f4e91] [cursor=pointer]
+      - button "数据分析" [ref=f4e93] [cursor=pointer]
+      - button "主菜单" [ref=f4e95] [cursor=pointer]

@@ -236,10 +236,14 @@ function animate(){
   const dt = Math.min(clock.getDelta(), 0.05);
   QUALITY.tick(dt);                 // 动态分辨率调节(仅自动档生效)
   /* ---- 仿真：固定 1/60 步长累加（与训练器同源，见上方注释）---- */
-  simAcc += dt;
-  let simSteps = 0;
-  while(simAcc >= SIM_FRAME && simSteps < 6){ simAcc -= SIM_FRAME; stepSim(SIM_FRAME); simSteps++; }
-  if(simSteps >= 6) simAcc = 0;     // 长卡顿：丢弃积压，不追帧
+  /* 数据分析面板打开时冻结仿真：elapsed 不推进 → 物理/发球计时/回合全部暂停 */
+  const statsPaused = (typeof GAME_ANALYTICS !== 'undefined' && GAME_ANALYTICS.isOpen());
+  if(!statsPaused){
+    simAcc += dt;
+    let simSteps = 0;
+    while(simAcc >= SIM_FRAME && simSteps < 6){ simAcc -= SIM_FRAME; stepSim(SIM_FRAME); simSteps++; }
+    if(simSteps >= 6) simAcc = 0;     // 长卡顿：丢弃积压，不追帧
+  }
   /* ---- 以下纯渲染/表现层，按渲染 dt 走 ---- */
   ballMesh.position.copy(ball.pos);
   ballMesh.rotation.x += ball.spin.x*dt*0.8;
@@ -341,7 +345,7 @@ syncTouchMetrics();            // 首次布局完成 → 写入初始 --ctrlH（
 syncBarHeight();               // 写入 --barH（deck 浮在底栏之上）
 /* 语言切换总钩子：i18n.js 在 setGameLanguage() 里调用(本文件最后加载 → 钩子已就绪) */
 window.gameReapplyI18n = function(){
-  ['uiReapplyI18n', 'inputReapplyI18n'].forEach(fn=>{
+  ['uiReapplyI18n', 'inputReapplyI18n', 'analyticsReapplyI18n'].forEach(fn=>{
     if(typeof window[fn] === 'function'){ try{ window[fn](); }catch(e){ if(window.console) console.warn(e); } }
   });
 };

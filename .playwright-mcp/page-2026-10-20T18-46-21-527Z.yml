@@ -1,0 +1,59 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic: LIVE · 乒乓竞技场
+    - generic:
+      - generic:
+        - generic:
+          - generic: 左·tt玩家·HIP
+          - generic: "0"
+      - generic:
+        - generic:
+          - generic: "系列 0 : 0 · 5局三胜"
+          - generic: RALLY 12
+      - generic:
+        - generic:
+          - generic: "1"
+          - generic: 右·地狱 AI
+    - generic: 回合进行中 · 发球先落己方再弹过网 · 看胶面翻转预判 AI 出球
+    - generic:
+      - generic: AI正手爆冲!
+      - generic: HEAVY LOOP · 反手快撕可破
+    - generic: ◎ 重旋来球 · 反手快撕借力反击!
+    - generic: ◎ 下旋来球 · 按住 Ctrl 搓球
+    - generic:
+      - generic:
+        - generic:
+          - generic: 正手 FOREHAND
+          - generic: 引拍蓄力中…
+      - generic:
+        - generic: 挥拍
+        - generic: ◀ 左旋蓄力
+    - generic:
+      - generic:
+        - generic:
+          - generic: 鼠标左右
+          - text: 移动
+        - generic:
+          - generic: 鼠标上下
+          - text: 压深/摆短
+        - generic:
+          - generic: 快速横滑
+          - text: 强力侧旋
+        - generic:
+          - generic: 自动换面
+          - text: 反手快撕
+        - generic:
+          - generic: R
+          - text: 重置
+        - generic: ◎ 正手重旋 · 反手快撕
+      - generic:
+        - link "‹ 返回首页":
+          - /url: ../index.html
+        - button "画质：自动" [ref=e2] [cursor=pointer]
+        - button "帮助 ?" [ref=e4] [cursor=pointer]
+        - button "音效：开" [ref=e6] [cursor=pointer]
+        - button "重置比分" [ref=e8] [cursor=pointer]
+        - button "切触屏" [ref=e10] [cursor=pointer]
+        - button "搓球键：左" [ref=e12] [cursor=pointer]
+        - button "切换语言" [ref=e14] [cursor=pointer]:
+          - generic [ref=e15]: EN

@@ -1,0 +1,247 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic: LIVE · 乒乓竞技场
+    - button "数据分析" [ref=e3] [cursor=pointer]
+    - generic:
+      - generic:
+        - generic:
+          - generic: 左·地狱 AI
+          - generic: "4"
+      - generic:
+        - generic:
+          - generic: "系列 0 : 0 · 5局三胜"
+          - generic: RALLY 0
+      - generic:
+        - generic:
+          - generic: "1"
+          - generic: 右·地狱 AI
+    - generic: 抛球发球!
+    - generic:
+      - generic: 得分!
+      - generic: 对手未能回球
+    - generic: ◎ 重旋来球 · 反手快撕借力反击!
+    - generic: ◎ 下旋来球 · 按住 Ctrl 搓球
+    - generic:
+      - generic:
+        - generic:
+          - generic: 正手 FOREHAND
+          - generic: 极重上旋 · 重炮 · 几乎不漏球
+      - generic:
+        - generic: 挥拍
+        - generic: 横向滑动蓄力
+    - generic:
+      - generic:
+        - generic:
+          - generic: 鼠标左右
+          - text: 移动
+        - generic:
+          - generic: 鼠标上下
+          - text: 压深/摆短
+        - generic:
+          - generic: 快速横滑
+          - text: 强力侧旋
+        - generic:
+          - generic: 自动换面
+          - text: 反手快撕
+        - generic:
+          - generic: R
+          - text: 重置
+        - generic: ◎ 正手重旋 · 反手快撕
+      - generic:
+        - link "‹ 返回首页":
+          - /url: ../index.html
+        - button "画质：自动" [ref=e5] [cursor=pointer]
+        - button "帮助 ?" [ref=e7] [cursor=pointer]
+        - button "音效：开" [ref=e9] [cursor=pointer]
+        - button "重置比分" [ref=e11] [cursor=pointer]
+        - button "切触屏" [ref=e13] [cursor=pointer]
+        - button "搓球键：左" [ref=e15] [cursor=pointer]
+        - button "切换语言" [ref=e17] [cursor=pointer]:
+          - generic [ref=e18]: EN
+  - generic [ref=e86]:
+    - generic [ref=e87]:
+      - generic [ref=e88]:
+        - generic [ref=e89]: MATCH ANALYTICS · 数据复盘
+        - generic [ref=e90]:
+          - heading "数据分析" [level=2] [ref=e91]
+          - generic [ref=e92]: 进行中
+      - button "关闭" [ref=e94] [cursor=pointer]: ✕
+    - generic [ref=e95]:
+      - generic [ref=e96]:
+        - generic [ref=e97]: 左·地狱 AI
+        - generic [ref=e98]: "4"
+      - generic [ref=e99]: ":"
+      - generic [ref=e100]:
+        - generic [ref=e101]: "1"
+        - generic [ref=e102]: 右·地狱 AI
+    - generic [ref=e103]: 第 5 分 · 最长回合 4 拍
+    - generic [ref=e104]:
+      - generic [ref=e105]:
+        - generic [ref=e106]: 总回合
+        - text: "5"
+        - emphasis [ref=e107]: 分
+      - generic [ref=e108]:
+        - generic [ref=e109]: 平均拍数
+        - text: "2.6"
+        - emphasis [ref=e110]: 拍
+      - generic [ref=e111]:
+        - generic [ref=e112]: 最长回合
+        - text: "4"
+        - emphasis [ref=e113]: 拍
+      - generic [ref=e114]:
+        - generic [ref=e115]: 最快球速
+        - text: "28"
+        - emphasis [ref=e116]: km/h
+    - generic [ref=e117]:
+      - generic [ref=e118]: 左
+      - generic [ref=e120]: 右
+    - generic [ref=e122]:
+      - generic [ref=e123]:
+        - heading "回合长度分布" [level=3] [ref=e124]
+        - generic [ref=e125]:
+          - generic [ref=e126]:
+            - generic [ref=e127]: "2"
+            - generic [ref=e130]: 1–2 拍
+          - generic [ref=e131]:
+            - generic [ref=e132]: "3"
+            - generic [ref=e136]: 3–4 拍
+          - generic [ref=e137]:
+            - generic [ref=e138]: "0"
+            - generic [ref=e139]: 5–6 拍
+          - generic [ref=e140]:
+            - generic [ref=e141]: "0"
+            - generic [ref=e142]: 7+ 拍
+      - generic [ref=e143]:
+        - heading "得分方式" [level=3] [ref=e144]
+        - generic [ref=e146]:
+          - generic [ref=e147]: 对手未能回球
+          - generic [ref=e148]: "4"
+        - generic [ref=e152]:
+          - generic [ref=e153]: 出界!
+          - generic [ref=e154]: "1"
+      - generic [ref=e157]:
+        - heading "发球" [level=3] [ref=e158]
+        - generic [ref=e159]:
+          - generic [ref=e160]:
+            - generic [ref=e161]:
+              - generic [ref=e162]: 左·地狱 AI
+              - generic [ref=e163]: 3 发 · 3 赢
+            - generic [ref=e166]:
+              - generic [ref=e167]:
+                - text: ▲上旋
+                - emphasis [ref=e168]: "1"
+              - generic [ref=e169]:
+                - text: ▼下旋
+                - emphasis [ref=e170]: "2"
+              - generic [ref=e171]:
+                - text: ◀ 左侧旋
+                - emphasis [ref=e172]: "2"
+              - generic [ref=e173]:
+                - text: ▶ 右侧旋
+                - emphasis [ref=e174]: "1"
+          - generic [ref=e175]:
+            - generic [ref=e176]:
+              - generic [ref=e177]: 右·地狱 AI
+              - generic [ref=e178]: 2 发 · 1 赢
+            - generic [ref=e181]:
+              - generic [ref=e182]:
+                - text: ▼下旋
+                - emphasis [ref=e183]: "2"
+              - generic [ref=e184]:
+                - text: ◀ 左侧旋
+                - emphasis [ref=e185]: "2"
+      - generic [ref=e186]:
+        - heading "击球构成" [level=3] [ref=e187]
+        - generic [ref=e188]:
+          - generic [ref=e189]:
+            - generic [ref=e190]:
+              - generic [ref=e191]: 左·地狱 AI
+              - generic [ref=e192]: 5 拍
+            - generic [ref=e193]:
+              - generic [ref=e194]:
+                - text: 正手
+                - emphasis [ref=e195]: "3"
+              - generic [ref=e196]:
+                - text: 反手
+                - emphasis [ref=e197]: "2"
+              - generic [ref=e198]:
+                - text: 拉球
+                - emphasis [ref=e199]: "2"
+              - generic [ref=e200]:
+                - text: 扣杀
+                - emphasis [ref=e201]: "1"
+              - generic [ref=e202]:
+                - text: 快撕
+                - emphasis [ref=e203]: "1"
+              - generic [ref=e204]:
+                - text: 爆冲
+                - emphasis [ref=e205]: "1"
+            - generic [ref=e206]:
+              - generic [ref=e207]: 平均 23 km/h
+              - generic [ref=e208]: 最快 28 km/h
+          - generic [ref=e209]:
+            - generic [ref=e210]:
+              - generic [ref=e211]: 右·地狱 AI
+              - generic [ref=e212]: 3 拍
+            - generic [ref=e213]:
+              - generic [ref=e214]:
+                - text: 正手
+                - emphasis [ref=e215]: "2"
+              - generic [ref=e216]:
+                - text: 反手
+                - emphasis [ref=e217]: "1"
+              - generic [ref=e218]:
+                - text: 拉球
+                - emphasis [ref=e219]: "1"
+              - generic [ref=e220]:
+                - text: 扣杀
+                - emphasis [ref=e221]: "1"
+              - generic [ref=e222]:
+                - text: 快带
+                - emphasis [ref=e223]: "1"
+            - generic [ref=e224]:
+              - generic [ref=e225]: 平均 22 km/h
+              - generic [ref=e226]: 最快 27 km/h
+      - generic [ref=e227]:
+        - heading "比分走势" [level=3] [ref=e228]
+        - generic [ref=e237]: 纵轴：净胜分（正=你领先）
+      - generic [ref=e238]:
+        - heading "落点分布" [level=3] [ref=e239]
+        - img [ref=e241]:
+          - generic [ref=e243]: 右
+          - generic [ref=e244]: 左
+        - generic [ref=e262]: 圆点＝落点 · 颜色＝击球方
+      - generic [ref=e263]:
+        - heading "最近得分" [level=3] [ref=e264]
+        - generic [ref=e265]:
+          - generic [ref=e266]:
+            - generic [ref=e267]: "#5"
+            - generic [ref=e268]: "4 : 1"
+            - generic [ref=e269]: 左
+            - generic [ref=e270]: 对手未能回球
+            - generic [ref=e271]: 3 拍
+          - generic [ref=e272]:
+            - generic [ref=e273]: "#4"
+            - generic [ref=e274]: "3 : 1"
+            - generic [ref=e275]: 左
+            - generic [ref=e276]: 对手未能回球
+            - generic [ref=e277]: 2 拍
+          - generic [ref=e278]:
+            - generic [ref=e279]: "#3"
+            - generic [ref=e280]: "2 : 1"
+            - generic [ref=e281]: 右
+            - generic [ref=e282]: 出界!
+            - generic [ref=e283]: 4 拍
+          - generic [ref=e284]:
+            - generic [ref=e285]: "#2"
+            - generic [ref=e286]: "2 : 0"
+            - generic [ref=e287]: 左
+            - generic [ref=e288]: 对手未能回球
+            - generic [ref=e289]: 1 拍
+          - generic [ref=e290]:
+            - generic [ref=e291]: "#1"
+            - generic [ref=e292]: "1 : 0"
+            - generic [ref=e293]: 左
+            - generic [ref=e294]: 对手未能回球
+            - generic [ref=e295]: 3 拍
+    - generic [ref=e296]: 只统计这一局 · 打开面板时比赛自动暂停

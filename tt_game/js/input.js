@@ -65,6 +65,8 @@ window.addEventListener('pointermove', e=>{
 });
 window.addEventListener('pointerdown', e=>{
   ensureAudio();
+  // 数据分析面板打开时：仿真已暂停，指针只交给面板本身（避免隔层发球/移动球拍）
+  if(typeof GAME_ANALYTICS !== 'undefined' && GAME_ANALYTICS.isOpen()) return;
   if(e.pointerType==='touch'){
     if(e.target.closest('button') || touchId!==null) return;   // 按钮触摸与多指不抢控制权
     touchId = e.pointerId;
@@ -90,6 +92,15 @@ window.addEventListener('pointerup', e=>{
 window.addEventListener('pointercancel', e=>{ if(e.pointerId===touchId) touchId = null; });
 window.addEventListener('contextmenu', e=>e.preventDefault());
 window.addEventListener('keydown', e=>{
+  /* 数据分析：V 开关（菜单里让位给「任意键开始」）；打开时吃掉所有游戏按键 */
+  if(e.code==='KeyV' && mode!=='menu'){
+    if(typeof GAME_ANALYTICS !== 'undefined'){ ensureAudio(); GAME_ANALYTICS.toggle(); }
+    return;
+  }
+  if(typeof GAME_ANALYTICS !== 'undefined' && GAME_ANALYTICS.isOpen()){
+    if(e.code==='Escape') GAME_ANALYTICS.close();
+    return;
+  }
   // 发球（S=左旋 / D=右旋；上下旋见下方 A 键）：侧旋可与下旋叠加，与 AI 的 aiServePlan 同口径
   /* A 键：切换发球旋转（上旋 ↔ 下旋）。此前 KeyA 只置位 serveKeys.a 而全仓无消费者（空键），
      正好拿来切旋——不必新增按键。下旋是真实玩法：strikeServe 一直支持 topSpin===false
@@ -309,6 +320,7 @@ if(TOUCH) applyTouchTexts();
 
 function toMenu(){
   mode = 'menu'; ballDead = true;
+  if(typeof GAME_ANALYTICS !== 'undefined') GAME_ANALYTICS.close();
   scoreYou = scoreAi = 0; longestRally = 0;
   $('endOverlay').classList.add('hidden');
   $('startOverlay').classList.remove('hidden');
@@ -342,6 +354,7 @@ function startFight(){
     $('endOverlay').classList.add('hidden'); $('confetti').innerHTML = '';
     setFightNames();
     updateScoreUI();
+    if(typeof GAME_ANALYTICS !== 'undefined') GAME_ANALYTICS.begin({ newSeries: true });
     setStatus(()=>gameT('g_st_fight_start', {a: modelLabel(fightL), b: modelLabel(fightR)}));
     setupServe();
     toast(gameT('g_fight_title'), gameT('g_toast_fight_sub', {a: modelLabel(fightL), b: modelLabel(fightR)}), 'gold', 1800);
@@ -358,6 +371,7 @@ function resetMatch(){
   $('endOverlay').classList.add('hidden'); $('confetti').innerHTML = '';
   setSheet(false);
   updateScoreUI();
+  if(typeof GAME_ANALYTICS !== 'undefined') GAME_ANALYTICS.begin();
   setupServe(mode==='watch' ? undefined : 'player');
   toast(gameT('g_toast_match_start'), gameT('g_toast_match_start_sub'), 'gold', 1600);
   showTouchTips();

@@ -1,0 +1,134 @@
+- generic [active] [ref=f2e1]:
+  - generic:
+    - generic: LIVE · Ping Pong Arena
+    - button "Match stats" [ref=f2e3] [cursor=pointer]
+    - generic:
+      - generic:
+        - generic:
+          - generic: YOU
+          - generic: "0"
+      - generic:
+        - generic:
+          - generic: First to 11 · ITTF rules
+          - generic: RALLY 0
+      - generic:
+        - generic:
+          - generic: "0"
+          - generic: AI CPU
+    - generic: Serve!
+    - generic: ◎ Heavy topspin incoming · counter with a backhand snap!
+    - generic: ◎ Backspin incoming · hold Ctrl to push
+    - generic:
+      - generic:
+        - generic:
+          - generic: FOREHAND
+          - generic: Heavy topspin · cannon · rarely misses
+      - generic:
+        - generic: Swing
+        - generic: Swipe sideways to charge
+    - generic:
+      - generic:
+        - generic:
+          - generic: Mouse L/R
+          - text: move
+        - generic:
+          - generic: Mouse U/D
+          - text: deep / short
+        - generic:
+          - generic: Fast swipe
+          - text: strong sidespin
+        - generic:
+          - generic: Auto flip
+          - text: backhand snap
+        - generic:
+          - generic: R
+          - text: reset
+        - generic: ◎ Heavy FH · backhand snap
+      - generic:
+        - link "‹ Club site":
+          - /url: ../index.html
+        - 'button "Quality: Auto" [ref=f2e5] [cursor=pointer]'
+        - button "Help ?" [ref=f2e7] [cursor=pointer]
+        - 'button "Sound: On" [ref=f2e9] [cursor=pointer]'
+        - button "Reset score" [ref=f2e11] [cursor=pointer]
+        - button "Touch UI" [ref=f2e13] [cursor=pointer]
+        - 'button "Push: Left" [ref=f2e15] [cursor=pointer]'
+        - button "Switch language" [ref=f2e17] [cursor=pointer]:
+          - generic [ref=f2e18]: 中文
+  - generic [ref=f2e19]:
+    - link "‹ Club site" [ref=f2e20] [cursor=pointer]:
+      - /url: ../index.html
+    - generic [ref=f2e22]: WFLS TABLE TENNIS CLUB · EASTER EGG
+    - heading "Ping Pong Duel" [level=1] [ref=f2e23]
+    - generic [ref=f2e24]: TABLE TENNIS ARENA · First to 11 · Win by 2 · ITTF rules
+    - generic [ref=f2e25]:
+      - generic [ref=f2e26]:
+        - heading "Move & aim" [level=3] [ref=f2e27]
+        - generic [ref=f2e28]:
+          - generic [ref=f2e29]: mouse left / right
+          - generic [ref=f2e30]: Move the racket
+        - generic [ref=f2e31]:
+          - generic [ref=f2e32]: mouse up / down
+          - generic [ref=f2e33]: Deep / short
+        - generic [ref=f2e34]:
+          - generic [ref=f2e35]: red crosshair
+          - generic [ref=f2e36]: Aim the landing spot
+      - generic [ref=f2e37]:
+        - heading "Strokes" [level=3] [ref=f2e38]
+        - generic [ref=f2e39]:
+          - generic [ref=f2e40]: swipe sideways
+          - generic [ref=f2e41]: Strong sidespin · loops and smashes
+        - generic [ref=f2e42]:
+          - generic [ref=f2e43]: auto side-switch
+          - generic [ref=f2e44]: Auto pick forehand / backhand
+        - generic [ref=f2e45]:
+          - generic [ref=f2e46]: Ctrl
+          - generic [ref=f2e47]: Hold to push
+      - generic [ref=f2e48]:
+        - heading "Serve" [level=3] [ref=f2e49]
+        - generic [ref=f2e50]:
+          - generic [ref=f2e51]: click / spacebar
+          - generic [ref=f2e52]: Toss vertically → auto strike
+        - generic [ref=f2e53]:
+          - generic [ref=f2e54]: A
+          - generic [ref=f2e55]: Switch top / back spin (backspin is slower and heavier; stacks with sidespin)
+        - generic [ref=f2e56]:
+          - generic [ref=f2e57]: S / D
+          - generic [ref=f2e58]: Left / right sidespin (stacks with top/back)
+        - generic [ref=f2e59]:
+          - generic [ref=f2e60]: Q / E
+          - generic [ref=f2e61]: Spin power low / high
+      - generic [ref=f2e62]:
+        - heading "Choose your opponent" [level=3] [ref=f2e63]
+        - generic [ref=f2e64]:
+          - button "Standard AI" [ref=f2e65] [cursor=pointer]
+          - button "Hell AI" [ref=f2e66] [cursor=pointer]
+          - button "Grand-slam seed" [ref=f2e67] [cursor=pointer]
+          - button "Mouse TT player" [ref=f2e68] [cursor=pointer]
+          - button "TT player · HIP" [ref=f2e69] [cursor=pointer]
+          - button "Hell AI nemesis" [ref=f2e70] [cursor=pointer]
+        - generic [ref=f2e71]: "Standard AI: solid all-round · balanced attack and defense"
+      - generic [ref=f2e72]:
+        - heading "AI Battle · Best of five" [level=3] [ref=f2e73]
+        - generic [ref=f2e74]:
+          - generic [ref=f2e75]: Left AI
+          - combobox [ref=f2e76] [cursor=pointer]:
+            - option "Standard AI"
+            - option "Hell AI" [selected]
+            - option "Grand-slam seed"
+            - option "Mouse TT player"
+            - option "TT player · HIP"
+            - option "Hell AI nemesis"
+          - generic [ref=f2e77]: VS
+          - combobox [ref=f2e78] [cursor=pointer]:
+            - option "Standard AI"
+            - option "Hell AI" [selected]
+            - option "Grand-slam seed"
+            - option "Mouse TT player"
+            - option "TT player · HIP"
+            - option "Hell AI nemesis"
+          - generic [ref=f2e79]: Right AI
+        - generic [ref=f2e80]: Hell AI (mirror match) · No side switch · First to 3 games
+    - generic [ref=f2e81]:
+      - button "Start Match ▶" [ref=f2e82] [cursor=pointer]
+      - button "AI Battle ▶" [ref=f2e84] [cursor=pointer]

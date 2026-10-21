@@ -459,6 +459,8 @@ const TT_PLAYER = (() => {
     ball.vel.set(r.outVel.x, r.outVel.y, mir * r.outVel.z);
     ball.spin.set(mir * r.spin.x, mir * r.spin.y, 0);
     ball.lastStroke = 'tt-' + (side === 'ai' ? 'mirror' : 'player');
+    ball.lastStrokeDetail = r.stroke;
+    ball.lastMode = r.mode;
     if(typeof willNet !== 'undefined') willNet = !!r.netOut;
     if(typeof TT_STATS !== 'undefined') TT_STATS.noteHit(side, !!r.netOut);   // 实机遥测：一次成功触球
     return true;

@@ -16,6 +16,7 @@ function tableBounce(){
   s.multiplyScalar(0.72);
   spawnRing(ball.pos.x, ball.pos.z);
   playBounce();
+  if(typeof GAME_ANALYTICS !== 'undefined') GAME_ANALYTICS.bounce(ball.pos.x, ball.pos.z, lastHitter);
   rulesOnBounce(ball.pos.z>0 ? 'player' : 'ai');
 }
 function checkNet(){
@@ -48,6 +49,7 @@ function afterHit(side){
   showHitMarker(side==='ai');   // 触球瞬间屏幕十字命中标记
   flashSpr.material.color.set(0xfff2c8);
   flashSpr.position.copy(ball.pos); flashLife = 1;
+  if(typeof GAME_ANALYTICS !== 'undefined') GAME_ANALYTICS.hit(side);
 }
 /* 相对上旋（方向无关）：正=上旋 / 负=下旋
    注：出球核心封装在 SIM.resolveHit（玩家与 AI 共用 strokePowerOf 逻辑），
@@ -142,6 +144,8 @@ function hitPlayer(){
   ball.vel.set(outVel.x, outVel.y, outVel.z);
   ball.spin.set(spin.x, spin.y, 0);
   ball.lastStroke = r.stroke;
+  ball.lastStrokeDetail = r.stroke;
+  ball.lastMode = r.mode;
   willNet = r.netOut;
   playerPad.power = r.power;
   playerPad.swingType = r.swingType;
@@ -219,6 +223,8 @@ function hitAI(){
   ball.vel.set(d.outVel.x, d.outVel.y, d.outVel.z);
   ball.spin.set(d.fx, d.fy, 0);
   ball.lastStroke = 'ai-'+stroke;
+  ball.lastStrokeDetail = stroke;
+  ball.lastMode = d.mode;
   willNet = d.netOut;                                           // 抢点下网标记（resolveOut 读）
   aiPad.power = d.power;
   afterHit('ai');
@@ -263,6 +269,8 @@ function hitAIForPlayer(){
   ball.vel.set(d.outVel.x, d.outVel.y, d.outVel.z);
   ball.spin.set(d.fx, d.fy, 0);
   ball.lastStroke = stroke;
+  ball.lastStrokeDetail = stroke;
+  ball.lastMode = d.mode;
   willNet = d.netOut;
   playerPad.power = d.power;
   afterHit('player');
