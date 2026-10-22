@@ -1043,19 +1043,60 @@ setRallyPenalty(cfg) / getRallyPenalty() / rallyPenalty(shots) / boardWeight(sho
    不是实机的病。
 2. **旧 DQN 权重是在一个「假的长相持环境」里训出来的**（sim 30 板 vs 实机 4.2 板）
    ⇒ 这是「sim 与实机可差 25pp」这个老教训在**相持维度**上的又一次现身。
-⇒ ⇒ **训练架构的下一步不是「加惩罚」，而是「让训练环境的相持长度与实机一致」**（路线图第 9 步）。
+⇒ ⇒ **训练架构的下一步不是「加惩罚」，而是「让训练环境的相持长度与实机一致」**（路线图第 9 步）
+—— 已在 §1.18.6 完成并实机验收（**+27.6 pp**）。
 
-### 1.18.6 训练侧 A/B 的设计与三个坑（`tools/train-input3.js`）
+### 1.18.6 训练架构实验：惩罚在限速环境里近乎 no-op，**真正的修法是移动预算**（`tools/train-input3.js`）
 
-A/B 两条腿都从 `data/checkpoints/input3-parity/ckpt-000300.json` 起步，300 局、其余超参完全一致：
+★ 先说结论：**在限速（= 实机口径）的训练环境里，「相持惩罚」几乎不可能触发 —— 真正的修法是移动预算。**
+原计划的 300 局 A/B（`--move-cap 0`）**根本跑不完**：不限速的 sim 每局相持 ≈ 30 板（§1.18.5），
+每局耗时约为限速环境的 4 倍，缩短到 60 局后两条腿跑了 33 min **连第一个 `--ckpt 30` 边界都没到**
+（零 ckpt 产物）⇒ 已 kill。改成四条腿（起点统一 `data/checkpoints/input3-parity/ckpt-000300.json`）：
+
+| 腿 | 移动预算 | 惩罚 | 结局 |
+|---|---|---|---|
+| A | `--move-cap 0`（不限速） | 关 | 33 min 未到第一个 ckpt 边界 ⇒ kill |
+| B | `--move-cap 0` | `--rally-after 15 --rally-slope 0.10` | 同上 ⇒ kill |
+| **C** | **`--move-cap 2.0`（= 浏览器/实机口径）** | 关 | **完成，22 min（1328 s）** |
+| D | `--move-cap 2.0` | `--rally-after 15 --rally-slope 0.10` | **完成，同 C（实机 47.4% vs C 47.1% ⇒ 无差异）** |
+
+其余超参完全一致：
 
 ```
---from data/checkpoints/input3-parity/ckpt-000300.json --games 300 --step 50 --eval 20 --ckpt 50
---move-cap 0 --optimizer adam --layer-lr 1,1,1,3 --grad-clip 2 --lr0 0.00001 --lr1 0.00001
+--from data/checkpoints/input3-parity/ckpt-000300.json --games 60 --step 30 --eval 30 --ckpt 30
+--optimizer adam --layer-lr 1,1,1,3 --grad-clip 2 --lr0 0.00001 --lr1 0.00001
 --eps-reset 500 --bcmix 0 --phases default:0.25,hell:0.45,grandslam:0.15,hell:0.15
-A（基线）: --rally-after 0
-B（惩罚）: --rally-after 15 --rally-slope 0.10
 ```
+
+★ **训练环境第一次与实机对齐**（C / D 腿日志，`rally=` = 训练环境平均相持）：
+
+```
+C:  ep 30 [hell]  train=30%  rally=3.20  vsdefault=88.3%   （D 同轮：train=37%  rally=3.37）
+    ep 60 [hell]  train=30%  rally=3.53  vsdefault=85.0%
+D:  hb ep 55                                    rally=3.60
+```
+
+⇒ 训练环境平均相持 **3.2~3.5 板**（旧的 `--move-cap 0` 环境 ≈ 30 板；实机 DQN 4.8 板），
+而 `rallyAfter = 15` 的惩罚在这个环境里**几乎不可能触发**（C 与 D 的 `rally` 差异在噪声内）。
+这正是「练长球」问题的正确解法：**要修的不是奖励函数，是训练环境的移动预算。**
+
+★ **实机验收**（`hip-eval --controller dqn --from <ckpt> --opp hell --games 30 --maxsec 120 --move-cap 2.0`）：
+
+| ckpt | 分点率 | 95% CI | 平均相持 | 超 15 板 | 失分分解 |
+|---|---|---|---|---|---|
+| `input3-parity/ckpt-000300.json`（起点） | 19.5% | [14.1,26.3] | 4.8 板 | 1/588 | out 46.9% / noreach 52.2% / net 0.9% |
+| **`ckpt-rallyC/ckpt-000060.json`（C 腿，无惩罚）** | **47.1%** | **[39.8,54.5]** | 4.5 板 | 3/615 | **noreach 98.0%** / out 1.4% / net 0.6% |
+| **`ckpt-rallyD/ckpt-000060.json`（D 腿，带惩罚）** | **47.4%** | **[40.4,54.4]** | 4.0 板 | 0/635 | noreach 93.8% / out 4.6% / net 1.6% |
+
+⇒ C 与 D 的差距（+0.3 pp、相持 −0.5 板）完全落在 30 局的噪声里 ⇒ **在限速环境里惩罚确实是 no-op**
+（sim 侧两者也一样：都是 60.0%）。要真正验证惩罚的因果，得在**长 rally 的 regime** 里做，
+而那个 regime 现在只剩「上线侧的 HIP L1」（§1.18.4）与历史的不限速权重。
+
+⇒ ★★ **只把训练环境的移动预算换成与实机一致，60 局就值 +27.6 pp 实机胜率**（19.5% → 47.1%），
+失分结构从「一半打长出界」翻成「98 % 够不着」。（对照：上线 12h 权重实机 vs hell 是 48.0 % / noreach 92.1 %
+⇒ **22 分钟的新口径训练已追平 12 小时的旧口径训练**。）
+
+★ **踩到的三个坑（都还在，记下来）**：
 
 | 坑 | 症状 | 对策 |
 |---|---|---|
@@ -1063,8 +1104,11 @@ B（惩罚）: --rally-after 15 --rally-slope 0.10
 | **`--move-cap` 的 `>0` 守卫让「显式不限速」不可达** | `--move-cap 0` 被 `if(cap>0)` 忽略 ⇒ 悄悄仍用出厂 2.0，A/B 量的是限速环境 | 三态解析：不给 = 出厂 2.0；`0`/负数 = 显式不限；`v>0` = v |
 | **心跳只在 `TT_TELEMETRY=1` 时才打印** | `T.tick()` 默认 `enabled()=false` ⇒ 相持指标 `rally:` 一条都看不到（白跑 20 分钟才发现） | `--eval` 轮的**常规 stdout 行**也带 `rally=`，且写进 curve 的 `pt.rally`（与遥测无关） |
 
-★ 为什么 A/B 必须用 `--move-cap 0`：惩罚只在**长 rally** 才会触发，而限速（2.0）把 sim 的相持压到 **3.7 板**
-（见 §1.18.5）——那种环境下两条腿都不触发惩罚，A/B 的差异恒为 0。
+★ **本节旧结论已修正**：之前建议「训练侧惩罚必须配 `--move-cap 0`，否则两条腿都不触发惩罚、差异恒为 0」
+—— 逻辑没错，但那个环境**训不完**（见上表），所以「靠 sim 的相持惩罚去修实机的长球」这条路在工程上不成立。
+**惩罚模块保留**（它是长 rally regime 的安全网，也是「超过 15 板就罚」这个需求的落地形态，
+自测见 §1.18.3），但真正能改善实机的动作是**让 `--move-cap` 与实机同口径**；
+而缩短**实机**相持的价值在上线侧规则（§1.18.4），不在训练侧奖励。
 
 ---
 
