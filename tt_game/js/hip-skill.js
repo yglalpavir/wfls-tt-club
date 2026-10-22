@@ -171,6 +171,17 @@ const HIP_SKILL = (() => {
     mySpeedSpan: 7.0,
     pushRtop:   -8,      // relTopOf < 它 = 下旋来球
     pushHeight:  0.95,   // 球高低于它才搓（否则挑）
+    /* ── 长相持「求速」打法（2026-10-22）────────────────────────────────
+     * 背景（实机测量，tools/live-match.js 的 rally 直方图，cap 2.0 + 固定 +x 角）：
+     *   平均相持 **25.8 板**，68 分里 **43 分超过 15 板**。
+     *   ⇒ 模型赢是赢了，但一分要磨二十几板 —— 这就是「相持过长」的问题。
+     * 做法：相持超过阈值后改用更冲的打法（my 调小 = 弧线更平更快；可再给一点前冲），
+     *   让对手来不及舒服地回球 ⇒ 这一分早点结束。
+     * 口径：S.shots = 玩家接到的球数 ⇒ 总板数 ≈ 2·S.shots+1（发球算第 1 板）。
+     * 默认关闭（rallyAfter=0）⇒ 逐位不变；先用 --grid 扫出收益再决定是否上线。 */
+    rallyAfter:  0,       // 0 = 关；>0 = 总板数阈值（超过就切「求速」打法）
+    rallyMy:     0.50,    // 长相持时的 my（比 myDrive 小 ⇒ 弧线更平、球更快更冲）
+    rallyFwd:    0,       // 长相持时的前冲量 fwd（0 = 不额外前冲）
     /* 待机 */
     homeX:       0.0,
     homeMy:      0.50,
@@ -870,6 +881,18 @@ const HIP_SKILL = (() => {
       }
       my = cl(my, 0.15, 0.95);
       }
+      /* ── 长相持「求速」：相持超过阈值就换更冲的打法（DEFAULTS 里有背景与口径） ──
+       * 只在**没有意图**时生效（意图路径的 my 由学生决定）。
+       * 注意：本块放在深度安全网的 myFix **之前** ⇒ 安全网仍然拥有最后一句话
+       *（安全网是安全修正，求速是主动冒险，安全优先）。 */
+      let fOver = null;
+      if(cfg.rallyAfter > 0 && !intent && !isPushCase && S.shots > 0){
+        const totalGuess = 2 * S.shots + 1;   /* S.shots = 玩家接到的球数 */
+        if(totalGuess > cfg.rallyAfter){
+          my = cl(cfg.rallyMy, 0.15, 0.95);
+          if(cfg.rallyFwd > 0) fOver = cfg.rallyFwd;
+        }
+      }
       /* ★★★ 第十个真 bug（已定位，但**修法被实测否决** ⇒ 默认关）
        *   症状：深度安全网**每板只判一次**（`S.depthChecked`），而 `my` 在每一帧都从
        *   `cfg.myDrive` 重新起算 ⇒ 安全网算出的 my2 在**下一帧就被冲掉**，
@@ -1091,7 +1114,7 @@ const HIP_SKILL = (() => {
 
       return { tx: cl(tx, -X_CLAMP, X_CLAMP), my: cl(my, 0, 1), ctrl: ctrl, pz: padZ,
                sw: (swingSwipeOn(cfg) ? (S.sw || 0) : undefined),
-               f: swingFwdVal(cfg, obs, S.inSwing) };
+               f: (fOver != null ? fOver : swingFwdVal(cfg, obs, S.inSwing)) };
     }
 
     /* 发球：HIP 的发球是固定动作（上旋、中等力量、居中） */

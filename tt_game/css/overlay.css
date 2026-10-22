@@ -49,6 +49,8 @@
 @media (max-width:560px){
   .ov-site-link{top:max(10px,env(safe-area-inset-top));left:max(10px,env(safe-area-inset-left));
     padding:7px 12px;font-size:11px}
+  /* 小屏：给左上角的返回钮让出高度，别压住标题上方的 kicker */
+  #startOverlay{padding-top:max(58px,calc(env(safe-area-inset-top) + 48px))}
 }
 
 /* ---------- 说明卡片：所有操作分组装进一张官网白玻璃卡 ---------- */

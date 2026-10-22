@@ -303,6 +303,24 @@ function buildLiveRig(weightsFile){
    * 这里补一道断言：权重没装上就必须炸，绝不静默回退普通 AI。 */
   const init = vm.runInContext('({ ready: TT_PLAYER.isReady(), n: TT_PLAYER.agent ? TT_PLAYER.agent.nActions : 0 })', ctx);
   if(!init.ready) throw new Error('TT_PLAYER 未就绪：权重没装上（' + weightsFile + '）');
+  /* ★ 相持长度直方图（每分一记）：「这一分打了多少板」。
+   *   口径与训练侧 `input-sim.js` 的 `shots` 一致 —— 发球算第 1 板，每一击 +1
+   *   （实机：rules.js:232 发球置 1，physics.js 每次击球 ++；训练侧：shots 从 1 起、每板 ++）。
+   *   采集点选在 `pointTo`（rules.js:12）：那里 `rallyCount` 还是本分的最终值
+   *   （line 16 先取 max 再在 line 89/232 重置），且 line 14 的早退
+   *   （state 已是 pointPause/over）要挡掉，否则重复计分会被记两次。 */
+  vm.runInContext([
+    'globalThis.__rallyHist = [];',
+    'const __pt = pointTo;',
+    'pointTo = function(){',
+    '  try{',
+    '    if(state !== "pointPause" && state !== "over" && typeof rallyCount === "number"){',
+    '      globalThis.__rallyHist.push(rallyCount);',
+    '    }',
+    '  }catch(e){}',
+    '  return __pt.apply(null, arguments);',
+    '};'
+  ].join('\n'), ctx);
   return { ctx, nActions: init.n };
 }
 
@@ -341,6 +359,7 @@ function playGame(rig, step, seedBase, gameIdx, maxSec){
   vm.runInContext(`
     scoreYou = 0; scoreAi = 0; rallyCount = 0; longestRally = 0; ballDead = true;
     seriesWinsL = 0; seriesWinsR = 0;
+    globalThis.__rallyHist = [];
     TT_STATS.reset();
     __gameOver = false;
     __onGameEnd = function(){ __gameOver = true; };
@@ -357,8 +376,8 @@ function playGame(rig, step, seedBase, gameIdx, maxSec){
     prevY = y; prevA = a;
     if(vm.runInContext('__gameOver', ctx)) break;
   }
-  const snap = vm.runInContext('({ y: scoreYou, a: scoreAi, st: TT_STATS.snapshot() })', ctx);
-  return { you: snap.y, ai: snap.a, stats: snap.st, frames: Math.ceil(t * 60) };
+  const snap = vm.runInContext('({ y: scoreYou, a: scoreAi, st: TT_STATS.snapshot(), rh: (globalThis.__rallyHist||[]).slice() })', ctx);
+  return { you: snap.y, ai: snap.a, stats: snap.st, frames: Math.ceil(t * 60), rally: snap.rh || [] };
 }
 
 /* ---------------- 权重载入 ----------------
@@ -556,6 +575,19 @@ if(!fs.existsSync(W)){ console.error('权重文件不存在：' + W); process.ex
 
 function pct(x){ return (x * 100).toFixed(1) + '%'; }
 
+/* 相持长度统计（每分一记，口径同训练侧 shots：发球算第 1 板，每击 +1） */
+function rallyStats(a){
+  if(!a || !a.length) return null;
+  const s = a.slice().sort((x, y) => x - y);
+  const sum = a.reduce((x, y) => x + y, 0);
+  const q = (f) => s[Math.min(s.length - 1, Math.floor(f * s.length))];
+  const hist = {};
+  for(const v of a){ const b = Math.min(20, Math.floor(v / 5) * 5); hist[b] = (hist[b] || 0) + 1; }
+  return { n: a.length, avg: sum / a.length, p50: q(0.5), p90: q(0.9), max: s[s.length - 1],
+           over15: a.filter(v => v > 15).length,
+           over10: a.filter(v => v > 10).length, hist };
+}
+
 function main(){
   const t0 = Date.now();
   /* ★ 移动预算（限速）：仿真侧（Node）与实机侧（vm）必须是同一份口径，
@@ -739,10 +771,12 @@ function main(){
       const dqnIsAi = SIDE === 'ai';
       let dqnPts = 0, oppPts = 0, lostAgg = null, dqnContacts = 0, oppContacts = 0, frames = 0;
       const gameLog = [];
+      const rallyAll = [];
       for(let g = 0; g < GAMES; g++){
         const r = playGame(rig, step, SEED + 4242, g, MAXSEC);
         const dq = dqnIsAi ? r.ai : r.you, op = dqnIsAi ? r.you : r.ai;
         dqnPts += dq; oppPts += op; frames += r.frames;
+        if(r.rally) for(const v of r.rally) rallyAll.push(v);
         gameLog.push({ g, dq, op, frames: r.frames });
         if(r.stats){
           const side = dqnIsAi ? 'ai' : 'player', oSide = dqnIsAi ? 'player' : 'ai';
@@ -757,6 +791,7 @@ function main(){
                /* ★ 停摆检测：一局在 maxsec 内一分都没打出来 ⇒ 这局是「拉锯到超时」。
                  * 分点率的分母因此会偏小（小样本高胜率），比较不同配置时必须看这个数。 */
                stalled: gameLog.filter(x => (x.dq + x.op) === 0).length,
+               rally: rallyStats(rallyAll),
                games: gameLog };
     }
     /* ---- 仿真管线 ---- */
@@ -775,7 +810,7 @@ function main(){
                                           : '玩家侧（不镜像，与训练口径一致）'));
   console.log('');
   console.log('  ' + '对手'.padEnd(13) + '实机分点率'.padEnd(12) + '仿真分点率'.padEnd(12) +
-              'Δ'.padEnd(10) + '实机触球(己/敌)');
+              'Δ'.padEnd(10) + '实机触球(己/敌)'.padEnd(18) + '实机相持(均/超15)');
   console.log('  ' + '-'.repeat(92));
   let worst = 0;
   for(const r of rows){
@@ -788,7 +823,10 @@ function main(){
       if(Math.abs(dd) > Math.abs(worst)) worst = dd;
     }
     const ct = r.live ? (r.live.dqnContacts + ' / ' + r.live.oppContacts) : '—';
-    console.log('  ' + r.tag.padEnd(13) + lv.padEnd(12) + sv2.padEnd(12) + d.padEnd(10) + ct);
+    const rl = (r.live && r.live.rally)
+      ? (r.live.rally.avg.toFixed(1) + ' / ' + r.live.rally.over15 + '分(' + r.live.rally.n + '分)')
+      : '—';
+    console.log('  ' + r.tag.padEnd(13) + lv.padEnd(12) + sv2.padEnd(12) + d.padEnd(10) + ct.padEnd(18) + rl);
   }
   if(rows.some(r => r.live && r.live.lost)){
     console.log('');
@@ -874,6 +912,9 @@ function main(){
          * 分点率的分母 = 实际打出的分数；若大量局停摆，样本会变得很小、
          * 胜率会虚高，比较不同配置时必须同时看 stalled。 */
         stalled: r.live.stalled != null ? r.live.stalled : 0,
+        /* ★ 相持长度（每分一记，口径同训练侧 shots）—— 判断「相持惩罚」类改动
+         * 是否切题、以及上线模型会不会触发阈值，都靠这个数。 */
+        rally: r.live.rally || null,
         games: r.live.games || null,
         simRate: r.sv ? r.sv.rate : null,
       };

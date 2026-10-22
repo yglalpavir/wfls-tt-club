@@ -165,11 +165,27 @@ function main(){
   const useDqn = process.argv.includes('--dqn');
   const useIntent = process.argv.includes('--intent');
   const base = parseSets();
-  /* ★ 移动预算（限速）：--move-cap <m/s>，0/不给 = 用 move-limit.js 的出厂默认。
-   *   与实机同一份常量 ⇒ 仿真里的限速口径 = 实机口径。 */
-  const capArg = parseFloat(argOf('--move-cap', '0'));
-  if(capArg > 0) ML.setMoveLimit({ cap: capArg });
+  /* ★ 移动预算（限速）：与实机同一份常量 ⇒ 仿真里的限速口径 = 实机口径。
+   *   ★ 三态（2026-10-22 修）：**不给 = 出厂默认**（move-limit.js 的 DEFAULT_CAP）；
+   *   `--move-cap 0`/负数 = **显式不限**；v > 0 = 限速 v。
+   *   旧写法 `if(capArg > 0)` 让「显式不限速」不可达（静默沿用出厂默认），
+   *   与 tools/live-match.js 的第 9 个真 bug 同类 ⇒ 仿真里复现不了不限速基线。 */
+  const capRaw = argOf('--move-cap', '');
+  const capSet = capRaw !== '';
+  const capArg = capSet ? parseFloat(capRaw) : NaN;
+  if(capSet) ML.setMoveLimit({ cap: (capArg > 0) ? capArg : null });
   const capNow = ML.getMoveLimit().cap;
+
+  /* ★ 相持长度惩罚（训练架构的旋钮，见 js/input-sim.js 的 RALLY_PENALTY）。
+   *   这里也暴露同一份旋钮，好让「惩罚开/关」的 A/B 用同一套 sim 口径。 */
+  const rp = {};
+  const ra = argOf('--rally-after', ''), rs = argOf('--rally-slope', ''),
+        rc = argOf('--rally-cliff', ''), rbc = argOf('--rally-boardcap', '');
+  if(ra !== '') rp.after = parseFloat(ra);
+  if(rs !== '') rp.slope = parseFloat(rs);
+  if(rc !== '') rp.cliff = parseFloat(rc);
+  if(rbc !== '') rp.boardCap = parseFloat(rbc);
+  if(Object.keys(rp).length) INPUTSIM.setRallyPenalty(rp);
 
   const grids = parseGrids();
   const t0 = Date.now();

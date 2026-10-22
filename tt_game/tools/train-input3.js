@@ -36,6 +36,10 @@ const SIM = require(path.join(__dirname, '..', 'js', 'simcore.js'));
 const INPUTSIM = require(path.join(__dirname, '..', 'js', 'input-sim.js'));
 const IA = require(path.join(__dirname, '..', 'js', 'input-agent.js'));
 const OPP = require(path.join(__dirname, '..', 'js', 'opponent-ladder.js'));
+/* ★ 移动预算（模型侧限速）：训练环境与实机必须同一口径。
+ *   js/move-limit.js 的出厂默认现在是 2.0 ⇒ 新的训练默认就在限速口径下跑；
+ *   旧的 12h 权重是在「不限速」环境里训出来的（见 --move-cap 的三态语义）。 */
+const ML = require(path.join(__dirname, '..', 'js', 'move-limit.js'));
 global.SIM = SIM; global.P = PP;
 const T = require(path.join(__dirname, '..', 'js', 'telemetry.js'));   // Web UI 打点（TT_TELEMETRY 门控）
 
@@ -102,6 +106,16 @@ for(let i = 0; i < args.length; i++){
   else if(args[i] === '--learnp') opt.learnp = parseInt(args[++i], 10);
   else if(args[i] === '--ckpt') opt.ckpt = parseInt(args[++i], 10);
   else if(args[i] === '--eps-reset') opt.epsReset = parseInt(args[++i], 10);
+  /* ★ 相持长度惩罚（训练架构的关键旋钮，见 js/input-sim.js 的 RALLY_PENALTY 注释）。
+   *   惩罚量纲必须 > 每板累积奖励（0.05/板），否则长 rally 只是打平不划算。 */
+  else if(args[i] === '--rally-after') opt.rallyAfter = parseFloat(args[++i]);
+  else if(args[i] === '--rally-slope') opt.rallySlope = parseFloat(args[++i]);
+  else if(args[i] === '--rally-cliff') opt.rallyCliff = parseFloat(args[++i]);
+  else if(args[i] === '--rally-boardcap') opt.rallyBoardCap = parseFloat(args[++i]);
+  /* ★ 移动预算三态（与 live-match 第 9 个真 bug 的修法一致）：
+   *   不给 = 出厂默认（DEFAULT_CAP = 2.0）；`--move-cap 0`/负数 = **显式不限速**；
+   *   v > 0 = 限速 v。旧权重是在不限速环境里训的 ⇒ 要复现必须写 `--move-cap 0`。 */
+  else if(args[i] === '--move-cap') opt.moveCapRaw = args[++i];
   else if(args[i] === '--hsizes') opt.hSizesArg = args[++i];
   else if(args[i] === '--hours-add') opt.hoursAdd = parseFloat(args[++i]);
   else if(args[i] === '--from'){
@@ -134,6 +148,35 @@ for(let i = 0; i < args.length; i++){
   else if(args[i] === '--no-ckpt') opt.noCkpt = true;
   else if(args[i] === '--resume') opt.resume = args[++i];
   else if(args[i] === '--resume-best') opt.resumeBest = true;
+}
+
+/* ---- ★ 相持长度惩罚：把 CLI 覆盖写进训练环境的旋钮（js/input-sim.js） ---- */
+{
+  const rp = {};
+  if(opt.rallyAfter != null) rp.after = opt.rallyAfter;
+  if(opt.rallySlope != null) rp.slope = opt.rallySlope;
+  if(opt.rallyCliff != null) rp.cliff = opt.rallyCliff;
+  if(opt.rallyBoardCap != null) rp.boardCap = opt.rallyBoardCap;
+  if(Object.keys(rp).length){
+    const now = INPUTSIM.setRallyPenalty(rp);
+    console.log('  相持惩罚：超过 ' + now.after + ' 板，每超一板扣 ' + now.slope +
+                (now.cliff ? '（另加一次 ' + now.cliff + '）' : '') +
+                (now.boardCap ? '；每板奖励前 ' + now.boardCap + ' 板给满、之后衰减' : '；每板奖励不封顶'));
+  }
+}
+
+/* ---- ★ 移动预算（模型侧限速）：训练环境与实机同一口径 ----
+ *   js/move-limit.js 的出厂默认是 2.0 ⇒ 训练环境自动继承它（新的训练默认就在限速口径下）。
+ *   三态语义：不给 = 出厂默认 2.0；`--move-cap 0`/负数 = 显式不限速；v > 0 = 限速 v。
+ *   ★ 旧 12h 权重是在「不限速」环境里训的（训练环境平均相持 ≈30 板）⇒ 复现那条曲线必须写
+ *     `--move-cap 0`，否则跑的是另一个环境（限速后 sim 的平均相持只有 ~4 板）。 */
+if(opt.moveCapRaw != null && opt.moveCapRaw !== ''){
+  const cap = parseFloat(opt.moveCapRaw);
+  if(!Number.isFinite(cap) || cap <= 0) ML.setMoveLimit({ cap: null, capZ: null });
+  else ML.setMoveLimit({ cap: cap });
+  const c = ML.getMoveLimit().cap;
+  console.log('  移动预算：' + (c == null ? '不限速' : (c + ' m/s')) +
+              (c == null ? '（旧权重的训练口径）' : '（与上线口径一致）'));
 }
 
 /* ---- 优化器补丁：只在显式传了 flag 时才应用，默认保持旧 SGD 路径 ---- */
@@ -573,6 +616,9 @@ const { agent, shape } = RESUME ? loadWeight(RESUME.file, '断点权重') : load
 const trainMode = applyOptimizer(agent);
 const t0 = Date.now();
 let win = R.win, total = R.total;
+/* ★ 相持长度统计（训练侧 A/B 的主指标，见主循环里的注释） */
+const rallyRing = new Array(60).fill(0);
+let rallyIdx = 0, rallyN = 0, rallySum = 0;
 let bestNet = JSON.parse(JSON.stringify(agent.getNet()));
 let bestScore = R.best;
 let bestDef = R.bestDef, bestMax = R.bestMax, bestPhase = R.bestPhase;
@@ -992,6 +1038,13 @@ for(let g = R.ep0; g < opt.games && !budgetExhausted && !stopRequested; g++){ st
   const res = INPUTSIM.playInputPoint(brainOf(agent), opp, mulberry32(opt.seed * 3 + g), server);
   agent.endPoint('player', res.winner);
   total++; if(res.winner === 'player') win++;
+  /* ★ 相持长度指标（训练侧 A/B 的主指标）：训练期每分打多少板。
+   *   病根：每板的 +0.05/+0.08 全部 credit() 到**终局那一帧**，终局再叠 ±3
+   *   ⇒ 一板相持多的 rally 天然多拿 ≈ +0.05/板 ⇒ 训练信号在奖励「磨长球」。
+   *   旧 12h 权重就是这么训出来的（不限速 sim 里平均相持 ≈30 板）。 */
+  rallyRing[rallyIdx] = (res.shots || 0); rallyIdx = (rallyIdx + 1) % rallyRing.length;
+  if(rallyN < rallyRing.length) rallyN++;
+  rallySum += (res.shots || 0);
   if(Date.now() - tHb >= 10000){
     tHb = Date.now();
     T.tick({ t:'hb', ep:g + 1, lastEp:lastEp, step:opt.step,
@@ -1000,6 +1053,7 @@ for(let g = R.ep0; g < opt.games && !budgetExhausted && !stopRequested; g++){ st
              remainSec: BUDGET_SEC > 0 ? +remain().toFixed(1) : -1,
              eps:+agent.getEps().toFixed(3), phase:phase.tag,
              trainWins:win, trainTotal:total,
+             rally:+(rallySum / Math.max(1, total)).toFixed(2),
              best:+bestScore.toFixed(4), bestEp:bestEp });
   }
   /* 周期性重锚：续训默认关闭。实测 3 pass/100局 ≈ 2 万次"追球"硬监督，

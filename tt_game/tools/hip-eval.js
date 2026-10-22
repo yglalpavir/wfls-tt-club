@@ -92,7 +92,15 @@ function aggregate(byTier){
                /* ★ 停摆局数与局数：分点率的分母是「窗口内打出的分数」，
                *   相持越长分母越小、胜率越虚高 ⇒ 必须同时看分数÷局数与停摆数。 */
                stalled: b.stalled || 0,
-               games: b.gameCount != null ? b.gameCount : (b.games ? b.games.length : 0) };
+               games: b.gameCount != null ? b.gameCount : (b.games ? b.games.length : 0),
+               /* ★ 相持长度（分片合并：按样本数加权平均 + 超 15 板的分数累加）。
+                *   入参既可能是「单分片汇总」（有 avg 无 avgSum），也可能是「已合并」（有 avgSum）。 */
+               rally: (function(){
+                 const r = b.rally;
+                 if(!r || !r.n) return { n: 0, avg: 0, over15: 0, max: 0 };
+                 const sum = (r.avgSum != null) ? r.avgSum : (r.avg || 0) * r.n;
+                 return { n: r.n, avg: r.n ? sum / r.n : 0, over15: r.over15 || 0, max: r.max || 0 };
+               })() };
   }
   return agg;
 }
@@ -100,7 +108,7 @@ function aggregate(byTier){
 function report(agg, label){
   console.log('');
   console.log('  ' + label);
-  console.log('  ' + '对手'.padEnd(12) + '实机分点率'.padEnd(14) + 'Wilson95%'.padEnd(20) + '局/分'.padEnd(12) + '分/局'.padEnd(8) + '停摆'.padEnd(6) + '锚点(30局)');
+  console.log('  ' + '对手'.padEnd(12) + '实机分点率'.padEnd(14) + 'Wilson95%'.padEnd(20) + '局/分'.padEnd(12) + '分/局'.padEnd(8) + '停摆'.padEnd(6) + '相持(均/超15)'.padEnd(14) + '锚点(30局)');
   console.log('  ' + '-'.repeat(90));
   for(const t of Object.keys(agg)){
     const a = agg[t];
@@ -112,7 +120,9 @@ function report(agg, label){
       (a.rate * 100).toFixed(1).padStart(6) + '%'.padEnd(8) +
       ('[' + (ci.lo * 100).toFixed(1) + ',' + (ci.hi * 100).toFixed(1) + ']').padEnd(20) +
       (a.points + '').padEnd(12) + ppg.padEnd(8) +
-      (a.stalled + '').padEnd(6) + (anc != null ? (anc * 100).toFixed(1) + '%  Δ' + d : '—'));
+      (a.stalled + '').padEnd(6) +
+      ((a.rally ? (a.rally.avg.toFixed(1) + '/' + a.rally.over15 + '(' + a.rally.n + ')') : '—').padEnd(14)) +
+      (anc != null ? (anc * 100).toFixed(1) + '%  Δ' + d : '—'));
   }
 }
 
@@ -189,6 +199,15 @@ function main(){
          *   而这两个数是判断「胜率是否因样本变小而虚高」的唯一依据。 */
         m.stalled = (m.stalled || 0) + (b.stalled || 0);
         m.gameCount = (m.gameCount || 0) + (b.games ? b.games.length : 0);
+        /* ★ 相持长度：分片各报一个汇总 ⇒ 按样本数合并 */
+        const br = b.rally;
+        if(br && br.n){
+          m.rally = m.rally || { n: 0, avgSum: 0, over15: 0, max: 0 };
+          m.rally.n += br.n;
+          m.rally.avgSum += (br.avg || 0) * br.n;
+          m.rally.over15 += br.over15 || 0;
+          if((br.max || 0) > m.rally.max) m.rally.max = br.max || 0;
+        }
       }
     }
     const agg = aggregate(merged);
@@ -232,10 +251,12 @@ function main(){
       const a = agg[t];
       const ci = wilson(a.rate, a.points);
       rows.push({ cfg: c, rate: a.rate, lo: ci.lo, hi: ci.hi, points: a.points, lost: a.lost,
-                  ppg: a.games ? a.points / a.games : null, stalled: a.stalled });
+                  ppg: a.games ? a.points / a.games : null, stalled: a.stalled,
+                  rally: a.rally || null });
       console.log('  → ' + label + '  分点率 ' + (a.rate * 100).toFixed(1) + '%  CI[' +
                   (ci.lo * 100).toFixed(1) + ',' + (ci.hi * 100).toFixed(1) + ']  分/局 ' +
                   (a.games ? (a.points / a.games).toFixed(2) : '-') + '  停摆 ' + a.stalled +
+                  '  相持 ' + (a.rally ? (a.rally.avg.toFixed(1) + ' 板, 超15 ' + a.rally.over15 + '/' + a.rally.n) : '-') +
                   '  失分 ' + JSON.stringify(a.lost));
     }
     rows.sort((x, y) => y.rate - x.rate);

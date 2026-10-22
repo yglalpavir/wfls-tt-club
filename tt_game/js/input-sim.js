@@ -23,6 +23,44 @@ if(typeof module !== 'undefined' && module.exports){
  * 只为统计，训练时白白多花近一半仿真开销 → 默认关，诊断脚本用 TT_HITDBG=1 打开。 */
 const HITDBG = { hits: 0, nets: 0, ok: 0, svz: 0, fwd: 0 };
 const HITDBG_SIM = !!(typeof process !== 'undefined' && process.env && process.env.TT_HITDBG);
+
+/* =====================================================================
+ *  ★ 相持长度惩罚（训练架构的关键旋钮，2026-10-22）
+ *  ---------------------------------------------------------------------
+ *  口径：`shots` = 相持板数，发球算第 1 板，每一击 +1（双方都算）
+ *        ⇒ 与实机 `rallyCount`（rules.js:232 发球置 1 / physics.js 每次击球 ++）同口径。
+ *  为什么需要它：`_playInputPointInner` 里**每一板**的 +0.05（回球成功）/ +0.08
+ *  （接发成功）都 `credit()` 累加到**终局那一帧**，终局再叠加 ±3
+ *  （input-agent.js#endPoint 的 endReward=3）⇒ 一分打 20 板比打 6 板多拿
+ *  ≈ +0.7~+1.0，与终局奖励同量级 ⇒ **训练信号在奖励「磨长球」**。
+ *  实测：旧 DQN 在训练环境（不限速）里的平均相持 ≈ 30.5 板，就是这么来的。
+ *  惩罚量纲必须 > 被惩罚段的每板累积（0.05/板），否则只是打平：
+ *    penalty(shots) = (shots > after) ? (shots − after) × slope + cliff : 0
+ *  `boardCap` 是治本项：前 N 板给满每板奖励，之后线性衰减到 0
+ *  ⇒ 从结构上取消「长 rally 有正收益」。默认 0（关），便于与惩罚分开归因。
+ * ===================================================================== */
+const RALLY_PENALTY = { after: 15, slope: 0.10, cliff: 0, boardCap: 0 };
+function setRallyPenalty(cfg){
+  if(!cfg || typeof cfg !== 'object') return getRallyPenalty();
+  for(const k of ['after', 'slope', 'cliff', 'boardCap']){
+    if(cfg[k] != null && isFinite(cfg[k])) RALLY_PENALTY[k] = cfg[k];
+  }
+  return getRallyPenalty();
+}
+function getRallyPenalty(){ return Object.assign({}, RALLY_PENALTY); }
+/* 超过阈值的长 rally 该扣多少（负数） */
+function rallyPenalty(shots){
+  const P = RALLY_PENALTY;
+  if(P.after <= 0 || shots <= P.after) return 0;
+  return (shots - P.after) * P.slope + (P.cliff || 0);
+}
+/* 每板 shaping 奖励的权重（boardCap=0 ⇒ 恒 1，即旧行为） */
+function boardWeight(shots){
+  const N = RALLY_PENALTY.boardCap;
+  if(!N || N <= 0 || shots <= N) return 1;
+  return Math.max(0, 1 - (shots - N) / N);
+}
+
 const INPUTSIM = (() => {
   const C = SIM.C;
   const PLAYER_Z = C.PLAYER_Z || 1.32, AI_Z = C.AI_Z || -1.32;
@@ -615,7 +653,7 @@ const INPUTSIM = (() => {
       const r0 = playerReceive(state.pos, state.vel, state.spin, pad, agent, rng, skip, true);
       if(!r0.hit){ winner = 'ai'; reason = 'recv-' + r0.loss; credit(-0.2); return { winner, shots, reason, pReturns }; }
       state = { pos: r0.out.pos, vel: r0.out.vel, spin: r0.out.spin }; hitter = 'player'; shots++; pReturns++;
-      credit(0.08);
+      credit(0.08 * boardWeight(shots));
     }else{
       /* ★ 旧实现在这里先用 simS 校验过的发球状态，但对手「够不够得到」是闭式近似。
        *   发球已由 simulateServeFull 保证两跳合法（首跳己方、二跳对方），所以对手
@@ -661,7 +699,7 @@ const INPUTSIM = (() => {
         const r = playerReceive(state.pos, state.vel, state.spin, pad, agent, rng, skip);
         if(!r.hit){ winner = 'ai'; reason = 'recv-' + r.loss; credit(-0.2); break; }
         state = { pos: r.out.pos, vel: r.out.vel, spin: r.out.spin }; hitter = 'player'; shots++; pReturns++;
-        credit(0.05);
+        credit(0.05 * boardWeight(shots));
       }else{
         /* ★ 对手逐帧真跑（SIM.aiStep + SIM.magnetStep + 镜像接触判据 + aiDecision）。
            旧实现是闭式 aiReach，够不到就直接给 agent 记分 —— 那 4 道硬门就是
@@ -689,6 +727,10 @@ const INPUTSIM = (() => {
      * = 给极端僵持的回合一个现实中不存在的结果。改为大硬上限（只防死循环），
      * 正常对局远到不了这个数；真到上限就判 agent 负（它没能结束僵持）。 */
     if(!winner){ winner = 'ai'; reason = 'cap'; credit(-0.2); }
+    /* ★ 相持长度惩罚：超过阈值的长 rally 净收益为负（口径与量纲见文件头 RALLY_PENALTY）。
+     *   这是**唯一**会带长 rally 的分结束出口（其余 return 都在发球/接发阶段，shots ≤ 2）。 */
+    const rp = rallyPenalty(shots);
+    if(rp > 0) credit(-rp);
     return { winner, shots, reason, pReturns };
   }
 
@@ -747,6 +789,8 @@ const INPUTSIM = (() => {
 
   const api = { cl, C, DT, PLAYER_Z, AI_Z, padInit, padControl, playerReceive, HITDBG,
                 serveFromPlayer, serveFromAI, aiReceive, aiReturn, aiPadX, setObserver,
+                /* ★ 相持长度惩罚的旋钮（训练架构的关键旋钮，见文件头注释） */
+                setRallyPenalty, getRallyPenalty, rallyPenalty, boardWeight,
                 playInputPoint, playInputGame, playInputMatch };
   if(typeof module !== 'undefined' && module.exports) module.exports = api;
   return api;
