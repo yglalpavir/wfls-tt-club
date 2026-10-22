@@ -956,9 +956,13 @@ gitignored；用 `INPUTSIM.playInputPoint` + `setObserver` 观察器，在 `aiRe
 ### 1.18.3 落地形态：训练侧 `RALLY_PENALTY`（`js/input-sim.js`）
 
 ```js
-RALLY_PENALTY = { after: 15, slope: 0.10, cliff: 0, boardCap: 0 }
+RALLY_PENALTY = { after: 0, slope: 0.10, cliff: 0, boardCap: 0 }   // ★ after:0 = 默认关
 setRallyPenalty(cfg) / getRallyPenalty() / rallyPenalty(shots) / boardWeight(shots)
 ```
+
+★ **默认必须关**（`after: 0`）：训练环境是所有历史训练的基线，默认值一改，
+「不带新参数的重跑」就不再是同一个实验；而 A/B 的两条腿若都带着惩罚，实验直接作废。
+开启只能显式传参：`--rally-after 15 --rally-slope 0.10`。
 
 | 旋钮 | 含义 |
 |---|---|
@@ -975,13 +979,12 @@ setRallyPenalty(cfg) / getRallyPenalty() / rallyPenalty(shots) / boardWeight(sho
   = 期望 Σ(shots−1)×0.1 ✓。
   ★ 坑：`playInputPoint` 把球拍快照留在模块级 `_lastPad` 供下一分继承 ⇒ 同进程跑两遍起点不同 ⇒ 必须分进程比。
 
-### 1.18.4 上线模型侧的行为规则（L-C）：改 `my` **失败**
+### 1.18.4 上线模型侧的行为规则（L-C）：改 `my` 失败、**改 `fwd` 成功**
 
-`js/hip-skill.js` 新增三个旋钮（默认全关 ⇒ 逐位不变）：
-`rallyAfter`（总板数阈值，判定用 `2·S.shots+1 > rallyAfter`，因为 `S.shots` 是**玩家接到的球数**）、
-`rallyMy`（长相持时的 my）、`rallyFwd`（长相持时的前冲量 fwd）。
+`js/hip-skill.js` 三个旋钮：`rallyAfter`（总板数阈值，判定用 `2·S.shots+1 > rallyAfter`，因为 `S.shots` 是**玩家接到的球数**）、
+`rallyMy`（长相持时强制改 my，**0 = 不动**）、`rallyFwd`（长相持时给的前冲量 fwd）。
 
-实机 A/B（20 局/格，vs hell，cap 2.0 + 固定 +x 角，配对同种子）：
+**① 改 `my`（弧线）⇒ 失败**（实机 20 局/格，vs hell，cap 2.0 + 固定 +x 角，配对同种子）：
 
 | rallyAfter | rallyMy | 分点率 | 相持(均) | 失分 |
 |---|---|---|---|---|
@@ -990,9 +993,42 @@ setRallyPenalty(cfg) / getRallyPenalty() / rallyPenalty(shots) / boardWeight(sho
 | 15 | 0.50 | 78.1% [70.5,84.2] | 27.9 | out 26 / noreach 3 |
 | 15 | 0.54 | 83.7%（与基线**逐位相同** ⇒ 规则是 no-op ✓） | 26.4 | out 15 / noreach 7 |
 
+把 `rallyMy` 往**上**扫（0.58 / 0.62）同样没用：`rallyAfter=0` 时三格全等于基线（no-op ✓），
+`rallyAfter=15` 时 0.58 ⇒ 86.6% 但相持**反而涨到 31.8 板**、0.62 ⇒ 83.0% / 24.3 板。
+
 ⇒ ★ **「改弧线」改不动相持长度**：相持由「对手接不接得到」决定，不由球的弧线决定；
   改 my 只会改变「自己打长出界」的概率（my 调小 ⇒ 落点更远 ⇒ out 从 15 涨到 52）。
 ⇒ 顺带把方向钉死（**以实机为准**）：**my 越大 ⇒ 落点越近**（`aimZ = −1.24 + 0.74·my²` 越浅 + 弧线越高）。
+
+**② 改 `fwd`（出球速度）⇒ 成功**（实机 40 局/格，同上口径；`rallyMy` 固定，只扫 `rallyFwd`）：
+
+| rallyAfter | rallyFwd | 分点率 | 95% CI | 相持(均) | 超 15 板 | 失分 |
+|---|---|---|---|---|---|---|
+| 0 | — | 83.1% | [78.2,87.1] | **26.4** | — | out 15 / noreach 7 |
+| 15 | 0.3 | 83.4% | [79.3,86.9] | 17.0 | 255/414 | out 53 |
+| **15** | **0.6 ★** | **90.2%** | **[85.4,93.6]** | **14.0** | 267/470 | out 16 / noreach 11 / net 5 |
+| 15 | 0.9 | 87.8% | [82.4,91.8] | 13.9 | 273/479 | out 27 / noreach 6 |
+
+⇒ ★★ **相持从 26.4 板降到 14.0 板，胜率同时从 83.1% 涨到 90.2%（+7.1pp）** —— 两个指标同向改善。
+  机理：`fwd` 走 `resolveHit` 的 `pace = (paceBase + inSpd·0.3 + fwd·1.6)·qMult`
+  ⇒ **直接加出球速度** ⇒ 对手没有时间舒服回球；而改 my 只改落点、不改对手的接球时间。
+  ⇒ 「求速」该走的通道是**球速**，不是**弧线**。
+  上线默认值：`rallyAfter = 15`、`rallyFwd = 0.6`、`rallyMy = 0`。
+
+**③ 上线默认值的四档回归**（把默认值写进 `HIP_SKILL.DEFAULTS` 后重新测一遍，实机、同种子、`--move-cap 2.0`）：
+这四个数字才是「改默认值会不会掉档」的答案，上表的 90.2% 是 `rallyMy=0.50` 的旧口径。
+
+| 对手 | 局数 | 改前 | 改后 | 95% CI | 平均相持 | 超 15 板 |
+|---|---|---|---|---|---|---|
+| hell | 40 | 83.1% | **88.4%** | [83.4,92.0] | 26.4 → **14.4** | 284/464 |
+| nemesis | 30 | 54.5% | **55.3%** | [48.8,61.6] | — → 7.1 | 39/517 |
+| default | 20 | 99.5% | **99.5%** | [97.2,99.9] | — → 4.2 | 0/421 |
+| grandslam | 20 | 99.7% | **98.9%** | [96.2,99.7] | — → 4.1 | 0/430 |
+
+⇒ **四档无一掉档**（grandslam 只丢了 1 分、在噪声内），hell 拿到 +5.3pp；`rallyMy=0`（不动弧线）
+比 `0.50` 少 1.8pp（88.4% vs 90.2%，两者 40 局、CI 大幅重叠）⇒ 取更干净的 `0`：规则只碰球速，弧线交给原有逻辑。
+⇒ 另一个值得记的事实：**「超 15 板的比例」几乎没变（57% → 61%）**，变的是均值（26.4 → 14.4）
+—— 分布是双峰的：短分更短、长分从 30+ 板塌到 16~20 板。
 
 ### 1.18.5 ★★ 更深的发现：**sim 的相持长度与实机严重不一致**
 
@@ -1008,6 +1044,27 @@ setRallyPenalty(cfg) / getRallyPenalty() / rallyPenalty(shots) / boardWeight(sho
 2. **旧 DQN 权重是在一个「假的长相持环境」里训出来的**（sim 30 板 vs 实机 4.2 板）
    ⇒ 这是「sim 与实机可差 25pp」这个老教训在**相持维度**上的又一次现身。
 ⇒ ⇒ **训练架构的下一步不是「加惩罚」，而是「让训练环境的相持长度与实机一致」**（路线图第 9 步）。
+
+### 1.18.6 训练侧 A/B 的设计与三个坑（`tools/train-input3.js`）
+
+A/B 两条腿都从 `data/checkpoints/input3-parity/ckpt-000300.json` 起步，300 局、其余超参完全一致：
+
+```
+--from data/checkpoints/input3-parity/ckpt-000300.json --games 300 --step 50 --eval 20 --ckpt 50
+--move-cap 0 --optimizer adam --layer-lr 1,1,1,3 --grad-clip 2 --lr0 0.00001 --lr1 0.00001
+--eps-reset 500 --bcmix 0 --phases default:0.25,hell:0.45,grandslam:0.15,hell:0.15
+A（基线）: --rally-after 0
+B（惩罚）: --rally-after 15 --rally-slope 0.10
+```
+
+| 坑 | 症状 | 对策 |
+|---|---|---|
+| **默认值一改，两边都带惩罚** | 模块里把 `RALLY_PENALTY.after` 写成 15，A 腿也成了惩罚组 ⇒ 实验作废 | 默认 `after: 0`，开启必须**显式**传 `--rally-after 15` |
+| **`--move-cap` 的 `>0` 守卫让「显式不限速」不可达** | `--move-cap 0` 被 `if(cap>0)` 忽略 ⇒ 悄悄仍用出厂 2.0，A/B 量的是限速环境 | 三态解析：不给 = 出厂 2.0；`0`/负数 = 显式不限；`v>0` = v |
+| **心跳只在 `TT_TELEMETRY=1` 时才打印** | `T.tick()` 默认 `enabled()=false` ⇒ 相持指标 `rally:` 一条都看不到（白跑 20 分钟才发现） | `--eval` 轮的**常规 stdout 行**也带 `rally=`，且写进 curve 的 `pt.rally`（与遥测无关） |
+
+★ 为什么 A/B 必须用 `--move-cap 0`：惩罚只在**长 rally** 才会触发，而限速（2.0）把 sim 的相持压到 **3.7 板**
+（见 §1.18.5）——那种环境下两条腿都不触发惩罚，A/B 的差异恒为 0。
 
 ---
 

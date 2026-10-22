@@ -39,7 +39,13 @@ const HITDBG_SIM = !!(typeof process !== 'undefined' && process.env && process.e
  *  `boardCap` 是治本项：前 N 板给满每板奖励，之后线性衰减到 0
  *  ⇒ 从结构上取消「长 rally 有正收益」。默认 0（关），便于与惩罚分开归因。
  * ===================================================================== */
-const RALLY_PENALTY = { after: 15, slope: 0.10, cliff: 0, boardCap: 0 };
+/* ★ 默认**关闭**（after = 0 ⇒ rallyPenalty 恒为 0、boardWeight 恒为 1）：
+ *   训练环境是所有历史训练的基线，默认值一改就会让「不带新参数的重跑」不再是同一个实验
+ *   （A/B 里两条都带着惩罚 ⇒ 实验作废）。要开启必须显式传参：
+ *   `tools/train-input3.js --rally-after 15 --rally-slope 0.10`
+ *   或 `tools/hip-sim.js --rally-after 15 --rally-slope 0.10`。
+ *   slope 的默认值 0.10 只在显式开启后才有意义（> 0.05/板 才压得住每板累积奖励）。 */
+const RALLY_PENALTY = { after: 0, slope: 0.10, cliff: 0, boardCap: 0 };
 function setRallyPenalty(cfg){
   if(!cfg || typeof cfg !== 'object') return getRallyPenalty();
   for(const k of ['after', 'slope', 'cliff', 'boardCap']){

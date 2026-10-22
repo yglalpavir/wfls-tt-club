@@ -1161,6 +1161,7 @@ for(let g = R.ep0; g < opt.games && !budgetExhausted && !stopRequested; g++){ st
     }
     const pt = { ep: g + 1, phase: phase.tag,
                  trainW: +(win / total * 100).toFixed(1),
+                 rally: +(rallySum / Math.max(1, total)).toFixed(2),   /* 训练环境平均相持（A/B 主指标；不依赖 TT_TELEMETRY） */
                  evalPhase: +(epH * 100).toFixed(1), evalTop: +(epM * 100).toFixed(1), evalDef: +(epD * 100).toFixed(1),
                  best: +(bestScore * 100).toFixed(1), bestTop: +(bestMax * 100).toFixed(1), bestEp: bestEp,
                  eps: +agent.getEps().toFixed(2), evSec: +((Date.now() - tEv) / 1000).toFixed(1) };
@@ -1169,6 +1170,7 @@ for(let g = R.ep0; g < opt.games && !budgetExhausted && !stopRequested; g++){ st
     curve.push(pt);
     fs.writeFileSync(opt.curve, JSON.stringify(curve, null, 2), 'utf8');
     console.log(`ep ${String(g + 1).padStart(5)} [${phase.tag}]  train=${(win / total * 100).toFixed(0)}%` +
+      `  rally=${(rallySum / Math.max(1, total)).toFixed(2)}` +
       VAL_TAGS.map(l => '  vs' + l.tag + '=' + ((wrMap[l.tag] || 0) * 100).toFixed(1) + '%').join('') +
       `  best=${(bestScore * 100).toFixed(1)}@${bestEp}  eps=${agent.getEps().toFixed(2)}` +
       (BUDGET_SEC > 0 ? '  剩' + fmtH(remain()) : '') +

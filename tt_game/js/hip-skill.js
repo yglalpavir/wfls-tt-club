@@ -175,13 +175,19 @@ const HIP_SKILL = (() => {
      * 背景（实机测量，tools/live-match.js 的 rally 直方图，cap 2.0 + 固定 +x 角）：
      *   平均相持 **25.8 板**，68 分里 **43 分超过 15 板**。
      *   ⇒ 模型赢是赢了，但一分要磨二十几板 —— 这就是「相持过长」的问题。
-     * 做法：相持超过阈值后改用更冲的打法（my 调小 = 弧线更平更快；可再给一点前冲），
-     *   让对手来不及舒服地回球 ⇒ 这一分早点结束。
+     * 做法：相持超过阈值后改用更冲的打法，让对手来不及舒服地回球 ⇒ 这一分早点结束。
      * 口径：S.shots = 玩家接到的球数 ⇒ 总板数 ≈ 2·S.shots+1（发球算第 1 板）。
-     * 默认关闭（rallyAfter=0）⇒ 逐位不变；先用 --grid 扫出收益再决定是否上线。 */
-    rallyAfter:  0,       // 0 = 关；>0 = 总板数阈值（超过就切「求速」打法）
-    rallyMy:     0.50,    // 长相持时的 my（比 myDrive 小 ⇒ 弧线更平、球更快更冲）
-    rallyFwd:    0,       // 长相持时的前冲量 fwd（0 = 不额外前冲）
+     * 实测（实机 40 局/格 vs hell，cap 2.0 + 固定 +x 角，配对同种子）：
+     *   基线（rallyAfter=0）              83.1% [78.2,87.1]  相持 26.4 板
+     *   rallyAfter=15 + rallyFwd=0.30     83.4% [79.3,86.9]  相持 17.0 板
+     *   rallyAfter=15 + rallyFwd=0.60 ★   90.2% [85.4,93.6]  相持 14.0 板
+     *   rallyAfter=15 + rallyFwd=0.90     87.8% [82.4,91.8]  相持 13.9 板
+     * ⇒ **只靠 fwd（加速球）有效**：相持减半、胜率还涨 7pp。
+     * ★ 改 my 无效甚至有害（rallyAfter=15 + rallyMy 0.46/0.50 ⇒ 62.4%/78.1%，
+     *   相持没降、自己打长出界从 15 涨到 52）⇒ `rallyMy` 默认 0 = **不动弧线**。 */
+    rallyAfter:  15,      // 总板数阈值（0 = 关）；超过就切「求速」打法
+    rallyMy:     0,       // 长相持时强制改 my（0 = 不改；实测改弧线改不动相持）
+    rallyFwd:    0.6,     // 长相持时的前冲量 fwd（0 = 不额外前冲）
     /* 待机 */
     homeX:       0.0,
     homeMy:      0.50,
@@ -889,7 +895,7 @@ const HIP_SKILL = (() => {
       if(cfg.rallyAfter > 0 && !intent && !isPushCase && S.shots > 0){
         const totalGuess = 2 * S.shots + 1;   /* S.shots = 玩家接到的球数 */
         if(totalGuess > cfg.rallyAfter){
-          my = cl(cfg.rallyMy, 0.15, 0.95);
+          if(cfg.rallyMy > 0) my = cl(cfg.rallyMy, 0.15, 0.95);   /* 0 = 不动弧线（实测最优） */
           if(cfg.rallyFwd > 0) fOver = cfg.rallyFwd;
         }
       }
