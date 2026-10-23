@@ -252,7 +252,24 @@ const INPUT_AGENT = (() => {
       act(obs, explore, mark){
         const state = encodeObs(obs);
         let action;
-        if(training && explore && rng() < eps) action = (rng() * o.nActions) | 0;
+        if(training && explore && rng() < eps){
+          /* ★ 探索只在**网络真正能决定**的维度上随机（my / ctrl / 上旋 = 14×2×2 = 56 种），
+             mxI 一律沿用 bestAction 的结果（那里已经套了横向拦截先验）。
+             为什么：实机时间 mxI 永远被 lateralBinOf 覆盖，网络自己的横向输出从不生效
+             （实测：--no-prior 真生效后 8 局实机 0.0 %、相持 1.8 板、noreach 99.5 %）。
+             旧实现是 (rng()*o.nActions)|0 —— 1904 维均匀随机，绝大多数探索步把球拍甩到
+             随机横位，等于把策略推进一个实机不会出现的状态分布，梯度也平摊到 34 个
+             永远不生效的 mxI 分箱上。o.exploreLateral === 'all' 可恢复旧行为做 A/B。 */
+          if(o.exploreLateral === 'all') action = (rng() * o.nActions) | 0;
+          else {
+            const a0 = this.bestAction(obs);          // 先验已把 mxI 摆到拦截点
+            const mx = (a0 / (IN_MY.length * 4)) | 0;
+            const my = (rng() * IN_MY.length) | 0;
+            const ct = (rng() * 2) | 0;
+            const sp = (rng() * SERVE_TOP_N) | 0;
+            action = ((mx * IN_MY.length + my) * 2 + ct) * 2 + sp;
+          }
+        }
         else action = this.bestAction(obs);
         episode.push({ state, action, mark: mark || null });
         return { action, cmd: decodeAction(action) };
@@ -273,6 +290,10 @@ const INPUT_AGENT = (() => {
       /* 整条关掉横向先验，回退到纯 argmax（回滚开关，也给 A/B 诊断用）。 */
       setLateralPrior(on){ o.lateralPrior = !!on; return o.lateralPrior; },
       getLateralPrior(){ return o.lateralPrior !== false; },
+      /* 探索维度的回滚开关：'prior'（默认）= 横向沿用先验、只随机 my/ctrl/上旋；
+         'all' = 旧的 1904 维均匀随机（球拍会被甩到随机横位，仅用于 A/B）。 */
+      setExploreLateral(mode){ o.exploreLateral = (mode === 'all' ? 'all' : 'prior'); return o.exploreLateral; },
+      getExploreLateral(){ return o.exploreLateral === 'all' ? 'all' : 'prior'; },
       credit(d){ const s = episode[episode.length - 1]; if(s) s.reward = (s.reward || 0) + d; },
       /* 给 episode 里最后一个带 mark 标记的帧加 reward（找不到则退化为 credit）。
          用于把「发球效果」这类局部信号精确归因到发球决策那一帧。 */

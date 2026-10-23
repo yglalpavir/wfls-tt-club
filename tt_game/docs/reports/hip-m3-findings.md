@@ -910,7 +910,7 @@ CLI：`tools/train-input3.js` / `tools/hip-sim.js` 的 `--rally-after/--rally-sl
 ② **旧 DQN 权重是在一个「假的长相持环境」里训出来的**（老教训「sim 与实机可差 25pp」在相持维度上的再现）。
 ⇒ ⇒ 训练架构的下一步不是「加惩罚」，而是**让训练环境的相持长度与实机一致**。
 
-**⑥ ★★ 训练架构实验（四条腿 × 60 局）：惩罚在限速环境里近乎 no-op，真正的修法是移动预算**
+**⑥ ★★ 训练架构实验（C/D 各 60 局 + E 追加 120 局）：惩罚在限速环境里近乎 no-op，真正的修法是移动预算**
 
 起点统一 `data/checkpoints/input3-parity/ckpt-000300.json`，超参一致
 （`adam + clip2 + layer-lr 1,1,1,3`，lr 1e-5，`--eps-reset 500`，`--bcmix 0`，
@@ -948,6 +948,38 @@ sim 端 `vsdefault` 82.5% / `vshell` 2.5% 与 C 同档（**饱和**），实机 
 ⇒ 结论：用户要的「惩罚」在**真实（限速）环境**里近乎 no-op；训练侧真正的修法是**移动预算**
 （`train-input3.js` 不传 `--move-cap` 时 `MOVE_LIMIT` 就是出厂 cap 2.0 ⇒ 新训练默认已在实机口径下），
 惩罚模块保留为长 rally regime 的安全网，缩短实机相持的价值在上线侧规则（④）。
+
+**⑦ ★★★ 先验 A/B 让 `--no-prior` 的静默失效暴露出来：DQN 的横向能力全部来自解析先验**
+
+`lateralPrior` 是 2026-10-14 起默认开的（见 `input-agent.js`），但它在**无移动预算**时代验的；
+现在 DQN 在 cap 2.0 下 98% 的失分是 `noreach`，所以先怀疑「先验命令了到不了的落点」。于是跑两条
+**完全同参**的 40 局实机评测，只差 `--no-prior` —— 结果两份输出**逐位相同**（49.8%、相持 4.1 板、out 19 / noreach 414）。
+
+逐位相同不是「先验无用」，而是**开关根本没生效**，两个坑叠加：
+
+| 坑 | 机制 |
+|---|---|
+| agent **延迟创建** | `rig.ctx.TT_PLAYER.agent` 在 rig 构建时是 `null`（agent 要 `ensureWeights` 之后才 `init()`）⇒ 旧代码的 `&& TT_PLAYER.agent` 守卫静默跳过 |
+| vm 的 `const` 是**词法绑定** | `const TT_PLAYER = (()=>{…})()` 不挂在 ctx 上 ⇒ `rig.ctx.TT_PLAYER` 恒 `undefined` |
+
+修法：`js/tt-player.js` 加模块级 `let lateralPriorOn = true;`（`init()` 里应用，导出 `setLateralPrior`/`getLateralPrior`），
+`tools/live-match.js` 改成 `vm.runInContext('TT_PLAYER.setLateralPrior(false);')` 并**断言回读为 false**，否则抛错。
+
+修好后的实测（8 局 hell，cap 2.0，seed 20261004，`--live-only`）：
+
+| 配置 | 得分率 | 分（得/失） | 平均相持 | 失分 |
+|---|---|---|---|---|
+| 先验 **ON**（默认） | **48.0%** | 226 / 305 | 4.2 板 | out 4 (4.5%) / noreach 82 (92.1%) |
+| 先验 **OFF**（真关） | **0.0%** | 29 / 139 | **1.8 板** | out 0 / **noreach 191/192 = 99.5%** |
+
+⇒ **关掉先验，DQN 一分不得**：解析式横向拦截承担了它在限速环境下的**全部**横向能力，
+网络自己学的横向策略基本是「停在中路」（landmine #4）。先验不是补丁，是这套权重能打球的前提。
+⇒ 这不是 train/live 不一致（`train-input3.js` 也 `require('js/input-agent.js')`、走同一个 `bestAction`），
+而是一条**能力归属**事实：1904 维动作里 34 个 `mxI` 分箱在实机时间上被解析式覆盖，
+模型实际只决定 `my` / `ctrl` / 发球旋转 ⇒「让网络自己学走位」在这个架构下是白练。
+⇒ 操作纪律：①`hip-eval.js` 没有 `--no-prior`，这类 A/B 直调 `live-match.js`；
+②任何开关类实验，**先确认关掉那一刻行为真的变了**（对照组逐位相同 = 开关失效的强信号），
+别把「两份一样」当成结论 —— 本轮差点就这么写进文档。
 
 ### 11e.15 ★ 最终定稿（上线配置）
 

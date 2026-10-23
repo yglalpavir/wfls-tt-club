@@ -32,6 +32,11 @@ const TT_PLAYER = (() => {
   }
 
   let agent = null, ready = false;
+  /* 横向拦截先验的**待定开关**：agent 是延迟创建的（ensureWeights 拿到权重后 init()），
+     调用方（tools/live-match.js --no-prior）在 init() 之前就设了它 ⇒ 必须先存在这里，
+     再由 init() 应用。踩过的坑：直接写 TT_PLAYER.agent.setLateralPrior(false) 时
+     agent 还是 null，if 守卫静默跳过 ⇒ 开关根本没生效，A/B 两组跑出**逐位相同**的结果。 */
+  let lateralPriorOn = true;
   let frame = 0;
   /* 每侧虚拟"玩家拍"（玩家侧坐标系：拍在 +z 近台，来球 vz>0） */
   const __vpInit = () => ({ x: 0, z: PLAYER_Z, svx: 0, svz: 0, ctrl: false, my: 0.5,
@@ -182,6 +187,7 @@ const TT_PLAYER = (() => {
       agent.setNet(INPUT_AI_WEIGHTS.net);
       agent.setTraining(false);
       agent.setEps(0);
+      if(!lateralPriorOn) agent.setLateralPrior(false);
       ready = true;
     }catch(e){
       console.warn('[TT_PLAYER] 初始化失败：' + (e && e.message));
@@ -564,6 +570,10 @@ const TT_PLAYER = (() => {
   return { init, isReady, isTtSide, ttTick, ttHit, reset, ensureWeights, ensureHipWeights,
            ensureHipChoiceWeights, decideServe, getStance,
            setController, getController,
+           /* 横向拦截先验开关：agent 可能还没创建（延迟 init），所以缓存在模块里，
+              init() 建好 agent 后再应用。返回当前意图值。 */
+           setLateralPrior(on){ lateralPriorOn = !!on; if(agent && agent.setLateralPrior) agent.setLateralPrior(lateralPriorOn); return lateralPriorOn; },
+           getLateralPrior(){ return lateralPriorOn; },
            get agent(){ return agent; } };
 })();
 

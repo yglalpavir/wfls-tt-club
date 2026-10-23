@@ -750,10 +750,16 @@ function main(){
     /* --no-prior：关掉 input-agent 的横向拦截先验（回退到纯 argmax）。
      * 用途：A/B —— 烘焙时必须能区分「提升来自新权重」还是「来自先验」。
      * 先验现已在 input-agent.js 内置且默认开，所以「线上老权重 + 新代码」
-     * 本身就已经比 R4 的基线强很多；不带这个开关就没法做同口径比较。 */
-    if(HAS('--no-prior') && rig.ctx.TT_PLAYER && rig.ctx.TT_PLAYER.agent &&
-       typeof rig.ctx.TT_PLAYER.agent.setLateralPrior === 'function'){
-      rig.ctx.TT_PLAYER.agent.setLateralPrior(false);
+     * 本身就已经比 R4 的基线强很多；不带这个开关就没法做同口径比较。
+     *
+     * ★ 两个坑（都实测踩过，结果都是「A/B 两组逐位相同」）：
+     *   1) 必须走 TT_PLAYER.setLateralPrior：agent 是延迟创建的（ensureWeights 之后才 init），
+     *      rig 构建时 TT_PLAYER.agent 还是 null，直接调 agent 的方法会被守卫静默跳过；
+     *   2) vm 里的 `const TT_PLAYER = …` 是**词法绑定**，rig.ctx.TT_PLAYER 是 undefined
+     *      （同 --controller 那段注释）⇒ 只能通过 runInContext 调用。 */
+    if(HAS('--no-prior')){
+      vm.runInContext('TT_PLAYER.setLateralPrior(false);', rig.ctx);
+      if(vm.runInContext('TT_PLAYER.getLateralPrior()', rig.ctx) !== false) throw new Error('--no-prior 没有生效');
     }
   }
 

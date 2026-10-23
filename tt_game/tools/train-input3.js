@@ -117,13 +117,21 @@ for(let i = 0; i < args.length; i++){
    *   v > 0 = 限速 v。旧权重是在不限速环境里训的 ⇒ 要复现必须写 `--move-cap 0`。 */
   else if(args[i] === '--move-cap') opt.moveCapRaw = args[++i];
   else if(args[i] === '--hsizes') opt.hSizesArg = args[++i];
+  /* ★ 探索维度（训练架构关键旋钮，见 js/input-agent.js#act 的注释）：
+   *   prior（默认）= 探索时保留横向拦截先验的 mxI，只随机化 my/ctrl/上旋（14×2×2 = 56 种）；
+   *   all = 旧的 1904 维均匀随机（探索步把球拍甩到随机横位 —— 实机永远不会出现那种状态）。 */
+  else if(args[i] === '--explore-lateral') opt.exploreLateral = args[++i];
   else if(args[i] === '--hours-add') opt.hoursAdd = parseFloat(args[++i]);
   else if(args[i] === '--from'){
     const v = args[++i];
     const lv = String(v).toLowerCase();
     if(lv === 'random'){ opt.fromRandom = true; opt.from = '(random)'; }
     else if(lv === 'auto'){ opt.fromAuto = true; opt.from = 'auto'; }
-    else opt.from = path.resolve(v);
+    /* ★ 显式路径必须把 fromAuto 关掉：opt 默认 fromAuto=true，loadBase() 里
+     * `if(opt.fromAuto || opt.from === 'auto')` 先命中，于是 --from <路径> 被静默忽略、
+     * 实际从 auto（烘焙权重 meta.src）开始。2026-10-23 之前所有「从某个 ckpt 续训」的
+     * 实验都踩了这个坑（日志里那句「--from auto」就是证据），必须显式清。 */
+    else { opt.from = path.resolve(v); opt.fromAuto = false; opt.fromRandom = false; }
   }
   else if(args[i] === '--save') opt.save = path.resolve(args[++i]);
   else if(args[i] === '--curve') opt.curve = path.resolve(args[++i]);
@@ -294,6 +302,9 @@ function loadWeight(p, label){
     console.error('    换网络后要从零训练：--from random');
     process.exit(2);
   }
+  /* ★ 起点必须打在日志里：auto 分支有日志、显式 --from 的旧版本没有 ⇒ 「--from <路径>」被静默
+   * 替换成 auto 时无人察觉（2026-10-23 修正的坑）。任何续训现在都能从这一行看出真实起点。 */
+  console.log('  起点权重：' + path.relative(ROOT, p).replace(/\\/g, '/') + '（' + widths + '）');
   return { agent: base, shape: widths };
 }
 
@@ -613,6 +624,12 @@ const R = {
 
 /* ---- 载入起点（或断点）权重 ---- */
 const { agent, shape } = RESUME ? loadWeight(RESUME.file, '断点权重') : loadBase();
+/* ★ 探索维度：默认 'prior' —— 横向沿用拦截先验（实机时间横向永远被先验覆盖），
+   只随机 my/ctrl/上旋。旧行为 1904 维均匀随机可用 --explore-lateral all 复现（A/B 回退）。 */
+if(agent.setExploreLateral) agent.setExploreLateral(opt.exploreLateral || 'prior');
+console.log('  探索维度：' + (agent.getExploreLateral && agent.getExploreLateral() === 'all'
+  ? '全部 1904 动作均匀随机（旧行为）'
+  : '横向沿用拦截先验，只随机 my/ctrl/上旋（14×2×2 = 56）'));
 const trainMode = applyOptimizer(agent);
 const t0 = Date.now();
 let win = R.win, total = R.total;

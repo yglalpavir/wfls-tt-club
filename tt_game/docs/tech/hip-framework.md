@@ -1051,7 +1051,7 @@ setRallyPenalty(cfg) / getRallyPenalty() / rallyPenalty(shots) / boardWeight(sho
 ★ 先说结论：**在限速（= 实机口径）的训练环境里，「相持惩罚」几乎不可能触发 —— 真正的修法是移动预算。**
 原计划的 300 局 A/B（`--move-cap 0`）**根本跑不完**：不限速的 sim 每局相持 ≈ 30 板（§1.18.5），
 每局耗时约为限速环境的 4 倍，缩短到 60 局后两条腿跑了 33 min **连第一个 `--ckpt 30` 边界都没到**
-（零 ckpt 产物）⇒ 已 kill。改成四条腿（起点统一 `data/checkpoints/input3-parity/ckpt-000300.json`）：
+（零 ckpt 产物）⇒ 已 kill。改成下面几条腿（A/B 60 局，C/D 各 60 局，E 是在 C 之上再追加 120 局；起点统一 `data/checkpoints/input3-parity/ckpt-000300.json`）：
 
 | 腿 | 移动预算 | 惩罚 | 结局 |
 |---|---|---|---|
@@ -1105,6 +1105,13 @@ D:  hb ep 55                                    rally=3.60
 这个 LR（1e-5）下的可用预算就是到平台为止（本起点约 60 局 / 22 min），多训 = 过拟合到 sim 的对手模型。
 选 ckpt 只能靠 `hip-eval` 实机验收，不能靠 sim 分数、也不能靠 `index.json` 的 `best`（E 的 `best` 一直停在 ep 0 的 81.9）。
 
+这一条已经固化成工具：`hip-eval.js --ckptdir <run dir>` 会把目录里每个 `ckpt-*.json` 按实机分数排好序（30 局/ckpt ≈ 9 min，所以 `--ckpt` 别切太密），并把结果写进 `data/hip/ckpt-pick.json` —— 训练侧的「选模型」环节从此不再依赖仿真：
+
+```bash
+node tools/hip-eval.js --controller dqn --opp hell --games 30 --maxsec 120 \
+     --move-cap 2.0 --ckptdir data/hip/ckpt-rallyC
+```
+
 ★ **踩到的三个坑（都还在，记下来）**：
 
 | 坑 | 症状 | 对策 |
@@ -1118,6 +1125,59 @@ D:  hb ep 55                                    rally=3.60
 **惩罚模块保留**（它是长 rally regime 的安全网，也是「超过 15 板就罚」这个需求的落地形态，
 自测见 §1.18.3），但真正能改善实机的动作是**让 `--move-cap` 与实机同口径**；
 而缩短**实机**相持的价值在上线侧规则（§1.18.4），不在训练侧奖励。
+
+### 1.18.7 ★★★ 顺带查出的更硬的事实：DQN 在限速环境下的能力**几乎全部来自解析先验**
+
+出发点是「先验 A/B」：`lateralPrior` 从 2026-10-14 起默认开，但它是在**无移动预算**的时代验的；
+现在 DQN 在 cap 2.0 下 98 % 的失分是 `noreach`（够不着），所以有理由怀疑「先验命令一个到不了的落点」。
+于是跑了两条 40 局**完全同参**的实机评测，只差 `--no-prior`：
+
+```bash
+node tools/live-match.js --controller dqn --opp hell --games 40 --maxsec 120 --move-cap 2.0 --seed 20261004
+node tools/live-match.js --controller dqn --opp hell --games 40 --maxsec 120 --move-cap 2.0 --seed 20261004 --no-prior
+```
+
+两份输出**逐位相同**（49.8 %、相持 4.1 板、out 19 / noreach 414）。逐位相同不是「先验无用」，
+而是**开关根本没生效** —— 两个坑叠在一起：
+
+| 坑 | 机制 |
+|---|---|
+| agent 是**延迟创建**的 | `rig.ctx.TT_PLAYER.agent` 在 rig 构建时是 `null`；agent 要等 `ensureWeights` 拿到权重后才 `init()`（`js/tt-player.js`）。旧代码 `if(HAS('--no-prior') && rig.ctx.TT_PLAYER.agent && …)` 的守卫于是**静默跳过** |
+| vm 里的 `const` 是**词法绑定** | `const TT_PLAYER = (()=>{…})()` 不挂在 ctx 上 ⇒ `rig.ctx.TT_PLAYER` 恒为 `undefined`（`--controller` 早年也踩过这条，`tools/live-match.js` 里本来就有注释） |
+
+修法（`js/tt-player.js` + `tools/live-match.js`）：
+- `tt-player.js` 增加模块级 `let lateralPriorOn = true;`，`init()` 里 `agent.setEps(0)` 之后应用；
+  导出 `setLateralPrior(on)` / `getLateralPrior()`。**开关必须缓存**，因为这个模块的 agent 生命周期晚于调用方。
+- `live-match.js` 改成在 vm 内调用，并**断言生效**：
+
+```js
+if(HAS('--no-prior')){
+  vm.runInContext('TT_PLAYER.setLateralPrior(false);', rig.ctx);
+  if(vm.runInContext('TT_PLAYER.getLateralPrior()', rig.ctx) !== false) throw new Error('--no-prior 没有生效');
+}
+```
+
+修好后的实测（8 局 hell，cap 2.0，seed 20261004，`--live-only`）：
+
+| 配置 | 实机得分率 | 分（得/失） | 平均相持 | 失分分解 |
+|---|---|---|---|---|
+| 先验 **ON**（默认） | **48.0 %** | 226 / 305 | 4.2 板 | out 4 (4.5 %) / **noreach 82 (92.1 %)** |
+| 先验 **OFF**（真关掉） | **0.0 %** | 29 / 139 | **1.8 板** | out 0 / **noreach 191/192 = 99.5 %** |
+
+⇒ **关掉解析先验，DQN 一分不得**（球都接不到，相持 1.8 板）。也就是说：
+**`lateralPrior` 承担了 DQN 在限速环境下的全部横向能力**，网络自己学出来的横向策略基本是「停在中路」
+（与 `input-agent.js` 记录的 landmine #4 一致）。先验不是补丁，它是这套权重能打球的前提。
+
+这不构成「train/live 不一致」：训练侧 `tools/train-input3.js` 也是 `require('js/input-agent.js')`、
+走同一个 `bestAction()`，先验在训练里同样默认开。它给出的是一条**能力归属**事实：
+1904 维动作空间里的 34 个 `mxI` 分箱在实机时间上被解析式覆盖，**模型实际只决定 `my` / `ctrl` / 发球旋转** ——
+所以①任何「让网络自己学走位」的训练计划在这个架构下都是白练；②评估任何横向相关的改动，
+必须先用 `--no-prior` 确认「关掉会掉多少」，否则量到的可能只是噪声。
+
+两个操作提醒：
+- `hip-eval.js` **没有** `--no-prior`（它是 live-match 的外层汇总），做这类 A/B 要直调 `live-match.js`。
+- 任何「开关类」实验，**先验证关掉那一刻行为真的变了**（对照组逐位相同 = 开关没生效的强信号），
+  别把「两份一样」当成结论。
 
 ---
 
