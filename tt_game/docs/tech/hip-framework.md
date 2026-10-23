@@ -1219,6 +1219,55 @@ if(HAS('--no-prior')){
 
 ---
 
+### 1.18.8 探索维度改造：只随机网络真正能决定的那 56 个动作（`--explore-lateral`）
+
+有了 §1.18.7 的能力归属事实，探索阶段的写法就变成了一个**逻辑错误**而不是调参问题。
+
+**旧实现**（`js/input-agent.js#act`，2026-10-24 之前）：
+
+```js
+if(training && explore && rng() < eps) action = (rng() * o.nActions) | 0;   // 1904 维均匀随机
+else                                    action = this.bestAction(obs);       // 这里才套横向先验
+```
+
+1904 = 34（`mxI`）× 14（`myI`）× 2（ctrl）× 2（上旋）。也就是说每一步探索都有 **34/1904** 的概率把球拍
+扔到一个**随机横位**，而实机时间 `mxI` 永远被 `lateralBinOf()` 覆盖成预测拦截点。后果有两条，都很贵：
+
+1. **状态分布错位**：策略被训练在「球拍停在随机横位」的分布上，而它上线后见到的永远是「球拍在拦截点」。
+2. **梯度浪费**：34 个 `mxI` 输出被反复训练，却从不被使用（先验会覆盖它们）。
+
+**新实现**（默认，`--explore-lateral prior`）：保留 `bestAction(obs)` 给出的 `mxI`（先验已生效），
+只随机 `my` / `ctrl` / 发球旋转 —— 14 × 2 × 2 = **56 种组合**：
+
+```js
+const a0 = this.bestAction(obs);          // 先验已把 mxI 摆到拦截点
+const mx = (a0 / (IN_MY.length * 4)) | 0;
+const my = (rng() * IN_MY.length) | 0, ct = (rng() * 2) | 0, sp = (rng() * SERVE_TOP_N) | 0;
+action = ((mx * IN_MY.length + my) * 2 + ct) * 2 + sp;
+```
+
+开关三条：`agent.setExploreLateral('prior'|'all')` / `agent.getExploreLateral()` /
+`tools/train-input3.js --explore-lateral all`（`all` = 复现旧行为，专供 A/B）。
+
+**先确认开关真的变了**（吸取 §1.18.7 的教训）：同种子同超参的 60 局两腿，`hbEp=28` 时的心跳相持
+**H 4.25 板 vs I 3.29 板** —— 两种探索模式确实走了不同的轨迹，不是 no-op。
+
+**实机结果（30 局 vs hell，cap 2.0）：还看不出差异**
+
+| 腿 | 探索 | 实机得分率 |
+|---|---|---|
+| H（`--explore-lateral prior`，56 维） | prior | **36.7 %** |
+| I（`--explore-lateral all`，1904 维） | all | **33.3 %** |
+| 参照 C（旧探索、60 局、同起点） | all | 47.1 % [39.8, 54.5] |
+| 参照上线 12 h 权重（起点） | — | 48.0 % |
+
+⇒ H 比 I 高 3.4 pp，**远在 30 局的噪声带内**（Wilson 区间半宽 ≈ ±9 pp）；而且两者都低于起点 48.0 %。
+所以到这一步能说的只有：**改造的动机是成立的、开关是真的生效的，但 60 局这个训练预算下量不出收益**。
+要判定它必须换判据 —— 更长样本（≥100 局）、配对同种子、或者直接看**失分结构与相持分布**，
+而不是单次 30 局的得分率。
+
+---
+
 ## 2. 六条设计原则
 
 把上面的诊断翻译成 6 条设计约束，HIP 就是这 6 条的产物：
