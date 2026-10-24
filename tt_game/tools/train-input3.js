@@ -219,6 +219,23 @@ const evalAtPhase = g => PHASES.find(p => g < p.to * opt.games) || PHASES[PHASES
  * 实际取值来自 --lr0/--lr1（强起点续训必须显式调低，见 opt.lr0 的注释）。
  * 声明放在这里：启动横幅（§启动输出）要打印它，不能等到训练段才定义。 */
 const LR_0 = opt.lr0, LR_1 = opt.lr1, LR_HORIZON = 600;
+/* ---- 续训步长护栏（2026-10-24 实测，见 hip-framework.md §1.18.9）----
+ * 从**已收敛**权重续训时，步长是唯一分水岭：同一批数据 / 同一阶段表 / 探索维度都已经修好，
+ *   lr 1e-5 ⇒ 实机 hell 48.0% → 38.5%(30局) → 13.8%(60局) → 9.4%(90局) → 8.9%(120局)，单调塌陷；
+ *   lr 1e-6 ⇒ ep30 实机 **56.2%**（不降反升）。
+ * 而默认 lr1 = 3.5e-5 就落在危险区 ⇒ 「续训」在默认值下其实是「重训」，会把上线权重练废。
+ * 只在**显式 --from <路径>** 时提示：那正是「接着某次跑完的权重再练」的工作流，
+ * 也是唯一实测踩过坑的入口；默认 auto（新开一轮 12h）不打扰。 */
+if(!opt.fromRandom && !opt.fromAuto && !opt.resume){
+  const _lrMax = Math.max(LR_0, LR_1);
+  if(_lrMax > 1e-6){
+    console.error('⚠ 续训步长护栏：lr ' + _lrMax + ' > 1e-6。实测从已收敛权重续训，'
+      + 'lr 1e-5 会让实机 48.0% → 8.9%（120 局），lr 1e-6 则是 56.2%（不降反升）。'
+      + '除非确实要重训，否则加 --lr0 1e-6 --lr1 1e-6。');
+  }else{
+    console.log('  续训步长护栏：lr ' + _lrMax + ' ≤ 1e-6（实测安全区）');
+  }
+}
 const oppForPhase = (p, rng) => OPP.pick(rng, p.tag, opt.jitter);
 
 /* ---- 选优分口径（唯一定义处）----
