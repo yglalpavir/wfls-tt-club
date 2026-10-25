@@ -30,8 +30,10 @@ const CR_GRADE_COLORS = { 'S+': '#f5c542', 'S': '#a55eea', 'A': '#4da3ff', 'B': 
 function crClamp(v, lo, hi) { return Math.min(hi, Math.max(lo, v)); }
 // 全轴放缩（2026-10-25 站长定稿）：公式原始分 [0,100] 线性映射到 [30,100]——0 分记 30，满分记 100
 function crRescale(raw) { return crClamp(Math.round(30 + crClamp(raw, 0, 100) * 0.7), 30, 100); }
-// 第⑤维（WTT 巅峰保持率）r 的放缩区间：r=0.996 记 30（低于亦记 30），r=1.00 记 100（高于亦记 100）
-const CR_R_FLOOR = 0.996, CR_R_CAP = 1.00;
+// 第⑤维（WTT 巅峰保持率）r 的放缩区间（站长定稿 2026-10-26）：r=0.80 记 30（低于亦记 30），r=1.00 记 100（高于亦记 100），
+// 区间内按对数曲线 raw = 100 × ln(1 + (r−0.80)) ÷ ln(1 + 0.20)（与社团⑤天数的对数形式同构）
+// 实测 ms 分项 r 分布：中位 0.951 / p25 0.972 / p90 0.893 / min 0.811（≥10 场的 987 人）——0.80 锚点下几乎无人托底
+const CR_R_FLOOR = 0.80, CR_R_CAP = 1.00;
 // 第⑤维（社团积极度）：对数放缩——参赛最多者记满分，其余按 log(1+天数)/log(1+最多天数) 比例，最低 30
 let _crClubMaxDays = null;   // { log, asOf, value }
 function crClubMaxMatchDays(asOf) {
@@ -250,7 +252,7 @@ function computeWttRadar(subject) {
         { key: 'format', score: agg.longTot > 0 ? crRescale(agg.longWin / agg.longTot * 100) : 30, n: agg.longTot, w: agg.longWin, isDefault: agg.longTot === 0, censored: true },
         { key: 'major',  score: agg.majorTot > 0 ? crRescale(agg.majorWin / agg.majorTot * 100 + Math.min(20, agg.majorTot * 2)) : 30, n: agg.majorTot, w: agg.majorWin, isDefault: agg.majorTot === 0 },
         { key: 'elite',  score: agg.eliteTot > 0 ? crRescale(agg.eliteWin / agg.eliteTot * 90 + Math.min(25, agg.eliteWin * 3)) : 30, n: agg.eliteTot, w: agg.eliteWin, threshold: th, isDefault: agg.eliteTot === 0 },
-        { key: 'retain', score: crRescale((Math.max(r5, CR_R_FLOOR) - CR_R_FLOOR) / (CR_R_CAP - CR_R_FLOOR) * 100), n: agg.tot, ratio: r5 },
+        { key: 'retain', score: crRescale(100 * Math.log(1 + Math.max(r5, CR_R_FLOOR) - CR_R_FLOOR) / Math.log(1 + CR_R_CAP - CR_R_FLOOR)), n: agg.tot, ratio: r5 },
         { key: 'close',  score: agg.scoredWin > 0 ? crRescale(agg.sweep / agg.scoredWin * 80 + Math.min(25, agg.win * 0.8)) : 30, n: agg.scoredWin, w: agg.sweep, isDefault: agg.scoredWin === 0, censored: true }
     ];
     const composite = crComposite(axes);
