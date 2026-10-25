@@ -268,7 +268,7 @@ async function initWttPlayerPage() {
         // 数据计算语言无关且耗时较长，只在初始化时算一次并缓存，语言切换仅重绘
         wttPpAnalyticsData = wttWithDataContext(() => paComputeAnalyticsData(playerName, matchRecords, { timeline: wttRankingTimeline }));
         wttRenderPersonalStats(playerName, 'wttPpStatsBody');
-        renderPlayerAnalytics(playerName, matchRecords, { timeline: wttRankingTimeline, data: wttPpAnalyticsData });
+        renderPlayerAnalytics(playerName, matchRecords, { wttMode: true, timeline: wttRankingTimeline, data: wttPpAnalyticsData });
         wttPpRenderMatchTable(playerName, matchRecords);
         console.log('[WttPlayerPage] 初始化完成:', playerName);
     } catch (e) {
@@ -295,7 +295,7 @@ function wttReapplyI18n() {
     wttPpRenderHeader(wttCurrentPlayer);
     content.innerHTML += '<div id="wttPpStatsBody"></div><div id="playerAnalyticsBody"></div><div id="wttPpMatchTable"></div>';
     wttRenderPersonalStats(wttCurrentPlayer, 'wttPpStatsBody');
-    renderPlayerAnalytics(wttCurrentPlayer, null, { timeline: wttRankingTimeline, data: wttPpAnalyticsData });
+    renderPlayerAnalytics(wttCurrentPlayer, null, { wttMode: true, timeline: wttRankingTimeline, data: wttPpAnalyticsData });
     wttPpRenderMatchTable(wttCurrentPlayer, wttPpMatchRecordsCache);
 }
 

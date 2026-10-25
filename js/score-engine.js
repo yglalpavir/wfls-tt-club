@@ -254,6 +254,71 @@ function getRecordBaseScoreInfo(record) {
     return e ? { base: e.base, gap: e.gap } : null;
 }
 
+// ===== 每场比赛「开赛前回放积分」表（比赛当日口径；六维战力雷达④强敌判定用）=====
+// 口径与顶部「产生分」注释一致：某场开赛前的积分 = 把全部更早记录回放到该比赛日评估
+// （frozen 部分 + 各类型尾批衰减到该日）。单打/加分记录推进状态机；双打记录不推进单打
+// 状态、仅捕获双方四名成员的当asis（强敌判定看对方成员任一 ≥ 阈值，见 capability-radar.js）。
+// 必须在单打 withScoreContext 内调用（getSeasonStartScores 读全局 scoreLogData）。
+let _preMatchBasisCache = null;   // { singles, doubles, initial, t, floor, data: Map<record, {wPre,lPre}|{members}> }
+function buildPreMatchBasisTable(singlesLog, doublesLog) {
+    if (_preMatchBasisCache && _preMatchBasisCache.singles === singlesLog && _preMatchBasisCache.doubles === doublesLog &&
+        _preMatchBasisCache.initial === initialScoresData && _preMatchBasisCache.t === DECAY_HALF_LIFE_DAYS && _preMatchBasisCache.floor === DECAY_WEIGHT_FLOOR) return _preMatchBasisCache.data;
+    const data = new Map();
+    _preMatchBasisCache = { singles: singlesLog, doubles: doublesLog, initial: initialScoresData, t: DECAY_HALF_LIFE_DAYS, floor: DECAY_WEIGHT_FLOOR, data };
+    if (!singlesLog || !singlesLog.length || !seasonsData || !seasonsData.length) return data;
+    const _savedBatches = playerTypeBatches;   // 继承链会重算批次索引；不得改变调用方口径（同 buildRawPointsTable）
+    try {
+        const byDate = (a, b) => String(a['日期']).localeCompare(String(b['日期']));
+        const singles = singlesLog.slice().sort(byDate);
+        const merged = (doublesLog && doublesLog.length) ? singles.concat(doublesLog).sort(byDate) : singles;
+        const isDouble = (r) => (typeof isDoublesRecord === 'function') && isDoublesRecord(r);
+        const clampW = (dd) => Math.max(DECAY_WEIGHT_FLOOR, Math.pow(2, -dd / DECAY_HALF_LIFE_DAYS));
+        let st = new Map();
+        const ensure = (p) => { let s = st.get(p); if (!s) { s = { frozen: DEFAULT_INITIAL_SCORE, tail: new Map() }; st.set(p, s); } return s; };
+        const basisAt = (p, base) => { const s = ensure(p); let v = s.frozen; for (const tl of s.tail.values()) v += tl.raw * clampW(_dayDiffNum(tl.date, base)); return v; };
+        const add = (p, type, date, amt) => {
+            const s = ensure(p);
+            if (!isFreezeEligible(type)) { s.frozen += amt; return; }                 // 保值类型：全额、永不衰减
+            const cur = s.tail.get(type);
+            if (!cur) { s.tail.set(type, { raw: amt, date: date }); return; }
+            if (cur.date !== date) {                                                   // 新批次出现：旧批定格于新批日期
+                s.frozen += cur.raw * clampW(_dayDiffNum(cur.date, date));
+                s.tail.set(type, { raw: amt, date: date });
+                return;
+            }
+            cur.raw += amt;
+        };
+        for (let si = 0; si < seasonsData.length; si++) {
+            const season = seasonsData[si];
+            const startScores = getSeasonStartScores(si);
+            st = new Map();
+            for (const p in startScores) st.set(p, { frozen: startScores[p], tail: new Map() });
+            for (const r of merged) {
+                if (r['日期'] < season.startDate || r['日期'] > season.endDate) continue;
+                if (isDouble(r)) {
+                    const members = {};
+                    for (const side of ['胜者', '负者']) {
+                        const pair = splitPairNames(r[side]);
+                        if (pair) for (const m of pair) members[m] = basisAt(m, r['日期']);
+                    }
+                    data.set(r, { members: members });
+                } else if (isMatchRecord(r)) {
+                    const w = r['胜者'], l = r['负者'];
+                    const wPre = basisAt(w, r['日期']), lPre = basisAt(l, r['日期']);
+                    data.set(r, { wPre: wPre, lPre: lPre });
+                    // 与 buildRawPointsTable 同式的产生分（同一状态机 ⇒ 数值一致）
+                    const raw = getBaseScore(wPre - lPre) * getEventCoefficient(r['类型']) * getFormatMultiplier(r['类型'], r['赛制']);
+                    add(w, r['类型'], r['日期'], raw);
+                    add(l, r['类型'], r['日期'], -raw * LOSER_POINT_MULTIPLIER);
+                } else if (isBonusRecord(r)) {
+                    ensure(r['对象']).frozen += parseFloat(r['分数']) || 0;             // 调整记录：不衰减、不参与批次
+                }
+            }
+        }
+    } finally { playerTypeBatches = _savedBatches; }
+    return data;
+}
+
 // 计算球员近期状态分（最近10场比赛的积分变化总和）
 // beforeDate 可选：传入时只统计该日期之前的比赛（YYYY-MM-DD 字符串比较），用于"赛前状态"口径；不传行为不变
 function calcFormScore(playerName, beforeDate) {
@@ -800,6 +865,51 @@ function getScoreMapAsOf(dateStr) {
             sc[t] = Math.max(SCORE_FLOOR, sc[t] + b);
         }
     });
+    return sc;
+}
+
+// 无衰减全额积分表（六维战力雷达⑤定格保值率用）：同一批比赛按时间权重 = 1.0 重放。
+// 产生分走 calcRawPoints（比赛当日口径、含赛制系数——时间权重本就不参与 raw），
+// 胜者 +raw、负者 −raw×LOSER_POINT_MULTIPLIER、逐步钳制 SCORE_FLOOR（与引擎每步地板一致）；
+// 跨赛季 50% 继承在本函数内按同一口径自算（不复用 _seasonStartCache——那是衰减口径缓存）。
+// 必须在单打 withScoreContext 内调用（读全局 scoreLogData / initialScoresData / seasonsData）。
+function computeNoDecayScoreMapAsOf(asOfDate) {
+    if (!scoreLogData || !scoreLogData.length || !seasonsData || !seasonsData.length) return {};
+    let si = seasonsData.findIndex(s => asOfDate >= s.startDate && asOfDate <= s.endDate);
+    if (si < 0) si = asOfDate > seasonsData[seasonsData.length - 1].endDate ? seasonsData.length - 1 : 0;
+    const sorted = getSortedScoreLog(scoreLogData);
+    const init = (initialScoresData && initialScoresData.initialScores) || {};
+    let sc = { ...init };
+    for (let i = 0; i <= si; i++) {
+        const season = seasonsData[i];
+        const end = (i === si && asOfDate < season.endDate) ? asOfDate : season.endDate;
+        const es = { ...sc };
+        for (const r of sorted) {
+            if (r['日期'] < season.startDate || r['日期'] > end) continue;
+            if (isMatchRecord(r)) {
+                const w = r['胜者'], l = r['负者'];
+                if (!es[w]) es[w] = DEFAULT_INITIAL_SCORE;
+                if (!es[l]) es[l] = DEFAULT_INITIAL_SCORE;
+                const raw = calcRawPoints(w, l, r['类型'], es, r['赛制'], r);
+                es[w] = Math.max(SCORE_FLOOR, es[w] + raw);
+                es[l] = Math.max(SCORE_FLOOR, es[l] - raw * LOSER_POINT_MULTIPLIER);
+            } else if (isBonusRecord(r)) {
+                const t = r['对象'], b = parseFloat(r['分数']) || 0;
+                if (!es[t]) es[t] = DEFAULT_INITIAL_SCORE;
+                es[t] = Math.max(SCORE_FLOOR, es[t] + b);
+            }
+        }
+        if (i === si) return es;
+        // 50% 继承（与 computeInheritedScores 同式），并补齐 initialScores 中未参赛球员
+        const next = {};
+        for (const n of new Set([...Object.keys(sc), ...Object.keys(es)])) {
+            const ss = sc[n] || DEFAULT_INITIAL_SCORE;
+            const e2 = es[n] || ss;
+            next[n] = ss + (e2 - ss) * 0.5;
+        }
+        for (const n in init) if (!next[n]) next[n] = init[n];
+        sc = next;
+    }
     return sc;
 }
 

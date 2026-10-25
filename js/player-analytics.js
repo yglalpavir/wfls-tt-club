@@ -325,10 +325,17 @@ function renderPlayerAnalytics(playerName, records, opts) {
 
     const { rankSeries, typeStats, gapBands, gapTotal, monthly, form, seasonRows, source } = data;
 
+    // 六维战力雷达（通栏总览卡；club/WTT 双模式由 opts.wttMode 标记，capability-radar.js 提供）
+    const crIsWtt = !!(opts && opts.wttMode);
+    const crRadar = crIsWtt
+        ? (typeof computeWttRadar === 'function' ? computeWttRadar(playerName) : null)
+        : (typeof computeClubRadar === 'function' ? computeClubRadar(playerName) : null);
+
     const L = i18n[currentLang];
     let html = '';
     html += '<div class="pa-section-header">' + L.pa_section_title + '</div>';
     html += '<div class="pa-grid">';
+    if (crRadar && typeof crAnalyticsCardHtml === 'function') html += crAnalyticsCardHtml(playerName, crRadar, crIsWtt);
 
     // 1. 排名走势（通栏）
     if (rankSeries.length >= 2) {
@@ -465,6 +472,7 @@ function renderPlayerAnalytics(playerName, records, opts) {
     container.innerHTML = html;
 
     // 渲染图表
+    if (crRadar && typeof crMountAnalyticsRadar === 'function') crMountAnalyticsRadar(playerName, crRadar, crIsWtt);
     if (rankSeries.length >= 2) paRenderRankChart(rankSeries, data.rankBoundaries);
     if (typeStats.length) paRenderTypeChart(typeStats);
     if (gapTotal > 0) paRenderGapChart(gapBands);

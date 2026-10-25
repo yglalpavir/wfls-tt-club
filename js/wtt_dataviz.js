@@ -168,13 +168,22 @@ function initWttDataViz() {
         wttRenderRankStream(Math.min(10, players.length), defaultStreamCount);
 
         // 事件监听
-    document.getElementById('wttApplyPointsTrend')?.addEventListener('click', () => {
-        const sel = wttGetSelectedPlayers();
-        if (!sel.length) { alert(i18n[currentLang].wtt_alert_select_one); return; }
-        if (sel.length > 15) { alert(i18n[currentLang].wtt_alert_max); return; }
-        const dc = parseInt(document.getElementById('wttPointsTrendDataCount')?.value) || 20;
-        wttRenderPointsTrend(sel, dc);
-    });
+        document.getElementById('wttApplyPointsTrend')?.addEventListener('click', () => {
+            const sel = wttGetSelectedPlayers();
+            if (!sel.length) { alert(i18n[currentLang].wtt_alert_select_one); return; }
+            if (sel.length > 15) { alert(i18n[currentLang].wtt_alert_max); return; }
+            const dc = parseInt(document.getElementById('wttPointsTrendDataCount')?.value) || 20;
+            wttRenderPointsTrend(sel, dc);
+        });
+        document.getElementById('wttApplyRadar')?.addEventListener('click', () => {
+            const pa = document.getElementById('wttRadarPlayerA')?.value, pb = document.getElementById('wttRadarPlayerB')?.value;
+            if (!pa && !pb) { alert(i18n[currentLang].radar_pick_players); return; }
+            if (pa && pb && pa === pb) { alert(i18n[currentLang].wtt_alert_diff); return; }
+            if (typeof wttMountVizRadar === 'function') wttMountVizRadar(pa, pb);
+        });
+        // 六维战力雷达区块默认渲染实时榜前 2 名（须在 wttRenderCompareSelects 填充下拉框之后）
+        if (typeof wttInitVizRadar === 'function') wttInitVizRadar();
+
     document.getElementById('wttPointsTrendDataCount')?.addEventListener('change', () => {
         const sel = wttGetSelectedPlayers();
         if (!sel.length) { sel.push(...players.slice(0, Math.min(8, players.length))); }
@@ -392,6 +401,11 @@ function wttRenderCompareSelects() {
     const prevA = sa ? sa.value : '', prevB = sb ? sb.value : '';
     if (sa) { sa.innerHTML = `<option value="">${ph}</option>` + opts; if (prevA) sa.value = prevA; }
     if (sb) { sb.innerHTML = `<option value="">${ph}</option>` + opts; if (prevB) sb.value = prevB; }
+    /* 六维战力雷达区块的 A/B 下拉同源填充 */
+    const ra = document.getElementById('wttRadarPlayerA'), rb = document.getElementById('wttRadarPlayerB');
+    const prevRa = ra ? ra.value : '', prevRb = rb ? rb.value : '';
+    if (ra) { ra.innerHTML = `<option value="">${ph}</option>` + opts; if (prevRa) ra.value = prevRa; }
+    if (rb) { rb.innerHTML = `<option value="">${ph}</option>` + opts; if (prevRb) rb.value = prevRb; }
 }
 
 // ============ 积分趋势图 ============
@@ -824,6 +838,7 @@ function wttReapplyI18n() {
     const sdc = parseInt(document.getElementById('wttStreamDataCount')?.value) || 20;
     if (wttRankStreamChart) wttRenderRankStream(topN, sdc);
     wttRenderCompareSelects();
+    if (typeof wttRerenderVizRadar === 'function') wttRerenderVizRadar();
     wttUpdateCompareBox();
     if (typeof wttReapplyDataVizExtra === 'function') wttReapplyDataVizExtra();
 }

@@ -124,6 +124,31 @@
                 <canvas id="rankStreamChart"></canvas>
             </div>
 
+            <div class="viz-section-header" id="viz-radar" style="margin-top:48px;">
+                <span class="section-tag">Radar</span>
+                <h2 class="section-title" data-i18n="radar_title">六维战力雷达</h2>
+            </div>
+            <div class="viz-compare-grid">
+                <div class="viz-compare-selectors glass-card">
+                    <div class="compare-selector-group">
+                        <label data-i18n="data_viz_select_player_a">球员 A</label>
+                        <select id="crRadarPlayerA"><option value="" data-i18n="data_viz_select_player_ph">-- 选择球员 --</option></select>
+                    </div>
+                    <div class="compare-vs">VS</div>
+                    <div class="compare-selector-group">
+                        <label data-i18n="data_viz_select_player_b">球员 B</label>
+                        <select id="crRadarPlayerB"><option value="" data-i18n="data_viz_select_player_ph">-- 选择球员 --</option></select>
+                    </div>
+                    <button class="btn btn-sm btn-primary" id="applyRadar" data-i18n="data_viz_compare_btn">对比</button>
+                </div>
+                <div class="viz-compare-result glass-card" id="crRadarResult">
+                    <div class="compare-placeholder">
+                        <i class="fa-solid fa-chart-simple"></i>
+                        <p data-i18n="radar_pick_players">选择一至两名球员查看六维战力雷达</p>
+                    </div>
+                </div>
+            </div>
+
             <div class="viz-section-header" id="viz-compare" style="margin-top:48px;">
                 <span class="section-tag">Comparison</span>
                 <h2 class="section-title" data-i18n="data_viz_player_compare">球员对比</h2>
@@ -245,6 +270,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" integrity="sha384-e6nUZLBkQ86NJ6TVVKAeSaK8jWa3NhkYWZFomE39AvDbQWeie9PlQqM3pmYW5d1g" crossorigin="anonymous"></script>
     <script src="js/common.js"></script>
     <script src="js/score-engine.js"></script>
+    <script src="js/capability-radar.js"></script>
     <script src="js/data-viz.js"></script>
     <script src="js/data-viz-extra.js"></script>
     <script src="js/club_race.js"></script>

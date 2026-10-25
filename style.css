@@ -3268,6 +3268,55 @@ body.dark .player-search-item.selected { background: rgba(77, 163, 255, 0.15); }
 .pa-season-table tr:last-child td { border-bottom: none; }
 .pa-season-total td { font-weight: 700; color: var(--text-primary); border-top: 2px solid var(--border-color); }
 
+/* ====== 六维战力雷达（capability-radar.js；个人主页 / 数据大屏对比 / WTT 雷达对决共用）====== */
+.cr-card-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.cr-body { display: grid; grid-template-columns: minmax(280px, 5fr) minmax(250px, 4fr); gap: 16px; align-items: center; }
+.cr-body-compare, .cr-body-duel { grid-template-columns: minmax(280px, 3fr) minmax(260px, 2fr); align-items: start; }
+.cr-chart-box { position: relative; width: 100%; height: 300px; }
+.cr-chart-box-lg { height: 340px; }
+.cr-axis-list { display: flex; flex-direction: column; gap: 4px; }
+.cr-axis-row { display: grid; grid-template-columns: 52px 1fr 30px auto; gap: 8px; align-items: center; padding: 5px 8px; border-radius: 8px; cursor: default; transition: background 0.15s ease; }
+.cr-axis-row:hover, .cr-axis-row:focus { background: rgba(127, 127, 127, 0.09); outline: none; }
+.cr-axis-name { font-size: 0.78rem; font-weight: 600; color: var(--text-primary); white-space: nowrap; }
+.cr-bar { position: relative; height: 6px; border-radius: 4px; background: var(--border-color); overflow: hidden; }
+.cr-bar-fill { position: absolute; top: 0; bottom: 0; left: 0; border-radius: 4px; background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue)); transition: width 0.45s ease; }
+.cr-axis-score { font-size: 0.82rem; font-weight: 700; color: var(--text-primary); text-align: right; font-variant-numeric: tabular-nums; }
+.cr-axis-n { font-size: 0.68rem; color: var(--text-muted); white-space: nowrap; }
+.cr-axis-default .cr-axis-score { color: var(--text-muted); }
+.cr-compare-side, .cr-duel-side { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.cr-grade-badge { display: inline-flex; align-items: center; padding: 3px 12px; border-radius: 999px; border: 1px solid transparent; font-weight: 700; font-size: 0.88rem; letter-spacing: 0.02em; white-space: nowrap; transition: transform 0.3s ease, background 0.3s ease; animation: crBadgeIn 0.35s ease 0.25s backwards; }
+.cr-grade-badge-sm { padding: 1px 9px; font-size: 0.7rem; animation: none; }
+@keyframes crBadgeIn { from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: scale(1); } }
+.cr-chip { display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--border-color); background: transparent; cursor: pointer; font: inherit; font-size: 0.8rem; color: var(--text-primary); transition: border-color 0.2s ease, opacity 0.2s ease; }
+.cr-chip:hover { border-color: var(--primary-blue); }
+.cr-chip-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--cr-c); flex-shrink: 0; }
+.cr-chip-name { max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cr-chip-off { opacity: 0.45; }
+.cr-chip-off .cr-chip-name { text-decoration: line-through; }
+.cr-duel-chips { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; flex-wrap: wrap; }
+.cr-diff-table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+.cr-diff-table th, .cr-diff-table td { padding: 5px 8px; text-align: right; white-space: nowrap; border-bottom: 1px solid var(--border-color); font-variant-numeric: tabular-nums; }
+.cr-diff-table th { color: var(--text-muted); font-weight: 600; font-size: 0.7rem; }
+.cr-diff-table th:first-child, .cr-diff-table td:first-child { text-align: left; }
+.cr-diff-table td { color: var(--text-secondary); }
+.cr-diff-table tr:last-child td { border-bottom: none; }
+.cr-diff-table tbody tr:hover { background: rgba(127, 127, 127, 0.09); }
+.cr-diff-row { cursor: default; }
+.cr-diff-pos { color: var(--accent-green); font-weight: 600; }
+.cr-diff-neg { color: var(--accent-red); font-weight: 600; }
+
+@media (max-width: 768px) {
+    .cr-body, .cr-body-compare, .cr-body-duel { grid-template-columns: 1fr; }
+    .cr-chart-box { height: 250px; }
+    .cr-chart-box-lg { height: 270px; }
+    .cr-diff-col { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .cr-grade-badge { animation: none; transition: none; }
+    .cr-bar-fill { transition: none; }
+    .cr-axis-row, .cr-chip { transition: none; }
+}
+
 @media (max-width: 768px) {
     .pa-grid { grid-template-columns: 1fr; }
     .pa-chart-box { height: 230px; }

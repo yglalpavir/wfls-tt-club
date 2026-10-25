@@ -71,8 +71,10 @@ function initDataViz() {
 
     console.log('[DataViz] 成功获取球员列表:', players.length, '人');
     loadDataVizSettings().then(() => {
-        renderPlayerCheckboxes(); 
+        renderPlayerCheckboxes();
         renderCompareSelects();
+        // 雷达区块默认渲染实时榜前 2 名（须在 renderCompareSelects 填充下拉框之后）
+        if (typeof crInitVizRadar === 'function') crInitVizRadar();
         const dp = players.slice(0, Math.min(8, players.length));
         const defaultDataCount = parseInt(document.getElementById('pointsTrendDataCount')?.value) || 20;
         renderPointsTrend(dp, defaultDataCount); 
@@ -112,12 +114,18 @@ function initDataViz() {
         const dc = parseInt(document.getElementById('streamDataCount')?.value) || 20;
         renderRankStream(topN, dc);
     });
-    document.getElementById('applyCompare')?.addEventListener('click', () => { 
-        const pa = document.getElementById('playerASelect')?.value, pb = document.getElementById('playerBSelect')?.value; 
-        if (!pa || !pb) { alert(i18n[currentLang].data_viz_alert_two); return; } 
-        if (pa === pb) { alert(i18n[currentLang].data_viz_alert_diff); return; } 
+    document.getElementById('applyCompare')?.addEventListener('click', () => {
+        const pa = document.getElementById('playerASelect')?.value, pb = document.getElementById('playerBSelect')?.value;
+        if (!pa || !pb) { alert(i18n[currentLang].data_viz_alert_two); return; }
+        if (pa === pb) { alert(i18n[currentLang].data_viz_alert_diff); return; }
         lastVizComparePair = [pa, pb];
-        renderComparison(pa, pb); 
+        renderComparison(pa, pb);
+    });
+    document.getElementById('applyRadar')?.addEventListener('click', () => {
+        const pa = document.getElementById('crRadarPlayerA')?.value, pb = document.getElementById('crRadarPlayerB')?.value;
+        if (!pa && !pb) { alert(i18n[currentLang].radar_pick_players); return; }
+        if (pa && pb && pa === pb) { alert(i18n[currentLang].data_viz_alert_diff); return; }
+        if (typeof crMountVizRadar === 'function') crMountVizRadar(pa, pb);
     });
     console.log('[DataViz] 初始化完成');
 
@@ -228,10 +236,14 @@ function renderCompareSelects() {
     const sortedPlayers = [...players].sort((a, b) => (scoreMap[b] || 0) - (scoreMap[a] || 0));
     
     const opts = sortedPlayers.map(p => `<option value="${escapeHtml(String(p))}">${escapeHtml(playerDisplayName(String(p)))}</option>`).join(''); 
-    const sa = document.getElementById('playerASelect'), 
-          sb = document.getElementById('playerBSelect'); 
-    if (sa) sa.innerHTML = `<option value="">${escapeHtml(i18n[currentLang].data_viz_select_player_ph)}</option>` + opts; 
-    if (sb) sb.innerHTML = `<option value="">${escapeHtml(i18n[currentLang].data_viz_select_player_ph)}</option>` + opts; 
+    const sa = document.getElementById('playerASelect'),
+          sb = document.getElementById('playerBSelect'),
+          ra = document.getElementById('crRadarPlayerA'),
+          rb = document.getElementById('crRadarPlayerB');
+    if (sa) sa.innerHTML = `<option value="">${escapeHtml(i18n[currentLang].data_viz_select_player_ph)}</option>` + opts;
+    if (sb) sb.innerHTML = `<option value="">${escapeHtml(i18n[currentLang].data_viz_select_player_ph)}</option>` + opts;
+    if (ra) ra.innerHTML = `<option value="">${escapeHtml(i18n[currentLang].data_viz_select_player_ph)}</option>` + opts;
+    if (rb) rb.innerHTML = `<option value="">${escapeHtml(i18n[currentLang].data_viz_select_player_ph)}</option>` + opts;
     console.log('[DataViz] renderCompareSelects: 已加载', players.length, '名球员');
 }
 
@@ -825,7 +837,7 @@ function refreshDataVizNameLabels() {
         const span = cb.parentElement.querySelector('span');
         if (span) span.textContent = playerDisplayName(cb.value);
     });
-    ['playerASelect', 'playerBSelect', 'personalPlayerSelect'].forEach(id => {
+    ['playerASelect', 'playerBSelect', 'personalPlayerSelect', 'crRadarPlayerA', 'crRadarPlayerB'].forEach(id => {
         const sel = document.getElementById(id);
         if (!sel) return;
         const keep = sel.value;
@@ -843,6 +855,7 @@ function dataVizMainReapplyI18n() {
     const sdc = parseInt(document.getElementById('streamDataCount')?.value) || 20;
     if (rankStreamChart) renderRankStream(topN, sdc);
     if (lastVizComparePair) renderComparison(lastVizComparePair[0], lastVizComparePair[1]);
+    if (typeof crRerenderVizRadar === 'function') crRerenderVizRadar();
     const psel = document.getElementById('personalPlayerSelect');
     if (psel && psel.value) renderPersonalStats(psel.value);
     // 竞速帧的 label 在建帧时就烤进了 getNodeDisplayLabel() 的结果，
