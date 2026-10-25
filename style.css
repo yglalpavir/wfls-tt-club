@@ -1040,8 +1040,8 @@ html:lang(en) .hero-title {
 .page-hero-content { position: relative; z-index: 2; }
 .page-hero-content h1 { font-family: var(--font-en); font-size: clamp(2.2rem, 5vw, 3.5rem); color: #fff; font-weight: 800; letter-spacing: 2px; margin-bottom: 8px; }
 .page-hero-content p { color: rgba(255,255,255,0.7); font-size: 1rem; }
-.wtt-points-note { display: inline-flex; align-items: center; gap: 7px; margin-top: 14px; padding: 6px 14px; border: 1px solid rgba(255,255,255,0.32); border-radius: 999px; background: rgba(0,0,0,0.28); color: rgba(255,255,255,0.92); font-size: 0.84rem; line-height: 1.4; text-align: left; }
-.wtt-points-note i { color: rgba(255,255,255,0.62); font-size: 0.8rem; flex-shrink: 0; }
+.page-hero-content .wtt-points-note { margin-top: 12px; color: rgba(255,255,255,0.55); font-size: 0.84rem; letter-spacing: 0.3px; }
+.page-hero-content .wtt-points-note i { font-size: 0.78rem; margin-right: 6px; opacity: 0.75; }
 .ranking-page-hero { background: linear-gradient(135deg, #0a1628 0%, #1a0a0a 50%, #0d2a45 100%); }
 .dark-mode .ranking-page-hero { background: linear-gradient(135deg, #0d1117 0%, #1a1010 50%, #161b22 100%); }
 .competitions-page-hero { background: linear-gradient(135deg, #0a1628 0%, #1a0505 50%, #0d2a45 100%); }
@@ -3563,8 +3563,8 @@ a.hero-ball::before {
 .dark-mode .md-official { color: #0eb57e; background: rgba(4, 150, 105, .16); }
 
 .md-hero-meta { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px 24px; margin-bottom: 30px; }
-.md-hero-note { display: inline-flex; align-items: center; gap: 7px; margin-top: 14px; padding: 6px 14px; border: 1px solid rgba(253,253,253,0.32); border-radius: 999px; background: rgba(0,0,0,0.28); color: rgba(253,253,253,0.92); font-size: 0.8rem; line-height: 1.4; }
-.md-hero-note i { color: rgba(253,253,253,0.62); font-size: 0.76rem; flex-shrink: 0; }
+.md-hero-note { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 16px; color: rgba(253,253,253,0.55); font-size: 0.8rem; }
+.md-hero-note i { font-size: 0.76rem; opacity: 0.75; }
 .md-hero-meta-item { display: inline-flex; align-items: center; gap: 7px; font-size: .84rem; font-weight: 500; color: rgba(253, 253, 253, .8); }
 .md-hero-meta-item i { color: rgba(253, 253, 253, .5); font-size: .8rem; }
 
