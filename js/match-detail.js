@@ -481,6 +481,7 @@ function renderMatchDetail(m) {
                     <span class="md-official"><i class="fa-solid fa-circle-check"></i> ${T.md_official}</span>
                 </div>
                 <div class="md-hero-meta">${metaItems.join('')}</div>
+                ${MD_WTT ? `<div class="md-hero-note"><i class="fa-solid fa-circle-info"></i> ${T.wtt_club_points_note}</div>` : ''}
                 <div class="md-hero-score">
                     ${mdArenaSideHtml(m, 'w', T)}
                     <div class="md-center">${centerHtml}</div>
