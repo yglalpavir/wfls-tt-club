@@ -83,7 +83,7 @@
 
 ## 9. 后续可做（未自动执行）
 
-- **assoc.json 国籍补全**：2018–2021 出场球员中约 1009 人不在 ms/ws assoc.json（该表键为注册表风格姓名，需身份级匹配后追加）。清单已导出到 `tools/.bornan_catalog/assoc_missing.json`，确认后可批量追加（display-only，无算分影响）。
+- ~~assoc.json 国籍补全~~ **已完成（2026-10-27，`9d37910`）**：`tools/assoc_bornan_append.py` 从 Bornan 缓存提取球员会籍（键 = 导入时的仓库写法，与 score-log 对齐；团体球员取自 tie 详情；跨协会配对 Org=MIX 与轮空占位 BYE 排除；国名按既有表内同代码多数派写法归一，如 KOR→「Korea Republic」）。ms 追加 1269 条、ws 追加 973 条（source `bornan-2018-2021`，diff 为纯追加）。其中 43 条无对应比赛记录——系抽签入围但未出场的球员，国籍有效、属无害冗余。
 - 2006–2012 等平台无存档的年段：若日后拿到其它合规来源，可另行立项（本次按约定不引入第二数据源）。
 
 ## 10. 提交记录
@@ -93,5 +93,6 @@
 - `4e9d2db` data(wtt): 导入 2018-2020 世界巡回赛（白金/常规/挑战赛）与总决赛（+8441 场，Bornan）
 - `32b49db` data(wtt): 导入 2018-2021 洲际锦标赛与洲际杯缺口（+4696 场，Bornan）
 - `57767c7` data(wtt): 导入 2018-2020 ITTF Challenge 站（+8832 场，Bornan）
+- `9d37910` data(wtt): assoc.json 补充 2018-2021 Bornan 时代球员国籍（ms +1269 / ws +973）
 
 工具（本地，gitignored）：`tools/bornan_catalog.py`（目录枚举/分类）、`tools/import_ittf_era.py`（导入器，含 952 条姓名覆盖与缓存断点续传）。
