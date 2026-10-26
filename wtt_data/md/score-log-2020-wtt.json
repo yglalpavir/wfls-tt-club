@@ -822,5 +822,1024 @@
     "类型": "法国甲级联赛",
     "胜者": "Nima ALAMIAN/Romain RUIZ",
     "负者": "Adrien MATTENET/Patrick BAUM"
+  },
+  {
+    "日期": "2020-01-29",
+    "类型": "ittf白金赛",
+    "胜者": "Dimitrij OVTCHAROV/Patrick FRANZISKA",
+    "负者": "KWAN Man Ho/NG Pak Nam",
+    "比分": "3-1",
+    "局分": [
+      "12-10",
+      "11-6",
+      "16-18",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2020-01-29",
+    "类型": "ittf白金赛",
+    "胜者": "FAN Zhendong/ZHOU Yu",
+    "负者": "Aleksandar KARAKASEVIC/Lubomir PISTEJ",
+    "比分": "3-1",
+    "局分": [
+      "11-5",
+      "11-4",
+      "7-11",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2020-01-29",
+    "类型": "ittf白金赛",
+    "胜者": "Ricardo WALTHER/Timo BOLL",
+    "负者": "Eric JOUTI/Thiago MONTEIRO",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-4",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2020-01-29",
+    "类型": "ittf白金赛",
+    "胜者": "Florent LAMBIET/Martin ALLEGRO",
+    "负者": "Gustavo TSUBOI/Vitor ISHIY",
+    "比分": "3-1",
+    "局分": [
+      "11-5",
+      "8-11",
+      "11-5",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2020-01-29",
+    "类型": "ittf白金赛",
+    "胜者": "Cedric NUYTINCK/Jakub DYJAS",
+    "负者": "Anton KALLBERG/Jon PERSSON",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-5",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2020-01-29",
+    "类型": "ittf白金赛",
+    "胜者": "CHO Daeseong/JANG Woojin",
+    "负者": "Pavel SIRUCEK/Tomas POLANSKY",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "14-12",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2020-01-29",
+    "类型": "ittf白金赛",
+    "胜者": "Shunsuke TOGAMI/Yukiya UDA",
+    "负者": "Benedek OLAH/Robin DEVOS",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "11-7",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2020-01-29",
+    "类型": "ittf白金赛",
+    "胜者": "HO Kwan Kit/LAM Siu Hang",
+    "负者": "Ahmed SALEH/Khalid ASSAR",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-9",
+      "11-2"
+    ]
+  },
+  {
+    "日期": "2020-01-30",
+    "类型": "ittf白金赛",
+    "胜者": "JEOUNG Youngsik/LEE Sangsu",
+    "负者": "Ricardo WALTHER/Timo BOLL",
+    "比分": "3-1",
+    "局分": [
+      "11-6",
+      "11-5",
+      "8-11",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2020-01-30",
+    "类型": "ittf白金赛",
+    "胜者": "FAN Zhendong/ZHOU Yu",
+    "负者": "Adam SZUDI/Nandor ECSEKI",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-4",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2020-01-30",
+    "类型": "ittf白金赛",
+    "胜者": "Cedric NUYTINCK/Jakub DYJAS",
+    "负者": "Benedikt DUDA/Dang QIU",
+    "比分": "3-1",
+    "局分": [
+      "4-11",
+      "11-5",
+      "11-7",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2020-01-30",
+    "类型": "ittf白金赛",
+    "胜者": "Shunsuke TOGAMI/Yukiya UDA",
+    "负者": "Daniel HABESOHN/Robert GARDOS",
+    "比分": "3-1",
+    "局分": [
+      "11-3",
+      "8-11",
+      "11-9",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2020-01-30",
+    "类型": "ittf白金赛",
+    "胜者": "Dimitrij OVTCHAROV/Patrick FRANZISKA",
+    "负者": "Alvaro ROBLES/Ovidiu IONESCU",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "11-1",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2020-01-30",
+    "类型": "ittf白金赛",
+    "胜者": "LIN Gaoyuan/MA Long",
+    "负者": "HO Kwan Kit/LAM Siu Hang",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-6",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2020-01-30",
+    "类型": "ittf白金赛",
+    "胜者": "CHO Daeseong/JANG Woojin",
+    "负者": "LIAO Cheng-Ting/LIN Yun-Ju",
+    "比分": "3-2",
+    "局分": [
+      "10-12",
+      "11-6",
+      "6-11",
+      "12-10",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2020-01-30",
+    "类型": "ittf白金赛",
+    "胜者": "Florent LAMBIET/Martin ALLEGRO",
+    "负者": "CHEN Chien-An/CHUANG Chih-Yuan",
+    "比分": "3-2",
+    "局分": [
+      "14-12",
+      "11-3",
+      "9-11",
+      "10-12",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2020-01-31",
+    "类型": "ittf白金赛",
+    "胜者": "Cedric NUYTINCK/Jakub DYJAS",
+    "负者": "Dimitrij OVTCHAROV/Patrick FRANZISKA",
+    "比分": "3-2",
+    "局分": [
+      "12-10",
+      "13-11",
+      "7-11",
+      "9-11",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2020-01-31",
+    "类型": "ittf白金赛",
+    "胜者": "JEOUNG Youngsik/LEE Sangsu",
+    "负者": "FAN Zhendong/ZHOU Yu",
+    "比分": "3-1",
+    "局分": [
+      "7-11",
+      "11-7",
+      "11-7",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2020-01-31",
+    "类型": "ittf白金赛",
+    "胜者": "LIN Gaoyuan/MA Long",
+    "负者": "Florent LAMBIET/Martin ALLEGRO",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-7",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2020-01-31",
+    "类型": "ittf白金赛",
+    "胜者": "CHO Daeseong/JANG Woojin",
+    "负者": "Shunsuke TOGAMI/Yukiya UDA",
+    "比分": "3-2",
+    "局分": [
+      "11-3",
+      "9-11",
+      "11-8",
+      "8-11",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2020-01-31",
+    "类型": "ittf白金赛",
+    "胜者": "LIN Gaoyuan/MA Long",
+    "负者": "Cedric NUYTINCK/Jakub DYJAS",
+    "比分": "3-2",
+    "局分": [
+      "11-9",
+      "12-10",
+      "6-11",
+      "6-11",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2020-01-31",
+    "类型": "ittf白金赛",
+    "胜者": "CHO Daeseong/JANG Woojin",
+    "负者": "JEOUNG Youngsik/LEE Sangsu",
+    "比分": "3-1",
+    "局分": [
+      "11-8",
+      "11-5",
+      "7-11",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2020-02-01",
+    "类型": "ittf白金赛",
+    "胜者": "CHO Daeseong/JANG Woojin",
+    "负者": "LIN Gaoyuan/MA Long",
+    "比分": "3-2",
+    "局分": [
+      "10-12",
+      "15-13",
+      "12-14",
+      "14-12",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "Harmeet DESAI/Manav Vikash THAKKAR",
+    "负者": "Csaba ANDRAS/Oliver BOTH",
+    "比分": "3-1",
+    "局分": [
+      "11-8",
+      "11-8",
+      "9-11",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "Padasak TANVIRIYAVECHAKUL/Supanut WISUTMAYTHANGKOON",
+    "负者": "Kaiyang LU/Patrik JUHASZ",
+    "比分": "3-1",
+    "局分": [
+      "9-11",
+      "11-4",
+      "11-5",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "Paul DRINKHALL/Samuel WALKER",
+    "负者": "HUANG Yan-Cheng/SUN Chia-Hung",
+    "比分": "3-2",
+    "局分": [
+      "11-8",
+      "13-11",
+      "7-11",
+      "9-11",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "Jon PERSSON/Truls MOREGARD",
+    "负者": "Darko JORGIC/Deni KOZUL",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-9",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "Abdullah YIGENLER/Ibrahim GUNDUZ",
+    "负者": "Liam PITCHFORD/Tom JARVIS",
+    "比分": "3-1",
+    "局分": [
+      "3-11",
+      "11-7",
+      "11-9",
+      "11-2"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "Anton KALLBERG/Elias RANEFUR",
+    "负者": "KANG Jinho/KIM Woojin",
+    "比分": "3-1",
+    "局分": [
+      "11-8",
+      "13-11",
+      "7-11",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "Eric JOUTI/Vitor ISHIY",
+    "负者": "Jordy PICCOLIN/Leonardo MUTTI",
+    "比分": "3-2",
+    "局分": [
+      "6-11",
+      "5-11",
+      "11-9",
+      "12-10",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "Daniel GONZALEZ/Gaston ALTO",
+    "负者": "Adrian MORATO/Carlos FRANCO",
+    "比分": "3-1",
+    "局分": [
+      "11-4",
+      "11-8",
+      "9-11",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "Daniele PINTO/Matteo MUTTI",
+    "负者": "Bastien REMBERT/Jules ROLLAND",
+    "比分": "3-1",
+    "局分": [
+      "11-3",
+      "11-5",
+      "9-11",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "Marko JEVTOVIC/Zsolt PETO",
+    "负者": "Carlos CABALLERO/Jesus CANTERO",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "15-13",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "Pavel SIRUCEK/Tomas POLANSKY",
+    "负者": "Aleksandr KHANIN/Pavel PLATONOV",
+    "比分": "3-2",
+    "局分": [
+      "18-16",
+      "4-11",
+      "11-9",
+      "8-11",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "Aleksandar KARAKASEVIC/Lubomir PISTEJ",
+    "负者": "Alexandre CASSIN/Leo DE NODREST",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-3",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "Alex NAUMI/Benedek OLAH",
+    "负者": "Alexander VALUCH/Tibor SPANIK",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-9",
+      "11-2"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "Cristian PLETEA/Rares SIPOS",
+    "负者": "CHEN Alexander/David SERDAROGLU",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-7",
+      "15-13"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "Nima ALAMIAN/Noshad ALAMIYAN",
+    "负者": "CHEN Diogo/Diogo CARVALHO",
+    "比分": "3-1",
+    "局分": [
+      "11-5",
+      "11-8",
+      "7-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2020-02-19",
+    "类型": "ittf常规赛",
+    "胜者": "Sathiyan GNANASEKARAN/Sharath Kamal ACHANTA",
+    "负者": "Abdullah YIGENLER/Ibrahim GUNDUZ",
+    "比分": "3-1",
+    "局分": [
+      "9-11",
+      "11-4",
+      "11-8",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2020-02-19",
+    "类型": "ittf常规赛",
+    "胜者": "Anton KALLBERG/Elias RANEFUR",
+    "负者": "Paul DRINKHALL/Samuel WALKER",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-3",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2020-02-19",
+    "类型": "ittf常规赛",
+    "胜者": "Harmeet DESAI/Manav Vikash THAKKAR",
+    "负者": "Jon PERSSON/Truls MOREGARD",
+    "比分": "3-2",
+    "局分": [
+      "11-7",
+      "8-11",
+      "6-11",
+      "11-5",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2020-02-19",
+    "类型": "ittf常规赛",
+    "胜者": "Eric JOUTI/Vitor ISHIY",
+    "负者": "Padasak TANVIRIYAVECHAKUL/Supanut WISUTMAYTHANGKOON",
+    "比分": "3-1",
+    "局分": [
+      "11-9",
+      "11-8",
+      "8-11",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2020-02-19",
+    "类型": "ittf常规赛",
+    "胜者": "Daniel GONZALEZ/Gaston ALTO",
+    "负者": "Daniele PINTO/Matteo MUTTI",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-7",
+      "11-1"
+    ]
+  },
+  {
+    "日期": "2020-02-19",
+    "类型": "ittf常规赛",
+    "胜者": "Pavel SIRUCEK/Tomas POLANSKY",
+    "负者": "Marko JEVTOVIC/Zsolt PETO",
+    "比分": "3-2",
+    "局分": [
+      "11-5",
+      "11-5",
+      "3-11",
+      "9-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2020-02-19",
+    "类型": "ittf常规赛",
+    "胜者": "Aleksandar KARAKASEVIC/Lubomir PISTEJ",
+    "负者": "Alex NAUMI/Benedek OLAH",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-5",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2020-02-19",
+    "类型": "ittf常规赛",
+    "胜者": "Cristian PLETEA/Rares SIPOS",
+    "负者": "Nima ALAMIAN/Noshad ALAMIYAN",
+    "比分": "3-2",
+    "局分": [
+      "13-11",
+      "11-7",
+      "5-11",
+      "1-11",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2020-02-20",
+    "类型": "ittf常规赛",
+    "胜者": "Adam SZUDI/Nandor ECSEKI",
+    "负者": "Anton KALLBERG/Elias RANEFUR",
+    "比分": "3-1",
+    "局分": [
+      "11-5",
+      "13-15",
+      "14-12",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2020-02-20",
+    "类型": "ittf常规赛",
+    "胜者": "LAM Siu Hang/NG Pak Nam",
+    "负者": "Harmeet DESAI/Manav Vikash THAKKAR",
+    "比分": "3-2",
+    "局分": [
+      "13-11",
+      "11-8",
+      "11-13",
+      "6-11",
+      "11-2"
+    ]
+  },
+  {
+    "日期": "2020-02-20",
+    "类型": "ittf常规赛",
+    "胜者": "Sathiyan GNANASEKARAN/Sharath Kamal ACHANTA",
+    "负者": "Shunsuke TOGAMI/Yukiya UDA",
+    "比分": "3-2",
+    "局分": [
+      "11-6",
+      "11-8",
+      "8-11",
+      "9-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2020-02-20",
+    "类型": "ittf常规赛",
+    "胜者": "HO Kwan Kit/WONG Chun Ting",
+    "负者": "Cristian PLETEA/Rares SIPOS",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-7",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2020-02-20",
+    "类型": "ittf常规赛",
+    "胜者": "Benedikt DUDA/Patrick FRANZISKA",
+    "负者": "Pavel SIRUCEK/Tomas POLANSKY",
+    "比分": "3-1",
+    "局分": [
+      "6-11",
+      "11-6",
+      "11-4",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2020-02-20",
+    "类型": "ittf常规赛",
+    "胜者": "CHEN Chien-An/CHUANG Chih-Yuan",
+    "负者": "Daniel GONZALEZ/Gaston ALTO",
+    "比分": "3-1",
+    "局分": [
+      "5-11",
+      "11-6",
+      "12-10",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2020-02-20",
+    "类型": "ittf常规赛",
+    "胜者": "Eric JOUTI/Vitor ISHIY",
+    "负者": "Florent LAMBIET/Martin ALLEGRO",
+    "比分": "3-0",
+    "局分": [
+      "12-10",
+      "11-9",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2020-02-20",
+    "类型": "ittf常规赛",
+    "胜者": "Cedric NUYTINCK/Jakub DYJAS",
+    "负者": "Aleksandar KARAKASEVIC/Lubomir PISTEJ",
+    "比分": "3-0",
+    "局分": [
+      "14-12",
+      "14-12",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2020-02-21",
+    "类型": "ittf常规赛",
+    "胜者": "Sathiyan GNANASEKARAN/Sharath Kamal ACHANTA",
+    "负者": "Adam SZUDI/Nandor ECSEKI",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-7",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2020-02-21",
+    "类型": "ittf常规赛",
+    "胜者": "Benedikt DUDA/Patrick FRANZISKA",
+    "负者": "Eric JOUTI/Vitor ISHIY",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-6",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2020-02-21",
+    "类型": "ittf常规赛",
+    "胜者": "Cedric NUYTINCK/Jakub DYJAS",
+    "负者": "CHEN Chien-An/CHUANG Chih-Yuan",
+    "比分": "3-2",
+    "局分": [
+      "11-8",
+      "5-11",
+      "12-10",
+      "8-11",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2020-02-21",
+    "类型": "ittf常规赛",
+    "胜者": "HO Kwan Kit/WONG Chun Ting",
+    "负者": "LAM Siu Hang/NG Pak Nam",
+    "比分": "3-1",
+    "局分": [
+      "11-7",
+      "7-11",
+      "11-7",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2020-02-21",
+    "类型": "ittf常规赛",
+    "胜者": "Sathiyan GNANASEKARAN/Sharath Kamal ACHANTA",
+    "负者": "HO Kwan Kit/WONG Chun Ting",
+    "比分": "3-2",
+    "局分": [
+      "11-7",
+      "12-10",
+      "4-11",
+      "4-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2020-02-21",
+    "类型": "ittf常规赛",
+    "胜者": "Benedikt DUDA/Patrick FRANZISKA",
+    "负者": "Cedric NUYTINCK/Jakub DYJAS",
+    "比分": "3-1",
+    "局分": [
+      "11-4",
+      "11-5",
+      "8-11",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2020-02-22",
+    "类型": "ittf常规赛",
+    "胜者": "Benedikt DUDA/Patrick FRANZISKA",
+    "负者": "Sathiyan GNANASEKARAN/Sharath Kamal ACHANTA",
+    "比分": "3-1",
+    "局分": [
+      "11-5",
+      "11-9",
+      "8-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2020-03-04",
+    "类型": "ittf白金赛",
+    "胜者": "Liam PITCHFORD/Paul DRINKHALL",
+    "负者": "Marko JEVTOVIC/Zsolt PETO",
+    "比分": "3-2",
+    "局分": [
+      "10-12",
+      "7-11",
+      "11-9",
+      "11-8",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2020-03-04",
+    "类型": "ittf白金赛",
+    "胜者": "LAM Siu Hang/NG Pak Nam",
+    "负者": "CHEW Zhe Yu Clarence/PANG Yew En Koen",
+    "比分": "3-0",
+    "局分": [
+      "14-12",
+      "11-9",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2020-03-04",
+    "类型": "ittf白金赛",
+    "胜者": "Amalraj ANTHONY/Sathiyan GNANASEKARAN",
+    "负者": "Aleksandr KHANIN/Pavel PLATONOV",
+    "比分": "3-0",
+    "局分": [
+      "12-10",
+      "11-7",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2020-03-04",
+    "类型": "ittf白金赛",
+    "胜者": "Aleksandar KARAKASEVIC/Lubomir PISTEJ",
+    "负者": "Harmeet DESAI/Sushmit SRIRAM",
+    "比分": "3-2",
+    "局分": [
+      "9-11",
+      "16-14",
+      "8-11",
+      "11-5",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2020-03-05",
+    "类型": "ittf白金赛",
+    "胜者": "MA Long/XU Xin",
+    "负者": "Anton KALLBERG/Jon PERSSON",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-4",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2020-03-05",
+    "类型": "ittf白金赛",
+    "胜者": "Masataka MORIZONO/Tomokazu HARIMOTO",
+    "负者": "Florent LAMBIET/Martin ALLEGRO",
+    "比分": "3-0",
+    "局分": [
+      "12-10",
+      "11-8",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2020-03-05",
+    "类型": "ittf白金赛",
+    "胜者": "FAN Zhendong/WANG Chuqin",
+    "负者": "Aleksandar KARAKASEVIC/Lubomir PISTEJ",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-3",
+      "11-1"
+    ]
+  },
+  {
+    "日期": "2020-03-05",
+    "类型": "ittf白金赛",
+    "胜者": "Emmanuel LEBESSON/Tristan FLORE",
+    "负者": "Kristian KARLSSON/Truls MOREGARD",
+    "比分": "3-2",
+    "局分": [
+      "11-7",
+      "9-11",
+      "11-8",
+      "8-11",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2020-03-05",
+    "类型": "ittf白金赛",
+    "胜者": "Liam PITCHFORD/Paul DRINKHALL",
+    "负者": "Khalil AL-MOHANNADI Ahmad/Mohammed ABDULWAHHAB",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-6",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2020-03-05",
+    "类型": "ittf白金赛",
+    "胜者": "Shunsuke TOGAMI/Yukiya UDA",
+    "负者": "Alexandre CASSIN/Can AKKUZU",
+    "比分": "3-1",
+    "局分": [
+      "11-9",
+      "11-9",
+      "9-11",
+      "11-1"
+    ]
+  },
+  {
+    "日期": "2020-03-05",
+    "类型": "ittf白金赛",
+    "胜者": "HO Kwan Kit/WONG Chun Ting",
+    "负者": "Amalraj ANTHONY/Sathiyan GNANASEKARAN",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "11-3",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2020-03-06",
+    "类型": "ittf白金赛",
+    "胜者": "MA Long/XU Xin",
+    "负者": "Masataka MORIZONO/Tomokazu HARIMOTO",
+    "比分": "3-2",
+    "局分": [
+      "11-6",
+      "6-11",
+      "11-7",
+      "12-14",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2020-03-06",
+    "类型": "ittf白金赛",
+    "胜者": "FAN Zhendong/WANG Chuqin",
+    "负者": "Emmanuel LEBESSON/Tristan FLORE",
+    "比分": "3-1",
+    "局分": [
+      "8-11",
+      "11-2",
+      "11-5",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2020-03-06",
+    "类型": "ittf白金赛",
+    "胜者": "HO Kwan Kit/WONG Chun Ting",
+    "负者": "Shunsuke TOGAMI/Yukiya UDA",
+    "比分": "3-2",
+    "局分": [
+      "11-5",
+      "2-11",
+      "8-11",
+      "11-5",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2020-03-06",
+    "类型": "ittf白金赛",
+    "胜者": "Liam PITCHFORD/Paul DRINKHALL",
+    "负者": "LAM Siu Hang/NG Pak Nam",
+    "比分": "3-1",
+    "局分": [
+      "11-7",
+      "11-7",
+      "9-11",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2020-03-06",
+    "类型": "ittf白金赛",
+    "胜者": "MA Long/XU Xin",
+    "负者": "FAN Zhendong/WANG Chuqin",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-9",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2020-03-06",
+    "类型": "ittf白金赛",
+    "胜者": "Liam PITCHFORD/Paul DRINKHALL",
+    "负者": "HO Kwan Kit/WONG Chun Ting",
+    "比分": "3-2",
+    "局分": [
+      "11-7",
+      "12-10",
+      "4-11",
+      "9-11",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2020-03-07",
+    "类型": "ittf白金赛",
+    "胜者": "MA Long/XU Xin",
+    "负者": "Liam PITCHFORD/Paul DRINKHALL",
+    "比分": "3-1",
+    "局分": [
+      "11-8",
+      "8-11",
+      "11-1",
+      "11-6"
+    ]
   }
 ]

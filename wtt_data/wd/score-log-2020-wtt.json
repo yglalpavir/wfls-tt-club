@@ -793,5 +793,913 @@
     "胜者": "Laura GASNIER/Stephanie LOEUILLETTE",
     "负者": "Oceane GUISNEL/ZHENG Yuan",
     "比分": "3-1"
+  },
+  {
+    "日期": "2020-01-29",
+    "类型": "ittf白金赛",
+    "胜者": "CHOI Hyojoo/SHIN Yubin",
+    "负者": "HAN Ying/SHAN Xiaona",
+    "比分": "3-1",
+    "局分": [
+      "11-8",
+      "11-7",
+      "7-11",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2020-01-29",
+    "类型": "ittf白金赛",
+    "胜者": "Daniela DODEAN MONTEIRO/Elizabeta SAMARA",
+    "负者": "Jia Nan YUAN/Stephanie LOEUILLETTE",
+    "比分": "3-1",
+    "局分": [
+      "11-9",
+      "11-5",
+      "9-11",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2020-01-29",
+    "类型": "ittf白金赛",
+    "胜者": "HUANG Yu-Wen/LIU Hsing-Yin",
+    "负者": "Galia DVORAK/Sofia-Xuan ZHANG",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-3",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2020-01-29",
+    "类型": "ittf白金赛",
+    "胜者": "DOO Hoi Kem/ZHU Chengzhu",
+    "负者": "Debora VIVARELLI/Giorgia PICCOLIN",
+    "比分": "3-0",
+    "局分": [
+      "14-12",
+      "11-2",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2020-01-29",
+    "类型": "ittf白金赛",
+    "胜者": "LIN Ye/YU Mengyu",
+    "负者": "Dina MESHREF/Irina CIOBANU",
+    "比分": "3-1",
+    "局分": [
+      "11-9",
+      "11-7",
+      "10-12",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2020-01-29",
+    "类型": "ittf白金赛",
+    "胜者": "Polina MIKHAILOVA/Yana NOSKOVA",
+    "负者": "Daria TRIGOLOS/Nadezhda BOGDANOVA",
+    "比分": "3-2",
+    "局分": [
+      "5-11",
+      "8-11",
+      "11-4",
+      "13-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2020-01-29",
+    "类型": "ittf白金赛",
+    "胜者": "Laura GASNIER/Marie MIGOT",
+    "负者": "Dora MADARASZ/Szandra PERGEL",
+    "比分": "3-2",
+    "局分": [
+      "11-4",
+      "11-6",
+      "4-11",
+      "6-11",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2020-01-29",
+    "类型": "ittf白金赛",
+    "胜者": "Nanthana KOMWONG/Orawan PARANANG",
+    "负者": "Lily ZHANG/WU Yue",
+    "比分": "3-1",
+    "局分": [
+      "4-11",
+      "11-9",
+      "11-9",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2020-01-30",
+    "类型": "ittf白金赛",
+    "胜者": "Nina MITTELHAM/Petrissa SOLJA",
+    "负者": "Polina MIKHAILOVA/Yana NOSKOVA",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "12-10",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2020-01-30",
+    "类型": "ittf白金赛",
+    "胜者": "Kasumi ISHIKAWA/Miu HIRANO",
+    "负者": "Laura GASNIER/Marie MIGOT",
+    "比分": "3-1",
+    "局分": [
+      "11-3",
+      "11-6",
+      "9-11",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2020-01-30",
+    "类型": "ittf白金赛",
+    "胜者": "LEE Ho Ching/SOO Wai Yam Minnie",
+    "负者": "HUANG Yu-Wen/LIU Hsing-Yin",
+    "比分": "3-2",
+    "局分": [
+      "9-11",
+      "11-5",
+      "8-11",
+      "12-10",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2020-01-30",
+    "类型": "ittf白金赛",
+    "胜者": "CHOI Hyojoo/SHIN Yubin",
+    "负者": "Barbora BALAZOVA/Hana MATELOVA",
+    "比分": "3-1",
+    "局分": [
+      "7-11",
+      "11-8",
+      "11-9",
+      "14-12"
+    ]
+  },
+  {
+    "日期": "2020-01-30",
+    "类型": "ittf白金赛",
+    "胜者": "DING Ning/SUN Yingsha",
+    "负者": "Daniela DODEAN MONTEIRO/Elizabeta SAMARA",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-6",
+      "17-15"
+    ]
+  },
+  {
+    "日期": "2020-01-30",
+    "类型": "ittf白金赛",
+    "胜者": "CHEN Szu-Yu/CHENG Hsien-Tzu",
+    "负者": "DOO Hoi Kem/ZHU Chengzhu",
+    "比分": "3-2",
+    "局分": [
+      "11-2",
+      "9-11",
+      "12-14",
+      "11-8",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2020-01-30",
+    "类型": "ittf白金赛",
+    "胜者": "CHEN Meng/WANG Manyu",
+    "负者": "Nanthana KOMWONG/Orawan PARANANG",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-2",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2020-01-31",
+    "类型": "ittf白金赛",
+    "胜者": "CHEN Meng/WANG Manyu",
+    "负者": "LEE Ho Ching/SOO Wai Yam Minnie",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-5",
+      "11-2"
+    ]
+  },
+  {
+    "日期": "2020-01-31",
+    "类型": "ittf白金赛",
+    "胜者": "Nina MITTELHAM/Petrissa SOLJA",
+    "负者": "CHOI Hyojoo/SHIN Yubin",
+    "比分": "3-1",
+    "局分": [
+      "16-14",
+      "4-11",
+      "13-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2020-01-31",
+    "类型": "ittf白金赛",
+    "胜者": "DING Ning/SUN Yingsha",
+    "负者": "LIN Ye/YU Mengyu",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-9",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2020-01-31",
+    "类型": "ittf白金赛",
+    "胜者": "Kasumi ISHIKAWA/Miu HIRANO",
+    "负者": "CHEN Szu-Yu/CHENG Hsien-Tzu",
+    "比分": "3-1",
+    "局分": [
+      "11-2",
+      "11-7",
+      "9-11",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2020-01-31",
+    "类型": "ittf白金赛",
+    "胜者": "CHEN Meng/WANG Manyu",
+    "负者": "Nina MITTELHAM/Petrissa SOLJA",
+    "比分": "3-1",
+    "局分": [
+      "11-4",
+      "7-11",
+      "15-13",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2020-01-31",
+    "类型": "ittf白金赛",
+    "胜者": "Kasumi ISHIKAWA/Miu HIRANO",
+    "负者": "DING Ning/SUN Yingsha",
+    "比分": "3-1",
+    "局分": [
+      "10-12",
+      "11-8",
+      "11-7",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2020-02-01",
+    "类型": "ittf白金赛",
+    "胜者": "CHEN Meng/WANG Manyu",
+    "负者": "Kasumi ISHIKAWA/Miu HIRANO",
+    "比分": "3-1",
+    "局分": [
+      "11-7",
+      "8-11",
+      "11-7",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "Nina MITTELHAM/SHAN Xiaona",
+    "负者": "Bernadett BALINT/Mercedes NAGYVARADI",
+    "比分": "3-0",
+    "局分": [
+      "13-11",
+      "11-6",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "Anna WEGRZYN/Katarzyna WEGRZYN",
+    "负者": "Debora VIVARELLI/Giorgia PICCOLIN",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "12-10",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "Filippa BERGAND/Linda BERGSTROM",
+    "负者": "Daria TRIGOLOS/Nadezhda BOGDANOVA",
+    "比分": "3-2",
+    "局分": [
+      "11-7",
+      "11-9",
+      "8-11",
+      "9-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "Fu YU/Jieni SHAO",
+    "负者": "Andrea TODOROVIC/Tijana JOKIC",
+    "比分": "3-0",
+    "局分": [
+      "11-1",
+      "11-5",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "Jinnipa SAWETTABUT/Nanthana KOMWONG",
+    "负者": "Dorina SREBRNJAK/Mateja JEGER",
+    "比分": "3-1",
+    "局分": [
+      "4-11",
+      "11-8",
+      "11-4",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "Aikaterini TOLIOU/Dina MESHREF",
+    "负者": "Agata ZAKRZEWSKA/Gabriela DYSZKIEWICZ",
+    "比分": "3-1",
+    "局分": [
+      "11-4",
+      "6-11",
+      "11-8",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "Aneta SIRUCKOVA/Karin ADAMKOVA",
+    "负者": "Lisa LUNG/Margo DEGRAEF",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "11-8",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "Bruna TAKAHASHI/Jessica YAMADA",
+    "负者": "Krittwika ROY/Sutirtha MUKHERJEE",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-9",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "HUANG Yu-Wen/LI Yu-Jhun",
+    "负者": "Andrea PAVLOVIC/Solomiya BRATEYKO",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-7",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "Karoline MISCHEK/Tin-Tin HO",
+    "负者": "Ana CODINA/Camila ARGUELLES",
+    "比分": "3-1",
+    "局分": [
+      "11-5",
+      "10-12",
+      "11-4",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "Izabela LUPULESKU/Sabina SURJAN",
+    "负者": "Ozge YILMAZ/Sibel ALTINKAYA",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-3",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2020-02-18",
+    "类型": "ittf常规赛",
+    "胜者": "Chantal MANTZ/Yuan WAN",
+    "负者": "Candela MOLERO/Nathalie MARCHETTI",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-4",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2020-02-19",
+    "类型": "ittf常规赛",
+    "胜者": "Elizabeta SAMARA/Irina CIOBANU",
+    "负者": "Anna WEGRZYN/Katarzyna WEGRZYN",
+    "比分": "3-1",
+    "局分": [
+      "11-13",
+      "11-7",
+      "11-8",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2020-02-19",
+    "类型": "ittf常规赛",
+    "胜者": "Aikaterini TOLIOU/Dina MESHREF",
+    "负者": "Daniela ORTEGA/Paulina VEGA",
+    "比分": "3-2",
+    "局分": [
+      "11-7",
+      "11-5",
+      "7-11",
+      "8-11",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2020-02-19",
+    "类型": "ittf常规赛",
+    "胜者": "Fu YU/Jieni SHAO",
+    "负者": "Filippa BERGAND/Linda BERGSTROM",
+    "比分": "3-1",
+    "局分": [
+      "11-8",
+      "9-11",
+      "11-6",
+      "16-14"
+    ]
+  },
+  {
+    "日期": "2020-02-19",
+    "类型": "ittf常规赛",
+    "胜者": "Caroline KUMAHARA/Lily ZHANG",
+    "负者": "Jinnipa SAWETTABUT/Nanthana KOMWONG",
+    "比分": "3-1",
+    "局分": [
+      "11-4",
+      "11-8",
+      "14-16",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2020-02-19",
+    "类型": "ittf常规赛",
+    "胜者": "Nina MITTELHAM/SHAN Xiaona",
+    "负者": "Aneta SIRUCKOVA/Karin ADAMKOVA",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-5",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2020-02-19",
+    "类型": "ittf常规赛",
+    "胜者": "HUANG Yu-Wen/LI Yu-Jhun",
+    "负者": "Bruna TAKAHASHI/Jessica YAMADA",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-8",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2020-02-19",
+    "类型": "ittf常规赛",
+    "胜者": "Karoline MISCHEK/Tin-Tin HO",
+    "负者": "Izabela LUPULESKU/Sabina SURJAN",
+    "比分": "3-1",
+    "局分": [
+      "11-7",
+      "5-11",
+      "11-5",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2020-02-19",
+    "类型": "ittf常规赛",
+    "胜者": "Chantal MANTZ/Yuan WAN",
+    "负者": "Audrey ZARIF/Stephanie LOEUILLETTE",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-7",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2020-02-20",
+    "类型": "ittf常规赛",
+    "胜者": "Fu YU/Jieni SHAO",
+    "负者": "Dora MADARASZ/Szandra PERGEL",
+    "比分": "3-2",
+    "局分": [
+      "11-6",
+      "9-11",
+      "13-11",
+      "7-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2020-02-20",
+    "类型": "ittf常规赛",
+    "胜者": "Orawan PARANANG/Suthasini SAWETTABUT",
+    "负者": "Caroline KUMAHARA/Lily ZHANG",
+    "比分": "3-1",
+    "局分": [
+      "14-12",
+      "11-6",
+      "9-11",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2020-02-20",
+    "类型": "ittf常规赛",
+    "胜者": "Kasumi ISHIKAWA/Miu HIRANO",
+    "负者": "Aikaterini TOLIOU/Dina MESHREF",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "11-5",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2020-02-20",
+    "类型": "ittf常规赛",
+    "胜者": "CHEN Szu-Yu/CHENG Hsien-Tzu",
+    "负者": "HUANG Yu-Wen/LI Yu-Jhun",
+    "比分": "3-1",
+    "局分": [
+      "11-13",
+      "11-7",
+      "11-8",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2020-02-20",
+    "类型": "ittf常规赛",
+    "胜者": "Chantal MANTZ/Yuan WAN",
+    "负者": "Barbora BALAZOVA/Hana MATELOVA",
+    "比分": "3-2",
+    "局分": [
+      "11-3",
+      "5-11",
+      "5-11",
+      "15-13",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2020-02-20",
+    "类型": "ittf常规赛",
+    "胜者": "DOO Hoi Kem/LEE Ho Ching",
+    "负者": "Elizabeta SAMARA/Irina CIOBANU",
+    "比分": "3-1",
+    "局分": [
+      "11-4",
+      "11-5",
+      "11-13",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2020-02-20",
+    "类型": "ittf常规赛",
+    "胜者": "Karoline MISCHEK/Tin-Tin HO",
+    "负者": "Adriana DIAZ/Melanie DIAZ",
+    "比分": "3-0",
+    "局分": [
+      "15-13",
+      "11-8",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2020-02-20",
+    "类型": "ittf常规赛",
+    "胜者": "SOO Wai Yam Minnie/ZHU Chengzhu",
+    "负者": "Nina MITTELHAM/SHAN Xiaona",
+    "比分": "3-1",
+    "局分": [
+      "11-4",
+      "9-11",
+      "11-8",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2020-02-21",
+    "类型": "ittf常规赛",
+    "胜者": "Kasumi ISHIKAWA/Miu HIRANO",
+    "负者": "Fu YU/Jieni SHAO",
+    "比分": "3-1",
+    "局分": [
+      "9-11",
+      "11-7",
+      "14-12",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2020-02-21",
+    "类型": "ittf常规赛",
+    "胜者": "Orawan PARANANG/Suthasini SAWETTABUT",
+    "负者": "CHEN Szu-Yu/CHENG Hsien-Tzu",
+    "比分": "3-1",
+    "局分": [
+      "11-1",
+      "11-1",
+      "10-12",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2020-02-21",
+    "类型": "ittf常规赛",
+    "胜者": "SOO Wai Yam Minnie/ZHU Chengzhu",
+    "负者": "Chantal MANTZ/Yuan WAN",
+    "比分": "3-1",
+    "局分": [
+      "11-6",
+      "11-13",
+      "11-9",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2020-02-21",
+    "类型": "ittf常规赛",
+    "胜者": "DOO Hoi Kem/LEE Ho Ching",
+    "负者": "Karoline MISCHEK/Tin-Tin HO",
+    "比分": "3-1",
+    "局分": [
+      "4-11",
+      "11-6",
+      "11-1",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2020-02-21",
+    "类型": "ittf常规赛",
+    "胜者": "Kasumi ISHIKAWA/Miu HIRANO",
+    "负者": "Orawan PARANANG/Suthasini SAWETTABUT",
+    "比分": "3-1",
+    "局分": [
+      "11-6",
+      "12-14",
+      "11-3",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2020-02-21",
+    "类型": "ittf常规赛",
+    "胜者": "DOO Hoi Kem/LEE Ho Ching",
+    "负者": "SOO Wai Yam Minnie/ZHU Chengzhu",
+    "比分": "3-0",
+    "局分": [
+      "12-10",
+      "11-6",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2020-02-22",
+    "类型": "ittf常规赛",
+    "胜者": "Kasumi ISHIKAWA/Miu HIRANO",
+    "负者": "DOO Hoi Kem/LEE Ho Ching",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-9",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2020-03-04",
+    "类型": "ittf白金赛",
+    "胜者": "Nathalie MARCHETTI/Stefanie CHRISTENSEN",
+    "负者": "Madhurika PATKAR/Sreeja AKULA",
+    "比分": "3-2",
+    "局分": [
+      "11-8",
+      "7-11",
+      "7-11",
+      "11-6",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2020-03-05",
+    "类型": "ittf白金赛",
+    "胜者": "Barbora BALAZOVA/Hana MATELOVA",
+    "负者": "Nina MITTELHAM/SHAN Xiaona",
+    "比分": "3-2",
+    "局分": [
+      "11-6",
+      "7-11",
+      "7-11",
+      "11-8",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2020-03-05",
+    "类型": "ittf白金赛",
+    "胜者": "SOO Wai Yam Minnie/ZHU Chengzhu",
+    "负者": "Kholoud HUSSAIN/Maha FARAMARZI",
+    "比分": "3-0",
+    "局分": [
+      "11-3",
+      "11-4",
+      "11-2"
+    ]
+  },
+  {
+    "日期": "2020-03-05",
+    "类型": "ittf白金赛",
+    "胜者": "Miyu NAGASAKI/Miyuu KIHARA",
+    "负者": "Izabela LUPULESKU/Sabina SURJAN",
+    "比分": "3-0",
+    "局分": [
+      "11-2",
+      "11-7",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2020-03-05",
+    "类型": "ittf白金赛",
+    "胜者": "LIN Ye/YU Mengyu",
+    "负者": "Natalia BAJOR/Natalia PARTYKA",
+    "比分": "3-1",
+    "局分": [
+      "13-15",
+      "11-8",
+      "11-9",
+      "14-12"
+    ]
+  },
+  {
+    "日期": "2020-03-05",
+    "类型": "ittf白金赛",
+    "胜者": "Kasumi ISHIKAWA/Miu HIRANO",
+    "负者": "Daria TRIGOLOS/Nadezhda BOGDANOVA",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-9",
+      "11-0"
+    ]
+  },
+  {
+    "日期": "2020-03-05",
+    "类型": "ittf白金赛",
+    "胜者": "Jia Nan YUAN/Stephanie LOEUILLETTE",
+    "负者": "DOO Hoi Kem/LEE Ho Ching",
+    "比分": "3-2",
+    "局分": [
+      "8-11",
+      "11-6",
+      "3-11",
+      "12-10",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2020-03-05",
+    "类型": "ittf白金赛",
+    "胜者": "CHEN Meng/DING Ning",
+    "负者": "Nathalie MARCHETTI/Stefanie CHRISTENSEN",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-6",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2020-03-06",
+    "类型": "ittf白金赛",
+    "胜者": "LIN Ye/YU Mengyu",
+    "负者": "CHEN Meng/DING Ning",
+    "比分": "3-2",
+    "局分": [
+      "11-9",
+      "4-11",
+      "8-11",
+      "12-10",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2020-03-06",
+    "类型": "ittf白金赛",
+    "胜者": "WANG Manyu/ZHU Yuling",
+    "负者": "Barbora BALAZOVA/Hana MATELOVA",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-5",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2020-03-06",
+    "类型": "ittf白金赛",
+    "胜者": "Miyu NAGASAKI/Miyuu KIHARA",
+    "负者": "SOO Wai Yam Minnie/ZHU Chengzhu",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-7",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2020-03-06",
+    "类型": "ittf白金赛",
+    "胜者": "WANG Manyu/ZHU Yuling",
+    "负者": "Kasumi ISHIKAWA/Miu HIRANO",
+    "比分": "3-2",
+    "局分": [
+      "11-8",
+      "6-11",
+      "11-9",
+      "4-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2020-03-06",
+    "类型": "ittf白金赛",
+    "胜者": "Miyu NAGASAKI/Miyuu KIHARA",
+    "负者": "LIN Ye/YU Mengyu",
+    "比分": "3-1",
+    "局分": [
+      "11-3",
+      "14-12",
+      "8-11",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2020-03-07",
+    "类型": "ittf白金赛",
+    "胜者": "WANG Manyu/ZHU Yuling",
+    "负者": "Miyu NAGASAKI/Miyuu KIHARA",
+    "比分": "3-1",
+    "局分": [
+      "11-4",
+      "7-11",
+      "11-8",
+      "11-9"
+    ]
   }
 ]
