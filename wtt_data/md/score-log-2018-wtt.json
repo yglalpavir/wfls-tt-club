@@ -3844,5 +3844,662 @@
       "10-12",
       "11-8"
     ]
+  },
+  {
+    "日期": "2018-09-19",
+    "类型": "洲锦赛",
+    "胜者": "Vildan GADIEV/Vladimir SIDORENKO",
+    "负者": "Colin DALGLEISH/Yaser RAZOUK",
+    "比分": "3-2",
+    "局分": [
+      "11-9",
+      "11-7",
+      "9-11",
+      "6-11",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2018-09-19",
+    "类型": "洲锦赛",
+    "胜者": "Mahammad Ibrahim ANSARI/Sanan ALIYEV",
+    "负者": "Andrei PUTUNTICA/Veniamin DUBROVIN",
+    "比分": "3-1",
+    "局分": [
+      "6-11",
+      "11-9",
+      "11-7",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2018-09-19",
+    "类型": "洲锦赛",
+    "胜者": "Gleb SHAMRUK/Tomasz KOTOWSKI",
+    "负者": "Federico GIARDI/Mattias MONGIUSTI",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "11-9",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2018-09-19",
+    "类型": "洲锦赛",
+    "胜者": "Medardas STANKEVICIUS/Rimas LESIV",
+    "负者": "Frodi JENSEN/Hallur THORSTEINSSON",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-7",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2018-09-19",
+    "类型": "洲锦赛",
+    "胜者": "Marko JEVTOVIC/Zsolt PETO",
+    "负者": "Filip MLADENOVSKI/Kristijan STANOJKOVSKI",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-5",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2018-09-19",
+    "类型": "洲锦赛",
+    "胜者": "Borgar HAUG/Tomas MIKUTIS",
+    "负者": "Magnus HJARTARSON/Magnus ULFARSSON",
+    "比分": "3-0",
+    "局分": [
+      "13-11",
+      "11-5",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2018-09-19",
+    "类型": "洲锦赛",
+    "胜者": "Abdullah YIGENLER/Ibrahim GUNDUZ",
+    "负者": "Deni KOZUL/Jan ZIBRAT",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-6",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2018-09-19",
+    "类型": "洲锦赛",
+    "胜者": "Marko JEVTOVIC/Zsolt PETO",
+    "负者": "Anders LIND/Bence MAJOROS",
+    "比分": "3-2",
+    "局分": [
+      "9-11",
+      "11-8",
+      "11-6",
+      "9-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2018-09-19",
+    "类型": "洲锦赛",
+    "胜者": "CHEN Diogo/Diogo CARVALHO",
+    "负者": "Pavel SIRUCEK/Tomas TREGLER",
+    "比分": "3-1",
+    "局分": [
+      "11-7",
+      "6-11",
+      "12-10",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2018-09-19",
+    "类型": "洲锦赛",
+    "胜者": "Aleksandar KARAKASEVIC/Jesus CANTERO",
+    "负者": "Borgar HAUG/Tomas MIKUTIS",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-4",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2018-09-19",
+    "类型": "洲锦赛",
+    "胜者": "KOU Lei/Viktor YEFIMOV",
+    "负者": "Alex NAUMI/Filip RADOVIC",
+    "比分": "3-1",
+    "局分": [
+      "11-6",
+      "7-11",
+      "11-4",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2018-09-19",
+    "类型": "洲锦赛",
+    "胜者": "Benedek OLAH/Robin DEVOS",
+    "负者": "Yaroslav ZHMUDENKO/Yevhen Pryshchepa",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "12-10",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2018-09-19",
+    "类型": "洲锦赛",
+    "胜者": "Hunor SZOCS/Tamas LAKATOS",
+    "负者": "Callum EVANS/Jordan WYKES",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-8",
+      "11-2"
+    ]
+  },
+  {
+    "日期": "2018-09-19",
+    "类型": "洲锦赛",
+    "胜者": "Denislav KODJABASHEV/Teodor ALEXANDROV",
+    "负者": "Frane KOJIC/Tomislav PUCAR",
+    "比分": "3-2",
+    "局分": [
+      "11-8",
+      "11-9",
+      "13-15",
+      "11-13",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2018-09-19",
+    "类型": "洲锦赛",
+    "胜者": "Arturs REINHOLDS/Luka MLADENOVIC",
+    "负者": "Aleksandr KHANIN/Andreas LEVENKO",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-7",
+      "11-1"
+    ]
+  },
+  {
+    "日期": "2018-09-19",
+    "类型": "洲锦赛",
+    "胜者": "Ioannis SGOUROPOULOS/Lubomir PISTEJ",
+    "负者": "Carlos FRANCO/Miguel VILCHEZ",
+    "比分": "3-0",
+    "局分": [
+      "11-6",
+      "11-5",
+      "11-1"
+    ]
+  },
+  {
+    "日期": "2018-09-19",
+    "类型": "洲锦赛",
+    "胜者": "Jon PERSSON/Truls MOREGARD",
+    "负者": "Mahammad Ibrahim ANSARI/Sanan ALIYEV",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-3",
+      "11-1"
+    ]
+  },
+  {
+    "日期": "2018-09-19",
+    "类型": "洲锦赛",
+    "胜者": "Filip CIPIN/Lionel WEBER",
+    "负者": "Marco RECH DALDOSSO/Niagol STOYANOV",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "13-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2018-09-19",
+    "类型": "洲锦赛",
+    "胜者": "Samuel WALKER/Tobias RASMUSSEN",
+    "负者": "Vildan GADIEV/Vladimir SIDORENKO",
+    "比分": "3-0",
+    "局分": [
+      "12-10",
+      "11-8",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2018-09-19",
+    "类型": "洲锦赛",
+    "胜者": "Leonardo MUTTI/Mihai BOBOCICA",
+    "负者": "Alexander VALUCH/Samuel NOVOTA",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "11-9",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2018-09-19",
+    "类型": "洲锦赛",
+    "胜者": "David REITSPIES/Lubomir JANCARIK",
+    "负者": "Medardas STANKEVICIUS/Rimas LESIV",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "11-4",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2018-09-20",
+    "类型": "洲锦赛",
+    "胜者": "Ricardo WALTHER/Ruwen FILUS",
+    "负者": "KOU Lei/Viktor YEFIMOV",
+    "比分": "4-1",
+    "局分": [
+      "11-7",
+      "11-9",
+      "11-6",
+      "4-11",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2018-09-20",
+    "类型": "洲锦赛",
+    "胜者": "Panagiotis GIONIS/Yang WANG",
+    "负者": "Marko JEVTOVIC/Zsolt PETO",
+    "比分": "4-1",
+    "局分": [
+      "11-1",
+      "11-4",
+      "7-11",
+      "12-10",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2018-09-20",
+    "类型": "洲锦赛",
+    "胜者": "Emmanuel LEBESSON/Simon GAUZY",
+    "负者": "Ewout OOSTWOUDER/Rajko GOMMERS",
+    "比分": "4-0",
+    "局分": [
+      "11-8",
+      "11-6",
+      "11-4",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2018-09-21",
+    "类型": "洲锦赛",
+    "胜者": "Ricardo WALTHER/Ruwen FILUS",
+    "负者": "Panagiotis GIONIS/Yang WANG",
+    "比分": "4-2",
+    "局分": [
+      "11-8",
+      "8-11",
+      "7-11",
+      "11-3",
+      "11-4",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2018-09-21",
+    "类型": "洲锦赛",
+    "胜者": "Emmanuel LEBESSON/Simon GAUZY",
+    "负者": "Hunor SZOCS/Tamas LAKATOS",
+    "比分": "4-0",
+    "局分": [
+      "11-9",
+      "11-4",
+      "12-10",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2018-09-22",
+    "类型": "洲锦赛",
+    "胜者": "Kristian KARLSSON/Mattias FALCK",
+    "负者": "Emmanuel LEBESSON/Simon GAUZY",
+    "比分": "4-1",
+    "局分": [
+      "11-9",
+      "11-7",
+      "3-11",
+      "11-8",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2018-09-22",
+    "类型": "洲锦赛",
+    "胜者": "Ricardo WALTHER/Ruwen FILUS",
+    "负者": "Samuel WALKER/Tobias RASMUSSEN",
+    "比分": "4-1",
+    "局分": [
+      "11-5",
+      "11-3",
+      "11-7",
+      "12-14",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2018-09-22",
+    "类型": "洲锦赛",
+    "胜者": "Kristian KARLSSON/Mattias FALCK",
+    "负者": "Ricardo WALTHER/Ruwen FILUS",
+    "比分": "4-0",
+    "局分": [
+      "11-7",
+      "11-6",
+      "11-9",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2018-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Rado RASOLOMALALA/Stephen RAVONISON",
+    "负者": "Mohammad AHMED/Ryan SAHAJASEIN",
+    "比分": "3-2",
+    "局分": [
+      "10-12",
+      "11-2",
+      "8-11",
+      "11-9",
+      "11-2"
+    ]
+  },
+  {
+    "日期": "2018-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Aly GHALLAB/Shady MAGDY",
+    "负者": "Kokou Dodji FANNY/Mawussi AGBETOGLO",
+    "比分": "3-1",
+    "局分": [
+      "8-11",
+      "12-10",
+      "11-9",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2018-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Kurt LINGEVELDT/Terrence MATHOLE",
+    "负者": "Akhilen YOGARAJAH/Rhikesh TAUCOORY",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-4",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2018-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Setra RAKOTOARISOA/Zo RAZAFINDRALAMBO",
+    "负者": "Christian MBONGIA/Gedeon KASSA",
+    "比分": "3-2",
+    "局分": [
+      "11-9",
+      "4-11",
+      "14-12",
+      "10-12",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2018-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Andy BRINGAUD/Wilfreed NGUEMA MVEY",
+    "负者": "Dorian BANANE/Mick CREA",
+    "比分": "3-2",
+    "局分": [
+      "11-6",
+      "11-13",
+      "11-7",
+      "9-11",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2018-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Shane OVERMEYER/Theo COGILL",
+    "负者": "Mikael JOEL/Tekle ERFEM",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-2",
+      "11-1"
+    ]
+  },
+  {
+    "日期": "2018-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Kanate ALI/Oba Kizito OBA",
+    "负者": "Beni LUKATIKISU/Jonathan BIZAKU",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-8",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2018-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Bode ABIODUN/Olajide OMOTAYO",
+    "负者": "Ryan DESSCANN/Zayyan SK. HOSSEIN",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-3",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2018-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Chris DINGANGA/Christian NTUMBA NGELEKA",
+    "负者": "Godfrey SULTAN/Nicholas ESTHER",
+    "比分": "3-1",
+    "局分": [
+      "11-3",
+      "10-12",
+      "11-6",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2018-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Alessio ANTONIO/Elizandro ANDRE",
+    "负者": "Atarou ASSOU/Soudes ALASSANI",
+    "比分": "3-0",
+    "局分": [
+      "12-10",
+      "11-8",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2018-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Shane OVERMEYER/Theo COGILL",
+    "负者": "Larbi BOURIAH/Sami KHEROUF",
+    "比分": "3-1",
+    "局分": [
+      "11-7",
+      "4-11",
+      "11-7",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2018-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Khalid ASSAR/Youssef ABDEL-AZIZ",
+    "负者": "Andy BRINGAUD/Wilfreed NGUEMA MVEY",
+    "比分": "3-0",
+    "局分": [
+      "11-2",
+      "12-10",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2018-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Allan ARNACHELLUM/CHAN YOOK FO Brian",
+    "负者": "Setra RAKOTOARISOA/Zo RAZAFINDRALAMBO",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-2",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2018-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Aly GHALLAB/Shady MAGDY",
+    "负者": "Kurt LINGEVELDT/Terrence MATHOLE",
+    "比分": "3-0",
+    "局分": [
+      "12-10",
+      "11-3",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2018-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Quadri ARUNA/Segun TORIOLA",
+    "负者": "Rado RASOLOMALALA/Stephen RAVONISON",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-1",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2018-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Quadri ARUNA/Segun TORIOLA",
+    "负者": "Aly GHALLAB/Shady MAGDY",
+    "比分": "4-1",
+    "局分": [
+      "11-6",
+      "8-11",
+      "11-8",
+      "13-11",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2018-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Khalid ASSAR/Youssef ABDEL-AZIZ",
+    "负者": "Allan ARNACHELLUM/CHAN YOOK FO Brian",
+    "比分": "4-0",
+    "局分": [
+      "11-9",
+      "13-11",
+      "11-5",
+      "13-11"
+    ]
+  },
+  {
+    "日期": "2018-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Kanate ALI/Oba Kizito OBA",
+    "负者": "Shane OVERMEYER/Theo COGILL",
+    "比分": "4-2",
+    "局分": [
+      "11-7",
+      "10-12",
+      "13-11",
+      "8-11",
+      "12-10",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2018-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Ahmed SALEH/Mohamed EL-BEIALI",
+    "负者": "Bode ABIODUN/Olajide OMOTAYO",
+    "比分": "4-1",
+    "局分": [
+      "8-11",
+      "11-6",
+      "12-10",
+      "11-2",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2018-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Khalid ASSAR/Youssef ABDEL-AZIZ",
+    "负者": "Quadri ARUNA/Segun TORIOLA",
+    "比分": "4-2",
+    "局分": [
+      "4-11",
+      "14-12",
+      "10-12",
+      "11-4",
+      "11-6",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2018-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Ahmed SALEH/Mohamed EL-BEIALI",
+    "负者": "Kanate ALI/Oba Kizito OBA",
+    "比分": "4-0",
+    "局分": [
+      "11-6",
+      "11-7",
+      "11-2",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2018-09-08",
+    "类型": "洲锦赛",
+    "胜者": "Khalid ASSAR/Youssef ABDEL-AZIZ",
+    "负者": "Ahmed SALEH/Mohamed EL-BEIALI",
+    "比分": "4-0",
+    "局分": [
+      "11-5",
+      "11-9",
+      "11-9",
+      "11-2"
+    ]
   }
 ]

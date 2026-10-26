@@ -2663,5 +2663,448 @@
     "胜者": "LIM Jonghoon/Mehdi BOULOUSSA",
     "负者": "Hampus NORDBERG/Joao GERALDO",
     "比分": "3-1"
+  },
+  {
+    "日期": "2023-09-06",
+    "类型": "洲锦赛",
+    "胜者": "Afshin NOROOZI/Amir Hossein HODAEI",
+    "负者": "KAO Cheng-Jui/YANG Tzu-Yi",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "11-8",
+      "12-10"
+    ]
+  },
+  {
+    "日期": "2023-09-06",
+    "类型": "洲锦赛",
+    "胜者": "BEH Kun Ting/CHEW Zhe Yu Clarence",
+    "负者": "Aidos KENZHIGULOV/Vladislav ZAKHAROV",
+    "比分": "3-1",
+    "局分": [
+      "11-9",
+      "11-6",
+      "9-11",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2023-09-06",
+    "类型": "洲锦赛",
+    "胜者": "Shokhrukh ISKANDAROV/Zokhid KENJAEV",
+    "负者": "Akylbek KASYMOV/Atai KASYMOV",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-5",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2023-09-06",
+    "类型": "洲锦赛",
+    "胜者": "Padasak TANVIRIYAVECHAKUL/Sarayut TANCHAROEN",
+    "负者": "Rubin MAHARJAN/Sanyog KAPALI",
+    "比分": "3-0",
+    "局分": [
+      "11-3",
+      "11-5",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2023-09-06",
+    "类型": "洲锦赛",
+    "胜者": "HO Kwan Kit/WONG Chun Ting",
+    "负者": "Imrul IMON/Nafiz IQBAL",
+    "比分": "3-0",
+    "局分": [
+      "11-2",
+      "11-5",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2023-09-06",
+    "类型": "洲锦赛",
+    "胜者": "Hiroto SHINOZUKA/Yuta TANAKA",
+    "负者": "Napat THANMATHIKOM/Sitisak NUCHCHART",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-6",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2023-09-06",
+    "类型": "洲锦赛",
+    "胜者": "Mohutasin Ahmed RIDOY/Ramhimlian BAWM",
+    "负者": "Anane VONGSA/Laokham MANICHANH",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-7",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2023-09-06",
+    "类型": "洲锦赛",
+    "胜者": "LAM Siu Hang/NG Pak Nam",
+    "负者": "Alan KURMANGALIYEV/Kirill GERASSIMENKO",
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "11-9",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2023-09-07",
+    "类型": "洲锦赛",
+    "胜者": "JANG Woojin/LIM Jonghoon",
+    "负者": "BEH Kun Ting/CHEW Zhe Yu Clarence",
+    "比分": "3-2",
+    "局分": [
+      "9-11",
+      "11-3",
+      "7-11",
+      "11-6",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2023-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Sathiyan GNANASEKARAN/Sharath Kamal ACHANTA",
+    "负者": "Ryoichi YOSHIYAMA/Sora MATSUSHIMA",
+    "比分": "3-2",
+    "局分": [
+      "11-8",
+      "8-11",
+      "8-11",
+      "11-9",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2023-09-07",
+    "类型": "洲锦赛",
+    "胜者": "CHOONG Javen/WONG Qi Shen",
+    "负者": "Ser-Od GANKHUYAG/Temuulen MYANDAL",
+    "比分": "3-2",
+    "局分": [
+      "11-9",
+      "11-13",
+      "11-5",
+      "7-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2023-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Nima ALAMIAN/Noshad ALAMIYAN",
+    "负者": "Shokhrukh ISKANDAROV/Zokhid KENJAEV",
+    "比分": "3-2",
+    "局分": [
+      "11-6",
+      "11-7",
+      "9-11",
+      "9-11",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2023-09-07",
+    "类型": "洲锦赛",
+    "胜者": "MA Long/WANG Chuqin",
+    "负者": "Padasak TANVIRIYAVECHAKUL/Sarayut TANCHAROEN",
+    "比分": "3-1",
+    "局分": [
+      "11-8",
+      "11-9",
+      "9-11",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2023-09-07",
+    "类型": "洲锦赛",
+    "胜者": "AN Jaehyun/PARK Ganghyeon",
+    "负者": "Afshin NOROOZI/Amir Hossein HODAEI",
+    "比分": "3-1",
+    "局分": [
+      "11-4",
+      "11-2",
+      "6-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2023-09-07",
+    "类型": "洲锦赛",
+    "胜者": "FAN Zhendong/LIN Gaoyuan",
+    "负者": "LAM Siu Hang/NG Pak Nam",
+    "比分": "3-0",
+    "局分": [
+      "11-2",
+      "11-7",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2023-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Abdullah ABDULWAHHAB/Mohammed ABDULWAHHAB",
+    "负者": "Ankhbayar BILGUUN/Manlaijargal MUNKH-OCHIR",
+    "比分": "3-2",
+    "局分": [
+      "9-11",
+      "11-8",
+      "11-8",
+      "8-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2023-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Hiroto SHINOZUKA/Yuta TANAKA",
+    "负者": "PANG Yew En Koen/QUEK Izaac",
+    "比分": "3-1",
+    "局分": [
+      "11-6",
+      "12-10",
+      "5-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2023-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Manav Vikash THAKKAR/Manush Utpalbhai SHAH",
+    "负者": "Mohutasin Ahmed RIDOY/Ramhimlian BAWM",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-3",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2023-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Abdulaziz ANORBOEV/Kutbidillo TESHABOEV",
+    "负者": "Feng LEONG Chee/HONG YU Tey",
+    "比分": "3-1",
+    "局分": [
+      "3-11",
+      "11-9",
+      "11-7",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2023-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Ali ALKHADRAWI/Turki ALMUTAIRI",
+    "负者": "Taimur KHAN/Zain SALAM",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-7",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2023-09-07",
+    "类型": "洲锦赛",
+    "胜者": "JANG Woojin/LIM Jonghoon",
+    "负者": "Sathiyan GNANASEKARAN/Sharath Kamal ACHANTA",
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-5",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2023-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Nima ALAMIAN/Noshad ALAMIYAN",
+    "负者": "CHOONG Javen/WONG Qi Shen",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-7",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2023-09-07",
+    "类型": "洲锦赛",
+    "胜者": "MA Long/WANG Chuqin",
+    "负者": "Muhammad Shah KHAN/Syed Obaid SHAH",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-4",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2023-09-07",
+    "类型": "洲锦赛",
+    "胜者": "HO Kwan Kit/WONG Chun Ting",
+    "负者": "DE SILVA Jayasanka/Nuwantha KAHAWATHTHA",
+    "比分": "3-0",
+    "局分": [
+      "11-2",
+      "11-9",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2023-09-07",
+    "类型": "洲锦赛",
+    "胜者": "AN Jaehyun/PARK Ganghyeon",
+    "负者": "Deshappriya SILVA/Virunaka HENDAHEWA",
+    "比分": "3-0",
+    "局分": [
+      "11-3",
+      "11-8",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2023-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Hiroto SHINOZUKA/Yuta TANAKA",
+    "负者": "Abdullah ABDULWAHHAB/Mohammed ABDULWAHHAB",
+    "比分": "3-0",
+    "局分": [
+      "14-12",
+      "11-8",
+      "11-2"
+    ]
+  },
+  {
+    "日期": "2023-09-07",
+    "类型": "洲锦赛",
+    "胜者": "Manav Vikash THAKKAR/Manush Utpalbhai SHAH",
+    "负者": "Abdulaziz ANORBOEV/Kutbidillo TESHABOEV",
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-7",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2023-09-07",
+    "类型": "洲锦赛",
+    "胜者": "FAN Zhendong/LIN Gaoyuan",
+    "负者": "Ali ALKHADRAWI/Turki ALMUTAIRI",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-5",
+      "11-6"
+    ]
+  },
+  {
+    "日期": "2023-09-08",
+    "类型": "洲锦赛",
+    "胜者": "JANG Woojin/LIM Jonghoon",
+    "负者": "Nima ALAMIAN/Noshad ALAMIYAN",
+    "比分": "3-2",
+    "局分": [
+      "10-12",
+      "6-11",
+      "11-8",
+      "11-8",
+      "11-4"
+    ]
+  },
+  {
+    "日期": "2023-09-08",
+    "类型": "洲锦赛",
+    "胜者": "MA Long/WANG Chuqin",
+    "负者": "HO Kwan Kit/WONG Chun Ting",
+    "比分": "3-1",
+    "局分": [
+      "8-11",
+      "11-8",
+      "11-3",
+      "11-3"
+    ]
+  },
+  {
+    "日期": "2023-09-08",
+    "类型": "洲锦赛",
+    "胜者": "AN Jaehyun/PARK Ganghyeon",
+    "负者": "Hiroto SHINOZUKA/Yuta TANAKA",
+    "比分": "3-1",
+    "局分": [
+      "11-8",
+      "5-11",
+      "13-11",
+      "11-8"
+    ]
+  },
+  {
+    "日期": "2023-09-08",
+    "类型": "洲锦赛",
+    "胜者": "FAN Zhendong/LIN Gaoyuan",
+    "负者": "Manav Vikash THAKKAR/Manush Utpalbhai SHAH",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-3",
+      "11-5"
+    ]
+  },
+  {
+    "日期": "2023-09-09",
+    "类型": "洲锦赛",
+    "胜者": "FAN Zhendong/LIN Gaoyuan",
+    "负者": "AN Jaehyun/PARK Ganghyeon",
+    "比分": "3-1",
+    "局分": [
+      "11-9",
+      "5-11",
+      "11-6",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2023-09-09",
+    "类型": "洲锦赛",
+    "胜者": "MA Long/WANG Chuqin",
+    "负者": "JANG Woojin/LIM Jonghoon",
+    "比分": "3-1",
+    "局分": [
+      "6-11",
+      "11-5",
+      "11-8",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2023-09-09",
+    "类型": "洲锦赛",
+    "胜者": "FAN Zhendong/LIN Gaoyuan",
+    "负者": "MA Long/WANG Chuqin",
+    "比分": "3-2",
+    "局分": [
+      "11-9",
+      "4-11",
+      "11-9",
+      "11-13",
+      "11-8"
+    ]
   }
 ]
