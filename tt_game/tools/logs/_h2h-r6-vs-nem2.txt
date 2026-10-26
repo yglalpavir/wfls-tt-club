@@ -1,0 +1,6 @@
+﻿瀵规墜鍙ｅ緞: 鎸囧畾鍙傜収 tools\logs\_r6-nemesis-candidate.json
+鍊欓€夋潵婧? S:\wfls-tt-club\wfls-tt-club\tt_game\tools\train-hell-candidate.json
+鍊欓€?vs 鍙傜収锛堝€欓€夊厛鎵嬶級: 40.45%
+鍙傜収 vs 鍊欓€夛紙鍙傜収鍏堟墜锛? 59.08%
+鍙屽悜鏃犲亸锛氬€欓€?= 40.68%  鈬?鍙傜収鏇村己 / 鎸佸钩
+鎬诲眬鏁?= 3200

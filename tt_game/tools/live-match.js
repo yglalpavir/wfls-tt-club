@@ -514,6 +514,8 @@ const JSON_OUT = argOf('--json', '');
 /* --hip-cfg <path|json>：覆盖 HIP 控制器旋钮（实机扫描用）。
  *   文件里是 {"myDrive":0.5, ...}；注入到 vm 里的 HIP_SKILL.setConfig()。 */
 const HIP_CFG = argOf('--hip-cfg', '');
+/* --hell-vec <path>：把 hell 档策略换成 {vec:[42]} 检查点（候选地狱实机复核用，见注入处注释） */
+const HELL_VEC = argOf('--hell-vec', '');
 /* --move-cap <m/s>：模型侧移动预算（限速）。
  *   作用范围：**只有模型控制的拍**（ttmouse / hipmouse）——真人的拍面走
  *   main.js#playerControl，不受影响。
@@ -761,6 +763,26 @@ function main(){
       vm.runInContext('TT_PLAYER.setLateralPrior(false);', rig.ctx);
       if(vm.runInContext('TT_PLAYER.getLateralPrior()', rig.ctx) !== false) throw new Error('--no-prior 没有生效');
     }
+  }
+
+  /* --hell-vec <file>：把「地狱档」的策略整体换成 {vec:[42]} 检查点里的向量。
+   * 用途：候选地狱的实机复核（HIP/DQN vs 新旧地狱），全程不触碰 js/learned-policy.js。
+   * 实现：vm 里 learned-policy.js 的 LEARNED_POLICY 是 const 词法绑定 —— 不可重绑，
+   * 但对象属性可以原地改写（strongVec() 每次调用现读它，policyForModel('hell')
+   * 走 strongVec()）。写完在 vm 里回读 strongVec() 逐维校验，不一致直接抛错。
+   * 注意：只影响从 LEARNED_POLICY 派生的 hell 档；grandslam/nemesis 各有自己的文件，不受影响。
+   * 前三条护栏维（moveSpeed/moveErr/moveZ）由 strongVec() 硬写，注入前后一致。 */
+  if(HELL_VEC && rig){
+    const candVec = JSON.parse(fs.readFileSync(path.resolve(HELL_VEC), 'utf8')).vec;
+    const Pn = require(path.join(ROOT, 'js', 'policy.js'));
+    const candObj = Pn.unflattenPolicy(candVec);
+    vm.runInContext('Object.assign(LEARNED_POLICY, ' + JSON.stringify(candObj) + ');', rig.ctx);
+    const back = vm.runInContext('strongVec().map(function(v){return +v.toFixed(12)}).join(",")', rig.ctx);
+    const merged = Object.assign({}, candObj, { moveSpeed: 2.8, moveErr: 0.03, moveZ: 2.6 });
+    const want = Pn.flattenPolicy(merged).map(v => +v.toFixed(12)).join(',');
+    const bad = back.split(',').filter((v, i) => v !== want.split(',')[i]).length;
+    if(bad > 0) throw new Error('--hell-vec 注入校验失败：' + bad + ' 维不一致');
+    console.log('[hell-vec] 已注入 ' + HELL_VEC + '（strongVec 回读校验 42/42 一致）');
   }
 
   const rows = [];

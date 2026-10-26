@@ -1,0 +1,123 @@
+{
+  "tool": "live-match",
+  "controller": "hip",
+  "weights": "js\\input-weights.js",
+  "side": "player",
+  "seed": 20269026,
+  "games": 12,
+  "hz": 60,
+  "maxsec": 240,
+  "elapsedSec": 68.5,
+  "byTier": {
+    "hell": {
+      "dqnPts": 90,
+      "oppPts": 36,
+      "points": 126,
+      "rate": 0.7142857142857143,
+      "ci95": 0.07888106377466154,
+      "lost": {
+        "net": 4,
+        "out": 48,
+        "double": 0,
+        "serve": 0,
+        "other": 0,
+        "noreach": 46
+      },
+      "dqnContacts": 1753,
+      "oppContacts": 1698,
+      "frames": 172812,
+      "stalled": 0,
+      "rally": {
+        "n": 318,
+        "avg": 11.518867924528301,
+        "p50": 11,
+        "p90": 19,
+        "max": 37,
+        "over15": 117,
+        "over10": 162,
+        "hist": {
+          "0": 74,
+          "5": 69,
+          "10": 52,
+          "15": 93,
+          "20": 30
+        }
+      },
+      "games": [
+        {
+          "g": 0,
+          "dq": 8,
+          "op": 5,
+          "frames": 14401
+        },
+        {
+          "g": 1,
+          "dq": 10,
+          "op": 2,
+          "frames": 14401
+        },
+        {
+          "g": 2,
+          "dq": 8,
+          "op": 5,
+          "frames": 14401
+        },
+        {
+          "g": 3,
+          "dq": 5,
+          "op": 3,
+          "frames": 14401
+        },
+        {
+          "g": 4,
+          "dq": 10,
+          "op": 1,
+          "frames": 14401
+        },
+        {
+          "g": 5,
+          "dq": 7,
+          "op": 2,
+          "frames": 14401
+        },
+        {
+          "g": 6,
+          "dq": 10,
+          "op": 2,
+          "frames": 14401
+        },
+        {
+          "g": 7,
+          "dq": 7,
+          "op": 5,
+          "frames": 14401
+        },
+        {
+          "g": 8,
+          "dq": 6,
+          "op": 1,
+          "frames": 14401
+        },
+        {
+          "g": 9,
+          "dq": 5,
+          "op": 3,
+          "frames": 14401
+        },
+        {
+          "g": 10,
+          "dq": 7,
+          "op": 5,
+          "frames": 14401
+        },
+        {
+          "g": 11,
+          "dq": 7,
+          "op": 2,
+          "frames": 14401
+        }
+      ],
+      "simRate": null
+    }
+  }
+}

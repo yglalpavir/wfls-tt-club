@@ -51,6 +51,24 @@
  *      每体每代局数 = nemesis100 + self110 + r2 90 + pb80 + default90 = 470，
  *      与第四轮 460 相当 ⇒ 仍 ~63 s/代。
  *      新增通用参照开关：--ref key=file（可重复）、--r2 <file>、--old <file>。
+ *  · 2026-10-26 方案D（第六轮，针对第五轮"池化饱和"的复盘）：
+ *      ① 新鲜克星进池 —— 第五轮复盘（§13.5/13.6）证明「固定参照池已榨干」：R5≈R4，
+ *         且 nemesis 对当时地狱只剩 55% 压力（2026-10-26 配对复测已掉到 44.8%）。
+ *         本轮先用 train-nemesis.js 对着现役地狱重训一个「新鲜克星」（Phase A，
+ *         产物 tools/logs/_r6-nemesis-candidate.json），再把它以 0.30 最高权重钉进池
+ *         （--nemesis2 <file>）—— 这是 §13.6 处方「双种群循环」的Hell侧半步。
+ *      ② nemesis2 是克星血统参照，**不过 applyFrozen**：克星的 moveSpeed/moveErr/moveZ
+ *         是它自己的学习值（3.4/0/2.235…），不像地狱血统向量被 strongVec() 硬写护栏。
+ *         worker 里走 oppVec 直通（unflattenPolicy(oppVec)），与
+ *         policyForModel('nemesis') 完全同构（nemesisPolicy() 无任何覆写）。
+ *      ③ 旧 nemesis 降权留池（0.12）：专治新鲜克星会重演第三轮的过拟合，旧克星
+ *         把候选往「对地狱血统通用强度」方向拉。self/r2/pb/default 权重相应压缩，
+ *         每体每代总局数仍 470，代际吞吐不变（~60 s/代）。
+ *      ④ HIP（hip-skill L1）**不进适应度池**：2026-10-26 探针实测 input-sim 里
+ *         HIP-L1 对地狱 3 个种子全败 95%+ 且失分 100% 是自己出界（landAuto 关掉也只
+ *         回到 ~28%，失分仍是全出界）—— 仿真物理对 HIP 的落点/力量管线失真，
+ *         是个坏评估器。HIP 只在**实机**（live-match --controller hip）做最终评估，
+ *         见 hell-selfplay-findings.md §16 的预注册判据。
  *  · 采纳判据铁律：内部 fitness / vsCur 只用于同一轮内部排序，**不作采纳依据**。
  *    第三轮内部 fit 创新高而实测倒退 4.2pp 就是反例。一律以
  *    tools/_hell-h2h.js 3200 局双向（--versus / --opp-nemesis）为准。
@@ -83,6 +101,7 @@ for(let i = 0; i < args.length; i++){
   else if(args[i] === '--old'){ opt.old = args[++i]; }    // 方案B/C：钉死强参照 old（归档的 2026-09-13 线上地狱）
   else if(args[i] === '--r2'){ opt.r2 = args[++i]; }      // 方案C：钉死强参照 r2（归档的第二轮候选）
   else if(args[i] === '--ref'){ (opt.refs = opt.refs || []).push(args[++i]); }   // 方案C：额外钉死参照 key=file（可重复）
+  else if(args[i] === '--nemesis2'){ opt.nemesis2 = args[++i]; }  // 方案D：钉死「新鲜克星」参照（原始向量，不过 applyFrozen）
   else if(args[i] === '--nice') opt.nice = true;          // 低优先级重启自身（不占满 CPU，交互自动让位）
 }
 
@@ -145,11 +164,14 @@ applyFrozen(curVec);   // 续训起点与实机口径对齐（见 FROZEN 注释�
  * 于是 GA 学会专治它、内部 fit 创新高、实测对线上倒退。钉死参照（归档文件，
  * 整轮训练期间不会动）与 curVec 同时进池，专治其一的候选会被另一个压下去。
  * 每个文件存的是 42 维扁平数组（strongVec() 实机口径）。 */
-const REFS = {};                       // key -> vec(已 applyFrozen)
-function loadRef(key, file){
+const REFS = {};                       // key -> vec（地狱血统参照已 applyFrozen；freeze=false 的参照存原始向量）
+function loadRef(key, file, freeze){
   try{
     const O = JSON.parse(fs.readFileSync(file, 'utf8'));
-    if(Array.isArray(O.vec) && O.vec.length === P.POLICY_KEYS.length){ REFS[key] = applyFrozen(O.vec.slice()); return true; }
+    if(Array.isArray(O.vec) && O.vec.length === P.POLICY_KEYS.length){
+      REFS[key] = (freeze === false) ? O.vec.slice() : applyFrozen(O.vec.slice());
+      return true;
+    }
     console.warn('参照 ' + key + ' 向量长度不符，忽略（' + file + '）');
   }catch(e){ console.warn('参照 ' + key + ' 读取失败（' + file + '）：' + e.message + ' —— 将从池中剔除'); }
   return false;
@@ -161,6 +183,14 @@ const OLD_FILE = opt.old || path.join(__dirname, 'logs', '_shipped-20260913-inga
 const R2_FILE  = opt.r2  || path.join(__dirname, 'logs', '_shipped-20261018-r2-ingame.json');
 loadRef('old', OLD_FILE);
 loadRef('r2',  R2_FILE);
+/* 方案D：新鲜克星（Phase A 产物，train-nemesis.js --no-write 的候选）。
+ * 克星的 moveSpeed/moveErr/moveZ 是它自己的学习值，不经过 strongVec() 护栏 ——
+ * 所以这条参照 freeze=false，worker 里走 oppVec 直通。读不到就硬失败：
+ * 第六轮的整个适应度设计建立在它之上，静默降级回方案C 会让本轮训练白跑。 */
+if(opt.nemesis2 && !loadRef('nemesis2', opt.nemesis2, false)){
+  console.error('--nemesis2 读取失败（' + opt.nemesis2 + '），方案D 无法开跑');
+  process.exit(1);
+}
 for(const spec of (opt.refs || [])){
   const i = spec.indexOf('=');
   if(i > 0) loadRef(spec.slice(0, i).trim(), spec.slice(i + 1).trim());
@@ -237,15 +267,33 @@ async function evalCandidate(vec, opp, base, games, seeds, curV, oppVec){
  *      与 R2 的 85.50% 无差异），在池里当最低权重的「别塌陷」哨兵。
  * 每体每代局数：nemesis 100 + self 110 + r2 90 + pb 80 + default 90 = 470，
  * 与第四轮的 460 相当 ⇒ 代数吞吐不变（~63 s/代）。 */
-const POOL = [
+const POOL_RAW = opt.nemesis2 ? [
+  /* 方案D（第六轮）：新鲜克星拿最高权重（0.30，与第四轮 nemesis/self 双强参照格局对齐），
+   * 旧 nemesis 降权 0.12 留池防「专治新鲜克星」的过拟合（第三轮教训）。
+   * 每体每代总局数仍 470：110+100+80+60+50+70。 */
+  { key: 'nemesis2',  weight: 0.30, games: 55, seeds: 2 },
+  { key: 'self',      weight: 0.24, games: 50, seeds: 2 },
+  { key: 'r2',        weight: 0.16, games: 40, seeds: 2 },
+  { key: 'nemesis',   weight: 0.12, games: 30, seeds: 2 },
+  { key: 'pb',        weight: 0.10, games: 25, seeds: 2 },
+  { key: 'default',   weight: 0.08, games: 35, seeds: 2 },
+] : [
+  /* 方案C（第五轮）原池：不带 --nemesis2 时维持第五轮口径，老命令照旧可复现。 */
   { key: 'nemesis', weight: 0.34, games: 50, seeds: 2 },
   { key: 'self',    weight: 0.30, games: 55, seeds: 2 },
   { key: 'r2',      weight: 0.18, games: 45, seeds: 2 },
   { key: 'pb',      weight: 0.12, games: 40, seeds: 2 },
   { key: 'default', weight: 0.06, games: 45, seeds: 2 },
-].filter(e => e.key !== 'r2' || REFS.r2);
+];
+/* 先剔除缺失参照（r2 归档文件历史上可能缺失），再把权重归一化 —— 池缺一员时
+ * 其余成员的相对权重不变，fit 仍然是 0..1 量纲。 */
+const POOL = POOL_RAW
+  .filter(e => e.key !== 'r2' || REFS.r2)
+  .filter(e => e.key !== 'nemesis2' || REFS.nemesis2);
+const WSUM = POOL.reduce((a, e) => a + e.weight, 0);
+for(const e of POOL) e.weight = e.weight / WSUM;
 const BASE = { def: opt.seed * 1000, pb: opt.seed * 2000, push: opt.seed * 3000, self: opt.seed * 4000,
-               old: opt.seed * 5000, r2: opt.seed * 7000, nemesis: opt.seed * 6000 };
+               old: opt.seed * 5000, r2: opt.seed * 7000, nemesis: opt.seed * 6000, nemesis2: opt.seed * 8000 };
 
 /* ---- 冒烟：并行环境自检 ---- */
 if(opt.smoke){
@@ -257,12 +305,14 @@ if(opt.smoke){
     const p4 = await evalCandidate(curVec, 'nemesis', base() * 1e5 | 0, 20, 1, curVec);
     const p5 = REFS.r2  ? await evalCandidate(curVec, 'r2',  base() * 1e5 | 0, 20, 1, curVec, REFS.r2)  : NaN;
     const p6 = REFS.old ? await evalCandidate(curVec, 'old', base() * 1e5 | 0, 20, 1, curVec, REFS.old) : NaN;
+    const p7 = REFS.nemesis2 ? await evalCandidate(curVec, 'nemesis2', base() * 1e5 | 0, 20, 1, curVec, REFS.nemesis2) : NaN;
     console.log('[smoke] 默认 vs 默认 : ' + (p1 * 100).toFixed(1) + '%');
     console.log('[smoke] 当前地狱 vs 加强玩家模型 : ' + (p2 * 100).toFixed(1) + '%');
     console.log('[smoke] 当前地狱 vs 当前地狱(自对弈) : ' + (p3 * 100).toFixed(1) + '%');
     console.log('[smoke] 当前地狱 vs 地狱克星 : ' + (p4 * 100).toFixed(1) + '%  ← 第四轮 38.2%→53.8% 已反转，池内最高权重压它');
     if(REFS.r2)  console.log('[smoke] 当前地狱 vs 归档R2 : ' + (p5 * 100).toFixed(1) + '%  ← R4 对 R2 的独立小样本复核，应 ≈60%');
     if(REFS.old) console.log('[smoke] 当前地狱 vs 归档旧地狱 : ' + (p6 * 100).toFixed(1) + '%');
+    if(REFS.nemesis2) console.log('[smoke] 当前地狱 vs 新鲜克星 : ' + (p7 * 100).toFixed(1) + '%  ← 20 局小样本；现役克星配对复测 44.8%，新鲜克星应更低（压力更大）');
     console.log('[smoke] 对手池：' + POOL.map(e => e.key + '=' + e.weight).join(' / '));
     T.phase('smoke', '并行 worker 自检通过');
     T.tick({ t:'smoke', tag:'默认 vs 默认', winRate:+p1.toFixed(4) });
@@ -305,7 +355,8 @@ function mutate(vec, sigma, rng){
   console.log('口径(方案C)：fit=' + POOL.map(e => e.weight.toFixed(2) + '*vs' + e.key).join(' + ') +
     ' · 每对手 ' + POOL.map(e => e.key + ':' + (e.games * e.seeds)).join('/') + ' 局 · 冻结维 idx0/1/2=2.8/0.03/2.6 · 跨代固定种子');
   console.log('参照：self=当前线上(cur)  r2=' + (REFS.r2 ? '归档R2 ' + R2_FILE : '缺失(已剔除)') +
-    '  nemesis=内置克星  old=' + (REFS.old ? '仅收尾验证(已移出池)' : '缺失'));
+    '  nemesis=内置克星  old=' + (REFS.old ? '仅收尾验证(已移出池)' : '缺失') +
+    '  nemesis2=' + (REFS.nemesis2 ? '新鲜克星 ' + opt.nemesis2 : '未指定(回退方案C池)'));
   console.log('续训起点(当前地狱策略)：' + curVec.map(v => v.toFixed(2)).join(','));
   T.phase('train', '地狱 AI 续训开始 gens=' + opt.gens + ' pop=' + opt.pop + ' games=' + opt.games + ' workers=' + opt.workers);
   for(let g = 0; g < opt.gens; g++){
@@ -329,6 +380,7 @@ function mutate(vec, sigma, rng){
       m.fit = fit;
       m.fSelf = comp.self;
       m.fNemesis = comp.nemesis;
+      m.fNem2 = comp.nemesis2;
       m.fR2 = comp.r2;
       m.fPB = comp.pb;
       m.fDef = comp.default;
@@ -337,7 +389,8 @@ function mutate(vec, sigma, rng){
     const champ = pop[0];
     if(champ.fit > best.fit) best = { v: champ.v.slice(), fit: champ.fit, gen: g, tag: champ.tag };
     curve.push({ gen: g, fit: +champ.fit.toFixed(4), fSelf: +champ.fSelf.toFixed(4),
-                 fNemesis: +champ.fNemesis.toFixed(4), fR2: +(champ.fR2 || 0).toFixed(4),
+                 fNemesis: +champ.fNemesis.toFixed(4), fNem2: +(champ.fNem2 || 0).toFixed(4),
+                 fR2: +(champ.fR2 || 0).toFixed(4),
                  fPB: +champ.fPB.toFixed(4), fDef: +champ.fDef.toFixed(4),
                  best: +best.fit.toFixed(4), min: +pop[pop.length - 1].fit.toFixed(4) });
     T.tick(Object.assign({ t:'gen', evals, sec:+((Date.now() - t0)/1000).toFixed(1) }, curve[curve.length - 1]));
@@ -345,6 +398,7 @@ function mutate(vec, sigma, rng){
       console.log('gen ' + String(g).padStart(3) +
         '  top.fit=' + champ.fit.toFixed(4) +
         ' (vsCur=' + champ.fSelf.toFixed(3) + ' vsNem=' + champ.fNemesis.toFixed(3) +
+        ' vsN2=' + (champ.fNem2 || 0).toFixed(3) +
         ' vsR2=' + (champ.fR2 || 0).toFixed(3) + ' vsPB=' + champ.fPB.toFixed(3) +
         ' vsDef=' + champ.fDef.toFixed(3) + ')' +
         '  best=' + best.fit.toFixed(4) + (best.tag === 'cur' ? '(续训) ' : '') +
@@ -390,13 +444,16 @@ function mutate(vec, sigma, rng){
   const pCurVsOld = oldVec ? val(curVec, 'old', confBase + 45000, 40, 4, oldVec) : Promise.resolve(NaN);
   const pNewVsR2  = REFS.r2 ? val(newVec, 'r2', confBase + 50000, 40, 4, REFS.r2) : Promise.resolve(NaN);
   const pCurVsR2  = REFS.r2 ? val(curVec, 'r2', confBase + 55000, 40, 4, REFS.r2) : Promise.resolve(NaN);
-  const [nVd, cVd, nVp, cVp, confNewVsCur, nVnem, cVnem, nVold, cVold, nVr2, cVr2] =
-    await Promise.all([pNvD, pCvD, pNvP, pCvP, pNewVsCur, pNewVsNem, pCurVsNem, pNewVsOld, pCurVsOld, pNewVsR2, pCurVsR2]);
+  const pNewVsNem2 = REFS.nemesis2 ? val(newVec, 'nemesis2', confBase + 60000, 40, 4, REFS.nemesis2) : Promise.resolve(NaN);
+  const pCurVsNem2 = REFS.nemesis2 ? val(curVec, 'nemesis2', confBase + 65000, 40, 4, REFS.nemesis2) : Promise.resolve(NaN);
+  const [nVd, cVd, nVp, cVp, confNewVsCur, nVnem, cVnem, nVold, cVold, nVr2, cVr2, nVnem2, cVnem2] =
+    await Promise.all([pNvD, pCvD, pNvP, pCvP, pNewVsCur, pNewVsNem, pCurVsNem, pNewVsOld, pCurVsOld, pNewVsR2, pCurVsR2, pNewVsNem2, pCurVsNem2]);
   console.log('\n=== 独立最终验证（4 种子 × 40 局均值，新种子不参与训练）===');
   console.log('新策略 vs 默认        ：' + (nVd * 100).toFixed(1) + '%   （旧=' + (cVd * 100).toFixed(1) + '%）');
   console.log('新策略 vs 加强玩家模型：' + (nVp * 100).toFixed(1) + '%   （旧=' + (cVp * 100).toFixed(1) + '%）');
   console.log('新策略 vs 地狱克星    ：' + (nVnem * 100).toFixed(1) + '%   （旧=' + (cVnem * 100).toFixed(1) + '%）  ← 池里唯一的非地狱血统强对手');
   console.log('新策略 vs 归档R2      ：' + (nVr2 * 100).toFixed(1) + '%   （旧=' + (cVr2 * 100).toFixed(1) + '%）');
+  if(REFS.nemesis2) console.log('新策略 vs 新鲜克星    ：' + (nVnem2 * 100).toFixed(1) + '%   （旧=' + (cVnem2 * 100).toFixed(1) + '%）  ← 池内最高权重参照（方案D）');
   console.log('新策略 vs 当前线上    ：' + (confNewVsCur * 100).toFixed(1) + '%（>50% = 明显更强）');
   if(oldVec) console.log('新策略 vs 归档旧地狱  ：' + (nVold * 100).toFixed(1) + '%   （旧=' + (cVold * 100).toFixed(1) + '%）  ← 已移出池，仅作历史对照');
 
@@ -411,6 +468,8 @@ function mutate(vec, sigma, rng){
     vsPlayer: +nVp.toFixed(4), vsPlayerOld: +cVp.toFixed(4), vsOldHell: +confNewVsCur.toFixed(4),
     vsNemesis: +nVnem.toFixed(4), vsNemesisOld: +cVnem.toFixed(4),
     vsR2: isFinite(nVr2) ? +nVr2.toFixed(4) : null, vsR2Old: isFinite(cVr2) ? +cVr2.toFixed(4) : null,
+    vsNemesis2: isFinite(nVnem2) ? +nVnem2.toFixed(4) : null, vsNemesis2Old: isFinite(cVnem2) ? +cVnem2.toFixed(4) : null,
+    nemesis2: opt.nemesis2 || undefined,
     vsArchivedOld: isFinite(nVold) ? +nVold.toFixed(4) : null,
     vsArchivedOldRef: isFinite(cVold) ? +cVold.toFixed(4) : null,
     adopted: adopt, trainedAt: new Date().toISOString(),

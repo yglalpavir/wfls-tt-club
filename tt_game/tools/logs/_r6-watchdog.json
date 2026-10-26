@@ -1,0 +1,5 @@
+{ "winpid": "tools/logs/_r6-orchestrator.winpid",
+  "stop": "data/.stop/r6.stop",
+  "done": "tools/logs/_r6-eval-done.flag",
+  "relaunch": ["tools/_r6-run-all.sh"],
+  "maxRelaunch": 40 }

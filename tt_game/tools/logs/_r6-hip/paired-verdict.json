@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-26T00:09:39.856Z",
+  "base": {
+    "seeds": 12,
+    "hellPts": 60,
+    "points": 681,
+    "rate": 0.08811
+  },
+  "cand": {
+    "seeds": 12,
+    "hellPts": 417,
+    "points": 1376,
+    "rate": 0.30305
+  },
+  "pairedGames": 144,
+  "verdict": {
+    "ok": true,
+    "reason": "pass",
+    "meanD": 2.47917,
+    "dRatePP": 21.495,
+    "se": 0.16401,
+    "t": 15.116,
+    "p": 0
+  }
+}

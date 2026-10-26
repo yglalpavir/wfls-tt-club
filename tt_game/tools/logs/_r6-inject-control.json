@@ -1,0 +1,69 @@
+{
+  "tool": "live-match",
+  "controller": "hip",
+  "weights": "js\\input-weights.js",
+  "side": "player",
+  "seed": 20261026,
+  "games": 3,
+  "hz": 60,
+  "maxsec": 60,
+  "elapsedSec": 4.5,
+  "byTier": {
+    "hell": {
+      "dqnPts": 17,
+      "oppPts": 1,
+      "points": 18,
+      "rate": 0.9444444444444444,
+      "ci95": 0.1058209788323777,
+      "lost": {
+        "net": 0,
+        "out": 0,
+        "double": 0,
+        "serve": 0,
+        "other": 0,
+        "noreach": 1
+      },
+      "dqnContacts": 121,
+      "oppContacts": 118,
+      "frames": 10800,
+      "stalled": 0,
+      "rally": {
+        "n": 18,
+        "avg": 14.277777777777779,
+        "p50": 17,
+        "p90": 21,
+        "max": 21,
+        "over15": 11,
+        "over10": 13,
+        "hist": {
+          "0": 2,
+          "5": 3,
+          "10": 2,
+          "15": 7,
+          "20": 4
+        }
+      },
+      "games": [
+        {
+          "g": 0,
+          "dq": 5,
+          "op": 1,
+          "frames": 3600
+        },
+        {
+          "g": 1,
+          "dq": 6,
+          "op": 0,
+          "frames": 3600
+        },
+        {
+          "g": 2,
+          "dq": 6,
+          "op": 0,
+          "frames": 3600
+        }
+      ],
+      "simRate": null
+    }
+  }
+}

@@ -72,6 +72,7 @@ function runShard(opts){
     '--controller', opts.controller, '--json', jsonPath ];
   if(opts.from) args.push('--from', opts.from);
   if(opts.cfg) args.push('--hip-cfg', opts.cfg);
+  if(opts.hellVec) args.push('--hell-vec', opts.hellVec);   /* 候选地狱实机复核（live-match --hell-vec） */
   /* ★ 移动预算（限速）：模型侧拍速上限（m/s）。0/不给 = 不限。 */
   if(opts.moveCap) args.push('--move-cap', String(opts.moveCap));
   const r = spawnSync(process.execPath, args, { cwd: ROOT, encoding: 'utf8', maxBuffer: 1 << 26 });
@@ -166,7 +167,8 @@ function main(){
 
   const base = { controller, opp, games, seed, from, maxsec,
                  cfg: argOf('--hip-cfg', ''),
-                 moveCap: argOf('--move-cap', '') };
+                 moveCap: argOf('--move-cap', ''),
+                 hellVec: argOf('--hell-vec', '') };
 
   /* ★ --hip-cfg 的基线配置（两条路径都要用）。
    *   历史 bug：非 grid 路径调用 doOne(null) ⇒ cfgPath 为空 ⇒
@@ -191,7 +193,7 @@ function main(){
     const perShard = Math.max(1, Math.round(games / shards));
     for(let s = 0; s < shards; s++){
       const r = runShard({ controller, opp, games: perShard, seed: seed + s * 1000,
-                            maxsec, cfg: cfgPath, moveCap: cap,
+                            maxsec, cfg: cfgPath, moveCap: cap, hellVec: base.hellVec,
                             from: (fromOverride != null && fromOverride !== '') ? fromOverride : from });
       if(r.error){ console.error('分片 ' + s + ' 失败：\n' + r.error); continue; }
       for(const t of Object.keys(r.byTier)){
