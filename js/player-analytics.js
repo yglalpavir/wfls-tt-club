@@ -281,6 +281,36 @@ function paBuildSourceFromDaily(dailyFull) {
     return { types: types, hasBonus: hasBonus, snapshots: dailyFull, initial: initial, lifetime: lifetime, inherit: inherit };
 }
 
+// 积分流向聚合（桑基图数据源）：按对手汇总本人视角的积分收支
+// 口径 = 收支口径 + 衰减至今日：流入 = 我赢该对手各场所得（change>0）之和，
+// 流出 = 我输该对手各场所失（|change|）之和，与比赛明细表「调整」列同源可直接对账。
+// matches 行来自 computePlayerMatchRecords / wttPpComputeMatchRecords（双打配对串不会
+// 等于球员名，行天然只含单打）；bonus 从全量行另计，仅作脚注不画入图。
+function paBuildFlowData(matches, allRows) {
+    const map = new Map();
+    let bonus = 0;
+    if (Array.isArray(allRows)) {
+        for (const r of allRows) if (r.isBonus) bonus += (r.change || 0);
+    }
+    for (const r of matches) {
+        if (r.isBonus || !r.opp || r.opp === '-') continue;
+        let s = map.get(r.opp);
+        if (!s) {
+            s = { opp: r.opp, wins: 0, losses: 0, inflow: 0, outflow: 0, lastDate: '' };
+            map.set(r.opp, s);
+        }
+        if (r.isWin) { s.wins++; s.inflow += (r.change || 0); }
+        else { s.losses++; s.outflow += Math.abs(r.change || 0); }
+        if (r.date > s.lastDate) s.lastDate = r.date;
+    }
+    if (!map.size) return null;
+    const opps = [...map.values()];
+    let totalIn = 0, totalOut = 0;
+    for (const s of opps) { totalIn += s.inflow; totalOut += s.outflow; }
+    if (totalIn <= 0 && totalOut <= 0) return null;
+    return { opps: opps, totalIn: totalIn, totalOut: totalOut, bonus: bonus };
+}
+
 // ---------- HTML 构建 ----------
 
 // ---------- 数据计算 ----------
@@ -309,7 +339,8 @@ function paComputeAnalyticsData(playerName, records, opts) {
         form: paBuildFormStats(matches),
         seasonRows: paBuildSeasonStats(all),
         source: source,
-        sourceBoundaries: paFindSeasonBoundaries(source.snapshots)
+        sourceBoundaries: paFindSeasonBoundaries(source.snapshots),
+        flow: paBuildFlowData(matches, all)
     };
 }
 
@@ -323,7 +354,7 @@ function renderPlayerAnalytics(playerName, records, opts) {
     const all = data.all, matches = data.matches;
     if (!matches.length && !all.length) { container.innerHTML = ''; return; }
 
-    const { rankSeries, typeStats, gapBands, gapTotal, monthly, form, seasonRows, source } = data;
+    const { rankSeries, typeStats, gapBands, gapTotal, monthly, form, seasonRows, source, flow } = data;
 
     // 六维战力雷达（通栏总览卡；club/WTT 双模式由 opts.wttMode 标记，capability-radar.js 提供）
     const crIsWtt = !!(opts && opts.wttMode);
@@ -468,6 +499,25 @@ function renderPlayerAnalytics(playerName, records, opts) {
         html += '</div>';
     }
 
+    // 8. 积分流向（通栏）：桑基图 —— 左列=流入来源（我赢过的对手），右列=流出去向（赢过我的对手）
+    if (flow) {
+        const skTheme = paChartTheme();
+        const net = flow.totalIn - flow.totalOut;
+        html += '<div class="pa-card glass-card pa-span-2">';
+        html += '<div class="personal-card-header">' + L.pa_flow_title + '</div>';
+        html += '<div class="pa-sankey-box"><canvas id="paFlowSankey"></canvas><div class="pa-sankey-tip" role="tooltip"></div></div>';
+        html += '<div class="pa-source-strip">';
+        html += '<span class="pa-source-chip"><span class="pa-dot" style="background:' + skTheme.win + '"></span><span class="pa-source-name">' + L.pa_flow_in + '</span><span class="pa-text-win">+' + flow.totalIn.toFixed(1) + '</span></span>';
+        html += '<span class="pa-source-chip"><span class="pa-dot" style="background:' + skTheme.loss + '"></span><span class="pa-source-name">' + L.pa_flow_out + '</span><span class="pa-text-loss">-' + flow.totalOut.toFixed(1) + '</span></span>';
+        if (Math.abs(flow.bonus) >= 0.05) {
+            html += '<span class="pa-source-chip">' + L.pa_flow_bonus.replace('{v}', (flow.bonus >= 0 ? '+' : '-') + Math.abs(flow.bonus).toFixed(1)) + '</span>';
+        }
+        html += '<span class="pa-source-chip pa-source-total">' + L.pa_flow_net + '<span class="' + (net >= 0 ? 'pa-text-win' : 'pa-text-loss') + '">' + (net >= 0 ? '+' : '-') + Math.abs(net).toFixed(1) + '</span></span>';
+        html += '</div>';
+        html += '<div class="pa-card-hint">' + L.pa_flow_hint + '</div>';
+        html += '</div>';
+    }
+
     html += '</div>';
     container.innerHTML = html;
 
@@ -479,6 +529,7 @@ function renderPlayerAnalytics(playerName, records, opts) {
     if (monthly && monthly.totals.length) paRenderMonthlyChart(monthly);
     if (matches.length && form.rolling.length >= 2) paRenderFormChart(form);
     if (source.snapshots.length >= 2) paRenderSourceChart(source, data.sourceBoundaries);
+    if (flow) paRenderFlowSankey(flow, playerName, { wttMode: crIsWtt });
 }
 
 // ---------- 图表渲染 ----------
@@ -919,4 +970,502 @@ function paRenderSourceChart(source, boundaries) {
         },
         plugins: [createSeasonBoundaryPlugin(snapshots, t.isDark, boundaries)]
     }));
+}
+
+// ---------- 积分流向桑基图（手绘 canvas，无第三方依赖；club / WTT 双模式通用） ----------
+// 左列 = 流入来源（我赢过的对手，流带宽度 = 从该对手处赢得的衰减后积分合计）
+// 中列 = 本人节点；右列 = 流出去向（赢过我的对手，流带宽度 = 输给该对手的衰减后积分合计）。
+// 每个对手的流值恒等于比赛明细表中该对手各行「调整」列之和。本人节点占满绘图高度，
+// 小的一侧下方留白即净盈余。交互：悬停高亮 + 浮动 tooltip；点击对手跳其档案页。
+
+const PA_FLOW_MAX_NODES = 8;    // 每侧最多展开的对手数，其余合并为「其他」
+const PA_FLOW_MIN_NODE_H = 10;  // 节点最小可读高度（px）
+const PA_FLOW_NODE_W = 13;      // 对手节点条宽（px）
+const PA_FLOW_GAP = 4;          // 相邻节点间距（px）
+const PA_FLOW_HOVER_MS = 180;   // 悬停高亮/淡出的过渡时长
+const PA_FLOW_ENTRY_MS = 420;   // 入场动画单体时长
+const PA_FLOW_ENTRY_STAGGER = 45; // 入场逐节点错峰间隔
+
+const PA_FLOW_EASE = t => 1 - Math.pow(1 - Math.max(0, Math.min(1, t)), 3); // ease-out-cubic
+
+let paFlowState = null;         // { flow, playerName, wttMode, hover, geom, anim }
+let paFlowResizeBound = false;
+let paFlowResizeTimer = null;
+let paFlowThemeObserver = null;
+let paFlowRaf = 0;
+let paFlowEntryKey = null;      // 上次播放入场动画的 球员|语言，避免语言切换反复重播
+
+function paFlowPrefersReducedMotion() {
+    try { return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches); }
+    catch (e) { return false; }
+}
+
+function paFlowCssVar(name, fallback) {
+    try {
+        const v = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+        return v || fallback;
+    } catch (e) { return fallback; }
+}
+
+// 对手档案页地址（查不到档案返回 null → 节点不可点击）
+function paFlowOppUrl(opp, wttMode) {
+    try {
+        if (wttMode) return (typeof wttPlayerPageUrl === 'function') ? wttPlayerPageUrl(opp) : null;
+        const p = (typeof getPlayerByName === 'function') ? getPlayerByName(opp) : null;
+        return (p && p.uid != null) ? 'player.html?uid=' + encodeURIComponent(String(p.uid)) : null;
+    } catch (e) { return null; }
+}
+
+function paFlowLabel(name) {
+    return (typeof playerDisplayName === 'function') ? playerDisplayName(name) : String(name);
+}
+
+// 每侧布局：按流值降序取前 PA_FLOW_MAX_NODES 个，其余合并为「其他」节点（ref=null，不可点击）
+function paFlowLayoutSide(opps, valueKey) {
+    const sorted = opps.filter(s => s[valueKey] > 0).sort((a, b) => b[valueKey] - a[valueKey]);
+    const nodes = sorted.slice(0, PA_FLOW_MAX_NODES)
+        .map(s => ({ key: s.opp, label: paFlowLabel(s.opp), value: s[valueKey], ref: s }));
+    const rest = sorted.slice(PA_FLOW_MAX_NODES);
+    if (rest.length) {
+        nodes.push({
+            key: '__others__',
+            label: i18n[currentLang].pa_flow_others.replace('{n}', rest.length),
+            value: rest.reduce((a, s) => a + s[valueKey], 0),
+            ref: null
+        });
+    }
+    return nodes;
+}
+
+function paFlowEllipsis(ctx, text, maxW) {
+    if (maxW <= 0 || ctx.measureText(text).width <= maxW) return text;
+    while (text.length > 1 && ctx.measureText(text + '…').width > maxW) text = text.slice(0, -1);
+    return text + '…';
+}
+
+function paFlowRoundRect(ctx, x, y, w, h, r) {
+    const rr = Math.max(0, Math.min(r, w / 2, h / 2));
+    ctx.beginPath();
+    ctx.moveTo(x + rr, y);
+    ctx.arcTo(x + w, y, x + w, y + h, rr);
+    ctx.arcTo(x + w, y + h, x, y + h, rr);
+    ctx.arcTo(x, y + h, x, y, rr);
+    ctx.arcTo(x, y, x + w, y, rr);
+    ctx.closePath();
+}
+
+function paDrawFlowSankey() {
+    const canvas = document.getElementById('paFlowSankey');
+    if (!canvas || !paFlowState || !paFlowState.flow) return;
+    const host = canvas.parentNode;
+    const W = host.clientWidth, H = host.clientHeight;
+    if (W < 60 || H < 60) return;
+    const dpr = window.devicePixelRatio || 1;
+    const bw = Math.round(W * dpr), bh = Math.round(H * dpr);
+    if (canvas.width !== bw || canvas.height !== bh) { canvas.width = bw; canvas.height = bh; }
+    const ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, W, H);
+
+    const { flow, playerName } = paFlowState;
+    const hover = paFlowState.hover || null; // 目标态快照 {kind, key}；过渡期间与 anim.hoverFrom 插值
+    const th = paChartTheme();
+    const L = i18n[currentLang];
+    const accent = paFlowCssVar('--primary-blue', th.isDark ? '#5aa2ff' : '#3b82f6');
+    const strongC = paFlowCssVar('--text-primary', th.isDark ? '#e4e6ed' : '#1a1a2e');
+    const mutedC = paFlowCssVar('--text-muted', th.isDark ? '#8b90a0' : '#94a3b8');
+    const family = getComputedStyle(document.body).fontFamily || 'sans-serif';
+    const compact = W < 560;
+    const nameFont = (compact ? 11 : 12) + 'px ' + family;
+    const valFont = (compact ? 9.5 : 10.5) + 'px ' + family;
+
+    // ---- 动效状态：入场错峰淡入 + 悬停 180ms 缓动（尊重 prefers-reduced-motion）----
+    const anim = paFlowState.anim || {};
+    const reduceMotion = paFlowPrefersReducedMotion();
+    const now = (typeof performance !== 'undefined' ? performance.now() : Date.now());
+    const hoverT = reduceMotion ? 1 : PA_FLOW_EASE((now - (anim.hoverStart || 0)) / PA_FLOW_HOVER_MS);
+    const mix = (a, b) => a + (b - a) * hoverT;
+    const entryOn = !!anim.entry && !reduceMotion;
+    const entryE = idx => entryOn ? PA_FLOW_EASE((now - anim.entry.start - 60 - idx * PA_FLOW_ENTRY_STAGGER) / PA_FLOW_ENTRY_MS) : 1;
+    const trunkE = entryOn ? PA_FLOW_EASE((now - anim.entry.start) / PA_FLOW_ENTRY_MS) : 1;
+    // 各状态下「对手节点端 / 本人节点端」的流带透明度（ECharts 惯例：基态淡、emphasis 浓、blur 更淡）
+    function ribbonAlphas(o, kind, snap) {
+        const isH = !!snap && snap.kind === kind && snap.key === o.node.key;
+        const dim = !!snap && snap.kind !== 'trunk' && !isH;
+        return isH ? { node: 0.78, trunk: 0.5 } : dim ? { node: 0.06, trunk: 0.03 } : { node: 0.34, trunk: 0.14 };
+    }
+    function nodeAlpha(o, kind, snap) {
+        const isH = !!snap && snap.kind === kind && snap.key === o.node.key;
+        const dim = !!snap && snap.kind !== 'trunk' && !isH;
+        return isH ? 1 : dim ? 0.3 : 0.9;
+    }
+    function isDim(o, kind, snap) {
+        return !!snap && snap.kind !== 'trunk' && !(snap.kind === kind && snap.key === o.node.key);
+    }
+
+    // ---- 几何布局 ----
+    const inNodes = paFlowLayoutSide(flow.opps, 'inflow');
+    const outNodes = paFlowLayoutSide(flow.opps, 'outflow');
+    const padTop = 30, padBottom = 6;
+    const plotTop = padTop, plotH = H - padTop - padBottom;
+    if (plotH < 40) return;
+    const trunkW = compact ? 18 : 24;
+    const trunkX = (W - trunkW) / 2;
+    const scale = plotH / Math.max(flow.totalIn, flow.totalOut, 1e-9);
+
+    // 标签槽宽 = 名字宽 + 数值宽 + 余量，按可用空间钳制
+    const signed = (kind, v) => (kind === 'in' ? '+' : '-') + v.toFixed(1);
+    ctx.font = valFont;
+    let valW = 0;
+    for (const n of inNodes) valW = Math.max(valW, ctx.measureText(signed('in', n.value)).width);
+    for (const n of outNodes) valW = Math.max(valW, ctx.measureText(signed('out', n.value)).width);
+    ctx.font = nameFont;
+    let nameWMax = 0;
+    for (const n of inNodes.concat(outNodes)) nameWMax = Math.max(nameWMax, ctx.measureText(n.label).width);
+    const gutMax = compact ? 110 : 150, gutMin = compact ? 52 : 64;
+    const maxGutter = Math.max(30, (W - trunkW) / 2 - PA_FLOW_NODE_W - 28);
+    const gutter = Math.max(gutMin, Math.min(gutMax, nameWMax + valW + 16, maxGutter));
+    const nodeW = PA_FLOW_NODE_W;
+    const lx = gutter + 4;             // 左列节点条 x
+    const rx = W - gutter - 4 - nodeW; // 右列节点条 x
+
+    // 节点高度 ∝ 流值（设最小可读高度；放不下时整体等比压缩）
+    function stack(nodes) {
+        const hs = nodes.map(n => Math.max(n.value * scale, PA_FLOW_MIN_NODE_H));
+        const gaps = PA_FLOW_GAP * Math.max(0, nodes.length - 1);
+        const sum = hs.reduce((a, b) => a + b, 0);
+        if (sum + gaps > plotH && sum > 0) {
+            const k = (plotH - gaps) / sum;
+            for (let i = 0; i < hs.length; i++) hs[i] *= k;
+        }
+        let y = plotTop;
+        return nodes.map((n, i) => {
+            const o = { node: n, y: y, h: hs[i], cy: y + hs[i] / 2, path: null, idx: i };
+            y += hs[i] + PA_FLOW_GAP;
+            return o;
+        });
+    }
+    const inLaid = stack(inNodes);
+    const outLaid = stack(outNodes);
+    // 桑基流带与源节点同序同高，直接 attaching 到本人节点两侧的同一纵坐标
+    paFlowState.geom = {
+        W: W, H: H, dpr: dpr, lx: lx, rx: rx, nodeW: nodeW,
+        trunkX: trunkX, trunkW: trunkW, plotTop: plotTop, plotH: plotH,
+        inLaid: inLaid, outLaid: outLaid
+    };
+
+    // ---- 流带 ----
+    function ribbonPath(x1, yc1, h, x2, yc2) {
+        const p = new Path2D();
+        const hh = h / 2, cx = (x1 + x2) / 2;
+        p.moveTo(x1, yc1 - hh);
+        p.bezierCurveTo(cx, yc1 - hh, cx, yc2 - hh, x2, yc2 - hh);
+        p.lineTo(x2, yc2 + hh);
+        p.bezierCurveTo(cx, yc2 + hh, cx, yc1 + hh, x1, yc1 + hh);
+        p.closePath();
+        return p;
+    }
+    function drawSide(laid, kind) {
+        const baseC = kind === 'in' ? th.win : th.loss;
+        const x1 = kind === 'in' ? lx + nodeW : trunkX + trunkW;
+        const x2 = kind === 'in' ? trunkX : rx;
+        const nodeEnd = kind === 'in' ? 0 : 1; // 渐变 0/1 端中「对手节点」所在端
+        for (const o of laid) {
+            const e = entryE(o.idx);
+            o.path = ribbonPath(x1, o.cy, o.h, x2, o.cy);
+            if (e <= 0) continue;
+            // 渐变：靠对手节点一端浓、靠本人节点一端淡 —— 方向可读 + 图底留白
+            const s0 = ribbonAlphas(o, kind, anim.hoverFrom);
+            const s1 = ribbonAlphas(o, kind, hover);
+            const aNode = mix(s0.node, s1.node) * e;
+            const aTrunk = mix(s0.trunk, s1.trunk) * e;
+            const g = ctx.createLinearGradient(x1, 0, x2, 0);
+            g.addColorStop(nodeEnd, paAlpha(baseC, aNode));
+            g.addColorStop(1 - nodeEnd, paAlpha(baseC, aTrunk));
+            ctx.fillStyle = g;
+            ctx.fill(o.path);
+        }
+    }
+    drawSide(inLaid, 'in');
+    drawSide(outLaid, 'out');
+
+    // ---- 本人节点（竖向渐变；悬停时辉光）----
+    if (trunkE > 0) {
+        ctx.save();
+        ctx.globalAlpha = trunkE;
+        if (hover && hover.kind === 'trunk') {
+            ctx.shadowColor = paAlpha(accent, 0.55);
+            ctx.shadowBlur = 18;
+        }
+        const tg = ctx.createLinearGradient(0, plotTop, 0, plotTop + plotH);
+        tg.addColorStop(0, paAlpha(accent, 0.95));
+        tg.addColorStop(1, paAlpha(accent, 0.68));
+        paFlowRoundRect(ctx, trunkX, plotTop, trunkW, plotH, 5);
+        ctx.fillStyle = tg;
+        ctx.fill();
+        ctx.restore();
+    }
+    function drawNodes(laid, kind, x) {
+        const baseC = kind === 'in' ? th.win : th.loss;
+        for (const o of laid) {
+            const e = entryE(o.idx);
+            if (e <= 0) continue;
+            const a = mix(nodeAlpha(o, kind, anim.hoverFrom), nodeAlpha(o, kind, hover)) * e;
+            const isH = !!hover && hover.kind === kind && hover.key === o.node.key;
+            // 节点纵向微移入场（10px → 0），与流带渐显错峰呼应
+            const dy = entryOn ? (1 - e) * 10 : 0;
+            ctx.save();
+            ctx.globalAlpha = a;
+            if (isH) {
+                ctx.shadowColor = paAlpha(baseC, 0.6);
+                ctx.shadowBlur = 10;
+            }
+            paFlowRoundRect(ctx, x, o.y + dy, nodeW, o.h, 3);
+            ctx.fillStyle = baseC;
+            ctx.fill();
+            ctx.restore();
+        }
+    }
+    drawNodes(inLaid, 'in', lx);
+    drawNodes(outLaid, 'out', rx);
+
+    // ---- 标签（名字 + 带符号数值）----
+    ctx.textBaseline = 'middle';
+    function drawLabels(laid, kind, x) {
+        const valC = kind === 'in' ? th.win : th.loss;
+        const right = kind === 'in'; // 左列标签在节点左侧右对齐；右列镜像
+        for (const o of laid) {
+            const e = entryE(o.idx);
+            if (e <= 0) continue;
+            const isH = !!hover && hover.kind === kind && hover.key === o.node.key;
+            const dim = isDim(o, kind, hover);
+            // 标签透明度跟随过渡（淡化态 0.5），颜色取目标态
+            const a = mix(isDim(o, kind, anim.hoverFrom) ? 0.5 : 1, dim ? 0.5 : 1) * e;
+            const vx = right ? x - 8 : x + nodeW + 8;
+            const nx = right ? vx - valW - 6 : vx + valW + 6;
+            ctx.font = valFont;
+            ctx.textAlign = right ? 'right' : 'left';
+            ctx.globalAlpha = a;
+            ctx.fillStyle = dim ? mutedC : valC;
+            ctx.fillText(signed(kind, o.node.value), vx, o.cy);
+            ctx.font = nameFont;
+            ctx.fillStyle = dim ? mutedC : (isH ? strongC : th.text);
+            ctx.fillText(paFlowEllipsis(ctx, o.node.label, gutter - valW - 16), nx, o.cy);
+            ctx.globalAlpha = 1;
+        }
+    }
+    drawLabels(inLaid, 'in', lx);
+    drawLabels(outLaid, 'out', rx);
+
+    // ---- 空侧提示 ----
+    ctx.font = (compact ? 10 : 11) + 'px ' + family;
+    ctx.textAlign = 'center';
+    ctx.globalAlpha = trunkE;
+    ctx.fillStyle = mutedC;
+    if (!inLaid.length) ctx.fillText(L.pa_flow_empty_in, (lx + trunkX) / 2, plotTop + plotH / 2);
+    if (!outLaid.length) ctx.fillText(L.pa_flow_empty_out, (trunkX + trunkW + rx) / 2, plotTop + plotH / 2);
+
+    // ---- 列头（色条呼应流入/流出语义色）----
+    ctx.font = '700 ' + (compact ? 10 : 11) + 'px ' + family;
+    ctx.fillStyle = mutedC;
+    ctx.fillText(L.pa_flow_in, lx + nodeW / 2, padTop - 13);
+    ctx.fillText(L.pa_flow_out, rx + nodeW / 2, padTop - 13);
+    ctx.fillStyle = paAlpha(th.win, 0.9);
+    ctx.fillRect(lx + nodeW / 2 - 9, padTop - 6, 18, 2);
+    ctx.fillStyle = paAlpha(th.loss, 0.9);
+    ctx.fillRect(rx + nodeW / 2 - 9, padTop - 6, 18, 2);
+    ctx.font = '700 ' + (compact ? 12 : 13) + 'px ' + family;
+    ctx.fillStyle = strongC;
+    ctx.globalAlpha = trunkE;
+    ctx.fillText(paFlowEllipsis(ctx, paFlowLabel(playerName), Math.min(260, W * 0.5)), W / 2, padTop - 12);
+    ctx.globalAlpha = 1;
+}
+
+// ---- 交互（几何状态来自 paDrawFlowSankey 保存的 paFlowState.geom）----
+
+function paFlowHitTest(mx, my) {
+    const g = paFlowState && paFlowState.geom;
+    const canvas = document.getElementById('paFlowSankey');
+    if (!g || !canvas) return null;
+    // 节点条优先（视觉最上层），然后本人节点，最后流带
+    const sides = [['in', g.inLaid, g.lx], ['out', g.outLaid, g.rx]];
+    for (const s of sides) {
+        for (const o of s[1]) {
+            if (mx >= s[2] && mx <= s[2] + g.nodeW && my >= o.y && my <= o.y + o.h) {
+                return { kind: s[0], node: o.node, laid: o };
+            }
+        }
+    }
+    if (mx >= g.trunkX && mx <= g.trunkX + g.trunkW && my >= g.plotTop && my <= g.plotTop + g.plotH) {
+        return { kind: 'trunk', node: null, laid: null };
+    }
+    // 流带：Path2D 命中检测需在绘制变换（dpr 缩放）下以设备坐标传点
+    const ctx = canvas.getContext('2d');
+    ctx.save();
+    ctx.setTransform(g.dpr, 0, 0, g.dpr, 0, 0);
+    let hit = null;
+    outer: for (const s of sides) {
+        for (const o of s[1]) {
+            if (o.path && ctx.isPointInPath(o.path, mx * g.dpr, my * g.dpr)) {
+                hit = { kind: s[0], node: o.node, laid: o };
+                break outer;
+            }
+        }
+    }
+    ctx.restore();
+    return hit;
+}
+
+function paFlowHideTip() {
+    const tip = document.querySelector('#paFlowSankey ~ .pa-sankey-tip');
+    if (tip) tip.classList.remove('show');
+}
+
+function paFlowShowTip(hit, mx, my) {
+    const g = paFlowState && paFlowState.geom;
+    const canvas = document.getElementById('paFlowSankey');
+    const tip = canvas ? canvas.parentNode.querySelector('.pa-sankey-tip') : null;
+    if (!g || !tip) return;
+    const L = i18n[currentLang];
+    const flow = paFlowState.flow, playerName = paFlowState.playerName;
+    let html = '';
+    if (hit.kind === 'trunk') {
+        const net = flow.totalIn - flow.totalOut;
+        html += '<div class="pa-sk-tip-title">' + escapeHtml(paFlowLabel(playerName)) + '</div>';
+        html += '<div class="pa-sk-tip-line">' + L.pa_flow_tip_in_sum.replace('{v}', flow.totalIn.toFixed(1)) + '</div>';
+        html += '<div class="pa-sk-tip-line">' + L.pa_flow_tip_out_sum.replace('{v}', flow.totalOut.toFixed(1)) + '</div>';
+        html += '<div class="pa-sk-tip-line">' + L.pa_flow_net + ' ' + (net >= 0 ? '+' : '-') + Math.abs(net).toFixed(1) + '</div>';
+    } else {
+        const n = hit.node;
+        html += '<div class="pa-sk-tip-title">' + escapeHtml(n.label) + '</div>';
+        if (n.ref) {
+            html += '<div class="pa-sk-tip-line">' + L.pa_flow_tip_wl.replace('{w}', n.ref.wins).replace('{l}', n.ref.losses) + '</div>';
+            html += '<div class="pa-sk-tip-line">' + (hit.kind === 'in' ? L.pa_flow_tip_in : L.pa_flow_tip_out).replace('{v}', n.value.toFixed(1)) + '</div>';
+            if (n.ref.lastDate) html += '<div class="pa-sk-tip-line">' + L.pa_flow_tip_last.replace('{d}', escapeHtml(n.ref.lastDate)) + '</div>';
+        } else {
+            html += '<div class="pa-sk-tip-line">' + (hit.kind === 'in' ? L.pa_flow_tip_in : L.pa_flow_tip_out).replace('{v}', n.value.toFixed(1)) + '</div>';
+        }
+    }
+    tip.innerHTML = html;
+    tip.classList.add('show');
+    const tw = tip.offsetWidth, thh = tip.offsetHeight;
+    let tx = mx + 14, ty = my - thh / 2;
+    if (tx + tw > g.W - 4) tx = mx - tw - 14;
+    if (tx < 4) tx = 4;
+    if (ty + thh > g.H - 4) ty = g.H - thh - 4;
+    if (ty < 4) ty = 4;
+    tip.style.left = tx + 'px';
+    tip.style.top = ty + 'px';
+}
+
+// ---- 动效驱动：rAF 循环重绘，入场与悬停过渡都完成后停止 ----
+
+function paFlowTick() {
+    paFlowRaf = 0;
+    const st = paFlowState;
+    if (!st || !st.anim) return;
+    const now = (typeof performance !== 'undefined' ? performance.now() : Date.now());
+    const maxStagger = 60 + 2 * (PA_FLOW_MAX_NODES + 1) * PA_FLOW_ENTRY_STAGGER;
+    const entryDone = !st.anim.entry || (now - st.anim.entry.start > maxStagger + PA_FLOW_ENTRY_MS);
+    const hoverDone = !st.anim.hoverStart || (now - st.anim.hoverStart >= PA_FLOW_HOVER_MS);
+    paDrawFlowSankey();
+    if (!entryDone || !hoverDone) {
+        paFlowRaf = requestAnimationFrame(paFlowTick);
+    } else {
+        st.anim.entry = null;
+        st.anim.hoverStart = 0;
+    }
+}
+
+function paFlowRepaint() {
+    if (paFlowPrefersReducedMotion() || typeof requestAnimationFrame !== 'function') {
+        // 减少动态：跳过过渡，直接落到最终态
+        if (paFlowState && paFlowState.anim) { paFlowState.anim.entry = null; paFlowState.anim.hoverStart = 0; }
+        paDrawFlowSankey();
+        return;
+    }
+    if (paFlowRaf) return;
+    paFlowRaf = requestAnimationFrame(paFlowTick);
+}
+
+function paRenderFlowSankey(flow, playerName, opts) {
+    opts = opts || {};
+    const entryKey = playerName; // 同一球员只播一次入场；语言切换整页重渲不重播
+    const doEntry = entryKey !== paFlowEntryKey;
+    paFlowEntryKey = entryKey;
+    paFlowState = {
+        flow: flow, playerName: playerName, wttMode: !!opts.wttMode,
+        hover: null, geom: null,
+        anim: { entry: doEntry ? { start: (typeof performance !== 'undefined' ? performance.now() : Date.now()) } : null, hoverFrom: null, hoverStart: 0 }
+    };
+    paDrawFlowSankey();
+    paFlowRepaint();
+    // 兜底：页面在后台时 rAF 会被暂停，超时后直接落到最终态，
+    // 避免用户切回标签页时看到停留在半程的空帧
+    setTimeout(function () {
+        if (paFlowState && paFlowState.anim && paFlowState.anim.entry) {
+            paFlowState.anim.entry = null;
+            paDrawFlowSankey();
+        }
+    }, 2600);
+    const canvas = document.getElementById('paFlowSankey');
+    if (canvas) {
+        canvas.addEventListener('mousemove', function (e) {
+            if (!paFlowState || !paFlowState.geom) return;
+            const r = canvas.getBoundingClientRect();
+            const mx = e.clientX - r.left, my = e.clientY - r.top;
+            const hit = paFlowHitTest(mx, my);
+            const newKey = hit ? hit.kind + '\u0000' + (hit.node ? hit.node.key : '') : '';
+            const oldKey = paFlowState.hover ? paFlowState.hover.kind + '\u0000' + (paFlowState.hover.key || '') : '';
+            if (newKey !== oldKey) {
+                // 高亮/淡出走 180ms 缓动，而非瞬时切换
+                paFlowState.anim.hoverFrom = paFlowState.hover;
+                paFlowState.hover = hit ? { kind: hit.kind, key: hit.node ? hit.node.key : null } : null;
+                paFlowState.anim.hoverStart = (typeof performance !== 'undefined' ? performance.now() : Date.now());
+                paFlowRepaint();
+            }
+            const clickable = hit && hit.node && hit.node.ref && paFlowOppUrl(hit.node.ref.opp, paFlowState.wttMode);
+            canvas.style.cursor = clickable ? 'pointer' : 'default';
+            if (hit) paFlowShowTip(hit, mx, my); else paFlowHideTip();
+        });
+        canvas.addEventListener('mouseleave', function () {
+            if (!paFlowState) return;
+            if (paFlowState.hover) {
+                paFlowState.anim.hoverFrom = paFlowState.hover;
+                paFlowState.anim.hoverStart = (typeof performance !== 'undefined' ? performance.now() : Date.now());
+            }
+            paFlowState.hover = null;
+            paFlowHideTip();
+            paFlowRepaint();
+        });
+        canvas.addEventListener('click', function (e) {
+            if (!paFlowState || !paFlowState.geom) return;
+            const r = canvas.getBoundingClientRect();
+            const hit = paFlowHitTest(e.clientX - r.left, e.clientY - r.top);
+            if (hit && hit.node && hit.node.ref) {
+                const url = paFlowOppUrl(hit.node.ref.opp, paFlowState.wttMode);
+                if (url) window.location.href = url;
+            }
+        });
+    }
+    // 容器宽度变了才重画（手机转屏 / 侧栏收起），纯几何调整
+    if (!paFlowResizeBound) {
+        paFlowResizeBound = true;
+        window.addEventListener('resize', function () {
+            if (paFlowResizeTimer) clearTimeout(paFlowResizeTimer);
+            paFlowResizeTimer = setTimeout(function () {
+                const c = document.getElementById('paFlowSankey');
+                if (!c || !paFlowState || !paFlowState.geom) return;
+                if (Math.abs(c.parentNode.clientWidth - paFlowState.geom.W) < 24) return;
+                paDrawFlowSankey();
+            }, 160);
+        });
+    }
+    // 主题切换只改 <html> 的 class，画布配色要跟着重画
+    if (!paFlowThemeObserver && window.MutationObserver) {
+        paFlowThemeObserver = new MutationObserver(function () {
+            if (document.getElementById('paFlowSankey') && paFlowState) paDrawFlowSankey();
+        });
+        paFlowThemeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    }
 }
