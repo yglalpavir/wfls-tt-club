@@ -977,14 +977,17 @@ function paRenderSourceChart(source, boundaries) {
 // 中列 = 本人节点；右列 = 流出去向（赢过我的对手，流带宽度 = 输给该对手的衰减后积分合计）。
 // 每个对手的流值恒等于比赛明细表中该对手各行「调整」列之和。本人节点占满绘图高度，
 // 小的一侧下方留白即净盈余。交互：悬停高亮 + 浮动 tooltip；点击对手跳其档案页。
+// 动效：入场时流带从对手端向本人节点错峰「接通」（裁剪擦除），随后常驻流光粒子沿
+// 流带中心线定向流动（离屏 / 后台标签页 / prefers-reduced-motion 时自动停）。
 
 const PA_FLOW_MAX_NODES = 8;    // 每侧最多展开的对手数，其余合并为「其他」
 const PA_FLOW_MIN_NODE_H = 10;  // 节点最小可读高度（px）
 const PA_FLOW_NODE_W = 13;      // 对手节点条宽（px）
 const PA_FLOW_GAP = 4;          // 相邻节点间距（px）
 const PA_FLOW_HOVER_MS = 180;   // 悬停高亮/淡出的过渡时长
-const PA_FLOW_ENTRY_MS = 420;   // 入场动画单体时长
+const PA_FLOW_ENTRY_MS = 560;   // 入场动画单体时长
 const PA_FLOW_ENTRY_STAGGER = 45; // 入场逐节点错峰间隔
+const PA_FLOW_TRAVERSE_MS = 2600; // 流光粒子横穿一条流带的基准耗时
 
 const PA_FLOW_EASE = t => 1 - Math.pow(1 - Math.max(0, Math.min(1, t)), 3); // ease-out-cubic
 
@@ -994,6 +997,9 @@ let paFlowResizeTimer = null;
 let paFlowThemeObserver = null;
 let paFlowRaf = 0;
 let paFlowEntryKey = null;      // 上次播放入场动画的 球员|语言，避免语言切换反复重播
+let paFlowInView = true;        // 画布是否在视口内（IntersectionObserver 维护；离屏即停流光循环）
+let paFlowIo = null;
+let paFlowIoCanvas = null;
 
 function paFlowPrefersReducedMotion() {
     try { return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches); }
@@ -1054,6 +1060,31 @@ function paFlowRoundRect(ctx, x, y, w, h, r) {
     ctx.closePath();
 }
 
+// 颜色 → [r,g,b]，支持 #rgb / #rrggbb / rgb(...)（CSS 变量可能给出场RGB形式）
+function paFlowRgb(color) {
+    const s = String(color).trim();
+    if (s.charAt(0) === '#') {
+        const h = s.slice(1);
+        if (h.length === 3) return [parseInt(h.charAt(0) + h.charAt(0), 16), parseInt(h.charAt(1) + h.charAt(1), 16), parseInt(h.charAt(2) + h.charAt(2), 16)];
+        return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)];
+    }
+    const m = s.match(/\d+(\.\d+)?/g);
+    return m ? [Number(m[0]), Number(m[1] || 0), Number(m[2] || 0)] : [59, 130, 246];
+}
+
+// 两色线性插值 + 透明度（流带双色渐变 / 粒子提亮用）
+function paFlowMixA(c1, c2, t, a) {
+    const p = paFlowRgb(c1), q = paFlowRgb(c2);
+    const k = Math.max(0, Math.min(1, t));
+    return 'rgba(' + Math.round(p[0] + (q[0] - p[0]) * k) + ',' + Math.round(p[1] + (q[1] - p[1]) * k) + ',' + Math.round(p[2] + (q[2] - p[2]) * k) + ',' + a + ')';
+}
+
+// 流带中心线取点（控制点同 ribbonPath），流光粒子沿它行进；本图两端同高，曲线退化为水平线
+function paFlowBezierAt(x1, yc1, x2, yc2, t) {
+    const cx = (x1 + x2) / 2, mt = 1 - t, a = mt * mt * mt, b = 3 * mt * mt * t, c = 3 * mt * t * t, d = t * t * t;
+    return { x: a * x1 + (b + c) * cx + d * x2, y: a * yc1 + b * yc1 + c * yc2 + d * yc2 };
+}
+
 function paDrawFlowSankey() {
     const canvas = document.getElementById('paFlowSankey');
     if (!canvas || !paFlowState || !paFlowState.flow) return;
@@ -1079,7 +1110,7 @@ function paDrawFlowSankey() {
     const nameFont = (compact ? 11 : 12) + 'px ' + family;
     const valFont = (compact ? 9.5 : 10.5) + 'px ' + family;
 
-    // ---- 动效状态：入场错峰淡入 + 悬停 180ms 缓动（尊重 prefers-reduced-motion）----
+    // ---- 动效状态：入场错峰擦除接入 + 悬停 180ms 缓动 + 常驻流光粒子（尊重 prefers-reduced-motion）----
     const anim = paFlowState.anim || {};
     const reduceMotion = paFlowPrefersReducedMotion();
     const now = (typeof performance !== 'undefined' ? performance.now() : Date.now());
@@ -1092,7 +1123,7 @@ function paDrawFlowSankey() {
     function ribbonAlphas(o, kind, snap) {
         const isH = !!snap && snap.kind === kind && snap.key === o.node.key;
         const dim = !!snap && snap.kind !== 'trunk' && !isH;
-        return isH ? { node: 0.78, trunk: 0.5 } : dim ? { node: 0.06, trunk: 0.03 } : { node: 0.34, trunk: 0.14 };
+        return isH ? { node: 0.85, trunk: 0.5 } : dim ? { node: 0.06, trunk: 0.03 } : { node: 0.42, trunk: 0.18 };
     }
     function nodeAlpha(o, kind, snap) {
         const isH = !!snap && snap.kind === kind && snap.key === o.node.key;
@@ -1173,24 +1204,83 @@ function paDrawFlowSankey() {
         for (const o of laid) {
             const e = entryE(o.idx);
             o.path = ribbonPath(x1, o.cy, o.h, x2, o.cy);
+            o.rx1 = x1; o.rx2 = x2; // 中心线端点留给流光粒子
             if (e <= 0) continue;
-            // 渐变：靠对手节点一端浓、靠本人节点一端淡 —— 方向可读 + 图底留白
+            // 双色渐变（对手语义色 → 本人主题色，ECharts/d3-sankey 惯例）：方向与胜负语义都可读
             const s0 = ribbonAlphas(o, kind, anim.hoverFrom);
             const s1 = ribbonAlphas(o, kind, hover);
-            const aNode = mix(s0.node, s1.node) * e;
-            const aTrunk = mix(s0.trunk, s1.trunk) * e;
+            const ea = Math.min(1, e * 1.8); // 擦除扫过的同时颜色基本到位
+            const aNode = mix(s0.node, s1.node) * ea;
+            const aTrunk = mix(s0.trunk, s1.trunk) * ea;
             const g = ctx.createLinearGradient(x1, 0, x2, 0);
-            g.addColorStop(nodeEnd, paAlpha(baseC, aNode));
-            g.addColorStop(1 - nodeEnd, paAlpha(baseC, aTrunk));
-            ctx.fillStyle = g;
-            ctx.fill(o.path);
+            g.addColorStop(nodeEnd, paFlowMixA(baseC, accent, 0, aNode));
+            g.addColorStop(1 - nodeEnd, paFlowMixA(baseC, accent, 0.9, aTrunk));
+            // 入场：流带从对手端向本人端逐段「接通」（裁剪擦除），而非整条淡入
+            if (entryOn && e < 1) {
+                const xe = x1 + (x2 - x1) * e;
+                ctx.save();
+                ctx.beginPath();
+                ctx.rect(Math.min(x1, xe), plotTop - 6, Math.max(1, Math.abs(xe - x1)), plotH + 12);
+                ctx.clip();
+                ctx.fillStyle = g;
+                ctx.fill(o.path);
+                ctx.restore();
+            } else {
+                ctx.fillStyle = g;
+                ctx.fill(o.path);
+            }
         }
     }
     drawSide(inLaid, 'in');
     drawSide(outLaid, 'out');
 
-    // ---- 本人节点（竖向渐变；悬停时辉光）----
+    // ---- 流光粒子：沿流带中心线从对手端流向本人端（流入）或反向（流出），方向即积分流向 ----
+    // 相位是 now 的纯函数（无累计状态），重排 / 切主题 / 回后台再回前台都不漂移。
+    function drawParticles(laid, kind) {
+        if (reduceMotion) return;
+        const baseC = kind === 'in' ? th.win : th.loss;
+        const litC = '#ffffff';
+        for (const o of laid) {
+            const e = entryE(o.idx);
+            if (e < 0.55 || !o.path) continue;
+            const s0 = ribbonAlphas(o, kind, anim.hoverFrom);
+            const s1 = ribbonAlphas(o, kind, hover);
+            const emph = Math.max(0, Math.min(2, mix(s0.node, s1.node) / 0.42)); // 基态 1 / 悬停≈2 / 淡出→0
+            const a = 0.4 * emph * Math.min(1, (e - 0.55) / 0.45);
+            if (a <= 0.015) continue;
+            const r = Math.max(1.1, Math.min(2.6, o.h * 0.13));
+            const cnt = o.h >= 30 ? 3 : o.h >= 15 ? 2 : 1;
+            ctx.save();
+            ctx.clip(o.path);
+            for (let k = 0; k < cnt; k++) {
+                const seed = (o.idx * 0.618 + (kind === 'in' ? 0.13 : 0.71) + k * 0.377) % 1;
+                const trav = PA_FLOW_TRAVERSE_MS * (0.85 + 0.3 * ((seed * 7.31) % 1));
+                const t = ((now + seed * trav) / trav) % 1;
+                const head = paFlowBezierAt(o.rx1, o.cy, o.rx2, o.cy, t);
+                const tail = paFlowBezierAt(o.rx1, o.cy, o.rx2, o.cy, Math.max(0, t - 0.055));
+                // 彗尾（圆头短线）+ 亮核，颜色向白提亮保证明暗两主题下都可见
+                ctx.strokeStyle = paFlowMixA(baseC, litC, th.isDark ? 0.6 : 0.42, a * 0.55);
+                ctx.lineWidth = r * 1.7;
+                ctx.lineCap = 'round';
+                ctx.beginPath();
+                ctx.moveTo(tail.x, tail.y);
+                ctx.lineTo(head.x, head.y);
+                ctx.stroke();
+                ctx.fillStyle = paFlowMixA(baseC, litC, th.isDark ? 0.55 : 0.38, a);
+                ctx.beginPath();
+                ctx.arc(head.x, head.y, r, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            ctx.restore();
+        }
+    }
+    drawParticles(inLaid, 'in');
+    drawParticles(outLaid, 'out');
+
+    // ---- 本人节点（竖向渐变；入场从中心长出，悬停时辉光）----
     if (trunkE > 0) {
+        const tw = Math.max(2, trunkW * (entryOn ? 0.35 + 0.65 * trunkE : 1));
+        const tx0 = trunkX + (trunkW - tw) / 2;
         ctx.save();
         ctx.globalAlpha = trunkE;
         if (hover && hover.kind === 'trunk') {
@@ -1200,28 +1290,33 @@ function paDrawFlowSankey() {
         const tg = ctx.createLinearGradient(0, plotTop, 0, plotTop + plotH);
         tg.addColorStop(0, paAlpha(accent, 0.95));
         tg.addColorStop(1, paAlpha(accent, 0.68));
-        paFlowRoundRect(ctx, trunkX, plotTop, trunkW, plotH, 5);
+        paFlowRoundRect(ctx, tx0, plotTop, tw, plotH, 5);
         ctx.fillStyle = tg;
         ctx.fill();
         ctx.restore();
     }
     function drawNodes(laid, kind, x) {
         const baseC = kind === 'in' ? th.win : th.loss;
+        const growLeft = kind === 'out'; // 增宽一律朝主干一侧，流带接缝不动
         for (const o of laid) {
             const e = entryE(o.idx);
             if (e <= 0) continue;
             const a = mix(nodeAlpha(o, kind, anim.hoverFrom), nodeAlpha(o, kind, hover)) * e;
             const isH = !!hover && hover.kind === kind && hover.key === o.node.key;
-            // 节点纵向微移入场（10px → 0），与流带渐显错峰呼应
+            const isH0 = !!anim.hoverFrom && anim.hoverFrom.kind === kind && anim.hoverFrom.key === o.node.key;
+            const gw = mix(isH0 ? 3 : 0, isH ? 3 : 0); // 悬停节点微增宽，与流带 180ms 缓动同步
+            // 节点纵向微移入场（10px → 0），与流带擦除错峰呼应
             const dy = entryOn ? (1 - e) * 10 : 0;
             ctx.save();
-            ctx.globalAlpha = a;
             if (isH) {
                 ctx.shadowColor = paAlpha(baseC, 0.6);
                 ctx.shadowBlur = 10;
             }
-            paFlowRoundRect(ctx, x, o.y + dy, nodeW, o.h, 3);
-            ctx.fillStyle = baseC;
+            const ng = ctx.createLinearGradient(0, o.y + dy, 0, o.y + dy + o.h);
+            ng.addColorStop(0, paAlpha(baseC, Math.min(1, a)));
+            ng.addColorStop(1, paAlpha(baseC, Math.min(1, a) * 0.74));
+            paFlowRoundRect(ctx, growLeft ? x - gw : x, o.y + dy, nodeW + gw, o.h, 3);
+            ctx.fillStyle = ng;
             ctx.fill();
             ctx.restore();
         }
@@ -1243,7 +1338,7 @@ function paDrawFlowSankey() {
             const a = mix(isDim(o, kind, anim.hoverFrom) ? 0.5 : 1, dim ? 0.5 : 1) * e;
             const vx = right ? x - 8 : x + nodeW + 8;
             const nx = right ? vx - valW - 6 : vx + valW + 6;
-            ctx.font = valFont;
+            ctx.font = '600 ' + valFont;
             ctx.textAlign = right ? 'right' : 'left';
             ctx.globalAlpha = a;
             ctx.fillStyle = dim ? mutedC : valC;
@@ -1358,7 +1453,14 @@ function paFlowShowTip(hit, mx, my) {
     tip.style.top = ty + 'px';
 }
 
-// ---- 动效驱动：rAF 循环重绘，入场与悬停过渡都完成后停止 ----
+// ---- 动效驱动：rAF 循环重绘；入场/悬停过渡结束后由流光粒子接管（画布在视口内时），全部条件不满足即停 ----
+
+// 流光粒子是否继续驱动重绘：离屏 / 后台标签页 / 减少动态 / 画布已卸载 时停表省电
+function paFlowParticlesWanted() {
+    if (!paFlowInView || typeof requestAnimationFrame !== 'function' || document.hidden) return false;
+    if (paFlowPrefersReducedMotion()) return false;
+    return !!paFlowState && !!document.getElementById('paFlowSankey');
+}
 
 function paFlowTick() {
     paFlowRaf = 0;
@@ -1366,14 +1468,11 @@ function paFlowTick() {
     if (!st || !st.anim) return;
     const now = (typeof performance !== 'undefined' ? performance.now() : Date.now());
     const maxStagger = 60 + 2 * (PA_FLOW_MAX_NODES + 1) * PA_FLOW_ENTRY_STAGGER;
-    const entryDone = !st.anim.entry || (now - st.anim.entry.start > maxStagger + PA_FLOW_ENTRY_MS);
-    const hoverDone = !st.anim.hoverStart || (now - st.anim.hoverStart >= PA_FLOW_HOVER_MS);
+    if (st.anim.entry && now - st.anim.entry.start > maxStagger + PA_FLOW_ENTRY_MS) st.anim.entry = null;
+    if (st.anim.hoverStart && now - st.anim.hoverStart >= PA_FLOW_HOVER_MS) st.anim.hoverStart = 0;
     paDrawFlowSankey();
-    if (!entryDone || !hoverDone) {
+    if (st.anim.entry || st.anim.hoverStart || paFlowParticlesWanted()) {
         paFlowRaf = requestAnimationFrame(paFlowTick);
-    } else {
-        st.anim.entry = null;
-        st.anim.hoverStart = 0;
     }
 }
 
@@ -1447,6 +1546,19 @@ function paRenderFlowSankey(flow, playerName, opts) {
                 if (url) window.location.href = url;
             }
         });
+    }
+    // 视口外停流光循环，滚回来自动恢复（观察器只绑一次，随重渲换新画布）
+    if (!paFlowIo && window.IntersectionObserver) {
+        paFlowIo = new IntersectionObserver(function (entries) {
+            const vis = entries.some(function (en) { return en.isIntersecting; });
+            paFlowInView = vis;
+            if (vis) paFlowRepaint();
+        }, { threshold: 0.02 });
+    }
+    if (paFlowIo && canvas) {
+        if (paFlowIoCanvas && paFlowIoCanvas !== canvas) paFlowIo.unobserve(paFlowIoCanvas);
+        paFlowIo.observe(canvas);
+        paFlowIoCanvas = canvas;
     }
     // 容器宽度变了才重画（手机转屏 / 侧栏收起），纯几何调整
     if (!paFlowResizeBound) {
