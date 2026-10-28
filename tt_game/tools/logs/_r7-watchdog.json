@@ -1,0 +1,5 @@
+{ "winpid": "tools/logs/_r7-orchestrator.winpid",
+  "stop": "data/.stop/r7.stop",
+  "done": "tools/logs/_r7-eval-done.flag",
+  "relaunch": ["tools/_r7-run-all.sh"],
+  "maxRelaunch": 40 }

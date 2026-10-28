@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-27T23:06:07.087Z",
+  "base": {
+    "seeds": 12,
+    "hellPts": 125,
+    "points": 620,
+    "rate": 0.20161
+  },
+  "cand": {
+    "seeds": 12,
+    "hellPts": 125,
+    "points": 620,
+    "rate": 0.20161
+  },
+  "pairedGames": 144,
+  "verdict": {
+    "ok": false,
+    "reason": "delta-below-1.5pp",
+    "meanD": 0,
+    "dRatePP": 0,
+    "se": 0,
+    "t": -99,
+    "p": 1
+  }
+}

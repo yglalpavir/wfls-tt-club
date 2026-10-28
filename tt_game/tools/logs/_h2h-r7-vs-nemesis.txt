@@ -1,0 +1,5 @@
+﻿瀵规墜鍙ｅ緞: 鍦扮嫳AI鍏嬫槦 policyForModel("nemesis")锛堢鍥涜疆鏂板锛氶潪鍦扮嫳琛€缁熺殑寮哄弬鐓э級
+鍊欓€夋潵婧? S:\wfls-tt-club\wfls-tt-club\tt_game\tools\train-hell-candidate.json
+鍊欓€?vs 鍙傜収锛堝€欓€夊厛鎵嬶級: 54.78%
+鍙傜収 vs 鍊欓€夛紙鍙傜収鍏堟墜锛? 45.22%
+鍙屽悜鏃犲亸锛氬€欓€?= 54.78%  鈬?鍊欓€夋洿寮?鎬诲眬鏁?= 3200
