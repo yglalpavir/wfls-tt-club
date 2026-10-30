@@ -21,6 +21,7 @@
 11. WTT score-log（wtt_data/*/）：按项目目录判定单双打形态、类型须在该项目自己的
     event-coefficient.json 里有系数、日期合法且不在未来。俱乐部侧的「类型 == 双打」
     口径对 WTT 不成立——WTT 的「类型」是赛事名，单双打由 wtt_data/ 下的项目目录决定。
+12. submission-log.json：入库动态的结构（条目上限、id 唯一、时间/渠道/记录形态合法）。
 
 注：同日 (日期,类型,胜者,负者) 完全重复的记录属正常多次对局（README 有口径说明），不做去重检测。
 用法: python tools/ci_validate.py
@@ -591,6 +592,104 @@ if wtt_badtype:
     err(f"{wtt_badtype} 条 WTT 记录的类型未在该项目的 event-cofficient.json 中定义")
 if not (wtt_baddate or wtt_future or wtt_badpair or wtt_selfplay or wtt_badtype):
     ok(f"{wtt_files} 个 WTT score-log 文件形态/类型/日期全部合法")
+
+
+# ---- 12) 入库动态 ----
+print("[12] submission-log.json 结构")
+SUBMISSION_LOG_MAX_ENTRIES = 300
+SUBMISSION_CHANNELS = {"form", "issue", "manual", "archive"}
+slog_path = os.path.join(ROOT, "data", "submission-log.json")
+slog = load(slog_path) if os.path.exists(slog_path) else None
+if slog is None:
+    if not os.path.exists(slog_path):
+        warn("未找到 data/submission-log.json（入库动态区块将不显示）")
+else:
+    slog_bad = 0
+    if not isinstance(slog, dict):
+        err("submission-log.json 顶层应为对象")
+        slog_bad += 1
+        entries = []
+    else:
+        entries = slog.get("entries")
+        if not isinstance(entries, list):
+            err("submission-log.json 缺少 entries 数组")
+            slog_bad += 1
+            entries = []
+        if slog.get("version") != 1:
+            warn(f"submission-log.json 的 version 为 {slog.get('version')!r}（预期 1）")
+        if len(entries) > SUBMISSION_LOG_MAX_ENTRIES:
+            err(f"submission-log.json 条目数 {len(entries)} 超过上限 {SUBMISSION_LOG_MAX_ENTRIES}")
+
+    ids = set()
+    ats = []
+    now = datetime.now().astimezone()
+    for i, entry in enumerate(entries, 1):
+        if not isinstance(entry, dict):
+            err(f"入库动态第 {i} 条不是对象")
+            slog_bad += 1
+            continue
+        eid = entry.get("id")
+        if not isinstance(eid, str) or not eid.strip():
+            err(f"入库动态第 {i} 条缺少非空 id")
+            slog_bad += 1
+        elif eid in ids:
+            err(f"入库动态 id 重复：{eid}")
+            slog_bad += 1
+        else:
+            ids.add(eid)
+        at = entry.get("at")
+        if not isinstance(at, str):
+            err(f"入库动态第 {i} 条 at 不是字符串")
+            slog_bad += 1
+        else:
+            try:
+                dt = datetime.fromisoformat(at.replace("Z", "+00:00"))
+                if dt.tzinfo is None:
+                    dt = dt.replace(tzinfo=now.tzinfo)
+                if dt.timestamp() > now.timestamp() + 86400:
+                    err(f"入库动态第 {i} 条 at 在未来：{at}")
+                    slog_bad += 1
+                ats.append(dt.timestamp())
+            except ValueError:
+                err(f"入库动态第 {i} 条 at 不是合法 ISO 时间：{at}")
+                slog_bad += 1
+        if entry.get("channel") not in SUBMISSION_CHANNELS:
+            err(f"入库动态第 {i} 条 channel 非法：{entry.get('channel')!r}")
+            slog_bad += 1
+        for field in ("submitter", "note"):
+            if not isinstance(entry.get(field), str):
+                err(f"入库动态第 {i} 条 {field} 应为字符串")
+                slog_bad += 1
+        records = entry.get("records")
+        if not isinstance(records, list) or not records:
+            err(f"入库动态第 {i} 条 records 应为非空数组")
+            slog_bad += 1
+            continue
+        for j, rec in enumerate(records, 1):
+            if not isinstance(rec, dict):
+                err(f"入库动态第 {i} 条第 {j} 项记录不是对象")
+                slog_bad += 1
+                continue
+            if not valid_iso(rec.get("日期")):
+                err(f"入库动态第 {i} 条第 {j} 项记录日期非法：{rec.get('日期')!r}")
+                slog_bad += 1
+            elif str(rec.get("日期")) > today:
+                err(f"入库动态第 {i} 条第 {j} 项记录日期在未来：{rec.get('日期')}")
+                slog_bad += 1
+            is_match = bool(rec.get("胜者")) or bool(rec.get("负者"))
+            is_bonus = rec.get("对象") is not None or rec.get("分数") is not None
+            if not is_match and not is_bonus:
+                err(f"入库动态第 {i} 条第 {j} 项既不是比赛也不是积分调整")
+                slog_bad += 1
+
+    if ats and ats != sorted(ats, reverse=True):
+        warn("submission-log.json 的条目未按 at 倒序排列")
+    if isinstance(slog, dict) and entries:
+        first_at = entries[0].get("at") if isinstance(entries[0], dict) else None
+        if slog.get("updatedAt") != first_at:
+            warn(f"submission-log.json 的 updatedAt 与最新条目不一致（{slog.get('updatedAt')!r} != {first_at!r}）")
+    if not slog_bad:
+        ok(f"{len(entries)} 条入库动态结构合法")
 
 
 print()

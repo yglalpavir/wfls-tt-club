@@ -238,7 +238,7 @@ def main():
             invalid_count += 1
             continue
 
-        imported.append((fp, out))
+        imported.append((fp, out, cell("提交人"), cell("备注")))
         info(f"解析通过：{out['日期']} {out['类型']}·{out.get('赛制', 'default')} {out['胜者']} 胜 {out['负者']}"
              + (f" {out.get('比分', '')}" if out.get("比分") else ""))
 
@@ -254,13 +254,30 @@ def main():
              + ("请先修复上方 [跳过] 的行再重跑。" if invalid_count else ""))
         return 1
 
-    fps = [fp for fp, _ in imported]
-    records = [rec for _, rec in imported]
+    fps = [item[0] for item in imported]
+    records = [item[1] for item in imported]
     total = asx.append_to_score_log(records)
     seen_fps.update(fps)
     save_state(args.state_file, seen_fps)
+
+    groups, order = {}, []
+    for _, rec, submitter, note in imported:
+        key = submitter.strip()
+        if key not in groups:
+            groups[key] = {"records": [], "notes": []}
+            order.append(key)
+        groups[key]["records"].append(rec)
+        note = note.strip()
+        if note and note not in groups[key]["notes"]:
+            groups[key]["notes"].append(note)
+    for key in order:
+        asx.append_submission_log(
+            groups[key]["records"], channel="form", submitter=key, note=" · ".join(groups[key]["notes"])
+        )
+
     info(f"已追加 {len(records)} 条记录到 data/score-log.json（现共 {total} 条）；"
          f"去重状态已写入 {args.state_file}")
+    info(f"入库动态已更新（{len(order)} 批）")
     if invalid_count or status_skip or dup_count:
         warn(f"本次共跳过 {invalid_count + status_skip + dup_count} 条"
              f"（校验失败 {invalid_count} / 未标记通过 {status_skip} / 已导入过 {dup_count}），"

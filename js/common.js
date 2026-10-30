@@ -288,6 +288,26 @@ const i18n = {
         sb_quick_desc: "无需 GitHub：点击下方按钮，在腾讯文档表单里填写比赛结果，管理员审核后统一计入排名。",
         sb_quick_missing: "在线提交表正在准备中，请先通过社团 QQ 群联系负责人代录。",
         sb_fmt_default: "默认", sb_fmt_bo1: "单局决胜", sb_fmt_bo3: "三局两胜", sb_fmt_bo5: "五局三胜", sb_fmt_bo7: "七局四胜",
+        /* ---- 提交页：入库动态 ---- */
+        sb_log_tag: "Ledger", sb_log_title: "入库动态",
+        sb_log_desc: "最近通过审核的比赛记录与积分调整，按入库时间倒序排列。",
+        sb_log_live: "持续更新", sb_log_stat_recent: "近 30 天入库", sb_log_stat_batches: "提交批次", sb_log_stat_updated: "最近更新",
+        sb_log_spark_title: "近 14 天入库", sb_log_spark_total: "共 {n} 条", sb_log_spark_today: "今天",
+        sb_log_filter_all: "全部", sb_log_filter_match: "比赛记录", sb_log_filter_bonus: "积分调整", sb_log_filter_group: "筛选",
+        sb_log_search_ph: "搜索提交人、选手或备注", sb_log_search_aria: "搜索入库动态", sb_log_clear: "清除搜索",
+        sb_log_no_result: "没有匹配的记录", sb_log_no_result_hint: "换个关键词或筛选条件试试。",
+        sb_log_empty: "还没有入库记录", sb_log_empty_hint: "通过审核的战绩会出现在这里。",
+        sb_log_more: "加载更早的记录", sb_log_loading: "正在加载入库动态",
+        sb_log_records_match: "{n} 场", sb_log_records_bonus: "{n} 条", sb_log_records: "{n} 条记录",
+        sb_log_expand: "展开全部（{n}）", sb_log_collapse: "收起",
+        sb_log_new: "NEW", sb_log_counted: "已计入",
+        sb_log_channel_form: "在线表单", sb_log_channel_issue: "GitHub", sb_log_channel_manual: "管理员录入", sb_log_channel_archive: "历史归档",
+        sb_log_anon_form: "匿名提交", sb_log_anon_issue: "GitHub 提交", sb_log_anon_manual: "未署名", sb_log_anon_archive: "历史记录",
+        sb_log_bonus: "积分调整", sb_log_win: "胜", sb_log_bonus_up: "加分", sb_log_bonus_down: "扣分",
+        sb_log_just_now: "刚刚", sb_log_minutes: "{n} 分钟前", sb_log_hours: "{n} 小时前", sb_log_days: "{n} 天前",
+        sb_log_weeks: "{n} 周前", sb_log_months: "{n} 个月前", sb_log_years: "{n} 年前",
+        sb_log_total: "共 {n} 批 · {m} 条记录", sb_log_more_count: "还有 {n} 批",
+        sb_log_day_today: "今天", sb_log_day_yesterday: "昨天",
         /* ---- 赛季总结页 ---- */
         sr_page_title: "赛季总结 | WFLS Table Tennis Club",
         sr_hero_tag: "Season Review", sr_hero_title: "赛季总结", sr_hero_desc: "胜负 · 积分 · 连胜 · 赛季之最",
@@ -966,6 +986,26 @@ const i18n = {
         sb_quick_desc: "No GitHub needed: click below and fill in the Tencent Docs form. Results are reviewed and batched into the rankings.",
         sb_quick_missing: "The online form is being set up. For now please contact a club member in the QQ group.",
         sb_fmt_default: "Default", sb_fmt_bo1: "Single game", sb_fmt_bo3: "Best of 3", sb_fmt_bo5: "Best of 5", sb_fmt_bo7: "Best of 7",
+        /* ---- Submit page: submission log ---- */
+        sb_log_tag: "Ledger", sb_log_title: "Recently Added",
+        sb_log_desc: "Match records and point adjustments approved recently, newest first.",
+        sb_log_live: "Live", sb_log_stat_recent: "Last 30 days", sb_log_stat_batches: "Batches", sb_log_stat_updated: "Last update",
+        sb_log_spark_title: "Last 14 days", sb_log_spark_total: "{n} records", sb_log_spark_today: "Today",
+        sb_log_filter_all: "All", sb_log_filter_match: "Matches", sb_log_filter_bonus: "Adjustments", sb_log_filter_group: "Filter",
+        sb_log_search_ph: "Search submitter, player or note", sb_log_search_aria: "Search the submission log", sb_log_clear: "Clear search",
+        sb_log_no_result: "No matching records", sb_log_no_result_hint: "Try another keyword or filter.",
+        sb_log_empty: "No submissions yet", sb_log_empty_hint: "Approved results will appear here.",
+        sb_log_more: "Load earlier records", sb_log_loading: "Loading the submission log",
+        sb_log_records_match: "{n} matches", sb_log_records_bonus: "{n} entries", sb_log_records: "{n} records",
+        sb_log_expand: "Show all ({n})", sb_log_collapse: "Show less",
+        sb_log_new: "NEW", sb_log_counted: "Counted",
+        sb_log_channel_form: "Online form", sb_log_channel_issue: "GitHub", sb_log_channel_manual: "Admin entry", sb_log_channel_archive: "Archive",
+        sb_log_anon_form: "Anonymous", sb_log_anon_issue: "GitHub submission", sb_log_anon_manual: "Unnamed", sb_log_anon_archive: "Archived",
+        sb_log_bonus: "Point adjustment", sb_log_win: "beat", sb_log_bonus_up: "Bonus", sb_log_bonus_down: "Deduction",
+        sb_log_just_now: "just now", sb_log_minutes: "{n} min ago", sb_log_hours: "{n} hr ago", sb_log_days: "{n} days ago",
+        sb_log_weeks: "{n} wk ago", sb_log_months: "{n} mo ago", sb_log_years: "{n} yr ago",
+        sb_log_total: "{n} batches · {m} records", sb_log_more_count: "{n} more batches",
+        sb_log_day_today: "Today", sb_log_day_yesterday: "Yesterday",
         /* ---- Season review ---- */
         sr_page_title: "Season Review | WFLS Table Tennis Club",
         sr_hero_tag: "Season Review", sr_hero_title: "Season Review", sr_hero_desc: "Matches · Points · Streaks · Season Bests",
@@ -1561,6 +1601,7 @@ function setLanguage(lang) {
     if (typeof umpireTrainingReapplyI18n === 'function') umpireTrainingReapplyI18n();
     if (typeof gameReapplyI18n === 'function') gameReapplyI18n();
     if (typeof dataScaleReapplyI18n === 'function') dataScaleReapplyI18n();
+    if (typeof sbLogReapplyI18n === 'function') sbLogReapplyI18n();
 }
 async function updateHeroLastUpdated() { const el = document.getElementById('heroLastUpdated'); if (!el) return; const cached = safeStorage.get('wfls-last-updated'); if (cached) { try { const cd = JSON.parse(cached); if (cd.date && (Date.now() - cd.ts) < 3600000) { el.textContent = currentLang === 'zh' ? `上次更新：${cd.date}` : `Last updated: ${cd.date}`; return; } } catch(e) {} } try { const res = await fetch('https://api.github.com/repos/yglalpavir/wfls-tt-club/commits?per_page=1'); if (res.ok) { const commits = await res.json(); if (commits && commits.length > 0) { const d = new Date(commits[0].commit.committer.date); const ds = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); safeStorage.set('wfls-last-updated', JSON.stringify({ date: ds, ts: Date.now() })); el.textContent = currentLang === 'zh' ? `上次更新：${ds}` : `Last updated: ${ds}`; return; } } } catch(e) { console.warn('GitHub API failed, fallback to about.json'); } if (aboutData && aboutData.lastUpdated) { el.textContent = currentLang === 'zh' ? `上次更新：${aboutData.lastUpdated}` : `Last updated: ${aboutData.lastUpdated}`; } }
 function updateRankingHeaders() { document.querySelectorAll('.ranking-table-full th[data-i18n]').forEach(th => { const key = th.getAttribute('data-i18n'); if (i18n[currentLang] && i18n[currentLang][key]) th.innerHTML = i18n[currentLang][key] + ' <span class="sort-arrow"></span>'; }); }

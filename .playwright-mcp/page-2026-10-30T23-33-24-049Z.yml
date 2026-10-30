@@ -1,0 +1,413 @@
+- generic [active] [ref=f8e1]:
+  - navigation [ref=f8e2]:
+    - generic [ref=f8e3]:
+      - link " WFLS TT Club" [ref=f8e4] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=f8e5]: 
+        - generic [ref=f8e7]: WFLS TT Club
+      - list [ref=f8e8]:
+        - listitem [ref=f8e9]:
+          - link "Home" [ref=f8e10] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=f8e11]:
+          - link "News" [ref=f8e12] [cursor=pointer]:
+            - /url: news.html
+        - listitem [ref=f8e13]:
+          - link "Competitions" [ref=f8e14] [cursor=pointer]:
+            - /url: competitions.html
+        - listitem [ref=f8e15]:
+          - link "Ranking Beta" [ref=f8e16] [cursor=pointer]:
+            - /url: ranking.html
+        - listitem [ref=f8e17]:
+          - link "More... " [ref=f8e18] [cursor=pointer]:
+            - /url: "#"
+            - text: More...
+            - generic [ref=f8e19]: 
+        - listitem [ref=f8e20]:
+          - link "Contact" [ref=f8e21] [cursor=pointer]:
+            - /url: contact.html
+      - generic [ref=f8e22]:
+        - button "搜索" [ref=f8e23] [cursor=pointer]:
+          - generic [ref=f8e24]: 
+        - button "切换主题" [ref=f8e25] [cursor=pointer]:
+          - generic [ref=f8e26]: 
+        - button "切换语言" [ref=f8e27] [cursor=pointer]:
+          - generic [ref=f8e28]: EN
+  - generic [ref=f8e31]:
+    - generic [ref=f8e32]: Submit
+    - heading "提交战绩" [level=1] [ref=f8e33]
+    - paragraph [ref=f8e34]: 比赛结果 / 审核通过后自动计入排名
+  - generic [ref=f8e35]:
+    - generic [ref=f8e36]:
+      - generic [aria-hidden] [ref=f8e38]: 
+      - heading "在线提交比赛战绩" [level=2] [ref=f8e39]
+      - paragraph [ref=f8e40]: 无需 GitHub：点击下方按钮，在腾讯文档表单里填写比赛结果，管理员审核后统一计入排名。
+      - generic [ref=f8e41]:
+        - generic [ref=f8e42]:
+          - generic [ref=f8e43]: "1"
+          - generic [ref=f8e44]: 在线填写结果
+        - generic [aria-hidden] [ref=f8e45]: 
+        - generic [ref=f8e46]:
+          - generic [ref=f8e47]: "2"
+          - generic [ref=f8e48]: 管理员审核
+        - generic [aria-hidden] [ref=f8e49]: 
+        - generic [ref=f8e50]:
+          - generic [ref=f8e51]: "3"
+          - generic [ref=f8e52]: 计入积分排名
+      - link " 打开提交表单" [ref=f8e53] [cursor=pointer]:
+        - /url: https://docs.qq.com/form/page/DVWNqcFpqRU96WmJa
+        - generic [ref=f8e54]: 
+        - generic [ref=f8e55]: 打开提交表单
+    - text:      
+  - generic [ref=f8e57]:
+    - generic [ref=f8e58]:
+      - generic [ref=f8e59]: Ledger
+      - heading "入库动态" [level=2] [ref=f8e60]
+      - paragraph [ref=f8e61]: 最近通过审核的比赛记录与积分调整，按入库时间倒序排列。
+      - generic [ref=f8e62]: 持续更新
+    - generic [ref=f8e65]:
+      - generic [ref=f8e66]:
+        - generic [ref=f8e67]:
+          - generic [ref=f8e68]:
+            - generic [ref=f8e69]: "4"
+            - generic [ref=f8e70]: 近 30 天入库
+          - generic [ref=f8e71]:
+            - generic [ref=f8e72]: "1"
+            - generic [ref=f8e73]: 提交批次
+          - generic [ref=f8e74]:
+            - generic "2026年10月28日 23:54" [ref=f8e75]: 2 天前
+            - generic [ref=f8e76]: 最近更新
+        - generic [ref=f8e77]:
+          - generic [ref=f8e78]:
+            - generic [ref=f8e79]: 近 14 天入库
+            - generic [ref=f8e80]: 共 46 条
+          - img "近 14 天入库" [ref=f8e81]:
+            - generic "10/18 · 0 条记录" [ref=f8e82]: 日
+            - generic "10/19 · 3 条记录" [ref=f8e84]: 一
+            - generic "10/20 · 4 条记录" [ref=f8e86]: 二
+            - generic "10/21 · 5 条记录" [ref=f8e88]: 三
+            - generic "10/22 · 8 条记录" [ref=f8e90]: 四
+            - generic "10/23 · 1 条记录" [ref=f8e92]: 五
+            - generic "10/24 · 2 条记录" [ref=f8e94]: 六
+            - generic "10/25 · 0 条记录" [ref=f8e96]: 日
+            - generic "10/26 · 3 条记录" [ref=f8e98]: 一
+            - generic "10/27 · 0 条记录" [ref=f8e100]: 二
+            - generic "10/28 · 20 条记录" [ref=f8e102]: 三
+            - generic "10/29 · 0 条记录" [ref=f8e104]: 四
+            - generic "10/30 · 0 条记录" [ref=f8e106]: 五
+            - generic "10/31 · 0 条记录" [ref=f8e108]: 六
+      - generic [ref=f8e110]:
+        - group "筛选" [ref=f8e111]:
+          - button "全部" [pressed] [ref=f8e112] [cursor=pointer]
+          - button "比赛记录" [ref=f8e113] [cursor=pointer]
+          - button "积分调整" [ref=f8e114] [cursor=pointer]
+        - generic [ref=f8e115]:
+          - generic [aria-hidden] [ref=f8e116]: 
+          - searchbox "搜索入库动态" [ref=f8e117]
+          - text: 
+      - generic [ref=f8e118]:
+        - generic [ref=f8e119]: 10月28日 周三
+        - article [ref=f8e121]:
+          - generic [ref=f8e122]: 徐
+          - generic [ref=f8e125]:
+            - generic [ref=f8e126]:
+              - generic [ref=f8e127]:
+                - generic [ref=f8e128]: 徐耀鹏
+                - generic [ref=f8e129]: 在线表单
+              - generic [ref=f8e130]:
+                - time [ref=f8e131]: 2 天前
+                - generic [ref=f8e132]: NEW
+                - generic [ref=f8e133]:
+                  - generic [aria-hidden] [ref=f8e134]: 
+                  - text: 已计入
+            - paragraph [ref=f8e135]: 10/20–10/26 的 6 场对局
+            - list [ref=f8e136]:
+              - listitem [ref=f8e137]:
+                - generic [ref=f8e138]: 普通
+                - generic [ref=f8e139]: 10/20
+                - generic [ref=f8e140]:
+                  - generic [ref=f8e141]: 徐耀鹏
+                  - generic [ref=f8e142]: 3:1
+                  - generic [ref=f8e143]: 王禹涵
+              - listitem [ref=f8e144]:
+                - generic [ref=f8e145]: 普通
+                - generic [ref=f8e146]: 10/21
+                - generic [ref=f8e147]:
+                  - generic [ref=f8e148]: 徐耀鹏
+                  - generic [ref=f8e149]: 4:0
+                  - generic [ref=f8e150]: 熊品钧
+              - listitem [ref=f8e151]:
+                - generic [ref=f8e152]: 普通
+                - generic [ref=f8e153]: 10/21
+                - generic [ref=f8e154]:
+                  - generic [ref=f8e155]: 徐耀鹏
+                  - generic [ref=f8e156]: 2:0
+                  - generic [ref=f8e157]: 熊品钧
+              - listitem [ref=f8e158]:
+                - generic [ref=f8e159]: 普通
+                - generic [ref=f8e160]: 10/23
+                - generic [ref=f8e161]:
+                  - generic [ref=f8e162]: 刘冠羽
+                  - generic [ref=f8e163]: 4:2
+                  - generic [ref=f8e164]: 徐耀鹏
+            - generic [ref=f8e165]:
+              - generic [ref=f8e166]: 6 场
+              - button "展开全部（2）" [ref=f8e167] [cursor=pointer]
+        - article [ref=f8e168]:
+          - generic [aria-hidden] [ref=f8e171]: 
+          - generic [ref=f8e172]:
+            - generic [ref=f8e173]:
+              - generic [ref=f8e174]:
+                - generic [ref=f8e175]: 未署名
+                - generic [ref=f8e176]: 管理员录入
+              - generic [ref=f8e177]:
+                - time [ref=f8e178]: 2 天前
+                - generic [ref=f8e179]: NEW
+                - generic [ref=f8e180]:
+                  - generic [aria-hidden] [ref=f8e181]: 
+                  - text: 已计入
+            - paragraph [ref=f8e182]: 校队选拔第二轮 11 场
+            - list [ref=f8e183]:
+              - listitem [ref=f8e184]:
+                - generic [ref=f8e185]: 校队选拔
+                - generic [ref=f8e186]: 10/23
+                - generic [ref=f8e187]:
+                  - generic [ref=f8e188]: 龚雨煊
+                  - generic [ref=f8e189]: 2:1
+                  - generic [ref=f8e190]: 王天森
+                - generic [ref=f8e191]:
+                  - generic [ref=f8e192]: 11-5
+                  - generic [ref=f8e193]: 7-11
+                  - generic [ref=f8e194]: 11-9
+              - listitem [ref=f8e195]:
+                - generic [ref=f8e196]: 校队选拔
+                - generic [ref=f8e197]: 10/23
+                - generic [ref=f8e198]:
+                  - generic [ref=f8e199]: 任安喆
+                  - generic [ref=f8e200]: 2:0
+                  - generic [ref=f8e201]: 熊品钧
+                - generic [ref=f8e202]:
+                  - generic [ref=f8e203]: 11-5
+                  - generic [ref=f8e204]: 11-5
+              - listitem [ref=f8e205]:
+                - generic [ref=f8e206]: 校队选拔
+                - generic [ref=f8e207]: 10/23
+                - generic [ref=f8e208]:
+                  - generic [ref=f8e209]: 龚雨煊
+                  - generic [ref=f8e210]: 2:0
+                  - generic [ref=f8e211]: 徐耀鹏
+                - generic [ref=f8e212]:
+                  - generic [ref=f8e213]: 11-9
+                  - generic [ref=f8e214]: 11-8
+              - listitem [ref=f8e215]:
+                - generic [ref=f8e216]: 校队选拔
+                - generic [ref=f8e217]: 10/23
+                - generic [ref=f8e218]:
+                  - generic [ref=f8e219]: 任安喆
+                  - generic [ref=f8e220]: 2:0
+                  - generic [ref=f8e221]: 王禹涵
+                - generic [ref=f8e222]:
+                  - generic [ref=f8e223]: 11-5
+                  - generic [ref=f8e224]: 11-9
+            - generic [ref=f8e225]:
+              - generic [ref=f8e226]: 11 场
+              - button "展开全部（7）" [ref=f8e227] [cursor=pointer]
+        - article [ref=f8e228]:
+          - generic [aria-hidden] [ref=f8e231]: 
+          - generic [ref=f8e232]:
+            - generic [ref=f8e233]:
+              - generic [ref=f8e234]:
+                - generic [ref=f8e235]: 未署名
+                - generic [ref=f8e236]: 管理员录入
+              - generic [ref=f8e237]:
+                - time [ref=f8e238]: 2 天前
+                - generic [ref=f8e239]: NEW
+                - generic [ref=f8e240]:
+                  - generic [aria-hidden] [ref=f8e241]: 
+                  - text: 已计入
+            - paragraph [ref=f8e242]: 任峻贤 3-2 付大卫（bo5）
+            - list [ref=f8e243]:
+              - listitem [ref=f8e244]:
+                - generic [ref=f8e245]: 普通
+                - generic [ref=f8e246]: 10/28
+                - generic [ref=f8e247]:
+                  - generic [ref=f8e248]: 任峻贤
+                  - generic [ref=f8e249]: 3:2
+                  - generic [ref=f8e250]: 付大卫
+            - generic [ref=f8e251]: 1 场
+        - article [ref=f8e253]:
+          - generic [aria-hidden] [ref=f8e256]: 
+          - generic [ref=f8e257]:
+            - generic [ref=f8e258]:
+              - generic [ref=f8e259]:
+                - generic [ref=f8e260]: 未署名
+                - generic [ref=f8e261]: 管理员录入
+              - generic [ref=f8e262]:
+                - time [ref=f8e263]: 3 天前
+                - generic [ref=f8e264]:
+                  - generic [aria-hidden] [ref=f8e265]: 
+                  - text: 已计入
+            - paragraph [ref=f8e266]: 10/27 比赛记录
+            - list [ref=f8e267]:
+              - listitem [ref=f8e268]:
+                - generic [ref=f8e269]: 普通
+                - generic [ref=f8e270]: 10/27
+                - generic [ref=f8e271]:
+                  - generic [ref=f8e272]: 任峻贤
+                  - generic [ref=f8e273]: 3:2
+                  - generic [ref=f8e274]: 付大卫
+              - listitem [ref=f8e275]:
+                - generic [ref=f8e276]: 普通
+                - generic [ref=f8e277]: 10/27
+                - generic [ref=f8e278]:
+                  - generic [ref=f8e279]: 付大卫
+                  - generic [ref=f8e280]: 3:0
+                  - generic [ref=f8e281]: 魏罗瑞
+            - generic [ref=f8e282]: 2 场
+        - generic [ref=f8e284]: 10月26日 周一
+        - article [ref=f8e286]:
+          - generic [aria-hidden] [ref=f8e289]: 
+          - generic [ref=f8e290]:
+            - generic [ref=f8e291]:
+              - generic [ref=f8e292]:
+                - generic [ref=f8e293]: 未署名
+                - generic [ref=f8e294]: 管理员录入
+              - generic [ref=f8e295]:
+                - time [ref=f8e296]: 4 天前
+                - generic [ref=f8e297]:
+                  - generic [aria-hidden] [ref=f8e298]: 
+                  - text: 已计入
+            - paragraph [ref=f8e299]: 10/26 比赛记录
+            - list [ref=f8e300]:
+              - listitem [ref=f8e301]:
+                - generic [ref=f8e302]: 普通
+                - generic [ref=f8e303]: 10/26
+                - generic [ref=f8e304]:
+                  - generic [ref=f8e305]: 魏罗瑞
+                  - generic [ref=f8e306]: 2:0
+                  - generic [ref=f8e307]: 付大卫
+              - listitem [ref=f8e308]:
+                - generic [ref=f8e309]: 普通
+                - generic [ref=f8e310]: 10/26
+                - generic [ref=f8e311]:
+                  - generic [ref=f8e312]: 任峻贤
+                  - generic [ref=f8e313]: 1:0
+                  - generic [ref=f8e314]: 付大卫
+              - listitem [ref=f8e315]:
+                - generic [ref=f8e316]: 普通
+                - generic [ref=f8e317]: 10/26
+                - generic [ref=f8e318]:
+                  - generic [ref=f8e319]: 任峻贤
+                  - generic [ref=f8e320]: 1:0
+                  - generic [ref=f8e321]: 王禹涵
+            - generic [ref=f8e322]: 3 场
+        - generic [ref=f8e324]: 10月24日 周六
+        - article [ref=f8e326]:
+          - generic [aria-hidden] [ref=f8e329]: 
+          - generic [ref=f8e330]:
+            - generic [ref=f8e331]:
+              - generic [ref=f8e332]:
+                - generic [ref=f8e333]: 未署名
+                - generic [ref=f8e334]: 管理员录入
+              - generic [ref=f8e335]:
+                - time [ref=f8e336]: 6 天前
+                - generic [ref=f8e337]:
+                  - generic [aria-hidden] [ref=f8e338]: 
+                  - text: 已计入
+            - paragraph [ref=f8e339]: 10/24 比赛记录
+            - list [ref=f8e340]:
+              - listitem [ref=f8e341]:
+                - generic [ref=f8e342]: 普通
+                - generic [ref=f8e343]: 10/24
+                - generic [ref=f8e344]:
+                  - generic [ref=f8e345]: 任峻贤
+                  - generic [ref=f8e346]: 胜
+                  - generic [ref=f8e347]: 刘冠羽
+            - generic [ref=f8e348]: 1 场
+      - text:  
+      - generic [ref=f8e350]:
+        - button "加载更早的记录 · 还有 9 批" [ref=f8e351] [cursor=pointer]
+        - paragraph [ref=f8e352]: 共 15 批 · 50 条记录
+  - contentinfo [ref=f8e353]:
+    - generic [ref=f8e354]:
+      - generic [ref=f8e355]:
+        - generic [ref=f8e356]:
+          - link "WFLS Table Tennis Club" [ref=f8e357] [cursor=pointer]:
+            - /url: index.html
+          - paragraph [ref=f8e358]: 武汉外国语学校 · 湖北省武汉市
+          - paragraph [ref=f8e359]: 挥拍逐梦，旋转青春
+        - navigation [ref=f8e360]:
+          - heading "社团" [level=3] [ref=f8e361]
+          - list [ref=f8e362]:
+            - listitem [ref=f8e363]:
+              - link "Home" [ref=f8e364] [cursor=pointer]:
+                - /url: index.html
+            - listitem [ref=f8e365]:
+              - link "News" [ref=f8e366] [cursor=pointer]:
+                - /url: news.html
+            - listitem [ref=f8e367]:
+              - link "Competitions" [ref=f8e368] [cursor=pointer]:
+                - /url: competitions.html
+            - listitem [ref=f8e369]:
+              - link "社团骨干" [ref=f8e370] [cursor=pointer]:
+                - /url: members.html
+            - listitem [ref=f8e371]:
+              - link "赛季总结" [ref=f8e372] [cursor=pointer]:
+                - /url: season-review.html
+        - navigation [ref=f8e373]:
+          - heading "数据" [level=3] [ref=f8e374]
+          - list [ref=f8e375]:
+            - listitem [ref=f8e376]:
+              - link "Ranking" [ref=f8e377] [cursor=pointer]:
+                - /url: ranking.html
+            - listitem [ref=f8e378]:
+              - link "Data Viz" [ref=f8e379] [cursor=pointer]:
+                - /url: data_viz.html
+            - listitem [ref=f8e380]:
+              - link "个人数据" [ref=f8e381] [cursor=pointer]:
+                - /url: personal_stats.html
+            - listitem [ref=f8e382]:
+              - link "Data Scale" [ref=f8e383] [cursor=pointer]:
+                - /url: data_scale.html
+            - listitem [ref=f8e384]:
+              - link "WTT Ranking" [ref=f8e385] [cursor=pointer]:
+                - /url: wtt_ranking.html
+            - listitem [ref=f8e386]:
+              - link "WTT Data Viz" [ref=f8e387] [cursor=pointer]:
+                - /url: wtt_dataviz.html
+        - navigation [ref=f8e388]:
+          - heading "信息" [level=3] [ref=f8e389]
+          - list [ref=f8e390]:
+            - listitem [ref=f8e391]:
+              - link "提交战绩" [ref=f8e392] [cursor=pointer]:
+                - /url: submit.html
+            - listitem [ref=f8e393]:
+              - link "Q&A" [ref=f8e394] [cursor=pointer]:
+                - /url: qa.html
+            - listitem [ref=f8e395]:
+              - link "更新日志" [ref=f8e396] [cursor=pointer]:
+                - /url: changelog.html
+            - listitem [ref=f8e397]:
+              - link "网站文档" [ref=f8e398] [cursor=pointer]:
+                - /url: docs.html
+            - listitem [ref=f8e399]:
+              - link "Umpire Training" [ref=f8e400] [cursor=pointer]:
+                - /url: umpire-training.html
+            - listitem [ref=f8e401]:
+              - link "Contact" [ref=f8e402] [cursor=pointer]:
+                - /url: contact.html
+      - generic [ref=f8e403]:
+        - generic [ref=f8e404]:
+          - generic [ref=f8e405]: 关注我们
+          - generic [ref=f8e406]:
+            - button "社团QQ群二维码" [ref=f8e407] [cursor=pointer]:
+              - generic [ref=f8e408]: 
+            - link "GitHub" [ref=f8e409] [cursor=pointer]:
+              - /url: https://github.com/yglalpavir/wfls-tt-club
+              - generic [ref=f8e410]: 
+        - generic [ref=f8e411]:
+          - link "社团理念" [ref=f8e412] [cursor=pointer]:
+            - /url: index.html#philosophy
+          - link "积分规则" [ref=f8e413] [cursor=pointer]:
+            - /url: qa.html
+        - paragraph [ref=f8e414]: ©2026 WFLS Table Tennis Club. All rights reserved

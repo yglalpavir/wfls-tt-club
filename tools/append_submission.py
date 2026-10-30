@@ -21,6 +21,7 @@
 同日 (日期,类型,胜者,负者) 完全重复属正常多次对局，不做去重（README 有口径说明）。
 退出码：0 成功；1 解析/校验失败（错误详情已打印，供工作流原样评论到 issue）。
 """
+import hashlib
 import json
 import os
 import re
@@ -36,12 +37,21 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SCORE_LOG = os.path.join(ROOT, "data", "score-log.json")
 PLAYERS = os.path.join(ROOT, "data", "players.json")
 COEFF = os.path.join(ROOT, "data", "event-coefficient.json")
+SUBMISSION_LOG = os.path.join(ROOT, "data", "submission-log.json")
 
 ALLOWED_KEYS = {"日期", "类型", "赛制", "胜者", "负者", "对象", "分数", "比分", "局分"}
 WINS_NEEDED = {"bo1": 1, "bo3": 2, "bo5": 3, "bo7": 4}
 FENCE_RE = re.compile(r"```(?:json|JSON)\s*\n(.*?)```", re.DOTALL)
 TOTAL_SCORE_RE = re.compile(r"^(\d{1,2})\s*[-:：]\s*(\d{1,2})$")
 GAME_SCORE_RE = re.compile(r"^(\d{1,2})\s*[-:：]\s*(\d{1,2})$")
+SUBMISSION_LOG_VERSION = 1
+SUBMISSION_LOG_MAX_ENTRIES = 300
+SUBMISSION_CHANNELS = ("form", "issue", "manual", "archive")
+SUBMITTER_RE = re.compile(r"(?:提交人|Submitter)\s*[:：]\s*(.+)", re.IGNORECASE)
+NOTE_RE = re.compile(r"(?:备注|Notes?)\s*[:：]\s*(.+)", re.IGNORECASE)
+NOTE_SECTION_RE = re.compile(
+    r"#{2,4}\s*备注\s*/\s*提交人[^\n]*\n(.*?)(?=\n-{3,}\s*\n|\n#{2,4}\s|\Z)", re.DOTALL
+)
 
 
 def fail(msg):
@@ -147,6 +157,136 @@ def append_to_score_log(records):
         json.dump(log, f, ensure_ascii=False, indent=2)
         f.write("\n")
     return len(log)
+
+
+def clean_log_text(raw, limit):
+    """把用户填写的昵称/备注清理成一行纯文本，并截断到 limit 字符。"""
+    text = str(raw or "").strip()
+    text = re.sub(r"<!--.*?-->", " ", text, flags=re.DOTALL)
+    text = re.sub(r"[`*_>#]+", " ", text)
+    text = re.sub(r"\s+", " ", text).strip(" -—·")
+    if text.lower() in {"_no response_", "no response"}:
+        return ""
+    return text[:limit].strip()
+
+
+def parse_submitter_note(body):
+    """从 issue 正文解析「提交人」与「备注」，返回 (submitter, note)。
+
+    兼容 submit.html 生成的 `提交人/Submitter: ...` 行，以及 issue 表单的
+    「备注 / 提交人」文本域（可能只写昵称，也可能写备注）。
+    """
+    submitter = ""
+    note = ""
+    m = SUBMITTER_RE.search(body)
+    if m:
+        submitter = clean_log_text(m.group(1), 40)
+    m = NOTE_RE.search(body)
+    if m:
+        note = clean_log_text(m.group(1), 200)
+
+    section = NOTE_SECTION_RE.search(body)
+    if section:
+        extras = []
+        for line in section.group(1).splitlines():
+            line = clean_log_text(line, 200)
+            if not line:
+                continue
+            sm = re.match(r"(?:昵称|姓名|提交人|submitter)(?:\s*/\s*(?:nickname|name|submitter))?\s*[:：]\s*(.+)", line, re.IGNORECASE)
+            nm = re.match(r"(?:备注|notes?)(?:\s*/\s*(?:notes?|备注))?\s*[:：]\s*(.+)", line, re.IGNORECASE)
+            if sm:
+                if not submitter:
+                    submitter = clean_log_text(sm.group(1), 40)
+            elif nm:
+                if not note:
+                    note = clean_log_text(nm.group(1), 200)
+            else:
+                extras.append(line)
+        if extras and not submitter and not note and len(extras) == 1:
+            candidate = extras[0].strip()
+            if re.fullmatch(r"[\u4e00-\u9fa5]{2,4}", candidate) or re.fullmatch(r"[A-Za-z][A-Za-z .'\-]{1,24}", candidate):
+                submitter = clean_log_text(candidate, 40)
+                extras = []
+        extra = " · ".join(extras)
+        if extra:
+            note = (note + " · " + extra) if note and extra not in note else (note or extra)
+
+    return submitter[:40], note[:200]
+
+
+def load_submission_log():
+    """读取入库日志；文件不存在时返回空结构。"""
+    if not os.path.exists(SUBMISSION_LOG):
+        return {"version": SUBMISSION_LOG_VERSION, "updatedAt": "", "entries": []}
+    try:
+        with open(SUBMISSION_LOG, encoding="utf-8-sig") as f:
+            data = json.load(f)
+    except (OSError, ValueError) as e:
+        raise SystemExit(f"无法读取入库日志 {SUBMISSION_LOG}: {e}")
+    if not isinstance(data, dict) or not isinstance(data.get("entries"), list):
+        raise SystemExit(f"入库日志结构异常 {SUBMISSION_LOG}: 缺少 entries 数组")
+    return data
+
+
+def submission_entry_ts(entry):
+    """按真实时间戳排序，兼容不同时区偏移的历史条目。"""
+    try:
+        return datetime.fromisoformat(str(entry.get("at", "")).replace("Z", "+00:00")).timestamp()
+    except (TypeError, ValueError):
+        return 0.0
+
+
+def append_submission_log(records, channel="manual", submitter="", note="", at=None):
+    """记录一批已通过校验的记录，返回写入后的条目总数。
+
+    只保存展示需要的字段：时间、渠道、提交人、备注、记录本身。条目按时间倒序，
+    最多保留 SUBMISSION_LOG_MAX_ENTRIES 条。
+    """
+    clean = []
+    for rec in records:
+        if isinstance(rec, dict):
+            item = {k: rec[k] for k in ALLOWED_KEYS if k in rec}
+            if item:
+                clean.append(item)
+    if not clean:
+        return 0
+
+    if channel not in SUBMISSION_CHANNELS:
+        channel = "manual"
+    submitter = clean_log_text(submitter, 40)
+    note = clean_log_text(note, 200)
+    stamp = at or datetime.now().astimezone().replace(microsecond=0).isoformat()
+    if isinstance(stamp, datetime):
+        stamp = stamp.replace(microsecond=0).isoformat()
+    stamp = str(stamp)
+
+    digest = hashlib.sha1(
+        json.dumps([stamp, channel, submitter, clean], ensure_ascii=False, sort_keys=True).encode("utf-8")
+    ).hexdigest()[:8]
+    entry = {
+        "id": stamp[:10].replace("-", "") + "-" + digest,
+        "at": stamp,
+        "channel": channel,
+        "submitter": submitter,
+        "note": note,
+        "records": clean,
+    }
+
+    data = load_submission_log()
+    entries = [e for e in data.get("entries", []) if isinstance(e, dict)]
+    entries.insert(0, entry)
+    entries.sort(key=submission_entry_ts, reverse=True)
+    entries = entries[:SUBMISSION_LOG_MAX_ENTRIES]
+
+    out = {
+        "version": SUBMISSION_LOG_VERSION,
+        "updatedAt": entries[0].get("at", stamp) if entries else stamp,
+        "entries": entries,
+    }
+    with open(SUBMISSION_LOG, "w", encoding="utf-8", newline="\n") as f:
+        json.dump(out, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+    return len(entries)
 
 
 def alias_map_canonical(raw, alias_map):
@@ -378,8 +518,11 @@ def main():
         return 1
 
     total = append_to_score_log(normalized)
+    submitter, note = parse_submitter_note(body)
+    entries = append_submission_log(normalized, channel="issue", submitter=submitter, note=note)
     print()
     info(f"已追加 {len(normalized)} 条记录到 data/score-log.json（现共 {total} 条）")
+    info(f"入库动态已更新（共 {entries} 批；提交人：{submitter or '未填写'}）")
     return 0
 
 

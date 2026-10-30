@@ -136,11 +136,81 @@
         </div>
     </section>
 
+    <!-- 入库动态：只展示已通过审核的记录；数据源缺失时整块保持隐藏 -->
+    <section class="section sb-log-section" id="sbLogSection" hidden>
+        <div class="container">
+            <div class="section-header sb-log-head">
+                <span class="section-tag" data-i18n="sb_log_tag">Ledger</span>
+                <h2 class="section-title" data-i18n="sb_log_title">入库动态</h2>
+                <p class="section-desc" data-i18n="sb_log_desc">最近通过审核的比赛记录与积分调整，按入库时间倒序排列。</p>
+                <span class="sb-log-live"><span class="sb-log-live-dot"></span><span data-i18n="sb_log_live">持续更新</span></span>
+            </div>
+
+            <div class="sb-log-panel">
+                <div class="sb-log-top">
+                    <div class="sb-log-stats">
+                        <div class="sb-log-stat">
+                            <span class="sb-log-stat-value" id="sbLogStatRecent">—</span>
+                            <span class="sb-log-stat-label" data-i18n="sb_log_stat_recent">近 30 天入库</span>
+                        </div>
+                        <div class="sb-log-stat">
+                            <span class="sb-log-stat-value" id="sbLogStatBatches">—</span>
+                            <span class="sb-log-stat-label" data-i18n="sb_log_stat_batches">提交批次</span>
+                        </div>
+                        <div class="sb-log-stat">
+                            <span class="sb-log-stat-value is-text" id="sbLogStatUpdated">—</span>
+                            <span class="sb-log-stat-label" data-i18n="sb_log_stat_updated">最近更新</span>
+                        </div>
+                    </div>
+                    <div class="sb-log-sparkbox">
+                        <div class="sb-log-spark-head">
+                            <span data-i18n="sb_log_spark_title">近 14 天入库</span>
+                            <span class="sb-log-spark-total" id="sbLogSparkTotal"></span>
+                        </div>
+                        <div class="sb-log-spark" id="sbLogSpark" role="img" data-i18n-aria="sb_log_spark_title"></div>
+                    </div>
+                </div>
+
+                <div class="sb-log-toolbar">
+                    <div class="sb-log-seg" role="group" aria-label="筛选" data-i18n-aria="sb_log_filter_group">
+                        <button type="button" class="is-active" data-filter="all" aria-pressed="true" data-i18n="sb_log_filter_all">全部</button>
+                        <button type="button" data-filter="match" aria-pressed="false" data-i18n="sb_log_filter_match">比赛记录</button>
+                        <button type="button" data-filter="bonus" aria-pressed="false" data-i18n="sb_log_filter_bonus">积分调整</button>
+                    </div>
+                    <div class="sb-log-search">
+                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                        <input type="search" id="sbLogSearch" autocomplete="off" placeholder="搜索提交人、选手或备注" data-i18n-placeholder="sb_log_search_ph" aria-label="搜索入库动态" data-i18n-aria="sb_log_search_aria">
+                        <button type="button" class="sb-log-search-clear" id="sbLogSearchClear" hidden aria-label="清除搜索" data-i18n-aria="sb_log_clear"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+
+                <div class="sb-log-feed" id="sbLogFeed" aria-live="polite"></div>
+
+                <div class="sb-log-state" id="sbLogEmpty" hidden>
+                    <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                    <p class="sb-log-state-title" data-i18n="sb_log_empty">还没有入库记录</p>
+                    <p class="sb-log-state-hint" data-i18n="sb_log_empty_hint">通过审核的战绩会出现在这里。</p>
+                </div>
+                <div class="sb-log-state" id="sbLogNoResult" hidden>
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                    <p class="sb-log-state-title" data-i18n="sb_log_no_result">没有匹配的记录</p>
+                    <p class="sb-log-state-hint" data-i18n="sb_log_no_result_hint">换个关键词或筛选条件试试。</p>
+                </div>
+
+                <div class="sb-log-foot" id="sbLogFoot" hidden>
+                    <button type="button" class="sb-log-more" id="sbLogMore" data-i18n="sb_log_more">加载更早的记录</button>
+                    <p class="sb-log-count" id="sbLogCount"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script src="js/shared-partials.js" data-partial="footer"></script>
 
     <script src="js/shared-partials.js" data-partial="qr-modal"></script>
     <script src="js/common.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/submission-log.js"></script>
     <script>
     (function () {
         var $ = function (id) { return document.getElementById(id); };

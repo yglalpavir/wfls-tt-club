@@ -48,6 +48,7 @@ No npm/lint/typecheck commands exist — there are no build tools or test suites
 
 - `data/players.json` → single source for all player data (uid, initialScore, tags, honors, role). Optional `"visible": false` on a player = 档案暂不在前台展示（排名行与时间线 / 球员列表 / 个人页 / 首页成员卡 / 公开 API 全部过滤；算分口径不变，引擎仍收他的 initialScore 并照常重放他的记录）——**有战绩也照样隐藏**（`isRankingRowHidden()` 过滤排名行，名次编号按公开名单连续；`visible:false` 期间的比赛记录照录，公布时删键即还原）。过滤点在各渲染层（`isPlayerVisible`/`isPlayerHiddenName` in common.js、`isRankingRowHidden`/`isProfileActivePlayer` in score-engine.js、`getAllPlayers*`、`data-scale.js`、`recompute_rankings.js`）——新增球员列表或排名行渲染时记得带上这一层，细则见 `docs/tech/players-json.md` §3.13
 - `data/score-log.json` → match records + bonus adjustments, consumed by `js/score-engine.js`
+- `data/submission-log.json` → 入库动态：`submit.html` 的公开提交流水（谁、何时、提交了哪些已通过的记录）。由 `append_submission_log()` 在 CSV / Issue 通道入库成功后自动追加，只有校验通过的记录才会进入；`js/submission-log.js` 负责渲染，文件缺失时整段静默隐藏。条目按 `at` 倒序、最多 300 条，`note_en` 可选
 - **Doubles records (双打)**: `类型: "双打"` matches carry `胜者`/`负者` as `"甲/乙"` pair strings (WTT-site pattern, pair-as-entity). Pair names are normalized at load (`js/common.js` `normalizeDoublesPairName`, members sorted by pinyin — "A/B" ≡ "B/A") and all URLs/details must use the in-memory canonical form. Singles pipelines filter doubles records OUT (`isDoublesRecord`), the doubles ranking runs on doubles-only records with pair initial scores (`buildDoublesInitialScores` = average of the two members' singles points on the pair's first match day plus a gap bonus of `0.25×` the members' score gap — i.e. 50% average + 50% stronger member, constant `DOUBLES_GAP_BONUS`, rules in qa q4; doubles is in `noDecayTypes` — no decay). Any computation outside the loaded page's own口径 must swap engine globals via `withScoreContext()` (common.js) — engine caches key off the `scoreLogData` array reference. Python validators (`ci_validate.py` / `append_submission.py`) validate pairs member-by-member and compare self-play on the member set
 - `data/event-coefficient.json` → event type coefficients; reserved keys `赛制系数` and `默认赛制` are objects, not numbers — filter by `typeof v === 'number'` when iterating
 - `data/seasons.json` → season definitions; **CI fails if current date exceeds last endDate** (must create new season)
@@ -163,6 +164,7 @@ Gotchas that cost real time:
 |------|---------|
 | `data/players.json` | Player profiles (single source of truth) |
 | `data/score-log.json` | Match records + bonus adjustments |
+| `data/submission-log.json` | 入库动态：已通过的提交流水，由提交工具自动追加，`submit.html` 展示 |
 | `data/seasons.json` | Season definitions (must cover current date) |
 | `data/event-coefficient.json` | Event type coefficients |
 | `data/decay-config.json` | Time decay config (`t` half-life / `minWeight` floor / `noDecayTypes`) |
@@ -172,6 +174,7 @@ Gotchas that cost real time:
 | `js/score-engine.js` | Club ranking calculation core |
 | `js/wtt_common.js` | WTT data loading + ranking |
 | `js/common.js` | i18n, global state, shared UI |
+| `js/submission-log.js` | 入库动态渲染（fetch `data/submission-log.json`、统计/筛选/搜索/时间线），自启动并暴露 `sbLogReapplyI18n()` |
 | `js/draws-core.js` | Draws shared core (v3 model, layout, validation, templates, serialization) |
 | `js/draws-viewer.js` | Bracket spectator renderer (detail.html) |
 | `js/draws-editor.js` | Bracket visual editor logic (draws-editor.html) |
