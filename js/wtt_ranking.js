@@ -292,9 +292,14 @@ function wttRenderTimeNodeList() {
         seasons[s].push({ ...n, index: n.index });
     });
 
+    // 赛季分组。折叠类直接写进初始 HTML：渲染后再补加 .collapsed 会让每个赛季组的
+    // max-height 布局动画同帧点火（.season-node-list transition: max-height），
+    // 每次渲染（加载完成/切换节点/切语言）都是一次 24 连发重排风暴
+    const curSeason = wttRankingTimeline[wttCurrentTimeIndex]?.season;
     Object.entries(seasons).forEach(([season, nodes]) => {
         const sli = document.createElement('li');
-        sli.className = 'season-group';
+        const collapsed = (curSeason && seasonLabel(season) !== seasonLabel(curSeason)) ? ' collapsed' : '';
+        sli.className = 'season-group' + collapsed;
         sli.innerHTML = `<div class="season-header"><i class="fa-solid fa-chevron-down season-arrow"></i><span class="season-label">${seasonLabel(season)}</span><span class="season-count">${i18n[currentLang].wtt_node_count.replace('{n}', nodes.length)}</span></div><ul class="season-node-list">${nodes.map(n => `<li class="time-node-item${n.index === wttCurrentTimeIndex ? ' active' : ''}${n.isInitial ? ' initial-node' : ''}" role="button" tabindex="0" data-index="${n.index}"><span class="node-dot"></span>${getNodeDisplayLabel(n)}<span class="node-count">${i18n[currentLang].wtt_ppl.replace('{n}', n.data.length)}</span></li>`).join('')}</ul>`;
         list.appendChild(sli);
         sli.querySelector('.season-header').addEventListener('click', () => sli.classList.toggle('collapsed'));
@@ -317,16 +322,6 @@ function wttRenderTimeNodeList() {
             wttCurrentTimeIndex = parseInt(item.getAttribute('data-index'));
             wttCurrentSortKey = '当前积分'; wttCurrentSortDir = 'desc';
             wttUpdateRankingDisplay(); wttRenderTimeNodeList();
-        });
-    }
-
-    // 折叠非当前赛季的时间节点
-    const curSeason = wttRankingTimeline[wttCurrentTimeIndex]?.season;
-    if (curSeason) {
-        list.querySelectorAll('.season-group').forEach(sg => {
-            if (sg.querySelector('.season-label')?.textContent !== seasonLabel(curSeason)) {
-                sg.classList.add('collapsed');
-            }
         });
     }
 

@@ -820,6 +820,9 @@ html:lang(en) .hero-title {
 
 /* 玻璃卡片 */
 .glass-card { background: var(--glass-bg); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); box-shadow: var(--glass-shadow); padding: 28px; transition: all var(--transition-base); }
+/* 排名页侧栏/表格容器底下是纯色 body 背景，blur 模糊纯色无视觉增益，只烧合成器（实测 2026-10-31，
+   表格容器全高 ~9.3M px²）。去掉 blur、保留半透明底色，视觉不变 */
+.ranking-sidebar, .ranking-full-table-wrapper { backdrop-filter: none; -webkit-backdrop-filter: none; }
 .glass-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
 
 /* 独立卡片 */
@@ -1822,7 +1825,7 @@ body.dv-fs-open { overflow: hidden !important; }
 .season-group { margin-bottom: 2px; }
 .season-header {
     display: flex; align-items: center; gap: 6px; padding: 9px 12px;
-    cursor: pointer; border-radius: var(--radius-sm); transition: all var(--transition-fast);
+    cursor: pointer; border-radius: var(--radius-sm); transition: background-color var(--transition-fast);
     font-size: 0.8rem; font-weight: 600; color: var(--primary-blue);
     background: var(--primary-pale); font-family: var(--font-en);
 }
@@ -1836,7 +1839,8 @@ body.dv-fs-open { overflow: hidden !important; }
 
 .time-node-item {
     padding: 8px 12px 8px 20px; border-radius: var(--radius-sm); cursor: pointer;
-    transition: all var(--transition-fast); font-size: 0.8rem; font-weight: 500;
+    transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+    font-size: 0.8rem; font-weight: 500;
     color: var(--text-secondary); border-left: 3px solid transparent;
     font-family: var(--font-en); display: flex; align-items: center; flex-shrink: 0;
 }
@@ -2074,8 +2078,11 @@ a.export-menu-item { text-decoration: none; }
 .modal-content.score-detail-modal::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(77,163,255,0.2) 20%, rgba(77,163,255,0.4) 50%, rgba(77,163,255,0.2) 80%, transparent 100%); border-radius: 0 0 24px 24px; z-index: 5; }
 
 /* 通用模态框 */
-.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all var(--transition-base); backdrop-filter: blur(6px); }
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity var(--transition-base), visibility var(--transition-base); backdrop-filter: blur(6px); }
 .modal-overlay.active { opacity: 1; visibility: visible; }
+/* 关闭态模态框仍在渲染树里（visibility:hidden），其标题条 gradientShift 无限动画必须暂停，
+   否则每个页面闲置时都空转一个永不停的绘制动画（实测 2026-10-31） */
+.modal-overlay:not(.active) .modal-content::before { animation-play-state: paused; }
 .modal-content { position: relative; max-width: 420px; width: 90%; text-align: center; padding: 36px 28px; }
 .modal-content h3 { font-size: 1.3rem; margin-bottom: 8px; }
 .modal-content p { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 16px; }
