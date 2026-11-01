@@ -5,13 +5,49 @@
 
 let wttRecordBarChart = null, wttEfficiencyScatterChart = null, wttMatchFrequencyChart = null, wttScoreDistributionChart = null;
 let wttAssocTrendChart = null, wttAssocTop5Chart = null;
-let wttDataVizExtraState = { recordTopN: 10, efficiencyTopN: 15, heatmapTopN: 8, heatmapMode: 'wins', freqBucket: 'week', freqCount: 24, distBins: 10, assocTrendCount: 20, assocTrendStart: '', assocTrendEnd: '', assocTop5TopN: 8, raceFrameIndex: 0 };
+let wttDataVizExtraState = { recordTopN: 10, efficiencyTopN: 15, heatmapTopN: 8, heatmapMode: 'wins', netTopN: 24, freqBucket: 'week', freqCount: 24, distBins: 10, assocTrendCount: 20, assocTrendStart: '', assocTrendEnd: '', assocTop5TopN: 8, raceFrameIndex: 0, activeOnly: false };
+
+// ============ 「仅显示当前活跃球员」全局开关 ============
+// 勾选后所有以球员池为输入的图表统一按「本赛季有交手记录」过滤，
+// 排除非本赛季球员与已退役球员；复用协会实力分同款的 wttGetSeasonActivePlayers 口径。
+// 历史视角图表（排名竞速 / 协会趋势）保持各自时点赛季的原有过滤，不受本开关影响。
+
+// 开关是否打开。wtt_dataviz.js 的 initWttDataViz 会同步 #wttActiveOnlyToggle 的勾选状态；
+// 两个脚本加载顺序不定，读 DOM 兜底，避免出现第二个事实来源
+function wttIsActiveOnly() {
+    if (typeof wttDataVizExtraState !== 'undefined' && wttDataVizExtraState) {
+        return !!wttDataVizExtraState.activeOnly;
+    }
+    const el = document.getElementById('wttActiveOnlyToggle');
+    return !!(el && el.checked);
+}
+
+// 应用开关后的球员名单：关闭（或拿不到活跃集合）时原样返回，打开时只留本赛季打过球的
+function wttFilterActiveNames(names) {
+    if (!wttIsActiveOnly()) return names;
+    const active = wttGetSeasonActivePlayers(wttGetCurrentSeason());
+    if (!active || !active.size) return names;
+    return names.filter(n => active.has(n));
+}
 
 // ============ 通用辅助（WTT 页未加载 data-viz-extra.js，需自带） ============
 
 function shortenPlayerName(name) {
     const s = String(name);
     return s.length > 14 ? s.slice(0, 12) + '…' : s;
+}
+
+// 网络图的节点名：双打组合「甲/乙」两侧分别截断，避免不同搭档被截成同一串
+function wttNetLabel(name) {
+    const s = String(name);
+    const parts = s.split('/');
+    if (parts.length === 2) {
+        return parts.map(function (p) {
+            const t = p.trim();
+            return t.length > 10 ? t.slice(0, 9) + '…' : t;
+        }).join('/');
+    }
+    return shortenPlayerName(s);
 }
 
 function buildFrequencyBuckets(records, bucketType) {
@@ -260,6 +296,7 @@ function initWttDataVizExtra() {
     wttDataVizExtraState.efficiencyTopN = parseInt(document.getElementById('wttEfficiencyTopN')?.value) || 15;
     wttDataVizExtraState.heatmapTopN = parseInt(document.getElementById('wttHeatmapTopN')?.value) || 8;
     wttDataVizExtraState.heatmapMode = document.getElementById('wttHeatmapModeSelect')?.value === 'rate' ? 'rate' : 'wins';
+    wttDataVizExtraState.netTopN = wttClampInt(document.getElementById('wttNetTopN')?.value, 8, 200);
     wttDataVizExtraState.distBins = parseInt(document.getElementById('wttDistBinCount')?.value) || 10;
     wttDataVizExtraState.assocTrendCount = parseInt(document.getElementById('wttAssocTrendCount')?.value) || 20;
     wttDataVizExtraState.assocTrendStart = document.getElementById('wttAssocTrendStart')?.value || '';
@@ -268,6 +305,7 @@ function initWttDataVizExtra() {
     wttRenderRecordBar(wttDataVizExtraState.recordTopN);
     wttRenderEfficiencyScatter(wttDataVizExtraState.efficiencyTopN);
     wttRenderH2hHeatmap(wttDataVizExtraState.heatmapTopN);
+    wttRenderInteractionNetwork(wttDataVizExtraState.netTopN);
     wttRenderMatchFrequency(wttDataVizExtraState.freqBucket, wttDataVizExtraState.freqCount);
     wttRenderScoreDistribution(wttDataVizExtraState.distBins);
     wttRenderAssocCheckboxes();
@@ -295,6 +333,12 @@ function initWttDataVizExtra() {
         document.getElementById('wttHeatmapTopN').value = v;
         wttDataVizExtraState.heatmapTopN = v;
         wttRenderH2hHeatmap(v);
+    });
+    document.getElementById('wttNetTopN')?.addEventListener('change', () => {
+        const v = wttClampInt(document.getElementById('wttNetTopN').value, 8, 200);
+        document.getElementById('wttNetTopN').value = v;
+        wttDataVizExtraState.netTopN = v;
+        wttRenderInteractionNetwork(v);
     });
     document.getElementById('wttFreqBucketSelect')?.addEventListener('change', e => {
         wttDataVizExtraState.freqBucket = e.target.value;
@@ -1279,6 +1323,162 @@ function wttRenderH2hHeatmap(topN) {
     }
 }
 
+// ============ 交手网络 ============
+
+// 只保留两类边，否则职业赛场几乎人人互为对手：
+// ① 每位球员交手最多的 K 位对手（骨干）；② 交手次数 ≥ WTT_NET_MIN_GAMES 的老对手（宿敌线）
+const WTT_NET_KEEP_PER_NODE = 2;
+const WTT_NET_MIN_GAMES = 5;
+const WTT_NET_MAX_COHORTS = 6;
+
+function wttNetHint() {
+    const L = i18n[currentLang] || {};
+    const touch = !!(window.matchMedia && window.matchMedia('(hover: none)').matches);
+    return touch ? (L.wtt_net_hint_touch || '') : (L.wtt_net_hint || '');
+}
+
+function wttNetTipNode(nd) {
+    const L = i18n[currentLang] || {};
+    const tpl = L.wtt_net_tip_node || '{opp} · {games}';
+    const text = tpl
+        .replace('{assoc}', nd.country || '')
+        .replace('{opp}', nd.deg)
+        .replace('{games}', nd.games)
+        .replace(/^[\s·|]+/, '');
+    return '<b>' + escapeHtml(nd.name || nd.label) + '</b><span>' + escapeHtml(text) + '</span>';
+}
+
+function wttNetTipEdge(edge, a, b) {
+    const L = i18n[currentLang] || {};
+    const tpl = L.wtt_net_tip_edge || '{n}';
+    return '<b>' + escapeHtml(a.label) + ' ↔ ' + escapeHtml(b.label) + '</b><span>' +
+        escapeHtml(tpl.replace('{n}', edge.w)) + '</span>';
+}
+
+function wttBuildInteractionNetwork(topN) {
+    const scoreMap = wttBuildCurrentScoreMap();
+    const picked = wttGetAllPlayers()
+        .slice()
+        .sort((a, b) => (scoreMap[b] || 0) - (scoreMap[a] || 0) || String(a).localeCompare(String(b)))
+        .slice(0, topN);
+    if (picked.length < 2) return null;
+
+    const indexOf = new Map();
+    picked.forEach((n, i) => indexOf.set(n, i));
+
+    // 先累计全部对阵，再裁剪出骨干网络：每人最强的 K 条 ∪ 交手 ≥ MIN_GAMES 的边
+    const pairGames = new Map();
+    const totalGames = new Array(picked.length).fill(0);
+    for (const r of (wttScoreLogData || [])) {
+        if (!isMatchRecord(r)) continue;
+        const a = indexOf.get(r['胜者']);
+        const b = indexOf.get(r['负者']);
+        if (a === undefined || b === undefined || a === b) continue;
+        totalGames[a]++;
+        totalGames[b]++;
+        const key = a < b ? a + '-' + b : b + '-' + a;
+        pairGames.set(key, (pairGames.get(key) || 0) + 1);
+    }
+
+    const all = [];
+    pairGames.forEach((w, key) => {
+        const parts = key.split('-');
+        all.push({ a: Number(parts[0]), b: Number(parts[1]), w });
+    });
+    const incident = picked.map(() => []);
+    all.forEach((e, i) => { incident[e.a].push(i); incident[e.b].push(i); });
+    const keep = new Set();
+    incident.forEach(list => {
+        list.sort((x, y) => all[y].w - all[x].w || x - y);
+        list.slice(0, WTT_NET_KEEP_PER_NODE).forEach(i => keep.add(i));
+    });
+    all.forEach((e, i) => { if (e.w >= WTT_NET_MIN_GAMES) keep.add(i); });
+    const edges = all.filter((e, i) => keep.has(i));
+    if (!edges.length) return null;
+
+    const deg = picked.map(() => 0);
+    edges.forEach(e => { deg[e.a]++; deg[e.b]++; });
+    const maxDeg = Math.max(1, ...deg);
+    const shownGames = edges.reduce((s, e) => s + e.w, 0);
+
+    // 协会配色：取人数最多的前几个协会，其余归入“其他”
+    const countryMap = wttBuildAssocCountryMap();
+    const assocCount = {};
+    picked.forEach(n => {
+        const a = wttGetPlayerAssoc(n);
+        const code = a && a.assoc ? String(a.assoc).toUpperCase() : '';
+        assocCount[code] = (assocCount[code] || 0) + 1;
+    });
+    const ranked = Object.entries(assocCount).filter(e => e[0]).sort((a, b) => b[1] - a[1]);
+    const colorIndex = {};
+    ranked.slice(0, WTT_NET_MAX_COHORTS).forEach((e, i) => { colorIndex[e[0]] = i; });
+    const covered = ranked.slice(0, WTT_NET_MAX_COHORTS).reduce((s, e) => s + e[1], 0);
+    const otherCount = picked.length - covered;
+    const L = i18n[currentLang] || {};
+    const cohorts = ranked.slice(0, WTT_NET_MAX_COHORTS).map((e, i) => ({
+        label: countryMap[e[0]] || e[0],
+        cls: 'oppnet-c' + i,
+        count: e[1]
+    }));
+    if (otherCount > 0) {
+        cohorts.push({ label: L.wtt_net_other || '其他', cls: 'oppnet-cx', count: otherCount });
+    }
+
+    const nodes = picked.map((name, i) => {
+        const a = wttGetPlayerAssoc(name);
+        const code = a && a.assoc ? String(a.assoc).toUpperCase() : '';
+        const country = a ? (countryMap[code] || a.country || '') : '';
+        return {
+            label: wttNetLabel(name),
+            name: name,
+            country: country,
+            deg: deg[i],
+            games: totalGames[i],
+            cls: colorIndex[code] !== undefined ? 'oppnet-c' + colorIndex[code] : 'oppnet-cx',
+            href: wttPlayerPageUrl(name),
+            title: country ? name + ' · ' + country : name
+        };
+    });
+
+    const isolated = [];
+    nodes.forEach((n, i) => { if (!n.deg) isolated.push(i); });
+
+    return {
+        nodes: nodes,
+        edges: edges,
+        isolated: isolated,
+        maxDeg: maxDeg,
+        cohorts: cohorts,
+        stats: [
+            [String(picked.length), L.wtt_net_people || ''],
+            [String(edges.length), L.wtt_net_pairs || ''],
+            [String(shownGames), L.wtt_net_games || '']
+        ],
+        edgeKeyLabel: L.wtt_net_key_edge || '',
+        isolatedLabel: L.wtt_net_isolated || '',
+        isolatedCaption: isolated.length ? (L.wtt_net_isolated_cap || L.wtt_net_isolated || '')
+            .replace('{n}', isolated.length) : '',
+        hint: wttNetHint(),
+        aria: L.wtt_net_aria || ''
+    };
+}
+
+function wttRenderInteractionNetwork(topN) {
+    const container = document.getElementById('wttNetworkContainer');
+    if (!container) return;
+    const model = (typeof OpponentNetwork !== 'undefined') ? wttBuildInteractionNetwork(topN) : null;
+    if (!model) {
+        if (typeof OpponentNetwork !== 'undefined') OpponentNetwork.destroy(container);
+        container.innerHTML = '<div class="compare-placeholder"><i class="fa-solid fa-circle-nodes"></i><p>' +
+            escapeHtml(i18n[currentLang].wtt_no_data) + '</p></div>';
+        return;
+    }
+    OpponentNetwork.render(container, model, {
+        tipNode: wttNetTipNode,
+        tipEdge: wttNetTipEdge
+    });
+}
+
 // ============ 比赛频次时间轴 ============
 
 function wttRenderMatchFrequency(bucketType, count) {
@@ -1567,6 +1767,7 @@ function wttReapplyDataVizExtra() {
     wttRenderRecordBar(wttDataVizExtraState.recordTopN);
     wttRenderEfficiencyScatter(wttDataVizExtraState.efficiencyTopN);
     wttRenderH2hHeatmap(wttDataVizExtraState.heatmapTopN);
+    wttRenderInteractionNetwork(wttDataVizExtraState.netTopN);
     wttRenderMatchFrequency(wttDataVizExtraState.freqBucket, wttDataVizExtraState.freqCount);
     wttRenderScoreDistribution(wttDataVizExtraState.distBins);
     const assocSel = wttGetSelectedAssocs();

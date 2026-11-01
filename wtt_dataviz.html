@@ -41,6 +41,7 @@
             <li class="side-nav-item"><a href="#viz-record" class="side-nav-link" data-section="viz-record" data-i18n="wtt_record_title">战绩统计</a></li>
             <li class="side-nav-item"><a href="#viz-efficiency" class="side-nav-link" data-section="viz-efficiency" data-i18n="wtt_efficiency_title">场次×积分效率</a></li>
             <li class="side-nav-item"><a href="#viz-heatmap" class="side-nav-link" data-section="viz-heatmap" data-i18n="wtt_heatmap_title">交手热力矩阵</a></li>
+            <li class="side-nav-item"><a href="#viz-network" class="side-nav-link" data-section="viz-network" data-i18n="wtt_net_title">交手网络</a></li>
             <li class="side-nav-item"><a href="#viz-freq" class="side-nav-link" data-section="viz-freq" data-i18n="wtt_freq_title">比赛频次时间轴</a></li>
             <li class="side-nav-item"><a href="#viz-dist" class="side-nav-link" data-section="viz-dist" data-i18n="wtt_dist_title">积分区间分布</a></li>
             <li class="side-nav-item"><a href="#wtt-viz-assoc-trend" class="side-nav-link" data-section="wtt-viz-assoc-trend" data-i18n="wtt_assoc_trend_title">协会积分趋势</a></li>
@@ -50,6 +51,14 @@
 
     <section class="section viz-main-section">
         <div class="container">
+            <div class="viz-active-toggle glass-card" id="vizActiveToggleBar">
+                <label class="viz-active-toggle-label" for="wttActiveOnlyToggle">
+                    <input type="checkbox" id="wttActiveOnlyToggle">
+                    <span data-i18n="wtt_active_only">仅显示当前活跃球员</span>
+                </label>
+                <span class="viz-active-toggle-hint" data-i18n="wtt_active_only_hint">排除非本赛季交手、疑似退役的球员；对下方所有球员榜生效。</span>
+            </div>
+
             <div class="viz-section-header" id="wtt-viz-race">
                 <span class="section-tag">Bar Chart Race</span>
                 <h2 class="section-title" data-i18n="wtt_race_title">排名动态竞速 Top 20</h2>
@@ -212,6 +221,21 @@
                 <div class="compare-placeholder"><i class="fa-solid fa-border-all"></i><p data-i18n="wtt_no_data">暂无数据</p></div>
             </div>
 
+            <div class="viz-section-header" id="viz-network" style="margin-top:48px;">
+                <span class="section-tag">Opponent Network</span>
+                <h2 class="section-title" data-i18n="wtt_net_title">交手网络</h2>
+                <p class="viz-net-desc" data-i18n="wtt_net_desc">把交手最频繁的球员连成一张网：点越大，主要对手越多；线越粗，交手次数越多。</p>
+                <div class="viz-topn-selector">
+                    <span data-i18n="wtt_top_n">显示前</span>
+                    <input type="number" id="wttNetTopN" value="24" min="8" max="200" data-i18n-title="wtt_topn_title_8_200" title="填写8-200的任意正整数">
+                    <span data-i18n="wtt_players">名球员</span>
+                </div>
+            </div>
+            <div class="viz-chart-container glass-card oppnet-container" id="wttNetworkContainer" style="min-height:460px;">
+                <div class="compare-placeholder"><i class="fa-solid fa-circle-nodes"></i><p data-i18n="wtt_no_data">暂无数据</p></div>
+            </div>
+            <p class="viz-net-note" data-i18n="wtt_net_note">为了让网络清晰可读，只画出每位球员交手最多的 2 位对手，以及交手 5 次以上的老对手；双打按组合整体计入。</p>
+
             <div class="viz-section-header" id="viz-freq" style="margin-top:48px;">
                 <span class="section-tag">Match Frequency</span>
                 <h2 class="section-title" data-i18n="wtt_freq_title">比赛频次时间轴</h2>
@@ -299,6 +323,7 @@
     <script defer src="js/wtt_common.js"></script>
     <script defer src="js/capability-radar.js"></script>
     <script defer src="js/wtt_dataviz.js"></script>
+    <script defer src="js/opponent-network.js"></script>
     <script defer src="js/wtt_dataviz_extra.js"></script>
     <script defer src="js/main.js"></script>
 </body>

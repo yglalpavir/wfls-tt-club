@@ -284,6 +284,12 @@ function wttGetAllPlayers() {
     return players;
 }
 
+// 全页「仅显示当前活跃球员」开关（实现在 wtt_dataviz_extra.js；两脚本加载顺序不定，做降级）
+function wttApplyActiveFilter(players) {
+    if (typeof wttFilterActiveNames === 'function') return wttFilterActiveNames(players);
+    return players;
+}
+
 function wttGetSelectedPlayers() {
     return Array.from(document.querySelectorAll('#wttPlayerCheckboxList input[type="checkbox"]:checked')).map(cb => cb.value);
 }
@@ -294,7 +300,8 @@ function wttRenderPlayerCheckboxes() {
     const container = document.getElementById('wttPlayerCheckboxList');
     if (!container) return;
 
-    const players = wttGetAllPlayers();
+    // 「仅显示当前活跃球员」开关打开时，非本赛季球员直接从列表里隐去
+    const players = wttApplyActiveFilter(wttGetAllPlayers());
     if (!players.length) {
         container.innerHTML = '<div style="padding:20px;text-align:center;color:var(--text-muted);">' + i18n[currentLang].wtt_no_players + '</div>';
         return;
@@ -355,7 +362,7 @@ function wttRenderPlayerCheckboxes() {
 }
 
 function wttRenderCompareSelects() {
-    const players = wttGetAllPlayers();
+    const players = wttApplyActiveFilter(wttGetAllPlayers());
     if (!players.length) return;
 
     // 切换到 WTT 全局数据（异常安全，自动恢复）
@@ -584,9 +591,11 @@ function wttRenderRankStream(topN, dataCount) {
     const streamPlayers = [...inTop.entries()]
         .sort((a, b) => a[1].lastIdx - b[1].lastIdx || a[1].last - b[1].last)
         .map(([name]) => name);
-    if (!streamPlayers.length) return;
+    // 「仅当前活跃」开关：只画本赛季打过球的球员
+    const streamPlayers2 = wttApplyActiveFilter(streamPlayers);
+    if (!streamPlayers2.length) return;
 
-    const datasets = streamPlayers.map((name, idx) => {
+    const datasets = streamPlayers2.map((name, idx) => {
         const data = slicedTimeline.map((t, i) => {
             const r = nodeRankMaps[i].get(name);
             return (r !== undefined && r <= topN) ? r : null;

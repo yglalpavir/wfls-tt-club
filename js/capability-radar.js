@@ -662,15 +662,32 @@ function wttMountVizRadar(playerA, playerB) {
     crBindAxisRows(side, canvas, subjects);
 }
 
-/** 初始默认：实时榜前 2 名自动渲染。 */
+/** 初始默认：实时榜前 2 名自动渲染（活跃开关打开时取活跃榜前 2）。 */
 function wttInitVizRadar() {
     const a = document.getElementById('wttRadarPlayerA');
     if (!a || typeof computeWttRadar !== 'function') return;
     let pair = null;
+    // 「仅当前活跃」开关：默认对局也只从本赛季打过球的球员里挑
+    let pool = null;
+    if (typeof wttApplyActiveFilter === 'function') {
+        const tl0 = (typeof wttRankingTimeline !== 'undefined' && wttRankingTimeline && wttRankingTimeline.length) ? wttRankingTimeline : null;
+        if (tl0) {
+            for (let i = tl0.length - 1; i >= 0 && !pool; i--) {
+                if (tl0[i].data && tl0[i].data.length) pool = tl0[i].data.map(p => p['姓名']);
+            }
+        }
+        if (pool) pool = wttApplyActiveFilter(pool);
+    }
     const tl = (typeof wttRankingTimeline !== 'undefined' && wttRankingTimeline && wttRankingTimeline.length) ? wttRankingTimeline : null;
     if (tl) {
         for (let i = tl.length - 1; i >= 0 && !pair; i--) {
-            if (tl[i].data && tl[i].data.length >= 2) pair = [tl[i].data[0]['姓名'], tl[i].data[1]['姓名']];
+            if (tl[i].data && tl[i].data.length >= 2) {
+                const names = tl[i].data.map(p => p['姓名']);
+                const picked = (pool && pool.length >= 2)
+                    ? names.filter(n => pool.indexOf(n) >= 0).slice(0, 2)
+                    : names.slice(0, 2);
+                if (picked.length >= 2) pair = picked;
+            }
         }
     }
     if (!pair) pair = [a.options.length > 1 ? a.options[1].value : ''];

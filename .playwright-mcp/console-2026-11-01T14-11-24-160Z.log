@@ -1,0 +1,1790 @@
+[  652585ms] [LOG] [WTT Common] 当前项目: ms (男子单打) @ http://127.0.0.1:8771/js/wtt_common.js:1326
+[  652601ms] [LOG] [WttDataViz] 开始加载数据... @ http://127.0.0.1:8771/js/wtt_dataviz.js:79
+[  652639ms] [LOG] WTT[ms] 协会籍数据加载成功: 3827 人 @ http://127.0.0.1:8771/js/wtt_common.js:863
+[  652643ms] [LOG] WTT[ms] 设置加载成功, scoreMode: flat1300, baseScore: 1500 @ http://127.0.0.1:8771/js/wtt_common.js:753
+[  652712ms] [LOG] WTT[ms] 从 manifest 并行加载了 44131 条记录（19 个文件） @ http://127.0.0.1:8771/js/wtt_common.js:689
+[  652763ms] [WARNING] [WTT] 识别并合并 95 个球员名分组，共 102 个别名 @ http://127.0.0.1:8771/js/wtt_common.js:527
+[  652763ms] [WARNING] [WTT]   'Marcos Freitas' -> 'Marcos FREITAS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  652763ms] [WARNING] [WTT]   'Panagiotis Gionis' -> 'Panagiotis GIONIS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  652763ms] [WARNING] [WTT]   'GAUZY Simon' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  652763ms] [WARNING] [WTT]   'Simon Gauzy' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  652763ms] [WARNING] [WTT]   'Tiago Apolonia' -> 'Tiago APOLONIA' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  652763ms] [WARNING] [WTT]   'Takuya Jin' -> 'Takuya JIN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  652763ms] [WARNING] [WTT]   'Gnanasekaran SATHIYAN' -> 'Sathiyan GNANASEKARAN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  652763ms] [WARNING] [WTT]   'Ovidiu Ionescu' -> 'Ovidiu IONESCU' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  652763ms] [WARNING] [WTT]   'Pavel Sirucek' -> 'Pavel SIRUCEK' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  652763ms] [WARNING] [WTT]   'Quentin Robinot' -> 'Quentin ROBINOT' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  652763ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  652763ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654317ms] [LOG] [WttDataViz] 开始初始化，wttRankingTimeline 长度: 299 wttScoreLogData 长度: 44131 @ http://127.0.0.1:8771/js/wtt_dataviz.js:123
+[  654329ms] [LOG] [WttDataViz] 成功获取球员列表: 3727 人 @ http://127.0.0.1:8771/js/wtt_dataviz.js:154
+[  654378ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654380ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654388ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654403ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654415ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654426ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654437ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654453ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654467ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654478ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654488ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654500ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654511ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654521ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654532ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654543ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654553ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654578ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654579ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654586ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654588ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654698ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654699ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654704ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654705ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654723ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654726ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654736ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654738ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654748ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654750ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654760ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654762ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654770ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654771ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654779ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654780ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654787ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654789ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654796ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654797ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654804ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654805ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654812ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654814ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654821ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654824ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654831ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654833ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654840ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654841ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654848ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654849ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654856ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654858ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654865ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654866ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654873ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654875ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654881ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654883ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654890ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654892ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654900ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654901ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654939ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654942ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654967ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  654969ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  655008ms] [LOG] [WttDataViz] 折线图设置加载完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:34
+[  655016ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  655036ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  655077ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  655078ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  655079ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  655079ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  655262ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  655335ms] [LOG] [WttDataViz] 初始化完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:212
+[  734681ms] [LOG] [WTT Common] 当前项目: ms (男子单打) @ http://127.0.0.1:8771/js/wtt_common.js:1326
+[  734719ms] [LOG] [WttDataViz] 开始加载数据... @ http://127.0.0.1:8771/js/wtt_dataviz.js:79
+[  734730ms] [LOG] WTT[ms] 设置加载成功, scoreMode: flat1300, baseScore: 1500 @ http://127.0.0.1:8771/js/wtt_common.js:753
+[  734870ms] [LOG] WTT[ms] 协会籍数据加载成功: 3827 人 @ http://127.0.0.1:8771/js/wtt_common.js:863
+[  734871ms] [LOG] WTT[ms] 从 manifest 并行加载了 44131 条记录（19 个文件） @ http://127.0.0.1:8771/js/wtt_common.js:689
+[  734920ms] [WARNING] [WTT] 识别并合并 95 个球员名分组，共 102 个别名 @ http://127.0.0.1:8771/js/wtt_common.js:527
+[  734920ms] [WARNING] [WTT]   'Marcos Freitas' -> 'Marcos FREITAS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  734920ms] [WARNING] [WTT]   'Panagiotis Gionis' -> 'Panagiotis GIONIS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  734920ms] [WARNING] [WTT]   'GAUZY Simon' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  734920ms] [WARNING] [WTT]   'Simon Gauzy' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  734920ms] [WARNING] [WTT]   'Tiago Apolonia' -> 'Tiago APOLONIA' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  734920ms] [WARNING] [WTT]   'Takuya Jin' -> 'Takuya JIN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  734920ms] [WARNING] [WTT]   'Gnanasekaran SATHIYAN' -> 'Sathiyan GNANASEKARAN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  734920ms] [WARNING] [WTT]   'Ovidiu Ionescu' -> 'Ovidiu IONESCU' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  734920ms] [WARNING] [WTT]   'Pavel Sirucek' -> 'Pavel SIRUCEK' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  734920ms] [WARNING] [WTT]   'Quentin Robinot' -> 'Quentin ROBINOT' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  734920ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  734920ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736439ms] [LOG] [WttDataViz] 开始初始化，wttRankingTimeline 长度: 299 wttScoreLogData 长度: 44131 @ http://127.0.0.1:8771/js/wtt_dataviz.js:123
+[  736451ms] [LOG] [WttDataViz] 成功获取球员列表: 3727 人 @ http://127.0.0.1:8771/js/wtt_dataviz.js:154
+[  736493ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736495ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736502ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736516ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736527ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736540ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736554ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736565ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736576ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736586ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736598ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736610ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736621ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736631ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736642ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736652ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736663ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736686ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736688ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736695ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736698ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736794ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736796ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736800ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736801ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736819ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736821ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736829ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736831ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736840ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736842ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736850ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736852ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736859ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736861ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736868ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736870ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736880ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736882ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736891ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736894ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736901ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736902ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736911ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736913ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736923ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736924ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736932ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736934ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736943ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736945ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736955ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736957ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736967ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736969ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736977ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736979ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736989ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  736991ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  737000ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  737002ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  737010ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  737012ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  737019ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  737020ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  737083ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  737086ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  737116ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  737119ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  737166ms] [LOG] [WttDataViz] 折线图设置加载完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:34
+[  737175ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  737203ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  737259ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  737260ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  737261ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  737262ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  737547ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  737635ms] [LOG] [WttDataViz] 初始化完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:212
+[  811833ms] [LOG] [WTT Common] 当前项目: ms (男子单打) @ http://127.0.0.1:8771/js/wtt_common.js:1326
+[  811894ms] [LOG] [WttDataViz] 开始加载数据... @ http://127.0.0.1:8771/js/wtt_dataviz.js:79
+[  811914ms] [LOG] WTT[ms] 设置加载成功, scoreMode: flat1300, baseScore: 1500 @ http://127.0.0.1:8771/js/wtt_common.js:753
+[  811949ms] [LOG] WTT[ms] 协会籍数据加载成功: 3827 人 @ http://127.0.0.1:8771/js/wtt_common.js:863
+[  812062ms] [LOG] WTT[ms] 从 manifest 并行加载了 44131 条记录（19 个文件） @ http://127.0.0.1:8771/js/wtt_common.js:689
+[  812119ms] [WARNING] [WTT] 识别并合并 95 个球员名分组，共 102 个别名 @ http://127.0.0.1:8771/js/wtt_common.js:527
+[  812119ms] [WARNING] [WTT]   'Marcos Freitas' -> 'Marcos FREITAS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  812119ms] [WARNING] [WTT]   'Panagiotis Gionis' -> 'Panagiotis GIONIS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  812120ms] [WARNING] [WTT]   'GAUZY Simon' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  812120ms] [WARNING] [WTT]   'Simon Gauzy' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  812120ms] [WARNING] [WTT]   'Tiago Apolonia' -> 'Tiago APOLONIA' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  812120ms] [WARNING] [WTT]   'Takuya Jin' -> 'Takuya JIN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  812120ms] [WARNING] [WTT]   'Gnanasekaran SATHIYAN' -> 'Sathiyan GNANASEKARAN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  812120ms] [WARNING] [WTT]   'Ovidiu Ionescu' -> 'Ovidiu IONESCU' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  812120ms] [WARNING] [WTT]   'Pavel Sirucek' -> 'Pavel SIRUCEK' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  812120ms] [WARNING] [WTT]   'Quentin Robinot' -> 'Quentin ROBINOT' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  812120ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  812120ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  813669ms] [LOG] [WttDataViz] 开始初始化，wttRankingTimeline 长度: 299 wttScoreLogData 长度: 44131 @ http://127.0.0.1:8771/js/wtt_dataviz.js:123
+[  813683ms] [LOG] [WttDataViz] 成功获取球员列表: 3727 人 @ http://127.0.0.1:8771/js/wtt_dataviz.js:154
+[  813739ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  813743ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  813751ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  813768ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  813780ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  813794ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  813811ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  813821ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  813835ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  813852ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  813870ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  813889ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  813902ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  813915ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  813933ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  813950ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  813968ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814001ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814004ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814013ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814015ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814143ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814146ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814151ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814153ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814176ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814179ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814192ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814194ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814207ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814209ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814221ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814223ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814232ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814234ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814243ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814244ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814253ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814254ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814267ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814269ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814281ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814283ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814295ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814297ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814309ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814312ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814321ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814322ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814334ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814337ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814348ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814351ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814362ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814364ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814376ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814378ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814390ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814392ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814401ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814404ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814415ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814417ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814429ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814431ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814481ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814484ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814516ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814518ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814566ms] [LOG] [WttDataViz] 折线图设置加载完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:34
+[  814574ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814604ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814691ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814693ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814694ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814695ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  814961ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  815052ms] [LOG] [WttDataViz] 初始化完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:212
+[  871249ms] [LOG] [WTT Common] 当前项目: ms (男子单打) @ http://127.0.0.1:8771/js/wtt_common.js:1326
+[  871260ms] [LOG] [WttDataViz] 开始加载数据... @ http://127.0.0.1:8771/js/wtt_dataviz.js:79
+[  871271ms] [LOG] WTT[ms] 设置加载成功, scoreMode: flat1300, baseScore: 1500 @ http://127.0.0.1:8771/js/wtt_common.js:753
+[  871317ms] [LOG] WTT[ms] 协会籍数据加载成功: 3827 人 @ http://127.0.0.1:8771/js/wtt_common.js:863
+[  871380ms] [LOG] WTT[ms] 从 manifest 并行加载了 44131 条记录（19 个文件） @ http://127.0.0.1:8771/js/wtt_common.js:689
+[  871448ms] [WARNING] [WTT] 识别并合并 95 个球员名分组，共 102 个别名 @ http://127.0.0.1:8771/js/wtt_common.js:527
+[  871448ms] [WARNING] [WTT]   'Marcos Freitas' -> 'Marcos FREITAS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  871448ms] [WARNING] [WTT]   'Panagiotis Gionis' -> 'Panagiotis GIONIS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  871448ms] [WARNING] [WTT]   'GAUZY Simon' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  871448ms] [WARNING] [WTT]   'Simon Gauzy' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  871448ms] [WARNING] [WTT]   'Tiago Apolonia' -> 'Tiago APOLONIA' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  871448ms] [WARNING] [WTT]   'Takuya Jin' -> 'Takuya JIN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  871448ms] [WARNING] [WTT]   'Gnanasekaran SATHIYAN' -> 'Sathiyan GNANASEKARAN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  871448ms] [WARNING] [WTT]   'Ovidiu Ionescu' -> 'Ovidiu IONESCU' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  871448ms] [WARNING] [WTT]   'Pavel Sirucek' -> 'Pavel SIRUCEK' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  871448ms] [WARNING] [WTT]   'Quentin Robinot' -> 'Quentin ROBINOT' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  871448ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  871449ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873085ms] [LOG] [WttDataViz] 开始初始化，wttRankingTimeline 长度: 299 wttScoreLogData 长度: 44131 @ http://127.0.0.1:8771/js/wtt_dataviz.js:123
+[  873099ms] [LOG] [WttDataViz] 成功获取球员列表: 3727 人 @ http://127.0.0.1:8771/js/wtt_dataviz.js:154
+[  873150ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873152ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873161ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873175ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873190ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873212ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873228ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873245ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873264ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873280ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873296ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873311ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873328ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873345ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873363ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873376ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873392ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873425ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873428ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873437ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873439ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873566ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873568ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873572ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873573ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873591ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873593ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873602ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873604ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873616ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873619ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873631ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873633ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873644ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873646ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873657ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873659ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873670ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873672ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873683ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873685ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873696ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873698ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873710ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873712ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873723ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873725ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873735ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873737ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873748ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873750ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873760ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873762ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873770ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873771ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873779ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873780ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873788ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873790ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873797ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873799ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873808ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873810ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873820ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873823ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873862ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873865ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873898ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873901ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  873967ms] [LOG] [WttDataViz] 折线图设置加载完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:34
+[  873976ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  874005ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  874061ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  874062ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  874063ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  874064ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  874342ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  874429ms] [LOG] [WttDataViz] 初始化完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:212
+[  902268ms] [LOG] [WTT Common] 当前项目: md (男子双打) @ http://127.0.0.1:8771/js/wtt_common.js:1326
+[  902312ms] [LOG] [WttDataViz] 开始加载数据... @ http://127.0.0.1:8771/js/wtt_dataviz.js:79
+[  902345ms] [LOG] WTT[md] 协会籍数据加载成功: 3827 人（由单打 assoc.json 推导） @ http://127.0.0.1:8771/js/wtt_common.js:863
+[  902353ms] [LOG] WTT[md] 设置加载成功, scoreMode: flat1300, baseScore: 1500 @ http://127.0.0.1:8771/js/wtt_common.js:753
+[  902378ms] [LOG] WTT[md] 从 manifest 并行加载了 9209 条记录（18 个文件） @ http://127.0.0.1:8771/js/wtt_common.js:689
+[  902433ms] [WARNING] [WTT] 识别并合并 22 个球员名分组，共 22 个别名 @ http://127.0.0.1:8771/js/wtt_common.js:527
+[  902433ms] [WARNING] [WTT]   'Mohamed EL-BEIALI' -> 'Mohamed ELBEIALI' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  902433ms] [WARNING] [WTT]   'Gnanasekaran SATHIYAN' -> 'Sathiyan GNANASEKARAN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  902433ms] [WARNING] [WTT]   'Marcos Freitas' -> 'Marcos FREITAS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  902433ms] [WARNING] [WTT]   'GAUZY Simon' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  902433ms] [WARNING] [WTT]   'Kizito OBA Oba' -> 'Oba Kizito OBA' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  902433ms] [WARNING] [WTT]   'WALTHER Ricardo' -> 'Ricardo WALTHER' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  902433ms] [WARNING] [WTT]   'Panagiotis Gionis' -> 'Panagiotis GIONIS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  902434ms] [WARNING] [WTT]   'BU SHULAYBI Abdulaziz' -> 'Abdulaziz BU SHULAYBI' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  902434ms] [WARNING] [WTT]   'WANG Yang' -> 'Yang WANG' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  902434ms] [WARNING] [WTT]   'QIU Dang' -> 'Dang QIU' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[  902434ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  902434ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  903884ms] [LOG] [WttDataViz] 开始初始化，wttRankingTimeline 长度: 299 wttScoreLogData 长度: 9209 @ http://127.0.0.1:8771/js/wtt_dataviz.js:123
+[  903892ms] [LOG] [WttDataViz] 成功获取球员列表: 4512 人 @ http://127.0.0.1:8771/js/wtt_dataviz.js:154
+[  903920ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  903923ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  903927ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  903937ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  903947ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  903954ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  903961ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  903966ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  903972ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  903981ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  903986ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  903994ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904002ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904012ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904019ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904028ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904036ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904055ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904058ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904062ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904064ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904138ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904141ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904146ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904149ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904178ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904181ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904188ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904190ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904197ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904199ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904205ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904207ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904213ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904215ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904222ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904224ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904230ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904232ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904238ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904240ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904245ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904247ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904253ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904255ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904260ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904262ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904267ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904270ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904274ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904277ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904282ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904284ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904289ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904291ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904295ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904297ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904301ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904304ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904309ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904312ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904316ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904319ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904324ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904326ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904365ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904368ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904381ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904384ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904422ms] [LOG] [WttDataViz] 折线图设置加载完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:34
+[  904426ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904447ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904499ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904500ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904501ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904502ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904503ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904504ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904506ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904506ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904507ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904508ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904509ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904510ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904511ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904512ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904513ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904514ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904514ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904515ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904516ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904517ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904518ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904519ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904520ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904936ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[  904987ms] [LOG] [WttDataViz] 初始化完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:212
+[ 1030414ms] [LOG] [WTT Common] 当前项目: md (男子双打) @ http://127.0.0.1:8771/js/wtt_common.js:1326
+[ 1030477ms] [LOG] [WttDataViz] 开始加载数据... @ http://127.0.0.1:8771/js/wtt_dataviz.js:79
+[ 1030493ms] [LOG] WTT[md] 设置加载成功, scoreMode: flat1300, baseScore: 1500 @ http://127.0.0.1:8771/js/wtt_common.js:753
+[ 1030516ms] [LOG] WTT[md] 协会籍数据加载成功: 3827 人（由单打 assoc.json 推导） @ http://127.0.0.1:8771/js/wtt_common.js:863
+[ 1030541ms] [LOG] WTT[md] 从 manifest 并行加载了 9209 条记录（18 个文件） @ http://127.0.0.1:8771/js/wtt_common.js:689
+[ 1030614ms] [WARNING] [WTT] 识别并合并 22 个球员名分组，共 22 个别名 @ http://127.0.0.1:8771/js/wtt_common.js:527
+[ 1030615ms] [WARNING] [WTT]   'Mohamed EL-BEIALI' -> 'Mohamed ELBEIALI' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1030615ms] [WARNING] [WTT]   'Gnanasekaran SATHIYAN' -> 'Sathiyan GNANASEKARAN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1030615ms] [WARNING] [WTT]   'Marcos Freitas' -> 'Marcos FREITAS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1030615ms] [WARNING] [WTT]   'GAUZY Simon' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1030615ms] [WARNING] [WTT]   'Kizito OBA Oba' -> 'Oba Kizito OBA' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1030615ms] [WARNING] [WTT]   'WALTHER Ricardo' -> 'Ricardo WALTHER' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1030615ms] [WARNING] [WTT]   'Panagiotis Gionis' -> 'Panagiotis GIONIS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1030615ms] [WARNING] [WTT]   'BU SHULAYBI Abdulaziz' -> 'Abdulaziz BU SHULAYBI' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1030615ms] [WARNING] [WTT]   'WANG Yang' -> 'Yang WANG' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1030615ms] [WARNING] [WTT]   'QIU Dang' -> 'Dang QIU' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1030615ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1030615ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032043ms] [LOG] [WttDataViz] 开始初始化，wttRankingTimeline 长度: 299 wttScoreLogData 长度: 9209 @ http://127.0.0.1:8771/js/wtt_dataviz.js:123
+[ 1032050ms] [LOG] [WttDataViz] 成功获取球员列表: 4512 人 @ http://127.0.0.1:8771/js/wtt_dataviz.js:154
+[ 1032080ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032083ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032087ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032094ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032104ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032109ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032115ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032120ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032126ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032132ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032138ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032143ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032149ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032155ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032160ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032166ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032170ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032190ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032192ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032196ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032198ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032262ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032264ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032268ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032270ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032295ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032297ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032304ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032307ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032312ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032315ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032320ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032322ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032327ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032330ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032335ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032337ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032341ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032343ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032348ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032350ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032354ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032356ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032360ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032362ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032366ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032368ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032372ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032374ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032377ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032379ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032383ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032386ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032392ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032394ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032400ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032403ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032407ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032410ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032414ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032416ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032421ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032424ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032429ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032431ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032466ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032470ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032487ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032489ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032505ms] [LOG] [WttDataViz] 折线图设置加载完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:34
+[ 1032509ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032538ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032611ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032612ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032613ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032615ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032616ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032617ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032618ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032620ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032621ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032622ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032623ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032624ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032626ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032627ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032628ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032630ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032631ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032633ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032634ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032635ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032636ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032638ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032639ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032939ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1032997ms] [LOG] [WttDataViz] 初始化完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:212
+[ 1084151ms] [LOG] [WTT Common] 当前项目: md (男子双打) @ http://127.0.0.1:8771/js/wtt_common.js:1326
+[ 1084195ms] [LOG] [WttDataViz] 开始加载数据... @ http://127.0.0.1:8771/js/wtt_dataviz.js:79
+[ 1084213ms] [LOG] WTT[md] 设置加载成功, scoreMode: flat1300, baseScore: 1500 @ http://127.0.0.1:8771/js/wtt_common.js:753
+[ 1084239ms] [LOG] WTT[md] 协会籍数据加载成功: 3827 人（由单打 assoc.json 推导） @ http://127.0.0.1:8771/js/wtt_common.js:863
+[ 1084260ms] [LOG] WTT[md] 从 manifest 并行加载了 9209 条记录（18 个文件） @ http://127.0.0.1:8771/js/wtt_common.js:689
+[ 1084317ms] [WARNING] [WTT] 识别并合并 22 个球员名分组，共 22 个别名 @ http://127.0.0.1:8771/js/wtt_common.js:527
+[ 1084318ms] [WARNING] [WTT]   'Mohamed EL-BEIALI' -> 'Mohamed ELBEIALI' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1084318ms] [WARNING] [WTT]   'Gnanasekaran SATHIYAN' -> 'Sathiyan GNANASEKARAN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1084318ms] [WARNING] [WTT]   'Marcos Freitas' -> 'Marcos FREITAS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1084318ms] [WARNING] [WTT]   'GAUZY Simon' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1084318ms] [WARNING] [WTT]   'Kizito OBA Oba' -> 'Oba Kizito OBA' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1084318ms] [WARNING] [WTT]   'WALTHER Ricardo' -> 'Ricardo WALTHER' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1084318ms] [WARNING] [WTT]   'Panagiotis Gionis' -> 'Panagiotis GIONIS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1084318ms] [WARNING] [WTT]   'BU SHULAYBI Abdulaziz' -> 'Abdulaziz BU SHULAYBI' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1084318ms] [WARNING] [WTT]   'WANG Yang' -> 'Yang WANG' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1084318ms] [WARNING] [WTT]   'QIU Dang' -> 'Dang QIU' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1084318ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1084318ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085643ms] [LOG] [WttDataViz] 开始初始化，wttRankingTimeline 长度: 299 wttScoreLogData 长度: 9209 @ http://127.0.0.1:8771/js/wtt_dataviz.js:123
+[ 1085649ms] [LOG] [WttDataViz] 成功获取球员列表: 4512 人 @ http://127.0.0.1:8771/js/wtt_dataviz.js:154
+[ 1085675ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085678ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085680ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085687ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085694ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085701ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085707ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085713ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085719ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085725ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085731ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085736ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085742ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085748ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085753ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085758ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085764ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085780ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085783ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085786ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085789ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085851ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085853ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085858ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085860ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085885ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085887ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085893ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085894ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085899ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085900ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085905ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085907ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085912ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085914ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085919ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085922ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085926ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085928ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085932ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085934ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085938ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085940ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085945ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085946ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085950ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085952ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085956ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085958ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085961ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085963ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085966ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085968ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085971ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085973ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085977ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085979ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085983ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085984ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085988ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085990ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085994ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085996ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1085999ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086001ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086032ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086034ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086048ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086050ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086064ms] [LOG] [WttDataViz] 折线图设置加载完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:34
+[ 1086067ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086085ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086125ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086127ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086128ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086129ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086129ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086130ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086131ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086132ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086133ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086134ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086134ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086135ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086136ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086137ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086138ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086139ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086140ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086141ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086142ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086143ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086144ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086145ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086145ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086467ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1086520ms] [LOG] [WttDataViz] 初始化完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:212
+[ 1095495ms] [LOG] [WTT Common] 当前项目: ms (男子单打) @ http://127.0.0.1:8771/js/wtt_common.js:1326
+[ 1095557ms] [LOG] [WttDataViz] 开始加载数据... @ http://127.0.0.1:8771/js/wtt_dataviz.js:79
+[ 1095627ms] [LOG] WTT[ms] 协会籍数据加载成功: 3827 人 @ http://127.0.0.1:8771/js/wtt_common.js:863
+[ 1095633ms] [LOG] WTT[ms] 设置加载成功, scoreMode: flat1300, baseScore: 1500 @ http://127.0.0.1:8771/js/wtt_common.js:753
+[ 1095729ms] [LOG] WTT[ms] 从 manifest 并行加载了 44131 条记录（19 个文件） @ http://127.0.0.1:8771/js/wtt_common.js:689
+[ 1095778ms] [WARNING] [WTT] 识别并合并 95 个球员名分组，共 102 个别名 @ http://127.0.0.1:8771/js/wtt_common.js:527
+[ 1095778ms] [WARNING] [WTT]   'Marcos Freitas' -> 'Marcos FREITAS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1095778ms] [WARNING] [WTT]   'Panagiotis Gionis' -> 'Panagiotis GIONIS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1095778ms] [WARNING] [WTT]   'GAUZY Simon' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1095778ms] [WARNING] [WTT]   'Simon Gauzy' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1095778ms] [WARNING] [WTT]   'Tiago Apolonia' -> 'Tiago APOLONIA' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1095778ms] [WARNING] [WTT]   'Takuya Jin' -> 'Takuya JIN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1095778ms] [WARNING] [WTT]   'Gnanasekaran SATHIYAN' -> 'Sathiyan GNANASEKARAN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1095778ms] [WARNING] [WTT]   'Ovidiu Ionescu' -> 'Ovidiu IONESCU' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1095778ms] [WARNING] [WTT]   'Pavel Sirucek' -> 'Pavel SIRUCEK' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1095778ms] [WARNING] [WTT]   'Quentin Robinot' -> 'Quentin ROBINOT' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1095778ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1095778ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097392ms] [LOG] [WttDataViz] 开始初始化，wttRankingTimeline 长度: 299 wttScoreLogData 长度: 44131 @ http://127.0.0.1:8771/js/wtt_dataviz.js:123
+[ 1097404ms] [LOG] [WttDataViz] 成功获取球员列表: 3727 人 @ http://127.0.0.1:8771/js/wtt_dataviz.js:154
+[ 1097441ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097443ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097453ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097469ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097480ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097492ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097502ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097519ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097534ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097546ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097557ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097573ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097590ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097603ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097614ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097624ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097634ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097656ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097657ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097664ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097666ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097757ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097758ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097761ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097763ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097778ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097780ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097788ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097791ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097799ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097800ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097809ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097810ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097818ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097819ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097825ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097827ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097834ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097835ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097841ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097843ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097849ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097850ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097857ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097858ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097864ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097866ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097872ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097874ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097880ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097882ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097888ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097890ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097896ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097898ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097904ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097906ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097912ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097913ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097923ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097925ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097932ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097934ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097940ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097942ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097983ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1097986ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1098007ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1098011ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1098151ms] [LOG] [WttDataViz] 折线图设置加载完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:34
+[ 1098157ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1098177ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1098215ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1098216ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1098217ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1098218ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1098392ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1098468ms] [LOG] [WttDataViz] 初始化完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:212
+[ 1126371ms] [LOG] [WTT Common] 当前项目: md (男子双打) @ http://127.0.0.1:8771/js/wtt_common.js:1326
+[ 1126423ms] [LOG] [WttDataViz] 开始加载数据... @ http://127.0.0.1:8771/js/wtt_dataviz.js:79
+[ 1126444ms] [LOG] WTT[md] 设置加载成功, scoreMode: flat1300, baseScore: 1500 @ http://127.0.0.1:8771/js/wtt_common.js:753
+[ 1126453ms] [LOG] WTT[md] 协会籍数据加载成功: 3827 人（由单打 assoc.json 推导） @ http://127.0.0.1:8771/js/wtt_common.js:863
+[ 1126478ms] [LOG] WTT[md] 从 manifest 并行加载了 9209 条记录（18 个文件） @ http://127.0.0.1:8771/js/wtt_common.js:689
+[ 1126535ms] [WARNING] [WTT] 识别并合并 22 个球员名分组，共 22 个别名 @ http://127.0.0.1:8771/js/wtt_common.js:527
+[ 1126535ms] [WARNING] [WTT]   'Mohamed EL-BEIALI' -> 'Mohamed ELBEIALI' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1126535ms] [WARNING] [WTT]   'Gnanasekaran SATHIYAN' -> 'Sathiyan GNANASEKARAN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1126535ms] [WARNING] [WTT]   'Marcos Freitas' -> 'Marcos FREITAS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1126535ms] [WARNING] [WTT]   'GAUZY Simon' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1126535ms] [WARNING] [WTT]   'Kizito OBA Oba' -> 'Oba Kizito OBA' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1126535ms] [WARNING] [WTT]   'WALTHER Ricardo' -> 'Ricardo WALTHER' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1126535ms] [WARNING] [WTT]   'Panagiotis Gionis' -> 'Panagiotis GIONIS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1126535ms] [WARNING] [WTT]   'BU SHULAYBI Abdulaziz' -> 'Abdulaziz BU SHULAYBI' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1126535ms] [WARNING] [WTT]   'WANG Yang' -> 'Yang WANG' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1126535ms] [WARNING] [WTT]   'QIU Dang' -> 'Dang QIU' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1126535ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1126536ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128040ms] [LOG] [WttDataViz] 开始初始化，wttRankingTimeline 长度: 299 wttScoreLogData 长度: 9209 @ http://127.0.0.1:8771/js/wtt_dataviz.js:123
+[ 1128046ms] [LOG] [WttDataViz] 成功获取球员列表: 4512 人 @ http://127.0.0.1:8771/js/wtt_dataviz.js:154
+[ 1128072ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128074ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128077ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128084ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128090ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128095ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128105ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128112ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128118ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128124ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128130ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128135ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128141ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128147ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128153ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128158ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128163ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128177ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128179ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128185ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128188ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128245ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128247ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128252ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128253ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128279ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128281ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128286ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128288ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128291ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128293ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128296ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128298ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128301ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128303ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128306ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128309ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128312ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128314ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128317ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128319ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128322ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128324ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128327ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128329ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128332ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128334ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128337ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128338ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128341ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128343ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128346ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128348ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128351ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128353ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128356ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128358ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128361ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128362ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128365ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128368ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128372ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128375ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128378ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128380ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128417ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128420ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128432ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128435ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128575ms] [LOG] [WttDataViz] 折线图设置加载完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:34
+[ 1128578ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128598ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128638ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128639ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128640ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128641ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128642ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128642ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128643ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128644ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128645ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128646ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128647ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128647ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128648ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128649ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128650ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128651ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128652ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128653ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128654ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128655ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128656ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128656ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128657ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128939ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1128992ms] [LOG] [WttDataViz] 初始化完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:212
+[ 1154299ms] [LOG] [WTT Common] 当前项目: md (男子双打) @ http://127.0.0.1:8771/js/wtt_common.js:1326
+[ 1154347ms] [LOG] [WttDataViz] 开始加载数据... @ http://127.0.0.1:8771/js/wtt_dataviz.js:79
+[ 1154362ms] [LOG] WTT[md] 设置加载成功, scoreMode: flat1300, baseScore: 1500 @ http://127.0.0.1:8771/js/wtt_common.js:753
+[ 1154386ms] [LOG] WTT[md] 协会籍数据加载成功: 3827 人（由单打 assoc.json 推导） @ http://127.0.0.1:8771/js/wtt_common.js:863
+[ 1154406ms] [LOG] WTT[md] 从 manifest 并行加载了 9209 条记录（18 个文件） @ http://127.0.0.1:8771/js/wtt_common.js:689
+[ 1154490ms] [WARNING] [WTT] 识别并合并 22 个球员名分组，共 22 个别名 @ http://127.0.0.1:8771/js/wtt_common.js:527
+[ 1154490ms] [WARNING] [WTT]   'Mohamed EL-BEIALI' -> 'Mohamed ELBEIALI' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1154490ms] [WARNING] [WTT]   'Gnanasekaran SATHIYAN' -> 'Sathiyan GNANASEKARAN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1154490ms] [WARNING] [WTT]   'Marcos Freitas' -> 'Marcos FREITAS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1154490ms] [WARNING] [WTT]   'GAUZY Simon' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1154490ms] [WARNING] [WTT]   'Kizito OBA Oba' -> 'Oba Kizito OBA' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1154490ms] [WARNING] [WTT]   'WALTHER Ricardo' -> 'Ricardo WALTHER' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1154490ms] [WARNING] [WTT]   'Panagiotis Gionis' -> 'Panagiotis GIONIS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1154490ms] [WARNING] [WTT]   'BU SHULAYBI Abdulaziz' -> 'Abdulaziz BU SHULAYBI' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1154491ms] [WARNING] [WTT]   'WANG Yang' -> 'Yang WANG' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1154491ms] [WARNING] [WTT]   'QIU Dang' -> 'Dang QIU' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1154491ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1154491ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1155801ms] [LOG] [WttDataViz] 开始初始化，wttRankingTimeline 长度: 299 wttScoreLogData 长度: 9209 @ http://127.0.0.1:8771/js/wtt_dataviz.js:123
+[ 1155807ms] [LOG] [WttDataViz] 成功获取球员列表: 4512 人 @ http://127.0.0.1:8771/js/wtt_dataviz.js:154
+[ 1155831ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1155834ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1155837ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1155844ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1155850ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1155858ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1155867ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1155874ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1155879ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1155885ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1155891ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1155897ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1155902ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1155908ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1155913ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1155919ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1155923ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1155940ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1155943ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1155947ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1155950ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156009ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156011ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156015ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156017ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156041ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156043ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156049ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156051ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156057ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156060ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156065ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156066ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156072ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156074ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156079ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156081ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156085ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156086ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156090ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156092ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156096ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156098ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156102ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156104ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156108ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156110ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156114ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156116ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156120ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156122ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156126ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156128ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156131ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156133ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156137ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156139ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156143ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156144ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156148ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156150ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156153ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156156ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156160ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156162ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156193ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156196ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156208ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156210ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156222ms] [LOG] [WttDataViz] 折线图设置加载完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:34
+[ 1156225ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156243ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156280ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156282ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156283ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156284ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156284ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156285ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156286ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156287ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156288ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156289ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156289ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156290ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156291ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156292ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156293ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156294ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156295ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156296ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156297ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156298ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156299ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156300ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156301ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156588ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1156637ms] [LOG] [WttDataViz] 初始化完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:212
+[ 1188509ms] [LOG] [WTT Common] 当前项目: md (男子双打) @ http://127.0.0.1:8771/js/wtt_common.js:1326
+[ 1188519ms] [LOG] [WttDataViz] 开始加载数据... @ http://127.0.0.1:8771/js/wtt_dataviz.js:79
+[ 1188537ms] [LOG] WTT[md] 设置加载成功, scoreMode: flat1300, baseScore: 1500 @ http://127.0.0.1:8771/js/wtt_common.js:753
+[ 1188550ms] [LOG] WTT[md] 协会籍数据加载成功: 3827 人（由单打 assoc.json 推导） @ http://127.0.0.1:8771/js/wtt_common.js:863
+[ 1188570ms] [LOG] WTT[md] 从 manifest 并行加载了 9209 条记录（18 个文件） @ http://127.0.0.1:8771/js/wtt_common.js:689
+[ 1188629ms] [WARNING] [WTT] 识别并合并 22 个球员名分组，共 22 个别名 @ http://127.0.0.1:8771/js/wtt_common.js:527
+[ 1188629ms] [WARNING] [WTT]   'Mohamed EL-BEIALI' -> 'Mohamed ELBEIALI' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1188629ms] [WARNING] [WTT]   'Gnanasekaran SATHIYAN' -> 'Sathiyan GNANASEKARAN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1188629ms] [WARNING] [WTT]   'Marcos Freitas' -> 'Marcos FREITAS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1188629ms] [WARNING] [WTT]   'GAUZY Simon' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1188629ms] [WARNING] [WTT]   'Kizito OBA Oba' -> 'Oba Kizito OBA' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1188629ms] [WARNING] [WTT]   'WALTHER Ricardo' -> 'Ricardo WALTHER' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1188629ms] [WARNING] [WTT]   'Panagiotis Gionis' -> 'Panagiotis GIONIS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1188629ms] [WARNING] [WTT]   'BU SHULAYBI Abdulaziz' -> 'Abdulaziz BU SHULAYBI' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1188629ms] [WARNING] [WTT]   'WANG Yang' -> 'Yang WANG' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1188629ms] [WARNING] [WTT]   'QIU Dang' -> 'Dang QIU' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1188629ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1188629ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1189907ms] [LOG] [WttDataViz] 开始初始化，wttRankingTimeline 长度: 299 wttScoreLogData 长度: 9209 @ http://127.0.0.1:8771/js/wtt_dataviz.js:123
+[ 1189913ms] [LOG] [WttDataViz] 成功获取球员列表: 4512 人 @ http://127.0.0.1:8771/js/wtt_dataviz.js:154
+[ 1189944ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1189949ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1189953ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1189962ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1189970ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1189976ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1189990ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1189998ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190005ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190010ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190016ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190022ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190027ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190033ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190038ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190044ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190049ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190067ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190069ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190073ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190074ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190134ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190136ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190139ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190141ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190165ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190167ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190173ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190174ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190179ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190181ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190188ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190190ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190195ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190197ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190201ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190203ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190207ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190209ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190212ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190215ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190219ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190221ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190225ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190226ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190229ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190231ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190234ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190236ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190239ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190241ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190244ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190246ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190249ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190251ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190254ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190256ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190258ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190260ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190265ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190267ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190272ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190274ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190277ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190279ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190308ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190310ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190322ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190324ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190344ms] [LOG] [WttDataViz] 折线图设置加载完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:34
+[ 1190348ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190365ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190409ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190411ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190412ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190413ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190414ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190415ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190415ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190417ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190417ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190418ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190419ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190420ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190421ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190422ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190422ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190423ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190424ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190425ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190426ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190427ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190428ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190429ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190430ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190681ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1190732ms] [LOG] [WttDataViz] 初始化完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:212
+[ 1202942ms] [LOG] [WTT Common] 当前项目: md (男子双打) @ http://127.0.0.1:8771/js/wtt_common.js:1326
+[ 1202986ms] [LOG] [WttDataViz] 开始加载数据... @ http://127.0.0.1:8771/js/wtt_dataviz.js:79
+[ 1202999ms] [LOG] WTT[md] 设置加载成功, scoreMode: flat1300, baseScore: 1500 @ http://127.0.0.1:8771/js/wtt_common.js:753
+[ 1203019ms] [LOG] WTT[md] 协会籍数据加载成功: 3827 人（由单打 assoc.json 推导） @ http://127.0.0.1:8771/js/wtt_common.js:863
+[ 1203041ms] [LOG] WTT[md] 从 manifest 并行加载了 9209 条记录（18 个文件） @ http://127.0.0.1:8771/js/wtt_common.js:689
+[ 1203091ms] [WARNING] [WTT] 识别并合并 22 个球员名分组，共 22 个别名 @ http://127.0.0.1:8771/js/wtt_common.js:527
+[ 1203091ms] [WARNING] [WTT]   'Mohamed EL-BEIALI' -> 'Mohamed ELBEIALI' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1203091ms] [WARNING] [WTT]   'Gnanasekaran SATHIYAN' -> 'Sathiyan GNANASEKARAN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1203091ms] [WARNING] [WTT]   'Marcos Freitas' -> 'Marcos FREITAS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1203092ms] [WARNING] [WTT]   'GAUZY Simon' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1203092ms] [WARNING] [WTT]   'Kizito OBA Oba' -> 'Oba Kizito OBA' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1203092ms] [WARNING] [WTT]   'WALTHER Ricardo' -> 'Ricardo WALTHER' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1203092ms] [WARNING] [WTT]   'Panagiotis Gionis' -> 'Panagiotis GIONIS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1203092ms] [WARNING] [WTT]   'BU SHULAYBI Abdulaziz' -> 'Abdulaziz BU SHULAYBI' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1203092ms] [WARNING] [WTT]   'WANG Yang' -> 'Yang WANG' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1203092ms] [WARNING] [WTT]   'QIU Dang' -> 'Dang QIU' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1203092ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1203092ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204563ms] [LOG] [WttDataViz] 开始初始化，wttRankingTimeline 长度: 299 wttScoreLogData 长度: 9209 @ http://127.0.0.1:8771/js/wtt_dataviz.js:123
+[ 1204569ms] [LOG] [WttDataViz] 成功获取球员列表: 4512 人 @ http://127.0.0.1:8771/js/wtt_dataviz.js:154
+[ 1204594ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204596ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204599ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204606ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204613ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204618ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204624ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204632ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204638ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204647ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204655ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204661ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204666ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204673ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204678ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204684ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204688ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204702ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204704ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204709ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204711ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204765ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204767ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204771ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204772ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204799ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204801ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204805ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204807ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204812ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204813ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204817ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204819ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204823ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204824ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204828ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204830ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204834ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204836ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204840ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204842ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204846ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204848ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204851ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204853ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204857ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204859ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204862ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204864ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204867ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204869ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204872ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204874ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204878ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204879ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204883ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204884ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204888ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204889ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204893ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204895ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204898ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204900ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204904ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204906ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204938ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204940ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204954ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204956ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204968ms] [LOG] [WttDataViz] 折线图设置加载完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:34
+[ 1204970ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1204988ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1205036ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1205037ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1205038ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1205039ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1205040ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1205041ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1205042ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1205042ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1205043ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1205044ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1205045ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1205046ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1205047ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1205048ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1205049ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1205049ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1205050ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1205051ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1205052ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1205053ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1205054ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1205055ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1205056ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1205349ms] [LOG] [WTT md] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1205399ms] [LOG] [WttDataViz] 初始化完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:212
+[ 1262051ms] [LOG] [WTT Common] 当前项目: ms (男子单打) @ http://127.0.0.1:8771/js/wtt_common.js:1326
+[ 1262116ms] [LOG] [WttDataViz] 开始加载数据... @ http://127.0.0.1:8771/js/wtt_dataviz.js:79
+[ 1262194ms] [LOG] WTT[ms] 协会籍数据加载成功: 3827 人 @ http://127.0.0.1:8771/js/wtt_common.js:863
+[ 1262194ms] [LOG] WTT[ms] 设置加载成功, scoreMode: flat1300, baseScore: 1500 @ http://127.0.0.1:8771/js/wtt_common.js:753
+[ 1262275ms] [LOG] WTT[ms] 从 manifest 并行加载了 44131 条记录（19 个文件） @ http://127.0.0.1:8771/js/wtt_common.js:689
+[ 1262319ms] [WARNING] [WTT] 识别并合并 95 个球员名分组，共 102 个别名 @ http://127.0.0.1:8771/js/wtt_common.js:527
+[ 1262319ms] [WARNING] [WTT]   'Marcos Freitas' -> 'Marcos FREITAS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1262319ms] [WARNING] [WTT]   'Panagiotis Gionis' -> 'Panagiotis GIONIS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1262319ms] [WARNING] [WTT]   'GAUZY Simon' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1262319ms] [WARNING] [WTT]   'Simon Gauzy' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1262319ms] [WARNING] [WTT]   'Tiago Apolonia' -> 'Tiago APOLONIA' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1262319ms] [WARNING] [WTT]   'Takuya Jin' -> 'Takuya JIN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1262319ms] [WARNING] [WTT]   'Gnanasekaran SATHIYAN' -> 'Sathiyan GNANASEKARAN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1262319ms] [WARNING] [WTT]   'Ovidiu Ionescu' -> 'Ovidiu IONESCU' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1262320ms] [WARNING] [WTT]   'Pavel Sirucek' -> 'Pavel SIRUCEK' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1262320ms] [WARNING] [WTT]   'Quentin Robinot' -> 'Quentin ROBINOT' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1262320ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1262320ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1263912ms] [LOG] [WttDataViz] 开始初始化，wttRankingTimeline 长度: 299 wttScoreLogData 长度: 44131 @ http://127.0.0.1:8771/js/wtt_dataviz.js:123
+[ 1263924ms] [LOG] [WttDataViz] 成功获取球员列表: 3727 人 @ http://127.0.0.1:8771/js/wtt_dataviz.js:154
+[ 1263963ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1263965ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1263971ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1263985ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1263999ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264014ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264025ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264042ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264055ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264065ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264076ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264086ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264097ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264108ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264119ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264131ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264141ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264165ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264166ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264173ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264175ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264271ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264273ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264277ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264278ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264293ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264294ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264303ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264304ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264313ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264315ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264324ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264325ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264333ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264334ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264341ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264343ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264349ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264351ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264358ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264359ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264366ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264367ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264374ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264375ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264382ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264384ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264390ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264392ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264399ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264400ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264407ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264409ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264415ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264417ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264424ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264425ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264432ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264433ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264440ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264442ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264448ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264450ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264457ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264458ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264500ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264502ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264521ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264525ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264681ms] [LOG] [WttDataViz] 折线图设置加载完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:34
+[ 1264687ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264706ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264744ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264745ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264746ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264746ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264920ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1264989ms] [LOG] [WttDataViz] 初始化完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:212
+[ 1312361ms] [LOG] [WTT Common] 当前项目: ms (男子单打) @ http://127.0.0.1:8771/js/wtt_common.js:1326
+[ 1312494ms] [LOG] [WttDataViz] 开始加载数据... @ http://127.0.0.1:8771/js/wtt_dataviz.js:79
+[ 1312511ms] [LOG] WTT[ms] 设置加载成功, scoreMode: flat1300, baseScore: 1500 @ http://127.0.0.1:8771/js/wtt_common.js:753
+[ 1312522ms] [LOG] WTT[ms] 协会籍数据加载成功: 3827 人 @ http://127.0.0.1:8771/js/wtt_common.js:863
+[ 1312600ms] [LOG] WTT[ms] 从 manifest 并行加载了 44131 条记录（19 个文件） @ http://127.0.0.1:8771/js/wtt_common.js:689
+[ 1312667ms] [WARNING] [WTT] 识别并合并 95 个球员名分组，共 102 个别名 @ http://127.0.0.1:8771/js/wtt_common.js:527
+[ 1312667ms] [WARNING] [WTT]   'Marcos Freitas' -> 'Marcos FREITAS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1312667ms] [WARNING] [WTT]   'Panagiotis Gionis' -> 'Panagiotis GIONIS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1312667ms] [WARNING] [WTT]   'GAUZY Simon' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1312667ms] [WARNING] [WTT]   'Simon Gauzy' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1312667ms] [WARNING] [WTT]   'Tiago Apolonia' -> 'Tiago APOLONIA' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1312667ms] [WARNING] [WTT]   'Takuya Jin' -> 'Takuya JIN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1312667ms] [WARNING] [WTT]   'Gnanasekaran SATHIYAN' -> 'Sathiyan GNANASEKARAN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1312667ms] [WARNING] [WTT]   'Ovidiu Ionescu' -> 'Ovidiu IONESCU' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1312667ms] [WARNING] [WTT]   'Pavel Sirucek' -> 'Pavel SIRUCEK' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1312667ms] [WARNING] [WTT]   'Quentin Robinot' -> 'Quentin ROBINOT' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1312667ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1312668ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314275ms] [LOG] [WttDataViz] 开始初始化，wttRankingTimeline 长度: 299 wttScoreLogData 长度: 44131 @ http://127.0.0.1:8771/js/wtt_dataviz.js:123
+[ 1314287ms] [LOG] [WttDataViz] 成功获取球员列表: 3727 人 @ http://127.0.0.1:8771/js/wtt_dataviz.js:154
+[ 1314328ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314331ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314339ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314353ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314365ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314384ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314395ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314405ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314416ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314426ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314439ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314450ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314461ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314471ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314481ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314492ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314502ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314525ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314527ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314534ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314538ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314635ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314637ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314640ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314642ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314659ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314661ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314669ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314671ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314679ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314681ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314692ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314693ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314701ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314702ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314709ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314711ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314718ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314719ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314726ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314729ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314737ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314738ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314746ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314747ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314754ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314755ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314762ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314764ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314770ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314772ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314779ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314781ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314787ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314789ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314798ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314800ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314809ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314810ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314818ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314820ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314829ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314830ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314839ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314841ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314887ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314890ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314911ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1314913ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1339343ms] [LOG] [WTT Common] 当前项目: ms (男子单打) @ http://127.0.0.1:8771/js/wtt_common.js:1326
+[ 1339427ms] [LOG] [WttDataViz] 开始加载数据... @ http://127.0.0.1:8771/js/wtt_dataviz.js:79
+[ 1339508ms] [LOG] WTT[ms] 设置加载成功, scoreMode: flat1300, baseScore: 1500 @ http://127.0.0.1:8771/js/wtt_common.js:753
+[ 1339521ms] [LOG] WTT[ms] 协会籍数据加载成功: 3827 人 @ http://127.0.0.1:8771/js/wtt_common.js:863
+[ 1339602ms] [LOG] WTT[ms] 从 manifest 并行加载了 44131 条记录（19 个文件） @ http://127.0.0.1:8771/js/wtt_common.js:689
+[ 1339657ms] [WARNING] [WTT] 识别并合并 95 个球员名分组，共 102 个别名 @ http://127.0.0.1:8771/js/wtt_common.js:527
+[ 1339657ms] [WARNING] [WTT]   'Marcos Freitas' -> 'Marcos FREITAS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1339657ms] [WARNING] [WTT]   'Panagiotis Gionis' -> 'Panagiotis GIONIS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1339657ms] [WARNING] [WTT]   'GAUZY Simon' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1339657ms] [WARNING] [WTT]   'Simon Gauzy' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1339657ms] [WARNING] [WTT]   'Tiago Apolonia' -> 'Tiago APOLONIA' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1339657ms] [WARNING] [WTT]   'Takuya Jin' -> 'Takuya JIN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1339657ms] [WARNING] [WTT]   'Gnanasekaran SATHIYAN' -> 'Sathiyan GNANASEKARAN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1339657ms] [WARNING] [WTT]   'Ovidiu Ionescu' -> 'Ovidiu IONESCU' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1339657ms] [WARNING] [WTT]   'Pavel Sirucek' -> 'Pavel SIRUCEK' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1339657ms] [WARNING] [WTT]   'Quentin Robinot' -> 'Quentin ROBINOT' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1339657ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1339657ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341291ms] [LOG] [WttDataViz] 开始初始化，wttRankingTimeline 长度: 299 wttScoreLogData 长度: 44131 @ http://127.0.0.1:8771/js/wtt_dataviz.js:123
+[ 1341305ms] [LOG] [WttDataViz] 成功获取球员列表: 3727 人 @ http://127.0.0.1:8771/js/wtt_dataviz.js:154
+[ 1341343ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341345ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341353ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341369ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341384ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341397ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341407ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341425ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341436ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341452ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341464ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341474ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341484ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341495ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341505ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341517ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341528ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341552ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341553ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341559ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341561ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341655ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341657ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341664ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341667ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341708ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341710ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341719ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341721ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341729ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341731ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341738ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341740ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341748ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341750ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341757ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341759ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341767ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341768ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341776ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341778ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341785ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341788ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341798ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341800ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341811ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341813ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341824ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341825ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341833ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341835ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341842ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341844ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341852ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341853ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341860ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341862ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341870ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341871ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341879ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341881ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341891ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341892ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341901ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341902ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341948ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341951ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341973ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1341975ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1342118ms] [LOG] [WttDataViz] 折线图设置加载完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:34
+[ 1342126ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1342145ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1342181ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1342182ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1342183ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1342184ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1342353ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1342429ms] [LOG] [WttDataViz] 初始化完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:212
+[ 1387138ms] [LOG] [WTT Common] 当前项目: ms (男子单打) @ http://127.0.0.1:8771/js/wtt_common.js:1326
+[ 1387197ms] [LOG] [WttDataViz] 开始加载数据... @ http://127.0.0.1:8771/js/wtt_dataviz.js:79
+[ 1387263ms] [LOG] WTT[ms] 设置加载成功, scoreMode: flat1300, baseScore: 1500 @ http://127.0.0.1:8771/js/wtt_common.js:753
+[ 1387273ms] [LOG] WTT[ms] 协会籍数据加载成功: 3827 人 @ http://127.0.0.1:8771/js/wtt_common.js:863
+[ 1387341ms] [LOG] WTT[ms] 从 manifest 并行加载了 44131 条记录（19 个文件） @ http://127.0.0.1:8771/js/wtt_common.js:689
+[ 1387388ms] [WARNING] [WTT] 识别并合并 95 个球员名分组，共 102 个别名 @ http://127.0.0.1:8771/js/wtt_common.js:527
+[ 1387388ms] [WARNING] [WTT]   'Marcos Freitas' -> 'Marcos FREITAS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1387388ms] [WARNING] [WTT]   'Panagiotis Gionis' -> 'Panagiotis GIONIS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1387388ms] [WARNING] [WTT]   'GAUZY Simon' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1387388ms] [WARNING] [WTT]   'Simon Gauzy' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1387388ms] [WARNING] [WTT]   'Tiago Apolonia' -> 'Tiago APOLONIA' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1387388ms] [WARNING] [WTT]   'Takuya Jin' -> 'Takuya JIN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1387389ms] [WARNING] [WTT]   'Gnanasekaran SATHIYAN' -> 'Sathiyan GNANASEKARAN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1387389ms] [WARNING] [WTT]   'Ovidiu Ionescu' -> 'Ovidiu IONESCU' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1387389ms] [WARNING] [WTT]   'Pavel Sirucek' -> 'Pavel SIRUCEK' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1387389ms] [WARNING] [WTT]   'Quentin Robinot' -> 'Quentin ROBINOT' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1387389ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1387389ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1388956ms] [LOG] [WttDataViz] 开始初始化，wttRankingTimeline 长度: 299 wttScoreLogData 长度: 44131 @ http://127.0.0.1:8771/js/wtt_dataviz.js:123
+[ 1388968ms] [LOG] [WttDataViz] 成功获取球员列表: 3727 人 @ http://127.0.0.1:8771/js/wtt_dataviz.js:154
+[ 1389007ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389009ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389016ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389030ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389042ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389057ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389068ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389085ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389099ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389109ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389120ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389130ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389141ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389151ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389162ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389175ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389186ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389209ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389211ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389218ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389220ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389346ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389348ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389353ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389355ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389373ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389375ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389383ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389385ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389393ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389395ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389403ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389405ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389412ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389414ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389420ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389422ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389428ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389430ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389437ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389438ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389445ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389446ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389453ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389454ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389461ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389463ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389471ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389473ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389481ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389483ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389489ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389491ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389498ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389500ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389506ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389508ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389514ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389516ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389522ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389524ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389532ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389535ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389546ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389548ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389597ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389599ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389631ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389633ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389788ms] [LOG] [WttDataViz] 折线图设置加载完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:34
+[ 1389794ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389812ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389849ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389850ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389851ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1389852ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1390024ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1390103ms] [LOG] [WttDataViz] 初始化完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:212
+[ 1397606ms] [LOG] [WTT Common] 当前项目: ms (男子单打) @ http://127.0.0.1:8771/js/wtt_common.js:1326
+[ 1397634ms] [LOG] [WttDataViz] 开始加载数据... @ http://127.0.0.1:8771/js/wtt_dataviz.js:79
+[ 1397654ms] [LOG] WTT[ms] 设置加载成功, scoreMode: flat1300, baseScore: 1500 @ http://127.0.0.1:8771/js/wtt_common.js:753
+[ 1397661ms] [LOG] WTT[ms] 协会籍数据加载成功: 3827 人 @ http://127.0.0.1:8771/js/wtt_common.js:863
+[ 1397732ms] [LOG] WTT[ms] 从 manifest 并行加载了 44131 条记录（19 个文件） @ http://127.0.0.1:8771/js/wtt_common.js:689
+[ 1397773ms] [WARNING] [WTT] 识别并合并 95 个球员名分组，共 102 个别名 @ http://127.0.0.1:8771/js/wtt_common.js:527
+[ 1397773ms] [WARNING] [WTT]   'Marcos Freitas' -> 'Marcos FREITAS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1397774ms] [WARNING] [WTT]   'Panagiotis Gionis' -> 'Panagiotis GIONIS' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1397774ms] [WARNING] [WTT]   'GAUZY Simon' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1397774ms] [WARNING] [WTT]   'Simon Gauzy' -> 'Simon GAUZY' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1397774ms] [WARNING] [WTT]   'Tiago Apolonia' -> 'Tiago APOLONIA' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1397774ms] [WARNING] [WTT]   'Takuya Jin' -> 'Takuya JIN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1397774ms] [WARNING] [WTT]   'Gnanasekaran SATHIYAN' -> 'Sathiyan GNANASEKARAN' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1397774ms] [WARNING] [WTT]   'Ovidiu Ionescu' -> 'Ovidiu IONESCU' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1397774ms] [WARNING] [WTT]   'Pavel Sirucek' -> 'Pavel SIRUCEK' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1397774ms] [WARNING] [WTT]   'Quentin Robinot' -> 'Quentin ROBINOT' @ http://127.0.0.1:8771/js/wtt_common.js:528
+[ 1397774ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1397774ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399328ms] [LOG] [WttDataViz] 开始初始化，wttRankingTimeline 长度: 299 wttScoreLogData 长度: 44131 @ http://127.0.0.1:8771/js/wtt_dataviz.js:123
+[ 1399339ms] [LOG] [WttDataViz] 成功获取球员列表: 3727 人 @ http://127.0.0.1:8771/js/wtt_dataviz.js:154
+[ 1399377ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399379ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399388ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399401ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399413ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399424ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399435ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399449ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399459ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399470ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399480ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399490ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399500ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399511ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399521ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399531ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399542ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399565ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399566ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399574ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399575ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399662ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399664ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399667ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399669ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399684ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399686ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399696ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399698ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399707ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399709ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399719ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399721ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399730ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399731ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399739ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399741ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399749ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399750ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399758ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399759ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399767ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399768ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399776ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399777ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399785ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399786ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399793ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399794ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399801ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399802ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399809ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399811ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399817ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399819ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399825ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399827ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399833ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399834ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399841ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399842ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399849ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399850ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399858ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399859ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399903ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399905ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399925ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1399929ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1400071ms] [LOG] [WttDataViz] 折线图设置加载完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:34
+[ 1400077ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1400096ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1400135ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1400136ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1400137ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1400138ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1400372ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8771/js/wtt_common.js:775
+[ 1400441ms] [LOG] [WttDataViz] 初始化完成 @ http://127.0.0.1:8771/js/wtt_dataviz.js:212
