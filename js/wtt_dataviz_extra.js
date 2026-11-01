@@ -249,14 +249,19 @@ function wttBuildAssocPlayerMap() {
 
 // 由某时刻的完整积分映射计算各协会实力分，返回按分数降序的列表
 // season 可选：历史快照传入其所属赛季；缺省时保持现状用当前赛季
+// 历史快照（传 season）保持「按当时赛季活跃」的口径；当前口径的调用方
+// （协会前五）跟随全页开关——开关关闭时含所有在册球员
 function wttComputeAssocStrengthList(scoreMap, season) {
     const assocPlayers = wttBuildAssocPlayerMap();
     const countryMap = wttBuildAssocCountryMap();
     // 不计算该赛季无比赛数据的球员
-    const activeThisSeason = wttGetSeasonActivePlayers(season !== undefined ? season : wttGetCurrentSeason());
-    const filterActive = activeThisSeason && activeThisSeason.size > 0
-        ? name => activeThisSeason.has(name)
-        : () => true;
+    const historical = season !== undefined && season;
+    const activeThisSeason = wttGetSeasonActivePlayers(historical ? season : wttGetCurrentSeason());
+    const filterActive = (!historical && typeof wttIsActiveOnly === 'function' && !wttIsActiveOnly())
+        ? () => true
+        : (activeThisSeason && activeThisSeason.size > 0
+            ? name => activeThisSeason.has(name)
+            : () => true);
     const list = [];
     for (const [code, players] of Object.entries(assocPlayers)) {
         const scored = players
@@ -394,7 +399,20 @@ function initWttDataVizExtra() {
         wttRenderAssocTop5(v);
     });
 
+    // 「仅显示当前活跃球员」全局开关：切换后所有以球员池为输入的图全部重渲。
+    // 排名竞速 / 协会积分趋势是历史视角，口径按各帧自己的赛季，不在重渲之列
+    document.getElementById('wttActiveOnlyToggle')?.addEventListener('change', e => {
+        wttDataVizExtraState.activeOnly = !!e.target.checked;
+        if (typeof wttRerenderAllForActiveToggle === 'function') wttRerenderAllForActiveToggle();
+    });
+
     wttInitBarRace();
+}
+
+// 开关切换后的整页重渲（extra 板块 + 主板块），由 initWttDataVizExtra 的开关监听调用
+function wttRerenderAllForActiveToggle() {
+    if (typeof wttRerenderDataVizMainForActiveToggle === 'function') wttRerenderDataVizMainForActiveToggle();
+    wttReapplyDataVizExtra();
 }
 
 function wttClampInt(v, min, max) {
@@ -496,6 +514,8 @@ function wttBuildBarRaceAssocColors() {
 // 懒缓存：按需计算某一帧的 Top 20 数据（含积分、协会、旗帜）
 // 该帧所属赛季无比赛数据的球员自动隐去，有比赛数据的赛季正常显示
 // byName 保存未截断前的全部分数，供新晋行从「榜外分数」平滑生长
+// （历史回放不接全页「仅活跃」开关：帧内口径始终按该帧自己的赛季算，
+//   否则回放老赛季时会把当时活跃、如今退役的球员错误隐去）
 function wttGetBarRaceFrame(frameIndex) {
     if (wttBarRace.cache.has(frameIndex)) return wttBarRace.cache.get(frameIndex);
     const entry = wttRankingTimeline[frameIndex];
@@ -1100,13 +1120,18 @@ function wttRenderRecordBar(topN) {
     if (!canvas) return;
     if (wttRecordBarChart) { wttRecordBarChart.destroy(); wttRecordBarChart = null; }
     const isMobile = window.innerWidth <= 768;
-    const allPlayers = wttGetAllPlayers();
+    const allPlayers = wttApplyActiveFilter(wttGetAllPlayers());
     const stats = wttBuildRecordStats(allPlayers);
     const sorted = allPlayers
         .filter(n => stats[n].total > 0)
         .sort((a, b) => stats[b].total - stats[a].total)
         .slice(0, topN);
-    if (!sorted.length) return;
+    if (!sorted.length) {
+        // 开关打开但过滤后无人有数据：显示占位而不是空图
+        canvas.parentNode.innerHTML = '<div class="compare-placeholder"><i class="fa-solid fa-user-slash"></i><p>' +
+            escapeHtml(i18n[currentLang].wtt_no_data) + '</p></div>';
+        return;
+    }
 
     const labels = sorted.map(n => shortenPlayerName(n));
     const wins = sorted.map(n => stats[n].wins);
@@ -1153,8 +1178,11 @@ function wttRenderEfficiencyScatter(topN) {
     const allPlayers = wttGetAllPlayers();
     const scoreMap = wttBuildCurrentScoreMap();
     const stats = wttBuildRecordStats(allPlayers);
-    // 与协会实力分同一口径：本赛季无比赛记录的球员不参与；赛季数据缺失时退回不过滤
-    const activeThisSeason = wttGetSeasonActivePlayers(wttGetCurrentSeason());
+    // 过滤口径跟随全页开关：打开 = 仅本赛季活跃（原硬性口径）；关闭 = 全部球员
+    // （此前是固定只画本赛季活跃球员，开关给用户选择权；赛季数据缺失时两个口径都退回不过滤）
+    const activeThisSeason = wttIsActiveOnly()
+        ? wttGetSeasonActivePlayers(wttGetCurrentSeason())
+        : null;
     const filterActiveThisSeason = activeThisSeason && activeThisSeason.size > 0
         ? name => activeThisSeason.has(name)
         : () => true;
@@ -1218,7 +1246,8 @@ function wttRenderEfficiencyScatter(topN) {
 function wttRenderH2hHeatmap(topN) {
     const container = document.getElementById('wttH2hHeatmapContainer');
     if (!container) return;
-    const allPlayers = wttGetAllPlayers();
+    // 「仅当前活跃」开关：矩阵行列都只留本赛季打过球的球员
+    const allPlayers = wttApplyActiveFilter(wttGetAllPlayers());
     const scoreMap = wttBuildCurrentScoreMap();
     const sortedPlayers = [...allPlayers].sort((a, b) => (scoreMap[b] || 0) - (scoreMap[a] || 0)).slice(0, topN);
     if (sortedPlayers.length < 2) {
@@ -1357,7 +1386,8 @@ function wttNetTipEdge(edge, a, b) {
 
 function wttBuildInteractionNetwork(topN) {
     const scoreMap = wttBuildCurrentScoreMap();
-    const picked = wttGetAllPlayers()
+    // 「仅当前活跃」开关：网络只在活跃球员里建，退役/休息的球员连同他们的边一起退出
+    const picked = wttApplyActiveFilter(wttGetAllPlayers())
         .slice()
         .sort((a, b) => (scoreMap[b] || 0) - (scoreMap[a] || 0) || String(a).localeCompare(String(b)))
         .slice(0, topN);
@@ -1554,7 +1584,10 @@ function wttRenderScoreDistribution(bins) {
     if (wttScoreDistributionChart) { wttScoreDistributionChart.destroy(); wttScoreDistributionChart = null; }
     const isMobile = window.innerWidth <= 768;
     const scoreMap = wttBuildCurrentScoreMap();
-    const scores = Object.values(scoreMap);
+    // 「仅当前活跃」开关：分布只统计本赛季打过球的球员
+    const keptNames = wttApplyActiveFilter(Object.keys(scoreMap));
+    const keptSet = new Set(keptNames);
+    const scores = Object.keys(scoreMap).filter(n => keptSet.has(n)).map(n => scoreMap[n]);
     if (!scores.length) return;
 
     let min = Math.min(...scores), max = Math.max(...scores);

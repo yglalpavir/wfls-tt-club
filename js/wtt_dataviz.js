@@ -154,9 +154,12 @@ function initWttDataViz() {
 
     console.log('[WttDataViz] 成功获取球员列表:', players.length, '人');
     wttLoadDataVizSettings().then(() => {
+        // 两个脚本加载顺序不定：extra 板块晚加载也在这里兜底同步一次开关状态
+        wttDataVizExtraState.activeOnly = !!(typeof wttDataVizExtraState !== 'undefined' && wttDataVizExtraState.activeOnly);
         wttRenderPlayerCheckboxes();
         wttRenderCompareSelects();
-        const dp = players.slice(0, Math.min(8, players.length));
+        const pool = wttApplyActiveFilter(players);
+        const dp = (pool.length ? pool : players).slice(0, Math.min(8, (pool.length ? pool : players).length));
         const defaultDataCount = parseInt(document.getElementById('wttPointsTrendDataCount')?.value) || 20;
         wttRenderPointsTrend(dp, defaultDataCount);
         let defaultStreamCount = parseInt(document.getElementById('wttStreamDataCount')?.value) || 20;
@@ -856,4 +859,14 @@ function wttUpdateCompareBox() {
     const container = document.getElementById('wttCompareResult');
     if (!container || !wttCurrentCompare) return;
     wttRenderComparison(wttCurrentCompare.a, wttCurrentCompare.b);
+}
+
+// 「仅显示当前活跃球员」开关切换后，重渲主板块里以球员池为输入的部件：
+// 选人复选框、对比/雷达下拉、排名河流图。已渲染的趋势图按用户已选名单保留（选人不在此清空）
+function wttRerenderDataVizMainForActiveToggle() {
+    wttRenderPlayerCheckboxes();
+    wttRenderCompareSelects();
+    const topN = parseInt(document.getElementById('wttTopNSelect')?.value) || 10;
+    const sdc = parseInt(document.getElementById('wttStreamDataCount')?.value) || 20;
+    if (wttRankStreamChart) wttRenderRankStream(topN, sdc);
 }
