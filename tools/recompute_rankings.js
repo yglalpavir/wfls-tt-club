@@ -211,6 +211,7 @@ function headSha() {
 /**
  * 实时节点所在赛季窗口的胜负统计（口径与 score-engine.js calculateRealtimeRanking
  * 一致：仅赛果记录，日期 ∈ [赛季开始, 节点日]）。
+ * 平局（"结果": "平"）计入场次、不进胜负分母：wins/losses/draws 三态。
  */
 function tallyWindow(rawLog, seasons, today) {
   const visible = seasons.filter(s => s.visible !== false);
@@ -222,10 +223,11 @@ function tallyWindow(rawLog, seasons, today) {
     if (r['胜者'] == null || r['负者'] == null) continue; // 加分记录不计场次
     if (r['日期'] < start || r['日期'] > end) continue;
     const w = r['胜者'], l = r['负者'];
-    if (!tally[w]) tally[w] = { wins: 0, total: 0 };
-    if (!tally[l]) tally[l] = { wins: 0, total: 0 };
-    tally[w].total++; tally[w].wins++;
-    tally[l].total++;
+    if (!tally[w]) tally[w] = { wins: 0, total: 0, draws: 0 };
+    if (!tally[l]) tally[l] = { wins: 0, total: 0, draws: 0 };
+    tally[w].total++; tally[l].total++;
+    if (r['结果'] === '平') { tally[w].draws++; tally[l].draws++; }
+    else { tally[w].wins++; tally[l].losses = (tally[l].losses || 0) + 1; }
   }
   return tally;
 }
@@ -267,7 +269,8 @@ function tallyWindow(rawLog, seasons, today) {
     count: apiPlayers.length,
     players: apiPlayers.map(p => {
       const cur = currentByName[p.name];
-      const t = tally[p.name] || { wins: 0, total: 0 };
+      const t = tally[p.name] || { wins: 0, total: 0, draws: 0 };
+      const decided = t.total - (t.draws || 0);
       return {
         uid: p.uid,
         name: p.name,
@@ -278,7 +281,7 @@ function tallyWindow(rawLog, seasons, today) {
         grade: p.grade || null,
         status: p.status || 'active',
         initialScore: p.initialScore,
-        current: cur ? { points: cur['当前积分'], rank: cur.rank, matches: cur['总场次'], wins: t.wins, losses: t.total - t.wins, winRate: cur['胜率'] } : null
+        current: cur ? { points: cur['当前积分'], rank: cur.rank, matches: cur['总场次'], wins: t.wins, losses: t.total - (t.draws || 0) - t.wins, draws: t.draws || 0, winRate: cur['胜率'] } : null
       };
     })
   };
@@ -328,9 +331,13 @@ function tallyWindow(rawLog, seasons, today) {
     if (!Number.isInteger(p.uid)) { console.error('players.json 存在缺 uid 的成员：' + p.name); process.exit(1); }
     // 引擎 总场次 与窗口口径逐项核对（防算分逻辑漂移）
     if (p.current && p.current.matches > 0) {
-      const t = tally[p.name] || { wins: 0, total: 0 };
+      const t = tally[p.name] || { wins: 0, total: 0, draws: 0 };
       if (p.current.matches !== t.total) {
         console.error('场次口径不一致：' + p.name + ' 引擎 ' + p.current.matches + ' vs 窗口 ' + t.total); process.exit(1);
+      }
+      // 平局三态自检：wins + losses + draws === total
+      if (t.wins + (t.total - (t.draws || 0) - t.wins) + (t.draws || 0) !== t.total) {
+        console.error('胜负平口径不一致：' + p.name); process.exit(1);
       }
     }
   }

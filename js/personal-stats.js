@@ -329,8 +329,9 @@ function computePersonalStatsData(playerName) {
     const sortedLog = [...scoreLogData].sort((a, b) => a['日期'].localeCompare(b['日期']));
     const allMatches = sortedLog.filter(r => isMatchRecord(r) && (r['胜者'] === playerName || r['负者'] === playerName));
     const totalMatches = allMatches.length;
-    const wins = allMatches.filter(r => r['胜者'] === playerName).length;
-    const losses = totalMatches - wins;
+    const wins = allMatches.filter(r => r['胜者'] === playerName && !isDrawRecord(r)).length;
+    const draws = allMatches.filter(r => isDrawRecord(r)).length;
+    const losses = totalMatches - wins - draws;
 
     const allPlayers = getAllPlayersForPersonal();
     let percentile = 0, maxScore = 0, bestRank = Infinity;
@@ -419,11 +420,13 @@ function renderPersonalStats(playerName, containerId) {
     const oppStats = {};
     for (const r of allMatches) {
         const opp = r['胜者'] === playerName ? r['负者'] : r['胜者'];
-        const isWin = r['胜者'] === playerName;
+        const isDraw = isDrawRecord(r);
+        const isWin = !isDraw && r['胜者'] === playerName;
         if (!oppStats[opp]) {
-            oppStats[opp] = { wins: 0, losses: 0, lastDate: r['日期'], lastWinDate: '', preWinScore: 0, preMatchScore: 0, curScore: 0 };
+            oppStats[opp] = { wins: 0, losses: 0, draws: 0, lastDate: r['日期'], lastWinDate: '', preWinScore: 0, preMatchScore: 0, curScore: 0 };
         }
-        if (isWin) { oppStats[opp].wins++; if (r['日期'] >= (oppStats[opp].lastWinDate || '')) oppStats[opp].lastWinDate = r['日期']; }
+        if (isDraw) oppStats[opp].draws++;
+        else if (isWin) { oppStats[opp].wins++; if (r['日期'] >= (oppStats[opp].lastWinDate || '')) oppStats[opp].lastWinDate = r['日期']; }
         else oppStats[opp].losses++;
         if (r['日期'] >= oppStats[opp].lastDate) {
             oppStats[opp].lastDate = r['日期'];
@@ -518,10 +521,10 @@ function renderPersonalStats(playerName, containerId) {
         .sort((a, b) => b[1].preMatchScore - a[1].preMatchScore)
         .slice(0, 3);
 
-    // 福星：胜率最高的对手（玩家对其战绩最好）；交手>=4次的选手优先展示
+    // 福星：胜率最高的对手（玩家对其战绩最好）；交手>=4次的选手优先展示（平局不进胜负分母）
     const luckyStars = Object.entries(oppStats)
         .map(([name, s]) => {
-            const total = s.wins + s.losses;
+            const total = s.wins + s.losses + (s.draws || 0);
             const wr = total > 0 ? s.wins / total : 0;
             return { name, wins: s.wins, losses: s.losses, curScore: s.curScore, winRate: wr, total };
         })
@@ -529,10 +532,10 @@ function renderPersonalStats(playerName, containerId) {
         .sort((a, b) => ((b.total >= 4) - (a.total >= 4)) || b.winRate - a.winRate || b.total - a.total)
         .slice(0, 3);
 
-    // 苦主：胜率最低的对手（玩家对其战绩最差）；交手>=4次的选手优先展示
+    // 苦主：胜率最低的对手（玩家对其战绩最差）；交手>=4次的选手优先展示（平局不进胜负分母）
     const nemeses = Object.entries(oppStats)
         .map(([name, s]) => {
-            const total = s.wins + s.losses;
+            const total = s.wins + s.losses + (s.draws || 0);
             const wr = total > 0 ? s.wins / total : 0;
             return { name, wins: s.wins, losses: s.losses, curScore: s.curScore, winRate: wr, total };
         })
@@ -551,11 +554,13 @@ function renderPersonalStats(playerName, containerId) {
     }
 
     let html = '';
+    const decidedTotal = totalMatches - draws;
     html += '<div class="personal-overview">';
     html += '<div class="personal-overview-item"><span class="personal-overview-num">' + totalMatches + '</span><span class="personal-overview-label">' + i18n[currentLang].wtt_ov_total + '</span></div>';
     html += '<div class="personal-overview-item win"><span class="personal-overview-num">' + wins + '</span><span class="personal-overview-label">' + i18n[currentLang].wtt_ov_wins + '</span></div>';
     html += '<div class="personal-overview-item loss"><span class="personal-overview-num">' + losses + '</span><span class="personal-overview-label">' + i18n[currentLang].wtt_ov_losses + '</span></div>';
-    html += '<div class="personal-overview-item"><span class="personal-overview-num">' + (totalMatches > 0 ? Math.round(wins / totalMatches * 100) : 0) + '%</span><span class="personal-overview-label">' + i18n[currentLang].wtt_ov_percentile + '</span></div>';
+    if (draws > 0) html += '<div class="personal-overview-item"><span class="personal-overview-num">' + draws + '</span><span class="personal-overview-label">' + i18n[currentLang].wtt_ov_draws + '</span></div>';
+    html += '<div class="personal-overview-item"><span class="personal-overview-num">' + (decidedTotal > 0 ? Math.round(wins / decidedTotal * 100) : 0) + '%</span><span class="personal-overview-label">' + i18n[currentLang].wtt_ov_percentile + '</span></div>';
     html += '<div class="personal-overview-item"><span class="personal-overview-num">' + curScoreDisp + '</span><span class="personal-overview-label">' + i18n[currentLang].wtt_ov_current + '</span></div>';
     html += '<div class="personal-overview-item best"><span class="personal-overview-num">' + maxScore + '</span><span class="personal-overview-label">' + i18n[currentLang].wtt_ov_max + '</span></div>';
     html += '<div class="personal-overview-item best"><span class="personal-overview-num">#' + (bestRank === Infinity ? '-' : bestRank) + '</span><span class="personal-overview-label">' + i18n[currentLang].wtt_ov_bestrank + '</span></div>';

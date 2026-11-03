@@ -2089,6 +2089,8 @@ a.export-menu-item { text-decoration: none; }
 .score-detail-table tbody tr:has(.result-win) td:first-child { border-left: 3px solid rgba(82,196,26,0.3); }
 .score-detail-table .result-loss { color: var(--accent-red); font-weight: 700; }
 .score-detail-table tbody tr:has(.result-loss) td:first-child { border-left: 3px solid rgba(255,107,107,0.3); }
+.score-detail-table .result-draw { color: #d48806; font-weight: 700; }
+.score-detail-table tbody tr:has(.result-draw) td:first-child { border-left: 3px solid rgba(212,136,6,0.3); }
 .score-change-positive { color: #52c41a; font-weight: 700; }
 .score-change-positive::before { content: '↑'; margin-right: 2px; font-size: 0.7rem; }
 .score-change-negative { color: var(--accent-red); font-weight: 700; }
@@ -3288,6 +3290,7 @@ body.dark .player-search-item.selected { background: rgba(77, 163, 255, 0.15); }
 .pa-form-dot { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.62rem; font-weight: 700; color: #fff; }
 .pa-form-dot.w { background: var(--accent-green); }
 .pa-form-dot.l { background: var(--accent-red); }
+.pa-form-dot.d { background: #d48806; }
 .pa-form-spark { display: flex; flex-direction: column; gap: 4px; }
 .pa-spark-box { position: relative; width: 100%; height: 90px; }
 
@@ -3628,6 +3631,7 @@ a.hero-ball::before {
 .md-side-tag { display: inline-flex; align-items: center; padding: 2px 10px; border-radius: 20rem; font-size: .66rem; font-weight: 700; letter-spacing: 2px; }
 .md-tag-w { color: var(--md-gold-ink); background: var(--md-gold-bg); }
 .md-tag-l { color: rgba(253, 253, 253, .65); background: rgba(253, 253, 253, .12); }
+.md-tag-draw { color: #ffe9b8; background: rgba(212, 136, 6, .45); }
 .md-trophy { color: #fbbf24; font-size: .88em; }
 .md-pts-line { display: flex; align-items: baseline; justify-content: center; flex-wrap: wrap; gap: 4px 9px; font-family: var(--font-en); font-variant-numeric: tabular-nums; }
 .md-pts-one { font-size: .98rem; font-weight: 500; color: rgba(253, 253, 253, .55); white-space: nowrap; }
@@ -3639,6 +3643,7 @@ a.hero-ball::before {
 .md-side-l .md-delta-pill { align-self: flex-start; }
 .md-delta-pos { color: var(--md-pos-ink); background: var(--md-pos-bg); }
 .md-delta-neg { color: var(--md-neg-ink); background: var(--md-neg-bg); }
+.md-delta-zero { color: rgba(253, 253, 253, .72); background: rgba(253, 253, 253, .12); }
 .md-decayed-note { font-size: .72rem; font-weight: 500; opacity: .8; }
 
 .md-center { text-align: center; padding: 0 8px; }
@@ -3773,6 +3778,7 @@ a.hero-ball::before {
 .md-pred-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 999px; font-size: .76rem; font-weight: 700; }
 .md-pred-hit { color: var(--md-accent-deep); background: var(--md-accent-pale); }
 .md-pred-upset { color: var(--md-gold-ink); background: var(--md-gold-bg); }
+.md-pred-draw { color: #874d00; background: rgba(212, 136, 6, .22); }
 
 /* ---- 历史交锋 ---- */
 .md-h2h-wrap { padding: 0; }

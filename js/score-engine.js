@@ -4,6 +4,12 @@
 
 function isMatchRecord(record) { return record['胜者'] && record['负者']; }
 function isBonusRecord(record) { return record['类型'] === '比赛结果加分' && record['对象']; }
+/**
+ * 平局记录：比赛记录（胜者/负者 = 对局双方）携带 "结果": "平"。
+ * 双方不分胜负，按「半胜半负」计分（见 calcMatchPointsDual / drawShareMultiplier）。
+ * 无 "结果" 字段或非 "平" 值一律按已分胜负处理。
+ */
+function isDrawRecord(record) { return !!record && !!record['胜者'] && !!record['负者'] && record['结果'] === '平'; }
 
 function getBaseScore(gap) { const ag = Math.abs(gap); if (gap >= 0) { if (ag <= 49) return 30; if (ag <= 99) return 24; if (ag <= 149) return 20; if (ag <= 199) return 16; if (ag <= 299) return 12; if (ag <= 399) return 8; return 4; } if (ag <= 49) return 30; if (ag <= 99) return 36; if (ag <= 149) return 42; if (ag <= 199) return 48; if (ag <= 299) return 54; if (ag <= 399) return 60; return 66; }
 // 可配置的时间衰减半衰期 t（单位：天），默认 180，可由 data/decay-config.json 的 "t" 覆盖
@@ -151,24 +157,51 @@ function calcMatchPoints(winner, loser, eventType, matchDate, snapshotDate, curr
     // 俱乐部模式：类型刷新·定格衰减 × 赛制系数
     return getBaseScore(wScore - lScore) * getEventCoefficient(eventType) * getFormatMultiplier(eventType, matchFormat) * getFreezeWeight(winner, eventType, matchDate, snapshotDate);
 }
+/**
+ * 平局「半胜半负」净分系数：双方各按 半胜(+0.5×raw) + 半负(−0.5×raw×LOSER_POINT_MULTIPLIER) 计，
+ * 净变动 = 0.5×(1 − LOSER_POINT_MULTIPLIER)×raw×各自时间权重。
+ * 俱乐部（0.8）→ +0.1×产生分×权重；WTT（1.0，零和）→ 0，平局只计场次不动分。
+ */
+function drawNetFactor() { return 0.5 * (1 - LOSER_POINT_MULTIPLIER); }
+/** 平局产生分档位：不存在「爆冷/预期」之分，按双方赛前分差的绝对值套「预期档」（gap≥0 分支），
+ *  与记录中 胜者/负者 字段的先后顺序无关（平局两侧语义对等，录入顺序不得影响分值）。 */
+function getDrawBaseScore(gap) { return getBaseScore(Math.abs(gap)); }
 function calcRawPoints(winner, loser, eventType, currentScores, matchFormat, record) {
     const fromTable = getRecordRawPoints(record);
     if (fromTable !== null) return fromTable;   // 比赛当日口径的产生分（与快照无关）
     const wScore = (typeof currentScores[winner] === 'number') ? currentScores[winner] : DEFAULT_INITIAL_SCORE;
     const lScore = (typeof currentScores[loser] === 'number') ? currentScores[loser] : DEFAULT_INITIAL_SCORE;
-    return getBaseScore(wScore - lScore) * getEventCoefficient(eventType) * getFormatMultiplier(eventType, matchFormat); }
+    // 平局（无查表可用时的回退路径）：按分差绝对值套预期档
+    const gap = wScore - lScore;
+    const base = isDrawRecord(record) ? getBaseScore(Math.abs(gap)) : getBaseScore(gap);
+    return base * getEventCoefficient(eventType) * getFormatMultiplier(eventType, matchFormat); }
 /**
  * 单场双方衰减后变动（俱乐部口径：胜负各自按自己的 球员×类型 批次定格/衰减，
  * 禁止用胜者权重推负者——两人的批次/定格日不同，衰减权重一般不同）。
- * 返回 { wGain, lLoss }：wGain 为胜者加分，lLoss 为负者扣分幅值（正数）。
- * WTT / 非衰减模式：权重恒 1，退化为 calcMatchPoints × LOSER_POINT_MULTIPLIER 的原语义。
+ * 返回 { wGain, lLoss }：wGain 为胜者加分（或平局半胜幅值），lLoss 为负者扣分幅值（正数，或平局半负幅值）。
+ * 平局记录（isDrawRecord）改用带符号净额口径（半胜半负的净值）：
+ * wGain = +0.5×raw×(1−0.8)×胜者权重 = +0.1×raw×胜者权重（胜者位净得分），
+ * lLoss = −0.1×raw×负者权重（负者位净得分的相反数；平局两侧语义对等，
+ * 无论「甲/乙」谁是 胜者 字段，双方各自净得 0.1×raw×自己的权重——俱乐部口径）。
+ * WTT（LOSER_POINT_MULTIPLIER=1.0）：净额为 0，双方不动分、只计场次。
+ * 非平局记录保持原语义（wGain/lLoss 均为正幅值，调用方 w +wGain / l −lLoss）。
  */
 function calcMatchPointsDual(winner, loser, eventType, matchDate, snapshotDate, currentScores, matchFormat, record) {
     if (SCORE_TIME_DECAY_ENABLED === false) {
         const wg = calcMatchPoints(winner, loser, eventType, matchDate, snapshotDate, currentScores, matchFormat);
+        if (isDrawRecord(record)) {
+            // WTT 零和口径：半胜 = 半负，净变动双方均为 0（只计场次）
+            return { wGain: 0, lLoss: 0 };
+        }
         return { wGain: wg, lLoss: wg * LOSER_POINT_MULTIPLIER };
     }
     const raw = calcRawPoints(winner, loser, eventType, currentScores, matchFormat, record);
+    if (isDrawRecord(record)) {
+        // 带符号净额：双方各 +0.1×raw×各自权重；lLoss 返回负者位净额的相反数（≤0）
+        const wNet = 0.5 * raw * (1 - LOSER_POINT_MULTIPLIER) * getFreezeWeight(winner, eventType, matchDate, snapshotDate);
+        const lNet = 0.5 * raw * (1 - LOSER_POINT_MULTIPLIER) * getFreezeWeight(loser, eventType, matchDate, snapshotDate);
+        return { wGain: wNet, lLoss: -lNet };
+    }
     return {
         wGain: raw * getFreezeWeight(winner, eventType, matchDate, snapshotDate),
         lLoss: raw * LOSER_POINT_MULTIPLIER * getFreezeWeight(loser, eventType, matchDate, snapshotDate)
@@ -225,11 +258,17 @@ function buildRawPointsTable() {
                 if (isMatchRecord(r)) {
                     const w = r['胜者'], l = r['负者'];
                     const gap = basisAt(w, r['日期']) - basisAt(l, r['日期']);
-                    const base = getBaseScore(gap);
+                    const base = isDrawRecord(r) ? getDrawBaseScore(gap) : getBaseScore(gap);
                     const raw = base * getEventCoefficient(r['类型']) * getFormatMultiplier(r['类型'], r['赛制']);
                     data.set(r, { raw: raw, base: base, gap: gap });
-                    add(w, r['类型'], r['日期'], raw);
-                    add(l, r['类型'], r['日期'], -raw * LOSER_POINT_MULTIPLIER);
+                    if (isDrawRecord(r)) {
+                        // 平局：双方各按「半胜 − 半负」净额 +0.1×raw 计入状态（两侧对称，与录入顺序无关）
+                        add(w, r['类型'], r['日期'], raw * drawNetFactor());
+                        add(l, r['类型'], r['日期'], raw * drawNetFactor());
+                    } else {
+                        add(w, r['类型'], r['日期'], raw);
+                        add(l, r['类型'], r['日期'], -raw * LOSER_POINT_MULTIPLIER);
+                    }
                 } else if (isBonusRecord(r)) {
                     ensure(r['对象']).frozen += parseFloat(r['分数']) || 0;             // 调整记录：不衰减、不参与批次
                 }
@@ -307,9 +346,14 @@ function buildPreMatchBasisTable(singlesLog, doublesLog) {
                     const wPre = basisAt(w, r['日期']), lPre = basisAt(l, r['日期']);
                     data.set(r, { wPre: wPre, lPre: lPre });
                     // 与 buildRawPointsTable 同式的产生分（同一状态机 ⇒ 数值一致）
-                    const raw = getBaseScore(wPre - lPre) * getEventCoefficient(r['类型']) * getFormatMultiplier(r['类型'], r['赛制']);
-                    add(w, r['类型'], r['日期'], raw);
-                    add(l, r['类型'], r['日期'], -raw * LOSER_POINT_MULTIPLIER);
+                    const raw = (isDrawRecord(r) ? getDrawBaseScore(wPre - lPre) : getBaseScore(wPre - lPre)) * getEventCoefficient(r['类型']) * getFormatMultiplier(r['类型'], r['赛制']);
+                    if (isDrawRecord(r)) {
+                        add(w, r['类型'], r['日期'], raw * drawNetFactor());
+                        add(l, r['类型'], r['日期'], raw * drawNetFactor());
+                    } else {
+                        add(w, r['类型'], r['日期'], raw);
+                        add(l, r['类型'], r['日期'], -raw * LOSER_POINT_MULTIPLIER);
+                    }
                 } else if (isBonusRecord(r)) {
                     ensure(r['对象']).frozen += parseFloat(r['分数']) || 0;             // 调整记录：不衰减、不参与批次
                 }
@@ -363,8 +407,14 @@ function calcFormScore(playerName, beforeDate) {
             if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
             if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
             const wg = calcRawPoints(w, l, m['类型'], scores, m['赛制'], m);
-            scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg);
-            scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * LOSER_POINT_MULTIPLIER);
+            if (isDrawRecord(m)) {
+                const net = wg * drawNetFactor();
+                scores[w] = Math.max(SCORE_FLOOR, scores[w] + net);
+                scores[l] = Math.max(SCORE_FLOOR, scores[l] + net);
+            } else {
+                scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg);
+                scores[l] = Math.max(SCORE_FLOOR, scores[l] - wg * LOSER_POINT_MULTIPLIER);
+            }
         } else if (isBonusRecord(m)) {
             const target = m['对象'];
             const bonus = parseFloat(m['分数']) || 0;
@@ -378,7 +428,13 @@ function calcFormScore(playerName, beforeDate) {
         if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
         if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
         const rawPoints = calcRawPoints(w, l, m['类型'], scores, m['赛制'], m);
-        if (w === playerName) {
+        if (isDrawRecord(m)) {
+            // 平局：本人净变动 = 半胜 − 半负 = +0.1×raw（俱乐部口径），推进状态与净额同步
+            const net = rawPoints * drawNetFactor();
+            totalChange += net;
+            scores[w] = Math.max(SCORE_FLOOR, scores[w] + net);
+            scores[l] = Math.max(SCORE_FLOOR, scores[l] + net);
+        } else if (w === playerName) {
             totalChange += rawPoints;
             scores[w] = Math.max(SCORE_FLOOR, scores[w] + rawPoints);
             scores[l] = Math.max(SCORE_FLOOR, scores[l] - rawPoints * LOSER_POINT_MULTIPLIER);
@@ -402,6 +458,9 @@ function calcPredictedWinRate(rA, rB, aWins, bWins, fA, fB) {
 }
 
 function getActivePlayers(sortedLog, startDate, endDate) { const ap = new Set(); sortedLog.forEach(r => { if (r['日期'] < startDate || r['日期'] > endDate) return; if (isMatchRecord(r)) { ap.add(r['胜者']); ap.add(r['负者']); } else if (isBonusRecord(r)) { ap.add(r['对象']); } }); return ap; }
+
+// 胜率统计三态：win / loss / draw。draw 不进胜率分子，但计入场次（isDrawRecord 口径）。
+// （下方「性能优化」节的同名旧实现已被本三态版替换，见 buildPlayerMatchIndex 的 isWin: null 约定）
 
 // ===== 排名表显示口径：players.json 档案活跃状态 =====
 // 档案 status === 'active'（在校）的球员始终进入排名表，不再只看"当前赛季有没有比赛记录"；
@@ -452,12 +511,13 @@ function buildPlayerMatchIndex(scoreLog) {
         if (!isMatchRecord(r)) continue;
         const date = r['日期'];
         const w = r['胜者'], l = r['负者'];
+        const isDraw = isDrawRecord(r);   // 平局：isWin = null（未分胜负），胜率分子不计
 
         if (!playerMatches[w]) playerMatches[w] = [];
-        playerMatches[w].push({ date, isWin: true });
+        playerMatches[w].push({ date, isWin: isDraw ? null : true });
 
         if (!playerMatches[l]) playerMatches[l] = [];
-        playerMatches[l].push({ date, isWin: false });
+        playerMatches[l].push({ date, isWin: isDraw ? null : false });
     }
 
     return { sortedLog, playerMatches };
@@ -465,23 +525,26 @@ function buildPlayerMatchIndex(scoreLog) {
 
 /**
  * 从预建索引中快速获取球员在日期范围内的比赛统计
+ * 平局三态：isWin === null 计入总场次、不进胜负分母（胜率 = 胜 / 分出胜负的场次）
  * @returns { totalMatches, wins, winRate }
  */
 function getPlayerStatsFromIndex(playerMatches, playerName, startDate, endDate) {
     const matches = playerMatches[playerName];
     if (!matches || !matches.length) return { totalMatches: 0, wins: 0, winRate: '0%' };
 
-    let total = 0, wins = 0;
+    let total = 0, wins = 0, draws = 0;
     for (const m of matches) {
         if (m.date < startDate) continue;
         if (m.date > endDate) break;  // 数组已按日期排序，可以提前退出
         total++;
-        if (m.isWin) wins++;
+        if (m.isWin === true) wins++;
+        else if (m.isWin === null) draws++;   // 平局：null = 未分胜负
     }
+    const decided = total - draws;   // 分出胜负的场次
     return {
         totalMatches: total,
         wins: wins,
-        winRate: total ? Math.round((wins / total) * 100) + '%' : '0%'
+        winRate: decided ? Math.round((wins / decided) * 100) + '%' : '0%'
     };
 }
 
@@ -705,7 +768,8 @@ async function replaySnapshotsIncrementalAsync(sortedLog, playerMatches, startSc
             const w = r['胜者'], l = r['负者'];
             if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE;
             if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
-            const { wGain, lLoss } = calcMatchPointsDual(w, l, r['类型'], r['日期'], r['日期'], sc, r['赛制']);
+            const { wGain, lLoss } = calcMatchPointsDual(w, l, r['类型'], r['日期'], r['日期'], sc, r['赛制'], r);
+            // 平局：wGain/lLoss 为带符号净额（lLoss ≤ 0），统一式 w + wGain / l − lLoss 对两种记录都成立
             sc[w] = Math.max(SCORE_FLOOR, sc[w] + wGain);
             sc[l] = Math.max(SCORE_FLOOR, sc[l] - lLoss);
             active.add(w); active.add(l);
@@ -738,7 +802,11 @@ function calculateEndScores(sl, ss, sst, sen) {
             const w = r['胜者'], l = r['负者'];
             if (!sc[w]) sc[w] = DEFAULT_INITIAL_SCORE;
             if (!sc[l]) sc[l] = DEFAULT_INITIAL_SCORE;
-            const { wGain, lLoss } = calcMatchPointsDual(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? sen : r['日期'], sc, r['赛制']);
+            // 传 record → 产生分按「比赛当日口径」定档（读 buildRawPointsTable），
+            // 与快照排名 replaySeasonWindowToSnapshot / 实时排名 / getScoreMapAsOf 同口径；
+            // 不传会退化为「快照口径」（分档随重放中的动态分差变化），曾造成赛季末积分
+            // 与同日快照积分相差 0.1~1.1 的口径分裂（2026-11-03 平局改动时统一）。
+            const { wGain, lLoss } = calcMatchPointsDual(w, l, r['类型'], r['日期'], SCORE_TIME_DECAY_ENABLED ? sen : r['日期'], sc, r['赛制'], r);
             sc[w] = Math.max(SCORE_FLOOR, sc[w] + wGain);
             sc[l] = Math.max(SCORE_FLOOR, sc[l] - lLoss);
         } else if (isBonusRecord(r)) {
@@ -891,8 +959,14 @@ function computeNoDecayScoreMapAsOf(asOfDate) {
                 if (!es[w]) es[w] = DEFAULT_INITIAL_SCORE;
                 if (!es[l]) es[l] = DEFAULT_INITIAL_SCORE;
                 const raw = calcRawPoints(w, l, r['类型'], es, r['赛制'], r);
-                es[w] = Math.max(SCORE_FLOOR, es[w] + raw);
-                es[l] = Math.max(SCORE_FLOOR, es[l] - raw * LOSER_POINT_MULTIPLIER);
+                if (isDrawRecord(r)) {
+                    const net = raw * drawNetFactor();
+                    es[w] = Math.max(SCORE_FLOOR, es[w] + net);
+                    es[l] = Math.max(SCORE_FLOOR, es[l] + net);
+                } else {
+                    es[w] = Math.max(SCORE_FLOOR, es[w] + raw);
+                    es[l] = Math.max(SCORE_FLOOR, es[l] - raw * LOSER_POINT_MULTIPLIER);
+                }
             } else if (isBonusRecord(r)) {
                 const t = r['对象'], b = parseFloat(r['分数']) || 0;
                 if (!es[t]) es[t] = DEFAULT_INITIAL_SCORE;
@@ -1061,21 +1135,27 @@ function calculateRealtimeRanking() {
     const activeStart = activeSeason.startDate;
     const sap = getActivePlayers(sortedLog, activeStart, effectiveEnd);
     // 🔥 单次遍历窗口内记录统计每名球员的场次/胜场（原实现为每球员两次全量 filter，O(球员数×记录数)）
-    const matchStats = {};   // player -> { total, wins }
+    // 胜率口径与 getPlayerStatsFromIndex 一致：平局计入场次、不进胜负分母
+    const matchStats = {};   // player -> { total, wins, draws }
+    const bumpStats = (r) => {
+        const w = r['胜者'], l = r['负者'];
+        if (!matchStats[w]) matchStats[w] = { total: 0, wins: 0, draws: 0 };
+        if (!matchStats[l]) matchStats[l] = { total: 0, wins: 0, draws: 0 };
+        matchStats[w].total++; matchStats[l].total++;
+        if (isDrawRecord(r)) { matchStats[w].draws++; matchStats[l].draws++; }
+        else { matchStats[w].wins++; }
+    };
     sortedLog.forEach(r => {
         if (!isMatchRecord(r) || r['日期'] < activeStart || r['日期'] > effectiveEnd) return;
-        const w = r['胜者'], l = r['负者'];
-        if (!matchStats[w]) matchStats[w] = { total: 0, wins: 0 };
-        if (!matchStats[l]) matchStats[l] = { total: 0, wins: 0 };
-        matchStats[w].total++; matchStats[w].wins++;
-        matchStats[l].total++;
+        bumpStats(r);
     });
     const sp = Object.entries(sc).filter(([n]) => (sap.size === 0 || sap.has(n) || isProfileActivePlayer(n)) && !isRankingRowHidden(n)).map(([n, pt]) => {
         const ms = matchStats[n];
+        const decided = ms ? (ms.total - ms.draws) : 0;
         return {
             '姓名': n, '当前积分': Math.round(pt * 10) / 10,
             '总场次': ms ? ms.total : 0,
-            '胜率': (ms && ms.total) ? Math.round((ms.wins / ms.total) * 100) + '%' : '0%'
+            '胜率': (ms && decided) ? Math.round((ms.wins / decided) * 100) + '%' : '0%'
         };
     }).sort(compareRankedRows);
 
@@ -1151,21 +1231,24 @@ async function calculateRealtimeRankingAsync(onProgress) {
     const activeStart = activeSeason.startDate;
     const sap = getActivePlayers(sortedLog, activeStart, effectiveEnd);
     // 🔥 单次遍历窗口内记录统计每名球员的场次/胜场（原实现为每球员两次全量 filter，O(球员数×记录数)）
-    const matchStats = {};   // player -> { total, wins }
+    // 胜率口径与 getPlayerStatsFromIndex 一致：平局计入场次、不进胜负分母
+    const matchStats = {};   // player -> { total, wins, draws }
     sortedLog.forEach(r => {
         if (!isMatchRecord(r) || r['日期'] < activeStart || r['日期'] > effectiveEnd) return;
         const w = r['胜者'], l = r['负者'];
-        if (!matchStats[w]) matchStats[w] = { total: 0, wins: 0 };
-        if (!matchStats[l]) matchStats[l] = { total: 0, wins: 0 };
-        matchStats[w].total++; matchStats[w].wins++;
-        matchStats[l].total++;
+        if (!matchStats[w]) matchStats[w] = { total: 0, wins: 0, draws: 0 };
+        if (!matchStats[l]) matchStats[l] = { total: 0, wins: 0, draws: 0 };
+        matchStats[w].total++; matchStats[l].total++;
+        if (isDrawRecord(r)) { matchStats[w].draws++; matchStats[l].draws++; }
+        else { matchStats[w].wins++; }
     });
     const sp = Object.entries(sc).filter(([n]) => (sap.size === 0 || sap.has(n) || isProfileActivePlayer(n)) && !isRankingRowHidden(n)).map(([n, pt]) => {
         const ms = matchStats[n];
+        const decided = ms ? (ms.total - ms.draws) : 0;
         return {
             '姓名': n, '当前积分': Math.round(pt * 10) / 10,
             '总场次': ms ? ms.total : 0,
-            '胜率': (ms && ms.total) ? Math.round((ms.wins / ms.total) * 100) + '%' : '0%'
+            '胜率': (ms && decided) ? Math.round((ms.wins / decided) * 100) + '%' : '0%'
         };
     }).sort(compareRankedRows);
 

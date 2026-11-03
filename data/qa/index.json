@@ -1,5 +1,16 @@
 [
   {
+    "id": "q1",
+    "date": "2026-11-03",
+    "title": "Ranking中的积分计算方法",
+    "excerpt": "乒乓球社团积分系统规则书：本积分系统用于武汉外国语学校乒乓球社团的球员排名计算。系统基于 ELO 变体算法，综合考虑比赛结果、积分差距、赛事级别、赛制和时间衰减等因素，自动计算每位球员的实时积分和排名。（点击查看详情）",
+    "tag": "notice",
+    "media": [],
+    "visible": null,
+    "title_en": "How Points Are Calculated on the Ranking Page",
+    "excerpt_en": "WFLS Table Tennis Club points system rulebook: this points system is used to rank the club's players. Built on a variant of the ELO algorithm, it takes match results, points gaps, event level, match format and time decay into account, and automatically computes every player's live points and ranking. (click for details)"
+  },
+  {
     "id": "q4",
     "date": "2026-09-27",
     "title": "双打积分规则",
@@ -20,17 +31,6 @@
     "visible": null,
     "title_en": "How to Submit Match Results to the Website",
     "excerpt_en": "You can submit a result by filling in the Tencent Docs collection form - no login needed. Once an administrator has reviewed it, it counts automatically towards the points and the ranking. If you cannot open the form, ask an administrator in the club QQ group to enter it for you. (click for details)"
-  },
-  {
-    "id": "q1",
-    "date": "2026-08-26",
-    "title": "Ranking中的积分计算方法",
-    "excerpt": "乒乓球社团积分系统规则书：本积分系统用于武汉外国语学校乒乓球社团的球员排名计算。系统基于 ELO 变体算法，综合考虑比赛结果、积分差距、赛事级别、赛制和时间衰减等因素，自动计算每位球员的实时积分和排名。（点击查看详情）",
-    "tag": "notice",
-    "media": [],
-    "visible": null,
-    "title_en": "How Points Are Calculated on the Ranking Page",
-    "excerpt_en": "WFLS Table Tennis Club points system rulebook: this points system is used to rank the club's players. Built on a variant of the ELO algorithm, it takes match results, points gaps, event level, match format and time decay into account, and automatically computes every player's live points and ranking. (click for details)"
   },
   {
     "id": "q2",

@@ -104,7 +104,7 @@ function paBuildRankSeries(playerName, timeline) {
     return series;
 }
 
-// 赛事类型分布（不含 bonus）
+// 赛事类型分布（不含 bonus）：胜率分母 = 分出胜负的场次（平局计总量、不进分母）
 function paBuildTypeStats(matches) {
     const map = new Map();
     for (const m of matches) {
@@ -168,49 +168,59 @@ function paBuildMonthlyStats(matches) {
         m++;
         if (m > 12) { m = 1; y++; }
     }
-    const stats = new Map(months.map(k => [k, { total: 0, wins: 0 }]));
+    const stats = new Map(months.map(k => [k, { total: 0, wins: 0, draws: 0 }]));
     for (const mt of matches) {
         const s = stats.get(key(mt.date));
         if (!s) continue;
         s.total++;
-        if (mt.isWin) s.wins++;
+        if (mt.isDraw) s.draws++;
+        else if (mt.isWin) s.wins++;
     }
     return {
         labels: months,
         totals: months.map(k => stats.get(k).total),
         rates: months.map(k => {
             const s = stats.get(k);
-            return s.total ? Math.round(s.wins / s.total * 100) : null;
+            const decided = s.total - s.draws;
+            return decided ? Math.round(s.wins / decided * 100) : null;
         })
     };
 }
 
 // 竞技状态：连胜连败 + 近10场 + 滚动10场胜率
+// 三态口径：平局（isDraw）中断连胜/连败、不计入两者；胜率分母 = 分出胜负的场次
 function paBuildFormStats(matches) {
     let curType = null, curLen = 0;
     for (let i = matches.length - 1; i >= 0; i--) {
-        if (curType === null) { curType = matches[i].isWin; curLen = 1; }
-        else if (matches[i].isWin === curType) curLen++;
-        else break;
+        if (matches[i].isDraw) continue;   // 平局不打断「当前连胜/连败」序列的观察起点，向前继续找
+        curType = matches[i].isWin; curLen = 1;
+        for (let j = i - 1; j >= 0; j--) {
+            if (matches[j].isDraw) continue;
+            if (matches[j].isWin === curType) curLen++;
+            else break;
+        }
+        break;
     }
-    let maxW = 0, maxL = 0, runW = 0, runL = 0, wins = 0;
+    let maxW = 0, maxL = 0, runW = 0, runL = 0, wins = 0, decided = 0;
     const rolling = [];
     for (let i = 0; i < matches.length; i++) {
+        if (matches[i].isDraw) { rolling.push({ date: matches[i].date, rate: decided ? Math.round(wins / decided * 100) : 0 }); continue; }
+        decided++;
         if (matches[i].isWin) { runW++; runL = 0; wins++; if (runW > maxW) maxW = runW; }
         else { runL++; runW = 0; if (runL > maxL) maxL = runL; }
         const start = Math.max(0, i - 9);
-        let w = 0;
-        for (let j = start; j <= i; j++) if (matches[j].isWin) w++;
-        rolling.push({ date: matches[i].date, rate: Math.round(w / (i - start + 1) * 100) });
+        let w = 0, d = 0;
+        for (let j = start; j <= i; j++) { if (matches[j].isDraw) d++; else if (matches[j].isWin) w++; }
+        rolling.push({ date: matches[i].date, rate: Math.round(w / (i - start + 1 - d) * 100) });
     }
     return {
         curType: curType,
         curLen: curLen,
         maxW: maxW,
         maxL: maxL,
-        last10: matches.slice(-10).map(m => m.isWin),
+        last10: matches.slice(-10).map(m => m.isDraw ? null : m.isWin),
         rolling: rolling,
-        overallRate: matches.length ? Math.round(wins / matches.length * 100) : 0
+        overallRate: decided ? Math.round(wins / decided * 100) : 0
     };
 }
 
@@ -223,7 +233,9 @@ function paBuildSeasonStats(allRecords) {
         if (!recs.length) continue;
         const matches = recs.filter(r => !r.isBonus);
         const wins = matches.filter(r => r.isWin).length;
-        const losses = matches.length - wins;
+        const draws = matches.filter(r => r.isDraw).length;
+        const losses = matches.length - wins - draws;
+        const decided = matches.length - draws;
         let peak = -Infinity;
         for (const r of recs) {
             if (r.pre != null && r.pre > peak) peak = r.pre;
@@ -238,7 +250,7 @@ function paBuildSeasonStats(allRecords) {
             total: matches.length,
             wins: wins,
             losses: losses,
-            rate: matches.length ? Math.round(wins / matches.length * 100) : null,
+            rate: decided ? Math.round(wins / decided * 100) : null,
             net: net,
             peak: peak === -Infinity ? null : peak
         });
@@ -299,8 +311,9 @@ function paBuildFlowData(matches, allRows) {
             s = { opp: r.opp, wins: 0, losses: 0, inflow: 0, outflow: 0, lastDate: '' };
             map.set(r.opp, s);
         }
-        if (r.isWin) { s.wins++; s.inflow += (r.change || 0); }
-        else { s.losses++; s.outflow += Math.abs(r.change || 0); }
+        if (r.isDraw) { /* 平局：净额按正负自然流入/流出（俱乐部口径双方各 +0.1×raw） */ }
+        if (r.change > 0) { s.inflow += r.change; if (!r.isDraw) s.wins++; }
+        else if (r.change < 0) { s.outflow += Math.abs(r.change); if (!r.isDraw) s.losses++; }
         if (r.date > s.lastDate) s.lastDate = r.date;
     }
     if (!map.size) return null;
@@ -432,9 +445,14 @@ function renderPlayerAnalytics(playerName, records, opts) {
         html += '</div>';
         html += '<div class="pa-form-last10"><span class="pa-form-label">' + L.pa_form_last10 + '</span><span class="pa-form-dots">';
         // 最新一场排在最左：与连胜口径（自最新一场回溯）及下方比赛明细的倒序一致
+        // 三态：null = 平局（金色点）
         if (form.last10.length) {
-            for (const isWin of [...form.last10].reverse()) {
-                html += '<span class="pa-form-dot ' + (isWin ? 'w' : 'l') + '">' + (isWin ? i18n[currentLang].score_result_win : i18n[currentLang].score_result_loss) + '</span>';
+            for (const st of [...form.last10].reverse()) {
+                if (st === null) {
+                    html += '<span class="pa-form-dot d">' + i18n[currentLang].score_result_draw + '</span>';
+                } else {
+                    html += '<span class="pa-form-dot ' + (st ? 'w' : 'l') + '">' + (st ? i18n[currentLang].score_result_win : i18n[currentLang].score_result_loss) + '</span>';
+                }
             }
         } else {
             html += '<span class="pa-card-empty">' + L.wtt_empty + '</span>';

@@ -120,30 +120,44 @@ function srTableHtml(headers, rowsHtml, maxHeight) {
     return `<div class="score-detail-table-wrapper sr-scroll" style="max-height:${maxHeight || 360}px;"><table class="score-detail-table"><thead><tr>${headers.map(h => `<th>${h}</th>`).join('')}</tr></thead><tbody>${rowsHtml}</tbody></table></div>`;
 }
 
-/* ---- 连胜/出勤：当季窗口内逐场统计（同日多场为正常录入，按文件顺序计） ---- */
+/* ---- 连胜/出勤：当季窗口内逐场统计（同日多场为正常录入，按文件顺序计） ----
+   三态口径：平局中断当前连胜/连败（seq 推入 null），计入出勤与场次、不进胜负列 */
 function srComputeStreaks(windowMatches) {
     const per = {};
-    const rec = name => { if (!per[name]) per[name] = { seq: [], wins: 0, losses: 0 }; return per[name]; };
+    const rec = name => { if (!per[name]) per[name] = { seq: [], wins: 0, losses: 0, draws: 0 }; return per[name]; };
     windowMatches.forEach(r => {
+        const isDraw = isDrawRecord(r);
         const w = rec(r['胜者']), l = rec(r['负者']);
-        w.seq.push(true); w.wins++;
-        l.seq.push(false); l.losses++;
+        if (isDraw) {
+            w.seq.push(null); l.seq.push(null);
+            w.draws++; l.draws++;
+        } else {
+            w.seq.push(true); w.wins++;
+            l.seq.push(false); l.losses++;
+        }
     });
     const out = {};
     for (const name in per) {
         let max = 0, cur = 0;
-        per[name].seq.forEach(win => { cur = win ? cur + 1 : 0; if (cur > max) max = cur; });
+        per[name].seq.forEach(win => {
+            if (win === null) { cur = 0; return; }   // 平局中断连胜
+            cur = win ? cur + 1 : 0; if (cur > max) max = cur;
+        });
         let tail = 0;
-        for (let i = per[name].seq.length - 1; i >= 0 && per[name].seq[i]; i--) tail++;
-        out[name] = { max, tail, wins: per[name].wins, losses: per[name].losses };
+        for (let i = per[name].seq.length - 1; i >= 0; i--) {
+            if (per[name].seq[i] === null) break;    // 平局中断「当前连胜」
+            if (!per[name].seq[i]) break;
+            tail++;
+        }
+        out[name] = { max, tail, wins: per[name].wins, losses: per[name].losses, draws: per[name].draws };
     }
     return out;
 }
 
-/* ---- 局分亮点（依赖记录携带「局分」，胜者视角逐局） ---- */
+/* ---- 局分亮点（依赖记录携带「局分」，胜者视角逐局；平局记录无「胜者」语义，跳过） ---- */
 function srComputeGameStats(windowMatches) {
     const defaultFormats = (eventCoefficients && typeof eventCoefficients['默认赛制'] === 'object' && eventCoefficients['默认赛制']) || {};
-    const games = windowMatches.filter(r => Array.isArray(r['局分']) && r['局分'].length);
+    const games = windowMatches.filter(r => Array.isArray(r['局分']) && r['局分'].length && !isDrawRecord(r));
     let deciding = 0, comeback = 0, maxMargin = 0, maxMarginGame = '';
     games.forEach(r => {
         const fmtRaw = r['赛制'] && r['赛制'] !== 'default' ? r['赛制'] : (defaultFormats[r['类型']] || '');
@@ -187,7 +201,8 @@ function srReplaySeason(si, end, sortedWindow) {
             if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE;
             if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE;
             const rawGain = calcRawPoints(w, l, r['类型'], scores, r['赛制'], r);
-            if (!best || rawGain > best.rawGain) best = { rawGain, w, l, type: r['类型'], date: r['日期'], gap: Math.round(Math.abs(scores[w] - scores[l])) };
+            if (!best && !isDrawRecord(r)) best = { rawGain, w, l, type: r['类型'], date: r['日期'], gap: Math.round(Math.abs(scores[w] - scores[l])) };
+            if (!isDrawRecord(r) && rawGain > best.rawGain) best = { rawGain, w, l, type: r['类型'], date: r['日期'], gap: Math.round(Math.abs(scores[w] - scores[l])) };
             const { wGain: wg, lLoss: wl } = calcMatchPointsDual(w, l, r['类型'], r['日期'], end, scores, r['赛制'], r);
             scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg);
             scores[l] = Math.max(SCORE_FLOOR, scores[l] - wl);
@@ -522,14 +537,14 @@ function renderSeasonReview(si) {
         <div class="personal-card glass-card sr-card">
             <div class="sr-card-header"><i class="fa-solid fa-fire"></i><h3>${L.sr_streak_title}</h3></div>
             ${srTableHtml([L.rank_col_name || '姓名', L.sr_col_max_streak, L.sr_col_record, L.sr_col_cur],
-                streakEntries.map(([name, s]) => `<tr><td>${srPlayerLink(name)}</td><td class="sr-delta-pos">${s.max}</td><td>${s.wins}-${s.losses}</td><td>${s.tail > 0 ? L.sr_cur_streak.replace('{n}', s.tail) : L.sr_cur_loss}</td></tr>`).join(''))}
+                streakEntries.map(([name, s]) => `<tr><td>${srPlayerLink(name)}</td><td class="sr-delta-pos">${s.max}</td><td>${s.wins}-${s.losses}${s.draws ? `-${s.draws}` : ''}</td><td>${s.tail > 0 ? L.sr_cur_streak.replace('{n}', s.tail) : L.sr_cur_loss}</td></tr>`).join(''))}
         </div>`;
-    const attendEntries = Object.entries(streaks).sort((a, b) => (b[1].wins + b[1].losses) - (a[1].wins + a[1].losses));
+    const attendEntries = Object.entries(streaks).sort((a, b) => (b[1].wins + b[1].losses + (b[1].draws || 0)) - (a[1].wins + a[1].losses + (a[1].draws || 0)));
     const attendHtml = `
         <div class="personal-card glass-card sr-card">
             <div class="sr-card-header"><i class="fa-solid fa-user-check"></i><h3>${L.sr_attend_title}</h3></div>
             ${srTableHtml([L.rank_col_name || '姓名', L.sr_col_matches, L.sr_col_wins, L.sr_col_losses, L.sr_col_winrate],
-                attendEntries.map(([name, s]) => { const total = s.wins + s.losses; return `<tr><td>${srPlayerLink(name)}</td><td>${total}</td><td class="sr-delta-pos">${s.wins}</td><td class="sr-delta-neg">${s.losses}</td><td>${Math.round(s.wins / total * 100)}%</td></tr>`; }).join(''))}
+                attendEntries.map(([name, s]) => { const total = s.wins + s.losses + (s.draws || 0); const decided = s.wins + s.losses; return `<tr><td>${srPlayerLink(name)}</td><td>${total}</td><td class="sr-delta-pos">${s.wins}</td><td class="sr-delta-neg">${s.losses}</td><td>${decided ? Math.round(s.wins / decided * 100) : 0}%</td></tr>`; }).join(''))}
         </div>`;
 
     /* --- 单场得分之最 --- */

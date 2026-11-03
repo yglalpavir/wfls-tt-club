@@ -103,16 +103,19 @@ function computeClubRadar(playerName, asOfDate) {
     const cfg = CR_CONFIG.club;
 
     // ①②③⑤⑥：全量记录扫描（含双打，pair 胜负拆记到两名成员）；⑤按参赛的比赛日数
-    let tot = 0, win = 0, longTot = 0, longWin = 0, majorTot = 0, majorWin = 0, sweeps = 0, scoredWin = 0;
+    // 胜率三态：平局计总场次、不进胜率分子分母（isWin 拆成 win/tot 各计）
+    let tot = 0, win = 0, drawTot = 0, longTot = 0, longWin = 0, majorTot = 0, majorWin = 0, sweeps = 0, scoredWin = 0;
     const partDays = new Set();
     for (const r of scoreLogData) {
         if (!isMatchRecord(r)) continue;
         if (asOf && r['日期'] > asOf) continue;
         const p = crRecordParticipants(r);
+        const isDraw = isDrawRecord(r);
         const inW = p.winners.indexOf(playerName) >= 0;
         const inL = p.losers.indexOf(playerName) >= 0;
         if (!inW && !inL) continue;
         tot++;
+        if (isDraw) drawTot++;
         partDays.add(r['日期']);
         if (inW) {
             win++;
@@ -123,6 +126,7 @@ function computeClubRadar(playerName, asOfDate) {
         if (f === 'bo5' || f === 'bo7') { longTot++; if (inW) longWin++; }
         if (cfg.majorTypes.indexOf(r['类型']) >= 0) { majorTot++; if (inW) majorWin++; }
     }
+    const decidedTot = tot - drawTot;   // 分出胜负的场次
 
     // ④：引擎回放（单打上下文；强敌判定要扫全量记录，双打看对方成员）
     const split = crSplitClubLog();
@@ -155,7 +159,7 @@ function computeClubRadar(playerName, asOfDate) {
     }
 
     const axes = [
-        { key: 'win',    score: tot > 0 ? crRescale(win / tot * 100) : 30, n: tot, w: win, isDefault: tot === 0 },
+        { key: 'win',    score: decidedTot > 0 ? crRescale(win / decidedTot * 100) : 30, n: tot, w: win, isDefault: tot === 0 },
         { key: 'format', score: longTot > 0 ? crRescale(longWin / longTot * 100) : 30, n: longTot, w: longWin, isDefault: longTot === 0 },
         { key: 'major',  score: majorTot > 0 ? crRescale(majorWin / majorTot * 100 + Math.min(20, majorTot * 2)) : 30, n: majorTot, w: majorWin, isDefault: majorTot === 0 },
         { key: 'elite',  score: eliteTot > 0 ? crRescale(eliteWin / eliteTot * 90 + Math.min(25, eliteWin * 3)) : 30, n: eliteTot, w: eliteWin, threshold: cfg.elite, isDefault: eliteTot === 0 },

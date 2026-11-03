@@ -472,17 +472,19 @@ function renderComparison(playerA, playerB) {
     const cd = lastNonEmptySnapshot?.data || [];
     const ad = cd.find(p => p['姓名'] === playerA), 
           bd = cd.find(p => p['姓名'] === playerB); 
-    const h2h = scoreLogData.filter(r => isMatchRecord(r) && ((r['胜者'] === playerA && r['负者'] === playerB) || (r['胜者'] === playerB && r['负者'] === playerA))); 
-    const aW = h2h.filter(r => r['胜者'] === playerA).length, 
-          bW = h2h.filter(r => r['胜者'] === playerB).length, 
-          total = h2h.length; 
-    const recent = h2h.length ? h2h[h2h.length-1] : null; const aWinRate = total > 0 ? ((aW/total)*100).toFixed(1)+'%' : '-', bWinRate = total > 0 ? ((bW/total)*100).toFixed(1)+'%' : '-';
+    const h2h = scoreLogData.filter(r => isMatchRecord(r) && ((r['胜者'] === playerA && r['负者'] === playerB) || (r['胜者'] === playerB && r['负者'] === playerA)));
+    const aW = h2h.filter(r => r['胜者'] === playerA && !isDrawRecord(r)).length,
+          bW = h2h.filter(r => r['胜者'] === playerB && !isDrawRecord(r)).length,
+          h2hDraws = h2h.filter(r => isDrawRecord(r)).length,
+          total = h2h.length,
+          decidedTotal = total - h2hDraws;
+    const recent = h2h.length ? h2h[h2h.length-1] : null; const aWinRate = decidedTotal > 0 ? ((aW/decidedTotal)*100).toFixed(1)+'%' : '-', bWinRate = decidedTotal > 0 ? ((bW/decidedTotal)*100).toFixed(1)+'%' : '-';
     // 计算预测胜率
     const rA = ad ? ad['当前积分'] : DEFAULT_INITIAL_SCORE, rB = bd ? bd['当前积分'] : DEFAULT_INITIAL_SCORE;
     const fA = calcFormScore(playerA), fB = calcFormScore(playerB);
     const predA = (calcPredictedWinRate(rA, rB, aW, bW, fA, fB) * 100).toFixed(1);
     const predB = (calcPredictedWinRate(rB, rA, bW, aW, fB, fA) * 100).toFixed(1);
-    let html = `<div class="compare-summary"><div class="compare-player-col"><div class="compare-player-name">${linkPlayerName(playerA)}</div><div class="compare-player-stat">${i18n[currentLang].data_viz_cur_score}: <strong>${ad?ad['当前积分'].toFixed(1):'-'}</strong></div><div class="compare-player-stat">${i18n[currentLang].data_viz_h2h_rate}: <strong>${aWinRate}</strong></div><div class="compare-player-stat">${i18n[currentLang].data_viz_pred_rate}: <strong>${predA}%</strong></div></div><div class="compare-divider">VS</div><div class="compare-player-col"><div class="compare-player-name">${linkPlayerName(playerB)}</div><div class="compare-player-stat">${i18n[currentLang].data_viz_cur_score}: <strong>${bd?bd['当前积分'].toFixed(1):'-'}</strong></div><div class="compare-player-stat">${i18n[currentLang].data_viz_h2h_rate}: <strong>${bWinRate}</strong></div><div class="compare-player-stat">${i18n[currentLang].data_viz_pred_rate}: <strong>${predB}%</strong></div></div></div>`; if (total > 0) { html += `<div style="text-align:center;margin-bottom:16px;"><span style="font-weight:600;">${i18n[currentLang].data_viz_total_h2h.replace('{n}', total)}</span> | <span style="color:#52c41a;">${linkPlayerName(playerA)} ${aW} ${i18n[currentLang].data_viz_win}</span> | <span style="color:#52c41a;">${linkPlayerName(playerB)} ${bW} ${i18n[currentLang].data_viz_win}</span>${recent?` | ${i18n[currentLang].data_viz_recent_match.replace('{date}', recent['日期']).replace('{winner}', linkPlayerName(recent['胜者']))}`:''}</div><div class="compare-h2h-wrapper"><table class="compare-h2h-table"><thead><tr><th>${i18n[currentLang].data_viz_col_date}</th><th>${i18n[currentLang].data_viz_col_type}</th><th>${i18n[currentLang].data_viz_col_winner}</th><th>${i18n[currentLang].data_viz_pts_change.replace('{player}', linkPlayerName(playerA))}</th><th>${i18n[currentLang].data_viz_pts_change.replace('{player}', linkPlayerName(playerB))}</th></tr></thead><tbody>`; const scores = {}; 
+    let html = `<div class="compare-summary"><div class="compare-player-col"><div class="compare-player-name">${linkPlayerName(playerA)}</div><div class="compare-player-stat">${i18n[currentLang].data_viz_cur_score}: <strong>${ad?ad['当前积分'].toFixed(1):'-'}</strong></div><div class="compare-player-stat">${i18n[currentLang].data_viz_h2h_rate}: <strong>${aWinRate}</strong></div><div class="compare-player-stat">${i18n[currentLang].data_viz_pred_rate}: <strong>${predA}%</strong></div></div><div class="compare-divider">VS</div><div class="compare-player-col"><div class="compare-player-name">${linkPlayerName(playerB)}</div><div class="compare-player-stat">${i18n[currentLang].data_viz_cur_score}: <strong>${bd?bd['当前积分'].toFixed(1):'-'}</strong></div><div class="compare-player-stat">${i18n[currentLang].data_viz_h2h_rate}: <strong>${bWinRate}</strong></div><div class="compare-player-stat">${i18n[currentLang].data_viz_pred_rate}: <strong>${predB}%</strong></div></div></div>`; if (total > 0) { html += `<div style="text-align:center;margin-bottom:16px;"><span style="font-weight:600;">${i18n[currentLang].data_viz_total_h2h.replace('{n}', total)}</span> | <span style="color:#52c41a;">${linkPlayerName(playerA)} ${aW} ${i18n[currentLang].data_viz_win}</span> | <span style="color:#52c41a;">${linkPlayerName(playerB)} ${bW} ${i18n[currentLang].data_viz_win}</span>${h2hDraws>0?` | <span style="color:#d48806;">${i18n[currentLang].data_viz_draw_short.replace('{n}', h2hDraws)}</span>`:''}${recent?` | ${i18n[currentLang].data_viz_recent_match.replace('{date}', recent['日期']).replace('{winner}', isDrawRecord(recent) ? i18n[currentLang].score_result_draw : linkPlayerName(recent['胜者']))}`:''}</div><div class="compare-h2h-wrapper"><table class="compare-h2h-table"><thead><tr><th>${i18n[currentLang].data_viz_col_date}</th><th>${i18n[currentLang].data_viz_col_type}</th><th>${i18n[currentLang].data_viz_col_winner}</th><th>${i18n[currentLang].data_viz_pts_change.replace('{player}', linkPlayerName(playerA))}</th><th>${i18n[currentLang].data_viz_pts_change.replace('{player}', linkPlayerName(playerB))}</th></tr></thead><tbody>`; const scores = {};
         // 使用赛季感知的起始积分（如果存在赛季数据）
         if (seasonsData && seasonsData.length > 0 && h2h.length > 0) {
             const firstH2hDate = h2h[0]['日期'];
@@ -495,7 +497,7 @@ function renderComparison(playerA, playerB) {
         }
         if (Object.keys(scores).length === 0 && initialScoresData) Object.assign(scores, initialScoresData.initialScores);
         const h2hSeasonStart = (seasonsData && seasonsData.length > 0 && h2h.length > 0) ? (() => { const d = h2h[0]['日期']; for (const s of seasonsData) { if (d >= s.startDate && d <= s.endDate) return s.startDate; } return seasonsData[seasonsData.length - 1].startDate; })() : '';
-        const sortedLog = [...scoreLogData].sort((a,b) => a['日期'].localeCompare(b['日期'])); const matchOccMap = computeMatchOccurrenceMap(sortedLog); for (const m of sortedLog) { if (h2hSeasonStart && m['日期'] < h2hSeasonStart) continue; if (isMatchRecord(m)) { const w = m['胜者'], l = m['负者']; if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE; if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE; const _d = calcMatchPointsDual(w, l, m['类型'], m['日期'], getTodayStr(), scores, m['赛制'], m); const wg = _d.wGain, wl = _d.lLoss; if ((w === playerA && l === playerB) || (w === playerB && l === playerA)) { const aIsW = w === playerA; const aChange = aIsW ? wg : -wl; const bChange = aIsW ? -wl : wg; html += `<tr><td><a class="player-name-link" href="${escapeHtml(buildMatchDetailUrl(m['日期'], m['类型'], w, l, matchOccMap.get(m)))}">${escapeHtml(m['日期'])}</a></td><td>${escapeHtml(m['类型'])}</td><td>${linkPlayerName(w)}</td><td class="${aIsW?'win-highlight':'loss-highlight'}">${aChange>0?'+':''}${aChange.toFixed(1)}</td><td class="${!aIsW?'win-highlight':'loss-highlight'}">${bChange>0?'+':''}${bChange.toFixed(1)}</td></tr>`; } scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg); scores[l] = Math.max(SCORE_FLOOR, scores[l] - wl); } else if (isBonusRecord(m)) { const target = m['对象']; const bonus = parseFloat(m['分数']) || 0; if (!scores[target]) scores[target] = DEFAULT_INITIAL_SCORE; scores[target] = Math.max(SCORE_FLOOR, scores[target] + bonus); } } html += '</tbody></table></div>'; } else { html += '<div class="compare-placeholder"><i class="fa-solid fa-circle-info"></i><p>' + i18n[currentLang].data_viz_no_h2h + '</p></div>'; } container.innerHTML = html; }
+        const sortedLog = [...scoreLogData].sort((a,b) => a['日期'].localeCompare(b['日期'])); const matchOccMap = computeMatchOccurrenceMap(sortedLog); for (const m of sortedLog) { if (h2hSeasonStart && m['日期'] < h2hSeasonStart) continue; if (isMatchRecord(m)) { const w = m['胜者'], l = m['负者']; if (!scores[w]) scores[w] = DEFAULT_INITIAL_SCORE; if (!scores[l]) scores[l] = DEFAULT_INITIAL_SCORE; const _d = calcMatchPointsDual(w, l, m['类型'], m['日期'], getTodayStr(), scores, m['赛制'], m); const wg = _d.wGain, wl = _d.lLoss; if ((w === playerA && l === playerB) || (w === playerB && l === playerA)) { const isD = isDrawRecord(m); const aIsW = w === playerA; const aChange = isD ? wg : (aIsW ? wg : -wl); const bChange = isD ? wl : (aIsW ? -wl : wg); const ac = aChange > 0 ? 'win-highlight' : (aChange < 0 ? 'loss-highlight' : ''); const bc = bChange > 0 ? 'win-highlight' : (bChange < 0 ? 'loss-highlight' : ''); html += `<tr><td><a class="player-name-link" href="${escapeHtml(buildMatchDetailUrl(m['日期'], m['类型'], w, l, matchOccMap.get(m)))}">${escapeHtml(m['日期'])}</a></td><td>${escapeHtml(m['类型'])}</td><td>${isD ? i18n[currentLang].score_result_draw : linkPlayerName(w)}</td><td class="${ac}">${aChange>0?'+':''}${aChange.toFixed(1)}</td><td class="${bc}">${bChange>0?'+':''}${bChange.toFixed(1)}</td></tr>`; } scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg); scores[l] = Math.max(SCORE_FLOOR, scores[l] - wl); } else if (isBonusRecord(m)) { const target = m['对象']; const bonus = parseFloat(m['分数']) || 0; if (!scores[target]) scores[target] = DEFAULT_INITIAL_SCORE; scores[target] = Math.max(SCORE_FLOOR, scores[target] + bonus); } } html += '</tbody></table></div>'; } else { html += '<div class="compare-placeholder"><i class="fa-solid fa-circle-info"></i><p>' + i18n[currentLang].data_viz_no_h2h + '</p></div>'; } container.innerHTML = html; }
 // ========================================
 // 个人数据板块
 // ========================================
@@ -615,11 +617,13 @@ function renderPersonalStats(playerName) {
     const oppStats = {};
     for (const r of allMatches) {
         const opp = r['胜者'] === playerName ? r['负者'] : r['胜者'];
-        const isWin = r['胜者'] === playerName;
+        const isDraw = isDrawRecord(r);
+        const isWin = !isDraw && r['胜者'] === playerName;
         if (!oppStats[opp]) {
-            oppStats[opp] = { wins: 0, losses: 0, lastDate: r['日期'], lastWinDate: '', preWinScore: 0, preMatchScore: 0, curScore: 0 };
+            oppStats[opp] = { wins: 0, losses: 0, draws: 0, lastDate: r['日期'], lastWinDate: '', preWinScore: 0, preMatchScore: 0, curScore: 0 };
         }
-        if (isWin) { oppStats[opp].wins++; if (r['日期'] >= (oppStats[opp].lastWinDate || '')) oppStats[opp].lastWinDate = r['日期']; }
+        if (isDraw) oppStats[opp].draws++;
+        else if (isWin) { oppStats[opp].wins++; if (r['日期'] >= (oppStats[opp].lastWinDate || '')) oppStats[opp].lastWinDate = r['日期']; }
         else oppStats[opp].losses++;
         if (r['日期'] >= oppStats[opp].lastDate) {
             oppStats[opp].lastDate = r['日期'];
@@ -668,6 +672,7 @@ function renderPersonalStats(playerName) {
         // 胜方记 wg（本人所得），败方记 wl（本人所失）。败方若把对手的 wg 记进 gained，
         // net 会变成「对手所得 − 本人所失」，因 wg > wl（LOSER_POINT_MULTIPLIER=0.8）
         // 而恒为正，克星卡将永远为空。
+        // 平局（带符号净额口径）：双方各 +0.1×raw，记进 gained/lost 的正是带符号本人净额
         if (w === playerName) {
             oppPointsGained[l] = (oppPointsGained[l] || 0) + wg;
         } else if (l === playerName) {

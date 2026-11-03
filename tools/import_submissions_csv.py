@@ -49,6 +49,7 @@ COLUMN_HINTS = {
     "赛制": ("赛制",),
     "胜者": ("胜者", "胜方"),
     "负者": ("负者", "负方"),
+    "结果": ("结果",),
     "比分": ("总比分",),
     "局分": ("逐局分数", "逐局", "局分"),
     "备注": ("备注",),
@@ -224,6 +225,9 @@ def main():
         fmt = cell("赛制").lower()
         if fmt:
             rec["赛制"] = fmt
+        result = cell("结果")
+        if result:
+            rec["结果"] = result
         total = cell("比分")
         games_raw = cell("局分")
         if total:
@@ -239,8 +243,12 @@ def main():
             continue
 
         imported.append((fp, out, cell("提交人"), cell("备注")))
-        info(f"解析通过：{out['日期']} {out['类型']}·{out.get('赛制', 'default')} {out['胜者']} 胜 {out['负者']}"
-             + (f" {out.get('比分', '')}" if out.get("比分") else ""))
+        if out.get("结果") == "平":
+            info(f"解析通过：{out['日期']} {out['类型']}·{out.get('赛制', 'default')} {out['胜者']} 平 {out['负者']}"
+                 + (f" {out.get('比分', '')}" if out.get("比分") else ""))
+        else:
+            info(f"解析通过：{out['日期']} {out['类型']}·{out.get('赛制', 'default')} {out['胜者']} 胜 {out['负者']}"
+                 + (f" {out.get('比分', '')}" if out.get("比分") else ""))
 
     print()
     if args.dry_run:

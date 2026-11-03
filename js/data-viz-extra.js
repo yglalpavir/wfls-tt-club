@@ -13,13 +13,14 @@ const RECORD_LOSS_COLOR = '#ff6b6b';
 
 function buildRecordStats(playerNames) {
     const stats = {};
-    for (const n of playerNames) stats[n] = { wins: 0, losses: 0, total: 0 };
+    for (const n of playerNames) stats[n] = { wins: 0, losses: 0, draws: 0, total: 0 };
     if (!scoreLogData) return stats;
     for (const r of scoreLogData) {
         if (!isMatchRecord(r)) continue;
         const w = r['胜者'], l = r['负者'];
-        if (w && stats[w]) { stats[w].wins++; stats[w].total++; }
-        if (l && stats[l]) { stats[l].losses++; stats[l].total++; }
+        const isDraw = isDrawRecord(r);
+        if (w && stats[w]) { if (!isDraw) stats[w].wins++; else stats[w].draws++; stats[w].total++; }
+        if (l && stats[l]) { if (!isDraw) stats[l].losses++; else stats[l].draws++; stats[l].total++; }
     }
     return stats;
 }
@@ -113,6 +114,7 @@ function renderRecordBar(topN) {
     const labels = sorted.map(n => shortenPlayerName(playerDisplayName(n)));
     const wins = sorted.map(n => stats[n].wins);
     const losses = sorted.map(n => stats[n].losses);
+    const draws = sorted.map(n => stats[n].draws || 0);
     const totals = sorted.map(n => stats[n].total);
     const fullNames = sorted;
 
@@ -123,7 +125,8 @@ function renderRecordBar(topN) {
                 labels,
                 datasets: [
                     { label: i18n[currentLang].data_viz_win, data: wins, backgroundColor: RECORD_WIN_COLOR, borderRadius: 4 },
-                    { label: i18n[currentLang].data_viz_loss, data: losses, backgroundColor: RECORD_LOSS_COLOR, borderRadius: 4 }
+                    { label: i18n[currentLang].data_viz_loss, data: losses, backgroundColor: RECORD_LOSS_COLOR, borderRadius: 4 },
+                    { label: i18n[currentLang].score_result_draw, data: draws, backgroundColor: '#d48806', borderRadius: 4 }
                 ]
             },
             options: {
@@ -169,7 +172,8 @@ function renderEfficiencyScatter(topN) {
         .slice(0, topN)
         .map(n => {
             const st = stats[n];
-            const wr = st.total > 0 ? (st.wins / st.total) * 100 : 0;
+            const decided = st.total - (st.draws || 0);
+            const wr = decided > 0 ? (st.wins / decided) * 100 : 0;
             const r = Math.max(4, Math.min(26, 4 + (wr / 100) * 22));
             return { x: st.total, y: scoreMap[n] || 0, r, player: n, winRate: Math.round(wr * 10) / 10, form: Math.round(calcFormScore(n) * 10) / 10 };
         });
@@ -229,6 +233,7 @@ function renderH2hHeatmap(topN) {
     }
 
     // 交手矩阵：wins[row][col] = row 球员胜 col 球员的场次（初始化为 0）
+    // 平局：wins/losses 各记 0.5（非整数胜场，胜率模式下两侧对称、总场次照常计数）
     const matrix = {};
     for (const n of sortedPlayers) matrix[n] = {};
     let maxWins = 0, anyMatch = false;
@@ -237,7 +242,8 @@ function renderH2hHeatmap(topN) {
             if (!isMatchRecord(r)) continue;
             const w = r['胜者'], l = r['负者'];
             if (!w || !l || !matrix[w] || !matrix[l]) continue;
-            matrix[w][l] = (matrix[w][l] || 0) + 1;
+            const inc = isDrawRecord(r) ? 0.5 : 1;
+            matrix[w][l] = (matrix[w][l] || 0) + inc;
             if (matrix[w][l] > maxWins) maxWins = matrix[w][l];
             anyMatch = true;
         }
@@ -279,7 +285,7 @@ function renderH2hHeatmap(topN) {
                     }
                     tip = i18n[currentLang].data_viz_heatmap_cell_rate
                         .replace('{winner}', row).replace('{loser}', col).replace('{r}', rate.toFixed(1)).replace('{n}', meets)
-                        + ` | ${i18n[currentLang].data_viz_win}: ${wins} | ${i18n[currentLang].data_viz_loss}: ${losses}`;
+                        + ` | ${i18n[currentLang].data_viz_win}: ${Math.round(wins * 10) / 10} | ${i18n[currentLang].data_viz_loss}: ${Math.round(losses * 10) / 10}`;
                 }
             } else {
                 const alpha = wins / maxWins;

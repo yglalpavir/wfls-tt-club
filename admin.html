@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -590,7 +590,7 @@
             }
             function queueText(q) {
                 if (q["胜者"]) {
-                    var txt = q["日期"] + " · " + typeLabel(q["类型"]) + " · " + sf(T("adm_se_q_format", "赛制 {f}"), { f: q["赛制"] || "default" }) + " · " + sf(T("adm_se_q_win", "{w} 胜 {l}"), { w: nameLabel(q["胜者"]), l: nameLabel(q["负者"]) });
+                    var txt = q["日期"] + " · " + typeLabel(q["类型"]) + " · " + sf(T("adm_se_q_format", "赛制 {f}"), { f: q["赛制"] || "default" }) + " · " + sf(q["结果"] === "平" ? T("adm_se_q_draw", "{w} 平 {l}") : T("adm_se_q_win", "{w} 胜 {l}"), { w: nameLabel(q["胜者"]), l: nameLabel(q["负者"]) });
                     if (q["比分"]) txt += " · " + q["比分"] + (q["局分"] ? sf(T("adm_se_q_games", "（{g}）"), { g: q["局分"].join(" ") }) : "");
                     return txt;
                 }
@@ -649,9 +649,15 @@
                         if (total) {
                             if (!m) return msg("adm_se_err_total_fmt", "总比分格式应为「胜者局数-负者局数」，如 3-1", null, true);
                             w = +m[1]; l = +m[2];
-                            if (w <= l) return msg("adm_se_err_total_order", "总比分 {w}-{l}：胜方局数必须大于负方（胜者在前的口径）", { w: w, l: l }, true);
-                            if (w > 4) return msg("adm_se_err_total_max", "总比分 {w}-{l}：单打最多 bo7（胜方最多 4 局）", { w: w, l: l }, true);
-                            if (needed && w !== needed) return msg("adm_se_err_total_mismatch", "总比分 {w}-{l} 与赛制 {eff} 不符（需胜 {n} 局）", { w: w, l: l, eff: eff, n: needed }, true);
+                            if (w === l) {
+                                // 平局（如 2-2）：写入「结果: 平」，逐局仍须无 11-11
+                                if (w > 4) return msg("adm_se_err_total_max", "总比分 {w}-{l}：单打最多 bo7（胜方最多 4 局）", { w: w, l: l }, true);
+                                rec["结果"] = "平";
+                            } else {
+                                if (w <= l) return msg("adm_se_err_total_order", "总比分 {w}-{l}：胜方局数必须大于负方（胜者在前的口径）", { w: w, l: l }, true);
+                                if (w > 4) return msg("adm_se_err_total_max", "总比分 {w}-{l}：单打最多 bo7（胜方最多 4 局）", { w: w, l: l }, true);
+                                if (needed && w !== needed) return msg("adm_se_err_total_mismatch", "总比分 {w}-{l} 与赛制 {eff} 不符（需胜 {n} 局）", { w: w, l: l, eff: eff, n: needed }, true);
+                            }
                             rec["比分"] = w + "-" + l;
                         }
                         if (gamesRaw) {
@@ -665,6 +671,10 @@
                             if (bad) return msg("sb_err_games", "逐局分数格式应为 11-9，且无平局", null, true);
                             if (w !== null) {
                                 if (wins !== w || gs.length !== w + l) return msg("adm_se_err_games_self", "逐局分数与总比分 {w}-{l} 不自洽（应共 {t} 局、胜方赢 {w} 局）", { w: w, l: l, t: w + l }, true);
+                            } else if (wins === gs.length - wins) {
+                                // 仅逐局的平局（如 1-1、2-2）：写入「结果: 平」
+                                rec["结果"] = "平";
+                                rec["比分"] = wins + "-" + (gs.length - wins);
                             } else {
                                 if (wins <= gs.length - wins) return msg("adm_se_err_games_infer", "逐局分数推不出胜方（胜者视角，胜方赢的局须更多）", null, true);
                                 rec["比分"] = wins + "-" + (gs.length - wins);

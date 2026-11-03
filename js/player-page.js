@@ -131,12 +131,13 @@ function computePlayerMatchRecords(playerName) {
                 const wg = wgDual.wGain, wl = wgDual.lLoss;
                 const rawGain = calcRawPoints(w, l, r['类型'], scores, r['赛制'], r);
                 if (w === playerName || l === playerName) {
-                    const isWin = w === playerName;
+                    const isDraw = isDrawRecord(r);
+                    const isWin = !isDraw && w === playerName;
                     const pre = scores[playerName];
-                    const oppPre = scores[isWin ? l : w];
-                    const rawChange = isWin ? rawGain : -rawGain * LOSER_POINT_MULTIPLIER;
-                    const change = isWin ? wg : -wl;
-                    rows.push({ date: r['日期'], type: r['类型'], opp: isWin ? l : w, isWin: isWin, isBonus: false, pre: pre, oppPre: oppPre, rawChange: rawChange, change: change, post: pre + change, score: r['比分'] || null, games: Array.isArray(r['局分']) ? r['局分'] : null, n: matchOccMap.get(r) || 1 });
+                    const oppPre = scores[isWin ? l : (w === playerName ? l : w)];
+                    const rawChange = isDraw ? rawGain * drawNetFactor() : (isWin ? rawGain : -rawGain * LOSER_POINT_MULTIPLIER);
+                    const change = isDraw ? (wgDual.wGain - wgDual.lLoss) : (isWin ? wg : -wl);
+                    rows.push({ date: r['日期'], type: r['类型'], opp: isWin ? l : (w === playerName ? l : w), isWin: isWin, isDraw: isDraw, isBonus: false, pre: pre, oppPre: oppPre, rawChange: rawChange, change: change, post: pre + change, score: r['比分'] || null, games: Array.isArray(r['局分']) ? r['局分'] : null, n: matchOccMap.get(r) || 1 });
                 }
                 scores[w] = Math.max(SCORE_FLOOR, scores[w] + wg);
                 scores[l] = Math.max(SCORE_FLOOR, scores[l] - wl);
@@ -163,7 +164,8 @@ function renderPlayerMatchTable(playerName, records) {
             const sign = r.change >= 0 ? '+' : '';
             return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(eventTypeLabel(r.type))}</td><td>-</td><td class="result-win">${i18n[currentLang].score_type_bonus}</td>${hasScore ? '<td></td>' : ''}<td>${r.pre.toFixed(1)}</td><td class="${cc}">${sign}${r.change.toFixed(1)}</td><td>${r.post.toFixed(1)}</td></tr>`;
         }
-        const res = r.isWin ? '<td class="result-win">' + i18n[currentLang].score_result_win + '</td>' : '<td class="result-loss">' + i18n[currentLang].score_result_loss + '</td>';
+        const isDraw = !!r.isDraw;
+        const res = isDraw ? '<td class="result-draw">' + i18n[currentLang].score_result_draw + '</td>' : (r.isWin ? '<td class="result-win">' + i18n[currentLang].score_result_win + '</td>' : '<td class="result-loss">' + i18n[currentLang].score_result_loss + '</td>');
         const signRaw = r.rawChange >= 0 ? '+' : '';
         const signDec = r.change >= 0 ? '+' : '';
         const cc = r.change >= 0 ? 'score-change-positive' : 'score-change-negative';
@@ -197,10 +199,11 @@ function computePlayerDoublesRecords(playerName) {
         const lp = splitPairNames(r['负者']) || [];
         const inW = wp.includes(playerName), inL = lp.includes(playerName);
         if (!inW && !inL) continue;
-        const isWin = inW;
-        const mates = (isWin ? wp : lp).filter(n => n !== playerName);
-        const opp = isWin ? lp : wp;
-        rows.push({ date: r['日期'], type: r['类型'], partner: mates[0] || '-', opp, isWin, score: r['比分'] || null, games: Array.isArray(r['局分']) ? r['局分'] : null, n: occMap.get(r) || 1, rawW: r['胜者'], rawL: r['负者'] });
+        const isDraw = isDrawRecord(r);
+        const isWin = !isDraw && inW;
+        const mates = (inW ? wp : lp).filter(n => n !== playerName);
+        const opp = inW ? lp : wp;
+        rows.push({ date: r['日期'], type: r['类型'], partner: mates[0] || '-', opp, isWin, isDraw, score: r['比分'] || null, games: Array.isArray(r['局分']) ? r['局分'] : null, n: occMap.get(r) || 1, rawW: r['胜者'], rawL: r['负者'] });
     }
     rows.sort((a, b) => b.date.localeCompare(a.date));
     return rows;
@@ -215,7 +218,7 @@ function renderPlayerDoublesTable(playerName) {
     const rate = rows.length ? Math.round(wins / rows.length * 100) : 0;
     const hasScore = rows.some(r => r.score || (r.games && r.games.length));
     const rowsHtml = rows.map(r => {
-        const res = r.isWin ? '<td class="result-win">' + i18n[currentLang].score_result_win + '</td>' : '<td class="result-loss">' + i18n[currentLang].score_result_loss + '</td>';
+        const res = r.isDraw ? '<td class="result-draw">' + i18n[currentLang].score_result_draw + '</td>' : (r.isWin ? '<td class="result-win">' + i18n[currentLang].score_result_win + '</td>' : '<td class="result-loss">' + i18n[currentLang].score_result_loss + '</td>');
         const mdUrl = escapeHtml(buildMatchDetailUrl(r.date, r.type, r.rawW, r.rawL, r.n));
         /* 负行按球员视角展示比分/局分（存储为胜者视角，对调数字、局序不变） */
         const gamesView = playerViewGames(r.games, r.isWin);

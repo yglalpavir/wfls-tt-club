@@ -261,7 +261,7 @@
                     warn = '<span class="sb-warn">' + esc(T("sb_warn_unknown")) + "</span>";
                 }
                 var txt = r["胜者"]
-                    ? esc(r["日期"]) + " · " + esc(eventTypeLabel(r["类型"])) + " · " + esc(r["赛制"]) + " · " + esc(r["胜者"]) + " " + esc(T("score_result_win")) + " " + esc(r["负者"])
+                    ? esc(r["日期"]) + " · " + esc(eventTypeLabel(r["类型"])) + " · " + esc(r["赛制"]) + " · " + esc(r["胜者"]) + " " + (r["结果"] === "平" ? esc(T("score_result_draw")) : esc(T("score_result_win"))) + " " + esc(r["负者"])
                       + (r["比分"] ? " · " + esc(r["比分"]) + (r["局分"] ? T("sb_queue_games").replace("{games}", r["局分"].join(" ")) : "") : "")
                     : esc(r["日期"]) + " · " + esc(T("score_type_bonus")) + " · " + esc(r["对象"]) + " " + esc(r["分数"]);
                 return "<li><span>" + txt + warn + '</span><span><a href="#" data-i="' + i + '" style="color:#dc3545;">' + esc(T("sb_remove")) + "</a></span></li>";
@@ -350,16 +350,31 @@
             if (useScore && wStr !== "" && lStr !== "") {
                 var w = +wStr, l = +lStr;
                 var need = neededWins(rec["类型"], rec["赛制"]);
-                if (!(w > l && w <= 4) || (need !== null && w !== need)) return msg(T("sb_err_score"), true);
-                if (gameList.length && (winsIn(gameList) !== w || gameList.length !== w + l)) return msg(T("sb_err_mismatch"), true);
-                rec["比分"] = w + "-" + l;
-                if (gameList.length) rec["局分"] = gameList;
+                if (w === l) {
+                    // 平局比分（如 2-2）：逐局仍不允许 11-11，但总局数须为偶数且无平局局
+                    if (gameList.length && (gameList.length !== w + l)) return msg(T("sb_err_mismatch"), true);
+                    rec["结果"] = "平";
+                    rec["比分"] = w + "-" + l;
+                    if (gameList.length) rec["局分"] = gameList;
+                } else {
+                    if (!(w > l && w <= 4) || (need !== null && w !== need)) return msg(T("sb_err_score"), true);
+                    if (gameList.length && (winsIn(gameList) !== w || gameList.length !== w + l)) return msg(T("sb_err_mismatch"), true);
+                    rec["比分"] = w + "-" + l;
+                    if (gameList.length) rec["局分"] = gameList;
+                }
             } else if (useScore && gameList.length) {
                 var wins = winsIn(gameList);
                 var need2 = neededWins(rec["类型"], rec["赛制"]);
-                if (wins <= gameList.length - wins || (need2 !== null && wins !== need2)) return msg(T("sb_err_score"), true);
-                rec["比分"] = wins + "-" + (gameList.length - wins);
-                rec["局分"] = gameList;
+                if (wins === gameList.length - wins) {
+                    // 仅逐局的平局：局数相等即平局（无赛制校验——平局不按「胜 N 局」口径）
+                    rec["结果"] = "平";
+                    rec["比分"] = wins + "-" + (gameList.length - wins);
+                    rec["局分"] = gameList;
+                } else {
+                    if (wins <= gameList.length - wins || (need2 !== null && wins !== need2)) return msg(T("sb_err_score"), true);
+                    rec["比分"] = wins + "-" + (gameList.length - wins);
+                    rec["局分"] = gameList;
+                }
             }
 
             queue.push(rec); renderQueue(); saveDraft();

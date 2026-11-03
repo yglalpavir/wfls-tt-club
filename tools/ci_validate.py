@@ -12,7 +12,8 @@
    （本项仅作用于俱乐部记录，WTT 记录无「赛制」字段，由 [11] 校验）
 5. 比分/局分自洽性（可选字段，口径与 tools/append_submission.py 一致；覆盖 data/score-log.json
    与 wtt_data/*/score-log-*.json）：总比分格式/胜方局数更大且 ≤4/与赛制匹配（WTT 记录无赛制字段，
-   跳过局数匹配）；局分逐条合法、无平局、与总比分自洽；仅有局分时须能推出胜方
+   跳过局数匹配）；局分逐条合法、无平局、与总比分自洽；仅有局分时须能推出胜方；
+   可选「结果: 平」= 平局记录（总比分须为相等局数、局分双方赢局数须相等）
 6. 比赛类型都在 event-coefficient.json 中有定义
 7. 赛季：ISO 日期、start<=end、不重叠、snapshotDates 合法且落在赛季内
 8. players.json：uid/姓名唯一、initialScore 为数值、status 枚举、grade 为合法入学/毕业年份对
@@ -291,10 +292,18 @@ def check_score_fields(records, label, fmt_defaults):
             continue  # 加分记录无比分概念
         total = r.get("比分")
         games = r.get("局分")
-        if total is None and games is None:
+        draw_raw = r.get("结果")
+        if total is None and games is None and draw_raw in (None, ""):
             continue
         n_scored += 1
         where = f"{label} 第 {idx} 条"
+        # 「结果」字段：仅接受「平」（与 tools/append_submission.py 口径一致）
+        is_draw = False
+        if draw_raw not in (None, ""):
+            if str(draw_raw).strip() != "平":
+                errs.append(f"{where}: 结果 {draw_raw!r} 不合法（仅支持「平」标记平局；分出胜负时省略该字段）")
+            else:
+                is_draw = True
         # 有效赛制：显式赛制 > 默认赛制映射；两者皆无则跳过局数匹配（[4] 已单独把关俱乐部覆盖性）
         fmt = r.get("赛制")
         fmt_l = str(fmt).lower() if fmt not in (None, "") else None
@@ -312,7 +321,13 @@ def check_score_fields(records, label, fmt_defaults):
                 errs.append(f"{where}: 总比分 {total!r} 格式应为「胜者局数-负者局数」，如 3-1")
             else:
                 w, l = int(m.group(1)), int(m.group(2))
-                if w <= l:
+                if is_draw:
+                    # 平局：局数相等（如 2-2），与 tools/append_submission.py 口径一致
+                    if w != l:
+                        errs.append(f"{where}: 总比分 {w}-{l} 平局须为相等局数（如 2-2）；分出胜负请删去「结果: 平」")
+                    elif w > 4:
+                        errs.append(f"{where}: 总比分 {w}-{l} 胜方最多 4 局（bo7 上限）")
+                elif w <= l:
                     errs.append(f"{where}: 总比分 {w}-{l} 胜方局数必须大于负方（胜者在前的口径）")
                 elif w > 4:
                     errs.append(f"{where}: 总比分 {w}-{l} 胜方最多 4 局（bo7 上限）")
@@ -336,6 +351,9 @@ def check_score_fields(records, label, fmt_defaults):
                 elif w is not None:
                     if wins != w or len(parsed) != w + l:
                         errs.append(f"{where}: 局分与总比分 {w}-{l} 不自洽（应共 {w + l} 局、胜方赢 {w} 局）")
+                elif is_draw:
+                    if wins != len(parsed) - wins:
+                        errs.append(f"{where}: 局分与「结果: 平」不符（平局双方赢局数须相等，如 2-2）")
                 elif wins <= len(parsed) - wins:
                     errs.append(f"{where}: 局分推不出胜方（按胜者视角记分，胜方赢的局须更多）")
     return errs, n_scored

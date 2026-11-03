@@ -95,12 +95,13 @@ function renderScoreDetailReplay(player, snapshotDate) {
             const decayedGain = decayedDual.wGain, decayedLoss = decayedDual.lLoss;
             const rawGain = calcRawPoints(w, l, record['类型'], scores, record['赛制'], record);
             if (record['胜者'] === player || record['负者'] === player) {
-                const isWinner = record['胜者'] === player;
-                const rawChange = isWinner ? rawGain : -(rawGain * LOSER_POINT_MULTIPLIER);
-                const decayedChange = isWinner ? decayedGain : -decayedLoss;
+                const isDraw = isDrawRecord(record);
+                const isWinner = !isDraw && record['胜者'] === player;
+                const rawChange = isDraw ? rawGain * drawNetFactor() : (isWinner ? rawGain : -(rawGain * LOSER_POINT_MULTIPLIER));
+                const decayedChange = isDraw ? (decayedDual.wGain - decayedDual.lLoss) : (isWinner ? decayedGain : -decayedLoss);
                 const scoreBefore = scores[player];
                 const scoreAfter = scoreBefore + decayedChange;
-                recordsWithScores.push({ date: record['日期'], type: record['类型'], opponent: isWinner ? record['负者'] : record['胜者'], isWinner, isBonus: false, scoreBefore, rawChange, decayedChange, scoreAfter, score: record['比分'] || null, games: Array.isArray(record['局分']) ? record['局分'] : null, n: matchOccMap.get(record) || 1, basis: getRecordBaseScoreInfo(record) });
+                recordsWithScores.push({ date: record['日期'], type: record['类型'], opponent: isWinner ? record['负者'] : record['胜者'], isWinner, isDraw, isBonus: false, scoreBefore, rawChange, decayedChange, scoreAfter, score: record['比分'] || null, games: Array.isArray(record['局分']) ? record['局分'] : null, n: matchOccMap.get(record) || 1, basis: getRecordBaseScoreInfo(record) });
             }
             scores[w] = Math.max(SCORE_FLOOR, scores[w] + decayedGain);
             scores[l] = Math.max(SCORE_FLOOR, scores[l] - decayedLoss);
@@ -121,8 +122,9 @@ function renderScoreDetailReplay(player, snapshotDate) {
     toggleScoreDetailScoreCol(hasScore);
     scoreDetailBody.innerHTML = recordsWithScores.map(r => {
         if (r.isBonus) { const cc = r.decayedChange >= 0 ? 'score-change-positive' : 'score-change-negative'; const sign = r.decayedChange >= 0 ? '+' : ''; return `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(eventTypeLabel(r.type))}</td><td>-</td><td class="result-win">${i18n[currentLang].rank_add_short}</td>${hasScore ? '<td></td>' : ''}<td>${r.scoreBefore.toFixed(1)}</td><td class="${cc}">${sign}${r.decayedChange.toFixed(1)}</td><td>${r.scoreAfter.toFixed(1)}</td></tr>`; }
-        const res = r.isWinner ? i18n[currentLang].score_result_win : i18n[currentLang].score_result_loss;
-        const rc = r.isWinner ? 'result-win' : 'result-loss';
+        const isDraw = !!r.isDraw;
+        const res = isDraw ? i18n[currentLang].score_result_draw : (r.isWinner ? i18n[currentLang].score_result_win : i18n[currentLang].score_result_loss);
+        const rc = isDraw ? 'result-draw' : (r.isWinner ? 'result-win' : 'result-loss');
         const cc = r.decayedChange >= 0 ? 'score-change-positive' : 'score-change-negative';
         const signRaw = r.rawChange >= 0 ? '+' : '';
         const signDecayed = r.decayedChange >= 0 ? '+' : '';

@@ -108,6 +108,7 @@ function mdCompute() {
 
     const today = getTodayStr();
     let preW = null, preL = null, wg = 0, wl = 0, rawGain = 0, timeWW = 1, timeWL = 1;
+    const targetIsDraw = isDrawRecord(target);
     try {
         for (const r of scopeLog) {
             if (r['日期'] > season.endDate) break;
@@ -183,6 +184,7 @@ function mdCompute() {
         cat,
         w, l, n,
         date: target['日期'], type: target['类型'],
+        isDraw: targetIsDraw,
         format: (target['赛制'] && target['赛制'] !== 'default') ? target['赛制'] : ((eventCoefficients && typeof eventCoefficients['默认赛制'] === 'object' && eventCoefficients['默认赛制'][target['类型']]) || ''),
         score: target['比分'] || null,
         games: Array.isArray(target['局分']) ? target['局分'] : null,
@@ -192,9 +194,9 @@ function mdCompute() {
         postL: preL - wl,
         deltaW: wg,
         deltaL: -wl,
-        rawW: rawGain,
-        rawL: -rawGain * LOSER_POINT_MULTIPLIER,
-        breakdown: { gap, base, eventC, fmtMult, timeWW, timeWL },
+        rawW: targetIsDraw ? rawGain * drawNetFactor() : rawGain,
+        rawL: targetIsDraw ? -rawGain * drawNetFactor() : -rawGain * LOSER_POINT_MULTIPLIER,
+        breakdown: { gap, base, eventC, fmtMult, timeWW, timeWL, isDraw: targetIsDraw },
         h2h: { list: h2hList, wWins: h2hWWins, lWins: h2hLWins },
         form: { w: fW, l: fL },
         pred: { w: predW, l: predL }
@@ -265,11 +267,13 @@ function mdDeltaHtml(raw, decayed, withDecayed) {
     return `<span class="${cls}">${sign}${raw.toFixed(1)}</span>${note}`;
 }
 
-// 记分牌两侧的积分变动胶囊（胜紫负灰，只保留本场产生值；
+// 记分牌两侧的积分变动胶囊（胜紫负灰 / 平局中性；只保留本场产生值；
 // 衰减后的实际值已由 赛前→赛后 数字与「积分产生明细」卡表达，不再重复）
 function mdDeltaPillHtml(raw, decayed, withDecayed) {
-    const pos = raw >= 0;
-    return `<div class="md-delta-pill ${pos ? 'md-delta-pos' : 'md-delta-neg'}"><i class="fa-solid fa-caret-${pos ? 'up' : 'down'}"></i><span>${pos ? '+' : ''}${raw.toFixed(1)}</span></div>`;
+    const pos = raw > 0, neg = raw < 0;
+    const cls = pos ? 'md-delta-pos' : (neg ? 'md-delta-neg' : 'md-delta-zero');
+    const ico = pos ? 'up' : (neg ? 'down' : 'minus');
+    return `<div class="md-delta-pill ${cls}"><i class="fa-solid fa-caret-${ico}"></i><span>${raw >= 0 ? '+' : ''}${raw.toFixed(1)}</span></div>`;
 }
 
 // hero 一侧（胜者/负者）：亚运记分牌布局 —— 姓名块朝中央对齐，头像紧贴大比分。
@@ -280,10 +284,13 @@ function mdArenaSideHtml(m, side, T) {
     const pre = isW ? m.preW : m.preL;
     const post = isW ? m.postW : m.postL;
     const clubDelta = !MD_WTT;   // WTT 无衰减：raw 与 decayed 相同，只显示一个
-    const deltaPill = isW ? mdDeltaPillHtml(m.rawW, m.deltaW, clubDelta) : mdDeltaPillHtml(m.rawL, m.deltaL, clubDelta);
+    const raw = isW ? m.rawW : m.rawL;
+    const deltaPill = mdDeltaPillHtml(raw, isW ? m.deltaW : m.deltaL, clubDelta);
+    const tagCls = m.isDraw ? 'md-tag-draw' : (isW ? 'md-tag-w' : 'md-tag-l');
+    const tagText = m.isDraw ? T.md_draw_badge : (isW ? T.md_winner_badge : T.md_loser_badge);
     return `<div class="md-side ${isW ? 'md-side-w' : 'md-side-l'}">
         <div class="md-side-info">
-            <div class="md-player-name">${MD_WTT ? mdOrgHtml(name) : mdMiniAvatarHtml(name)}${mdPlayerLink(name)}<span class="md-side-tag ${isW ? 'md-tag-w' : 'md-tag-l'}">${isW ? T.md_winner_badge : T.md_loser_badge}</span></div>
+            <div class="md-player-name">${MD_WTT ? mdOrgHtml(name) : mdMiniAvatarHtml(name)}${mdPlayerLink(name)}<span class="md-side-tag ${tagCls}">${tagText}</span></div>
             <div class="md-pts-line">
                 <span class="md-pts-one"><em>${T.md_pre_score}</em>${pre.toFixed(1)}</span>
                 <i class="fa-solid fa-arrow-right md-pts-arrow" aria-hidden="true"></i>
@@ -291,7 +298,7 @@ function mdArenaSideHtml(m, side, T) {
             </div>
             ${deltaPill}
         </div>
-        ${MD_WTT ? '' : mdAvatarHtml(name, isW)}
+        ${MD_WTT ? '' : mdAvatarHtml(name, isW && !m.isDraw)}
     </div>`;
 }
 
@@ -386,21 +393,22 @@ function renderMatchDetail(m) {
     ];
     if (m.n > 1) metaItems.push(`<span class="md-hero-meta-item"><i class="fa-solid fa-repeat"></i> ${T.md_occurrence.replace('{n}', String(m.n))}</span>`);
 
-    // 中央：大比分盒（胜方盒高亮；无比分退回 VS）
+    // 中央：大比分盒（胜方盒高亮；平局两侧同色；无比分退回 VS）
     let centerHtml;
     if (m.score) {
         const sm = String(m.score).match(/^(\d{1,2})\s*[-:：]\s*(\d{1,2})$/);
         if (sm) {
-            const aWin = parseInt(sm[1], 10) >= parseInt(sm[2], 10);
+            const aWin = parseInt(sm[1], 10) > parseInt(sm[2], 10);
+            const drawScore = !m.isDraw ? false : parseInt(sm[1], 10) === parseInt(sm[2], 10);
             centerHtml = `<div class="md-score-boxes">
-                <span class="md-score-box ${aWin ? 'md-box-win' : ''}">${sm[1]}</span>
-                <span class="md-score-box ${aWin ? '' : 'md-box-win'}">${sm[2]}</span>
+                <span class="md-score-box ${(!m.isDraw && aWin) || drawScore ? 'md-box-win' : ''}">${sm[1]}</span>
+                <span class="md-score-box ${(!m.isDraw && !aWin) || drawScore ? 'md-box-win' : ''}">${sm[2]}</span>
             </div><div class="md-score-sub">${T.md_score_title}</div>`;
         } else {
             centerHtml = `<div class="md-score-boxes"><span class="md-score-box md-box-win md-box-wide">${escapeHtml(m.score)}</span></div>`;
         }
     } else {
-        centerHtml = `<div class="md-vs-text">VS</div>`;
+        centerHtml = `<div class="md-vs-text">${m.isDraw ? 'DRAW' : 'VS'}</div>`;
     }
 
     // 逐局比分区（无比分时的占位提示也在此分支）
@@ -416,6 +424,7 @@ function renderMatchDetail(m) {
     const bdRow = (icon, label, desc, val, extra) =>
         `<div class="md-bd-row${extra ? ' ' + extra : ''}"><span class="md-bd-ico"><i class="fa-solid ${icon}"></i></span><div class="md-bd-text"><div class="md-bd-label">${label}</div>${desc ? `<div class="md-bd-desc">${desc}</div>` : ''}</div><div class="md-bd-val">${val}</div></div>`;
     const loserNote = raw => T.md_breakdown_loser_note.replace('{n}', String(LOSER_POINT_MULTIPLIER)).replace('{val}', raw);
+    const drawNote = raw => T.md_breakdown_draw_note.replace('{val}', raw);
     // 顶部公式链：基础 → ×赛事 → ×赛制 → = 产生（一眼看懂积分怎么来；衰减步骤在下文明细行）
     const fNodes = [];
     fNodes.push(`<span class="md-f-node"><b>${bd.base}</b><i>${T.md_breakdown_base}</i></span>`);
@@ -424,25 +433,41 @@ function renderMatchDetail(m) {
     const arrow = '<span class="md-f-arrow"><i class="fa-solid fa-angle-right"></i></span>';
     const formulaHtml = `<div class="md-formula">${fNodes.join(arrow)}<span class="md-f-arrow"><i class="fa-solid fa-equals"></i></span><span class="md-f-node md-f-res"><b>${m.rawW >= 0 ? '+' : ''}${m.rawW.toFixed(1)}</b><i>${T.md_breakdown_result}</i></span></div>`;
     const bdRows = [];
-    bdRows.push(bdRow('fa-scale-balanced', T.md_breakdown_base, `${T.md_breakdown_gap} ${bd.gap >= 0 ? '+' : ''}${bd.gap.toFixed(1)} · ${bd.gap >= 0 ? T.md_breakdown_base_lead : T.md_breakdown_base_upset}`, bd.base));
+    bdRows.push(bdRow('fa-scale-balanced', T.md_breakdown_base, `${T.md_breakdown_gap} ${bd.gap >= 0 ? '+' : ''}${bd.gap.toFixed(1)} · ${bd.isDraw ? T.md_breakdown_base_draw : (bd.gap >= 0 ? T.md_breakdown_base_lead : T.md_breakdown_base_upset)}`, bd.base));
     bdRows.push(bdRow('fa-trophy', T.md_breakdown_event, escapeHtml(mdTypeLabel(m.type)), `×${bd.eventC}`));
     if (!MD_WTT) bdRows.push(bdRow('fa-layer-group', T.md_breakdown_format, m.format ? escapeHtml(String(m.format).toUpperCase()) : '', `×${bd.fmtMult}`));
-    bdRows.push(bdRow('fa-bolt', `<strong>${T.md_breakdown_result}</strong>`, loserNote(Math.abs(m.rawL).toFixed(1)), mdDeltaHtml(m.rawW, m.deltaW, false), 'md-bd-total'));
-    if (MD_WTT) {
-        bdRows.push(bdRow('fa-clock', T.md_breakdown_decay, '', T.md_breakdown_decay_off));
+    if (bd.isDraw) {
+        // 平局：产生分为双方各自净额的基数（0.1×raw / WTT 为 0），结果行展示双方各得
+        bdRows.push(bdRow('fa-bolt', `<strong>${T.md_breakdown_result}</strong>`, drawNote(Math.abs(m.rawW).toFixed(1)), mdDeltaHtml(m.rawW, m.deltaW, false), 'md-bd-total'));
+        if (MD_WTT) {
+            bdRows.push(bdRow('fa-clock', T.md_breakdown_decay, '', T.md_breakdown_decay_off));
+        } else {
+            const decayVal = Math.abs(bd.timeWW - bd.timeWL) < 1e-9
+                ? `×${bd.timeWW.toFixed(3)}`
+                : `${T.md_winner_badge} ×${bd.timeWW.toFixed(3)} · ${T.md_loser_badge} ×${bd.timeWL.toFixed(3)}`;
+            bdRows.push(bdRow('fa-clock', T.md_breakdown_decay, '', decayVal));
+            bdRows.push(bdRow('fa-check-double', T.md_eff_now, drawNote(Math.abs(m.deltaW).toFixed(1)), mdDeltaHtml(m.deltaW, m.deltaW, false), 'md-bd-total'));
+        }
     } else {
-        // 胜负双方衰减权重一般不同（各自 球员×类型 批次的定格日不同）：不同则分开展示
-        const decayVal = Math.abs(bd.timeWW - bd.timeWL) < 1e-9
-            ? `×${bd.timeWW.toFixed(3)}`
-            : `${T.md_winner_badge} ×${bd.timeWW.toFixed(3)} · ${T.md_loser_badge} ×${bd.timeWL.toFixed(3)}`;
-        bdRows.push(bdRow('fa-clock', T.md_breakdown_decay, '', decayVal));
-        bdRows.push(bdRow('fa-check-double', T.md_eff_now, loserNote(Math.abs(m.deltaL).toFixed(1)), mdDeltaHtml(m.deltaW, m.deltaW, false), 'md-bd-total'));
+        bdRows.push(bdRow('fa-bolt', `<strong>${T.md_breakdown_result}</strong>`, loserNote(Math.abs(m.rawL).toFixed(1)), mdDeltaHtml(m.rawW, m.deltaW, false), 'md-bd-total'));
+        if (MD_WTT) {
+            bdRows.push(bdRow('fa-clock', T.md_breakdown_decay, '', T.md_breakdown_decay_off));
+        } else {
+            // 胜负双方衰减权重一般不同（各自 球员×类型 批次的定格日不同）：不同则分开展示
+            const decayVal = Math.abs(bd.timeWW - bd.timeWL) < 1e-9
+                ? `×${bd.timeWW.toFixed(3)}`
+                : `${T.md_winner_badge} ×${bd.timeWW.toFixed(3)} · ${T.md_loser_badge} ×${bd.timeWL.toFixed(3)}`;
+            bdRows.push(bdRow('fa-clock', T.md_breakdown_decay, '', decayVal));
+            bdRows.push(bdRow('fa-check-double', T.md_eff_now, loserNote(Math.abs(m.deltaL).toFixed(1)), mdDeltaHtml(m.deltaW, m.deltaW, false), 'md-bd-total'));
+        }
     }
 
     // 赛前胜率卡
     const predWpct = (m.pred.w * 100), predLpct = (m.pred.l * 100);
-    const hit = m.pred.w >= 0.5;
-    const predBadge = `<span class="md-pred-badge ${hit ? 'md-pred-hit' : 'md-pred-upset'}"><i class="fa-solid ${hit ? 'fa-circle-check' : 'fa-bolt'}"></i> ${hit ? T.md_pred_hit : T.md_pred_upset}</span>`;
+    const hit = m.isDraw ? null : (m.pred.w >= 0.5);
+    const predBadge = m.isDraw
+        ? `<span class="md-pred-badge md-pred-draw"><i class="fa-solid fa-equals"></i> ${T.md_pred_draw}</span>`
+        : `<span class="md-pred-badge ${hit ? 'md-pred-hit' : 'md-pred-upset'}"><i class="fa-solid ${hit ? 'fa-circle-check' : 'fa-bolt'}"></i> ${hit ? T.md_pred_hit : T.md_pred_upset}</span>`;
     const h2hSummary = (m.h2h.wWins + m.h2h.lWins) > 0
         ? T.md_h2h_summary.replace('{n}', String(m.h2h.wWins + m.h2h.lWins)).replace('{a}', mdPlayerLink(m.w)).replace('{aw}', String(m.h2h.wWins)).replace('{b}', mdPlayerLink(m.l)).replace('{bw}', String(m.h2h.lWins))
         : T.md_h2h_none;

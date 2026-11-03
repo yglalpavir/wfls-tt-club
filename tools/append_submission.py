@@ -11,6 +11,7 @@
    - 日期合法且不晚于今天
    - 比赛记录：胜者/负者成对、不自弈、姓名已登记（别名自动规范化为正式姓名）、
      类型 ∈ event-coefficient.json、显式赛制合法
+   - 可选「结果: 平」= 平局记录（比分须为相等局数如 2-2；局分双方赢局数须相等）
    - 双打记录（类型=双打）胜者/负者必须是 "甲/乙" 两人组合（拆半逐个查登记，
      自弈按成员集合比较，A/B 与 B/A 同样拦截）；其他类型禁用组合名
    - 加分记录：对象已登记、分数可解析为非零数值（规范化为带符号字符串）
@@ -39,7 +40,7 @@ PLAYERS = os.path.join(ROOT, "data", "players.json")
 COEFF = os.path.join(ROOT, "data", "event-coefficient.json")
 SUBMISSION_LOG = os.path.join(ROOT, "data", "submission-log.json")
 
-ALLOWED_KEYS = {"日期", "类型", "赛制", "胜者", "负者", "对象", "分数", "比分", "局分"}
+ALLOWED_KEYS = {"日期", "类型", "赛制", "胜者", "负者", "对象", "分数", "比分", "局分", "结果"}
 WINS_NEEDED = {"bo1": 1, "bo3": 2, "bo5": 3, "bo7": 4}
 FENCE_RE = re.compile(r"```(?:json|JSON)\s*\n(.*?)```", re.DOTALL)
 TOTAL_SCORE_RE = re.compile(r"^(\d{1,2})\s*[-:：]\s*(\d{1,2})$")
@@ -301,6 +302,15 @@ def validate_match(rec, today, names, alias_map, coeff_types, format_keys, defau
         if key not in ALLOWED_KEYS:
             errs.append(f"未知字段「{key}」（允许：{sorted(ALLOWED_KEYS)}）")
 
+    # 结果（可选）：仅接受「平」= 平局记录（胜者/负者仍须为两名对局成员，不分胜负）
+    draw_raw = rec.get("结果")
+    if draw_raw not in (None, ""):
+        if str(draw_raw).strip() != "平":
+            errs.append(f"结果 {draw_raw!r} 不合法（仅支持「平」标记平局；分出胜负时省略该字段）")
+        else:
+            out["结果"] = "平"
+    is_draw = out.get("结果") == "平"
+
     d = rec.get("日期")
     if not valid_iso(d):
         errs.append(f"日期 {d!r} 不是合法 YYYY-MM-DD")
@@ -398,7 +408,15 @@ def validate_match(rec, today, names, alias_map, coeff_types, format_keys, defau
             errs.append(f"总比分 {total!r} 格式应为「胜者局数-负者局数」，如 3-1")
         else:
             w, l = int(m.group(1)), int(m.group(2))
-            if w <= l:
+            if is_draw:
+                # 平局：局数相等（如 2-2），胜方局数上限 4 不变
+                if w != l:
+                    errs.append(f"总比分 {w}-{l}：平局须为相等局数（如 2-2）；分出胜负请删去「结果: 平」")
+                elif w > 4:
+                    errs.append(f"总比分 {w}-{l}：胜方最多 4 局（bo7 上限）")
+                else:
+                    out["比分"] = f"{w}-{l}"
+            elif w <= l:
                 errs.append(f"总比分 {w}-{l}：胜者局数必须大于负者局数（胜者在前的口径）")
             elif w > 4:
                 errs.append(f"总比分 {w}-{l}：单打最多 bo7（胜方最多 4 局）")
@@ -429,6 +447,13 @@ def validate_match(rec, today, names, alias_map, coeff_types, format_keys, defau
                 if wins_left != w or len(parsed) != w + l:
                     errs.append(f"局分 {parsed} 与总比分 {w}-{l} 不自洽（应共 {w + l} 局、胜方赢 {w} 局）")
                 else:
+                    out["局分"] = parsed
+            elif is_draw:
+                # 仅有局分的平局：双方局数相等才成立
+                if wins_left != len(parsed) - wins_left:
+                    errs.append(f"局分 {parsed} 与「结果: 平」不符（平局双方赢局数须相等，如 2-2）")
+                else:
+                    out["比分"] = f"{wins_left}-{len(parsed) - wins_left}"
                     out["局分"] = parsed
             else:
                 if wins_left <= len(parsed) - wins_left:
@@ -498,7 +523,10 @@ def main():
     for i, rec in enumerate(records, 1):
         if rec.get("胜者") or rec.get("负者"):
             errs, out = validate_match(rec, today, names, alias_map, coeff_types, format_keys, default_formats)
-            desc = f"{out.get('日期')} {out.get('类型')}·{out.get('赛制')} {out.get('胜者')} 胜 {out.get('负者')}" if not errs else ""
+            if out.get("结果") == "平":
+                desc = f"{out.get('日期')} {out.get('类型')}·{out.get('赛制')} {out.get('胜者')} 平 {out.get('负者')}" if not errs else ""
+            else:
+                desc = f"{out.get('日期')} {out.get('类型')}·{out.get('赛制')} {out.get('胜者')} 胜 {out.get('负者')}" if not errs else ""
         elif rec.get("对象") or rec.get("类型") == "比赛结果加分":
             errs, out = validate_bonus(rec, today, names, alias_map)
             desc = f"{out.get('日期')} 调整 {out.get('对象')} {out.get('分数')}" if not errs else ""
