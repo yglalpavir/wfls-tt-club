@@ -1,0 +1,4 @@
+[     617ms] [LOG] [PersonalStats] 折线图设置加载完成 @ https://yglalpavir.github.io/wfls-tt-club/js/personal-stats.js:1128
+[     736ms] [ERROR] [PlayerPage] 初始化失败 ReferenceError: draws is not defined
+    at renderPersonalStats (https://yglalpavir.github.io/wfls-tt-club/js/personal-stats.js:557:41)
+    at initPlayerPage (https://yglalpavir.github.io/wfls-tt-club/js/player-page.js:263:9) @ https://yglalpavir.github.io/wfls-tt-club/js/player-page.js:268

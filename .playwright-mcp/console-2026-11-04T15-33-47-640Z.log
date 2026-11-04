@@ -1,0 +1,5 @@
+[     234ms] [LOG] [DataViz] 开始初始化，rankingTimeline 长度: 41 scoreLogData 长度: 475 @ http://127.0.0.1:8790/js/data-viz.js:41
+[     235ms] [LOG] [DataViz] 成功获取球员列表: 57 人 @ http://127.0.0.1:8790/js/data-viz.js:71
+[     235ms] [LOG] [DataViz] 初始化完成 @ http://127.0.0.1:8790/js/data-viz.js:129
+[     369ms] [LOG] [DataViz] 折线图设置加载完成 @ http://127.0.0.1:8790/js/data-viz.js:33
+[     371ms] [LOG] [DataViz] renderCompareSelects: 已加载 57 名球员 @ http://127.0.0.1:8790/js/data-viz.js:246

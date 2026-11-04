@@ -1,0 +1,280 @@
+- generic [active] [ref=f10e1]:
+  - navigation [ref=f10e2]:
+    - generic [ref=f10e3]:
+      - link " WFLS TT Club" [ref=f10e4] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=f10e5]: 
+        - generic [ref=f10e7]: WFLS TT Club
+      - list [ref=f10e8]:
+        - listitem [ref=f10e9]:
+          - link "Home" [ref=f10e10] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=f10e11]:
+          - link "News" [ref=f10e12] [cursor=pointer]:
+            - /url: news.html
+        - listitem [ref=f10e13]:
+          - link "Competitions" [ref=f10e14] [cursor=pointer]:
+            - /url: competitions.html
+        - listitem [ref=f10e15]:
+          - link "Ranking Beta" [ref=f10e16] [cursor=pointer]:
+            - /url: ranking.html
+        - listitem [ref=f10e17]:
+          - link "More... " [ref=f10e18] [cursor=pointer]:
+            - /url: "#"
+            - text: More...
+            - generic [ref=f10e19]: 
+        - listitem [ref=f10e20]:
+          - link "Contact" [ref=f10e21] [cursor=pointer]:
+            - /url: contact.html
+      - generic [ref=f10e22]:
+        - button "搜索" [ref=f10e23] [cursor=pointer]:
+          - generic [ref=f10e24]: 
+        - button "切换主题" [ref=f10e25] [cursor=pointer]:
+          - generic [ref=f10e26]: 
+        - button "切换语言" [ref=f10e27] [cursor=pointer]:
+          - generic [ref=f10e28]: EN
+  - generic [ref=f10e31]:
+    - generic [ref=f10e32]: Data Visualization
+    - heading "数据可视化" [level=1] [ref=f10e33]
+    - paragraph [ref=f10e34]: 积分趋势 · 排名变化 · 球员对比
+  - navigation [ref=f10e35]:
+    - list [ref=f10e36]:
+      - listitem [ref=f10e37]:
+        - link "排名动态竞速 Top 15" [ref=f10e38] [cursor=pointer]:
+          - /url: "#viz-race"
+      - listitem [ref=f10e39]:
+        - link "积分趋势" [ref=f10e40] [cursor=pointer]:
+          - /url: "#viz-points"
+      - listitem [ref=f10e41]:
+        - link "排名变化河流图" [ref=f10e42] [cursor=pointer]:
+          - /url: "#viz-stream"
+      - listitem [ref=f10e43]:
+        - link "球员对比" [ref=f10e44] [cursor=pointer]:
+          - /url: "#viz-compare"
+      - listitem [ref=f10e45]:
+        - link "战绩统计" [ref=f10e46] [cursor=pointer]:
+          - /url: "#viz-record"
+      - listitem [ref=f10e47]:
+        - link "场次×积分效率" [ref=f10e48] [cursor=pointer]:
+          - /url: "#viz-efficiency"
+      - listitem [ref=f10e49]:
+        - link "交手热力矩阵" [ref=f10e50] [cursor=pointer]:
+          - /url: "#viz-heatmap"
+      - listitem [ref=f10e51]:
+        - link "比赛频次时间轴" [ref=f10e52] [cursor=pointer]:
+          - /url: "#viz-freq"
+      - listitem [ref=f10e53]:
+        - link "积分区间分布" [ref=f10e54] [cursor=pointer]:
+          - /url: "#viz-dist"
+  - generic [ref=f10e56]:
+    - generic [ref=f10e57]:
+      - generic [ref=f10e58]: Bar Chart Race
+      - heading "排名动态竞速 Top 15" [level=2] [ref=f10e59]
+      - paragraph [ref=f10e60]: 拖动滑块或播放，查看排名随时间变化
+    - generic [ref=f10e65]:
+      - button "播放/暂停" [ref=f10e66] [cursor=pointer]:
+        - generic [ref=f10e67]: 
+        - generic [ref=f10e68]: 播放
+      - slider [ref=f10e69] [cursor=pointer]: "0"
+      - generic [ref=f10e70]:
+        - generic [ref=f10e71]: 速度
+        - combobox "速度" [ref=f10e72] [cursor=pointer]:
+          - option "0.5×"
+          - option "1×" [selected]
+          - option "1.5×"
+          - option "2×"
+    - generic [ref=f10e73]:
+      - generic [ref=f10e74]: Line Chart
+      - heading "积分趋势" [level=2] [ref=f10e75]
+      - generic [ref=f10e76]:
+        - generic [ref=f10e77]: 最近
+        - spinbutton "显示最近N个数据点" [ref=f10e78]: "20"
+        - generic [ref=f10e79]: 个数据点
+    - generic [ref=f10e81]:
+      - heading "选择球员（最多8人）" [level=3] [ref=f10e82]
+      - paragraph [ref=f10e86]: 正在加载 赛事系数（4/6）
+      - button "应用" [ref=f10e87] [cursor=pointer]
+    - generic [ref=f10e90]:
+      - generic [ref=f10e91]: Stream Graph
+      - heading "排名变化河流图" [level=2] [ref=f10e92]
+      - generic [ref=f10e93]:
+        - generic [ref=f10e94]: 显示前
+        - spinbutton "填写1-20的任意正整数" [ref=f10e95]: "10"
+        - generic [ref=f10e96]: 名球员
+      - generic [ref=f10e97]:
+        - generic [ref=f10e98]: 最近
+        - spinbutton "显示最近N个数据点" [ref=f10e99]: "20"
+        - generic [ref=f10e100]: 个数据点
+    - generic [ref=f10e103]:
+      - generic [ref=f10e104]: Radar
+      - heading "六维战力雷达" [level=2] [ref=f10e105]
+    - generic [ref=f10e106]:
+      - generic [ref=f10e107]:
+        - generic [ref=f10e108]:
+          - generic [ref=f10e109]: 球员 A
+          - combobox [ref=f10e110] [cursor=pointer]:
+            - option "-- 选择球员 --" [selected]
+        - generic [ref=f10e111]: VS
+        - generic [ref=f10e112]:
+          - generic [ref=f10e113]: 球员 B
+          - combobox [ref=f10e114] [cursor=pointer]:
+            - option "-- 选择球员 --" [selected]
+        - button "对比" [ref=f10e115] [cursor=pointer]
+      - generic [ref=f10e117]:
+        - generic [ref=f10e118]: 
+        - paragraph [ref=f10e119]: 选择一至两名球员查看六维战力雷达
+    - generic [ref=f10e120]:
+      - generic [ref=f10e121]: Comparison
+      - heading "球员对比" [level=2] [ref=f10e122]
+    - generic [ref=f10e123]:
+      - generic [ref=f10e124]:
+        - generic [ref=f10e125]:
+          - generic [ref=f10e126]: 球员 A
+          - combobox [ref=f10e127] [cursor=pointer]:
+            - option "-- 选择球员 --" [selected]
+        - generic [ref=f10e128]: VS
+        - generic [ref=f10e129]:
+          - generic [ref=f10e130]: 球员 B
+          - combobox [ref=f10e131] [cursor=pointer]:
+            - option "-- 选择球员 --" [selected]
+        - button "对比" [ref=f10e132] [cursor=pointer]
+      - generic [ref=f10e134]:
+        - generic [ref=f10e135]: 
+        - paragraph [ref=f10e136]: 选择两名球员进行对比分析
+    - generic [ref=f10e137]:
+      - generic [ref=f10e138]: Match Records
+      - heading "战绩统计" [level=2] [ref=f10e139]
+      - generic [ref=f10e140]:
+        - generic [ref=f10e141]: 显示前
+        - spinbutton "填写1-20的任意正整数" [ref=f10e142]: "10"
+        - generic [ref=f10e143]: 名球员
+    - generic [ref=f10e146]:
+      - generic [ref=f10e147]: Efficiency Scatter
+      - heading "场次×积分效率" [level=2] [ref=f10e148]
+      - generic [ref=f10e149]:
+        - generic [ref=f10e150]: 显示前
+        - spinbutton "填写1-20的任意正整数" [ref=f10e151]: "15"
+        - generic [ref=f10e152]: 名球员
+    - generic [ref=f10e155]:
+      - generic [ref=f10e156]: Head-to-Head Matrix
+      - heading "交手热力矩阵" [level=2] [ref=f10e157]
+      - generic [ref=f10e158]:
+        - generic [ref=f10e159]: 显示前
+        - spinbutton "填写1-20的任意正整数" [ref=f10e160]: "8"
+        - generic [ref=f10e161]: 名球员
+      - generic [ref=f10e162]:
+        - generic [ref=f10e163]: 显示模式
+        - combobox [ref=f10e164] [cursor=pointer]:
+          - option "胜场数" [selected]
+          - option "胜率"
+    - generic [ref=f10e166]:
+      - generic [ref=f10e167]: 
+      - paragraph [ref=f10e168]: 暂无数据
+    - generic [ref=f10e169]:
+      - generic [ref=f10e170]: Match Frequency
+      - heading "比赛频次时间轴" [level=2] [ref=f10e171]
+      - generic [ref=f10e172]:
+        - generic [ref=f10e173]: 时间粒度
+        - combobox [ref=f10e174] [cursor=pointer]:
+          - option "按周" [selected]
+          - option "按月"
+      - generic [ref=f10e175]:
+        - generic [ref=f10e176]: 最近
+        - spinbutton "显示最近N个数据点" [ref=f10e177]: "24"
+        - generic [ref=f10e178]: 个数据点
+    - generic [ref=f10e181]:
+      - generic [ref=f10e182]: Score Distribution
+      - heading "积分区间分布" [level=2] [ref=f10e183]
+      - generic [ref=f10e184]:
+        - generic [ref=f10e185]: 分档数
+        - spinbutton "填写4-100的任意正整数" [ref=f10e186]: "10"
+    - generic [ref=f10e189]:
+      - generic [ref=f10e190]: Season Review
+      - heading "赛季总结" [level=2] [ref=f10e191]
+      - link " 查看赛季总结" [ref=f10e192] [cursor=pointer]:
+        - /url: season-review.html
+        - generic [ref=f10e193]: 
+        - generic [ref=f10e194]: 查看赛季总结
+  - contentinfo [ref=f10e195]:
+    - generic [ref=f10e196]:
+      - generic [ref=f10e197]:
+        - generic [ref=f10e198]:
+          - link "WFLS Table Tennis Club" [ref=f10e199] [cursor=pointer]:
+            - /url: index.html
+          - paragraph [ref=f10e200]: 武汉外国语学校 · 湖北省武汉市
+          - paragraph [ref=f10e201]: 挥拍逐梦，旋转青春
+        - navigation [ref=f10e202]:
+          - heading "社团" [level=3] [ref=f10e203]
+          - list [ref=f10e204]:
+            - listitem [ref=f10e205]:
+              - link "Home" [ref=f10e206] [cursor=pointer]:
+                - /url: index.html
+            - listitem [ref=f10e207]:
+              - link "News" [ref=f10e208] [cursor=pointer]:
+                - /url: news.html
+            - listitem [ref=f10e209]:
+              - link "Competitions" [ref=f10e210] [cursor=pointer]:
+                - /url: competitions.html
+            - listitem [ref=f10e211]:
+              - link "社团骨干" [ref=f10e212] [cursor=pointer]:
+                - /url: members.html
+            - listitem [ref=f10e213]:
+              - link "赛季总结" [ref=f10e214] [cursor=pointer]:
+                - /url: season-review.html
+        - navigation [ref=f10e215]:
+          - heading "数据" [level=3] [ref=f10e216]
+          - list [ref=f10e217]:
+            - listitem [ref=f10e218]:
+              - link "Ranking" [ref=f10e219] [cursor=pointer]:
+                - /url: ranking.html
+            - listitem [ref=f10e220]:
+              - link "Data Viz" [ref=f10e221] [cursor=pointer]:
+                - /url: data_viz.html
+            - listitem [ref=f10e222]:
+              - link "个人数据" [ref=f10e223] [cursor=pointer]:
+                - /url: personal_stats.html
+            - listitem [ref=f10e224]:
+              - link "Data Scale" [ref=f10e225] [cursor=pointer]:
+                - /url: data_scale.html
+            - listitem [ref=f10e226]:
+              - link "WTT Ranking" [ref=f10e227] [cursor=pointer]:
+                - /url: wtt_ranking.html
+            - listitem [ref=f10e228]:
+              - link "WTT Data Viz" [ref=f10e229] [cursor=pointer]:
+                - /url: wtt_dataviz.html
+        - navigation [ref=f10e230]:
+          - heading "信息" [level=3] [ref=f10e231]
+          - list [ref=f10e232]:
+            - listitem [ref=f10e233]:
+              - link "提交战绩" [ref=f10e234] [cursor=pointer]:
+                - /url: submit.html
+            - listitem [ref=f10e235]:
+              - link "Q&A" [ref=f10e236] [cursor=pointer]:
+                - /url: qa.html
+            - listitem [ref=f10e237]:
+              - link "更新日志" [ref=f10e238] [cursor=pointer]:
+                - /url: changelog.html
+            - listitem [ref=f10e239]:
+              - link "网站文档" [ref=f10e240] [cursor=pointer]:
+                - /url: docs.html
+            - listitem [ref=f10e241]:
+              - link "Umpire Training" [ref=f10e242] [cursor=pointer]:
+                - /url: umpire-training.html
+            - listitem [ref=f10e243]:
+              - link "Contact" [ref=f10e244] [cursor=pointer]:
+                - /url: contact.html
+      - generic [ref=f10e245]:
+        - generic [ref=f10e246]:
+          - generic [ref=f10e247]: 关注我们
+          - generic [ref=f10e248]:
+            - button "社团QQ群二维码" [ref=f10e249] [cursor=pointer]:
+              - generic [ref=f10e250]: 
+            - link "GitHub" [ref=f10e251] [cursor=pointer]:
+              - /url: https://github.com/yglalpavir/wfls-tt-club
+              - generic [ref=f10e252]: 
+        - generic [ref=f10e253]:
+          - link "社团理念" [ref=f10e254] [cursor=pointer]:
+            - /url: index.html#philosophy
+          - link "积分规则" [ref=f10e255] [cursor=pointer]:
+            - /url: qa.html
+        - paragraph [ref=f10e256]: ©2026 WFLS Table Tennis Club. All rights reserved

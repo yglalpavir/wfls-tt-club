@@ -1,0 +1,1154 @@
+- generic [active] [ref=f21e1]:
+  - navigation [ref=f21e2]:
+    - generic [ref=f21e3]:
+      - link " WFLS TT Club" [ref=f21e4] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=f21e5]: 
+        - generic [ref=f21e7]: WFLS TT Club
+      - list [ref=f21e8]:
+        - listitem [ref=f21e9]:
+          - link "Home" [ref=f21e10] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=f21e11]:
+          - link "News" [ref=f21e12] [cursor=pointer]:
+            - /url: news.html
+        - listitem [ref=f21e13]:
+          - link "Competitions" [ref=f21e14] [cursor=pointer]:
+            - /url: competitions.html
+        - listitem [ref=f21e15]:
+          - link "Ranking Beta" [ref=f21e16] [cursor=pointer]:
+            - /url: ranking.html
+        - listitem [ref=f21e17]:
+          - link "More... " [ref=f21e18] [cursor=pointer]:
+            - /url: "#"
+            - text: More...
+            - generic [ref=f21e19]: 
+        - listitem [ref=f21e20]:
+          - link "Contact" [ref=f21e21] [cursor=pointer]:
+            - /url: contact.html
+      - generic [ref=f21e22]:
+        - button "搜索" [ref=f21e23] [cursor=pointer]:
+          - generic [ref=f21e24]: 
+        - button "切换主题" [ref=f21e25] [cursor=pointer]:
+          - generic [ref=f21e26]: 
+        - button "切换语言" [ref=f21e27] [cursor=pointer]:
+          - generic [ref=f21e28]: EN
+  - generic [ref=f21e31]:
+    - generic [ref=f21e32]: Personal Stats
+    - heading "个人数据" [level=1] [ref=f21e33]
+    - paragraph [ref=f21e34]: 个人比赛数据统计
+  - generic [ref=f21e36]:
+    - generic [ref=f21e37]:
+      - generic [ref=f21e38]: Personal Stats
+      - heading "个人数据" [level=2] [ref=f21e39]
+    - generic [ref=f21e40]:
+      - generic [ref=f21e41]:
+        - generic [ref=f21e42]:
+          - generic [ref=f21e43]:
+            - generic [ref=f21e114]: 
+            - text: 按标签筛选
+          - generic [ref=f21e115]:
+            - generic [ref=f21e116] [cursor=pointer]:
+              - text: 社长/副社长
+              - generic [ref=f21e117]: "7"
+            - generic [ref=f21e118] [cursor=pointer]:
+              - text: 大满贯
+              - generic [ref=f21e119]: "1"
+            - generic [ref=f21e120] [cursor=pointer]:
+              - text: 校队成员
+              - generic [ref=f21e121]: "12"
+            - generic [ref=f21e122] [cursor=pointer]:
+              - text: 校二直板
+              - generic [ref=f21e123]: "1"
+            - generic [ref=f21e124] [cursor=pointer]:
+              - text: 校一直板
+              - generic [ref=f21e125]: "1"
+        - generic [ref=f21e45]:
+          - generic [ref=f21e46]: 搜索球员
+          - generic [ref=f21e47]:
+            - generic: 
+            - textbox "搜索球员姓名 / 编号 / 标签（支持拼音）" [ref=f21e48]
+      - generic [ref=f21e126]:
+        - generic [ref=f21e127] [cursor=pointer]:
+          - generic [ref=f21e128]:
+            - heading "魏罗瑞" [level=3] [ref=f21e129]
+            - generic [ref=f21e130]: "#10010"
+          - generic [ref=f21e131]:
+            - generic [ref=f21e132]: 25-26年副社长
+            - generic [ref=f21e133]: 校队成员
+          - generic [ref=f21e134]:
+            - generic "当前积分" [ref=f21e135]:
+              - generic [ref=f21e136]: 
+              - text: "2123.7"
+            - generic "最高排名" [ref=f21e137]:
+              - generic [ref=f21e138]: 
+              - text: "#1"
+            - generic "总场次" [ref=f21e139]:
+              - generic [ref=f21e140]: 
+              - text: "38"
+            - generic "胜率" [ref=f21e141]:
+              - generic [ref=f21e142]: 
+              - text: 53%
+        - generic [ref=f21e143] [cursor=pointer]:
+          - generic [ref=f21e144]:
+            - heading "付大卫" [level=3] [ref=f21e145]
+            - generic [ref=f21e146]: "#10001"
+          - generic [ref=f21e148]:
+            - generic "当前积分" [ref=f21e149]:
+              - generic [ref=f21e150]: 
+              - text: "2101.2"
+            - generic "最高排名" [ref=f21e151]:
+              - generic [ref=f21e152]: 
+              - text: "#2"
+            - generic "总场次" [ref=f21e153]:
+              - generic [ref=f21e154]: 
+              - text: "43"
+            - generic "胜率" [ref=f21e155]:
+              - generic [ref=f21e156]: 
+              - text: 56%
+        - generic [ref=f21e157] [cursor=pointer]:
+          - generic [ref=f21e158]:
+            - heading "任峻贤" [level=3] [ref=f21e159]
+            - generic [ref=f21e160]: "#10009"
+          - generic [ref=f21e161]: 校队成员
+          - generic [ref=f21e163]:
+            - generic "当前积分" [ref=f21e164]:
+              - generic [ref=f21e165]: 
+              - text: "2088.3"
+            - generic "最高排名" [ref=f21e166]:
+              - generic [ref=f21e167]: 
+              - text: "#3"
+            - generic "总场次" [ref=f21e168]:
+              - generic [ref=f21e169]: 
+              - text: "106"
+            - generic "胜率" [ref=f21e170]:
+              - generic [ref=f21e171]: 
+              - text: 52%
+        - generic [ref=f21e172] [cursor=pointer]:
+          - generic [ref=f21e173]:
+            - heading "任安喆" [level=3] [ref=f21e174]
+            - generic [ref=f21e175]: "#10008"
+          - generic [ref=f21e176]:
+            - generic [ref=f21e177]: 26-27年副社长
+            - generic [ref=f21e178]: 校队成员
+          - generic [ref=f21e179]:
+            - generic "当前积分" [ref=f21e180]:
+              - generic [ref=f21e181]: 
+              - text: "2079.9"
+            - generic "最高排名" [ref=f21e182]:
+              - generic [ref=f21e183]: 
+              - text: "#4"
+            - generic "总场次" [ref=f21e184]:
+              - generic [ref=f21e185]: 
+              - text: "14"
+            - generic "胜率" [ref=f21e186]:
+              - generic [ref=f21e187]: 
+              - text: 86%
+        - generic [ref=f21e188] [cursor=pointer]:
+          - generic [ref=f21e189]:
+            - heading "祁子傲" [level=3] [ref=f21e190]
+            - generic [ref=f21e191]: "#10007"
+          - generic [ref=f21e192]:
+            - generic [ref=f21e193]: 25-26年社长
+            - generic [ref=f21e194]: 24-25年副社长
+            - generic [ref=f21e195]: 校队成员
+          - generic [ref=f21e196]:
+            - generic "当前积分" [ref=f21e197]:
+              - generic [ref=f21e198]: 
+              - text: "2079.7"
+            - generic "最高排名" [ref=f21e199]:
+              - generic [ref=f21e200]: 
+              - text: "#5"
+            - generic "总场次" [ref=f21e201]:
+              - generic [ref=f21e202]: 
+              - text: "3"
+            - generic "胜率" [ref=f21e203]:
+              - generic [ref=f21e204]: 
+              - text: 100%
+        - generic [ref=f21e205] [cursor=pointer]:
+          - generic [ref=f21e206]:
+            - heading "龚雨煊" [level=3] [ref=f21e207]
+            - generic [ref=f21e208]: "#10002"
+          - generic [ref=f21e209]:
+            - generic [ref=f21e210]: 26-27年社长
+            - generic [ref=f21e211]: 校队成员
+          - generic [ref=f21e212]:
+            - generic "当前积分" [ref=f21e213]:
+              - generic [ref=f21e214]: 
+              - text: "2073.0"
+            - generic "最高排名" [ref=f21e215]:
+              - generic [ref=f21e216]: 
+              - text: "#6"
+            - generic "总场次" [ref=f21e217]:
+              - generic [ref=f21e218]: 
+              - text: "17"
+            - generic "胜率" [ref=f21e219]:
+              - generic [ref=f21e220]: 
+              - text: 71%
+        - generic [ref=f21e221] [cursor=pointer]:
+          - generic [ref=f21e222]:
+            - heading "陈瑜萱" [level=3] [ref=f21e223]
+            - generic [ref=f21e224]: "#10000"
+          - generic [ref=f21e225]:
+            - generic [ref=f21e226]: 25-26年副社长
+            - generic [ref=f21e227]: 校队成员
+            - generic [ref=f21e228]: 大满贯
+          - generic [ref=f21e229]:
+            - generic "当前积分" [ref=f21e230]:
+              - generic [ref=f21e231]: 
+              - text: "2070.7"
+            - generic "最高排名" [ref=f21e232]:
+              - generic [ref=f21e233]: 
+              - text: "#7"
+            - generic "总场次" [ref=f21e234]:
+              - generic [ref=f21e235]: 
+              - text: "5"
+            - generic "胜率" [ref=f21e236]:
+              - generic [ref=f21e237]: 
+              - text: 60%
+        - generic [ref=f21e238] [cursor=pointer]:
+          - generic [ref=f21e239]:
+            - heading "梅哲宇" [level=3] [ref=f21e240]
+            - generic [ref=f21e241]: "#10011"
+          - generic [ref=f21e242]:
+            - generic [ref=f21e243]: 26-27年副社长
+            - generic [ref=f21e244]: 校队成员
+          - generic [ref=f21e245]:
+            - generic "当前积分" [ref=f21e246]:
+              - generic [ref=f21e247]: 
+              - text: "2064.6"
+            - generic "最高排名" [ref=f21e248]:
+              - generic [ref=f21e249]: 
+              - text: "#8"
+            - generic "总场次" [ref=f21e250]:
+              - generic [ref=f21e251]: 
+              - text: "9"
+            - generic "胜率" [ref=f21e252]:
+              - generic [ref=f21e253]: 
+              - text: 67%
+        - generic [ref=f21e254] [cursor=pointer]:
+          - generic [ref=f21e255]:
+            - heading "王成悦" [level=3] [ref=f21e256]
+            - generic [ref=f21e257]: "#10012"
+          - generic [ref=f21e259]:
+            - generic "当前积分" [ref=f21e260]:
+              - generic [ref=f21e261]: 
+              - text: "2064.4"
+            - generic "最高排名" [ref=f21e262]:
+              - generic [ref=f21e263]: 
+              - text: "#9"
+            - generic "总场次" [ref=f21e264]:
+              - generic [ref=f21e265]: 
+              - text: "14"
+            - generic "胜率" [ref=f21e266]:
+              - generic [ref=f21e267]: 
+              - text: 29%
+        - generic [ref=f21e268] [cursor=pointer]:
+          - generic [ref=f21e269]:
+            - heading "姜子润" [level=3] [ref=f21e270]
+            - generic [ref=f21e271]: "#10004"
+          - generic [ref=f21e272]: 校队成员
+          - generic [ref=f21e274]:
+            - generic "当前积分" [ref=f21e275]:
+              - generic [ref=f21e276]: 
+              - text: "2056.8"
+            - generic "最高排名" [ref=f21e277]:
+              - generic [ref=f21e278]: 
+              - text: "#10"
+            - generic "总场次" [ref=f21e279]:
+              - generic [ref=f21e280]: 
+              - text: "15"
+            - generic "胜率" [ref=f21e281]:
+              - generic [ref=f21e282]: 
+              - text: 73%
+        - generic [ref=f21e283] [cursor=pointer]:
+          - generic [ref=f21e284]:
+            - heading "谷子易" [level=3] [ref=f21e285]
+            - generic [ref=f21e286]: "#10003"
+          - generic [ref=f21e287]:
+            - generic [ref=f21e288]: 26-27年副社长
+            - generic [ref=f21e289]: 校队成员
+          - generic [ref=f21e290]:
+            - generic "当前积分" [ref=f21e291]:
+              - generic [ref=f21e292]: 
+              - text: "2043.7"
+            - generic "最高排名" [ref=f21e293]:
+              - generic [ref=f21e294]: 
+              - text: "#11"
+            - generic "总场次" [ref=f21e295]:
+              - generic [ref=f21e296]: 
+              - text: "13"
+            - generic "胜率" [ref=f21e297]:
+              - generic [ref=f21e298]: 
+              - text: 77%
+        - generic [ref=f21e299] [cursor=pointer]:
+          - generic [ref=f21e300]:
+            - heading "李南熠" [level=3] [ref=f21e301]
+            - generic [ref=f21e302]: "#10005"
+          - generic [ref=f21e303]:
+            - generic [ref=f21e304]: 校队成员
+            - generic [ref=f21e305]: 校一直板
+          - generic [ref=f21e306]:
+            - generic "当前积分" [ref=f21e307]:
+              - generic [ref=f21e308]: 
+              - text: "2038.9"
+            - generic "最高排名" [ref=f21e309]:
+              - generic [ref=f21e310]: 
+              - text: "-"
+            - generic "总场次" [ref=f21e311]:
+              - generic [ref=f21e312]: 
+              - text: "0"
+            - generic "胜率" [ref=f21e313]:
+              - generic [ref=f21e314]: 
+              - text: 0%
+        - generic [ref=f21e315] [cursor=pointer]:
+          - generic [ref=f21e316]:
+            - heading "王天森" [level=3] [ref=f21e317]
+            - generic [ref=f21e318]: "#10043"
+          - generic [ref=f21e319]: 校队成员
+          - generic [ref=f21e321]:
+            - generic "当前积分" [ref=f21e322]:
+              - generic [ref=f21e323]: 
+              - text: "2024.5"
+            - generic "最高排名" [ref=f21e324]:
+              - generic [ref=f21e325]: 
+              - text: "#12"
+            - generic "总场次" [ref=f21e326]:
+              - generic [ref=f21e327]: 
+              - text: "1"
+            - generic "胜率" [ref=f21e328]:
+              - generic [ref=f21e329]: 
+              - text: 0%
+        - generic [ref=f21e330] [cursor=pointer]:
+          - generic [ref=f21e331]:
+            - heading "徐耀鹏" [level=3] [ref=f21e332]
+            - generic [ref=f21e333]: "#10050"
+          - generic [ref=f21e335]:
+            - generic "当前积分" [ref=f21e336]:
+              - generic [ref=f21e337]: 
+              - text: "2007.9"
+            - generic "最高排名" [ref=f21e338]:
+              - generic [ref=f21e339]: 
+              - text: "#13"
+            - generic "总场次" [ref=f21e340]:
+              - generic [ref=f21e341]: 
+              - text: "15"
+            - generic "胜率" [ref=f21e342]:
+              - generic [ref=f21e343]: 
+              - text: 60%
+        - generic [ref=f21e344] [cursor=pointer]:
+          - generic [ref=f21e345]:
+            - heading "马钰恒" [level=3] [ref=f21e346]
+            - generic [ref=f21e347]: "#10053"
+          - generic [ref=f21e349]:
+            - generic "当前积分" [ref=f21e350]:
+              - generic [ref=f21e351]: 
+              - text: "2001.3"
+            - generic "最高排名" [ref=f21e352]:
+              - generic [ref=f21e353]: 
+              - text: "#14"
+            - generic "总场次" [ref=f21e354]:
+              - generic [ref=f21e355]: 
+              - text: "2"
+            - generic "胜率" [ref=f21e356]:
+              - generic [ref=f21e357]: 
+              - text: 50%
+        - generic [ref=f21e358] [cursor=pointer]:
+          - generic [ref=f21e359]:
+            - heading "冯秋源" [level=3] [ref=f21e360]
+            - generic [ref=f21e361]: "#10052"
+          - generic [ref=f21e363]:
+            - generic "当前积分" [ref=f21e364]:
+              - generic [ref=f21e365]: 
+              - text: "1991.9"
+            - generic "最高排名" [ref=f21e366]:
+              - generic [ref=f21e367]: 
+              - text: "#15"
+            - generic "总场次" [ref=f21e368]:
+              - generic [ref=f21e369]: 
+              - text: "2"
+            - generic "胜率" [ref=f21e370]:
+              - generic [ref=f21e371]: 
+              - text: 0%
+        - generic [ref=f21e372] [cursor=pointer]:
+          - generic [ref=f21e373]:
+            - heading "魏子越" [level=3] [ref=f21e374]
+            - generic [ref=f21e375]: "#10054"
+          - generic [ref=f21e377]:
+            - generic "当前积分" [ref=f21e378]:
+              - generic [ref=f21e379]: 
+              - text: "1989.9"
+            - generic "最高排名" [ref=f21e380]:
+              - generic [ref=f21e381]: 
+              - text: "#16"
+            - generic "总场次" [ref=f21e382]:
+              - generic [ref=f21e383]: 
+              - text: "2"
+            - generic "胜率" [ref=f21e384]:
+              - generic [ref=f21e385]: 
+              - text: 0%
+        - generic [ref=f21e386] [cursor=pointer]:
+          - generic [ref=f21e387]:
+            - heading "王禹涵" [level=3] [ref=f21e388]
+            - generic [ref=f21e389]: "#10049"
+          - generic [ref=f21e391]:
+            - generic "当前积分" [ref=f21e392]:
+              - generic [ref=f21e393]: 
+              - text: "1986.0"
+            - generic "最高排名" [ref=f21e394]:
+              - generic [ref=f21e395]: 
+              - text: "#17"
+            - generic "总场次" [ref=f21e396]:
+              - generic [ref=f21e397]: 
+              - text: "7"
+            - generic "胜率" [ref=f21e398]:
+              - generic [ref=f21e399]: 
+              - text: 14%
+        - generic [ref=f21e400] [cursor=pointer]:
+          - generic [ref=f21e401]:
+            - heading "彭一和" [level=3] [ref=f21e402]
+            - generic [ref=f21e403]: "#10006"
+          - generic [ref=f21e404]: 校队成员
+          - generic [ref=f21e406]:
+            - generic "当前积分" [ref=f21e407]:
+              - generic [ref=f21e408]: 
+              - text: "1962.7"
+            - generic "最高排名" [ref=f21e409]:
+              - generic [ref=f21e410]: 
+              - text: "#18"
+            - generic "总场次" [ref=f21e411]:
+              - generic [ref=f21e412]: 
+              - text: "9"
+            - generic "胜率" [ref=f21e413]:
+              - generic [ref=f21e414]: 
+              - text: 67%
+        - generic [ref=f21e415] [cursor=pointer]:
+          - generic [ref=f21e416]:
+            - heading "陶锦源" [level=3] [ref=f21e417]
+            - generic [ref=f21e418]: "#10015"
+          - generic [ref=f21e420]:
+            - generic "当前积分" [ref=f21e421]:
+              - generic [ref=f21e422]: 
+              - text: "1899.4"
+            - generic "最高排名" [ref=f21e423]:
+              - generic [ref=f21e424]: 
+              - text: "#19"
+            - generic "总场次" [ref=f21e425]:
+              - generic [ref=f21e426]: 
+              - text: "3"
+            - generic "胜率" [ref=f21e427]:
+              - generic [ref=f21e428]: 
+              - text: 33%
+        - generic [ref=f21e429] [cursor=pointer]:
+          - generic [ref=f21e430]:
+            - heading "张宸瑞1" [level=3] [ref=f21e431]
+            - generic [ref=f21e432]: "#10016"
+          - generic [ref=f21e434]:
+            - generic "当前积分" [ref=f21e435]:
+              - generic [ref=f21e436]: 
+              - text: "1834.1"
+            - generic "最高排名" [ref=f21e437]:
+              - generic [ref=f21e438]: 
+              - text: "#20"
+            - generic "总场次" [ref=f21e439]:
+              - generic [ref=f21e440]: 
+              - text: "1"
+            - generic "胜率" [ref=f21e441]:
+              - generic [ref=f21e442]: 
+              - text: 100%
+        - generic [ref=f21e443] [cursor=pointer]:
+          - generic [ref=f21e444]:
+            - heading "胡朗诚" [level=3] [ref=f21e445]
+            - generic [ref=f21e446]: "#10013"
+          - generic [ref=f21e448]:
+            - generic "当前积分" [ref=f21e449]:
+              - generic [ref=f21e450]: 
+              - text: "1814.6"
+            - generic "最高排名" [ref=f21e451]:
+              - generic [ref=f21e452]: 
+              - text: "#21"
+            - generic "总场次" [ref=f21e453]:
+              - generic [ref=f21e454]: 
+              - text: "0"
+            - generic "胜率" [ref=f21e455]:
+              - generic [ref=f21e456]: 
+              - text: 0%
+        - generic [ref=f21e457] [cursor=pointer]:
+          - generic [ref=f21e458]:
+            - heading "刘冠羽" [level=3] [ref=f21e459]
+            - generic [ref=f21e460]: "#10018"
+          - generic [ref=f21e462]:
+            - generic "当前积分" [ref=f21e463]:
+              - generic [ref=f21e464]: 
+              - text: "1812.6"
+            - generic "最高排名" [ref=f21e465]:
+              - generic [ref=f21e466]: 
+              - text: "#22"
+            - generic "总场次" [ref=f21e467]:
+              - generic [ref=f21e468]: 
+              - text: "7"
+            - generic "胜率" [ref=f21e469]:
+              - generic [ref=f21e470]: 
+              - text: 14%
+        - generic [ref=f21e471] [cursor=pointer]:
+          - generic [ref=f21e472]:
+            - heading "孙钰鑫" [level=3] [ref=f21e473]
+            - generic [ref=f21e474]: "#10014"
+          - generic [ref=f21e475]: 校二直板
+          - generic [ref=f21e477]:
+            - generic "当前积分" [ref=f21e478]:
+              - generic [ref=f21e479]: 
+              - text: "1804.7"
+            - generic "最高排名" [ref=f21e480]:
+              - generic [ref=f21e481]: 
+              - text: "#23"
+            - generic "总场次" [ref=f21e482]:
+              - generic [ref=f21e483]: 
+              - text: "1"
+            - generic "胜率" [ref=f21e484]:
+              - generic [ref=f21e485]: 
+              - text: 0%
+        - generic [ref=f21e486] [cursor=pointer]:
+          - generic [ref=f21e487]:
+            - heading "熊品钧" [level=3] [ref=f21e488]
+            - generic [ref=f21e489]: "#10056"
+          - generic [ref=f21e491]:
+            - generic "当前积分" [ref=f21e492]:
+              - generic [ref=f21e493]: 
+              - text: "1789.5"
+            - generic "最高排名" [ref=f21e494]:
+              - generic [ref=f21e495]: 
+              - text: "#24"
+            - generic "总场次" [ref=f21e496]:
+              - generic [ref=f21e497]: 
+              - text: "8"
+            - generic "胜率" [ref=f21e498]:
+              - generic [ref=f21e499]: 
+              - text: 13%
+        - generic [ref=f21e500] [cursor=pointer]:
+          - generic [ref=f21e501]:
+            - heading "王思博" [level=3] [ref=f21e502]
+            - generic [ref=f21e503]: "#10020"
+          - generic [ref=f21e505]:
+            - generic "当前积分" [ref=f21e506]:
+              - generic [ref=f21e507]: 
+              - text: "1786.9"
+            - generic "最高排名" [ref=f21e508]:
+              - generic [ref=f21e509]: 
+              - text: "#25"
+            - generic "总场次" [ref=f21e510]:
+              - generic [ref=f21e511]: 
+              - text: "3"
+            - generic "胜率" [ref=f21e512]:
+              - generic [ref=f21e513]: 
+              - text: 33%
+        - generic [ref=f21e514] [cursor=pointer]:
+          - generic [ref=f21e515]:
+            - heading "吴慈航" [level=3] [ref=f21e516]
+            - generic [ref=f21e517]: "#10021"
+          - generic [ref=f21e519]:
+            - generic "当前积分" [ref=f21e520]:
+              - generic [ref=f21e521]: 
+              - text: "1750.9"
+            - generic "最高排名" [ref=f21e522]:
+              - generic [ref=f21e523]: 
+              - text: "#26"
+            - generic "总场次" [ref=f21e524]:
+              - generic [ref=f21e525]: 
+              - text: "0"
+            - generic "胜率" [ref=f21e526]:
+              - generic [ref=f21e527]: 
+              - text: 0%
+        - generic [ref=f21e528] [cursor=pointer]:
+          - generic [ref=f21e529]:
+            - heading "陈知勉" [level=3] [ref=f21e530]
+            - generic [ref=f21e531]: "#10023"
+          - generic [ref=f21e533]:
+            - generic "当前积分" [ref=f21e534]:
+              - generic [ref=f21e535]: 
+              - text: "1750.0"
+            - generic "最高排名" [ref=f21e536]:
+              - generic [ref=f21e537]: 
+              - text: "#27"
+            - generic "总场次" [ref=f21e538]:
+              - generic [ref=f21e539]: 
+              - text: "0"
+            - generic "胜率" [ref=f21e540]:
+              - generic [ref=f21e541]: 
+              - text: 0%
+        - generic [ref=f21e542] [cursor=pointer]:
+          - generic [ref=f21e543]:
+            - heading "叶泓鑫" [level=3] [ref=f21e544]
+            - generic [ref=f21e545]: "#10028"
+          - generic [ref=f21e547]:
+            - generic "当前积分" [ref=f21e548]:
+              - generic [ref=f21e549]: 
+              - text: "1712.8"
+            - generic "最高排名" [ref=f21e550]:
+              - generic [ref=f21e551]: 
+              - text: "#28"
+            - generic "总场次" [ref=f21e552]:
+              - generic [ref=f21e553]: 
+              - text: "2"
+            - generic "胜率" [ref=f21e554]:
+              - generic [ref=f21e555]: 
+              - text: 0%
+        - generic [ref=f21e556] [cursor=pointer]:
+          - generic [ref=f21e557]:
+            - heading "李全景" [level=3] [ref=f21e558]
+            - generic [ref=f21e559]: "#10017"
+          - generic [ref=f21e561]:
+            - generic "当前积分" [ref=f21e562]:
+              - generic [ref=f21e563]: 
+              - text: "1711.9"
+            - generic "最高排名" [ref=f21e564]:
+              - generic [ref=f21e565]: 
+              - text: "#29"
+            - generic "总场次" [ref=f21e566]:
+              - generic [ref=f21e567]: 
+              - text: "0"
+            - generic "胜率" [ref=f21e568]:
+              - generic [ref=f21e569]: 
+              - text: 0%
+        - generic [ref=f21e570] [cursor=pointer]:
+          - generic [ref=f21e571]:
+            - heading "杨苏旭" [level=3] [ref=f21e572]
+            - generic [ref=f21e573]: "#10022"
+          - generic [ref=f21e575]:
+            - generic "当前积分" [ref=f21e576]:
+              - generic [ref=f21e577]: 
+              - text: "1705.1"
+            - generic "最高排名" [ref=f21e578]:
+              - generic [ref=f21e579]: 
+              - text: "#30"
+            - generic "总场次" [ref=f21e580]:
+              - generic [ref=f21e581]: 
+              - text: "0"
+            - generic "胜率" [ref=f21e582]:
+              - generic [ref=f21e583]: 
+              - text: 0%
+        - generic [ref=f21e584] [cursor=pointer]:
+          - generic [ref=f21e585]:
+            - heading "李泫乐" [level=3] [ref=f21e586]
+            - generic [ref=f21e587]: "#10055"
+          - generic [ref=f21e589]:
+            - generic "当前积分" [ref=f21e590]:
+              - generic [ref=f21e591]: 
+              - text: "1698.7"
+            - generic "最高排名" [ref=f21e592]:
+              - generic [ref=f21e593]: 
+              - text: "#31"
+            - generic "总场次" [ref=f21e594]:
+              - generic [ref=f21e595]: 
+              - text: "1"
+            - generic "胜率" [ref=f21e596]:
+              - generic [ref=f21e597]: 
+              - text: 0%
+        - generic [ref=f21e598] [cursor=pointer]:
+          - generic [ref=f21e599]:
+            - heading "吕宥衡" [level=3] [ref=f21e600]
+            - generic [ref=f21e601]: "#10046"
+          - generic [ref=f21e603]:
+            - generic "当前积分" [ref=f21e604]:
+              - generic [ref=f21e605]: 
+              - text: "1697.3"
+            - generic "最高排名" [ref=f21e606]:
+              - generic [ref=f21e607]: 
+              - text: "#32"
+            - generic "总场次" [ref=f21e608]:
+              - generic [ref=f21e609]: 
+              - text: "2"
+            - generic "胜率" [ref=f21e610]:
+              - generic [ref=f21e611]: 
+              - text: 0%
+        - generic [ref=f21e612] [cursor=pointer]:
+          - generic [ref=f21e613]:
+            - heading "潘乐然" [level=3] [ref=f21e614]
+            - generic [ref=f21e615]: "#10048"
+          - generic [ref=f21e617]:
+            - generic "当前积分" [ref=f21e618]:
+              - generic [ref=f21e619]: 
+              - text: "1697.3"
+            - generic "最高排名" [ref=f21e620]:
+              - generic [ref=f21e621]: 
+              - text: "#33"
+            - generic "总场次" [ref=f21e622]:
+              - generic [ref=f21e623]: 
+              - text: "2"
+            - generic "胜率" [ref=f21e624]:
+              - generic [ref=f21e625]: 
+              - text: 0%
+        - generic [ref=f21e626] [cursor=pointer]:
+          - generic [ref=f21e627]:
+            - heading "熊若翔" [level=3] [ref=f21e628]
+            - generic [ref=f21e629]: "#10047"
+          - generic [ref=f21e631]:
+            - generic "当前积分" [ref=f21e632]:
+              - generic [ref=f21e633]: 
+              - text: "1697.3"
+            - generic "最高排名" [ref=f21e634]:
+              - generic [ref=f21e635]: 
+              - text: "#34"
+            - generic "总场次" [ref=f21e636]:
+              - generic [ref=f21e637]: 
+              - text: "2"
+            - generic "胜率" [ref=f21e638]:
+              - generic [ref=f21e639]: 
+              - text: 0%
+        - generic [ref=f21e640] [cursor=pointer]:
+          - generic [ref=f21e641]:
+            - heading "朱昱安" [level=3] [ref=f21e642]
+            - generic [ref=f21e643]: "#10051"
+          - generic [ref=f21e645]:
+            - generic "当前积分" [ref=f21e646]:
+              - generic [ref=f21e647]: 
+              - text: "1696.6"
+            - generic "最高排名" [ref=f21e648]:
+              - generic [ref=f21e649]: 
+              - text: "#35"
+            - generic "总场次" [ref=f21e650]:
+              - generic [ref=f21e651]: 
+              - text: "2"
+            - generic "胜率" [ref=f21e652]:
+              - generic [ref=f21e653]: 
+              - text: 0%
+        - generic [ref=f21e654] [cursor=pointer]:
+          - generic [ref=f21e655]:
+            - heading "汪宁轩" [level=3] [ref=f21e656]
+            - generic [ref=f21e657]: "#10019"
+          - generic [ref=f21e659]:
+            - generic "当前积分" [ref=f21e660]:
+              - generic [ref=f21e661]: 
+              - text: "1686.9"
+            - generic "最高排名" [ref=f21e662]:
+              - generic [ref=f21e663]: 
+              - text: "#36"
+            - generic "总场次" [ref=f21e664]:
+              - generic [ref=f21e665]: 
+              - text: "5"
+            - generic "胜率" [ref=f21e666]:
+              - generic [ref=f21e667]: 
+              - text: 0%
+        - generic [ref=f21e668] [cursor=pointer]:
+          - generic [ref=f21e669]:
+            - heading "戴星翊" [level=3] [ref=f21e670]
+            - generic [ref=f21e671]: "#10045"
+          - generic [ref=f21e673]:
+            - generic "当前积分" [ref=f21e674]:
+              - generic [ref=f21e675]: 
+              - text: "1680.7"
+            - generic "最高排名" [ref=f21e676]:
+              - generic [ref=f21e677]: 
+              - text: "#37"
+            - generic "总场次" [ref=f21e678]:
+              - generic [ref=f21e679]: 
+              - text: "2"
+            - generic "胜率" [ref=f21e680]:
+              - generic [ref=f21e681]: 
+              - text: 0%
+        - generic [ref=f21e682] [cursor=pointer]:
+          - generic [ref=f21e683]:
+            - heading "彭瀚明" [level=3] [ref=f21e684]
+            - generic [ref=f21e685]: "#10044"
+          - generic [ref=f21e687]:
+            - generic "当前积分" [ref=f21e688]:
+              - generic [ref=f21e689]: 
+              - text: "1673.4"
+            - generic "最高排名" [ref=f21e690]:
+              - generic [ref=f21e691]: 
+              - text: "#38"
+            - generic "总场次" [ref=f21e692]:
+              - generic [ref=f21e693]: 
+              - text: "3"
+            - generic "胜率" [ref=f21e694]:
+              - generic [ref=f21e695]: 
+              - text: 0%
+        - generic [ref=f21e696] [cursor=pointer]:
+          - generic [ref=f21e697]:
+            - heading "张宸瑞2" [level=3] [ref=f21e698]
+            - generic [ref=f21e699]: "#10037"
+          - generic [ref=f21e701]:
+            - generic "当前积分" [ref=f21e702]:
+              - generic [ref=f21e703]: 
+              - text: "1629.6"
+            - generic "最高排名" [ref=f21e704]:
+              - generic [ref=f21e705]: 
+              - text: "#39"
+            - generic "总场次" [ref=f21e706]:
+              - generic [ref=f21e707]: 
+              - text: "1"
+            - generic "胜率" [ref=f21e708]:
+              - generic [ref=f21e709]: 
+              - text: 0%
+        - generic [ref=f21e710] [cursor=pointer]:
+          - generic [ref=f21e711]:
+            - heading "王子一" [level=3] [ref=f21e712]
+            - generic [ref=f21e713]: "#10027"
+          - generic [ref=f21e715]:
+            - generic "当前积分" [ref=f21e716]:
+              - generic [ref=f21e717]: 
+              - text: "1601.2"
+            - generic "最高排名" [ref=f21e718]:
+              - generic [ref=f21e719]: 
+              - text: "#40"
+            - generic "总场次" [ref=f21e720]:
+              - generic [ref=f21e721]: 
+              - text: "0"
+            - generic "胜率" [ref=f21e722]:
+              - generic [ref=f21e723]: 
+              - text: 0%
+        - generic [ref=f21e724] [cursor=pointer]:
+          - generic [ref=f21e725]:
+            - heading "何子涵" [level=3] [ref=f21e726]
+            - generic [ref=f21e727]: "#10025"
+          - generic [ref=f21e729]:
+            - generic "当前积分" [ref=f21e730]:
+              - generic [ref=f21e731]: 
+              - text: "1600.0"
+            - generic "最高排名" [ref=f21e732]:
+              - generic [ref=f21e733]: 
+              - text: "#41"
+            - generic "总场次" [ref=f21e734]:
+              - generic [ref=f21e735]: 
+              - text: "0"
+            - generic "胜率" [ref=f21e736]:
+              - generic [ref=f21e737]: 
+              - text: 0%
+        - generic [ref=f21e738] [cursor=pointer]:
+          - generic [ref=f21e739]:
+            - heading "胡永轩" [level=3] [ref=f21e740]
+            - generic [ref=f21e741]: "#10026"
+          - generic [ref=f21e743]:
+            - generic "当前积分" [ref=f21e744]:
+              - generic [ref=f21e745]: 
+              - text: "1600.0"
+            - generic "最高排名" [ref=f21e746]:
+              - generic [ref=f21e747]: 
+              - text: "#42"
+            - generic "总场次" [ref=f21e748]:
+              - generic [ref=f21e749]: 
+              - text: "0"
+            - generic "胜率" [ref=f21e750]:
+              - generic [ref=f21e751]: 
+              - text: 0%
+        - generic [ref=f21e752] [cursor=pointer]:
+          - generic [ref=f21e753]:
+            - heading "叶孟恒" [level=3] [ref=f21e754]
+            - generic [ref=f21e755]: "#10029"
+          - generic [ref=f21e757]:
+            - generic "当前积分" [ref=f21e758]:
+              - generic [ref=f21e759]: 
+              - text: "1596.7"
+            - generic "最高排名" [ref=f21e760]:
+              - generic [ref=f21e761]: 
+              - text: "#43"
+            - generic "总场次" [ref=f21e762]:
+              - generic [ref=f21e763]: 
+              - text: "2"
+            - generic "胜率" [ref=f21e764]:
+              - generic [ref=f21e765]: 
+              - text: 0%
+        - generic [ref=f21e766] [cursor=pointer]:
+          - generic [ref=f21e767]:
+            - heading "丁胜怀" [level=3] [ref=f21e768]
+            - generic [ref=f21e769]: "#10024"
+          - generic [ref=f21e771]:
+            - generic "当前积分" [ref=f21e772]:
+              - generic [ref=f21e773]: 
+              - text: "1587.6"
+            - generic "最高排名" [ref=f21e774]:
+              - generic [ref=f21e775]: 
+              - text: "#44"
+            - generic "总场次" [ref=f21e776]:
+              - generic [ref=f21e777]: 
+              - text: "0"
+            - generic "胜率" [ref=f21e778]:
+              - generic [ref=f21e779]: 
+              - text: 0%
+        - generic [ref=f21e780] [cursor=pointer]:
+          - generic [ref=f21e781]:
+            - heading "曹高畅" [level=3] [ref=f21e782]
+            - generic [ref=f21e783]: "#10030"
+          - generic [ref=f21e785]:
+            - generic "当前积分" [ref=f21e786]:
+              - generic [ref=f21e787]: 
+              - text: "1541.8"
+            - generic "最高排名" [ref=f21e788]:
+              - generic [ref=f21e789]: 
+              - text: "#45"
+            - generic "总场次" [ref=f21e790]:
+              - generic [ref=f21e791]: 
+              - text: "0"
+            - generic "胜率" [ref=f21e792]:
+              - generic [ref=f21e793]: 
+              - text: 0%
+        - generic [ref=f21e794] [cursor=pointer]:
+          - generic [ref=f21e795]:
+            - heading "何齐烨" [level=3] [ref=f21e796]
+            - generic [ref=f21e797]: "#10032"
+          - generic [ref=f21e799]:
+            - generic "当前积分" [ref=f21e800]:
+              - generic [ref=f21e801]: 
+              - text: "1535.9"
+            - generic "最高排名" [ref=f21e802]:
+              - generic [ref=f21e803]: 
+              - text: "#46"
+            - generic "总场次" [ref=f21e804]:
+              - generic [ref=f21e805]: 
+              - text: "0"
+            - generic "胜率" [ref=f21e806]:
+              - generic [ref=f21e807]: 
+              - text: 0%
+        - generic [ref=f21e808] [cursor=pointer]:
+          - generic [ref=f21e809]:
+            - heading "肖辰宇" [level=3] [ref=f21e810]
+            - generic [ref=f21e811]: "#10036"
+          - generic [ref=f21e813]:
+            - generic "当前积分" [ref=f21e814]:
+              - generic [ref=f21e815]: 
+              - text: "1535.8"
+            - generic "最高排名" [ref=f21e816]:
+              - generic [ref=f21e817]: 
+              - text: "#47"
+            - generic "总场次" [ref=f21e818]:
+              - generic [ref=f21e819]: 
+              - text: "0"
+            - generic "胜率" [ref=f21e820]:
+              - generic [ref=f21e821]: 
+              - text: 0%
+        - generic [ref=f21e822] [cursor=pointer]:
+          - generic [ref=f21e823]:
+            - heading "邓以清" [level=3] [ref=f21e824]
+            - generic [ref=f21e825]: "#10031"
+          - generic [ref=f21e827]:
+            - generic "当前积分" [ref=f21e828]:
+              - generic [ref=f21e829]: 
+              - text: "1523.8"
+            - generic "最高排名" [ref=f21e830]:
+              - generic [ref=f21e831]: 
+              - text: "#48"
+            - generic "总场次" [ref=f21e832]:
+              - generic [ref=f21e833]: 
+              - text: "0"
+            - generic "胜率" [ref=f21e834]:
+              - generic [ref=f21e835]: 
+              - text: 0%
+        - generic [ref=f21e836] [cursor=pointer]:
+          - generic [ref=f21e837]:
+            - heading "刘天齐" [level=3] [ref=f21e838]
+            - generic [ref=f21e839]: "#10033"
+          - generic [ref=f21e841]:
+            - generic "当前积分" [ref=f21e842]:
+              - generic [ref=f21e843]: 
+              - text: "1519.0"
+            - generic "最高排名" [ref=f21e844]:
+              - generic [ref=f21e845]: 
+              - text: "#49"
+            - generic "总场次" [ref=f21e846]:
+              - generic [ref=f21e847]: 
+              - text: "0"
+            - generic "胜率" [ref=f21e848]:
+              - generic [ref=f21e849]: 
+              - text: 0%
+        - generic [ref=f21e850] [cursor=pointer]:
+          - generic [ref=f21e851]:
+            - heading "刘彧铭" [level=3] [ref=f21e852]
+            - generic [ref=f21e853]: "#10034"
+          - generic [ref=f21e855]:
+            - generic "当前积分" [ref=f21e856]:
+              - generic [ref=f21e857]: 
+              - text: "1498.0"
+            - generic "最高排名" [ref=f21e858]:
+              - generic [ref=f21e859]: 
+              - text: "#50"
+            - generic "总场次" [ref=f21e860]:
+              - generic [ref=f21e861]: 
+              - text: "0"
+            - generic "胜率" [ref=f21e862]:
+              - generic [ref=f21e863]: 
+              - text: 0%
+        - generic [ref=f21e864] [cursor=pointer]:
+          - generic [ref=f21e865]:
+            - heading "宁悦辛" [level=3] [ref=f21e866]
+            - generic [ref=f21e867]: "#10035"
+          - generic [ref=f21e869]:
+            - generic "当前积分" [ref=f21e870]:
+              - generic [ref=f21e871]: 
+              - text: "1485.5"
+            - generic "最高排名" [ref=f21e872]:
+              - generic [ref=f21e873]: 
+              - text: "#51"
+            - generic "总场次" [ref=f21e874]:
+              - generic [ref=f21e875]: 
+              - text: "2"
+            - generic "胜率" [ref=f21e876]:
+              - generic [ref=f21e877]: 
+              - text: 0%
+        - generic [ref=f21e878] [cursor=pointer]:
+          - generic [ref=f21e879]:
+            - heading "刘浩扬" [level=3] [ref=f21e880]
+            - generic [ref=f21e881]: "#10038"
+          - generic [ref=f21e883]:
+            - generic "当前积分" [ref=f21e884]:
+              - generic [ref=f21e885]: 
+              - text: "1400.0"
+            - generic "最高排名" [ref=f21e886]:
+              - generic [ref=f21e887]: 
+              - text: "#52"
+            - generic "总场次" [ref=f21e888]:
+              - generic [ref=f21e889]: 
+              - text: "0"
+            - generic "胜率" [ref=f21e890]:
+              - generic [ref=f21e891]: 
+              - text: 0%
+        - generic [ref=f21e892] [cursor=pointer]:
+          - generic [ref=f21e893]:
+            - heading "熊子乐" [level=3] [ref=f21e894]
+            - generic [ref=f21e895]: "#10041"
+          - generic [ref=f21e897]:
+            - generic "当前积分" [ref=f21e898]:
+              - generic [ref=f21e899]: 
+              - text: "1399.8"
+            - generic "最高排名" [ref=f21e900]:
+              - generic [ref=f21e901]: 
+              - text: "#53"
+            - generic "总场次" [ref=f21e902]:
+              - generic [ref=f21e903]: 
+              - text: "0"
+            - generic "胜率" [ref=f21e904]:
+              - generic [ref=f21e905]: 
+              - text: 0%
+        - generic [ref=f21e906] [cursor=pointer]:
+          - generic [ref=f21e907]:
+            - heading "吕曜而" [level=3] [ref=f21e908]
+            - generic [ref=f21e909]: "#10039"
+          - generic [ref=f21e911]:
+            - generic "当前积分" [ref=f21e912]:
+              - generic [ref=f21e913]: 
+              - text: "1396.4"
+            - generic "最高排名" [ref=f21e914]:
+              - generic [ref=f21e915]: 
+              - text: "#54"
+            - generic "总场次" [ref=f21e916]:
+              - generic [ref=f21e917]: 
+              - text: "0"
+            - generic "胜率" [ref=f21e918]:
+              - generic [ref=f21e919]: 
+              - text: 0%
+        - generic [ref=f21e920] [cursor=pointer]:
+          - generic [ref=f21e921]:
+            - heading "王玥涵" [level=3] [ref=f21e922]
+            - generic [ref=f21e923]: "#10040"
+          - generic [ref=f21e925]:
+            - generic "当前积分" [ref=f21e926]:
+              - generic [ref=f21e927]: 
+              - text: "1390.0"
+            - generic "最高排名" [ref=f21e928]:
+              - generic [ref=f21e929]: 
+              - text: "#55"
+            - generic "总场次" [ref=f21e930]:
+              - generic [ref=f21e931]: 
+              - text: "0"
+            - generic "胜率" [ref=f21e932]:
+              - generic [ref=f21e933]: 
+              - text: 0%
+        - generic [ref=f21e934] [cursor=pointer]:
+          - generic [ref=f21e935]:
+            - heading "俞睿哲" [level=3] [ref=f21e936]
+            - generic [ref=f21e937]: "#10042"
+          - generic [ref=f21e939]:
+            - generic "当前积分" [ref=f21e940]:
+              - generic [ref=f21e941]: 
+              - text: "1300.0"
+            - generic "最高排名" [ref=f21e942]:
+              - generic [ref=f21e943]: 
+              - text: "#56"
+            - generic "总场次" [ref=f21e944]:
+              - generic [ref=f21e945]: 
+              - text: "0"
+            - generic "胜率" [ref=f21e946]:
+              - generic [ref=f21e947]: 
+              - text: 0%
+  - contentinfo [ref=f21e52]:
+    - generic [ref=f21e53]:
+      - generic [ref=f21e54]:
+        - generic [ref=f21e55]:
+          - link "WFLS Table Tennis Club" [ref=f21e56] [cursor=pointer]:
+            - /url: index.html
+          - paragraph [ref=f21e57]: 武汉外国语学校 · 湖北省武汉市
+          - paragraph [ref=f21e58]: 挥拍逐梦，旋转青春
+        - navigation [ref=f21e59]:
+          - heading "社团" [level=3] [ref=f21e60]
+          - list [ref=f21e61]:
+            - listitem [ref=f21e62]:
+              - link "Home" [ref=f21e63] [cursor=pointer]:
+                - /url: index.html
+            - listitem [ref=f21e64]:
+              - link "News" [ref=f21e65] [cursor=pointer]:
+                - /url: news.html
+            - listitem [ref=f21e66]:
+              - link "Competitions" [ref=f21e67] [cursor=pointer]:
+                - /url: competitions.html
+            - listitem [ref=f21e68]:
+              - link "社团骨干" [ref=f21e69] [cursor=pointer]:
+                - /url: members.html
+            - listitem [ref=f21e70]:
+              - link "赛季总结" [ref=f21e71] [cursor=pointer]:
+                - /url: season-review.html
+        - navigation [ref=f21e72]:
+          - heading "数据" [level=3] [ref=f21e73]
+          - list [ref=f21e74]:
+            - listitem [ref=f21e75]:
+              - link "Ranking" [ref=f21e76] [cursor=pointer]:
+                - /url: ranking.html
+            - listitem [ref=f21e77]:
+              - link "Data Viz" [ref=f21e78] [cursor=pointer]:
+                - /url: data_viz.html
+            - listitem [ref=f21e79]:
+              - link "个人数据" [ref=f21e80] [cursor=pointer]:
+                - /url: personal_stats.html
+            - listitem [ref=f21e81]:
+              - link "Data Scale" [ref=f21e82] [cursor=pointer]:
+                - /url: data_scale.html
+            - listitem [ref=f21e83]:
+              - link "WTT Ranking" [ref=f21e84] [cursor=pointer]:
+                - /url: wtt_ranking.html
+            - listitem [ref=f21e85]:
+              - link "WTT Data Viz" [ref=f21e86] [cursor=pointer]:
+                - /url: wtt_dataviz.html
+        - navigation [ref=f21e87]:
+          - heading "信息" [level=3] [ref=f21e88]
+          - list [ref=f21e89]:
+            - listitem [ref=f21e90]:
+              - link "提交战绩" [ref=f21e91] [cursor=pointer]:
+                - /url: submit.html
+            - listitem [ref=f21e92]:
+              - link "Q&A" [ref=f21e93] [cursor=pointer]:
+                - /url: qa.html
+            - listitem [ref=f21e94]:
+              - link "更新日志" [ref=f21e95] [cursor=pointer]:
+                - /url: changelog.html
+            - listitem [ref=f21e96]:
+              - link "网站文档" [ref=f21e97] [cursor=pointer]:
+                - /url: docs.html
+            - listitem [ref=f21e98]:
+              - link "Umpire Training" [ref=f21e99] [cursor=pointer]:
+                - /url: umpire-training.html
+            - listitem [ref=f21e100]:
+              - link "Contact" [ref=f21e101] [cursor=pointer]:
+                - /url: contact.html
+      - generic [ref=f21e102]:
+        - generic [ref=f21e103]:
+          - generic [ref=f21e104]: 关注我们
+          - generic [ref=f21e105]:
+            - button "社团QQ群二维码" [ref=f21e106] [cursor=pointer]:
+              - generic [ref=f21e107]: 
+            - link "GitHub" [ref=f21e108] [cursor=pointer]:
+              - /url: https://github.com/yglalpavir/wfls-tt-club
+              - generic [ref=f21e109]: 
+        - generic [ref=f21e110]:
+          - link "社团理念" [ref=f21e111] [cursor=pointer]:
+            - /url: index.html#philosophy
+          - link "积分规则" [ref=f21e112] [cursor=pointer]:
+            - /url: qa.html
+        - paragraph [ref=f21e113]: ©2026 WFLS Table Tennis Club. All rights reserved

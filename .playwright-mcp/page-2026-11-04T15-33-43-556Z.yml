@@ -1,0 +1,179 @@
+- generic [active] [ref=f9e1]:
+  - navigation [ref=f9e2]:
+    - generic [ref=f9e3]:
+      - link " WFLS TT Club" [ref=f9e4] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=f9e5]: 
+        - generic [ref=f9e7]: WFLS TT Club
+      - list [ref=f9e8]:
+        - listitem [ref=f9e9]:
+          - link "Home" [ref=f9e10] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=f9e11]:
+          - link "News" [ref=f9e12] [cursor=pointer]:
+            - /url: news.html
+        - listitem [ref=f9e13]:
+          - link "Competitions" [ref=f9e14] [cursor=pointer]:
+            - /url: competitions.html
+        - listitem [ref=f9e15]:
+          - link "Ranking Beta" [ref=f9e16] [cursor=pointer]:
+            - /url: ranking.html
+        - listitem [ref=f9e17]:
+          - link "More... " [ref=f9e18] [cursor=pointer]:
+            - /url: "#"
+            - text: More...
+            - generic [ref=f9e19]: 
+        - listitem [ref=f9e20]:
+          - link "Contact" [ref=f9e21] [cursor=pointer]:
+            - /url: contact.html
+      - generic [ref=f9e22]:
+        - button "搜索" [ref=f9e23] [cursor=pointer]:
+          - generic [ref=f9e24]: 
+        - button "切换主题" [ref=f9e25] [cursor=pointer]:
+          - generic [ref=f9e26]: 
+        - button "切换语言" [ref=f9e27] [cursor=pointer]:
+          - generic [ref=f9e28]: EN
+  - generic [ref=f9e31]:
+    - generic [ref=f9e32]: Beta Version
+    - heading "Ranking" [level=1] [ref=f9e33]
+    - paragraph [ref=f9e34]: 社团积分排名系统 · 支持多时间节点对比 · 点击姓名查看积分明细
+  - generic [ref=f9e37]:
+    - complementary [ref=f9e38]:
+      - heading "时间节点" [level=2] [ref=f9e39]
+      - list
+    - generic [ref=f9e40]:
+      - text:   
+      - generic [ref=f9e41]:
+        - generic [ref=f9e42]:
+          - generic [ref=f9e43]: Data Table
+          - heading "积分数据表" [level=2] [ref=f9e44]
+        - generic [ref=f9e45]:
+          - button "积分相关规则" [ref=f9e46]:
+            - generic [aria-hidden] [ref=f9e47]: 
+          - link "提交比赛战绩" [ref=f9e49] [cursor=pointer]:
+            - /url: submit.html
+            - generic [aria-hidden] [ref=f9e50]: 
+            - generic [ref=f9e51]: 提交战绩
+      - tablist "积分项目" [ref=f9e52]:
+        - button "单打" [ref=f9e53] [cursor=pointer]
+        - button "双打" [ref=f9e54] [cursor=pointer]
+      - text:  
+      - generic [ref=f9e55]:
+        - generic [ref=f9e56]:
+          - text: 当前排序：
+          - strong [ref=f9e57]: 积分降序
+        - generic [ref=f9e58]: 加载中...
+        - button " 导出图片" [ref=f9e59] [cursor=pointer]:
+          - generic [ref=f9e60]: 
+          - generic [ref=f9e61]: 导出图片
+      - text: 
+      - table [ref=f9e63]:
+        - rowgroup [ref=f9e64]:
+          - row [ref=f9e65]:
+            - columnheader "#" [ref=f9e66] [cursor=pointer]
+            - columnheader "姓名" [ref=f9e67] [cursor=pointer]
+            - columnheader "当前积分" [ref=f9e68] [cursor=pointer]
+            - columnheader "积分变化" [ref=f9e69] [cursor=pointer]
+            - columnheader "排名变化" [ref=f9e70]
+            - columnheader "总场次" [ref=f9e71] [cursor=pointer]
+            - columnheader "胜率" [ref=f9e72] [cursor=pointer]
+        - rowgroup [ref=f9e73]:
+          - row [ref=f9e74]:
+            - cell [ref=f9e75]:
+              - paragraph [ref=f9e77]: 正在加载排名数据...
+              - paragraph [ref=f9e78]: 正在计算排名积分（此过程可能较慢，请耐心等待）...
+      - text: 
+  - generic [ref=f9e81]:
+    - generic [ref=f9e82]:
+      - generic [aria-hidden] [ref=f9e84]: 
+      - generic [ref=f9e85]: Easter Egg
+    - generic [ref=f9e86]:
+      - heading "你发现了一个彩蛋" [level=3] [ref=f9e87]
+      - paragraph [ref=f9e88]: 基于武外乒乓球社积分规则的 WTT排名
+    - link "进入查看 " [ref=f9e89] [cursor=pointer]:
+      - /url: wtt_hub.html
+      - generic [ref=f9e90]: 进入查看
+      - generic [ref=f9e91]: 
+  - contentinfo [ref=f9e92]:
+    - generic [ref=f9e93]:
+      - generic [ref=f9e94]:
+        - generic [ref=f9e95]:
+          - link "WFLS Table Tennis Club" [ref=f9e96] [cursor=pointer]:
+            - /url: index.html
+          - paragraph [ref=f9e97]: 武汉外国语学校 · 湖北省武汉市
+          - paragraph [ref=f9e98]: 挥拍逐梦，旋转青春
+        - navigation [ref=f9e99]:
+          - heading "社团" [level=3] [ref=f9e100]
+          - list [ref=f9e101]:
+            - listitem [ref=f9e102]:
+              - link "Home" [ref=f9e103] [cursor=pointer]:
+                - /url: index.html
+            - listitem [ref=f9e104]:
+              - link "News" [ref=f9e105] [cursor=pointer]:
+                - /url: news.html
+            - listitem [ref=f9e106]:
+              - link "Competitions" [ref=f9e107] [cursor=pointer]:
+                - /url: competitions.html
+            - listitem [ref=f9e108]:
+              - link "社团骨干" [ref=f9e109] [cursor=pointer]:
+                - /url: members.html
+            - listitem [ref=f9e110]:
+              - link "赛季总结" [ref=f9e111] [cursor=pointer]:
+                - /url: season-review.html
+        - navigation [ref=f9e112]:
+          - heading "数据" [level=3] [ref=f9e113]
+          - list [ref=f9e114]:
+            - listitem [ref=f9e115]:
+              - link "Ranking" [ref=f9e116] [cursor=pointer]:
+                - /url: ranking.html
+            - listitem [ref=f9e117]:
+              - link "Data Viz" [ref=f9e118] [cursor=pointer]:
+                - /url: data_viz.html
+            - listitem [ref=f9e119]:
+              - link "个人数据" [ref=f9e120] [cursor=pointer]:
+                - /url: personal_stats.html
+            - listitem [ref=f9e121]:
+              - link "Data Scale" [ref=f9e122] [cursor=pointer]:
+                - /url: data_scale.html
+            - listitem [ref=f9e123]:
+              - link "WTT Ranking" [ref=f9e124] [cursor=pointer]:
+                - /url: wtt_ranking.html
+            - listitem [ref=f9e125]:
+              - link "WTT Data Viz" [ref=f9e126] [cursor=pointer]:
+                - /url: wtt_dataviz.html
+        - navigation [ref=f9e127]:
+          - heading "信息" [level=3] [ref=f9e128]
+          - list [ref=f9e129]:
+            - listitem [ref=f9e130]:
+              - link "提交战绩" [ref=f9e131] [cursor=pointer]:
+                - /url: submit.html
+            - listitem [ref=f9e132]:
+              - link "Q&A" [ref=f9e133] [cursor=pointer]:
+                - /url: qa.html
+            - listitem [ref=f9e134]:
+              - link "更新日志" [ref=f9e135] [cursor=pointer]:
+                - /url: changelog.html
+            - listitem [ref=f9e136]:
+              - link "网站文档" [ref=f9e137] [cursor=pointer]:
+                - /url: docs.html
+            - listitem [ref=f9e138]:
+              - link "Umpire Training" [ref=f9e139] [cursor=pointer]:
+                - /url: umpire-training.html
+            - listitem [ref=f9e140]:
+              - link "Contact" [ref=f9e141] [cursor=pointer]:
+                - /url: contact.html
+      - generic [ref=f9e142]:
+        - generic [ref=f9e143]:
+          - generic [ref=f9e144]: 关注我们
+          - generic [ref=f9e145]:
+            - button "社团QQ群二维码" [ref=f9e146] [cursor=pointer]:
+              - generic [ref=f9e147]: 
+            - link "GitHub" [ref=f9e148] [cursor=pointer]:
+              - /url: https://github.com/yglalpavir/wfls-tt-club
+              - generic [ref=f9e149]: 
+        - generic [ref=f9e150]:
+          - link "社团理念" [ref=f9e151] [cursor=pointer]:
+            - /url: index.html#philosophy
+          - link "积分规则" [ref=f9e152] [cursor=pointer]:
+            - /url: qa.html
+        - paragraph [ref=f9e153]: ©2026 WFLS Table Tennis Club. All rights reserved

@@ -1,0 +1,3 @@
+[    1035ms] [LOG] [PersonalStats] 开始初始化 @ http://127.0.0.1:8790/js/personal-stats.js:1136
+[    1037ms] [LOG] [PersonalStats] 折线图设置加载完成 @ http://127.0.0.1:8790/js/personal-stats.js:1128
+[    1047ms] [LOG] [PersonalStats] 初始化完成 @ http://127.0.0.1:8790/js/personal-stats.js:1159

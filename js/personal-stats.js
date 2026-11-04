@@ -398,7 +398,7 @@ function computePersonalStatsData(playerName) {
 
     const dailyScoreHistory = computeDailyScoreHistory(playerName, sortedLog, startScores);
 
-    return { sortedLog, allMatches, startScores, currentCd, totalMatches, wins, losses, percentile, maxScore, bestRank, scoreHistory, curScoreDisp, dailyScoreHistory };
+    return { sortedLog, allMatches, startScores, currentCd, totalMatches, wins, draws, losses, percentile, maxScore, bestRank, scoreHistory, curScoreDisp, dailyScoreHistory };
 }
 
 function renderPersonalStats(playerName, containerId) {
@@ -414,7 +414,7 @@ function renderPersonalStats(playerName, containerId) {
 
     const stats = computePersonalStatsData(playerName);
     const { sortedLog, allMatches, startScores, currentCd, scoreHistory, dailyScoreHistory } = stats;
-    const totalMatches = stats.totalMatches, wins = stats.wins, losses = stats.losses;
+    const totalMatches = stats.totalMatches, wins = stats.wins, draws = stats.draws || 0, losses = stats.losses;
     const maxScore = stats.maxScore, bestRank = stats.bestRank, curScoreDisp = stats.curScoreDisp;
 
     const oppStats = {};

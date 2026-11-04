@@ -1,0 +1,4 @@
+[     291ms] [LOG] [PersonalStats] 折线图设置加载完成 @ http://127.0.0.1:8790/js/personal-stats.js:1128
+[     413ms] [ERROR] [PlayerPage] 初始化失败 ReferenceError: draws is not defined
+    at renderPersonalStats (http://127.0.0.1:8790/js/personal-stats.js:557:41)
+    at initPlayerPage (http://127.0.0.1:8790/js/player-page.js:263:9) @ http://127.0.0.1:8790/js/player-page.js:268

@@ -1,0 +1,243 @@
+- generic [active] [ref=f13e1]:
+  - navigation [ref=f13e2]:
+    - generic [ref=f13e3]:
+      - link " WFLS TT Club" [ref=f13e4] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=f13e5]: 
+        - generic [ref=f13e7]: WFLS TT Club
+      - list [ref=f13e8]:
+        - listitem [ref=f13e9]:
+          - link "Home" [ref=f13e10] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=f13e11]:
+          - link "News" [ref=f13e12] [cursor=pointer]:
+            - /url: news.html
+        - listitem [ref=f13e13]:
+          - link "Competitions" [ref=f13e14] [cursor=pointer]:
+            - /url: competitions.html
+        - listitem [ref=f13e15]:
+          - link "Ranking Beta" [ref=f13e16] [cursor=pointer]:
+            - /url: ranking.html
+        - listitem [ref=f13e17]:
+          - link "More... " [ref=f13e18] [cursor=pointer]:
+            - /url: "#"
+            - text: More...
+            - generic [ref=f13e19]: 
+        - listitem [ref=f13e20]:
+          - link "Contact" [ref=f13e21] [cursor=pointer]:
+            - /url: contact.html
+      - generic [ref=f13e22]:
+        - button "搜索" [ref=f13e23] [cursor=pointer]:
+          - generic [ref=f13e24]: 
+        - button "切换主题" [ref=f13e25] [cursor=pointer]:
+          - generic [ref=f13e26]: 
+        - button "切换语言" [ref=f13e27] [cursor=pointer]:
+          - generic [ref=f13e28]: EN
+  - generic [ref=f13e31]:
+    - generic [ref=f13e32]: 🥚 Easter Egg
+    - heading "WTT 男子单打" [level=1] [ref=f13e33]
+    - paragraph [ref=f13e34]: WTT 排名查询 · 点击姓名查看积分明细
+    - paragraph [ref=f13e35]:
+      - generic [ref=f13e36]: 
+      - text: 本页积分由本站社团积分规则模拟计算，非 WTT 官方积分，结果仅供参考。
+  - generic [ref=f13e39]:
+    - complementary [ref=f13e40]:
+      - heading "时间节点" [level=2] [ref=f13e41]
+      - list
+    - generic [ref=f13e42]:
+      - generic [ref=f13e43]:
+        - generic [ref=f13e44]: Data Viz
+        - heading "WTT 数据可视化" [level=2] [ref=f13e45]
+        - link " 查看 WTT 数据可视化" [ref=f13e46] [cursor=pointer]:
+          - /url: /wtt_dataviz.html?cat=ms
+          - generic [ref=f13e47]: 
+          - generic [ref=f13e48]: 查看 WTT 数据可视化
+      - generic [ref=f13e49]:
+        - generic [ref=f13e50]: Personal Stats
+        - heading "WTT 个人数据" [level=2] [ref=f13e51]
+        - link "查看 WTT 个人数据" [ref=f13e52] [cursor=pointer]:
+          - /url: /wtt_personal_stats.html?cat=ms
+      - generic [ref=f13e54]:
+        - generic [ref=f13e55]: Data Table
+        - heading "WTT 积分数据表" [level=2] [ref=f13e56]
+      - generic [ref=f13e57]:
+        - generic [ref=f13e58]:
+          - text: 当前排序：
+          - strong [ref=f13e59]: 积分降序
+        - generic [ref=f13e60]: 加载中...
+        - generic [ref=f13e61]:
+          - button " 导出图片" [ref=f13e62] [cursor=pointer]:
+            - generic [ref=f13e63]: 
+            - generic [ref=f13e64]: 导出图片
+          - button "导出图片" [ref=f13e65] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f13e66]: 
+      - generic [ref=f13e67]:
+        - generic [ref=f13e71]:
+          - generic [ref=f13e72]:
+            - generic [ref=f13e73]: 正在加载 WTT 数据...
+            - generic [ref=f13e74]: 19%
+          - generic [ref=f13e77]:
+            - generic [ref=f13e78]: "正在下载 赛事系数 (2/5): 赛事系数"
+            - generic [ref=f13e79]: 已用时 0s
+        - table [ref=f13e80]:
+          - rowgroup [ref=f13e81]:
+            - row [ref=f13e82]:
+              - columnheader "#" [ref=f13e83] [cursor=pointer]
+              - columnheader "姓名" [ref=f13e84] [cursor=pointer]
+              - columnheader "当前积分" [ref=f13e85] [cursor=pointer]
+              - columnheader "积分变化" [ref=f13e86] [cursor=pointer]
+              - columnheader "排名变化" [ref=f13e87]
+              - columnheader "总场次" [ref=f13e88] [cursor=pointer]
+              - columnheader "胜率" [ref=f13e89] [cursor=pointer]
+          - rowgroup [ref=f13e90]:
+            - row [ref=f13e91]:
+              - cell [ref=f13e92]
+              - cell [ref=f13e94]
+              - cell [ref=f13e96]
+              - cell [ref=f13e98]
+              - cell [ref=f13e100]
+              - cell [ref=f13e102]
+              - cell [ref=f13e104]
+            - row [ref=f13e106]:
+              - cell [ref=f13e107]
+              - cell [ref=f13e109]
+              - cell [ref=f13e111]
+              - cell [ref=f13e113]
+              - cell [ref=f13e115]
+              - cell [ref=f13e117]
+              - cell [ref=f13e119]
+            - row [ref=f13e121]:
+              - cell [ref=f13e122]
+              - cell [ref=f13e124]
+              - cell [ref=f13e126]
+              - cell [ref=f13e128]
+              - cell [ref=f13e130]
+              - cell [ref=f13e132]
+              - cell [ref=f13e134]
+            - row [ref=f13e136]:
+              - cell [ref=f13e137]
+              - cell [ref=f13e139]
+              - cell [ref=f13e141]
+              - cell [ref=f13e143]
+              - cell [ref=f13e145]
+              - cell [ref=f13e147]
+              - cell [ref=f13e149]
+            - row [ref=f13e151]:
+              - cell [ref=f13e152]
+              - cell [ref=f13e154]
+              - cell [ref=f13e156]
+              - cell [ref=f13e158]
+              - cell [ref=f13e160]
+              - cell [ref=f13e162]
+              - cell [ref=f13e164]
+            - row [ref=f13e166]:
+              - cell [ref=f13e167]
+              - cell [ref=f13e169]
+              - cell [ref=f13e171]
+              - cell [ref=f13e173]
+              - cell [ref=f13e175]
+              - cell [ref=f13e177]
+              - cell [ref=f13e179]
+            - row [ref=f13e181]:
+              - cell [ref=f13e182]
+              - cell [ref=f13e184]
+              - cell [ref=f13e186]
+              - cell [ref=f13e188]
+              - cell [ref=f13e190]
+              - cell [ref=f13e192]
+              - cell [ref=f13e194]
+            - row [ref=f13e196]:
+              - cell [ref=f13e197]
+              - cell [ref=f13e199]
+              - cell [ref=f13e201]
+              - cell [ref=f13e203]
+              - cell [ref=f13e205]
+              - cell [ref=f13e207]
+              - cell [ref=f13e209]
+      - link " 返回 WTT Hub" [ref=f13e212] [cursor=pointer]:
+        - /url: /wtt_hub.html?cat=ms
+        - generic [ref=f13e213]: 
+        - generic [ref=f13e214]: 返回 WTT Hub
+  - contentinfo [ref=f13e215]:
+    - generic [ref=f13e216]:
+      - generic [ref=f13e217]:
+        - generic [ref=f13e218]:
+          - link "WFLS Table Tennis Club" [ref=f13e219] [cursor=pointer]:
+            - /url: index.html
+          - paragraph [ref=f13e220]: 武汉外国语学校 · 湖北省武汉市
+          - paragraph [ref=f13e221]: 挥拍逐梦，旋转青春
+        - navigation [ref=f13e222]:
+          - heading "社团" [level=3] [ref=f13e223]
+          - list [ref=f13e224]:
+            - listitem [ref=f13e225]:
+              - link "Home" [ref=f13e226] [cursor=pointer]:
+                - /url: index.html
+            - listitem [ref=f13e227]:
+              - link "News" [ref=f13e228] [cursor=pointer]:
+                - /url: news.html
+            - listitem [ref=f13e229]:
+              - link "Competitions" [ref=f13e230] [cursor=pointer]:
+                - /url: competitions.html
+            - listitem [ref=f13e231]:
+              - link "社团骨干" [ref=f13e232] [cursor=pointer]:
+                - /url: members.html
+            - listitem [ref=f13e233]:
+              - link "赛季总结" [ref=f13e234] [cursor=pointer]:
+                - /url: season-review.html
+        - navigation [ref=f13e235]:
+          - heading "数据" [level=3] [ref=f13e236]
+          - list [ref=f13e237]:
+            - listitem [ref=f13e238]:
+              - link "Ranking" [ref=f13e239] [cursor=pointer]:
+                - /url: ranking.html
+            - listitem [ref=f13e240]:
+              - link "Data Viz" [ref=f13e241] [cursor=pointer]:
+                - /url: data_viz.html
+            - listitem [ref=f13e242]:
+              - link "个人数据" [ref=f13e243] [cursor=pointer]:
+                - /url: personal_stats.html
+            - listitem [ref=f13e244]:
+              - link "Data Scale" [ref=f13e245] [cursor=pointer]:
+                - /url: data_scale.html
+            - listitem [ref=f13e246]:
+              - link "WTT Ranking" [ref=f13e247] [cursor=pointer]:
+                - /url: /wtt_ranking.html?cat=ms
+            - listitem [ref=f13e248]:
+              - link "WTT Data Viz" [ref=f13e249] [cursor=pointer]:
+                - /url: /wtt_dataviz.html?cat=ms
+        - navigation [ref=f13e250]:
+          - heading "信息" [level=3] [ref=f13e251]
+          - list [ref=f13e252]:
+            - listitem [ref=f13e253]:
+              - link "提交战绩" [ref=f13e254] [cursor=pointer]:
+                - /url: submit.html
+            - listitem [ref=f13e255]:
+              - link "Q&A" [ref=f13e256] [cursor=pointer]:
+                - /url: qa.html
+            - listitem [ref=f13e257]:
+              - link "更新日志" [ref=f13e258] [cursor=pointer]:
+                - /url: changelog.html
+            - listitem [ref=f13e259]:
+              - link "网站文档" [ref=f13e260] [cursor=pointer]:
+                - /url: docs.html
+            - listitem [ref=f13e261]:
+              - link "Umpire Training" [ref=f13e262] [cursor=pointer]:
+                - /url: umpire-training.html
+            - listitem [ref=f13e263]:
+              - link "Contact" [ref=f13e264] [cursor=pointer]:
+                - /url: contact.html
+      - generic [ref=f13e265]:
+        - generic [ref=f13e266]:
+          - generic [ref=f13e267]: 关注我们
+          - generic [ref=f13e268]:
+            - button "社团QQ群二维码" [ref=f13e269] [cursor=pointer]:
+              - generic [ref=f13e270]: 
+            - link "GitHub" [ref=f13e271] [cursor=pointer]:
+              - /url: https://github.com/yglalpavir/wfls-tt-club
+              - generic [ref=f13e272]: 
+        - generic [ref=f13e273]:
+          - link "社团理念" [ref=f13e274] [cursor=pointer]:
+            - /url: index.html#philosophy
+          - link "积分规则" [ref=f13e275] [cursor=pointer]:
+            - /url: qa.html
+        - paragraph [ref=f13e276]: ©2026 WFLS Table Tennis Club. All rights reserved

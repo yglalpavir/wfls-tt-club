@@ -1,0 +1,3598 @@
+- generic [active] [ref=f18e1]:
+  - navigation [ref=f18e2]:
+    - generic [ref=f18e3]:
+      - link " WFLS TT Club" [ref=f18e4] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=f18e5]: 
+        - generic [ref=f18e7]: WFLS TT Club
+      - list [ref=f18e8]:
+        - listitem [ref=f18e9]:
+          - link "Home" [ref=f18e10] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=f18e11]:
+          - link "News" [ref=f18e12] [cursor=pointer]:
+            - /url: news.html
+        - listitem [ref=f18e13]:
+          - link "Competitions" [ref=f18e14] [cursor=pointer]:
+            - /url: competitions.html
+        - listitem [ref=f18e15]:
+          - link "Ranking Beta" [ref=f18e16] [cursor=pointer]:
+            - /url: ranking.html
+        - listitem [ref=f18e17]:
+          - link "More... " [ref=f18e18] [cursor=pointer]:
+            - /url: "#"
+            - text: More...
+            - generic [ref=f18e19]: 
+        - listitem [ref=f18e20]:
+          - link "Contact" [ref=f18e21] [cursor=pointer]:
+            - /url: contact.html
+      - generic [ref=f18e22]:
+        - button "搜索" [ref=f18e23] [cursor=pointer]:
+          - generic [ref=f18e24]: 
+        - button "切换主题" [ref=f18e25] [cursor=pointer]:
+          - generic [ref=f18e26]: 
+        - button "切换语言" [ref=f18e27] [cursor=pointer]:
+          - generic [ref=f18e28]: EN
+  - generic [ref=f18e30]:
+    - generic [ref=f18e32]:
+      - link " 返回总览" [ref=f18e33] [cursor=pointer]:
+        - /url: personal_stats.html
+        - generic [ref=f18e34]: 
+        - generic [ref=f18e35]: 返回总览
+      - generic [ref=f18e101]:
+        - link " 上一名" [ref=f18e102] [cursor=pointer]:
+          - /url: player.html?uid=10001
+          - generic [ref=f18e103]: 
+          - text: 上一名
+        - generic [ref=f18e104]: 3 / 57
+        - link "下一名 " [ref=f18e105] [cursor=pointer]:
+          - /url: player.html?uid=10008
+          - text: 下一名
+          - generic [ref=f18e106]: 
+    - generic [ref=f18e36]:
+      - generic [ref=f18e108]:
+        - generic [ref=f18e109]:
+          - heading "任峻贤" [level=1] [ref=f18e110]
+          - generic [ref=f18e111]: "#10009"
+          - generic [ref=f18e112]:
+            - generic [ref=f18e113]: 
+            - text: 在校
+        - generic [ref=f18e114]:
+          - generic [ref=f18e115]:
+            - generic [ref=f18e116]: 
+            - text: 官网负责人
+          - generic [ref=f18e117]:
+            - generic [ref=f18e118]: 
+            - text: 2024级2027届
+          - generic [ref=f18e119]:
+            - generic [ref=f18e120]: 
+            - text: 当前积分 2088.3
+          - generic [ref=f18e121]:
+            - generic [ref=f18e122]: 
+            - text: "#3"
+          - generic [ref=f18e123]:
+            - generic [ref=f18e124]: 
+            - text: 实时积分
+        - generic [ref=f18e125]: 校队成员
+        - generic [ref=f18e127]:
+          - generic [ref=f18e128]:
+            - generic [ref=f18e129]: 
+            - text: 校乒赛2026单打冠军
+          - generic [ref=f18e130]:
+            - generic [ref=f18e131]: 
+            - text: 校乒赛2026团体季军
+      - generic [ref=f18e132]:
+        - generic [ref=f18e133]:
+          - generic [ref=f18e134]:
+            - generic [ref=f18e135]: "226"
+            - generic [ref=f18e136]: 总场次
+          - generic [ref=f18e137]:
+            - generic [ref=f18e138]: "124"
+            - generic [ref=f18e139]: 获胜
+          - generic [ref=f18e140]:
+            - generic [ref=f18e141]: "102"
+            - generic [ref=f18e142]: 失利
+          - generic [ref=f18e143]:
+            - generic [ref=f18e144]: 55%
+            - generic [ref=f18e145]: 胜率
+          - generic [ref=f18e146]:
+            - generic [ref=f18e147]: "2088.3"
+            - generic [ref=f18e148]: 当前积分
+          - generic [ref=f18e149]:
+            - generic [ref=f18e150]: "2318"
+            - generic [ref=f18e151]: 最高积分
+          - generic [ref=f18e152]:
+            - generic [ref=f18e153]: "#1"
+            - generic [ref=f18e154]: 最高排名
+        - generic [ref=f18e155]:
+          - strong [ref=f18e156]: 任峻贤
+          - text: 共进行了
+          - strong [ref=f18e157]: "226"
+          - text: 盘比赛，获胜
+          - strong [ref=f18e158]: "124"
+          - text: 盘，失利
+          - strong [ref=f18e159]: "102"
+          - text: 盘。
+          - strong [ref=f18e160]: 任峻贤
+          - text: 的胜率为
+          - strong [ref=f18e161]: "55"
+          - text: "%。"
+        - generic [ref=f18e163]:
+          - generic [ref=f18e164]:
+            - generic [ref=f18e165]: 
+            - text: 积分变化趋势
+          - generic [ref=f18e166]:
+            - button "按天" [ref=f18e167] [cursor=pointer]
+            - button "按周" [ref=f18e168] [cursor=pointer]
+            - button "快照" [ref=f18e169] [cursor=pointer]
+        - generic [ref=f18e172]:
+          - generic [ref=f18e173]:
+            - generic [ref=f18e174]:
+              - generic [ref=f18e175]: 
+              - text: 标签
+            - generic [ref=f18e176]: 校队成员
+          - generic [ref=f18e177]:
+            - generic [ref=f18e178]:
+              - generic [ref=f18e179]: 
+              - text: 荣誉
+            - generic [ref=f18e180]:
+              - generic [ref=f18e181]: 
+              - text: 校乒赛2026单打冠军
+            - generic [ref=f18e182]: 校乒赛2026团体季军
+        - generic [ref=f18e183]:
+          - generic [ref=f18e184]:
+            - generic [ref=f18e185]:
+              - generic [ref=f18e186]: 
+              - text: 胜利 · 曾战胜的前三名
+            - generic [ref=f18e187]:
+              - generic [ref=f18e188]:
+                - generic [ref=f18e189]: "1"
+                - generic [ref=f18e190]:
+                  - link "魏罗瑞" [ref=f18e191] [cursor=pointer]:
+                    - /url: player.html?uid=10010
+                  - text: (2124)
+                - generic [ref=f18e192]: 2026年11月4日
+              - generic [ref=f18e193]:
+                - generic [ref=f18e194]: "2"
+                - generic [ref=f18e195]:
+                  - link "祁子傲" [ref=f18e196] [cursor=pointer]:
+                    - /url: player.html?uid=10007
+                  - text: (2115)
+                - generic [ref=f18e197]: 2026年6月11日
+              - generic [ref=f18e198]:
+                - generic [ref=f18e199]: "3"
+                - generic [ref=f18e200]:
+                  - link "付大卫" [ref=f18e201] [cursor=pointer]:
+                    - /url: player.html?uid=10001
+                  - text: (2097)
+                - generic [ref=f18e202]: 2026年10月28日
+          - generic [ref=f18e203]:
+            - generic [ref=f18e204]:
+              - generic [ref=f18e205]: 
+              - text: PK · 曾交手的前三名
+            - generic [ref=f18e206]:
+              - generic [ref=f18e207]:
+                - generic [ref=f18e208]: "1"
+                - generic [ref=f18e209]:
+                  - link "魏罗瑞" [ref=f18e210] [cursor=pointer]:
+                    - /url: player.html?uid=10010
+                  - text: (2124)
+                - generic [ref=f18e211]: 2026年11月4日
+              - generic [ref=f18e212]:
+                - generic [ref=f18e213]: "2"
+                - generic [ref=f18e214]:
+                  - link "付大卫" [ref=f18e215] [cursor=pointer]:
+                    - /url: player.html?uid=10001
+                  - text: (2103)
+                - generic [ref=f18e216]: 2026年10月30日
+              - generic [ref=f18e217]:
+                - generic [ref=f18e218]: "3"
+                - generic [ref=f18e219]:
+                  - link "祁子傲" [ref=f18e220] [cursor=pointer]:
+                    - /url: player.html?uid=10007
+                  - text: (2082)
+                - generic [ref=f18e221]: 2026年10月20日
+          - generic [ref=f18e222]:
+            - generic [ref=f18e223]:
+              - generic [ref=f18e224]: 
+              - text: 拿捏
+            - generic [ref=f18e225]:
+              - generic [ref=f18e226]:
+                - generic [ref=f18e227]: "1"
+                - generic [ref=f18e228]:
+                  - link "付大卫" [ref=f18e229] [cursor=pointer]:
+                    - /url: player.html?uid=10001
+                  - text: (2101.2)
+                - generic [ref=f18e230]: 45胜20负 胜率:69%
+              - generic [ref=f18e231]:
+                - generic [ref=f18e232]: "2"
+                - generic [ref=f18e233]:
+                  - link "徐耀鹏" [ref=f18e234] [cursor=pointer]:
+                    - /url: player.html?uid=10050
+                  - text: (2007.9)
+                - generic [ref=f18e235]: 3胜2负 胜率:60%
+              - generic [ref=f18e236]:
+                - generic [ref=f18e237]: "3"
+                - generic [ref=f18e238]:
+                  - link "李全景" [ref=f18e239] [cursor=pointer]:
+                    - /url: player.html?uid=10017
+                  - text: (1711.9)
+                - generic [ref=f18e240]: 4胜3负 胜率:57%
+          - generic [ref=f18e241]:
+            - generic [ref=f18e242]:
+              - generic [ref=f18e243]: 
+              - text: 克星
+            - generic [ref=f18e244]:
+              - generic [ref=f18e245]:
+                - generic [ref=f18e246]: "1"
+                - generic [ref=f18e247]:
+                  - link "任安喆" [ref=f18e248] [cursor=pointer]:
+                    - /url: player.html?uid=10008
+                  - text: (2079.9)
+                - generic [ref=f18e249]: 1胜4负 胜率:20%
+              - generic [ref=f18e250]:
+                - generic [ref=f18e251]: "2"
+                - generic [ref=f18e252]:
+                  - link "祁子傲" [ref=f18e253] [cursor=pointer]:
+                    - /url: player.html?uid=10007
+                  - text: (2079.7)
+                - generic [ref=f18e254]: 2胜5负 胜率:29%
+              - generic [ref=f18e255]:
+                - generic [ref=f18e256]: "3"
+                - generic [ref=f18e257]:
+                  - link "魏罗瑞" [ref=f18e258] [cursor=pointer]:
+                    - /url: player.html?uid=10010
+                  - text: (2123.7)
+                - generic [ref=f18e259]: 17胜36负 胜率:32%
+      - generic [ref=f18e260]:
+        - generic [ref=f18e261]: 深度数据分析
+        - generic [ref=f18e262]:
+          - generic [ref=f18e263]:
+            - generic [ref=f18e264]:
+              - generic [ref=f18e265]:
+                - generic [ref=f18e266]: 
+                - text: 六维战力雷达
+              - generic "综合战力指数（六维均值） = 68 + 69 + 100 + 78 + 100 + 73 ÷ 6 ≈ 81" [ref=f18e267]: S+ · 81
+            - generic [ref=f18e271]:
+              - generic "127 胜 / 233 场 截至当前的全部正式对局（含双打）的胜率" [ref=f18e272]:
+                - generic [ref=f18e273]: 胜率
+                - generic [ref=f18e276]: "68"
+                - generic [ref=f18e277]: n=233
+              - generic "66 胜 / 120 场长盘 仅统计五局三胜 / 七局四胜的长盘场次" [ref=f18e278]:
+                - generic [ref=f18e279]: 长盘
+                - generic [ref=f18e282]: "69"
+                - generic [ref=f18e283]: n=120
+              - generic "10 胜 / 12 场大赛 大赛胜率 + 出场阅历加成" [ref=f18e284]:
+                - generic [ref=f18e285]: 大赛
+                - generic [ref=f18e288]: "100"
+                - generic [ref=f18e289]: n=12
+              - generic "94 胜 / 193 场 vs 2000+ 对手赛前积分 ≥ 2000 的对局（比赛当日回放口径）" [ref=f18e290]:
+                - generic [ref=f18e291]: 强敌
+                - generic [ref=f18e294]: "78"
+                - generic [ref=f18e295]: n=193
+              - generic "参赛 103 个比赛日 按参赛的比赛日数对数计：参赛最多者记满分，其余按 log(1+天数) 比例递减，最低 30" [ref=f18e296]:
+                - generic [ref=f18e297]: 积极度
+                - generic [ref=f18e300]: "100"
+                - generic [ref=f18e301]: n=103
+              - generic "19 场零封 / 42 场有比分的胜场 零封（3-0 / 2-0 / 4-0）占有比分胜场的比例 + 胜场加成" [ref=f18e302]:
+                - generic [ref=f18e303]: 零封
+                - generic [ref=f18e306]: "73"
+                - generic [ref=f18e307]: n=42
+            - generic [ref=f18e308]: 雷达是展示层画像，不参与积分计算；n 为该轴统计场数，无样本的轴按缺省值绘制
+          - generic [ref=f18e309]: 排名走势
+          - generic [ref=f18e313]:
+            - generic [ref=f18e314]: 赛事类型分布
+            - generic [ref=f18e318]:
+              - generic [ref=f18e319]:
+                - generic [ref=f18e321]: 普通
+                - generic [ref=f18e322]: 114胜100负 胜率:53%
+              - generic [ref=f18e323]:
+                - generic [ref=f18e325]: 校乒赛单打
+                - generic [ref=f18e326]: 6胜0负 胜率:100%
+              - generic [ref=f18e327]:
+                - generic [ref=f18e329]: 校乒赛团体
+                - generic [ref=f18e330]: 2胜1负 胜率:67%
+              - generic [ref=f18e331]:
+                - generic [ref=f18e333]: 十二强赛
+                - generic [ref=f18e334]: 2胜1负 胜率:67%
+          - generic [ref=f18e335]:
+            - generic [ref=f18e336]: 实力差胜负分析
+            - generic [ref=f18e339]: 按双方赛前分差分档：对手赛前分 − 我方赛前分，数值越大对手越强
+          - generic [ref=f18e340]: 月度活跃度
+          - generic [ref=f18e344]:
+            - generic [ref=f18e345]: 竞技状态
+            - generic [ref=f18e346]:
+              - generic [ref=f18e347]:
+                - generic [ref=f18e348]: 当前 1 连胜
+                - generic [ref=f18e349]:
+                  - text: 生涯胜率
+                  - strong [ref=f18e350]: 55%
+              - generic [ref=f18e351]:
+                - generic [ref=f18e352]:
+                  - text: 最长连胜
+                  - strong [ref=f18e353]: "14"
+                - generic [ref=f18e354]:
+                  - text: 最长连败
+                  - strong [ref=f18e355]: "9"
+              - generic [ref=f18e356]:
+                - generic [ref=f18e357]: 近 10 场
+                - generic [ref=f18e358]:
+                  - generic [ref=f18e359]: 胜
+                  - generic [ref=f18e360]: 负
+                  - generic [ref=f18e361]: 胜
+                  - generic [ref=f18e362]: 负
+                  - generic [ref=f18e363]: 胜
+                  - generic [ref=f18e364]: 负
+                  - generic [ref=f18e365]: 负
+                  - generic [ref=f18e366]: 胜
+                  - generic [ref=f18e367]: 胜
+                  - generic [ref=f18e368]: 胜
+              - generic [ref=f18e369]: 滚动 10 场胜率
+          - generic [ref=f18e373]:
+            - generic [ref=f18e374]: 赛季对比
+            - table [ref=f18e376]:
+              - rowgroup [ref=f18e377]:
+                - row [ref=f18e378]:
+                  - columnheader "赛季" [ref=f18e379]
+                  - columnheader "场次" [ref=f18e380]
+                  - columnheader "胜负" [ref=f18e381]
+                  - columnheader "胜率" [ref=f18e382]
+                  - columnheader "积分变化" [ref=f18e383]
+                  - columnheader "最高分" [ref=f18e384]
+              - rowgroup [ref=f18e385]:
+                - row [ref=f18e386]:
+                  - cell "2026年春季学期" [ref=f18e387]
+                  - cell "81" [ref=f18e388]
+                  - cell "53-28" [ref=f18e389]
+                  - cell "65%" [ref=f18e390]
+                  - cell "+268.9" [ref=f18e391]
+                  - cell "2321.3" [ref=f18e392]
+                - row [ref=f18e393]:
+                  - cell "2026年暑假" [ref=f18e394]
+                  - cell "39" [ref=f18e395]
+                  - cell "16-23" [ref=f18e396]
+                  - cell "41%" [ref=f18e397]
+                  - cell "-41.8" [ref=f18e398]
+                  - cell "2125.3" [ref=f18e399]
+                - row [ref=f18e400]:
+                  - cell "2026年秋季学期" [ref=f18e401]
+                  - cell "106" [ref=f18e402]
+                  - cell "55-51" [ref=f18e403]
+                  - cell "52%" [ref=f18e404]
+                  - cell "-20.2" [ref=f18e405]
+                  - cell "2131.1" [ref=f18e406]
+                - row [ref=f18e407]:
+                  - cell "总计" [ref=f18e408]
+                  - cell "226" [ref=f18e409]
+                  - cell "124-102" [ref=f18e410]
+                  - cell "55%" [ref=f18e411]
+                  - cell "-" [ref=f18e412]
+                  - cell "-" [ref=f18e413]
+            - generic [ref=f18e414]: 积分变化 = 该赛季末积分 − 赛季初积分（含比赛结果加分，不含跨赛季继承调整）
+          - generic [ref=f18e415]:
+            - generic [ref=f18e416]: 积分来源构成
+            - generic [ref=f18e419]:
+              - generic [ref=f18e420]:
+                - generic [ref=f18e422]: 初始分
+                - generic [ref=f18e423]: "2000.0"
+              - generic [ref=f18e424]:
+                - generic [ref=f18e426]: 普通
+                - generic [ref=f18e427]: "-36.3"
+              - generic [ref=f18e428]:
+                - generic [ref=f18e430]: 十二强赛
+                - generic [ref=f18e431]: "-4.5"
+              - generic [ref=f18e432]:
+                - generic [ref=f18e434]: 校乒赛团体
+                - generic [ref=f18e435]: "+10.6"
+              - generic [ref=f18e436]:
+                - generic [ref=f18e438]: 校乒赛单打
+                - generic [ref=f18e439]: "+135.0"
+              - generic [ref=f18e440]:
+                - generic [ref=f18e442]: 比赛结果加分
+                - generic [ref=f18e443]: "+122.5"
+              - generic [ref=f18e444]:
+                - generic [ref=f18e446]: 赛季继承
+                - generic [ref=f18e447]: "-137.6"
+              - generic [ref=f18e448]:
+                - text: 总积分
+                - generic [ref=f18e449]: "2089.7"
+            - generic [ref=f18e450]: 按赛事类型分解的当季积分构成，堆叠总和即积分变化曲线（含时间衰减与赛季继承）
+          - generic [ref=f18e451]:
+            - generic [ref=f18e452]: 积分流向
+            - generic [ref=f18e453]:
+              - tooltip
+            - generic [ref=f18e455]:
+              - generic [ref=f18e456]:
+                - generic [ref=f18e458]: 流入
+                - generic [ref=f18e459]: "+589.1"
+              - generic [ref=f18e460]:
+                - generic [ref=f18e462]: 流出
+                - generic [ref=f18e463]: "-504.7"
+              - generic [ref=f18e464]: 另有比赛结果加分 +122.5，未计入流向
+              - generic [ref=f18e465]:
+                - text: 净变化
+                - generic [ref=f18e466]: "+84.4"
+            - generic [ref=f18e467]: 仅统计单打比赛；流带宽度∝积分变动（衰减至今日口径，与下方明细表「调整」列同源）；点击对手可跳转其档案页
+      - generic [ref=f18e469]:
+        - generic [ref=f18e470]:
+          - generic [ref=f18e471]: 
+          - text: 全部比赛记录
+          - generic [ref=f18e472]: 228 场
+        - table [ref=f18e474]:
+          - rowgroup [ref=f18e475]:
+            - row [ref=f18e476]:
+              - columnheader "日期" [ref=f18e477]
+              - columnheader "类型" [ref=f18e478]
+              - columnheader "对手" [ref=f18e479]
+              - columnheader "结果" [ref=f18e480]
+              - columnheader "比分" [ref=f18e481]
+              - columnheader "赛前" [ref=f18e482]
+              - columnheader "调整" [ref=f18e483]
+              - columnheader "赛后" [ref=f18e484]
+          - rowgroup [ref=f18e485]:
+            - row [ref=f18e486]:
+              - cell [ref=f18e487]:
+                - link "2026-11-04" [ref=f18e488] [cursor=pointer]:
+                  - /url: match.html?date=2026-11-04&type=%E6%99%AE%E9%80%9A&w=%E5%BE%90%E8%80%80%E9%B9%8F&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e489]
+              - cell [ref=f18e490]:
+                - link "徐耀鹏" [ref=f18e491] [cursor=pointer]:
+                  - /url: player.html?uid=10050
+              - cell "负" [ref=f18e492]
+              - cell "1-2" [ref=f18e493]
+              - cell "2085.1" [ref=f18e494]
+              - cell "↓-4.0（-4.0）" [ref=f18e495]
+              - cell "2081.1" [ref=f18e496]
+            - row [ref=f18e497]:
+              - cell [ref=f18e498]:
+                - link "2026-11-04" [ref=f18e499] [cursor=pointer]:
+                  - /url: match.html?date=2026-11-04&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E9%AD%8F%E7%BD%97%E7%91%9E
+              - cell "普通" [ref=f18e500]
+              - cell [ref=f18e501]:
+                - link "魏罗瑞" [ref=f18e502] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "胜" [ref=f18e503]
+              - cell "3-0" [ref=f18e504]
+              - cell "2081.1" [ref=f18e505]
+              - cell "↑+7.2（+7.2）" [ref=f18e506]
+              - cell "2088.3" [ref=f18e507]
+            - row [ref=f18e508]:
+              - cell [ref=f18e509]:
+                - link "2026-11-03" [ref=f18e510] [cursor=pointer]:
+                  - /url: match.html?date=2026-11-03&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%AE%89%E5%96%86&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e511]
+              - cell [ref=f18e512]:
+                - link "任安喆" [ref=f18e513] [cursor=pointer]:
+                  - /url: player.html?uid=10008
+              - cell "负" [ref=f18e514]
+              - cell "0-2" [ref=f18e515]
+              - cell "2085.4" [ref=f18e516]
+              - cell "↓-3.4（-3.3）" [ref=f18e517]
+              - cell "2082.1" [ref=f18e518]
+            - row [ref=f18e519]:
+              - cell [ref=f18e520]:
+                - link "2026-11-03" [ref=f18e521] [cursor=pointer]:
+                  - /url: match.html?date=2026-11-03&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E5%BE%90%E8%80%80%E9%B9%8F
+              - cell "普通" [ref=f18e522]
+              - cell [ref=f18e523]:
+                - link "徐耀鹏" [ref=f18e524] [cursor=pointer]:
+                  - /url: player.html?uid=10050
+              - cell "胜" [ref=f18e525]
+              - cell "1-0" [ref=f18e526]
+              - cell "2082.1" [ref=f18e527]
+              - cell "↑+1.4（+1.4）" [ref=f18e528]
+              - cell "2083.5" [ref=f18e529]
+            - row [ref=f18e530]:
+              - cell [ref=f18e531]:
+                - link "2026-11-03" [ref=f18e532] [cursor=pointer]:
+                  - /url: match.html?date=2026-11-03&type=%E6%99%AE%E9%80%9A&w=%E5%BE%90%E8%80%80%E9%B9%8F&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e533]
+              - cell [ref=f18e534]:
+                - link "徐耀鹏" [ref=f18e535] [cursor=pointer]:
+                  - /url: player.html?uid=10050
+              - cell "负" [ref=f18e536]
+              - cell "0-1" [ref=f18e537]
+              - cell "2083.5" [ref=f18e538]
+              - cell "↓-1.7（-1.7）" [ref=f18e539]
+              - cell "2081.8" [ref=f18e540]
+            - row [ref=f18e541]:
+              - cell [ref=f18e542]:
+                - link "2026-11-03" [ref=f18e543] [cursor=pointer]:
+                  - /url: match.html?date=2026-11-03&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E7%8E%8B%E7%A6%B9%E6%B6%B5
+              - cell "普通" [ref=f18e544]
+              - cell [ref=f18e545]:
+                - link "王禹涵" [ref=f18e546] [cursor=pointer]:
+                  - /url: player.html?uid=10049
+              - cell "胜" [ref=f18e547]
+              - cell "2-0" [ref=f18e548]
+              - cell "2081.8" [ref=f18e549]
+              - cell "↑+3.4（+3.3）" [ref=f18e550]
+              - cell "2085.1" [ref=f18e551]
+            - row [ref=f18e552]:
+              - cell [ref=f18e553]:
+                - link "2026-11-02" [ref=f18e554] [cursor=pointer]:
+                  - /url: match.html?date=2026-11-02&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%BB%E5%AE%89%E5%96%86
+              - cell "普通" [ref=f18e555]
+              - cell [ref=f18e556]:
+                - link "任安喆" [ref=f18e557] [cursor=pointer]:
+                  - /url: player.html?uid=10008
+              - cell "胜" [ref=f18e558]
+              - cell "1-0" [ref=f18e559]
+              - cell "2083.8" [ref=f18e560]
+              - cell "↑+1.8（+1.8）" [ref=f18e561]
+              - cell "2085.6" [ref=f18e562]
+            - row [ref=f18e563]:
+              - cell [ref=f18e564]:
+                - link "2026-11-02" [ref=f18e565] [cursor=pointer]:
+                  - /url: match.html?date=2026-11-02&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E5%BE%90%E8%80%80%E9%B9%8F
+              - cell "普通" [ref=f18e566]
+              - cell [ref=f18e567]:
+                - link "徐耀鹏" [ref=f18e568] [cursor=pointer]:
+                  - /url: player.html?uid=10050
+              - cell "胜" [ref=f18e569]
+              - cell "2-0" [ref=f18e570]
+              - cell "2085.6" [ref=f18e571]
+              - cell "↑+3.4（+3.3）" [ref=f18e572]
+              - cell "2088.9" [ref=f18e573]
+            - row [ref=f18e574]:
+              - cell [ref=f18e575]:
+                - link "2026-11-02" [ref=f18e576] [cursor=pointer]:
+                  - /url: match.html?date=2026-11-02&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E7%86%8A%E5%93%81%E9%92%A7
+              - cell "普通" [ref=f18e577]
+              - cell [ref=f18e578]:
+                - link "熊品钧" [ref=f18e579] [cursor=pointer]:
+                  - /url: player.html?uid=10056
+              - cell "胜" [ref=f18e580]
+              - cell "2-0" [ref=f18e581]
+              - cell "2088.9" [ref=f18e582]
+              - cell "↑+1.1（+1.1）" [ref=f18e583]
+              - cell "2090.0" [ref=f18e584]
+            - row [ref=f18e585]:
+              - cell [ref=f18e586]:
+                - link "2026-11-02" [ref=f18e587] [cursor=pointer]:
+                  - /url: match.html?date=2026-11-02&type=%E6%99%AE%E9%80%9A&w=%E7%8E%8B%E7%A6%B9%E6%B6%B5&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e588]
+              - cell [ref=f18e589]:
+                - link "王禹涵" [ref=f18e590] [cursor=pointer]:
+                  - /url: player.html?uid=10049
+              - cell "负" [ref=f18e591]
+              - cell "0-2" [ref=f18e592]
+              - cell "2090.0" [ref=f18e593]
+              - cell "↓-4.7（-4.6）" [ref=f18e594]
+              - cell "2085.4" [ref=f18e595]
+            - row [ref=f18e596]:
+              - cell [ref=f18e597]:
+                - link "2026-10-31" [ref=f18e598] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-31&type=%E6%99%AE%E9%80%9A&w=%E6%A2%85%E5%93%B2%E5%AE%87&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e599]
+              - cell [ref=f18e600]:
+                - link "梅哲宇" [ref=f18e601] [cursor=pointer]:
+                  - /url: player.html?uid=10011
+              - cell "负" [ref=f18e602]
+              - cell "0-3" [ref=f18e603]
+              - cell "2087.8" [ref=f18e604]
+              - cell "↓-4.8（-4.7）" [ref=f18e605]
+              - cell "2083.1" [ref=f18e606]
+            - row [ref=f18e607]:
+              - cell [ref=f18e608]:
+                - link "2026-10-31" [ref=f18e609] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-31&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E5%88%98%E5%86%A0%E7%BE%BD
+              - cell "普通" [ref=f18e610]
+              - cell [ref=f18e611]:
+                - link "刘冠羽" [ref=f18e612] [cursor=pointer]:
+                  - /url: player.html?uid=10018
+              - cell "胜" [ref=f18e613]
+              - cell "1-0" [ref=f18e614]
+              - cell "2083.1" [ref=f18e615]
+              - cell "↑+0.7（+0.7）" [ref=f18e616]
+              - cell "2083.8" [ref=f18e617]
+            - row [ref=f18e618]:
+              - cell [ref=f18e619]:
+                - link "2026-10-30" [ref=f18e620] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-30&type=%E6%99%AE%E9%80%9A&w=%E4%BB%98%E5%A4%A7%E5%8D%AB&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e621]
+              - cell [ref=f18e622]:
+                - link "付大卫" [ref=f18e623] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "负" [ref=f18e624]
+              - cell "1-3" [ref=f18e625]
+              - cell "2092.6" [ref=f18e626]
+              - cell "↓-4.8（-4.7）" [ref=f18e627]
+              - cell "2087.8" [ref=f18e628]
+            - row [ref=f18e629]:
+              - cell [ref=f18e630]:
+                - link "2026-10-28" [ref=f18e631] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-28&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e632]
+              - cell [ref=f18e633]:
+                - link "付大卫" [ref=f18e634] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e635]
+              - cell "3-2" [ref=f18e636]
+              - cell "2086.7" [ref=f18e637]
+              - cell "↑+6.0（+5.9）" [ref=f18e638]
+              - cell "2092.6" [ref=f18e639]
+            - row [ref=f18e640]:
+              - cell [ref=f18e641]:
+                - link "2026-10-27" [ref=f18e642] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-27&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e643]
+              - cell [ref=f18e644]:
+                - link "付大卫" [ref=f18e645] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e646]
+              - cell "3-2" [ref=f18e647]
+              - cell "2080.8" [ref=f18e648]
+              - cell "↑+6.0（+5.9）" [ref=f18e649]
+              - cell "2086.7" [ref=f18e650]
+            - row [ref=f18e651]:
+              - cell [ref=f18e652]:
+                - link "2026-10-26" [ref=f18e653] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-26&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e654]
+              - cell [ref=f18e655]:
+                - link "付大卫" [ref=f18e656] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e657]
+              - cell "1-0" [ref=f18e658]
+              - cell "2077.6" [ref=f18e659]
+              - cell "↑+1.8（+1.8）" [ref=f18e660]
+              - cell "2079.3" [ref=f18e661]
+            - row [ref=f18e662]:
+              - cell [ref=f18e663]:
+                - link "2026-10-26" [ref=f18e664] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-26&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E7%8E%8B%E7%A6%B9%E6%B6%B5
+              - cell "普通" [ref=f18e665]
+              - cell [ref=f18e666]:
+                - link "王禹涵" [ref=f18e667] [cursor=pointer]:
+                  - /url: player.html?uid=10049
+              - cell "胜" [ref=f18e668]
+              - cell "1-0" [ref=f18e669]
+              - cell "2079.3" [ref=f18e670]
+              - cell "↑+1.4（+1.4）" [ref=f18e671]
+              - cell "2080.8" [ref=f18e672]
+            - row [ref=f18e673]:
+              - cell [ref=f18e674]:
+                - link "2026-10-24" [ref=f18e675] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-24&type=%E6%99%AE%E9%80%9A&w=%E6%A2%85%E5%93%B2%E5%AE%87&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e676]
+              - cell [ref=f18e677]:
+                - link "梅哲宇" [ref=f18e678] [cursor=pointer]:
+                  - /url: player.html?uid=10011
+              - cell "负" [ref=f18e679]
+              - cell "1-2" [ref=f18e680]
+              - cell "2077.3" [ref=f18e681]
+              - cell "↓-3.4（-3.3）" [ref=f18e682]
+              - cell "2074.1" [ref=f18e683]
+            - row [ref=f18e684]:
+              - cell [ref=f18e685]:
+                - link "2026-10-24" [ref=f18e686] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-24&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E5%88%98%E5%86%A0%E7%BE%BD
+              - cell "普通" [ref=f18e687]
+              - cell [ref=f18e688]:
+                - link "刘冠羽" [ref=f18e689] [cursor=pointer]:
+                  - /url: player.html?uid=10018
+              - cell "胜" [ref=f18e690]
+              - cell "-" [ref=f18e691]
+              - cell "2074.1" [ref=f18e692]
+              - cell "↑+3.6（+3.5）" [ref=f18e693]
+              - cell "2077.6" [ref=f18e694]
+            - row [ref=f18e695]:
+              - cell [ref=f18e696]:
+                - link "2026-10-23" [ref=f18e697] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-23&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e698]
+              - cell [ref=f18e699]:
+                - link "魏罗瑞" [ref=f18e700] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e701]
+              - cell "1-2" [ref=f18e702]
+              - cell "2080.0" [ref=f18e703]
+              - cell "↓-2.7（-2.7）" [ref=f18e704]
+              - cell "2077.3" [ref=f18e705]
+            - row [ref=f18e706]:
+              - cell [ref=f18e707]:
+                - link "2026-10-22" [ref=f18e708] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-22&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E9%AD%8F%E7%BD%97%E7%91%9E
+              - cell "普通" [ref=f18e709]
+              - cell [ref=f18e710]:
+                - link "魏罗瑞" [ref=f18e711] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "胜" [ref=f18e712]
+              - cell "-" [ref=f18e713]
+              - cell "2086.8" [ref=f18e714]
+              - cell "↑+6.0（+5.9）" [ref=f18e715]
+              - cell "2092.7" [ref=f18e716]
+            - row [ref=f18e717]:
+              - cell [ref=f18e718]:
+                - link "2026-10-22" [ref=f18e719] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-22&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e720]
+              - cell [ref=f18e721]:
+                - link "魏罗瑞" [ref=f18e722] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e723]
+              - cell "-" [ref=f18e724]
+              - cell "2092.7" [ref=f18e725]
+              - cell "↓-4.8（-4.7）" [ref=f18e726]
+              - cell "2088.0" [ref=f18e727]
+            - row [ref=f18e728]:
+              - cell [ref=f18e729]:
+                - link "2026-10-22" [ref=f18e730] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-22&type=%E6%99%AE%E9%80%9A&w=%E5%BD%AD%E4%B8%80%E5%92%8C&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e731]
+              - cell [ref=f18e732]:
+                - link "彭一和" [ref=f18e733] [cursor=pointer]:
+                  - /url: player.html?uid=10006
+              - cell "负" [ref=f18e734]
+              - cell "1-2" [ref=f18e735]
+              - cell "2088.0" [ref=f18e736]
+              - cell "↓-4.7（-4.6）" [ref=f18e737]
+              - cell "2083.3" [ref=f18e738]
+            - row [ref=f18e739]:
+              - cell [ref=f18e740]:
+                - link "2026-10-22" [ref=f18e741] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-22&type=%E6%99%AE%E9%80%9A&w=%E9%BE%9A%E9%9B%A8%E7%85%8A&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e742]
+              - cell [ref=f18e743]:
+                - link "龚雨煊" [ref=f18e744] [cursor=pointer]:
+                  - /url: player.html?uid=10002
+              - cell "负" [ref=f18e745]
+              - cell "0-2" [ref=f18e746]
+              - cell "2083.3" [ref=f18e747]
+              - cell "↓-3.4（-3.3）" [ref=f18e748]
+              - cell "2080.0" [ref=f18e749]
+            - row [ref=f18e750]:
+              - cell [ref=f18e751]:
+                - link "2026-10-21" [ref=f18e752] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-21&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e753]
+              - cell [ref=f18e754]:
+                - link "魏罗瑞" [ref=f18e755] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e756]
+              - cell "0-3" [ref=f18e757]
+              - cell "2078.1" [ref=f18e758]
+              - cell "↓-3.8（-3.8）" [ref=f18e759]
+              - cell "2074.3" [ref=f18e760]
+            - row [ref=f18e761]:
+              - cell [ref=f18e762]:
+                - link "2026-10-21" [ref=f18e763] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-21&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E9%BE%9A%E9%9B%A8%E7%85%8A
+              - cell "普通" [ref=f18e764]
+              - cell [ref=f18e765]:
+                - link "龚雨煊" [ref=f18e766] [cursor=pointer]:
+                  - /url: player.html?uid=10002
+              - cell "胜" [ref=f18e767]
+              - cell "2-0" [ref=f18e768]
+              - cell "2074.3" [ref=f18e769]
+              - cell "↑+4.2（+4.2）" [ref=f18e770]
+              - cell "2078.5" [ref=f18e771]
+            - row [ref=f18e772]:
+              - cell [ref=f18e773]:
+                - link "2026-10-21" [ref=f18e774] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-21&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E6%A2%85%E5%93%B2%E5%AE%87
+              - cell "普通" [ref=f18e775]
+              - cell [ref=f18e776]:
+                - link "梅哲宇" [ref=f18e777] [cursor=pointer]:
+                  - /url: player.html?uid=10011
+              - cell "胜" [ref=f18e778]
+              - cell "2-1" [ref=f18e779]
+              - cell "2078.5" [ref=f18e780]
+              - cell "↑+4.2（+4.2）" [ref=f18e781]
+              - cell "2082.6" [ref=f18e782]
+            - row [ref=f18e783]:
+              - cell [ref=f18e784]:
+                - link "2026-10-21" [ref=f18e785] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-21&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E9%BE%9A%E9%9B%A8%E7%85%8A&n=2
+              - cell "普通" [ref=f18e786]
+              - cell [ref=f18e787]:
+                - link "龚雨煊" [ref=f18e788] [cursor=pointer]:
+                  - /url: player.html?uid=10002
+              - cell "胜" [ref=f18e789]
+              - cell "2-0" [ref=f18e790]
+              - cell "2082.6" [ref=f18e791]
+              - cell "↑+4.2（+4.2）" [ref=f18e792]
+              - cell "2086.8" [ref=f18e793]
+            - row [ref=f18e794]:
+              - cell [ref=f18e795]:
+                - link "2026-10-20" [ref=f18e796] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-20&type=%E6%99%AE%E9%80%9A&w=%E7%A5%81%E5%AD%90%E5%82%B2&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e797]
+              - cell [ref=f18e798]:
+                - link "祁子傲" [ref=f18e799] [cursor=pointer]:
+                  - /url: player.html?uid=10007
+              - cell "负" [ref=f18e800]
+              - cell "2-4" [ref=f18e801]
+              - cell "2094.2" [ref=f18e802]
+              - cell "↓-7.2（-7.1）" [ref=f18e803]
+              - cell "2087.1" [ref=f18e804]
+            - row [ref=f18e805]:
+              - cell [ref=f18e806]:
+                - link "2026-10-20" [ref=f18e807] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-20&type=%E6%99%AE%E9%80%9A&w=%E7%A5%81%E5%AD%90%E5%82%B2&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4&n=2
+              - cell "普通" [ref=f18e808]
+              - cell [ref=f18e809]:
+                - link "祁子傲" [ref=f18e810] [cursor=pointer]:
+                  - /url: player.html?uid=10007
+              - cell "负" [ref=f18e811]
+              - cell "2-3" [ref=f18e812]
+              - cell "2087.1" [ref=f18e813]
+              - cell "↓-4.8（-4.7）" [ref=f18e814]
+              - cell "2082.3" [ref=f18e815]
+            - row [ref=f18e816]:
+              - cell [ref=f18e817]:
+                - link "2026-10-20" [ref=f18e818] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-20&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e819]
+              - cell [ref=f18e820]:
+                - link "魏罗瑞" [ref=f18e821] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e822]
+              - cell "0-3" [ref=f18e823]
+              - cell "2082.3" [ref=f18e824]
+              - cell "↓-4.8（-4.7）" [ref=f18e825]
+              - cell "2077.6" [ref=f18e826]
+            - row [ref=f18e827]:
+              - cell [ref=f18e828]:
+                - link "2026-10-20" [ref=f18e829] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-20&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E5%BC%A0%E5%AE%B8%E7%91%9E2
+              - cell "普通" [ref=f18e830]
+              - cell [ref=f18e831]:
+                - link "张宸瑞2" [ref=f18e832] [cursor=pointer]:
+                  - /url: player.html?uid=10037
+              - cell "胜" [ref=f18e833]
+              - cell "2-0" [ref=f18e834]
+              - cell "2077.6" [ref=f18e835]
+              - cell "↑+0.6（+0.6）" [ref=f18e836]
+              - cell "2078.1" [ref=f18e837]
+            - row [ref=f18e838]:
+              - cell [ref=f18e839]:
+                - link "2026-10-19" [ref=f18e840] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-19&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E8%B0%B7%E5%AD%90%E6%98%93
+              - cell "普通" [ref=f18e841]
+              - cell [ref=f18e842]:
+                - link "谷子易" [ref=f18e843] [cursor=pointer]:
+                  - /url: player.html?uid=10003
+              - cell "胜" [ref=f18e844]
+              - cell "2-1" [ref=f18e845]
+              - cell "2094.2" [ref=f18e846]
+              - cell "↑+3.4（+3.3）" [ref=f18e847]
+              - cell "2097.5" [ref=f18e848]
+            - row [ref=f18e849]:
+              - cell [ref=f18e850]:
+                - link "2026-10-19" [ref=f18e851] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-19&type=%E6%99%AE%E9%80%9A&w=%E4%BB%98%E5%A4%A7%E5%8D%AB&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e852]
+              - cell [ref=f18e853]:
+                - link "付大卫" [ref=f18e854] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "负" [ref=f18e855]
+              - cell "0-2" [ref=f18e856]
+              - cell "2097.5" [ref=f18e857]
+              - cell "↓-3.4（-3.3）" [ref=f18e858]
+              - cell "2094.2" [ref=f18e859]
+            - row [ref=f18e860]:
+              - cell [ref=f18e861]:
+                - link "2026-10-17" [ref=f18e862] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-17&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E5%88%98%E5%86%A0%E7%BE%BD
+              - cell "普通" [ref=f18e863]
+              - cell [ref=f18e864]:
+                - link "刘冠羽" [ref=f18e865] [cursor=pointer]:
+                  - /url: player.html?uid=10018
+              - cell "胜" [ref=f18e866]
+              - cell "2-0" [ref=f18e867]
+              - cell "2092.5" [ref=f18e868]
+              - cell "↑+1.7（+1.6）" [ref=f18e869]
+              - cell "2094.2" [ref=f18e870]
+            - row [ref=f18e871]:
+              - cell [ref=f18e872]:
+                - link "2026-10-16" [ref=f18e873] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-16&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e874]
+              - cell [ref=f18e875]:
+                - link "付大卫" [ref=f18e876] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e877]
+              - cell "2-0" [ref=f18e878]
+              - cell "2083.9" [ref=f18e879]
+              - cell "↑+4.2（+4.2）" [ref=f18e880]
+              - cell "2088.0" [ref=f18e881]
+            - row [ref=f18e882]:
+              - cell [ref=f18e883]:
+                - link "2026-10-16" [ref=f18e884] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-16&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E6%88%B4%E6%98%9F%E7%BF%8A
+              - cell "普通" [ref=f18e885]
+              - cell [ref=f18e886]:
+                - link "戴星翊" [ref=f18e887] [cursor=pointer]:
+                  - /url: player.html?uid=10045
+              - cell "胜" [ref=f18e888]
+              - cell "4-3" [ref=f18e889]
+              - cell "2088.0" [ref=f18e890]
+              - cell "↑+1.2（+1.2）" [ref=f18e891]
+              - cell "2089.2" [ref=f18e892]
+            - row [ref=f18e893]:
+              - cell [ref=f18e894]:
+                - link "2026-10-16" [ref=f18e895] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-16&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E5%BE%90%E8%80%80%E9%B9%8F
+              - cell "普通" [ref=f18e896]
+              - cell [ref=f18e897]:
+                - link "徐耀鹏" [ref=f18e898] [cursor=pointer]:
+                  - /url: player.html?uid=10050
+              - cell "胜" [ref=f18e899]
+              - cell "2-1" [ref=f18e900]
+              - cell "2089.2" [ref=f18e901]
+              - cell "↑+3.4（+3.3）" [ref=f18e902]
+              - cell "2092.5" [ref=f18e903]
+            - row [ref=f18e904]:
+              - cell [ref=f18e905]:
+                - link "2026-10-15" [ref=f18e906] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-15&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E5%A7%9C%E5%AD%90%E6%B6%A6
+              - cell "普通" [ref=f18e907]
+              - cell [ref=f18e908]:
+                - link "姜子润" [ref=f18e909] [cursor=pointer]:
+                  - /url: player.html?uid=10004
+              - cell "胜" [ref=f18e910]
+              - cell "2-1" [ref=f18e911]
+              - cell "2085.5" [ref=f18e912]
+              - cell "↑+4.2（+4.2）" [ref=f18e913]
+              - cell "2089.7" [ref=f18e914]
+            - row [ref=f18e915]:
+              - cell [ref=f18e916]:
+                - link "2026-10-15" [ref=f18e917] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-15&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e918]
+              - cell [ref=f18e919]:
+                - link "魏罗瑞" [ref=f18e920] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e921]
+              - cell "1-2" [ref=f18e922]
+              - cell "2089.7" [ref=f18e923]
+              - cell "↓-3.4（-3.3）" [ref=f18e924]
+              - cell "2086.4" [ref=f18e925]
+            - row [ref=f18e926]:
+              - cell [ref=f18e927]:
+                - link "2026-10-15" [ref=f18e928] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-15&type=%E6%99%AE%E9%80%9A&w=%E9%99%88%E7%91%9C%E8%90%B1&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e929]
+              - cell [ref=f18e930]:
+                - link "陈瑜萱" [ref=f18e931] [cursor=pointer]:
+                  - /url: player.html?uid=10000
+              - cell "负" [ref=f18e932]
+              - cell "1-2" [ref=f18e933]
+              - cell "2086.4" [ref=f18e934]
+              - cell "↓-3.4（-3.3）" [ref=f18e935]
+              - cell "2083.0" [ref=f18e936]
+            - row [ref=f18e937]:
+              - cell [ref=f18e938]:
+                - link "2026-10-15" [ref=f18e939] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-15&type=%E6%99%AE%E9%80%9A&w=%E9%BE%9A%E9%9B%A8%E7%85%8A&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e940]
+              - cell [ref=f18e941]:
+                - link "龚雨煊" [ref=f18e942] [cursor=pointer]:
+                  - /url: player.html?uid=10002
+              - cell "负" [ref=f18e943]
+              - cell "0-2" [ref=f18e944]
+              - cell "2083.0" [ref=f18e945]
+              - cell "↓-3.4（-3.3）" [ref=f18e946]
+              - cell "2079.7" [ref=f18e947]
+            - row [ref=f18e948]:
+              - cell [ref=f18e949]:
+                - link "2026-10-15" [ref=f18e950] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-15&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e951]
+              - cell [ref=f18e952]:
+                - link "付大卫" [ref=f18e953] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e954]
+              - cell "2-0" [ref=f18e955]
+              - cell "2079.7" [ref=f18e956]
+              - cell "↑+4.2（+4.2）" [ref=f18e957]
+              - cell "2083.9" [ref=f18e958]
+            - row [ref=f18e959]:
+              - cell [ref=f18e960]:
+                - link "2026-10-14" [ref=f18e961] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-14&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E9%AD%8F%E7%BD%97%E7%91%9E
+              - cell "普通" [ref=f18e962]
+              - cell [ref=f18e963]:
+                - link "魏罗瑞" [ref=f18e964] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "胜" [ref=f18e965]
+              - cell "-" [ref=f18e966]
+              - cell "2084.7" [ref=f18e967]
+              - cell "↑+4.2（+4.2）" [ref=f18e968]
+              - cell "2088.9" [ref=f18e969]
+            - row [ref=f18e970]:
+              - cell [ref=f18e971]:
+                - link "2026-10-14" [ref=f18e972] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-14&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e973]
+              - cell [ref=f18e974]:
+                - link "魏罗瑞" [ref=f18e975] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e976]
+              - cell "-" [ref=f18e977]
+              - cell "2088.9" [ref=f18e978]
+              - cell "↓-3.4（-3.3）" [ref=f18e979]
+              - cell "2085.5" [ref=f18e980]
+            - row [ref=f18e981]:
+              - cell [ref=f18e982]:
+                - link "2026-10-13" [ref=f18e983] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-13&type=%E6%99%AE%E9%80%9A&w=%E4%BB%98%E5%A4%A7%E5%8D%AB&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e984]
+              - cell [ref=f18e985]:
+                - link "付大卫" [ref=f18e986] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "负" [ref=f18e987]
+              - cell "2-3" [ref=f18e988]
+              - cell "2094.2" [ref=f18e989]
+              - cell "↓-4.8（-4.7）" [ref=f18e990]
+              - cell "2089.4" [ref=f18e991]
+            - row [ref=f18e992]:
+              - cell [ref=f18e993]:
+                - link "2026-10-13" [ref=f18e994] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-13&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e995]
+              - cell [ref=f18e996]:
+                - link "魏罗瑞" [ref=f18e997] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e998]
+              - cell "2-3" [ref=f18e999]
+              - cell "2089.4" [ref=f18e1000]
+              - cell "↓-4.8（-4.7）" [ref=f18e1001]
+              - cell "2084.7" [ref=f18e1002]
+            - row [ref=f18e1003]:
+              - cell [ref=f18e1004]:
+                - link "2026-10-12" [ref=f18e1005] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-12&type=%E6%99%AE%E9%80%9A&w=%E4%BB%98%E5%A4%A7%E5%8D%AB&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1006]
+              - cell [ref=f18e1007]:
+                - link "付大卫" [ref=f18e1008] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "负" [ref=f18e1009]
+              - cell "1-2" [ref=f18e1010]
+              - cell "2101.5" [ref=f18e1011]
+              - cell "↓-3.4（-3.3）" [ref=f18e1012]
+              - cell "2098.2" [ref=f18e1013]
+            - row [ref=f18e1014]:
+              - cell [ref=f18e1015]:
+                - link "2026-10-12" [ref=f18e1016] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-12&type=%E6%99%AE%E9%80%9A&w=%E9%BE%9A%E9%9B%A8%E7%85%8A&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1017]
+              - cell [ref=f18e1018]:
+                - link "龚雨煊" [ref=f18e1019] [cursor=pointer]:
+                  - /url: player.html?uid=10002
+              - cell "负" [ref=f18e1020]
+              - cell "1-2" [ref=f18e1021]
+              - cell "2098.2" [ref=f18e1022]
+              - cell "↓-4.0（-4.0）" [ref=f18e1023]
+              - cell "2094.2" [ref=f18e1024]
+            - row [ref=f18e1025]:
+              - cell [ref=f18e1026]:
+                - link "2026-10-08" [ref=f18e1027] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-08&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E9%AD%8F%E7%BD%97%E7%91%9E
+              - cell "普通" [ref=f18e1028]
+              - cell [ref=f18e1029]:
+                - link "魏罗瑞" [ref=f18e1030] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "胜" [ref=f18e1031]
+              - cell "3-1" [ref=f18e1032]
+              - cell "2095.8" [ref=f18e1033]
+              - cell "↑+6.0（+5.7）" [ref=f18e1034]
+              - cell "2101.5" [ref=f18e1035]
+            - row [ref=f18e1036]:
+              - cell [ref=f18e1037]:
+                - link "2026-10-07" [ref=f18e1038] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-07&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E9%AD%8F%E7%BD%97%E7%91%9E
+              - cell "普通" [ref=f18e1039]
+              - cell [ref=f18e1040]:
+                - link "魏罗瑞" [ref=f18e1041] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "胜" [ref=f18e1042]
+              - cell "3-2" [ref=f18e1043]
+              - cell "2089.8" [ref=f18e1044]
+              - cell "↑+6.0（+5.9）" [ref=f18e1045]
+              - cell "2095.8" [ref=f18e1046]
+            - row [ref=f18e1047]:
+              - cell [ref=f18e1048]:
+                - link "2026-10-06" [ref=f18e1049] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-06&type=%E6%99%AE%E9%80%9A&w=%E7%A5%81%E5%AD%90%E5%82%B2&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1050]
+              - cell [ref=f18e1051]:
+                - link "祁子傲" [ref=f18e1052] [cursor=pointer]:
+                  - /url: player.html?uid=10007
+              - cell "负" [ref=f18e1053]
+              - cell "1-4" [ref=f18e1054]
+              - cell "2103.1" [ref=f18e1055]
+              - cell "↓-8.6（-8.5）" [ref=f18e1056]
+              - cell "2094.6" [ref=f18e1057]
+            - row [ref=f18e1058]:
+              - cell [ref=f18e1059]:
+                - link "2026-10-06" [ref=f18e1060] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-06&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1061]
+              - cell [ref=f18e1062]:
+                - link "魏罗瑞" [ref=f18e1063] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e1064]
+              - cell "1-3" [ref=f18e1065]
+              - cell "2094.6" [ref=f18e1066]
+              - cell "↓-4.8（-4.7）" [ref=f18e1067]
+              - cell "2089.8" [ref=f18e1068]
+            - row [ref=f18e1069]:
+              - cell [ref=f18e1070]:
+                - link "2026-10-05" [ref=f18e1071] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-05&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1072]
+              - cell [ref=f18e1073]:
+                - link "魏罗瑞" [ref=f18e1074] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e1075]
+              - cell "2-4" [ref=f18e1076]
+              - cell "2110.2" [ref=f18e1077]
+              - cell "↓-7.2（-7.1）" [ref=f18e1078]
+              - cell "2103.1" [ref=f18e1079]
+            - row [ref=f18e1080]:
+              - cell [ref=f18e1081]:
+                - link "2026-09-30" [ref=f18e1082] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-30&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E9%AD%8F%E7%BD%97%E7%91%9E
+              - cell "普通" [ref=f18e1083]
+              - cell [ref=f18e1084]:
+                - link "魏罗瑞" [ref=f18e1085] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "胜" [ref=f18e1086]
+              - cell "4-2" [ref=f18e1087]
+              - cell "2111.7" [ref=f18e1088]
+              - cell "↑+9.0（+8.5）" [ref=f18e1089]
+              - cell "2120.2" [ref=f18e1090]
+            - row [ref=f18e1091]:
+              - cell [ref=f18e1092]:
+                - link "2026-09-30" [ref=f18e1093] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-30&type=%E6%99%AE%E9%80%9A&w=%E4%BB%98%E5%A4%A7%E5%8D%AB&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1094]
+              - cell [ref=f18e1095]:
+                - link "付大卫" [ref=f18e1096] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "负" [ref=f18e1097]
+              - cell "1-2" [ref=f18e1098]
+              - cell "2120.2" [ref=f18e1099]
+              - cell "↓-3.4（-3.2）" [ref=f18e1100]
+              - cell "2117.0" [ref=f18e1101]
+            - row [ref=f18e1102]:
+              - cell [ref=f18e1103]:
+                - link "2026-09-30" [ref=f18e1104] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-30&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1105]
+              - cell [ref=f18e1106]:
+                - link "魏罗瑞" [ref=f18e1107] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e1108]
+              - cell "3-4" [ref=f18e1109]
+              - cell "2117.0" [ref=f18e1110]
+              - cell "↓-7.2（-6.8）" [ref=f18e1111]
+              - cell "2110.2" [ref=f18e1112]
+            - row [ref=f18e1113]:
+              - cell [ref=f18e1114]:
+                - link "2026-09-29" [ref=f18e1115] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-29&type=%E6%99%AE%E9%80%9A&w=%E4%BB%98%E5%A4%A7%E5%8D%AB&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1116]
+              - cell [ref=f18e1117]:
+                - link "付大卫" [ref=f18e1118] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "负" [ref=f18e1119]
+              - cell "1-2" [ref=f18e1120]
+              - cell "2113.8" [ref=f18e1121]
+              - cell "↓-3.4（-3.3）" [ref=f18e1122]
+              - cell "2110.5" [ref=f18e1123]
+            - row [ref=f18e1124]:
+              - cell [ref=f18e1125]:
+                - link "2026-09-29" [ref=f18e1126] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-29&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E6%88%B4%E6%98%9F%E7%BF%8A
+              - cell "普通" [ref=f18e1127]
+              - cell [ref=f18e1128]:
+                - link "戴星翊" [ref=f18e1129] [cursor=pointer]:
+                  - /url: player.html?uid=10045
+              - cell "胜" [ref=f18e1130]
+              - cell "-" [ref=f18e1131]
+              - cell "2110.5" [ref=f18e1132]
+              - cell "↑+1.2（+1.2）" [ref=f18e1133]
+              - cell "2111.7" [ref=f18e1134]
+            - row [ref=f18e1135]:
+              - cell [ref=f18e1136]:
+                - link "2026-09-28" [ref=f18e1137] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-28&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e1138]
+              - cell [ref=f18e1139]:
+                - link "付大卫" [ref=f18e1140] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e1141]
+              - cell "2-0" [ref=f18e1142]
+              - cell "2103.8" [ref=f18e1143]
+              - cell "↑+4.2（+4.2）" [ref=f18e1144]
+              - cell "2107.9" [ref=f18e1145]
+            - row [ref=f18e1146]:
+              - cell [ref=f18e1147]:
+                - link "2026-09-28" [ref=f18e1148] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-28&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E9%AD%8F%E7%BD%97%E7%91%9E
+              - cell "普通" [ref=f18e1149]
+              - cell [ref=f18e1150]:
+                - link "魏罗瑞" [ref=f18e1151] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "胜" [ref=f18e1152]
+              - cell "3-0" [ref=f18e1153]
+              - cell "2107.9" [ref=f18e1154]
+              - cell "↑+6.0（+5.9）" [ref=f18e1155]
+              - cell "2113.8" [ref=f18e1156]
+            - row [ref=f18e1157]:
+              - cell [ref=f18e1158]:
+                - link "2026-09-27" [ref=f18e1159] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-27&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1160]
+              - cell [ref=f18e1161]:
+                - link "魏罗瑞" [ref=f18e1162] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e1163]
+              - cell "2-3" [ref=f18e1164]
+              - cell "2099.6" [ref=f18e1165]
+              - cell "↓-4.8（-4.7）" [ref=f18e1166]
+              - cell "2094.9" [ref=f18e1167]
+            - row [ref=f18e1168]:
+              - cell [ref=f18e1169]:
+                - link "2026-09-27" [ref=f18e1170] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-27&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E9%AD%8F%E7%BD%97%E7%91%9E
+              - cell "普通" [ref=f18e1171]
+              - cell [ref=f18e1172]:
+                - link "魏罗瑞" [ref=f18e1173] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "胜" [ref=f18e1174]
+              - cell "4-2" [ref=f18e1175]
+              - cell "2094.9" [ref=f18e1176]
+              - cell "↑+9.0（+8.9）" [ref=f18e1177]
+              - cell "2103.8" [ref=f18e1178]
+            - row [ref=f18e1179]:
+              - cell [ref=f18e1180]:
+                - link "2026-09-26" [ref=f18e1181] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-26&type=%E6%99%AE%E9%80%9A&w=%E4%BB%98%E5%A4%A7%E5%8D%AB&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1182]
+              - cell [ref=f18e1183]:
+                - link "付大卫" [ref=f18e1184] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "负" [ref=f18e1185]
+              - cell "1-2" [ref=f18e1186]
+              - cell "2102.9" [ref=f18e1187]
+              - cell "↓-3.4（-3.3）" [ref=f18e1188]
+              - cell "2099.6" [ref=f18e1189]
+            - row [ref=f18e1190]:
+              - cell [ref=f18e1191]:
+                - link "2026-09-24" [ref=f18e1192] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-24&type=%E6%99%AE%E9%80%9A&w=%E6%A2%85%E5%93%B2%E5%AE%87&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1193]
+              - cell [ref=f18e1194]:
+                - link "梅哲宇" [ref=f18e1195] [cursor=pointer]:
+                  - /url: player.html?uid=10011
+              - cell "负" [ref=f18e1196]
+              - cell "2-3" [ref=f18e1197]
+              - cell "2090.4" [ref=f18e1198]
+              - cell "↓-4.8（-4.7）" [ref=f18e1199]
+              - cell "2085.8" [ref=f18e1200]
+            - row [ref=f18e1201]:
+              - cell [ref=f18e1202]:
+                - link "2026-09-24" [ref=f18e1203] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-24&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e1204]
+              - cell [ref=f18e1205]:
+                - link "付大卫" [ref=f18e1206] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e1207]
+              - cell "2-0" [ref=f18e1208]
+              - cell "2085.8" [ref=f18e1209]
+              - cell "↑+4.2（+4.1）" [ref=f18e1210]
+              - cell "2089.9" [ref=f18e1211]
+            - row [ref=f18e1212]:
+              - cell [ref=f18e1213]:
+                - link "2026-09-24" [ref=f18e1214] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-24&type=%E5%8D%81%E4%BA%8C%E5%BC%BA%E8%B5%9B&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E9%BE%9A%E9%9B%A8%E7%85%8A
+              - cell "十二强赛" [ref=f18e1215]
+              - cell [ref=f18e1216]:
+                - link "龚雨煊" [ref=f18e1217] [cursor=pointer]:
+                  - /url: player.html?uid=10002
+              - cell "胜" [ref=f18e1218]
+              - cell "3-2" [ref=f18e1219]
+              - cell "2089.9" [ref=f18e1220]
+              - cell "↑+21.0（+13.1）" [ref=f18e1221]
+              - cell "2102.9" [ref=f18e1222]
+            - row [ref=f18e1223]:
+              - cell [ref=f18e1224]:
+                - link "2026-09-23" [ref=f18e1225] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-23&type=%E6%99%AE%E9%80%9A&w=%E4%BB%98%E5%A4%A7%E5%8D%AB&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1226]
+              - cell [ref=f18e1227]:
+                - link "付大卫" [ref=f18e1228] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "负" [ref=f18e1229]
+              - cell "2-3" [ref=f18e1230]
+              - cell "2095.2" [ref=f18e1231]
+              - cell "↓-4.8（-4.7）" [ref=f18e1232]
+              - cell "2090.4" [ref=f18e1233]
+            - row [ref=f18e1234]:
+              - cell [ref=f18e1235]:
+                - link "2026-09-22" [ref=f18e1236] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-22&type=%E6%99%AE%E9%80%9A&w=%E4%BB%98%E5%A4%A7%E5%8D%AB&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1237]
+              - cell [ref=f18e1238]:
+                - link "付大卫" [ref=f18e1239] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "负" [ref=f18e1240]
+              - cell "2-3" [ref=f18e1241]
+              - cell "2099.9" [ref=f18e1242]
+              - cell "↓-4.8（-4.7）" [ref=f18e1243]
+              - cell "2095.2" [ref=f18e1244]
+            - row [ref=f18e1245]:
+              - cell [ref=f18e1246]:
+                - link "2026-09-21" [ref=f18e1247] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-21&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e1248]
+              - cell [ref=f18e1249]:
+                - link "付大卫" [ref=f18e1250] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e1251]
+              - cell "3-2" [ref=f18e1252]
+              - cell "2094.0" [ref=f18e1253]
+              - cell "↑+6.0（+5.9）" [ref=f18e1254]
+              - cell "2099.9" [ref=f18e1255]
+            - row [ref=f18e1256]:
+              - cell [ref=f18e1257]:
+                - link "2026-09-18" [ref=f18e1258] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-18&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1259]
+              - cell [ref=f18e1260]:
+                - link "魏罗瑞" [ref=f18e1261] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e1262]
+              - cell "-" [ref=f18e1263]
+              - cell "2092.8" [ref=f18e1264]
+              - cell "↓-4.8（-4.6）" [ref=f18e1265]
+              - cell "2088.2" [ref=f18e1266]
+            - row [ref=f18e1267]:
+              - cell [ref=f18e1268]:
+                - link "2026-09-18" [ref=f18e1269] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-18&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E7%8E%8B%E6%88%90%E6%82%A6
+              - cell "普通" [ref=f18e1270]
+              - cell [ref=f18e1271]:
+                - link "王成悦" [ref=f18e1272] [cursor=pointer]:
+                  - /url: player.html?uid=10012
+              - cell "胜" [ref=f18e1273]
+              - cell "-" [ref=f18e1274]
+              - cell "2088.2" [ref=f18e1275]
+              - cell "↑+6.0（+5.8）" [ref=f18e1276]
+              - cell "2094.0" [ref=f18e1277]
+            - row [ref=f18e1278]:
+              - cell [ref=f18e1279]:
+                - link "2026-09-16" [ref=f18e1280] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-16&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1281]
+              - cell [ref=f18e1282]:
+                - link "魏罗瑞" [ref=f18e1283] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e1284]
+              - cell "2-3" [ref=f18e1285]
+              - cell "2098.1" [ref=f18e1286]
+              - cell "↓-4.8（-4.7）" [ref=f18e1287]
+              - cell "2093.4" [ref=f18e1288]
+            - row [ref=f18e1289]:
+              - cell [ref=f18e1290]:
+                - link "2026-09-16" [ref=f18e1291] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-16&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4&n=2
+              - cell "普通" [ref=f18e1292]
+              - cell [ref=f18e1293]:
+                - link "魏罗瑞" [ref=f18e1294] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e1295]
+              - cell "2-3" [ref=f18e1296]
+              - cell "2093.4" [ref=f18e1297]
+              - cell "↓-4.8（-4.7）" [ref=f18e1298]
+              - cell "2088.7" [ref=f18e1299]
+            - row [ref=f18e1300]:
+              - cell [ref=f18e1301]:
+                - link "2026-09-16" [ref=f18e1302] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-16&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E9%AD%8F%E7%BD%97%E7%91%9E
+              - cell "普通" [ref=f18e1303]
+              - cell [ref=f18e1304]:
+                - link "魏罗瑞" [ref=f18e1305] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "胜" [ref=f18e1306]
+              - cell "2-1" [ref=f18e1307]
+              - cell "2088.7" [ref=f18e1308]
+              - cell "↑+4.2（+4.1）" [ref=f18e1309]
+              - cell "2092.8" [ref=f18e1310]
+            - row [ref=f18e1311]:
+              - cell [ref=f18e1312]:
+                - link "2026-09-15" [ref=f18e1313] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-15&type=%E6%99%AE%E9%80%9A&w=%E4%BB%98%E5%A4%A7%E5%8D%AB&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1314]
+              - cell [ref=f18e1315]:
+                - link "付大卫" [ref=f18e1316] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "负" [ref=f18e1317]
+              - cell "1-4" [ref=f18e1318]
+              - cell "2106.7" [ref=f18e1319]
+              - cell "↓-8.6（-8.5）" [ref=f18e1320]
+              - cell "2098.1" [ref=f18e1321]
+            - row [ref=f18e1322]:
+              - cell [ref=f18e1323]:
+                - link "2026-09-14" [ref=f18e1324] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-14&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e1325]
+              - cell [ref=f18e1326]:
+                - link "付大卫" [ref=f18e1327] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e1328]
+              - cell "3-0" [ref=f18e1329]
+              - cell "2101.9" [ref=f18e1330]
+              - cell "↑+4.8（+4.7）" [ref=f18e1331]
+              - cell "2106.7" [ref=f18e1332]
+            - row [ref=f18e1333]:
+              - cell [ref=f18e1334]:
+                - link "2026-09-12" [ref=f18e1335] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-12&type=%E6%99%AE%E9%80%9A&w=%E7%8E%8B%E6%88%90%E6%82%A6&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1336]
+              - cell [ref=f18e1337]:
+                - link "王成悦" [ref=f18e1338] [cursor=pointer]:
+                  - /url: player.html?uid=10012
+              - cell "负" [ref=f18e1339]
+              - cell "0-4" [ref=f18e1340]
+              - cell "2109.0" [ref=f18e1341]
+              - cell "↓-7.2（-7.0）" [ref=f18e1342]
+              - cell "2101.9" [ref=f18e1343]
+            - row [ref=f18e1344]:
+              - cell [ref=f18e1345]:
+                - link "2026-09-11" [ref=f18e1346] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-11&type=%E6%99%AE%E9%80%9A&w=%E4%BB%98%E5%A4%A7%E5%8D%AB&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1347]
+              - cell [ref=f18e1348]:
+                - link "付大卫" [ref=f18e1349] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "负" [ref=f18e1350]
+              - cell "-" [ref=f18e1351]
+              - cell "2112.9" [ref=f18e1352]
+              - cell "↓-4.0（-4.0）" [ref=f18e1353]
+              - cell "2109.0" [ref=f18e1354]
+            - row [ref=f18e1355]:
+              - cell [ref=f18e1356]:
+                - link "2026-09-10" [ref=f18e1357] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-10&type=%E5%8D%81%E4%BA%8C%E5%BC%BA%E8%B5%9B&w=%E4%BB%BB%E5%AE%89%E5%96%86&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "十二强赛" [ref=f18e1358]
+              - cell [ref=f18e1359]:
+                - link "任安喆" [ref=f18e1360] [cursor=pointer]:
+                  - /url: player.html?uid=10008
+              - cell "负" [ref=f18e1361]
+              - cell "1-3" [ref=f18e1362]
+              - cell "2130.6" [ref=f18e1363]
+              - cell "↓-23.5（-20.0）" [ref=f18e1364]
+              - cell "2110.6" [ref=f18e1365]
+            - row [ref=f18e1366]:
+              - cell [ref=f18e1367]:
+                - link "2026-09-10" [ref=f18e1368] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-10&type=%E5%8D%81%E4%BA%8C%E5%BC%BA%E8%B5%9B&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E5%BD%AD%E7%80%9A%E6%98%8E
+              - cell "十二强赛" [ref=f18e1369]
+              - cell [ref=f18e1370]:
+                - link "彭瀚明" [ref=f18e1371] [cursor=pointer]:
+                  - /url: player.html?uid=10044
+              - cell "胜" [ref=f18e1372]
+              - cell "3-0" [ref=f18e1373]
+              - cell "2110.6" [ref=f18e1374]
+              - cell "↑+2.8（+2.4）" [ref=f18e1375]
+              - cell "2112.9" [ref=f18e1376]
+            - row [ref=f18e1377]:
+              - cell [ref=f18e1378]:
+                - link "2026-09-09" [ref=f18e1379] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-09&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E6%B1%AA%E5%AE%81%E8%BD%A9
+              - cell "普通" [ref=f18e1380]
+              - cell [ref=f18e1381]:
+                - link "汪宁轩" [ref=f18e1382] [cursor=pointer]:
+                  - /url: player.html?uid=10019
+              - cell "胜" [ref=f18e1383]
+              - cell "-" [ref=f18e1384]
+              - cell "2126.5" [ref=f18e1385]
+              - cell "↑+0.8（+0.8）" [ref=f18e1386]
+              - cell "2127.3" [ref=f18e1387]
+            - row [ref=f18e1388]:
+              - cell [ref=f18e1389]:
+                - link "2026-09-09" [ref=f18e1390] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-09&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e1391]
+              - cell [ref=f18e1392]:
+                - link "付大卫" [ref=f18e1393] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e1394]
+              - cell "-" [ref=f18e1395]
+              - cell "2127.3" [ref=f18e1396]
+              - cell "↑+3.4（+3.3）" [ref=f18e1397]
+              - cell "2130.6" [ref=f18e1398]
+            - row [ref=f18e1399]:
+              - cell [ref=f18e1400]:
+                - link "2026-09-08" [ref=f18e1401] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-08&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e1402]
+              - cell [ref=f18e1403]:
+                - link "付大卫" [ref=f18e1404] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e1405]
+              - cell "-" [ref=f18e1406]
+              - cell "2125.2" [ref=f18e1407]
+              - cell "↑+6.0（+5.9）" [ref=f18e1408]
+              - cell "2131.1" [ref=f18e1409]
+            - row [ref=f18e1410]:
+              - cell [ref=f18e1411]:
+                - link "2026-09-08" [ref=f18e1412] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-08&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%AE%89%E5%96%86&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1413]
+              - cell [ref=f18e1414]:
+                - link "任安喆" [ref=f18e1415] [cursor=pointer]:
+                  - /url: player.html?uid=10008
+              - cell "负" [ref=f18e1416]
+              - cell "-" [ref=f18e1417]
+              - cell "2131.1" [ref=f18e1418]
+              - cell "↓-6.7（-6.6）" [ref=f18e1419]
+              - cell "2124.5" [ref=f18e1420]
+            - row [ref=f18e1421]:
+              - cell [ref=f18e1422]:
+                - link "2026-09-08" [ref=f18e1423] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-08&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB&n=2
+              - cell "普通" [ref=f18e1424]
+              - cell [ref=f18e1425]:
+                - link "付大卫" [ref=f18e1426] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e1427]
+              - cell "-" [ref=f18e1428]
+              - cell "2124.5" [ref=f18e1429]
+              - cell "↑+3.4（+3.3）" [ref=f18e1430]
+              - cell "2127.8" [ref=f18e1431]
+            - row [ref=f18e1432]:
+              - cell [ref=f18e1433]:
+                - link "2026-09-08" [ref=f18e1434] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-08&type=%E6%99%AE%E9%80%9A&w=%E8%B0%B7%E5%AD%90%E6%98%93&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1435]
+              - cell [ref=f18e1436]:
+                - link "谷子易" [ref=f18e1437] [cursor=pointer]:
+                  - /url: player.html?uid=10003
+              - cell "负" [ref=f18e1438]
+              - cell "-" [ref=f18e1439]
+              - cell "2127.8" [ref=f18e1440]
+              - cell "↓-4.7（-4.6）" [ref=f18e1441]
+              - cell "2123.2" [ref=f18e1442]
+            - row [ref=f18e1443]:
+              - cell [ref=f18e1444]:
+                - link "2026-09-08" [ref=f18e1445] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-08&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E7%8E%8B%E6%88%90%E6%82%A6
+              - cell "普通" [ref=f18e1446]
+              - cell [ref=f18e1447]:
+                - link "王成悦" [ref=f18e1448] [cursor=pointer]:
+                  - /url: player.html?uid=10012
+              - cell "胜" [ref=f18e1449]
+              - cell "-" [ref=f18e1450]
+              - cell "2123.2" [ref=f18e1451]
+              - cell "↑+3.4（+3.3）" [ref=f18e1452]
+              - cell "2126.5" [ref=f18e1453]
+            - row [ref=f18e1454]:
+              - cell [ref=f18e1455]:
+                - link "2026-09-07" [ref=f18e1456] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-07&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e1457]
+              - cell [ref=f18e1458]:
+                - link "付大卫" [ref=f18e1459] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e1460]
+              - cell "-" [ref=f18e1461]
+              - cell "2116.5" [ref=f18e1462]
+              - cell "↑+6.0（+5.9）" [ref=f18e1463]
+              - cell "2122.4" [ref=f18e1464]
+            - row [ref=f18e1465]:
+              - cell [ref=f18e1466]:
+                - link "2026-09-07" [ref=f18e1467] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-07&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E5%A7%9C%E5%AD%90%E6%B6%A6
+              - cell "普通" [ref=f18e1468]
+              - cell [ref=f18e1469]:
+                - link "姜子润" [ref=f18e1470] [cursor=pointer]:
+                  - /url: player.html?uid=10004
+              - cell "胜" [ref=f18e1471]
+              - cell "-" [ref=f18e1472]
+              - cell "2122.4" [ref=f18e1473]
+              - cell "↑+2.8（+2.8）" [ref=f18e1474]
+              - cell "2125.2" [ref=f18e1475]
+            - row [ref=f18e1476]:
+              - cell [ref=f18e1477]:
+                - link "2026-09-05" [ref=f18e1478] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-05&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E7%8E%8B%E6%88%90%E6%82%A6
+              - cell "普通" [ref=f18e1479]
+              - cell [ref=f18e1480]:
+                - link "王成悦" [ref=f18e1481] [cursor=pointer]:
+                  - /url: player.html?uid=10012
+              - cell "胜" [ref=f18e1482]
+              - cell "-" [ref=f18e1483]
+              - cell "2102.9" [ref=f18e1484]
+              - cell "↑+6.0（+5.9）" [ref=f18e1485]
+              - cell "2108.7" [ref=f18e1486]
+            - row [ref=f18e1487]:
+              - cell [ref=f18e1488]:
+                - link "2026-09-05" [ref=f18e1489] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-05&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E7%8E%8B%E6%88%90%E6%82%A6&n=2
+              - cell "普通" [ref=f18e1490]
+              - cell [ref=f18e1491]:
+                - link "王成悦" [ref=f18e1492] [cursor=pointer]:
+                  - /url: player.html?uid=10012
+              - cell "胜" [ref=f18e1493]
+              - cell "-" [ref=f18e1494]
+              - cell "2108.7" [ref=f18e1495]
+              - cell "↑+6.0（+5.9）" [ref=f18e1496]
+              - cell "2114.6" [ref=f18e1497]
+            - row [ref=f18e1498]:
+              - cell [ref=f18e1499]:
+                - link "2026-09-05" [ref=f18e1500] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-05&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E7%8E%8B%E6%88%90%E6%82%A6&n=3
+              - cell "普通" [ref=f18e1501]
+              - cell [ref=f18e1502]:
+                - link "王成悦" [ref=f18e1503] [cursor=pointer]:
+                  - /url: player.html?uid=10012
+              - cell "胜" [ref=f18e1504]
+              - cell "-" [ref=f18e1505]
+              - cell "2114.6" [ref=f18e1506]
+              - cell "↑+6.0（+5.9）" [ref=f18e1507]
+              - cell "2120.5" [ref=f18e1508]
+            - row [ref=f18e1509]:
+              - cell [ref=f18e1510]:
+                - link "2026-09-05" [ref=f18e1511] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-05&type=%E6%99%AE%E9%80%9A&w=%E9%BE%9A%E9%9B%A8%E7%85%8A&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1512]
+              - cell [ref=f18e1513]:
+                - link "龚雨煊" [ref=f18e1514] [cursor=pointer]:
+                  - /url: player.html?uid=10002
+              - cell "负" [ref=f18e1515]
+              - cell "-" [ref=f18e1516]
+              - cell "2120.5" [ref=f18e1517]
+              - cell "↓-4.0（-3.9）" [ref=f18e1518]
+              - cell "2116.5" [ref=f18e1519]
+            - row [ref=f18e1520]:
+              - cell [ref=f18e1521]:
+                - link "2026-09-04" [ref=f18e1522] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-04&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e1523]
+              - cell [ref=f18e1524]:
+                - link "付大卫" [ref=f18e1525] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e1526]
+              - cell "-" [ref=f18e1527]
+              - cell "2096.9" [ref=f18e1528]
+              - cell "↑+6.0（+5.9）" [ref=f18e1529]
+              - cell "2102.9" [ref=f18e1530]
+            - row [ref=f18e1531]:
+              - cell [ref=f18e1532]:
+                - link "2026-09-04" [ref=f18e1533] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-04&type=%E6%99%AE%E9%80%9A&w=%E4%BB%98%E5%A4%A7%E5%8D%AB&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1534]
+              - cell [ref=f18e1535]:
+                - link "付大卫" [ref=f18e1536] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "负" [ref=f18e1537]
+              - cell "-" [ref=f18e1538]
+              - cell "2102.9" [ref=f18e1539]
+              - cell "↓-3.4（-3.3）" [ref=f18e1540]
+              - cell "2099.5" [ref=f18e1541]
+            - row [ref=f18e1542]:
+              - cell [ref=f18e1543]:
+                - link "2026-09-04" [ref=f18e1544] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-04&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E9%BE%9A%E9%9B%A8%E7%85%8A
+              - cell "普通" [ref=f18e1545]
+              - cell [ref=f18e1546]:
+                - link "龚雨煊" [ref=f18e1547] [cursor=pointer]:
+                  - /url: player.html?uid=10002
+              - cell "胜" [ref=f18e1548]
+              - cell "-" [ref=f18e1549]
+              - cell "2099.5" [ref=f18e1550]
+              - cell "↑+3.4（+3.3）" [ref=f18e1551]
+              - cell "2102.9" [ref=f18e1552]
+            - row [ref=f18e1553]:
+              - cell [ref=f18e1554]:
+                - link "2026-09-04" [ref=f18e1555] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-04&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E6%A2%85%E5%93%B2%E5%AE%87
+              - cell "普通" [ref=f18e1556]
+              - cell [ref=f18e1557]:
+                - link "梅哲宇" [ref=f18e1558] [cursor=pointer]:
+                  - /url: player.html?uid=10011
+              - cell "胜" [ref=f18e1559]
+              - cell "-" [ref=f18e1560]
+              - cell "2102.9" [ref=f18e1561]
+              - cell "↑+3.4（+3.3）" [ref=f18e1562]
+              - cell "2106.2" [ref=f18e1563]
+            - row [ref=f18e1564]:
+              - cell [ref=f18e1565]:
+                - link "2026-09-04" [ref=f18e1566] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-04&type=%E6%99%AE%E9%80%9A&w=%E7%8E%8B%E6%88%90%E6%82%A6&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1567]
+              - cell [ref=f18e1568]:
+                - link "王成悦" [ref=f18e1569] [cursor=pointer]:
+                  - /url: player.html?uid=10012
+              - cell "负" [ref=f18e1570]
+              - cell "-" [ref=f18e1571]
+              - cell "2106.2" [ref=f18e1572]
+              - cell "↓-3.4（-3.3）" [ref=f18e1573]
+              - cell "2102.9" [ref=f18e1574]
+            - row [ref=f18e1575]:
+              - cell [ref=f18e1576]:
+                - link "2026-09-03" [ref=f18e1577] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-03&type=%E6%99%AE%E9%80%9A&w=%E4%BB%98%E5%A4%A7%E5%8D%AB&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1578]
+              - cell [ref=f18e1579]:
+                - link "付大卫" [ref=f18e1580] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "负" [ref=f18e1581]
+              - cell "-" [ref=f18e1582]
+              - cell "2106.4" [ref=f18e1583]
+              - cell "↓-4.8（-4.7）" [ref=f18e1584]
+              - cell "2101.7" [ref=f18e1585]
+            - row [ref=f18e1586]:
+              - cell [ref=f18e1587]:
+                - link "2026-09-03" [ref=f18e1588] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-03&type=%E6%99%AE%E9%80%9A&w=%E4%BB%98%E5%A4%A7%E5%8D%AB&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4&n=2
+              - cell "普通" [ref=f18e1589]
+              - cell [ref=f18e1590]:
+                - link "付大卫" [ref=f18e1591] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "负" [ref=f18e1592]
+              - cell "-" [ref=f18e1593]
+              - cell "2101.7" [ref=f18e1594]
+              - cell "↓-4.8（-4.7）" [ref=f18e1595]
+              - cell "2096.9" [ref=f18e1596]
+            - row [ref=f18e1597]:
+              - cell [ref=f18e1598]:
+                - link "2026-09-02" [ref=f18e1599] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-02&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E5%8F%B6%E6%B3%93%E9%91%AB
+              - cell "普通" [ref=f18e1600]
+              - cell [ref=f18e1601]:
+                - link "叶泓鑫" [ref=f18e1602] [cursor=pointer]:
+                  - /url: player.html?uid=10028
+              - cell "胜" [ref=f18e1603]
+              - cell "-" [ref=f18e1604]
+              - cell "2098.8" [ref=f18e1605]
+              - cell "↑+1.1（+1.1）" [ref=f18e1606]
+              - cell "2099.9" [ref=f18e1607]
+            - row [ref=f18e1608]:
+              - cell [ref=f18e1609]:
+                - link "2026-09-02" [ref=f18e1610] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-02&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E6%B1%AA%E5%AE%81%E8%BD%A9
+              - cell "普通" [ref=f18e1611]
+              - cell [ref=f18e1612]:
+                - link "汪宁轩" [ref=f18e1613] [cursor=pointer]:
+                  - /url: player.html?uid=10019
+              - cell "胜" [ref=f18e1614]
+              - cell "-" [ref=f18e1615]
+              - cell "2099.9" [ref=f18e1616]
+              - cell "↑+0.6（+0.6）" [ref=f18e1617]
+              - cell "2100.5" [ref=f18e1618]
+            - row [ref=f18e1619]:
+              - cell [ref=f18e1620]:
+                - link "2026-09-02" [ref=f18e1621] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-02&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E6%A2%85%E5%93%B2%E5%AE%87
+              - cell "普通" [ref=f18e1622]
+              - cell [ref=f18e1623]:
+                - link "梅哲宇" [ref=f18e1624] [cursor=pointer]:
+                  - /url: player.html?uid=10011
+              - cell "胜" [ref=f18e1625]
+              - cell "-" [ref=f18e1626]
+              - cell "2100.5" [ref=f18e1627]
+              - cell "↑+6.0（+5.9）" [ref=f18e1628]
+              - cell "2106.4" [ref=f18e1629]
+            - row [ref=f18e1630]:
+              - cell [ref=f18e1631]:
+                - link "2026-09-01" [ref=f18e1632] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-01&type=%E6%99%AE%E9%80%9A&w=%E4%BB%98%E5%A4%A7%E5%8D%AB&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1633]
+              - cell [ref=f18e1634]:
+                - link "付大卫" [ref=f18e1635] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "负" [ref=f18e1636]
+              - cell "-" [ref=f18e1637]
+              - cell "2108.5" [ref=f18e1638]
+              - cell "↓-5.8（-5.7）" [ref=f18e1639]
+              - cell "2102.8" [ref=f18e1640]
+            - row [ref=f18e1641]:
+              - cell [ref=f18e1642]:
+                - link "2026-09-01" [ref=f18e1643] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-01&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%AE%89%E5%96%86&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1644]
+              - cell [ref=f18e1645]:
+                - link "任安喆" [ref=f18e1646] [cursor=pointer]:
+                  - /url: player.html?uid=10008
+              - cell "负" [ref=f18e1647]
+              - cell "-" [ref=f18e1648]
+              - cell "2102.8" [ref=f18e1649]
+              - cell "↓-4.0（-4.0）" [ref=f18e1650]
+              - cell "2098.8" [ref=f18e1651]
+            - row [ref=f18e1652]:
+              - cell [ref=f18e1653]:
+                - link "2026-08-31" [ref=f18e1654] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-31&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e1655]
+              - cell [ref=f18e1656]:
+                - link "付大卫" [ref=f18e1657] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e1658]
+              - cell "-" [ref=f18e1659]
+              - cell "2076.2" [ref=f18e1660]
+              - cell "↑+6.0（+2.8）" [ref=f18e1661]
+              - cell "2079.0" [ref=f18e1662]
+            - row [ref=f18e1663]:
+              - cell [ref=f18e1664]:
+                - link "2026-08-31" [ref=f18e1665] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-31&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1666]
+              - cell [ref=f18e1667]:
+                - link "魏罗瑞" [ref=f18e1668] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e1669]
+              - cell "-" [ref=f18e1670]
+              - cell "2079.0" [ref=f18e1671]
+              - cell "↓-3.4（-1.6）" [ref=f18e1672]
+              - cell "2077.4" [ref=f18e1673]
+            - row [ref=f18e1674]:
+              - cell [ref=f18e1675]:
+                - link "2026-08-31" [ref=f18e1676] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-31&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4&n=2
+              - cell "普通" [ref=f18e1677]
+              - cell [ref=f18e1678]:
+                - link "魏罗瑞" [ref=f18e1679] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e1680]
+              - cell "-" [ref=f18e1681]
+              - cell "2077.4" [ref=f18e1682]
+              - cell "↓-2.7（-1.3）" [ref=f18e1683]
+              - cell "2076.2" [ref=f18e1684]
+            - row [ref=f18e1685]:
+              - cell [ref=f18e1686]:
+                - link "2026-08-31" [ref=f18e1687] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-31&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4&n=3
+              - cell "普通" [ref=f18e1688]
+              - cell [ref=f18e1689]:
+                - link "魏罗瑞" [ref=f18e1690] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e1691]
+              - cell "-" [ref=f18e1692]
+              - cell "2076.2" [ref=f18e1693]
+              - cell "↓-2.7（-1.3）" [ref=f18e1694]
+              - cell "2074.9" [ref=f18e1695]
+            - row [ref=f18e1696]:
+              - cell [ref=f18e1697]:
+                - link "2026-08-31" [ref=f18e1698] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-31&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E9%AD%8F%E7%BD%97%E7%91%9E
+              - cell "普通" [ref=f18e1699]
+              - cell [ref=f18e1700]:
+                - link "魏罗瑞" [ref=f18e1701] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "胜" [ref=f18e1702]
+              - cell "-" [ref=f18e1703]
+              - cell "2074.9" [ref=f18e1704]
+              - cell "↑+5.0（+2.4）" [ref=f18e1705]
+              - cell "2077.3" [ref=f18e1706]
+            - row [ref=f18e1707]:
+              - cell [ref=f18e1708]:
+                - link "2026-08-31" [ref=f18e1709] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-31&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E7%8E%8B%E6%88%90%E6%82%A6
+              - cell "普通" [ref=f18e1710]
+              - cell [ref=f18e1711]:
+                - link "王成悦" [ref=f18e1712] [cursor=pointer]:
+                  - /url: player.html?uid=10012
+              - cell "胜" [ref=f18e1713]
+              - cell "-" [ref=f18e1714]
+              - cell "2077.3" [ref=f18e1715]
+              - cell "↑+9.0（+4.2）" [ref=f18e1716]
+              - cell "2081.5" [ref=f18e1717]
+            - row [ref=f18e1718]:
+              - cell [ref=f18e1719]:
+                - link "2026-08-31" [ref=f18e1720] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-31&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E7%8E%8B%E6%88%90%E6%82%A6&n=2
+              - cell "普通" [ref=f18e1721]
+              - cell [ref=f18e1722]:
+                - link "王成悦" [ref=f18e1723] [cursor=pointer]:
+                  - /url: player.html?uid=10012
+              - cell "胜" [ref=f18e1724]
+              - cell "-" [ref=f18e1725]
+              - cell "2081.5" [ref=f18e1726]
+              - cell "↑+4.2（+2.0）" [ref=f18e1727]
+              - cell "2083.5" [ref=f18e1728]
+            - row [ref=f18e1729]:
+              - cell [ref=f18e1730]:
+                - link "2026-08-29" [ref=f18e1731] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-29&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e1732]
+              - cell [ref=f18e1733]:
+                - link "付大卫" [ref=f18e1734] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e1735]
+              - cell "-" [ref=f18e1736]
+              - cell "2070.3" [ref=f18e1737]
+              - cell "↑+6.0（+5.9）" [ref=f18e1738]
+              - cell "2076.2" [ref=f18e1739]
+            - row [ref=f18e1740]:
+              - cell [ref=f18e1741]:
+                - link "2026-08-28" [ref=f18e1742] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-28&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1743]
+              - cell [ref=f18e1744]:
+                - link "魏罗瑞" [ref=f18e1745] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e1746]
+              - cell "-" [ref=f18e1747]
+              - cell "2069.2" [ref=f18e1748]
+              - cell "↓-2.7（-2.7）" [ref=f18e1749]
+              - cell "2066.5" [ref=f18e1750]
+            - row [ref=f18e1751]:
+              - cell [ref=f18e1752]:
+                - link "2026-08-28" [ref=f18e1753] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-28&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E9%AD%8F%E7%BD%97%E7%91%9E
+              - cell "普通" [ref=f18e1754]
+              - cell [ref=f18e1755]:
+                - link "魏罗瑞" [ref=f18e1756] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "胜" [ref=f18e1757]
+              - cell "-" [ref=f18e1758]
+              - cell "2066.5" [ref=f18e1759]
+              - cell "↑+5.0（+5.0）" [ref=f18e1760]
+              - cell "2071.5" [ref=f18e1761]
+            - row [ref=f18e1762]:
+              - cell [ref=f18e1763]:
+                - link "2026-08-28" [ref=f18e1764] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-28&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4&n=2
+              - cell "普通" [ref=f18e1765]
+              - cell [ref=f18e1766]:
+                - link "魏罗瑞" [ref=f18e1767] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e1768]
+              - cell "-" [ref=f18e1769]
+              - cell "2071.5" [ref=f18e1770]
+              - cell "↓-2.7（-2.7）" [ref=f18e1771]
+              - cell "2068.8" [ref=f18e1772]
+            - row [ref=f18e1773]:
+              - cell [ref=f18e1774]:
+                - link "2026-08-28" [ref=f18e1775] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-28&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4&n=3
+              - cell "普通" [ref=f18e1776]
+              - cell [ref=f18e1777]:
+                - link "魏罗瑞" [ref=f18e1778] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e1779]
+              - cell "-" [ref=f18e1780]
+              - cell "2068.8" [ref=f18e1781]
+              - cell "↓-2.7（-2.7）" [ref=f18e1782]
+              - cell "2066.2" [ref=f18e1783]
+            - row [ref=f18e1784]:
+              - cell [ref=f18e1785]:
+                - link "2026-08-28" [ref=f18e1786] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-28&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e1787]
+              - cell [ref=f18e1788]:
+                - link "付大卫" [ref=f18e1789] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e1790]
+              - cell "-" [ref=f18e1791]
+              - cell "2066.2" [ref=f18e1792]
+              - cell "↑+4.2（+4.2）" [ref=f18e1793]
+              - cell "2070.3" [ref=f18e1794]
+            - row [ref=f18e1795]:
+              - cell [ref=f18e1796]:
+                - link "2026-08-27" [ref=f18e1797] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-27&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1798]
+              - cell [ref=f18e1799]:
+                - link "魏罗瑞" [ref=f18e1800] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e1801]
+              - cell "-" [ref=f18e1802]
+              - cell "2066.8" [ref=f18e1803]
+              - cell "↓-2.7（-2.7）" [ref=f18e1804]
+              - cell "2064.2" [ref=f18e1805]
+            - row [ref=f18e1806]:
+              - cell [ref=f18e1807]:
+                - link "2026-08-27" [ref=f18e1808] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-27&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E9%AD%8F%E7%BD%97%E7%91%9E
+              - cell "普通" [ref=f18e1809]
+              - cell [ref=f18e1810]:
+                - link "魏罗瑞" [ref=f18e1811] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "胜" [ref=f18e1812]
+              - cell "-" [ref=f18e1813]
+              - cell "2064.2" [ref=f18e1814]
+              - cell "↑+5.0（+5.0）" [ref=f18e1815]
+              - cell "2069.2" [ref=f18e1816]
+            - row [ref=f18e1817]:
+              - cell [ref=f18e1818]:
+                - link "2026-08-26" [ref=f18e1819] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-26&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E5%BD%AD%E4%B8%80%E5%92%8C
+              - cell "普通" [ref=f18e1820]
+              - cell [ref=f18e1821]:
+                - link "彭一和" [ref=f18e1822] [cursor=pointer]:
+                  - /url: player.html?uid=10006
+              - cell "胜" [ref=f18e1823]
+              - cell "-" [ref=f18e1824]
+              - cell "2068.9" [ref=f18e1825]
+              - cell "↑+4.0（+4.0）" [ref=f18e1826]
+              - cell "2072.8" [ref=f18e1827]
+            - row [ref=f18e1828]:
+              - cell [ref=f18e1829]:
+                - link "2026-08-26" [ref=f18e1830] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-26&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1831]
+              - cell [ref=f18e1832]:
+                - link "魏罗瑞" [ref=f18e1833] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e1834]
+              - cell "-" [ref=f18e1835]
+              - cell "2072.8" [ref=f18e1836]
+              - cell "↓-3.4（-3.3）" [ref=f18e1837]
+              - cell "2069.5" [ref=f18e1838]
+            - row [ref=f18e1839]:
+              - cell [ref=f18e1840]:
+                - link "2026-08-26" [ref=f18e1841] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-26&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4&n=2
+              - cell "普通" [ref=f18e1842]
+              - cell [ref=f18e1843]:
+                - link "魏罗瑞" [ref=f18e1844] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e1845]
+              - cell "-" [ref=f18e1846]
+              - cell "2069.5" [ref=f18e1847]
+              - cell "↓-2.7（-2.7）" [ref=f18e1848]
+              - cell "2066.8" [ref=f18e1849]
+            - row [ref=f18e1850]:
+              - cell [ref=f18e1851]:
+                - link "2026-08-22" [ref=f18e1852] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-22&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1853]
+              - cell [ref=f18e1854]:
+                - link "魏罗瑞" [ref=f18e1855] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e1856]
+              - cell "-" [ref=f18e1857]
+              - cell "2075.3" [ref=f18e1858]
+              - cell "↓-3.4（-3.2）" [ref=f18e1859]
+              - cell "2072.1" [ref=f18e1860]
+            - row [ref=f18e1861]:
+              - cell [ref=f18e1862]:
+                - link "2026-08-22" [ref=f18e1863] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-22&type=%E6%99%AE%E9%80%9A&w=%E7%8E%8B%E6%88%90%E6%82%A6&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1864]
+              - cell [ref=f18e1865]:
+                - link "王成悦" [ref=f18e1866] [cursor=pointer]:
+                  - /url: player.html?uid=10012
+              - cell "负" [ref=f18e1867]
+              - cell "-" [ref=f18e1868]
+              - cell "2072.1" [ref=f18e1869]
+              - cell "↓-3.4（-3.2）" [ref=f18e1870]
+              - cell "2068.9" [ref=f18e1871]
+            - row [ref=f18e1872]:
+              - cell [ref=f18e1873]:
+                - link "2026-08-21" [ref=f18e1874] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-21&type=%E6%99%AE%E9%80%9A&w=%E7%8E%8B%E6%88%90%E6%82%A6&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1875]
+              - cell [ref=f18e1876]:
+                - link "王成悦" [ref=f18e1877] [cursor=pointer]:
+                  - /url: player.html?uid=10012
+              - cell "负" [ref=f18e1878]
+              - cell "-" [ref=f18e1879]
+              - cell "2077.8" [ref=f18e1880]
+              - cell "↓-3.4（-3.3）" [ref=f18e1881]
+              - cell "2074.5" [ref=f18e1882]
+            - row [ref=f18e1883]:
+              - cell [ref=f18e1884]:
+                - link "2026-08-21" [ref=f18e1885] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-21&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1886]
+              - cell [ref=f18e1887]:
+                - link "魏罗瑞" [ref=f18e1888] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e1889]
+              - cell "-" [ref=f18e1890]
+              - cell "2074.5" [ref=f18e1891]
+              - cell "↓-3.4（-3.3）" [ref=f18e1892]
+              - cell "2071.1" [ref=f18e1893]
+            - row [ref=f18e1894]:
+              - cell [ref=f18e1895]:
+                - link "2026-08-21" [ref=f18e1896] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-21&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E9%AD%8F%E7%BD%97%E7%91%9E
+              - cell "普通" [ref=f18e1897]
+              - cell [ref=f18e1898]:
+                - link "魏罗瑞" [ref=f18e1899] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "胜" [ref=f18e1900]
+              - cell "-" [ref=f18e1901]
+              - cell "2071.1" [ref=f18e1902]
+              - cell "↑+4.2（+4.2）" [ref=f18e1903]
+              - cell "2075.3" [ref=f18e1904]
+            - row [ref=f18e1905]:
+              - cell [ref=f18e1906]:
+                - link "2026-08-07" [ref=f18e1907] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-07&type=%E6%99%AE%E9%80%9A&w=%E7%8E%8B%E6%88%90%E6%82%A6&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1908]
+              - cell [ref=f18e1909]:
+                - link "王成悦" [ref=f18e1910] [cursor=pointer]:
+                  - /url: player.html?uid=10012
+              - cell "负" [ref=f18e1911]
+              - cell "-" [ref=f18e1912]
+              - cell "2081.9" [ref=f18e1913]
+              - cell "↓-4.8（-4.1）" [ref=f18e1914]
+              - cell "2077.8" [ref=f18e1915]
+            - row [ref=f18e1916]:
+              - cell [ref=f18e1917]:
+                - link "2026-08-05" [ref=f18e1918] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-05&type=%E6%99%AE%E9%80%9A&w=%E6%9D%8E%E5%85%A8%E6%99%AF&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1919]
+              - cell [ref=f18e1920]:
+                - link "李全景" [ref=f18e1921] [cursor=pointer]:
+                  - /url: player.html?uid=10017
+              - cell "负" [ref=f18e1922]
+              - cell "-" [ref=f18e1923]
+              - cell "2109.8" [ref=f18e1924]
+              - cell "↓-10.6（-10.3）" [ref=f18e1925]
+              - cell "2099.5" [ref=f18e1926]
+            - row [ref=f18e1927]:
+              - cell [ref=f18e1928]:
+                - link "2026-08-05" [ref=f18e1929] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-05&type=%E6%99%AE%E9%80%9A&w=%E6%9D%8E%E5%85%A8%E6%99%AF&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4&n=2
+              - cell "普通" [ref=f18e1930]
+              - cell [ref=f18e1931]:
+                - link "李全景" [ref=f18e1932] [cursor=pointer]:
+                  - /url: player.html?uid=10017
+              - cell "负" [ref=f18e1933]
+              - cell "-" [ref=f18e1934]
+              - cell "2099.5" [ref=f18e1935]
+              - cell "↓-9.6（-9.4）" [ref=f18e1936]
+              - cell "2090.1" [ref=f18e1937]
+            - row [ref=f18e1938]:
+              - cell [ref=f18e1939]:
+                - link "2026-08-05" [ref=f18e1940] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-05&type=%E6%99%AE%E9%80%9A&w=%E6%9D%8E%E5%85%A8%E6%99%AF&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4&n=3
+              - cell "普通" [ref=f18e1941]
+              - cell [ref=f18e1942]:
+                - link "李全景" [ref=f18e1943] [cursor=pointer]:
+                  - /url: player.html?uid=10017
+              - cell "负" [ref=f18e1944]
+              - cell "-" [ref=f18e1945]
+              - cell "2090.1" [ref=f18e1946]
+              - cell "↓-9.6（-9.4）" [ref=f18e1947]
+              - cell "2080.8" [ref=f18e1948]
+            - row [ref=f18e1949]:
+              - cell [ref=f18e1950]:
+                - link "2026-08-05" [ref=f18e1951] [cursor=pointer]:
+                  - /url: match.html?date=2026-08-05&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E6%9D%8E%E5%85%A8%E6%99%AF
+              - cell "普通" [ref=f18e1952]
+              - cell [ref=f18e1953]:
+                - link "李全景" [ref=f18e1954] [cursor=pointer]:
+                  - /url: player.html?uid=10017
+              - cell "胜" [ref=f18e1955]
+              - cell "-" [ref=f18e1956]
+              - cell "2080.8" [ref=f18e1957]
+              - cell "↑+1.1（+1.1）" [ref=f18e1958]
+              - cell "2081.9" [ref=f18e1959]
+            - row [ref=f18e1960]:
+              - cell [ref=f18e1961]:
+                - link "2026-07-30" [ref=f18e1962] [cursor=pointer]:
+                  - /url: match.html?date=2026-07-30&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e1963]
+              - cell [ref=f18e1964]:
+                - link "付大卫" [ref=f18e1965] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e1966]
+              - cell "-" [ref=f18e1967]
+              - cell "2102.2" [ref=f18e1968]
+              - cell "↑+6.0（+5.6）" [ref=f18e1969]
+              - cell "2107.8" [ref=f18e1970]
+            - row [ref=f18e1971]:
+              - cell [ref=f18e1972]:
+                - link "2026-07-30" [ref=f18e1973] [cursor=pointer]:
+                  - /url: match.html?date=2026-07-30&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB&n=2
+              - cell "普通" [ref=f18e1974]
+              - cell [ref=f18e1975]:
+                - link "付大卫" [ref=f18e1976] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e1977]
+              - cell "-" [ref=f18e1978]
+              - cell "2107.8" [ref=f18e1979]
+              - cell "↑+6.0（+5.6）" [ref=f18e1980]
+              - cell "2113.4" [ref=f18e1981]
+            - row [ref=f18e1982]:
+              - cell [ref=f18e1983]:
+                - link "2026-07-30" [ref=f18e1984] [cursor=pointer]:
+                  - /url: match.html?date=2026-07-30&type=%E6%99%AE%E9%80%9A&w=%E4%BB%98%E5%A4%A7%E5%8D%AB&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e1985]
+              - cell [ref=f18e1986]:
+                - link "付大卫" [ref=f18e1987] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "负" [ref=f18e1988]
+              - cell "-" [ref=f18e1989]
+              - cell "2113.4" [ref=f18e1990]
+              - cell "↓-5.8（-5.4）" [ref=f18e1991]
+              - cell "2108.1" [ref=f18e1992]
+            - row [ref=f18e1993]:
+              - cell [ref=f18e1994]:
+                - link "2026-07-30" [ref=f18e1995] [cursor=pointer]:
+                  - /url: match.html?date=2026-07-30&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E6%9D%8E%E5%85%A8%E6%99%AF
+              - cell "普通" [ref=f18e1996]
+              - cell [ref=f18e1997]:
+                - link "李全景" [ref=f18e1998] [cursor=pointer]:
+                  - /url: player.html?uid=10017
+              - cell "胜" [ref=f18e1999]
+              - cell "-" [ref=f18e2000]
+              - cell "2108.1" [ref=f18e2001]
+              - cell "↑+0.6（+0.5）" [ref=f18e2002]
+              - cell "2108.6" [ref=f18e2003]
+            - row [ref=f18e2004]:
+              - cell [ref=f18e2005]:
+                - link "2026-07-30" [ref=f18e2006] [cursor=pointer]:
+                  - /url: match.html?date=2026-07-30&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E6%9D%8E%E5%85%A8%E6%99%AF&n=2
+              - cell "普通" [ref=f18e2007]
+              - cell [ref=f18e2008]:
+                - link "李全景" [ref=f18e2009] [cursor=pointer]:
+                  - /url: player.html?uid=10017
+              - cell "胜" [ref=f18e2010]
+              - cell "-" [ref=f18e2011]
+              - cell "2108.6" [ref=f18e2012]
+              - cell "↑+0.6（+0.5）" [ref=f18e2013]
+              - cell "2109.1" [ref=f18e2014]
+            - row [ref=f18e2015]:
+              - cell [ref=f18e2016]:
+                - link "2026-07-30" [ref=f18e2017] [cursor=pointer]:
+                  - /url: match.html?date=2026-07-30&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E6%9D%8E%E5%85%A8%E6%99%AF&n=3
+              - cell "普通" [ref=f18e2018]
+              - cell [ref=f18e2019]:
+                - link "李全景" [ref=f18e2020] [cursor=pointer]:
+                  - /url: player.html?uid=10017
+              - cell "胜" [ref=f18e2021]
+              - cell "-" [ref=f18e2022]
+              - cell "2109.1" [ref=f18e2023]
+              - cell "↑+0.8（+0.7）" [ref=f18e2024]
+              - cell "2109.8" [ref=f18e2025]
+            - row [ref=f18e2026]:
+              - cell [ref=f18e2027]:
+                - link "2026-07-29" [ref=f18e2028] [cursor=pointer]:
+                  - /url: match.html?date=2026-07-29&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2029]
+              - cell [ref=f18e2030]:
+                - link "魏罗瑞" [ref=f18e2031] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e2032]
+              - cell "-" [ref=f18e2033]
+              - cell "2105.6" [ref=f18e2034]
+              - cell "↓-3.4（-3.3）" [ref=f18e2035]
+              - cell "2102.2" [ref=f18e2036]
+            - row [ref=f18e2037]:
+              - cell [ref=f18e2038]:
+                - link "2026-07-05" [ref=f18e2039] [cursor=pointer]:
+                  - /url: match.html?date=2026-07-05&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2040]
+              - cell [ref=f18e2041]:
+                - link "魏罗瑞" [ref=f18e2042] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e2043]
+              - cell "-" [ref=f18e2044]
+              - cell "2109.2" [ref=f18e2045]
+              - cell "↓-4.8（-3.6）" [ref=f18e2046]
+              - cell "2105.6" [ref=f18e2047]
+            - row [ref=f18e2048]:
+              - cell [ref=f18e2049]:
+                - link "2026-07-04" [ref=f18e2050] [cursor=pointer]:
+                  - /url: match.html?date=2026-07-04&type=%E6%99%AE%E9%80%9A&w=%E4%BB%98%E5%A4%A7%E5%8D%AB&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2051]
+              - cell [ref=f18e2052]:
+                - link "付大卫" [ref=f18e2053] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "负" [ref=f18e2054]
+              - cell "-" [ref=f18e2055]
+              - cell "2119.6" [ref=f18e2056]
+              - cell "↓-5.8（-5.7）" [ref=f18e2057]
+              - cell "2113.9" [ref=f18e2058]
+            - row [ref=f18e2059]:
+              - cell [ref=f18e2060]:
+                - link "2026-07-04" [ref=f18e2061] [cursor=pointer]:
+                  - /url: match.html?date=2026-07-04&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2062]
+              - cell [ref=f18e2063]:
+                - link "魏罗瑞" [ref=f18e2064] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e2065]
+              - cell "-" [ref=f18e2066]
+              - cell "2113.9" [ref=f18e2067]
+              - cell "↓-4.8（-4.7）" [ref=f18e2068]
+              - cell "2109.2" [ref=f18e2069]
+            - row [ref=f18e2070]:
+              - cell [ref=f18e2071]:
+                - link "2026-07-03" [ref=f18e2072] [cursor=pointer]:
+                  - /url: match.html?date=2026-07-03&type=%E6%99%AE%E9%80%9A&w=%E6%9D%8E%E5%8D%97%E7%86%A0&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2073]
+              - cell [ref=f18e2074]:
+                - link "李南熠" [ref=f18e2075] [cursor=pointer]:
+                  - /url: player.html?uid=10005
+              - cell "负" [ref=f18e2076]
+              - cell "-" [ref=f18e2077]
+              - cell "2125.3" [ref=f18e2078]
+              - cell "↓-5.8（-5.7）" [ref=f18e2079]
+              - cell "2119.6" [ref=f18e2080]
+            - row [ref=f18e2081]:
+              - cell [ref=f18e2082]:
+                - link "2026-07-02" [ref=f18e2083] [cursor=pointer]:
+                  - /url: match.html?date=2026-07-02&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2084]
+              - cell [ref=f18e2085]:
+                - link "魏罗瑞" [ref=f18e2086] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e2087]
+              - cell "-" [ref=f18e2088]
+              - cell "2274.6" [ref=f18e2089]
+              - cell "↓-6.7（-1.6）" [ref=f18e2090]
+              - cell "2273.0" [ref=f18e2091]
+            - row [ref=f18e2092]:
+              - cell [ref=f18e2093]:
+                - link "2026-07-02" [ref=f18e2094] [cursor=pointer]:
+                  - /url: match.html?date=2026-07-02&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4&n=2
+              - cell "普通" [ref=f18e2095]
+              - cell [ref=f18e2096]:
+                - link "魏罗瑞" [ref=f18e2097] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e2098]
+              - cell "-" [ref=f18e2099]
+              - cell "2273.0" [ref=f18e2100]
+              - cell "↓-6.7（-1.6）" [ref=f18e2101]
+              - cell "2271.5" [ref=f18e2102]
+            - row [ref=f18e2103]:
+              - cell [ref=f18e2104]:
+                - link "2026-07-02" [ref=f18e2105] [cursor=pointer]:
+                  - /url: match.html?date=2026-07-02&type=%E6%99%AE%E9%80%9A&w=%E6%A2%85%E5%93%B2%E5%AE%87&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2106]
+              - cell [ref=f18e2107]:
+                - link "梅哲宇" [ref=f18e2108] [cursor=pointer]:
+                  - /url: player.html?uid=10011
+              - cell "负" [ref=f18e2109]
+              - cell "-" [ref=f18e2110]
+              - cell "2271.5" [ref=f18e2111]
+              - cell "↓-5.4（-1.3）" [ref=f18e2112]
+              - cell "2270.2" [ref=f18e2113]
+            - row [ref=f18e2114]:
+              - cell [ref=f18e2115]:
+                - link "2026-07-02" [ref=f18e2116] [cursor=pointer]:
+                  - /url: match.html?date=2026-07-02&type=%E6%99%AE%E9%80%9A&w=%E6%A2%85%E5%93%B2%E5%AE%87&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4&n=2
+              - cell "普通" [ref=f18e2117]
+              - cell [ref=f18e2118]:
+                - link "梅哲宇" [ref=f18e2119] [cursor=pointer]:
+                  - /url: player.html?uid=10011
+              - cell "负" [ref=f18e2120]
+              - cell "-" [ref=f18e2121]
+              - cell "2270.2" [ref=f18e2122]
+              - cell "↓-5.4（-1.3）" [ref=f18e2123]
+              - cell "2268.9" [ref=f18e2124]
+            - row [ref=f18e2125]:
+              - cell [ref=f18e2126]:
+                - link "2026-07-01" [ref=f18e2127] [cursor=pointer]:
+                  - /url: match.html?date=2026-07-01&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e2128]
+              - cell [ref=f18e2129]:
+                - link "付大卫" [ref=f18e2130] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e2131]
+              - cell "-" [ref=f18e2132]
+              - cell "2271.5" [ref=f18e2133]
+              - cell "↑+3.2（+3.2）" [ref=f18e2134]
+              - cell "2274.6" [ref=f18e2135]
+            - row [ref=f18e2136]:
+              - cell [ref=f18e2137]:
+                - link "2026-06-27" [ref=f18e2138] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-27&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E9%BE%9A%E9%9B%A8%E7%85%8A
+              - cell "普通" [ref=f18e2139]
+              - cell [ref=f18e2140]:
+                - link "龚雨煊" [ref=f18e2141] [cursor=pointer]:
+                  - /url: player.html?uid=10002
+              - cell "胜" [ref=f18e2142]
+              - cell "-" [ref=f18e2143]
+              - cell "2278.7" [ref=f18e2144]
+              - cell "↑+2.2（+2.1）" [ref=f18e2145]
+              - cell "2280.9" [ref=f18e2146]
+            - row [ref=f18e2147]:
+              - cell [ref=f18e2148]:
+                - link "2026-06-27" [ref=f18e2149] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-27&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E6%A2%85%E5%93%B2%E5%AE%87
+              - cell "普通" [ref=f18e2150]
+              - cell [ref=f18e2151]:
+                - link "梅哲宇" [ref=f18e2152] [cursor=pointer]:
+                  - /url: player.html?uid=10011
+              - cell "胜" [ref=f18e2153]
+              - cell "-" [ref=f18e2154]
+              - cell "2280.9" [ref=f18e2155]
+              - cell "↑+2.2（+2.1）" [ref=f18e2156]
+              - cell "2283.0" [ref=f18e2157]
+            - row [ref=f18e2158]:
+              - cell [ref=f18e2159]:
+                - link "2026-06-27" [ref=f18e2160] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-27&type=%E6%99%AE%E9%80%9A&w=%E7%8E%8B%E6%88%90%E6%82%A6&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2161]
+              - cell [ref=f18e2162]:
+                - link "王成悦" [ref=f18e2163] [cursor=pointer]:
+                  - /url: player.html?uid=10012
+              - cell "负" [ref=f18e2164]
+              - cell "-" [ref=f18e2165]
+              - cell "2283.0" [ref=f18e2166]
+              - cell "↓-6.7（-6.4）" [ref=f18e2167]
+              - cell "2276.6" [ref=f18e2168]
+            - row [ref=f18e2169]:
+              - cell [ref=f18e2170]:
+                - link "2026-06-27" [ref=f18e2171] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-27&type=%E6%99%AE%E9%80%9A&w=%E6%A2%85%E5%93%B2%E5%AE%87&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2172]
+              - cell [ref=f18e2173]:
+                - link "梅哲宇" [ref=f18e2174] [cursor=pointer]:
+                  - /url: player.html?uid=10011
+              - cell "负" [ref=f18e2175]
+              - cell "-" [ref=f18e2176]
+              - cell "2276.6" [ref=f18e2177]
+              - cell "↓-5.4（-5.1）" [ref=f18e2178]
+              - cell "2271.5" [ref=f18e2179]
+            - row [ref=f18e2180]:
+              - cell [ref=f18e2181]:
+                - link "2026-06-26" [ref=f18e2182] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-26&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e2183]
+              - cell [ref=f18e2184]:
+                - link "付大卫" [ref=f18e2185] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e2186]
+              - cell "-" [ref=f18e2187]
+              - cell "2272.4" [ref=f18e2188]
+              - cell "↑+3.2（+3.2）" [ref=f18e2189]
+              - cell "2275.6" [ref=f18e2190]
+            - row [ref=f18e2191]:
+              - cell [ref=f18e2192]:
+                - link "2026-06-26" [ref=f18e2193] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-26&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB&n=2
+              - cell "普通" [ref=f18e2194]
+              - cell [ref=f18e2195]:
+                - link "付大卫" [ref=f18e2196] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e2197]
+              - cell "-" [ref=f18e2198]
+              - cell "2275.6" [ref=f18e2199]
+              - cell "↑+3.2（+3.2）" [ref=f18e2200]
+              - cell "2278.7" [ref=f18e2201]
+            - row [ref=f18e2202]:
+              - cell [ref=f18e2203]:
+                - link "2026-06-25" [ref=f18e2204] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-25&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2205]
+              - cell [ref=f18e2206]:
+                - link "魏罗瑞" [ref=f18e2207] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e2208]
+              - cell "-" [ref=f18e2209]
+              - cell "2300.9" [ref=f18e2210]
+              - cell "↓-7.7（-7.6）" [ref=f18e2211]
+              - cell "2293.3" [ref=f18e2212]
+            - row [ref=f18e2213]:
+              - cell [ref=f18e2214]:
+                - link "2026-06-25" [ref=f18e2215] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-25&type=%E6%99%AE%E9%80%9A&w=%E4%BB%98%E5%A4%A7%E5%8D%AB&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2216]
+              - cell [ref=f18e2217]:
+                - link "付大卫" [ref=f18e2218] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "负" [ref=f18e2219]
+              - cell "-" [ref=f18e2220]
+              - cell "2293.3" [ref=f18e2221]
+              - cell "↓-7.7（-7.6）" [ref=f18e2222]
+              - cell "2285.7" [ref=f18e2223]
+            - row [ref=f18e2224]:
+              - cell [ref=f18e2225]:
+                - link "2026-06-25" [ref=f18e2226] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-25&type=%E6%99%AE%E9%80%9A&w=%E7%8E%8B%E6%88%90%E6%82%A6&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2227]
+              - cell [ref=f18e2228]:
+                - link "王成悦" [ref=f18e2229] [cursor=pointer]:
+                  - /url: player.html?uid=10012
+              - cell "负" [ref=f18e2230]
+              - cell "-" [ref=f18e2231]
+              - cell "2285.7" [ref=f18e2232]
+              - cell "↓-6.7（-6.6）" [ref=f18e2233]
+              - cell "2279.0" [ref=f18e2234]
+            - row [ref=f18e2235]:
+              - cell [ref=f18e2236]:
+                - link "2026-06-25" [ref=f18e2237] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-25&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4&n=2
+              - cell "普通" [ref=f18e2238]
+              - cell [ref=f18e2239]:
+                - link "魏罗瑞" [ref=f18e2240] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e2241]
+              - cell "-" [ref=f18e2242]
+              - cell "2279.0" [ref=f18e2243]
+              - cell "↓-6.7（-6.6）" [ref=f18e2244]
+              - cell "2272.4" [ref=f18e2245]
+            - row [ref=f18e2246]:
+              - cell [ref=f18e2247]:
+                - link "2026-06-24" [ref=f18e2248] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-24&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E8%B0%B7%E5%AD%90%E6%98%93
+              - cell "普通" [ref=f18e2249]
+              - cell [ref=f18e2250]:
+                - link "谷子易" [ref=f18e2251] [cursor=pointer]:
+                  - /url: player.html?uid=10003
+              - cell "胜" [ref=f18e2252]
+              - cell "-" [ref=f18e2253]
+              - cell "2304.6" [ref=f18e2254]
+              - cell "↑+1.7（+1.7）" [ref=f18e2255]
+              - cell "2306.3" [ref=f18e2256]
+            - row [ref=f18e2257]:
+              - cell [ref=f18e2258]:
+                - link "2026-06-24" [ref=f18e2259] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-24&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e2260]
+              - cell [ref=f18e2261]:
+                - link "付大卫" [ref=f18e2262] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e2263]
+              - cell "-" [ref=f18e2264]
+              - cell "2306.3" [ref=f18e2265]
+              - cell "↑+3.2（+3.2）" [ref=f18e2266]
+              - cell "2309.4" [ref=f18e2267]
+            - row [ref=f18e2268]:
+              - cell [ref=f18e2269]:
+                - link "2026-06-24" [ref=f18e2270] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-24&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2271]
+              - cell [ref=f18e2272]:
+                - link "魏罗瑞" [ref=f18e2273] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e2274]
+              - cell "-" [ref=f18e2275]
+              - cell "2309.4" [ref=f18e2276]
+              - cell "↓-8.6（-8.5）" [ref=f18e2277]
+              - cell "2300.9" [ref=f18e2278]
+            - row [ref=f18e2279]:
+              - cell [ref=f18e2280]:
+                - link "2026-06-23" [ref=f18e2281] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-23&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2282]
+              - cell [ref=f18e2283]:
+                - link "魏罗瑞" [ref=f18e2284] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e2285]
+              - cell "-" [ref=f18e2286]
+              - cell "2310.0" [ref=f18e2287]
+              - cell "↓-8.6（-8.5）" [ref=f18e2288]
+              - cell "2301.4" [ref=f18e2289]
+            - row [ref=f18e2290]:
+              - cell [ref=f18e2291]:
+                - link "2026-06-23" [ref=f18e2292] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-23&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e2293]
+              - cell [ref=f18e2294]:
+                - link "付大卫" [ref=f18e2295] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e2296]
+              - cell "-" [ref=f18e2297]
+              - cell "2301.4" [ref=f18e2298]
+              - cell "↑+3.2（+3.2）" [ref=f18e2299]
+              - cell "2304.6" [ref=f18e2300]
+            - row [ref=f18e2301]:
+              - cell [ref=f18e2302]:
+                - link "2026-06-22" [ref=f18e2303] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-22&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E5%8F%B6%E6%B3%93%E9%91%AB
+              - cell "普通" [ref=f18e2304]
+              - cell [ref=f18e2305]:
+                - link "叶泓鑫" [ref=f18e2306] [cursor=pointer]:
+                  - /url: player.html?uid=10028
+              - cell "胜" [ref=f18e2307]
+              - cell "-" [ref=f18e2308]
+              - cell "2318.0" [ref=f18e2309]
+              - cell "↑+0.6（+0.6）" [ref=f18e2310]
+              - cell "2318.5" [ref=f18e2311]
+            - row [ref=f18e2312]:
+              - cell [ref=f18e2313]:
+                - link "2026-06-22" [ref=f18e2314] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-22&type=%E6%99%AE%E9%80%9A&w=%E4%BB%98%E5%A4%A7%E5%8D%AB&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2315]
+              - cell [ref=f18e2316]:
+                - link "付大卫" [ref=f18e2317] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "负" [ref=f18e2318]
+              - cell "-" [ref=f18e2319]
+              - cell "2318.5" [ref=f18e2320]
+              - cell "↓-8.6（-8.5）" [ref=f18e2321]
+              - cell "2310.0" [ref=f18e2322]
+            - row [ref=f18e2323]:
+              - cell [ref=f18e2324]:
+                - link "2026-06-18" [ref=f18e2325] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-18&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e2326]
+              - cell [ref=f18e2327]:
+                - link "付大卫" [ref=f18e2328] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e2329]
+              - cell "-" [ref=f18e2330]
+              - cell "2312.8" [ref=f18e2331]
+              - cell "↑+3.2（+3.1）" [ref=f18e2332]
+              - cell "2315.8" [ref=f18e2333]
+            - row [ref=f18e2334]:
+              - cell [ref=f18e2335]:
+                - link "2026-06-18" [ref=f18e2336] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-18&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E7%8E%8B%E6%88%90%E6%82%A6
+              - cell "普通" [ref=f18e2337]
+              - cell [ref=f18e2338]:
+                - link "王成悦" [ref=f18e2339] [cursor=pointer]:
+                  - /url: player.html?uid=10012
+              - cell "胜" [ref=f18e2340]
+              - cell "-" [ref=f18e2341]
+              - cell "2315.8" [ref=f18e2342]
+              - cell "↑+2.2（+2.1）" [ref=f18e2343]
+              - cell "2318.0" [ref=f18e2344]
+            - row [ref=f18e2345]:
+              - cell [ref=f18e2346]:
+                - link "2026-06-17" [ref=f18e2347] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-17&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2348]
+              - cell [ref=f18e2349]:
+                - link "魏罗瑞" [ref=f18e2350] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e2351]
+              - cell "-" [ref=f18e2352]
+              - cell "2321.3" [ref=f18e2353]
+              - cell "↓-8.6（-8.5）" [ref=f18e2354]
+              - cell "2312.8" [ref=f18e2355]
+            - row [ref=f18e2356]:
+              - cell [ref=f18e2357]:
+                - link "2026-06-16" [ref=f18e2358] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-16&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e2359]
+              - cell [ref=f18e2360]:
+                - link "付大卫" [ref=f18e2361] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e2362]
+              - cell "-" [ref=f18e2363]
+              - cell "2309.3" [ref=f18e2364]
+              - cell "↑+3.2（+3.2）" [ref=f18e2365]
+              - cell "2312.4" [ref=f18e2366]
+            - row [ref=f18e2367]:
+              - cell [ref=f18e2368]:
+                - link "2026-06-16" [ref=f18e2369] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-16&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB&n=2
+              - cell "普通" [ref=f18e2370]
+              - cell [ref=f18e2371]:
+                - link "付大卫" [ref=f18e2372] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e2373]
+              - cell "-" [ref=f18e2374]
+              - cell "2312.4" [ref=f18e2375]
+              - cell "↑+3.2（+3.2）" [ref=f18e2376]
+              - cell "2315.6" [ref=f18e2377]
+            - row [ref=f18e2378]:
+              - cell [ref=f18e2379]:
+                - link "2026-06-16" [ref=f18e2380] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-16&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E9%AD%8F%E7%BD%97%E7%91%9E
+              - cell "普通" [ref=f18e2381]
+              - cell [ref=f18e2382]:
+                - link "魏罗瑞" [ref=f18e2383] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "胜" [ref=f18e2384]
+              - cell "-" [ref=f18e2385]
+              - cell "2315.6" [ref=f18e2386]
+              - cell "↑+1.7（+1.7）" [ref=f18e2387]
+              - cell "2317.3" [ref=f18e2388]
+            - row [ref=f18e2389]:
+              - cell [ref=f18e2390]:
+                - link "2026-06-16" [ref=f18e2391] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-16&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E8%B0%B7%E5%AD%90%E6%98%93
+              - cell "普通" [ref=f18e2392]
+              - cell [ref=f18e2393]:
+                - link "谷子易" [ref=f18e2394] [cursor=pointer]:
+                  - /url: player.html?uid=10003
+              - cell "胜" [ref=f18e2395]
+              - cell "-" [ref=f18e2396]
+              - cell "2317.3" [ref=f18e2397]
+              - cell "↑+2.4（+2.4）" [ref=f18e2398]
+              - cell "2319.6" [ref=f18e2399]
+            - row [ref=f18e2400]:
+              - cell [ref=f18e2401]:
+                - link "2026-06-16" [ref=f18e2402] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-16&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E6%A2%85%E5%93%B2%E5%AE%87
+              - cell "普通" [ref=f18e2403]
+              - cell [ref=f18e2404]:
+                - link "梅哲宇" [ref=f18e2405] [cursor=pointer]:
+                  - /url: player.html?uid=10011
+              - cell "胜" [ref=f18e2406]
+              - cell "-" [ref=f18e2407]
+              - cell "2319.6" [ref=f18e2408]
+              - cell "↑+1.7（+1.7）" [ref=f18e2409]
+              - cell "2321.3" [ref=f18e2410]
+            - row [ref=f18e2411]:
+              - cell [ref=f18e2412]:
+                - link "2026-06-15" [ref=f18e2413] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-15&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e2414]
+              - cell [ref=f18e2415]:
+                - link "付大卫" [ref=f18e2416] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e2417]
+              - cell "-" [ref=f18e2418]
+              - cell "2303.0" [ref=f18e2419]
+              - cell "↑+3.2（+3.2）" [ref=f18e2420]
+              - cell "2306.1" [ref=f18e2421]
+            - row [ref=f18e2422]:
+              - cell [ref=f18e2423]:
+                - link "2026-06-15" [ref=f18e2424] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-15&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB&n=2
+              - cell "普通" [ref=f18e2425]
+              - cell [ref=f18e2426]:
+                - link "付大卫" [ref=f18e2427] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e2428]
+              - cell "-" [ref=f18e2429]
+              - cell "2306.1" [ref=f18e2430]
+              - cell "↑+3.2（+3.2）" [ref=f18e2431]
+              - cell "2309.3" [ref=f18e2432]
+            - row [ref=f18e2433]:
+              - cell [ref=f18e2434]:
+                - link "2026-06-13" [ref=f18e2435] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-13&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E9%BE%9A%E9%9B%A8%E7%85%8A
+              - cell "普通" [ref=f18e2436]
+              - cell [ref=f18e2437]:
+                - link "龚雨煊" [ref=f18e2438] [cursor=pointer]:
+                  - /url: player.html?uid=10002
+              - cell "胜" [ref=f18e2439]
+              - cell "-" [ref=f18e2440]
+              - cell "2301.3" [ref=f18e2441]
+              - cell "↑+1.7（+1.6）" [ref=f18e2442]
+              - cell "2303.0" [ref=f18e2443]
+            - row [ref=f18e2444]:
+              - cell [ref=f18e2445]:
+                - link "2026-06-12" [ref=f18e2446] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-12&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E9%AD%8F%E7%BD%97%E7%91%9E
+              - cell "普通" [ref=f18e2447]
+              - cell [ref=f18e2448]:
+                - link "魏罗瑞" [ref=f18e2449] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "胜" [ref=f18e2450]
+              - cell "-" [ref=f18e2451]
+              - cell "2296.5" [ref=f18e2452]
+              - cell "↑+1.7（+1.7）" [ref=f18e2453]
+              - cell "2298.1" [ref=f18e2454]
+            - row [ref=f18e2455]:
+              - cell [ref=f18e2456]:
+                - link "2026-06-12" [ref=f18e2457] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-12&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e2458]
+              - cell [ref=f18e2459]:
+                - link "付大卫" [ref=f18e2460] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e2461]
+              - cell "-" [ref=f18e2462]
+              - cell "2298.1" [ref=f18e2463]
+              - cell "↑+3.2（+3.2）" [ref=f18e2464]
+              - cell "2301.3" [ref=f18e2465]
+            - row [ref=f18e2466]:
+              - cell [ref=f18e2467]:
+                - link "2026-06-11" [ref=f18e2468] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-11&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e2469]
+              - cell [ref=f18e2470]:
+                - link "付大卫" [ref=f18e2471] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e2472]
+              - cell "-" [ref=f18e2473]
+              - cell "2291.1" [ref=f18e2474]
+              - cell "↑+3.2（+3.2）" [ref=f18e2475]
+              - cell "2294.3" [ref=f18e2476]
+            - row [ref=f18e2477]:
+              - cell [ref=f18e2478]:
+                - link "2026-06-11" [ref=f18e2479] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-11&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E7%A5%81%E5%AD%90%E5%82%B2
+              - cell "普通" [ref=f18e2480]
+              - cell [ref=f18e2481]:
+                - link "祁子傲" [ref=f18e2482] [cursor=pointer]:
+                  - /url: player.html?uid=10007
+              - cell "胜" [ref=f18e2483]
+              - cell "-" [ref=f18e2484]
+              - cell "2294.3" [ref=f18e2485]
+              - cell "↑+2.2（+2.2）" [ref=f18e2486]
+              - cell "2296.5" [ref=f18e2487]
+            - row [ref=f18e2488]:
+              - cell [ref=f18e2489]:
+                - link "2026-06-10" [ref=f18e2490] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-10&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e2491]
+              - cell [ref=f18e2492]:
+                - link "付大卫" [ref=f18e2493] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e2494]
+              - cell "-" [ref=f18e2495]
+              - cell "2284.4" [ref=f18e2496]
+              - cell "↑+4.0（+4.0）" [ref=f18e2497]
+              - cell "2288.3" [ref=f18e2498]
+            - row [ref=f18e2499]:
+              - cell [ref=f18e2500]:
+                - link "2026-06-10" [ref=f18e2501] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-10&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E7%8E%8B%E6%88%90%E6%82%A6
+              - cell "普通" [ref=f18e2502]
+              - cell [ref=f18e2503]:
+                - link "王成悦" [ref=f18e2504] [cursor=pointer]:
+                  - /url: player.html?uid=10012
+              - cell "胜" [ref=f18e2505]
+              - cell "-" [ref=f18e2506]
+              - cell "2288.3" [ref=f18e2507]
+              - cell "↑+2.8（+2.8）" [ref=f18e2508]
+              - cell "2291.1" [ref=f18e2509]
+            - row [ref=f18e2510]:
+              - cell [ref=f18e2511]:
+                - link "2026-06-09" [ref=f18e2512] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-09&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E9%AD%8F%E7%BD%97%E7%91%9E
+              - cell "普通" [ref=f18e2513]
+              - cell [ref=f18e2514]:
+                - link "魏罗瑞" [ref=f18e2515] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "胜" [ref=f18e2516]
+              - cell "-" [ref=f18e2517]
+              - cell "2298.7" [ref=f18e2518]
+              - cell "↑+1.7（+1.7）" [ref=f18e2519]
+              - cell "2300.3" [ref=f18e2520]
+            - row [ref=f18e2521]:
+              - cell [ref=f18e2522]:
+                - link "2026-06-09" [ref=f18e2523] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-09&type=%E6%99%AE%E9%80%9A&w=%E7%8E%8B%E6%88%90%E6%82%A6&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2524]
+              - cell [ref=f18e2525]:
+                - link "王成悦" [ref=f18e2526] [cursor=pointer]:
+                  - /url: player.html?uid=10012
+              - cell "负" [ref=f18e2527]
+              - cell "-" [ref=f18e2528]
+              - cell "2300.3" [ref=f18e2529]
+              - cell "↓-5.4（-5.3）" [ref=f18e2530]
+              - cell "2295.0" [ref=f18e2531]
+            - row [ref=f18e2532]:
+              - cell [ref=f18e2533]:
+                - link "2026-06-09" [ref=f18e2534] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-09&type=%E6%99%AE%E9%80%9A&w=%E7%8E%8B%E6%88%90%E6%82%A6&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4&n=2
+              - cell "普通" [ref=f18e2535]
+              - cell [ref=f18e2536]:
+                - link "王成悦" [ref=f18e2537] [cursor=pointer]:
+                  - /url: player.html?uid=10012
+              - cell "负" [ref=f18e2538]
+              - cell "-" [ref=f18e2539]
+              - cell "2295.0" [ref=f18e2540]
+              - cell "↓-5.4（-5.3）" [ref=f18e2541]
+              - cell "2289.7" [ref=f18e2542]
+            - row [ref=f18e2543]:
+              - cell [ref=f18e2544]:
+                - link "2026-06-09" [ref=f18e2545] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-09&type=%E6%99%AE%E9%80%9A&w=%E7%8E%8B%E6%88%90%E6%82%A6&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4&n=3
+              - cell "普通" [ref=f18e2546]
+              - cell [ref=f18e2547]:
+                - link "王成悦" [ref=f18e2548] [cursor=pointer]:
+                  - /url: player.html?uid=10012
+              - cell "负" [ref=f18e2549]
+              - cell "-" [ref=f18e2550]
+              - cell "2289.7" [ref=f18e2551]
+              - cell "↓-5.4（-5.3）" [ref=f18e2552]
+              - cell "2284.4" [ref=f18e2553]
+            - row [ref=f18e2554]:
+              - cell [ref=f18e2555]:
+                - link "2026-06-08" [ref=f18e2556] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-08&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e2557]
+              - cell [ref=f18e2558]:
+                - link "付大卫" [ref=f18e2559] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e2560]
+              - cell "-" [ref=f18e2561]
+              - cell "2301.5" [ref=f18e2562]
+              - cell "↑+3.2（+3.2）" [ref=f18e2563]
+              - cell "2304.6" [ref=f18e2564]
+            - row [ref=f18e2565]:
+              - cell [ref=f18e2566]:
+                - link "2026-06-08" [ref=f18e2567] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-08&type=%E6%99%AE%E9%80%9A&w=%E6%9D%8E%E5%8D%97%E7%86%A0&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2568]
+              - cell [ref=f18e2569]:
+                - link "李南熠" [ref=f18e2570] [cursor=pointer]:
+                  - /url: player.html?uid=10005
+              - cell "负" [ref=f18e2571]
+              - cell "-" [ref=f18e2572]
+              - cell "2304.6" [ref=f18e2573]
+              - cell "↓-6.0（-6.0）" [ref=f18e2574]
+              - cell "2298.7" [ref=f18e2575]
+            - row [ref=f18e2576]:
+              - cell [ref=f18e2577]:
+                - link "2026-06-04" [ref=f18e2578] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-04&type=%E6%99%AE%E9%80%9A&w=%E7%8E%8B%E6%88%90%E6%82%A6&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2579]
+              - cell [ref=f18e2580]:
+                - link "王成悦" [ref=f18e2581] [cursor=pointer]:
+                  - /url: player.html?uid=10012
+              - cell "负" [ref=f18e2582]
+              - cell "-" [ref=f18e2583]
+              - cell "2299.2" [ref=f18e2584]
+              - cell "↓-5.4（-5.1）" [ref=f18e2585]
+              - cell "2294.1" [ref=f18e2586]
+            - row [ref=f18e2587]:
+              - cell [ref=f18e2588]:
+                - link "2026-06-04" [ref=f18e2589] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-04&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e2590]
+              - cell [ref=f18e2591]:
+                - link "付大卫" [ref=f18e2592] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e2593]
+              - cell "-" [ref=f18e2594]
+              - cell "2294.1" [ref=f18e2595]
+              - cell "↑+4.0（+3.8）" [ref=f18e2596]
+              - cell "2297.9" [ref=f18e2597]
+            - row [ref=f18e2598]:
+              - cell [ref=f18e2599]:
+                - link "2026-06-04" [ref=f18e2600] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-04&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB&n=2
+              - cell "普通" [ref=f18e2601]
+              - cell [ref=f18e2602]:
+                - link "付大卫" [ref=f18e2603] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e2604]
+              - cell "-" [ref=f18e2605]
+              - cell "2297.9" [ref=f18e2606]
+              - cell "↑+3.2（+3.1）" [ref=f18e2607]
+              - cell "2301.0" [ref=f18e2608]
+            - row [ref=f18e2609]:
+              - cell [ref=f18e2610]:
+                - link "2026-06-04" [ref=f18e2611] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-04&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E6%B1%AA%E5%AE%81%E8%BD%A9
+              - cell "普通" [ref=f18e2612]
+              - cell [ref=f18e2613]:
+                - link "汪宁轩" [ref=f18e2614] [cursor=pointer]:
+                  - /url: player.html?uid=10019
+              - cell "胜" [ref=f18e2615]
+              - cell "-" [ref=f18e2616]
+              - cell "2301.0" [ref=f18e2617]
+              - cell "↑+0.6（+0.5）" [ref=f18e2618]
+              - cell "2301.5" [ref=f18e2619]
+            - row [ref=f18e2620]:
+              - cell [ref=f18e2621]:
+                - link "2026-06-02" [ref=f18e2622] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-02&type=%E6%A0%A1%E4%B9%92%E8%B5%9B%E5%8D%95%E6%89%93&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "校乒赛单打" [ref=f18e2623]
+              - cell [ref=f18e2624]:
+                - link "付大卫" [ref=f18e2625] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e2626]
+              - cell "4-3" [ref=f18e2627]
+              - cell "2154.2" [ref=f18e2628]
+              - cell "↑+45.0（+45.0）" [ref=f18e2629]
+              - cell "2199.2" [ref=f18e2630]
+            - row [ref=f18e2631]:
+              - cell "2026-06-02" [ref=f18e2632]
+              - cell "比赛结果加分" [ref=f18e2633]
+              - cell "-" [ref=f18e2634]
+              - cell "比赛结果加分" [ref=f18e2635]
+              - cell [ref=f18e2636]
+              - cell "2199.2" [ref=f18e2637]
+              - cell "↑+100.0" [ref=f18e2638]
+              - cell "2299.2" [ref=f18e2639]
+            - row [ref=f18e2640]:
+              - cell [ref=f18e2641]:
+                - link "2026-06-01" [ref=f18e2642] [cursor=pointer]:
+                  - /url: match.html?date=2026-06-01&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E7%A5%81%E5%AD%90%E5%82%B2
+              - cell "普通" [ref=f18e2643]
+              - cell [ref=f18e2644]:
+                - link "祁子傲" [ref=f18e2645] [cursor=pointer]:
+                  - /url: player.html?uid=10007
+              - cell "胜" [ref=f18e2646]
+              - cell "-" [ref=f18e2647]
+              - cell "2151.0" [ref=f18e2648]
+              - cell "↑+3.4（+3.2）" [ref=f18e2649]
+              - cell "2154.2" [ref=f18e2650]
+            - row [ref=f18e2651]:
+              - cell [ref=f18e2652]:
+                - link "2026-05-30" [ref=f18e2653] [cursor=pointer]:
+                  - /url: match.html?date=2026-05-30&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E7%8E%8B%E6%88%90%E6%82%A6
+              - cell "普通" [ref=f18e2654]
+              - cell [ref=f18e2655]:
+                - link "王成悦" [ref=f18e2656] [cursor=pointer]:
+                  - /url: player.html?uid=10012
+              - cell "胜" [ref=f18e2657]
+              - cell "-" [ref=f18e2658]
+              - cell "2147.7" [ref=f18e2659]
+              - cell "↑+3.4（+3.3）" [ref=f18e2660]
+              - cell "2151.0" [ref=f18e2661]
+            - row [ref=f18e2662]:
+              - cell [ref=f18e2663]:
+                - link "2026-05-29" [ref=f18e2664] [cursor=pointer]:
+                  - /url: match.html?date=2026-05-29&type=%E6%A0%A1%E4%B9%92%E8%B5%9B%E5%8D%95%E6%89%93&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E6%A2%85%E5%93%B2%E5%AE%87
+              - cell "校乒赛单打" [ref=f18e2665]
+              - cell [ref=f18e2666]:
+                - link "梅哲宇" [ref=f18e2667] [cursor=pointer]:
+                  - /url: player.html?uid=10011
+              - cell "胜" [ref=f18e2668]
+              - cell "4-0" [ref=f18e2669]
+              - cell "2117.0" [ref=f18e2670]
+              - cell "↑+36.0（+36.0）" [ref=f18e2671]
+              - cell "2153.0" [ref=f18e2672]
+            - row [ref=f18e2673]:
+              - cell [ref=f18e2674]:
+                - link "2026-05-29" [ref=f18e2675] [cursor=pointer]:
+                  - /url: match.html?date=2026-05-29&type=%E6%99%AE%E9%80%9A&w=%E8%B0%B7%E5%AD%90%E6%98%93&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2676]
+              - cell [ref=f18e2677]:
+                - link "谷子易" [ref=f18e2678] [cursor=pointer]:
+                  - /url: player.html?uid=10003
+              - cell "负" [ref=f18e2679]
+              - cell "-" [ref=f18e2680]
+              - cell "2153.0" [ref=f18e2681]
+              - cell "↓-5.4（-5.3）" [ref=f18e2682]
+              - cell "2147.7" [ref=f18e2683]
+            - row [ref=f18e2684]:
+              - cell [ref=f18e2685]:
+                - link "2026-05-28" [ref=f18e2686] [cursor=pointer]:
+                  - /url: match.html?date=2026-05-28&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e2687]
+              - cell [ref=f18e2688]:
+                - link "付大卫" [ref=f18e2689] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e2690]
+              - cell "-" [ref=f18e2691]
+              - cell "2117.7" [ref=f18e2692]
+              - cell "↑+6.0（+5.9）" [ref=f18e2693]
+              - cell "2123.6" [ref=f18e2694]
+            - row [ref=f18e2695]:
+              - cell [ref=f18e2696]:
+                - link "2026-05-28" [ref=f18e2697] [cursor=pointer]:
+                  - /url: match.html?date=2026-05-28&type=%E6%99%AE%E9%80%9A&w=%E8%B0%B7%E5%AD%90%E6%98%93&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2698]
+              - cell [ref=f18e2699]:
+                - link "谷子易" [ref=f18e2700] [cursor=pointer]:
+                  - /url: player.html?uid=10003
+              - cell "负" [ref=f18e2701]
+              - cell "-" [ref=f18e2702]
+              - cell "2123.6" [ref=f18e2703]
+              - cell "↓-6.7（-6.6）" [ref=f18e2704]
+              - cell "2117.0" [ref=f18e2705]
+            - row [ref=f18e2706]:
+              - cell [ref=f18e2707]:
+                - link "2026-05-26" [ref=f18e2708] [cursor=pointer]:
+                  - /url: match.html?date=2026-05-26&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e2709]
+              - cell [ref=f18e2710]:
+                - link "付大卫" [ref=f18e2711] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e2712]
+              - cell "-" [ref=f18e2713]
+              - cell "2115.8" [ref=f18e2714]
+              - cell "↑+6.0（+5.9）" [ref=f18e2715]
+              - cell "2121.6" [ref=f18e2716]
+            - row [ref=f18e2717]:
+              - cell [ref=f18e2718]:
+                - link "2026-05-26" [ref=f18e2719] [cursor=pointer]:
+                  - /url: match.html?date=2026-05-26&type=%E6%99%AE%E9%80%9A&w=%E6%9D%8E%E5%8D%97%E7%86%A0&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2720]
+              - cell [ref=f18e2721]:
+                - link "李南熠" [ref=f18e2722] [cursor=pointer]:
+                  - /url: player.html?uid=10005
+              - cell "负" [ref=f18e2723]
+              - cell "-" [ref=f18e2724]
+              - cell "2121.6" [ref=f18e2725]
+              - cell "↓-4.0（-3.9）" [ref=f18e2726]
+              - cell "2117.7" [ref=f18e2727]
+            - row [ref=f18e2728]:
+              - cell [ref=f18e2729]:
+                - link "2026-05-21" [ref=f18e2730] [cursor=pointer]:
+                  - /url: match.html?date=2026-05-21&type=%E6%A0%A1%E4%B9%92%E8%B5%9B%E5%8D%95%E6%89%93&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E5%A7%9C%E5%AD%90%E6%B6%A6
+              - cell "校乒赛单打" [ref=f18e2731]
+              - cell [ref=f18e2732]:
+                - link "姜子润" [ref=f18e2733] [cursor=pointer]:
+                  - /url: player.html?uid=10004
+              - cell "胜" [ref=f18e2734]
+              - cell "3-0" [ref=f18e2735]
+              - cell "2087.8" [ref=f18e2736]
+              - cell "↑+24.0（+24.0）" [ref=f18e2737]
+              - cell "2111.8" [ref=f18e2738]
+            - row [ref=f18e2739]:
+              - cell [ref=f18e2740]:
+                - link "2026-05-21" [ref=f18e2741] [cursor=pointer]:
+                  - /url: match.html?date=2026-05-21&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E6%9D%8E%E5%8D%97%E7%86%A0
+              - cell "普通" [ref=f18e2742]
+              - cell [ref=f18e2743]:
+                - link "李南熠" [ref=f18e2744] [cursor=pointer]:
+                  - /url: player.html?uid=10005
+              - cell "胜" [ref=f18e2745]
+              - cell "-" [ref=f18e2746]
+              - cell "2111.8" [ref=f18e2747]
+              - cell "↑+4.2（+4.0）" [ref=f18e2748]
+              - cell "2115.8" [ref=f18e2749]
+            - row [ref=f18e2750]:
+              - cell [ref=f18e2751]:
+                - link "2026-05-18" [ref=f18e2752] [cursor=pointer]:
+                  - /url: match.html?date=2026-05-18&type=%E6%A0%A1%E4%B9%92%E8%B5%9B%E5%8D%95%E6%89%93&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E8%83%A1%E6%9C%97%E8%AF%9A
+              - cell "校乒赛单打" [ref=f18e2753]
+              - cell [ref=f18e2754]:
+                - link "胡朗诚" [ref=f18e2755] [cursor=pointer]:
+                  - /url: player.html?uid=10013
+              - cell "胜" [ref=f18e2756]
+              - cell "3-0" [ref=f18e2757]
+              - cell "2075.8" [ref=f18e2758]
+              - cell "↑+12.0（+12.0）" [ref=f18e2759]
+              - cell "2087.8" [ref=f18e2760]
+            - row [ref=f18e2761]:
+              - cell [ref=f18e2762]:
+                - link "2026-05-14" [ref=f18e2763] [cursor=pointer]:
+                  - /url: match.html?date=2026-05-14&type=%E6%99%AE%E9%80%9A&w=%E4%BB%98%E5%A4%A7%E5%8D%AB&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2764]
+              - cell [ref=f18e2765]:
+                - link "付大卫" [ref=f18e2766] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "负" [ref=f18e2767]
+              - cell "-" [ref=f18e2768]
+              - cell "2081.1" [ref=f18e2769]
+              - cell "↓-5.8（-5.3）" [ref=f18e2770]
+              - cell "2075.8" [ref=f18e2771]
+            - row [ref=f18e2772]:
+              - cell [ref=f18e2773]:
+                - link "2026-05-07" [ref=f18e2774] [cursor=pointer]:
+                  - /url: match.html?date=2026-05-07&type=%E6%A0%A1%E4%B9%92%E8%B5%9B%E5%8D%95%E6%89%93&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%B8%81%E8%83%9C%E6%80%80
+              - cell "校乒赛单打" [ref=f18e2775]
+              - cell [ref=f18e2776]:
+                - link "丁胜怀" [ref=f18e2777] [cursor=pointer]:
+                  - /url: player.html?uid=10024
+              - cell "胜" [ref=f18e2778]
+              - cell "3-0" [ref=f18e2779]
+              - cell "2077.1" [ref=f18e2780]
+              - cell "↑+4.0（+4.0）" [ref=f18e2781]
+              - cell "2081.1" [ref=f18e2782]
+            - row [ref=f18e2783]:
+              - cell [ref=f18e2784]:
+                - link "2026-04-24" [ref=f18e2785] [cursor=pointer]:
+                  - /url: match.html?date=2026-04-24&type=%E6%A0%A1%E4%B9%92%E8%B5%9B%E5%8D%95%E6%89%93&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E6%9D%A8%E8%8B%8F%E6%97%AD
+              - cell "校乒赛单打" [ref=f18e2786]
+              - cell [ref=f18e2787]:
+                - link "杨苏旭" [ref=f18e2788] [cursor=pointer]:
+                  - /url: player.html?uid=10022
+              - cell "胜" [ref=f18e2789]
+              - cell "-" [ref=f18e2790]
+              - cell "2069.1" [ref=f18e2791]
+              - cell "↑+8.0（+8.0）" [ref=f18e2792]
+              - cell "2077.1" [ref=f18e2793]
+            - row [ref=f18e2794]:
+              - cell [ref=f18e2795]:
+                - link "2026-04-10" [ref=f18e2796] [cursor=pointer]:
+                  - /url: match.html?date=2026-04-10&type=%E6%A0%A1%E4%B9%92%E8%B5%9B%E5%9B%A2%E4%BD%93&w=%E9%BE%9A%E9%9B%A8%E7%85%8A&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "校乒赛团体" [ref=f18e2797]
+              - cell [ref=f18e2798]:
+                - link "龚雨煊" [ref=f18e2799] [cursor=pointer]:
+                  - /url: player.html?uid=10002
+              - cell "负" [ref=f18e2800]
+              - cell "-" [ref=f18e2801]
+              - cell "2069.7" [ref=f18e2802]
+              - cell "↓-23.0（-23.0）" [ref=f18e2803]
+              - cell "2046.6" [ref=f18e2804]
+            - row [ref=f18e2805]:
+              - cell "2026-04-10" [ref=f18e2806]
+              - cell "比赛结果加分" [ref=f18e2807]
+              - cell "-" [ref=f18e2808]
+              - cell "比赛结果加分" [ref=f18e2809]
+              - cell [ref=f18e2810]
+              - cell "2046.6" [ref=f18e2811]
+              - cell "↑+22.5" [ref=f18e2812]
+              - cell "2069.1" [ref=f18e2813]
+            - row [ref=f18e2814]:
+              - cell [ref=f18e2815]:
+                - link "2026-04-03" [ref=f18e2816] [cursor=pointer]:
+                  - /url: match.html?date=2026-04-03&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E6%9D%8E%E5%8D%97%E7%86%A0
+              - cell "普通" [ref=f18e2817]
+              - cell [ref=f18e2818]:
+                - link "李南熠" [ref=f18e2819] [cursor=pointer]:
+                  - /url: player.html?uid=10005
+              - cell "胜" [ref=f18e2820]
+              - cell "-" [ref=f18e2821]
+              - cell "2069.1" [ref=f18e2822]
+              - cell "↑+4.2（+2.6）" [ref=f18e2823]
+              - cell "2071.8" [ref=f18e2824]
+            - row [ref=f18e2825]:
+              - cell [ref=f18e2826]:
+                - link "2026-04-03" [ref=f18e2827] [cursor=pointer]:
+                  - /url: match.html?date=2026-04-03&type=%E6%99%AE%E9%80%9A&w=%E6%9D%8E%E5%8D%97%E7%86%A0&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2828]
+              - cell [ref=f18e2829]:
+                - link "李南熠" [ref=f18e2830] [cursor=pointer]:
+                  - /url: player.html?uid=10005
+              - cell "负" [ref=f18e2831]
+              - cell "-" [ref=f18e2832]
+              - cell "2071.8" [ref=f18e2833]
+              - cell "↓-3.4（-2.1）" [ref=f18e2834]
+              - cell "2069.7" [ref=f18e2835]
+            - row [ref=f18e2836]:
+              - cell [ref=f18e2837]:
+                - link "2026-03-25" [ref=f18e2838] [cursor=pointer]:
+                  - /url: match.html?date=2026-03-25&type=%E6%A0%A1%E4%B9%92%E8%B5%9B%E5%9B%A2%E4%BD%93&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "校乒赛团体" [ref=f18e2839]
+              - cell [ref=f18e2840]:
+                - link "付大卫" [ref=f18e2841] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e2842]
+              - cell "-" [ref=f18e2843]
+              - cell "2035.5" [ref=f18e2844]
+              - cell "↑+24.0（+24.0）" [ref=f18e2845]
+              - cell "2059.5" [ref=f18e2846]
+            - row [ref=f18e2847]:
+              - cell [ref=f18e2848]:
+                - link "2026-03-25" [ref=f18e2849] [cursor=pointer]:
+                  - /url: match.html?date=2026-03-25&type=%E6%A0%A1%E4%B9%92%E8%B5%9B%E5%9B%A2%E4%BD%93&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E5%AD%99%E9%92%B0%E9%91%AB
+              - cell "校乒赛团体" [ref=f18e2850]
+              - cell [ref=f18e2851]:
+                - link "孙钰鑫" [ref=f18e2852] [cursor=pointer]:
+                  - /url: player.html?uid=10014
+              - cell "胜" [ref=f18e2853]
+              - cell "-" [ref=f18e2854]
+              - cell "2059.5" [ref=f18e2855]
+              - cell "↑+9.6（+9.6）" [ref=f18e2856]
+              - cell "2069.1" [ref=f18e2857]
+            - row [ref=f18e2858]:
+              - cell [ref=f18e2859]:
+                - link "2026-03-16" [ref=f18e2860] [cursor=pointer]:
+                  - /url: match.html?date=2026-03-16&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E9%AD%8F%E7%BD%97%E7%91%9E
+              - cell "普通" [ref=f18e2861]
+              - cell [ref=f18e2862]:
+                - link "魏罗瑞" [ref=f18e2863] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "胜" [ref=f18e2864]
+              - cell "-" [ref=f18e2865]
+              - cell "2032.1" [ref=f18e2866]
+              - cell "↑+4.2（+3.4）" [ref=f18e2867]
+              - cell "2035.5" [ref=f18e2868]
+            - row [ref=f18e2869]:
+              - cell [ref=f18e2870]:
+                - link "2026-03-13" [ref=f18e2871] [cursor=pointer]:
+                  - /url: match.html?date=2026-03-13&type=%E6%99%AE%E9%80%9A&w=%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2872]
+              - cell [ref=f18e2873]:
+                - link "魏罗瑞" [ref=f18e2874] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "负" [ref=f18e2875]
+              - cell "-" [ref=f18e2876]
+              - cell "2034.6" [ref=f18e2877]
+              - cell "↓-3.4（-3.2）" [ref=f18e2878]
+              - cell "2031.3" [ref=f18e2879]
+            - row [ref=f18e2880]:
+              - cell [ref=f18e2881]:
+                - link "2026-03-13" [ref=f18e2882] [cursor=pointer]:
+                  - /url: match.html?date=2026-03-13&type=%E6%99%AE%E9%80%9A&w=%E7%A5%81%E5%AD%90%E5%82%B2&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2883]
+              - cell [ref=f18e2884]:
+                - link "祁子傲" [ref=f18e2885] [cursor=pointer]:
+                  - /url: player.html?uid=10007
+              - cell "负" [ref=f18e2886]
+              - cell "-" [ref=f18e2887]
+              - cell "2031.3" [ref=f18e2888]
+              - cell "↓-3.4（-3.2）" [ref=f18e2889]
+              - cell "2028.1" [ref=f18e2890]
+            - row [ref=f18e2891]:
+              - cell [ref=f18e2892]:
+                - link "2026-03-13" [ref=f18e2893] [cursor=pointer]:
+                  - /url: match.html?date=2026-03-13&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E6%9D%8E%E5%8D%97%E7%86%A0
+              - cell "普通" [ref=f18e2894]
+              - cell [ref=f18e2895]:
+                - link "李南熠" [ref=f18e2896] [cursor=pointer]:
+                  - /url: player.html?uid=10005
+              - cell "胜" [ref=f18e2897]
+              - cell "-" [ref=f18e2898]
+              - cell "2028.1" [ref=f18e2899]
+              - cell "↑+4.2（+4.1）" [ref=f18e2900]
+              - cell "2032.1" [ref=f18e2901]
+            - row [ref=f18e2902]:
+              - cell [ref=f18e2903]:
+                - link "2026-03-12" [ref=f18e2904] [cursor=pointer]:
+                  - /url: match.html?date=2026-03-12&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E7%8E%8B%E6%88%90%E6%82%A6
+              - cell "普通" [ref=f18e2905]
+              - cell [ref=f18e2906]:
+                - link "王成悦" [ref=f18e2907] [cursor=pointer]:
+                  - /url: player.html?uid=10012
+              - cell "胜" [ref=f18e2908]
+              - cell "-" [ref=f18e2909]
+              - cell "2030.4" [ref=f18e2910]
+              - cell "↑+4.2（+4.2）" [ref=f18e2911]
+              - cell "2034.6" [ref=f18e2912]
+            - row [ref=f18e2913]:
+              - cell [ref=f18e2914]:
+                - link "2026-03-10" [ref=f18e2915] [cursor=pointer]:
+                  - /url: match.html?date=2026-03-10&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e2916]
+              - cell [ref=f18e2917]:
+                - link "付大卫" [ref=f18e2918] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e2919]
+              - cell "-" [ref=f18e2920]
+              - cell "2019.9" [ref=f18e2921]
+              - cell "↑+6.0（+5.9）" [ref=f18e2922]
+              - cell "2025.7" [ref=f18e2923]
+            - row [ref=f18e2924]:
+              - cell [ref=f18e2925]:
+                - link "2026-03-10" [ref=f18e2926] [cursor=pointer]:
+                  - /url: match.html?date=2026-03-10&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB&n=2
+              - cell "普通" [ref=f18e2927]
+              - cell [ref=f18e2928]:
+                - link "付大卫" [ref=f18e2929] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e2930]
+              - cell "-" [ref=f18e2931]
+              - cell "2025.7" [ref=f18e2932]
+              - cell "↑+4.8（+4.7）" [ref=f18e2933]
+              - cell "2030.4" [ref=f18e2934]
+            - row [ref=f18e2935]:
+              - cell [ref=f18e2936]:
+                - link "2026-03-05" [ref=f18e2937] [cursor=pointer]:
+                  - /url: match.html?date=2026-03-05&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e2938]
+              - cell [ref=f18e2939]:
+                - link "付大卫" [ref=f18e2940] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e2941]
+              - cell "-" [ref=f18e2942]
+              - cell "2008.5" [ref=f18e2943]
+              - cell "↑+6.0（+5.7）" [ref=f18e2944]
+              - cell "2014.2" [ref=f18e2945]
+            - row [ref=f18e2946]:
+              - cell [ref=f18e2947]:
+                - link "2026-03-05" [ref=f18e2948] [cursor=pointer]:
+                  - /url: match.html?date=2026-03-05&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB&n=2
+              - cell "普通" [ref=f18e2949]
+              - cell [ref=f18e2950]:
+                - link "付大卫" [ref=f18e2951] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e2952]
+              - cell "-" [ref=f18e2953]
+              - cell "2014.2" [ref=f18e2954]
+              - cell "↑+6.0（+5.7）" [ref=f18e2955]
+              - cell "2019.9" [ref=f18e2956]
+            - row [ref=f18e2957]:
+              - cell [ref=f18e2958]:
+                - link "2026-03-04" [ref=f18e2959] [cursor=pointer]:
+                  - /url: match.html?date=2026-03-04&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e2960]
+              - cell [ref=f18e2961]:
+                - link "付大卫" [ref=f18e2962] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e2963]
+              - cell "-" [ref=f18e2964]
+              - cell "2005.9" [ref=f18e2965]
+              - cell "↑+6.0（+5.9）" [ref=f18e2966]
+              - cell "2011.9" [ref=f18e2967]
+            - row [ref=f18e2968]:
+              - cell [ref=f18e2969]:
+                - link "2026-03-04" [ref=f18e2970] [cursor=pointer]:
+                  - /url: match.html?date=2026-03-04&type=%E6%99%AE%E9%80%9A&w=%E7%A5%81%E5%AD%90%E5%82%B2&l=%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "普通" [ref=f18e2971]
+              - cell [ref=f18e2972]:
+                - link "祁子傲" [ref=f18e2973] [cursor=pointer]:
+                  - /url: player.html?uid=10007
+              - cell "负" [ref=f18e2974]
+              - cell "-" [ref=f18e2975]
+              - cell "2011.9" [ref=f18e2976]
+              - cell "↓-3.4（-3.3）" [ref=f18e2977]
+              - cell "2008.5" [ref=f18e2978]
+            - row [ref=f18e2979]:
+              - cell [ref=f18e2980]:
+                - link "2026-03-03" [ref=f18e2981] [cursor=pointer]:
+                  - /url: match.html?date=2026-03-03&type=%E6%99%AE%E9%80%9A&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E4%BB%98%E5%A4%A7%E5%8D%AB
+              - cell "普通" [ref=f18e2982]
+              - cell [ref=f18e2983]:
+                - link "付大卫" [ref=f18e2984] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell "胜" [ref=f18e2985]
+              - cell "-" [ref=f18e2986]
+              - cell "2000.0" [ref=f18e2987]
+              - cell "↑+6.0（+5.9）" [ref=f18e2988]
+              - cell "2005.9" [ref=f18e2989]
+      - generic [ref=f18e2991]:
+        - generic [ref=f18e2992]:
+          - generic [ref=f18e2993]: 
+          - text: 双打战绩
+          - generic [ref=f18e2994]: 双打共 7 场，胜 3 场，胜率 43%
+        - table [ref=f18e2996]:
+          - rowgroup [ref=f18e2997]:
+            - row [ref=f18e2998]:
+              - columnheader "日期" [ref=f18e2999]
+              - columnheader "类型" [ref=f18e3000]
+              - columnheader "搭档" [ref=f18e3001]
+              - columnheader "对手" [ref=f18e3002]
+              - columnheader "结果" [ref=f18e3003]
+              - columnheader "比分" [ref=f18e3004]
+          - rowgroup [ref=f18e3005]:
+            - row [ref=f18e3006]:
+              - cell [ref=f18e3007]:
+                - link "2026-10-22" [ref=f18e3008] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-22&type=%E5%8F%8C%E6%89%93&w=%E4%BB%98%E5%A4%A7%E5%8D%AB%2F%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E7%8E%8B%E6%88%90%E6%82%A6%2F%E9%AD%8F%E7%BD%97%E7%91%9E
+              - cell "双打" [ref=f18e3009]
+              - cell [ref=f18e3010]:
+                - link "付大卫" [ref=f18e3011] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell [ref=f18e3012]:
+                - link "王成悦" [ref=f18e3013] [cursor=pointer]:
+                  - /url: player.html?uid=10012
+                - text: /
+                - link "魏罗瑞" [ref=f18e3014] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "胜" [ref=f18e3015]
+              - cell "1-0" [ref=f18e3016]
+            - row [ref=f18e3017]:
+              - cell [ref=f18e3018]:
+                - link "2026-10-21" [ref=f18e3019] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-21&type=%E5%8F%8C%E6%89%93&w=%E9%99%88%E7%9F%A5%E5%8B%89%2F%E9%BE%9A%E9%9B%A8%E7%85%8A&l=%E6%A2%85%E5%93%B2%E5%AE%87%2F%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "双打" [ref=f18e3020]
+              - cell [ref=f18e3021]:
+                - link "梅哲宇" [ref=f18e3022] [cursor=pointer]:
+                  - /url: player.html?uid=10011
+              - cell [ref=f18e3023]:
+                - link "陈知勉" [ref=f18e3024] [cursor=pointer]:
+                  - /url: player.html?uid=10023
+                - text: /
+                - link "龚雨煊" [ref=f18e3025] [cursor=pointer]:
+                  - /url: player.html?uid=10002
+              - cell "负" [ref=f18e3026]
+              - cell "1-3" [ref=f18e3027]
+            - row [ref=f18e3028]:
+              - cell [ref=f18e3029]:
+                - link "2026-10-17" [ref=f18e3030] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-17&type=%E5%8F%8C%E6%89%93&w=%E9%BE%9A%E9%9B%A8%E7%85%8A%2F%E6%A2%85%E5%93%B2%E5%AE%87&l=%E5%88%98%E5%86%A0%E7%BE%BD%2F%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "双打" [ref=f18e3031]
+              - cell [ref=f18e3032]:
+                - link "刘冠羽" [ref=f18e3033] [cursor=pointer]:
+                  - /url: player.html?uid=10018
+              - cell [ref=f18e3034]:
+                - link "龚雨煊" [ref=f18e3035] [cursor=pointer]:
+                  - /url: player.html?uid=10002
+                - text: /
+                - link "梅哲宇" [ref=f18e3036] [cursor=pointer]:
+                  - /url: player.html?uid=10011
+              - cell "负" [ref=f18e3037]
+              - cell "1-3" [ref=f18e3038]
+            - row [ref=f18e3039]:
+              - cell [ref=f18e3040]:
+                - link "2026-10-17" [ref=f18e3041] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-17&type=%E5%8F%8C%E6%89%93&w=%E5%88%98%E5%86%A0%E7%BE%BD%2F%E6%A2%85%E5%93%B2%E5%AE%87&l=%E9%BE%9A%E9%9B%A8%E7%85%8A%2F%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "双打" [ref=f18e3042]
+              - cell [ref=f18e3043]:
+                - link "龚雨煊" [ref=f18e3044] [cursor=pointer]:
+                  - /url: player.html?uid=10002
+              - cell [ref=f18e3045]:
+                - link "刘冠羽" [ref=f18e3046] [cursor=pointer]:
+                  - /url: player.html?uid=10018
+                - text: /
+                - link "梅哲宇" [ref=f18e3047] [cursor=pointer]:
+                  - /url: player.html?uid=10011
+              - cell "负" [ref=f18e3048]
+              - cell "2-3" [ref=f18e3049]
+            - row [ref=f18e3050]:
+              - cell [ref=f18e3051]:
+                - link "2026-10-15" [ref=f18e3052] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-15&type=%E5%8F%8C%E6%89%93&w=%E4%BB%BB%E5%B3%BB%E8%B4%A4%2F%E9%AD%8F%E7%BD%97%E7%91%9E&l=%E4%BB%98%E5%A4%A7%E5%8D%AB%2F%E7%8E%8B%E6%88%90%E6%82%A6
+              - cell "双打" [ref=f18e3053]
+              - cell [ref=f18e3054]:
+                - link "魏罗瑞" [ref=f18e3055] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell [ref=f18e3056]:
+                - link "付大卫" [ref=f18e3057] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+                - text: /
+                - link "王成悦" [ref=f18e3058] [cursor=pointer]:
+                  - /url: player.html?uid=10012
+              - cell "胜" [ref=f18e3059]
+              - cell "3-2" [ref=f18e3060]
+            - row [ref=f18e3061]:
+              - cell [ref=f18e3062]:
+                - link "2026-10-15" [ref=f18e3063] [cursor=pointer]:
+                  - /url: match.html?date=2026-10-15&type=%E5%8F%8C%E6%89%93&w=%E4%BB%98%E5%A4%A7%E5%8D%AB%2F%E4%BB%BB%E5%B3%BB%E8%B4%A4&l=%E7%8E%8B%E6%88%90%E6%82%A6%2F%E9%AD%8F%E7%BD%97%E7%91%9E
+              - cell "双打" [ref=f18e3064]
+              - cell [ref=f18e3065]:
+                - link "付大卫" [ref=f18e3066] [cursor=pointer]:
+                  - /url: player.html?uid=10001
+              - cell [ref=f18e3067]:
+                - link "王成悦" [ref=f18e3068] [cursor=pointer]:
+                  - /url: player.html?uid=10012
+                - text: /
+                - link "魏罗瑞" [ref=f18e3069] [cursor=pointer]:
+                  - /url: player.html?uid=10010
+              - cell "胜" [ref=f18e3070]
+              - cell "2-1" [ref=f18e3071]
+            - row [ref=f18e3072]:
+              - cell [ref=f18e3073]:
+                - link "2026-09-25" [ref=f18e3074] [cursor=pointer]:
+                  - /url: match.html?date=2026-09-25&type=%E5%8F%8C%E6%89%93&w=%E6%A2%85%E5%93%B2%E5%AE%87%2F%E7%8E%8B%E6%88%90%E6%82%A6&l=%E9%BE%9A%E9%9B%A8%E7%85%8A%2F%E4%BB%BB%E5%B3%BB%E8%B4%A4
+              - cell "双打" [ref=f18e3075]
+              - cell [ref=f18e3076]:
+                - link "龚雨煊" [ref=f18e3077] [cursor=pointer]:
+                  - /url: player.html?uid=10002
+              - cell [ref=f18e3078]:
+                - link "梅哲宇" [ref=f18e3079] [cursor=pointer]:
+                  - /url: player.html?uid=10011
+                - text: /
+                - link "王成悦" [ref=f18e3080] [cursor=pointer]:
+                  - /url: player.html?uid=10012
+              - cell "负" [ref=f18e3081]
+              - cell "2-3" [ref=f18e3082]
+  - contentinfo [ref=f18e39]:
+    - generic [ref=f18e40]:
+      - generic [ref=f18e41]:
+        - generic [ref=f18e42]:
+          - link "WFLS Table Tennis Club" [ref=f18e43] [cursor=pointer]:
+            - /url: index.html
+          - paragraph [ref=f18e44]: 武汉外国语学校 · 湖北省武汉市
+          - paragraph [ref=f18e45]: 挥拍逐梦，旋转青春
+        - navigation [ref=f18e46]:
+          - heading "社团" [level=3] [ref=f18e47]
+          - list [ref=f18e48]:
+            - listitem [ref=f18e49]:
+              - link "Home" [ref=f18e50] [cursor=pointer]:
+                - /url: index.html
+            - listitem [ref=f18e51]:
+              - link "News" [ref=f18e52] [cursor=pointer]:
+                - /url: news.html
+            - listitem [ref=f18e53]:
+              - link "Competitions" [ref=f18e54] [cursor=pointer]:
+                - /url: competitions.html
+            - listitem [ref=f18e55]:
+              - link "社团骨干" [ref=f18e56] [cursor=pointer]:
+                - /url: members.html
+            - listitem [ref=f18e57]:
+              - link "赛季总结" [ref=f18e58] [cursor=pointer]:
+                - /url: season-review.html
+        - navigation [ref=f18e59]:
+          - heading "数据" [level=3] [ref=f18e60]
+          - list [ref=f18e61]:
+            - listitem [ref=f18e62]:
+              - link "Ranking" [ref=f18e63] [cursor=pointer]:
+                - /url: ranking.html
+            - listitem [ref=f18e64]:
+              - link "Data Viz" [ref=f18e65] [cursor=pointer]:
+                - /url: data_viz.html
+            - listitem [ref=f18e66]:
+              - link "个人数据" [ref=f18e67] [cursor=pointer]:
+                - /url: personal_stats.html
+            - listitem [ref=f18e68]:
+              - link "Data Scale" [ref=f18e69] [cursor=pointer]:
+                - /url: data_scale.html
+            - listitem [ref=f18e70]:
+              - link "WTT Ranking" [ref=f18e71] [cursor=pointer]:
+                - /url: wtt_ranking.html
+            - listitem [ref=f18e72]:
+              - link "WTT Data Viz" [ref=f18e73] [cursor=pointer]:
+                - /url: wtt_dataviz.html
+        - navigation [ref=f18e74]:
+          - heading "信息" [level=3] [ref=f18e75]
+          - list [ref=f18e76]:
+            - listitem [ref=f18e77]:
+              - link "提交战绩" [ref=f18e78] [cursor=pointer]:
+                - /url: submit.html
+            - listitem [ref=f18e79]:
+              - link "Q&A" [ref=f18e80] [cursor=pointer]:
+                - /url: qa.html
+            - listitem [ref=f18e81]:
+              - link "更新日志" [ref=f18e82] [cursor=pointer]:
+                - /url: changelog.html
+            - listitem [ref=f18e83]:
+              - link "网站文档" [ref=f18e84] [cursor=pointer]:
+                - /url: docs.html
+            - listitem [ref=f18e85]:
+              - link "Umpire Training" [ref=f18e86] [cursor=pointer]:
+                - /url: umpire-training.html
+            - listitem [ref=f18e87]:
+              - link "Contact" [ref=f18e88] [cursor=pointer]:
+                - /url: contact.html
+      - generic [ref=f18e89]:
+        - generic [ref=f18e90]:
+          - generic [ref=f18e91]: 关注我们
+          - generic [ref=f18e92]:
+            - button "社团QQ群二维码" [ref=f18e93] [cursor=pointer]:
+              - generic [ref=f18e94]: 
+            - link "GitHub" [ref=f18e95] [cursor=pointer]:
+              - /url: https://github.com/yglalpavir/wfls-tt-club
+              - generic [ref=f18e96]: 
+        - generic [ref=f18e97]:
+          - link "社团理念" [ref=f18e98] [cursor=pointer]:
+            - /url: index.html#philosophy
+          - link "积分规则" [ref=f18e99] [cursor=pointer]:
+            - /url: qa.html
+        - paragraph [ref=f18e100]: ©2026 WFLS Table Tennis Club. All rights reserved

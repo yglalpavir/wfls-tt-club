@@ -1,0 +1,999 @@
+- generic [active] [ref=f9e1]:
+  - navigation [ref=f9e2]:
+    - generic [ref=f9e3]:
+      - link " WFLS TT Club" [ref=f9e4] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=f9e5]: 
+        - generic [ref=f9e7]: WFLS TT Club
+      - list [ref=f9e8]:
+        - listitem [ref=f9e9]:
+          - link "Home" [ref=f9e10] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=f9e11]:
+          - link "News" [ref=f9e12] [cursor=pointer]:
+            - /url: news.html
+        - listitem [ref=f9e13]:
+          - link "Competitions" [ref=f9e14] [cursor=pointer]:
+            - /url: competitions.html
+        - listitem [ref=f9e15]:
+          - link "Ranking Beta" [ref=f9e16] [cursor=pointer]:
+            - /url: ranking.html
+        - listitem [ref=f9e17]:
+          - link "More... " [ref=f9e18] [cursor=pointer]:
+            - /url: "#"
+            - text: More...
+            - generic [ref=f9e19]: 
+        - listitem [ref=f9e20]:
+          - link "Contact" [ref=f9e21] [cursor=pointer]:
+            - /url: contact.html
+      - generic [ref=f9e22]:
+        - button "搜索" [ref=f9e23] [cursor=pointer]:
+          - generic [ref=f9e24]: 
+        - button "切换主题" [ref=f9e25] [cursor=pointer]:
+          - generic [ref=f9e26]: 
+        - button "切换语言" [ref=f9e27] [cursor=pointer]:
+          - generic [ref=f9e28]: EN
+  - generic [ref=f9e31]:
+    - generic [ref=f9e32]: Beta Version
+    - heading "Ranking" [level=1] [ref=f9e33]
+    - paragraph [ref=f9e34]: 社团积分排名系统 · 支持多时间节点对比 · 点击姓名查看积分明细
+  - generic [ref=f9e37]:
+    - complementary [ref=f9e38]:
+      - heading "时间节点" [level=2] [ref=f9e39]
+      - list [ref=f9e154]:
+        - listitem [ref=f9e155]:
+          - generic [ref=f9e156]:
+            - generic [ref=f9e157]: 
+            - generic [ref=f9e158]: 实时积分
+          - list [ref=f9e159]:
+            - button "实时积分 56人" [ref=f9e160] [cursor=pointer]:
+              - text: 实时积分
+              - generic [ref=f9e162]: 56人
+        - listitem [ref=f9e163]:
+          - generic [ref=f9e164] [cursor=pointer]:
+            - generic [ref=f9e165]: 
+            - generic [ref=f9e166]: 2026年春季学期
+            - generic [ref=f9e167]: 19个节点
+          - list:
+            - button "2026年春季学期初始积分 57人" [ref=f9e168] [cursor=pointer]:
+              - text: 2026年春季学期初始积分
+              - generic [ref=f9e170]: 57人
+            - button "2026年3月8日 56人" [ref=f9e171] [cursor=pointer]:
+              - text: 2026年3月8日
+              - generic [ref=f9e173]: 56人
+            - button "2026年3月15日 57人" [ref=f9e174] [cursor=pointer]:
+              - text: 2026年3月15日
+              - generic [ref=f9e176]: 57人
+            - button "2026年3月22日 57人" [ref=f9e177] [cursor=pointer]:
+              - text: 2026年3月22日
+              - generic [ref=f9e179]: 57人
+            - button "2026年3月29日 57人" [ref=f9e180] [cursor=pointer]:
+              - text: 2026年3月29日
+              - generic [ref=f9e182]: 57人
+            - button "2026年4月5日 57人" [ref=f9e183] [cursor=pointer]:
+              - text: 2026年4月5日
+              - generic [ref=f9e185]: 57人
+            - button "2026年4月12日 57人" [ref=f9e186] [cursor=pointer]:
+              - text: 2026年4月12日
+              - generic [ref=f9e188]: 57人
+            - button "2026年4月19日 57人" [ref=f9e189] [cursor=pointer]:
+              - text: 2026年4月19日
+              - generic [ref=f9e191]: 57人
+            - button "2026年4月26日 57人" [ref=f9e192] [cursor=pointer]:
+              - text: 2026年4月26日
+              - generic [ref=f9e194]: 57人
+            - button "2026年5月3日 57人" [ref=f9e195] [cursor=pointer]:
+              - text: 2026年5月3日
+              - generic [ref=f9e197]: 57人
+            - button "2026年5月10日 57人" [ref=f9e198] [cursor=pointer]:
+              - text: 2026年5月10日
+              - generic [ref=f9e200]: 57人
+            - button "2026年5月17日 57人" [ref=f9e201] [cursor=pointer]:
+              - text: 2026年5月17日
+              - generic [ref=f9e203]: 57人
+            - button "2026年5月24日 57人" [ref=f9e204] [cursor=pointer]:
+              - text: 2026年5月24日
+              - generic [ref=f9e206]: 57人
+            - button "2026年5月31日 57人" [ref=f9e207] [cursor=pointer]:
+              - text: 2026年5月31日
+              - generic [ref=f9e209]: 57人
+            - button "2026年6月7日 57人" [ref=f9e210] [cursor=pointer]:
+              - text: 2026年6月7日
+              - generic [ref=f9e212]: 57人
+            - button "2026年6月14日 57人" [ref=f9e213] [cursor=pointer]:
+              - text: 2026年6月14日
+              - generic [ref=f9e215]: 57人
+            - button "2026年6月21日 57人" [ref=f9e216] [cursor=pointer]:
+              - text: 2026年6月21日
+              - generic [ref=f9e218]: 57人
+            - button "2026年6月28日 57人" [ref=f9e219] [cursor=pointer]:
+              - text: 2026年6月28日
+              - generic [ref=f9e221]: 57人
+            - button "2026年7月2日 57人" [ref=f9e222] [cursor=pointer]:
+              - text: 2026年7月2日
+              - generic [ref=f9e224]: 57人
+        - listitem [ref=f9e225]:
+          - generic [ref=f9e226] [cursor=pointer]:
+            - generic [ref=f9e227]: 
+            - generic [ref=f9e228]: 2026年暑假
+            - generic [ref=f9e229]: 11个节点
+          - list:
+            - button "2026年暑假初始积分 57人" [ref=f9e230] [cursor=pointer]:
+              - text: 2026年暑假初始积分
+              - generic [ref=f9e232]: 57人
+            - button "2026年7月5日 57人" [ref=f9e233] [cursor=pointer]:
+              - text: 2026年7月5日
+              - generic [ref=f9e235]: 57人
+            - button "2026年7月12日 57人" [ref=f9e236] [cursor=pointer]:
+              - text: 2026年7月12日
+              - generic [ref=f9e238]: 57人
+            - button "2026年7月19日 57人" [ref=f9e239] [cursor=pointer]:
+              - text: 2026年7月19日
+              - generic [ref=f9e241]: 57人
+            - button "2026年7月26日 57人" [ref=f9e242] [cursor=pointer]:
+              - text: 2026年7月26日
+              - generic [ref=f9e244]: 57人
+            - button "2026年8月2日 57人" [ref=f9e245] [cursor=pointer]:
+              - text: 2026年8月2日
+              - generic [ref=f9e247]: 57人
+            - button "2026年8月9日 57人" [ref=f9e248] [cursor=pointer]:
+              - text: 2026年8月9日
+              - generic [ref=f9e250]: 57人
+            - button "2026年8月16日 57人" [ref=f9e251] [cursor=pointer]:
+              - text: 2026年8月16日
+              - generic [ref=f9e253]: 57人
+            - button "2026年8月23日 57人" [ref=f9e254] [cursor=pointer]:
+              - text: 2026年8月23日
+              - generic [ref=f9e256]: 57人
+            - button "2026年8月30日 57人" [ref=f9e257] [cursor=pointer]:
+              - text: 2026年8月30日
+              - generic [ref=f9e259]: 57人
+            - button "2026年8月31日 57人" [ref=f9e260] [cursor=pointer]:
+              - text: 2026年8月31日
+              - generic [ref=f9e262]: 57人
+        - listitem [ref=f9e263]:
+          - generic [ref=f9e264] [cursor=pointer]:
+            - generic [ref=f9e265]: 
+            - generic [ref=f9e266]: 2026年秋季学期
+            - generic [ref=f9e267]: 10个节点
+          - list [ref=f9e268]:
+            - button "2026年秋季学期初始积分 57人" [ref=f9e269] [cursor=pointer]:
+              - text: 2026年秋季学期初始积分
+              - generic [ref=f9e271]: 57人
+            - button "2026年9月6日 56人" [ref=f9e272] [cursor=pointer]:
+              - text: 2026年9月6日
+              - generic [ref=f9e274]: 56人
+            - button "2026年9月13日 56人" [ref=f9e275] [cursor=pointer]:
+              - text: 2026年9月13日
+              - generic [ref=f9e277]: 56人
+            - button "2026年9月20日 56人" [ref=f9e278] [cursor=pointer]:
+              - text: 2026年9月20日
+              - generic [ref=f9e280]: 56人
+            - button "2026年9月27日 56人" [ref=f9e281] [cursor=pointer]:
+              - text: 2026年9月27日
+              - generic [ref=f9e283]: 56人
+            - button "2026年10月4日 56人" [ref=f9e284] [cursor=pointer]:
+              - text: 2026年10月4日
+              - generic [ref=f9e286]: 56人
+            - button "2026年10月11日 56人" [ref=f9e287] [cursor=pointer]:
+              - text: 2026年10月11日
+              - generic [ref=f9e289]: 56人
+            - button "2026年10月18日 56人" [ref=f9e290] [cursor=pointer]:
+              - text: 2026年10月18日
+              - generic [ref=f9e292]: 56人
+            - button "2026年10月25日 56人" [ref=f9e293] [cursor=pointer]:
+              - text: 2026年10月25日
+              - generic [ref=f9e295]: 56人
+            - button "2026年11月1日 56人" [ref=f9e296] [cursor=pointer]:
+              - text: 2026年11月1日
+              - generic [ref=f9e298]: 56人
+    - generic [ref=f9e40]:
+      - text:     
+      - generic [ref=f9e41]:
+        - generic [ref=f9e42]:
+          - generic [ref=f9e43]: Data Table
+          - heading "积分数据表" [level=2] [ref=f9e44]
+        - generic [ref=f9e45]:
+          - generic [ref=f9e299]:
+            - button "积分相关规则" [ref=f9e46]:
+              - generic [aria-hidden] [ref=f9e47]: 
+            - button "积分相关规则" [ref=f9e300]:
+              - generic [aria-hidden] [ref=f9e301]: 
+          - link "提交比赛战绩" [ref=f9e49] [cursor=pointer]:
+            - /url: submit.html
+            - generic [aria-hidden] [ref=f9e50]: 
+            - generic [ref=f9e51]: 提交战绩
+      - tablist "积分项目" [ref=f9e52]:
+        - button "单打" [ref=f9e53] [cursor=pointer]
+        - button "双打" [ref=f9e54] [cursor=pointer]
+      - text:  
+      - generic [ref=f9e55]:
+        - generic [ref=f9e56]:
+          - text: 当前排序：
+          - strong [ref=f9e57]: 当前积分 降序
+        - generic [ref=f9e58]: 实时积分
+        - generic [ref=f9e302]:
+          - button " 导出图片" [ref=f9e59] [cursor=pointer]:
+            - generic [ref=f9e60]: 
+            - generic [ref=f9e61]: 导出图片
+          - button "导出图片" [ref=f9e303] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f9e304]: 
+      - text: 
+      - table [ref=f9e63]:
+        - rowgroup [ref=f9e64]:
+          - row [ref=f9e65]:
+            - columnheader "#" [ref=f9e305] [cursor=pointer]
+            - columnheader "姓名" [ref=f9e306] [cursor=pointer]
+            - columnheader "当前积分" [ref=f9e307] [cursor=pointer]
+            - columnheader "积分变化" [ref=f9e308] [cursor=pointer]
+            - columnheader "排名变化" [ref=f9e70]
+            - columnheader "总场次" [ref=f9e309] [cursor=pointer]
+            - columnheader "胜率" [ref=f9e310] [cursor=pointer]
+        - rowgroup [ref=f9e73]:
+          - row [ref=f9e311]:
+            - cell "1" [ref=f9e312]
+            - cell [ref=f9e313]:
+              - link "魏罗瑞" [ref=f9e314] [cursor=pointer]:
+                - /url: player.html?uid=10010
+              - button "" [ref=f9e315] [cursor=pointer]
+            - cell [ref=f9e317]:
+              - strong [ref=f9e318]: "2123.7"
+            - cell "▼12.2" [ref=f9e319]
+            - cell "-" [ref=f9e321]
+            - cell "38" [ref=f9e322]
+            - cell "53%" [ref=f9e323]
+          - row [ref=f9e324]:
+            - cell "2" [ref=f9e325]
+            - cell [ref=f9e326]:
+              - link "付大卫" [ref=f9e327] [cursor=pointer]:
+                - /url: player.html?uid=10001
+              - button "" [ref=f9e328] [cursor=pointer]
+            - cell [ref=f9e330]:
+              - strong [ref=f9e331]: "2101.2"
+            - cell "▼1.2" [ref=f9e332]
+            - cell "-" [ref=f9e334]
+            - cell "43" [ref=f9e335]
+            - cell "56%" [ref=f9e336]
+          - row [ref=f9e337]:
+            - cell "3" [ref=f9e338]
+            - cell [ref=f9e339]:
+              - link "任峻贤" [ref=f9e340] [cursor=pointer]:
+                - /url: player.html?uid=10009
+              - button "" [ref=f9e341] [cursor=pointer]
+            - cell [ref=f9e343]:
+              - strong [ref=f9e344]: "2088.3"
+            - cell "▲4.2" [ref=f9e345]
+            - cell "-" [ref=f9e347]
+            - cell "106" [ref=f9e348]
+            - cell "52%" [ref=f9e349]
+          - row [ref=f9e350]:
+            - cell "4" [ref=f9e351]
+            - cell [ref=f9e352]:
+              - link "任安喆" [ref=f9e353] [cursor=pointer]:
+                - /url: player.html?uid=10008
+              - button "" [ref=f9e354] [cursor=pointer]
+            - cell [ref=f9e356]:
+              - strong [ref=f9e357]: "2079.9"
+            - cell "▲2.5" [ref=f9e358]
+            - cell "▲1" [ref=f9e360]
+            - cell "14" [ref=f9e362]
+            - cell "86%" [ref=f9e363]
+          - row [ref=f9e364]:
+            - cell "5" [ref=f9e365]
+            - cell [ref=f9e366]:
+              - link "祁子傲" [ref=f9e367] [cursor=pointer]:
+                - /url: player.html?uid=10007
+              - button "" [ref=f9e368] [cursor=pointer]
+            - cell [ref=f9e370]:
+              - strong [ref=f9e371]: "2079.7"
+            - cell "▼0.5" [ref=f9e372]
+            - cell "▼1" [ref=f9e374]
+            - cell "3" [ref=f9e376]
+            - cell "100%" [ref=f9e377]
+          - row [ref=f9e378]:
+            - cell "6" [ref=f9e379]
+            - cell [ref=f9e380]:
+              - link "龚雨煊" [ref=f9e381] [cursor=pointer]:
+                - /url: player.html?uid=10002
+              - button "" [ref=f9e382] [cursor=pointer]
+            - cell [ref=f9e384]:
+              - strong [ref=f9e385]: "2073.0"
+            - cell "▲0.2" [ref=f9e386]
+            - cell "-" [ref=f9e388]
+            - cell "17" [ref=f9e389]
+            - cell "71%" [ref=f9e390]
+          - row [ref=f9e391]:
+            - cell "7" [ref=f9e392]
+            - cell [ref=f9e393]:
+              - link "陈瑜萱" [ref=f9e394] [cursor=pointer]:
+                - /url: player.html?uid=10000
+              - button "" [ref=f9e395] [cursor=pointer]
+            - cell [ref=f9e397]:
+              - strong [ref=f9e398]: "2070.7"
+            - cell "▲0.1" [ref=f9e399]
+            - cell "-" [ref=f9e401]
+            - cell "5" [ref=f9e402]
+            - cell "60%" [ref=f9e403]
+          - row [ref=f9e404]:
+            - cell "8" [ref=f9e405]
+            - cell [ref=f9e406]:
+              - link "梅哲宇" [ref=f9e407] [cursor=pointer]:
+                - /url: player.html?uid=10011
+              - button "" [ref=f9e408] [cursor=pointer]
+            - cell [ref=f9e410]:
+              - strong [ref=f9e411]: "2064.6"
+            - cell "▼0.2" [ref=f9e412]
+            - cell "-" [ref=f9e414]
+            - cell "9" [ref=f9e415]
+            - cell "67%" [ref=f9e416]
+          - row [ref=f9e417]:
+            - cell "9" [ref=f9e418]
+            - cell [ref=f9e419]:
+              - link "王成悦" [ref=f9e420] [cursor=pointer]:
+                - /url: player.html?uid=10012
+              - button "" [ref=f9e421] [cursor=pointer]
+            - cell [ref=f9e423]:
+              - strong [ref=f9e424]: "2064.4"
+            - cell "-" [ref=f9e425]
+            - cell "-" [ref=f9e426]
+            - cell "14" [ref=f9e427]
+            - cell "29%" [ref=f9e428]
+          - row [ref=f9e429]:
+            - cell "10" [ref=f9e430]
+            - cell [ref=f9e431]:
+              - link "姜子润" [ref=f9e432] [cursor=pointer]:
+                - /url: player.html?uid=10004
+              - button "" [ref=f9e433] [cursor=pointer]
+            - cell [ref=f9e435]:
+              - strong [ref=f9e436]: "2056.8"
+            - cell "▲0.1" [ref=f9e437]
+            - cell "-" [ref=f9e439]
+            - cell "15" [ref=f9e440]
+            - cell "73%" [ref=f9e441]
+          - row [ref=f9e442]:
+            - cell "11" [ref=f9e443]
+            - cell [ref=f9e444]:
+              - link "谷子易" [ref=f9e445] [cursor=pointer]:
+                - /url: player.html?uid=10003
+              - button "" [ref=f9e446] [cursor=pointer]
+            - cell [ref=f9e448]:
+              - strong [ref=f9e449]: "2043.7"
+            - cell "▲0.4" [ref=f9e450]
+            - cell "-" [ref=f9e452]
+            - cell "13" [ref=f9e453]
+            - cell "77%" [ref=f9e454]
+          - row [ref=f9e455]:
+            - cell "12" [ref=f9e456]
+            - cell [ref=f9e457]:
+              - link "王天森" [ref=f9e458] [cursor=pointer]:
+                - /url: player.html?uid=10043
+              - button "" [ref=f9e459] [cursor=pointer]
+            - cell [ref=f9e461]:
+              - strong [ref=f9e462]: "2024.5"
+            - cell "-" [ref=f9e463]
+            - cell "-" [ref=f9e464]
+            - cell "1" [ref=f9e465]
+            - cell "0%" [ref=f9e466]
+          - row [ref=f9e467]:
+            - cell "13" [ref=f9e468]
+            - cell [ref=f9e469]:
+              - link "徐耀鹏" [ref=f9e470] [cursor=pointer]:
+                - /url: player.html?uid=10050
+              - button "" [ref=f9e471] [cursor=pointer]
+            - cell [ref=f9e473]:
+              - strong [ref=f9e474]: "2007.9"
+            - cell "▲14.9" [ref=f9e475]
+            - cell "▲1" [ref=f9e477]
+            - cell "15" [ref=f9e479]
+            - cell "60%" [ref=f9e480]
+          - row [ref=f9e481]:
+            - cell "14" [ref=f9e482]
+            - cell [ref=f9e483]:
+              - link "马钰恒" [ref=f9e484] [cursor=pointer]:
+                - /url: player.html?uid=10053
+              - button "" [ref=f9e485] [cursor=pointer]
+            - cell [ref=f9e487]:
+              - strong [ref=f9e488]: "2001.3"
+            - cell "-" [ref=f9e489]
+            - cell "▼1" [ref=f9e490]
+            - cell "2" [ref=f9e492]
+            - cell "50%" [ref=f9e493]
+          - row [ref=f9e494]:
+            - cell "15" [ref=f9e495]
+            - cell [ref=f9e496]:
+              - link "冯秋源" [ref=f9e497] [cursor=pointer]:
+                - /url: player.html?uid=10052
+              - button "" [ref=f9e498] [cursor=pointer]
+            - cell [ref=f9e500]:
+              - strong [ref=f9e501]: "1991.9"
+            - cell "-" [ref=f9e502]
+            - cell "-" [ref=f9e503]
+            - cell "2" [ref=f9e504]
+            - cell "0%" [ref=f9e505]
+          - row [ref=f9e506]:
+            - cell "16" [ref=f9e507]
+            - cell [ref=f9e508]:
+              - link "魏子越" [ref=f9e509] [cursor=pointer]:
+                - /url: player.html?uid=10054
+              - button "" [ref=f9e510] [cursor=pointer]
+            - cell [ref=f9e512]:
+              - strong [ref=f9e513]: "1989.9"
+            - cell "-" [ref=f9e514]
+            - cell "-" [ref=f9e515]
+            - cell "2" [ref=f9e516]
+            - cell "0%" [ref=f9e517]
+          - row [ref=f9e518]:
+            - cell "17" [ref=f9e519]
+            - cell [ref=f9e520]:
+              - link "王禹涵" [ref=f9e521] [cursor=pointer]:
+                - /url: player.html?uid=10049
+              - button "" [ref=f9e522] [cursor=pointer]
+            - cell [ref=f9e524]:
+              - strong [ref=f9e525]: "1986.0"
+            - cell "▲0.6" [ref=f9e526]
+            - cell "-" [ref=f9e528]
+            - cell "7" [ref=f9e529]
+            - cell "14%" [ref=f9e530]
+          - row [ref=f9e531]:
+            - cell "18" [ref=f9e532]
+            - cell [ref=f9e533]:
+              - link "彭一和" [ref=f9e534] [cursor=pointer]:
+                - /url: player.html?uid=10006
+              - button "" [ref=f9e535] [cursor=pointer]
+            - cell [ref=f9e537]:
+              - strong [ref=f9e538]: "1962.7"
+            - cell "▼0.5" [ref=f9e539]
+            - cell "-" [ref=f9e541]
+            - cell "9" [ref=f9e542]
+            - cell "67%" [ref=f9e543]
+          - row [ref=f9e544]:
+            - cell "19" [ref=f9e545]
+            - cell [ref=f9e546]:
+              - link "陶锦源" [ref=f9e547] [cursor=pointer]:
+                - /url: player.html?uid=10015
+              - button "" [ref=f9e548] [cursor=pointer]
+            - cell [ref=f9e550]:
+              - strong [ref=f9e551]: "1899.4"
+            - cell "▲0.2" [ref=f9e552]
+            - cell "-" [ref=f9e554]
+            - cell "3" [ref=f9e555]
+            - cell "33%" [ref=f9e556]
+          - row [ref=f9e557]:
+            - cell "20" [ref=f9e558]
+            - cell [ref=f9e559]:
+              - link "张宸瑞1" [ref=f9e560] [cursor=pointer]:
+                - /url: player.html?uid=10016
+              - button "" [ref=f9e561] [cursor=pointer]
+            - cell [ref=f9e563]:
+              - strong [ref=f9e564]: "1834.1"
+            - cell "▼0.2" [ref=f9e565]
+            - cell "-" [ref=f9e567]
+            - cell "1" [ref=f9e568]
+            - cell "100%" [ref=f9e569]
+          - row [ref=f9e570]:
+            - cell "21" [ref=f9e571]
+            - cell [ref=f9e572]:
+              - link "胡朗诚" [ref=f9e573] [cursor=pointer]:
+                - /url: player.html?uid=10013
+              - button "" [ref=f9e574] [cursor=pointer]
+            - cell [ref=f9e576]:
+              - strong [ref=f9e577]: "1814.6"
+            - cell "-" [ref=f9e578]
+            - cell "-" [ref=f9e579]
+            - cell "0" [ref=f9e580]
+            - cell "0%" [ref=f9e581]
+          - row [ref=f9e582]:
+            - cell "22" [ref=f9e583]
+            - cell [ref=f9e584]:
+              - link "刘冠羽" [ref=f9e585] [cursor=pointer]:
+                - /url: player.html?uid=10018
+              - button "" [ref=f9e586] [cursor=pointer]
+            - cell [ref=f9e588]:
+              - strong [ref=f9e589]: "1812.6"
+            - cell "▲0.5" [ref=f9e590]
+            - cell "-" [ref=f9e592]
+            - cell "7" [ref=f9e593]
+            - cell "14%" [ref=f9e594]
+          - row [ref=f9e595]:
+            - cell "23" [ref=f9e596]
+            - cell [ref=f9e597]:
+              - link "孙钰鑫" [ref=f9e598] [cursor=pointer]:
+                - /url: player.html?uid=10014
+              - button "" [ref=f9e599] [cursor=pointer]
+            - cell [ref=f9e601]:
+              - strong [ref=f9e602]: "1804.7"
+            - cell "▲0.1" [ref=f9e603]
+            - cell "-" [ref=f9e605]
+            - cell "1" [ref=f9e606]
+            - cell "0%" [ref=f9e607]
+          - row [ref=f9e608]:
+            - cell "24" [ref=f9e609]
+            - cell [ref=f9e610]:
+              - link "熊品钧" [ref=f9e611] [cursor=pointer]:
+                - /url: player.html?uid=10056
+              - button "" [ref=f9e612] [cursor=pointer]
+            - cell [ref=f9e614]:
+              - strong [ref=f9e615]: "1789.5"
+            - cell "▲2.4" [ref=f9e616]
+            - cell "-" [ref=f9e618]
+            - cell "8" [ref=f9e619]
+            - cell "13%" [ref=f9e620]
+          - row [ref=f9e621]:
+            - cell "25" [ref=f9e622]
+            - cell [ref=f9e623]:
+              - link "王思博" [ref=f9e624] [cursor=pointer]:
+                - /url: player.html?uid=10020
+              - button "" [ref=f9e625] [cursor=pointer]
+            - cell [ref=f9e627]:
+              - strong [ref=f9e628]: "1786.9"
+            - cell "▲0.1" [ref=f9e629]
+            - cell "-" [ref=f9e631]
+            - cell "3" [ref=f9e632]
+            - cell "33%" [ref=f9e633]
+          - row [ref=f9e634]:
+            - cell "26" [ref=f9e635]
+            - cell [ref=f9e636]:
+              - link "吴慈航" [ref=f9e637] [cursor=pointer]:
+                - /url: player.html?uid=10021
+              - button "" [ref=f9e638] [cursor=pointer]
+            - cell [ref=f9e640]:
+              - strong [ref=f9e641]: "1750.9"
+            - cell "-" [ref=f9e642]
+            - cell "-" [ref=f9e643]
+            - cell "0" [ref=f9e644]
+            - cell "0%" [ref=f9e645]
+          - row [ref=f9e646]:
+            - cell "27" [ref=f9e647]
+            - cell [ref=f9e648]:
+              - link "陈知勉" [ref=f9e649] [cursor=pointer]:
+                - /url: player.html?uid=10023
+              - button "" [ref=f9e650] [cursor=pointer]
+            - cell [ref=f9e652]:
+              - strong [ref=f9e653]: "1750.0"
+            - cell "-" [ref=f9e654]
+            - cell "-" [ref=f9e655]
+            - cell "0" [ref=f9e656]
+            - cell "0%" [ref=f9e657]
+          - row [ref=f9e658]:
+            - cell "28" [ref=f9e659]
+            - cell [ref=f9e660]:
+              - link "叶泓鑫" [ref=f9e661] [cursor=pointer]:
+                - /url: player.html?uid=10028
+              - button "" [ref=f9e662] [cursor=pointer]
+            - cell [ref=f9e664]:
+              - strong [ref=f9e665]: "1712.8"
+            - cell "▲0.1" [ref=f9e666]
+            - cell "-" [ref=f9e668]
+            - cell "2" [ref=f9e669]
+            - cell "0%" [ref=f9e670]
+          - row [ref=f9e671]:
+            - cell "29" [ref=f9e672]
+            - cell [ref=f9e673]:
+              - link "李全景" [ref=f9e674] [cursor=pointer]:
+                - /url: player.html?uid=10017
+              - button "" [ref=f9e675] [cursor=pointer]
+            - cell [ref=f9e677]:
+              - strong [ref=f9e678]: "1711.9"
+            - cell "-" [ref=f9e679]
+            - cell "-" [ref=f9e680]
+            - cell "0" [ref=f9e681]
+            - cell "0%" [ref=f9e682]
+          - row [ref=f9e683]:
+            - cell "30" [ref=f9e684]
+            - cell [ref=f9e685]:
+              - link "杨苏旭" [ref=f9e686] [cursor=pointer]:
+                - /url: player.html?uid=10022
+              - button "" [ref=f9e687] [cursor=pointer]
+            - cell [ref=f9e689]:
+              - strong [ref=f9e690]: "1705.1"
+            - cell "-" [ref=f9e691]
+            - cell "-" [ref=f9e692]
+            - cell "0" [ref=f9e693]
+            - cell "0%" [ref=f9e694]
+          - row [ref=f9e695]:
+            - cell "31" [ref=f9e696]
+            - cell [ref=f9e697]:
+              - link "李泫乐" [ref=f9e698] [cursor=pointer]:
+                - /url: player.html?uid=10055
+              - button "" [ref=f9e699] [cursor=pointer]
+            - cell [ref=f9e701]:
+              - strong [ref=f9e702]: "1698.7"
+            - cell "-" [ref=f9e703]
+            - cell "-" [ref=f9e704]
+            - cell "1" [ref=f9e705]
+            - cell "0%" [ref=f9e706]
+          - row [ref=f9e707]:
+            - cell "32" [ref=f9e708]
+            - cell [ref=f9e709]:
+              - link "吕宥衡" [ref=f9e710] [cursor=pointer]:
+                - /url: player.html?uid=10046
+              - button "" [ref=f9e711] [cursor=pointer]
+            - cell [ref=f9e713]:
+              - strong [ref=f9e714]: "1697.3"
+            - cell "-" [ref=f9e715]
+            - cell "-" [ref=f9e716]
+            - cell "2" [ref=f9e717]
+            - cell "0%" [ref=f9e718]
+          - row [ref=f9e719]:
+            - cell "32" [ref=f9e720]
+            - cell [ref=f9e721]:
+              - link "潘乐然" [ref=f9e722] [cursor=pointer]:
+                - /url: player.html?uid=10048
+              - button "" [ref=f9e723] [cursor=pointer]
+            - cell [ref=f9e725]:
+              - strong [ref=f9e726]: "1697.3"
+            - cell "-" [ref=f9e727]
+            - cell "-" [ref=f9e728]
+            - cell "2" [ref=f9e729]
+            - cell "0%" [ref=f9e730]
+          - row [ref=f9e731]:
+            - cell "32" [ref=f9e732]
+            - cell [ref=f9e733]:
+              - link "熊若翔" [ref=f9e734] [cursor=pointer]:
+                - /url: player.html?uid=10047
+              - button "" [ref=f9e735] [cursor=pointer]
+            - cell [ref=f9e737]:
+              - strong [ref=f9e738]: "1697.3"
+            - cell "-" [ref=f9e739]
+            - cell "-" [ref=f9e740]
+            - cell "2" [ref=f9e741]
+            - cell "0%" [ref=f9e742]
+          - row [ref=f9e743]:
+            - cell "35" [ref=f9e744]
+            - cell [ref=f9e745]:
+              - link "朱昱安" [ref=f9e746] [cursor=pointer]:
+                - /url: player.html?uid=10051
+              - button "" [ref=f9e747] [cursor=pointer]
+            - cell [ref=f9e749]:
+              - strong [ref=f9e750]: "1696.6"
+            - cell "-" [ref=f9e751]
+            - cell "-" [ref=f9e752]
+            - cell "2" [ref=f9e753]
+            - cell "0%" [ref=f9e754]
+          - row [ref=f9e755]:
+            - cell "36" [ref=f9e756]
+            - cell [ref=f9e757]:
+              - link "汪宁轩" [ref=f9e758] [cursor=pointer]:
+                - /url: player.html?uid=10019
+              - button "" [ref=f9e759] [cursor=pointer]
+            - cell [ref=f9e761]:
+              - strong [ref=f9e762]: "1686.9"
+            - cell "▲0.1" [ref=f9e763]
+            - cell "-" [ref=f9e765]
+            - cell "5" [ref=f9e766]
+            - cell "0%" [ref=f9e767]
+          - row [ref=f9e768]:
+            - cell "37" [ref=f9e769]
+            - cell [ref=f9e770]:
+              - link "戴星翊" [ref=f9e771] [cursor=pointer]:
+                - /url: player.html?uid=10045
+              - button "" [ref=f9e772] [cursor=pointer]
+            - cell [ref=f9e774]:
+              - strong [ref=f9e775]: "1680.7"
+            - cell "-" [ref=f9e776]
+            - cell "-" [ref=f9e777]
+            - cell "2" [ref=f9e778]
+            - cell "0%" [ref=f9e779]
+          - row [ref=f9e780]:
+            - cell "38" [ref=f9e781]
+            - cell [ref=f9e782]:
+              - link "彭瀚明" [ref=f9e783] [cursor=pointer]:
+                - /url: player.html?uid=10044
+              - button "" [ref=f9e784] [cursor=pointer]
+            - cell [ref=f9e786]:
+              - strong [ref=f9e787]: "1673.4"
+            - cell "▲0.1" [ref=f9e788]
+            - cell "-" [ref=f9e790]
+            - cell "3" [ref=f9e791]
+            - cell "0%" [ref=f9e792]
+          - row [ref=f9e793]:
+            - cell "39" [ref=f9e794]
+            - cell [ref=f9e795]:
+              - link "张宸瑞2" [ref=f9e796] [cursor=pointer]:
+                - /url: player.html?uid=10037
+              - button "" [ref=f9e797] [cursor=pointer]
+            - cell [ref=f9e799]:
+              - strong [ref=f9e800]: "1629.6"
+            - cell "-" [ref=f9e801]
+            - cell "-" [ref=f9e802]
+            - cell "1" [ref=f9e803]
+            - cell "0%" [ref=f9e804]
+          - row [ref=f9e805]:
+            - cell "40" [ref=f9e806]
+            - cell [ref=f9e807]:
+              - link "王子一" [ref=f9e808] [cursor=pointer]:
+                - /url: player.html?uid=10027
+              - button "" [ref=f9e809] [cursor=pointer]
+            - cell [ref=f9e811]:
+              - strong [ref=f9e812]: "1601.2"
+            - cell "-" [ref=f9e813]
+            - cell "-" [ref=f9e814]
+            - cell "0" [ref=f9e815]
+            - cell "0%" [ref=f9e816]
+          - row [ref=f9e817]:
+            - cell "41" [ref=f9e818]
+            - cell [ref=f9e819]:
+              - link "何子涵" [ref=f9e820] [cursor=pointer]:
+                - /url: player.html?uid=10025
+              - button "" [ref=f9e821] [cursor=pointer]
+            - cell [ref=f9e823]:
+              - strong [ref=f9e824]: "1600.0"
+            - cell "-" [ref=f9e825]
+            - cell "-" [ref=f9e826]
+            - cell "0" [ref=f9e827]
+            - cell "0%" [ref=f9e828]
+          - row [ref=f9e829]:
+            - cell "41" [ref=f9e830]
+            - cell [ref=f9e831]:
+              - link "胡永轩" [ref=f9e832] [cursor=pointer]:
+                - /url: player.html?uid=10026
+              - button "" [ref=f9e833] [cursor=pointer]
+            - cell [ref=f9e835]:
+              - strong [ref=f9e836]: "1600.0"
+            - cell "-" [ref=f9e837]
+            - cell "-" [ref=f9e838]
+            - cell "0" [ref=f9e839]
+            - cell "0%" [ref=f9e840]
+          - row [ref=f9e841]:
+            - cell "43" [ref=f9e842]
+            - cell [ref=f9e843]:
+              - link "叶孟恒" [ref=f9e844] [cursor=pointer]:
+                - /url: player.html?uid=10029
+              - button "" [ref=f9e845] [cursor=pointer]
+            - cell [ref=f9e847]:
+              - strong [ref=f9e848]: "1596.7"
+            - cell "▲0.1" [ref=f9e849]
+            - cell "-" [ref=f9e851]
+            - cell "2" [ref=f9e852]
+            - cell "0%" [ref=f9e853]
+          - row [ref=f9e854]:
+            - cell "44" [ref=f9e855]
+            - cell [ref=f9e856]:
+              - link "丁胜怀" [ref=f9e857] [cursor=pointer]:
+                - /url: player.html?uid=10024
+              - button "" [ref=f9e858] [cursor=pointer]
+            - cell [ref=f9e860]:
+              - strong [ref=f9e861]: "1587.6"
+            - cell "-" [ref=f9e862]
+            - cell "-" [ref=f9e863]
+            - cell "0" [ref=f9e864]
+            - cell "0%" [ref=f9e865]
+          - row [ref=f9e866]:
+            - cell "45" [ref=f9e867]
+            - cell [ref=f9e868]:
+              - link "曹高畅" [ref=f9e869] [cursor=pointer]:
+                - /url: player.html?uid=10030
+              - button "" [ref=f9e870] [cursor=pointer]
+            - cell [ref=f9e872]:
+              - strong [ref=f9e873]: "1541.8"
+            - cell "-" [ref=f9e874]
+            - cell "-" [ref=f9e875]
+            - cell "0" [ref=f9e876]
+            - cell "0%" [ref=f9e877]
+          - row [ref=f9e878]:
+            - cell "46" [ref=f9e879]
+            - cell [ref=f9e880]:
+              - link "何齐烨" [ref=f9e881] [cursor=pointer]:
+                - /url: player.html?uid=10032
+              - button "" [ref=f9e882] [cursor=pointer]
+            - cell [ref=f9e884]:
+              - strong [ref=f9e885]: "1535.9"
+            - cell "-" [ref=f9e886]
+            - cell "-" [ref=f9e887]
+            - cell "0" [ref=f9e888]
+            - cell "0%" [ref=f9e889]
+          - row [ref=f9e890]:
+            - cell "47" [ref=f9e891]
+            - cell [ref=f9e892]:
+              - link "肖辰宇" [ref=f9e893] [cursor=pointer]:
+                - /url: player.html?uid=10036
+              - button "" [ref=f9e894] [cursor=pointer]
+            - cell [ref=f9e896]:
+              - strong [ref=f9e897]: "1535.8"
+            - cell "-" [ref=f9e898]
+            - cell "-" [ref=f9e899]
+            - cell "0" [ref=f9e900]
+            - cell "0%" [ref=f9e901]
+          - row [ref=f9e902]:
+            - cell "48" [ref=f9e903]
+            - cell [ref=f9e904]:
+              - link "邓以清" [ref=f9e905] [cursor=pointer]:
+                - /url: player.html?uid=10031
+              - button "" [ref=f9e906] [cursor=pointer]
+            - cell [ref=f9e908]:
+              - strong [ref=f9e909]: "1523.8"
+            - cell "-" [ref=f9e910]
+            - cell "-" [ref=f9e911]
+            - cell "0" [ref=f9e912]
+            - cell "0%" [ref=f9e913]
+          - row [ref=f9e914]:
+            - cell "49" [ref=f9e915]
+            - cell [ref=f9e916]:
+              - link "刘天齐" [ref=f9e917] [cursor=pointer]:
+                - /url: player.html?uid=10033
+              - button "" [ref=f9e918] [cursor=pointer]
+            - cell [ref=f9e920]:
+              - strong [ref=f9e921]: "1519.0"
+            - cell "-" [ref=f9e922]
+            - cell "-" [ref=f9e923]
+            - cell "0" [ref=f9e924]
+            - cell "0%" [ref=f9e925]
+          - row [ref=f9e926]:
+            - cell "50" [ref=f9e927]
+            - cell [ref=f9e928]:
+              - link "刘彧铭" [ref=f9e929] [cursor=pointer]:
+                - /url: player.html?uid=10034
+              - button "" [ref=f9e930] [cursor=pointer]
+            - cell [ref=f9e932]:
+              - strong [ref=f9e933]: "1498.0"
+            - cell "-" [ref=f9e934]
+            - cell "-" [ref=f9e935]
+            - cell "0" [ref=f9e936]
+            - cell "0%" [ref=f9e937]
+          - row [ref=f9e938]:
+            - cell "51" [ref=f9e939]
+            - cell [ref=f9e940]:
+              - link "宁悦辛" [ref=f9e941] [cursor=pointer]:
+                - /url: player.html?uid=10035
+              - button "" [ref=f9e942] [cursor=pointer]
+            - cell [ref=f9e944]:
+              - strong [ref=f9e945]: "1485.5"
+            - cell "-" [ref=f9e946]
+            - cell "-" [ref=f9e947]
+            - cell "2" [ref=f9e948]
+            - cell "0%" [ref=f9e949]
+          - row [ref=f9e950]:
+            - cell "52" [ref=f9e951]
+            - cell [ref=f9e952]:
+              - link "刘浩扬" [ref=f9e953] [cursor=pointer]:
+                - /url: player.html?uid=10038
+              - button "" [ref=f9e954] [cursor=pointer]
+            - cell [ref=f9e956]:
+              - strong [ref=f9e957]: "1400.0"
+            - cell "-" [ref=f9e958]
+            - cell "-" [ref=f9e959]
+            - cell "0" [ref=f9e960]
+            - cell "0%" [ref=f9e961]
+          - row [ref=f9e962]:
+            - cell "53" [ref=f9e963]
+            - cell [ref=f9e964]:
+              - link "熊子乐" [ref=f9e965] [cursor=pointer]:
+                - /url: player.html?uid=10041
+              - button "" [ref=f9e966] [cursor=pointer]
+            - cell [ref=f9e968]:
+              - strong [ref=f9e969]: "1399.8"
+            - cell "-" [ref=f9e970]
+            - cell "-" [ref=f9e971]
+            - cell "0" [ref=f9e972]
+            - cell "0%" [ref=f9e973]
+          - row [ref=f9e974]:
+            - cell "54" [ref=f9e975]
+            - cell [ref=f9e976]:
+              - link "吕曜而" [ref=f9e977] [cursor=pointer]:
+                - /url: player.html?uid=10039
+              - button "" [ref=f9e978] [cursor=pointer]
+            - cell [ref=f9e980]:
+              - strong [ref=f9e981]: "1396.4"
+            - cell "-" [ref=f9e982]
+            - cell "-" [ref=f9e983]
+            - cell "0" [ref=f9e984]
+            - cell "0%" [ref=f9e985]
+          - row [ref=f9e986]:
+            - cell "55" [ref=f9e987]
+            - cell [ref=f9e988]:
+              - link "王玥涵" [ref=f9e989] [cursor=pointer]:
+                - /url: player.html?uid=10040
+              - button "" [ref=f9e990] [cursor=pointer]
+            - cell [ref=f9e992]:
+              - strong [ref=f9e993]: "1390.0"
+            - cell "-" [ref=f9e994]
+            - cell "-" [ref=f9e995]
+            - cell "0" [ref=f9e996]
+            - cell "0%" [ref=f9e997]
+          - row [ref=f9e998]:
+            - cell "56" [ref=f9e999]
+            - cell [ref=f9e1000]:
+              - link "俞睿哲" [ref=f9e1001] [cursor=pointer]:
+                - /url: player.html?uid=10042
+              - button "" [ref=f9e1002] [cursor=pointer]
+            - cell [ref=f9e1004]:
+              - strong [ref=f9e1005]: "1300.0"
+            - cell "-" [ref=f9e1006]
+            - cell "-" [ref=f9e1007]
+            - cell "0" [ref=f9e1008]
+            - cell "0%" [ref=f9e1009]
+      - text:                                                                                                                 
+  - generic [ref=f9e81]:
+    - generic [ref=f9e82]:
+      - generic [aria-hidden] [ref=f9e84]: 
+      - generic [ref=f9e85]: Easter Egg
+    - generic [ref=f9e86]:
+      - heading "你发现了一个彩蛋" [level=3] [ref=f9e87]
+      - paragraph [ref=f9e88]: 基于武外乒乓球社积分规则的 WTT排名
+    - link "进入查看 " [ref=f9e89] [cursor=pointer]:
+      - /url: wtt_hub.html
+      - generic [ref=f9e90]: 进入查看
+      - generic [ref=f9e91]: 
+  - contentinfo [ref=f9e92]:
+    - generic [ref=f9e93]:
+      - generic [ref=f9e94]:
+        - generic [ref=f9e95]:
+          - link "WFLS Table Tennis Club" [ref=f9e96] [cursor=pointer]:
+            - /url: index.html
+          - paragraph [ref=f9e97]: 武汉外国语学校 · 湖北省武汉市
+          - paragraph [ref=f9e98]: 挥拍逐梦，旋转青春
+        - navigation [ref=f9e99]:
+          - heading "社团" [level=3] [ref=f9e100]
+          - list [ref=f9e101]:
+            - listitem [ref=f9e102]:
+              - link "Home" [ref=f9e103] [cursor=pointer]:
+                - /url: index.html
+            - listitem [ref=f9e104]:
+              - link "News" [ref=f9e105] [cursor=pointer]:
+                - /url: news.html
+            - listitem [ref=f9e106]:
+              - link "Competitions" [ref=f9e107] [cursor=pointer]:
+                - /url: competitions.html
+            - listitem [ref=f9e108]:
+              - link "社团骨干" [ref=f9e109] [cursor=pointer]:
+                - /url: members.html
+            - listitem [ref=f9e110]:
+              - link "赛季总结" [ref=f9e111] [cursor=pointer]:
+                - /url: season-review.html
+        - navigation [ref=f9e112]:
+          - heading "数据" [level=3] [ref=f9e113]
+          - list [ref=f9e114]:
+            - listitem [ref=f9e115]:
+              - link "Ranking" [ref=f9e116] [cursor=pointer]:
+                - /url: ranking.html
+            - listitem [ref=f9e117]:
+              - link "Data Viz" [ref=f9e118] [cursor=pointer]:
+                - /url: data_viz.html
+            - listitem [ref=f9e119]:
+              - link "个人数据" [ref=f9e120] [cursor=pointer]:
+                - /url: personal_stats.html
+            - listitem [ref=f9e121]:
+              - link "Data Scale" [ref=f9e122] [cursor=pointer]:
+                - /url: data_scale.html
+            - listitem [ref=f9e123]:
+              - link "WTT Ranking" [ref=f9e124] [cursor=pointer]:
+                - /url: wtt_ranking.html
+            - listitem [ref=f9e125]:
+              - link "WTT Data Viz" [ref=f9e126] [cursor=pointer]:
+                - /url: wtt_dataviz.html
+        - navigation [ref=f9e127]:
+          - heading "信息" [level=3] [ref=f9e128]
+          - list [ref=f9e129]:
+            - listitem [ref=f9e130]:
+              - link "提交战绩" [ref=f9e131] [cursor=pointer]:
+                - /url: submit.html
+            - listitem [ref=f9e132]:
+              - link "Q&A" [ref=f9e133] [cursor=pointer]:
+                - /url: qa.html
+            - listitem [ref=f9e134]:
+              - link "更新日志" [ref=f9e135] [cursor=pointer]:
+                - /url: changelog.html
+            - listitem [ref=f9e136]:
+              - link "网站文档" [ref=f9e137] [cursor=pointer]:
+                - /url: docs.html
+            - listitem [ref=f9e138]:
+              - link "Umpire Training" [ref=f9e139] [cursor=pointer]:
+                - /url: umpire-training.html
+            - listitem [ref=f9e140]:
+              - link "Contact" [ref=f9e141] [cursor=pointer]:
+                - /url: contact.html
+      - generic [ref=f9e142]:
+        - generic [ref=f9e143]:
+          - generic [ref=f9e144]: 关注我们
+          - generic [ref=f9e145]:
+            - button "社团QQ群二维码" [ref=f9e146] [cursor=pointer]:
+              - generic [ref=f9e147]: 
+            - link "GitHub" [ref=f9e148] [cursor=pointer]:
+              - /url: https://github.com/yglalpavir/wfls-tt-club
+              - generic [ref=f9e149]: 
+        - generic [ref=f9e150]:
+          - link "社团理念" [ref=f9e151] [cursor=pointer]:
+            - /url: index.html#philosophy
+          - link "积分规则" [ref=f9e152] [cursor=pointer]:
+            - /url: qa.html
+        - paragraph [ref=f9e153]: ©2026 WFLS Table Tennis Club. All rights reserved

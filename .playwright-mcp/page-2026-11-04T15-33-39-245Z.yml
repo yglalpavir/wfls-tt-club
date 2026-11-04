@@ -1,0 +1,316 @@
+- generic [active] [ref=f8e1]:
+  - navigation [ref=f8e2]:
+    - generic [ref=f8e3]:
+      - link " WFLS TT Club" [ref=f8e4] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=f8e5]: 
+        - generic [ref=f8e7]: WFLS TT Club
+      - list [ref=f8e8]:
+        - listitem [ref=f8e9]:
+          - link "Home" [ref=f8e10] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=f8e11]:
+          - link "News" [ref=f8e12] [cursor=pointer]:
+            - /url: news.html
+        - listitem [ref=f8e13]:
+          - link "Competitions" [ref=f8e14] [cursor=pointer]:
+            - /url: competitions.html
+        - listitem [ref=f8e15]:
+          - link "Ranking Beta" [ref=f8e16] [cursor=pointer]:
+            - /url: ranking.html
+        - listitem [ref=f8e17]:
+          - link "More... " [ref=f8e18] [cursor=pointer]:
+            - /url: "#"
+            - text: More...
+            - generic [ref=f8e19]: 
+        - listitem [ref=f8e20]:
+          - link "Contact" [ref=f8e21] [cursor=pointer]:
+            - /url: contact.html
+      - generic [ref=f8e22]:
+        - button "搜索" [ref=f8e23] [cursor=pointer]:
+          - generic [ref=f8e24]: 
+        - button "切换主题" [ref=f8e25] [cursor=pointer]:
+          - generic [ref=f8e26]: 
+        - button "切换语言" [ref=f8e27] [cursor=pointer]:
+          - generic [ref=f8e28]: EN
+  - navigation [ref=f8e29]:
+    - list [ref=f8e30]:
+      - listitem [ref=f8e31]:
+        - link "首页" [ref=f8e32] [cursor=pointer]:
+          - /url: "#home"
+      - listitem [ref=f8e33]:
+        - link "最新动态" [ref=f8e34] [cursor=pointer]:
+          - /url: "#news"
+      - listitem [ref=f8e35]:
+        - link "赛事信息" [ref=f8e36] [cursor=pointer]:
+          - /url: "#competitions"
+      - listitem [ref=f8e37]:
+        - link "社团理念" [ref=f8e38] [cursor=pointer]:
+          - /url: "#philosophy"
+      - listitem [ref=f8e39]:
+        - link "社团活动" [ref=f8e40] [cursor=pointer]:
+          - /url: "#activities"
+      - listitem [ref=f8e41]:
+        - link "社团骨干" [ref=f8e42] [cursor=pointer]:
+          - /url: "#core-members"
+  - generic [ref=f8e43]:
+    - link "彩蛋：3D 乒乓球" [ref=f8e44] [cursor=pointer]:
+      - /url: tt_game/index.html
+    - generic [ref=f8e46]:
+      - generic [ref=f8e47]: WFLS Table Tennis Club
+      - heading "武汉外国语学校 乒乓球社团" [level=1] [ref=f8e50]: 武汉外国语学校乒乓球社团
+      - paragraph [ref=f8e51]: 挥拍逐梦，旋转青春
+      - generic [ref=f8e52]:
+        - link "了解社团 " [ref=f8e53] [cursor=pointer]:
+          - /url: "#philosophy"
+          - text: 了解社团
+          - generic [ref=f8e54]: 
+        - link "加入我们 +" [ref=f8e55] [cursor=pointer]:
+          - /url: contact.html
+          - text: 加入我们
+          - generic [ref=f8e56]: +
+    - generic [ref=f8e57]: 上次更新：获取中...
+    - generic [ref=f8e58]: Scroll
+  - generic [ref=f8e63]:
+    - generic [ref=f8e64]:
+      - generic [ref=f8e65]: Highlights
+      - heading "最新快报" [level=2] [ref=f8e66]
+      - paragraph [ref=f8e67]: 社团最新动态与赛事信息一览
+    - generic [ref=f8e68]:
+      - generic [ref=f8e69]:
+        - generic [ref=f8e70]:
+          - generic [ref=f8e71]: 
+          - heading "最新动态" [level=3] [ref=f8e73]
+          - link "查看全部动态 " [ref=f8e74] [cursor=pointer]:
+            - /url: news.html
+            - generic [ref=f8e75]: 查看全部动态
+            - generic [ref=f8e76]: 
+        - generic [ref=f8e77]:
+          - link "10-16 2026 2026年校队成员选拔结果公示 10.15校队选拔第一轮结束：高二(3)班陶锦源战胜社长进入校队，高二校队自此满员；高一24名参选者中12名同学晋级第二轮选拔（三局两胜，对手为社长及副社长），综合实力约前50%可最终入队 公告" [ref=f8e78] [cursor=pointer]:
+            - generic [ref=f8e79]:
+              - generic [ref=f8e80]: 10-16
+              - generic [ref=f8e81]: "2026"
+            - generic [ref=f8e82]:
+              - heading "2026年校队成员选拔结果公示" [level=4] [ref=f8e83]
+              - paragraph [ref=f8e84]: 10.15校队选拔第一轮结束：高二(3)班陶锦源战胜社长进入校队，高二校队自此满员；高一24名参选者中12名同学晋级第二轮选拔（三局两胜，对手为社长及副社长），综合实力约前50%可最终入队
+            - generic [ref=f8e85]: 公告
+          - link "10-07 2026 2026年WFLS乒乓球校队成员选拔公告 校队成员选拔将于10月15日（周四）中午及社团课时间在体育馆（食堂三楼）举行，与现高二校队成员三局两胜定胜负，欢迎会打乒乓球、还未进校队的高一高二同学报名 公告" [ref=f8e86] [cursor=pointer]:
+            - generic [ref=f8e87]:
+              - generic [ref=f8e88]: 10-07
+              - generic [ref=f8e89]: "2026"
+            - generic [ref=f8e90]:
+              - heading "2026年WFLS乒乓球校队成员选拔公告" [level=4] [ref=f8e91]
+              - paragraph [ref=f8e92]: 校队成员选拔将于10月15日（周四）中午及社团课时间在体育馆（食堂三楼）举行，与现高二校队成员三局两胜定胜负，欢迎会打乒乓球、还未进校队的高一高二同学报名
+            - generic [ref=f8e93]: 公告
+          - link "09-04 2026 十二强争冠赛暨2026社团表演赛公告 十二强争冠赛暨2026社团表演赛将于9月10日开赛，12名选手按积分设种子分四组单循环，赛程赛制详见赛事板块 赛事" [ref=f8e94] [cursor=pointer]:
+            - generic [ref=f8e95]:
+              - generic [ref=f8e96]: 09-04
+              - generic [ref=f8e97]: "2026"
+            - generic [ref=f8e98]:
+              - heading "十二强争冠赛暨2026社团表演赛公告" [level=4] [ref=f8e99]
+              - paragraph [ref=f8e100]: 十二强争冠赛暨2026社团表演赛将于9月10日开赛，12名选手按积分设种子分四组单循环，赛程赛制详见赛事板块
+            - generic [ref=f8e101]: 赛事
+          - link "09-01 2026 2026年秋季学期新赛季开始 新赛季正式开启：除积分继承外，胜率、场次等数据均清零重新累计，历史数据可在个人数据可视化板块查看 公告" [ref=f8e102] [cursor=pointer]:
+            - generic [ref=f8e103]:
+              - generic [ref=f8e104]: 09-01
+              - generic [ref=f8e105]: "2026"
+            - generic [ref=f8e106]:
+              - heading "2026年秋季学期新赛季开始" [level=4] [ref=f8e107]
+              - paragraph [ref=f8e108]: 新赛季正式开启：除积分继承外，胜率、场次等数据均清零重新累计，历史数据可在个人数据可视化板块查看
+            - generic [ref=f8e109]: 公告
+      - generic [ref=f8e110]:
+        - generic [ref=f8e111]:
+          - generic [ref=f8e112]: 
+          - heading "赛事信息" [level=3] [ref=f8e114]
+          - link "查看全部赛事 " [ref=f8e115] [cursor=pointer]:
+            - /url: competitions.html
+            - generic [ref=f8e116]: 查看全部赛事
+            - generic [ref=f8e117]: 
+        - generic [ref=f8e118]:
+          - link "09-10 2026 十二强争冠赛暨2026社团表演赛 小组赛结果： A组 1.任安喆 2.任峻贤 B组 1.龚雨煊 2.陶锦源 C组 1.姜子润 2.付大卫 D组 1.谷子易 2.王思博（点击查看更多详情） 比赛结果" [ref=f8e119] [cursor=pointer]:
+            - generic [ref=f8e120]:
+              - generic [ref=f8e121]: 09-10
+              - generic [ref=f8e122]: "2026"
+            - generic [ref=f8e123]:
+              - heading "十二强争冠赛暨2026社团表演赛" [level=4] [ref=f8e124]
+              - paragraph [ref=f8e125]: 小组赛结果：A组 1.任安喆 2.任峻贤B组 1.龚雨煊 2.陶锦源C组 1.姜子润 2.付大卫D组 1.谷子易 2.王思博（点击查看更多详情）
+            - generic [ref=f8e127]: 比赛结果
+          - link "06-04 2026 2026年武汉外国语学校乒乓球单打比赛结果 冠军：任峻贤 亚军：付大卫 季军：梅哲宇，谷子易（不分先后）（点击查看更多详情） 比赛结果" [ref=f8e128] [cursor=pointer]:
+            - generic [ref=f8e129]:
+              - generic [ref=f8e130]: 06-04
+              - generic [ref=f8e131]: "2026"
+            - generic [ref=f8e132]:
+              - heading "2026年武汉外国语学校乒乓球单打比赛结果" [level=4] [ref=f8e133]
+              - paragraph [ref=f8e134]: 冠军：任峻贤亚军：付大卫季军：梅哲宇，谷子易（不分先后）（点击查看更多详情）
+            - generic [ref=f8e136]: 比赛结果
+          - link "04-10 2026 2026年武汉外国语学校乒乓球团体比赛结果 冠军：魏罗瑞、陈瑜萱、王成悦 祁子傲、李南熠、丁瑞、张书行（替补） 亚军：梅哲宇、龚雨煊、王天森 季军：张宸瑞、陈项诚、任峻贤、岳镇淳（替补） 比赛结果" [ref=f8e137] [cursor=pointer]:
+            - generic [ref=f8e138]:
+              - generic [ref=f8e139]: 04-10
+              - generic [ref=f8e140]: "2026"
+            - generic [ref=f8e141]:
+              - heading "2026年武汉外国语学校乒乓球团体比赛结果" [level=4] [ref=f8e142]
+              - paragraph [ref=f8e143]: 冠军：魏罗瑞、陈瑜萱、王成悦祁子傲、李南熠、丁瑞、张书行（替补）亚军：梅哲宇、龚雨煊、王天森季军：张宸瑞、陈项诚、任峻贤、岳镇淳（替补）
+            - generic [ref=f8e145]: 比赛结果
+          - link "02-28 2026 武外乒乓球校队参加三校联赛 校队成员祁子傲、任峻贤、付大卫代表外高，参加了英中、外高、省实验的三校联赛 最终以2:3不敌省实验队，3:0战胜英中队，获得亚军 比赛结果" [ref=f8e146] [cursor=pointer]:
+            - generic [ref=f8e147]:
+              - generic [ref=f8e148]: 02-28
+              - generic [ref=f8e149]: "2026"
+            - generic [ref=f8e150]:
+              - heading "武外乒乓球校队参加三校联赛" [level=4] [ref=f8e151]
+              - paragraph [ref=f8e152]: 校队成员祁子傲、任峻贤、付大卫代表外高，参加了英中、外高、省实验的三校联赛最终以2:3不敌省实验队，3:0战胜英中队，获得亚军
+            - generic [ref=f8e154]: 比赛结果
+  - generic [ref=f8e156]:
+    - generic [ref=f8e157]:
+      - generic [ref=f8e158]: Philosophy
+      - heading "社团理念" [level=2] [ref=f8e159]
+      - paragraph [ref=f8e160]: 我们的核心价值观与指导思想
+    - generic [ref=f8e163]:
+      - paragraph [ref=f8e164]: “乒”搏无悔，挥拍逐梦；以球会友，以技强身。
+      - paragraph [ref=f8e165]: 我社秉持“健康第一，快乐为本”的宗旨，致力于为同学们打造一个释放压力、展现自我的活力平台。
+      - paragraph [ref=f8e166]: 在这里，你可以精进技术，从曾经的“菜鸟”一步步成长为球场上的“大神”；你可以收获友谊，找到属于自己的乒乓搭档，共享赛场欢笑；你还可以磨炼心性，学会在逆境中反击，在起伏中成长。让我们一同拿起球拍，在清脆的击球声中，书写属于我们的旋转青春！
+  - generic [ref=f8e168]:
+    - generic [ref=f8e169]:
+      - generic [ref=f8e170]: Activities
+      - heading "社团活动" [level=2] [ref=f8e171]
+      - paragraph [ref=f8e172]: 全年性活动、社团课活动及年度大赛
+    - generic [ref=f8e175]:
+      - paragraph [ref=f8e176]: 【全年性活动】个人分制度：参加官方认可的比赛，为自己“乒”得高分，展现自我，拥有官方认证的乒乓球球技排名。友谊赛（可入积分）：随时拉上好友来一场比赛，邀请干部观赛或赛后向管理层报比分得到认证，即可获得个人分。
+      - paragraph [ref=f8e177]: 【社团课活动】排位赛：官方赛事。校队联赛：官方赛事，旨在磨砺并保持校队成员的技术与状态。
+      - paragraph [ref=f8e178]: 【每年一届的大赛】校乒赛团体赛：每年3–4月举办，3–4人一队，展现团队风采。校乒赛单打赛：每年4–6月举办，所有学生均可报名，展现个人魅力。
+  - generic [ref=f8e180]:
+    - generic [ref=f8e181]:
+      - generic [ref=f8e182]: Core Members
+      - heading "社团骨干" [level=2] [ref=f8e183]
+    - generic [ref=f8e184]:
+      - link "龚 龚雨煊 龚雨煊 社长&新高二校队成员 统筹社团事务" [ref=f8e185] [cursor=pointer]:
+        - generic [ref=f8e186]:
+          - text: 龚
+          - img "龚雨煊" [ref=f8e187]
+        - heading "龚雨煊" [level=3] [ref=f8e188]
+        - generic [ref=f8e189]: 社长&新高二校队成员
+        - paragraph [ref=f8e190]: 统筹社团事务
+      - link "谷 谷子易 谷子易 副社长&新高二校队成员 辅助社长管理社团，校乒赛2026单打季军" [ref=f8e191] [cursor=pointer]:
+        - generic [ref=f8e192]:
+          - text: 谷
+          - img "谷子易" [ref=f8e193]
+        - heading "谷子易" [level=3] [ref=f8e194]
+        - generic [ref=f8e195]: 副社长&新高二校队成员
+        - paragraph [ref=f8e196]: 辅助社长管理社团，校乒赛2026单打季军
+      - link "姜 姜子润 姜子润 活动部部长&器械部部长&新高二校队成员 负责社团活动组织与器材管理" [ref=f8e197] [cursor=pointer]:
+        - generic [ref=f8e198]:
+          - text: 姜
+          - img "姜子润" [ref=f8e199]
+        - heading "姜子润" [level=3] [ref=f8e200]
+        - generic [ref=f8e201]: 活动部部长&器械部部长&新高二校队成员
+        - paragraph [ref=f8e202]: 负责社团活动组织与器材管理
+      - link "任 任安喆 任安喆 副社长&新高二校队成员 辅助社长管理社团" [ref=f8e203] [cursor=pointer]:
+        - generic [ref=f8e204]:
+          - text: 任
+          - img "任安喆" [ref=f8e205]
+        - heading "任安喆" [level=3] [ref=f8e206]
+        - generic [ref=f8e207]: 副社长&新高二校队成员
+        - paragraph [ref=f8e208]: 辅助社长管理社团
+      - link "任 任峻贤 任峻贤 官网负责人 负责维护官网和积分系统" [ref=f8e209] [cursor=pointer]:
+        - generic [ref=f8e210]:
+          - text: 任
+          - img "任峻贤" [ref=f8e211]
+        - heading "任峻贤" [level=3] [ref=f8e212]
+        - generic [ref=f8e213]: 官网负责人
+        - paragraph [ref=f8e214]: 负责维护官网和积分系统
+      - link "梅 梅哲宇 梅哲宇 副社长 辅助社长管理社团，校乒赛2026单打季军" [ref=f8e215] [cursor=pointer]:
+        - generic [ref=f8e216]:
+          - text: 梅
+          - img "梅哲宇" [ref=f8e217]
+        - heading "梅哲宇" [level=3] [ref=f8e218]
+        - generic [ref=f8e219]: 副社长
+        - paragraph [ref=f8e220]: 辅助社长管理社团，校乒赛2026单打季军
+      - link "叶 叶孟恒 叶孟恒 宣传部部长 负责社团宣传工作" [ref=f8e221] [cursor=pointer]:
+        - generic [ref=f8e222]:
+          - text: 叶
+          - img "叶孟恒" [ref=f8e223]
+        - heading "叶孟恒" [level=3] [ref=f8e224]
+        - generic [ref=f8e225]: 宣传部部长
+        - paragraph [ref=f8e226]: 负责社团宣传工作
+  - contentinfo [ref=f8e227]:
+    - generic [ref=f8e228]:
+      - generic [ref=f8e229]:
+        - generic [ref=f8e230]:
+          - link "WFLS Table Tennis Club" [ref=f8e231] [cursor=pointer]:
+            - /url: index.html
+          - paragraph [ref=f8e232]: 武汉外国语学校 · 湖北省武汉市
+          - paragraph [ref=f8e233]: 挥拍逐梦，旋转青春
+        - navigation [ref=f8e234]:
+          - heading "社团" [level=3] [ref=f8e235]
+          - list [ref=f8e236]:
+            - listitem [ref=f8e237]:
+              - link "Home" [ref=f8e238] [cursor=pointer]:
+                - /url: index.html
+            - listitem [ref=f8e239]:
+              - link "News" [ref=f8e240] [cursor=pointer]:
+                - /url: news.html
+            - listitem [ref=f8e241]:
+              - link "Competitions" [ref=f8e242] [cursor=pointer]:
+                - /url: competitions.html
+            - listitem [ref=f8e243]:
+              - link "社团骨干" [ref=f8e244] [cursor=pointer]:
+                - /url: members.html
+            - listitem [ref=f8e245]:
+              - link "赛季总结" [ref=f8e246] [cursor=pointer]:
+                - /url: season-review.html
+        - navigation [ref=f8e247]:
+          - heading "数据" [level=3] [ref=f8e248]
+          - list [ref=f8e249]:
+            - listitem [ref=f8e250]:
+              - link "Ranking" [ref=f8e251] [cursor=pointer]:
+                - /url: ranking.html
+            - listitem [ref=f8e252]:
+              - link "Data Viz" [ref=f8e253] [cursor=pointer]:
+                - /url: data_viz.html
+            - listitem [ref=f8e254]:
+              - link "个人数据" [ref=f8e255] [cursor=pointer]:
+                - /url: personal_stats.html
+            - listitem [ref=f8e256]:
+              - link "Data Scale" [ref=f8e257] [cursor=pointer]:
+                - /url: data_scale.html
+            - listitem [ref=f8e258]:
+              - link "WTT Ranking" [ref=f8e259] [cursor=pointer]:
+                - /url: wtt_ranking.html
+            - listitem [ref=f8e260]:
+              - link "WTT Data Viz" [ref=f8e261] [cursor=pointer]:
+                - /url: wtt_dataviz.html
+        - navigation [ref=f8e262]:
+          - heading "信息" [level=3] [ref=f8e263]
+          - list [ref=f8e264]:
+            - listitem [ref=f8e265]:
+              - link "提交战绩" [ref=f8e266] [cursor=pointer]:
+                - /url: submit.html
+            - listitem [ref=f8e267]:
+              - link "Q&A" [ref=f8e268] [cursor=pointer]:
+                - /url: qa.html
+            - listitem [ref=f8e269]:
+              - link "更新日志" [ref=f8e270] [cursor=pointer]:
+                - /url: changelog.html
+            - listitem [ref=f8e271]:
+              - link "网站文档" [ref=f8e272] [cursor=pointer]:
+                - /url: docs.html
+            - listitem [ref=f8e273]:
+              - link "Umpire Training" [ref=f8e274] [cursor=pointer]:
+                - /url: umpire-training.html
+            - listitem [ref=f8e275]:
+              - link "Contact" [ref=f8e276] [cursor=pointer]:
+                - /url: contact.html
+      - generic [ref=f8e277]:
+        - generic [ref=f8e278]:
+          - generic [ref=f8e279]: 关注我们
+          - generic [ref=f8e280]:
+            - button "社团QQ群二维码" [ref=f8e281] [cursor=pointer]:
+              - generic [ref=f8e282]: 
+            - link "GitHub" [ref=f8e283] [cursor=pointer]:
+              - /url: https://github.com/yglalpavir/wfls-tt-club
+              - generic [ref=f8e284]: 
+        - generic [ref=f8e285]:
+          - link "社团理念" [ref=f8e286] [cursor=pointer]:
+            - /url: index.html#philosophy
+          - link "积分规则" [ref=f8e287] [cursor=pointer]:
+            - /url: qa.html
+        - paragraph [ref=f8e288]: ©2026 WFLS Table Tennis Club. All rights reserved

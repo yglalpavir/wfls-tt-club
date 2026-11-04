@@ -1,0 +1,3824 @@
+- generic [active] [ref=f13e1]:
+  - navigation [ref=f13e2]:
+    - generic [ref=f13e3]:
+      - link " WFLS TT Club" [ref=f13e4] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=f13e5]: 
+        - generic [ref=f13e7]: WFLS TT Club
+      - list [ref=f13e8]:
+        - listitem [ref=f13e9]:
+          - link "Home" [ref=f13e10] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=f13e11]:
+          - link "News" [ref=f13e12] [cursor=pointer]:
+            - /url: news.html
+        - listitem [ref=f13e13]:
+          - link "Competitions" [ref=f13e14] [cursor=pointer]:
+            - /url: competitions.html
+        - listitem [ref=f13e15]:
+          - link "Ranking Beta" [ref=f13e16] [cursor=pointer]:
+            - /url: ranking.html
+        - listitem [ref=f13e17]:
+          - link "More... " [ref=f13e18] [cursor=pointer]:
+            - /url: "#"
+            - text: More...
+            - generic [ref=f13e19]: 
+        - listitem [ref=f13e20]:
+          - link "Contact" [ref=f13e21] [cursor=pointer]:
+            - /url: contact.html
+      - generic [ref=f13e22]:
+        - button "搜索" [ref=f13e23] [cursor=pointer]:
+          - generic [ref=f13e24]: 
+        - button "切换主题" [ref=f13e25] [cursor=pointer]:
+          - generic [ref=f13e26]: 
+        - button "切换语言" [ref=f13e27] [cursor=pointer]:
+          - generic [ref=f13e28]: EN
+  - generic [ref=f13e31]:
+    - generic [ref=f13e32]: 🥚 Easter Egg
+    - heading "WTT 男子单打" [level=1] [ref=f13e33]
+    - paragraph [ref=f13e34]: WTT 排名查询 · 点击姓名查看积分明细
+    - paragraph [ref=f13e35]:
+      - generic [ref=f13e36]: 
+      - text: 本页积分由本站社团积分规则模拟计算，非 WTT 官方积分，结果仅供参考。
+  - generic [ref=f13e39]:
+    - complementary [ref=f13e40]:
+      - heading "时间节点" [level=2] [ref=f13e41]
+      - list [ref=f13e277]:
+        - listitem [ref=f13e278]:
+          - generic [ref=f13e279]:
+            - generic [ref=f13e280]: 
+            - generic [ref=f13e281]: 实时积分
+          - list [ref=f13e282]:
+            - button "实时积分 787人" [ref=f13e283] [cursor=pointer]:
+              - text: 实时积分
+              - generic [ref=f13e285]: 787人
+        - listitem [ref=f13e286]:
+          - generic [ref=f13e287] [cursor=pointer]:
+            - generic [ref=f13e288]: 
+            - generic [ref=f13e289]: 2002-WTT
+            - generic [ref=f13e290]: 12个节点
+          - list:
+            - button "2002-WTT初始积分 0人" [ref=f13e291] [cursor=pointer]:
+              - text: 2002-WTT初始积分
+              - generic [ref=f13e293]: 0人
+            - button "2002年2月1日 0人" [ref=f13e294] [cursor=pointer]:
+              - text: 2002年2月1日
+              - generic [ref=f13e296]: 0人
+            - button "2002年3月1日 0人" [ref=f13e297] [cursor=pointer]:
+              - text: 2002年3月1日
+              - generic [ref=f13e299]: 0人
+            - button "2002年4月1日 0人" [ref=f13e300] [cursor=pointer]:
+              - text: 2002年4月1日
+              - generic [ref=f13e302]: 0人
+            - button "2002年5月1日 0人" [ref=f13e303] [cursor=pointer]:
+              - text: 2002年5月1日
+              - generic [ref=f13e305]: 0人
+            - button "2002年6月1日 0人" [ref=f13e306] [cursor=pointer]:
+              - text: 2002年6月1日
+              - generic [ref=f13e308]: 0人
+            - button "2002年7月1日 0人" [ref=f13e309] [cursor=pointer]:
+              - text: 2002年7月1日
+              - generic [ref=f13e311]: 0人
+            - button "2002年8月1日 43人" [ref=f13e312] [cursor=pointer]:
+              - text: 2002年8月1日
+              - generic [ref=f13e314]: 43人
+            - button "2002年9月1日 43人" [ref=f13e315] [cursor=pointer]:
+              - text: 2002年9月1日
+              - generic [ref=f13e317]: 43人
+            - button "2002年10月1日 119人" [ref=f13e318] [cursor=pointer]:
+              - text: 2002年10月1日
+              - generic [ref=f13e320]: 119人
+            - button "2002年11月1日 217人" [ref=f13e321] [cursor=pointer]:
+              - text: 2002年11月1日
+              - generic [ref=f13e323]: 217人
+            - button "2002年12月1日 286人" [ref=f13e324] [cursor=pointer]:
+              - text: 2002年12月1日
+              - generic [ref=f13e326]: 286人
+        - listitem [ref=f13e327]:
+          - generic [ref=f13e328] [cursor=pointer]:
+            - generic [ref=f13e329]: 
+            - generic [ref=f13e330]: 2003-WTT
+            - generic [ref=f13e331]: 12个节点
+          - list:
+            - button "2003-WTT初始积分 286人" [ref=f13e332] [cursor=pointer]:
+              - text: 2003-WTT初始积分
+              - generic [ref=f13e334]: 286人
+            - button "2003年2月1日 183人" [ref=f13e335] [cursor=pointer]:
+              - text: 2003年2月1日
+              - generic [ref=f13e337]: 183人
+            - button "2003年3月1日 183人" [ref=f13e338] [cursor=pointer]:
+              - text: 2003年3月1日
+              - generic [ref=f13e340]: 183人
+            - button "2003年4月1日 211人" [ref=f13e341] [cursor=pointer]:
+              - text: 2003年4月1日
+              - generic [ref=f13e343]: 211人
+            - button "2003年5月1日 211人" [ref=f13e344] [cursor=pointer]:
+              - text: 2003年5月1日
+              - generic [ref=f13e346]: 211人
+            - button "2003年6月1日 443人" [ref=f13e347] [cursor=pointer]:
+              - text: 2003年6月1日
+              - generic [ref=f13e349]: 443人
+            - button "2003年7月1日 467人" [ref=f13e350] [cursor=pointer]:
+              - text: 2003年7月1日
+              - generic [ref=f13e352]: 467人
+            - button "2003年8月1日 467人" [ref=f13e353] [cursor=pointer]:
+              - text: 2003年8月1日
+              - generic [ref=f13e355]: 467人
+            - button "2003年9月1日 467人" [ref=f13e356] [cursor=pointer]:
+              - text: 2003年9月1日
+              - generic [ref=f13e358]: 467人
+            - button "2003年10月1日 498人" [ref=f13e359] [cursor=pointer]:
+              - text: 2003年10月1日
+              - generic [ref=f13e361]: 498人
+            - button "2003年11月1日 522人" [ref=f13e362] [cursor=pointer]:
+              - text: 2003年11月1日
+              - generic [ref=f13e364]: 522人
+            - button "2003年12月1日 595人" [ref=f13e365] [cursor=pointer]:
+              - text: 2003年12月1日
+              - generic [ref=f13e367]: 595人
+        - listitem [ref=f13e368]:
+          - generic [ref=f13e369] [cursor=pointer]:
+            - generic [ref=f13e370]: 
+            - generic [ref=f13e371]: 2004-WTT
+            - generic [ref=f13e372]: 12个节点
+          - list:
+            - button "2004-WTT初始积分 652人" [ref=f13e373] [cursor=pointer]:
+              - text: 2004-WTT初始积分
+              - generic [ref=f13e375]: 652人
+            - button "2004年2月1日 131人" [ref=f13e376] [cursor=pointer]:
+              - text: 2004年2月1日
+              - generic [ref=f13e378]: 131人
+            - button "2004年3月1日 350人" [ref=f13e379] [cursor=pointer]:
+              - text: 2004年3月1日
+              - generic [ref=f13e381]: 350人
+            - button "2004年4月1日 350人" [ref=f13e382] [cursor=pointer]:
+              - text: 2004年4月1日
+              - generic [ref=f13e384]: 350人
+            - button "2004年5月1日 350人" [ref=f13e385] [cursor=pointer]:
+              - text: 2004年5月1日
+              - generic [ref=f13e387]: 350人
+            - button "2004年6月1日 424人" [ref=f13e388] [cursor=pointer]:
+              - text: 2004年6月1日
+              - generic [ref=f13e390]: 424人
+            - button "2004年7月1日 496人" [ref=f13e391] [cursor=pointer]:
+              - text: 2004年7月1日
+              - generic [ref=f13e393]: 496人
+            - button "2004年8月1日 496人" [ref=f13e394] [cursor=pointer]:
+              - text: 2004年8月1日
+              - generic [ref=f13e396]: 496人
+            - button "2004年9月1日 502人" [ref=f13e397] [cursor=pointer]:
+              - text: 2004年9月1日
+              - generic [ref=f13e399]: 502人
+            - button "2004年10月1日 519人" [ref=f13e400] [cursor=pointer]:
+              - text: 2004年10月1日
+              - generic [ref=f13e402]: 519人
+            - button "2004年11月1日 535人" [ref=f13e403] [cursor=pointer]:
+              - text: 2004年11月1日
+              - generic [ref=f13e405]: 535人
+            - button "2004年12月1日 616人" [ref=f13e406] [cursor=pointer]:
+              - text: 2004年12月1日
+              - generic [ref=f13e408]: 616人
+        - listitem [ref=f13e409]:
+          - generic [ref=f13e410] [cursor=pointer]:
+            - generic [ref=f13e411]: 
+            - generic [ref=f13e412]: 2005-WTT
+            - generic [ref=f13e413]: 12个节点
+          - list:
+            - button "2005-WTT初始积分 920人" [ref=f13e414] [cursor=pointer]:
+              - text: 2005-WTT初始积分
+              - generic [ref=f13e416]: 920人
+            - button "2005年2月1日 239人" [ref=f13e417] [cursor=pointer]:
+              - text: 2005年2月1日
+              - generic [ref=f13e419]: 239人
+            - button "2005年3月1日 278人" [ref=f13e420] [cursor=pointer]:
+              - text: 2005年3月1日
+              - generic [ref=f13e422]: 278人
+            - button "2005年4月1日 278人" [ref=f13e423] [cursor=pointer]:
+              - text: 2005年4月1日
+              - generic [ref=f13e425]: 278人
+            - button "2005年5月1日 278人" [ref=f13e426] [cursor=pointer]:
+              - text: 2005年5月1日
+              - generic [ref=f13e428]: 278人
+            - button "2005年6月1日 315人" [ref=f13e429] [cursor=pointer]:
+              - text: 2005年6月1日
+              - generic [ref=f13e431]: 315人
+            - button "2005年7月1日 442人" [ref=f13e432] [cursor=pointer]:
+              - text: 2005年7月1日
+              - generic [ref=f13e434]: 442人
+            - button "2005年8月1日 470人" [ref=f13e435] [cursor=pointer]:
+              - text: 2005年8月1日
+              - generic [ref=f13e437]: 470人
+            - button "2005年9月1日 470人" [ref=f13e438] [cursor=pointer]:
+              - text: 2005年9月1日
+              - generic [ref=f13e440]: 470人
+            - button "2005年10月1日 492人" [ref=f13e441] [cursor=pointer]:
+              - text: 2005年10月1日
+              - generic [ref=f13e443]: 492人
+            - button "2005年11月1日 492人" [ref=f13e444] [cursor=pointer]:
+              - text: 2005年11月1日
+              - generic [ref=f13e446]: 492人
+            - button "2005年12月1日 547人" [ref=f13e447] [cursor=pointer]:
+              - text: 2005年12月1日
+              - generic [ref=f13e449]: 547人
+        - listitem [ref=f13e450]:
+          - generic [ref=f13e451] [cursor=pointer]:
+            - generic [ref=f13e452]: 
+            - generic [ref=f13e453]: 2006-WTT
+            - generic [ref=f13e454]: 12个节点
+          - list:
+            - button "2006-WTT初始积分 1107人" [ref=f13e455] [cursor=pointer]:
+              - text: 2006-WTT初始积分
+              - generic [ref=f13e457]: 1107人
+            - button "2006年2月1日 0人" [ref=f13e458] [cursor=pointer]:
+              - text: 2006年2月1日
+              - generic [ref=f13e460]: 0人
+            - button "2006年3月1日 0人" [ref=f13e461] [cursor=pointer]:
+              - text: 2006年3月1日
+              - generic [ref=f13e463]: 0人
+            - button "2006年4月1日 0人" [ref=f13e464] [cursor=pointer]:
+              - text: 2006年4月1日
+              - generic [ref=f13e466]: 0人
+            - button "2006年5月1日 0人" [ref=f13e467] [cursor=pointer]:
+              - text: 2006年5月1日
+              - generic [ref=f13e469]: 0人
+            - button "2006年6月1日 0人" [ref=f13e470] [cursor=pointer]:
+              - text: 2006年6月1日
+              - generic [ref=f13e472]: 0人
+            - button "2006年7月1日 0人" [ref=f13e473] [cursor=pointer]:
+              - text: 2006年7月1日
+              - generic [ref=f13e475]: 0人
+            - button "2006年8月1日 0人" [ref=f13e476] [cursor=pointer]:
+              - text: 2006年8月1日
+              - generic [ref=f13e478]: 0人
+            - button "2006年9月1日 0人" [ref=f13e479] [cursor=pointer]:
+              - text: 2006年9月1日
+              - generic [ref=f13e481]: 0人
+            - button "2006年10月1日 0人" [ref=f13e482] [cursor=pointer]:
+              - text: 2006年10月1日
+              - generic [ref=f13e484]: 0人
+            - button "2006年11月1日 0人" [ref=f13e485] [cursor=pointer]:
+              - text: 2006年11月1日
+              - generic [ref=f13e487]: 0人
+            - button "2006年12月1日 0人" [ref=f13e488] [cursor=pointer]:
+              - text: 2006年12月1日
+              - generic [ref=f13e490]: 0人
+        - listitem [ref=f13e491]:
+          - generic [ref=f13e492] [cursor=pointer]:
+            - generic [ref=f13e493]: 
+            - generic [ref=f13e494]: 2007-WTT
+            - generic [ref=f13e495]: 12个节点
+          - list:
+            - button "2007-WTT初始积分 1107人" [ref=f13e496] [cursor=pointer]:
+              - text: 2007-WTT初始积分
+              - generic [ref=f13e498]: 1107人
+            - button "2007年2月1日 0人" [ref=f13e499] [cursor=pointer]:
+              - text: 2007年2月1日
+              - generic [ref=f13e501]: 0人
+            - button "2007年3月1日 0人" [ref=f13e502] [cursor=pointer]:
+              - text: 2007年3月1日
+              - generic [ref=f13e504]: 0人
+            - button "2007年4月1日 0人" [ref=f13e505] [cursor=pointer]:
+              - text: 2007年4月1日
+              - generic [ref=f13e507]: 0人
+            - button "2007年5月1日 0人" [ref=f13e508] [cursor=pointer]:
+              - text: 2007年5月1日
+              - generic [ref=f13e510]: 0人
+            - button "2007年6月1日 0人" [ref=f13e511] [cursor=pointer]:
+              - text: 2007年6月1日
+              - generic [ref=f13e513]: 0人
+            - button "2007年7月1日 0人" [ref=f13e514] [cursor=pointer]:
+              - text: 2007年7月1日
+              - generic [ref=f13e516]: 0人
+            - button "2007年8月1日 0人" [ref=f13e517] [cursor=pointer]:
+              - text: 2007年8月1日
+              - generic [ref=f13e519]: 0人
+            - button "2007年9月1日 0人" [ref=f13e520] [cursor=pointer]:
+              - text: 2007年9月1日
+              - generic [ref=f13e522]: 0人
+            - button "2007年10月1日 0人" [ref=f13e523] [cursor=pointer]:
+              - text: 2007年10月1日
+              - generic [ref=f13e525]: 0人
+            - button "2007年11月1日 0人" [ref=f13e526] [cursor=pointer]:
+              - text: 2007年11月1日
+              - generic [ref=f13e528]: 0人
+            - button "2007年12月1日 0人" [ref=f13e529] [cursor=pointer]:
+              - text: 2007年12月1日
+              - generic [ref=f13e531]: 0人
+        - listitem [ref=f13e532]:
+          - generic [ref=f13e533] [cursor=pointer]:
+            - generic [ref=f13e534]: 
+            - generic [ref=f13e535]: 2008-WTT
+            - generic [ref=f13e536]: 12个节点
+          - list:
+            - button "2008-WTT初始积分 1107人" [ref=f13e537] [cursor=pointer]:
+              - text: 2008-WTT初始积分
+              - generic [ref=f13e539]: 1107人
+            - button "2008年2月1日 0人" [ref=f13e540] [cursor=pointer]:
+              - text: 2008年2月1日
+              - generic [ref=f13e542]: 0人
+            - button "2008年3月1日 0人" [ref=f13e543] [cursor=pointer]:
+              - text: 2008年3月1日
+              - generic [ref=f13e545]: 0人
+            - button "2008年4月1日 0人" [ref=f13e546] [cursor=pointer]:
+              - text: 2008年4月1日
+              - generic [ref=f13e548]: 0人
+            - button "2008年5月1日 0人" [ref=f13e549] [cursor=pointer]:
+              - text: 2008年5月1日
+              - generic [ref=f13e551]: 0人
+            - button "2008年6月1日 0人" [ref=f13e552] [cursor=pointer]:
+              - text: 2008年6月1日
+              - generic [ref=f13e554]: 0人
+            - button "2008年7月1日 0人" [ref=f13e555] [cursor=pointer]:
+              - text: 2008年7月1日
+              - generic [ref=f13e557]: 0人
+            - button "2008年8月1日 0人" [ref=f13e558] [cursor=pointer]:
+              - text: 2008年8月1日
+              - generic [ref=f13e560]: 0人
+            - button "2008年9月1日 0人" [ref=f13e561] [cursor=pointer]:
+              - text: 2008年9月1日
+              - generic [ref=f13e563]: 0人
+            - button "2008年10月1日 0人" [ref=f13e564] [cursor=pointer]:
+              - text: 2008年10月1日
+              - generic [ref=f13e566]: 0人
+            - button "2008年11月1日 0人" [ref=f13e567] [cursor=pointer]:
+              - text: 2008年11月1日
+              - generic [ref=f13e569]: 0人
+            - button "2008年12月1日 0人" [ref=f13e570] [cursor=pointer]:
+              - text: 2008年12月1日
+              - generic [ref=f13e572]: 0人
+        - listitem [ref=f13e573]:
+          - generic [ref=f13e574] [cursor=pointer]:
+            - generic [ref=f13e575]: 
+            - generic [ref=f13e576]: 2009-WTT
+            - generic [ref=f13e577]: 12个节点
+          - list:
+            - button "2009-WTT初始积分 1107人" [ref=f13e578] [cursor=pointer]:
+              - text: 2009-WTT初始积分
+              - generic [ref=f13e580]: 1107人
+            - button "2009年2月1日 0人" [ref=f13e581] [cursor=pointer]:
+              - text: 2009年2月1日
+              - generic [ref=f13e583]: 0人
+            - button "2009年3月1日 0人" [ref=f13e584] [cursor=pointer]:
+              - text: 2009年3月1日
+              - generic [ref=f13e586]: 0人
+            - button "2009年4月1日 0人" [ref=f13e587] [cursor=pointer]:
+              - text: 2009年4月1日
+              - generic [ref=f13e589]: 0人
+            - button "2009年5月1日 0人" [ref=f13e590] [cursor=pointer]:
+              - text: 2009年5月1日
+              - generic [ref=f13e592]: 0人
+            - button "2009年6月1日 0人" [ref=f13e593] [cursor=pointer]:
+              - text: 2009年6月1日
+              - generic [ref=f13e595]: 0人
+            - button "2009年7月1日 0人" [ref=f13e596] [cursor=pointer]:
+              - text: 2009年7月1日
+              - generic [ref=f13e598]: 0人
+            - button "2009年8月1日 0人" [ref=f13e599] [cursor=pointer]:
+              - text: 2009年8月1日
+              - generic [ref=f13e601]: 0人
+            - button "2009年9月1日 0人" [ref=f13e602] [cursor=pointer]:
+              - text: 2009年9月1日
+              - generic [ref=f13e604]: 0人
+            - button "2009年10月1日 0人" [ref=f13e605] [cursor=pointer]:
+              - text: 2009年10月1日
+              - generic [ref=f13e607]: 0人
+            - button "2009年11月1日 0人" [ref=f13e608] [cursor=pointer]:
+              - text: 2009年11月1日
+              - generic [ref=f13e610]: 0人
+            - button "2009年12月1日 0人" [ref=f13e611] [cursor=pointer]:
+              - text: 2009年12月1日
+              - generic [ref=f13e613]: 0人
+        - listitem [ref=f13e614]:
+          - generic [ref=f13e615] [cursor=pointer]:
+            - generic [ref=f13e616]: 
+            - generic [ref=f13e617]: 2010-WTT
+            - generic [ref=f13e618]: 12个节点
+          - list:
+            - button "2010-WTT初始积分 1107人" [ref=f13e619] [cursor=pointer]:
+              - text: 2010-WTT初始积分
+              - generic [ref=f13e621]: 1107人
+            - button "2010年2月1日 0人" [ref=f13e622] [cursor=pointer]:
+              - text: 2010年2月1日
+              - generic [ref=f13e624]: 0人
+            - button "2010年3月1日 0人" [ref=f13e625] [cursor=pointer]:
+              - text: 2010年3月1日
+              - generic [ref=f13e627]: 0人
+            - button "2010年4月1日 0人" [ref=f13e628] [cursor=pointer]:
+              - text: 2010年4月1日
+              - generic [ref=f13e630]: 0人
+            - button "2010年5月1日 0人" [ref=f13e631] [cursor=pointer]:
+              - text: 2010年5月1日
+              - generic [ref=f13e633]: 0人
+            - button "2010年6月1日 0人" [ref=f13e634] [cursor=pointer]:
+              - text: 2010年6月1日
+              - generic [ref=f13e636]: 0人
+            - button "2010年7月1日 0人" [ref=f13e637] [cursor=pointer]:
+              - text: 2010年7月1日
+              - generic [ref=f13e639]: 0人
+            - button "2010年8月1日 0人" [ref=f13e640] [cursor=pointer]:
+              - text: 2010年8月1日
+              - generic [ref=f13e642]: 0人
+            - button "2010年9月1日 0人" [ref=f13e643] [cursor=pointer]:
+              - text: 2010年9月1日
+              - generic [ref=f13e645]: 0人
+            - button "2010年10月1日 0人" [ref=f13e646] [cursor=pointer]:
+              - text: 2010年10月1日
+              - generic [ref=f13e648]: 0人
+            - button "2010年11月1日 0人" [ref=f13e649] [cursor=pointer]:
+              - text: 2010年11月1日
+              - generic [ref=f13e651]: 0人
+            - button "2010年12月1日 0人" [ref=f13e652] [cursor=pointer]:
+              - text: 2010年12月1日
+              - generic [ref=f13e654]: 0人
+        - listitem [ref=f13e655]:
+          - generic [ref=f13e656] [cursor=pointer]:
+            - generic [ref=f13e657]: 
+            - generic [ref=f13e658]: 2011-WTT
+            - generic [ref=f13e659]: 12个节点
+          - list:
+            - button "2011-WTT初始积分 1107人" [ref=f13e660] [cursor=pointer]:
+              - text: 2011-WTT初始积分
+              - generic [ref=f13e662]: 1107人
+            - button "2011年2月1日 0人" [ref=f13e663] [cursor=pointer]:
+              - text: 2011年2月1日
+              - generic [ref=f13e665]: 0人
+            - button "2011年3月1日 0人" [ref=f13e666] [cursor=pointer]:
+              - text: 2011年3月1日
+              - generic [ref=f13e668]: 0人
+            - button "2011年4月1日 0人" [ref=f13e669] [cursor=pointer]:
+              - text: 2011年4月1日
+              - generic [ref=f13e671]: 0人
+            - button "2011年5月1日 0人" [ref=f13e672] [cursor=pointer]:
+              - text: 2011年5月1日
+              - generic [ref=f13e674]: 0人
+            - button "2011年6月1日 0人" [ref=f13e675] [cursor=pointer]:
+              - text: 2011年6月1日
+              - generic [ref=f13e677]: 0人
+            - button "2011年7月1日 0人" [ref=f13e678] [cursor=pointer]:
+              - text: 2011年7月1日
+              - generic [ref=f13e680]: 0人
+            - button "2011年8月1日 0人" [ref=f13e681] [cursor=pointer]:
+              - text: 2011年8月1日
+              - generic [ref=f13e683]: 0人
+            - button "2011年9月1日 0人" [ref=f13e684] [cursor=pointer]:
+              - text: 2011年9月1日
+              - generic [ref=f13e686]: 0人
+            - button "2011年10月1日 0人" [ref=f13e687] [cursor=pointer]:
+              - text: 2011年10月1日
+              - generic [ref=f13e689]: 0人
+            - button "2011年11月1日 0人" [ref=f13e690] [cursor=pointer]:
+              - text: 2011年11月1日
+              - generic [ref=f13e692]: 0人
+            - button "2011年12月1日 0人" [ref=f13e693] [cursor=pointer]:
+              - text: 2011年12月1日
+              - generic [ref=f13e695]: 0人
+        - listitem [ref=f13e696]:
+          - generic [ref=f13e697] [cursor=pointer]:
+            - generic [ref=f13e698]: 
+            - generic [ref=f13e699]: 2012-WTT
+            - generic [ref=f13e700]: 12个节点
+          - list:
+            - button "2012-WTT初始积分 1107人" [ref=f13e701] [cursor=pointer]:
+              - text: 2012-WTT初始积分
+              - generic [ref=f13e703]: 1107人
+            - button "2012年2月1日 0人" [ref=f13e704] [cursor=pointer]:
+              - text: 2012年2月1日
+              - generic [ref=f13e706]: 0人
+            - button "2012年3月1日 0人" [ref=f13e707] [cursor=pointer]:
+              - text: 2012年3月1日
+              - generic [ref=f13e709]: 0人
+            - button "2012年4月1日 0人" [ref=f13e710] [cursor=pointer]:
+              - text: 2012年4月1日
+              - generic [ref=f13e712]: 0人
+            - button "2012年5月1日 0人" [ref=f13e713] [cursor=pointer]:
+              - text: 2012年5月1日
+              - generic [ref=f13e715]: 0人
+            - button "2012年6月1日 0人" [ref=f13e716] [cursor=pointer]:
+              - text: 2012年6月1日
+              - generic [ref=f13e718]: 0人
+            - button "2012年7月1日 0人" [ref=f13e719] [cursor=pointer]:
+              - text: 2012年7月1日
+              - generic [ref=f13e721]: 0人
+            - button "2012年8月1日 0人" [ref=f13e722] [cursor=pointer]:
+              - text: 2012年8月1日
+              - generic [ref=f13e724]: 0人
+            - button "2012年9月1日 0人" [ref=f13e725] [cursor=pointer]:
+              - text: 2012年9月1日
+              - generic [ref=f13e727]: 0人
+            - button "2012年10月1日 0人" [ref=f13e728] [cursor=pointer]:
+              - text: 2012年10月1日
+              - generic [ref=f13e730]: 0人
+            - button "2012年11月1日 0人" [ref=f13e731] [cursor=pointer]:
+              - text: 2012年11月1日
+              - generic [ref=f13e733]: 0人
+            - button "2012年12月1日 0人" [ref=f13e734] [cursor=pointer]:
+              - text: 2012年12月1日
+              - generic [ref=f13e736]: 0人
+        - listitem [ref=f13e737]:
+          - generic [ref=f13e738] [cursor=pointer]:
+            - generic [ref=f13e739]: 
+            - generic [ref=f13e740]: 2013-WTT
+            - generic [ref=f13e741]: 12个节点
+          - list:
+            - button "2013-WTT初始积分 1107人" [ref=f13e742] [cursor=pointer]:
+              - text: 2013-WTT初始积分
+              - generic [ref=f13e744]: 1107人
+            - button "2013年2月1日 64人" [ref=f13e745] [cursor=pointer]:
+              - text: 2013年2月1日
+              - generic [ref=f13e747]: 64人
+            - button "2013年3月1日 143人" [ref=f13e748] [cursor=pointer]:
+              - text: 2013年3月1日
+              - generic [ref=f13e750]: 143人
+            - button "2013年4月1日 153人" [ref=f13e751] [cursor=pointer]:
+              - text: 2013年4月1日
+              - generic [ref=f13e753]: 153人
+            - button "2013年5月1日 190人" [ref=f13e754] [cursor=pointer]:
+              - text: 2013年5月1日
+              - generic [ref=f13e756]: 190人
+            - button "2013年6月1日 231人" [ref=f13e757] [cursor=pointer]:
+              - text: 2013年6月1日
+              - generic [ref=f13e759]: 231人
+            - button "2013年7月1日 260人" [ref=f13e760] [cursor=pointer]:
+              - text: 2013年7月1日
+              - generic [ref=f13e762]: 260人
+            - button "2013年8月1日 260人" [ref=f13e763] [cursor=pointer]:
+              - text: 2013年8月1日
+              - generic [ref=f13e765]: 260人
+            - button "2013年9月1日 298人" [ref=f13e766] [cursor=pointer]:
+              - text: 2013年9月1日
+              - generic [ref=f13e768]: 298人
+            - button "2013年10月1日 298人" [ref=f13e769] [cursor=pointer]:
+              - text: 2013年10月1日
+              - generic [ref=f13e771]: 298人
+            - button "2013年11月1日 299人" [ref=f13e772] [cursor=pointer]:
+              - text: 2013年11月1日
+              - generic [ref=f13e774]: 299人
+            - button "2013年12月1日 384人" [ref=f13e775] [cursor=pointer]:
+              - text: 2013年12月1日
+              - generic [ref=f13e777]: 384人
+        - listitem [ref=f13e778]:
+          - generic [ref=f13e779] [cursor=pointer]:
+            - generic [ref=f13e780]: 
+            - generic [ref=f13e781]: 2014-WTT
+            - generic [ref=f13e782]: 12个节点
+          - list:
+            - button "2014-WTT初始积分 1355人" [ref=f13e783] [cursor=pointer]:
+              - text: 2014-WTT初始积分
+              - generic [ref=f13e785]: 1355人
+            - button "2014年2月1日 25人" [ref=f13e786] [cursor=pointer]:
+              - text: 2014年2月1日
+              - generic [ref=f13e788]: 25人
+            - button "2014年3月1日 134人" [ref=f13e789] [cursor=pointer]:
+              - text: 2014年3月1日
+              - generic [ref=f13e791]: 134人
+            - button "2014年4月1日 158人" [ref=f13e792] [cursor=pointer]:
+              - text: 2014年4月1日
+              - generic [ref=f13e794]: 158人
+            - button "2014年5月1日 255人" [ref=f13e795] [cursor=pointer]:
+              - text: 2014年5月1日
+              - generic [ref=f13e797]: 255人
+            - button "2014年6月1日 504人" [ref=f13e798] [cursor=pointer]:
+              - text: 2014年6月1日
+              - generic [ref=f13e800]: 504人
+            - button "2014年7月1日 546人" [ref=f13e801] [cursor=pointer]:
+              - text: 2014年7月1日
+              - generic [ref=f13e803]: 546人
+            - button "2014年8月1日 546人" [ref=f13e804] [cursor=pointer]:
+              - text: 2014年8月1日
+              - generic [ref=f13e806]: 546人
+            - button "2014年9月1日 558人" [ref=f13e807] [cursor=pointer]:
+              - text: 2014年9月1日
+              - generic [ref=f13e809]: 558人
+            - button "2014年10月1日 558人" [ref=f13e810] [cursor=pointer]:
+              - text: 2014年10月1日
+              - generic [ref=f13e812]: 558人
+            - button "2014年11月1日 560人" [ref=f13e813] [cursor=pointer]:
+              - text: 2014年11月1日
+              - generic [ref=f13e815]: 560人
+            - button "2014年12月1日 585人" [ref=f13e816] [cursor=pointer]:
+              - text: 2014年12月1日
+              - generic [ref=f13e818]: 585人
+        - listitem [ref=f13e819]:
+          - generic [ref=f13e820] [cursor=pointer]:
+            - generic [ref=f13e821]: 
+            - generic [ref=f13e822]: 2015-WTT
+            - generic [ref=f13e823]: 12个节点
+          - list:
+            - button "2015-WTT初始积分 1638人" [ref=f13e824] [cursor=pointer]:
+              - text: 2015-WTT初始积分
+              - generic [ref=f13e826]: 1638人
+            - button "2015年2月1日 39人" [ref=f13e827] [cursor=pointer]:
+              - text: 2015年2月1日
+              - generic [ref=f13e829]: 39人
+            - button "2015年3月1日 137人" [ref=f13e830] [cursor=pointer]:
+              - text: 2015年3月1日
+              - generic [ref=f13e832]: 137人
+            - button "2015年4月1日 263人" [ref=f13e833] [cursor=pointer]:
+              - text: 2015年4月1日
+              - generic [ref=f13e835]: 263人
+            - button "2015年5月1日 425人" [ref=f13e836] [cursor=pointer]:
+              - text: 2015年5月1日
+              - generic [ref=f13e838]: 425人
+            - button "2015年6月1日 425人" [ref=f13e839] [cursor=pointer]:
+              - text: 2015年6月1日
+              - generic [ref=f13e841]: 425人
+            - button "2015年7月1日 459人" [ref=f13e842] [cursor=pointer]:
+              - text: 2015年7月1日
+              - generic [ref=f13e844]: 459人
+            - button "2015年8月1日 459人" [ref=f13e845] [cursor=pointer]:
+              - text: 2015年8月1日
+              - generic [ref=f13e847]: 459人
+            - button "2015年9月1日 479人" [ref=f13e848] [cursor=pointer]:
+              - text: 2015年9月1日
+              - generic [ref=f13e850]: 479人
+            - button "2015年10月1日 509人" [ref=f13e851] [cursor=pointer]:
+              - text: 2015年10月1日
+              - generic [ref=f13e853]: 509人
+            - button "2015年11月1日 515人" [ref=f13e854] [cursor=pointer]:
+              - text: 2015年11月1日
+              - generic [ref=f13e856]: 515人
+            - button "2015年12月1日 522人" [ref=f13e857] [cursor=pointer]:
+              - text: 2015年12月1日
+              - generic [ref=f13e859]: 522人
+        - listitem [ref=f13e860]:
+          - generic [ref=f13e861] [cursor=pointer]:
+            - generic [ref=f13e862]: 
+            - generic [ref=f13e863]: 2016-WTT
+            - generic [ref=f13e864]: 12个节点
+          - list:
+            - button "2016-WTT初始积分 1779人" [ref=f13e865] [cursor=pointer]:
+              - text: 2016-WTT初始积分
+              - generic [ref=f13e867]: 1779人
+            - button "2016年2月1日 193人" [ref=f13e868] [cursor=pointer]:
+              - text: 2016年2月1日
+              - generic [ref=f13e870]: 193人
+            - button "2016年3月1日 403人" [ref=f13e871] [cursor=pointer]:
+              - text: 2016年3月1日
+              - generic [ref=f13e873]: 403人
+            - button "2016年4月1日 436人" [ref=f13e874] [cursor=pointer]:
+              - text: 2016年4月1日
+              - generic [ref=f13e876]: 436人
+            - button "2016年5月1日 484人" [ref=f13e877] [cursor=pointer]:
+              - text: 2016年5月1日
+              - generic [ref=f13e879]: 484人
+            - button "2016年6月1日 484人" [ref=f13e880] [cursor=pointer]:
+              - text: 2016年6月1日
+              - generic [ref=f13e882]: 484人
+            - button "2016年7月1日 514人" [ref=f13e883] [cursor=pointer]:
+              - text: 2016年7月1日
+              - generic [ref=f13e885]: 514人
+            - button "2016年8月1日 514人" [ref=f13e886] [cursor=pointer]:
+              - text: 2016年8月1日
+              - generic [ref=f13e888]: 514人
+            - button "2016年9月1日 589人" [ref=f13e889] [cursor=pointer]:
+              - text: 2016年9月1日
+              - generic [ref=f13e891]: 589人
+            - button "2016年10月1日 631人" [ref=f13e892] [cursor=pointer]:
+              - text: 2016年10月1日
+              - generic [ref=f13e894]: 631人
+            - button "2016年11月1日 631人" [ref=f13e895] [cursor=pointer]:
+              - text: 2016年11月1日
+              - generic [ref=f13e897]: 631人
+            - button "2016年12月1日 682人" [ref=f13e898] [cursor=pointer]:
+              - text: 2016年12月1日
+              - generic [ref=f13e900]: 682人
+        - listitem [ref=f13e901]:
+          - generic [ref=f13e902] [cursor=pointer]:
+            - generic [ref=f13e903]: 
+            - generic [ref=f13e904]: 2017-WTT
+            - generic [ref=f13e905]: 12个节点
+          - list:
+            - button "2017-WTT初始积分 2013人" [ref=f13e906] [cursor=pointer]:
+              - text: 2017-WTT初始积分
+              - generic [ref=f13e908]: 2013人
+            - button "2017年2月1日 0人" [ref=f13e909] [cursor=pointer]:
+              - text: 2017年2月1日
+              - generic [ref=f13e911]: 0人
+            - button "2017年3月1日 8人" [ref=f13e912] [cursor=pointer]:
+              - text: 2017年3月1日
+              - generic [ref=f13e914]: 8人
+            - button "2017年4月1日 8人" [ref=f13e915] [cursor=pointer]:
+              - text: 2017年4月1日
+              - generic [ref=f13e917]: 8人
+            - button "2017年5月1日 8人" [ref=f13e918] [cursor=pointer]:
+              - text: 2017年5月1日
+              - generic [ref=f13e920]: 8人
+            - button "2017年6月1日 255人" [ref=f13e921] [cursor=pointer]:
+              - text: 2017年6月1日
+              - generic [ref=f13e923]: 255人
+            - button "2017年7月1日 255人" [ref=f13e924] [cursor=pointer]:
+              - text: 2017年7月1日
+              - generic [ref=f13e926]: 255人
+            - button "2017年8月1日 294人" [ref=f13e927] [cursor=pointer]:
+              - text: 2017年8月1日
+              - generic [ref=f13e929]: 294人
+            - button "2017年9月1日 294人" [ref=f13e930] [cursor=pointer]:
+              - text: 2017年9月1日
+              - generic [ref=f13e932]: 294人
+            - button "2017年10月1日 381人" [ref=f13e933] [cursor=pointer]:
+              - text: 2017年10月1日
+              - generic [ref=f13e935]: 381人
+            - button "2017年11月1日 381人" [ref=f13e936] [cursor=pointer]:
+              - text: 2017年11月1日
+              - generic [ref=f13e938]: 381人
+            - button "2017年12月1日 413人" [ref=f13e939] [cursor=pointer]:
+              - text: 2017年12月1日
+              - generic [ref=f13e941]: 413人
+        - listitem [ref=f13e942]:
+          - generic [ref=f13e943] [cursor=pointer]:
+            - generic [ref=f13e944]: 
+            - generic [ref=f13e945]: 2018-WTT
+            - generic [ref=f13e946]: 12个节点
+          - list:
+            - button "2018-WTT初始积分 2094人" [ref=f13e947] [cursor=pointer]:
+              - text: 2018-WTT初始积分
+              - generic [ref=f13e949]: 2094人
+            - button "2018年2月1日 0人" [ref=f13e950] [cursor=pointer]:
+              - text: 2018年2月1日
+              - generic [ref=f13e952]: 0人
+            - button "2018年3月1日 16人" [ref=f13e953] [cursor=pointer]:
+              - text: 2018年3月1日
+              - generic [ref=f13e955]: 16人
+            - button "2018年4月1日 16人" [ref=f13e956] [cursor=pointer]:
+              - text: 2018年4月1日
+              - generic [ref=f13e958]: 16人
+            - button "2018年5月1日 257人" [ref=f13e959] [cursor=pointer]:
+              - text: 2018年5月1日
+              - generic [ref=f13e961]: 257人
+            - button "2018年6月1日 434人" [ref=f13e962] [cursor=pointer]:
+              - text: 2018年6月1日
+              - generic [ref=f13e964]: 434人
+            - button "2018年7月1日 478人" [ref=f13e965] [cursor=pointer]:
+              - text: 2018年7月1日
+              - generic [ref=f13e967]: 478人
+            - button "2018年8月1日 517人" [ref=f13e968] [cursor=pointer]:
+              - text: 2018年8月1日
+              - generic [ref=f13e970]: 517人
+            - button "2018年9月1日 637人" [ref=f13e971] [cursor=pointer]:
+              - text: 2018年9月1日
+              - generic [ref=f13e973]: 637人
+            - button "2018年10月1日 703人" [ref=f13e974] [cursor=pointer]:
+              - text: 2018年10月1日
+              - generic [ref=f13e976]: 703人
+            - button "2018年11月1日 775人" [ref=f13e977] [cursor=pointer]:
+              - text: 2018年11月1日
+              - generic [ref=f13e979]: 775人
+            - button "2018年12月1日 837人" [ref=f13e980] [cursor=pointer]:
+              - text: 2018年12月1日
+              - generic [ref=f13e982]: 837人
+        - listitem [ref=f13e983]:
+          - generic [ref=f13e984] [cursor=pointer]:
+            - generic [ref=f13e985]: 
+            - generic [ref=f13e986]: 2019-WTT
+            - generic [ref=f13e987]: 12个节点
+          - list:
+            - button "2019-WTT初始积分 2446人" [ref=f13e988] [cursor=pointer]:
+              - text: 2019-WTT初始积分
+              - generic [ref=f13e990]: 2446人
+            - button "2019年2月1日 207人" [ref=f13e991] [cursor=pointer]:
+              - text: 2019年2月1日
+              - generic [ref=f13e993]: 207人
+            - button "2019年3月1日 315人" [ref=f13e994] [cursor=pointer]:
+              - text: 2019年3月1日
+              - generic [ref=f13e996]: 315人
+            - button "2019年4月1日 442人" [ref=f13e997] [cursor=pointer]:
+              - text: 2019年4月1日
+              - generic [ref=f13e999]: 442人
+            - button "2019年5月1日 595人" [ref=f13e1000] [cursor=pointer]:
+              - text: 2019年5月1日
+              - generic [ref=f13e1002]: 595人
+            - button "2019年6月1日 691人" [ref=f13e1003] [cursor=pointer]:
+              - text: 2019年6月1日
+              - generic [ref=f13e1005]: 691人
+            - button "2019年7月1日 703人" [ref=f13e1006] [cursor=pointer]:
+              - text: 2019年7月1日
+              - generic [ref=f13e1008]: 703人
+            - button "2019年8月1日 746人" [ref=f13e1009] [cursor=pointer]:
+              - text: 2019年8月1日
+              - generic [ref=f13e1011]: 746人
+            - button "2019年9月1日 824人" [ref=f13e1012] [cursor=pointer]:
+              - text: 2019年9月1日
+              - generic [ref=f13e1014]: 824人
+            - button "2019年10月1日 885人" [ref=f13e1015] [cursor=pointer]:
+              - text: 2019年10月1日
+              - generic [ref=f13e1017]: 885人
+            - button "2019年11月1日 951人" [ref=f13e1018] [cursor=pointer]:
+              - text: 2019年11月1日
+              - generic [ref=f13e1020]: 951人
+            - button "2019年12月1日 971人" [ref=f13e1021] [cursor=pointer]:
+              - text: 2019年12月1日
+              - generic [ref=f13e1023]: 971人
+        - listitem [ref=f13e1024]:
+          - generic [ref=f13e1025] [cursor=pointer]:
+            - generic [ref=f13e1026]: 
+            - generic [ref=f13e1027]: 2020-WTT
+            - generic [ref=f13e1028]: 12个节点
+          - list:
+            - button "2020-WTT初始积分 2741人" [ref=f13e1029] [cursor=pointer]:
+              - text: 2020-WTT初始积分
+              - generic [ref=f13e1031]: 2741人
+            - button "2020年2月1日 188人" [ref=f13e1032] [cursor=pointer]:
+              - text: 2020年2月1日
+              - generic [ref=f13e1034]: 188人
+            - button "2020年3月1日 411人" [ref=f13e1035] [cursor=pointer]:
+              - text: 2020年3月1日
+              - generic [ref=f13e1037]: 411人
+            - button "2020年4月1日 468人" [ref=f13e1038] [cursor=pointer]:
+              - text: 2020年4月1日
+              - generic [ref=f13e1040]: 468人
+            - button "2020年5月1日 468人" [ref=f13e1041] [cursor=pointer]:
+              - text: 2020年5月1日
+              - generic [ref=f13e1043]: 468人
+            - button "2020年6月1日 468人" [ref=f13e1044] [cursor=pointer]:
+              - text: 2020年6月1日
+              - generic [ref=f13e1046]: 468人
+            - button "2020年7月1日 468人" [ref=f13e1047] [cursor=pointer]:
+              - text: 2020年7月1日
+              - generic [ref=f13e1049]: 468人
+            - button "2020年8月1日 468人" [ref=f13e1050] [cursor=pointer]:
+              - text: 2020年8月1日
+              - generic [ref=f13e1052]: 468人
+            - button "2020年9月1日 468人" [ref=f13e1053] [cursor=pointer]:
+              - text: 2020年9月1日
+              - generic [ref=f13e1055]: 468人
+            - button "2020年10月1日 468人" [ref=f13e1056] [cursor=pointer]:
+              - text: 2020年10月1日
+              - generic [ref=f13e1058]: 468人
+            - button "2020年11月1日 479人" [ref=f13e1059] [cursor=pointer]:
+              - text: 2020年11月1日
+              - generic [ref=f13e1061]: 479人
+            - button "2020年12月1日 485人" [ref=f13e1062] [cursor=pointer]:
+              - text: 2020年12月1日
+              - generic [ref=f13e1064]: 485人
+        - listitem [ref=f13e1065]:
+          - generic [ref=f13e1066] [cursor=pointer]:
+            - generic [ref=f13e1067]: 
+            - generic [ref=f13e1068]: 2021-WTT
+            - generic [ref=f13e1069]: 12个节点
+          - list:
+            - button "2021-WTT初始积分 2792人" [ref=f13e1070] [cursor=pointer]:
+              - text: 2021-WTT初始积分
+              - generic [ref=f13e1072]: 2792人
+            - button "2021年2月1日 56人" [ref=f13e1073] [cursor=pointer]:
+              - text: 2021年2月1日
+              - generic [ref=f13e1075]: 56人
+            - button "2021年3月1日 158人" [ref=f13e1076] [cursor=pointer]:
+              - text: 2021年3月1日
+              - generic [ref=f13e1078]: 158人
+            - button "2021年4月1日 164人" [ref=f13e1079] [cursor=pointer]:
+              - text: 2021年4月1日
+              - generic [ref=f13e1081]: 164人
+            - button "2021年5月1日 167人" [ref=f13e1082] [cursor=pointer]:
+              - text: 2021年5月1日
+              - generic [ref=f13e1084]: 167人
+            - button "2021年6月1日 167人" [ref=f13e1085] [cursor=pointer]:
+              - text: 2021年6月1日
+              - generic [ref=f13e1087]: 167人
+            - button "2021年7月1日 220人" [ref=f13e1088] [cursor=pointer]:
+              - text: 2021年7月1日
+              - generic [ref=f13e1090]: 220人
+            - button "2021年8月1日 237人" [ref=f13e1091] [cursor=pointer]:
+              - text: 2021年8月1日
+              - generic [ref=f13e1093]: 237人
+            - button "2021年9月1日 304人" [ref=f13e1094] [cursor=pointer]:
+              - text: 2021年9月1日
+              - generic [ref=f13e1096]: 304人
+            - button "2021年10月1日 412人" [ref=f13e1097] [cursor=pointer]:
+              - text: 2021年10月1日
+              - generic [ref=f13e1099]: 412人
+            - button "2021年11月1日 479人" [ref=f13e1100] [cursor=pointer]:
+              - text: 2021年11月1日
+              - generic [ref=f13e1102]: 479人
+            - button "2021年12月1日 490人" [ref=f13e1103] [cursor=pointer]:
+              - text: 2021年12月1日
+              - generic [ref=f13e1105]: 490人
+        - listitem [ref=f13e1106]:
+          - generic [ref=f13e1107] [cursor=pointer]:
+            - generic [ref=f13e1108]: 
+            - generic [ref=f13e1109]: 2022-WTT
+            - generic [ref=f13e1110]: 12个节点
+          - list:
+            - button "2022-WTT初始积分 2899人" [ref=f13e1111] [cursor=pointer]:
+              - text: 2022-WTT初始积分
+              - generic [ref=f13e1113]: 2899人
+            - button "2022年2月1日 64人" [ref=f13e1114] [cursor=pointer]:
+              - text: 2022年2月1日
+              - generic [ref=f13e1116]: 64人
+            - button "2022年3月1日 163人" [ref=f13e1117] [cursor=pointer]:
+              - text: 2022年3月1日
+              - generic [ref=f13e1119]: 163人
+            - button "2022年4月1日 259人" [ref=f13e1120] [cursor=pointer]:
+              - text: 2022年4月1日
+              - generic [ref=f13e1122]: 259人
+            - button "2022年5月1日 259人" [ref=f13e1123] [cursor=pointer]:
+              - text: 2022年5月1日
+              - generic [ref=f13e1125]: 259人
+            - button "2022年6月1日 260人" [ref=f13e1126] [cursor=pointer]:
+              - text: 2022年6月1日
+              - generic [ref=f13e1128]: 260人
+            - button "2022年7月1日 352人" [ref=f13e1129] [cursor=pointer]:
+              - text: 2022年7月1日
+              - generic [ref=f13e1131]: 352人
+            - button "2022年8月1日 365人" [ref=f13e1132] [cursor=pointer]:
+              - text: 2022年8月1日
+              - generic [ref=f13e1134]: 365人
+            - button "2022年9月1日 401人" [ref=f13e1135] [cursor=pointer]:
+              - text: 2022年9月1日
+              - generic [ref=f13e1137]: 401人
+            - button "2022年10月1日 431人" [ref=f13e1138] [cursor=pointer]:
+              - text: 2022年10月1日
+              - generic [ref=f13e1140]: 431人
+            - button "2022年11月1日 444人" [ref=f13e1141] [cursor=pointer]:
+              - text: 2022年11月1日
+              - generic [ref=f13e1143]: 444人
+            - button "2022年12月1日 447人" [ref=f13e1144] [cursor=pointer]:
+              - text: 2022年12月1日
+              - generic [ref=f13e1146]: 447人
+        - listitem [ref=f13e1147]:
+          - generic [ref=f13e1148] [cursor=pointer]:
+            - generic [ref=f13e1149]: 
+            - generic [ref=f13e1150]: 2023-WTT
+            - generic [ref=f13e1151]: 12个节点
+          - list:
+            - button "2023-WTT初始积分 2979人" [ref=f13e1152] [cursor=pointer]:
+              - text: 2023-WTT初始积分
+              - generic [ref=f13e1154]: 2979人
+            - button "2023年2月1日 180人" [ref=f13e1155] [cursor=pointer]:
+              - text: 2023年2月1日
+              - generic [ref=f13e1157]: 180人
+            - button "2023年3月1日 260人" [ref=f13e1158] [cursor=pointer]:
+              - text: 2023年3月1日
+              - generic [ref=f13e1160]: 260人
+            - button "2023年4月1日 289人" [ref=f13e1161] [cursor=pointer]:
+              - text: 2023年4月1日
+              - generic [ref=f13e1163]: 289人
+            - button "2023年5月1日 309人" [ref=f13e1164] [cursor=pointer]:
+              - text: 2023年5月1日
+              - generic [ref=f13e1166]: 309人
+            - button "2023年6月1日 310人" [ref=f13e1167] [cursor=pointer]:
+              - text: 2023年6月1日
+              - generic [ref=f13e1169]: 310人
+            - button "2023年7月1日 398人" [ref=f13e1170] [cursor=pointer]:
+              - text: 2023年7月1日
+              - generic [ref=f13e1172]: 398人
+            - button "2023年8月1日 424人" [ref=f13e1173] [cursor=pointer]:
+              - text: 2023年8月1日
+              - generic [ref=f13e1175]: 424人
+            - button "2023年9月1日 454人" [ref=f13e1176] [cursor=pointer]:
+              - text: 2023年9月1日
+              - generic [ref=f13e1178]: 454人
+            - button "2023年10月1日 555人" [ref=f13e1179] [cursor=pointer]:
+              - text: 2023年10月1日
+              - generic [ref=f13e1181]: 555人
+            - button "2023年11月1日 572人" [ref=f13e1182] [cursor=pointer]:
+              - text: 2023年11月1日
+              - generic [ref=f13e1184]: 572人
+            - button "2023年12月1日 578人" [ref=f13e1185] [cursor=pointer]:
+              - text: 2023年12月1日
+              - generic [ref=f13e1187]: 578人
+        - listitem [ref=f13e1188]:
+          - generic [ref=f13e1189] [cursor=pointer]:
+            - generic [ref=f13e1190]: 
+            - generic [ref=f13e1191]: 2024-WTT
+            - generic [ref=f13e1192]: 12个节点
+          - list:
+            - button "2024-WTT初始积分 3126人" [ref=f13e1193] [cursor=pointer]:
+              - text: 2024-WTT初始积分
+              - generic [ref=f13e1195]: 3126人
+            - button "2024年2月1日 185人" [ref=f13e1196] [cursor=pointer]:
+              - text: 2024年2月1日
+              - generic [ref=f13e1198]: 185人
+            - button "2024年3月1日 211人" [ref=f13e1199] [cursor=pointer]:
+              - text: 2024年3月1日
+              - generic [ref=f13e1201]: 211人
+            - button "2024年4月1日 240人" [ref=f13e1202] [cursor=pointer]:
+              - text: 2024年4月1日
+              - generic [ref=f13e1204]: 240人
+            - button "2024年5月1日 241人" [ref=f13e1205] [cursor=pointer]:
+              - text: 2024年5月1日
+              - generic [ref=f13e1207]: 241人
+            - button "2024年6月1日 311人" [ref=f13e1208] [cursor=pointer]:
+              - text: 2024年6月1日
+              - generic [ref=f13e1210]: 311人
+            - button "2024年7月1日 415人" [ref=f13e1211] [cursor=pointer]:
+              - text: 2024年7月1日
+              - generic [ref=f13e1213]: 415人
+            - button "2024年8月1日 433人" [ref=f13e1214] [cursor=pointer]:
+              - text: 2024年8月1日
+              - generic [ref=f13e1216]: 433人
+            - button "2024年9月1日 458人" [ref=f13e1217] [cursor=pointer]:
+              - text: 2024年9月1日
+              - generic [ref=f13e1219]: 458人
+            - button "2024年10月1日 482人" [ref=f13e1220] [cursor=pointer]:
+              - text: 2024年10月1日
+              - generic [ref=f13e1222]: 482人
+            - button "2024年11月1日 594人" [ref=f13e1223] [cursor=pointer]:
+              - text: 2024年11月1日
+              - generic [ref=f13e1225]: 594人
+            - button "2024年12月1日 601人" [ref=f13e1226] [cursor=pointer]:
+              - text: 2024年12月1日
+              - generic [ref=f13e1228]: 601人
+        - listitem [ref=f13e1229]:
+          - generic [ref=f13e1230] [cursor=pointer]:
+            - generic [ref=f13e1231]: 
+            - generic [ref=f13e1232]: 2025-WTT
+            - generic [ref=f13e1233]: 12个节点
+          - list:
+            - button "2025-WTT初始积分 3287人" [ref=f13e1234] [cursor=pointer]:
+              - text: 2025-WTT初始积分
+              - generic [ref=f13e1236]: 3287人
+            - button "2025年2月1日 138人" [ref=f13e1237] [cursor=pointer]:
+              - text: 2025年2月1日
+              - generic [ref=f13e1239]: 138人
+            - button "2025年3月1日 221人" [ref=f13e1240] [cursor=pointer]:
+              - text: 2025年3月1日
+              - generic [ref=f13e1242]: 221人
+            - button "2025年4月1日 258人" [ref=f13e1243] [cursor=pointer]:
+              - text: 2025年4月1日
+              - generic [ref=f13e1245]: 258人
+            - button "2025年5月1日 292人" [ref=f13e1246] [cursor=pointer]:
+              - text: 2025年5月1日
+              - generic [ref=f13e1248]: 292人
+            - button "2025年6月1日 311人" [ref=f13e1249] [cursor=pointer]:
+              - text: 2025年6月1日
+              - generic [ref=f13e1251]: 311人
+            - button "2025年7月1日 393人" [ref=f13e1252] [cursor=pointer]:
+              - text: 2025年7月1日
+              - generic [ref=f13e1254]: 393人
+            - button "2025年8月1日 479人" [ref=f13e1255] [cursor=pointer]:
+              - text: 2025年8月1日
+              - generic [ref=f13e1257]: 479人
+            - button "2025年9月1日 508人" [ref=f13e1258] [cursor=pointer]:
+              - text: 2025年9月1日
+              - generic [ref=f13e1260]: 508人
+            - button "2025年10月1日 560人" [ref=f13e1261] [cursor=pointer]:
+              - text: 2025年10月1日
+              - generic [ref=f13e1263]: 560人
+            - button "2025年11月1日 647人" [ref=f13e1264] [cursor=pointer]:
+              - text: 2025年11月1日
+              - generic [ref=f13e1266]: 647人
+            - button "2025年12月1日 677人" [ref=f13e1267] [cursor=pointer]:
+              - text: 2025年12月1日
+              - generic [ref=f13e1269]: 677人
+        - listitem [ref=f13e1270]:
+          - generic [ref=f13e1271] [cursor=pointer]:
+            - generic [ref=f13e1272]: 
+            - generic [ref=f13e1273]: 2026-WTT
+            - generic [ref=f13e1274]: 11个节点
+          - list [ref=f13e1275]:
+            - button "2026-WTT初始积分 3481人" [ref=f13e1276] [cursor=pointer]:
+              - text: 2026-WTT初始积分
+              - generic [ref=f13e1278]: 3481人
+            - button "2026年2月1日 281人" [ref=f13e1279] [cursor=pointer]:
+              - text: 2026年2月1日
+              - generic [ref=f13e1281]: 281人
+            - button "2026年3月1日 396人" [ref=f13e1282] [cursor=pointer]:
+              - text: 2026年3月1日
+              - generic [ref=f13e1284]: 396人
+            - button "2026年4月1日 450人" [ref=f13e1285] [cursor=pointer]:
+              - text: 2026年4月1日
+              - generic [ref=f13e1287]: 450人
+            - button "2026年5月1日 496人" [ref=f13e1288] [cursor=pointer]:
+              - text: 2026年5月1日
+              - generic [ref=f13e1290]: 496人
+            - button "2026年6月1日 518人" [ref=f13e1291] [cursor=pointer]:
+              - text: 2026年6月1日
+              - generic [ref=f13e1293]: 518人
+            - button "2026年7月1日 542人" [ref=f13e1294] [cursor=pointer]:
+              - text: 2026年7月1日
+              - generic [ref=f13e1296]: 542人
+            - button "2026年8月1日 586人" [ref=f13e1297] [cursor=pointer]:
+              - text: 2026年8月1日
+              - generic [ref=f13e1299]: 586人
+            - button "2026年9月1日 643人" [ref=f13e1300] [cursor=pointer]:
+              - text: 2026年9月1日
+              - generic [ref=f13e1302]: 643人
+            - button "2026年10月1日 698人" [ref=f13e1303] [cursor=pointer]:
+              - text: 2026年10月1日
+              - generic [ref=f13e1305]: 698人
+            - button "2026年11月1日 787人" [ref=f13e1306] [cursor=pointer]:
+              - text: 2026年11月1日
+              - generic [ref=f13e1308]: 787人
+    - generic [ref=f13e42]:
+      - generic [ref=f13e43]:
+        - generic [ref=f13e44]: Data Viz
+        - heading "WTT 数据可视化" [level=2] [ref=f13e45]
+        - link " 查看 WTT 数据可视化" [ref=f13e46] [cursor=pointer]:
+          - /url: /wtt_dataviz.html?cat=ms
+          - generic [ref=f13e47]: 
+          - generic [ref=f13e48]: 查看 WTT 数据可视化
+      - generic [ref=f13e49]:
+        - generic [ref=f13e50]: Personal Stats
+        - heading "WTT 个人数据" [level=2] [ref=f13e51]
+        - link "查看 WTT 个人数据" [ref=f13e52] [cursor=pointer]:
+          - /url: /wtt_personal_stats.html?cat=ms
+      - generic [ref=f13e54]:
+        - generic [ref=f13e55]: Data Table
+        - heading "WTT 积分数据表" [level=2] [ref=f13e56]
+      - generic [ref=f13e57]:
+        - generic [ref=f13e58]:
+          - text: 当前排序：
+          - strong [ref=f13e59]: 当前积分降序
+        - generic [ref=f13e60]: 实时积分
+        - generic [ref=f13e61]:
+          - button " 导出图片" [ref=f13e62] [cursor=pointer]:
+            - generic [ref=f13e63]: 
+            - generic [ref=f13e64]: 导出图片
+          - button "导出图片" [ref=f13e65] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f13e66]: 
+      - table [ref=f13e80]:
+        - rowgroup [ref=f13e81]:
+          - row [ref=f13e82]:
+            - columnheader "#" [ref=f13e1309] [cursor=pointer]
+            - columnheader "姓名" [ref=f13e1310] [cursor=pointer]
+            - columnheader "当前积分" [ref=f13e1311] [cursor=pointer]
+            - columnheader "积分变化" [ref=f13e1312] [cursor=pointer]
+            - columnheader "排名变化" [ref=f13e87]
+            - columnheader "总场次" [ref=f13e1313] [cursor=pointer]
+            - columnheader "胜率" [ref=f13e1314] [cursor=pointer]
+        - rowgroup [ref=f13e90]:
+          - row [ref=f13e1315]:
+            - cell "1" [ref=f13e1316]
+            - cell [ref=f13e1317]:
+              - generic "CHN · China" [ref=f13e1318]
+              - link "WANG Chuqin" [ref=f13e1319] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-9dcfe5c034f56984
+              - button "" [ref=f13e1320] [cursor=pointer]
+            - cell [ref=f13e1322]:
+              - strong [ref=f13e1323]: "2270.2"
+            - cell "-" [ref=f13e1324]
+            - cell "-" [ref=f13e1325]
+            - cell "51" [ref=f13e1326]
+            - cell "88%" [ref=f13e1327]
+          - row [ref=f13e1328]:
+            - cell "2" [ref=f13e1329]
+            - cell [ref=f13e1330]:
+              - generic "CHN · China" [ref=f13e1331]
+              - link "FAN Zhendong" [ref=f13e1332] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-1e9a8a79c3e04a5d
+              - button "" [ref=f13e1333] [cursor=pointer]
+            - cell [ref=f13e1335]:
+              - strong [ref=f13e1336]: "2245.1"
+            - cell "-" [ref=f13e1337]
+            - cell "-" [ref=f13e1338]
+            - cell "33" [ref=f13e1339]
+            - cell "85%" [ref=f13e1340]
+          - row [ref=f13e1341]:
+            - cell "3" [ref=f13e1342]
+            - cell [ref=f13e1343]:
+              - generic "FRA · France" [ref=f13e1344]
+              - link "Felix LEBRUN" [ref=f13e1345] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-15b34c77655fa1a3
+              - button "" [ref=f13e1346] [cursor=pointer]
+            - cell [ref=f13e1348]:
+              - strong [ref=f13e1349]: "2202.4"
+            - cell "-" [ref=f13e1350]
+            - cell "-" [ref=f13e1351]
+            - cell "66" [ref=f13e1352]
+            - cell "82%" [ref=f13e1353]
+          - row [ref=f13e1354]:
+            - cell "4" [ref=f13e1355]
+            - cell [ref=f13e1356]:
+              - generic "BRA · Brazil" [ref=f13e1357]
+              - link "Hugo CALDERANO" [ref=f13e1358] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-e44c63d5a0358649
+              - button "" [ref=f13e1359] [cursor=pointer]
+            - cell [ref=f13e1361]:
+              - strong [ref=f13e1362]: "2125.5"
+            - cell "-" [ref=f13e1363]
+            - cell "-" [ref=f13e1364]
+            - cell "59" [ref=f13e1365]
+            - cell "80%" [ref=f13e1366]
+          - row [ref=f13e1367]:
+            - cell "5" [ref=f13e1368]
+            - cell [ref=f13e1369]:
+              - generic "CHN · China" [ref=f13e1370]
+              - link "LIN Shidong" [ref=f13e1371] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-bf1a7fe862d05bb4
+              - button "" [ref=f13e1372] [cursor=pointer]
+            - cell [ref=f13e1374]:
+              - strong [ref=f13e1375]: "2109.9"
+            - cell "-" [ref=f13e1376]
+            - cell "-" [ref=f13e1377]
+            - cell "60" [ref=f13e1378]
+            - cell "72%" [ref=f13e1379]
+          - row [ref=f13e1380]:
+            - cell "6" [ref=f13e1381]
+            - cell [ref=f13e1382]:
+              - generic "JPN · Japan" [ref=f13e1383]
+              - link "Sora MATSUSHIMA" [ref=f13e1384] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-988074b824960d8c
+              - button "" [ref=f13e1385] [cursor=pointer]
+            - cell [ref=f13e1387]:
+              - strong [ref=f13e1388]: "2109.4"
+            - cell "-" [ref=f13e1389]
+            - cell "-" [ref=f13e1390]
+            - cell "69" [ref=f13e1391]
+            - cell "74%" [ref=f13e1392]
+          - row [ref=f13e1393]:
+            - cell "7" [ref=f13e1394]
+            - cell [ref=f13e1395]:
+              - generic "JPN · Japan" [ref=f13e1396]
+              - link "Tomokazu HARIMOTO" [ref=f13e1397] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-7003f3084f16ccec
+              - button "" [ref=f13e1398] [cursor=pointer]
+            - cell [ref=f13e1400]:
+              - strong [ref=f13e1401]: "2101.9"
+            - cell "-" [ref=f13e1402]
+            - cell "-" [ref=f13e1403]
+            - cell "82" [ref=f13e1404]
+            - cell "77%" [ref=f13e1405]
+          - row [ref=f13e1406]:
+            - cell "8" [ref=f13e1407]
+            - cell [ref=f13e1408]:
+              - generic "KOR · Korea Republic" [ref=f13e1409]
+              - link "JANG Woojin" [ref=f13e1410] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-45516af9cf6ccac5
+              - button "" [ref=f13e1411] [cursor=pointer]
+            - cell [ref=f13e1413]:
+              - strong [ref=f13e1414]: "2074.7"
+            - cell "-" [ref=f13e1415]
+            - cell "-" [ref=f13e1416]
+            - cell "48" [ref=f13e1417]
+            - cell "67%" [ref=f13e1418]
+          - row [ref=f13e1419]:
+            - cell "9" [ref=f13e1420]
+            - cell [ref=f13e1421]:
+              - generic "SWE · Sweden" [ref=f13e1422]
+              - link "Truls MOREGARD" [ref=f13e1423] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-dfee32ee7b4bc082
+              - button "" [ref=f13e1424] [cursor=pointer]
+            - cell [ref=f13e1426]:
+              - strong [ref=f13e1427]: "2069.0"
+            - cell "-" [ref=f13e1428]
+            - cell "-" [ref=f13e1429]
+            - cell "62" [ref=f13e1430]
+            - cell "81%" [ref=f13e1431]
+          - row [ref=f13e1432]:
+            - cell "10" [ref=f13e1433]
+            - cell [ref=f13e1434]:
+              - generic "TPE · Chinese Taipei" [ref=f13e1435]
+              - link "LIN Yun-Ju" [ref=f13e1436] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-e4d9863242e82366
+              - button "" [ref=f13e1437] [cursor=pointer]
+            - cell [ref=f13e1439]:
+              - strong [ref=f13e1440]: "2038.6"
+            - cell "-" [ref=f13e1441]
+            - cell "-" [ref=f13e1442]
+            - cell "51" [ref=f13e1443]
+            - cell "71%" [ref=f13e1444]
+          - row [ref=f13e1445]:
+            - cell "11" [ref=f13e1446]
+            - cell [ref=f13e1447]:
+              - generic "GER · Germany" [ref=f13e1448]
+              - link "Patrick FRANZISKA" [ref=f13e1449] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-87d5f07a81ab0e3e
+              - button "" [ref=f13e1450] [cursor=pointer]
+            - cell [ref=f13e1452]:
+              - strong [ref=f13e1453]: "2009.7"
+            - cell "-" [ref=f13e1454]
+            - cell "-" [ref=f13e1455]
+            - cell "65" [ref=f13e1456]
+            - cell "60%" [ref=f13e1457]
+          - row [ref=f13e1458]:
+            - cell "12" [ref=f13e1459]
+            - cell [ref=f13e1460]:
+              - generic "CHN · China" [ref=f13e1461]
+              - link "ZHOU Qihao" [ref=f13e1462] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-e23af9e1e58a8f0d
+              - button "" [ref=f13e1463] [cursor=pointer]
+            - cell [ref=f13e1465]:
+              - strong [ref=f13e1466]: "1951.0"
+            - cell "-" [ref=f13e1467]
+            - cell "-" [ref=f13e1468]
+            - cell "54" [ref=f13e1469]
+            - cell "70%" [ref=f13e1470]
+          - row [ref=f13e1471]:
+            - cell "13" [ref=f13e1472]
+            - cell [ref=f13e1473]:
+              - generic "FRA · France" [ref=f13e1474]
+              - link "Alexis LEBRUN" [ref=f13e1475] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-2a4c5fe3568ec71f
+              - button "" [ref=f13e1476] [cursor=pointer]
+            - cell [ref=f13e1478]:
+              - strong [ref=f13e1479]: "1943.1"
+            - cell "-" [ref=f13e1480]
+            - cell "-" [ref=f13e1481]
+            - cell "62" [ref=f13e1482]
+            - cell "73%" [ref=f13e1483]
+          - row [ref=f13e1484]:
+            - cell "14" [ref=f13e1485]
+            - cell [ref=f13e1486]:
+              - generic "SWE · Sweden" [ref=f13e1487]
+              - link "Anton KALLBERG" [ref=f13e1488] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-992ffaa795837e5b
+              - button "" [ref=f13e1489] [cursor=pointer]
+            - cell [ref=f13e1491]:
+              - strong [ref=f13e1492]: "1939.6"
+            - cell "-" [ref=f13e1493]
+            - cell "-" [ref=f13e1494]
+            - cell "63" [ref=f13e1495]
+            - cell "60%" [ref=f13e1496]
+          - row [ref=f13e1497]:
+            - cell "15" [ref=f13e1498]
+            - cell [ref=f13e1499]:
+              - generic "TPE · Chinese Taipei" [ref=f13e1500]
+              - link "KUO Guan-Hong" [ref=f13e1501] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-d033219687b6e4fa
+              - button "" [ref=f13e1502] [cursor=pointer]
+            - cell [ref=f13e1504]:
+              - strong [ref=f13e1505]: "1922.7"
+            - cell "-" [ref=f13e1506]
+            - cell "-" [ref=f13e1507]
+            - cell "47" [ref=f13e1508]
+            - cell "60%" [ref=f13e1509]
+          - row [ref=f13e1510]:
+            - cell "16" [ref=f13e1511]
+            - cell [ref=f13e1512]:
+              - generic "CHN · China" [ref=f13e1513]
+              - link "WEN Ruibo" [ref=f13e1514] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-93ab1426a4fa082a
+              - button "" [ref=f13e1515] [cursor=pointer]
+            - cell [ref=f13e1517]:
+              - strong [ref=f13e1518]: "1916.3"
+            - cell "-" [ref=f13e1519]
+            - cell "-" [ref=f13e1520]
+            - cell "58" [ref=f13e1521]
+            - cell "69%" [ref=f13e1522]
+          - row [ref=f13e1523]:
+            - cell "17" [ref=f13e1524]
+            - cell [ref=f13e1525]:
+              - generic "GER · Germany" [ref=f13e1526]
+              - link "Dang QIU" [ref=f13e1527] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-a5cfa30c9a226f70
+              - button "" [ref=f13e1528] [cursor=pointer]
+            - cell [ref=f13e1530]:
+              - strong [ref=f13e1531]: "1915.2"
+            - cell "-" [ref=f13e1532]
+            - cell "-" [ref=f13e1533]
+            - cell "64" [ref=f13e1534]
+            - cell "59%" [ref=f13e1535]
+          - row [ref=f13e1536]:
+            - cell "18" [ref=f13e1537]
+            - cell [ref=f13e1538]:
+              - generic "CHN · China" [ref=f13e1539]
+              - link "LI Tianyang" [ref=f13e1540] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-42b2b15f95b5a183
+              - button "" [ref=f13e1541] [cursor=pointer]
+            - cell [ref=f13e1543]:
+              - strong [ref=f13e1544]: "1913.4"
+            - cell "-" [ref=f13e1545]
+            - cell "-" [ref=f13e1546]
+            - cell "35" [ref=f13e1547]
+            - cell "77%" [ref=f13e1548]
+          - row [ref=f13e1549]:
+            - cell "19" [ref=f13e1550]
+            - cell [ref=f13e1551]:
+              - generic "JPN · Japan" [ref=f13e1552]
+              - link "Shunsuke TOGAMI" [ref=f13e1553] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-4ceb4aace0c45b98
+              - button "" [ref=f13e1554] [cursor=pointer]
+            - cell [ref=f13e1556]:
+              - strong [ref=f13e1557]: "1912.1"
+            - cell "-" [ref=f13e1558]
+            - cell "-" [ref=f13e1559]
+            - cell "63" [ref=f13e1560]
+            - cell "67%" [ref=f13e1561]
+          - row [ref=f13e1562]:
+            - cell "20" [ref=f13e1563]
+            - cell [ref=f13e1564]:
+              - generic "CHN · China" [ref=f13e1565]
+              - link "LIANG Jingkun" [ref=f13e1566] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-3ef13592333dff86
+              - button "" [ref=f13e1567] [cursor=pointer]
+            - cell [ref=f13e1569]:
+              - strong [ref=f13e1570]: "1908.3"
+            - cell "-" [ref=f13e1571]
+            - cell "-" [ref=f13e1572]
+            - cell "24" [ref=f13e1573]
+            - cell "54%" [ref=f13e1574]
+          - row [ref=f13e1575]:
+            - cell "21" [ref=f13e1576]
+            - cell [ref=f13e1577]:
+              - generic "TPE · Chinese Taipei" [ref=f13e1578]
+              - link "FENG Yi-Hsin" [ref=f13e1579] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-e61a04b44bc41a48
+              - button "" [ref=f13e1580] [cursor=pointer]
+            - cell [ref=f13e1582]:
+              - strong [ref=f13e1583]: "1907.8"
+            - cell "-" [ref=f13e1584]
+            - cell "-" [ref=f13e1585]
+            - cell "71" [ref=f13e1586]
+            - cell "61%" [ref=f13e1587]
+          - row [ref=f13e1588]:
+            - cell "22" [ref=f13e1589]
+            - cell [ref=f13e1590]:
+              - generic "KOR · Korea Republic" [ref=f13e1591]
+              - link "OH Junsung" [ref=f13e1592] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-9b1e56d80370b1ec
+              - button "" [ref=f13e1593] [cursor=pointer]
+            - cell [ref=f13e1595]:
+              - strong [ref=f13e1596]: "1899.2"
+            - cell "-" [ref=f13e1597]
+            - cell "-" [ref=f13e1598]
+            - cell "38" [ref=f13e1599]
+            - cell "58%" [ref=f13e1600]
+          - row [ref=f13e1601]:
+            - cell "23" [ref=f13e1602]
+            - cell [ref=f13e1603]:
+              - generic "RUS · Russia" [ref=f13e1604]
+              - link "Vladimir SIDORENKO" [ref=f13e1605] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-71bb9bcf06bc4a0b
+              - button "" [ref=f13e1606] [cursor=pointer]
+            - cell [ref=f13e1608]:
+              - strong [ref=f13e1609]: "1893.9"
+            - cell "-" [ref=f13e1610]
+            - cell "-" [ref=f13e1611]
+            - cell "47" [ref=f13e1612]
+            - cell "64%" [ref=f13e1613]
+          - row [ref=f13e1614]:
+            - cell "24" [ref=f13e1615]
+            - cell [ref=f13e1616]:
+              - generic "SWE · Sweden" [ref=f13e1617]
+              - link "Elias RANEFUR" [ref=f13e1618] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-2a711fda514ba846
+              - button "" [ref=f13e1619] [cursor=pointer]
+            - cell [ref=f13e1621]:
+              - strong [ref=f13e1622]: "1893.2"
+            - cell "-" [ref=f13e1623]
+            - cell "-" [ref=f13e1624]
+            - cell "55" [ref=f13e1625]
+            - cell "73%" [ref=f13e1626]
+          - row [ref=f13e1627]:
+            - cell "25" [ref=f13e1628]
+            - cell [ref=f13e1629]:
+              - generic "CHN · China" [ref=f13e1630]
+              - link "XIANG Peng" [ref=f13e1631] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-1bd6d26e094d302a
+              - button "" [ref=f13e1632] [cursor=pointer]
+            - cell [ref=f13e1634]:
+              - strong [ref=f13e1635]: "1888.0"
+            - cell "-" [ref=f13e1636]
+            - cell "-" [ref=f13e1637]
+            - cell "41" [ref=f13e1638]
+            - cell "59%" [ref=f13e1639]
+          - row [ref=f13e1640]:
+            - cell "26" [ref=f13e1641]
+            - cell [ref=f13e1642]:
+              - generic "GER · Germany" [ref=f13e1643]
+              - link "Dimitrij OVTCHAROV" [ref=f13e1644] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-c6c1cc83aee9cd77
+              - button "" [ref=f13e1645] [cursor=pointer]
+            - cell [ref=f13e1647]:
+              - strong [ref=f13e1648]: "1884.4"
+            - cell "-" [ref=f13e1649]
+            - cell "-" [ref=f13e1650]
+            - cell "51" [ref=f13e1651]
+            - cell "63%" [ref=f13e1652]
+          - row [ref=f13e1653]:
+            - cell "27" [ref=f13e1654]
+            - cell [ref=f13e1655]:
+              - generic "CHN · China" [ref=f13e1656]
+              - link "LIN Gaoyuan" [ref=f13e1657] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-54767eb4f1d237e0
+              - button "" [ref=f13e1658] [cursor=pointer]
+            - cell [ref=f13e1660]:
+              - strong [ref=f13e1661]: "1879.0"
+            - cell "-" [ref=f13e1662]
+            - cell "-" [ref=f13e1663]
+            - cell "2" [ref=f13e1664]
+            - cell "0%" [ref=f13e1665]
+          - row [ref=f13e1666]:
+            - cell "28" [ref=f13e1667]
+            - cell [ref=f13e1668]:
+              - generic "NED · Netherlands" [ref=f13e1669]
+              - link "Leo DE NODREST" [ref=f13e1670] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-852513ad402e8171
+              - button "" [ref=f13e1671] [cursor=pointer]
+            - cell [ref=f13e1673]:
+              - strong [ref=f13e1674]: "1854.5"
+            - cell "-" [ref=f13e1675]
+            - cell "-" [ref=f13e1676]
+            - cell "45" [ref=f13e1677]
+            - cell "64%" [ref=f13e1678]
+          - row [ref=f13e1679]:
+            - cell "29" [ref=f13e1680]
+            - cell [ref=f13e1681]:
+              - generic "JPN · Japan" [ref=f13e1682]
+              - link "Yukiya UDA" [ref=f13e1683] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-f875c4c5f2493541
+              - button "" [ref=f13e1684] [cursor=pointer]
+            - cell [ref=f13e1686]:
+              - strong [ref=f13e1687]: "1850.1"
+            - cell "-" [ref=f13e1688]
+            - cell "-" [ref=f13e1689]
+            - cell "43" [ref=f13e1690]
+            - cell "58%" [ref=f13e1691]
+          - row [ref=f13e1692]:
+            - cell "30" [ref=f13e1693]
+            - cell [ref=f13e1694]:
+              - generic "IRI · Iran" [ref=f13e1695]
+              - link "Noshad ALAMIYAN" [ref=f13e1696] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-52b78332d770f5ae
+              - button "" [ref=f13e1697] [cursor=pointer]
+            - cell [ref=f13e1699]:
+              - strong [ref=f13e1700]: "1836.6"
+            - cell "-" [ref=f13e1701]
+            - cell "-" [ref=f13e1702]
+            - cell "27" [ref=f13e1703]
+            - cell "67%" [ref=f13e1704]
+          - row [ref=f13e1705]:
+            - cell "31" [ref=f13e1706]
+            - cell [ref=f13e1707]:
+              - generic "SWE · Sweden" [ref=f13e1708]
+              - link "Kristian KARLSSON" [ref=f13e1709] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-08650c31a4963e95
+              - button "" [ref=f13e1710] [cursor=pointer]
+            - cell [ref=f13e1712]:
+              - strong [ref=f13e1713]: "1827.5"
+            - cell "-" [ref=f13e1714]
+            - cell "-" [ref=f13e1715]
+            - cell "43" [ref=f13e1716]
+            - cell "53%" [ref=f13e1717]
+          - row [ref=f13e1718]:
+            - cell "32" [ref=f13e1719]
+            - cell [ref=f13e1720]:
+              - generic "GER · Germany" [ref=f13e1721]
+              - link "Benedikt DUDA" [ref=f13e1722] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-61c95f6f91e81b0b
+              - button "" [ref=f13e1723] [cursor=pointer]
+            - cell [ref=f13e1725]:
+              - strong [ref=f13e1726]: "1822.4"
+            - cell "-" [ref=f13e1727]
+            - cell "-" [ref=f13e1728]
+            - cell "66" [ref=f13e1729]
+            - cell "59%" [ref=f13e1730]
+          - row [ref=f13e1731]:
+            - cell "33" [ref=f13e1732]
+            - cell [ref=f13e1733]:
+              - generic "KOR · Korea Republic" [ref=f13e1734]
+              - link "PARK Ganghyeon" [ref=f13e1735] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-09071287bc352e7b
+              - button "" [ref=f13e1736] [cursor=pointer]
+            - cell [ref=f13e1738]:
+              - strong [ref=f13e1739]: "1813.6"
+            - cell "-" [ref=f13e1740]
+            - cell "-" [ref=f13e1741]
+            - cell "36" [ref=f13e1742]
+            - cell "58%" [ref=f13e1743]
+          - row [ref=f13e1744]:
+            - cell "34" [ref=f13e1745]
+            - cell [ref=f13e1746]:
+              - generic "KOR · Korea Republic" [ref=f13e1747]
+              - link "LEE Sang Su" [ref=f13e1748] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-589f2bc8d363f314
+              - button "" [ref=f13e1749] [cursor=pointer]
+            - cell [ref=f13e1751]:
+              - strong [ref=f13e1752]: "1813.1"
+            - cell "-" [ref=f13e1753]
+            - cell "-" [ref=f13e1754]
+            - cell "3" [ref=f13e1755]
+            - cell "33%" [ref=f13e1756]
+          - row [ref=f13e1757]:
+            - cell "35" [ref=f13e1758]
+            - cell [ref=f13e1759]:
+              - generic "CRO · Croatia" [ref=f13e1760]
+              - link "Tomislav PUCAR" [ref=f13e1761] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-0399c0e9e1436d0d
+              - button "" [ref=f13e1762] [cursor=pointer]
+            - cell [ref=f13e1764]:
+              - strong [ref=f13e1765]: "1811.4"
+            - cell "-" [ref=f13e1766]
+            - cell "-" [ref=f13e1767]
+            - cell "38" [ref=f13e1768]
+            - cell "47%" [ref=f13e1769]
+          - row [ref=f13e1770]:
+            - cell "36" [ref=f13e1771]
+            - cell [ref=f13e1772]:
+              - generic "CHN · China" [ref=f13e1773]
+              - link "ZHAO Zihao" [ref=f13e1774] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-e3157570a561def4
+              - button "" [ref=f13e1775] [cursor=pointer]
+            - cell [ref=f13e1777]:
+              - strong [ref=f13e1778]: "1810.2"
+            - cell "-" [ref=f13e1779]
+            - cell "-" [ref=f13e1780]
+            - cell "1" [ref=f13e1781]
+            - cell "100%" [ref=f13e1782]
+          - row [ref=f13e1783]:
+            - cell "37" [ref=f13e1784]
+            - cell [ref=f13e1785]:
+              - generic "DEN · Denmark" [ref=f13e1786]
+              - link "Anders LIND" [ref=f13e1787] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-6ad9f9b37c57530f
+              - button "" [ref=f13e1788] [cursor=pointer]
+            - cell [ref=f13e1790]:
+              - strong [ref=f13e1791]: "1809.1"
+            - cell "-" [ref=f13e1792]
+            - cell "-" [ref=f13e1793]
+            - cell "49" [ref=f13e1794]
+            - cell "57%" [ref=f13e1795]
+          - row [ref=f13e1796]:
+            - cell "38" [ref=f13e1797]
+            - cell [ref=f13e1798]:
+              - generic "SLO · Slovenia" [ref=f13e1799]
+              - link "Darko JORGIC" [ref=f13e1800] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-61af46a27df15396
+              - button "" [ref=f13e1801] [cursor=pointer]
+            - cell [ref=f13e1803]:
+              - strong [ref=f13e1804]: "1808.0"
+            - cell "-" [ref=f13e1805]
+            - cell "-" [ref=f13e1806]
+            - cell "57" [ref=f13e1807]
+            - cell "61%" [ref=f13e1808]
+          - row [ref=f13e1809]:
+            - cell "39" [ref=f13e1810]
+            - cell [ref=f13e1811]:
+              - generic "FRA · France" [ref=f13e1812]
+              - link "Simon GAUZY" [ref=f13e1813] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-4f701c531e94efb7
+              - button "" [ref=f13e1814] [cursor=pointer]
+            - cell [ref=f13e1816]:
+              - strong [ref=f13e1817]: "1807.6"
+            - cell "-" [ref=f13e1818]
+            - cell "-" [ref=f13e1819]
+            - cell "50" [ref=f13e1820]
+            - cell "58%" [ref=f13e1821]
+          - row [ref=f13e1822]:
+            - cell "40" [ref=f13e1823]
+            - cell [ref=f13e1824]:
+              - generic "CHN · China" [ref=f13e1825]
+              - link "YUAN Licen" [ref=f13e1826] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-dbb22787b8e79163
+              - button "" [ref=f13e1827] [cursor=pointer]
+            - cell [ref=f13e1829]:
+              - strong [ref=f13e1830]: "1803.9"
+            - cell "-" [ref=f13e1831]
+            - cell "-" [ref=f13e1832]
+            - cell "26" [ref=f13e1833]
+            - cell "69%" [ref=f13e1834]
+          - row [ref=f13e1835]:
+            - cell "41" [ref=f13e1836]
+            - cell [ref=f13e1837]:
+              - generic "CHN · China" [ref=f13e1838]
+              - link "XU Yingbin" [ref=f13e1839] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-2aec58ec30fb3ba0
+              - button "" [ref=f13e1840] [cursor=pointer]
+            - cell [ref=f13e1842]:
+              - strong [ref=f13e1843]: "1803.8"
+            - cell "-" [ref=f13e1844]
+            - cell "-" [ref=f13e1845]
+            - cell "27" [ref=f13e1846]
+            - cell "70%" [ref=f13e1847]
+          - row [ref=f13e1848]:
+            - cell "42" [ref=f13e1849]
+            - cell [ref=f13e1850]:
+              - generic "FRA · France" [ref=f13e1851]
+              - link "Flavien COTON" [ref=f13e1852] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-26646a237833d0f7
+              - button "" [ref=f13e1853] [cursor=pointer]
+            - cell [ref=f13e1855]:
+              - strong [ref=f13e1856]: "1794.1"
+            - cell "-" [ref=f13e1857]
+            - cell "-" [ref=f13e1858]
+            - cell "48" [ref=f13e1859]
+            - cell "65%" [ref=f13e1860]
+          - row [ref=f13e1861]:
+            - cell "43" [ref=f13e1862]
+            - cell [ref=f13e1863]:
+              - generic "JPN · Japan" [ref=f13e1864]
+              - link "Maharu YOSHIMURA" [ref=f13e1865] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-cc887f843293b100
+              - button "" [ref=f13e1866] [cursor=pointer]
+            - cell [ref=f13e1868]:
+              - strong [ref=f13e1869]: "1790.2"
+            - cell "-" [ref=f13e1870]
+            - cell "-" [ref=f13e1871]
+            - cell "37" [ref=f13e1872]
+            - cell "65%" [ref=f13e1873]
+          - row [ref=f13e1874]:
+            - cell "44" [ref=f13e1875]
+            - cell [ref=f13e1876]:
+              - generic "GER · Germany" [ref=f13e1877]
+              - link "Andre BERTELSMEIER" [ref=f13e1878] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-c838a4065b32960a
+              - button "" [ref=f13e1879] [cursor=pointer]
+            - cell [ref=f13e1881]:
+              - strong [ref=f13e1882]: "1788.2"
+            - cell "-" [ref=f13e1883]
+            - cell "-" [ref=f13e1884]
+            - cell "52" [ref=f13e1885]
+            - cell "56%" [ref=f13e1886]
+          - row [ref=f13e1887]:
+            - cell "45" [ref=f13e1888]
+            - cell [ref=f13e1889]:
+              - generic "GER · Germany" [ref=f13e1890]
+              - link "Wim VERDONSCHOT" [ref=f13e1891] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-2f1660878e5cb26b
+              - button "" [ref=f13e1892] [cursor=pointer]
+            - cell [ref=f13e1894]:
+              - strong [ref=f13e1895]: "1787.1"
+            - cell "-" [ref=f13e1896]
+            - cell "-" [ref=f13e1897]
+            - cell "46" [ref=f13e1898]
+            - cell "70%" [ref=f13e1899]
+          - row [ref=f13e1900]:
+            - cell "46" [ref=f13e1901]
+            - cell [ref=f13e1902]:
+              - generic "KOR · Korea Republic" [ref=f13e1903]
+              - link "CHO Seungmin" [ref=f13e1904] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-f6331365250ff6c1
+              - button "" [ref=f13e1905] [cursor=pointer]
+            - cell [ref=f13e1907]:
+              - strong [ref=f13e1908]: "1779.5"
+            - cell "-" [ref=f13e1909]
+            - cell "-" [ref=f13e1910]
+            - cell "7" [ref=f13e1911]
+            - cell "86%" [ref=f13e1912]
+          - row [ref=f13e1913]:
+            - cell "47" [ref=f13e1914]
+            - cell [ref=f13e1915]:
+              - generic "HKG · Hong Kong, China" [ref=f13e1916]
+              - link "WONG Chun Ting" [ref=f13e1917] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-e251c8d86ed8d024
+              - button "" [ref=f13e1918] [cursor=pointer]
+            - cell [ref=f13e1920]:
+              - strong [ref=f13e1921]: "1775.7"
+            - cell "-" [ref=f13e1922]
+            - cell "-" [ref=f13e1923]
+            - cell "37" [ref=f13e1924]
+            - cell "54%" [ref=f13e1925]
+          - row [ref=f13e1926]:
+            - cell "48" [ref=f13e1927]
+            - cell [ref=f13e1928]:
+              - generic "GRE · Greece" [ref=f13e1929]
+              - link "Panagiotis GIONIS" [ref=f13e1930] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-f5fb22fdf4df5301
+              - button "" [ref=f13e1931] [cursor=pointer]
+            - cell [ref=f13e1933]:
+              - strong [ref=f13e1934]: "1773.4"
+            - cell "-" [ref=f13e1935]
+            - cell "-" [ref=f13e1936]
+            - cell "15" [ref=f13e1937]
+            - cell "73%" [ref=f13e1938]
+          - row [ref=f13e1939]:
+            - cell "49" [ref=f13e1940]
+            - cell [ref=f13e1941]:
+              - generic "USA · USA" [ref=f13e1942]
+              - link "Kanak JHA" [ref=f13e1943] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-16abc8643de599a8
+              - button "" [ref=f13e1944] [cursor=pointer]
+            - cell [ref=f13e1946]:
+              - strong [ref=f13e1947]: "1769.5"
+            - cell "-" [ref=f13e1948]
+            - cell "-" [ref=f13e1949]
+            - cell "49" [ref=f13e1950]
+            - cell "55%" [ref=f13e1951]
+          - row [ref=f13e1952]:
+            - cell "50" [ref=f13e1953]
+            - cell [ref=f13e1954]:
+              - generic "KOR · Korea Republic" [ref=f13e1955]
+              - link "KANG Dongsoo" [ref=f13e1956] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-dfe1afbb131bb3ef
+              - button "" [ref=f13e1957] [cursor=pointer]
+            - cell [ref=f13e1959]:
+              - strong [ref=f13e1960]: "1766.6"
+            - cell "-" [ref=f13e1961]
+            - cell "-" [ref=f13e1962]
+            - cell "14" [ref=f13e1963]
+            - cell "64%" [ref=f13e1964]
+          - row [ref=f13e1965]:
+            - cell "51" [ref=f13e1966]
+            - cell [ref=f13e1967]:
+              - generic "KAZ · Kazakhstan" [ref=f13e1968]
+              - link "Kirill GERASSIMENKO" [ref=f13e1969] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-f74c4ef03e4f472c
+              - button "" [ref=f13e1970] [cursor=pointer]
+            - cell [ref=f13e1972]:
+              - strong [ref=f13e1973]: "1766.2"
+            - cell "-" [ref=f13e1974]
+            - cell "-" [ref=f13e1975]
+            - cell "69" [ref=f13e1976]
+            - cell "64%" [ref=f13e1977]
+          - row [ref=f13e1978]:
+            - cell "52" [ref=f13e1979]
+            - cell [ref=f13e1980]:
+              - generic "AUS · Australia" [ref=f13e1981]
+              - link "Finn LUU" [ref=f13e1982] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-af7830b66ca8a38a
+              - button "" [ref=f13e1983] [cursor=pointer]
+            - cell [ref=f13e1985]:
+              - strong [ref=f13e1986]: "1764.3"
+            - cell "-" [ref=f13e1987]
+            - cell "-" [ref=f13e1988]
+            - cell "26" [ref=f13e1989]
+            - cell "62%" [ref=f13e1990]
+          - row [ref=f13e1991]:
+            - cell "53" [ref=f13e1992]
+            - cell [ref=f13e1993]:
+              - generic "ARG · Argentina" [ref=f13e1994]
+              - link "Horacio CIFUENTES" [ref=f13e1995] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-4d8481cc6d56f878
+              - button "" [ref=f13e1996] [cursor=pointer]
+            - cell [ref=f13e1998]:
+              - strong [ref=f13e1999]: "1764.0"
+            - cell "-" [ref=f13e2000]
+            - cell "-" [ref=f13e2001]
+            - cell "9" [ref=f13e2002]
+            - cell "67%" [ref=f13e2003]
+          - row [ref=f13e2004]:
+            - cell "54" [ref=f13e2005]
+            - cell [ref=f13e2006]:
+              - generic "JPN · Japan" [ref=f13e2007]
+              - link "Hiroto SHINOZUKA" [ref=f13e2008] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-2208155c97e7ff10
+              - button "" [ref=f13e2009] [cursor=pointer]
+            - cell [ref=f13e2011]:
+              - strong [ref=f13e2012]: "1756.2"
+            - cell "-" [ref=f13e2013]
+            - cell "-" [ref=f13e2014]
+            - cell "59" [ref=f13e2015]
+            - cell "63%" [ref=f13e2016]
+          - row [ref=f13e2017]:
+            - cell "55" [ref=f13e2018]
+            - cell [ref=f13e2019]:
+              - generic "KOR · Korea Republic" [ref=f13e2020]
+              - link "AN Jaehyun" [ref=f13e2021] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-12eb5812fc405096
+              - button "" [ref=f13e2022] [cursor=pointer]
+            - cell [ref=f13e2024]:
+              - strong [ref=f13e2025]: "1755.0"
+            - cell "-" [ref=f13e2026]
+            - cell "-" [ref=f13e2027]
+            - cell "37" [ref=f13e2028]
+            - cell "46%" [ref=f13e2029]
+          - row [ref=f13e2030]:
+            - cell "56" [ref=f13e2031]
+            - cell [ref=f13e2032]:
+              - generic "HUN · Hungary" [ref=f13e2033]
+              - link "Csaba ANDRAS" [ref=f13e2034] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-3be5d37c5a7f72f0
+              - button "" [ref=f13e2035] [cursor=pointer]
+            - cell [ref=f13e2037]:
+              - strong [ref=f13e2038]: "1754.1"
+            - cell "-" [ref=f13e2039]
+            - cell "-" [ref=f13e2040]
+            - cell "57" [ref=f13e2041]
+            - cell "67%" [ref=f13e2042]
+          - row [ref=f13e2043]:
+            - cell "57" [ref=f13e2044]
+            - cell [ref=f13e2045]:
+              - generic "CHN · China" [ref=f13e2046]
+              - link "YAN An" [ref=f13e2047] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-2ce6bac24ca200a6
+              - button "" [ref=f13e2048] [cursor=pointer]
+            - cell [ref=f13e2050]:
+              - strong [ref=f13e2051]: "1752.2"
+            - cell "-" [ref=f13e2052]
+            - cell "-" [ref=f13e2053]
+            - cell "3" [ref=f13e2054]
+            - cell "0%" [ref=f13e2055]
+          - row [ref=f13e2056]:
+            - cell "58" [ref=f13e2057]
+            - cell [ref=f13e2058]:
+              - generic "CHN · China" [ref=f13e2059]
+              - link "HUANG Youzheng" [ref=f13e2060] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-7e1a215984d8a48d
+              - button "" [ref=f13e2061] [cursor=pointer]
+            - cell [ref=f13e2063]:
+              - strong [ref=f13e2064]: "1750.9"
+            - cell "-" [ref=f13e2065]
+            - cell "-" [ref=f13e2066]
+            - cell "38" [ref=f13e2067]
+            - cell "61%" [ref=f13e2068]
+          - row [ref=f13e2069]:
+            - cell "59" [ref=f13e2070]
+            - cell [ref=f13e2071]:
+              - generic "FRA · France" [ref=f13e2072]
+              - link "Thibault PORET" [ref=f13e2073] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-d107cd7c9b55acb8
+              - button "" [ref=f13e2074] [cursor=pointer]
+            - cell [ref=f13e2076]:
+              - strong [ref=f13e2077]: "1735.1"
+            - cell "-" [ref=f13e2078]
+            - cell "-" [ref=f13e2079]
+            - cell "44" [ref=f13e2080]
+            - cell "52%" [ref=f13e2081]
+          - row [ref=f13e2082]:
+            - cell "60" [ref=f13e2083]
+            - cell [ref=f13e2084]:
+              - generic "JPN · Japan" [ref=f13e2085]
+              - link "Koki NIWA" [ref=f13e2086] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-cfc90cdcd0321710
+              - button "" [ref=f13e2087] [cursor=pointer]
+            - cell [ref=f13e2089]:
+              - strong [ref=f13e2090]: "1733.6"
+            - cell "-" [ref=f13e2091]
+            - cell "-" [ref=f13e2092]
+            - cell "5" [ref=f13e2093]
+            - cell "60%" [ref=f13e2094]
+          - row [ref=f13e2095]:
+            - cell "61" [ref=f13e2096]
+            - cell [ref=f13e2097]:
+              - generic "GER · Germany" [ref=f13e2098]
+              - link "Bastian STEGER" [ref=f13e2099] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-773514e3ab0c4707
+              - button "" [ref=f13e2100] [cursor=pointer]
+            - cell [ref=f13e2102]:
+              - strong [ref=f13e2103]: "1733.2"
+            - cell "-" [ref=f13e2104]
+            - cell "-" [ref=f13e2105]
+            - cell "22" [ref=f13e2106]
+            - cell "68%" [ref=f13e2107]
+          - row [ref=f13e2108]:
+            - cell "62" [ref=f13e2109]
+            - cell [ref=f13e2110]:
+              - generic "CHN · China" [ref=f13e2111]
+              - link "ZHENG Peifeng" [ref=f13e2112] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-4bf6ffb58b64d201
+              - button "" [ref=f13e2113] [cursor=pointer]
+            - cell [ref=f13e2115]:
+              - strong [ref=f13e2116]: "1725.6"
+            - cell "-" [ref=f13e2117]
+            - cell "-" [ref=f13e2118]
+            - cell "5" [ref=f13e2119]
+            - cell "80%" [ref=f13e2120]
+          - row [ref=f13e2121]:
+            - cell "63" [ref=f13e2122]
+            - cell [ref=f13e2123]:
+              - generic "DEN · Denmark" [ref=f13e2124]
+              - link "Jonathan GROTH" [ref=f13e2125] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-fb6fa976c3d66062
+              - button "" [ref=f13e2126] [cursor=pointer]
+            - cell [ref=f13e2128]:
+              - strong [ref=f13e2129]: "1723.8"
+            - cell "-" [ref=f13e2130]
+            - cell "-" [ref=f13e2131]
+            - cell "28" [ref=f13e2132]
+            - cell "39%" [ref=f13e2133]
+          - row [ref=f13e2134]:
+            - cell "64" [ref=f13e2135]
+            - cell [ref=f13e2136]:
+              - generic "POL · Poland" [ref=f13e2137]
+              - link "Milosz REDZIMSKI" [ref=f13e2138] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-4e816a31f751d585
+              - button "" [ref=f13e2139] [cursor=pointer]
+            - cell [ref=f13e2141]:
+              - strong [ref=f13e2142]: "1723.6"
+            - cell "-" [ref=f13e2143]
+            - cell "-" [ref=f13e2144]
+            - cell "19" [ref=f13e2145]
+            - cell "47%" [ref=f13e2146]
+          - row [ref=f13e2147]:
+            - cell "65" [ref=f13e2148]
+            - cell [ref=f13e2149]:
+              - generic "TPE · Chinese Taipei" [ref=f13e2150]
+              - link "KAO Cheng-Jui" [ref=f13e2151] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-6ca4b4aec4d831aa
+              - button "" [ref=f13e2152] [cursor=pointer]
+            - cell [ref=f13e2154]:
+              - strong [ref=f13e2155]: "1720.5"
+            - cell "-" [ref=f13e2156]
+            - cell "-" [ref=f13e2157]
+            - cell "12" [ref=f13e2158]
+            - cell "50%" [ref=f13e2159]
+          - row [ref=f13e2160]:
+            - cell "66" [ref=f13e2161]
+            - cell [ref=f13e2162]:
+              - generic "KOR · Korea Republic" [ref=f13e2163]
+              - link "PARK Gyuhyeon" [ref=f13e2164] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-a40675adb2991fa1
+              - button "" [ref=f13e2165] [cursor=pointer]
+            - cell [ref=f13e2167]:
+              - strong [ref=f13e2168]: "1719.7"
+            - cell "-" [ref=f13e2169]
+            - cell "-" [ref=f13e2170]
+            - cell "30" [ref=f13e2171]
+            - cell "67%" [ref=f13e2172]
+          - row [ref=f13e2173]:
+            - cell "67" [ref=f13e2174]
+            - cell [ref=f13e2175]:
+              - generic "SVK · Slovak Republic" [ref=f13e2176]
+              - link "Yang WANG" [ref=f13e2177] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-808c406f65004c43
+              - button "" [ref=f13e2178] [cursor=pointer]
+            - cell [ref=f13e2180]:
+              - strong [ref=f13e2181]: "1719.0"
+            - cell "-" [ref=f13e2182]
+            - cell "-" [ref=f13e2183]
+            - cell "48" [ref=f13e2184]
+            - cell "56%" [ref=f13e2185]
+          - row [ref=f13e2186]:
+            - cell "68" [ref=f13e2187]
+            - cell [ref=f13e2188]:
+              - generic "GER · Germany" [ref=f13e2189]
+              - link "Kay STUMPER" [ref=f13e2190] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-cd6f2948ad4bd544
+              - button "" [ref=f13e2191] [cursor=pointer]
+            - cell [ref=f13e2193]:
+              - strong [ref=f13e2194]: "1718.6"
+            - cell "-" [ref=f13e2195]
+            - cell "-" [ref=f13e2196]
+            - cell "39" [ref=f13e2197]
+            - cell "56%" [ref=f13e2198]
+          - row [ref=f13e2199]:
+            - cell "69" [ref=f13e2200]
+            - cell [ref=f13e2201]:
+              - generic "JPN · Japan" [ref=f13e2202]
+              - link "Yuto MURAMATSU" [ref=f13e2203] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-4436bcdd0a4266d1
+              - button "" [ref=f13e2204] [cursor=pointer]
+            - cell [ref=f13e2206]:
+              - strong [ref=f13e2207]: "1716.3"
+            - cell "-" [ref=f13e2208]
+            - cell "-" [ref=f13e2209]
+            - cell "5" [ref=f13e2210]
+            - cell "100%" [ref=f13e2211]
+          - row [ref=f13e2212]:
+            - cell "70" [ref=f13e2213]
+            - cell [ref=f13e2214]:
+              - generic "KOR · Korea Republic" [ref=f13e2215]
+              - link "LIM Jonghoon" [ref=f13e2216] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-ccbdad4330aa5f87
+              - button "" [ref=f13e2217] [cursor=pointer]
+            - cell [ref=f13e2219]:
+              - strong [ref=f13e2220]: "1713.9"
+            - cell "-" [ref=f13e2221]
+            - cell "-" [ref=f13e2222]
+            - cell "32" [ref=f13e2223]
+            - cell "56%" [ref=f13e2224]
+          - row [ref=f13e2225]:
+            - cell "71" [ref=f13e2226]
+            - cell [ref=f13e2227]:
+              - generic "JPN · Japan" [ref=f13e2228]
+              - link "Mizuki OIKAWA" [ref=f13e2229] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-e8d6c2de72a66c2a
+              - button "" [ref=f13e2230] [cursor=pointer]
+            - cell [ref=f13e2232]:
+              - strong [ref=f13e2233]: "1713.8"
+            - cell "-" [ref=f13e2234]
+            - cell "-" [ref=f13e2235]
+            - cell "24" [ref=f13e2236]
+            - cell "63%" [ref=f13e2237]
+          - row [ref=f13e2238]:
+            - cell "72" [ref=f13e2239]
+            - cell [ref=f13e2240]:
+              - generic "GER · Germany" [ref=f13e2241]
+              - link "Ruwen FILUS" [ref=f13e2242] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-a9b16991dd5ab5d5
+              - button "" [ref=f13e2243] [cursor=pointer]
+            - cell [ref=f13e2245]:
+              - strong [ref=f13e2246]: "1713.2"
+            - cell "-" [ref=f13e2247]
+            - cell "-" [ref=f13e2248]
+            - cell "26" [ref=f13e2249]
+            - cell "50%" [ref=f13e2250]
+          - row [ref=f13e2251]:
+            - cell "73" [ref=f13e2252]
+            - cell [ref=f13e2253]:
+              - link "Benedek OLAH" [ref=f13e2254] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-afbcde5b747906b7
+              - button "" [ref=f13e2255] [cursor=pointer]
+            - cell [ref=f13e2257]:
+              - strong [ref=f13e2258]: "1713.0"
+            - cell "-" [ref=f13e2259]
+            - cell "-" [ref=f13e2260]
+            - cell "5" [ref=f13e2261]
+            - cell "80%" [ref=f13e2262]
+          - row [ref=f13e2263]:
+            - cell "74" [ref=f13e2264]
+            - cell [ref=f13e2265]:
+              - generic "CHN · China" [ref=f13e2266]
+              - link "XU Haidong" [ref=f13e2267] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-1c3fe4d23428746e
+              - button "" [ref=f13e2268] [cursor=pointer]
+            - cell [ref=f13e2270]:
+              - strong [ref=f13e2271]: "1712.6"
+            - cell "-" [ref=f13e2272]
+            - cell "-" [ref=f13e2273]
+            - cell "17" [ref=f13e2274]
+            - cell "65%" [ref=f13e2275]
+          - row [ref=f13e2276]:
+            - cell "75" [ref=f13e2277]
+            - cell [ref=f13e2278]:
+              - generic "POR · Portugal" [ref=f13e2279]
+              - link "Joao GERALDO" [ref=f13e2280] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-35d63630a78069ec
+              - button "" [ref=f13e2281] [cursor=pointer]
+            - cell [ref=f13e2283]:
+              - strong [ref=f13e2284]: "1711.6"
+            - cell "-" [ref=f13e2285]
+            - cell "-" [ref=f13e2286]
+            - cell "54" [ref=f13e2287]
+            - cell "56%" [ref=f13e2288]
+          - row [ref=f13e2289]:
+            - cell "75" [ref=f13e2290]
+            - cell [ref=f13e2291]:
+              - generic "SWE · Sweden" [ref=f13e2292]
+              - link "Jon PERSSON" [ref=f13e2293] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-fc5efb10631daf54
+              - button "" [ref=f13e2294] [cursor=pointer]
+            - cell [ref=f13e2296]:
+              - strong [ref=f13e2297]: "1711.6"
+            - cell "-" [ref=f13e2298]
+            - cell "-" [ref=f13e2299]
+            - cell "10" [ref=f13e2300]
+            - cell "70%" [ref=f13e2301]
+          - row [ref=f13e2302]:
+            - cell "77" [ref=f13e2303]
+            - cell [ref=f13e2304]:
+              - generic "ROU · Romania" [ref=f13e2305]
+              - link "Iulian CHIRITA" [ref=f13e2306] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-132d19bf56eb7eb3
+              - button "" [ref=f13e2307] [cursor=pointer]
+            - cell [ref=f13e2309]:
+              - strong [ref=f13e2310]: "1711.5"
+            - cell "-" [ref=f13e2311]
+            - cell "-" [ref=f13e2312]
+            - cell "48" [ref=f13e2313]
+            - cell "56%" [ref=f13e2314]
+          - row [ref=f13e2315]:
+            - cell "78" [ref=f13e2316]
+            - cell [ref=f13e2317]:
+              - generic "EGY · Egypt" [ref=f13e2318]
+              - link "Omar ASSAR" [ref=f13e2319] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-dee77b38ffec7dec
+              - button "" [ref=f13e2320] [cursor=pointer]
+            - cell [ref=f13e2322]:
+              - strong [ref=f13e2323]: "1710.1"
+            - cell "-" [ref=f13e2324]
+            - cell "-" [ref=f13e2325]
+            - cell "31" [ref=f13e2326]
+            - cell "48%" [ref=f13e2327]
+          - row [ref=f13e2328]:
+            - cell "79" [ref=f13e2329]
+            - cell [ref=f13e2330]:
+              - generic "KAZ · Kazakhstan" [ref=f13e2331]
+              - link "Alan KURMANGALIYEV" [ref=f13e2332] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-0da68e78aa7c7164
+              - button "" [ref=f13e2333] [cursor=pointer]
+            - cell [ref=f13e2335]:
+              - strong [ref=f13e2336]: "1709.3"
+            - cell "-" [ref=f13e2337]
+            - cell "-" [ref=f13e2338]
+            - cell "30" [ref=f13e2339]
+            - cell "57%" [ref=f13e2340]
+          - row [ref=f13e2341]:
+            - cell "80" [ref=f13e2342]
+            - cell [ref=f13e2343]:
+              - generic "CHN · China" [ref=f13e2344]
+              - link "ZHOU Kai" [ref=f13e2345] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-c2ad76c0a7821454
+              - button "" [ref=f13e2346] [cursor=pointer]
+            - cell [ref=f13e2348]:
+              - strong [ref=f13e2349]: "1709.1"
+            - cell "-" [ref=f13e2350]
+            - cell "-" [ref=f13e2351]
+            - cell "4" [ref=f13e2352]
+            - cell "75%" [ref=f13e2353]
+          - row [ref=f13e2354]:
+            - cell "81" [ref=f13e2355]
+            - cell [ref=f13e2356]:
+              - generic "NOR · Norway" [ref=f13e2357]
+              - link "Borgar HAUG" [ref=f13e2358] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-3372d0b5db696181
+              - button "" [ref=f13e2359] [cursor=pointer]
+            - cell [ref=f13e2361]:
+              - strong [ref=f13e2362]: "1707.8"
+            - cell "-" [ref=f13e2363]
+            - cell "-" [ref=f13e2364]
+            - cell "25" [ref=f13e2365]
+            - cell "52%" [ref=f13e2366]
+          - row [ref=f13e2367]:
+            - cell "82" [ref=f13e2368]
+            - cell [ref=f13e2369]:
+              - generic "CHN · China" [ref=f13e2370]
+              - link "HAO Shuai" [ref=f13e2371] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-f90ac48b9112c3f7
+              - button "" [ref=f13e2372] [cursor=pointer]
+            - cell [ref=f13e2374]:
+              - strong [ref=f13e2375]: "1707.1"
+            - cell "-" [ref=f13e2376]
+            - cell "-" [ref=f13e2377]
+            - cell "11" [ref=f13e2378]
+            - cell "45%" [ref=f13e2379]
+          - row [ref=f13e2380]:
+            - cell "83" [ref=f13e2381]
+            - cell [ref=f13e2382]:
+              - generic "JPN · Japan" [ref=f13e2383]
+              - link "Yuto KIZUKURI" [ref=f13e2384] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-4388935ab672282e
+              - button "" [ref=f13e2385] [cursor=pointer]
+            - cell [ref=f13e2387]:
+              - strong [ref=f13e2388]: "1705.2"
+            - cell "-" [ref=f13e2389]
+            - cell "-" [ref=f13e2390]
+            - cell "34" [ref=f13e2391]
+            - cell "68%" [ref=f13e2392]
+          - row [ref=f13e2393]:
+            - cell "84" [ref=f13e2394]
+            - cell [ref=f13e2395]:
+              - generic "HKG · Hong Kong, China" [ref=f13e2396]
+              - link "CHAN Baldwin" [ref=f13e2397] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-444ef180b71628dc
+              - button "" [ref=f13e2398] [cursor=pointer]
+            - cell [ref=f13e2400]:
+              - strong [ref=f13e2401]: "1704.8"
+            - cell "-" [ref=f13e2402]
+            - cell "-" [ref=f13e2403]
+            - cell "38" [ref=f13e2404]
+            - cell "53%" [ref=f13e2405]
+          - row [ref=f13e2406]:
+            - cell "84" [ref=f13e2407]
+            - cell [ref=f13e2408]:
+              - generic "CHN · China" [ref=f13e2409]
+              - link "XUE Fei" [ref=f13e2410] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-3be9d92d5ed6b019
+              - button "" [ref=f13e2411] [cursor=pointer]
+            - cell [ref=f13e2413]:
+              - strong [ref=f13e2414]: "1704.8"
+            - cell "-" [ref=f13e2415]
+            - cell "-" [ref=f13e2416]
+            - cell "27" [ref=f13e2417]
+            - cell "59%" [ref=f13e2418]
+          - row [ref=f13e2419]:
+            - cell "86" [ref=f13e2420]
+            - cell [ref=f13e2421]:
+              - generic "JPN · Japan" [ref=f13e2422]
+              - link "Yuma TANIGAKI" [ref=f13e2423] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-13b97a51650d49c5
+              - button "" [ref=f13e2424] [cursor=pointer]
+            - cell [ref=f13e2426]:
+              - strong [ref=f13e2427]: "1700.9"
+            - cell "-" [ref=f13e2428]
+            - cell "-" [ref=f13e2429]
+            - cell "21" [ref=f13e2430]
+            - cell "67%" [ref=f13e2431]
+          - row [ref=f13e2432]:
+            - cell "87" [ref=f13e2433]
+            - cell [ref=f13e2434]:
+              - generic "CHN · China" [ref=f13e2435]
+              - link "CHEN Yuanyu" [ref=f13e2436] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-112f6ed0ba02fe24
+              - button "" [ref=f13e2437] [cursor=pointer]
+            - cell [ref=f13e2439]:
+              - strong [ref=f13e2440]: "1699.3"
+            - cell "-" [ref=f13e2441]
+            - cell "-" [ref=f13e2442]
+            - cell "39" [ref=f13e2443]
+            - cell "51%" [ref=f13e2444]
+          - row [ref=f13e2445]:
+            - cell "88" [ref=f13e2446]
+            - cell [ref=f13e2447]:
+              - generic "MDA · Moldova" [ref=f13e2448]
+              - link "Vladislav URSU" [ref=f13e2449] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-baccc68c44b39938
+              - button "" [ref=f13e2450] [cursor=pointer]
+            - cell [ref=f13e2452]:
+              - strong [ref=f13e2453]: "1698.2"
+            - cell "-" [ref=f13e2454]
+            - cell "-" [ref=f13e2455]
+            - cell "21" [ref=f13e2456]
+            - cell "62%" [ref=f13e2457]
+          - row [ref=f13e2458]:
+            - cell "89" [ref=f13e2459]
+            - cell [ref=f13e2460]:
+              - generic "SLO · Slovenia" [ref=f13e2461]
+              - link "Deni KOZUL" [ref=f13e2462] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-422670e625cf9f1a
+              - button "" [ref=f13e2463] [cursor=pointer]
+            - cell [ref=f13e2465]:
+              - strong [ref=f13e2466]: "1696.9"
+            - cell "-" [ref=f13e2467]
+            - cell "-" [ref=f13e2468]
+            - cell "39" [ref=f13e2469]
+            - cell "54%" [ref=f13e2470]
+          - row [ref=f13e2471]:
+            - cell "90" [ref=f13e2472]
+            - cell [ref=f13e2473]:
+              - generic "BEL · Belgium" [ref=f13e2474]
+              - link "Cedric NUYTINCK" [ref=f13e2475] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-e9eb98a850db37b4
+              - button "" [ref=f13e2476] [cursor=pointer]
+            - cell [ref=f13e2478]:
+              - strong [ref=f13e2479]: "1696.4"
+            - cell "-" [ref=f13e2480]
+            - cell "-" [ref=f13e2481]
+            - cell "39" [ref=f13e2482]
+            - cell "56%" [ref=f13e2483]
+          - row [ref=f13e2484]:
+            - cell "91" [ref=f13e2485]
+            - cell [ref=f13e2486]:
+              - generic "SGP · Singapore" [ref=f13e2487]
+              - link "QUEK Izaac" [ref=f13e2488] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-f4b62a957503a039
+              - button "" [ref=f13e2489] [cursor=pointer]
+            - cell [ref=f13e2491]:
+              - strong [ref=f13e2492]: "1694.9"
+            - cell "-" [ref=f13e2493]
+            - cell "-" [ref=f13e2494]
+            - cell "30" [ref=f13e2495]
+            - cell "47%" [ref=f13e2496]
+          - row [ref=f13e2497]:
+            - cell "92" [ref=f13e2498]
+            - cell [ref=f13e2499]:
+              - generic "ENG · England" [ref=f13e2500]
+              - link "Liam PITCHFORD" [ref=f13e2501] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-b73d9473b625cfa7
+              - button "" [ref=f13e2502] [cursor=pointer]
+            - cell [ref=f13e2504]:
+              - strong [ref=f13e2505]: "1694.0"
+            - cell "-" [ref=f13e2506]
+            - cell "-" [ref=f13e2507]
+            - cell "13" [ref=f13e2508]
+            - cell "69%" [ref=f13e2509]
+          - row [ref=f13e2510]:
+            - cell "93" [ref=f13e2511]
+            - cell [ref=f13e2512]:
+              - generic "RUS · Russia" [ref=f13e2513]
+              - link "Evgeny TIKHONOV" [ref=f13e2514] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-cf3e12d51303b881
+              - button "" [ref=f13e2515] [cursor=pointer]
+            - cell [ref=f13e2517]:
+              - strong [ref=f13e2518]: "1693.6"
+            - cell "-" [ref=f13e2519]
+            - cell "-" [ref=f13e2520]
+            - cell "28" [ref=f13e2521]
+            - cell "64%" [ref=f13e2522]
+          - row [ref=f13e2523]:
+            - cell "93" [ref=f13e2524]
+            - cell [ref=f13e2525]:
+              - generic "FRA · France" [ref=f13e2526]
+              - link "Alexandre ROBINOT" [ref=f13e2527] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-e4b6ee9c45ca5bf0
+              - button "" [ref=f13e2528] [cursor=pointer]
+            - cell [ref=f13e2530]:
+              - strong [ref=f13e2531]: "1693.6"
+            - cell "-" [ref=f13e2532]
+            - cell "-" [ref=f13e2533]
+            - cell "10" [ref=f13e2534]
+            - cell "90%" [ref=f13e2535]
+          - row [ref=f13e2536]:
+            - cell "95" [ref=f13e2537]
+            - cell [ref=f13e2538]:
+              - generic "POL · Poland" [ref=f13e2539]
+              - link "Jakub DYJAS" [ref=f13e2540] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-853a81513874022d
+              - button "" [ref=f13e2541] [cursor=pointer]
+            - cell [ref=f13e2543]:
+              - strong [ref=f13e2544]: "1690.1"
+            - cell "-" [ref=f13e2545]
+            - cell "-" [ref=f13e2546]
+            - cell "3" [ref=f13e2547]
+            - cell "67%" [ref=f13e2548]
+          - row [ref=f13e2549]:
+            - cell "96" [ref=f13e2550]
+            - cell [ref=f13e2551]:
+              - generic "GER · Germany" [ref=f13e2552]
+              - link "Steffen MENGEL" [ref=f13e2553] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-87a8547ae887030e
+              - button "" [ref=f13e2554] [cursor=pointer]
+            - cell [ref=f13e2556]:
+              - strong [ref=f13e2557]: "1689.4"
+            - cell "-" [ref=f13e2558]
+            - cell "-" [ref=f13e2559]
+            - cell "17" [ref=f13e2560]
+            - cell "65%" [ref=f13e2561]
+          - row [ref=f13e2562]:
+            - cell "97" [ref=f13e2563]
+            - cell [ref=f13e2564]:
+              - generic "KAZ · Kazakhstan" [ref=f13e2565]
+              - link "FANG Bo" [ref=f13e2566] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-4ce1e766cfefb062
+              - button "" [ref=f13e2567] [cursor=pointer]
+            - cell [ref=f13e2569]:
+              - strong [ref=f13e2570]: "1686.6"
+            - cell "-" [ref=f13e2571]
+            - cell "-" [ref=f13e2572]
+            - cell "10" [ref=f13e2573]
+            - cell "50%" [ref=f13e2574]
+          - row [ref=f13e2575]:
+            - cell "98" [ref=f13e2576]
+            - cell [ref=f13e2577]:
+              - generic "KOR · Korea Republic" [ref=f13e2578]
+              - link "CHO Daeseong" [ref=f13e2579] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-0c6d43f5ab073ec1
+              - button "" [ref=f13e2580] [cursor=pointer]
+            - cell [ref=f13e2582]:
+              - strong [ref=f13e2583]: "1685.9"
+            - cell "-" [ref=f13e2584]
+            - cell "-" [ref=f13e2585]
+            - cell "6" [ref=f13e2586]
+            - cell "33%" [ref=f13e2587]
+          - row [ref=f13e2588]:
+            - cell "99" [ref=f13e2589]
+            - cell [ref=f13e2590]:
+              - generic "JPN · Japan" [ref=f13e2591]
+              - link "Yuya OSHIMA" [ref=f13e2592] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-240471b0fd98de04
+              - button "" [ref=f13e2593] [cursor=pointer]
+            - cell [ref=f13e2595]:
+              - strong [ref=f13e2596]: "1685.1"
+            - cell "-" [ref=f13e2597]
+            - cell "-" [ref=f13e2598]
+            - cell "10" [ref=f13e2599]
+            - cell "60%" [ref=f13e2600]
+          - row [ref=f13e2601]:
+            - cell "100" [ref=f13e2602]
+            - cell [ref=f13e2603]:
+              - generic "ROU · Romania" [ref=f13e2604]
+              - link "Darius MOVILEANU" [ref=f13e2605] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-18781807b33d0c03
+              - button "" [ref=f13e2606] [cursor=pointer]
+            - cell [ref=f13e2608]:
+              - strong [ref=f13e2609]: "1685.0"
+            - cell "-" [ref=f13e2610]
+            - cell "-" [ref=f13e2611]
+            - cell "29" [ref=f13e2612]
+            - cell "62%" [ref=f13e2613]
+          - row [ref=f13e2614]:
+            - cell "101" [ref=f13e2615]
+            - cell [ref=f13e2616]:
+              - generic "IND · India" [ref=f13e2617]
+              - link "Harmeet DESAI" [ref=f13e2618] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-88579e0decf97bc9
+              - button "" [ref=f13e2619] [cursor=pointer]
+            - cell [ref=f13e2621]:
+              - strong [ref=f13e2622]: "1684.9"
+            - cell "-" [ref=f13e2623]
+            - cell "-" [ref=f13e2624]
+            - cell "24" [ref=f13e2625]
+            - cell "50%" [ref=f13e2626]
+          - row [ref=f13e2627]:
+            - cell "101" [ref=f13e2628]
+            - cell [ref=f13e2629]:
+              - generic "IRI · Iran" [ref=f13e2630]
+              - link "Benyamin FARAJI" [ref=f13e2631] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-4ae2a84960ca26bd
+              - button "" [ref=f13e2632] [cursor=pointer]
+            - cell [ref=f13e2634]:
+              - strong [ref=f13e2635]: "1684.9"
+            - cell "-" [ref=f13e2636]
+            - cell "-" [ref=f13e2637]
+            - cell "17" [ref=f13e2638]
+            - cell "59%" [ref=f13e2639]
+          - row [ref=f13e2640]:
+            - cell "103" [ref=f13e2641]
+            - cell [ref=f13e2642]:
+              - generic "JPN · Japan" [ref=f13e2643]
+              - link "Ryoichi YOSHIYAMA" [ref=f13e2644] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-cec626e89299fd4c
+              - button "" [ref=f13e2645] [cursor=pointer]
+            - cell [ref=f13e2647]:
+              - strong [ref=f13e2648]: "1682.0"
+            - cell "-" [ref=f13e2649]
+            - cell "-" [ref=f13e2650]
+            - cell "36" [ref=f13e2651]
+            - cell "64%" [ref=f13e2652]
+          - row [ref=f13e2653]:
+            - cell "104" [ref=f13e2654]
+            - cell [ref=f13e2655]:
+              - generic "JPN · Japan" [ref=f13e2656]
+              - link "Kazuhiro YOSHIMURA" [ref=f13e2657] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-1e768c35d00426f1
+              - button "" [ref=f13e2658] [cursor=pointer]
+            - cell [ref=f13e2660]:
+              - strong [ref=f13e2661]: "1679.6"
+            - cell "-" [ref=f13e2662]
+            - cell "-" [ref=f13e2663]
+            - cell "18" [ref=f13e2664]
+            - cell "44%" [ref=f13e2665]
+          - row [ref=f13e2666]:
+            - cell "105" [ref=f13e2667]
+            - cell [ref=f13e2668]:
+              - generic "JPN · Japan" [ref=f13e2669]
+              - link "Yuta TANAKA" [ref=f13e2670] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-770df8de3068602a
+              - button "" [ref=f13e2671] [cursor=pointer]
+            - cell [ref=f13e2673]:
+              - strong [ref=f13e2674]: "1676.2"
+            - cell "-" [ref=f13e2675]
+            - cell "-" [ref=f13e2676]
+            - cell "30" [ref=f13e2677]
+            - cell "43%" [ref=f13e2678]
+          - row [ref=f13e2679]:
+            - cell "106" [ref=f13e2680]
+            - cell [ref=f13e2681]:
+              - generic "AUT · Austria" [ref=f13e2682]
+              - link "Robert GARDOS" [ref=f13e2683] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-d965826f2308dd1b
+              - button "" [ref=f13e2684] [cursor=pointer]
+            - cell [ref=f13e2686]:
+              - strong [ref=f13e2687]: "1674.8"
+            - cell "-" [ref=f13e2688]
+            - cell "-" [ref=f13e2689]
+            - cell "5" [ref=f13e2690]
+            - cell "60%" [ref=f13e2691]
+          - row [ref=f13e2692]:
+            - cell "107" [ref=f13e2693]
+            - cell [ref=f13e2694]:
+              - generic "JPN · Japan" [ref=f13e2695]
+              - link "Kenta MATSUDAIRA" [ref=f13e2696] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-b6b38413bcde2c8f
+              - button "" [ref=f13e2697] [cursor=pointer]
+            - cell [ref=f13e2699]:
+              - strong [ref=f13e2700]: "1671.7"
+            - cell "-" [ref=f13e2701]
+            - cell "-" [ref=f13e2702]
+            - cell "2" [ref=f13e2703]
+            - cell "50%" [ref=f13e2704]
+          - row [ref=f13e2705]:
+            - cell "108" [ref=f13e2706]
+            - cell [ref=f13e2707]:
+              - generic "POL · Poland" [ref=f13e2708]
+              - link "Maciej KUBIK" [ref=f13e2709] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-bc3165bec703448a
+              - button "" [ref=f13e2710] [cursor=pointer]
+            - cell [ref=f13e2712]:
+              - strong [ref=f13e2713]: "1666.7"
+            - cell "-" [ref=f13e2714]
+            - cell "-" [ref=f13e2715]
+            - cell "37" [ref=f13e2716]
+            - cell "35%" [ref=f13e2717]
+          - row [ref=f13e2718]:
+            - cell "109" [ref=f13e2719]
+            - cell [ref=f13e2720]:
+              - generic "JPN · Japan" [ref=f13e2721]
+              - link "Taimu ARINOBU" [ref=f13e2722] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-3a3dbd5b43b92b17
+              - button "" [ref=f13e2723] [cursor=pointer]
+            - cell [ref=f13e2725]:
+              - strong [ref=f13e2726]: "1665.3"
+            - cell "-" [ref=f13e2727]
+            - cell "-" [ref=f13e2728]
+            - cell "12" [ref=f13e2729]
+            - cell "50%" [ref=f13e2730]
+          - row [ref=f13e2731]:
+            - cell "110" [ref=f13e2732]
+            - cell [ref=f13e2733]:
+              - generic "IND · India" [ref=f13e2734]
+              - link "Manav THAKKAR" [ref=f13e2735] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-129345fe07eaee7a
+              - button "" [ref=f13e2736] [cursor=pointer]
+            - cell [ref=f13e2738]:
+              - strong [ref=f13e2739]: "1663.9"
+            - cell "-" [ref=f13e2740]
+            - cell "-" [ref=f13e2741]
+            - cell "32" [ref=f13e2742]
+            - cell "31%" [ref=f13e2743]
+          - row [ref=f13e2744]:
+            - cell "111" [ref=f13e2745]
+            - cell [ref=f13e2746]:
+              - generic "JPN · Japan" [ref=f13e2747]
+              - link "Ryuusei KAWAKAMI" [ref=f13e2748] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-63fb91c5793f8e61
+              - button "" [ref=f13e2749] [cursor=pointer]
+            - cell [ref=f13e2751]:
+              - strong [ref=f13e2752]: "1662.9"
+            - cell "-" [ref=f13e2753]
+            - cell "-" [ref=f13e2754]
+            - cell "24" [ref=f13e2755]
+            - cell "63%" [ref=f13e2756]
+          - row [ref=f13e2757]:
+            - cell "112" [ref=f13e2758]
+            - cell [ref=f13e2759]:
+              - generic "SWE · Sweden" [ref=f13e2760]
+              - link "Mattias KARLSSON" [ref=f13e2761] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-e014b51b91d1f96f
+              - button "" [ref=f13e2762] [cursor=pointer]
+            - cell [ref=f13e2764]:
+              - strong [ref=f13e2765]: "1662.5"
+            - cell "-" [ref=f13e2766]
+            - cell "-" [ref=f13e2767]
+            - cell "53" [ref=f13e2768]
+            - cell "62%" [ref=f13e2769]
+          - row [ref=f13e2770]:
+            - cell "113" [ref=f13e2771]
+            - cell [ref=f13e2772]:
+              - generic "FRA · France" [ref=f13e2773]
+              - link "Stephane OUAICHE" [ref=f13e2774] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-6da298413103c27d
+              - button "" [ref=f13e2775] [cursor=pointer]
+            - cell [ref=f13e2777]:
+              - strong [ref=f13e2778]: "1661.2"
+            - cell "-" [ref=f13e2779]
+            - cell "-" [ref=f13e2780]
+            - cell "18" [ref=f13e2781]
+            - cell "67%" [ref=f13e2782]
+          - row [ref=f13e2783]:
+            - cell "114" [ref=f13e2784]
+            - cell [ref=f13e2785]:
+              - generic "IRI · Iran" [ref=f13e2786]
+              - link "Nima ALAMIAN" [ref=f13e2787] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-e58cf15fb9d9531b
+              - button "" [ref=f13e2788] [cursor=pointer]
+            - cell [ref=f13e2790]:
+              - strong [ref=f13e2791]: "1654.4"
+            - cell "-" [ref=f13e2792]
+            - cell "-" [ref=f13e2793]
+            - cell "22" [ref=f13e2794]
+            - cell "50%" [ref=f13e2795]
+          - row [ref=f13e2796]:
+            - cell "115" [ref=f13e2797]
+            - cell [ref=f13e2798]:
+              - generic "TPE · Chinese Taipei" [ref=f13e2799]
+              - link "HUNG Jing-Kai" [ref=f13e2800] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-eb46a37794c73873
+              - button "" [ref=f13e2801] [cursor=pointer]
+            - cell [ref=f13e2803]:
+              - strong [ref=f13e2804]: "1654.0"
+            - cell "-" [ref=f13e2805]
+            - cell "-" [ref=f13e2806]
+            - cell "33" [ref=f13e2807]
+            - cell "58%" [ref=f13e2808]
+          - row [ref=f13e2809]:
+            - cell "116" [ref=f13e2810]
+            - cell [ref=f13e2811]:
+              - generic "CRO · Croatia" [ref=f13e2812]
+              - link "Ivor BAN" [ref=f13e2813] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-1fd328c244b7ea5e
+              - button "" [ref=f13e2814] [cursor=pointer]
+            - cell [ref=f13e2816]:
+              - strong [ref=f13e2817]: "1650.3"
+            - cell "-" [ref=f13e2818]
+            - cell "-" [ref=f13e2819]
+            - cell "41" [ref=f13e2820]
+            - cell "49%" [ref=f13e2821]
+          - row [ref=f13e2822]:
+            - cell "117" [ref=f13e2823]
+            - cell [ref=f13e2824]:
+              - generic "BRA · Brazil" [ref=f13e2825]
+              - link "Marcos FREITAS" [ref=f13e2826] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-446111cc87d4dad8
+              - button "" [ref=f13e2827] [cursor=pointer]
+            - cell [ref=f13e2829]:
+              - strong [ref=f13e2830]: "1650.0"
+            - cell "-" [ref=f13e2831]
+            - cell "-" [ref=f13e2832]
+            - cell "41" [ref=f13e2833]
+            - cell "49%" [ref=f13e2834]
+          - row [ref=f13e2835]:
+            - cell "118" [ref=f13e2836]
+            - cell [ref=f13e2837]:
+              - generic "ITA · Italy" [ref=f13e2838]
+              - link "Matteo MUTTI" [ref=f13e2839] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-6c2692d2ba82879e
+              - button "" [ref=f13e2840] [cursor=pointer]
+            - cell [ref=f13e2842]:
+              - strong [ref=f13e2843]: "1649.6"
+            - cell "-" [ref=f13e2844]
+            - cell "-" [ref=f13e2845]
+            - cell "19" [ref=f13e2846]
+            - cell "63%" [ref=f13e2847]
+          - row [ref=f13e2848]:
+            - cell "119" [ref=f13e2849]
+            - cell [ref=f13e2850]:
+              - generic "ESP · Spain" [ref=f13e2851]
+              - link "Alvaro ROBLES" [ref=f13e2852] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-9fbf7ef730940373
+              - button "" [ref=f13e2853] [cursor=pointer]
+            - cell [ref=f13e2855]:
+              - strong [ref=f13e2856]: "1649.1"
+            - cell "-" [ref=f13e2857]
+            - cell "-" [ref=f13e2858]
+            - cell "47" [ref=f13e2859]
+            - cell "49%" [ref=f13e2860]
+          - row [ref=f13e2861]:
+            - cell "120" [ref=f13e2862]
+            - cell [ref=f13e2863]:
+              - generic "ENG · England" [ref=f13e2864]
+              - link "Tom JARVIS" [ref=f13e2865] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-fbbead88bd1bd44c
+              - button "" [ref=f13e2866] [cursor=pointer]
+            - cell [ref=f13e2868]:
+              - strong [ref=f13e2869]: "1648.5"
+            - cell "-" [ref=f13e2870]
+            - cell "-" [ref=f13e2871]
+            - cell "53" [ref=f13e2872]
+            - cell "45%" [ref=f13e2873]
+          - row [ref=f13e2874]:
+            - cell "121" [ref=f13e2875]
+            - cell [ref=f13e2876]:
+              - generic "FRA · France" [ref=f13e2877]
+              - link "CHEN Tianyuan" [ref=f13e2878] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-a75453de42dded0a
+              - button "" [ref=f13e2879] [cursor=pointer]
+            - cell [ref=f13e2881]:
+              - strong [ref=f13e2882]: "1647.6"
+            - cell "-" [ref=f13e2883]
+            - cell "-" [ref=f13e2884]
+            - cell "11" [ref=f13e2885]
+            - cell "64%" [ref=f13e2886]
+          - row [ref=f13e2887]:
+            - cell "122" [ref=f13e2888]
+            - cell [ref=f13e2889]:
+              - generic "RUS · Russia" [ref=f13e2890]
+              - link "Kirill SKACHKOV" [ref=f13e2891] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-d589f4320c2e9b4e
+              - button "" [ref=f13e2892] [cursor=pointer]
+            - cell [ref=f13e2894]:
+              - strong [ref=f13e2895]: "1647.3"
+            - cell "-" [ref=f13e2896]
+            - cell "-" [ref=f13e2897]
+            - cell "9" [ref=f13e2898]
+            - cell "56%" [ref=f13e2899]
+          - row [ref=f13e2900]:
+            - cell "123" [ref=f13e2901]
+            - cell [ref=f13e2902]:
+              - generic "JPN · Japan" [ref=f13e2903]
+              - link "Kakeru SONE" [ref=f13e2904] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-92f48827f4fb44bb
+              - button "" [ref=f13e2905] [cursor=pointer]
+            - cell [ref=f13e2907]:
+              - strong [ref=f13e2908]: "1647.0"
+            - cell "-" [ref=f13e2909]
+            - cell "-" [ref=f13e2910]
+            - cell "10" [ref=f13e2911]
+            - cell "50%" [ref=f13e2912]
+          - row [ref=f13e2913]:
+            - cell "124" [ref=f13e2914]
+            - cell [ref=f13e2915]:
+              - generic "FRA · France" [ref=f13e2916]
+              - link "Can AKKUZU" [ref=f13e2917] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-96d4966602b0ba72
+              - button "" [ref=f13e2918] [cursor=pointer]
+            - cell [ref=f13e2920]:
+              - strong [ref=f13e2921]: "1645.0"
+            - cell "-" [ref=f13e2922]
+            - cell "-" [ref=f13e2923]
+            - cell "9" [ref=f13e2924]
+            - cell "44%" [ref=f13e2925]
+          - row [ref=f13e2926]:
+            - cell "125" [ref=f13e2927]
+            - cell [ref=f13e2928]:
+              - generic "IND · India" [ref=f13e2929]
+              - link "Manav Vikash THAKKAR" [ref=f13e2930] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-23a88690a2cce56c
+              - button "" [ref=f13e2931] [cursor=pointer]
+            - cell [ref=f13e2933]:
+              - strong [ref=f13e2934]: "1640.9"
+            - cell "-" [ref=f13e2935]
+            - cell "-" [ref=f13e2936]
+            - cell "4" [ref=f13e2937]
+            - cell "75%" [ref=f13e2938]
+          - row [ref=f13e2939]:
+            - cell "126" [ref=f13e2940]
+            - cell [ref=f13e2941]:
+              - generic "AUS · Australia" [ref=f13e2942]
+              - link "Hwan BAE" [ref=f13e2943] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-6520566b263fdbc7
+              - button "" [ref=f13e2944] [cursor=pointer]
+            - cell [ref=f13e2946]:
+              - strong [ref=f13e2947]: "1640.4"
+            - cell "-" [ref=f13e2948]
+            - cell "-" [ref=f13e2949]
+            - cell "13" [ref=f13e2950]
+            - cell "69%" [ref=f13e2951]
+          - row [ref=f13e2952]:
+            - cell "127" [ref=f13e2953]
+            - cell [ref=f13e2954]:
+              - generic "JPN · Japan" [ref=f13e2955]
+              - link "Masaki YOSHIDA" [ref=f13e2956] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-12073ca6560362f2
+              - button "" [ref=f13e2957] [cursor=pointer]
+            - cell [ref=f13e2959]:
+              - strong [ref=f13e2960]: "1639.8"
+            - cell "-" [ref=f13e2961]
+            - cell "-" [ref=f13e2962]
+            - cell "1" [ref=f13e2963]
+            - cell "0%" [ref=f13e2964]
+          - row [ref=f13e2965]:
+            - cell "128" [ref=f13e2966]
+            - cell [ref=f13e2967]:
+              - link "RI Jong Sik" [ref=f13e2968] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-acb567d5b9f6cca9
+              - button "" [ref=f13e2969] [cursor=pointer]
+            - cell [ref=f13e2971]:
+              - strong [ref=f13e2972]: "1639.6"
+            - cell "-" [ref=f13e2973]
+            - cell "-" [ref=f13e2974]
+            - cell "4" [ref=f13e2975]
+            - cell "50%" [ref=f13e2976]
+          - row [ref=f13e2977]:
+            - cell "129" [ref=f13e2978]
+            - cell [ref=f13e2979]:
+              - generic "JPN · Japan" [ref=f13e2980]
+              - link "Masaki OMODA" [ref=f13e2981] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-3aa1d53d8b4635a9
+              - button "" [ref=f13e2982] [cursor=pointer]
+            - cell [ref=f13e2984]:
+              - strong [ref=f13e2985]: "1632.3"
+            - cell "-" [ref=f13e2986]
+            - cell "-" [ref=f13e2987]
+            - cell "3" [ref=f13e2988]
+            - cell "100%" [ref=f13e2989]
+          - row [ref=f13e2990]:
+            - cell "130" [ref=f13e2991]
+            - cell [ref=f13e2992]:
+              - generic "FRA · France" [ref=f13e2993]
+              - link "Jules ROLLAND" [ref=f13e2994] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-fb491b040e1671c0
+              - button "" [ref=f13e2995] [cursor=pointer]
+            - cell [ref=f13e2997]:
+              - strong [ref=f13e2998]: "1632.0"
+            - cell "-" [ref=f13e2999]
+            - cell "-" [ref=f13e3000]
+            - cell "43" [ref=f13e3001]
+            - cell "63%" [ref=f13e3002]
+          - row [ref=f13e3003]:
+            - cell "131" [ref=f13e3004]
+            - cell [ref=f13e3005]:
+              - generic "JPN · Japan" [ref=f13e3006]
+              - link "Kazuki HAMADA" [ref=f13e3007] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-3558d5ce222aa772
+              - button "" [ref=f13e3008] [cursor=pointer]
+            - cell [ref=f13e3010]:
+              - strong [ref=f13e3011]: "1631.2"
+            - cell "-" [ref=f13e3012]
+            - cell "-" [ref=f13e3013]
+            - cell "35" [ref=f13e3014]
+            - cell "57%" [ref=f13e3015]
+          - row [ref=f13e3016]:
+            - cell "132" [ref=f13e3017]
+            - cell [ref=f13e3018]:
+              - generic "FRA · France" [ref=f13e3019]
+              - link "Alexandre CASSIN" [ref=f13e3020] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-03821c90088d3cd4
+              - button "" [ref=f13e3021] [cursor=pointer]
+            - cell [ref=f13e3023]:
+              - strong [ref=f13e3024]: "1629.2"
+            - cell "-" [ref=f13e3025]
+            - cell "-" [ref=f13e3026]
+            - cell "9" [ref=f13e3027]
+            - cell "67%" [ref=f13e3028]
+          - row [ref=f13e3029]:
+            - cell "133" [ref=f13e3030]
+            - cell [ref=f13e3031]:
+              - generic "JPN · Japan" [ref=f13e3032]
+              - link "Satoshi AIDA" [ref=f13e3033] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-e7bced776b462de3
+              - button "" [ref=f13e3034] [cursor=pointer]
+            - cell [ref=f13e3036]:
+              - strong [ref=f13e3037]: "1628.8"
+            - cell "-" [ref=f13e3038]
+            - cell "-" [ref=f13e3039]
+            - cell "14" [ref=f13e3040]
+            - cell "64%" [ref=f13e3041]
+          - row [ref=f13e3042]:
+            - cell "134" [ref=f13e3043]
+            - cell [ref=f13e3044]:
+              - generic "CHN · China" [ref=f13e3045]
+              - link "NIU Guankai" [ref=f13e3046] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-8917c4159bdbe0f9
+              - button "" [ref=f13e3047] [cursor=pointer]
+            - cell [ref=f13e3049]:
+              - strong [ref=f13e3050]: "1628.2"
+            - cell "-" [ref=f13e3051]
+            - cell "-" [ref=f13e3052]
+            - cell "11" [ref=f13e3053]
+            - cell "45%" [ref=f13e3054]
+          - row [ref=f13e3055]:
+            - cell "135" [ref=f13e3056]
+            - cell [ref=f13e3057]:
+              - generic "RUS · Russia" [ref=f13e3058]
+              - link "Lev KATSMAN" [ref=f13e3059] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-26e1acb33fd391cf
+              - button "" [ref=f13e3060] [cursor=pointer]
+            - cell [ref=f13e3062]:
+              - strong [ref=f13e3063]: "1628.1"
+            - cell "-" [ref=f13e3064]
+            - cell "-" [ref=f13e3065]
+            - cell "18" [ref=f13e3066]
+            - cell "50%" [ref=f13e3067]
+          - row [ref=f13e3068]:
+            - cell "136" [ref=f13e3069]
+            - cell [ref=f13e3070]:
+              - generic "JPN · Japan" [ref=f13e3071]
+              - link "Takuya JIN" [ref=f13e3072] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-f449f9fdae74ebb9
+              - button "" [ref=f13e3073] [cursor=pointer]
+            - cell [ref=f13e3075]:
+              - strong [ref=f13e3076]: "1627.0"
+            - cell "-" [ref=f13e3077]
+            - cell "-" [ref=f13e3078]
+            - cell "4" [ref=f13e3079]
+            - cell "0%" [ref=f13e3080]
+          - row [ref=f13e3081]:
+            - cell "137" [ref=f13e3082]
+            - cell [ref=f13e3083]:
+              - generic "GER · Germany" [ref=f13e3084]
+              - link "Fanbo MENG" [ref=f13e3085] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-1f2e3f3eb0e9027a
+              - button "" [ref=f13e3086] [cursor=pointer]
+            - cell [ref=f13e3088]:
+              - strong [ref=f13e3089]: "1626.7"
+            - cell "-" [ref=f13e3090]
+            - cell "-" [ref=f13e3091]
+            - cell "32" [ref=f13e3092]
+            - cell "44%" [ref=f13e3093]
+          - row [ref=f13e3094]:
+            - cell "138" [ref=f13e3095]
+            - cell [ref=f13e3096]:
+              - generic "ROU · Romania" [ref=f13e3097]
+              - link "Eduard IONESCU" [ref=f13e3098] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-29478c06fbb2ebda
+              - button "" [ref=f13e3099] [cursor=pointer]
+            - cell [ref=f13e3101]:
+              - strong [ref=f13e3102]: "1624.5"
+            - cell "-" [ref=f13e3103]
+            - cell "-" [ref=f13e3104]
+            - cell "32" [ref=f13e3105]
+            - cell "47%" [ref=f13e3106]
+          - row [ref=f13e3107]:
+            - cell "139" [ref=f13e3108]
+            - cell [ref=f13e3109]:
+              - generic "ROU · Romania" [ref=f13e3110]
+              - link "Rares SIPOS" [ref=f13e3111] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-2cae6a10dd63cb6c
+              - button "" [ref=f13e3112] [cursor=pointer]
+            - cell [ref=f13e3114]:
+              - strong [ref=f13e3115]: "1622.7"
+            - cell "-" [ref=f13e3116]
+            - cell "-" [ref=f13e3117]
+            - cell "12" [ref=f13e3118]
+            - cell "42%" [ref=f13e3119]
+          - row [ref=f13e3120]:
+            - cell "140" [ref=f13e3121]
+            - cell [ref=f13e3122]:
+              - generic "FRA · France" [ref=f13e3123]
+              - link "Irvin BERTRAND" [ref=f13e3124] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-998d367179624385
+              - button "" [ref=f13e3125] [cursor=pointer]
+            - cell [ref=f13e3127]:
+              - strong [ref=f13e3128]: "1621.1"
+            - cell "-" [ref=f13e3129]
+            - cell "-" [ref=f13e3130]
+            - cell "14" [ref=f13e3131]
+            - cell "43%" [ref=f13e3132]
+          - row [ref=f13e3133]:
+            - cell "141" [ref=f13e3134]
+            - cell [ref=f13e3135]:
+              - generic "POR · Portugal" [ref=f13e3136]
+              - link "Joao MONTEIRO" [ref=f13e3137] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-d25c40c9535cb095
+              - button "" [ref=f13e3138] [cursor=pointer]
+            - cell [ref=f13e3140]:
+              - strong [ref=f13e3141]: "1620.6"
+            - cell "-" [ref=f13e3142]
+            - cell "-" [ref=f13e3143]
+            - cell "8" [ref=f13e3144]
+            - cell "63%" [ref=f13e3145]
+          - row [ref=f13e3146]:
+            - cell "142" [ref=f13e3147]
+            - cell [ref=f13e3148]:
+              - generic "JPN · Japan" [ref=f13e3149]
+              - link "Jo YOKOTANI" [ref=f13e3150] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-e69faa4ab196b51e
+              - button "" [ref=f13e3151] [cursor=pointer]
+            - cell [ref=f13e3153]:
+              - strong [ref=f13e3154]: "1616.8"
+            - cell "-" [ref=f13e3155]
+            - cell "-" [ref=f13e3156]
+            - cell "33" [ref=f13e3157]
+            - cell "48%" [ref=f13e3158]
+          - row [ref=f13e3159]:
+            - cell "143" [ref=f13e3160]
+            - cell [ref=f13e3161]:
+              - generic "SRB · Serbia" [ref=f13e3162]
+              - link "Dimitrije LEVAJAC" [ref=f13e3163] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-1ca93fdc5d70a910
+              - button "" [ref=f13e3164] [cursor=pointer]
+            - cell [ref=f13e3166]:
+              - strong [ref=f13e3167]: "1615.8"
+            - cell "-" [ref=f13e3168]
+            - cell "-" [ref=f13e3169]
+            - cell "14" [ref=f13e3170]
+            - cell "50%" [ref=f13e3171]
+          - row [ref=f13e3172]:
+            - cell "144" [ref=f13e3173]
+            - cell [ref=f13e3174]:
+              - generic "NZL · New Zealand" [ref=f13e3175]
+              - link "August XIAO" [ref=f13e3176] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-6ceff2b7aa6984db
+              - button "" [ref=f13e3177] [cursor=pointer]
+            - cell [ref=f13e3179]:
+              - strong [ref=f13e3180]: "1615.4"
+            - cell "-" [ref=f13e3181]
+            - cell "-" [ref=f13e3182]
+            - cell "9" [ref=f13e3183]
+            - cell "78%" [ref=f13e3184]
+          - row [ref=f13e3185]:
+            - cell "145" [ref=f13e3186]
+            - cell [ref=f13e3187]:
+              - generic "JPN · Japan" [ref=f13e3188]
+              - link "Taisei MATSUSHITA" [ref=f13e3189] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-9821ab93eb6f83df
+              - button "" [ref=f13e3190] [cursor=pointer]
+            - cell [ref=f13e3192]:
+              - strong [ref=f13e3193]: "1614.9"
+            - cell "-" [ref=f13e3194]
+            - cell "-" [ref=f13e3195]
+            - cell "9" [ref=f13e3196]
+            - cell "56%" [ref=f13e3197]
+          - row [ref=f13e3198]:
+            - cell "146" [ref=f13e3199]
+            - cell [ref=f13e3200]:
+              - generic "AUT · Austria" [ref=f13e3201]
+              - link "Daniel HABESOHN" [ref=f13e3202] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-4964c1acfa853710
+              - button "" [ref=f13e3203] [cursor=pointer]
+            - cell [ref=f13e3205]:
+              - strong [ref=f13e3206]: "1612.4"
+            - cell "-" [ref=f13e3207]
+            - cell "-" [ref=f13e3208]
+            - cell "19" [ref=f13e3209]
+            - cell "37%" [ref=f13e3210]
+          - row [ref=f13e3211]:
+            - cell "147" [ref=f13e3212]
+            - cell [ref=f13e3213]:
+              - generic "SWE · Sweden" [ref=f13e3214]
+              - link "Jens LUNDQVIST" [ref=f13e3215] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-da71ffe90c7bbe5d
+              - button "" [ref=f13e3216] [cursor=pointer]
+            - cell [ref=f13e3218]:
+              - strong [ref=f13e3219]: "1611.6"
+            - cell "-" [ref=f13e3220]
+            - cell "-" [ref=f13e3221]
+            - cell "12" [ref=f13e3222]
+            - cell "58%" [ref=f13e3223]
+          - row [ref=f13e3224]:
+            - cell "148" [ref=f13e3225]
+            - cell [ref=f13e3226]:
+              - generic "RUS · Russia" [ref=f13e3227]
+              - link "Nikita ARTEMENKO" [ref=f13e3228] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-e97c67359d3d6929
+              - button "" [ref=f13e3229] [cursor=pointer]
+            - cell [ref=f13e3231]:
+              - strong [ref=f13e3232]: "1610.8"
+            - cell "-" [ref=f13e3233]
+            - cell "-" [ref=f13e3234]
+            - cell "29" [ref=f13e3235]
+            - cell "69%" [ref=f13e3236]
+          - row [ref=f13e3237]:
+            - cell "148" [ref=f13e3238]
+            - cell [ref=f13e3239]:
+              - generic "POL · Poland" [ref=f13e3240]
+              - link "Marek BADOWSKI" [ref=f13e3241] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-dcc5b9abb91d5da7
+              - button "" [ref=f13e3242] [cursor=pointer]
+            - cell [ref=f13e3244]:
+              - strong [ref=f13e3245]: "1610.8"
+            - cell "-" [ref=f13e3246]
+            - cell "-" [ref=f13e3247]
+            - cell "20" [ref=f13e3248]
+            - cell "55%" [ref=f13e3249]
+          - row [ref=f13e3250]:
+            - cell "150" [ref=f13e3251]
+            - cell [ref=f13e3252]:
+              - generic "THA · Thailand" [ref=f13e3253]
+              - link "Phakpoom SANGUANSIN" [ref=f13e3254] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-3b1492f124c1cbad
+              - button "" [ref=f13e3255] [cursor=pointer]
+            - cell [ref=f13e3257]:
+              - strong [ref=f13e3258]: "1609.6"
+            - cell "-" [ref=f13e3259]
+            - cell "-" [ref=f13e3260]
+            - cell "10" [ref=f13e3261]
+            - cell "70%" [ref=f13e3262]
+          - row [ref=f13e3263]:
+            - cell "151" [ref=f13e3264]
+            - cell [ref=f13e3265]:
+              - generic "FRA · France" [ref=f13e3266]
+              - link "Antoine HACHARD" [ref=f13e3267] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-60addc267143cbf2
+              - button "" [ref=f13e3268] [cursor=pointer]
+            - cell [ref=f13e3270]:
+              - strong [ref=f13e3271]: "1609.4"
+            - cell "-" [ref=f13e3272]
+            - cell "-" [ref=f13e3273]
+            - cell "16" [ref=f13e3274]
+            - cell "44%" [ref=f13e3275]
+          - row [ref=f13e3276]:
+            - cell "152" [ref=f13e3277]
+            - cell [ref=f13e3278]:
+              - generic "SGP · Singapore" [ref=f13e3279]
+              - link "CHUA Josh" [ref=f13e3280] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-206c60487f8afe84
+              - button "" [ref=f13e3281] [cursor=pointer]
+            - cell [ref=f13e3283]:
+              - strong [ref=f13e3284]: "1609.0"
+            - cell "-" [ref=f13e3285]
+            - cell "-" [ref=f13e3286]
+            - cell "16" [ref=f13e3287]
+            - cell "56%" [ref=f13e3288]
+          - row [ref=f13e3289]:
+            - cell "153" [ref=f13e3290]
+            - cell [ref=f13e3291]:
+              - generic "SLO · Slovenia" [ref=f13e3292]
+              - link "Bojan TOKIC" [ref=f13e3293] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-28351f811843266d
+              - button "" [ref=f13e3294] [cursor=pointer]
+            - cell [ref=f13e3296]:
+              - strong [ref=f13e3297]: "1607.8"
+            - cell "-" [ref=f13e3298]
+            - cell "-" [ref=f13e3299]
+            - cell "1" [ref=f13e3300]
+            - cell "0%" [ref=f13e3301]
+          - row [ref=f13e3302]:
+            - cell "154" [ref=f13e3303]
+            - cell [ref=f13e3304]:
+              - generic "FRA · France" [ref=f13e3305]
+              - link "Romain RUIZ" [ref=f13e3306] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-a9391a03c0d262cf
+              - button "" [ref=f13e3307] [cursor=pointer]
+            - cell [ref=f13e3309]:
+              - strong [ref=f13e3310]: "1607.7"
+            - cell "-" [ref=f13e3311]
+            - cell "-" [ref=f13e3312]
+            - cell "23" [ref=f13e3313]
+            - cell "61%" [ref=f13e3314]
+          - row [ref=f13e3315]:
+            - cell "155" [ref=f13e3316]
+            - cell [ref=f13e3317]:
+              - generic "POR · Portugal" [ref=f13e3318]
+              - link "Tiago APOLONIA" [ref=f13e3319] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-aa2ffd94e442b740
+              - button "" [ref=f13e3320] [cursor=pointer]
+            - cell [ref=f13e3322]:
+              - strong [ref=f13e3323]: "1607.4"
+            - cell "-" [ref=f13e3324]
+            - cell "-" [ref=f13e3325]
+            - cell "37" [ref=f13e3326]
+            - cell "51%" [ref=f13e3327]
+          - row [ref=f13e3328]:
+            - cell "156" [ref=f13e3329]
+            - cell [ref=f13e3330]:
+              - generic "TPE · Chinese Taipei" [ref=f13e3331]
+              - link "CHANG Yu-An" [ref=f13e3332] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-f334e674919bd208
+              - button "" [ref=f13e3333] [cursor=pointer]
+            - cell [ref=f13e3335]:
+              - strong [ref=f13e3336]: "1607.1"
+            - cell "-" [ref=f13e3337]
+            - cell "-" [ref=f13e3338]
+            - cell "38" [ref=f13e3339]
+            - cell "55%" [ref=f13e3340]
+          - row [ref=f13e3341]:
+            - cell "157" [ref=f13e3342]
+            - cell [ref=f13e3343]:
+              - generic "ITA · Italy" [ref=f13e3344]
+              - link "Mihai BOBOCICA" [ref=f13e3345] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-c1b7b02d697647f9
+              - button "" [ref=f13e3346] [cursor=pointer]
+            - cell [ref=f13e3348]:
+              - strong [ref=f13e3349]: "1606.5"
+            - cell "-" [ref=f13e3350]
+            - cell "-" [ref=f13e3351]
+            - cell "7" [ref=f13e3352]
+            - cell "71%" [ref=f13e3353]
+          - row [ref=f13e3354]:
+            - cell "158" [ref=f13e3355]
+            - cell [ref=f13e3356]:
+              - generic "IND · India" [ref=f13e3357]
+              - link "Manush SHAH" [ref=f13e3358] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-73cbc2dd5dc98b91
+              - button "" [ref=f13e3359] [cursor=pointer]
+            - cell [ref=f13e3361]:
+              - strong [ref=f13e3362]: "1606.1"
+            - cell "-" [ref=f13e3363]
+            - cell "-" [ref=f13e3364]
+            - cell "39" [ref=f13e3365]
+            - cell "59%" [ref=f13e3366]
+          - row [ref=f13e3367]:
+            - cell "159" [ref=f13e3368]
+            - cell [ref=f13e3369]:
+              - generic "CHN · China" [ref=f13e3370]
+              - link "ZENG Beixun" [ref=f13e3371] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-d30f63069199c9c2
+              - button "" [ref=f13e3372] [cursor=pointer]
+            - cell [ref=f13e3374]:
+              - strong [ref=f13e3375]: "1605.1"
+            - cell "-" [ref=f13e3376]
+            - cell "-" [ref=f13e3377]
+            - cell "4" [ref=f13e3378]
+            - cell "50%" [ref=f13e3379]
+          - row [ref=f13e3380]:
+            - cell "160" [ref=f13e3381]
+            - cell [ref=f13e3382]:
+              - generic "AUS · Australia" [ref=f13e3383]
+              - link "Aditya SAREEN" [ref=f13e3384] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-33eeeb0756354dfb
+              - button "" [ref=f13e3385] [cursor=pointer]
+            - cell [ref=f13e3387]:
+              - strong [ref=f13e3388]: "1604.4"
+            - cell "-" [ref=f13e3389]
+            - cell "-" [ref=f13e3390]
+            - cell "18" [ref=f13e3391]
+            - cell "56%" [ref=f13e3392]
+          - row [ref=f13e3393]:
+            - cell "161" [ref=f13e3394]
+            - cell [ref=f13e3395]:
+              - generic "GER · Germany" [ref=f13e3396]
+              - link "Ricardo WALTHER" [ref=f13e3397] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-2b5399fc632996b8
+              - button "" [ref=f13e3398] [cursor=pointer]
+            - cell [ref=f13e3400]:
+              - strong [ref=f13e3401]: "1603.8"
+            - cell "-" [ref=f13e3402]
+            - cell "-" [ref=f13e3403]
+            - cell "39" [ref=f13e3404]
+            - cell "33%" [ref=f13e3405]
+          - row [ref=f13e3406]:
+            - cell "162" [ref=f13e3407]
+            - cell [ref=f13e3408]:
+              - generic "AUS · Australia" [ref=f13e3409]
+              - link "Nicholas LUM" [ref=f13e3410] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-bb797a3a79edd77e
+              - button "" [ref=f13e3411] [cursor=pointer]
+            - cell [ref=f13e3413]:
+              - strong [ref=f13e3414]: "1602.5"
+            - cell "-" [ref=f13e3415]
+            - cell "-" [ref=f13e3416]
+            - cell "26" [ref=f13e3417]
+            - cell "50%" [ref=f13e3418]
+          - row [ref=f13e3419]:
+            - cell "163" [ref=f13e3420]
+            - cell [ref=f13e3421]:
+              - generic "TPE · Chinese Taipei" [ref=f13e3422]
+              - link "LIAO Cheng-Ting" [ref=f13e3423] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-2a6a5abecf6668a2
+              - button "" [ref=f13e3424] [cursor=pointer]
+            - cell [ref=f13e3426]:
+              - strong [ref=f13e3427]: "1602.4"
+            - cell "-" [ref=f13e3428]
+            - cell "-" [ref=f13e3429]
+            - cell "15" [ref=f13e3430]
+            - cell "20%" [ref=f13e3431]
+          - row [ref=f13e3432]:
+            - cell "164" [ref=f13e3433]
+            - cell [ref=f13e3434]:
+              - generic "BEL · Belgium" [ref=f13e3435]
+              - link "Adrien RASSENFOSSE" [ref=f13e3436] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-eee4a89ed68a0842
+              - button "" [ref=f13e3437] [cursor=pointer]
+            - cell [ref=f13e3439]:
+              - strong [ref=f13e3440]: "1602.2"
+            - cell "-" [ref=f13e3441]
+            - cell "-" [ref=f13e3442]
+            - cell "35" [ref=f13e3443]
+            - cell "40%" [ref=f13e3444]
+          - row [ref=f13e3445]:
+            - cell "165" [ref=f13e3446]
+            - cell [ref=f13e3447]:
+              - generic "FRA · France" [ref=f13e3448]
+              - link "Tristan FLORE" [ref=f13e3449] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-f06652c4a0c0b728
+              - button "" [ref=f13e3450] [cursor=pointer]
+            - cell [ref=f13e3452]:
+              - strong [ref=f13e3453]: "1600.5"
+            - cell "-" [ref=f13e3454]
+            - cell "-" [ref=f13e3455]
+            - cell "3" [ref=f13e3456]
+            - cell "33%" [ref=f13e3457]
+          - row [ref=f13e3458]:
+            - cell "166" [ref=f13e3459]
+            - cell [ref=f13e3460]:
+              - generic "FRA · France" [ref=f13e3461]
+              - link "Florian BOURRASSAUD" [ref=f13e3462] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-dcc794f55f79b8d1
+              - button "" [ref=f13e3463] [cursor=pointer]
+            - cell [ref=f13e3465]:
+              - strong [ref=f13e3466]: "1600.4"
+            - cell "-" [ref=f13e3467]
+            - cell "-" [ref=f13e3468]
+            - cell "30" [ref=f13e3469]
+            - cell "57%" [ref=f13e3470]
+          - row [ref=f13e3471]:
+            - cell "167" [ref=f13e3472]
+            - cell [ref=f13e3473]:
+              - generic "SWE · Sweden" [ref=f13e3474]
+              - link "Par GERELL" [ref=f13e3475] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-2b6bb6a13b42479d
+              - button "" [ref=f13e3476] [cursor=pointer]
+            - cell [ref=f13e3478]:
+              - strong [ref=f13e3479]: "1599.6"
+            - cell "-" [ref=f13e3480]
+            - cell "-" [ref=f13e3481]
+            - cell "2" [ref=f13e3482]
+            - cell "0%" [ref=f13e3483]
+          - row [ref=f13e3484]:
+            - cell "168" [ref=f13e3485]
+            - cell [ref=f13e3486]:
+              - generic "NGR · Nigeria" [ref=f13e3487]
+              - link "Quadri ARUNA" [ref=f13e3488] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-56b760782e9a5e0c
+              - button "" [ref=f13e3489] [cursor=pointer]
+            - cell [ref=f13e3491]:
+              - strong [ref=f13e3492]: "1598.7"
+            - cell "-" [ref=f13e3493]
+            - cell "-" [ref=f13e3494]
+            - cell "24" [ref=f13e3495]
+            - cell "38%" [ref=f13e3496]
+          - row [ref=f13e3497]:
+            - cell "169" [ref=f13e3498]
+            - cell [ref=f13e3499]:
+              - generic "SGP · Singapore" [ref=f13e3500]
+              - link "PANG Koen" [ref=f13e3501] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-5a9b42baecccdc6e
+              - button "" [ref=f13e3502] [cursor=pointer]
+            - cell [ref=f13e3504]:
+              - strong [ref=f13e3505]: "1596.5"
+            - cell "-" [ref=f13e3506]
+            - cell "-" [ref=f13e3507]
+            - cell "25" [ref=f13e3508]
+            - cell "48%" [ref=f13e3509]
+          - row [ref=f13e3510]:
+            - cell "170" [ref=f13e3511]
+            - cell [ref=f13e3512]:
+              - generic "USA · USA" [ref=f13e3513]
+              - link "Nikhil KUMAR" [ref=f13e3514] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-19fc46aa4c9fe42e
+              - button "" [ref=f13e3515] [cursor=pointer]
+            - cell [ref=f13e3517]:
+              - strong [ref=f13e3518]: "1595.3"
+            - cell "-" [ref=f13e3519]
+            - cell "-" [ref=f13e3520]
+            - cell "2" [ref=f13e3521]
+            - cell "50%" [ref=f13e3522]
+          - row [ref=f13e3523]:
+            - cell "171" [ref=f13e3524]
+            - cell [ref=f13e3525]:
+              - generic "HUN · Hungary" [ref=f13e3526]
+              - link "Adam SZUDI" [ref=f13e3527] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-1da306358ef1bbd9
+              - button "" [ref=f13e3528] [cursor=pointer]
+            - cell [ref=f13e3530]:
+              - strong [ref=f13e3531]: "1594.8"
+            - cell "-" [ref=f13e3532]
+            - cell "-" [ref=f13e3533]
+            - cell "14" [ref=f13e3534]
+            - cell "50%" [ref=f13e3535]
+          - row [ref=f13e3536]:
+            - cell "172" [ref=f13e3537]
+            - cell [ref=f13e3538]:
+              - generic "JPN · Japan" [ref=f13e3539]
+              - link "Satoshi EIDA" [ref=f13e3540] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-74a8da23fa215f37
+              - button "" [ref=f13e3541] [cursor=pointer]
+            - cell [ref=f13e3543]:
+              - strong [ref=f13e3544]: "1594.7"
+            - cell "-" [ref=f13e3545]
+            - cell "-" [ref=f13e3546]
+            - cell "8" [ref=f13e3547]
+            - cell "25%" [ref=f13e3548]
+          - row [ref=f13e3549]:
+            - cell "173" [ref=f13e3550]
+            - cell [ref=f13e3551]:
+              - link "Zokhid KENJAEV" [ref=f13e3552] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-3000852072f9da84
+              - button "" [ref=f13e3553] [cursor=pointer]
+            - cell [ref=f13e3555]:
+              - strong [ref=f13e3556]: "1593.7"
+            - cell "-" [ref=f13e3557]
+            - cell "-" [ref=f13e3558]
+            - cell "2" [ref=f13e3559]
+            - cell "50%" [ref=f13e3560]
+          - row [ref=f13e3561]:
+            - cell "174" [ref=f13e3562]
+            - cell [ref=f13e3563]:
+              - generic "SVK · Slovak Republic" [ref=f13e3564]
+              - link "Lubomir PISTEJ" [ref=f13e3565] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-17ae63f2c7b29396
+              - button "" [ref=f13e3566] [cursor=pointer]
+            - cell [ref=f13e3568]:
+              - strong [ref=f13e3569]: "1588.2"
+            - cell "-" [ref=f13e3570]
+            - cell "-" [ref=f13e3571]
+            - cell "29" [ref=f13e3572]
+            - cell "55%" [ref=f13e3573]
+          - row [ref=f13e3574]:
+            - cell "175" [ref=f13e3575]
+            - cell [ref=f13e3576]:
+              - generic "GER · Germany" [ref=f13e3577]
+              - link "Patrick BAUM" [ref=f13e3578] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-33f1069cde8f5b48
+              - button "" [ref=f13e3579] [cursor=pointer]
+            - cell [ref=f13e3581]:
+              - strong [ref=f13e3582]: "1588.1"
+            - cell "-" [ref=f13e3583]
+            - cell "-" [ref=f13e3584]
+            - cell "2" [ref=f13e3585]
+            - cell "0%" [ref=f13e3586]
+          - row [ref=f13e3587]:
+            - cell "176" [ref=f13e3588]
+            - cell [ref=f13e3589]:
+              - generic "ESP · Spain" [ref=f13e3590]
+              - link "Diego LILLO" [ref=f13e3591] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-39b3670bd5d064c7
+              - button "" [ref=f13e3592] [cursor=pointer]
+            - cell [ref=f13e3594]:
+              - strong [ref=f13e3595]: "1587.1"
+            - cell "-" [ref=f13e3596]
+            - cell "-" [ref=f13e3597]
+            - cell "15" [ref=f13e3598]
+            - cell "60%" [ref=f13e3599]
+          - row [ref=f13e3600]:
+            - cell "177" [ref=f13e3601]
+            - cell [ref=f13e3602]:
+              - generic "USA · USA" [ref=f13e3603]
+              - link "MA Jinbao" [ref=f13e3604] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-bbf65aa45f25b358
+              - button "" [ref=f13e3605] [cursor=pointer]
+            - cell [ref=f13e3607]:
+              - strong [ref=f13e3608]: "1584.3"
+            - cell "-" [ref=f13e3609]
+            - cell "-" [ref=f13e3610]
+            - cell "9" [ref=f13e3611]
+            - cell "44%" [ref=f13e3612]
+          - row [ref=f13e3613]:
+            - cell "178" [ref=f13e3614]
+            - cell [ref=f13e3615]:
+              - generic "TPE · Chinese Taipei" [ref=f13e3616]
+              - link "HUNG Che-Yen" [ref=f13e3617] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-54ac7066e12b30f2
+              - button "" [ref=f13e3618] [cursor=pointer]
+            - cell [ref=f13e3620]:
+              - strong [ref=f13e3621]: "1584.2"
+            - cell "-" [ref=f13e3622]
+            - cell "-" [ref=f13e3623]
+            - cell "6" [ref=f13e3624]
+            - cell "67%" [ref=f13e3625]
+          - row [ref=f13e3626]:
+            - cell "179" [ref=f13e3627]
+            - cell [ref=f13e3628]:
+              - generic "MAS · Malaysia" [ref=f13e3629]
+              - link "WONG Qi Shen" [ref=f13e3630] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-9cc88f56037f5e1a
+              - button "" [ref=f13e3631] [cursor=pointer]
+            - cell [ref=f13e3633]:
+              - strong [ref=f13e3634]: "1584.1"
+            - cell "-" [ref=f13e3635]
+            - cell "-" [ref=f13e3636]
+            - cell "13" [ref=f13e3637]
+            - cell "46%" [ref=f13e3638]
+          - row [ref=f13e3639]:
+            - cell "180" [ref=f13e3640]
+            - cell [ref=f13e3641]:
+              - link "Senura SILVA" [ref=f13e3642] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-23889398326e2544
+              - button "" [ref=f13e3643] [cursor=pointer]
+            - cell [ref=f13e3645]:
+              - strong [ref=f13e3646]: "1582.4"
+            - cell "-" [ref=f13e3647]
+            - cell "-" [ref=f13e3648]
+            - cell "7" [ref=f13e3649]
+            - cell "71%" [ref=f13e3650]
+          - row [ref=f13e3651]:
+            - cell "181" [ref=f13e3652]
+            - cell [ref=f13e3653]:
+              - generic "CHN · China" [ref=f13e3654]
+              - link "LIU Yebo" [ref=f13e3655] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-9cf9f2da7385c84e
+              - button "" [ref=f13e3656] [cursor=pointer]
+            - cell [ref=f13e3658]:
+              - strong [ref=f13e3659]: "1582.2"
+            - cell "-" [ref=f13e3660]
+            - cell "-" [ref=f13e3661]
+            - cell "9" [ref=f13e3662]
+            - cell "56%" [ref=f13e3663]
+          - row [ref=f13e3664]:
+            - cell "182" [ref=f13e3665]
+            - cell [ref=f13e3666]:
+              - generic "CRO · Croatia" [ref=f13e3667]
+              - link "Frane KOJIC" [ref=f13e3668] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-8a9559f189b37eed
+              - button "" [ref=f13e3669] [cursor=pointer]
+            - cell [ref=f13e3671]:
+              - strong [ref=f13e3672]: "1581.4"
+            - cell "-" [ref=f13e3673]
+            - cell "-" [ref=f13e3674]
+            - cell "4" [ref=f13e3675]
+            - cell "50%" [ref=f13e3676]
+          - row [ref=f13e3677]:
+            - cell "183" [ref=f13e3678]
+            - cell [ref=f13e3679]:
+              - generic "JPN · Japan" [ref=f13e3680]
+              - link "Takaya KAMI" [ref=f13e3681] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-ca2ab62adf3b0a96
+              - button "" [ref=f13e3682] [cursor=pointer]
+            - cell [ref=f13e3684]:
+              - strong [ref=f13e3685]: "1579.4"
+            - cell "-" [ref=f13e3686]
+            - cell "-" [ref=f13e3687]
+            - cell "1" [ref=f13e3688]
+            - cell "0%" [ref=f13e3689]
+          - row [ref=f13e3690]:
+            - cell "184" [ref=f13e3691]
+            - cell [ref=f13e3692]:
+              - generic "HUN · Hungary" [ref=f13e3693]
+              - link "Bence MAJOROS" [ref=f13e3694] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-9972f92d32c9e929
+              - button "" [ref=f13e3695] [cursor=pointer]
+            - cell [ref=f13e3697]:
+              - strong [ref=f13e3698]: "1579.3"
+            - cell "-" [ref=f13e3699]
+            - cell "-" [ref=f13e3700]
+            - cell "2" [ref=f13e3701]
+            - cell "0%" [ref=f13e3702]
+          - row [ref=f13e3703]:
+            - cell "185" [ref=f13e3704]
+            - cell [ref=f13e3705]:
+              - generic "NZL · New Zealand" [ref=f13e3706]
+              - link "Eli HO" [ref=f13e3707] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-7b8c497805b2a0f4
+              - button "" [ref=f13e3708] [cursor=pointer]
+            - cell [ref=f13e3710]:
+              - strong [ref=f13e3711]: "1577.4"
+            - cell "-" [ref=f13e3712]
+            - cell "-" [ref=f13e3713]
+            - cell "5" [ref=f13e3714]
+            - cell "80%" [ref=f13e3715]
+          - row [ref=f13e3716]:
+            - cell "186" [ref=f13e3717]
+            - cell [ref=f13e3718]:
+              - generic "GER · Germany" [ref=f13e3719]
+              - link "Cedric MEISSNER" [ref=f13e3720] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-94cd6575077488d1
+              - button "" [ref=f13e3721] [cursor=pointer]
+            - cell [ref=f13e3723]:
+              - strong [ref=f13e3724]: "1576.1"
+            - cell "-" [ref=f13e3725]
+            - cell "-" [ref=f13e3726]
+            - cell "31" [ref=f13e3727]
+            - cell "52%" [ref=f13e3728]
+          - row [ref=f13e3729]:
+            - cell "187" [ref=f13e3730]
+            - cell [ref=f13e3731]:
+              - link "Alex NAUMI" [ref=f13e3732] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-5839565f9c249c1b
+              - button "" [ref=f13e3733] [cursor=pointer]
+            - cell [ref=f13e3735]:
+              - strong [ref=f13e3736]: "1576.0"
+            - cell "-" [ref=f13e3737]
+            - cell "-" [ref=f13e3738]
+            - cell "13" [ref=f13e3739]
+            - cell "46%" [ref=f13e3740]
+          - row [ref=f13e3741]:
+            - cell "187" [ref=f13e3742]
+            - cell [ref=f13e3743]:
+              - link "Dmitrii VINOGRADOV" [ref=f13e3744] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-c2a89c183f032fcc
+              - button "" [ref=f13e3745] [cursor=pointer]
+            - cell [ref=f13e3747]:
+              - strong [ref=f13e3748]: "1576.0"
+            - cell "-" [ref=f13e3749]
+            - cell "-" [ref=f13e3750]
+            - cell "10" [ref=f13e3751]
+            - cell "60%" [ref=f13e3752]
+          - row [ref=f13e3753]:
+            - cell "189" [ref=f13e3754]
+            - cell [ref=f13e3755]:
+              - generic "HKG · Hong Kong, China" [ref=f13e3756]
+              - link "LAM Siu Hang" [ref=f13e3757] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-f2eb0dce6c54ca8a
+              - button "" [ref=f13e3758] [cursor=pointer]
+            - cell [ref=f13e3760]:
+              - strong [ref=f13e3761]: "1575.8"
+            - cell "-" [ref=f13e3762]
+            - cell "-" [ref=f13e3763]
+            - cell "31" [ref=f13e3764]
+            - cell "39%" [ref=f13e3765]
+          - row [ref=f13e3766]:
+            - cell "190" [ref=f13e3767]
+            - cell [ref=f13e3768]:
+              - generic "HKG · Hong Kong, China" [ref=f13e3769]
+              - link "YIU Kwan To" [ref=f13e3770] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-8caf9b3872b7f02c
+              - button "" [ref=f13e3771] [cursor=pointer]
+            - cell [ref=f13e3773]:
+              - strong [ref=f13e3774]: "1575.4"
+            - cell "-" [ref=f13e3775]
+            - cell "-" [ref=f13e3776]
+            - cell "24" [ref=f13e3777]
+            - cell "50%" [ref=f13e3778]
+          - row [ref=f13e3779]:
+            - cell "191" [ref=f13e3780]
+            - cell [ref=f13e3781]:
+              - generic "CHN · China" [ref=f13e3782]
+              - link "CHEN Junsong" [ref=f13e3783] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-a34d3631360401cd
+              - button "" [ref=f13e3784] [cursor=pointer]
+            - cell [ref=f13e3786]:
+              - strong [ref=f13e3787]: "1574.0"
+            - cell "-" [ref=f13e3788]
+            - cell "-" [ref=f13e3789]
+            - cell "27" [ref=f13e3790]
+            - cell "44%" [ref=f13e3791]
+          - row [ref=f13e3792]:
+            - cell "192" [ref=f13e3793]
+            - cell [ref=f13e3794]:
+              - generic "CHN · China" [ref=f13e3795]
+              - link "ZHANG Yudong" [ref=f13e3796] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-427e7697d4032e93
+              - button "" [ref=f13e3797] [cursor=pointer]
+            - cell [ref=f13e3799]:
+              - strong [ref=f13e3800]: "1573.8"
+            - cell "-" [ref=f13e3801]
+            - cell "-" [ref=f13e3802]
+            - cell "4" [ref=f13e3803]
+            - cell "50%" [ref=f13e3804]
+          - row [ref=f13e3805]:
+            - cell "193" [ref=f13e3806]
+            - cell [ref=f13e3807]:
+              - generic "CRO · Croatia" [ref=f13e3808]
+              - link "Filip ZELJKO" [ref=f13e3809] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-7cccfaa6b9cd5362
+              - button "" [ref=f13e3810] [cursor=pointer]
+            - cell [ref=f13e3812]:
+              - strong [ref=f13e3813]: "1573.6"
+            - cell "-" [ref=f13e3814]
+            - cell "-" [ref=f13e3815]
+            - cell "35" [ref=f13e3816]
+            - cell "46%" [ref=f13e3817]
+          - row [ref=f13e3818]:
+            - cell "194" [ref=f13e3819]
+            - cell [ref=f13e3820]:
+              - generic "FRA · France" [ref=f13e3821]
+              - link "Joe SEYFRIED" [ref=f13e3822] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-c6d35d68fd239adc
+              - button "" [ref=f13e3823] [cursor=pointer]
+            - cell [ref=f13e3825]:
+              - strong [ref=f13e3826]: "1572.1"
+            - cell "-" [ref=f13e3827]
+            - cell "-" [ref=f13e3828]
+            - cell "31" [ref=f13e3829]
+            - cell "55%" [ref=f13e3830]
+          - row [ref=f13e3831]:
+            - cell "195" [ref=f13e3832]
+            - cell [ref=f13e3833]:
+              - generic "EGY · Egypt" [ref=f13e3834]
+              - link "Badr MOSTAFA" [ref=f13e3835] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-04e68f61fa6f345d
+              - button "" [ref=f13e3836] [cursor=pointer]
+            - cell [ref=f13e3838]:
+              - strong [ref=f13e3839]: "1571.4"
+            - cell "-" [ref=f13e3840]
+            - cell "-" [ref=f13e3841]
+            - cell "5" [ref=f13e3842]
+            - cell "60%" [ref=f13e3843]
+          - row [ref=f13e3844]:
+            - cell "196" [ref=f13e3845]
+            - cell [ref=f13e3846]:
+              - generic "CHN · China" [ref=f13e3847]
+              - link "YAN Sheng" [ref=f13e3848] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-6560e6d2b43e6bce
+              - button "" [ref=f13e3849] [cursor=pointer]
+            - cell [ref=f13e3851]:
+              - strong [ref=f13e3852]: "1571.3"
+            - cell "-" [ref=f13e3853]
+            - cell "-" [ref=f13e3854]
+            - cell "1" [ref=f13e3855]
+            - cell "0%" [ref=f13e3856]
+          - row [ref=f13e3857]:
+            - cell "197" [ref=f13e3858]
+            - cell [ref=f13e3859]:
+              - generic "SWE · Sweden" [ref=f13e3860]
+              - link "Simon BERGLUND" [ref=f13e3861] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-5ae48c9ca94aaf38
+              - button "" [ref=f13e3862] [cursor=pointer]
+            - cell [ref=f13e3864]:
+              - strong [ref=f13e3865]: "1569.4"
+            - cell "-" [ref=f13e3866]
+            - cell "-" [ref=f13e3867]
+            - cell "5" [ref=f13e3868]
+            - cell "60%" [ref=f13e3869]
+          - row [ref=f13e3870]:
+            - cell "198" [ref=f13e3871]
+            - cell [ref=f13e3872]:
+              - generic "SGP · Singapore" [ref=f13e3873]
+              - link "QUEK Yong Izaac" [ref=f13e3874] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-0541a674fbe44cd8
+              - button "" [ref=f13e3875] [cursor=pointer]
+            - cell [ref=f13e3877]:
+              - strong [ref=f13e3878]: "1569.3"
+            - cell "-" [ref=f13e3879]
+            - cell "-" [ref=f13e3880]
+            - cell "3" [ref=f13e3881]
+            - cell "67%" [ref=f13e3882]
+          - row [ref=f13e3883]:
+            - cell "199" [ref=f13e3884]
+            - cell [ref=f13e3885]:
+              - generic "IRI · Iran" [ref=f13e3886]
+              - link "Navid SHAMS" [ref=f13e3887] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-71fa0ae1b98fcdfd
+              - button "" [ref=f13e3888] [cursor=pointer]
+            - cell [ref=f13e3890]:
+              - strong [ref=f13e3891]: "1568.3"
+            - cell "-" [ref=f13e3892]
+            - cell "-" [ref=f13e3893]
+            - cell "9" [ref=f13e3894]
+            - cell "67%" [ref=f13e3895]
+          - row [ref=f13e3896]:
+            - cell "200" [ref=f13e3897]
+            - cell [ref=f13e3898]:
+              - link "Ivan KAHN" [ref=f13e3899] [cursor=pointer]:
+                - /url: wtt_player.html?cat=ms&uid=ms-f7521f757c2b1c29
+              - button "" [ref=f13e3900] [cursor=pointer]
+            - cell [ref=f13e3902]:
+              - strong [ref=f13e3903]: "1567.8"
+            - cell "-" [ref=f13e3904]
+            - cell "-" [ref=f13e3905]
+            - cell "3" [ref=f13e3906]
+            - cell "67%" [ref=f13e3907]
+          - row [ref=f13e3908]:
+            - cell [ref=f13e3909]:
+              - button " 显示更多（200/787）" [ref=f13e3910] [cursor=pointer]:
+                - generic [ref=f13e3911]: 
+                - text: 显示更多（200/787）
+      - link " 返回 WTT Hub" [ref=f13e212] [cursor=pointer]:
+        - /url: /wtt_hub.html?cat=ms
+        - generic [ref=f13e213]: 
+        - generic [ref=f13e214]: 返回 WTT Hub
+  - contentinfo [ref=f13e215]:
+    - generic [ref=f13e216]:
+      - generic [ref=f13e217]:
+        - generic [ref=f13e218]:
+          - link "WFLS Table Tennis Club" [ref=f13e219] [cursor=pointer]:
+            - /url: index.html
+          - paragraph [ref=f13e220]: 武汉外国语学校 · 湖北省武汉市
+          - paragraph [ref=f13e221]: 挥拍逐梦，旋转青春
+        - navigation [ref=f13e222]:
+          - heading "社团" [level=3] [ref=f13e223]
+          - list [ref=f13e224]:
+            - listitem [ref=f13e225]:
+              - link "Home" [ref=f13e226] [cursor=pointer]:
+                - /url: index.html
+            - listitem [ref=f13e227]:
+              - link "News" [ref=f13e228] [cursor=pointer]:
+                - /url: news.html
+            - listitem [ref=f13e229]:
+              - link "Competitions" [ref=f13e230] [cursor=pointer]:
+                - /url: competitions.html
+            - listitem [ref=f13e231]:
+              - link "社团骨干" [ref=f13e232] [cursor=pointer]:
+                - /url: members.html
+            - listitem [ref=f13e233]:
+              - link "赛季总结" [ref=f13e234] [cursor=pointer]:
+                - /url: season-review.html
+        - navigation [ref=f13e235]:
+          - heading "数据" [level=3] [ref=f13e236]
+          - list [ref=f13e237]:
+            - listitem [ref=f13e238]:
+              - link "Ranking" [ref=f13e239] [cursor=pointer]:
+                - /url: ranking.html
+            - listitem [ref=f13e240]:
+              - link "Data Viz" [ref=f13e241] [cursor=pointer]:
+                - /url: data_viz.html
+            - listitem [ref=f13e242]:
+              - link "个人数据" [ref=f13e243] [cursor=pointer]:
+                - /url: personal_stats.html
+            - listitem [ref=f13e244]:
+              - link "Data Scale" [ref=f13e245] [cursor=pointer]:
+                - /url: data_scale.html
+            - listitem [ref=f13e246]:
+              - link "WTT Ranking" [ref=f13e247] [cursor=pointer]:
+                - /url: /wtt_ranking.html?cat=ms
+            - listitem [ref=f13e248]:
+              - link "WTT Data Viz" [ref=f13e249] [cursor=pointer]:
+                - /url: /wtt_dataviz.html?cat=ms
+        - navigation [ref=f13e250]:
+          - heading "信息" [level=3] [ref=f13e251]
+          - list [ref=f13e252]:
+            - listitem [ref=f13e253]:
+              - link "提交战绩" [ref=f13e254] [cursor=pointer]:
+                - /url: submit.html
+            - listitem [ref=f13e255]:
+              - link "Q&A" [ref=f13e256] [cursor=pointer]:
+                - /url: qa.html
+            - listitem [ref=f13e257]:
+              - link "更新日志" [ref=f13e258] [cursor=pointer]:
+                - /url: changelog.html
+            - listitem [ref=f13e259]:
+              - link "网站文档" [ref=f13e260] [cursor=pointer]:
+                - /url: docs.html
+            - listitem [ref=f13e261]:
+              - link "Umpire Training" [ref=f13e262] [cursor=pointer]:
+                - /url: umpire-training.html
+            - listitem [ref=f13e263]:
+              - link "Contact" [ref=f13e264] [cursor=pointer]:
+                - /url: contact.html
+      - generic [ref=f13e265]:
+        - generic [ref=f13e266]:
+          - generic [ref=f13e267]: 关注我们
+          - generic [ref=f13e268]:
+            - button "社团QQ群二维码" [ref=f13e269] [cursor=pointer]:
+              - generic [ref=f13e270]: 
+            - link "GitHub" [ref=f13e271] [cursor=pointer]:
+              - /url: https://github.com/yglalpavir/wfls-tt-club
+              - generic [ref=f13e272]: 
+        - generic [ref=f13e273]:
+          - link "社团理念" [ref=f13e274] [cursor=pointer]:
+            - /url: index.html#philosophy
+          - link "积分规则" [ref=f13e275] [cursor=pointer]:
+            - /url: qa.html
+        - paragraph [ref=f13e276]: ©2026 WFLS Table Tennis Club. All rights reserved

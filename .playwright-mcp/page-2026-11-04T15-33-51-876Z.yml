@@ -1,0 +1,942 @@
+- generic [active] [ref=f10e1]:
+  - navigation [ref=f10e2]:
+    - generic [ref=f10e3]:
+      - link " WFLS TT Club" [ref=f10e4] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=f10e5]: 
+        - generic [ref=f10e7]: WFLS TT Club
+      - list [ref=f10e8]:
+        - listitem [ref=f10e9]:
+          - link "Home" [ref=f10e10] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=f10e11]:
+          - link "News" [ref=f10e12] [cursor=pointer]:
+            - /url: news.html
+        - listitem [ref=f10e13]:
+          - link "Competitions" [ref=f10e14] [cursor=pointer]:
+            - /url: competitions.html
+        - listitem [ref=f10e15]:
+          - link "Ranking Beta" [ref=f10e16] [cursor=pointer]:
+            - /url: ranking.html
+        - listitem [ref=f10e17]:
+          - link "More... " [ref=f10e18] [cursor=pointer]:
+            - /url: "#"
+            - text: More...
+            - generic [ref=f10e19]: 
+        - listitem [ref=f10e20]:
+          - link "Contact" [ref=f10e21] [cursor=pointer]:
+            - /url: contact.html
+      - generic [ref=f10e22]:
+        - button "搜索" [ref=f10e23] [cursor=pointer]:
+          - generic [ref=f10e24]: 
+        - button "切换主题" [ref=f10e25] [cursor=pointer]:
+          - generic [ref=f10e26]: 
+        - button "切换语言" [ref=f10e27] [cursor=pointer]:
+          - generic [ref=f10e28]: EN
+  - generic [ref=f10e31]:
+    - generic [ref=f10e32]: Data Visualization
+    - heading "数据可视化" [level=1] [ref=f10e33]
+    - paragraph [ref=f10e34]: 积分趋势 · 排名变化 · 球员对比
+  - navigation [ref=f10e35]:
+    - list [ref=f10e36]:
+      - listitem [ref=f10e37]:
+        - link "排名动态竞速 Top 15" [ref=f10e38] [cursor=pointer]:
+          - /url: "#viz-race"
+      - listitem [ref=f10e39]:
+        - link "积分趋势" [ref=f10e40] [cursor=pointer]:
+          - /url: "#viz-points"
+      - listitem [ref=f10e41]:
+        - link "排名变化河流图" [ref=f10e42] [cursor=pointer]:
+          - /url: "#viz-stream"
+      - listitem [ref=f10e43]:
+        - link "球员对比" [ref=f10e44] [cursor=pointer]:
+          - /url: "#viz-compare"
+      - listitem [ref=f10e45]:
+        - link "战绩统计" [ref=f10e46] [cursor=pointer]:
+          - /url: "#viz-record"
+      - listitem [ref=f10e47]:
+        - link "场次×积分效率" [ref=f10e48] [cursor=pointer]:
+          - /url: "#viz-efficiency"
+      - listitem [ref=f10e49]:
+        - link "交手热力矩阵" [ref=f10e50] [cursor=pointer]:
+          - /url: "#viz-heatmap"
+      - listitem [ref=f10e51]:
+        - link "比赛频次时间轴" [ref=f10e52] [cursor=pointer]:
+          - /url: "#viz-freq"
+      - listitem [ref=f10e53]:
+        - link "积分区间分布" [ref=f10e54] [cursor=pointer]:
+          - /url: "#viz-dist"
+  - generic [ref=f10e56]:
+    - generic [ref=f10e57]:
+      - generic [ref=f10e58]: Bar Chart Race
+      - heading "排名动态竞速 Top 15" [level=2] [ref=f10e59]
+      - paragraph [ref=f10e60]: 拖动滑块或播放，查看排名随时间变化
+    - generic [ref=f10e61]:
+      - generic [ref=f10e62]: 实时积分
+      - generic [ref=f10e63]:
+        - generic [ref=f10e257]:
+          - generic [ref=f10e258]:
+            - generic [ref=f10e259]: "1"
+            - generic "魏罗瑞" [ref=f10e260]
+            - generic [ref=f10e262]: "2123.7"
+          - generic [ref=f10e265]:
+            - generic [ref=f10e266]: "2"
+            - generic "付大卫" [ref=f10e267]
+            - generic [ref=f10e269]: "2101.2"
+          - generic [ref=f10e272]:
+            - generic [ref=f10e273]: "3"
+            - generic "任峻贤" [ref=f10e274]
+            - generic [ref=f10e276]: "2088.3"
+          - generic [ref=f10e279]:
+            - generic [ref=f10e280]: "4"
+            - generic "任安喆" [ref=f10e281]
+            - generic [ref=f10e283]: "2079.9"
+          - generic [ref=f10e286]:
+            - generic [ref=f10e287]: "5"
+            - generic "祁子傲" [ref=f10e288]
+            - generic [ref=f10e290]: "2079.7"
+          - generic [ref=f10e293]:
+            - generic [ref=f10e294]: "6"
+            - generic "龚雨煊" [ref=f10e295]
+            - generic [ref=f10e297]: "2073.0"
+          - generic [ref=f10e300]:
+            - generic [ref=f10e301]: "7"
+            - generic "陈瑜萱" [ref=f10e302]
+            - generic [ref=f10e304]: "2070.7"
+          - generic [ref=f10e307]:
+            - generic [ref=f10e308]: "8"
+            - generic "梅哲宇" [ref=f10e309]
+            - generic [ref=f10e311]: "2064.6"
+          - generic [ref=f10e314]:
+            - generic [ref=f10e315]: "9"
+            - generic "王成悦" [ref=f10e316]
+            - generic [ref=f10e318]: "2064.4"
+          - generic [ref=f10e321]:
+            - generic [ref=f10e322]: "10"
+            - generic "姜子润" [ref=f10e323]
+            - generic [ref=f10e325]: "2056.8"
+          - generic [ref=f10e328]:
+            - generic [ref=f10e329]: "11"
+            - generic "谷子易" [ref=f10e330]
+            - generic [ref=f10e332]: "2043.7"
+          - generic [ref=f10e335]:
+            - generic [ref=f10e336]: "12"
+            - generic "李南熠" [ref=f10e337]
+            - generic [ref=f10e339]: "2038.9"
+          - generic [ref=f10e342]:
+            - generic [ref=f10e343]: "13"
+            - generic "王天森" [ref=f10e344]
+            - generic [ref=f10e346]: "2024.5"
+          - generic [ref=f10e349]:
+            - generic [ref=f10e350]: "14"
+            - generic "徐耀鹏" [ref=f10e351]
+            - generic [ref=f10e353]: "2007.9"
+          - generic [ref=f10e356]:
+            - generic [ref=f10e357]: "15"
+            - generic "马钰恒" [ref=f10e358]
+            - generic [ref=f10e360]: "2001.3"
+        - generic [ref=f10e64]:
+          - generic [ref=f10e363]: "2000"
+          - generic [ref=f10e364]: "2050"
+          - generic [ref=f10e365]: "2100"
+          - generic [ref=f10e366]: "2150"
+    - generic [ref=f10e65]:
+      - button "播放/暂停" [ref=f10e66] [cursor=pointer]:
+        - generic [ref=f10e67]: 
+        - generic [ref=f10e68]: 播放
+      - slider [ref=f10e69] [cursor=pointer]: "40"
+      - generic [ref=f10e70]:
+        - generic [ref=f10e71]: 速度
+        - combobox "速度" [ref=f10e72] [cursor=pointer]:
+          - option "0.5×"
+          - option "1×" [selected]
+          - option "1.5×"
+          - option "2×"
+    - generic [ref=f10e73]:
+      - generic [ref=f10e74]: Line Chart
+      - heading "积分趋势" [level=2] [ref=f10e75]
+      - generic [ref=f10e76]:
+        - generic [ref=f10e77]: 最近
+        - spinbutton "显示最近N个数据点" [ref=f10e78]: "20"
+        - generic [ref=f10e79]: 个数据点
+    - generic [ref=f10e81]:
+      - heading "选择球员（最多8人）" [level=3] [ref=f10e82]
+      - generic [ref=f10e83]:
+        - generic [ref=f10e367] [cursor=pointer]:
+          - checkbox "魏罗瑞 2123.7" [checked] [ref=f10e368]
+          - generic [ref=f10e369]: 魏罗瑞
+          - generic [ref=f10e370]: "2123.7"
+        - generic [ref=f10e371] [cursor=pointer]:
+          - checkbox "付大卫 2101.2" [checked] [ref=f10e372]
+          - generic [ref=f10e373]: 付大卫
+          - generic [ref=f10e374]: "2101.2"
+        - generic [ref=f10e375] [cursor=pointer]:
+          - checkbox "任峻贤 2088.3" [checked] [ref=f10e376]
+          - generic [ref=f10e377]: 任峻贤
+          - generic [ref=f10e378]: "2088.3"
+        - generic [ref=f10e379] [cursor=pointer]:
+          - checkbox "任安喆 2079.9" [checked] [ref=f10e380]
+          - generic [ref=f10e381]: 任安喆
+          - generic [ref=f10e382]: "2079.9"
+        - generic [ref=f10e383] [cursor=pointer]:
+          - checkbox "祁子傲 2079.7" [checked] [ref=f10e384]
+          - generic [ref=f10e385]: 祁子傲
+          - generic [ref=f10e386]: "2079.7"
+        - generic [ref=f10e387] [cursor=pointer]:
+          - checkbox "龚雨煊 2073.0" [checked] [ref=f10e388]
+          - generic [ref=f10e389]: 龚雨煊
+          - generic [ref=f10e390]: "2073.0"
+        - generic [ref=f10e391] [cursor=pointer]:
+          - checkbox "陈瑜萱 2070.7" [checked] [ref=f10e392]
+          - generic [ref=f10e393]: 陈瑜萱
+          - generic [ref=f10e394]: "2070.7"
+        - generic [ref=f10e395] [cursor=pointer]:
+          - checkbox "梅哲宇 2064.6" [checked] [ref=f10e396]
+          - generic [ref=f10e397]: 梅哲宇
+          - generic [ref=f10e398]: "2064.6"
+        - generic [ref=f10e399] [cursor=pointer]:
+          - checkbox "王成悦 2064.4" [ref=f10e400]
+          - generic [ref=f10e401]: 王成悦
+          - generic [ref=f10e402]: "2064.4"
+        - generic [ref=f10e403] [cursor=pointer]:
+          - checkbox "姜子润 2056.8" [ref=f10e404]
+          - generic [ref=f10e405]: 姜子润
+          - generic [ref=f10e406]: "2056.8"
+        - generic [ref=f10e407] [cursor=pointer]:
+          - checkbox "谷子易 2043.7" [ref=f10e408]
+          - generic [ref=f10e409]: 谷子易
+          - generic [ref=f10e410]: "2043.7"
+        - generic [ref=f10e411] [cursor=pointer]:
+          - checkbox "李南熠 2038.9" [ref=f10e412]
+          - generic [ref=f10e413]: 李南熠
+          - generic [ref=f10e414]: "2038.9"
+        - generic [ref=f10e415] [cursor=pointer]:
+          - checkbox "王天森 2024.5" [ref=f10e416]
+          - generic [ref=f10e417]: 王天森
+          - generic [ref=f10e418]: "2024.5"
+        - generic [ref=f10e419] [cursor=pointer]:
+          - checkbox "徐耀鹏 2007.9" [ref=f10e420]
+          - generic [ref=f10e421]: 徐耀鹏
+          - generic [ref=f10e422]: "2007.9"
+        - generic [ref=f10e423] [cursor=pointer]:
+          - checkbox "马钰恒 2001.3" [ref=f10e424]
+          - generic [ref=f10e425]: 马钰恒
+          - generic [ref=f10e426]: "2001.3"
+        - generic [ref=f10e427] [cursor=pointer]:
+          - checkbox "冯秋源 1991.9" [ref=f10e428]
+          - generic [ref=f10e429]: 冯秋源
+          - generic [ref=f10e430]: "1991.9"
+        - generic [ref=f10e431] [cursor=pointer]:
+          - checkbox "魏子越 1989.9" [ref=f10e432]
+          - generic [ref=f10e433]: 魏子越
+          - generic [ref=f10e434]: "1989.9"
+        - generic [ref=f10e435] [cursor=pointer]:
+          - checkbox "王禹涵 1986.0" [ref=f10e436]
+          - generic [ref=f10e437]: 王禹涵
+          - generic [ref=f10e438]: "1986.0"
+        - generic [ref=f10e439] [cursor=pointer]:
+          - checkbox "彭一和 1962.7" [ref=f10e440]
+          - generic [ref=f10e441]: 彭一和
+          - generic [ref=f10e442]: "1962.7"
+        - generic [ref=f10e443] [cursor=pointer]:
+          - checkbox "陶锦源 1899.4" [ref=f10e444]
+          - generic [ref=f10e445]: 陶锦源
+          - generic [ref=f10e446]: "1899.4"
+        - generic [ref=f10e447] [cursor=pointer]:
+          - checkbox "张宸瑞1 1834.1" [ref=f10e448]
+          - generic [ref=f10e449]: 张宸瑞1
+          - generic [ref=f10e450]: "1834.1"
+        - generic [ref=f10e451] [cursor=pointer]:
+          - checkbox "胡朗诚 1814.6" [ref=f10e452]
+          - generic [ref=f10e453]: 胡朗诚
+          - generic [ref=f10e454]: "1814.6"
+        - generic [ref=f10e455] [cursor=pointer]:
+          - checkbox "刘冠羽 1812.6" [ref=f10e456]
+          - generic [ref=f10e457]: 刘冠羽
+          - generic [ref=f10e458]: "1812.6"
+        - generic [ref=f10e459] [cursor=pointer]:
+          - checkbox "孙钰鑫 1804.7" [ref=f10e460]
+          - generic [ref=f10e461]: 孙钰鑫
+          - generic [ref=f10e462]: "1804.7"
+        - generic [ref=f10e463] [cursor=pointer]:
+          - checkbox "熊品钧 1789.5" [ref=f10e464]
+          - generic [ref=f10e465]: 熊品钧
+          - generic [ref=f10e466]: "1789.5"
+        - generic [ref=f10e467] [cursor=pointer]:
+          - checkbox "王思博 1786.9" [ref=f10e468]
+          - generic [ref=f10e469]: 王思博
+          - generic [ref=f10e470]: "1786.9"
+        - generic [ref=f10e471] [cursor=pointer]:
+          - checkbox "吴慈航 1750.9" [ref=f10e472]
+          - generic [ref=f10e473]: 吴慈航
+          - generic [ref=f10e474]: "1750.9"
+        - generic [ref=f10e475] [cursor=pointer]:
+          - checkbox "陈知勉 1750.0" [ref=f10e476]
+          - generic [ref=f10e477]: 陈知勉
+          - generic [ref=f10e478]: "1750.0"
+        - generic [ref=f10e479] [cursor=pointer]:
+          - checkbox "叶泓鑫 1712.8" [ref=f10e480]
+          - generic [ref=f10e481]: 叶泓鑫
+          - generic [ref=f10e482]: "1712.8"
+        - generic [ref=f10e483] [cursor=pointer]:
+          - checkbox "李全景 1711.9" [ref=f10e484]
+          - generic [ref=f10e485]: 李全景
+          - generic [ref=f10e486]: "1711.9"
+        - generic [ref=f10e487] [cursor=pointer]:
+          - checkbox "杨苏旭 1705.1" [ref=f10e488]
+          - generic [ref=f10e489]: 杨苏旭
+          - generic [ref=f10e490]: "1705.1"
+        - generic [ref=f10e491] [cursor=pointer]:
+          - checkbox "李泫乐 1698.7" [ref=f10e492]
+          - generic [ref=f10e493]: 李泫乐
+          - generic [ref=f10e494]: "1698.7"
+        - generic [ref=f10e495] [cursor=pointer]:
+          - checkbox "吕宥衡 1697.3" [ref=f10e496]
+          - generic [ref=f10e497]: 吕宥衡
+          - generic [ref=f10e498]: "1697.3"
+        - generic [ref=f10e499] [cursor=pointer]:
+          - checkbox "潘乐然 1697.3" [ref=f10e500]
+          - generic [ref=f10e501]: 潘乐然
+          - generic [ref=f10e502]: "1697.3"
+        - generic [ref=f10e503] [cursor=pointer]:
+          - checkbox "熊若翔 1697.3" [ref=f10e504]
+          - generic [ref=f10e505]: 熊若翔
+          - generic [ref=f10e506]: "1697.3"
+        - generic [ref=f10e507] [cursor=pointer]:
+          - checkbox "朱昱安 1696.6" [ref=f10e508]
+          - generic [ref=f10e509]: 朱昱安
+          - generic [ref=f10e510]: "1696.6"
+        - generic [ref=f10e511] [cursor=pointer]:
+          - checkbox "汪宁轩 1686.9" [ref=f10e512]
+          - generic [ref=f10e513]: 汪宁轩
+          - generic [ref=f10e514]: "1686.9"
+        - generic [ref=f10e515] [cursor=pointer]:
+          - checkbox "戴星翊 1680.7" [ref=f10e516]
+          - generic [ref=f10e517]: 戴星翊
+          - generic [ref=f10e518]: "1680.7"
+        - generic [ref=f10e519] [cursor=pointer]:
+          - checkbox "彭瀚明 1673.4" [ref=f10e520]
+          - generic [ref=f10e521]: 彭瀚明
+          - generic [ref=f10e522]: "1673.4"
+        - generic [ref=f10e523] [cursor=pointer]:
+          - checkbox "张宸瑞2 1629.6" [ref=f10e524]
+          - generic [ref=f10e525]: 张宸瑞2
+          - generic [ref=f10e526]: "1629.6"
+        - generic [ref=f10e527] [cursor=pointer]:
+          - checkbox "王子一 1601.2" [ref=f10e528]
+          - generic [ref=f10e529]: 王子一
+          - generic [ref=f10e530]: "1601.2"
+        - generic [ref=f10e531] [cursor=pointer]:
+          - checkbox "何子涵 1600.0" [ref=f10e532]
+          - generic [ref=f10e533]: 何子涵
+          - generic [ref=f10e534]: "1600.0"
+        - generic [ref=f10e535] [cursor=pointer]:
+          - checkbox "胡永轩 1600.0" [ref=f10e536]
+          - generic [ref=f10e537]: 胡永轩
+          - generic [ref=f10e538]: "1600.0"
+        - generic [ref=f10e539] [cursor=pointer]:
+          - checkbox "叶孟恒 1596.7" [ref=f10e540]
+          - generic [ref=f10e541]: 叶孟恒
+          - generic [ref=f10e542]: "1596.7"
+        - generic [ref=f10e543] [cursor=pointer]:
+          - checkbox "丁胜怀 1587.6" [ref=f10e544]
+          - generic [ref=f10e545]: 丁胜怀
+          - generic [ref=f10e546]: "1587.6"
+        - generic [ref=f10e547] [cursor=pointer]:
+          - checkbox "曹高畅 1541.8" [ref=f10e548]
+          - generic [ref=f10e549]: 曹高畅
+          - generic [ref=f10e550]: "1541.8"
+        - generic [ref=f10e551] [cursor=pointer]:
+          - checkbox "何齐烨 1535.9" [ref=f10e552]
+          - generic [ref=f10e553]: 何齐烨
+          - generic [ref=f10e554]: "1535.9"
+        - generic [ref=f10e555] [cursor=pointer]:
+          - checkbox "肖辰宇 1535.8" [ref=f10e556]
+          - generic [ref=f10e557]: 肖辰宇
+          - generic [ref=f10e558]: "1535.8"
+        - generic [ref=f10e559] [cursor=pointer]:
+          - checkbox "邓以清 1523.8" [ref=f10e560]
+          - generic [ref=f10e561]: 邓以清
+          - generic [ref=f10e562]: "1523.8"
+        - generic [ref=f10e563] [cursor=pointer]:
+          - checkbox "刘天齐 1519.0" [ref=f10e564]
+          - generic [ref=f10e565]: 刘天齐
+          - generic [ref=f10e566]: "1519.0"
+        - generic [ref=f10e567] [cursor=pointer]:
+          - checkbox "刘彧铭 1498.0" [ref=f10e568]
+          - generic [ref=f10e569]: 刘彧铭
+          - generic [ref=f10e570]: "1498.0"
+        - generic [ref=f10e571] [cursor=pointer]:
+          - checkbox "宁悦辛 1485.5" [ref=f10e572]
+          - generic [ref=f10e573]: 宁悦辛
+          - generic [ref=f10e574]: "1485.5"
+        - generic [ref=f10e575] [cursor=pointer]:
+          - checkbox "刘浩扬 1400.0" [ref=f10e576]
+          - generic [ref=f10e577]: 刘浩扬
+          - generic [ref=f10e578]: "1400.0"
+        - generic [ref=f10e579] [cursor=pointer]:
+          - checkbox "熊子乐 1399.8" [ref=f10e580]
+          - generic [ref=f10e581]: 熊子乐
+          - generic [ref=f10e582]: "1399.8"
+        - generic [ref=f10e583] [cursor=pointer]:
+          - checkbox "吕曜而 1396.4" [ref=f10e584]
+          - generic [ref=f10e585]: 吕曜而
+          - generic [ref=f10e586]: "1396.4"
+        - generic [ref=f10e587] [cursor=pointer]:
+          - checkbox "王玥涵 1390.0" [ref=f10e588]
+          - generic [ref=f10e589]: 王玥涵
+          - generic [ref=f10e590]: "1390.0"
+        - generic [ref=f10e591] [cursor=pointer]:
+          - checkbox "俞睿哲 1300.0" [ref=f10e592]
+          - generic [ref=f10e593]: 俞睿哲
+          - generic [ref=f10e594]: "1300.0"
+      - button "应用" [ref=f10e87] [cursor=pointer]
+    - generic [ref=f10e90]:
+      - generic [ref=f10e91]: Stream Graph
+      - heading "排名变化河流图" [level=2] [ref=f10e92]
+      - generic [ref=f10e93]:
+        - generic [ref=f10e94]: 显示前
+        - spinbutton "填写1-20的任意正整数" [ref=f10e95]: "10"
+        - generic [ref=f10e96]: 名球员
+      - generic [ref=f10e97]:
+        - generic [ref=f10e98]: 最近
+        - spinbutton "显示最近N个数据点" [ref=f10e99]: "20"
+        - generic [ref=f10e100]: 个数据点
+    - generic [ref=f10e103]:
+      - generic [ref=f10e104]: Radar
+      - heading "六维战力雷达" [level=2] [ref=f10e105]
+    - generic [ref=f10e106]:
+      - generic [ref=f10e107]:
+        - generic [ref=f10e108]:
+          - generic [ref=f10e109]: 球员 A
+          - combobox [ref=f10e110] [cursor=pointer]:
+            - option "-- 选择球员 --"
+            - option "魏罗瑞" [selected]
+            - option "付大卫"
+            - option "任峻贤"
+            - option "任安喆"
+            - option "祁子傲"
+            - option "龚雨煊"
+            - option "陈瑜萱"
+            - option "梅哲宇"
+            - option "王成悦"
+            - option "姜子润"
+            - option "谷子易"
+            - option "李南熠"
+            - option "王天森"
+            - option "徐耀鹏"
+            - option "马钰恒"
+            - option "冯秋源"
+            - option "魏子越"
+            - option "王禹涵"
+            - option "彭一和"
+            - option "陶锦源"
+            - option "张宸瑞1"
+            - option "胡朗诚"
+            - option "刘冠羽"
+            - option "孙钰鑫"
+            - option "熊品钧"
+            - option "王思博"
+            - option "吴慈航"
+            - option "陈知勉"
+            - option "叶泓鑫"
+            - option "李全景"
+            - option "杨苏旭"
+            - option "李泫乐"
+            - option "吕宥衡"
+            - option "潘乐然"
+            - option "熊若翔"
+            - option "朱昱安"
+            - option "汪宁轩"
+            - option "戴星翊"
+            - option "彭瀚明"
+            - option "张宸瑞2"
+            - option "王子一"
+            - option "何子涵"
+            - option "胡永轩"
+            - option "叶孟恒"
+            - option "丁胜怀"
+            - option "曹高畅"
+            - option "何齐烨"
+            - option "肖辰宇"
+            - option "邓以清"
+            - option "刘天齐"
+            - option "刘彧铭"
+            - option "宁悦辛"
+            - option "刘浩扬"
+            - option "熊子乐"
+            - option "吕曜而"
+            - option "王玥涵"
+            - option "俞睿哲"
+        - generic [ref=f10e111]: VS
+        - generic [ref=f10e112]:
+          - generic [ref=f10e113]: 球员 B
+          - combobox [ref=f10e114] [cursor=pointer]:
+            - option "-- 选择球员 --"
+            - option "魏罗瑞"
+            - option "付大卫" [selected]
+            - option "任峻贤"
+            - option "任安喆"
+            - option "祁子傲"
+            - option "龚雨煊"
+            - option "陈瑜萱"
+            - option "梅哲宇"
+            - option "王成悦"
+            - option "姜子润"
+            - option "谷子易"
+            - option "李南熠"
+            - option "王天森"
+            - option "徐耀鹏"
+            - option "马钰恒"
+            - option "冯秋源"
+            - option "魏子越"
+            - option "王禹涵"
+            - option "彭一和"
+            - option "陶锦源"
+            - option "张宸瑞1"
+            - option "胡朗诚"
+            - option "刘冠羽"
+            - option "孙钰鑫"
+            - option "熊品钧"
+            - option "王思博"
+            - option "吴慈航"
+            - option "陈知勉"
+            - option "叶泓鑫"
+            - option "李全景"
+            - option "杨苏旭"
+            - option "李泫乐"
+            - option "吕宥衡"
+            - option "潘乐然"
+            - option "熊若翔"
+            - option "朱昱安"
+            - option "汪宁轩"
+            - option "戴星翊"
+            - option "彭瀚明"
+            - option "张宸瑞2"
+            - option "王子一"
+            - option "何子涵"
+            - option "胡永轩"
+            - option "叶孟恒"
+            - option "丁胜怀"
+            - option "曹高畅"
+            - option "何齐烨"
+            - option "肖辰宇"
+            - option "邓以清"
+            - option "刘天齐"
+            - option "刘彧铭"
+            - option "宁悦辛"
+            - option "刘浩扬"
+            - option "熊子乐"
+            - option "吕曜而"
+            - option "王玥涵"
+            - option "俞睿哲"
+        - button "对比" [ref=f10e115] [cursor=pointer]
+      - generic [ref=f10e598]:
+        - generic [ref=f10e599]:
+          - button "魏罗瑞 S · 78" [ref=f10e600] [cursor=pointer]:
+            - generic [ref=f10e602]: 魏罗瑞
+            - generic "综合战力指数（六维均值） = 73 + 74 + 85 + 86 + 89 + 63 ÷ 6 ≈ 78" [ref=f10e603]: S · 78
+          - button "付大卫 S · 73" [ref=f10e604] [cursor=pointer]:
+            - generic [ref=f10e606]: 付大卫
+            - generic "综合战力指数（六维均值） = 61 + 59 + 91 + 72 + 95 + 58 ÷ 6 ≈ 73" [ref=f10e607]: S · 73
+        - table [ref=f10e608]:
+          - rowgroup [ref=f10e609]:
+            - row [ref=f10e610]:
+              - columnheader [ref=f10e611]
+              - columnheader "魏罗瑞" [ref=f10e612]
+              - columnheader "付大卫" [ref=f10e613]
+              - columnheader "差值" [ref=f10e614]
+          - rowgroup [ref=f10e615]:
+            - row [ref=f10e616]:
+              - cell "胜率" [ref=f10e617]
+              - cell "73" [ref=f10e618]
+              - cell "61" [ref=f10e619]
+              - cell "+12" [ref=f10e620]
+            - row [ref=f10e621]:
+              - cell "长盘" [ref=f10e622]
+              - cell "74" [ref=f10e623]
+              - cell "59" [ref=f10e624]
+              - cell "+15" [ref=f10e625]
+            - row [ref=f10e626]:
+              - cell "大赛" [ref=f10e627]
+              - cell "85" [ref=f10e628]
+              - cell "91" [ref=f10e629]
+              - cell "-6" [ref=f10e630]
+            - row [ref=f10e631]:
+              - cell "强敌" [ref=f10e632]
+              - cell "86" [ref=f10e633]
+              - cell "72" [ref=f10e634]
+              - cell "+14" [ref=f10e635]
+            - row [ref=f10e636]:
+              - cell "积极度" [ref=f10e637]
+              - cell "89" [ref=f10e638]
+              - cell "95" [ref=f10e639]
+              - cell "-6" [ref=f10e640]
+            - row [ref=f10e641]:
+              - cell "零封" [ref=f10e642]
+              - cell "63" [ref=f10e643]
+              - cell "58" [ref=f10e644]
+              - cell "+5" [ref=f10e645]
+    - generic [ref=f10e120]:
+      - generic [ref=f10e121]: Comparison
+      - heading "球员对比" [level=2] [ref=f10e122]
+    - generic [ref=f10e123]:
+      - generic [ref=f10e124]:
+        - generic [ref=f10e125]:
+          - generic [ref=f10e126]: 球员 A
+          - combobox [ref=f10e127] [cursor=pointer]:
+            - option "-- 选择球员 --" [selected]
+            - option "魏罗瑞"
+            - option "付大卫"
+            - option "任峻贤"
+            - option "任安喆"
+            - option "祁子傲"
+            - option "龚雨煊"
+            - option "陈瑜萱"
+            - option "梅哲宇"
+            - option "王成悦"
+            - option "姜子润"
+            - option "谷子易"
+            - option "李南熠"
+            - option "王天森"
+            - option "徐耀鹏"
+            - option "马钰恒"
+            - option "冯秋源"
+            - option "魏子越"
+            - option "王禹涵"
+            - option "彭一和"
+            - option "陶锦源"
+            - option "张宸瑞1"
+            - option "胡朗诚"
+            - option "刘冠羽"
+            - option "孙钰鑫"
+            - option "熊品钧"
+            - option "王思博"
+            - option "吴慈航"
+            - option "陈知勉"
+            - option "叶泓鑫"
+            - option "李全景"
+            - option "杨苏旭"
+            - option "李泫乐"
+            - option "吕宥衡"
+            - option "潘乐然"
+            - option "熊若翔"
+            - option "朱昱安"
+            - option "汪宁轩"
+            - option "戴星翊"
+            - option "彭瀚明"
+            - option "张宸瑞2"
+            - option "王子一"
+            - option "何子涵"
+            - option "胡永轩"
+            - option "叶孟恒"
+            - option "丁胜怀"
+            - option "曹高畅"
+            - option "何齐烨"
+            - option "肖辰宇"
+            - option "邓以清"
+            - option "刘天齐"
+            - option "刘彧铭"
+            - option "宁悦辛"
+            - option "刘浩扬"
+            - option "熊子乐"
+            - option "吕曜而"
+            - option "王玥涵"
+            - option "俞睿哲"
+        - generic [ref=f10e128]: VS
+        - generic [ref=f10e129]:
+          - generic [ref=f10e130]: 球员 B
+          - combobox [ref=f10e131] [cursor=pointer]:
+            - option "-- 选择球员 --" [selected]
+            - option "魏罗瑞"
+            - option "付大卫"
+            - option "任峻贤"
+            - option "任安喆"
+            - option "祁子傲"
+            - option "龚雨煊"
+            - option "陈瑜萱"
+            - option "梅哲宇"
+            - option "王成悦"
+            - option "姜子润"
+            - option "谷子易"
+            - option "李南熠"
+            - option "王天森"
+            - option "徐耀鹏"
+            - option "马钰恒"
+            - option "冯秋源"
+            - option "魏子越"
+            - option "王禹涵"
+            - option "彭一和"
+            - option "陶锦源"
+            - option "张宸瑞1"
+            - option "胡朗诚"
+            - option "刘冠羽"
+            - option "孙钰鑫"
+            - option "熊品钧"
+            - option "王思博"
+            - option "吴慈航"
+            - option "陈知勉"
+            - option "叶泓鑫"
+            - option "李全景"
+            - option "杨苏旭"
+            - option "李泫乐"
+            - option "吕宥衡"
+            - option "潘乐然"
+            - option "熊若翔"
+            - option "朱昱安"
+            - option "汪宁轩"
+            - option "戴星翊"
+            - option "彭瀚明"
+            - option "张宸瑞2"
+            - option "王子一"
+            - option "何子涵"
+            - option "胡永轩"
+            - option "叶孟恒"
+            - option "丁胜怀"
+            - option "曹高畅"
+            - option "何齐烨"
+            - option "肖辰宇"
+            - option "邓以清"
+            - option "刘天齐"
+            - option "刘彧铭"
+            - option "宁悦辛"
+            - option "刘浩扬"
+            - option "熊子乐"
+            - option "吕曜而"
+            - option "王玥涵"
+            - option "俞睿哲"
+        - button "对比" [ref=f10e132] [cursor=pointer]
+      - generic [ref=f10e134]:
+        - generic [ref=f10e135]: 
+        - paragraph [ref=f10e136]: 选择两名球员进行对比分析
+    - generic [ref=f10e137]:
+      - generic [ref=f10e138]: Match Records
+      - heading "战绩统计" [level=2] [ref=f10e139]
+      - generic [ref=f10e140]:
+        - generic [ref=f10e141]: 显示前
+        - spinbutton "填写1-20的任意正整数" [ref=f10e142]: "10"
+        - generic [ref=f10e143]: 名球员
+    - generic [ref=f10e146]:
+      - generic [ref=f10e147]: Efficiency Scatter
+      - heading "场次×积分效率" [level=2] [ref=f10e148]
+      - generic [ref=f10e149]:
+        - generic [ref=f10e150]: 显示前
+        - spinbutton "填写1-20的任意正整数" [ref=f10e151]: "15"
+        - generic [ref=f10e152]: 名球员
+    - generic [ref=f10e155]:
+      - generic [ref=f10e156]: Head-to-Head Matrix
+      - heading "交手热力矩阵" [level=2] [ref=f10e157]
+      - generic [ref=f10e158]:
+        - generic [ref=f10e159]: 显示前
+        - spinbutton "填写1-20的任意正整数" [ref=f10e160]: "8"
+        - generic [ref=f10e161]: 名球员
+      - generic [ref=f10e162]:
+        - generic [ref=f10e163]: 显示模式
+        - combobox [ref=f10e164] [cursor=pointer]:
+          - option "胜场数" [selected]
+          - option "胜率"
+    - generic [ref=f10e646]:
+      - table [ref=f10e647]:
+        - rowgroup [ref=f10e648]:
+          - row [ref=f10e649]:
+            - columnheader [ref=f10e650]
+            - columnheader "魏罗瑞" [ref=f10e651]
+            - columnheader "付大卫" [ref=f10e652]
+            - columnheader "任峻贤" [ref=f10e653]
+            - columnheader "任安喆" [ref=f10e654]
+            - columnheader "祁子傲" [ref=f10e655]
+            - columnheader "龚雨煊" [ref=f10e656]
+            - columnheader "陈瑜萱" [ref=f10e657]
+            - columnheader "梅哲宇" [ref=f10e658]
+        - rowgroup [ref=f10e659]:
+          - row [ref=f10e660]:
+            - cell "魏罗瑞" [ref=f10e661]
+            - cell "魏罗瑞" [ref=f10e662]
+            - cell "1" [ref=f10e663]
+            - cell "36" [ref=f10e664]
+            - cell "0" [ref=f10e665]
+            - cell "0" [ref=f10e666]
+            - cell "1" [ref=f10e667]
+            - cell "2" [ref=f10e668]
+            - cell "0" [ref=f10e669]
+          - row [ref=f10e670]:
+            - cell "付大卫" [ref=f10e671]
+            - cell "5" [ref=f10e672]
+            - cell "付大卫" [ref=f10e673]
+            - cell "20" [ref=f10e674]
+            - cell "0" [ref=f10e675]
+            - cell "1" [ref=f10e676]
+            - cell "1" [ref=f10e677]
+            - cell "0" [ref=f10e678]
+            - cell "0" [ref=f10e679]
+          - row [ref=f10e680]:
+            - cell "任峻贤" [ref=f10e681]
+            - cell "17" [ref=f10e682]
+            - cell "45" [ref=f10e683]
+            - cell "任峻贤" [ref=f10e684]
+            - cell "1" [ref=f10e685]
+            - cell "2" [ref=f10e686]
+            - cell "6" [ref=f10e687]
+            - cell "0" [ref=f10e688]
+            - cell "6" [ref=f10e689]
+          - row [ref=f10e690]:
+            - cell "任安喆" [ref=f10e691]
+            - cell "1" [ref=f10e692]
+            - cell "1" [ref=f10e693]
+            - cell "4" [ref=f10e694]
+            - cell "任安喆" [ref=f10e695]
+            - cell "0" [ref=f10e696]
+            - cell "0" [ref=f10e697]
+            - cell "0" [ref=f10e698]
+            - cell "0" [ref=f10e699]
+          - row [ref=f10e700]:
+            - cell "祁子傲" [ref=f10e701]
+            - cell "0" [ref=f10e702]
+            - cell "1" [ref=f10e703]
+            - cell "5" [ref=f10e704]
+            - cell "0" [ref=f10e705]
+            - cell "祁子傲" [ref=f10e706]
+            - cell "0" [ref=f10e707]
+            - cell "1" [ref=f10e708]
+            - cell "0" [ref=f10e709]
+          - row [ref=f10e710]:
+            - cell "龚雨煊" [ref=f10e711]
+            - cell "1" [ref=f10e712]
+            - cell "0" [ref=f10e713]
+            - cell "5" [ref=f10e714]
+            - cell "0" [ref=f10e715]
+            - cell "0" [ref=f10e716]
+            - cell "龚雨煊" [ref=f10e717]
+            - cell "0" [ref=f10e718]
+            - cell "0" [ref=f10e719]
+          - row [ref=f10e720]:
+            - cell "陈瑜萱" [ref=f10e721]
+            - cell "3" [ref=f10e722]
+            - cell "0" [ref=f10e723]
+            - cell "1" [ref=f10e724]
+            - cell "1" [ref=f10e725]
+            - cell "0" [ref=f10e726]
+            - cell "0" [ref=f10e727]
+            - cell "陈瑜萱" [ref=f10e728]
+            - cell "0" [ref=f10e729]
+          - row [ref=f10e730]:
+            - cell "梅哲宇" [ref=f10e731]
+            - cell "0" [ref=f10e732]
+            - cell "0" [ref=f10e733]
+            - cell "6" [ref=f10e734]
+            - cell "0" [ref=f10e735]
+            - cell "0" [ref=f10e736]
+            - cell "2" [ref=f10e737]
+            - cell "0" [ref=f10e738]
+            - cell "梅哲宇" [ref=f10e739]
+      - generic [ref=f10e740]:
+        - generic [ref=f10e741]: 行球员对列球员的胜场 · 颜色越深胜场越多
+        - generic [ref=f10e742]: "45"
+    - generic [ref=f10e169]:
+      - generic [ref=f10e170]: Match Frequency
+      - heading "比赛频次时间轴" [level=2] [ref=f10e171]
+      - generic [ref=f10e172]:
+        - generic [ref=f10e173]: 时间粒度
+        - combobox [ref=f10e174] [cursor=pointer]:
+          - option "按周" [selected]
+          - option "按月"
+      - generic [ref=f10e175]:
+        - generic [ref=f10e176]: 最近
+        - spinbutton "显示最近N个数据点" [ref=f10e177]: "24"
+        - generic [ref=f10e178]: 个数据点
+    - generic [ref=f10e181]:
+      - generic [ref=f10e182]: Score Distribution
+      - heading "积分区间分布" [level=2] [ref=f10e183]
+      - generic [ref=f10e184]:
+        - generic [ref=f10e185]: 分档数
+        - spinbutton "填写4-100的任意正整数" [ref=f10e186]: "10"
+    - generic [ref=f10e189]:
+      - generic [ref=f10e190]: Season Review
+      - heading "赛季总结" [level=2] [ref=f10e191]
+      - link " 查看赛季总结" [ref=f10e192] [cursor=pointer]:
+        - /url: season-review.html
+        - generic [ref=f10e193]: 
+        - generic [ref=f10e194]: 查看赛季总结
+  - contentinfo [ref=f10e195]:
+    - generic [ref=f10e196]:
+      - generic [ref=f10e197]:
+        - generic [ref=f10e198]:
+          - link "WFLS Table Tennis Club" [ref=f10e199] [cursor=pointer]:
+            - /url: index.html
+          - paragraph [ref=f10e200]: 武汉外国语学校 · 湖北省武汉市
+          - paragraph [ref=f10e201]: 挥拍逐梦，旋转青春
+        - navigation [ref=f10e202]:
+          - heading "社团" [level=3] [ref=f10e203]
+          - list [ref=f10e204]:
+            - listitem [ref=f10e205]:
+              - link "Home" [ref=f10e206] [cursor=pointer]:
+                - /url: index.html
+            - listitem [ref=f10e207]:
+              - link "News" [ref=f10e208] [cursor=pointer]:
+                - /url: news.html
+            - listitem [ref=f10e209]:
+              - link "Competitions" [ref=f10e210] [cursor=pointer]:
+                - /url: competitions.html
+            - listitem [ref=f10e211]:
+              - link "社团骨干" [ref=f10e212] [cursor=pointer]:
+                - /url: members.html
+            - listitem [ref=f10e213]:
+              - link "赛季总结" [ref=f10e214] [cursor=pointer]:
+                - /url: season-review.html
+        - navigation [ref=f10e215]:
+          - heading "数据" [level=3] [ref=f10e216]
+          - list [ref=f10e217]:
+            - listitem [ref=f10e218]:
+              - link "Ranking" [ref=f10e219] [cursor=pointer]:
+                - /url: ranking.html
+            - listitem [ref=f10e220]:
+              - link "Data Viz" [ref=f10e221] [cursor=pointer]:
+                - /url: data_viz.html
+            - listitem [ref=f10e222]:
+              - link "个人数据" [ref=f10e223] [cursor=pointer]:
+                - /url: personal_stats.html
+            - listitem [ref=f10e224]:
+              - link "Data Scale" [ref=f10e225] [cursor=pointer]:
+                - /url: data_scale.html
+            - listitem [ref=f10e226]:
+              - link "WTT Ranking" [ref=f10e227] [cursor=pointer]:
+                - /url: wtt_ranking.html
+            - listitem [ref=f10e228]:
+              - link "WTT Data Viz" [ref=f10e229] [cursor=pointer]:
+                - /url: wtt_dataviz.html
+        - navigation [ref=f10e230]:
+          - heading "信息" [level=3] [ref=f10e231]
+          - list [ref=f10e232]:
+            - listitem [ref=f10e233]:
+              - link "提交战绩" [ref=f10e234] [cursor=pointer]:
+                - /url: submit.html
+            - listitem [ref=f10e235]:
+              - link "Q&A" [ref=f10e236] [cursor=pointer]:
+                - /url: qa.html
+            - listitem [ref=f10e237]:
+              - link "更新日志" [ref=f10e238] [cursor=pointer]:
+                - /url: changelog.html
+            - listitem [ref=f10e239]:
+              - link "网站文档" [ref=f10e240] [cursor=pointer]:
+                - /url: docs.html
+            - listitem [ref=f10e241]:
+              - link "Umpire Training" [ref=f10e242] [cursor=pointer]:
+                - /url: umpire-training.html
+            - listitem [ref=f10e243]:
+              - link "Contact" [ref=f10e244] [cursor=pointer]:
+                - /url: contact.html
+      - generic [ref=f10e245]:
+        - generic [ref=f10e246]:
+          - generic [ref=f10e247]: 关注我们
+          - generic [ref=f10e248]:
+            - button "社团QQ群二维码" [ref=f10e249] [cursor=pointer]:
+              - generic [ref=f10e250]: 
+            - link "GitHub" [ref=f10e251] [cursor=pointer]:
+              - /url: https://github.com/yglalpavir/wfls-tt-club
+              - generic [ref=f10e252]: 
+        - generic [ref=f10e253]:
+          - link "社团理念" [ref=f10e254] [cursor=pointer]:
+            - /url: index.html#philosophy
+          - link "积分规则" [ref=f10e255] [cursor=pointer]:
+            - /url: qa.html
+        - paragraph [ref=f10e256]: ©2026 WFLS Table Tennis Club. All rights reserved
