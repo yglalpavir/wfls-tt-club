@@ -20,6 +20,24 @@ function paTrackChart(chart) {
     return chart;
 }
 
+// 记录最近一次渲染入参：切换深/浅主题时按同一份数据重画（配色在渲染时读取）
+let paLastRender = null;
+
+function paWatchThemeForCharts() {
+    if (typeof MutationObserver !== 'function' || paWatchThemeForCharts._on) return;
+    paWatchThemeForCharts._on = true;
+    let lastDark = document.documentElement.classList.contains('dark-mode');
+    new MutationObserver(() => {
+        const dark = document.documentElement.classList.contains('dark-mode');
+        if (dark === lastDark) return;
+        lastDark = dark;
+        if (!paLastRender || !document.getElementById('playerAnalyticsBody')) return;
+        try {
+            renderPlayerAnalytics(paLastRender.playerName, paLastRender.records, paLastRender.opts);
+        } catch (e) { /* 主题切换重画失败时保留旧图，不影响页面 */ }
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+}
+
 // ---------- 主题与配色 ----------
 
 function paChartTheme() {
@@ -28,6 +46,8 @@ function paChartTheme() {
         isDark: isDark,
         grid: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)',
         text: isDark ? '#aeb4c2' : '#4a5568',
+        muted: isDark ? '#7f8698' : '#8a90a0',
+        surface: isDark ? '#1e2230' : '#ffffff',
         win: isDark ? '#73d13d' : '#52c41a',
         loss: isDark ? '#ff6b6b' : '#ff4d4f',
         tooltip: {
@@ -37,6 +57,12 @@ function paChartTheme() {
             borderColor: isDark ? 'rgba(255,255,255,0.12)' : '#e2e8f0',
             borderWidth: 1,
             padding: 10,
+            cornerRadius: 8,
+            caretSize: 5,
+            titleFont: { size: 11.5, weight: '700' },
+            bodyFont: { size: 11.5 },
+            titleMarginBottom: 4,
+            boxPadding: 3,
             displayColors: false
         }
     };
@@ -65,7 +91,12 @@ function paTypeColor(key, idx) {
 
 function paTypeLabel(key) {
     if (key === PA_BONUS_KEY) return i18n[currentLang].score_type_bonus;
-    // 赛事类型是数据键，显示层查 ev_* 词典（颜色映射仍按原中文键工作）
+    // 赛事类型是数据键，显示层查 ev_* / wtt_ev_* 词典（颜色映射仍按原中文键工作）；
+    // WTT 类型（大满贯/世界杯/世乒赛…）不在 club 词典里，先查 WTT 词典再回退 club
+    if (typeof wttEventTypeLabel === 'function') {
+        const w = wttEventTypeLabel(key);
+        if (w !== key) return w;
+    }
     return (typeof eventTypeLabel === 'function') ? eventTypeLabel(key) : key;
 }
 
@@ -82,6 +113,44 @@ function paFormatMonth(ds) {
 function paShortDate(ds) {
     const d = new Date(ds + 'T00:00:00');
     return (d.getMonth() + 1) + '/' + d.getDate();
+}
+
+// 竖向渐变填充（面积图 / 柱状图共用）：在 chartArea 内由 aTop 过渡到 aBottom
+function paVerticalGradient(chart, hex, aTop, aBottom) {
+    const area = chart.chartArea;
+    if (!area) return paAlpha(hex, aBottom);
+    const g = chart.ctx.createLinearGradient(0, area.top, 0, area.bottom);
+    g.addColorStop(0, paAlpha(hex, aTop));
+    g.addColorStop(1, paAlpha(hex, aBottom));
+    return g;
+}
+
+// 把 (max-min) 切成不超过 target 段的「好看」步长（1/2/5/10/20/50…）
+function paNiceStep(range, target) {
+    const raw = Math.max(1, range) / Math.max(1, target);
+    const mag = Math.pow(10, Math.floor(Math.log10(raw)));
+    for (const m of [1, 2, 5, 10]) {
+        if (raw <= m * mag) return Math.max(1, m * mag);
+    }
+    return Math.max(1, 10 * mag);
+}
+
+// 图例统一样式：圆点 + 小字号，避免默认方块在深色背景下显重
+function paLegendStyle(t) {
+    return {
+        display: true,
+        position: 'top',
+        align: 'end',
+        labels: {
+            color: t.text,
+            usePointStyle: true,
+            pointStyle: 'circle',
+            boxWidth: 8,
+            boxHeight: 8,
+            padding: 12,
+            font: { size: 11 }
+        }
+    };
 }
 
 // ---------- 数据计算 ----------
@@ -179,6 +248,9 @@ function paBuildMonthlyStats(matches) {
     return {
         labels: months,
         totals: months.map(k => stats.get(k).total),
+        wins: months.map(k => stats.get(k).wins),
+        losses: months.map(k => stats.get(k).total - stats.get(k).wins - stats.get(k).draws),
+        draws: months.map(k => stats.get(k).draws),
         rates: months.map(k => {
             const s = stats.get(k);
             const decided = s.total - s.draws;
@@ -362,6 +434,8 @@ function renderPlayerAnalytics(playerName, records, opts) {
     if (!container) return;
     destroyPlayerAnalytics();
     opts = opts || {};
+    paLastRender = { playerName: playerName, records: records, opts: opts };
+    paWatchThemeForCharts();
     // opts.data 可传入缓存的计算结果（语言切换重渲时避免重复重型计算）
     const data = opts.data || paComputeAnalyticsData(playerName, records, opts);
     const all = data.all, matches = data.matches;
@@ -383,26 +457,29 @@ function renderPlayerAnalytics(playerName, records, opts) {
 
     // 1. 排名走势（通栏）
     if (rankSeries.length >= 2) {
+        const curRank = rankSeries[rankSeries.length - 1].rank;
         html += '<div class="pa-card glass-card pa-span-2">';
-        html += '<div class="personal-card-header">' + L.pa_rank_title + '</div>';
+        html += '<div class="personal-card-header">' + L.pa_rank_title + '<span class="pa-head-badge">' + L.pa_rank_current.replace('{n}', curRank) + '</span></div>';
         html += '<div class="pa-chart-box"><canvas id="paRankChart"></canvas></div>';
         html += '</div>';
     }
 
     // 2. 赛事类型分布（半栏）
     if (typeStats.length) {
-        html += '<div class="pa-card glass-card">';
+        html += '<div class="pa-card glass-card pa-card-type">';
         html += '<div class="personal-card-header">' + L.pa_type_title + '</div>';
         html += '<div class="pa-type-body">';
         html += '<div class="pa-donut-box"><canvas id="paTypeChart"></canvas></div>';
-        html += '<div class="pa-type-legend">';
-        for (const t of typeStats) {
-            const rate = t.total ? Math.round(t.wins / t.total * 100) : 0;
-            const idx = typeStats.indexOf(t);
-            html += '<div class="pa-type-legend-item">';
-            html += '<span class="pa-dot" style="background:' + paTypeColor(t.type, idx) + '"></span>';
-            html += '<span class="pa-type-name">' + escapeHtml(paTypeLabel(t.type)) + '</span>';
-            html += '<span class="pa-type-stat">' + L.wtt_sub_wl.replace('{wins}', t.wins).replace('{losses}', t.total - t.wins).replace('{rate}', rate) + '</span>';
+        html += '<div class="pa-type-legend' + (typeStats.length > 6 ? ' pa-type-legend-many' : '') + '">';
+        for (let i = 0; i < typeStats.length; i++) {
+            const s = typeStats[i];
+            const rate = s.total ? Math.round(s.wins / s.total * 100) : 0;
+            const tone = rate >= 50 ? 'good' : 'bad';
+            html += '<div class="pa-type-legend-item" data-pa-type-idx="' + i + '" tabindex="0">';
+            html += '<span class="pa-dot" style="background:' + paTypeColor(s.type, i) + '"></span>';
+            html += '<span class="pa-type-name">' + escapeHtml(paTypeLabel(s.type)) + '</span>';
+            html += '<span class="pa-type-wl">' + s.wins + '-' + (s.total - s.wins) + '</span>';
+            html += '<span class="pa-type-rate ' + tone + '">' + rate + '%</span>';
             html += '</div>';
         }
         html += '</div>';
@@ -556,62 +633,101 @@ function paRenderRankChart(series, boundaries) {
     const canvas = document.getElementById('paRankChart');
     if (!canvas) return;
     const t = paChartTheme();
+    const L = i18n[currentLang];
     // WTT 页优先用 WTT 图表设置，俱乐部页用 club 设置，均未加载时用默认色
     const chartCfg = (typeof wttPersonalChartSettings !== 'undefined' && wttPersonalChartSettings)
         ? wttPersonalChartSettings
         : (typeof personalChartSettings !== 'undefined' ? personalChartSettings : null);
     const lineColor = (chartCfg && chartCfg.colors && chartCfg.colors.line) || '#4da3ff';
+    const ranks = series.map(s => s.rank);
+    const maxRank = Math.max.apply(null, ranks.concat([2]));
+    // 名次轴按整数取整，切成不超过 4 段，避免出现 #1 #2 #4 #6… 这种半截刻度
+    const rankStep = paNiceStep(maxRank - 1, 4);
+    const dense = series.length > 24;
+    const lastIdx = series.length - 1;
+    // 跨年度的走势（WTT 十年数据）只写 M/D 会出现一串「12/1」，补上年份
+    const multiYear = new Set(series.map(s => String(s.time || '').slice(0, 4))).size > 1;
     paTrackChart(new Chart(canvas, {
         type: 'line',
         data: {
             labels: series.map(s => s.label),
             datasets: [{
-                label: i18n[currentLang].pa_rank_axis,
-                data: series.map(s => s.rank),
+                label: L.pa_rank_axis,
+                data: ranks,
                 borderColor: lineColor,
-                backgroundColor: paAlpha(lineColor, 0.12),
-                borderWidth: 2,
+                backgroundColor: ctx => paVerticalGradient(ctx.chart, lineColor, 0.22, 0.01),
+                borderWidth: 2.2,
                 pointBackgroundColor: lineColor,
-                pointRadius: 3,
+                pointBorderColor: t.surface,
+                pointBorderWidth: 2,
                 pointHoverRadius: 6,
-                tension: 0.3,
-                fill: true
+                pointHoverBorderWidth: 2,
+                pointHoverBorderColor: t.surface,
+                // 数据点密集时只保留末点，曲线本身足够表达走势
+                pointRadius: ctx => ctx.dataIndex === lastIdx ? 4.5 : (dense ? 0 : 2.5),
+                tension: 0.32,
+                fill: true,
+                // 末点画在右边界上，关掉裁剪否则会被切掉半个点
+                clip: false
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            interaction: { intersect: false, mode: 'index' },
+            interaction: { intersect: false, mode: 'index', axis: 'x' },
+            layout: { padding: { right: 6 } },
             plugins: {
                 legend: { display: false },
                 tooltip: Object.assign({}, t.tooltip, {
                     callbacks: {
+                        title: function(items) {
+                            const s = series[items[0].dataIndex];
+                            return s ? s.label : '';
+                        },
                         label: function(item) {
                             const s = series[item.dataIndex];
-                            return i18n[currentLang].pa_rank_axis + ': #' + s.rank;
+                            return L.pa_rank_axis + ': #' + s.rank;
                         }
                     }
                 })
             },
             scales: {
                 x: {
-                    grid: { color: t.grid },
-                    ticks: { color: t.text, font: { size: 10 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 12 }
+                    grid: { display: false },
+                    border: { color: t.grid },
+                    ticks: {
+                        color: t.text, font: { size: 10 },
+                        maxRotation: 0, autoSkip: true, maxTicksLimit: 8,
+                        callback: function(value, index) {
+                            const s = series[index];
+                            if (!s) return '';
+                            if (/^\d{4}-\d{2}-\d{2}/.test(s.time)) {
+                                const md = paShortDate(s.time);
+                                return multiYear ? s.time.slice(2, 4) + '/' + md : md;
+                            }
+                            return s.label;
+                        }
+                    }
                 },
                 y: {
                     reverse: true,
                     min: 1,
-                    grid: { color: t.grid },
-                    ticks: { color: t.text, font: { size: 11 }, precision: 0, callback: v => '#' + v }
+                    grid: { color: t.grid, drawTicks: false },
+                    border: { display: false },
+                    ticks: {
+                        color: t.text, font: { size: 11 }, padding: 6,
+                        stepSize: rankStep, precision: 0,
+                        callback: v => '#' + v
+                    }
                 }
             }
         },
-        plugins: [createSeasonBoundaryPlugin(series, t.isDark, boundaries)]
+        plugins: [createSeasonBoundaryPlugin(series, t.isDark, boundaries, { labelAlign: 'bottom' })]
     }));
 }
 
-// 环形图中心文字插件
-function paDoughnutCenterPlugin(total, unit, color) {
+// 环形图中心文字插件：总数 + 单位 +（可选）总胜率
+function paDoughnutCenterPlugin(total, unit, color, subText, subColor) {
     return {
         id: 'paDoughnutCenter',
         afterDraw(chart) {
@@ -623,10 +739,15 @@ function paDoughnutCenterPlugin(total, unit, color) {
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
             ctx.fillStyle = color;
-            ctx.font = '700 22px "Poppins", "Microsoft YaHei", sans-serif';
-            ctx.fillText(String(total), x, y - 8);
+            ctx.font = '700 24px "Poppins", "Microsoft YaHei", sans-serif';
+            ctx.fillText(String(total), x, subText ? y - 15 : y - 8);
             ctx.font = '11px "Poppins", "Microsoft YaHei", sans-serif';
-            ctx.fillText(unit, x, y + 13);
+            ctx.fillText(unit, x, subText ? y + 4 : y + 13);
+            if (subText) {
+                ctx.fillStyle = subColor || color;
+                ctx.font = '600 10.5px "Poppins", "Microsoft YaHei", sans-serif';
+                ctx.fillText(subText, x, y + 19);
+            }
             ctx.restore();
         }
     };
@@ -636,38 +757,145 @@ function paRenderTypeChart(typeStats) {
     const canvas = document.getElementById('paTypeChart');
     if (!canvas) return;
     const t = paChartTheme();
+    const L = i18n[currentLang];
     const total = typeStats.reduce((s, x) => s + x.total, 0);
-    paTrackChart(new Chart(canvas, {
+    const totalWins = typeStats.reduce((s, x) => s + x.wins, 0);
+    const overallRate = total ? Math.round(totalWins / total * 100) : 0;
+    const chart = paTrackChart(new Chart(canvas, {
         type: 'doughnut',
         data: {
             labels: typeStats.map(x => x.type),
             datasets: [{
                 data: typeStats.map(x => x.total),
                 backgroundColor: typeStats.map((x, i) => paTypeColor(x.type, i)),
-                borderColor: t.isDark ? '#1e2230' : '#ffffff',
-                borderWidth: 2,
-                hoverOffset: 6
+                borderWidth: 0,
+                spacing: 3,
+                borderRadius: 4,
+                hoverOffset: 8
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            cutout: '62%',
+            cutout: '64%',
+            layout: { padding: 4 },
             plugins: {
                 legend: { display: false },
                 tooltip: Object.assign({}, t.tooltip, {
                     callbacks: {
+                        title: function(items) {
+                            const s = typeStats[items[0].dataIndex];
+                            return s ? paTypeLabel(s.type) : '';
+                        },
                         label: function(item) {
                             const s = typeStats[item.dataIndex];
                             const rate = s.total ? Math.round(s.wins / s.total * 100) : 0;
-                            return i18n[currentLang].pa_type_wr.replace('{r}', rate) + ' (' + s.wins + '-' + (s.total - s.wins) + ')';
+                            return s.wins + '-' + (s.total - s.wins) + ' · ' + L.pa_type_wr.replace('{r}', rate);
+                        },
+                        afterLabel: function(item) {
+                            const s = typeStats[item.dataIndex];
+                            return L.pa_type_share.replace('{r}', total ? Math.round(s.total / total * 100) : 0);
                         }
                     }
                 })
             }
         },
-        plugins: [paDoughnutCenterPlugin(total, i18n[currentLang].pa_type_center_unit, t.text)]
+        plugins: [paDoughnutCenterPlugin(
+            total,
+            L.pa_type_center_unit,
+            t.text,
+            total ? L.pa_type_overall_rate.replace('{r}', overallRate) : '',
+            t.muted
+        )]
     }));
+
+    // 图例行 ↔ 扇形联动：悬停图例时高亮对应扇区
+    const card = canvas.closest('.pa-card');
+    if (card) {
+        card.querySelectorAll('.pa-type-legend-item[data-pa-type-idx]').forEach(el => {
+            const idx = parseInt(el.getAttribute('data-pa-type-idx'), 10);
+            const focus = () => {
+                if (!chart || !chart.ctx) return;
+                chart.setActiveElements([{ datasetIndex: 0, index: idx }]);
+                chart.update('none');
+            };
+            const blur = () => {
+                if (!chart || !chart.ctx) return;
+                chart.setActiveElements([]);
+                chart.update('none');
+            };
+            el.addEventListener('mouseenter', focus);
+            el.addEventListener('focus', focus);
+            el.addEventListener('mouseleave', blur);
+            el.addEventListener('blur', blur);
+        });
+    }
+}
+
+// 实力差图表：柱端数值 + 右侧胜率列（自绘，Chart.js 没有内置的数值标签）
+function paGapLabelsPlugin(ordered, t) {
+    return {
+        id: 'paGapLabels',
+        afterDatasetsDraw(chart) {
+            const ctx = chart.ctx;
+            const area = chart.chartArea;
+            const L = i18n[currentLang];
+            const metaW = chart.getDatasetMeta(0);
+            const metaL = chart.getDatasetMeta(1);
+            const colX = area.right + 40;
+            ctx.save();
+            ctx.textBaseline = 'middle';
+            ctx.font = '9px "Poppins", "Microsoft YaHei", sans-serif';
+            ctx.fillStyle = t.muted;
+            ctx.textAlign = 'right';
+            ctx.fillText(L.pa_season_rate, colX, area.top - 9);
+            ctx.font = '600 10px "Poppins", "Microsoft YaHei", sans-serif';
+            // 数值压在长条末端附近，先描一圈卡片底色，深/浅主题下都能读清
+            const drawVal = (text, x, y, color, align) => {
+                ctx.textAlign = align;
+                ctx.lineWidth = 3;
+                ctx.lineJoin = 'round';
+                ctx.strokeStyle = t.surface;
+                ctx.strokeText(text, x, y);
+                ctx.fillStyle = color;
+                ctx.fillText(text, x, y);
+            };
+            for (let i = 0; i < ordered.length; i++) {
+                const b = ordered[i];
+                const wEl = metaW.data[i];
+                const lEl = metaL.data[i];
+                if (!wEl || !lEl) continue;
+                const y = wEl.y;
+                // 条子太长时外侧放不下数字，就翻到条内靠端点画（描边保证可读）
+                const fits = (text, x, align) => {
+                    const w = ctx.measureText(text).width;
+                    const left = align === 'left' ? x : x - w;
+                    const right = align === 'left' ? x + w : x;
+                    return left >= area.left + 1 && right <= area.right - 1;
+                };
+                if (b.wins > 0) {
+                    const s = String(b.wins);
+                    if (fits(s, wEl.x + 6, 'left')) drawVal(s, wEl.x + 6, y, t.win, 'left');
+                    else drawVal(s, wEl.x - 6, y, t.win, 'right');
+                }
+                if (b.losses > 0) {
+                    const s = String(b.losses);
+                    if (fits(s, lEl.x - 6, 'right')) drawVal(s, lEl.x - 6, y, t.loss, 'right');
+                    else drawVal(s, lEl.x + 6, y, t.loss, 'left');
+                }
+                const total = b.wins + b.losses;
+                if (!total) {
+                    ctx.textAlign = 'right';
+                    ctx.fillStyle = t.muted;
+                    ctx.fillText('–', colX, y);
+                } else {
+                    const rate = Math.round(b.wins / total * 100);
+                    drawVal(rate + '%', colX, y, rate >= 50 ? t.win : t.loss, 'right');
+                }
+            }
+            ctx.restore();
+        }
+    };
 }
 
 function paRenderGapChart(bands) {
@@ -678,6 +906,7 @@ function paRenderGapChart(bands) {
     // 显示顺序：领先≥100 在最上，落后≥100 在最下
     const ordered = [...bands].reverse();
     const labels = ordered.map((_, i) => paGapBandLabel(PA_GAP_BANDS[PA_GAP_BANDS.length - 1 - i].labelKey));
+    const zeroColor = t.isDark ? 'rgba(255,255,255,0.28)' : 'rgba(0,0,0,0.22)';
     paTrackChart(new Chart(canvas, {
         type: 'bar',
         data: {
@@ -686,16 +915,22 @@ function paRenderGapChart(bands) {
                 {
                     label: L.pa_gap_wins,
                     data: ordered.map(b => b.wins),
-                    backgroundColor: paAlpha(t.win, 0.75),
-                    borderRadius: 3,
-                    barPercentage: 0.72
+                    backgroundColor: paAlpha(t.win, 0.8),
+                    hoverBackgroundColor: t.win,
+                    borderRadius: 4,
+                    maxBarThickness: 24,
+                    barPercentage: 0.66,
+                    categoryPercentage: 0.82
                 },
                 {
                     label: L.pa_gap_losses,
                     data: ordered.map(b => -b.losses),
-                    backgroundColor: paAlpha(t.loss, 0.75),
-                    borderRadius: 3,
-                    barPercentage: 0.72
+                    backgroundColor: paAlpha(t.loss, 0.8),
+                    hoverBackgroundColor: t.loss,
+                    borderRadius: 4,
+                    maxBarThickness: 24,
+                    barPercentage: 0.66,
+                    categoryPercentage: 0.82
                 }
             ]
         },
@@ -703,22 +938,22 @@ function paRenderGapChart(bands) {
             indexAxis: 'y',
             responsive: true,
             maintainAspectRatio: false,
-            interaction: { intersect: false, mode: 'index' },
+            // axis:'y' 是必需的：index 模式默认按 x 取最近项，横向条形图会永远命中同一行
+            interaction: { intersect: false, mode: 'index', axis: 'y' },
+            layout: { padding: { top: 14, right: 46 } },
             plugins: {
-                legend: {
-                    display: true,
-                    position: 'top',
-                    labels: { color: t.text, boxWidth: 12, boxHeight: 12, font: { size: 11 } }
-                },
+                legend: Object.assign(paLegendStyle(t), { align: 'start' }),
                 tooltip: Object.assign({}, t.tooltip, {
                     displayColors: true,
+                    boxPadding: 4,
                     callbacks: {
+                        title: function(items) {
+                            return labels[items[0].dataIndex];
+                        },
                         label: function(item) {
                             const band = ordered[item.dataIndex];
-                            const total = band.wins + band.losses;
-                            const rate = total ? Math.round(band.wins / total * 100) : 0;
-                            if (item.datasetIndex === 0) return L.pa_gap_wins + ': ' + band.wins;
-                            return L.pa_gap_losses + ': ' + band.losses;
+                            const isWin = item.datasetIndex === 0;
+                            return (isWin ? L.pa_gap_wins : L.pa_gap_losses) + ': ' + (isWin ? band.wins : band.losses);
                         },
                         afterBody: function(items) {
                             const band = ordered[items[0].dataIndex];
@@ -732,16 +967,27 @@ function paRenderGapChart(bands) {
             scales: {
                 x: {
                     stacked: true,
-                    grid: { color: t.grid },
-                    ticks: { color: t.text, font: { size: 10 }, precision: 0, callback: v => Math.abs(v) }
+                    border: { display: false },
+                    grid: {
+                        color: ctx => (ctx.tick && ctx.tick.value === 0) ? zeroColor : t.grid,
+                        drawTicks: false
+                    },
+                    ticks: { color: t.text, font: { size: 10 }, precision: 0, padding: 4, callback: v => Math.abs(v) }
                 },
                 y: {
-                    stacked: true,
                     grid: { display: false },
-                    ticks: { color: t.text, font: { size: 10 } }
+                    border: { display: false },
+                    ticks: {
+                        color: ctx => {
+                            const b = ordered[ctx.index];
+                            return (b && (b.wins + b.losses) > 0) ? t.text : t.muted;
+                        },
+                        font: { size: 10 }, padding: 4
+                    }
                 }
             }
-        }
+        },
+        plugins: [paGapLabelsPlugin(ordered, t)]
     }));
 }
 
@@ -750,17 +996,28 @@ function paRenderMonthlyChart(monthly) {
     if (!canvas) return;
     const t = paChartTheme();
     const L = i18n[currentLang];
+    // 月份标签：首月与每年 1 月带年份，其余只留月份，避免 9 个「2026年X月」挤在一起
+    const shortTpl = L.pa_monthly_m_tpl || '{m}';
+    const labels = monthly.labels.map((k, i) => {
+        const m = parseInt(k.slice(5, 7), 10);
+        return (i === 0 || m === 1) ? paFormatMonth(k) : shortTpl.replace('{m}', m);
+    });
     paTrackChart(new Chart(canvas, {
         type: 'bar',
         data: {
-            labels: monthly.labels.map(paFormatMonth),
+            labels: labels,
             datasets: [
                 {
                     type: 'bar',
                     label: L.pa_monthly_matches,
                     data: monthly.totals,
-                    backgroundColor: paAlpha('#4da3ff', 0.55),
-                    borderRadius: 4,
+                    backgroundColor: ctx => paVerticalGradient(ctx.chart, '#4da3ff', 0.72, 0.26),
+                    hoverBackgroundColor: paAlpha('#4da3ff', 0.85),
+                    borderRadius: { topLeft: 5, topRight: 5, bottomLeft: 0, bottomRight: 0 },
+                    borderSkipped: false,
+                    barPercentage: 0.58,
+                    categoryPercentage: 0.82,
+                    maxBarThickness: 32,
                     yAxisID: 'y'
                 },
                 {
@@ -769,9 +1026,14 @@ function paRenderMonthlyChart(monthly) {
                     data: monthly.rates,
                     borderColor: t.win,
                     backgroundColor: t.win,
-                    borderWidth: 2,
-                    pointRadius: 2.5,
+                    borderWidth: 1.8,
+                    borderDash: [5, 4],
+                    pointRadius: ctx => (ctx.parsed && ctx.parsed.y == null) ? 0 : 2.6,
+                    pointBackgroundColor: t.win,
+                    pointBorderColor: t.surface,
+                    pointBorderWidth: 1.5,
                     pointHoverRadius: 5,
+                    pointHoverBorderWidth: 2,
                     tension: 0.3,
                     spanGaps: true,
                     yAxisID: 'y1'
@@ -781,39 +1043,51 @@ function paRenderMonthlyChart(monthly) {
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            interaction: { intersect: false, mode: 'index' },
+            interaction: { intersect: false, mode: 'index', axis: 'x' },
             plugins: {
-                legend: {
-                    display: true,
-                    position: 'top',
-                    labels: { color: t.text, boxWidth: 12, boxHeight: 12, font: { size: 11 } }
-                },
+                legend: paLegendStyle(t),
                 tooltip: Object.assign({}, t.tooltip, {
                     displayColors: true,
+                    boxPadding: 4,
                     callbacks: {
+                        title: function(items) {
+                            return paFormatMonth(monthly.labels[items[0].dataIndex]);
+                        },
                         label: function(item) {
-                            if (item.datasetIndex === 0) return L.pa_monthly_matches + ': ' + item.parsed.y;
-                            return L.pa_monthly_winrate + ': ' + item.parsed.y + '%';
+                            const i = item.dataIndex;
+                            if (item.datasetIndex === 0) return L.pa_monthly_matches + ': ' + monthly.totals[i];
+                            return L.pa_monthly_winrate + ': ' + monthly.rates[i] + '%';
+                        },
+                        afterBody: function(items) {
+                            const i = items[0].dataIndex;
+                            if (!monthly.totals[i]) return '';
+                            let s = L.pa_flow_tip_wl.replace('{w}', monthly.wins[i]).replace('{l}', monthly.losses[i]);
+                            if (monthly.draws[i]) s += ' · ' + L.score_result_draw + ' ' + monthly.draws[i];
+                            return s;
                         }
                     }
                 })
             },
             scales: {
                 x: {
-                    grid: { color: t.grid },
-                    ticks: { color: t.text, font: { size: 10 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 16 }
+                    grid: { display: false },
+                    border: { color: t.grid },
+                    ticks: { color: t.text, font: { size: 10 }, maxRotation: 0, autoSkip: true, maxTicksLimit: 14 }
                 },
                 y: {
                     beginAtZero: true,
-                    grid: { color: t.grid },
-                    ticks: { color: t.text, font: { size: 10 }, precision: 0 }
+                    grace: '12%',
+                    grid: { color: t.grid, drawTicks: false },
+                    border: { display: false },
+                    ticks: { color: t.text, font: { size: 10 }, precision: 0, padding: 4 }
                 },
                 y1: {
                     position: 'right',
                     min: 0,
                     max: 100,
                     grid: { drawOnChartArea: false },
-                    ticks: { color: t.text, font: { size: 10 }, callback: v => v + '%' }
+                    border: { display: false },
+                    ticks: { color: t.muted, font: { size: 10 }, stepSize: 25, padding: 4, callback: v => v + '%' }
                 }
             }
         }
@@ -824,7 +1098,10 @@ function paRenderFormChart(form) {
     const canvas = document.getElementById('paFormChart');
     if (!canvas) return;
     const t = paChartTheme();
+    const L = i18n[currentLang];
     const rolling = form.rolling;
+    const lastIdx = rolling.length - 1;
+    const midColor = t.isDark ? 'rgba(255,255,255,0.25)' : 'rgba(0,0,0,0.2)';
     paTrackChart(new Chart(canvas, {
         type: 'line',
         data: {
@@ -832,38 +1109,55 @@ function paRenderFormChart(form) {
             datasets: [{
                 data: rolling.map(r => r.rate),
                 borderColor: t.win,
-                backgroundColor: paAlpha(t.win, 0.12),
+                backgroundColor: ctx => paVerticalGradient(ctx.chart, t.win, 0.26, 0.02),
                 borderWidth: 2,
-                pointRadius: 0,
-                pointHoverRadius: 4,
-                tension: 0.3,
+                // 只在最新一场留点，曲线本身表达走势
+                pointRadius: ctx => ctx.dataIndex === lastIdx ? 3.5 : 0,
+                pointBackgroundColor: t.win,
+                pointBorderColor: t.surface,
+                pointBorderWidth: 1.5,
+                pointHoverRadius: 4.5,
+                pointHoverBorderWidth: 2,
+                tension: 0.32,
                 fill: true
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            interaction: { intersect: false, mode: 'index' },
+            interaction: { intersect: false, mode: 'index', axis: 'x' },
+            layout: { padding: { top: 4 } },
             plugins: {
                 legend: { display: false },
                 tooltip: Object.assign({}, t.tooltip, {
                     callbacks: {
                         title: items => paShortDate(rolling[items[0].dataIndex].date),
-                        label: item => i18n[currentLang].pa_form_rolling + ': ' + item.parsed.y + '%'
+                        label: item => L.pa_form_rolling + ': ' + item.parsed.y + '%'
                     }
                 })
             },
             scales: {
-                x: { display: false },
+                x: {
+                    grid: { display: false },
+                    border: { display: false },
+                    ticks: {
+                        color: t.muted, font: { size: 9 }, maxRotation: 0, autoSkip: false, padding: 2,
+                        // 只标首尾日期，给走势一个时间参照
+                        callback: function(value, index) {
+                            if (index === 0 || index === rolling.length - 1) return paShortDate(rolling[index].date);
+                            return '';
+                        }
+                    }
+                },
                 y: {
                     min: 0,
                     max: 100,
                     grid: {
-                        color: ctx => ctx.tick && ctx.tick.value === 50
-                            ? (t.isDark ? 'rgba(255,255,255,0.25)' : 'rgba(0,0,0,0.2)')
-                            : t.grid
+                        color: ctx => (ctx.tick && ctx.tick.value === 50) ? midColor : t.grid,
+                        drawTicks: false
                     },
-                    ticks: { color: t.text, font: { size: 9 }, stepSize: 50, callback: v => v + '%' }
+                    border: { display: false },
+                    ticks: { color: t.muted, font: { size: 9 }, stepSize: 50, padding: 2, callback: v => v + '%' }
                 }
             }
         }

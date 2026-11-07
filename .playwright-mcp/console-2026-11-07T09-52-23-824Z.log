@@ -1,0 +1,17 @@
+[     148ms] [LOG] [WTT Common] 当前项目: ms (男子单打) @ http://127.0.0.1:8797/js/wtt_common.js:1326
+[     210ms] [LOG] WTT[ms] 设置加载成功, scoreMode: flat1300, baseScore: 1500 @ http://127.0.0.1:8797/js/wtt_common.js:753
+[     219ms] [LOG] WTT[ms] 协会籍数据加载成功: 3827 人 @ http://127.0.0.1:8797/js/wtt_common.js:863
+[     297ms] [LOG] WTT[ms] 从 manifest 并行加载了 44137 条记录（19 个文件） @ http://127.0.0.1:8797/js/wtt_common.js:689
+[     352ms] [WARNING] [WTT] 识别并合并 95 个球员名分组，共 102 个别名 @ http://127.0.0.1:8797/js/wtt_common.js:527
+[     352ms] [WARNING] [WTT]   'Marcos Freitas' -> 'Marcos FREITAS' @ http://127.0.0.1:8797/js/wtt_common.js:528
+[     352ms] [WARNING] [WTT]   'Panagiotis Gionis' -> 'Panagiotis GIONIS' @ http://127.0.0.1:8797/js/wtt_common.js:528
+[     352ms] [WARNING] [WTT]   'GAUZY Simon' -> 'Simon GAUZY' @ http://127.0.0.1:8797/js/wtt_common.js:528
+[     352ms] [WARNING] [WTT]   'Simon Gauzy' -> 'Simon GAUZY' @ http://127.0.0.1:8797/js/wtt_common.js:528
+[     352ms] [WARNING] [WTT]   'Tiago Apolonia' -> 'Tiago APOLONIA' @ http://127.0.0.1:8797/js/wtt_common.js:528
+[     352ms] [WARNING] [WTT]   'Takuya Jin' -> 'Takuya JIN' @ http://127.0.0.1:8797/js/wtt_common.js:528
+[     352ms] [WARNING] [WTT]   'Gnanasekaran SATHIYAN' -> 'Sathiyan GNANASEKARAN' @ http://127.0.0.1:8797/js/wtt_common.js:528
+[     352ms] [WARNING] [WTT]   'Ovidiu Ionescu' -> 'Ovidiu IONESCU' @ http://127.0.0.1:8797/js/wtt_common.js:528
+[     352ms] [WARNING] [WTT]   'Pavel Sirucek' -> 'Pavel SIRUCEK' @ http://127.0.0.1:8797/js/wtt_common.js:528
+[     352ms] [WARNING] [WTT]   'Quentin Robinot' -> 'Quentin ROBINOT' @ http://127.0.0.1:8797/js/wtt_common.js:528
+[     352ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8797/js/wtt_common.js:775
+[     353ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8797/js/wtt_common.js:775

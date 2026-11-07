@@ -1,0 +1,140 @@
+- generic [active] [ref=f14e1]:
+  - navigation [ref=f14e2]:
+    - generic [ref=f14e3]:
+      - link " WFLS TT Club" [ref=f14e4] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=f14e5]: 
+        - generic [ref=f14e7]: WFLS TT Club
+      - list [ref=f14e8]:
+        - listitem [ref=f14e9]:
+          - link "Home" [ref=f14e10] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=f14e11]:
+          - link "News" [ref=f14e12] [cursor=pointer]:
+            - /url: news.html
+        - listitem [ref=f14e13]:
+          - link "Competitions" [ref=f14e14] [cursor=pointer]:
+            - /url: competitions.html
+        - listitem [ref=f14e15]:
+          - link "Ranking Beta" [ref=f14e16] [cursor=pointer]:
+            - /url: ranking.html
+        - listitem [ref=f14e17]:
+          - link "More... " [ref=f14e18] [cursor=pointer]:
+            - /url: "#"
+            - text: More...
+            - generic [ref=f14e19]: 
+        - listitem [ref=f14e20]:
+          - link "Contact" [ref=f14e21] [cursor=pointer]:
+            - /url: contact.html
+      - generic [ref=f14e22]:
+        - button "搜索" [ref=f14e23] [cursor=pointer]:
+          - generic [ref=f14e24]: 
+        - button "切换主题" [ref=f14e25] [cursor=pointer]:
+          - generic [ref=f14e26]: 
+        - button "切换语言" [ref=f14e27] [cursor=pointer]:
+          - generic [ref=f14e28]: EN
+  - generic [ref=f14e31]:
+    - generic [ref=f14e32]: 🥚 Easter Egg
+    - heading "WTT 男子单打" [level=1] [ref=f14e33]
+    - paragraph [ref=f14e34]: WTT 球员个人数据页
+    - paragraph [ref=f14e35]:
+      - generic [ref=f14e36]: 
+      - text: 本页积分由本站社团积分规则模拟计算，非 WTT 官方积分，结果仅供参考。
+  - generic [ref=f14e38]:
+    - link " 返回个人数据" [ref=f14e41] [cursor=pointer]:
+      - /url: /wtt_personal_stats.html?cat=ms
+      - generic [ref=f14e42]: 
+      - generic [ref=f14e43]: 返回个人数据
+    - generic [ref=f14e45]:
+      - paragraph [ref=f14e47]: 准备数据…
+      - generic [ref=f14e48]: 33%
+      - generic [ref=f14e51]:
+        - generic [ref=f14e52]: "正在下载 协会籍 (4/5): 协会籍"
+        - generic [ref=f14e53]: 已用时 0s
+    - link " 返回 WTT Hub" [ref=f14e55] [cursor=pointer]:
+      - /url: /wtt_hub.html?cat=ms
+      - generic [ref=f14e56]: 
+      - generic [ref=f14e57]: 返回 WTT Hub
+  - contentinfo [ref=f14e58]:
+    - generic [ref=f14e59]:
+      - generic [ref=f14e60]:
+        - generic [ref=f14e61]:
+          - link "WFLS Table Tennis Club" [ref=f14e62] [cursor=pointer]:
+            - /url: index.html
+          - paragraph [ref=f14e63]: 武汉外国语学校 · 湖北省武汉市
+          - paragraph [ref=f14e64]: 挥拍逐梦，旋转青春
+        - navigation [ref=f14e65]:
+          - heading "社团" [level=3] [ref=f14e66]
+          - list [ref=f14e67]:
+            - listitem [ref=f14e68]:
+              - link "Home" [ref=f14e69] [cursor=pointer]:
+                - /url: index.html
+            - listitem [ref=f14e70]:
+              - link "News" [ref=f14e71] [cursor=pointer]:
+                - /url: news.html
+            - listitem [ref=f14e72]:
+              - link "Competitions" [ref=f14e73] [cursor=pointer]:
+                - /url: competitions.html
+            - listitem [ref=f14e74]:
+              - link "社团骨干" [ref=f14e75] [cursor=pointer]:
+                - /url: members.html
+            - listitem [ref=f14e76]:
+              - link "赛季总结" [ref=f14e77] [cursor=pointer]:
+                - /url: season-review.html
+        - navigation [ref=f14e78]:
+          - heading "数据" [level=3] [ref=f14e79]
+          - list [ref=f14e80]:
+            - listitem [ref=f14e81]:
+              - link "Ranking" [ref=f14e82] [cursor=pointer]:
+                - /url: ranking.html
+            - listitem [ref=f14e83]:
+              - link "Data Viz" [ref=f14e84] [cursor=pointer]:
+                - /url: data_viz.html
+            - listitem [ref=f14e85]:
+              - link "个人数据" [ref=f14e86] [cursor=pointer]:
+                - /url: personal_stats.html
+            - listitem [ref=f14e87]:
+              - link "Data Scale" [ref=f14e88] [cursor=pointer]:
+                - /url: data_scale.html
+            - listitem [ref=f14e89]:
+              - link "WTT Ranking" [ref=f14e90] [cursor=pointer]:
+                - /url: /wtt_ranking.html?cat=ms
+            - listitem [ref=f14e91]:
+              - link "WTT Data Viz" [ref=f14e92] [cursor=pointer]:
+                - /url: /wtt_dataviz.html?cat=ms
+        - navigation [ref=f14e93]:
+          - heading "信息" [level=3] [ref=f14e94]
+          - list [ref=f14e95]:
+            - listitem [ref=f14e96]:
+              - link "提交战绩" [ref=f14e97] [cursor=pointer]:
+                - /url: submit.html
+            - listitem [ref=f14e98]:
+              - link "Q&A" [ref=f14e99] [cursor=pointer]:
+                - /url: qa.html
+            - listitem [ref=f14e100]:
+              - link "更新日志" [ref=f14e101] [cursor=pointer]:
+                - /url: changelog.html
+            - listitem [ref=f14e102]:
+              - link "网站文档" [ref=f14e103] [cursor=pointer]:
+                - /url: docs.html
+            - listitem [ref=f14e104]:
+              - link "Umpire Training" [ref=f14e105] [cursor=pointer]:
+                - /url: umpire-training.html
+            - listitem [ref=f14e106]:
+              - link "Contact" [ref=f14e107] [cursor=pointer]:
+                - /url: contact.html
+      - generic [ref=f14e108]:
+        - generic [ref=f14e109]:
+          - generic [ref=f14e110]: 关注我们
+          - generic [ref=f14e111]:
+            - button "社团QQ群二维码" [ref=f14e112] [cursor=pointer]:
+              - generic [ref=f14e113]: 
+            - link "GitHub" [ref=f14e114] [cursor=pointer]:
+              - /url: https://github.com/yglalpavir/wfls-tt-club
+              - generic [ref=f14e115]: 
+        - generic [ref=f14e116]:
+          - link "社团理念" [ref=f14e117] [cursor=pointer]:
+            - /url: index.html#philosophy
+          - link "积分规则" [ref=f14e118] [cursor=pointer]:
+            - /url: qa.html
+        - paragraph [ref=f14e119]: ©2026 WFLS Table Tennis Club. All rights reserved

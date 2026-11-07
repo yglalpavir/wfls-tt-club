@@ -1,0 +1,140 @@
+- generic [active] [ref=f15e1]:
+  - navigation [ref=f15e2]:
+    - generic [ref=f15e3]:
+      - link " WFLS TT Club" [ref=f15e4] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=f15e5]: 
+        - generic [ref=f15e7]: WFLS TT Club
+      - list [ref=f15e8]:
+        - listitem [ref=f15e9]:
+          - link "Home" [ref=f15e10] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=f15e11]:
+          - link "News" [ref=f15e12] [cursor=pointer]:
+            - /url: news.html
+        - listitem [ref=f15e13]:
+          - link "Competitions" [ref=f15e14] [cursor=pointer]:
+            - /url: competitions.html
+        - listitem [ref=f15e15]:
+          - link "Ranking Beta" [ref=f15e16] [cursor=pointer]:
+            - /url: ranking.html
+        - listitem [ref=f15e17]:
+          - link "More... " [ref=f15e18] [cursor=pointer]:
+            - /url: "#"
+            - text: More...
+            - generic [ref=f15e19]: 
+        - listitem [ref=f15e20]:
+          - link "Contact" [ref=f15e21] [cursor=pointer]:
+            - /url: contact.html
+      - generic [ref=f15e22]:
+        - button "Search" [ref=f15e23] [cursor=pointer]:
+          - generic [ref=f15e24]: 
+        - button "Toggle theme" [ref=f15e25] [cursor=pointer]:
+          - generic [ref=f15e26]: 
+        - button "Switch language" [ref=f15e27] [cursor=pointer]:
+          - generic [ref=f15e28]: 中文
+  - generic [ref=f15e31]:
+    - generic [ref=f15e32]: 🥚 Easter Egg
+    - heading "WTT Men's Singles" [level=1] [ref=f15e33]
+    - paragraph [ref=f15e34]: WTT Player Personal Page
+    - paragraph [ref=f15e35]:
+      - generic [ref=f15e36]: 
+      - text: All points on this page are simulated under our club's own scoring rules — not official WTT points. For reference only.
+  - generic [ref=f15e38]:
+    - link " Back to Personal Stats" [ref=f15e41] [cursor=pointer]:
+      - /url: /wtt_personal_stats.html?cat=ms
+      - generic [ref=f15e42]: 
+      - generic [ref=f15e43]: Back to Personal Stats
+    - generic [ref=f15e45]:
+      - paragraph [ref=f15e47]: Preparing data…
+      - generic [ref=f15e48]: 33%
+      - generic [ref=f15e51]:
+        - generic [ref=f15e52]: "Downloading Association (4/5): Association"
+        - generic [ref=f15e53]: Elapsed 0s
+    - link " Back to WTT Hub" [ref=f15e55] [cursor=pointer]:
+      - /url: /wtt_hub.html?cat=ms
+      - generic [ref=f15e56]: 
+      - generic [ref=f15e57]: Back to WTT Hub
+  - contentinfo [ref=f15e58]:
+    - generic [ref=f15e59]:
+      - generic [ref=f15e60]:
+        - generic [ref=f15e61]:
+          - link "WFLS Table Tennis Club" [ref=f15e62] [cursor=pointer]:
+            - /url: index.html
+          - paragraph [ref=f15e63]: Wuhan Foreign Languages School · Wuhan, Hubei, China
+          - paragraph [ref=f15e64]: Swing for dreams, spin for youth
+        - navigation [ref=f15e65]:
+          - heading "Club" [level=3] [ref=f15e66]
+          - list [ref=f15e67]:
+            - listitem [ref=f15e68]:
+              - link "Home" [ref=f15e69] [cursor=pointer]:
+                - /url: index.html
+            - listitem [ref=f15e70]:
+              - link "News" [ref=f15e71] [cursor=pointer]:
+                - /url: news.html
+            - listitem [ref=f15e72]:
+              - link "Competitions" [ref=f15e73] [cursor=pointer]:
+                - /url: competitions.html
+            - listitem [ref=f15e74]:
+              - link "Core Members" [ref=f15e75] [cursor=pointer]:
+                - /url: members.html
+            - listitem [ref=f15e76]:
+              - link "Season Review" [ref=f15e77] [cursor=pointer]:
+                - /url: season-review.html
+        - navigation [ref=f15e78]:
+          - heading "Data" [level=3] [ref=f15e79]
+          - list [ref=f15e80]:
+            - listitem [ref=f15e81]:
+              - link "Ranking" [ref=f15e82] [cursor=pointer]:
+                - /url: ranking.html
+            - listitem [ref=f15e83]:
+              - link "Data Viz" [ref=f15e84] [cursor=pointer]:
+                - /url: data_viz.html
+            - listitem [ref=f15e85]:
+              - link "Personal Stats" [ref=f15e86] [cursor=pointer]:
+                - /url: personal_stats.html
+            - listitem [ref=f15e87]:
+              - link "Data Scale" [ref=f15e88] [cursor=pointer]:
+                - /url: data_scale.html
+            - listitem [ref=f15e89]:
+              - link "WTT Ranking" [ref=f15e90] [cursor=pointer]:
+                - /url: /wtt_ranking.html?cat=ms
+            - listitem [ref=f15e91]:
+              - link "WTT Data Viz" [ref=f15e92] [cursor=pointer]:
+                - /url: /wtt_dataviz.html?cat=ms
+        - navigation [ref=f15e93]:
+          - heading "Information" [level=3] [ref=f15e94]
+          - list [ref=f15e95]:
+            - listitem [ref=f15e96]:
+              - link "Submit Results" [ref=f15e97] [cursor=pointer]:
+                - /url: submit.html
+            - listitem [ref=f15e98]:
+              - link "Q&A" [ref=f15e99] [cursor=pointer]:
+                - /url: qa.html
+            - listitem [ref=f15e100]:
+              - link "Changelog" [ref=f15e101] [cursor=pointer]:
+                - /url: changelog.html
+            - listitem [ref=f15e102]:
+              - link "docs" [ref=f15e103] [cursor=pointer]:
+                - /url: docs.html
+            - listitem [ref=f15e104]:
+              - link "Umpire Training" [ref=f15e105] [cursor=pointer]:
+                - /url: umpire-training.html
+            - listitem [ref=f15e106]:
+              - link "Contact" [ref=f15e107] [cursor=pointer]:
+                - /url: contact.html
+      - generic [ref=f15e108]:
+        - generic [ref=f15e109]:
+          - generic [ref=f15e110]: Follow Us
+          - generic [ref=f15e111]:
+            - button "Club QQ Group QR Code" [ref=f15e112] [cursor=pointer]:
+              - generic [ref=f15e113]: 
+            - link "GitHub" [ref=f15e114] [cursor=pointer]:
+              - /url: https://github.com/yglalpavir/wfls-tt-club
+              - generic [ref=f15e115]: 
+        - generic [ref=f15e116]:
+          - link "Philosophy" [ref=f15e117] [cursor=pointer]:
+            - /url: index.html#philosophy
+          - link "Ranking Rules" [ref=f15e118] [cursor=pointer]:
+            - /url: qa.html
+        - paragraph [ref=f15e119]: ©2026 WFLS Table Tennis Club. All rights reserved

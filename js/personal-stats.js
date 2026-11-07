@@ -940,9 +940,12 @@ function paFindSeasonBoundaries(dataPoints) {
  * @param {Array} dataPoints 含 time 字段、按时间升序的数据点
  * @param {boolean} isDark 是否深色主题
  * @param {Array} boundaries 可选，预先算好的分界数据（跨管线复用时避免重算）
+ * @param {Object} opts 可选，{ labelAlign: 'top' | 'bottom' }：
+ *        折线贴顶（如排名走势，第 1 名在最上方）时把标签放到底部，避免压住数据
  */
-function createSeasonBoundaryPlugin(dataPoints, isDark, boundaries) {
+function createSeasonBoundaryPlugin(dataPoints, isDark, boundaries, opts) {
     const seasonBoundaries = boundaries || paFindSeasonBoundaries(dataPoints);
+    const o = opts || {};
     return {
         id: 'seasonBoundaries',
         afterDraw: function(chart) {
@@ -952,8 +955,11 @@ function createSeasonBoundaryPlugin(dataPoints, isDark, boundaries) {
             const chartArea = chart.chartArea;
             const topY = chartArea.top;
             const bottomY = chartArea.bottom;
+            const labelAtBottom = o.labelAlign === 'bottom';
 
             ctx.save();
+            // 边界挨得很近时（如 WTT 每年一个赛季）标签会叠在一起，挤不下就只留虚线
+            let lastLabelRight = -Infinity;
             for (const b of seasonBoundaries) {
                 const point = meta.data[b.idx];
                 if (!point) continue;
@@ -969,12 +975,35 @@ function createSeasonBoundaryPlugin(dataPoints, isDark, boundaries) {
                 ctx.lineTo(x, bottomY);
                 ctx.stroke();
 
-                // 赛季标签
+                // 赛季标签：垫一层与卡片同色的圆角底，避免和折线/数据点糊在一起
                 ctx.setLineDash([]);
-                ctx.fillStyle = isDark ? 'rgba(200,200,200,0.7)' : 'rgba(80,80,80,0.7)';
                 ctx.font = '10px "Poppins", "Microsoft YaHei", sans-serif';
+                // 赛季名走展示层字典，EN 模式下不留中文
+                const bLabel = (typeof seasonLabel === 'function') ? seasonLabel(b.label) : b.label;
+                const textW = ctx.measureText(bLabel).width;
+                const padX = 6, pillH = 15;
+                const pillW = textW + padX * 2;
+                const labelY = labelAtBottom ? bottomY - 3 : topY + 3;
+                const pillTop = labelAtBottom ? labelY - pillH : labelY;
+                // 边界处向内收，避免标签被画布裁掉
+                const cx = Math.min(Math.max(x, chartArea.left + pillW / 2), chartArea.right - pillW / 2);
+                const pillLeft = cx - pillW / 2;
+                if (pillLeft < lastLabelRight + 4) continue;
+                lastLabelRight = pillLeft + pillW;
+
+                ctx.fillStyle = isDark ? 'rgba(30,34,48,0.82)' : 'rgba(255,255,255,0.86)';
+                if (typeof ctx.roundRect === 'function') {
+                    ctx.beginPath();
+                    ctx.roundRect(cx - pillW / 2, pillTop, pillW, pillH, 7);
+                    ctx.fill();
+                } else {
+                    ctx.fillRect(cx - pillW / 2, pillTop, pillW, pillH);
+                }
+
+                ctx.fillStyle = isDark ? 'rgba(200,200,200,0.85)' : 'rgba(80,80,80,0.85)';
                 ctx.textAlign = 'center';
-                ctx.fillText(b.label, x, topY + 12);
+                ctx.textBaseline = 'middle';
+                ctx.fillText(bLabel, cx, pillTop + pillH / 2);
             }
             ctx.restore();
         }

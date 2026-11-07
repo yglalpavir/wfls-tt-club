@@ -1,0 +1,23 @@
+[      84ms] [LOG] [WTT Common] 当前项目: ms (男子单打) @ http://127.0.0.1:8798/js/wtt_common.js:1326
+[     185ms] [LOG] WTT[ms] 设置加载成功, scoreMode: flat1300, baseScore: 1500 @ http://127.0.0.1:8798/js/wtt_common.js:753
+[     193ms] [LOG] WTT[ms] 协会籍数据加载成功: 3827 人 @ http://127.0.0.1:8798/js/wtt_common.js:863
+[     296ms] [LOG] WTT[ms] 从 manifest 并行加载了 44137 条记录（19 个文件） @ http://127.0.0.1:8798/js/wtt_common.js:689
+[     356ms] [WARNING] [WTT] 识别并合并 95 个球员名分组，共 102 个别名 @ http://127.0.0.1:8798/js/wtt_common.js:527
+[     356ms] [WARNING] [WTT]   'Marcos Freitas' -> 'Marcos FREITAS' @ http://127.0.0.1:8798/js/wtt_common.js:528
+[     356ms] [WARNING] [WTT]   'Panagiotis Gionis' -> 'Panagiotis GIONIS' @ http://127.0.0.1:8798/js/wtt_common.js:528
+[     356ms] [WARNING] [WTT]   'GAUZY Simon' -> 'Simon GAUZY' @ http://127.0.0.1:8798/js/wtt_common.js:528
+[     357ms] [WARNING] [WTT]   'Simon Gauzy' -> 'Simon GAUZY' @ http://127.0.0.1:8798/js/wtt_common.js:528
+[     357ms] [WARNING] [WTT]   'Tiago Apolonia' -> 'Tiago APOLONIA' @ http://127.0.0.1:8798/js/wtt_common.js:528
+[     357ms] [WARNING] [WTT]   'Takuya Jin' -> 'Takuya JIN' @ http://127.0.0.1:8798/js/wtt_common.js:528
+[     357ms] [WARNING] [WTT]   'Gnanasekaran SATHIYAN' -> 'Sathiyan GNANASEKARAN' @ http://127.0.0.1:8798/js/wtt_common.js:528
+[     357ms] [WARNING] [WTT]   'Ovidiu Ionescu' -> 'Ovidiu IONESCU' @ http://127.0.0.1:8798/js/wtt_common.js:528
+[     357ms] [WARNING] [WTT]   'Pavel Sirucek' -> 'Pavel SIRUCEK' @ http://127.0.0.1:8798/js/wtt_common.js:528
+[     357ms] [WARNING] [WTT]   'Quentin Robinot' -> 'Quentin ROBINOT' @ http://127.0.0.1:8798/js/wtt_common.js:528
+[     357ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8798/js/wtt_common.js:775
+[     357ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8798/js/wtt_common.js:775
+[    2122ms] [LOG] [WttPersonalStats] 折线图设置加载完成 @ http://127.0.0.1:8798/js/wtt_personal_stats.js:1201
+[    2124ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8798/js/wtt_common.js:775
+[    2201ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8798/js/wtt_common.js:775
+[   14214ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8798/js/wtt_common.js:775
+[   14696ms] [LOG] [WTT ms] 🔄 使用 flat1300 模式：所有球员初始分 = 1500 @ http://127.0.0.1:8798/js/wtt_common.js:775
+[   15982ms] [LOG] [WttPlayerPage] 初始化完成: WANG Chuqin @ http://127.0.0.1:8798/js/wtt_player.js:272
