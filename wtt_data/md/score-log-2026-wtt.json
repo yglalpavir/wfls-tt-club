@@ -7178,5 +7178,292 @@
       "11-6",
       "11-5"
     ]
+  },
+  {
+    "日期": "2026-11-04",
+    "类型": "支线赛",
+    "胜者": "Antoine DOYEN/Rafael KONG",
+    "负者": "Marcel BLASZCZYK/Jakub STECYSZYN",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-11-04",
+    "类型": "支线赛",
+    "胜者": "Dominykas SAMUOLIS/Ivan KAHN",
+    "负者": "Eusebio VOS/Alvaro FUENTES",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-11-04",
+    "类型": "支线赛",
+    "胜者": "Dimitrije LEVAJAC/Nemanja DILAS",
+    "负者": "Breno PANINI/Raphael ITO",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-11-04",
+    "类型": "支线赛",
+    "胜者": "Liam PITCHFORD/Samuel WALKER",
+    "负者": "Stepan BRHEL/Jiri MARTINKO",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-11-05",
+    "类型": "支线赛",
+    "胜者": "LEE Jungmok/MA Yeongmin",
+    "负者": "Antoine DOYEN/Rafael KONG",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-11-05",
+    "类型": "支线赛",
+    "胜者": "Maciej KUBIK/Samuel MICHNA",
+    "负者": "Dominykas SAMUOLIS/Ivan KAHN",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-11-05",
+    "类型": "支线赛",
+    "胜者": "Dimitrije LEVAJAC/Nemanja DILAS",
+    "负者": "Loris STEPHANY/Gene WANTZ",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-11-05",
+    "类型": "支线赛",
+    "胜者": "Michael TAUBER/Eitay SHUSHAN",
+    "负者": "Liam PITCHFORD/Samuel WALKER",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-11-06",
+    "类型": "支线赛",
+    "胜者": "Muizz ADEGOKE/Taiwo MATI",
+    "负者": "Remi CHAMBET-WEIL/Gabrielius CAMARA",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-11-06",
+    "类型": "支线赛",
+    "胜者": "Tom SCHOLTES/Mael VAN DESSEL",
+    "负者": "Jakub MAKARA/Radim MORAVEK",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-11-06",
+    "类型": "支线赛",
+    "胜者": "Tiago APOLONIA/Marcos FREITAS",
+    "负者": "Jakub ZELINKA/Jakub KAUCKY",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-11-06",
+    "类型": "支线赛",
+    "胜者": "LEE Jungmok/MA Yeongmin",
+    "负者": "KWON Hyuk/LEE Hyeonho",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-11-06",
+    "类型": "支线赛",
+    "胜者": "Dimitrije LEVAJAC/Nemanja DILAS",
+    "负者": "Michael TAUBER/Eitay SHUSHAN",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-11-06",
+    "类型": "支线赛",
+    "胜者": "Lilian BARDET/Leo DE NODREST",
+    "负者": "Liam PITCHFORD/Samuel WALKER",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-11-06",
+    "类型": "支线赛",
+    "胜者": "Tiago ABIODUN/Clement LAINE",
+    "负者": "Ivan HENCL/Yoan VELICHKOV",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-11-06",
+    "类型": "支线赛",
+    "胜者": "Maciej KUBIK/Samuel MICHNA",
+    "负者": "Joe SEYFRIED/Vincent PICARD",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-11-07",
+    "类型": "支线赛",
+    "胜者": "Tom SCHOLTES/Mael VAN DESSEL",
+    "负者": "Muizz ADEGOKE/Taiwo MATI",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-11-07",
+    "类型": "支线赛",
+    "胜者": "Tiago APOLONIA/Marcos FREITAS",
+    "负者": "LEE Jungmok/MA Yeongmin",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-11-07",
+    "类型": "支线赛",
+    "胜者": "Lilian BARDET/Leo DE NODREST",
+    "负者": "Dimitrije LEVAJAC/Nemanja DILAS",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-11-07",
+    "类型": "支线赛",
+    "胜者": "Tiago ABIODUN/Clement LAINE",
+    "负者": "Maciej KUBIK/Samuel MICHNA",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-11-07",
+    "类型": "支线赛",
+    "胜者": "Tiago APOLONIA/Marcos FREITAS",
+    "负者": "Tom SCHOLTES/Mael VAN DESSEL",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-11-07",
+    "类型": "支线赛",
+    "胜者": "Lilian BARDET/Leo DE NODREST",
+    "负者": "Tiago ABIODUN/Clement LAINE",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-11-08",
+    "类型": "支线赛",
+    "胜者": "Tiago APOLONIA/Marcos FREITAS",
+    "负者": "Lilian BARDET/Leo DE NODREST",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-10-29",
+    "类型": "支线赛",
+    "胜者": "Soham MUKHERJEE/Rupam SARDAR",
+    "负者": "Vaibhav BHAVANI/Nitin VASANTH",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-10-29",
+    "类型": "支线赛",
+    "胜者": "Sounav BARMAN/Priyanshu KARMAKAR",
+    "负者": "Satyajeet GHOSH/Shounak SHINDE",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-10-29",
+    "类型": "支线赛",
+    "胜者": "Shridhar JOUSHI/Rahul MALIK",
+    "负者": "Akash GUPTA/Shivjit LAMBA",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-10-30",
+    "类型": "支线赛",
+    "胜者": "Ankur BHATTACHARJEE/Akash PAL",
+    "负者": "Kushal CHOPDA/Neil MULYE",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-10-30",
+    "类型": "支线赛",
+    "胜者": "LEE Jungmok/MA Yeongmin",
+    "负者": "Sounav BARMAN/Priyanshu KARMAKAR",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-10-30",
+    "类型": "支线赛",
+    "胜者": "Payas JAIN/Priyanuj BHATTACHARYYA",
+    "负者": "Soham MUKHERJEE/Rupam SARDAR",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-10-30",
+    "类型": "支线赛",
+    "胜者": "Yashansh MALIK/Punit BISWAS",
+    "负者": "Arjav GUPTA/Sahil RAWAT",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-10-30",
+    "类型": "支线赛",
+    "胜者": "Rajiv SAHU/Aaron FARIAS",
+    "负者": "Shihan PALKHIVALA/Harkunwar SINGH",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-10-30",
+    "类型": "支线赛",
+    "胜者": "Sanil SHETTY/Snehit SURAVAJJULA",
+    "负者": "KWON Hyuk/LEE Hyeonho",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-10-30",
+    "类型": "支线赛",
+    "胜者": "Shridhar JOUSHI/Rahul MALIK",
+    "负者": "Amar MALLA/Pratik THAPA",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-10-30",
+    "类型": "支线赛",
+    "胜者": "Sathiyan GNANASEKARAN/Harmeet DESAI",
+    "负者": "Sudhanshu MAINI/Kumar HARSHIT",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-10-31",
+    "类型": "支线赛",
+    "胜者": "Ankur BHATTACHARJEE/Akash PAL",
+    "负者": "LEE Jungmok/MA Yeongmin",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-10-31",
+    "类型": "支线赛",
+    "胜者": "Payas JAIN/Priyanuj BHATTACHARYYA",
+    "负者": "Yashansh MALIK/Punit BISWAS",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-10-31",
+    "类型": "支线赛",
+    "胜者": "Sanil SHETTY/Snehit SURAVAJJULA",
+    "负者": "Rajiv SAHU/Aaron FARIAS",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-10-31",
+    "类型": "支线赛",
+    "胜者": "Sathiyan GNANASEKARAN/Harmeet DESAI",
+    "负者": "Shridhar JOUSHI/Rahul MALIK",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-10-31",
+    "类型": "支线赛",
+    "胜者": "Payas JAIN/Priyanuj BHATTACHARYYA",
+    "负者": "Ankur BHATTACHARJEE/Akash PAL",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-10-31",
+    "类型": "支线赛",
+    "胜者": "Sathiyan GNANASEKARAN/Harmeet DESAI",
+    "负者": "Sanil SHETTY/Snehit SURAVAJJULA",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-11-01",
+    "类型": "支线赛",
+    "胜者": "Sathiyan GNANASEKARAN/Harmeet DESAI",
+    "负者": "Payas JAIN/Priyanuj BHATTACHARYYA",
+    "比分": "3-1"
   }
 ]
