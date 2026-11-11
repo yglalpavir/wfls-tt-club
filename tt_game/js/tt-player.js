@@ -347,7 +347,14 @@ const TT_PLAYER = (() => {
      * pz 存在时直接用它（控制器自己 owns 深度）；不传 pz 的路径（真人 / DQN）
      * 行为完全不变。 */
     if(vp.cur.pz != null){
-      effZ = cl(vp.cur.pz, ZRANGE_P.lo, ZRANGE_P.hi);
+      /* ★ pz 通道的显式地板：控制器可在救援场景（近网死短球）随 pz 一起下发
+       *   pzLo 放宽地板（hip-skill#shortRescue）。默认路径不传 pzLo ⇒
+       *   行为与旧 ZRANGE_P.lo=0.92 逐位一致（DQN/真人/远离网球零影响）。
+       *   依据（实机探针 2026-10-27）：vs nemesis 漏掉的球是「近网死短」类，
+       *   二跳点 |z|≈0.4-0.5、弹起高度 ~0.75 —— 在深度 ≥0.92 的拍面面前
+       *   物理不可达（球从拍前穿过、够不到）；拍面必须能走到 |z|≈0.5。 */
+      const zLo = (vp.cur.pzLo != null) ? Math.max(vp.cur.pzLo, 0.30) : ZRANGE_P.lo;
+      effZ = cl(vp.cur.pz, zLo, ZRANGE_P.hi);
     }else if(m.vel.z > 0.5 && typeof ball !== 'undefined' && ball.active){
       const meet = SIM.predictMeetZ(m.pos, m.vel, m.spin, 'player',
                                     WIN_LO, WIN_HI, ZRANGE_P.lo, ZRANGE_P.hi);

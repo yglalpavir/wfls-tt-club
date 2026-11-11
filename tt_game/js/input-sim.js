@@ -133,7 +133,12 @@ const INPUTSIM = (() => {
      * ctx.pz 存在时直接用它当拍面 z（不再套 meet 拟合修正：控制器自己owns 深度）。
      * 人类玩家与 DQN 不传 pz → 行为完全不变。 */
     if(ctx.pz != null){
-      effZ = cl(ctx.pz, ZRANGE.player.lo, ZRANGE.player.hi);
+      /* ★ pz 通道的显式地板（与实机 tt-player.js 同口径，2026-10-27）：
+       *   控制器可在救援场景（近网死短球）随 pz 一起下发 pzLo 放宽地板
+       *   （hip-skill#shortRescue）。默认路径不传 pzLo ⇒ 行为与旧
+       *   ZRANGE.player.lo 逐位一致（DQN/真人/远离网球零影响）。 */
+      const zLo = (ctx.pzLo != null) ? Math.max(ctx.pzLo, 0.30) : ZRANGE.player.lo;
+      effZ = cl(ctx.pz, zLo, ZRANGE.player.hi);
     }else if(ctx.ball && ctx.ball.z > 0.5 && ctx.ballActive){
       const meet = SIM.predictMeetZ(ctx.pos, ctx.vel, ctx.spin, 'player',
                                     WIN_LO, WIN_HI, ZRANGE.player.lo, ZRANGE.player.hi);
@@ -449,7 +454,7 @@ const INPUTSIM = (() => {
           'cur=' + JSON.stringify(cur));
         throw new Error('nan-in-recv');
       }
-      padControl(pad, { tx: cur.tx, my: cur.my, pz: cur.pz, ball: v, pos: p, vel: v, spin: s, ballActive: stB.bounced }, DT);
+      padControl(pad, { tx: cur.tx, my: cur.my, pz: cur.pz, pzLo: cur.pzLo, ball: v, pos: p, vel: v, spin: s, ballActive: stB.bounced }, DT);
       const pzPrev = p.z;   // 本帧积分前的 z（= 实机 _prev.z，供 swept 穿越判据用）
       stB.pPrev = { x: p.x, y: p.y, z: p.z };   // 子步起点（= 实机 _prev，供撞网穿越判据用）
       /* —— 物理（子步积分 + 弹跳 + 出界）——

@@ -1056,4 +1056,20 @@ sim 端 `vsdefault` 82.5% / `vshell` 2.5% 与 C 同档（**饱和**），实机 
 完整的上线清单、被否决的候选与「上线前必须同步的三处」见
 `docs/tech/hip-framework.md` §1.17.6。
 
+### 11e.17 ★ 真机在环研究管线（R1）：探针 → 钳位链 → txBias 的发现与判决（2026-10-27）
 
+完整链条与表格见 `docs/tech/hip-framework.md` §1.18.11。要点：
+
+1. **探针定案**：nemesis 的 noreach 76.7% 主因是「近网死短球」（|z|<0.7 桶命中率 28%，
+   一跳到二跳只隔 ~0.1s，深度策略救不了）＋弹跳预测系统性偏短 0.33m。
+2. **钳位链**：padZ 有两道钳（hip-skill 0.95 → tt-player ZRANGE_P.lo 0.92），
+   放松第一道必须同步第二道；已加 `pzLo` 显式地板通道（三处同步：hip-skill/tt-player/input-sim）。
+3. **死旋钮**：`landX/landXMid`（被 landAuto=auto 覆盖）与 `posGain/maxLead`（位置律路径不含）——
+   网格逐字节相同即为不可达。
+4. **在环基建**：`tools/live-rig.js`（进程内 rig，355ms 构建/4s 一局）+ `live-search.js`
+   （坐标下降）+ `live-residual-probe.js`（残差敏感性）。
+5. **txBias**：plan 输出 tx 的整体平移经「拍位 → 落点公式 + offX 偏心」放大成落点大偏移；
+   −0.05 在 nemesis 100 局 **+9.9pp（z=3.46）**，但 hell **95.7% → 72.2%（掉档，CI 不重叠）**
+   ⇒ 不上线，保留旋钮默认 0；**对手依赖性 = R2 残差网络的学习目标**。
+6. **方法论**：20 局在环选点读数 75.0% 的点，CLI 100 局 = 52.4% ⇒
+   **小样本搜索只能筛方向，一切定案必须 CLI 大样本 + 四档守护**。

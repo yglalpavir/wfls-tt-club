@@ -195,6 +195,9 @@ const HIP_SKILL = (() => {
     rallyAfter:  8,       // 总板数阈值（0 = 关）；超过就切「求速」打法
     rallyMy:     0,       // 长相持时强制改 my（0 = 不改；实测改弧线改不动相持）
     rallyFwd:    0.6,     // 长相持时的前冲量 fwd（0 = 不额外前冲）
+    /* ★ txBias：plan 输出的 tx 整体平移（机理与实测见 plan 尾部的注释块）。
+     *   默认 0 = 关；候选上线值 −0.05（tx-diag 40 局/臂 85.3% vs 基线 57.5%）。 */
+    txBias:      0,
     /* 待机 */
     homeX:       0.0,
     homeMy:      0.50,
@@ -222,6 +225,17 @@ const HIP_SKILL = (() => {
     apexMaxDy:   0.16,   // 顶点比拍心高过这个值就放弃（拍子够不着）
     padZMin:     0.95,   // 拍面 z 下限
     padZMax:     1.60,   // 拍面 z 上限
+    /* ★ 短球救援（2026-10-27，探针导向）：nemesis 会发「近网死短」前冲球，
+     *   实机探针（40 局 vs nemesis，r8 口径）：弹跳点 |z|<0.7 的桶命中率只有
+     *   28%（|z| 0.7~1.45 段 86~100%），漏掉的球 vy≈0.05 / vz≈0.19 ——
+     *   弹起后几乎不动；而 padZMin=0.95 把拍面深度钳在离网 0.95m ⇒
+     *   近网短球物理上够不到（拍子站在后面看它二跳）。
+     *   本旋钮在「预测弹跳点很靠网」（|S.bz| < shortZ）时把 padZMin 放松
+     *   shortLoosen，让拍面深度能跟着弹跳点走到网前。默认 0 = 关
+     *   （等实机网格/配对 A/B 定案，回归风险由默认值兜住）。 */
+    shortRescue: 0,      // 1 = 开
+    shortZ:      0.70,   // |预测弹跳点 z| 小于它算「近网短球」
+    shortLoosen: 0.40,   // padZMin 放松量（0.95 → 0.55）
     padZFixed:   null,   // 拍面深度钉死值（null = 用预测落台点 + padZOffset）
     contactY:    null,   // 目标接触高度（null = 不启用；0.92 ≈ 刚好进「高球宽窗口」）
     /* ★ postBounceFix：修「弹起后预测器去找第二次弹跳」这个真 bug。
@@ -1096,6 +1110,19 @@ const HIP_SKILL = (() => {
           ? cl(S.bx + vCmd / PACE, -X_CLAMP, X_CLAMP)
           : px + hold + vCmd / PACE;
       }
+      /* ★ txBias（2026-10-27，在环搜索发现的主旋钮）：plan 输出的 tx 整体平移。
+       *   实机诊断（40 局/臂，r8 口径 vs nemesis，data/hip/tx-diag.txt）：
+       *     baseline      57.5%   落点 x p50 +0.277   noreach 177/237
+       *     txBias −0.05  85.3%   落点 x p50 +0.582   noreach  17/170   ★
+       *     txBias +0.05  80.5%   落点 x p50 −0.286   出球减速（5.06 m/s）
+       *   机理：tx 通过拍位进入落点公式（0.55·拍位x + 0.30·拍速x），而拍位
+       *   移动又改变 offX（偏心 1.2×）⇒ 小平移被放大成落点大偏移（±0.3），
+       *   同时改出球速度。**±两个方向都涨分**，但机制不同（见上），
+       *   且都不在 landTarget/servo 的可达范围（伺服把落点拉回 S.want）。
+       *   为什么伺服没拉回来：伺服修的是 aimT（挥拍速度通道），
+       *   txBias 平移的是**拍位目标**——两条正交通道。
+       *   默认 0 = 关（等四档回归定案后决定是否改 DEFAULTS）。 */
+      if(cfg.txBias) tx = cl(tx + cfg.txBias, -X_CLAMP, X_CLAMP);
 
       /* ★ 独立拍面深度通道：pz = 预测落台点 z + padZOffset。
        * 与出球深度（my）完全解耦 —— 这正是 M1 剩下的唯一硬瓶颈：
@@ -1111,8 +1138,19 @@ const HIP_SKILL = (() => {
        *   k = 整数帧号。控制器把拍面深度吸附到这串栅格上（k 取最接近
        *   padZOffset 的整数），触球时球正好在拍面正中。 */
       let padZ = null;
+      let pzLo = null;
       if(cfg.padZOffset >= 0 && S.padZ != null && S.hasMeet){
-        padZ = cl(S.padZ, cfg.padZMin, cfg.padZMax);
+        /* ★ 短球救援：预测弹跳点很靠网时放松 padZMin（探针依据见 DEFAULTS）。
+         *   只动「下限」、只在近网短球触发，远离网的球完全不受影响。
+         *   ⚠ 2026-10-27 二段修复：光在控制器里放松没用 —— 实机消费端
+         *   tt-player.js#padControl 把 pz 钳在 ZRANGE_P.lo=0.92（静默钳位），
+         *   所以这里把放宽后的地板作为 pzLo **随 pz 一起下发**（默认路径
+         *   不发 pzLo ⇒ 消费端 0.92 逐位不变）。 */
+        let zLo = cfg.padZMin;
+        if(cfg.shortRescue > 0 && S.bounceZ != null && Math.abs(S.bounceZ) < cfg.shortZ){
+          zLo = Math.max(0.30, cfg.padZMin - cfg.shortLoosen);
+        }
+        padZ = cl(S.padZ, zLo, cfg.padZMax);
         if(cfg.padZPhase && S.vzPost > 0.2 && !S.useApex){
           /* z 相位对齐（默认关，实机 40 局实测 63.8% < 不对齐的 68.2%）：
            * 把拍面深度吸附到「球弹起后每帧 z 步进 s=vz/60」这条栅格上。 */
@@ -1121,11 +1159,14 @@ const HIP_SKILL = (() => {
           const nextFrame = Math.ceil(tb * 60 + 1e-6) / 60;
           const r = Math.max(0, nextFrame - tb) * S.vzPost;
           const k = Math.max(1, Math.round((cfg.padZOffset - r) / s));
-          padZ = cl(S.bounceZ + r + k * s, cfg.padZMin, cfg.padZMax);
+          padZ = cl(S.bounceZ + r + k * s, zLo, cfg.padZMax);
         }
+        /* pzLo 只在救援触发（zLo < padZMin）时下发 —— 不触发就是 undefined，零影响 */
+        pzLo = (zLo < cfg.padZMin) ? zLo : null;
       }
 
       return { tx: cl(tx, -X_CLAMP, X_CLAMP), my: cl(my, 0, 1), ctrl: ctrl, pz: padZ,
+               pzLo: (padZ != null ? pzLo : undefined),
                sw: (swingSwipeOn(cfg) ? (S.sw || 0) : undefined),
                f: (fOver != null ? fOver : swingFwdVal(cfg, obs, S.inSwing)) };
     }
