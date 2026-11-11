@@ -1274,14 +1274,14 @@ async function loadInitialScores() {
     console.error('初始积分加载失败：players.json 未就绪（旧版 data/_legacy/ 回退已退役）');
     return false;
 }
-async function loadEventCoefficients() { try { const resp = await fetch('data/event-coefficient.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); eventCoefficients = await resp.json(); parseFormatConfig(eventCoefficients); return true; } catch(e) { console.error('event-coefficient.json 加载失败', e); return false; } }
+async function loadEventCoefficients() { try { const resp = await fetch('data/event-coefficient.json', { cache: 'no-cache' }); if (!resp.ok) throw new Error('HTTP ' + resp.status); eventCoefficients = await resp.json(); parseFormatConfig(eventCoefficients); return true; } catch(e) { console.error('event-coefficient.json 加载失败', e); return false; } }
 // 保值类型默认值：decay-config.json 加载失败时的兜底（与 data/decay-config.json 保持一致）
 const DEFAULT_NO_DECAY_TYPES = ['校乒赛单打', '校乒赛团体', '双打', '校队选拔'];
 // 加载衰减配置。返回 true/false 供调用方判定成败（失败时 ranking 页会显示可见错误，
 // 而不是静默沿用错误的半衰期 180 天继续计算）。
 async function loadDecayConfig() {
     try {
-        const resp = await fetch('data/decay-config.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); decayConfig = await resp.json() || {};
+        const resp = await fetch('data/decay-config.json', { cache: 'no-cache' }); if (!resp.ok) throw new Error('HTTP ' + resp.status); decayConfig = await resp.json() || {};
     } catch(e) {
         console.error('decay-config.json 加载失败（使用默认配置）', e);
         decayConfig = { noDecayTypes: DEFAULT_NO_DECAY_TYPES };
@@ -1306,5 +1306,5 @@ function isNoDecayType(et) {
 function isFreezeEligible(et) {
     return FREEZE_ON_REPEAT && !isNoDecayType(et);
 }
-async function loadSeasons() { try { const resp = await fetch('data/seasons.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); seasonsData = (await resp.json()).filter(s => s.visible !== false); return true; } catch(e) { console.error('seasons.json 加载失败', e); seasonsData = []; return false; } }
-async function loadScoreLogData() { try { const resp = await fetch('data/score-log.json'); if (!resp.ok) throw new Error('HTTP ' + resp.status); scoreLogData = normalizeScoreLog(await resp.json()); clearFirstAppearanceCache(); return true; } catch(e) { console.error('score-log.json 加载失败', e); scoreLogData = []; return false; } }
+async function loadSeasons() { try { const resp = await fetch('data/seasons.json', { cache: 'no-cache' }); if (!resp.ok) throw new Error('HTTP ' + resp.status); seasonsData = (await resp.json()).filter(s => s.visible !== false); return true; } catch(e) { console.error('seasons.json 加载失败', e); seasonsData = []; return false; } }
+async function loadScoreLogData() { try { const resp = await fetch('data/score-log.json', { cache: 'no-cache' }); if (!resp.ok) throw new Error('HTTP ' + resp.status); scoreLogData = normalizeScoreLog(await resp.json()); clearFirstAppearanceCache(); return true; } catch(e) { console.error('score-log.json 加载失败', e); scoreLogData = []; return false; } }

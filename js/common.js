@@ -2213,7 +2213,7 @@ async function loadPlayerTagsData() { if (!playersData) await loadPlayers(); if 
 // ===== 统一球员档案加载（data/players.json 为唯一数据源；旧版 data/_legacy/ 已退役）=====
 async function loadPlayers() {
     try {
-        const resp = await fetch('data/players.json');
+        const resp = await fetch('data/players.json', { cache: 'no-cache' });
         if (!resp.ok) throw new Error('HTTP ' + resp.status);
         const raw = await resp.json();
         if (!raw || !Array.isArray(raw.players)) throw new Error('players.json 结构异常');
