@@ -440,8 +440,28 @@ uids, pnames, dup_uid, dup_name, bad_score, bad_status = set(), set(), 0, 0, 0, 
 bad_grade = 0
 bad_visible = 0
 hidden_players = 0
+bad_joindate = 0
+joindate_players = 0
 STATUS_ENUM = {"active", "alumni"}
 GRADE_MAX_SPAN = 6   # 入学到毕业合理跨度（年）；超出视为录错
+# score-log 每名球员首次出现日期（含双打逐成员拆分），供 joinDate 一致性校验：
+# 出现记录早于「首次加入积分系统」日期即数据矛盾（该球员不可能在加入前参赛）
+first_seen = {}
+for r in scorelog:
+    d = r.get("日期")
+    if not valid_iso(d):
+        continue
+    # 加分记录取「对象」；比赛记录取胜/负双方（双打组合拆半逐成员）
+    if r.get("对象"):
+        cand = [r["对象"]]
+    else:
+        cand = []
+        for side in (r.get("胜者"), r.get("负者")):
+            pair = split_pair(side)
+            cand.extend(pair if pair else ([side] if side else []))
+    for nm in cand:
+        if nm and (nm not in first_seen or d < first_seen[nm]):
+            first_seen[nm] = d
 for p in plist:
     if not isinstance(p, dict):
         err("players.json 存在非对象条目")
@@ -480,6 +500,27 @@ for p in plist:
                 bad_grade += 1
             elif ge - en < 0 or ge - en > GRADE_MAX_SPAN:
                 bad_grade += 1
+    # joinDate 可选：首次加入积分系统的日期。存在时须为合法 YYYY-MM-DD，
+    # 不得早于 baseDate（初始分基准日）、不得晚于今日，且不得晚于该球员 score-log 首现日期。
+    # 早于 joinDate 的快照/排名行按 isPlayerNotYetJoined() 过滤（仅展示层，不影响算分）。
+    jd = p.get("joinDate")
+    if jd is not None:
+        joindate_players += 1
+        jd_s = str(jd)
+        if not valid_iso(jd_s):
+            bad_joindate += 1
+        else:
+            base = players.get("baseDate")
+            if base and jd_s < str(base):
+                bad_joindate += 1
+                err(f"players.json：{nm} 的 joinDate（{jd_s}）早于 baseDate（{base}）")
+            if jd_s > today:
+                bad_joindate += 1
+                err(f"players.json：{nm} 的 joinDate（{jd_s}）在未来（今日 {today}）")
+            fs = first_seen.get(nm)
+            if fs and jd_s < fs:
+                bad_joindate += 1
+                err(f"players.json：{nm} 的 joinDate（{jd_s}）晚于其 score-log 首现日期（{fs}）——加入前不可能有比赛记录")
 if dup_uid:
     err(f"players.json 存在 {dup_uid} 个重复 uid")
 if dup_name:
@@ -492,9 +533,12 @@ if bad_grade:
     err(f"players.json 存在 {bad_grade} 个非法 grade（须为 {{enroll, graduate}} 整数对，跨度 0~{GRADE_MAX_SPAN} 年）")
 if bad_visible:
     err(f"players.json 存在 {bad_visible} 个非布尔 visible（须为 true/false；false = 前台隐藏）")
-if not (dup_uid or dup_name or bad_score or bad_status or bad_grade or bad_visible):
+if bad_joindate:
+    err(f"players.json 存在 {bad_joindate} 个非法 joinDate（须为合法 YYYY-MM-DD，不早于 baseDate、不晚于今日、不晚于 score-log 首现日期）")
+if not (dup_uid or dup_name or bad_score or bad_status or bad_grade or bad_visible or bad_joindate):
     ok(f"{len(plist)} 名球员 uid/姓名唯一，initialScore、status 与 grade 合法"
-       + (f"（{hidden_players} 人 visible:false 前台隐藏）" if hidden_players else ""))
+       + (f"（{hidden_players} 人 visible:false 前台隐藏）" if hidden_players else "")
+       + (f"，{joindate_players} 人带 joinDate" if joindate_players else ""))
 
 # ---- 9) draws.json 引用 ----
 print("[9] draws.json 引用检查")

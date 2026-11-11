@@ -37,6 +37,13 @@ function shortenPlayerName(name) {
     return s.length > 14 ? s.slice(0, 12) + '…' : s;
 }
 
+// tooltip 跟随鼠标定位器（与 data-viz-extra.js 同名注册；Chart.js 加载后才执行到此处）
+if (typeof Chart !== 'undefined' && Chart.Tooltip && !Chart.Tooltip.positioners.recordFollowMouse) {
+    Chart.Tooltip.positioners.recordFollowMouse = function (items, eventPosition) {
+        return { x: eventPosition.x, y: eventPosition.y };
+    };
+}
+
 // 网络图的节点名：双打组合「甲/乙」两侧分别截断，避免不同搭档被截成同一串
 function wttNetLabel(name) {
     const s = String(name);
@@ -1151,16 +1158,18 @@ function wttRenderRecordBar(topN) {
             options: {
                 responsive: true, maintainAspectRatio: false,
                 indexAxis: 'y',
-                interaction: { intersect: false, mode: 'index' },
+                // axis:'y' 必需：index 模式默认按 x 取最近项，横向条形图会命中错误的行
+                interaction: { intersect: false, mode: 'index', axis: 'y' },
                 plugins: {
                     legend: { position: 'bottom', labels: { usePointStyle: true, padding: isMobile ? 10 : 16, font: { size: isMobile ? 10 : 11, family: "'Poppins', sans-serif" }, boxWidth: isMobile ? 11 : 12 } },
                     tooltip: {
                         backgroundColor: 'rgba(26,29,40,0.9)', titleFont: { size: isMobile ? 12 : 13 }, bodyFont: { size: isMobile ? 11 : 12 }, padding: isMobile ? 8 : 12, cornerRadius: 8,
+                        position: 'recordFollowMouse',
                         callbacks: { title: items => fullNames[items[0]?.dataIndex] || '', label: ctx => `${ctx.dataset.label}: ${ctx.raw}${(i18n[currentLang] || {}).chart_matches_suffix || ' 场'}` }
                     }
                 },
                 scales: {
-                    x: { beginAtZero: true, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 10 : 11 } }, title: { display: true, text: i18n[currentLang].wtt_axis_matches || i18n[currentLang].wtt_axis_points, font: { size: isMobile ? 11 : 12 } } },
+                    x: { beginAtZero: true, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 10 : 11 }, callback: value => Number.isInteger(value) ? value : '' }, title: { display: true, text: i18n[currentLang].wtt_axis_matches || i18n[currentLang].wtt_axis_points, font: { size: isMobile ? 11 : 12 } } },
                     y: { grid: { display: false }, ticks: { font: { size: isMobile ? 10 : 11 } } }
                 }
             }

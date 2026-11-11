@@ -299,7 +299,11 @@ function getPlayerRankAtSnapshot(playerName, timelineEntry) {
             if (seasonIdx >= 0) {
                 const startScores = getSeasonStartScores(seasonIdx);
                 for (const [name, score] of Object.entries(startScores)) {
-                    if (!seen.has(name)) { allScores.push({ name, score }); seen.add(name); }
+                    // joinDate 未到（首次加入积分系统之前）的球员同样不进名次池，
+                    // 否则行虽被时间线守卫过滤、名次仍被未加入者抬高
+                    if (!seen.has(name) && !isPlayerNotYetJoined(name, timelineEntry.time)) {
+                        allScores.push({ name, score }); seen.add(name);
+                    }
                 }
             }
         }

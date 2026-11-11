@@ -478,8 +478,11 @@ function isProfileActivePlayer(name) {
 // 排名行隐藏口径：档案 visible === false 的球员，即使窗口内有他的比赛记录，也不进排名行 / 时间线。
 // 否则「隐藏」只挡档案页：他有战绩就会被窗口口径带回来，还会占用其他球员的名次编号。
 // 名次编号按公开名单连续（隐藏者整行不出现，不做空位占位）。
-function isRankingRowHidden(name) {
-    return typeof isPlayerHiddenName === 'function' && isPlayerHiddenName(name);
+// 第二参 dateStr（可选）＝节点日期：档案 joinDate（首次加入积分系统日期）晚于该日的球员同样隐藏——
+// 新建档成员不得出现在加入之前的历史快照/赛季初节点里；不传日期时保持旧行为（只按 visible 过滤）。
+function isRankingRowHidden(name, dateStr) {
+    if (typeof isPlayerHiddenName === 'function' && isPlayerHiddenName(name)) return true;
+    return typeof isPlayerNotYetJoined === 'function' && isPlayerNotYetJoined(name, dateStr);
 }
 
 // ============ 🔥 性能优化：球员比赛预索引 ============
@@ -842,8 +845,9 @@ function computeInheritedScores(sortedLog, seasonStartScores, prevSeason, initia
 function buildSeasonInitialNode(currentScores, season) {
     const id = Object.entries(currentScores)
         // 档案 visible:false（暂不在前台展示）的球员不进赛季初节点：该节点是纯档案清单（总场次 0），
-        // 隐藏档案没有战绩可依据；有战绩的隐藏球员仍会出现在真正的快照节点（active.has(n) 口径）
-        .filter(([n]) => !(typeof isPlayerHiddenName === 'function' && isPlayerHiddenName(n)))
+        // 隐藏档案没有战绩可依据；有战绩的隐藏球员仍会出现在真正的快照节点（active.has(n) 口径）。
+        // joinDate 晚于赛季开始日的球员同样不进：赛季初节点是「该赛季开始时在场」的名单。
+        .filter(([n]) => !isRankingRowHidden(n, season.startDate))
         .map(([n, pt]) => ({
             '姓名': n,
             '当前积分': Math.round(pt * 10) / 10,
@@ -861,9 +865,10 @@ function buildSeasonInitialNode(currentScores, season) {
 }
 
 // 由积分表生成排序后的排名行（比较器统一走 compareRankedRows；统计取自预建索引）
+// sd（快照日）同时用作 joinDate 过滤：加入日之前的历史快照行不出现该球员
 function buildRankedSnapshotRows(scoreMap, isActiveName, playerMatches, startDate, sd) {
     return Object.entries(scoreMap)
-        .filter(([n]) => isActiveName(n) && !isRankingRowHidden(n))
+        .filter(([n]) => isActiveName(n) && !isRankingRowHidden(n, sd))
         .map(([n, pt]) => {
             const stats = getPlayerStatsFromIndex(playerMatches, n, startDate, sd);
             return {
@@ -1149,7 +1154,7 @@ function calculateRealtimeRanking() {
         if (!isMatchRecord(r) || r['日期'] < activeStart || r['日期'] > effectiveEnd) return;
         bumpStats(r);
     });
-    const sp = Object.entries(sc).filter(([n]) => (sap.size === 0 || sap.has(n) || isProfileActivePlayer(n)) && !isRankingRowHidden(n)).map(([n, pt]) => {
+    const sp = Object.entries(sc).filter(([n]) => (sap.size === 0 || sap.has(n) || isProfileActivePlayer(n)) && !isRankingRowHidden(n, today)).map(([n, pt]) => {
         const ms = matchStats[n];
         const decided = ms ? (ms.total - ms.draws) : 0;
         return {
@@ -1242,7 +1247,7 @@ async function calculateRealtimeRankingAsync(onProgress) {
         if (isDrawRecord(r)) { matchStats[w].draws++; matchStats[l].draws++; }
         else { matchStats[w].wins++; }
     });
-    const sp = Object.entries(sc).filter(([n]) => (sap.size === 0 || sap.has(n) || isProfileActivePlayer(n)) && !isRankingRowHidden(n)).map(([n, pt]) => {
+    const sp = Object.entries(sc).filter(([n]) => (sap.size === 0 || sap.has(n) || isProfileActivePlayer(n)) && !isRankingRowHidden(n, today)).map(([n, pt]) => {
         const ms = matchStats[n];
         const decided = ms ? (ms.total - ms.draws) : 0;
         return {

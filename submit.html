@@ -289,7 +289,11 @@
                 knownNames[x.name] = true;
                 (x.aliases || []).forEach(function (a) { aliasMap[a] = x.name; knownNames[a] = true; });
             });
-            $("sbPlayerList").innerHTML = ((p && p.players) || []).filter(function (x) { return x.name && x.visible !== false; }).map(function (x) {
+            $("sbPlayerList").innerHTML = ((p && p.players) || []).filter(function (x) {
+                if (!x.name || x.visible === false) return false;
+                // 首次加入积分系统（joinDate）之后的日期才提供姓名候选；todayStr() 为 YYYY-MM-DD，可直接字符串比较
+                return !(typeof x.joinDate === "string" && x.joinDate.slice(0, 10) > todayStr());
+            }).map(function (x) {
                 return '<option value="' + esc(x.name) + '"></option>' + (x.aliases || []).map(function (a) { return '<option value="' + esc(a) + '"></option>'; }).join("");
             }).join("");
             renderQueue();

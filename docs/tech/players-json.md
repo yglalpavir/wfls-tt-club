@@ -187,6 +187,22 @@
 
 > **只影响展示层，不影响算分**：`initialScoresData` 与引擎口径仍收录隐藏球员的 `initialScore`、仍照常重放他的比赛记录（别人的比分、衰减权重不受影响）——只是他自己不出现在任何前台列表里。**有战绩也一样隐藏**：排名行按 `isRankingRowHidden()` 过滤（`buildRankedSnapshotRows()` 与两个实时行生成器），所以隐藏球员打过的比赛不会让他出现在排名表/时间线上，也不会占用其他球员的名次编号；比赛记录照录不误，等他该公布时删掉 `visible` 即可一次还原。注意主客双方是两个人：他赢的那场对**对手**照样算分（对手的排名会真实变化）。
 
+### 3.14 `joinDate` — 首次加入积分系统日期（可选）
+
+| 项 | 值 |
+| --- | --- |
+| 类型 | `string`（`YYYY-MM-DD`） |
+| 约束 | 可选，**缺失等同「建档即在」**（不写 = 从 baseDate 起就在系统里）。`ci_validate.py` 校验：合法日期、不早于顶层 `baseDate`、不晚于今日、且不得晚于该球员 score-log 首现日期（含双打逐成员拆分）。 |
+| 用途 | 早于该日期的**时间性视图**不出现该球员：赛季初节点（`buildSeasonInitialNode()`，按 `season.startDate`）、全部快照行（`buildRankedSnapshotRows()`，按快照日）、实时行（两个 `calculateRealtimeRanking*`，按今日）、时间线图表的积分兜底（`club_race.js` 帧、`data-viz.js` `getPlayerRankAtSnapshot()` 名次池）——统一经 `isPlayerNotYetJoined(name, dateStr)`（`js/common.js`）判定、由 `isRankingRowHidden(name, dateStr)` 第二参接入。加入前的历史快照因此不留 0 场占位行，名次编号按公开名单连续（与 `visible:false` 同语义）。 |
+| 恢复 | 删掉该键即可：加入日之后的一切视图不受影响，删键前的历史节点立即把该球员放回（数据从未删过）。 |
+| 英文 | 无 `_en` 兄弟字段（纯逻辑开关，不显示）。 |
+
+> **与 `visible`（§3.13）的区别**：`visible:false` 是**开关**（现在到以后都不展示）；`joinDate` 是**时间维度**（加入日之前不展示、之后照常展示）。新成员「先建档、后加入」用 `joinDate`；档案暂不公开用 `visible:false`；两者可叠加。
+>
+> **只影响展示层，不影响算分**：`initialScoresData` 仍收录其 `initialScore`、比赛记录照常重放——joinDate 只过滤**行生成**（见上表），不进任何积分重放路径，其他球员的比分与名次编号在加入日之后的快照完全不受影响。注意 `getClubFirstAppearanceDate()`（按 score-log 首场过滤时间线曲线）是另一条既有守卫，与 joinDate 互补：前者管「首次上场前的曲线点」，joinDate 管「加入前的名单行」。
+>
+> **维护**：新增球员在首次入库（score-log 首条记录）当日补写 `joinDate`，或日后一次性回填；首次参赛日期可先用 `getPlayerFirstAppearanceDate` 口径（score-log 首现）预填——校验规则保证两者不会矛盾。
+
 ---
 
 ## 4. 数据结构与上游/下游依赖
@@ -214,7 +230,7 @@
 
 | 关注点 | 约束 |
 | --- | --- |
-| 新增球员 | 手动为该球员补 `uid`（5 位以上唯一数字）、`name`、`pinyin`（英文界面显示用）、`initialScore`、空数组 `tags`/`honors`/`aliases`、`status:"active"`；`grade`（年级）如已知则一并补 `{ "enroll": <入学年>, "graduate": <毕业年> }`，未知则留空；需要「先建档、后公布」时加 `"visible": false`（见 §3.13）。 |
+| 新增球员 | 手动为该球员补 `uid`（5 位以上唯一数字）、`name`、`pinyin`（英文界面显示用）、`initialScore`、空数组 `tags`/`honors`/`aliases`、`status:"active"`；`grade`（年级）如已知则一并补 `{ "enroll": <入学年>, "graduate": <毕业年> }`，未知则留空；需要「先建档、后公布」时加 `"visible": false`，需要「加入日之前的历史快照不出现他」时加 `"joinDate"`（见 §3.13 / §3.14）。 |
 | 一致性 | `name` 必须与 `data/score-log.json` 中的 `'胜者'` / `'负者'` / `'对象'` 完全一致，否则该姓名会脱离档案（无 uid、无名下初始积分）。 |
 | uid 校验 | `tools/build_players.js`（一次性迁移脚本）内含 `/^\d{5,}$/` 与唯一性校验；不建议手工改动已存在的 `uid`，避免破坏 `player.html` 外链。 |
 | 别名 | 建议随角色变更补充 `aliases`，让英文名/曾用名也能被搜索命中。 |

@@ -121,6 +121,9 @@ function clubGetRaceFrame(frameIndex) {
     for (const [name, score] of Object.entries(scoreMap)) {
         const fd = firstAppearance[name];
         if (fd && entry.time && entry.time < fd) continue;
+        // joinDate 未到（首次加入积分系统之前）的纯档案成员同样不进帧：
+        // 兜底合并的 startScores 会带进 0 场新档案，须按节点日期过滤
+        if (isPlayerNotYetJoined(name, entry.time)) continue;
         items.push({ name, score: Number(score) || 0 });
     }
     items.sort((a, b) => b.score - a.score);

@@ -19,10 +19,21 @@ function buildRecordStats(playerNames) {
         if (!isMatchRecord(r)) continue;
         const w = r['胜者'], l = r['负者'];
         const isDraw = isDrawRecord(r);
-        if (w && stats[w]) { if (!isDraw) stats[w].wins++; else stats[w].draws++; stats[w].total++; }
-        if (l && stats[l]) { if (!isDraw) stats[l].losses++; else stats[l].draws++; stats[l].total++; }
+        // 平局计半胜半负：胜/负柱按 0.5 计（win rate 口径 wins/(total-draws) 不变）
+        const credit = isDraw ? 0.5 : 1;
+        if (w && stats[w]) { stats[w].wins += credit; stats[w].total++; if (isDraw) stats[w].draws++; }
+        if (l && stats[l]) { stats[l].losses += credit; stats[l].total++; if (isDraw) stats[l].draws++; }
     }
     return stats;
+}
+
+// tooltip 跟随鼠标定位器：index 模式的默认 average 会把窗口吸附到各条形端点的平均位置，
+// 而非鼠标位置（横向条形图上偏差尤其明显）
+const recordFollowMousePositioner = function (items, eventPosition) {
+    return { x: eventPosition.x, y: eventPosition.y };
+};
+if (typeof Chart !== 'undefined' && Chart.Tooltip && !Chart.Tooltip.positioners.recordFollowMouse) {
+    Chart.Tooltip.positioners.recordFollowMouse = recordFollowMousePositioner;
 }
 
 // ============ 初始化 ============
@@ -112,10 +123,9 @@ function renderRecordBar(topN) {
     if (!sorted.length) return;
 
     const labels = sorted.map(n => shortenPlayerName(playerDisplayName(n)));
-    const wins = sorted.map(n => stats[n].wins);
-    const losses = sorted.map(n => stats[n].losses);
-    const draws = sorted.map(n => stats[n].draws || 0);
-    const totals = sorted.map(n => stats[n].total);
+    // 平局按半胜半负计入（buildRecordStats 已折算），不再单列「平」数据集
+    const wins = sorted.map(n => Math.round(stats[n].wins * 10) / 10);
+    const losses = sorted.map(n => Math.round(stats[n].losses * 10) / 10);
     const fullNames = sorted;
 
     try {
@@ -125,18 +135,19 @@ function renderRecordBar(topN) {
                 labels,
                 datasets: [
                     { label: i18n[currentLang].data_viz_win, data: wins, backgroundColor: RECORD_WIN_COLOR, borderRadius: 4 },
-                    { label: i18n[currentLang].data_viz_loss, data: losses, backgroundColor: RECORD_LOSS_COLOR, borderRadius: 4 },
-                    { label: i18n[currentLang].score_result_draw, data: draws, backgroundColor: '#d48806', borderRadius: 4 }
+                    { label: i18n[currentLang].data_viz_loss, data: losses, backgroundColor: RECORD_LOSS_COLOR, borderRadius: 4 }
                 ]
             },
             options: {
                 responsive: true, maintainAspectRatio: false,
                 indexAxis: 'y',
-                interaction: { intersect: false, mode: 'index' },
+                // axis:'y' 必需：index 模式默认按 x 取最近项，横向条形图会命中错误的行
+                interaction: { intersect: false, mode: 'index', axis: 'y' },
                 plugins: {
                     legend: { position: 'bottom', labels: { usePointStyle: true, padding: isMobile ? 10 : 16, font: { size: isMobile ? 10 : 11, family: "'Poppins', sans-serif" }, boxWidth: isMobile ? 11 : 12 } },
                     tooltip: {
                         backgroundColor: 'rgba(26,29,40,0.9)', titleFont: { size: isMobile ? 12 : 13 }, bodyFont: { size: isMobile ? 11 : 12 }, padding: isMobile ? 8 : 12, cornerRadius: 8,
+                        position: 'recordFollowMouse',
                         callbacks: {
                             title: items => fullNames[items[0]?.dataIndex] || '',
                             label: ctx => `${ctx.dataset.label}: ${ctx.raw}${(i18n[currentLang] || {}).chart_matches_suffix || ' 场'}`
@@ -144,7 +155,7 @@ function renderRecordBar(topN) {
                     }
                 },
                 scales: {
-                    x: { beginAtZero: true, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 10 : 11 } }, title: { display: true, text: i18n[currentLang].data_viz_axis_matches, font: { size: isMobile ? 11 : 12 } } },
+                    x: { beginAtZero: true, grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { font: { size: isMobile ? 10 : 11 }, callback: value => Number.isInteger(value) ? value : '' }, title: { display: true, text: i18n[currentLang].data_viz_axis_matches, font: { size: isMobile ? 11 : 12 } } },
                     y: { grid: { display: false }, ticks: { font: { size: isMobile ? 10 : 11 } } }
                 }
             }

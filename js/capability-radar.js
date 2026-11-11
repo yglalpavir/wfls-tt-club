@@ -383,6 +383,10 @@ function renderRadarChart(canvas, subjects, opts) {
             responsive: true,
             maintainAspectRatio: false,
             animation: crReducedMotion() ? false : { duration: 700, easing: 'easeOutQuart' },
+            // intersect:false 才能在顶点附近悬浮即出 tooltip（默认 nearest+intersect 要求精确命中 ~3px 的点）；
+            // mode:'index' 让同一轴位上的多个 dataset 合并进同一个 tooltip 窗口（双人对比时同窗显示）；
+            // axis:'xy' 按欧氏距离取最近顶点（'x' 会偏向正上/正下方顶点，'r' 仅适用于 polarArea 扇区）
+            interaction: { intersect: false, mode: 'index', axis: 'xy' },
             plugins: {
                 legend: { display: false },   // 图例走页面 chips
                 tooltip: Object.assign({}, t.tooltip, {

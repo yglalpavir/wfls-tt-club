@@ -2240,6 +2240,15 @@ function buildPlayerIndexes() {
 // 仅作用于展示层：积分引擎仍按完整档案口径计算，隐藏球员一旦有比赛记录，积分与快照不会失真。
 function isPlayerVisible(p) { return !p || p.visible !== false; }
 function isPlayerHiddenName(name) { const p = getPlayerByName(name); return !!p && p.visible === false; }
+// joinDate = 首次加入积分系统的日期（players.json 可选字段，缺省 = 建档即在）。
+// 早于 joinDate 的快照 / 排名行 / 时间线节点不出现该球员（见 score-engine.js isRankingRowHidden），
+// 避免新建档球员在加入前的历史节点里占行、挤占名次；仅作用于展示层，不影响算分口径。
+function isPlayerNotYetJoined(name, dateStr) {
+    if (!dateStr) return false;
+    const p = getPlayerByName(name);
+    const jd = p && p.joinDate;
+    return typeof jd === 'string' && jd.length >= 10 && String(dateStr) < jd.slice(0, 10);
+}
 function getPlayerByUid(uid) { const p = uid != null ? (uidIndex[String(uid)] || null) : null; return isPlayerVisible(p) ? p : null; }
 function getPlayerByName(name) { return name != null && nameIndex[name] ? nameIndex[name] : null; }
 function getUidForPlayerName(name) { const p = getPlayerByName(name); return p ? p.uid : null; }
