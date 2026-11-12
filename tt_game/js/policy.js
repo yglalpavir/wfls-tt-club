@@ -398,6 +398,17 @@ function policyForModel(model){
   if(model === 'hell') return unflattenPolicy(strongVec());
   if(model === 'grandslam') return grandSlamPolicy();
   if(model === 'nemesis') return nemesisPolicy();
+  /* R13：nemesis2 = 「地狱AI克星·R7刷新版」（2026-10-28 Phase A 陪练候选转正）。
+   * 实测 vs R6 地狱 58.28%（现役克星同批 45.03%，+13.3pp）—— 对玩家侧更强的对手档。
+   * 策略对象来自 js/learned-policy-nemesis2.js（无护栏覆写，与 nemesis 同构）。 */
+  if(model === 'nemesis2'){
+    if(typeof NEMESIS2_POLICY === 'undefined' && typeof require === 'function'){
+      const v = require('./learned-policy-nemesis2.js');
+      global.NEMESIS2_POLICY = v.NEMESIS2_POLICY;
+      global.NEMESIS2_META = v.NEMESIS2_META;
+    }
+    return NEMESIS2_POLICY;
+  }
   if(model === 'trap') return trapPolicy();
   if(model === 'bare') return barePolicy();
   if(model === 'extreme' || model === 'extreme-max'){
