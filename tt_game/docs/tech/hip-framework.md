@@ -2149,3 +2149,18 @@ makeStep/playGame/loadWeights/buildSimSide/simMatch 全部改为 require
 —— 已修：报表加控制器判断。修复前 DQN 探针 40 局的核心数据已在崩溃前打印：
 **DQN vs hell-r5 noreach 94.7%**（428/452）、己方触球 1060 vs 对手 1428
 —— DQN 的失败形态比 HIP 极端得多（HIP 60~63%）。
+
+**③ rallyFwd 0.9 vs hell-r5**（60 局）：**75.8% [70.4,80.6]** vs 基线 73.4~75.3%，
+CI 重叠 = 噪声。结合 nemesis 上的 +1.9pp（同样噪声）⇒ **rallyFwd 通道在两类对手上都关闭**：
+0.6 保持（0.3 崩塌、0.9 无增益）。相持求速的「何时触发」（rallyAfter）已定 8，
+「触发后加多少」在所有对手上都不敏感（§1.18.4 ⑥ 的结论在新基线上复现）。
+
+**④ DQN 短球盲区排除与 pz 注入候选（R7 结论，2026-11-13）**：
+`lateralBinOf` 的生效条件（`(pz−z)·vz>0 && |vz|>0.05`）对短球同样成立，
+横向先验没有盲区。DQN noreach 93~95% 的真正剩余成因：**DQN 没有拍面深度通道**
+—— 拍面 z = 0.92+0.8·my 由 net 的 my 输出决定，而 net 的训练环境（相持 3.2 板）
+里深度管理几乎没有梯度信号；HIP 的 pz 通道（predictContact → 预测弹跳点 + offset）
+正是 R1 钳位链修复所打通的那条路。⇒ **R8 候选**：把 pz 通道注入 DQN 路径
+（`tt-player` 在 dqn 分支用 `HIP_SKILL.predictContact(obs)` 算 targetZ 覆盖 my 推出的 z；
+旋钮化、默认关）。工程量中等；收益上限 = HIP 与 DQN 在 hell-r5 上的差距（73.4 vs 52.5）
+中深度通道可解释的部分。
