@@ -479,7 +479,16 @@ function buildRig(opts){
   return api;
 }
 
-module.exports = { buildRig, mulberry32, rallyStats, ROOT, DEFAULT_W };
+module.exports = {
+  /* 进程内 rig API（R1.2 主接口） */
+  buildRig, mulberry32, rallyStats, ROOT, DEFAULT_W,
+  /* 装配层原语（R6：live-match.js 已迁移到 require 本模块 ⇒ 单一事实来源）。
+   * pct 在文件尾部定义（function 声明会提升，可直接引用）。 */
+  makeThree, PRELUDE_HEAD, PRELUDE_BODY, PIPELINE, liveWeightsSource,
+  buildLiveRig, makeStep, playGame, loadWeights, buildSimSide, simMatch, pct,
+};
+
+function pct(x){ return (x * 100).toFixed(1) + '%'; }
 
 /* 相持长度统计（每分一记，口径同训练侧 shots：发球算第 1 板，每击 +1） */
 function rallyStats(a){

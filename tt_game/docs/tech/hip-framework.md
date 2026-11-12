@@ -2122,3 +2122,24 @@ mu 轨迹在 (0.03, 0.05) 与 (−0.01, −0.01) 之间震荡，best-in-run 100%
 ⇒ **当前已固化收益清单**：rallyAfter=8（+4.2pp vs 15）、逐对手 txBias 表（nemesis +12.1pp 均值）、
 pzLo/txBias/shortRescue 旋钮（默认零影响）、在环工具链（rig/search/probe/bandit/traj/CMA）。
 nemesis 线 59.8% → 69.7%（table 后），hell-r5 线 73.4%（架构上限），其余档 99%+。
+
+#### 13. R6：交互判决、DQN 基线与装配层去重（2026-11-13）
+
+**① txBias × rallyFwd 交互**（nemesis，60 局/臂，均带 txBias −0.05）：
+rallyFwd 0.3 → **48.0% [44.2,51.8]**（比 0.6 低 21.8pp，CI 不重叠）；
+0.6（现状）→ 69.8%；0.9 → 71.7%（+1.9pp，CI 重叠 = 噪声）。
+⇒ 现状 0.6 保持；0.3 的崩塌证明「求速通道必须有足够前冲」
+（与探针结论「相持长短由球速决定」一致）。
+
+**② DQN 基线首次测量（第 5 轮对手时代）**：
+`hip-eval --controller dqn`：hell-r5 **52.5% [48.0,56.9]**（相持 3.9 板）、
+nemesis **46.0% [41.1,51.1]**（相持 3.2 板）。对照 HIP：hell 73.4~75.3%、
+nemesis 69.7%（带表）⇒ **HIP 解析层领先 DQN +21/+24pp**；DQN 相持 3.2~3.9 板
+也再次确认相持惩罚对它只是训练侧结构（§1.18.10）。DQN 线无低垂果实。
+
+**③ 装配层去重**：`live-match.js` 的 makeThree/PRELUDE/PIPELINE/buildLiveRig/
+makeStep/playGame/loadWeights/buildSimSide/simMatch 全部改为 require
+`live-rig.js`（R1 时留的双份副本就此合并，单一事实来源）；
+验证：迁移后 hip-eval 同种子读数 **73.4% 逐字节一致**（`migrate-verify-hell60.txt`）。
+迁移教训：PowerShell 管道会往重定向文件里写 UTF-16 ⇒ `git show | Select-Object > file`
+生成的中间块要用 node `execFileSync` 转手（`git show` 直接编码为 utf8）。
