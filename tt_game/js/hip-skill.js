@@ -198,6 +198,13 @@ const HIP_SKILL = (() => {
     /* ★ txBias：plan 输出的 tx 整体平移（机理与实测见 plan 尾部的注释块）。
      *   默认 0 = 关；候选上线值 −0.05（tx-diag 40 局/臂 85.3% vs 基线 57.5%）。 */
     txBias:      0,
+    /* ★ txBiasByOpp（R4 定案，2026-11-12）：逐对手 txBias 表。
+     *   三种子 × 100 局/臂（§1.18.11 §10）：nemesis 上 −0.05 稳定 +9.6~+16.7pp
+     *   （CI 全部不重叠），hell 上 −2.4pp（小幅负），其余档用 0。
+     *   「nemesis」= fightR/fightL 里的对手模型名（learned-policy-nemesis 档）。
+     *   DEFAULTS.txBias 仍是 0（「不知道对手」的安全值）；tt-player 在
+     *   对手档已知时经 setTxBiasForOpp 自动应用本表。 */
+    txBiasByOpp: { nemesis: -0.05 },
     /* 待机 */
     homeX:       0.0,
     homeMy:      0.50,
@@ -308,6 +315,17 @@ const HIP_SKILL = (() => {
   let OVERRIDE = null;
   function setConfig(cfg){ OVERRIDE = cfg ? Object.assign({}, DEFAULTS, cfg) : null; return OVERRIDE; }
   function getConfig(){ return Object.assign({}, OVERRIDE || DEFAULTS); }
+  /* ---- 逐对手 bias 表应用（R4）：对手模型名已知时调用。
+   *   表里没有的对手 ⇒ txBias 0（零影响）；OVERRIDE 已存在（例如 --hip-cfg
+   *   扫描）⇒ 不动它（显式覆盖优先级高于表）。返回实际生效的 txBias。 ---- */
+  function setTxBiasForOpp(oppModel){
+    const tbl = DEFAULTS.txBiasByOpp || {};
+    const b = Object.prototype.hasOwnProperty.call(tbl, oppModel) ? tbl[oppModel] : 0;
+    if(OVERRIDE){ OVERRIDE.txBias = b; }
+    else if(b){ setConfig({ txBias: b }); }
+    else { setConfig(null); }
+    return getConfig().txBias;
+  }
 
   /* ---- 接触点预测（**与实机 physics.js#physicsStep 逐子步同口径**）----
    * ★ 为什么不再用 SIM.predictMeetZ：它的弹跳判据与实机不一致 ——
@@ -1191,7 +1209,7 @@ const HIP_SKILL = (() => {
     };
   }
 
-  return { makeController, makeBrain, setConfig, getConfig, DEFAULTS, predictContact, LAST_FAIL,
+  return { makeController, makeBrain, setConfig, getConfig, setTxBiasForOpp, DEFAULTS, predictContact, LAST_FAIL,
            get constants(){ return { PLAYER_Z, X_CLAMP, PADDLE_Y, PACE, SVCAP, AIM, AIM_XMAX, ZRANGE, WIN_LO, WIN_HI }; } };
 })();
 

@@ -347,6 +347,16 @@ function startFight(){
   const go = ()=>{
     ensureAudio(); mode = 'watch';
     aiModel = fightR;                     // 右侧（原 AI 侧）决策/移动用 aiModel=fightR
+    /* ★ 逐对手 txBias 表（hip-framework.md §1.18.11 §10）：
+     *   斗蛐蛐里两侧都可能挂 HIP 控制器；哪一侧对面是「nemesis」，
+     *   那一侧的 HIP 就用表里的 bias（其余对手 0）。表查不到 ⇒ 零影响。 */
+    if(typeof HIP_SKILL !== 'undefined' && HIP_SKILL.setTxBiasForOpp){
+      const bL = (fightL === 'hipmouse') ? fightR : null;   // 左侧是 HIP ⇒ 它的对手是 fightR
+      const bR = (fightR === 'hipmouse') ? fightL : null;   // 右侧是 HIP ⇒ 它的对手是 fightL
+      const b = (bL != null) ? HIP_SKILL.setTxBiasForOpp(bL)
+              : (bR != null) ? HIP_SKILL.setTxBiasForOpp(bR) : 0;
+      if(b) toast(gameT('g_fight_title'), 'txBias ' + b, 'gold', 1200);
+    }
     $('startOverlay').classList.add('hidden');
     setSheet(false);
     scoreYou = scoreAi = 0; longestRally = 0; ballDead = true;
