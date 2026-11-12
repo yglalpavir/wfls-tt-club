@@ -205,6 +205,9 @@ const HIP_SKILL = (() => {
      *   DEFAULTS.txBias 仍是 0（「不知道对手」的安全值）；tt-player 在
      *   对手档已知时经 setTxBiasForOpp 自动应用本表。 */
     txBiasByOpp: { nemesis: -0.05 },
+    /* ★ bounceCalib（R10）：弹跳预测的在线 EMA 修正（机理见 predictContact 头部）。
+     *   0 = 关（默认；等实机配对 A/B 定案）。 */
+    bounceCalib: 0,
     /* 待机 */
     homeX:       0.0,
     homeMy:      0.50,
@@ -359,6 +362,31 @@ const HIP_SKILL = (() => {
    *   弹起后应当**不再找弹跳**，直接沿当前（弹起后的）飞行轨迹找接触点，
    *   落台点沿用弹起前预测出来的 PRED_BZ。 */
   let PRED_BZ = null;
+  let LAST_RAW_BZ = null;   // bounceCalib 修正前的原始预测（observeBounce 用，避免修正重复计入）
+  /* ★ bounceCalib（R10，新信息源）：弹跳预测的在线 EMA 修正。
+   *   探针依据（§1.18.11 §2）：漏球样本「实际弹跳 − 预测弹跳」中位 −0.33m
+   *   （nemesis 的近网死短球会拐弯，纯积分追不上）。
+   *   机制：宿主（live-match/tt-player）在观测到玩家半台弹跳时调用
+   *   observeBounce(realBz, predBz)，按深度桶维护「实际−预测」的 EMA；
+   *   predictContact 检出弹跳后把 bz 修正 `bz + CALIB.bucket[b].ema`。
+   *   桶按 |bz| 分两段（<0.9 近网 / 其余）—— 擦网短球的偏差与普通球不同。
+   *   旋钮 bounceCalib：0 = 关（ema 不参与修正，但仍在观测积累）。
+   *   风险（设计时已识别）：对手发球有随机性，ema 是「平均偏差」，
+   *   单球可能被过度修正 —— alpha 0.35 + 分桶控制。 */
+  const BOUNCE_CALIB = {
+    alpha: 0.35,
+    buckets: [null, null],   // [近网 |bz|<0.9, 其余] 各自的 EMA（null = 未初始化）
+    n: [0, 0],
+  };
+  function observeBounce(realBz, predBz){
+    if(predBz == null && LAST_RAW_BZ != null) predBz = LAST_RAW_BZ;
+    if(typeof realBz !== 'number' || typeof predBz !== 'number') return;
+    const b = (Math.abs(predBz) < 0.9) ? 0 : 1;
+    const err = realBz - predBz;
+    BOUNCE_CALIB.buckets[b] = (BOUNCE_CALIB.buckets[b] == null)
+      ? err : BOUNCE_CALIB.alpha * err + (1 - BOUNCE_CALIB.alpha) * BOUNCE_CALIB.buckets[b];
+    BOUNCE_CALIB.n[b]++;
+  }
   function predictContact(obs, cfg){
     if(!SIM_) return { ok: false };
     const C = SIM_.C || {};
@@ -443,6 +471,14 @@ const HIP_SKILL = (() => {
     }
     if(!bounced || nTraj === 0){ LAST_FAIL.noBounce = true; return { ok: false }; }
     LAST_FAIL.noBounce = false;
+    /* ★ bounceCalib：把「实际−预测」的 EMA 修正加到落台点上（深度分桶）。
+     *   只在旋钮开启时参与修正；桶在 observeBounce 处积累。 */
+    LAST_RAW_BZ = bz;
+    if(cfg && cfg.bounceCalib > 0){
+      const b = (Math.abs(bz) < 0.9) ? 0 : 1;
+      const e = BOUNCE_CALIB.buckets[b];
+      if(e != null && BOUNCE_CALIB.n[b] >= 4) bz += e;
+    }
 
     /* ---- 顶点（弹跳后轨迹的最高点）----
      * ★ 为什么要在顶点击球：接触窗口的**横向**容差
@@ -751,6 +787,13 @@ const HIP_SKILL = (() => {
         S.intentChecked = false;      // 每板重置（第三道闸门每板只判一次）
         S.depthChecked = false;       // 每板重置（深度安全网每板只判一次）
         S.myFix = null;               // 每板重置（深度安全网算出的修正 my，见下面的 ★ 第十个真 bug）
+        /* ★ bounceCalib 观测闭环（R10 自包含版）：来球上升沿 = 上一分/上一板
+         *   已经结束，此刻 PRED_BZ 是「上一板的预测落台点」、而上一板真实弹跳
+         *   的观测来自「弹起后边沿检测」（S._bouncedFrame，见下）。 */
+        if(cfg.bounceCalib > 0 && S._calibRealBz != null && S._calibPredBz != null){
+          observeBounce(S._calibRealBz, S._calibPredBz);
+        }
+        S._calibRealBz = null; S._calibPredBz = null;
         if(cfg.alternate) S.side = -S.side;
         /* ★ aimForceAlt：每板交替强制绝对落点（±v）。
          *   对手会跟着上一球站位 ⇒ 固定一边会被适应，换边才有效。 */
@@ -759,6 +802,14 @@ const HIP_SKILL = (() => {
       }else if(!incoming){
         S.inb = false;
         S.aimLocked = false;
+      }
+
+      /* ★ bounceCalib 边沿检测（自包含）：弹起后第一帧记下「实际弹跳 z」。
+       *   obs.bounced 由实机 rules 置位；PRED_BZ 是弹起前的预测落台点。
+       *   只在 bounced 上升沿记一次（S._calibRealBz==null 保证）。 */
+      if(cfg.bounceCalib > 0 && obs.bounced && S._calibRealBz == null && PRED_BZ != null){
+        S._calibRealBz = obs.z;          /* 近似：弹起后第一帧的球 z ≈ 弹跳点 z（帧粒度误差 ≤ vz/60） */
+        S._calibPredBz = PRED_BZ;
       }
 
       /* ── 接触点：**每帧重算** ──
@@ -1209,7 +1260,7 @@ const HIP_SKILL = (() => {
     };
   }
 
-  return { makeController, makeBrain, setConfig, getConfig, setTxBiasForOpp, DEFAULTS, predictContact, LAST_FAIL,
+  return { makeController, makeBrain, setConfig, getConfig, setTxBiasForOpp, DEFAULTS, predictContact, LAST_FAIL, observeBounce, BOUNCE_CALIB,
            get constants(){ return { PLAYER_Z, X_CLAMP, PADDLE_Y, PACE, SVCAP, AIM, AIM_XMAX, ZRANGE, WIN_LO, WIN_HI }; } };
 })();
 

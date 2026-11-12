@@ -347,7 +347,9 @@ function main(){
      *      rig 构建时 TT_PLAYER.agent 还是 null，直接调 agent 的方法会被守卫静默跳过；
      *   2) vm 里的 `const TT_PLAYER = …` 是**词法绑定**，rig.ctx.TT_PLAYER 是 undefined
      *      （同 --controller 那段注释）⇒ 只能通过 runInContext 调用。 */
-        /* --dqn-pz：R8 DQN 拍面深度通道注入（hip-framework.md §1.18.11 §13④）。 */
+        /* --bounce-calib：R10 弹跳预测在线 EMA 修正（hip-framework.md §1.18.11 §2 依据）。 */
+    if(HAS('--bounce-calib')){ vm.runInContext('HIP_SKILL.setConfig({bounceCalib:1});', rig.ctx); console.log('[bounce-calib] EMA 修正已启用（自包含观测）'); }
+    /* --dqn-pz：R8 DQN 拍面深度通道注入（hip-framework.md §1.18.11 §13④）。 */
     if(HAS('--dqn-pz')){ vm.runInContext('TT_PLAYER.setDqnPz(true);', rig.ctx); console.log('[dqn-pz] 拍面深度通道已注入'); }
 if(HAS('--no-prior')){
       vm.runInContext('TT_PLAYER.setLateralPrior(false);', rig.ctx);
