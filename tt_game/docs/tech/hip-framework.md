@@ -2143,3 +2143,9 @@ makeStep/playGame/loadWeights/buildSimSide/simMatch 全部改为 require
 验证：迁移后 hip-eval 同种子读数 **73.4% 逐字节一致**（`migrate-verify-hell60.txt`）。
 迁移教训：PowerShell 管道会往重定向文件里写 UTF-16 ⇒ `git show | Select-Object > file`
 生成的中间块要用 node `execFileSync` 转手（`git show` 直接编码为 utf8）。
+
+**③b 补充（同日）**：`--hip-probe` 在 `--controller dqn` 下会在报表段崩溃
+（探针块包的是 `makeController`，DQN 路径不装 `__hipProbe`，报表却无条件读它）
+—— 已修：报表加控制器判断。修复前 DQN 探针 40 局的核心数据已在崩溃前打印：
+**DQN vs hell-r5 noreach 94.7%**（428/452）、己方触球 1060 vs 对手 1428
+—— DQN 的失败形态比 HIP 极端得多（HIP 60~63%）。

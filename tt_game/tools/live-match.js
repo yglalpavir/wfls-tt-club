@@ -475,7 +475,10 @@ function main(){
                                    '  z=' + String(f.z).padStart(7) + '  dir=' + f.dir);
   }
   console.log('');
-  if(HAS('--hip-probe') && rig){
+  /* ★ HIP 探针统计只在 HIP 控制器路径（探针块包的是 makeController）。
+   *   controller=dqn 时探针块不安装（--hip-probe 的 hip 分支要求 controller
+   *   是 hip 系）⇒ __hipProbe 未定义，直接跑统计会崩（R6 修：加控制器判断）。 */
+  if(HAS('--hip-probe') && rig && (CONTROLLER === 'hip' || CONTROLLER === 'hip-intent' || CONTROLLER === 'hip-choice')){
     const p = vm.runInContext('(()=>{ const C = (globalThis.__hipProbe.cross||[]); const q=(a,f)=>{ if(!a.length) return "-"; const b=a.slice().sort((x,y)=>x-y); return b[Math.min(b.length-1,Math.floor(f*b.length))].toFixed(3); }; const g=(f)=>C.map(c=>c[f]).filter(v=>v!=null); return { n:C.length, p50Gap:q(g("gap"),0.5), p90Gap:q(g("gap"),0.9), p50Err:q(g("perr"),0.5), p90Err:q(g("perr"),0.9), p50By:q(g("by"),0.5), p50Dz:q(g("dz"),0.5), p90Dz:q(g("dz"),0.9), p50FitH:q(g("fitH"),0.5), p50FitV:q(g("fitV"),0.5), p50FitZ:q(g("fitZ"),0.5), hiRate: (C.length? (C.filter(c=>c.high).length/C.length*100).toFixed(0) : "-"), p50Step:q(g("vz"),0.5), p50PrevZ:q(g("prevZ"),0.5) }; })()', rig.ctx);
     console.log('  HIP 探针（**漏球**样本 n=' + p.n + '）：');
     console.log('    落点差 |球x−拍位x| p50 ' + p.p50Gap + ' p90 ' + p.p90Gap + '   预测误差 p50 ' + p.p50Err + ' p90 ' + p.p90Err);
