@@ -436,6 +436,7 @@ const HIP_SKILL = (() => {
 
     for(let i = 0; i < 900; i++){
       const prevY = py;
+      const prevPz0 = pz, prevPx0 = px;   // R11 球网穿越检测：本子步积分前的 z/x
       /* ---- 积分（实机 physicsStep 的前 5 行）---- */
       vy -= G_ * SUB_DT;
       const drag = Math.max(0, 1 - AIR_ * SUB_DT);
@@ -459,6 +460,30 @@ const HIP_SKILL = (() => {
           if(pz > 0) PRED_BZ = pz;
         }
       }
+      /* ---- 球网碰撞（R11：照抄实机 physics.js#checkNet L24-42）----
+       *   实机：穿越 z=0 且 |xC|≤NET_LEN/2+BR 且 yC∈[TT−0.03, TT+NET_H+BR*1.5] 时：
+       *     顶部擦网（yC>网顶−0.028）：55% 削速通过（vz*0.44, vy 压平, vx*0.72）、
+       *                               45% 弹回；中下部撞网：弹回。
+       *   预测器此前不建模球网 ⇒ 对擦网/撞网球，预测的落台点比实际远 ~0.33m
+       *   （探针 §1.18.11 §2 的漏球样本偏差来源）。
+       *   预测采用「通过」分支（55% 概率继续飞 ⇒ 期望上玩家需要去接的情形）；
+       *   弹回的 45% 这一分大概率已丢，预测错误可接受。用确定性随机（SERVO_RNG
+       *   同款 LCG）代替 Math.random，保证同种子可复现。 */
+      if((prevPz0 < 0 && pz >= 0) || (prevPz0 > 0 && pz <= 0)){
+        const tN = (0 - prevPz0) / (pz - prevPz0);
+        const xC = prevPx0 + (px - prevPx0) * tN;
+        const yC = prevY + (py - prevY) * tN;
+        if(Math.abs(xC) <= 1.83 / 2 + BR && yC >= TT - 0.03 && yC <= TT + 0.1525 + BR * 1.5){
+          if(yC > TT + 0.1525 - 0.028){
+            /* 顶部擦网：预测按「通过」（55% 概率）—— 削速 */
+            vz *= 0.44; vy = Math.min(vy, 0.25) * 0.5 + 0.1; vx *= 0.72;
+          }else{
+            /* 中下部撞网：弹回 ⇒ 这条轨迹不会再到玩家拍面 ⇒ 放弃（fail）*/
+            LAST_FAIL.netBlock = true;
+            return { ok: false };
+          }
+        }
+      }
       /* ---- 记录弹跳后的整条轨迹（顶点/穿越点都在里面找）---- */
       if(bounced && nTraj < TRAJ_CAP){
         const o = nTraj * TRAJ_STRIDE;
