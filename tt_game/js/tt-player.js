@@ -26,6 +26,14 @@ const TT_PLAYER = (() => {
    * `=== 3`，一旦调频率就会误报，久了就没人看了。2026-10-02：3 → 1，每帧决策（60Hz）。 */
   const DECIDE_SKIP_ = C_.DECIDE_SKIP || 1;
   const TRAIN_DECIDE_SKIP = 1;   // input-sim.js 的兜底值，两边必须一致
+  /* ★ R8：DQN 的 pz 通道注入开关（dqnPzZ）。默认关（离线 A/B 用
+   *   window.TT_PLAYER.setDqnPz(true) 或 storage 键 dqnPzZ=1）。
+   *   设计与实测依据见 hip-framework.md §1.18.11 §13④。 */
+  let DQN_PZ_ON_ = (function(){
+    try{ if(typeof localStorage !== 'undefined' && localStorage.getItem('dqnPzZ') === '1') return true; }catch(e){}
+    return false;
+  })();
+  function setDqnPz(on){ DQN_PZ_ON_ = !!on; return DQN_PZ_ON_; }
   if(typeof console !== 'undefined'){
     console.assert(DECIDE_SKIP_ === TRAIN_DECIDE_SKIP, '[TT_PLAYER] DECIDE_SKIP=' + DECIDE_SKIP_ +
       ' ≠ 训练侧 ' + TRAIN_DECIDE_SKIP + '——训练/实机决策频率漂移会导致实机表现远低于仿真胜率');
@@ -324,6 +332,19 @@ const TT_PLAYER = (() => {
       }else{
         const a = agent.bestAction(obs);
         vp.cur = agent.decode(a);
+        /* ★ R8：DQN 的 pz 通道注入（dqnPzZ，旋钮默认关 —— hip-framework.md
+         *   §1.18.11 §13④）。DQN noreach 93~95% 的剩余成因是「拍面深度由 net 的
+         *   my 输出决定，训练环境相持 3.2 板没有深度梯度信号」；HIP 的
+         *   predictContact（预测弹跳点 + padZOffset）正是 R1 钳位链修复所打通的
+         *   那条路。注入方式：dqn 路径借用 HIP_SKILL.predictContact 算 targetZ
+         *   （z 通道完全接管），my/tx/ctrl 仍由 net 决定 ⇒ 横向策略不动，
+         *   只修「拍在哪里接球」。zMin/zMax 与 HIP 同源（padZMin/padZMax）。 */
+        if(typeof HIP_SKILL !== 'undefined' && DQN_PZ_ON_){
+          const ct = HIP_SKILL.predictContact(obs, null);
+          if(ct && ct.ok && ct.targetZ != null){
+            vp.cur.pz = ct.targetZ;
+          }
+        }
       }
       if(typeof TT_STATS !== 'undefined') TT_STATS.noteAction(side, vp.cur);
     }
@@ -581,6 +602,8 @@ const TT_PLAYER = (() => {
               init() 建好 agent 后再应用。返回当前意图值。 */
            setLateralPrior(on){ lateralPriorOn = !!on; if(agent && agent.setLateralPrior) agent.setLateralPrior(lateralPriorOn); return lateralPriorOn; },
            getLateralPrior(){ return lateralPriorOn; },
+           setDqnPz(on){ DQN_PZ_ON_ = !!on; return DQN_PZ_ON_; },
+           getDqnPz(){ return DQN_PZ_ON_; },
            get agent(){ return agent; } };
 })();
 

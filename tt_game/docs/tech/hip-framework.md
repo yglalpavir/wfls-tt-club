@@ -2164,3 +2164,12 @@ CI 重叠 = 噪声。结合 nemesis 上的 +1.9pp（同样噪声）⇒ **rallyFw
 （`tt-player` 在 dqn 分支用 `HIP_SKILL.predictContact(obs)` 算 targetZ 覆盖 my 推出的 z；
 旋钮化、默认关）。工程量中等；收益上限 = HIP 与 DQN 在 hell-r5 上的差距（73.4 vs 52.5）
 中深度通道可解释的部分。
+
+**⑤ R8：DQN pz 注入判决 —— 拒绝（2026-11-13）**：
+`--dqn-pz`（30 局 vs hell-r5）→ **32.7%**（noreach 99.1%）vs 基线 52.5%。
+机理：`vp.cur.pz` 一旦存在就完全接管拍面 z 轴（net 的 my 被架空），
+而 DQN 的横向 tx 仍是 net 的（没有 HIP 的落点闭环）⇒ 拍在 HIP 的深度、
+net 的横向，两边都不对。**pz 通道与 HIP 的横向律是配套的，单通道注入不可行**；
+整套 HIP 骨架接管则等于换成 HIP 控制器，DQN 线失去独立意义。
+⇒ **DQN 线改造终结**：`setDqnPz`/`--dqn-pz` 保留为旋钮（默认关），
+文档记录其不可行性。HIP 是唯一旗舰控制器。
