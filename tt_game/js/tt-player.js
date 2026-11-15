@@ -33,7 +33,9 @@ const TT_PLAYER = (() => {
     try{ if(typeof localStorage !== 'undefined' && localStorage.getItem('dqnPzZ') === '1') return true; }catch(e){}
     return false;
   })();
+  let DQN_MYFIX_ON_ = false;   // R29：DQN my 修正（默认关）
   function setDqnPz(on){ DQN_PZ_ON_ = !!on; return DQN_PZ_ON_; }
+  function setDqnMyFix(on){ DQN_MYFIX_ON_ = !!on; return DQN_MYFIX_ON_; }
   if(typeof console !== 'undefined'){
     console.assert(DECIDE_SKIP_ === TRAIN_DECIDE_SKIP, '[TT_PLAYER] DECIDE_SKIP=' + DECIDE_SKIP_ +
       ' ≠ 训练侧 ' + TRAIN_DECIDE_SKIP + '——训练/实机决策频率漂移会导致实机表现远低于仿真胜率');
@@ -345,6 +347,34 @@ const TT_PLAYER = (() => {
             vp.cur.pz = ct.targetZ;
           }
         }
+        /* ★ R29：DQN 的 my 修正（myFixDqn 旋钮，默认关）—— 与 R8 pz 注入的关键
+         *   区别：pz 接管拍面 z 但 resolveHit 出球深度仍用 my ⇒ 两者解耦、球路仍错；
+         *   本修正改 **my 本身**（拍面 z 与出球深度保持耦合，物理一致）。
+         *   修正器 = HIP_SKILL.verifyIntent（第三道闸门同款）：
+         *   DQN 的 my 大概率把球打出界/下网（R28：拍面深度误差 p50 0.106 > 窗口），
+         *   修正循环：verifyIntent 失败 ⇒ my += 0.06 重试，最多 4 次，夹 [0.3,0.85]。 */
+        if(typeof HIP_SKILL !== 'undefined' && DQN_MYFIX_ON_){
+          try{
+            const ct2 = HIP_SKILL.predictContact(obs, null);
+            if(ct2 && ct2.ok){
+              const baseCtx = { bx: ct2.x, by: ct2.y, bz: ct2.bz, vel: ct2.vel,
+                                sx: obs.sx, sy: obs.sy, svx: obs.svx, svz: obs.svz,
+                                px: obs.px, margin: 0 };
+              let my = (vp.cur.my != null) ? vp.cur.my : 0.5;
+              const aimX = cl(vp.cur.tx || 0, -0.62, 0.62);
+              let ok = false;
+              for(let it = 0; it < 4; it++){
+                ok = HIP_SKILL.verifyIntent({ my: my, ctrl: false, aimX: aimX },
+                                            { bx: ct2.x, by: ct2.y, bz: ct2.bz,
+                                              vel: ct2.vel, svx: obs.svx, svz: obs.svz,
+                                              px: obs.px, margin: 0 }, Math.random);
+                if(ok) break;
+                my = Math.min(0.85, my + 0.06);
+              }
+              if(ok) vp.cur.my = my;
+            }
+          }catch(e){}
+        }
       }
       if(typeof TT_STATS !== 'undefined') TT_STATS.noteAction(side, vp.cur);
     }
@@ -604,6 +634,8 @@ const TT_PLAYER = (() => {
            getLateralPrior(){ return lateralPriorOn; },
            setDqnPz(on){ DQN_PZ_ON_ = !!on; return DQN_PZ_ON_; },
            getDqnPz(){ return DQN_PZ_ON_; },
+           setDqnMyFix(on){ DQN_MYFIX_ON_ = !!on; return DQN_MYFIX_ON_; },
+           getDqnMyFix(){ return DQN_MYFIX_ON_; },
            get agent(){ return agent; } };
 })();
 

@@ -350,7 +350,9 @@ function main(){
         /* --bounce-calib：R10 弹跳预测在线 EMA 修正（hip-framework.md §1.18.11 §2 依据）。 */
     if(HAS('--bounce-calib')){ vm.runInContext('HIP_SKILL.setConfig({bounceCalib:1});', rig.ctx); console.log('[bounce-calib] EMA 修正已启用（自包含观测）'); }
     /* --dqn-pz：R8 DQN 拍面深度通道注入（hip-framework.md §1.18.11 §13④）。 */
-    if(HAS('--dqn-pz')){ vm.runInContext('TT_PLAYER.setDqnPz(true);', rig.ctx); console.log('[dqn-pz] 拍面深度通道已注入'); }
+        /* --dqn-myfix：R29 DQN my 修正（verifyIntent 校验循环，默认关）。 */
+    if(HAS('--dqn-myfix')){ vm.runInContext('TT_PLAYER.setDqnMyFix(true);', rig.ctx); console.log('[dqn-myfix] my 修正已启用'); }
+if(HAS('--dqn-pz')){ vm.runInContext('TT_PLAYER.setDqnPz(true);', rig.ctx); console.log('[dqn-pz] 拍面深度通道已注入'); }
 if(HAS('--no-prior')){
       vm.runInContext('TT_PLAYER.setLateralPrior(false);', rig.ctx);
       if(vm.runInContext('TT_PLAYER.getLateralPrior()', rig.ctx) !== false) throw new Error('--no-prior 没有生效');
