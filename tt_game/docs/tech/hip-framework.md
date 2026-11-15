@@ -2422,3 +2422,17 @@ txBias 表生效链的最后一块证据：在 rig 的 vm 里逐字模拟
 ⇒ **「表在浏览器真的生效」闭环完成**：startFight 模拟 → 对局内配置读回 →
 对局完成，三层全部一致。CLI 评测路径不接表的「口径纯净」设计同步确认
 （两侧互不污染）。
+
+**⑳b R26：nemesis2 vs hell 双向实机对评 —— 口径差异澄清（2026-11-15）**
+
+R13 转正时未测 nemesis2 对其假想敌（hell）的**实机**读数——GA 验收的 58.28%
+是 train-nemesis-worker 的 **sim 双向对评**口径。本轮补测（双 AI 斗蛐蛐，
+30 局/向，seed 20261004）：
+
+- nemesis2(fightL) vs hell(fightR)：**64.1%**（93/145）；
+- hell(fightL) vs nemesis2(fightR)：**67.4%**（122/181）——
+  双向合并 nemesis2 ≈ 64.1 vs 67.4 ⇒ **hell 仍占优 ~3.3pp**。
+
+⇒ 实机口径下 nemesis2 对 hell 强于 GA 验收读数（64~67% vs 58.3%），
+但**不足以反超 hell**（两向皆落后）。nemesis2 档 desc 的 58.9% 文案
+是训练验收口径（保留），实机补充读数记于此。
