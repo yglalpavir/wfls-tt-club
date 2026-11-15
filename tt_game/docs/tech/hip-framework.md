@@ -2407,3 +2407,18 @@ R8 新克星（对 hell 58.9% vs 现役 44.0%，+15.0pp）若转正为正式
 
 ⇒ 转正 = 一整套基线重锚工作。训练产物（best/candidate/curve）由用户管理
 （11/12/11/14 用户自行提交），**转正决策留给用户**；影响面已量化备查。
+
+**⑳ R25：浏览器 startFight 路径端到端验证 —— 8/8 通过（2026-11-15）**
+
+txBias 表生效链的最后一块证据：在 rig 的 vm 里逐字模拟
+`input.js#startFight` 的完整链路（mode/fightL/fightR/aiModel 赋值 +
+`setTxBiasForOpp`），8 个对阵组合全部符合预期：
+
+- `hipmouse vs nemesis` ⇒ bias **−0.05**（表命中，对局内
+  `HIP_SKILL.getConfig().txBias` 读回 −0.05，对局正常完成 2:1）；
+- `hipmouse vs hell/default/grandslam/elite/nemesis2` ⇒ bias 0（表外对手）；
+- 双 nemesis / nemesis2 自对弈（无 HIP 侧）⇒ 表不触发，0。
+
+⇒ **「表在浏览器真的生效」闭环完成**：startFight 模拟 → 对局内配置读回 →
+对局完成，三层全部一致。CLI 评测路径不接表的「口径纯净」设计同步确认
+（两侧互不污染）。
