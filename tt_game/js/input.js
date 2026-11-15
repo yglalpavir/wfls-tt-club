@@ -158,9 +158,9 @@ $('btnWatch').onclick = e=>{ e.stopPropagation(); startFight(); };
 
 /* ---- 对战模型选择（普通AI / 地狱AI / 大满贯预备种子 / 鼠标上的tt玩家 / 地狱AI克星）----
  * 极端对手 / 极端·满档已取消可选（opponent-ladder.js 仍保留，供 train-input3.js 课程训练用） */
-const MODEL_NAMES = { standard: '普通 AI', hell: '地狱 AI', grandslam: '大满贯预备种子', ttmouse: '鼠标上的tt玩家', hipmouse: 'tt玩家·HIP', nemesis: '地狱AI克星' };
-const MODEL_KEYS = { standard:'g_model_standard', hell:'g_model_hell', grandslam:'g_model_grandslam', ttmouse:'g_model_ttmouse', hipmouse:'g_model_hipmouse', nemesis:'g_model_nemesis' };
-const MODEL_HINT_KEYS = { standard:'g_mhint_standard', hell:'g_mhint_hell', grandslam:'g_mhint_grandslam', ttmouse:'g_mhint_ttmouse', hipmouse:'g_mhint_hipmouse', nemesis:'g_mhint_nemesis' };
+const MODEL_NAMES = { standard: '普通 AI', hell: '地狱 AI', grandslam: '大满贯预备种子', ttmouse: '鼠标上的tt玩家', hipmouse: 'tt玩家·HIP', nemesis: '地狱AI克星', nemesis2: '地狱AI克星·R7' };
+const MODEL_KEYS = { standard:'g_model_standard', hell:'g_model_hell', grandslam:'g_model_grandslam', ttmouse:'g_model_ttmouse', hipmouse:'g_model_hipmouse', nemesis:'g_model_nemesis', nemesis2:'g_model_nemesis2' };
+const MODEL_HINT_KEYS = { standard:'g_mhint_standard', hell:'g_mhint_hell', grandslam:'g_mhint_grandslam', ttmouse:'g_mhint_ttmouse', hipmouse:'g_mhint_hipmouse', nemesis:'g_mhint_nemesis', nemesis2:'g_mhint_nemesis2' };
 /* 模型显示名(随语言) —— 所有界面文案都必须走这里,MODEL_NAMES 只作 zh 兜底 */
 function modelLabel(id){
   const k = MODEL_KEYS[id];

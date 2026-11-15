@@ -149,6 +149,7 @@
         <button class="model-btn" data-model="ttmouse" data-i18n="g_model_ttmouse">鼠标上的tt玩家</button>
         <button class="model-btn" data-model="hipmouse" data-i18n="g_model_hipmouse">tt玩家·HIP</button>
         <button class="model-btn" data-model="nemesis" data-i18n="g_model_nemesis">地狱AI克星</button>
+          <button class="model-btn" data-model="nemesis2" data-i18n="g_model_nemesis2">地狱AI克星·R7</button>
       </div>
       <div class="diff-hint" id="modelHint" data-i18n="g_mhint_standard">普通 AI：标准水平 · 攻守平衡</div>
     </div>
@@ -163,6 +164,7 @@
           <option value="ttmouse" data-i18n="g_model_ttmouse">鼠标上的tt玩家</option>
           <option value="hipmouse" data-i18n="g_model_hipmouse">tt玩家·HIP</option>
           <option value="nemesis" data-i18n="g_model_nemesis">地狱AI克星</option>
+            <option value="nemesis2" data-i18n="g_model_nemesis2">地狱AI克星·R7</option>
         </select>
         <span class="vs">VS</span>
         <select id="fightR">
@@ -172,6 +174,7 @@
           <option value="ttmouse" data-i18n="g_model_ttmouse">鼠标上的tt玩家</option>
           <option value="hipmouse" data-i18n="g_model_hipmouse">tt玩家·HIP</option>
           <option value="nemesis" data-i18n="g_model_nemesis">地狱AI克星</option>
+            <option value="nemesis2" data-i18n="g_model_nemesis2">地狱AI克星·R7</option>
         </select>
         <label data-i18n="g_fight_right">右 AI</label>
       </div>
@@ -263,6 +266,7 @@
 <script src="js/learned-policy.js"></script>
 <script src="js/learned-policy-grandslam.js"></script>
 <script src="js/learned-policy-nemesis.js"></script>
+  <script src="js/learned-policy-nemesis2.js"></script>
 <script src="js/dqn.js"></script>
 <script src="js/input-agent.js"></script>
 <!-- HIP 分层意图策略：L1 解析技能层（无学习参数）+ L2 战术层（CE 蒸馏）。

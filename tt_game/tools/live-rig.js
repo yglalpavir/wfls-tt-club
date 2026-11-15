@@ -209,6 +209,7 @@ const PIPELINE = [
   'learned-policy.js',
   'learned-policy-grandslam.js',
   'learned-policy-nemesis.js',
+  'learned-policy-nemesis2.js',   // R13：R7 刷新版克星（nemesis2 档）
   'dqn.js',                  // MLP 原语
   'input-agent.js',          // 输入级 DQN（needs DQN）
   'hip-skill.js',            // ★ HIP L1：解析技能控制器（无学习参数，tt-player 之前）
