@@ -150,6 +150,7 @@ for(let i = 0; i < args.length; i++){
   else if(args[i] === '--sel-ref') opt.selRef = args[++i];
   else if(args[i] === '--hours') opt.hours = parseFloat(args[++i]);
   else if(args[i] === '--vallevels') opt.vallevels = args[++i];
+  else if(args[i] === '--depth-shape') opt.depthShape = parseFloat(args[++i]);   // R30：拍面深度势差塑形权重
   else if(args[i] === '--run-name') opt.runName = args[++i];
   else if(args[i] === '--ckptdir') opt.ckptDir = path.resolve(args[++i]);
   else if(args[i] === '--keep') opt.keep = parseInt(args[++i], 10);
@@ -322,6 +323,8 @@ function loadWeight(p, label){
   /* ★ 起点必须打在日志里：auto 分支有日志、显式 --from 的旧版本没有 ⇒ 「--from <路径>」被静默
    * 替换成 auto 时无人察觉（2026-10-23 修正的坑）。任何续训现在都能从这一行看出真实起点。 */
   console.log('  起点权重：' + path.relative(ROOT, p).replace(/\\/g, '/') + '（' + widths + '）');
+  /* R30：--depth-shape 时给续训 agent 打上深度势差塑形函数。*/
+  if(opt.depthShape > 0) base.setDepthShape((st) => -opt.depthShape * Math.abs(st[17] || 0) * 0.6);
   return { agent: base, shape: widths };
 }
 
@@ -418,6 +421,9 @@ const randInit = (why) => {
               lr: 3.5e-5, gamma: 0.99, eps0: 1, epsMin: 0.12, batch: 128,
               replayCap: 1200000, targetEvery: 1500, learnPerPoint: 2,
               optimizer: 'adam', layerLr: '1,1,1,3' };
+  /* R30：拍面深度势差塑形（--depth-shape w）。potential = −w·|state[17]|·0.6，
+   * state[17] = (z−pz)/0.6（encodeObs 的纵深误差维），球在拍面深度平面附近时势最高。 */
+  if(opt.depthShape > 0) o.shape = (st) => -opt.depthShape * Math.abs(st[17] || 0) * 0.6;
   const a = IA.createInputAgent(o, mulberry32(opt.seed));
   const widths = a.getNet().map(l => l.W.length + '×' + l.W[0].length).join(' → ');
   console.log('  起点权重：随机初始化（新网络）' + why);

@@ -294,6 +294,9 @@ const INPUT_AGENT = (() => {
          'all' = 旧的 1904 维均匀随机（球拍会被甩到随机横位，仅用于 A/B）。 */
       setExploreLateral(mode){ o.exploreLateral = (mode === 'all' ? 'all' : 'prior'); return o.exploreLateral; },
       getExploreLateral(){ return o.exploreLateral === 'all' ? 'all' : 'prior'; },
+      /* R30：拍面深度势差塑形 —— o.shape(state) 在 endPoint 每帧计算 potential。*/
+      setDepthShape(fn){ o.shape = fn; return true; },
+      getDepthShape(){ return o.shape || null; },
       credit(d){ const s = episode[episode.length - 1]; if(s) s.reward = (s.reward || 0) + d; },
       /* 给 episode 里最后一个带 mark 标记的帧加 reward（找不到则退化为 credit）。
          用于把「发球效果」这类局部信号精确归因到发球决策那一帧。 */
