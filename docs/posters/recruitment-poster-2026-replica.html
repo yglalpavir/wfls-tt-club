@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>乒乓球社招新海报 · 照片版复刻 | WFLS Table Tennis Club</title>
+<!--
+  招新海报「照片版」复刻 · 1240×1754（A4 @150dpi 比例）
+  复刻对象：外部参考图（蓝调球馆实拍 + 上扬球网 + 粉色虚化灯 + 带网影的白色乒乓球）。
+  原始照片不可获得 —— 背景（球馆蓝调渐变 / 左上暗楔 / 虚化灯 / 球网网格 / 乒乓球及网影 / 桌沿）
+  全部用 CSS 渐变 + 伪元素重建；校徽用 SVG 近似绘制。
+  文案（含群号 / 联系人 / 宣讲信息）逐字照录参考图。
+  导出：Chrome headless 两档（300dpi / 600dpi），见 AGENTS.md「Posters」一节。
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;900&family=Noto+Serif+SC:wght@700;900&family=Poppins:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f2dfae;      /* 标题奶黄（为精彩 / 爱乒才会赢 / 宣讲） */
+    --pill:  #f7d67c;      /* 「乒乓球社」药丸底 */
+    --deep:  #1d3f9e;      /* 药丸字深蓝 */
+    --sans:  'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+    --serif: 'Noto Serif SC', 'SimSun', serif;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #1a1d24; display: flex; justify-content: center; }
+
+  .poster {
+    position: relative; width: 1240px; height: 1754px; overflow: hidden;
+    background: #2a53b8; font-family: var(--sans);
+  }
+
+  /* ================= 背景：球馆照片重建 ================= */
+
+  /* 1 · 基础蓝调渐变（上暗下亮再收暗） */
+  .bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg,
+      #101d4e 0%, #1c3a8e 14%, #2b57c2 34%, #2e5ccb 48%,
+      #2a54bd 62%, #1f42a2 78%, #163272 100%);
+  }
+
+  /* 1b · 左上暗楔：网外侧远处的暗背景 */
+  .wedge {
+    position: absolute; left: 0; top: 0; width: 760px; height: 520px;
+    background: rgba(9, 18, 54, .62);
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    filter: blur(28px);
+  }
+
+  /* 2 · 虚化灯：粉色主灯 + 白色点灯，两层模糊 */
+  .bokeh  { position: absolute; inset: 0; filter: blur(30px); }
+  .bokeh2 { position: absolute; inset: 0; filter: blur(13px); }
+  .bokeh i, .bokeh2 i { position: absolute; border-radius: 50%; }
+  .bokeh .haze { left: -120px; top: -90px; width: 980px; height: 560px;
+    background: radial-gradient(closest-side, rgba(255,110,170,.34), transparent); }
+  .bokeh .p1 { left: 70px;  top: 40px;  width: 330px; height: 250px;
+    background: radial-gradient(closest-side, rgba(255,92,164,.98), transparent 72%); }
+  .bokeh .p2 { left: 330px; top: 160px; width: 250px; height: 200px;
+    background: radial-gradient(closest-side, rgba(255,118,182,.88), transparent 72%); }
+  .bokeh .p3 { left: 640px; top: 30px;  width: 230px; height: 180px;
+    background: radial-gradient(closest-side, rgba(255,140,190,.72), transparent 72%); }
+  .bokeh .p4 { left: 140px; top: 320px; width: 270px; height: 210px;
+    background: radial-gradient(closest-side, rgba(255,105,172,.55), transparent 72%); }
+  .bokeh .p5 { left: 470px; top: 290px; width: 190px; height: 160px;
+    background: radial-gradient(closest-side, rgba(255,176,138,.45), transparent 72%); }
+  .bokeh .p6 { left: 850px; top: 110px; width: 210px; height: 170px;
+    background: radial-gradient(closest-side, rgba(255,140,190,.34), transparent 72%); }
+  .bokeh .p7 { left: 990px; top: 340px; width: 230px; height: 190px;
+    background: radial-gradient(closest-side, rgba(255,130,175,.26), transparent 72%); }
+  .bokeh .p8 { left: 150px; top: 790px; width: 240px; height: 200px;
+    background: radial-gradient(closest-side, rgba(255,120,180,.22), transparent 72%); }
+  .bokeh2 .w1 { left: 30px;   top: 10px;  width: 95px; height: 95px;
+    background: radial-gradient(closest-side, rgba(255,250,240,.95), transparent 70%); }
+  .bokeh2 .w2 { left: 235px;  top: 0px;   width: 70px; height: 70px;
+    background: radial-gradient(closest-side, rgba(255,248,235,.85), transparent 70%); }
+  .bokeh2 .w3 { left: 415px;  top: 55px;  width: 85px; height: 85px;
+    background: radial-gradient(closest-side, rgba(255,244,230,.90), transparent 70%); }
+  .bokeh2 .w4 { left: 615px;  top: 120px; width: 60px; height: 60px;
+    background: radial-gradient(closest-side, rgba(255,240,230,.75), transparent 70%); }
+  .bokeh2 .w5 { left: 755px;  top: 25px;  width: 90px; height: 90px;
+    background: radial-gradient(closest-side, rgba(255,248,238,.80), transparent 70%); }
+  .bokeh2 .w6 { left: 915px;  top: 215px; width: 70px; height: 70px;
+    background: radial-gradient(closest-side, rgba(255,235,235,.55), transparent 70%); }
+  .bokeh2 .w7 { left: 1140px; top: 130px; width: 80px; height: 80px;
+    background: radial-gradient(closest-side, rgba(255,240,235,.60), transparent 70%); }
+  .bokeh2 .w8 { left: 295px;  top: 415px; width: 60px; height: 60px;
+    background: radial-gradient(closest-side, rgba(255,200,215,.42), transparent 70%); }
+  .bokeh2 .w9 { left: 690px;  top: 460px; width: 70px; height: 70px;
+    background: radial-gradient(closest-side, rgba(255,205,220,.30), transparent 70%); }
+  .bokeh2 .w10 { left: 140px; top: 550px; width: 60px; height: 60px;
+    background: radial-gradient(closest-side, rgba(255,190,210,.28), transparent 70%); }
+
+  /* 3 · 球网：白胶带 + 网格，整体上扬（左低右高，约 -10°） */
+  .netlayer {
+    position: absolute; left: 0; top: 452px; width: 1600px;
+    transform: rotate(-9.8deg); transform-origin: 0 0;
+    filter: blur(1px);
+  }
+  .netlayer .tape {
+    height: 16px;
+    background: linear-gradient(180deg, #ffffff, #eef1f8 65%, #cfd8ec);
+    box-shadow: 0 4px 16px rgba(8,18,50,.35);
+  }
+  .netlayer .mesh {
+    width: 100%; height: 560px;
+    background:
+      repeating-linear-gradient(90deg, rgba(12,26,78,.72) 0 2px, transparent 2px 19px),
+      repeating-linear-gradient(0deg,  rgba(12,26,78,.72) 0 2px, transparent 2px 19px),
+      linear-gradient(180deg, rgba(130,175,255,.16), rgba(60,100,220,.05) 70%, rgba(30,60,160,.02));
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 50%, transparent 96%);
+            mask-image: linear-gradient(180deg, #000 0%, #000 50%, transparent 96%);
+  }
+  .netlayer .tape-b {
+    height: 8px; margin-top: -4px; opacity: .4; filter: blur(2.5px);
+    background: linear-gradient(180deg, rgba(235,242,255,.8), rgba(235,242,255,.15));
+  }
+
+  /* 4 · 远处桌沿白带（乒乓球后方横向掠过）+ 近处桌沿细线 */
+  .farband {
+    position: absolute; left: -20px; top: 1240px; width: 1060px; height: 26px;
+    transform: rotate(-1.6deg); filter: blur(2.5px);
+    background: linear-gradient(90deg, rgba(240,246,255,.30), rgba(240,246,255,.72) 55%, rgba(244,248,255,.95));
+    box-shadow: 0 14px 30px rgba(10,20,60,.30);
+  }
+  .tableline {
+    position: absolute; left: 0; top: 1598px; width: 780px; height: 3px;
+    transform: rotate(-1.5deg); filter: blur(1.6px);
+    background: rgba(215,232,255,.35);
+  }
+  /* 左下角桌面/地面的暗色斜面 */
+  .floorshade {
+    position: absolute; left: 0; bottom: 0; width: 900px; height: 520px;
+    background: rgba(10, 22, 66, .30);
+    clip-path: polygon(0 30%, 100% 100%, 0 100%);
+    filter: blur(30px);
+  }
+
+  /* 5 · 暗角与整体蓝调压色 */
+  .vig {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(130% 125% at 50% 40%, transparent 58%, rgba(6,14,40,.42) 100%),
+      linear-gradient(180deg, rgba(6,14,40,.38), transparent 10%, transparent 92%, rgba(6,14,40,.32));
+  }
+
+  /* 6 · 乒乓球：球形渐变 + 与球网同向的投影条纹 + 环境反光 */
+  .ball {
+    position: absolute; left: 730px; top: 950px; width: 560px; height: 560px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 44% 36%,
+      #fffdf6 0%, #f7f3e9 40%, #e6e0d1 66%, #c0baa9 90%, #9d9787 100%);
+    box-shadow:
+      inset -34px -48px 90px rgba(70,80,100,.40),
+      inset 22px 28px 60px rgba(255,255,255,.60),
+      0 38px 78px rgba(8,18,55,.38);
+  }
+  .ball .bands { position: absolute; border-radius: 50%; filter: blur(8px); }
+  .ball .b1 {
+    inset: -36px;
+    background: repeating-linear-gradient(104deg,
+      rgba(50,64,104,0) 0 24px, rgba(50,64,104,.42) 38px 60px);
+    -webkit-mask-image: radial-gradient(circle at 68% 72%, transparent 30%, #000 76%);
+            mask-image: radial-gradient(circle at 68% 72%, transparent 30%, #000 76%);
+  }
+  .ball .b2 {
+    inset: -30px;
+    background: repeating-linear-gradient(110deg,
+      rgba(50,64,104,0) 0 28px, rgba(50,64,104,.22) 44px 70px);
+    -webkit-mask-image: radial-gradient(circle at 58% 42%, transparent 40%, #000 74%);
+            mask-image: radial-gradient(circle at 58% 42%, transparent 40%, #000 74%);
+  }
+  .ball .shine {
+    position: absolute; inset: 0; border-radius: 50%;
+    background:
+      radial-gradient(circle at 86% 6%, rgba(255,178,150,.26), transparent 36%),
+      radial-gradient(circle at 14% 92%, rgba(70,110,210,.22), transparent 42%),
+      radial-gradient(135% 55% at 50% -6%, rgba(44,60,100,.26), transparent 58%),
+      radial-gradient(circle at 45% 36%, rgba(255,255,255,.82), transparent 44%);
+  }
+
+  /* ================= 前景文字层 ================= */
+  .content { position: absolute; inset: 0; }
+  .tshadow { text-shadow: 0 10px 30px rgba(7,18,55,.55), 0 2px 6px rgba(7,18,55,.35); }
+
+  /* 校徽（SVG 近似） */
+  .badge { position: absolute; right: 22px; top: 44px; width: 200px; height: 200px; }
+
+  /* 竖排口号 */
+  .vtext {
+    position: absolute; right: 50px; top: 252px;
+    writing-mode: vertical-rl; text-orientation: upright;
+    font-family: var(--serif); font-weight: 900; font-size: 42px;
+    letter-spacing: 44px; color: var(--cream);
+  }
+
+  /* 巨字标题：左列 乒乓世界（白） · 右列 为精彩（奶黄），加粗描边近似原版粗黑体 */
+  .zi {
+    position: absolute; font-weight: 900; font-size: 242px; line-height: 1;
+    -webkit-text-stroke-width: 6px;
+  }
+  .zi.wh { color: #fff; }
+  .zi.cr { color: var(--cream); }
+  .z-ping  { left: 102px; top: 70px; }
+  .z-pang  { left: 168px; top: 314px; }
+  .z-shi   { left: 84px;  top: 548px; }
+  .z-jie   { left: 104px; top: 800px; }
+  .z-wei   { left: 444px; top: 248px; }
+  .z-jing  { left: 436px; top: 548px; }
+  .z-cai   { left: 422px; top: 848px; }
+
+  /* TABLE TENNIS 斜体 */
+  .tennis {
+    position: absolute; left: 104px; top: 1072px;
+    font-family: 'Poppins', var(--sans); font-style: italic; font-weight: 700;
+    font-size: 50px; line-height: 1.16; letter-spacing: 6px; color: #fff;
+  }
+
+  /* 乒乓球社招新了 */
+  .recruit {
+    position: absolute; left: 102px; top: 1210px;
+    display: flex; align-items: center; gap: 8px;
+    font-weight: 900; font-size: 62px; line-height: 1;
+  }
+  .recruit .pill {
+    background: var(--pill); color: var(--deep);
+    font-family: var(--serif);
+    padding: 5px 10px 10px; border-radius: 15px;
+  }
+  .recruit .plain { color: #fff; margin-left: 8px; }
+
+  /* 两行白色标语 */
+  .copy {
+    position: absolute; left: 78px; top: 1338px;
+    color: #fff; font-weight: 500; font-size: 56px; letter-spacing: 14px; line-height: 1;
+  }
+  .copy .l2 { display: block; margin-top: 52px; padding-left: 206px; letter-spacing: 20px; }
+
+  /* 左下联系信息 */
+  .contact {
+    position: absolute; left: 62px; top: 1516px;
+    color: #fff; font-weight: 700; font-size: 33px; line-height: 1.5; letter-spacing: 2px;
+  }
+  .contact .ind { display: block; padding-left: 114px; }
+
+  /* 右下宣讲通知 */
+  .notice {
+    position: absolute; left: 748px; top: 1580px;
+    color: var(--cream); font-weight: 700; font-size: 44px; letter-spacing: 5px; line-height: 1.62;
+  }
+
+  @media print {
+    @page { size: 1240px 1754px; margin: 0; }
+    body { background: #fff; }
+    .poster { margin: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <!-- 背景：球馆照片重建 -->
+  <div class="bg"></div>
+  <div class="wedge"></div>
+  <div class="bokeh">
+    <i class="haze"></i><i class="p1"></i><i class="p2"></i><i class="p3"></i>
+    <i class="p4"></i><i class="p5"></i><i class="p6"></i><i class="p7"></i><i class="p8"></i>
+  </div>
+  <div class="bokeh2">
+    <i class="w1"></i><i class="w2"></i><i class="w3"></i><i class="w4"></i>
+    <i class="w5"></i><i class="w6"></i><i class="w7"></i><i class="w8"></i>
+    <i class="w9"></i><i class="w10"></i>
+  </div>
+  <div class="netlayer">
+    <div class="tape"></div>
+    <div class="mesh"></div>
+    <div class="tape-b"></div>
+  </div>
+  <div class="farband"></div>
+  <div class="tableline"></div>
+  <div class="floorshade"></div>
+  <div class="vig"></div>
+
+  <!-- 乒乓球 -->
+  <div class="ball">
+    <div class="bands b1"></div>
+    <div class="bands b2"></div>
+    <div class="shine"></div>
+  </div>
+
+  <!-- 前景文字 -->
+  <div class="content">
+
+    <svg class="badge" viewBox="0 0 200 200" aria-label="武汉外国语学校校徽">
+      <defs>
+        <path id="arcTop" d="M 26,100 A 74,74 0 1 1 174,100"/>
+        <path id="arcBot" d="M 32,100 A 68,68 0 0 0 168,100"/>
+      </defs>
+      <circle cx="100" cy="100" r="97" fill="rgba(14,30,84,.45)" stroke="#f2dfae" stroke-width="3.5"/>
+      <circle cx="100" cy="100" r="88" fill="none" stroke="#f2dfae" stroke-width="1.5"/>
+      <text font-family="Noto Serif SC, serif" font-size="17" font-weight="700" fill="#f2dfae" letter-spacing="4">
+        <textPath href="#arcTop" startOffset="50%" text-anchor="middle">武汉外国语学校</textPath>
+      </text>
+      <text font-family="Poppins, sans-serif" font-size="8.5" fill="#f2dfae" letter-spacing="1.2">
+        <textPath href="#arcBot" startOffset="50%" text-anchor="middle">WUHAN FOREIGN LANGUAGES SCHOOL</textPath>
+      </text>
+      <g stroke="#f2dfae" stroke-width="2.6" fill="none" stroke-linecap="round">
+        <path d="M62,124 h76"/>
+        <path d="M72,124 v-24 a28,28 0 0 1 56,0 v24"/>
+        <path d="M84,124 v-18 a16,16 0 0 1 32,0 v18"/>
+        <path d="M100,66 v-16"/>
+        <path d="M100,50 h18 l-6,7 6,7 h-18"/>
+        <path d="M56,131 h88" stroke-width="1.4"/>
+      </g>
+    </svg>
+
+    <div class="vtext tshadow">爱乒才会赢</div>
+
+    <div class="zi wh tshadow z-ping">乒</div>
+    <div class="zi wh tshadow z-pang">乓</div>
+    <div class="zi wh tshadow z-shi">世</div>
+    <div class="zi wh tshadow z-jie">界</div>
+    <div class="zi cr tshadow z-wei">为</div>
+    <div class="zi cr tshadow z-jing">精</div>
+    <div class="zi cr tshadow z-cai">彩</div>
+
+    <div class="tennis tshadow">TABLE<br>TENNIS</div>
+
+    <div class="recruit tshadow">
+      <span class="pill">乒</span><span class="pill">乓</span><span class="pill">球</span><span class="pill">社</span><span class="plain">招新了</span>
+    </div>
+
+    <div class="copy tshadow">在这里，以球会友<span class="l2">奋写青春华章</span></div>
+
+    <div class="contact tshadow">
+      乒乓球社群：977431534<br>
+      社　长:2513袁　畅2575956650<br>
+      副社长:2513刘浩民2940692037
+      <span class="ind">2509周瑀恺3940549773</span>
+      <span class="ind">2505黄宇轩1537304219</span>
+    </div>
+
+    <div class="notice tshadow">社团招新宣讲：<br>11月17日一号报告厅</div>
+
+  </div>
+</div>
+</body>
+</html>
