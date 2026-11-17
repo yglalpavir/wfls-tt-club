@@ -5,7 +5,7 @@
     {
       "id": "20261117-1825ccb5",
       "at": "2026-11-17T21:25:09+08:00",
-      "channel": "manual",
+      "channel": "issue",
       "submitter": "管理员",
       "note": "管理员录入",
       "records": [
@@ -79,7 +79,7 @@
     {
       "id": "20261114-aadf6eaa",
       "at": "2026-11-14T00:04:51+08:00",
-      "channel": "manual",
+      "channel": "issue",
       "submitter": "管理员",
       "note": "管理员录入",
       "records": [
@@ -507,7 +507,7 @@
     {
       "id": "20261102-fa136db6",
       "at": "2026-11-02T22:22:08+08:00",
-      "channel": "manual",
+      "channel": "issue",
       "submitter": "",
       "note": "",
       "records": [
@@ -564,7 +564,7 @@
     {
       "id": "20261031-2b715ccc",
       "at": "2026-10-31T15:07:08+08:00",
-      "channel": "manual",
+      "channel": "issue",
       "submitter": "",
       "note": "10/31 比赛记录：梅哲宇 3-0 任峻贤（bo5）",
       "records": [
@@ -587,7 +587,7 @@
     {
       "id": "20261030-22043ea1",
       "at": "2026-10-30T23:10:41+08:00",
-      "channel": "manual",
+      "channel": "issue",
       "submitter": "",
       "note": "10/30 比赛记录：付大卫 3-1 任峻贤（bo5）",
       "records": [
@@ -669,7 +669,7 @@
     {
       "id": "20261028-ba8c0448",
       "at": "2026-10-28T23:44:39+08:00",
-      "channel": "manual",
+      "channel": "issue",
       "submitter": "",
       "note": "校队选拔第二轮 11 场",
       "note_en": "Team trial, round 2 · 11 matches",
@@ -813,7 +813,7 @@
     {
       "id": "20261028-4a5f8d11",
       "at": "2026-10-28T22:59:19+08:00",
-      "channel": "manual",
+      "channel": "issue",
       "submitter": "",
       "note": "任峻贤 3-2 付大卫（bo5）",
       "note_en": "Ren Junxian 3-2 Fu Dawei (bo5)",
@@ -831,7 +831,7 @@
     {
       "id": "20261028-e829f377",
       "at": "2026-10-28T01:02:01+08:00",
-      "channel": "manual",
+      "channel": "issue",
       "submitter": "",
       "note": "10/27 比赛记录",
       "note_en": "Matches from 10/27",
@@ -857,7 +857,7 @@
     {
       "id": "20261026-8c66a01b",
       "at": "2026-10-26T21:02:42+08:00",
-      "channel": "manual",
+      "channel": "issue",
       "submitter": "",
       "note": "10/26 比赛记录",
       "note_en": "Matches from 10/26",
@@ -891,7 +891,7 @@
     {
       "id": "20261024-17e7271e",
       "at": "2026-10-24T20:41:05+08:00",
-      "channel": "manual",
+      "channel": "issue",
       "submitter": "",
       "note": "10/24 比赛记录",
       "note_en": "Matches from 10/24",
@@ -908,7 +908,7 @@
     {
       "id": "20261024-65bae264",
       "at": "2026-10-24T16:01:57+08:00",
-      "channel": "manual",
+      "channel": "issue",
       "submitter": "",
       "note": "梅哲宇 2-1 任峻贤",
       "note_en": "Mei Zheyu 2-1 Ren Junxian",
@@ -926,7 +926,7 @@
     {
       "id": "20261023-5a7a0337",
       "at": "2026-10-23T21:53:56+08:00",
-      "channel": "manual",
+      "channel": "issue",
       "submitter": "",
       "note": "魏罗瑞 2-1 任峻贤",
       "note_en": "Wei Luorui 2-1 Ren Junxian",
@@ -944,7 +944,7 @@
     {
       "id": "20261022-513af200",
       "at": "2026-10-22T23:08:04+08:00",
-      "channel": "manual",
+      "channel": "issue",
       "submitter": "",
       "note": "彭一和 2-1 姜子润",
       "note_en": "Peng Yihe 2-1 Jiang Zirun",
@@ -961,7 +961,7 @@
     {
       "id": "20261022-fa613a06",
       "at": "2026-10-22T22:32:37+08:00",
-      "channel": "manual",
+      "channel": "issue",
       "submitter": "",
       "note": "10/22 比赛记录：6 场（含双打）",
       "note_en": "Matches from 10/22 · 6 incl. doubles",
@@ -1020,7 +1020,7 @@
     {
       "id": "20261022-b2c65559",
       "at": "2026-10-22T22:27:19+08:00",
-      "channel": "manual",
+      "channel": "issue",
       "submitter": "",
       "note": "任峻贤 2-0 龚雨煊（同日另一局）",
       "note_en": "Ren Junxian 2-0 Gong Yuxuan (second game)",
@@ -1038,7 +1038,7 @@
     {
       "id": "20261021-ffbb594b",
       "at": "2026-10-21T22:36:23+08:00",
-      "channel": "manual",
+      "channel": "issue",
       "submitter": "",
       "note": "10/21 比赛记录：5 场（含双打）",
       "note_en": "Matches from 10/21 · 5 incl. doubles",
@@ -1092,7 +1092,7 @@
     {
       "id": "20261020-33b797a0",
       "at": "2026-10-20T22:32:07+08:00",
-      "channel": "manual",
+      "channel": "issue",
       "submitter": "",
       "note": "10/20 比赛记录：4 场",
       "note_en": "Matches from 10/20 · 4 matches",
@@ -1134,7 +1134,7 @@
     {
       "id": "20261019-29c97060",
       "at": "2026-10-19T21:35:24+08:00",
-      "channel": "manual",
+      "channel": "issue",
       "submitter": "",
       "note": "10/19 比赛记录：3 场（含双打）",
       "note_en": "Matches from 10/19 · 3 incl. doubles",
@@ -1168,7 +1168,7 @@
     {
       "id": "20261017-969e11d5",
       "at": "2026-10-17T19:36:03+08:00",
-      "channel": "manual",
+      "channel": "issue",
       "submitter": "",
       "note": "10/16–10/17 比赛记录：4 场（含双打）",
       "note_en": "Matches from 10/16–10/17 · 4 incl. doubles",
