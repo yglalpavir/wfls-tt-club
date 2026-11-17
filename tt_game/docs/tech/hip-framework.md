@@ -2619,3 +2619,18 @@ R37 的因果链（固定角落先把 nemesis 调偏 → txBias 二段调离）�
 
 （landAuto=0 + txBias=0 即自然落点基线 ~70% 区间。）
 ⇒ txBias 不是独立旋钮，而是**角落战术的增益放大器**——文档表述更新。
+
+**㉖ R39：txBias 对 nemesis2 反向 —— 三对手三方向，特异性最终确认（2026-11-18）**
+
+nemesis2 + txBias −0.05（30 局）= **68.3% [59.6,76.0]** vs 无 bias 99.7%
+—— **−31.4pp**（nemesis2 从「接不到 HIP 的球」变成「接得到了」：
+玩家侧 noreach 从 0% 飙到 85.5%）。
+
+⇒ txBias 的效应方向**因对手而完全不同**：nemesis +14.1pp / nemesis2 −31.4pp /
+hell ≈0。三对手三方向 = 特异性最终确认。表保持 nemesis-only 的决策
+得到最强证据支持。
+
+⇒ nemesis2 对局中玩家侧 noreach 飙升的副产物：R28 的「DQN 深度误差」
+量测里 nemesis2 是对 DQN 的真强敌 —— 两个「克 hell 血统」的档
+（nemesis/nemesis2）对 HIP 的威胁方向相反（nemesis 被调离 vs nemesis2
+被调近），这解释了为什么同一 bias 对两个克星血统档效应相反。
