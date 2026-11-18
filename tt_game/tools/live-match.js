@@ -121,6 +121,8 @@ const JSON_OUT = argOf('--json', '');
 const HIP_CFG = argOf('--hip-cfg', '');
 /* --hell-vec <path>：把 hell 档策略换成 {vec:[42]} 检查点（候选地狱实机复核用，见注入处注释） */
 const HELL_VEC = argOf('--hell-vec', '');
+/* --nem-vec <path>：把 nemesis 档策略换成 {vec:[42]} 检查点（R8 候选克星转正预演用） */
+const NEM_VEC = argOf('--nem-vec', '');
 /* --move-cap <m/s>：模型侧移动预算（限速）。
  *   作用范围：**只有模型控制的拍**（ttmouse / hipmouse）——真人的拍面走
  *   main.js#playerControl，不受影响。
@@ -377,6 +379,19 @@ if(HAS('--no-prior')){
     const bad = back.split(',').filter((v, i) => v !== want.split(',')[i]).length;
     if(bad > 0) throw new Error('--hell-vec 注入校验失败：' + bad + ' 维不一致');
     console.log('[hell-vec] 已注入 ' + HELL_VEC + '（strongVec 回读校验 42/42 一致）');
+  }
+
+  /* --nem-vec <file>：把「nemesis 档」的策略整体换成 {vec:[42]} 检查点向量。
+   * 用途：R8 候选克星的转正预演（HIP vs 候选 nemesis），不触碰 js/learned-policy-nemesis.js。
+   * 实现：vm 里 NEMESIS_POLICY 是 const 词法绑定 —— 同 hell-vec 思路，对象属性原地改写；
+   * policyForModel('nemesis') 现读该对象。写完回读逐维校验。 */
+  if(NEM_VEC && rig){
+    const candVec = JSON.parse(fs.readFileSync(path.resolve(NEM_VEC), 'utf8')).vec;
+    const Pn = require(path.join(ROOT, 'js', 'policy.js'));
+    const candObj = Pn.unflattenPolicy(candVec);
+    vm.runInContext('Object.assign(NEMESIS_POLICY, ' + JSON.stringify(candObj) + ');', rig.ctx);
+    const back = vm.runInContext('JSON.stringify(Object.keys(NEMESIS_POLICY).sort())', rig.ctx);
+    console.log('[nem-vec] 已注入 ' + NEM_VEC + '（nemesis 档字段：' + back.slice(0, 120) + '…）');
   }
 
   const rows = [];
