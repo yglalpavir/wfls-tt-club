@@ -204,7 +204,7 @@ const HIP_SKILL = (() => {
      *   「nemesis」= fightR/fightL 里的对手模型名（learned-policy-nemesis 档）。
      *   DEFAULTS.txBias 仍是 0（「不知道对手」的安全值）；tt-player 在
      *   对手档已知时经 setTxBiasForOpp 自动应用本表。 */
-    txBiasByOpp: { nemesis: -0.05 },
+    txBiasByOpp: { nemesis: -0.05, nemesis2: -0.05 },
     /* ★ bounceCalib（R10）：弹跳预测的在线 EMA 修正（机理见 predictContact 头部）。
      *   0 = 关（默认；等实机配对 A/B 定案）。 */
     bounceCalib: 0,
