@@ -23,6 +23,7 @@ const FIXTURE = [
   { opp: 'nemesis2',  lo: 63.4, hi: 77.8, rate: 71.1, cfg: 'data/hip/_cfg_roster.json' },
   { opp: 'default',   lo: 98.2, hi: 99.9, rate: 99.5 },
   { opp: 'grandslam', lo: 97.6, hi: 99.7, rate: 99.2 },
+  { opp: 'elite',     lo: 98.8, hi: 99.9, rate: 99.7 },   // R19 60 局补测口径
 ];
 const TIERS = QUICK ? ['hell', 'nemesis2'] : FIXTURE.map(f => f.opp);
 const GAMES = QUICK ? 20 : 40;

@@ -2838,3 +2838,11 @@ HIP 在对手侧（fightR=hipmouse vs fightL=nemesis）的镜像路径：
 - HIP 访客 vs nemesis2：62.7% → **70.5%**（表增益）；
 - DQN 访客 vs nemesis2：45.5%（不变）。
 ⇒ nemesis2 条目晋升的体验面收益只作用于 HIP 访客，验证闭环。
+
+**㉛b R55：fixture 升级六档 —— elite 入驻（2026-11-19）**
+
+`_fixture-check.js` 的 FIXTURE 加第 6 档 elite（99.7% [98.8,99.9]，
+R19 60 局补测口径）⇒ 回归基准从五档扩到**六档**（与 §7b 基线表全对齐）。
+quick 模式复验通过（hell 75.9% / nemesis2 71.3% 带内）。elite 的
+99%+ 饱和带是「过度拟合/意外削弱」类回归的最灵敏哨兵——任何把 HIP
+弄坏的改动都会先在饱和档现形。
