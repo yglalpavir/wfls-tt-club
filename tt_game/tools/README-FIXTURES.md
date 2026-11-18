@@ -7,14 +7,19 @@
 ## 回归基准（必读）
 
 ```bash
-node tools/_fixture-check.js          # 全量：五档 × 40 局（~90 分钟）
+node tools/_fixture-check.js          # 全量：六档 × 40 局（~105 分钟）
 node tools/_fixture-check.js --quick  # 抽检：hell/nemesis2 × 20 局（~15 分钟）
 ```
 
-- fixture 基准 = `hip-framework.md` §13㉛（R45 五档带内读数，seed 20261004）
+- fixture 基准 = `hip-framework.md` §13㉛（R45 五档带内读数 + R55 elite，
+  seed 20261004）；六档与 `hip-framework.md` §7b 基线表全对齐
 - 出带 → exit 1。任何 `tt_game/js` 改动后必跑。
 - `data/hip/_cfg_roster.json`（txBias −0.05）= 表驱动阵容的 CLI 复现
   （R44 等价性论证：表内对手 `--hip-cfg` 全局 bias ≡ 浏览器表驱动）。
+- **确定性已实测**（R57）：同种子重跑核心读数逐位一致（仅尾部耗时行不同）。
+- **关键定案读数入库**：`data/verdicts/`（9 个文件，git 跟踪）= fixture 六档
+  + R8 转正决策包三腿的原始读数；其余 361 个原始读数在 `data/hip/`
+  （gitignored，可由同种子重跑再生）。
 
 ## 在环管线核心
 
