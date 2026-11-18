@@ -3,7 +3,12 @@
 const vm = require('vm');
 const { buildRig } = require('./live-rig.js');
 const rig = buildRig({ controller: 'hip', moveCap: 2.0 });
-rig.setOpp('hell');
+rig.setOpp(process.argv[2] || 'hell');
+if(process.argv[4]){
+  const bias = parseFloat(process.argv[4]);
+  vm.runInContext('HIP_SKILL.setConfig({ txBias: ' + bias + ' });', rig.ctx);
+  console.log('[cfg] txBias = ' + vm.runInContext('HIP_SKILL.getConfig().txBias', rig.ctx));
+}
 vm.runInContext([
   'globalThis.__pts = [];',
   'globalThis.__pt_orig = pointTo;',
@@ -13,7 +18,8 @@ vm.runInContext([
   '};'
 ].join('\n'), rig.ctx);
 let you = 0, ai = 0;
-for(let g = 0; g < 40; g++){
+const GAMES = parseInt(process.argv[3] || '40', 10);
+for(let g = 0; g < GAMES; g++){
   const r = rig.playGame(20261004, g, 120);
   you += r.you; ai += r.ai;
 }
