@@ -2815,3 +2815,13 @@ default 99.5% / grandslam 99.2% / elite 99.7%。解析层已达能力边界
 
 对手 GA 正式化（双种群共演化 ≈5h/轮）、引擎换代（resolveHit 解耦、
 DQN 从零重训 12h）、访客体验打磨。
+
+**㉞b R53：表驱动镜像侧验证 —— startFight 双侧查表对称（2026-11-19）**
+
+R25 验证了 HIP 在玩家侧（fightL=hipmouse）的表驱动 8/8；本轮补验证
+HIP 在对手侧（fightR=hipmouse vs fightL=nemesis）的镜像路径：
+`setTxBiasForOpp` 同样命中 −0.05，对局正常完成（7:9）。
+
+⇒ `input.js#startFight` 的双侧查表对称性确认：**无论 HIP 站哪一侧，
+带表阵容都生效**。R25 的「三层闭环」结论扩展为「双侧 × 三层」。
+工具留存：`tools/_browser-path-mirror.js`。
