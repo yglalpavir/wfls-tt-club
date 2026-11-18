@@ -2825,3 +2825,16 @@ HIP 在对手侧（fightR=hipmouse vs fightL=nemesis）的镜像路径：
 ⇒ `input.js#startFight` 的双侧查表对称性确认：**无论 HIP 站哪一侧，
 带表阵容都生效**。R25 的「三层闭环」结论扩展为「双侧 × 三层」。
 工具留存：`tools/_browser-path-mirror.js`。
+
+**㉟b R54：表是「HIP 专属增益」—— DQN/人类访客零影响（2026-11-19）**
+
+代码核对（`input.js#startFight`）：bias 应用段的触发条件是
+`fightL/fightR === "hipmouse"` —— 只有 HIP 控制器侧才查表；DQN（ttmouse）
+与人类玩家侧不触发 ⇒ **表对 DQN 访客/人类访客零影响**。
+
+⇒ R22 的「DQN vs nemesis2 45.5%」读数对 DQN 访客仍然有效
+（nemesis2 条目晋升只改变 HIP 访客的阵容强度）；R41 的「浏览器带表
+70.5%」也只对 HIP 访客生效。两个访客画像互不干扰：
+- HIP 访客 vs nemesis2：62.7% → **70.5%**（表增益）；
+- DQN 访客 vs nemesis2：45.5%（不变）。
+⇒ nemesis2 条目晋升的体验面收益只作用于 HIP 访客，验证闭环。
