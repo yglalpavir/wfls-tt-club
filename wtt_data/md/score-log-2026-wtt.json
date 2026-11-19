@@ -7471,104 +7471,192 @@
     "类型": "常规挑战赛",
     "胜者": "Nikita ARTEMENKO/Maksim GREBNEV",
     "负者": "Borgar HAUG/Nandan NARESH",
-    "比分": "3-1"
+    "比分": "3-1",
+    "局分": [
+      "11-8",
+      "11-13",
+      "11-9",
+      "11-8"
+    ]
   },
   {
     "日期": "2026-11-12",
     "类型": "常规挑战赛",
     "胜者": "Iskender KHARKI/FANG Bo",
     "负者": "Miguel PANTOJA/Norbert TAULER",
-    "比分": "3-1"
+    "比分": "3-1",
+    "局分": [
+      "7-11",
+      "11-6",
+      "12-10",
+      "11-7"
+    ]
   },
   {
     "日期": "2026-11-12",
     "类型": "常规挑战赛",
     "胜者": "Petyo KRASTEV/Yoan VELICHKOV",
     "负者": "Ibrahim GUNDUZ/Abdullah YIGENLER",
-    "比分": "3-2"
+    "比分": "3-2",
+    "局分": [
+      "10-12",
+      "12-10",
+      "10-12",
+      "11-8",
+      "11-9"
+    ]
   },
   {
     "日期": "2026-11-12",
     "类型": "常规挑战赛",
     "胜者": "Danilo FASO/Gorkem OCAL",
     "负者": "Tom JARVIS/Connor GREEN",
-    "比分": "3-0"
+    "比分": "3-0",
+    "局分": [
+      "12-10",
+      "11-8",
+      "11-8"
+    ]
   },
   {
     "日期": "2026-11-12",
     "类型": "常规挑战赛",
     "胜者": "Luka MLADENOVIC/Mael VAN DESSEL",
     "负者": "Ryoichi YOSHIYAMA/Kazuki YOSHIYAMA",
-    "比分": "3-2"
+    "比分": "3-2",
+    "局分": [
+      "8-11",
+      "2-11",
+      "11-8",
+      "11-8",
+      "11-3"
+    ]
   },
   {
     "日期": "2026-11-12",
     "类型": "常规挑战赛",
     "胜者": "Evgeny TIKHONOV/Dmitrii VINOGRADOV",
     "负者": "Musobek TOLIEV/Shahbozbek GULOMIDDINOV",
-    "比分": "3-0"
+    "比分": "3-0",
+    "局分": [
+      "11-3",
+      "11-8",
+      "11-4"
+    ]
   },
   {
     "日期": "2026-11-12",
     "类型": "常规挑战赛",
     "胜者": "KANG Dongsoo/LIM Yunoh",
     "负者": "Rafael DE LAS HERAS/Diego LILLO",
-    "比分": "3-0"
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-6",
+      "13-11"
+    ]
   },
   {
     "日期": "2026-11-12",
     "类型": "常规挑战赛",
     "胜者": "Leonardo IIZUKA/Guilherme TEODORO",
     "负者": "HUANG Youzheng/CHEN Yuanyu",
-    "比分": "3-2"
+    "比分": "3-2",
+    "局分": [
+      "7-11",
+      "13-11",
+      "11-8",
+      "6-11",
+      "11-2"
+    ]
   },
   {
     "日期": "2026-11-13",
     "类型": "常规挑战赛",
     "胜者": "Nikita ARTEMENKO/Maksim GREBNEV",
     "负者": "Iskender KHARKI/FANG Bo",
-    "比分": "3-1"
+    "比分": "3-1",
+    "局分": [
+      "11-9",
+      "11-5",
+      "10-12",
+      "11-8"
+    ]
   },
   {
     "日期": "2026-11-13",
     "类型": "常规挑战赛",
     "胜者": "Petyo KRASTEV/Yoan VELICHKOV",
     "负者": "Danilo FASO/Gorkem OCAL",
-    "比分": "3-1"
+    "比分": "3-1",
+    "局分": [
+      "11-5",
+      "11-9",
+      "7-11",
+      "11-8"
+    ]
   },
   {
     "日期": "2026-11-13",
     "类型": "常规挑战赛",
     "胜者": "Luka MLADENOVIC/Mael VAN DESSEL",
     "负者": "Evgeny TIKHONOV/Dmitrii VINOGRADOV",
-    "比分": "3-0"
+    "比分": "3-0",
+    "局分": [
+      "11-9",
+      "11-7",
+      "11-9"
+    ]
   },
   {
     "日期": "2026-11-13",
     "类型": "常规挑战赛",
     "胜者": "KANG Dongsoo/LIM Yunoh",
     "负者": "Leonardo IIZUKA/Guilherme TEODORO",
-    "比分": "3-2"
+    "比分": "3-2",
+    "局分": [
+      "7-11",
+      "11-9",
+      "11-6",
+      "12-14",
+      "12-10"
+    ]
   },
   {
     "日期": "2026-11-14",
     "类型": "常规挑战赛",
     "胜者": "Nikita ARTEMENKO/Maksim GREBNEV",
     "负者": "Petyo KRASTEV/Yoan VELICHKOV",
-    "比分": "3-0"
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-9",
+      "11-4"
+    ]
   },
   {
     "日期": "2026-11-14",
     "类型": "常规挑战赛",
     "胜者": "Luka MLADENOVIC/Mael VAN DESSEL",
     "负者": "KANG Dongsoo/LIM Yunoh",
-    "比分": "3-0"
+    "比分": "3-0",
+    "局分": [
+      "13-11",
+      "11-6",
+      "11-7"
+    ]
   },
   {
     "日期": "2026-11-15",
     "类型": "常规挑战赛",
     "胜者": "Nikita ARTEMENKO/Maksim GREBNEV",
     "负者": "Luka MLADENOVIC/Mael VAN DESSEL",
-    "比分": "3-1"
+    "比分": "3-1",
+    "局分": [
+      "11-6",
+      "11-9",
+      "8-11",
+      "11-9"
+    ]
   }
 ]

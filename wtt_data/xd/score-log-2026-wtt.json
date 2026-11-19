@@ -1,456 +1,2905 @@
 [
-{"日期": "2026-01-09", "类型": "支线赛", "胜者": "Abhinandh PRADHIVADHI/Nithya MANI", "负者": "Arnav KARNAVAR/Sampada BHIWANDKAR"},
-{"日期": "2026-01-09", "类型": "支线赛", "胜者": "Ankur BHATTACHARJEE/Taneesha KOTECHA", "负者": "Balamurugan RAJASEKARAN/Jennifer VARGHESE"},
-{"日期": "2026-01-09", "类型": "支线赛", "胜者": "Harmeet DESAI/Yashaswini GHORPADE", "负者": "Jash MODI/Divyanshi BHOWMICK"},
-{"日期": "2026-01-09", "类型": "支线赛", "胜者": "Mudit DANI/Ayhika MUKHERJEE", "负者": "Rubin MAHARJAN/Evana THAPA"},
-{"日期": "2026-01-09", "类型": "支线赛", "胜者": "Payas JAIN/Syndrela DAS", "负者": "Akash PAL/Poymantee BAISYA"},
-{"日期": "2026-01-09", "类型": "支线赛", "胜者": "Preyesh SURESH/Selena SELVAKUMAR", "负者": "Divyansh SRIVASTAVA/Pritha VARTIKAR"},
-{"日期": "2026-01-09", "类型": "支线赛", "胜者": "Raegan ALBUQUERQUE/Suhana SAINI", "负者": "Akash GUPTA/Garima GOYAL"},
-{"日期": "2026-01-09", "类型": "支线赛", "胜者": "Ronit BHANJA/Sutirtha MUKHERJEE", "负者": "Priyanuj BHATTACHARYYA/Kavya BHATT"},
-{"日期": "2026-01-10", "类型": "支线赛", "胜者": "Ankur BHATTACHARJEE/Taneesha KOTECHA", "负者": "Abhinandh PRADHIVADHI/Nithya MANI"},
-{"日期": "2026-01-10", "类型": "支线赛", "胜者": "Harmeet DESAI/Yashaswini GHORPADE", "负者": "Raegan ALBUQUERQUE/Suhana SAINI"},
-{"日期": "2026-01-10", "类型": "支线赛", "胜者": "Harmeet DESAI/Yashaswini GHORPADE", "负者": "Ronit BHANJA/Sutirtha MUKHERJEE"},
-{"日期": "2026-01-10", "类型": "支线赛", "胜者": "Payas JAIN/Syndrela DAS", "负者": "Ankur BHATTACHARJEE/Taneesha KOTECHA"},
-{"日期": "2026-01-10", "类型": "支线赛", "胜者": "Payas JAIN/Syndrela DAS", "负者": "Preyesh SURESH/Selena SELVAKUMAR"},
-{"日期": "2026-01-10", "类型": "支线赛", "胜者": "Raegan ALBUQUERQUE/Suhana SAINI", "负者": "Mudit DANI/Ayhika MUKHERJEE"},
-{"日期": "2026-01-11", "类型": "支线赛", "胜者": "Payas JAIN/Syndrela DAS", "负者": "Harmeet DESAI/Yashaswini GHORPADE"},
-{"日期": "2026-01-15", "类型": "球星挑战赛", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "Anders LIND/Adriana DIAZ"},
-{"日期": "2026-01-15", "类型": "球星挑战赛", "胜者": "CHEN Junsong/QIN Yuxuan", "负者": "LIN Yun-Ju/CHENG I-Ching"},
-{"日期": "2026-01-15", "类型": "球星挑战赛", "胜者": "CHEN Yuanyu/KUAI Man", "负者": "Sultan AL-KUWARI/Rokaia ELBAZ"},
-{"日期": "2026-01-15", "类型": "球星挑战赛", "胜者": "HUANG Youzheng/CHEN Yi", "负者": "Lev KATSMAN/Elizabet ABRAAMIAN"},
-{"日期": "2026-01-15", "类型": "球星挑战赛", "胜者": "LIM Jonghoon/SHIN Yubin", "负者": "Manush SHAH/Diya CHITALE"},
-{"日期": "2026-01-15", "类型": "球星挑战赛", "胜者": "PANG Koen/ZENG Jian", "负者": "Mohammed ABDULWAHHAB/Aia MOHAMED"},
-{"日期": "2026-01-15", "类型": "球星挑战赛", "胜者": "PARK Ganghyeon/KIM Nayeong", "负者": "YIU Kwan To/NG Wing Lam"},
-{"日期": "2026-01-15", "类型": "球星挑战赛", "胜者": "WONG Chun Ting/DOO Hoi Kem", "负者": "Youssef ABDELAZIZ/Mariam ALHODABY"},
-{"日期": "2026-01-16", "类型": "球星挑战赛", "胜者": "CHEN Yuanyu/KUAI Man", "负者": "LIM Jonghoon/SHIN Yubin"},
-{"日期": "2026-01-16", "类型": "球星挑战赛", "胜者": "PANG Koen/ZENG Jian", "负者": "Alvaro ROBLES/Maria XIAO"},
-{"日期": "2026-01-16", "类型": "球星挑战赛", "胜者": "PARK Ganghyeon/KIM Nayeong", "负者": "CHEN Junsong/QIN Yuxuan"},
-{"日期": "2026-01-16", "类型": "球星挑战赛", "胜者": "WONG Chun Ting/DOO Hoi Kem", "负者": "HUANG Youzheng/CHEN Yi"},
-{"日期": "2026-01-17", "类型": "球星挑战赛", "胜者": "PARK Ganghyeon/KIM Nayeong", "负者": "CHEN Yuanyu/KUAI Man"},
-{"日期": "2026-01-17", "类型": "球星挑战赛", "胜者": "WONG Chun Ting/DOO Hoi Kem", "负者": "PANG Koen/ZENG Jian"},
-{"日期": "2026-01-18", "类型": "球星挑战赛", "胜者": "WONG Chun Ting/DOO Hoi Kem", "负者": "PARK Ganghyeon/KIM Nayeong"},
-{"日期": "2026-01-21", "类型": "常规挑战赛", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "Vladimir SIDORENKO/Mariia TAILAKOVA"},
-{"日期": "2026-01-21", "类型": "常规挑战赛", "胜者": "HUANG Youzheng/SHI Xunyao", "负者": "Benedikt DUDA/Nina MITTELHAM"},
-{"日期": "2026-01-21", "类型": "常规挑战赛", "胜者": "Manush SHAH/Diya CHITALE", "负者": "CHEN Yuanyu/HAN Feier"},
-{"日期": "2026-01-21", "类型": "常规挑战赛", "胜者": "PANG Koen/ZENG Jian", "负者": "Stepan BRHEL/Veronika POLAKOVA"},
-{"日期": "2026-01-21", "类型": "常规挑战赛", "胜者": "Sathiyan GNANASEKARAN/Yashaswini GHORPADE", "负者": "Iskender KHARKI/Sarvinoz MIRKADIROVA"},
-{"日期": "2026-01-21", "类型": "常规挑战赛", "胜者": "Thibault PORET/Charlotte LUTZ", "负者": "WONG Chun Ting/DOO Hoi Kem"},
-{"日期": "2026-01-21", "类型": "常规挑战赛", "胜者": "XUE Fei/WANG Xiaotong", "负者": "Wim VERDONSCHOT/Sophia KLEE"},
-{"日期": "2026-01-21", "类型": "常规挑战赛", "胜者": "YIU Kwan To/NG Wing Lam", "负者": "Abdullah YIGENLER/Ece HARAC"},
-{"日期": "2026-01-22", "类型": "常规挑战赛", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "YIU Kwan To/NG Wing Lam"},
-{"日期": "2026-01-22", "类型": "常规挑战赛", "胜者": "HUANG Youzheng/SHI Xunyao", "负者": "Alvaro ROBLES/Maria XIAO"},
-{"日期": "2026-01-22", "类型": "常规挑战赛", "胜者": "HUANG Youzheng/SHI Xunyao", "负者": "XUE Fei/WANG Xiaotong"},
-{"日期": "2026-01-22", "类型": "常规挑战赛", "胜者": "Manush SHAH/Diya CHITALE", "负者": "PANG Koen/ZENG Jian"},
-{"日期": "2026-01-22", "类型": "常规挑战赛", "胜者": "Manush SHAH/Diya CHITALE", "负者": "Thibault PORET/Charlotte LUTZ"},
-{"日期": "2026-01-22", "类型": "常规挑战赛", "胜者": "Thibault PORET/Charlotte LUTZ", "负者": "Sathiyan GNANASEKARAN/Yashaswini GHORPADE"},
-{"日期": "2026-01-23", "类型": "常规挑战赛", "胜者": "Manush SHAH/Diya CHITALE", "负者": "HUANG Youzheng/SHI Xunyao"},
-{"日期": "2026-02-12", "类型": "球星挑战赛", "胜者": "Akash PAL/Kaushani NATH", "负者": "Luka MLADENOVIC/Minhyung JEE"},
-{"日期": "2026-02-12", "类型": "球星挑战赛", "胜者": "Anirban GHOSH/Anusha KUTUMBALE", "负者": "Abhinandh PRADHIVADHI/Nithya MANI"},
-{"日期": "2026-02-12", "类型": "球星挑战赛", "胜者": "Ankur BHATTACHARJEE/Swastika GHOSH", "负者": "PARK Gyuhyeon/KIM Nayeong"},
-{"日期": "2026-02-12", "类型": "球星挑战赛", "胜者": "Eduard IONESCU/Bernadette SZOCS", "负者": "CHO Daeseong/JOO Cheonhui"},
-{"日期": "2026-02-12", "类型": "球星挑战赛", "胜者": "Harmeet DESAI/Yashaswini GHORPADE", "负者": "Darius MOVILEANU/Andreea DRAGOMAN"},
-{"日期": "2026-02-12", "类型": "球星挑战赛", "胜者": "Manush SHAH/Diya CHITALE", "负者": "OH Seunghwan/KIM Seongjin"},
-{"日期": "2026-02-12", "类型": "球星挑战赛", "胜者": "OH Junsung/Miyu NAGASAKI", "负者": "Balamurugan RAJASEKARAN/Jennifer VARGHESE"},
-{"日期": "2026-02-12", "类型": "球星挑战赛", "胜者": "Payas JAIN/Syndrela DAS", "负者": "Iskender KHARKI/Sarvinoz MIRKADIROVA"},
-{"日期": "2026-02-13", "类型": "球星挑战赛", "胜者": "Eduard IONESCU/Bernadette SZOCS", "负者": "Anirban GHOSH/Anusha KUTUMBALE"},
-{"日期": "2026-02-13", "类型": "球星挑战赛", "胜者": "Harmeet DESAI/Yashaswini GHORPADE", "负者": "Ankur BHATTACHARJEE/Swastika GHOSH"},
-{"日期": "2026-02-13", "类型": "球星挑战赛", "胜者": "OH Junsung/Miyu NAGASAKI", "负者": "Akash PAL/Kaushani NATH"},
-{"日期": "2026-02-13", "类型": "球星挑战赛", "胜者": "Payas JAIN/Syndrela DAS", "负者": "Manush SHAH/Diya CHITALE"},
-{"日期": "2026-02-14", "类型": "球星挑战赛", "胜者": "Eduard IONESCU/Bernadette SZOCS", "负者": "OH Junsung/Miyu NAGASAKI"},
-{"日期": "2026-02-14", "类型": "球星挑战赛", "胜者": "Harmeet DESAI/Yashaswini GHORPADE", "负者": "Payas JAIN/Syndrela DAS"},
-{"日期": "2026-02-15", "类型": "球星挑战赛", "胜者": "Eduard IONESCU/Bernadette SZOCS", "负者": "Harmeet DESAI/Yashaswini GHORPADE"},
-{"日期": "2026-02-22", "类型": "大满贯", "胜者": "Akash PAL/Minhyung JEE", "负者": "Gustavo GOMEZ/Daniela ORTEGA"},
-{"日期": "2026-02-22", "类型": "大满贯", "胜者": "Alexis LEBRUN/Satsuki ODO", "负者": "Eduard IONESCU/Bernadette SZOCS"},
-{"日期": "2026-02-22", "类型": "大满贯", "胜者": "CHAN Baldwin/KIM Nayeong", "负者": "Robert GARDOS/Sofia POLCANOVA"},
-{"日期": "2026-02-22", "类型": "大满贯", "胜者": "Dang QIU/Sabine WINTER", "负者": "QUEK Izaac/SER Lin Qian"},
-{"日期": "2026-02-22", "类型": "大满贯", "胜者": "Kristian KARLSSON/Christina KALLBERG", "负者": "Omar ASSAR/Hana GODA"},
-{"日期": "2026-02-22", "类型": "大满贯", "胜者": "Ovidiu IONESCU/Barbora VARADY", "负者": "Nicolas BURGOS/Giulia TAKAHASHI"},
-{"日期": "2026-02-22", "类型": "大满贯", "胜者": "PANG Koen/ZENG Jian", "负者": "Nicholas LUM/Yangzi LIU"},
-{"日期": "2026-02-22", "类型": "大满贯", "胜者": "Youssef ABDELAZIZ/Mariam ALHODABY", "负者": "Lubomir PISTEJ/Tatiana KUKULKOVA"},
-{"日期": "2026-02-23", "类型": "大满贯", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "Ovidiu IONESCU/Barbora VARADY"},
-{"日期": "2026-02-23", "类型": "大满贯", "胜者": "CHAN Baldwin/KIM Nayeong", "负者": "LIN Yun-Ju/CHENG I-Ching"},
-{"日期": "2026-02-23", "类型": "大满贯", "胜者": "Dang QIU/Sabine WINTER", "负者": "Sora MATSUSHIMA/Miwa HARIMOTO"},
-{"日期": "2026-02-23", "类型": "大满贯", "胜者": "HUANG Youzheng/CHEN Yi", "负者": "Akash PAL/Minhyung JEE"},
-{"日期": "2026-02-23", "类型": "大满贯", "胜者": "Hugo CALDERANO/Bruna TAKAHASHI", "负者": "Youssef ABDELAZIZ/Mariam ALHODABY"},
-{"日期": "2026-02-23", "类型": "大满贯", "胜者": "LIM Jonghoon/SHIN Yubin", "负者": "Alexis LEBRUN/Satsuki ODO"},
-{"日期": "2026-02-23", "类型": "大满贯", "胜者": "Manush SHAH/Diya CHITALE", "负者": "PANG Koen/ZENG Jian"},
-{"日期": "2026-02-23", "类型": "大满贯", "胜者": "WONG Chun Ting/DOO Hoi Kem", "负者": "Kristian KARLSSON/Christina KALLBERG"},
-{"日期": "2026-02-25", "类型": "大满贯", "胜者": "CHAN Baldwin/KIM Nayeong", "负者": "HUANG Youzheng/CHEN Yi"},
-{"日期": "2026-02-25", "类型": "大满贯", "胜者": "Hugo CALDERANO/Bruna TAKAHASHI", "负者": "Manush SHAH/Diya CHITALE"},
-{"日期": "2026-02-25", "类型": "大满贯", "胜者": "LIM Jonghoon/SHIN Yubin", "负者": "Dang QIU/Sabine WINTER"},
-{"日期": "2026-02-25", "类型": "大满贯", "胜者": "WONG Chun Ting/DOO Hoi Kem", "负者": "Alvaro ROBLES/Maria XIAO"},
-{"日期": "2026-02-26", "类型": "大满贯", "胜者": "Hugo CALDERANO/Bruna TAKAHASHI", "负者": "WONG Chun Ting/DOO Hoi Kem"},
-{"日期": "2026-02-26", "类型": "大满贯", "胜者": "LIM Jonghoon/SHIN Yubin", "负者": "CHAN Baldwin/KIM Nayeong"},
-{"日期": "2026-02-27", "类型": "大满贯", "胜者": "Hugo CALDERANO/Bruna TAKAHASHI", "负者": "LIM Jonghoon/SHIN Yubin"},
-{"日期": "2026-03-26", "类型": "常规挑战赛", "胜者": "Abdullah YIGENLER/Ece HARAC", "负者": "Rogelio CASTRO/Arantxa COSSIO"},
-{"日期": "2026-03-26", "类型": "常规挑战赛", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "Aboubaker BOURASS/Abir HAJ SALAH"},
-{"日期": "2026-03-26", "类型": "常规挑战赛", "胜者": "Esteban DORR/Elizabet ABRAAMIAN", "负者": "Nandan NARESH/Daniela ORTEGA"},
-{"日期": "2026-03-26", "类型": "常规挑战赛", "胜者": "Evgeny TIKHONOV/Maria PANFILOVA", "负者": "Wassim ESSID/Sayali WANI"},
-{"日期": "2026-03-26", "类型": "常规挑战赛", "胜者": "Manush SHAH/Diya CHITALE", "负者": "Flavien COTON/JOO Cheonhui"},
-{"日期": "2026-03-26", "类型": "常规挑战赛", "胜者": "Martin FRIIS/Filippa BERGAND", "负者": "Ibrahim GUNDUZ/Sibel ALTINKAYA"},
-{"日期": "2026-03-26", "类型": "常规挑战赛", "胜者": "Nikita ARTEMENKO/Valeriia SHCHERBATYKH", "负者": "Harmeet DESAI/Yashaswini GHORPADE"},
-{"日期": "2026-03-26", "类型": "常规挑战赛", "胜者": "Vladimir SIDORENKO/Mariia TAILAKOVA", "负者": "Remi CHAMBET-WEIL/Fadwa GARCIA"},
-{"日期": "2026-03-27", "类型": "常规挑战赛", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "Esteban DORR/Elizabet ABRAAMIAN"},
-{"日期": "2026-03-27", "类型": "常规挑战赛", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "Vladimir SIDORENKO/Mariia TAILAKOVA"},
-{"日期": "2026-03-27", "类型": "常规挑战赛", "胜者": "Esteban DORR/Elizabet ABRAAMIAN", "负者": "Evgeny TIKHONOV/Maria PANFILOVA"},
-{"日期": "2026-03-27", "类型": "常规挑战赛", "胜者": "Manush SHAH/Diya CHITALE", "负者": "Abdullah YIGENLER/Ece HARAC"},
-{"日期": "2026-03-27", "类型": "常规挑战赛", "胜者": "Manush SHAH/Diya CHITALE", "负者": "Martin FRIIS/Filippa BERGAND"},
-{"日期": "2026-03-27", "类型": "常规挑战赛", "胜者": "Martin FRIIS/Filippa BERGAND", "负者": "Nikita ARTEMENKO/Valeriia SHCHERBATYKH"},
-{"日期": "2026-03-28", "类型": "常规挑战赛", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "Manush SHAH/Diya CHITALE"},
-{"日期": "2026-04-09", "类型": "常规挑战赛", "胜者": "Cedric MEISSNER/LEE Hoi Man", "负者": "LI Hechen/YAO Ruixuan"},
-{"日期": "2026-04-09", "类型": "常规挑战赛", "胜者": "HUANG Youzheng/SHI Xunyao", "负者": "WEN Ruibo/ZONG Geman"},
-{"日期": "2026-04-09", "类型": "常规挑战赛", "胜者": "PANG Koen/ZENG Jian", "负者": "QUEK Izaac/SER Lin Qian"},
-{"日期": "2026-04-09", "类型": "常规挑战赛", "胜者": "Satoshi AIDA/Hitomi SATO", "负者": "CHOI Jiwook/KIM Eunseo"},
-{"日期": "2026-04-09", "类型": "常规挑战赛", "胜者": "WONG Chun Ting/DOO Hoi Kem", "负者": "Luka MLADENOVIC/Xia Lian NI"},
-{"日期": "2026-04-09", "类型": "常规挑战赛", "胜者": "WONG Qi Shen/TEE Ai Xin", "负者": "CHOONG Javen/LYNE Karen"},
-{"日期": "2026-04-09", "类型": "常规挑战赛", "胜者": "YIU Kwan To/NG Wing Lam", "负者": "Nicholas LUM/LAM Yee Lok"},
-{"日期": "2026-04-09", "类型": "常规挑战赛", "胜者": "Yuhi SAKAI/Mao TAKAMORI", "负者": "CHEN Yuanyu/QIN Yuxuan"},
-{"日期": "2026-04-10", "类型": "常规挑战赛", "胜者": "HUANG Youzheng/SHI Xunyao", "负者": "YIU Kwan To/NG Wing Lam"},
-{"日期": "2026-04-10", "类型": "常规挑战赛", "胜者": "HUANG Youzheng/SHI Xunyao", "负者": "Yuhi SAKAI/Mao TAKAMORI"},
-{"日期": "2026-04-10", "类型": "常规挑战赛", "胜者": "PANG Koen/ZENG Jian", "负者": "WONG Qi Shen/TEE Ai Xin"},
-{"日期": "2026-04-10", "类型": "常规挑战赛", "胜者": "WONG Chun Ting/DOO Hoi Kem", "负者": "Cedric MEISSNER/LEE Hoi Man"},
-{"日期": "2026-04-10", "类型": "常规挑战赛", "胜者": "WONG Chun Ting/DOO Hoi Kem", "负者": "PANG Koen/ZENG Jian"},
-{"日期": "2026-04-10", "类型": "常规挑战赛", "胜者": "Yuhi SAKAI/Mao TAKAMORI", "负者": "Satoshi AIDA/Hitomi SATO"},
-{"日期": "2026-04-11", "类型": "常规挑战赛", "胜者": "HUANG Youzheng/SHI Xunyao", "负者": "WONG Chun Ting/DOO Hoi Kem"},
-{"日期": "2026-05-21", "类型": "常规挑战赛", "胜者": "Abdulbasit ABDULFATAI/Sukurat AIYELABEGAN", "负者": "James MARFO/Cynthia KWABI"},
-{"日期": "2026-05-21", "类型": "常规挑战赛", "胜者": "Edward LY/Mo ZHANG", "负者": "Sodiq ADESANYA/Chinenye OKAFOR"},
-{"日期": "2026-05-21", "类型": "常规挑战赛", "胜者": "Harmeet DESAI/Yashaswini GHORPADE", "负者": "Matthew KUTI/Kabirat AYOOLA"},
-{"日期": "2026-05-21", "类型": "常规挑战赛", "胜者": "Kazuhiro YOSHIMURA/Reina ASO", "负者": "Muizz ADEGOKE/Aishat RABIU"},
-{"日期": "2026-05-21", "类型": "常规挑战赛", "胜者": "Leo DE NODREST/Camille LUTZ", "负者": "Francis ANTWI/Joanita BORTEYE"},
-{"日期": "2026-05-21", "类型": "常规挑战赛", "胜者": "Manav THAKKAR/Manika BATRA", "负者": "Taiwo MATI/Favour OJO"},
-{"日期": "2026-05-21", "类型": "常规挑战赛", "胜者": "Manush SHAH/Diya CHITALE", "负者": "Olajide OMOTAYO/Debora VIVARELLI"},
-{"日期": "2026-05-21", "类型": "常规挑战赛", "胜者": "Remi CHAMBET-WEIL/Paulina VEGA", "负者": "Mudit DANI/Ayhika MUKHERJEE"},
-{"日期": "2026-05-22", "类型": "常规挑战赛", "胜者": "Edward LY/Mo ZHANG", "负者": "Manav THAKKAR/Manika BATRA"},
-{"日期": "2026-05-22", "类型": "常规挑战赛", "胜者": "Leo DE NODREST/Camille LUTZ", "负者": "Harmeet DESAI/Yashaswini GHORPADE"},
-{"日期": "2026-05-22", "类型": "常规挑战赛", "胜者": "Leo DE NODREST/Camille LUTZ", "负者": "Remi CHAMBET-WEIL/Paulina VEGA"},
-{"日期": "2026-05-22", "类型": "常规挑战赛", "胜者": "Manush SHAH/Diya CHITALE", "负者": "Edward LY/Mo ZHANG"},
-{"日期": "2026-05-22", "类型": "常规挑战赛", "胜者": "Manush SHAH/Diya CHITALE", "负者": "Kazuhiro YOSHIMURA/Reina ASO"},
-{"日期": "2026-05-22", "类型": "常规挑战赛", "胜者": "Remi CHAMBET-WEIL/Paulina VEGA", "负者": "Abdulbasit ABDULFATAI/Sukurat AIYELABEGAN"},
-{"日期": "2026-05-23", "类型": "常规挑战赛", "胜者": "Manush SHAH/Diya CHITALE", "负者": "Leo DE NODREST/Camille LUTZ"},
-{"日期": "2026-06-04", "类型": "常规挑战赛", "胜者": "Eduard IONESCU/Bernadette SZOCS", "负者": "Kristijan STANOJKOVSKI/Amelia NIKOLOV"},
-{"日期": "2026-06-04", "类型": "常规挑战赛", "胜者": "Esteban DORR/Adriana DIAZ", "负者": "Alvaro ROBLES/Maria XIAO"},
-{"日期": "2026-06-04", "类型": "常规挑战赛", "胜者": "Hiromu KOBAYASHI/Miyuu KIHARA", "负者": "Steven MORENO/Brianna BURGOS"},
-{"日期": "2026-06-04", "类型": "常规挑战赛", "胜者": "Ivor BAN/Hana ARAPOVIC", "负者": "Andrej STOJANOVSKI/Sara STOJANOVSKA"},
-{"日期": "2026-06-04", "类型": "常规挑战赛", "胜者": "Lubomir PISTEJ/Sarah DE NUTTE", "负者": "PARK Ganghyeon/YOO Siwoo"},
-{"日期": "2026-06-04", "类型": "常规挑战赛", "胜者": "Luka MLADENOVIC/Xia Lian NI", "负者": "Satoshi AIDA/Hitomi SATO"},
-{"日期": "2026-06-04", "类型": "常规挑战赛", "胜者": "Maharu YOSHIMURA/Satsuki ODO", "负者": "Connor GREEN/Tin-Tin HO"},
-{"日期": "2026-06-04", "类型": "常规挑战赛", "胜者": "Omar ASSAR/Hana GODA", "负者": "Jules ROLLAND/Prithika PAVADE"},
-{"日期": "2026-06-05", "类型": "常规挑战赛", "胜者": "Esteban DORR/Adriana DIAZ", "负者": "Ivor BAN/Hana ARAPOVIC"},
-{"日期": "2026-06-05", "类型": "常规挑战赛", "胜者": "Esteban DORR/Adriana DIAZ", "负者": "Lubomir PISTEJ/Sarah DE NUTTE"},
-{"日期": "2026-06-05", "类型": "常规挑战赛", "胜者": "Hiromu KOBAYASHI/Miyuu KIHARA", "负者": "Luka MLADENOVIC/Xia Lian NI"},
-{"日期": "2026-06-05", "类型": "常规挑战赛", "胜者": "Hiromu KOBAYASHI/Miyuu KIHARA", "负者": "Maharu YOSHIMURA/Satsuki ODO"},
-{"日期": "2026-06-05", "类型": "常规挑战赛", "胜者": "Ivor BAN/Hana ARAPOVIC", "负者": "Omar ASSAR/Hana GODA"},
-{"日期": "2026-06-05", "类型": "常规挑战赛", "胜者": "Maharu YOSHIMURA/Satsuki ODO", "负者": "Eduard IONESCU/Bernadette SZOCS"},
-{"日期": "2026-06-06", "类型": "常规挑战赛", "胜者": "Hiromu KOBAYASHI/Miyuu KIHARA", "负者": "Esteban DORR/Adriana DIAZ"},
-{"日期": "2026-06-11", "类型": "常规挑战赛", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "Borgar HAUG/Tatiana KUKULKOVA"},
-{"日期": "2026-06-11", "类型": "常规挑战赛", "胜者": "Connor GREEN/Tin-Tin HO", "负者": "Dang QIU/Annett KAUFMANN"},
-{"日期": "2026-06-11", "类型": "常规挑战赛", "胜者": "PANG Koen/ZENG Jian", "负者": "Borna PETEK/Andrea PAVLOVIC"},
-{"日期": "2026-06-11", "类型": "常规挑战赛", "胜者": "Satoshi AIDA/Hitomi SATO", "负者": "Ivor BAN/Hana ARAPOVIC"},
-{"日期": "2026-06-11", "类型": "常规挑战赛", "胜者": "Shunsuke TOGAMI/Satsuki ODO", "负者": "Manav THAKKAR/Manika BATRA"},
-{"日期": "2026-06-11", "类型": "常规挑战赛", "胜者": "WEN Ruibo/KUAI Man", "负者": "YUAN Licen/CHEN Yi"},
-{"日期": "2026-06-11", "类型": "常规挑战赛", "胜者": "WONG Chun Ting/DOO Hoi Kem", "负者": "PARK Ganghyeon/KIM Nayeong"},
-{"日期": "2026-06-11", "类型": "常规挑战赛", "胜者": "YIU Kwan To/NG Wing Lam", "负者": "Payas JAIN/Syndrela DAS"},
-{"日期": "2026-06-12", "类型": "常规挑战赛", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "PANG Koen/ZENG Jian"},
-{"日期": "2026-06-12", "类型": "常规挑战赛", "胜者": "Connor GREEN/Tin-Tin HO", "负者": "WEN Ruibo/KUAI Man"},
-{"日期": "2026-06-12", "类型": "常规挑战赛", "胜者": "Shunsuke TOGAMI/Satsuki ODO", "负者": "Alvaro ROBLES/Maria XIAO"},
-{"日期": "2026-06-12", "类型": "常规挑战赛", "胜者": "Shunsuke TOGAMI/Satsuki ODO", "负者": "Satoshi AIDA/Hitomi SATO"},
-{"日期": "2026-06-12", "类型": "常规挑战赛", "胜者": "WONG Chun Ting/DOO Hoi Kem", "负者": "Connor GREEN/Tin-Tin HO"},
-{"日期": "2026-06-12", "类型": "常规挑战赛", "胜者": "WONG Chun Ting/DOO Hoi Kem", "负者": "YIU Kwan To/NG Wing Lam"},
-{"日期": "2026-06-13", "类型": "常规挑战赛", "胜者": "WONG Chun Ting/DOO Hoi Kem", "负者": "Shunsuke TOGAMI/Satsuki ODO"},
-{"日期": "2026-06-18", "类型": "球星挑战赛", "胜者": "Dang QIU/Sabine WINTER", "负者": "Miha PODOBNIK/Katarina STRAZAR"},
-{"日期": "2026-06-18", "类型": "球星挑战赛", "胜者": "HUANG Youzheng/CHEN Yi", "负者": "Lubomir PISTEJ/Tatiana KUKULKOVA"},
-{"日期": "2026-06-18", "类型": "球星挑战赛", "胜者": "Hugo CALDERANO/Bruna TAKAHASHI", "负者": "PANG Koen/ZENG Jian"},
-{"日期": "2026-06-18", "类型": "球星挑战赛", "胜者": "LIM Jonghoon/SHIN Yubin", "负者": "WEN Ruibo/KUAI Man"},
-{"日期": "2026-06-18", "类型": "球星挑战赛", "胜者": "Manush SHAH/Diya CHITALE", "负者": "Peter HRIBAR/Ana TOFANT"},
-{"日期": "2026-06-18", "类型": "球星挑战赛", "胜者": "Satoshi AIDA/Hitomi SATO", "负者": "Eduard IONESCU/Bernadette SZOCS"},
-{"日期": "2026-06-18", "类型": "球星挑战赛", "胜者": "Shunsuke TOGAMI/Satsuki ODO", "负者": "Ivor BAN/Hana ARAPOVIC"},
-{"日期": "2026-06-18", "类型": "球星挑战赛", "胜者": "YIU Kwan To/Barbora VARADY", "负者": "OH Junsung/JOO Cheonhui"},
-{"日期": "2026-06-19", "类型": "球星挑战赛", "胜者": "Dang QIU/Sabine WINTER", "负者": "Hugo CALDERANO/Bruna TAKAHASHI"},
-{"日期": "2026-06-19", "类型": "球星挑战赛", "胜者": "HUANG Youzheng/CHEN Yi", "负者": "Shunsuke TOGAMI/Satsuki ODO"},
-{"日期": "2026-06-19", "类型": "球星挑战赛", "胜者": "LIM Jonghoon/SHIN Yubin", "负者": "Satoshi AIDA/Hitomi SATO"},
-{"日期": "2026-06-19", "类型": "球星挑战赛", "胜者": "Manush SHAH/Diya CHITALE", "负者": "YIU Kwan To/Barbora VARADY"},
-{"日期": "2026-06-20", "类型": "球星挑战赛", "胜者": "Dang QIU/Sabine WINTER", "负者": "Manush SHAH/Diya CHITALE"},
-{"日期": "2026-06-20", "类型": "球星挑战赛", "胜者": "LIM Jonghoon/SHIN Yubin", "负者": "HUANG Youzheng/CHEN Yi"},
-{"日期": "2026-06-21", "类型": "球星挑战赛", "胜者": "LIM Jonghoon/SHIN Yubin", "负者": "Dang QIU/Sabine WINTER"},
-{"日期": "2026-06-28", "类型": "大满贯", "胜者": "Alexis LEBRUN/Satsuki ODO", "负者": "Thibault PORET/Prithika PAVADE"},
-{"日期": "2026-06-28", "类型": "大满贯", "胜者": "Anders LIND/Anna HURSEY", "负者": "Luka MLADENOVIC/NG Wing Lam"},
-{"日期": "2026-06-28", "类型": "大满贯", "胜者": "Dang QIU/Sabine WINTER", "负者": "Gustavo GOMEZ/Daniela ORTEGA"},
-{"日期": "2026-06-28", "类型": "大满贯", "胜者": "Jishan LIANG/Sally MOYLAND", "负者": "PANG Koen/ZENG Jian"},
-{"日期": "2026-06-28", "类型": "大满贯", "胜者": "Lubomir PISTEJ/Tatiana KUKULKOVA", "负者": "CHAN Baldwin/KIM Nayeong"},
-{"日期": "2026-06-28", "类型": "大满贯", "胜者": "Nandan NARESH/Jessica REYES LAI", "负者": "Bosman BOTHA/QIN Yuxuan"},
-{"日期": "2026-06-28", "类型": "大满贯", "胜者": "Patrick FRANZISKA/Adriana DIAZ", "负者": "Aditya SAREEN/Barbora VARADY"},
-{"日期": "2026-06-28", "类型": "大满贯", "胜者": "WEN Ruibo/KUAI Man", "负者": "Nicholas LUM/Yangzi LIU"},
-{"日期": "2026-06-29", "类型": "大满贯", "胜者": "Alexis LEBRUN/Satsuki ODO", "负者": "Alvaro ROBLES/Maria XIAO"},
-{"日期": "2026-06-29", "类型": "大满贯", "胜者": "Dang QIU/Sabine WINTER", "负者": "Eduard IONESCU/Bernadette SZOCS"},
-{"日期": "2026-06-29", "类型": "大满贯", "胜者": "Hugo CALDERANO/Bruna TAKAHASHI", "负者": "Nandan NARESH/Jessica REYES LAI"},
-{"日期": "2026-06-29", "类型": "大满贯", "胜者": "Jishan LIANG/Sally MOYLAND", "负者": "Manush SHAH/Diya CHITALE"},
-{"日期": "2026-06-29", "类型": "大满贯", "胜者": "LIM Jonghoon/SHIN Yubin", "负者": "Anders LIND/Anna HURSEY"},
-{"日期": "2026-06-29", "类型": "大满贯", "胜者": "Sora MATSUSHIMA/Miwa HARIMOTO", "负者": "Patrick FRANZISKA/Adriana DIAZ"},
-{"日期": "2026-06-29", "类型": "大满贯", "胜者": "WANG Chuqin/SUN Yingsha", "负者": "Lubomir PISTEJ/Tatiana KUKULKOVA"},
-{"日期": "2026-06-29", "类型": "大满贯", "胜者": "WEN Ruibo/KUAI Man", "负者": "WONG Chun Ting/DOO Hoi Kem"},
-{"日期": "2026-07-01", "类型": "大满贯", "胜者": "Hugo CALDERANO/Bruna TAKAHASHI", "负者": "Jishan LIANG/Sally MOYLAND"},
-{"日期": "2026-07-01", "类型": "大满贯", "胜者": "LIM Jonghoon/SHIN Yubin", "负者": "Dang QIU/Sabine WINTER"},
-{"日期": "2026-07-01", "类型": "大满贯", "胜者": "WANG Chuqin/SUN Yingsha", "负者": "Alexis LEBRUN/Satsuki ODO"},
-{"日期": "2026-07-01", "类型": "大满贯", "胜者": "WEN Ruibo/KUAI Man", "负者": "Sora MATSUSHIMA/Miwa HARIMOTO"},
-{"日期": "2026-07-02", "类型": "大满贯", "胜者": "LIM Jonghoon/SHIN Yubin", "负者": "WEN Ruibo/KUAI Man"},
-{"日期": "2026-07-02", "类型": "大满贯", "胜者": "WANG Chuqin/SUN Yingsha", "负者": "Hugo CALDERANO/Bruna TAKAHASHI"},
-{"日期": "2026-07-03", "类型": "大满贯", "胜者": "LIM Jonghoon/SHIN Yubin", "负者": "WANG Chuqin/SUN Yingsha"},
-{"日期": "2026-07-23", "类型": "球星挑战赛", "胜者": "Guilherme TEODORO/Giulia TAKAHASHI", "负者": "Benedikt DUDA/Nina MITTELHAM"},
-{"日期": "2026-07-23", "类型": "球星挑战赛", "胜者": "Gustavo GOMEZ/Daniela ORTEGA", "负者": "Lubomir PISTEJ/Tatiana KUKULKOVA"},
-{"日期": "2026-07-23", "类型": "球星挑战赛", "胜者": "Hugo CALDERANO/Bruna TAKAHASHI", "负者": "Eusebio VOS/Valentina RIOS"},
-{"日期": "2026-07-23", "类型": "球星挑战赛", "胜者": "OH Junsung/YOO Yerin", "负者": "Felipe ARADO/Laura WATANABE"},
-{"日期": "2026-07-23", "类型": "球星挑战赛", "胜者": "Shunsuke TOGAMI/Satsuki ODO", "负者": "Alexis LEBRUN/Charlotte LUTZ"},
-{"日期": "2026-07-23", "类型": "球星挑战赛", "胜者": "Vincent PICARD/Elizabet ABRAAMIAN", "负者": "Edward LY/Mo ZHANG"},
-{"日期": "2026-07-23", "类型": "球星挑战赛", "胜者": "WONG Chun Ting/DOO Hoi Kem", "负者": "Leonardo IIZUKA/Victoria STRASSBURGER"},
-{"日期": "2026-07-23", "类型": "球星挑战赛", "胜者": "YIU Kwan To/NG Wing Lam", "负者": "Nicolas BURGOS/Paulina VEGA"},
-{"日期": "2026-07-24", "类型": "球星挑战赛", "胜者": "Hugo CALDERANO/Bruna TAKAHASHI", "负者": "Guilherme TEODORO/Giulia TAKAHASHI"},
-{"日期": "2026-07-24", "类型": "球星挑战赛", "胜者": "Shunsuke TOGAMI/Satsuki ODO", "负者": "OH Junsung/YOO Yerin"},
-{"日期": "2026-07-24", "类型": "球星挑战赛", "胜者": "WONG Chun Ting/DOO Hoi Kem", "负者": "Vincent PICARD/Elizabet ABRAAMIAN"},
-{"日期": "2026-07-24", "类型": "球星挑战赛", "胜者": "YIU Kwan To/NG Wing Lam", "负者": "Gustavo GOMEZ/Daniela ORTEGA"},
-{"日期": "2026-07-25", "类型": "球星挑战赛", "胜者": "Hugo CALDERANO/Bruna TAKAHASHI", "负者": "YIU Kwan To/NG Wing Lam"},
-{"日期": "2026-07-25", "类型": "球星挑战赛", "胜者": "Shunsuke TOGAMI/Satsuki ODO", "负者": "WONG Chun Ting/DOO Hoi Kem"},
-{"日期": "2026-07-26", "类型": "球星挑战赛", "胜者": "Shunsuke TOGAMI/Satsuki ODO", "负者": "Hugo CALDERANO/Bruna TAKAHASHI"},
-{"日期": "2026-01-29", "类型": "支线赛", "胜者": "YUAN Licen/BAI Siwen", "负者": "CHEN Junsong/QIN Yuxuan"},
-{"日期": "2026-01-29", "类型": "支线赛", "胜者": "Snehit SURAVAJJULA/Sayali WANI", "负者": "Tarvachinbo BUYAN/Khatansaikhan GANZORIG"},
-{"日期": "2026-01-29", "类型": "支线赛", "胜者": "Vladislav MAKAROV/Vlada VORONINA", "负者": "LE Ellsworth/LAI Chloe"},
-{"日期": "2026-01-29", "类型": "支线赛", "胜者": "CHEW Clarence/LOY Ming Ying", "负者": "Abdulaziz AL ABDULLA/Racha LOGHRAIBI"},
-{"日期": "2026-01-29", "类型": "支线赛", "胜者": "TAN Zhao Ray/TAN Zhao Yun", "负者": "Sultan AL-KUWARI/Rokaia ELBAZ"},
-{"日期": "2026-01-29", "类型": "支线赛", "胜者": "Connor GREEN/Tin-Tin HO", "负者": "Mohammed ABDULWAHHAB/Aia MOHAMED"},
-{"日期": "2026-01-29", "类型": "支线赛", "胜者": "Dmitrii VINOGRADOV/Arina SLAUTINA", "负者": "HUANG Youzheng/ZONG Geman"},
-{"日期": "2026-01-29", "类型": "支线赛", "胜者": "Evgeny TIKHONOV/Maria PANFILOVA", "负者": "Iskender KHARKI/Sarvinoz MIRKADIROVA"},
-{"日期": "2026-01-30", "类型": "支线赛", "胜者": "YUAN Licen/BAI Siwen", "负者": "Snehit SURAVAJJULA/Sayali WANI"},
-{"日期": "2026-01-30", "类型": "支线赛", "胜者": "CHEW Clarence/LOY Ming Ying", "负者": "Vladislav MAKAROV/Vlada VORONINA"},
-{"日期": "2026-01-30", "类型": "支线赛", "胜者": "Connor GREEN/Tin-Tin HO", "负者": "TAN Zhao Ray/TAN Zhao Yun"},
-{"日期": "2026-01-30", "类型": "支线赛", "胜者": "Evgeny TIKHONOV/Maria PANFILOVA", "负者": "Dmitrii VINOGRADOV/Arina SLAUTINA"},
-{"日期": "2026-01-30", "类型": "支线赛", "胜者": "CHEW Clarence/LOY Ming Ying", "负者": "YUAN Licen/BAI Siwen"},
-{"日期": "2026-01-30", "类型": "支线赛", "胜者": "Evgeny TIKHONOV/Maria PANFILOVA", "负者": "Connor GREEN/Tin-Tin HO"},
-{"日期": "2026-01-31", "类型": "支线赛", "胜者": "Evgeny TIKHONOV/Maria PANFILOVA", "负者": "CHEW Clarence/LOY Ming Ying"},
-{"日期": "2026-01-29", "类型": "支线赛", "胜者": "Flavien COTON/Charlotte LUTZ", "负者": "Eitay SHUSHAN/Vivien SCHOLZ"},
-{"日期": "2026-01-29", "类型": "支线赛", "胜者": "Sam BOCCARD/Fanny DOUTAZ", "负者": "Nathan LAM/Nina GUO ZHENG"},
-{"日期": "2026-01-29", "类型": "支线赛", "胜者": "Wim VERDONSCHOT/Yuan WAN", "负者": "Barish MOULLET/Rachel MORET"},
-{"日期": "2026-01-29", "类型": "支线赛", "胜者": "Ivan HENCL/Dora COSIC", "负者": "Luka MLADENOVIC/Karoline MISCHEK"},
-{"日期": "2026-01-29", "类型": "支线赛", "胜者": "Clement LAINE/Gaia MONFARDINI", "负者": "Leon BENKO/Andrea PAVLOVIC"},
-{"日期": "2026-01-29", "类型": "支线赛", "胜者": "Maciej KUBIK/Natalia BAJOR", "负者": "Romain BRARD/Clea DE STOPPELEIRE"},
-{"日期": "2026-01-29", "类型": "支线赛", "胜者": "Joe SEYFRIED/Leana HOCHART", "负者": "Leo DE NODREST/Camille LUTZ"},
-{"日期": "2026-01-29", "类型": "支线赛", "胜者": "Marek BADOWSKI/Zuzanna WIELGOS", "负者": "Niagol STOYANOV/Giorgia PICCOLIN"},
-{"日期": "2026-01-30", "类型": "支线赛", "胜者": "Flavien COTON/Charlotte LUTZ", "负者": "Sam BOCCARD/Fanny DOUTAZ"},
-{"日期": "2026-01-30", "类型": "支线赛", "胜者": "Wim VERDONSCHOT/Yuan WAN", "负者": "Ivan HENCL/Dora COSIC"},
-{"日期": "2026-01-30", "类型": "支线赛", "胜者": "Maciej KUBIK/Natalia BAJOR", "负者": "Clement LAINE/Gaia MONFARDINI"},
-{"日期": "2026-01-30", "类型": "支线赛", "胜者": "Marek BADOWSKI/Zuzanna WIELGOS", "负者": "Joe SEYFRIED/Leana HOCHART"},
-{"日期": "2026-01-30", "类型": "支线赛", "胜者": "Wim VERDONSCHOT/Yuan WAN", "负者": "Flavien COTON/Charlotte LUTZ"},
-{"日期": "2026-01-30", "类型": "支线赛", "胜者": "Marek BADOWSKI/Zuzanna WIELGOS", "负者": "Maciej KUBIK/Natalia BAJOR"},
-{"日期": "2026-01-31", "类型": "支线赛", "胜者": "Marek BADOWSKI/Zuzanna WIELGOS", "负者": "Wim VERDONSCHOT/Yuan WAN"},
-{"日期": "2026-02-04", "类型": "支线赛", "胜者": "Dmitrii VINOGRADOV/Arina SLAUTINA", "负者": "Evgeny TIKHONOV/Maria PANFILOVA"},
-{"日期": "2026-02-04", "类型": "支线赛", "胜者": "Clement LAINE/Gaia MONFARDINI", "负者": "Andrei ISTRATE/Ioana SINGEORZAN"},
-{"日期": "2026-02-04", "类型": "支线赛", "胜者": "Vladislav MAKAROV/Vlada VORONINA", "负者": "Vladislav ZAKHAROV/Zhanerke KOSHKUMBAYEVA"},
-{"日期": "2026-02-05", "类型": "支线赛", "胜者": "YIU Kwan To/NG Wing Lam", "负者": "Dmitrii VINOGRADOV/Arina SLAUTINA"},
-{"日期": "2026-02-05", "类型": "支线赛", "胜者": "Abdullah YIGENLER/Ece HARAC", "负者": "Dominykas SAMUOLIS/Mille STOFFREGEN"},
-{"日期": "2026-02-05", "类型": "支线赛", "胜者": "Clement LAINE/Gaia MONFARDINI", "负者": "LI Hon Ming/Tin-Tin HO"},
-{"日期": "2026-02-05", "类型": "支线赛", "胜者": "Darius MOVILEANU/Elena ZAHARIA", "负者": "Vladislav MAKAROV/Vlada VORONINA"},
-{"日期": "2026-02-05", "类型": "支线赛", "胜者": "Abdullah YIGENLER/Ece HARAC", "负者": "YIU Kwan To/NG Wing Lam"},
-{"日期": "2026-02-05", "类型": "支线赛", "胜者": "Darius MOVILEANU/Elena ZAHARIA", "负者": "Clement LAINE/Gaia MONFARDINI"},
-{"日期": "2026-02-06", "类型": "支线赛", "胜者": "Darius MOVILEANU/Elena ZAHARIA", "负者": "Abdullah YIGENLER/Ece HARAC"},
-{"日期": "2026-03-04", "类型": "支线赛", "胜者": "Samuel ARPAS/Barbora VARADY", "负者": "Guilherme TEODORO/Giulia TAKAHASHI"},
-{"日期": "2026-03-04", "类型": "支线赛", "胜者": "Wim VERDONSCHOT/Josephina NEUMANN", "负者": "Hayato MIKI/Manami IMAEDA"},
-{"日期": "2026-03-04", "类型": "支线赛", "胜者": "Connor GREEN/Tin-Tin HO", "负者": "Ricardo WALTHER/Ying HAN"},
-{"日期": "2026-03-04", "类型": "支线赛", "胜者": "Ivan HENCL/Dora COSIC", "负者": "Mael VAN DESSEL/Enisa SADIKOVIC"},
-{"日期": "2026-03-04", "类型": "支线赛", "胜者": "Edward LY/Mo ZHANG", "负者": "Jann Mari NAYRE/Shuohan MEN"},
-{"日期": "2026-03-04", "类型": "支线赛", "胜者": "Tomoki OMODA/Kotomi OMODA", "负者": "Iskender KHARKI/Sarvinoz MIRKADIROVA"},
-{"日期": "2026-03-04", "类型": "支线赛", "胜者": "Maciej KUBIK/Natalia BAJOR", "负者": "Dimitrij OVTCHAROV/Annett KAUFMANN"},
-{"日期": "2026-03-04", "类型": "支线赛", "胜者": "Borgar HAUG/Anna HURSEY", "负者": "Nandan NARESH/Sophia KLEE"},
-{"日期": "2026-03-05", "类型": "支线赛", "胜者": "Samuel ARPAS/Barbora VARADY", "负者": "Wim VERDONSCHOT/Josephina NEUMANN"},
-{"日期": "2026-03-05", "类型": "支线赛", "胜者": "Connor GREEN/Tin-Tin HO", "负者": "Ivan HENCL/Dora COSIC"},
-{"日期": "2026-03-05", "类型": "支线赛", "胜者": "Edward LY/Mo ZHANG", "负者": "Tomoki OMODA/Kotomi OMODA"},
-{"日期": "2026-03-05", "类型": "支线赛", "胜者": "Borgar HAUG/Anna HURSEY", "负者": "Maciej KUBIK/Natalia BAJOR"},
-{"日期": "2026-03-05", "类型": "支线赛", "胜者": "Connor GREEN/Tin-Tin HO", "负者": "Samuel ARPAS/Barbora VARADY"},
-{"日期": "2026-03-05", "类型": "支线赛", "胜者": "Borgar HAUG/Anna HURSEY", "负者": "Edward LY/Mo ZHANG"},
-{"日期": "2026-03-06", "类型": "支线赛", "胜者": "Connor GREEN/Tin-Tin HO", "负者": "Borgar HAUG/Anna HURSEY"},
-{"日期": "2026-03-09", "类型": "支线赛", "胜者": "Ivor BAN/Hana ARAPOVIC", "负者": "Peter HRIBAR/Ana TOFANT"},
-{"日期": "2026-03-09", "类型": "支线赛", "胜者": "Ivan HENCL/Dora COSIC", "负者": "Damjan ZELKO/Lara OPEKA"},
-{"日期": "2026-03-09", "类型": "支线赛", "胜者": "Keishi HAGIHARA/Kotomi OMODA", "负者": "Joao MONTEIRO/Julia LEAL"},
-{"日期": "2026-03-09", "类型": "支线赛", "胜者": "WOO Hyeonggyu/LEE Daeun", "负者": "Darius MOVILEANU/Lilou MASSART"},
-{"日期": "2026-03-09", "类型": "支线赛", "胜者": "Brin VOVK PETROVSKI/Sara TOKIC", "负者": "Ziga ZIGON/Tjasa NOVAK"},
-{"日期": "2026-03-09", "类型": "支线赛", "胜者": "Maciej KUBIK/Zuzanna WIELGOS", "负者": "Vit KADLEC/Klara HRABICOVA"},
-{"日期": "2026-03-09", "类型": "支线赛", "胜者": "Riyan DUTTA/Hardee PATEL", "负者": "Gregor ZAFOSTNIK/Lea PAULIN"},
-{"日期": "2026-03-09", "类型": "支线赛", "胜者": "Connor GREEN/Tin-Tin HO", "负者": "Miha PODOBNIK/Katarina STRAZAR"},
-{"日期": "2026-03-09", "类型": "支线赛", "胜者": "Ivor BAN/Hana ARAPOVIC", "负者": "Ivan HENCL/Dora COSIC"},
-{"日期": "2026-03-09", "类型": "支线赛", "胜者": "Keishi HAGIHARA/Kotomi OMODA", "负者": "WOO Hyeonggyu/LEE Daeun"},
-{"日期": "2026-03-09", "类型": "支线赛", "胜者": "Brin VOVK PETROVSKI/Sara TOKIC", "负者": "Maciej KUBIK/Zuzanna WIELGOS"},
-{"日期": "2026-03-09", "类型": "支线赛", "胜者": "Connor GREEN/Tin-Tin HO", "负者": "Riyan DUTTA/Hardee PATEL"},
-{"日期": "2026-03-10", "类型": "支线赛", "胜者": "Keishi HAGIHARA/Kotomi OMODA", "负者": "Ivor BAN/Hana ARAPOVIC"},
-{"日期": "2026-03-10", "类型": "支线赛", "胜者": "Connor GREEN/Tin-Tin HO", "负者": "Brin VOVK PETROVSKI/Sara TOKIC"},
-{"日期": "2026-03-11", "类型": "支线赛", "胜者": "Keishi HAGIHARA/Kotomi OMODA", "负者": "Connor GREEN/Tin-Tin HO"},
-{"日期": "2026-03-14", "类型": "支线赛", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "Vit KADLEC/Klara HRABICOVA"},
-{"日期": "2026-03-14", "类型": "支线赛", "胜者": "Ivan HENCL/Dora COSIC", "负者": "Deni KOZUL/Sara TOKIC"},
-{"日期": "2026-03-14", "类型": "支线赛", "胜者": "Felipe ARADO/Karina SHIRAY", "负者": "Simeon MARTIN/Dominika WILTSCHKOVA"},
-{"日期": "2026-03-14", "类型": "支线赛", "胜者": "Cedric MEISSNER/NINA MITTELHAM", "负者": "Peter HRIBAR/Ana TOFANT"},
-{"日期": "2026-03-14", "类型": "支线赛", "胜者": "Florian BOURRASSAUD/Charlotte LUTZ", "负者": "Leon BENKO/Lana BENKO"},
-{"日期": "2026-03-14", "类型": "支线赛", "胜者": "Ivor BAN/Hana ARAPOVIC", "负者": "Radim MORAVEK/Jana VASENDOVA"},
-{"日期": "2026-03-14", "类型": "支线赛", "胜者": "Alessi MASSART/Lilou MASSART", "负者": "WOO Hyeonggyu/LEE Daeun"},
-{"日期": "2026-03-14", "类型": "支线赛", "胜者": "Stepan BRHEL/Linda ZADEROVA", "负者": "Lubomir PISTEJ/Tatiana KUKULKOVA"},
-{"日期": "2026-03-14", "类型": "支线赛", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "Ivan HENCL/Dora COSIC"},
-{"日期": "2026-03-14", "类型": "支线赛", "胜者": "Cedric MEISSNER/NINA MITTELHAM", "负者": "Felipe ARADO/Karina SHIRAY"},
-{"日期": "2026-03-14", "类型": "支线赛", "胜者": "Florian BOURRASSAUD/Charlotte LUTZ", "负者": "Ivor BAN/Hana ARAPOVIC"},
-{"日期": "2026-03-14", "类型": "支线赛", "胜者": "Alessi MASSART/Lilou MASSART", "负者": "Stepan BRHEL/Linda ZADEROVA"},
-{"日期": "2026-03-15", "类型": "支线赛", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "Cedric MEISSNER/NINA MITTELHAM"},
-{"日期": "2026-03-15", "类型": "支线赛", "胜者": "Alessi MASSART/Lilou MASSART", "负者": "Florian BOURRASSAUD/Charlotte LUTZ"},
-{"日期": "2026-03-16", "类型": "支线赛", "胜者": "Alessi MASSART/Lilou MASSART", "负者": "Alvaro ROBLES/Maria XIAO"},
-{"日期": "2026-04-09", "类型": "支线赛", "胜者": "Akash PAL/Sreeja AKULA", "负者": "Bodhisatwa CHAUDHURY/Nursema COKLAR"},
-{"日期": "2026-04-09", "类型": "支线赛", "胜者": "Lubomir PISTEJ/Sarah DE NUTTE", "负者": "Khalid ALSHAREIF/Betul Nur KAHRAMAN"},
-{"日期": "2026-04-09", "类型": "支线赛", "胜者": "Ivor BAN/Nithya MANI", "负者": "Jash MODI/Taneesha KOTECHA"},
-{"日期": "2026-04-09", "类型": "支线赛", "胜者": "Mattias KARLSSON/Nina MITTELHAM", "负者": "Ali ALKHADRAWI/Nithya MANI"},
-{"日期": "2026-04-09", "类型": "支线赛", "胜者": "JANG Seongil/HEO Yerim", "负者": "Abdulaziz BU SHULAYBI/Nursema COKLAR"},
-{"日期": "2026-04-09", "类型": "支线赛", "胜者": "Jo YOKOTANI/Hina HAYATA", "负者": "Kenan KAHRAMAN/Malamatenia PAPADIMITRIOU"},
-{"日期": "2026-04-09", "类型": "支线赛", "胜者": "Harmeet DESAI/Yashaswini GHORPADE", "负者": "KWON Hyuk/KIM Dahee"},
-{"日期": "2026-04-09", "类型": "支线赛", "胜者": "Edward LY/CHOI Haeeun", "负者": "Hakan ISIK/Dora COSIC"},
-{"日期": "2026-04-09", "类型": "支线赛", "胜者": "Akash PAL/Sreeja AKULA", "负者": "Lubomir PISTEJ/Sarah DE NUTTE"},
-{"日期": "2026-04-09", "类型": "支线赛", "胜者": "Ivor BAN/Nithya MANI", "负者": "Mattias KARLSSON/Nina MITTELHAM"},
-{"日期": "2026-04-09", "类型": "支线赛", "胜者": "JANG Seongil/HEO Yerim", "负者": "Jo YOKOTANI/Hina HAYATA"},
-{"日期": "2026-04-09", "类型": "支线赛", "胜者": "Harmeet DESAI/Yashaswini GHORPADE", "负者": "Edward LY/CHOI Haeeun"},
-{"日期": "2026-04-10", "类型": "支线赛", "胜者": "Akash PAL/Sreeja AKULA", "负者": "Ivor BAN/Nithya MANI"},
-{"日期": "2026-04-10", "类型": "支线赛", "胜者": "JANG Seongil/HEO Yerim", "负者": "Harmeet DESAI/Yashaswini GHORPADE"},
-{"日期": "2026-04-11", "类型": "支线赛", "胜者": "Akash PAL/Sreeja AKULA", "负者": "JANG Seongil/HEO Yerim"},
-{"日期": "2026-04-15", "类型": "支线赛", "胜者": "Stepan BRHEL/Veronika POLAKOVA", "负者": "Guilherme TEODORO/Giulia TAKAHASHI"},
-{"日期": "2026-04-15", "类型": "支线赛", "胜者": "Nandan NARESH/Jessica REYES LAI", "负者": "Payas JAIN/Taneesha KOTECHA"},
-{"日期": "2026-04-15", "类型": "支线赛", "胜者": "Connor GREEN/Tin-Tin HO", "负者": "Louis LAINE/Claire PICARD"},
-{"日期": "2026-04-15", "类型": "支线赛", "胜者": "Marek BADOWSKI/Zuzanna WIELGOS", "负者": "Benjamin FRUCHART/Isa COK"},
-{"日期": "2026-04-15", "类型": "支线赛", "胜者": "BACK Donghoon/KIM Seoyun", "负者": "Abdullah YIGENLER/Ece HARAC"},
-{"日期": "2026-04-15", "类型": "支线赛", "胜者": "Finn LUU/Yangzi LIU", "负者": "Akash PAL/Sutirtha MUKHERJEE"},
-{"日期": "2026-04-15", "类型": "支线赛", "胜者": "Samuel ARPAS/Barbora VARADY", "负者": "Ondrej KVETON/Hanka KODET"},
-{"日期": "2026-04-15", "类型": "支线赛", "胜者": "Lubomir PISTEJ/Tatiana KUKULKOVA", "负者": "Iskender KHARKI/Sarvinoz MIRKADIROVA"},
-{"日期": "2026-04-15", "类型": "支线赛", "胜者": "Nandan NARESH/Jessica REYES LAI", "负者": "Stepan BRHEL/Veronika POLAKOVA"},
-{"日期": "2026-04-15", "类型": "支线赛", "胜者": "Marek BADOWSKI/Zuzanna WIELGOS", "负者": "Connor GREEN/Tin-Tin HO"},
-{"日期": "2026-04-15", "类型": "支线赛", "胜者": "BACK Donghoon/KIM Seoyun", "负者": "Finn LUU/Yangzi LIU"},
-{"日期": "2026-04-15", "类型": "支线赛", "胜者": "Samuel ARPAS/Barbora VARADY", "负者": "Lubomir PISTEJ/Tatiana KUKULKOVA"},
-{"日期": "2026-04-16", "类型": "支线赛", "胜者": "Marek BADOWSKI/Zuzanna WIELGOS", "负者": "Nandan NARESH/Jessica REYES LAI"},
-{"日期": "2026-04-16", "类型": "支线赛", "胜者": "Samuel ARPAS/Barbora VARADY", "负者": "BACK Donghoon/KIM Seoyun"},
-{"日期": "2026-04-17", "类型": "支线赛", "胜者": "Samuel ARPAS/Barbora VARADY", "负者": "Marek BADOWSKI/Zuzanna WIELGOS"},
-{"日期": "2026-04-20", "类型": "支线赛", "胜者": "Akash PAL/Sutirtha MUKHERJEE", "负者": "Lubomir PISTEJ/Tatiana KUKULKOVA"},
-{"日期": "2026-04-20", "类型": "支线赛", "胜者": "Nikon SHUTOV/Natalia GRIGELOVA", "负者": "Damian FLORO/Ema LABOSOVA"},
-{"日期": "2026-04-20", "类型": "支线赛", "胜者": "Samuel ARPAS/Barbora VARADY", "负者": "Jakub ZELINKA/Nikoleta PUCHOVANOVA"},
-{"日期": "2026-04-20", "类型": "支线赛", "胜者": "JANG Seongil/LEE Daeun", "负者": "Alexander VALUCH/Monika MAROUSKOVA"},
-{"日期": "2026-04-20", "类型": "支线赛", "胜者": "Felipe ARADO/Laura WATANABE", "负者": "Jash MODI/Suhana SAINI"},
-{"日期": "2026-04-20", "类型": "支线赛", "胜者": "Mykhailo LOVHA/Emma MOLNAROVA", "负者": "Iskender KHARKI/Sarvinoz MIRKADIROVA"},
-{"日期": "2026-04-20", "类型": "支线赛", "胜者": "BACK Donghoon/KIM Seoyun", "负者": "Radim MORAVEK/Jana VASENDOVA"},
-{"日期": "2026-04-20", "类型": "支线赛", "胜者": "Payas JAIN/Taneesha KOTECHA", "负者": "Peter HRIBAR/Ana TOFANT"},
-{"日期": "2026-04-20", "类型": "支线赛", "胜者": "Akash PAL/Sutirtha MUKHERJEE", "负者": "Nikon SHUTOV/Natalia GRIGELOVA"},
-{"日期": "2026-04-20", "类型": "支线赛", "胜者": "JANG Seongil/LEE Daeun", "负者": "Samuel ARPAS/Barbora VARADY"},
-{"日期": "2026-04-20", "类型": "支线赛", "胜者": "Felipe ARADO/Laura WATANABE", "负者": "Mykhailo LOVHA/Emma MOLNAROVA"},
-{"日期": "2026-04-20", "类型": "支线赛", "胜者": "BACK Donghoon/KIM Seoyun", "负者": "Payas JAIN/Taneesha KOTECHA"},
-{"日期": "2026-04-21", "类型": "支线赛", "胜者": "Akash PAL/Sutirtha MUKHERJEE", "负者": "JANG Seongil/LEE Daeun"},
-{"日期": "2026-04-21", "类型": "支线赛", "胜者": "Felipe ARADO/Laura WATANABE", "负者": "BACK Donghoon/KIM Seoyun"},
-{"日期": "2026-04-21", "类型": "支线赛", "胜者": "Akash PAL/Sutirtha MUKHERJEE", "负者": "Felipe ARADO/Laura WATANABE"},
-{"日期": "2026-05-12", "类型": "支线赛", "胜者": "Evgeny TIKHONOV/Maria PANFILOVA", "负者": "Payas JAIN/Syndrela DAS"},
-{"日期": "2026-05-12", "类型": "支线赛", "胜者": "CHOI Jiwook/KIM Eunseo", "负者": "Sarvarbek GULOMOV/Maftuna GULIMOVA"},
-{"日期": "2026-05-12", "类型": "支线赛", "胜者": "Anastasios RINIOTIS/Elisavet TERPOU", "负者": "Ankur BHATTACHARJEE/Swastika GHOSH"},
-{"日期": "2026-05-12", "类型": "支线赛", "胜者": "Alan KURMANGALIYEV/Zauresh AKASHEVA", "负者": "Edward LY/Mo ZHANG"},
-{"日期": "2026-05-12", "类型": "支线赛", "胜者": "Tom SCHWEIGER/Franziska SCHREINER", "负者": "Cedric MEISSNER/LEE Hoi Man"},
-{"日期": "2026-05-12", "类型": "支线赛", "胜者": "Nikita ARTEMENKO/Valeriia SHCHERBATYKH", "负者": "Abdullah YIGENLER/Ece HARAC"},
-{"日期": "2026-05-12", "类型": "支线赛", "胜者": "Maksim GREBNEV/Vlada VORONINA", "负者": "Ramon VILA/Eva BRITO"},
-{"日期": "2026-05-12", "类型": "支线赛", "胜者": "YIU Kwan To/NG Wing Lam", "负者": "Dmitrii VINOGRADOV/Arina SLAUTINA"},
-{"日期": "2026-05-13", "类型": "支线赛", "胜者": "CHOI Jiwook/KIM Eunseo", "负者": "Evgeny TIKHONOV/Maria PANFILOVA"},
-{"日期": "2026-05-13", "类型": "支线赛", "胜者": "Alan KURMANGALIYEV/Zauresh AKASHEVA", "负者": "Anastasios RINIOTIS/Elisavet TERPOU"},
-{"日期": "2026-05-13", "类型": "支线赛", "胜者": "Nikita ARTEMENKO/Valeriia SHCHERBATYKH", "负者": "Tom SCHWEIGER/Franziska SCHREINER"},
-{"日期": "2026-05-13", "类型": "支线赛", "胜者": "YIU Kwan To/NG Wing Lam", "负者": "Maksim GREBNEV/Vlada VORONINA"},
-{"日期": "2026-05-13", "类型": "支线赛", "胜者": "CHOI Jiwook/KIM Eunseo", "负者": "Alan KURMANGALIYEV/Zauresh AKASHEVA"},
-{"日期": "2026-05-13", "类型": "支线赛", "胜者": "YIU Kwan To/NG Wing Lam", "负者": "Nikita ARTEMENKO/Valeriia SHCHERBATYKH"},
-{"日期": "2026-05-14", "类型": "支线赛", "胜者": "YIU Kwan To/NG Wing Lam", "负者": "CHOI Jiwook/KIM Eunseo"},
-{"日期": "2026-05-17", "类型": "支线赛", "胜者": "Guilherme TEODORO/Giulia TAKAHASHI", "负者": "Ramon VILA/Eva BRITO"},
-{"日期": "2026-05-17", "类型": "支线赛", "胜者": "Vincent PICARD/Claire PICARD", "负者": "Clement LAINE/Matilde PINTO"},
-{"日期": "2026-05-17", "类型": "支线赛", "胜者": "Mattias KARLSSON/Natalia BAJOR", "负者": "Martin FROSETH/Alexia NODIN"},
-{"日期": "2026-05-17", "类型": "支线赛", "胜者": "Joao GERALDO/Mariana SANTA", "负者": "Mael VAN DESSEL/Rachel MORET"},
-{"日期": "2026-05-17", "类型": "支线赛", "胜者": "HSU Hsien-Chia/CHEN Min-Hsin", "负者": "Tiago ABIODUN/Julia LEAL"},
-{"日期": "2026-05-17", "类型": "支线赛", "胜者": "Alexis KOURAICHI/Audrey ZARIF", "负者": "Edward LY/Mo ZHANG"},
-{"日期": "2026-05-17", "类型": "支线赛", "胜者": "Samuel WALKER/Tin-Tin HO", "负者": "Andrii GREBENIUK/Anastasiya DYMYTRENKO"},
-{"日期": "2026-05-17", "类型": "支线赛", "胜者": "Nazar TRETIAK/Veronika MATIUNINA", "负者": "Gustavo GOMEZ/Valentina RIOS"},
-{"日期": "2026-05-17", "类型": "支线赛", "胜者": "Guilherme TEODORO/Giulia TAKAHASHI", "负者": "Vincent PICARD/Claire PICARD"},
-{"日期": "2026-05-17", "类型": "支线赛", "胜者": "Mattias KARLSSON/Natalia BAJOR", "负者": "Joao GERALDO/Mariana SANTA"},
-{"日期": "2026-05-17", "类型": "支线赛", "胜者": "HSU Hsien-Chia/CHEN Min-Hsin", "负者": "Alexis KOURAICHI/Audrey ZARIF"},
-{"日期": "2026-05-17", "类型": "支线赛", "胜者": "Samuel WALKER/Tin-Tin HO", "负者": "Nazar TRETIAK/Veronika MATIUNINA"},
-{"日期": "2026-05-17", "类型": "支线赛", "胜者": "Guilherme TEODORO/Giulia TAKAHASHI", "负者": "Mattias KARLSSON/Natalia BAJOR"},
-{"日期": "2026-05-17", "类型": "支线赛", "胜者": "HSU Hsien-Chia/CHEN Min-Hsin", "负者": "Samuel WALKER/Tin-Tin HO"},
-{"日期": "2026-05-17", "类型": "支线赛", "胜者": "HSU Hsien-Chia/CHEN Min-Hsin", "负者": "Guilherme TEODORO/Giulia TAKAHASHI"},
-{"日期": "2026-05-22", "类型": "支线赛", "胜者": "Martin BAECHLER/Clemence CHEVALLIER", "负者": "Alessi MASSART/Lilou MASSART"},
-{"日期": "2026-05-22", "类型": "支线赛", "胜者": "Antoine NOIRAULT/Leana HOCHART", "负者": "Mathieu DE SAINTILAN/Agathe AVEZOU"},
-{"日期": "2026-05-22", "类型": "支线赛", "胜者": "Niagol STOYANOV/Giorgia PICCOLIN", "负者": "Daniels KOGANS/Chloe FRASER"},
-{"日期": "2026-05-22", "类型": "支线赛", "胜者": "Sandro CAVAILLE/Jade HUYNH", "负者": "Flavio MOURIER/Elise PUJOL"},
-{"日期": "2026-05-22", "类型": "支线赛", "胜者": "Romain BRARD/Clea DE STOPPELEIRE", "负者": "Ramon VILA/Eva BRITO"},
-{"日期": "2026-05-22", "类型": "支线赛", "胜者": "Nathan PILARD/Nina GUO ZHENG", "负者": "Denis DORCESCU/Anais SALPIN"},
-{"日期": "2026-05-22", "类型": "支线赛", "胜者": "HSU Hsien-Chia/CHEN Min-Hsin", "负者": "Vincent PICARD/Claire PICARD"},
-{"日期": "2026-05-22", "类型": "支线赛", "胜者": "Mateusz ZALEWSKI/Zuzanna WIELGOS", "负者": "Barish MOULLET/Rachel MORET"},
-{"日期": "2026-05-23", "类型": "支线赛", "胜者": "Martin BAECHLER/Clemence CHEVALLIER", "负者": "Antoine NOIRAULT/Leana HOCHART"},
-{"日期": "2026-05-23", "类型": "支线赛", "胜者": "Niagol STOYANOV/Giorgia PICCOLIN", "负者": "Sandro CAVAILLE/Jade HUYNH"},
-{"日期": "2026-05-23", "类型": "支线赛", "胜者": "Nathan PILARD/Nina GUO ZHENG", "负者": "Romain BRARD/Clea DE STOPPELEIRE"},
-{"日期": "2026-05-23", "类型": "支线赛", "胜者": "HSU Hsien-Chia/CHEN Min-Hsin", "负者": "Mateusz ZALEWSKI/Zuzanna WIELGOS"},
-{"日期": "2026-05-23", "类型": "支线赛", "胜者": "Niagol STOYANOV/Giorgia PICCOLIN", "负者": "Martin BAECHLER/Clemence CHEVALLIER"},
-{"日期": "2026-05-23", "类型": "支线赛", "胜者": "Nathan PILARD/Nina GUO ZHENG", "负者": "HSU Hsien-Chia/CHEN Min-Hsin"},
-{"日期": "2026-05-24", "类型": "支线赛", "胜者": "Nathan PILARD/Nina GUO ZHENG", "负者": "Niagol STOYANOV/Giorgia PICCOLIN"},
-{"日期": "2026-07-03", "类型": "支线赛", "胜者": "Ivor BAN/Hana ARAPOVIC", "负者": "Rogelio CASTRO/Franziska SCHREINER"},
-{"日期": "2026-07-03", "类型": "支线赛", "胜者": "Dmitrii VINOGRADOV/Arina SLAUTINA", "负者": "Payas JAIN/Nithya MANI"},
-{"日期": "2026-07-03", "类型": "支线赛", "胜者": "Ankur BHATTACHARJEE/Swastika GHOSH", "负者": "SaadEddine HABACH/Mariam EL HABECH"},
-{"日期": "2026-07-03", "类型": "支线赛", "胜者": "Daito ONO/Kotona OKADA", "负者": "Tugay YILMAZ/Ozge YILMAZ"},
-{"日期": "2026-07-03", "类型": "支线赛", "胜者": "Evgeny TIKHONOV/Maria PANFILOVA", "负者": "Nikita ARTEMENKO/Valeriia SHCHERBATYKH"},
-{"日期": "2026-07-03", "类型": "支线赛", "胜者": "Andrei ISTRATE/Adina DIACONU", "负者": "Abdullah YIGENLER/Ece HARAC"},
-{"日期": "2026-07-03", "类型": "支线赛", "胜者": "Nazar TRETIAK/Veronika MATIUNINA", "负者": "Mudit DANI/Taneesha KOTECHA"},
-{"日期": "2026-07-03", "类型": "支线赛", "胜者": "Maksim GREBNEV/Vlada VORONINA", "负者": "Harmeet DESAI/Sibel ALTINKAYA"},
-{"日期": "2026-07-04", "类型": "支线赛", "胜者": "Dmitrii VINOGRADOV/Arina SLAUTINA", "负者": "Ivor BAN/Hana ARAPOVIC"},
-{"日期": "2026-07-04", "类型": "支线赛", "胜者": "Ankur BHATTACHARJEE/Swastika GHOSH", "负者": "Daito ONO/Kotona OKADA"},
-{"日期": "2026-07-04", "类型": "支线赛", "胜者": "Evgeny TIKHONOV/Maria PANFILOVA", "负者": "Andrei ISTRATE/Adina DIACONU"},
-{"日期": "2026-07-04", "类型": "支线赛", "胜者": "Nazar TRETIAK/Veronika MATIUNINA", "负者": "Maksim GREBNEV/Vlada VORONINA"},
-{"日期": "2026-07-04", "类型": "支线赛", "胜者": "Ankur BHATTACHARJEE/Swastika GHOSH", "负者": "Dmitrii VINOGRADOV/Arina SLAUTINA"},
-{"日期": "2026-07-04", "类型": "支线赛", "胜者": "Evgeny TIKHONOV/Maria PANFILOVA", "负者": "Nazar TRETIAK/Veronika MATIUNINA"},
-{"日期": "2026-07-05", "类型": "支线赛", "胜者": "Evgeny TIKHONOV/Maria PANFILOVA", "负者": "Ankur BHATTACHARJEE/Swastika GHOSH"},
-{"日期": "2026-04-09", "类型": "支线赛", "胜者": "Lubomir PISTEJ/Sarah DE NUTTE", "负者": "Harmeet DESAI/Yashaswini GHORPADE"},
-{"日期": "2026-04-09", "类型": "支线赛", "胜者": "JANG Seongil/HEO Yerim", "负者": "Akash PAL/Sreeja AKULA"},
-{"日期": "2026-04-09", "类型": "支线赛", "胜者": "Mattias KARLSSON/Nina MITTELHAM", "负者": "Abhinandh PRADHIVADHI/Nithya MANI"},
-{"日期": "2026-04-09", "类型": "支线赛", "胜者": "Abdullah YIGENLER/Ece HARAC", "负者": "Jash MODI/Taneesha KOTECHA"},
-{"日期": "2026-04-09", "类型": "支线赛", "胜者": "Edward LY/CHOI Haeeun", "负者": "KWON Hyuk/KIM Dahee"},
-{"日期": "2026-04-10", "类型": "支线赛", "胜者": "Harmeet DESAI/Yashaswini GHORPADE", "负者": "Lubomir PISTEJ/Sarah DE NUTTE"},
-{"日期": "2026-04-10", "类型": "支线赛", "胜者": "JANG Seongil/HEO Yerim", "负者": "Akash PAL/Sreeja AKULA"},
-{"日期": "2026-04-10", "类型": "支线赛", "胜者": "Abdullah YIGENLER/Ece HARAC", "负者": "Mattias KARLSSON/Nina MITTELHAM"},
-{"日期": "2026-04-10", "类型": "支线赛", "胜者": "Payas JAIN/Syndrela DAS", "负者": "Edward LY/CHOI Haeeun"},
-{"日期": "2026-04-10", "类型": "支线赛", "胜者": "Harmeet DESAI/Yashaswini GHORPADE", "负者": "JANG Seongil/HEO Yerim"},
-{"日期": "2026-04-10", "类型": "支线赛", "胜者": "Abdullah YIGENLER/Ece HARAC", "负者": "Payas JAIN/Syndrela DAS"},
-{"日期": "2026-04-11", "类型": "支线赛", "胜者": "Harmeet DESAI/Yashaswini GHORPADE", "负者": "Abdullah YIGENLER/Ece HARAC"},
-{"日期": "2026-08-11", "类型": "大满贯", "胜者": "Mattias KARLSSON/Nina MITTELHAM", "负者": "Omar ASSAR/Hana GODA"},
-{"日期": "2026-08-11", "类型": "大满贯", "胜者": "Eduard IONESCU/Bernadette SZOCS", "负者": "Elias RANEFUR/Filippa BERGAND"},
-{"日期": "2026-08-11", "类型": "大满贯", "胜者": "Gustavo GOMEZ/Daniela ORTEGA", "负者": "Edward LY/Mo ZHANG"},
-{"日期": "2026-08-11", "类型": "大满贯", "胜者": "Alexis LEBRUN/Satsuki ODO", "负者": "Ivor BAN/Hana ARAPOVIC"},
-{"日期": "2026-08-10", "类型": "大满贯", "胜者": "Anders LIND/Anna HURSEY", "负者": "Kristian KARLSSON/Christina KALLBERG"},
-{"日期": "2026-08-10", "类型": "大满贯", "胜者": "Patrick FRANZISKA/Adriana DIAZ", "负者": "Connor GREEN/Tin-Tin HO"},
-{"日期": "2026-08-10", "类型": "大满贯", "胜者": "Jishan LIANG/Sally MOYLAND", "负者": "Guilherme TEODORO/Paulina VEGA"},
-{"日期": "2026-08-10", "类型": "大满贯", "胜者": "Lubomir PISTEJ/Tatiana KUKULKOVA", "负者": "Youssef ABDELAZIZ/Mariam ALHODABY"},
-{"日期": "2026-08-12", "类型": "大满贯", "胜者": "LIN Yun-Ju/CHENG I-Ching", "负者": "Jishan LIANG/Sally MOYLAND"},
-{"日期": "2026-08-12", "类型": "大满贯", "胜者": "LIN Shidong/KUAI Man", "负者": "Eduard IONESCU/Bernadette SZOCS"},
-{"日期": "2026-08-12", "类型": "大满贯", "胜者": "Alexis LEBRUN/Satsuki ODO", "负者": "Manush SHAH/Diya CHITALE"},
-{"日期": "2026-08-12", "类型": "大满贯", "胜者": "Dang QIU/Sabine WINTER", "负者": "Patrick FRANZISKA/Adriana DIAZ"},
-{"日期": "2026-08-12", "类型": "大满贯", "胜者": "WONG Chun Ting/DOO Hoi Kem", "负者": "Lubomir PISTEJ/Tatiana KUKULKOVA"},
-{"日期": "2026-08-12", "类型": "大满贯", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "Mattias KARLSSON/Nina MITTELHAM"},
-{"日期": "2026-08-12", "类型": "大满贯", "胜者": "Gustavo GOMEZ/Daniela ORTEGA", "负者": "Hugo CALDERANO/Bruna TAKAHASHI"},
-{"日期": "2026-08-12", "类型": "大满贯", "胜者": "LIM Jonghoon/SHIN Yubin", "负者": "Anders LIND/Anna HURSEY"},
-{"日期": "2026-08-13", "类型": "大满贯", "胜者": "LIN Yun-Ju/CHENG I-Ching", "负者": "LIM Jonghoon/SHIN Yubin"},
-{"日期": "2026-08-13", "类型": "大满贯", "胜者": "LIN Shidong/KUAI Man", "负者": "Alexis LEBRUN/Satsuki ODO"},
-{"日期": "2026-08-13", "类型": "大满贯", "胜者": "WONG Chun Ting/DOO Hoi Kem", "负者": "Dang QIU/Sabine WINTER"},
-{"日期": "2026-08-13", "类型": "大满贯", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "Gustavo GOMEZ/Daniela ORTEGA"},
-{"日期": "2026-08-14", "类型": "大满贯", "胜者": "LIN Shidong/KUAI Man", "负者": "LIN Yun-Ju/CHENG I-Ching"},
-{"日期": "2026-08-14", "类型": "大满贯", "胜者": "WONG Chun Ting/DOO Hoi Kem", "负者": "Alvaro ROBLES/Maria XIAO"},
-{"日期": "2026-08-14", "类型": "大满贯", "胜者": "LIN Shidong/KUAI Man", "负者": "WONG Chun Ting/DOO Hoi Kem"},
-{"日期": "2026-09-03", "类型": "常规挑战赛", "胜者": "Manush SHAH/Diya CHITALE", "负者": "Sanzhar ZHUBANOV/Albina ZHAXYLYKOVA"},
-{"日期": "2026-09-03", "类型": "常规挑战赛", "胜者": "Nikita ARTEMENKO/Elizabet ABRAAMIAN", "负者": "Kirill GERASSIMENKO/Zauresh AKASHEVA"},
-{"日期": "2026-09-03", "类型": "常规挑战赛", "胜者": "Shunsuke TOGAMI/Hina HAYATA", "负者": "Denis IVONIN/Mariia TAILAKOVA"},
-{"日期": "2026-09-03", "类型": "常规挑战赛", "胜者": "Evgeny TIKHONOV/Maria PANFILOVA", "负者": "Angel NARANJO/Adriana DIAZ"},
-{"日期": "2026-09-03", "类型": "常规挑战赛", "胜者": "Kazuki YOSHIYAMA/Yuna OJIO", "负者": "Abdulla MAMAY/Noila KHANIYAZOVA"},
-{"日期": "2026-09-03", "类型": "常规挑战赛", "胜者": "Payas JAIN/Syndrela DAS", "负者": "Iskender KHARKI/Nursaya NURMAN"},
-{"日期": "2026-09-03", "类型": "常规挑战赛", "胜者": "Alan KURMANGALIYEV/Darya FU", "负者": "FANG Bo/Sarvinoz MIRKADIROVA"},
-{"日期": "2026-09-03", "类型": "常规挑战赛", "胜者": "Kristian KARLSSON/Christina KALLBERG", "负者": "Amir TORGAIBEKOV/Yekaterina OKHMAK"},
-{"日期": "2026-09-04", "类型": "常规挑战赛", "胜者": "Nikita ARTEMENKO/Elizabet ABRAAMIAN", "负者": "Manush SHAH/Diya CHITALE"},
-{"日期": "2026-09-04", "类型": "常规挑战赛", "胜者": "Evgeny TIKHONOV/Maria PANFILOVA", "负者": "Shunsuke TOGAMI/Hina HAYATA"},
-{"日期": "2026-09-04", "类型": "常规挑战赛", "胜者": "Kazuki YOSHIYAMA/Yuna OJIO", "负者": "Payas JAIN/Syndrela DAS"},
-{"日期": "2026-09-04", "类型": "常规挑战赛", "胜者": "Kristian KARLSSON/Christina KALLBERG", "负者": "Alan KURMANGALIYEV/Darya FU"},
-{"日期": "2026-09-04", "类型": "常规挑战赛", "胜者": "Evgeny TIKHONOV/Maria PANFILOVA", "负者": "Nikita ARTEMENKO/Elizabet ABRAAMIAN"},
-{"日期": "2026-09-04", "类型": "常规挑战赛", "胜者": "Kazuki YOSHIYAMA/Yuna OJIO", "负者": "Kristian KARLSSON/Christina KALLBERG"},
-{"日期": "2026-09-06", "类型": "常规挑战赛", "胜者": "Evgeny TIKHONOV/Maria PANFILOVA", "负者": "Kazuki YOSHIYAMA/Yuna OJIO"}, { "日期": "2026-09-10", "类型": "常规挑战赛", "胜者": "Gustavo GOMEZ/Daniela ORTEGA", "负者": "Thibault PORET/Charlotte LUTZ" }, { "日期": "2026-09-10", "类型": "常规挑战赛", "胜者": "John OYEBODE/Gaia MONFARDINI", "负者": "Ivaylo KOSEV/Sidelya MUTLU" }, { "日期": "2026-09-10", "类型": "常规挑战赛", "胜者": "Marek BADOWSKI/Tatiana KUKULKOVA", "负者": "Adam KLAJBER/Ema LABOSOVA" }, { "日期": "2026-09-10", "类型": "常规挑战赛", "胜者": "Martin FRIIS/Filippa BERGAND", "负者": "Petyo KRASTEV/Maria YOVKOVA" }, { "日期": "2026-09-10", "类型": "常规挑战赛", "胜者": "Andre BERTELSMEIER/Yuan WAN", "负者": "Nicolas BURGOS/Paulina VEGA" }, { "日期": "2026-09-10", "类型": "常规挑战赛", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "Abdullah YIGENLER/Ece HARAC" }, { "日期": "2026-09-10", "类型": "常规挑战赛", "胜者": "Yoan VELICHKOV/Izabela LUPULESKU", "负者": "Leo DE NODREST/Camille LUTZ" }, { "日期": "2026-09-10", "类型": "常规挑战赛", "胜者": "Kristian KARLSSON/Christina KALLBERG", "负者": "Cedric MEISSNER/Tin-Tin HO" }, { "日期": "2026-09-11", "类型": "常规挑战赛", "胜者": "Gustavo GOMEZ/Daniela ORTEGA", "负者": "John OYEBODE/Gaia MONFARDINI" }, { "日期": "2026-09-11", "类型": "常规挑战赛", "胜者": "Marek BADOWSKI/Tatiana KUKULKOVA", "负者": "Martin FRIIS/Filippa BERGAND" }, { "日期": "2026-09-11", "类型": "常规挑战赛", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "Andre BERTELSMEIER/Yuan WAN" }, { "日期": "2026-09-11", "类型": "常规挑战赛", "胜者": "Kristian KARLSSON/Christina KALLBERG", "负者": "Yoan VELICHKOV/Izabela LUPULESKU" }, { "日期": "2026-09-11", "类型": "常规挑战赛", "胜者": "Marek BADOWSKI/Tatiana KUKULKOVA", "负者": "Gustavo GOMEZ/Daniela ORTEGA" }, { "日期": "2026-09-11", "类型": "常规挑战赛", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "Kristian KARLSSON/Christina KALLBERG" }, { "日期": "2026-09-12", "类型": "常规挑战赛", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "Marek BADOWSKI/Tatiana KUKULKOVA" },
-{"日期": "2026-09-17", "类型": "球星挑战赛", "胜者": "Alvaro ROBLES/Maria XIAO", "负者": "Benedikt DUDA/Nina MITTELHAM", "比分": "3-0"},{"日期": "2026-09-17", "类型": "球星挑战赛", "胜者": "Hiromu KOBAYASHI/Miyuu KIHARA", "负者": "Maksim GREBNEV/Vlada VORONINA", "比分": "3-0"},{"日期": "2026-09-17", "类型": "球星挑战赛", "胜者": "Evgeny TIKHONOV/Maria PANFILOVA", "负者": "LI Tianyang/ZHU Sibing", "比分": "3-2"},{"日期": "2026-09-17", "类型": "球星挑战赛", "胜者": "PARK Ganghyeon/YOO Siwoo", "负者": "Patrick FRANZISKA/Adriana DIAZ", "比分": "3-2"},{"日期": "2026-09-17", "类型": "球星挑战赛", "胜者": "CHEN Junsong/WANG Yidi", "负者": "Darius MOVILEANU/Andreea DRAGOMAN", "比分": "3-1"},{"日期": "2026-09-17", "类型": "球星挑战赛", "胜者": "Nikita ARTEMENKO/Elizabet ABRAAMIAN", "负者": "Alexis LEBRUN/Charlotte LUTZ", "比分": "3-1"},{"日期": "2026-09-17", "类型": "球星挑战赛", "胜者": "LI Hechen/YAO Ruixuan", "负者": "Abdullah YIGENLER/Ece HARAC", "比分": "3-0"},{"日期": "2026-09-17", "类型": "球星挑战赛", "胜者": "FANG Bo/Jia Nan YUAN", "负者": "Eduard IONESCU/Bernadette SZOCS", "比分": "3-1"},{"日期": "2026-09-18", "类型": "球星挑战赛", "胜者": "Hiromu KOBAYASHI/Miyuu KIHARA", "负者": "Alvaro ROBLES/Maria XIAO", "比分": "3-2"},{"日期": "2026-09-18", "类型": "球星挑战赛", "胜者": "PARK Ganghyeon/YOO Siwoo", "负者": "Evgeny TIKHONOV/Maria PANFILOVA", "比分": "3-1"},{"日期": "2026-09-18", "类型": "球星挑战赛", "胜者": "CHEN Junsong/WANG Yidi", "负者": "Nikita ARTEMENKO/Elizabet ABRAAMIAN", "比分": "3-2"},{"日期": "2026-09-18", "类型": "球星挑战赛", "胜者": "FANG Bo/Jia Nan YUAN", "负者": "LI Hechen/YAO Ruixuan", "比分": "3-2"},{"日期": "2026-09-19", "类型": "球星挑战赛", "胜者": "Hiromu KOBAYASHI/Miyuu KIHARA", "负者": "PARK Ganghyeon/YOO Siwoo", "比分": "3-0"},{"日期": "2026-09-19", "类型": "球星挑战赛", "胜者": "CHEN Junsong/WANG Yidi", "负者": "FANG Bo/Jia Nan YUAN", "比分": "3-0"},{"日期": "2026-09-20", "类型": "球星挑战赛", "胜者": "CHEN Junsong/WANG Yidi", "负者": "Hiromu KOBAYASHI/Miyuu KIHARA", "比分": "3-0"},
+  {
+    "日期": "2026-01-09",
+    "类型": "支线赛",
+    "胜者": "Abhinandh PRADHIVADHI/Nithya MANI",
+    "负者": "Arnav KARNAVAR/Sampada BHIWANDKAR"
+  },
+  {
+    "日期": "2026-01-09",
+    "类型": "支线赛",
+    "胜者": "Ankur BHATTACHARJEE/Taneesha KOTECHA",
+    "负者": "Balamurugan RAJASEKARAN/Jennifer VARGHESE"
+  },
+  {
+    "日期": "2026-01-09",
+    "类型": "支线赛",
+    "胜者": "Harmeet DESAI/Yashaswini GHORPADE",
+    "负者": "Jash MODI/Divyanshi BHOWMICK"
+  },
+  {
+    "日期": "2026-01-09",
+    "类型": "支线赛",
+    "胜者": "Mudit DANI/Ayhika MUKHERJEE",
+    "负者": "Rubin MAHARJAN/Evana THAPA"
+  },
+  {
+    "日期": "2026-01-09",
+    "类型": "支线赛",
+    "胜者": "Payas JAIN/Syndrela DAS",
+    "负者": "Akash PAL/Poymantee BAISYA"
+  },
+  {
+    "日期": "2026-01-09",
+    "类型": "支线赛",
+    "胜者": "Preyesh SURESH/Selena SELVAKUMAR",
+    "负者": "Divyansh SRIVASTAVA/Pritha VARTIKAR"
+  },
+  {
+    "日期": "2026-01-09",
+    "类型": "支线赛",
+    "胜者": "Raegan ALBUQUERQUE/Suhana SAINI",
+    "负者": "Akash GUPTA/Garima GOYAL"
+  },
+  {
+    "日期": "2026-01-09",
+    "类型": "支线赛",
+    "胜者": "Ronit BHANJA/Sutirtha MUKHERJEE",
+    "负者": "Priyanuj BHATTACHARYYA/Kavya BHATT"
+  },
+  {
+    "日期": "2026-01-10",
+    "类型": "支线赛",
+    "胜者": "Ankur BHATTACHARJEE/Taneesha KOTECHA",
+    "负者": "Abhinandh PRADHIVADHI/Nithya MANI"
+  },
+  {
+    "日期": "2026-01-10",
+    "类型": "支线赛",
+    "胜者": "Harmeet DESAI/Yashaswini GHORPADE",
+    "负者": "Raegan ALBUQUERQUE/Suhana SAINI"
+  },
+  {
+    "日期": "2026-01-10",
+    "类型": "支线赛",
+    "胜者": "Harmeet DESAI/Yashaswini GHORPADE",
+    "负者": "Ronit BHANJA/Sutirtha MUKHERJEE"
+  },
+  {
+    "日期": "2026-01-10",
+    "类型": "支线赛",
+    "胜者": "Payas JAIN/Syndrela DAS",
+    "负者": "Ankur BHATTACHARJEE/Taneesha KOTECHA"
+  },
+  {
+    "日期": "2026-01-10",
+    "类型": "支线赛",
+    "胜者": "Payas JAIN/Syndrela DAS",
+    "负者": "Preyesh SURESH/Selena SELVAKUMAR"
+  },
+  {
+    "日期": "2026-01-10",
+    "类型": "支线赛",
+    "胜者": "Raegan ALBUQUERQUE/Suhana SAINI",
+    "负者": "Mudit DANI/Ayhika MUKHERJEE"
+  },
+  {
+    "日期": "2026-01-11",
+    "类型": "支线赛",
+    "胜者": "Payas JAIN/Syndrela DAS",
+    "负者": "Harmeet DESAI/Yashaswini GHORPADE"
+  },
+  {
+    "日期": "2026-01-15",
+    "类型": "球星挑战赛",
+    "胜者": "Alvaro ROBLES/Maria XIAO",
+    "负者": "Anders LIND/Adriana DIAZ"
+  },
+  {
+    "日期": "2026-01-15",
+    "类型": "球星挑战赛",
+    "胜者": "CHEN Junsong/QIN Yuxuan",
+    "负者": "LIN Yun-Ju/CHENG I-Ching"
+  },
+  {
+    "日期": "2026-01-15",
+    "类型": "球星挑战赛",
+    "胜者": "CHEN Yuanyu/KUAI Man",
+    "负者": "Sultan AL-KUWARI/Rokaia ELBAZ"
+  },
+  {
+    "日期": "2026-01-15",
+    "类型": "球星挑战赛",
+    "胜者": "HUANG Youzheng/CHEN Yi",
+    "负者": "Lev KATSMAN/Elizabet ABRAAMIAN"
+  },
+  {
+    "日期": "2026-01-15",
+    "类型": "球星挑战赛",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "Manush SHAH/Diya CHITALE"
+  },
+  {
+    "日期": "2026-01-15",
+    "类型": "球星挑战赛",
+    "胜者": "PANG Koen/ZENG Jian",
+    "负者": "Mohammed ABDULWAHHAB/Aia MOHAMED"
+  },
+  {
+    "日期": "2026-01-15",
+    "类型": "球星挑战赛",
+    "胜者": "PARK Ganghyeon/KIM Nayeong",
+    "负者": "YIU Kwan To/NG Wing Lam"
+  },
+  {
+    "日期": "2026-01-15",
+    "类型": "球星挑战赛",
+    "胜者": "WONG Chun Ting/DOO Hoi Kem",
+    "负者": "Youssef ABDELAZIZ/Mariam ALHODABY"
+  },
+  {
+    "日期": "2026-01-16",
+    "类型": "球星挑战赛",
+    "胜者": "CHEN Yuanyu/KUAI Man",
+    "负者": "LIM Jonghoon/SHIN Yubin"
+  },
+  {
+    "日期": "2026-01-16",
+    "类型": "球星挑战赛",
+    "胜者": "PANG Koen/ZENG Jian",
+    "负者": "Alvaro ROBLES/Maria XIAO"
+  },
+  {
+    "日期": "2026-01-16",
+    "类型": "球星挑战赛",
+    "胜者": "PARK Ganghyeon/KIM Nayeong",
+    "负者": "CHEN Junsong/QIN Yuxuan"
+  },
+  {
+    "日期": "2026-01-16",
+    "类型": "球星挑战赛",
+    "胜者": "WONG Chun Ting/DOO Hoi Kem",
+    "负者": "HUANG Youzheng/CHEN Yi"
+  },
+  {
+    "日期": "2026-01-17",
+    "类型": "球星挑战赛",
+    "胜者": "PARK Ganghyeon/KIM Nayeong",
+    "负者": "CHEN Yuanyu/KUAI Man"
+  },
+  {
+    "日期": "2026-01-17",
+    "类型": "球星挑战赛",
+    "胜者": "WONG Chun Ting/DOO Hoi Kem",
+    "负者": "PANG Koen/ZENG Jian"
+  },
+  {
+    "日期": "2026-01-18",
+    "类型": "球星挑战赛",
+    "胜者": "WONG Chun Ting/DOO Hoi Kem",
+    "负者": "PARK Ganghyeon/KIM Nayeong"
+  },
+  {
+    "日期": "2026-01-21",
+    "类型": "常规挑战赛",
+    "胜者": "Alvaro ROBLES/Maria XIAO",
+    "负者": "Vladimir SIDORENKO/Mariia TAILAKOVA"
+  },
+  {
+    "日期": "2026-01-21",
+    "类型": "常规挑战赛",
+    "胜者": "HUANG Youzheng/SHI Xunyao",
+    "负者": "Benedikt DUDA/Nina MITTELHAM"
+  },
+  {
+    "日期": "2026-01-21",
+    "类型": "常规挑战赛",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "CHEN Yuanyu/HAN Feier"
+  },
+  {
+    "日期": "2026-01-21",
+    "类型": "常规挑战赛",
+    "胜者": "PANG Koen/ZENG Jian",
+    "负者": "Stepan BRHEL/Veronika POLAKOVA"
+  },
+  {
+    "日期": "2026-01-21",
+    "类型": "常规挑战赛",
+    "胜者": "Sathiyan GNANASEKARAN/Yashaswini GHORPADE",
+    "负者": "Iskender KHARKI/Sarvinoz MIRKADIROVA"
+  },
+  {
+    "日期": "2026-01-21",
+    "类型": "常规挑战赛",
+    "胜者": "Thibault PORET/Charlotte LUTZ",
+    "负者": "WONG Chun Ting/DOO Hoi Kem"
+  },
+  {
+    "日期": "2026-01-21",
+    "类型": "常规挑战赛",
+    "胜者": "XUE Fei/WANG Xiaotong",
+    "负者": "Wim VERDONSCHOT/Sophia KLEE"
+  },
+  {
+    "日期": "2026-01-21",
+    "类型": "常规挑战赛",
+    "胜者": "YIU Kwan To/NG Wing Lam",
+    "负者": "Abdullah YIGENLER/Ece HARAC"
+  },
+  {
+    "日期": "2026-01-22",
+    "类型": "常规挑战赛",
+    "胜者": "Alvaro ROBLES/Maria XIAO",
+    "负者": "YIU Kwan To/NG Wing Lam"
+  },
+  {
+    "日期": "2026-01-22",
+    "类型": "常规挑战赛",
+    "胜者": "HUANG Youzheng/SHI Xunyao",
+    "负者": "Alvaro ROBLES/Maria XIAO"
+  },
+  {
+    "日期": "2026-01-22",
+    "类型": "常规挑战赛",
+    "胜者": "HUANG Youzheng/SHI Xunyao",
+    "负者": "XUE Fei/WANG Xiaotong"
+  },
+  {
+    "日期": "2026-01-22",
+    "类型": "常规挑战赛",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "PANG Koen/ZENG Jian"
+  },
+  {
+    "日期": "2026-01-22",
+    "类型": "常规挑战赛",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "Thibault PORET/Charlotte LUTZ"
+  },
+  {
+    "日期": "2026-01-22",
+    "类型": "常规挑战赛",
+    "胜者": "Thibault PORET/Charlotte LUTZ",
+    "负者": "Sathiyan GNANASEKARAN/Yashaswini GHORPADE"
+  },
+  {
+    "日期": "2026-01-23",
+    "类型": "常规挑战赛",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "HUANG Youzheng/SHI Xunyao"
+  },
+  {
+    "日期": "2026-02-12",
+    "类型": "球星挑战赛",
+    "胜者": "Akash PAL/Kaushani NATH",
+    "负者": "Luka MLADENOVIC/Minhyung JEE"
+  },
+  {
+    "日期": "2026-02-12",
+    "类型": "球星挑战赛",
+    "胜者": "Anirban GHOSH/Anusha KUTUMBALE",
+    "负者": "Abhinandh PRADHIVADHI/Nithya MANI"
+  },
+  {
+    "日期": "2026-02-12",
+    "类型": "球星挑战赛",
+    "胜者": "Ankur BHATTACHARJEE/Swastika GHOSH",
+    "负者": "PARK Gyuhyeon/KIM Nayeong"
+  },
+  {
+    "日期": "2026-02-12",
+    "类型": "球星挑战赛",
+    "胜者": "Eduard IONESCU/Bernadette SZOCS",
+    "负者": "CHO Daeseong/JOO Cheonhui"
+  },
+  {
+    "日期": "2026-02-12",
+    "类型": "球星挑战赛",
+    "胜者": "Harmeet DESAI/Yashaswini GHORPADE",
+    "负者": "Darius MOVILEANU/Andreea DRAGOMAN"
+  },
+  {
+    "日期": "2026-02-12",
+    "类型": "球星挑战赛",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "OH Seunghwan/KIM Seongjin"
+  },
+  {
+    "日期": "2026-02-12",
+    "类型": "球星挑战赛",
+    "胜者": "OH Junsung/Miyu NAGASAKI",
+    "负者": "Balamurugan RAJASEKARAN/Jennifer VARGHESE"
+  },
+  {
+    "日期": "2026-02-12",
+    "类型": "球星挑战赛",
+    "胜者": "Payas JAIN/Syndrela DAS",
+    "负者": "Iskender KHARKI/Sarvinoz MIRKADIROVA"
+  },
+  {
+    "日期": "2026-02-13",
+    "类型": "球星挑战赛",
+    "胜者": "Eduard IONESCU/Bernadette SZOCS",
+    "负者": "Anirban GHOSH/Anusha KUTUMBALE"
+  },
+  {
+    "日期": "2026-02-13",
+    "类型": "球星挑战赛",
+    "胜者": "Harmeet DESAI/Yashaswini GHORPADE",
+    "负者": "Ankur BHATTACHARJEE/Swastika GHOSH"
+  },
+  {
+    "日期": "2026-02-13",
+    "类型": "球星挑战赛",
+    "胜者": "OH Junsung/Miyu NAGASAKI",
+    "负者": "Akash PAL/Kaushani NATH"
+  },
+  {
+    "日期": "2026-02-13",
+    "类型": "球星挑战赛",
+    "胜者": "Payas JAIN/Syndrela DAS",
+    "负者": "Manush SHAH/Diya CHITALE"
+  },
+  {
+    "日期": "2026-02-14",
+    "类型": "球星挑战赛",
+    "胜者": "Eduard IONESCU/Bernadette SZOCS",
+    "负者": "OH Junsung/Miyu NAGASAKI"
+  },
+  {
+    "日期": "2026-02-14",
+    "类型": "球星挑战赛",
+    "胜者": "Harmeet DESAI/Yashaswini GHORPADE",
+    "负者": "Payas JAIN/Syndrela DAS"
+  },
+  {
+    "日期": "2026-02-15",
+    "类型": "球星挑战赛",
+    "胜者": "Eduard IONESCU/Bernadette SZOCS",
+    "负者": "Harmeet DESAI/Yashaswini GHORPADE"
+  },
+  {
+    "日期": "2026-02-22",
+    "类型": "大满贯",
+    "胜者": "Akash PAL/Minhyung JEE",
+    "负者": "Gustavo GOMEZ/Daniela ORTEGA"
+  },
+  {
+    "日期": "2026-02-22",
+    "类型": "大满贯",
+    "胜者": "Alexis LEBRUN/Satsuki ODO",
+    "负者": "Eduard IONESCU/Bernadette SZOCS"
+  },
+  {
+    "日期": "2026-02-22",
+    "类型": "大满贯",
+    "胜者": "CHAN Baldwin/KIM Nayeong",
+    "负者": "Robert GARDOS/Sofia POLCANOVA"
+  },
+  {
+    "日期": "2026-02-22",
+    "类型": "大满贯",
+    "胜者": "Dang QIU/Sabine WINTER",
+    "负者": "QUEK Izaac/SER Lin Qian"
+  },
+  {
+    "日期": "2026-02-22",
+    "类型": "大满贯",
+    "胜者": "Kristian KARLSSON/Christina KALLBERG",
+    "负者": "Omar ASSAR/Hana GODA"
+  },
+  {
+    "日期": "2026-02-22",
+    "类型": "大满贯",
+    "胜者": "Ovidiu IONESCU/Barbora VARADY",
+    "负者": "Nicolas BURGOS/Giulia TAKAHASHI"
+  },
+  {
+    "日期": "2026-02-22",
+    "类型": "大满贯",
+    "胜者": "PANG Koen/ZENG Jian",
+    "负者": "Nicholas LUM/Yangzi LIU"
+  },
+  {
+    "日期": "2026-02-22",
+    "类型": "大满贯",
+    "胜者": "Youssef ABDELAZIZ/Mariam ALHODABY",
+    "负者": "Lubomir PISTEJ/Tatiana KUKULKOVA"
+  },
+  {
+    "日期": "2026-02-23",
+    "类型": "大满贯",
+    "胜者": "Alvaro ROBLES/Maria XIAO",
+    "负者": "Ovidiu IONESCU/Barbora VARADY"
+  },
+  {
+    "日期": "2026-02-23",
+    "类型": "大满贯",
+    "胜者": "CHAN Baldwin/KIM Nayeong",
+    "负者": "LIN Yun-Ju/CHENG I-Ching"
+  },
+  {
+    "日期": "2026-02-23",
+    "类型": "大满贯",
+    "胜者": "Dang QIU/Sabine WINTER",
+    "负者": "Sora MATSUSHIMA/Miwa HARIMOTO"
+  },
+  {
+    "日期": "2026-02-23",
+    "类型": "大满贯",
+    "胜者": "HUANG Youzheng/CHEN Yi",
+    "负者": "Akash PAL/Minhyung JEE"
+  },
+  {
+    "日期": "2026-02-23",
+    "类型": "大满贯",
+    "胜者": "Hugo CALDERANO/Bruna TAKAHASHI",
+    "负者": "Youssef ABDELAZIZ/Mariam ALHODABY"
+  },
+  {
+    "日期": "2026-02-23",
+    "类型": "大满贯",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "Alexis LEBRUN/Satsuki ODO"
+  },
+  {
+    "日期": "2026-02-23",
+    "类型": "大满贯",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "PANG Koen/ZENG Jian"
+  },
+  {
+    "日期": "2026-02-23",
+    "类型": "大满贯",
+    "胜者": "WONG Chun Ting/DOO Hoi Kem",
+    "负者": "Kristian KARLSSON/Christina KALLBERG"
+  },
+  {
+    "日期": "2026-02-25",
+    "类型": "大满贯",
+    "胜者": "CHAN Baldwin/KIM Nayeong",
+    "负者": "HUANG Youzheng/CHEN Yi"
+  },
+  {
+    "日期": "2026-02-25",
+    "类型": "大满贯",
+    "胜者": "Hugo CALDERANO/Bruna TAKAHASHI",
+    "负者": "Manush SHAH/Diya CHITALE"
+  },
+  {
+    "日期": "2026-02-25",
+    "类型": "大满贯",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "Dang QIU/Sabine WINTER"
+  },
+  {
+    "日期": "2026-02-25",
+    "类型": "大满贯",
+    "胜者": "WONG Chun Ting/DOO Hoi Kem",
+    "负者": "Alvaro ROBLES/Maria XIAO"
+  },
+  {
+    "日期": "2026-02-26",
+    "类型": "大满贯",
+    "胜者": "Hugo CALDERANO/Bruna TAKAHASHI",
+    "负者": "WONG Chun Ting/DOO Hoi Kem"
+  },
+  {
+    "日期": "2026-02-26",
+    "类型": "大满贯",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "CHAN Baldwin/KIM Nayeong"
+  },
+  {
+    "日期": "2026-02-27",
+    "类型": "大满贯",
+    "胜者": "Hugo CALDERANO/Bruna TAKAHASHI",
+    "负者": "LIM Jonghoon/SHIN Yubin"
+  },
+  {
+    "日期": "2026-03-26",
+    "类型": "常规挑战赛",
+    "胜者": "Abdullah YIGENLER/Ece HARAC",
+    "负者": "Rogelio CASTRO/Arantxa COSSIO"
+  },
+  {
+    "日期": "2026-03-26",
+    "类型": "常规挑战赛",
+    "胜者": "Alvaro ROBLES/Maria XIAO",
+    "负者": "Aboubaker BOURASS/Abir HAJ SALAH"
+  },
+  {
+    "日期": "2026-03-26",
+    "类型": "常规挑战赛",
+    "胜者": "Esteban DORR/Elizabet ABRAAMIAN",
+    "负者": "Nandan NARESH/Daniela ORTEGA"
+  },
+  {
+    "日期": "2026-03-26",
+    "类型": "常规挑战赛",
+    "胜者": "Evgeny TIKHONOV/Maria PANFILOVA",
+    "负者": "Wassim ESSID/Sayali WANI"
+  },
+  {
+    "日期": "2026-03-26",
+    "类型": "常规挑战赛",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "Flavien COTON/JOO Cheonhui"
+  },
+  {
+    "日期": "2026-03-26",
+    "类型": "常规挑战赛",
+    "胜者": "Martin FRIIS/Filippa BERGAND",
+    "负者": "Ibrahim GUNDUZ/Sibel ALTINKAYA"
+  },
+  {
+    "日期": "2026-03-26",
+    "类型": "常规挑战赛",
+    "胜者": "Nikita ARTEMENKO/Valeriia SHCHERBATYKH",
+    "负者": "Harmeet DESAI/Yashaswini GHORPADE"
+  },
+  {
+    "日期": "2026-03-26",
+    "类型": "常规挑战赛",
+    "胜者": "Vladimir SIDORENKO/Mariia TAILAKOVA",
+    "负者": "Remi CHAMBET-WEIL/Fadwa GARCIA"
+  },
+  {
+    "日期": "2026-03-27",
+    "类型": "常规挑战赛",
+    "胜者": "Alvaro ROBLES/Maria XIAO",
+    "负者": "Esteban DORR/Elizabet ABRAAMIAN"
+  },
+  {
+    "日期": "2026-03-27",
+    "类型": "常规挑战赛",
+    "胜者": "Alvaro ROBLES/Maria XIAO",
+    "负者": "Vladimir SIDORENKO/Mariia TAILAKOVA"
+  },
+  {
+    "日期": "2026-03-27",
+    "类型": "常规挑战赛",
+    "胜者": "Esteban DORR/Elizabet ABRAAMIAN",
+    "负者": "Evgeny TIKHONOV/Maria PANFILOVA"
+  },
+  {
+    "日期": "2026-03-27",
+    "类型": "常规挑战赛",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "Abdullah YIGENLER/Ece HARAC"
+  },
+  {
+    "日期": "2026-03-27",
+    "类型": "常规挑战赛",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "Martin FRIIS/Filippa BERGAND"
+  },
+  {
+    "日期": "2026-03-27",
+    "类型": "常规挑战赛",
+    "胜者": "Martin FRIIS/Filippa BERGAND",
+    "负者": "Nikita ARTEMENKO/Valeriia SHCHERBATYKH"
+  },
+  {
+    "日期": "2026-03-28",
+    "类型": "常规挑战赛",
+    "胜者": "Alvaro ROBLES/Maria XIAO",
+    "负者": "Manush SHAH/Diya CHITALE"
+  },
+  {
+    "日期": "2026-04-09",
+    "类型": "常规挑战赛",
+    "胜者": "Cedric MEISSNER/LEE Hoi Man",
+    "负者": "LI Hechen/YAO Ruixuan"
+  },
+  {
+    "日期": "2026-04-09",
+    "类型": "常规挑战赛",
+    "胜者": "HUANG Youzheng/SHI Xunyao",
+    "负者": "WEN Ruibo/ZONG Geman"
+  },
+  {
+    "日期": "2026-04-09",
+    "类型": "常规挑战赛",
+    "胜者": "PANG Koen/ZENG Jian",
+    "负者": "QUEK Izaac/SER Lin Qian"
+  },
+  {
+    "日期": "2026-04-09",
+    "类型": "常规挑战赛",
+    "胜者": "Satoshi AIDA/Hitomi SATO",
+    "负者": "CHOI Jiwook/KIM Eunseo"
+  },
+  {
+    "日期": "2026-04-09",
+    "类型": "常规挑战赛",
+    "胜者": "WONG Chun Ting/DOO Hoi Kem",
+    "负者": "Luka MLADENOVIC/Xia Lian NI"
+  },
+  {
+    "日期": "2026-04-09",
+    "类型": "常规挑战赛",
+    "胜者": "WONG Qi Shen/TEE Ai Xin",
+    "负者": "CHOONG Javen/LYNE Karen"
+  },
+  {
+    "日期": "2026-04-09",
+    "类型": "常规挑战赛",
+    "胜者": "YIU Kwan To/NG Wing Lam",
+    "负者": "Nicholas LUM/LAM Yee Lok"
+  },
+  {
+    "日期": "2026-04-09",
+    "类型": "常规挑战赛",
+    "胜者": "Yuhi SAKAI/Mao TAKAMORI",
+    "负者": "CHEN Yuanyu/QIN Yuxuan"
+  },
+  {
+    "日期": "2026-04-10",
+    "类型": "常规挑战赛",
+    "胜者": "HUANG Youzheng/SHI Xunyao",
+    "负者": "YIU Kwan To/NG Wing Lam"
+  },
+  {
+    "日期": "2026-04-10",
+    "类型": "常规挑战赛",
+    "胜者": "HUANG Youzheng/SHI Xunyao",
+    "负者": "Yuhi SAKAI/Mao TAKAMORI"
+  },
+  {
+    "日期": "2026-04-10",
+    "类型": "常规挑战赛",
+    "胜者": "PANG Koen/ZENG Jian",
+    "负者": "WONG Qi Shen/TEE Ai Xin"
+  },
+  {
+    "日期": "2026-04-10",
+    "类型": "常规挑战赛",
+    "胜者": "WONG Chun Ting/DOO Hoi Kem",
+    "负者": "Cedric MEISSNER/LEE Hoi Man"
+  },
+  {
+    "日期": "2026-04-10",
+    "类型": "常规挑战赛",
+    "胜者": "WONG Chun Ting/DOO Hoi Kem",
+    "负者": "PANG Koen/ZENG Jian"
+  },
+  {
+    "日期": "2026-04-10",
+    "类型": "常规挑战赛",
+    "胜者": "Yuhi SAKAI/Mao TAKAMORI",
+    "负者": "Satoshi AIDA/Hitomi SATO"
+  },
+  {
+    "日期": "2026-04-11",
+    "类型": "常规挑战赛",
+    "胜者": "HUANG Youzheng/SHI Xunyao",
+    "负者": "WONG Chun Ting/DOO Hoi Kem"
+  },
+  {
+    "日期": "2026-05-21",
+    "类型": "常规挑战赛",
+    "胜者": "Abdulbasit ABDULFATAI/Sukurat AIYELABEGAN",
+    "负者": "James MARFO/Cynthia KWABI"
+  },
+  {
+    "日期": "2026-05-21",
+    "类型": "常规挑战赛",
+    "胜者": "Edward LY/Mo ZHANG",
+    "负者": "Sodiq ADESANYA/Chinenye OKAFOR"
+  },
+  {
+    "日期": "2026-05-21",
+    "类型": "常规挑战赛",
+    "胜者": "Harmeet DESAI/Yashaswini GHORPADE",
+    "负者": "Matthew KUTI/Kabirat AYOOLA"
+  },
+  {
+    "日期": "2026-05-21",
+    "类型": "常规挑战赛",
+    "胜者": "Kazuhiro YOSHIMURA/Reina ASO",
+    "负者": "Muizz ADEGOKE/Aishat RABIU"
+  },
+  {
+    "日期": "2026-05-21",
+    "类型": "常规挑战赛",
+    "胜者": "Leo DE NODREST/Camille LUTZ",
+    "负者": "Francis ANTWI/Joanita BORTEYE"
+  },
+  {
+    "日期": "2026-05-21",
+    "类型": "常规挑战赛",
+    "胜者": "Manav THAKKAR/Manika BATRA",
+    "负者": "Taiwo MATI/Favour OJO"
+  },
+  {
+    "日期": "2026-05-21",
+    "类型": "常规挑战赛",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "Olajide OMOTAYO/Debora VIVARELLI"
+  },
+  {
+    "日期": "2026-05-21",
+    "类型": "常规挑战赛",
+    "胜者": "Remi CHAMBET-WEIL/Paulina VEGA",
+    "负者": "Mudit DANI/Ayhika MUKHERJEE"
+  },
+  {
+    "日期": "2026-05-22",
+    "类型": "常规挑战赛",
+    "胜者": "Edward LY/Mo ZHANG",
+    "负者": "Manav THAKKAR/Manika BATRA"
+  },
+  {
+    "日期": "2026-05-22",
+    "类型": "常规挑战赛",
+    "胜者": "Leo DE NODREST/Camille LUTZ",
+    "负者": "Harmeet DESAI/Yashaswini GHORPADE"
+  },
+  {
+    "日期": "2026-05-22",
+    "类型": "常规挑战赛",
+    "胜者": "Leo DE NODREST/Camille LUTZ",
+    "负者": "Remi CHAMBET-WEIL/Paulina VEGA"
+  },
+  {
+    "日期": "2026-05-22",
+    "类型": "常规挑战赛",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "Edward LY/Mo ZHANG"
+  },
+  {
+    "日期": "2026-05-22",
+    "类型": "常规挑战赛",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "Kazuhiro YOSHIMURA/Reina ASO"
+  },
+  {
+    "日期": "2026-05-22",
+    "类型": "常规挑战赛",
+    "胜者": "Remi CHAMBET-WEIL/Paulina VEGA",
+    "负者": "Abdulbasit ABDULFATAI/Sukurat AIYELABEGAN"
+  },
+  {
+    "日期": "2026-05-23",
+    "类型": "常规挑战赛",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "Leo DE NODREST/Camille LUTZ"
+  },
+  {
+    "日期": "2026-06-04",
+    "类型": "常规挑战赛",
+    "胜者": "Eduard IONESCU/Bernadette SZOCS",
+    "负者": "Kristijan STANOJKOVSKI/Amelia NIKOLOV"
+  },
+  {
+    "日期": "2026-06-04",
+    "类型": "常规挑战赛",
+    "胜者": "Esteban DORR/Adriana DIAZ",
+    "负者": "Alvaro ROBLES/Maria XIAO"
+  },
+  {
+    "日期": "2026-06-04",
+    "类型": "常规挑战赛",
+    "胜者": "Hiromu KOBAYASHI/Miyuu KIHARA",
+    "负者": "Steven MORENO/Brianna BURGOS"
+  },
+  {
+    "日期": "2026-06-04",
+    "类型": "常规挑战赛",
+    "胜者": "Ivor BAN/Hana ARAPOVIC",
+    "负者": "Andrej STOJANOVSKI/Sara STOJANOVSKA"
+  },
+  {
+    "日期": "2026-06-04",
+    "类型": "常规挑战赛",
+    "胜者": "Lubomir PISTEJ/Sarah DE NUTTE",
+    "负者": "PARK Ganghyeon/YOO Siwoo"
+  },
+  {
+    "日期": "2026-06-04",
+    "类型": "常规挑战赛",
+    "胜者": "Luka MLADENOVIC/Xia Lian NI",
+    "负者": "Satoshi AIDA/Hitomi SATO"
+  },
+  {
+    "日期": "2026-06-04",
+    "类型": "常规挑战赛",
+    "胜者": "Maharu YOSHIMURA/Satsuki ODO",
+    "负者": "Connor GREEN/Tin-Tin HO"
+  },
+  {
+    "日期": "2026-06-04",
+    "类型": "常规挑战赛",
+    "胜者": "Omar ASSAR/Hana GODA",
+    "负者": "Jules ROLLAND/Prithika PAVADE"
+  },
+  {
+    "日期": "2026-06-05",
+    "类型": "常规挑战赛",
+    "胜者": "Esteban DORR/Adriana DIAZ",
+    "负者": "Ivor BAN/Hana ARAPOVIC"
+  },
+  {
+    "日期": "2026-06-05",
+    "类型": "常规挑战赛",
+    "胜者": "Esteban DORR/Adriana DIAZ",
+    "负者": "Lubomir PISTEJ/Sarah DE NUTTE"
+  },
+  {
+    "日期": "2026-06-05",
+    "类型": "常规挑战赛",
+    "胜者": "Hiromu KOBAYASHI/Miyuu KIHARA",
+    "负者": "Luka MLADENOVIC/Xia Lian NI"
+  },
+  {
+    "日期": "2026-06-05",
+    "类型": "常规挑战赛",
+    "胜者": "Hiromu KOBAYASHI/Miyuu KIHARA",
+    "负者": "Maharu YOSHIMURA/Satsuki ODO"
+  },
+  {
+    "日期": "2026-06-05",
+    "类型": "常规挑战赛",
+    "胜者": "Ivor BAN/Hana ARAPOVIC",
+    "负者": "Omar ASSAR/Hana GODA"
+  },
+  {
+    "日期": "2026-06-05",
+    "类型": "常规挑战赛",
+    "胜者": "Maharu YOSHIMURA/Satsuki ODO",
+    "负者": "Eduard IONESCU/Bernadette SZOCS"
+  },
+  {
+    "日期": "2026-06-06",
+    "类型": "常规挑战赛",
+    "胜者": "Hiromu KOBAYASHI/Miyuu KIHARA",
+    "负者": "Esteban DORR/Adriana DIAZ"
+  },
+  {
+    "日期": "2026-06-11",
+    "类型": "常规挑战赛",
+    "胜者": "Alvaro ROBLES/Maria XIAO",
+    "负者": "Borgar HAUG/Tatiana KUKULKOVA"
+  },
+  {
+    "日期": "2026-06-11",
+    "类型": "常规挑战赛",
+    "胜者": "Connor GREEN/Tin-Tin HO",
+    "负者": "Dang QIU/Annett KAUFMANN"
+  },
+  {
+    "日期": "2026-06-11",
+    "类型": "常规挑战赛",
+    "胜者": "PANG Koen/ZENG Jian",
+    "负者": "Borna PETEK/Andrea PAVLOVIC"
+  },
+  {
+    "日期": "2026-06-11",
+    "类型": "常规挑战赛",
+    "胜者": "Satoshi AIDA/Hitomi SATO",
+    "负者": "Ivor BAN/Hana ARAPOVIC"
+  },
+  {
+    "日期": "2026-06-11",
+    "类型": "常规挑战赛",
+    "胜者": "Shunsuke TOGAMI/Satsuki ODO",
+    "负者": "Manav THAKKAR/Manika BATRA"
+  },
+  {
+    "日期": "2026-06-11",
+    "类型": "常规挑战赛",
+    "胜者": "WEN Ruibo/KUAI Man",
+    "负者": "YUAN Licen/CHEN Yi"
+  },
+  {
+    "日期": "2026-06-11",
+    "类型": "常规挑战赛",
+    "胜者": "WONG Chun Ting/DOO Hoi Kem",
+    "负者": "PARK Ganghyeon/KIM Nayeong"
+  },
+  {
+    "日期": "2026-06-11",
+    "类型": "常规挑战赛",
+    "胜者": "YIU Kwan To/NG Wing Lam",
+    "负者": "Payas JAIN/Syndrela DAS"
+  },
+  {
+    "日期": "2026-06-12",
+    "类型": "常规挑战赛",
+    "胜者": "Alvaro ROBLES/Maria XIAO",
+    "负者": "PANG Koen/ZENG Jian"
+  },
+  {
+    "日期": "2026-06-12",
+    "类型": "常规挑战赛",
+    "胜者": "Connor GREEN/Tin-Tin HO",
+    "负者": "WEN Ruibo/KUAI Man"
+  },
+  {
+    "日期": "2026-06-12",
+    "类型": "常规挑战赛",
+    "胜者": "Shunsuke TOGAMI/Satsuki ODO",
+    "负者": "Alvaro ROBLES/Maria XIAO"
+  },
+  {
+    "日期": "2026-06-12",
+    "类型": "常规挑战赛",
+    "胜者": "Shunsuke TOGAMI/Satsuki ODO",
+    "负者": "Satoshi AIDA/Hitomi SATO"
+  },
+  {
+    "日期": "2026-06-12",
+    "类型": "常规挑战赛",
+    "胜者": "WONG Chun Ting/DOO Hoi Kem",
+    "负者": "Connor GREEN/Tin-Tin HO"
+  },
+  {
+    "日期": "2026-06-12",
+    "类型": "常规挑战赛",
+    "胜者": "WONG Chun Ting/DOO Hoi Kem",
+    "负者": "YIU Kwan To/NG Wing Lam"
+  },
+  {
+    "日期": "2026-06-13",
+    "类型": "常规挑战赛",
+    "胜者": "WONG Chun Ting/DOO Hoi Kem",
+    "负者": "Shunsuke TOGAMI/Satsuki ODO"
+  },
+  {
+    "日期": "2026-06-18",
+    "类型": "球星挑战赛",
+    "胜者": "Dang QIU/Sabine WINTER",
+    "负者": "Miha PODOBNIK/Katarina STRAZAR"
+  },
+  {
+    "日期": "2026-06-18",
+    "类型": "球星挑战赛",
+    "胜者": "HUANG Youzheng/CHEN Yi",
+    "负者": "Lubomir PISTEJ/Tatiana KUKULKOVA"
+  },
+  {
+    "日期": "2026-06-18",
+    "类型": "球星挑战赛",
+    "胜者": "Hugo CALDERANO/Bruna TAKAHASHI",
+    "负者": "PANG Koen/ZENG Jian"
+  },
+  {
+    "日期": "2026-06-18",
+    "类型": "球星挑战赛",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "WEN Ruibo/KUAI Man"
+  },
+  {
+    "日期": "2026-06-18",
+    "类型": "球星挑战赛",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "Peter HRIBAR/Ana TOFANT"
+  },
+  {
+    "日期": "2026-06-18",
+    "类型": "球星挑战赛",
+    "胜者": "Satoshi AIDA/Hitomi SATO",
+    "负者": "Eduard IONESCU/Bernadette SZOCS"
+  },
+  {
+    "日期": "2026-06-18",
+    "类型": "球星挑战赛",
+    "胜者": "Shunsuke TOGAMI/Satsuki ODO",
+    "负者": "Ivor BAN/Hana ARAPOVIC"
+  },
+  {
+    "日期": "2026-06-18",
+    "类型": "球星挑战赛",
+    "胜者": "YIU Kwan To/Barbora VARADY",
+    "负者": "OH Junsung/JOO Cheonhui"
+  },
+  {
+    "日期": "2026-06-19",
+    "类型": "球星挑战赛",
+    "胜者": "Dang QIU/Sabine WINTER",
+    "负者": "Hugo CALDERANO/Bruna TAKAHASHI"
+  },
+  {
+    "日期": "2026-06-19",
+    "类型": "球星挑战赛",
+    "胜者": "HUANG Youzheng/CHEN Yi",
+    "负者": "Shunsuke TOGAMI/Satsuki ODO"
+  },
+  {
+    "日期": "2026-06-19",
+    "类型": "球星挑战赛",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "Satoshi AIDA/Hitomi SATO"
+  },
+  {
+    "日期": "2026-06-19",
+    "类型": "球星挑战赛",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "YIU Kwan To/Barbora VARADY"
+  },
+  {
+    "日期": "2026-06-20",
+    "类型": "球星挑战赛",
+    "胜者": "Dang QIU/Sabine WINTER",
+    "负者": "Manush SHAH/Diya CHITALE"
+  },
+  {
+    "日期": "2026-06-20",
+    "类型": "球星挑战赛",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "HUANG Youzheng/CHEN Yi"
+  },
+  {
+    "日期": "2026-06-21",
+    "类型": "球星挑战赛",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "Dang QIU/Sabine WINTER"
+  },
+  {
+    "日期": "2026-06-28",
+    "类型": "大满贯",
+    "胜者": "Alexis LEBRUN/Satsuki ODO",
+    "负者": "Thibault PORET/Prithika PAVADE"
+  },
+  {
+    "日期": "2026-06-28",
+    "类型": "大满贯",
+    "胜者": "Anders LIND/Anna HURSEY",
+    "负者": "Luka MLADENOVIC/NG Wing Lam"
+  },
+  {
+    "日期": "2026-06-28",
+    "类型": "大满贯",
+    "胜者": "Dang QIU/Sabine WINTER",
+    "负者": "Gustavo GOMEZ/Daniela ORTEGA"
+  },
+  {
+    "日期": "2026-06-28",
+    "类型": "大满贯",
+    "胜者": "Jishan LIANG/Sally MOYLAND",
+    "负者": "PANG Koen/ZENG Jian"
+  },
+  {
+    "日期": "2026-06-28",
+    "类型": "大满贯",
+    "胜者": "Lubomir PISTEJ/Tatiana KUKULKOVA",
+    "负者": "CHAN Baldwin/KIM Nayeong"
+  },
+  {
+    "日期": "2026-06-28",
+    "类型": "大满贯",
+    "胜者": "Nandan NARESH/Jessica REYES LAI",
+    "负者": "Bosman BOTHA/QIN Yuxuan"
+  },
+  {
+    "日期": "2026-06-28",
+    "类型": "大满贯",
+    "胜者": "Patrick FRANZISKA/Adriana DIAZ",
+    "负者": "Aditya SAREEN/Barbora VARADY"
+  },
+  {
+    "日期": "2026-06-28",
+    "类型": "大满贯",
+    "胜者": "WEN Ruibo/KUAI Man",
+    "负者": "Nicholas LUM/Yangzi LIU"
+  },
+  {
+    "日期": "2026-06-29",
+    "类型": "大满贯",
+    "胜者": "Alexis LEBRUN/Satsuki ODO",
+    "负者": "Alvaro ROBLES/Maria XIAO"
+  },
+  {
+    "日期": "2026-06-29",
+    "类型": "大满贯",
+    "胜者": "Dang QIU/Sabine WINTER",
+    "负者": "Eduard IONESCU/Bernadette SZOCS"
+  },
+  {
+    "日期": "2026-06-29",
+    "类型": "大满贯",
+    "胜者": "Hugo CALDERANO/Bruna TAKAHASHI",
+    "负者": "Nandan NARESH/Jessica REYES LAI"
+  },
+  {
+    "日期": "2026-06-29",
+    "类型": "大满贯",
+    "胜者": "Jishan LIANG/Sally MOYLAND",
+    "负者": "Manush SHAH/Diya CHITALE"
+  },
+  {
+    "日期": "2026-06-29",
+    "类型": "大满贯",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "Anders LIND/Anna HURSEY"
+  },
+  {
+    "日期": "2026-06-29",
+    "类型": "大满贯",
+    "胜者": "Sora MATSUSHIMA/Miwa HARIMOTO",
+    "负者": "Patrick FRANZISKA/Adriana DIAZ"
+  },
+  {
+    "日期": "2026-06-29",
+    "类型": "大满贯",
+    "胜者": "WANG Chuqin/SUN Yingsha",
+    "负者": "Lubomir PISTEJ/Tatiana KUKULKOVA"
+  },
+  {
+    "日期": "2026-06-29",
+    "类型": "大满贯",
+    "胜者": "WEN Ruibo/KUAI Man",
+    "负者": "WONG Chun Ting/DOO Hoi Kem"
+  },
+  {
+    "日期": "2026-07-01",
+    "类型": "大满贯",
+    "胜者": "Hugo CALDERANO/Bruna TAKAHASHI",
+    "负者": "Jishan LIANG/Sally MOYLAND"
+  },
+  {
+    "日期": "2026-07-01",
+    "类型": "大满贯",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "Dang QIU/Sabine WINTER"
+  },
+  {
+    "日期": "2026-07-01",
+    "类型": "大满贯",
+    "胜者": "WANG Chuqin/SUN Yingsha",
+    "负者": "Alexis LEBRUN/Satsuki ODO"
+  },
+  {
+    "日期": "2026-07-01",
+    "类型": "大满贯",
+    "胜者": "WEN Ruibo/KUAI Man",
+    "负者": "Sora MATSUSHIMA/Miwa HARIMOTO"
+  },
+  {
+    "日期": "2026-07-02",
+    "类型": "大满贯",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "WEN Ruibo/KUAI Man"
+  },
+  {
+    "日期": "2026-07-02",
+    "类型": "大满贯",
+    "胜者": "WANG Chuqin/SUN Yingsha",
+    "负者": "Hugo CALDERANO/Bruna TAKAHASHI"
+  },
+  {
+    "日期": "2026-07-03",
+    "类型": "大满贯",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "WANG Chuqin/SUN Yingsha"
+  },
+  {
+    "日期": "2026-07-23",
+    "类型": "球星挑战赛",
+    "胜者": "Guilherme TEODORO/Giulia TAKAHASHI",
+    "负者": "Benedikt DUDA/Nina MITTELHAM"
+  },
+  {
+    "日期": "2026-07-23",
+    "类型": "球星挑战赛",
+    "胜者": "Gustavo GOMEZ/Daniela ORTEGA",
+    "负者": "Lubomir PISTEJ/Tatiana KUKULKOVA"
+  },
+  {
+    "日期": "2026-07-23",
+    "类型": "球星挑战赛",
+    "胜者": "Hugo CALDERANO/Bruna TAKAHASHI",
+    "负者": "Eusebio VOS/Valentina RIOS"
+  },
+  {
+    "日期": "2026-07-23",
+    "类型": "球星挑战赛",
+    "胜者": "OH Junsung/YOO Yerin",
+    "负者": "Felipe ARADO/Laura WATANABE"
+  },
+  {
+    "日期": "2026-07-23",
+    "类型": "球星挑战赛",
+    "胜者": "Shunsuke TOGAMI/Satsuki ODO",
+    "负者": "Alexis LEBRUN/Charlotte LUTZ"
+  },
+  {
+    "日期": "2026-07-23",
+    "类型": "球星挑战赛",
+    "胜者": "Vincent PICARD/Elizabet ABRAAMIAN",
+    "负者": "Edward LY/Mo ZHANG"
+  },
+  {
+    "日期": "2026-07-23",
+    "类型": "球星挑战赛",
+    "胜者": "WONG Chun Ting/DOO Hoi Kem",
+    "负者": "Leonardo IIZUKA/Victoria STRASSBURGER"
+  },
+  {
+    "日期": "2026-07-23",
+    "类型": "球星挑战赛",
+    "胜者": "YIU Kwan To/NG Wing Lam",
+    "负者": "Nicolas BURGOS/Paulina VEGA"
+  },
+  {
+    "日期": "2026-07-24",
+    "类型": "球星挑战赛",
+    "胜者": "Hugo CALDERANO/Bruna TAKAHASHI",
+    "负者": "Guilherme TEODORO/Giulia TAKAHASHI"
+  },
+  {
+    "日期": "2026-07-24",
+    "类型": "球星挑战赛",
+    "胜者": "Shunsuke TOGAMI/Satsuki ODO",
+    "负者": "OH Junsung/YOO Yerin"
+  },
+  {
+    "日期": "2026-07-24",
+    "类型": "球星挑战赛",
+    "胜者": "WONG Chun Ting/DOO Hoi Kem",
+    "负者": "Vincent PICARD/Elizabet ABRAAMIAN"
+  },
+  {
+    "日期": "2026-07-24",
+    "类型": "球星挑战赛",
+    "胜者": "YIU Kwan To/NG Wing Lam",
+    "负者": "Gustavo GOMEZ/Daniela ORTEGA"
+  },
+  {
+    "日期": "2026-07-25",
+    "类型": "球星挑战赛",
+    "胜者": "Hugo CALDERANO/Bruna TAKAHASHI",
+    "负者": "YIU Kwan To/NG Wing Lam"
+  },
+  {
+    "日期": "2026-07-25",
+    "类型": "球星挑战赛",
+    "胜者": "Shunsuke TOGAMI/Satsuki ODO",
+    "负者": "WONG Chun Ting/DOO Hoi Kem"
+  },
+  {
+    "日期": "2026-07-26",
+    "类型": "球星挑战赛",
+    "胜者": "Shunsuke TOGAMI/Satsuki ODO",
+    "负者": "Hugo CALDERANO/Bruna TAKAHASHI"
+  },
+  {
+    "日期": "2026-01-29",
+    "类型": "支线赛",
+    "胜者": "YUAN Licen/BAI Siwen",
+    "负者": "CHEN Junsong/QIN Yuxuan"
+  },
+  {
+    "日期": "2026-01-29",
+    "类型": "支线赛",
+    "胜者": "Snehit SURAVAJJULA/Sayali WANI",
+    "负者": "Tarvachinbo BUYAN/Khatansaikhan GANZORIG"
+  },
+  {
+    "日期": "2026-01-29",
+    "类型": "支线赛",
+    "胜者": "Vladislav MAKAROV/Vlada VORONINA",
+    "负者": "LE Ellsworth/LAI Chloe"
+  },
+  {
+    "日期": "2026-01-29",
+    "类型": "支线赛",
+    "胜者": "CHEW Clarence/LOY Ming Ying",
+    "负者": "Abdulaziz AL ABDULLA/Racha LOGHRAIBI"
+  },
+  {
+    "日期": "2026-01-29",
+    "类型": "支线赛",
+    "胜者": "TAN Zhao Ray/TAN Zhao Yun",
+    "负者": "Sultan AL-KUWARI/Rokaia ELBAZ"
+  },
+  {
+    "日期": "2026-01-29",
+    "类型": "支线赛",
+    "胜者": "Connor GREEN/Tin-Tin HO",
+    "负者": "Mohammed ABDULWAHHAB/Aia MOHAMED"
+  },
+  {
+    "日期": "2026-01-29",
+    "类型": "支线赛",
+    "胜者": "Dmitrii VINOGRADOV/Arina SLAUTINA",
+    "负者": "HUANG Youzheng/ZONG Geman"
+  },
+  {
+    "日期": "2026-01-29",
+    "类型": "支线赛",
+    "胜者": "Evgeny TIKHONOV/Maria PANFILOVA",
+    "负者": "Iskender KHARKI/Sarvinoz MIRKADIROVA"
+  },
+  {
+    "日期": "2026-01-30",
+    "类型": "支线赛",
+    "胜者": "YUAN Licen/BAI Siwen",
+    "负者": "Snehit SURAVAJJULA/Sayali WANI"
+  },
+  {
+    "日期": "2026-01-30",
+    "类型": "支线赛",
+    "胜者": "CHEW Clarence/LOY Ming Ying",
+    "负者": "Vladislav MAKAROV/Vlada VORONINA"
+  },
+  {
+    "日期": "2026-01-30",
+    "类型": "支线赛",
+    "胜者": "Connor GREEN/Tin-Tin HO",
+    "负者": "TAN Zhao Ray/TAN Zhao Yun"
+  },
+  {
+    "日期": "2026-01-30",
+    "类型": "支线赛",
+    "胜者": "Evgeny TIKHONOV/Maria PANFILOVA",
+    "负者": "Dmitrii VINOGRADOV/Arina SLAUTINA"
+  },
+  {
+    "日期": "2026-01-30",
+    "类型": "支线赛",
+    "胜者": "CHEW Clarence/LOY Ming Ying",
+    "负者": "YUAN Licen/BAI Siwen"
+  },
+  {
+    "日期": "2026-01-30",
+    "类型": "支线赛",
+    "胜者": "Evgeny TIKHONOV/Maria PANFILOVA",
+    "负者": "Connor GREEN/Tin-Tin HO"
+  },
+  {
+    "日期": "2026-01-31",
+    "类型": "支线赛",
+    "胜者": "Evgeny TIKHONOV/Maria PANFILOVA",
+    "负者": "CHEW Clarence/LOY Ming Ying"
+  },
+  {
+    "日期": "2026-01-29",
+    "类型": "支线赛",
+    "胜者": "Flavien COTON/Charlotte LUTZ",
+    "负者": "Eitay SHUSHAN/Vivien SCHOLZ"
+  },
+  {
+    "日期": "2026-01-29",
+    "类型": "支线赛",
+    "胜者": "Sam BOCCARD/Fanny DOUTAZ",
+    "负者": "Nathan LAM/Nina GUO ZHENG"
+  },
+  {
+    "日期": "2026-01-29",
+    "类型": "支线赛",
+    "胜者": "Wim VERDONSCHOT/Yuan WAN",
+    "负者": "Barish MOULLET/Rachel MORET"
+  },
+  {
+    "日期": "2026-01-29",
+    "类型": "支线赛",
+    "胜者": "Ivan HENCL/Dora COSIC",
+    "负者": "Luka MLADENOVIC/Karoline MISCHEK"
+  },
+  {
+    "日期": "2026-01-29",
+    "类型": "支线赛",
+    "胜者": "Clement LAINE/Gaia MONFARDINI",
+    "负者": "Leon BENKO/Andrea PAVLOVIC"
+  },
+  {
+    "日期": "2026-01-29",
+    "类型": "支线赛",
+    "胜者": "Maciej KUBIK/Natalia BAJOR",
+    "负者": "Romain BRARD/Clea DE STOPPELEIRE"
+  },
+  {
+    "日期": "2026-01-29",
+    "类型": "支线赛",
+    "胜者": "Joe SEYFRIED/Leana HOCHART",
+    "负者": "Leo DE NODREST/Camille LUTZ"
+  },
+  {
+    "日期": "2026-01-29",
+    "类型": "支线赛",
+    "胜者": "Marek BADOWSKI/Zuzanna WIELGOS",
+    "负者": "Niagol STOYANOV/Giorgia PICCOLIN"
+  },
+  {
+    "日期": "2026-01-30",
+    "类型": "支线赛",
+    "胜者": "Flavien COTON/Charlotte LUTZ",
+    "负者": "Sam BOCCARD/Fanny DOUTAZ"
+  },
+  {
+    "日期": "2026-01-30",
+    "类型": "支线赛",
+    "胜者": "Wim VERDONSCHOT/Yuan WAN",
+    "负者": "Ivan HENCL/Dora COSIC"
+  },
+  {
+    "日期": "2026-01-30",
+    "类型": "支线赛",
+    "胜者": "Maciej KUBIK/Natalia BAJOR",
+    "负者": "Clement LAINE/Gaia MONFARDINI"
+  },
+  {
+    "日期": "2026-01-30",
+    "类型": "支线赛",
+    "胜者": "Marek BADOWSKI/Zuzanna WIELGOS",
+    "负者": "Joe SEYFRIED/Leana HOCHART"
+  },
+  {
+    "日期": "2026-01-30",
+    "类型": "支线赛",
+    "胜者": "Wim VERDONSCHOT/Yuan WAN",
+    "负者": "Flavien COTON/Charlotte LUTZ"
+  },
+  {
+    "日期": "2026-01-30",
+    "类型": "支线赛",
+    "胜者": "Marek BADOWSKI/Zuzanna WIELGOS",
+    "负者": "Maciej KUBIK/Natalia BAJOR"
+  },
+  {
+    "日期": "2026-01-31",
+    "类型": "支线赛",
+    "胜者": "Marek BADOWSKI/Zuzanna WIELGOS",
+    "负者": "Wim VERDONSCHOT/Yuan WAN"
+  },
+  {
+    "日期": "2026-02-04",
+    "类型": "支线赛",
+    "胜者": "Dmitrii VINOGRADOV/Arina SLAUTINA",
+    "负者": "Evgeny TIKHONOV/Maria PANFILOVA"
+  },
+  {
+    "日期": "2026-02-04",
+    "类型": "支线赛",
+    "胜者": "Clement LAINE/Gaia MONFARDINI",
+    "负者": "Andrei ISTRATE/Ioana SINGEORZAN"
+  },
+  {
+    "日期": "2026-02-04",
+    "类型": "支线赛",
+    "胜者": "Vladislav MAKAROV/Vlada VORONINA",
+    "负者": "Vladislav ZAKHAROV/Zhanerke KOSHKUMBAYEVA"
+  },
+  {
+    "日期": "2026-02-05",
+    "类型": "支线赛",
+    "胜者": "YIU Kwan To/NG Wing Lam",
+    "负者": "Dmitrii VINOGRADOV/Arina SLAUTINA"
+  },
+  {
+    "日期": "2026-02-05",
+    "类型": "支线赛",
+    "胜者": "Abdullah YIGENLER/Ece HARAC",
+    "负者": "Dominykas SAMUOLIS/Mille STOFFREGEN"
+  },
+  {
+    "日期": "2026-02-05",
+    "类型": "支线赛",
+    "胜者": "Clement LAINE/Gaia MONFARDINI",
+    "负者": "LI Hon Ming/Tin-Tin HO"
+  },
+  {
+    "日期": "2026-02-05",
+    "类型": "支线赛",
+    "胜者": "Darius MOVILEANU/Elena ZAHARIA",
+    "负者": "Vladislav MAKAROV/Vlada VORONINA"
+  },
+  {
+    "日期": "2026-02-05",
+    "类型": "支线赛",
+    "胜者": "Abdullah YIGENLER/Ece HARAC",
+    "负者": "YIU Kwan To/NG Wing Lam"
+  },
+  {
+    "日期": "2026-02-05",
+    "类型": "支线赛",
+    "胜者": "Darius MOVILEANU/Elena ZAHARIA",
+    "负者": "Clement LAINE/Gaia MONFARDINI"
+  },
+  {
+    "日期": "2026-02-06",
+    "类型": "支线赛",
+    "胜者": "Darius MOVILEANU/Elena ZAHARIA",
+    "负者": "Abdullah YIGENLER/Ece HARAC"
+  },
+  {
+    "日期": "2026-03-04",
+    "类型": "支线赛",
+    "胜者": "Samuel ARPAS/Barbora VARADY",
+    "负者": "Guilherme TEODORO/Giulia TAKAHASHI"
+  },
+  {
+    "日期": "2026-03-04",
+    "类型": "支线赛",
+    "胜者": "Wim VERDONSCHOT/Josephina NEUMANN",
+    "负者": "Hayato MIKI/Manami IMAEDA"
+  },
+  {
+    "日期": "2026-03-04",
+    "类型": "支线赛",
+    "胜者": "Connor GREEN/Tin-Tin HO",
+    "负者": "Ricardo WALTHER/Ying HAN"
+  },
+  {
+    "日期": "2026-03-04",
+    "类型": "支线赛",
+    "胜者": "Ivan HENCL/Dora COSIC",
+    "负者": "Mael VAN DESSEL/Enisa SADIKOVIC"
+  },
+  {
+    "日期": "2026-03-04",
+    "类型": "支线赛",
+    "胜者": "Edward LY/Mo ZHANG",
+    "负者": "Jann Mari NAYRE/Shuohan MEN"
+  },
+  {
+    "日期": "2026-03-04",
+    "类型": "支线赛",
+    "胜者": "Tomoki OMODA/Kotomi OMODA",
+    "负者": "Iskender KHARKI/Sarvinoz MIRKADIROVA"
+  },
+  {
+    "日期": "2026-03-04",
+    "类型": "支线赛",
+    "胜者": "Maciej KUBIK/Natalia BAJOR",
+    "负者": "Dimitrij OVTCHAROV/Annett KAUFMANN"
+  },
+  {
+    "日期": "2026-03-04",
+    "类型": "支线赛",
+    "胜者": "Borgar HAUG/Anna HURSEY",
+    "负者": "Nandan NARESH/Sophia KLEE"
+  },
+  {
+    "日期": "2026-03-05",
+    "类型": "支线赛",
+    "胜者": "Samuel ARPAS/Barbora VARADY",
+    "负者": "Wim VERDONSCHOT/Josephina NEUMANN"
+  },
+  {
+    "日期": "2026-03-05",
+    "类型": "支线赛",
+    "胜者": "Connor GREEN/Tin-Tin HO",
+    "负者": "Ivan HENCL/Dora COSIC"
+  },
+  {
+    "日期": "2026-03-05",
+    "类型": "支线赛",
+    "胜者": "Edward LY/Mo ZHANG",
+    "负者": "Tomoki OMODA/Kotomi OMODA"
+  },
+  {
+    "日期": "2026-03-05",
+    "类型": "支线赛",
+    "胜者": "Borgar HAUG/Anna HURSEY",
+    "负者": "Maciej KUBIK/Natalia BAJOR"
+  },
+  {
+    "日期": "2026-03-05",
+    "类型": "支线赛",
+    "胜者": "Connor GREEN/Tin-Tin HO",
+    "负者": "Samuel ARPAS/Barbora VARADY"
+  },
+  {
+    "日期": "2026-03-05",
+    "类型": "支线赛",
+    "胜者": "Borgar HAUG/Anna HURSEY",
+    "负者": "Edward LY/Mo ZHANG"
+  },
+  {
+    "日期": "2026-03-06",
+    "类型": "支线赛",
+    "胜者": "Connor GREEN/Tin-Tin HO",
+    "负者": "Borgar HAUG/Anna HURSEY"
+  },
+  {
+    "日期": "2026-03-09",
+    "类型": "支线赛",
+    "胜者": "Ivor BAN/Hana ARAPOVIC",
+    "负者": "Peter HRIBAR/Ana TOFANT"
+  },
+  {
+    "日期": "2026-03-09",
+    "类型": "支线赛",
+    "胜者": "Ivan HENCL/Dora COSIC",
+    "负者": "Damjan ZELKO/Lara OPEKA"
+  },
+  {
+    "日期": "2026-03-09",
+    "类型": "支线赛",
+    "胜者": "Keishi HAGIHARA/Kotomi OMODA",
+    "负者": "Joao MONTEIRO/Julia LEAL"
+  },
+  {
+    "日期": "2026-03-09",
+    "类型": "支线赛",
+    "胜者": "WOO Hyeonggyu/LEE Daeun",
+    "负者": "Darius MOVILEANU/Lilou MASSART"
+  },
+  {
+    "日期": "2026-03-09",
+    "类型": "支线赛",
+    "胜者": "Brin VOVK PETROVSKI/Sara TOKIC",
+    "负者": "Ziga ZIGON/Tjasa NOVAK"
+  },
+  {
+    "日期": "2026-03-09",
+    "类型": "支线赛",
+    "胜者": "Maciej KUBIK/Zuzanna WIELGOS",
+    "负者": "Vit KADLEC/Klara HRABICOVA"
+  },
+  {
+    "日期": "2026-03-09",
+    "类型": "支线赛",
+    "胜者": "Riyan DUTTA/Hardee PATEL",
+    "负者": "Gregor ZAFOSTNIK/Lea PAULIN"
+  },
+  {
+    "日期": "2026-03-09",
+    "类型": "支线赛",
+    "胜者": "Connor GREEN/Tin-Tin HO",
+    "负者": "Miha PODOBNIK/Katarina STRAZAR"
+  },
+  {
+    "日期": "2026-03-09",
+    "类型": "支线赛",
+    "胜者": "Ivor BAN/Hana ARAPOVIC",
+    "负者": "Ivan HENCL/Dora COSIC"
+  },
+  {
+    "日期": "2026-03-09",
+    "类型": "支线赛",
+    "胜者": "Keishi HAGIHARA/Kotomi OMODA",
+    "负者": "WOO Hyeonggyu/LEE Daeun"
+  },
+  {
+    "日期": "2026-03-09",
+    "类型": "支线赛",
+    "胜者": "Brin VOVK PETROVSKI/Sara TOKIC",
+    "负者": "Maciej KUBIK/Zuzanna WIELGOS"
+  },
+  {
+    "日期": "2026-03-09",
+    "类型": "支线赛",
+    "胜者": "Connor GREEN/Tin-Tin HO",
+    "负者": "Riyan DUTTA/Hardee PATEL"
+  },
+  {
+    "日期": "2026-03-10",
+    "类型": "支线赛",
+    "胜者": "Keishi HAGIHARA/Kotomi OMODA",
+    "负者": "Ivor BAN/Hana ARAPOVIC"
+  },
+  {
+    "日期": "2026-03-10",
+    "类型": "支线赛",
+    "胜者": "Connor GREEN/Tin-Tin HO",
+    "负者": "Brin VOVK PETROVSKI/Sara TOKIC"
+  },
+  {
+    "日期": "2026-03-11",
+    "类型": "支线赛",
+    "胜者": "Keishi HAGIHARA/Kotomi OMODA",
+    "负者": "Connor GREEN/Tin-Tin HO"
+  },
+  {
+    "日期": "2026-03-14",
+    "类型": "支线赛",
+    "胜者": "Alvaro ROBLES/Maria XIAO",
+    "负者": "Vit KADLEC/Klara HRABICOVA"
+  },
+  {
+    "日期": "2026-03-14",
+    "类型": "支线赛",
+    "胜者": "Ivan HENCL/Dora COSIC",
+    "负者": "Deni KOZUL/Sara TOKIC"
+  },
+  {
+    "日期": "2026-03-14",
+    "类型": "支线赛",
+    "胜者": "Felipe ARADO/Karina SHIRAY",
+    "负者": "Simeon MARTIN/Dominika WILTSCHKOVA"
+  },
+  {
+    "日期": "2026-03-14",
+    "类型": "支线赛",
+    "胜者": "Cedric MEISSNER/NINA MITTELHAM",
+    "负者": "Peter HRIBAR/Ana TOFANT"
+  },
+  {
+    "日期": "2026-03-14",
+    "类型": "支线赛",
+    "胜者": "Florian BOURRASSAUD/Charlotte LUTZ",
+    "负者": "Leon BENKO/Lana BENKO"
+  },
+  {
+    "日期": "2026-03-14",
+    "类型": "支线赛",
+    "胜者": "Ivor BAN/Hana ARAPOVIC",
+    "负者": "Radim MORAVEK/Jana VASENDOVA"
+  },
+  {
+    "日期": "2026-03-14",
+    "类型": "支线赛",
+    "胜者": "Alessi MASSART/Lilou MASSART",
+    "负者": "WOO Hyeonggyu/LEE Daeun"
+  },
+  {
+    "日期": "2026-03-14",
+    "类型": "支线赛",
+    "胜者": "Stepan BRHEL/Linda ZADEROVA",
+    "负者": "Lubomir PISTEJ/Tatiana KUKULKOVA"
+  },
+  {
+    "日期": "2026-03-14",
+    "类型": "支线赛",
+    "胜者": "Alvaro ROBLES/Maria XIAO",
+    "负者": "Ivan HENCL/Dora COSIC"
+  },
+  {
+    "日期": "2026-03-14",
+    "类型": "支线赛",
+    "胜者": "Cedric MEISSNER/NINA MITTELHAM",
+    "负者": "Felipe ARADO/Karina SHIRAY"
+  },
+  {
+    "日期": "2026-03-14",
+    "类型": "支线赛",
+    "胜者": "Florian BOURRASSAUD/Charlotte LUTZ",
+    "负者": "Ivor BAN/Hana ARAPOVIC"
+  },
+  {
+    "日期": "2026-03-14",
+    "类型": "支线赛",
+    "胜者": "Alessi MASSART/Lilou MASSART",
+    "负者": "Stepan BRHEL/Linda ZADEROVA"
+  },
+  {
+    "日期": "2026-03-15",
+    "类型": "支线赛",
+    "胜者": "Alvaro ROBLES/Maria XIAO",
+    "负者": "Cedric MEISSNER/NINA MITTELHAM"
+  },
+  {
+    "日期": "2026-03-15",
+    "类型": "支线赛",
+    "胜者": "Alessi MASSART/Lilou MASSART",
+    "负者": "Florian BOURRASSAUD/Charlotte LUTZ"
+  },
+  {
+    "日期": "2026-03-16",
+    "类型": "支线赛",
+    "胜者": "Alessi MASSART/Lilou MASSART",
+    "负者": "Alvaro ROBLES/Maria XIAO"
+  },
+  {
+    "日期": "2026-04-09",
+    "类型": "支线赛",
+    "胜者": "Akash PAL/Sreeja AKULA",
+    "负者": "Bodhisatwa CHAUDHURY/Nursema COKLAR"
+  },
+  {
+    "日期": "2026-04-09",
+    "类型": "支线赛",
+    "胜者": "Lubomir PISTEJ/Sarah DE NUTTE",
+    "负者": "Khalid ALSHAREIF/Betul Nur KAHRAMAN"
+  },
+  {
+    "日期": "2026-04-09",
+    "类型": "支线赛",
+    "胜者": "Ivor BAN/Nithya MANI",
+    "负者": "Jash MODI/Taneesha KOTECHA"
+  },
+  {
+    "日期": "2026-04-09",
+    "类型": "支线赛",
+    "胜者": "Mattias KARLSSON/Nina MITTELHAM",
+    "负者": "Ali ALKHADRAWI/Nithya MANI"
+  },
+  {
+    "日期": "2026-04-09",
+    "类型": "支线赛",
+    "胜者": "JANG Seongil/HEO Yerim",
+    "负者": "Abdulaziz BU SHULAYBI/Nursema COKLAR"
+  },
+  {
+    "日期": "2026-04-09",
+    "类型": "支线赛",
+    "胜者": "Jo YOKOTANI/Hina HAYATA",
+    "负者": "Kenan KAHRAMAN/Malamatenia PAPADIMITRIOU"
+  },
+  {
+    "日期": "2026-04-09",
+    "类型": "支线赛",
+    "胜者": "Harmeet DESAI/Yashaswini GHORPADE",
+    "负者": "KWON Hyuk/KIM Dahee"
+  },
+  {
+    "日期": "2026-04-09",
+    "类型": "支线赛",
+    "胜者": "Edward LY/CHOI Haeeun",
+    "负者": "Hakan ISIK/Dora COSIC"
+  },
+  {
+    "日期": "2026-04-09",
+    "类型": "支线赛",
+    "胜者": "Akash PAL/Sreeja AKULA",
+    "负者": "Lubomir PISTEJ/Sarah DE NUTTE"
+  },
+  {
+    "日期": "2026-04-09",
+    "类型": "支线赛",
+    "胜者": "Ivor BAN/Nithya MANI",
+    "负者": "Mattias KARLSSON/Nina MITTELHAM"
+  },
+  {
+    "日期": "2026-04-09",
+    "类型": "支线赛",
+    "胜者": "JANG Seongil/HEO Yerim",
+    "负者": "Jo YOKOTANI/Hina HAYATA"
+  },
+  {
+    "日期": "2026-04-09",
+    "类型": "支线赛",
+    "胜者": "Harmeet DESAI/Yashaswini GHORPADE",
+    "负者": "Edward LY/CHOI Haeeun"
+  },
+  {
+    "日期": "2026-04-10",
+    "类型": "支线赛",
+    "胜者": "Akash PAL/Sreeja AKULA",
+    "负者": "Ivor BAN/Nithya MANI"
+  },
+  {
+    "日期": "2026-04-10",
+    "类型": "支线赛",
+    "胜者": "JANG Seongil/HEO Yerim",
+    "负者": "Harmeet DESAI/Yashaswini GHORPADE"
+  },
+  {
+    "日期": "2026-04-11",
+    "类型": "支线赛",
+    "胜者": "Akash PAL/Sreeja AKULA",
+    "负者": "JANG Seongil/HEO Yerim"
+  },
+  {
+    "日期": "2026-04-15",
+    "类型": "支线赛",
+    "胜者": "Stepan BRHEL/Veronika POLAKOVA",
+    "负者": "Guilherme TEODORO/Giulia TAKAHASHI"
+  },
+  {
+    "日期": "2026-04-15",
+    "类型": "支线赛",
+    "胜者": "Nandan NARESH/Jessica REYES LAI",
+    "负者": "Payas JAIN/Taneesha KOTECHA"
+  },
+  {
+    "日期": "2026-04-15",
+    "类型": "支线赛",
+    "胜者": "Connor GREEN/Tin-Tin HO",
+    "负者": "Louis LAINE/Claire PICARD"
+  },
+  {
+    "日期": "2026-04-15",
+    "类型": "支线赛",
+    "胜者": "Marek BADOWSKI/Zuzanna WIELGOS",
+    "负者": "Benjamin FRUCHART/Isa COK"
+  },
+  {
+    "日期": "2026-04-15",
+    "类型": "支线赛",
+    "胜者": "BACK Donghoon/KIM Seoyun",
+    "负者": "Abdullah YIGENLER/Ece HARAC"
+  },
+  {
+    "日期": "2026-04-15",
+    "类型": "支线赛",
+    "胜者": "Finn LUU/Yangzi LIU",
+    "负者": "Akash PAL/Sutirtha MUKHERJEE"
+  },
+  {
+    "日期": "2026-04-15",
+    "类型": "支线赛",
+    "胜者": "Samuel ARPAS/Barbora VARADY",
+    "负者": "Ondrej KVETON/Hanka KODET"
+  },
+  {
+    "日期": "2026-04-15",
+    "类型": "支线赛",
+    "胜者": "Lubomir PISTEJ/Tatiana KUKULKOVA",
+    "负者": "Iskender KHARKI/Sarvinoz MIRKADIROVA"
+  },
+  {
+    "日期": "2026-04-15",
+    "类型": "支线赛",
+    "胜者": "Nandan NARESH/Jessica REYES LAI",
+    "负者": "Stepan BRHEL/Veronika POLAKOVA"
+  },
+  {
+    "日期": "2026-04-15",
+    "类型": "支线赛",
+    "胜者": "Marek BADOWSKI/Zuzanna WIELGOS",
+    "负者": "Connor GREEN/Tin-Tin HO"
+  },
+  {
+    "日期": "2026-04-15",
+    "类型": "支线赛",
+    "胜者": "BACK Donghoon/KIM Seoyun",
+    "负者": "Finn LUU/Yangzi LIU"
+  },
+  {
+    "日期": "2026-04-15",
+    "类型": "支线赛",
+    "胜者": "Samuel ARPAS/Barbora VARADY",
+    "负者": "Lubomir PISTEJ/Tatiana KUKULKOVA"
+  },
+  {
+    "日期": "2026-04-16",
+    "类型": "支线赛",
+    "胜者": "Marek BADOWSKI/Zuzanna WIELGOS",
+    "负者": "Nandan NARESH/Jessica REYES LAI"
+  },
+  {
+    "日期": "2026-04-16",
+    "类型": "支线赛",
+    "胜者": "Samuel ARPAS/Barbora VARADY",
+    "负者": "BACK Donghoon/KIM Seoyun"
+  },
+  {
+    "日期": "2026-04-17",
+    "类型": "支线赛",
+    "胜者": "Samuel ARPAS/Barbora VARADY",
+    "负者": "Marek BADOWSKI/Zuzanna WIELGOS"
+  },
+  {
+    "日期": "2026-04-20",
+    "类型": "支线赛",
+    "胜者": "Akash PAL/Sutirtha MUKHERJEE",
+    "负者": "Lubomir PISTEJ/Tatiana KUKULKOVA"
+  },
+  {
+    "日期": "2026-04-20",
+    "类型": "支线赛",
+    "胜者": "Nikon SHUTOV/Natalia GRIGELOVA",
+    "负者": "Damian FLORO/Ema LABOSOVA"
+  },
+  {
+    "日期": "2026-04-20",
+    "类型": "支线赛",
+    "胜者": "Samuel ARPAS/Barbora VARADY",
+    "负者": "Jakub ZELINKA/Nikoleta PUCHOVANOVA"
+  },
+  {
+    "日期": "2026-04-20",
+    "类型": "支线赛",
+    "胜者": "JANG Seongil/LEE Daeun",
+    "负者": "Alexander VALUCH/Monika MAROUSKOVA"
+  },
+  {
+    "日期": "2026-04-20",
+    "类型": "支线赛",
+    "胜者": "Felipe ARADO/Laura WATANABE",
+    "负者": "Jash MODI/Suhana SAINI"
+  },
+  {
+    "日期": "2026-04-20",
+    "类型": "支线赛",
+    "胜者": "Mykhailo LOVHA/Emma MOLNAROVA",
+    "负者": "Iskender KHARKI/Sarvinoz MIRKADIROVA"
+  },
+  {
+    "日期": "2026-04-20",
+    "类型": "支线赛",
+    "胜者": "BACK Donghoon/KIM Seoyun",
+    "负者": "Radim MORAVEK/Jana VASENDOVA"
+  },
+  {
+    "日期": "2026-04-20",
+    "类型": "支线赛",
+    "胜者": "Payas JAIN/Taneesha KOTECHA",
+    "负者": "Peter HRIBAR/Ana TOFANT"
+  },
+  {
+    "日期": "2026-04-20",
+    "类型": "支线赛",
+    "胜者": "Akash PAL/Sutirtha MUKHERJEE",
+    "负者": "Nikon SHUTOV/Natalia GRIGELOVA"
+  },
+  {
+    "日期": "2026-04-20",
+    "类型": "支线赛",
+    "胜者": "JANG Seongil/LEE Daeun",
+    "负者": "Samuel ARPAS/Barbora VARADY"
+  },
+  {
+    "日期": "2026-04-20",
+    "类型": "支线赛",
+    "胜者": "Felipe ARADO/Laura WATANABE",
+    "负者": "Mykhailo LOVHA/Emma MOLNAROVA"
+  },
+  {
+    "日期": "2026-04-20",
+    "类型": "支线赛",
+    "胜者": "BACK Donghoon/KIM Seoyun",
+    "负者": "Payas JAIN/Taneesha KOTECHA"
+  },
+  {
+    "日期": "2026-04-21",
+    "类型": "支线赛",
+    "胜者": "Akash PAL/Sutirtha MUKHERJEE",
+    "负者": "JANG Seongil/LEE Daeun"
+  },
+  {
+    "日期": "2026-04-21",
+    "类型": "支线赛",
+    "胜者": "Felipe ARADO/Laura WATANABE",
+    "负者": "BACK Donghoon/KIM Seoyun"
+  },
+  {
+    "日期": "2026-04-21",
+    "类型": "支线赛",
+    "胜者": "Akash PAL/Sutirtha MUKHERJEE",
+    "负者": "Felipe ARADO/Laura WATANABE"
+  },
+  {
+    "日期": "2026-05-12",
+    "类型": "支线赛",
+    "胜者": "Evgeny TIKHONOV/Maria PANFILOVA",
+    "负者": "Payas JAIN/Syndrela DAS"
+  },
+  {
+    "日期": "2026-05-12",
+    "类型": "支线赛",
+    "胜者": "CHOI Jiwook/KIM Eunseo",
+    "负者": "Sarvarbek GULOMOV/Maftuna GULIMOVA"
+  },
+  {
+    "日期": "2026-05-12",
+    "类型": "支线赛",
+    "胜者": "Anastasios RINIOTIS/Elisavet TERPOU",
+    "负者": "Ankur BHATTACHARJEE/Swastika GHOSH"
+  },
+  {
+    "日期": "2026-05-12",
+    "类型": "支线赛",
+    "胜者": "Alan KURMANGALIYEV/Zauresh AKASHEVA",
+    "负者": "Edward LY/Mo ZHANG"
+  },
+  {
+    "日期": "2026-05-12",
+    "类型": "支线赛",
+    "胜者": "Tom SCHWEIGER/Franziska SCHREINER",
+    "负者": "Cedric MEISSNER/LEE Hoi Man"
+  },
+  {
+    "日期": "2026-05-12",
+    "类型": "支线赛",
+    "胜者": "Nikita ARTEMENKO/Valeriia SHCHERBATYKH",
+    "负者": "Abdullah YIGENLER/Ece HARAC"
+  },
+  {
+    "日期": "2026-05-12",
+    "类型": "支线赛",
+    "胜者": "Maksim GREBNEV/Vlada VORONINA",
+    "负者": "Ramon VILA/Eva BRITO"
+  },
+  {
+    "日期": "2026-05-12",
+    "类型": "支线赛",
+    "胜者": "YIU Kwan To/NG Wing Lam",
+    "负者": "Dmitrii VINOGRADOV/Arina SLAUTINA"
+  },
+  {
+    "日期": "2026-05-13",
+    "类型": "支线赛",
+    "胜者": "CHOI Jiwook/KIM Eunseo",
+    "负者": "Evgeny TIKHONOV/Maria PANFILOVA"
+  },
+  {
+    "日期": "2026-05-13",
+    "类型": "支线赛",
+    "胜者": "Alan KURMANGALIYEV/Zauresh AKASHEVA",
+    "负者": "Anastasios RINIOTIS/Elisavet TERPOU"
+  },
+  {
+    "日期": "2026-05-13",
+    "类型": "支线赛",
+    "胜者": "Nikita ARTEMENKO/Valeriia SHCHERBATYKH",
+    "负者": "Tom SCHWEIGER/Franziska SCHREINER"
+  },
+  {
+    "日期": "2026-05-13",
+    "类型": "支线赛",
+    "胜者": "YIU Kwan To/NG Wing Lam",
+    "负者": "Maksim GREBNEV/Vlada VORONINA"
+  },
+  {
+    "日期": "2026-05-13",
+    "类型": "支线赛",
+    "胜者": "CHOI Jiwook/KIM Eunseo",
+    "负者": "Alan KURMANGALIYEV/Zauresh AKASHEVA"
+  },
+  {
+    "日期": "2026-05-13",
+    "类型": "支线赛",
+    "胜者": "YIU Kwan To/NG Wing Lam",
+    "负者": "Nikita ARTEMENKO/Valeriia SHCHERBATYKH"
+  },
+  {
+    "日期": "2026-05-14",
+    "类型": "支线赛",
+    "胜者": "YIU Kwan To/NG Wing Lam",
+    "负者": "CHOI Jiwook/KIM Eunseo"
+  },
+  {
+    "日期": "2026-05-17",
+    "类型": "支线赛",
+    "胜者": "Guilherme TEODORO/Giulia TAKAHASHI",
+    "负者": "Ramon VILA/Eva BRITO"
+  },
+  {
+    "日期": "2026-05-17",
+    "类型": "支线赛",
+    "胜者": "Vincent PICARD/Claire PICARD",
+    "负者": "Clement LAINE/Matilde PINTO"
+  },
+  {
+    "日期": "2026-05-17",
+    "类型": "支线赛",
+    "胜者": "Mattias KARLSSON/Natalia BAJOR",
+    "负者": "Martin FROSETH/Alexia NODIN"
+  },
+  {
+    "日期": "2026-05-17",
+    "类型": "支线赛",
+    "胜者": "Joao GERALDO/Mariana SANTA",
+    "负者": "Mael VAN DESSEL/Rachel MORET"
+  },
+  {
+    "日期": "2026-05-17",
+    "类型": "支线赛",
+    "胜者": "HSU Hsien-Chia/CHEN Min-Hsin",
+    "负者": "Tiago ABIODUN/Julia LEAL"
+  },
+  {
+    "日期": "2026-05-17",
+    "类型": "支线赛",
+    "胜者": "Alexis KOURAICHI/Audrey ZARIF",
+    "负者": "Edward LY/Mo ZHANG"
+  },
+  {
+    "日期": "2026-05-17",
+    "类型": "支线赛",
+    "胜者": "Samuel WALKER/Tin-Tin HO",
+    "负者": "Andrii GREBENIUK/Anastasiya DYMYTRENKO"
+  },
+  {
+    "日期": "2026-05-17",
+    "类型": "支线赛",
+    "胜者": "Nazar TRETIAK/Veronika MATIUNINA",
+    "负者": "Gustavo GOMEZ/Valentina RIOS"
+  },
+  {
+    "日期": "2026-05-17",
+    "类型": "支线赛",
+    "胜者": "Guilherme TEODORO/Giulia TAKAHASHI",
+    "负者": "Vincent PICARD/Claire PICARD"
+  },
+  {
+    "日期": "2026-05-17",
+    "类型": "支线赛",
+    "胜者": "Mattias KARLSSON/Natalia BAJOR",
+    "负者": "Joao GERALDO/Mariana SANTA"
+  },
+  {
+    "日期": "2026-05-17",
+    "类型": "支线赛",
+    "胜者": "HSU Hsien-Chia/CHEN Min-Hsin",
+    "负者": "Alexis KOURAICHI/Audrey ZARIF"
+  },
+  {
+    "日期": "2026-05-17",
+    "类型": "支线赛",
+    "胜者": "Samuel WALKER/Tin-Tin HO",
+    "负者": "Nazar TRETIAK/Veronika MATIUNINA"
+  },
+  {
+    "日期": "2026-05-17",
+    "类型": "支线赛",
+    "胜者": "Guilherme TEODORO/Giulia TAKAHASHI",
+    "负者": "Mattias KARLSSON/Natalia BAJOR"
+  },
+  {
+    "日期": "2026-05-17",
+    "类型": "支线赛",
+    "胜者": "HSU Hsien-Chia/CHEN Min-Hsin",
+    "负者": "Samuel WALKER/Tin-Tin HO"
+  },
+  {
+    "日期": "2026-05-17",
+    "类型": "支线赛",
+    "胜者": "HSU Hsien-Chia/CHEN Min-Hsin",
+    "负者": "Guilherme TEODORO/Giulia TAKAHASHI"
+  },
+  {
+    "日期": "2026-05-22",
+    "类型": "支线赛",
+    "胜者": "Martin BAECHLER/Clemence CHEVALLIER",
+    "负者": "Alessi MASSART/Lilou MASSART"
+  },
+  {
+    "日期": "2026-05-22",
+    "类型": "支线赛",
+    "胜者": "Antoine NOIRAULT/Leana HOCHART",
+    "负者": "Mathieu DE SAINTILAN/Agathe AVEZOU"
+  },
+  {
+    "日期": "2026-05-22",
+    "类型": "支线赛",
+    "胜者": "Niagol STOYANOV/Giorgia PICCOLIN",
+    "负者": "Daniels KOGANS/Chloe FRASER"
+  },
+  {
+    "日期": "2026-05-22",
+    "类型": "支线赛",
+    "胜者": "Sandro CAVAILLE/Jade HUYNH",
+    "负者": "Flavio MOURIER/Elise PUJOL"
+  },
+  {
+    "日期": "2026-05-22",
+    "类型": "支线赛",
+    "胜者": "Romain BRARD/Clea DE STOPPELEIRE",
+    "负者": "Ramon VILA/Eva BRITO"
+  },
+  {
+    "日期": "2026-05-22",
+    "类型": "支线赛",
+    "胜者": "Nathan PILARD/Nina GUO ZHENG",
+    "负者": "Denis DORCESCU/Anais SALPIN"
+  },
+  {
+    "日期": "2026-05-22",
+    "类型": "支线赛",
+    "胜者": "HSU Hsien-Chia/CHEN Min-Hsin",
+    "负者": "Vincent PICARD/Claire PICARD"
+  },
+  {
+    "日期": "2026-05-22",
+    "类型": "支线赛",
+    "胜者": "Mateusz ZALEWSKI/Zuzanna WIELGOS",
+    "负者": "Barish MOULLET/Rachel MORET"
+  },
+  {
+    "日期": "2026-05-23",
+    "类型": "支线赛",
+    "胜者": "Martin BAECHLER/Clemence CHEVALLIER",
+    "负者": "Antoine NOIRAULT/Leana HOCHART"
+  },
+  {
+    "日期": "2026-05-23",
+    "类型": "支线赛",
+    "胜者": "Niagol STOYANOV/Giorgia PICCOLIN",
+    "负者": "Sandro CAVAILLE/Jade HUYNH"
+  },
+  {
+    "日期": "2026-05-23",
+    "类型": "支线赛",
+    "胜者": "Nathan PILARD/Nina GUO ZHENG",
+    "负者": "Romain BRARD/Clea DE STOPPELEIRE"
+  },
+  {
+    "日期": "2026-05-23",
+    "类型": "支线赛",
+    "胜者": "HSU Hsien-Chia/CHEN Min-Hsin",
+    "负者": "Mateusz ZALEWSKI/Zuzanna WIELGOS"
+  },
+  {
+    "日期": "2026-05-23",
+    "类型": "支线赛",
+    "胜者": "Niagol STOYANOV/Giorgia PICCOLIN",
+    "负者": "Martin BAECHLER/Clemence CHEVALLIER"
+  },
+  {
+    "日期": "2026-05-23",
+    "类型": "支线赛",
+    "胜者": "Nathan PILARD/Nina GUO ZHENG",
+    "负者": "HSU Hsien-Chia/CHEN Min-Hsin"
+  },
+  {
+    "日期": "2026-05-24",
+    "类型": "支线赛",
+    "胜者": "Nathan PILARD/Nina GUO ZHENG",
+    "负者": "Niagol STOYANOV/Giorgia PICCOLIN"
+  },
+  {
+    "日期": "2026-07-03",
+    "类型": "支线赛",
+    "胜者": "Ivor BAN/Hana ARAPOVIC",
+    "负者": "Rogelio CASTRO/Franziska SCHREINER"
+  },
+  {
+    "日期": "2026-07-03",
+    "类型": "支线赛",
+    "胜者": "Dmitrii VINOGRADOV/Arina SLAUTINA",
+    "负者": "Payas JAIN/Nithya MANI"
+  },
+  {
+    "日期": "2026-07-03",
+    "类型": "支线赛",
+    "胜者": "Ankur BHATTACHARJEE/Swastika GHOSH",
+    "负者": "SaadEddine HABACH/Mariam EL HABECH"
+  },
+  {
+    "日期": "2026-07-03",
+    "类型": "支线赛",
+    "胜者": "Daito ONO/Kotona OKADA",
+    "负者": "Tugay YILMAZ/Ozge YILMAZ"
+  },
+  {
+    "日期": "2026-07-03",
+    "类型": "支线赛",
+    "胜者": "Evgeny TIKHONOV/Maria PANFILOVA",
+    "负者": "Nikita ARTEMENKO/Valeriia SHCHERBATYKH"
+  },
+  {
+    "日期": "2026-07-03",
+    "类型": "支线赛",
+    "胜者": "Andrei ISTRATE/Adina DIACONU",
+    "负者": "Abdullah YIGENLER/Ece HARAC"
+  },
+  {
+    "日期": "2026-07-03",
+    "类型": "支线赛",
+    "胜者": "Nazar TRETIAK/Veronika MATIUNINA",
+    "负者": "Mudit DANI/Taneesha KOTECHA"
+  },
+  {
+    "日期": "2026-07-03",
+    "类型": "支线赛",
+    "胜者": "Maksim GREBNEV/Vlada VORONINA",
+    "负者": "Harmeet DESAI/Sibel ALTINKAYA"
+  },
+  {
+    "日期": "2026-07-04",
+    "类型": "支线赛",
+    "胜者": "Dmitrii VINOGRADOV/Arina SLAUTINA",
+    "负者": "Ivor BAN/Hana ARAPOVIC"
+  },
+  {
+    "日期": "2026-07-04",
+    "类型": "支线赛",
+    "胜者": "Ankur BHATTACHARJEE/Swastika GHOSH",
+    "负者": "Daito ONO/Kotona OKADA"
+  },
+  {
+    "日期": "2026-07-04",
+    "类型": "支线赛",
+    "胜者": "Evgeny TIKHONOV/Maria PANFILOVA",
+    "负者": "Andrei ISTRATE/Adina DIACONU"
+  },
+  {
+    "日期": "2026-07-04",
+    "类型": "支线赛",
+    "胜者": "Nazar TRETIAK/Veronika MATIUNINA",
+    "负者": "Maksim GREBNEV/Vlada VORONINA"
+  },
+  {
+    "日期": "2026-07-04",
+    "类型": "支线赛",
+    "胜者": "Ankur BHATTACHARJEE/Swastika GHOSH",
+    "负者": "Dmitrii VINOGRADOV/Arina SLAUTINA"
+  },
+  {
+    "日期": "2026-07-04",
+    "类型": "支线赛",
+    "胜者": "Evgeny TIKHONOV/Maria PANFILOVA",
+    "负者": "Nazar TRETIAK/Veronika MATIUNINA"
+  },
+  {
+    "日期": "2026-07-05",
+    "类型": "支线赛",
+    "胜者": "Evgeny TIKHONOV/Maria PANFILOVA",
+    "负者": "Ankur BHATTACHARJEE/Swastika GHOSH"
+  },
+  {
+    "日期": "2026-04-09",
+    "类型": "支线赛",
+    "胜者": "Lubomir PISTEJ/Sarah DE NUTTE",
+    "负者": "Harmeet DESAI/Yashaswini GHORPADE"
+  },
+  {
+    "日期": "2026-04-09",
+    "类型": "支线赛",
+    "胜者": "JANG Seongil/HEO Yerim",
+    "负者": "Akash PAL/Sreeja AKULA"
+  },
+  {
+    "日期": "2026-04-09",
+    "类型": "支线赛",
+    "胜者": "Mattias KARLSSON/Nina MITTELHAM",
+    "负者": "Abhinandh PRADHIVADHI/Nithya MANI"
+  },
+  {
+    "日期": "2026-04-09",
+    "类型": "支线赛",
+    "胜者": "Abdullah YIGENLER/Ece HARAC",
+    "负者": "Jash MODI/Taneesha KOTECHA"
+  },
+  {
+    "日期": "2026-04-09",
+    "类型": "支线赛",
+    "胜者": "Edward LY/CHOI Haeeun",
+    "负者": "KWON Hyuk/KIM Dahee"
+  },
+  {
+    "日期": "2026-04-10",
+    "类型": "支线赛",
+    "胜者": "Harmeet DESAI/Yashaswini GHORPADE",
+    "负者": "Lubomir PISTEJ/Sarah DE NUTTE"
+  },
+  {
+    "日期": "2026-04-10",
+    "类型": "支线赛",
+    "胜者": "JANG Seongil/HEO Yerim",
+    "负者": "Akash PAL/Sreeja AKULA"
+  },
+  {
+    "日期": "2026-04-10",
+    "类型": "支线赛",
+    "胜者": "Abdullah YIGENLER/Ece HARAC",
+    "负者": "Mattias KARLSSON/Nina MITTELHAM"
+  },
+  {
+    "日期": "2026-04-10",
+    "类型": "支线赛",
+    "胜者": "Payas JAIN/Syndrela DAS",
+    "负者": "Edward LY/CHOI Haeeun"
+  },
+  {
+    "日期": "2026-04-10",
+    "类型": "支线赛",
+    "胜者": "Harmeet DESAI/Yashaswini GHORPADE",
+    "负者": "JANG Seongil/HEO Yerim"
+  },
+  {
+    "日期": "2026-04-10",
+    "类型": "支线赛",
+    "胜者": "Abdullah YIGENLER/Ece HARAC",
+    "负者": "Payas JAIN/Syndrela DAS"
+  },
+  {
+    "日期": "2026-04-11",
+    "类型": "支线赛",
+    "胜者": "Harmeet DESAI/Yashaswini GHORPADE",
+    "负者": "Abdullah YIGENLER/Ece HARAC"
+  },
+  {
+    "日期": "2026-08-11",
+    "类型": "大满贯",
+    "胜者": "Mattias KARLSSON/Nina MITTELHAM",
+    "负者": "Omar ASSAR/Hana GODA"
+  },
+  {
+    "日期": "2026-08-11",
+    "类型": "大满贯",
+    "胜者": "Eduard IONESCU/Bernadette SZOCS",
+    "负者": "Elias RANEFUR/Filippa BERGAND"
+  },
+  {
+    "日期": "2026-08-11",
+    "类型": "大满贯",
+    "胜者": "Gustavo GOMEZ/Daniela ORTEGA",
+    "负者": "Edward LY/Mo ZHANG"
+  },
+  {
+    "日期": "2026-08-11",
+    "类型": "大满贯",
+    "胜者": "Alexis LEBRUN/Satsuki ODO",
+    "负者": "Ivor BAN/Hana ARAPOVIC"
+  },
+  {
+    "日期": "2026-08-10",
+    "类型": "大满贯",
+    "胜者": "Anders LIND/Anna HURSEY",
+    "负者": "Kristian KARLSSON/Christina KALLBERG"
+  },
+  {
+    "日期": "2026-08-10",
+    "类型": "大满贯",
+    "胜者": "Patrick FRANZISKA/Adriana DIAZ",
+    "负者": "Connor GREEN/Tin-Tin HO"
+  },
+  {
+    "日期": "2026-08-10",
+    "类型": "大满贯",
+    "胜者": "Jishan LIANG/Sally MOYLAND",
+    "负者": "Guilherme TEODORO/Paulina VEGA"
+  },
+  {
+    "日期": "2026-08-10",
+    "类型": "大满贯",
+    "胜者": "Lubomir PISTEJ/Tatiana KUKULKOVA",
+    "负者": "Youssef ABDELAZIZ/Mariam ALHODABY"
+  },
+  {
+    "日期": "2026-08-12",
+    "类型": "大满贯",
+    "胜者": "LIN Yun-Ju/CHENG I-Ching",
+    "负者": "Jishan LIANG/Sally MOYLAND"
+  },
+  {
+    "日期": "2026-08-12",
+    "类型": "大满贯",
+    "胜者": "LIN Shidong/KUAI Man",
+    "负者": "Eduard IONESCU/Bernadette SZOCS"
+  },
+  {
+    "日期": "2026-08-12",
+    "类型": "大满贯",
+    "胜者": "Alexis LEBRUN/Satsuki ODO",
+    "负者": "Manush SHAH/Diya CHITALE"
+  },
+  {
+    "日期": "2026-08-12",
+    "类型": "大满贯",
+    "胜者": "Dang QIU/Sabine WINTER",
+    "负者": "Patrick FRANZISKA/Adriana DIAZ"
+  },
+  {
+    "日期": "2026-08-12",
+    "类型": "大满贯",
+    "胜者": "WONG Chun Ting/DOO Hoi Kem",
+    "负者": "Lubomir PISTEJ/Tatiana KUKULKOVA"
+  },
+  {
+    "日期": "2026-08-12",
+    "类型": "大满贯",
+    "胜者": "Alvaro ROBLES/Maria XIAO",
+    "负者": "Mattias KARLSSON/Nina MITTELHAM"
+  },
+  {
+    "日期": "2026-08-12",
+    "类型": "大满贯",
+    "胜者": "Gustavo GOMEZ/Daniela ORTEGA",
+    "负者": "Hugo CALDERANO/Bruna TAKAHASHI"
+  },
+  {
+    "日期": "2026-08-12",
+    "类型": "大满贯",
+    "胜者": "LIM Jonghoon/SHIN Yubin",
+    "负者": "Anders LIND/Anna HURSEY"
+  },
+  {
+    "日期": "2026-08-13",
+    "类型": "大满贯",
+    "胜者": "LIN Yun-Ju/CHENG I-Ching",
+    "负者": "LIM Jonghoon/SHIN Yubin"
+  },
+  {
+    "日期": "2026-08-13",
+    "类型": "大满贯",
+    "胜者": "LIN Shidong/KUAI Man",
+    "负者": "Alexis LEBRUN/Satsuki ODO"
+  },
+  {
+    "日期": "2026-08-13",
+    "类型": "大满贯",
+    "胜者": "WONG Chun Ting/DOO Hoi Kem",
+    "负者": "Dang QIU/Sabine WINTER"
+  },
+  {
+    "日期": "2026-08-13",
+    "类型": "大满贯",
+    "胜者": "Alvaro ROBLES/Maria XIAO",
+    "负者": "Gustavo GOMEZ/Daniela ORTEGA"
+  },
+  {
+    "日期": "2026-08-14",
+    "类型": "大满贯",
+    "胜者": "LIN Shidong/KUAI Man",
+    "负者": "LIN Yun-Ju/CHENG I-Ching"
+  },
+  {
+    "日期": "2026-08-14",
+    "类型": "大满贯",
+    "胜者": "WONG Chun Ting/DOO Hoi Kem",
+    "负者": "Alvaro ROBLES/Maria XIAO"
+  },
+  {
+    "日期": "2026-08-14",
+    "类型": "大满贯",
+    "胜者": "LIN Shidong/KUAI Man",
+    "负者": "WONG Chun Ting/DOO Hoi Kem"
+  },
+  {
+    "日期": "2026-09-03",
+    "类型": "常规挑战赛",
+    "胜者": "Manush SHAH/Diya CHITALE",
+    "负者": "Sanzhar ZHUBANOV/Albina ZHAXYLYKOVA"
+  },
+  {
+    "日期": "2026-09-03",
+    "类型": "常规挑战赛",
+    "胜者": "Nikita ARTEMENKO/Elizabet ABRAAMIAN",
+    "负者": "Kirill GERASSIMENKO/Zauresh AKASHEVA"
+  },
+  {
+    "日期": "2026-09-03",
+    "类型": "常规挑战赛",
+    "胜者": "Shunsuke TOGAMI/Hina HAYATA",
+    "负者": "Denis IVONIN/Mariia TAILAKOVA"
+  },
+  {
+    "日期": "2026-09-03",
+    "类型": "常规挑战赛",
+    "胜者": "Evgeny TIKHONOV/Maria PANFILOVA",
+    "负者": "Angel NARANJO/Adriana DIAZ"
+  },
+  {
+    "日期": "2026-09-03",
+    "类型": "常规挑战赛",
+    "胜者": "Kazuki YOSHIYAMA/Yuna OJIO",
+    "负者": "Abdulla MAMAY/Noila KHANIYAZOVA"
+  },
+  {
+    "日期": "2026-09-03",
+    "类型": "常规挑战赛",
+    "胜者": "Payas JAIN/Syndrela DAS",
+    "负者": "Iskender KHARKI/Nursaya NURMAN"
+  },
+  {
+    "日期": "2026-09-03",
+    "类型": "常规挑战赛",
+    "胜者": "Alan KURMANGALIYEV/Darya FU",
+    "负者": "FANG Bo/Sarvinoz MIRKADIROVA"
+  },
+  {
+    "日期": "2026-09-03",
+    "类型": "常规挑战赛",
+    "胜者": "Kristian KARLSSON/Christina KALLBERG",
+    "负者": "Amir TORGAIBEKOV/Yekaterina OKHMAK"
+  },
+  {
+    "日期": "2026-09-04",
+    "类型": "常规挑战赛",
+    "胜者": "Nikita ARTEMENKO/Elizabet ABRAAMIAN",
+    "负者": "Manush SHAH/Diya CHITALE"
+  },
+  {
+    "日期": "2026-09-04",
+    "类型": "常规挑战赛",
+    "胜者": "Evgeny TIKHONOV/Maria PANFILOVA",
+    "负者": "Shunsuke TOGAMI/Hina HAYATA"
+  },
+  {
+    "日期": "2026-09-04",
+    "类型": "常规挑战赛",
+    "胜者": "Kazuki YOSHIYAMA/Yuna OJIO",
+    "负者": "Payas JAIN/Syndrela DAS"
+  },
+  {
+    "日期": "2026-09-04",
+    "类型": "常规挑战赛",
+    "胜者": "Kristian KARLSSON/Christina KALLBERG",
+    "负者": "Alan KURMANGALIYEV/Darya FU"
+  },
+  {
+    "日期": "2026-09-04",
+    "类型": "常规挑战赛",
+    "胜者": "Evgeny TIKHONOV/Maria PANFILOVA",
+    "负者": "Nikita ARTEMENKO/Elizabet ABRAAMIAN"
+  },
+  {
+    "日期": "2026-09-04",
+    "类型": "常规挑战赛",
+    "胜者": "Kazuki YOSHIYAMA/Yuna OJIO",
+    "负者": "Kristian KARLSSON/Christina KALLBERG"
+  },
+  {
+    "日期": "2026-09-06",
+    "类型": "常规挑战赛",
+    "胜者": "Evgeny TIKHONOV/Maria PANFILOVA",
+    "负者": "Kazuki YOSHIYAMA/Yuna OJIO"
+  },
+  {
+    "日期": "2026-09-10",
+    "类型": "常规挑战赛",
+    "胜者": "Gustavo GOMEZ/Daniela ORTEGA",
+    "负者": "Thibault PORET/Charlotte LUTZ"
+  },
+  {
+    "日期": "2026-09-10",
+    "类型": "常规挑战赛",
+    "胜者": "John OYEBODE/Gaia MONFARDINI",
+    "负者": "Ivaylo KOSEV/Sidelya MUTLU"
+  },
+  {
+    "日期": "2026-09-10",
+    "类型": "常规挑战赛",
+    "胜者": "Marek BADOWSKI/Tatiana KUKULKOVA",
+    "负者": "Adam KLAJBER/Ema LABOSOVA"
+  },
+  {
+    "日期": "2026-09-10",
+    "类型": "常规挑战赛",
+    "胜者": "Martin FRIIS/Filippa BERGAND",
+    "负者": "Petyo KRASTEV/Maria YOVKOVA"
+  },
+  {
+    "日期": "2026-09-10",
+    "类型": "常规挑战赛",
+    "胜者": "Andre BERTELSMEIER/Yuan WAN",
+    "负者": "Nicolas BURGOS/Paulina VEGA"
+  },
+  {
+    "日期": "2026-09-10",
+    "类型": "常规挑战赛",
+    "胜者": "Alvaro ROBLES/Maria XIAO",
+    "负者": "Abdullah YIGENLER/Ece HARAC"
+  },
+  {
+    "日期": "2026-09-10",
+    "类型": "常规挑战赛",
+    "胜者": "Yoan VELICHKOV/Izabela LUPULESKU",
+    "负者": "Leo DE NODREST/Camille LUTZ"
+  },
+  {
+    "日期": "2026-09-10",
+    "类型": "常规挑战赛",
+    "胜者": "Kristian KARLSSON/Christina KALLBERG",
+    "负者": "Cedric MEISSNER/Tin-Tin HO"
+  },
+  {
+    "日期": "2026-09-11",
+    "类型": "常规挑战赛",
+    "胜者": "Gustavo GOMEZ/Daniela ORTEGA",
+    "负者": "John OYEBODE/Gaia MONFARDINI"
+  },
+  {
+    "日期": "2026-09-11",
+    "类型": "常规挑战赛",
+    "胜者": "Marek BADOWSKI/Tatiana KUKULKOVA",
+    "负者": "Martin FRIIS/Filippa BERGAND"
+  },
+  {
+    "日期": "2026-09-11",
+    "类型": "常规挑战赛",
+    "胜者": "Alvaro ROBLES/Maria XIAO",
+    "负者": "Andre BERTELSMEIER/Yuan WAN"
+  },
+  {
+    "日期": "2026-09-11",
+    "类型": "常规挑战赛",
+    "胜者": "Kristian KARLSSON/Christina KALLBERG",
+    "负者": "Yoan VELICHKOV/Izabela LUPULESKU"
+  },
+  {
+    "日期": "2026-09-11",
+    "类型": "常规挑战赛",
+    "胜者": "Marek BADOWSKI/Tatiana KUKULKOVA",
+    "负者": "Gustavo GOMEZ/Daniela ORTEGA"
+  },
+  {
+    "日期": "2026-09-11",
+    "类型": "常规挑战赛",
+    "胜者": "Alvaro ROBLES/Maria XIAO",
+    "负者": "Kristian KARLSSON/Christina KALLBERG"
+  },
+  {
+    "日期": "2026-09-12",
+    "类型": "常规挑战赛",
+    "胜者": "Alvaro ROBLES/Maria XIAO",
+    "负者": "Marek BADOWSKI/Tatiana KUKULKOVA"
+  },
+  {
+    "日期": "2026-09-17",
+    "类型": "球星挑战赛",
+    "胜者": "Alvaro ROBLES/Maria XIAO",
+    "负者": "Benedikt DUDA/Nina MITTELHAM",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-09-17",
+    "类型": "球星挑战赛",
+    "胜者": "Hiromu KOBAYASHI/Miyuu KIHARA",
+    "负者": "Maksim GREBNEV/Vlada VORONINA",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-09-17",
+    "类型": "球星挑战赛",
+    "胜者": "Evgeny TIKHONOV/Maria PANFILOVA",
+    "负者": "LI Tianyang/ZHU Sibing",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-09-17",
+    "类型": "球星挑战赛",
+    "胜者": "PARK Ganghyeon/YOO Siwoo",
+    "负者": "Patrick FRANZISKA/Adriana DIAZ",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-09-17",
+    "类型": "球星挑战赛",
+    "胜者": "CHEN Junsong/WANG Yidi",
+    "负者": "Darius MOVILEANU/Andreea DRAGOMAN",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-09-17",
+    "类型": "球星挑战赛",
+    "胜者": "Nikita ARTEMENKO/Elizabet ABRAAMIAN",
+    "负者": "Alexis LEBRUN/Charlotte LUTZ",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-09-17",
+    "类型": "球星挑战赛",
+    "胜者": "LI Hechen/YAO Ruixuan",
+    "负者": "Abdullah YIGENLER/Ece HARAC",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-09-17",
+    "类型": "球星挑战赛",
+    "胜者": "FANG Bo/Jia Nan YUAN",
+    "负者": "Eduard IONESCU/Bernadette SZOCS",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-09-18",
+    "类型": "球星挑战赛",
+    "胜者": "Hiromu KOBAYASHI/Miyuu KIHARA",
+    "负者": "Alvaro ROBLES/Maria XIAO",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-09-18",
+    "类型": "球星挑战赛",
+    "胜者": "PARK Ganghyeon/YOO Siwoo",
+    "负者": "Evgeny TIKHONOV/Maria PANFILOVA",
+    "比分": "3-1"
+  },
+  {
+    "日期": "2026-09-18",
+    "类型": "球星挑战赛",
+    "胜者": "CHEN Junsong/WANG Yidi",
+    "负者": "Nikita ARTEMENKO/Elizabet ABRAAMIAN",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-09-18",
+    "类型": "球星挑战赛",
+    "胜者": "FANG Bo/Jia Nan YUAN",
+    "负者": "LI Hechen/YAO Ruixuan",
+    "比分": "3-2"
+  },
+  {
+    "日期": "2026-09-19",
+    "类型": "球星挑战赛",
+    "胜者": "Hiromu KOBAYASHI/Miyuu KIHARA",
+    "负者": "PARK Ganghyeon/YOO Siwoo",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-09-19",
+    "类型": "球星挑战赛",
+    "胜者": "CHEN Junsong/WANG Yidi",
+    "负者": "FANG Bo/Jia Nan YUAN",
+    "比分": "3-0"
+  },
+  {
+    "日期": "2026-09-20",
+    "类型": "球星挑战赛",
+    "胜者": "CHEN Junsong/WANG Yidi",
+    "负者": "Hiromu KOBAYASHI/Miyuu KIHARA",
+    "比分": "3-0"
+  },
   {
     "日期": "2026-09-25",
     "类型": "亚运会",
@@ -3443,104 +5892,243 @@
     "类型": "常规挑战赛",
     "胜者": "HUANG Youzheng/QIN Yuxuan",
     "负者": "Eduard IONESCU/Bernadette SZOCS",
-    "比分": "3-0"
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "11-6",
+      "14-12"
+    ]
   },
   {
     "日期": "2026-11-12",
     "类型": "常规挑战赛",
     "胜者": "Nikita ARTEMENKO/Mariia TAILAKOVA",
     "负者": "YUAN Licen/ZONG Geman",
-    "比分": "3-1"
+    "比分": "3-1",
+    "局分": [
+      "11-9",
+      "11-6",
+      "3-11",
+      "11-7"
+    ]
   },
   {
     "日期": "2026-11-12",
     "类型": "常规挑战赛",
     "胜者": "Evgeny TIKHONOV/Maria PANFILOVA",
     "负者": "Aditya SAREEN/Jiamuwa WU",
-    "比分": "3-0"
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-9",
+      "11-9"
+    ]
   },
   {
     "日期": "2026-11-12",
     "类型": "常规挑战赛",
     "胜者": "Abdullah YIGENLER/Ece HARAC",
     "负者": "Nandan NARESH/Jessica REYES LAI",
-    "比分": "3-0"
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-2",
+      "11-3"
+    ]
   },
   {
     "日期": "2026-11-12",
     "类型": "常规挑战赛",
     "胜者": "Guilherme TEODORO/Giulia TAKAHASHI",
     "负者": "Iskender KHARKI/Sarvinoz MIRKADIROVA",
-    "比分": "3-1"
+    "比分": "3-1",
+    "局分": [
+      "11-7",
+      "7-11",
+      "11-9",
+      "11-6"
+    ]
   },
   {
     "日期": "2026-11-12",
     "类型": "常规挑战赛",
     "胜者": "Connor GREEN/Anna HURSEY",
     "负者": "Leonardo IIZUKA/Laura WATANABE",
-    "比分": "3-0"
+    "比分": "3-0",
+    "局分": [
+      "11-8",
+      "11-5",
+      "11-8"
+    ]
   },
   {
     "日期": "2026-11-12",
     "类型": "常规挑战赛",
     "胜者": "Maksim GREBNEV/Vlada VORONINA",
     "负者": "FANG Bo/Sofia POLCANOVA",
-    "比分": "3-1"
+    "比分": "3-1",
+    "局分": [
+      "11-7",
+      "11-4",
+      "9-11",
+      "11-8"
+    ]
   },
   {
     "日期": "2026-11-12",
     "类型": "常规挑战赛",
     "胜者": "LIM Yunoh/JOO Cheonhui",
     "负者": "Jishan LIANG/Sally MOYLAND",
-    "比分": "3-2"
+    "比分": "3-2",
+    "局分": [
+      "11-2",
+      "7-11",
+      "12-10",
+      "7-11",
+      "11-6"
+    ]
   },
   {
     "日期": "2026-11-13",
     "类型": "常规挑战赛",
     "胜者": "HUANG Youzheng/QIN Yuxuan",
     "负者": "Nikita ARTEMENKO/Mariia TAILAKOVA",
-    "比分": "3-1"
+    "比分": "3-1",
+    "局分": [
+      "11-7",
+      "8-11",
+      "11-6",
+      "11-9"
+    ]
   },
   {
     "日期": "2026-11-13",
     "类型": "常规挑战赛",
     "胜者": "Evgeny TIKHONOV/Maria PANFILOVA",
     "负者": "Abdullah YIGENLER/Ece HARAC",
-    "比分": "3-0"
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "11-6",
+      "11-4"
+    ]
   },
   {
     "日期": "2026-11-13",
     "类型": "常规挑战赛",
     "胜者": "Connor GREEN/Anna HURSEY",
     "负者": "Guilherme TEODORO/Giulia TAKAHASHI",
-    "比分": "3-2"
+    "比分": "3-2",
+    "局分": [
+      "6-11",
+      "7-11",
+      "11-2",
+      "11-9",
+      "11-3"
+    ]
   },
   {
     "日期": "2026-11-13",
     "类型": "常规挑战赛",
     "胜者": "LIM Yunoh/JOO Cheonhui",
     "负者": "Maksim GREBNEV/Vlada VORONINA",
-    "比分": "3-2"
+    "比分": "3-2",
+    "局分": [
+      "11-5",
+      "13-11",
+      "6-11",
+      "9-11",
+      "11-4"
+    ]
   },
   {
     "日期": "2026-11-13",
     "类型": "常规挑战赛",
     "胜者": "Evgeny TIKHONOV/Maria PANFILOVA",
     "负者": "HUANG Youzheng/QIN Yuxuan",
-    "比分": "3-2"
+    "比分": "3-2",
+    "局分": [
+      "11-3",
+      "7-11",
+      "11-8",
+      "9-11",
+      "11-9"
+    ]
   },
   {
     "日期": "2026-11-13",
     "类型": "常规挑战赛",
     "胜者": "Connor GREEN/Anna HURSEY",
     "负者": "LIM Yunoh/JOO Cheonhui",
-    "比分": "3-2"
+    "比分": "3-2",
+    "局分": [
+      "7-11",
+      "13-11",
+      "11-3",
+      "15-17",
+      "11-5"
+    ]
   },
   {
     "日期": "2026-11-14",
     "类型": "常规挑战赛",
     "胜者": "Connor GREEN/Anna HURSEY",
     "负者": "Evgeny TIKHONOV/Maria PANFILOVA",
-    "比分": "3-0"
+    "比分": "3-0",
+    "局分": [
+      "11-7",
+      "12-10",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2026-11-11",
+    "类型": "常规挑战赛",
+    "胜者": "Leonardo IIZUKA/Laura WATANABE",
+    "负者": "Thibault PORET/Prithika PAVADE",
+    "比分": "3-1",
+    "局分": [
+      "11-8",
+      "11-9",
+      "5-11",
+      "11-9"
+    ]
+  },
+  {
+    "日期": "2026-11-11",
+    "类型": "常规挑战赛",
+    "胜者": "YUAN Licen/ZONG Geman",
+    "负者": "Andre BERTELSMEIER/Yuan WAN",
+    "比分": "3-1",
+    "局分": [
+      "11-6",
+      "10-12",
+      "11-7",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2026-11-11",
+    "类型": "常规挑战赛",
+    "胜者": "LIM Yunoh/JOO Cheonhui",
+    "负者": "Ibrahim GUNDUZ/Sibel ALTINKAYA",
+    "比分": "3-0",
+    "局分": [
+      "11-4",
+      "12-10",
+      "11-7"
+    ]
+  },
+  {
+    "日期": "2026-11-11",
+    "类型": "常规挑战赛",
+    "胜者": "FANG Bo/Sofia POLCANOVA",
+    "负者": "Petyo KRASTEV/Maria YOVKOVA",
+    "比分": "3-0",
+    "局分": [
+      "11-5",
+      "11-7",
+      "11-3"
+    ]
   }
 ]
