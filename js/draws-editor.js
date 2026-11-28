@@ -170,18 +170,15 @@ async function init() {
 }
 
 function initTheme() {
-    // common.js 已接管主题按钮（读 wfls-tt-theme + 换图标），避免双重 toggle 抵消
+    // common.js 已接管主题按钮（读 wfls-tt-theme + 切换图标 + 过渡动效），避免双重 toggle 抵消
     if (typeof window.setLanguage === 'function') return;
-    let dark = false;
-    try {
-        dark = localStorage.getItem('wfls-tt-theme') === 'dark';
-    } catch (e) { /* ignore */ }
-    if (dark) $('themeToggle').innerHTML = '<i class="fa-solid fa-sun"></i>';
-    $('themeToggle').addEventListener('click', () => {
-        document.documentElement.classList.toggle('dark-mode');
-        const isDark = document.documentElement.classList.contains('dark-mode');
+    const btn = $('themeToggle');
+    if (!btn || btn.dataset.themeBound) return;
+    btn.dataset.themeBound = '1';
+    btn.addEventListener('click', () => {
+        if (typeof window.toggleTheme === 'function') { window.toggleTheme(btn); return; }
+        const isDark = document.documentElement.classList.toggle('dark-mode');
         try { localStorage.setItem('wfls-tt-theme', isDark ? 'dark' : 'light'); } catch (e) { /* ignore */ }
-        $('themeToggle').innerHTML = isDark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
     });
 }
 

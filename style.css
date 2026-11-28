@@ -256,6 +256,75 @@ ul, ol {
     color: var(--primary-blue);
     border-color: var(--primary-blue);
 }
+
+/* 日/夜间切换动效：双图标旋转淡入淡出（结构见 js/shared-partials.js） */
+.theme-ico-stack {
+    display: grid;
+    place-items: center;
+    line-height: 1;
+}
+.theme-ico {
+    grid-area: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+    will-change: transform, opacity;
+}
+.theme-ico-sun {
+    opacity: 0;
+    transform: rotate(-120deg) scale(0.3);
+}
+.theme-ico-moon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+.dark-mode .theme-ico-sun {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+.dark-mode .theme-ico-moon {
+    opacity: 0;
+    transform: rotate(120deg) scale(0.3);
+}
+
+/* View Transition：新旧快照不做默认交叉淡化，改由 JS 的圆形揭示动画驱动 */
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+}
+
+/* 不支持 View Transitions 时的降级：整页颜色短过渡（仅切换瞬间生效，不影响常驻 hover） */
+html.theme-anim,
+html.theme-anim *,
+html.theme-anim *::before,
+html.theme-anim *::after {
+    transition:
+        background-color 0.42s cubic-bezier(0.4, 0, 0.2, 1),
+        color 0.42s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.42s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.42s cubic-bezier(0.4, 0, 0.2, 1),
+        fill 0.42s cubic-bezier(0.4, 0, 0.2, 1),
+        stroke 0.42s cubic-bezier(0.4, 0, 0.2, 1),
+        outline-color 0.42s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+/* 图标保留自己的弹性旋转过渡，不被上面的整页过渡覆盖 */
+html.theme-anim .theme-ico {
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease !important;
+}
+/* View Transition 拍摄新快照时图标直接落到终态，避免揭示过程里先出现旧图标 */
+html.theme-vt .theme-ico {
+    transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .theme-ico { transition: none; }
+    html.theme-anim,
+    html.theme-anim *,
+    html.theme-anim *::before,
+    html.theme-anim *::after { transition: none !important; }
+}
 .hamburger {
     display: none;
     flex-direction: column;

@@ -117,10 +117,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function initTheme() {
-    // common.js 已负责主题切换与图标（本页只接管图表重绘，避免双重 toggle 抵消）
-    $("themeToggle").addEventListener("click", () => {
-        setTimeout(() => destroyCharts(), 100);
-        setTimeout(() => renderCharts(lastStats), 200);
+    // common.js 负责主题切换与图标；图表必须在同一帧内重绘，
+    // 否则 View Transition 的新快照仍保留旧配色，揭示结束后才闪一下
+    document.addEventListener("wflsthemechange", () => {
+        destroyCharts();
+        renderCharts(lastStats);
     });
 }
 

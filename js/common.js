@@ -2087,16 +2087,93 @@ if (hamburger && navMenu) {
 const dtEl = document.getElementById('moreDropdown'), dmEl = document.getElementById('dropdownMenu');
 if (dtEl && dmEl) { dtEl.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); dtEl.classList.toggle('active'); dmEl.classList.toggle('active'); }); dmEl.querySelectorAll('.dropdown-link').forEach(l => l.addEventListener('click', () => { dtEl.classList.remove('active'); dmEl.classList.remove('active'); })); document.addEventListener('click', e => { if (!dtEl.contains(e.target) && !dmEl.contains(e.target)) { dtEl.classList.remove('active'); dmEl.classList.remove('active'); } }); }
 window.addEventListener('scroll', () => { if (window.scrollY > 60) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled'); });
+/* ========================================
+   全局主题切换（日间 / 夜间）
+   - 支持 View Transitions 的浏览器：以按钮为圆心的圆形揭示
+   - 其余浏览器：整页颜色做一次短过渡（html.theme-anim）
+   - 图标 sun / moon 的旋转淡入淡出由 CSS 驱动（见 style.css）
+   - 尊重 prefers-reduced-motion
+   ======================================== */
+const THEME_STORAGE_KEY = 'wfls-tt-theme';
+let _themeAnimTimer = null;
+let _themeSeq = 0;
+let _themePending = null; // 目标主题：View Transition 回调异步执行期间记录，避免快速连点丢失切换
+
+function themePrefersReducedMotion() {
+    try { return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches); }
+    catch (e) { return false; }
+}
+
+function syncThemeIcon() {
+    // 双图标结构由 CSS 依据 .dark-mode 自动切换；旧式单图标结构在此兜底
+    if (!themeToggle || themeToggle.querySelector('.theme-ico-stack')) return;
+    const dark = document.documentElement.classList.contains('dark-mode');
+    themeToggle.innerHTML = dark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+}
+
+function applyTheme(dark, originEl) {
+    const root = document.documentElement;
+    const origin = originEl || themeToggle;
+    const seq = ++_themeSeq;
+    const mutate = () => {
+        root.classList.toggle('dark-mode', dark);
+        safeStorage.set(THEME_STORAGE_KEY, dark ? 'dark' : 'light');
+        syncThemeIcon();
+        if (seq === _themeSeq) _themePending = null;
+        try { document.dispatchEvent(new CustomEvent('wflsthemechange', { detail: { dark: dark } })); } catch (e) {}
+    };
+    const fallback = () => {
+        // 降级：临时开启整页颜色过渡，结束后立刻移除，不影响常驻 hover 动效
+        root.classList.add('theme-anim');
+        mutate();
+        if (_themeAnimTimer) clearTimeout(_themeAnimTimer);
+        _themeAnimTimer = setTimeout(() => root.classList.remove('theme-anim'), 480);
+    };
+
+    if (themePrefersReducedMotion() || typeof document.startViewTransition !== 'function') {
+        fallback();
+        return;
+    }
+
+    // 圆形揭示：以切换按钮为圆心，半径覆盖整个视口
+    let x = window.innerWidth / 2, y = window.innerHeight / 2;
+    if (origin && typeof origin.getBoundingClientRect === 'function') {
+        const r = origin.getBoundingClientRect();
+        if (r.width || r.height) { x = r.left + r.width / 2; y = r.top + r.height / 2; }
+    }
+    const radius = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y));
+    // 快照拍摄时图标必须已是终态，否则圆形揭示里会先露出旧图标；揭示从按钮圆心开始，瞬切不可见
+    root.classList.add('theme-vt');
+    let vt = null;
+    try { vt = document.startViewTransition(mutate); } catch (e) { vt = null; }
+    if (!vt) { root.classList.remove('theme-vt'); fallback(); return; }
+    const clearVt = () => root.classList.remove('theme-vt');
+    if (vt.finished) { vt.finished.then(clearVt).catch(clearVt); }
+    setTimeout(clearVt, 900); // 兜底：动画异常时也不让图标过渡永久失效
+    if (vt.ready) {
+        vt.ready.then(() => {
+            document.documentElement.animate(
+                { clipPath: ['circle(0px at ' + x + 'px ' + y + 'px)', 'circle(' + radius + 'px at ' + x + 'px ' + y + 'px)'] },
+                { duration: 480, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', pseudoElement: '::view-transition-new(root)' }
+            );
+        }).catch(() => {});
+    }
+}
+window.applyTheme = applyTheme;
+window.toggleTheme = function (originEl) {
+    const current = _themePending !== null ? _themePending : document.documentElement.classList.contains('dark-mode');
+    const next = !current;
+    _themePending = next;
+    applyTheme(next, originEl);
+};
+
 if (themeToggle) {
-    const rootEl = document.documentElement;
-    const sun = '<i class="fa-solid fa-sun"></i>', moon = '<i class="fa-solid fa-moon"></i>';
     // 初始状态可能已由 <head> 内联脚本设置（存储值优先，其次跟随系统偏好）
-    themeToggle.innerHTML = isDarkTheme() ? sun : moon;
-    themeToggle.addEventListener('click', () => {
-        const dark = rootEl.classList.toggle('dark-mode');
-        safeStorage.set('wfls-tt-theme', dark ? 'dark' : 'light');
-        themeToggle.innerHTML = dark ? sun : moon;
-    });
+    syncThemeIcon();
+    if (!themeToggle.dataset.themeBound) {
+        themeToggle.dataset.themeBound = '1';
+        themeToggle.addEventListener('click', () => window.toggleTheme(themeToggle));
+    }
 }
 
 function openModal(m) { if(m) { m.classList.add('active'); body.style.overflow = 'hidden'; m.setAttribute('role', 'dialog'); m.setAttribute('aria-modal', 'true'); m._lastFocus = document.activeElement; const f = m.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'); if (f) setTimeout(() => f.focus(), 60); } }
